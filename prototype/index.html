@@ -46,7 +46,8 @@
   #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
   #links{position:absolute;left:0;top:0;width:1px;height:1px;overflow:visible;pointer-events:none}
   #links path{fill:none;stroke:var(--line);stroke-width:2.5;stroke-linecap:round}
-  #links path.made{stroke:var(--avocado);stroke-width:2.5;opacity:.5}
+  #links path.made{stroke:var(--avocado);stroke-width:2.5;opacity:.42}
+  #links .mote{opacity:.9;filter:drop-shadow(0 0 3px currentColor)}
   @keyframes draw{from{stroke-dashoffset:var(--len,400)}to{stroke-dashoffset:0}}
   #links path.fresh{
     stroke-dasharray:var(--len,400);animation:draw .45s cubic-bezier(.3,.8,.4,1) forwards;
@@ -105,10 +106,12 @@
   .chip.board.hidden{display:none}
   .chip.board.folded{border-style:dashed}
   .chip.board.folded::after{
-    content:attr(data-fold);position:absolute;top:-9px;right:-8px;
-    font:800 9.5px ui-rounded,Avenir;color:#fff;background:var(--ink-soft);
-    border-radius:99px;padding:2px 6px;
+    content:attr(data-fold);position:absolute;top:-8px;right:-7px;
+    font:800 9.5px ui-rounded,Avenir;color:#fff;background:var(--fam,var(--ink-soft));
+    border-radius:99px;padding:2px 6px;box-shadow:0 1px 3px rgba(43,33,24,.3);
   }
+  .chip.board.folded{border-style:solid}
+  .chip.board.folded:not([data-fold=""])::after{content:attr(data-fold)}
   @keyframes ripple{
     from{transform:translate(-50%,-50%) scale(.25);opacity:.75}
     to{transform:translate(-50%,-50%) scale(2.6);opacity:0}
@@ -932,9 +935,40 @@ function descendantsOf(chip, acc = new Set()) {
   }
   return acc;
 }
-// One tap folds the branch. Two taps take the chip off the bench — and that is
-// only ever removing a chip, never a discovery: everything stays in the codex
-// and can be brought back from the shelf.
+// A new result arrives with its ingredients already folded into it, so the
+// bench shows what you have made rather than everything it took. One tap opens
+// a thing up to show what went in; tap again to close it. Two taps remove the
+// chip — never the discovery, which stays in the codex.
+function parentsOf(chip) {
+  return links.filter(l => l.out === chip).flatMap(l => [l.a, l.b]).filter(Boolean);
+}
+function ancestorsOf(chip, acc = new Set()) {
+  for (const p of parentsOf(chip)) {
+    if (acc.has(p)) continue;
+    acc.add(p);
+    ancestorsOf(p, acc);
+  }
+  return acc;
+}
+// A chip is only hidden if every result it feeds is closed. Shared ingredients
+// stay visible for whichever branch still wants them.
+function refreshFolds() {
+  const hide = new Set();
+  for (const c of world.querySelectorAll('.chip.board')) {
+    if (!c.classList.contains('folded')) continue;
+    for (const a of ancestorsOf(c)) hide.add(a);
+  }
+  for (const c of world.querySelectorAll('.chip.board')) {
+    const anyOpenChild = links.some(l =>
+      (l.a === c || l.b === c) && l.out.isConnected && !l.out.classList.contains('folded'));
+    c.classList.toggle('hidden', hide.has(c) && !anyOpenChild);
+  }
+  for (const c of world.querySelectorAll('.chip.board')) {
+    const n = c.classList.contains('folded') ? ancestorsOf(c).size : 0;
+    c.dataset.fold = n ? `${n}` : '';
+  }
+  drawLinks();
+}
 let lastChipTap = { el: null, t: 0 };
 function chipTap(chip) {
   const now = Date.now();
@@ -954,34 +988,50 @@ function removeChip(chip) {
     const l = links[i];
     if (l.a === chip || l.b === chip || l.out === chip) links.splice(i, 1);
   }
+  setTimeout(refreshFolds, 170);
   chip.classList.add('leaving');
   sfx.pick();
   setTimeout(() => { chip.remove(); drawLinks(); }, 160);
 }
 
 function toggleBranch(chip) {
-  const kids = descendantsOf(chip);
-  if (!kids.size) {                                   // nothing below: just acknowledge
+  if (!parentsOf(chip).length) {                      // nothing went into it
     chip.classList.add('pulse');
     setTimeout(() => chip.classList.remove('pulse'), 380);
     return;
   }
-  const folding = !chip.classList.contains('folded');
-  chip.classList.toggle('folded', folding);
-  for (const k of kids) k.classList.toggle('hidden', folding);
-  chip.dataset.fold = folding ? `+${kids.size}` : '';
-  drawLinks();
+  chip.classList.toggle('folded');
+  refreshFolds();
+  sfx.pick();
 }
 
 // Connections persist, so the canvas becomes a diagram of what you built
 // rather than a scratchpad that forgets.
-let linkFrame = 0;
+let linkFrame = 0, linkFallback = 0;
 function drawLinks() {
   if (linkFrame) return;                              // at most one redraw a frame
-  linkFrame = requestAnimationFrame(() => { linkFrame = 0; drawLinksNow(); });
+  linkFrame = requestAnimationFrame(() => {
+    linkFrame = 0; clearTimeout(linkFallback); linkFallback = 0; drawLinksNow();
+  });
+  // Frame callbacks do not fire in a hidden or throttled tab, and a board whose
+  // lines never redraw looks broken. Guarantee the redraw either way.
+  if (!linkFallback) linkFallback = setTimeout(() => {
+    if (linkFrame) { cancelAnimationFrame(linkFrame); linkFrame = 0; }
+    linkFallback = 0; drawLinksNow();
+  }, 120);
 }
+// Each family's colour, for the pulses that travel the lines.
+const FAM_HEX = { earth:'#8A7B6B', water:'#4E8CB8', fire:'#E2703A', plant:'#6B8E4E',
+                  animal:'#A6603D', microbe:'#8C6BA6', food:'#E0A526', myth:'#7C5CA6' };
+let pathSeq = 0;
+
 function drawLinksNow() {
   const parts = [];
+  // Pulses are the expensive part, so drop them on a busy board or when the
+  // player has asked for quiet. The lines themselves always draw.
+  const flowing = prefs.tone === 'playful'
+    && !matchMedia('(prefers-reduced-motion: reduce)').matches
+    && links.length <= 40;
   for (const l of links) {
     if (!l.out.isConnected || l.out.classList.contains('hidden')) continue;
     const [ox, oy] = chipCentre(l.out);
@@ -992,7 +1042,18 @@ function drawLinksNow() {
       // parents converging on one child stop looking like a Y of straight lines.
       const my = (sy + oy) / 2;
       const d = `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`;
-      parts.push(`<path class="made${l.fresh ? ' fresh' : ''}" d="${d}"/>`);
+      const id = `lp${++pathSeq}`;
+      parts.push(`<path id="${id}" class="made${l.fresh ? ' fresh' : ''}" d="${d}"/>`);
+      if (flowing) {
+        // A mote of the ingredient travelling into what it becomes — gold from
+        // the sun, blue from water. Offset starts so they never march in step.
+        const hex = FAM_HEX[src.dataset.fam] || '#8A7B6B';
+        const dur = (2.1 + (pathSeq % 5) * 0.22).toFixed(2);
+        parts.push(
+          `<circle r="3.4" fill="${hex}" class="mote">` +
+          `<animateMotion dur="${dur}s" repeatCount="indefinite" begin="-${(pathSeq % 7) * 0.31}s">` +
+          `<mpath href="#${id}"/></animateMotion></circle>`);
+      }
     }
     l.fresh = false;
   }
@@ -1220,7 +1281,8 @@ board.addEventListener('pointerdown', ev => {
   const [wx, wy] = toWorld(ev.clientX, ev.clientY);
   benchTouched = true;
   drag = { chip, ox: wx - (parseFloat(chip.style.left) || 0),
-                 oy: wy - (parseFloat(chip.style.top) || 0), moved: false };
+                 oy: wy - (parseFloat(chip.style.top) || 0),
+           sx: ev.clientX, sy: ev.clientY, moved: false };
   chip.classList.add('drag');
   chip.setPointerCapture(ev.pointerId);
 });
@@ -1232,6 +1294,9 @@ board.addEventListener('pointermove', ev => {
     return;
   }
   if (!drag) return;
+  // A finger never lands perfectly still, so any movement at all counted as a
+  // drag and taps never registered on a phone. Require real travel first.
+  if (!drag.moved && Math.hypot(ev.clientX - drag.sx, ev.clientY - drag.sy) < 8) return;
   drag.moved = true;
   const [wx, wy] = toWorld(ev.clientX, ev.clientY);
   drag.chip.style.left = (wx - drag.ox) + 'px';
@@ -1341,7 +1406,8 @@ function resolve(r, chips, x, y) {
   }
   const el = spawn(r.out, null, null, chips);
   links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
-  drawLinks();
+  el.classList.add('folded');                         // arrives closed
+  refreshFolds();
   const isNew = !found.has(r.out);
   if (isNew) {
     const wasLive = liveCount();
