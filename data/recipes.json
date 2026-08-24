@@ -2074,7 +2074,7 @@
     "out": "meat",
     "supported": true,
     "why": "Goat is the most widely eaten red meat on Earth, and almost absent from Western kitchens.",
-    "src": "https://en.wikipedia.org/wiki/Meat"
+    "src": "https://en.wikipedia.org/wiki/Bone"
   },
   {
     "in": [
@@ -3865,5 +3865,665 @@
     "supported": true,
     "why": "Leave beer open and it sours on its own. Acetobacter is airborne and arrives uninvited.",
     "src": "https://en.wikipedia.org/wiki/Vinegar"
+  },
+  {
+    "in": [
+      "charcoal"
+    ],
+    "verb": "crush",
+    "out": "carbon",
+    "why": "Charcoal is wood with everything but the carbon baked out — around 90% of what remains. Grind it and you have very nearly the element.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Charcoal"
+  },
+  {
+    "in": [
+      "leaf",
+      "water"
+    ],
+    "out": "oxygen",
+    "why": "Nearly all the oxygen in the atmosphere came out of split water, not out of carbon dioxide. Photosystem II tears four electrons off two water molecules and lets the oxygen go as waste.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Photosystem_II"
+  },
+  {
+    "in": [
+      "steam",
+      "charcoal"
+    ],
+    "out": "hydrogen",
+    "why": "Steam over red-hot carbon: H₂O + C → H₂ + CO. It absorbs heat as it runs, so the fuel has to be reheated constantly to keep it going.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Water_gas"
+  },
+  {
+    "in": [
+      "seed",
+      "root"
+    ],
+    "out": "legume",
+    "why": "Peas, beans, clover and lentils. Their roots grow nodules and invite bacteria in — a deliberate infection the plant controls.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Legume"
+  },
+  {
+    "in": [
+      "legume",
+      "soil"
+    ],
+    "out": "nitrogen",
+    "why": "Air is four fifths nitrogen and almost nothing can touch it: the triple bond is that strong. Rhizobia in the root nodules carry nitrogenase, and spend 16 ATP to break a single molecule.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation"
+  },
+  {
+    "in": [
+      "meat"
+    ],
+    "verb": "cut",
+    "out": "bone",
+    "why": "Collagen gives bone its spring and calcium phosphate gives it stiffness. Take either away and it fails — one snaps, the other bends.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Bone"
+  },
+  {
+    "in": [
+      "bone"
+    ],
+    "verb": "heat",
+    "out": "phosphorus",
+    "why": "Bone ash is mostly calcium phosphate. Phosphorus was first isolated by boiling down urine, and later far more sensibly from bone.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Phosphorus"
+  },
+  {
+    "in": [
+      "stone",
+      "steam"
+    ],
+    "out": "sulfur",
+    "why": "Volcanic vents breathe out sulfurous gas that cools into bright yellow crusts. Miners cut it straight off the rock in slabs.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sulfur"
+  },
+  {
+    "in": [
+      "hydrogen",
+      "oxygen"
+    ],
+    "out": "water",
+    "why": "Two volumes of hydrogen to one of oxygen, and the energy released is enough to lift a rocket. The product is water and nothing else.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Water_(data_page)"
+  },
+  {
+    "in": [
+      "carbon",
+      "oxygen"
+    ],
+    "out": "carbon_dioxide",
+    "why": "What every fire and every breath produces, and what every leaf is looking for.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Carbon_dioxide"
+  },
+  {
+    "in": [
+      "leaf",
+      "carbon_dioxide"
+    ],
+    "out": "glucose",
+    "why": "Six carbon dioxide, six water and enough light: one glucose. Nearly every calorie you will ever eat was assembled by this reaction.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Photosynthesis"
+  },
+  {
+    "in": [
+      "glucose",
+      "glucose"
+    ],
+    "out": "starch",
+    "why": "Glucose chained head to tail for storage. Bond it the other way round instead and you get cellulose — the same sugar, and we cannot digest it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Starch"
+  },
+  {
+    "in": [
+      "glucose",
+      "nitrogen"
+    ],
+    "out": "amino_acid",
+    "why": "Carbon skeletons from sugar, nitrogen from the soil. Plants build all twenty; you can only build eleven, which is why the other nine are called essential.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Amino_acid"
+  },
+  {
+    "in": [
+      "amino_acid",
+      "sulfur"
+    ],
+    "out": "cysteine",
+    "why": "Only two of the twenty carry sulfur, and cysteine is the one that matters structurally — its sulfur can reach out and grab another.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cysteine"
+  },
+  {
+    "in": [
+      "amino_acid",
+      "amino_acid"
+    ],
+    "out": "dipeptide",
+    "why": "A condensation: the carboxyl of one meets the amino group of the other and a whole water molecule leaves. Left alone in water the bond would take 350 to 600 years to undo.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Peptide_bond"
+  },
+  {
+    "in": [
+      "dipeptide",
+      "amino_acid"
+    ],
+    "out": "polypeptide",
+    "why": "Keep adding and the order becomes information. A ribosome reads it off RNA at roughly twenty amino acids a second.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Peptide"
+  },
+  {
+    "in": [
+      "polypeptide"
+    ],
+    "verb": "wait",
+    "out": "protein",
+    "why": "The chain collapses into one specific shape, usually within a second, and the shape is decided entirely by the order of the links. Get it wrong and you have a prion.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Protein_folding"
+  },
+  {
+    "in": [
+      "cysteine",
+      "cysteine"
+    ],
+    "out": "disulfide",
+    "why": "Two sulfurs bond and staple distant parts of a chain together. Perming hair is breaking these and setting them again in a new position.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Disulfide"
+  },
+  {
+    "in": [
+      "protein",
+      "disulfide"
+    ],
+    "out": "keratin",
+    "why": "Hair, nail, horn, hoof, feather and the outer layer of your skin are the same protein family, cross-linked to different densities.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Keratin"
+  },
+  {
+    "in": [
+      "protein"
+    ],
+    "verb": "heat",
+    "out": "denatured_protein",
+    "why": "Heat shakes a folded protein apart and it tangles with its neighbours instead. That is cooking — an egg white going from clear to solid is this and nothing else.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Denaturation_(biochemistry)"
+  },
+  {
+    "in": [
+      "glucose",
+      "phosphorus"
+    ],
+    "out": "atp",
+    "why": "A sugar, a base and three phosphates. Snapping the last phosphate off releases the energy for almost everything you do, and you recycle your own body weight of it daily.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Adenosine_triphosphate"
+  },
+  {
+    "in": [
+      "atp",
+      "nitrogen"
+    ],
+    "out": "nucleotide",
+    "why": "Sugar, phosphate and a nitrogen-rich base. ATP is itself one of these — the cell uses the same part for energy and for information.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Nucleotide"
+  },
+  {
+    "in": [
+      "nucleotide",
+      "nucleotide"
+    ],
+    "out": "dna",
+    "why": "Phosphate bridges the sugars into a backbone and the bases pair across the middle. Two metres of it is folded into every cell you have.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA"
+  },
+  {
+    "in": [
+      "protein",
+      "olive_oil"
+    ],
+    "out": "membrane",
+    "why": "Fat tails will not tolerate water, so they turn inward and form a double sheet on their own. Proteins sit in it as doors and pumps.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cell_membrane"
+  },
+  {
+    "in": [
+      "membrane",
+      "dna"
+    ],
+    "out": "cell",
+    "why": "An inside, a set of instructions, and machinery to read them. Everything you have ever eaten was made of these.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cell_(biology)"
+  },
+  {
+    "in": [
+      "cell",
+      "cell"
+    ],
+    "out": "tissue",
+    "why": "Cells that stick to each other and specialise. Sticking together at all was the hard part — it took life about three billion years.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tissue_(biology)"
+  },
+  {
+    "in": [
+      "tissue",
+      "protein"
+    ],
+    "out": "muscle",
+    "why": "Two proteins, actin and myosin, ratcheting past one another. Every movement you have ever made is that, repeated.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Muscle"
+  },
+  {
+    "in": [
+      "muscle"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "why": "Meat is muscle, rested. Everything above this line — the cell, the protein, the amino acid, the carbon — was already in it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Meat"
+  },
+  {
+    "in": [
+      "protein",
+      "bone"
+    ],
+    "out": "collagen",
+    "why": "Three chains wound into a rope, and about a third of all the protein in you. It is what holds a body together rather than what makes it move.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Collagen"
+  },
+  {
+    "in": [
+      "collagen"
+    ],
+    "verb": "heat",
+    "out": "gelatin",
+    "why": "Long slow heat unwinds the triple helix into loose strands that grab water as they cool. This is why a good stock sets in the fridge.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Gelatin"
+  },
+  {
+    "in": [
+      "gelatin",
+      "broth"
+    ],
+    "out": "aspic",
+    "why": "Extra gelatin makes the set reliable rather than hopeful — useful when the bones were lean.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Aspic"
+  },
+  {
+    "in": [
+      "protein",
+      "atp"
+    ],
+    "out": "enzyme",
+    "why": "A pocket shaped to hold one molecule and strain it toward breaking. Nearly every step in this whole game is an enzyme doing its job.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Enzyme"
+  },
+  {
+    "in": [
+      "enzyme",
+      "grain"
+    ],
+    "out": "malt",
+    "why": "Malting is just letting the grain make its own enzymes. Add them directly and you skip the germination entirely — which is what industrial brewing does.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Malting"
+  },
+  {
+    "in": [
+      "protein",
+      "vinegar"
+    ],
+    "out": "curd",
+    "why": "Acid unfolds casein as surely as heat does, and the unfolded chains tangle and drop out of the liquid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Curdling"
+  },
+  {
+    "in": [
+      "nucleotide",
+      "phosphorus"
+    ],
+    "out": "dna",
+    "supported": true,
+    "why": "Phosphate is the bridge: it links the sugar of one nucleotide to the sugar of the next, and that backbone is what makes DNA a chain rather than a pile.",
+    "src": "https://en.wikipedia.org/wiki/Phosphodiester_bond"
+  },
+  {
+    "in": [
+      "dna"
+    ],
+    "verb": "cut",
+    "out": "nucleotide",
+    "supported": true,
+    "why": "Enzymes cut DNA back into its links. Restriction enzymes do it at specific sequences, which is the whole basis of genetic engineering.",
+    "src": "https://en.wikipedia.org/wiki/Restriction_enzyme"
+  },
+  {
+    "in": [
+      "protein",
+      "butter"
+    ],
+    "out": "membrane",
+    "supported": true,
+    "why": "Any lipid will form a bilayer. The tails are what refuse water, and it happens on its own the moment they are wet.",
+    "src": "https://en.wikipedia.org/wiki/Lipid_bilayer"
+  },
+  {
+    "in": [
+      "tissue"
+    ],
+    "verb": "cut",
+    "out": "cell",
+    "supported": true,
+    "why": "Dissociating tissue back into single cells is routine lab work — enzymes digest the matrix holding them together.",
+    "src": "https://en.wikipedia.org/wiki/Cell_culture"
+  },
+  {
+    "in": [
+      "cell",
+      "protein"
+    ],
+    "out": "tissue",
+    "supported": true,
+    "why": "Cells alone are a suspension. What makes tissue is the protein scaffold between them holding everyone in place.",
+    "src": "https://en.wikipedia.org/wiki/Extracellular_matrix"
+  },
+  {
+    "in": [
+      "tissue",
+      "atp"
+    ],
+    "out": "muscle",
+    "supported": true,
+    "why": "Muscle without ATP cannot let go. Rigor mortis is exactly that — the filaments locked because the energy to release them has run out.",
+    "src": "https://en.wikipedia.org/wiki/Rigor_mortis"
+  },
+  {
+    "in": [
+      "tissue",
+      "bone"
+    ],
+    "out": "collagen",
+    "supported": true,
+    "why": "Skin, tendon, cartilage and bone are all collagen with different things packed around it.",
+    "src": "https://en.wikipedia.org/wiki/Collagen"
+  },
+  {
+    "in": [
+      "collagen",
+      "water"
+    ],
+    "out": "gelatin",
+    "supported": true,
+    "why": "Hot water hydrolyses the triple helix apart. Cold water will not do it, which is why stock has to simmer.",
+    "src": "https://en.wikipedia.org/wiki/Gelatin"
+  },
+  {
+    "in": [
+      "yeast",
+      "protein"
+    ],
+    "out": "enzyme",
+    "supported": true,
+    "why": "Yeast is a chemical factory that leaks. Brewers and bakers have exploited its enzymes for millennia without knowing they existed.",
+    "src": "https://en.wikipedia.org/wiki/Enzyme"
+  },
+  {
+    "in": [
+      "starch",
+      "protein"
+    ],
+    "out": "dough",
+    "supported": true,
+    "why": "Dough is starch held in a protein net. Take the protein away and you have a paste that will not rise.",
+    "src": "https://en.wikipedia.org/wiki/Dough"
+  },
+  {
+    "in": [
+      "bone"
+    ],
+    "verb": "crush",
+    "out": "carbon",
+    "supported": true,
+    "why": "Bone char is carbon with the calcium left in. Sugar refineries used it for centuries to whiten syrup.",
+    "src": "https://en.wikipedia.org/wiki/Bone_char"
+  },
+  {
+    "in": [
+      "meadow",
+      "sun"
+    ],
+    "out": "oxygen",
+    "supported": true,
+    "why": "A hectare of growing plants releases several tonnes of oxygen a year, all of it split out of water.",
+    "src": "https://en.wikipedia.org/wiki/Photosynthesis"
+  },
+  {
+    "in": [
+      "steam",
+      "carbon"
+    ],
+    "out": "hydrogen",
+    "supported": true,
+    "why": "The same water gas reaction, run on pure carbon rather than charcoal. Most industrial hydrogen still comes from steam and a fossil carbon source.",
+    "src": "https://en.wikipedia.org/wiki/Steam_reforming"
+  },
+  {
+    "in": [
+      "legume"
+    ],
+    "verb": "wait",
+    "out": "nitrogen",
+    "supported": true,
+    "why": "When the legume dies the fixed nitrogen is released into the soil. Red clover can leave 50 to 200 pounds an acre behind.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation"
+  },
+  {
+    "in": [
+      "egg"
+    ],
+    "verb": "ferment",
+    "out": "sulfur",
+    "supported": true,
+    "why": "The smell of a rotten egg is hydrogen sulfide — bacteria stripping the sulfur out of the egg's own cysteine.",
+    "src": "https://en.wikipedia.org/wiki/Hydrogen_sulfide"
+  },
+  {
+    "in": [
+      "ash",
+      "bone"
+    ],
+    "out": "phosphorus",
+    "supported": true,
+    "why": "Bone ash is calcium phosphate. Ground and treated with acid it became the first artificial fertiliser.",
+    "src": "https://en.wikipedia.org/wiki/Bone_ash"
+  },
+  {
+    "in": [
+      "plant",
+      "root"
+    ],
+    "out": "legume",
+    "supported": true,
+    "why": "Legumes are just plants that struck a bargain: sugar down to the bacteria, fixed nitrogen back up.",
+    "src": "https://en.wikipedia.org/wiki/Legume"
+  },
+  {
+    "in": [
+      "fish"
+    ],
+    "verb": "cut",
+    "out": "bone",
+    "supported": true,
+    "why": "Fish bones are thin and give up their collagen in twenty minutes. Any longer and the stock turns bitter.",
+    "src": "https://en.wikipedia.org/wiki/Stock_(food)"
+  },
+  {
+    "in": [
+      "yeast",
+      "glucose"
+    ],
+    "out": "carbon_dioxide",
+    "supported": true,
+    "why": "Yeast eats sugar and breathes out carbon dioxide. Every risen loaf and every bubble in beer is this gas trying to escape.",
+    "src": "https://en.wikipedia.org/wiki/Fermentation"
+  },
+  {
+    "in": [
+      "starch",
+      "enzyme"
+    ],
+    "out": "glucose",
+    "supported": true,
+    "why": "Amylase cuts starch back into sugar. It is in your saliva — chew bread long enough and it turns sweet in your mouth.",
+    "src": "https://en.wikipedia.org/wiki/Amylase"
+  },
+  {
+    "in": [
+      "potato"
+    ],
+    "verb": "crush",
+    "out": "starch",
+    "supported": true,
+    "why": "Grate a potato into water and the starch settles out as a white sludge. Wash and dry it and you have pure starch.",
+    "src": "https://en.wikipedia.org/wiki/Starch"
+  },
+  {
+    "in": [
+      "protein",
+      "water"
+    ],
+    "out": "amino_acid",
+    "supported": true,
+    "why": "Digestion is hydrolysis: enzymes put a water molecule back into every peptide bond and take the chain apart link by link.",
+    "src": "https://en.wikipedia.org/wiki/Hydrolysis"
+  },
+  {
+    "in": [
+      "keratin"
+    ],
+    "verb": "crush",
+    "out": "cysteine",
+    "supported": true,
+    "why": "Industrial cysteine is still extracted from hair and feathers, because keratin is unusually rich in it.",
+    "src": "https://en.wikipedia.org/wiki/Cysteine"
+  },
+  {
+    "in": [
+      "polypeptide"
+    ],
+    "verb": "cut",
+    "out": "dipeptide",
+    "supported": true,
+    "why": "Proteases cut chains at specific points. Your stomach is doing this to everything you have eaten today.",
+    "src": "https://en.wikipedia.org/wiki/Protease"
+  },
+  {
+    "in": [
+      "dipeptide",
+      "dipeptide"
+    ],
+    "out": "polypeptide",
+    "supported": true,
+    "why": "Chains join to chains. Length is what turns a peptide into a protein, and the line between them is a matter of convention.",
+    "src": "https://en.wikipedia.org/wiki/Peptide"
+  },
+  {
+    "in": [
+      "polypeptide",
+      "disulfide"
+    ],
+    "out": "protein",
+    "supported": true,
+    "why": "Cross-links lock a fold in place. Proteins that have to survive outside a cell — like keratin and insulin — are full of them.",
+    "src": "https://en.wikipedia.org/wiki/Protein"
+  },
+  {
+    "in": [
+      "cysteine",
+      "oxygen"
+    ],
+    "out": "disulfide",
+    "supported": true,
+    "why": "Two cysteines oxidise and bond, losing two hydrogens. It happens on contact with air, which is why cut hair smells the way it does when burnt.",
+    "src": "https://en.wikipedia.org/wiki/Disulfide"
+  },
+  {
+    "in": [
+      "protein",
+      "sulfur"
+    ],
+    "out": "keratin",
+    "supported": true,
+    "why": "The more sulfur cross-links, the harder the keratin. Hair is soft, hoof is hard, and the difference is density of disulfide bonds.",
+    "src": "https://en.wikipedia.org/wiki/Keratin"
+  },
+  {
+    "in": [
+      "protein",
+      "salt"
+    ],
+    "out": "denatured_protein",
+    "supported": true,
+    "why": "Salt unfolds protein as surely as heat does. Curing, brining and salting fish are all denaturation without a fire.",
+    "src": "https://en.wikipedia.org/wiki/Denaturation_(biochemistry)"
+  },
+  {
+    "in": [
+      "glucose",
+      "oxygen"
+    ],
+    "out": "atp",
+    "supported": true,
+    "why": "Respiration: burn one glucose with oxygen and you get about 30 ATP. Fermentation without oxygen gets two, which is why you breathe.",
+    "src": "https://en.wikipedia.org/wiki/Cellular_respiration"
+  },
+  {
+    "in": [
+      "yoghurt",
+      "kimchi_paste"
+    ],
+    "out": "garlic_yoghurt",
+    "supported": true,
+    "why": "Any raw allium works. The yoghurt's acid and fat blunt the harshness without cooking it away.",
+    "src": "https://en.wikipedia.org/wiki/Tzatziki"
+  },
+  {
+    "in": [
+      "boiled_egg",
+      "herb_oil"
+    ],
+    "out": "egg_mayo",
+    "supported": true,
+    "why": "Herb oil emulsifies as readily as plain oil and brings its own seasoning with it.",
+    "src": "https://en.wikipedia.org/wiki/Egg_salad"
   }
 ]

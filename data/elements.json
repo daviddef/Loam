@@ -1596,7 +1596,8 @@
       "dish"
     ],
     "fact": "Oxygen through the staves, vanillin out of the oak.",
-    "terminal": true
+    "terminal": true,
+    "soleRoute": true
   },
   {
     "id": "clean_hands",
@@ -2033,5 +2034,296 @@
       "animal"
     ],
     "fact": "Domesticated from wild bezoars; browses scrub and rock where cattle starve."
+  },
+  {
+    "id": "carbon",
+    "name": "Carbon",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Four bonds in every direction. Every molecule life is built from hangs off it."
+  },
+  {
+    "id": "oxygen",
+    "name": "Oxygen",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Most of your mass, and all of it came out of split water."
+  },
+  {
+    "id": "hydrogen",
+    "name": "Hydrogen",
+    "emoji": "💠",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "The first element, made in the first minutes of the universe."
+  },
+  {
+    "id": "nitrogen",
+    "name": "Nitrogen",
+    "emoji": "🟦",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Four fifths of the air, and locked behind the strongest bond in it."
+  },
+  {
+    "id": "sulfur",
+    "name": "Sulfur",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Yellow, volcanic, and the reason two amino acids can staple themselves together."
+  },
+  {
+    "id": "phosphorus",
+    "name": "Phosphorus",
+    "emoji": "🔆",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Carries the energy and holds DNA together. The scarcest of the six."
+  },
+  {
+    "id": "legume",
+    "name": "Legume",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A plant that hosts bacteria in its roots and pays them in sugar."
+  },
+  {
+    "id": "bone",
+    "name": "Bone",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Collagen for spring, calcium phosphate for stiffness. Neither works alone."
+  },
+  {
+    "id": "carbon_dioxide",
+    "name": "Carbon Dioxide",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "What burning makes and what leaves eat."
+  },
+  {
+    "id": "glucose",
+    "name": "Glucose",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "What photosynthesis actually produces. Everything else is built from it."
+  },
+  {
+    "id": "starch",
+    "name": "Starch",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Thousands of glucose units chained for storage."
+  },
+  {
+    "id": "amino_acid",
+    "name": "Amino Acid",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Twenty of them, in every living thing, all the same handedness."
+  },
+  {
+    "id": "cysteine",
+    "name": "Cysteine",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The amino acid carrying sulfur. It can bond to another of its own kind."
+  },
+  {
+    "id": "dipeptide",
+    "name": "Dipeptide",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Two amino acids joined, and one water molecule gone."
+  },
+  {
+    "id": "polypeptide",
+    "name": "Polypeptide",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A chain in a specific order, written in DNA and read by a ribosome."
+  },
+  {
+    "id": "protein",
+    "name": "Protein",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A chain folded into one shape. The shape is the function."
+  },
+  {
+    "id": "disulfide",
+    "name": "Disulfide Bond",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Two cysteines, cross-linked. What makes hair hair."
+  },
+  {
+    "id": "keratin",
+    "name": "Keratin",
+    "emoji": "💅",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Hair, nail, horn and hoof — all the same protein, differently packed."
+  },
+  {
+    "id": "denatured_protein",
+    "name": "Denatured Protein",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Unfolded, tangled, set. This is what cooking is.",
+    "terminal": true
+  },
+  {
+    "id": "atp",
+    "name": "ATP",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The cell spends its own body weight in this every day."
+  },
+  {
+    "id": "nucleotide",
+    "name": "Nucleotide",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Sugar, phosphate and a base. Four of them spell everything alive."
+  },
+  {
+    "id": "dna",
+    "name": "DNA",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The instructions, in four letters, for building the thing holding it."
+  },
+  {
+    "id": "membrane",
+    "name": "Membrane",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Two layers of fat, tails inward. Life needs an inside."
+  },
+  {
+    "id": "cell",
+    "name": "Cell",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The smallest thing that is unambiguously alive."
+  },
+  {
+    "id": "tissue",
+    "name": "Tissue",
+    "emoji": "🩹",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Cells of one kind, doing one job together."
+  },
+  {
+    "id": "muscle",
+    "name": "Muscle",
+    "emoji": "💪",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Protein filaments ratcheting past each other."
+  },
+  {
+    "id": "collagen",
+    "name": "Collagen",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A third of all the protein in you, wound in triple helices."
+  },
+  {
+    "id": "gelatin",
+    "name": "Gelatin",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Collagen unwound by heat, and it sets as it cools."
+  },
+  {
+    "id": "enzyme",
+    "name": "Enzyme",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A protein with a pocket shaped to hold one particular molecule."
   }
 ]
