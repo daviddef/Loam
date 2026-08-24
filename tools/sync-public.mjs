@@ -30,6 +30,7 @@ const PUBLIC = [
   'data/sources.json',
   'data/art.json',
   'data/palette.json',
+  'data/scale.json',
   'data/vendor/README.md',
   'data/vendor/munsell-real.dat',
   'prototype/template.html',
@@ -44,6 +45,7 @@ const PUBLIC = [
   'tools/redundancy.mjs',
   'tools/palette.mjs',
   'tools/art.mjs',
+  'tools/scale.mjs',
   'tools/contact-sheet.mjs',
   'tools/sync-public.mjs',
 ];
@@ -82,12 +84,16 @@ function walk(dir, base = '') {
 }
 const all = walk('');
 const unclassified = all.filter(f => !PUBLIC.includes(f) && !NEVER.some(re => re.test(f)));
+// An unclassified file is a decision that has not been made yet, so it stops
+// the sync rather than printing a warning nobody reads. Warning-and-continuing
+// is how a private file eventually ships.
 if (unclassified.length) {
-  console.log(`  ${unclassified.length} file(s) on neither list — decide before publishing:`);
-  unclassified.forEach(f => console.log(`    ${f}`));
+  console.error(`  ${unclassified.length} file(s) on neither list — add each to PUBLIC or NEVER:`);
+  unclassified.forEach(f => console.error(`    ${f}`));
+  process.exit(1);
 }
 
-if (checkOnly) { console.log(`\n  ${PUBLIC.length} files would be published`); process.exit(unclassified.length ? 1 : 0); }
+if (checkOnly) { console.log(`  ${PUBLIC.length} files would be published`); process.exit(0); }
 
 let copied = 0;
 for (const f of PUBLIC) {
