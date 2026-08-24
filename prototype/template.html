@@ -117,6 +117,15 @@
     position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
     border:2.5px solid var(--orange);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
   }
+  @keyframes expel{
+    0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
+    22%{transform:translate(-50%,-50%) scale(1.15);opacity:1}
+    100%{transform:translate(calc(-50% + 46px),calc(-50% - 62px)) scale(.7);opacity:0}
+  }
+  .drop{
+    position:absolute;font-size:20px;pointer-events:none;z-index:5;
+    animation:expel 1.05s cubic-bezier(.25,.6,.4,1) forwards;
+  }
   @keyframes pulse{0%,100%{transform:scale(1)}45%{transform:scale(1.07)}}
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
@@ -152,7 +161,13 @@
     font:700 11px ui-rounded,Avenir;color:var(--ink-soft);
   }
   .verb .e{font-size:21px;line-height:1.1}
-  .verb.locked{opacity:.3}
+  .verb.locked{opacity:.42;cursor:help}
+  .verb.locked .e{filter:grayscale(1)}
+  .verb .lk{position:absolute;top:2px;right:5px;font-size:9px;font-style:normal;opacity:.9}
+  .verb{position:relative}
+  .prow.loop{opacity:.55}
+  @keyframes leave{to{transform:scale(.55);opacity:0}}
+  .chip.board.leaving{animation:leave .16s ease forwards;pointer-events:none}
   .verb.target{border-color:var(--teal);border-style:solid;background:#E8F4F3;color:var(--teal);transform:scale(1.07)}
   /* discovery card — one discreet line; a click opens it and keeps it */
   #card{
@@ -325,6 +340,59 @@
   .fam-animal{--fam:var(--fam-animal)} .fam-microbe{--fam:var(--fam-microbe)}
   .fam-food{--fam:var(--fam-food)}     .fam-myth{--fam:var(--fam-myth)}
 
+  /* settings */
+  .setrow{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+  .setrow button{
+    display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;
+    padding:9px 12px;border-radius:11px;background:#fff;border:1.5px solid var(--line);cursor:pointer;
+  }
+  .setrow button b{font:700 13.5px ui-rounded,Avenir;color:var(--ink)}
+  .setrow button i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
+  .setrow button.on{border-color:var(--orange);background:#FFF4EC}
+  .setrow button.on b{color:var(--brick)}
+
+  /* depth: hide the technical layer for younger readers */
+  :root[data-depth="kid"] .formula,
+  :root[data-depth="kid"] .molbox,
+  :root[data-depth="kid"] ul.tree.bed .cat,
+  :root[data-depth="kid"] .atom .z,
+  :root[data-depth="kid"] .pnums,
+  :root[data-depth="kid"] .stepbody .src{display:none}
+  :root[data-depth="kid"] .why{font-size:14px;line-height:1.55}
+  :root[data-depth="kid"] .stepbody p{font-size:13.5px}
+  :root[data-depth="scientist"] .pfrom{display:block}
+
+  /* tone: straight keeps everything, just stops shouting */
+  :root[data-tone="straight"] .ring,
+  :root[data-tone="straight"] .drop{display:none}
+  :root[data-tone="straight"] .chip.folk{background:var(--card);border-color:var(--line)}
+  #settings{font-size:14px;line-height:1}
+  /* the chain as citation cards */
+  .modes{display:flex;gap:5px;margin:0 0 10px}
+  .modes button{
+    font:600 11.5px ui-rounded,Avenir;padding:5px 11px;border-radius:99px;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);color:var(--ink-soft);
+  }
+  .modes button.on{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+  .steps{display:flex;flex-direction:column;gap:7px}
+  .step{display:flex;gap:9px;align-items:flex-start}
+  .stepno{
+    font:800 10px/1 ui-rounded,Avenir;color:var(--ink-soft);background:var(--card);
+    border:1.5px solid var(--line);border-radius:99px;
+    min-width:20px;height:20px;line-height:17px;text-align:center;flex:none;margin-top:7px;
+  }
+  .stepbody{
+    flex:1;min-width:0;background:#fff;border:1.5px solid var(--line);
+    border-radius:11px;padding:8px 10px;
+  }
+  .stepgest{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+  .stepgest .g{
+    display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px;
+    background:var(--card);border:1px solid var(--line);font:600 11.5px ui-rounded,Avenir;cursor:pointer;
+  }
+  .stepgest em{font-style:normal;color:var(--ink-soft);font:700 10.5px ui-rounded,Avenir}
+  .stepbody p{margin:0 0 5px;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+  .stepbody .src{margin:0;font-size:10.5px}
   /* guess before the reveal */
   .guess{text-align:center;padding:14px 6px 8px}
   .guess .big{font-size:44px;line-height:1;margin-bottom:8px}
@@ -508,6 +576,7 @@
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button class="count" id="count" title="Open your codex"></button>
   <button id="shelfToggle">Shelf</button>
+  <button id="settings" title="Settings">⚙</button>
   <button id="nudge">Nudge</button>
   <button id="reset">Reset</button>
 </header>
@@ -595,6 +664,20 @@ function secretsFor(id, ul) {
   return n;
 }
 
+// Two independent settings, deliberately not one "difficulty" dial.
+//   depth  — how much explanation, and whether formulas and tiers show
+//   tone   — how loud the game is about being fun
+// Depth costs nothing to build because the data already carries both registers:
+// element.fact is the short plain line, recipe.why is the mechanism.
+const prefs = { depth: 'curious', tone: 'playful' };
+try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
+const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
+const applyPrefs = () => {
+  document.documentElement.dataset.depth = prefs.depth;
+  document.documentElement.dataset.tone = prefs.tone;
+};
+applyPrefs();
+
 let shelfQuery = '';
 let readyAll = false;
 const shelfShut = new Set();
@@ -604,8 +687,18 @@ let shelfAutoFolded = false;
 // the first interaction. Warm and short; this genre lives on the feel of the
 // drop, and silence is the commonest way to get that wrong. ----
 let ac = null;
-const audioOn = () => { try { ac ||= new (window.AudioContext || window.webkitAudioContext)(); } catch {} return ac; };
+let acIdle = 0;
+const audioOn = () => {
+  try {
+    ac ||= new (window.AudioContext || window.webkitAudioContext)();
+    if (ac.state === 'suspended') ac.resume();
+    clearTimeout(acIdle);
+    acIdle = setTimeout(() => { try { ac?.suspend(); } catch {} }, 4000);
+  } catch {}
+  return ac;
+};
 function note(freq, when, dur, gain = 0.07, type = 'sine') {
+  if (prefs.tone === 'straight') return;
   const c = audioOn(); if (!c) return;
   const o = c.createOscillator(), g = c.createGain();
   o.type = type; o.frequency.value = freq;
@@ -617,6 +710,47 @@ function note(freq, when, dur, gain = 0.07, type = 'sine') {
   o.start(t); o.stop(t + dur + 0.02);
 }
 const buzz = (ms) => { try { navigator.vibrate?.(ms); } catch {} };
+
+// ---- the other half of the brief ----
+// The education side writes itself; the funny side has to be deliberate. The
+// rule: never joke about a fact, only about the player's situation. Dry and
+// observational, not zany — and rare enough that it stays funny.
+const DUDS = [
+  'Nothing. Not even a smell.',
+  'They sat next to each other politely and did nothing.',
+  'No. But an admirable attempt.',
+  'Chemistry declines.',
+  'That is two things touching, which is not the same as a reaction.',
+  'Somewhere a scientist felt a small chill and did not know why.',
+  'A firm no from the universe.',
+  'You have invented a pile.',
+  'Physics allows this. Chemistry does not.',
+  'They are simply not that interested in each other.',
+  'A bold pairing. An unsuccessful one.',
+  'The laws of nature remain, disappointingly, in force.',
+];
+let dudCount = 0;
+function dudLine() {
+  dudCount++;
+  // Say nothing most of the time. A quip on every failure stops being funny by
+  // about the fourth one.
+  if (prefs.tone === 'straight' || dudCount % 4 !== 0) return;
+  toast(DUDS[Math.floor(Math.random() * DUDS.length)]);
+}
+
+// Some of the best jokes in the game are simply true, so mark them and let the
+// game point at one occasionally rather than inventing gags next to the facts.
+const ABSURD = ['beeswax','scarecrow','chicken','aurochs','breakfast','manna','golden_egg',
+  'penicillin','fish_and_chips','spaghetti_meatballs','cornucopia','stone_soup','sausage','keratin'];
+
+const MILESTONES = {
+  10:  'Ten things. You have out-invented most of the Bronze Age.',
+  25:  'Twenty-five. Agriculture is now technically within reach.',
+  50:  'Fifty. You could feed a small village, badly.',
+  100: 'A hundred things, all of them true.',
+  150: 'A hundred and fifty. You have gone past food and into chemistry.',
+  200: 'Two hundred. At this point you are just showing off.',
+};
 const sfx = {
   discover() { note(523.25, 0, .18); note(783.99, .06, .26); buzz(14); },
   folklore() { note(587.33, 0, .16, .06, 'triangle'); note(880, .07, .3, .05, 'triangle'); buzz([8, 40, 8]); },
@@ -728,9 +862,17 @@ function renderShelf() {
   });
   document.getElementById('live').textContent = liveCount ? `${liveCount} still have something to give` : '';
 
-  document.getElementById('tray').innerHTML = verbs.map(v =>
-    `<div class="verb${ul.has(v.id) ? '' : ' locked'}" data-verb="${v.id}">
-       <span class="e">${v.emoji}</span>${ul.has(v.id) ? v.name : 'Locked'}</div>`).join('');
+  // A tool that only says "Locked" teaches nothing. Name it, and say plainly
+  // what opens it — the answer is always something you can go and make.
+  document.getElementById('tray').innerHTML = verbs.map(v => {
+    const open = ul.has(v.id);
+    const key = v.unlockedBy ? byId[v.unlockedBy] : null;
+    return `<div class="verb${open ? '' : ' locked'}" data-verb="${v.id}"
+              ${open ? '' : `data-needs="${v.unlockedBy}"`}
+              title="${open ? v.blurb : `Unlocks when you make ${nameOf(key)}`}">
+       <span class="e">${v.emoji}</span>${v.name}
+       ${open ? '' : `<i class="lk">${key ? key.emoji : '🔒'}</i>`}</div>`;
+  }).join('');
 
   document.getElementById('count').textContent = `${found.size} / ${elements.length}`;
   const g = byId[GOAL];
@@ -761,10 +903,19 @@ function toWorld(sx, sy) {
   const b = boardBox();
   return [(sx - b.left - view.x) / view.k, (sy - b.top - view.y) / view.k];
 }
-const chipCentre = (el) => [
-  (parseFloat(el.style.left) || 0) + el.offsetWidth / 2,
-  (parseFloat(el.style.top) || 0) + el.offsetHeight / 2,
-];
+// offsetWidth forces layout. Reading it for every chip on every pointer move
+// was the single most expensive thing on the canvas, so measure once per chip
+// and keep it — chip size never changes after it is built.
+const sizeCache = new WeakMap();
+function chipSize(el) {
+  let s = sizeCache.get(el);
+  if (!s) { s = [el.offsetWidth, el.offsetHeight]; if (s[0]) sizeCache.set(el, s); }
+  return s;
+}
+const chipCentre = (el) => {
+  const [w, h] = chipSize(el);
+  return [(parseFloat(el.style.left) || 0) + w / 2, (parseFloat(el.style.top) || 0) + h / 2];
+};
 
 // Nothing you have made is ever destroyed by a tap. Tapping folds the branch
 // below a chip out of sight and puts a count on it; tapping again brings it
@@ -781,6 +932,33 @@ function descendantsOf(chip, acc = new Set()) {
   }
   return acc;
 }
+// One tap folds the branch. Two taps take the chip off the bench — and that is
+// only ever removing a chip, never a discovery: everything stays in the codex
+// and can be brought back from the shelf.
+let lastChipTap = { el: null, t: 0 };
+function chipTap(chip) {
+  const now = Date.now();
+  if (lastChipTap.el === chip && now - lastChipTap.t < 320) {
+    lastChipTap = { el: null, t: 0 };
+    if (chip.classList.contains('folded')) toggleBranch(chip);   // undo the fold the first tap did
+    removeChip(chip);
+    return;
+  }
+  lastChipTap = { el: chip, t: now };
+  toggleBranch(chip);
+}
+
+function removeChip(chip) {
+  // Orphaned links would draw to nothing, so drop them with it.
+  for (let i = links.length - 1; i >= 0; i--) {
+    const l = links[i];
+    if (l.a === chip || l.b === chip || l.out === chip) links.splice(i, 1);
+  }
+  chip.classList.add('leaving');
+  sfx.pick();
+  setTimeout(() => { chip.remove(); drawLinks(); }, 160);
+}
+
 function toggleBranch(chip) {
   const kids = descendantsOf(chip);
   if (!kids.size) {                                   // nothing below: just acknowledge
@@ -797,7 +975,12 @@ function toggleBranch(chip) {
 
 // Connections persist, so the canvas becomes a diagram of what you built
 // rather than a scratchpad that forgets.
+let linkFrame = 0;
 function drawLinks() {
+  if (linkFrame) return;                              // at most one redraw a frame
+  linkFrame = requestAnimationFrame(() => { linkFrame = 0; drawLinksNow(); });
+}
+function drawLinksNow() {
   const parts = [];
   for (const l of links) {
     if (!l.out.isConnected || l.out.classList.contains('hidden')) continue;
@@ -959,7 +1142,13 @@ function freeSpot(w, h, near) {
   return best;
 }
 
+const MAX_CHIPS = 140;
 function spawn(id, x, y, near) {
+  // Whatever else happens, the bench must not be able to grow without limit.
+  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
+    toast('The bench is full — tidy it, or double-tap a few things to clear space');
+    return world.querySelector('.chip.board');
+  }
   const e = byId[id];
   const el = document.createElement('div');
   const fam = familyOf(e);
@@ -1004,7 +1193,7 @@ function showCard(r, e) {
       <span class="chev">▾</span>
     </div>
     <div class="more">
-      <p class="why">${r.why}</p>
+      <p class="why">${prefs.depth === 'kid' ? e.fact : r.why}</p>
       <div class="cfoot">
         ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
         <button class="ghost" data-trace="${e.id}">Trace it</button>
@@ -1058,7 +1247,7 @@ board.addEventListener('pointerup', ev => {
   const { chip, moved } = drag; drag = null;
   chip.classList.remove('drag');
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
-  if (!moved) { toggleBranch(chip); return; }          // tap folds the branch below
+  if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   const t = hit(ev.clientX, ev.clientY, chip);
   if (!t) return;
   if (t.dataset.verb) applyProcess(chip, t);
@@ -1090,9 +1279,25 @@ function hit(x, y, exclude) {
 }
 
 function resolve(r, chips, x, y) {
-  if (!r) { sfx.nope(); chips.forEach(c => { c.classList.add('nope'); setTimeout(() => c.classList.remove('nope'), 280); }); return; }
+  if (!r) { sfx.nope(); dudLine(); chips.forEach(c => { c.classList.add('nope'); setTimeout(() => c.classList.remove('nope'), 280); }); return; }
   // Inputs stay put and the result is linked to them, so the canvas accumulates
   // into a diagram of what you built instead of forgetting each step.
+  // Parents stay on the bench so the canvas builds into a diagram — but that
+  // means the same two chips could be merged again and again, and each repeat
+  // spawned another copy. Twenty Seedlings later the board is unusable. A given
+  // pair reacts once; ask again and it just shows you what it already made.
+  const already = links.find(l =>
+    (l.a === chips[0] && l.b === (chips[1] ?? null)) ||
+    (l.a === (chips[1] ?? null) && l.b === chips[0]));
+  if (already && already.out.isConnected) {
+    already.out.classList.remove('hidden');
+    already.out.classList.add('pulse');
+    setTimeout(() => already.out.classList.remove('pulse'), 400);
+    sfx.pick();
+    toast(`These two already made ${nameOf(byId[already.out.dataset.id])}`);
+    return;
+  }
+
   // The dragged parent is sitting on top of the other one. Ease them apart so
   // the diagram stays readable once the link is drawn.
   if (chips.length === 2) {
@@ -1120,6 +1325,20 @@ function resolve(r, chips, x, y) {
     world.appendChild(ring);
     setTimeout(() => ring.remove(), 620);
   }
+  // A condensation reaction physically expels a water molecule. Showing it
+  // leave is both accurate and the clearest way to say why a residue in a
+  // chain weighs less than the free acid it came from.
+  if (r.releases === 'water' && at.length) {
+    const cx = at.reduce((a, p) => a + p[0], 0) / at.length;
+    const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.textContent = '💧';
+    drop.style.left = cx + 'px'; drop.style.top = cy + 'px';
+    world.appendChild(drop);
+    setTimeout(() => drop.remove(), 1100);
+    toast('A water molecule leaves — that is what condensation means');
+  }
   const el = spawn(r.out, null, null, chips);
   links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
   drawLinks();
@@ -1132,6 +1351,7 @@ function resolve(r, chips, x, y) {
     // later working, and read it as the game cheating. Unlocks genuinely do
     // change what is possible — so say so out loud rather than letting them
     // rediscover it by accident.
+    if (MILESTONES[found.size]) toast(MILESTONES[found.size]);
     const unlocked = verbs.filter(v => v.unlockedBy === r.out);
     if (unlocked.length) {
       // A tool unlock is the bigger news; don't let the follow-up overwrite it.
@@ -1147,6 +1367,8 @@ function resolve(r, chips, x, y) {
   }
   if (!seen.has(r.out)) {
     seen.add(r.out); save();
+    if (ABSURD.includes(r.out) && prefs.tone === 'playful')
+      setTimeout(() => toast('This one is completely true, which is the funny part'), 900);
     (byId[r.out].shelf === 'folklore' ? sfx.folklore : sfx.discover)();
     showCard(r, byId[r.out]);
   } else { sfx.pick(); el.classList.add('pop'); }
@@ -1187,13 +1409,24 @@ function startCooking(chip, r, verb, ms) {
   const v = verbs.find(x => x.id === verb);
   const job = { chip, r, verb, started: performance.now(), ms, done: 0 };
   cooking.add(job);
+  pumpCooking();
   chip.classList.add('cooking');
   chip.dataset.verbLabel = v.emoji;
   updateWaiting();
   toast(`${v.emoji} ${chip.textContent.trim()} is ${verb === 'wait' ? 'resting' : 'fermenting'} — keep playing`);
 }
 
+// Driven by a timer, not an animation frame. A progress ring does not need
+// sixty updates a second, and frame callbacks are throttled or suspended in a
+// background tab — which would leave something resting forever.
+let cookTimer = 0;
+function pumpCooking() {
+  if (cookTimer || !cooking.size) return;
+  cookTimer = setInterval(() => tickCooking(performance.now()), 200);
+}
+function stopCooking() { clearInterval(cookTimer); cookTimer = 0; }
 function tickCooking(now) {
+  if (!cooking.size) return stopCooking();
   for (const job of [...cooking]) {
     if (!job.chip.isConnected) { cooking.delete(job); continue; }
     const warm = heatNearby(job.chip);
@@ -1214,9 +1447,8 @@ function tickCooking(now) {
       updateWaiting();
     }
   }
-  requestAnimationFrame(tickCooking);
+  if (!cooking.size) stopCooking();
 }
-requestAnimationFrame(tickCooking);
 
 function updateWaiting() {
   const el = document.getElementById('waiting');
@@ -1280,7 +1512,15 @@ function leafTally(id) {
 // anything past AUTO_DEPTH starts folded and opens on tap.
 const AUTO_DEPTH = 4;
 function subtreeSize(id) { return expanded(id).steps + 1; }
-function treeHTML(id, depth) {
+function treeHTML(id, depth, seen = new Set()) {
+  // The recipe graph deliberately contains loops — chicken and egg really do
+  // make each other. Without a guard this recursed until the tab died.
+  if (seen.has(id) || depth > 40) {
+    const e2 = byId[id];
+    return `<li><div class="prow loop"><span class="pe">${e2.emoji}</span>` +
+           `<span class="pn">${nameOf(e2)}</span><span class="pv">already above</span></div></li>`;
+  }
+  seen = new Set(seen); seen.add(id);
   const r = bestRecipe.get(id), e = byId[id];
   const v = r && r.verb ? verbs.find(x => x.id === r.verb) : null;
   const hidden = r && depth >= AUTO_DEPTH;
@@ -1471,6 +1711,7 @@ function showEntry(id) {
 // at d = 0.69. So the chain does not simply unroll — you commit first, once,
 // the first time you trace a given thing.
 const guessed = new Set();
+let provMode = 'cards';
 function askFirst(id, then) {
   const x = expanded(id);
   const truth = x.leaves;
@@ -1502,8 +1743,46 @@ function askFirst(id, then) {
 }
 let lastGuess = null;
 
-function showProvenance(id) {
-  if (!guessed.has(id) && expanded(id).leaves > 3) return askFirst(id, () => showProvenance(id));
+// The chain, as a run of citation cards. Peer-reviewed finding: node-link
+// diagrams fail the consumer persona — Obsidian's graph view is the popular
+// proof, and Factorio hit this exact problem and built cards instead. So cards
+// are the default and the tree is kept for whoever wants it.
+// The thing no other provenance view has: every card carries its source.
+function orderedSteps(id) {
+  const need = new Set();
+  (function walk(x) {
+    const r = bestRecipe.get(x);
+    if (!r || need.has(r)) return;
+    need.add(r);
+    r.in.forEach(walk);
+  })(id);
+  const have = new Set(STARTERS);
+  const out = [];
+  const left = [...need];
+  while (left.length) {
+    const k = left.findIndex(r => r.in.every(i => have.has(i)));
+    if (k === -1) break;
+    const [r] = left.splice(k, 1);
+    have.add(r.out); out.push(r);
+  }
+  return out;
+}
+function stepCard(r, i) {
+  const v = r.verb ? verbs.find(x => x.id === r.verb) : null;
+  const bit = (id) => `<span class="g" data-entry="${id}">${byId[id].emoji} ${nameOf(byId[id])}</span>`;
+  return `<div class="step">
+    <div class="stepno">${i + 1}</div>
+    <div class="stepbody">
+      <div class="stepgest">${bit(r.in[0])}${v ? `<em>${v.emoji} ${v.name}</em>` : `<em>+</em>${bit(r.in[1])}`}
+        <span class="arw">→</span>${bit(r.out)}</div>
+      <p>${r.why}</p>
+      ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
+    </div></div>`;
+}
+
+function showProvenance(id, mode) {
+  if (!guessed.has(id) && expanded(id).leaves > 3) return askFirst(id, () => showProvenance(id, mode));
+  provMode = mode || provMode;
   const x = expanded(id), d = distinctOf(id).size, t = leafTally(id), e = byId[id];
   document.getElementById('sheetBody').innerHTML =
     `<div class="phead"><div class="big">${e.emoji}</div><h3>${e.name}</h3>
@@ -1513,7 +1792,13 @@ function showProvenance(id) {
          : `You guessed ${lastGuess.n}. It takes ${lastGuess.truth}.`}</div>` : ''}
        <div class="pfrom">Bottoms out in ${[...t].sort((a,b)=>b[1]-a[1])
          .map(([k,n]) => `${byId[k].emoji} ${byId[k].name} ×${n}`).join(' · ')}</div></div>
-     <ul class="tree">${treeHTML(id, 0)}</ul>
+     <div class="modes">
+       <button class="${provMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
+       <button class="${provMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
+     </div>
+     ${provMode === 'tree'
+        ? `<ul class="tree">${treeHTML(id, 0)}</ul>`
+        : `<div class="steps">${orderedSteps(id).map(stepCard).join('')}</div>`}
      ${bedrockHTML(t)}`;
   openSheet('Where it came from');
   lastGuess = null;
@@ -1571,6 +1856,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   }
   if (ev.target.id === 'sheet' || ev.target.id === 'sheetClose')
     ev.currentTarget.classList.remove('on');
+  const md = ev.target.closest('[data-mode]');
+  if (md) return showProvenance(md.dataset.for, md.dataset.mode);
   const en = ev.target.closest('[data-entry]');
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
@@ -1580,13 +1867,61 @@ document.getElementById('sheet').addEventListener('click', ev => {
   const at = ev.target.closest('[data-atom]');
   if (at) showAtom(at.dataset.atom);
 });
+// A backgrounded tab should cost nothing at all.
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    stopCooking();
+    try { ac?.suspend(); } catch {}
+  } else {
+    // Credit the time that passed while we were away, then carry on.
+    const now = performance.now();
+    for (const job of cooking) job.last = now;
+    pumpCooking();
+  }
+});
+
 document.getElementById('count').addEventListener('click', () => showCodex());
+
+function showSettings() {
+  const row = (key, opts) => `<div class="setrow">` + opts.map(([v, label, note]) =>
+    `<button class="${prefs[key] === v ? 'on' : ''}" data-pref="${key}" data-val="${v}">
+       <b>${label}</b><i>${note}</i></button>`).join('') + `</div>`;
+  document.getElementById('sheetBody').innerHTML = `
+    <h2>How much explaining</h2>
+    ${row('depth', [
+      ['kid', 'Kid', 'One plain line. No formulas.'],
+      ['curious', 'Curious', 'The mechanism, and a source.'],
+      ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.'],
+    ])}
+    <h2>How loud</h2>
+    ${row('tone', [
+      ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
+      ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
+    ])}
+    <p class="hint2">Both save automatically. Neither changes a single fact —
+       only how much of it you are shown at once.</p>`;
+  openSheet('Settings');
+  document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {
+    prefs[b.dataset.pref] = b.dataset.val;
+    savePrefs(); applyPrefs(); renderShelf(); showSettings();
+  });
+}
+document.getElementById('settings').addEventListener('click', showSettings);
 
 // ---------- shelf + buttons ----------
 // Tapping a shelf chip drops it on the bench; dragging one carries it to a spot
 // you choose. Both work, because on a phone a tap is quicker and on a desktop a
 // drag is what the hand expects.
 let shelfDrag = null;
+// Tapping a locked tool explains itself rather than doing nothing.
+document.getElementById('tray').addEventListener('click', ev => {
+  const v = ev.target.closest('.verb.locked');
+  if (!v) return;
+  const key = byId[v.dataset.needs];
+  sfx.nope();
+  toast(`${key.emoji} Make ${nameOf(key)} first, and this tool opens`);
+});
+
 document.getElementById('aside').addEventListener('pointerdown', ev => {
   const c = ev.target.closest('[data-spawn]');
   if (!c) return;

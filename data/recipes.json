@@ -3984,7 +3984,8 @@
     "out": "starch",
     "why": "Glucose chained head to tail for storage. Bond it the other way round instead and you get cellulose — the same sugar, and we cannot digest it.",
     "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Starch"
+    "src": "https://en.wikipedia.org/wiki/Starch",
+    "releases": "water"
   },
   {
     "in": [
@@ -4014,7 +4015,8 @@
     "out": "dipeptide",
     "why": "A condensation: the carboxyl of one meets the amino group of the other and a whole water molecule leaves. Left alone in water the bond would take 350 to 600 years to undo.",
     "verified": true,
-    "src": "https://en.wikipedia.org/wiki/Peptide_bond"
+    "src": "https://en.wikipedia.org/wiki/Peptide_bond",
+    "releases": "water"
   },
   {
     "in": [
@@ -4024,7 +4026,8 @@
     "out": "polypeptide",
     "why": "Keep adding and the order becomes information. A ribosome reads it off RNA at roughly twenty amino acids a second.",
     "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Peptide"
+    "src": "https://en.wikipedia.org/wiki/Peptide",
+    "releases": "water"
   },
   {
     "in": [
@@ -4454,7 +4457,8 @@
     "out": "polypeptide",
     "supported": true,
     "why": "Chains join to chains. Length is what turns a peptide into a protein, and the line between them is a matter of convention.",
-    "src": "https://en.wikipedia.org/wiki/Peptide"
+    "src": "https://en.wikipedia.org/wiki/Peptide",
+    "releases": "water"
   },
   {
     "in": [
