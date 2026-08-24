@@ -24,6 +24,13 @@ for (const e of elements) {
   if (!e.fact)  err(`${e.id}: missing fact`);
   if (!['workshop', 'folklore'].includes(e.shelf)) err(`${e.id}: bad shelf "${e.shelf}"`);
   if (e.fact && e.fact.length > 110) warn(`${e.id}: fact is ${e.fact.length} chars (aim <110 for one card line)`);
+  // Aliases are display-only. If one ever becomes an id, a sourced recipe would
+  // silently change meaning in that locale.
+  for (const [loc, label] of Object.entries(e.aliases ?? {})) {
+    if (!/^[a-z]{2}(-[A-Z]{2})?$/.test(loc)) err(`${e.id}: bad locale tag "${loc}"`);
+    if (!label) err(`${e.id}: empty alias for ${loc}`);
+    if (byId.has(label.toLowerCase().replace(/ /g, '_'))) err(`${e.id}: alias "${label}" collides with an element id`);
+  }
 }
 
 const starters = elements.filter((e) => e.starter).map((e) => e.id);
