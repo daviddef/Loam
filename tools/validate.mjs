@@ -117,7 +117,7 @@ function descend(id, path) {
   if (path.has(id)) { err(`bedrock cycle through "${id}"`); return false; }
   const node = compById.get(id) ?? aminoById.get(id);
   if (!node) { err(`bedrock references unknown node "${id}"`); return false; }
-  if (!node.of.length && id !== 'photon') { err(`compound ${id}: dead end, made of nothing`); return false; }
+  if (!node.of.length && id !== 'bed_photon') { err(`compound ${id}: dead end, made of nothing`); return false; }
   path.add(id);
   for (const x of node.of) if (!descend(x, path)) return false;
   path.delete(id);

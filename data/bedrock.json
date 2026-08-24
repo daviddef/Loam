@@ -2,7 +2,7 @@
   "$comment": "The substrate below the game. NEVER craftable, never on the shelf — it only appears at the bottom of a provenance tree, so the chain ends in real chemistry instead of stopping at a rock. Composition, not provenance: the craft tree says where a thing came from, this says what it is made of.",
   "atoms": [
     {
-      "id": "hydrogen",
+      "id": "el_hydrogen",
       "symbol": "H",
       "number": 1,
       "name": "Hydrogen",
@@ -14,7 +14,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "helium",
+      "id": "el_helium",
       "symbol": "He",
       "number": 2,
       "name": "Helium",
@@ -26,7 +26,7 @@
       "category": "noble"
     },
     {
-      "id": "lithium",
+      "id": "el_lithium",
       "symbol": "Li",
       "number": 3,
       "name": "Lithium",
@@ -36,7 +36,7 @@
       "category": "alkali"
     },
     {
-      "id": "beryllium",
+      "id": "el_beryllium",
       "symbol": "Be",
       "number": 4,
       "name": "Beryllium",
@@ -46,7 +46,7 @@
       "category": "alkaline"
     },
     {
-      "id": "boron",
+      "id": "el_boron",
       "symbol": "B",
       "number": 5,
       "name": "Boron",
@@ -56,7 +56,7 @@
       "category": "metalloid"
     },
     {
-      "id": "carbon",
+      "id": "el_carbon",
       "symbol": "C",
       "number": 6,
       "name": "Carbon",
@@ -68,7 +68,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "nitrogen",
+      "id": "el_nitrogen",
       "symbol": "N",
       "number": 7,
       "name": "Nitrogen",
@@ -80,7 +80,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "oxygen",
+      "id": "el_oxygen",
       "symbol": "O",
       "number": 8,
       "name": "Oxygen",
@@ -92,7 +92,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "fluorine",
+      "id": "el_fluorine",
       "symbol": "F",
       "number": 9,
       "name": "Fluorine",
@@ -102,7 +102,7 @@
       "category": "halogen"
     },
     {
-      "id": "neon",
+      "id": "el_neon",
       "symbol": "Ne",
       "number": 10,
       "name": "Neon",
@@ -112,7 +112,7 @@
       "category": "noble"
     },
     {
-      "id": "sodium",
+      "id": "el_sodium",
       "symbol": "Na",
       "number": 11,
       "name": "Sodium",
@@ -124,7 +124,7 @@
       "category": "alkali"
     },
     {
-      "id": "magnesium",
+      "id": "el_magnesium",
       "symbol": "Mg",
       "number": 12,
       "name": "Magnesium",
@@ -136,7 +136,7 @@
       "category": "alkaline"
     },
     {
-      "id": "aluminium",
+      "id": "el_aluminium",
       "symbol": "Al",
       "number": 13,
       "name": "Aluminium",
@@ -148,7 +148,7 @@
       "category": "post"
     },
     {
-      "id": "silicon",
+      "id": "el_silicon",
       "symbol": "Si",
       "number": 14,
       "name": "Silicon",
@@ -160,7 +160,7 @@
       "category": "metalloid"
     },
     {
-      "id": "phosphorus",
+      "id": "el_phosphorus",
       "symbol": "P",
       "number": 15,
       "name": "Phosphorus",
@@ -172,7 +172,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "sulfur",
+      "id": "el_sulfur",
       "symbol": "S",
       "number": 16,
       "name": "Sulfur",
@@ -184,7 +184,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "chlorine",
+      "id": "el_chlorine",
       "symbol": "Cl",
       "number": 17,
       "name": "Chlorine",
@@ -196,7 +196,7 @@
       "category": "halogen"
     },
     {
-      "id": "argon",
+      "id": "el_argon",
       "symbol": "Ar",
       "number": 18,
       "name": "Argon",
@@ -206,7 +206,7 @@
       "category": "noble"
     },
     {
-      "id": "potassium",
+      "id": "el_potassium",
       "symbol": "K",
       "number": 19,
       "name": "Potassium",
@@ -218,7 +218,7 @@
       "category": "alkali"
     },
     {
-      "id": "calcium",
+      "id": "el_calcium",
       "symbol": "Ca",
       "number": 20,
       "name": "Calcium",
@@ -230,7 +230,7 @@
       "category": "alkaline"
     },
     {
-      "id": "scandium",
+      "id": "el_scandium",
       "symbol": "Sc",
       "number": 21,
       "name": "Scandium",
@@ -240,7 +240,7 @@
       "category": "transition"
     },
     {
-      "id": "titanium",
+      "id": "el_titanium",
       "symbol": "Ti",
       "number": 22,
       "name": "Titanium",
@@ -250,7 +250,7 @@
       "category": "transition"
     },
     {
-      "id": "vanadium",
+      "id": "el_vanadium",
       "symbol": "V",
       "number": 23,
       "name": "Vanadium",
@@ -260,7 +260,7 @@
       "category": "transition"
     },
     {
-      "id": "chromium",
+      "id": "el_chromium",
       "symbol": "Cr",
       "number": 24,
       "name": "Chromium",
@@ -270,7 +270,7 @@
       "category": "transition"
     },
     {
-      "id": "manganese",
+      "id": "el_manganese",
       "symbol": "Mn",
       "number": 25,
       "name": "Manganese",
@@ -280,7 +280,7 @@
       "category": "transition"
     },
     {
-      "id": "iron",
+      "id": "el_iron",
       "symbol": "Fe",
       "number": 26,
       "name": "Iron",
@@ -292,7 +292,7 @@
       "category": "transition"
     },
     {
-      "id": "cobalt",
+      "id": "el_cobalt",
       "symbol": "Co",
       "number": 27,
       "name": "Cobalt",
@@ -302,7 +302,7 @@
       "category": "transition"
     },
     {
-      "id": "nickel",
+      "id": "el_nickel",
       "symbol": "Ni",
       "number": 28,
       "name": "Nickel",
@@ -312,7 +312,7 @@
       "category": "transition"
     },
     {
-      "id": "copper",
+      "id": "el_copper",
       "symbol": "Cu",
       "number": 29,
       "name": "Copper",
@@ -322,7 +322,7 @@
       "category": "transition"
     },
     {
-      "id": "zinc",
+      "id": "el_zinc",
       "symbol": "Zn",
       "number": 30,
       "name": "Zinc",
@@ -332,7 +332,7 @@
       "category": "transition"
     },
     {
-      "id": "gallium",
+      "id": "el_gallium",
       "symbol": "Ga",
       "number": 31,
       "name": "Gallium",
@@ -342,7 +342,7 @@
       "category": "post"
     },
     {
-      "id": "germanium",
+      "id": "el_germanium",
       "symbol": "Ge",
       "number": 32,
       "name": "Germanium",
@@ -352,7 +352,7 @@
       "category": "metalloid"
     },
     {
-      "id": "arsenic",
+      "id": "el_arsenic",
       "symbol": "As",
       "number": 33,
       "name": "Arsenic",
@@ -362,7 +362,7 @@
       "category": "metalloid"
     },
     {
-      "id": "selenium",
+      "id": "el_selenium",
       "symbol": "Se",
       "number": 34,
       "name": "Selenium",
@@ -372,7 +372,7 @@
       "category": "nonmetal"
     },
     {
-      "id": "bromine",
+      "id": "el_bromine",
       "symbol": "Br",
       "number": 35,
       "name": "Bromine",
@@ -382,7 +382,7 @@
       "category": "halogen"
     },
     {
-      "id": "krypton",
+      "id": "el_krypton",
       "symbol": "Kr",
       "number": 36,
       "name": "Krypton",
@@ -392,7 +392,7 @@
       "category": "noble"
     },
     {
-      "id": "rubidium",
+      "id": "el_rubidium",
       "symbol": "Rb",
       "number": 37,
       "name": "Rubidium",
@@ -402,7 +402,7 @@
       "category": "alkali"
     },
     {
-      "id": "strontium",
+      "id": "el_strontium",
       "symbol": "Sr",
       "number": 38,
       "name": "Strontium",
@@ -412,7 +412,7 @@
       "category": "alkaline"
     },
     {
-      "id": "yttrium",
+      "id": "el_yttrium",
       "symbol": "Y",
       "number": 39,
       "name": "Yttrium",
@@ -422,7 +422,7 @@
       "category": "transition"
     },
     {
-      "id": "zirconium",
+      "id": "el_zirconium",
       "symbol": "Zr",
       "number": 40,
       "name": "Zirconium",
@@ -432,7 +432,7 @@
       "category": "transition"
     },
     {
-      "id": "niobium",
+      "id": "el_niobium",
       "symbol": "Nb",
       "number": 41,
       "name": "Niobium",
@@ -442,7 +442,7 @@
       "category": "transition"
     },
     {
-      "id": "molybdenum",
+      "id": "el_molybdenum",
       "symbol": "Mo",
       "number": 42,
       "name": "Molybdenum",
@@ -452,7 +452,7 @@
       "category": "transition"
     },
     {
-      "id": "technetium",
+      "id": "el_technetium",
       "symbol": "Tc",
       "number": 43,
       "name": "Technetium",
@@ -462,7 +462,7 @@
       "category": "transition"
     },
     {
-      "id": "ruthenium",
+      "id": "el_ruthenium",
       "symbol": "Ru",
       "number": 44,
       "name": "Ruthenium",
@@ -472,7 +472,7 @@
       "category": "transition"
     },
     {
-      "id": "rhodium",
+      "id": "el_rhodium",
       "symbol": "Rh",
       "number": 45,
       "name": "Rhodium",
@@ -482,7 +482,7 @@
       "category": "transition"
     },
     {
-      "id": "palladium",
+      "id": "el_palladium",
       "symbol": "Pd",
       "number": 46,
       "name": "Palladium",
@@ -492,7 +492,7 @@
       "category": "transition"
     },
     {
-      "id": "silver",
+      "id": "el_silver",
       "symbol": "Ag",
       "number": 47,
       "name": "Silver",
@@ -502,7 +502,7 @@
       "category": "transition"
     },
     {
-      "id": "cadmium",
+      "id": "el_cadmium",
       "symbol": "Cd",
       "number": 48,
       "name": "Cadmium",
@@ -512,7 +512,7 @@
       "category": "transition"
     },
     {
-      "id": "indium",
+      "id": "el_indium",
       "symbol": "In",
       "number": 49,
       "name": "Indium",
@@ -522,7 +522,7 @@
       "category": "post"
     },
     {
-      "id": "tin",
+      "id": "el_tin",
       "symbol": "Sn",
       "number": 50,
       "name": "Tin",
@@ -532,7 +532,7 @@
       "category": "post"
     },
     {
-      "id": "antimony",
+      "id": "el_antimony",
       "symbol": "Sb",
       "number": 51,
       "name": "Antimony",
@@ -542,7 +542,7 @@
       "category": "metalloid"
     },
     {
-      "id": "tellurium",
+      "id": "el_tellurium",
       "symbol": "Te",
       "number": 52,
       "name": "Tellurium",
@@ -552,7 +552,7 @@
       "category": "metalloid"
     },
     {
-      "id": "iodine",
+      "id": "el_iodine",
       "symbol": "I",
       "number": 53,
       "name": "Iodine",
@@ -562,7 +562,7 @@
       "category": "halogen"
     },
     {
-      "id": "xenon",
+      "id": "el_xenon",
       "symbol": "Xe",
       "number": 54,
       "name": "Xenon",
@@ -572,7 +572,7 @@
       "category": "noble"
     },
     {
-      "id": "caesium",
+      "id": "el_caesium",
       "symbol": "Cs",
       "number": 55,
       "name": "Caesium",
@@ -582,7 +582,7 @@
       "category": "alkali"
     },
     {
-      "id": "barium",
+      "id": "el_barium",
       "symbol": "Ba",
       "number": 56,
       "name": "Barium",
@@ -592,7 +592,7 @@
       "category": "alkaline"
     },
     {
-      "id": "lanthanum",
+      "id": "el_lanthanum",
       "symbol": "La",
       "number": 57,
       "name": "Lanthanum",
@@ -602,7 +602,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "cerium",
+      "id": "el_cerium",
       "symbol": "Ce",
       "number": 58,
       "name": "Cerium",
@@ -612,7 +612,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "praseodymium",
+      "id": "el_praseodymium",
       "symbol": "Pr",
       "number": 59,
       "name": "Praseodymium",
@@ -622,7 +622,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "neodymium",
+      "id": "el_neodymium",
       "symbol": "Nd",
       "number": 60,
       "name": "Neodymium",
@@ -632,7 +632,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "promethium",
+      "id": "el_promethium",
       "symbol": "Pm",
       "number": 61,
       "name": "Promethium",
@@ -642,7 +642,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "samarium",
+      "id": "el_samarium",
       "symbol": "Sm",
       "number": 62,
       "name": "Samarium",
@@ -652,7 +652,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "europium",
+      "id": "el_europium",
       "symbol": "Eu",
       "number": 63,
       "name": "Europium",
@@ -662,7 +662,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "gadolinium",
+      "id": "el_gadolinium",
       "symbol": "Gd",
       "number": 64,
       "name": "Gadolinium",
@@ -672,7 +672,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "terbium",
+      "id": "el_terbium",
       "symbol": "Tb",
       "number": 65,
       "name": "Terbium",
@@ -682,7 +682,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "dysprosium",
+      "id": "el_dysprosium",
       "symbol": "Dy",
       "number": 66,
       "name": "Dysprosium",
@@ -692,7 +692,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "holmium",
+      "id": "el_holmium",
       "symbol": "Ho",
       "number": 67,
       "name": "Holmium",
@@ -702,7 +702,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "erbium",
+      "id": "el_erbium",
       "symbol": "Er",
       "number": 68,
       "name": "Erbium",
@@ -712,7 +712,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "thulium",
+      "id": "el_thulium",
       "symbol": "Tm",
       "number": 69,
       "name": "Thulium",
@@ -722,7 +722,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "ytterbium",
+      "id": "el_ytterbium",
       "symbol": "Yb",
       "number": 70,
       "name": "Ytterbium",
@@ -732,7 +732,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "lutetium",
+      "id": "el_lutetium",
       "symbol": "Lu",
       "number": 71,
       "name": "Lutetium",
@@ -742,7 +742,7 @@
       "category": "lanthanide"
     },
     {
-      "id": "hafnium",
+      "id": "el_hafnium",
       "symbol": "Hf",
       "number": 72,
       "name": "Hafnium",
@@ -752,7 +752,7 @@
       "category": "transition"
     },
     {
-      "id": "tantalum",
+      "id": "el_tantalum",
       "symbol": "Ta",
       "number": 73,
       "name": "Tantalum",
@@ -762,7 +762,7 @@
       "category": "transition"
     },
     {
-      "id": "tungsten",
+      "id": "el_tungsten",
       "symbol": "W",
       "number": 74,
       "name": "Tungsten",
@@ -772,7 +772,7 @@
       "category": "transition"
     },
     {
-      "id": "rhenium",
+      "id": "el_rhenium",
       "symbol": "Re",
       "number": 75,
       "name": "Rhenium",
@@ -782,7 +782,7 @@
       "category": "transition"
     },
     {
-      "id": "osmium",
+      "id": "el_osmium",
       "symbol": "Os",
       "number": 76,
       "name": "Osmium",
@@ -792,7 +792,7 @@
       "category": "transition"
     },
     {
-      "id": "iridium",
+      "id": "el_iridium",
       "symbol": "Ir",
       "number": 77,
       "name": "Iridium",
@@ -802,7 +802,7 @@
       "category": "transition"
     },
     {
-      "id": "platinum",
+      "id": "el_platinum",
       "symbol": "Pt",
       "number": 78,
       "name": "Platinum",
@@ -812,7 +812,7 @@
       "category": "transition"
     },
     {
-      "id": "gold",
+      "id": "el_gold",
       "symbol": "Au",
       "number": 79,
       "name": "Gold",
@@ -822,7 +822,7 @@
       "category": "transition"
     },
     {
-      "id": "mercury",
+      "id": "el_mercury",
       "symbol": "Hg",
       "number": 80,
       "name": "Mercury",
@@ -832,7 +832,7 @@
       "category": "transition"
     },
     {
-      "id": "thallium",
+      "id": "el_thallium",
       "symbol": "Tl",
       "number": 81,
       "name": "Thallium",
@@ -842,7 +842,7 @@
       "category": "post"
     },
     {
-      "id": "lead",
+      "id": "el_lead",
       "symbol": "Pb",
       "number": 82,
       "name": "Lead",
@@ -852,7 +852,7 @@
       "category": "post"
     },
     {
-      "id": "bismuth",
+      "id": "el_bismuth",
       "symbol": "Bi",
       "number": 83,
       "name": "Bismuth",
@@ -862,7 +862,7 @@
       "category": "post"
     },
     {
-      "id": "polonium",
+      "id": "el_polonium",
       "symbol": "Po",
       "number": 84,
       "name": "Polonium",
@@ -872,7 +872,7 @@
       "category": "post"
     },
     {
-      "id": "astatine",
+      "id": "el_astatine",
       "symbol": "At",
       "number": 85,
       "name": "Astatine",
@@ -882,7 +882,7 @@
       "category": "halogen"
     },
     {
-      "id": "radon",
+      "id": "el_radon",
       "symbol": "Rn",
       "number": 86,
       "name": "Radon",
@@ -892,7 +892,7 @@
       "category": "noble"
     },
     {
-      "id": "francium",
+      "id": "el_francium",
       "symbol": "Fr",
       "number": 87,
       "name": "Francium",
@@ -902,7 +902,7 @@
       "category": "alkali"
     },
     {
-      "id": "radium",
+      "id": "el_radium",
       "symbol": "Ra",
       "number": 88,
       "name": "Radium",
@@ -912,7 +912,7 @@
       "category": "alkaline"
     },
     {
-      "id": "actinium",
+      "id": "el_actinium",
       "symbol": "Ac",
       "number": 89,
       "name": "Actinium",
@@ -922,7 +922,7 @@
       "category": "actinide"
     },
     {
-      "id": "thorium",
+      "id": "el_thorium",
       "symbol": "Th",
       "number": 90,
       "name": "Thorium",
@@ -932,7 +932,7 @@
       "category": "actinide"
     },
     {
-      "id": "protactinium",
+      "id": "el_protactinium",
       "symbol": "Pa",
       "number": 91,
       "name": "Protactinium",
@@ -942,7 +942,7 @@
       "category": "actinide"
     },
     {
-      "id": "uranium",
+      "id": "el_uranium",
       "symbol": "U",
       "number": 92,
       "name": "Uranium",
@@ -952,7 +952,7 @@
       "category": "actinide"
     },
     {
-      "id": "neptunium",
+      "id": "el_neptunium",
       "symbol": "Np",
       "number": 93,
       "name": "Neptunium",
@@ -962,7 +962,7 @@
       "category": "actinide"
     },
     {
-      "id": "plutonium",
+      "id": "el_plutonium",
       "symbol": "Pu",
       "number": 94,
       "name": "Plutonium",
@@ -972,7 +972,7 @@
       "category": "actinide"
     },
     {
-      "id": "americium",
+      "id": "el_americium",
       "symbol": "Am",
       "number": 95,
       "name": "Americium",
@@ -982,7 +982,7 @@
       "category": "actinide"
     },
     {
-      "id": "curium",
+      "id": "el_curium",
       "symbol": "Cm",
       "number": 96,
       "name": "Curium",
@@ -992,7 +992,7 @@
       "category": "actinide"
     },
     {
-      "id": "berkelium",
+      "id": "el_berkelium",
       "symbol": "Bk",
       "number": 97,
       "name": "Berkelium",
@@ -1002,7 +1002,7 @@
       "category": "actinide"
     },
     {
-      "id": "californium",
+      "id": "el_californium",
       "symbol": "Cf",
       "number": 98,
       "name": "Californium",
@@ -1012,7 +1012,7 @@
       "category": "actinide"
     },
     {
-      "id": "einsteinium",
+      "id": "el_einsteinium",
       "symbol": "Es",
       "number": 99,
       "name": "Einsteinium",
@@ -1022,7 +1022,7 @@
       "category": "actinide"
     },
     {
-      "id": "fermium",
+      "id": "el_fermium",
       "symbol": "Fm",
       "number": 100,
       "name": "Fermium",
@@ -1032,7 +1032,7 @@
       "category": "actinide"
     },
     {
-      "id": "mendelevium",
+      "id": "el_mendelevium",
       "symbol": "Md",
       "number": 101,
       "name": "Mendelevium",
@@ -1042,7 +1042,7 @@
       "category": "actinide"
     },
     {
-      "id": "nobelium",
+      "id": "el_nobelium",
       "symbol": "No",
       "number": 102,
       "name": "Nobelium",
@@ -1052,7 +1052,7 @@
       "category": "actinide"
     },
     {
-      "id": "lawrencium",
+      "id": "el_lawrencium",
       "symbol": "Lr",
       "number": 103,
       "name": "Lawrencium",
@@ -1062,7 +1062,7 @@
       "category": "actinide"
     },
     {
-      "id": "rutherfordium",
+      "id": "el_rutherfordium",
       "symbol": "Rf",
       "number": 104,
       "name": "Rutherfordium",
@@ -1072,7 +1072,7 @@
       "category": "transition"
     },
     {
-      "id": "dubnium",
+      "id": "el_dubnium",
       "symbol": "Db",
       "number": 105,
       "name": "Dubnium",
@@ -1082,7 +1082,7 @@
       "category": "transition"
     },
     {
-      "id": "seaborgium",
+      "id": "el_seaborgium",
       "symbol": "Sg",
       "number": 106,
       "name": "Seaborgium",
@@ -1092,7 +1092,7 @@
       "category": "transition"
     },
     {
-      "id": "bohrium",
+      "id": "el_bohrium",
       "symbol": "Bh",
       "number": 107,
       "name": "Bohrium",
@@ -1102,7 +1102,7 @@
       "category": "transition"
     },
     {
-      "id": "hassium",
+      "id": "el_hassium",
       "symbol": "Hs",
       "number": 108,
       "name": "Hassium",
@@ -1112,7 +1112,7 @@
       "category": "transition"
     },
     {
-      "id": "meitnerium",
+      "id": "el_meitnerium",
       "symbol": "Mt",
       "number": 109,
       "name": "Meitnerium",
@@ -1122,7 +1122,7 @@
       "category": "transition"
     },
     {
-      "id": "darmstadtium",
+      "id": "el_darmstadtium",
       "symbol": "Ds",
       "number": 110,
       "name": "Darmstadtium",
@@ -1132,7 +1132,7 @@
       "category": "transition"
     },
     {
-      "id": "roentgenium",
+      "id": "el_roentgenium",
       "symbol": "Rg",
       "number": 111,
       "name": "Roentgenium",
@@ -1142,7 +1142,7 @@
       "category": "transition"
     },
     {
-      "id": "copernicium",
+      "id": "el_copernicium",
       "symbol": "Cn",
       "number": 112,
       "name": "Copernicium",
@@ -1152,7 +1152,7 @@
       "category": "transition"
     },
     {
-      "id": "nihonium",
+      "id": "el_nihonium",
       "symbol": "Nh",
       "number": 113,
       "name": "Nihonium",
@@ -1162,7 +1162,7 @@
       "category": "post"
     },
     {
-      "id": "flerovium",
+      "id": "el_flerovium",
       "symbol": "Fl",
       "number": 114,
       "name": "Flerovium",
@@ -1172,7 +1172,7 @@
       "category": "post"
     },
     {
-      "id": "moscovium",
+      "id": "el_moscovium",
       "symbol": "Mc",
       "number": 115,
       "name": "Moscovium",
@@ -1182,7 +1182,7 @@
       "category": "post"
     },
     {
-      "id": "livermorium",
+      "id": "el_livermorium",
       "symbol": "Lv",
       "number": 116,
       "name": "Livermorium",
@@ -1192,7 +1192,7 @@
       "category": "post"
     },
     {
-      "id": "tennessine",
+      "id": "el_tennessine",
       "symbol": "Ts",
       "number": 117,
       "name": "Tennessine",
@@ -1202,7 +1202,7 @@
       "category": "halogen"
     },
     {
-      "id": "oganesson",
+      "id": "el_oganesson",
       "symbol": "Og",
       "number": 118,
       "name": "Oganesson",
@@ -1214,12 +1214,12 @@
   ],
   "compounds": [
     {
-      "id": "water_molecule",
+      "id": "bed_water_molecule",
       "name": "Water",
       "srcTitle": "Properties of water",
       "of": [
-        "hydrogen",
-        "oxygen"
+        "el_hydrogen",
+        "el_oxygen"
       ],
       "fact": "Two hydrogens at an angle, which is why water is sticky, why ice floats, and why life works.",
       "src": "https://en.wikipedia.org/wiki/Properties_of_water",
@@ -1228,12 +1228,12 @@
       "tier": "molecule"
     },
     {
-      "id": "silica",
+      "id": "bed_silica",
       "name": "Silica",
       "srcTitle": "Silicon dioxide",
       "of": [
-        "silicon",
-        "oxygen"
+        "el_silicon",
+        "el_oxygen"
       ],
       "fact": "Quartz. It survives weathering better than almost anything, which is why sand is mostly this.",
       "src": "https://en.wikipedia.org/wiki/Silicon_dioxide",
@@ -1242,14 +1242,14 @@
       "tier": "molecule"
     },
     {
-      "id": "feldspar",
+      "id": "bed_feldspar",
       "name": "Feldspar",
       "srcTitle": "Feldspar",
       "of": [
-        "potassium",
-        "aluminium",
-        "silicon",
-        "oxygen"
+        "el_potassium",
+        "el_aluminium",
+        "el_silicon",
+        "el_oxygen"
       ],
       "fact": "Around half of granite, and the mineral that weathers down into clay.",
       "src": "https://en.wikipedia.org/wiki/Feldspar",
@@ -1258,15 +1258,15 @@
       "tier": "molecule"
     },
     {
-      "id": "mica",
+      "id": "bed_mica",
       "name": "Mica",
       "srcTitle": "Mica",
       "of": [
-        "potassium",
-        "aluminium",
-        "silicon",
-        "oxygen",
-        "hydrogen"
+        "el_potassium",
+        "el_aluminium",
+        "el_silicon",
+        "el_oxygen",
+        "el_hydrogen"
       ],
       "fact": "Splits into sheets thin enough to see through. The dark flecks in granite.",
       "src": "https://en.wikipedia.org/wiki/Mica",
@@ -1275,13 +1275,13 @@
       "tier": "molecule"
     },
     {
-      "id": "calcium_carbonate",
+      "id": "bed_calcium_carbonate",
       "name": "Calcium Carbonate",
       "srcTitle": "Calcium carbonate",
       "of": [
-        "calcium",
-        "carbon",
-        "oxygen"
+        "el_calcium",
+        "el_carbon",
+        "el_oxygen"
       ],
       "fact": "Chalk, limestone, eggshell and seashell. Life's favourite building material.",
       "src": "https://en.wikipedia.org/wiki/Calcium_carbonate",
@@ -1290,12 +1290,12 @@
       "tier": "molecule"
     },
     {
-      "id": "halite",
+      "id": "bed_halite",
       "name": "Rock Salt",
       "srcTitle": "Halite",
       "of": [
-        "sodium",
-        "chlorine"
+        "el_sodium",
+        "el_chlorine"
       ],
       "fact": "A cube of alternating ions. The only mineral humans eat by the spoonful.",
       "src": "https://en.wikipedia.org/wiki/Halite",
@@ -1304,13 +1304,13 @@
       "tier": "molecule"
     },
     {
-      "id": "glucose",
+      "id": "bed_glucose",
       "name": "Glucose",
       "srcTitle": "Glucose",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
       ],
       "fact": "What photosynthesis actually makes. Every other food molecule is built from it or burnt into it.",
       "src": "https://en.wikipedia.org/wiki/Glucose",
@@ -1319,11 +1319,11 @@
       "tier": "monomer"
     },
     {
-      "id": "starch",
+      "id": "bed_starch",
       "name": "Starch",
       "srcTitle": "Starch",
       "of": [
-        "glucose"
+        "bed_glucose"
       ],
       "fact": "Thousands of glucose units chained up for storage. A seed's packed lunch.",
       "src": "https://en.wikipedia.org/wiki/Starch",
@@ -1333,11 +1333,11 @@
       "via": "glycosidic"
     },
     {
-      "id": "cellulose",
+      "id": "bed_cellulose",
       "name": "Cellulose",
       "srcTitle": "Cellulose",
       "of": [
-        "glucose"
+        "bed_glucose"
       ],
       "fact": "The same glucose, bonded the other way round — and that one flip is why we can eat bread but not wood.",
       "src": "https://en.wikipedia.org/wiki/Cellulose",
@@ -1347,49 +1347,49 @@
       "via": "glycosidic"
     },
     {
-      "id": "amino_acid",
+      "id": "bed_amino_acid",
       "name": "Amino Acid",
       "srcTitle": "Amino acid",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen",
-        "nitrogen",
-        "sulfur"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen",
+        "el_nitrogen",
+        "el_sulfur"
       ],
       "fact": "Twenty of them, in every living thing on Earth, all the same handedness. No exception has ever been found.",
       "src": "https://en.wikipedia.org/wiki/Amino_acid",
       "kind": "compound",
       "tier": "monomer",
       "variants": [
-        "glycine",
-        "alanine",
-        "serine",
-        "cysteine",
-        "threonine",
-        "valine",
-        "leucine",
-        "isoleucine",
-        "proline",
-        "phenylalanine",
-        "tyrosine",
-        "tryptophan",
-        "aspartate",
-        "glutamate",
-        "asparagine",
-        "glutamine",
-        "lysine",
-        "arginine",
-        "histidine",
-        "methionine"
+        "bed_glycine",
+        "bed_alanine",
+        "bed_serine",
+        "bed_cysteine",
+        "bed_threonine",
+        "bed_valine",
+        "bed_leucine",
+        "bed_isoleucine",
+        "bed_proline",
+        "bed_phenylalanine",
+        "bed_tyrosine",
+        "bed_tryptophan",
+        "bed_aspartate",
+        "bed_glutamate",
+        "bed_asparagine",
+        "bed_glutamine",
+        "bed_lysine",
+        "bed_arginine",
+        "bed_histidine",
+        "bed_methionine"
       ]
     },
     {
-      "id": "protein",
+      "id": "bed_protein",
       "name": "Protein",
       "srcTitle": "Protein",
       "of": [
-        "tertiary_fold"
+        "bed_tertiary_fold"
       ],
       "fact": "A chain folded into one specific shape. The shape is the function — and it is decided entirely by the order of the links.",
       "src": "https://en.wikipedia.org/wiki/Protein",
@@ -1399,13 +1399,13 @@
       "via": "folding"
     },
     {
-      "id": "fatty_acid",
+      "id": "bed_fatty_acid",
       "name": "Fatty Acid",
       "srcTitle": "Fatty acid",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
       ],
       "fact": "A long carbon tail that will not mix with water. That refusal is what makes a cell membrane possible.",
       "src": "https://en.wikipedia.org/wiki/Fatty_acid",
@@ -1413,12 +1413,12 @@
       "tier": "monomer"
     },
     {
-      "id": "lipid",
+      "id": "bed_lipid",
       "name": "Fat",
       "srcTitle": "Lipid",
       "of": [
-        "fatty_acid",
-        "glycerol"
+        "bed_fatty_acid",
+        "bed_glycerol"
       ],
       "fact": "Twice the energy per gram of sugar, which is why seeds and animals both store it.",
       "src": "https://en.wikipedia.org/wiki/Lipid",
@@ -1427,15 +1427,15 @@
       "via": "ester"
     },
     {
-      "id": "nucleotide",
+      "id": "bed_nucleotide",
       "name": "Nucleotide",
       "srcTitle": "Nucleotide",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen",
-        "nitrogen",
-        "phosphorus"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen",
+        "el_nitrogen",
+        "el_phosphorus"
       ],
       "fact": "Sugar, phosphate and a base. Four of them spell out everything alive.",
       "src": "https://en.wikipedia.org/wiki/Nucleotide",
@@ -1443,11 +1443,11 @@
       "tier": "monomer"
     },
     {
-      "id": "dna",
+      "id": "bed_dna",
       "name": "DNA",
       "srcTitle": "DNA",
       "of": [
-        "nucleotide"
+        "bed_nucleotide"
       ],
       "fact": "The instructions for building the thing you are holding, written in four letters.",
       "src": "https://en.wikipedia.org/wiki/DNA",
@@ -1456,15 +1456,15 @@
       "via": "phosphodiester"
     },
     {
-      "id": "chlorophyll",
+      "id": "bed_chlorophyll",
       "name": "Chlorophyll",
       "srcTitle": "Chlorophyll",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen",
-        "nitrogen",
-        "magnesium"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen",
+        "el_nitrogen",
+        "el_magnesium"
       ],
       "fact": "Catches the photon and hands its energy to chemistry. One magnesium atom sits at the centre.",
       "src": "https://en.wikipedia.org/wiki/Chlorophyll",
@@ -1473,7 +1473,7 @@
       "tier": "molecule"
     },
     {
-      "id": "photon",
+      "id": "bed_photon",
       "name": "Sunlight",
       "srcTitle": "Photon",
       "of": [],
@@ -1483,13 +1483,13 @@
       "tier": "particle"
     },
     {
-      "id": "fusion",
+      "id": "bed_fusion",
       "name": "Hydrogen Fusion",
       "srcTitle": "Proton–proton chain",
       "of": [
-        "hydrogen",
-        "helium",
-        "photon"
+        "el_hydrogen",
+        "el_helium",
+        "bed_photon"
       ],
       "fact": "Four hydrogen nuclei become one helium, and the missing mass leaves as light. That light is the entire energy budget of this game.",
       "src": "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain",
@@ -1497,27 +1497,27 @@
       "tier": "particle"
     },
     {
-      "id": "glycerol",
+      "id": "bed_glycerol",
       "kind": "compound",
       "tier": "molecule",
       "name": "Glycerol",
       "formula": "C3H8O3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Glycerol",
       "fact": "A three-carbon spine with three hooks. Hang a fatty acid on each and you have a fat.",
       "src": "https://en.wikipedia.org/wiki/Glycerol"
     },
     {
-      "id": "polypeptide",
+      "id": "bed_polypeptide",
       "kind": "compound",
       "tier": "polymer",
       "name": "Polypeptide Chain",
       "of": [
-        "amino_acid"
+        "bed_amino_acid"
       ],
       "via": "peptide",
       "srcTitle": "Peptide",
@@ -1525,12 +1525,12 @@
       "src": "https://en.wikipedia.org/wiki/Peptide"
     },
     {
-      "id": "secondary_structure",
+      "id": "bed_secondary_structure",
       "kind": "compound",
       "tier": "structure",
       "name": "Helix & Sheet",
       "of": [
-        "polypeptide"
+        "bed_polypeptide"
       ],
       "via": "hydrogen",
       "srcTitle": "Protein secondary structure",
@@ -1538,12 +1538,12 @@
       "src": "https://en.wikipedia.org/wiki/Protein_secondary_structure"
     },
     {
-      "id": "tertiary_fold",
+      "id": "bed_tertiary_fold",
       "kind": "compound",
       "tier": "structure",
       "name": "Fold",
       "of": [
-        "secondary_structure"
+        "bed_secondary_structure"
       ],
       "via": "folding",
       "srcTitle": "Protein tertiary structure",
@@ -1551,53 +1551,53 @@
       "src": "https://en.wikipedia.org/wiki/Protein_tertiary_structure"
     },
     {
-      "id": "enzyme",
+      "id": "bed_enzyme",
       "kind": "compound",
       "tier": "assembly",
       "name": "Enzyme",
       "of": [
-        "protein"
+        "bed_protein"
       ],
       "srcTitle": "Enzyme",
       "fact": "A protein with a pocket shaped to hold one particular molecule. Nearly every step in this game is one of these doing its job.",
       "src": "https://en.wikipedia.org/wiki/Enzyme"
     },
     {
-      "id": "membrane",
+      "id": "bed_membrane",
       "kind": "compound",
       "tier": "assembly",
       "name": "Membrane",
       "of": [
-        "lipid",
-        "protein"
+        "bed_lipid",
+        "bed_protein"
       ],
       "srcTitle": "Cell membrane",
       "fact": "Two layers of fat, tails inward, because the tails will not tolerate water. Life needs an inside, and this is how it gets one.",
       "src": "https://en.wikipedia.org/wiki/Cell_membrane"
     },
     {
-      "id": "cell",
+      "id": "bed_cell",
       "kind": "compound",
       "tier": "cell",
       "name": "Cell",
       "of": [
-        "membrane",
-        "dna",
-        "protein",
-        "water_molecule"
+        "bed_membrane",
+        "bed_dna",
+        "bed_protein",
+        "bed_water_molecule"
       ],
       "srcTitle": "Cell (biology)",
       "fact": "The smallest thing that is unambiguously alive. Everything you have eaten was made of these.",
       "src": "https://en.wikipedia.org/wiki/Cell_(biology)"
     },
     {
-      "id": "muscle_tissue",
+      "id": "bed_muscle_tissue",
       "kind": "compound",
       "tier": "tissue",
       "name": "Muscle",
       "of": [
-        "cell",
-        "protein"
+        "bed_cell",
+        "bed_protein"
       ],
       "srcTitle": "Muscle tissue",
       "fact": "Cells packed with protein filaments that ratchet past each other. Meat is this, rested.",
@@ -1606,79 +1606,79 @@
   ],
   "composition": {
     "stone": [
-      "silica",
-      "feldspar",
-      "mica"
+      "bed_silica",
+      "bed_feldspar",
+      "bed_mica"
     ],
     "water": [
-      "water_molecule"
+      "bed_water_molecule"
     ],
     "seed": [
-      "starch",
-      "protein",
-      "lipid",
-      "dna"
+      "bed_starch",
+      "bed_protein",
+      "bed_lipid",
+      "bed_dna"
     ],
     "sun": [
-      "fusion"
+      "bed_fusion"
     ],
     "egg": [
-      "protein",
-      "lipid",
-      "calcium_carbonate",
-      "water_molecule"
+      "bed_protein",
+      "bed_lipid",
+      "bed_calcium_carbonate",
+      "bed_water_molecule"
     ],
     "milk": [
-      "water_molecule",
-      "lipid",
-      "protein",
-      "glucose"
+      "bed_water_molecule",
+      "bed_lipid",
+      "bed_protein",
+      "bed_glucose"
     ],
     "meat": [
-      "muscle_tissue"
+      "bed_muscle_tissue"
     ],
     "flour": [
-      "starch",
-      "protein"
+      "bed_starch",
+      "bed_protein"
     ],
     "honey": [
-      "glucose",
-      "water_molecule"
+      "bed_glucose",
+      "bed_water_molecule"
     ],
     "salt": [
-      "halite"
+      "bed_halite"
     ],
     "glass": [
-      "silica"
+      "bed_silica"
     ],
     "clay": [
-      "feldspar",
-      "water_molecule"
+      "bed_feldspar",
+      "bed_water_molecule"
     ],
     "wood": [
-      "cellulose"
+      "bed_cellulose"
     ],
     "leaf": [
-      "chlorophyll",
-      "cellulose",
-      "cell",
-      "water_molecule"
+      "bed_chlorophyll",
+      "bed_cellulose",
+      "bed_cell",
+      "bed_water_molecule"
     ],
     "cheese": [
-      "protein",
-      "lipid",
-      "calcium_carbonate",
-      "water_molecule"
+      "bed_protein",
+      "bed_lipid",
+      "bed_calcium_carbonate",
+      "bed_water_molecule"
     ],
     "yeast": [
-      "cell"
+      "bed_cell"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",
   "$comment_visual": "kind drives shape (atom=periodic tile, compound=hexagon, particle=glow) and category drives colour. Categories are assigned by atomic number and checked for gaps and overlaps at build time.",
   "aminos": [
     {
-      "id": "glycine",
+      "id": "bed_glycine",
       "kind": "amino",
       "name": "Glycine",
       "code3": "Gly",
@@ -1686,17 +1686,17 @@
       "residue": "C2H3NO",
       "formula": "C2H5NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Glycine",
       "fact": "The smallest, and the only one with no handedness.",
       "src": "https://en.wikipedia.org/wiki/Glycine"
     },
     {
-      "id": "alanine",
+      "id": "bed_alanine",
       "kind": "amino",
       "name": "Alanine",
       "code3": "Ala",
@@ -1704,17 +1704,17 @@
       "residue": "C3H5NO",
       "formula": "C3H7NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Alanine",
       "fact": "The simplest with a side chain: a single carbon.",
       "src": "https://en.wikipedia.org/wiki/Alanine"
     },
     {
-      "id": "serine",
+      "id": "bed_serine",
       "kind": "amino",
       "name": "Serine",
       "code3": "Ser",
@@ -1722,17 +1722,17 @@
       "residue": "C3H5NO2",
       "formula": "C3H7NO3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Serine",
       "fact": "Its spare hydroxyl is where cells attach switches.",
       "src": "https://en.wikipedia.org/wiki/Serine"
     },
     {
-      "id": "cysteine",
+      "id": "bed_cysteine",
       "kind": "amino",
       "name": "Cysteine",
       "code3": "Cys",
@@ -1740,18 +1740,18 @@
       "residue": "C3H5NOS",
       "formula": "C3H7NO2S",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen",
-        "sulfur"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen",
+        "el_sulfur"
       ],
       "srcTitle": "Cysteine",
       "fact": "Two of these bond to each other and staple a protein shut.",
       "src": "https://en.wikipedia.org/wiki/Cysteine"
     },
     {
-      "id": "threonine",
+      "id": "bed_threonine",
       "kind": "amino",
       "name": "Threonine",
       "code3": "Thr",
@@ -1759,17 +1759,17 @@
       "residue": "C4H7NO2",
       "formula": "C4H9NO3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Threonine",
       "fact": "Essential — you must eat it, you cannot build it.",
       "src": "https://en.wikipedia.org/wiki/Threonine"
     },
     {
-      "id": "valine",
+      "id": "bed_valine",
       "kind": "amino",
       "name": "Valine",
       "code3": "Val",
@@ -1777,17 +1777,17 @@
       "residue": "C5H9NO",
       "formula": "C5H11NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Valine",
       "fact": "A single swap for glutamate here causes sickle-cell anaemia.",
       "src": "https://en.wikipedia.org/wiki/Valine"
     },
     {
-      "id": "leucine",
+      "id": "bed_leucine",
       "kind": "amino",
       "name": "Leucine",
       "code3": "Leu",
@@ -1795,17 +1795,17 @@
       "residue": "C6H11NO",
       "formula": "C6H13NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Leucine",
       "fact": "The commonest amino acid in most proteins.",
       "src": "https://en.wikipedia.org/wiki/Leucine"
     },
     {
-      "id": "isoleucine",
+      "id": "bed_isoleucine",
       "kind": "amino",
       "name": "Isoleucine",
       "code3": "Ile",
@@ -1813,17 +1813,17 @@
       "residue": "C6H11NO",
       "formula": "C6H13NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Isoleucine",
       "fact": "Same formula as leucine, different shape entirely.",
       "src": "https://en.wikipedia.org/wiki/Isoleucine"
     },
     {
-      "id": "proline",
+      "id": "bed_proline",
       "kind": "amino",
       "name": "Proline",
       "code3": "Pro",
@@ -1831,17 +1831,17 @@
       "residue": "C5H7NO",
       "formula": "C5H9NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Proline",
       "fact": "Its ring kinks the chain — it is the corner piece.",
       "src": "https://en.wikipedia.org/wiki/Proline"
     },
     {
-      "id": "phenylalanine",
+      "id": "bed_phenylalanine",
       "kind": "amino",
       "name": "Phenylalanine",
       "code3": "Phe",
@@ -1849,17 +1849,17 @@
       "residue": "C9H9NO",
       "formula": "C9H11NO2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Phenylalanine",
       "fact": "The one people with PKU cannot process.",
       "src": "https://en.wikipedia.org/wiki/Phenylalanine"
     },
     {
-      "id": "tyrosine",
+      "id": "bed_tyrosine",
       "kind": "amino",
       "name": "Tyrosine",
       "code3": "Tyr",
@@ -1867,17 +1867,17 @@
       "residue": "C9H9NO2",
       "formula": "C9H11NO3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Tyrosine",
       "fact": "Raw material for adrenaline, dopamine and melanin.",
       "src": "https://en.wikipedia.org/wiki/Tyrosine"
     },
     {
-      "id": "tryptophan",
+      "id": "bed_tryptophan",
       "kind": "amino",
       "name": "Tryptophan",
       "code3": "Trp",
@@ -1885,17 +1885,17 @@
       "residue": "C11H10N2O",
       "formula": "C11H12N2O2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Tryptophan",
       "fact": "The largest, and the precursor of serotonin.",
       "src": "https://en.wikipedia.org/wiki/Tryptophan"
     },
     {
-      "id": "aspartate",
+      "id": "bed_aspartate",
       "kind": "amino",
       "name": "Aspartate",
       "code3": "Asp",
@@ -1903,17 +1903,17 @@
       "residue": "C4H5NO3",
       "formula": "C4H7NO4",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Aspartate",
       "fact": "Half of aspartame.",
       "src": "https://en.wikipedia.org/wiki/Aspartic_acid"
     },
     {
-      "id": "glutamate",
+      "id": "bed_glutamate",
       "kind": "amino",
       "name": "Glutamate",
       "code3": "Glu",
@@ -1921,17 +1921,17 @@
       "residue": "C5H7NO3",
       "formula": "C5H9NO4",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Glutamate",
       "fact": "Tastes savoury on its own — this is umami.",
       "src": "https://en.wikipedia.org/wiki/Glutamic_acid"
     },
     {
-      "id": "asparagine",
+      "id": "bed_asparagine",
       "kind": "amino",
       "name": "Asparagine",
       "code3": "Asn",
@@ -1939,17 +1939,17 @@
       "residue": "C4H6N2O2",
       "formula": "C4H8N2O3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Asparagine",
       "fact": "First isolated from asparagus, in 1806.",
       "src": "https://en.wikipedia.org/wiki/Asparagine"
     },
     {
-      "id": "glutamine",
+      "id": "bed_glutamine",
       "kind": "amino",
       "name": "Glutamine",
       "code3": "Gln",
@@ -1957,17 +1957,17 @@
       "residue": "C5H8N2O2",
       "formula": "C5H10N2O3",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Glutamine",
       "fact": "The most abundant free amino acid in your blood.",
       "src": "https://en.wikipedia.org/wiki/Glutamine"
     },
     {
-      "id": "lysine",
+      "id": "bed_lysine",
       "kind": "amino",
       "name": "Lysine",
       "code3": "Lys",
@@ -1975,17 +1975,17 @@
       "residue": "C6H12N2O",
       "formula": "C6H14N2O2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Lysine",
       "fact": "Scarce in cereals, which is why beans and grain go together.",
       "src": "https://en.wikipedia.org/wiki/Lysine"
     },
     {
-      "id": "arginine",
+      "id": "bed_arginine",
       "kind": "amino",
       "name": "Arginine",
       "code3": "Arg",
@@ -1993,17 +1993,17 @@
       "residue": "C6H12N4O",
       "formula": "C6H14N4O2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Arginine",
       "fact": "Four nitrogens: the most nitrogen-rich of the twenty.",
       "src": "https://en.wikipedia.org/wiki/Arginine"
     },
     {
-      "id": "histidine",
+      "id": "bed_histidine",
       "kind": "amino",
       "name": "Histidine",
       "code3": "His",
@@ -2011,17 +2011,17 @@
       "residue": "C6H7N3O",
       "formula": "C6H9N3O2",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
       ],
       "srcTitle": "Histidine",
       "fact": "Sits in enzyme active sites, passing protons about.",
       "src": "https://en.wikipedia.org/wiki/Histidine"
     },
     {
-      "id": "methionine",
+      "id": "bed_methionine",
       "kind": "amino",
       "name": "Methionine",
       "code3": "Met",
@@ -2029,11 +2029,11 @@
       "residue": "C5H9NOS",
       "formula": "C5H11NO2S",
       "of": [
-        "carbon",
-        "hydrogen",
-        "nitrogen",
-        "oxygen",
-        "sulfur"
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen",
+        "el_sulfur"
       ],
       "srcTitle": "Methionine",
       "fact": "Every protein starts here — it is what START codes for.",
@@ -2148,7 +2148,7 @@
     "Fe": "#E06633"
   },
   "structures": {
-    "water_molecule": {
+    "bed_water_molecule": {
       "atoms": [
         [
           "O",
@@ -2179,7 +2179,7 @@
         ]
       ]
     },
-    "glycine": {
+    "bed_glycine": {
       "atoms": [
         [
           "N",
@@ -2280,7 +2280,7 @@
         ]
       ]
     },
-    "alanine": {
+    "bed_alanine": {
       "atoms": [
         [
           "N",
@@ -2411,7 +2411,7 @@
         ]
       ]
     },
-    "cysteine": {
+    "bed_cysteine": {
       "atoms": [
         [
           "N",

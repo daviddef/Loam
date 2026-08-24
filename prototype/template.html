@@ -52,7 +52,7 @@
     width:32px;height:32px;padding:0;font:700 15px ui-rounded,Avenir;border-radius:10px;
     background:rgba(255,249,238,.92);
   }
-  #board{cursor:grab}
+  #board{cursor:grab;touch-action:none;overscroll-behavior:contain}
   #board.panning{cursor:grabbing}
   #intro{
     position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:8;
@@ -97,6 +97,15 @@
     background:var(--card);border:1.5px solid var(--line);border-radius:99px;padding:1px 4px;
   }
   .chip.board.cooking .n{display:none}
+  .chip.board.hidden{display:none}
+  .chip.board.folded{border-style:dashed}
+  .chip.board.folded::after{
+    content:attr(data-fold);position:absolute;top:-9px;right:-8px;
+    font:800 9.5px ui-rounded,Avenir;color:#fff;background:var(--ink-soft);
+    border-radius:99px;padding:2px 6px;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1)}45%{transform:scale(1.07)}}
+  .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
   .chip.live{border-color:var(--avocado);box-shadow:0 0 0 2px rgba(107,142,78,.13)}
   .chip .n{
@@ -127,46 +136,41 @@
   .verb .e{font-size:21px;line-height:1.1}
   .verb.locked{opacity:.3}
   .verb.target{border-color:var(--teal);border-style:solid;background:#E8F4F3;color:var(--teal);transform:scale(1.07)}
-  /* discovery card — anchored, non-blocking, self-retiring */
+  /* discovery card — one discreet line; a click opens it and keeps it */
   #card{
-    position:fixed;left:16px;bottom:88px;width:330px;max-width:calc(100vw - 32px);z-index:150;
-    opacity:0;transform:translateY(10px) scale(.97);pointer-events:none;
-    transition:opacity .22s,transform .22s;
+    position:fixed;left:14px;bottom:82px;width:min(300px,calc(100vw - 28px));z-index:150;
+    opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s;
   }
   #card.on{opacity:1;transform:none;pointer-events:auto}
   .inner{
-    position:relative;background:var(--card);border:2px solid var(--ink);border-radius:16px;
-    padding:13px 15px 12px;box-shadow:0 8px 0 rgba(43,33,24,.14);overflow:hidden;
-    border-left:6px solid var(--fam,var(--orange));
+    position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:13px;
+    box-shadow:0 5px 16px rgba(43,33,24,.13);overflow:hidden;cursor:pointer;
+    border-left:4px solid var(--fam,var(--orange));
   }
-  .inner .x{
-    position:absolute;top:7px;right:8px;border:none;background:none;padding:2px 5px;
-    font-size:16px;line-height:1;color:#B9A88C;cursor:pointer;
+  .line{display:flex;align-items:center;gap:8px;padding:9px 11px}
+  .line .big{font-size:19px;line-height:1;flex:none}
+  .line b{font:700 14px ui-rounded,Avenir;flex:1;min-width:0;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .line .chev{font-size:9px;color:#B9A88C;flex:none;transition:transform .2s}
+  #card:not(.mini) .line .chev{transform:rotate(180deg)}
+  .dot{width:7px;height:7px;border-radius:99px;flex:none}
+  .dot.workshop{background:var(--avocado)} .dot.folklore{background:#9B6BC4}
+  .more{
+    max-height:0;overflow:hidden;transition:max-height .24s ease;
+    padding:0 11px;
   }
-  .inner .x:hover{color:var(--ink)}
-  .chead{display:flex;align-items:center;gap:10px;margin-bottom:8px;padding-right:16px}
-  .chead .big{font-size:30px;line-height:1;flex:none}
-  .chead b{display:block;font:800 16px/1.15 ui-rounded,Avenir;margin-bottom:3px}
-  .badge{
-    display:inline-block;font:700 9px ui-rounded,Avenir;letter-spacing:.9px;text-transform:uppercase;
-    padding:3px 8px;border-radius:99px;font-style:normal;
-  }
-  .badge.workshop{background:#E6F0DC;color:#41652A}
-  .badge.folklore{background:#F1E4FA;color:#6B3E8C}
-  .why{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0}
+  #card:not(.mini) .more{max-height:260px;padding-bottom:10px}
+  .why{font-size:12.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 8px}
   .fact{display:none}
-  .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+  .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .inner button.ghost{
     background:#fff;color:var(--ink-soft);border:1.5px solid var(--line);border-radius:99px;
-    padding:5px 12px;font:600 12px ui-rounded,Avenir;cursor:pointer;
+    padding:4px 10px;font:600 11px ui-rounded,Avenir;cursor:pointer;
   }
-  .inner button.ghost:hover{border-color:var(--orange);color:var(--ink)}
   @keyframes drain{from{width:100%}to{width:0}}
-  .timer{
-    position:absolute;left:0;bottom:0;height:3px;background:var(--fam,var(--orange));opacity:.5;
-    animation:drain 7s linear forwards;
-  }
-  #card:hover .timer{animation-play-state:paused}
+  .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--fam,var(--orange));
+    opacity:.45;animation:drain 6s linear forwards}
+  #card:not(.mini) .timer{display:none}
   .cardrow{display:flex;gap:8px;justify-content:center;align-items:center}
 
   #toast{
@@ -185,7 +189,7 @@
   }
   #sheet.on{display:grid;place-items:center}
   .sheetbox{
-    width:min(560px,100%);max-height:86vh;display:flex;flex-direction:column;
+    width:min(480px,100%);max-height:82vh;display:flex;flex-direction:column;
     background:var(--card);border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;
     box-shadow:0 14px 0 rgba(43,33,24,.16);animation:pop .3s cubic-bezier(.3,1.5,.5,1);
   }
@@ -194,7 +198,7 @@
     padding:13px 15px;border-bottom:2px solid var(--line);background:rgba(246,237,221,.7);
   }
   .sheethead b{font:800 14px ui-rounded,Avenir}
-  #sheetBody{overflow-y:auto;padding:15px}
+  #sheetBody{overflow-y:auto;padding:12px 13px}
   #sheetBody h2{
     font:700 10.5px/1 ui-rounded,Avenir;letter-spacing:.9px;text-transform:uppercase;
     color:var(--ink-soft);margin:14px 2px 8px;
@@ -205,30 +209,34 @@
   }
   .search:focus{outline:2px solid var(--orange);outline-offset:-1px}
   .none{color:var(--ink-soft);font-size:13px;text-align:center;padding:18px}
-  .phead{text-align:center;padding:4px 0 14px;border-bottom:2px dashed var(--line);margin-bottom:12px}
-  .phead .big{font-size:48px;line-height:1}
-  .phead h3{font:800 21px ui-rounded,Avenir;margin:4px 0 8px}
-  .pnums{font-size:13px;color:var(--ink-soft)}
-  .pnums b{color:var(--brick);font-size:15px}
-  .pfrom{font-size:12px;color:var(--ink-soft);margin-top:7px;font-style:italic}
+  .phead{
+    display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
+    padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
+  }
+  .phead .big{font-size:26px;line-height:1;flex:none}
+  .phead h3{font:800 16px ui-rounded,Avenir;margin:0;flex:1;min-width:0}
+  .pnums{font-size:11.5px;color:var(--ink-soft);width:100%}
+  .pnums b{color:var(--brick);font-size:12.5px}
+  .pfrom{font-size:11px;color:var(--ink-soft);width:100%;margin-top:2px;font-style:italic}
   /* provenance tree — real connectors, drawn with borders on the list */
   ul.tree,ul.tree ul{list-style:none;margin:0;padding:0;font-size:13px}
-  ul.tree ul{margin-left:11px;padding-left:13px;position:relative}
+  ul.tree ul{margin-left:8px;padding-left:10px;position:relative}
   ul.tree ul::before{
     content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--line);
   }
   ul.tree li{position:relative}
   ul.tree ul > li::before{
-    content:'';position:absolute;left:-13px;top:15px;width:11px;height:2px;background:var(--line);
+    content:'';position:absolute;left:-10px;top:11px;width:8px;height:1.5px;background:var(--line);
   }
   /* mask the trunk below the final child so the elbow ends cleanly */
   ul.tree ul > li:last-child::after{
-    content:'';position:absolute;left:-14px;top:17px;bottom:0;width:3px;background:var(--card);
+    content:'';position:absolute;left:-11px;top:12px;bottom:0;width:2.5px;background:var(--card);
   }
   .prow{
-    display:flex;align-items:center;gap:6px;padding:4px 8px;margin:1px 0;
-    border-radius:9px;background:rgba(255,255,255,.5);
+    display:flex;align-items:center;gap:5px;padding:2px 6px;margin:0;
+    border-radius:6px;background:none;font-size:12.5px;
   }
+  .prow:hover{background:rgba(255,255,255,.6)}
   .prow.root{background:#FFF0E6;font-weight:800;box-shadow:inset 0 0 0 2px var(--orange)}
   .prow.has{cursor:pointer}
   .prow.has:hover{background:#fff}
@@ -241,7 +249,7 @@
     border-radius:99px;padding:2px 7px;flex:none;
   }
   ul.tree ul.fold{display:none}
-  .prow .pe{font-size:15px}
+  .prow .pe{font-size:13px}
   .prow .pn{flex:1;min-width:0}
   .prow .pv{
     font-size:10px;font-weight:700;color:var(--teal);background:#E8F4F3;
@@ -264,11 +272,11 @@
   }
   .atom{
     display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
-    width:42px;height:42px;border-radius:9px;color:#fff;flex:none;
+    width:26px;height:26px;border-radius:6px;color:#fff;flex:none;
     box-shadow:inset 0 -2px 0 rgba(0,0,0,.16);
   }
-  .atom .sym{font:800 15px/1 ui-rounded,Avenir;letter-spacing:-.3px}
-  .atom .z{font:700 8px/1 ui-rounded,Avenir;opacity:.8;margin-top:1px}
+  .atom .sym{font:800 10px/1 ui-rounded,Avenir;letter-spacing:-.2px}
+  .atom .z{font:700 6px/1 ui-rounded,Avenir;opacity:.75;margin-top:1px}
   .atom.alkali{background:var(--alkali)} .atom.alkaline{background:var(--alkaline)}
   .atom.transition{background:var(--transition)} .atom.post{background:var(--post)}
   .atom.metalloid{background:var(--metalloid)} .atom.nonmetal{background:var(--nonmetal)}
@@ -343,18 +351,18 @@
 
   /* bedrock: the substrate, deliberately quieter than the game above it */
   .bedhead{
-    text-align:center;font:700 10px ui-rounded,Avenir;letter-spacing:1.4px;text-transform:uppercase;
-    color:#A8977E;margin:20px 0 12px;position:relative;
+    text-align:center;font:700 9px ui-rounded,Avenir;letter-spacing:1.2px;text-transform:uppercase;
+    color:#A8977E;margin:14px 0 8px;position:relative;
   }
   .bedhead::before,.bedhead::after{
     content:'';position:absolute;top:50%;width:26%;height:2px;background:var(--line);
   }
   .bedhead::before{left:2%} .bedhead::after{right:2%}
-  .bedgroup{margin-bottom:12px;opacity:.78}
+  .bedgroup{margin-bottom:8px;opacity:.72}
   .bedof{font:700 12px ui-rounded,Avenir;color:var(--ink-soft);margin-bottom:4px}
   ul.tree.bed .brow{
-    display:flex;align-items:center;gap:6px;padding:2px 7px;margin:1px 0;
-    font-size:12px;color:var(--ink-soft);background:none;
+    display:flex;align-items:center;gap:5px;padding:1px 5px;margin:0;
+    font-size:11.5px;color:var(--ink-soft);background:none;
   }
   aside h2 i{
     display:inline-block;width:8px;height:8px;border-radius:99px;margin-right:6px;
@@ -370,8 +378,8 @@
     min-width:19px;height:15px;line-height:15px;text-align:center;
   }
   .bedsum{
-    text-align:center;font:800 14px ui-rounded,Avenir;color:var(--brick);
-    padding:13px 10px;border:2px dashed var(--line);border-radius:14px;margin-top:6px;
+    text-align:center;font:800 12.5px ui-rounded,Avenir;color:var(--brick);
+    padding:9px;border:1.5px dashed var(--line);border-radius:11px;margin-top:5px;
   }
   .bedsum .syms{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:9px}
   .bedsum .syms i{
@@ -583,15 +591,44 @@ const chipCentre = (el) => [
   (parseFloat(el.style.top) || 0) + el.offsetHeight / 2,
 ];
 
+// Nothing you have made is ever destroyed by a tap. Tapping folds the branch
+// below a chip out of sight and puts a count on it; tapping again brings it
+// back. To clear the bench, use Tidy — and even that only removes chips, never
+// discoveries, which live in the codex permanently.
+function childrenOf(chip) {
+  return links.filter(l => l.a === chip || l.b === chip).map(l => l.out);
+}
+function descendantsOf(chip, acc = new Set()) {
+  for (const k of childrenOf(chip)) {
+    if (acc.has(k)) continue;
+    acc.add(k);
+    descendantsOf(k, acc);
+  }
+  return acc;
+}
+function toggleBranch(chip) {
+  const kids = descendantsOf(chip);
+  if (!kids.size) {                                   // nothing below: just acknowledge
+    chip.classList.add('pulse');
+    setTimeout(() => chip.classList.remove('pulse'), 380);
+    return;
+  }
+  const folding = !chip.classList.contains('folded');
+  chip.classList.toggle('folded', folding);
+  for (const k of kids) k.classList.toggle('hidden', folding);
+  chip.dataset.fold = folding ? `+${kids.size}` : '';
+  drawLinks();
+}
+
 // Connections persist, so the canvas becomes a diagram of what you built
 // rather than a scratchpad that forgets.
 function drawLinks() {
   const parts = [];
   for (const l of links) {
-    if (!l.out.isConnected) continue;
+    if (!l.out.isConnected || l.out.classList.contains('hidden')) continue;
     const [ox, oy] = chipCentre(l.out);
     for (const src of [l.a, l.b]) {
-      if (!src || !src.isConnected) continue;
+      if (!src || !src.isConnected || src.classList.contains('hidden')) continue;
       const [sx, sy] = chipCentre(src);
       parts.push(`<line class="made" x1="${sx}" y1="${sy}" x2="${ox}" y2="${oy}"/>`);
     }
@@ -635,6 +672,44 @@ board.addEventListener('wheel', ev => {
   ev.preventDefault();
   zoomBy(ev.deltaY < 0 ? 1.12 : 0.89, ev.clientX, ev.clientY);
 }, { passive: false });
+
+// Pinch. Pointer events give us every finger, so we track them ourselves rather
+// than relying on gesture events, which only Safari implements.
+const touches = new Map();
+let pinch = null;
+board.addEventListener('pointerdown', ev => {
+  if (ev.pointerType !== 'touch') return;
+  touches.set(ev.pointerId, ev);
+  if (touches.size === 2) {
+    const [a, b] = [...touches.values()];
+    pinch = { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
+    pan = null; drag = null;                          // a second finger cancels a drag
+    document.querySelectorAll('.chip.drag').forEach(c => c.classList.remove('drag'));
+  }
+}, true);
+board.addEventListener('pointermove', ev => {
+  if (ev.pointerType !== 'touch' || !touches.has(ev.pointerId)) return;
+  touches.set(ev.pointerId, ev);
+  if (touches.size !== 2 || !pinch) return;
+  ev.preventDefault();
+  const [a, b] = [...touches.values()];
+  const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+  if (pinch.d > 0) zoomBy(d / pinch.d, (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2);
+  pinch.d = d;
+}, true);
+for (const e of ['pointerup', 'pointercancel']) board.addEventListener(e, ev => {
+  touches.delete(ev.pointerId);
+  if (touches.size < 2) pinch = null;
+}, true);
+
+// Double-tap zooms in, and again to fit — the standard map gesture.
+let lastTap = 0;
+board.addEventListener('pointerup', ev => {
+  if (ev.target.closest('.chip.board, .verb, #zoom, #intro')) return;
+  const now = Date.now();
+  if (now - lastTap < 320) { view.k > 1.05 ? fitAll() : zoomBy(1.8, ev.clientX, ev.clientY); lastTap = 0; }
+  else lastTap = now;
+});
 
 // Chips that land on top of each other cannot be dragged apart, so placement
 // looks for space rather than trusting a random point.
@@ -683,32 +758,39 @@ function spawn(id, x, y, near) {
 // Discoveries must never block the board. The card slides in beside the bench,
 // reads in a glance, and retires on its own — the codex is the permanent record,
 // so nothing is lost by letting it go.
-let cardT;
+let cardT, cardPinned = false;
 function showCard(r, e) {
   const isFolk = e.shelf === 'folklore';
   const card = document.getElementById('card');
-  card.className = `card on fam-${familyOf(e).id}`;
+  cardPinned = false;
+  card.className = `card on mini fam-${familyOf(e).id}`;
+  card.dataset.for = e.id;
   document.getElementById('inner').innerHTML = `
-    <button class="x" data-dismiss title="Dismiss">×</button>
-    <div class="chead"><span class="big">${e.emoji}</span>
-      <span><b>${e.name}</b>
-      <i class="badge ${e.shelf}">${isFolk ? 'a story we tell' : 'how it works'}</i></span></div>
-    <p class="why">${r.why}</p>
-    <div class="cfoot">
-      ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
-      <button class="ghost" data-trace="${e.id}">Trace it</button>
+    <div class="line">
+      <span class="big">${e.emoji}</span>
+      <b>${e.name}</b>
+      <i class="dot ${e.shelf}" title="${isFolk ? 'a story we tell' : 'how it works'}"></i>
+      <span class="chev">▾</span>
+    </div>
+    <div class="more">
+      <p class="why">${r.why}</p>
+      <div class="cfoot">
+        ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
+        <button class="ghost" data-trace="${e.id}">Trace it</button>
+      </div>
     </div>
     <span class="timer"></span>`;
   clearTimeout(cardT);
-  cardT = setTimeout(() => card.classList.remove('on'), 7000);
+  cardT = setTimeout(() => { if (!cardPinned) card.classList.remove('on'); }, 6000);
 }
-function dismissCard() { clearTimeout(cardT); document.getElementById('card').classList.remove('on'); }
+function dismissCard() { clearTimeout(cardT); cardPinned = false; document.getElementById('card').classList.remove('on'); }
 
 // ---------- the one interaction that matters ----------
 let drag = null;
 let pan = null;
 board.addEventListener('pointerdown', ev => {
   if (ev.target.closest('#zoom, #intro')) return;
+  if (touches.size > 1) return;                       // pinching, not dragging
   const chip = ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
@@ -745,7 +827,7 @@ board.addEventListener('pointerup', ev => {
   const { chip, moved } = drag; drag = null;
   chip.classList.remove('drag');
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
-  if (!moved) { chip.remove(); drawLinks(); return; }   // tap to put away
+  if (!moved) { toggleBranch(chip); return; }          // tap folds the branch below
   const t = hit(ev.clientX, ev.clientY, chip);
   if (!t) return;
   if (t.dataset.verb) applyProcess(chip, t);
@@ -761,7 +843,7 @@ board.addEventListener('pointerup', ev => {
 function hit(x, y, exclude) {
   const d = exclude ? exclude.getBoundingClientRect() : { left: x, right: x, top: y, bottom: y };
   let best = null, bestArea = 0;
-  for (const n of [...world.querySelectorAll('.chip.board'), ...document.querySelectorAll('.verb:not(.locked)')]) {
+  for (const n of [...world.querySelectorAll('.chip.board:not(.hidden)'), ...document.querySelectorAll('.verb:not(.locked)')]) {
     if (n === exclude) continue;
     const r = n.getBoundingClientRect();
     const ox = Math.min(d.right, r.right) - Math.max(d.left, r.left);
@@ -1184,14 +1266,18 @@ document.getElementById('reset').addEventListener('click', () => {
   location.reload();
 });
 document.getElementById('card').addEventListener('click', ev => {
-  if (ev.target.closest('[data-dismiss]')) return dismissCard();
   const t = ev.target.closest('[data-trace]');
-  if (t) { dismissCard(); showProvenance(t.dataset.trace); }
-});
-// Hovering holds the card open; leaving restarts its clock.
-document.getElementById('card').addEventListener('pointerenter', () => clearTimeout(cardT));
-document.getElementById('card').addEventListener('pointerleave', () => {
-  cardT = setTimeout(() => document.getElementById('card').classList.remove('on'), 2500);
+  if (t) { dismissCard(); return showProvenance(t.dataset.trace); }
+  if (ev.target.closest('a')) return;
+  // A click opens it out and keeps it there — no timer, no dismiss button.
+  const card = ev.currentTarget;
+  if (card.classList.contains('mini')) {
+    card.classList.remove('mini');
+    cardPinned = true;
+    clearTimeout(cardT);
+  } else {
+    dismissCard();
+  }
 });
 document.getElementById('shelfToggle').addEventListener('click', () =>
   document.getElementById('aside').classList.toggle('open'));
@@ -1228,9 +1314,10 @@ document.getElementById('introGo').addEventListener('click', () =>
 if (found.size > 4) document.getElementById('intro').classList.add('gone');
 
 renderShelf();
-requestAnimationFrame(() => {
-  [...found].filter(id => byId[id].starter).forEach(id => spawn(id, 0, 0));
-  layOutBench();
-  applyView();
-});
+// Spawn synchronously. requestAnimationFrame does not fire in a hidden or
+// throttled tab, and relying on it meant the board could come up empty.
+// The ResizeObserver above lays them out as soon as the board has a size.
+[...found].filter(id => byId[id].starter).forEach(id => spawn(id, 0, 0));
+layOutBench();
+applyView();
 </script>
