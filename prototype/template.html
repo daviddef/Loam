@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <title>Loam — dirt to dinner</title>
@@ -134,8 +135,8 @@ __CATEGORY_CSS__
   .mark{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit;flex:none}
   .mark svg{width:26px;height:26px;border-radius:7px;flex:none;display:block}
   .goal{
-    font-size:12.5px;color:var(--ink-soft);background:var(--surface);border:1.5px solid var(--line);
-    border-radius:99px;padding:5px 12px;
+    font-size:12.5px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);
+    border-radius:4px;padding:5px 12px;
   }
   .goal b{color:var(--brick)}
   .goal{cursor:pointer}
@@ -150,7 +151,7 @@ __CATEGORY_CSS__
   .count.free{color:var(--on-accent);background:var(--teal);border-color:var(--teal)}
   button{
     font:600 13px var(--face-name);color:var(--ink);cursor:pointer;
-    background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:6px 13px;
+    background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 13px;
   }
   button:active{transform:translateY(1px)}
   main{flex:1;display:flex;min-height:0}
@@ -176,8 +177,8 @@ __CATEGORY_CSS__
   #intro{
     position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:8;
     width:min(330px,86%);text-align:center;padding:22px 20px 18px;
-    background:var(--card);border:2.5px solid var(--ink);border-radius:20px;
-    box-shadow:0 10px 0 rgba(var(--shade),.15);
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 22px 50px -18px rgba(var(--shade),.7);
   }
   #intro b{display:block;font:800 19px var(--face-name);margin-bottom:9px}
   #intro p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 9px}
@@ -201,27 +202,38 @@ __CATEGORY_CSS__
      rendered from data we already hold. */
   .chip{
     display:inline-flex;flex-direction:column;align-items:center;gap:0;
-    width:var(--cw,84px);padding:7px 5px 5px;background:var(--card);
+    width:var(--cw,84px);padding:8px 5px 6px;background:var(--card);
     border:1px solid var(--line);border-radius:3px;
     font:500 11px/1.25 var(--face-name);white-space:normal;text-align:center;cursor:grab;
     box-shadow:var(--raise);position:relative;
   }
-  .chip .art{width:44px;height:44px;display:block;flex:none}
+  .chip .art{width:50px;height:50px;display:block;flex:none}
   .chip .n{
-    display:block;margin-top:4px;letter-spacing:.055em;text-transform:uppercase;
+    display:flex;align-items:center;justify-content:center;
+    min-height:2.4em;margin-top:4px;letter-spacing:.055em;text-transform:uppercase;
     font:600 9.5px/1.2 var(--face-name);color:var(--ink);
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;hyphens:auto;
   }
+  /* A long single word (SOURDOUGH STARTER, SPAGHETTI) cannot be broken without
+     looking like a mistake, so it gets smaller instead of getting chopped. */
+  .chip .n.long{font-size:8.4px;letter-spacing:.02em}
+  .chip .n.vlong{font-size:7.4px;letter-spacing:0}
   /* The category rule. Colour is never the only signal — the accession line
      below carries the same information as text. */
-  .chip .rl{display:block;width:22px;height:2px;margin:5px auto 3px;border-radius:2px;background:var(--fam)}
+  /* The category rule. On the dark tray a mid-value chip disappears into the
+     card, so the rule takes the lighter chip from the same hue page; on paper
+     it takes the base. Either way it is a Munsell colour, and either way the
+     accession line below says the same thing in words. */
+  .chip .rl{display:block;width:24px;height:2px;margin:5px auto 3px;border-radius:2px;
+            background:var(--fam-rule,var(--fam))}
   .chip .ac{
     display:block;font:400 7.5px/1.2 var(--face-data);letter-spacing:.07em;
     color:var(--ink-soft);font-variant-numeric:tabular-nums;
   }
-  .chip.board{--cw:92px}
-  .chip.board .art{width:52px;height:52px}
+  .chip.board{--cw:94px}
+  .chip.board .art{width:60px;height:60px}
   .chip.board .n{font-size:10px}
+  .chip.board .ac{font-size:8px}
   /* Shelf chips are scanned, not read: drawing and name only. */
   aside .chip{--cw:70px;padding:6px 3px 5px}
   aside .chip .art{width:34px;height:34px}
@@ -372,12 +384,12 @@ __CATEGORY_CSS__
   #sheet.on{display:grid;place-items:center}
   .sheetbox{
     width:min(480px,100%);max-height:82vh;display:flex;flex-direction:column;
-    background:var(--card);border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;
-    box-shadow:0 14px 0 rgba(var(--shade),.16);animation:pop .3s cubic-bezier(.3,1.5,.5,1);
+    background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 22px 50px -18px rgba(var(--shade),.7);animation:pop .3s cubic-bezier(.3,1.5,.5,1);
   }
   .sheethead{
     display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none;
-    padding:13px 15px;border-bottom:2px solid var(--line);background:rgba(246,237,221,.7);
+    padding:13px 15px;border-bottom:2px solid var(--line);background:color-mix(in srgb,var(--surface) 82%,transparent);
   }
   .sheethead b{font:800 14px var(--face-name)}
   #sheetBody{overflow-y:auto;padding:12px 13px}
@@ -419,7 +431,7 @@ __CATEGORY_CSS__
     border-radius:6px;background:none;font-size:12.5px;
   }
   .prow:hover{background:rgba(255,255,255,.6)}
-  .prow.root{background:#FFF0E6;font-weight:800;box-shadow:inset 0 0 0 2px var(--orange)}
+  .prow.root{background:color-mix(in srgb,var(--orange) 14%,var(--card));font-weight:800;box-shadow:inset 0 0 0 2px var(--orange)}
   .prow.has{cursor:pointer}
   .prow.has:hover{background:var(--surface)}
   .prow .tw{
@@ -446,11 +458,20 @@ __CATEGORY_CSS__
        halo     = energy, not matter     (particle)
      Colour then carries the sub-category within each kind. ------------- */
   :root{
-    --alkali:#E2703A; --alkaline:#E0A526; --transition:#A63D2F; --post:#8A7B6B;
-    --metalloid:#6B8E4E; --nonmetal:#3E7C7B; --halogen:#5B7FA6; --noble:#8C6BA6;
+    /* Periodic-table groups. Same discipline as everything else: these are
+       Munsell chips, not a third hand-picked palette. */
+    --alkali:var(--c-fire-bs);       --alkaline:var(--c-grain-bs);
+    --transition:var(--c-dish-bs);   --post:var(--c-craft-bs);
+    --metalloid:var(--c-plant-bs);   --nonmetal:var(--c-molecule-bs);
+    --halogen:var(--c-water-bs);     --noble:var(--c-living-bs);
     --lanthanide:#B5657F; --actinide:#7A5C8E;
-    --fam-earth:#8A7B6B; --fam-water:#4E8CB8; --fam-fire:#E2703A; --fam-plant:#6B8E4E;
-    --fam-animal:#A6603D; --fam-microbe:#8C6BA6; --fam-food:#E0A526; --fam-myth:#7C5CA6;
+    /* The eight shelf families are a grouping, not a second palette. Their
+       colours come from the same Munsell chips the drawings use, so the shelf
+       heading and the card in it can never disagree about what a thing is. */
+    --fam-earth:var(--c-mineral-bs);   --fam-water:var(--c-water-bs);
+    --fam-fire:var(--c-fire-bs);       --fam-plant:var(--c-plant-bs);
+    --fam-animal:var(--c-living-bs);   --fam-microbe:var(--c-molecule-bs);
+    --fam-food:var(--c-grain-bs);      --fam-myth:var(--c-craft-bs);
   }
   .atom{
     display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
@@ -497,7 +518,7 @@ __CATEGORY_CSS__
   }
   .setrow button b{font:700 13.5px var(--face-name);color:var(--ink)}
   .setrow button i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
-  .setrow button.on{border-color:var(--orange);background:#FFF4EC}
+  .setrow button.on{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--card))}
   .setrow button.on b{color:var(--brick)}
 
   /* depth: hide the technical layer for younger readers */
@@ -552,7 +573,7 @@ __CATEGORY_CSS__
     font:800 17px var(--face-name);min-width:66px;padding:11px 16px;border-radius:13px;
     background:var(--surface);border:2px solid var(--line);cursor:pointer;
   }
-  .opts button:hover{border-color:var(--orange);background:#FFF4EC}
+  .opts button:hover{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--card))}
   .guess .skip{
     background:none;border:none;color:var(--ink-soft);font:600 12px var(--face-name);
     text-decoration:underline;cursor:pointer;padding:4px;
@@ -586,22 +607,22 @@ __CATEGORY_CSS__
     background:var(--surface);border:1.5px solid var(--line);border-radius:10px;
   }
   .pstep:hover{border-color:var(--orange)}
-  .pstep.last{background:#FFF4EC;border-color:#F0D6C0}
+  .pstep.last{background:color-mix(in srgb,var(--orange) 12%,var(--card));border-color:var(--orange)}
   .pstep .pn2{
     font:800 9.5px var(--face-name);color:var(--ink-soft);background:var(--card);
     border:1.5px solid var(--line);border-radius:99px;
     min-width:19px;height:19px;line-height:16px;text-align:center;flex:none;
   }
   .pstep .g{font:600 13px var(--face-name);flex:1;min-width:0}
-  .pstep i{font-style:normal;font-size:10.5px;color:#B0A08A;flex:none}
+  .pstep i{font-style:normal;font-size:10.5px;color:var(--ink-soft);flex:none}
   .jump{
     cursor:pointer;border-bottom:1.5px dotted var(--orange);color:var(--ink);
   }
   .hintbox .answer{
     font:700 15px var(--face-name);color:var(--ink);text-align:center;
-    background:#FFF4EC;border-radius:9px;padding:9px 6px;
+    background:color-mix(in srgb,var(--orange) 10%,var(--card));border-radius:9px;padding:9px 6px;
   }
-  aside h2.locked,#sheetBody h2.locked{color:#B0A08A}
+  aside h2.locked,#sheetBody h2.locked{color:var(--ink-soft);opacity:.6}
   .chip.locked{opacity:.5;border-style:dashed;cursor:pointer}
   .chip.locked .q{
     font-style:normal;font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--c-craft-bs);
@@ -695,7 +716,7 @@ __CATEGORY_CSS__
   ul.tree.bed .brow{gap:8px}
   ul.tree.bed .brow .cat{
     font-style:normal;font:700 8.5px var(--face-name);text-transform:uppercase;
-    letter-spacing:.6px;color:#B0A08A;margin-left:auto;
+    letter-spacing:.6px;color:var(--ink-soft);margin-left:auto;
   }
   ul.tree.bed .brow b{
     font-size:9.5px;font-weight:800;color:var(--on-accent);background:#A8977E;border-radius:5px;
@@ -715,8 +736,12 @@ __CATEGORY_CSS__
     *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
   }
   @media(max-width:720px){
-    header{gap:7px;padding:9px 10px;flex-wrap:nowrap;overflow:hidden}
+    header{gap:6px;padding:9px 10px;flex-wrap:nowrap;overflow:hidden}
     h1{font-size:15px;flex:none;white-space:nowrap}
+    /* Reset moves into Settings. It is destructive, and it was being clipped
+       off the end of the header at 375px. */
+    #reset{display:none}
+    .mark svg{width:22px;height:22px}
     .goal{display:none}
     #live{display:none}
     header button,.count{padding:6px 10px;font-size:12px;white-space:nowrap;flex:none}
@@ -733,7 +758,10 @@ __CATEGORY_CSS__
     #sheet{padding:10px}
     .sheetbox{max-height:92vh}
   }
+  @media(max-width:400px){ h1{display:none} }
   @media(min-width:721px){ #shelfToggle{display:none} }
+  /* A destructive control should not look like the others. */
+  .danger{border-color:var(--brick)!important;color:var(--brick)!important}
 </style>
 
 <header>
@@ -798,6 +826,8 @@ const {elements, recipes, verbs} = DATA;
 /* Every drawing in the game, keyed by item id. Shapes only — no colour: see
    prototype/art-render.js for how a role becomes a paint. */
 const ART = __ART_DATA__;
+/* Characteristic size of each item, to the nearest power of ten. */
+const SCALE = __SCALE_DATA__;
 __ART_RENDER__
 const byId = Object.fromEntries(elements.map(e => [e.id, e]));
 
@@ -1027,34 +1057,21 @@ const ACCESSION = new Map(elements.map((e, i) => [e.id, 'LM·' + String(i + 1).p
 function accessionOf(id) { return ACCESSION.get(id) || '—'; }
 
 /**
- * Order of magnitude, in metres. Straight out of Powers of Ten: it costs
- * nothing, it is true, and it is the one number that makes the distance
- * between an atom and a field visible while you play.
+ * Order of magnitude, in metres — from data/scale.json, which is where the
+ * reasoning lives. Straight out of Powers of Ten: it costs nothing, it is
+ * true, and it is the one number that makes the distance between an atom and
+ * a field visible while you play.
  */
-const SCALE_BY_CAT = {
-  molecule: '10⁻⁹ m', living: '10⁻⁵ m', mineral: '10⁻² m', water: '10⁻¹ m',
-  fire: '10⁻¹ m', plant: '10⁰ m', grain: '10⁻³ m', ferment: '10⁻¹ m',
-  dish: '10⁻¹ m', craft: '10⁻¹ m',
-};
-const SCALE_BY_ID = {
-  carbon: '10⁻¹⁰ m', hydrogen: '10⁻¹⁰ m', oxygen: '10⁻¹⁰ m', nitrogen: '10⁻¹⁰ m',
-  sulfur: '10⁻¹⁰ m', phosphorus: '10⁻¹⁰ m', water: '10⁻¹⁰ m', carbon_dioxide: '10⁻¹⁰ m',
-  disulfide: '10⁻¹⁰ m', glucose: '10⁻⁹ m', amino_acid: '10⁻⁹ m', cysteine: '10⁻⁹ m',
-  dipeptide: '10⁻⁹ m', nucleotide: '10⁻⁹ m', atp: '10⁻⁹ m',
-  polypeptide: '10⁻⁸ m', protein: '10⁻⁸ m', enzyme: '10⁻⁸ m', collagen: '10⁻⁸ m',
-  keratin: '10⁻⁸ m', denatured_protein: '10⁻⁸ m', starch: '10⁻⁸ m', gelatin: '10⁻⁸ m',
-  dna: '10⁻⁶ m', membrane: '10⁻⁸ m', cell: '10⁻⁵ m', yeast: '10⁻⁵ m', mould: '10⁻⁵ m',
-  penicillin: '10⁻⁹ m',
-  sun: '10⁹ m', field: '10² m', meadow: '10² m', pasture: '10² m', river: '10³ m',
-  sea: '10⁶ m', harvest: '10² m', greenhouse: '10¹ m', tree: '10¹ m',
-};
-function scaleOf(id) { return SCALE_BY_ID[id] || SCALE_BY_CAT[artCat(id)] || '10⁻¹ m'; }
+function scaleOf(id) { return (SCALE[id] || {}).t || ''; }
 
 function chipHTML(e) {
+  const name = nameOf(e);
+  const longest = Math.max(...name.split(/\s+/).map(w => w.length));
+  const fit = longest > 12 ? ' vlong' : longest > 9 ? ' long' : '';
   return artSVG(e.id) +
-    `<span class="n">${nameOf(e)}</span>` +
+    `<span class="n${fit}">${name}</span>` +
     `<span class="rl"></span>` +
-    `<span class="ac">${accessionOf(e.id)} · ${scaleOf(e.id)}</span>`;
+    `<span class="ac">${accessionOf(e.id)}${scaleOf(e.id) ? ' · ' + scaleOf(e.id) : ''}</span>`;
 }
 
 /** A drawing at a given pixel size, for prose and lists. */
@@ -1303,8 +1320,10 @@ function drawLinks() {
   }, 120);
 }
 // Each family's colour, for the pulses that travel the lines.
-const FAM_HEX = { earth:'#8A7B6B', water:'#4E8CB8', fire:'#E2703A', plant:'#6B8E4E',
-                  animal:'#A6603D', microbe:'#8C6BA6', food:'#E0A526', myth:'#7C5CA6' };
+// Read from the stylesheet rather than restated here, so the mote that runs
+// down a link is exactly the colour of the thing that sent it.
+const FAM_HEX = new Proxy({}, { get: (_, k) =>
+  getComputedStyle(document.documentElement).getPropertyValue('--fam-' + String(k)).trim() || '#A3937E' });
 let pathSeq = 0;
 
 function drawLinksNow() {
@@ -2342,11 +2361,20 @@ function showSettings() {
           : 'Hands you all 226 elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.'}</i>
       </button>
     </div>
+    <h2>Start over</h2>
+    <div class="setrow">
+      <button class="danger" data-wipe="1">
+        <b>Wipe all discoveries</b>
+        <i>Everything you have found goes, and the four starting things come back.
+           There is no undo.</i></button>
+    </div>
     <p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
   if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
+  const wipe = document.getElementById('sheetBody').querySelector('[data-wipe]');
+  if (wipe) wipe.onclick = wipeProgress;
   document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {
     prefs[b.dataset.pref] = b.dataset.val;
     savePrefs(); applyPrefs(); renderShelf(); showSettings();
@@ -2426,11 +2454,12 @@ document.getElementById('nudge').addEventListener('click', () => {
   // Reveal one ingredient only. Finding the partner is the game.
   toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
-document.getElementById('reset').addEventListener('click', () => {
-  if (!confirm('Wipe all discoveries?')) return;
-  try { localStorage.removeItem(KEY); } catch {}
+function wipeProgress() {
+  if (!confirm('Wipe all discoveries? This cannot be undone.')) return;
+  try { localStorage.removeItem(KEY); localStorage.removeItem(REAL_KEY); } catch {}
   location.reload();
-});
+}
+document.getElementById('reset').addEventListener('click', wipeProgress);
 document.getElementById('card').addEventListener('click', ev => {
   const t = ev.target.closest('[data-trace]');
   if (t) { dismissCard(); return showProvenance(t.dataset.trace); }

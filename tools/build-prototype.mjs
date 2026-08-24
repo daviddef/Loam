@@ -12,6 +12,7 @@ const data = {
 };
 const art = J('../data/art.json');
 const palette = J('../data/palette.json');
+const scale = J('../data/scale.json');
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
 
 /**
@@ -41,7 +42,8 @@ function catCSS() {
     `  .art[data-cat="${k}"]{--bs:var(--c-${k}-bs);--hi:var(--c-${k}-hi);--lo:var(--c-${k}-lo)}`,
     // The card reads its category off the drawing it contains, so no call site
     // has to remember to label it.
-    `  .chip:has(.art[data-cat="${k}"]){--fam:var(--c-${k}-bs)}`,
+    `  .chip:has(.art[data-cat="${k}"]){--fam:var(--c-${k}-bs);--fam-rule:var(--c-${k}-hi)}`,
+    `  body.t-manual .chip:has(.art[data-cat="${k}"]){--fam-rule:var(--c-${k}-bs)}`,
   ].join('\n')).join('\n');
 }
 
@@ -63,19 +65,23 @@ if (!script) { console.error('no <script> block found'); process.exit(1); }
 try {
   new Function(script[1]
     .replace('__GAME_DATA__', '{elements:[],recipes:[],verbs:[],bedrock:{atoms:[],compounds:[],composition:{}}}')
-    .replace('__ART_DATA__', '{}'));
+    .replace('__ART_DATA__', '{}')
+    .replace('__SCALE_DATA__', '{}'));
 } catch (e) {
   console.error(`prototype script does not parse: ${e.message}`);
   process.exit(1);
 }
 
 html = html.replace('__GAME_DATA__', JSON.stringify(data))
-           .replace('__ART_DATA__', JSON.stringify(art));
+           .replace('__ART_DATA__', JSON.stringify(art))
+           .replace('__SCALE_DATA__', JSON.stringify(scale));
 
 // Every item must have a drawing. A missing one renders as an empty square,
 // which is the kind of thing that ships unnoticed.
 const undrawn = data.elements.filter(e => !art[e.id]).map(e => e.id);
 if (undrawn.length) { console.error(`no art for: ${undrawn.join(', ')}`); process.exit(1); }
+const unsized = data.elements.filter(e => !scale[e.id]).map(e => e.id);
+if (unsized.length) { console.error(`no scale for: ${unsized.join(', ')}`); process.exit(1); }
 
 writeFileSync(u('../prototype/index.html'), html);
 console.log(`built prototype/index.html — ${data.elements.length} elements, ${data.recipes.length} recipes, ` +
