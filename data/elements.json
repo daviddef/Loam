@@ -1,0 +1,2037 @@
+[
+  {
+    "id": "stone",
+    "name": "Stone",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "starter": true,
+    "tags": [
+      "earth"
+    ],
+    "fact": "Rock, unweathered. Everything solid you will build starts here."
+  },
+  {
+    "id": "water",
+    "name": "Water",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "starter": true,
+    "tags": [
+      "water"
+    ],
+    "fact": "The only common substance found on Earth as solid, liquid and gas."
+  },
+  {
+    "id": "sun",
+    "name": "Sun",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "starter": true,
+    "tags": [
+      "fire"
+    ],
+    "fact": "Every calorie in this game traces back to eight minutes of sunlight."
+  },
+  {
+    "id": "seed",
+    "name": "Seed",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "starter": true,
+    "tags": [
+      "plant"
+    ],
+    "fact": "A plant embryo with a packed lunch, waiting for water."
+  },
+  {
+    "id": "soil",
+    "name": "Soil",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Broken rock plus dead life. It takes a century to build a centimetre."
+  },
+  {
+    "id": "sand",
+    "name": "Sand",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Rock ground to between 0.06 and 2 mm, mostly stubborn quartz."
+  },
+  {
+    "id": "mud",
+    "name": "Mud",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Soil with enough water to lose its grip on itself."
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Mineral sheets so fine they slide — the reason clay can be shaped."
+  },
+  {
+    "id": "adobe",
+    "name": "Adobe",
+    "emoji": "🟧",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "build"
+    ],
+    "fact": "Mud and straw. Half the world's oldest surviving buildings."
+  },
+  {
+    "id": "brick",
+    "name": "Brick",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "build"
+    ],
+    "fact": "Sun-dried mud, standardised. The first mass-produced object."
+  },
+  {
+    "id": "pot",
+    "name": "Pot",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Fired clay. Once you can boil things, your diet changes forever."
+  },
+  {
+    "id": "glass",
+    "name": "Glass",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An amorphous solid — no crystal structure. It does not flow, whatever you have heard."
+  },
+  {
+    "id": "sea",
+    "name": "Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "3.5% salt, and the destination of every mineral rivers carry."
+  },
+  {
+    "id": "salt",
+    "name": "Salt",
+    "emoji": "🧂",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "The only rock humans eat. Wars have been fought over it."
+  },
+  {
+    "id": "brine",
+    "name": "Brine",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "Salt water strong enough to dehydrate any microbe that enters it."
+  },
+  {
+    "id": "ice",
+    "name": "Ice",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Less dense than the water it came from, which is why lakes have fish."
+  },
+  {
+    "id": "steam",
+    "name": "Steam",
+    "emoji": "♨️",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "fire"
+    ],
+    "fact": "Water carrying five times the energy it needed just to reach boiling."
+  },
+  {
+    "id": "spark",
+    "name": "Spark",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "A fragment of stone, briefly glowing. The start of everything."
+  },
+  {
+    "id": "flint",
+    "name": "Flint",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Breaks in conchoidal curves, so every fracture leaves an edge. Unlocks Cut."
+  },
+  {
+    "id": "fire",
+    "name": "Fire",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Carbon meeting oxygen fast enough to glow. Unlocks Heat."
+  },
+  {
+    "id": "wood",
+    "name": "Wood",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "build"
+    ],
+    "fact": "Cellulose in lignin — a natural fibreglass, and a fuel."
+  },
+  {
+    "id": "charcoal",
+    "name": "Charcoal",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Wood with everything but the carbon baked out. Burns far hotter."
+  },
+  {
+    "id": "ash",
+    "name": "Ash",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "earth"
+    ],
+    "fact": "The minerals a tree pulled from the soil, handed back."
+  },
+  {
+    "id": "lye",
+    "name": "Lye",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Ash water. Caustic enough to dissolve fat, hair and skin."
+  },
+  {
+    "id": "soap",
+    "name": "Soap",
+    "emoji": "🧼",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One end of the molecule grips grease, the other grips water."
+  },
+  {
+    "id": "tree",
+    "name": "Tree",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A plant that spends a fortune on a trunk to outgrow its neighbours."
+  },
+  {
+    "id": "straw",
+    "name": "Straw",
+    "emoji": "🎋",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The stalk left after the grain is taken. Tinder, thatch and bedding."
+  },
+  {
+    "id": "sprout",
+    "name": "Sprout",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A seed that has committed. There is no going back into the shell."
+  },
+  {
+    "id": "seedling",
+    "name": "Seedling",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Roots first, leaves second. Plumbing before solar panels."
+  },
+  {
+    "id": "plant",
+    "name": "Plant",
+    "emoji": "🪴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A machine that turns light and air into sugar, and asks for nothing."
+  },
+  {
+    "id": "grass",
+    "name": "Grass",
+    "emoji": "🍀",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Grows from the base, so grazing cannot kill it. Covers around 40% of the land."
+  },
+  {
+    "id": "flower",
+    "name": "Flower",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "An advertisement paid for in sugar, aimed at insects."
+  },
+  {
+    "id": "leaf",
+    "name": "Leaf",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A solar panel that must open its pores to breathe, and lose water doing it."
+  },
+  {
+    "id": "root",
+    "name": "Root",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Trades sugar with underground fungi for minerals it cannot reach."
+  },
+  {
+    "id": "bulb",
+    "name": "Bulb",
+    "emoji": "🧅",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A whole next-season plant, packed in fat leaves, buried for safety."
+  },
+  {
+    "id": "vine",
+    "name": "Vine",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Skips the cost of a trunk by climbing someone else's."
+  },
+  {
+    "id": "herb",
+    "name": "Herb",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "food"
+    ],
+    "fact": "Leaves whose chemical defences we happen to find delicious."
+  },
+  {
+    "id": "tea",
+    "name": "Tea",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Green, oolong and black are one plant. Only the oxidation differs."
+  },
+  {
+    "id": "brewed_tea",
+    "name": "Brewed Tea",
+    "emoji": "🫖",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Second most consumed drink on Earth, after water itself.",
+    "terminal": true
+  },
+  {
+    "id": "meadow",
+    "name": "Meadow",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Not scenery — the density of bloom that makes a pollinator colony viable."
+  },
+  {
+    "id": "nectar",
+    "name": "Nectar",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Roughly 25% sugar, made deliberately and given away on purpose."
+  },
+  {
+    "id": "bee",
+    "name": "Bee",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Forages 5 km out and reports good ground back to the hive by dancing."
+  },
+  {
+    "id": "honey",
+    "name": "Honey",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "sweet"
+    ],
+    "fact": "Under 18% water. Nothing can grow in it, so it never spoils."
+  },
+  {
+    "id": "beeswax",
+    "name": "Beeswax",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Costs the hive 8 g of honey for every 1 g secreted."
+  },
+  {
+    "id": "candle",
+    "name": "Candle",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The wick does not burn. It pumps liquid wax up into the flame."
+  },
+  {
+    "id": "fruit",
+    "name": "Fruit",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A bribe wrapped around a seed, aimed at anything that travels."
+  },
+  {
+    "id": "yeast",
+    "name": "Yeast",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A single-celled fungus living on fruit skins. Unlocks Ferment."
+  },
+  {
+    "id": "chilli",
+    "name": "Chilli",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Capsaicin repels mammals and does nothing at all to birds."
+  },
+  {
+    "id": "grape",
+    "name": "Grape",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Picked near 24% sugar — exactly what yeast needs to reach 13% alcohol."
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "emoji": "🥒",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "About 95% water, held up entirely by cell wall pressure."
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A berry, and unusually full of glutamate — which is why it reads as savoury."
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "emoji": "🍏",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Seeds never breed true. Every named variety is a clone of one lucky tree."
+  },
+  {
+    "id": "olive",
+    "name": "Olive",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Inedibly bitter raw. Every olive you have eaten was cured first."
+  },
+  {
+    "id": "wheat",
+    "name": "Wheat",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Bred for 10,000 years above all to stop dropping its own seed."
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Tolerates flooding, so the water itself does the weeding."
+  },
+  {
+    "id": "sugarcane",
+    "name": "Sugarcane",
+    "emoji": "🎍",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A giant grass that stores sugar in the stalk instead of the seed."
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a root — a swollen underground stem. That is why it has eyes."
+  },
+  {
+    "id": "onion",
+    "name": "Onion",
+    "emoji": "🧅",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Cut it and two chemicals that were kept apart meet, and you cry."
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "emoji": "🧄",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Whole, it barely smells. The smell is a wound response."
+  },
+  {
+    "id": "cabbage",
+    "name": "Cabbage",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Same species as kale, broccoli, sprouts and cauliflower. All of them."
+  },
+  {
+    "id": "field",
+    "name": "Field",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "One plant, no competitors — the most productive and most fragile system in farming."
+  },
+  {
+    "id": "harvest",
+    "name": "Harvest",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The narrow window the entire calendar of settled life is built around."
+  },
+  {
+    "id": "grain",
+    "name": "Grain",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A seed we eat before it ever gets to be a plant."
+  },
+  {
+    "id": "flour",
+    "name": "Flour",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Ground grain. Porridge came 30,000 years before anyone baked it."
+  },
+  {
+    "id": "malt",
+    "name": "Malt",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "Barley sprouted then killed, its starch already turned to sugar."
+  },
+  {
+    "id": "dough",
+    "name": "Dough",
+    "emoji": "🫓",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Wet, worked flour: an elastic protein net strong enough to hold gas."
+  },
+  {
+    "id": "pasta_dough",
+    "name": "Pasta Dough",
+    "emoji": "🥟",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Egg instead of yeast. The protein sets the shape on cooking."
+  },
+  {
+    "id": "pastry",
+    "name": "Pastry",
+    "emoji": "🥐",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Layers of flour separated by cold butter, waiting for steam."
+  },
+  {
+    "id": "cake_batter",
+    "name": "Cake Batter",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Sugar steals water from the flour, which is what keeps cake tender."
+  },
+  {
+    "id": "risen_dough",
+    "name": "Risen Dough",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "Full of carbon dioxide the yeast exhaled and the gluten refused to let go."
+  },
+  {
+    "id": "sourdough_starter",
+    "name": "Sourdough Starter",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "Wild yeast and lactobacilli, kept alive by daily feeding. Livestock, really."
+  },
+  {
+    "id": "flatbread",
+    "name": "Flatbread",
+    "emoji": "🥙",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "The oldest bread. Steam alone puffs it, in under two minutes."
+  },
+  {
+    "id": "bread",
+    "name": "Bread",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "A foam of carbon dioxide, set solid by heat."
+  },
+  {
+    "id": "sourdough",
+    "name": "Sourdough",
+    "emoji": "🥖",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "ferment"
+    ],
+    "fact": "Slower, sourer, and it keeps for days because the acid holds mould off.",
+    "terminal": true
+  },
+  {
+    "id": "noodle",
+    "name": "Noodle",
+    "emoji": "🍜",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "The oldest found are 4,000-year-old millet noodles from Lajia, China."
+  },
+  {
+    "id": "pasta",
+    "name": "Pasta",
+    "emoji": "🍝",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Al dente is the few seconds between the starch swelling and the protein firming."
+  },
+  {
+    "id": "cake",
+    "name": "Cake",
+    "emoji": "🍰",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "sweet"
+    ],
+    "fact": "Set the scaffold before the air escapes, or it falls.",
+    "terminal": true
+  },
+  {
+    "id": "wort",
+    "name": "Wort",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "Sweet barley water. Boiling it sterilised beer centuries before germ theory."
+  },
+  {
+    "id": "beer",
+    "name": "Beer",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Boiled, and therefore safe. Older than writing, possibly older than bread."
+  },
+  {
+    "id": "grape_juice",
+    "name": "Grape Juice",
+    "emoji": "🧃",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Crushing brings the wild yeast on the skin to the sugar inside."
+  },
+  {
+    "id": "wine",
+    "name": "Wine",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Stops near 15% — the point where yeast is killed by its own waste."
+  },
+  {
+    "id": "vinegar",
+    "name": "Vinegar",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "preserve",
+      "ferment"
+    ],
+    "fact": "Literally 'sour wine'. A second fermentation, by a different organism."
+  },
+  {
+    "id": "apple_juice",
+    "name": "Apple Juice",
+    "emoji": "🧃",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Browns within minutes — the same enzyme reaction as a bruise."
+  },
+  {
+    "id": "cider",
+    "name": "Cider",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Apples carry their own yeast and sugar. Left alone, juice becomes cider."
+  },
+  {
+    "id": "olive_oil",
+    "name": "Olive Oil",
+    "emoji": "🫗",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Squeezed from fruit flesh. Cold press means pressure and nothing else."
+  },
+  {
+    "id": "cane_juice",
+    "name": "Cane Juice",
+    "emoji": "🧃",
+    "shelf": "workshop",
+    "tags": [
+      "sweet"
+    ],
+    "fact": "Must be crushed within a day, before the cane eats its own sugar."
+  },
+  {
+    "id": "sugar",
+    "name": "Sugar",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "sweet"
+    ],
+    "fact": "One of the purest substances in any kitchen — near 100% sucrose."
+  },
+  {
+    "id": "caramel",
+    "name": "Caramel",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "sweet"
+    ],
+    "fact": "Hundreds of new compounds, none of which were in the sugar."
+  },
+  {
+    "id": "mead_must",
+    "name": "Mead Must",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "Honey watered down until life can live in it again."
+  },
+  {
+    "id": "mead",
+    "name": "Mead",
+    "emoji": "🍶",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Honey, water and time. No field and no harvest required."
+  },
+  {
+    "id": "sauerkraut",
+    "name": "Sauerkraut",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "preserve",
+      "ferment"
+    ],
+    "fact": "The bacteria that sour it were already living on the cabbage."
+  },
+  {
+    "id": "kimchi",
+    "name": "Kimchi",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "preserve",
+      "ferment"
+    ],
+    "fact": "The same lactic fermentation as sauerkraut, run cold and spiced.",
+    "terminal": true
+  },
+  {
+    "id": "pickle",
+    "name": "Pickle",
+    "emoji": "🥒",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "A brined pickle is alive and souring. A vinegar one arrives sour.",
+    "terminal": true
+  },
+  {
+    "id": "passata",
+    "name": "Passata",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Cooked tomato gives up far more lycopene than raw. Some food is better cooked."
+  },
+  {
+    "id": "herb_oil",
+    "name": "Herb Oil",
+    "emoji": "🫗",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Aroma compounds dissolve in fat, not water. Oil is the better solvent."
+  },
+  {
+    "id": "pasture",
+    "name": "Pasture",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Humans cannot digest grass. Grazers are the machine that converts it."
+  },
+  {
+    "id": "aurochs",
+    "name": "Aurochs",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "1.8 m at the shoulder, foul-tempered, extinct since 1627."
+  },
+  {
+    "id": "cow",
+    "name": "Cow",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Every cow alive descends from roughly 80 tamed aurochs."
+  },
+  {
+    "id": "milk",
+    "name": "Milk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Around 90 kg of grass a day becomes some 28 litres — and only after a calf."
+  },
+  {
+    "id": "chicken",
+    "name": "Chicken",
+    "emoji": "🐔",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Domesticated jungle bird. Around three alive per living human."
+  },
+  {
+    "id": "egg",
+    "name": "Egg",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A chalk shell with seven to seventeen thousand pores, because the embryo breathes."
+  },
+  {
+    "id": "fish",
+    "name": "Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The first vertebrates. Your skeleton is a variation on their design."
+  },
+  {
+    "id": "salt_fish",
+    "name": "Salt Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "Fed medieval Europe through winter and crossed oceans without ice."
+  },
+  {
+    "id": "meat",
+    "name": "Meat",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Tenderness depends almost entirely on how hard that muscle worked."
+  },
+  {
+    "id": "mince",
+    "name": "Mince",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Cutting across the fibres is why a burger beats the same cut whole."
+  },
+  {
+    "id": "roast",
+    "name": "Roast",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "The Maillard reaction: hundreds of aromas that did not exist raw."
+  },
+  {
+    "id": "cured_meat",
+    "name": "Cured Meat",
+    "emoji": "🥓",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "Salt does not kill the microbes. It leaves them nothing to drink."
+  },
+  {
+    "id": "bacon",
+    "name": "Bacon",
+    "emoji": "🥓",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "Wood smoke is genuinely antimicrobial. The flavour was a side effect."
+  },
+  {
+    "id": "sausage",
+    "name": "Sausage",
+    "emoji": "🌭",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "A way to make offcuts keep, and travel."
+  },
+  {
+    "id": "meatball",
+    "name": "Meatball",
+    "emoji": "🍡",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Egg binds it. Without a binder, mince squeezes out its own juice."
+  },
+  {
+    "id": "broth",
+    "name": "Broth",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Tough collagen dissolved into gelatin. Cheap cuts make the best."
+  },
+  {
+    "id": "aspic",
+    "name": "Aspic",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Proof in a bowl that the collagen really did dissolve.",
+    "terminal": true
+  },
+  {
+    "id": "soup",
+    "name": "Soup",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Almost every cuisine on Earth begins one the same way: onion, slowly."
+  },
+  {
+    "id": "cream",
+    "name": "Cream",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Fat floats. Cream is milk that has been left alone."
+  },
+  {
+    "id": "butter",
+    "name": "Butter",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Fat globules battered until they break and stick to each other."
+  },
+  {
+    "id": "ghee",
+    "name": "Ghee",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Water gone, solids strained. Keeps for months without a fridge."
+  },
+  {
+    "id": "yoghurt",
+    "name": "Yoghurt",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "ferment"
+    ],
+    "fact": "The bacteria eat the lactose, which is why the intolerant can eat it."
+  },
+  {
+    "id": "curd",
+    "name": "Curd",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Acid makes casein clump. The fastest cheese there is."
+  },
+  {
+    "id": "cheese",
+    "name": "Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Salted curd. From here, the only ingredient left is time."
+  },
+  {
+    "id": "aged_cheese",
+    "name": "Aged Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Those crunchy crystals in old parmesan are free amino acids."
+  },
+  {
+    "id": "mould",
+    "name": "Mould",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Its spores are in every room you have ever stood in."
+  },
+  {
+    "id": "blue_cheese",
+    "name": "Blue Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Skewered with holes, because the mould needs air to grow inward.",
+    "terminal": true
+  },
+  {
+    "id": "penicillin",
+    "name": "Penicillin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "An accident on a windowsill in 1928, and a decade of work to make it a drug.",
+    "terminal": true
+  },
+  {
+    "id": "ice_cream",
+    "name": "Ice Cream",
+    "emoji": "🍨",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "sweet"
+    ],
+    "fact": "Stirring while freezing keeps the crystals microscopic. That is the trick."
+  },
+  {
+    "id": "mayonnaise",
+    "name": "Mayonnaise",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Lecithin holds oil inside water that would rather not hold it."
+  },
+  {
+    "id": "boiled_egg",
+    "name": "Boiled Egg",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "White sets at 63 °C, yolk at 70 °C. Everything happens in between."
+  },
+  {
+    "id": "cooked_rice",
+    "name": "Cooked Rice",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Raw starch is nearly indigestible. Cooked, it feeds most of the world."
+  },
+  {
+    "id": "sushi_rice",
+    "name": "Sushi Rice",
+    "emoji": "🍣",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Sushi began as preservation — fish kept safe in souring rice.",
+    "terminal": true
+  },
+  {
+    "id": "baked_potato",
+    "name": "Baked Potato",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Dry heat makes it floury. The same potato boiled stays waxy."
+  },
+  {
+    "id": "chips",
+    "name": "Chips",
+    "emoji": "🍟",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Escaping steam is what keeps the oil out. Cool oil means greasy chips."
+  },
+  {
+    "id": "salad",
+    "name": "Salad",
+    "emoji": "🥗",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Salt early and osmosis empties every cell. Dress it at the table."
+  },
+  {
+    "id": "greek_salad",
+    "name": "Greek Salad",
+    "emoji": "🥗",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "No lettuce in a real one. Just what ripens together, in the same soil.",
+    "terminal": true
+  },
+  {
+    "id": "cheese_toastie",
+    "name": "Cheese Toastie",
+    "emoji": "🥪",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Young cheese flows; very old cheese has no water left and splits.",
+    "terminal": true
+  },
+  {
+    "id": "pizza_base",
+    "name": "Pizza Base",
+    "emoji": "🫓",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A Neapolitan oven runs at 450 °C and is done in 90 seconds."
+  },
+  {
+    "id": "pizza",
+    "name": "Pizza",
+    "emoji": "🍕",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Tomato on flatbread is far older than the flag story, and belonged to the poor."
+  },
+  {
+    "id": "apple_pie",
+    "name": "Apple Pie",
+    "emoji": "🥧",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "sweet"
+    ],
+    "fact": "Pectin glues apple cells together and survives the oven.",
+    "terminal": true
+  },
+  {
+    "id": "grilled_fish",
+    "name": "Grilled Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Sets at 50 °C. Fish never had to hold itself up against gravity.",
+    "terminal": true
+  },
+  {
+    "id": "dinner",
+    "name": "Dinner",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Stone, water, sun and a seed. All of agriculture, on one plate."
+  },
+  {
+    "id": "feast",
+    "name": "Feast",
+    "emoji": "🎉",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Nutritionally unnecessary. Every human society does it anyway.",
+    "terminal": true
+  },
+  {
+    "id": "philosopher_stone",
+    "name": "Philosopher's Stone",
+    "emoji": "💎",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Never found. Chemistry was the consolation prize.",
+    "terminal": true
+  },
+  {
+    "id": "stone_soup",
+    "name": "Stone Soup",
+    "emoji": "🍲",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A fable about how to get a village to feed itself.",
+    "terminal": true
+  },
+  {
+    "id": "gingerbread_man",
+    "name": "Gingerbread Man",
+    "emoji": "🍪",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Elizabeth I had them baked in the likeness of visiting dignitaries.",
+    "terminal": true
+  },
+  {
+    "id": "corn_dolly",
+    "name": "Corn Dolly",
+    "emoji": "🌾",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The last sheaf, woven into a figure to hold the harvest spirit.",
+    "terminal": true
+  },
+  {
+    "id": "scarecrow",
+    "name": "Scarecrow",
+    "emoji": "🧑‍🌾",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Crows learn its face in two days. It works on everything else.",
+    "terminal": true
+  },
+  {
+    "id": "cornucopia",
+    "name": "Cornucopia",
+    "emoji": "🧺",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The broken horn of the goat that nursed Zeus. It refilled forever.",
+    "terminal": true
+  },
+  {
+    "id": "ambrosia",
+    "name": "Ambrosia",
+    "emoji": "🏺",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Food of the gods, said to confer immortality on anyone who ate it.",
+    "terminal": true
+  },
+  {
+    "id": "manna",
+    "name": "Manna",
+    "emoji": "❄️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Appeared each dawn, rotted by dusk. Nobody agrees what it was.",
+    "terminal": true
+  },
+  {
+    "id": "golden_egg",
+    "name": "Golden Egg",
+    "emoji": "🥚",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A story about not understanding the system you live off.",
+    "terminal": true
+  },
+  {
+    "id": "sickle",
+    "name": "Sickle",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A curved flint blade. The tool that turned a field into a harvest."
+  },
+  {
+    "id": "granary",
+    "name": "Granary",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Surplus, stored. It bought the first bad year, and the first bureaucracy.",
+    "terminal": true
+  },
+  {
+    "id": "smoked_fish",
+    "name": "Smoked Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Preserved by phenols before it is ever properly cooked.",
+    "terminal": true
+  },
+  {
+    "id": "greenhouse",
+    "name": "Greenhouse",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Holds heat by stopping warm air rising away, not by trapping infrared."
+  },
+  {
+    "id": "early_crop",
+    "name": "Early Crop",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Borrowed warmth, and a harvest weeks ahead of the weather.",
+    "terminal": true
+  },
+  {
+    "id": "barrel",
+    "name": "Barrel",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Oak bent by steam. Storage that flavours what it stores."
+  },
+  {
+    "id": "aged_wine",
+    "name": "Aged Wine",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Oxygen through the staves, vanillin out of the oak.",
+    "terminal": true
+  },
+  {
+    "id": "clean_hands",
+    "name": "Clean Hands",
+    "emoji": "🤲",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "The cheapest public health intervention ever discovered.",
+    "terminal": true
+  },
+  {
+    "id": "garlic_butter",
+    "name": "Garlic Butter",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Fat as a delivery system for a plant’s wound chemistry."
+  },
+  {
+    "id": "garlic_bread",
+    "name": "Garlic Bread",
+    "emoji": "🥖",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Bread is porous enough to drink fat. That is the whole idea.",
+    "terminal": true
+  },
+  {
+    "id": "wrap",
+    "name": "Wrap",
+    "emoji": "🌯",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Flatbread used as cutlery, which is how most of the world ate.",
+    "terminal": true
+  },
+  {
+    "id": "spaghetti_meatballs",
+    "name": "Spaghetti & Meatballs",
+    "emoji": "🍝",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Invented in New York, where meat was suddenly cheap.",
+    "terminal": true
+  },
+  {
+    "id": "malt_vinegar",
+    "name": "Malt Vinegar",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Beer that met the wrong bacteria, to everyone’s benefit.",
+    "terminal": true
+  },
+  {
+    "id": "caramel_sauce",
+    "name": "Caramel Sauce",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Fat and water blocking sugar from crystallising again."
+  },
+  {
+    "id": "sundae",
+    "name": "Sundae",
+    "emoji": "🍨",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Your tongue reads the contrast, not the average.",
+    "terminal": true
+  },
+  {
+    "id": "choucroute",
+    "name": "Choucroute",
+    "emoji": "🌭",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Two autumn preservations, eaten together in midwinter.",
+    "terminal": true
+  },
+  {
+    "id": "breakfast",
+    "name": "Breakfast",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "A 1920s public relations campaign that never wore off.",
+    "terminal": true
+  },
+  {
+    "id": "cheeseboard",
+    "name": "Cheeseboard",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Acid and sugar, cutting fat. Mechanics dressed as tradition.",
+    "terminal": true
+  },
+  {
+    "id": "tzatziki",
+    "name": "Tzatziki",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Yoghurt with the whey drained out, and the protein left behind.",
+    "terminal": true
+  },
+  {
+    "id": "potato_salad",
+    "name": "Potato Salad",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Dress it warm. Cold starch will not drink anything.",
+    "terminal": true
+  },
+  {
+    "id": "egg_sandwich",
+    "name": "Egg Sandwich",
+    "emoji": "🥪",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Named after a man who would not leave the card table.",
+    "terminal": true
+  },
+  {
+    "id": "fish_and_chips",
+    "name": "Fish & Chips",
+    "emoji": "🍟",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Britain’s national dish, assembled entirely from imports.",
+    "terminal": true
+  },
+  {
+    "id": "pilaf",
+    "name": "Pilaf",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Fat around every grain, so the starch never glues them together.",
+    "terminal": true
+  },
+  {
+    "id": "salted_dough",
+    "name": "Salted Dough",
+    "emoji": "🫓",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Salt does not just season bread — it tightens the gluten and slows the yeast."
+  },
+  {
+    "id": "creamed_butter",
+    "name": "Creamed Butter",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Butter and sugar beaten pale. The air whipped in is the leavening."
+  },
+  {
+    "id": "cake_mix",
+    "name": "Cake Mix",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Fat, sugar and egg, emulsified — before any flour goes near it."
+  },
+  {
+    "id": "sweet_cream",
+    "name": "Sweet Cream",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Sugar lowers the freezing point, which is what keeps ice cream scoopable."
+  },
+  {
+    "id": "breadcrumb",
+    "name": "Breadcrumb",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Stale bread, crushed. It holds moisture that would otherwise be squeezed out."
+  },
+  {
+    "id": "meatball_mix",
+    "name": "Meatball Mix",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Mince and crumb, waiting for a binder."
+  },
+  {
+    "id": "meatball_sauce",
+    "name": "Meatballs in Sauce",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Simmered in tomato, which cooks them through and seasons the sauce back."
+  },
+  {
+    "id": "garlic_yoghurt",
+    "name": "Garlic Yoghurt",
+    "emoji": "🧄",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Raw garlic stirred through yoghurt, which tames it without cooking it."
+  },
+  {
+    "id": "olive_salad",
+    "name": "Olive Salad",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Tomato, cucumber and olive — everything that ripens in the same month."
+  },
+  {
+    "id": "batter",
+    "name": "Batter",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Flour and beer. The bubbles make it light; the alcohol boils off fast and crisps it."
+  },
+  {
+    "id": "battered_fish",
+    "name": "Battered Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A raw coat of batter, sealing the fish before it ever meets the oil."
+  },
+  {
+    "id": "fried_fish",
+    "name": "Fried Fish",
+    "emoji": "🍤",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "The batter sets into a shell and the fish inside steams in its own moisture."
+  },
+  {
+    "id": "rubbed_flour",
+    "name": "Rubbed Flour",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Butter worked into flour until it looks like breadcrumbs. Water comes last."
+  },
+  {
+    "id": "cured_mince",
+    "name": "Salted Mince",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Salt draws out protein that makes the mince sticky enough to hold together."
+  },
+  {
+    "id": "egg_mayo",
+    "name": "Egg Mayonnaise",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Chopped egg bound in its own emulsion — yolk meeting yolk."
+  },
+  {
+    "id": "kimchi_paste",
+    "name": "Kimchi Paste",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Chilli and garlic, the flavour engine of the ferment."
+  },
+  {
+    "id": "salted_cabbage",
+    "name": "Salted Cabbage",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Brined until limp, so the paste can reach every leaf."
+  },
+  {
+    "id": "tempered_clay",
+    "name": "Tempered Clay",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Clay cut with sand so it can dry and fire without cracking."
+  },
+  {
+    "id": "stoneware",
+    "name": "Stoneware",
+    "emoji": "🍶",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Fired hard enough to hold liquid without a glaze.",
+    "terminal": true
+  },
+  {
+    "id": "limestone",
+    "name": "Limestone",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Compacted seabed — shells and skeletons, pressed for aeons."
+  },
+  {
+    "id": "cement_meal",
+    "name": "Cement Meal",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Ground limestone and clay, waiting for the kiln."
+  },
+  {
+    "id": "cement",
+    "name": "Cement",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The glue. Roughly a tenth of humanity's carbon dioxide."
+  },
+  {
+    "id": "mortar",
+    "name": "Mortar",
+    "emoji": "🪣",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Cement paste with sand in it to stop it shrinking."
+  },
+  {
+    "id": "concrete",
+    "name": "Concrete",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Rock, glued. The most used material on Earth after water.",
+    "terminal": true
+  },
+  {
+    "id": "river",
+    "name": "River",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Fresh to taste, but never pure — every river carries dissolved rock to the sea."
+  },
+  {
+    "id": "goat",
+    "name": "Goat",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Domesticated from wild bezoars; browses scrub and rock where cattle starve."
+  }
+]

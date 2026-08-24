@@ -1,0 +1,11 @@
+{
+  "$comment": "Process verbs. Unary operators: drag one element onto a verb tool. This is the layer that separates us from Little Alchemy (A+B only) and teaches that process determines outcome.",
+  "verbs": [
+    { "id": "wait",    "name": "Wait",    "emoji": "⏳", "unlockedBy": null,    "blurb": "Growth, weathering, ageing, decay. Some changes only need time." },
+    { "id": "crush",   "name": "Crush",   "emoji": "🪨", "unlockedBy": null,    "blurb": "Grinding, pressing, milling, churning. Force applied without heat." },
+    { "id": "chill",   "name": "Chill",   "emoji": "❄️", "unlockedBy": null,    "blurb": "Cold is not a technology, it is a night. Available from the start." },
+    { "id": "heat",    "name": "Heat",    "emoji": "🔥", "unlockedBy": "fire",  "blurb": "The first tool that makes new molecules rather than smaller pieces." },
+    { "id": "cut",     "name": "Cut",     "emoji": "🔪", "unlockedBy": "flint", "blurb": "Separating one thing into parts. Needs an edge." },
+    { "id": "ferment", "name": "Ferment", "emoji": "🫧", "unlockedBy": "yeast", "blurb": "Letting microbes do the work. Controlled, delicious rot." }
+  ]
+}

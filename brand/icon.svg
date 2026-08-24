@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="1024" height="1024" role="img" aria-label="Four sources converging into one made thing">
+  <title>App icon</title>
+  <!-- Ground. Warm near-black so it reads dark in a grid of bright category icons. -->
+  <rect width="120" height="120" fill="#221C14"/>
+  <!-- The four starters, curving inward. Stone, water, sun, seed in their game colours. -->
+  <g stroke="#5C4B38" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M28 34 Q44 54 56 66"/>
+    <path d="M50 26 Q54 48 58 64"/>
+    <path d="M70 26 Q66 48 62 64"/>
+    <path d="M92 34 Q76 54 64 66"/>
+  </g>
+  <circle cx="28" cy="34" r="8" fill="#9C8A74"/>
+  <circle cx="50" cy="26" r="8" fill="#4E8CB8"/>
+  <circle cx="70" cy="26" r="8" fill="#E0A526"/>
+  <circle cx="92" cy="34" r="8" fill="#6B8E4E"/>
+  <!-- The result is a different shape from its inputs: a thing, not another node. -->
+  <rect x="42" y="66" width="36" height="30" rx="9" fill="#E2703A"/>
+</svg>

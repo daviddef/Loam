@@ -1,0 +1,3869 @@
+[
+  {
+    "in": [
+      "stone"
+    ],
+    "verb": "wait",
+    "out": "soil",
+    "why": "Rain, frost and lichen break stone into grains over centuries. Mix in dead plants and you have soil — roughly 45% mineral, 5% once-living.",
+    "src": "https://en.wikipedia.org/wiki/Soil_formation",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone"
+    ],
+    "verb": "crush",
+    "out": "sand",
+    "why": "Sand is only rock ground small: grains between 0.06 and 2 mm. Most of it is quartz, because quartz outlasts everything else.",
+    "src": "https://en.wikipedia.org/wiki/Sand",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "stone"
+    ],
+    "out": "spark",
+    "why": "Strike two stones and you shear off fragments hot enough to glow. Cutting tools are far older, but this is how every fire began for a million years.",
+    "src": "https://en.wikipedia.org/wiki/Fire_making",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "spark"
+    ],
+    "out": "flint",
+    "why": "Flint breaks in smooth conchoidal curves, so almost every fracture leaves a working edge. Obsidian breaks the same way and finer still — fine enough that surgeons occasionally still use it.",
+    "src": "https://en.wikipedia.org/wiki/Flint",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "water"
+    ],
+    "out": "mud",
+    "why": "Water fills the gaps between soil grains and lets them slide. Mud is soil that has lost its grip.",
+    "src": "https://en.wikipedia.org/wiki/Mud"
+  },
+  {
+    "in": [
+      "mud"
+    ],
+    "verb": "wait",
+    "out": "clay",
+    "why": "The finest particles settle out last: clay, flat sheets of aluminium silicate under 0.002 mm across. Wet, the sheets slip over each other — that is why clay is plastic.",
+    "src": "https://en.wikipedia.org/wiki/Clay",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "straw"
+    ],
+    "out": "adobe",
+    "why": "Straw stops drying mud from cracking as it shrinks. The same trick holds plaster and cob walls together.",
+    "src": "https://en.wikipedia.org/wiki/Adobe"
+  },
+  {
+    "in": [
+      "adobe",
+      "sun"
+    ],
+    "out": "brick",
+    "why": "Sun-dried mud brick built Jericho, Babylon and much of the American Southwest. No fuel required — only weeks of dry weather.",
+    "src": "https://en.wikipedia.org/wiki/Mudbrick",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay"
+    ],
+    "verb": "heat",
+    "out": "pot",
+    "why": "Around 600 °C the water chemically bound inside the clay is driven out, and higher still the particles fuse. Either way it is irreversible: a fired pot will never be mud again.",
+    "src": "https://en.wikipedia.org/wiki/Pottery",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "ash"
+    ],
+    "out": "glass",
+    "why": "Silica melts at about 1700 °C, which no early furnace could reach. Wood-ash potash drops that to roughly 1000 °C, and glass becomes possible.",
+    "src": "https://en.wikipedia.org/wiki/Forest_glass",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "sun"
+    ],
+    "out": "salt",
+    "why": "Flood a shallow pan, let the sun take the water, sweep up what stays. Seawater is 3.5% salt by weight.",
+    "src": "https://en.wikipedia.org/wiki/Salt_evaporation_pond",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "salt"
+    ],
+    "out": "brine",
+    "why": "Salt water pulls water out of any cell it touches. That is the whole principle of preserving in brine — the microbes dry out before the food does.",
+    "src": "https://en.wikipedia.org/wiki/Brining"
+  },
+  {
+    "in": [
+      "water"
+    ],
+    "verb": "chill",
+    "out": "ice",
+    "why": "Water is one of very few substances that expands as it freezes. Ice floats, so lakes freeze from the top and life survives underneath.",
+    "src": "https://en.wikipedia.org/wiki/Properties_of_water"
+  },
+  {
+    "in": [
+      "water"
+    ],
+    "verb": "heat",
+    "out": "steam",
+    "why": "Turning 1 litre of water to steam takes five times more energy than heating it from freezing to boiling. That hidden energy is why steam scalds.",
+    "src": "https://en.wikipedia.org/wiki/Enthalpy_of_vaporization",
+    "verified": true
+  },
+  {
+    "in": [
+      "spark",
+      "straw"
+    ],
+    "out": "fire",
+    "why": "A spark only needs something dry and thin enough to catch. Control of fire predates our own species — Homo erectus was carrying it into caves well over a million years ago.",
+    "src": "https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood"
+    ],
+    "verb": "heat",
+    "out": "charcoal",
+    "why": "Heat wood without air and the water and tar bake off, leaving almost pure carbon. Charcoal burns far hotter than the wood it came from.",
+    "src": "https://en.wikipedia.org/wiki/Charcoal"
+  },
+  {
+    "in": [
+      "wood",
+      "fire"
+    ],
+    "out": "ash",
+    "why": "Ash is what will not burn: the minerals the tree drew out of the soil, mostly potassium and calcium salts.",
+    "src": "https://en.wikipedia.org/wiki/Wood_ash"
+  },
+  {
+    "in": [
+      "ash",
+      "water"
+    ],
+    "out": "lye",
+    "why": "Water leached through wood ash dissolves potassium carbonate. The solution is caustic enough to dissolve fat — and skin.",
+    "src": "https://en.wikipedia.org/wiki/Lye"
+  },
+  {
+    "in": [
+      "lye",
+      "olive_oil"
+    ],
+    "out": "soap",
+    "why": "Castile soap is olive oil and lye, nothing else. The lye splits the fat into glycerol and soap, and is entirely used up doing it.",
+    "src": "https://en.wikipedia.org/wiki/Castile_soap"
+  },
+  {
+    "in": [
+      "seedling"
+    ],
+    "verb": "wait",
+    "out": "tree",
+    "why": "A tree is a plant that solved a problem: build a trunk of dead wood and you can hold your leaves above everyone else's.",
+    "src": "https://en.wikipedia.org/wiki/Tree"
+  },
+  {
+    "in": [
+      "tree"
+    ],
+    "verb": "cut",
+    "out": "wood",
+    "why": "Wood is cellulose fibres set in lignin — nature's fibreglass. Along the grain it rivals steel for strength per kilogram.",
+    "src": "https://en.wikipedia.org/wiki/Wood"
+  },
+  {
+    "in": [
+      "plant",
+      "sun"
+    ],
+    "out": "straw",
+    "why": "Dried stalks: the part of a crop with no food value left, and the best tinder, thatch and bedding humans ever had for free.",
+    "src": "https://en.wikipedia.org/wiki/Straw"
+  },
+  {
+    "in": [
+      "seed",
+      "water"
+    ],
+    "out": "sprout",
+    "why": "Water swells the seed until its coat splits. The embryo lives on stored starch until its first leaf reaches light.",
+    "src": "https://en.wikipedia.org/wiki/Germination",
+    "supported": true
+  },
+  {
+    "in": [
+      "sprout",
+      "soil"
+    ],
+    "out": "seedling",
+    "why": "Roots go down before leaves go up. A seedling spends its first days building the plumbing.",
+    "src": "https://en.wikipedia.org/wiki/Seedling",
+    "supported": true
+  },
+  {
+    "in": [
+      "seedling",
+      "sun"
+    ],
+    "out": "plant",
+    "why": "Photosynthesis: light, water and carbon dioxide become sugar. Nearly every calorie you will ever eat was assembled by this reaction.",
+    "src": "https://en.wikipedia.org/wiki/Photosynthesis",
+    "supported": true
+  },
+  {
+    "in": [
+      "plant"
+    ],
+    "verb": "wait",
+    "out": "flower",
+    "why": "A flower is an advertisement. Colour, scent and sugar are all payment offered to an animal for carrying pollen.",
+    "src": "https://en.wikipedia.org/wiki/Flower"
+  },
+  {
+    "in": [
+      "seed",
+      "soil"
+    ],
+    "out": "grass",
+    "why": "Grasses grow from the base, not the tip. That is why grazing and mowing do not kill them — and why grassland covers something like 40% of the land on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Grassland",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "soil"
+    ],
+    "out": "root",
+    "why": "Roots do not simply drink. Most trade sugar with fungi underground for phosphorus they could never reach alone.",
+    "src": "https://en.wikipedia.org/wiki/Mycorrhiza",
+    "supported": true
+  },
+  {
+    "in": [
+      "plant",
+      "water"
+    ],
+    "out": "leaf",
+    "why": "A leaf is a solar panel that must breathe without drying out. Its pores open for carbon dioxide and lose water every time they do.",
+    "src": "https://en.wikipedia.org/wiki/Stoma",
+    "supported": true
+  },
+  {
+    "in": [
+      "plant",
+      "tree"
+    ],
+    "out": "vine",
+    "why": "A vine skips the expense of a trunk by climbing someone else's. Cheap engineering, borrowed height.",
+    "src": "https://en.wikipedia.org/wiki/Vine"
+  },
+  {
+    "in": [
+      "leaf",
+      "leaf"
+    ],
+    "out": "cabbage",
+    "why": "Cabbage, kale, broccoli, sprouts, kohlrabi and cauliflower are all one species — Brassica oleracea — bred in six different directions.",
+    "src": "https://en.wikipedia.org/wiki/Brassica_oleracea"
+  },
+  {
+    "in": [
+      "leaf",
+      "sun"
+    ],
+    "out": "herb",
+    "why": "Aromatic oils are a plant's chemical defence, and strong sun makes it build more. That is why Mediterranean herbs taste louder than shade-grown ones.",
+    "src": "https://en.wikipedia.org/wiki/Essential_oil"
+  },
+  {
+    "in": [
+      "leaf"
+    ],
+    "verb": "heat",
+    "out": "tea",
+    "why": "Green, oolong and black tea are the same leaf from the same plant. The only difference is how long it is allowed to oxidise before heat stops it.",
+    "src": "https://en.wikipedia.org/wiki/Tea_processing",
+    "verified": true
+  },
+  {
+    "in": [
+      "root"
+    ],
+    "verb": "wait",
+    "out": "bulb",
+    "why": "A bulb is a bud wrapped in fat leaf bases — a whole plant packed with next season's food, sitting underground.",
+    "src": "https://en.wikipedia.org/wiki/Bulb"
+  },
+  {
+    "in": [
+      "root",
+      "soil"
+    ],
+    "out": "potato",
+    "why": "A potato is not a root. It is a swollen underground stem, storing starch for next year's shoots — which is why it has eyes.",
+    "src": "https://en.wikipedia.org/wiki/Tuber"
+  },
+  {
+    "in": [
+      "bulb",
+      "soil"
+    ],
+    "out": "onion",
+    "why": "Cutting an onion ruptures cells that keep an enzyme and a sulphur compound apart. They meet, react, and drift up as the gas that stings your eyes.",
+    "src": "https://en.wikipedia.org/wiki/Onion"
+  },
+  {
+    "in": [
+      "bulb",
+      "sun"
+    ],
+    "out": "garlic",
+    "why": "Whole garlic barely smells. Crushing it mixes alliin with an enzyme to make allicin — a defence the plant only builds once it has been damaged.",
+    "src": "https://en.wikipedia.org/wiki/Allicin",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "flower"
+    ],
+    "out": "meadow",
+    "why": "A flowering meadow is not scenery, it is infrastructure. Its density of blooms is what makes a pollinator colony viable.",
+    "src": "https://en.wikipedia.org/wiki/Meadow"
+  },
+  {
+    "in": [
+      "meadow"
+    ],
+    "verb": "wait",
+    "out": "bee",
+    "why": "Bees find meadows on their own. A honeybee colony forages up to 5 km out and reports good ground to the hive by dancing.",
+    "src": "https://en.wikipedia.org/wiki/Western_honey_bee",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower"
+    ],
+    "verb": "wait",
+    "out": "nectar",
+    "why": "Nectar is roughly 25% sugar in water — deliberately made, deliberately given away, and never free.",
+    "src": "https://en.wikipedia.org/wiki/Nectar",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "bee"
+    ],
+    "out": "fruit",
+    "why": "The bee moves pollen between flowers; the fertilised ovary swells into fruit. Around a third of everything humans eat depends on this transaction.",
+    "src": "https://en.wikipedia.org/wiki/Pollination"
+  },
+  {
+    "in": [
+      "nectar",
+      "bee"
+    ],
+    "out": "honey",
+    "why": "A bee reduces nectar from 70% water to under 18% and adds enzymes that split sucrose. At that concentration nothing can grow in it, so honey never spoils.",
+    "src": "https://en.wikipedia.org/wiki/Honey",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "honey"
+    ],
+    "out": "beeswax",
+    "why": "A bee eats about 8 g of honey to secrete 1 g of wax from glands on its abdomen. The comb is expensive.",
+    "src": "https://en.wikipedia.org/wiki/Beeswax",
+    "verified": true
+  },
+  {
+    "in": [
+      "beeswax",
+      "straw"
+    ],
+    "out": "candle",
+    "why": "The wick does not burn — it draws liquid wax up by capillary action into the flame, where the wax is the actual fuel.",
+    "src": "https://en.wikipedia.org/wiki/Candle_wick"
+  },
+  {
+    "in": [
+      "fruit"
+    ],
+    "verb": "wait",
+    "out": "yeast",
+    "why": "Wild yeast lives on fruit skins. That dusty white bloom on a grape is a colony sitting on the sugar, waiting for the skin to split.",
+    "src": "https://en.wikipedia.org/wiki/Saccharomyces_cerevisiae"
+  },
+  {
+    "in": [
+      "fruit",
+      "sun"
+    ],
+    "out": "chilli",
+    "why": "Capsaicin binds the receptor that detects heat. Birds lack that receptor entirely, so they spread the seeds and mammals learn to stay away.",
+    "src": "https://en.wikipedia.org/wiki/Capsaicin"
+  },
+  {
+    "in": [
+      "vine",
+      "fruit"
+    ],
+    "out": "grape",
+    "why": "Wine grapes are picked at around 24% sugar — high enough that yeast can drive the alcohol to 13% before it poisons itself.",
+    "src": "https://en.wikipedia.org/wiki/Brix",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine",
+      "water"
+    ],
+    "out": "cucumber",
+    "why": "A cucumber is about 95% water. Almost everything it does is hold that water inside a crisp cell wall.",
+    "src": "https://en.wikipedia.org/wiki/Cucumber",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine",
+      "flower"
+    ],
+    "out": "tomato",
+    "why": "Botanically a berry. It is unusually rich in glutamate, which is why a tomato reads as savoury rather than merely sweet or sour.",
+    "src": "https://en.wikipedia.org/wiki/Tomato"
+  },
+  {
+    "in": [
+      "tree",
+      "fruit"
+    ],
+    "out": "apple",
+    "why": "Apple seeds do not breed true — plant a pip from a good apple and you get a bad one. Every named variety is a cutting grafted on, a clone of one lucky tree.",
+    "src": "https://en.wikipedia.org/wiki/Apple"
+  },
+  {
+    "in": [
+      "tree",
+      "sun"
+    ],
+    "out": "olive",
+    "why": "Olive trees fruit on poor, dry, stony ground where little else will. A raw olive is inedibly bitter until cured in brine or lye.",
+    "src": "https://en.wikipedia.org/wiki/Olive"
+  },
+  {
+    "in": [
+      "grass",
+      "seed"
+    ],
+    "out": "wheat",
+    "why": "Wheat is a grass humans selected for 10,000 years — above all for seed heads that do not shatter, so the grain waits on the stalk to be taken.",
+    "src": "https://en.wikipedia.org/wiki/Wheat",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "water"
+    ],
+    "out": "rice",
+    "why": "Rice tolerates standing water. Flooding a paddy drowns the weeds and not the crop — a herbicide made of water.",
+    "src": "https://en.wikipedia.org/wiki/Paddy_field"
+  },
+  {
+    "in": [
+      "grass",
+      "sun"
+    ],
+    "out": "sugarcane",
+    "why": "Sugarcane is a giant grass that stores its sugar in the stalk instead of the seed, which is why you can taste it by chewing.",
+    "src": "https://en.wikipedia.org/wiki/Sugarcane"
+  },
+  {
+    "in": [
+      "wheat"
+    ],
+    "verb": "cut",
+    "out": "grain",
+    "why": "Threshing separates the grain from the chaff. For most of history this was the single largest job of the human year.",
+    "src": "https://en.wikipedia.org/wiki/Threshing",
+    "supported": true
+  },
+  {
+    "in": [
+      "wheat",
+      "wheat"
+    ],
+    "out": "field",
+    "why": "A field is a monoculture — one plant, no competitors. It is the most productive and most fragile arrangement in agriculture.",
+    "src": "https://en.wikipedia.org/wiki/Monoculture",
+    "supported": true
+  },
+  {
+    "in": [
+      "field",
+      "sickle"
+    ],
+    "out": "harvest",
+    "why": "Cut too early and the grain is soft; too late and it falls off the stalk. A curved blade is what let one person clear a field inside that window.",
+    "src": "https://en.wikipedia.org/wiki/Sickle"
+  },
+  {
+    "in": [
+      "grain"
+    ],
+    "verb": "crush",
+    "out": "flour",
+    "why": "Stone querns ground grain into flour for 30,000 years before anyone thought to bake it. Porridge came long before bread.",
+    "src": "https://www.smithsonianmag.com/smart-news/flour-was-part-human-diet-32000-years-ago-180956675/",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "sprout"
+    ],
+    "out": "malt",
+    "why": "Let barley germinate, then kill it with heat. Sprouting turns stored starch into sugar the seedling wanted — and the brewer takes instead.",
+    "src": "https://en.wikipedia.org/wiki/Malting"
+  },
+  {
+    "in": [
+      "flour",
+      "water"
+    ],
+    "out": "dough",
+    "why": "Two wheat proteins, glutenin and gliadin, link into gluten the moment they are wet and worked: an elastic net strong enough to trap gas.",
+    "src": "https://en.wikipedia.org/wiki/Gluten"
+  },
+  {
+    "in": [
+      "flour",
+      "egg"
+    ],
+    "out": "pasta_dough",
+    "why": "Egg pasta needs no leavening. Egg protein sets the shape on cooking, so the dough can be rolled paper-thin and hold.",
+    "src": "https://en.wikipedia.org/wiki/Pasta"
+  },
+  {
+    "in": [
+      "dough"
+    ],
+    "verb": "heat",
+    "out": "flatbread",
+    "why": "The oldest bread we have found is a flatbread from Shubayqa in Jordan, charred 14,400 years ago — four thousand years before anyone farmed grain.",
+    "src": "https://en.wikipedia.org/wiki/History_of_bread",
+    "verified": true
+  },
+  {
+    "in": [
+      "risen_dough"
+    ],
+    "verb": "heat",
+    "out": "bread",
+    "why": "The oven kills the yeast, sets the gluten and locks the bubbles in place. Bread is a foam that has been turned to stone.",
+    "src": "https://en.wikipedia.org/wiki/Bread"
+  },
+  {
+    "in": [
+      "dough"
+    ],
+    "verb": "wait",
+    "out": "sourdough_starter",
+    "why": "Leave flour and water on the counter and wild yeast and lactobacilli move in from the air and the grain. A starter is livestock you feed daily.",
+    "src": "https://en.wikipedia.org/wiki/Sourdough"
+  },
+  {
+    "in": [
+      "sourdough_starter",
+      "dough"
+    ],
+    "out": "sourdough",
+    "why": "Slower than baker's yeast, and the bacteria alongside it make lactic and acetic acid. That acid is the flavour, and it keeps mould away for days.",
+    "src": "https://en.wikipedia.org/wiki/Sourdough"
+  },
+  {
+    "in": [
+      "pasta_dough"
+    ],
+    "verb": "cut",
+    "out": "noodle",
+    "why": "The oldest noodles found are 4,000-year-old millet noodles from Lajia in China. Any stiff dough plus an edge reaches the same answer, which is why so many cuisines did.",
+    "src": "https://en.wikipedia.org/wiki/Lajia",
+    "verified": true
+  },
+  {
+    "in": [
+      "noodle"
+    ],
+    "verb": "heat",
+    "out": "pasta",
+    "why": "Boiling gelatinises the starch and firms the egg protein at almost the same moment. Al dente is the few seconds between them.",
+    "src": "https://en.wikipedia.org/wiki/Starch_gelatinization"
+  },
+  {
+    "in": [
+      "cake_batter"
+    ],
+    "verb": "heat",
+    "out": "cake",
+    "why": "Heat sets the egg and starch into a scaffold before the trapped air can escape. Open the oven early and it collapses.",
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "malt",
+      "water"
+    ],
+    "out": "wort",
+    "why": "Hot water wakes the malt's own enzymes, which chop starch into fermentable sugar. The brewer is renting the barley's machinery.",
+    "src": "https://en.wikipedia.org/wiki/Mashing"
+  },
+  {
+    "in": [
+      "wort",
+      "yeast"
+    ],
+    "out": "beer",
+    "why": "Boiling the wort sterilised it centuries before anyone knew why that mattered. Whether beer or bread came first is still argued — both predate farming.",
+    "src": "https://en.wikipedia.org/wiki/History_of_beer",
+    "verified": true
+  },
+  {
+    "in": [
+      "grape"
+    ],
+    "verb": "crush",
+    "out": "grape_juice",
+    "why": "Crushing does not only free the juice — it brings the wild yeast on the skins into contact with the sugar inside.",
+    "src": "https://en.wikipedia.org/wiki/Winemaking",
+    "supported": true
+  },
+  {
+    "in": [
+      "grape_juice",
+      "yeast"
+    ],
+    "out": "wine",
+    "why": "Yeast eats sugar and excretes alcohol and carbon dioxide. It stops near 15%, the point where the alcohol kills the organism that made it.",
+    "src": "https://en.wikipedia.org/wiki/Fermentation_in_winemaking",
+    "verified": true
+  },
+  {
+    "in": [
+      "wine"
+    ],
+    "verb": "ferment",
+    "out": "vinegar",
+    "why": "A second fermentation, this time by Acetobacter, which oxidises alcohol into acetic acid. Vinegar is French for 'sour wine'.",
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria"
+  },
+  {
+    "in": [
+      "apple"
+    ],
+    "verb": "crush",
+    "out": "apple_juice",
+    "why": "Pressed apple juice browns within minutes: an enzyme meets oxygen at the cut surface, exactly as it does in a bruise.",
+    "src": "https://en.wikipedia.org/wiki/Food_browning"
+  },
+  {
+    "in": [
+      "apple_juice"
+    ],
+    "verb": "ferment",
+    "out": "cider",
+    "why": "Apples carry enough wild yeast and enough sugar to ferment with nothing added. Left alone in a barrel, juice becomes cider by default.",
+    "src": "https://en.wikipedia.org/wiki/Cider"
+  },
+  {
+    "in": [
+      "olive"
+    ],
+    "verb": "crush",
+    "out": "olive_oil",
+    "why": "Olive oil is squeezed from fruit flesh, not rendered or extracted. First cold press means exactly that: pressure, no heat, nothing added.",
+    "src": "https://en.wikipedia.org/wiki/Olive_oil_extraction"
+  },
+  {
+    "in": [
+      "sugarcane"
+    ],
+    "verb": "crush",
+    "out": "cane_juice",
+    "why": "Cane must be crushed within a day of cutting. After that its own enzymes start eating the sugar.",
+    "src": "https://en.wikipedia.org/wiki/Sugarcane"
+  },
+  {
+    "in": [
+      "cane_juice"
+    ],
+    "verb": "heat",
+    "out": "sugar",
+    "why": "Boil the water off and sucrose crystallises out, leaving the dark syrup behind as molasses. Sugar is one of the purest substances in any kitchen.",
+    "src": "https://en.wikipedia.org/wiki/Molasses"
+  },
+  {
+    "in": [
+      "sugar"
+    ],
+    "verb": "heat",
+    "out": "caramel",
+    "why": "At 170 °C sucrose breaks apart and reassembles into hundreds of new compounds — nutty, bitter, fruity. Not one of them was in the sugar.",
+    "src": "https://en.wikipedia.org/wiki/Caramelization",
+    "verified": true
+  },
+  {
+    "in": [
+      "honey",
+      "water"
+    ],
+    "out": "mead_must",
+    "why": "Honey is too concentrated to ferment as it is: nothing can live in it. Dilute it and the same sugar becomes food again.",
+    "src": "https://en.wikipedia.org/wiki/Water_activity"
+  },
+  {
+    "in": [
+      "mead_must",
+      "yeast"
+    ],
+    "out": "mead",
+    "why": "The oldest alcoholic drink ever chemically identified — Jiahu in China, around 7000 BC — was part honey mead, part rice beer, part fruit wine. Honey needs no field and no harvest.",
+    "src": "https://en.wikipedia.org/wiki/Jiahu",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "salt"
+    ],
+    "out": "sauerkraut",
+    "why": "Salt draws water out of the leaves and holds off spoilage bacteria while lactobacilli — already living on the cabbage — turn its sugar into lactic acid.",
+    "src": "https://en.wikipedia.org/wiki/Sauerkraut"
+  },
+  {
+    "in": [
+      "cucumber",
+      "brine"
+    ],
+    "out": "pickle",
+    "why": "A brined pickle ferments; a vinegar pickle does not. One is alive and sour by its own work, the other is sour on arrival.",
+    "src": "https://en.wikipedia.org/wiki/Pickling"
+  },
+  {
+    "in": [
+      "tomato"
+    ],
+    "verb": "heat",
+    "out": "passata",
+    "why": "Cooking bursts the cell walls and frees far more lycopene than a raw tomato ever gives up. Some foods are more nutritious cooked.",
+    "src": "https://en.wikipedia.org/wiki/Lycopene"
+  },
+  {
+    "in": [
+      "herb",
+      "olive_oil"
+    ],
+    "out": "herb_oil",
+    "why": "The compounds that make herbs smell dissolve in fat, not water. Oil is a solvent that holds flavour where a broth cannot.",
+    "src": "https://en.wikipedia.org/wiki/Essential_oil"
+  },
+  {
+    "in": [
+      "water",
+      "tea"
+    ],
+    "out": "brewed_tea",
+    "why": "Water near boiling pulls tannins out along with the flavour. Bitter tea is usually water that was too hot, not leaf that was left too long.",
+    "src": "https://en.wikipedia.org/wiki/Tea",
+    "supported": true
+  },
+  {
+    "in": [
+      "grass",
+      "grass"
+    ],
+    "out": "pasture",
+    "why": "Humans cannot digest grass. Grazing animals are the machine that converts the most abundant plant on land into food we can use.",
+    "src": "https://en.wikipedia.org/wiki/Grazing",
+    "supported": true
+  },
+  {
+    "in": [
+      "pasture"
+    ],
+    "verb": "wait",
+    "out": "aurochs",
+    "why": "The wild ancestor of cattle: 1.8 m at the shoulder, bad-tempered, and extinct since 1627. Grassland is what drew them in.",
+    "src": "https://en.wikipedia.org/wiki/Aurochs",
+    "verified": true
+  },
+  {
+    "in": [
+      "aurochs",
+      "grain"
+    ],
+    "out": "cow",
+    "why": "Every cow alive descends from roughly 80 wild aurochs tamed in the Near East about 10,000 years ago. Domestication began with feeding them.",
+    "src": "https://en.wikipedia.org/wiki/Cattle",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "grass"
+    ],
+    "out": "milk",
+    "why": "A dairy cow eats around 18 kg of dry matter a day — closer to 90 kg of fresh grass — to give some 28 litres of milk. She only makes it because she has recently calved.",
+    "src": "https://en.wikipedia.org/wiki/Dairy_cattle",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "seed"
+    ],
+    "out": "chicken",
+    "why": "Chickens are domesticated red junglefowl from South-East Asian forest. There are now about three alive for every human on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Chicken",
+    "verified": true
+  },
+  {
+    "in": [
+      "chicken"
+    ],
+    "verb": "wait",
+    "out": "egg",
+    "why": "The shell is about 95% calcium carbonate — the same mineral as chalk — and is drilled through with seven to seventeen thousand pores, so the embryo inside can breathe.",
+    "src": "https://en.wikipedia.org/wiki/Eggshell",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea"
+    ],
+    "verb": "wait",
+    "out": "fish",
+    "why": "Fish were the first vertebrates and remain the most numerous. Every bone in your body is a variation on a design worked out in water.",
+    "src": "https://en.wikipedia.org/wiki/Fish",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "salt"
+    ],
+    "out": "salt_fish",
+    "why": "Salt cod fed medieval Europe through winter and crossed oceans without refrigeration. Dried and salted, it keeps for years.",
+    "src": "https://en.wikipedia.org/wiki/Dried_and_salted_cod"
+  },
+  {
+    "in": [
+      "cow"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "why": "Muscle is protein fibre bundled in collagen. How tender a cut is depends almost entirely on how hard that muscle worked.",
+    "src": "https://en.wikipedia.org/wiki/Meat"
+  },
+  {
+    "in": [
+      "meat"
+    ],
+    "verb": "heat",
+    "out": "roast",
+    "why": "Above 140 °C amino acids and sugars react together — the Maillard reaction — building hundreds of aroma compounds that were not there raw.",
+    "src": "https://en.wikipedia.org/wiki/Maillard_reaction",
+    "verified": true
+  },
+  {
+    "in": [
+      "meat"
+    ],
+    "verb": "crush",
+    "out": "mince",
+    "why": "Mincing cuts across the muscle fibres, which is why a burger is tender where the same cut whole would be tough.",
+    "src": "https://en.wikipedia.org/wiki/Ground_meat"
+  },
+  {
+    "in": [
+      "meat",
+      "salt"
+    ],
+    "out": "cured_meat",
+    "why": "Salt pulls water out of both the meat and any bacteria on it. Curing does not kill microbes so much as leave them nothing to drink.",
+    "src": "https://en.wikipedia.org/wiki/Curing_(food_preservation)"
+  },
+  {
+    "in": [
+      "cured_meat",
+      "fire"
+    ],
+    "out": "bacon",
+    "why": "Smoke is not just flavour. Phenols and formaldehyde in wood smoke are genuinely antimicrobial — it is a chemical preservative humans found by accident.",
+    "src": "https://en.wikipedia.org/wiki/Smoking_(cooking)"
+  },
+  {
+    "in": [
+      "meat",
+      "water"
+    ],
+    "out": "broth",
+    "why": "Long slow heat dissolves tough collagen into gelatin. The cheapest, hardest-working cuts make the best broth for exactly that reason.",
+    "src": "https://en.wikipedia.org/wiki/Gelatin"
+  },
+  {
+    "in": [
+      "broth"
+    ],
+    "verb": "chill",
+    "out": "aspic",
+    "why": "Gelatin from the bones sets as it cools — proof, in a bowl, that the collagen really did dissolve.",
+    "src": "https://en.wikipedia.org/wiki/Aspic"
+  },
+  {
+    "in": [
+      "broth",
+      "onion"
+    ],
+    "out": "soup",
+    "why": "Onion cooked slowly turns sweet: its long-chain sugars break into short ones and its sulphur compounds mellow. Almost every cuisine starts a soup this way.",
+    "src": "https://en.wikipedia.org/wiki/Soup",
+    "supported": true
+  },
+  {
+    "in": [
+      "milk"
+    ],
+    "verb": "wait",
+    "out": "cream",
+    "why": "Fat globules are lighter than water, so they rise. Cream is simply milk that has been left alone long enough.",
+    "src": "https://en.wikipedia.org/wiki/Cream"
+  },
+  {
+    "in": [
+      "cream"
+    ],
+    "verb": "crush",
+    "out": "butter",
+    "why": "Churning batters the fat globules until their membranes break and the fat sticks to itself, squeezing the water out as buttermilk.",
+    "src": "https://en.wikipedia.org/wiki/Churning_(butter)"
+  },
+  {
+    "in": [
+      "butter"
+    ],
+    "verb": "heat",
+    "out": "ghee",
+    "why": "Gently cooking butter drives off the water and browns the milk solids, which are then strained out. What is left is nearly pure fat and keeps for months unrefrigerated.",
+    "src": "https://en.wikipedia.org/wiki/Ghee"
+  },
+  {
+    "in": [
+      "milk"
+    ],
+    "verb": "ferment",
+    "out": "yoghurt",
+    "why": "Lactobacillus turns lactose into lactic acid; the acid makes the milk proteins unfold and knit into a gel. It also digests the lactose, which is why many who cannot drink milk can eat yoghurt.",
+    "src": "https://en.wikipedia.org/wiki/Yogurt"
+  },
+  {
+    "in": [
+      "milk",
+      "vinegar"
+    ],
+    "out": "curd",
+    "why": "Acid makes casein proteins clump and drop out of the liquid. This is paneer, ricotta and cottage cheese — the quickest cheese there is.",
+    "src": "https://en.wikipedia.org/wiki/Curd"
+  },
+  {
+    "in": [
+      "curd",
+      "salt"
+    ],
+    "out": "cheese",
+    "why": "Salt pulls out more whey, seasons the curd and keeps the wrong microbes out. Then the only remaining ingredient is time.",
+    "src": "https://en.wikipedia.org/wiki/Cheese",
+    "supported": true
+  },
+  {
+    "in": [
+      "cheese"
+    ],
+    "verb": "wait",
+    "out": "aged_cheese",
+    "why": "Months of enzymes cutting proteins and fats into smaller, louder molecules. The crunchy crystals in old parmesan are free amino acids.",
+    "src": "https://en.wikipedia.org/wiki/Cheese_ripening"
+  },
+  {
+    "in": [
+      "bread"
+    ],
+    "verb": "wait",
+    "out": "mould",
+    "why": "Penicillium spores are drifting through every room you have ever been in. They only need damp, still air and something to eat.",
+    "src": "https://en.wikipedia.org/wiki/Penicillium",
+    "supported": true
+  },
+  {
+    "in": [
+      "cheese",
+      "mould"
+    ],
+    "out": "blue_cheese",
+    "why": "The blue is deliberately introduced, then given air through skewered holes. Without oxygen down those channels the mould will not grow.",
+    "src": "https://en.wikipedia.org/wiki/Blue_cheese"
+  },
+  {
+    "in": [
+      "mould"
+    ],
+    "verb": "wait",
+    "out": "penicillin",
+    "why": "In 1928 Alexander Fleming left a plate of bacteria by an open window. A mould landed on it and cleared a ring in the growth. It took another decade, and Florey and Chain, to turn that into a drug.",
+    "src": "https://en.wikipedia.org/wiki/History_of_penicillin",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "olive_oil"
+    ],
+    "out": "mayonnaise",
+    "why": "Egg yolk is rich in lecithin, a molecule with a water-loving end and an oil-loving end. It holds oil suspended in water that would otherwise separate on sight.",
+    "src": "https://en.wikipedia.org/wiki/Lecithin"
+  },
+  {
+    "in": [
+      "egg"
+    ],
+    "verb": "heat",
+    "out": "boiled_egg",
+    "why": "The white sets at 63 °C, the yolk at 70 °C. Every egg you have ever cooked lives or dies in those seven degrees.",
+    "src": "https://en.wikipedia.org/wiki/Boiled_egg",
+    "verified": true
+  },
+  {
+    "in": [
+      "rice"
+    ],
+    "verb": "heat",
+    "out": "cooked_rice",
+    "why": "Starch grains absorb water and burst open — gelatinisation. Raw starch is nearly indigestible to us; cooked, it is the world's main source of calories.",
+    "src": "https://en.wikipedia.org/wiki/Starch_gelatinization"
+  },
+  {
+    "in": [
+      "cooked_rice",
+      "vinegar"
+    ],
+    "out": "sushi_rice",
+    "why": "Sushi began as a preservation method: fish packed in fermenting rice, the acid keeping it safe. The vinegar today is a shortcut to that same sourness.",
+    "src": "https://en.wikipedia.org/wiki/Sushi"
+  },
+  {
+    "in": [
+      "potato"
+    ],
+    "verb": "heat",
+    "out": "baked_potato",
+    "why": "Baking dries the starch grains as they swell, giving a floury interior. Boiling the same potato keeps them wet and waxy.",
+    "src": "https://en.wikipedia.org/wiki/Baked_potato"
+  },
+  {
+    "in": [
+      "potato",
+      "olive_oil"
+    ],
+    "out": "chips",
+    "why": "Hot oil drives water out of the surface as steam, and the escaping steam keeps the oil out. Chips go greasy only when the oil is too cool to do this.",
+    "src": "https://en.wikipedia.org/wiki/French_fries",
+    "supported": true
+  },
+  {
+    "in": [
+      "tomato",
+      "cucumber"
+    ],
+    "out": "salad",
+    "why": "Salt a salad early and osmosis pulls water from every cell. Dress it at the table, not in the kitchen.",
+    "src": "https://en.wikipedia.org/wiki/Salad",
+    "supported": true
+  },
+  {
+    "in": [
+      "bread",
+      "cheese"
+    ],
+    "out": "cheese_toastie",
+    "why": "Cheese melts between 55 and 80 °C depending on how aged it is. Young cheese flows; very old cheese has lost the moisture to do it and splits into oil instead.",
+    "src": "https://en.wikipedia.org/wiki/Cheese",
+    "supported": true
+  },
+  {
+    "in": [
+      "dough",
+      "passata"
+    ],
+    "out": "pizza_base",
+    "why": "A Neapolitan oven runs at 450 °C and cooks a pizza in 90 seconds — fast enough to char the crust before the topping overcooks.",
+    "src": "https://en.wikipedia.org/wiki/Neapolitan_pizza",
+    "verified": true
+  },
+  {
+    "in": [
+      "pizza_base",
+      "cheese"
+    ],
+    "out": "pizza",
+    "why": "The 1889 story of a pizza in the colours of the Italian flag is probably marketing. Tomato on flatbread is far older and belonged to the poor.",
+    "src": "https://en.wikipedia.org/wiki/History_of_pizza",
+    "verified": true
+  },
+  {
+    "in": [
+      "pastry",
+      "apple"
+    ],
+    "out": "apple_pie",
+    "why": "Apples hold their shape because their cell walls are glued with pectin, and pectin survives baking where most plant structure collapses.",
+    "src": "https://en.wikipedia.org/wiki/Pectin",
+    "supported": true
+  },
+  {
+    "in": [
+      "fish"
+    ],
+    "verb": "heat",
+    "out": "grilled_fish",
+    "why": "Fish flesh sets at around 50 °C, far below meat, because it has almost no connective tissue. It was built to be weightless in water, not to hold itself up.",
+    "src": "https://en.wikipedia.org/wiki/Fish_as_food",
+    "supported": true
+  },
+  {
+    "in": [
+      "pizza",
+      "wine"
+    ],
+    "out": "dinner",
+    "why": "Every ingredient on this table began as stone, water, sun and a seed. That is the whole of agriculture in one meal.",
+    "src": "https://en.wikipedia.org/wiki/Agriculture"
+  },
+  {
+    "in": [
+      "roast",
+      "potato"
+    ],
+    "out": "dinner",
+    "why": "Meat, a tuber from the Andes and heat. Half the world's staple dinners are some version of exactly this.",
+    "src": "https://en.wikipedia.org/wiki/Agriculture"
+  },
+  {
+    "in": [
+      "dinner",
+      "candle"
+    ],
+    "out": "feast",
+    "why": "Eating together is not a nutritional requirement. Every known human society does it anyway.",
+    "src": "https://en.wikipedia.org/wiki/Communal_meal"
+  },
+  {
+    "in": [
+      "stone",
+      "fire"
+    ],
+    "out": "philosopher_stone",
+    "shelf": "folklore",
+    "why": "Alchemists hunted this for 1,500 years and never found it. Along the way they invented distillation, the acids, and eventually chemistry itself.",
+    "src": "https://en.wikipedia.org/wiki/Philosopher's_stone"
+  },
+  {
+    "in": [
+      "stone",
+      "soup"
+    ],
+    "out": "stone_soup",
+    "shelf": "folklore",
+    "why": "A traveller sets a stone boiling and says it needs only one small thing more. Each villager adds one small thing. Everyone eats.",
+    "src": "https://en.wikipedia.org/wiki/Stone_Soup"
+  },
+  {
+    "in": [
+      "dough",
+      "honey"
+    ],
+    "out": "gingerbread_man",
+    "shelf": "folklore",
+    "why": "Run, run, as fast as you can. Attributed to Elizabeth I, who had gingerbread figures made in the likeness of visiting dignitaries.",
+    "src": "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
+  },
+  {
+    "in": [
+      "straw",
+      "wheat"
+    ],
+    "out": "corn_dolly",
+    "shelf": "folklore",
+    "why": "The last sheaf of the harvest was woven into a figure to house the corn spirit through the winter, and ploughed back in come spring.",
+    "src": "https://en.wikipedia.org/wiki/Corn_dolly"
+  },
+  {
+    "in": [
+      "straw",
+      "field"
+    ],
+    "out": "scarecrow",
+    "shelf": "folklore",
+    "why": "Crows learn a scarecrow's face in about two days and ignore it thereafter. It works on everything else.",
+    "src": "https://en.wikipedia.org/wiki/Scarecrow"
+  },
+  {
+    "in": [
+      "fruit",
+      "pot"
+    ],
+    "out": "cornucopia",
+    "shelf": "folklore",
+    "why": "The horn of the goat Amalthea, who suckled the infant Zeus. Broken off, it refilled itself forever.",
+    "src": "https://en.wikipedia.org/wiki/Cornucopia"
+  },
+  {
+    "in": [
+      "honey",
+      "wine"
+    ],
+    "out": "ambrosia",
+    "shelf": "folklore",
+    "why": "Food of the Greek gods. Mortals who ate it were said to become immortal, which is a reasonable claim to make about honey.",
+    "src": "https://en.wikipedia.org/wiki/Ambrosia"
+  },
+  {
+    "in": [
+      "bread",
+      "sun"
+    ],
+    "out": "manna",
+    "shelf": "folklore",
+    "why": "Bread that appeared each morning in the desert and rotted by nightfall — except on the sabbath. Nobody has ever agreed what it was.",
+    "src": "https://en.wikipedia.org/wiki/Manna"
+  },
+  {
+    "in": [
+      "egg",
+      "fire"
+    ],
+    "out": "golden_egg",
+    "shelf": "folklore",
+    "why": "The moral is usually read as greed. It is at least as much about not understanding the system you depend on before you cut it open.",
+    "src": "https://en.wikipedia.org/wiki/The_Goose_that_Laid_the_Golden_Eggs"
+  },
+  {
+    "in": [
+      "flint",
+      "wood"
+    ],
+    "out": "sickle",
+    "why": "Flint flakes set in a curved wooden handle. This one tool is what made harvesting grain at scale physically possible.",
+    "src": "https://en.wikipedia.org/wiki/Sickle"
+  },
+  {
+    "in": [
+      "harvest",
+      "brick"
+    ],
+    "out": "granary",
+    "why": "Storing grain let a village survive a bad year, and created a surplus worth counting. The earliest writing we have is granary accounting: tallies of barley on clay.",
+    "src": "https://en.wikipedia.org/wiki/History_of_writing",
+    "verified": true
+  },
+  {
+    "in": [
+      "charcoal",
+      "fish"
+    ],
+    "out": "smoked_fish",
+    "why": "Cold smoke dries the surface and coats it in phenols. The fish is preserved before it is ever cooked.",
+    "src": "https://en.wikipedia.org/wiki/Smoked_fish"
+  },
+  {
+    "in": [
+      "glass",
+      "sun"
+    ],
+    "out": "greenhouse",
+    "why": "Glass mostly stops the warmed air inside from rising away — a greenhouse works by blocking convection. Despite the shared name, that is not the mechanism of the atmospheric greenhouse effect.",
+    "src": "https://en.wikipedia.org/wiki/Greenhouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "greenhouse",
+      "seedling"
+    ],
+    "out": "early_crop",
+    "why": "A few degrees of borrowed warmth moves the harvest weeks earlier — and moves crops hundreds of miles north of where they could otherwise live.",
+    "src": "https://en.wikipedia.org/wiki/Greenhouse"
+  },
+  {
+    "in": [
+      "steam",
+      "wood"
+    ],
+    "out": "barrel",
+    "why": "Steam softens the lignin in oak enough to bend it without breaking. Every wine barrel and every wooden boat depends on this.",
+    "src": "https://en.wikipedia.org/wiki/Barrel",
+    "verified": true
+  },
+  {
+    "in": [
+      "barrel",
+      "wine"
+    ],
+    "out": "aged_wine",
+    "why": "Oak gives up vanillin and tannin and lets a trace of oxygen through the staves. The barrel is not storage, it is an ingredient.",
+    "src": "https://en.wikipedia.org/wiki/Oak_(wine)"
+  },
+  {
+    "in": [
+      "soap",
+      "water"
+    ],
+    "out": "clean_hands",
+    "why": "Washing with soap cuts diarrhoeal disease by roughly 30%. It is still one of the cheapest public health measures ever found.",
+    "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4563982/",
+    "verified": true
+  },
+  {
+    "in": [
+      "garlic",
+      "butter"
+    ],
+    "out": "garlic_butter",
+    "why": "Allicin dissolves in fat. Butter carries garlic's flavour into places water never could.",
+    "src": "https://en.wikipedia.org/wiki/Garlic_butter",
+    "supported": true
+  },
+  {
+    "in": [
+      "garlic_butter",
+      "bread"
+    ],
+    "out": "garlic_bread",
+    "why": "Bread is porous enough to drink melted fat and hold it. That is the entire recipe.",
+    "src": "https://en.wikipedia.org/wiki/Garlic_bread"
+  },
+  {
+    "in": [
+      "flatbread",
+      "roast"
+    ],
+    "out": "wrap",
+    "why": "Flatbread as cutlery. Most of the world ate this way long before anyone laid a table.",
+    "src": "https://en.wikipedia.org/wiki/Wrap_(food)"
+  },
+  {
+    "in": [
+      "beer"
+    ],
+    "verb": "ferment",
+    "out": "malt_vinegar",
+    "why": "Beer goes the same way wine does when Acetobacter finds it. The chip shop is one step from the brewery.",
+    "src": "https://en.wikipedia.org/wiki/Vinegar"
+  },
+  {
+    "in": [
+      "caramel",
+      "cream"
+    ],
+    "out": "caramel_sauce",
+    "why": "Cream stops the caramelising and stays pourable when cold, because fat and water get in the sugar's way as it tries to recrystallise.",
+    "src": "https://en.wikipedia.org/wiki/Caramel"
+  },
+  {
+    "in": [
+      "ice_cream",
+      "caramel_sauce"
+    ],
+    "out": "sundae",
+    "why": "Hot sauce on cold ice cream works because your tongue reads the contrast, not the average.",
+    "src": "https://en.wikipedia.org/wiki/Sundae"
+  },
+  {
+    "in": [
+      "sauerkraut",
+      "sausage"
+    ],
+    "out": "choucroute",
+    "why": "Alsace pairs them because both were autumn preservation, made in the same weeks from the same slaughter and the same cabbage.",
+    "src": "https://en.wikipedia.org/wiki/Choucroute_garnie"
+  },
+  {
+    "in": [
+      "bacon",
+      "egg"
+    ],
+    "out": "breakfast",
+    "why": "Bacon and eggs became the American breakfast because Edward Bernays, working for a pork packer in 1922, got 4,500 doctors to endorse a heavy morning meal.",
+    "src": "https://en.wikipedia.org/wiki/Edward_Bernays",
+    "verified": true
+  },
+  {
+    "in": [
+      "aged_cheese",
+      "apple"
+    ],
+    "out": "cheeseboard",
+    "why": "Acid and sugar cut through fat that would otherwise coat the palate. The pairing is mechanical, not merely traditional.",
+    "src": "https://en.wikipedia.org/wiki/Cheese"
+  },
+  {
+    "in": [
+      "mayonnaise",
+      "potato"
+    ],
+    "out": "potato_salad",
+    "why": "Dress potatoes while still warm — the starch is open and drinks the dressing. Cold, it sits on the surface.",
+    "src": "https://en.wikipedia.org/wiki/Potato_salad"
+  },
+  {
+    "in": [
+      "ghee",
+      "cooked_rice"
+    ],
+    "out": "pilaf",
+    "why": "Coating each grain in fat before the water goes in keeps the starch from gluing them together. Every rice dish that must stay loose does this.",
+    "src": "https://en.wikipedia.org/wiki/Pilaf"
+  },
+  {
+    "in": [
+      "dough",
+      "salt"
+    ],
+    "out": "salted_dough",
+    "supported": true,
+    "why": "Salt tightens the gluten network and slows the yeast, so the dough rises evenly instead of racing. Bread without it tastes flat and stales fast.",
+    "src": "https://en.wikipedia.org/wiki/Bread"
+  },
+  {
+    "in": [
+      "salted_dough",
+      "yeast"
+    ],
+    "out": "risen_dough",
+    "supported": true,
+    "why": "Yeast eats the sugars in the flour and breathes out carbon dioxide. The gluten net catches every bubble.",
+    "src": "https://en.wikipedia.org/wiki/Leavening_agent"
+  },
+  {
+    "in": [
+      "butter",
+      "sugar"
+    ],
+    "out": "creamed_butter",
+    "supported": true,
+    "why": "Beating sugar into butter drags in air, and the sugar crystals tear more bubbles as they go. That trapped air is most of the rise.",
+    "src": "https://en.wikipedia.org/wiki/Creaming_(cooking)"
+  },
+  {
+    "in": [
+      "creamed_butter",
+      "egg"
+    ],
+    "out": "cake_mix",
+    "supported": true,
+    "why": "Egg yolk emulsifies the fat and water so they stop trying to separate; the white adds protein that will set in the oven.",
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "cake_mix",
+      "flour"
+    ],
+    "out": "cake_batter",
+    "supported": true,
+    "why": "Flour goes in last and is barely mixed. Work it and you build gluten, which turns cake into bread.",
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "cream",
+      "sugar"
+    ],
+    "out": "sweet_cream",
+    "supported": true,
+    "why": "Sugar does more than sweeten — dissolved in the water it lowers the freezing point, which is why ice cream stays soft enough to scoop.",
+    "src": "https://en.wikipedia.org/wiki/Ice_cream"
+  },
+  {
+    "in": [
+      "sweet_cream",
+      "ice"
+    ],
+    "out": "ice_cream",
+    "verified": true,
+    "why": "Packed in ice and salt, the cream freezes below 0 °C while being stirred. The stirring keeps the ice crystals microscopic — that is the entire trick.",
+    "src": "https://en.wikipedia.org/wiki/Ice_cream"
+  },
+  {
+    "in": [
+      "bread"
+    ],
+    "verb": "crush",
+    "out": "breadcrumb",
+    "supported": true,
+    "why": "Stale bread crushed to crumb. In a meatball it holds water that the meat would otherwise squeeze out as it contracts.",
+    "src": "https://en.wikipedia.org/wiki/Breadcrumbs"
+  },
+  {
+    "in": [
+      "mince",
+      "breadcrumb"
+    ],
+    "out": "meatball_mix",
+    "supported": true,
+    "why": "The crumb swells with moisture and keeps the meat fibres apart, which is the difference between tender and rubbery.",
+    "src": "https://en.wikipedia.org/wiki/Meatball"
+  },
+  {
+    "in": [
+      "meatball_mix",
+      "egg"
+    ],
+    "out": "meatball",
+    "supported": true,
+    "why": "Egg is the binder. Without it the mix falls apart the moment it hits heat.",
+    "src": "https://en.wikipedia.org/wiki/Meatball"
+  },
+  {
+    "in": [
+      "meatball",
+      "passata"
+    ],
+    "out": "meatball_sauce",
+    "supported": true,
+    "why": "Finishing the meatballs in tomato cooks them gently through and pushes their fat and salt back into the sauce.",
+    "src": "https://en.wikipedia.org/wiki/Tomato_sauce"
+  },
+  {
+    "in": [
+      "pasta",
+      "meatball_sauce"
+    ],
+    "out": "spaghetti_meatballs",
+    "verified": true,
+    "why": "An Italian-American invention. Meat was scarce at home and suddenly cheap in New York, so the portion grew to match.",
+    "src": "https://en.wikipedia.org/wiki/Spaghetti_and_meatballs"
+  },
+  {
+    "in": [
+      "yoghurt",
+      "garlic"
+    ],
+    "out": "garlic_yoghurt",
+    "supported": true,
+    "why": "Yoghurt's acid and fat blunt raw garlic's edge without cooking it, which is why it can be used raw here and nowhere else.",
+    "src": "https://en.wikipedia.org/wiki/Tzatziki"
+  },
+  {
+    "in": [
+      "garlic_yoghurt",
+      "cucumber"
+    ],
+    "out": "tzatziki",
+    "verified": true,
+    "why": "Straining the yoghurt first drains the whey and concentrates what is left. That is the whole difference between yoghurt and Greek yoghurt.",
+    "src": "https://en.wikipedia.org/wiki/Strained_yogurt"
+  },
+  {
+    "in": [
+      "salad",
+      "olive"
+    ],
+    "out": "olive_salad",
+    "supported": true,
+    "why": "Tomato, cucumber and olive ripen within weeks of each other on the same dry ground. The dish is a calendar.",
+    "src": "https://en.wikipedia.org/wiki/Greek_salad"
+  },
+  {
+    "in": [
+      "olive_salad",
+      "cheese"
+    ],
+    "out": "greek_salad",
+    "verified": true,
+    "why": "No lettuce anywhere in a real horiatiki. It is built from whatever is ripe at the same time in the same soil.",
+    "src": "https://en.wikipedia.org/wiki/Greek_salad"
+  },
+  {
+    "in": [
+      "flour",
+      "beer"
+    ],
+    "out": "batter",
+    "supported": true,
+    "why": "Beer batter works twice over: the carbon dioxide puffs it, and the alcohol boils off faster than water, so the crust dries and crisps sooner.",
+    "src": "https://en.wikipedia.org/wiki/Batter_(cooking)"
+  },
+  {
+    "in": [
+      "fish",
+      "batter"
+    ],
+    "out": "battered_fish",
+    "supported": true,
+    "why": "The coat is a sacrificial layer. It takes the violence of the oil so the fish inside never touches it.",
+    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+  },
+  {
+    "in": [
+      "battered_fish"
+    ],
+    "verb": "heat",
+    "out": "fried_fish",
+    "supported": true,
+    "why": "The batter sets into a shell within seconds and the fish steams inside it. Fried food is mostly steamed food in disguise.",
+    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+  },
+  {
+    "in": [
+      "chips",
+      "fried_fish"
+    ],
+    "out": "fish_and_chips",
+    "verified": true,
+    "why": "Fried fish came to Britain with Sephardic Jewish refugees; the chip came from France or Belgium. The national dish is entirely imported.",
+    "src": "https://en.wikipedia.org/wiki/Fish_and_chips"
+  },
+  {
+    "in": [
+      "flour",
+      "butter"
+    ],
+    "out": "rubbed_flour",
+    "supported": true,
+    "why": "Butter is rubbed into flour until it looks like crumbs, coating the grains in fat so water cannot reach them and build gluten.",
+    "src": "https://en.wikipedia.org/wiki/Shortcrust_pastry"
+  },
+  {
+    "in": [
+      "rubbed_flour",
+      "water"
+    ],
+    "out": "pastry",
+    "supported": true,
+    "why": "Only just enough water to bind. In the oven the water in the butter flashes to steam and shoves the layers apart.",
+    "src": "https://en.wikipedia.org/wiki/Shortcrust_pastry"
+  },
+  {
+    "in": [
+      "mince",
+      "salt"
+    ],
+    "out": "cured_mince",
+    "supported": true,
+    "why": "Salt dissolves myosin out of the muscle fibres, and that sticky protein is what makes a sausage bind instead of crumble.",
+    "src": "https://en.wikipedia.org/wiki/Sausage"
+  },
+  {
+    "in": [
+      "cured_mince",
+      "herb"
+    ],
+    "out": "sausage",
+    "supported": true,
+    "why": "Sausage began as a way to use every scrap and make it keep. Salt, fat and a casing turn offcuts into something that travels.",
+    "src": "https://en.wikipedia.org/wiki/Sausage"
+  },
+  {
+    "in": [
+      "boiled_egg",
+      "mayonnaise"
+    ],
+    "out": "egg_mayo",
+    "supported": true,
+    "why": "Yolk bound in an emulsion made of yolk. The mayonnaise carries salt and acid into a filling that is otherwise very plain.",
+    "src": "https://en.wikipedia.org/wiki/Egg_salad"
+  },
+  {
+    "in": [
+      "egg_mayo",
+      "bread"
+    ],
+    "out": "egg_sandwich",
+    "supported": true,
+    "why": "Named for a man who would not leave the card table long enough to eat properly. The story is probably true.",
+    "src": "https://en.wikipedia.org/wiki/Sandwich"
+  },
+  {
+    "in": [
+      "chilli",
+      "garlic"
+    ],
+    "out": "kimchi_paste",
+    "supported": true,
+    "why": "Chilli and garlic ground together. Neither preserves the cabbage — the salt and the bacteria do that — but they decide what it tastes like.",
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "cabbage",
+      "brine"
+    ],
+    "out": "salted_cabbage",
+    "supported": true,
+    "why": "Brining draws water out of the leaves until they go limp, which lets the paste reach every surface and gives lactobacilli a head start.",
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "salted_cabbage",
+      "kimchi_paste"
+    ],
+    "out": "kimchi",
+    "supported": true,
+    "why": "The same lactic fermentation as sauerkraut, run cold and slow. Buried through winter, it keeps for months.",
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "sprout",
+      "sun"
+    ],
+    "out": "seedling",
+    "verified": true,
+    "why": "Light flips a switch: within hours the pale sprout converts its stored protochlorophyllide into chlorophyll, greens, opens its seed leaves and starts feeding itself.",
+    "src": "https://en.wikipedia.org/wiki/Etiolation"
+  },
+  {
+    "in": [
+      "clay",
+      "sand"
+    ],
+    "out": "tempered_clay",
+    "verified": true,
+    "why": "Sand is temper: a non-plastic grit stirred into clay so it shrinks less and does not crack as it dries and fires. Potters have used sand, shell, ash and crushed pottery for the same job.",
+    "src": "https://en.wikipedia.org/wiki/Temper_(pottery)"
+  },
+  {
+    "in": [
+      "tempered_clay"
+    ],
+    "verb": "heat",
+    "out": "stoneware",
+    "verified": true,
+    "why": "Without temper a thick wall shrinks unevenly and splits in the kiln. With it you can fire bigger, harder vessels — hard enough to hold water with no glaze at all.",
+    "src": "https://en.wikipedia.org/wiki/Stoneware"
+  },
+  {
+    "in": [
+      "sea",
+      "stone"
+    ],
+    "out": "limestone",
+    "supported": true,
+    "why": "Limestone is compacted seabed: the shells and skeletons of sea creatures, piled up and pressed for millions of years.",
+    "src": "https://en.wikipedia.org/wiki/Limestone"
+  },
+  {
+    "in": [
+      "limestone",
+      "clay"
+    ],
+    "out": "cement_meal",
+    "verified": true,
+    "why": "The two ingredients of Portland cement — limestone for its calcium, clay for the alumino-silicates. Sand and clay alone will never set.",
+    "src": "https://en.wikipedia.org/wiki/Portland_cement"
+  },
+  {
+    "in": [
+      "cement_meal"
+    ],
+    "verb": "heat",
+    "out": "cement",
+    "verified": true,
+    "why": "Above 600 °C the limestone gives up its carbon dioxide; near 1,450 °C the mix fuses into clinker. Making cement is about a tenth of all human CO₂ emissions.",
+    "src": "https://en.wikipedia.org/wiki/Portland_cement"
+  },
+  {
+    "in": [
+      "cement",
+      "sand"
+    ],
+    "out": "mortar",
+    "verified": true,
+    "why": "Cement paste is the glue; the sand is filler that stops it cracking as it shrinks. Sand binds nothing — it is the thing being bound.",
+    "src": "https://en.wikipedia.org/wiki/Mortar_(masonry)"
+  },
+  {
+    "in": [
+      "mortar",
+      "stone"
+    ],
+    "out": "concrete",
+    "verified": true,
+    "why": "Concrete is aggregate glued by cement paste. The rock carries the load; the cement only holds it in place — which is why sand plus clay is not concrete.",
+    "src": "https://en.wikipedia.org/wiki/Concrete"
+  },
+  {
+    "in": [
+      "water",
+      "stone"
+    ],
+    "out": "river",
+    "verified": true,
+    "why": "Running water cuts rock and carries the dissolved minerals away with it. River water is already slightly salty — roughly a three-hundredth of seawater, too faint to taste.",
+    "src": "https://en.wikipedia.org/wiki/River"
+  },
+  {
+    "in": [
+      "river"
+    ],
+    "verb": "wait",
+    "out": "sea",
+    "verified": true,
+    "why": "Rivers deliver dissolved minerals to one place for four billion years, and only the water ever leaves again. The sea is salty because evaporation takes the water and leaves the salt behind.",
+    "src": "https://en.wikipedia.org/wiki/Seawater"
+  },
+  {
+    "in": [
+      "leaf"
+    ],
+    "verb": "wait",
+    "out": "soil",
+    "verified": true,
+    "why": "The other way soil is made: fallen leaves rotted down by fungi and worms into humus. Weathered rock supplies the minerals, dead plants supply everything else.",
+    "src": "https://en.wikipedia.org/wiki/Humus"
+  },
+  {
+    "in": [
+      "grain",
+      "water"
+    ],
+    "out": "sprout",
+    "supported": true,
+    "why": "A grain is a seed we usually eat before it can start. Wet it instead and it does what it was always going to do.",
+    "src": "https://en.wikipedia.org/wiki/Germination"
+  },
+  {
+    "in": [
+      "seedling",
+      "water"
+    ],
+    "out": "plant",
+    "supported": true,
+    "why": "Water is not just drunk — it holds the plant up. A wilting seedling is one whose cells have lost their internal pressure.",
+    "src": "https://en.wikipedia.org/wiki/Photosynthesis"
+  },
+  {
+    "in": [
+      "soil"
+    ],
+    "verb": "wait",
+    "out": "grass",
+    "verified": true,
+    "why": "Leave bare soil alone and grass arrives without being asked. Wind-blown seed and fast germination make grasses the first thing to claim open ground.",
+    "src": "https://en.wikipedia.org/wiki/Ecological_succession"
+  },
+  {
+    "in": [
+      "grain",
+      "soil"
+    ],
+    "out": "wheat",
+    "supported": true,
+    "why": "Sowing, rather than gathering. Keeping back part of the harvest to plant is the single decision agriculture is built on.",
+    "src": "https://en.wikipedia.org/wiki/Wheat"
+  },
+  {
+    "in": [
+      "harvest"
+    ],
+    "verb": "crush",
+    "out": "grain",
+    "supported": true,
+    "why": "Threshing by flail: beat the sheaves until the grain falls out. Cutting works too, but crushing is what most of the world actually did.",
+    "src": "https://en.wikipedia.org/wiki/Threshing"
+  },
+  {
+    "in": [
+      "field"
+    ],
+    "verb": "wait",
+    "out": "pasture",
+    "verified": true,
+    "why": "A field left fallow goes back to grass within a season, and the grazing animals that follow return nitrogen to it. That cycle fed Europe for a thousand years.",
+    "src": "https://en.wikipedia.org/wiki/Crop_rotation"
+  },
+  {
+    "in": [
+      "herb"
+    ],
+    "verb": "wait",
+    "out": "flower",
+    "supported": true,
+    "why": "Herbs flower if you let them, and most cooks would rather they did not — the leaves turn bitter once the plant switches to making seed.",
+    "src": "https://en.wikipedia.org/wiki/Flower"
+  },
+  {
+    "in": [
+      "fruit",
+      "soil"
+    ],
+    "out": "tree",
+    "supported": true,
+    "why": "A fallen fruit is a seed with its own compost heap wrapped around it. This is what fruit was for, long before anyone picked one.",
+    "src": "https://en.wikipedia.org/wiki/Tree"
+  },
+  {
+    "in": [
+      "flower",
+      "grass"
+    ],
+    "out": "meadow",
+    "supported": true,
+    "why": "Grass alone is a lawn. Grass with flowers in it is a meadow, and the difference is most of the insect life.",
+    "src": "https://en.wikipedia.org/wiki/Meadow"
+  },
+  {
+    "in": [
+      "nectar"
+    ],
+    "verb": "wait",
+    "out": "bee",
+    "supported": true,
+    "why": "You do not need to fetch pollinators. Put out enough sugar and they find it — bees locate new forage within hours.",
+    "src": "https://en.wikipedia.org/wiki/Western_honey_bee"
+  },
+  {
+    "in": [
+      "pasture",
+      "meadow"
+    ],
+    "out": "aurochs",
+    "supported": true,
+    "why": "Open grassland with no large grazer on it does not stay empty for long. Wild cattle followed the grass across Eurasia without any help from us.",
+    "src": "https://en.wikipedia.org/wiki/Aurochs"
+  },
+  {
+    "in": [
+      "aurochs",
+      "pasture"
+    ],
+    "out": "cow",
+    "supported": true,
+    "why": "Domestication was less capture than management: keep the calmest animals on the best grass and let the rest go.",
+    "src": "https://en.wikipedia.org/wiki/Cattle"
+  },
+  {
+    "in": [
+      "ice"
+    ],
+    "verb": "wait",
+    "out": "river",
+    "verified": true,
+    "why": "Half the world's great rivers begin as ice. Glacial meltwater also carries rock flour — ground stone so fine it turns the water milky blue.",
+    "src": "https://en.wikipedia.org/wiki/Meltwater"
+  },
+  {
+    "in": [
+      "river",
+      "river"
+    ],
+    "out": "sea",
+    "supported": true,
+    "why": "Rivers only ever join. Every one of them ends in the same place, and none of the salt they carry ever leaves.",
+    "src": "https://en.wikipedia.org/wiki/Seawater"
+  },
+  {
+    "in": [
+      "tree"
+    ],
+    "verb": "wait",
+    "out": "fruit",
+    "supported": true,
+    "why": "Most fruit trees need no help at all — wind and resident insects do the pollinating, and the tree fruits on its own schedule.",
+    "src": "https://en.wikipedia.org/wiki/Pollination"
+  },
+  {
+    "in": [
+      "grain",
+      "stone"
+    ],
+    "out": "flour",
+    "supported": true,
+    "why": "Two stones and a circular motion. The saddle quern is thirty thousand years old and still grinds flour in parts of the world today.",
+    "src": "https://www.smithsonianmag.com/smart-news/flour-was-part-human-diet-32000-years-ago-180956675/"
+  },
+  {
+    "in": [
+      "sea"
+    ],
+    "verb": "heat",
+    "out": "salt",
+    "verified": true,
+    "why": "Where there is no reliable sun, you boil it off instead. Northern Europe made its salt this way for centuries, burning enormous quantities of wood.",
+    "src": "https://en.wikipedia.org/wiki/Salt_evaporation_pond"
+  },
+  {
+    "in": [
+      "grape"
+    ],
+    "verb": "wait",
+    "out": "yeast",
+    "supported": true,
+    "why": "The white bloom on a grape is not dust. It is a yeast colony, sitting on the sugar, waiting for the skin to break.",
+    "src": "https://en.wikipedia.org/wiki/Saccharomyces_cerevisiae"
+  },
+  {
+    "in": [
+      "pasture",
+      "stone"
+    ],
+    "out": "goat",
+    "supported": true,
+    "why": "Goats browse rather than graze, and take scrub and steep rock that would starve a cow. That is why they reached mountains and islands first.",
+    "src": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+    "in": [
+      "goat",
+      "grass"
+    ],
+    "out": "milk",
+    "supported": true,
+    "why": "Goat's milk has smaller fat globules that never really separate, which is why it does not give cream but does make excellent cheese.",
+    "src": "https://en.wikipedia.org/wiki/Dairy_cattle"
+  },
+  {
+    "in": [
+      "goat"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "supported": true,
+    "why": "Goat is the most widely eaten red meat on Earth, and almost absent from Western kitchens.",
+    "src": "https://en.wikipedia.org/wiki/Meat"
+  },
+  {
+    "in": [
+      "plant",
+      "wood"
+    ],
+    "out": "vine",
+    "supported": true,
+    "why": "A vine will climb anything rigid. Dead wood does the job as well as a living trunk and does not compete for light.",
+    "src": "https://en.wikipedia.org/wiki/Vine"
+  },
+  {
+    "in": [
+      "flour",
+      "milk"
+    ],
+    "out": "dough",
+    "supported": true,
+    "why": "Enriched dough. The fat in milk coats the flour and shortens the gluten strands, giving a softer crumb than water ever will.",
+    "src": "https://en.wikipedia.org/wiki/Gluten"
+  },
+  {
+    "in": [
+      "field"
+    ],
+    "verb": "cut",
+    "out": "straw",
+    "supported": true,
+    "why": "What is left standing after the grain is taken. For most of history the straw was worth nearly as much as the crop.",
+    "src": "https://en.wikipedia.org/wiki/Straw"
+  },
+  {
+    "in": [
+      "seedling",
+      "soil"
+    ],
+    "out": "root",
+    "supported": true,
+    "why": "Roots go looking. They grow towards moisture and away from light, testing the soil as they go.",
+    "src": "https://en.wikipedia.org/wiki/Mycorrhiza"
+  },
+  {
+    "in": [
+      "egg"
+    ],
+    "verb": "wait",
+    "out": "chicken",
+    "verified": true,
+    "why": "Twenty-one days at 37.5 °C, turned several times a day. The egg came first — birds' ancestors were laying them for two hundred million years before anything was a chicken.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "chicken",
+      "seed"
+    ],
+    "out": "egg",
+    "supported": true,
+    "why": "A well-fed hen lays almost daily whether or not there is a rooster. The egg is not waiting to be fertilised; it is simply what she does.",
+    "src": "https://en.wikipedia.org/wiki/Eggshell"
+  },
+  {
+    "in": [
+      "flint",
+      "stone"
+    ],
+    "out": "spark",
+    "supported": true,
+    "why": "Flint alone will not spark. Strike it against iron pyrite or steel and it shaves off metal fine enough to burn in air.",
+    "src": "https://en.wikipedia.org/wiki/Fire_making"
+  },
+  {
+    "in": [
+      "vine",
+      "sun"
+    ],
+    "out": "grape",
+    "supported": true,
+    "why": "Sugar in a grape is accumulated sunlight, and how much of it there is decides everything the wine will become.",
+    "src": "https://en.wikipedia.org/wiki/Brix"
+  },
+  {
+    "in": [
+      "milk"
+    ],
+    "verb": "chill",
+    "out": "cream",
+    "supported": true,
+    "why": "Cold makes the fat globules clump and rise faster. Every dairy before the centrifuge simply put the milk somewhere cool and waited.",
+    "src": "https://en.wikipedia.org/wiki/Cream"
+  },
+  {
+    "in": [
+      "tree",
+      "flint"
+    ],
+    "out": "wood",
+    "supported": true,
+    "why": "A flint axe fells a tree slowly but genuinely. Experiments have taken down a mature pine in about half an hour.",
+    "src": "https://en.wikipedia.org/wiki/Wood"
+  },
+  {
+    "in": [
+      "grape"
+    ],
+    "verb": "ferment",
+    "out": "wine",
+    "supported": true,
+    "why": "Whole-berry fermentation: the fruit is not pressed first, and the yeast on the skins gets to the sugar inside on its own.",
+    "src": "https://en.wikipedia.org/wiki/Fermentation_in_winemaking"
+  },
+  {
+    "in": [
+      "clay",
+      "water"
+    ],
+    "out": "mud",
+    "supported": true,
+    "why": "Clay holds water rather than letting it drain, which is why clay soil turns to mud and stays that way.",
+    "src": "https://en.wikipedia.org/wiki/Mud"
+  },
+  {
+    "in": [
+      "tree",
+      "stone"
+    ],
+    "out": "olive",
+    "supported": true,
+    "why": "Olives fruit best on thin, stony ground. Rich soil gives you a large tree and disappointing oil.",
+    "src": "https://en.wikipedia.org/wiki/Olive"
+  },
+  {
+    "in": [
+      "risen_dough",
+      "fire"
+    ],
+    "out": "bread",
+    "supported": true,
+    "why": "Before ovens there was a hot stone and a covering pot. The bread does not care where the heat comes from.",
+    "src": "https://en.wikipedia.org/wiki/Bread"
+  },
+  {
+    "in": [
+      "wood",
+      "wood"
+    ],
+    "out": "fire",
+    "verified": true,
+    "why": "Friction, not percussion: spin a hardwood spindle against a softer board and the dust you grind off ignites at around 400 °C.",
+    "src": "https://en.wikipedia.org/wiki/Fire_making"
+  },
+  {
+    "in": [
+      "river",
+      "stone"
+    ],
+    "out": "sand",
+    "why": "A river is a rock mill. Tumbling stones grind each other down, and what survives the journey is quartz sand.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sand"
+  },
+  {
+    "in": [
+      "river",
+      "soil"
+    ],
+    "out": "clay",
+    "why": "The finest particles a river carries settle last, where the water finally goes still. That deposit is clay.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Clay"
+  },
+  {
+    "in": [
+      "clay",
+      "straw"
+    ],
+    "out": "adobe",
+    "why": "Straw stops the block cracking as it shrinks. Clay works as well as mud and holds its shape better.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Adobe"
+  },
+  {
+    "in": [
+      "adobe"
+    ],
+    "verb": "heat",
+    "out": "brick",
+    "why": "Fire the block instead of drying it and the change is permanent. A fired brick survives rain; a mud one dissolves in it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mudbrick"
+  },
+  {
+    "in": [
+      "tempered_clay",
+      "fire"
+    ],
+    "out": "pot",
+    "why": "An open fire reaches perhaps 700 °C — enough for earthenware if the clay is tempered, which is how pottery began.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Pottery"
+  },
+  {
+    "in": [
+      "sand"
+    ],
+    "verb": "heat",
+    "out": "glass",
+    "why": "Without a flux you need about 1700 °C. Lightning strikes sand and makes glass this way — fulgurites, fused in an instant.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Forest_glass"
+  },
+  {
+    "in": [
+      "sea",
+      "salt"
+    ],
+    "out": "brine",
+    "why": "Seawater strengthened with more salt. Strong brine floats an egg, which is how it was tested before anyone had a hydrometer.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Brining"
+  },
+  {
+    "in": [
+      "river"
+    ],
+    "verb": "chill",
+    "out": "ice",
+    "why": "Rivers freeze from the surface down, and the ice insulates what is beneath. That is why fish survive winter.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Properties_of_water"
+  },
+  {
+    "in": [
+      "water",
+      "fire"
+    ],
+    "out": "steam",
+    "why": "Water hitting fire flashes to vapour and expands about 1,700 times. That expansion is what every steam engine ever built was harvesting.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Enthalpy_of_vaporization"
+  },
+  {
+    "in": [
+      "limestone"
+    ],
+    "verb": "wait",
+    "out": "flint",
+    "why": "Flint forms as nodules inside chalk and limestone — silica from sponges and plankton, redissolved and set hard in the seabed.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Flint"
+  },
+  {
+    "in": [
+      "straw"
+    ],
+    "verb": "heat",
+    "out": "charcoal",
+    "why": "Any plant matter charred without air leaves carbon behind. Straw and husks make biochar, which farmers dig back into soil.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Charcoal"
+  },
+  {
+    "in": [
+      "straw",
+      "fire"
+    ],
+    "out": "ash",
+    "why": "Straw ash is unusually rich in potassium and silica — good for the soil, and good as a flux for glass.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Wood_ash"
+  },
+  {
+    "in": [
+      "lye",
+      "butter"
+    ],
+    "out": "soap",
+    "why": "Any fat will do. Animal fat with lye gives a harder, faster-lathering soap than olive oil does.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Castile_soap"
+  },
+  {
+    "in": [
+      "tree",
+      "water"
+    ],
+    "out": "leaf",
+    "why": "A large tree moves hundreds of litres a day, pulled up by evaporation from its own leaves. The leaf is both the pump and the leak.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Stoma"
+  },
+  {
+    "in": [
+      "root"
+    ],
+    "verb": "chill",
+    "out": "bulb",
+    "why": "Many bulbs need a cold spell before they will flower — vernalisation. Without a winter, they simply sit.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Bulb"
+  },
+  {
+    "in": [
+      "flower",
+      "leaf"
+    ],
+    "out": "herb",
+    "why": "Most culinary herbs are picked just before flowering, when the aromatic oils in the leaves are at their strongest.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Essential_oil"
+  },
+  {
+    "in": [
+      "leaf",
+      "fire"
+    ],
+    "out": "tea",
+    "why": "Heat is what stops oxidation. Green tea is fired almost immediately; black tea is left to oxidise fully first.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tea_processing"
+  },
+  {
+    "in": [
+      "tea",
+      "steam"
+    ],
+    "out": "brewed_tea",
+    "why": "Steam and hot water pull out the same compounds. What changes is how fast — and bitterness is mostly a matter of speed.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tea"
+  },
+  {
+    "in": [
+      "flower",
+      "sun"
+    ],
+    "out": "nectar",
+    "why": "Nectar production tracks sunlight: flowers secrete most on warm bright days, which is exactly when pollinators are flying.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Nectar"
+  },
+  {
+    "in": [
+      "bee"
+    ],
+    "verb": "wait",
+    "out": "honey",
+    "why": "A colony makes far more than it needs. A strong hive can store 25 kg in a season and eat only a fraction of it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Honey"
+  },
+  {
+    "in": [
+      "beeswax",
+      "fire"
+    ],
+    "out": "candle",
+    "why": "Beeswax burns cleaner and slower than tallow, and does not stink. It was expensive enough that churches used it and households did not.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Candle_wick"
+  },
+  {
+    "in": [
+      "vine",
+      "soil"
+    ],
+    "out": "cucumber",
+    "why": "Cucumbers sprawl as readily as they climb. Left on the ground they grow curved; trellised, they grow straight.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cucumber"
+  },
+  {
+    "in": [
+      "vine",
+      "bee"
+    ],
+    "out": "tomato",
+    "why": "A tomato flower will not release pollen to wind alone — it needs vibration. Bumblebees buzz at exactly the right frequency to shake it loose.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tomato"
+  },
+  {
+    "in": [
+      "tree",
+      "flower"
+    ],
+    "out": "apple",
+    "why": "Almost every apple tree needs a different variety flowering nearby. They are largely self-incompatible — an orchard of one clone sets little fruit.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Apple"
+  },
+  {
+    "in": [
+      "grass",
+      "mud"
+    ],
+    "out": "rice",
+    "why": "Puddled mud seals the paddy floor so the water sits rather than draining. That standing water is the whole system.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Paddy_field"
+  },
+  {
+    "in": [
+      "root",
+      "straw"
+    ],
+    "out": "potato",
+    "why": "Earth up the stems with straw and the buried part makes more tubers. The potato grows in the dark, not in the soil's nutrients.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tuber"
+  },
+  {
+    "in": [
+      "bulb",
+      "water"
+    ],
+    "out": "onion",
+    "why": "Onions swell on long days and steady water. Let them dry out and they bolt to seed instead of bulbing.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Onion"
+  },
+  {
+    "in": [
+      "bulb"
+    ],
+    "verb": "chill",
+    "out": "garlic",
+    "why": "Garlic is planted in autumn because it needs weeks of cold before it will split into cloves. Spring-planted garlic makes one round bulb.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Allicin"
+  },
+  {
+    "in": [
+      "leaf",
+      "soil"
+    ],
+    "out": "cabbage",
+    "why": "Brassicas are hungry feeders. A cabbage is a year of soil nitrogen folded into a ball of leaves.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Brassica_oleracea"
+  },
+  {
+    "in": [
+      "soil",
+      "wheat"
+    ],
+    "out": "field",
+    "why": "A field is a decision as much as a place: this ground, this crop, this year, and nothing else allowed to grow.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Monoculture"
+  },
+  {
+    "in": [
+      "field",
+      "flint"
+    ],
+    "out": "harvest",
+    "why": "Before the iron sickle there was the flint one — serrated blades set into a curved handle with pitch. It works.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sickle"
+  },
+  {
+    "in": [
+      "sprout"
+    ],
+    "verb": "heat",
+    "out": "malt",
+    "why": "Kilning stops germination at the moment the starch has turned to sugar but before the seedling eats it. Timing is the whole craft.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Malting"
+  },
+  {
+    "in": [
+      "dough",
+      "egg"
+    ],
+    "out": "pasta_dough",
+    "why": "Enrich a plain dough with egg and the protein sets on cooking, so it can be rolled thin enough to see through.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Pasta"
+  },
+  {
+    "in": [
+      "rubbed_flour",
+      "milk"
+    ],
+    "out": "pastry",
+    "why": "Milk instead of water gives a softer, browner pastry — the milk sugars caramelise where water would only steam.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Shortcrust_pastry"
+  },
+  {
+    "in": [
+      "cake_mix",
+      "milk"
+    ],
+    "out": "cake_batter",
+    "why": "Milk loosens the batter so it pours. Too stiff and the trapped air cannot expand; too loose and it escapes.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "salted_dough",
+      "sourdough_starter"
+    ],
+    "out": "risen_dough",
+    "why": "A starter is slower than baker's yeast but does the same job. The bacteria alongside it add acid the yeast cannot.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Leavening_agent"
+  },
+  {
+    "in": [
+      "flour",
+      "grape"
+    ],
+    "out": "sourdough_starter",
+    "why": "Bakers have long started a culture with fruit — the wild yeast on grape skins is the same organism, just arriving faster.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sourdough"
+  },
+  {
+    "in": [
+      "dough",
+      "fire"
+    ],
+    "out": "flatbread",
+    "why": "A hot stone at the fire's edge is all it takes. This is bread as it was made for ten thousand years before ovens.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/History_of_bread"
+  },
+  {
+    "in": [
+      "risen_dough",
+      "sourdough_starter"
+    ],
+    "out": "sourdough",
+    "supported": true,
+    "why": "Give a yeasted dough a spoonful of starter and you get some of the acid without the long wait. Most commercial \"sourdough\" is exactly this compromise.",
+    "src": "https://en.wikipedia.org/wiki/Sourdough"
+  },
+  {
+    "in": [
+      "dough"
+    ],
+    "verb": "cut",
+    "out": "noodle",
+    "why": "No egg required. Hand-pulled and knife-cut noodles are made from plain flour and water across most of Asia.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Lajia"
+  },
+  {
+    "in": [
+      "noodle",
+      "water"
+    ],
+    "out": "pasta",
+    "why": "Salted boiling water, and enough of it — the starch released has to go somewhere, or the noodles glue together.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Starch_gelatinization"
+  },
+  {
+    "in": [
+      "cake_batter",
+      "fire"
+    ],
+    "out": "cake",
+    "why": "Before the enclosed oven, cakes were baked under an inverted pot heaped with embers. Even heat is the only real requirement.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "malt",
+      "steam"
+    ],
+    "out": "wort",
+    "why": "Mashing wants a held temperature, not a boil — around 65 °C, where the malt's enzymes work fastest without cooking themselves.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mashing"
+  },
+  {
+    "in": [
+      "wort"
+    ],
+    "verb": "ferment",
+    "out": "beer",
+    "why": "Wild fermentation needs no added yeast at all. Lambic brewers still leave the wort open overnight and let the air inoculate it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/History_of_beer"
+  },
+  {
+    "in": [
+      "grape",
+      "stone"
+    ],
+    "out": "grape_juice",
+    "why": "Stone presses and treading both work by the same principle: enough pressure to split the skins, not enough to crush the bitter pips.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Winemaking"
+  },
+  {
+    "in": [
+      "cider"
+    ],
+    "verb": "ferment",
+    "out": "vinegar",
+    "why": "Cider vinegar is the same second fermentation as wine vinegar — Acetobacter oxidising alcohol into acetic acid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria"
+  },
+  {
+    "in": [
+      "apple",
+      "stone"
+    ],
+    "out": "apple_juice",
+    "why": "A scratter breaks the fruit, a press squeezes it. Whole apples will not give up juice to pressure alone.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Food_browning"
+  },
+  {
+    "in": [
+      "apple_juice",
+      "yeast"
+    ],
+    "out": "cider",
+    "why": "Adding a chosen yeast makes the result predictable. Left wild, the same juice can go anywhere — which is the point, for some cidermakers.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cider"
+  },
+  {
+    "in": [
+      "olive",
+      "stone"
+    ],
+    "out": "olive_oil",
+    "why": "Traditional mills crush olives, stones and all, under a granite wheel. The stone fragments are filtered out afterwards.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Olive_oil_extraction"
+  },
+  {
+    "in": [
+      "sugarcane",
+      "stone"
+    ],
+    "out": "cane_juice",
+    "why": "Roller mills crush the cane between stones or iron. The fibrous residue, bagasse, is burnt to fire the boiling pans.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sugarcane"
+  },
+  {
+    "in": [
+      "cane_juice",
+      "fire"
+    ],
+    "out": "sugar",
+    "why": "Boiled in open pans over cane-trash fires until it crystallises. The process is unchanged in principle since medieval Persia.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Molasses"
+  },
+  {
+    "in": [
+      "sugar",
+      "fire"
+    ],
+    "out": "caramel",
+    "why": "Direct flame is harder to control than an oven. Caramel goes from perfect to burnt in about fifteen seconds.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Caramelization"
+  },
+  {
+    "in": [
+      "mead_must"
+    ],
+    "verb": "ferment",
+    "out": "mead",
+    "why": "Honey carries its own wild yeast, dormant and waiting for dilution. Mead will start on its own if you let it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Jiahu"
+  },
+  {
+    "in": [
+      "cabbage"
+    ],
+    "verb": "ferment",
+    "out": "sauerkraut",
+    "why": "No starter culture is added, ever. The lactobacilli are already on the leaves — the salt simply clears the field for them.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sauerkraut"
+  },
+  {
+    "in": [
+      "salted_cabbage",
+      "chilli"
+    ],
+    "out": "kimchi",
+    "why": "Chilli arrived in Korea only in the 16th century. Kimchi is far older than its colour.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "cucumber",
+      "vinegar"
+    ],
+    "out": "pickle",
+    "why": "A vinegar pickle is preserved on arrival rather than fermented. Faster, sharper, and it never develops the depth of a brined one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Pickling"
+  },
+  {
+    "in": [
+      "tomato"
+    ],
+    "verb": "crush",
+    "out": "passata",
+    "why": "Raw passata keeps the fresh acidity that cooking drives off. Both are correct; they are different sauces.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Lycopene"
+  },
+  {
+    "in": [
+      "fish",
+      "brine"
+    ],
+    "out": "salt_fish",
+    "why": "Wet-salting in brine draws water out more evenly than dry salt, and does not burn the surface of the fillet.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Dried_and_salted_cod"
+  },
+  {
+    "in": [
+      "meat",
+      "flint"
+    ],
+    "out": "mince",
+    "why": "Chopped rather than ground. Two blades and a board give a coarser mince that holds its texture better than anything extruded.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ground_meat"
+  },
+  {
+    "in": [
+      "meat",
+      "fire"
+    ],
+    "out": "roast",
+    "why": "Direct flame browns faster than an oven and cooks less evenly — which is why spit-roasting turns.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Maillard_reaction"
+  },
+  {
+    "in": [
+      "meat",
+      "brine"
+    ],
+    "out": "cured_meat",
+    "why": "Brining cures right through a thick cut where dry salt would only ever reach the surface.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Curing_(food_preservation)"
+  },
+  {
+    "in": [
+      "cured_meat",
+      "charcoal"
+    ],
+    "out": "bacon",
+    "why": "Cold smoke — under 30 °C — flavours and preserves without cooking. Hot smoking does both at once and gives a different product.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Smoking_(cooking)"
+  },
+  {
+    "in": [
+      "cured_mince",
+      "chilli"
+    ],
+    "out": "sausage",
+    "why": "Chilli, paprika and pepper were preservatives before they were flavours. Chorizo and 'nduja are salt-and-spice preservation first.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sausage"
+  },
+  {
+    "in": [
+      "meatball_mix",
+      "flour"
+    ],
+    "out": "meatball",
+    "why": "Flour binds where egg is scarce, and gives a firmer ball that holds up to long simmering.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Meatball"
+  },
+  {
+    "in": [
+      "fish",
+      "water"
+    ],
+    "out": "broth",
+    "why": "Fish stock is done in twenty minutes. Any longer and the delicate proteins break down and turn it bitter.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Gelatin"
+  },
+  {
+    "in": [
+      "broth",
+      "ice"
+    ],
+    "out": "aspic",
+    "why": "Rapid chilling sets gelatin clearer than slow cooling, which is why clarified aspic is iced rather than left.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Aspic"
+  },
+  {
+    "in": [
+      "broth",
+      "herb"
+    ],
+    "out": "soup",
+    "why": "A bundle of herbs added late and pulled out before serving. Cooked too long, the aromatics boil off entirely.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Soup"
+  },
+  {
+    "in": [
+      "milk"
+    ],
+    "verb": "crush",
+    "out": "butter",
+    "why": "Whole milk can be churned directly, without separating cream first. It takes far longer and gives less — but it works.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Churning_(butter)"
+  },
+  {
+    "in": [
+      "butter",
+      "fire"
+    ],
+    "out": "ghee",
+    "why": "Watch for the milk solids browning and the bubbling to go quiet: that silence is the water gone.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ghee"
+  },
+  {
+    "in": [
+      "cream"
+    ],
+    "verb": "ferment",
+    "out": "yoghurt",
+    "why": "Cultured cream is the same organisms on a richer substrate — crème fraîche and soured cream by another name.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Yogurt"
+  },
+  {
+    "in": [
+      "milk",
+      "wine"
+    ],
+    "out": "curd",
+    "why": "Any acid will do it. Wine, lemon and vinegar all drop the pH far enough for casein to clump out of the liquid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Curd"
+  },
+  {
+    "in": [
+      "curd",
+      "brine"
+    ],
+    "out": "cheese",
+    "why": "Brined cheeses — feta, halloumi, telemea — cure in salt water rather than dry salt, and keep for months in it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cheese"
+  },
+  {
+    "in": [
+      "cheese"
+    ],
+    "verb": "chill",
+    "out": "aged_cheese",
+    "why": "Cheese caves hold about 10 °C and high humidity. Cold slows the enzymes to a pace that builds flavour instead of rot.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cheese_ripening"
+  },
+  {
+    "in": [
+      "aged_cheese",
+      "mould"
+    ],
+    "out": "blue_cheese",
+    "why": "Older curd gives the mould more broken-down fat and protein to work on, and a sharper result.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Blue_cheese"
+  },
+  {
+    "in": [
+      "mould",
+      "broth"
+    ],
+    "out": "penicillin",
+    "why": "Fleming's mould made almost nothing useful. Growing it in deep broth tanks is what turned a curiosity into a drug — Peoria, 1941, in corn steep liquor.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/History_of_penicillin"
+  },
+  {
+    "in": [
+      "sweet_cream"
+    ],
+    "verb": "chill",
+    "out": "ice_cream",
+    "why": "Freeze without stirring and you get a solid block of ice crystals. The churn is not optional.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ice_cream"
+  },
+  {
+    "in": [
+      "egg",
+      "water"
+    ],
+    "out": "boiled_egg",
+    "why": "Older eggs peel more easily: the membrane loosens as the air cell inside grows over weeks.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Boiled_egg"
+  },
+  {
+    "in": [
+      "rice",
+      "water"
+    ],
+    "out": "cooked_rice",
+    "why": "Absorption rather than boiling. The rice takes up exactly its own volume and a half, and nothing is poured away.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Starch_gelatinization"
+  },
+  {
+    "in": [
+      "cooked_rice",
+      "sugar"
+    ],
+    "out": "sushi_rice",
+    "why": "Vinegar, sugar and salt together — the sugar rounds off the acid and gives the grains their gloss.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sushi"
+  },
+  {
+    "in": [
+      "potato",
+      "fire"
+    ],
+    "out": "baked_potato",
+    "why": "Buried in embers, skin on. The skin chars and seals, and the inside steams in its own moisture.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Baked_potato"
+  },
+  {
+    "in": [
+      "potato",
+      "ghee"
+    ],
+    "out": "chips",
+    "why": "Clarified fat has no water and no milk solids, so it can run far hotter before it smokes.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/French_fries"
+  },
+  {
+    "in": [
+      "leaf",
+      "tomato"
+    ],
+    "out": "salad",
+    "why": "Leaves bruise where they are torn and seal where they are cut — which is why salad leaves are torn by hand, not chopped.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Salad"
+  },
+  {
+    "in": [
+      "olive_salad",
+      "curd"
+    ],
+    "out": "greek_salad",
+    "why": "Fresh white cheese rather than aged: barrel-matured feta is the traditional choice, salty enough to season the whole bowl.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Greek_salad"
+  },
+  {
+    "in": [
+      "flatbread",
+      "cheese"
+    ],
+    "out": "cheese_toastie",
+    "why": "Thin bread melts the cheese before the crust burns. Thick bread gets the opposite problem.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cheese"
+  },
+  {
+    "in": [
+      "flatbread",
+      "passata"
+    ],
+    "out": "pizza_base",
+    "why": "Pizza is flatbread with something on it. The tomato only arrived after the Americas did.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Neapolitan_pizza"
+  },
+  {
+    "in": [
+      "pizza_base",
+      "curd"
+    ],
+    "out": "pizza",
+    "why": "Fresh mozzarella is a curd cheese, stretched in hot whey. It melts because it never fully dried out.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/History_of_pizza"
+  },
+  {
+    "in": [
+      "fish",
+      "fire"
+    ],
+    "out": "grilled_fish",
+    "why": "Skin-side to the flame. The skin contracts and shields the flesh, which would dry out in seconds if exposed.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Fish_as_food"
+  },
+  {
+    "in": [
+      "ash",
+      "sea"
+    ],
+    "out": "lye",
+    "why": "Burn seaweed or saltmarsh plants and the ash gives soda rather than potash. Spain's barilla trade existed entirely to supply it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Lye"
+  },
+  {
+    "in": [
+      "honey"
+    ],
+    "verb": "crush",
+    "out": "beeswax",
+    "why": "Crushing the comb separates the two products at once: honey drains out, wax floats up when the residue is warmed in water.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Beeswax"
+  },
+  {
+    "in": [
+      "grass",
+      "river"
+    ],
+    "out": "sugarcane",
+    "why": "Cane is thirsty — roughly 1,500 litres of water for every kilo of sugar. It grows where rivers are, or where irrigation pretends there is one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sugarcane"
+  },
+  {
+    "in": [
+      "honey",
+      "river"
+    ],
+    "out": "mead_must",
+    "why": "Meadmakers argue about water endlessly. Soft water lets the honey speak; hard water adds minerals the yeast rather likes.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Water_activity"
+  },
+  {
+    "in": [
+      "herb",
+      "ghee"
+    ],
+    "out": "herb_oil",
+    "why": "Clarified butter carries aromatics as well as oil does and takes far more heat before it burns — which is why tempering spices uses it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Essential_oil"
+  },
+  {
+    "in": [
+      "straw"
+    ],
+    "verb": "wait",
+    "out": "mould",
+    "why": "Damp hay moulds within days, and warms as it does. Barn fires start this way — microbial heat, not a spark.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Penicillium"
+  },
+  {
+    "in": [
+      "dinner",
+      "wine"
+    ],
+    "out": "feast",
+    "why": "A feast is a decision to make eating take longer than it needs to. Every culture found the same excuse.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Communal_meal"
+  },
+  {
+    "in": [
+      "wood"
+    ],
+    "verb": "wait",
+    "out": "soil",
+    "why": "A fallen trunk becomes soil over decades, and feeds the next tree while it does. Foresters call them nurse logs.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Soil_formation"
+  },
+  {
+    "in": [
+      "charcoal",
+      "spark"
+    ],
+    "out": "fire",
+    "why": "Charcoal is harder to light than wood and far hotter once lit. It needs a bed of tinder first, then it will hold heat for hours.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans"
+  },
+  {
+    "in": [
+      "malt"
+    ],
+    "verb": "crush",
+    "out": "flour",
+    "why": "Malt flour is sweet and used in bread for exactly that: the sugars feed the yeast and darken the crust.",
+    "supported": true,
+    "src": "https://www.smithsonianmag.com/smart-news/flour-was-part-human-diet-32000-years-ago-180956675/"
+  },
+  {
+    "in": [
+      "brine"
+    ],
+    "verb": "heat",
+    "out": "salt",
+    "why": "Boiling brine rather than seawater saves enormous fuel — the concentration work has already been done by the sun.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Salt_evaporation_pond"
+  },
+  {
+    "in": [
+      "glass"
+    ],
+    "verb": "crush",
+    "out": "sand",
+    "why": "Crushed glass — cullet — melts at a lower temperature than raw sand, so every glassworks recycles its own.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sand"
+  },
+  {
+    "in": [
+      "charcoal",
+      "fire"
+    ],
+    "out": "ash",
+    "why": "Charcoal leaves very little ash, because the volatile fraction has already gone. What remains is almost pure mineral.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Wood_ash"
+  },
+  {
+    "in": [
+      "grass"
+    ],
+    "verb": "wait",
+    "out": "straw",
+    "why": "Cut grass left to dry is hay — winter feed, and the reason livestock could be kept through a season with nothing growing.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Straw"
+  },
+  {
+    "in": [
+      "chicken"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "why": "White meat is muscle built for short bursts; the leg is darker because it works all day. Colour is a record of use.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Meat"
+  },
+  {
+    "in": [
+      "chicken",
+      "water"
+    ],
+    "out": "broth",
+    "why": "The feet make the best stock — almost pure collagen, and nothing else on the bird sets a broth so firmly.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Gelatin"
+  },
+  {
+    "in": [
+      "chicken",
+      "grain"
+    ],
+    "out": "egg",
+    "why": "Shell quality tracks the hen's calcium. Layers are fed ground oyster shell for exactly this reason.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Eggshell"
+  },
+  {
+    "in": [
+      "apple"
+    ],
+    "verb": "wait",
+    "out": "yeast",
+    "why": "Windfalls ferment where they lie. The smell of a neglected orchard in autumn is wild yeast at work.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Saccharomyces_cerevisiae"
+  },
+  {
+    "in": [
+      "tree",
+      "sickle"
+    ],
+    "out": "wood",
+    "why": "A billhook and a sickle share an ancestor. Curved blades cut green wood far better than straight ones.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Wood"
+  },
+  {
+    "in": [
+      "stone",
+      "wood"
+    ],
+    "out": "sickle",
+    "why": "Before flint was set in a handle, a sharpened stone lashed to a bent stick did the same job — badly, but well enough to start farming.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sickle"
+  },
+  {
+    "in": [
+      "harvest",
+      "wood"
+    ],
+    "out": "granary",
+    "why": "Raised on staddle stones so rats cannot climb in. The mushroom-shaped bases are the whole invention.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/History_of_writing"
+  },
+  {
+    "in": [
+      "salt_fish",
+      "charcoal"
+    ],
+    "out": "smoked_fish",
+    "why": "Salt first, then smoke. The salt draws out water and the smoke seals the surface — two preservatives doing different jobs.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Smoked_fish"
+  },
+  {
+    "in": [
+      "glass",
+      "brick"
+    ],
+    "out": "greenhouse",
+    "why": "A brick back wall stores the day's heat and releases it overnight. Victorian glasshouses were built south-facing for exactly this.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Greenhouse"
+  },
+  {
+    "in": [
+      "greenhouse",
+      "sprout"
+    ],
+    "out": "early_crop",
+    "why": "Sowing under glass moves the season forward by weeks, which for a market gardener is the difference between a good price and a glut.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Greenhouse"
+  },
+  {
+    "in": [
+      "soap",
+      "river"
+    ],
+    "out": "clean_hands",
+    "why": "Running water matters as much as the soap. Washing in a still bowl simply redistributes what came off.",
+    "supported": true,
+    "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4563982/"
+  },
+  {
+    "in": [
+      "garlic",
+      "ghee"
+    ],
+    "out": "garlic_butter",
+    "why": "Garlic in clarified butter can be taken much hotter without the milk solids burning and turning it acrid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Garlic_butter"
+  },
+  {
+    "in": [
+      "garlic_butter",
+      "flatbread"
+    ],
+    "out": "garlic_bread",
+    "why": "Thin bread takes the butter right through rather than leaving a soaked top and a dry base.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Garlic_bread"
+  },
+  {
+    "in": [
+      "flatbread",
+      "meat"
+    ],
+    "out": "wrap",
+    "why": "Meat straight off the grill into bread, no plate involved. The oldest fast food there is.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Wrap_(food)"
+  },
+  {
+    "in": [
+      "caramel",
+      "milk"
+    ],
+    "out": "caramel_sauce",
+    "why": "Milk gives a thinner, lighter sauce than cream — and scorches faster, because there is less fat protecting the sugars.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Caramel"
+  },
+  {
+    "in": [
+      "ice_cream",
+      "honey"
+    ],
+    "out": "sundae",
+    "why": "Honey does not freeze solid, so it stays pourable straight from the fridge. Its water is already spoken for.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sundae"
+  },
+  {
+    "in": [
+      "sauerkraut",
+      "bacon"
+    ],
+    "out": "choucroute",
+    "why": "Smoked pork and soured cabbage: fat and acid balancing each other, and both preserved by the same autumn.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Choucroute_garnie"
+  },
+  {
+    "in": [
+      "bacon",
+      "boiled_egg"
+    ],
+    "out": "breakfast",
+    "why": "The cooked breakfast is a Victorian invention of the leisured classes, later sold to everyone else as tradition.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Edward_Bernays"
+  },
+  {
+    "in": [
+      "aged_cheese",
+      "grape"
+    ],
+    "out": "cheeseboard",
+    "why": "The old rule — buy on apples, sell on cheese — is about acid: fruit acid makes almost any cheese taste better than it is.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cheese"
+  },
+  {
+    "in": [
+      "garlic_yoghurt",
+      "herb"
+    ],
+    "out": "tzatziki",
+    "why": "Dill or mint, depending which coast you are on. Both are there to lift the dairy rather than flavour it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Strained_yogurt"
+  },
+  {
+    "in": [
+      "mayonnaise",
+      "baked_potato"
+    ],
+    "out": "potato_salad",
+    "why": "Floury baked potato absorbs dressing where waxy boiled potato only wears it. Different dish entirely.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Potato_salad"
+  },
+  {
+    "in": [
+      "egg_mayo",
+      "flatbread"
+    ],
+    "out": "egg_sandwich",
+    "why": "The filling is the structure here — flatbread brings nothing but a way to hold it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sandwich"
+  },
+  {
+    "in": [
+      "butter",
+      "cooked_rice"
+    ],
+    "out": "pilaf",
+    "why": "Butter browns the grains slightly before the stock goes in, which is where a pilaf gets its nutty edge.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Pilaf"
+  },
+  {
+    "in": [
+      "dough",
+      "brine"
+    ],
+    "out": "salted_dough",
+    "why": "Dissolving the salt first distributes it evenly. Dry salt against raw yeast kills it on contact.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Bread"
+  },
+  {
+    "in": [
+      "butter",
+      "honey"
+    ],
+    "out": "creamed_butter",
+    "why": "Honey creams less air in than sugar — no crystals to tear bubbles — so a honey cake is denser and stays moist far longer.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Creaming_(cooking)"
+  },
+  {
+    "in": [
+      "creamed_butter",
+      "milk"
+    ],
+    "out": "cake_mix",
+    "why": "Add the liquid slowly or the emulsion splits and the trapped air escapes. Curdled batter bakes heavy.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cake"
+  },
+  {
+    "in": [
+      "cream",
+      "honey"
+    ],
+    "out": "sweet_cream",
+    "why": "Honey's fructose lowers the freezing point further than sugar does, giving a softer set.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ice_cream"
+  },
+  {
+    "in": [
+      "flatbread"
+    ],
+    "verb": "crush",
+    "out": "breadcrumb",
+    "why": "Dry flatbread shatters into fine even crumb. Soft bread tears into fluff and has to be dried first.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Breadcrumbs"
+  },
+  {
+    "in": [
+      "cured_mince",
+      "breadcrumb"
+    ],
+    "out": "meatball_mix",
+    "why": "Salting the mince first pulls out the sticky protein, so the crumb binds into a mix that holds without egg.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Meatball"
+  },
+  {
+    "in": [
+      "meatball",
+      "tomato"
+    ],
+    "out": "meatball_sauce",
+    "why": "Fresh tomato breaks down into sauce around the meatballs and takes their fat with it as it goes.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tomato_sauce"
+  },
+  {
+    "in": [
+      "salad",
+      "olive_oil"
+    ],
+    "out": "olive_salad",
+    "why": "Oil goes on before anything acidic. It coats the leaves and keeps the vinegar from drawing out their water.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Greek_salad"
+  },
+  {
+    "in": [
+      "flour",
+      "cider"
+    ],
+    "out": "batter",
+    "why": "Cider batter works like beer batter and tastes of apple. Any carbonated liquid will lighten it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Batter_(cooking)"
+  },
+  {
+    "in": [
+      "battered_fish",
+      "olive_oil"
+    ],
+    "out": "fried_fish",
+    "why": "The oil must be hot enough that the batter seals in seconds. Below about 170 °C it drinks the fat instead.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+  },
+  {
+    "in": [
+      "flour",
+      "ghee"
+    ],
+    "out": "rubbed_flour",
+    "why": "Ghee is pure fat, so it coats the flour more completely than butter — a shorter, more crumbly pastry.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Shortcrust_pastry"
+  },
+  {
+    "in": [
+      "mince",
+      "brine"
+    ],
+    "out": "cured_mince",
+    "why": "Brining mince is how the salt reaches every part of it. Dry salt on the surface would never distribute.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sausage"
+  },
+  {
+    "in": [
+      "chilli",
+      "onion"
+    ],
+    "out": "kimchi_paste",
+    "why": "Onion and pear are ground in for their sugars, which feed the fermentation as much as they sweeten it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "clay",
+      "ash"
+    ],
+    "out": "tempered_clay",
+    "why": "Wood ash and crushed shell were used as temper long before sand. Ash also fluxes the surface into a rough natural glaze.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Temper_(pottery)"
+  },
+  {
+    "in": [
+      "tempered_clay",
+      "charcoal"
+    ],
+    "out": "stoneware",
+    "supported": true,
+    "why": "Charcoal burns far hotter than wood. A charcoal-fired kiln reaches the ~1,200 °C that vitrifies stoneware, which an open wood fire never will.",
+    "src": "https://en.wikipedia.org/wiki/Stoneware"
+  },
+  {
+    "in": [
+      "sea",
+      "sand"
+    ],
+    "out": "limestone",
+    "why": "Shell sand is limestone in the making: crushed shell and coral, waiting to be buried and pressed.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Limestone"
+  },
+  {
+    "in": [
+      "limestone",
+      "mud"
+    ],
+    "out": "cement_meal",
+    "why": "Any alumino-silicate will do for the second ingredient — clay, shale or river mud all supply it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Portland_cement"
+  },
+  {
+    "in": [
+      "cement_meal",
+      "fire"
+    ],
+    "out": "cement",
+    "why": "The first Portland cement was burnt in bottle kilns fired with coal. Continuous rotary kilns came sixty years later.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Portland_cement"
+  },
+  {
+    "in": [
+      "cement",
+      "water"
+    ],
+    "out": "mortar",
+    "why": "Cement sets by hydration, not drying — it will harden perfectly well underwater, which is how bridge piers are built.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mortar_(masonry)"
+  },
+  {
+    "in": [
+      "cement",
+      "stone"
+    ],
+    "out": "concrete",
+    "why": "The aggregate is most of the volume and most of the strength. The cement is only the glue between stones.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Concrete"
+  },
+  {
+    "in": [
+      "meadow",
+      "stone"
+    ],
+    "out": "goat",
+    "why": "Goats climb. They reach browse on cliffs and walls no other livestock can, which is why islands and mountains kept them.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+    "in": [
+      "stone",
+      "charcoal"
+    ],
+    "out": "philosopher_stone",
+    "why": "Alchemists heated everything with charcoal and watched for a change of colour. They found phosphorus, antimony and a great deal of chemistry.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Philosopher's_stone"
+  },
+  {
+    "in": [
+      "stone",
+      "broth"
+    ],
+    "out": "stone_soup",
+    "why": "By the time the broth is going, nobody remembers the stone was the point.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Stone_Soup"
+  },
+  {
+    "in": [
+      "dough",
+      "sugar"
+    ],
+    "out": "gingerbread_man",
+    "why": "Honey came first; sugar made gingerbread cheap enough for fairs, and fairings were sold at every one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
+  },
+  {
+    "in": [
+      "straw",
+      "harvest"
+    ],
+    "out": "corn_dolly",
+    "why": "Made from the last sheaf standing, and kept indoors until the spring sowing.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Corn_dolly"
+  },
+  {
+    "in": [
+      "straw",
+      "wood"
+    ],
+    "out": "scarecrow",
+    "why": "Two sticks and a bundle of straw. The oldest recorded ones stood in Egyptian wheat fields on the Nile.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Scarecrow"
+  },
+  {
+    "in": [
+      "harvest",
+      "pot"
+    ],
+    "out": "cornucopia",
+    "why": "A horn heaped with the harvest, and never emptying. Every abundance myth has one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cornucopia"
+  },
+  {
+    "in": [
+      "honey",
+      "mead"
+    ],
+    "out": "ambrosia",
+    "why": "Whatever ambrosia was, the descriptions keep coming back to honey.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ambrosia"
+  },
+  {
+    "in": [
+      "flour",
+      "sun"
+    ],
+    "out": "manna",
+    "why": "Some think it was tamarisk secretion, some a lichen. It kept for exactly one day, which is the part nobody can explain.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Manna"
+  },
+  {
+    "in": [
+      "egg",
+      "sun"
+    ],
+    "out": "golden_egg",
+    "why": "The goose was killed to find where the gold came from. There was no gold, only a goose.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/The_Goose_that_Laid_the_Golden_Eggs"
+  },
+  {
+    "in": [
+      "plant",
+      "fruit"
+    ],
+    "out": "chilli",
+    "supported": true,
+    "why": "Chillies are berries on a small shrub — botanically closer to a tomato than to any spice.",
+    "src": "https://en.wikipedia.org/wiki/Capsaicin"
+  },
+  {
+    "in": [
+      "sea",
+      "river"
+    ],
+    "out": "fish",
+    "supported": true,
+    "why": "Estuaries are the most productive fish nurseries on Earth: fresh water brings nutrients, salt water brings safety.",
+    "src": "https://en.wikipedia.org/wiki/Fish"
+  },
+  {
+    "in": [
+      "egg",
+      "herb_oil"
+    ],
+    "out": "mayonnaise",
+    "supported": true,
+    "why": "Any neutral-ish oil emulsifies. Strongly flavoured oil makes a sauce that fights whatever it dresses.",
+    "src": "https://en.wikipedia.org/wiki/Lecithin"
+  },
+  {
+    "in": [
+      "rubbed_flour",
+      "apple"
+    ],
+    "out": "apple_pie",
+    "supported": true,
+    "why": "Rubbed pastry straight onto the fruit — no blind baking, and the base takes up the juice as it cooks.",
+    "src": "https://en.wikipedia.org/wiki/Pectin"
+  },
+  {
+    "in": [
+      "wood",
+      "water"
+    ],
+    "out": "barrel",
+    "supported": true,
+    "why": "Long soaking bends oak nearly as well as steam, and coopers used it wherever fuel was dearer than time.",
+    "src": "https://en.wikipedia.org/wiki/Barrel"
+  },
+  {
+    "in": [
+      "noodle",
+      "meatball_sauce"
+    ],
+    "out": "spaghetti_meatballs",
+    "supported": true,
+    "why": "Fresh noodles finish in the sauce itself, taking up flavour instead of water.",
+    "src": "https://en.wikipedia.org/wiki/Spaghetti_and_meatballs"
+  },
+  {
+    "in": [
+      "fried_fish",
+      "baked_potato"
+    ],
+    "out": "fish_and_chips",
+    "supported": true,
+    "why": "The baked-potato version predates chips in much of Britain — the fryer came from France later.",
+    "src": "https://en.wikipedia.org/wiki/Fish_and_chips"
+  },
+  {
+    "in": [
+      "salt_fish",
+      "batter"
+    ],
+    "out": "battered_fish",
+    "supported": true,
+    "why": "Salt cod soaked back to life, then battered. This is the dish as Sephardic cooks actually brought it.",
+    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+  },
+  {
+    "in": [
+      "cabbage",
+      "sea"
+    ],
+    "out": "salted_cabbage",
+    "supported": true,
+    "why": "Seawater is close to the 2-3% brine a lactic ferment wants. Coastal kitchens simply used it.",
+    "src": "https://en.wikipedia.org/wiki/Kimchi"
+  },
+  {
+    "in": [
+      "beer"
+    ],
+    "verb": "wait",
+    "out": "malt_vinegar",
+    "supported": true,
+    "why": "Leave beer open and it sours on its own. Acetobacter is airborne and arrives uninvited.",
+    "src": "https://en.wikipedia.org/wiki/Vinegar"
+  }
+]
