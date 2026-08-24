@@ -33,6 +33,13 @@
     border-radius:99px;padding:5px 12px;
   }
   .goal b{color:var(--brick)}
+  .goal{cursor:pointer}
+  .goal:hover{border-color:var(--orange)}
+  .goal .ask{
+    font-style:normal;font:800 9px ui-rounded,Avenir;color:#fff;background:var(--orange);
+    border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;
+    display:inline-block;margin-left:5px;
+  }
   .spacer{flex:1}
   .count{font:700 13px ui-rounded,Avenir;color:var(--avocado)}
   button{
@@ -430,6 +437,37 @@
   .ent .arw{color:#C6B69C;margin:0 1px}
   .ent .out{background:#FFF3E9;border-color:#F0D6C0}
   .hint2{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:4px 2px 0}
+  .hintbox{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:10px}
+  .hintbox p{margin:0 0 7px;font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+  .hintbox p:last-child{margin-bottom:0}
+  .hintbox b{color:var(--ink)}
+  .path{display:flex;flex-direction:column;gap:4px}
+  .pstep{
+    display:flex;align-items:center;gap:8px;padding:7px 10px;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);border-radius:10px;
+  }
+  .pstep:hover{border-color:var(--orange)}
+  .pstep.last{background:#FFF4EC;border-color:#F0D6C0}
+  .pstep .pn2{
+    font:800 9.5px ui-rounded,Avenir;color:var(--ink-soft);background:var(--card);
+    border:1.5px solid var(--line);border-radius:99px;
+    min-width:19px;height:19px;line-height:16px;text-align:center;flex:none;
+  }
+  .pstep .g{font:600 13px ui-rounded,Avenir;flex:1;min-width:0}
+  .pstep i{font-style:normal;font-size:10.5px;color:#B0A08A;flex:none}
+  .jump{
+    cursor:pointer;border-bottom:1.5px dotted var(--orange);color:var(--ink);
+  }
+  .hintbox .answer{
+    font:700 15px ui-rounded,Avenir;color:var(--ink);text-align:center;
+    background:#FFF4EC;border-radius:9px;padding:9px 6px;
+  }
+  aside h2.locked,#sheetBody h2.locked{color:#B0A08A}
+  .chip.locked{opacity:.5;border-style:dashed;cursor:pointer}
+  .chip.locked .q{
+    font-style:normal;font:800 9.5px ui-rounded,Avenir;color:#fff;background:#B0A08A;
+    border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;margin-left:3px;
+  }
   /* molecules */
   .molbox{display:flex;justify-content:center;padding:6px 0 10px}
   svg.mol .bond{stroke:#5A4A38;stroke-width:3.4;stroke-linecap:round}
@@ -847,7 +885,20 @@ function renderShelf() {
           return `<span class="chip fam-${f.id}${n ? ' live' : ' spent'}" data-fam="${f.id}" data-spawn="${e.id}">` +
                  `${chipHTML(e)}${n ? `<i class="n">${n}</i>` : ''}</span>`;
         }).join('') + `</div>`);
-    }).join('') || '<p class="none">Nothing matches.</p>';
+    }).join('') +
+    // Searching the shelf should reach the whole world, not just your half of
+    // it. Anything you have not made yet is listed too, and opens its own
+    // how-to — which lists what that needs, and so on down.
+    (() => {
+      if (!q) return '';
+      const unmade = elements.filter(e => !found.has(e.id) && nameOf(e).toLowerCase().includes(q));
+      if (!unmade.length) return '';
+      return `<h2 class="locked"><i></i>Not yet made<em>${unmade.length}</em></h2><div class="shelf">` +
+        unmade.slice(0, 30).map(e =>
+          `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`).join('') +
+        `</div>`;
+    })()
+    || '<p class="none">Nothing matches.</p>';
 
   const box = document.getElementById('shelfq');
   box.oninput = () => { shelfQuery = box.value; renderShelf();
@@ -880,8 +931,8 @@ function renderShelf() {
   document.getElementById('count').textContent = `${found.size} / ${elements.length}`;
   const g = byId[GOAL];
   document.getElementById('goal').innerHTML = found.has(GOAL)
-    ? `Made <b>${g.emoji} ${g.name}</b> — now try 🎉 Feast`
-    : `Goal: <b>${g.emoji} ${g.name}</b>`;
+    ? `Made <b>${g.emoji} ${nameOf(g)}</b> — now try 🎉 Feast`
+    : `Goal: <b>${g.emoji} ${nameOf(g)}</b><i class="ask">?</i>`;
 }
 
 // ---- the world: chips live in world coordinates; the view pans and zooms ----
@@ -1741,12 +1792,73 @@ function gestureHTML(r) {
   return v ? `${part(r.in[0])}<em>${v.emoji} ${v.name}</em>`
            : `${part(r.in[0])}<em>+</em>${part(r.in[1])}`;
 }
+// How much help you have asked for, per element. It escalates only when you
+// ask again — the answer key is always available, but never volunteered.
+const hintLevel = new Map();
+function showHint(id) {
+  const e = byId[id];
+  const routes = DATA.recipes.filter(r => r.out === id);
+  const ul = unlockedVerbs();
+  // The route that needs the least from here is the one worth pointing at.
+  const score = (r) => r.in.filter(i => !found.has(i)).length + (r.verb && !ul.has(r.verb) ? 1 : 0);
+  const best = routes.slice().sort((a, b) => score(a) - score(b))[0];
+  const lvl = hintLevel.get(id) ?? 0;
+  const missing = best ? best.in.filter(i => !found.has(i)) : [];
+  const verbLocked = best?.verb && !ul.has(best.verb);
+  const v = best?.verb ? verbs.find(x => x.id === best.verb) : null;
+
+  let body;
+  if (!best) body = `<p>Nothing in the world makes this. It is where things start.</p>`;
+  else if (lvl === 0) {
+    body = `<p>There ${routes.length === 1 ? 'is one way' : `are ${routes.length} ways`} to make it.</p>` +
+      (missing.length
+        ? `<p>You are missing <b>${missing.length}</b> of the ingredient${missing.length === 1 ? '' : 's'} for the closest one — so something else has to come first.</p>`
+        : `<p><b>You already have everything you need.</b> It is two things on your shelf${v ? `, or one thing and a tool` : ''}.</p>`) +
+      (verbLocked ? `<p>It also needs the ${v.emoji} ${v.name} tool, which opens when you make ${nameOf(byId[v.unlockedBy])}.</p>` : '');
+  } else if (lvl === 1) {
+    const shown = missing.length ? missing[0] : best.in[0];
+    body = `<p>Try something with <b class="jump" data-hint="${shown}">${byId[shown].emoji} ${nameOf(byId[shown])}</b>.</p>` +
+      (v ? `<p>And the ${v.emoji} ${v.name} tool.</p>` : '');
+  } else {
+    body = `<p class="answer">${best.in.map(i => `${byId[i].emoji} ${nameOf(byId[i])}`).join(v ? '' : ' &nbsp;+&nbsp; ')}` +
+      (v ? ` &nbsp;⟶&nbsp; ${v.emoji} ${v.name}` : '') + ` &nbsp;→&nbsp; ${e.emoji} ${nameOf(e)}</p>` +
+      (missing.length ? `<p class="hint2">You still need ${missing.map(i =>
+        `<b class="jump" data-hint="${i}">${byId[i].emoji} ${nameOf(byId[i])}</b>`).join(' and ')} first.</p>` : '');
+  }
+
+  // "You still need Spark first" is only half an answer if finding Spark means
+  // starting the search again. Show the whole run of missing things, in order,
+  // each one tappable for its own hint.
+  const todo = orderedSteps(id).filter(r => !found.has(r.out));
+  const pathHTML = todo.length > 1 ? `
+    <h2>What is still missing · ${todo.length}</h2>
+    <div class="path">` + todo.map((r, i) => `
+      <div class="pstep${r.out === id ? ' last' : ''}" data-hint="${r.out}">
+        <span class="pn2">${i + 1}</span>
+        <span class="g">${byId[r.out].emoji} ${nameOf(byId[r.out])}</span>
+        ${r.out === id ? '<i>your goal</i>' : '<i>tap for a hint</i>'}
+      </div>`).join('') + `</div>` : '';
+
+  document.getElementById('sheetBody').innerHTML = `
+    <div class="phead"><span class="big">${e.emoji}</span><h3>${nameOf(e)}</h3>
+      <div class="pnums">Not made yet</div></div>
+    <div class="hintbox">${body}</div>
+    ${best && lvl < 2 ? `<div class="cardrow"><button class="ghost" data-more="${id}">
+        ${lvl === 0 ? 'Give me a nudge' : 'Just tell me'}</button></div>` : ''}
+    ${pathHTML}
+    ${found.has(id) ? '' : `<div class="cardrow" style="margin-top:10px">
+       <button class="ghost" data-entry-any="${id}">See its full entry</button></div>`}
+    <p class="hint2">Ingredients are never used up — take as many from the shelf as you like.</p>`;
+  openSheet(`How to make ${nameOf(e)}`);
+}
+
 function showEntry(id) {
   const e = byId[id], f = familyOf(e);
   const routesIn  = DATA.recipes.filter(r => r.out === id);
-  const knownIn   = routesIn.filter(r => r.in.every(i => found.has(i)));
+  const owned     = found.has(id);
+  const knownIn   = owned ? routesIn.filter(r => r.in.every(i => found.has(i))) : [];
   const usedIn    = DATA.recipes.filter(r => r.in.includes(id));
-  const knownOut  = usedIn.filter(r => found.has(r.out));
+  const knownOut  = owned ? usedIn.filter(r => found.has(r.out)) : [];
   const hiddenIn  = routesIn.length - knownIn.length;
   const hiddenOut = usedIn.length - knownOut.length;
   const rows = (list, cls) => list.map(r =>
@@ -1760,7 +1872,8 @@ function showEntry(id) {
       <div class="pfrom">${e.fact}</div>
     </div>
     <div class="cardrow" style="margin:0 0 10px">
-      <button class="ghost" data-trace="${id}">Where it came from</button>
+      ${owned ? `<button class="ghost" data-trace="${id}">Where it came from</button>` : `<button class="ghost" data-hint="${id}">How do I make it?</button>`}
+      ${hiddenIn > 0 ? `<button class="ghost" data-hint="${id}">Other ways to make it</button>` : ''}
       ${found.has(id) ? `<button class="ghost" data-put="${id}">Put on the bench</button>` : ''}
     </div>
     <h2>Made from${knownIn.length ? ` · ${knownIn.length}` : ''}</h2>
@@ -1876,15 +1989,25 @@ function showProvenance(id, mode) {
 // chrome once; only the results list is re-rendered.
 function codexResults(q) {
   const hits = elements.filter(e => found.has(e.id) &&
-    (!q || e.name.toLowerCase().includes(q.toLowerCase())));
-  if (!hits.length) return '<p class="none">Nothing found.</p>';
+    (!q || nameOf(e).toLowerCase().includes(q.toLowerCase())));
+  // Searching should also reach things you have not made yet — otherwise there
+  // is nowhere to ask "how do I make fire?", which is the whole stuck moment.
+  const unmade = q ? elements.filter(e => !found.has(e.id) &&
+    nameOf(e).toLowerCase().includes(q.toLowerCase())) : [];
+  const unmadeBlock = unmade.length
+    ? `<h2 class="locked">Not yet made · ${unmade.length}</h2><div class="shelf">` +
+      unmade.slice(0, 24).map(e =>
+        `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`).join('') +
+      `</div>`
+    : '';
+  if (!hits.length && !unmade.length) return '<p class="none">Nothing found.</p>';
   return FAMILIES.map(f => [f, hits.filter(e => familyOf(e).id === f.id)])
     .filter(([, g]) => g.length)
     .sort((a, b) => (a[0].id === 'myth') - (b[0].id === 'myth'))
     .map(([f, g]) =>
       `<h2 class="fam-${f.id}"><i></i>${f.name} · ${g.length}</h2><div class="shelf">` +
       g.map(e => `<span class="chip fam-${f.id}" data-fam="${f.id}" data-entry="${e.id}">${chipHTML(e)}</span>`).join('') +
-      `</div>`).join('');
+      `</div>`).join('') + unmadeBlock;
 }
 function showCodex(q = '') {
   document.getElementById('sheetBody').innerHTML =
@@ -1924,6 +2047,12 @@ document.getElementById('sheet').addEventListener('click', ev => {
     ev.currentTarget.classList.remove('on');
   const md = ev.target.closest('[data-mode]');
   if (md) return showProvenance(md.dataset.for, md.dataset.mode);
+  const ea = ev.target.closest('[data-entry-any]');
+  if (ea) return showEntry(ea.dataset.entryAny);
+  const hn = ev.target.closest('[data-hint]');
+  if (hn) return showHint(hn.dataset.hint);
+  const mr = ev.target.closest('[data-more]');
+  if (mr) { hintLevel.set(mr.dataset.more, (hintLevel.get(mr.dataset.more) ?? 0) + 1); return showHint(mr.dataset.more); }
   const en = ev.target.closest('[data-entry]');
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
@@ -1947,6 +2076,11 @@ document.addEventListener('visibilitychange', () => {
 });
 
 document.getElementById('count').addEventListener('click', () => showCodex());
+// Tapping the goal asks how to reach it — the shortest path from stuck to moving.
+document.getElementById('goal').addEventListener('click', () => {
+  const t = found.has(GOAL) ? 'feast' : GOAL;
+  found.has(t) ? showEntry(t) : showHint(t);
+});
 
 function showSettings() {
   const row = (key, opts) => `<div class="setrow">` + opts.map(([v, label, note]) =>
@@ -1988,6 +2122,10 @@ document.getElementById('tray').addEventListener('click', ev => {
   toast(`${key.emoji} Make ${nameOf(key)} first, and this tool opens`);
 });
 
+document.getElementById('aside').addEventListener('click', ev => {
+  const h = ev.target.closest('[data-hint]');
+  if (h) showHint(h.dataset.hint);
+});
 document.getElementById('aside').addEventListener('pointerdown', ev => {
   const c = ev.target.closest('[data-spawn]');
   if (!c) return;
@@ -2034,10 +2172,13 @@ document.getElementById('nudge').addEventListener('click', () => {
   const ul = unlockedVerbs();
   const options = recipes.filter(r =>
     !found.has(r.out) && r.in.every(i => found.has(i)) && (!r.verb || ul.has(r.verb)));
-  if (!options.length) return toast('Nothing new is reachable — make something first');
+  if (!options.length) {
+    toast('Nothing new is reachable from what is on your shelf');
+    return showHint(found.has(GOAL) ? 'feast' : GOAL);   // so it is never a dead end
+  }
   const r = options[Math.floor(Math.random() * options.length)];
   // Reveal one ingredient only. Finding the partner is the game.
-  toast(`Try something with ${byId[r.in[0]].emoji} ${byId[r.in[0]].name}`);
+  toast(`Try something with ${byId[r.in[0]].emoji} ${nameOf(byId[r.in[0]])}`);
 });
 document.getElementById('reset').addEventListener('click', () => {
   if (!confirm('Wipe all discoveries?')) return;
