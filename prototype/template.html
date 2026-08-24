@@ -2,50 +2,155 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <title>Loam — dirt to dinner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Cutive+Mono&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23221C14'/%3E%3Cg stroke='%235C4B38' stroke-width='3' fill='none' stroke-linecap='round'%3E%3Cpath d='M28 34 Q44 54 56 66'/%3E%3Cpath d='M50 26 Q54 48 58 64'/%3E%3Cpath d='M70 26 Q66 48 62 64'/%3E%3Cpath d='M92 34 Q76 54 64 66'/%3E%3C/g%3E%3Ccircle cx='28' cy='34' r='8' fill='%239C8A74'/%3E%3Ccircle cx='50' cy='26' r='8' fill='%234E8CB8'/%3E%3Ccircle cx='70' cy='26' r='8' fill='%23E0A526'/%3E%3Ccircle cx='92' cy='34' r='8' fill='%236B8E4E'/%3E%3Crect x='42' y='66' width='36' height='30' rx='9' fill='%23E2703A'/%3E%3C/svg%3E">
 <style>
   :root{
-    --cream:#F6EDDD; --ink:#2B2118; --ink-soft:#6B5945;
-    --orange:#E2703A; --mustard:#E0A526; --avocado:#6B8E4E; --brick:#A63D2F; --teal:#3E7C7B;
-    --card:#FFF9EE; --line:#E0CFB4;
+    /* Two faces. Neither is on anyone's list of tells, and both were drawn
+       for exactly this job: a text serif built for screens, and a real
+       typewriter face for labels and numbers. */
+    --face-name:"Source Serif 4",Charter,Georgia,"Times New Roman",serif;
+    --face-data:"Cutive Mono",ui-monospace,"SF Mono",Menlo,monospace;
+__PALETTE_CSS__
+
+    /* The named roles the drawings reach for, whatever their category. */
+    --ik:var(--s-ink); --gh:var(--s-rule);
+    --ground:var(--s-ground); --discovery:var(--s-discovery);
+
+    /* Interface roles. Every rule in this stylesheet goes through these, so a
+       theme is a redefinition of eleven values and nothing else. */
+    --cream:var(--s-ground);
+    --ink:var(--s-ink);
+    --ink-soft:var(--s-inkQuiet);
+    --card:var(--s-panel);
+    --line:var(--s-rule);
+    --orange:var(--s-discovery);
+    --mustard:var(--c-grain-bs);
+    --avocado:var(--c-plant-bs);
+    --brick:var(--c-fire-bs);
+    --teal:var(--c-molecule-bs);
+    --raise:0 6px 18px -8px rgba(0,0,0,.75);
+    --surface:var(--s-panel);          /* raised chrome: header, sidebar, buttons */
+    --on-accent:var(--s-ground);       /* text that sits on a filled accent */
+    --shade:0,0,0;                     /* the r,g,b every shadow is mixed from */
   }
+
+__CATEGORY_CSS__
+
+  /* ── themes ───────────────────────────────────────────────────────────
+     The geometry is drawn once. A theme decides what a role looks like.  */
+
+  /* Field manual — ink on paper. The same 226 drawings, unfilled. */
+  body.t-manual{
+    --cream:var(--s-paper);
+    --ink:var(--s-paperInk);
+    --ink-soft:#7A6A52;
+    --card:#EFE0C4;
+    --line:#CDBB99;
+    --ik:var(--s-paperInk);
+    --gh:#A8967A;
+    --ground:var(--s-paper);
+    --raise:0 2px 0 rgba(var(--shade),.14);
+    --surface:#FBF2DE;
+    --on-accent:#FFF8EA;
+    --shade:43,33,24;
+  }
+  body.t-manual .art [data-f]{fill:none;stroke:var(--s-paperInk);stroke-width:1.5;
+                              stroke-linejoin:round;stroke-linecap:round}
+  body.t-manual .art [data-s]{stroke:var(--s-paperInk)}
+
+  /* ── grounds ──────────────────────────────────────────────────────────
+     Background only. Any ground works under either theme.               */
+  body{background-attachment:fixed}
+
+  body.g-tray{background:
+      radial-gradient(ellipse at 50% -10%, #33220F 0%, transparent 62%),
+      var(--s-ground);}
+
+  body.g-paper{background:
+      radial-gradient(ellipse at 50% 0%, #FFF6E6 0%, transparent 60%),
+      var(--s-paper);}
+
+  body.g-graph{background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0/26px 26px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/26px 26px,
+      var(--cream);}
+
+  /* Deep — the molecular tier's ground. Cold, and very slightly starred. */
+  body.g-deep{background:
+      radial-gradient(1.4px 1.4px at 18% 22%, rgba(210,228,240,.55) 50%, transparent 51%) 0 0/180px 140px,
+      radial-gradient(1.2px 1.2px at 68% 64%, rgba(190,214,232,.42) 50%, transparent 51%) 0 0/210px 170px,
+      radial-gradient(1.8px 1.8px at 42% 82%, rgba(230,240,250,.32) 50%, transparent 51%) 0 0/260px 220px,
+      radial-gradient(ellipse at 30% 8%, #16243A 0%, transparent 58%),
+      radial-gradient(ellipse at 78% 88%, #101C2E 0%, transparent 60%),
+      #080D16;}
+  body.g-deep{--cream:#080D16;}
+
+  /* Fluid — slow-moving liquid. Motion is the point, so it yields to
+     prefers-reduced-motion rather than being decoration that cannot stop. */
+  @keyframes drift{
+    0%  {background-position:0% 40%, 100% 60%, 50% 50%}
+    50% {background-position:60% 55%, 30% 35%, 50% 50%}
+    100%{background-position:0% 40%, 100% 60%, 50% 50%}
+  }
+  body.g-fluid{
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 40%, color-mix(in srgb, var(--c-water-bs) 42%, transparent) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 45% at 80% 60%, color-mix(in srgb, var(--c-molecule-lo) 46%, transparent) 0%, transparent 70%),
+      var(--s-ground);
+    background-size:180% 180%, 200% 200%, 100% 100%;
+    animation:drift 44s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion:reduce){ body.g-fluid{animation:none} }
+
+  /* Profile — the ground *is* a soil profile, O over A over B over C. */
+  body.g-profile{background:linear-gradient(
+      to bottom,
+      var(--c-mineral-hi) 0%,  var(--c-mineral-hi) 9%,
+      var(--c-mineral-bs) 9%,  var(--c-mineral-bs) 30%,
+      var(--c-mineral-lo) 30%, var(--c-mineral-lo) 62%,
+      var(--s-ground) 62%,     var(--s-ground) 100%);}
+  body.g-profile{--cream:var(--c-mineral-lo);}
+
+  /* Void — nothing at all. For screenshots, and for anyone who wants quiet. */
+  body.g-void{background:var(--cream);}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;height:100%;overflow:hidden}
   body{
-    font:15px/1.45 ui-rounded,"SF Pro Rounded",Avenir,system-ui,sans-serif;
+    font:400 15px/1.5 var(--face-name);
     color:var(--ink);
-    background:
-      radial-gradient(circle at 18% 12%, #FBE4C4 0%, transparent 46%),
-      radial-gradient(circle at 84% 78%, #E8DCC0 0%, transparent 52%),
-      var(--cream);
+    /* The default ground, restated here so there is no flash before prefs load. */
+    background:radial-gradient(ellipse at 50% -10%, #33220F 0%, transparent 62%), var(--s-ground);
     display:flex;flex-direction:column;user-select:none;
   }
   header{
     display:flex;align-items:center;gap:14px;padding:10px 16px;
-    border-bottom:2px solid var(--line);background:rgba(255,249,238,.72);backdrop-filter:blur(8px);flex:none;
+    border-bottom:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);flex:none;
   }
-  h1{font:700 17px/1 ui-rounded,Avenir,system-ui;margin:0;letter-spacing:-.2px}
+  h1{font:700 17px/1 var(--face-name);margin:0;letter-spacing:-.2px}
   h1 span{color:var(--orange)}
   .mark{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit;flex:none}
   .mark svg{width:26px;height:26px;border-radius:7px;flex:none;display:block}
   .goal{
-    font-size:12.5px;color:var(--ink-soft);background:#fff;border:1.5px solid var(--line);
+    font-size:12.5px;color:var(--ink-soft);background:var(--surface);border:1.5px solid var(--line);
     border-radius:99px;padding:5px 12px;
   }
   .goal b{color:var(--brick)}
   .goal{cursor:pointer}
   .goal:hover{border-color:var(--orange)}
   .goal .ask{
-    font-style:normal;font:800 9px ui-rounded,Avenir;color:#fff;background:var(--orange);
+    font-style:normal;font:800 9px var(--face-name);color:var(--on-accent);background:var(--orange);
     border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;
     display:inline-block;margin-left:5px;
   }
   .spacer{flex:1}
-  .count{font:700 13px ui-rounded,Avenir;color:var(--avocado)}
-  .count.free{color:#fff;background:var(--teal);border-color:var(--teal)}
+  .count{font:700 13px var(--face-name);color:var(--avocado)}
+  .count.free{color:var(--on-accent);background:var(--teal);border-color:var(--teal)}
   button{
-    font:600 13px ui-rounded,Avenir,system-ui;color:var(--ink);cursor:pointer;
-    background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:6px 13px;
+    font:600 13px var(--face-name);color:var(--ink);cursor:pointer;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:6px 13px;
   }
   button:active{transform:translateY(1px)}
   main{flex:1;display:flex;min-height:0}
@@ -63,8 +168,8 @@
   }
   #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6}
   #zoom button{
-    width:32px;height:32px;padding:0;font:700 15px ui-rounded,Avenir;border-radius:10px;
-    background:rgba(255,249,238,.92);
+    width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
+    background:color-mix(in srgb,var(--surface) 94%,transparent);
   }
   #board{cursor:grab;touch-action:none;overscroll-behavior:contain}
   #board.panning{cursor:grabbing}
@@ -72,31 +177,62 @@
     position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:8;
     width:min(330px,86%);text-align:center;padding:22px 20px 18px;
     background:var(--card);border:2.5px solid var(--ink);border-radius:20px;
-    box-shadow:0 10px 0 rgba(43,33,24,.15);
+    box-shadow:0 10px 0 rgba(var(--shade),.15);
   }
-  #intro b{display:block;font:800 19px ui-rounded,Avenir;margin-bottom:9px}
+  #intro b{display:block;font:800 19px var(--face-name);margin-bottom:9px}
   #intro p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 9px}
   #intro p.sub{color:var(--ink);font-weight:600}
-  #intro button{background:var(--orange);color:#fff;border-color:var(--brick);padding:8px 24px;margin-top:4px}
+  #intro button{background:var(--orange);color:var(--on-accent);border-color:var(--brick);padding:8px 24px;margin-top:4px}
   #intro.gone{display:none}
   aside{
-    width:238px;flex:none;border-left:2px solid var(--line);background:rgba(255,249,238,.72);
+    width:238px;flex:none;border-left:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);
     overflow-y:auto;padding:10px;
   }
   aside h2{
-    font:700 10.5px/1 ui-rounded,Avenir;letter-spacing:.9px;text-transform:uppercase;
+    font:700 10.5px/1 var(--face-name);letter-spacing:.9px;text-transform:uppercase;
     color:var(--ink-soft);margin:12px 4px 7px;
   }
   aside h2:first-child{margin-top:2px}
   .shelf{display:flex;flex-wrap:wrap;gap:5px}
+  /* ── the specimen card ────────────────────────────────────────────────
+     Not a pill. A fixed portrait footprint, so a rock and a cake occupy the
+     same frame and are told apart by what is *in* it — which is the whole
+     argument for leaving emoji behind. Everything under the drawing is
+     rendered from data we already hold. */
   .chip{
-    display:inline-flex;align-items:center;gap:5px;background:var(--card);
-    border:1.5px solid var(--line);border-radius:99px;padding:5px 10px 5px 7px;
-    font:600 12.5px ui-rounded,Avenir,system-ui;white-space:nowrap;cursor:grab;
-    box-shadow:0 1px 0 rgba(43,33,24,.07);
+    display:inline-flex;flex-direction:column;align-items:center;gap:0;
+    width:var(--cw,84px);padding:7px 5px 5px;background:var(--card);
+    border:1px solid var(--line);border-radius:3px;
+    font:500 11px/1.25 var(--face-name);white-space:normal;text-align:center;cursor:grab;
+    box-shadow:var(--raise);position:relative;
   }
-  .chip .e{font-size:15px;line-height:1}
-  .chip.folk{border-color:#D9C3E8;background:#FBF4FF}
+  .chip .art{width:44px;height:44px;display:block;flex:none}
+  .chip .n{
+    display:block;margin-top:4px;letter-spacing:.055em;text-transform:uppercase;
+    font:600 9.5px/1.2 var(--face-name);color:var(--ink);
+    overflow-wrap:anywhere;
+  }
+  /* The category rule. Colour is never the only signal — the accession line
+     below carries the same information as text. */
+  .chip .rl{display:block;width:22px;height:2px;margin:5px auto 3px;border-radius:2px;background:var(--fam)}
+  .chip .ac{
+    display:block;font:400 7.5px/1.2 var(--face-data);letter-spacing:.07em;
+    color:var(--ink-soft);font-variant-numeric:tabular-nums;
+  }
+  .chip.board{--cw:92px}
+  .chip.board .art{width:52px;height:52px}
+  .chip.board .n{font-size:10px}
+  /* Shelf chips are scanned, not read: drawing and name only. */
+  aside .chip{--cw:70px;padding:6px 3px 5px}
+  aside .chip .art{width:34px;height:34px}
+  aside .chip .n{font-size:8.5px;letter-spacing:.04em}
+  aside .chip .rl,aside .chip .ac{display:none}
+  /* An inline drawing, sized in place of the emoji it replaced. */
+  .gl{display:inline-block;width:var(--g,20px);height:var(--g,20px);vertical-align:-.22em}
+  .gl .art{width:100%;height:100%;display:block}
+  /* Folklore is marked by an absence, not a colour: no accession, no source. */
+  .chip.folk .ac{opacity:.5}
+  .chip.folk{border-style:dashed}
   .chip.spent{opacity:.42}
   /* a chip mid-process: a ring fills as it rests, and it cannot be dragged */
   .chip.board.cooking{
@@ -107,16 +243,18 @@
     border-color:transparent;padding:9px 15px 9px 11px;
   }
   .chip.board.cooking::after{
-    content:attr(data-verb-label);position:absolute;top:-8px;right:-6px;font-size:13px;
-    background:var(--card);border:1.5px solid var(--line);border-radius:99px;padding:1px 4px;
+    content:attr(data-verb);position:absolute;top:-7px;right:-6px;
+    font:400 8px/1 var(--face-data);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink);background:var(--card);border:1px solid var(--line);
+    border-radius:2px;padding:2px 5px;
   }
   .chip.board.cooking .n{display:none}
   .chip.board.hidden{display:none}
   .chip.board.folded{border-style:dashed}
   .chip.board.folded::after{
     content:attr(data-fold);position:absolute;top:-8px;right:-7px;
-    font:800 9.5px ui-rounded,Avenir;color:#fff;background:var(--fam,var(--ink-soft));
-    border-radius:99px;padding:2px 6px;box-shadow:0 1px 3px rgba(43,33,24,.3);
+    font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--fam,var(--ink-soft));
+    border-radius:99px;padding:2px 6px;box-shadow:0 1px 3px rgba(var(--shade),.3);
   }
   .chip.board.folded{border-style:solid}
   .chip.board.folded:not([data-fold=""])::after{content:attr(data-fold)}
@@ -141,22 +279,22 @@
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
   .chip.live{border-color:var(--avocado);box-shadow:0 0 0 2px rgba(107,142,78,.13)}
-  .chip .n{
-    font-style:normal;font-size:9.5px;font-weight:800;color:#fff;background:var(--avocado);
-    border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;
-    margin-left:2px;padding:0 3px;
+  /* How many undiscovered recipes this thing still leads to. */
+  .chip .cnt{
+    position:absolute;top:-6px;right:-6px;
+    font-style:normal;font:400 8px/14px var(--face-data);color:var(--on-accent);
+    background:var(--avocado);border-radius:99px;min-width:14px;height:14px;
+    text-align:center;padding:0 4px;font-variant-numeric:tabular-nums;
   }
   .chip.board{
-    position:absolute;padding:9px 15px 9px 11px;font-size:14.5px;border-width:2px;
-    box-shadow:0 2px 0 rgba(43,33,24,.09), 0 6px 14px -6px rgba(43,33,24,.28);
-    z-index:2;transition:box-shadow .16s, transform .16s;
+    position:absolute;z-index:2;transition:box-shadow .16s, transform .16s;
+    box-shadow:0 2px 0 rgba(var(--shade),.09), 0 6px 14px -6px rgba(var(--shade),.28);
   }
-  .chip.board:hover{transform:translateY(-1px);box-shadow:0 3px 0 rgba(43,33,24,.11), 0 10px 18px -8px rgba(43,33,24,.34)}
-  .chip.board .e{font-size:20px}
-  .chip.drag{cursor:grabbing;z-index:99;transform:scale(1.09) rotate(-2deg);box-shadow:0 10px 22px rgba(43,33,24,.22)}
+  .chip.board:hover{transform:translateY(-1px);box-shadow:0 3px 0 rgba(var(--shade),.11), 0 10px 18px -8px rgba(var(--shade),.34)}
+  .chip.drag{cursor:grabbing;z-index:99;transform:scale(1.09) rotate(-2deg);box-shadow:0 10px 22px rgba(var(--shade),.22)}
   .chip.target{
-    border-color:var(--orange);background:#FFF0E6;transform:scale(1.07);
-    box-shadow:0 0 0 4px rgba(226,112,58,.18), 0 8px 18px -6px rgba(43,33,24,.3);
+    border-color:var(--orange);background:color-mix(in srgb,var(--orange) 16%,var(--card));transform:scale(1.07);
+    box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 18%,transparent), 0 8px 18px -6px rgba(var(--shade),.3);
   }
   @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
   .chip.pop{animation:pop .32s cubic-bezier(.3,1.5,.5,1)}
@@ -164,12 +302,12 @@
   .chip.nope{animation:nope .26s}
   #tray{
     flex:none;display:flex;gap:9px;justify-content:center;padding:11px;
-    border-top:2px solid var(--line);background:rgba(255,249,238,.72);backdrop-filter:blur(8px);
+    border-top:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);
   }
   .verb{
     display:flex;flex-direction:column;align-items:center;gap:2px;width:70px;padding:8px 4px;
     background:var(--card);border:2px dashed var(--line);border-radius:16px;
-    font:700 11px ui-rounded,Avenir;color:var(--ink-soft);
+    font:700 11px var(--face-name);color:var(--ink-soft);
   }
   .verb .e{font-size:21px;line-height:1.1}
   .verb.locked{opacity:.42;cursor:help}
@@ -188,12 +326,12 @@
   #card.on{opacity:1;transform:none;pointer-events:auto}
   .inner{
     position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:13px;
-    box-shadow:0 5px 16px rgba(43,33,24,.13);overflow:hidden;cursor:pointer;
+    box-shadow:0 5px 16px rgba(var(--shade),.13);overflow:hidden;cursor:pointer;
     border-left:4px solid var(--fam,var(--orange));
   }
   .line{display:flex;align-items:center;gap:8px;padding:9px 11px}
   .line .big{font-size:19px;line-height:1;flex:none}
-  .line b{font:700 14px ui-rounded,Avenir;flex:1;min-width:0;
+  .line b{font:700 14px var(--face-name);flex:1;min-width:0;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .line .chev{font-size:9px;color:#B9A88C;flex:none;transition:transform .2s}
   #card:not(.mini) .line .chev{transform:rotate(180deg)}
@@ -208,8 +346,8 @@
   .fact{display:none}
   .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .inner button.ghost{
-    background:#fff;color:var(--ink-soft);border:1.5px solid var(--line);border-radius:99px;
-    padding:4px 10px;font:600 11px ui-rounded,Avenir;cursor:pointer;
+    background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);border-radius:99px;
+    padding:4px 10px;font:600 11px var(--face-name);cursor:pointer;
   }
   @keyframes drain{from{width:100%}to{width:0}}
   .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--fam,var(--orange));
@@ -219,37 +357,37 @@
 
   #toast{
     position:fixed;left:50%;bottom:104px;transform:translateX(-50%);z-index:150;
-    background:var(--ink);color:var(--cream);font:600 13px ui-rounded,Avenir;
+    background:var(--ink);color:var(--cream);font:600 13px var(--face-name);
     padding:9px 17px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none;
   }
   #toast.on{opacity:.95}
   .cardrow{display:flex;gap:8px;justify-content:center;align-items:center}
-  .inner button.ghost{background:#fff;color:var(--ink-soft);border-color:var(--line);font-size:13px;padding:9px 15px}
+  .inner button.ghost{background:var(--surface);color:var(--ink-soft);border-color:var(--line);font-size:13px;padding:9px 15px}
 
   /* sheet: codex + provenance */
   #sheet{
-    position:fixed;inset:0;display:none;z-index:180;background:rgba(43,33,24,.42);
+    position:fixed;inset:0;display:none;z-index:180;background:rgba(var(--shade),.42);
     backdrop-filter:blur(3px);padding:22px;
   }
   #sheet.on{display:grid;place-items:center}
   .sheetbox{
     width:min(480px,100%);max-height:82vh;display:flex;flex-direction:column;
     background:var(--card);border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;
-    box-shadow:0 14px 0 rgba(43,33,24,.16);animation:pop .3s cubic-bezier(.3,1.5,.5,1);
+    box-shadow:0 14px 0 rgba(var(--shade),.16);animation:pop .3s cubic-bezier(.3,1.5,.5,1);
   }
   .sheethead{
     display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none;
     padding:13px 15px;border-bottom:2px solid var(--line);background:rgba(246,237,221,.7);
   }
-  .sheethead b{font:800 14px ui-rounded,Avenir}
+  .sheethead b{font:800 14px var(--face-name)}
   #sheetBody{overflow-y:auto;padding:12px 13px}
   #sheetBody h2{
-    font:700 10.5px/1 ui-rounded,Avenir;letter-spacing:.9px;text-transform:uppercase;
+    font:700 10.5px/1 var(--face-name);letter-spacing:.9px;text-transform:uppercase;
     color:var(--ink-soft);margin:14px 2px 8px;
   }
   .search{
-    width:100%;font:600 14px ui-rounded,Avenir;color:var(--ink);
-    padding:10px 13px;border:1.5px solid var(--line);border-radius:12px;background:#fff;
+    width:100%;font:600 14px var(--face-name);color:var(--ink);
+    padding:10px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);
   }
   .search:focus{outline:2px solid var(--orange);outline-offset:-1px}
   .none{color:var(--ink-soft);font-size:13px;text-align:center;padding:18px}
@@ -258,7 +396,7 @@
     padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
   }
   .phead .big{font-size:26px;line-height:1;flex:none}
-  .phead h3{font:800 16px ui-rounded,Avenir;margin:0;flex:1;min-width:0}
+  .phead h3{font:800 16px var(--face-name);margin:0;flex:1;min-width:0}
   .pnums{font-size:11.5px;color:var(--ink-soft);width:100%}
   .pnums b{color:var(--brick);font-size:12.5px}
   .pfrom{font-size:11px;color:var(--ink-soft);width:100%;margin-top:2px;font-style:italic}
@@ -283,13 +421,13 @@
   .prow:hover{background:rgba(255,255,255,.6)}
   .prow.root{background:#FFF0E6;font-weight:800;box-shadow:inset 0 0 0 2px var(--orange)}
   .prow.has{cursor:pointer}
-  .prow.has:hover{background:#fff}
+  .prow.has:hover{background:var(--surface)}
   .prow .tw{
     font-size:9px;color:var(--ink-soft);width:11px;flex:none;text-align:center;line-height:1;
   }
   .prow .tw.dot{color:#C9B99C}
   .prow .more{
-    font:800 9.5px ui-rounded,Avenir;color:#fff;background:#C0A98A;
+    font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--c-craft-bs);
     border-radius:99px;padding:2px 7px;flex:none;
   }
   ul.tree ul.fold{display:none}
@@ -316,11 +454,11 @@
   }
   .atom{
     display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
-    width:26px;height:26px;border-radius:6px;color:#fff;flex:none;
+    width:26px;height:26px;border-radius:6px;color:var(--on-accent);flex:none;
     box-shadow:inset 0 -2px 0 rgba(0,0,0,.16);
   }
-  .atom .sym{font:800 10px/1 ui-rounded,Avenir;letter-spacing:-.2px}
-  .atom .z{font:700 6px/1 ui-rounded,Avenir;opacity:.75;margin-top:1px}
+  .atom .sym{font:800 10px/1 var(--face-name);letter-spacing:-.2px}
+  .atom .z{font:700 6px/1 var(--face-name);opacity:.75;margin-top:1px}
   .atom.alkali{background:var(--alkali)} .atom.alkaline{background:var(--alkaline)}
   .atom.transition{background:var(--transition)} .atom.post{background:var(--post)}
   .atom.metalloid{background:var(--metalloid)} .atom.nonmetal{background:var(--nonmetal)}
@@ -330,12 +468,12 @@
   .hex{
     display:inline-flex;align-items:center;justify-content:center;flex:none;
     min-width:74px;padding:9px 13px;background:#EFE6F5;color:#5B3E7A;
-    font:700 11.5px ui-rounded,Avenir;text-align:center;line-height:1.15;
+    font:700 11.5px var(--face-name);text-align:center;line-height:1.15;
     clip-path:polygon(14% 0,86% 0,100% 50%,86% 100%,14% 100%,0 50%);
   }
   .particle{
     display:inline-flex;align-items:center;gap:5px;flex:none;padding:6px 14px;
-    border-radius:99px;font:700 11.5px ui-rounded,Avenir;color:#8A6A12;
+    border-radius:99px;font:700 11.5px var(--face-name);color:#8A6A12;
     background:radial-gradient(circle,#FFF0C4 0%,#FDE39B 70%,rgba(253,227,155,0) 100%);
   }
 
@@ -344,7 +482,7 @@
   .chip[data-fam] .e{filter:saturate(1.05)}
   .chip.board[data-fam]{
     border-color:var(--fam);
-    box-shadow:0 3px 0 color-mix(in srgb,var(--fam) 26%,rgba(43,33,24,.1));
+    box-shadow:0 3px 0 color-mix(in srgb,var(--fam) 26%,rgba(var(--shade),.1));
   }
   .fam-earth{--fam:var(--fam-earth)}   .fam-water{--fam:var(--fam-water)}
   .fam-fire{--fam:var(--fam-fire)}     .fam-plant{--fam:var(--fam-plant)}
@@ -355,9 +493,9 @@
   .setrow{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
   .setrow button{
     display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;
-    padding:9px 12px;border-radius:11px;background:#fff;border:1.5px solid var(--line);cursor:pointer;
+    padding:9px 12px;border-radius:11px;background:var(--surface);border:1.5px solid var(--line);cursor:pointer;
   }
-  .setrow button b{font:700 13.5px ui-rounded,Avenir;color:var(--ink)}
+  .setrow button b{font:700 13.5px var(--face-name);color:var(--ink)}
   .setrow button i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
   .setrow button.on{border-color:var(--orange);background:#FFF4EC}
   .setrow button.on b{color:var(--brick)}
@@ -381,53 +519,53 @@
   /* the chain as citation cards */
   .modes{display:flex;gap:5px;margin:0 0 10px}
   .modes button{
-    font:600 11.5px ui-rounded,Avenir;padding:5px 11px;border-radius:99px;cursor:pointer;
-    background:#fff;border:1.5px solid var(--line);color:var(--ink-soft);
+    font:600 11.5px var(--face-name);padding:5px 11px;border-radius:99px;cursor:pointer;
+    background:var(--surface);border:1.5px solid var(--line);color:var(--ink-soft);
   }
   .modes button.on{background:var(--ink);border-color:var(--ink);color:var(--cream)}
   .steps{display:flex;flex-direction:column;gap:7px}
   .step{display:flex;gap:9px;align-items:flex-start}
   .stepno{
-    font:800 10px/1 ui-rounded,Avenir;color:var(--ink-soft);background:var(--card);
+    font:800 10px/1 var(--face-name);color:var(--ink-soft);background:var(--card);
     border:1.5px solid var(--line);border-radius:99px;
     min-width:20px;height:20px;line-height:17px;text-align:center;flex:none;margin-top:7px;
   }
   .stepbody{
-    flex:1;min-width:0;background:#fff;border:1.5px solid var(--line);
+    flex:1;min-width:0;background:var(--surface);border:1.5px solid var(--line);
     border-radius:11px;padding:8px 10px;
   }
   .stepgest{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:5px}
   .stepgest .g{
     display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px;
-    background:var(--card);border:1px solid var(--line);font:600 11.5px ui-rounded,Avenir;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);font:600 11.5px var(--face-name);cursor:pointer;
   }
-  .stepgest em{font-style:normal;color:var(--ink-soft);font:700 10.5px ui-rounded,Avenir}
+  .stepgest em{font-style:normal;color:var(--ink-soft);font:700 10.5px var(--face-name)}
   .stepbody p{margin:0 0 5px;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
   .stepbody .src{margin:0;font-size:10.5px}
   /* guess before the reveal */
   .guess{text-align:center;padding:14px 6px 8px}
   .guess .big{font-size:44px;line-height:1;margin-bottom:8px}
-  .guess h3{font:800 18px ui-rounded,Avenir;margin:0 0 8px}
+  .guess h3{font:800 18px var(--face-name);margin:0 0 8px}
   .guess p{font-size:13.5px;color:var(--ink-soft);margin:0 auto 16px;max-width:34ch;line-height:1.5}
   .opts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
   .opts button{
-    font:800 17px ui-rounded,Avenir;min-width:66px;padding:11px 16px;border-radius:13px;
-    background:#fff;border:2px solid var(--line);cursor:pointer;
+    font:800 17px var(--face-name);min-width:66px;padding:11px 16px;border-radius:13px;
+    background:var(--surface);border:2px solid var(--line);cursor:pointer;
   }
   .opts button:hover{border-color:var(--orange);background:#FFF4EC}
   .guess .skip{
-    background:none;border:none;color:var(--ink-soft);font:600 12px ui-rounded,Avenir;
+    background:none;border:none;color:var(--ink-soft);font:600 12px var(--face-name);
     text-decoration:underline;cursor:pointer;padding:4px;
   }
   .verdict{
-    width:100%;margin-top:6px;font:700 12px ui-rounded,Avenir;padding:5px 9px;border-radius:8px;
+    width:100%;margin-top:6px;font:700 12px var(--face-name);padding:5px 9px;border-radius:8px;
   }
   .verdict.hit{color:#41652A;background:#E6F0DC}
   .verdict.miss{color:#8A6A12;background:#FDF0CE}
   /* index entry */
   .ent{
     display:flex;align-items:center;gap:5px;flex-wrap:wrap;padding:6px 8px;margin-bottom:4px;
-    background:#fff;border:1.5px solid var(--line);border-radius:10px;font-size:12.5px;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:10px;font-size:12.5px;
   }
   .ent .g{
     display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:99px;
@@ -438,35 +576,35 @@
   .ent .arw{color:#C6B69C;margin:0 1px}
   .ent .out{background:#FFF3E9;border-color:#F0D6C0}
   .hint2{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:4px 2px 0}
-  .hintbox{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:10px}
+  .hintbox{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:10px}
   .hintbox p{margin:0 0 7px;font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
   .hintbox p:last-child{margin-bottom:0}
   .hintbox b{color:var(--ink)}
   .path{display:flex;flex-direction:column;gap:4px}
   .pstep{
     display:flex;align-items:center;gap:8px;padding:7px 10px;cursor:pointer;
-    background:#fff;border:1.5px solid var(--line);border-radius:10px;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:10px;
   }
   .pstep:hover{border-color:var(--orange)}
   .pstep.last{background:#FFF4EC;border-color:#F0D6C0}
   .pstep .pn2{
-    font:800 9.5px ui-rounded,Avenir;color:var(--ink-soft);background:var(--card);
+    font:800 9.5px var(--face-name);color:var(--ink-soft);background:var(--card);
     border:1.5px solid var(--line);border-radius:99px;
     min-width:19px;height:19px;line-height:16px;text-align:center;flex:none;
   }
-  .pstep .g{font:600 13px ui-rounded,Avenir;flex:1;min-width:0}
+  .pstep .g{font:600 13px var(--face-name);flex:1;min-width:0}
   .pstep i{font-style:normal;font-size:10.5px;color:#B0A08A;flex:none}
   .jump{
     cursor:pointer;border-bottom:1.5px dotted var(--orange);color:var(--ink);
   }
   .hintbox .answer{
-    font:700 15px ui-rounded,Avenir;color:var(--ink);text-align:center;
+    font:700 15px var(--face-name);color:var(--ink);text-align:center;
     background:#FFF4EC;border-radius:9px;padding:9px 6px;
   }
   aside h2.locked,#sheetBody h2.locked{color:#B0A08A}
   .chip.locked{opacity:.5;border-style:dashed;cursor:pointer}
   .chip.locked .q{
-    font-style:normal;font:800 9.5px ui-rounded,Avenir;color:#fff;background:#B0A08A;
+    font-style:normal;font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--c-craft-bs);
     border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;margin-left:3px;
   }
   /* molecules */
@@ -474,28 +612,28 @@
   svg.mol .bond{stroke:#5A4A38;stroke-width:3.4;stroke-linecap:round}
   svg.mol .ball{stroke:#3B2E20;stroke-width:1.6}
   svg.mol .lbl{text-anchor:middle;dominant-baseline:central;font-weight:800;
-    font-family:ui-rounded,Avenir,system-ui;pointer-events:none}
+    font-family:var(--face-name);pointer-events:none}
   .formula{
-    text-align:center;font:800 17px ui-rounded,Avenir;color:var(--ink);margin-bottom:10px;
+    text-align:center;font:800 17px var(--face-name);color:var(--ink);margin-bottom:10px;
   }
   .formula sub{font-size:.66em;vertical-align:-.25em}
   .aagrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:6px}
   .aa{
     display:flex;align-items:center;gap:8px;padding:7px 10px;cursor:pointer;min-width:0;
-    background:#fff;border:1.5px solid var(--line);border-radius:11px;overflow:hidden;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:11px;overflow:hidden;
   }
   .aa:hover{border-color:var(--metalloid)}
   .aa b{
-    font:800 10px ui-rounded,Avenir;color:#fff;background:var(--nonmetal);
+    font:800 10px var(--face-name);color:var(--on-accent);background:var(--nonmetal);
     border-radius:5px;min-width:18px;height:18px;line-height:18px;text-align:center;flex:none;
   }
   .aatx{display:flex;flex-direction:column;min-width:0;line-height:1.25}
   .aatx em{
-    font:600 11.5px ui-rounded,Avenir;font-style:normal;color:var(--ink);
+    font:600 11.5px var(--face-name);font-style:normal;color:var(--ink);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
   .aatx i{
-    font-style:normal;font:600 9.5px ui-rounded,Avenir;color:var(--ink-soft);
+    font-style:normal;font:600 9.5px var(--face-name);color:var(--ink-soft);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
 
@@ -508,12 +646,12 @@
   .ptab .gap{grid-column:span var(--n)}
   .legend{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 4px}
   .legend span{
-    font:700 9.5px ui-rounded,Avenir;color:#fff;padding:3px 8px;border-radius:99px;
+    font:700 9.5px var(--face-name);color:var(--on-accent);padding:3px 8px;border-radius:99px;
   }
 
   /* bedrock: the substrate, deliberately quieter than the game above it */
   .bedhead{
-    text-align:center;font:700 9px ui-rounded,Avenir;letter-spacing:1.2px;text-transform:uppercase;
+    text-align:center;font:700 9px var(--face-name);letter-spacing:1.2px;text-transform:uppercase;
     color:#A8977E;margin:14px 0 8px;position:relative;
   }
   .bedhead::before,.bedhead::after{
@@ -521,7 +659,7 @@
   }
   .bedhead::before{left:2%} .bedhead::after{right:2%}
   .bedgroup{margin-bottom:8px;opacity:.72}
-  .bedof{font:700 12px ui-rounded,Avenir;color:var(--ink-soft);margin-bottom:4px}
+  .bedof{font:700 12px var(--face-name);color:var(--ink-soft);margin-bottom:4px}
   ul.tree.bed .brow{
     display:flex;align-items:center;gap:5px;padding:1px 5px;margin:0;
     font-size:11.5px;color:var(--ink-soft);background:none;
@@ -545,7 +683,7 @@
   aside h2:hover{background:rgba(255,255,255,.55)}
   aside h2 em{font-style:normal;color:#BCAC93;font-weight:700}
   aside h2 .lv{
-    font:800 9px ui-rounded,Avenir;color:#fff;background:var(--avocado);
+    font:800 9px var(--face-name);color:var(--on-accent);background:var(--avocado);
     border-radius:99px;padding:2px 6px;margin-left:auto;
   }
   aside h2 .cv{font-size:8px;color:#BCAC93;margin-left:auto}
@@ -556,21 +694,21 @@
   }
   ul.tree.bed .brow{gap:8px}
   ul.tree.bed .brow .cat{
-    font-style:normal;font:700 8.5px ui-rounded,Avenir;text-transform:uppercase;
+    font-style:normal;font:700 8.5px var(--face-name);text-transform:uppercase;
     letter-spacing:.6px;color:#B0A08A;margin-left:auto;
   }
   ul.tree.bed .brow b{
-    font-size:9.5px;font-weight:800;color:#fff;background:#A8977E;border-radius:5px;
+    font-size:9.5px;font-weight:800;color:var(--on-accent);background:#A8977E;border-radius:5px;
     min-width:19px;height:15px;line-height:15px;text-align:center;
   }
   .bedsum{
-    text-align:center;font:800 12.5px ui-rounded,Avenir;color:var(--brick);
+    text-align:center;font:800 12.5px var(--face-name);color:var(--brick);
     padding:9px;border:1.5px dashed var(--line);border-radius:11px;margin-top:5px;
   }
   .bedsum .syms{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:9px}
   .bedsum .syms i{
-    font-style:normal;font:800 11px ui-rounded,Avenir;color:var(--ink);
-    background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:3px 7px;
+    font-style:normal;font:800 11px var(--face-name);color:var(--ink);
+    background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:3px 7px;
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -585,7 +723,7 @@
     aside{
       position:fixed;top:50px;bottom:62px;right:0;width:min(250px,78vw);z-index:120;
       transform:translateX(100%);transition:transform .22s;background:var(--card);
-      border-left:2px solid var(--ink);box-shadow:-8px 0 24px rgba(43,33,24,.14);
+      border-left:2px solid var(--ink);box-shadow:-8px 0 24px rgba(var(--shade),.14);
     }
     aside.open{transform:none}
     #tray{gap:5px;padding:8px 5px}
@@ -656,6 +794,11 @@
 <script>
 const DATA = __GAME_DATA__;
 const {elements, recipes, verbs} = DATA;
+
+/* Every drawing in the game, keyed by item id. Shapes only — no colour: see
+   prototype/art-render.js for how a role becomes a paint. */
+const ART = __ART_DATA__;
+__ART_RENDER__
 const byId = Object.fromEntries(elements.map(e => [e.id, e]));
 
 // Display names are per-locale; ids and recipes never are. Swapping "Chips" for
@@ -711,7 +854,8 @@ function secretsFor(id, ul) {
 //   tone   — how loud the game is about being fun
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
-const prefs = { depth: 'curious', tone: 'playful', freePlay: false };
+const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
+                theme: 'specimen', ground: 'tray' };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
@@ -737,9 +881,28 @@ function setFreePlay(on) {
   toast(on ? 'Free play — everything unlocked. Your progress is safe.'
            : 'Back to your own progress.');
 }
+// The look is two independent choices: how items are drawn, and what they sit
+// on. Keeping them separate means six grounds cost nothing extra per theme.
+const THEMES = [
+  ['specimen', 'Specimen', 'Flat colour, drawn from the soil colour book.'],
+  ['manual',   'Field manual', 'The same drawings, unfilled. Ink on paper.'],
+];
+const GROUNDS = [
+  ['tray',    'Tray',    'A dark collector\u2019s tray. The default.'],
+  ['paper',   'Paper',   'Warm rag paper.'],
+  ['graph',   'Graph',   'Ruled squares, for working things out.'],
+  ['deep',    'Deep',    'Cold and starred \u2014 the molecular end of the ladder.'],
+  ['fluid',   'Fluid',   'Slow-moving liquid. Stops if you have reduced motion on.'],
+  ['profile', 'Profile', 'A soil profile: litter, topsoil, subsoil, bedrock.'],
+  ['void',    'Void',    'Nothing at all.'],
+];
 const applyPrefs = () => {
-  document.documentElement.dataset.depth = prefs.depth;
-  document.documentElement.dataset.tone = prefs.tone;
+  const root = document.documentElement, body = document.body;
+  root.dataset.depth = prefs.depth;
+  root.dataset.tone = prefs.tone;
+  if (!body) return;
+  THEMES.forEach(([id]) => body.classList.toggle('t-' + id, prefs.theme === id));
+  GROUNDS.forEach(([id]) => body.classList.toggle('g-' + id, prefs.ground === id));
 };
 applyPrefs();
 if (prefs.freePlay) elements.forEach(e => found.add(e.id));
@@ -854,8 +1017,49 @@ function familyOf(e) {
 }
 
 // ---------- rendering ----------
+
+/**
+ * The accession number. It is not decoration: it is a stable, sortable
+ * identity that means the same thing in the codex, in a screenshot, and in a
+ * bug report. Elements carry LM; the bedrock layer carries EL and BD.
+ */
+const ACCESSION = new Map(elements.map((e, i) => [e.id, 'LM·' + String(i + 1).padStart(3, '0')]));
+function accessionOf(id) { return ACCESSION.get(id) || '—'; }
+
+/**
+ * Order of magnitude, in metres. Straight out of Powers of Ten: it costs
+ * nothing, it is true, and it is the one number that makes the distance
+ * between an atom and a field visible while you play.
+ */
+const SCALE_BY_CAT = {
+  molecule: '10⁻⁹ m', living: '10⁻⁵ m', mineral: '10⁻² m', water: '10⁻¹ m',
+  fire: '10⁻¹ m', plant: '10⁰ m', grain: '10⁻³ m', ferment: '10⁻¹ m',
+  dish: '10⁻¹ m', craft: '10⁻¹ m',
+};
+const SCALE_BY_ID = {
+  carbon: '10⁻¹⁰ m', hydrogen: '10⁻¹⁰ m', oxygen: '10⁻¹⁰ m', nitrogen: '10⁻¹⁰ m',
+  sulfur: '10⁻¹⁰ m', phosphorus: '10⁻¹⁰ m', water: '10⁻¹⁰ m', carbon_dioxide: '10⁻¹⁰ m',
+  disulfide: '10⁻¹⁰ m', glucose: '10⁻⁹ m', amino_acid: '10⁻⁹ m', cysteine: '10⁻⁹ m',
+  dipeptide: '10⁻⁹ m', nucleotide: '10⁻⁹ m', atp: '10⁻⁹ m',
+  polypeptide: '10⁻⁸ m', protein: '10⁻⁸ m', enzyme: '10⁻⁸ m', collagen: '10⁻⁸ m',
+  keratin: '10⁻⁸ m', denatured_protein: '10⁻⁸ m', starch: '10⁻⁸ m', gelatin: '10⁻⁸ m',
+  dna: '10⁻⁶ m', membrane: '10⁻⁸ m', cell: '10⁻⁵ m', yeast: '10⁻⁵ m', mould: '10⁻⁵ m',
+  penicillin: '10⁻⁹ m',
+  sun: '10⁹ m', field: '10² m', meadow: '10² m', pasture: '10² m', river: '10³ m',
+  sea: '10⁶ m', harvest: '10² m', greenhouse: '10¹ m', tree: '10¹ m',
+};
+function scaleOf(id) { return SCALE_BY_ID[id] || SCALE_BY_CAT[artCat(id)] || '10⁻¹ m'; }
+
 function chipHTML(e) {
-  return `<span class="e">${e.emoji}</span>${nameOf(e)}`;
+  return artSVG(e.id) +
+    `<span class="n">${nameOf(e)}</span>` +
+    `<span class="rl"></span>` +
+    `<span class="ac">${accessionOf(e.id)} · ${scaleOf(e.id)}</span>`;
+}
+
+/** A drawing at a given pixel size, for prose and lists. */
+function glyph(id, px) {
+  return `<span class="gl" style="--g:${px || 20}px">${artSVG(id)}</span>`;
 }
 const famAttrs = (e) => {
   const f = familyOf(e);
@@ -894,7 +1098,7 @@ function renderShelf() {
         show.map(e => {
           const f = familyOf(e);
           return `<span class="chip fam-${f.id} live" data-fam="${f.id}" data-spawn="${e.id}">` +
-                 `${chipHTML(e)}<i class="n">${secrets.get(e.id)}</i></span>`;
+                 `${chipHTML(e)}<i class="cnt">${secrets.get(e.id)}</i></span>`;
         }).join('') + `</div>`;
     })() +
     groups.map(([f, g]) => {
@@ -908,7 +1112,7 @@ function renderShelf() {
         (shut ? '' : `<div class="shelf">` + hits.map(e => {
           const n = secrets.get(e.id) ?? 0;
           return `<span class="chip fam-${f.id}${n ? ' live' : ' spent'}" data-fam="${f.id}" data-spawn="${e.id}">` +
-                 `${chipHTML(e)}${n ? `<i class="n">${n}</i>` : ''}</span>`;
+                 `${chipHTML(e)}${n ? `<i class="cnt">${n}</i>` : ''}</span>`;
         }).join('') + `</div>`);
     }).join('') +
     // Searching the shelf should reach the whole world, not just your half of
@@ -949,8 +1153,8 @@ function renderShelf() {
     return `<div class="verb${open ? '' : ' locked'}" data-verb="${v.id}"
               ${open ? '' : `data-needs="${v.unlockedBy}"`}
               title="${open ? v.blurb : `Unlocks when you make ${nameOf(key)}`}">
-       <span class="e">${v.emoji}</span>${v.name}
-       ${open ? '' : `<i class="lk">${key ? key.emoji : '🔒'}</i>`}</div>`;
+       <span class="e">${glyph('verb_' + v.id, 19)}</span>${v.name}
+       ${open ? '' : `<i class="lk">${key ? glyph(key.id, 15) : '·'}</i>`}</div>`;
   }).join('');
 
   document.getElementById('count').textContent = prefs.freePlay
@@ -958,8 +1162,8 @@ function renderShelf() {
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
   const g = byId[GOAL];
   document.getElementById('goal').innerHTML = found.has(GOAL)
-    ? `Made <b>${g.emoji} ${nameOf(g)}</b> — now try 🎉 Feast`
-    : `Goal: <b>${g.emoji} ${nameOf(g)}</b><i class="ask">?</i>`;
+    ? `Made <b>${glyph(g.id, 18)} ${nameOf(g)}</b> — now try Feast`
+    : `Goal: <b>${glyph(g.id, 18)} ${nameOf(g)}</b><i class="ask">?</i>`;
 }
 
 // ---- the world: chips live in world coordinates; the view pans and zooms ----
@@ -1326,7 +1530,7 @@ function showCard(r, e) {
   card.dataset.for = e.id;
   document.getElementById('inner').innerHTML = `
     <div class="line">
-      <span class="big">${e.emoji}</span>
+      <span class="big">${glyph(e.id, 34)}</span>
       <b>${e.name}</b>
       <i class="dot ${e.shelf}" title="${isFolk ? 'a story we tell' : 'how it works'}"></i>
       <span class="chev">▾</span>
@@ -1502,7 +1706,7 @@ function resolve(r, chips, x, y) {
       for (const v of unlocked) {
         const n = DATA.recipes.filter(x => x.verb === v.id && found.has(x.in[0]) && !found.has(x.out)).length;
         sfx.unlock();
-        toast(`${v.emoji} ${v.name} unlocked — ${n} thing${n === 1 ? '' : 's'} you hold can be ${v.name.toLowerCase()}ed`);
+        toast(`${v.name} unlocked — ${n} thing${n === 1 ? '' : 's'} you hold can be ${v.name.toLowerCase()}ed`);
       }
     } else {
       const gained = liveCount() - wasLive;
@@ -1555,9 +1759,9 @@ function startCooking(chip, r, verb, ms) {
   cooking.add(job);
   pumpCooking();
   chip.classList.add('cooking');
-  chip.dataset.verbLabel = v.emoji;
+  chip.dataset.verb = v.id;
   updateWaiting();
-  toast(`${v.emoji} ${chip.textContent.trim()} is ${verb === 'wait' ? 'resting' : 'fermenting'} — keep playing`);
+  toast(`${nameOf(byId[chip.dataset.id])} is ${verb === 'wait' ? 'resting' : 'fermenting'} — keep playing`);
 }
 
 // Driven by a timer, not an animation frame. A progress ring does not need
@@ -1661,7 +1865,7 @@ function treeHTML(id, depth, seen = new Set()) {
   // make each other. Without a guard this recursed until the tab died.
   if (seen.has(id) || depth > 40) {
     const e2 = byId[id];
-    return `<li><div class="prow loop"><span class="pe">${e2.emoji}</span>` +
+    return `<li><div class="prow loop"><span class="pe">${glyph(e2.id, 22)}</span>` +
            `<span class="pn">${nameOf(e2)}</span><span class="pv">already above</span></div></li>`;
   }
   seen = new Set(seen); seen.add(id);
@@ -1671,9 +1875,9 @@ function treeHTML(id, depth, seen = new Set()) {
   const n = r ? subtreeSize(id) - 1 : 0;
   const row = `<div class="prow${depth === 0 ? ' root' : ''}${r ? ' has' : ''}"${r ? ' data-fold' : ''}>` +
               `${r ? `<span class="tw">${hidden ? '▸' : '▾'}</span>` : '<span class="tw dot">·</span>'}` +
-              `<span class="pe">${e.emoji}</span><span class="pn">${e.name}</span>` +
+              `<span class="pe">${glyph(e.id, 22)}</span><span class="pn">${e.name}</span>` +
               (hidden && n ? `<span class="more">+${n}</span>` : '') +
-              (v ? `<span class="pv">${v.emoji} ${v.name}</span>` : '') + `</div>`;
+              (v ? `<span class="pv">${glyph('verb_' + v.id, 17)} ${v.name}</span>` : '') + `</div>`;
   const kids = r ? `<ul${hidden ? ' class="fold"' : ''}>${r.in.map(i => treeHTML(i, depth + 1)).join('')}</ul>` : '';
   return `<li>${row}${kids}</li>`;
 }
@@ -1803,7 +2007,7 @@ function bedrockHTML(tally) {
   const syms = [...atoms].map(a => atomById[a].symbol);
   return `<div class="bedhead">and below that</div>` +
     leaves.map(id =>
-      `<div class="bedgroup"><div class="bedof">${byId[id].emoji} ${byId[id].name} is made of</div>` +
+      `<div class="bedgroup"><div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
       `<ul class="tree bed">${BED.composition[id].map(bedTreeHTML).join('')}</ul></div>`).join('') +
     `<div class="bedsum">${atoms.size} chemical elements${syms.includes('He') ? ' and starlight' : ''}` +
     `<div class="syms">${syms.map(x => `<i>${x}</i>`).join('')}</div></div>`;
@@ -1815,8 +2019,8 @@ function bedrockHTML(tally) {
 // A recipe book, not an answer key.
 function gestureHTML(r) {
   const v = r.verb ? verbs.find(x => x.id === r.verb) : null;
-  const part = (id) => `<span class="g" data-entry="${id}">${byId[id].emoji} ${byId[id].name}</span>`;
-  return v ? `${part(r.in[0])}<em>${v.emoji} ${v.name}</em>`
+  const part = (id) => `<span class="g" data-entry="${id}">${glyph(id, 19)} ${byId[id].name}</span>`;
+  return v ? `${part(r.in[0])}<em>${glyph('verb_' + v.id, 17)} ${v.name}</em>`
            : `${part(r.in[0])}<em>+</em>${part(r.in[1])}`;
 }
 // How much help you have asked for, per element. It escalates only when you
@@ -1841,16 +2045,16 @@ function showHint(id) {
       (missing.length
         ? `<p>You are missing <b>${missing.length}</b> of the ingredient${missing.length === 1 ? '' : 's'} for the closest one — so something else has to come first.</p>`
         : `<p><b>You already have everything you need.</b> It is two things on your shelf${v ? `, or one thing and a tool` : ''}.</p>`) +
-      (verbLocked ? `<p>It also needs the ${v.emoji} ${v.name} tool, which opens when you make ${nameOf(byId[v.unlockedBy])}.</p>` : '');
+      (verbLocked ? `<p>It also needs the ${glyph('verb_' + v.id, 17)} ${v.name} tool, which opens when you make ${nameOf(byId[v.unlockedBy])}.</p>` : '');
   } else if (lvl === 1) {
     const shown = missing.length ? missing[0] : best.in[0];
-    body = `<p>Try something with <b class="jump" data-hint="${shown}">${byId[shown].emoji} ${nameOf(byId[shown])}</b>.</p>` +
-      (v ? `<p>And the ${v.emoji} ${v.name} tool.</p>` : '');
+    body = `<p>Try something with <b class="jump" data-hint="${shown}">${glyph(shown, 19)} ${nameOf(byId[shown])}</b>.</p>` +
+      (v ? `<p>And the ${glyph('verb_' + v.id, 17)} ${v.name} tool.</p>` : '');
   } else {
-    body = `<p class="answer">${best.in.map(i => `${byId[i].emoji} ${nameOf(byId[i])}`).join(v ? '' : ' &nbsp;+&nbsp; ')}` +
-      (v ? ` &nbsp;⟶&nbsp; ${v.emoji} ${v.name}` : '') + ` &nbsp;→&nbsp; ${e.emoji} ${nameOf(e)}</p>` +
+    body = `<p class="answer">${best.in.map(i => `${glyph(i, 19)} ${nameOf(byId[i])}`).join(v ? '' : ' &nbsp;+&nbsp; ')}` +
+      (v ? ` &nbsp;⟶&nbsp; ${glyph('verb_' + v.id, 17)} ${v.name}` : '') + ` &nbsp;→&nbsp; ${glyph(e.id, 19)} ${nameOf(e)}</p>` +
       (missing.length ? `<p class="hint2">You still need ${missing.map(i =>
-        `<b class="jump" data-hint="${i}">${byId[i].emoji} ${nameOf(byId[i])}</b>`).join(' and ')} first.</p>` : '');
+        `<b class="jump" data-hint="${i}">${glyph(i, 19)} ${nameOf(byId[i])}</b>`).join(' and ')} first.</p>` : '');
   }
 
   // "You still need Spark first" is only half an answer if finding Spark means
@@ -1862,12 +2066,12 @@ function showHint(id) {
     <div class="path">` + todo.map((r, i) => `
       <div class="pstep${r.out === id ? ' last' : ''}" data-hint="${r.out}">
         <span class="pn2">${i + 1}</span>
-        <span class="g">${byId[r.out].emoji} ${nameOf(byId[r.out])}</span>
+        <span class="g">${glyph(r.out, 19)} ${nameOf(byId[r.out])}</span>
         ${r.out === id ? '<i>your goal</i>' : '<i>tap for a hint</i>'}
       </div>`).join('') + `</div>` : '';
 
   document.getElementById('sheetBody').innerHTML = `
-    <div class="phead"><span class="big">${e.emoji}</span><h3>${nameOf(e)}</h3>
+    <div class="phead"><span class="big">${glyph(e.id, 34)}</span><h3>${nameOf(e)}</h3>
       <div class="pnums">Not made yet</div></div>
     <div class="hintbox">${body}</div>
     ${best && lvl < 2 ? `<div class="cardrow"><button class="ghost" data-more="${id}">
@@ -1890,11 +2094,11 @@ function showEntry(id) {
   const hiddenOut = usedIn.length - knownOut.length;
   const rows = (list, cls) => list.map(r =>
     `<div class="ent ${cls}">${gestureHTML(r)}<span class="arw">→</span>` +
-    `<span class="g out" data-entry="${r.out}">${byId[r.out].emoji} ${byId[r.out].name}</span></div>`).join('');
+    `<span class="g out" data-entry="${r.out}">${glyph(r.out, 19)} ${byId[r.out].name}</span></div>`).join('');
 
   document.getElementById('sheetBody').innerHTML = `
     <div class="phead fam-${f.id}">
-      <span class="big">${e.emoji}</span><h3>${e.name}</h3>
+      <span class="big">${glyph(e.id, 34)}</span><h3>${e.name}</h3>
       <div class="pnums">${f.name}${e.terminal ? ' · nothing is made from this' : ''}</div>
       <div class="pfrom">${e.fact}</div>
     </div>
@@ -1928,7 +2132,7 @@ function askFirst(id, then) {
   ])].sort((a, b) => a - b);
   document.getElementById('sheetBody').innerHTML = `
     <div class="guess">
-      <div class="big">${byId[id].emoji}</div>
+      <div class="big">${glyph(id, 34)}</div>
       <h3>Before you look</h3>
       <p>How many raw things — stone, water, sun, seed — do you think went into
          one ${byId[id].name.toLowerCase()}?</p>
@@ -1975,11 +2179,11 @@ function orderedSteps(id) {
 }
 function stepCard(r, i) {
   const v = r.verb ? verbs.find(x => x.id === r.verb) : null;
-  const bit = (id) => `<span class="g" data-entry="${id}">${byId[id].emoji} ${nameOf(byId[id])}</span>`;
+  const bit = (id) => `<span class="g" data-entry="${id}">${glyph(id, 19)} ${nameOf(byId[id])}</span>`;
   return `<div class="step">
     <div class="stepno">${i + 1}</div>
     <div class="stepbody">
-      <div class="stepgest">${bit(r.in[0])}${v ? `<em>${v.emoji} ${v.name}</em>` : `<em>+</em>${bit(r.in[1])}`}
+      <div class="stepgest">${bit(r.in[0])}${v ? `<em>${glyph('verb_' + v.id, 17)} ${v.name}</em>` : `<em>+</em>${bit(r.in[1])}`}
         <span class="arw">→</span>${bit(r.out)}</div>
       <p>${r.why}</p>
       ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
@@ -1991,13 +2195,13 @@ function showProvenance(id, mode) {
   provMode = mode || provMode;
   const x = expanded(id), d = distinctOf(id).size, t = leafTally(id), e = byId[id];
   document.getElementById('sheetBody').innerHTML =
-    `<div class="phead"><div class="big">${e.emoji}</div><h3>${e.name}</h3>
+    `<div class="phead"><div class="big">${glyph(e.id, 34)}</div><h3>${e.name}</h3>
        <div class="pnums"><b>${x.leaves}</b> raw inputs · <b>${d}</b> distinct ingredients · <b>${x.steps}</b> crafts</div>
        ${lastGuess ? `<div class="verdict ${lastGuess.right ? 'hit' : 'miss'}">${
          lastGuess.right ? 'You called it exactly.'
          : `You guessed ${lastGuess.n}. It takes ${lastGuess.truth}.`}</div>` : ''}
        <div class="pfrom">Bottoms out in ${[...t].sort((a,b)=>b[1]-a[1])
-         .map(([k,n]) => `${byId[k].emoji} ${byId[k].name} ×${n}`).join(' · ')}</div></div>
+         .map(([k,n]) => `${glyph(k, 17)} ${byId[k].name} ×${n}`).join(' · ')}</div></div>
      <div class="modes">
        <button class="${provMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="${provMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
@@ -2125,6 +2329,10 @@ function showSettings() {
       ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
       ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
     ])}
+    <h2>How it is drawn</h2>
+    ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
+    <h2>What it sits on</h2>
+    ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
     <h2>Free play</h2>
     <div class="setrow">
       <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
@@ -2157,7 +2365,7 @@ document.getElementById('tray').addEventListener('click', ev => {
   if (!v) return;
   const key = byId[v.dataset.needs];
   sfx.nope();
-  toast(`${key.emoji} Make ${nameOf(key)} first, and this tool opens`);
+  toast(`Make ${nameOf(key)} first, and this tool opens`);
 });
 
 document.getElementById('aside').addEventListener('click', ev => {
@@ -2216,7 +2424,7 @@ document.getElementById('nudge').addEventListener('click', () => {
   }
   const r = options[Math.floor(Math.random() * options.length)];
   // Reveal one ingredient only. Finding the partner is the game.
-  toast(`Try something with ${byId[r.in[0]].emoji} ${nameOf(byId[r.in[0]])}`);
+  toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
 document.getElementById('reset').addEventListener('click', () => {
   if (!confirm('Wipe all discoveries?')) return;

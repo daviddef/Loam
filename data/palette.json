@@ -1,0 +1,417 @@
+{
+  "source": {
+    "dataset": "Munsell renotation data (real)",
+    "publisher": "Munsell Color Science Laboratory, Rochester Institute of Technology",
+    "url": "https://www.rit-mcsl.org/MunsellRenotation/real.dat",
+    "retrieved": "2026-08-25",
+    "pipeline": "Munsell -> CIE xyY (Illuminant C, 2 deg) -> XYZ -> Bradford C->D65 -> sRGB"
+  },
+  "categories": {
+    "mineral": {
+      "notation": "10YR 4/2",
+      "note": "dark greyish brown — the workhorse soil chip",
+      "tags": [
+        "earth",
+        "build"
+      ],
+      "hex": "#6F5F4C",
+      "rgb": [
+        111,
+        95,
+        76
+      ],
+      "xyY": {
+        "x": 0.366,
+        "y": 0.359,
+        "Y": 12
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "10YR 6/2",
+        "hex": "#A3937E"
+      },
+      "lo": {
+        "notation": "10YR 2/2",
+        "hex": "#3D2F21"
+      }
+    },
+    "craft": {
+      "notation": "10YR 6/2",
+      "note": "light brownish grey — worked material, tools",
+      "tags": [
+        "tool",
+        "myth"
+      ],
+      "hex": "#A3937E",
+      "rgb": [
+        163,
+        147,
+        126
+      ],
+      "xyY": {
+        "x": 0.3491,
+        "y": 0.3483,
+        "Y": 30.05
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "10YR 8/2",
+        "hex": "#D8C8B1"
+      },
+      "lo": {
+        "notation": "10YR 4/2",
+        "hex": "#6F5F4C"
+      }
+    },
+    "grain": {
+      "notation": "2.5Y 7/4",
+      "note": "pale straw",
+      "tags": [
+        "food",
+        "sweet"
+      ],
+      "hex": "#C5AD7D",
+      "rgb": [
+        197,
+        173,
+        125
+      ],
+      "xyY": {
+        "x": 0.3761,
+        "y": 0.38,
+        "Y": 43.06
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "2.5Y 9/4",
+        "hex": "#FBE4AD"
+      },
+      "lo": {
+        "notation": "2.5Y 5/4",
+        "hex": "#8F784C"
+      }
+    },
+    "dish": {
+      "notation": "5YR 5/4",
+      "note": "browned, cooked",
+      "tags": [
+        "dish",
+        "drink"
+      ],
+      "hex": "#9A7359",
+      "rgb": [
+        154,
+        115,
+        89
+      ],
+      "xyY": {
+        "x": 0.3968,
+        "y": 0.3614,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "5YR 7/4",
+        "hex": "#D0A78C"
+      },
+      "lo": {
+        "notation": "5YR 3/4",
+        "hex": "#65402B"
+      }
+    },
+    "ferment": {
+      "notation": "5Y 6/4",
+      "note": "olive — the colour of a ferment",
+      "tags": [
+        "ferment",
+        "preserve",
+        "dairy"
+      ],
+      "hex": "#A49562",
+      "rgb": [
+        164,
+        149,
+        98
+      ],
+      "xyY": {
+        "x": 0.3794,
+        "y": 0.3955,
+        "Y": 30.05
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "5Y 8/4",
+        "hex": "#D9CA93"
+      },
+      "lo": {
+        "notation": "5Y 4/4",
+        "hex": "#706031"
+      }
+    },
+    "plant": {
+      "notation": "7.5GY 5/4",
+      "note": "living leaf, muted",
+      "tags": [
+        "plant",
+        "crop"
+      ],
+      "hex": "#6A8259",
+      "rgb": [
+        106,
+        130,
+        89
+      ],
+      "xyY": {
+        "x": 0.3274,
+        "y": 0.3994,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "7.5GY 7/4",
+        "hex": "#9DB888"
+      },
+      "lo": {
+        "notation": "7.5GY 3/4",
+        "hex": "#384F2D"
+      }
+    },
+    "living": {
+      "notation": "5P 5/4",
+      "note": "microbial and animal tissue",
+      "tags": [
+        "microbe",
+        "animal"
+      ],
+      "hex": "#867590",
+      "rgb": [
+        134,
+        117,
+        144
+      ],
+      "xyY": {
+        "x": 0.2986,
+        "y": 0.2699,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "5P 7/4",
+        "hex": "#B9AAC4"
+      },
+      "lo": {
+        "notation": "5P 3/4",
+        "hex": "#564060"
+      }
+    },
+    "water": {
+      "notation": "2.5PB 5/6",
+      "note": "not a soil hue — adjacent hue page",
+      "tags": [
+        "water"
+      ],
+      "hex": "#567FA3",
+      "rgb": [
+        86,
+        127,
+        163
+      ],
+      "xyY": {
+        "x": 0.2365,
+        "y": 0.2488,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "2.5PB 7/6",
+        "hex": "#8BB4D7"
+      },
+      "lo": {
+        "notation": "2.5PB 3/6",
+        "hex": "#194C72"
+      }
+    },
+    "fire": {
+      "notation": "7.5R 5/8",
+      "note": "not a soil hue — adjacent hue page",
+      "tags": [
+        "fire"
+      ],
+      "hex": "#B96255",
+      "rgb": [
+        185,
+        98,
+        85
+      ],
+      "xyY": {
+        "x": 0.4563,
+        "y": 0.3387,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "7.5R 7/8",
+        "hex": "#F29787"
+      },
+      "lo": {
+        "notation": "7.5R 3/8",
+        "hex": "#812B27"
+      }
+    },
+    "molecule": {
+      "notation": "10B 5/6",
+      "note": "cool and technical — past the material world",
+      "tags": [],
+      "hex": "#4981A1",
+      "rgb": [
+        73,
+        129,
+        161
+      ],
+      "xyY": {
+        "x": 0.2299,
+        "y": 0.2548,
+        "Y": 19.77
+      },
+      "clipped": false,
+      "hi": {
+        "notation": "10B 7/6",
+        "hex": "#7EB7D6"
+      },
+      "lo": {
+        "notation": "10B 3/4",
+        "hex": "#264C64"
+      }
+    }
+  },
+  "surfaces": {
+    "ground": {
+      "notation": "10YR 1/2",
+      "note": "canvas — dark, warm, never #000",
+      "hex": "#291A0A",
+      "rgb": [
+        41,
+        26,
+        10
+      ],
+      "xyY": {
+        "x": 0.4446,
+        "y": 0.3982,
+        "Y": 1.21
+      },
+      "clipped": false
+    },
+    "panel": {
+      "notation": "10YR 2/2",
+      "note": "raised surface",
+      "hex": "#3D2F21",
+      "rgb": [
+        61,
+        47,
+        33
+      ],
+      "xyY": {
+        "x": 0.3872,
+        "y": 0.3688,
+        "Y": 3.126
+      },
+      "clipped": false
+    },
+    "rule": {
+      "notation": "10YR 3/2",
+      "note": "hairlines and dividers",
+      "hex": "#554636",
+      "rgb": [
+        85,
+        70,
+        54
+      ],
+      "xyY": {
+        "x": 0.3747,
+        "y": 0.363,
+        "Y": 6.555
+      },
+      "clipped": false
+    },
+    "ink": {
+      "notation": "10YR 8/2",
+      "note": "primary text on the dark ground",
+      "hex": "#D8C8B1",
+      "rgb": [
+        216,
+        200,
+        177
+      ],
+      "xyY": {
+        "x": 0.3407,
+        "y": 0.3434,
+        "Y": 59.1
+      },
+      "clipped": false
+    },
+    "inkQuiet": {
+      "notation": "10YR 6/2",
+      "note": "secondary text",
+      "hex": "#A3937E",
+      "rgb": [
+        163,
+        147,
+        126
+      ],
+      "xyY": {
+        "x": 0.3491,
+        "y": 0.3483,
+        "Y": 30.05
+      },
+      "clipped": false
+    },
+    "paper": {
+      "notation": "10YR 9/2",
+      "note": "the light theme ground",
+      "hex": "#F4E3CA",
+      "rgb": [
+        244,
+        227,
+        202
+      ],
+      "xyY": {
+        "x": 0.3392,
+        "y": 0.343,
+        "Y": 78.66
+      },
+      "clipped": false
+    },
+    "paperInk": {
+      "notation": "10YR 2/2",
+      "note": "ink on paper — the light theme text",
+      "hex": "#3D2F21",
+      "rgb": [
+        61,
+        47,
+        33
+      ],
+      "xyY": {
+        "x": 0.3872,
+        "y": 0.3688,
+        "Y": 3.126
+      },
+      "clipped": false
+    },
+    "discovery": {
+      "notation": "5YR 6/12",
+      "note": "discovery only — never used as decoration",
+      "hex": "#DD7D17",
+      "rgb": [
+        221,
+        125,
+        23
+      ],
+      "xyY": {
+        "x": 0.5199,
+        "y": 0.4119,
+        "Y": 30.05
+      },
+      "clipped": false
+    }
+  }
+}

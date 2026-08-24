@@ -1,4 +1,4 @@
-<title>Visual directions</title>
+<title>Loam Visual Directions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
 <style>
   *{box-sizing:border-box}
@@ -72,10 +72,29 @@
                border-radius:52% 48% 40% 60%/64% 58% 42% 36%}
   .b-cell span{background:radial-gradient(circle at 42% 40%,#B9D8A6,#5E8442 72%)}
   .verdict{font-size:13px;color:#948A79;margin-top:12px;padding-left:12px;border-left:2px solid #3A3126}
+
+  /* ── D · constructed specimen ───────────────────────── */
+  .constr{background:#14120E;
+    background-image:radial-gradient(ellipse at 50% 0%,#1F1C15,#100E0A 72%)}
+  .card{display:inline-block;width:118px;margin:0 14px 16px 0;vertical-align:top;text-align:center}
+  .art{height:76px;display:flex;align-items:center;justify-content:center}
+  .art svg{width:68px;height:68px}
+  .card .nm{display:block;font:600 11.5px/1.2 Newsreader,Georgia,serif;color:#E8E0CE;
+            letter-spacing:.09em;text-transform:uppercase;margin-top:4px}
+  .card .fm{display:block;font:400 9.5px/1.3 "IBM Plex Mono",monospace;color:#8E836E;margin-top:2px}
+  .card .rl{height:2px;width:34px;margin:7px auto 5px;border-radius:2px}
+  .card .ac{display:block;font:400 8.5px/1.3 "IBM Plex Mono",monospace;color:#6A6155;
+            letter-spacing:.07em}
+  .stress{margin-top:20px;padding-top:16px;border-top:1px dashed #332E24}
+  .stress .cap{font:400 10px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;
+               color:#7E7460;margin:0 0 14px}
+  .pal{display:flex;gap:0;margin:14px 0 0;border-radius:3px;overflow:hidden;max-width:520px}
+  .pal i{flex:1;height:34px;font-style:normal;font:400 8px/34px "IBM Plex Mono",monospace;
+         text-align:center;color:#0E0D0A;letter-spacing:.03em}
 </style>
 
-<h1>Four ways this could look</h1>
-<p class="sub">Same five things each time — stone, water, flour, fire, a cell. What separates these
+<h1>Five ways this could look</h1>
+<p class="sub">Same five things each time — stone, water, flour, fire, a cell — plus, in D, the four items that break everything else. What separates these
 is not decoration: it is what the visual language <em>claims</em> about the game.</p>
 
 <section>
@@ -145,4 +164,109 @@ is not decoration: it is what the visual language <em>claims</em> about the game
     <span class="blob b-cell"><span></span><em>CELL</em></span>
   </div>
   <p class="verdict">Boldest. Hardest to keep legible at 400 items and at 40px on a phone.</p>
+</section>
+
+<section>
+  <h2>D · Constructed specimen <span style="color:#6A6155">— what the research points at</span></h2>
+  <p class="why">Flat geometric forms built from circles, arcs and tangents, isolated on a near-black
+  ground, each carrying a name, a formula, a category rule and an accession number. The ground comes
+  from the German school wall charts, the drawing method from mid-century scientific illustration,
+  the label stack from entomology drawers. Everything below the drawing is rendered from our data,
+  so the art cost per item is <em>one shape</em>.</p>
+  <div class="stage constr">
+
+    <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+      <path d="M8 42 L20 16 L40 12 L52 34 L44 48 L16 50 Z" fill="#6E6553"/>
+      <path d="M20 16 L40 12 L34 30 Z" fill="#8C8371"/>
+      <path d="M34 30 L52 34 L44 48 Z" fill="#57503F"/></svg></div>
+      <b class="nm">Stone</b><span class="fm">silicate rock</span>
+      <div class="rl" style="background:#58473A"></div><span class="ac">LM·001 · 10⁻¹ m</span></div>
+
+    <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+      <path d="M6 22 Q30 8 54 22 Q30 30 6 22 Z" fill="#79B0D2"/>
+      <path d="M6 32 Q30 18 54 32 Q30 40 6 32 Z" fill="#4E86AE"/>
+      <path d="M6 42 Q30 28 54 42 Q30 50 6 42 Z" fill="#33607F"/></svg></div>
+      <b class="nm">Water</b><span class="fm">H₂O</span>
+      <div class="rl" style="background:#3D6D8C"></div><span class="ac">LM·002 · 10⁻¹⁰ m</span></div>
+
+    <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+      <path d="M8 44 Q30 16 52 44 Z" fill="#E4DCC6"/>
+      <path d="M18 44 Q30 28 42 44 Z" fill="#F5EFE0"/>
+      <circle cx="16" cy="50" r="2.4" fill="#C9BFA6"/><circle cx="26" cy="52" r="1.7" fill="#C9BFA6"/>
+      <circle cx="44" cy="50" r="2.1" fill="#C9BFA6"/></svg></div>
+      <b class="nm">Flour</b><span class="fm">milled endosperm</span>
+      <div class="rl" style="background:#8C7F5E"></div><span class="ac">LM·048 · 10⁻⁴ m</span></div>
+
+    <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+      <path d="M30 6 Q46 26 44 38 A14 14 0 0 1 16 38 Q14 26 30 6 Z" fill="#C4531F"/>
+      <path d="M30 20 Q39 32 38 39 A8 8 0 0 1 22 39 Q21 32 30 20 Z" fill="#E89B2A"/>
+      <path d="M30 32 Q35 39 34 42 A4 4 0 0 1 26 42 Q25 39 30 32 Z" fill="#F6DE9C"/></svg></div>
+      <b class="nm">Fire</b><span class="fm">exothermic oxidation</span>
+      <div class="rl" style="background:#A8452B"></div><span class="ac">LM·009 · 10⁻¹ m</span></div>
+
+    <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="23" fill="#6E8B4E"/>
+      <circle cx="30" cy="30" r="17" fill="#9BB877"/>
+      <circle cx="25" cy="26" r="7" fill="#43613A"/>
+      <circle cx="39" cy="37" r="3.4" fill="#43613A"/>
+      <path d="M17 38 Q24 44 33 45" stroke="#43613A" stroke-width="2" fill="none"/></svg></div>
+      <b class="nm">Cell</b><span class="fm">eukaryote</span>
+      <div class="rl" style="background:#7A5C8C"></div><span class="ac">LM·214 · 10⁻⁵ m</span></div>
+
+    <div class="stress">
+      <p class="cap">Stress test — the four items that break every other direction</p>
+
+      <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+        <path d="M30 30 L30 12 M30 30 L46 39 M30 30 L14 39 M30 30 L30 48"
+              stroke="#4A4438" stroke-width="2.6"/>
+        <circle cx="30" cy="30" r="9" fill="#2E2A22"/>
+        <circle cx="30" cy="12" r="4.4" fill="#8E836E"/><circle cx="46" cy="39" r="4.4" fill="#8E836E"/>
+        <circle cx="14" cy="39" r="4.4" fill="#8E836E"/><circle cx="30" cy="48" r="4.4" fill="#8E836E"/></svg></div>
+        <b class="nm">Carbon</b><span class="fm">C · Z=6</span>
+        <div class="rl" style="background:#58473A"></div><span class="ac">EL·006 · 10⁻¹⁰ m</span></div>
+
+      <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+        <path d="M9 38 L20 30 L31 38 L42 30 L52 36" stroke="#B0A488" stroke-width="2.6"
+              fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="20" cy="30" r="4" fill="#7A5C8C"/>
+        <circle cx="42" cy="30" r="4" fill="#A8452B"/>
+        <path d="M52 36 L52 24" stroke="#B0A488" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="52" cy="22" r="3.4" fill="#3D6D8C"/>
+        <circle cx="9" cy="38" r="3.4" fill="#3D6D8C"/></svg></div>
+        <b class="nm">Glutamate</b><span class="fm">C₅H₉NO₄</span>
+        <div class="rl" style="background:#7A5C8C"></div><span class="ac">BD·007 · 10⁻⁹ m</span></div>
+
+      <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+        <rect x="5" y="22" width="17" height="17" rx="3" fill="#5F7A44"/>
+        <rect x="38" y="22" width="17" height="17" rx="3" fill="#5F7A44"/>
+        <path d="M22 30.5 L38 30.5" stroke="#E8E0CE" stroke-width="3.4"/>
+        <circle cx="30" cy="22" r="4" fill="#A8452B"/>
+        <circle cx="30" cy="39" r="4" fill="#3D6D8C"/></svg></div>
+        <b class="nm">Peptide bond</b><span class="fm">−CO−NH−</span>
+        <div class="rl" style="background:#7A5C8C"></div><span class="ac">BD·101 · 10⁻¹⁰ m</span></div>
+
+      <div class="card"><div class="art"><svg viewBox="0 0 60 60">
+        <path d="M4 44 Q20 42 28 32 Q36 22 54 18" stroke="#C7B58C" stroke-width="5"
+              fill="none" stroke-linecap="round"/>
+        <path d="M28 32 Q34 40 50 44" stroke="#C7B58C" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M18 43 Q22 32 34 26" stroke="#9A8B66" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="54" cy="18" r="4.4" fill="#8CA05E"/><circle cx="50" cy="44" r="3.6" fill="#8CA05E"/></svg></div>
+        <b class="nm">Hypha</b><span class="fm">fungal filament</span>
+        <div class="rl" style="background:#6E7A3D"></div><span class="ac">LM·187 · 10⁻⁶ m</span></div>
+    </div>
+
+    <div class="pal">
+      <i style="background:#58473A;color:#E8E0CE">10YR 3/2</i>
+      <i style="background:#8C7F5E">grain</i>
+      <i style="background:#6E7A3D">plant</i>
+      <i style="background:#3D6D8C;color:#E8E0CE">water</i>
+      <i style="background:#A8452B;color:#E8E0CE">fire</i>
+      <i style="background:#7A5C8C;color:#E8E0CE">living</i>
+    </div>
+  </div>
+  <p class="verdict">The only direction that draws glutamate as well as it draws bread — and the
+  palette is <em>derived</em> from the Munsell soil colour book, not invented. 10YR 3/2 → #58473A is
+  the one worked example; the rest come out of the same published lookup table. A game whose claim is
+  "everything here is sourced" whose colours are also sourced is a thing no competitor can copy
+  without copying the idea outright.</p>
 </section>
