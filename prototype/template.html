@@ -758,6 +758,32 @@ __CATEGORY_CSS__
     #sheet{padding:10px}
     .sheetbox{max-height:92vh}
   }
+  /* ── the ladder ───────────────────────────────────────────────────── */
+  .ladderlede{font-size:13.5px;color:var(--ink-soft);margin:2px 2px 14px;line-height:1.55}
+  .ladder{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--line);
+          margin-left:6px;padding-left:0}
+  .rung{position:relative;padding:10px 0 12px 74px;border-top:1px solid var(--line)}
+  .rung:first-child{border-top:0}
+  .rung .mag{
+    position:absolute;left:8px;top:11px;font:400 10.5px/1 var(--face-data);
+    color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums;
+  }
+  .rung .rungname{
+    display:block;font:400 10px/1 var(--face-data);letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px;
+  }
+  /* An empty decade is information, not a gap to be tidied away. */
+  .rung.empty{padding:7px 0 7px 74px;opacity:.42}
+  .rung.empty i{font-style:normal;font:400 10px/1 var(--face-data);
+                letter-spacing:.06em;color:var(--ink-soft)}
+  .rung.empty .mag{top:8px}
+  /* Denser than the shelf: the ladder is for seeing the whole span at once. */
+  .ladder .chip.lad{--cw:62px;padding:5px 3px 4px}
+  .ladder .chip.lad .art{width:30px;height:30px}
+  .ladder .chip.lad .n{font-size:7.6px;letter-spacing:.03em;min-height:2.2em}
+  .ladder .chip.lad .rl{width:16px;margin:3px auto 2px}
+  .ladder .chip.lad .ac{display:none}
+  .ladder .shelf{gap:4px}
   @media(max-width:400px){ h1{display:none} }
   @media(min-width:721px){ #shelfToggle{display:none} }
   /* A destructive control should not look like the others. */
@@ -2264,7 +2290,8 @@ function showCodex(q = '') {
     `<input id="q" class="search" placeholder="Search your discoveries…" value="${q}" autocomplete="off">` +
     `<div class="cardrow" style="margin:10px 0 2px">` +
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
-    `<button class="ghost" id="aaBtn">Amino acids</button></div>` +
+    `<button class="ghost" id="aaBtn">Amino acids</button>` +
+    `<button class="ghost" id="ladderBtn">The ladder</button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
   openSheet(`Codex · ${found.size} of ${elements.length}`);
   document.getElementById('ptBtn').onclick = () => {
@@ -2272,10 +2299,88 @@ function showCodex(q = '') {
     openSheet('The periodic table');
   };
   document.getElementById('aaBtn').onclick = () => showAtom('amino_acid');
+  document.getElementById('ladderBtn').onclick = showLadder;
   const box = document.getElementById('q');
   box.oninput = () => { document.getElementById('codexList').innerHTML = codexResults(box.value); };
   if (q) box.focus();
 }
+
+/* ── the ladder ───────────────────────────────────────────────────────────
+ * Every item you have found, laid out by order of magnitude, from the sun to
+ * a carbon atom. It is the Powers of Ten idea made into a screen, and it is
+ * built entirely from data we already ship: no new art, no new claims, just
+ * the sizes sorted.
+ *
+ * It is also the clearest answer to what this game is for. A crafting game
+ * shows you a list of things you own. This shows you that a loaf of bread and
+ * a ribosome are nineteen orders of magnitude apart, and that you walked the
+ * whole way.
+ */
+const RUNG_LABEL = {
+  '-10': 'atoms and bonds',
+  '-9':  'small molecules',
+  '-8':  'proteins and polymers',
+  '-6':  'single cells',
+  '-5':  'cells you could see with a lens',
+  '-4':  'grains and powders',
+  '-3':  'seeds and crumbs',
+  '-2':  'things that fit in a hand',
+  '-1':  'things you cook with',
+  '0':   'things taller than a child',
+  '2':   'fields',
+  '3':   'rivers',
+  '6':   'seas',
+  '9':   'the sun',
+};
+
+function showLadder() {
+  const have = elements.filter(e => found.has(e.id) && SCALE[e.id]);
+  const rungs = new Map();
+  for (const e of have) {
+    const k = SCALE[e.id].e;
+    if (!rungs.has(k)) rungs.set(k, []);
+    rungs.get(k).push(e);
+  }
+  const keys = [...rungs.keys()].sort((a, b) => b - a);       // biggest first
+
+  // The gap between rungs is real information: a run of empty decades means
+  // there is a whole scale of the world you have not touched yet.
+  const top = keys[0], bottom = keys[keys.length - 1];
+  const rows = [];
+  for (let k = top; k >= bottom; k--) {
+    const list = rungs.get(k);
+    if (!list) {
+      // Collapse a run of empty decades into one line. The gap still shows —
+      // it is the most interesting thing on the page — but nineteen rungs of
+      // "nothing here yet" would bury the things you do have.
+      let run = k;
+      while (run - 1 >= bottom && !rungs.has(run - 1)) run--;
+      const n = k - run + 1;
+      rows.push(`<div class="rung empty"><span class="mag">${magOf(k)}</span><i>` +
+        (n === 1 ? 'nothing at this size yet'
+                 : `${n} sizes down to ${magOf(run)} with nothing in them yet`) +
+        `</i></div>`);
+      k = run;
+      continue;
+    }
+    rows.push(
+      `<div class="rung"><span class="mag">${magOf(k)}</span>` +
+      `<span class="rungname">${RUNG_LABEL[k] || ''} · ${list.length}</span>` +
+      `<div class="shelf">${list.map(e =>
+        `<span class="chip lad" data-entry="${e.id}">${chipHTML(e)}</span>`).join('')}</div></div>`);
+  }
+
+  const span = top - bottom;
+  document.getElementById('sheetBody').innerHTML =
+    `<p class="ladderlede">You hold things ${span} orders of magnitude apart —
+      from ${nameOf(byId[have.find(e => SCALE[e.id].e === top).id])}
+      down to ${nameOf(byId[have.find(e => SCALE[e.id].e === bottom).id])}.
+      Every step between them is a recipe you can check.</p>` +
+    `<div class="ladder">${rows.join('')}</div>`;
+  openSheet('The ladder');
+}
+const SUPS = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
+const magOf = k => '10' + String(k).split('').map(c => SUPS[c]).join('') + ' m';
 
 function openSheet(title) {
   document.getElementById('sheetTitle').textContent = title;

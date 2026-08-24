@@ -2235,8 +2235,7 @@
     "tags": [
       "food"
     ],
-    "fact": "Unfolded, tangled, set. This is what cooking is.",
-    "terminal": true
+    "fact": "Unfolded, tangled, set. This is what cooking is."
   },
   {
     "id": "atp",
@@ -2337,5 +2336,45 @@
       "microbe"
     ],
     "fact": "A protein with a pocket shaped to hold one particular molecule."
+  },
+  {
+    "id": "alpha_helix",
+    "name": "Alpha Helix",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A chain coiled into a spring, held by hydrogen bonds four residues apart."
+  },
+  {
+    "id": "beta_sheet",
+    "name": "Beta Sheet",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Chains lying side by side, pleated like a folded fan. Silk is almost nothing else."
+  },
+  {
+    "id": "ribosome",
+    "name": "Ribosome",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Two thirds RNA — and the RNA, not the protein, is the part that does the chemistry."
+  },
+  {
+    "id": "messenger_rna",
+    "name": "Messenger RNA",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A working copy of one gene. Short-lived on purpose, so the cell can stop just by letting it decay."
   }
 ]

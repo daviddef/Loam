@@ -46,13 +46,15 @@ const PUBLIC = [
   'tools/palette.mjs',
   'tools/art.mjs',
   'tools/scale.mjs',
+  'tools/strip.mjs',
   'tools/contact-sheet.mjs',
   'tools/sync-public.mjs',
 ];
 
 /** Anything matching these must never reach the public repo. */
 const NEVER = [/^RESEARCH\.md$/, /^ROADMAP\.md$/, /^BACKLOG\.md$/, /^DESIGN\.md$/,
-               /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i];
+               /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
+               /^strip\.html$/, /^chain-preview\.html$/];
 
 const dest = process.argv[2];
 const checkOnly = process.argv.includes('--check');

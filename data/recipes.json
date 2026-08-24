@@ -4529,5 +4529,105 @@
     "supported": true,
     "why": "Herb oil emulsifies as readily as plain oil and brings its own seasoning with it.",
     "src": "https://en.wikipedia.org/wiki/Egg_salad"
+  },
+  {
+    "in": [
+      "polypeptide",
+      "water"
+    ],
+    "out": "alpha_helix",
+    "why": "Folding is not the chain pulling itself together — it is water pushing. Greasy side chains are driven inward, and the backbone settles into a spring held by hydrogen bonds between residue n and residue n+4, 3.6 residues to a turn.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Protein_folding"
+  },
+  {
+    "in": [
+      "polypeptide",
+      "polypeptide"
+    ],
+    "out": "beta_sheet",
+    "why": "Two stretched chains lie alongside each other and hydrogen-bond across the gap, pleating like a folded fan. Spider dragline silk is mostly this, which is why it out-pulls steel of the same weight.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Beta_sheet"
+  },
+  {
+    "in": [
+      "alpha_helix",
+      "beta_sheet"
+    ],
+    "out": "protein",
+    "why": "Helices and sheets are the second level; packing them against each other is the third. Anfinsen showed the packing is decided by the sequence alone — unfold a protein, remove the poison, and it folds straight back.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Protein_tertiary_structure"
+  },
+  {
+    "in": [
+      "nucleotide",
+      "protein"
+    ],
+    "out": "ribosome",
+    "why": "Two thirds RNA by mass, and the RNA is not scaffolding: the bond-forming site has no protein within 18 angstroms of it. The ribosome is a ribozyme.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Ribosome"
+  },
+  {
+    "in": [
+      "dna",
+      "enzyme"
+    ],
+    "out": "messenger_rna",
+    "why": "RNA polymerase opens the double helix and copies one strand, swapping thymine for uracil. It does not need a primer to start, which is the main thing separating it from the machinery that copies DNA.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Transcription_(biology)"
+  },
+  {
+    "in": [
+      "messenger_rna",
+      "ribosome"
+    ],
+    "out": "polypeptide",
+    "why": "Translation: the ribosome reads three bases at a time and adds one amino acid per codon, about 20 a second in a bacterium. This is the step that turns a sequence into a substance.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Translation_(biology)"
+  },
+  {
+    "in": [
+      "keratin"
+    ],
+    "verb": "cut",
+    "out": "alpha_helix",
+    "why": "Keratin is helices wound around each other into a rope, then roped again. Cut the rope apart and you are back to the single coil it was built from — which is why hair stretches, and why it springs back.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Keratin"
+  },
+  {
+    "in": [
+      "denatured_protein"
+    ],
+    "verb": "wait",
+    "out": "beta_sheet",
+    "why": "An unfolded chain left alone does not stay loose. Stretches of it line up with its neighbours into sheets and stack — the same fold, whatever protein it started as. That stack is amyloid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Amyloid"
+  },
+  {
+    "in": [
+      "cell"
+    ],
+    "verb": "cut",
+    "out": "ribosome",
+    "why": "This is how they were found. Break the cell open, spin the soup hard enough, and the ribosomes come down as a pellet — Palade saw them in 1955 and they were called Palade granules first.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cell_fractionation"
+  },
+  {
+    "in": [
+      "dna",
+      "nucleotide"
+    ],
+    "out": "messenger_rna",
+    "why": "The template gives the order; the loose nucleotides are the letters. RNA polymerase runs along the open strand at about 40 bases a second, pairing each one and leaving the DNA to zip back up behind it.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/RNA_polymerase"
   }
 ]

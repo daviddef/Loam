@@ -193,7 +193,11 @@
     "mortar": "Mortar (masonry)",
     "concrete": "Concrete",
     "river": "River",
-    "goat": "Goat"
+    "goat": "Goat",
+    "alpha_helix": "Alpha helix",
+    "beta_sheet": "Beta sheet",
+    "ribosome": "Ribosome",
+    "messenger_rna": "Messenger RNA"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -275,6 +279,16 @@
     "protein+sulfur": "Keratin",
     "protein+salt": "Denaturation (biochemistry)",
     "glucose+oxygen": "Cellular respiration",
-    "fish|cut": "Stock (food)"
+    "fish|cut": "Stock (food)",
+    "polypeptide+water": "Protein folding",
+    "polypeptide+polypeptide": "Beta sheet",
+    "alpha_helix+beta_sheet": "Protein tertiary structure",
+    "dna+enzyme": "Transcription (biology)",
+    "messenger_rna+ribosome": "Translation (biology)",
+    "nucleotide+protein": "Ribosome",
+    "keratin|cut": "Keratin",
+    "denatured_protein|wait": "Amyloid",
+    "cell|cut": "Cell fractionation",
+    "dna+nucleotide": "RNA polymerase"
   }
 }

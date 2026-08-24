@@ -192,7 +192,7 @@ const MOLECULAR = new Set([
   'carbon_dioxide', 'glucose', 'starch', 'amino_acid', 'cysteine',
   'dipeptide', 'polypeptide', 'protein', 'disulfide', 'atp', 'nucleotide',
   'dna', 'membrane', 'enzyme', 'denatured_protein', 'gelatin', 'keratin',
-  'collagen',
+  'collagen', 'alpha_helix', 'beta_sheet', 'ribosome', 'messenger_rna',
 ]);
 
 const TAG_CATEGORY = {
@@ -792,7 +792,12 @@ def('cell', () => [                                       // cut open, per the r
   C(30, 32, 20, 'lo'), C(30, 32, 17.5, 'bs'),
   C(25, 28, 7, 'living-lo'),                              // nucleus
   C(38, 38, 3.6, 'hi'), C(20, 38, 2.8, 'hi'), C(36, 24, 2.4, 'hi'),
-  S('M10 32 A20 20 0 0 1 50 32', 'ik', 1.4),
+  // The wall is drawn as a broken ring, so it reads as a section rather than
+  // as a ball. A closed arc across the middle read as a handle.
+  ...[[200, 320], [340, 40], [60, 160]].map(([a, b]) => S(
+    `M${n(30 + 20 * Math.cos(a * Math.PI / 180))} ${n(32 + 20 * Math.sin(a * Math.PI / 180))} ` +
+    `A20 20 0 0 1 ${n(30 + 20 * Math.cos(b * Math.PI / 180))} ${n(32 + 20 * Math.sin(b * Math.PI / 180))}`,
+    'hi', 2)),
 ]);
 
 def('enzyme', () => [                                     // a protein with a cleft
@@ -800,6 +805,46 @@ def('enzyme', () => [                                     // a protein with a cl
   ...[[24, 28, 8], [40, 32, 6.4], [28, 42, 5.4]].map(([x, y, r]) => C(x, y, r, 'bs')),
   P('M30 22 Q36 30 30 36 Q26 30 30 22 Z', 'ground'),      // the active site
   C(30, 29, 2.6, 'discovery'),                            // the substrate, held
+]);
+
+def('alpha_helix', () => [                               // a spring, seen side on
+  ...[0, 1].map(k => S(
+    Array.from({ length: 17 }, (_, i) =>
+      `${i ? 'L' : 'M'}${n(30 + 13 * Math.sin(i * 0.78))} ${n(6 + i * 2.9)}`).join(' '),
+    k ? 'hi' : 'bs', k ? 2 : 4.4)),
+  // the hydrogen bonds that hold it: residue n to residue n+4
+  ...[0, 1, 2, 3].map(i => S(`M20 ${n(14 + i * 9)} L40 ${n(14 + i * 9)}`, 'gh', 1.4)),
+]);
+
+def('beta_sheet', () => [                                // pleated, strands side by side
+  ...[0, 1, 2].map(k => S(
+    Array.from({ length: 8 }, (_, i) =>
+      `${i ? 'L' : 'M'}${n(6 + i * 5.6)} ${n(18 + k * 12 + (i % 2 ? 4 : -4))}`).join(' '),
+    k === 1 ? 'hi' : 'bs', 3.4)),
+  // hydrogen bonds across the gap — the thing that holds a sheet together
+  ...[0, 1].map(k => Array.from({ length: 4 }, (_, i) =>
+    S(`M${n(11 + i * 11)} ${n(22 + k * 12)} L${n(11 + i * 11)} ${n(26 + k * 12)}`, 'gh', 1.4))).flat(),
+  // Each strand ends in an arrowhead: the convention is that a sheet runs N to C.
+  ...[0, 1, 2].map(k => P(
+    `M${n(45.2)} ${n(18 + k * 12 - 4 - 4.5)} L${n(56)} ${n(18 + k * 12 - 4)} ` +
+    `L${n(45.2)} ${n(18 + k * 12 - 4 + 4.5)} Z`, k === 1 ? 'hi' : 'bs')),
+]);
+
+def('ribosome', () => [                                  // two subunits, message between
+  P('M12 12 Q30 4 48 14 Q54 24 46 29 L14 29 Q6 24 12 12 Z', 'lo'),        // large subunit
+  P('M16 35 Q30 31 44 35 Q50 42 40 47 Q24 49 18 43 Q12 39 16 35 Z', 'bs'), // small subunit
+  S('M4 32 L56 32', 'ik', 2.4),                          // the message, threaded between them
+  ...[10, 20, 30, 40, 50].map(x => C(x, 32, 1.9, 'discovery')),   // codons going past
+  C(24, 18, 3.6, 'hi'), C(37, 20, 2.6, 'hi'), C(31, 41, 2.6, 'hi'),
+]);
+
+def('messenger_rna', () => [                             // one strand, not two, with bases
+  S(Array.from({ length: 17 }, (_, i) =>
+      `${i ? 'L' : 'M'}${n(6 + i * 3)} ${n(30 + 12 * Math.sin(i * 0.62))}`).join(' '), 'bs', 3.4),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const x = n(9 + i * 8), y = n(30 + 12 * Math.sin(((x - 6) / 3) * 0.62));
+    return C(x, y, 3, ['#FF0D0D', '#3050F8', '#FFD030', '#3DFF00'][i % 4]);
+  }),
 ]);
 
 def('penicillin', () => [                                 // the beta-lactam ring
