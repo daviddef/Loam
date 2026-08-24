@@ -42,6 +42,7 @@
   }
   .spacer{flex:1}
   .count{font:700 13px ui-rounded,Avenir;color:var(--avocado)}
+  .count.free{color:#fff;background:var(--teal);border-color:var(--teal)}
   button{
     font:600 13px ui-rounded,Avenir,system-ui;color:var(--ink);cursor:pointer;
     background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:6px 13px;
@@ -710,14 +711,38 @@ function secretsFor(id, ul) {
 //   tone   — how loud the game is about being fun
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
-const prefs = { depth: 'curious', tone: 'playful' };
+const prefs = { depth: 'curious', tone: 'playful', freePlay: false };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
+
+// Free play hands you the whole world at once. Real progress is put aside
+// first and handed back when you turn it off, so testing can never cost you
+// a playthrough.
+const REAL_KEY = 'loam.realprogress';
+function setFreePlay(on) {
+  if (on === prefs.freePlay) return;
+  if (on) {
+    try { localStorage.setItem(REAL_KEY, JSON.stringify({ found: [...found], seen: [...seen] })); } catch {}
+    elements.forEach(e => found.add(e.id));
+  } else {
+    let snap = null;
+    try { snap = JSON.parse(localStorage.getItem(REAL_KEY) || 'null'); } catch {}
+    found.clear(); seen.clear();
+    if (snap) { snap.found.forEach(x => found.add(x)); snap.seen.forEach(x => seen.add(x)); }
+    else STARTERS.forEach(x => found.add(x));
+    try { localStorage.removeItem(REAL_KEY); } catch {}
+  }
+  prefs.freePlay = on;
+  savePrefs(); save(); applyPrefs(); renderShelf();
+  toast(on ? 'Free play — everything unlocked. Your progress is safe.'
+           : 'Back to your own progress.');
+}
 const applyPrefs = () => {
   document.documentElement.dataset.depth = prefs.depth;
   document.documentElement.dataset.tone = prefs.tone;
 };
 applyPrefs();
+if (prefs.freePlay) elements.forEach(e => found.add(e.id));
 
 let shelfQuery = '';
 let readyAll = false;
@@ -928,7 +953,9 @@ function renderShelf() {
        ${open ? '' : `<i class="lk">${key ? key.emoji : '🔒'}</i>`}</div>`;
   }).join('');
 
-  document.getElementById('count').textContent = `${found.size} / ${elements.length}`;
+  document.getElementById('count').textContent = prefs.freePlay
+    ? `free play` : `${found.size} / ${elements.length}`;
+  document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
   const g = byId[GOAL];
   document.getElementById('goal').innerHTML = found.has(GOAL)
     ? `Made <b>${g.emoji} ${nameOf(g)}</b> — now try 🎉 Feast`
@@ -2098,9 +2125,20 @@ function showSettings() {
       ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
       ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
     ])}
-    <p class="hint2">Both save automatically. Neither changes a single fact —
+    <h2>Free play</h2>
+    <div class="setrow">
+      <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
+        <b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
+        <i>${prefs.freePlay
+          ? 'Every element and tool available. Tap to go back to your own progress.'
+          : 'Hands you all 226 elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.'}</i>
+      </button>
+    </div>
+    <p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
+  const fp = document.getElementById('sheetBody').querySelector('[data-free]');
+  if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
   document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {
     prefs[b.dataset.pref] = b.dataset.val;
     savePrefs(); applyPrefs(); renderShelf(); showSettings();
