@@ -45,8 +45,13 @@
   /* the canvas: an unbounded world you pan and zoom, not a fixed bench */
   #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
   #links{position:absolute;left:0;top:0;width:1px;height:1px;overflow:visible;pointer-events:none}
-  #links line{stroke:var(--line);stroke-width:2.5;stroke-linecap:round}
-  #links line.made{stroke:var(--avocado);stroke-width:3;opacity:.55}
+  #links path{fill:none;stroke:var(--line);stroke-width:2.5;stroke-linecap:round}
+  #links path.made{stroke:var(--avocado);stroke-width:2.5;opacity:.5}
+  @keyframes draw{from{stroke-dashoffset:var(--len,400)}to{stroke-dashoffset:0}}
+  #links path.fresh{
+    stroke-dasharray:var(--len,400);animation:draw .45s cubic-bezier(.3,.8,.4,1) forwards;
+    stroke:var(--orange);stroke-width:3;opacity:.85;
+  }
   #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6}
   #zoom button{
     width:32px;height:32px;padding:0;font:700 15px ui-rounded,Avenir;border-radius:10px;
@@ -104,6 +109,14 @@
     font:800 9.5px ui-rounded,Avenir;color:#fff;background:var(--ink-soft);
     border-radius:99px;padding:2px 6px;
   }
+  @keyframes ripple{
+    from{transform:translate(-50%,-50%) scale(.25);opacity:.75}
+    to{transform:translate(-50%,-50%) scale(2.6);opacity:0}
+  }
+  .ring{
+    position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
+    border:2.5px solid var(--orange);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
+  }
   @keyframes pulse{0%,100%{transform:scale(1)}45%{transform:scale(1.07)}}
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
@@ -115,11 +128,16 @@
   }
   .chip.board{
     position:absolute;padding:9px 15px 9px 11px;font-size:14.5px;border-width:2px;
-    box-shadow:0 3px 0 rgba(43,33,24,.1);z-index:2;
+    box-shadow:0 2px 0 rgba(43,33,24,.09), 0 6px 14px -6px rgba(43,33,24,.28);
+    z-index:2;transition:box-shadow .16s, transform .16s;
   }
+  .chip.board:hover{transform:translateY(-1px);box-shadow:0 3px 0 rgba(43,33,24,.11), 0 10px 18px -8px rgba(43,33,24,.34)}
   .chip.board .e{font-size:20px}
   .chip.drag{cursor:grabbing;z-index:99;transform:scale(1.09) rotate(-2deg);box-shadow:0 10px 22px rgba(43,33,24,.22)}
-  .chip.target{border-color:var(--orange);background:#FFF0E6;transform:scale(1.07)}
+  .chip.target{
+    border-color:var(--orange);background:#FFF0E6;transform:scale(1.07);
+    box-shadow:0 0 0 4px rgba(226,112,58,.18), 0 8px 18px -6px rgba(43,33,24,.3);
+  }
   @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
   .chip.pop{animation:pop .32s cubic-bezier(.3,1.5,.5,1)}
   @keyframes nope{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
@@ -445,6 +463,9 @@
     background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:3px 7px;
   }
 
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  }
   @media(max-width:720px){
     header{gap:7px;padding:9px 10px;flex-wrap:nowrap;overflow:hidden}
     h1{font-size:15px;flex:none;white-space:nowrap}
@@ -497,7 +518,8 @@
       <svg id="links"></svg>
     </div>
     <div id="zoom">
-      <button data-z="in">+</button><button data-z="out">−</button><button data-z="fit">⤢</button>
+      <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
+      <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench">☰</button>
     </div>
     <div id="intro">
       <b>You have four things.</b>
@@ -574,6 +596,7 @@ function secretsFor(id, ul) {
 }
 
 let shelfQuery = '';
+let readyAll = false;
 const shelfShut = new Set();
 let shelfAutoFolded = false;
 
@@ -660,10 +683,15 @@ function renderShelf() {
     // single most useful thing the panel can do is put those few at the top.
     (() => {
       if (q) return '';
-      const live = elements.filter(e => found.has(e.id) && (secrets.get(e.id) ?? 0) > 0);
+      const live = elements.filter(e => found.has(e.id) && (secrets.get(e.id) ?? 0) > 0)
+        .sort((a, b) => (secrets.get(b.id) ?? 0) - (secrets.get(a.id) ?? 0));
       if (!live.length) return '';
-      return `<h2 class="ready"><i></i>Ready<em>${live.length}</em></h2><div class="shelf">` +
-        live.map(e => {
+      const cap = readyAll ? live.length : 12;
+      const show = live.slice(0, cap);
+      return `<h2 class="ready"><i></i>Ready<em>${live.length}</em>` +
+        (live.length > 12 ? `<span class="cv" data-readyall>${readyAll ? 'less' : 'all'}</span>` : '') +
+        `</h2><div class="shelf">` +
+        show.map(e => {
           const f = familyOf(e);
           return `<span class="chip fam-${f.id} live" data-fam="${f.id}" data-spawn="${e.id}">` +
                  `${chipHTML(e)}<i class="n">${secrets.get(e.id)}</i></span>`;
@@ -690,6 +718,8 @@ function renderShelf() {
     b2.setSelectionRange(b2.value.length, b2.value.length); };
   const x = document.getElementById('shelfx');
   if (x) x.onclick = () => { shelfQuery = ''; renderShelf(); };
+  const ra = aside.querySelector('[data-readyall]');
+  if (ra) ra.onclick = ev => { ev.stopPropagation(); readyAll = !readyAll; renderShelf(); };
   aside.querySelectorAll('[data-fold]').forEach(h => h.onclick = ev => {
     if (ev.target.closest('input')) return;
     const id = h.dataset.fold;
@@ -718,8 +748,17 @@ const links = [];                                     // {a,b,out} DOM refs
 function applyView() {
   world.style.transform = `translate(${view.x}px,${view.y}px) scale(${view.k})`;
 }
-function toWorld(sx, sy) {
+// The board can report zero size in embedded or not-yet-laid-out contexts, and
+// every position derived from it then collapses into the corner. Fall back to
+// the viewport, then to a sane default, so layout is never nonsense.
+function boardBox() {
   const b = board.getBoundingClientRect();
+  const w = b.width  || (window.innerWidth  - 240) || 900;
+  const h = b.height || (window.innerHeight - 120) || 600;
+  return { left: b.left, top: b.top, width: w, height: h };
+}
+function toWorld(sx, sy) {
+  const b = boardBox();
   return [(sx - b.left - view.x) / view.k, (sy - b.top - view.y) / view.k];
 }
 const chipCentre = (el) => [
@@ -766,14 +805,19 @@ function drawLinks() {
     for (const src of [l.a, l.b]) {
       if (!src || !src.isConnected || src.classList.contains('hidden')) continue;
       const [sx, sy] = chipCentre(src);
-      parts.push(`<line class="made" x1="${sx}" y1="${sy}" x2="${ox}" y2="${oy}"/>`);
+      // A curve, not a spoke: it reads as flow rather than wiring, and two
+      // parents converging on one child stop looking like a Y of straight lines.
+      const my = (sy + oy) / 2;
+      const d = `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`;
+      parts.push(`<path class="made${l.fresh ? ' fresh' : ''}" d="${d}"/>`);
     }
+    l.fresh = false;
   }
   linkSvg.innerHTML = parts.join('');
 }
 
 function zoomBy(f, cx, cy) {
-  const b = board.getBoundingClientRect();
+  const b = boardBox();
   const px = cx == null ? b.width / 2 : cx - b.left;
   const py = cy == null ? b.height / 2 : cy - b.top;
   const k2 = Math.max(0.25, Math.min(2.4, view.k * f));
@@ -791,18 +835,66 @@ function fitAll() {
     x1 = Math.min(x1, l); y1 = Math.min(y1, t);
     x2 = Math.max(x2, l + c.offsetWidth); y2 = Math.max(y2, t + c.offsetHeight);
   }
-  const b = board.getBoundingClientRect(), pad = 60;
+  const b = boardBox(), pad = 60;
   view.k = Math.max(0.25, Math.min(1.4, Math.min((b.width - pad) / (x2 - x1 || 1),
                                                  (b.height - pad) / (y2 - y1 || 1))));
   view.x = b.width / 2 - ((x1 + x2) / 2) * view.k;
   view.y = b.height / 2 - ((y1 + y2) / 2) * view.k;
   applyView();
 }
+// Tidy: lay the whole bench out as the diagram it already is — sources at the
+// top, each result on the row below its parents. Nothing is removed; this is
+// arrangement, not cleanup.
+function tidy() {
+  const chips = [...world.querySelectorAll('.chip.board:not(.hidden)')];
+  if (!chips.length) return;
+  const parents = new Map(chips.map(c => [c, []]));
+  for (const l of links) {
+    if (!parents.has(l.out)) continue;
+    for (const p of [l.a, l.b]) if (p && parents.has(p)) parents.get(l.out).push(p);
+  }
+  const depth = new Map();
+  const depthOf = (c, seen = new Set()) => {
+    if (depth.has(c)) return depth.get(c);
+    if (seen.has(c)) return 0;
+    seen.add(c);
+    const ps = parents.get(c) ?? [];
+    const d = ps.length ? Math.max(...ps.map(p => depthOf(p, seen))) + 1 : 0;
+    depth.set(c, d);
+    return d;
+  };
+  chips.forEach(c => depthOf(c));
+  const rows = new Map();
+  for (const c of chips) {
+    const d = depth.get(c);
+    if (!rows.has(d)) rows.set(d, []);
+    rows.get(d).push(c);
+  }
+  const b = boardBox();
+  const [ox, oy] = toWorld(b.left + 40, b.top + 40);
+  const rowH = 78;
+  let y = oy;
+  for (const d of [...rows.keys()].sort((a, z) => a - z)) {
+    const row = rows.get(d);
+    let x = ox;
+    for (const c of row) {
+      c.style.left = x + 'px';
+      c.style.top = y + 'px';
+      x += c.offsetWidth + 16;
+    }
+    y += rowH;
+  }
+  drawLinks();
+  fitAll();
+  sfx.pick();
+}
+
 document.getElementById('zoom').addEventListener('click', ev => {
   const z = ev.target.dataset.z;
   if (z === 'in') zoomBy(1.25);
   else if (z === 'out') zoomBy(0.8);
   else if (z === 'fit') fitAll();
+  else if (z === 'tidy') tidy();
 });
 board.addEventListener('wheel', ev => {
   ev.preventDefault();
@@ -852,7 +944,7 @@ board.addEventListener('pointerup', ev => {
 function freeSpot(w, h, near) {
   const held = [...world.querySelectorAll('.chip.board')]
     .map(c => [parseFloat(c.style.left) || 0, parseFloat(c.style.top) || 0]);
-  const b = board.getBoundingClientRect();
+  const b = boardBox();
   const [cx, cy] = near ?? toWorld(b.left + b.width / 2, b.top + b.height / 2);
   let best = null, bestGap = -1;
   for (let i = 0; i < 80; i++) {
@@ -884,8 +976,11 @@ function spawn(id, x, y, near) {
                               pts.reduce((a, p) => a + p[1], 0) / pts.length + 92];
   }
   const [left, top] = x == null ? freeSpot(cw, ch, anchor) : [x - cw / 2, y - ch / 2];
-  el.style.left = left + 'px';
-  el.style.top = top + 'px';
+  const bb = boardBox();
+  const [minX, minY] = toWorld(bb.left + 8, bb.top + 8);
+  const [maxX, maxY] = toWorld(bb.left + bb.width - 8, bb.top + bb.height - 8);
+  el.style.left = Math.max(minX, Math.min(left, maxX - cw)) + 'px';
+  el.style.top  = Math.max(minY, Math.min(top,  maxY - ch)) + 'px';
   setTimeout(() => el.classList.remove('pop'), 340);
   drawLinks();
   return el;
@@ -1013,8 +1108,20 @@ function resolve(r, chips, x, y) {
       chips[1].style.top  = (parseFloat(chips[1].style.top) || 0) - uy + 'px';
     }
   }
+  // The moment two things become one should be visible. A single ring at the
+  // join, then the new chip pops in — no confetti, nothing to sit through.
+  const at = chips.filter(c => c && c.isConnected).map(chipCentre);
+  if (at.length) {
+    const cx = at.reduce((a, p) => a + p[0], 0) / at.length;
+    const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
+    const ring = document.createElement('div');
+    ring.className = 'ring';
+    ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
+    world.appendChild(ring);
+    setTimeout(() => ring.remove(), 620);
+  }
   const el = spawn(r.out, null, null, chips);
-  links.push({ a: chips[0], b: chips[1] ?? null, out: el });
+  links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
   drawLinks();
   const isNew = !found.has(r.out);
   if (isNew) {
@@ -1476,8 +1583,51 @@ document.getElementById('sheet').addEventListener('click', ev => {
 document.getElementById('count').addEventListener('click', () => showCodex());
 
 // ---------- shelf + buttons ----------
-document.getElementById('aside').addEventListener('click', ev => {
-  const c = ev.target.closest('[data-spawn]'); if (c) { benchTouched = true; spawn(c.dataset.spawn); }
+// Tapping a shelf chip drops it on the bench; dragging one carries it to a spot
+// you choose. Both work, because on a phone a tap is quicker and on a desktop a
+// drag is what the hand expects.
+let shelfDrag = null;
+document.getElementById('aside').addEventListener('pointerdown', ev => {
+  const c = ev.target.closest('[data-spawn]');
+  if (!c) return;
+  shelfDrag = { id: c.dataset.spawn, x: ev.clientX, y: ev.clientY, moved: false, ghost: null };
+});
+addEventListener('pointermove', ev => {
+  if (!shelfDrag) return;
+  if (!shelfDrag.moved && Math.hypot(ev.clientX - shelfDrag.x, ev.clientY - shelfDrag.y) < 7) return;
+  if (!shelfDrag.moved) {
+    shelfDrag.moved = true;
+    const e = byId[shelfDrag.id];
+    const g = document.createElement('div');
+    g.className = `chip board drag fam-${familyOf(e).id}`;
+    g.style.position = 'fixed'; g.style.pointerEvents = 'none'; g.style.zIndex = 400;
+    g.innerHTML = chipHTML(e);
+    document.body.appendChild(g);
+    shelfDrag.ghost = g;
+  }
+  shelfDrag.ghost.style.left = (ev.clientX - 40) + 'px';
+  shelfDrag.ghost.style.top  = (ev.clientY - 18) + 'px';
+});
+addEventListener('pointerup', ev => {
+  if (!shelfDrag) return;
+  const { id, moved, ghost } = shelfDrag; shelfDrag = null;
+  ghost?.remove();
+  benchTouched = true;
+  // Ask what is actually under the pointer rather than trusting a measured
+  // rectangle — the board reports zero size in some embedded contexts, and a
+  // drop that silently does nothing is the worst possible failure here.
+  const under = document.elementFromPoint(ev.clientX, ev.clientY);
+  const offBoard = under && under.closest && under.closest('#aside, #tray, header');
+  if (moved && !offBoard) {
+    const [wx, wy] = toWorld(ev.clientX, ev.clientY);
+    const el = spawn(id, wx, wy);
+    sfx.pick();
+    // dropped onto something? then merge, exactly as if dragged on the bench
+    const t = hit(ev.clientX, ev.clientY, el);
+    if (t) { t.dataset.verb ? applyProcess(el, t) : applyMerge(el, t); }
+  } else if (!moved) {
+    spawn(id); sfx.pick();
+  }
 });
 document.getElementById('nudge').addEventListener('click', () => {
   const ul = unlockedVerbs();
@@ -1513,8 +1663,7 @@ document.getElementById('shelfToggle').addEventListener('click', () =>
 // Lay the opening bench out on a grid sized to the board.
 let benchTouched = false;
 function layOutBench() {
-  const r = board.getBoundingClientRect();
-  if (!r.width || !r.height) return;
+  const r = boardBox();
   const bench = [...world.querySelectorAll('.chip.board')];
   const cols = r.width < 460 ? 2 : bench.length;     // two columns on a phone
   const rows = Math.ceil(bench.length / cols);
