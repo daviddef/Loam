@@ -4858,12 +4858,12 @@
   {
     "in": [
       "rutile",
-      "spark"
+      "magnesium"
     ],
     "out": "titanium",
-    "why": "Titanium will not reduce with carbon like iron does — it just forms titanium carbide, and nobody produced usable metallic titanium until 1932. A newer method reduces the solid ore directly with an electric current instead.",
-    "src": "https://en.wikipedia.org/wiki/Titanium",
-    "supported": true
+    "why": "The Kroll process: titanium tetrachloride reduced by liquid magnesium at 800–850°C. Carbon will not do it — heated with carbon, titanium just forms a carbide instead of metal.",
+    "src": "https://en.wikipedia.org/wiki/Kroll_process",
+    "verified": true
   },
   {
     "in": [
@@ -4880,10 +4880,10 @@
       "ore",
       "water"
     ],
-    "out": "uranium",
-    "why": "Most uranium mined today never comes up as rock at all — a leaching solution pumped down into the ore body dissolves the uranium in place, then is pumped back up for processing. That is in-situ leaching, now the dominant method.",
-    "src": "https://en.wikipedia.org/wiki/Uranium_mining",
-    "supported": true
+    "out": "yellowcake",
+    "why": "Yellowcake is powdered uranium concentrate from leach solutions — about half of it made by in-situ leaching, pumping solution straight through the deposit without digging it up.",
+    "src": "https://en.wikipedia.org/wiki/Yellowcake",
+    "verified": true
   },
   {
     "in": [
@@ -4903,6 +4903,76 @@
     "out": "neon",
     "why": "Neon has never been mined — it is a leftover. Liquefying air to pull out the nitrogen and oxygen everyone actually wants leaves a whisper of neon behind, and that fractional distillation is still how all of it is produced today.",
     "src": "https://en.wikipedia.org/wiki/Neon",
+    "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "sea"
+    ],
+    "out": "magnesium",
+    "why": "Magnesium is the third most abundant element dissolved in seawater. Add calcium hydroxide — lime, from limestone — and the magnesium precipitates out as hydroxide, ready to be reduced.",
+    "src": "https://en.wikipedia.org/wiki/Magnesium",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "limestone"
+    ],
+    "out": "calcium",
+    "why": "In the US and Canada calcium is produced by reducing lime with aluminium at high temperatures — the same aluminothermic trick that frees chromium.",
+    "src": "https://en.wikipedia.org/wiki/Calcium",
+    "verified": true
+  },
+  {
+    "in": [
+      "salt",
+      "spark"
+    ],
+    "out": "sodium",
+    "why": "Sodium is produced commercially by electrolysis of molten sodium chloride — ordinary salt, melted and split by current, in a process patented in 1924.",
+    "src": "https://en.wikipedia.org/wiki/Sodium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lye",
+      "spark"
+    ],
+    "out": "potassium",
+    "why": "Humphry Davy first isolated potassium in 1807 by electrolysis of molten caustic potash — exactly the lye you get from wood ash, split apart by current.",
+    "src": "https://en.wikipedia.org/wiki/Potassium",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium",
+      "yellowcake"
+    ],
+    "out": "uranium",
+    "why": "In 1841 Eugène-Melchior Péligot isolated the first sample of uranium metal by heating uranium tetrachloride with potassium — fifty-two years after the element was first found in its ore.",
+    "src": "https://en.wikipedia.org/wiki/Uranium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "rutile"
+    ],
+    "out": "titanium",
+    "why": "The original 1932 route: William Justin Kroll produced titanium metal by reducing titanium tetrachloride with calcium. It was the first time anyone made the metal outside a laboratory.",
+    "src": "https://en.wikipedia.org/wiki/Titanium",
+    "verified": true
+  },
+  {
+    "in": [
+      "rutile",
+      "sodium"
+    ],
+    "out": "titanium",
+    "why": "Eight years after doing it with calcium, Kroll refined the process with magnesium and with sodium — the version that took his name and still makes most of the world's titanium.",
+    "src": "https://en.wikipedia.org/wiki/Titanium",
     "verified": true
   }
 ]

@@ -4,44 +4,104 @@
     "botulism": {
       "label": "Preserving is not a recipe you can eyeball",
       "note": "Fermenting and curing at home is real food science and it has a real failure mode. Clostridium botulinum grows in exactly the conditions these methods create — low oxygen, low acid, room temperature — and the toxin has no taste or smell. Salt concentration, acidity and temperature are not details; they are the whole safety margin. Follow a tested method from a food-safety authority, not a game.",
-      "ids": ["brine", "pickle", "sauerkraut", "kimchi", "salted_cabbage", "salt_fish",
-              "cured_meat", "bacon", "aspic", "smoked_fish", "sourdough_starter"]
+      "ids": [
+        "brine",
+        "pickle",
+        "sauerkraut",
+        "kimchi",
+        "salted_cabbage",
+        "salt_fish",
+        "cured_meat",
+        "bacon",
+        "aspic",
+        "smoked_fish",
+        "sourdough_starter"
+      ]
     },
     "caustic": {
       "label": "Lye burns on contact",
       "note": "Sodium hydroxide is strongly caustic. It damages skin and eyes immediately and generates heat when it meets water. Historic soap-making is a good story and a bad first experiment.",
-      "ids": ["lye", "soap"]
+      "ids": [
+        "lye",
+        "soap"
+      ]
     },
     "fire": {
       "label": "Fire and hot fat",
       "note": "Cooking oil reaches temperatures that ignite, and water thrown into it will throw burning oil across a room. Never leave hot fat unattended, and never put water on an oil fire.",
-      "ids": ["fire", "spark", "charcoal", "candle", "fried_fish", "battered_fish",
-              "chips", "fish_and_chips", "caramel", "caramel_sauce"]
+      "ids": [
+        "fire",
+        "spark",
+        "charcoal",
+        "candle",
+        "fried_fish",
+        "battered_fish",
+        "chips",
+        "fish_and_chips",
+        "caramel",
+        "caramel_sauce"
+      ]
     },
     "raw": {
       "label": "Raw egg and unpasteurised milk",
       "note": "Both can carry salmonella or listeria. The risk is small for most people and much larger if you are pregnant, very young, elderly, or immunocompromised.",
-      "ids": ["mayonnaise", "egg_mayo", "milk", "cream", "curd", "blue_cheese"]
+      "ids": [
+        "mayonnaise",
+        "egg_mayo",
+        "milk",
+        "cream",
+        "curd",
+        "blue_cheese"
+      ]
     },
     "alcohol": {
       "label": "Alcohol",
       "note": "Fermentation is how alcohol is made, and this part of the game explains that chemistry. It is not a brewing guide, and the drinking age where you live applies to you and not to the game.",
-      "ids": ["beer", "wine", "cider", "mead", "aged_wine", "mead_must", "wort", "malt", "vinegar"]
+      "ids": [
+        "beer",
+        "wine",
+        "cider",
+        "mead",
+        "aged_wine",
+        "mead_must",
+        "wort",
+        "malt",
+        "vinegar"
+      ]
     },
     "mercury_toxicity": {
       "label": "Mercury is toxic, in the ore and in the metal",
       "note": "Mercury and its compounds are toxic to the nervous system, immune system and kidneys, and both mining cinnabar and refining mercury from it are historic causes of mercury poisoning. This is chemistry to understand, not something to try at home.",
-      "ids": ["cinnabar", "mercury"]
+      "ids": [
+        "cinnabar",
+        "mercury"
+      ]
     },
     "uranium_toxicity": {
       "label": "Uranium is a heavy-metal poison first",
       "note": "The main risk of exposure is chemical poisoning by uranium oxide rather than radioactivity — incorporated uranium accumulates in bone, liver, kidney and reproductive tissue. An excess risk of lung cancer has been documented among Navajo uranium miners specifically and linked to their occupation.",
-      "ids": ["ore", "uranium"]
+      "ids": [
+        "ore",
+        "uranium",
+        "yellowcake"
+      ]
+    },
+    "reactive_metal": {
+      "label": "These metals set fire to water",
+      "note": "Sodium forms flammable hydrogen and caustic sodium hydroxide on contact with water, and potassium reacts hard enough to ignite that hydrogen itself. Magnesium burns at around 3,100°C with a brilliant white light carrying strong ultraviolet. This is real chemistry, and none of it is a demonstration to improvise.",
+      "ids": [
+        "sodium",
+        "potassium",
+        "magnesium",
+        "calcium"
+      ]
     },
     "lead_toxicity": {
       "label": "Lead is a neurotoxin",
       "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
-      "ids": ["lead"]
+      "ids": [
+        "lead"
+      ]
     }
   }
 }

@@ -341,6 +341,35 @@ def('uranium', () => [                                      // heavy and blocky,
   P('M16 22 L44 22 L48 34 L38 48 L20 46 L14 32 Z', 'bs'), S('M20 26 L26 20', 'hi', 1.8), C(34, 36, 2.4, 'gh'),
 ]);
 
+/* the reagents — reactive metals, drawn as what they are used AS: a ribbon,
+   a turning, a cut bar kept under oil. Never a nugget; you never find these
+   lying about, which is the whole reason they had to be made. */
+def('magnesium', () => [                                    // the ribbon, and the light it makes
+  S('M16 44 Q24 34 22 26 Q20 18 30 14', 'bs', 4),
+  ...[0, 72, 144, 216, 288].map(a =>
+    S(`M30 14 L${n(30 + 15 * Math.cos((a - 90) * Math.PI / 180))} ${n(14 + 15 * Math.sin((a - 90) * Math.PI / 180))}`, 'hi', 1.8)),
+  C(30, 14, 5, 'hi'),
+]);
+def('calcium', () => [                                      // a turned bar, softly cut
+  P('M20 18 L40 18 L40 44 L20 44 Z', 'bs'),
+  S('M20 18 L40 18', 'hi', 2.6), S('M24 24 L24 40 M30 24 L30 40', 'lo', 1.2),
+]);
+def('sodium', () => [                                       // a cut cube kept under oil
+  P('M18 22 L42 22 L42 44 L18 44 Z', 'lo'),
+  P('M18 22 L42 22 L38 30 L22 30 Z', 'bs'),
+  S('M22 34 L34 34', 'hi', 1.6),
+]);
+def('potassium', () => [                                    // same family, but the lilac flame
+  P('M20 26 L40 26 L40 46 L20 46 Z', 'lo'),
+  P('M20 26 L40 26 L36 33 L24 33 Z', 'bs'),
+  P('M30 6 Q35 14 33 20 A4 4 0 0 1 27 20 Q25 14 30 6 Z', 'hi'),
+]);
+def('yellowcake', () => [                                   // a drum of powder, not a metal
+  P('M16 24 Q30 20 44 24 L44 46 Q30 50 16 46 Z', 'bs'),
+  E(30, 24, 14, 4.5, 'hi'),
+  ...granules('lo', 7, 907, [20, 30, 40, 42]),
+]);
+
 /* water ────────────────────────────────────────────────────────────────── */
 def('sea',    () => [wave('lo', 46), wave('bs', 37), wave('hi', 28),
                      ...granules('hi', 5, 13, [14, 20, 46, 26])]);   // salt, above the water
