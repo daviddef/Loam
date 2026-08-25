@@ -1223,8 +1223,12 @@ function applyView() {
 // the viewport, then to a sane default, so layout is never nonsense.
 function boardBox() {
   const b = board.getBoundingClientRect();
-  const w = b.width  || (window.innerWidth  - 240) || 900;
-  const h = b.height || (window.innerHeight - 120) || 600;
+  // The fallbacks subtract the sidebar and the tool tray from the viewport.
+  // If the viewport itself reads as zero — a tab that has not been sized yet —
+  // that subtraction produces a NEGATIVE width, which is truthy, so it was
+  // used, and every position derived from it collapsed to the origin. Clamp.
+  const w = Math.max(320, b.width  || (window.innerWidth  - 240) || 900);
+  const h = Math.max(320, b.height || (window.innerHeight - 120) || 600);
   return { left: b.left, top: b.top, width: w, height: h };
 }
 function toWorld(sx, sy) {
@@ -1391,7 +1395,7 @@ function zoomBy(f, cx, cy) {
   const b = boardBox();
   const px = cx == null ? b.width / 2 : cx - b.left;
   const py = cy == null ? b.height / 2 : cy - b.top;
-  const k2 = Math.max(0.25, Math.min(2.4, view.k * f));
+  const k2 = Math.max(0.06, Math.min(2.4, view.k * f));
   view.x = px - (px - view.x) * (k2 / view.k);
   view.y = py - (py - view.y) * (k2 / view.k);
   view.k = k2;
@@ -1400,14 +1404,18 @@ function zoomBy(f, cx, cy) {
 function fitAll() {
   const chips = [...world.querySelectorAll('.chip.board')];
   if (!chips.length) return;
+  const [cw, ch] = cardSize();
   let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
   for (const c of chips) {
     const l = parseFloat(c.style.left) || 0, t = parseFloat(c.style.top) || 0;
     x1 = Math.min(x1, l); y1 = Math.min(y1, t);
-    x2 = Math.max(x2, l + c.offsetWidth); y2 = Math.max(y2, t + c.offsetHeight);
+    x2 = Math.max(x2, l + cw); y2 = Math.max(y2, t + ch);
   }
   const b = boardBox(), pad = 60;
-  view.k = Math.max(0.25, Math.min(1.4, Math.min((b.width - pad) / (x2 - x1 || 1),
+  // The floor used to be 0.25, which is not far enough out to see a full bench.
+  // A button called "fit everything" that shows an empty board is worse than
+  // no button.
+  view.k = Math.max(0.06, Math.min(1.4, Math.min((b.width - pad) / (x2 - x1 || 1),
                                                  (b.height - pad) / (y2 - y1 || 1))));
   view.x = b.width / 2 - ((x1 + x2) / 2) * view.k;
   view.y = b.height / 2 - ((y1 + y2) / 2) * view.k;
@@ -1512,22 +1520,84 @@ board.addEventListener('pointerup', ev => {
 
 // Chips that land on top of each other cannot be dragged apart, so placement
 // looks for space rather than trusting a random point.
-function freeSpot(w, h, near) {
-  const held = [...world.querySelectorAll('.chip.board')]
-    .map(c => [parseFloat(c.style.left) || 0, parseFloat(c.style.top) || 0]);
-  const b = boardBox();
-  const [cx, cy] = near ?? toWorld(b.left + b.width / 2, b.top + b.height / 2);
-  let best = null, bestGap = -1;
-  for (let i = 0; i < 80; i++) {
-    const spread = 90 + i * 9;
-    const x = cx + (Math.random() - .5) * spread * 2;
-    const y = cy + (Math.random() - .5) * spread * 1.5;
-    let gap = Infinity;
-    for (const [l, t] of held) gap = Math.min(gap, Math.hypot(l - x, t - y));
-    if (gap > w + 18) return [x, y];
-    if (gap > bestGap) { bestGap = gap; best = [x, y]; }
+/**
+ * Somewhere to put a new card.
+ *
+ * This used to measure the distance between two top-left corners and accept
+ * anything further apart than the card's *width*. That worked while a chip was
+ * a wide flat pill. A specimen card is taller than it is wide, so the test
+ * passed for cards that visibly overlapped, and every new card landed in the
+ * same horizontal band. Test the actual rectangles instead.
+ */
+/**
+ * How big a card is.
+ *
+ * Do not measure the card you are about to place. A card read back before its
+ * stylesheet has applied reports its min-content width — 22px, not 94 — and 22
+ * is a plausible-looking number, so it sails past any "is this zero" guard and
+ * lays the entire bench out in a single 36px-pitch row. This file has now been
+ * bitten three times by trusting a measurement taken too early (boardBox
+ * returning 0x0, offsetWidth returning 0, and offsetWidth returning 22).
+ *
+ * A specimen card is a fixed size by design, so measure one that has actually
+ * been on screen, once, and keep the answer.
+ */
+const CARD_FALLBACK = [94, 124];
+let cardSizeCache = null;
+function cardSize() {
+  if (cardSizeCache) return cardSizeCache;
+  for (const c of world.querySelectorAll('.chip.board')) {
+    if (c.offsetWidth >= 60 && c.offsetHeight >= 80) {
+      return (cardSizeCache = [c.offsetWidth, c.offsetHeight]);
+    }
   }
-  return best;
+  return CARD_FALLBACK;                       // not cached: try again next time
+}
+
+function freeSpot(w, h, near) {
+  const PAD = 14;
+  [w, h] = cardSize();
+  // Every card is the same size, so do not ask each one — see cardSize().
+  const held = [...world.querySelectorAll('.chip.board')].map(c => ({
+    x: parseFloat(c.style.left) || 0, y: parseFloat(c.style.top) || 0, w, h,
+  }));
+  const clear = (x, y) => held.every(r =>
+    x + w + PAD <= r.x || r.x + r.w + PAD <= x ||
+    y + h + PAD <= r.y || r.y + r.h + PAD <= y);
+
+  const b = boardBox();
+  // Anchor to the bench itself, not to the viewport. Anchoring to the viewport
+  // meant that panning between placements — which ensureVisible does — moved
+  // the origin each time, and the bench marched off across the world instead
+  // of growing as one cluster.
+  let origin = near;
+  if (!origin) {
+    if (held.length) {
+      origin = [held.reduce((a, r) => a + r.x + r.w / 2, 0) / held.length,
+                held.reduce((a, r) => a + r.y + r.h / 2, 0) / held.length];
+    } else {
+      origin = toWorld(b.left + b.width / 2, b.top + b.height / 2);
+    }
+  }
+  const [cx, cy] = origin;
+
+  // Spiral outwards from where it should be, in steps the size of a card, so
+  // the bench fills like a shelf rather than a heap.
+  const stepX = w + PAD, stepY = h + PAD;
+  for (let ring = 0; ring < 14; ring++) {
+    const spots = [];
+    for (let dx = -ring; dx <= ring; dx++) {
+      for (let dy = -ring; dy <= ring; dy++) {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) !== ring) continue;   // ring edge only
+        spots.push([cx + dx * stepX - w / 2, cy + dy * stepY - h / 2]);
+      }
+    }
+    // Nearest-first inside the ring keeps results close to their parents.
+    spots.sort((a, p) => Math.hypot(a[0] - cx, a[1] - cy) - Math.hypot(p[0] - cx, p[1] - cy));
+    for (const [x, y] of spots) if (clear(x, y)) return [x, y];
+  }
+  // Everything is full. Put it down anyway rather than dropping the discovery.
+  return [cx - w / 2 + (Math.random() - .5) * 40, cy - h / 2 + (Math.random() - .5) * 40];
 }
 
 const MAX_CHIPS = 140;
@@ -1545,22 +1615,58 @@ function spawn(id, x, y, near) {
   el.dataset.id = id;
   el.innerHTML = chipHTML(e);
   world.appendChild(el);
-  const cw = el.offsetWidth, ch = el.offsetHeight;
+  const [cw, ch] = cardSize();
   let anchor = null;
   if (near && near.length) {                          // sit the result near its parents
     const pts = near.filter(n => n && n.isConnected).map(chipCentre);
     if (pts.length) anchor = [pts.reduce((a, p) => a + p[0], 0) / pts.length,
-                              pts.reduce((a, p) => a + p[1], 0) / pts.length + 92];
+                              pts.reduce((a, p) => a + p[1], 0) / pts.length + ch + 22];
   }
   const [left, top] = x == null ? freeSpot(cw, ch, anchor) : [x - cw / 2, y - ch / 2];
   const bb = boardBox();
   const [minX, minY] = toWorld(bb.left + 8, bb.top + 8);
   const [maxX, maxY] = toWorld(bb.left + bb.width - 8, bb.top + bb.height - 8);
-  el.style.left = Math.max(minX, Math.min(left, maxX - cw)) + 'px';
-  el.style.top  = Math.max(minY, Math.min(top,  maxY - ch)) + 'px';
+
+  // A card the player put down stays where they put it, inside the view. A card
+  // the game placed is not clamped at all: freeSpot has already found it a
+  // clear spot near where it belongs, and the bench is a canvas you pan rather
+  // than a screen you fill.
+  //
+  // Clamping the automatic case was actively harmful. Once the first screenful
+  // was used up, every new card was pinned to the same edge, ensureVisible
+  // panned to reveal it, which moved the edge, which pinned the next card six
+  // pixels along — ninety-four cards in a single row, each overlapping its
+  // neighbour, and the fit button showing an empty board.
+  if (x == null) {
+    el.style.left = left + 'px';
+    el.style.top  = top + 'px';
+  } else {
+    el.style.left = Math.max(minX, Math.min(left, maxX - cw)) + 'px';
+    el.style.top  = Math.max(minY, Math.min(top,  maxY - ch)) + 'px';
+  }
   setTimeout(() => el.classList.remove('pop'), 340);
+  if (x == null) ensureVisible(el);
   drawLinks();
   return el;
+}
+
+/**
+ * Bring a card into view if it landed off the edge. Pans the smallest distance
+ * that works rather than centring on it, so the rest of the bench does not jump
+ * out from under the player's hand.
+ */
+function ensureVisible(el) {
+  const b = boardBox(), r = el.getBoundingClientRect();
+  const m = 16;
+  let dx = 0, dy = 0;
+  if (r.left < b.left + m) dx = b.left + m - r.left;
+  else if (r.right > b.left + b.width - m) dx = b.left + b.width - m - r.right;
+  if (r.top < b.top + m) dy = b.top + m - r.top;
+  else if (r.bottom > b.top + b.height - m) dy = b.top + b.height - m - r.bottom;
+  if (!dx && !dy) return;
+  view.x += dx; view.y += dy;
+  applyView();
+  drawLinks();
 }
 
 // Discoveries must never block the board. The card slides in beside the bench,
@@ -2584,16 +2690,32 @@ document.getElementById('shelfToggle').addEventListener('click', () =>
 
 // Lay the opening bench out on a grid sized to the board.
 let benchTouched = false;
+/**
+ * The opening bench: the things you start with, laid out as a grid.
+ *
+ * Spacing is derived from the card, not from a fraction of the board. Spacing
+ * by fraction meant that on a narrow board the four starting cards were placed
+ * 74px apart vertically — which is less than a card is tall, so they
+ * overlapped.
+ */
 function layOutBench() {
   const r = boardBox();
+  const [cw, ch] = cardSize();
+  const GAP = 26;
   const bench = [...world.querySelectorAll('.chip.board')];
-  const cols = r.width < 460 ? 2 : bench.length;     // two columns on a phone
+  if (!bench.length) return;
+
+  const fit = Math.max(1, Math.floor((r.width - 24) / (cw + GAP)));
+  const cols = Math.min(bench.length, fit);
   const rows = Math.ceil(bench.length / cols);
+  const gridW = cols * cw + (cols - 1) * GAP;
+  const gridH = rows * ch + (rows - 1) * GAP;
+  const x0 = Math.max(12, (r.width - gridW) / 2);
+  const y0 = Math.max(12, (r.height - gridH) / 2);
+
   bench.forEach((el, i) => {
-    const cx = (i % cols + .5) / cols;
-    const cy = (Math.floor(i / cols) + .5) / rows;
-    el.style.left = Math.max(6, Math.min(r.width  * (.12 + cx * .76) - el.offsetWidth  / 2, r.width  - el.offsetWidth  - 6)) + 'px';
-    el.style.top  = Math.max(6, Math.min(r.height * (.26 + cy * .46) - el.offsetHeight / 2, r.height - el.offsetHeight - 6)) + 'px';
+    el.style.left = (x0 + (i % cols) * (cw + GAP)) + 'px';
+    el.style.top  = (y0 + Math.floor(i / cols) * (ch + GAP)) + 'px';
   });
 }
 
@@ -2607,6 +2729,38 @@ new ResizeObserver(() => {
   const b = board.getBoundingClientRect();
   drawLinks();
 }).observe(board);
+
+/**
+ * Layout self-check.
+ *
+ * Cards overlapping is not a bug you can see reliably — at a glance a crowded
+ * bench looks like a crowded bench. Every placement bug in this file was found
+ * by counting, so the count is a function you can call:
+ *
+ *     selfTest()        // in the console, or from a test harness
+ *
+ * It spawns a bench, counts overlapping pairs, and puts everything back.
+ */
+function selfTest(n = 80) {
+  const before = new Set([...world.querySelectorAll('.chip.board')].map(c => c.dataset.id));
+  elements.slice(0, n).forEach(e => { found.add(e.id); spawn(e.id); });
+  const cards = [...world.querySelectorAll('.chip.board')];
+  const [cw, ch] = cardSize();
+  const at = cards.map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
+  let overlaps = 0, offGrid = 0;
+  for (let i = 0; i < at.length; i++) {
+    if (!isFinite(at[i][0]) || !isFinite(at[i][1])) offGrid++;
+    for (let j = i + 1; j < at.length; j++) {
+      if (Math.abs(at[i][0] - at[j][0]) < cw && Math.abs(at[i][1] - at[j][1]) < ch) overlaps++;
+    }
+  }
+  cards.forEach(c => { if (!before.has(c.dataset.id)) c.remove(); });
+  drawLinks();
+  const result = { cards: cards.length, overlaps, offGrid, cardSize: [cw, ch], pass: !overlaps && !offGrid };
+  console.log(result.pass ? '✓ layout ok' : '✗ layout broken', result);
+  return result;
+}
+window.selfTest = selfTest;
 
 document.getElementById('introGo').addEventListener('click', () =>
   document.getElementById('intro').classList.add('gone'));
