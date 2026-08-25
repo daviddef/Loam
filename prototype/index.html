@@ -265,6 +265,7 @@
   #introSay{
     position:absolute;transform:translateX(-50%);
     margin:0;padding:7px 14px;white-space:nowrap;
+    max-width:calc(100vw - 28px);
     font:400 13px/1.35 var(--face-name);color:var(--ink);
     background:color-mix(in srgb,var(--card) 92%,transparent);
     border:1px solid var(--line);border-radius:3px;
@@ -871,7 +872,16 @@
     #tray{gap:5px;padding:8px 5px}
     .verb{width:calc((100vw - 46px)/6);min-width:0;font-size:9.5px;padding:6px 2px}
     .verb .e{font-size:18px}
+    /* A 94px card is a quarter of the width of a 375px phone. Smaller here, and
+       cardSize() measures a real one, so placement follows without being told. */
+    .chip.board{--cw:80px}
+    .chip.board .art{width:50px;height:50px}
+    .chip.board .n{font-size:9px}
+    .chip.board .ac{font-size:7px;letter-spacing:.04em}
     #card{left:8px;right:8px;bottom:74px;width:auto}
+    /* The discovery card spans the width on a phone, so the zoom stack has to
+       get out of its way rather than sit on top of it. */
+    body:has(#card.on) #zoom{bottom:auto;top:58px}
     #sheet{padding:10px}
     .sheetbox{max-height:92vh}
   }
@@ -901,6 +911,12 @@
   .ladder .chip.lad .rl{width:16px;margin:3px auto 2px}
   .ladder .chip.lad .ac{display:none}
   .ladder .shelf{gap:4px}
+  /* On a phone the label is wider than the gap between two cards, so let it
+     wrap and centre rather than run off the edge. */
+  @media(max-width:520px){
+    #introSay{white-space:normal;text-align:center;width:min(260px,calc(100vw - 28px));
+              left:50%!important}
+  }
   @media(max-width:400px){ h1{display:none} }
   @media(min-width:721px){ #shelfToggle{display:none} }
   /* A destructive control should not look like the others. */
@@ -1568,7 +1584,31 @@ function refreshFolds() {
     const n = c.classList.contains('folded') ? ancestorsOf(c).size : 0;
     c.dataset.fold = n ? `${n}` : '';
   }
+  unstack();
   drawLinks();
+}
+
+/**
+ * Never reveal two cards on the same spot.
+ *
+ * A card that is folded away is display:none, so nothing stops it sharing a
+ * position with another folded card — and nothing notices until the player
+ * unfolds the branch and finds one card sitting exactly on top of another.
+ * Whatever put them there, the fix belongs here: when a card becomes visible,
+ * it gets a clear spot if it does not have one.
+ */
+function unstack() {
+  const [cw, ch] = cardSize();
+  const seenAt = [];
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    let x = parseFloat(c.style.left) || 0, y = parseFloat(c.style.top) || 0;
+    const clash = seenAt.some(p => Math.abs(p[0] - x) < cw * 0.5 && Math.abs(p[1] - y) < ch * 0.5);
+    if (clash) {
+      const spot = freeSpot(cw, ch, [x + cw / 2, y + ch / 2]);
+      if (spot) { x = spot[0]; y = spot[1]; c.style.left = x + 'px'; c.style.top = y + 'px'; }
+    }
+    seenAt.push([x, y]);
+  }
 }
 let lastChipTap = { el: null, t: 0 };
 function chipTap(chip) {
@@ -3063,6 +3103,7 @@ function layOutBench() {
 new ResizeObserver(() => {
   // A restored bench already has positions the player chose. Only the opening
   // four get laid out, and only until something is moved.
+  cardSizeCache = null;                  // the card is a different size on a phone
   if (!benchTouched && !restoredBench) { layOutBench(); drawIntro(); return; }
   const b = board.getBoundingClientRect();
   drawLinks();
@@ -3194,9 +3235,11 @@ function drawIntro() {
 
   introSay.innerHTML = `<b>Drag one of these onto another.</b>` +
     `<i>four things · everything else is made from them</i>`;
-  // Sit the label on the arc, not in the middle of the board.
+  // Below both cards, never on top of one. Sitting it on the arc's midpoint put
+  // it straight over the card it was pointing at.
+  const lowest = Math.max(p1[1], p2[1]) + (ch * view.k) / 2 + 14;
   introSay.style.left = Math.max(90, Math.min(cx, box.width - 90)) + 'px';
-  introSay.style.top  = Math.max(8, Math.min(cy + bow * 0.4, box.height - 64)) + 'px';
+  introSay.style.top  = Math.max(8, Math.min(lowest, box.height - 74)) + 'px';
 }
 
 function endIntro() {
