@@ -193,6 +193,7 @@ const MOLECULAR = new Set([
   'dipeptide', 'polypeptide', 'protein', 'disulfide', 'atp', 'nucleotide',
   'dna', 'membrane', 'enzyme', 'denatured_protein', 'gelatin', 'keratin',
   'collagen', 'alpha_helix', 'beta_sheet', 'ribosome', 'messenger_rna',
+  'hydrogen_gas', 'oxygen_gas',
 ]);
 
 const TAG_CATEGORY = {
@@ -288,10 +289,18 @@ def('river',  () => [S('M10 50 Q22 34 30 30 Q38 26 50 12', 'lo', 8),
 def('steam',  () => [S('M22 46 Q14 36 22 28 Q30 20 24 12', 'bs', 3),
                      S('M34 48 Q26 38 34 30 Q42 22 36 14', 'hi', 3),
                      S('M44 46 Q38 38 44 32', 'bs', 2.4)]);
-def('oxygen',   () => [...double([20, 30], [40, 30], 'ik'),          // O=O, a double bond
-                       C(20, 30, 8.5, CPK.O), C(40, 30, 8.5, CPK.O)]);
-def('hydrogen', () => [S('M25 30 L35 30', 'ik', 2.6),                // H-H, one short bond
-                       C(25, 30, 5.5, CPK.H), C(35, 30, 5.5, CPK.H)]);
+// The atom and the gas are drawn in the same language as everywhere else in
+// the molecular tier: a lone sphere is a lone atom; two bonded spheres are the
+// molecule. Splitting hydrogen and oxygen into an atom tier and a gas tier
+// (25 Aug) is what makes that distinction actually mean something here — the
+// atom used to BE this double/single-bond drawing under the atom's name,
+// which drew a molecule and called it an element.
+def('oxygen',   () => [C(30, 30, 16, CPK.O), C(25, 25, 5.5, '#FF8A6E')]);   // a lone O atom
+def('hydrogen', () => [C(30, 30, 13, CPK.H), C(26, 26, 4.4, '#DADADA')]);   // a lone H atom
+def('oxygen_gas', () => [...double([20, 30], [40, 30], 'ik'),        // O=O, a double bond
+                         C(20, 30, 8.5, CPK.O), C(40, 30, 8.5, CPK.O)]);
+def('hydrogen_gas', () => [S('M25 30 L35 30', 'ik', 2.6),            // H-H, one short bond
+                           C(25, 30, 5.5, CPK.H), C(35, 30, 5.5, CPK.H)]);
 def('carbon_dioxide', () => [S('M14 30 L46 30', 'ik', 3),
                              C(14, 30, 7.5, CPK.O), C(46, 30, 7.5, CPK.O), C(30, 30, 9, CPK.C)]);
 

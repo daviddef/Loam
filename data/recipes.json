@@ -3886,7 +3886,7 @@
       "leaf",
       "water"
     ],
-    "out": "oxygen",
+    "out": "oxygen_gas",
     "why": "Nearly all the oxygen in the atmosphere came out of split water, not out of carbon dioxide. Photosystem II tears four electrons off two water molecules and lets the oxygen go as waste.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Photosystem_II"
@@ -3896,7 +3896,7 @@
       "steam",
       "charcoal"
     ],
-    "out": "hydrogen",
+    "out": "hydrogen_gas",
     "why": "Steam over red-hot carbon: H₂O + C → H₂ + CO. It absorbs heat as it runs, so the fuel has to be reheated constantly to keep it going.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Water_gas"
@@ -3953,8 +3953,8 @@
   },
   {
     "in": [
-      "hydrogen",
-      "oxygen"
+      "hydrogen_gas",
+      "oxygen_gas"
     ],
     "out": "water",
     "why": "Two volumes of hydrogen to one of oxygen, and the energy released is enough to lift a rocket. The product is water and nothing else.",
@@ -3964,7 +3964,7 @@
   {
     "in": [
       "carbon",
-      "oxygen"
+      "oxygen_gas"
     ],
     "out": "carbon_dioxide",
     "why": "What every fire and every breath produces, and what every leaf is looking for.",
@@ -4329,7 +4329,7 @@
       "meadow",
       "sun"
     ],
-    "out": "oxygen",
+    "out": "oxygen_gas",
     "supported": true,
     "why": "A hectare of growing plants releases several tonnes of oxygen a year, all of it split out of water.",
     "src": "https://en.wikipedia.org/wiki/Photosynthesis"
@@ -4339,7 +4339,7 @@
       "steam",
       "carbon"
     ],
-    "out": "hydrogen",
+    "out": "hydrogen_gas",
     "supported": true,
     "why": "The same water gas reaction, run on pure carbon rather than charcoal. Most industrial hydrogen still comes from steam and a fossil carbon source.",
     "src": "https://en.wikipedia.org/wiki/Steam_reforming"
@@ -4478,7 +4478,7 @@
   {
     "in": [
       "cysteine",
-      "oxygen"
+      "oxygen_gas"
     ],
     "out": "disulfide",
     "supported": true,
@@ -4508,7 +4508,7 @@
   {
     "in": [
       "glucose",
-      "oxygen"
+      "oxygen_gas"
     ],
     "out": "atp",
     "supported": true,
@@ -4654,5 +4654,45 @@
     "why": "Resistance is not something we invented. Soil fungi and bacteria have been chemically fighting each other for a very long time, and the genes that survive that fight are already in the ground.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Antimicrobial_resistance"
+  },
+  {
+    "in": [
+      "hydrogen",
+      "hydrogen"
+    ],
+    "out": "hydrogen_gas",
+    "why": "Two atoms sharing a single pair of electrons is a covalent bond, and it is a lower-energy state than either atom sitting alone — which is why free hydrogen atoms almost never last. H2, the gas.",
+    "src": "https://en.wikipedia.org/wiki/Covalent_bond",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen",
+      "oxygen"
+    ],
+    "out": "oxygen_gas",
+    "why": "The same sharing, twice over — two shared pairs, a double bond. O2 is the form oxygen actually takes at ordinary temperature, not the lone atom.",
+    "src": "https://en.wikipedia.org/wiki/Covalent_bond",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "spark"
+    ],
+    "out": "hydrogen",
+    "why": "An electric arc splits H2 back into single atoms. What actually welds is what happens next — those atoms recombine on the metal, releasing enough heat to reach 3,400 to 4,000 degrees C.",
+    "src": "https://en.wikipedia.org/wiki/Atomic_hydrogen_welding",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "sun"
+    ],
+    "out": "oxygen",
+    "why": "Above the stratosphere there is nothing to shield O2 from the sun's ultraviolet, and it gets torn apart faster than it can recombine — atomic oxygen makes up 96% of the oxygen in low Earth orbit.",
+    "src": "https://en.wikipedia.org/wiki/Allotropes_of_oxygen",
+    "verified": true
   }
 ]

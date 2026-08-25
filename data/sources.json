@@ -225,8 +225,6 @@
     "meat|cut": "Bone",
     "bone|heat": "Phosphorus",
     "steam+stone": "Sulfur",
-    "hydrogen+oxygen": "Water (data page)",
-    "carbon+oxygen": "Carbon dioxide",
     "carbon_dioxide+leaf": "Photosynthesis",
     "glucose+glucose": "Starch",
     "glucose+nitrogen": "Amino acid",
@@ -276,10 +274,8 @@
     "polypeptide|cut": "Protease",
     "dipeptide+dipeptide": "Peptide",
     "disulfide+polypeptide": "Protein",
-    "cysteine+oxygen": "Disulfide",
     "protein+sulfur": "Keratin",
     "protein+salt": "Denaturation (biochemistry)",
-    "glucose+oxygen": "Cellular respiration",
     "fish|cut": "Stock (food)",
     "polypeptide+water": "Protein folding",
     "polypeptide+polypeptide": "Beta sheet",
@@ -310,6 +306,14 @@
     "goat+grass": "Goat milk",
     "curd+pizza_base": "Mozzarella",
     "flatbread+meat": "Wrap (food)",
-    "ash+bone": "Bone ash"
+    "ash+bone": "Bone ash",
+    "hydrogen_gas+oxygen_gas": "Water (data page)",
+    "carbon+oxygen_gas": "Carbon dioxide",
+    "cysteine+oxygen_gas": "Disulfide",
+    "glucose+oxygen_gas": "Cellular respiration",
+    "hydrogen+hydrogen": "Covalent bond",
+    "oxygen+oxygen": "Covalent bond",
+    "hydrogen_gas+spark": "Atomic hydrogen welding",
+    "oxygen_gas+sun": "Atomic oxygen"
   }
 }

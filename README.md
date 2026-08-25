@@ -6,8 +6,8 @@ A combination game where **every recipe carries a source you can open**, and the
 game tells you which of its answers are science and which are stories.
 
 The claim is checkability, not infallibility — and that distinction is the whole
-point. Auditing 95 of our own confident, fluent, well-written claims against
-primary reporting found **48 of them wrong** — a 51% first-pass error rate, and
+point. Auditing 99 of our own confident, fluent, well-written claims against
+primary reporting found **48 of them wrong** — a 48% first-pass error rate, and
 it has gone *up* as the sample grew. That is the strongest argument this project
 has, and it is an argument against trusting anyone's prose, including ours. So every line is sourced, the sources are
 machine-verified against live articles, and audited claims are marked as such.
@@ -26,17 +26,17 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner — soil, fire, farming, fermentation, cooking |
-| Elements | **231** (222 workshop · 9 folklore) |
-| Recipes | **473** (352 merges · 121 verb processes) |
+| Elements | **233** (224 workshop · 9 folklore) |
+| Recipes | **477** (356 merges · 121 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **231 / 231** from the four starters |
+| Reachable | **233 / 233** from the four starters |
 | Deepest chain | 21 crafts |
-| Sourced | **473 / 473** recipes, every URL machine-verified |
-| Audited | **95** of 473 claims checked against primary reporting — **48 were wrong** |
+| Sourced | **477 / 477** recipes, every URL machine-verified |
+| Audited | **99** of 477 claims checked against primary reporting — **48 were wrong** |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **2** geographic, reviewed |
 | Routes per element | **2.05** · 0 needing a second · 1 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **240**, none of them emoji |
+| Drawings | **242**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
@@ -89,7 +89,7 @@ footprint, so a rock and a cake occupy the same frame and are told apart by what
 is *in* it. Everything below the drawing is rendered from data already in the
 repo, so the cost of a new item is one shape.
 
-**The 240 drawings** are built from a kit of about forty parts on a 60x60 grid —
+**The 242 drawings** are built from a kit of about forty parts on a 60x60 grid —
 circles, arcs and tangent joins, placed on a grid rather than drawn freehand, so
 item 340 will still match item 12 after a six-month gap. The molecular tier gets
 its own drawing language: IUPAC skeletal convention, Jmol/RasMol CPK atom
@@ -266,11 +266,11 @@ a broad, forgiving mid-game and a genuinely deep endgame.
 
 ## Next
 
-1. **Art — done.** All 230 items are drawn, plus the six process verbs. The
+1. **Art — done.** All 233 items are drawn, plus the six process verbs. The
    `emoji` field survives in `data/elements.json` only as a label for the
    command-line tools, which cannot render SVG; the game never reads it.
-2. **Audit.** 70 of 471 claims have been checked against primary reporting and
-   17 of those were wrong. The rest are article-supported but not independently
+2. **Audit.** 99 of 477 claims have been checked against primary reporting and
+   48 of those were wrong. The rest are article-supported but not independently
    audited, and the ratio should keep moving. Any new claim carrying a number,
    date or name gets `verified` before it ships.
 3. **Name clearance.** "Loam" is chosen but not cleared — App Store search,

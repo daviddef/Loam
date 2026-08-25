@@ -28,7 +28,7 @@ const elements = JSON.parse(readFileSync(join(root, 'data/elements.json'), 'utf8
 /** exponent -> [ids]. Everything is metres. */
 const SCALE = {
   '-10': ['hydrogen', 'oxygen', 'nitrogen', 'carbon', 'sulfur', 'phosphorus',
-          'carbon_dioxide', 'disulfide'],
+          'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas'],
   '-9':  ['glucose', 'amino_acid', 'cysteine', 'dipeptide', 'nucleotide', 'atp',
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet'],
   '-8':  ['polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',

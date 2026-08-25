@@ -2064,7 +2064,8 @@
     "tags": [
       "water"
     ],
-    "fact": "Also never alone: two atoms bonded, O2, which is the gas you breathe."
+    "fact": "Most of your mass by atom count. Almost never found alone either — it pairs up on contact.",
+    "soleRoute": true
   },
   {
     "id": "hydrogen",
@@ -2074,7 +2075,8 @@
     "tags": [
       "water"
     ],
-    "fact": "Never found alone — one atom always finds another, so this is H2, not H."
+    "fact": "The first element, made in the first minutes of the universe. Almost never found alone.",
+    "soleRoute": true
   },
   {
     "id": "nitrogen",
@@ -2386,5 +2388,21 @@
     ],
     "terminal": true,
     "fact": "The survivors of a course of antibiotics are, by definition, the ones it did not kill."
+  },
+  {
+    "id": "hydrogen_gas",
+    "name": "Hydrogen Gas",
+    "emoji": "💠",
+    "shelf": "workshop",
+    "tags": [],
+    "fact": "Two hydrogen atoms, bonded — H2. This is the form that actually exists in a jar."
+  },
+  {
+    "id": "oxygen_gas",
+    "name": "Oxygen Gas",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [],
+    "fact": "Two oxygen atoms, double-bonded — O2. The gas in every breath you take."
   }
 ]
