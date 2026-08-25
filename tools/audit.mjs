@@ -230,6 +230,15 @@ function ordinary(w) {
 // instead of being turned down until it says nothing.
 const gestureOf = r => r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
 
+// Reviewed: a geographic adjective is not an attribution. "Mediterranean herbs"
+// and "after the Americas" are ordinary background, not claims the source has to
+// carry. Names that ARE attributions — a person, a date, an institution — stay
+// flagged.
+const NAME_CLEARED = {
+  'flatbread+passata': 'the Columbian exchange as background, not a claim about pizza',
+  'leaf+sun': 'a geographic adjective, not an attribution',
+};
+
 const ABSOLUTE_CLEARED = {
   'curd+salt': 'a figure of speech about time, not a claim about ingredients',
   'fire+stone': 'folklore, and true by definition — nobody found it',
@@ -298,7 +307,8 @@ for (const r of subject) {
   const missing = nums.filter(x => !articleHas(text, x));
   const lower = text.toLowerCase();
   const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
-  const strayNames = namesIn(r.why).filter(nm => !lower.includes(nm.toLowerCase()));
+  const strayNames = NAME_CLEARED[gestureOf(r)] ? []
+    : namesIn(r.why).filter(nm => !lower.includes(nm.toLowerCase()));
 
   // An absolute in our sentence, with nothing of that strength anywhere in the
   // source, means the certainty is ours rather than the article's.

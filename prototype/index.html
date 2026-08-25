@@ -1030,15 +1030,70 @@ const STARTERS = elements.filter(e => e.starter).map(e => e.id);
 const GOAL = 'dinner';
 const KEY = 'loam.v1';
 
-let found = new Set(), seen = new Set();
+let found = new Set(), seen = new Set(), savedBench = null;
 try {
   const s = JSON.parse(localStorage.getItem(KEY));
-  if (s) { found = new Set(s.found); seen = new Set(s.seen); }
+  if (s) { found = new Set(s.found); seen = new Set(s.seen); savedBench = s.bench || null; }
 } catch {}
 if (!found.size) STARTERS.forEach(s => found.add(s));
 // Storage is unavailable in private browsing and on opaque origins. Never let
 // a failed save abort a discovery.
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify({found:[...found], seen:[...seen]})); } catch {} };
+/**
+ * What gets written down.
+ *
+ * Progress was the only thing saved, so a refresh emptied the bench and any
+ * ferment you had started simply vanished. Both are now part of the save:
+ *
+ *  - the bench, as ids and world positions, plus which cards are folded
+ *  - the links between them, as indices into that list
+ *  - anything cooking, as a WALL-CLOCK finish time
+ *
+ * The wall clock is the point. A ferment takes real time whether or not anyone
+ * is watching it, so the game should agree: close the tab on a sourdough
+ * starter and it will have come alive by the time you come back.
+ */
+function benchState() {
+  const cards = [...world.querySelectorAll('.chip.board')];
+  const index = new Map(cards.map((c, i) => [c, i]));
+  const jobBy = new Map([...cooking].map(j => [j.chip, j]));
+  return {
+    cards: cards.map(c => {
+      const j = jobBy.get(c);
+      return {
+        id: c.dataset.id,
+        x: Math.round(parseFloat(c.style.left) || 0),
+        y: Math.round(parseFloat(c.style.top) || 0),
+        f: c.classList.contains('folded') ? 1 : 0,
+        // remaining wall-clock milliseconds, and what it is turning into
+        job: j ? { v: j.verb, out: j.r.out, ends: Date.now() + Math.max(0, j.ms - j.done) } : null,
+      };
+    }),
+    links: links.filter(l => index.has(l.out)).map(l => [
+      index.has(l.a) ? index.get(l.a) : -1,
+      l.b && index.has(l.b) ? index.get(l.b) : -1,
+      index.get(l.out),
+    ]),
+    view: { x: Math.round(view.x), y: Math.round(view.y), k: +view.k.toFixed(3) },
+  };
+}
+
+const save = () => {
+  try {
+    localStorage.setItem(KEY, JSON.stringify({
+      found: [...found], seen: [...seen], bench: benchState(),
+    }));
+  } catch {}
+};
+
+// Moving a card should be remembered, but not written to disk sixty times a
+// second while it is in your hand.
+let saveTimer = 0;
+const saveSoon = () => {
+  if (saveTimer) return;
+  saveTimer = setTimeout(() => { saveTimer = 0; save(); }, 700);
+};
+addEventListener('pagehide', () => { clearTimeout(saveTimer); save(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) save(); });
 
 const unlockedVerbs = () => new Set(verbs.filter(v => !v.unlockedBy || found.has(v.unlockedBy)).map(v => v.id));
 
@@ -1092,7 +1147,19 @@ function setFreePlay(on) {
     try { localStorage.removeItem(REAL_KEY); } catch {}
   }
   prefs.freePlay = on;
-  savePrefs(); save(); applyPrefs(); renderShelf();
+  // Leaving free play would otherwise strand cards for things you have not
+  // actually found. Clear the bench back to what you hold.
+  if (!on) {
+    for (const c of [...world.querySelectorAll('.chip.board')]) {
+      if (!found.has(c.dataset.id)) removeChip(c, true);
+    }
+    if (!world.querySelector('.chip.board')) {
+      [...found].filter(id => byId[id].starter).forEach(id => spawn(id, 0, 0));
+      layOutBench();
+    }
+  }
+  refreshFolds();
+  savePrefs(); save(); applyPrefs(); renderShelf(); drawLinks();
   toast(on ? 'Free play — everything unlocked. Your progress is safe.'
            : 'Back to your own progress.');
 }
@@ -1470,12 +1537,16 @@ function chipTap(chip) {
   toggleBranch(chip);
 }
 
-function removeChip(chip) {
+function removeChip(chip, instant) {
   // Orphaned links would draw to nothing, so drop them with it.
   for (let i = links.length - 1; i >= 0; i--) {
     const l = links[i];
     if (l.a === chip || l.b === chip || l.out === chip) links.splice(i, 1);
   }
+  // Taking one card off the bench should look like taking a card off a bench.
+  // Clearing forty at once should not: forty simultaneous animations read as a
+  // glitch, and the caller usually wants the board settled before it measures.
+  if (instant) { chip.remove(); return; }
   setTimeout(refreshFolds, 170);
   chip.classList.add('leaving');
   sfx.pick();
@@ -1735,6 +1806,7 @@ board.addEventListener('pointerup', ev => {
  */
 const CARD_FALLBACK = [94, 124];
 let chipSeq = 0;
+let restoredBench = false;
 let cardSizeCache = null;
 function cardSize() {
   if (cardSizeCache) return cardSizeCache;
@@ -1941,6 +2013,7 @@ board.addEventListener('pointerup', ev => {
   chip.classList.remove('drag');
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
+  saveSoon();                                          // remember where it was put
   const t = hit(ev.clientX, ev.clientY, chip);
   if (!t) return;
   if (t.dataset.verb) applyProcess(chip, t);
@@ -2114,6 +2187,7 @@ function startCooking(chip, r, verb, ms) {
   chip.classList.add('cooking');
   chip.dataset.verb = v.id;
   updateWaiting();
+  save();                                              // a job must survive a refresh
   toast(`${nameOf(byId[chip.dataset.id])} is ${verb === 'wait' ? 'resting' : 'fermenting'} — keep playing`);
 }
 
@@ -2928,7 +3002,9 @@ function layOutBench() {
 // opening bench until the player actually moves something. After that, only
 // clamp strays back into view so a rotation cannot lose them.
 new ResizeObserver(() => {
-  if (!benchTouched) { layOutBench(); drawIntro(); return; }
+  // A restored bench already has positions the player chose. Only the opening
+  // four get laid out, and only until something is moved.
+  if (!benchTouched && !restoredBench) { layOutBench(); drawIntro(); return; }
   const b = board.getBoundingClientRect();
   drawLinks();
 }).observe(board);
@@ -3073,11 +3149,70 @@ function endIntro() {
 }
 
 renderShelf();
+
+/**
+ * Put the bench back.
+ *
+ * Anything that finished while the tab was closed is finished: the ferment did
+ * not pause because nobody was looking. Those are resolved on the spot and
+ * reported together, so coming back to eleven separate toasts is not the
+ * welcome.
+ */
+function restoreBench(saved) {
+  if (!saved || !Array.isArray(saved.cards) || !saved.cards.length) return false;
+  const now = Date.now();
+  const made = [];
+  const cards = saved.cards.map(c => {
+    if (!byId[c.id]) return null;
+    const el = spawn(c.id, 0, 0);
+    if (!el) return null;
+    el.style.left = c.x + 'px';
+    el.style.top = c.y + 'px';
+    if (c.f) el.classList.add('folded');
+    return { el, c };
+  });
+
+  for (const [ai, bi, oi] of saved.links || []) {
+    const out = cards[oi] && cards[oi].el;
+    if (!out) continue;
+    links.push({ a: cards[ai] ? cards[ai].el : null,
+                 b: bi >= 0 && cards[bi] ? cards[bi].el : null, out, fresh: false });
+  }
+
+  for (const entry of cards) {
+    if (!entry || !entry.c.job) continue;
+    const { v, out, ends } = entry.c.job;
+    const r = procs.get(entry.c.id + '|' + v);
+    if (!r || r.out !== out) continue;
+    if (ends <= now) { made.push({ r, el: entry.el }); continue; }   // finished while you were out
+    startCooking(entry.el, r, v, ends - now);
+  }
+
+  if (saved.view) { view.x = saved.view.x; view.y = saved.view.y; view.k = saved.view.k; }
+  refreshFolds();
+
+  // Resolve everything that completed while away, then say so once.
+  if (made.length) {
+    // Resolve against the card that was actually cooking, not merely the first
+    // card with the same id — two stones on the bench are two different cards.
+    for (const { r, el } of made) if (el.isConnected) resolve(r, [el]);
+    const names = made.map(({ r }) => nameOf(byId[r.out]));
+    setTimeout(() => toast(names.length === 1
+      ? `${names[0]} finished while you were away`
+      : `${names.length} things finished while you were away: ${names.join(', ')}`), 700);
+  }
+  return true;
+}
+
 // Spawn synchronously. requestAnimationFrame does not fire in a hidden or
 // throttled tab, and relying on it meant the board could come up empty.
 // The ResizeObserver above lays them out as soon as the board has a size.
-[...found].filter(id => byId[id].starter).forEach(id => spawn(id, 0, 0));
-layOutBench();
+restoredBench = restoreBench(savedBench);
+if (!restoredBench) {
+  [...found].filter(id => byId[id].starter).forEach(id => spawn(id, 0, 0));
+  layOutBench();
+}
 applyView();
+drawLinks();
 drawIntro();            // after layOutBench: it points at where the cards are
 </script>
