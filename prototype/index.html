@@ -524,13 +524,33 @@
   @keyframes nope{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .chip.nope{animation:nope .26s}
   /* A slower, gentler tremor than .nope's rejection shake — this one means
-     "something is about to happen", not "that didn't work". */
-  @keyframes warn{0%,100%{transform:rotate(0)}25%{transform:rotate(-2.4deg)}75%{transform:rotate(2.4deg)}}
+     "something is about to happen", not "that didn't work".
+     translate/rotate as separate properties, not a transform shorthand, so the
+     lean below and this tremor compose instead of overwriting each other. */
+  @keyframes warn{0%,100%{rotate:0deg}25%{rotate:-2.4deg}75%{rotate:2.4deg}}
   .chip.board.warn{
     animation:warn .42s ease-in-out infinite;
     box-shadow:0 0 0 2.5px color-mix(in srgb,var(--discovery) 60%,transparent);
   }
   @media (prefers-reduced-motion:reduce){ .chip.board.warn{animation:none} }
+
+  /* Attraction and resistance. The lean itself carries the information; the
+     ring is a second channel so it still reads with reduced motion on. */
+  .chip.board.pulled,.chip.board.resists{
+    translate:var(--px,0) var(--py,0);
+    transition:translate .12s ease-out, box-shadow .12s ease-out;
+  }
+  .chip.board.pulled{
+    box-shadow:0 0 0 2px color-mix(in srgb,var(--avocado) 55%,transparent),
+               0 4px 14px -4px color-mix(in srgb,var(--avocado) 45%,transparent);
+  }
+  .chip.board.resists{
+    box-shadow:0 0 0 2px color-mix(in srgb,var(--brick) 40%,transparent);
+    opacity:.72;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .chip.board.pulled,.chip.board.resists{translate:none}
+  }
   #tray{
     flex:none;display:flex;gap:9px;justify-content:center;padding:11px;
     border-top:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);
@@ -2315,6 +2335,7 @@ board.addEventListener('pointermove', ev => {
   const t = hitCached(ev.clientX, ev.clientY, drag.chip);
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
+  applyForces(drag.chip, ev.clientX, ev.clientY, t);
   if (ambientDuringDrag(drag.chip, ev.clientX, ev.clientY)) {
     drag = null; hitCache = null; clearWarn();          // it already reacted — nothing left to drag
   }
@@ -2542,7 +2563,57 @@ function pairKey(a, b) {
 }
 function clearWarn() {
   document.querySelectorAll('.chip.board.warn').forEach(c => c.classList.remove('warn'));
+  document.querySelectorAll('.chip.board.pulled, .chip.board.resists').forEach(c => {
+    c.classList.remove('pulled', 'resists');
+    c.style.removeProperty('--px'); c.style.removeProperty('--py');
+  });
   warnSince.clear();
+}
+
+/**
+ * Attraction and resistance, shown rather than described.
+ *
+ * A card you are holding physically pulls on anything nearby it can actually
+ * react with — the closer you bring it, the harder the lean, so you can feel
+ * a partner before the name of the result ever appears. A card it CANNOT
+ * react with leans away instead, but only while it is the thing you are
+ * hovering over: every non-partner on the board flinching at once would be
+ * noise, and would fight you while you were only trying to put something down.
+ *
+ * Both are pure transforms on cards that are already measured for the drag,
+ * so this adds no layout reads to a pointermove.
+ */
+const PULL_MAX = 13;           // px a partner leans at closest approach
+function applyForces(dragChip, x, y, hoverTarget) {
+  if (!hitCache) return;
+  for (const { el: n, r } of hitCache) {
+    if (!n.classList.contains('board') || !n.dataset.id) continue;
+    const cx = (r.left + r.right) / 2, cy = (r.top + r.bottom) / 2;
+    const dx = x - cx, dy = y - cy;
+    const raw = Math.hypot(dx, dy);
+    // Hovering dead-centre on a card gives distance zero, and dividing by it
+    // to get a direction yields NaN. Guarding with `d > 1` instead — which is
+    // what this did first — silently dropped the force in exactly the case the
+    // player is most likely to be in: right on top of the thing.
+    const d = Math.max(raw, 0.001);
+    const reacts = !alreadyLinked(dragChip, n) &&
+                   merges.has([dragChip.dataset.id, n.dataset.id].sort().join('+'));
+    if (reacts && raw < NEAR_PX) {
+      // Linear falloff: nothing at the edge of range, full lean when touching.
+      const f = (1 - raw / NEAR_PX) * PULL_MAX;
+      n.style.setProperty('--px', (dx / d * f).toFixed(2) + 'px');
+      n.style.setProperty('--py', (dy / d * f).toFixed(2) + 'px');
+      n.classList.add('pulled'); n.classList.remove('resists');
+    } else if (!reacts && n === hoverTarget) {
+      const f = PULL_MAX * 0.55;
+      n.style.setProperty('--px', (-dx / d * f).toFixed(2) + 'px');
+      n.style.setProperty('--py', (-dy / d * f).toFixed(2) + 'px');
+      n.classList.add('resists'); n.classList.remove('pulled');
+    } else if (n.classList.contains('pulled') || n.classList.contains('resists')) {
+      n.classList.remove('pulled', 'resists');
+      n.style.removeProperty('--px'); n.style.removeProperty('--py');
+    }
+  }
 }
 // Returns true if a reaction actually fired — the dragged chip may be folded
 // away now, exactly as a manual drop-merge would leave it.
