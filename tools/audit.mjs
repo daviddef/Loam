@@ -242,8 +242,13 @@ for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) 
   console.log(`    "${u.r.why}"\n`);
 }
 
+const nNum = unsupported.filter(u => u.missing.length).length;
+const nName = unsupported.filter(u => u.strayNames.length).length;
+const nWord = unsupported.filter(u => u.strayTerms.length && !u.missing.length && !u.strayNames.length).length;
 console.log(`  ${checked.length} claim(s) checked`);
-console.log(`  ${unsupported.length} assert a number their own source does not contain`);
+console.log(`  ${nName} name(s) the cited article never mentions   <- attributions, the sharp signal`);
+console.log(`  ${nNum} number(s) the cited article does not contain`);
+console.log(`  ${nWord} flagged on an unusual word alone           <- weak; read before acting`);
 if (noSource.length) {
   console.log(`  ${noSource.length} could not be checked:`);
   for (const n of noSource) console.log(`      ${n.r.out.padEnd(22)} ${n.why}`);
