@@ -3119,9 +3119,21 @@ function showHint(id) {
   const e = byId[id];
   const routes = DATA.recipes.filter(r => r.out === id);
   const ul = unlockedVerbs();
-  // The route that needs the least from here is the one worth pointing at.
-  const score = (r) => r.in.filter(i => !found.has(i)).length + (r.verb && !ul.has(r.verb) ? 1 : 0);
-  const best = routes.slice().sort((a, b) => score(a) - score(b))[0];
+  // This has to be THE SAME route orderedSteps below walks, or the panel can
+  // say "missing 1 ingredient" directly above a path that isn't even for that
+  // recipe. It used to pick whichever route needs least from what you hold
+  // right now — reasonable on its own, but computed fresh at every node with
+  // no memory of the nodes above it, which can and did produce a real cycle
+  // (amino_acid's closest route went via protein, whose closest route needed
+  // polypeptide, which needed amino_acid back) — bestRecipe can't do that: it
+  // is a proper fixed point over the whole graph, cost only ever decreases,
+  // and a cycle can never cost less than the nodes it depends on. Deferring
+  // to it costs a little precision — it names the fewest-total-crafts route
+  // rather than the one nearest your current shelf — for a path that is
+  // always real, acyclic, and the same one shown below.
+  const best = bestRecipe.get(id) ?? routes.slice()
+    .sort((a, b) => (a.in.filter(i => !found.has(i)).length + (a.verb && !ul.has(a.verb) ? 1 : 0)) -
+                     (b.in.filter(i => !found.has(i)).length + (b.verb && !ul.has(b.verb) ? 1 : 0)))[0];
   const lvl = hintLevel.get(id) ?? 0;
   const missing = best ? best.in.filter(i => !found.has(i)) : [];
   const verbLocked = best?.verb && !ul.has(best.verb);
