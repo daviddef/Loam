@@ -2881,6 +2881,7 @@ new ResizeObserver(() => {
  */
 function selfTest(n = 80) {
   const before = new Set([...world.querySelectorAll('.chip.board')].map(c => c.dataset.id));
+  const held = new Set(found);                       // a test must not change a save
   elements.slice(0, n).forEach(e => { found.add(e.id); spawn(e.id); });
   const cards = [...world.querySelectorAll('.chip.board')];
   const [cw, ch] = cardSize();
@@ -2893,12 +2894,58 @@ function selfTest(n = 80) {
     }
   }
   cards.forEach(c => { if (!before.has(c.dataset.id)) c.remove(); });
+  found.clear(); held.forEach(id => found.add(id));
+  renderShelf();
   drawLinks();
   const result = { cards: cards.length, overlaps, offGrid, cardSize: [cw, ch], pass: !overlaps && !offGrid };
   console.log(result.pass ? '✓ layout ok' : '✗ layout broken', result);
   return result;
 }
 window.selfTest = selfTest;
+
+/**
+ * Smoke test.
+ *
+ * Renders every panel for every element, in every theme, and reports anything
+ * that throws. It exists because most of what this file does is build HTML
+ * strings from data, and a template that references a field one element happens
+ * not to have will look completely fine until someone opens that one element.
+ *
+ *     smokeTest()
+ *
+ * It leaves your progress alone: everything it does is rendering.
+ */
+function smokeTest() {
+  const errors = [];
+  const run = (label, fn) => { try { fn(); } catch (e) { errors.push(`${label}: ${e.message}`); } };
+  const held = new Set(found);
+  elements.forEach(e => found.add(e.id));            // render even the unreached
+
+  run('codex', () => showCodex());
+  run('ladder', () => showLadder());
+  run('settings', () => showSettings());
+  for (const e of elements) {
+    run(`entry:${e.id}`, () => showEntry(e.id));
+    run(`hint:${e.id}`, () => showHint(e.id));
+    run(`story:${e.id}`, () => showProvenance(e.id, 'story'));
+    run(`tree:${e.id}`, () => showProvenance(e.id, 'tree'));
+  }
+  const theme = prefs.theme, ground = prefs.ground;
+  for (const [t] of THEMES) for (const [g] of GROUNDS) {
+    run(`theme:${t}/${g}`, () => { prefs.theme = t; prefs.ground = g; applyPrefs(); });
+  }
+  prefs.theme = theme; prefs.ground = ground; applyPrefs();
+
+  found.clear(); held.forEach(id => found.add(id));
+  renderShelf();
+  document.getElementById('sheet').classList.remove('on');
+
+  const result = { panels: elements.length * 4 + THEMES.length * GROUNDS.length + 3,
+                   errors: errors.length, first: errors.slice(0, 8), pass: !errors.length };
+  console.log(result.pass ? '✓ smoke ok' : '✗ smoke broken', result);
+  return result;
+}
+window.smokeTest = smokeTest;
 
 /**
  * The opening cue.

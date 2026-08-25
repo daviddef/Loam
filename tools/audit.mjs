@@ -18,7 +18,8 @@
  *         node tools/audit.mjs --all      include the ones already verified
  *         node tools/audit.mjs <id>       just this output
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -27,6 +28,16 @@ const recipes = JSON.parse(readFileSync(join(root, 'data/recipes.json'), 'utf8')
 
 const API = 'https://en.wikipedia.org/w/api.php';
 const cache = new Map();
+
+// Articles are cached on disk. Wikipedia throttles this address after a few
+// dozen requests, and without a cache the tool can only ever check a fraction
+// of the claims per run — which makes it something you run once rather than
+// something that runs on every change.
+const CACHE_DIR = join(root, '.cache/articles');
+mkdirSync(CACHE_DIR, { recursive: true });
+const cachePath = t => join(CACHE_DIR, createHash('sha1').update(t).digest('hex').slice(0, 16) + '.txt');
+const readDisk = t => { const f = cachePath(t); return existsSync(f) ? readFileSync(f, 'utf8') : null; };
+const writeDisk = (t, text) => { try { writeFileSync(cachePath(t), text); } catch {} };
 
 /** Plain text of an article, by title, cached for the run. */
 // One request at a time with a short gap. Hammering the API gets you throttled,
@@ -38,6 +49,8 @@ let failures = 0;
 
 async function articleText(title) {
   if (cache.has(title)) return cache.get(title);
+  const disk = readDisk(title);
+  if (disk) { cache.set(title, disk); return disk; }
   const url = `${API}?action=query&prop=extracts&explaintext=1&redirects=1&format=json` +
               `&titles=${encodeURIComponent(title)}`;
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -50,6 +63,7 @@ async function articleText(title) {
       const page = Object.values(j?.query?.pages || {})[0];
       const text = page && page.extract ? page.extract : null;
       cache.set(title, text);
+      if (text) writeDisk(title, text);
       await sleep(700);
       return text;
     } catch { /* retry */ }
@@ -101,10 +115,60 @@ function articleHas(text, num) {
   return false;
 }
 
+/**
+ * The distinctive words in a claim.
+ *
+ * Numbers are only a fraction of what a sentence asserts. If we write that the
+ * white crystals in an old cheese are tyrosine, the word "tyrosine" ought to be
+ * in the article we cited. A technical term that is nowhere in our own source
+ * is the same signal as a number that is nowhere in it: the sentence has gone
+ * somewhere the source did not.
+ *
+ * Only unusual words count. Every article contains "water"; almost none
+ * contain "thermophilic" by accident.
+ */
+const COMMON = new Set(('the a an and or but of to in on at by for with from as is are was were be been ' +
+  'it its this that these those they them their there here what which who whom how why when where ' +
+  'not no nor so if then than too very can could will would should may might must do does did done ' +
+  'have has had having one two three four five six seven eight nine ten first second third ' +
+  'more most less least much many few some any all both each every other another same different ' +
+  'you your we our i me my he she his her him hers ' +
+  'into out up down over under about after before between through during without within against ' +
+  'because while until since although though whether either neither ' +
+  'make makes made making take takes took taken get gets got give gives given ' +
+  'go goes going went come comes coming keep keeps kept leave leaves left ' +
+  'put puts turn turns turned use uses used using work works worked ' +
+  'water food thing things way ways time times year years day days part parts kind sort ' +
+  'good bad big small large long short high low hot cold new old ' +
+  'like just only also even still yet ever never always often sometimes ' +
+  'thats its whats dont doesnt cant wont isnt arent wasnt werent'
+).split(/\s+/));
+
+function termsIn(text) {
+  const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/);
+  const out = new Set();
+  for (const w of words) {
+    if (w.length < 7) continue;              // short words are rarely distinctive
+    if (COMMON.has(w)) continue;
+    out.add(w);
+  }
+  return [...out];
+}
+
+/** Match on a stem, so "enzymes" finds "enzyme" and "crystallises" finds "crystal". */
+function articleHasTerm(lowerText, term) {
+  const stem = term.replace(/(ing|ed|es|s|ise|ised|ize|ized|ly)$/, '');
+  if (stem.length < 5) return true;          // too short to be evidence either way
+  return lowerText.includes(stem);
+}
+
 const only = process.argv.find(a => !a.startsWith('--') && !a.endsWith('.mjs') && !a.includes('node'));
 const includeVerified = process.argv.includes('--all');
 
-let subject = recipes.filter(r => /\d/.test(r.why) && (includeVerified || !r.verified));
+// --terms widens the net from "claims with a number" to every unverified claim.
+const termsMode = process.argv.includes('--terms');
+let subject = recipes.filter(r =>
+  (termsMode || /\d/.test(r.why)) && (includeVerified || !r.verified));
 if (only) subject = recipes.filter(r => r.out === only && /\d/.test(r.why));
 
 console.log(`  checking ${subject.length} numeric claim(s) against their cited articles\n`);
@@ -118,9 +182,11 @@ for (const r of subject) {
   const nums = numbersIn(r.why);
   if (!nums.length) continue;
   const missing = nums.filter(x => !articleHas(text, x));
+  const lower = text.toLowerCase();
+  const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
   checked.push(r);
-  if (missing.length) {
-    unsupported.push({ r, title, missing, total: nums.length });
+  if (missing.length || strayTerms.length) {
+    unsupported.push({ r, title, missing, strayTerms, total: nums.length });
   }
 }
 
@@ -128,7 +194,8 @@ for (const u of unsupported) {
   const gesture = u.r.verb ? `${u.r.in[0]} |${u.r.verb}` : u.r.in.join(' + ');
   console.log(`  ${gesture} → ${u.r.out}`);
   console.log(`    cited: ${u.title}`);
-  console.log(`    not in that article: ${u.missing.map(m => m.shown).join(', ')}`);
+  if (u.missing.length) console.log(`    numbers not in that article: ${u.missing.map(m => m.shown).join(', ')}`);
+  if (u.strayTerms.length) console.log(`    words not in that article: ${u.strayTerms.join(', ')}`);
   console.log(`    "${u.r.why}"\n`);
 }
 

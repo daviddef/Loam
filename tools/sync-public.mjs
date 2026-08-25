@@ -80,7 +80,8 @@ if (absent.length) { console.error(`missing locally: ${absent.join(', ')}`); pro
 function walk(dir, base = '') {
   const out = [];
   for (const name of readdirSync(join(root, dir || '.'))) {
-    if (name === '.git' || name === 'node_modules' || name === '.DS_Store') continue;
+    // Build output and caches are not files anyone decided about.
+    if (['.git', 'node_modules', '.DS_Store', '.cache'].includes(name)) continue;
     const rel = base ? `${base}/${name}` : name;
     if (statSync(join(root, rel)).isDirectory()) out.push(...walk(rel, rel));
     else out.push(rel);
