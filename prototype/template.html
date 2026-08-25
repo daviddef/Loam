@@ -155,6 +155,16 @@ __CATEGORY_CSS__
   .spacer{flex:1}
   .count{font:700 13px var(--face-name);color:var(--avocado)}
   .count.free{color:var(--on-accent);background:var(--teal);border-color:var(--teal)}
+  /* The score: not a stray fraction lost among header buttons, but a number
+     with a name, the way a scoreboard reads. */
+  #count{
+    display:flex;align-items:baseline;gap:5px;font:800 15px var(--face-name);
+    padding:6px 12px;background:color-mix(in srgb,var(--avocado) 12%,var(--surface));
+    border-color:color-mix(in srgb,var(--avocado) 40%,var(--line));
+  }
+  #count .sc{font-size:17px}
+  #count .lbl{font:600 10px var(--face-name);letter-spacing:.4px;color:var(--ink-soft);text-transform:uppercase}
+  #count.free .lbl{color:var(--on-accent)}
   button{
     font:600 13px var(--face-name);color:var(--ink);cursor:pointer;
     background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 13px;
@@ -416,6 +426,14 @@ __CATEGORY_CSS__
   @media (prefers-reduced-motion:reduce){ .chip.board.minted .ac{animation:none} }
   @keyframes nope{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .chip.nope{animation:nope .26s}
+  /* A slower, gentler tremor than .nope's rejection shake — this one means
+     "something is about to happen", not "that didn't work". */
+  @keyframes warn{0%,100%{transform:rotate(0)}25%{transform:rotate(-2.4deg)}75%{transform:rotate(2.4deg)}}
+  .chip.board.warn{
+    animation:warn .42s ease-in-out infinite;
+    box-shadow:0 0 0 2.5px color-mix(in srgb,var(--discovery) 60%,transparent);
+  }
+  @media (prefers-reduced-motion:reduce){ .chip.board.warn{animation:none} }
   #tray{
     flex:none;display:flex;gap:9px;justify-content:center;padding:11px;
     border-top:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);
@@ -504,6 +522,14 @@ __CATEGORY_CSS__
     font:700 10.5px/1 var(--face-name);letter-spacing:.9px;text-transform:uppercase;
     color:var(--ink-soft);margin:14px 2px 8px;
   }
+  /* Settings groups three or four related rows under one named block, so the
+     panel reads as a handful of decisions instead of one long scroll. */
+  .setgroup{padding:14px 0 4px;border-top:1.5px solid var(--line)}
+  .setgroup:first-child{padding-top:2px;border-top:none}
+  .setgroup h3{
+    font:800 13px var(--face-name);color:var(--ink);margin:0 2px 2px;
+  }
+  .setgroup h2{margin-top:10px}
   .search{
     width:100%;font:600 14px var(--face-name);color:var(--ink);
     padding:10px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);
@@ -927,11 +953,11 @@ __CATEGORY_CSS__
     </svg>
     <h1>Loam</h1>
   </a>
+  <button class="count" id="count" title="Open your codex"></button>
   <div class="goal" id="goal"></div>
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
-  <button class="count" id="count" title="Open your codex"></button>
   <button id="shelfToggle">Shelf</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
   <button id="nudge">Nudge</button>
@@ -1482,8 +1508,9 @@ function renderShelf() {
        ${open ? '' : `<i class="lk">${key ? glyph(key.id, 15) : '·'}</i>`}</div>`;
   }).join('');
 
-  document.getElementById('count').textContent = prefs.freePlay
-    ? `free play` : `${found.size} / ${elements.length}`;
+  document.getElementById('count').innerHTML = prefs.freePlay
+    ? `<span class="sc">Free Play</span>`
+    : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} found</span>`;
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
   const g = byId[GOAL];
   document.getElementById('goal').innerHTML = found.has(GOAL)
@@ -2115,12 +2142,16 @@ board.addEventListener('pointermove', ev => {
   const t = hitCached(ev.clientX, ev.clientY, drag.chip);
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
+  if (ambientDuringDrag(drag.chip, ev.clientX, ev.clientY)) {
+    drag = null; hitCache = null; clearWarn();          // it already reacted — nothing left to drag
+  }
 });
 board.addEventListener('pointerup', ev => {
   if (pan) { pan = null; board.classList.remove('panning'); return; }
   if (!drag) return;
   const { chip, moved } = drag; drag = null;
   hitCache = null;
+  clearWarn();
   chip.classList.remove('drag', 'haslive');
   chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
@@ -2316,6 +2347,64 @@ function resolve(r, chips, x, y) {
 function applyMerge(a, b) {
   resolve(merges.get([a.dataset.id, b.dataset.id].sort().join('+')), [a, b]);
 }
+
+// ---------- proximity: some things react before you ever drop them ----------
+// Sun brought near Ice does not wait for you to let go of it. While a chip is
+// in your hand, anything nearby it could actually merge with gets a warning
+// shake — held there long enough, the reaction just happens. Scoped to an
+// active drag (not anything sitting near anything, forever) on purpose: a
+// whole board silently reacting on its own would eat the chain Free Play just
+// built for you, and a global proximity scan is exactly the kind of thing
+// that was chewing up the CPU before. This reuses the drag's own cached rects,
+// so it costs nothing beyond what the drag was already doing.
+const NEAR_PX = 150;           // roughly a card and a half — "brought near", not "touching"
+const REACT_DWELL_MS = 2200;   // long enough to see it coming and pull away
+let warnSince = new Map();
+function alreadyLinked(a, b) {
+  return links.some(l => (l.a === a && l.b === b) || (l.a === b && l.b === a));
+}
+function pairKey(a, b) {
+  const [x, y] = [a.dataset.uid, b.dataset.uid].sort();
+  return `${x}|${y}`;
+}
+function clearWarn() {
+  document.querySelectorAll('.chip.board.warn').forEach(c => c.classList.remove('warn'));
+  warnSince.clear();
+}
+// Returns true if a reaction actually fired — the dragged chip may be folded
+// away now, exactly as a manual drop-merge would leave it.
+function ambientDuringDrag(dragChip, x, y) {
+  if (!hitCache) return false;
+  const now = performance.now();
+  const near = [];
+  for (const { el: n, r } of hitCache) {
+    if (!n.classList.contains('board') || !n.dataset.id) continue;    // chips only, not verb tiles
+    if (Math.hypot((r.left + r.right) / 2 - x, (r.top + r.bottom) / 2 - y) > NEAR_PX) continue;
+    if (alreadyLinked(dragChip, n)) continue;
+    const rec = merges.get([dragChip.dataset.id, n.dataset.id].sort().join('+'));
+    if (rec) near.push({ n, rec });
+  }
+  const nowKeys = new Set(near.map(({ n }) => pairKey(dragChip, n)));
+  document.querySelectorAll('.chip.board.warn').forEach(c => {
+    if (c !== dragChip && !near.some(({ n }) => n === c)) c.classList.remove('warn');
+  });
+  dragChip.classList.toggle('warn', near.length > 0);
+  for (const { n, rec } of near) {
+    n.classList.add('warn');
+    const key = pairKey(dragChip, n);
+    const since = warnSince.get(key) ?? now;
+    warnSince.set(key, since);
+    if (now - since >= REACT_DWELL_MS) {
+      warnSince.clear();
+      dragChip.classList.remove('warn'); n.classList.remove('warn');
+      resolve(rec, [dragChip, n]);
+      return true;
+    }
+  }
+  for (const k of [...warnSince.keys()]) if (!nowKeys.has(k)) warnSince.delete(k);
+  return false;
+}
+
 // Some processes are not instant in life and should not be here either.
 // Waiting and fermenting take real time; you keep playing while they run.
 const TAKES_TIME = { wait: 14000, ferment: 20000 };
@@ -2989,46 +3078,50 @@ function showSettings() {
   const row = (key, opts) => `<div class="setrow">` + opts.map(([v, label, note]) =>
     `<button class="${prefs[key] === v ? 'on' : ''}" data-pref="${key}" data-val="${v}">
        <b>${label}</b><i>${note}</i></button>`).join('') + `</div>`;
-  document.getElementById('sheetBody').innerHTML = `
-    <h2>How much explaining</h2>
-    ${row('depth', [
-      ['kid', 'Kid', 'One plain line. No formulas.'],
-      ['curious', 'Curious', 'The mechanism, and a source.'],
-      ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.'],
-    ])}
-    <h2>How loud</h2>
-    ${row('tone', [
-      ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
-      ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
-    ])}
-    <h2>How it is drawn</h2>
-    ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
-    <h2>What it sits on</h2>
-    ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
-    <h2>How much room each thing takes</h2>
-    ${row('density', DENSITIES.map(([v, l, n]) => [v, l, n]))}
-    <h2>When you pick something up</h2>
-    ${row('assist', [
-      ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.'],
-      ['off', 'Say nothing',  'Work it out yourself.'],
-    ])}
-    <h2>Free play</h2>
-    <div class="setrow">
-      <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
-        <b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
-        <i>${prefs.freePlay
-          ? 'Every element and tool available. Tap to go back to your own progress.'
-          : 'Hands you all 226 elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.'}</i>
-      </button>
-    </div>
-    <h2>Start over</h2>
-    <div class="setrow">
-      <button class="danger" data-wipe="1">
-        <b>Wipe all discoveries</b>
-        <i>Everything you have found goes, and the four starting things come back.
-           There is no undo.</i></button>
-    </div>
-    <p class="hint2">Settings save automatically. None of them changes a single fact —
+  const group = (title, body) => `<section class="setgroup"><h3>${title}</h3>${body}</section>`;
+  document.getElementById('sheetBody').innerHTML =
+    group('Look', `
+      <h2>How it is drawn</h2>
+      ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
+      <h2>What it sits on</h2>
+      ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
+      <h2>How much room each thing takes</h2>
+      ${row('density', DENSITIES.map(([v, l, n]) => [v, l, n]))}`) +
+    group('Explain', `
+      <h2>How much explaining</h2>
+      ${row('depth', [
+        ['kid', 'Kid', 'One plain line. No formulas.'],
+        ['curious', 'Curious', 'The mechanism, and a source.'],
+        ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.'],
+      ])}
+      <h2>How loud</h2>
+      ${row('tone', [
+        ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
+        ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
+      ])}
+      <h2>When you pick something up</h2>
+      ${row('assist', [
+        ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.'],
+        ['off', 'Say nothing',  'Work it out yourself.'],
+      ])}`) +
+    group('Your data', `
+      <h2>Free play</h2>
+      <div class="setrow">
+        <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
+          <b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
+          <i>${prefs.freePlay
+            ? 'Every element and tool available. Tap to go back to your own progress.'
+            : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`}</i>
+        </button>
+      </div>
+      <h2>Start over</h2>
+      <div class="setrow">
+        <button class="danger" data-wipe="1">
+          <b>Wipe all discoveries</b>
+          <i>Everything you have found goes, and the four starting things come back.
+             There is no undo.</i></button>
+      </div>`) +
+    `<p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
