@@ -260,6 +260,48 @@ __CATEGORY_CSS__
   aside .chip .art{width:34px;height:34px}
   aside .chip .n{font-size:8.5px;letter-spacing:.04em}
   aside .chip .rl,aside .chip .ac{display:none}
+
+  /* ── density: half card ─────────────────────────────────────────────────
+     The user's own sketch: the drawing floats free on the tray with no frame
+     around it, and only the name sits in a box. :not(.cooking):not(.target)
+     guards every rule that touches background/border/padding, because both of
+     those states repaint the chip completely on their own and must keep doing
+     so regardless of density — a card mid-ferment still needs its ring. */
+  body.d-half .chip.board:not(.cooking):not(.target){
+    --cw:66px;background:transparent;border:none;box-shadow:none;padding:0;gap:3px;
+  }
+  body.d-half .chip.board .art{
+    width:44px;height:44px;
+    filter:drop-shadow(0 3px 7px rgba(var(--shade),.6));
+  }
+  body.d-half .chip.board .n{
+    min-height:0;margin-top:0;padding:3px 7px;background:var(--card);
+    border:1px solid var(--line);border-radius:3px;font-size:8.2px;
+  }
+  body.d-half .chip.board .n.long{font-size:7.3px}
+  body.d-half .chip.board .n.vlong{font-size:6.6px}
+  body.d-half .chip.board .rl,
+  body.d-half .chip.board .ac{display:none}
+
+  /* ── density: pill ────────────────────────────────────────────────────
+     The genre's own shape, at last let back in — but the icon is still a
+     drawing, never an emoji, and the footprint is a fixed size like every
+     other density so the bench-packing math above never has to know which
+     mode it is looking at. */
+  body.d-pill .chip.board:not(.cooking):not(.target){
+    --cw:104px;flex-direction:row;align-items:center;justify-content:flex-start;
+    gap:7px;padding:5px 10px 5px 6px;border-radius:99px;
+  }
+  body.d-pill .chip.board .art{width:26px;height:26px;flex:none}
+  body.d-pill .chip.board .n{
+    display:block;min-height:2.3em;margin:0;text-align:left;text-transform:none;
+    letter-spacing:0;font-size:10px;line-height:1.2;
+  }
+  body.d-pill .chip.board .n.long{font-size:9px}
+  body.d-pill .chip.board .n.vlong{font-size:8px}
+  body.d-pill .chip.board .rl,
+  body.d-pill .chip.board .ac{display:none}
+
   /* An inline drawing, sized in place of the emoji it replaced. */
   .gl{display:inline-block;width:var(--g,20px);height:var(--g,20px);vertical-align:-.22em}
   .gl .art{width:100%;height:100%;display:block}
@@ -1079,7 +1121,7 @@ function countOnBench(id) {
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
-                theme: 'specimen', ground: 'tray', assist: 'on' };
+                theme: 'specimen', ground: 'tray', assist: 'on', density: 'card' };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
@@ -1132,6 +1174,17 @@ const GROUNDS = [
   ['profile', 'Profile', 'A soil profile: litter, topsoil, subsoil, bedrock.'],
   ['void',    'Void',    'Nothing at all.'],
 ];
+// Three footprints for the same card, because "big enough to read the
+// mechanism" and "small enough to see the whole bench at once" are different
+// jobs. Card is the specimen-tray default; Half keeps the drawing but drops
+// the frame around it; Pill is the classic wide lozenge, for anyone who wants
+// the smallest possible footprint and is willing to tap for detail instead of
+// reading it off the card.
+const DENSITIES = [
+  ['card', 'Card', 'The full specimen: drawing, name, accession, scale.'],
+  ['half', 'Half card', 'The drawing floats free; just the name is boxed. About half the space.'],
+  ['pill', 'Pill', 'Icon and name in one line. The smallest footprint, closest to the genre norm.'],
+];
 const applyPrefs = () => {
   const root = document.documentElement, body = document.body;
   root.dataset.depth = prefs.depth;
@@ -1139,7 +1192,30 @@ const applyPrefs = () => {
   if (!body) return;
   THEMES.forEach(([id]) => body.classList.toggle('t-' + id, prefs.theme === id));
   GROUNDS.forEach(([id]) => body.classList.toggle('g-' + id, prefs.ground === id));
+  // On the very first call — made at script-init time, before `world`,
+  // `unstack` and the size caches exist — body carries no d-* class yet, so
+  // this correctly reads as "nothing to resnap" rather than a change.
+  const hadDensity = DENSITIES.some(([id]) => body.classList.contains('d-' + id));
+  const densityChanged = hadDensity && !body.classList.contains('d-' + prefs.density);
+  DENSITIES.forEach(([id]) => body.classList.toggle('d-' + id, prefs.density === id));
+  if (densityChanged) resnapBench();
 };
+
+/**
+ * A card's rendered box is a different size in every density mode, and two
+ * caches assume it never changes once measured: cardSize() (bench layout) and
+ * the per-element sizeCache (link-line endpoints — see its own comment, which
+ * used to be true). Both are invalidated here, then every visible card gets a
+ * pass through the same overlap repair unstack() already does for folds, so
+ * switching density can never leave two cards sitting on top of each other.
+ */
+function resnapBench() {
+  cardSizeCache = null;
+  sizeCache = new WeakMap();
+  if (typeof world === 'undefined' || !world.querySelector('.chip.board')) return;
+  unstack();
+  drawLinks();
+}
 applyPrefs();
 if (prefs.freePlay) elements.forEach(e => found.add(e.id));
 
@@ -1418,7 +1494,7 @@ function toWorld(sx, sy) {
 // offsetWidth forces layout. Reading it for every chip on every pointer move
 // was the single most expensive thing on the canvas, so measure once per chip
 // and keep it — chip size never changes after it is built.
-const sizeCache = new WeakMap();
+let sizeCache = new WeakMap();
 function chipSize(el) {
   let s = sizeCache.get(el);
   if (!s) { s = [el.offsetWidth, el.offsetHeight]; if (s[0]) sizeCache.set(el, s); }
@@ -1494,7 +1570,13 @@ function unstack() {
   const seenAt = [];
   for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
     let x = parseFloat(c.style.left) || 0, y = parseFloat(c.style.top) || 0;
-    const clash = seenAt.some(p => Math.abs(p[0] - x) < cw * 0.5 && Math.abs(p[1] - y) < ch * 0.5);
+    // A genuine rectangle overlap, not just "suspiciously close": the half-card
+    // threshold this used to use only ever caught two cards sitting at the
+    // exact same spot, which was the one bug it was written for. It missed the
+    // much more common case a density change creates — cards spaced correctly
+    // for a small footprint (Pill) that now genuinely overlap under a bigger
+    // one (Card), by anywhere up to a full card-width.
+    const clash = seenAt.some(p => Math.abs(p[0] - x) < cw && Math.abs(p[1] - y) < ch);
     if (clash) {
       const spot = freeSpot(cw, ch, [x + cw / 2, y + ch / 2]);
       if (spot) { x = spot[0]; y = spot[1]; c.style.left = x + 'px'; c.style.top = y + 'px'; }
@@ -1781,6 +1863,14 @@ board.addEventListener('pointerup', ev => {
  *
  * A specimen card is a fixed size by design, so measure one that has actually
  * been on screen, once, and keep the answer.
+ *
+ * The size is no longer ONE fixed size, though — Card, Half card and Pill are
+ * three different footprints (94x124, 66x~53, 104x~40), so a single "is this
+ * at least 60x80" floor only ever matched Card and silently fed every other
+ * density the fallback forever. The drawing inside the chip is the thing that
+ * stays a reliable "has the stylesheet actually applied" signal across all
+ * three, since .art is comfortably >=20px in every mode and near-zero before
+ * the stylesheet loads — so check that instead of the outer box.
  */
 const CARD_FALLBACK = [94, 124];
 let chipSeq = 0;
@@ -1789,9 +1879,17 @@ let cardSizeCache = null;
 function cardSize() {
   if (cardSizeCache) return cardSizeCache;
   for (const c of world.querySelectorAll('.chip.board')) {
-    if (c.offsetWidth >= 60 && c.offsetHeight >= 80) {
-      return (cardSizeCache = [c.offsetWidth, c.offsetHeight]);
-    }
+    // getComputedStyle reads the CSS box model BEFORE `transform` is applied.
+    // getBoundingClientRect reads the painted box AFTER it — which sounds like
+    // a detail, but a card spawns with a scale-up pop animation, and this
+    // function is often called in the same synchronous tick as a burst of
+    // spawns, before any of their `.pop` classes have been timed out. Reading
+    // the painted box during that animation measured cards at 40% of their
+    // real size and cached that, which is a second, sneakier version of the
+    // exact "measured too early" bug this function already exists to avoid.
+    const w = parseFloat(getComputedStyle(c).width);
+    const h = parseFloat(getComputedStyle(c).height);
+    if (w >= 40 && h >= 25) return (cardSizeCache = [w, h]);
   }
   return CARD_FALLBACK;                       // not cached: try again next time
 }
@@ -2826,6 +2924,8 @@ function showSettings() {
     ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
     <h2>What it sits on</h2>
     ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
+    <h2>How much room each thing takes</h2>
+    ${row('density', DENSITIES.map(([v, l, n]) => [v, l, n]))}
     <h2>When you pick something up</h2>
     ${row('assist', [
       ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.'],
