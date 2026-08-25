@@ -313,6 +313,17 @@ __CATEGORY_CSS__
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
   .chip.live{border-color:var(--avocado);box-shadow:0 0 0 2px rgba(107,142,78,.13)}
+  /* With a card in your hand: how many cards on the bench it will make
+     something new with. A number, never a partner. */
+  .chip.board.haslive::before{
+    content:attr(data-live);position:absolute;left:-7px;top:-7px;
+    font:400 8px/15px var(--face-data);letter-spacing:.04em;
+    min-width:15px;height:15px;padding:0 4px;text-align:center;
+    color:var(--on-accent);background:var(--discovery);border-radius:99px;
+    font-variant-numeric:tabular-nums;
+    box-shadow:0 2px 6px rgba(var(--shade),.5);
+  }
+
   /* How many undiscovered recipes this thing still leads to. */
   .chip .cnt{
     position:absolute;top:-6px;right:-6px;
@@ -1011,13 +1022,48 @@ function secretsFor(id, ul) {
   return n;
 }
 
+/**
+ * How many cards ON THE BENCH will make something new with this one.
+ *
+ * The shelf already says how many secrets an element still holds. What it does
+ * not say is how many of them are within reach right now, and that is the
+ * question a player actually has with a card in their hand.
+ *
+ * It names a number, never a partner — which is the same discipline as the
+ * shelf count, and the reason tag-affinity nudging was rejected: the good
+ * recipes cross categories on purpose, so a hint that points at a category
+ * teaches the wrong lesson.
+ */
+function livePartnersOn(chip) {
+  const id = chip.dataset.id;
+  const ul = unlockedVerbs();
+  const here = new Set();
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    if (c !== chip) here.add(c.dataset.id);
+  }
+  let n = 0;
+  for (const r of DATA.recipes) {
+    if (r.verb) continue;                      // verbs are the tray, not the bench
+    if (found.has(r.out)) continue;
+    if (!r.in.includes(id)) continue;
+    const other = r.in[0] === id ? r.in[1] : r.in[0];
+    if (other === id ? countOnBench(id) >= 2 : here.has(other)) n++;
+  }
+  return n;
+}
+function countOnBench(id) {
+  let n = 0;
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) if (c.dataset.id === id) n++;
+  return n;
+}
+
 // Two independent settings, deliberately not one "difficulty" dial.
 //   depth  — how much explanation, and whether formulas and tiers show
 //   tone   — how loud the game is about being fun
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
-                theme: 'specimen', ground: 'tray' };
+                theme: 'specimen', ground: 'tray', assist: 'on' };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
@@ -1872,6 +1918,13 @@ board.addEventListener('pointerdown', ev => {
   const [wx, wy] = toWorld(ev.clientX, ev.clientY);
   benchTouched = true;
   endIntro();
+  // A card in the hand is the moment the question "what does this go with?"
+  // is actually being asked, so answer it then and nowhere else.
+  if (prefs.assist !== 'off') {
+    const n = livePartnersOn(chip);
+    chip.dataset.live = n ? String(n) : '';
+    chip.classList.toggle('haslive', n > 0);
+  }
   drag = { chip, ox: wx - (parseFloat(chip.style.left) || 0),
                  oy: wy - (parseFloat(chip.style.top) || 0),
            sx: ev.clientX, sy: ev.clientY, moved: false };
@@ -1902,7 +1955,8 @@ board.addEventListener('pointerup', ev => {
   if (pan) { pan = null; board.classList.remove('panning'); return; }
   if (!drag) return;
   const { chip, moved } = drag; drag = null;
-  chip.classList.remove('drag');
+  chip.classList.remove('drag', 'haslive');
+  chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
@@ -2732,6 +2786,11 @@ function showSettings() {
     ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
     <h2>What it sits on</h2>
     ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
+    <h2>When you pick something up</h2>
+    ${row('assist', [
+      ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.'],
+      ['off', 'Say nothing',  'Work it out yourself.'],
+    ])}
     <h2>Free play</h2>
     <div class="setrow">
       <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">

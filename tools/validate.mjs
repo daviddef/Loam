@@ -196,7 +196,14 @@ console.log(`shelves   workshop ${elements.filter((e) => e.shelf === 'workshop')
 console.log(`endpoints ${elements.filter((e) => e.terminal).length} terminal goals`);
 console.log(`bedrock   ${bedrock.atoms.length} atoms (${bedrock.atoms.filter((a) => a.inPlay).length} in play)  ${bedrock.compounds.length} compounds  ${(bedrock.aminos ?? []).length} amino acids  ${(bedrock.linkages ?? []).length} linkages  ${(bedrock.tiers ?? []).length} tiers`);
 console.log(`sources   ${recipes.filter((r) => r.src).length}/${recipes.length} sourced   ${recipes.filter((r) => r.verified).length} audited   ${recipes.filter((r) => r.supported).length} article-supported`);
-console.log(`routes    ${(recipes.length / elements.length).toFixed(2)} per element   ${[...routeCount.values()].filter((n) => n < 2).length} single-route`);
+// Count what the warning counts. The old line counted every produced element
+// with fewer than two routes, which included `water` — a starter that also
+// happens to be makeable from hydrogen and oxygen — and reported it as a gap
+// in the redundancy. A summary number has to mean the thing it says.
+const thin = elements.filter((e) => !e.starter && !e.soleRoute && (routeCount.get(e.id) ?? 0) < 2);
+const sole = elements.filter((e) => e.soleRoute).length;
+console.log(`routes    ${(recipes.length / elements.length).toFixed(2)} per element   ` +
+            `${thin.length} needing a second route   ${sole} sole-route by design`);
 console.log(`gestures  ${sigs.size} distinct   merges ${recipes.filter((r) => !r.verb).length}  processes ${recipes.filter((r) => r.verb).length}`);
 
 if (warns.length) {

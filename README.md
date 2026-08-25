@@ -34,7 +34,7 @@ validated and playtested first — before a line of Swift.
 | Sourced | **473 / 473** recipes, every URL machine-verified |
 | Audited | **95** of 473 claims checked against primary reporting — **48 were wrong** |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **2** geographic, reviewed |
-| Routes per element | **2.05** · 2 sole-route by design |
+| Routes per element | **2.05** · 0 needing a second · 1 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
 | Drawings | **240**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
@@ -242,14 +242,24 @@ their recipes — an easy and invisible way to reintroduce a corrected claim.
 
 ## What the data already tells us
 
-**Discoverability was the real design risk — now measured and solved.** Only 117
-of 14,535 possible pairs are real recipes, a 0.8% blind hit rate, which costs
-**91 attempts per discovery** in simulation. The shipped fix is a
-secrets-remaining count on every shelf element: it cuts a 78-element field to 6
-without naming a partner, and brings the cost to **25.7 attempts**. Tag-affinity
-nudging — the intuitive answer — was simulated and **rejected**: it found 10 of
-171 elements before stalling, because the best recipes cross categories on
-purpose. See `tools/discover.mjs` and BACKLOG.md.
+**Discoverability is the real design risk, and it gets harder as the graph
+grows.** Blind pair-guessing now costs **119 attempts per discovery** in
+simulation — it was 91 at 171 elements, and every element added makes the
+haystack bigger faster than it adds needles. The shipped assist is a
+secrets-remaining count on every shelf element, which narrows the field without
+ever naming a partner and brings the cost to **38.8**; weighting toward the
+richest elements gets it to **30.2**.
+
+That is a 3.1× improvement and it is *not enough on its own*. The honest reading
+is that the assist scales worse than the graph does, and the thing that actually
+rescues a stuck player is the recipe index — every element shows what makes it
+and what it makes, whether or not you have found it. Re-run `node
+tools/discover.mjs` after any content batch: if the blind number climbs and the
+assisted one climbs with it, the assist needs work, not more elements.
+
+Tag-affinity nudging — the intuitive answer — was simulated and **rejected**: it
+finds 21 of 231 elements before stalling, because the best recipes cross
+categories on purpose. See `tools/discover.mjs` and BACKLOG.md.
 
 **The curve is healthy.** Elements cluster at par 6–12 with a long tail to 36 —
 a broad, forgiving mid-game and a genuinely deep endgame.
