@@ -1388,6 +1388,35 @@ function toggleBranch(chip) {
 // Connections persist, so the canvas becomes a diagram of what you built
 // rather than a scratchpad that forgets.
 let linkFrame = 0, linkFallback = 0;
+/**
+ * Redraw only the lines attached to one card.
+ *
+ * Rebuilding every path costs about 19ms once the bench is full, and a drag
+ * asks for a redraw on every pointer move — which is a dropped frame every
+ * frame. Moving one card can only move the lines that touch it, so during a
+ * drag we reposition those and leave the rest alone.
+ */
+function drawLinksFor(chip) {
+  const uid = chip && chip.dataset.uid;
+  if (!uid) { drawLinks(); return; }
+  const paths = linkSvg.querySelectorAll(`path[data-from="${uid}"],path[data-to="${uid}"]`);
+  if (!paths.length) return;
+  const centres = new Map();
+  const centreOf = el => {
+    if (!centres.has(el)) centres.set(el, chipCentre(el));
+    return centres.get(el);
+  };
+  const byUid = new Map();
+  for (const c of world.querySelectorAll('.chip.board')) byUid.set(c.dataset.uid, c);
+  for (const p of paths) {
+    const a = byUid.get(p.dataset.from), b = byUid.get(p.dataset.to);
+    if (!a || !b) continue;
+    const [sx, sy] = centreOf(a), [ox, oy] = centreOf(b);
+    const my = (sy + oy) / 2;
+    p.setAttribute('d', `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`);
+  }
+}
+
 function drawLinks() {
   if (linkFrame) return;                              // at most one redraw a frame
   linkFrame = requestAnimationFrame(() => {
@@ -1425,7 +1454,10 @@ function drawLinksNow() {
       const my = (sy + oy) / 2;
       const d = `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`;
       const id = `lp${++pathSeq}`;
-      parts.push(`<path id="${id}" class="made${l.fresh ? ' fresh' : ''}" d="${d}"/>`);
+      // The two ends are recorded on the element so a drag can update only the
+      // lines it actually moves.
+      parts.push(`<path id="${id}" class="made${l.fresh ? ' fresh' : ''}" d="${d}"` +
+                 ` data-from="${src.dataset.uid}" data-to="${l.out.dataset.uid}"/>`);
       if (flowing) {
         // A mote of the ingredient travelling into what it becomes — gold from
         // the sun, blue from water. Offset starts so they never march in step.
@@ -1594,6 +1626,7 @@ board.addEventListener('pointerup', ev => {
  * been on screen, once, and keep the answer.
  */
 const CARD_FALLBACK = [94, 124];
+let chipSeq = 0;
 let cardSizeCache = null;
 function cardSize() {
   if (cardSizeCache) return cardSizeCache;
@@ -1664,6 +1697,7 @@ function spawn(id, x, y, near) {
   el.className = `chip board pop fam-${fam.id}`;
   el.dataset.fam = fam.id;
   el.dataset.id = id;
+  el.dataset.uid = 'c' + (++chipSeq);                 // stable per card, not per element
   el.innerHTML = chipHTML(e);
   world.appendChild(el);
   const [cw, ch] = cardSize();
@@ -1787,7 +1821,7 @@ board.addEventListener('pointermove', ev => {
   const [wx, wy] = toWorld(ev.clientX, ev.clientY);
   drag.chip.style.left = (wx - drag.ox) + 'px';
   drag.chip.style.top  = (wy - drag.oy) + 'px';
-  drawLinks();
+  drawLinksFor(drag.chip);                            // only the lines that moved
   const t = hit(ev.clientX, ev.clientY, drag.chip);
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
