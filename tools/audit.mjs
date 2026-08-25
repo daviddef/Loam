@@ -206,6 +206,55 @@ function ordinary(w) {
   return false;
 }
 
+/**
+ * Absolutes: the oldest, the only, the first, never, always.
+ *
+ * This is where overclaiming lives. A mechanism written carefully still tends
+ * to acquire a superlative on the way to the page, because superlatives are
+ * what make a sentence feel finished — and they are exactly the part nobody
+ * checks. "The oldest recorded scarecrows stood in Egyptian wheat fields" was
+ * this shape, and it was not in the source.
+ *
+ * The test is not whether the word appears in the article. It is whether the
+ * article makes a claim of that STRENGTH at all: if we say "the only" and the
+ * source never says only, first, unique or exclusively about anything nearby,
+ * the strength is ours.
+ */
+// Each absolute we might write, and the words in the source that would justify
+// it. The first version tested for ANY hedge word anywhere in the article,
+// which every article contains — so the check always passed, which is the worst
+// possible behaviour for a check: it reads as a clean result.
+// Reviewed: rhetoric rather than a factual claim. "The only remaining
+// ingredient is time" is a way of ending a sentence, not an assertion about
+// cheese. Listed with a reason each so the check keeps working on new prose
+// instead of being turned down until it says nothing.
+const gestureOf = r => r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+
+const ABSOLUTE_CLEARED = {
+  'curd+salt': 'a figure of speech about time, not a claim about ingredients',
+  'fire+stone': 'folklore, and true by definition — nobody found it',
+  'grain+water': 'rhetorical: what a seed was going to do anyway',
+  'cake_batter+fire': 'a figure of speech about even heat',
+  'harvest+pot': 'mythology — the horn not emptying is the myth',
+  'protein|heat': 'rhetorical emphasis on a mechanism stated just before',
+  'penicillin|wait': 'definitional: survivors are what an antibiotic did not kill',
+};
+
+const ABSOLUTES = [
+  [/\bthe oldest\b/i,    /\b(oldest|earliest|first known|most ancient)\b/i],
+  [/\bthe earliest\b/i,  /\b(earliest|oldest|first known|first recorded)\b/i],
+  [/\bthe first\b/i,     /\b(the first|first known|first recorded|earliest)\b/i],
+  [/\bthe only\b/i,      /\b(the only|sole|solely|uniquely|no other)\b/i],
+  [/\bthe largest\b/i,   /\b(largest|biggest|greatest)\b/i],
+  [/\bthe smallest\b/i,  /\b(smallest|tiniest)\b/i],
+  [/\bthe most \w+\b/i,  /\b(most|greatest|highest|largest)\b/i],
+  [/\bnever\b/i,         /\b(never|does not|do not|cannot|no \w+ ever)\b/i],
+  [/\balways\b/i,        /\b(always|invariably|in every case|all \w+ are)\b/i],
+  [/\bunique\b/i,        /\b(unique|only|unlike any)\b/i],
+  [/\bexclusively\b/i,   /\b(exclusively|only|solely)\b/i],
+  [/\bnothing else\b/i,  /\b(only|nothing else|no other)\b/i],
+];
+
 function termsIn(text) {
   // Split hyphenated compounds: "shade-grown" is two ordinary words, and no
   // article is obliged to contain the pair.
@@ -250,17 +299,28 @@ for (const r of subject) {
   const lower = text.toLowerCase();
   const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
   const strayNames = namesIn(r.why).filter(nm => !lower.includes(nm.toLowerCase()));
+
+  // An absolute in our sentence, with nothing of that strength anywhere in the
+  // source, means the certainty is ours rather than the article's.
+  let strayAbsolute = null;
+  if (!ABSOLUTE_CLEARED[gestureOf(r)]) {
+    for (const [ours, theirs] of ABSOLUTES) {
+      const m = r.why.match(ours);
+      if (m && !theirs.test(text)) { strayAbsolute = m[0]; break; }
+    }
+  }
+
   checked.push(r);
-  if (missing.length || strayTerms.length || strayNames.length) {
-    unsupported.push({ r, title, missing, strayTerms, strayNames, total: nums.length });
+  if (missing.length || strayTerms.length || strayNames.length || strayAbsolute) {
+    unsupported.push({ r, title, missing, strayTerms, strayNames, strayAbsolute, total: nums.length });
   }
 }
 
 // Names first: an unsupported attribution is worth more attention than an
 // unsupported adjective.
-const ranked = [...unsupported].sort((a, b) =>
-  (b.strayNames.length * 10 + b.missing.length * 5 + b.strayTerms.length) -
-  (a.strayNames.length * 10 + a.missing.length * 5 + a.strayTerms.length));
+const weight = u => u.strayNames.length * 10 + (u.strayAbsolute ? 8 : 0) +
+                    u.missing.length * 5 + u.strayTerms.length;
+const ranked = [...unsupported].sort((a, b) => weight(b) - weight(a));
 
 const onlyNames = process.argv.includes('--names');
 for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) {
@@ -268,6 +328,7 @@ for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) 
   console.log(`  ${gesture} → ${u.r.out}`);
   console.log(`    cited: ${u.title}`);
   if (u.strayNames.length) console.log(`    NAMES not in that article: ${u.strayNames.join(', ')}`);
+  if (u.strayAbsolute) console.log(`    ABSOLUTE ours, not the source's: "${u.strayAbsolute}"`);
   if (u.missing.length) console.log(`    numbers not in that article: ${u.missing.map(m => m.shown).join(', ')}`);
   if (u.strayTerms.length) console.log(`    words not in that article: ${u.strayTerms.join(', ')}`);
   console.log(`    "${u.r.why}"\n`);
@@ -275,9 +336,11 @@ for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) 
 
 const nNum = unsupported.filter(u => u.missing.length).length;
 const nName = unsupported.filter(u => u.strayNames.length).length;
-const nWord = unsupported.filter(u => u.strayTerms.length && !u.missing.length && !u.strayNames.length).length;
+const nAbs = unsupported.filter(u => u.strayAbsolute).length;
+const nWord = unsupported.filter(u => u.strayTerms.length && !u.missing.length && !u.strayNames.length && !u.strayAbsolute).length;
 console.log(`  ${checked.length} claim(s) checked`);
 console.log(`  ${nName} name(s) the cited article never mentions   <- attributions, the sharp signal`);
+console.log(`  ${nAbs} absolute(s) stronger than anything in the source`);
 console.log(`  ${nNum} number(s) the cited article does not contain`);
 console.log(`  ${nWord} flagged on an unusual word alone           <- weak; read before acting`);
 if (noSource.length) {

@@ -6,8 +6,8 @@ A combination game where **every recipe carries a source you can open**, and the
 game tells you which of its answers are science and which are stories.
 
 The claim is checkability, not infallibility — and that distinction is the whole
-point. Auditing 91 of our own confident, fluent, well-written claims against
-primary reporting found **44 of them wrong** — a 48% first-pass error rate, and
+point. Auditing 95 of our own confident, fluent, well-written claims against
+primary reporting found **48 of them wrong** — a 51% first-pass error rate, and
 it has gone *up* as the sample grew. That is the strongest argument this project
 has, and it is an argument against trusting anyone's prose, including ours. So every line is sourced, the sources are
 machine-verified against live articles, and audited claims are marked as such.
@@ -32,7 +32,7 @@ validated and playtested first — before a line of Swift.
 | Reachable | **231 / 231** from the four starters |
 | Deepest chain | 21 crafts |
 | Sourced | **473 / 473** recipes, every URL machine-verified |
-| Audited | **91** of 473 claims checked against primary reporting — **44 were wrong** |
+| Audited | **95** of 473 claims checked against primary reporting — **48 were wrong** |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **2** geographic, reviewed |
 | Routes per element | **2.05** · 2 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
