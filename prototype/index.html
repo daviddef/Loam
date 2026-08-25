@@ -2202,6 +2202,7 @@ board.addEventListener('pointerdown', ev => {
            sx: ev.clientX, sy: ev.clientY, moved: false };
   chip.classList.add('drag');
   chip.setPointerCapture(ev.pointerId);
+  primeHitCache(chip);
 });
 board.addEventListener('pointermove', ev => {
   if (pan) {
@@ -2219,7 +2220,7 @@ board.addEventListener('pointermove', ev => {
   drag.chip.style.left = (wx - drag.ox) + 'px';
   drag.chip.style.top  = (wy - drag.oy) + 'px';
   drawLinksFor(drag.chip);                            // only the lines that moved
-  const t = hit(ev.clientX, ev.clientY, drag.chip);
+  const t = hitCached(ev.clientX, ev.clientY, drag.chip);
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
 });
@@ -2227,12 +2228,13 @@ board.addEventListener('pointerup', ev => {
   if (pan) { pan = null; board.classList.remove('panning'); return; }
   if (!drag) return;
   const { chip, moved } = drag; drag = null;
+  hitCache = null;
   chip.classList.remove('drag', 'haslive');
   chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
-  const t = hit(ev.clientX, ev.clientY, chip);
+  const t = hit(ev.clientX, ev.clientY, chip);        // fresh and authoritative for the actual drop
   if (t?.dataset.verb) applyProcess(chip, t);
   else if (t) applyMerge(chip, t);
   pinToBoard(chip);
@@ -2274,12 +2276,16 @@ function pinToBoard(chip) {
 // are commutative in the data — dropping A on B and B on A resolve the same
 // recipe — so any asymmetry a player feels is this test being too strict.
 // Picking the greatest overlap also makes crowded benches predictable.
-function hit(x, y, exclude) {
-  const d = exclude ? exclude.getBoundingClientRect() : { left: x, right: x, top: y, bottom: y };
+// getBoundingClientRect() forces a layout reflow, and hit() used to call it on
+// every chip and verb, fresh, on every single pointermove — during a drag on
+// a bench with a couple hundred things out, that is a full-board reflow at
+// mouse-move frequency, which is exactly what "the game eats my CPU" feels
+// like. Nothing else on the board moves during a drag but the dragged chip
+// itself, so everyone else's rect can be measured once and reused for the
+// whole gesture — see hitCache below.
+function hitAgainst(candidates, x, y, d) {
   let best = null, bestArea = 0;
-  for (const n of [...world.querySelectorAll('.chip.board:not(.hidden)'), ...document.querySelectorAll('.verb:not(.locked)')]) {
-    if (n === exclude) continue;
-    const r = n.getBoundingClientRect();
+  for (const { el: n, r } of candidates) {
     const ox = Math.min(d.right, r.right) - Math.max(d.left, r.left);
     const oy = Math.min(d.bottom, r.bottom) - Math.max(d.top, r.top);
     if (ox > 0 && oy > 0) {
@@ -2290,6 +2296,25 @@ function hit(x, y, exclude) {
     }
   }
   return best;
+}
+function hit(x, y, exclude) {
+  const d = exclude ? exclude.getBoundingClientRect() : { left: x, right: x, top: y, bottom: y };
+  const candidates = [...world.querySelectorAll('.chip.board:not(.hidden)'), ...document.querySelectorAll('.verb:not(.locked)')]
+    .filter(n => n !== exclude).map(el => ({ el, r: el.getBoundingClientRect() }));
+  return hitAgainst(candidates, x, y, d);
+}
+// Snapshot everyone else's rect once, at the start of a drag, and hit-test
+// against the snapshot for the rest of that gesture — no further layout reads
+// until the drag ends and a fresh, authoritative hit() decides the drop.
+let hitCache = null;
+function primeHitCache(exclude) {
+  hitCache = [...world.querySelectorAll('.chip.board:not(.hidden)'), ...document.querySelectorAll('.verb:not(.locked)')]
+    .filter(n => n !== exclude).map(el => ({ el, r: el.getBoundingClientRect() }));
+}
+function hitCached(x, y, exclude) {
+  if (!hitCache) return hit(x, y, exclude);
+  const d = exclude ? exclude.getBoundingClientRect() : { left: x, right: x, top: y, bottom: y };
+  return hitAgainst(hitCache, x, y, d);
 }
 
 function resolve(r, chips, x, y) {
