@@ -3177,5 +3177,450 @@
     ],
     "fact": "Latin for offspring. From week nine the organs are all there, unfinished and not all in place.",
     "terminal": true
+  },
+  {
+    "id": "cotton",
+    "name": "Cotton",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A fibre that grows in a boll wrapped around the seeds. The plant grew it to help them travel."
+  },
+  {
+    "id": "maize",
+    "name": "Maize",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Cannot sow itself. The kernels stay stuck to the cob, so without someone to plant it, it ends."
+  },
+  {
+    "id": "popcorn",
+    "name": "Popcorn",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Steam at 135 psi bursting the hull, and the starch inside foaming out. Only one kind of maize does it.",
+    "terminal": true
+  },
+  {
+    "id": "barley",
+    "name": "Barley",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Handles salty ground that would finish wheat. Most of the world crop is eaten by animals, not people.",
+    "terminal": true
+  },
+  {
+    "id": "oat",
+    "name": "Oat",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Started life as a weed in other people's wheat fields and got domesticated more or less by accident.",
+    "terminal": true
+  },
+  {
+    "id": "soybean",
+    "name": "Soybean",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "36% protein and 20% oil by weight, and it makes its own nitrogen. A crop that asks for very little."
+  },
+  {
+    "id": "tofu",
+    "name": "Tofu",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Cheese, made from a bean. Curdle soy milk with a salt, press the curds, cut into blocks.",
+    "terminal": true
+  },
+  {
+    "id": "pea",
+    "name": "Pea",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A monk grew several thousand of these, counted what came out, and got modern genetics.",
+    "terminal": true
+  },
+  {
+    "id": "carrot",
+    "name": "Carrot",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Purple, for most of its history. The orange one is a Dutch invention, and fairly recent at that.",
+    "terminal": true
+  },
+  {
+    "id": "lettuce",
+    "name": "Lettuce",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "94.9% water, so it cannot be frozen, canned or dried. Eat it now or do not eat it.",
+    "terminal": true
+  },
+  {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A berry. The record one weighed 1,246.9 kg, which is a great deal of berry.",
+    "terminal": true
+  },
+  {
+    "id": "beet",
+    "name": "Beet",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The red pigment goes straight through some people. Pink urine, harmless, and it has a name: beeturia.",
+    "terminal": true
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a wild species at all — a hybrid of the citron and the bitter orange, two other fruits entirely.",
+    "terminal": true
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a berry. Each seed on the outside is an achene — a whole separate fruit with a seed in it.",
+    "terminal": true
+  },
+  {
+    "id": "banana",
+    "name": "Banana",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A berry, growing on the largest herb on Earth. What looks like a trunk is not a trunk.",
+    "terminal": true
+  },
+  {
+    "id": "pear",
+    "name": "Pear",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A pome, like the apple, but picked green and hard on purpose — it finishes ripening off the tree.",
+    "terminal": true
+  },
+  {
+    "id": "cherry",
+    "name": "Cherry",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Crack the stone, chew the kernel inside, and it releases hydrogen cyanide. So do not do that.",
+    "terminal": true
+  },
+  {
+    "id": "fig",
+    "name": "Fig",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A fruit with all the flowers folded away inside, and a wasp that crawls in to reach them.",
+    "terminal": true
+  },
+  {
+    "id": "coffee",
+    "name": "Coffee",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a bean. It is the seed of a fruit called a cherry, and it tastes of nothing until it is roasted."
+  },
+  {
+    "id": "brewed_coffee",
+    "name": "Brewed Coffee",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Roasted, ground, steeped in hot water, then filtered back out. That is the entire method.",
+    "terminal": true
+  },
+  {
+    "id": "cocoa",
+    "name": "Cocoa",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The pods grow straight out of the trunk. Raw, the beans inside are bitter and taste of nothing much."
+  },
+  {
+    "id": "cocoa_bean",
+    "name": "Cocoa Bean",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Heaped up for days until the pulp liquefies and ferments. Skip that and it stays harshly bitter."
+  },
+  {
+    "id": "chocolate",
+    "name": "Chocolate",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "sweet"
+    ],
+    "fact": "Ground until the particles are under 20 micrometres — finer than the tongue can detect.",
+    "terminal": true
+  },
+  {
+    "id": "glycine",
+    "name": "Glycine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The smallest of the twenty, and the only one with no handedness — its side chain is one hydrogen."
+  },
+  {
+    "id": "alanine",
+    "name": "Alanine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The next simplest after glycine. Muscle uses it to post spare nitrogen back to the liver."
+  },
+  {
+    "id": "serine",
+    "name": "Serine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Named after silk. The nucleophile at the heart of a serine protease is one of these."
+  },
+  {
+    "id": "proline",
+    "name": "Proline",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Its side chain loops back onto the backbone. That kink is what breaks an alpha helix."
+  },
+  {
+    "id": "tyrosine",
+    "name": "Tyrosine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Made from phenylalanine, and turned into dopamine, adrenaline, thyroid hormone and melanin.",
+    "terminal": true
+  },
+  {
+    "id": "aspartic_acid",
+    "name": "Aspartic Acid",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Half of aspartame. In plants it is the parent of four amino acids you cannot make yourself."
+  },
+  {
+    "id": "glutamic_acid",
+    "name": "Glutamic Acid",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Savoury on its own. This is what umami is, and MSG is the salt they sell it as."
+  },
+  {
+    "id": "glutamine",
+    "name": "Glutamine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The most abundant free amino acid in your blood, and how the body moves ammonia around safely."
+  },
+  {
+    "id": "asparagine",
+    "name": "Asparagine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The first amino acid anyone ever isolated, out of asparagus juice, in 1806.",
+    "terminal": true
+  },
+  {
+    "id": "arginine",
+    "name": "Arginine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The only thing your body makes nitric oxide out of, and the last stop before urea.",
+    "terminal": true
+  },
+  {
+    "id": "valine",
+    "name": "Valine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Swap a glutamate for one of these at position six of beta-globin and you have sickle-cell disease."
+  },
+  {
+    "id": "leucine",
+    "name": "Leucine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Eat enough of it and muscle starts building protein. It is the signal as well as the material.",
+    "terminal": true
+  },
+  {
+    "id": "isoleucine",
+    "name": "Isoleucine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One of only two of the twenty with two chiral centres, and it is built out of the other one.",
+    "terminal": true
+  },
+  {
+    "id": "threonine",
+    "name": "Threonine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The last of the twenty to be found, in 1935, and one of only two with two chiral centres."
+  },
+  {
+    "id": "methionine",
+    "name": "Methionine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "AUG codes for this and nothing else, and AUG is where the ribosome starts reading."
+  },
+  {
+    "id": "lysine",
+    "name": "Lysine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Cereal grains are short of it and pulses are full of it. That is why beans and bread go together.",
+    "terminal": true
+  },
+  {
+    "id": "histidine",
+    "name": "Histidine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Its ring has a pKa near 6, close enough to swap a proton in a living cell. Active sites are full of it.",
+    "terminal": true
+  },
+  {
+    "id": "phenylalanine",
+    "name": "Phenylalanine",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The one on the aspartame warning label. People with PKU cannot break it down."
+  },
+  {
+    "id": "tryptophan",
+    "name": "Tryptophan",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The biggest of the twenty, and the raw material for serotonin, melatonin and vitamin B3.",
+    "terminal": true
   }
 ]

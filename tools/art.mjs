@@ -194,6 +194,12 @@ const MOLECULAR = new Set([
   'dna', 'membrane', 'enzyme', 'denatured_protein', 'gelatin', 'keratin',
   'collagen', 'alpha_helix', 'beta_sheet', 'ribosome', 'messenger_rna',
   'hydrogen_gas', 'oxygen_gas', 'helium', 'neon',
+  // The twenty. They are molecules, whatever the tag says about where they
+  // come from — the same reason cysteine and amino_acid are already here.
+  'glycine', 'alanine', 'valine', 'leucine', 'isoleucine', 'proline',
+  'phenylalanine', 'tyrosine', 'tryptophan', 'serine', 'threonine',
+  'methionine', 'asparagine', 'glutamine', 'aspartic_acid', 'glutamic_acid',
+  'lysine', 'arginine', 'histidine',
 ]);
 
 const TAG_CATEGORY = {
@@ -902,6 +908,84 @@ def('cysteine', () => {
   ];
 });
 
+/* The twenty, drawn as themselves ────────────────────────────────────────
+ * Every amino acid shares one backbone — amine, alpha carbon, carboxyl —
+ * and differs only in the side chain hanging off it. That is not a stylistic
+ * choice, it is the definition, so the drawings are built the same way: one
+ * shared backbone function, and one R group each. The R group is therefore
+ * doing all the work of telling nineteen cards apart, which is exactly the
+ * job it does in the chemistry.
+ */
+const BB_A = [12, 30], BB_B = [26, 22], BB_C = [40, 30];   // amine, alpha C, carboxyl
+const R0 = [26, 36];                                        // where the side chain starts
+// Deliberately only three shapes. The sameness check fingerprints by shape,
+// so a seven-shape backbone repeated across all twenty made every pair look
+// 70%+ identical no matter how different the side chains were — the shared
+// part drowned out the part that carries the meaning. Drawn as one polyline
+// plus the two atoms that matter, the backbone stays legible and the R group
+// is what the fingerprint actually sees.
+function aminoBackbone() {
+  return [
+    S(`M${BB_A[0]} ${BB_A[1]} L${BB_B[0]} ${BB_B[1]} L${BB_C[0]} ${BB_C[1]} L50 24 M${BB_C[0]} ${BB_C[1]} L50 38`, 'ik', 2.2),
+    C(BB_A[0], BB_A[1], 4.6, CPK.N),
+    C(50, 38, 4, CPK.O),
+  ];
+}
+/** def() an amino acid: shared backbone, plus whatever its R group is. */
+const amino = (id, r) => def(id, () => [...aminoBackbone(), ...r()]);
+const chain = (pts, w = 2.2) =>
+  S('M' + [R0, ...pts].map(p => p.join(' ')).join(' L'), 'ik', w);
+
+amino('glycine', () => [C(R0[0], R0[1], 4, CPK.H)]);                       // side chain: one H
+amino('alanine', () => [chain([[26, 46]]), C(26, 46, 4.6, CPK.C)]);        // one methyl
+amino('valine', () => [chain([[26, 40]]),                                   // branches at the first carbon
+  S('M26 40 L15 45', 'ik', 2), S('M26 40 L37 45', 'ik', 2),
+  C(15, 45, 4.2, CPK.C), C(37, 45, 4.2, CPK.C)]);
+amino('leucine', () => [chain([[20, 42], [20, 50]]),                        // one carbon further, then branches
+  S('M20 50 L10 57', 'ik', 2), S('M20 50 L30 57', 'ik', 2),
+  C(10, 57, 4, CPK.C), C(30, 57, 4, CPK.C)]);
+amino('isoleucine', () => [chain([[24, 41]]),                               // branch AND continue — two chiral centres
+  S('M24 41 L12 44', 'ik', 2), S('M24 41 L33 47 L33 57', 'ik', 2),
+  C(12, 44, 4, CPK.C), C(33, 57, 4, CPK.C)]);
+amino('proline', () => [                                                    // the ring closes back onto the N
+  S(`M${BB_B[0]} ${BB_B[1]} L34 34 L30 46 L18 46 L${BB_A[0]} ${BB_A[1]}`, 'ik', 2.2),
+  C(30, 46, 3.4, CPK.C), C(18, 46, 3.4, CPK.C)]);
+amino('phenylalanine', () => [chain([[26, 40]]), hex('ik', 26, 50, 9, 2)]);  // plain benzene ring
+amino('tyrosine', () => [chain([[26, 38]]), hex('ik', 26, 47, 8.4, 2),       // ...with an OH on it
+  S('M26 56 L26 58', 'ik', 2), C(26, 58, 4.4, CPK.O)]);
+amino('tryptophan', () => [chain([[26, 38]]),                                // two fused rings — the biggest
+  hex('ik', 22, 47, 8, 1.8),
+  S('M29 43 L38 44 L38 52 L29 51', 'ik', 1.8),
+  C(38, 44, 3.4, CPK.N)]);
+amino('serine', () => [chain([[26, 44]]), C(26, 44, 4.6, CPK.O),             // short, ends in OH
+  S('M26 44 L34 51', 'ik', 1.8), C(34, 51, 3.2, CPK.H)]);
+amino('threonine', () => [chain([[30, 44]]),                                 // O and a methyl
+  S('M30 44 L22 53', 'ik', 2), S('M30 44 L40 51', 'ik', 2),
+  C(22, 53, 4.4, CPK.O), C(40, 51, 4, CPK.C)]);
+amino('methionine', () => [chain([[34, 41], [34, 52]]),                      // sulfur mid-chain, then a cap
+  C(34, 52, 5.4, CPK.S), S('M34 52 L46 56', 'ik', 2), C(46, 56, 4, CPK.C)]);
+amino('asparagine', () => [chain([[26, 42]]),                                // short amide
+  ...double([26, 42], [14, 46], 'ik'), S('M26 42 L38 46', 'ik', 2),
+  C(14, 46, 4.2, CPK.O), C(38, 46, 4.4, CPK.N)]);
+amino('glutamine', () => [chain([[20, 38], [20, 47]]),                       // the same, one carbon longer
+  ...double([20, 47], [9, 53], 'ik'), S('M20 47 L31 53', 'ik', 2),
+  C(9, 53, 4, CPK.O), C(31, 53, 4.2, CPK.N)]);
+amino('aspartic_acid', () => [chain([[22, 46]]),                             // short acid — two O
+  ...double([22, 46], [11, 54], 'ik'), S('M22 46 L33 55', 'ik', 2),
+  C(11, 54, 4.2, CPK.O), C(33, 55, 4.2, CPK.O)]);
+amino('glutamic_acid', () => [chain([[28, 39], [28, 49]]),                   // the same, one carbon longer
+  ...double([28, 49], [18, 57], 'ik'), S('M28 49 L39 56', 'ik', 2),
+  C(18, 57, 4, CPK.O), C(39, 56, 4, CPK.O)]);
+amino('lysine', () => [chain([[26, 38], [26, 45], [26, 52]]),                // long, plain, ends in N
+  C(26, 52, 4.6, CPK.N)]);
+amino('arginine', () => [chain([[26, 38], [26, 45]]),                        // the guanidinium fan
+  S('M26 45 L26 52', 'ik', 2), C(26, 52, 4, CPK.N),
+  S('M26 52 L17 57 M26 52 L35 57', 'ik', 1.8),
+  C(17, 57, 3.6, CPK.N), C(35, 57, 3.6, CPK.N)]);
+amino('histidine', () => [chain([[26, 40]]),                                 // five-membered ring, two N
+  S('M26 40 L18 47 L21 56 L31 56 L34 47 Z', 'ik', 2),
+  C(18, 47, 3.6, CPK.N), C(31, 56, 3.6, CPK.N)]);
+
 def('dipeptide', () => {
   const bond = [30, 30];
   return [
@@ -1163,6 +1247,130 @@ def('penicillin', () => [                                 // the beta-lactam rin
     return S(`M32 32 L${n(32 + 12 * Math.cos(a))} ${n(32 + 12 * Math.sin(a))}`, 'ik', 1.8);
   }),
   C(20, 26, 4, CPK.N), C(32, 38, 4, CPK.S),
+]);
+
+/* the wider crop roster ───────────────────────────────────────────────── */
+def('cotton', () => [                                      // the boll, split, fibre escaping
+  ...[[24, 26], [36, 26], [22, 36], [38, 36], [30, 22], [30, 40]].map(([x, y]) => C(x, y, 9, 'hi')),
+  C(30, 32, 8, 'hi'),
+  ...[[26, 30], [34, 34]].map(([x, y]) => C(x, y, 2.4, 'lo')),   // the seeds inside
+  S('M30 44 L30 54', 'plant-lo', 2.2),
+]);
+def('maize', () => [                                       // a cob, kernels stuck fast
+  P('M22 12 Q30 8 38 12 L38 44 Q30 50 22 44 Z', 'bs'),
+  ...[0, 1, 2, 3, 4, 5].map(i => S(`M23 ${17 + i * 5.5} L37 ${17 + i * 5.5}`, 'lo', 1.2)),
+  ...[24, 30, 36].map(x => S(`M${x} 14 L${x} 46`, 'lo', 1)),
+  P('M20 16 Q10 26 18 46 Z', 'plant-bs'), P('M40 16 Q50 26 42 46 Z', 'plant-bs'),
+]);
+def('popcorn', () => [                                     // burst, irregular, white
+  ...[[22, 24], [34, 20], [40, 30], [30, 30], [20, 36], [34, 38], [26, 44]]
+    .map(([x, y]) => C(x, y, 8, 'hi')),
+  ...[[24, 24], [36, 30]].map(([x, y]) => C(x, y, 3, 'bs')),
+]);
+def('barley', () => [                                      // long awns, that is the tell
+  stalk('plant-lo', 30, 54, 26),
+  ...Array.from({ length: 6 }, (_, i) => grain('bs', 26 + (i % 2) * 8, 16 + i * 5, .8)),
+  ...Array.from({ length: 6 }, (_, i) =>
+    S(`M${26 + (i % 2) * 8} ${13 + i * 5} L${22 + (i % 2) * 16} ${2 + i * 4}`, 'hi', 1)),
+]);
+def('oat', () => [                                         // loose drooping panicle
+  stalk('plant-lo', 30, 54, 20),
+  ...[[18, 20], [42, 18], [22, 32], [38, 30], [30, 14]].map(([x, y]) =>
+    [S(`M30 ${y + 4} Q${x} ${y + 2} ${x} ${y}`, 'plant-lo', 1.2), grain('bs', x, y, 1.1)]).flat(),
+]);
+def('soybean', () => [                                     // a pod, beans showing through
+  P('M12 34 Q30 20 48 34 Q30 44 12 34 Z', 'bs'),
+  ...[20, 30, 40].map(x => C(x, 33, 4.6, 'hi')),
+]);
+def('tofu', () => [                                        // a pressed block, cut clean
+  P('M14 24 L40 20 L46 28 L46 44 L20 48 L14 40 Z', 'hi'),
+  P('M14 24 L40 20 L46 28 L20 32 Z', 'bs'),
+  S('M20 32 L20 48', 'lo', 1.4),
+]);
+def('pea', () => [                                         // pod split, peas in a row
+  P('M10 30 Q30 18 50 30 Q30 34 10 30 Z', 'lo'),
+  ...[18, 27, 36, 44].map(x => C(x, 34, 6, 'bs')),
+  ...[18, 36].map(x => C(x - 2, 32, 2, 'hi')),
+]);
+def('carrot', () => [                                      // the taproot, and its feathery top
+  P('M26 22 L34 22 L31 50 L29 50 Z', 'bs'),
+  ...[28, 34, 40].map(y => S(`M${26.6 + (y - 22) * 0.07} ${y} L${33.4 - (y - 22) * 0.07} ${y}`, 'lo', 1)),
+  ...[[22, 12], [30, 8], [38, 12]].map(([x, y]) => leaf('plant-bs', x, y, .5)),
+  S('M30 22 L30 14', 'plant-lo', 1.6),
+]);
+def('lettuce', () => [                                     // loose leaves, all outer
+  ...[[30, 34, 1.3, 0], [20, 32, 1, -35], [40, 32, 1, 35], [24, 40, .85, -15], [36, 40, .85, 15]]
+    .map(([x, y, s, r]) => leaf('bs', x, y, s, r)),
+  leaf('hi', 30, 32, .8),
+]);
+def('pumpkin', () => [                                     // ribbed, and squat
+  E(30, 36, 20, 15, 'bs'),
+  ...[-11, 0, 11].map(dx => S(`M${30 + dx} 22 Q${30 + dx * 1.35} 36 ${30 + dx} 50`, 'lo', 1.6)),
+  S('M30 21 L30 14', 'plant-lo', 3.4),
+  S('M32 15 Q38 10 36 6', 'plant-lo', 1.6),
+]);
+def('beet', () => [                                        // round root, tapering, leaves up
+  C(30, 34, 14, 'bs'), P('M28 46 L32 46 L30 54 Z', 'bs'),
+  S('M26 22 L24 10 M30 21 L30 8 M34 22 L36 10', 'plant-lo', 1.8),
+  ...[[24, 9], [30, 7], [36, 9]].map(([x, y]) => leaf('plant-bs', x, y, .55)),
+  S('M24 30 Q30 34 36 30', 'lo', 1.2),
+]);
+def('lemon', () => [                                       // the nipple at each end is the tell
+  E(30, 32, 15, 12, 'bs'),
+  P('M13 32 Q9 32 11 30 Z', 'bs'), P('M47 32 Q51 32 49 30 Z', 'bs'),
+  E(25, 27, 5, 3.4, 'hi'),
+  S('M30 20 L30 16', 'plant-lo', 1.6),
+]);
+def('strawberry', () => [                                  // achenes drawn ON the outside
+  P('M30 50 Q14 40 16 28 Q18 18 30 18 Q42 18 44 28 Q46 40 30 50 Z', 'bs'),
+  ...[[24, 26], [34, 25], [29, 32], [22, 35], [37, 34], [30, 41]].map(([x, y]) => C(x, y, 1.8, 'hi')),
+  ...[[22, 16], [30, 13], [38, 16]].map(([x, y]) => leaf('plant-bs', x, y, .45)),
+]);
+def('banana', () => [                                      // the curve, and the ridges
+  P('M12 22 Q16 42 34 48 Q48 50 50 40 Q36 42 26 34 Q18 28 18 20 Z', 'bs'),
+  S('M16 24 Q22 40 36 45', 'hi', 1.4),
+  S('M12 22 L10 18', 'lo', 3),
+]);
+def('pear', () => [                                        // narrow at the top, heavy at the base
+  P('M30 14 Q34 22 34 26 Q44 32 44 40 A14 14 0 0 1 16 40 Q16 32 26 26 Q26 22 30 14 Z', 'bs'),
+  E(24, 36, 5, 4, 'hi'),
+  S('M30 14 L31 7', 'lo', 1.8),
+]);
+def('cherry', () => [                                      // a pair, on one stem
+  S('M30 10 Q22 20 20 30 M30 10 Q38 22 40 32', 'plant-lo', 1.8),
+  C(20, 36, 9, 'bs'), C(40, 38, 9, 'bs'),
+  C(17, 33, 2.6, 'hi'), C(37, 35, 2.6, 'hi'),
+]);
+def('fig', () => [                                         // teardrop, and the ostiole at the tip
+  P('M30 12 Q40 18 42 30 A14 14 0 0 1 18 30 Q20 18 30 12 Z', 'bs'),
+  C(30, 41, 2.4, 'ik'),                                    // the opening the wasp goes in
+  ...[[26, 26], [34, 28], [30, 33]].map(([x, y]) => C(x, y, 1.6, 'hi')),
+  S('M30 12 L30 7', 'plant-lo', 1.6),
+]);
+def('coffee', () => [                                      // two seeds, flat faces together
+  E(22, 32, 8, 12, 'bs'), E(38, 32, 8, 12, 'bs'),
+  S('M22 21 Q19 32 22 43', 'lo', 1.6), S('M38 21 Q41 32 38 43', 'lo', 1.6),
+]);
+def('brewed_coffee', () => [                               // a cup, and what is in it
+  P('M16 24 L42 24 L40 44 Q30 48 18 44 Z', 'hi'),
+  E(29, 25, 13, 3.4, 'lo'),
+  P('M42 28 Q50 28 50 34 Q50 40 42 40', 'hi'),
+  S('M24 18 Q26 14 24 10 M32 18 Q34 14 32 10', 'gh', 1.6),
+]);
+def('cocoa', () => [                                       // the pod, ridged, off a trunk
+  P('M30 10 Q42 16 42 32 Q42 48 30 52 Q18 48 18 32 Q18 16 30 10 Z', 'bs'),
+  ...[-7, 0, 7].map(dx => S(`M${30 + dx} 13 Q${30 + dx * 1.4} 31 ${30 + dx} 49`, 'lo', 1.4)),
+  S('M8 20 L18 24', 'craft-lo', 3.4),
+]);
+def('cocoa_bean', () => [                                  // fermented beans, out of the pod
+  ...[[22, 26], [36, 24], [28, 34], [40, 36], [22, 42]].map(([x, y]) => E(x, y, 7, 5, 'lo')),
+  ...[[22, 26], [28, 34]].map(([x, y]) => S(`M${x - 4} ${y} L${x + 4} ${y}`, 'bs', 1.2)),
+]);
+def('chocolate', () => [                                   // a moulded bar, squares scored in
+  P('M12 20 L46 16 L48 40 L14 44 Z', 'bs'),
+  S('M12 28 L47 24 M12 36 L47.5 32', 'lo', 1.6),
+  S('M23 19 L24 43 M35 18 L36 42', 'lo', 1.6),
+  P('M12 20 L46 16 L46.4 20 L12.2 24 Z', 'hi'),
 ]);
 
 /* fibre, paper, ink — the made things ──────────────────────────────────── */

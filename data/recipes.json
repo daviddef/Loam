@@ -3998,9 +3998,9 @@
       "nitrogen"
     ],
     "out": "amino_acid",
-    "why": "Carbon skeletons from sugar, nitrogen from the soil. Plants build all twenty; you can only build eleven, which is why the other nine are called essential.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Amino_acid"
+    "why": "Carbon skeletons from sugar, nitrogen from the soil. Nine of the twenty you cannot make at all — valine, isoleucine, leucine, methionine, phenylalanine, tryptophan, threonine, histidine and lysine — which is why they are called essential.",
+    "src": "https://en.wikipedia.org/wiki/Essential_amino_acid",
+    "verified": true
   },
   {
     "in": [
@@ -5574,5 +5574,465 @@
     "src": "https://en.wikipedia.org/wiki/Blastocyst",
     "verb": "wait",
     "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "sun"
+    ],
+    "out": "cotton",
+    "why": "The fibre is the seed's own wrapping — it grows in a boll around the seeds themselves. The crop wants a long frost-free period and plenty of sunshine, which is why it stays a warm-country plant.",
+    "src": "https://en.wikipedia.org/wiki/Cotton",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotton"
+    ],
+    "out": "fibre",
+    "why": "Ginning. Teeth on a rotating drum grip the lint and drag it through holes too small for the seeds, which stay behind. By hand it took a labourer about ten hours to clean a single pound of it.",
+    "src": "https://en.wikipedia.org/wiki/Cotton_gin",
+    "verified": true,
+    "verb": "crush"
+  },
+  {
+    "in": [
+      "field",
+      "grass"
+    ],
+    "out": "maize",
+    "why": "A tall stout grass, domesticated once from wild teosinte in southern Mexico about 9,000 years ago — and one that cannot sow itself. Teosinte kernels drop off the cob; maize kernels stay on.",
+    "src": "https://en.wikipedia.org/wiki/Maize",
+    "verified": true
+  },
+  {
+    "in": [
+      "maize"
+    ],
+    "out": "popcorn",
+    "why": "Water inside the kernel turns to steam and builds to about 930 kPa and 180°C before the hull gives way. The pressure drops all at once and the endosperm expands into an airy foam.",
+    "src": "https://en.wikipedia.org/wiki/Popcorn",
+    "verified": true,
+    "verb": "heat"
+  },
+  {
+    "in": [
+      "grass",
+      "salt"
+    ],
+    "out": "barley",
+    "why": "Barley is more tolerant of soil salinity than other cereals, and relatively tolerant of drought — it crops on ground that beats wheat. It was among the first grains domesticated in the Fertile Crescent, around 9,000 BC.",
+    "src": "https://en.wikipedia.org/wiki/Barley",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "wheat"
+    ],
+    "out": "oat",
+    "why": "Nobody set out to farm oats. They arrived as a weed in fields of the cereals people meant to grow, and were domesticated second-hand — which is also why they thrive on cool, wet summers other cereals dislike.",
+    "src": "https://en.wikipedia.org/wiki/Oat",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "legume"
+    ],
+    "out": "soybean",
+    "why": "Domesticated from wild soybean in north-central China between 6,000 and 9,000 years ago. Like other legumes it fixes its own nitrogen using symbiotic Rhizobia bacteria — and the dry seed is 36% protein and 20% oil.",
+    "src": "https://en.wikipedia.org/wiki/Soybean",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "soybean"
+    ],
+    "out": "tofu",
+    "why": "The same trick as cheese, on a bean. Salt water curdles soy milk and the curds are pressed into blocks — nigari, the magnesium chloride left once sodium chloride is taken out of seawater, is the classic coagulant.",
+    "src": "https://en.wikipedia.org/wiki/Tofu",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "legume"
+    ],
+    "out": "pea",
+    "why": "The pod is a fruit — it develops from the ovary of the pea flower, and the peas are its seeds. One of the oldest domesticated crops there is, with finds from about 10,000 BC in the Near East and Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Pea",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "root"
+    ],
+    "out": "carrot",
+    "why": "A carrot is a taproot loaded with sugar in the plant's first year so it can afford to flower in its second. We eat the savings, before it ever gets to spend them. The orange comes from beta-carotene.",
+    "src": "https://en.wikipedia.org/wiki/Carrot",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf"
+    ],
+    "out": "lettuce",
+    "why": "Heat makes lettuce bolt: most varieties grow poorly above 24°C, and a lettuce that runs to flower turns bitter and unsaleable. Keep it cool and it stays a leaf, which is the only form anyone wants it in.",
+    "src": "https://en.wikipedia.org/wiki/Lettuce",
+    "verified": true,
+    "verb": "chill"
+  },
+  {
+    "in": [
+      "field",
+      "vine"
+    ],
+    "out": "pumpkin",
+    "why": "A warm-weather crop that will not start until the soil is at least 15.5°C eight centimetres down, and is usually in the ground by early July. Male and female flowers on the same plant, and bees do the joining.",
+    "src": "https://en.wikipedia.org/wiki/Pumpkin",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "sea"
+    ],
+    "out": "beet",
+    "why": "Beetroot, sugar beet and chard are all one plant, bred three ways from the sea beet — a wild coastal thing that lives on beaches, saltmarsh drift-lines and sea walls and tolerates high sodium.",
+    "src": "https://en.wikipedia.org/wiki/Sea_beet",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "fruit"
+    ],
+    "out": "lemon",
+    "why": "There is no wild lemon: it is a cross between two other fruits, the citron and the bitter orange. Its juice runs 5–6% citric acid, which is what the sourness is. It reached Europe near southern Italy by the second century AD.",
+    "src": "https://en.wikipedia.org/wiki/Lemon",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "root"
+    ],
+    "out": "strawberry",
+    "why": "The plant barely bothers with seed: it throws out runners, pegs them down until they root, and the new plant is cut free. That is how strawberries were propagated in Europe for centuries before anyone bred them.",
+    "src": "https://en.wikipedia.org/wiki/Strawberry",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "leaf"
+    ],
+    "out": "banana",
+    "why": "The banana plant is the largest herbaceous flowering plant there is — no wood, no trunk, just a pseudostem of rolled-up leaf stalks. The fruit is a berry, and cultivated ones carry no fertile seed.",
+    "src": "https://en.wikipedia.org/wiki/Banana",
+    "verified": true
+  },
+  {
+    "in": [
+      "harvest",
+      "tree"
+    ],
+    "out": "pear",
+    "why": "Summer and autumn pears are climacteric — harvested before they are ripe, still green, and they snap off cleanly when lifted. The ripening happens after the harvest.",
+    "src": "https://en.wikipedia.org/wiki/Pear",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree"
+    ],
+    "out": "cherry",
+    "why": "Like most temperate-latitude trees, a cherry needs a certain number of chilling hours each year to break dormancy and bloom at all. A mild winter is not a kindness to a cherry tree.",
+    "src": "https://en.wikipedia.org/wiki/Cherry",
+    "verified": true,
+    "verb": "chill"
+  },
+  {
+    "in": [
+      "flower",
+      "fruit"
+    ],
+    "out": "fig",
+    "why": "A fig is a syconium: a hollow fleshy structure lined on the inside with flowers. A single narrow opening at the tip lets the fig wasp Blastophaga psenes crawl in to pollinate them.",
+    "src": "https://en.wikipedia.org/wiki/Fig",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "seed"
+    ],
+    "out": "coffee",
+    "why": "Coffee beans are not beans. They are the seeds of a fruit — the coffee cherry — separated out of the flesh to give green, unroasted beans. The earliest reports of anyone drinking it are among the Sufis of Yemen in the mid-15th century.",
+    "src": "https://en.wikipedia.org/wiki/Coffee",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "water"
+    ],
+    "out": "brewed_coffee",
+    "why": "Roasting is what makes coffee taste of coffee: heat breaks the bean's starches into simple sugars that caramelise and brown. Then grind it, steep it in hot water, and filter the grounds back out.",
+    "src": "https://en.wikipedia.org/wiki/Coffee",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "wood"
+    ],
+    "out": "cocoa",
+    "why": "Unlike most fruiting trees, the cacao pod grows directly from the trunk or a large branch rather than from twigs. Inside are the seeds — 30 to 40 beans to a typical pod.",
+    "src": "https://en.wikipedia.org/wiki/Cocoa_bean",
+    "verified": true
+  },
+  {
+    "in": [
+      "cocoa"
+    ],
+    "out": "cocoa_bean",
+    "why": "The pods and their pulp are heaped up for several days and left to sweat: the thick pulp liquefies as it ferments. Sweating is what the quality depends on — without it the beans keep a strong, bitter taste.",
+    "src": "https://en.wikipedia.org/wiki/Cocoa_bean",
+    "verified": true,
+    "verb": "ferment"
+  },
+  {
+    "in": [
+      "cocoa_bean"
+    ],
+    "out": "chocolate",
+    "why": "Roasted, cracked and deshelled into nibs, then ground to a paste. Conching takes the particles under about 20 μm — smaller than the tongue can detect — which is what \"smooth\" actually means. Four hundred beans to the pound.",
+    "src": "https://en.wikipedia.org/wiki/Chocolate",
+    "verified": true,
+    "verb": "heat"
+  },
+  {
+    "in": [
+      "collagen"
+    ],
+    "verb": "cut",
+    "out": "glycine",
+    "why": "Collagen is a quarter to a third of all the protein in a mammal, and about 35% of collagen is glycine — one at almost every third residue. Nothing else in a body is that concentrated a source.",
+    "src": "https://en.wikipedia.org/wiki/Collagen",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "nitrogen"
+    ],
+    "out": "alanine",
+    "why": "The glucose-alanine cycle. Muscle burning amino acids for fuel collects the loose amino groups onto glutamate, hands one to pyruvate to make alanine, and puts that into the blood for the liver to sort out.",
+    "src": "https://en.wikipedia.org/wiki/Alanine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycine",
+      "enzyme"
+    ],
+    "out": "serine",
+    "why": "Serine hydroxymethyltransferase runs both ways. Normally it cleaves serine into glycine and a spare carbon handed to folate — but with glycine in excess it runs backwards and builds serine instead.",
+    "src": "https://en.wikipedia.org/wiki/Serine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamic_acid"
+    ],
+    "verb": "wait",
+    "out": "proline",
+    "why": "Proline is made from glutamate, and it is the only one of the twenty whose nitrogen is a secondary amine — the side chain closes back onto it. Plants pile proline up as a standard response to stress.",
+    "src": "https://en.wikipedia.org/wiki/Proline",
+    "verified": true
+  },
+  {
+    "in": [
+      "phenylalanine",
+      "oxygen_gas"
+    ],
+    "out": "tyrosine",
+    "why": "Phenylalanine hydroxylase is a monooxygenase: it hangs a hydroxyl on the end of phenylalanine's ring and the result is tyrosine. Lacking that one enzyme is what phenylketonuria is.",
+    "src": "https://en.wikipedia.org/wiki/Tyrosine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamic_acid",
+      "enzyme"
+    ],
+    "out": "aspartic_acid",
+    "why": "Transamination: aspartate transaminase moves an amino group between glutamate and aspartate, and oxaloacetate is what receives it. That same enzyme is the AST on a liver blood test.",
+    "src": "https://en.wikipedia.org/wiki/Aspartic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "amino_acid",
+      "nitrogen"
+    ],
+    "out": "glutamic_acid",
+    "why": "Glutamate is the hub. Transamination of alpha-ketoglutarate makes it, and it then hands its own amino group on to build the others — tissues collect loose nitrogen as glutamate before doing anything else with it.",
+    "src": "https://en.wikipedia.org/wiki/Glutamic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamic_acid",
+      "nitrogen"
+    ],
+    "out": "glutamine",
+    "why": "Glutamine synthetase sticks ammonia straight onto glutamate. Free ammonia is toxic and glutamine is not, so this is how nitrogen travels in the blood without doing damage on the way.",
+    "src": "https://en.wikipedia.org/wiki/Glutamine",
+    "verified": true
+  },
+  {
+    "in": [
+      "aspartic_acid",
+      "glutamine"
+    ],
+    "out": "asparagine",
+    "why": "Asparagine synthetase builds it from aspartate, glutamine and ATP: aspartate is the skeleton, glutamine donates the nitrogen for the amide. Heat this with a reducing sugar later and you get acrylamide.",
+    "src": "https://en.wikipedia.org/wiki/Asparagine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamic_acid",
+      "carbon_dioxide"
+    ],
+    "out": "arginine",
+    "why": "Glutamate becomes ornithine; ornithine takes on a carbamoyl group built from ammonia and bicarbonate; two steps later, arginine. Arginase then splits it into urea and ornithine and the cycle starts again.",
+    "src": "https://en.wikipedia.org/wiki/Arginine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "enzyme"
+    ],
+    "out": "valine",
+    "why": "Valine is built from pyruvic acid — sugar, three carbons in — by a run of enzymes that bacteria and plants have and animals do not. That absence is the whole of what essential means.",
+    "src": "https://en.wikipedia.org/wiki/Valine",
+    "verified": true
+  },
+  {
+    "in": [
+      "valine",
+      "enzyme"
+    ],
+    "out": "leucine",
+    "why": "Leucine and valine come off the same line: plants and microbes build leucine from pyruvic acid, and valine synthesis uses the initial part of that same pathway. Animals run neither, so both are essential.",
+    "src": "https://en.wikipedia.org/wiki/Leucine",
+    "verified": true
+  },
+  {
+    "in": [
+      "threonine",
+      "methionine"
+    ],
+    "out": "isoleucine",
+    "why": "In plants isoleucine is assembled from two other amino acids — threonine and methionine. Both of those are essential to you as well, so it is essentials all the way down.",
+    "src": "https://en.wikipedia.org/wiki/Isoleucine",
+    "verified": true
+  },
+  {
+    "in": [
+      "aspartic_acid",
+      "phosphorus"
+    ],
+    "out": "threonine",
+    "why": "Plants and bacteria build it from aspartic acid by way of homoserine, which gets a phosphate hung on it and then knocked off again with the hydroxyl shifted. Animals run none of that, so you have to eat it.",
+    "src": "https://en.wikipedia.org/wiki/Threonine",
+    "verified": true
+  },
+  {
+    "in": [
+      "aspartic_acid",
+      "sulfur"
+    ],
+    "out": "methionine",
+    "why": "The backbone comes from aspartic acid and the sulfur comes from cysteine, along the transsulfuration pathway. Run the trade the other way and methionine's sulfur is what ends up in cysteine.",
+    "src": "https://en.wikipedia.org/wiki/Methionine",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "enzyme"
+    ],
+    "out": "lysine",
+    "why": "Lysine is the limiting amino acid in most cereal grains — the essential one present in the smallest quantity — and it is plentiful in pulses. That is the entire nutritional case for eating the two together.",
+    "src": "https://en.wikipedia.org/wiki/Lysine",
+    "verified": true
+  },
+  {
+    "in": [
+      "atp",
+      "enzyme"
+    ],
+    "out": "histidine",
+    "why": "Histidine is the odd one out: the first reaction of its pathway condenses ATP with PRPP, so the molecule the cell spends as currency is also the one it takes apart to build this amino acid's ring.",
+    "src": "https://en.wikipedia.org/wiki/Histidine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose"
+    ],
+    "verb": "ferment",
+    "out": "phenylalanine",
+    "why": "Bacteria, fungi, algae and plants build phenylalanine through the shikimate pathway and animals cannot. Industry gets round that by fermenting sugar with E. coli, in bulk, for food uses including aspartame.",
+    "src": "https://en.wikipedia.org/wiki/Phenylalanine",
+    "verified": true
+  },
+  {
+    "in": [
+      "serine",
+      "enzyme"
+    ],
+    "out": "tryptophan",
+    "why": "The last step is tryptophan synthase welding an indole ring onto serine. So the largest of the twenty is one of the smaller ones with a ring bolted on the side.",
+    "src": "https://en.wikipedia.org/wiki/Tryptophan",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycine",
+      "proline"
+    ],
+    "out": "collagen",
+    "verified": true,
+    "why": "The commonest motifs in collagen are glycine-proline-X and glycine-X-hydroxyproline. Glycine sits at almost every third residue and proline fills much of the rest.",
+    "src": "https://en.wikipedia.org/wiki/Collagen"
+  },
+  {
+    "in": [
+      "alanine",
+      "glycine"
+    ],
+    "out": "beta_sheet",
+    "verified": true,
+    "why": "Silk fibroin is the sequence Gly-Ser-Gly-Ala-Gly-Ala repeated over and over, stacked as antiparallel beta sheets. The high glycine content is what lets the sheets pack that tightly.",
+    "src": "https://en.wikipedia.org/wiki/Fibroin"
+  },
+  {
+    "in": [
+      "methionine",
+      "serine"
+    ],
+    "out": "cysteine",
+    "verified": true,
+    "why": "In mammals cysteine is assembled out of two other amino acids: methionine supplies the sulfur by way of homocysteine, serine supplies the rest, and cystathionine beta-synthase joins them.",
+    "src": "https://en.wikipedia.org/wiki/Cysteine"
   }
 ]
