@@ -27,7 +27,12 @@ __PALETTE_CSS__
     --ink-soft:var(--s-inkQuiet);
     --card:var(--s-panel);
     --line:var(--s-rule);
-    --orange:var(--s-discovery);
+    /* Two warm colours, and the difference between them carries meaning.
+       --orange is the interface accent: hover, focus, the current thing.
+       --discovery is the only high-chroma colour in the game and appears at
+       exactly one moment — when something new exists. If it is used for a
+       button, it stops meaning anything. */
+    --orange:var(--s-accent);
     --mustard:var(--c-grain-bs);
     --avocado:var(--c-plant-bs);
     --brick:var(--c-fire-bs);
@@ -46,6 +51,7 @@ __CATEGORY_CSS__
   /* Field manual — ink on paper. The same 226 drawings, unfilled. */
   body.t-manual{
     --cream:var(--s-paper);
+    --discovery:#B4600A;
     --ink:var(--s-paperInk);
     --ink-soft:#7A6A52;
     --card:#EFE0C4;
@@ -165,7 +171,7 @@ __CATEGORY_CSS__
   @keyframes draw{from{stroke-dashoffset:var(--len,400)}to{stroke-dashoffset:0}}
   #links path.fresh{
     stroke-dasharray:var(--len,400);animation:draw .45s cubic-bezier(.3,.8,.4,1) forwards;
-    stroke:var(--orange);stroke-width:3;opacity:.85;
+    stroke:var(--discovery);stroke-width:3;opacity:.85;
   }
   #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6}
   #zoom button{
@@ -290,7 +296,7 @@ __CATEGORY_CSS__
   }
   .ring{
     position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
-    border:2.5px solid var(--orange);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
+    border:2.5px solid var(--discovery);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
   }
   @keyframes expel{
     0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
@@ -298,9 +304,11 @@ __CATEGORY_CSS__
     100%{transform:translate(calc(-50% + 46px),calc(-50% - 62px)) scale(.7);opacity:0}
   }
   .drop{
-    position:absolute;font-size:20px;pointer-events:none;z-index:5;
+    position:absolute;width:30px;height:30px;pointer-events:none;z-index:5;
     animation:expel 1.05s cubic-bezier(.25,.6,.4,1) forwards;
   }
+  .drop .art{width:100%;height:100%;display:block;
+             filter:drop-shadow(0 2px 6px rgba(var(--shade),.55))}
   @keyframes pulse{0%,100%{transform:scale(1)}45%{transform:scale(1.07)}}
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
@@ -324,6 +332,21 @@ __CATEGORY_CSS__
   }
   @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
   .chip.pop{animation:pop .32s cubic-bezier(.3,1.5,.5,1)}
+  /* Catalogued. The accession number lands like a stamp — slightly askew,
+     slightly too big, settling. It is the one moment the high-chroma colour
+     is allowed out. */
+  @keyframes stamp{
+    0%{transform:scale(2.1) rotate(-7deg);opacity:0}
+    45%{opacity:1}
+    70%{transform:scale(.94) rotate(1.5deg)}
+    100%{transform:scale(1) rotate(0);opacity:1}
+  }
+  .chip.board.minted .ac{
+    animation:stamp .5s .22s cubic-bezier(.3,1.4,.5,1) backwards;
+    color:var(--discovery);
+  }
+  .chip.board.minted .rl{background:var(--discovery)}
+  @media (prefers-reduced-motion:reduce){ .chip.board.minted .ac{animation:none} }
   @keyframes nope{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .chip.nope{animation:nope .26s}
   #tray{
@@ -376,7 +399,7 @@ __CATEGORY_CSS__
     padding:4px 10px;font:600 11px var(--face-name);cursor:pointer;
   }
   @keyframes drain{from{width:100%}to{width:0}}
-  .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--fam,var(--orange));
+  .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--discovery);
     opacity:.45;animation:drain 6s linear forwards}
   #card:not(.mini) .timer{display:none}
   .cardrow{display:flex;gap:8px;justify-content:center;align-items:center}
@@ -824,7 +847,7 @@ __CATEGORY_CSS__
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button class="count" id="count" title="Open your codex"></button>
   <button id="shelfToggle">Shelf</button>
-  <button id="settings" title="Settings">⚙</button>
+  <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
   <button id="nudge">Nudge</button>
   <button id="reset">Reset</button>
 </header>
@@ -836,7 +859,7 @@ __CATEGORY_CSS__
     </div>
     <div id="zoom">
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
-      <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench">☰</button>
+      <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -1861,11 +1884,14 @@ function resolve(r, chips, x, y) {
     const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
     const drop = document.createElement('div');
     drop.className = 'drop';
-    drop.textContent = '💧';
+    // A molecule, not a puddle. What leaves a condensation reaction is one
+    // H2O, and drawing it as a droplet would undercut the only sentence that
+    // makes this animation worth having.
+    drop.innerHTML = artSVG('mol_water');
     drop.style.left = cx + 'px'; drop.style.top = cy + 'px';
     world.appendChild(drop);
     setTimeout(() => drop.remove(), 1100);
-    toast('A water molecule leaves — that is what condensation means');
+    toast('One water molecule leaves — that is what condensation means');
   }
   const el = spawn(r.out, null, null, chips);
   links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
@@ -1873,6 +1899,10 @@ function resolve(r, chips, x, y) {
   refreshFolds();
   const isNew = !found.has(r.out);
   if (isNew) {
+    // Catalogued: the accession number stamps itself onto the card. It fades
+    // back to the ordinary colour once it is no longer news.
+    el.classList.add('minted');
+    setTimeout(() => el.classList.remove('minted'), 4000);
     const wasLive = liveCount();
     found.add(r.out);
     save(); renderShelf();

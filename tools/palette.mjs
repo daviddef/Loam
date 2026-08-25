@@ -132,6 +132,9 @@ const SURFACES = {
   inkQuiet: { notation: '10YR 6/2', note: 'secondary text' },
   paper:    { notation: '10YR 9/2', note: 'the light theme ground' },
   paperInk: { notation: '10YR 2/2', note: 'ink on paper — the light theme text' },
+  // The interface accent: hover, focus, selection, the current thing. Warm, but
+  // several steps down in chroma from `discovery`, so the two never compete.
+  accent:   { notation: '5YR 6/6',  note: 'interface accent — hover, focus, selection' },
   // The only high-chroma colour in the game. Reserved for the instant a new
   // thing exists and nothing else, so that it always means the same thing.
   discovery:{ notation: '5YR 6/12', note: 'discovery only — never used as decoration' },

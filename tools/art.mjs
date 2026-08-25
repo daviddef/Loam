@@ -1151,6 +1151,28 @@ const ship = {};
 for (const [id, v] of Object.entries(out)) ship[id] = { c: v.c, s: v.s };
 for (const [id, fn] of Object.entries(VERB)) ship['verb_' + id] = { c: 'craft', s: fn() };
 
+/* Interface marks. The gear and the stack render as full-colour emoji on some
+   platforms and as text glyphs on others, which is exactly the inconsistency
+   leaving emoji behind was meant to end. */
+ship.ui_settings = { c: 'craft', s: [
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * Math.PI) / 4;
+    return S(`M${n(30 + 13 * Math.cos(a))} ${n(30 + 13 * Math.sin(a))} ` +
+             `L${n(30 + 21 * Math.cos(a))} ${n(30 + 21 * Math.sin(a))}`, 'ik', 5);
+  }),
+  C(30, 30, 15, 'ik'), C(30, 30, 6.5, 'ground'),
+] };
+ship.ui_tidy = { c: 'craft', s: [
+  S('M12 20 L48 20', 'ik', 4), S('M12 30 L48 30', 'ik', 4), S('M12 40 L40 40', 'ik', 4),
+] };
+
+/* One water MOLECULE, not a body of water. It is what leaves in a condensation
+   reaction, and the whole point of showing it is that it is a molecule. */
+ship.mol_water = { c: 'molecule', s: [
+  S('M30 34 L16 22', 'ik', 3), S('M30 34 L44 22', 'ik', 3),
+  C(30, 34, 11, CPK.O), C(16, 22, 6.5, CPK.H), C(44, 22, 6.5, CPK.H),
+] };
+
 writeFileSync(join(root, 'data/art.json'), JSON.stringify(ship) + '\n');
 const kb = (JSON.stringify(ship).length / 1024).toFixed(1);
 console.log(`\n  wrote data/art.json — ${kb} kB`);

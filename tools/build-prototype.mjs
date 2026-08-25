@@ -50,7 +50,26 @@ function catCSS() {
 
 let html = readFileSync(u('../prototype/template.html'), 'utf8');
 
+/* The two interface marks are baked in rather than rendered at runtime: they sit
+ * in the header, and a header that pops in after the script runs looks broken. */
+function uiGlyph(id) {
+  const rec = art[id];
+  const paint = r => typeof r !== 'string' ? 'var(--gh)'
+    : r[0] === '#' ? r : r.includes('-') ? `var(--c-${r})` : `var(--${r})`;
+  const shape = s => ({
+    p: () => `<path d="${s[1]}" fill="${paint(s[2])}"/>`,
+    s: () => `<path d="${s[1]}" fill="none" stroke="${paint(s[2])}" stroke-width="${s[3]}" stroke-linecap="round" stroke-linejoin="round"/>`,
+    c: () => `<circle cx="${s[1]}" cy="${s[2]}" r="${s[3]}" fill="${paint(s[4])}"/>`,
+    e: () => `<ellipse cx="${s[1]}" cy="${s[2]}" rx="${s[3]}" ry="${s[4]}" fill="${paint(s[5])}"/>`,
+    g: () => `<g transform="rotate(${s[1]} ${s[2]} ${s[3]})">${s[4].map(shape).join('')}</g>`,
+  }[s[0]] || (() => ''))();
+  return `<svg class="art" viewBox="0 0 60 60" data-cat="${rec.c}" aria-hidden="true">` +
+         rec.s.map(shape).join('') + '</svg>';
+}
+
 for (const [token, value] of [
+  ['__UI_SETTINGS__', uiGlyph('ui_settings')],
+  ['__UI_TIDY__', uiGlyph('ui_tidy')],
   ['__PALETTE_CSS__', paletteCSS()],
   ['__CATEGORY_CSS__', catCSS()],
   ['__ART_RENDER__', artRender],

@@ -104,8 +104,11 @@ to sRGB. Every colour in the game is a measured chip with a notation you can
 look up, including the lighter and darker tints, which come from the same hue
 page rather than from lightening a hex. Chroma is deliberately low, because real
 soil is low-chroma and high-chroma warm earth is what "earthy palette" has come
-to mean. Exactly one high-chroma colour exists, and it is reserved for the
-instant a new thing is discovered.
+to mean. Two warm colours exist and the difference between them carries meaning:
+`accent` (5YR 6/6) is the interface — hover, focus, the current thing — and
+`discovery` (5YR 6/12) is the only high-chroma colour in the game and appears at
+exactly one moment, when something new exists. Used on a button, it would stop
+meaning anything.
 
 A game whose claim is that everything in it is sourced, whose colours are also
 sourced, is a coherence a competitor cannot copy without copying the idea.
