@@ -368,21 +368,25 @@
      other density so the bench-packing math above never has to know which
      mode it is looking at. */
   body.d-pill .chip.board:not(.cooking):not(.target){
-    --cw:104px;flex-direction:row;align-items:center;justify-content:flex-start;
-    gap:7px;padding:5px 10px 5px 6px;border-radius:99px;
+    --cw:88px;flex-direction:row;align-items:center;justify-content:flex-start;
+    gap:6px;padding:4px 9px 4px 5px;border-radius:99px;
   }
-  body.d-pill .chip.board .art{width:26px;height:26px;flex:none}
+  body.d-pill .chip.board .art{width:21px;height:21px;flex:none}
   body.d-pill .chip.board .n{
     /* Block put the text at the TOP of the reserved two-line box, so a short
        one-line name like "Stone" sat high above the icon's own vertical
        centre instead of level with it. Flex centres whatever text is actually
-       there — one line or two — within that same reserved height. */
+       there — one line or two — within that same reserved height. Reserving
+       only ~one line (not two) is what actually makes this read as a pill
+       instead of a card with rounded corners — most names fit on one line
+       anyway, and a 2-line name just grows the pill a little rather than
+       every pill paying for the tallest possible name. */
     display:flex;align-items:center;justify-content:flex-start;
-    min-height:2.3em;margin:0;text-align:left;text-transform:none;
-    letter-spacing:0;font-size:10px;line-height:1.2;
+    min-height:1.25em;margin:0;text-align:left;text-transform:none;
+    letter-spacing:0;font-size:9.5px;line-height:1.15;
   }
-  body.d-pill .chip.board .n.long{font-size:9px}
-  body.d-pill .chip.board .n.vlong{font-size:8px}
+  body.d-pill .chip.board .n.long{font-size:8.6px}
+  body.d-pill .chip.board .n.vlong{font-size:7.8px}
   body.d-pill .chip.board .rl,
   body.d-pill .chip.board .ac{display:none}
 
