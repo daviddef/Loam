@@ -57,7 +57,8 @@ const PUBLIC = [
 /** Anything matching these must never reach the public repo. */
 const NEVER = [/^RESEARCH\.md$/, /^ROADMAP\.md$/, /^BACKLOG\.md$/, /^DESIGN\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
-               /^strip\.html$/, /^chain-preview\.html$/];
+               /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
+               /^tools\/session-report\.mjs$/];
 
 const dest = process.argv[2];
 const checkOnly = process.argv.includes('--check');

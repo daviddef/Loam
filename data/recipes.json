@@ -4634,5 +4634,25 @@
     "why": "The template gives the order; the loose nucleotides are the letters. RNA polymerase runs along the open strand at about 40 bases a second, pairing each one and leaving the DNA to zip back up behind it.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/RNA_polymerase"
+  },
+  {
+    "in": [
+      "penicillin"
+    ],
+    "verb": "wait",
+    "out": "resistance",
+    "why": "Use it long enough and the only bacteria left are the ones it did not kill. Fleming predicted this in 1945: the time may come, he said, when penicillin can be bought by anyone in the shops.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Antimicrobial_resistance"
+  },
+  {
+    "in": [
+      "penicillin",
+      "soil"
+    ],
+    "out": "resistance",
+    "why": "Resistance is not something we invented. Soil fungi and bacteria have been chemically fighting each other for a very long time, and the genes that survive that fight are already in the ground.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Antimicrobial_resistance"
   }
 ]

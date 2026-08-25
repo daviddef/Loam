@@ -26,17 +26,17 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner — soil, fire, farming, fermentation, cooking |
-| Elements | **230** (221 workshop · 9 folklore) |
-| Recipes | **471** (351 merges · 120 verb processes) |
+| Elements | **231** (222 workshop · 9 folklore) |
+| Recipes | **473** (352 merges · 121 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **230 / 230** from the four starters |
+| Reachable | **231 / 231** from the four starters |
 | Deepest chain | 21 crafts |
-| Sourced | **471 / 471** recipes, every URL machine-verified |
-| Audited | **91** claims checked against primary reporting — **44 were wrong** |
+| Sourced | **473 / 473** recipes, every URL machine-verified |
+| Audited | **91** of 473 claims checked against primary reporting — **44 were wrong** |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **2** geographic, reviewed |
 | Routes per element | **2.05** · 2 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **236**, none of them emoji |
+| Drawings | **240**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
@@ -89,7 +89,7 @@ footprint, so a rock and a cake occupy the same frame and are told apart by what
 is *in* it. Everything below the drawing is rendered from data already in the
 repo, so the cost of a new item is one shape.
 
-**The 236 drawings** are built from a kit of about forty parts on a 60x60 grid —
+**The 240 drawings** are built from a kit of about forty parts on a 60x60 grid —
 circles, arcs and tangent joins, placed on a grid rather than drawn freehand, so
 item 340 will still match item 12 after a six-month gap. The molecular tier gets
 its own drawing language: IUPAC skeletal convention, Jmol/RasMol CPK atom

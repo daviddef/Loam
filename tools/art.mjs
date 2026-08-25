@@ -847,6 +847,15 @@ def('messenger_rna', () => [                             // one strand, not two,
   }),
 ]);
 
+def('resistance', () => [
+  // A row of cells, most of them ghosts, one still solid. The picture IS the
+  // definition: what is left after an antibiotic is what it did not kill.
+  ...[[14, 24], [26, 20], [38, 25], [48, 21], [18, 42], [30, 46], [44, 42]]
+    .map(([x, y]) => C(x, y, 6, 'gh')),
+  C(30, 33, 8.5, 'lo'), C(30, 33, 6.5, 'bs'), C(27.5, 30.5, 2.4, 'hi'),
+  S('M8 33 L52 33', 'ik', 1.2),
+]);
+
 def('penicillin', () => [                                 // the beta-lactam ring
   P('M20 26 L32 26 L32 38 L20 38 Z', 'ik'),
   P('M21.4 27.4 L30.6 27.4 L30.6 36.6 L21.4 36.6 Z', 'bs'),

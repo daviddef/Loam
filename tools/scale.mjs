@@ -33,7 +33,7 @@ const SCALE = {
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet'],
   '-8':  ['polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
           'denatured_protein', 'starch', 'gelatin', 'ribosome', 'messenger_rna'],
-  '-6':  ['yeast', 'mould'],
+  '-6':  ['yeast', 'mould', 'resistance'],
   '-5':  ['cell'],
   '-4':  ['flour', 'sugar', 'salt', 'cement', 'cement_meal', 'breadcrumb', 'sand',
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince'],

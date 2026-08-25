@@ -1260,8 +1260,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "An accident on a windowsill in 1928, and a decade of work to make it a drug.",
-    "terminal": true
+    "fact": "An accident on a windowsill in 1928, and a decade of work to make it a drug."
   },
   {
     "id": "ice_cream",
@@ -2376,5 +2375,16 @@
       "microbe"
     ],
     "fact": "A working copy of one gene. Short-lived on purpose, so the cell can stop just by letting it decay."
+  },
+  {
+    "id": "resistance",
+    "name": "Resistance",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "The survivors of a course of antibiotics are, by definition, the ones it did not kill."
   }
 ]
