@@ -1153,7 +1153,12 @@ const saveSoon = () => {
 addEventListener('pagehide', () => { clearTimeout(saveTimer); save(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) save(); });
 
-const unlockedVerbs = () => new Set(verbs.filter(v => !v.unlockedBy || found.has(v.unlockedBy)).map(v => v.id));
+// Free play means every tool, by definition — not merely as a side effect of
+// free play having also put fire, flint and yeast in your found set. Those
+// happen to be the unlock keys today; saying it outright means a future verb
+// gated on something free play does not grant cannot quietly stay locked.
+const unlockedVerbs = () => new Set(
+  verbs.filter(v => prefs.freePlay || !v.unlockedBy || found.has(v.unlockedBy)).map(v => v.id));
 
 // How many undiscovered recipes can this element still take part in, using only
 // what you already hold? Simulated at 25.7 attempts per discovery versus 91.2

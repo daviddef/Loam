@@ -27,12 +27,14 @@ const elements = JSON.parse(readFileSync(join(root, 'data/elements.json'), 'utf8
 
 /** exponent -> [ids]. Everything is metres. */
 const SCALE = {
+  // Atoms and small molecules — the things the game genuinely treats as single
+  // particles. The metals are NOT here: a metal card is a lump you hold, and
+  // every recipe uses it that way (gold is panned from river sand, silver is
+  // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
+  // them as nuggets was a mislabel, not a drawing mistake.
   '-10': ['hydrogen', 'oxygen', 'nitrogen', 'carbon', 'sulfur', 'phosphorus',
           'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas',
-          'iron', 'copper', 'gold', 'silver', 'tin', 'lead', 'zinc', 'mercury',
-          'aluminum', 'nickel', 'chromium', 'titanium', 'platinum', 'uranium', 'enriched_uranium',
-          'helium', 'neon',
-          'magnesium', 'calcium', 'sodium', 'potassium'],
+          'helium', 'neon'],
   '-9':  ['glycine', 'alanine', 'serine', 'proline', 'tyrosine', 'aspartic_acid', 'glutamic_acid', 'glutamine', 'asparagine', 'arginine', 'valine', 'leucine', 'isoleucine', 'threonine', 'methionine', 'lysine', 'histidine', 'phenylalanine', 'tryptophan', 'glucose', 'amino_acid', 'cysteine', 'dipeptide', 'nucleotide', 'atp',
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet'],
   '-8':  ['chromatin', 'gene', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
@@ -44,7 +46,8 @@ const SCALE = {
   '-3':  ['seed', 'grain', 'rice', 'cooked_rice', 'sushi_rice', 'pilaf', 'legume',
           'nectar', 'spark', 'beeswax', 'straw', 'bee', 'olive', 'grape', 'honey',
           'cane_juice', 'manna', 'granary', 'rutile'],
-  '-2':  ['lard', 'wool', 'embryo', 'cotton', 'popcorn', 'soybean', 'tofu', 'pea', 'lemon', 'strawberry', 'pear', 'cherry', 'fig', 'coffee', 'cocoa_bean', 'chocolate', 'stone', 'flint', 'limestone', 'ice', 'brick', 'adobe', 'mortar', 'candle',
+  '-2':  ['iron', 'copper', 'gold', 'silver', 'tin', 'lead', 'zinc', 'mercury', 'aluminum', 'nickel', 'chromium', 'titanium', 'platinum', 'uranium', 'magnesium', 'calcium', 'sodium', 'potassium', 'enriched_uranium',
+          'lard', 'wool', 'embryo', 'cotton', 'popcorn', 'soybean', 'tofu', 'pea', 'lemon', 'strawberry', 'pear', 'cherry', 'fig', 'coffee', 'cocoa_bean', 'chocolate', 'stone', 'flint', 'limestone', 'ice', 'brick', 'adobe', 'mortar', 'candle',
           'ore', 'cinnabar', 'yellowcake', 'oak_gall', 'thread', 'fibre', 'ink', 'mirror',
           'soap', 'lye', 'butter', 'ghee', 'curd', 'cheese', 'aged_cheese',
           'blue_cheese', 'egg', 'boiled_egg', 'golden_egg', 'apple', 'tomato',
