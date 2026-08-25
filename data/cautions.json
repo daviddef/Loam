@@ -72,7 +72,9 @@
     "cherry_kernel": {
       "label": "The stone, not the fruit",
       "note": "Cherry flesh is entirely safe and this caution is not about eating cherries. The kernels inside the hard pits contain amygdalin, which releases hydrogen cyanide when chewed or swallowed. Do not crack the stones open.",
-      "ids": ["cherry"]
+      "ids": [
+        "cherry"
+      ]
     },
     "mercury_toxicity": {
       "label": "Mercury is toxic, in the ore and in the metal",
@@ -106,6 +108,55 @@
       "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
       "ids": [
         "lead"
+      ]
+    },
+    "chlorine_gas": {
+      "label": "Chlorine gas is a poison, and was used as one",
+      "note": "Elemental chlorine at high concentration is extremely dangerous and poisonous to most living organisms. It was the first gas deployed as a weapon, at the Second Battle of Ypres on 22 April 1915. This page is about where an industrial chemical comes from, and nothing on it is a method.",
+      "ids": [
+        "chlorine"
+      ]
+    },
+    "fluorine_hazard": {
+      "label": "Fluorine is why chemistry has martyrs",
+      "note": "Fluorine in its elemental form is highly toxic, and it reacts with almost every other element. Several nineteenth-century experimenters who tried to isolate it were injured or killed, and are remembered as the fluorine martyrs.",
+      "ids": [
+        "fluorine",
+        "fluorite"
+      ]
+    },
+    "arsenic_toxicity": {
+      "label": "Arsenic is a poison, and a drinking-water problem",
+      "note": "Arsenic compounds have been known since ancient times to be poisonous. The commonest cause of long-term exposure today is not deliberate — it is contaminated groundwater, and more than 200 million people worldwide are exposed to unsafe levels.",
+      "ids": [
+        "arsenic"
+      ]
+    },
+    "selenium_dose": {
+      "label": "Essential and toxic are the same element, at different doses",
+      "note": "Selenium is a required nutrient: the adult recommended intake is 55 micrograms a day and the tolerable upper limit is 400. Exceeding it causes selenosis. That is a narrow window compared with almost anything else on the shelf.",
+      "ids": [
+        "selenium"
+      ]
+    },
+    "heavy_metal_dust": {
+      "label": "Some metals are only dangerous once they are dust",
+      "note": "Cadmium is toxic and accumulates in the kidneys. Manganese overexposure causes manganism, a permanent movement disorder. Osmium tetroxide, which forms when osmium powder meets air, damages eyes and lungs at very low concentrations.",
+      "ids": [
+        "cadmium",
+        "manganese",
+        "osmium"
+      ]
+    },
+    "radioactivity": {
+      "label": "These are radioactive, and that is the point of some of them",
+      "note": "Radium, thorium, plutonium and polonium are all radioactive. Radium was painted onto watch dials by women who wet the brushes with their lips, and many of them died of it — the Radium Girls case changed occupational-safety law. Polonium is acutely toxic in microgram amounts.",
+      "ids": [
+        "radium",
+        "thorium",
+        "plutonium",
+        "polonium",
+        "monazite"
       ]
     }
   }

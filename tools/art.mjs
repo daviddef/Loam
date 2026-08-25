@@ -1254,6 +1254,166 @@ def('penicillin', () => [                                 // the beta-lactam rin
   C(20, 26, 4, CPK.N), C(32, 38, 4, CPK.S),
 ]);
 
+/* ── the periodic table, drawn as what you would actually be holding ──────
+ * Sixty-odd new elements land in one category, so "a grey lump" sixty times
+ * would fail the sameness check and deserve to. Each one gets the physical
+ * form it really takes: bromine is the only liquid non-metal, iodine sublimes
+ * off crystals, molybdenite flakes into hexagonal plates, bismuth grows
+ * stairstep hopper crystals, caesium melts just above room temperature. The
+ * form IS the fact.
+ */
+const ingot = (r, w = 17, h = 11, sk = 4) => [
+  P(`M${30 - w} ${34 - h} L${30 + w - sk} ${34 - h} L${30 + w} ${34 + h} L${30 - w + sk} ${34 + h} Z`, r),
+  P(`M${30 - w} ${34 - h} L${30 + w - sk} ${34 - h} L${30 + w - sk - 3} ${30 - h} L${30 - w + 3} ${30 - h} Z`, 'hi'),
+];
+const rod = (r, len = 30, th = 6, ang = -25) =>
+  ['g', ang, 30, 32, [P(`M${30 - len / 2} ${32 - th} L${30 + len / 2} ${32 - th} L${30 + len / 2} ${32 + th} L${30 - len / 2} ${32 + th} Z`, r),
+                      S(`M${30 - len / 2} ${32 - th + 2} L${30 + len / 2} ${32 - th + 2}`, 'hi', 1.6)]];
+const coil = (r, turns = 4, rad = 8) =>
+  Array.from({ length: turns }, (_, i) =>
+    ring(r, 30, 18 + i * 9, rad - i * 0.6, 2.4));
+const foil = (r, folds = 3) =>
+  Array.from({ length: folds }, (_, i) =>
+    P(`M${12 + i * 3} ${22 + i * 8} L${48 - i * 3} ${18 + i * 8} L${48 - i * 3} ${26 + i * 8} L${12 + i * 3} ${30 + i * 8} Z`,
+      i % 2 ? 'hi' : r));
+const sponge = (r, seed = 7) => [
+  P('M13 34 Q11 20 26 17 Q42 13 47 26 Q50 40 38 47 Q22 51 13 34 Z', r),
+  ...granules('ground', 7, seed, [18, 22, 42, 44]),
+];
+const dendrite = (r, seed = 3) => {
+  const out = [S('M30 52 L30 14', r, 3)];
+  for (let i = 0; i < 5; i++) {
+    const y = 20 + i * 7, w = 14 - i * 1.6, up = ((seed + i) % 2) ? 1 : -1;
+    out.push(S(`M30 ${y} L${30 - w} ${y - 5 * up}`, r, 2));
+    out.push(S(`M30 ${y + 2} L${30 + w} ${y - 3 * up}`, r, 2));
+  }
+  return out;
+};
+const prisms = (r, n = 3) =>
+  Array.from({ length: n }, (_, i) => {
+    const x = 30 + (i - (n - 1) / 2) * 13, h = 16 + (i % 2) * 7;
+    return P(`M${x - 6} 46 L${x - 6} ${46 - h} L${x} ${40 - h} L${x + 6} ${46 - h} L${x + 6} 46 Z`, i % 2 ? 'hi' : r);
+  });
+const shot = (r, n = 5, seed = 11) => {
+  const out = []; let sd = seed >>> 0;
+  const rnd = () => ((sd = (sd * 1664525 + 1013904223) >>> 0) / 4294967296);
+  for (let i = 0; i < n; i++) out.push(C(n2(16 + rnd() * 28), n2(24 + rnd() * 20), 5.4 - rnd() * 1.4, i % 2 ? 'hi' : r));
+  return out;
+};
+const n2 = v => Math.round(v * 100) / 100;
+const flakes = (r, n = 4) =>
+  Array.from({ length: n }, (_, i) =>
+    hex(i % 2 ? 'hi' : r, 20 + (i % 2) * 18, 24 + Math.floor(i / 2) * 16, 9, 2.2));
+const gasTube = (r, bulbs = 3) => [
+  P('M14 26 Q14 20 20 20 L40 20 Q46 20 46 26 L46 38 Q46 44 40 44 L20 44 Q14 44 14 38 Z', 'gh'),
+  S('M14 26 Q14 20 20 20 L40 20 Q46 20 46 26 L46 38 Q46 44 40 44 L20 44 Q14 44 14 38 Z', r, 2),
+  ...Array.from({ length: bulbs }, (_, i) => C(22 + i * 8, 32, 3.4, r)),
+];
+const pool = (r) => [
+  E(30, 40, 19, 7, r), E(24, 38, 6, 2.4, 'hi'),
+  C(44, 28, 4.4, r), C(43, 27, 1.4, 'hi'),
+];
+const needles = (r, n = 6) =>
+  Array.from({ length: n }, (_, i) => {
+    const a = (-70 + i * 28) * Math.PI / 180;
+    return S(`M30 44 L${n2(30 + 26 * Math.sin(a))} ${n2(44 - 26 * Math.cos(a))}`, i % 2 ? 'hi' : r, 2.4);
+  });
+const cubes = (r) => [
+  P('M14 32 L24 26 L34 32 L24 38 Z', r), P('M14 32 L24 38 L24 48 L14 42 Z', 'lo'), P('M34 32 L24 38 L24 48 L34 42 Z', 'hi'),
+  P('M30 22 L38 17 L46 22 L38 27 Z', r), P('M30 22 L38 27 L38 36 L30 31 Z', 'lo'), P('M46 22 L38 27 L38 36 L46 31 Z', 'hi'),
+];
+const hopper = (r) =>                                    // bismuth's stairstep
+  Array.from({ length: 4 }, (_, i) => {
+    const k = i * 5;
+    return P(`M${16 + k} ${46 - k} L${44 - k} ${46 - k} L${44 - k} ${40 - k} L${16 + k} ${40 - k} Z`, i % 2 ? 'hi' : r);
+  });
+const disc = (r, n = 3) =>
+  Array.from({ length: n }, (_, i) => E(30, 42 - i * 7, 16 - i, 5, i % 2 ? 'hi' : r));
+
+/* halogens and the metalloids */
+def('chlorine',  () => [vessel('gh', 20, 50), wave('bs', 44, 5, 13), wave('bs', 38, 4, 12), wave('lo', 32, 3, 10), E(30, 20, 12, 3, 'lo')]);  // denser than air, and it settles
+def('fluorine',  () => [P('M16 20 L44 20 L44 30 Q38 36 44 42 L44 48 L16 48 Q22 42 16 36 Q22 30 16 24 Z', 'gh'), S('M16 20 L44 20 M16 48 L44 48', 'hi', 2.2), ...granules('bs', 7, 211, [20, 24, 40, 44])]);  // it attacks whatever holds it
+def('bromine',   () => [P('M22 12 L38 12 L38 20 L42 26 L42 48 L18 48 L18 26 L22 20 Z', 'gh'), P('M19 34 L41 34 L41 47 Q30 50 19 47 Z', 'bs'), E(30, 34, 11, 3, 'lo'), S('M26 24 Q30 20 34 24', 'lo', 1.6)]);  // the only liquid non-metal, in a sealed ampoule
+def('iodine',    () => [...prisms('lo', 2), S('M20 18 Q26 12 22 6 M38 18 Q44 12 40 6', 'bs', 2)]);  // subliming
+def('silicon',   () => [P('M22 50 L22 20 Q30 10 38 20 L38 50 Z', 'bs'), S('M26 24 L26 46', 'hi', 2)]); // a boule
+def('boron',     () => [mound('lo', 46, 19, 18), ...granules('ik', 14, 91, [14, 32, 46, 46])]);
+def('arsenic',   () => [facet('lo', .95), facet('bs', .5), S('M18 24 L28 34', 'hi', 1.6)]);
+def('selenium',  () => [...needles('bs', 5)]);
+def('antimony',  () => [...Array.from({ length: 6 }, (_, i) => {
+  const a = (i * 60) * Math.PI / 180;
+  return S(`M30 32 L${n2(30 + 20 * Math.cos(a))} ${n2(32 + 20 * Math.sin(a))}`, 'bs', 3);
+}), C(30, 32, 6, 'hi')]);                                 // the star of antimony
+def('germanium', () => [...prisms('bs', 1), ...granules('hi', 5, 33, [22, 20, 38, 30])]);
+def('tellurium', () => [...prisms('bs', 2), ...needles('lo', 3)]);
+/* noble gases: tubes, differing by how many bulbs are lit */
+def('argon',     () => [P('M12 44 Q12 20 30 18 Q48 20 48 44 Z', 'gh'), S('M12 44 Q12 20 30 18 Q48 20 48 44', 'bs', 2.4), E(30, 46, 13, 4, 'lo'), C(30, 40, 4, 'hi')]);  // an inert blanket over the weld
+def('krypton',   () => [...gasTube('lo', 5)]);
+def('xenon',     () => [S('M18 32 L27 32 M33 32 L42 32', 'lo', 4), C(30, 32, 9, 'hi'), C(30, 32, 4.4, 'bs'), ...Array.from({ length: 8 }, (_, i) => { const a = (i * 45) * Math.PI / 180; return S(`M${n2(30 + 12 * Math.cos(a))} ${n2(32 + 12 * Math.sin(a))} L${n2(30 + 18 * Math.cos(a))} ${n2(32 + 18 * Math.sin(a))}`, 'hi', 1.6); })]);  // the short-arc lamp
+def('noble_mix', () => [...[[22, 26], [36, 24], [26, 38], [40, 36]].map(([x, y]) => C(x, y, 10, 'gh')), ...[[22, 26], [26, 38]].map(([x, y]) => C(x, y, 4, 'bs')), ...[[36, 24], [40, 36]].map(([x, y]) => C(x, y, 4, 'lo'))]);  // two gases, still mingled
+
+/* the minerals the metals come out of */
+def('fluorite',   () => cubes('bs'));
+def('kelp',       () => [S('M30 54 Q22 40 30 28 Q38 16 30 6', 'bs', 3),
+                         ...[[24, 44], [37, 36], [24, 26], [36, 16]].map(([x, y]) => leaf('lo', x, y, .7, 40))]);
+def('borax',      () => [...prisms('hi', 4)]);
+def('pyrolusite', () => dendrite('ik', 3));               // manganese dendrites in rock
+def('molybdenite',() => [...flakes('lo', 4), S('M12 46 L48 42', 'ik', 1.6)]);
+def('osmiridium', () => shot('lo', 7, 71));
+def('pollucite',  () => [...prisms('bs', 2), ...granules('hi', 4, 17, [18, 18, 42, 26])]);
+def('monazite',   () => [mound('bs', 47, 21, 17), ...granules('lo', 18, 53, [12, 32, 48, 47])]);
+def('rare_earth', () => [mound('hi', 46, 18, 16), ...granules('bs', 9, 29, [16, 32, 44, 44]),
+                         ...granules('lo', 7, 83, [18, 34, 42, 44])]);
+def('baryte',     () => [...disc('bs', 4)]);              // tabular, heavy
+
+/* transition metals — each in the form it is actually handled in */
+def('manganese',  () => shot('bs', 6, 13));
+def('cobalt',     () => [...ingot('bs', 15, 9, 3), C(22, 28, 2.6, 'hi')]);
+def('tungsten',   () => coil('bs', 5, 9));                // the filament
+def('molybdenum', () => [rod('bs', 34, 5, -18)]);
+def('vanadium',   () => [...prisms('bs', 3)]);
+def('cadmium',    () => [...disc('bs', 2), ...granules('lo', 4, 47, [20, 22, 40, 28])]);
+def('palladium',  () => [...foil('bs', 3)]);
+def('rhodium',    () => [...shot('hi', 4, 97), ring('bs', 30, 32, 20, 1.6)]);
+def('iridium',    () => [...ingot('lo', 14, 12, 2), S('M18 26 L40 24', 'hi', 2)]);
+def('osmium',     () => [mound('lo', 47, 16, 20), ...granules('bs', 11, 61, [16, 34, 44, 46])]);
+def('ruthenium',  () => sponge('bs', 23));
+def('rhenium',    () => [...foil('lo', 2), ...granules('hi', 6, 37, [18, 20, 42, 44])]);
+def('hafnium',    () => [rod('lo', 22, 9, 62), C(30, 14, 4, 'hi'), C(30, 50, 4, 'hi')]);
+def('zirconium',  () => sponge('hi', 41));
+def('tantalum',   () => [...coil('bs', 3, 11), E(30, 50, 14, 4, 'lo')]);   // rolled into a capacitor
+def('niobium',    () => [rod('hi', 30, 7, 14)]);
+def('scandium',   () => [...prisms('hi', 2), C(40, 22, 3.4, 'bs')]);
+def('yttrium',    () => [...prisms('hi', 1), ...granules('bs', 9, 59, [16, 30, 44, 46])]);
+
+/* alkali, alkaline earth, and the heavy end */
+def('lithium',    () => [...ingot('hi', 13, 10, 6), S('M20 26 L38 24', 'lo', 2.2)]);
+def('caesium',    () => pool('hi'));                        // molten just above room temperature
+def('rubidium',   () => [vessel('gh', 22, 48), ...shot('bs', 3, 181), wave('hi', 40, 3, 11)]);  // pellets, kept under oil
+def('beryllium',  () => [...prisms('lo', 1), ...flakes('hi', 2)]);   // beryl, and how light it is
+def('strontium',  () => [...shot('lo', 4, 101), ring('hi', 30, 32, 18, 1.4)]);
+def('barium',     () => [...ingot('lo', 16, 8, 5), ...granules('hi', 4, 67, [20, 24, 40, 30])]);
+def('radium',     () => [...Array.from({ length: 10 }, (_, i) => {
+  const a = (i * 36) * Math.PI / 180;
+  return S(`M30 32 L${n2(30 + 23 * Math.cos(a))} ${n2(32 + 23 * Math.sin(a))}`, 'gh', 1.6);
+}), C(30, 32, 10, 'hi'), C(30, 32, 5, 'bs')]);            // it glowed, and that was the problem
+def('thorium',    () => [...ingot('bs', 15, 12, 7)]);
+def('plutonium',  () => [C(30, 34, 15, 'lo'), C(30, 34, 9, 'bs'), C(26, 30, 3, 'hi'), ring('gh', 30, 34, 22, 1.4)]);
+def('polonium',   () => [...shot('bs', 2, 149), ...Array.from({ length: 6 }, (_, i) => {
+  const a = (i * 60 + 15) * Math.PI / 180;
+  return S(`M30 34 L${n2(30 + 22 * Math.cos(a))} ${n2(34 + 22 * Math.sin(a))}`, 'gh', 1.4);
+})]);
+def('bismuth',    () => hopper('bs'));                     // the stairstep hopper crystal
+def('cerium',     () => [...shot('lo', 5, 151), S('M14 46 L46 44', 'bs', 2)]);
+def('lanthanum',  () => [rod('bs', 28, 6, -62), ...granules('hi', 5, 233, [20, 20, 40, 44])]);
+def('neodymium',  () => [...ingot('bs', 12, 13, 0), S('M22 22 L38 22 M22 46 L38 46', 'hi', 2.4)]);  // a magnet
+def('samarium',   () => [...prisms('bs', 2), ...disc('lo', 2)]);
+def('europium',   () => [...shot('hi', 3, 173), ...needles('bs', 3)]);
+def('gadolinium', () => [...coil('lo', 3, 10)]);
+def('promethium', () => [...disc('hi', 2), ...Array.from({ length: 5 }, (_, i) => {
+  const a = (i * 72) * Math.PI / 180;
+  return C(n2(30 + 20 * Math.cos(a)), n2(32 + 20 * Math.sin(a)), 2.4, 'gh');
+})]);
+
 /* the wider crop roster ───────────────────────────────────────────────── */
 def('cotton', () => [                                      // the boll, split, fibre escaping
   ...[[24, 26], [36, 26], [22, 36], [38, 36], [30, 22], [30, 40]].map(([x, y]) => C(x, y, 9, 'hi')),

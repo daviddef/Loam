@@ -29,14 +29,34 @@ const shelf = Object.fromEntries(elements.map((e) => [e.id, e.shelf]));
 const API = 'https://en.wikipedia.org/w/api.php';
 const UA  = 'WordMatcher-SourceCheck/0.1 (game content verification)';
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+/** Fetch JSON, retrying on rate limits and transient server errors. */
+async function getJSON(url, tries = 6) {
+  let wait = 1200;
+  for (let n = 1; ; n++) {
+    const r = await fetch(url, { headers: { 'User-Agent': UA } });
+    if (r.ok) return r.json();
+    const retryable = r.status === 429 || r.status >= 500;
+    if (!retryable || n >= tries) throw new Error(`wikipedia api ${r.status}`);
+    const after = Number(r.headers.get('retry-after'));
+    const pause = Number.isFinite(after) && after > 0 ? after * 1000 : wait;
+    console.log(`  ${r.status} from wikipedia — waiting ${Math.round(pause / 1000)}s (try ${n}/${tries})`);
+    await sleep(pause);
+    wait = Math.min(wait * 2, 30000);
+  }
+}
+
 async function resolve(titles) {
   const out = new Map();
   for (let i = 0; i < titles.length; i += 50) {
+    if (i) await sleep(250);            // pace the batches rather than sprint
     const batch = titles.slice(i, i + 50);
     const url = `${API}?action=query&format=json&redirects=1&titles=${encodeURIComponent(batch.join('|'))}`;
-    const r = await fetch(url, { headers: { 'User-Agent': UA } });
-    if (!r.ok) throw new Error(`wikipedia api ${r.status}`);
-    const j = await r.json();
+    // The corpus outgrew a naive loop: 500-odd distinct titles fired back to
+    // back gets the whole run refused with a 429, and dying on the first one
+    // means a content batch cannot be verified at all. Back off and retry —
+    // and honour Retry-After when the server bothers to send it.
+    const j = await getJSON(url);
     const q = j.query ?? {};
     const step = new Map();                       // requested -> current title
     for (const t of batch) step.set(t, t);

@@ -2508,8 +2508,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Boils at 907°C — cooler than it takes to smelt its own ore, so the metal evaporates unless you catch it.",
-    "terminal": true
+    "fact": "Boils at 907°C — cooler than it takes to smelt its own ore, so the metal evaporates unless you catch it."
   },
   {
     "id": "mercury",
@@ -2519,8 +2518,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "The only metal that is liquid at room temperature — freed from its ore just by roasting it.",
-    "terminal": true
+    "fact": "The only metal that is liquid at room temperature — freed from its ore just by roasting it."
   },
   {
     "id": "aluminum",
@@ -2540,8 +2538,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Named after a mischievous spirit — miners dug up a copper-look ore and got no copper out of it.",
-    "terminal": true
+    "fact": "Named after a mischievous spirit — miners dug up a copper-look ore and got no copper out of it."
   },
   {
     "id": "chromium",
@@ -2573,8 +2570,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Melts at 1,768°C — so hot the first people to work it never melted it, just sintered the grains with gold.",
-    "terminal": true
+    "fact": "Melts at 1,768°C — so hot the first people to work it never melted it, just sintered the grains with gold."
   },
   {
     "id": "uranium",
@@ -3633,5 +3629,657 @@
       "build"
     ],
     "fact": "Limestone with the carbon dioxide cooked out of it. Add water and it gets hot enough to boil."
+  },
+  {
+    "id": "fluorite",
+    "name": "Fluorite",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Named from *fluere*, to flow — it was a smelting flux long before anyone knew it held an element."
+  },
+  {
+    "id": "kelp",
+    "name": "Kelp",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Not a plant at all. A brown alga that grips rock instead of rooting, and can grow half a metre a day."
+  },
+  {
+    "id": "borax",
+    "name": "Borax",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Traded down the Silk Road from Tibetan lake beds in the 8th century, long before anyone had heard of boron."
+  },
+  {
+    "id": "chlorine",
+    "name": "Chlorine",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Named for its colour — khlōrós, pale green — and the first gas ever used as a weapon, at Ypres in 1915."
+  },
+  {
+    "id": "fluorine",
+    "name": "Fluorine",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Reacts with everything but the lightest noble gases. The chemists who chased it are called fluorine martyrs.",
+    "terminal": true
+  },
+  {
+    "id": "bromine",
+    "name": "Bromine",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The only nonmetal that is liquid at room temperature. Named brômos, Greek for stench.",
+    "terminal": true
+  },
+  {
+    "id": "iodine",
+    "name": "Iodine",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Found by accident in seaweed ash in 1811, and named for the violet vapour that came off it.",
+    "terminal": true
+  },
+  {
+    "id": "silicon",
+    "name": "Silicon",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "27.2% of the crust by weight, second only to oxygen — and almost never found loose.",
+    "terminal": true
+  },
+  {
+    "id": "boron",
+    "name": "Boron",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Claimed in 1808 and arguably not made pure until 1909 — a hundred and one years of nearly-boron.",
+    "terminal": true
+  },
+  {
+    "id": "arsenic",
+    "name": "Arsenic",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Skips the liquid state entirely: heat it and at 614°C it goes straight from solid to gas.",
+    "terminal": true
+  },
+  {
+    "id": "selenium",
+    "name": "Selenium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Named for the moon, because tellurium had already taken the earth. Nearly all of it comes out of copper.",
+    "terminal": true
+  },
+  {
+    "id": "antimony",
+    "name": "Antimony",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Egyptians were painting their eyes with its sulfide by about 3100 BC, which is where kohl comes from.",
+    "terminal": true
+  },
+  {
+    "id": "germanium",
+    "name": "Germanium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Mendeleev left a gap for it in 1869 and called it ekasilicon. Winkler found it in a silver ore in 1886.",
+    "terminal": true
+  },
+  {
+    "id": "tellurium",
+    "name": "Tellurium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "About as rare in the crust as platinum, and a 15 mg dose gives you garlic breath for months.",
+    "terminal": true
+  },
+  {
+    "id": "argon",
+    "name": "Argon",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Third most abundant gas in the air, and nearly every atom of it was once a potassium atom.",
+    "terminal": true
+  },
+  {
+    "id": "krypton",
+    "name": "Krypton",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "From 1960 to 1983 the metre was defined as 1,650,763.73 wavelengths of one krypton-86 line.",
+    "terminal": true
+  },
+  {
+    "id": "pyrolusite",
+    "name": "Pyrolusite",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Manganese dioxide — the black that Neanderthals painted caves with, and glassmakers' soap."
+  },
+  {
+    "id": "molybdenite",
+    "name": "Molybdenite",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Soft, grey, greasy and metallic — for centuries nobody could tell it from graphite or from lead ore."
+  },
+  {
+    "id": "osmiridium",
+    "name": "Osmiridium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Hard grains of osmium and iridium, already alloyed, sitting in the river sand with the platinum."
+  },
+  {
+    "id": "manganese",
+    "name": "Manganese",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The reason steel bends instead of cracking — it ties up the sulfur that would split it while hot.",
+    "terminal": true
+  },
+  {
+    "id": "cobalt",
+    "name": "Cobalt",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for a goblin. Miners got no copper out of the blue ore and blamed the kobold — same joke as nickel.",
+    "terminal": true
+  },
+  {
+    "id": "tungsten",
+    "name": "Tungsten",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Melts at 3,422°C — the highest melting point of any metal, which is why light bulbs used it.",
+    "terminal": true
+  },
+  {
+    "id": "molybdenum",
+    "name": "Molybdenum",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Its name is just the Greek word for lead, because for centuries nobody could tell the two ores apart.",
+    "terminal": true
+  },
+  {
+    "id": "vanadium",
+    "name": "Vanadium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for a Norse goddess because its compounds are so colourful. Nine tenths of it is scraped out of slag.",
+    "terminal": true
+  },
+  {
+    "id": "cadmium",
+    "name": "Cadmium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Boils at 767°C, cooler than zinc does — which is exactly how it gets separated from the zinc it hides in.",
+    "terminal": true
+  },
+  {
+    "id": "palladium",
+    "name": "Palladium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Over half of it is sitting in catalytic converters, turning car exhaust into something less poisonous.",
+    "terminal": true
+  },
+  {
+    "id": "rhodium",
+    "name": "Rhodium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named after a rose, for the colour of one of its salts. Under one part per billion of the crust.",
+    "terminal": true
+  },
+  {
+    "id": "iridium",
+    "name": "Iridium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "A thin iridium layer in the clay worldwide is the fingerprint of the asteroid that ended the dinosaurs.",
+    "terminal": true
+  },
+  {
+    "id": "osmium",
+    "name": "Osmium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The densest element that occurs in nature — 22.59 g/cm³, about twice the density of lead.",
+    "terminal": true
+  },
+  {
+    "id": "ruthenium",
+    "name": "Ruthenium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "About 100 parts per trillion of the crust, and roughly 30 tonnes a year. Named, in Latin, for Russia.",
+    "terminal": true
+  },
+  {
+    "id": "rhenium",
+    "name": "Rhenium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "One part per billion of the crust, and no ore of its own — it is always somebody else's by-product.",
+    "terminal": true
+  },
+  {
+    "id": "hafnium",
+    "name": "Hafnium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Chemically almost indistinguishable from zirconium, so it hid inside it until 1923 — then it got Copenhagen.",
+    "terminal": true
+  },
+  {
+    "id": "zirconium",
+    "name": "Zirconium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Neutrons pass straight through it, which is why nuclear fuel is wrapped in zirconium and not in steel."
+  },
+  {
+    "id": "tantalum",
+    "name": "Tantalum",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for the man in the myth who stood in water he could never drink, tantalised for eternity."
+  },
+  {
+    "id": "niobium",
+    "name": "Niobium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named after Niobe, daughter of Tantalus, because for decades nobody could tell it from tantalum.",
+    "terminal": true
+  },
+  {
+    "id": "scandium",
+    "name": "Scandium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Mendeleev left a gap in the table and described what belonged there. Ten years later, someone found it.",
+    "terminal": true
+  },
+  {
+    "id": "yttrium",
+    "name": "Yttrium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "One small Swedish quarry, Ytterby, ended up with four elements named after it. This is the first of them.",
+    "terminal": true
+  },
+  {
+    "id": "pollucite",
+    "name": "Pollucite",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A zeolite up to a quarter caesium by weight — most of the world's supply sits under one Canadian lake."
+  },
+  {
+    "id": "monazite",
+    "name": "Monazite",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Reddish phosphate sand, heavy enough to survive weathering and pile up on beaches. Full of rare earths."
+  },
+  {
+    "id": "rare_earth",
+    "name": "Rare earth",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The lanthanides as they actually come: a mixture, and famously hard to separate into its members."
+  },
+  {
+    "id": "baryte",
+    "name": "Baryte",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Barium sulfate, better known as heavy spar. Most of what's mined goes down oil wells as drilling mud."
+  },
+  {
+    "id": "lithium",
+    "name": "Lithium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The least dense metal there is, and one of only three that float on water — while reacting with it."
+  },
+  {
+    "id": "caesium",
+    "name": "Caesium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The second is defined as 9,192,631,770 cycles of one caesium transition. This metal is the clock."
+  },
+  {
+    "id": "rubidium",
+    "name": "Rubidium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for the deep red lines in its spectrum. Parting it from caesium takes about 30 recrystallisations.",
+    "terminal": true
+  },
+  {
+    "id": "beryllium",
+    "name": "Beryllium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Nearly transparent to X-rays, which is why the window on an X-ray tube is very often made of it.",
+    "terminal": true
+  },
+  {
+    "id": "strontium",
+    "name": "Strontium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named after a Scottish village, and it is what makes the red in fireworks.",
+    "terminal": true
+  },
+  {
+    "id": "barium",
+    "name": "Barium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "You drink it so your gut shows up on an X-ray — safe only because that one barium salt won't dissolve."
+  },
+  {
+    "id": "radium",
+    "name": "Radium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Painted onto watch dials to make them glow, by women told to lick their brushes to a point. It killed them.",
+    "terminal": true
+  },
+  {
+    "id": "thorium",
+    "name": "Thorium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Three times as common as uranium, and for a century most of what was mined went into gas lamp mantles.",
+    "terminal": true
+  },
+  {
+    "id": "plutonium",
+    "name": "Plutonium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Not mined — made. Uranium-238 in a reactor swallows a neutron and, two beta decays later, is plutonium.",
+    "terminal": true
+  },
+  {
+    "id": "polonium",
+    "name": "Polonium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Marie Curie found it first and named it for Poland. By mass it is 250,000 times more toxic than cyanide.",
+    "terminal": true
+  },
+  {
+    "id": "cerium",
+    "name": "Cerium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "As common in the crust as copper, and the one rare earth that will oxidise its own way out of the mix.",
+    "terminal": true
+  },
+  {
+    "id": "lanthanum",
+    "name": "Lanthanum",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Its name means 'to lie hidden' — it was found hiding inside what everyone took for pure cerium."
+  },
+  {
+    "id": "neodymium",
+    "name": "Neodymium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Nd2Fe14B — the strongest permanent magnets known. The name just means 'new twin'.",
+    "terminal": true
+  },
+  {
+    "id": "samarium",
+    "name": "Samarium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The first element ever named after a person — and you get it by boiling it off a bath of lanthanum.",
+    "terminal": true
+  },
+  {
+    "id": "europium",
+    "name": "Europium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The red on old colour TV screens, and the glow in euro banknotes under UV. Also the softest lanthanide.",
+    "terminal": true
+  },
+  {
+    "id": "gadolinium",
+    "name": "Gadolinium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Sticks to a magnet only below 20°C, and swallows neutrons better than any other stable nuclide.",
+    "terminal": true
+  },
+  {
+    "id": "promethium",
+    "name": "Promethium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "No stable isotope at all. About 560 grams exist in the entire crust, made by uranium quietly fissioning.",
+    "terminal": true
+  },
+  {
+    "id": "noble_mix",
+    "name": "Krypton–Xenon Mix",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "What an air plant actually gives you: the two rarest stable gases, still mixed together."
+  },
+  {
+    "id": "xenon",
+    "name": "Xenon",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "In 1962 it formed a compound, and \"the noble gases do not react\" quietly stopped being true."
+  },
+  {
+    "id": "bismuth",
+    "name": "Bismuth",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Decays with a half-life a billion times the age of the universe, so everyone just calls it stable."
   }
 ]

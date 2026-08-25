@@ -6094,5 +6094,615 @@
     "verified": true,
     "why": "Slaking. Quicklime and water react hard enough to boil the water, and the calcium hydroxide left behind sets slowly in air back into limestone — which is what lime mortar is.",
     "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  {
+    "in": [
+      "limestone",
+      "ore"
+    ],
+    "out": "fluorite",
+    "why": "Fluorite is calcium fluoride, and it forms vein deposits in limestone alongside galena and sphalerite — the lead and zinc ores. The name is from fluere, to flow: it was valued as a flux in iron smelting, to thin the slag.",
+    "src": "https://en.wikipedia.org/wiki/Fluorite",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "plant"
+    ],
+    "out": "kelp",
+    "why": "Kelp is the sea's answer to a plant and is not a plant at all — a brown alga that grips rock with a holdfast instead of rooting, wants shallow water between 6 and 14°C, and can add half a metre in a day.",
+    "src": "https://en.wikipedia.org/wiki/Kelp",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "sun"
+    ],
+    "out": "borax",
+    "why": "Borate minerals are water-soluble, so they end up wherever a seasonal lake fills and dries and fills again. Borax was first found in dry lake beds in Tibet, and traded down the Silk Road by the 8th century AD.",
+    "src": "https://en.wikipedia.org/wiki/Borax",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "spark"
+    ],
+    "out": "chlorine",
+    "why": "The chloralkali process: run a current through concentrated brine and it splits into three useful things at once — chlorine at one electrode, hydrogen at the other, sodium hydroxide left in the cell. 2NaCl + 2H2O → Cl2 + H2 + 2NaOH.",
+    "src": "https://en.wikipedia.org/wiki/Chloralkali_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "fluorite",
+      "spark"
+    ],
+    "out": "fluorine",
+    "why": "Fluorite is the main source of fluoride and so of fluorine, but getting the element out takes low-temperature electrolysis and nobody managed it until Henri Moissan in 1886. He got the Nobel for it in 1906, two months before he died.",
+    "src": "https://en.wikipedia.org/wiki/Fluorine",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "chlorine"
+    ],
+    "out": "bromine",
+    "why": "Bromide sits in seawater at 65 parts per million and in the Dead Sea at 0.4%. Bubble chlorine through the brine and the chlorine takes the electrons — Br− is oxidised to Br2 — and a blast of steam or air carries the bromine off.",
+    "src": "https://en.wikipedia.org/wiki/Bromine",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp",
+      "fire"
+    ],
+    "out": "iodine",
+    "why": "Kelp was the only commercial source of iodine for a century. Courtois was burning seaweed for saltpetre in 1811, added too much sulfuric acid to the ash, and a cloud of violet vapour came off and settled out as dark crystals.",
+    "src": "https://en.wikipedia.org/wiki/Kelp",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "carbon"
+    ],
+    "out": "silicon",
+    "why": "Sand is silicon dioxide. Reduce it carbothermically with coke in an arc furnace — SiO2 + 2 C → Si + 2 CO — and the carbon walks off with the oxygen. Berzelius got there first in 1824, by a different route entirely.",
+    "src": "https://en.wikipedia.org/wiki/Silicon",
+    "verified": true
+  },
+  {
+    "in": [
+      "borax",
+      "iron"
+    ],
+    "out": "boron",
+    "why": "Boron never appears free on Earth. Gay-Lussac and Thénard reduced boric acid with iron at high temperature to get at it — and even that was not really pure boron, which arguably had to wait for Ezekiel Weintraub in 1909.",
+    "src": "https://en.wikipedia.org/wiki/Boron",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "sulfur"
+    ],
+    "out": "arsenic",
+    "why": "Arsenopyrite, FeAsS, is the illustrative arsenic mineral — iron, arsenic and sulfur together. Roast it without air and grey arsenic is what you get.",
+    "src": "https://en.wikipedia.org/wiki/Arsenic",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "spark"
+    ],
+    "out": "selenium",
+    "why": "Copper is refined by electrolysis, and whatever will not dissolve drops to the bottom of the cell as anode mud. Nearly all the world's selenium is picked out of that mud. Berzelius found it in 1817, in the sludge of a sulfuric acid plant.",
+    "src": "https://en.wikipedia.org/wiki/Selenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "ore"
+    ],
+    "out": "antimony",
+    "why": "Roast stibnite to the oxide, then take the oxygen off with carbon: 2 Sb2O3 + 3 C makes 4 Sb and 3 CO2. Lower-grade ore goes through a blast furnace, higher-grade through a reverberatory one.",
+    "src": "https://en.wikipedia.org/wiki/Antimony",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "silver"
+    ],
+    "out": "germanium",
+    "why": "Mendeleev left a gap below silicon in 1869 and predicted ekasilicon. In 1886 Clemens Winkler pulled a new element out of argyrodite — a silver ore, Ag8GeS6 — and it fitted the prediction. Germanium made the first transistor in 1948.",
+    "src": "https://en.wikipedia.org/wiki/Germanium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "gold"
+    ],
+    "out": "tellurium",
+    "why": "Tellurium is one of very few elements that bonds to gold in nature — calaverite and sylvanite are gold tellurides. Müller von Reichenstein found it in Transylvanian gold ore in 1782; Klaproth isolated and named it in 1798, for tellus, earth.",
+    "src": "https://en.wikipedia.org/wiki/Tellurium",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium"
+    ],
+    "verb": "wait",
+    "out": "argon",
+    "why": "Argon-40 is what a potassium-40 atom becomes, and potassium-40 has a half-life of 1.25 billion years. Nearly all the argon in the atmosphere got there that way: decayed out of the crust and let go. It is 0.934% of the air.",
+    "src": "https://en.wikipedia.org/wiki/Argon",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas"
+    ],
+    "verb": "chill",
+    "out": "noble_mix",
+    "why": "Krypton and xenon are both taken out of liquid oxygen, and they come off together — what the plant hands you is a mixture, not either gas on its own.",
+    "src": "https://en.wikipedia.org/wiki/Xenon",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "oxygen_gas"
+    ],
+    "out": "pyrolusite",
+    "why": "Manganese only settles out as pyrolusite where conditions are oxidising — in hydrothermal veins, and in bogs, where it grows out of the alteration of other manganese minerals. It is the most important manganese ore there is.",
+    "src": "https://en.wikipedia.org/wiki/Pyrolusite",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "sulfur"
+    ],
+    "out": "molybdenite",
+    "why": "Molybdenite is a sulfide, and it crystallises out of high-temperature hydrothermal ore deposits — most of the world's supply rides along in porphyry copper bodies rather than in molybdenum mines of its own.",
+    "src": "https://en.wikipedia.org/wiki/Molybdenite",
+    "verified": true
+  },
+  {
+    "in": [
+      "platinum",
+      "river"
+    ],
+    "out": "osmiridium",
+    "why": "Osmiridium turns up in the same platinum-bearing river sands as the platinum itself, in the Urals and in the Americas. It is also how you tell it apart: aqua regia dissolves gold and platinum, and leaves osmiridium sitting there.",
+    "src": "https://en.wikipedia.org/wiki/Platinum_group",
+    "verified": true
+  },
+  {
+    "in": [
+      "pyrolusite",
+      "spark"
+    ],
+    "out": "manganese",
+    "why": "Iron-free manganese metal is not smelted at all. The ore is leached with sulfuric acid and the metal pulled out of that solution by electricity — electrowinning. Smelt it in a blast furnace instead and you get ferromanganese: iron with manganese in it.",
+    "src": "https://en.wikipedia.org/wiki/Manganese",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "nickel"
+    ],
+    "out": "cobalt",
+    "why": "Cobalt is almost never the thing being mined. It comes up as a by-product of copper and nickel, which is why its supply rides on whether those two are worth digging — and why the Congolese Copperbelt supplies most of the world's cobalt.",
+    "src": "https://en.wikipedia.org/wiki/Cobalt",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "hydrogen_gas"
+    ],
+    "out": "tungsten",
+    "why": "You cannot melt tungsten out of anything — nothing else is that hot. Instead the oxide is heated in hydrogen, which takes the oxygen away as steam and leaves grey tungsten powder: WO3 + 3 H2 → W + 3 H2O.",
+    "src": "https://en.wikipedia.org/wiki/Tungsten",
+    "verified": true
+  },
+  {
+    "in": [
+      "molybdenite",
+      "hydrogen_gas"
+    ],
+    "out": "molybdenum",
+    "why": "Molybdenite is roasted at 700°C to burn the sulfur off as sulfur dioxide, and the trioxide left behind is then reduced in hydrogen: MoO3 + 3 H2 → Mo + 3 H2O. Two steps, because the sulfur has to go first.",
+    "src": "https://en.wikipedia.org/wiki/Molybdenum",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "ore"
+    ],
+    "out": "vanadium",
+    "why": "Vanadium mostly is not mined — it is swept up afterwards. Its main source is a vanadium-bearing iron ore, and when that ore is smelted for iron most of the vanadium ends up in the slag, where it is recovered. Ninety per cent of world supply arrives this way.",
+    "src": "https://en.wikipedia.org/wiki/Vanadium",
+    "verified": true
+  },
+  {
+    "in": [
+      "zinc"
+    ],
+    "verb": "heat",
+    "out": "cadmium",
+    "why": "Cadmium sits as a minor component in nearly every zinc ore, and it is never mined for its own sake. Heat the smelted zinc under vacuum and the cadmium — the lower-boiling of the two — distils off first.",
+    "src": "https://en.wikipedia.org/wiki/Cadmium",
+    "verified": true
+  },
+  {
+    "in": [
+      "nickel",
+      "platinum"
+    ],
+    "out": "palladium",
+    "why": "Palladium is not mined on its own. It comes out of nickel–copper deposits alongside platinum, and one Russian nickel company, Norilsk Nickel, accounts for 39% of world production by itself.",
+    "src": "https://en.wikipedia.org/wiki/Palladium",
+    "verified": true
+  },
+  {
+    "in": [
+      "platinum",
+      "salt"
+    ],
+    "out": "rhodium",
+    "why": "Wollaston pulled rhodium out of crude platinum in 1803 and got a rose-coloured sodium salt, sodium hexachlororhodate, which is what the element is named for. Its job now is the third way in a three-way catalytic converter: stripping NOx from exhaust.",
+    "src": "https://en.wikipedia.org/wiki/Rhodium",
+    "verified": true
+  },
+  {
+    "in": [
+      "osmiridium",
+      "hydrogen_gas"
+    ],
+    "out": "iridium",
+    "why": "Iridium comes out of its natural alloy with osmium, and the last step is a reduction: the iridium chloride salt is heated in hydrogen and what is left is metal powder. It is the most corrosion-resistant metal known, and one of the nine rarest in the crust.",
+    "src": "https://en.wikipedia.org/wiki/Iridium",
+    "verified": true
+  },
+  {
+    "in": [
+      "osmiridium"
+    ],
+    "verb": "heat",
+    "out": "osmium",
+    "why": "Heat osmium hard enough in air and it stops being solid: it becomes osmium tetroxide, which sublimes at room temperature. Distil that vapour off, reduce it back, and you have the metal. That compound is also the name — osmē is Greek for smell.",
+    "src": "https://en.wikipedia.org/wiki/Osmium_tetroxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "platinum",
+      "sulfur"
+    ],
+    "out": "ruthenium",
+    "why": "Ruthenium's one natural mineral is laurite, a sulfide, and it turns up wherever the other platinum metals do — the Urals, the Americas, and the nickel ore at Sudbury. Commercially it is a by-product of processing nickel, copper and platinum ore.",
+    "src": "https://en.wikipedia.org/wiki/Ruthenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "molybdenite"
+    ],
+    "verb": "heat",
+    "out": "rhenium",
+    "why": "Rhenium substitutes for molybdenum inside molybdenite, sometimes at a couple of per cent. Roast the ore and the rhenium oxides go up the chimney — which is where it is collected, leached back out of the flue dust. About 80% of supply comes this way.",
+    "src": "https://en.wikipedia.org/wiki/Rhenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnesium",
+      "zirconium"
+    ],
+    "out": "hafnium",
+    "why": "All hafnium is a by-product of cleaning zirconium up: fuel cladding needs zirconium with the hafnium out, because hafnium's neutron-capture cross-section is 600 times zirconium's. What comes off is then reduced with magnesium, as the zirconium was.",
+    "src": "https://en.wikipedia.org/wiki/Hafnium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "magnesium"
+    ],
+    "out": "zirconium",
+    "why": "Zirconium comes from zircon, a silicate that survives weathering so well it accumulates in beach sand. The metal is made the same way titanium is — the Kroll process, reducing the chloride with molten magnesium: ZrCl4 + 2 Mg → Zr + 2 MgCl2.",
+    "src": "https://en.wikipedia.org/wiki/Zirconium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "sodium"
+    ],
+    "out": "tantalum",
+    "why": "Tantalum metal is made by reducing potassium heptafluorotantalate with sodium in a molten salt bath at around 800°C: K2[TaF7] + 5 Na → Ta + 5 NaF + 2 KF. Its ore, coltan, is also the reason tantalum keeps turning up in accounts of the war in the Congo.",
+    "src": "https://en.wikipedia.org/wiki/Tantalum",
+    "verified": true
+  },
+  {
+    "in": [
+      "tantalum",
+      "water"
+    ],
+    "out": "niobium",
+    "why": "Telling niobium from tantalum took until the 1860s, and the trick is water: their two complex fluoride salts dissolve in it to different degrees, so repeated crystallisation slowly pulls them apart. That is still the basis of the separation.",
+    "src": "https://en.wikipedia.org/wiki/Niobium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "yellowcake"
+    ],
+    "out": "scandium",
+    "why": "Nobody mines scandium. In 2003 the whole world supply came out of three mines digging for other things — uranium and iron in Ukraine, rare earths in China, apatite in Russia. The oxide recovered becomes scandium fluoride, reduced with calcium metal.",
+    "src": "https://en.wikipedia.org/wiki/Scandium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "ore"
+    ],
+    "out": "yttrium",
+    "why": "Yttrium is never free in nature — it rides along in rare-earth minerals and some uranium ores, and has to be picked out of the mixture by ion exchange. Only a few tonnes of metal are made a year, by reducing yttrium fluoride with a calcium–magnesium alloy.",
+    "src": "https://en.wikipedia.org/wiki/Yttrium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lithium",
+      "ore"
+    ],
+    "out": "pollucite",
+    "why": "Pollucite is a pegmatite mineral, and pegmatites are where lithium lives too — it turns up in the same rock as spodumene, petalite and lepidolite. Find the lithium pegmatite and you have found the caesium.",
+    "src": "https://en.wikipedia.org/wiki/Pollucite",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "sand"
+    ],
+    "out": "monazite",
+    "why": "Monazite is dense and refuses to weather away, so rivers and surf sort it out of everything lighter and pile it up as heavy mineral sand — the same density trick that concentrates gold in a pan, on a beach-sized scale.",
+    "src": "https://en.wikipedia.org/wiki/Monazite",
+    "verified": true
+  },
+  {
+    "in": [
+      "lye",
+      "monazite"
+    ],
+    "out": "rare_earth",
+    "why": "Monazite has to be cracked open before it gives anything up. Hot sodium hydroxide at about 140°C does it — the same lye you get from wood ash, concentrated — dissolving the phosphate away and leaving the rare earths behind as hydroxides.",
+    "src": "https://en.wikipedia.org/wiki/Monazite",
+    "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "sulfur"
+    ],
+    "out": "baryte",
+    "why": "Baryte is a sulfate, and the classic place to find it is a mineral vein cutting through limestone — the same lead-and-zinc veins miners were already working, with the heavy spar sitting alongside as the stuff nobody wanted.",
+    "src": "https://en.wikipedia.org/wiki/Baryte",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "sun"
+    ],
+    "out": "lithium",
+    "why": "Most lithium is not mined at all. Brine is pumped up from under a salt flat into shallow ponds and the sun is left to take the water away — the Salar de Atacama alone was producing about a third of the world's supply by 2015.",
+    "src": "https://en.wikipedia.org/wiki/Brine_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "pollucite"
+    ],
+    "out": "caesium",
+    "why": "Caesium was the first element ever found with a spectroscope, in 1860. Getting the metal out is cruder than that sounds: turn the ore into caesium chloride, heat it to 700–800°C with calcium, and distil the caesium off.",
+    "src": "https://en.wikipedia.org/wiki/Caesium",
+    "verified": true
+  },
+  {
+    "in": [
+      "caesium",
+      "pollucite"
+    ],
+    "out": "rubidium",
+    "why": "Nobody mines rubidium. It comes out as a by-product wherever caesium is being made from pollucite, and the two are so alike that parting them means crystallising the same alum out of solution about thirty times over.",
+    "src": "https://en.wikipedia.org/wiki/Rubidium",
+    "verified": true
+  },
+  {
+    "in": [
+      "fluorite",
+      "magnesium"
+    ],
+    "out": "beryllium",
+    "why": "Most beryllium is made by reducing beryllium fluoride with magnesium. Heat the fluoride to 900°C with magnesium and finely divided beryllium forms; take it to 1,300°C and it comes together as metal.",
+    "src": "https://en.wikipedia.org/wiki/Beryllium",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "ore"
+    ],
+    "out": "strontium",
+    "why": "Humphry Davy got the first strontium in 1808 by electrolysing strontium chloride mixed with mercuric oxide — the metal came out as an amalgam with mercury, which then had to be driven off to leave strontium behind.",
+    "src": "https://en.wikipedia.org/wiki/Strontium",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "baryte"
+    ],
+    "out": "barium",
+    "why": "Barium won't come out by electrolysis — it dissolves back into the molten salt and the product is filthy. So it is made the way chromium is: burn aluminium for the oxygen at 1,100°C and take what's left.",
+    "src": "https://en.wikipedia.org/wiki/Barium",
+    "verified": true
+  },
+  {
+    "in": [
+      "barium",
+      "ore"
+    ],
+    "out": "radium",
+    "why": "Radium behaves so much like barium that barium is what you use to catch it — then crystallise the two apart over and over, watching the spectroscope for radium's red lines against barium's green. A tonne of ore yields about a seventh of a gram.",
+    "src": "https://en.wikipedia.org/wiki/Radium",
+    "verified": true
+  },
+  {
+    "in": [
+      "monazite",
+      "potassium"
+    ],
+    "out": "thorium",
+    "why": "Berzelius announced thorium in 1829 and could only get an impure sample, by attacking a thorium fluoride salt with potassium metal. Its ore is monazite sand, which averages about 2.5% thorium — the reason those sands are mildly radioactive.",
+    "src": "https://en.wikipedia.org/wiki/Thorium",
+    "verified": true
+  },
+  {
+    "in": [
+      "enriched_uranium",
+      "uranium"
+    ],
+    "out": "plutonium",
+    "why": "This is the only element here that is not dug up. U-235 fissions and throws out neutrons; the U-238 sitting next to it catches one, and becomes neptunium, and then plutonium. The two kinds of uranium do it to each other.",
+    "src": "https://en.wikipedia.org/wiki/Plutonium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "enriched_uranium"
+    ],
+    "out": "polonium",
+    "why": "There is about 0.1 mg of polonium in a tonne of uranium ore, so nobody extracts it — they make it. Put bismuth in a reactor's neutron flux and bismuth-209 becomes bismuth-210, which beta-decays into polonium.",
+    "src": "https://en.wikipedia.org/wiki/Polonium",
+    "verified": true
+  },
+  {
+    "in": [
+      "rare_earth"
+    ],
+    "verb": "heat",
+    "out": "cerium",
+    "why": "Roast the mixture and every lanthanide but one turns into the same kind of oxide. Cerium is the exception — it goes all the way to +4, forms CeO2, and that oxide won't dissolve when the others do. Cerium separates itself.",
+    "src": "https://en.wikipedia.org/wiki/Cerium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lithium",
+      "rare_earth"
+    ],
+    "out": "lanthanum",
+    "why": "Turn the mixture into lanthanum chloride and then take the chlorine off it with lithium metal: LaCl3 + 3Li → La + 3LiCl. Lanthanum is about a quarter of all the lanthanide content in monazite, so there is plenty of it to take.",
+    "src": "https://en.wikipedia.org/wiki/Lanthanum",
+    "verified": true
+  },
+  {
+    "in": [
+      "rare_earth",
+      "spark"
+    ],
+    "out": "neodymium",
+    "why": "Neodymium spent 44 years inside an element that didn't exist: 'didymium', the twin, which Auer von Welsbach finally split in two in 1885. The metal itself comes out of molten halide salts by electrolysis.",
+    "src": "https://en.wikipedia.org/wiki/Neodymium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lanthanum",
+      "rare_earth"
+    ],
+    "out": "samarium",
+    "why": "Reduce samarium oxide with lanthanum metal, then simply distil the two apart — samarium boils at 1,794°C and lanthanum not until 3,464°C, so the samarium leaves first and the lanthanum stays in the pot.",
+    "src": "https://en.wikipedia.org/wiki/Samarium",
+    "verified": true
+  },
+  {
+    "in": [
+      "rare_earth",
+      "zinc"
+    ],
+    "out": "europium",
+    "why": "Europium is the one lanthanide with a back door. Reduce it with zinc and Eu(III) drops to Eu(II), which stops behaving like a rare earth and starts behaving like an alkaline earth — so it can be dropped out with barium sulfate while the rest stay put.",
+    "src": "https://en.wikipedia.org/wiki/Europium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "rare_earth"
+    ],
+    "out": "gadolinium",
+    "why": "Straightforward, for once: heat gadolinium oxide or one of its salts with calcium metal to 1,450°C under argon, and the calcium takes the oxygen. It is named after Johan Gadolin, by way of the mineral gadolinite.",
+    "src": "https://en.wikipedia.org/wiki/Gadolinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "enriched_uranium",
+      "rare_earth"
+    ],
+    "out": "promethium",
+    "why": "Promethium isn't in any ore worth digging. It was found in 1945 at Oak Ridge, in the wreckage of fissioned uranium fuel, by ion-exchange chromatography — the technique that finally made the rare earths separable at all. Named for the Titan who stole fire.",
+    "src": "https://en.wikipedia.org/wiki/Promethium",
+    "verified": true
+  },
+  {
+    "in": [
+      "noble_mix"
+    ],
+    "verb": "heat",
+    "out": "krypton",
+    "verified": true,
+    "why": "Krypton is the more volatile of the two, so warming the mixture drives it off first. The krypton/xenon mixture is separated into krypton and xenon by further distillation.",
+    "src": "https://en.wikipedia.org/wiki/Xenon"
+  },
+  {
+    "in": [
+      "noble_mix"
+    ],
+    "verb": "chill",
+    "out": "xenon",
+    "verified": true,
+    "why": "Xenon is the heavier and less volatile half, and the rarer one — 87 parts per billion of the atmosphere, about one part in 11.5 million. Cool the mixture and it is what stays behind.",
+    "src": "https://en.wikipedia.org/wiki/Xenon"
+  },
+  {
+    "in": [
+      "calcium",
+      "lead"
+    ],
+    "out": "bismuth",
+    "verified": true,
+    "why": "Bismuth is not really mined, it is what is left over. Lead refining scrapes it out on purpose — calcium and magnesium go into molten lead at around 380°C and the bismuth leaves with the dross.",
+    "src": "https://en.wikipedia.org/wiki/Betterton%E2%80%93Kroll_process"
   }
 ]
