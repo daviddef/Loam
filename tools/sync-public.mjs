@@ -49,6 +49,7 @@ const PUBLIC = [
   'tools/scale.mjs',
   'tools/strip.mjs',
   'tools/safety.mjs',
+  'tools/audit.mjs',
   'tools/contact-sheet.mjs',
   'tools/sync-public.mjs',
 ];

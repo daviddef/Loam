@@ -1024,8 +1024,9 @@
     ],
     "verb": "wait",
     "out": "aged_cheese",
-    "why": "Months of enzymes cutting proteins and fats into smaller, louder molecules. The crunchy crystals in old parmesan are free amino acids.",
-    "src": "https://en.wikipedia.org/wiki/Cheese_ripening"
+    "why": "Ageing is digestion, slowed down. Enzymes cut the casein into peptides and then into free amino acids, which is where the savoury depth comes from — and the white crystals in a very old cheese are tyrosine, one of those amino acids falling out of solution.",
+    "src": "https://en.wikipedia.org/wiki/Cheese_ripening",
+    "supported": true
   },
   {
     "in": [
@@ -1128,9 +1129,9 @@
       "cheese"
     ],
     "out": "cheese_toastie",
-    "why": "Cheese melts between 55 and 80 °C depending on how aged it is. Young cheese flows; very old cheese has lost the moisture to do it and splits into oil instead.",
+    "why": "Soft, wet cheeses melt around 55 °C; hard dry ones like Parmesan hold their shape until about 82 °C. It is the moisture that decides, not the age — and a cheese with too little of it splits into oil rather than flowing.",
     "src": "https://en.wikipedia.org/wiki/Cheese",
-    "supported": true
+    "verified": true
   },
   {
     "in": [
@@ -1206,7 +1207,7 @@
     ],
     "out": "philosopher_stone",
     "shelf": "folklore",
-    "why": "Alchemists hunted this for 1,500 years and never found it. Along the way they invented distillation, the acids, and eventually chemistry itself.",
+    "why": "Alchemists hunted this for centuries and never found it. Along the way they invented distillation, the mineral acids, and eventually chemistry itself.",
     "src": "https://en.wikipedia.org/wiki/Philosopher's_stone"
   },
   {
@@ -2272,9 +2273,9 @@
       "fire"
     ],
     "out": "pot",
-    "why": "An open fire reaches perhaps 700 °C — enough for earthenware if the clay is tempered, which is how pottery began.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Pottery"
+    "why": "Earthenware can be fired as low as 600 °C, and much historical pottery was fired at around 800 °C — within reach of an open fire, which is why pottery is older than the kiln.",
+    "src": "https://en.wikipedia.org/wiki/Earthenware",
+    "verified": true
   },
   {
     "in": [
@@ -2312,9 +2313,9 @@
       "fire"
     ],
     "out": "steam",
-    "why": "Water hitting fire flashes to vapour and expands about 1,700 times. That expansion is what every steam engine ever built was harvesting.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Enthalpy_of_vaporization"
+    "why": "Water turning to steam expands 1,700 times at standard temperature and pressure. That expansion is what every steam engine ever built was harvesting.",
+    "src": "https://en.wikipedia.org/wiki/Steam",
+    "verified": true
   },
   {
     "in": [
@@ -2952,7 +2953,7 @@
     ],
     "verb": "chill",
     "out": "aged_cheese",
-    "why": "Cheese caves hold about 10 °C and high humidity. Cold slows the enzymes to a pace that builds flavour instead of rot.",
+    "why": "A cave is cold and damp and stays that way. Cold slows the enzymes to a pace that builds flavour instead of rot, and the damp stops the outside drying to a rind before the inside is ready.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Cheese_ripening"
   },
@@ -3122,7 +3123,7 @@
       "river"
     ],
     "out": "sugarcane",
-    "why": "Cane is thirsty — roughly 1,500 litres of water for every kilo of sugar. It grows where rivers are, or where irrigation pretends there is one.",
+    "why": "Cane is thirsty. It grows where the rivers are, or where irrigation pretends there is one — which is why the crop reshaped the geography of every place it was taken to.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Sugarcane"
   },
@@ -3562,9 +3563,9 @@
       "olive_oil"
     ],
     "out": "fried_fish",
-    "why": "The oil must be hot enough that the batter seals in seconds. Below about 170 °C it drinks the fat instead.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+    "why": "Deep frying works between about 177 and 191 °C. Below that band the batter takes too long to set, and the fish drinks the fat instead of sealing against it.",
+    "src": "https://en.wikipedia.org/wiki/Deep_frying",
+    "verified": true
   },
   {
     "in": [
@@ -3612,9 +3613,9 @@
       "charcoal"
     ],
     "out": "stoneware",
-    "supported": true,
-    "why": "Charcoal burns far hotter than wood. A charcoal-fired kiln reaches the ~1,200 °C that vitrifies stoneware, which an open wood fire never will.",
-    "src": "https://en.wikipedia.org/wiki/Stoneware"
+    "why": "Charcoal burns far hotter than wood. A charcoal-fired kiln reaches the 1,100 to 1,300 °C that vitrifies stoneware, which an open wood fire never will.",
+    "src": "https://en.wikipedia.org/wiki/Stoneware",
+    "verified": true
   },
   {
     "in": [
@@ -4616,9 +4617,9 @@
     ],
     "verb": "cut",
     "out": "ribosome",
-    "why": "This is how they were found. Break the cell open, spin the soup hard enough, and the ribosomes come down as a pellet — Palade saw them in 1955 and they were called Palade granules first.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Cell_fractionation"
+    "why": "This is how they were found. Break the cell open, spin the soup hard enough, and the ribosomes come down as a pellet — George Palade first saw them in 1955, and they were called Palade granules before they had a proper name.",
+    "src": "https://en.wikipedia.org/wiki/Ribosome",
+    "verified": true
   },
   {
     "in": [

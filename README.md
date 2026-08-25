@@ -6,10 +6,10 @@ A combination game where **every recipe carries a source you can open**, and the
 game tells you which of its answers are science and which are stories.
 
 The claim is checkability, not infallibility — and that distinction is the whole
-point. Auditing 70 of our own confident, fluent, well-written claims against
-primary reporting found **17 of them wrong**. A 36% first-pass error rate is the
-strongest argument this project has, and it is an argument against trusting
-anyone's prose, including ours. So every line is sourced, the sources are
+point. Auditing 76 of our own confident, fluent, well-written claims against
+primary reporting found **26 of them wrong** — a 34% first-pass error rate. That
+is the strongest argument this project has, and it is an argument against
+trusting anyone's prose, including ours. So every line is sourced, the sources are
 machine-verified against live articles, and audited claims are marked as such.
 
 The competitors split cleanly: Little Alchemy and Doodle God are fun but invent
@@ -32,8 +32,8 @@ validated and playtested first — before a line of Swift.
 | Reachable | **230 / 230** from the four starters |
 | Deepest chain | 21 crafts |
 | Sourced | **471 / 471** recipes, every URL machine-verified |
-| Audited | **70** claims checked against primary reporting — **17 were wrong** |
-| Unaudited numeric claims | **0** |
+| Audited | **76** claims checked against primary reporting — **26 were wrong** |
+| Numeric claims machine-checked against their own source | **all of them** · 2 pending, throttled |
 | Routes per element | **2.05** · 2 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
 | Drawings | **236**, none of them emoji |
@@ -117,6 +117,8 @@ second set of drawings, and it is why the seven backgrounds (tray, paper, graph,
 deep, fluid, soil profile, void) cost nothing per theme.
 
 ```
+tools/audit.mjs          checks the numbers in our prose against the cited article
+tools/safety.mjs         instructional voice, hazard chains, guarantor language
 tools/palette.mjs        Munsell notations -> sRGB, with provenance
 tools/art.mjs            the parts kit, all 236 drawings, and a sameness check
 tools/scale.mjs          order of magnitude for every item
