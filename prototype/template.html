@@ -1394,10 +1394,12 @@ function renderShelf() {
     shelfAutoFolded = true;
   }
   const aside = document.getElementById('aside');
+  const allShut = !q && groups.length > 0 && groups.every(([f]) => shelfShut.has(f.id));
   aside.innerHTML =
     `<div class="shelfbar">
        <input id="shelfq" class="search sm" placeholder="Find…" value="${shelfQuery}" autocomplete="off">
-       ${q ? '<button id="shelfx" title="Clear">×</button>' : ''}
+       ${q ? '<button id="shelfx" title="Clear">×</button>' :
+         (groups.length > 1 ? `<button id="shelfFold" title="${allShut ? 'Expand all' : 'Collapse all'}">${allShut ? '▾' : '▸'}</button>` : '')}
      </div>` +
     // With two hundred things on the shelf and a handful of live ones, the
     // single most useful thing the panel can do is put those few at the top.
@@ -1451,6 +1453,13 @@ function renderShelf() {
     b2.setSelectionRange(b2.value.length, b2.value.length); };
   const x = document.getElementById('shelfx');
   if (x) x.onclick = () => { shelfQuery = ''; renderShelf(); };
+  const fa = document.getElementById('shelfFold');
+  if (fa) fa.onclick = () => {
+    if (allShut) shelfShut.clear();
+    else groups.forEach(([f]) => shelfShut.add(f.id));
+    shelfAutoFolded = true;
+    renderShelf();
+  };
   const ra = aside.querySelector('[data-readyall]');
   if (ra) ra.onclick = ev => { ev.stopPropagation(); readyAll = !readyAll; renderShelf(); };
   aside.querySelectorAll('[data-fold]').forEach(h => h.onclick = ev => {
@@ -2925,7 +2934,7 @@ document.getElementById('sheet').addEventListener('click', ev => {
   const en = ev.target.closest('[data-entry]');
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
-  if (put) { document.getElementById('sheet').classList.remove('on'); benchTouched = true; return spawn(put.dataset.put); }
+  if (put) { document.getElementById('sheet').classList.remove('on'); benchTouched = true; return placeItem(put.dataset.put); }
   const t = ev.target.closest('[data-trace]');
   if (t) showProvenance(t.dataset.trace);
   const at = ev.target.closest('[data-atom]');
@@ -3013,6 +3022,50 @@ document.getElementById('settings').addEventListener('click', showSettings);
 // you choose. Both work, because on a phone a tap is quicker and on a desktop a
 // drag is what the hand expects.
 let shelfDrag = null;
+
+// Free Play hands you everything at once, which means a thing you place there
+// was never actually built — it has no ancestors, so "Where it came from"
+// would have nothing to show. This builds the real chain that makes it, using
+// the same route the hint panel would point you to, and folds every step
+// except the one you asked for — exactly like a card you built by hand.
+function materialize(r, chips) {
+  const el = spawn(r.out, null, null, chips);
+  links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
+  el.classList.add('folded');
+  return el;
+}
+function buildChain(id, x, y) {
+  const steps = orderedSteps(id);
+  const chipFor = new Map();
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+  }
+  const ensure = (iid) => {
+    if (chipFor.has(iid)) return chipFor.get(iid);
+    const el = spawn(iid);
+    chipFor.set(iid, el);
+    return el;
+  };
+  for (const r of steps) {
+    if (chipFor.has(r.out)) continue;
+    const parents = r.in.map(ensure);
+    chipFor.set(r.out, materialize(r, parents));
+  }
+  const el = chipFor.get(id) || ensure(id);
+  if (x != null) {
+    const [cw, ch] = cardSize();
+    el.style.left = (x - cw / 2) + 'px';
+    el.style.top  = (y - ch / 2) + 'px';
+  }
+  refreshFolds();
+  save();
+  return el;
+}
+// The one entry point placement should go through: builds the real chain in
+// Free Play (where nothing has real ancestors yet), just places it otherwise.
+function placeItem(id, x, y) {
+  return prefs.freePlay ? buildChain(id, x, y) : spawn(id, x, y);
+}
 // Tapping a locked tool explains itself rather than doing nothing.
 document.getElementById('tray').addEventListener('click', ev => {
   const v = ev.target.closest('.verb.locked');
@@ -3020,6 +3073,40 @@ document.getElementById('tray').addEventListener('click', ev => {
   const key = byId[v.dataset.needs];
   sfx.nope();
   toast(`Make ${nameOf(key)} first, and this tool opens`);
+});
+
+// A verb tile can go the other way too: pick it up and carry it onto a card
+// on the bench, exactly as if you had dragged the card onto the tray.
+let verbDrag = null;
+document.getElementById('tray').addEventListener('pointerdown', ev => {
+  const v = ev.target.closest('.verb:not(.locked)');
+  if (!v) return;
+  verbDrag = { id: v.dataset.verb, x: ev.clientX, y: ev.clientY, moved: false, ghost: null };
+});
+addEventListener('pointermove', ev => {
+  if (!verbDrag) return;
+  if (!verbDrag.moved && Math.hypot(ev.clientX - verbDrag.x, ev.clientY - verbDrag.y) < 7) return;
+  if (!verbDrag.moved) {
+    verbDrag.moved = true;
+    const v = verbs.find(x => x.id === verbDrag.id);
+    const g = document.createElement('div');
+    g.className = 'verb drag';
+    g.style.position = 'fixed'; g.style.pointerEvents = 'none'; g.style.zIndex = 400;
+    g.innerHTML = `<span class="e">${glyph('verb_' + v.id, 27)}</span>${v.name}`;
+    document.body.appendChild(g);
+    verbDrag.ghost = g;
+  }
+  verbDrag.ghost.style.left = (ev.clientX - 42) + 'px';
+  verbDrag.ghost.style.top  = (ev.clientY - 20) + 'px';
+});
+addEventListener('pointerup', ev => {
+  if (!verbDrag) return;
+  const { id, moved, ghost } = verbDrag; verbDrag = null;
+  ghost?.remove();
+  if (!moved) return;                                  // a plain tap on an open verb does nothing
+  const t = hit(ev.clientX, ev.clientY);
+  const verbEl = document.querySelector(`.verb[data-verb="${id}"]`);
+  if (t && t.classList.contains('board') && verbEl) applyProcess(t, verbEl);
 });
 
 document.getElementById('aside').addEventListener('click', ev => {
@@ -3059,13 +3146,16 @@ addEventListener('pointerup', ev => {
   const offBoard = under && under.closest && under.closest('#aside, #tray, header');
   if (moved && !offBoard) {
     const [wx, wy] = toWorld(ev.clientX, ev.clientY);
-    const el = spawn(id, wx, wy);
+    const el = placeItem(id, wx, wy);
     sfx.pick();
     // dropped onto something? then merge, exactly as if dragged on the bench
     const t = hit(ev.clientX, ev.clientY, el);
     if (t) { t.dataset.verb ? applyProcess(el, t) : applyMerge(el, t); }
   } else if (!moved) {
-    spawn(id); sfx.pick();
+    // Tapping a result while searching is a lookup, not a placement — you are
+    // asking "what is this", and dragging remains how you actually place it.
+    if (shelfQuery) { showEntry(id); sfx.pick(); }
+    else { placeItem(id); sfx.pick(); }
   }
 });
 document.getElementById('nudge').addEventListener('click', () => {
@@ -3081,7 +3171,7 @@ document.getElementById('nudge').addEventListener('click', () => {
   toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
 function wipeProgress() {
-  if (!confirm('Wipe all discoveries? This cannot be undone.')) return;
+  if (!confirm('Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.')) return;
   try { localStorage.removeItem(KEY); localStorage.removeItem(REAL_KEY); } catch {}
   location.reload();
 }
