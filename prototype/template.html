@@ -465,6 +465,45 @@ __CATEGORY_CSS__
   }
   @media (prefers-reduced-motion:reduce){ .chip.board.warn{animation:none} }
 
+  /* ── the dial ─────────────────────────────────────────────────────────
+     A thing held on a tool gets hot, and hot things glow the colour they
+     really glow at that temperature — dull red about 500°C, orange near
+     1,000, white past 2,500. The reading sits above the card so the number,
+     not a vague bar, is what you are steering by. */
+  .chip.board.heating{
+    box-shadow:0 0 0 2px var(--glow,transparent),
+               0 0 calc(14px * var(--glow-a,0)) calc(5px * var(--glow-a,0)) var(--glow,transparent);
+    border-color:color-mix(in srgb,var(--glow,var(--line)) 70%,var(--line));
+  }
+  .chip.board.heating .art{
+    filter:drop-shadow(0 0 calc(9px * var(--glow-a,0)) var(--glow,transparent));
+  }
+  .chip.board.heating::before{
+    content:attr(data-temp);position:absolute;left:50%;top:-22px;transform:translateX(-50%);
+    font:700 10.5px/1 var(--face-data);white-space:nowrap;letter-spacing:.03em;
+    padding:4px 7px;border-radius:6px;background:var(--ink);color:var(--cream);
+    font-variant-numeric:tabular-nums;z-index:6;
+  }
+  .chip.board.heating.willreact::before{background:var(--discovery);color:var(--on-accent)}
+  @keyframes quake{
+    0%,100%{transform:translate(0,0)} 20%{transform:translate(-3px,2px)}
+    45%{transform:translate(3px,-2px)} 70%{transform:translate(-2px,-1px)}
+  }
+  #board.quake{animation:quake .3s ease-in-out}
+  @media (prefers-reduced-motion:reduce){ #board.quake{animation:none} }
+  /* The flash when it actually happens, sized and coloured by how hot. */
+  .ring.hot{
+    border-color:var(--hot,var(--discovery));border-width:3px;
+    animation:ripple .62s cubic-bezier(.2,.7,.3,1) forwards;
+    scale:var(--big,1);
+  }
+  /* The tool fills as the dial climbs. */
+  .verb.charging{
+    background:linear-gradient(to top, color-mix(in srgb,var(--brick) 40%,transparent) var(--charge,0%),
+               transparent var(--charge,0%));
+    border-color:var(--brick);
+  }
+
   /* Attraction and resistance. The lean itself carries the information; the
      ring is a second channel so it still reads with reduced motion on. */
   .chip.board.pulled,.chip.board.resists{
@@ -1080,9 +1119,26 @@ const LOCALE = (navigator.language || 'en-GB');
 const nameOf = (e) => (e.aliases && (e.aliases[LOCALE] ||
   e.aliases[Object.keys(e.aliases).find(k => k.split('-')[0] === LOCALE.split('-')[0])])) || e.name;
 const merges = new Map(), procs = new Map();
+// Temperature-banded processes. A recipe carrying `at` happens at or above
+// that many °C, so one tool can have several outcomes on the same thing and
+// the number you take it to is the choice. Anything without `at` behaves
+// exactly as before, which is why 600-odd existing recipes needed no edit.
+const bands = new Map();                            // "id|verb" -> [{at, r}] hot-last
 for (const r of recipes) {
-  if (r.verb) procs.set(r.in[0] + '|' + r.verb, r);
-  else merges.set([...r.in].sort().join('+'), r);
+  if (!r.verb) { merges.set([...r.in].sort().join('+'), r); continue; }
+  const key = r.in[0] + '|' + r.verb;
+  if (r.at === undefined) { procs.set(key, r); continue; }
+  if (!bands.has(key)) bands.set(key, []);
+  bands.get(key).push({ at: r.at, r });
+}
+for (const list of bands.values()) list.sort((a, b) => a.at - b.at);
+/** What this tool does to this thing at this temperature — or null. */
+function bandAt(key, temp) {
+  const list = bands.get(key);
+  if (!list) return null;
+  let hit = null;
+  for (const b of list) if (temp >= b.at) hit = b;
+  return hit;
 }
 const STARTERS = elements.filter(e => e.starter).map(e => e.id);
 const GOAL = 'dinner';
@@ -2233,6 +2289,11 @@ board.addEventListener('pointermove', ev => {
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
   applyForces(drag.chip, ev.clientX, ev.clientY, t);
+  // Resting the card on a tool that has more than one answer for it starts
+  // the dial climbing. Move off and it cools straight back down.
+  const bandKey = t?.dataset.verb ? drag.chip.dataset.id + '|' + t.dataset.verb : null;
+  if (bandKey && bands.has(bandKey)) startHeat(drag.chip, t, bandKey);
+  else stopHeat();
   if (ambientDuringDrag(drag.chip, ev.clientX, ev.clientY)) {
     drag = null; hitCache = null; clearWarn();          // it already reacted — nothing left to drag
   }
@@ -2248,6 +2309,9 @@ board.addEventListener('pointerup', ev => {
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
+  // If the dial was climbing, letting go IS the decision — it has already
+  // chosen a temperature, so it must not also fall through to a plain drop.
+  if (heating && heating.chip === chip) { releaseHeat(); pinToBoard(chip); return; }
   const t = hit(ev.clientX, ev.clientY, chip);        // fresh and authoritative for the actual drop
   if (t?.dataset.verb) applyProcess(chip, t);
   else if (t) applyMerge(chip, t);
@@ -2550,6 +2614,113 @@ function ambientDuringDrag(dragChip, x, y) {
 // Waiting and fermenting take real time; you keep playing while they run.
 const TAKES_TIME = { wait: 14000, ferment: 20000 };
 const cooking = new Set();
+
+// ---------- holding a tool on a thing: how far you take it ----------------
+// Melting points and boiling points are real numbers, so the tool has a dial
+// and the number you stop at is the whole decision. Hold the card on Heat and
+// the temperature climbs; let go and whatever genuinely happens at that
+// temperature is what you get. Going hotter than the hottest thing a
+// substance does is not punished with an invented explosion — water taken to
+// 3,000°C is still steam. The drama is in choosing the wrong band, which is
+// how caramel becomes a burnt pan.
+const HOLD_MS = 4000;             // floor to ceiling, if you just hold on
+const T_ROOM = 20, T_MAX = 3500;  // °C — the ceiling clears magnesium's 3,100
+let heating = null;
+/**
+ * A cubic ramp, not an exponential one. Exponential looked right on paper —
+ * it puts 60°C and 1,500°C both within reach — but it crams everything above
+ * 700°C into the last third of a second, so choosing between a 600°C
+ * earthenware firing and a 1,300°C stoneware one came down to a few frames.
+ * Cubed, the kitchen range still arrives early and the forge range gets about
+ * a second of travel to itself.
+ */
+const tempAt = ms =>
+  Math.round(T_ROOM + (T_MAX - T_ROOM) * Math.pow(Math.min(1, ms / HOLD_MS), 3));
+/** Real incandescence: what a hot thing actually looks like at that heat. */
+function glowOf(t) {
+  if (t < 480) return null;                       // below visible red heat
+  const stops = [[480, '#4A0C00'], [700, '#7E1A00'], [900, '#B33A00'], [1100, '#DE6209'],
+                 [1400, '#FFA030'], [1900, '#FFCE72'], [2600, '#FFEDC4'], [3500, '#FFFFFF']];
+  for (let i = 0; i < stops.length - 1; i++) {
+    const [a, ca] = stops[i], [b, cb] = stops[i + 1];
+    if (t <= b) {
+      const f = (t - a) / (b - a);
+      const mix = (x, y) => Math.round(parseInt(ca.slice(x, y), 16) +
+        f * (parseInt(cb.slice(x, y), 16) - parseInt(ca.slice(x, y), 16)));
+      return `rgb(${mix(1, 3)},${mix(3, 5)},${mix(5, 7)})`;
+    }
+  }
+  return '#FFFFFF';
+}
+function startHeat(chip, verbEl, key) {
+  if (heating && heating.chip === chip && heating.key === key) return;
+  stopHeat();
+  heating = { chip, verbEl, key, t0: performance.now(), temp: T_ROOM, tick: 0 };
+  chip.classList.add('heating');
+  verbEl.classList.add('charging');
+  heating.tick = setInterval(pumpHeat, 40);
+  pumpHeat();
+}
+function pumpHeat() {
+  if (!heating) return;
+  const t = tempAt(performance.now() - heating.t0);
+  heating.temp = t;
+  const { chip, verbEl } = heating;
+  const g = glowOf(t);
+  chip.style.setProperty('--glow', g || 'transparent');
+  chip.style.setProperty('--glow-a', g ? Math.min(1, (t - 400) / 900) : 0);
+  verbEl.style.setProperty('--charge', (Math.min(1, (performance.now() - heating.t0) / HOLD_MS) * 100).toFixed(1) + '%');
+  // What it will do if you let go right now — named only once you have met it.
+  const hit = bandAt(heating.key, t);
+  const known = hit && found.has(hit.r.out);
+  chip.dataset.temp = t.toLocaleString() + '°C' +
+    (hit ? ' · ' + (known ? nameOf(byId[hit.r.out]) : 'something') : '');
+  chip.classList.toggle('willreact', !!hit);
+}
+function stopHeat() {
+  if (!heating) return;
+  clearInterval(heating.tick);
+  const { chip, verbEl } = heating;
+  chip.classList.remove('heating', 'willreact');
+  chip.style.removeProperty('--glow'); chip.style.removeProperty('--glow-a');
+  delete chip.dataset.temp;
+  verbEl.classList.remove('charging');
+  verbEl.style.removeProperty('--charge');
+  heating = null;
+}
+/** Let go. Returns true if the held temperature actually did something. */
+function releaseHeat() {
+  if (!heating) return false;
+  const { chip, key, temp } = heating;
+  const hit = bandAt(key, temp);
+  stopHeat();
+  if (!hit) {                                     // too cold to do anything
+    sfx.nope();
+    toast(`${temp.toLocaleString()}°C is not enough to change it`);
+    chip.classList.add('nope'); setTimeout(() => chip.classList.remove('nope'), 280);
+    return true;                                  // handled: do not also merge
+  }
+  flashHeat(chip, temp);
+  resolve(hit.r, [chip]);
+  return true;
+}
+/** The moment itself. Bigger and whiter the hotter you took it. */
+function flashHeat(chip, temp) {
+  const [cx, cy] = chipCentre(chip);
+  const ring = document.createElement('div');
+  ring.className = 'ring hot';
+  ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
+  ring.style.setProperty('--hot', glowOf(Math.max(temp, 700)) || '#FFA030');
+  ring.style.setProperty('--big', (1 + Math.min(1.6, temp / 1400)).toFixed(2));
+  world.appendChild(ring);
+  setTimeout(() => ring.remove(), 700);
+  if (temp >= 1200) {
+    board.classList.add('quake');
+    setTimeout(() => board.classList.remove('quake'), 320);
+  }
+  note(temp >= 1200 ? 180 : 320, 0, .18, .05, 'sawtooth');
+  buzz(temp >= 1200 ? [18, 30, 22] : 12);
+}
 
 function applyProcess(chip, verbEl) {
   const verb = verbEl.dataset.verb;

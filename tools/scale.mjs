@@ -48,7 +48,7 @@ const SCALE = {
           'cane_juice', 'manna', 'granary', 'rutile'],
   '-2':  ['iron', 'copper', 'gold', 'silver', 'tin', 'lead', 'zinc', 'mercury', 'aluminum', 'nickel', 'chromium', 'titanium', 'platinum', 'uranium', 'magnesium', 'calcium', 'sodium', 'potassium', 'enriched_uranium',
           'lard', 'wool', 'embryo', 'cotton', 'popcorn', 'soybean', 'tofu', 'pea', 'lemon', 'strawberry', 'pear', 'cherry', 'fig', 'coffee', 'cocoa_bean', 'chocolate', 'stone', 'flint', 'limestone', 'ice', 'brick', 'adobe', 'mortar', 'candle',
-          'ore', 'cinnabar', 'yellowcake', 'oak_gall', 'thread', 'fibre', 'ink', 'mirror',
+          'ore', 'cinnabar', 'yellowcake', 'quicklime', 'oak_gall', 'thread', 'fibre', 'ink', 'mirror',
           'soap', 'lye', 'butter', 'ghee', 'curd', 'cheese', 'aged_cheese',
           'blue_cheese', 'egg', 'boiled_egg', 'golden_egg', 'apple', 'tomato',
           'onion', 'garlic', 'bulb', 'potato', 'chilli', 'meatball', 'sausage',

@@ -85,7 +85,8 @@
     "out": "pot",
     "why": "Around 600 °C the water chemically bound inside the clay is driven out, and higher still the particles fuse. Either way it is irreversible: a fired pot will never be mud again.",
     "src": "https://en.wikipedia.org/wiki/Pottery",
-    "verified": true
+    "verified": true,
+    "at": 600
   },
   {
     "in": [
@@ -133,7 +134,8 @@
     "out": "steam",
     "why": "Turning 1 litre of water to steam takes five times more energy than heating it from freezing to boiling. That hidden energy is why steam scalds.",
     "src": "https://en.wikipedia.org/wiki/Enthalpy_of_vaporization",
-    "verified": true
+    "verified": true,
+    "at": 100
   },
   {
     "in": [
@@ -745,7 +747,8 @@
     "out": "caramel",
     "why": "At 170 °C sucrose breaks apart and reassembles into hundreds of new compounds — nutty, bitter, fruity. Not one of them was in the sugar.",
     "src": "https://en.wikipedia.org/wiki/Caramelization",
-    "verified": true
+    "verified": true,
+    "at": 170
   },
   {
     "in": [
@@ -1076,7 +1079,8 @@
     "out": "boiled_egg",
     "why": "The white sets at 63 °C, the yolk at 70 °C. Every egg you have ever cooked lives or dies in those seven degrees.",
     "src": "https://en.wikipedia.org/wiki/Boiled_egg",
-    "verified": true
+    "verified": true,
+    "at": 63
   },
   {
     "in": [
@@ -1789,7 +1793,8 @@
     "out": "stoneware",
     "verified": true,
     "why": "Without temper a thick wall shrinks unevenly and splits in the kiln. With it you can fire bigger, harder vessels — hard enough to hold water with no glaze at all.",
-    "src": "https://en.wikipedia.org/wiki/Stoneware"
+    "src": "https://en.wikipedia.org/wiki/Stoneware",
+    "at": 1300
   },
   {
     "in": [
@@ -4803,7 +4808,8 @@
     "out": "lead",
     "why": "Lead's ore, galena, gives up its metal at just 327.5°C — ordinary heat, no charcoal or special furnace required. It was easy enough that prehistoric people in the Near East were already using lead before recorded history began.",
     "src": "https://en.wikipedia.org/wiki/Lead",
-    "verified": true
+    "verified": true,
+    "at": 327.5
   },
   {
     "in": [
@@ -5613,7 +5619,8 @@
     "why": "Water inside the kernel turns to steam and builds to about 930 kPa and 180°C before the hull gives way. The pressure drops all at once and the endosperm expands into an airy foam.",
     "src": "https://en.wikipedia.org/wiki/Popcorn",
     "verified": true,
-    "verb": "heat"
+    "verb": "heat",
+    "at": 180
   },
   {
     "in": [
@@ -6053,6 +6060,39 @@
     "out": "water",
     "verified": true,
     "why": "At the melting point the ordering of the molecules in the solid breaks down to a less ordered state, and the solid melts. The temperature stays put while it happens — all the energy goes into the change itself.",
-    "src": "https://en.wikipedia.org/wiki/Melting"
+    "src": "https://en.wikipedia.org/wiki/Melting",
+    "at": 0
+  },
+  {
+    "in": [
+      "tempered_clay"
+    ],
+    "verb": "heat",
+    "at": 600,
+    "out": "pot",
+    "verified": true,
+    "why": "Earthenware is fired around 600°C — hot enough to turn clay to ceramic for good, and no hotter. Stop here and you have a pot.",
+    "src": "https://en.wikipedia.org/wiki/Pottery"
+  },
+  {
+    "in": [
+      "limestone"
+    ],
+    "verb": "heat",
+    "at": 900,
+    "out": "quicklime",
+    "verified": true,
+    "why": "Limestone calcination runs at 900 to 1,050°C: CaCO3 becomes CaO and the carbon dioxide leaves as gas. What is left is quicklime, and it weighs a great deal less.",
+    "src": "https://en.wikipedia.org/wiki/Calcination"
+  },
+  {
+    "in": [
+      "quicklime",
+      "water"
+    ],
+    "out": "mortar",
+    "verified": true,
+    "why": "Slaking. Quicklime and water react hard enough to boil the water, and the calcium hydroxide left behind sets slowly in air back into limestone — which is what lime mortar is.",
+    "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
   }
 ]

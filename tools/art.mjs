@@ -286,6 +286,11 @@ def('cement_meal', () => [mound('bs', 48, 19, 17), ...granules('hi', 14, 29, [14
                           S('M10 48 L50 48', 'ik', 1.4)]);
 
 /* metal-bearing rock — new mineral intermediates the metal branch stands on */
+def('quicklime', () => [                                 // burnt lime: porous, chalky, hungry for water
+  P('M14 40 Q12 26 24 22 Q38 18 44 28 Q48 38 38 46 Q24 50 14 40 Z', 'hi'),
+  ...granules('lo', 6, 449, [20, 28, 40, 42]),
+  S('M18 30 Q30 26 42 32', 'bs', 1.4),
+]);
 def('ore',      () => [facet('lo', .95), facet('bs', .6),
                        ...granules('hi', 7, 41, [16, 24, 44, 40])]);
 def('cinnabar', () => [facet('lo'), facet('bs', .62),

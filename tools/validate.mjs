@@ -45,6 +45,7 @@ for (const v of verbs) {
 // ---- recipes --------------------------------------------------------------
 // Signature rules: exactly 2 inputs and no verb (a merge), OR 1 input + a verb (a process).
 const sigs = new Map();
+const banded = new Map();   // gesture -> is it temperature-banded?
 for (const [i, r] of recipes.entries()) {
   const at = `recipe #${i} (-> ${r.out})`;
   if (!r.why) err(`${at}: missing why`);
@@ -68,11 +69,31 @@ for (const [i, r] of recipes.entries()) {
   }
 
   // Ambiguity: the same gesture must never have two different results.
-  const sig = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+  // A banded recipe carries `at` — the temperature in °C at or above which it
+  // happens — so `iron|heat@1538` and `iron|heat@2862` are different gestures
+  // even though both are "heat the iron". Melting and boiling really are two
+  // different things and the player really does choose between them.
+  if (r.at !== undefined) {
+    if (!r.verb) err(`${at}: "at" only means something on a verb recipe`);
+    if (typeof r.at !== 'number' || !isFinite(r.at)) err(`${at}: "at" must be a number of °C`);
+  }
+  const base = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+  const sig = r.at !== undefined ? `${base}@${r.at}` : base;
   if (sigs.has(sig) && sigs.get(sig) !== r.out) {
     err(`ambiguous gesture "${sig}" produces both "${sigs.get(sig)}" and "${r.out}"`);
   }
   sigs.set(sig, r.out);
+  // A gesture is either banded or it is not. Mixing them would mean a plain
+  // drop and a held drop on the same tool disagreeing about what happens,
+  // which is exactly the kind of ambiguity the rule above exists to prevent.
+  if (r.verb) {
+    const mode = banded.get(base);
+    const now = r.at !== undefined;
+    if (mode !== undefined && mode !== now) {
+      err(`gesture "${base}" mixes banded and unbanded recipes — pick one`);
+    }
+    banded.set(base, now);
+  }
 }
 
 // ---- bedrock --------------------------------------------------------------

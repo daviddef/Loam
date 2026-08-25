@@ -16,7 +16,14 @@ const srcFile  = JSON.parse(readFileSync(u('sources.json'), 'utf8'));
 const srcMap   = srcFile.map;
 const srcUrls  = srcFile.urls ?? {};
 const srcGest  = srcFile.gestures ?? {};
-const gestureOf = (r) => r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+// A temperature-banded recipe is its own gesture: heating tempered clay to
+// 600°C and to 1,300°C are different acts with different outcomes, so they
+// cite different articles. Keyed without the band, the second one would keep
+// trying to overwrite the first's source.
+const gestureOf = (r) => {
+  const base = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+  return r.at !== undefined ? `${base}@${r.at}` : base;
+};
 const shelf = Object.fromEntries(elements.map((e) => [e.id, e.shelf]));
 
 const API = 'https://en.wikipedia.org/w/api.php';
