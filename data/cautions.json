@@ -27,6 +27,21 @@
       "label": "Alcohol",
       "note": "Fermentation is how alcohol is made, and this part of the game explains that chemistry. It is not a brewing guide, and the drinking age where you live applies to you and not to the game.",
       "ids": ["beer", "wine", "cider", "mead", "aged_wine", "mead_must", "wort", "malt", "vinegar"]
+    },
+    "mercury_toxicity": {
+      "label": "Mercury is toxic, in the ore and in the metal",
+      "note": "Mercury and its compounds are toxic to the nervous system, immune system and kidneys, and both mining cinnabar and refining mercury from it are historic causes of mercury poisoning. This is chemistry to understand, not something to try at home.",
+      "ids": ["cinnabar", "mercury"]
+    },
+    "uranium_toxicity": {
+      "label": "Uranium is a heavy-metal poison first",
+      "note": "The main risk of exposure is chemical poisoning by uranium oxide rather than radioactivity — incorporated uranium accumulates in bone, liver, kidney and reproductive tissue. An excess risk of lung cancer has been documented among Navajo uranium miners specifically and linked to their occupation.",
+      "ids": ["ore", "uranium"]
+    },
+    "lead_toxicity": {
+      "label": "Lead is a neurotoxin",
+      "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
+      "ids": ["lead"]
     }
   }
 }

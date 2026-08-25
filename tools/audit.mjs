@@ -237,6 +237,7 @@ const gestureOf = r => r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('
 const NAME_CLEARED = {
   'flatbread+passata': 'the Columbian exchange as background, not a claim about pizza',
   'leaf+sun': 'a geographic adjective, not an attribution',
+  'ore+spark': 'accent-stripping turns "Héroult" into "Hroult" before the match — the name is genuinely in the cited article (it is literally in the title, "Hall–Héroult process")',
 };
 
 const ABSOLUTE_CLEARED = {

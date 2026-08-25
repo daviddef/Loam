@@ -4714,5 +4714,195 @@
     "why": "Sunlight is one of the main energy inputs that melts snow and ice — the same shortwave radiation that warms everything else it lands on.",
     "src": "https://en.wikipedia.org/wiki/Snowmelt",
     "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "steam"
+    ],
+    "out": "ore",
+    "why": "Hot, mineral-laden fluid forcing its way through limestone alters it into skarn — one of the most productive kinds of ore body there is, a real source of tin, tungsten, copper, gold, zinc, lead, nickel and iron ore alike.",
+    "src": "https://en.wikipedia.org/wiki/Skarn",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "sulfur"
+    ],
+    "out": "cinnabar",
+    "why": "Cinnabar forms as a vein filling in rock near volcanic activity and hot springs — sulfur meeting mercury underground, cooling in place.",
+    "src": "https://en.wikipedia.org/wiki/Cinnabar",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore"
+    ],
+    "verb": "crush",
+    "out": "rutile",
+    "why": "Ore-dressing sorts the specific mineral you want out of raw rock. For titanium that mineral is rutile — titanium dioxide, and one of only two titanium ores ever worth mining.",
+    "src": "https://en.wikipedia.org/wiki/Titanium",
+    "supported": true
+  },
+  {
+    "in": [
+      "ore",
+      "charcoal"
+    ],
+    "out": "iron",
+    "why": "Charcoal does two jobs in a bloomery: it burns hot enough to reduce the ore, and the carbon monoxide it gives off is what actually strips the oxygen away, leaving a spongy mass of iron called a bloom.",
+    "src": "https://en.wikipedia.org/wiki/Bloomery",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "fire"
+    ],
+    "out": "copper",
+    "why": "Copper ore reduces to metal a full 500°C cooler than iron ore does — ordinary fire is hot enough, which is a large part of why copper was the first metal anyone learned to smelt from ore, around 5000 BC.",
+    "src": "https://en.wikipedia.org/wiki/Iron",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "river"
+    ],
+    "out": "gold",
+    "why": "Native gold is dense enough that swirling river sand and gravel in water sorts it out on its own — every lighter grain washes away and the gold sinks and stays. That is the whole trick behind a gold pan.",
+    "src": "https://en.wikipedia.org/wiki/Gold_panning",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead"
+    ],
+    "verb": "heat",
+    "out": "silver",
+    "why": "Cupellation: heat lead that carries a little silver in a strong draft of air, and the lead oxidises away as litharge, leaving the silver behind. Slag from doing exactly this has turned up in the Aegean, dating to the 4th millennium BC.",
+    "src": "https://en.wikipedia.org/wiki/Cupellation",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "wood"
+    ],
+    "out": "tin",
+    "why": "Tin's ore, cassiterite, is a tin oxide that reduces to metal easily — tin melts at just 232°C, barely above boiling water, so simple fuel is all it ever needed.",
+    "src": "https://en.wikipedia.org/wiki/Tin",
+    "supported": true
+  },
+  {
+    "in": [
+      "ore"
+    ],
+    "verb": "heat",
+    "out": "lead",
+    "why": "Lead's ore, galena, gives up its metal at just 327.5°C — ordinary heat, no charcoal or special furnace required. It was easy enough that prehistoric people in the Near East were already using lead before recorded history began.",
+    "src": "https://en.wikipedia.org/wiki/Lead",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "pot"
+    ],
+    "out": "zinc",
+    "why": "Zinc boils at 907°C, cooler than the temperature that reduces its ore — the oldest confirmed pure zinc anywhere comes from Zawar, Rajasthan, by the 9th century AD, made by distilling zinc vapour off in a sealed vessel and condensing it.",
+    "src": "https://en.wikipedia.org/wiki/Zinc",
+    "supported": true
+  },
+  {
+    "in": [
+      "cinnabar"
+    ],
+    "verb": "heat",
+    "out": "mercury",
+    "why": "Roast cinnabar in air and the mercury boils straight off as vapour, ready to condense back into liquid metal — the only metal that stays liquid at room temperature.",
+    "src": "https://en.wikipedia.org/wiki/Mercury_(element)",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "spark"
+    ],
+    "out": "aluminum",
+    "why": "Aluminium is too reactive to smelt like iron or copper — it takes electricity instead. Hall and Héroult worked this out independently in 1886, and that invention made it cheap.",
+    "src": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "copper"
+    ],
+    "out": "nickel",
+    "why": "In 1751 Axel Fredrik Cronstedt tried to pull copper out of an ore German miners called 'Kupfernickel' — copper's trickster spirit — at a Swedish cobalt mine, and got a new white metal instead, which he named nickel.",
+    "src": "https://en.wikipedia.org/wiki/Nickel",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "aluminum"
+    ],
+    "out": "chromium",
+    "why": "Chromium oxide will not easily give up its oxygen to carbon alone. Mix it with powdered aluminium instead and the aluminium burns for the oxygen so fiercely the reaction runs on its own heat — Cr2O3 + 2Al → Al2O3 + 2Cr — leaving pure chromium metal behind.",
+    "src": "https://en.wikipedia.org/wiki/Chromium",
+    "verified": true
+  },
+  {
+    "in": [
+      "rutile",
+      "spark"
+    ],
+    "out": "titanium",
+    "why": "Titanium will not reduce with carbon like iron does — it just forms titanium carbide, and nobody produced usable metallic titanium until 1932. A newer method reduces the solid ore directly with an electric current instead.",
+    "src": "https://en.wikipedia.org/wiki/Titanium",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "river"
+    ],
+    "out": "platinum",
+    "why": "Platinum is found chemically uncombined, native, in the same alluvial river sands people were already panning for gold — pre-Columbian South Americans mined it from Colombia's Chocó Department, a source still worked today.",
+    "src": "https://en.wikipedia.org/wiki/Platinum",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "water"
+    ],
+    "out": "uranium",
+    "why": "Most uranium mined today never comes up as rock at all — a leaching solution pumped down into the ore body dissolves the uranium in place, then is pumped back up for processing. That is in-situ leaching, now the dominant method.",
+    "src": "https://en.wikipedia.org/wiki/Uranium_mining",
+    "supported": true
+  },
+  {
+    "in": [
+      "uranium"
+    ],
+    "verb": "wait",
+    "out": "helium",
+    "why": "Most helium on Earth is not primordial — it is still being made, right now, underground. Uranium decays by throwing off alpha particles, and an alpha particle is just a helium nucleus, trapped in the same rock that made it.",
+    "src": "https://en.wikipedia.org/wiki/Helium",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen",
+      "oxygen_gas"
+    ],
+    "out": "neon",
+    "why": "Neon has never been mined — it is a leftover. Liquefying air to pull out the nitrogen and oxygen everyone actually wants leaves a whisper of neon behind, and that fractional distillation is still how all of it is produced today.",
+    "src": "https://en.wikipedia.org/wiki/Neon",
+    "verified": true
   }
 ]

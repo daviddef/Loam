@@ -158,7 +158,7 @@ const hex = (r, cx = 30, cy = 30, rad = 15, w = 2.2) => {
 const CPK = {
   H: '#FFFFFF', C: '#909090', N: '#3050F8', O: '#FF0D0D', S: '#FFFF30',
   P: '#FF8000', Ca: '#3DFF00', Fe: '#E06633', Na: '#AB5CF2', Cl: '#1FF01F',
-  K: '#8F40D4', Mg: '#8AFF00',
+  K: '#8F40D4', Mg: '#8AFF00', He: '#D9FFFF', Ne: '#B3E3F5',
 };
 
 /** A ball-and-stick molecule from a tiny spec: centre atom + ligands. */
@@ -193,7 +193,7 @@ const MOLECULAR = new Set([
   'dipeptide', 'polypeptide', 'protein', 'disulfide', 'atp', 'nucleotide',
   'dna', 'membrane', 'enzyme', 'denatured_protein', 'gelatin', 'keratin',
   'collagen', 'alpha_helix', 'beta_sheet', 'ribosome', 'messenger_rna',
-  'hydrogen_gas', 'oxygen_gas',
+  'hydrogen_gas', 'oxygen_gas', 'helium', 'neon',
 ]);
 
 const TAG_CATEGORY = {
@@ -206,6 +206,7 @@ const TAG_CATEGORY = {
   microbe: 'living', animal: 'living',
   water: 'water',
   fire: 'fire',
+  metal: 'mineral',
 };
 
 export function categoryOf(el) {
@@ -278,6 +279,68 @@ def('tempered_clay', () => [E(30, 36, 20, 14, 'bs'), ...granules('hi', 10, 41, [
 def('cement_meal', () => [mound('bs', 48, 19, 17), ...granules('hi', 14, 29, [14, 34, 46, 48]),
                           S('M10 48 L50 48', 'ik', 1.4)]);
 
+/* metal-bearing rock — new mineral intermediates the metal branch stands on */
+def('ore',      () => [facet('lo', .95), facet('bs', .6),
+                       ...granules('hi', 7, 41, [16, 24, 44, 40])]);
+def('cinnabar', () => [facet('lo'), facet('bs', .62),
+                       S('M16 40 L44 20', 'hi', 2.2)]);
+def('rutile',   () => [                                  // a single prismatic grain, not a rock
+  P('M22 38 L27 16 L32 15 L38 36 L33 44 L26 44 Z', 'bs'),
+  S('M25 34 L30 20', 'hi', 1.6),
+]);
+
+/* metal — opaque and reflective, never faceted like a crystal. The one
+   shared signature across the family is a bright glint; everything else
+   about the silhouette is where each metal earns its own shape. */
+def('iron', () => [                                       // a spongy bloomery bloom, pitted
+  P('M14 34 Q12 22 26 18 Q40 14 46 26 Q50 36 40 44 Q28 50 18 44 Q12 40 14 34 Z', 'bs'),
+  C(22, 26, 3, 'gh'), C(34, 34, 3.4, 'gh'), C(28, 40, 2.6, 'gh'),
+  S('M18 22 L26 30', 'hi', 2),
+]);
+def('copper', () => [E(30, 32, 19, 15, 'bs'), E(24, 26, 7, 4, 'hi')]);   // smooth native nugget
+def('gold', () => [                                       // an asymmetric panned nugget
+  P('M16 36 Q14 24 24 20 Q34 16 42 24 Q48 30 42 38 Q36 46 26 44 Q18 42 16 36 Z', 'bs'),
+  C(26, 26, 3.6, 'hi'), C(36, 32, 2.4, 'hi'),
+]);
+def('silver', () => [C(30, 32, 13, 'bs'), C(25, 27, 4, 'hi')]);          // a cupellation bead
+def('tin', () => [                                         // cast ingot, low melt = rounded corners
+  P('M18 22 L42 22 Q46 22 46 26 L46 40 Q46 44 42 44 L18 44 Q14 44 14 40 L14 26 Q14 22 18 22 Z', 'bs'),
+  S('M18 26 L18 40', 'hi', 2.2),
+]);
+def('lead', () => [                                         // dense, and deliberately dull
+  E(30, 32, 18, 15, 'lo'), E(30, 32, 15, 12, 'bs'), S('M24 28 L28 31', 'hi', 1.2),
+]);
+def('zinc', () => [                                         // distilled plates, stacked
+  P('M16 24 L44 20 L44 28 L16 32 Z', 'bs'),
+  P('M18 32 L46 28 L46 36 L18 40 Z', 'lo'),
+  P('M20 40 L48 36 L48 44 L20 48 Z', 'bs'),
+  S('M20 26 L40 23', 'hi', 1.6),
+]);
+def('mercury', () => [                                      // liquid: a bead, and one rolling away
+  C(30, 34, 12, 'bs'), C(25, 29, 3.4, 'hi'),
+  C(44, 42, 3.5, 'bs'), C(42.5, 40.5, 1, 'hi'),
+]);
+def('aluminum', () => [                                     // sharp, uniform, modern
+  P('M16 24 L44 24 L44 42 L16 42 Z', 'bs'), S('M16 24 L44 24', 'hi', 2.4), S('M20 28 L20 38', 'ik', 1),
+]);
+def('nickel', () => [                                       // the ore-mimic: angular, one fleck
+  P('M18 30 L28 16 L44 22 L46 38 L32 48 L16 42 Z', 'bs'), S('M24 26 L30 34', 'hi', 1.8), C(36, 30, 2.2, 'gh'),
+]);
+def('chromium', () => [                                     // a reduced powder, nothing solid at all
+  ...granules('bs', 10, 613, [16, 20, 44, 44]), ...granules('hi', 4, 271, [20, 24, 40, 40]),
+]);
+def('titanium', () => [                                     // the Kroll-process sponge
+  P('M16 26 Q14 18 24 16 Q38 12 46 22 Q50 30 44 40 Q36 48 24 46 Q14 42 16 32 Z', 'bs'),
+  C(24, 24, 2.6, 'gh'), C(34, 22, 2.2, 'gh'), C(38, 34, 2.8, 'gh'), C(26, 38, 2.4, 'gh'), C(30, 30, 2, 'gh'),
+  S('M20 20 L26 26', 'hi', 1.6),
+]);
+def('platinum', () => [                                     // sintered river grains, fused
+  C(24, 30, 8, 'bs'), C(36, 26, 7, 'bs'), C(33, 38, 7.5, 'bs'), C(21, 27, 2, 'hi'), C(34, 23, 1.8, 'hi'),
+]);
+def('uranium', () => [                                      // heavy and blocky, plainly drawn
+  P('M16 22 L44 22 L48 34 L38 48 L20 46 L14 32 Z', 'bs'), S('M20 26 L26 20', 'hi', 1.8), C(34, 36, 2.4, 'gh'),
+]);
+
 /* water ────────────────────────────────────────────────────────────────── */
 def('sea',    () => [wave('lo', 46), wave('bs', 37), wave('hi', 28),
                      ...granules('hi', 5, 13, [14, 20, 46, 26])]);   // salt, above the water
@@ -303,6 +366,18 @@ def('hydrogen_gas', () => [S('M25 30 L35 30', 'ik', 2.6),            // H-H, one
                            C(25, 30, 5.5, CPK.H), C(35, 30, 5.5, CPK.H)]);
 def('carbon_dioxide', () => [S('M14 30 L46 30', 'ik', 3),
                              C(14, 30, 7.5, CPK.O), C(46, 30, 7.5, CPK.O), C(30, 30, 9, CPK.C)]);
+// Noble gases never bond — nothing reaches out from them the way a stick
+// does from hydrogen or oxygen. A thin closed ring stands for the full
+// electron shell that makes them inert, which is also what keeps the
+// silhouette from just being a recoloured bare atom.
+def('helium', () => [
+  ring('gh', 30, 30, 18, 1.4), C(30, 30, 9, CPK.He),
+  ...[45, 135, 225, 315].map(a => C(n(30 + 18 * Math.cos(a * Math.PI / 180)), n(30 + 18 * Math.sin(a * Math.PI / 180)), 2.6, 'hi')),
+]);
+def('neon', () => [
+  ring('gh', 30, 30, 20, 1.6), C(30, 30, 10, CPK.Ne),
+  ...[0, 60, 120, 180, 240, 300].map(a => C(n(30 + 20 * Math.cos(a * Math.PI / 180)), n(30 + 20 * Math.sin(a * Math.PI / 180)), 2.4, 'hi')),
+]);
 
 /* fire ─────────────────────────────────────────────────────────────────── */
 def('spark',  () => [...[0, 60, 120, 180, 240, 300].map(a =>

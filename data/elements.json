@@ -2394,7 +2394,9 @@
     "name": "Hydrogen Gas",
     "emoji": "💠",
     "shelf": "workshop",
-    "tags": ["water"],
+    "tags": [
+      "water"
+    ],
     "fact": "Two hydrogen atoms, bonded — H2. This is the form that actually exists in a jar."
   },
   {
@@ -2402,7 +2404,210 @@
     "name": "Oxygen Gas",
     "emoji": "🫧",
     "shelf": "workshop",
-    "tags": ["water"],
+    "tags": [
+      "water"
+    ],
     "fact": "Two oxygen atoms, double-bonded — O2. The gas in every breath you take."
+  },
+  {
+    "id": "ore",
+    "name": "Ore",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Rock with enough of a useful mineral in it to be worth digging up — usually a metal."
+  },
+  {
+    "id": "cinnabar",
+    "name": "Cinnabar",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Bright red mercury sulfide, and mercury's one and only important ore."
+  },
+  {
+    "id": "rutile",
+    "name": "Rutile",
+    "emoji": "🔻",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Titanium dioxide, and — along with ilmenite — the only titanium ore that's ever been worth mining."
+  },
+  {
+    "id": "iron",
+    "name": "Iron",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Iron ore needs a furnace hot enough to reach 1,500°C to give up its metal.",
+    "terminal": true
+  },
+  {
+    "id": "copper",
+    "name": "Copper",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "One of the few metals nature hands you pure — the first one anyone learned to smelt, around 5000 BC."
+  },
+  {
+    "id": "gold",
+    "name": "Gold",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Chemically inert enough that it is still found lying around as pure metal — no smelting required."
+  },
+  {
+    "id": "silver",
+    "name": "Silver",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "For most of history this did not come from silver ore at all — it came out of lead.",
+    "terminal": true
+  },
+  {
+    "id": "tin",
+    "name": "Tin",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Melts at just 232°C — one of the easiest metals there is to work.",
+    "terminal": true
+  },
+  {
+    "id": "lead",
+    "name": "Lead",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "So easy to coax out of its ore that people in the Near East were using it before recorded history began."
+  },
+  {
+    "id": "zinc",
+    "name": "Zinc",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Boils at 907°C — cooler than it takes to smelt its own ore, so the metal evaporates unless you catch it.",
+    "terminal": true
+  },
+  {
+    "id": "mercury",
+    "name": "Mercury",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The only metal that is liquid at room temperature — freed from its ore just by roasting it.",
+    "terminal": true
+  },
+  {
+    "id": "aluminum",
+    "name": "Aluminium",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The commonest metal in Earth's crust — once so hard to isolate it cost more than gold, until 1886."
+  },
+  {
+    "id": "nickel",
+    "name": "Nickel",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named after a mischievous spirit — miners dug up a copper-look ore and got no copper out of it.",
+    "terminal": true
+  },
+  {
+    "id": "chromium",
+    "name": "Chromium",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Pulled from its ore by a reaction hot enough to run on its own once lit — burning aluminium for the oxygen.",
+    "terminal": true
+  },
+  {
+    "id": "titanium",
+    "name": "Titanium",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "So reactive that heating its ore with carbon — the trick that works for iron — just makes a ceramic instead.",
+    "terminal": true
+  },
+  {
+    "id": "platinum",
+    "name": "Platinum",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Melts at 1,768°C — so hot the first people to work it never melted it, just sintered the grains with gold.",
+    "terminal": true
+  },
+  {
+    "id": "uranium",
+    "name": "Uranium",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for a planet, and it took fifty years between finding the ore and finally isolating the metal itself."
+  },
+  {
+    "id": "helium",
+    "name": "Helium",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "First spotted in sunlight during an 1868 eclipse, not found on Earth for another 27 years.",
+    "terminal": true
+  },
+  {
+    "id": "neon",
+    "name": "Neon",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Trace enough in air — 18 parts per million — that it took liquefying the whole atmosphere to find it.",
+    "terminal": true
   }
 ]

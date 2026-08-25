@@ -25,18 +25,18 @@ validated and playtested first — before a line of Swift.
 
 | | |
 |---|---|
-| Domain | Dirt to Dinner — soil, fire, farming, fermentation, cooking |
-| Elements | **233** (224 workshop · 9 folklore) |
-| Recipes | **477** (356 merges · 121 verb processes) |
+| Domain | Dirt to Dinner, extending into chemistry and biochemistry |
+| Elements | **252** (243 workshop · 9 folklore) |
+| Recipes | **498** (372 merges · 126 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **233 / 233** from the four starters |
+| Reachable | **252 / 252** from the four starters |
 | Deepest chain | 21 crafts |
-| Sourced | **477 / 477** recipes, every URL machine-verified |
-| Audited | **99** of 477 claims checked against primary reporting — **48 were wrong** |
-| Every claim machine-checked against its own source | numbers **0** unsupported · names **2** geographic, reviewed |
-| Routes per element | **2.05** · 0 needing a second · 1 sole-route by design |
+| Sourced | **498 / 498** recipes, every URL machine-verified |
+| Audited | **115** of 498 claims checked against primary reporting — **48 were wrong** |
+| Every claim machine-checked against its own source | numbers **0** unsupported · names **0** unreviewed |
+| Routes per element | **1.98** · 19 with only one route so far · 3 sole-route by design |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **242**, none of them emoji |
+| Drawings | **261**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
@@ -89,7 +89,7 @@ footprint, so a rock and a cake occupy the same frame and are told apart by what
 is *in* it. Everything below the drawing is rendered from data already in the
 repo, so the cost of a new item is one shape.
 
-**The 242 drawings** are built from a kit of about forty parts on a 60x60 grid —
+**The 261 drawings** are built from a kit of about forty parts on a 60x60 grid —
 circles, arcs and tangent joins, placed on a grid rather than drawn freehand, so
 item 340 will still match item 12 after a six-month gap. The molecular tier gets
 its own drawing language: IUPAC skeletal convention, Jmol/RasMol CPK atom
@@ -266,10 +266,10 @@ a broad, forgiving mid-game and a genuinely deep endgame.
 
 ## Next
 
-1. **Art — done.** All 233 items are drawn, plus the six process verbs. The
+1. **Art — done.** All 252 items are drawn, plus the six process verbs. The
    `emoji` field survives in `data/elements.json` only as a label for the
    command-line tools, which cannot render SVG; the game never reads it.
-2. **Audit.** 99 of 477 claims have been checked against primary reporting and
+2. **Audit.** 115 of 498 claims have been checked against primary reporting and
    48 of those were wrong. The rest are article-supported but not independently
    audited, and the ratio should keep moving. Any new claim carrying a number,
    date or name gets `verified` before it ships.

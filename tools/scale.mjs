@@ -28,7 +28,10 @@ const elements = JSON.parse(readFileSync(join(root, 'data/elements.json'), 'utf8
 /** exponent -> [ids]. Everything is metres. */
 const SCALE = {
   '-10': ['hydrogen', 'oxygen', 'nitrogen', 'carbon', 'sulfur', 'phosphorus',
-          'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas'],
+          'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas',
+          'iron', 'copper', 'gold', 'silver', 'tin', 'lead', 'zinc', 'mercury',
+          'aluminum', 'nickel', 'chromium', 'titanium', 'platinum', 'uranium',
+          'helium', 'neon'],
   '-9':  ['glucose', 'amino_acid', 'cysteine', 'dipeptide', 'nucleotide', 'atp',
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet'],
   '-8':  ['polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
@@ -39,8 +42,9 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince'],
   '-3':  ['seed', 'grain', 'rice', 'cooked_rice', 'sushi_rice', 'pilaf', 'legume',
           'nectar', 'spark', 'beeswax', 'straw', 'bee', 'olive', 'grape', 'honey',
-          'cane_juice', 'manna', 'granary'],
+          'cane_juice', 'manna', 'granary', 'rutile'],
   '-2':  ['stone', 'flint', 'limestone', 'ice', 'brick', 'adobe', 'mortar', 'candle',
+          'ore', 'cinnabar',
           'soap', 'lye', 'butter', 'ghee', 'curd', 'cheese', 'aged_cheese',
           'blue_cheese', 'egg', 'boiled_egg', 'golden_egg', 'apple', 'tomato',
           'onion', 'garlic', 'bulb', 'potato', 'chilli', 'meatball', 'sausage',
