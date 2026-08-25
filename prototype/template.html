@@ -1874,7 +1874,13 @@ function tidy() {
 }
 
 document.getElementById('zoom').addEventListener('click', ev => {
-  const z = ev.target.dataset.z;
+  // closest(), not ev.target: the Tidy button's clickable area is the SVG
+  // inside it, so ev.target was the <svg>/<span> and dataset.z was undefined —
+  // the button did nothing at all when clicked on the icon, which is the only
+  // part of it there is.
+  const btn = ev.target.closest('[data-z]');
+  if (!btn) return;
+  const z = btn.dataset.z;
   if (z === 'in') zoomBy(1.25);
   else if (z === 'out') zoomBy(0.8);
   else if (z === 'fit') fitAll();
@@ -1909,9 +1915,22 @@ board.addEventListener('pointermove', ev => {
   if (pinch.d > 0) zoomBy(d / pinch.d, (a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2);
   pinch.d = d;
 }, true);
-for (const e of ['pointerup', 'pointercancel']) board.addEventListener(e, ev => {
+// Listen on the window, not the board. A touch that STARTS on the board can
+// easily END somewhere else — lift your finger over the header, the verb tray,
+// or off the top of the screen and #board never sees the pointerup at all.
+// That left the finger in `touches` forever, and a phantom finger is not a
+// harmless leak: the next single touch makes touches.size === 2, which arms a
+// bogus pinch against a stale coordinate AND trips the `touches.size > 1`
+// guard in the drag handler. Symptom is that zoom and drag both die until
+// reload, right after tapping one of the zoom buttons.
+for (const e of ['pointerup', 'pointercancel']) addEventListener(e, ev => {
   touches.delete(ev.pointerId);
   if (touches.size < 2) pinch = null;
+}, true);
+// Last-resort sweep: if no finger is actually down, nothing may be left over.
+addEventListener('pointerdown', ev => {
+  if (ev.pointerType === 'touch') return;
+  if (touches.size) { touches.clear(); pinch = null; }
 }, true);
 
 // Double-tap zooms in, and again to fit — the standard map gesture.
