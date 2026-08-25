@@ -270,6 +270,30 @@ __CATEGORY_CSS__
   aside .chip .art{width:46px;height:46px}
   aside .chip .n{font-size:10.5px;letter-spacing:.04em}
   aside .chip .rl,aside .chip .ac{display:none}
+  /* Density applies to the shelf too — "how much room each thing takes" was
+     never meant to stop at the canvas edge. Pill here is sized to its own
+     content rather than a fixed --cw, so a dozen short names can share a row
+     the way tags do, instead of every pill paying for the widest name. */
+  body.d-pill aside .chip{
+    width:auto;flex-direction:row;align-items:center;justify-content:flex-start;
+    padding:4px 9px 4px 5px;border-radius:99px;gap:6px;
+  }
+  body.d-pill aside .chip .art{width:18px;height:18px;flex:none}
+  body.d-pill aside .chip .n{
+    display:flex;align-items:center;min-height:0;margin:0;text-align:left;
+    text-transform:none;letter-spacing:0;font-size:10px;white-space:nowrap;
+  }
+  body.d-pill aside .chip .n.long,body.d-pill aside .chip .n.vlong{font-size:9px}
+  body.d-half aside .chip{
+    width:auto;flex-direction:row;align-items:center;justify-content:flex-start;
+    padding:3px 8px 3px 4px;border-radius:8px;gap:5px;background:transparent;border:none;box-shadow:none;
+  }
+  body.d-half aside .chip .art{width:26px;height:26px;flex:none}
+  body.d-half aside .chip .n{
+    display:flex;align-items:center;min-height:0;margin:0;text-align:left;
+    text-transform:none;letter-spacing:0;font-size:9.5px;white-space:nowrap;
+    padding:2px 6px;background:var(--card);border:1px solid var(--line);border-radius:3px;
+  }
 
   /* ── density: half card ─────────────────────────────────────────────────
      The user's own sketch: the drawing floats free on the tray with no frame
@@ -939,6 +963,7 @@ __CATEGORY_CSS__
   }
   @media(max-width:400px){ h1{display:none} }
   @media(min-width:721px){ #shelfToggle{display:none} }
+  #shelfToggle{width:34px;padding:6px 0;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
   /* A destructive control should not look like the others. */
   .danger{border-color:var(--brick)!important;color:var(--brick)!important}
 </style>
@@ -962,9 +987,9 @@ __CATEGORY_CSS__
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
-  <button id="shelfToggle">Shelf</button>
-  <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
   <button id="nudge">Nudge</button>
+  <button id="shelfToggle" title="Shelf">▤</button>
+  <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
   <button id="reset">Reset</button>
 </header>
 
@@ -1981,7 +2006,7 @@ function freeSpot(w, h, near) {
   // Spiral outwards from where it should be, in steps the size of a card, so
   // the bench fills like a shelf rather than a heap.
   const stepX = w + PAD, stepY = h + PAD;
-  for (let ring = 0; ring < 14; ring++) {
+  for (let ring = 0; ring < 40; ring++) {
     const spots = [];
     for (let dx = -ring; dx <= ring; dx++) {
       for (let dy = -ring; dy <= ring; dy++) {
@@ -1993,7 +2018,17 @@ function freeSpot(w, h, near) {
     spots.sort((a, p) => Math.hypot(a[0] - cx, a[1] - cy) - Math.hypot(p[0] - cx, p[1] - cy));
     for (const [x, y] of spots) if (clear(x, y)) return [x, y];
   }
-  // Everything is full. Put it down anyway rather than dropping the discovery.
+  // The grid itself can exhaust near a packed bench — its phase shifts with
+  // the centroid on every call, so cells that look free from this call's grid
+  // can still land on a chip placed by an earlier, differently-phased one.
+  // Search a wide area for an actually clear spot before accepting a
+  // collision, rather than trusting the first random guess.
+  for (let tries = 0; tries < 60; tries++) {
+    const x = cx - w / 2 + (Math.random() - .5) * stepX * 30;
+    const y = cy - h / 2 + (Math.random() - .5) * stepY * 30;
+    if (clear(x, y)) return [x, y];
+  }
+  // Truly nowhere left. Put it down anyway rather than dropping the discovery.
   return [cx - w / 2 + (Math.random() - .5) * 40, cy - h / 2 + (Math.random() - .5) * 40];
 }
 
@@ -3294,6 +3329,16 @@ document.getElementById('nudge').addEventListener('click', () => {
 });
 function wipeProgress() {
   if (!confirm('Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.')) return;
+  // Reloading fires pagehide, which autosaves — and that autosave was racing
+  // this wipe and winning: it wrote the old progress straight back into the
+  // key this just removed, before the new page ever loaded, so a real Reset
+  // click quietly resurrected everything it just wiped. Clearing the live
+  // state too, not just its saved copy, means that autosave has nothing left
+  // to resurrect even if it fires.
+  clearTimeout(saveTimer); saveTimer = 0;
+  found.clear(); seen.clear(); links.length = 0;
+  cooking.clear();
+  world.querySelectorAll('.chip.board').forEach(c => c.remove());
   try { localStorage.removeItem(KEY); localStorage.removeItem(REAL_KEY); } catch {}
   location.reload();
 }
