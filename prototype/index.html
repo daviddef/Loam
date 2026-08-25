@@ -325,9 +325,9 @@
   .chip.board .n{font-size:10px}
   .chip.board .ac{font-size:8px}
   /* Shelf chips are scanned, not read: drawing and name only. */
-  aside .chip{--cw:70px;padding:6px 3px 5px}
-  aside .chip .art{width:34px;height:34px}
-  aside .chip .n{font-size:8.5px;letter-spacing:.04em}
+  aside .chip{--cw:88px;padding:8px 4px 7px}
+  aside .chip .art{width:46px;height:46px}
+  aside .chip .n{font-size:10.5px;letter-spacing:.04em}
   aside .chip .rl,aside .chip .ac{display:none}
 
   /* ── density: half card ─────────────────────────────────────────────────
@@ -363,7 +363,12 @@
   }
   body.d-pill .chip.board .art{width:26px;height:26px;flex:none}
   body.d-pill .chip.board .n{
-    display:block;min-height:2.3em;margin:0;text-align:left;text-transform:none;
+    /* Block put the text at the TOP of the reserved two-line box, so a short
+       one-line name like "Stone" sat high above the icon's own vertical
+       centre instead of level with it. Flex centres whatever text is actually
+       there — one line or two — within that same reserved height. */
+    display:flex;align-items:center;justify-content:flex-start;
+    min-height:2.3em;margin:0;text-align:left;text-transform:none;
     letter-spacing:0;font-size:10px;line-height:1.2;
   }
   body.d-pill .chip.board .n.long{font-size:9px}
@@ -378,13 +383,21 @@
   .chip.folk .ac{opacity:.5}
   .chip.folk{border-style:dashed}
   .chip.spent{opacity:.42}
-  /* a chip mid-process: a ring fills as it rests, and it cannot be dragged */
+  /* A chip mid-process: a ring fills as it rests, and it cannot be dragged.
+     The border-box/padding-box trick only separates a "ring" from the card's
+     interior when the border is actually thick enough to draw one — at the
+     base card's 1px border, border-box and padding-box are practically the
+     same rectangle, so the conic-gradient (painted on top, per CSS background
+     layering) covered the ENTIRE face as a pie-wedge instead of a thin rim.
+     box-sizing:border-box means widening the border here costs nothing: the
+     outer footprint — and cardSize()'s measurement of it — is unaffected. */
   .chip.board.cooking{
     cursor:default;
+    border-width:4px;
     background:
       conic-gradient(var(--teal) var(--p,0%), transparent 0) border-box,
       var(--card) padding-box;
-    border-color:transparent;padding:9px 15px 9px 11px;
+    border-color:transparent;padding:6px 12px 6px 8px;
   }
   .chip.board.cooking::after{
     content:attr(data-verb);position:absolute;top:-7px;right:-6px;
@@ -477,10 +490,13 @@
     border-top:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);
   }
   .verb{
-    display:flex;flex-direction:column;align-items:center;gap:2px;width:70px;padding:8px 4px;
-    background:var(--card);border:2px dashed var(--line);border-radius:16px;
-    font:700 11px var(--face-name);color:var(--ink-soft);
+    display:flex;flex-direction:column;align-items:center;gap:4px;width:84px;padding:10px 6px;
+    background:var(--card);border:2px dashed var(--line);border-radius:18px;
+    font:700 13px var(--face-name);color:var(--ink-soft);
   }
+  /* .e{font-size} is legacy — verbs draw an SVG glyph now, sized by the --g
+     custom property glyph() sets inline, not by font-size. Widening the whole
+     button and bumping that --g value (below) is what actually grows it. */
   .verb .e{font-size:21px;line-height:1.1}
   .verb.locked{opacity:.42;cursor:help}
   .verb.locked .e{filter:grayscale(1)}
@@ -911,9 +927,10 @@
       border-left:2px solid var(--ink);box-shadow:-8px 0 24px rgba(var(--shade),.14);
     }
     aside.open{transform:none}
-    #tray{gap:5px;padding:8px 5px}
-    .verb{width:calc((100vw - 46px)/6);min-width:0;font-size:9.5px;padding:6px 2px}
-    .verb .e{font-size:18px}
+    #tray{gap:4px;padding:7px 4px}
+    /* Icon and label both grow to use more of the button, even though the
+       button itself is still squeezed to fit six across a phone width. */
+    .verb{width:calc((100vw - 40px)/6);min-width:0;font-size:10.5px;padding:6px 1px;gap:2px}
     /* A 94px card is a quarter of the width of a 375px phone. Smaller here, and
        cardSize() measures a real one, so placement follows without being told. */
     .chip.board{--cw:80px}
@@ -1560,7 +1577,7 @@ function renderShelf() {
     return `<div class="verb${open ? '' : ' locked'}" data-verb="${v.id}"
               ${open ? '' : `data-needs="${v.unlockedBy}"`}
               title="${open ? v.blurb : `Unlocks when you make ${nameOf(key)}`}">
-       <span class="e">${glyph('verb_' + v.id, 19)}</span>${v.name}
+       <span class="e">${glyph('verb_' + v.id, 27)}</span>${v.name}
        ${open ? '' : `<i class="lk">${key ? glyph(key.id, 15) : '·'}</i>`}</div>`;
   }).join('');
 
@@ -2207,10 +2224,40 @@ board.addEventListener('pointerup', ev => {
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
   const t = hit(ev.clientX, ev.clientY, chip);
-  if (!t) return;
-  if (t.dataset.verb) applyProcess(chip, t);
-  else applyMerge(chip, t);
+  if (t?.dataset.verb) applyProcess(chip, t);
+  else if (t) applyMerge(chip, t);
+  pinToBoard(chip);
 });
+
+/**
+ * Bring a chip back inside the visible board, unconditionally, once a drag
+ * has ended.
+ *
+ * The verb tray sits below #board in the page — not inside it — so the only
+ * way hit() can ever detect an overlap between a dragged chip and a verb
+ * button is for the chip to have actually been dragged past #board's own
+ * bottom edge. #board clips overflow, so at that point the chip is already
+ * invisible; hit-testing still works because getBoundingClientRect ignores
+ * clipping. That is fine mid-drag — it is how dropping onto Wait/Crush/etc.
+ * is meant to work at all — but if the drop then fails (no recipe) or starts
+ * a multi-second cook, the chip has nothing else to bring it back, and it was
+ * staying invisible under the tray for as long as it kept cooking, or
+ * forever if it simply had nowhere to go.
+ */
+function pinToBoard(chip) {
+  if (!chip.isConnected) return;                      // folded away or removed by resolve()
+  const [cw, ch] = chipSize(chip);
+  const bb = boardBox();
+  const [minX, minY] = toWorld(bb.left + 8, bb.top + 8);
+  const [maxX, maxY] = toWorld(bb.left + bb.width - 8, bb.top + bb.height - 8);
+  const x = parseFloat(chip.style.left) || 0, y = parseFloat(chip.style.top) || 0;
+  const cx = Math.max(minX, Math.min(x, maxX - cw));
+  const cy = Math.max(minY, Math.min(y, maxY - ch));
+  if (cx === x && cy === y) return;
+  chip.style.left = cx + 'px';
+  chip.style.top  = cy + 'px';
+  drawLinksFor(chip);
+}
 
 // `exclude` must be passed explicitly: by pointerup the drag state is already
 // cleared, and without it a chip hit-tests against itself (stone + stone).
