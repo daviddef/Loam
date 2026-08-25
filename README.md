@@ -2,12 +2,19 @@
 
 *Pack one: dirt to dinner*
 
-A combination game where **every recipe is a real fact**, and the game tells you
-which of its answers are science and which are stories.
+A combination game where **every recipe carries a source you can open**, and the
+game tells you which of its answers are science and which are stories.
+
+The claim is checkability, not infallibility — and that distinction is the whole
+point. Auditing 70 of our own confident, fluent, well-written claims against
+primary reporting found **17 of them wrong**. A 36% first-pass error rate is the
+strongest argument this project has, and it is an argument against trusting
+anyone's prose, including ours. So every line is sourced, the sources are
+machine-verified against live articles, and audited claims are marked as such.
 
 The competitors split cleanly: Little Alchemy and Doodle God are fun but invent
 their chemistry; Infinite Craft generates infinite plausible nonsense with an
-LLM; ChemCrafter is accurate but narrow. Nobody owns *true and fun*. This does.
+LLM; ChemCrafter is careful but narrow. Nobody owns *true and fun*. This does.
 
 **The game is the graph.** The app is a viewer for it. So the graph is built,
 validated and playtested first — before a line of Swift.
@@ -19,17 +26,18 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner — soil, fire, farming, fermentation, cooking |
-| Elements | **226** (217 workshop · 9 folklore) |
-| Recipes | **461** (344 merges · 117 verb processes) |
-| Starters | 🪨 Stone · 💧 Water · ☀️ Sun · 🌰 Seed |
-| Reachable | **226 / 226** from the four starters |
-| Deepest chain | 36 crafts |
-| Daily challenges | 37 viable targets before a repeat |
-| Sourced | **461 / 461** recipes, every URL machine-verified |
+| Elements | **230** (221 workshop · 9 folklore) |
+| Recipes | **471** (351 merges · 120 verb processes) |
+| Starters | Stone · Water · Sun · Seed |
+| Reachable | **230 / 230** from the four starters |
+| Deepest chain | 21 crafts |
+| Sourced | **471 / 471** recipes, every URL machine-verified |
 | Audited | **70** claims checked against primary reporting — **17 were wrong** |
 | Unaudited numeric claims | **0** |
-| Routes per element | **2.04** · 1 sole-route by design |
-| Mechanism prose | **~10,000 words** |
+| Routes per element | **2.05** · 2 sole-route by design |
+| Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
+| Drawings | **236**, none of them emoji |
+| Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
 four rocks to antibiotics, every one of them true.
@@ -39,7 +47,7 @@ four rocks to antibiotics, every one of them true.
 **Two gestures, and only two.**
 
 - **Merge** — drag element onto element. Commutative. `flour + water → dough`
-- **Process** — drag element onto a verb tool. Unary. `clay ⟶ 🔥 Heat → pot`
+- **Process** — drag element onto a verb tool. Unary. `clay ⟶ Heat → pot`
 
 The verb layer is the main mechanical departure from the genre. Little Alchemy
 is `A + B` and nothing else; adding six process verbs multiplies content from
@@ -50,25 +58,83 @@ Verbs unlock through play, which recapitulates tech history in miniature:
 
 | Verb | Unlocked by | |
 |---|---|---|
-| ⏳ Wait · 🪨 Crush · ❄️ Chill | from the start | time, force and cold need no technology |
-| 🔥 Heat | discovering `fire` | the first tool that makes new molecules |
-| 🔪 Cut | discovering `flint` | needs an edge |
-| 🫧 Ferment | discovering `yeast` | needs a microbe |
+| Wait · Crush · Chill | from the start | time, force and cold need no technology |
+| Heat | discovering `fire` | the first tool that makes new molecules |
+| Cut | discovering `flint` | needs an edge |
+| Ferment | discovering `yeast` | needs a microbe |
 
-**Two shelves.** `workshop` recipes are real and carry a green *this is how it
-works* card. `folklore` recipes are myths — Stone Soup, the Philosopher's Stone,
-the Golden Egg — and carry a purple *a story we tell* card. You keep the whimsy
-the genre is loved for, quarantined so it never contaminates the teaching. The
-distinction itself is a media-literacy lesson delivered as a collection mechanic.
+**Two shelves.** `workshop` recipes are real and carry a *this is how it works*
+card with a source you can open. `folklore` recipes are myths — Stone Soup, the
+Philosopher's Stone, the Golden Egg — and are marked by an **absence**: no
+accession number, no source, a dashed edge. You keep the whimsy the genre is
+loved for, quarantined so it never contaminates the teaching. Marking it by
+what is missing rather than by a colour is both a better media-literacy lesson
+and one that survives colour blindness.
 
 **Where the teaching lives.** `recipe.why` is the mechanism, shown at the moment
 of discovery — that is the payload, and it arrives *after* the dopamine, never as
 a gate. `element.fact` is a one-line codex entry for later browsing.
 
+## How it looks
+
+Nothing in this game is an emoji, and nothing in it is a rounded pill. Both are
+the genre's signature — Little Alchemy, Infinite Craft and their imitators are
+all emoji-in-a-lozenge on an empty light canvas — and both are also wrong for
+the content. Emoji is somebody else's art, it renders differently on every
+platform, and it cannot draw a peptide bond.
+
+**Every item is a specimen card**: a drawing, a name, a category rule, an
+accession number, and the item's order of magnitude in metres. A fixed portrait
+footprint, so a rock and a cake occupy the same frame and are told apart by what
+is *in* it. Everything below the drawing is rendered from data already in the
+repo, so the cost of a new item is one shape.
+
+**The 236 drawings** are built from a kit of about forty parts on a 60x60 grid —
+circles, arcs and tangent joins, placed on a grid rather than drawn freehand, so
+item 340 will still match item 12 after a six-month gap. The molecular tier gets
+its own drawing language: IUPAC skeletal convention, Jmol/RasMol CPK atom
+colours, because that is what a chemist expects to see and the switch marks the
+point where the player leaves the world of things.
+
+**The palette is derived, not chosen.** `tools/palette.mjs` reads the Munsell
+renotation data — the dataset behind the soil colour book that soil scientists
+carry in the field — and converts the notations we use to sRGB through a
+documented pipeline: xyY under Illuminant C, to XYZ, Bradford-adapted to D65,
+to sRGB. Every colour in the game is a measured chip with a notation you can
+look up, including the lighter and darker tints, which come from the same hue
+page rather than from lightening a hex. Chroma is deliberately low, because real
+soil is low-chroma and high-chroma warm earth is what "earthy palette" has come
+to mean. Exactly one high-chroma colour exists, and it is reserved for the
+instant a new thing is discovered.
+
+A game whose claim is that everything in it is sourced, whose colours are also
+sourced, is a coherence a competitor cannot copy without copying the idea.
+
+**Geometry never names a colour.** Each shape carries a *role* and the theme
+decides what a role looks like. That is what makes the second theme — Field
+manual, the same drawings unfilled, ink on paper — a stylesheet rather than a
+second set of drawings, and it is why the seven backgrounds (tray, paper, graph,
+deep, fluid, soil profile, void) cost nothing per theme.
+
+```
+tools/palette.mjs        Munsell notations -> sRGB, with provenance
+tools/art.mjs            the parts kit, all 236 drawings, and a sameness check
+tools/scale.mjs          order of magnitude for every item
+tools/contact-sheet.mjs  every item, every theme, on one page
+tools/strip.mjs          a named handful, big, for checking a change
+```
+
+`node tools/art.mjs check` fingerprints every drawing and fails on any pair
+inside a category too alike to tell apart at shelf size. It found nineteen real
+collisions on its first run, including five identical drink glasses and a
+hexagonal sulfur that should have been an S8 crown.
+
 ## Data
 
 ```
 data/elements.json   id, name, emoji, shelf, tags, fact, starter?, terminal?
+                     (emoji is a label for the CLI tools only — the game draws
+                      from data/art.json and never reads it)
 data/recipes.json    in[], verb?, out, why
 data/verbs.json      the six process verbs and their unlock conditions
 ```
@@ -185,12 +251,15 @@ a broad, forgiving mid-game and a genuinely deep endgame.
 
 ## Next
 
-1. **Art.** Emoji are placeholders and several repeat. Real icons are the
-   largest remaining cost before this stops looking like a spreadsheet.
-2. **Audit done.** If new content lands, the same rule applies: any claim with a
-   number, date or name gets `verified` before it ships.
-3. **Art** — the emoji are placeholders and a few repeat. Real icons are the
-   largest art cost and the main thing separating this from a spreadsheet.
+1. **Art — done.** All 230 items are drawn, plus the six process verbs. The
+   `emoji` field survives in `data/elements.json` only as a label for the
+   command-line tools, which cannot render SVG; the game never reads it.
+2. **Audit.** 70 of 471 claims have been checked against primary reporting and
+   17 of those were wrong. The rest are article-supported but not independently
+   audited, and the ratio should keep moving. Any new claim carrying a number,
+   date or name gets `verified` before it ships.
+3. **Name clearance.** "Loam" is chosen but not cleared — App Store search,
+   trademark and domain are all still open questions.
 4. **Then** SwiftUI. The graph ships as bundled JSON or SQLite and works fully
    offline. *(Correction: an earlier draft said Infinite Craft "cannot" ship
    offline. It has shipped iOS since April 2024 with ~52k US ratings. Offline is

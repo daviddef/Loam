@@ -31,6 +31,7 @@ const PUBLIC = [
   'data/art.json',
   'data/palette.json',
   'data/scale.json',
+  'data/cautions.json',
   'data/vendor/README.md',
   'data/vendor/munsell-real.dat',
   'prototype/template.html',
@@ -47,6 +48,7 @@ const PUBLIC = [
   'tools/art.mjs',
   'tools/scale.mjs',
   'tools/strip.mjs',
+  'tools/safety.mjs',
   'tools/contact-sheet.mjs',
   'tools/sync-public.mjs',
 ];

@@ -854,6 +854,20 @@ const {elements, recipes, verbs} = DATA;
 const ART = __ART_DATA__;
 /* Characteristic size of each item, to the nearest power of ten. */
 const SCALE = __SCALE_DATA__;
+
+/* Where "true in general" and "safe in a kitchen" come apart. See
+   data/cautions.json — the wording is attached to the hazard, not to the item,
+   so it reads the same everywhere on a chain. */
+const CAUTIONS = __CAUTION_DATA__;
+const CAUTION_BY_ID = {};
+for (const [kind, h] of Object.entries(CAUTIONS))
+  for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
+function cautionsFor(id) { return CAUTION_BY_ID[id] || []; }
+function cautionHTML(id) {
+  const cs = cautionsFor(id);
+  if (!cs.length) return '';
+  return cs.map(c => `<div class="caution"><b>${c.label}</b><p>${c.note}</p></div>`).join('');
+}
 __ART_RENDER__
 const byId = Object.fromEntries(elements.map(e => [e.id, e]));
 
@@ -2253,7 +2267,8 @@ function showEntry(id) {
       <div class="pnums">${f.name}${e.terminal ? ' · nothing is made from this' : ''}</div>
       <div class="pfrom">${e.fact}</div>
     </div>
-    <div class="cardrow" style="margin:0 0 10px">
+    ${cautionHTML(id)}
+    <div class="cardrow" style="margin:10px 0 10px">
       ${owned ? `<button class="ghost" data-trace="${id}">Where it came from</button>` : `<button class="ghost" data-hint="${id}">How do I make it?</button>`}
       ${hiddenIn > 0 ? `<button class="ghost" data-hint="${id}">Other ways to make it</button>` : ''}
       ${found.has(id) ? `<button class="ghost" data-put="${id}">Put on the bench</button>` : ''}
