@@ -107,6 +107,30 @@ if (cmd === 'apply') {
   for (const node of bedrockNodes) node.src = titleUrl(res.get(node.srcTitle).final);
   writeFileSync(u('bedrock.json'), JSON.stringify(bedrock, null, 2) + '\n');
   console.log(`\nwrote src onto ${bedrockNodes.length} bedrock nodes`);
+
+  // A `verified` recipe has been read against one specific article. Moving its
+  // source silently would leave the audit mark attached to a source nobody
+  // checked it against — which is worse than having no mark at all. So apply
+  // refuses, and says which entry in sources.json to fix.
+  const wouldMove = [];
+  for (const r of recipes) {
+    const g = srcGest[gestureOf(r)];
+    const next = g ? titleUrl(res.get(g).final)
+               : srcUrls[r.out] ? srcUrls[r.out]
+               : srcMap[r.out] ? titleUrl(res.get(srcMap[r.out]).final) : null;
+    if (!next) continue;
+    if (r.verified && r.src && r.src !== next) {
+      wouldMove.push({ g: gestureOf(r), from: r.src, to: next });
+    }
+  }
+  if (wouldMove.length) {
+    console.error(`\nrefusing to apply: ${wouldMove.length} verified recipe(s) would change source.`);
+    console.error('An audit mark belongs to the source it was checked against. Add a');
+    console.error('`gestures` entry in data/sources.json for each, or clear the verified flag.\n');
+    for (const w of wouldMove) console.error(`  ${w.g}\n     has:   ${w.from}\n     would: ${w.to}`);
+    process.exit(1);
+  }
+
   for (const r of recipes) {
     const g = srcGest[gestureOf(r)];
     if (g) { r.src = titleUrl(res.get(g).final); n++; continue; }

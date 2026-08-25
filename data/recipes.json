@@ -462,8 +462,9 @@
       "flower"
     ],
     "out": "tomato",
-    "why": "Botanically a berry. It is unusually rich in glutamate, which is why a tomato reads as savoury rather than merely sweet or sour.",
-    "src": "https://en.wikipedia.org/wiki/Tomato"
+    "why": "Botanically a berry, and unusually rich in glutamate — which is what the umami receptors respond to. That is why a tomato reads as savoury rather than merely sweet or sour.",
+    "src": "https://en.wikipedia.org/wiki/Umami",
+    "verified": true
   },
   {
     "in": [
@@ -1374,9 +1375,9 @@
       "butter"
     ],
     "out": "garlic_butter",
-    "why": "Allicin dissolves in fat. Butter carries garlic's flavour into places water never could.",
-    "src": "https://en.wikipedia.org/wiki/Garlic_butter",
-    "supported": true
+    "why": "Garlic has no smell until you break it. Chopping or crushing lets the enzyme alliinase reach alliin and turn it into allicin, and that is the aroma — which is why whole roasted cloves are mild and a crushed one is not.",
+    "src": "https://en.wikipedia.org/wiki/Allicin",
+    "verified": true
   },
   {
     "in": [
@@ -2946,9 +2947,9 @@
       "brine"
     ],
     "out": "cheese",
-    "why": "Brined cheeses — feta, halloumi, telemea — cure in salt water rather than dry salt, and keep for months in it.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Cheese"
+    "why": "Brined cheeses — feta, halloumi, telemea, bryndza — cure in salt water rather than in dry salt, and keep for months in it.",
+    "src": "https://en.wikipedia.org/wiki/Brined_cheese",
+    "verified": true
   },
   {
     "in": [
@@ -4560,9 +4561,9 @@
       "beta_sheet"
     ],
     "out": "protein",
-    "why": "Helices and sheets are the second level; packing them against each other is the third. Anfinsen showed the packing is decided by the sequence alone — unfold a protein, remove the poison, and it folds straight back.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Protein_tertiary_structure"
+    "why": "Helices and sheets are the second level; packing them against each other is the third. Anfinsen's dogma is that for a small globular protein the native structure is set by the amino acid sequence alone — nothing else is needed to specify the shape.",
+    "src": "https://en.wikipedia.org/wiki/Anfinsen's_dogma",
+    "verified": true
   },
   {
     "in": [

@@ -176,14 +176,45 @@ function namesIn(text) {
   return [...out];
 }
 
+/**
+ * Is this ordinary English?
+ *
+ * The word list on a Mac is American and does not inflect, so without help it
+ * calls "neighbours", "oxidises" and "crystallises" unusual — which they are
+ * not, and which drowns the words that matter. Try the obvious variants before
+ * deciding a word is technical.
+ */
+function ordinary(w) {
+  if (!DICT) return false;
+  const candidates = new Set([w]);
+  // Superlatives and comparatives: the list has "strong", not "strongest".
+  const bases = [w, w.replace(/(ing|ed|es|s|ly)$/, ''), w.replace(/ies$/, 'y'),
+                 w.replace(/(est|er)$/, ''), w.replace(/(est|er)$/, 'e'),
+                 w.replace(/i(est|er)$/, 'y'), w.replace(/(.)\1(est|er)$/, '$1')];
+  for (const base of bases) {
+    if (!base) continue;
+    candidates.add(base);
+    candidates.add(base.replace(/is(e|ed|es|ing|ation)?$/, 'ize'));   // oxidises -> oxidize
+    candidates.add(base.replace(/isation$/, 'ization'));        // gelatinisation
+    candidates.add(base.replace(/isation$/, 'ize'));
+    candidates.add(base.replace(/is(e|ed|es|ing)?$/, 'iz'));
+    candidates.add(base.replace(/our/g, 'or'));                 // flavours -> flavors
+    candidates.add(base.replace(/re$/, 'er'));                  // centre -> center
+    candidates.add(base + 'e');                                 // crystallis -> ...
+  }
+  for (const c of candidates) if (c.length > 2 && DICT.has(c)) return true;
+  return false;
+}
+
 function termsIn(text) {
-  const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/);
+  // Split hyphenated compounds: "shade-grown" is two ordinary words, and no
+  // article is obliged to contain the pair.
+  const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/[\s-]+/);
   const out = new Set();
   for (const w of words) {
     if (w.length < 7) continue;              // short words are rarely distinctive
     if (COMMON.has(w)) continue;
-    // Known ordinary English is not evidence of anything.
-    if (DICT && (DICT.has(w) || DICT.has(w.replace(/(ing|ed|es|s|ly)$/, '')))) continue;
+    if (ordinary(w)) continue;
     out.add(w);
   }
   return [...out];
