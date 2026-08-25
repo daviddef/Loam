@@ -687,8 +687,9 @@
     ],
     "verb": "ferment",
     "out": "vinegar",
-    "why": "A second fermentation, this time by Acetobacter, which oxidises alcohol into acetic acid. Vinegar is French for 'sour wine'.",
-    "src": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria"
+    "why": "A second fermentation, this time by Acetobacter, which oxidises the alcohol into acetic acid. It needs air, which is why a sealed bottle of wine does not turn and an open one does.",
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria",
+    "supported": true
   },
   {
     "in": [
@@ -1227,8 +1228,9 @@
     ],
     "out": "gingerbread_man",
     "shelf": "folklore",
-    "why": "Run, run, as fast as you can. Attributed to Elizabeth I, who had gingerbread figures made in the likeness of visiting dignitaries.",
-    "src": "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
+    "why": "Run, run, as fast as you can. Gingerbread men are first attributed to the court of Elizabeth I, who served the figures to visiting dignitaries made in their own likeness.",
+    "src": "https://en.wikipedia.org/wiki/Gingerbread",
+    "verified": true
   },
   {
     "in": [
@@ -1400,8 +1402,9 @@
     ],
     "verb": "ferment",
     "out": "malt_vinegar",
-    "why": "Beer goes the same way wine does when Acetobacter finds it. The chip shop is one step from the brewery.",
-    "src": "https://en.wikipedia.org/wiki/Vinegar"
+    "why": "Beer goes the same way wine does, and the word admits it: vinegar is Old French vyn egre, sour wine. The chip shop is one step from the brewery.",
+    "src": "https://en.wikipedia.org/wiki/Vinegar",
+    "verified": true
   },
   {
     "in": [
@@ -1643,9 +1646,9 @@
       "batter"
     ],
     "out": "battered_fish",
-    "supported": true,
-    "why": "The coat is a sacrificial layer. It takes the violence of the oil so the fish inside never touches it.",
-    "src": "https://en.wikipedia.org/wiki/Fried_fish"
+    "why": "Salt cod soaked back to life, then battered. Alexis Soyer printed a recipe for fried fish in the Jewish fashion in 1845, and Dickens had already put fried-fish warehouses in Oliver Twist.",
+    "src": "https://en.wikipedia.org/wiki/Fish_and_chips",
+    "verified": true
   },
   {
     "in": [
@@ -2283,9 +2286,9 @@
     ],
     "verb": "heat",
     "out": "glass",
-    "why": "Without a flux you need about 1700 °C. Lightning strikes sand and makes glass this way — fulgurites, fused in an instant.",
+    "why": "Without a flux you need about 1700 °C. Lightning does reach it — a strike fuses sand into a hollow glass tube called a fulgurite, in an instant.",
     "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Forest_glass"
+    "src": "https://en.wikipedia.org/wiki/Fulgurite"
   },
   {
     "in": [
@@ -2733,9 +2736,9 @@
       "fire"
     ],
     "out": "sugar",
-    "why": "Boiled in open pans over cane-trash fires until it crystallises. The process is unchanged in principle since medieval Persia.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Molasses"
+    "why": "Boiled in open pans until it crystallises. Sugar cultivation and processing had reached Persia by the sixth century, and travelling Buddhist monks carried the crystallisation method to China.",
+    "src": "https://en.wikipedia.org/wiki/History_of_sugar",
+    "verified": true
   },
   {
     "in": [
@@ -3413,9 +3416,9 @@
       "boiled_egg"
     ],
     "out": "breakfast",
-    "why": "The cooked breakfast is a Victorian invention of the leisured classes, later sold to everyone else as tradition.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Edward_Bernays"
+    "why": "Fried breakfasts became popular in Britain and Ireland during the Victorian era. Isabella Beeton has fried ham and eggs; the phrase full breakfast came later.",
+    "src": "https://en.wikipedia.org/wiki/Full_breakfast",
+    "verified": true
   },
   {
     "in": [
@@ -3723,9 +3726,9 @@
       "wood"
     ],
     "out": "scarecrow",
-    "why": "Two sticks and a bundle of straw. The oldest recorded ones stood in Egyptian wheat fields on the Nile.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Scarecrow"
+    "why": "Two sticks and a bundle of straw. The Japanese village of Nagoro has thirty-five people living in it and more than three hundred and fifty scarecrows.",
+    "src": "https://en.wikipedia.org/wiki/Scarecrow",
+    "verified": true
   },
   {
     "in": [
@@ -3854,7 +3857,7 @@
     ],
     "out": "salted_cabbage",
     "supported": true,
-    "why": "Seawater is close to the 2-3% brine a lactic ferment wants. Coastal kitchens simply used it.",
+    "why": "Seawater is already about as salty as a lactic ferment wants, which is why coastal kitchens simply used it instead of measuring anything out.",
     "src": "https://en.wikipedia.org/wiki/Kimchi"
   },
   {
@@ -4567,9 +4570,9 @@
       "protein"
     ],
     "out": "ribosome",
-    "why": "Two thirds RNA by mass, and the RNA is not scaffolding: the bond-forming site has no protein within 18 angstroms of it. The ribosome is a ribozyme.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Ribosome"
+    "why": "Two thirds RNA by mass, and the RNA is not scaffolding: the catalytic core that joins amino acids is made of RNA, not protein. That is why a ribosome is classed as a ribozyme.",
+    "src": "https://en.wikipedia.org/wiki/Ribosome",
+    "verified": true
   },
   {
     "in": [
@@ -4588,8 +4591,8 @@
     ],
     "out": "polypeptide",
     "why": "Translation: the ribosome reads three bases at a time and adds one amino acid per codon, about 20 a second in a bacterium. This is the step that turns a sequence into a substance.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Translation_(biology)"
+    "src": "https://en.wikipedia.org/wiki/Translation_(biology)",
+    "verified": true
   },
   {
     "in": [

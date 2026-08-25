@@ -144,12 +144,46 @@ const COMMON = new Set(('the a an and or but of to in on at by for with from as 
   'thats its whats dont doesnt cant wont isnt arent wasnt werent'
 ).split(/\s+/));
 
+// The system word list, if this machine has one. Ordinary English is exactly
+// what we do NOT want to flag: a claim is not drifting from its source because
+// the source never used the word "curiosity".
+let DICT = null;
+for (const path of ['/usr/share/dict/words', '/usr/dict/words']) {
+  try { DICT = new Set(readFileSync(path, 'utf8').toLowerCase().split('\n')); break; } catch {}
+}
+
+/**
+ * Names: capitalised words that are not sentence-initial.
+ *
+ * These are the highest-value check in the file. A claim that says "Anfinsen
+ * showed the fold is decided by the sequence" is making an attribution, and an
+ * attribution the cited article never mentions is a claim we cannot back. The
+ * seventeen errors found by hand were disproportionately of this kind — a
+ * confident name, a confident date, and no source for either.
+ */
+function namesIn(text) {
+  const out = new Set();
+  // Skip the first word of each sentence: capitalisation there means nothing.
+  for (const sentence of text.split(/(?<=[.!?])\s+/)) {
+    const words = sentence.split(/\s+/).slice(1);
+    for (const w of words) {
+      const clean = w.replace(/[^A-Za-z'-]/g, '');
+      if (clean.length < 3) continue;
+      if (!/^[A-Z][a-z]/.test(clean)) continue;
+      out.add(clean);
+    }
+  }
+  return [...out];
+}
+
 function termsIn(text) {
   const words = text.toLowerCase().replace(/[^a-z\s-]/g, ' ').split(/\s+/);
   const out = new Set();
   for (const w of words) {
     if (w.length < 7) continue;              // short words are rarely distinctive
     if (COMMON.has(w)) continue;
+    // Known ordinary English is not evidence of anything.
+    if (DICT && (DICT.has(w) || DICT.has(w.replace(/(ing|ed|es|s|ly)$/, '')))) continue;
     out.add(w);
   }
   return [...out];
@@ -180,20 +214,29 @@ for (const r of subject) {
   const text = await articleText(title);
   if (!text) { noSource.push({ r, why: `could not fetch "${title}"` }); continue; }
   const nums = numbersIn(r.why);
-  if (!nums.length) continue;
+  if (!nums.length && !termsMode) continue;
   const missing = nums.filter(x => !articleHas(text, x));
   const lower = text.toLowerCase();
   const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
+  const strayNames = namesIn(r.why).filter(nm => !lower.includes(nm.toLowerCase()));
   checked.push(r);
-  if (missing.length || strayTerms.length) {
-    unsupported.push({ r, title, missing, strayTerms, total: nums.length });
+  if (missing.length || strayTerms.length || strayNames.length) {
+    unsupported.push({ r, title, missing, strayTerms, strayNames, total: nums.length });
   }
 }
 
-for (const u of unsupported) {
+// Names first: an unsupported attribution is worth more attention than an
+// unsupported adjective.
+const ranked = [...unsupported].sort((a, b) =>
+  (b.strayNames.length * 10 + b.missing.length * 5 + b.strayTerms.length) -
+  (a.strayNames.length * 10 + a.missing.length * 5 + a.strayTerms.length));
+
+const onlyNames = process.argv.includes('--names');
+for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) {
   const gesture = u.r.verb ? `${u.r.in[0]} |${u.r.verb}` : u.r.in.join(' + ');
   console.log(`  ${gesture} → ${u.r.out}`);
   console.log(`    cited: ${u.title}`);
+  if (u.strayNames.length) console.log(`    NAMES not in that article: ${u.strayNames.join(', ')}`);
   if (u.missing.length) console.log(`    numbers not in that article: ${u.missing.map(m => m.shown).join(', ')}`);
   if (u.strayTerms.length) console.log(`    words not in that article: ${u.strayTerms.join(', ')}`);
   console.log(`    "${u.r.why}"\n`);
