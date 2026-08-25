@@ -568,6 +568,100 @@ def('boiled_egg', () => [P('M30 14 Q44 24 42 36 A13 13 0 0 1 18 36 Q16 24 30 14 
                          S('M17 36 L43 36', 'ik', 1.4),
                          P('M18 36 A13 13 0 0 0 42 36 Z', 'hi'),
                          E(30, 41, 6, 5, 'grain-bs')]);
+/* the wider animal roster ─────────────────────────────────────────────────
+   Same grammar as cow/goat/chicken above: a body ellipse, a head, legs. What
+   distinguishes each one is the single true thing the fact line is about —
+   the pig's snout, the giraffe's neck, the zebra's stripes — not decoration. */
+def('pig',    () => [E(28, 36, 16, 11, 'bs'), C(43, 33, 7, 'bs'),
+                     E(49, 34, 3.4, 4, 'lo'),                        // the snout, flat and forward
+                     S('M40 26 L38 21 M46 26 L48 21', 'lo', 2),      // ears
+                     S('M14 34 Q9 32 11 28', 'lo', 2),               // curl of tail
+                     ...[-8, -2, 5, 10].map(dx => S(`M${28 + dx} 45 L${28 + dx} 52`, 'lo', 2.6))]);
+def('lard',   () => [P('M16 30 Q30 24 44 30 L44 44 Q30 48 16 44 Z', 'hi'),
+                     S('M16 34 Q30 30 44 34', 'gh', 1.6), E(30, 30, 14, 3.4, 'bs')]);
+def('sheep',  () => [...[[20, 32], [28, 28], [36, 31], [24, 38], [33, 38]]
+                       .map(([x, y]) => C(x, y, 8, 'hi')),           // fleece, as cloud of curls
+                     C(44, 34, 6, 'lo'), E(47, 36, 2.6, 2, 'lo'),
+                     ...[-6, 0, 6].map(dx => S(`M${28 + dx} 45 L${28 + dx} 52`, 'lo', 2.2))]);
+def('wool',   () => [...[[22, 26], [32, 24], [40, 30], [20, 36], [30, 34], [40, 40], [24, 44], [34, 44]]
+                       .map(([x, y]) => C(x, y, 7, 'hi')),
+                     ...[[26, 30], [34, 38]].map(([x, y]) => C(x, y, 3, 'bs'))]);
+def('horse',  () => [E(27, 34, 16, 9, 'bs'),
+                     P('M40 32 Q46 24 46 16 L52 16 Q52 28 45 36 Z', 'bs'),   // neck up to head
+                     S('M40 28 Q44 18 50 14', 'lo', 3),                       // mane
+                     S('M11 32 Q6 38 8 46', 'lo', 2.6),                       // tail
+                     ...[-10, -4, 4, 9].map(dx => S(`M${27 + dx} 42 L${27 + dx} 53`, 'lo', 2.4))]);
+def('duck',   () => [E(27, 34, 15, 10, 'bs'), C(41, 26, 6.5, 'bs'),
+                     P('M46 26 L54 27 L46 30 Z', 'fire-bs'),                  // flat bill
+                     wave('water-bs', 48, 4, 22),
+                     S('M14 32 Q9 28 12 25', 'lo', 2.2)]);
+def('turkey', () => [...Array.from({ length: 7 }, (_, i) => {                 // the fan
+                       const a = (-150 + i * 25) * Math.PI / 180;
+                       return S(`M26 36 L${n(26 + 22 * Math.cos(a))} ${n(36 + 22 * Math.sin(a))}`, 'lo', 3);
+                     }),
+                     E(30, 38, 12, 10, 'bs'), C(41, 28, 5.5, 'bs'),
+                     S('M41 33 Q40 38 43 40', 'fire-bs', 2.2)]);              // wattle
+def('wolf',   () => [E(27, 35, 16, 9, 'bs'), C(42, 30, 7, 'bs'),
+                     P('M37 24 L39 17 L43 23 Z', 'bs'), P('M45 23 L48 17 L50 24 Z', 'bs'),
+                     P('M48 29 L54 31 L48 33 Z', 'lo'),                        // long muzzle
+                     S('M11 34 Q4 32 6 25', 'lo', 3),
+                     ...[-9, -3, 4, 10].map(dx => S(`M${27 + dx} 43 L${27 + dx} 52`, 'lo', 2.2))]);
+def('deer',   () => [E(27, 36, 15, 9, 'bs'), C(41, 29, 6, 'bs'),
+                     S('M38 23 Q36 14 30 11 M38 23 Q40 15 45 13', 'lo', 2.2),  // antlers
+                     S('M44 23 Q46 15 51 14', 'lo', 2),
+                     ...[-8, -2, 5, 10].map(dx => S(`M${27 + dx} 44 L${27 + dx} 53`, 'lo', 2.2))]);
+def('bear',   () => [E(29, 36, 18, 13, 'bs'), C(45, 28, 8, 'bs'),
+                     C(41, 20, 3.4, 'bs'), C(50, 21, 3.4, 'bs'),               // small round ears
+                     E(52, 30, 3, 2.4, 'lo'),
+                     ...[-10, 0, 9].map(dx => S(`M${29 + dx} 47 L${29 + dx} 53`, 'lo', 3.4))]);
+def('kangaroo', () => [P('M20 46 Q18 30 28 24 Q36 20 38 14 L44 14 Q44 24 36 30 Q30 36 32 46 Z', 'bs'),
+                       C(44, 12, 6, 'bs'), S('M41 7 L40 2 M47 7 L49 2', 'lo', 2),
+                       S('M18 46 Q6 46 4 38', 'lo', 4),                        // the heavy tail
+                       P('M20 46 L36 46 L38 52 L16 52 Z', 'lo')]);             // long foot
+def('koala',  () => [C(30, 34, 14, 'bs'), C(18, 26, 7.5, 'hi'), C(42, 26, 7.5, 'hi'),
+                     C(18, 26, 4, 'lo'), C(42, 26, 4, 'lo'),
+                     E(30, 38, 4.4, 5.4, 'ik'),                                // the big nose
+                     C(25, 30, 1.8, 'ik'), C(35, 30, 1.8, 'ik')]);
+def('dingo',  () => [E(28, 36, 15, 8.5, 'bs'), C(43, 30, 6.5, 'bs'),
+                     P('M39 24 L40 17 L44 23 Z', 'bs'), P('M46 23 L49 17 L51 24 Z', 'bs'),
+                     P('M49 29 L55 31 L49 33 Z', 'hi'),
+                     S('M13 34 Q6 30 9 24', 'hi', 2.6),
+                     ...[-8, -2, 5, 10].map(dx => S(`M${28 + dx} 43 L${28 + dx} 52`, 'lo', 2))]);
+def('platypus', () => [E(28, 34, 17, 10, 'bs'),
+                       P('M43 30 Q54 30 54 36 Q54 40 43 39 Z', 'lo'),          // the bill
+                       C(38, 29, 1.8, 'ik'),
+                       P('M11 34 Q2 30 4 42 Q10 42 12 38 Z', 'lo'),            // flat tail
+                       wave('water-bs', 49, 4, 22)]);
+def('elephant', () => [E(26, 34, 18, 14, 'bs'), C(44, 30, 9, 'bs'),
+                       P('M50 32 Q56 40 52 50 Q47 50 48 40 Q48 34 46 33 Z', 'bs'),  // trunk
+                       E(38, 30, 8, 10, 'lo'),                                  // the ear
+                       S('M50 28 Q56 30 57 34', 'hi', 2),                       // tusk
+                       ...[-12, -3, 7].map(dx => S(`M${26 + dx} 46 L${26 + dx} 54`, 'lo', 4))]);
+def('lion',   () => [...Array.from({ length: 10 }, (_, i) => {                  // the mane
+                       const a = (i * 36) * Math.PI / 180;
+                       return C(n(40 + 11 * Math.cos(a)), n(28 + 11 * Math.sin(a)), 5, 'lo');
+                     }),
+                     E(24, 38, 14, 8, 'bs'), C(40, 28, 8, 'bs'),
+                     C(37, 27, 1.6, 'ik'), C(43, 27, 1.6, 'ik'),
+                     S('M10 38 Q4 34 7 28', 'lo', 2.4),
+                     ...[-8, 0, 8].map(dx => S(`M${24 + dx} 45 L${24 + dx} 52`, 'bs', 2.2))]);
+def('zebra',  () => [E(27, 34, 16, 9, 'hi'),
+                     ...[-11, -6, -1, 4, 9].map(dx => S(`M${27 + dx} 26 L${27 + dx + 2} 42`, 'ik', 2.6)),
+                     C(42, 28, 6.5, 'hi'), S('M40 23 L43 33', 'ik', 2),
+                     S('M12 32 Q5 30 7 24', 'ik', 2.4),
+                     ...[-9, -3, 4, 10].map(dx => S(`M${27 + dx} 42 L${27 + dx} 52`, 'ik', 2.2))]);
+def('giraffe', () => [E(24, 44, 13, 8, 'bs'),
+                      P('M28 42 L34 10 L42 10 L38 44 Z', 'bs'),                 // the neck, the point
+                      C(40, 8, 5.5, 'bs'), S('M37 3 L36 -1 M43 3 L44 -1', 'lo', 1.8),
+                      ...[[30, 18], [33, 26], [29, 32], [22, 42], [30, 46]]
+                        .map(([x, y]) => C(x, y, 3.4, 'lo')),                    // patches
+                      ...[-7, 0, 7].map(dx => S(`M${24 + dx} 50 L${24 + dx} 56`, 'lo', 2.2))]);
+def('camel',  () => [E(26, 38, 16, 8, 'bs'),
+                     P('M18 34 Q26 20 34 34 Z', 'bs'),                           // the single hump
+                     P('M38 36 Q44 26 44 18 L50 18 Q50 30 43 38 Z', 'bs'),
+                     C(48, 16, 5, 'bs'),
+                     ...[-9, -3, 5, 10].map(dx => S(`M${26 + dx} 45 L${26 + dx} 54`, 'lo', 2.2))]);
+
 def('fish',   () => [P('M12 32 Q26 20 42 32 Q26 44 12 32 Z', 'bs'),
                      P('M42 32 L52 25 L52 39 Z', 'lo'), C(20, 30, 2.4, 'ik'),
                      S('M26 24 Q28 32 26 40', 'hi', 1.4)]);
@@ -969,6 +1063,98 @@ def('resistance', () => [
   S('M8 33 L52 33', 'ik', 1.2),
 ]);
 
+/* cells and reproduction ─────────────────────────────────────────────────
+   The asymmetry is the whole point of this tier, so the drawings carry it:
+   sperm is small and directional, ovum is large and round, and the polar
+   body is the same cell drawn with everything taken away. */
+def('chromatin', () => [                                  // beads on a string
+  S('M8 38 Q18 26 30 34 Q42 42 52 30', 'ik', 1.6),
+  ...[[12, 34], [22, 29], [32, 35], [42, 39], [50, 31]].map(([x, y]) => C(x, y, 5, 'bs')),
+]);
+def('chromosome', () => [                                 // the X, condensed
+  S('M20 14 Q30 30 20 46', 'bs', 6), S('M40 14 Q30 30 40 46', 'bs', 6),
+  C(30, 30, 4, 'lo'),
+]);
+def('gene', () => [                                       // one lit stretch of a longer strand
+  S('M6 30 L54 30', 'gh', 3),
+  S('M20 30 L38 30', 'bs', 6),
+  S('M20 22 L20 38 M38 22 L38 38', 'ik', 1.4),
+]);
+def('nucleus', () => [                                    // double membrane, pores in it
+  ring('lo', 30, 30, 21, 2.4), ring('lo', 30, 30, 17, 2.4),
+  ...[0, 60, 120, 180, 240, 300].map(a =>
+    C(n(30 + 19 * Math.cos(a * Math.PI / 180)), n(30 + 19 * Math.sin(a * Math.PI / 180)), 2.6, 'ground')),
+  ...[[26, 28], [34, 33]].map(([x, y]) => C(x, y, 6, 'bs')),
+]);
+def('microtubule', () => [                                // a hollow tube, tubulin pairs
+  ...[0, 1, 2, 3, 4, 5].map(i => C(14 + i * 6.4, 24, 3.4, i % 2 ? 'bs' : 'hi')),
+  ...[0, 1, 2, 3, 4, 5].map(i => C(14 + i * 6.4, 36, 3.4, i % 2 ? 'hi' : 'bs')),
+  S('M10 24 L52 24 M10 36 L52 36', 'ik', 1),
+]);
+def('mitosis', () => [                                    // two identical daughters
+  S('M6 30 L54 30', 'gh', 1.2),
+  C(18, 30, 12, 'bs'), C(42, 30, 12, 'bs'),
+  S('M14 26 Q18 30 14 34', 'ik', 1.6), S('M38 26 Q42 30 38 34', 'ik', 1.6),
+]);
+def('meiosis', () => [                                    // four, and each one different
+  ...[[18, 20], [42, 20], [18, 40], [42, 40]].map(([x, y], i) =>
+    [C(x, y, 9, 'bs'), S(`M${x - 3} ${y - 2} Q${x} ${y + i - 1} ${x + 3} ${y + 2}`, 'ik', 1.4)]).flat(),
+]);
+def('sperm', () => [                                      // small, and going somewhere
+  E(16, 30, 8, 6.5, 'bs'), C(13, 27, 2, 'hi'),
+  S('M24 30 Q32 22 38 30 Q44 38 52 30', 'ik', 2.2),
+]);
+def('ovum', () => [                                       // large, round, and haloed
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = (i * 22.5) * Math.PI / 180;
+    return C(n(30 + 24 * Math.cos(a)), n(30 + 24 * Math.sin(a)), 2.4, 'gh');
+  }),
+  C(30, 30, 19, 'bs'), C(30, 30, 7, 'lo'), C(25, 25, 3.4, 'hi'),
+]);
+def('polar_body', () => [                                 // the same cell, with nothing kept
+  C(38, 34, 17, 'gh'),
+  C(16, 18, 7, 'bs'), C(14, 16, 2.2, 'lo'),
+]);
+def('zygote', () => [                                     // one cell, two pronuclei meeting
+  C(30, 30, 19, 'bs'),
+  C(24, 30, 7, 'lo'), C(36, 30, 7, 'lo'),
+  C(22, 27, 2.4, 'hi'),
+]);
+def('morula', () => [                                     // sixteen, packed like a mulberry
+  ...[[24, 22], [36, 22], [18, 30], [30, 28], [42, 30], [24, 38], [36, 38], [30, 46]]
+    .map(([x, y]) => C(x, y, 7, 'bs')),
+  ...[[24, 22], [42, 30], [30, 46]].map(([x, y]) => C(x - 2, y - 2, 2.4, 'hi')),
+]);
+def('blastocyst', () => [                                 // a hollow ball, cells at the rim
+  ...Array.from({ length: 14 }, (_, i) => {
+    const a = (i * 25.7) * Math.PI / 180;
+    return C(n(30 + 19 * Math.cos(a)), n(30 + 19 * Math.sin(a)), 4.6, 'bs');
+  }),
+  C(30, 30, 15, 'gh'),
+  ...[[24, 36], [31, 38], [27, 43]].map(([x, y]) => C(x, y, 4.6, 'lo')),   // inner cell mass
+]);
+def('stem_cell', () => [                                  // one cell, many possible futures
+  C(22, 34, 11, 'bs'), C(19, 31, 3, 'hi'),
+  ...[[42, 18], [48, 30], [42, 44]].map(([x, y]) =>
+    [S(`M32 34 L${x - 4} ${y}`, 'gh', 1.4), C(x, y, 5, 'gh')]).flat(),
+]);
+def('gastrula', () => [                                   // layers, and the infold
+  P('M10 22 Q30 14 50 22 Q30 30 10 22 Z', 'hi'),
+  P('M10 31 Q30 23 50 31 Q30 39 10 31 Z', 'bs'),
+  P('M10 40 Q30 32 50 40 Q30 48 10 40 Z', 'lo'),
+  S('M30 18 Q30 30 30 42', 'ik', 2.4),
+]);
+def('embryo', () => [                                     // curled, and beginning to have parts
+  P('M36 14 Q48 22 44 34 Q40 46 26 46 Q14 44 14 32 Q16 22 26 20 Q32 18 30 12 Z', 'bs'),
+  C(34, 24, 6, 'lo'), C(32, 22, 2, 'hi'),
+  S('M22 34 Q26 40 24 44', 'lo', 2),
+]);
+def('fetus', () => [                                      // the same curl, further along
+  P('M38 12 Q52 22 46 36 Q40 50 24 50 Q10 47 11 32 Q13 20 25 18 Q32 16 31 10 Z', 'bs'),
+  C(36, 22, 8, 'lo'), C(33, 19, 2.4, 'hi'), C(38, 21, 1.6, 'ik'),
+  S('M20 34 Q26 42 22 48', 'lo', 2.4), S('M28 36 Q34 40 34 46', 'lo', 2),
+]);
+
 def('penicillin', () => [                                 // the beta-lactam ring
   P('M20 26 L32 26 L32 38 L20 38 Z', 'ik'),
   P('M21.4 27.4 L30.6 27.4 L30.6 36.6 L21.4 36.6 Z', 'bs'),
@@ -977,6 +1163,67 @@ def('penicillin', () => [                                 // the beta-lactam rin
     return S(`M32 32 L${n(32 + 12 * Math.cos(a))} ${n(32 + 12 * Math.sin(a))}`, 'ik', 1.8);
   }),
   C(20, 26, 4, CPK.N), C(32, 38, 4, CPK.S),
+]);
+
+/* fibre, paper, ink — the made things ──────────────────────────────────── */
+def('flax', () => [
+  ...[22, 30, 38].map((x, i) => stalk('bs', x, 52, 14 + i * 2)),
+  ...[[22, 14], [30, 12], [38, 16]].map(([x, y]) => C(x, y, 3.4, 'hi')),
+]);
+def('fibre', () => [                                       // loose, unspun, still a bundle
+  ...[0, 1, 2, 3, 4].map(i =>
+    S(`M${14 + i * 8} 48 Q${16 + i * 8} 30 ${13 + i * 8} 14`, i % 2 ? 'bs' : 'hi', 2)),
+]);
+def('thread', () => [                                      // the twist is the whole point
+  S('M16 46 Q30 40 24 32 Q18 24 30 18 Q42 12 36 6', 'bs', 3.2),
+  S('M20 44 Q30 39 25 33', 'hi', 1.2),
+]);
+def('cloth', () => [                                       // warp and weft, at right angles
+  ...[20, 28, 36, 44].map(y => S(`M14 ${y} L46 ${y}`, 'bs', 2.6)),
+  ...[18, 26, 34, 42].map(x => S(`M${x} 16 L${x} 48`, 'lo', 2)),
+]);
+def('clothing', () => [                                    // a cut and stitched shape
+  P('M18 20 L24 16 L36 16 L42 20 L38 26 L38 46 L22 46 L22 26 Z', 'bs'),
+  S('M24 16 Q30 22 36 16', 'lo', 1.8),
+  S('M22 46 L38 46', 'hi', 1.4),
+]);
+def('pulp', () => [vessel('lo', 24), wave('bs', 34, 4, 13), ...granules('hi', 9, 331, [21, 30, 39, 44])]);
+def('paper', () => [                                       // a sheet, one corner turned
+  P('M16 12 L40 12 L44 20 L44 48 L16 48 Z', 'hi'),
+  P('M40 12 L44 20 L40 20 Z', 'lo'),
+  ...[26, 32, 38].map(y => S(`M22 ${y} L38 ${y}`, 'gh', 1.4)),
+]);
+def('oak_gall', () => [                                    // a hard ball on a twig
+  S('M44 12 Q36 20 34 26', 'lo', 2.2),
+  C(28, 34, 13, 'bs'), C(24, 29, 4, 'hi'), C(30, 38, 2, 'lo'),
+]);
+def('ink', () => [                                         // a well, and a nib above it
+  P('M18 32 Q30 28 42 32 L40 46 Q30 50 20 46 Z', 'ik'),
+  E(30, 32, 12, 4, 'lo'),
+  P('M30 6 L34 22 L30 26 L26 22 Z', 'bs'), S('M30 16 L30 24', 'hi', 1),
+]);
+def('mirror', () => [                                      // glass, and the silver behind it
+  P('M18 12 L42 12 Q46 12 46 16 L46 44 Q46 48 42 48 L18 48 Q14 48 14 44 L14 16 Q14 12 18 12 Z', 'lo'),
+  P('M20 16 L40 16 L40 44 L20 44 Z', 'hi'),
+  S('M24 40 L36 22', 'ground', 3),
+]);
+def('enriched_uranium', () => [                            // separated: the rare one, apart
+  ...granules('gh', 12, 77, [12, 18, 34, 46]),
+  C(44, 30, 9, 'bs'), C(41, 27, 3, 'hi'),
+  S('M36 18 L36 44', 'ik', 1.4),
+]);
+def('warhead', () => [                                     // a cone, and the implosion ring
+  ring('lo', 30, 34, 17, 2),
+  P('M30 8 Q40 26 40 40 L20 40 Q20 26 30 8 Z', 'bs'),
+  S('M22 46 L38 46', 'ik', 3),
+  C(30, 32, 4, 'hi'),
+]);
+
+def('book', () => [                                        // a codex: bound at one edge
+  P('M14 14 L30 18 L30 48 L14 44 Z', 'bs'),
+  P('M46 14 L30 18 L30 48 L46 44 Z', 'lo'),
+  S('M30 18 L30 48', 'ik', 2),
+  ...[24, 30, 36].map(y => S(`M18 ${y} L27 ${y + 1}`, 'hi', 1.2)),
 ]);
 
 /* tools ────────────────────────────────────────────────────────────────── */

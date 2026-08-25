@@ -633,6 +633,10 @@ __CATEGORY_CSS__
     --fam-fire:var(--c-fire-bs);       --fam-plant:var(--c-plant-bs);
     --fam-animal:var(--c-living-bs);   --fam-microbe:var(--c-molecule-bs);
     --fam-food:var(--c-grain-bs);      --fam-myth:var(--c-craft-bs);
+    /* Metals share the mineral hue page (they come out of rock) and wild
+       animals share living (they are animals) — but each needs its own
+       token, or the shelf heading for that family renders with --fam unset. */
+    --fam-metal:var(--c-mineral-hi);   --fam-wild:var(--c-living-lo);
   }
   .atom{
     display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
@@ -670,6 +674,7 @@ __CATEGORY_CSS__
   .fam-fire{--fam:var(--fam-fire)}     .fam-plant{--fam:var(--fam-plant)}
   .fam-animal{--fam:var(--fam-animal)} .fam-microbe{--fam:var(--fam-microbe)}
   .fam-food{--fam:var(--fam-food)}     .fam-myth{--fam:var(--fam-myth)}
+  .fam-metal{--fam:var(--fam-metal)}   .fam-wild{--fam:var(--fam-wild)}
 
   /* settings */
   .setrow{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
@@ -1387,6 +1392,7 @@ function toast(msg) {
 const FAMILIES = [
   { id: 'myth',    name: 'Folklore',        tags: ['myth'] },
   { id: 'microbe', name: 'The Very Small',  tags: ['microbe', 'ferment'] },
+  { id: 'wild',    name: 'Wild Animals',    tags: ['wild'] },
   { id: 'animal',  name: 'Animals & Dairy', tags: ['animal', 'dairy'] },
   { id: 'plant',   name: 'Growing Things',  tags: ['plant', 'crop'] },
   { id: 'earth',   name: 'Earth & Stone',   tags: ['earth', 'build'] },

@@ -4974,5 +4974,605 @@
     "why": "Eight years after doing it with calcium, Kroll refined the process with magnesium and with sodium — the version that took his name and still makes most of the world's titanium.",
     "src": "https://en.wikipedia.org/wiki/Titanium",
     "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "seed"
+    ],
+    "out": "flax",
+    "why": "Humans first domesticated flax in the Fertile Crescent about 9,000 years ago — though the earliest evidence of using wild flax as a textile is some 30,000 years old.",
+    "src": "https://en.wikipedia.org/wiki/Flax",
+    "verified": true
+  },
+  {
+    "in": [
+      "flax"
+    ],
+    "verb": "wait",
+    "out": "fibre",
+    "why": "Retting: leave the stalks out and let dew collect, and the inner stalk rots away while the outer fibres survive. It takes a month or more and gives the highest quality flax.",
+    "src": "https://en.wikipedia.org/wiki/Flax",
+    "verified": true
+  },
+  {
+    "in": [
+      "fibre"
+    ],
+    "verb": "crush",
+    "out": "thread",
+    "why": "Spinning draws the fibre out, twists it, and winds it on. The oldest known twisted fibre was found in southern France and is thought to be 50,000 to 40,000 BC.",
+    "src": "https://en.wikipedia.org/wiki/Spinning_(textiles)",
+    "verified": true
+  },
+  {
+    "in": [
+      "thread",
+      "thread"
+    ],
+    "out": "cloth",
+    "why": "Two distinct sets of thread interlaced at right angles. The long ones are the warp, the ones crossing them the weft — and how you interlace them is what makes one cloth different from another.",
+    "src": "https://en.wikipedia.org/wiki/Weaving",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth"
+    ],
+    "verb": "cut",
+    "out": "clothing",
+    "why": "Linen has been made into bed sheets, underclothes and table linen for as long as flax has been woven.",
+    "src": "https://en.wikipedia.org/wiki/Flax",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood"
+    ],
+    "verb": "crush",
+    "out": "pulp",
+    "why": "Paper is created from a pulp dissolved into a slurry. Wood pulp was invented in 1843 and, with the Second Industrial Revolution behind it, made pulpwood paper the dominant kind to this day.",
+    "src": "https://en.wikipedia.org/wiki/Paper",
+    "verified": true
+  },
+  {
+    "in": [
+      "pulp"
+    ],
+    "verb": "wait",
+    "out": "paper",
+    "why": "The slurry is drained and dried into sheets of matted cellulose fibre. The pulp papermaking process is ascribed to Cai Lun, a 2nd-century Han court eunuch.",
+    "src": "https://en.wikipedia.org/wiki/Paper",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "tree"
+    ],
+    "out": "oak_gall",
+    "why": "A gall wasp lays a single egg in a developing leaf bud, and the larva's secretions make the oak grow a hard round gall around it. Oak galls have been used to make ink since at least Roman times.",
+    "src": "https://en.wikipedia.org/wiki/Oak_apple",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "oak_gall"
+    ],
+    "out": "ink",
+    "why": "Iron salts plus the tannic acid in oak galls. It was the standard ink in Europe for the 1,400 years between the 5th and 19th centuries, and is still sold.",
+    "src": "https://en.wikipedia.org/wiki/Iron_gall_ink",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "silver"
+    ],
+    "out": "mirror",
+    "why": "Silver is reduced out of solution onto the back of the glass and stays there as a thin bright layer. Justus von Liebig worked it out in 1835 and improved it in 1856, after which it caught on everywhere.",
+    "src": "https://en.wikipedia.org/wiki/Silvering",
+    "verified": true
+  },
+  {
+    "in": [
+      "spark",
+      "uranium"
+    ],
+    "out": "enriched_uranium",
+    "why": "Natural uranium is 99.27% U-238 and well under 1% of the U-235 that actually fissions. Separating the two is the whole difficulty — weapons grade means 85% or more U-235.",
+    "src": "https://en.wikipedia.org/wiki/Enriched_uranium",
+    "verified": true
+  },
+  {
+    "in": [
+      "enriched_uranium",
+      "iron"
+    ],
+    "out": "warhead",
+    "why": "Critical mass is the minimum fissile material needed to sustain a chain reaction in a given setup. Assemble more than that and, once fission starts, it proceeds at an increasing rate.",
+    "src": "https://en.wikipedia.org/wiki/Critical_mass",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "paper"
+    ],
+    "out": "book",
+    "why": "Sheets folded, gathered into quires and sewn through the fold, so both sides of every leaf could be used. Codices drew level with scrolls around 300 AD and had replaced them entirely by the 6th century.",
+    "src": "https://en.wikipedia.org/wiki/Codex",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "mud"
+    ],
+    "out": "pig",
+    "why": "Pigs root and dig into the ground to forage — leaves, stems, roots, fruit and flowers, wherever they can find them.",
+    "src": "https://en.wikipedia.org/wiki/Pig",
+    "verified": true
+  },
+  {
+    "in": [
+      "pig"
+    ],
+    "out": "meat",
+    "why": "Pigs were domesticated independently twice in the Neolithic: around the Tigris in the Near East, and separately in China, starting some 8,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Pig",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "pig"
+    ],
+    "out": "lard",
+    "why": "Lard is pig fat rendered until it runs — by steaming it, boiling it, or just dry heat, much the way you would fry bacon.",
+    "src": "https://en.wikipedia.org/wiki/Lard",
+    "verb": "heat",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "pasture"
+    ],
+    "out": "sheep",
+    "why": "Sheep were domesticated in Mesopotamia between roughly 11,000 and 9,000 BC, and spread from there to the Indus Valley by about 7000 BC. Grassland and a little grain is all it ever took.",
+    "src": "https://en.wikipedia.org/wiki/Sheep",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheep"
+    ],
+    "out": "wool",
+    "why": "Shearing lifts the whole fleece off in one piece. Hair has little scale and no crimp; wool has both, which is exactly why it felts and spins into yarn.",
+    "src": "https://en.wikipedia.org/wiki/Wool",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "river"
+    ],
+    "out": "horse",
+    "why": "A horse drinks 38 to 45 litres of water a day on top of grazing. Domestication began on exactly that kind of grassland, in Central Asia, around 4000 BC.",
+    "src": "https://en.wikipedia.org/wiki/Horse",
+    "supported": true
+  },
+  {
+    "in": [
+      "river",
+      "seed"
+    ],
+    "out": "duck",
+    "why": "Mallards are dabbling ducks, feeding in water under a metre deep and picking up seed as they go. They were first domesticated in Southeast Asia at least 4,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Mallard",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "tree"
+    ],
+    "out": "turkey",
+    "why": "Wild turkeys forage the ground by day and roost well off the ground in trees by night. The south Mexican subspecies was domesticated in Mexico or Mesoamerica.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "wood"
+    ],
+    "out": "wolf",
+    "why": "Wolves live in forest, wetland, shrubland, grassland, tundra, pasture, desert and rocky peaks alike, hunting the hooved animals each place has to offer.",
+    "src": "https://en.wikipedia.org/wiki/Wolf",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "wood"
+    ],
+    "out": "deer",
+    "why": "Deer are ecotone animals: they live in the transition between forest kept for cover and open prairie or savanna kept for grazing, browsing wherever the two meet.",
+    "src": "https://en.wikipedia.org/wiki/Deer",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "wood"
+    ],
+    "out": "bear",
+    "why": "Brown bears live mainly in forest, and where a river runs through it during a salmon run they wade in to pin a fish with their claws, or catch it leaping through the air.",
+    "src": "https://en.wikipedia.org/wiki/Brown_bear",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "sun"
+    ],
+    "out": "kangaroo",
+    "why": "Kangaroos occupy the arid and semi-arid centre of Australia. Hopping above 15 km/h holds its energy cost steadier than running does for animals of the same size.",
+    "src": "https://en.wikipedia.org/wiki/Kangaroo",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "tree"
+    ],
+    "out": "koala",
+    "why": "An arboreal marsupial that barely leaves its tree, living on eucalypt leaves. Over 600 species of eucalyptus are on offer; it strongly prefers around 30 of them.",
+    "src": "https://en.wikipedia.org/wiki/Koala",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "sand"
+    ],
+    "out": "dingo",
+    "why": "Descended from domesticated ancestors and feral ever since — the earliest known remains are 3,450 years old. Dingoes range from grassland to true desert, and large kangaroos are their most common prey.",
+    "src": "https://en.wikipedia.org/wiki/Dingo",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "river"
+    ],
+    "out": "platypus",
+    "why": "One of only five living monotremes — mammals that lay eggs instead of bearing live young. It digs the streambed with its bill and finds prey by the tiny electric currents their muscles give off.",
+    "src": "https://en.wikipedia.org/wiki/Platypus",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "tree"
+    ],
+    "out": "elephant",
+    "why": "African bush elephants eat woody plants and uproot trees on a scale that alters the land itself, turning woodland into grassland. Each family unit is led by a matriarch.",
+    "src": "https://en.wikipedia.org/wiki/African_bush_elephant",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "river"
+    ],
+    "out": "lion",
+    "why": "Lions prefer grassy plains, savannah and the scrub bordering rivers, hunting the big hooved grazers those places support — wildebeest, zebra, buffalo, giraffe.",
+    "src": "https://en.wikipedia.org/wiki/Lion",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasture",
+      "wood"
+    ],
+    "out": "zebra",
+    "why": "Plains zebras live in treeless grassland and savanna woodland. The best-supported explanation for the stripes is not camouflage or cooling — it is that they stop flies landing.",
+    "src": "https://en.wikipedia.org/wiki/Zebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "tree"
+    ],
+    "out": "giraffe",
+    "why": "Giraffes feed up to 4.5 m high, where even a large competitor like a kudu reaches only about 2 m. Its heart must generate roughly double a human's blood pressure to supply the brain.",
+    "src": "https://en.wikipedia.org/wiki/Giraffe",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "sun"
+    ],
+    "out": "camel",
+    "why": "First domesticated in the southern Arabian Peninsula around 4000–3000 BC. It tolerates losing more than 30% of its total water content, which is how it thrives in desert.",
+    "src": "https://en.wikipedia.org/wiki/Dromedary",
+    "verified": true
+  },
+  {
+    "in": [
+      "wool"
+    ],
+    "verb": "crush",
+    "out": "thread",
+    "why": "Wool spins where plain hair will not: hair has little scale and no crimp, and barely any ability to bind into yarn. Wool has both, and holds together when it is drawn and twisted.",
+    "src": "https://en.wikipedia.org/wiki/Wool",
+    "verified": true
+  },
+  {
+    "in": [
+      "duck"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "why": "Mallards were first domesticated in Southeast Asia at least 4,000 years ago, in the Neolithic — and almost every domestic duck breed alive descends from them.",
+    "src": "https://en.wikipedia.org/wiki/Mallard",
+    "verified": true
+  },
+  {
+    "in": [
+      "turkey"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "why": "The south Mexican wild subspecies was domesticated either in Mexico or by Preclassic peoples in Mesoamerica, and every domestic turkey comes from it.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "flour",
+      "lard"
+    ],
+    "out": "rubbed_flour",
+    "why": "Rubbing fat into plain flour coats the granules so they are less likely to develop gluten — which is exactly what makes the crumbly, short texture. Lard is there for texture; butter, for flavour.",
+    "src": "https://en.wikipedia.org/wiki/Shortcrust_pastry",
+    "verified": true
+  },
+  {
+    "in": [
+      "dna",
+      "protein"
+    ],
+    "out": "chromatin",
+    "why": "DNA does not sit loose. About 146 base pairs at a time wind round a spool of eight histone proteins. That packs it down and controls what can be read.",
+    "src": "https://en.wikipedia.org/wiki/Nucleosome",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromatin"
+    ],
+    "out": "chromosome",
+    "why": "For most of a cell's life the DNA is loose chromatin. To divide it, the cell winds it down about ten thousand times tighter — and only then, at metaphase, is a chromosome something you can see.",
+    "src": "https://en.wikipedia.org/wiki/Chromosome",
+    "verb": "crush",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromatin"
+    ],
+    "out": "gene",
+    "why": "A gene is not an object, it is a stretch: one length of DNA transcribed to produce RNA. Humans have about 20,000 that end up as protein, and that coding DNA is barely 2% of the genome.",
+    "src": "https://en.wikipedia.org/wiki/Gene",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromatin",
+      "membrane"
+    ],
+    "out": "nucleus",
+    "why": "Wrap the chromatin in a double membrane and you have a nucleus — nearly the whole genome behind a wall, with transcription on one side and translation on the other. That gap is where regulation lives.",
+    "src": "https://en.wikipedia.org/wiki/Cell_nucleus",
+    "verified": true
+  },
+  {
+    "in": [
+      "protein",
+      "protein"
+    ],
+    "out": "microtubule",
+    "why": "Two globular proteins, alpha and beta tubulin, pair up and stack into a hollow tube 23 to 27 nm across. The cell builds them, tears them down and rebuilds them constantly.",
+    "src": "https://en.wikipedia.org/wiki/Microtubule",
+    "verified": true
+  },
+  {
+    "in": [
+      "membrane",
+      "nucleus"
+    ],
+    "out": "cell",
+    "why": "The nucleus provides a site for transcription segregated from where translation happens, which allows levels of gene regulation no bacterium can manage.",
+    "src": "https://en.wikipedia.org/wiki/Cell_nucleus",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "gene"
+    ],
+    "out": "messenger_rna",
+    "why": "Transcription copies a gene, not a genome — one stretch of DNA read off into RNA that the ribosome can then translate.",
+    "src": "https://en.wikipedia.org/wiki/Gene",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "microtubule"
+    ],
+    "out": "mitosis",
+    "why": "The spindle is mostly microtubules and its job is brute mechanical: reach out from opposite ends of the cell, latch onto each chromosome, line them all up, then shorten and pull the copies apart.",
+    "src": "https://en.wikipedia.org/wiki/Mitosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome"
+    ],
+    "out": "meiosis",
+    "why": "Replicate the DNA once, then divide twice. Four cells come out, each with one copy of every chromosome instead of two — and on the way the maternal and paternal copies cross over and swap sections.",
+    "src": "https://en.wikipedia.org/wiki/Meiosis",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "mitosis"
+    ],
+    "out": "cell",
+    "why": "Two daughter nuclei, genetically identical, each with chromosomes alike in composition and equal in number to the parent's. Copy, not halve. Most human cells are made this way.",
+    "src": "https://en.wikipedia.org/wiki/Mitosis",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "meiosis"
+    ],
+    "out": "sperm",
+    "why": "Male meiosis splits evenly: one cell in, four sperm out. The spare cytoplasm is stripped off as residual bodies and eaten by the Sertoli cells around them. The testes run this 200 to 300 million times a day.",
+    "src": "https://en.wikipedia.org/wiki/Spermatogenesis",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "meiosis"
+    ],
+    "out": "ovum",
+    "why": "An oocyte enters meiosis before the girl is born, and then stops. In humans that arrest lasts years. It stops a second time at metaphase II, and only ever finishes if a sperm arrives.",
+    "src": "https://en.wikipedia.org/wiki/Oogenesis",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "ovum"
+    ],
+    "out": "polar_body",
+    "why": "Female meiosis divides unequally on purpose. One daughter takes nearly all the cytoplasm and becomes the egg; the polar bodies get their chromosomes and almost no cytoplasm, and frequently die.",
+    "src": "https://en.wikipedia.org/wiki/Polar_body",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "ovum",
+      "protein"
+    ],
+    "out": "egg",
+    "why": "A hen's ovum is only the start of an egg. Everything else is added around it on the way down the oviduct — first the white, which is 90% water and 10% protein, then the membranes, then the shell.",
+    "src": "https://en.wikipedia.org/wiki/Egg_white",
+    "verified": true
+  },
+  {
+    "in": [
+      "ovum",
+      "sperm"
+    ],
+    "out": "zygote",
+    "why": "Around 200 sperm out of 200 million reach the ampulla of the fallopian tube. One nucleus fuses with the ovum's, two separate blocks slam shut against every other sperm, and a diploid cell exists that did not before.",
+    "src": "https://en.wikipedia.org/wiki/Human_fertilization",
+    "verified": true
+  },
+  {
+    "in": [
+      "zygote"
+    ],
+    "out": "morula",
+    "why": "Cleavage is division without growth — the cell count goes up, the total size does not, so every cell is smaller than the last. Four divisions in you have sixteen, packed tightly enough to look like a mulberry.",
+    "src": "https://en.wikipedia.org/wiki/Cleavage_(embryo)",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "morula",
+      "water"
+    ],
+    "out": "blastocyst",
+    "why": "The morula seals itself watertight, then its outer cells pump sodium in and water follows by osmosis. The cavity that opens turns a solid ball into a hollow one, 0.1 to 0.2 mm across, of 100 to 200 cells.",
+    "src": "https://en.wikipedia.org/wiki/Blastocyst",
+    "verified": true
+  },
+  {
+    "in": [
+      "blastocyst"
+    ],
+    "out": "stem_cell",
+    "why": "Embryonic stem cells come from the inner cell mass — the clump inside the hollow ball that becomes the embryo itself. Isolating it destroys the blastocyst, which is where the ethical argument about them starts.",
+    "src": "https://en.wikipedia.org/wiki/Embryonic_stem_cell",
+    "verb": "cut",
+    "verified": true
+  },
+  {
+    "in": [
+      "stem_cell"
+    ],
+    "out": "tissue",
+    "why": "A stem cell can keep dividing without committing to anything, or it can differentiate. Given the right signals it becomes any of the more than 200 cell types in an adult body — all running the same genome.",
+    "src": "https://en.wikipedia.org/wiki/Stem_cell",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "blastocyst"
+    ],
+    "out": "gastrula",
+    "why": "The hollow ball folds in on itself and becomes layered. Ectoderm will be skin and nervous system, endoderm the gut and lungs, mesoderm the heart, bones and muscles. In humans it starts around day fourteen.",
+    "src": "https://en.wikipedia.org/wiki/Gastrulation",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "gastrula"
+    ],
+    "out": "embryo",
+    "why": "Organogenesis runs from about the third week to the eighth, and carries on after that. By the end of it the heart, hands, feet and brain are all present — and all of them only at the beginning of working.",
+    "src": "https://en.wikipedia.org/wiki/Human_embryonic_development",
+    "verb": "wait",
+    "supported": true
+  },
+  {
+    "in": [
+      "embryo"
+    ],
+    "out": "fetus",
+    "why": "At the start of the ninth week the name changes. All the major organs are present — not fully developed, not functional, and some not yet where they will end up. Fetus is simply Latin for offspring.",
+    "src": "https://en.wikipedia.org/wiki/Fetus",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "morula"
+    ],
+    "out": "blastocyst",
+    "why": "Blastocyst formation begins about five days after fertilization, when a fluid-filled cavity opens up inside the morula.",
+    "src": "https://en.wikipedia.org/wiki/Blastocyst",
+    "verb": "wait",
+    "verified": true
   }
 ]

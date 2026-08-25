@@ -2447,8 +2447,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Iron ore needs a furnace hot enough to reach 1,500°C to give up its metal.",
-    "terminal": true
+    "fact": "Iron ore needs a furnace hot enough to reach 1,500°C to give up its metal."
   },
   {
     "id": "copper",
@@ -2478,8 +2477,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "For most of history this did not come from silver ore at all — it came out of lead.",
-    "terminal": true
+    "fact": "For most of history this did not come from silver ore at all — it came out of lead."
   },
   {
     "id": "tin",
@@ -2659,5 +2657,525 @@
       "earth"
     ],
     "fact": "Powdered uranium concentrate — not the metal yet, just the ore boiled down to something worth shipping."
+  },
+  {
+    "id": "flax",
+    "name": "Flax",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Humans were using wild flax for textiles 30,000 years ago, long before farming it."
+  },
+  {
+    "id": "fibre",
+    "name": "Fibre",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "What is left of a flax stalk after the soft inner parts have rotted away."
+  },
+  {
+    "id": "thread",
+    "name": "Thread",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The oldest known twisted fibre is around 50,000 to 40,000 BC — older than farming, pottery or metal."
+  },
+  {
+    "id": "cloth",
+    "name": "Cloth",
+    "emoji": "🧺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two sets of thread interlaced at right angles: warp one way, weft the other."
+  },
+  {
+    "id": "clothing",
+    "name": "Clothing",
+    "emoji": "👕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Cloth cut and stitched to the shape of a body — the point of the whole fibre chain.",
+    "terminal": true
+  },
+  {
+    "id": "pulp",
+    "name": "Pulp",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Cellulose fibre beaten loose and suspended in water, waiting to be drained into a sheet."
+  },
+  {
+    "id": "paper",
+    "name": "Paper",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A thin sheet of matted cellulose fibres. The pulp process is credited to Cai Lun, a Han court eunuch."
+  },
+  {
+    "id": "oak_gall",
+    "name": "Oak Gall",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A wasp lays an egg in an oak bud and the tree grows a hard apple-like ball around the larva."
+  },
+  {
+    "id": "ink",
+    "name": "Ink",
+    "emoji": "🖋️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Iron gall ink was Europe's standard ink for the 1,400 years between the 5th and 19th centuries."
+  },
+  {
+    "id": "mirror",
+    "name": "Mirror",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Silver deposited on the back of a sheet of glass — Justus von Liebig's process, 1835.",
+    "terminal": true
+  },
+  {
+    "id": "enriched_uranium",
+    "name": "Enriched Uranium",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Natural uranium is over 99% U-238. Weapons grade means 85% or more of the rarer U-235."
+  },
+  {
+    "id": "warhead",
+    "name": "Nuclear Warhead",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Critical mass is the least fissile material that will sustain a chain reaction. Past it, the rate only climbs."
+  },
+  {
+    "id": "book",
+    "name": "Book",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A stack of pages bound at one edge — the biggest advance in bookmaking before the printing press."
+  },
+  {
+    "id": "pig",
+    "name": "Pig",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "No sweat glands worth the name, so it cools off by wallowing in mud instead."
+  },
+  {
+    "id": "lard",
+    "name": "Lard",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A semi-solid white fat, rendered straight out of a pig by steam, boiling or dry heat."
+  },
+  {
+    "id": "sheep",
+    "name": "Sheep",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Grazes grass flat where a goat would rather climb and browse the scrub instead."
+  },
+  {
+    "id": "wool",
+    "name": "Wool",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Not just hair — the crimp and the microscopic scale are what let it felt and spin."
+  },
+  {
+    "id": "horse",
+    "name": "Horse",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing.",
+    "terminal": true
+  },
+  {
+    "id": "duck",
+    "name": "Duck",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Almost every domestic duck breed on Earth comes down from one wild bird: the mallard."
+  },
+  {
+    "id": "turkey",
+    "name": "Turkey",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Spends all day foraging the ground, then flies up into a tree every night to roost."
+  },
+  {
+    "id": "wolf",
+    "name": "Wolf",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Dogs and wolves share a common wolf ancestor — today's wolves are cousins, not quite the parents.",
+    "terminal": true
+  },
+  {
+    "id": "deer",
+    "name": "Deer",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Lives in the seam between forest and open ground — cover on one side, grazing on the other.",
+    "terminal": true
+  },
+  {
+    "id": "bear",
+    "name": "Brown Bear",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Along parts of the Alaskan coast, this bear eats almost nothing but salmon while the run lasts.",
+    "terminal": true
+  },
+  {
+    "id": "kangaroo",
+    "name": "Kangaroo",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Hop it fast enough and it costs less energy, not more — the opposite of most ways of moving.",
+    "terminal": true
+  },
+  {
+    "id": "koala",
+    "name": "Koala",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Eats almost nothing but eucalyptus — and out of 600-plus species on offer, sticks to about 30.",
+    "terminal": true
+  },
+  {
+    "id": "dingo",
+    "name": "Dingo",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A domestic dog gone wild — feral for well over 3,000 years, and now Australia's apex predator.",
+    "terminal": true
+  },
+  {
+    "id": "platypus",
+    "name": "Platypus",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A mammal that lays eggs, carries a venomous spur, and hunts by sensing electricity.",
+    "terminal": true
+  },
+  {
+    "id": "elephant",
+    "name": "Elephant",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Pushes over trees for a living, and does it thoroughly enough to turn woodland into grassland.",
+    "terminal": true
+  },
+  {
+    "id": "lion",
+    "name": "Lion",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The most social cat there is — it lives in family groups where other big cats hunt alone.",
+    "terminal": true
+  },
+  {
+    "id": "zebra",
+    "name": "Zebra",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Those stripes are there to stop flies landing, not to help it hide or keep cool.",
+    "terminal": true
+  },
+  {
+    "id": "giraffe",
+    "name": "Giraffe",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A heart that runs at roughly twice human blood pressure, just to get blood up to the brain.",
+    "terminal": true
+  },
+  {
+    "id": "camel",
+    "name": "Dromedary Camel",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The hump is fat, not water — up to 36 kg of it, burned for energy when food runs short.",
+    "terminal": true
+  },
+  {
+    "id": "chromatin",
+    "name": "Chromatin",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "DNA spooled round protein beads. Two metres of it fits in a nucleus six microns across."
+  },
+  {
+    "id": "chromosome",
+    "name": "Chromosome",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Chromatin wound down about ten thousand times tighter. Only then can you see one down a microscope."
+  },
+  {
+    "id": "gene",
+    "name": "Gene",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One stretch that codes for one thing. Barely 2% of your genome is doing that."
+  },
+  {
+    "id": "nucleus",
+    "name": "Nucleus",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A double membrane with a few thousand doors in it, keeping the genome apart from the machinery."
+  },
+  {
+    "id": "microtubule",
+    "name": "Microtubule",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A hollow tube of two proteins, 25 nm across. It builds the spindle and it drives the sperm's tail."
+  },
+  {
+    "id": "mitosis",
+    "name": "Mitosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One cell into two identical ones. Nearly every cell you have was made this way."
+  },
+  {
+    "id": "meiosis",
+    "name": "Meiosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Two divisions, one copy of the DNA. That is how you get half a set instead of a whole one."
+  },
+  {
+    "id": "sperm",
+    "name": "Sperm",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Head five microns wide, tail ten times longer. The testes make 200 to 300 million a day."
+  },
+  {
+    "id": "ovum",
+    "name": "Ovum",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One of the largest cells in your body, and the only one you can see without a microscope."
+  },
+  {
+    "id": "polar_body",
+    "name": "Polar Body",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Meiosis in the female divides unfairly on purpose: three cells get chromosomes and almost nothing else.",
+    "terminal": true
+  },
+  {
+    "id": "zygote",
+    "name": "Zygote",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One cell, one full set of chromosomes again, and about thirty hours before it divides."
+  },
+  {
+    "id": "morula",
+    "name": "Morula",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Sixteen cells in a ball. Named after a mulberry, which is the least clinical word in embryology."
+  },
+  {
+    "id": "blastocyst",
+    "name": "Blastocyst",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A hundred cells around a puddle. The cells pumped in the salt and the water followed."
+  },
+  {
+    "id": "stem_cell",
+    "name": "Stem Cell",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Undecided. Given the right signal it becomes any of the 200-odd cell types you are built from."
+  },
+  {
+    "id": "gastrula",
+    "name": "Gastrula",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Where a ball of cells becomes layers, and the layers decide what everything will be."
+  },
+  {
+    "id": "embryo",
+    "name": "Embryo",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Eight weeks, and every major organ is at least started. None of them work properly yet."
+  },
+  {
+    "id": "fetus",
+    "name": "Fetus",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Latin for offspring. From week nine the organs are all there, unfinished and not all in place.",
+    "terminal": true
   }
 ]
