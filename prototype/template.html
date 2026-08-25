@@ -265,35 +265,23 @@ __CATEGORY_CSS__
   .chip.board .art{width:60px;height:60px}
   .chip.board .n{font-size:10px}
   .chip.board .ac{font-size:8px}
-  /* Shelf chips are scanned, not read: drawing and name only. */
-  aside .chip{--cw:88px;padding:8px 4px 7px}
-  aside .chip .art{width:46px;height:46px}
-  aside .chip .n{font-size:10.5px;letter-spacing:.04em}
-  aside .chip .rl,aside .chip .ac{display:none}
-  /* Density applies to the shelf too — "how much room each thing takes" was
-     never meant to stop at the canvas edge. Pill here is sized to its own
-     content rather than a fixed --cw, so a dozen short names can share a row
-     the way tags do, instead of every pill paying for the widest name. */
-  body.d-pill aside .chip{
-    width:auto;flex-direction:row;align-items:center;justify-content:flex-start;
+  /* Shelf chips are scanned, not read: drawing and name only. The shelf is
+     always pills, independent of whatever density the canvas is set to —
+     "how much room each thing takes" is a canvas question; a scannable list
+     of 400-odd names is a different problem with one right answer. Sized to
+     its own content rather than a fixed --cw, so short names share a row the
+     way tags do, instead of every pill paying for the widest name. */
+  aside .chip{
+    --cw:auto;width:auto;flex-direction:row;align-items:center;justify-content:flex-start;
     padding:4px 9px 4px 5px;border-radius:99px;gap:6px;
   }
-  body.d-pill aside .chip .art{width:18px;height:18px;flex:none}
-  body.d-pill aside .chip .n{
+  aside .chip .art{width:18px;height:18px;flex:none}
+  aside .chip .n{
     display:flex;align-items:center;min-height:0;margin:0;text-align:left;
     text-transform:none;letter-spacing:0;font-size:10px;white-space:nowrap;
   }
-  body.d-pill aside .chip .n.long,body.d-pill aside .chip .n.vlong{font-size:9px}
-  body.d-half aside .chip{
-    width:auto;flex-direction:row;align-items:center;justify-content:flex-start;
-    padding:3px 8px 3px 4px;border-radius:8px;gap:5px;background:transparent;border:none;box-shadow:none;
-  }
-  body.d-half aside .chip .art{width:26px;height:26px;flex:none}
-  body.d-half aside .chip .n{
-    display:flex;align-items:center;min-height:0;margin:0;text-align:left;
-    text-transform:none;letter-spacing:0;font-size:9.5px;white-space:nowrap;
-    padding:2px 6px;background:var(--card);border:1px solid var(--line);border-radius:3px;
-  }
+  aside .chip .n.long,aside .chip .n.vlong{font-size:9px}
+  aside .chip .rl,aside .chip .ac{display:none}
 
   /* ── density: half card ─────────────────────────────────────────────────
      The user's own sketch: the drawing floats free on the tray with no frame
@@ -1051,10 +1039,10 @@ __CATEGORY_CSS__
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
+  <button id="reset">Reset</button>
   <button id="nudge">Nudge</button>
   <button id="shelfToggle" title="Shelf">▤</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
-  <button id="reset">Reset</button>
 </header>
 
 <main>
@@ -1279,7 +1267,7 @@ function countOnBench(id) {
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
-                theme: 'specimen', ground: 'tray', assist: 'on', density: 'card' };
+                theme: 'specimen', ground: 'tray', assist: 'on', density: 'half' };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
