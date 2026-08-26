@@ -5088,10 +5088,18 @@ function readIngredient(text) {
   // phrases compete in the same pass, on the same longest-wins rule, so
   // "calcium citrate" inside a longer phrase still reads as built-from
   // calcium rather than being swallowed by a shorter bare-name "found".
+  // "Roasted peanuts" fell through here too, and for a different reason
+  // than milk did: "roasted" isn't a PREP word, so the exact-match block
+  // above never gets a clean "peanut" to test — but it DID already compute
+  // `bare` = "roasted peanut" (singularizing runs over the whole phrase,
+  // not just an isolated word). Testing only against `k` meant the plural
+  // "s" was still attached, so `\bpeanut\b` never found a word boundary to
+  // land on. `bare` is right there, already paid for; use it too.
   let best = null;
   const consider = (phrase, kind, id) => {
     if (!phrase || !byId[id]) return;
-    const hit = new RegExp(`\\b${phrase.replace(/ /g, '\\s+')}\\b`).test(k);
+    const re = new RegExp(`\\b${phrase.replace(/ /g, '\\s+')}\\b`);
+    const hit = re.test(k) || re.test(bare);
     if (hit && (!best || phrase.length > best[0].length || (phrase.length === best[0].length && kind === 'near'))) best = [phrase, kind, id];
   };
   for (const [a, id] of Object.entries(LABELS.aliases)) consider(a, 'found', id);
