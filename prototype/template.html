@@ -2519,13 +2519,57 @@ function removeChip(chip, instant) {
 }
 
 function toggleBranch(chip) {
-  if (!parentsOf(chip).length) {                      // nothing went into it
-    chip.classList.add('pulse');
-    setTimeout(() => chip.classList.remove('pulse'), 380);
+  if (!parentsOf(chip).length) {                      // nothing went into it yet
+    expandUp(chip);
     return;
   }
   chip.classList.toggle('folded');
   refreshFolds();
+  sfx.pick();
+}
+/**
+ * A found chip standing with nothing feeding into it — placed directly,
+ * the way a scanned ingredient or a shelf tap is, rather than crafted —
+ * gets its real ancestor chain built in on demand. Same route the hint
+ * panel would point at, same "fold every step but the one you asked for"
+ * shape materialize() already uses for Free Play's fabricated chains,
+ * just linking INTO the chip that is already standing there rather than
+ * creating a new one for the final step.
+ */
+function expandUp(chip) {
+  const id = chip.dataset.id;
+  if (!id) return;
+  const steps = orderedSteps(id);
+  if (!steps.length) {                                // a starter — nothing is above it
+    chip.classList.add('pulse');
+    setTimeout(() => chip.classList.remove('pulse'), 380);
+    return;
+  }
+  const chipFor = new Map();
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+  }
+  chipFor.set(id, chip);
+  const ensure = (iid) => {
+    if (chipFor.has(iid)) return chipFor.get(iid);
+    const el = spawn(iid, null, null, [chip]);
+    chipFor.set(iid, el);
+    return el;
+  };
+  for (const r of steps) {
+    if (r.out === id) {
+      const parents = r.in.map(ensure);
+      links.push({ a: parents[0], b: parents[1] ?? null, out: chip, fresh: true });
+      continue;
+    }
+    if (chipFor.has(r.out)) continue;
+    const parents = r.in.map(ensure);
+    chipFor.set(r.out, materialize(r, parents));
+  }
+  benchTouched = true;
+  refreshFolds();
+  drawLinks();
+  tidy();
   sfx.pick();
 }
 
