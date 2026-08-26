@@ -681,6 +681,11 @@ def('meat',   () => [P('M16 26 Q30 18 44 26 Q48 38 38 46 Q26 50 18 42 Q12 34 16 
                      S('M16 26 Q30 22 44 26', 'lo', 2)]);
 def('bone',   () => [S('M20 40 L40 24', 'hi', 6), C(18, 43, 5, 'hi'), C(23, 37, 5, 'hi'),
                      C(42, 21, 5, 'hi'), C(37, 27, 5, 'hi')]);
+/* A scallop: the fan, its radiating ribs, and the hinge they all run back to. */
+def('shell',  () => [P('M30 47 Q9 39 13 23 Q30 13 47 23 Q51 39 30 47 Z', 'bs'),
+                     ...[-15, -8, 0, 8, 15].map(dx =>
+                       S(`M30 45 L${n(30 + dx)} ${n(19 + Math.abs(dx) * 0.42)}`, 'lo', 1.6)),
+                     E(30, 46, 6, 3, 'hi')]);
 def('tissue', () => [E(30, 32, 19, 14, 'bs'), ...[22, 30, 38].map(x =>
   S(`M${x} 20 Q${x + 3} 32 ${x} 44`, 'hi', 2))]);
 def('muscle', () => [P('M14 30 Q30 20 46 30 Q30 42 14 30 Z', 'bs'),
@@ -1761,6 +1766,117 @@ function hash(str) {
   for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
   return h;
 }
+
+
+/* weather and the air ───────────────────────────────────────────────────
+   Thirteen of these fall under one category, so the risk is thirteen grey
+   blobs. Each is drawn from the geometry that actually distinguishes it:
+   rain falls in strokes, snow is six-fold, hail is solid and bouncing,
+   dew sits still on a leaf, frost grows on a surface, a hurricane spirals. */
+
+/** The horizon every atmospheric drawing stands on. */
+const horizon = (r, y = 46) => S(`M8 ${y} L52 ${y}`, r, 1.6);
+/** A cloud: three overlapping lobes on a flat base. */
+const puff = (r, cx = 30, cy = 26, s = 1) => [
+  E(n(cx - 9 * s), n(cy + 3 * s), n(9 * s), n(7 * s), r),
+  E(n(cx + 2 * s), n(cy - 3 * s), n(12 * s), n(10 * s), r),
+  E(n(cx + 11 * s), n(cy + 4 * s), n(8 * s), n(6 * s), r),
+];
+/** A bolt: the zig-zag, drawn as a solid so it reads at 18px. */
+const bolt = (r, cx = 30, top = 22, s = 1) => P(
+  `M${n(cx + 4 * s)} ${n(top)} L${n(cx - 8 * s)} ${n(top + 14 * s)} ` +
+  `L${n(cx - 1 * s)} ${n(top + 14 * s)} L${n(cx - 6 * s)} ${n(top + 28 * s)} ` +
+  `L${n(cx + 9 * s)} ${n(top + 11 * s)} L${n(cx + 1 * s)} ${n(top + 11 * s)} Z`, r);
+
+def('air',    () => [...[18, 28, 38].map((y, i) =>
+                       S(`M${12 + i * 3} ${y} Q30 ${y - 6} ${48 - i * 3} ${y}`, i === 1 ? 'hi' : 'bs', 2.2)),
+                     C(46, 44, 2.4, 'lo'), C(16, 44, 2, 'lo')]);
+def('sky',    () => [P('M6 10 L54 10 L54 40 L6 40 Z', 'bs'),
+                     P('M6 10 L54 10 L54 22 L6 22 Z', 'hi'),
+                     C(41, 17, 4.5, 'lo'), horizon('lo', 46)]);
+def('wind',   () => [S('M10 22 Q34 14 44 20 A6 6 0 1 0 40 30', 'hi', 2.8),
+                     S('M12 34 Q32 28 40 34', 'bs', 2.4),
+                     S('M16 43 Q30 39 36 43 A4.5 4.5 0 1 0 33 50', 'bs', 2.2)]);
+def('dust',   () => [horizon('lo', 48),
+                     P('M8 48 Q18 30 32 34 Q46 38 52 48 Z', 'bs'),
+                     ...granules('hi', 12, 91, [12, 22, 48, 42])]);
+def('cloud',  () => [...puff('bs'), ...puff('hi', 26, 22, .55)]);
+def('mist',   () => [...[24, 31, 38, 45].map((y, i) =>
+                       S(`M${10 + (i % 2) * 8} ${y} L${48 - (i % 2) * 6} ${y}`, i % 2 ? 'hi' : 'bs', 3.4))]);
+def('fog',    () => [P('M12 20 L44 20 L40 46 L16 46 Z', 'lo'),          // a shape gone soft
+                     ...[26, 33, 40].map((y, i) =>
+                       S(`M8 ${y} L52 ${y}`, i === 1 ? 'hi' : 'bs', 5))]);
+def('dew',    () => [leaf('lo', 30, 34, 1.35, 15),
+                     E(26, 30, 4, 5, 'hi'), E(35, 37, 3, 3.8, 'hi'), E(31, 41, 2.2, 2.8, 'bs')]);
+def('frost',  () => [horizon('lo', 48),
+                     ...[16, 30, 44].map(x => [S(`M${x} 48 L${x} 26`, 'hi', 1.6),
+                       S(`M${x} 34 L${x - 6} 28`, 'hi', 1.3), S(`M${x} 34 L${x + 6} 28`, 'hi', 1.3),
+                       S(`M${x} 42 L${x - 5} 37`, 'bs', 1.2), S(`M${x} 42 L${x + 5} 37`, 'bs', 1.2)]).flat()]);
+def('rain',   () => [...puff('lo', 28, 18, .8),
+                     ...[[16, 32], [25, 36], [34, 32], [43, 37]].map(([x, y]) =>
+                       S(`M${x} ${y} L${x - 3} ${y + 14}`, 'hi', 2.6))]);
+def('snow',   () => [...[0, 60, 120].map(a =>
+                       ['g', a, 30, 32, [S('M30 14 L30 50', 'hi', 2.2),
+                                         S('M30 20 L25 25', 'hi', 1.6), S('M30 20 L35 25', 'hi', 1.6),
+                                         S('M30 44 L25 39', 'hi', 1.6), S('M30 44 L35 39', 'hi', 1.6)]]),
+                     C(30, 32, 3, 'bs')]);
+def('hail',   () => [horizon('lo', 50),
+                     C(20, 24, 6, 'hi'), C(37, 18, 5, 'bs'), C(31, 36, 7, 'hi'), C(45, 34, 4.5, 'bs'),
+                     S('M20 44 Q24 40 28 44', 'lo', 1.6), S('M38 46 Q42 42 46 46', 'lo', 1.6)]);
+def('storm',  () => [...puff('lo', 30, 20, 1.05),
+                     bolt('hi', 30, 28, .8),
+                     ...[[16, 34], [45, 36]].map(([x, y]) => S(`M${x} ${y} L${x - 2} ${y + 11}`, 'bs', 2.2))]);
+def('lightning', () => [bolt('hi', 30, 8, 1.35), bolt('bs', 44, 20, .55)]);
+def('thunder',() => [bolt('lo', 22, 10, .8),
+                     ...[13, 20, 27].map((rad, i) =>                 // the sound going out
+                       ['s', `M${n(38 - rad * .35)} ${n(34 - rad)} A${rad} ${rad} 0 0 1 ${n(38 - rad * .35)} ${n(34 + rad)}`,
+                        i === 1 ? 'hi' : 'bs', 2.2])]);
+def('rainbow',() => [...[22, 17, 12].map((rad, i) =>
+                       ['s', `M${30 - rad} 44 A${rad} ${rad} 0 0 1 ${30 + rad} 44`,
+                        ['lo', 'bs', 'hi'][i], 4.2]),
+                     horizon('lo', 46)]);
+def('ozone',  () => [C(30, 20, 6.5, 'hi'), C(19, 38, 6.5, 'bs'), C(41, 38, 6.5, 'bs'),
+                     S('M30 20 L19 38', 'ik', 2), S('M30 20 L41 38', 'ik', 2)]);   // bent, three
+def('hurricane', () => [S('M30 32 Q46 30 44 16 Q42 6 28 10 Q10 15 12 32 Q14 52 34 52', 'bs', 3.4),
+                        S('M30 32 Q14 34 16 48 Q18 58 32 54', 'hi', 3),
+                        C(30, 32, 4, 'lo')]);
+def('blizzard', () => [...[[10, 18], [10, 30], [10, 42]].map(([x, y]) =>
+                         S(`M${x} ${y} L${x + 34} ${y - 5}`, 'bs', 2.4)),
+                       ...[[24, 14], [40, 26], [20, 38], [44, 44]].map(([x, y]) =>
+                         [S(`M${x - 4} ${y} L${x + 4} ${y}`, 'hi', 1.6),
+                          S(`M${x} ${y - 4} L${x} ${y + 4}`, 'hi', 1.6)]).flat()]);
+def('flood',  () => [P('M10 34 L18 34 L18 24 L26 24 L26 34 L34 34 L34 18 L42 18 L42 34 L50 34 L50 52 L10 52 Z', 'lo'),
+                     wave('bs', 38, 6, 22), wave('hi', 32, 5, 20)]);   // water above the rooftops
+def('dune',   () => [P('M6 50 Q18 24 34 30 Q46 34 54 50 Z', 'bs'),
+                     S('M6 50 Q18 24 34 30', 'hi', 2),                 // the sharp crest
+                     P('M34 30 Q46 34 54 50 L34 50 Z', 'lo'),
+                     horizon('lo', 50)]);
+def('loess',  () => [...[[46, 'bs'], [40, 'lo'], [34, 'bs'], [28, 'lo']].map(([y, r]) =>
+                       P(`M10 ${y} L50 ${y} L50 ${y + 6} L10 ${y + 6} Z`, r)),
+                     ...granules('hi', 10, 233, [14, 30, 46, 50])]);
+def('fulgurite', () => [P('M28 10 L34 10 L33 24 L38 26 L34 38 L37 40 L31 52 L27 40 L30 38 L26 26 L31 24 Z', 'gh'),
+                        ...granules('bs', 8, 77, [16, 40, 46, 52])]);  // glass tube in the sand
+
+/* what the two new verbs make ──────────────────────────────────────────── */
+def('smoke',  () => [...[[20, 'bs'], [30, 'hi'], [40, 'bs']].map(([x, r]) =>
+                       S(`M${x} 52 Q${x - 8} 40 ${x} 30 Q${x + 8} 20 ${x - 3} 10`, r, 3.2))]);
+def('forge',  () => [P('M10 42 L50 42 L46 54 L14 54 Z', 'lo'),         // the hearth
+                     flame('hi', .48, 8),
+                     S('M50 30 Q58 34 52 40', 'ik', 3),                // the tuyere
+                     E(30, 42, 14, 4, 'bs')]);
+def('stockfish', () => [S('M14 12 L46 12', 'ik', 2),                   // the rack
+                        ...[22, 38].map(x => [S(`M${x} 12 L${x} 20`, 'ik', 1.6),
+                          P(`M${x} 20 Q${x - 7} 34 ${x} 48 Q${x + 7} 34 ${x} 20 Z`, 'bs'),
+                          S(`M${x} 24 L${x} 44`, 'lo', 1.2)]).flat()]);
+def('bottle', () => [P('M26 8 L34 8 L34 20 Q42 26 42 34 L42 50 Q42 54 38 54 L22 54 Q18 54 18 50 L18 34 Q18 26 26 20 Z', 'gh'),
+                     P('M24 34 L28 34 L28 48 L24 48 Z', 'hi')]);       // the highlight down the glass
+def('bone_char', () => [P('M18 42 L42 22', 'ik') && S('M18 42 L42 22', 'ik', 7),
+                        C(16, 45, 5.5, 'ik'), C(21, 39, 5.5, 'ik'),
+                        C(44, 19, 5.5, 'ik'), C(39, 25, 5.5, 'ik'),
+                        ...granules('lo', 6, 41, [14, 46, 46, 54])]);
+def('blackware', () => [P('M20 20 L40 20 L44 42 Q44 50 30 50 Q16 50 16 42 Z', 'ik'),
+                        E(30, 20, 10, 3.5, 'lo'),
+                        S('M22 30 Q30 34 38 30', 'gh', 1.6)]);         // a burnished line
 
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],

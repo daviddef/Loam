@@ -48,8 +48,12 @@ __CATEGORY_CSS__
   /* ── themes ───────────────────────────────────────────────────────────
      The geometry is drawn once. A theme decides what a role looks like.  */
 
-  /* Field manual — ink on paper. The same 226 drawings, unfilled. */
-  body.t-manual{
+  /* Two independent questions, and they used to be one control.
+     HOW THE DRAWINGS ARE FILLED is `t-manual` — the same drawings, unfilled,
+     ink on paper. WHETHER THE INTERFACE IS LIGHT OR DARK is `lt`. Picking the
+     unfilled drawings used to drag the whole interface light with it, and
+     there was no way to have one without the other. */
+  body.lt{
     --cream:var(--s-paper);
     --discovery:#B4600A;
     --ink:var(--s-paperInk);
@@ -183,7 +187,11 @@ __CATEGORY_CSS__
     stroke-dasharray:var(--len,400);animation:draw .45s cubic-bezier(.3,.8,.4,1) forwards;
     stroke:var(--discovery);stroke-width:3;opacity:.85;
   }
-  #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6}
+  #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
+        transition:bottom .18s}
+  /* The dock is opaque and sits on the bottom of the board, so the zoom
+     cluster has to climb on top of it rather than hide behind it. */
+  body.pt-on #zoom{bottom:calc(var(--pth,370px) + 12px)}
   #zoom button{
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
@@ -586,6 +594,8 @@ __CATEGORY_CSS__
     opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s;
   }
   #card.on{opacity:1;transform:none;pointer-events:auto}
+  /* Same reason as #zoom: the discovery card must clear the docked table. */
+  body.pt-on #card{bottom:calc(var(--pth,370px) + 82px)}
   .inner{
     position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:13px;
     box-shadow:0 5px 16px rgba(var(--shade),.13);overflow:hidden;cursor:pointer;
@@ -795,6 +805,33 @@ __CATEGORY_CSS__
   }
   .setrow button.on .smark{color:var(--on-accent);background:var(--orange);border-color:var(--orange)}
   .setrow button.danger .smark{color:var(--brick);background:color-mix(in srgb,var(--brick) 16%,transparent);border-color:color-mix(in srgb,var(--brick) 40%,transparent)}
+  /* A two-way choice, said once. The label never changes when you flip it —
+     only the note under it and the switch itself — so the row does not move
+     and you are never reading a button that describes the state you are not in. */
+  .switches{display:flex;flex-direction:column;gap:7px;margin-bottom:6px}
+  .switch{
+    display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
+    padding:10px 12px;border-radius:11px;background:var(--surface);border:1.5px solid var(--line);
+  }
+  .switch b{font:700 13.5px var(--face-name);color:var(--ink)}
+  .switch i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
+  .switch .stx{flex:1;min-width:0}
+  .switch .knob{
+    flex:none;position:relative;width:40px;height:23px;border-radius:99px;
+    background:rgba(var(--shade),.26);border:1px solid var(--line);
+    transition:background .16s,border-color .16s;
+  }
+  .switch .knob::after{
+    content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;
+    background:var(--ink-soft);transition:transform .16s,background .16s;
+  }
+  .switch.on{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 10%,var(--card))}
+  .switch.on b{color:var(--brick)}
+  .switch.on .knob{background:var(--orange);border-color:var(--orange)}
+  .switch.on .knob::after{transform:translateX(17px);background:var(--on-accent)}
+  @media (prefers-reduced-motion:reduce){
+    .switch .knob,.switch .knob::after{transition:none}
+  }
   .gmark{
     display:inline-flex;align-items:center;justify-content:center;
     width:19px;height:19px;margin-right:7px;border-radius:5px;vertical-align:-4px;
@@ -822,7 +859,32 @@ __CATEGORY_CSS__
      its own box instead, or it shows whatever slice of the page sits behind it.
      Only the attachment is overridden — each ground's own background-size is
      what makes graph ruled and profile layered. */
-  .gsw{background-attachment:scroll !important}
+  .gsw{background-attachment:scroll !important;position:relative;overflow:hidden}
+  /* A swatch of flat colour tells you almost nothing. Standing a real drawing
+     on each ground shows the thing that actually matters — whether a specimen
+     reads against it — and gives the row something to look at. */
+  .gleaf{
+    position:absolute;left:50%;top:50%;--g:20px;line-height:0;
+    transform:translate(-50%,-50%);
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.4));
+    transition:transform .3s cubic-bezier(.2,.9,.3,1.4);
+  }
+  .settiles button:hover .gleaf{transform:translate(-50%,-50%) scale(1.22) rotate(-7deg)}
+  .settiles button.on .gleaf{transform:translate(-50%,-50%) scale(1.1)}
+  .settiles button{transition:transform .16s,border-color .16s,background .16s}
+  .settiles button:hover{transform:translateY(-2px)}
+  .settiles button:hover .tsw svg{transform:scale(1.14) rotate(6deg);transition:transform .3s}
+  .settiles button:hover .dsw b{transform:scale(1.1);transition:transform .3s}
+  /* Fluid drifts over 44 seconds on the real ground, which in a 40px preview
+     is indistinguishable from a still image. Show the same motion, faster. */
+  .gsw.g-fluid{animation-duration:7s !important}
+  @keyframes swTwinkle{0%,100%{opacity:.55} 50%{opacity:1}}
+  .gsw.g-deep{animation:swTwinkle 3.4s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){
+    .gleaf,.settiles button,.settiles button:hover .tsw svg{transition:none}
+    .gsw.g-fluid{animation:none !important}
+    .gsw.g-deep{animation:none}
+  }
   .tsw{display:flex;align-items:center;justify-content:center;background:var(--card)}
   .tsw svg{width:28px;height:28px}
   /* Miniatures of the three card footprints. */
@@ -1557,6 +1619,11 @@ function countOnBench(id) {
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
                 theme: 'specimen', ground: 'tray', assist: 'on', density: 'half' };
 try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
+// Light-or-dark used to ride along with the drawing style, so anyone who had
+// already chosen Field manual was choosing a light interface too, whether or
+// not that is what they wanted. Inherit what they had, then let them separate
+// the two — a saved file from before this split has no `chrome` at all.
+if (!prefs.chrome) prefs.chrome = prefs.theme === 'manual' ? 'light' : 'dark';
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
 // Free play hands you the whole world at once. Real progress is put aside
@@ -1625,6 +1692,7 @@ const applyPrefs = () => {
   root.dataset.tone = prefs.tone;
   if (!body) return;
   THEMES.forEach(([id]) => body.classList.toggle('t-' + id, prefs.theme === id));
+  body.classList.toggle('lt', prefs.chrome === 'light');
   GROUNDS.forEach(([id]) => body.classList.toggle('g-' + id, prefs.ground === id));
   // On the very first call — made at script-init time, before `world`,
   // `unstack` and the size caches exist — body carries no d-* class yet, so
@@ -3472,7 +3540,7 @@ function ptHeight(px) {
   // shrank the panel instead of enlarging it.
   const max = Math.round((board.getBoundingClientRect().height || 600) * PT_MAX_FRAC);
   const h = Math.max(PT_MIN, Math.min(px, max));
-  document.getElementById('ptDock').style.setProperty('--pth', h + 'px');
+  document.body.style.setProperty('--pth', h + 'px');
   prefs.ptH = h; savePrefs();
   ptFit();                                   // taller dock, bigger tiles
 }
@@ -3944,6 +4012,15 @@ function showSettings() {
     `<button class="${prefs[key] === v ? 'on' : ''}" data-pref="${key}" data-val="${v}">
        <span class="smark">${mark}</span><span class="stx"><b>${label}</b><i>${note}</i></span>
      </button>`).join('') + `</div>`;
+  // A two-way choice is a switch, not two buttons you read and compare. Six
+  // stacked full-width rows were saying the same thing three times over.
+  const toggle = (label, note, on, attr) =>
+    `<button class="switch${on ? ' on' : ''}" ${attr} role="switch" aria-checked="${on}">
+       <span class="stx"><b>${label}</b><i>${note}</i></span><span class="knob"></span>
+     </button>`;
+  const prefToggle = (key, label, onVal, offVal, noteOn, noteOff) =>
+    toggle(label, prefs[key] === onVal ? noteOn : noteOff, prefs[key] === onVal,
+           `data-pref="${key}" data-val="${prefs[key] === onVal ? offVal : onVal}"`);
   const group = (title, mark, body) =>
     `<section class="setgroup"><h3><span class="gmark">${mark}</span>${title}</h3>${body}</section>`;
 
@@ -3951,8 +4028,14 @@ function showSettings() {
     group('Look', '◐', `
       <h2>How it is drawn</h2>
       ${tiles('theme', THEMES, v => `<span class="tsw t-${v}">${artSVG('leaf')}</span>`)}
+      <div class="switches">
+        ${prefToggle('chrome', 'Light interface', 'light', 'dark',
+          'Panels, menus and the shelf on paper.',
+          'Panels, menus and the shelf dark. The drawing style is a separate choice.')}
+      </div>
       <h2>What it sits on</h2>
-      ${tiles('ground', GROUNDS, v => `<span class="gsw g-${v}"></span>`)}
+      ${tiles('ground', GROUNDS, v =>
+        `<span class="gsw g-${v}"><i class="gleaf">${artSVG('leaf')}</i></span>`)}
       <h2>How much room each thing takes</h2>
       ${tiles('density', DENSITIES, v => DENSITY_ART[v])}`) +
     group('Explain', '✎', `
@@ -3962,26 +4045,21 @@ function showSettings() {
         ['curious', 'Curious', 'The mechanism, and a source.', 'B'],
         ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.', 'C'],
       ])}
-      <h2>How loud</h2>
-      ${row('tone', [
-        ['playful', 'Playful', 'Sound, ripples, folklore up front.', '♪'],
-        ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.', '·'],
-      ])}
-      <h2>When you pick something up</h2>
-      ${row('assist', [
-        ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.', '3'],
-        ['off', 'Say nothing',  'Work it out yourself.', '—'],
-      ])}`) +
+      <div class="switches">
+        ${prefToggle('tone', 'Sound and flourish', 'playful', 'straight',
+          'Sound, ripples and folklore up front.',
+          'Quiet. Folklore stays, but keeps its voice down.')}
+        ${prefToggle('assist', 'Count the partners', 'on', 'off',
+          'When you pick a card up, how many things on the bench it will make something new with. Never which ones.',
+          'Say nothing — work it out yourself.')}
+      </div>`) +
     group('Your data', '⌸', `
-      <h2>Free play</h2>
-      <div class="setrow">
-        <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
-          <span class="smark">${prefs.freePlay ? '●' : '○'}</span>
-          <span class="stx"><b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
-          <i>${prefs.freePlay
-            ? 'Every element and tool available. Tap to go back to your own progress.'
-            : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`}</i></span>
-        </button>
+      <div class="switches">
+        ${toggle('Free play',
+          prefs.freePlay
+            ? 'Every element and tool is available. Turn it off to go back to your own progress.'
+            : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`,
+          !!prefs.freePlay, 'data-free="1"')}
       </div>
       <h2>Start over</h2>
       <div class="setrow">
@@ -4214,7 +4292,7 @@ document.getElementById('ptBody').addEventListener('click', ev => {
   });
 }
 addEventListener('resize', () => { if (document.body.classList.contains('pt-on')) ptFit(); });
-if (prefs.ptH) document.getElementById('ptDock').style.setProperty('--pth', prefs.ptH + 'px');
+if (prefs.ptH) document.body.style.setProperty('--pth', prefs.ptH + 'px');
 if (prefs.ptOpen && !matchMedia('(max-width:720px)').matches) ptSet(true);
 addEventListener('keydown', ev => {
   if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === 'z' && !ev.shiftKey) {

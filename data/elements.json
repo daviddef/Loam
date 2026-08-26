@@ -2129,6 +2129,16 @@
     "fact": "Collagen for spring, calcium phosphate for stiffness. Neither works alone."
   },
   {
+    "id": "shell",
+    "name": "Shell",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Calcium carbonate, laid down by a fringe of tissue called the mantle."
+  },
+  {
     "id": "carbon_dioxide",
     "name": "Carbon Dioxide",
     "emoji": "☁️",
@@ -4281,5 +4291,312 @@
       "metal"
     ],
     "fact": "Decays with a half-life a billion times the age of the universe, so everyone just calls it stable."
+  },
+  {
+    "id": "smoke",
+    "name": "Smoke",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "An aerosol of soot, condensed tar and ash — the part of the fuel that never finished burning."
+  },
+  {
+    "id": "forge",
+    "name": "Forge",
+    "emoji": "⚒️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "A hearth with a pipe into the fire. More air means a faster burn, and a faster burn means more heat."
+  },
+  {
+    "id": "stockfish",
+    "name": "Stockfish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "fact": "Unsalted cod dried on open racks by cold wind. Loses about 80% of its water and keeps for years."
+  },
+  {
+    "id": "bottle",
+    "name": "Bottle",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A bubble of glass inflated down a hollow pipe, then worked into a shape."
+  },
+  {
+    "id": "bone_char",
+    "name": "Bone Char",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "fire"
+    ],
+    "fact": "Charred bone, porous and black. The standard decolouriser in cane-sugar refining."
+  },
+  {
+    "id": "blackware",
+    "name": "Blackware",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Fired black, because the starved fire took its oxygen from the iron in the clay.",
+    "terminal": true
+  },
+  {
+    "id": "air",
+    "name": "Air",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "78.08% nitrogen, 20.95% oxygen, 0.93% argon — and the whole of it weighs about 5.15 × 10^18 kg."
+  },
+  {
+    "id": "sky",
+    "name": "Sky",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Not a thing — a colour. Sunlight scattered by air molecules, blue scattered hardest."
+  },
+  {
+    "id": "wind",
+    "name": "Wind",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Air levelling out a pressure difference the sun made by heating one place more."
+  },
+  {
+    "id": "dust",
+    "name": "Dust",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Silt held up by air. Dry ground puts thousands of millions of tonnes up a year."
+  },
+  {
+    "id": "cloud",
+    "name": "Cloud",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Droplets condensed onto specks a hundredth their size, about 0.2 micrometres across."
+  },
+  {
+    "id": "mist",
+    "name": "Mist",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "The same droplets as fog, thinner. The only line between them is whether you can still see a kilometre."
+  },
+  {
+    "id": "fog",
+    "name": "Fog",
+    "emoji": "🌁",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "A stratus cloud that reached the ground. It loses its Latin name the moment it touches."
+  },
+  {
+    "id": "dew",
+    "name": "Dew",
+    "emoji": "💦",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Water that condensed onto something cold, not water that fell. It starts at the dew point."
+  },
+  {
+    "id": "frost",
+    "name": "Frost",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Not frozen dew. Water vapour deposits straight onto a cold surface as ice, skipping liquid altogether.",
+    "terminal": true
+  },
+  {
+    "id": "rain",
+    "name": "Rain",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Drops from 0.1 to 9 mm across, flattened rather than tear-shaped, and breaking up above that."
+  },
+  {
+    "id": "snow",
+    "name": "Snow",
+    "emoji": "🌨️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Crystals grown by vapour freezing onto them, then stuck together. The aggregate is the snowflake that lands."
+  },
+  {
+    "id": "storm",
+    "name": "Storm",
+    "emoji": "⛈️",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "Moisture, an unstable air mass, and something to lift it. Take one away and there is none."
+  },
+  {
+    "id": "lightning",
+    "name": "Lightning",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Charge sorted by ice striking ice in the updraught, then let go all at once."
+  },
+  {
+    "id": "thunder",
+    "name": "Thunder",
+    "emoji": "🔊",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Air exploding away from a channel at about 30,000 K. Three seconds a kilometre.",
+    "terminal": true
+  },
+  {
+    "id": "hail",
+    "name": "Hail",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Ice laid down in layers at least a millimetre thick, held up by an updraught for half an hour or more.",
+    "terminal": true
+  },
+  {
+    "id": "rainbow",
+    "name": "Rainbow",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Always 42° out from the point opposite the sun. The geometry belongs to the drop.",
+    "terminal": true
+  },
+  {
+    "id": "ozone",
+    "name": "Ozone",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "O3, named for its smell — ozein, Greek for 'to smell'. It damages what it is named for.",
+    "terminal": true
+  },
+  {
+    "id": "hurricane",
+    "name": "Hurricane",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "A storm that runs on warm water. Take it over sea much below 26.5 °C and it begins to die."
+  },
+  {
+    "id": "blizzard",
+    "name": "Blizzard",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Defined by wind, not by snowfall: 56 km/h or more, visibility down to 400 m, for three hours or more.",
+    "terminal": true
+  },
+  {
+    "id": "flood",
+    "name": "Flood",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Water arriving faster than the ground can absorb it or the channel can carry it.",
+    "terminal": true
+  },
+  {
+    "id": "dune",
+    "name": "Dune",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Sand that grew itself: sand hitting sand tends to stick, sand hitting hard ground bounces away.",
+    "terminal": true
+  },
+  {
+    "id": "loess",
+    "name": "Loess",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Wind-blown dust that landed and stayed. It weathers into some of the most productive farmland there is.",
+    "terminal": true
+  },
+  {
+    "id": "fulgurite",
+    "name": "Fulgurite",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A glass tube left in the ground by a lightning strike, following the path the current took down.",
+    "terminal": true
   }
 ]

@@ -1798,16 +1798,6 @@
   },
   {
     "in": [
-      "sea",
-      "stone"
-    ],
-    "out": "limestone",
-    "supported": true,
-    "why": "Limestone is compacted seabed: the shells and skeletons of sea creatures, piled up and pressed for millions of years.",
-    "src": "https://en.wikipedia.org/wiki/Limestone"
-  },
-  {
-    "in": [
       "limestone",
       "clay"
     ],
@@ -3625,16 +3615,6 @@
     "why": "Charcoal burns far hotter than wood. A charcoal-fired kiln reaches the 1,100 to 1,300 °C that vitrifies stoneware, which an open wood fire never will.",
     "src": "https://en.wikipedia.org/wiki/Stoneware",
     "verified": true
-  },
-  {
-    "in": [
-      "sea",
-      "sand"
-    ],
-    "out": "limestone",
-    "why": "Shell sand is limestone in the making: crushed shell and coral, waiting to be buried and pressed.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Limestone"
   },
   {
     "in": [
@@ -6714,5 +6694,585 @@
     "why": "Bone is about 30% flexible matrix and 70% bound mineral. The collagen gives it tensile strength and its elasticity resists fracture; the calcium phosphate gives it compressive strength. Neither alone would do — the effects are synergistic.",
     "src": "https://en.wikipedia.org/wiki/Bone",
     "verified": true
+  },
+  {
+    "in": [
+      "egg"
+    ],
+    "verb": "crush",
+    "out": "shell",
+    "why": "The chicken eggshell is 95 to 97% calcium carbonate crystals held in a protein matrix — the same mineral, calcite, that shells and limestone are built from.",
+    "src": "https://en.wikipedia.org/wiki/Eggshell",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "sea"
+    ],
+    "out": "shell",
+    "why": "Molluscs carry an outer layer of tissue called the mantle, and its specialised cells build the shell from minerals and proteins taken from the water around them. Calcium carbonate is the main compound of the structure.",
+    "src": "https://en.wikipedia.org/wiki/Seashell",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell"
+    ],
+    "verb": "wait",
+    "out": "limestone",
+    "why": "Most grains in limestone are skeletal fragments of marine organisms, left behind when the animals died. Buried under everything that settled after them, pressure dissolves the points where grains touch and redeposits the mineral in the gaps; past about a kilometre down, cementation finishes the job.",
+    "src": "https://en.wikipedia.org/wiki/Limestone",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "carbon_dioxide"
+    ],
+    "out": "limestone",
+    "why": "Limestone need not be built by anything alive. Calcite precipitates straight out of water holding dissolved calcium, and a rise in temperature or a drop in pressure — either of which drives off dissolved CO2 — is what tips it out of solution.",
+    "src": "https://en.wikipedia.org/wiki/Limestone",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "stone"
+    ],
+    "out": "sand",
+    "why": "Waves throw loose rock against itself, and the pieces grind and chip each other progressively smaller, smoother and rounder.",
+    "src": "https://en.wikipedia.org/wiki/Coastal_erosion",
+    "supported": true
+  },
+  {
+    "in": [
+      "harvest"
+    ],
+    "verb": "blow",
+    "out": "grain",
+    "why": "Threshing breaks the ear apart but leaves grain and chaff mixed together. Air sorts them by weight — the light chaff blows aside and the heavy grain falls straight back down.",
+    "src": "https://en.wikipedia.org/wiki/Winnowing",
+    "verified": true
+  },
+  {
+    "in": [
+      "charcoal"
+    ],
+    "verb": "blow",
+    "out": "forge",
+    "why": "Fuel cannot burn faster than air reaches it. Force a draught through charcoal and the rate of combustion climbs with the air supply, which is why a smith's hearth has a pipe into the fire and something pumping at the other end.",
+    "src": "https://en.wikipedia.org/wiki/Forge",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish"
+    ],
+    "verb": "blow",
+    "out": "stockfish",
+    "why": "No salt and no smoke, only cold moving air. About 80% of the water leaves the fish while it hangs on the racks from February to May, and what is left keeps for years.",
+    "src": "https://en.wikipedia.org/wiki/Stockfish",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass"
+    ],
+    "verb": "blow",
+    "out": "bottle",
+    "why": "Hot glass is stiff enough to hold a shape and soft enough to stretch, so a puff of air down a hollow pipe opens a bubble inside a lump of it. Phoenician and Syrian craftsmen had the technique in the first century BC.",
+    "src": "https://en.wikipedia.org/wiki/Glassblowing",
+    "verified": true
+  },
+  {
+    "in": [
+      "candle"
+    ],
+    "verb": "blow",
+    "out": "smoke",
+    "why": "A blown-out candle leaves the wick smouldering, and that smouldering wick is where the trail of smoke comes from. A snuffer puts the flame out by depriving it of oxygen instead, and leaves no trail.",
+    "src": "https://en.wikipedia.org/wiki/Candle_snuffer",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower"
+    ],
+    "verb": "blow",
+    "out": "seed",
+    "why": "About one plant in eight skips insects and posts its pollen into the air instead. Those flowers are small, scentless and offer no nectar, because there is nobody to advertise to — the grains go out by the myriad and a small percentage land where they are needed.",
+    "src": "https://en.wikipedia.org/wiki/Anemophily",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire"
+    ],
+    "verb": "smother",
+    "out": "smoke",
+    "why": "A flame burns in the gas above the fuel, and it needs a steady oxygen supply to stay there. Cut that off and what survives is combustion on the fuel's own surface — slow, flameless, and giving off carbon monoxide at a higher yield than a flaming fire does.",
+    "src": "https://en.wikipedia.org/wiki/Smouldering",
+    "supported": true
+  },
+  {
+    "in": [
+      "bone"
+    ],
+    "verb": "smother",
+    "out": "bone_char",
+    "why": "Bone heated in a sealed vessel chars instead of burning. The oxygen has to be kept low, because what suffers first is the adsorption capacity — and that porosity is the whole reason the stuff is worth making.",
+    "src": "https://en.wikipedia.org/wiki/Bone_char",
+    "verified": true
+  },
+  {
+    "in": [
+      "tempered_clay"
+    ],
+    "verb": "smother",
+    "out": "blackware",
+    "why": "Shut a kiln's vents and the flames, short of oxygen, start taking it from the iron oxide in the pottery itself. The fabric of the clay changes colour from its natural red to black.",
+    "src": "https://en.wikipedia.org/wiki/Bucchero",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen",
+      "oxygen"
+    ],
+    "out": "air",
+    "why": "Dry air is 78.08% nitrogen and 20.95% oxygen, with argon at 0.93% and carbon dioxide at 0.04% making up almost all of the last one per cent.",
+    "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas"
+    ],
+    "verb": "wait",
+    "out": "air",
+    "why": "There was no free oxygen in the air until about 2.4 billion years ago. Cyanobacteria split water for photosynthesis and let the oxygen go as waste, and even by the end of the Great Oxidation Event it had only reached about a tenth of today's level.",
+    "src": "https://en.wikipedia.org/wiki/Great_Oxidation_Event",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "sun"
+    ],
+    "out": "sky",
+    "why": "Air throws short wavelengths sideways far harder than long ones — the scattering coefficient goes as one over the fourth power of the wavelength. Blue ends up spread across the whole dome; red mostly carries straight on through.",
+    "src": "https://en.wikipedia.org/wiki/Diffuse_sky_radiation",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen",
+      "sun"
+    ],
+    "out": "sky",
+    "why": "The scattering is done by the air's own molecules — the diatomic gases N2 and O2 — not by dust and not by water vapour. Nitrogen alone is 78.08% of the air.",
+    "src": "https://en.wikipedia.org/wiki/Diffuse_sky_radiation",
+    "verified": true
+  },
+  {
+    "in": [
+      "air"
+    ],
+    "verb": "heat",
+    "out": "wind",
+    "why": "Warm air is less dense than the air around it, so it rises and cooler air slides in underneath. Wind is that pressure difference levelling itself out.",
+    "src": "https://en.wikipedia.org/wiki/Wind",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "sea"
+    ],
+    "out": "wind",
+    "why": "Sea water has a greater heat capacity than land, so on a sunny day the shore warms and the water barely does. The air over the land rises, and the breeze that comes in off the sea is stronger the wider that temperature gap gets.",
+    "src": "https://en.wikipedia.org/wiki/Sea_breeze",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand"
+    ],
+    "verb": "crush",
+    "out": "dust",
+    "why": "Ground finer than sand and coarser than clay, quartz stops being sand and becomes silt. That is mostly how silt gets made in the first place — grain hitting grain while wind, water or ice moves them.",
+    "src": "https://en.wikipedia.org/wiki/Silt",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "wind"
+    ],
+    "out": "dust",
+    "why": "Wind lifts loose dry material straight off the surface — deflation. Roughly half to two thirds of what it takes goes by saltation: grains bouncing along and knocking others loose as they land.",
+    "src": "https://en.wikipedia.org/wiki/Aeolian_processes",
+    "verified": true
+  },
+  {
+    "in": [
+      "dust",
+      "steam"
+    ],
+    "out": "cloud",
+    "why": "Water vapour will not become a droplet on its own; it needs a surface to land on. Cloud condensation nuclei are about 0.2 micrometres across — a hundredth the size of the droplet that grows on them — and dust, clay, soot and sea salt all serve.",
+    "src": "https://en.wikipedia.org/wiki/Cloud_condensation_nuclei",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "steam"
+    ],
+    "out": "cloud",
+    "why": "Air that rises expands, and expanding cools it without any heat being taken away. Lift a parcel of damp air far enough and it reaches its dew point, and the vapour it was carrying invisibly turns into drops.",
+    "src": "https://en.wikipedia.org/wiki/Cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "steam"
+    ],
+    "out": "mist",
+    "why": "Warm damp air meeting sudden cold condenses in mid-air rather than on a surface, and the droplets are small enough to hang there. Breath on a winter morning is the same thing at arm's length.",
+    "src": "https://en.wikipedia.org/wiki/Mist",
+    "verified": true
+  },
+  {
+    "in": [
+      "fog",
+      "sun"
+    ],
+    "out": "mist",
+    "why": "Fog and mist are the same droplets. The only thing separating them is visibility: under a kilometre it is fog, and once the sun has evaporated enough of the droplets away for sight to carry further, the same cloud is called mist.",
+    "src": "https://en.wikipedia.org/wiki/Fog",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "soil"
+    ],
+    "out": "fog",
+    "why": "Fog is not its own kind of weather. It is a low stratus cloud that has come down to the ground, and it loses its Latin name the moment it touches.",
+    "src": "https://en.wikipedia.org/wiki/Cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "river"
+    ],
+    "out": "fog",
+    "why": "Cold air moving over water warmer than itself picks up vapour it immediately cannot hold. The fog looks like it is rising off the surface, which is why sailors call it sea smoke.",
+    "src": "https://en.wikipedia.org/wiki/Fog",
+    "verified": true
+  },
+  {
+    "in": [
+      "air"
+    ],
+    "verb": "chill",
+    "out": "dew",
+    "why": "Cool air past the point where it can hold its vapour and the surplus comes out as liquid on whatever is nearest. That temperature has a name: the dew point.",
+    "src": "https://en.wikipedia.org/wiki/Dew",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "grass"
+    ],
+    "out": "dew",
+    "why": "Grass, leaves and car roofs are not warmed from below by the ground, so on a still night they radiate their heat away and drop past the dew point first. A windy night brings warmer air down onto them and there is no dew at all.",
+    "src": "https://en.wikipedia.org/wiki/Dew",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "ice"
+    ],
+    "out": "frost",
+    "why": "Frost is not frozen dew. Water vapour goes straight from gas to ice on a surface that is below freezing, skipping the liquid stage entirely.",
+    "src": "https://en.wikipedia.org/wiki/Frost",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass"
+    ],
+    "verb": "chill",
+    "out": "frost",
+    "why": "On a clear, still night the ground loses heat to space faster than anything replaces it, so grass and leaves cool below the frost point of the air touching them — colder than the air itself.",
+    "src": "https://en.wikipedia.org/wiki/Frost",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "cloud"
+    ],
+    "out": "rain",
+    "why": "Droplets in a cloud are far too light to fall. Turbulence throws them into each other, they fuse into bigger ones, and once a drop is heavy enough to beat air resistance it comes down.",
+    "src": "https://en.wikipedia.org/wiki/Rain",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow"
+    ],
+    "verb": "heat",
+    "out": "rain",
+    "why": "Much of the rain that lands on you arrived as snow. Ice crystals in a freezing cloud grow heavy enough to fall, then melt on the way down through warmer air.",
+    "src": "https://en.wikipedia.org/wiki/Rain",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud"
+    ],
+    "verb": "chill",
+    "out": "snow",
+    "why": "Ice nuclei are far rarer than the nuclei droplets form on, so a cloud can sit well below freezing and still be liquid. Where a crystal does start, water molecules diffuse through the air and freeze onto its surface.",
+    "src": "https://en.wikipedia.org/wiki/Snow",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "ice"
+    ],
+    "out": "snow",
+    "why": "In a cloud holding both ice crystals and supercooled droplets, the ice wins. Crystals grow at the expense of the droplets around them until they are millimetres across and heavy — the Wegener–Bergeron–Findeisen process.",
+    "src": "https://en.wikipedia.org/wiki/Snow",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "sun"
+    ],
+    "out": "storm",
+    "why": "A thunderstorm wants three things: moisture, an unstable air mass, and something to lift it. Sun on the ground supplies the lift, as thermals that keep rising because they stay less dense than what surrounds them.",
+    "src": "https://en.wikipedia.org/wiki/Thunderstorm",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "wind"
+    ],
+    "out": "storm",
+    "why": "Wind that changes with height — vertical shear — is what lets a storm organise and go on for hours instead of minutes. The strongest kind it produces, the supercell, is the one that brings large hail and tornadoes.",
+    "src": "https://en.wikipedia.org/wiki/Thunderstorm",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "storm"
+    ],
+    "out": "lightning",
+    "why": "Charge separates where the updraught is fastest and the cloud is between −15 and −25 °C. Rising ice crystals collide with graupel; the crystals come away positive and the graupel negative, and the cloud ends up sorted top from bottom.",
+    "src": "https://en.wikipedia.org/wiki/Lightning",
+    "verified": true
+  },
+  {
+    "in": [
+      "dust",
+      "storm"
+    ],
+    "out": "lightning",
+    "why": "A thundercloud is not the only place charge separates. Lightning also happens in dust storms, forest fires, tornadoes and volcanic eruptions.",
+    "src": "https://en.wikipedia.org/wiki/Lightning",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "lightning"
+    ],
+    "out": "thunder",
+    "why": "The channel reaches about 30,000 K in the 50 microseconds it exists. Air that hot expands faster than sound can get out of its way, and the pulse that leaves is a shock wave.",
+    "src": "https://en.wikipedia.org/wiki/Thunder",
+    "verified": true
+  },
+  {
+    "in": [
+      "lightning"
+    ],
+    "verb": "wait",
+    "out": "thunder",
+    "why": "Light arrives at once and sound does not. Sound covers about 343 metres a second in dry air, so roughly three seconds pass for every kilometre between you and the flash.",
+    "src": "https://en.wikipedia.org/wiki/Thunder",
+    "verified": true
+  },
+  {
+    "in": [
+      "storm",
+      "wind"
+    ],
+    "out": "hail",
+    "why": "A hailstone keeps climbing until the updraught can no longer carry its weight, and in a hail-producing storm that can take half an hour of going up and down.",
+    "src": "https://en.wikipedia.org/wiki/Hail",
+    "verified": true
+  },
+  {
+    "in": [
+      "storm"
+    ],
+    "verb": "chill",
+    "out": "hail",
+    "why": "Hail needs a storm with a good part of its cloud below 0 °C. Droplets carried up there become supercooled and freeze on contact, laying down layers of clear and cloudy ice at least a millimetre thick.",
+    "src": "https://en.wikipedia.org/wiki/Hail",
+    "verified": true
+  },
+  {
+    "in": [
+      "rain",
+      "sun"
+    ],
+    "out": "rainbow",
+    "why": "Light refracts going into a raindrop, reflects off the back, and refracts again coming out, and each colour bends by a slightly different amount. Most of it returns at 42°, which is why a rainbow is always the same size and always opposite the sun.",
+    "src": "https://en.wikipedia.org/wiki/Rainbow",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen",
+      "oxygen_gas"
+    ],
+    "out": "ozone",
+    "why": "A loose oxygen atom joins an O2 molecule to make O3, with a third body carrying off the spare energy. High in the atmosphere it is ultraviolet below 240 nm that splits O2 to supply those loose atoms.",
+    "src": "https://en.wikipedia.org/wiki/Ozone",
+    "verified": true
+  },
+  {
+    "in": [
+      "lightning",
+      "oxygen_gas"
+    ],
+    "out": "ozone",
+    "why": "Ozone is named for its smell — ozein, Greek for 'to smell'. Schönbein got that sharp odour out of sparking electricity through air and recognised it as the one that follows a bolt of lightning.",
+    "src": "https://en.wikipedia.org/wiki/Ozone",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "storm"
+    ],
+    "out": "hurricane",
+    "why": "A tropical cyclone runs on warm water. The thunderstorms that build one need sea surface temperatures around 27 °C, and the cyclone starts to die once it moves over water much below 26.5 °C.",
+    "src": "https://en.wikipedia.org/wiki/Tropical_cyclone",
+    "verified": true
+  },
+  {
+    "in": [
+      "steam",
+      "storm"
+    ],
+    "out": "hurricane",
+    "why": "The energy does not come from the wind. It comes from evaporation of water off the ocean surface, which condenses into cloud and rain higher up — the wind is what that release drives, not what drives it.",
+    "src": "https://en.wikipedia.org/wiki/Tropical_cyclone",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "wind"
+    ],
+    "out": "blizzard",
+    "why": "In a ground blizzard nothing is falling at all. The snow is already on the ground and the wind is picking it up and carrying it, and that alone is enough to take visibility down to 400 m.",
+    "src": "https://en.wikipedia.org/wiki/Blizzard",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "storm"
+    ],
+    "out": "blizzard",
+    "why": "A blizzard is defined by wind, not by how much snow falls: sustained winds or gusts of 56 km/h or more, blowing snow cutting visibility to 400 m or less, and three hours or more of it.",
+    "src": "https://en.wikipedia.org/wiki/Blizzard",
+    "verified": true
+  },
+  {
+    "in": [
+      "rain",
+      "river"
+    ],
+    "out": "flood",
+    "why": "A river floods when its flow exceeds what the channel can carry — usually at a bend. Once the surface soil is saturated, infiltration effectively stops and everything that lands afterwards runs off.",
+    "src": "https://en.wikipedia.org/wiki/Flood",
+    "verified": true
+  },
+  {
+    "in": [
+      "hurricane",
+      "sea"
+    ],
+    "out": "flood",
+    "why": "Storm surge is the coast flooding because the storm pushed the sea into it: high wind driving water shoreward over a long fetch, and low pressure lifting the sea surface underneath it at the same time.",
+    "src": "https://en.wikipedia.org/wiki/Storm_surge",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "wind"
+    ],
+    "out": "dune",
+    "why": "Sand hitting sand tends to stick where sand hitting hard ground bounces away, so a patch of sand grows itself. Grains bounce up the windward slope, pile at the brink, and avalanche down the far side once the angle of repose is passed — which is how a dune walks downwind.",
+    "src": "https://en.wikipedia.org/wiki/Aeolian_processes",
+    "verified": true
+  },
+  {
+    "in": [
+      "dust"
+    ],
+    "verb": "wait",
+    "out": "loess",
+    "why": "Loess is nothing but wind-blown dust that landed and stayed. It is mostly silt, and what it weathers into is some of the most agriculturally productive ground on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Loess",
+    "verified": true
+  },
+  {
+    "in": [
+      "dust",
+      "wind"
+    ],
+    "out": "loess",
+    "why": "Silt-sized grains stay fully suspended rather than bouncing, so wind carries them right out of the desert or the glacial floodplain and drops them far downwind as a blanket. In north-western China that blanket runs over a hundred metres deep.",
+    "src": "https://en.wikipedia.org/wiki/Loess",
+    "verified": true
+  },
+  {
+    "in": [
+      "lightning",
+      "sand"
+    ],
+    "out": "fulgurite",
+    "why": "Lightning going into the ground vaporises and melts the silica it passes through, and what cools behind it is a hollow glass tube following the path the current took. Peak temperature in the channel exceeds 30,000 K.",
+    "src": "https://en.wikipedia.org/wiki/Fulgurite",
+    "verified": true
+  },
+  {
+    "in": [
+      "lightning",
+      "stone"
+    ],
+    "out": "fulgurite",
+    "why": "It does not need sand. A strike on bare rock leaves a glassy crust, or tunnels running through the rock, or in places rock turned wholly to glass.",
+    "src": "https://en.wikipedia.org/wiki/Fulgurite",
+    "supported": true
   }
 ]

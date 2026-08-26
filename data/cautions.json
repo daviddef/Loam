@@ -164,6 +164,33 @@
       "ids": [
         "calcium"
       ]
+    },
+    "lightning": {
+      "label": "Thunder is the sound of something already close",
+      "note": "A lightning channel carries current through air heated to tens of thousands of degrees, and a strike does not have to hit a person to injure one — current spreads outward through the ground and through anything that conducts. Thunder is that channel being heard, so hearing it means the storm is already within range of it.",
+      "ids": [
+        "lightning",
+        "thunder",
+        "storm",
+        "fulgurite"
+      ]
+    },
+    "severe_weather": {
+      "label": "Weather that kills people",
+      "note": "Flood, storm surge, hurricane, blizzard and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land.",
+      "ids": [
+        "flood",
+        "hurricane",
+        "blizzard",
+        "hail"
+      ]
+    },
+    "ozone": {
+      "label": "Ozone is not fresh air",
+      "note": "The clean smell after a thunderstorm is a toxic gas. The same oxidising power that makes ozone useful for disinfecting is what damages mucous and respiratory tissue in animals, and plant tissue too, above about 0.1 ppm — around the level that already produces headaches and burning eyes.",
+      "ids": [
+        "ozone"
+      ]
     }
   }
 }
