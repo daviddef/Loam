@@ -3258,8 +3258,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "A monk grew several thousand of these, counted what came out, and got modern genetics.",
-    "terminal": true
+    "fact": "A monk grew several thousand of these, counted what came out, and got modern genetics."
   },
   {
     "id": "carrot",
@@ -8387,5 +8386,337 @@
       "crop"
     ],
     "fact": "Nearly half the honeybee hives in the US are trucked to California each February, for this one crop."
+  },
+  {
+    "id": "drupe",
+    "name": "Drupe",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Stone fruit. The stone is hardened ovary wall, not seed coat — and that test rules out most nuts."
+  },
+  {
+    "id": "mango",
+    "name": "Mango",
+    "emoji": "🥭",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A drupe in the cashew family. Its skin and sap carry the oil that makes poison ivy poison ivy."
+  },
+  {
+    "id": "urushiol",
+    "name": "Urushiol",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "hazard"
+    ],
+    "terminal": true,
+    "fact": "The oil in poison ivy. Also in mango skin, leaves and sap, and in the shell of a raw cashew."
+  },
+  {
+    "id": "sumac",
+    "name": "Sumac",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A whole dried fruit, ground. Sour from malic acid, and Rome used it where we now use lemon."
+  },
+  {
+    "id": "walnut",
+    "name": "Walnut",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a true nut, and not quite a drupe. The shell is the stone; the green husk is not part of the fruit."
+  },
+  {
+    "id": "juglone",
+    "name": "Juglone",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "2–4% of a fresh walnut husk. Stains hands brown and stops other plants growing under the tree."
+  },
+  {
+    "id": "black_pepper",
+    "name": "Black Pepper",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A vine's unripe drupe. It is cooked before drying, and that is why the corn goes black."
+  },
+  {
+    "id": "piperine",
+    "name": "Piperine",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Pepper's heat. It opens the same channel capsaicin does, from a plant that is no relation."
+  },
+  {
+    "id": "jalapeno",
+    "name": "Jalapeño",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A pod type, not a species. Same plant as the sweet bell pepper, picked green and hotter if left red."
+  },
+  {
+    "id": "chipotle",
+    "name": "Chipotle",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "terminal": true,
+    "fact": "A smoked red jalapeño. Ten pounds of fresh pepper go in and one pound comes out."
+  },
+  {
+    "id": "cumin",
+    "name": "Cumin",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "terminal": true,
+    "fact": "The seed is a whole dried fruit. Same family as carrot, celery, parsley and dill."
+  },
+  {
+    "id": "marjoram",
+    "name": "Marjoram",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Origanum majorana. Oregano is the other species in the genus, and its other name is wild marjoram."
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The Navy swapped lemon for lime and scurvy came back. Lime juice is the far weaker cure."
+  },
+  {
+    "id": "makrut_lime",
+    "name": "Makrut Lime",
+    "emoji": "🍋",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "terminal": true,
+    "fact": "The leaf is the crop, not the fruit. It looks like two leaves because the stalk is winged."
+  },
+  {
+    "id": "rhizome",
+    "name": "Rhizome",
+    "emoji": "🫚",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A stem that runs sideways underground. It has nodes and buds; a root has neither."
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "emoji": "🫚",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "food"
+    ],
+    "fact": "A rhizome, not a root, and turmeric's close relative. No wild form is left — every plant is a cutting."
+  },
+  {
+    "id": "gingerol",
+    "name": "Gingerol",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Fresh ginger's heat: a yellow oil in the rhizome. Drying wrecks it into something hotter."
+  },
+  {
+    "id": "shogaol",
+    "name": "Shogaol",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "160,000 Scoville. Why dried ginger bites harder than fresh — it is not the same molecule."
+  },
+  {
+    "id": "celery",
+    "name": "Celery",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The strings are collenchyma, bundled outside the veins. A marsh umbellifer, like carrot and cumin."
+  },
+  {
+    "id": "raisin",
+    "name": "Raisin",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "terminal": true,
+    "fact": "A grape resists drying. Its skin is waxed against water loss, which is the whole difficulty."
+  },
+  {
+    "id": "lentil",
+    "name": "Lentil",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "terminal": true,
+    "fact": "The optical lens is named after this seed, not the other way round. Latin lens meant lentil first."
+  },
+  {
+    "id": "split_pea",
+    "name": "Split Pea",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "It splits where it was always going to: down the seam between its two cotyledons."
+  },
+  {
+    "id": "farro",
+    "name": "Farro",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Not one grain. Einkorn, emmer or spelt — hulled wheats that will not thresh clean."
+  },
+  {
+    "id": "sunflower",
+    "name": "Sunflower",
+    "emoji": "🌻",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Mature heads do not follow the sun. They stop, facing east, and the morning warmth brings pollinators."
+  },
+  {
+    "id": "oil",
+    "name": "Oil",
+    "emoji": "🫗",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Generic vegetable oil. Deodorised at 232 °C, which is why the bottle need not name a plant."
+  },
+  {
+    "id": "vitamin_a",
+    "name": "Vitamin A",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Retinol. One reduction step from retinal, and the liver stores it as an ester until asked."
+  },
+  {
+    "id": "vitamin_d",
+    "name": "Vitamin D",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Not a vitamin. UVB builds it in your skin from a cholesterol precursor, so it is a hormone you make."
+  },
+  {
+    "id": "soy_sauce",
+    "name": "Soy Sauce",
+    "emoji": "🍶",
+    "shelf": "workshop",
+    "tags": [
+      "ferment",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Koji, brine and months. 17–20% salt, so only the halophiles get to work."
+  },
+  {
+    "id": "candied_fruit",
+    "name": "Candied Fruit",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "terminal": true,
+    "fact": "Sugar traded for water, a little stronger each week, until nothing can grow in it."
+  },
+  {
+    "id": "coconut_sugar",
+    "name": "Coconut Sugar",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "sweet",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Tapped from the cut flower stem, not the nut. Sap that is 80% water, boiled down."
   }
 ]

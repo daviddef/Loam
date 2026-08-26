@@ -2859,6 +2859,109 @@ def('almond',     () => [P('M30 8 Q46 22 42 38 Q36 50 30 50 Q24 50 18 38 Q14 22 
                          P('M30 14 Q41 24 38 37 Q34 45 30 45 Q26 45 22 37 Q19 24 30 14 Z', 'hi'),
                          ...[24, 30, 36].map(x => S(`M${x} 20 Q${x - 2} 32 ${x} 42`, 'lo', 1.2))]);
 
+
+/* the last of the packet ────────────────────────────────────────────────
+   Aimed at twenty-eight ingredients that real labels used and the game could
+   not name. Drawn as the part you would actually recognise: a rhizome is a
+   knuckle, a drupe is a stone in flesh, a lentil is a lens. */
+def('drupe',   () => [E(30, 32, 18, 19, 'bs'), E(30, 34, 9, 10, 'gh'),
+                      S('M30 13 L30 6', 'lo', 2.4), leaf('lo', 40, 10, .5, 40)]);   // flesh, then a stone
+def('mango',   () => [P('M18 18 Q8 32 16 46 Q28 54 40 46 Q50 34 42 20 Q30 12 18 18 Z', 'hi'),
+                      P('M24 24 Q18 34 24 44 Q30 48 34 44', 'lo') && S('M24 24 Q18 34 24 44', 'lo', 2),
+                      S('M34 14 L38 6', 'lo', 2.4)]);
+def('urushiol',() => [hex('ik', 22, 26, 10, 2.2), (() => backbone('ik', 5, 38, 40).shape)(),
+                      C(10, 20, 4, 'bs'), C(14, 34, 4, 'bs')]);                      // the catechol, and its tail
+def('sumac',   () => [...[0, 1, 2, 3].map(i =>
+                        P(`M${30 - (14 - i * 3)} ${46 - i * 9} L${30 + (14 - i * 3)} ${46 - i * 9} L30 ${36 - i * 9} Z`, 'bs')),
+                      S('M30 54 L30 46', 'lo', 3),
+                      ...granules('lo', 6, 19, [20, 20, 40, 44])]);                  // the upright cone of drupes
+def('walnut',  () => [C(30, 32, 18, 'lo'),
+                      S('M30 14 L30 50', 'ground', 2.4),
+                      S('M22 20 Q28 30 22 42', 'ik', 1.8), S('M38 20 Q32 30 38 42', 'ik', 1.8),
+                      S('M16 26 Q24 32 16 38', 'ik', 1.4), S('M44 26 Q36 32 44 38', 'ik', 1.4)]);
+def('juglone', () => [hex('ik', 26, 30, 11, 2.2), C(40, 20, 4.4, 'bs'), C(40, 42, 4.4, 'bs'),
+                      ...double([34, 24], [40, 20], 'ik')]);
+def('black_pepper', () => [...[[20, 26], [34, 22], [26, 38], [40, 36], [30, 48]].map(([x, y]) =>
+                            [C(x, y, 6, 'ik'), C(x - 2, y - 2, 1.8, 'lo')]).flat()]);
+def('piperine',() => [hex('ik', 16, 28, 9, 2), (() => backbone('ik', 3, 34, 32).shape)(),
+                      ring('ik', 50, 38, 6, 2), C(8, 20, 3.4, 'bs')]);
+def('jalapeno',() => [P('M26 12 Q14 22 16 34 Q18 48 30 52 Q42 48 44 34 Q46 22 34 12 Z', 'avocado') && 0,
+                      P('M26 12 Q16 24 18 36 Q22 50 30 52 Q40 48 42 34 Q44 22 34 12 Z', 'bs'),
+                      S('M30 12 L30 4', 'lo', 3), E(30, 11, 7, 3, 'lo'),
+                      S('M24 22 Q20 34 24 44', 'hi', 1.6)]);
+def('chipotle',() => [P('M24 14 Q16 26 20 38 Q26 50 32 50 Q40 44 40 32 Q42 20 32 14 Z', 'ik'),
+                      ...[22, 30, 38].map(y => S(`M${22 + (y - 22) * .2} ${y} Q30 ${y - 3} ${38 - (y - 22) * .2} ${y}`, 'lo', 1.4)),
+                      ...[26, 34].map(x => S(`M${x} 10 Q${x - 3} 4 ${x} -2`, 'gh', 1.8))]);   // wrinkled, and smoked
+def('cumin',   () => [...[[20, 24, -20], [32, 20, 10], [26, 36, -8], [38, 34, 18], [30, 46, 0]]
+                        .map(([x, y, r]) => ['g', r, x, y, [
+                          P(`M${x} ${y - 8} Q${x + 4} ${y} ${x} ${y + 8} Q${x - 4} ${y} ${x} ${y - 8} Z`, 'lo'),
+                          S(`M${x} ${y - 7} L${x} ${y + 7}`, 'ik', 1)]])]);           // ridged crescent seeds
+def('marjoram',() => [S('M30 54 L30 20', 'lo', 2.4),
+                      ...[[22, 24], [38, 26], [24, 34], [36, 36], [28, 44]].map(([x, y]) =>
+                        leaf('hi', x, y, .45, x < 30 ? -40 : 40)),
+                      C(30, 16, 4, 'hi')]);
+def('lime',    () => [C(30, 32, 18, 'hi'), C(30, 32, 14, 'gh'),
+                      ...Array.from({ length: 8 }, (_, i) =>
+                        ['g', i * 45, 30, 32, [S('M30 20 L30 32', 'hi', 1.4)]]),
+                      S('M30 14 L32 7', 'lo', 2.4)]);                                 // cut across
+def('makrut_lime', () => [P('M30 8 Q42 14 40 26 Q38 34 30 32 Q22 34 20 26 Q18 14 30 8 Z', 'lo'),
+                          P('M30 32 Q42 38 40 48 Q38 54 30 54 Q22 54 20 48 Q18 38 30 32 Z', 'lo'),
+                          S('M30 8 L30 54', 'ik', 1.6)]);                             // the double leaf
+def('rhizome', () => [P('M8 34 Q16 26 24 32 Q32 38 40 30 Q48 24 54 32', 'hi') && S('M8 34 Q16 26 24 32 Q32 38 40 30 Q48 24 54 32', 'hi', 10),
+                      ...[[18, 26], [34, 26], [46, 24]].map(([x, y]) => S(`M${x} ${y} L${x + 2} ${y - 8}`, 'lo', 2.4))]);  // buds, not root hairs
+def('ginger',  () => [P('M10 36 Q18 28 26 34 Q34 40 42 32 Q50 26 54 34', 'gh') && S('M10 36 Q18 28 26 34 Q34 40 42 32 Q50 26 54 34', 'gh', 11),
+                      S('M26 34 L24 48', 'gh', 7),
+                      ...[[18, 28], [40, 26]].map(([x, y]) => C(x, y, 2.6, 'lo'))]);
+// Shogaol is gingerol with one water taken out, and the double bond is what is
+// left where it went. Drawn so that difference is the loudest thing on each
+// card: gingerol wears its hydroxyl as a big marked ball; shogaol wears the
+// bond instead, on a chain that has straightened out because of it.
+def('gingerol',() => [hex('ik', 18, 22, 9, 2),
+                      S('M26 28 L34 38 L44 34 L52 44', 'ik', 2.4),
+                      C(34, 38, 7, 'hi'), S('M34 38 L34 50', 'ik', 2), C(34, 52, 4.4, 'bs'),
+                      C(9, 14, 3.4, 'bs')]);
+def('shogaol', () => [hex('ik', 18, 40, 9, 2),
+                      S('M26 34 L38 30 L50 26', 'ik', 2.4),
+                      ...double([26, 34], [38, 30], 'bs'),
+                      C(52, 22, 4.4, 'hi'), C(9, 48, 3.4, 'bs')]);
+def('celery',  () => [...[20, 30, 40].map((x, i) =>
+                        [S(`M${x} 52 Q${x - 2 + i} 34 ${x} 16`, 'hi', 5),
+                         S(`M${x} 50 Q${x - 1 + i} 34 ${x} 20`, 'lo', 1.4)]).flat(),
+                      ...[[18, 12], [30, 8], [42, 12]].map(([x, y]) => leaf('lo', x, y, .5, 0))]);
+def('raisin',  () => [...[[22, 26], [36, 24], [28, 38], [40, 40], [20, 42]].map(([x, y]) =>
+                        [E(x, y, 7, 5.4, 'ik'),
+                         S(`M${x - 4} ${y - 1} Q${x} ${y + 2} ${x + 4} ${y - 1}`, 'lo', 1.2),
+                         S(`M${x - 3} ${y + 2} Q${x} ${y - 1} ${x + 3} ${y + 2}`, 'lo', 1)]).flat()]);  // wrinkled
+def('lentil',  () => [...[[20, 24], [34, 22], [26, 36], [40, 34], [30, 48]].map(([x, y]) =>
+                        [E(x, y, 8, 5, 'hi'), S(`M${x - 8} ${y} L${x + 8} ${y}`, 'lo', 1.2)]).flat()]);  // a lens, edge on
+def('split_pea', () => [...[[20, 26], [36, 24], [26, 38], [42, 38], [30, 50]].map(([x, y]) =>
+                          [P(`M${x - 7} ${y} A7 7 0 0 1 ${x + 7} ${y} Z`, 'hi'),
+                           S(`M${x - 7} ${y} L${x + 7} ${y}`, 'lo', 1.4)]).flat()]);   // halved, flat side down
+def('farro',   () => [...[[22, 20], [34, 18], [26, 32], [38, 30], [22, 44], [36, 44]].map(([x, y], i) =>
+                        grain('lo', x, y, .95, i % 2 ? 18 : -18)),
+                      ...granules('hi', 4, 27, [16, 14, 44, 50])]);
+def('sunflower', () => [C(30, 30, 11, 'ik'),
+                        ...Array.from({ length: 12 }, (_, i) =>
+                          ['g', i * 30, 30, 30, [E(30, 13, 4.4, 8, 'hi')]]),
+                        ...granules('lo', 7, 33, [24, 24, 36, 36]),
+                        S('M30 41 L30 56', 'lo', 3)]);
+def('oil',     () => [P('M22 10 L38 10 L38 20 L44 30 L44 50 Q44 54 38 54 L22 54 Q16 54 16 50 L16 30 L22 20 Z', 'gh'),
+                      P('M17 32 L43 32 L44 50 Q44 54 38 54 L22 54 Q16 54 16 50 Z', 'hi'),
+                      E(30, 32, 13, 3, 'ground')]);
+def('vitamin_a', () => [(() => backbone('bs', 6, 32, 32).shape)(),
+                        ring('bs', 10, 30, 7, 2.2), C(54, 34, 4.4, 'hi')]);
+def('vitamin_d', () => [hex('ik', 20, 40, 9, 2), hex('ik', 34, 34, 9, 2),
+                        S('M40 28 L50 20', 'ik', 2.2), C(12, 50, 4, 'bs'),
+                        ...[[44, 10], [50, 14]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y - 5}`, 'hi', 2))]);  // sunlight makes it
+def('soy_sauce', () => [vessel('ik', 22, 48), P('M16 28 L44 28 L43 46 Q30 49 17 46 Z', 'lo'),
+                        E(30, 28, 14, 3, 'ground'),
+                        ...granules('gh', 3, 61, [22, 34, 38, 42])]);
+def('candied_fruit', () => [...[[22, 24], [36, 22], [28, 38], [40, 38]].map(([x, y]) =>
+                              [P(`M${x - 7} ${y} L${x} ${y - 7} L${x + 7} ${y} L${x} ${y + 7} Z`, 'bs'),
+                               ...granules('gh', 3, x * 7, [x - 6, y - 6, x + 6, y + 6])]).flat()]);
+def('coconut_sugar', () => [mound('lo', 46, 19, 17), ...granules('ik', 9, 53, [18, 34, 42, 46]),
+                            S('M22 22 Q30 14 38 22', 'hi', 2)]);                       // tapped from the blossom
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],

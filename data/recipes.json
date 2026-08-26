@@ -12274,5 +12274,445 @@
     "why": "Most planted almond varieties cannot fertilise themselves, so an orchard must mix varieties and rely on insects to carry pollen between them. California's bloom is the largest managed pollination event on Earth: over a million hives each February.",
     "src": "https://en.wikipedia.org/wiki/Almond",
     "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "stone"
+    ],
+    "out": "drupe",
+    "why": "Flesh outside, one seed inside a woody shell that the flower's own ovary wall built. Olive, cherry, coffee, mango and coconut are all this shape — the coconut's husk is only a drupe's flesh gone dry and fibrous.",
+    "src": "https://en.wikipedia.org/wiki/Drupe",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "stone"
+    ],
+    "out": "drupe",
+    "why": "The stone is the flower's own ovary wall, gone woody with lignin — the same stuff as timber. Some other fleshy fruits have a stony case around the seed, but it grows from the seed coat, and those are not drupes.",
+    "src": "https://en.wikipedia.org/wiki/Drupe",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "tree"
+    ],
+    "out": "mango",
+    "why": "Mangifera indica sits in Anacardiaceae beside cashew, pistachio and sumac. It is also an evolutionary anachronism: the animal big enough to swallow that stone and carry it off is extinct, so the tree depends on us.",
+    "src": "https://en.wikipedia.org/wiki/Mango",
+    "verified": true
+  },
+  {
+    "in": [
+      "mango"
+    ],
+    "verb": "cut",
+    "out": "urushiol",
+    "why": "Peeling is where people get caught. Urushiol is a catechol oil found across the cashew family — poison ivy, poison oak, and mango leaves, stems, sap and skin. It is too small to be seen alone, so it binds a skin protein first.",
+    "src": "https://en.wikipedia.org/wiki/Urushiol",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "sun"
+    ],
+    "out": "sumac",
+    "why": "Rhus coriaria's fruits are drupes, dried and milled whole — skin, flesh and stone — into a crimson powder. The sourness is malic acid, the same acid a cactus makes in the dark. Rome had it long before it had lemons.",
+    "src": "https://en.wikipedia.org/wiki/Sumac",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "wood"
+    ],
+    "out": "walnut",
+    "why": "The hard shell is the stone and the kernel inside it is the seed, but the green husk around the lot is an involucre — leaf tissue, not ovary wall. That one detail is why a walnut is called a drupe-like nut and not a drupe.",
+    "src": "https://en.wikipedia.org/wiki/Walnut",
+    "verified": true
+  },
+  {
+    "in": [
+      "walnut"
+    ],
+    "verb": "crush",
+    "out": "juglone",
+    "why": "Walnut roots, leaves, husks and bark leak juglone into the ground, and it stunts or kills what tries to grow there. In 1926 walnut trees standing in an alfalfa field killed the alfalfa and left the grass untouched.",
+    "src": "https://en.wikipedia.org/wiki/Juglone",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "vine"
+    ],
+    "out": "black_pepper",
+    "why": "Piper nigrum is a climbing vine and the peppercorn is its fruit. The green drupes are boiled briefly; the heat bursts the cell walls and frees enzymes that brown the skin as it dries. White pepper is the same fruit, ripe, skin rotted off.",
+    "src": "https://en.wikipedia.org/wiki/Black_pepper",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "vine"
+    ],
+    "out": "black_pepper",
+    "why": "White pepper is the same vine's fruit with the fruit taken off. Ripe red berries are soaked about a week until the flesh rots and rubs away, and the naked seed is dried. Take the skin off and the citrus and pine notes go with it.",
+    "src": "https://en.wikipedia.org/wiki/Black_pepper",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_pepper"
+    ],
+    "verb": "crush",
+    "out": "piperine",
+    "why": "Piperine and capsaicin both open TRPV1, the nerve channel that also reports scalding — which is why both read as heat. The plants are unrelated; Europeans called chillies pepper by mistake. By weight piperine is about 1% as hot.",
+    "src": "https://en.wikipedia.org/wiki/Piperine",
+    "verified": true
+  },
+  {
+    "in": [
+      "capsicum",
+      "chilli"
+    ],
+    "out": "jalapeno",
+    "why": "Bell, jalapeño, cayenne and paprika are all Capsicum annuum: one species carrying both the sweet pepper and the hot one. Jalapeños are picked green for market; left on the bush they turn red and get hotter.",
+    "src": "https://en.wikipedia.org/wiki/Jalape%C3%B1o",
+    "verified": true
+  },
+  {
+    "in": [
+      "jalapeno",
+      "smoke"
+    ],
+    "out": "chipotle",
+    "why": "Not a plant, a process. Ripe red jalapeños are smoked over pecan wood at 65–75 °C for six days and go from 88% water to 6%. Ten pounds in, one pound out. The Aztecs were doing this before the Spanish arrived.",
+    "src": "https://en.wikipedia.org/wiki/Chipotle",
+    "verified": true
+  },
+  {
+    "in": [
+      "jalapeno",
+      "fire"
+    ],
+    "out": "chipotle",
+    "why": "Traditionally done in an open oven in the field, and the wood chooses the flavour. Some producers now use large gas dryers and artificial smoke flavouring instead, which is quicker and makes a less flavourful chipotle.",
+    "src": "https://en.wikipedia.org/wiki/Chipotle",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "seed"
+    ],
+    "out": "cumin",
+    "why": "Cuminum cyminum is an umbellifer, family to carrot, celery, parsley and dill. What is sold as a cumin seed is the dried fruit, holding two mericarps with one seed each. It looks so like caraway that many languages do not separate them.",
+    "src": "https://en.wikipedia.org/wiki/Cumin",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "sun"
+    ],
+    "out": "cumin",
+    "why": "The warm smell is one compound, cuminaldehyde, in an oil the plant makes for itself. Toasting the seed does not just strengthen that — it builds pyrazines that were not there before, which is why toasted cumin smells different.",
+    "src": "https://en.wikipedia.org/wiki/Cumin",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "herb"
+    ],
+    "out": "marjoram",
+    "why": "Two species of one genus, and the names cross over. Sweet marjoram is Origanum majorana; oregano is Origanum vulgare and is also called wild marjoram. Most pots sold as Italian oregano are O. × majoricum, a cross of the two.",
+    "src": "https://en.wikipedia.org/wiki/Marjoram",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot",
+      "water"
+    ],
+    "out": "celery",
+    "why": "Apium graveolens is an umbellifer, family to carrot, parsley and cumin, and it grows wild in marshes. Pull a stalk apart and the strings that come away are bundles of collenchyma cells sitting outside the vascular bundles.",
+    "src": "https://en.wikipedia.org/wiki/Celery",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot",
+      "leaf"
+    ],
+    "out": "celery",
+    "why": "One wild species bred three ways. Stalk celery is grown for the petiole, leaf celery for the leaves, and celeriac for a swollen hypocotyl — the same plant, pushed in three directions until they no longer look related.",
+    "src": "https://en.wikipedia.org/wiki/Celery",
+    "verified": true
+  },
+  {
+    "in": [
+      "celery",
+      "salt"
+    ],
+    "out": "nitrite",
+    "why": "Celery powder and salt is the uncured cure. Celery carries nitrate on its own, it ends as the same nitrite the pink salt would have supplied, and the USDA still lets the pack say no nitrites added.",
+    "src": "https://en.wikipedia.org/wiki/Curing_%28food_preservation%29",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemon",
+      "sea"
+    ],
+    "out": "lime",
+    "why": "Britain's lemons came from the Mediterranean and war cut them off, so the ration became West Indian lime from its own colonies. Limes are much weaker antiscorbutics, and the juice sat in light and ran through copper pipe. Scurvy returned.",
+    "src": "https://en.wikipedia.org/wiki/Scurvy",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "lemon"
+    ],
+    "out": "lime",
+    "why": "There is no wild lime either. The Key lime is a natural hybrid of the citron and a wild papeda, Citrus micrantha; cross that with a lemon and you get the Persian lime, which is nearly seedless and most of the world crop.",
+    "src": "https://en.wikipedia.org/wiki/Key_lime",
+    "verified": true
+  },
+  {
+    "in": [
+      "lime",
+      "leaf"
+    ],
+    "out": "makrut_lime",
+    "why": "Citrus hystrix is grown for its leaves. Each looks like two joined end to end: the blade, plus a leaf-shaped winged petiole behind it. The smell is almost one molecule — citronellal is up to 80% of the leaf oil.",
+    "src": "https://en.wikipedia.org/wiki/Citrus_hystrix",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "tuber"
+    ],
+    "out": "rhizome",
+    "why": "The test is nodes. A rhizome is a stem creeping horizontally underground, sending roots down from its nodes and shoots up from them. A root has no nodes and ends in a cap. A stem tuber is a rhizome swollen for storage.",
+    "src": "https://en.wikipedia.org/wiki/Rhizome",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "sun"
+    ],
+    "out": "ginger",
+    "why": "Zingiber officinale is a rhizome in the same family as turmeric, cardamom and galangal. It is a true cultigen and does not exist in the wild, so it is grown only by planting pieces of last year's rhizome.",
+    "src": "https://en.wikipedia.org/wiki/Ginger",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "water"
+    ],
+    "out": "ginger",
+    "why": "A monsoon crop. It goes in the ground between March and June as the rains start, and where the rain stops in September it has to be watered at least every fortnight until November or the rhizome comes up small.",
+    "src": "https://en.wikipedia.org/wiki/Ginger",
+    "verified": true
+  },
+  {
+    "in": [
+      "ginger"
+    ],
+    "verb": "crush",
+    "out": "gingerol",
+    "why": "[6]-gingerol is the pungent yellow oil in fresh ginger, and it works the way capsaicin and piperine do — on the heat receptors of the tongue. It is unstable: dry the ginger and it loses water and becomes something else.",
+    "src": "https://en.wikipedia.org/wiki/Gingerol",
+    "verified": true
+  },
+  {
+    "in": [
+      "gingerol"
+    ],
+    "verb": "heat",
+    "out": "shogaol",
+    "why": "Heat or storage pulls a water molecule out of gingerol, and what is left is about twice as pungent. Shogaol sits at 160,000 Scoville: hotter than piperine, a hundred times cooler than capsaicin. Dried ginger is a different spice.",
+    "src": "https://en.wikipedia.org/wiki/Shogaol",
+    "verified": true
+  },
+  {
+    "in": [
+      "grape",
+      "sun"
+    ],
+    "out": "raisin",
+    "why": "A grape is built to keep its water in. Wax in the skin's cuticle blocks the water trying to get out, and the whole outer layer is adapted to prevent loss — so drying one means defeating the fruit's own waterproofing.",
+    "src": "https://en.wikipedia.org/wiki/Raisin",
+    "verified": true
+  },
+  {
+    "in": [
+      "grape"
+    ],
+    "verb": "heat",
+    "out": "raisin",
+    "why": "The traditional raisin is sun-dried and left to weather. The commercial one is dried in a machine at a held temperature and humidity, because the fruit is worth more when nothing about the drying is left to the sky.",
+    "src": "https://en.wikipedia.org/wiki/Raisin",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "seed"
+    ],
+    "out": "lentil",
+    "why": "Lens culinaris: two seeds to a pod, each a flat disc thicker in the middle. The Latin for that seed was lens, and opticians took the word for a piece of glass ground to the same shape. Like other legumes it fixes its own nitrogen.",
+    "src": "https://en.wikipedia.org/wiki/Lentil",
+    "verified": true
+  },
+  {
+    "in": [
+      "pea"
+    ],
+    "verb": "cut",
+    "out": "split_pea",
+    "why": "A pea seed is two cotyledons packed face to face. Dry it, rub the skin off, and it comes apart at that seam on its own. Mendel's green against yellow was the colour of exactly this tissue, and green is the recessive one.",
+    "src": "https://en.wikipedia.org/wiki/Split_pea",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "wheat"
+    ],
+    "out": "farro",
+    "why": "Farro names three species, not one: einkorn, emmer and spelt. What they share is the hull — they hold their husks so tightly that threshing will not free the grain, so it has to be pounded off. Italy usually means emmer.",
+    "src": "https://en.wikipedia.org/wiki/Farro",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "flower"
+    ],
+    "out": "sunflower",
+    "why": "What looks like one flower is a head of hundreds. Each floret sits 137.5° round from the last, so the spirals running each way count out as two successive Fibonacci numbers — 89 and 144 in a very large head.",
+    "src": "https://en.wikipedia.org/wiki/Common_sunflower",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "sun"
+    ],
+    "out": "sunflower",
+    "why": "The bud does track the sun: it faces east at dawn, swings west through the day and turns back overnight, on a circadian rhythm that keeps running under cloud. Then growth stops, and the head stays facing east for good.",
+    "src": "https://en.wikipedia.org/wiki/Common_sunflower",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed"
+    ],
+    "verb": "crush",
+    "out": "oil",
+    "why": "Pressing is the old way and most oil is not made that way. Seeds are washed with hexane, the solvent boiled off near 149 °C, then the oil is steamed under vacuum at about 232 °C until it has no smell or taste left to give it away.",
+    "src": "https://en.wikipedia.org/wiki/Vegetable_oil",
+    "verified": true
+  },
+  {
+    "in": [
+      "sunflower"
+    ],
+    "verb": "crush",
+    "out": "oil",
+    "why": "Sunflower seed comes in two kinds and only one is for oil: oilseed varieties are pressed, confectionery ones are eaten whole. Sunflower is the fourth most used vegetable oil in the world.",
+    "src": "https://en.wikipedia.org/wiki/Common_sunflower",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "oil"
+    ],
+    "out": "herb_oil",
+    "why": "The compounds that make a herb smell dissolve in fat, not water, so any neutral oil will carry them. A deodorised one carries them without adding a flavour of its own — which is most of what deodorising is for.",
+    "src": "https://en.wikipedia.org/wiki/Essential_oil",
+    "supported": true
+  },
+  {
+    "in": [
+      "retinal",
+      "enzyme"
+    ],
+    "out": "vitamin_a",
+    "why": "Retinal is the aldehyde and retinol the alcohol, one reduction apart, and the body runs it both ways as needed. Retinol is the form that is kept: the liver stores it as an ester and releases the alcohol when a tissue asks.",
+    "src": "https://en.wikipedia.org/wiki/Retinol",
+    "verified": true
+  },
+  {
+    "in": [
+      "beta_carotene",
+      "enzyme"
+    ],
+    "out": "vitamin_a",
+    "why": "Carotene is the safe way in. The body cleaves it to vitamin A only as fast as it needs to and stops when it has enough, so carotene cannot poison you — the ready-made animal form can, and polar bear liver famously does.",
+    "src": "https://en.wikipedia.org/wiki/Retinol",
+    "verified": true
+  },
+  {
+    "in": [
+      "cholesterol",
+      "sun"
+    ],
+    "out": "vitamin_d",
+    "why": "UVB light strikes 7-dehydrocholesterol in the deeper skin and what comes out is cholecalciferol. It is a secosteroid hormone, not a vitamin — it got the name in 1922 for being the fourth found. Roughly 80% of yours is made this way.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_D",
+    "verified": true
+  },
+  {
+    "in": [
+      "koji",
+      "brine"
+    ],
+    "out": "soy_sauce",
+    "why": "Koji-covered soybeans and roasted wheat go into 17–20% brine and sit for 90 to 180 days. Only salt-tolerant microbes survive that; the mould's enzymes cut protein into free amino acids, and the brown is those meeting the sugars.",
+    "src": "https://en.wikipedia.org/wiki/Soy_sauce",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrolysed_vegetable_protein",
+      "brine"
+    ],
+    "out": "soy_sauce",
+    "why": "The other soy sauce is never brewed. Acid takes soy protein apart in hours instead of months, and the result is salted and coloured to match. La Choy was selling it in the United States from 1933.",
+    "src": "https://en.wikipedia.org/wiki/Soy_sauce",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "sugar"
+    ],
+    "out": "candied_fruit",
+    "why": "Not a coating. The fruit is steeped in syrups of rising strength for weeks, and osmotic pressure pulls its water out and drives sugar in until the flesh is saturated and nothing that spoils food can live in it.",
+    "src": "https://en.wikipedia.org/wiki/Candied_fruit",
+    "verified": true
+  },
+  {
+    "in": [
+      "coconut",
+      "nectar"
+    ],
+    "out": "coconut_sugar",
+    "why": "Nothing to do with the fruit. A cut is made in the flower stalk and sap runs from it into a container; the sap is about 80% water and is boiled down in a wok. The brown is caramelisation, and it is no better for you than sugar.",
+    "src": "https://en.wikipedia.org/wiki/Coconut_sugar",
+    "verified": true
   }
 ]
