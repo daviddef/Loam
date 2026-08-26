@@ -2800,7 +2800,7 @@
     "tags": [
       "animal"
     ],
-    "fact": "No sweat glands worth the name, so it cools off by wallowing in mud instead."
+    "fact": "Domesticated twice over, independently: near the Tigris, and separately in China."
   },
   {
     "id": "lard",
@@ -3301,8 +3301,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "The red pigment goes straight through some people. Pink urine, harmless, and it has a name: beeturia.",
-    "terminal": true
+    "fact": "The red pigment goes straight through some people. Pink urine, harmless, and it has a name: beeturia."
   },
   {
     "id": "lemon",
@@ -6515,8 +6514,7 @@
     "tags": [
       "water"
     ],
-    "fact": "A gas until it meets water, and then it is hydrochloric acid — one of the strong ones.",
-    "terminal": true
+    "fact": "A gas until it meets water, and then it is hydrochloric acid — one of the strong ones."
   },
   {
     "id": "tungsten_carbide",
@@ -6632,8 +6630,7 @@
     "tags": [
       "plant"
     ],
-    "fact": "The form a root can actually take nitrogen up in. Almost all of them dissolve in water.",
-    "terminal": true
+    "fact": "The form a root can actually take nitrogen up in. Almost all of them dissolve in water."
   },
   {
     "id": "phosphate",
@@ -7829,5 +7826,566 @@
     ],
     "terminal": true,
     "fact": "Ripened from the rind inwards by a mould sprayed on the outside, for at least three weeks."
+  },
+  {
+    "id": "beef",
+    "name": "Beef",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "Cattle's meat. Beef and cow run back to one Indo-European root by two different roads."
+  },
+  {
+    "id": "pork",
+    "name": "Pork",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "The pig's meat, and the second most eaten meat in the world after poultry."
+  },
+  {
+    "id": "mutton",
+    "name": "Mutton",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "A sheep past two years old. Tougher than lamb, and darker — colour tracks age."
+  },
+  {
+    "id": "lamb",
+    "name": "Lamb",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "A sheep in its first year, and its meat. One English word does both jobs."
+  },
+  {
+    "id": "venison",
+    "name": "Venison",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "food"
+    ],
+    "fact": "From Latin venari, to hunt. It once meant the meat of anything hunted, not only deer."
+  },
+  {
+    "id": "calf",
+    "name": "Calf",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A dairy cow has to calve to keep milking, so a dairy makes calves whether it wants them or not."
+  },
+  {
+    "id": "veal",
+    "name": "Veal",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "The meat of a calf. Mostly the dairy's male calves, which will never give milk."
+  },
+  {
+    "id": "poultry",
+    "name": "Poultry",
+    "emoji": "🍗",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Domesticated birds kept for meat, eggs or feathers. A wild bird shot for the pot is game."
+  },
+  {
+    "id": "game",
+    "name": "Game",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Not a species but a status: wild animals hunted for meat, and leaner than farmed ones."
+  },
+  {
+    "id": "steak",
+    "name": "Steak",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "terminal": true,
+    "fact": "Cut from the loin, which barely works. Tenderness rises with distance from hoof and horn."
+  },
+  {
+    "id": "aged_beef",
+    "name": "Aged Beef",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Held near freezing for weeks while the meat's own enzymes take its connective tissue apart."
+  },
+  {
+    "id": "ham",
+    "name": "Ham",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "preserve"
+    ],
+    "terminal": true,
+    "fact": "The pig's hind leg, cured. Ham is Old English for the bend of the knee, gammon the French for it."
+  },
+  {
+    "id": "stew",
+    "name": "Stew",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "terminal": true,
+    "fact": "Slow, moist heat for the least tender cuts. The juiciness is collagen, not added water."
+  },
+  {
+    "id": "carob",
+    "name": "Carob",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "A Mediterranean legume that grows as an evergreen tree. The carat is named after its seed."
+  },
+  {
+    "id": "locust_bean_gum",
+    "name": "Locust bean gum",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E410. The milled endosperm of a carob seed — 42 to 46% of the seed, and mostly galactomannan."
+  },
+  {
+    "id": "guar_gum",
+    "name": "Guar gum",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E412. Ground guar-bean endosperm, with about eight times the thickening power of cornstarch."
+  },
+  {
+    "id": "xanthan_gum",
+    "name": "Xanthan gum",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "fact": "E415. Secreted by Xanthomonas campestris, the bacterium that causes black rot in cabbages."
+  },
+  {
+    "id": "red_alga",
+    "name": "Red alga",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Rhodophyta. Red from phycobilin pigments, and the source of both agar and carrageenan."
+  },
+  {
+    "id": "carrageenan",
+    "name": "Carrageenan",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E407. Sulfated galactose chains from red seaweed. Kappa gels with potassium and grips milk protein."
+  },
+  {
+    "id": "agar",
+    "name": "Agar",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E406. Sets at 32–42 °C and will not melt again below 85 — a gap gelatin does not have."
+  },
+  {
+    "id": "alginate",
+    "name": "Alginate",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E401. Out of brown seaweed. Drop a solution of it into calcium and it gels on contact."
+  },
+  {
+    "id": "citric_acid",
+    "name": "Citric acid",
+    "emoji": "🍋",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E330. Nearly all of it is grown, not squeezed — a mould fed on sugar, since 1919."
+  },
+  {
+    "id": "sodium_acetate",
+    "name": "Sodium acetate",
+    "emoji": "◻️",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "E262. Vinegar's acid, neutralised — a stable solid that holds food at a mildly acidic pH."
+  },
+  {
+    "id": "msg",
+    "name": "MSG",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E621. The sodium salt of glutamate. Ikeda pulled it out of kombu in 1908 and named the taste umami."
+  },
+  {
+    "id": "inosinate",
+    "name": "Inosinate",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E631. A nucleotide that meat and fish already carry at 80 to 800 mg per 100 g."
+  },
+  {
+    "id": "guanylate",
+    "name": "Guanylate",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E627. The salt of GMP. Expensive, and almost never used unless glutamate is already there."
+  },
+  {
+    "id": "ribonucleotides",
+    "name": "Ribonucleotides",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E635. Inosinate and guanylate mixed. Two per cent of it in MSG quadruples the effect."
+  },
+  {
+    "id": "maltodextrin",
+    "name": "Maltodextrin",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "Starch cut short — three to seventeen glucose units. Past DE 20 the same stuff is glucose syrup."
+  },
+  {
+    "id": "hydrolysed_vegetable_protein",
+    "name": "Hydrolysed protein",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "Plant protein taken apart into free amino acids. Where the loose glutamate in savoury food comes from."
+  },
+  {
+    "id": "silicon_dioxide",
+    "name": "Silicon dioxide",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E551. Amorphous silica, not quartz — a branched powder that is nearly all surface."
+  },
+  {
+    "id": "beta_carotene",
+    "name": "Beta-carotene",
+    "emoji": "🟧",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "fact": "E160a. The orange in a carrot, and one molecule of it is cut in the gut into two of vitamin A."
+  },
+  {
+    "id": "annatto",
+    "name": "Annatto",
+    "emoji": "🟧",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "fact": "E160b. Achiote seed. The colour sits in a waxy coat on the outside of the seed, not inside it."
+  },
+  {
+    "id": "turmeric",
+    "name": "Turmeric",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "A rhizome in the ginger family. It cannot seed itself — every plant is a piece of another."
+  },
+  {
+    "id": "curcumin",
+    "name": "Curcumin",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "fact": "E100. Turmeric's yellow. It barely dissolves in water and goes readily into alcohol or oil."
+  },
+  {
+    "id": "betanin",
+    "name": "Betanin",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "fact": "E162. Beetroot red — a betalain, which carries nitrogen. No plant makes betalains and anthocyanins both."
+  },
+  {
+    "id": "caramel_colour",
+    "name": "Caramel colour",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E150. Sugar cooked with acid, alkali or salt until brown. More fully oxidised than caramel candy."
+  },
+  {
+    "id": "ponceau_4r",
+    "name": "Ponceau 4R",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E124. A synthetic azo dye, built from aromatic rings. Azo dyes do not occur in nature at all."
+  },
+  {
+    "id": "sorbate",
+    "name": "Sorbate",
+    "emoji": "◻️",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "E200–203. Named for the rowan it was distilled from in 1859. Now essentially all synthetic."
+  },
+  {
+    "id": "benzoate",
+    "name": "Benzoate",
+    "emoji": "◻️",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "E210–213. Named after gum benzoin, made now from toluene, and it only works in acidic food."
+  },
+  {
+    "id": "sulfite",
+    "name": "Sulfite",
+    "emoji": "◻️",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "E220–228. Sulfur dioxide taken onto a salt. In wine it stops fermentation and blocks oxidation."
+  },
+  {
+    "id": "nitrite",
+    "name": "Nitrite",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "E249–250. It turns cured meat pink and holds back the spores that make botulinum toxin."
+  },
+  {
+    "id": "hydrogenated_oil",
+    "name": "Hydrogenated oil",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "Liquid oil with hydrogen added across its double bonds, so it sets solid. Normann's patent, 1902."
+  },
+  {
+    "id": "trans_fat",
+    "name": "Trans fat",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A side reaction nobody wanted. Partial hydrogenation flips cis double bonds to trans as it goes."
+  },
+  {
+    "id": "monoglyceride",
+    "name": "Monoglyceride",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E471. A triglyceride with two of its three fatty acids gone, so one end will accept water."
+  },
+  {
+    "id": "lecithin",
+    "name": "Lecithin",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "E322. Named from lekithos, the Greek for egg yolk, where Gobley found it in 1845."
+  },
+  {
+    "id": "sorbitol",
+    "name": "Sorbitol",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "sweet"
+    ],
+    "fact": "E420. Glucose with its aldehyde end reduced to an alcohol. About half as sweet as sugar."
+  },
+  {
+    "id": "xylitol",
+    "name": "Xylitol",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "sweet"
+    ],
+    "fact": "E967. Wood sugar, reduced. Xylan out of timber, acid-split to xylose, then hydrogenated."
+  },
+  {
+    "id": "aspartame",
+    "name": "Aspartame",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "sweet"
+    ],
+    "fact": "E951. Two amino acids joined and capped with a methyl ester. About 200 times as sweet as sugar."
+  },
+  {
+    "id": "peanut",
+    "name": "Peanut",
+    "emoji": "🥜",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A legume, not a nut. It flowers above ground and then drives a stalk down to ripen its pods underground."
+  },
+  {
+    "id": "sesame",
+    "name": "Sesame",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Its capsules burst when the seed is ripe and scatter it. Cereals were bred out of that habit; sesame was not."
+  },
+  {
+    "id": "almond",
+    "name": "Almond",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Nearly half the honeybee hives in the US are trucked to California each February, for this one crop."
   }
 ]

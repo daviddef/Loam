@@ -2730,6 +2730,135 @@ def('miso',           () => [P('M14 26 Q14 46 30 50 Q46 46 46 26 Z', 'ik'),
 def('camembert',      () => [E(30, 36, 20, 12, 'gh'), E(30, 30, 20, 12, 'hi'),
                              ...granules('gh', 9, 55, [16, 24, 44, 36])]);                    // the bloomy rind
 
+
+/* the named meats ───────────────────────────────────────────────────────
+   Cuts, not animals — the animal already has a card. What separates them is
+   the muscle: a worked one is dark and full of connective tissue, a lazy one
+   is pale and tender, and that is the whole of butchery in one picture. */
+const cut = (r, marb, seed) => [
+  P('M12 20 Q12 12 22 12 L44 14 Q50 20 48 32 Q46 44 34 46 L20 46 Q12 42 12 32 Z', r),
+  ...granules('hi', marb, seed, [18, 18, 44, 42]),
+];
+def('beef',    () => [...cut('bs', 9, 7), P('M40 14 Q50 20 48 32 L42 30 Q42 20 38 16 Z', 'hi')]);   // and its fat cap
+def('pork',    () => [...cut('hi', 5, 21), S('M14 42 Q30 48 46 40', 'lo', 3)]);                     // paler, and the rind
+def('mutton',  () => [...cut('lo', 4, 33), S('M20 20 Q30 30 24 44', 'ik', 2)]);                     // dark, and sinewy
+def('lamb',    () => [...cut('bs', 6, 41), C(44, 40, 5, 'gh')]);                                    // smaller, with the bone
+def('venison', () => [...cut('ik', 3, 55), S('M18 18 L26 12', 'gh', 2.4), S('M26 12 L22 6', 'gh', 2)]);  // leanest, and antlered
+def('veal',    () => [...cut('gh', 3, 63), S('M16 40 Q30 44 44 38', 'hi', 2.4)]);
+def('calf',    () => [E(30, 34, 15, 11, 'hi'), C(18, 26, 7, 'hi'),
+                      ...[24, 36].map(x => S(`M${x} 44 L${x} 52`, 'lo', 3)),
+                      C(14, 23, 1.6, 'ik'), S('M12 28 Q8 30 10 34', 'lo', 2)]);
+def('poultry', () => [P('M18 44 Q14 28 26 22 Q40 16 44 28 Q46 42 34 46 Z', 'hi'),
+                      S('M40 24 L50 14', 'gh', 4), C(50, 12, 3.4, 'gh')]);                          // a drumstick
+def('game',    () => [...cut('ik', 3, 71), S('M40 16 L48 8', 'gh', 2.4), S('M44 12 L52 14', 'gh', 2),
+                      ...granules('lo', 3, 13, [16, 34, 34, 44])]);
+def('steak',   () => [E(30, 32, 20, 14, 'bs'), ...granules('hi', 11, 5, [14, 22, 46, 42]),
+                      S('M12 32 Q30 26 48 32', 'lo', 1.4)]);
+def('aged_beef', () => [E(30, 32, 19, 13, 'ik'), P('M11 32 A19 13 0 0 1 49 32 Z', 'lo'),
+                        ...granules('bs', 7, 29, [16, 24, 44, 40])]);                               // the dark crust
+def('ham',     () => [P('M16 40 Q12 22 26 16 Q42 10 46 26 Q50 42 34 48 Q22 50 16 40 Z', 'bs'),
+                      S('M20 44 L14 52', 'gh', 4), ...granules('hi', 5, 47, [22, 22, 42, 40])]);
+def('stew',    () => [P('M12 28 Q12 46 30 50 Q48 46 48 28 Z', 'lo'), E(30, 28, 18, 5, 'ik'),
+                      ...[[24, 34], [36, 32], [30, 42]].map(([x, y]) => C(x, y, 4.4, 'bs')),
+                      ...[24, 36].map(x => S(`M${x} 20 Q${x - 3} 14 ${x} 8`, 'hi', 1.8))]);
+
+/* what a packet is actually full of ─────────────────────────────────────
+   Gums are drawn as what they gel, colours as the colour they give, and the
+   E-number preservatives as the crystal or powder they arrive as. */
+def('carob',      () => [P('M14 12 Q22 32 18 50', 'lo') && S('M14 12 Q22 32 18 50', 'lo', 7),
+                         ...[[18, 20], [19, 30], [18, 40]].map(([x, y]) => C(x, y, 3.4, 'ik')),
+                         leaf('hi', 40, 24, .8, 30)]);
+def('locust_bean_gum', () => [mound('hi', 46, 18, 16), ...granules('lo', 7, 3, [18, 34, 42, 46]),
+                              C(44, 18, 4, 'ik')]);
+def('guar_gum',   () => [mound('gh', 46, 18, 16), ...granules('hi', 9, 91, [18, 34, 42, 46]),
+                         E(30, 22, 6, 3, 'lo')]);
+def('xanthan_gum',() => [rod3('bs', 24, 20, 10, 4),                                    // the bacterium that makes it
+                         P('M14 34 Q30 28 46 34 Q46 46 30 48 Q14 46 14 34 Z', 'hi')]);
+def('red_alga',   () => [...[0, 1, 2].map(i => S(`M${20 + i * 10} 52 Q${14 + i * 10} 32 ${22 + i * 10} 10`, 'bs', 3.4)),
+                         ...[[22, 26], [34, 20], [42, 32]].map(([x, y]) => E(x, y, 5, 3, 'lo'))]);
+def('carrageenan',() => [E(30, 34, 19, 13, 'gh'), S('M14 30 Q30 24 46 30', 'hi', 2),
+                         ...granules('bs', 4, 17, [20, 30, 40, 40])]);
+def('agar',       () => [P('M10 26 L50 26 L50 44 L10 44 Z', 'gh'), E(30, 26, 20, 4, 'hi'),
+                         ...[[22, 34], [38, 36]].map(([x, y]) => C(x, y, 3, 'lo'))]);   // a plate of it
+def('alginate',   () => [...[[20, 26], [34, 22], [28, 38], [42, 40]].map(([x, y]) =>
+                           [C(x, y, 7, 'gh'), C(x - 2, y - 2, 2.4, 'hi')]).flat()]);    // beads
+def('citric_acid',() => [(() => backbone('ik', 3, 28, 30).shape)(),
+                         C(12, 26, 4.4, 'bs'), C(44, 26, 4.4, 'bs'), C(30, 46, 4.4, 'bs'),
+                         ...granules('hi', 4, 61, [18, 40, 42, 50])]);
+def('sodium_acetate', () => [...prisms('gh', 3), ...granules('hi', 4, 23, [18, 30, 42, 44])]);
+def('msg',        () => [...[[20, 24], [32, 20], [26, 36], [40, 34], [30, 46]].map(([x, y]) =>
+                           P(`M${x - 6} ${y} L${x} ${y - 5} L${x + 6} ${y} L${x} ${y + 5} Z`, 'gh'))]);  // the crystal
+def('inosinate',  () => [...purine('gh'), C(46, 46, 5, 'bs'), S('M40 40 L44 44', 'ik', 2)]);
+def('guanylate',  () => [...purine('hi'), C(14, 46, 5, 'bs'), S('M20 40 L16 44', 'ik', 2)]);
+def('ribonucleotides', () => [...purine('gh'), ...pyrimidine('hi').map(function(){return null}).filter(Boolean),
+                              hex('hi', 44, 44, 9, 2.2), C(12, 20, 4, 'bs')]);
+def('maltodextrin', () => [(() => backbone('ik', 5, 30, 24).shape)(),
+                           ...[[16, 40], [30, 44], [44, 40]].map(([x, y]) => C(x, y, 5, 'hi')),
+                           ...granules('gh', 5, 77, [18, 46, 42, 54])]);
+def('hydrolysed_vegetable_protein', () => [S('M8 20 L52 20', 'lo', 3.4),
+                                           ...[16, 26, 36, 46].map(x => C(x, 34, 5.4, 'bs')),
+                                           ...[21, 31, 41].map(x => S(`M${x} 30 L${x} 38`, 'ground', 2.4))]);  // a chain, cut
+// Not another heap of powder: the anti-caking job IS the picture — grains kept
+// apart so they flow, which is also what separates it from flour on a shelf.
+def('silicon_dioxide', () => [
+  ...[[18, 22], [34, 18], [26, 34], [42, 30], [20, 44], [38, 46]].map(([x, y]) =>
+    [C(x, y, 6, 'gh'), C(x - 2, y - 2, 1.8, 'hi')]).flat(),
+  ...granules('hi', 8, 9, [12, 14, 48, 50]),
+]);
+def('beta_carotene', () => [(() => backbone('bs', 8, 30, 32).shape)(),
+                            ring('bs', 10, 30, 6, 2), ring('bs', 50, 34, 6, 2)]);        // the long conjugated chain
+def('annatto',    () => [P('M18 18 Q10 32 18 46 Q30 52 42 46 Q50 32 42 18 Q30 12 18 18 Z', 'bs'),
+                         ...granules('hi', 9, 41, [22, 22, 38, 42]),
+                         ...needles('lo', 4)]);                                          // the spiny pod
+def('turmeric',   () => [P('M12 34 Q18 22 30 26 Q42 30 48 22', 'hi') && S('M12 34 Q18 22 30 26 Q42 30 48 22', 'hi', 9),
+                         ...[[20, 28], [36, 27]].map(([x, y]) => C(x, y, 3, 'lo'))]);     // the rhizome
+def('curcumin',   () => [hex('ik', 16, 32, 9, 2), hex('ik', 44, 32, 9, 2),
+                         (() => backbone('hi', 2, 30, 32).shape)(),
+                         C(8, 24, 3.4, 'bs'), C(52, 24, 3.4, 'bs')]);
+def('betanin',    () => [hex('bs', 22, 26, 9, 2.2), hex('bs', 38, 40, 9, 2.2),
+                         S('M28 31 L32 35', 'ik', 2.2), C(14, 42, 4, 'lo'), C(46, 24, 4, 'lo')]);
+def('caramel_colour', () => [vessel('ik', 24, 48), P('M18 30 L42 30 L41 46 Q30 49 19 46 Z', 'lo'),
+                             E(30, 30, 12, 3, 'ground')]);
+def('ponceau_4r', () => [...[[20, 24], [40, 24]].map(([x, y]) => hex('bs', x, y, 9, 2.2)),
+                         S('M28 26 L32 26', 'ik', 2.4), ...double([28, 26], [32, 26], 'ik'),
+                         C(30, 44, 5, 'bs'), C(14, 38, 3.4, 'lo')]);                     // the azo bond, twice ringed
+def('sorbate',    () => [...needles('gh', 5), ...granules('hi', 4, 87, [20, 40, 40, 50])]);
+def('benzoate',   () => [hex('gh', 26, 30, 11, 2.2), C(42, 22, 5, 'bs'), S('M35 26 L39 24', 'ik', 2),
+                         ...granules('hi', 4, 31, [18, 42, 40, 50])]);
+def('sulfite',    () => [C(30, 26, 7.4, 'hi'), C(16, 40, 5.4, 'bs'), C(44, 40, 5.4, 'bs'), C(30, 46, 5, 'bs'),
+                         ...[[16, 40], [44, 40], [30, 46]].map(([x, y]) => S(`M30 26 L${x} ${y}`, 'ik', 2))]);
+def('nitrite',    () => [C(30, 28, 7.4, 'lo'),
+                         ...[[16, 42], [44, 42]].map(([x, y]) => [S(`M30 28 L${x} ${y}`, 'ik', 2.2), C(x, y, 5.4, 'bs')]).flat()]);
+def('hydrogenated_oil', () => [(() => backbone('ik', 6, 30, 28).shape)(),
+                               ...[16, 24, 32, 40, 48].map(x => C(x, 44, 3, 'hi'))]);     // saturated: no double bonds left
+def('trans_fat',  () => [S('M8 40 L22 28', 'ik', 2.6), S('M22 28 L38 36', 'ik', 2.6), S('M38 36 L52 24', 'ik', 2.6),
+                         ...double([22, 28], [38, 36], 'bs')]);                            // the straightened kink
+def('monoglyceride', () => [S('M14 14 L14 46', 'ik', 2.6),
+                            ...[[14, 20], [14, 32], [14, 44]].map(([x, y]) => C(x, y, 4, 'bs')),
+                            (() => backbone('ik', 4, 36, 20).shape)()]);
+def('lecithin',   () => [C(20, 18, 6.4, 'bs'), C(20, 32, 5, 'hi'),
+                         S('M26 22 Q34 34 30 48', 'ik', 2.4), S('M32 20 Q42 32 40 48', 'ik', 2.4)]);
+def('sorbitol',   () => [(() => backbone('ik', 5, 30, 28).shape)(),
+                         ...[14, 22, 30, 38, 46].map(x => C(x, 42, 3.4, 'hi'))]);
+def('xylitol',    () => [(() => backbone('ik', 4, 30, 28).shape)(),
+                         ...[17, 26, 35, 44].map(x => C(x, 42, 3.4, 'gh')),
+                         ...granules('hi', 4, 51, [20, 46, 42, 54])]);
+def('aspartame',  () => [hex('ik', 42, 24, 8, 2), (() => backbone('ik', 3, 24, 32).shape)(),
+                         C(10, 28, 4.4, 'bs'), C(30, 46, 4, 'hi')]);
+
+/* the three the allergen layer could not name without ───────────────────*/
+def('peanut',     () => [P('M14 34 Q10 22 20 20 Q30 20 30 30 Q30 40 20 42 Q12 42 14 34 Z', 'hi'),
+                         P('M32 32 Q32 20 42 20 Q52 22 50 34 Q48 44 40 44 Q32 42 32 32 Z', 'hi'),
+                         S('M30 30 Q31 34 32 32', 'lo', 3),
+                         ...[[20, 30], [42, 32]].map(([x, y]) => C(x, y, 3.4, 'bs')),
+                         S('M14 46 Q30 52 50 46', 'lo', 1.6)]);                            // it ripens underground
+def('sesame',     () => [P('M18 10 Q14 30 20 46 Q26 50 30 44 Q34 50 40 46 Q46 30 42 10 Z', 'hi'),
+                         ...[[24, 22], [34, 20], [28, 32], [36, 34], [26, 42]].map(([x, y]) => grain('bs', x, y, .7, 0)),
+                         S('M18 10 L42 10', 'lo', 2.4)]);                                  // the capsule that springs open
+def('almond',     () => [P('M30 8 Q46 22 42 38 Q36 50 30 50 Q24 50 18 38 Q14 22 30 8 Z', 'gh'),
+                         P('M30 14 Q41 24 38 37 Q34 45 30 45 Q26 45 22 37 Q19 24 30 14 Z', 'hi'),
+                         ...[24, 30, 36].map(x => S(`M${x} 20 Q${x - 2} 32 ${x} 42`, 'lo', 1.2))]);
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],

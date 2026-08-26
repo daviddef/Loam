@@ -56,7 +56,7 @@
         "curd",
         "blue_cheese"
       ],
-      "severity": "biological"
+      "severity": "conditional"
     },
     "alcohol": {
       "label": "Alcohol",
@@ -72,7 +72,7 @@
         "malt",
         "vinegar"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "cherry_kernel": {
       "label": "The stone, not the fruit",
@@ -89,7 +89,7 @@
         "cinnabar",
         "mercury"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "uranium_toxicity": {
       "label": "Uranium is a heavy-metal poison first",
@@ -99,7 +99,7 @@
         "uranium",
         "yellowcake"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "reactive_metal": {
       "label": "These metals set fire to water",
@@ -117,7 +117,7 @@
       "ids": [
         "lead"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "chlorine_gas": {
       "label": "Chlorine gas is a poison, and was used as one",
@@ -150,7 +150,7 @@
       "ids": [
         "selenium"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "heavy_metal_dust": {
       "label": "Some metals are only dangerous once they are dust",
@@ -160,7 +160,7 @@
         "manganese",
         "osmium"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "radioactivity": {
       "label": "These are radioactive, and that is the point of some of them",
@@ -172,7 +172,7 @@
         "polonium",
         "monazite"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "calcium_corrosive": {
       "label": "Calcium metal burns skin on contact",
@@ -210,7 +210,7 @@
       "ids": [
         "ozone"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "methanol_toxicity": {
       "label": "Methanol looks and smells like drinking alcohol",
@@ -238,7 +238,7 @@
         "galalith",
         "bakelite"
       ],
-      "severity": "chronic"
+      "severity": "cumulative"
     },
     "venomous_spur": {
       "label": "The platypus is a venomous mammal",
@@ -246,8 +246,8 @@
       "ids": [
         "platypus"
       ],
-      "severity": "acute"
+      "severity": "contact"
     }
   },
-  "$severity": "How loudly to say it. acute: hurts fast. chronic: hurts with exposure over time. biological: a pathogen risk. allergen: a regulated declarable allergen. The tier decides the signal on the card; it is never a ranking of how bad a thing is as a thing, and it is never advice."
+  "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
 }

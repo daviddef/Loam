@@ -332,9 +332,9 @@ __CATEGORY_CSS__
     color:var(--on-accent);
   }
   .chip .warn.sev-acute     {background:var(--brick)}
-  .chip .warn.sev-allergen  {background:var(--mustard);color:var(--ink)}
-  .chip .warn.sev-chronic   {background:color-mix(in srgb,var(--mustard) 72%,var(--ink));color:var(--cream)}
-  .chip .warn.sev-biological{background:color-mix(in srgb,var(--avocado) 78%,var(--ink))}
+  .chip .warn.sev-contact   {background:var(--mustard);color:var(--ink)}
+  .chip .warn.sev-cumulative{background:color-mix(in srgb,var(--mustard) 72%,var(--ink));color:var(--cream)}
+  .chip .warn.sev-conditional{background:color-mix(in srgb,var(--avocado) 78%,var(--ink))}
   @keyframes warnThrob{
     0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--brick) 65%,transparent)}
     55%    {box-shadow:0 0 0 5px color-mix(in srgb,var(--brick) 0%,transparent)}
@@ -348,9 +348,9 @@ __CATEGORY_CSS__
 
   /* The caution panel itself, banded by the same four tiers. */
   .caution.sev-acute{border-left:3px solid var(--brick)}
-  .caution.sev-allergen{border-left:3px solid var(--mustard)}
-  .caution.sev-chronic{border-left:3px solid color-mix(in srgb,var(--mustard) 72%,var(--ink))}
-  .caution.sev-biological{border-left:3px solid color-mix(in srgb,var(--avocado) 78%,var(--ink))}
+  .caution.sev-contact{border-left:3px solid var(--mustard)}
+  .caution.sev-cumulative{border-left:3px solid color-mix(in srgb,var(--mustard) 72%,var(--ink))}
+  .caution.sev-conditional{border-left:3px solid color-mix(in srgb,var(--avocado) 78%,var(--ink))}
 
   /* ── density: half card ─────────────────────────────────────────────────
      The user's own sketch: the drawing floats free on the tray with no frame
@@ -1456,7 +1456,7 @@ function cautionsFor(id) { return CAUTION_BY_ID[id] || []; }
 function cautionHTML(id) {
   const cs = cautionsFor(id);
   if (!cs.length) return '';
-  return cs.map(c => `<div class="caution sev-${c.severity || 'chronic'}">` +
+  return cs.map(c => `<div class="caution sev-${c.severity || 'cumulative'}">` +
     `<b>${c.label}</b><p>${c.note}</p></div>`).join('');
 }
 /**
@@ -1467,11 +1467,11 @@ function cautionHTML(id) {
  * Acute beats chronic beats biological, because if a thing can hurt you fast
  * that is the part worth showing first.
  */
-const SEV_RANK = { acute: 3, allergen: 2, chronic: 1, biological: 1 };
+const SEV_RANK = { acute: 4, contact: 3, conditional: 2, cumulative: 1 };
 function severityOf(id) {
   let best = null;
   for (const c of cautionsFor(id)) {
-    const s = c.severity || 'chronic';
+    const s = c.severity || 'cumulative';
     if (!best || (SEV_RANK[s] ?? 0) > (SEV_RANK[best] ?? 0)) best = s;
   }
   return best;
@@ -1982,8 +1982,10 @@ function chipHTML(e) {
     (() => {
       const sev = severityOf(e.id);
       if (!sev) return '';
-      const say = { acute: 'This one can hurt you quickly', allergen: 'A regulated allergen',
-                    chronic: 'This one harms with exposure', biological: 'A pathogen risk' }[sev];
+      const say = { acute: 'This one can kill or permanently injure',
+                    contact: 'This one burns or envenomates on contact',
+                    cumulative: 'This one harms with exposure over time',
+                    conditional: 'This one harms some people, or in some circumstances' }[sev];
       return `<i class="warn sev-${sev}" title="${say} — tap the i to read why">!</i>`;
     })();
 }
@@ -4540,7 +4542,15 @@ function readIngredient(text) {
   // word was part of the phrase. Strip the preparation and ask again — one rule
   // instead of an alias for every fruit times every way of processing it.
   const PREP = /\b(juice|powder|extract|syrup|puree|purée|concentrate|paste|flakes?|granules?|solids?|dried|ground|fresh|raw|whole|pure|natural|organic)\b/g;
-  const bare = k.replace(PREP, ' ').replace(/\s+/g, ' ').trim();
+  // A packet also pluralises — "Peanuts (30%)", "Raisins", "Live Cultures".
+  // Singularising is crude on purpose: only the endings that are safe here, and
+  // only tried AFTER the exact forms have failed, so it can never steal a match
+  // from a word that genuinely ends in s.
+  const singular = (w) => w
+    .replace(/\b([a-z]+)ies\b/g, '$1y')
+    .replace(/\b([a-z]+(?:ch|sh|ss|x|z))es\b/g, '$1')
+    .replace(/\b([a-z]{3,})s\b/g, '$1');
+  const bare = singular(k.replace(PREP, ' ').replace(/\s+/g, ' ').trim());
   if (bare && bare !== k) {
     if (LABELS.aliases[bare] && byId[LABELS.aliases[bare]]) return { text, kind: 'found', id: LABELS.aliases[bare] };
     if (byId[bare.replace(/ /g, '_')]) return { text, kind: 'found', id: bare.replace(/ /g, '_') };

@@ -899,9 +899,10 @@
       "cow"
     ],
     "verb": "cut",
-    "out": "meat",
-    "why": "Muscle is protein fibre bundled in collagen. How tender a cut is depends almost entirely on how hard that muscle worked.",
-    "src": "https://en.wikipedia.org/wiki/Meat"
+    "out": "beef",
+    "why": "Beef is from Latin bos and cow from Middle English cou, and both go back to the same Indo-European root — one animal, named twice, by two routes into English.",
+    "src": "https://en.wikipedia.org/wiki/Beef",
+    "verified": true
   },
   {
     "in": [
@@ -5105,9 +5106,9 @@
     "in": [
       "pig"
     ],
-    "out": "meat",
-    "why": "Pigs were domesticated independently twice in the Neolithic: around the Tigris in the Near East, and separately in China, starting some 8,000 years ago.",
-    "src": "https://en.wikipedia.org/wiki/Pig",
+    "out": "pork",
+    "why": "The story that Saxons kept the animals and Normans ate them is a myth: it starts with John Wallis in 1653 and Walter Scott's Ivanhoe. Pork and beef are first recorded around 1300, and for centuries meant the live animal too.",
+    "src": "https://en.wikipedia.org/wiki/Influence_of_French_on_English",
     "verb": "cut",
     "verified": true
   },
@@ -11631,6 +11632,647 @@
     "out": "miso",
     "why": "The mould does the demolition. Its peptidases cut soy protein into free amino acids, glutamic acid among them, and they are salt-tolerant — so the salt that keeps everything else out of the paste does not stop them.",
     "src": "https://en.wikipedia.org/wiki/Aspergillus_oryzae",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheep",
+      "knife"
+    ],
+    "out": "mutton",
+    "why": "Wool is what cutting a sheep normally means. Mutton is the other outcome: a sheep with more than two permanent incisors in wear, past two years old, tougher than lamb, and darker, because colour tracks age.",
+    "src": "https://en.wikipedia.org/wiki/Lamb_and_mutton",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheep"
+    ],
+    "verb": "wait",
+    "out": "lamb",
+    "why": "A ewe carries about five months and labour takes one to three hours. Most breeds give a single lamb or twins, and a few lines throw triplets or more.",
+    "src": "https://en.wikipedia.org/wiki/Sheep",
+    "verified": true
+  },
+  {
+    "in": [
+      "lamb"
+    ],
+    "verb": "wait",
+    "out": "mutton",
+    "why": "Nothing but time separates them: lamb in the first year, hogget in the second, mutton after that. The line is not drawn on a calendar but in the mouth — how many permanent incisor teeth have come into wear.",
+    "src": "https://en.wikipedia.org/wiki/Lamb_and_mutton",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer"
+    ],
+    "verb": "cut",
+    "out": "venison",
+    "why": "Venison is Latin venari, to hunt, arriving through Norman French in the 11th century with the Royal Forests. It first meant the meat of anything hunted — hare, wild boar, ibex — and only later narrowed to deer.",
+    "src": "https://en.wikipedia.org/wiki/Venison",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacon",
+      "venison"
+    ],
+    "out": "roast",
+    "why": "Barding: bacon laid over a lean roast, especially game like venison and pheasant. The pork fat insulates the joint and bastes it from outside as it renders, which is what venison cannot do for itself.",
+    "src": "https://en.wikipedia.org/wiki/Bacon",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "milk"
+    ],
+    "out": "calf",
+    "why": "To keep milking, a dairy cow has to be bred and produce a calf. The heifers may replace their mothers in the herd; the male calves are sold on for veal or beef.",
+    "src": "https://en.wikipedia.org/wiki/Dairy_cattle",
+    "verified": true
+  },
+  {
+    "in": [
+      "calf"
+    ],
+    "verb": "cut",
+    "out": "veal",
+    "why": "Veal is the meat of calves rather than of grown cattle, and most of it comes from male calves of dairy breeds that will never milk and are not wanted for breeding. It is a way of adding value to them.",
+    "src": "https://en.wikipedia.org/wiki/Veal",
+    "verified": true
+  },
+  {
+    "in": [
+      "veal",
+      "water"
+    ],
+    "out": "broth",
+    "why": "The flavour comes out of marrow, cartilage and connective tissue: their collagen converts to gelatin, which is what thickens the liquid. Brown stock is usually beef or veal, roasted before it is simmered.",
+    "src": "https://en.wikipedia.org/wiki/Stock_(food)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mutton",
+      "fire"
+    ],
+    "out": "tallow",
+    "why": "Suet is the hard fat around the loins and kidneys of beef, lamb or mutton. Melted, simmered a long while, strained and cooled, it becomes tallow — which is most of what suet was ever for.",
+    "src": "https://en.wikipedia.org/wiki/Suet",
+    "verified": true
+  },
+  {
+    "in": [
+      "mutton",
+      "water"
+    ],
+    "out": "stew",
+    "why": "Slow moist heat does not add moisture to meat, despite the common belief. The juiciness comes from connective tissue and collagen breaking down and lubricating the fibres, which is why the toughest cuts stew best.",
+    "src": "https://en.wikipedia.org/wiki/Braising",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "salt"
+    ],
+    "out": "bacon",
+    "why": "Bacon is salt-cured pork, typically from the belly or the less fatty parts of the back. Smoking is usual but optional: it is the cure that makes it bacon, and the cure is what let it keep before refrigeration.",
+    "src": "https://en.wikipedia.org/wiki/Bacon",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "brine"
+    ],
+    "out": "ham",
+    "why": "Gammon is the hind leg cured in brine and still raw — strictly the bottom end of a whole side of bacon, where ham is the back leg cured on its own. Outside Britain and Ireland the distinction is mostly not made.",
+    "src": "https://en.wikipedia.org/wiki/Gammon_(meat)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "nitrate"
+    ],
+    "out": "ham",
+    "why": "Potassium nitrate and sodium nitrite bond to the meat's myoglobin and stand in for oxygen, holding it red where a plain roast turns grey. Curing salt is dyed pink so nobody mistakes it for table salt; it is not naturally pink.",
+    "src": "https://en.wikipedia.org/wiki/Curing_(food_preservation)",
+    "verified": true
+  },
+  {
+    "in": [
+      "chicken",
+      "duck"
+    ],
+    "out": "poultry",
+    "why": "Poultry spans two branches at once: the landfowl, chicken and turkey, and the waterfowl, duck and goose. What it excludes is any wild bird taken by hunting — that is game. The word came from Old French pouletrie.",
+    "src": "https://en.wikipedia.org/wiki/Poultry",
+    "verified": true
+  },
+  {
+    "in": [
+      "meat",
+      "antler"
+    ],
+    "out": "game",
+    "why": "Game is not a species but a status: wild animals hunted for meat, sport or trophies. The gamey taste is put down to what the animal ate for itself, which usually leaves it with less fat than a farmed one carries.",
+    "src": "https://en.wikipedia.org/wiki/Game_(hunting)",
+    "verified": true
+  },
+  {
+    "in": [
+      "beef"
+    ],
+    "verb": "cut",
+    "out": "steak",
+    "why": "The legs and neck do the most work and are the toughest; meat gets more tender the further it lies from hoof and horn. A steak comes off the loin, in the middle, which holds the animal up and little else.",
+    "src": "https://en.wikipedia.org/wiki/Cut_of_beef",
+    "verified": true
+  },
+  {
+    "in": [
+      "beef"
+    ],
+    "verb": "chill",
+    "at": 1,
+    "out": "aged_beef",
+    "why": "Fifteen to twenty-eight days near freezing. The beef's own enzymes break down the connective tissue in the muscle, and moisture evaporates as it hangs — a third or more of the weight goes, and the flavour left behind is concentrated.",
+    "src": "https://en.wikipedia.org/wiki/Beef_aging",
+    "verified": true
+  },
+  {
+    "in": [
+      "ox"
+    ],
+    "verb": "cut",
+    "out": "beef",
+    "why": "An ox is cattle kept for work, and work is what makes meat tough. The legs and the neck do the most of it and are the toughest cuts on any carcass.",
+    "src": "https://en.wikipedia.org/wiki/Cut_of_beef",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "legume"
+    ],
+    "out": "carob",
+    "why": "Ceratonia siliqua is a legume that grows as an evergreen tree, and its fruit is a pod. It is a xerophyte: 250 to 500 mm of rain a year is enough for it to live on, which is why it is a Mediterranean tree.",
+    "src": "https://en.wikipedia.org/wiki/Carob",
+    "verified": true
+  },
+  {
+    "in": [
+      "carob"
+    ],
+    "verb": "crush",
+    "out": "locust_bean_gum",
+    "why": "The pods are kibbled to free the seeds, the skins come off with acid or heat, and the brittle germ is broken up and sieved away. What is left is the endosperm — 42 to 46% of the seed — milled to powder.",
+    "src": "https://en.wikipedia.org/wiki/Locust_bean_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume"
+    ],
+    "verb": "crush",
+    "out": "guar_gum",
+    "why": "Guar is a legume, Cyamopsis tetragonoloba, and the gum is the endosperm of its seed with the husk ground away. It has about eight times cornstarch's water-thickening ability, so very little of it is needed.",
+    "src": "https://en.wikipedia.org/wiki/Guar_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "cabbage"
+    ],
+    "out": "xanthan_gum",
+    "why": "Xanthomonas campestris is the black rot of cabbages and broccoli. Fed glucose in a stirred, aerated tank it secretes the gum outside its own cells, and alcohol drops it out of the broth as a powder.",
+    "src": "https://en.wikipedia.org/wiki/Xanthan_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "alga",
+      "stone"
+    ],
+    "out": "red_alga",
+    "why": "Most red algae are marine and most of those are attached to rock rather than drifting. The red is phycobiliproteins working as accessory pigments — the same job chlorophyll does, on light chlorophyll misses.",
+    "src": "https://en.wikipedia.org/wiki/Red_algae",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_alga",
+      "lye"
+    ],
+    "out": "carrageenan",
+    "why": "Hot alkali — 5 to 8% potassium hydroxide — takes the cellulose out and leaves the carrageenan. The kappa form then gels with potassium ions and binds to dairy protein, which is most of what it is used for.",
+    "src": "https://en.wikipedia.org/wiki/Carrageenan",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_alga",
+      "water"
+    ],
+    "out": "agar",
+    "why": "The outer cell wall of a red alga is agarose and agaropectin, and boiling water takes them straight out of it. The gel that results sets at 32 to 42 °C but will not melt again below 85.",
+    "src": "https://en.wikipedia.org/wiki/Agar",
+    "verified": true
+  },
+  {
+    "in": [
+      "agar",
+      "broth"
+    ],
+    "out": "bacteria",
+    "why": "Gelatin plates melt at body heat and many microbes eat them. Agar does neither. Fanny Hesse suggested it to her husband Walther in Robert Koch's laboratory in 1882, and it replaced gelatin almost at once.",
+    "src": "https://en.wikipedia.org/wiki/Agar",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp",
+      "lye"
+    ],
+    "out": "alginate",
+    "why": "Acid first turns the seaweed's alginate salts into insoluble alginic acid; alkali near pH 9–10, usually soda, converts that back to sodium alginate, which dissolves and can then be precipitated back out.",
+    "src": "https://en.wikipedia.org/wiki/Alginic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "mould",
+      "sugar"
+    ],
+    "out": "citric_acid",
+    "why": "Almost no citric acid is squeezed out of fruit. James Currie found in 1917 that Aspergillus niger fed sugar would pour it out, Pfizer industrialised that two years later, and mould fermentation is still the route.",
+    "src": "https://en.wikipedia.org/wiki/Citric_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemon"
+    ],
+    "verb": "crush",
+    "out": "citric_acid",
+    "why": "Scheele crystallised the first citric acid out of lemon juice in 1784, and lemons and limes do carry up to 8% of their dry weight as it. It is the same molecule the mould makes. Origin is not composition.",
+    "src": "https://en.wikipedia.org/wiki/Citric_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetic_acid",
+      "lye"
+    ],
+    "out": "sodium_acetate",
+    "why": "Acetic acid neutralised with sodium hydroxide, and that is the whole preparation: CH3CO2H + NaOH → CH3CO2Na + H2O. A corrosive liquid becomes a stable solid that holds a food at a mildly acidic pH.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_acetate",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamic_acid",
+      "sodium"
+    ],
+    "out": "msg",
+    "why": "Glutamate is the part that tastes savoury; the sodium is there to make it dissolve. The same glutamate is already in tomatoes and in cheese, in the free acid form, doing the same thing.",
+    "src": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp",
+      "sodium"
+    ],
+    "out": "msg",
+    "why": "Kikunae Ikeda boiled kombu down in 1908, crystallised glutamic acid out of it and named the taste umami. Most MSG is now fermented from sugar by Corynebacterium, with the sodium added afterwards.",
+    "src": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+    "verified": true
+  },
+  {
+    "in": [
+      "meat",
+      "sodium"
+    ],
+    "out": "inosinate",
+    "why": "Inosinate is not an invention. Meat and fish carry 80 to 800 mg of it per 100 g already; the additive is its disodium salt, now mostly fermented from sugar rather than extracted from animals.",
+    "src": "https://en.wikipedia.org/wiki/Disodium_inosinate",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "sugar"
+    ],
+    "out": "guanylate",
+    "why": "Guanosine monophosphate's disodium salt, made at scale by fermenting sugar with Corynebacterium stationis and E. coli. It is expensive, so it is almost never used unless glutamate is present too.",
+    "src": "https://en.wikipedia.org/wiki/Disodium_guanylate",
+    "verified": true
+  },
+  {
+    "in": [
+      "inosinate",
+      "guanylate"
+    ],
+    "out": "ribonucleotides",
+    "why": "E635 is the two of them mixed, and the point is synergy rather than flavour of its own: 98% monosodium glutamate with 2% E635 has four times the flavour-enhancing power of MSG alone.",
+    "src": "https://en.wikipedia.org/wiki/Disodium_ribonucleotides",
+    "verified": true
+  },
+  {
+    "in": [
+      "msg",
+      "ribonucleotides"
+    ],
+    "out": "broth",
+    "why": "This pair is what a stock cube is doing. MSG with disodium ribonucleotides is standard in bouillon cubes, soups, ramen and gravy — savour arriving without anything having been simmered.",
+    "src": "https://en.wikipedia.org/wiki/Monosodium_glutamate",
+    "verified": true
+  },
+  {
+    "in": [
+      "starch",
+      "malt"
+    ],
+    "out": "maltodextrin",
+    "why": "Starch boiled to a paste and then cut with acid and enzymes into glucose chains three to seventeen units long. How far the cutting goes is the whole specification — past dextrose equivalent 20 it is glucose syrup.",
+    "src": "https://en.wikipedia.org/wiki/Maltodextrin",
+    "verified": true
+  },
+  {
+    "in": [
+      "soybean",
+      "hydrogen_chloride"
+    ],
+    "out": "hydrolysed_vegetable_protein",
+    "why": "Soy protein cooked in 15 to 20% hydrochloric acid at 90 to 120 °C for up to eight hours comes apart into its amino acids, then is neutralised back to pH 5–6. Berzelius got a bouillon taste this way in 1831.",
+    "src": "https://en.wikipedia.org/wiki/Hydrolyzed_vegetable_protein",
+    "verified": true
+  },
+  {
+    "in": [
+      "soybean",
+      "enzyme"
+    ],
+    "out": "hydrolysed_vegetable_protein",
+    "why": "The other route uses proteases instead of acid, and the common mixture is taken from Aspergillus oryzae — the soy sauce mould. Add a glutaminase as well and glutamine turns into glutamate, which is the savoury part.",
+    "src": "https://en.wikipedia.org/wiki/Hydrolyzed_vegetable_protein",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "spark"
+    ],
+    "out": "silicon_dioxide",
+    "why": "Quartz sand vaporised in a 3,000 °C arc condenses as microscopic droplets of amorphous silica welded into branched chains. The powder is almost all surface, and that is what keeps a spice from caking.",
+    "src": "https://en.wikipedia.org/wiki/Silicon_dioxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot"
+    ],
+    "verb": "crush",
+    "out": "beta_carotene",
+    "why": "The commonest carotenoid in plants, richest in carrots, pumpkin, spinach and sweet potato. One molecule of it is cleaved in the gut into two of vitamin A, which is what provitamin A means.",
+    "src": "https://en.wikipedia.org/wiki/Beta-Carotene",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "olive_oil"
+    ],
+    "out": "annatto",
+    "why": "The pigment of Bixa orellana sits in a reddish waxy coating on the outside of the seed, and it is fat-soluble, so hot oil or lard lifts it straight off. Saponified, the same bixin becomes water-soluble norbixin.",
+    "src": "https://en.wikipedia.org/wiki/Annatto",
+    "verified": true
+  },
+  {
+    "in": [
+      "tuber",
+      "sun"
+    ],
+    "out": "turmeric",
+    "why": "Curcuma longa is a perennial of the ginger family that wants 20 to 30 °C and heavy annual rain, and what is dug up is the rhizome. It cannot seed itself into new ground: every plant is a piece of another one.",
+    "src": "https://en.wikipedia.org/wiki/Turmeric",
+    "verified": true
+  },
+  {
+    "in": [
+      "turmeric",
+      "ethanol"
+    ],
+    "out": "curcumin",
+    "why": "Curcumin is hydrophobic — poorly soluble in water, easily soluble in organic solvents — so water will not take it out of the rhizome. Vogel and Pelletier reported the first isolation in 1815.",
+    "src": "https://en.wikipedia.org/wiki/Curcumin",
+    "verified": true
+  },
+  {
+    "in": [
+      "beet"
+    ],
+    "verb": "crush",
+    "out": "betanin",
+    "why": "Red beet holds 300 to 600 mg of betanin per kilogram. Its colour is a pH reading: bright bluish-red at pH 4 to 5, blue-violet as that rises, and hydrolysed to yellow-brown once it goes alkaline.",
+    "src": "https://en.wikipedia.org/wiki/Betanin",
+    "verified": true
+  },
+  {
+    "in": [
+      "sugar",
+      "ammonia"
+    ],
+    "out": "caramel_colour",
+    "why": "Carbohydrate heated with acids, alkalis or salts until it browns, and more fully oxidised than a caramel sweet. Ammonium compounds make the class III and IV colours, which are the dark ones in cola and beer.",
+    "src": "https://en.wikipedia.org/wiki/Caramel_color",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "nitrite"
+    ],
+    "out": "ponceau_4r",
+    "why": "An azo dye is built by treating an aromatic amine with nitrous acid, made in the flask from sodium nitrite, then coupling the diazonium salt onto a second ring. The rings come from coal and oil. Nothing here grew.",
+    "src": "https://en.wikipedia.org/wiki/Diazonium_compound",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "potassium"
+    ],
+    "out": "sorbate",
+    "why": "Hofmann distilled sorbic acid out of rowanberry oil in 1859 and it is named for the tree. Virtually all supply is now synthetic. The salt stops moulds and yeasts, and only below about pH 6.5.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_sorbate",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "oxygen_gas"
+    ],
+    "out": "benzoate",
+    "why": "Benzoic acid is made by partial oxidation of toluene over a cobalt or manganese catalyst, and toluene is a by-product of coking coal and of refining oil. Gum benzoin, which named it, was its only source for centuries.",
+    "src": "https://en.wikipedia.org/wiki/Benzoic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "sulfur_dioxide",
+      "sodium"
+    ],
+    "out": "sulfite",
+    "why": "Sulfur dioxide run into sodium hydroxide gives the sulfite; more of the gas turns that into metabisulfite, which crystallises out on cooling. In wine it arrests fermentation and blocks oxidation and bacteria.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_metabisulfite",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrate",
+      "bacteria"
+    ],
+    "out": "nitrite",
+    "why": "Saltpetre cures nothing by itself; something has to reduce it first. Ferment a nitrate-rich juice — celery is the usual one — and the microbes produce nitrite at levels sufficient for commercial meat curing.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_nitrite",
+    "verified": true
+  },
+  {
+    "in": [
+      "meat",
+      "nitrite"
+    ],
+    "out": "cured_meat",
+    "why": "Nitrite gives up nitric oxide, which binds the iron at the centre of myoglobin's heme: nitrosomyoglobin raw, nitrosohemochrome pink once cooked. Two to fourteen parts per million is enough to turn the colour.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_nitrite",
+    "verified": true
+  },
+  {
+    "in": [
+      "olive_oil",
+      "hydrogen_gas"
+    ],
+    "out": "hydrogenated_oil",
+    "why": "A vegetable oil is liquid because its fatty acids carry double bonds. Hydrogen added across those bonds over a nickel catalyst removes them and the fat sets solid. Normann was granted the patent in 1902.",
+    "src": "https://en.wikipedia.org/wiki/Hydrogenation",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogenated_oil",
+      "nickel"
+    ],
+    "out": "trans_fat",
+    "why": "The reaction was deliberately stopped part-way to hit a melting point, and the catalyst flipped much of the double bonds left over from cis to trans. At 20 psi the product was about 40% trans fatty acid by weight.",
+    "src": "https://en.wikipedia.org/wiki/Trans_fat",
+    "verified": true
+  },
+  {
+    "in": [
+      "olive_oil",
+      "enzyme"
+    ],
+    "out": "monoglyceride",
+    "why": "Lipase takes fatty acids off a triglyceride, and what is left with one tail is a monoglyceride — a glycerol head that water will accept on one end and oil on the other. Industry makes them by adding glycerol instead.",
+    "src": "https://en.wikipedia.org/wiki/Monoglyceride",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "phospholipid"
+    ],
+    "out": "lecithin",
+    "why": "Théodore Gobley pulled it out of egg yolk in 1845 and named it from lekithos, the Greek for yolk. It is not one molecule but a mixture of phospholipids, each with an end that wants water and an end that refuses it.",
+    "src": "https://en.wikipedia.org/wiki/Lecithin",
+    "verified": true
+  },
+  {
+    "in": [
+      "soybean",
+      "water"
+    ],
+    "out": "lecithin",
+    "why": "Crude soybean oil carries phospholipids dissolved in it. Stir water in and they hydrate, drop out as gums and are spun off — water degumming, and it is where most commercial lecithin comes from.",
+    "src": "https://en.wikipedia.org/wiki/Lecithin",
+    "supported": true
+  },
+  {
+    "in": [
+      "lecithin",
+      "olive_oil"
+    ],
+    "out": "mayonnaise",
+    "why": "The yolk in mayonnaise is only there for this. Lecithin lines up at the boundary of every oil droplet, water-loving end outward, and the oil cannot find its way back together.",
+    "src": "https://en.wikipedia.org/wiki/Lecithin",
+    "supported": true
+  },
+  {
+    "in": [
+      "glucose",
+      "hydrogen_gas"
+    ],
+    "out": "sorbitol",
+    "why": "Reducing glucose turns the aldehyde at the end of the chain into an alcohol, and the result is a sugar alcohol about half as sweet as sucrose. It is named for Sorbus, the rowan, where it also occurs.",
+    "src": "https://en.wikipedia.org/wiki/Sorbitol",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "hydrogen_gas"
+    ],
+    "out": "xylitol",
+    "why": "Xylan is pulled out of woody biomass, acid splits it to xylose, and the xylose is hydrogenated over Raney nickel — the same trick as sorbitol, one carbon shorter. Hence the other name for it, birch sugar.",
+    "src": "https://en.wikipedia.org/wiki/Xylitol",
+    "verified": true
+  },
+  {
+    "in": [
+      "aspartic_acid",
+      "phenylalanine"
+    ],
+    "out": "aspartame",
+    "why": "A methyl ester of the aspartic acid–phenylalanine dipeptide: two ordinary amino acids joined and capped. It is about 200 times as sweet as sucrose, so the amount needed carries almost no energy at all.",
+    "src": "https://en.wikipedia.org/wiki/Aspartame",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "sand"
+    ],
+    "out": "peanut",
+    "why": "A flower above ground, a fruit below it. After fertilisation a stalk called a peg grows down from the base of the ovary and pushes into the soil, and the pod ripens there. Light sandy loam is the ground loose enough to let the peg through.",
+    "src": "https://en.wikipedia.org/wiki/Peanut",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "seed"
+    ],
+    "out": "sesame",
+    "why": "The fruit is a capsule that bursts when the seed is ripe — dehiscence, the same shattering cereals were bred out of ten thousand years ago. An indehiscent sesame mutant turned up in 1943 and breeders have chased it since. It still limits the crop.",
+    "src": "https://en.wikipedia.org/wiki/Sesame",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "fruit"
+    ],
+    "out": "almond",
+    "why": "Most planted almond varieties cannot fertilise themselves, so an orchard must mix varieties and rely on insects to carry pollen between them. California's bloom is the largest managed pollination event on Earth: over a million hives each February.",
+    "src": "https://en.wikipedia.org/wiki/Almond",
     "verified": true
   }
 ]
