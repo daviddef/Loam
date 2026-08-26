@@ -4812,13 +4812,25 @@ function readIngredient(text) {
     if (bareName) return { text, kind: 'found', id: bareName.id };
     if (LABELS.near?.[bare] && byId[LABELS.near[bare]]) return { text, kind: 'near', id: LABELS.near[bare] };
   }
-  // A contained alias: "organic skim milk powder" contains "skim milk".
+  // A contained alias: "organic skim milk powder" contains "skim milk". This
+  // has to check real element names too, not just the curated alias list —
+  // "milk" itself was never added as an alias because the EXACT match above
+  // already catches bare "milk", so "cow's milk" (not an exact match, and not
+  // a substring of any curated alias like "skim milk") fell all the way
+  // through to unknown despite plainly containing the word "milk". Near
+  // phrases compete in the same pass, on the same longest-wins rule, so
+  // "calcium citrate" inside a longer phrase still reads as built-from
+  // calcium rather than being swallowed by a shorter bare-name "found".
   let best = null;
-  for (const [a, id] of Object.entries(LABELS.aliases)) {
-    if (!byId[id]) continue;
-    if (new RegExp(`\\b${a.replace(/ /g, '\\s+')}\\b`).test(k) && (!best || a.length > best[0].length)) best = [a, id];
-  }
-  if (best) return { text, kind: 'found', id: best[1] };
+  const consider = (phrase, kind, id) => {
+    if (!phrase || !byId[id]) return;
+    const hit = new RegExp(`\\b${phrase.replace(/ /g, '\\s+')}\\b`).test(k);
+    if (hit && (!best || phrase.length > best[0].length || (phrase.length === best[0].length && kind === 'near'))) best = [phrase, kind, id];
+  };
+  for (const [a, id] of Object.entries(LABELS.aliases)) consider(a, 'found', id);
+  for (const [n, id] of Object.entries(LABELS.near || {})) consider(n, 'near', id);
+  for (const e of elements) consider(nameOf(e).toLowerCase(), 'found', e.id);
+  if (best) return { text, kind: best[1], id: best[2] };
   for (const [v, note] of Object.entries(LABELS.vague))
     if (new RegExp(`\\b${v.replace(/ /g, '\\s+')}\\b`).test(k)) return { text, kind: 'vague', note };
   return { text, kind: 'unknown' };
@@ -4886,6 +4898,52 @@ async function fetchOFFProduct(barcode) {
   if (!res.ok && res.status !== 404) throw new Error(`Open Food Facts returned ${res.status}`);
   const data = await res.json();
   return data && data.status === 1 && data.product ? data.product : null;
+}
+/**
+ * Safari — iOS and macOS both, every browser on iOS since Apple requires
+ * them all to run its engine — has never implemented BarcodeDetector. That
+ * used to mean camera/photo scanning simply didn't exist there. It is now
+ * powered by zxing-wasm instead: vendored locally (prototype/vendor/), MIT +
+ * Apache-2.0, loaded lazily only on a device that actually needs it, and
+ * never fetched from a CDN at runtime — the same no-backend, no-AI promise
+ * as everything else here, just with more code sitting in the repo for it.
+ * Native BarcodeDetector is tried first everywhere it exists, since it is
+ * faster and needs no download; this is the fallback, not a replacement.
+ */
+let zxingLoad = null;
+function loadZXing() {
+  if (zxingLoad) return zxingLoad;
+  zxingLoad = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'vendor/zxing-reader.iife.js';
+    s.onload = () => {
+      ZXingWASM.prepareZXingModule({
+        overrides: { locateFile: (path, prefix) => path.endsWith('.wasm') ? 'vendor/zxing_reader.wasm' : prefix + path }
+      });
+      resolve(window.ZXingWASM);
+    };
+    s.onerror = () => reject(new Error('zxing failed to load'));
+    document.head.appendChild(s);
+  });
+  return zxingLoad;
+}
+const ZX_FORMATS = ['EAN-13', 'EAN-8', 'UPC-A', 'UPC-E'];
+/** Every source of a barcode this sheet reads funnels through here — a
+ * picked photo (Blob/File/ImageBitmap) or a live camera frame (ImageData) —
+ * so the two scan paths don't duplicate which engine wins. */
+async function decodeBarcodes(source) {
+  if ('BarcodeDetector' in window) {
+    try {
+      const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
+      const codes = await detector.detect(source);
+      if (codes.length) return codes.map(c => c.rawValue);
+    } catch {}
+  }
+  try {
+    const ZX = await loadZXing();
+    const results = await ZX.readBarcodes(source, { formats: ZX_FORMATS, tryHarder: true });
+    return results.map(r => r.text);
+  } catch { return []; }
 }
 function showBarcodeScan(onIngredients) {
   document.getElementById('sheetBody').innerHTML = `
@@ -4974,67 +5032,77 @@ function showBarcodeScan(onIngredients) {
   };
   document.getElementById('bcIn').addEventListener('keydown', ev => { if (ev.key === 'Enter') document.getElementById('bcGo').click(); });
 
-  if ('BarcodeDetector' in window) {
-    document.getElementById('bcCameraRow').hidden = false;
-    document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
-    document.getElementById('bcFile').onchange = async (ev) => {
-      const files = [...ev.target.files];
-      ev.target.value = '';                         // lets the same photo be picked again
-      if (!files.length) return;
-      const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
-      let misses = 0;
-      for (const file of files) {
-        status.innerHTML = `<p class="hint2">Reading photo ${files.indexOf(file) + 1} of ${files.length}…</p>`;
+  // Camera and photo both work everywhere now: native BarcodeDetector where
+  // it exists, the vendored zxing-wasm fallback everywhere it doesn't
+  // (Safari, on iOS or macOS — every browser there, Chrome included, since
+  // Apple requires them all to run its engine). decodeBarcodes picks whichever
+  // is available; this row no longer needs to know or care which one.
+  document.getElementById('bcCameraRow').hidden = false;
+  document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
+  document.getElementById('bcFile').onchange = async (ev) => {
+    const files = [...ev.target.files];
+    ev.target.value = '';                         // lets the same photo be picked again
+    if (!files.length) return;
+    let misses = 0;
+    for (const file of files) {
+      status.innerHTML = `<p class="hint2">Reading photo ${files.indexOf(file) + 1} of ${files.length}…</p>`;
+      const codes = await decodeBarcodes(file);
+      if (codes.length) await addScan(codes[0]); else misses++;
+    }
+    status.innerHTML = misses
+      ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode.</p>` : '';
+  };
+  document.getElementById('bcCamera').onclick = async () => {
+    const video = document.getElementById('bcVideo');
+    const controls = document.getElementById('bcCameraControls');
+    let stream, raf;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    } catch {
+      toast('Could not open the camera — type the barcode instead');
+      return;
+    }
+    if (!('BarcodeDetector' in window)) { status.innerHTML = '<p class="hint2">Loading the barcode reader…</p>'; await loadZXing().catch(() => {}); status.innerHTML = ''; }
+    // A capture canvas, reused every frame rather than recreated — zxing has
+    // no native-video overload the way BarcodeDetector does, so a fallback
+    // frame has to be drawn out to pixels before it can be decoded at all.
+    const cap = document.createElement('canvas');
+    const capCtx = cap.getContext('2d', { willReadFrequently: true });
+    video.srcObject = stream;
+    video.classList.add('on');
+    controls.hidden = false;
+    await video.play().catch(() => {});
+    const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; };
+    document.getElementById('bcStopCam').onclick = stop;
+    // Stays open across finds rather than closing after the first, so a
+    // whole run of products can be scanned in one pass of the camera —
+    // addScan itself skips a code already collected, so lingering on the
+    // same barcode for several frames in a row is harmless. The loop only
+    // starts a new decode once the last one finished — a WASM decode can
+    // take longer than a frame, and queuing more of them up behind it would
+    // only make the video feel laggier without scanning any faster.
+    let busy = false;
+    const tick = async () => {
+      if (!video.isConnected) { stop(); return; }        // the sheet closed mid-scan
+      if (!busy && video.videoWidth) {
+        busy = true;
         try {
-          const bitmap = await createImageBitmap(file);
-          const codes = await detector.detect(bitmap);
-          if (codes.length) await addScan(codes[0].rawValue); else misses++;
-        } catch { misses++; }
-      }
-      status.innerHTML = misses
-        ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode.</p>` : '';
-    };
-    document.getElementById('bcCamera').onclick = async () => {
-      const video = document.getElementById('bcVideo');
-      const controls = document.getElementById('bcCameraControls');
-      let stream, detector, raf;
-      try {
-        detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
-        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-      } catch {
-        toast('Could not open the camera — type the barcode instead');
-        return;
-      }
-      video.srcObject = stream;
-      video.classList.add('on');
-      controls.hidden = false;
-      await video.play().catch(() => {});
-      const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; };
-      document.getElementById('bcStopCam').onclick = stop;
-      // Stays open across finds rather than closing after the first, so a
-      // whole run of products can be scanned in one pass of the camera —
-      // addScan itself skips a code already collected, so lingering on the
-      // same barcode for several frames in a row is harmless.
-      const tick = async () => {
-        if (!video.isConnected) { stop(); return; }        // the sheet closed mid-scan
-        try {
-          const codes = await detector.detect(video);
-          if (codes.length) addScan(codes[0].rawValue);
+          let codes;
+          if ('BarcodeDetector' in window) {
+            codes = await decodeBarcodes(video);
+          } else {
+            cap.width = video.videoWidth; cap.height = video.videoHeight;
+            capCtx.drawImage(video, 0, 0);
+            codes = await decodeBarcodes(capCtx.getImageData(0, 0, cap.width, cap.height));
+          }
+          if (codes.length) addScan(codes[0]);
         } catch {}
-        raf = requestAnimationFrame(tick);
-      };
-      tick();
+        busy = false;
+      }
+      raf = requestAnimationFrame(tick);
     };
-  } else {
-    // Safari has never implemented BarcodeDetector, on iOS or macOS — this is
-    // not a "not yet" gap that closes with a browser update, it is the actual
-    // state of things for a large share of phones this runs on. Hiding the
-    // row without a word left the whole scan feature looking simply missing,
-    // which is worse than admitting the limit and pointing at what still
-    // works: typing the number is not a fallback here, it is the real path.
-    status.insertAdjacentHTML('beforebegin', `<p class="hint2">This browser can't read a barcode
-      on-device (Safari doesn't support that yet) — typing the number above works everywhere.</p>`);
-  }
+    tick();
+  };
 }
 
 function labelResultHTML(parsed) {
