@@ -1728,7 +1728,7 @@ function countOnBench(id) {
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
                 theme: 'specimen', ground: 'paper', chrome: 'light',
-                assist: 'on', density: 'half', consolidate: false };
+                assist: 'on', density: 'half', consolidate: false, motes: true };
 let savedPrefs = null;
 try { savedPrefs = JSON.parse(localStorage.getItem('loam.prefs') || 'null'); } catch {}
 if (savedPrefs) Object.assign(prefs, savedPrefs);
@@ -2333,7 +2333,7 @@ function drawLinksNow() {
   const parts = [];
   // Pulses are the expensive part, so drop them on a busy board or when the
   // player has asked for quiet. The lines themselves always draw.
-  const flowing = prefs.tone === 'playful'
+  const flowing = prefs.motes !== false && prefs.tone === 'playful'
     && !matchMedia('(prefers-reduced-motion: reduce)').matches
     && links.length <= 40;
   for (const l of links) {
@@ -4324,6 +4324,11 @@ function showSettings() {
             ? 'Every line for a thing runs to the same card. The bench reads as a diagram.'
             : 'A fresh copy each time you need one. Two Waters are two cards.',
           !!prefs.consolidate, 'data-consolidate="1"')}
+        ${toggle('Dots along the lines',
+          prefs.motes !== false
+            ? 'A mote of each ingredient travels into what it becomes.'
+            : 'The lines stay still.',
+          prefs.motes !== false, 'data-motes="1"')}
         ${prefToggle('chrome', 'Light interface', 'light', 'dark',
           'Panels, menus and the shelf on paper.',
           'Panels, menus and the shelf dark. The drawing style is a separate choice.')}
@@ -4369,6 +4374,8 @@ function showSettings() {
     `<p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
+  const mo = document.getElementById('sheetBody').querySelector('[data-motes]');
+  if (mo) mo.onclick = () => { prefs.motes = !(prefs.motes !== false); savePrefs(); drawLinks(); showSettings(); };
   const cons = document.getElementById('sheetBody').querySelector('[data-consolidate]');
   if (cons) cons.onclick = () => {
     prefs.consolidate = !prefs.consolidate;
@@ -4527,6 +4534,20 @@ function readIngredient(text) {
   if (byId[k.replace(/ /g, '_')]) return { text, kind: 'found', id: k.replace(/ /g, '_') };
   const byName = elements.find(e => nameOf(e).toLowerCase() === k);
   if (byName) return { text, kind: 'found', id: byName.id };
+  // A packet says what was DONE to a thing as well as what it is: "Lemon Juice",
+  // "Ginger Powder", "Paprika Extract", "Glucose Syrup", "Tomato Puree". The game
+  // had lemon and carrot all along and matched neither, because the preparation
+  // word was part of the phrase. Strip the preparation and ask again — one rule
+  // instead of an alias for every fruit times every way of processing it.
+  const PREP = /\b(juice|powder|extract|syrup|puree|purée|concentrate|paste|flakes?|granules?|solids?|dried|ground|fresh|raw|whole|pure|natural|organic)\b/g;
+  const bare = k.replace(PREP, ' ').replace(/\s+/g, ' ').trim();
+  if (bare && bare !== k) {
+    if (LABELS.aliases[bare] && byId[LABELS.aliases[bare]]) return { text, kind: 'found', id: LABELS.aliases[bare] };
+    if (byId[bare.replace(/ /g, '_')]) return { text, kind: 'found', id: bare.replace(/ /g, '_') };
+    const bareName = elements.find(e => nameOf(e).toLowerCase() === bare);
+    if (bareName) return { text, kind: 'found', id: bareName.id };
+    if (LABELS.near?.[bare] && byId[LABELS.near[bare]]) return { text, kind: 'near', id: LABELS.near[bare] };
+  }
   // A contained alias: "organic skim milk powder" contains "skim milk".
   let best = null;
   for (const [a, id] of Object.entries(LABELS.aliases)) {
@@ -4768,6 +4789,7 @@ addEventListener('pointerup', ev => {
     if (shelfQuery) { showEntry(id); sfx.pick(); }
     else { placeItem(id); sfx.pick(); }
   }
+  if (moved) { ptDragged = true; setTimeout(() => { ptDragged = false; }, 0); }
 });
 document.getElementById('nudge').addEventListener('click', () => {
   const ul = unlockedVerbs();
@@ -4804,10 +4826,21 @@ document.getElementById('ptToggle').addEventListener('click', () =>
   ptSet(!document.body.classList.contains('pt-on')));
 document.getElementById('ptBody').addEventListener('click', ev => {
   const t = ev.target.closest('[data-atom]');
-  if (!t) return;
+  if (!t || ptDragged) return;
   // A tile you can actually hold on the bench answers the game's question;
   // one you cannot answers the chemistry's. Give whichever exists.
   if (t.dataset.el) openAbout(t.dataset.el); else showAtom(t.dataset.atom);
+});
+// Tapping a tile opened its entry, and there it stopped — the table was a
+// reference you could read and not a drawer you could take from. A tile whose
+// element you actually hold now drags onto the bench exactly like a shelf pill.
+let ptDragged = false;
+document.getElementById('ptBody').addEventListener('pointerdown', ev => {
+  const t = ev.target.closest('[data-el]');
+  if (!t || !found.has(t.dataset.el)) return;
+  ptDragged = false;
+  shelfDrag = { id: t.dataset.el, x: ev.clientX, y: ev.clientY, moved: false, ghost: null,
+                hold: setTimeout(() => { if (shelfDrag && !shelfDrag.moved) { shelfDrag = null; openAbout(t.dataset.el); } }, 520) };
 });
 {
   let grab = null;
