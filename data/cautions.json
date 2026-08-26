@@ -328,6 +328,32 @@
         "vitamin_e"
       ],
       "severity": "cumulative"
+    },
+    "eu_dye_hyperactivity_warning": {
+      "label": "The EU requires a warning label on this dye",
+      "note": "Red 40, Yellow 5 and Yellow 6 are three of the 'Southampton Six' synthetic dyes an EU regulation, effective 2010, requires be labelled 'may have an adverse effect on activity and attention in children.' The underlying science is genuinely disputed: some studies link the dyes to hyperactivity in children, others do not, and the EU and US regulators have reached different conclusions from the same evidence.",
+      "ids": [
+        "red_40",
+        "yellow_5",
+        "yellow_6"
+      ],
+      "severity": "conditional"
+    },
+    "yellow_5_allergy_warning": {
+      "label": "Yellow 5 carries its own FDA-mandated allergy warning",
+      "note": "The US FDA requires products containing tartrazine to state that it may cause allergic-type reactions, including bronchial asthma, in certain susceptible people — a separate concern from the EU attention warning above, and specific to Yellow 5 among the four dyes in this batch.",
+      "ids": [
+        "yellow_5"
+      ],
+      "severity": "conditional"
+    },
+    "blue_1_enteral_advisory": {
+      "label": "A 2003 FDA advisory, and it is not about candy",
+      "note": "Ordinary food and drink use is not what this is about. In 2003 the FDA warned health care providers specifically about this dye's potential toxicity when used to tint enteral (feeding-tube) nutrition solutions, after reports of patient harm in that clinical context.",
+      "ids": [
+        "blue_1"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

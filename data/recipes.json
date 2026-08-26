@@ -12894,5 +12894,45 @@
     "why": "Discovered in 1922 as the unnamed dietary factor rats needed to carry a pregnancy to term — hence tocopherol, Greek for 'to bear a child'. Wheat germ oil is the richest known source.",
     "src": "https://en.wikipedia.org/wiki/Vitamin_E",
     "supported": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "sulfuric_acid"
+    ],
+    "out": "red_40",
+    "why": "Allura Red AC couples diazotized cresidinesulfonic acid onto 2-naphthol-6-sulfonic acid — both sulfonated aromatic rings from coal tar. Invented in 1971 to replace amaranth, the red dye the FDA itself banned for carcinogenicity five years later.",
+    "src": "https://en.wikipedia.org/wiki/Allura_Red_AC",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "ammonia"
+    ],
+    "out": "yellow_5",
+    "why": "Tartrazine couples diazotized sulfanilic acid onto a sulfonated pyrazolone ring, whose extra nitrogen sets it apart from its naphthalene-ring rack-mates. Ammonia stands in for that ring nitrogen — the game has no hydrazine element for the real reagent.",
+    "src": "https://en.wikipedia.org/wiki/Tartrazine",
+    "supported": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "salt"
+    ],
+    "out": "yellow_6",
+    "why": "Sunset Yellow FCF's own preferred name is Disodium 6-hydroxy-5-[(4-sulfophenyl)azo]-2-naphthalenesulfonate — a disodium salt from the moment it is named. Petroleum-derived, and often mixed with amaranth to fake the brown of chocolate.",
+    "src": "https://en.wikipedia.org/wiki/Sunset_Yellow_FCF",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar"
+    ],
+    "verb": "heat",
+    "out": "blue_1",
+    "why": "Brilliant Blue FCF isn't an azo dye like its rack-mates — no diazonium coupling. It's made by condensing a sulfonated benzaldehyde with an aniline compound, then oxidising the result. The game has no separate aniline element, so this collapses to one verb.",
+    "src": "https://en.wikipedia.org/wiki/Brilliant_Blue_FCF",
+    "supported": true
   }
 ]

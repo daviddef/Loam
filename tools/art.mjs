@@ -2822,6 +2822,24 @@ def('caramel_colour', () => [vessel('ik', 24, 48), P('M18 30 L42 30 L41 46 Q30 4
 def('ponceau_4r', () => [...[[20, 24], [40, 24]].map(([x, y]) => hex('bs', x, y, 9, 2.2)),
                          S('M28 26 L32 26', 'ik', 2.4), ...double([28, 26], [32, 26], 'ik'),
                          C(30, 44, 5, 'bs'), C(14, 38, 3.4, 'lo')]);                     // the azo bond, twice ringed
+// Four more synthetic dyes — colour is never the tell (geometry never names
+// one), so each leans on real structure instead: a bigger and smaller ring
+// for red_40's two differently-sized sulfonated rings, a five-sided
+// pyrazolone for yellow_5 (the one ring here that genuinely isn't a hexagon),
+// paired sodium markers for yellow_6's disodium salt, and three rings
+// meeting at a point for blue_1 — a triarylmethane, structurally unrelated
+// to the other three's shared azo-coupling shape.
+def('red_40',    () => [hex('bs', 18, 26, 10, 2.2), hex('hi', 40, 24, 8, 2),
+                        ...double([26, 26], [32, 25], 'ik'),
+                        C(12, 32, 2.4, 'lo'), C(24, 18, 2.4, 'lo'), C(46, 18, 2.2, 'lo')]);
+def('yellow_5',  () => [P('M20 16 L30 22 L26 34 L14 34 L10 22 Z', 'bs'), hex('hi', 42, 26, 8, 2),
+                        ...double([26, 26], [34, 26], 'ik'), C(20, 12, 2.4, 'lo')]);
+def('yellow_6',  () => [hex('bs', 22, 34, 9, 2.2), hex('hi', 22, 15, 9, 2.2),
+                        ...double([22, 21], [22, 28], 'ik'),
+                        ...[[44, 22], [50, 28]].map(([x, y]) => P(`M${x - 2.6} ${y} L${x} ${y - 2.6} L${x + 2.6} ${y} L${x} ${y + 2.6} Z`, 'lo'))]);
+                                                                                  // stacked rings, salt shown as two diamonds together
+def('blue_1',    () => [...[0, 120, 240].map(a => ['g', a, 30, 32, [hex('bs', 30, 16, 7, 1.8)]]),
+                        C(30, 32, 4, 'ik')]);
 def('sorbate',    () => [...needles('gh', 5), ...granules('hi', 4, 87, [20, 40, 40, 50])]);
 def('benzoate',   () => [hex('gh', 26, 30, 11, 2.2), C(42, 22, 5, 'bs'), S('M35 26 L39 24', 'ik', 2),
                          ...granules('hi', 4, 31, [18, 42, 40, 50])]);
