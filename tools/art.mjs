@@ -1751,6 +1751,22 @@ const VERB = {
     ...[[22, 38, 5], [32, 30, 6.4], [40, 40, 4], [28, 18, 4.4], [44, 24, 3]]
       .map(([x, y, r]) => [C(x, y, r, 'gh'), ring('ik', x, y, r, 1.8)]).flat(),
   ],
+  // Blow and Smother are opposites and are drawn as opposites: air arriving,
+  // and air shut out. Heat already owns the three rising wavy lines, so Blow
+  // uses a narrowing cone of straight ones — a draught aimed at something,
+  // not warmth drifting off it.
+  blow: () => [
+    P('M6 22 L20 30 L6 38 Z', 'ik'),                     // the nozzle
+    ...[[24, 30, 46, 30], [24, 26, 42, 18], [24, 34, 42, 42]].map(([x1, y1, x2, y2]) =>
+      S(`M${x1} ${y1} L${x2} ${y2}`, 'ik', 2.6)),
+    ...[[48, 14], [50, 30], [48, 46]].map(([x, y]) => C(x, y, 2.2, 'gh')),
+  ],
+  smother: () => [
+    flame('gh', .5, 12),                                 // a flame going out
+    P('M8 20 L52 20 L52 27 L8 27 Z', 'ik'),              // the lid coming down on it
+    S('M30 20 L30 10', 'ik', 3),
+    S('M20 10 L40 10', 'ik', 3),
+  ],
 };
 
 /* ── fallback ─────────────────────────────────────────────────────────────
@@ -1974,6 +1990,428 @@ def('bakelite', () => [P('M14 40 Q14 24 30 24 Q46 24 46 40 Z', 'ik'),           
 def('polyethylene', () => [...backbone('ik', 6, 30, 26).shape ? [backbone('ik', 6, 30, 26).shape] : [],
                            ...backbone('hi', 6, 30, 40).shape ? [backbone('hi', 6, 30, 40).shape] : [],
                            ...granules('bs', 4, 141, [16, 30, 44, 38])]);                        // the chain, repeating
+
+
+/* rock, and what heat and pressure do to it ─────────────────────────────
+   The metamorphic ladder is drawn as a ladder: mudstone's random specks
+   become slate's one flat cleavage, then phyllite's sheen, then schist's
+   coarse mica bands, then gneiss's separated light and dark stripes. You
+   should be able to see the grade rise across five cards. */
+const banded = (r1, r2, n = 5, wob = 0) =>
+  Array.from({ length: n }, (_, i) =>
+    P(`M10 ${12 + i * 8} Q30 ${12 + i * 8 - wob} 50 ${12 + i * 8} L50 ${18 + i * 8} Q30 ${18 + i * 8 - wob} 10 ${18 + i * 8} Z`,
+      i % 2 ? r2 : r1));
+const gem = (r, facets = 6) => [
+  P('M30 8 L48 24 L30 52 L12 24 Z', r),
+  P('M30 8 L48 24 L30 30 L12 24 Z', 'hi'),
+  ...Array.from({ length: facets }, (_, i) =>
+    S(`M30 30 L${n(12 + i * 7.2)} 24`, 'ground', 1.2)),
+];
+
+def('magma',  () => [P('M8 46 Q14 26 30 30 Q46 34 52 46 Z', 'bs'), ...granules('hi', 9, 31, [14, 32, 46, 44]), S('M8 46 L52 46', 'lo', 2.4)]);
+def('lava',   () => [P('M6 24 L54 24 L54 30 Q40 34 30 30 Q18 26 6 32 Z', 'lo'),   // the crust it flows out from under
+                     P('M8 34 Q20 40 30 38 Q44 36 52 44 L52 52 L8 52 Z', 'hi'),
+                     ...granules('bs', 5, 77, [14, 40, 46, 50])]);
+def('basalt', () => [...[16, 30, 44].map((x, i) =>                                 // columnar jointing
+                       P(`M${x - 7} 50 L${x - 7} ${18 + i * 4} L${x} ${13 + i * 4} L${x + 7} ${18 + i * 4} L${x + 7} 50 Z`, i === 1 ? 'bs' : 'lo')),
+                     S('M9 50 L51 50', 'ik', 2)]);
+def('granite',() => [lump('lo', 30, 32, 22, 19),
+                     ...granules('hi', 7, 12, [14, 20, 46, 44]),
+                     ...granules('ik', 5, 91, [16, 22, 44, 42]),
+                     ...granules('bs', 6, 44, [15, 21, 45, 43])]);              // three minerals, visibly
+def('obsidian', () => [P('M12 40 L22 12 L40 16 L50 36 L34 50 Z', 'ik'),
+                       S('M22 14 Q30 26 26 46', 'gh', 1.6), S('M40 18 Q34 30 42 44', 'gh', 1.4)]);  // conchoidal
+def('pumice', () => [lump('hi', 30, 32, 21, 17), ...granules('ground', 16, 5, [13, 18, 47, 46])]);   // full of holes
+def('quartz', () => [P('M22 50 L22 22 L30 10 L38 22 L38 50 Z', 'gh'),
+                     S('M22 22 L38 22', 'hi', 1.6), S('M30 10 L30 50', 'hi', 1.2)]);
+def('feldspar', () => [P('M16 46 L20 18 L42 14 L46 42 Z', 'hi'),
+                       S('M20 18 L46 42', 'lo', 1.6), S('M18 32 L44 28', 'lo', 1.4)]);   // two cleavages at 90°
+def('mica',   () => [...[0, 1, 2, 3].map(i =>
+                       P(`M${12 + i * 2} ${40 - i * 6} L${48 - i * 2} ${36 - i * 6} L${48 - i * 2} ${40 - i * 6} L${12 + i * 2} ${44 - i * 6} Z`,
+                         i % 2 ? 'hi' : 'bs'))]);                                        // splits into sheets
+def('sandstone', () => [P('M10 20 L50 20 L50 48 L10 48 Z', 'bs'), ...granules('hi', 22, 8, [13, 23, 47, 45])]);
+def('mudstone',  () => [P('M10 20 L50 20 L50 48 L10 48 Z', 'lo'), ...granules('bs', 7, 63, [14, 24, 46, 44])]);
+def('shale',     () => [...banded('lo', 'bs', 5)]);
+def('conglomerate', () => [P('M10 20 L50 20 L50 48 L10 48 Z', 'lo'),
+                           ...[[20, 30, 6], [34, 27, 8], [44, 38, 5], [24, 42, 6], [36, 42, 4]]
+                             .map(([x, y, r]) => C(x, y, r, 'hi'))]);                    // pebbles in a matrix
+def('slate',    () => [P('M10 16 L50 12 L50 20 L10 24 Z', 'ik'), P('M10 26 L50 22 L50 32 L10 36 Z', 'lo'),
+                       P('M10 38 L50 34 L50 46 L10 50 Z', 'ik')]);                        // splits into flat plates
+def('phyllite', () => [P('M10 22 Q30 14 50 22 L50 42 Q30 50 10 42 Z', 'lo'),             // crinkled, and it shines
+                       ...[26, 32, 38].map(y => S(`M12 ${y} Q30 ${y - 6} 48 ${y}`, 'hi', 2))]);
+def('schist',   () => [...banded('lo', 'hi', 5, 5),
+                       ...granules('ik', 8, 23, [14, 18, 46, 46])]);                     // coarse mica
+def('gneiss',   () => [...banded('ik', 'hi', 5, 7)]);                                    // light and dark separated
+def('marble',   () => [lump('hi', 30, 32, 21, 18),
+                       S('M14 26 Q26 34 30 24 Q36 14 46 22', 'lo', 1.8),
+                       S('M16 40 Q28 46 34 38 Q40 32 48 36', 'bs', 1.4)]);               // veining
+def('quartzite',() => [lump('gh', 30, 32, 21, 18), ...granules('hi', 14, 39, [16, 20, 44, 44])]);
+def('lignite',  () => [P('M12 24 L48 24 L48 46 L12 46 Z', 'lo'),
+                       ...[28, 34, 40].map(y => S(`M14 ${y} Q30 ${y - 3} 46 ${y}`, 'bs', 1.6)),
+                       ...granules('hi', 4, 55, [16, 26, 44, 44])]);                     // wood still legible
+def('anthracite', () => [facet('ik'), facet('lo', .5), S('M18 24 L26 16', 'gh', 2.2), S('M36 44 L46 36', 'gh', 1.8)]);
+def('corundum', () => [P('M20 50 L20 20 L30 8 L40 20 L40 50 Z', 'bs'),
+                       P('M20 20 L40 20 L40 26 L20 26 Z', 'hi'), S('M30 8 L30 50', 'lo', 1.4)]);
+def('diamond',  () => [...gem('gh', 6), S('M12 24 L48 24', 'hi', 1.6)]);
+def('ruby',     () => [P('M20 50 L20 24 L30 12 L40 24 L40 50 Z', 'bs'),
+                       P('M20 24 L40 24 L40 32 L20 32 Z', 'hi'),
+                       ...[26, 34].map(x => S(`M${x} 32 L${x} 50`, 'lo', 1.4))]);   // corundum's barrel
+def('sapphire', () => [P('M30 8 L44 26 L38 52 L22 52 L16 26 Z', 'lo'),
+                       P('M30 8 L44 26 L16 26 Z', 'hi'),
+                       S('M22 52 L30 26 L38 52', 'ground', 1.2)]);
+def('emerald',  () => [P('M18 12 L42 12 L48 20 L48 42 L42 50 L18 50 L12 42 L12 20 Z', 'bs'),   // the emerald cut
+                       P('M18 12 L42 12 L48 20 L12 20 Z', 'hi'),
+                       S('M12 20 L48 20 M12 42 L48 42', 'ground', 1.2)]);
+def('opal',     () => [lump('gh', 30, 32, 20, 17),
+                       ...[[22, 26, 'bs'], [36, 24, 'hi'], [30, 38, 'lo'], [40, 38, 'bs'], [21, 38, 'hi']]
+                         .map(([x, y, r]) => E(x, y, 6, 4, r))]);                        // play of colour
+
+/* the very small and the very large ─────────────────────────────────────
+   Two ends of the same ladder, so they share one visual language: the
+   subatomic tier is flat discs with a mark, the cosmic tier is light
+   against dark. Nothing here is a generic glow — photon and gamma ray are
+   the same phenomenon at different wavelength and are drawn as such. */
+def('up_quark',   () => [C(30, 32, 13, 'hi'), S('M23 32 L37 32', 'ik', 3), S('M30 25 L30 39', 'ik', 3)]);   // +
+def('down_quark', () => [P('M30 17 L44 40 L16 40 Z', 'bs'), S('M23 33 L37 33', 'ik', 3)]);   // −, and a different body
+def('proton',     () => [C(30, 32, 17, 'bs'), S('M22 32 L38 32', 'hi', 3.4), S('M30 24 L30 40', 'hi', 3.4)]);
+def('neutron',    () => [C(30, 32, 17, 'lo'), C(30, 32, 8, 'ground')]);                                     // no charge
+def('electron',   () => [C(30, 32, 7, 'ik'), S('M24 32 L36 32', 'hi', 2.4),
+                         ['g', -25, 30, 32, [ring('bs', 30, 32, 21, 1.6)]]]);
+def('atomic_nucleus', () => [...[[24, 28], [36, 28], [30, 38]].map(([x, y]) => C(x, y, 9, 'bs')),
+                             ...[[30, 24], [24, 36], [37, 37]].map(([x, y]) => C(x, y, 8, 'lo'))]);
+def('photon',   () => [S('M8 32 Q14 18 20 32 Q26 46 32 32 Q38 18 44 32 Q50 46 54 34', 'hi', 3)]);
+def('gamma_ray',() => [S('M6 32 Q9 20 12 32 Q15 44 18 32 Q21 20 24 32 Q27 44 30 32 Q33 20 36 32 Q39 44 42 32 Q45 20 48 32 Q51 44 54 32', 'bs', 3)]);  // same wave, far shorter
+def('plasma',   () => [...[[18, 22], [34, 18], [26, 40], [42, 36]].map(([x, y], i) =>
+                         [C(x, y, 4, i % 2 ? 'hi' : 'bs'), C(x + 8, y + 6, 2.2, 'ik')]).flat(),
+                       ...[[14, 30, 46, 26], [16, 44, 44, 40]].map(([a, b, c2, d]) => S(`M${a} ${b} L${c2} ${d}`, 'lo', 1.2))]);
+def('deuterium',() => [C(24, 32, 9, 'bs'), C(36, 32, 9, 'lo'), C(30, 14, 4, 'ik'), ring('hi', 30, 30, 20, 1.4)]);
+def('tritium',  () => [C(22, 34, 8, 'bs'), C(34, 36, 8, 'lo'), C(30, 24, 8, 'lo'), C(46, 14, 4, 'ik'), ring('hi', 30, 32, 21, 1.4)]);
+def('fission_product', () => [P('M30 30 L14 16 L20 34 L10 44 Z', 'bs'), P('M32 30 L50 18 L42 36 L52 46 Z', 'lo'),
+                              ...granules('hi', 5, 17, [22, 24, 40, 42])]);
+def('cosmic_dust', () => [...granules('bs', 16, 3, [10, 12, 50, 50]), ...granules('hi', 8, 29, [14, 16, 46, 46])]);
+def('nebula',   () => [E(28, 30, 22, 16, 'lo'), E(34, 36, 15, 11, 'bs'), E(24, 26, 8, 6, 'hi'),
+                       ...granules('hi', 7, 61, [12, 14, 48, 48])]);
+def('star',     () => [C(30, 32, 14, 'hi'), ...[0, 45, 90, 135].map(a =>
+                         ['g', a, 30, 32, [S('M30 10 L30 54', 'bs', 2)]]), C(30, 32, 8, 'ground')]);
+def('red_giant',() => [C(30, 32, 22, 'bs'), C(30, 32, 15, 'lo'), C(24, 26, 5, 'hi')]);
+def('white_dwarf', () => [C(30, 32, 7, 'hi'), ring('gh', 30, 32, 15, 1.2), ring('lo', 30, 32, 22, 1)]);
+def('supernova',() => [...Array.from({ length: 12 }, (_, i) =>
+                         ['g', i * 30, 30, 32, [S('M30 32 L30 6', 'hi', i % 2 ? 2.6 : 1.4)]]),
+                       C(30, 32, 8, 'bs')]);
+def('neutron_star', () => [C(30, 32, 9, 'hi'),
+                           ...[[30, 6], [30, 58]].map(([x, y]) => P(`M${x - 6} ${y > 30 ? y - 12 : y + 12} L${x} ${y} L${x + 6} ${y > 30 ? y - 12 : y + 12} Z`, 'bs')),
+                           ['g', 20, 30, 32, [ring('lo', 30, 32, 19, 1.4)]]]);   // the beams
+def('black_hole', () => [ring('hi', 30, 32, 20, 3), C(30, 32, 15, 'ground'),
+                         ['g', -18, 30, 32, [E(30, 32, 26, 5, 'bs')]]]);         // the disc, edge on
+def('planetesimal', () => [lump('lo', 30, 32, 17, 15), ...granules('bs', 8, 71, [16, 20, 44, 44]),
+                           C(22, 24, 4, 'ground'), C(38, 40, 3, 'ground')]);
+def('planet',   () => [C(30, 32, 19, 'bs'), P('M13 26 Q30 34 47 26 L47 38 Q30 30 13 38 Z', 'lo'),
+                       C(22, 22, 5, 'hi')]);
+def('moon',     () => [C(30, 32, 18, 'hi'), C(22, 26, 5, 'lo'), C(37, 38, 4, 'lo'), C(33, 22, 2.6, 'lo')]);
+def('comet',    () => [C(44, 20, 7, 'hi'),
+                       ...[[38, 24, 8, 48], [40, 20, 14, 44], [41, 27, 10, 52]].map(([a, b, c2, d]) =>
+                         S(`M${a} ${b} L${c2} ${d}`, 'bs', 2.4))]);
+def('asteroid', () => [P('M14 30 L22 14 L40 12 L50 28 L42 46 L20 46 Z', 'lo'),
+                       C(26, 26, 5, 'ground'), C(38, 34, 4, 'ground'), C(31, 40, 2.6, 'ground')]);
+def('gas_giant',() => [C(30, 32, 21, 'bs'),
+                       ...[24, 30, 36, 42].map((y, i) => P(`M${11 + i} ${y} Q30 ${y + 3} ${49 - i} ${y} L${49 - i} ${y + 4} Q30 ${y + 7} ${11 + i} ${y + 4} Z`, i % 2 ? 'lo' : 'hi')),
+                       E(38, 26, 6, 4, 'lo')]);                                  // the storm
+def('ice_giant',() => [C(30, 32, 20, 'lo'), C(30, 32, 13, 'hi'),
+                       ['g', -70, 30, 32, [E(30, 32, 27, 3, 'bs')]]]);           // the tilted rings
+
+
+/* things that live together ─────────────────────────────────────────────
+   The whole point of this tier is that two organisms make a third, so the
+   partnerships are drawn as two visibly different things sharing one body. */
+const rod3 = (r, x, y, w = 14, h = 6) => P(`M${x - w} ${y - h} L${x + w} ${y - h} Q${x + w + 4} ${y} ${x + w} ${y + h} L${x - w} ${y + h} Q${x - w - 4} ${y} ${x - w} ${y - h} Z`, r);
+def('bacteria',     () => [rod3('bs', 24, 24), rod3('hi', 36, 42), S('M46 46 Q54 42 52 34', 'lo', 1.8)]);
+def('archaea',      () => [rod3('lo', 30, 26, 13, 6), rod3('lo', 28, 42, 11, 5),
+                           ...[16, 44].map(x => S(`M${x} 34 Q${x < 30 ? 8 : 52} 30 ${x < 30 ? 12 : 48} 20`, 'ik', 1.6))]);
+def('cyanobacteria',() => [...[0, 1, 2, 3].map(i => rod3(i % 2 ? 'bs' : 'hi', 30, 16 + i * 10, 15, 4))]);   // a filament
+def('mitochondrion',() => [E(30, 32, 21, 13, 'bs'),
+                           ...[20, 28, 36, 44].map(x => S(`M${x} 22 Q${x - 6} 32 ${x} 42`, 'hi', 2.2))]);   // cristae
+def('chloroplast',  () => [E(30, 32, 21, 14, 'lo'),
+                           ...[[22, 27], [22, 37], [38, 27], [38, 37]].map(([x, y]) => disc('hi', 3).map(d => d) && E(x, y, 6, 4, 'hi'))]);  // grana stacks
+def('alga',         () => [...[0, 1, 2].map(i => leaf('hi', 22 + i * 8, 34 - i * 6, .8, -30 + i * 30)),
+                           S('M30 50 L30 40', 'lo', 2.4)]);
+def('fungus',       () => [P('M12 34 Q12 16 30 16 Q48 16 48 34 Z', 'hi'),      // a cap
+                           P('M26 34 L34 34 L33 50 L27 50 Z', 'bs'),
+                           ...[18, 26, 34, 42].map(x => S(`M${x} 34 L${x} 38`, 'lo', 1.4))]);
+def('spore',        () => [C(30, 32, 8, 'bs'), ring('hi', 30, 32, 13, 1.6),
+                           ...granules('lo', 6, 88, [14, 16, 46, 48])]);
+def('mycelium',     () => [...[[30, 32, 0], [30, 32, 60], [30, 32, 120], [30, 32, 180], [30, 32, 240], [30, 32, 300]]
+                             .map(([x, y, a]) => ['g', a, x, y, [S('M30 32 L30 10', 'hi', 1.8), S('M30 18 L24 12', 'hi', 1.2), S('M30 18 L36 12', 'hi', 1.2)]])]);
+def('lichen',       () => [P('M10 42 Q10 24 30 24 Q50 24 50 42 Z', 'hi'),      // fungal crust
+                           ...[[20, 36], [30, 33], [40, 36]].map(([x, y]) => C(x, y, 5, 'lo')),  // the alga inside it
+                           S('M8 44 Q30 50 52 44', 'bs', 2.4)]);
+def('mycorrhiza',   () => [S('M30 8 L30 34', 'lo', 3.4),                       // the root
+                           ...[[30, 20], [30, 28], [30, 34]].map(([x, y]) =>
+                             [S(`M${x} ${y} Q${x - 14} ${y + 6} ${x - 20} ${y + 14}`, 'hi', 1.6),
+                              S(`M${x} ${y} Q${x + 14} ${y + 6} ${x + 20} ${y + 14}`, 'hi', 1.6)]).flat()]);
+def('root_nodule',  () => [S('M30 8 L30 50', 'lo', 3.4),
+                           ...[[20, 24], [40, 32], [22, 42]].map(([x, y]) => [C(x, y, 7, 'bs'), C(x - 2, y - 2, 2.4, 'hi')])
+                             .flat()]);
+def('rhizobium',    () => [rod3('bs', 24, 26, 11, 5), rod3('bs', 38, 38, 11, 5),
+                           S('M18 44 Q30 48 44 46', 'lo', 1.6)]);
+def('ammonia',      () => [C(30, 26, 8, 'bs'),
+                           ...[[18, 42], [30, 46], [42, 42]].map(([x, y]) => [S(`M30 26 L${x} ${y}`, 'ik', 2), C(x, y, 4.4, 'hi')]).flat()]);  // NH3, and it is pyramidal
+def('pollen',       () => [C(30, 32, 14, 'hi'), ...Array.from({ length: 10 }, (_, i) =>
+                             ['g', i * 36, 30, 32, [S('M30 18 L30 12', 'bs', 2.2)]])]);
+def('polyp',        () => [P('M22 50 L22 32 Q22 26 30 26 Q38 26 38 32 L38 50 Z', 'bs'),
+                           ...Array.from({ length: 7 }, (_, i) =>
+                             S(`M30 26 L${n(30 + (i - 3) * 7)} ${n(12 + Math.abs(i - 3) * 2)}`, 'hi', 2))]);
+def('zooxanthellae',() => [...[[22, 26], [36, 24], [28, 40], [42, 38]].map(([x, y]) =>
+                             [C(x, y, 6, 'hi'), C(x - 1.6, y - 1.6, 2, 'lo')]).flat()]);
+def('coral',        () => [...[[18, 50, 18], [30, 52, 8], [42, 50, 24]].map(([x, base, top]) =>
+                             [S(`M${x} ${base} L${x} ${top}`, 'bs', 5),
+                              S(`M${x} ${n(top + 10)} L${n(x - 8)} ${n(top + 2)}`, 'bs', 3.4),
+                              S(`M${x} ${n(top + 14)} L${n(x + 8)} ${n(top + 6)}`, 'bs', 3.4)]).flat()]);
+def('reef',         () => [wave('lo', 16, 5, 26),
+                           ...[[14, 30], [24, 24], [34, 28], [44, 22]].map(([x, top]) =>
+                             [S(`M${x} 50 L${x} ${top}`, 'bs', 4.4), S(`M${x} ${top + 8} L${x + 7} ${top + 2}`, 'hi', 3)]).flat(),
+                           S('M8 50 L52 50', 'ik', 2)]);
+def('atoll',        () => [ring('bs', 30, 32, 20, 6), E(30, 32, 13, 10, 'lo'),
+                           ...[[14, 24], [46, 40]].map(([x, y]) => C(x, y, 4, 'hi'))]);   // a ring, and a lagoon
+def('bleached_coral', () => [...[[18, 50, 18], [30, 52, 8], [42, 50, 24]].map(([x, base, top]) =>
+                               [S(`M${x} ${base} L${x} ${top}`, 'gh', 5),
+                                S(`M${x} ${n(top + 10)} L${n(x - 8)} ${n(top + 2)}`, 'gh', 3.4)]).flat()]);
+def('detritus',     () => [...granules('lo', 10, 13, [12, 30, 48, 48]),
+                           ...[[18, 34], [36, 30], [28, 42]].map(([x, y]) => leaf('bs', x, y, .5, 40))]);
+def('earthworm',    () => [S('M12 46 Q20 26 30 34 Q40 42 48 20', 'bs', 7),
+                           ...[18, 26, 34, 42].map(x => S(`M${x} ${x < 30 ? 40 - (x - 18) : 34 + (x - 30) * .4} L${x + 2} ${x < 30 ? 34 - (x - 18) : 28 + (x - 30) * .4}`, 'lo', 1.2))]);
+def('humus',        () => [mound('ik', 48, 22, 20), ...granules('lo', 10, 27, [14, 32, 46, 48])]);
+def('compost',      () => [mound('lo', 48, 22, 19),
+                           ...[[20, 36], [38, 34]].map(([x, y]) => leaf('bs', x, y, .55, 30)),
+                           ...[24, 34].map(x => S(`M${x} 26 Q${x - 4} 18 ${x} 12`, 'hi', 2))]);   // it is warm
+def('cellulose',    () => [...[0, 1, 2].map(i => {
+                             const bb = backbone('ik', 4, 30, 20 + i * 12);
+                             return bb.shape; }),
+                           ...[[16, 26], [16, 38]].map(([x, y]) => S(`M${x} ${y} L${x + 28} ${y}`, 'gh', 1.2))]);  // the hydrogen bonds between chains
+def('rumen',        () => [P('M12 30 Q12 16 30 16 Q48 16 48 30 Q48 48 30 48 Q12 48 12 30 Z', 'bs'),
+                           ...[[22, 28], [34, 26], [28, 38], [40, 36]].map(([x, y]) => C(x, y, 4, 'hi')),
+                           S('M30 16 L30 8', 'lo', 3)]);
+def('fatty_acid',   () => [(() => backbone('ik', 6, 32, 34).shape)(),
+                           C(12, 30, 5, 'bs'), S('M12 30 L18 34', 'ik', 2)]);            // the carboxyl head
+
+
+/* current, and the things built once it existed ─────────────────────────
+   Drawn as circuit-diagram shapes wherever a real one exists — a coil is a
+   coil, a cell is long-plate-short-plate, a diode is a triangle against a
+   bar. Anyone who has seen a schematic already knows how to read these. */
+/** A lightning-bolt run of current, as a schematic draws it. */
+const zig = (r, y = 32, amp = 3.5, steps = 6) =>
+  S(`M10 ${y} ` + Array.from({ length: steps }, (_, i) =>
+      `L${14 + i * 6} ${y + (i % 2 ? -amp : amp)}`).join(' ') + ` L50 ${y}`, r, 2.4);
+const coilOf = (r, turns = 4, x0 = 16, y = 32, rad = 5) =>
+  Array.from({ length: turns }, (_, i) =>
+    ['s', `M${x0 + i * rad * 2} ${y} A${rad} ${rad} 0 0 1 ${x0 + (i + 1) * rad * 2} ${y}`, r, 2.6]);
+const cellBars = (r, x = 30) => [
+  S(`M${x - 5} 18 L${x - 5} 46`, r, 3.4), S(`M${x + 5} 24 L${x + 5} 40`, r, 5),
+];
+def('lodestone',   () => [facet('lo'), ...[[20, 24], [40, 40]].map(([x, y]) => C(x, y, 3.4, 'hi')),
+                          ...[[14, 18], [46, 46]].map(([x, y]) => S(`M${x} ${y} L${x + (x < 30 ? -4 : 4)} ${y + (y < 30 ? -4 : 4)}`, 'bs', 1.6))]);
+def('magnet',      () => [P('M14 46 L14 26 A16 16 0 0 1 46 26 L46 46 L36 46 L36 26 A6 6 0 0 0 24 26 L24 46 Z', 'bs'),
+                          P('M14 40 L24 40 L24 46 L14 46 Z', 'lo'), P('M36 40 L46 40 L46 46 L36 46 Z', 'hi')]);
+def('magnetic_field', () => [C(30, 32, 5, 'ik'),
+                             ...[10, 16, 22].map((rx, i) => E(30, 32, rx, rx * 1.5, i % 2 ? 'hi' : 'bs') && ring(i % 2 ? 'hi' : 'bs', 30, 32, rx, 1.6))]);
+def('copper_wire', () => [...coilOf('bs', 3, 12, 32, 6), S('M8 32 L12 32', 'bs', 2.6), S('M48 32 L52 32', 'bs', 2.6)]);
+def('voltaic_pile',() => [...Array.from({ length: 5 }, (_, i) =>
+                            P(`M18 ${44 - i * 7} L42 ${44 - i * 7} L42 ${38 - i * 7} L18 ${38 - i * 7} Z`, i % 2 ? 'hi' : 'bs')),
+                          S('M30 10 L30 4', 'ik', 2)]);
+def('current',     () => [zig('hi', 32), ...[[10, 32], [50, 32]].map(([x, y]) => C(x, y, 3, 'ik'))]);
+def('electromagnet', () => [S('M12 32 L48 32', 'lo', 8), ...coilOf('bs', 4, 14, 32, 5),
+                            S('M6 32 L10 32', 'ik', 2.2), S('M50 32 L54 32', 'ik', 2.2)]);
+def('generator',   () => [ring('ik', 30, 32, 18, 2.6), S('M30 14 L30 50', 'bs', 3.4),
+                          ...[[16, 22], [44, 42]].map(([x, y]) => C(x, y, 3.4, 'hi')), zig('hi', 32, 2.5, 4)]);
+def('electric_motor', () => [ring('ik', 30, 32, 18, 2.6), C(30, 32, 6, 'bs'),
+                             ...[0, 120, 240].map(a => ['g', a, 30, 32, [S('M30 32 L30 16', 'lo', 3.4)]]),
+                             ['g', 40, 30, 32, [ring('hi', 30, 32, 23, 1.4)]]]);
+def('transformer', () => [P('M22 12 L38 12 L38 52 L22 52 Z', 'lo'),
+                          ...coilOf('bs', 2, 8, 32, 5), ...coilOf('hi', 2, 40, 32, 5)]);
+def('nichrome',    () => [...coilOf('bs', 5, 10, 32, 4), S('M6 32 L10 32', 'ik', 2), S('M50 32 L54 32', 'ik', 2),
+                          ...granules('hi', 4, 121, [16, 22, 44, 42])]);
+def('heating_element', () => [...coilOf('bs', 6, 8, 30, 3.6),
+                              ...[20, 32, 44].map(x => S(`M${x} 44 Q${x - 4} 50 ${x} 56`, 'hi', 2))]);
+def('filament',    () => [P('M12 20 L48 20 L48 24 L12 24 Z', 'ground'),
+                          ...coilOf('hi', 5, 16, 34, 3.4),
+                          S('M20 24 L20 34', 'lo', 1.8), S('M40 24 L40 34', 'lo', 1.8)]);
+def('light_bulb',  () => [P('M18 26 A12 12 0 1 1 42 26 Q42 36 36 40 L24 40 Q18 36 18 26 Z', 'gh'),
+                          ...coilOf('hi', 3, 22, 28, 3),
+                          ...[42, 46, 50].map(y => S(`M24 ${y} L36 ${y}`, 'ik', 2.2))]);
+def('sulfuric_acid', () => [P('M22 10 L38 10 L38 22 L46 44 Q46 50 30 50 Q14 50 14 44 L22 22 Z', 'gh'),  // a flask, not a jar
+                            P('M18 34 L42 34 L46 44 Q46 50 30 50 Q14 50 14 44 Z', 'hi'),
+                            ...granules('bs', 3, 9, [24, 38, 36, 46])]);
+def('lead_acid_cell', () => [P('M12 18 L48 18 L48 50 L12 50 Z', 'lo'),
+                             ...cellBars('hi', 24), ...cellBars('bs', 40),
+                             S('M18 14 L18 18', 'ik', 3), S('M42 14 L42 18', 'ik', 3)]);
+def('electrolysis',() => [vessel('gh', 20, 48), P('M16 28 L44 28 L43 46 Q30 49 17 46 Z', 'lo'),
+                          S('M22 12 L22 42', 'ik', 3), S('M38 12 L38 42', 'ik', 3),
+                          ...[[22, 34], [22, 26], [38, 32], [38, 24]].map(([x, y]) => C(x + (x < 30 ? -4 : 4), y, 2.4, 'hi'))]);
+def('electroplating', () => [vessel('gh', 20, 48), P('M16 28 L44 28 L43 46 Q30 49 17 46 Z', 'lo'),
+                             S('M22 12 L22 42', 'ik', 3),
+                             P('M34 16 L42 16 L42 42 L34 42 Z', 'bs'), P('M34 16 L42 16 L42 20 L34 20 Z', 'hi')]);
+def('p_type',      () => [P('M14 18 L46 18 L46 46 L14 46 Z', 'lo'),
+                          ...granules('ground', 6, 33, [18, 22, 42, 42]),
+                          S('M30 8 L30 18', 'ik', 2)]);                       // holes
+def('n_type',      () => [P('M14 18 L46 18 L46 46 L14 46 Z', 'lo'),
+                          ...granules('hi', 6, 47, [18, 22, 42, 42]),
+                          S('M30 8 L30 18', 'ik', 2)]);                       // extra electrons
+def('diode',       () => [P('M20 18 L20 46 L44 32 Z', 'bs'), S('M44 18 L44 46', 'ik', 3.4),
+                          S('M8 32 L20 32', 'ik', 2.4), S('M44 32 L54 32', 'ik', 2.4)]);
+def('led',         () => [P('M20 18 L20 46 L44 32 Z', 'bs'), S('M44 18 L44 46', 'ik', 3.4),
+                          ...[[46, 14], [52, 22]].map(([x, y]) => S(`M${x} ${y} L${x + 6} ${y - 6}`, 'hi', 2.2))]);
+def('transistor',  () => [ring('ik', 30, 32, 17, 2.4), S('M24 20 L24 44', 'bs', 3.4),
+                          S('M10 32 L24 32', 'ik', 2.2),
+                          S('M24 26 L46 16', 'ik', 2.2), S('M24 38 L46 48', 'ik', 2.2)]);
+def('solar_cell',  () => [P('M10 20 L50 20 L50 46 L10 46 Z', 'lo'),
+                          ...[18, 26, 34, 42].map(x => S(`M${x} 20 L${x} 46`, 'hi', 1.4)),
+                          S('M10 33 L50 33', 'hi', 1.4),
+                          ...[[16, 12], [26, 10]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y + 6}`, 'bs', 2))]);
+def('refrigerator',() => [P('M16 10 L44 10 L44 52 L16 52 Z', 'gh'), S('M16 30 L44 30', 'ik', 2.2),
+                          S('M40 18 L40 24', 'ik', 3), S('M40 36 L40 42', 'ik', 3),
+                          ...[22, 28].map(x => S(`M${x} 40 Q${x - 3} 44 ${x} 48`, 'bs', 1.6))]);
+
+/* what the elements do inside a body ────────────────────────────────────
+   The porphyrin family shares one square-planar ring with a metal at its
+   centre, because that IS the fact: change the metal and you change what
+   the ring does. Heme is iron, chlorophyll magnesium, cobalamin cobalt. */
+const porph = (metal) => [
+  ...[[30, 14], [46, 32], [30, 50], [14, 32]].map(([x, y]) => ring('ik', x, y, 7, 2)),
+  ...[[30, 14], [46, 32], [30, 50], [14, 32]].map(([x, y]) => S(`M30 32 L${x} ${y}`, 'ik', 1.6)),
+  C(30, 32, 6, metal),
+];
+// Four pyrrole rings joined by four bridges, and nothing in the middle yet.
+def('porphyrin',   () => [
+  ...[[30, 14], [46, 32], [30, 50], [14, 32]].map(([x, y]) => ring('ik', x, y, 7, 2)),
+  ...[[30, 14, 46, 32], [46, 32, 30, 50], [30, 50, 14, 32], [14, 32, 30, 14]].map(([a, b, c2, d]) =>
+    S(`M${a} ${b} L${c2} ${d}`, 'gh', 2.2)),
+  ring('lo', 30, 32, 9, 1.2),
+]);
+// The same ring with iron in it, and the two propionate arms that hold it in.
+def('heme',        () => [...porph('bs'),
+  S('M22 46 L14 56', 'ik', 2), S('M38 46 L46 56', 'ik', 2),
+  ...[[24, 10], [36, 10]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? x - 6 : x + 6} ${y - 6}`, 'ik', 1.8)),
+]);
+// Not a porphyrin at all: a corrin, one bridging carbon short, so two of the
+// rings are bonded straight to each other. Cobalt, and the arm above and below.
+def('cobalamin',   () => [
+  ...[[30, 15], [46, 30], [36, 48], [16, 34]].map(([x, y]) => ring('ik', x, y, 6.5, 2)),
+  ...[[30, 15, 46, 30], [46, 30, 36, 48], [36, 48, 16, 34]].map(([a, b, c2, d]) =>
+    S(`M${a} ${b} L${c2} ${d}`, 'gh', 2.2)),
+  S('M16 34 L30 15', 'lo', 3.4),
+  C(31, 32, 5.4, 'lo'),
+  S('M31 32 L31 56', 'ik', 2), S('M31 32 L48 18', 'ik', 1.6),
+]);
+// Magnesium, not iron — and the long phytol tail that anchors it in the
+// membrane, which is the reason a leaf's green will not wash out in water.
+def('chlorophyll', () => [...porph('hi'),
+  P('M40 42 L50 40 L48 50 L38 48 Z', 'gh'),                       // the fifth ring
+  S('M48 50 L54 58', 'ik', 2.2),
+  S('M14 44 Q6 50 10 58', 'lo', 2.6),
+]);
+def('hemoglobin',  () => [...[[20, 22], [40, 22], [20, 42], [40, 42]].map(([x, y]) => E(x, y, 11, 9, 'lo')),
+                          ...[[20, 22], [40, 42]].map(([x, y]) => C(x, y, 4, 'bs'))]);   // four subunits, four hemes
+def('myoglobin',   () => [E(30, 32, 18, 14, 'lo'), C(30, 32, 5, 'bs'),
+                          ...[0, 60, 120].map(a => ['g', a, 30, 32, [S('M18 32 L42 32', 'hi', 2)]])]);
+def('photosystem_ii', () => [P('M12 20 L48 20 L48 44 L12 44 Z', 'lo'),
+                             ...[[22, 28], [34, 26], [28, 38], [40, 36]].map(([x, y]) => C(x, y, 4, 'hi')),
+                             ...[[16, 12], [26, 10]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y + 7}`, 'bs', 2))]);
+def('iron_sulfur_cluster', () => [...[[22, 26], [38, 26], [22, 40], [38, 40]].map(([x, y], i) => C(x, y, 6, i % 2 ? 'bs' : 'hi')),
+                                  ...[[22, 26, 38, 40], [38, 26, 22, 40]].map(([a, b, c2, d]) => S(`M${a} ${b} L${c2} ${d}`, 'ik', 1.6))]);
+def('cytochrome_c_oxidase', () => [E(30, 32, 19, 15, 'lo'), C(24, 28, 5, 'bs'), C(37, 36, 5, 'hi'),
+                                   S('M24 28 L37 36', 'ik', 1.6)]);
+def('ferritin',    () => [ring('lo', 30, 32, 19, 4), ...granules('bs', 9, 19, [20, 22, 40, 42])]);   // a cage full of iron
+def('zinc_finger', () => [S('M18 48 Q18 20 30 14 Q42 20 42 48', 'lo', 3.4), C(30, 34, 6, 'hi'),
+                          ...[[22, 30], [38, 30], [26, 42], [34, 42]].map(([x, y]) => S(`M${x} ${y} L30 34`, 'ik', 1.4))]);
+def('carbonic_anhydrase', () => [E(30, 32, 18, 15, 'lo'), C(30, 30, 5, 'hi'),
+                                 ...[[20, 24], [40, 24], [30, 44]].map(([x, y]) => S(`M${x} ${y} L30 30`, 'ik', 1.4))]);
+def('superoxide_dismutase', () => [E(30, 32, 18, 15, 'lo'), C(24, 30, 5, 'bs'), C(37, 32, 5, 'hi'),
+                                   ring('ik', 30, 31, 11, 1.2)]);
+def('sulfite_oxidase', () => [E(30, 32, 18, 15, 'lo'), C(30, 32, 6, 'ik'), ring('hi', 30, 32, 10, 1.6)]);
+def('glutathione_peroxidase', () => [E(30, 32, 18, 15, 'lo'), C(30, 32, 5.4, 'bs'),
+                                     S('M30 32 L30 18', 'ik', 1.8), C(30, 16, 3, 'hi')]);
+def('selenocysteine', () => [(() => backbone('ik', 2, 26, 34).shape)(),
+                            C(14, 30, 4.4, 'hi'), C(42, 34, 5.4, 'bs')]);       // the 21st, and its selenium
+def('thyroxine',   () => [hex('ik', 20, 36, 10, 2), hex('ik', 40, 26, 10, 2), S('M28 32 L32 30', 'ik', 2),
+                          ...[[12, 26], [26, 44], [46, 16], [50, 34]].map(([x, y]) => C(x, y, 4, 'bs'))]);  // four iodines
+def('ascorbate',   () => [P('M18 40 L24 22 L40 22 L46 40 L32 50 Z', 'hi'),
+                          ...[[24, 22], [40, 22]].map(([x, y]) => C(x, y - 6, 3.4, 'bs')),
+                          S('M46 40 L54 46', 'ik', 1.8)]);
+def('hydroxyproline', () => [P('M20 44 L18 26 L34 18 L46 30 L38 46 Z', 'ik'),
+                             C(46, 30, 4.4, 'bs'), C(20, 44, 4, 'hi')]);
+def('triple_helix',() => [...[0, 1, 2].map(i =>
+                            S(`M${14 + i * 6} 52 Q${34 + i * 4} 42 ${14 + i * 6} 32 Q${34 + i * 4} 22 ${14 + i * 6} 12`, i === 1 ? 'hi' : 'bs', 2.6))]);
+def('hydroxyapatite', () => [...prisms('gh', 3), ...granules('hi', 5, 71, [18, 30, 42, 44])]);
+def('fluorapatite',   () => [P('M22 48 L22 22 L30 12 L38 22 L38 48 Z', 'hi'), S('M22 22 L38 22', 'gh', 1.6),
+                             ...[[14, 30], [46, 30], [30, 54]].map(([x, y]) => C(x, y, 3.4, 'bs'))]);  // one hexagonal prism, fluoride at its centre
+def('sodium_potassium_pump', () => [P('M18 12 L26 12 L26 52 L18 52 Z', 'lo'), P('M34 12 L42 12 L42 52 L34 52 Z', 'lo'),
+                                    ...[[30, 20], [30, 30]].map(([x, y]) => C(x, y, 4, 'bs')),
+                                    ...[[30, 42], [30, 50]].map(([x, y]) => C(x, y, 4, 'hi'))]);
+def('action_potential', () => [S('M8 46 L20 46 L26 12 L32 50 L38 42 L52 42', 'hi', 3),
+                               ...[[20, 46], [52, 42]].map(([x, y]) => C(x, y, 2.4, 'ik'))]);
+def('retinal',     () => [(() => backbone('ik', 5, 28, 30).shape)(),
+                          ring('ik', 12, 34, 8, 2), C(48, 32, 4.4, 'bs')]);
+def('rhodopsin',   () => [P('M14 12 L46 12 L46 52 L14 52 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${20 + i * 6} 16 L${20 + i * 6} 48`, 'gh', 3)),
+                          C(32, 32, 5, 'bs')]);
+
+/* what two elements make when you put them together ─────────────────────
+   The oxides, sulfides and halides. Drawn as the material you would hold,
+   not as a formula — zinc oxide is the white powder, galena is the cubes,
+   tarnish is the film on the spoon. */
+def('magnesium_oxide', () => [P('M14 46 L46 46 L46 30 Q30 22 14 30 Z', 'gh'),      // a pressed brick of it
+                              S('M14 30 Q30 22 46 30', 'hi', 2),
+                              ...granules('hi', 5, 3, [18, 34, 42, 44])]);
+def('zinc_oxide',   () => [P('M10 48 L26 20 L34 20 L50 48 Z', 'hi'),               // tipped from a scoop
+                           ...granules('gh', 7, 91, [16, 34, 44, 46])]);
+def('copper_oxide', () => [E(30, 40, 20, 11, 'ik'), E(30, 34, 14, 7, 'bs'),        // a shallow dish of it
+                           ...granules('lo', 5, 17, [20, 32, 40, 42])]);
+def('litharge',     () => [...flakes('hi', 4), ...granules('bs', 4, 45, [16, 20, 44, 44])]);
+def('mercuric_oxide', () => [vessel('gh', 26, 48), P('M20 34 L40 34 L39 46 Q30 48 21 46 Z', 'bs'),
+                             ...granules('lo', 4, 63, [23, 36, 37, 44])]);
+def('alumina',      () => [P('M14 26 L46 26 L46 32 L14 32 Z', 'gh'),           // the 5 nm film on the metal
+                           P('M12 32 L48 32 L48 48 L12 48 Z', 'hi'),
+                           S('M14 26 L46 26', 'lo', 1.6)]);
+def('rust',         () => [P('M12 30 Q12 18 30 18 Q48 18 48 30 Q48 46 30 46 Q12 46 12 30 Z', 'bs'),
+                           ...granules('lo', 12, 29, [16, 22, 44, 42]),
+                           ...[[20, 40], [40, 26]].map(([x, y]) => E(x, y, 7, 4, 'ground'))]);   // it flakes away
+def('copper_sulfide', () => [facet('ik'), facet('bs', .5), ...granules('lo', 4, 81, [20, 26, 40, 38])]);
+def('zinc_sulfide',   () => [facet('gh'), ...granules('hi', 8, 5, [18, 24, 42, 40])]);
+def('lead_sulfide',   () => [P('M12 34 L26 26 L40 34 L26 42 Z', 'lo'), P('M12 34 L26 42 L26 54 L12 46 Z', 'ik'), P('M40 34 L26 42 L26 54 L40 46 Z', 'hi'),
+                             P('M32 20 L42 14 L52 20 L42 26 Z', 'lo'), P('M32 20 L42 26 L42 38 L32 32 Z', 'ik')]);  // galena, stepped
+def('tarnish',      () => [E(30, 36, 21, 9, 'gh'), E(30, 33, 18, 7, 'ik'), E(24, 31, 6, 2.4, 'lo')]);  // the film on a spoon
+def('potassium_chloride', () => [...[[20, 28], [38, 24], [30, 42]].map(([x, y]) =>
+                                   [P(`M${x - 8} ${y} L${x} ${y - 5} L${x + 8} ${y} L${x} ${y + 5} Z`, 'gh'),
+                                    P(`M${x - 8} ${y} L${x} ${y + 5} L${x} ${y + 13} L${x - 8} ${y + 8} Z`, 'lo')]).flat()]);
+def('sodium_fluoride',    () => [P('M16 24 L44 24 L44 44 L16 44 Z', 'hi'),
+                                 ...[24, 32, 40].map(x => S(`M${x} 24 L${x} 44`, 'gh', 1.4)),
+                                 ...[30, 36].map(y => S(`M16 ${y} L44 ${y}`, 'gh', 1.4))]);   // the lattice itself
+def('potassium_iodide',   () => [mound('lo', 46, 19, 17), ...granules('ik', 6, 37, [18, 34, 42, 44])]);
+def('hydrogen_chloride',  () => [...gasTube('bs', 2), C(30, 32, 4, 'hi')]);
+def('hydrogen_sulfide',   () => [C(30, 28, 8, 'hi'), C(16, 42, 5.4, 'gh'), C(44, 42, 5.4, 'gh'),
+                                 S('M30 28 L16 42', 'ik', 2), S('M30 28 L44 42', 'ik', 2)]);   // bent, like water
+def('carbon_monoxide',    () => [C(22, 32, 8, 'ik'), C(40, 32, 8, 'bs'),
+                                 ...double([22, 32], [40, 32], 'hi'), S('M31 32 L31 32', 'hi', 2)]);
+def('sulfur_dioxide',     () => [C(30, 26, 8, 'hi'), C(16, 40, 6.4, 'bs'), C(44, 40, 6.4, 'bs'),
+                                 S('M30 26 L16 40', 'ik', 2), S('M30 26 L44 40', 'ik', 2)]);   // bent, not linear
+def('nitric_oxide',       () => [C(22, 32, 7.4, 'lo'), C(40, 32, 7.4, 'bs'), S('M22 32 L40 32', 'ik', 2.4),
+                                 C(48, 22, 2.4, 'hi')]);                                        // the odd electron
+def('nitrogen_dioxide',   () => [C(30, 24, 7.4, 'lo'), C(16, 40, 6.4, 'bs'), C(44, 40, 6.4, 'bs'),
+                                 S('M30 24 L16 40', 'ik', 2), S('M30 24 L44 40', 'ik', 2),
+                                 ...granules('bs', 4, 99, [18, 12, 44, 20])]);                   // and it is brown
+def('nitrate',      () => [C(30, 32, 7.4, 'lo'),
+                           ...[[30, 14], [15, 42], [45, 42]].map(([x, y]) => [S(`M30 32 L${x} ${y}`, 'ik', 2), C(x, y, 5.4, 'bs')]).flat()]);
+def('tungsten_carbide', () => [P('M18 46 L18 22 L30 14 L42 22 L42 46 Z', 'ik'),
+                               P('M18 22 L30 14 L42 22 L30 30 Z', 'lo'),
+                               S('M30 30 L30 46', 'gh', 1.6)]);                     // an insert, as it is sold
+def('calcium_carbide',  () => [P('M14 44 L22 20 L40 16 L48 38 L34 50 Z', 'lo'),
+                               ...granules('hi', 6, 23, [20, 24, 42, 42]),
+                               ...[[46, 18], [50, 26]].map(([x, y]) => C(x, y, 2.4, 'gh'))]);   // it fizzes in damp air
+def('acetylene',    () => [C(20, 32, 6.4, 'ik'), C(40, 32, 6.4, 'ik'),
+                           ...[[0, 0], [0, -4], [0, 4]].map(([dx, dy]) => S(`M20 ${32 + dy} L40 ${32 + dy}`, 'hi', 1.8)),
+                           S('M13 32 L8 32', 'ik', 1.8), S('M47 32 L52 32', 'ik', 1.8)]);        // the triple bond
+def('titanium_nitride', () => [...ingot('hi', 16, 9), ...granules('bs', 4, 51, [18, 28, 42, 40])]);
+def('magnesium_nitride', () => [mound('lo', 46, 19, 17), ...granules('bs', 7, 67, [18, 32, 42, 46])]);
 
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],

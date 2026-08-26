@@ -531,6 +531,28 @@ __CATEGORY_CSS__
     font-variant-numeric:tabular-nums;z-index:6;
   }
   .chip.board.heating.willreact::before{background:var(--discovery);color:var(--on-accent)}
+  /* Something coming off the top of it. Three wisps on staggered delays, rising
+     and fading — driven by --glow-a, so they are invisible while it is merely
+     warm and stream once it is genuinely hot. This is the part that makes the
+     dial feel like heating a thing rather than filling a progress bar. */
+  @keyframes wisp{
+    0%  {transform:translate(-50%,0) scaleX(.7);opacity:0}
+    25% {opacity:calc(.85 * var(--glow-a,0))}
+    100%{transform:translate(-50%,-30px) scaleX(1.5);opacity:0}
+  }
+  .chip.board.heating .wisps{
+    position:absolute;left:50%;top:-2px;width:0;height:0;pointer-events:none;z-index:5;
+  }
+  .chip.board.heating .wisps i{
+    position:absolute;left:0;bottom:0;width:7px;height:16px;border-radius:99px;
+    background:var(--glow,#FFB055);filter:blur(2.5px);
+    transform:translate(-50%,0);
+    animation:wisp 1.15s ease-out infinite;
+  }
+  .chip.board.heating .wisps i:nth-child(1){margin-left:-9px;animation-delay:0s}
+  .chip.board.heating .wisps i:nth-child(2){margin-left:0;animation-delay:.34s;height:20px}
+  .chip.board.heating .wisps i:nth-child(3){margin-left:9px;animation-delay:.68s}
+  @media (prefers-reduced-motion:reduce){ .chip.board.heating .wisps{display:none} }
   @keyframes quake{
     0%,100%{transform:translate(0,0)} 20%{transform:translate(-3px,2px)}
     45%{transform:translate(3px,-2px)} 70%{transform:translate(-2px,-1px)}
@@ -1005,6 +1027,10 @@ __CATEGORY_CSS__
   }
   aside h2.locked,#sheetBody h2.locked{color:var(--ink-soft);opacity:.6}
   .chip.locked{opacity:.5;border-style:dashed;cursor:pointer}
+  /* Greyed, not just faded: an unmade thing should read as a silhouette of
+     itself, so a shelf of them scans as absence rather than as low contrast. */
+  .chip.locked .art{filter:grayscale(1)}
+  .sheet .cardrow button.ghost.on{border-color:var(--orange);color:var(--brick)}
   .chip.locked .q{
     font-style:normal;font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--c-craft-bs);
     border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;margin-left:3px;
@@ -1073,27 +1099,47 @@ __CATEGORY_CSS__
      the board or the height of the dock — so the whole table is on screen at
      once instead of being something you scroll. */
   #ptBody .ptab{
-    margin:0 auto;gap:3px;justify-content:center;
-    grid-template-columns:repeat(18,var(--ptcell,50px));
+    margin:0 auto;gap:2px;justify-content:center;
+    grid-template-columns:calc(var(--ptcell,54px) * .5) repeat(18,var(--ptcell,54px));
+    grid-template-rows:calc(var(--ptcell,54px) * .42) repeat(7,var(--ptcell,54px))
+                       calc(var(--ptcell,54px) * .42) repeat(2,var(--ptcell,54px));
+  }
+  /* Group along the top, period down the side — the two axes the chart is for. */
+  #ptBody .gnum,#ptBody .pnum{
+    display:flex;align-items:center;justify-content:center;font-style:normal;
+    font:700 calc(var(--ptcell,54px) * .21)/1 var(--face-data);color:var(--ink-soft);
   }
   #ptBody .atom{
-    width:var(--ptcell,50px);height:var(--ptcell,50px);
-    padding:2px 1px;border-radius:5px;gap:0;justify-content:center;
+    width:var(--ptcell,54px);height:var(--ptcell,54px);position:relative;
+    padding:calc(var(--ptcell,54px) * .07) 1px calc(var(--ptcell,54px) * .05);
+    border-radius:4px;gap:0;justify-content:flex-start;align-items:center;
   }
-  #ptBody .atom .sym{font-size:calc(var(--ptcell,50px) * .29);letter-spacing:-.3px}
-  #ptBody .atom .z{display:block;font-size:calc(var(--ptcell,50px) * .16);margin-top:0}
+  #ptBody .atom .z{
+    display:block;align-self:flex-start;margin:0 0 0 calc(var(--ptcell,54px) * .09);
+    font:700 calc(var(--ptcell,54px) * .17)/1 var(--face-data);opacity:.85;
+  }
+  /* The one thing you read from across the room. */
+  #ptBody .atom .sym{
+    font:800 calc(var(--ptcell,54px) * .40)/1 var(--face-name);letter-spacing:-.5px;
+    margin-top:calc(var(--ptcell,54px) * .02);
+  }
+  #ptBody .atom .nm{
+    display:block;margin-top:auto;max-width:100%;overflow:hidden;text-overflow:ellipsis;
+    white-space:nowrap;padding:0 2px;
+    font:600 calc(var(--ptcell,54px) * .135)/1 var(--face-name);opacity:.9;
+  }
   /* The drawing, where the element has one — a tile you can recognise before
      you have read it. Only the 76 you can actually hold have art. */
+  /* The drawing, demoted to a watermark in the top-right corner so it says
+     what the thing is to hold without competing with the symbol. */
   #ptBody .atom .gl{
-    display:block;--g:calc(var(--ptcell,50px) * .38);line-height:0;
-    filter:drop-shadow(0 1px 1px rgba(0,0,0,.35));
+    position:absolute;top:calc(var(--ptcell,54px) * .06);right:calc(var(--ptcell,54px) * .06);
+    --g:calc(var(--ptcell,54px) * .26);line-height:0;opacity:.5;
   }
-  #ptBody .atom.hasart .sym{font-size:calc(var(--ptcell,50px) * .22)}
-  #ptBody .atom.hasart .z{font-size:calc(var(--ptcell,50px) * .14)}
-  /* Below about 34px there is no room for a drawing and a symbol both, and the
-     symbol is the one that identifies the tile. */
-  #ptBody.tight .atom .gl{display:none}
-  #ptBody.tight .atom.hasart .sym{font-size:calc(var(--ptcell,50px) * .3)}
+  /* Below about 44px the name cannot be read and the watermark is noise. */
+  #ptBody.tight .atom .gl,#ptBody.tight .atom .nm{display:none}
+  #ptBody.tight .atom{justify-content:center}
+  #ptBody.tight .atom .sym{font-size:calc(var(--ptcell,54px) * .46);margin-top:0}
   /* Three states, and they mean different things: dim is not in this world at
      all, plain is in it but you have not made it, lit is on your shelf. */
   #ptBody .atom{cursor:pointer;opacity:.9}
@@ -1107,7 +1153,7 @@ __CATEGORY_CSS__
   .elfact > div{min-width:0}
   .elfact p{margin:3px 0 5px}
   .elcat{font:700 9.5px/1 var(--face-data);letter-spacing:.9px;text-transform:uppercase;color:var(--ink-soft)}
-  .ptab{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;margin:8px 0}
+  .ptab{display:grid;grid-template-columns:repeat(18,1fr);grid-auto-rows:1fr;gap:2px;margin:8px 0}
   .ptab .atom{width:100%;height:auto;aspect-ratio:1;border-radius:4px;min-width:0}
   .ptab .atom .sym{font-size:9px}
   .ptab .atom .z{display:none}
@@ -2300,7 +2346,13 @@ function fitAll({ min = 0.06, max = 1.4 } = {}) {
 // top, each result on the row below its parents. Nothing is removed; this is
 // arrangement, not cleanup.
 function tidy() {
-  const chips = [...world.querySelectorAll('.chip.board:not(.hidden)')];
+  // EVERY card, including the ones folded out of sight. A hidden card is
+  // display:none, so placing it costs nothing now — and it means that when you
+  // later unfold it, it is already in the right row instead of stranded
+  // wherever it happened to be standing when the fold swallowed it. Laying out
+  // only what was visible is what left Sun and Sprout out on their own with
+  // half a metre of line running back to the bench.
+  const chips = [...world.querySelectorAll('.chip.board')];
   if (!chips.length) return;
   const parents = new Map(chips.map(c => [c, []]));
   for (const l of links) {
@@ -2544,7 +2596,14 @@ function freeSpot(w, h, near) {
   const PAD = 14;
   [w, h] = cardSize();
   // Every card is the same size, so do not ask each one — see cardSize().
-  const held = [...world.querySelectorAll('.chip.board')].map(c => ({
+  // Only cards you can SEE take up space. A folded-away card is display:none —
+  // it occupies no room on the tray, so it must not make this search think the
+  // board is full. Counting them was survivable while hidden cards kept stale
+  // positions scattered anywhere; once Tidy began placing every card on the
+  // grid, the hidden ones filled it, and unstack()'s call to this function
+  // spiralled right out past the edge looking for a gap. That is what threw a
+  // single card half a screen away with a long line trailing back to it.
+  const held = [...world.querySelectorAll('.chip.board:not(.hidden)')].map(c => ({
     x: parseFloat(c.style.left) || 0, y: parseFloat(c.style.top) || 0, w, h,
   }));
   const clear = (x, y) => held.every(r =>
@@ -3129,8 +3188,46 @@ let heating = null;
  * Cubed, the kitchen range still arrives early and the forge range gets about
  * a second of travel to itself.
  */
-const tempAt = ms =>
-  Math.round(T_ROOM + (T_MAX - T_ROOM) * Math.pow(Math.min(1, ms / HOLD_MS), 3));
+/**
+ * The ceiling belongs to the THING, not to the dial.
+ *
+ * A fixed 3,500°C ceiling was right while the hottest thing in the game was
+ * magnesium burning. Then the cosmos tier arrived and asked for 15.5 million
+ * to fuse hydrogen and 1.66 trillion to free a quark — four recipes that
+ * simply could not be reached, because no amount of holding got you there.
+ * Raising the ceiling for everyone would have been worse: it would put the
+ * egg's 63°C and the caramel's 170°C inside the first few frames.
+ *
+ * So each thing's dial spans a little past the hottest thing that thing
+ * actually does. Heating an egg no longer offers you a forge, and heating a
+ * plasma no longer stops short of a star.
+ */
+function heatCeiling(key) {
+  const bs = bands.get(key);
+  if (!bs || !bs.length) return T_MAX;
+  const hi = Math.max(...bs.map(b => b.at));
+  return hi > 3000 ? hi * 1.12 : Math.max(320, hi * 1.4);
+}
+/**
+ * Cubic up to a few thousand degrees, geometric above it.
+ *
+ * Cubed travel is what gives the forge range its own second of dial (see the
+ * note above). But no polynomial can hold 20°C and a trillion in one sweep —
+ * across eleven orders of magnitude the only spacing where every band gets a
+ * window is one where equal time buys equal MULTIPLES, not equal degrees.
+ */
+const tempAt = (ms, ceil = T_MAX) => {
+  const f = Math.min(1, ms / HOLD_MS);
+  if (ceil > 10000) return Math.round(T_ROOM * Math.pow(ceil / T_ROOM, f));
+  return Math.round(T_ROOM + (ceil - T_ROOM) * Math.pow(f, 3));
+};
+/** Twelve digits is not a temperature anyone can read at a glance. */
+function degrees(t) {
+  if (t >= 1e12) return (t / 1e12).toFixed(2).replace(/\.?0+$/, '') + ' trillion°C';
+  if (t >= 1e9)  return (t / 1e9).toFixed(2).replace(/\.?0+$/, '') + ' billion°C';
+  if (t >= 1e6)  return (t / 1e6).toFixed(2).replace(/\.?0+$/, '') + ' million°C';
+  return t.toLocaleString() + '°C';
+}
 /** Real incandescence: what a hot thing actually looks like at that heat. */
 function glowOf(t) {
   if (t < 480) return null;                       // below visible red heat
@@ -3150,15 +3247,21 @@ function glowOf(t) {
 function startHeat(chip, verbEl, key) {
   if (heating && heating.chip === chip && heating.key === key) return;
   stopHeat();
-  heating = { chip, verbEl, key, t0: performance.now(), temp: T_ROOM, tick: 0 };
+  heating = { chip, verbEl, key, t0: performance.now(), temp: T_ROOM, tick: 0, ceil: heatCeiling(key) };
   chip.classList.add('heating');
+  if (!chip.querySelector('.wisps')) {
+    const w = document.createElement('span');
+    w.className = 'wisps';
+    w.innerHTML = '<i></i><i></i><i></i>';
+    chip.appendChild(w);
+  }
   verbEl.classList.add('charging');
   heating.tick = setInterval(pumpHeat, 40);
   pumpHeat();
 }
 function pumpHeat() {
   if (!heating) return;
-  const t = tempAt(performance.now() - heating.t0);
+  const t = tempAt(performance.now() - heating.t0, heating.ceil);
   heating.temp = t;
   const { chip, verbEl } = heating;
   const g = glowOf(t);
@@ -3168,7 +3271,7 @@ function pumpHeat() {
   // What it will do if you let go right now — named only once you have met it.
   const hit = bandAt(heating.key, t);
   const known = hit && found.has(hit.r.out);
-  chip.dataset.temp = t.toLocaleString() + '°C' +
+  chip.dataset.temp = degrees(t) +
     (hit ? ' · ' + (known ? nameOf(byId[hit.r.out]) : 'something') : '');
   chip.classList.toggle('willreact', !!hit);
 }
@@ -3177,6 +3280,7 @@ function stopHeat() {
   clearInterval(heating.tick);
   const { chip, verbEl } = heating;
   chip.classList.remove('heating', 'willreact');
+  chip.querySelector('.wisps')?.remove();
   chip.style.removeProperty('--glow'); chip.style.removeProperty('--glow-a');
   delete chip.dataset.temp;
   verbEl.classList.remove('charging');
@@ -3191,7 +3295,7 @@ function releaseHeat() {
   stopHeat();
   if (!hit) {                                     // too cold to do anything
     sfx.nope();
-    toast(`${temp.toLocaleString()}°C is not enough to change it`);
+    toast(`${degrees(temp)} is not enough to change it`);
     chip.classList.add('nope'); setTimeout(() => chip.classList.remove('nope'), 280);
     return true;                                  // handled: do not also merge
   }
@@ -3437,7 +3541,33 @@ function bedTreeHTML(id) {
 }
 
 // ---- periodic table ----
-const PT_GAPS = { 2: 10, 5: 10, 13: 10, 31: 10, 57: 0, 72: 0 };  // where a row jumps
+/**
+ * Where an element sits in the 18-column table, from its atomic number alone.
+ *
+ * This used to be a list of "insert a gap this wide before element N", which is
+ * a description of the LAYOUT rather than of the table, and every one of those
+ * widths was a chance to be wrong. One of them was: the gap before helium was
+ * 10 where it needed to be 16, so helium landed in column 12 and dragged every
+ * element after it out of position — lithium and beryllium ended up on period
+ * one, and the whole table was sheared. Stating the real row and column and
+ * letting the grid place them cannot drift like that.
+ */
+function ptCell(z) {
+  if (z === 1) return [1, 1];
+  if (z === 2) return [1, 18];
+  if (z <= 4)  return [2, z - 2];            // Li Be
+  if (z <= 10) return [2, z + 8];            // B → Ne, columns 13-18
+  if (z <= 12) return [3, z - 10];           // Na Mg
+  if (z <= 18) return [3, z];                // Al → Ar, columns 13-18
+  if (z <= 36) return [4, z - 18];           // K → Kr, a full row
+  if (z <= 54) return [5, z - 36];           // Rb → Xe, a full row
+  if (z <= 56) return [6, z - 54];           // Cs Ba
+  if (z <= 71) return [9, z - 54];           // the lanthanides, pulled out below
+  if (z <= 86) return [6, z - 68];           // Hf → Rn
+  if (z <= 88) return [7, z - 86];           // Fr Ra
+  if (z <= 103) return [10, z - 86];         // the actinides
+  return [7, z - 100];                       // Rf → Og
+}
 function periodicHTML() {
   const inPlay = new Set(BED.atoms.filter(a => a.inPlay).map(a => a.id));
   const cats = [...new Set(BED.atoms.map(a => a.category))];
@@ -3448,10 +3578,9 @@ function periodicHTML() {
         `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>`;
   h += '<div class="ptab">';
   for (const a of BED.atoms) {
-    if (PT_GAPS[a.number] !== undefined && PT_GAPS[a.number] > 0)
-      h += `<div class="gap" style="--n:${PT_GAPS[a.number]}"></div>`;
-    if (a.number === 57 || a.number === 89) h += `<div class="gap" style="--n:18"></div>`;
+    const [row, col] = ptCell(a.number);
     h += `<span class="atom ${a.category}${inPlay.has(a.id) ? '' : ' off'}" ` +
+         `style="grid-area:${row}/${col}" ` +
          `title="${a.number} ${a.name}"><span class="sym">${a.symbol}</span>` +
          `<span class="z">${a.number}</span></span>`;
   }
@@ -3513,20 +3642,29 @@ function ptRender() {
     `<span>${held} of the ${PLAYABLE_ATOM.size} you can hold are on your shelf</span>` +
     `<div class="legend">` + cats.map(c => `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>` +
     `<button class="ghost" id="ptClose" title="Close the table">Close</button>`;
+  // Laid out the way a wall chart is: group numbers along the top, period
+  // numbers down the side, and inside each tile the atomic number small at the
+  // top, the symbol large, and the name under it. Everything is shifted one row
+  // and one column to make room for the headers.
   let h = '<div class="ptab">';
+  for (let g = 1; g <= 18; g++) h += `<i class="gnum" style="grid-area:1/${g + 1}">${g}</i>`;
+  for (let pd = 1; pd <= 7; pd++) h += `<i class="pnum" style="grid-area:${pd + 1}/1">${pd}</i>`;
   for (const a of BED.atoms) {
-    if (PT_GAPS[a.number] > 0) h += `<div class="gap" style="--n:${PT_GAPS[a.number]}"></div>`;
-    if (a.number === 57 || a.number === 89) h += `<div class="gap" style="--n:18"></div>`;
+    const [row, col] = ptCell(a.number);
     const el = PLAYABLE_ATOM.get(a.id);
     const mine = el && found.has(el);
     // Sulfur is yellow flakes, bromine an ampoule of brown liquid, tungsten a
-    // filament coil — the drawings already say what each one is to hold, which
-    // is more than a two-letter symbol ever does. Show them on the tile.
+    // filament coil — the drawings say what each one is to HOLD, which a
+    // two-letter symbol never does. Kept, but as a watermark in the corner, so
+    // the chart still reads as a chart.
     const art = el && ART[el] ? `<span class="gl">${artSVG(el)}</span>` : '';
-    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}${art ? ' hasart' : ''}" ` +
+    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}" ` +
+         `style="grid-area:${row + 1}/${col + 1}" ` +
          `data-atom="${a.id}"${el ? ` data-el="${el}"` : ''} ` +
          `title="${a.number} · ${a.name}${mine ? ' — on your shelf' : el ? ' — in this world, not yet made' : ' — reference only'}">` +
-         `${art}<span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>`;
+         `${art}<span class="z">${a.number}</span>` +
+         `<span class="sym">${a.symbol}</span>` +
+         `<span class="nm">${a.name}</span></span>`;
   }
   document.getElementById('ptBody').innerHTML = h + '</div>';
   document.getElementById('ptClose').onclick = () => ptSet(false);
@@ -3539,15 +3677,15 @@ function ptRender() {
 // small for a drawing and leaves an 8px symbol, which is the complaint this
 // was meant to fix. A tile is worth reading or it is not worth drawing. Keep
 // it readable, and let a short dock scroll; the handle is right there.
-const PT_COLS = 18, PT_GAPPX = 3;
+const PT_COLS = 18, PT_ROWS = 10, PT_GAPPX = 3;   // 7 periods, a blank, and the two f-block rows
 function ptFit() {
   const body = document.getElementById('ptBody');
   const tab = body?.querySelector('.ptab');
   if (!tab) return;
-  const byW = (body.clientWidth - (PT_COLS - 1) * PT_GAPPX) / PT_COLS;
-  const cell = Math.max(34, Math.min(56, Math.floor(byW)));
+  const byW = (body.clientWidth - (PT_COLS + 0.5) * PT_GAPPX) / (PT_COLS + 0.5);   // the period column too
+  const cell = Math.max(34, Math.min(74, Math.floor(byW)));
   tab.style.setProperty('--ptcell', cell + 'px');
-  body.classList.toggle('tight', cell < 40);
+  body.classList.toggle('tight', cell < 44);
 }
 function ptSet(on) {
   document.body.classList.toggle('pt-on', on);
@@ -3716,14 +3854,15 @@ function showEntry(id) {
     </div>
     <h2>Made from${knownIn.length ? ` · ${knownIn.length}` : ''}</h2>
     ${knownIn.length ? rows(knownIn, 'in')
-      : `<p class="none">${owned ? 'You have not found a way to make this yet.'
-                                 : 'You have not made this yet, so none of its routes are open.'}</p>`}
+      : `<p class="none">${owned
+            ? 'You have this one, but you have not yet held everything that makes it.'
+            : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
     <h2>Makes${knownOut.length ? ` · ${knownOut.length}` : ''}</h2>
     ${knownOut.length ? rows(knownOut, 'out') : '<p class="none">Nothing yet.</p>'}
     ${hiddenOut > 0 ? `<p class="hint2">${hiddenOut} more thing${hiddenOut === 1 ? '' : 's'} can be made with it.</p>` : ''}
     ${factsHTML(id)}
-    ${bedrockHTML(leafTally(id), 'What it is made of')}`;
+    ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}`;
   openSheet(e.name);
 }
 
@@ -3845,6 +3984,12 @@ function showProvenance(id, mode) {
 // Rebuilding the whole sheet on every keystroke destroys the input and resets
 // the caret to position 0, which makes typed text come out reversed. Build the
 // chrome once; only the results list is re-rendered.
+// Off by default: the codex is a record of what YOU have found, and opening it
+// on six hundred grey silhouettes would make it a checklist someone else wrote.
+// On when you ask, because "what else is in here" is a fair question and the
+// honest answer is the whole map, greyed, with every one of them tappable for
+// its own route.
+let codexAll = false;
 function codexResults(q) {
   const hits = elements.filter(e => found.has(e.id) &&
     (!q || nameOf(e).toLowerCase().includes(q.toLowerCase())));
@@ -3859,12 +4004,20 @@ function codexResults(q) {
       `</div>`
     : '';
   if (!hits.length && !unmade.length) return '<p class="none">Nothing found.</p>';
-  return FAMILIES.map(f => [f, hits.filter(e => familyOf(e).id === f.id)])
-    .filter(([, g]) => g.length)
+  // With "show all" on, each family lists what you hold first and then what you
+  // do not, in the same row — so the gap is visible where it actually is,
+  // rather than as one undifferentiated pile at the bottom.
+  const restOf = (f) => codexAll && !q
+    ? elements.filter(e => !found.has(e.id) && familyOf(e).id === f.id)
+    : [];
+  return FAMILIES.map(f => [f, hits.filter(e => familyOf(e).id === f.id), restOf(f)])
+    .filter(([, g, rest]) => g.length || rest.length)
     .sort((a, b) => (a[0].id === 'myth') - (b[0].id === 'myth'))
-    .map(([f, g]) =>
-      `<h2 class="fam-${f.id}"><i></i>${f.name} · ${g.length}</h2><div class="shelf">` +
+    .map(([f, g, rest]) =>
+      `<h2 class="fam-${f.id}"><i></i>${f.name} · ${g.length}` +
+      (rest.length ? `<em>${g.length + rest.length}</em>` : '') + `</h2><div class="shelf">` +
       g.map(e => `<span class="chip fam-${f.id}" data-fam="${f.id}" data-entry="${e.id}">${chipHTML(e)}</span>`).join('') +
+      rest.map(e => `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`).join('') +
       `</div>`).join('') + unmadeBlock;
 }
 function showCodex(q = '') {
@@ -3873,12 +4026,17 @@ function showCodex(q = '') {
     `<div class="cardrow" style="margin:10px 0 2px">` +
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
     `<button class="ghost" id="aaBtn">Amino acids</button>` +
-    `<button class="ghost" id="ladderBtn">The ladder</button></div>` +
+    `<button class="ghost" id="ladderBtn">The ladder</button>` +
+    `<button class="ghost${codexAll ? ' on' : ''}" id="allBtn">${codexAll ? 'Only what I have' : 'Show all ' + elements.length}</button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
   openSheet(`Codex · ${found.size} of ${elements.length}`);
   document.getElementById('ptBtn').onclick = () => {
     document.getElementById('sheetBody').innerHTML = periodicHTML();
     openSheet('The periodic table');
+  };
+  document.getElementById('allBtn').onclick = () => {
+    codexAll = !codexAll;
+    showCodex(document.getElementById('q')?.value ?? '');
   };
   document.getElementById('aaBtn').onclick = () => showAtom('amino_acid');
   document.getElementById('ladderBtn').onclick = showLadder;
@@ -4191,12 +4349,30 @@ addEventListener('pointermove', ev => {
   }
   verbDrag.ghost.style.left = (ev.clientX - 42) + 'px';
   verbDrag.ghost.style.top  = (ev.clientY - 20) + 'px';
+  // Carrying a tool ONTO a card is the same gesture as carrying a card onto a
+  // tool, so it gets the same dial. Rest Heat on limestone and the number
+  // climbs; let go at 900 and you have quicklime. This direction had the whole
+  // mechanism sitting there unused, which is why holding a verb over a thing
+  // did nothing but wait for you to drop it.
+  const over = hit(ev.clientX, ev.clientY);
+  const chip = over && over.classList.contains('board') && !over.classList.contains('cooking') ? over : null;
+  const key = chip ? chip.dataset.id + '|' + verbDrag.id : null;
+  if (key && bands.has(key)) {
+    const verbEl = document.querySelector(`.verb[data-verb="${verbDrag.id}"]`);
+    if (verbEl) startHeat(chip, verbEl, key);
+  } else stopHeat();
+  document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
+  if (chip) chip.classList.add('target');
 });
 addEventListener('pointerup', ev => {
   if (!verbDrag) return;
   const { id, moved, ghost } = verbDrag; verbDrag = null;
   ghost?.remove();
-  if (!moved) return;                                  // a plain tap on an open verb does nothing
+  document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
+  if (!moved) { stopHeat(); return; }                  // a plain tap on an open verb does nothing
+  // If the dial was climbing, letting go IS the choice — it has already picked
+  // a temperature and must not also fall through to a plain drop.
+  if (heating) { releaseHeat(); return; }
   const t = hit(ev.clientX, ev.clientY);
   const verbEl = document.querySelector(`.verb[data-verb="${id}"]`);
   if (t && t.classList.contains('board') && verbEl) applyProcess(t, verbEl);

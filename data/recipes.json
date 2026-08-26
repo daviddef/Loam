@@ -7766,5 +7766,2377 @@
     "why": "ICI could not repeat their own discovery at first. The reaction had been started by a trace of oxygen leaking into the apparatus — the contamination was the initiator, and without knowing that they had no experiment.",
     "src": "https://en.wikipedia.org/wiki/Polyethylene",
     "verified": true
+  },
+  {
+    "in": [
+      "stone"
+    ],
+    "verb": "heat",
+    "at": 1080,
+    "out": "magma",
+    "why": "Rock has no single melting point. Wet granite starts to go near 650 °C; wet basalt holds out to about 1,080 °C at surface pressure. Past that, any stone is magma.",
+    "src": "https://en.wikipedia.org/wiki/Metamorphism",
+    "supported": true
+  },
+  {
+    "in": [
+      "gneiss"
+    ],
+    "verb": "heat",
+    "at": 650,
+    "out": "magma",
+    "why": "Above about 650 °C rock melts in patches rather than all at once. The melt gathers in pale streaks through the solid remains — migmatite, and the rock cycle closing on itself.",
+    "src": "https://en.wikipedia.org/wiki/Migmatite",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "magma"
+    ],
+    "out": "lava",
+    "why": "Magma is the melt while it is still underground. The moment it is expelled onto the surface and meets the air, nothing about the liquid changes except the word for it: it is lava now.",
+    "src": "https://en.wikipedia.org/wiki/Lava",
+    "verified": true
+  },
+  {
+    "in": [
+      "magma"
+    ],
+    "verb": "wait",
+    "out": "granite",
+    "why": "Magma stuck underground cools over thousands of years, and crystals have time to grow. That is the whole difference: granite's quartz, feldspar and mica are big enough to pick out by eye.",
+    "src": "https://en.wikipedia.org/wiki/Granite",
+    "verified": true
+  },
+  {
+    "in": [
+      "lava"
+    ],
+    "verb": "chill",
+    "out": "basalt",
+    "why": "At the surface the same melt loses its heat in days. Crystals start everywhere at once and none of them get large, so basalt is dark, dense and too fine-grained to see the grains in.",
+    "src": "https://en.wikipedia.org/wiki/Basalt",
+    "verified": true
+  },
+  {
+    "in": [
+      "lava",
+      "sea"
+    ],
+    "out": "basalt",
+    "why": "Lava running into the sea is quenched on contact. The skin freezes, the flow swells behind it and bursts out as the next lobe: pillow basalt, and it is what the ocean floor is made of.",
+    "src": "https://en.wikipedia.org/wiki/Basalt",
+    "verified": true
+  },
+  {
+    "in": [
+      "lava",
+      "quartz"
+    ],
+    "out": "obsidian",
+    "why": "Silica-rich lava is stiff, and stiffness stops atoms moving far enough to line up. Nucleation never starts, so it sets as glass — one continuous solid with no crystal anywhere in it.",
+    "src": "https://en.wikipedia.org/wiki/Obsidian",
+    "supported": true
+  },
+  {
+    "in": [
+      "lava",
+      "steam"
+    ],
+    "out": "pumice",
+    "why": "Lava carries water and carbon dioxide dissolved in it under pressure. Erupted, the pressure drops, the gas comes out of solution all at once, and the froth freezes before it can escape.",
+    "src": "https://en.wikipedia.org/wiki/Pumice",
+    "verified": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "quartz"
+    ],
+    "out": "granite",
+    "why": "Granite is not a substance but a mixture, grown into itself: quartz, alkali feldspar, mica and plagioclase. The feldspar is the pale blocky part, the quartz the grey glassy grains between.",
+    "src": "https://en.wikipedia.org/wiki/Granite",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen",
+      "silicon"
+    ],
+    "out": "quartz",
+    "why": "Silicon dioxide. Every silicon sits in a cage of four oxygens and every oxygen is shared with the next cage — a framework with no weak plane in it, which is why quartz is so hard to wear out.",
+    "src": "https://en.wikipedia.org/wiki/Quartz",
+    "supported": true
+  },
+  {
+    "in": [
+      "magma",
+      "water"
+    ],
+    "out": "quartz",
+    "why": "Water heated by a body of magma dissolves silica, carries it up through cracks and drops it again as it cools. A quartz vein is a crack that hot water filled from the inside.",
+    "src": "https://en.wikipedia.org/wiki/Quartz",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "silicon"
+    ],
+    "out": "feldspar",
+    "why": "Feldspars are aluminium tectosilicates: a silica framework with aluminium substituted into it and sodium, potassium or calcium tucked in to balance the charge. Sixty per cent of the crust.",
+    "src": "https://en.wikipedia.org/wiki/Feldspar",
+    "supported": true
+  },
+  {
+    "in": [
+      "feldspar"
+    ],
+    "verb": "wait",
+    "out": "clay",
+    "why": "Rain is faintly acidic and it hydrolyses feldspar: the sodium and potassium wash out, and what stays is clay — illite, smectite, kaolinite. Nearly all the clay in the world was feldspar first.",
+    "src": "https://en.wikipedia.org/wiki/Feldspar",
+    "verified": true
+  },
+  {
+    "in": [
+      "granite"
+    ],
+    "verb": "wait",
+    "out": "sand",
+    "why": "Acid in rain and soil water hydrolyses granite's feldspar into clay, which washes away. Quartz has the lowest weathering potential of any of it and does not go, so quartz grains are what is left.",
+    "src": "https://en.wikipedia.org/wiki/Granite",
+    "supported": true
+  },
+  {
+    "in": [
+      "basalt"
+    ],
+    "verb": "wait",
+    "out": "soil",
+    "why": "Basalt weathers faster than granite: finer grain, glass between the crystals, and iron that rusts. Breaking down it releases calcium, sodium and magnesium, and leaves clay and iron oxides behind.",
+    "src": "https://en.wikipedia.org/wiki/Basalt",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay"
+    ],
+    "verb": "wait",
+    "out": "mudstone",
+    "why": "Bury mud under more mud and the weight presses the water out of the pore space until the grains lock together. Mudrocks are half of all the sedimentary rock in the record.",
+    "src": "https://en.wikipedia.org/wiki/Mudrock",
+    "supported": true
+  },
+  {
+    "in": [
+      "mudstone"
+    ],
+    "verb": "crush",
+    "out": "shale",
+    "why": "Press it harder and the flat clay flakes all rotate to lie the same way. That alignment is fissility: shale is mudstone that has learned to split into sheets.",
+    "src": "https://en.wikipedia.org/wiki/Shale",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand"
+    ],
+    "verb": "wait",
+    "out": "sandstone",
+    "why": "Sand buried under more sand compacts, and the warmth at depth makes minerals crystallise in the gaps and glue the grains to each other. That cement is the difference between sand and a rock.",
+    "src": "https://en.wikipedia.org/wiki/Sandstone",
+    "verified": true
+  },
+  {
+    "in": [
+      "dune"
+    ],
+    "verb": "wait",
+    "out": "sandstone",
+    "why": "A dune buried by the next dune keeps its shape. Its steep slip faces survive as cross-bedding in sets metres thick, and you can still read the old wind direction straight off the cliff.",
+    "src": "https://en.wikipedia.org/wiki/Aeolian_processes",
+    "verified": true
+  },
+  {
+    "in": [
+      "flood",
+      "stone"
+    ],
+    "out": "conglomerate",
+    "why": "Water only carries stones that size at high flow. By the time a flood drops them they are rounded from the journey, and finer sediment settles into the gaps and cements the lot together.",
+    "src": "https://en.wikipedia.org/wiki/Conglomerate_(geology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "shale"
+    ],
+    "verb": "heat",
+    "at": 200,
+    "out": "slate",
+    "why": "Metamorphism begins around 150–200 °C. The clay recrystallises, and the new grains grow across the direction of the squeeze rather than along the bedding — so slate splits at an angle to its own layers.",
+    "src": "https://en.wikipedia.org/wiki/Slate",
+    "verified": true
+  },
+  {
+    "in": [
+      "slate"
+    ],
+    "verb": "heat",
+    "at": 400,
+    "out": "phyllite",
+    "why": "By about 400 °C the mica has grown from microscopic to merely small. Still too fine to pick out one flake, but together they give the cleavage surface a silky, sometimes golden sheen.",
+    "src": "https://en.wikipedia.org/wiki/Phyllite",
+    "supported": true
+  },
+  {
+    "in": [
+      "phyllite"
+    ],
+    "verb": "heat",
+    "at": 500,
+    "out": "schist",
+    "why": "Past 500 °C the mica flakes grow big enough to see with a hand lens, all oriented the same way. The rock now splits into plates you can hold rather than sheets you can bend.",
+    "src": "https://en.wikipedia.org/wiki/Schist",
+    "supported": true
+  },
+  {
+    "in": [
+      "schist"
+    ],
+    "verb": "heat",
+    "at": 600,
+    "out": "gneiss",
+    "why": "Over 600 °C the minerals stop mixing and start sorting: pale quartz and feldspar into one band, dark mica and amphibole into the next. The striping is what makes it gneiss and not schist.",
+    "src": "https://en.wikipedia.org/wiki/Gneiss",
+    "verified": true
+  },
+  {
+    "in": [
+      "sandstone"
+    ],
+    "verb": "heat",
+    "out": "quartzite",
+    "why": "Heat and tectonic pressure recrystallise the quartz grains into one another until cement and grain are the same thing. Break quartzite and the fracture goes through the grains, not around them.",
+    "src": "https://en.wikipedia.org/wiki/Quartzite",
+    "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "magma"
+    ],
+    "out": "marble",
+    "why": "A body of magma bakes the rock it pushes into. In limestone the small calcite crystals dissolve and regrow larger and interlocked, and the bedding and fossils are modified or destroyed with them.",
+    "src": "https://en.wikipedia.org/wiki/Contact_metamorphism",
+    "verified": true
+  },
+  {
+    "in": [
+      "peat"
+    ],
+    "verb": "wait",
+    "out": "lignite",
+    "why": "Buried under later sediment, peat compresses and gives up water. Lignite forms below 100 °C, mostly by microbes rather than by heat, and can still be three-quarters water when it is dug.",
+    "src": "https://en.wikipedia.org/wiki/Lignite",
+    "verified": true
+  },
+  {
+    "in": [
+      "lignite"
+    ],
+    "verb": "heat",
+    "at": 85,
+    "out": "coal",
+    "why": "Buried deep enough to reach 85 °C, coal keeps maturing: water and oxygen leave, carbon concentrates to about 84%, and it hardens and blackens into bituminous coal. Temperature matters more than pressure.",
+    "src": "https://en.wikipedia.org/wiki/Bituminous_coal",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal"
+    ],
+    "verb": "heat",
+    "at": 235,
+    "out": "anthracite",
+    "why": "Above about 235 °C the bitumen in bituminous coal breaks down and leaves. What stays is 86–97% carbon, hard, glossy and almost smokeless: the highest rank coal reaches.",
+    "src": "https://en.wikipedia.org/wiki/Bituminous_coal",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon"
+    ],
+    "verb": "crush",
+    "out": "diamond",
+    "why": "Carbon only takes the diamond arrangement under real pressure: about 4.5 gigapascals at 950 °C, which means 150 km down. Every diamond at the surface was carried up by a volcano.",
+    "src": "https://en.wikipedia.org/wiki/Diamond",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "oxygen"
+    ],
+    "out": "corundum",
+    "why": "Aluminium oxide, packed tight enough to score 9 on the Mohs scale — only diamond is harder. Pure corundum is transparent and colourless; everything interesting about it is an impurity.",
+    "src": "https://en.wikipedia.org/wiki/Corundum",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromium",
+      "corundum"
+    ],
+    "out": "ruby",
+    "why": "Swap a little of the aluminium for chromium and the crystal starts absorbing green and violet light. What gets through is red. That is the entire difference between ruby and colourless corundum.",
+    "src": "https://en.wikipedia.org/wiki/Ruby",
+    "verified": true
+  },
+  {
+    "in": [
+      "corundum",
+      "titanium"
+    ],
+    "out": "sapphire",
+    "why": "Blue needs two impurities, not one. Where an iron and a titanium ion sit side by side in place of aluminium, an electron hops between them; the energy it takes is yellow light, and blue is what is left.",
+    "src": "https://en.wikipedia.org/wiki/Sapphire",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "chromium"
+    ],
+    "out": "emerald",
+    "why": "Emerald is beryl — a beryllium aluminium silicate — with traces of chromium, or sometimes vanadium. The same chromium that makes ruby red makes emerald green: the host crystal decides the colour.",
+    "src": "https://en.wikipedia.org/wiki/Emerald",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartz",
+      "water"
+    ],
+    "out": "opal",
+    "why": "Silica dissolved in water is put down again in cracks, not as crystal but as microscopic spheres with water still trapped between them. Sized evenly enough, they diffract light into colours.",
+    "src": "https://en.wikipedia.org/wiki/Opal",
+    "supported": true
+  },
+  {
+    "in": [
+      "schist"
+    ],
+    "verb": "crush",
+    "out": "mica",
+    "why": "Schist is mostly mica already, all lying the same way. Crushed, it lets the flakes go whole rather than shattering them — which is where most of the world's flake mica actually comes from.",
+    "src": "https://en.wikipedia.org/wiki/Mica",
+    "verified": true
+  },
+  {
+    "in": [
+      "granite"
+    ],
+    "verb": "crush",
+    "out": "mica",
+    "why": "Granite's third mineral, and the one that gives. Its sheets are held to each other by weak bonds, so it comes away in elastic plates; single books of it in coarse granite can be feet across.",
+    "src": "https://en.wikipedia.org/wiki/Mica",
+    "supported": true
+  },
+  {
+    "in": [
+      "sun"
+    ],
+    "verb": "cut",
+    "out": "photon",
+    "why": "Light does not come in a smooth stream. Cut it finer and finer and you reach a piece that cannot be divided: one quantum of the electromagnetic field, massless, and moving at one fixed speed and no other.",
+    "src": "https://en.wikipedia.org/wiki/Photon",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron"
+    ],
+    "verb": "heat",
+    "out": "photon",
+    "why": "Heat free electrons and they radiate. Each time one swerves past a nucleus it loses kinetic energy, and that energy leaves as a photon. The German name means braking radiation, and it is what an X-ray tube emits.",
+    "src": "https://en.wikipedia.org/wiki/Bremsstrahlung",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen",
+      "sun"
+    ],
+    "out": "plasma",
+    "why": "The Sun is not a burning ball of gas. At that temperature hydrogen's electrons are stripped off their nuclei, and what is left conducts electricity and answers to magnetic fields. An estimated 99.9% of ordinary matter is in this state.",
+    "src": "https://en.wikipedia.org/wiki/Plasma_(physics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen",
+      "photon"
+    ],
+    "out": "plasma",
+    "why": "It takes 13.6 electronvolts — an ultraviolet photon at 91.2 nanometres — to knock the electron off a hydrogen atom. Hot young stars pour those out, and the cloud around them ends up ionised. That is an H II region.",
+    "src": "https://en.wikipedia.org/wiki/H_II_region",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasma"
+    ],
+    "verb": "heat",
+    "at": 1660000000000,
+    "out": "down_quark",
+    "why": "Above about 1.66 trillion kelvin, protons and neutrons stop holding together. Quarks and gluons come unconfined and move freely — the state the whole universe was in for its first twenty microseconds.",
+    "src": "https://en.wikipedia.org/wiki/Quark%E2%80%93gluon_plasma",
+    "verified": true
+  },
+  {
+    "in": [
+      "down_quark"
+    ],
+    "verb": "wait",
+    "out": "up_quark",
+    "why": "Beta decay seen from the inside. A down quark of charge −1/3 emits a W boson and becomes an up quark of charge +2/3. Do that to one quark in a neutron and the neutron is now a proton.",
+    "src": "https://en.wikipedia.org/wiki/Beta_decay",
+    "verified": true
+  },
+  {
+    "in": [
+      "up_quark",
+      "up_quark"
+    ],
+    "out": "proton",
+    "why": "A proton is three quarks: two up and one down, bound so hard by the strong force that nobody has ever pulled one out to look at it. The charge is just the fractions adding up — 2/3 plus 2/3 minus 1/3 is exactly 1.",
+    "src": "https://en.wikipedia.org/wiki/Proton",
+    "verified": true
+  },
+  {
+    "in": [
+      "down_quark",
+      "down_quark"
+    ],
+    "out": "neutron",
+    "why": "Swap one quark and you swap the particle. Two downs and an up is a neutron: −1/3 minus 1/3 plus 2/3 is zero. Being uncharged is why it can walk straight into a nucleus that would push a proton away.",
+    "src": "https://en.wikipedia.org/wiki/Neutron",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron"
+    ],
+    "verb": "wait",
+    "out": "proton",
+    "why": "A neutron inside a nucleus can last forever. A free one has a mean life of about fifteen minutes and then decays into a proton, an electron and an antineutrino. Nothing does it to the neutron; it simply runs out.",
+    "src": "https://en.wikipedia.org/wiki/Neutron",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "proton"
+    ],
+    "out": "hydrogen",
+    "why": "For its first 378,000 years the universe was too hot for this — every electron was knocked loose again. When it finally cooled enough for electrons and protons to stay bound, light stopped scattering and got out. We still see that light.",
+    "src": "https://en.wikipedia.org/wiki/Recombination_(cosmology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "proton"
+    ],
+    "out": "atomic_nucleus",
+    "why": "The strong force binds protons and neutrons over about a femtometre and no further. What it makes is tens of thousands of times smaller than the atom around it and holds very nearly all of that atom's mass.",
+    "src": "https://en.wikipedia.org/wiki/Atomic_nucleus",
+    "verified": true
+  },
+  {
+    "in": [
+      "helium"
+    ],
+    "verb": "cut",
+    "out": "atomic_nucleus",
+    "why": "Take the two electrons off a helium atom and what is left is two protons and two neutrons — an alpha particle. It is the same object that comes out of decaying uranium: a nucleus with nothing around it.",
+    "src": "https://en.wikipedia.org/wiki/Alpha_particle",
+    "verified": true
+  },
+  {
+    "in": [
+      "atomic_nucleus"
+    ],
+    "verb": "heat",
+    "out": "gamma_ray",
+    "why": "A nucleus has energy levels the way an atom does, only about a million times further apart. Excite one and it drops back almost immediately, and the photon it lets go is a gamma ray: light, at nuclear energies.",
+    "src": "https://en.wikipedia.org/wiki/Gamma_ray",
+    "verified": true
+  },
+  {
+    "in": [
+      "atomic_nucleus",
+      "gamma_ray"
+    ],
+    "out": "electron",
+    "why": "Above 1.022 MeV — exactly twice an electron's rest mass — a gamma ray passing close to a nucleus can vanish and leave an electron and a positron behind. The nucleus has to be there to take the recoil.",
+    "src": "https://en.wikipedia.org/wiki/Pair_production",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasma"
+    ],
+    "verb": "cut",
+    "out": "electron",
+    "why": "Ionisation is the cut: electron on one side, ion on the other, both free to move independently. That is why a plasma conducts, and why the electrons in one can be treated as a gas in their own right.",
+    "src": "https://en.wikipedia.org/wiki/Plasma_(physics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen",
+      "neutron"
+    ],
+    "out": "deuterium",
+    "why": "A neutron that wanders into ordinary hydrogen is simply kept, and the 2.223 MeV it no longer needs leaves as a gamma ray. That exact line is seen coming off solar flares. What remains is hydrogen with a neutron in it.",
+    "src": "https://en.wikipedia.org/wiki/Neutron_capture",
+    "verified": true
+  },
+  {
+    "in": [
+      "deuterium",
+      "neutron"
+    ],
+    "out": "tritium",
+    "why": "Do it again. A deuterium nucleus catches a second neutron and becomes tritium — one proton, two neutrons. It is how heavy-water reactors end up with tritium in them whether anybody wanted it there or not.",
+    "src": "https://en.wikipedia.org/wiki/Tritium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lithium",
+      "neutron"
+    ],
+    "out": "tritium",
+    "why": "The usual route. Lithium-6 in a neutron flux splits into helium and tritium. Tritium's half-life is 12.32 years, so there is no natural stock of it anywhere to dig up — all of it has to be made.",
+    "src": "https://en.wikipedia.org/wiki/Tritium",
+    "verified": true
+  },
+  {
+    "in": [
+      "deuterium",
+      "tritium"
+    ],
+    "out": "helium",
+    "why": "The easiest fusion there is, because both nuclei carry only a single positive charge to push each other apart. They make an unstable helium-5 that instantly throws off a neutron carrying 14.1 MeV; the helium keeps 3.5. Total, 17.6 MeV.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_fusion",
+    "verified": true
+  },
+  {
+    "in": [
+      "enriched_uranium",
+      "neutron"
+    ],
+    "out": "fission_product",
+    "why": "A uranium-235 nucleus that absorbs a neutron becomes uranium-236 for an instant, then splits into two lighter nuclei and a couple of spare neutrons. About 200 MeV per event, and both halves come out radioactive.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_fission",
+    "verified": true
+  },
+  {
+    "in": [
+      "fission_product"
+    ],
+    "verb": "wait",
+    "out": "gamma_ray",
+    "why": "Fission fragments come out with more neutrons than a stable nucleus of their mass can carry. They beta-decay their way back down, and the nuclei left behind shed what is still spare as gamma rays. That goes on for centuries.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_fission_product",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasma"
+    ],
+    "verb": "heat",
+    "at": 15500000,
+    "out": "helium",
+    "why": "At the Sun's core temperature of 15.5 million kelvin, hydrogen nuclei fuse into helium by the proton–proton chain. It is the dominant process in stars the size of the Sun and smaller. It is where sunlight comes from.",
+    "src": "https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain",
+    "verified": true
+  },
+  {
+    "in": [
+      "helium"
+    ],
+    "verb": "heat",
+    "at": 100000000,
+    "out": "carbon",
+    "why": "Six times hotter than the Sun's core, alpha particles fuse fast enough to get past the beryllium-8 barrier — beryllium-8 lasts 8×10⁻¹⁷ of a second — and three of them become carbon-12. Every carbon atom in this game was made this way.",
+    "src": "https://en.wikipedia.org/wiki/Triple-alpha_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "helium"
+    ],
+    "out": "oxygen",
+    "why": "Carbon-12 catches one more helium nucleus and becomes oxygen-16, letting 7.16 MeV go as a gamma ray. Carbon, then oxygen, one alpha particle at a time — the two elements every living thing is built from, made in the same place.",
+    "src": "https://en.wikipedia.org/wiki/Alpha_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon"
+    ],
+    "verb": "heat",
+    "at": 500000000,
+    "out": "neon",
+    "why": "Above 500 million kelvin, in stars of at least four solar masses, carbon starts fusing with carbon. Out of it comes a mixture mainly of oxygen, neon, sodium and magnesium — the next rung of a ladder that ends at iron.",
+    "src": "https://en.wikipedia.org/wiki/Carbon-burning_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "supernova"
+    ],
+    "verb": "wait",
+    "out": "iron",
+    "why": "The explosion makes radioactive nickel-56, which decays to cobalt-56 with a 6-day half-life and then to iron-56 with a 77.3-day one. That decay is what keeps a supernova glowing for months, and the iron it leaves is thrown out across the galaxy.",
+    "src": "https://en.wikipedia.org/wiki/Supernova",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron_star",
+      "neutron_star"
+    ],
+    "out": "gold",
+    "why": "Two neutron stars merge, and in the neutron-rich wreckage nuclei catch neutrons faster than they can decay. That is the r-process, and in 2017 it was finally caught happening. Models put 3 to 13 Earth masses of gold in a single merger.",
+    "src": "https://en.wikipedia.org/wiki/R-process",
+    "verified": true
+  },
+  {
+    "in": [
+      "sun"
+    ],
+    "verb": "wait",
+    "out": "red_giant",
+    "why": "In about five billion years the Sun will run out of hydrogen in its core, start burning it in a shell around the core instead, and swell. It takes Mercury and Venus with it, and most likely the Earth.",
+    "src": "https://en.wikipedia.org/wiki/Red_giant",
+    "verified": true
+  },
+  {
+    "in": [
+      "nebula"
+    ],
+    "verb": "crush",
+    "out": "star",
+    "why": "Nothing starts a star but its own weight. A dense region of a molecular cloud collapses, heats as it compresses, and stops falling only when the pressure inside can hold it up. Fusion begins after that, not before.",
+    "src": "https://en.wikipedia.org/wiki/Star_formation",
+    "verified": true
+  },
+  {
+    "in": [
+      "star"
+    ],
+    "verb": "wait",
+    "out": "red_giant",
+    "why": "Core hydrogen runs out, fusion moves to a shell around the dead core, and the outer layers swell to tens or hundreds of times the Sun's radius and cool to red as they go. Every star that lives long enough does this.",
+    "src": "https://en.wikipedia.org/wiki/Red_giant",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_giant"
+    ],
+    "verb": "blow",
+    "out": "nebula",
+    "why": "An ageing giant can lose 50 to 70% of its whole mass to its own stellar wind. The gas drifts off at a few kilometres a second, ultraviolet from the exposed core lights it up, and the display lasts about 10,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Planetary_nebula",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_giant"
+    ],
+    "verb": "crush",
+    "out": "white_dwarf",
+    "why": "What the wind leaves. No fusion and no heat holding it up — only electron degeneracy pressure, which is not a force but a rule about how electrons may be stacked. The Sun's mass in an Earth-sized volume: a tonne per cubic centimetre.",
+    "src": "https://en.wikipedia.org/wiki/White_dwarf",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_giant"
+    ],
+    "verb": "chill",
+    "out": "cosmic_dust",
+    "why": "Dust is made in the cooling outflow of dying stars. Silicates come off the oxygen-rich ones, graphite and amorphous carbon off the carbon-rich ones, and the stellar wind carries the grains out into the galaxy.",
+    "src": "https://en.wikipedia.org/wiki/Cosmic_dust",
+    "verified": true
+  },
+  {
+    "in": [
+      "cosmic_dust",
+      "hydrogen_gas"
+    ],
+    "out": "nebula",
+    "why": "A molecular cloud is mostly hydrogen in molecular form, with carbon monoxide a distant second, and enough dust mixed through it to shield the inside from the ultraviolet that would otherwise pull the molecules apart.",
+    "src": "https://en.wikipedia.org/wiki/Molecular_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "red_giant"
+    ],
+    "out": "supernova",
+    "why": "A massive star builds shells of heavier and heavier ash until the core is iron — and iron gives nothing back, because fusing it costs energy instead of releasing it. With nothing holding it up any more, the core falls in and the star comes apart.",
+    "src": "https://en.wikipedia.org/wiki/Supernova",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "white_dwarf"
+    ],
+    "out": "supernova",
+    "why": "The other kind. A white dwarf pulling gas off a companion creeps up on the Chandrasekhar limit — about 1.44 solar masses — and detonates. They all go off at nearly the same brightness, which is how the expansion of the universe got measured.",
+    "src": "https://en.wikipedia.org/wiki/Type_Ia_supernova",
+    "verified": true
+  },
+  {
+    "in": [
+      "supernova"
+    ],
+    "verb": "crush",
+    "out": "neutron_star",
+    "why": "The core falls and does not stop until it reaches the density of a nucleus. On the way down, electrons and protons are pressed together into neutrons and a flood of neutrinos leaves. 1.4 solar masses in a ball ten kilometres across.",
+    "src": "https://en.wikipedia.org/wiki/Neutron_star",
+    "verified": true
+  },
+  {
+    "in": [
+      "supernova"
+    ],
+    "verb": "chill",
+    "out": "cosmic_dust",
+    "why": "Dust also condenses inside the expanding wreckage as it cools. A supernova is one of the places the grains come from, alongside red giants, carbon stars and novae — and it seeds a far wider volume than a stellar wind ever reaches.",
+    "src": "https://en.wikipedia.org/wiki/Cosmic_dust",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron_star"
+    ],
+    "verb": "crush",
+    "out": "black_hole",
+    "why": "Neutrons resist being packed, but only so far. The smallest black holes made this way are thought to start somewhere between two and four solar masses. Past that nothing known holds the core up, and it falls to a surface light cannot cross back out of.",
+    "src": "https://en.wikipedia.org/wiki/Black_hole",
+    "verified": true
+  },
+  {
+    "in": [
+      "cosmic_dust"
+    ],
+    "verb": "crush",
+    "out": "planetesimal",
+    "why": "Grains stick, clumps grow, and somewhere near a kilometre across the body's own gravity takes over from whatever was making them stick. After that it pulls in the rest. How anything gets past a metre wide is still an open problem.",
+    "src": "https://en.wikipedia.org/wiki/Planetesimal",
+    "verified": true
+  },
+  {
+    "in": [
+      "planetesimal",
+      "planetesimal"
+    ],
+    "out": "planet",
+    "why": "Planetesimals collide and combine into Moon-sized embryos over roughly 0.1 to 1 million years. Then the embryos collide with each other, and that part takes 10 to 100 million more. A planet is the last one left in its orbit.",
+    "src": "https://en.wikipedia.org/wiki/Accretion_(astrophysics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "planetesimal"
+    ],
+    "verb": "wait",
+    "out": "asteroid",
+    "why": "The ones that never finished. Jupiter's orbital resonances threw out more than 99% of the planetesimals in the belt, so what was left could never assemble into anything. The whole belt now weighs 3% of the Moon.",
+    "src": "https://en.wikipedia.org/wiki/Asteroid",
+    "verified": true
+  },
+  {
+    "in": [
+      "cosmic_dust",
+      "ice"
+    ],
+    "out": "comet",
+    "why": "Rock and dust mixed with frozen water, carbon dioxide, carbon monoxide, methane and ammonia. Bring one near the Sun and those ices go straight to gas, which is the coma; the solar wind pushes it out into a tail.",
+    "src": "https://en.wikipedia.org/wiki/Comet",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "planet"
+    ],
+    "out": "gas_giant",
+    "why": "A solid core of about ten Earth masses is the threshold. Past it the core starts pulling hydrogen and helium straight off the disc, and the remaining 90% of the planet's mass arrives in roughly ten thousand years.",
+    "src": "https://en.wikipedia.org/wiki/Nebular_hypothesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "planet"
+    ],
+    "out": "ice_giant",
+    "why": "Astronomers call water, ammonia and methane 'ices', and that is mostly what these are. Only about 20% of an ice giant is hydrogen and helium, against more than 90% for Jupiter and Saturn. Uranus and Neptune are the two we have.",
+    "src": "https://en.wikipedia.org/wiki/Ice_giant",
+    "verified": true
+  },
+  {
+    "in": [
+      "planet",
+      "planetesimal"
+    ],
+    "out": "moon",
+    "why": "About 4.4 billion years ago a Mars-sized body called Theia hit the proto-Earth. Roughly a fifth of Theia ended up as a ring of debris around the Earth, and about half of that ring re-accreted into the Moon.",
+    "src": "https://en.wikipedia.org/wiki/Giant-impact_hypothesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "dna",
+      "ribosome"
+    ],
+    "out": "bacteria",
+    "why": "A bacterium's DNA is not shut in a nucleus. It sits loose in the cytoplasm as one circular chromosome, with the ribosomes right there beside it.",
+    "src": "https://en.wikipedia.org/wiki/Bacteria",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "membrane"
+    ],
+    "out": "archaea",
+    "why": "The membrane is the tell. Archaea join their lipids with ether bonds where every bacterium and every animal uses ester bonds, and some live in pools saltier than anything else can stand.",
+    "src": "https://en.wikipedia.org/wiki/Archaea",
+    "verified": true
+  },
+  {
+    "in": [
+      "archaea",
+      "bacteria"
+    ],
+    "out": "cell",
+    "why": "One cell swallowed another and did not digest it. Every plant, animal and fungus alive descends from that merger, and carries the swallowed thing still.",
+    "src": "https://en.wikipedia.org/wiki/Archaea",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell"
+    ],
+    "verb": "crush",
+    "out": "mitochondrion",
+    "why": "Break a cell open and this is the evidence: a single circular DNA molecule like a bacterium's, and ribosomes closer to a bacterium's than to the cell's own.",
+    "src": "https://en.wikipedia.org/wiki/Symbiogenesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "mitochondrion"
+    ],
+    "out": "atp",
+    "why": "The organelle kept its old job. Aerobic respiration happens inside it, not in the cell around it, and it hands out the ATP the whole cell spends.",
+    "src": "https://en.wikipedia.org/wiki/Mitochondrion",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "cyanobacteria"
+    ],
+    "out": "chloroplast",
+    "why": "Around two billion years ago a free-living cyanobacterium got inside a cell and stayed. It is generally held to have happened once, and every green thing descends from it.",
+    "src": "https://en.wikipedia.org/wiki/Chloroplast",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "chloroplast"
+    ],
+    "out": "alga",
+    "why": "An alga is a cell that acquired photosynthesis rather than inventing it. No roots, no stems, no leaves — and the machinery inside is borrowed.",
+    "src": "https://en.wikipedia.org/wiki/Algae",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon_dioxide",
+      "chloroplast"
+    ],
+    "out": "glucose",
+    "why": "Photosynthesis has an address. Carbon dioxide is fixed into sugar inside the chloroplast, in the Calvin cycle, and nowhere else in the plant.",
+    "src": "https://en.wikipedia.org/wiki/Chloroplast",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "milk"
+    ],
+    "out": "yoghurt",
+    "why": "Lactobacillus bulgaricus and Streptococcus thermophilus ferment the sugars in milk and produce lactic acid, and that acid acting on the milk protein is what gives yoghurt its texture and its tartness.",
+    "src": "https://en.wikipedia.org/wiki/Yogurt",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "sea"
+    ],
+    "out": "cyanobacteria",
+    "why": "In shallow water they grow as mats over the sediment, and the mats trap grains and build upward. The structures they leave are among the oldest clear signs of life on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Microbial_mat",
+    "verified": true
+  },
+  {
+    "in": [
+      "dew",
+      "stone"
+    ],
+    "out": "cyanobacteria",
+    "why": "They need almost nothing: light, air, and enough water to switch on. Bare rock that is briefly damp is a habitat, and they are usually the first thing in it.",
+    "src": "https://en.wikipedia.org/wiki/Cyanobacteria",
+    "supported": true
+  },
+  {
+    "in": [
+      "cyanobacteria",
+      "sun"
+    ],
+    "out": "oxygen_gas",
+    "why": "They invented oxygenic photosynthesis and then ran it for a billion years. The air we breathe is one organism's accumulated waste product.",
+    "src": "https://en.wikipedia.org/wiki/Cyanobacteria",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "sun"
+    ],
+    "out": "alga",
+    "why": "Algae are not confined to open water. Given light and enough moisture to stay active they will grow on soil, on rock, and in the film on any wet surface.",
+    "src": "https://en.wikipedia.org/wiki/Algae",
+    "supported": true
+  },
+  {
+    "in": [
+      "mould",
+      "wood"
+    ],
+    "out": "fungus",
+    "why": "The mould on damp timber is a fungus already — the visible fuzz is its mycelium. Fungi are the principal decomposers of plant material.",
+    "src": "https://en.wikipedia.org/wiki/Fungus",
+    "supported": true
+  },
+  {
+    "in": [
+      "mycelium"
+    ],
+    "verb": "wait",
+    "out": "fungus",
+    "why": "The mushroom is not the fungus. It is a fruiting body the mycelium puts up when conditions suit, and almost all of the organism stays underground.",
+    "src": "https://en.wikipedia.org/wiki/Mycelium",
+    "verified": true
+  },
+  {
+    "in": [
+      "mould"
+    ],
+    "verb": "blow",
+    "out": "spore",
+    "why": "Wind is how most fungi travel. The spores are single cells built to be light, and moving air is the whole dispersal strategy.",
+    "src": "https://en.wikipedia.org/wiki/Fungus",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus"
+    ],
+    "verb": "wait",
+    "out": "spore",
+    "why": "That is what a mushroom is for. The fruiting body exists to make spores and drop them, and some species fire them off explosively.",
+    "src": "https://en.wikipedia.org/wiki/Fungus",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "spore"
+    ],
+    "out": "mycelium",
+    "why": "A spore lands and puts out one thread, which branches, and branches again. That tangle in the soil is the fungus; everything else it does is a side effect.",
+    "src": "https://en.wikipedia.org/wiki/Mycelium",
+    "verified": true
+  },
+  {
+    "in": [
+      "mould",
+      "straw"
+    ],
+    "out": "mycelium",
+    "why": "Give a fungus dead plant stalks and it will run through them. Decomposing plant material is what mycelium is for, and straw is nothing but that.",
+    "src": "https://en.wikipedia.org/wiki/Mycelium",
+    "supported": true
+  },
+  {
+    "in": [
+      "alga",
+      "fungus"
+    ],
+    "out": "lichen",
+    "why": "Two kingdoms in one body. The fungus builds the structure and holds the water; the alga inside makes the food. Neither one is a lichen on its own.",
+    "src": "https://en.wikipedia.org/wiki/Lichen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanobacteria",
+      "fungus"
+    ],
+    "out": "lichen",
+    "why": "The photosynthetic partner can be a cyanobacterium instead. And where that partner can live perfectly well on its own, the arrangement looks less like a partnership than like parasitism.",
+    "src": "https://en.wikipedia.org/wiki/Lichen",
+    "verified": true
+  },
+  {
+    "in": [
+      "lichen",
+      "stone"
+    ],
+    "out": "soil",
+    "why": "They pull mineral grains out of bare rock with their filaments and then dissolve them. Weathering under lichen cover ran three to four times faster than on newly exposed rock.",
+    "src": "https://en.wikipedia.org/wiki/Weathering",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "root"
+    ],
+    "out": "mycorrhiza",
+    "why": "Root and fungus grow into one organ. The fungal threads reach past the strip of soil the root has already stripped of phosphate, and the plant pays for the reach in sugar.",
+    "src": "https://en.wikipedia.org/wiki/Arbuscular_mycorrhiza",
+    "verified": true
+  },
+  {
+    "in": [
+      "mycelium",
+      "tree"
+    ],
+    "out": "mycorrhiza",
+    "why": "On trees the fungus sheathes the root tip without ever entering a cell — a different arrangement from the one in most herbs, where the threads push through the cell wall.",
+    "src": "https://en.wikipedia.org/wiki/Mycorrhiza",
+    "verified": true
+  },
+  {
+    "in": [
+      "mycorrhiza",
+      "soil"
+    ],
+    "out": "phosphorus",
+    "why": "Phosphate barely moves in soil, so a root empties the ground it touches and then starves beside plenty. The fungus is not a bonus; for most plants it is the supply line.",
+    "src": "https://en.wikipedia.org/wiki/Arbuscular_mycorrhiza",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "root"
+    ],
+    "out": "root_nodule",
+    "why": "The plant builds the bacteria a house. A root hair curls around them, an infection thread carries them inward, and the root swells into an organ that exists only for them.",
+    "src": "https://en.wikipedia.org/wiki/Root_nodule",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "soybean"
+    ],
+    "out": "root_nodule",
+    "why": "Soybeans, clover, alfalfa, peanuts, lupins — the whole legume family does this. It is the reason a legume can be grown on ground too poor for a cereal.",
+    "src": "https://en.wikipedia.org/wiki/Root_nodule",
+    "verified": true
+  },
+  {
+    "in": [
+      "root_nodule"
+    ],
+    "verb": "cut",
+    "out": "rhizobium",
+    "why": "Cut one open and it is red inside. That is leghaemoglobin, near-identical to the myoglobin in meat, and the plant makes it to keep oxygen away from the bacteria's enzyme.",
+    "src": "https://en.wikipedia.org/wiki/Root_nodule",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen",
+      "rhizobium"
+    ],
+    "out": "ammonia",
+    "why": "Four fifths of the air is nitrogen almost nothing can touch. Nitrogenase breaks the triple bond anyway, at a cost of sixteen ATP for one molecule, and hands over ammonia.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "glucose"
+    ],
+    "out": "amino_acid",
+    "why": "This is the doorway. Fixed nitrogen is stuck onto a carbon skeleton as glutamate, and every amino acid downstream gets its nitrogen from there.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "tissue"
+    ],
+    "out": "polyp",
+    "why": "A body plan with almost nothing in it: two layers of cells around a sac, and one hole that serves as mouth and as exit.",
+    "src": "https://en.wikipedia.org/wiki/Coral",
+    "verified": true
+  },
+  {
+    "in": [
+      "alga",
+      "sea"
+    ],
+    "out": "zooxanthellae",
+    "why": "Free-swimming single-celled algae, drifting in the water until something takes them in. They are dinoflagellates, mostly of one genus, and they live perfectly well without a host.",
+    "src": "https://en.wikipedia.org/wiki/Zooxanthellae",
+    "verified": true
+  },
+  {
+    "in": [
+      "polyp",
+      "zooxanthellae"
+    ],
+    "out": "coral",
+    "why": "The algae move into vacuoles inside the animal's own cells and hand over sugar. Up to 90% of what a coral lives on is made by something that is not the coral.",
+    "src": "https://en.wikipedia.org/wiki/Coral_reef",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "polyp"
+    ],
+    "out": "coral",
+    "why": "The polyp lays down aragonite underneath itself and sits in the cup it built. The white branching thing sold in a shop is not the animal — it is the animal's floor.",
+    "src": "https://en.wikipedia.org/wiki/Coral",
+    "verified": true
+  },
+  {
+    "in": [
+      "coral",
+      "coral"
+    ],
+    "out": "reef",
+    "why": "A reef is generations of skeleton with a living skin on top. Under 0.1% of the ocean's area, and at least a quarter of all marine species live on it.",
+    "src": "https://en.wikipedia.org/wiki/Coral_reef",
+    "verified": true
+  },
+  {
+    "in": [
+      "coral"
+    ],
+    "verb": "wait",
+    "out": "reef",
+    "why": "Vertically, a healthy tropical reef gains somewhere between one and twenty-five centimetres a year. The living structure on top of most reefs is six to eight thousand years old.",
+    "src": "https://en.wikipedia.org/wiki/Coral_reef",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef"
+    ],
+    "verb": "wait",
+    "out": "atoll",
+    "why": "Darwin's explanation, and it was right: the volcanic island the reef grew around sinks, the coral keeps building upward to stay in the light, and a ring is left with a lagoon inside.",
+    "src": "https://en.wikipedia.org/wiki/Atoll",
+    "verified": true
+  },
+  {
+    "in": [
+      "coral"
+    ],
+    "verb": "heat",
+    "out": "bleached_coral",
+    "why": "About a degree above the usual monthly maximum, held for weeks, and the animal throws its algae out. What goes white is the bare skeleton showing through tissue that has lost its colour.",
+    "src": "https://en.wikipedia.org/wiki/Coral_bleaching",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf"
+    ],
+    "verb": "crush",
+    "out": "detritus",
+    "why": "Most leaf litter is torn to pieces by soil animals before any microbe finishes it. Breaking it small is the point: it multiplies the surface the decomposers can work on.",
+    "src": "https://en.wikipedia.org/wiki/Detritus",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthworm",
+      "leaf"
+    ],
+    "out": "detritus",
+    "why": "Some worms keep a permanent vertical burrow and drag whole leaves down into it. Lumbricus terrestris does this; the word for it is anecic.",
+    "src": "https://en.wikipedia.org/wiki/Earthworm",
+    "verified": true
+  },
+  {
+    "in": [
+      "rain",
+      "soil"
+    ],
+    "out": "earthworm",
+    "why": "They are not escaping drowning — they breathe through their skin and can survive days underwater. A wet surface just lets them travel further above ground than they ever could below it.",
+    "src": "https://www.scientificamerican.com/article/why-earthworms-surface-after-rain/",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus"
+    ],
+    "verb": "wait",
+    "out": "humus",
+    "why": "What is left when the decomposers have taken everything easy. Most of the humus in most soils has been sitting there more than a hundred years without being touched.",
+    "src": "https://en.wikipedia.org/wiki/Humus",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus",
+      "straw"
+    ],
+    "out": "compost",
+    "why": "A heap needs about twenty-five parts carbon to one of nitrogen: dry brown stalks and wet green waste in the right proportion. Get it right and the pile heats itself to 54–71 °C.",
+    "src": "https://en.wikipedia.org/wiki/Compost",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus",
+      "earthworm"
+    ],
+    "out": "compost",
+    "why": "The other method, and it never gets hot. Worms eat the material and what comes out the other end is the product — castings, five times richer in available nitrogen than the soil around them.",
+    "src": "https://en.wikipedia.org/wiki/Compost",
+    "verified": true
+  },
+  {
+    "in": [
+      "compost"
+    ],
+    "verb": "wait",
+    "out": "humus",
+    "why": "Finished compost is not the end of it. The easily eaten fraction keeps going and what survives is the stable remainder, which is what actually stays in the soil.",
+    "src": "https://en.wikipedia.org/wiki/Humus",
+    "supported": true
+  },
+  {
+    "in": [
+      "humus",
+      "sand"
+    ],
+    "out": "soil",
+    "why": "Sand holds nothing. Humus can carry 80–90% of its own weight in water, and it is negatively charged, so it holds nutrient ions too. Adding it is what turns grit into ground.",
+    "src": "https://en.wikipedia.org/wiki/Humus",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "plant"
+    ],
+    "out": "cellulose",
+    "why": "The plant chains glucose into fibre. One bond is flipped relative to starch — β rather than α — and that single difference is the most abundant organic polymer on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Cellulose",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass"
+    ],
+    "verb": "crush",
+    "out": "cellulose",
+    "why": "Grind up a plant and this is most of what is left. Wood is 40–50% cellulose and cotton fibre is 90%; it is the material plants build their cell walls out of.",
+    "src": "https://en.wikipedia.org/wiki/Cellulose",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "tissue"
+    ],
+    "out": "rumen",
+    "why": "The biggest of a ruminant's stomach compartments, and there is not one cellulose-digesting enzyme of the cow's own anywhere in it. Everything that works in there belongs to something else.",
+    "src": "https://en.wikipedia.org/wiki/Rumen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cellulose",
+      "rumen"
+    ],
+    "out": "fatty_acid",
+    "why": "This is why a cow lives on grass and you cannot. Microbes ferment the fibre into acetate, propionate and butyrate, and those cross the rumen wall straight into the blood.",
+    "src": "https://en.wikipedia.org/wiki/Rumen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "fatty_acid"
+    ],
+    "out": "milk",
+    "why": "The cow never gets the grass itself. What reaches its blood is what the microbes excreted, and the milk is built from that. Then it digests the microbes too, for the protein.",
+    "src": "https://en.wikipedia.org/wiki/Ruminant",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "meadow"
+    ],
+    "out": "pollen",
+    "why": "Nectar is the fuel and pollen is the food. Bees pack it into baskets on their back legs and carry it home, where it ferments into bee bread and feeds the brood.",
+    "src": "https://en.wikipedia.org/wiki/Western_honey_bee",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower"
+    ],
+    "verb": "crush",
+    "out": "pollen",
+    "why": "A pollen grain is not a sperm cell. It is a whole small organism, a gametophyte, sealed in sporopollenin — a wall tough enough that pollen survives in sediment long after the plant is gone.",
+    "src": "https://en.wikipedia.org/wiki/Pollen",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "pollen"
+    ],
+    "out": "seed",
+    "why": "Pollination is not fertilisation. The grain lands, grows a tube down through the style, and delivers two sperm: one makes the embryo, the other makes the food packed in beside it.",
+    "src": "https://en.wikipedia.org/wiki/Double_fertilization",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "lightning"
+    ],
+    "out": "lodestone",
+    "why": "Magnetite is only weakly magnetic until something magnetises it. The leading explanation is a lightning strike: the field around the bolt is strong enough, and the Earth's own 0.5 gauss is not.",
+    "src": "https://en.wikipedia.org/wiki/Lodestone",
+    "verified": true
+  },
+  {
+    "in": [
+      "lodestone",
+      "iron"
+    ],
+    "out": "magnet",
+    "why": "Draw a lodestone along a piece of iron, always the same way, and the iron's magnetic domains turn to face the same direction. Hard iron holds that alignment once the lodestone is gone; annealed iron lets it go.",
+    "src": "https://en.wikipedia.org/wiki/Magnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper"
+    ],
+    "verb": "crush",
+    "out": "copper_wire",
+    "why": "Wire is not cast, it is pulled — cold, through a die narrower than the metal going in. The volume cannot change, so as the diameter falls the length rises. Copper takes this better than almost any other metal.",
+    "src": "https://en.wikipedia.org/wiki/Wire_drawing",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "copper_wire"
+    ],
+    "out": "generator",
+    "why": "Move a magnet near a coil of wire and a current appears in the coil; hold it still and nothing happens. It is the change in the field that does it, which is why a generator has to keep turning.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_induction",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "copper_wire"
+    ],
+    "out": "magnetic_field",
+    "why": "Ørsted noticed in 1820 that a compass needle near a live wire swings sideways. A current makes a magnetic field looping around the wire, and electricity and magnetism turned out to be one subject.",
+    "src": "https://en.wikipedia.org/wiki/Magnetic_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "iron"
+    ],
+    "out": "magnetic_field",
+    "why": "Scatter iron filings on paper over a magnet and they line up end to end. They are showing the field: the region around the magnet where it can twist another magnet or deflect a moving charge.",
+    "src": "https://en.wikipedia.org/wiki/Magnetic_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetic_field",
+      "iron"
+    ],
+    "out": "electromagnet",
+    "why": "A permanent magnet cannot be turned off; this one can. Wind the wire into a coil so each turn's field adds to the next, and the field lasts exactly as long as the current does and no longer.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "iron"
+    ],
+    "out": "electromagnet",
+    "why": "The iron is not there for strength. A ferromagnetic core concentrates the flux through the coil and can take the field to thousands of times what the same coil would manage on its own.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "electromagnet",
+      "magnet"
+    ],
+    "out": "electric_motor",
+    "why": "A magnetic field pushes sideways on a wire carrying current, and that push turns the rotor. Half a turn on the push would reverse, so a commutator swaps the current over each half turn and the torque never changes sign.",
+    "src": "https://en.wikipedia.org/wiki/Electric_motor",
+    "verified": true
+  },
+  {
+    "in": [
+      "electromagnet",
+      "copper_wire"
+    ],
+    "out": "transformer",
+    "why": "Two coils on one iron ring, touching nowhere. A changing current in the first makes a changing flux in the core, which induces a voltage in the second in the ratio of the turns. Hold the current steady and nothing crosses.",
+    "src": "https://en.wikipedia.org/wiki/Transformer",
+    "verified": true
+  },
+  {
+    "in": [
+      "zinc",
+      "brine"
+    ],
+    "out": "voltaic_pile",
+    "why": "Volta stacked pairs of zinc and copper discs in 1800, every pair separated by card soaked in brine. The salt water is not packing: without it there is no path for ions, and a stack of dry discs does nothing at all.",
+    "src": "https://en.wikipedia.org/wiki/Voltaic_pile",
+    "verified": true
+  },
+  {
+    "in": [
+      "silver",
+      "zinc"
+    ],
+    "out": "voltaic_pile",
+    "why": "Copper was not the only choice — Volta's pile worked with silver discs too. What matters is that the two metals are different, so they give up electrons at different rates and charge has somewhere to go.",
+    "src": "https://en.wikipedia.org/wiki/Voltaic_pile",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "voltaic_pile"
+    ],
+    "out": "current",
+    "why": "A current is charge in motion, and it needs a loop. Join the top of the pile to the bottom with wire and the free electrons in the copper drift along it — at five amps, about a millimetre a second.",
+    "src": "https://en.wikipedia.org/wiki/Electric_current",
+    "verified": true
+  },
+  {
+    "in": [
+      "generator",
+      "steam"
+    ],
+    "out": "current",
+    "why": "About 80% of the world's electricity is made this way: boil water, let the steam spin a turbine, let the turbine spin a generator. Whatever the fuel, its only job is heating water.",
+    "src": "https://en.wikipedia.org/wiki/Steam_turbine",
+    "verified": true
+  },
+  {
+    "in": [
+      "generator"
+    ],
+    "verb": "blow",
+    "out": "current",
+    "why": "A wind turbine is a generator on a stick. No turbine can take all the wind's energy, because the air has to keep moving to get out of the way; Betz's law caps the share at 16/27, about 59%.",
+    "src": "https://en.wikipedia.org/wiki/Wind_turbine",
+    "verified": true
+  },
+  {
+    "in": [
+      "nickel",
+      "chromium"
+    ],
+    "out": "nichrome",
+    "why": "Eighty per cent nickel, twenty per cent chromium. The alloy has around 66 times copper's resistivity, so current has to force its way through, and what it spends forcing comes out as heat.",
+    "src": "https://en.wikipedia.org/wiki/Nichrome",
+    "verified": true
+  },
+  {
+    "in": [
+      "nichrome",
+      "current"
+    ],
+    "out": "heating_element",
+    "why": "Heat goes as the current squared times the resistance, so a resistive wire is a heater. Nichrome survives being one: the first time it glows it grows a chromium-oxide skin that oxygen cannot get through.",
+    "src": "https://en.wikipedia.org/wiki/Heating_element",
+    "verified": true
+  },
+  {
+    "in": [
+      "tungsten",
+      "current"
+    ],
+    "out": "filament",
+    "why": "Make the wire fine enough and resistive heating carries it past 2,500 °C, hot enough to radiate visible light rather than only warmth. Only tungsten will stand there: it melts at 3,422 °C, higher than any other metal.",
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "current"
+    ],
+    "out": "filament",
+    "why": "Before tungsten, the filament was carbon. It glowed well enough to sell, but a filament evaporates while it works and the vapour lands on the inside of the glass, darkening the bulb as it burns.",
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "supported": true
+  },
+  {
+    "in": [
+      "filament",
+      "glass"
+    ],
+    "out": "light_bulb",
+    "why": "The filament sits at white heat, where oxygen would eat it in seconds. The glass is there to keep the air out — and it also collects the tungsten that boils off, which is why an old bulb looks smoked.",
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "supported": true
+  },
+  {
+    "in": [
+      "filament",
+      "argon"
+    ],
+    "out": "light_bulb",
+    "why": "A vacuum is not the best filling. Argon slows the tungsten boiling off the wire by giving the atoms something to bounce back from, at the price of carrying heat away — the gas cools the filament even as it saves it.",
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "verified": true
+  },
+  {
+    "in": [
+      "filament",
+      "krypton"
+    ],
+    "out": "light_bulb",
+    "why": "Krypton is heavier than argon and worse at conducting heat, so it steals less warmth from the filament while still holding the tungsten in. It is also far more expensive, which is why most bulbs used argon.",
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+    "supported": true
+  },
+  {
+    "in": [
+      "sulfur_dioxide",
+      "water"
+    ],
+    "out": "sulfuric_acid",
+    "why": "The dioxide from burning sulfur is passed over vanadium oxide with more oxygen to make the trioxide, and that taken up in water is sulfuric acid. Nearly all the world's supply is made this way.",
+    "src": "https://en.wikipedia.org/wiki/Sulfuric_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "sulfuric_acid"
+    ],
+    "out": "lead_acid_cell",
+    "why": "Lead on one side, lead dioxide on the other, sulfuric acid between. Discharging turns both plates to lead sulfate and consumes the acid — and the whole reaction runs backwards if you push current the other way.",
+    "src": "https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery",
+    "verified": true
+  },
+  {
+    "in": [
+      "electrolysis",
+      "lead"
+    ],
+    "out": "lead_acid_cell",
+    "why": "Planté grew his plates rather than fitting them: two lead sheets in acid, charged and discharged over and over until the dioxide layer built up. It was the first battery that could be refilled instead of replaced.",
+    "src": "https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery",
+    "supported": true
+  },
+  {
+    "in": [
+      "current",
+      "water"
+    ],
+    "out": "electrolysis",
+    "why": "Push current through water and it comes apart — hydrogen at one electrode, oxygen at the other, twice as much hydrogen by volume. Pure water barely conducts, so something has to be dissolved in it first.",
+    "src": "https://en.wikipedia.org/wiki/Electrolysis_of_water",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "current"
+    ],
+    "out": "electrolysis",
+    "why": "Salt water conducts about a hundred thousand times better than pure water. The dissolved ions run to the electrodes and cancel the charge piling up there, and that is what lets the current keep flowing.",
+    "src": "https://en.wikipedia.org/wiki/Electrolysis_of_water",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "electrolysis"
+    ],
+    "out": "electroplating",
+    "why": "Make the object the cathode and a bar of copper the anode. The bar dissolves into the bath as ions, the ions come out of solution onto the object, and the bath never runs down — the metal just moves across.",
+    "src": "https://en.wikipedia.org/wiki/Electroplating",
+    "verified": true
+  },
+  {
+    "in": [
+      "electrolysis",
+      "silver"
+    ],
+    "out": "electroplating",
+    "why": "The layer can be thinner than anything you could beat or cast, because it arrives an ion at a time. Silver plate is a base-metal object made the cathode in a bath of dissolved silver.",
+    "src": "https://en.wikipedia.org/wiki/Electroplating",
+    "supported": true
+  },
+  {
+    "in": [
+      "silicon",
+      "boron"
+    ],
+    "out": "p_type",
+    "why": "Boron has three outer electrons where silicon has four, so every boron atom in the lattice leaves one bond unfinished. Those gaps shift when a neighbouring electron drops into one, and the crystal conducts by moving holes.",
+    "src": "https://en.wikipedia.org/wiki/Doping_(semiconductor)",
+    "verified": true
+  },
+  {
+    "in": [
+      "phosphorus",
+      "silicon"
+    ],
+    "out": "n_type",
+    "why": "Phosphorus brings five outer electrons into a lattice with room to share only four. The fifth is barely held, comes loose at room temperature and wanders, so the crystal conducts by moving electrons.",
+    "src": "https://en.wikipedia.org/wiki/Doping_(semiconductor)",
+    "verified": true
+  },
+  {
+    "in": [
+      "n_type",
+      "p_type"
+    ],
+    "out": "diode",
+    "why": "Put the two in one crystal and the loose electrons fall into the nearby holes, leaving a stripped band at the seam with a field across it. Charge crosses that seam easily one way and hardly at all the other.",
+    "src": "https://en.wikipedia.org/wiki/P%E2%80%93n_junction",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "diode"
+    ],
+    "out": "led",
+    "why": "Drive current the way the junction allows and electrons are pushed across into the holes. Each one that drops in gives up the band gap's worth of energy as a single photon, and the size of the gap sets the colour.",
+    "src": "https://en.wikipedia.org/wiki/Light-emitting_diode",
+    "verified": true
+  },
+  {
+    "in": [
+      "diode",
+      "n_type"
+    ],
+    "out": "transistor",
+    "why": "Sandwich a thin slice of p-type between two n-type regions and you have two junctions back to back. A small current into the middle layer then controls a much larger one through the whole stack.",
+    "src": "https://en.wikipedia.org/wiki/Transistor",
+    "verified": true
+  },
+  {
+    "in": [
+      "diode",
+      "p_type"
+    ],
+    "out": "transistor",
+    "why": "It works inverted too, a thin n-type layer between two p-type regions. Either way the middle layer is thin on purpose, so most of what enters one side carries straight on across instead of leaking out of the base.",
+    "src": "https://en.wikipedia.org/wiki/Transistor",
+    "supported": true
+  },
+  {
+    "in": [
+      "diode",
+      "sun"
+    ],
+    "out": "solar_cell",
+    "why": "A photon knocks an electron up out of its bond and leaves a hole behind. Near the junction the built-in field sweeps the two apart before they can fall back together, and that separation is a voltage.",
+    "src": "https://en.wikipedia.org/wiki/Solar_cell",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "nitrogen"
+    ],
+    "out": "ammonia",
+    "why": "Air is four-fifths nitrogen that almost nothing alive can use. At 250 to 350 bar over iron at 450 to 550 °C it joins with hydrogen — and about half the nitrogen in your body came through this reaction.",
+    "src": "https://en.wikipedia.org/wiki/Haber_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "electric_motor"
+    ],
+    "out": "refrigerator",
+    "why": "The motor drives a compressor, not a cooler. Squeezed ammonia condenses at the back of the cabinet and gives its heat to the room; let through a valve it boils inside, and boiling takes that heat back out of the food.",
+    "src": "https://en.wikipedia.org/wiki/Vapor-compression_refrigeration",
+    "verified": true
+  },
+  {
+    "in": [
+      "refrigerator",
+      "water"
+    ],
+    "out": "ice",
+    "why": "Nothing here makes cold. A fluid boils in the coils inside the box and carries heat out with it, and the water has nowhere to put its own heat except into that fluid, so it gives it up and freezes.",
+    "src": "https://en.wikipedia.org/wiki/Refrigerator",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "tyrosine"
+    ],
+    "out": "thyroxine",
+    "why": "Thyroid peroxidase hangs iodine onto particular tyrosine residues inside thyroglobulin, then couples two iodinated rings together. Thyroxine is two tyrosines joined, carrying four iodine atoms.",
+    "src": "https://en.wikipedia.org/wiki/Thyroid_hormones",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "leaf"
+    ],
+    "out": "ascorbate",
+    "why": "Plants build ascorbate from glucose along the Smirnoff-Wheeler pathway, by way of L-galactose, which a dehydrogenase oxidises to the lactone. Animals reach the same molecule from the same sugar by a different road ending at L-gulonolactone oxidase.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_C",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascorbate",
+      "proline"
+    ],
+    "out": "hydroxyproline",
+    "why": "Prolyl 4-hydroxylase hydroxylates proline after the chain is already built, and it cannot run without ascorbate. Vitamin C's job here is narrow and specific: cycling the enzyme's iron between Fe2+ and Fe3+.",
+    "src": "https://en.wikipedia.org/wiki/Hydroxyproline",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "hydroxyproline"
+    ],
+    "out": "triple_helix",
+    "why": "Glycine-X-Y, over and over: the centre of the rope is so tight that only glycine's single hydrogen fits. Hydroxyproline's hydroxyl makes no hydrogen bond at all — it holds proline in its trans form, and that alone stabilises the helix.",
+    "src": "https://en.wikipedia.org/wiki/Collagen_helix",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "phosphorus"
+    ],
+    "out": "hydroxyapatite",
+    "why": "Ca10(PO4)6(OH)2 — calcium phosphate with a hydroxide sitting in the lattice. It is 65 to 70% of the mass of bone and 70 to 80% of dentin and enamel. This is the mineral half of every skeleton.",
+    "src": "https://en.wikipedia.org/wiki/Hydroxyapatite",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "hydroxyapatite"
+    ],
+    "out": "bone",
+    "why": "The mineral does not coat the collagen, it grows between the fibres. Collagen carries the tension, the hydroxyapatite crystals interspersed through it carry the compression, and bone runs about 30% matrix to 70% mineral by mass.",
+    "src": "https://en.wikipedia.org/wiki/Bone",
+    "verified": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "hydroxyapatite"
+    ],
+    "out": "fluorapatite",
+    "why": "Fluoride takes the place of the hydroxide in the apatite lattice. What comes out is stronger and more acid-resistant than the hydroxyapatite it replaced — the same crystal with one ion swapped.",
+    "src": "https://en.wikipedia.org/wiki/Remineralisation_of_teeth",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycine",
+      "nitrogen"
+    ],
+    "out": "porphyrin",
+    "why": "Four pyrrole rings closed into a macrocycle, their four nitrogens pointing inward at a pocket exactly the size of one metal ion. In animals the whole ring is built from glycine condensed with succinyl-CoA out of the citric acid cycle.",
+    "src": "https://en.wikipedia.org/wiki/Porphyrin",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "porphyrin"
+    ],
+    "out": "heme",
+    "why": "Ferrochelatase drops a ferrous iron into the middle of protoporphyrin IX and the ring's four nitrogens clamp it as a tetradentate ligand. That single iron is what binds oxygen, reversibly, in every breath.",
+    "src": "https://en.wikipedia.org/wiki/Heme",
+    "verified": true
+  },
+  {
+    "in": [
+      "heme",
+      "protein"
+    ],
+    "out": "hemoglobin",
+    "why": "Four globular subunits, each holding one heme, so one molecule carries up to four oxygens. The first one bound reshapes the sites for the next — which is why the binding curve is a sigmoid rather than the usual hyperbola.",
+    "src": "https://en.wikipedia.org/wiki/Hemoglobin",
+    "verified": true
+  },
+  {
+    "in": [
+      "heme",
+      "muscle"
+    ],
+    "out": "myoglobin",
+    "why": "One globin unit, one heme, no cooperativity, and a higher affinity for oxygen than haemoglobin has — so muscle takes oxygen off blood and keeps it. Whales and seals carry muscle unusually full of it.",
+    "src": "https://en.wikipedia.org/wiki/Myoglobin",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnesium",
+      "porphyrin"
+    ],
+    "out": "chlorophyll",
+    "why": "The same macrocycle as heme with magnesium in the middle instead of iron, and one ring reduced to make a chlorin. It absorbs hard in the blue and the red and badly in the green — green is the light it does not use.",
+    "src": "https://en.wikipedia.org/wiki/Chlorophyll",
+    "verified": true
+  },
+  {
+    "in": [
+      "cobalt",
+      "porphyrin"
+    ],
+    "out": "cobalamin",
+    "why": "B12 is built on a corrin ring — porphyrin's close relative — with cobalt at the centre. This is the only place biology uses cobalt at all, and only archaea and bacteria can make it.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_B12",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorophyll",
+      "manganese"
+    ],
+    "out": "photosystem_ii",
+    "why": "The oxygen-evolving complex is four manganese ions and one calcium in a single cluster, wired to the P680 chlorophyll. It steps through five states, S0 to S4, because splitting water is a four-electron job and light arrives one photon at a time.",
+    "src": "https://en.wikipedia.org/wiki/Oxygen-evolving_complex",
+    "verified": true
+  },
+  {
+    "in": [
+      "photosystem_ii",
+      "water"
+    ],
+    "out": "oxygen_gas",
+    "why": "2 H2O → O2 + 4 H+ + 4 e-. The manganese cluster is what makes that arithmetic possible: it banks oxidising equivalents one at a time until it has four, then lets the oxygen go.",
+    "src": "https://en.wikipedia.org/wiki/Oxygen-evolving_complex",
+    "verified": true
+  },
+  {
+    "in": [
+      "cysteine",
+      "iron"
+    ],
+    "out": "iron_sulfur_cluster",
+    "why": "Cysteine desulfurase strips the sulfur off a cysteine, leaving alanine behind, and that sulfide is what the cluster is built from. Four more cysteines then hold the finished cube onto the protein.",
+    "src": "https://en.wikipedia.org/wiki/Iron%E2%80%93sulfur_protein",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "heme"
+    ],
+    "out": "cytochrome_c_oxidase",
+    "why": "The last enzyme in the respiratory electron transport chain, and it needs both metals: two hemes, cytochrome a and a3, and two copper centres, CuA and CuB. Heme a3 and CuB together are where oxygen is finally reduced.",
+    "src": "https://en.wikipedia.org/wiki/Cytochrome_c_oxidase",
+    "verified": true
+  },
+  {
+    "in": [
+      "cytochrome_c_oxidase",
+      "oxygen_gas"
+    ],
+    "out": "water",
+    "why": "4 Fe2+-cytochrome c + 4 H+ + O2 → 4 Fe3+-cytochrome c + 2 H2O. Every electron pulled off everything you have ever eaten ends here, on an oxygen atom, and what it makes is water.",
+    "src": "https://en.wikipedia.org/wiki/Cytochrome_c_oxidase",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "protein"
+    ],
+    "out": "ferritin",
+    "why": "Twenty-four subunits close into a hollow sphere holding about 4,500 Fe3+ as a ferrihydrite-like mineral. Loose iron catalyses radical formation through the Fenton reaction, so a cell keeps essentially none of it free.",
+    "src": "https://en.wikipedia.org/wiki/Ferritin",
+    "verified": true
+  },
+  {
+    "in": [
+      "protein",
+      "zinc"
+    ],
+    "out": "zinc_finger",
+    "why": "The classic fold is two cysteines and two histidines gripping one zinc ion, and it is too small to hold its own shape without it — the zinc is structural, not catalytic. The finger then reaches into DNA's major groove.",
+    "src": "https://en.wikipedia.org/wiki/Zinc_finger",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon_dioxide",
+      "zinc"
+    ],
+    "out": "carbonic_anhydrase",
+    "why": "A zinc ion held by histidines polarises a bound water into a hydroxide, and the hydroxide attacks CO2. Some forms turn over a million times a second, ten million times faster than the reaction runs on its own.",
+    "src": "https://en.wikipedia.org/wiki/Carbonic_anhydrase",
+    "verified": true
+  },
+  {
+    "in": [
+      "selenium",
+      "serine"
+    ],
+    "out": "selenocysteine",
+    "why": "The 21st amino acid is assembled on its own tRNA: seryl-tRNA ligase loads serine first, then selenocysteine synthase swaps selenium in. It is read from UGA — a stop codon — wherever the mRNA carries a SECIS element.",
+    "src": "https://en.wikipedia.org/wiki/Selenocysteine",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "selenocysteine"
+    ],
+    "out": "glutathione_peroxidase",
+    "why": "Hydrogen peroxide oxidises the selenol of a selenocysteine residue, and glutathione then reduces it back. Selenium is there because its Se-H is far more acidic than a thiol — pKa 5.43 against roughly 8.3 — so it is already reactive.",
+    "src": "https://en.wikipedia.org/wiki/Glutathione_peroxidase",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "molybdenum"
+    ],
+    "out": "sulfite_oxidase",
+    "why": "Molybdenum rides on a pterin cofactor in the mitochondrial intermembrane space. It hands one oxygen atom to sulfite, making sulfate, and drops from Mo(VI) to Mo(IV) doing it. That is how sulfur from cysteine and methionine leaves.",
+    "src": "https://en.wikipedia.org/wiki/Sulfite_oxidase",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "manganese"
+    ],
+    "out": "superoxide_dismutase",
+    "why": "2 H+ + 2 O2- → O2 + H2O2, and it runs diffusion-limited — as fast as two molecules can find each other. Different lineages built the same trick around copper and zinc, manganese, iron or nickel.",
+    "src": "https://en.wikipedia.org/wiki/Superoxide_dismutase",
+    "verified": true
+  },
+  {
+    "in": [
+      "atp",
+      "sodium"
+    ],
+    "out": "sodium_potassium_pump",
+    "why": "Three sodium out, two potassium in, one ATP spent. One net positive charge leaves each cycle, so the pump is electrogenic — the resting membrane potential of every cell you have is this transaction, repeated.",
+    "src": "https://en.wikipedia.org/wiki/Na%2B/K%2B-ATPase",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium",
+      "sodium_potassium_pump"
+    ],
+    "out": "action_potential",
+    "why": "Sodium channels open and sodium floods in; potassium channels open behind them and potassium leaves. Remarkably few ions actually cross — the concentrations inside and out barely change — and the voltage swings all the way regardless.",
+    "src": "https://en.wikipedia.org/wiki/Action_potential",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot",
+      "enzyme"
+    ],
+    "out": "retinal",
+    "why": "Beta-carotene 15,15'-dioxygenase cuts a beta-carotene down the middle: beta-carotene + O2 gives two retinal. One pigment molecule out of a carrot becomes two of the molecule an eye actually runs on.",
+    "src": "https://en.wikipedia.org/wiki/Retinal",
+    "verified": true
+  },
+  {
+    "in": [
+      "protein",
+      "retinal"
+    ],
+    "out": "rhodopsin",
+    "why": "11-cis-retinal is bound covalently to a lysine in opsin's seventh helix through a Schiff base. One photon isomerises it to all-trans, and that straightening is the receptor switching on. Everything downstream of seeing starts there.",
+    "src": "https://en.wikipedia.org/wiki/Rhodopsin",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnesium",
+      "oxygen_gas"
+    ],
+    "out": "magnesium_oxide",
+    "why": "Magnesium burns at about 3,100 °C with a brilliant white light strong in ultraviolet, and what falls out of it is a white powder. Early photographers set light to the metal to light a room.",
+    "src": "https://en.wikipedia.org/wiki/Magnesium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "oxygen_gas"
+    ],
+    "out": "quicklime",
+    "why": "Calcium is reactive enough that finely divided it catches fire in air on its own, taking oxygen and nitrogen at once. The oxide left behind is quicklime — the same compound a limekiln drives out of limestone, reached from the other side.",
+    "src": "https://en.wikipedia.org/wiki/Calcium",
+    "verified": true
+  },
+  {
+    "in": [
+      "zinc",
+      "oxygen_gas"
+    ],
+    "out": "zinc_oxide",
+    "why": "Zinc burns in air with a bright bluish-green flame and the fume coming off it settles as a white powder. Alchemists burned the metal on purpose to collect it and called what they got philosopher's wool.",
+    "src": "https://en.wikipedia.org/wiki/Zinc",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "oxygen_gas"
+    ],
+    "out": "copper_oxide",
+    "why": "Between about 300 and 800 °C copper takes oxygen straight out of the air and goes black. Potters use that black powder deliberately: fired into a glaze it comes back blue, green or red depending on what the kiln does.",
+    "src": "https://en.wikipedia.org/wiki/Copper(II)_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "oxygen_gas"
+    ],
+    "out": "rust",
+    "why": "Dry oxygen leaves iron almost alone — it is the moisture in ordinary air that lets the reaction run. And rust is flaky and friable, so unlike aluminium's oxide it gives the iron underneath no protection whatsoever.",
+    "src": "https://en.wikipedia.org/wiki/Rust",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "oxygen_gas"
+    ],
+    "out": "litharge",
+    "why": "Molten lead under a forced draught of air at around 450 °C turns to litharge. Below 486 °C it comes out red and tetragonal, above it yellow and orthorhombic — the same compound, two ways of stacking it.",
+    "src": "https://en.wikipedia.org/wiki/Lead(II)_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "oxygen_gas"
+    ],
+    "out": "mercuric_oxide",
+    "why": "Mercury held in oxygen at roughly 350 °C turns to a red powder. Heat the powder harder and it hands the oxygen back — which is how Priestley found the gas in 1774, some years before anyone had a name for it.",
+    "src": "https://en.wikipedia.org/wiki/Mercury(II)_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "oxygen_gas"
+    ],
+    "out": "alumina",
+    "why": "Aluminium is very reactive with oxygen. A film of oxide about 5 nanometres thick forms on any fresh surface almost instantly and then stops the reaction dead. The metal's famous inertness is the film, not the metal.",
+    "src": "https://en.wikipedia.org/wiki/Aluminium_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "sulfur"
+    ],
+    "out": "copper_sulfide",
+    "why": "Copper and sulfur combine directly, faster the finer the copper and the hotter it gets, into the black solid that occurs in the ground as chalcocite — the mineral most of the world's copper is roasted out of.",
+    "src": "https://en.wikipedia.org/wiki/Copper(I)_sulfide",
+    "verified": true
+  },
+  {
+    "in": [
+      "zinc",
+      "sulfur"
+    ],
+    "out": "zinc_sulfide",
+    "why": "Zinc and sulfur ignited together combine in a single flash. Add a few parts per million of another metal and the product glows when something hits it — this was the screen that flickered under Rutherford's alpha particles.",
+    "src": "https://en.wikipedia.org/wiki/Zinc_sulfide",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "sulfur"
+    ],
+    "out": "lead_sulfide",
+    "why": "Molten lead combines directly with sulfur. What it makes is galena, the main lead-bearing mineral and the rock nearly all the world's lead has been roasted out of — and it is mostly found sitting alongside zinc ores.",
+    "src": "https://en.wikipedia.org/wiki/Lead",
+    "verified": true
+  },
+  {
+    "in": [
+      "silver",
+      "sulfur"
+    ],
+    "out": "tarnish",
+    "why": "Silver does not react with air even at red heat, but it reacts with sulfur readily. So the black on old silver is not an oxide at all — it is silver sulfide, built out of the trace sulfur compounds drifting past it.",
+    "src": "https://en.wikipedia.org/wiki/Silver",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "sulfur"
+    ],
+    "out": "cinnabar",
+    "why": "Ground together, mercury and sulfur make a black compound the alchemists called aethiops mineralis. Heated in a flask it vaporises and recondenses red — the vermilion Jabir ibn Hayyan wrote down in the early 9th century.",
+    "src": "https://en.wikipedia.org/wiki/Vermilion",
+    "verified": true
+  },
+  {
+    "in": [
+      "sodium",
+      "chlorine"
+    ],
+    "out": "salt",
+    "why": "Each sodium atom hands one electron to a chlorine atom. Both end up charged, both end up stable, and they stack one-to-one into a lattice. A metal that catches fire in water and a green poison gas, making the one rock people eat.",
+    "src": "https://en.wikipedia.org/wiki/Ionic_bonding",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium",
+      "chlorine"
+    ],
+    "out": "potassium_chloride",
+    "why": "The salt that is not table salt. Most of it goes onto fields as potash, because potassium is the nutrient that runs out first for a great many plants; the rest goes into low-sodium salt, cut with the ordinary kind to hide the taste.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_chloride",
+    "supported": true
+  },
+  {
+    "in": [
+      "potassium",
+      "iodine"
+    ],
+    "out": "potassium_iodide",
+    "why": "A few parts per million of this in table salt is the whole of what 'iodised' means. It is the commonest additive used for it, and a public-health measure against iodine deficiency in populations that get little seafood.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_iodide",
+    "supported": true
+  },
+  {
+    "in": [
+      "sodium",
+      "fluorine"
+    ],
+    "out": "sodium_fluoride",
+    "why": "In trace amounts in drinking water and in toothpaste, this is what hardens a tooth. The fluoride works itself into the enamel as fluorapatite — a mineral that is already a naturally occurring component of enamel.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_fluoride",
+    "supported": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "chlorine"
+    ],
+    "out": "hydrogen_chloride",
+    "why": "Hydrogen and chlorine combine straight into hydrogen chloride, and blue light on its own is enough to set it going. Dissolve the gas in water and it comes apart completely into hydronium and chloride: that is hydrochloric acid.",
+    "src": "https://en.wikipedia.org/wiki/Hydrogen_chloride",
+    "verified": true
+  },
+  {
+    "in": [
+      "tungsten",
+      "carbon"
+    ],
+    "out": "tungsten_carbide",
+    "why": "Tungsten powder and carbon held between 1,400 and 2,000 °C combine into a compound about 9 to 9.5 on Mohs — as hard as corundum, approaching diamond. It is what the tip of the tool that cuts the steel is made of.",
+    "src": "https://en.wikipedia.org/wiki/Tungsten_carbide",
+    "verified": true
+  },
+  {
+    "in": [
+      "quicklime",
+      "carbon"
+    ],
+    "out": "calcium_carbide",
+    "why": "Quicklime and coke in an electric arc furnace at about 2,200 °C give calcium carbide and carbon monoxide. The reaction takes energy in rather than giving it out, which is why it had to wait for the electric furnace — 1892.",
+    "src": "https://en.wikipedia.org/wiki/Calcium_carbide",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium_carbide",
+      "water"
+    ],
+    "out": "acetylene",
+    "why": "Water landing on calcium carbide gives acetylene and slaked lime and nothing else is needed — Wöhler found that in 1862. Burnt with oxygen the gas passes 3,300 °C, the hottest flame any common pair of gases makes.",
+    "src": "https://en.wikipedia.org/wiki/Acetylene",
+    "verified": true
+  },
+  {
+    "in": [
+      "titanium",
+      "nitrogen"
+    ],
+    "out": "titanium_nitride",
+    "why": "Held at 1,200 °C in nitrogen, titanium turns into its nitride. The powder is brown, but laid down as a thin coating it looks gold — that is the gold film on a drill bit, and it is there for edge retention, not for looks.",
+    "src": "https://en.wikipedia.org/wiki/Titanium_nitride",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnesium",
+      "nitrogen"
+    ],
+    "out": "magnesium_nitride",
+    "why": "A magnesium fire does not stop when the oxygen does. It goes on burning in pure nitrogen, making the nitride, and it goes on burning in carbon dioxide too, stripping the oxygen out of it and leaving loose carbon behind.",
+    "src": "https://en.wikipedia.org/wiki/Magnesium",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon"
+    ],
+    "verb": "blow",
+    "out": "carbon_dioxide",
+    "why": "Force air in and the carbon gets all the oxygen it can use, so every atom of it ends up in carbon dioxide. This is the complete burn — same fuel, different product, and nothing decides which but the air supply.",
+    "src": "https://en.wikipedia.org/wiki/Combustion",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon"
+    ],
+    "verb": "smother",
+    "out": "carbon_monoxide",
+    "why": "Take the air away and the same carbon burns short. With too little oxygen to reach carbon dioxide, what comes off instead is carbon monoxide — colourless, odourless, and the commonest fatal air poisoning in many countries.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_monoxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "sulfur",
+      "oxygen_gas"
+    ],
+    "out": "sulfur_dioxide",
+    "why": "Burning sulfur gives a colourless gas that smells of a struck match. Volcanic eruptions are the largest source of it on Earth, and the Romans found that burning sulfur inside an empty wine vessel kept the next wine sweet.",
+    "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "sulfur"
+    ],
+    "out": "hydrogen_sulfide",
+    "why": "Hydrogen over molten sulfur at about 450 °C gives the rotten-egg gas. It is pungent at first and then it is not: at 100 to 150 ppm the olfactory nerve is paralysed within a few breaths and the warning simply goes away.",
+    "src": "https://en.wikipedia.org/wiki/Hydrogen_sulfide",
+    "verified": true
+  },
+  {
+    "in": [
+      "lightning",
+      "nitrogen"
+    ],
+    "out": "nitric_oxide",
+    "why": "A lightning channel carries enough energy to break nitrogen's triple bond, and the freed atoms grab oxygen instead. Every strike fixes a little of the air into something that can eventually reach a root.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "oxygen_gas"
+    ],
+    "out": "nitric_oxide",
+    "why": "Ammonia burning in oxygen at about 900 °C over a platinum gauze comes out as nitric oxide. It is the first step of the Ostwald process, and it arrives at the same molecule a lightning strike makes, by an entirely different road.",
+    "src": "https://en.wikipedia.org/wiki/Ostwald_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitric_oxide",
+      "oxygen_gas"
+    ],
+    "out": "nitrogen_dioxide",
+    "why": "Nitric oxide is colourless and does not stay colourless. Exposed to oxygen it picks up one more atom and turns reddish-brown with a sharp, acrid smell. That brown is what sits over a city in a photochemical smog.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_dioxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen_dioxide",
+      "rain"
+    ],
+    "out": "nitrate",
+    "why": "Nitrogen dioxide dissolving into rain gives nitrous and nitric acid, and where that rain soaks in, those become nitrate. Nitrate is the form a root can actually take nitrogen up in — the far end of a road that began with a lightning strike.",
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation",
+    "verified": true
   }
 ]

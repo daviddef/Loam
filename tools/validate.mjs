@@ -206,7 +206,15 @@ for (const e of elements) {
 for (const e of elements) {
   if (!produced.has(e.id) && !e.starter) warn(`${e.id}: never produced by any recipe`);
   if (!consumed.has(e.id) && !e.terminal) warn(`${e.id}: accidental dead end — used in nothing and not marked terminal`);
-  if (consumed.has(e.id) && e.terminal) warn(`${e.id}: marked terminal but something consumes it`);
+  // A flag that was true when it was written and quietly stopped being true.
+  // Any batch that adds recipes can falsify someone else's `terminal` or
+  // `soleRoute` without touching their entry, and nobody notices, because the
+  // element still LOOKS right. This was a warning and sat unread among two
+  // hundred others while ten flags went stale — six batches' worth. It is an
+  // error now, because it is a statement in the data that is simply false.
+  if (consumed.has(e.id) && e.terminal) err(`${e.id}: marked terminal but something is made from it`);
+  if (e.soleRoute && (routeCount.get(e.id) ?? 0) > 1)
+    err(`${e.id}: marked soleRoute but has ${routeCount.get(e.id)} routes in`);
 }
 
 // ---- report ---------------------------------------------------------------
