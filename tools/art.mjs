@@ -2782,6 +2782,10 @@ def('agar',       () => [P('M10 26 L50 26 L50 44 L10 44 Z', 'gh'), E(30, 26, 20,
                          ...[[22, 34], [38, 36]].map(([x, y]) => C(x, y, 3, 'lo'))]);   // a plate of it
 def('alginate',   () => [...[[20, 26], [34, 22], [28, 38], [42, 40]].map(([x, y]) =>
                            [C(x, y, 7, 'gh'), C(x - 2, y - 2, 2.4, 'hi')]).flat()]);    // beads
+def('gum_arabic', () => [P('M18 14 L38 12 L42 30 L34 30 Q34 44 26 44 Q18 44 18 30 Z', 'lo'),
+                         C(26, 38, 5, 'hi')]);                                          // bark wound, one hardened tear
+def('gellan_gum', () => [rod3('bs', 24, 20, 10, 4), E(30, 42, 16, 7, 'hi'), S('M18 42 L42 42', 'ik', 1.4)]);
+                                                                                          // the bacterium, and a stiff thin sheet
 def('citric_acid',() => [(() => backbone('ik', 3, 28, 30).shape)(),
                          C(12, 26, 4.4, 'bs'), C(44, 26, 4.4, 'bs'), C(30, 46, 4.4, 'bs'),
                          ...granules('hi', 4, 61, [18, 40, 42, 50])]);

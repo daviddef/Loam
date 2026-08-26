@@ -12934,5 +12934,25 @@
     "why": "Brilliant Blue FCF isn't an azo dye like its rack-mates — no diazonium coupling. It's made by condensing a sulfonated benzaldehyde with an aniline compound, then oxidising the result. The game has no separate aniline element, so this collapses to one verb.",
     "src": "https://en.wikipedia.org/wiki/Brilliant_Blue_FCF",
     "supported": true
+  },
+  {
+    "in": [
+      "bark"
+    ],
+    "verb": "wait",
+    "out": "gum_arabic",
+    "why": "Acacia is tapped for gum by stripping bits off the bark, from which gum then exudes — no pressing or extraction, just an open wound left to weep.",
+    "src": "https://en.wikipedia.org/wiki/Gum_arabic",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "leaf"
+    ],
+    "out": "gellan_gum",
+    "why": "Its bacterium, Sphingomonas elodea, was first isolated from lily plant tissue in a Pennsylvania pond in 1978 — a wild find turned into a commercial fermentation product.",
+    "src": "https://en.wikipedia.org/wiki/Gellan_gum",
+    "supported": true
   }
 ]
