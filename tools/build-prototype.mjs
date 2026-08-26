@@ -73,6 +73,8 @@ for (const [token, value] of [
   ['__UI_SETTINGS__', uiGlyph('ui_settings')],
   ['__UI_TIDY__', uiGlyph('ui_tidy')],
   ['__UI_UNDO__', uiGlyph('ui_undo')],
+  ['__UI_NUDGE__', uiGlyph('ui_nudge')],
+  ['__UI_SCAN__', uiGlyph('ui_scan')],
   ['__PALETTE_CSS__', paletteCSS()],
   ['__CATEGORY_CSS__', catCSS()],
   ['__ART_RENDER__', artRender],

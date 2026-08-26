@@ -128,6 +128,14 @@ __CATEGORY_CSS__
   /* Void — nothing at all. For screenshots, and for anyone who wants quiet. */
   body.g-void,.gsw.g-void{background:var(--cream);}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  /* Any element that also carries a class setting its own `display` (.cardrow,
+     flex containers, etc.) silently wins over the browser's built-in
+     [hidden]{display:none} — author CSS beats the UA stylesheet regardless of
+     specificity. Without this, setting .hidden = true in JS changes the DOM
+     attribute but the element keeps rendering anyway. Real bug, found live:
+     the barcode sheet's camera/photo row stayed visible on a browser without
+     BarcodeDetector even though the code correctly left it `hidden`. */
+  [hidden]{display:none!important}
   html,body{margin:0;height:100%;overflow:hidden}
   body{
     font:400 15px/1.5 var(--face-name);
@@ -1438,7 +1446,8 @@ __CATEGORY_CSS__
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px">__UI_UNDO__</span></button>
   <button id="reset" title="Start over — wipes everything you have found">Reset</button>
-  <button id="nudge" title="Put two things on the bench that go together">Nudge</button>
+  <button id="nudge" title="Put two things on the bench that go together"><span class="gl" style="--g:16px">__UI_NUDGE__</span></button>
+  <button id="scanBtn" title="Scan a barcode or read a label"><span class="gl" style="--g:16px">__UI_SCAN__</span></button>
   <button id="shelfToggle" title="Hide the shelf">▤</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
 </header>
@@ -4875,32 +4884,63 @@ async function fetchOFFProduct(barcode) {
 function showBarcodeScan(onIngredients) {
   document.getElementById('sheetBody').innerHTML = `
     <p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
-       camera where this device supports it. Looked up on Open Food Facts, a free public database —
-       nothing here reads a photo or guesses; it is a straight lookup by the number.</p>
+       camera where this device supports it. Scan as many products as you like before reading them
+       in — each is looked up on Open Food Facts, a free public database; nothing here reads a photo
+       or guesses, it is a straight lookup by the number.</p>
     <div class="cardrow" style="margin:0 0 9px">
       <input id="bcIn" class="search" inputmode="numeric" autocomplete="off"
         placeholder="e.g. 9310072020278" style="flex:1;padding:9px 12px">
       <button class="ghost" id="bcGo">Look it up</button>
     </div>
     <div class="cardrow" id="bcCameraRow" style="margin:0 0 9px" hidden>
-      <button class="ghost" id="bcCamera">Use the camera instead</button>
-      <button class="ghost" id="bcPhoto">Choose a photo</button>
-      <input type="file" id="bcFile" accept="image/*" hidden>
+      <button class="ghost" id="bcCamera">Scan with the camera</button>
+      <button class="ghost" id="bcPhoto">Choose photos</button>
+      <input type="file" id="bcFile" accept="image/*" multiple hidden>
     </div>
     <video id="bcVideo" playsinline muted></video>
+    <div class="cardrow" id="bcCameraControls" style="margin:0 0 9px" hidden>
+      <button class="ghost" id="bcStopCam">Stop the camera</button>
+    </div>
+    <div id="bcStatus"></div>
     <div id="bcOut"></div>`;
   openSheet('Scan a barcode');
 
+  const status = document.getElementById('bcStatus');
   const out = document.getElementById('bcOut');
-  const lookup = async (raw) => {
-    const code = (raw || '').replace(/\D/g, '');
-    if (!code) { out.innerHTML = '<p class="none">Type the digits under the barcode.</p>'; return; }
-    out.innerHTML = '<p class="hint2">Asking Open Food Facts…</p>';
+  // Every product scanned this visit, so a photo/camera session can gather a
+  // whole shopping trip's worth before reading anything in — not just one.
+  const scanned = [];
+  const pending = new Set();                          // codes already mid-fetch, so a barcode
+                                                        // sitting in frame for ten ticks in a row
+                                                        // does not fire ten overlapping lookups
+  const esc = (s) => (s || '').replace(/[<>]/g, '');
+
+  function render() {
+    const withText = scanned.filter(s => s.text);
+    out.innerHTML = scanned.map(s => `
+      <div class="bcProduct">
+        ${s.product.image_front_small_url ? `<img src="${s.product.image_front_small_url}" alt="">` : `<i class="bcNoPic"></i>`}
+        <div><b>${esc(s.product.product_name || 'Unnamed product')}</b>
+        ${s.product.brands ? `<i>${esc(s.product.brands)}</i>` : ''}
+        ${s.text ? '' : '<i>No ingredients text on record</i>'}</div>
+      </div>`).join('') +
+      (withText.length ? `<div class="cardrow" style="margin-top:9px">
+         <button class="ghost" id="bcUse">Read ingredients from ${withText.length === 1 ? 'this product' : withText.length + ' products'}</button></div>`
+       : '');
+    const use = document.getElementById('bcUse');
+    if (use) use.onclick = () => onIngredients(withText.map(s => 'Ingredients: ' + s.text).join(', '));
+  }
+
+  const addScan = async (code) => {
+    if (scanned.some(s => s.code === code) || pending.has(code)) return;
+    pending.add(code);
+    status.innerHTML = '<p class="hint2">Asking Open Food Facts…</p>';
     let product;
     try { product = await fetchOFFProduct(code); }
-    catch { out.innerHTML = '<p class="none">Could not reach Open Food Facts — check the connection and try again.</p>'; return; }
+    catch { status.innerHTML = '<p class="none">Could not reach Open Food Facts — check the connection and try again.</p>'; pending.delete(code); return; }
+    pending.delete(code);
     if (!product) {
-      out.innerHTML = `<p class="none">Barcode ${code} is not in Open Food Facts. Anyone can add it
+      status.innerHTML = `<p class="none">Barcode ${code} is not in Open Food Facts. Anyone can add it
         there — or paste the ingredients in by hand instead.</p>`;
       return;
     }
@@ -4915,41 +4955,42 @@ function showBarcodeScan(onIngredients) {
     const looksReal = (t) => !!t && /[a-z]/.test(t) && /[\s,]/.test(t);
     const text = looksReal(product.ingredients_text_en) ? product.ingredients_text_en
                : looksReal(product.ingredients_text) ? product.ingredients_text : '';
-    out.innerHTML = `
-      <div class="bcProduct">
-        ${product.image_front_small_url ? `<img src="${product.image_front_small_url}" alt="">` : `<i class="bcNoPic"></i>`}
-        <div><b>${(product.product_name || 'Unnamed product').replace(/[<>]/g, '')}</b>
-        ${product.brands ? `<i>${product.brands.replace(/[<>]/g, '')}</i>` : ''}</div>
-      </div>
-      ${text
-        ? `<div class="cardrow" style="margin-top:9px"><button class="ghost" id="bcUse">Read these ingredients</button></div>`
-        : '<p class="none">Open Food Facts has this product but no ingredients text on record for it.</p>'}`;
-    const use = document.getElementById('bcUse');
-    if (use) use.onclick = () => onIngredients('Ingredients: ' + text);
+    status.innerHTML = '';
+    scanned.push({ code, product, text });
+    if (scanned.length > 1) toast(`Added ${product.product_name || 'that product'} — ${scanned.length} scanned so far`);
+    render();
   };
-  document.getElementById('bcGo').onclick = () => lookup(document.getElementById('bcIn').value);
-  document.getElementById('bcIn').addEventListener('keydown', ev => { if (ev.key === 'Enter') lookup(ev.target.value); });
+  document.getElementById('bcGo').onclick = () => {
+    const code = (document.getElementById('bcIn').value || '').replace(/\D/g, '');
+    if (!code) { status.innerHTML = '<p class="none">Type the digits under the barcode.</p>'; return; }
+    document.getElementById('bcIn').value = '';
+    addScan(code);
+  };
+  document.getElementById('bcIn').addEventListener('keydown', ev => { if (ev.key === 'Enter') document.getElementById('bcGo').click(); });
 
   if ('BarcodeDetector' in window) {
     document.getElementById('bcCameraRow').hidden = false;
     document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
     document.getElementById('bcFile').onchange = async (ev) => {
-      const file = ev.target.files[0];
-      ev.target.value = '';                        // lets the same photo be picked again
-      if (!file) return;
-      out.innerHTML = '<p class="hint2">Reading the photo…</p>';
-      try {
-        const bitmap = await createImageBitmap(file);
-        const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
-        const codes = await detector.detect(bitmap);
-        if (!codes.length) { out.innerHTML = '<p class="none">No barcode found in that photo — try another, or type the number instead.</p>'; return; }
-        lookup(codes[0].rawValue);
-      } catch {
-        out.innerHTML = '<p class="none">Could not read that photo — try another, or type the number instead.</p>';
+      const files = [...ev.target.files];
+      ev.target.value = '';                         // lets the same photo be picked again
+      if (!files.length) return;
+      const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
+      let misses = 0;
+      for (const file of files) {
+        status.innerHTML = `<p class="hint2">Reading photo ${files.indexOf(file) + 1} of ${files.length}…</p>`;
+        try {
+          const bitmap = await createImageBitmap(file);
+          const codes = await detector.detect(bitmap);
+          if (codes.length) await addScan(codes[0].rawValue); else misses++;
+        } catch { misses++; }
       }
+      status.innerHTML = misses
+        ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode.</p>` : '';
     };
     document.getElementById('bcCamera').onclick = async () => {
       const video = document.getElementById('bcVideo');
+      const controls = document.getElementById('bcCameraControls');
       let stream, detector, raf;
       try {
         detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
@@ -4960,13 +5001,19 @@ function showBarcodeScan(onIngredients) {
       }
       video.srcObject = stream;
       video.classList.add('on');
+      controls.hidden = false;
       await video.play().catch(() => {});
-      const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); };
+      const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; };
+      document.getElementById('bcStopCam').onclick = stop;
+      // Stays open across finds rather than closing after the first, so a
+      // whole run of products can be scanned in one pass of the camera —
+      // addScan itself skips a code already collected, so lingering on the
+      // same barcode for several frames in a row is harmless.
       const tick = async () => {
         if (!video.isConnected) { stop(); return; }        // the sheet closed mid-scan
         try {
           const codes = await detector.detect(video);
-          if (codes.length) { stop(); lookup(codes[0].rawValue); return; }
+          if (codes.length) addScan(codes[0].rawValue);
         } catch {}
         raf = requestAnimationFrame(tick);
       };
@@ -4979,7 +5026,7 @@ function showBarcodeScan(onIngredients) {
     // row without a word left the whole scan feature looking simply missing,
     // which is worse than admitting the limit and pointing at what still
     // works: typing the number is not a fallback here, it is the real path.
-    out.insertAdjacentHTML('beforebegin', `<p class="hint2">This browser can't read a barcode
+    status.insertAdjacentHTML('beforebegin', `<p class="hint2">This browser can't read a barcode
       on-device (Safari doesn't support that yet) — typing the number above works everywhere.</p>`);
   }
 }
@@ -5200,6 +5247,7 @@ document.getElementById('nudge').addEventListener('click', () => {
   // Reveal one ingredient only. Finding the partner is the game.
   toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
+document.getElementById('scanBtn').addEventListener('click', () => showBarcodeScan(showLabelReader));
 function wipeProgress() {
   if (!confirm('Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.')) return;
   // Reloading fires pagehide, which autosaves — and that autosave was racing
