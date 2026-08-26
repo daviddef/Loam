@@ -778,6 +778,17 @@ __CATEGORY_CSS__
   .bcNoPic{width:42px;height:42px;border-radius:7px;flex:none;background:var(--card);border:1px dashed var(--line)}
   .bcProduct b{display:block;font:700 13px var(--face-name);color:var(--ink)}
   .bcProduct i{font-style:normal;font-size:11px;color:var(--ink-soft)}
+  /* A scanned product's card: a real photo instead of drawn art, and a
+     border that says "this is where these came from," not "craft me." */
+  .chip.hub{
+    cursor:pointer;border-color:var(--brick);
+    box-shadow:0 0 0 2px color-mix(in srgb,var(--brick) 30%,transparent),var(--raise);
+  }
+  .chip.hub .art{object-fit:cover;border-radius:6px;background:var(--surface)}
+  .chip.hub .n{text-transform:none;letter-spacing:0}
+  .chip.hub .rl{background:var(--brick)}
+  .hubNoPic{display:block;width:100%;height:100%;border-radius:6px;
+            background:var(--surface);border:1px dashed var(--line)}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
     padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
@@ -1643,7 +1654,10 @@ if (!found.size) STARTERS.forEach(s => found.add(s));
  * starter and it will have come alive by the time you come back.
  */
 function benchState() {
-  const cards = [...world.querySelectorAll('.chip.board')];
+  // A scan hub isn't a real element and has no id to restore from — it does
+  // not survive a reload. The ingredients it named are real elements and
+  // save normally; they just come back without the hub grouping them.
+  const cards = [...world.querySelectorAll('.chip.board:not(.hub)')];
   const index = new Map(cards.map((c, i) => [c, i]));
   const jobBy = new Map([...cooking].map(j => [j.chip, j]));
   return {
@@ -3050,6 +3064,79 @@ function spawn(id, x, y, near) {
   return el;
 }
 
+/** A scanned product's card — image, name, brand. Not a real element, so it
+ * carries no dataset.id and never goes through byId; it exists only to be a
+ * visual anchor the ingredients it named can sit around and link back to. */
+function hubHTML(product) {
+  const name = (product.product_name || 'Scanned product').replace(/[<>]/g, '');
+  const pic = product.image_front_small_url
+    ? `<img class="art" src="${product.image_front_small_url}" alt="">`
+    : `<i class="art hubNoPic"></i>`;
+  return pic + `<span class="n">${name}</span><span class="rl"></span>` +
+    `<span class="ac">${product.brands ? product.brands.replace(/[<>]/g, '') : 'Scanned'}</span>`;
+}
+function spawnHub(scanRecord) {
+  const el = document.createElement('div');
+  const [cw, ch] = cardSize();
+  el.className = 'chip board hub pop';
+  el.dataset.uid = 'c' + (++chipSeq);
+  el.innerHTML = hubHTML(scanRecord.product);
+  world.appendChild(el);
+  const [left, top] = freeSpot(cw, ch, null);
+  el.style.left = left + 'px';
+  el.style.top = top + 'px';
+  setTimeout(() => el.classList.remove('pop'), 340);
+  return el;
+}
+/** What tapping a hub opens — the same three things the scan sheet showed:
+ * product image and name, the barcode it was looked up by, and the raw
+ * ingredients text, exactly as read off the real packet. */
+function showScannedProduct(hubEl) {
+  const s = hubEl._scan;
+  if (!s) return;
+  const p = s.product;
+  document.getElementById('sheetBody').innerHTML = `
+    <div class="bcProduct" style="margin-bottom:9px">
+      ${p.image_front_small_url ? `<img src="${p.image_front_small_url}" alt="">` : `<i class="bcNoPic"></i>`}
+      <div><b>${(p.product_name || 'Unnamed product').replace(/[<>]/g, '')}</b>
+      ${p.brands ? `<i>${p.brands.replace(/[<>]/g, '')}</i>` : ''}</div>
+    </div>
+    <p class="hint2" style="margin-top:0">Barcode <b style="font:600 12px var(--face-data)">${s.code}</b> ·
+      looked up on Open Food Facts.</p>
+    ${s.text ? `<p class="why" style="margin-top:9px">${s.text.replace(/[<>]/g, '')}</p>` : ''}`;
+  openSheet('Scanned product');
+}
+/** The one entry point placement goes through when the ingredients came from
+ * a real scan: each product gets its own hub, and everything it named links
+ * to it the same way a crafted result links to what made it — reusing
+ * spawn()'s own near-anchor placement and the ordinary links/drawLinks
+ * machinery rather than inventing a second layout system. */
+function placeScanned(scannedProducts) {
+  document.getElementById('sheet').classList.remove('on');
+  benchTouched = true;
+  pushUndo(scannedProducts.length === 1
+    ? `scanning ${nameOfProduct(scannedProducts[0].product)}`
+    : `scanning ${scannedProducts.length} products`);
+  let totalPlaced = 0;
+  for (const s of scannedProducts) {
+    if (!s.text) continue;
+    const made = readLabel(s.text).filter(p => p.kind === 'found' || p.kind === 'near');
+    if (!made.length) continue;
+    const hub = spawnHub(s);
+    hub._scan = s;
+    for (const p of made) {
+      const chip = spawn(p.id, null, null, [hub]);
+      links.push({ a: hub, b: null, out: chip, fresh: true });
+    }
+    totalPlaced += made.length;
+  }
+  drawLinks();
+  tidy();
+  toast(totalPlaced ? `${totalPlaced} placed around ${scannedProducts.length === 1 ? 'the product' : scannedProducts.length + ' products'}`
+                     : 'Nothing on these labels resolved yet');
+}
+const nameOfProduct = (p) => (p.product_name || 'that product').replace(/[<>]/g, '');
+
 /**
  * Bring a card into view if it landed off the edge. Pans the smallest distance
  * that works rather than centring on it, so the rest of the bench does not jump
@@ -3112,6 +3199,12 @@ board.addEventListener('pointerdown', ev => {
   if (touches.size > 1) return;                       // pinching, not dragging
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
+  // A scan hub isn't a real element — it has no dataset.id, so the ordinary
+  // drag/merge/chipTap machinery below would break on it. It's a fixed
+  // anchor, not a draggable card: tapping it just opens what it was scanned
+  // from, and that's the whole interaction.
+  const hub = ev.target.closest('.chip.hub');
+  if (hub) { ev.preventDefault(); return showScannedProduct(hub); }
   const chip = ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
@@ -4684,14 +4777,18 @@ document.getElementById('settings').addEventListener('click', showSettings);
  * were two different things.
  */
 function consolidateBench() {
+  // A scan hub has no dataset.id, so every hub would read as the same
+  // "id" (undefined) and get deduplicated down to one — two different
+  // scanned products losing one of their hubs. Hubs are never the same
+  // thing twice; leave them out of this entirely.
   const keep = new Map();
   const dead = [];
-  for (const c of world.querySelectorAll('.chip.board')) {
+  for (const c of world.querySelectorAll('.chip.board:not(.hub)')) {
     const id = c.dataset.id;
     if (keep.has(id)) dead.push(c); else keep.set(id, c);
   }
   if (!dead.length) return 0;
-  const swap = (c) => (c && keep.get(c.dataset.id)) || c;
+  const swap = (c) => (c && !c.classList.contains('hub') && keep.get(c.dataset.id)) || c;
   for (let i = links.length - 1; i >= 0; i--) {
     const l = links[i];
     l.a = swap(l.a); l.b = swap(l.b); l.out = swap(l.out);
@@ -4862,7 +4959,7 @@ function readIngredient(text) {
 }
 function readLabel(text) { return splitLabel(text).map(readIngredient); }
 
-function showLabelReader(prefill = '') {
+function showLabelReader(prefill = '', scannedProducts = null) {
   document.getElementById('sheetBody').innerHTML = `
     <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet, or scan the barcode.
        Every one this world knows becomes a card, with the whole chain back to stone, water, sun and seed.</p>
@@ -4881,7 +4978,10 @@ function showLabelReader(prefill = '') {
     const parsed = readLabel(document.getElementById('labelIn').value);
     document.getElementById('labelOut').innerHTML = labelResultHTML(parsed);
     const put = document.getElementById('labelPut');
-    if (put) put.onclick = () => {
+    // A scan carries per-product ingredient text, which is what lets each
+    // product get its own hub with its own ring of children. Pasted text has
+    // no such per-product split — those still just place flat, as before.
+    if (put) put.onclick = scannedProducts ? () => placeScanned(scannedProducts) : () => {
       document.getElementById('sheet').classList.remove('on');
       benchTouched = true;
       const made = parsed.filter(p => p.kind === 'found' || p.kind === 'near');
@@ -5017,7 +5117,7 @@ function showBarcodeScan(onIngredients) {
          <button class="ghost" id="bcUse">Read ingredients from ${withText.length === 1 ? 'this product' : withText.length + ' products'}</button></div>`
        : '');
     const use = document.getElementById('bcUse');
-    if (use) use.onclick = () => onIngredients(withText.map(s => 'Ingredients: ' + s.text).join(', '));
+    if (use) use.onclick = () => onIngredients(withText.map(s => 'Ingredients: ' + s.text).join(', '), withText);
   }
 
   const addScan = async (code) => {
