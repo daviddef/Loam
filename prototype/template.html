@@ -3233,8 +3233,16 @@ function showScannedProduct(hubEl) {
     </div>
     <p class="hint2" style="margin-top:0">Barcode <b style="font:600 12px var(--face-data)">${s.code}</b> ·
       looked up on Open Food Facts.</p>
-    ${s.text ? `<p class="why" style="margin-top:9px">${s.text.replace(/[<>]/g, '')}</p>` : ''}`;
+    ${s.text ? `<p class="why" style="margin-top:9px">${s.text.replace(/[<>]/g, '')}</p>` : ''}
+    <div class="cardrow" style="margin-top:9px">
+      <button class="ghost" id="hubRemove">Remove from canvas</button>
+    </div>`;
   openSheet('Scanned product');
+  document.getElementById('hubRemove').onclick = () => {
+    document.getElementById('sheet').classList.remove('on');
+    pushUndo(`removing ${nameOfProduct(p)}`);
+    removeChip(hubEl);
+  };
 }
 /** The one entry point placement goes through when the ingredients came from
  * a real scan: each product gets its own hub, and everything it named links
@@ -3348,18 +3356,21 @@ board.addEventListener('pointerdown', ev => {
   const ghost = ev.target.closest('.chip.ghost');
   if (ghost) {
     ev.preventDefault();
-    // Neither a hub nor a placeholder ever reaches chipTap()'s own
-    // double-tap-removes below — this intercept returns before drag is ever
-    // armed — so without this, a ghost had no way off the board at all.
+    // A hub's tap opens a sheet that covers the board, so a real second tap
+    // can never land back on the chip underneath it — double-tap-to-remove
+    // is a dead gesture there no matter how it's wired. showScannedProduct
+    // gets its own "Remove from canvas" button instead. A placeholder's tap
+    // is just a toast, nothing covers the chip, so double-tap still works
+    // fine there — same pattern chipTap() uses for a real chip.
+    if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
     const now = Date.now();
     if (lastChipTap.el === ghost && now - lastChipTap.t < 320) {
       lastChipTap = { el: null, t: 0 };
-      pushUndo(`removing ${ghost.classList.contains('hub') ? nameOfProduct(ghost._scan.product) : ghost.dataset.text}`);
+      pushUndo(`removing ${ghost.dataset.text}`);
       removeChip(ghost);
       return;
     }
     lastChipTap = { el: ghost, t: now };
-    if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
     return toast(`${ghost.dataset.text} — a real thing, just not built yet`);
   }
   const chip = ev.target.closest('.chip.board:not(.cooking)');
