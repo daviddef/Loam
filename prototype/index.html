@@ -218,7 +218,22 @@
     border-radius:4px;padding:5px 12px;
   }
   .goal b{color:var(--brick)}
-  .goal{cursor:pointer}
+  .goal{cursor:pointer;display:flex;align-items:center;gap:7px}
+  /* The goal chip is a rung now, not a destination: what is next, and how far.
+     The distance is the honest part — it comes from the graph, not from a
+     difficulty setting someone chose. */
+  .goal .glab{
+    font:700 8.5px/1 var(--face-data);letter-spacing:.9px;text-transform:uppercase;
+    color:var(--ink-soft);opacity:.75;
+  }
+  .goal .gsteps{
+    font:700 9.5px/1 var(--face-data);color:var(--ink-soft);
+    padding:2px 6px;border-radius:99px;background:rgba(var(--shade),.14);
+    font-variant-numeric:tabular-nums;
+  }
+  #score{cursor:pointer}
+  #score .sc{font-variant-numeric:tabular-nums}
+  @media(max-width:900px){ #score{display:none} }
   .goal:hover{border-color:var(--orange)}
   .goal .ask{
     font-style:normal;font:800 9px var(--face-name);color:var(--on-accent);background:var(--orange);
@@ -800,6 +815,13 @@
     padding:10px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);
   }
   .search:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .savebox{
+    max-height:190px;overflow:auto;margin:8px 0 0;padding:9px 11px;border-radius:9px;
+    background:var(--surface);border:1.5px solid var(--line);
+    font:400 10.5px/1.45 var(--face-data);color:var(--ink-soft);
+    white-space:pre-wrap;word-break:break-all;
+  }
+  .cardrow button.ghost.danger{border-color:var(--brick);color:var(--brick)}
   .none{color:var(--ink-soft);font-size:13px;text-align:center;padding:18px}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
@@ -1455,6 +1477,7 @@
   <div class="goal" id="goal"></div>
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
+  <div class="count" id="score" title="A point for every step it took to reach what you hold"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button id="undo" title="Nothing to undo yet" disabled>Undo</button>
   <button id="reset" title="Start over — wipes everything you have found">Reset</button>
@@ -1517,7 +1540,7 @@ const SCALE = {"stone":{"e":-2,"t":"10⁻² m"},"water":{"e":-1,"t":"10⁻¹ m"}
    so it reads the same everywhere on a chain. */
 const CAUTIONS = {"botulism":{"label":"Preserving is not a recipe you can eyeball","note":"Fermenting and curing at home is real food science and it has a real failure mode. Clostridium botulinum grows in exactly the conditions these methods create — low oxygen, low acid, room temperature — and the toxin has no taste or smell. Salt concentration, acidity and temperature are not details; they are the whole safety margin. Follow a tested method from a food-safety authority, not a game.","ids":["brine","pickle","sauerkraut","kimchi","salted_cabbage","salt_fish","cured_meat","bacon","aspic","smoked_fish","sourdough_starter"],"severity":"acute"},"caustic":{"label":"Lye burns on contact","note":"Sodium hydroxide is strongly caustic. It damages skin and eyes immediately and generates heat when it meets water. Historic soap-making is a good story and a bad first experiment.","ids":["lye","soap"],"severity":"acute"},"fire":{"label":"Fire and hot fat","note":"Cooking oil reaches temperatures that ignite, and water thrown into it will throw burning oil across a room. Never leave hot fat unattended, and never put water on an oil fire.","ids":["fire","spark","charcoal","candle","fried_fish","battered_fish","chips","fish_and_chips","caramel","caramel_sauce"],"severity":"acute"},"raw":{"label":"Raw egg and unpasteurised milk","note":"Both can carry salmonella or listeria. The risk is small for most people and much larger if you are pregnant, very young, elderly, or immunocompromised.","ids":["mayonnaise","egg_mayo","milk","cream","curd","blue_cheese"],"severity":"conditional"},"alcohol":{"label":"Alcohol","note":"Fermentation is how alcohol is made, and this part of the game explains that chemistry. It is not a brewing guide, and the drinking age where you live applies to you and not to the game.","ids":["beer","wine","cider","mead","aged_wine","mead_must","wort","malt","vinegar"],"severity":"cumulative"},"cherry_kernel":{"label":"The stone, not the fruit","note":"Cherry flesh is entirely safe and this caution is not about eating cherries. The kernels inside the hard pits contain amygdalin, which releases hydrogen cyanide when chewed or swallowed. Do not crack the stones open.","ids":["cherry"],"severity":"acute"},"mercury_toxicity":{"label":"Mercury is toxic, in the ore and in the metal","note":"Mercury and its compounds are toxic to the nervous system, immune system and kidneys, and both mining cinnabar and refining mercury from it are historic causes of mercury poisoning. This is chemistry to understand, not something to try at home.","ids":["cinnabar","mercury"],"severity":"cumulative"},"uranium_toxicity":{"label":"Uranium is a heavy-metal poison first","note":"The main risk of exposure is chemical poisoning by uranium oxide rather than radioactivity — incorporated uranium accumulates in bone, liver, kidney and reproductive tissue. An excess risk of lung cancer has been documented among Navajo uranium miners specifically and linked to their occupation.","ids":["ore","uranium","yellowcake"],"severity":"cumulative"},"reactive_metal":{"label":"These metals set fire to water","note":"Sodium forms flammable hydrogen and caustic sodium hydroxide on contact with water, and potassium reacts hard enough to ignite that hydrogen itself. Magnesium burns at around 3,100°C with a brilliant white light carrying strong ultraviolet. This is real chemistry, and none of it is a demonstration to improvise.","ids":["sodium","potassium","magnesium"],"severity":"acute"},"lead_toxicity":{"label":"Lead is a neurotoxin","note":"Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.","ids":["lead"],"severity":"cumulative"},"chlorine_gas":{"label":"Chlorine gas is a poison, and was used as one","note":"Elemental chlorine at high concentration is extremely dangerous and poisonous to most living organisms. It was the first gas deployed as a weapon, at the Second Battle of Ypres on 22 April 1915. This page is about where an industrial chemical comes from, and nothing on it is a method.","ids":["chlorine"],"severity":"acute"},"fluorine_hazard":{"label":"Fluorine is why chemistry has martyrs","note":"Fluorine in its elemental form is highly toxic, and it reacts with almost every other element. Several nineteenth-century experimenters who tried to isolate it were injured or killed, and are remembered as the fluorine martyrs.","ids":["fluorine","fluorite"],"severity":"acute"},"arsenic_toxicity":{"label":"Arsenic is a poison, and a drinking-water problem","note":"Arsenic compounds have been known since ancient times to be poisonous. The commonest cause of long-term exposure today is not deliberate — it is contaminated groundwater, and more than 200 million people worldwide are exposed to unsafe levels.","ids":["arsenic"],"severity":"acute"},"selenium_dose":{"label":"Essential and toxic are the same element, at different doses","note":"Selenium is a required nutrient: the adult recommended intake is 55 micrograms a day and the tolerable upper limit is 400. Exceeding it causes selenosis. That is a narrow window compared with almost anything else on the shelf.","ids":["selenium"],"severity":"cumulative"},"heavy_metal_dust":{"label":"Some metals are only dangerous once they are dust","note":"Cadmium is toxic and accumulates in the kidneys. Manganese overexposure causes manganism, a permanent movement disorder. Osmium tetroxide, which forms when osmium powder meets air, damages eyes and lungs at very low concentrations.","ids":["cadmium","manganese","osmium"],"severity":"cumulative"},"radioactivity":{"label":"These are radioactive, and that is the point of some of them","note":"Radium, thorium, plutonium and polonium are all radioactive. Radium was painted onto watch dials by women who wet the brushes with their lips, and many of them died of it — the Radium Girls case changed occupational-safety law. Polonium is acutely toxic in microgram amounts.","ids":["radium","thorium","plutonium","polonium","monazite"],"severity":"cumulative"},"calcium_corrosive":{"label":"Calcium metal burns skin on contact","note":"Calcium reacts with water faster than magnesium does, giving calcium hydroxide and hydrogen. Because that reaction is exothermic, calcium metal touching the moisture on skin causes severe corrosive irritation, and swallowing it does the same to the mouth, oesophagus and stomach.","ids":["calcium"],"severity":"acute"},"lightning":{"label":"Thunder is the sound of something already close","note":"A lightning channel carries current through air heated to tens of thousands of degrees, and a strike does not have to hit a person to injure one — current spreads outward through the ground and through anything that conducts. Thunder is that channel being heard, so hearing it means the storm is already within range of it.","ids":["lightning","thunder","storm","fulgurite"],"severity":"acute"},"severe_weather":{"label":"Weather that kills people","note":"Flood, storm surge, hurricane, blizzard and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land.","ids":["flood","hurricane","blizzard","hail"],"severity":"acute"},"ozone":{"label":"Ozone is not fresh air","note":"The clean smell after a thunderstorm is a toxic gas. The same oxidising power that makes ozone useful for disinfecting is what damages mucous and respiratory tissue in animals, and plant tissue too, above about 0.1 ppm — around the level that already produces headaches and burning eyes.","ids":["ozone"],"severity":"cumulative"},"methanol_toxicity":{"label":"Methanol looks and smells like drinking alcohol","note":"It is difficult to tell methanol, ethanol and isopropyl alcohol apart by appearance or odour, and methanol is far more acutely toxic. The body turns it into formaldehyde and then formate, which shuts down the enzyme cells use to breathe. As little as 4 to 15 mL has reportedly caused irreversible optic nerve damage.","ids":["methanol","wood_tar"],"severity":"acute"},"phenol_corrosive":{"label":"Phenol degrades protein on contact","note":"Its corrosive effect on skin and mucous membrane comes from degenerating the protein itself, and prolonged contact can produce second and third-degree burns. It also passes into the blood through unbroken skin, and systemic poisoning can follow within minutes to hours.","ids":["phenol","coal_tar"],"severity":"acute"},"formaldehyde_carcinogen":{"label":"Formaldehyde is a carcinogen, not just a smell","note":"The International Agency for Research on Cancer reclassified formaldehyde as a known human carcinogen, associated with nasal sinus and nasopharyngeal cancer. Above about 0.1 ppm in air it irritates the eyes and mucous membranes. It is also what makes smoke-tanned hide keep, and what hardened the first casein plastics.","ids":["formaldehyde","galalith","bakelite"],"severity":"cumulative"},"venomous_spur":{"label":"The platypus is a venomous mammal","note":"The male carries a spur on each hind leg fed by a gland in the thigh, and the venom is powerful enough to inflict pain in humans — swelling, and a heightened sensitivity to pain that can last as long as months. It is largely defensin-like proteins, some of them unique to the species, and the spurs are weapons males use on each other.","ids":["platypus"],"severity":"contact"}};
 /* Food-label vocabulary → element ids. See data/labels.json. */
-const LABELS = {"$comment":"Food-label vocabulary, mapped to element ids. A label does not speak this game's language: it says Skim Milk, Live Cultures, Mineral Salt (Calcium Citrate), where the game says milk, bacteria, calcium. This file is that translation and nothing else — it never invents an element, it only says which existing one a phrase means. An entry whose target id does not exist is an error, and tools/validate.mjs says so.","$rules":"Keys are lowercase, punctuation-stripped. Longest key wins, so 'locust bean gum' is tried before 'gum'. Values are element ids. A value of null means the phrase is deliberately recognised as UNRESOLVABLE — see $vague.","$vague":"Some label phrases are legally permitted to hide what they mean. 'Natural flavours' can be any of thousands of compounds and the label is not required to say which. Mapping those to null lets the reader say so out loud rather than silently dropping them, which is the honest answer and a more interesting one.","aliases":{"260":"acetic_acid","270":"lactic_acid","skim milk":"milk","skimmed milk":"milk","whole milk":"milk","milk solids":"milk","milk powder":"milk","skim milk powder":"milk","milk fat":"butter","butterfat":"butter","cream":"cream","live cultures":"starter_culture","live and active cultures":"starter_culture","lactic acid bacteria":"bacteria","probiotic cultures":"starter_culture","yoghurt":"yoghurt","yogurt":"yoghurt","whey":"whey","whey powder":"whey","casein":"curd","rennet":"rennet","sugar":"sugar","cane sugar":"sugar","raw sugar":"sugar","brown sugar":"sugar","sucrose":"sugar","glucose":"glucose","glucose syrup":"glucose","dextrose":"glucose","honey":"honey","caramel":"caramel","salt":"salt","sea salt":"salt","iodised salt":"salt","mineral salt":"salt","iodine":"iodine","selenium":"selenium","potassium":"potassium","wheat flour":"flour","plain flour":"flour","wholemeal flour":"flour","flour":"flour","wheat":"wheat","barley":"barley","malt":"malt","malted barley":"malt","oats":"oat","rolled oats":"oat","rice":"rice","maize":"maize","corn":"maize","cornflour":"starch","corn starch":"starch","starch":"starch","modified starch":"starch","yeast":"yeast","bakers yeast":"yeast","vegetable oil":"oil","sunflower oil":"oil","olive oil":"olive_oil","palm oil":"oil","canola oil":"oil","butter":"butter","cocoa butter":"cocoa","cocoa":"cocoa","cocoa mass":"cocoa","chocolate":"chocolate","egg":"egg","whole egg":"egg","egg white":"egg","egg yolk":"egg","tomato":"tomato","onion":"onion","garlic":"garlic","potato":"potato","carrot":"carrot","cabbage":"cabbage","lettuce":"lettuce","cucumber":"cucumber","pumpkin":"pumpkin","beetroot":"beet","apple":"apple","apple juice":"apple_juice","grape":"grape","grape juice":"grape","olive":"olive","banana":"banana","chilli":"chilli","chili":"chilli","beef":"beef","pork":"pork","chicken":"meat","chicken meat":"meat","lamb":"lamb","mutton":"mutton","bacon":"bacon","ham":"ham","fish":"fish","gelatine":"gelatin","gelatin":"gelatin","bone char":"bone_char","water":"water","purified water":"water","filtered water":"water","vinegar":"vinegar","acetic acid":"acetic_acid","citric acid":"citric_acid","ascorbic acid":"ascorbate","vitamin c":"ascorbate","tocopherol":"vitamin_e","vitamin e":"vitamin_e","lecithin":"phospholipid","soy lecithin":"phospholipid","soya lecithin":"phospholipid","pectin":"pectin","fruit pectin":"pectin","tea":"tea","black tea":"tea","green tea":"tea","coffee":"coffee","coffee beans":"coffee","cinnamon":"cinnamon","vanilla":"vanilla","vanilla extract":"vanilla","salted butter":"butter","bell pepper":"capsicum","capsicum":"capsicum","paprika":"paprika","paprika extract":"paprika","cayenne":"chilli","cayenne pepper":"chilli","starter culture":"starter_culture","l casei":"bacteria","lactobacillus casei":"bacteria","s thermophilus":"s_thermophilus","streptococcus thermophilus":"s_thermophilus","l bulgaricus":"l_bulgaricus","lactobacillus bulgaricus":"l_bulgaricus","lactobacillus delbrueckii subsp bulgaricus":"l_bulgaricus","l acidophilus":"l_acidophilus","lactobacillus acidophilus":"l_acidophilus","bifidus":"bifidobacterium","bifidobacterium":"bifidobacterium","l paracasei":"l_paracasei","lactobacillus paracasei":"l_paracasei","l plantarum":"l_plantarum","lactococcus lactis":"lactococcus","kefir":"kefir","buttermilk":"buttermilk","miso":"miso","sodium chloride":"salt","e100":"curcumin","e120":"carmine","e124":"ponceau_4r","e140":"chlorophyll","e150a":"caramel_colour","e150b":"caramel_colour","e150c":"caramel_colour","e150d":"caramel_colour","e153":"charcoal","e160a":"beta_carotene","e160b":"annatto","e160c":"paprika","e162":"betanin","e170":"limestone","e171":"rutile","e172":"rust","e173":"aluminum","e174":"silver","e175":"gold","e200":"sorbate","e201":"sorbate","e202":"sorbate","e203":"sorbate","e210":"benzoate","e211":"benzoate","e212":"benzoate","e213":"benzoate","e220":"sulfur_dioxide","e221":"sulfite","e222":"sulfite","e223":"sulfite","e224":"sulfite","e226":"sulfite","e227":"sulfite","e228":"sulfite","e249":"nitrite","e250":"nitrite","e251":"nitrate","e252":"nitrate","e260":"acetic_acid","e262":"sodium_acetate","e270":"lactic_acid","e290":"carbon_dioxide","e296":"malic_acid","e300":"ascorbate","e301":"ascorbate","e322":"lecithin","e325":"lactic_acid","e326":"lactic_acid","e327":"lactic_acid","e330":"citric_acid","e331":"citric_acid","e332":"citric_acid","e333":"citric_acid","e338":"phosphate","e339":"phosphate","e340":"phosphate","e341":"phosphate","e400":"alginate","e401":"alginate","e402":"alginate","e403":"alginate","e404":"alginate","e405":"alginate","e406":"agar","e407":"carrageenan","e407a":"carrageenan","e410":"locust_bean_gum","e412":"guar_gum","e415":"xanthan_gum","e420":"sorbitol","e440":"pectin","e441":"gelatin","e460":"cellulose","e461":"cellulose","e466":"cellulose","e471":"monoglyceride","e472e":"monoglyceride","e507":"hydrogen_chloride","e508":"potassium_chloride","e513":"sulfuric_acid","e551":"silicon_dioxide","e620":"glutamic_acid","e621":"msg","e627":"guanylate","e630":"inosinate","e631":"inosinate","e632":"inosinate","e633":"inosinate","e634":"ribonucleotides","e635":"ribonucleotides","e640":"glycine","e901":"beeswax","e904":"shellac","e938":"argon","e939":"helium","e941":"nitrogen","e948":"oxygen_gas","e951":"aspartame","e967":"xylitol","beef fat":"tallow","beef dripping":"tallow","beef suet":"tallow","beef extract":"broth","beef stock":"broth","veal":"veal","veal stock":"broth","calf":"calf","venison":"venison","game meat":"game","poultry":"poultry","poultry meat":"poultry","cured pork":"ham","gammon":"ham","gammon steak":"ham","smoked ham":"ham","cooked ham":"ham","ham hock":"ham","pork belly":"pork","pork loin":"pork","pork shoulder":"pork","pork mince":"mince","minced pork":"mince","minced beef":"mince","ground beef":"mince","beef mince":"mince","lamb mince":"mince","pork fat":"lard","swine animal fat":"lard","pig fat":"lard","back fat":"lard","streaky bacon":"bacon","back bacon":"bacon","bacon lardons":"bacon","lardons":"bacon","pancetta":"bacon","beef steak":"steak","sirloin":"steak","rump steak":"steak","dry aged beef":"aged_beef","lamb shoulder":"lamb","leg of lamb":"lamb","hogget":"mutton","sheep meat":"mutton","sheepmeat":"mutton","mutton fat":"tallow","stewing steak":"beef","braising steak":"beef","st thermophilus":"s_thermophilus","streptococcus salivarius subsp thermophilus":"s_thermophilus","thermophilus":"s_thermophilus","lb bulgaricus":"l_bulgaricus","l delbrueckii subsp bulgaricus":"l_bulgaricus","bulgaricus":"l_bulgaricus","acidophilus":"l_acidophilus","la5":"l_acidophilus","la 5":"l_acidophilus","ncfm":"l_acidophilus","bifidus actiregularis":"bifidobacterium","bifidus digestivum":"bifidobacterium","bifidobacteria":"bifidobacterium","b lactis":"bifidobacterium","bifidobacterium lactis":"bifidobacterium","bifidobacterium animalis":"bifidobacterium","bifidobacterium animalis subsp lactis":"bifidobacterium","bb12":"bifidobacterium","bb 12":"bifidobacterium","lactobacillus bifidus":"bifidobacterium","lacticaseibacillus paracasei":"l_paracasei","paracasei":"l_paracasei","lactobacillus plantarum":"l_plantarum","lactiplantibacillus plantarum":"l_plantarum","plantarum":"l_plantarum","leuconostoc":"leuconostoc","leuconostoc mesenteroides":"leuconostoc","l mesenteroides":"leuconostoc","leuconostoc cremoris":"leuconostoc","lactococcus":"lactococcus","l lactis":"lactococcus","streptococcus lactis":"lactococcus","lactococcus lactis subsp cremoris":"lactococcus","mesophilic culture":"lactococcus","acetobacter":"acetobacter","acetobacter aceti":"acetobacter","acetic acid bacteria":"acetobacter","vinegar mother":"acetobacter","penicillium":"penicillium","penicillium roqueforti":"penicillium","p roqueforti":"penicillium","penicillium camemberti":"penicillium","penicillium candidum":"penicillium","penicillium glaucum":"penicillium","penicillium nalgiovense":"penicillium","blue mould":"penicillium","blue mold":"penicillium","white mould":"penicillium","koji":"koji","koji mould":"koji","koji mold":"koji","rice koji":"koji","aspergillus oryzae":"koji","a oryzae":"koji","kefir grains":"kefir_grains","kefir culture":"kefir_grains","kefir cultures":"kefir_grains","milk kefir":"kefir","kefir milk":"kefir","lactic acid":"lactic_acid","lactate":"lactic_acid","sodium lactate":"lactic_acid","spirit vinegar":"acetic_acid","yoghurt culture":"yoghurt_culture","yogurt culture":"yoghurt_culture","yoghurt cultures":"yoghurt_culture","yogurt cultures":"yoghurt_culture","starter cultures":"starter_culture","cheese culture":"starter_culture","cheese cultures":"starter_culture","dairy cultures":"starter_culture","culture":"starter_culture","cultures":"starter_culture","freeze dried culture":"starter_culture","microbial cultures":"starter_culture","pasteurised milk":"pasteurised_milk","pasteurized milk":"pasteurised_milk","heat treated milk":"pasteurised_milk","uht milk":"pasteurised_milk","cultured buttermilk":"buttermilk","buttermilk powder":"buttermilk","miso paste":"miso","soybean paste":"miso","camembert":"camembert","camembert cheese":"camembert","brie":"camembert"},"vague":{"natural flavours":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","natural flavour":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","natural flavors":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","artificial flavours":"A blend the maker is not required to itemise.","flavouring":"A blend the maker is not required to itemise.","flavour":"A blend the maker is not required to itemise.","spices":"Any mixture of spices; the label need not break it down.","herbs":"Any mixture of herbs; the label need not break it down.","vegetable gums":"A thickener class, not a single thing — the specific gums are usually named in the brackets after it.","emulsifier":"A class of additive, identified on most labels only by a number.","stabiliser":"A class of additive, identified on most labels only by a number.","preservative":"A class of additive, identified on most labels only by a number.","antioxidant":"A class of additive, identified on most labels only by a number.","acidity regulator":"A class of additive, identified on most labels only by a number.","raising agent":"A class of additive, identified on most labels only by a number."},"near":{"calcium citrate":"calcium","calcium carbonate":"limestone","calcium phosphate":"hydroxyapatite","potassium sorbate":"potassium","potassium sorbat":"potassium","sodium bicarbonate":"sodium","bicarbonate of soda":"sodium","baking soda":"sodium","iron":"iron","zinc":"zinc","magnesium":"magnesium"},"$near":"A label phrase whose element the game HAS, but which is not that element — calcium citrate contains calcium, it is not calcium. The reader says which, rather than quietly claiming an identity that would be false."};
+const LABELS = {"$comment":"Food-label vocabulary, mapped to element ids. A label does not speak this game's language: it says Skim Milk, Live Cultures, Mineral Salt (Calcium Citrate), where the game says milk, bacteria, calcium. This file is that translation and nothing else — it never invents an element, it only says which existing one a phrase means. An entry whose target id does not exist is an error, and tools/validate.mjs says so.","$rules":"Keys are lowercase, punctuation-stripped. Longest key wins, so 'locust bean gum' is tried before 'gum'. Values are element ids. A value of null means the phrase is deliberately recognised as UNRESOLVABLE — see $vague.","$vague":"Some label phrases are legally permitted to hide what they mean. 'Natural flavours' can be any of thousands of compounds and the label is not required to say which. Mapping those to null lets the reader say so out loud rather than silently dropping them, which is the honest answer and a more interesting one.","aliases":{"260":"acetic_acid","270":"lactic_acid","skim milk":"milk","skimmed milk":"milk","whole milk":"milk","milk solids":"milk","milk powder":"milk","skim milk powder":"milk","milk fat":"butter","butterfat":"butter","cream":"cream","live cultures":"starter_culture","live and active cultures":"starter_culture","lactic acid bacteria":"bacteria","probiotic cultures":"starter_culture","yoghurt":"yoghurt","yogurt":"yoghurt","whey":"whey","whey powder":"whey","casein":"curd","rennet":"rennet","sugar":"sugar","cane sugar":"sugar","raw sugar":"sugar","brown sugar":"sugar","sucrose":"sugar","glucose":"glucose","glucose syrup":"glucose","dextrose":"glucose","honey":"honey","caramel":"caramel","salt":"salt","sea salt":"salt","iodised salt":"salt","mineral salt":"salt","iodine":"iodine","selenium":"selenium","potassium":"potassium","wheat flour":"flour","plain flour":"flour","wholemeal flour":"flour","flour":"flour","wheat":"wheat","barley":"barley","malt":"malt","malted barley":"malt","oats":"oat","rolled oats":"oat","rice":"rice","maize":"maize","corn":"maize","cornflour":"starch","corn starch":"starch","starch":"starch","modified starch":"starch","yeast":"yeast","bakers yeast":"yeast","vegetable oil":"oil","sunflower oil":"oil","olive oil":"olive_oil","palm oil":"oil","canola oil":"oil","butter":"butter","cocoa butter":"cocoa","cocoa":"cocoa","cocoa mass":"cocoa","chocolate":"chocolate","egg":"egg","whole egg":"egg","egg white":"egg","egg yolk":"egg","tomato":"tomato","onion":"onion","garlic":"garlic","potato":"potato","carrot":"carrot","cabbage":"cabbage","lettuce":"lettuce","cucumber":"cucumber","pumpkin":"pumpkin","beetroot":"beet","apple":"apple","apple juice":"apple_juice","grape":"grape","grape juice":"grape","olive":"olive","banana":"banana","chilli":"chilli","chili":"chilli","beef":"beef","pork":"pork","chicken":"meat","chicken meat":"meat","lamb":"lamb","mutton":"mutton","bacon":"bacon","ham":"ham","fish":"fish","gelatine":"gelatin","gelatin":"gelatin","bone char":"bone_char","water":"water","purified water":"water","filtered water":"water","vinegar":"vinegar","acetic acid":"acetic_acid","citric acid":"citric_acid","ascorbic acid":"ascorbate","vitamin c":"ascorbate","tocopherol":"vitamin_e","vitamin e":"vitamin_e","lecithin":"phospholipid","soy lecithin":"phospholipid","soya lecithin":"phospholipid","pectin":"pectin","fruit pectin":"pectin","tea":"tea","black tea":"tea","green tea":"tea","coffee":"coffee","coffee beans":"coffee","cinnamon":"cinnamon","vanilla":"vanilla","vanilla extract":"vanilla","salted butter":"butter","bell pepper":"capsicum","capsicum":"capsicum","paprika":"paprika","paprika extract":"paprika","cayenne":"chilli","cayenne pepper":"chilli","starter culture":"starter_culture","l casei":"bacteria","lactobacillus casei":"bacteria","s thermophilus":"s_thermophilus","streptococcus thermophilus":"s_thermophilus","l bulgaricus":"l_bulgaricus","lactobacillus bulgaricus":"l_bulgaricus","lactobacillus delbrueckii subsp bulgaricus":"l_bulgaricus","l acidophilus":"l_acidophilus","lactobacillus acidophilus":"l_acidophilus","bifidus":"bifidobacterium","bifidobacterium":"bifidobacterium","l paracasei":"l_paracasei","lactobacillus paracasei":"l_paracasei","l plantarum":"l_plantarum","lactococcus lactis":"lactococcus","kefir":"kefir","buttermilk":"buttermilk","miso":"miso","sodium chloride":"salt","e100":"curcumin","e120":"carmine","e124":"ponceau_4r","e140":"chlorophyll","e150a":"caramel_colour","e150b":"caramel_colour","e150c":"caramel_colour","e150d":"caramel_colour","e153":"charcoal","e160a":"beta_carotene","e160b":"annatto","e160c":"paprika","e162":"betanin","e170":"limestone","e171":"rutile","e172":"rust","e173":"aluminum","e174":"silver","e175":"gold","e200":"sorbate","e201":"sorbate","e202":"sorbate","e203":"sorbate","e210":"benzoate","e211":"benzoate","e212":"benzoate","e213":"benzoate","e220":"sulfur_dioxide","e221":"sulfite","e222":"sulfite","e223":"sulfite","e224":"sulfite","e226":"sulfite","e227":"sulfite","e228":"sulfite","e249":"nitrite","e250":"nitrite","e251":"nitrate","e252":"nitrate","e260":"acetic_acid","e262":"sodium_acetate","e270":"lactic_acid","e290":"carbon_dioxide","e296":"malic_acid","e300":"ascorbate","e301":"ascorbate","e322":"lecithin","e325":"lactic_acid","e326":"lactic_acid","e327":"lactic_acid","e330":"citric_acid","e331":"citric_acid","e332":"citric_acid","e333":"citric_acid","e338":"phosphate","e339":"phosphate","e340":"phosphate","e341":"phosphate","e400":"alginate","e401":"alginate","e402":"alginate","e403":"alginate","e404":"alginate","e405":"alginate","e406":"agar","e407":"carrageenan","e407a":"carrageenan","e410":"locust_bean_gum","e412":"guar_gum","e415":"xanthan_gum","e420":"sorbitol","e440":"pectin","e441":"gelatin","e460":"cellulose","e461":"cellulose","e466":"cellulose","e471":"monoglyceride","e472e":"monoglyceride","e507":"hydrogen_chloride","e508":"potassium_chloride","e513":"sulfuric_acid","e551":"silicon_dioxide","e620":"glutamic_acid","e621":"msg","e627":"guanylate","e630":"inosinate","e631":"inosinate","e632":"inosinate","e633":"inosinate","e634":"ribonucleotides","e635":"ribonucleotides","e640":"glycine","e901":"beeswax","e904":"shellac","e938":"argon","e939":"helium","e941":"nitrogen","e948":"oxygen_gas","e951":"aspartame","e967":"xylitol","beef fat":"tallow","beef dripping":"tallow","beef suet":"tallow","beef extract":"broth","beef stock":"broth","veal":"veal","veal stock":"broth","calf":"calf","venison":"venison","game meat":"game","poultry":"poultry","poultry meat":"poultry","cured pork":"ham","gammon":"ham","gammon steak":"ham","smoked ham":"ham","cooked ham":"ham","ham hock":"ham","pork belly":"pork","pork loin":"pork","pork shoulder":"pork","pork mince":"mince","minced pork":"mince","minced beef":"mince","ground beef":"mince","beef mince":"mince","lamb mince":"mince","pork fat":"lard","swine animal fat":"lard","pig fat":"lard","back fat":"lard","streaky bacon":"bacon","back bacon":"bacon","bacon lardons":"bacon","lardons":"bacon","pancetta":"bacon","beef steak":"steak","sirloin":"steak","rump steak":"steak","dry aged beef":"aged_beef","lamb shoulder":"lamb","leg of lamb":"lamb","hogget":"mutton","sheep meat":"mutton","sheepmeat":"mutton","mutton fat":"tallow","stewing steak":"beef","braising steak":"beef","st thermophilus":"s_thermophilus","streptococcus salivarius subsp thermophilus":"s_thermophilus","thermophilus":"s_thermophilus","lb bulgaricus":"l_bulgaricus","l delbrueckii subsp bulgaricus":"l_bulgaricus","bulgaricus":"l_bulgaricus","acidophilus":"l_acidophilus","la5":"l_acidophilus","la 5":"l_acidophilus","ncfm":"l_acidophilus","bifidus actiregularis":"bifidobacterium","bifidus digestivum":"bifidobacterium","bifidobacteria":"bifidobacterium","b lactis":"bifidobacterium","bifidobacterium lactis":"bifidobacterium","bifidobacterium animalis":"bifidobacterium","bifidobacterium animalis subsp lactis":"bifidobacterium","bb12":"bifidobacterium","bb 12":"bifidobacterium","lactobacillus bifidus":"bifidobacterium","lacticaseibacillus paracasei":"l_paracasei","paracasei":"l_paracasei","lactobacillus plantarum":"l_plantarum","lactiplantibacillus plantarum":"l_plantarum","plantarum":"l_plantarum","leuconostoc":"leuconostoc","leuconostoc mesenteroides":"leuconostoc","l mesenteroides":"leuconostoc","leuconostoc cremoris":"leuconostoc","lactococcus":"lactococcus","l lactis":"lactococcus","streptococcus lactis":"lactococcus","lactococcus lactis subsp cremoris":"lactococcus","mesophilic culture":"lactococcus","acetobacter":"acetobacter","acetobacter aceti":"acetobacter","acetic acid bacteria":"acetobacter","vinegar mother":"acetobacter","penicillium":"penicillium","penicillium roqueforti":"penicillium","p roqueforti":"penicillium","penicillium camemberti":"penicillium","penicillium candidum":"penicillium","penicillium glaucum":"penicillium","penicillium nalgiovense":"penicillium","blue mould":"penicillium","blue mold":"penicillium","white mould":"penicillium","koji":"koji","koji mould":"koji","koji mold":"koji","rice koji":"koji","aspergillus oryzae":"koji","a oryzae":"koji","kefir grains":"kefir_grains","kefir culture":"kefir_grains","kefir cultures":"kefir_grains","milk kefir":"kefir","kefir milk":"kefir","lactic acid":"lactic_acid","lactate":"lactic_acid","sodium lactate":"lactic_acid","spirit vinegar":"acetic_acid","yoghurt culture":"yoghurt_culture","yogurt culture":"yoghurt_culture","yoghurt cultures":"yoghurt_culture","yogurt cultures":"yoghurt_culture","starter cultures":"starter_culture","cheese culture":"starter_culture","cheese cultures":"starter_culture","dairy cultures":"starter_culture","culture":"starter_culture","cultures":"starter_culture","freeze dried culture":"starter_culture","microbial cultures":"starter_culture","pasteurised milk":"pasteurised_milk","pasteurized milk":"pasteurised_milk","heat treated milk":"pasteurised_milk","uht milk":"pasteurised_milk","cultured buttermilk":"buttermilk","buttermilk powder":"buttermilk","miso paste":"miso","soybean paste":"miso","camembert":"camembert","camembert cheese":"camembert","brie":"camembert"},"vague":{"natural flavours":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","natural flavour":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","natural flavors":"The law lets this stand for any of thousands of compounds, and does not require the label to say which.","artificial flavours":"A blend the maker is not required to itemise.","flavouring":"A blend the maker is not required to itemise.","flavour":"A blend the maker is not required to itemise.","spices":"Any mixture of spices; the label need not break it down.","herbs":"Any mixture of herbs; the label need not break it down.","vegetable gums":"A thickener class, not a single thing — the specific gums are usually named in the brackets after it.","emulsifier":"A class — the specific emulsifiers are named in the brackets.","stabiliser":"A class — the specific stabiliser is named in the brackets.","preservative":"A class — the specific preservative is named in the brackets.","antioxidant":"A class — the specific antioxidant is named in the brackets.","acidity regulator":"A class — the specific regulator is named in the brackets.","raising agent":"A class — the specific agent is named in the brackets.","food acid":"A class, not a substance — the specific acid is the number in the brackets.","food acids":"A class, not a substance — the specific acids are the numbers in the brackets.","flavour enhancer":"A class — the specific enhancer is the number in the brackets.","flavour enhancers":"A class — the specific enhancers are the numbers in the brackets.","free flowing agent":"A class — what stops the powder caking is named by number in the brackets.","anti caking agent":"A class — the specific agent is named by number in the brackets.","colour":"A class — the specific colour is the number or name in the brackets.","colours":"A class — the specific colours are named in the brackets.","natural extract":"A class — the specific extracts are named in the brackets.","natural extracts":"A class — the specific extracts are named in the brackets.","vegetable powder":"A class — which vegetables is named in the brackets.","vegetable oil":"Unnamed. The packet need not say which plant it came from.","vegetable fat":"Unnamed. The packet need not say which plant it came from.","animal fat":"Unnamed unless the species is given — this one says swine.","vegetable gum":"A thickener class — the specific gums are named in the brackets.","spice":"A class — sometimes the spice is named in the brackets, often not.","seasoning":"A blend the maker is not required to itemise.","flavours":"A blend the maker is not required to itemise.","thickener":"A class — the specific thickener is named in the brackets.","humectant":"A class — the specific humectant is named in the brackets."},"near":{"calcium citrate":"calcium","calcium carbonate":"limestone","calcium phosphate":"hydroxyapatite","potassium sorbate":"potassium","potassium sorbat":"potassium","sodium bicarbonate":"sodium","bicarbonate of soda":"sodium","baking soda":"sodium","iron":"iron","zinc":"zinc","magnesium":"magnesium"},"$near":"A label phrase whose element the game HAS, but which is not that element — calcium citrate contains calcium, it is not calcium. The reader says which, rather than quietly claiming an identity that would be false."};
 const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
@@ -1616,6 +1639,42 @@ function bandAt(key, temp) {
 }
 const STARTERS = elements.filter(e => e.starter).map(e => e.id);
 const GOAL = 'dinner';
+/**
+ * A ladder of goals, and a score.
+ *
+ * There was one goal — Dinner — at the far end of a 27-deep chain, and nothing
+ * marked the distance travelled. So: a run of goals ordered by how far each
+ * actually is from the starters, which the graph already knows because
+ * `bestRecipe` is a fixed point over the whole recipe set. Nothing here is
+ * hand-picked difficulty; it is measured.
+ *
+ * A point is a step of depth. Making a twenty-step protein is worth more than
+ * making a two-step sprout because it genuinely took more to reach, and depth
+ * cannot be farmed: remaking a thing you already have scores nothing, because
+ * the score is computed from the SET of what you have found, never accumulated
+ * as you go. That is the difference between a record of what you learned and a
+ * currency, and this game should only ever have the first.
+ *
+ * Free play scores nothing, for the same reason.
+ */
+const GOALS = ['sprout', 'soil', 'bread', 'cheese', 'iron', 'glass', 'steel',
+               'dinner', 'protein', 'lichen', 'quicklime', 'feast'];
+const goalCost = (id) => (expanded(id)?.steps ?? 0);
+const goalsMade = () => GOALS.filter(id => byId[id] && found.has(id)).length;
+function nextGoal() {
+  const open = GOALS.filter(id => byId[id] && !found.has(id));
+  if (!open.length) return null;
+  // Nearest first, so the ladder always offers a rung within reach.
+  open.sort((a, b) => goalCost(a) - goalCost(b));
+  return byId[open[0]];
+}
+/** Depth of everything you hold. Recomputed, never accumulated. */
+function scoreNow() {
+  if (prefs.freePlay) return 0;
+  let n = 0;
+  for (const id of found) if (!startersSet.has(id)) n += Math.max(1, goalCost(id));
+  return n;
+}
 const KEY = 'loam.v1';
 
 let found = new Set(), seen = new Set(), savedBench = null;
@@ -1672,6 +1731,107 @@ const save = () => {
     }));
   } catch {}
 };
+
+// ---------- taking your game with you ----------
+/**
+ * Everything you have is in this browser's localStorage, which means it is
+ * tied to one machine, a cleared cache loses it, and there is no way to carry
+ * a game from a laptop to a phone. Accounts would fix that and would also mean
+ * this project acquires a server, a privacy policy and an email address it now
+ * holds. Export and import fixes the actual complaint, costs nothing, needs
+ * nobody's data, and is the same serialise/restore pair any account system
+ * would need underneath — so it is worth having whichever way that goes.
+ *
+ * The file is deliberately readable. It is your own progress; you should be
+ * able to open it and see what it says about you.
+ */
+const SAVE_VERSION = 1;
+function exportSave() {
+  return JSON.stringify({
+    loam: SAVE_VERSION,
+    exported: new Date().toISOString().slice(0, 10),
+    counts: { found: found.size, of: elements.length },
+    found: [...found].sort(),
+    seen: [...seen].sort(),
+    prefs,
+    bench: benchState(),
+  }, null, 1);
+}
+/** Returns a plain-language result rather than throwing: this is user input. */
+function importSave(text) {
+  let d;
+  try { d = JSON.parse(text); } catch { return { ok: false, why: 'That is not a Loam save — it is not readable as JSON.' }; }
+  if (!d || typeof d !== 'object') return { ok: false, why: 'That is not a Loam save.' };
+  if (!Array.isArray(d.found)) return { ok: false, why: 'That file has no list of discoveries in it.' };
+  if (d.loam && d.loam > SAVE_VERSION) {
+    return { ok: false, why: `That save was written by a newer version of Loam (${d.loam}). This one only understands ${SAVE_VERSION}.` };
+  }
+  // Ignore ids this world no longer has rather than refusing the whole file —
+  // a save from an older build should still bring back everything it can.
+  const known = d.found.filter(id => byId[id]);
+  const dropped = d.found.length - known.length;
+  if (!known.length) return { ok: false, why: 'Nothing in that file matches anything in this world.' };
+
+  found.clear(); known.forEach(id => found.add(id));
+  STARTERS.forEach(id => found.add(id));                 // never import yourself into a dead end
+  seen.clear(); (d.seen || []).filter(id => byId[id]).forEach(id => seen.add(id));
+  if (d.prefs && typeof d.prefs === 'object') {
+    Object.assign(prefs, d.prefs);
+    prefs.freePlay = false;                              // free play is a mode, not progress
+    savePrefs(); applyPrefs();
+  }
+  links.length = 0;
+  world.querySelectorAll('.chip.board').forEach(c => c.remove());
+  if (d.bench) { undoSuspended = true; try { restoreBench(d.bench); } finally { undoSuspended = false; } }
+  if (!world.querySelector('.chip.board')) STARTERS.forEach(id => spawn(id));
+  renderShelf(); drawLinks(); save();
+  return { ok: true, n: known.length, dropped };
+}
+
+function showTransfer() {
+  const text = exportSave();
+  const kb = (text.length / 1024).toFixed(1);
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Everything you have found lives in this browser and nowhere
+       else. Copy it out to carry it to another machine, or paste one back in.</p>
+    <h2>Take it with you</h2>
+    <div class="cardrow">
+      <button class="ghost" id="saveCopy">Copy my game (${kb} kB)</button>
+      <button class="ghost" id="saveShow">Show it</button>
+    </div>
+    <pre id="saveText" class="savebox" hidden>${text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))}</pre>
+    <h2>Bring one back</h2>
+    <textarea id="saveIn" class="search" rows="4" style="resize:vertical;font-size:12px"
+      placeholder="Paste a saved game here…"></textarea>
+    <div class="cardrow" style="margin-top:8px">
+      <button class="ghost danger" id="saveLoad">Replace my game with this</button>
+    </div>
+    <p class="hint2">Bringing one back replaces what is in this browser. Copy yours out first if you
+       want to keep it. Free play is never carried across — it is a mode, not progress.</p>`;
+  openSheet('Your game');
+  document.getElementById('saveShow').onclick = () => {
+    const el = document.getElementById('saveText');
+    el.hidden = !el.hidden;
+  };
+  document.getElementById('saveCopy').onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast('Your game is on the clipboard');
+    } catch {
+      document.getElementById('saveText').hidden = false;
+      toast('Could not reach the clipboard — it is shown below, select and copy it');
+    }
+  };
+  document.getElementById('saveLoad').onclick = () => {
+    const r = importSave(document.getElementById('saveIn').value);
+    if (!r.ok) { sfx.nope(); toast(r.why); return; }
+    document.getElementById('sheet').classList.remove('on');
+    sfx.discover();
+    toast(r.dropped
+      ? `${r.n} discoveries brought back — ${r.dropped} were from an older world and could not be`
+      : `${r.n} discoveries brought back`);
+  };
+}
 
 // ---------- tooltips ----------
 // Read straight off `title`, so a control is documented by being written
@@ -2215,10 +2375,14 @@ function renderShelf() {
     ? `<span class="sc">Free Play</span>`
     : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} found</span>`;
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
-  const g = byId[GOAL];
-  document.getElementById('goal').innerHTML = found.has(GOAL)
-    ? `Made <b>${glyph(g.id, 18)} ${nameOf(g)}</b> — now try Feast`
-    : `Goal: <b>${glyph(g.id, 18)} ${nameOf(g)}</b><i class="ask">?</i>`;
+  const g = nextGoal();
+  document.getElementById('goal').innerHTML = g
+    ? `<span class="glab">Next</span><b>${glyph(g.id, 18)} ${nameOf(g)}</b>` +
+      `<span class="gsteps">${goalCost(g.id)} step${goalCost(g.id) === 1 ? '' : 's'}</span><i class="ask">?</i>`
+    : `<span class="glab">All ${GOALS.length} goals made</span>`;
+  document.getElementById('score').innerHTML = prefs.freePlay
+    ? ''
+    : `<span class="sc">${scoreNow().toLocaleString()}</span><span class="lbl">points · ${goalsMade()} of ${GOALS.length} goals</span>`;
 }
 
 // ---- the world: chips live in world coordinates; the view pans and zooms ----
@@ -4075,9 +4239,13 @@ function showEntry(id) {
             ? 'You have this one, but you have not yet held everything that makes it.'
             : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
-    <h2>Makes${knownOut.length ? ` · ${knownOut.length}` : ''}</h2>
-    ${knownOut.length ? rows(knownOut, 'out') : '<p class="none">Nothing yet.</p>'}
-    ${hiddenOut > 0 ? `<p class="hint2">${hiddenOut} more thing${hiddenOut === 1 ? '' : 's'} can be made with it.</p>` : ''}
+    <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}</h2>
+    ${knownOut.length ? rows(knownOut, 'out') : ''}
+    ${hiddenOut > 0 ? `<div class="shelf" style="margin-top:${knownOut.length ? '8px' : '0'}">` +
+      usedIn.filter(r => !found.has(r.out)).map(r =>
+        `<span class="chip locked" data-hint="${r.out}">${chipHTML(byId[r.out])}<i class="q">?</i></span>`).join('') +
+      `</div>` : ''}
+    ${!usedIn.length ? '<p class="none">Nothing is made from this.</p>' : ''}
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}`;
   openSheet(e.name);
@@ -4391,9 +4559,32 @@ document.addEventListener('visibilitychange', () => {
 document.getElementById('count').addEventListener('click', () => showCodex());
 // Tapping the goal asks how to reach it — the shortest path from stuck to moving.
 document.getElementById('goal').addEventListener('click', () => {
-  const t = found.has(GOAL) ? 'feast' : GOAL;
-  found.has(t) ? showEntry(t) : showHint(t);
+  const g = nextGoal();
+  if (g) return showHint(g.id);
+  showCodex();
 });
+document.getElementById('score').addEventListener('click', () => showLadderOfGoals());
+/** What you have made, what is next, and what a point is. */
+function showLadderOfGoals() {
+  const rows = GOALS.filter(id => byId[id]).map(id => {
+    const made = found.has(id), n = goalCost(id);
+    return `<div class="ent ${made ? 'in' : ''}${made ? '' : ' locked'}" ${made ? '' : `data-hint="${id}"`}>` +
+      `<span class="g">${glyph(id, 19)} ${nameOf(byId[id])}</span>` +
+      `<span class="arw">${made ? '✓' : '·'}</span>` +
+      `<span class="g">${n} step${n === 1 ? '' : 's'}${made ? '' : ' away'}</span></div>`;
+  }).join('');
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Twelve things worth reaching, ordered by how far each one
+       actually is from stone, water, sun and seed. The distance is measured, not chosen.</p>
+    ${rows}
+    <h2>Your score · ${scoreNow().toLocaleString()}</h2>
+    <p class="hint2">A point for every step it took to reach each thing you hold. A twenty-step protein
+       is worth more than a two-step sprout because it took more to get there. Remaking something you
+       already have scores nothing — the number is worked out fresh from what you have found, never
+       counted up as you go, so there is nothing to farm. It is a record of what you learned, not a
+       currency. Free play scores nothing, for the same reason.</p>`;
+  openSheet(`${goalsMade()} of ${GOALS.length} goals`);
+}
 
 // Little schematics of the three card footprints, so "Half card" is a picture
 // of a half card rather than a sentence about one.
@@ -4473,6 +4664,14 @@ function showSettings() {
             : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`,
           !!prefs.freePlay, 'data-free="1"')}
       </div>
+      <h2>Take it with you</h2>
+      <div class="setrow">
+        <button data-transfer="1">
+          <span class="smark">⇄</span>
+          <span class="stx"><b>Copy your game out, or bring one back</b>
+          <i>Everything you have found lives in this browser and nowhere else. This is how you move it
+             to another machine, or keep a copy.</i></span></button>
+      </div>
       <h2>Start over</h2>
       <div class="setrow">
         <button class="danger" data-wipe="1">
@@ -4499,6 +4698,8 @@ function showSettings() {
   };
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
   if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
+  const tr = document.getElementById('sheetBody').querySelector('[data-transfer]');
+  if (tr) tr.onclick = showTransfer;
   const wipe = document.getElementById('sheetBody').querySelector('[data-wipe]');
   if (wipe) wipe.onclick = wipeProgress;
   document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {

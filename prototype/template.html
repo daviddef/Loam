@@ -149,7 +149,22 @@ __CATEGORY_CSS__
     border-radius:4px;padding:5px 12px;
   }
   .goal b{color:var(--brick)}
-  .goal{cursor:pointer}
+  .goal{cursor:pointer;display:flex;align-items:center;gap:7px}
+  /* The goal chip is a rung now, not a destination: what is next, and how far.
+     The distance is the honest part — it comes from the graph, not from a
+     difficulty setting someone chose. */
+  .goal .glab{
+    font:700 8.5px/1 var(--face-data);letter-spacing:.9px;text-transform:uppercase;
+    color:var(--ink-soft);opacity:.75;
+  }
+  .goal .gsteps{
+    font:700 9.5px/1 var(--face-data);color:var(--ink-soft);
+    padding:2px 6px;border-radius:99px;background:rgba(var(--shade),.14);
+    font-variant-numeric:tabular-nums;
+  }
+  #score{cursor:pointer}
+  #score .sc{font-variant-numeric:tabular-nums}
+  @media(max-width:900px){ #score{display:none} }
   .goal:hover{border-color:var(--orange)}
   .goal .ask{
     font-style:normal;font:800 9px var(--face-name);color:var(--on-accent);background:var(--orange);
@@ -731,6 +746,13 @@ __CATEGORY_CSS__
     padding:10px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);
   }
   .search:focus{outline:2px solid var(--orange);outline-offset:-1px}
+  .savebox{
+    max-height:190px;overflow:auto;margin:8px 0 0;padding:9px 11px;border-radius:9px;
+    background:var(--surface);border:1.5px solid var(--line);
+    font:400 10.5px/1.45 var(--face-data);color:var(--ink-soft);
+    white-space:pre-wrap;word-break:break-all;
+  }
+  .cardrow button.ghost.danger{border-color:var(--brick);color:var(--brick)}
   .none{color:var(--ink-soft);font-size:13px;text-align:center;padding:18px}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
@@ -1386,6 +1408,7 @@ __CATEGORY_CSS__
   <div class="goal" id="goal"></div>
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
+  <div class="count" id="score" title="A point for every step it took to reach what you hold"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button id="undo" title="Nothing to undo yet" disabled>Undo</button>
   <button id="reset" title="Start over — wipes everything you have found">Reset</button>
@@ -1508,6 +1531,42 @@ function bandAt(key, temp) {
 }
 const STARTERS = elements.filter(e => e.starter).map(e => e.id);
 const GOAL = 'dinner';
+/**
+ * A ladder of goals, and a score.
+ *
+ * There was one goal — Dinner — at the far end of a 27-deep chain, and nothing
+ * marked the distance travelled. So: a run of goals ordered by how far each
+ * actually is from the starters, which the graph already knows because
+ * `bestRecipe` is a fixed point over the whole recipe set. Nothing here is
+ * hand-picked difficulty; it is measured.
+ *
+ * A point is a step of depth. Making a twenty-step protein is worth more than
+ * making a two-step sprout because it genuinely took more to reach, and depth
+ * cannot be farmed: remaking a thing you already have scores nothing, because
+ * the score is computed from the SET of what you have found, never accumulated
+ * as you go. That is the difference between a record of what you learned and a
+ * currency, and this game should only ever have the first.
+ *
+ * Free play scores nothing, for the same reason.
+ */
+const GOALS = ['sprout', 'soil', 'bread', 'cheese', 'iron', 'glass', 'steel',
+               'dinner', 'protein', 'lichen', 'quicklime', 'feast'];
+const goalCost = (id) => (expanded(id)?.steps ?? 0);
+const goalsMade = () => GOALS.filter(id => byId[id] && found.has(id)).length;
+function nextGoal() {
+  const open = GOALS.filter(id => byId[id] && !found.has(id));
+  if (!open.length) return null;
+  // Nearest first, so the ladder always offers a rung within reach.
+  open.sort((a, b) => goalCost(a) - goalCost(b));
+  return byId[open[0]];
+}
+/** Depth of everything you hold. Recomputed, never accumulated. */
+function scoreNow() {
+  if (prefs.freePlay) return 0;
+  let n = 0;
+  for (const id of found) if (!startersSet.has(id)) n += Math.max(1, goalCost(id));
+  return n;
+}
 const KEY = 'loam.v1';
 
 let found = new Set(), seen = new Set(), savedBench = null;
@@ -1564,6 +1623,107 @@ const save = () => {
     }));
   } catch {}
 };
+
+// ---------- taking your game with you ----------
+/**
+ * Everything you have is in this browser's localStorage, which means it is
+ * tied to one machine, a cleared cache loses it, and there is no way to carry
+ * a game from a laptop to a phone. Accounts would fix that and would also mean
+ * this project acquires a server, a privacy policy and an email address it now
+ * holds. Export and import fixes the actual complaint, costs nothing, needs
+ * nobody's data, and is the same serialise/restore pair any account system
+ * would need underneath — so it is worth having whichever way that goes.
+ *
+ * The file is deliberately readable. It is your own progress; you should be
+ * able to open it and see what it says about you.
+ */
+const SAVE_VERSION = 1;
+function exportSave() {
+  return JSON.stringify({
+    loam: SAVE_VERSION,
+    exported: new Date().toISOString().slice(0, 10),
+    counts: { found: found.size, of: elements.length },
+    found: [...found].sort(),
+    seen: [...seen].sort(),
+    prefs,
+    bench: benchState(),
+  }, null, 1);
+}
+/** Returns a plain-language result rather than throwing: this is user input. */
+function importSave(text) {
+  let d;
+  try { d = JSON.parse(text); } catch { return { ok: false, why: 'That is not a Loam save — it is not readable as JSON.' }; }
+  if (!d || typeof d !== 'object') return { ok: false, why: 'That is not a Loam save.' };
+  if (!Array.isArray(d.found)) return { ok: false, why: 'That file has no list of discoveries in it.' };
+  if (d.loam && d.loam > SAVE_VERSION) {
+    return { ok: false, why: `That save was written by a newer version of Loam (${d.loam}). This one only understands ${SAVE_VERSION}.` };
+  }
+  // Ignore ids this world no longer has rather than refusing the whole file —
+  // a save from an older build should still bring back everything it can.
+  const known = d.found.filter(id => byId[id]);
+  const dropped = d.found.length - known.length;
+  if (!known.length) return { ok: false, why: 'Nothing in that file matches anything in this world.' };
+
+  found.clear(); known.forEach(id => found.add(id));
+  STARTERS.forEach(id => found.add(id));                 // never import yourself into a dead end
+  seen.clear(); (d.seen || []).filter(id => byId[id]).forEach(id => seen.add(id));
+  if (d.prefs && typeof d.prefs === 'object') {
+    Object.assign(prefs, d.prefs);
+    prefs.freePlay = false;                              // free play is a mode, not progress
+    savePrefs(); applyPrefs();
+  }
+  links.length = 0;
+  world.querySelectorAll('.chip.board').forEach(c => c.remove());
+  if (d.bench) { undoSuspended = true; try { restoreBench(d.bench); } finally { undoSuspended = false; } }
+  if (!world.querySelector('.chip.board')) STARTERS.forEach(id => spawn(id));
+  renderShelf(); drawLinks(); save();
+  return { ok: true, n: known.length, dropped };
+}
+
+function showTransfer() {
+  const text = exportSave();
+  const kb = (text.length / 1024).toFixed(1);
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Everything you have found lives in this browser and nowhere
+       else. Copy it out to carry it to another machine, or paste one back in.</p>
+    <h2>Take it with you</h2>
+    <div class="cardrow">
+      <button class="ghost" id="saveCopy">Copy my game (${kb} kB)</button>
+      <button class="ghost" id="saveShow">Show it</button>
+    </div>
+    <pre id="saveText" class="savebox" hidden>${text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))}</pre>
+    <h2>Bring one back</h2>
+    <textarea id="saveIn" class="search" rows="4" style="resize:vertical;font-size:12px"
+      placeholder="Paste a saved game here…"></textarea>
+    <div class="cardrow" style="margin-top:8px">
+      <button class="ghost danger" id="saveLoad">Replace my game with this</button>
+    </div>
+    <p class="hint2">Bringing one back replaces what is in this browser. Copy yours out first if you
+       want to keep it. Free play is never carried across — it is a mode, not progress.</p>`;
+  openSheet('Your game');
+  document.getElementById('saveShow').onclick = () => {
+    const el = document.getElementById('saveText');
+    el.hidden = !el.hidden;
+  };
+  document.getElementById('saveCopy').onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast('Your game is on the clipboard');
+    } catch {
+      document.getElementById('saveText').hidden = false;
+      toast('Could not reach the clipboard — it is shown below, select and copy it');
+    }
+  };
+  document.getElementById('saveLoad').onclick = () => {
+    const r = importSave(document.getElementById('saveIn').value);
+    if (!r.ok) { sfx.nope(); toast(r.why); return; }
+    document.getElementById('sheet').classList.remove('on');
+    sfx.discover();
+    toast(r.dropped
+      ? `${r.n} discoveries brought back — ${r.dropped} were from an older world and could not be`
+      : `${r.n} discoveries brought back`);
+  };
+}
 
 // ---------- tooltips ----------
 // Read straight off `title`, so a control is documented by being written
@@ -2107,10 +2267,14 @@ function renderShelf() {
     ? `<span class="sc">Free Play</span>`
     : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} found</span>`;
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
-  const g = byId[GOAL];
-  document.getElementById('goal').innerHTML = found.has(GOAL)
-    ? `Made <b>${glyph(g.id, 18)} ${nameOf(g)}</b> — now try Feast`
-    : `Goal: <b>${glyph(g.id, 18)} ${nameOf(g)}</b><i class="ask">?</i>`;
+  const g = nextGoal();
+  document.getElementById('goal').innerHTML = g
+    ? `<span class="glab">Next</span><b>${glyph(g.id, 18)} ${nameOf(g)}</b>` +
+      `<span class="gsteps">${goalCost(g.id)} step${goalCost(g.id) === 1 ? '' : 's'}</span><i class="ask">?</i>`
+    : `<span class="glab">All ${GOALS.length} goals made</span>`;
+  document.getElementById('score').innerHTML = prefs.freePlay
+    ? ''
+    : `<span class="sc">${scoreNow().toLocaleString()}</span><span class="lbl">points · ${goalsMade()} of ${GOALS.length} goals</span>`;
 }
 
 // ---- the world: chips live in world coordinates; the view pans and zooms ----
@@ -3967,9 +4131,13 @@ function showEntry(id) {
             ? 'You have this one, but you have not yet held everything that makes it.'
             : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
-    <h2>Makes${knownOut.length ? ` · ${knownOut.length}` : ''}</h2>
-    ${knownOut.length ? rows(knownOut, 'out') : '<p class="none">Nothing yet.</p>'}
-    ${hiddenOut > 0 ? `<p class="hint2">${hiddenOut} more thing${hiddenOut === 1 ? '' : 's'} can be made with it.</p>` : ''}
+    <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}</h2>
+    ${knownOut.length ? rows(knownOut, 'out') : ''}
+    ${hiddenOut > 0 ? `<div class="shelf" style="margin-top:${knownOut.length ? '8px' : '0'}">` +
+      usedIn.filter(r => !found.has(r.out)).map(r =>
+        `<span class="chip locked" data-hint="${r.out}">${chipHTML(byId[r.out])}<i class="q">?</i></span>`).join('') +
+      `</div>` : ''}
+    ${!usedIn.length ? '<p class="none">Nothing is made from this.</p>' : ''}
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}`;
   openSheet(e.name);
@@ -4283,9 +4451,32 @@ document.addEventListener('visibilitychange', () => {
 document.getElementById('count').addEventListener('click', () => showCodex());
 // Tapping the goal asks how to reach it — the shortest path from stuck to moving.
 document.getElementById('goal').addEventListener('click', () => {
-  const t = found.has(GOAL) ? 'feast' : GOAL;
-  found.has(t) ? showEntry(t) : showHint(t);
+  const g = nextGoal();
+  if (g) return showHint(g.id);
+  showCodex();
 });
+document.getElementById('score').addEventListener('click', () => showLadderOfGoals());
+/** What you have made, what is next, and what a point is. */
+function showLadderOfGoals() {
+  const rows = GOALS.filter(id => byId[id]).map(id => {
+    const made = found.has(id), n = goalCost(id);
+    return `<div class="ent ${made ? 'in' : ''}${made ? '' : ' locked'}" ${made ? '' : `data-hint="${id}"`}>` +
+      `<span class="g">${glyph(id, 19)} ${nameOf(byId[id])}</span>` +
+      `<span class="arw">${made ? '✓' : '·'}</span>` +
+      `<span class="g">${n} step${n === 1 ? '' : 's'}${made ? '' : ' away'}</span></div>`;
+  }).join('');
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Twelve things worth reaching, ordered by how far each one
+       actually is from stone, water, sun and seed. The distance is measured, not chosen.</p>
+    ${rows}
+    <h2>Your score · ${scoreNow().toLocaleString()}</h2>
+    <p class="hint2">A point for every step it took to reach each thing you hold. A twenty-step protein
+       is worth more than a two-step sprout because it took more to get there. Remaking something you
+       already have scores nothing — the number is worked out fresh from what you have found, never
+       counted up as you go, so there is nothing to farm. It is a record of what you learned, not a
+       currency. Free play scores nothing, for the same reason.</p>`;
+  openSheet(`${goalsMade()} of ${GOALS.length} goals`);
+}
 
 // Little schematics of the three card footprints, so "Half card" is a picture
 // of a half card rather than a sentence about one.
@@ -4365,6 +4556,14 @@ function showSettings() {
             : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`,
           !!prefs.freePlay, 'data-free="1"')}
       </div>
+      <h2>Take it with you</h2>
+      <div class="setrow">
+        <button data-transfer="1">
+          <span class="smark">⇄</span>
+          <span class="stx"><b>Copy your game out, or bring one back</b>
+          <i>Everything you have found lives in this browser and nowhere else. This is how you move it
+             to another machine, or keep a copy.</i></span></button>
+      </div>
       <h2>Start over</h2>
       <div class="setrow">
         <button class="danger" data-wipe="1">
@@ -4391,6 +4590,8 @@ function showSettings() {
   };
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
   if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
+  const tr = document.getElementById('sheetBody').querySelector('[data-transfer]');
+  if (tr) tr.onclick = showTransfer;
   const wipe = document.getElementById('sheetBody').querySelector('[data-wipe]');
   if (wipe) wipe.onclick = wipeProgress;
   document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {
