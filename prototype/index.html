@@ -1238,6 +1238,16 @@
   }
   aside h2.locked,#sheetBody h2.locked{color:var(--ink-soft);opacity:.6}
   .chip.locked{opacity:.5;border-style:dashed;cursor:pointer}
+  /* A label-reader miss, flagged in the same brick red as the fire family —
+     not a made-up "danger" colour, an existing palette accent reused so it
+     still reads as this game's own voice. Full opacity, unlike the ordinary
+     .locked fade: an unresolved ingredient from a real scan should stand
+     out, not blend into "things you simply haven't unlocked yet". */
+  .chip.locked.missing{opacity:1;border-color:var(--brick);color:var(--brick)}
+  .missNote{
+    margin:2px 0 9px;padding:6px 10px;border-radius:8px;font-size:12px;font-weight:600;
+    color:var(--brick);background:color-mix(in srgb,var(--brick) 12%,var(--card));
+  }
   /* Greyed, not just faded: an unmade thing should read as a silhouette of
      itself, so a shelf of them scans as absence rather than as low contrast. */
   .chip.locked .art{filter:grayscale(1)}
@@ -5692,6 +5702,7 @@ function labelResultHTML(parsed, forHub) {
   const allergensHere = [...new Map(found.flatMap(p => ALLERGEN_BY_ELEMENT[p.id] || [])
     .map(a => [a.key, a])).values()];
   return `<h2>Found · ${found.length} of ${parsed.length}</h2>` +
+    (unknown.length ? `<p class="missNote">Not found: ${unknown.map(p => p.text).join(', ')}</p>` : '') +
     (allergensHere.length ? `<div class="allergen-banner">` +
       `Contains ${allergensHere.map(a => a.name).join(', ')} — regulated allergen${allergensHere.length === 1 ? '' : 's'}.` +
       `</div>` : '') +
@@ -5710,7 +5721,7 @@ function labelResultHTML(parsed, forHub) {
     (vague.length ? `<h2>Says nothing · ${vague.length}</h2>` + vague.map(p =>
       `<div class="ent"><span class="g">${p.text}</span></div><p class="hint2">${p.note}</p>`).join('') : '') +
     (unknown.length ? `<h2>Not in this world yet · ${unknown.length}</h2><div class="shelf">` +
-      unknown.map(p => `<span class="chip locked" style="--cw:auto;width:auto">${p.text}</span>`).join('') +
+      unknown.map(p => `<span class="chip locked missing" style="--cw:auto;width:auto">${p.text}</span>`).join('') +
       `</div><p class="hint2">Each of these is a real thing with a real story — they are simply
         not built yet. Nothing here is invented to fill a gap.</p>` : '');
 }
