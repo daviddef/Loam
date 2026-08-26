@@ -10138,5 +10138,475 @@
     "why": "Nitrogen dioxide dissolving into rain gives nitrous and nitric acid, and where that rain soaks in, those become nitrate. Nitrate is the form a root can actually take nitrogen up in — the far end of a road that began with a lightning strike.",
     "src": "https://en.wikipedia.org/wiki/Nitrogen_fixation",
     "verified": true
+  },
+  {
+    "in": [
+      "phosphorus",
+      "oxygen_gas"
+    ],
+    "out": "phosphate",
+    "why": "One phosphorus with four oxygens around it in a tetrahedron, carrying three negative charges. It is the bridge in the DNA backbone, the bond ATP spends and the head of every phospholipid — one group doing three jobs.",
+    "src": "https://en.wikipedia.org/wiki/Phosphate",
+    "supported": true
+  },
+  {
+    "in": [
+      "glucose",
+      "phosphate"
+    ],
+    "out": "ribose",
+    "why": "Ribose is not built from scratch. The pentose phosphate pathway takes glucose 6-phosphate, strips a carbon off it, and hands back ribose 5-phosphate — the sugar every nucleotide is assembled on.",
+    "src": "https://en.wikipedia.org/wiki/Ribose",
+    "verified": true
+  },
+  {
+    "in": [
+      "ribose",
+      "enzyme"
+    ],
+    "out": "deoxyribose",
+    "why": "Ribonucleotide reductase takes one oxygen off the sugar at the 2' position and changes nothing else. That single missing hydroxyl is the entire chemical difference between RNA and DNA.",
+    "src": "https://en.wikipedia.org/wiki/Deoxyribose",
+    "verified": true
+  },
+  {
+    "in": [
+      "atp"
+    ],
+    "verb": "cut",
+    "out": "adenine",
+    "why": "ATP is adenosine triphosphate: adenine, a ribose and three phosphates. Take the phosphates and the sugar away and what is left is one of the four letters of the genetic code. The cell pays with the same part it writes with.",
+    "src": "https://en.wikipedia.org/wiki/Adenine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycine",
+      "ribose"
+    ],
+    "out": "guanine",
+    "why": "Purine rings are not made and then attached — they are built directly on ribose 5-phosphate, and glycine goes in whole, both its carbons and its nitrogen. Ten steps later comes inosine monophosphate, which forks to adenine or guanine.",
+    "src": "https://en.wikipedia.org/wiki/Purine_metabolism",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "aspartic_acid"
+    ],
+    "out": "uracil",
+    "why": "Pyrimidine rings are built first and joined to a sugar afterwards — the reverse of how purines are made. Ammonia and bicarbonate make carbamoyl phosphate, that meets aspartate, the ring closes, and the first finished pyrimidine is uracil's.",
+    "src": "https://en.wikipedia.org/wiki/Pyrimidine_metabolism",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "uracil"
+    ],
+    "out": "cytosine",
+    "why": "Cytosine is made from uracil rather than alongside it. CTP synthase takes the finished uracil nucleotide and swaps an oxygen for an amino group; the nitrogen arrives as ammonia, released inside the enzyme from glutamine.",
+    "src": "https://en.wikipedia.org/wiki/Pyrimidine_metabolism",
+    "supported": true
+  },
+  {
+    "in": [
+      "cytosine",
+      "water"
+    ],
+    "out": "uracil",
+    "why": "Cytosine is not stable. A water molecule takes its amino group off and leaves uracil — a letter DNA is not supposed to contain. Cells carry uracil glycosylase, an enzyme whose whole job is cutting that mistake back out.",
+    "src": "https://en.wikipedia.org/wiki/Cytosine",
+    "verified": true
+  },
+  {
+    "in": [
+      "uracil",
+      "enzyme"
+    ],
+    "out": "thymine",
+    "why": "Thymine is 5-methyluracil and nothing more: uracil with one methyl group added at carbon 5. DNA uses the methylated version, RNA does not bother, and that one carbon is the difference between the two alphabets.",
+    "src": "https://en.wikipedia.org/wiki/Thymine",
+    "verified": true
+  },
+  {
+    "in": [
+      "adenine",
+      "thymine"
+    ],
+    "out": "base_pair",
+    "why": "A pairs with T across two hydrogen bonds, and only with T — the shapes and the pattern of donors and acceptors do not fit any other way. That constraint is the whole of why one strand can specify the other.",
+    "src": "https://en.wikipedia.org/wiki/Base_pair",
+    "verified": true
+  },
+  {
+    "in": [
+      "cytosine",
+      "guanine"
+    ],
+    "out": "base_pair",
+    "why": "G pairs with C across three hydrogen bonds rather than two, so a run of them is harder to prise apart: GC-rich DNA takes a higher temperature to melt than AT-rich DNA does.",
+    "src": "https://en.wikipedia.org/wiki/Base_pair",
+    "verified": true
+  },
+  {
+    "in": [
+      "base_pair",
+      "base_pair"
+    ],
+    "out": "dna",
+    "why": "Stack the pairs and you have the helix: backbone outside, pairs lying flat as rungs in the middle. Every rung is the same width whichever pair it is, which is why the two strands stay a constant distance apart.",
+    "src": "https://en.wikipedia.org/wiki/Base_pair",
+    "supported": true
+  },
+  {
+    "in": [
+      "adenine",
+      "ribose"
+    ],
+    "out": "nucleotide",
+    "why": "Three parts, always in the same order. A base joined to a sugar is a nucleoside; put a phosphate on the sugar and it is a nucleotide. The base carries the meaning and the other two carry the base.",
+    "src": "https://en.wikipedia.org/wiki/Nucleotide",
+    "supported": true
+  },
+  {
+    "in": [
+      "nucleotide",
+      "ribose"
+    ],
+    "out": "rna",
+    "why": "The same chain as DNA with two swaps: ribose for deoxyribose, uracil for thymine. And usually one strand instead of two, which lets it fold back on itself into shapes DNA cannot make.",
+    "src": "https://en.wikipedia.org/wiki/RNA",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna",
+      "deoxyribose"
+    ],
+    "out": "dna",
+    "why": "Take the 2' hydroxyl off the sugar and RNA becomes DNA. That hydroxyl is what makes RNA chemically labile, and its absence is what lets the chain flex into the double helix.",
+    "src": "https://en.wikipedia.org/wiki/Deoxyribose",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna",
+      "amino_acid"
+    ],
+    "out": "transfer_rna",
+    "why": "A tRNA is 76 to 90 nucleotides folded into a clover: a three-base anticodon at one end, an amino acid bolted to the 3' end by an aminoacyl-tRNA synthetase. It is the only thing that knows which codon means which amino acid.",
+    "src": "https://en.wikipedia.org/wiki/Transfer_RNA",
+    "verified": true
+  },
+  {
+    "in": [
+      "ribosome"
+    ],
+    "verb": "cut",
+    "out": "ribosomal_rna",
+    "why": "Take a ribosome apart and roughly 60% of it by mass is RNA. The peptidyl transferase centre — the spot where the peptide bond is actually made — is formed by nucleotides from the 23S rRNA and contains no protein at all.",
+    "src": "https://en.wikipedia.org/wiki/Ribosomal_RNA",
+    "verified": true
+  },
+  {
+    "in": [
+      "ribosomal_rna",
+      "protein"
+    ],
+    "out": "ribosome",
+    "why": "About 60% RNA and 40% protein. The proteins stabilise and position the RNA; the reaction that joins one amino acid to the next is run by the RNA, which is why a ribosome counts as a ribozyme.",
+    "src": "https://en.wikipedia.org/wiki/Ribosomal_RNA",
+    "verified": true
+  },
+  {
+    "in": [
+      "messenger_rna",
+      "transfer_rna"
+    ],
+    "out": "polypeptide",
+    "why": "The anticodon on the tRNA base-pairs with the codon on the mRNA, three letters at a time, and the amino acid it was carrying is added to the growing chain. Nothing in the cell reads the code except this pairing.",
+    "src": "https://en.wikipedia.org/wiki/Transfer_RNA",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna"
+    ],
+    "verb": "wait",
+    "out": "ribozyme",
+    "why": "An RNA strand folds back on itself, and some folds come out with a catalytic pocket. Cech and Altman shared the 1989 Nobel in chemistry for the discovery of catalytic properties of RNA — before that, enzymes were assumed to be protein.",
+    "src": "https://en.wikipedia.org/wiki/Ribozyme",
+    "verified": true
+  },
+  {
+    "in": [
+      "olive_oil",
+      "phosphate"
+    ],
+    "out": "phospholipid",
+    "why": "A glycerol with two fatty acid tails and a phosphate head. One end wants water and the other refuses it, and that split is the only reason anything alive has an inside.",
+    "src": "https://en.wikipedia.org/wiki/Phospholipid",
+    "verified": true
+  },
+  {
+    "in": [
+      "phospholipid",
+      "water"
+    ],
+    "out": "vesicle",
+    "why": "Drop them in water and they sort themselves out: tails huddle away from the water, heads face it, the sheet closes into a hollow sphere. No enzyme, no template, no energy put in — just tails avoiding water.",
+    "src": "https://en.wikipedia.org/wiki/Phospholipid",
+    "verified": true
+  },
+  {
+    "in": [
+      "lard",
+      "enzyme"
+    ],
+    "out": "cholesterol",
+    "why": "Cholesterol is an animal molecule — plants make only traces and build phytosterols instead. And most of yours is not eaten: a man synthesises about a gram a day against roughly 300 mg on the plate.",
+    "src": "https://en.wikipedia.org/wiki/Cholesterol",
+    "verified": true
+  },
+  {
+    "in": [
+      "cholesterol",
+      "phospholipid"
+    ],
+    "out": "membrane",
+    "why": "Cholesterol wedges in between the phospholipids and modulates membrane fluidity over the range of physiological temperatures — stiffening the sheet when it is warm, stopping it setting when it is cold.",
+    "src": "https://en.wikipedia.org/wiki/Cholesterol",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "hydrogen_gas"
+    ],
+    "out": "methane",
+    "why": "One carbon holding four hydrogens at the corners of a tetrahedron — the simplest alkane there is. Weight for weight it traps about eighty times as much heat as carbon dioxide over twenty years.",
+    "src": "https://en.wikipedia.org/wiki/Methane",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "methane"
+    ],
+    "out": "primordial_soup",
+    "why": "Oparin in 1924 and Haldane in 1929 proposed that the early ocean built up organic matter from inorganic gases, and Haldane supplied the word soup. The gases they named are probably not the ones the early Earth actually had.",
+    "src": "https://en.wikipedia.org/wiki/Primordial_soup",
+    "supported": true
+  },
+  {
+    "in": [
+      "lightning",
+      "primordial_soup"
+    ],
+    "out": "amino_acid",
+    "why": "Miller's 1952 flask held methane, ammonia and hydrogen over water in a 2:2:1 ratio, with a spark passed through to simulate lightning. After a week of continuous operation the solution was deep red and turbid, and it held amino acids.",
+    "src": "https://en.wikipedia.org/wiki/Miller%E2%80%93Urey_experiment",
+    "verified": true
+  },
+  {
+    "in": [
+      "ribozyme",
+      "vesicle"
+    ],
+    "out": "protocell",
+    "why": "A bilayer sac with self-copying chemistry inside it is the smallest thing anyone can call a candidate for early life. Vesicles form on their own and ribozymes catalyse on their own — but a functional protocell that evolves has not yet been made in a lab.",
+    "src": "https://en.wikipedia.org/wiki/Protocell",
+    "supported": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "water"
+    ],
+    "out": "cytoplasm",
+    "why": "Cytoplasm is about 80% water and usually colourless, but it is not a solution in the ordinary sense. It is so crowded with protein and fibre that the things dissolved in it do not behave as they would in dilute water.",
+    "src": "https://en.wikipedia.org/wiki/Cytoplasm",
+    "verified": true
+  },
+  {
+    "in": [
+      "cytoplasm",
+      "dna"
+    ],
+    "out": "bacteria",
+    "why": "No nucleus, and rarely any membrane-bound organelle: a single circular bacterial chromosome of DNA located in the cytoplasm, with the machinery loose around it. There are roughly 2×10^30 of them alive on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Bacteria",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "ribosomal_rna"
+    ],
+    "out": "archaea",
+    "why": "Archaea look like bacteria and are not. Woese and Fox classified them separately in 1977 on their ribosomal RNA genes alone — before that sequencing, nobody had a reason to think there was a third domain of life.",
+    "src": "https://en.wikipedia.org/wiki/Archaea",
+    "verified": true
+  },
+  {
+    "in": [
+      "archaea",
+      "carbon_dioxide"
+    ],
+    "out": "methane",
+    "why": "Methanogenesis is a form of anaerobic respiration only known to be conducted by some members of the domain Archaea. Nothing else alive makes methane — not a plant, not an animal, not a bacterium.",
+    "src": "https://en.wikipedia.org/wiki/Methane",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna",
+      "protein"
+    ],
+    "out": "virus",
+    "why": "A genome and a protein coat, and nothing else — no ribosomes, no metabolism, no way to copy itself. It can only replicate inside the living cells of an organism, which is why viruses get called organisms at the edge of life.",
+    "src": "https://en.wikipedia.org/wiki/Virus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria"
+    ],
+    "verb": "cut",
+    "out": "binary_fission",
+    "why": "One cell grows to a set size and divides into two parts, each with the potential to grow to the size of the original. No partner, no gametes, no shuffling. E. coli does it about every 20 minutes at 37 °C.",
+    "src": "https://en.wikipedia.org/wiki/Fission_(biology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "binary_fission"
+    ],
+    "verb": "wait",
+    "out": "bacteria",
+    "why": "Two cells where there was one, and both of them are the parent. Doubling on a fixed clock is what makes bacterial growth exponential rather than merely fast — the numbers, not the speed, are the point.",
+    "src": "https://en.wikipedia.org/wiki/Fission_(biology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "yeast"
+    ],
+    "verb": "wait",
+    "out": "budding",
+    "why": "Yeast does not split down the middle. Saccharomyces cerevisiae divides asymmetrically by budding: a small bulb-like projection swells out of the mother cell and pinches off, leaving a large mother and a small daughter.",
+    "src": "https://en.wikipedia.org/wiki/Budding",
+    "verified": true
+  },
+  {
+    "in": [
+      "budding"
+    ],
+    "verb": "wait",
+    "out": "yeast",
+    "why": "The bud detaches and is a clone — genetically identical to the parent organism, mutations excepted. A hydra does the same thing at animal scale, growing a whole small hydra off one side and letting it walk away.",
+    "src": "https://en.wikipedia.org/wiki/Budding",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant"
+    ],
+    "verb": "cut",
+    "out": "cutting",
+    "why": "Cut a stem off and it does not simply die; it answers the wound. Root primordia form from cambial cells in the stem, and the severed piece grows a root system of its own.",
+    "src": "https://en.wikipedia.org/wiki/Cutting_(plant)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cutting",
+      "water"
+    ],
+    "out": "root",
+    "why": "It is possible to root cuttings in water — a glass on a windowsill will do it, so long as the water is changed often enough to keep bacteria down. The offspring are practically clones of their parent plants.",
+    "src": "https://en.wikipedia.org/wiki/Cutting_(plant)",
+    "verified": true
+  },
+  {
+    "in": [
+      "potato",
+      "soil"
+    ],
+    "out": "tuber",
+    "why": "Plant a potato and you get potatoes, with no flower and no seed anywhere in it. And a potato is not a root: it is a stolon whose tip thickened, with all the parts of a normal stem. The eyes are the nodes.",
+    "src": "https://en.wikipedia.org/wiki/Tuber",
+    "verified": true
+  },
+  {
+    "in": [
+      "tuber"
+    ],
+    "verb": "wait",
+    "out": "seedling",
+    "why": "Every eye is a bud with a leaf scar beside it, and given warmth it shoots. The tuber is produced in one growing season and used to perennate the plant and as a means of propagation — one year's plant feeding the next year's.",
+    "src": "https://en.wikipedia.org/wiki/Tuber",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "strawberry"
+    ],
+    "out": "runner",
+    "why": "A stolon is a stem that grows along the soil surface and forms adventitious roots at the nodes, and new plants from the buds. A strawberry bed can fill a plot without a single seed being set.",
+    "src": "https://en.wikipedia.org/wiki/Stolon",
+    "verified": true
+  },
+  {
+    "in": [
+      "runner",
+      "soil"
+    ],
+    "out": "plant",
+    "why": "Where the runner touches down it roots, hormones from those roots trigger a shoot, and the tie back to the parent eventually withers. What is left standing is a separate plant carrying an identical genome.",
+    "src": "https://en.wikipedia.org/wiki/Stolon",
+    "supported": true
+  },
+  {
+    "in": [
+      "cellulose",
+      "water"
+    ],
+    "out": "pulp",
+    "why": "Pulp is a fibrous lignocellulosic material prepared by isolating the cellulose fibres of wood, fibre crops, waste paper or rags. Wood is only about 40 to 45% cellulose — pulping is mostly the business of removing the rest.",
+    "src": "https://en.wikipedia.org/wiki/Pulp_(paper)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cellulose"
+    ],
+    "verb": "ferment",
+    "out": "glucose",
+    "why": "No animal makes cellulase — not one. Termites keep flagellate protozoa in the hindgut to produce it for them, and the β bonds only come apart into glucose once something else has supplied the enzyme.",
+    "src": "https://en.wikipedia.org/wiki/Cellulose",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "muscle"
+    ],
+    "out": "glycogen",
+    "why": "Animals store glucose as glycogen: the same α bonds as starch but far more branched, so many ends can be cut at once. A 70 kg adult carries roughly 100 to 120 g in the liver and about 400 g in the muscles.",
+    "src": "https://en.wikipedia.org/wiki/Glycogen",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycogen",
+      "enzyme"
+    ],
+    "out": "glucose",
+    "why": "Liver glycogen goes back out into the blood; muscle glycogen never does. Muscle lacks glucose 6-phosphatase, so the glycogen they store is available solely for internal use and is not shared with other cells.",
+    "src": "https://en.wikipedia.org/wiki/Glycogen",
+    "verified": true
   }
 ]

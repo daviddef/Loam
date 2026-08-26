@@ -32,6 +32,7 @@ const PUBLIC = [
   'data/palette.json',
   'data/scale.json',
   'data/cautions.json',
+  'data/labels.json',
   'data/vendor/README.md',
   'data/vendor/munsell-real.dat',
   'prototype/template.html',

@@ -3324,8 +3324,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "Not a berry. Each seed on the outside is an achene — a whole separate fruit with a seed in it.",
-    "terminal": true
+    "fact": "Not a berry. Each seed on the outside is an achene — a whole separate fruit with a seed in it."
   },
   {
     "id": "banana",
@@ -6639,5 +6638,277 @@
     ],
     "fact": "The form a root can actually take nitrogen up in. Almost all of them dissolve in water.",
     "terminal": true
+  },
+  {
+    "id": "phosphate",
+    "name": "Phosphate",
+    "emoji": "🔶",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "PO4 — one phosphorus, four oxygens. It bridges DNA's sugars and it is what ATP spends."
+  },
+  {
+    "id": "ribose",
+    "name": "Ribose",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The five-carbon sugar in RNA. Glucose becomes it by the pentose phosphate pathway."
+  },
+  {
+    "id": "deoxyribose",
+    "name": "Deoxyribose",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Ribose minus one oxygen. That missing hydroxyl is the whole difference between RNA and DNA."
+  },
+  {
+    "id": "adenine",
+    "name": "Adenine",
+    "emoji": "🅰️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The A. Also the business end of ATP — the cell spells with it and pays with it."
+  },
+  {
+    "id": "guanine",
+    "name": "Guanine",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Named from guano, isolated from bird droppings in 1844. The crystals also make fish scales shine."
+  },
+  {
+    "id": "cytosine",
+    "name": "Cytosine",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The C. Unstable enough that it turns into uracil on its own, which is why DNA has a repair crew."
+  },
+  {
+    "id": "thymine",
+    "name": "Thymine",
+    "emoji": "🔹",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "5-methyluracil: uracil with one methyl group. DNA uses it where RNA uses uracil."
+  },
+  {
+    "id": "uracil",
+    "name": "Uracil",
+    "emoji": "☄️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "RNA's U. Found in the Murchison meteorite, and in 2023 in a sample from the asteroid Ryugu."
+  },
+  {
+    "id": "base_pair",
+    "name": "Base Pair",
+    "emoji": "🪜",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A with T by two hydrogen bonds, G with C by three. That is the whole copying mechanism."
+  },
+  {
+    "id": "rna",
+    "name": "RNA",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One strand, ribose, uracil. Chemically the more fragile of the two, and probably the older."
+  },
+  {
+    "id": "transfer_rna",
+    "name": "Transfer RNA",
+    "emoji": "🍀",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "76 to 90 nucleotides. Reads a codon at one end and holds an amino acid at the other."
+  },
+  {
+    "id": "ribosomal_rna",
+    "name": "Ribosomal RNA",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "About 60% of the ribosome by mass, and the part that does the chemistry."
+  },
+  {
+    "id": "ribozyme",
+    "name": "Ribozyme",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "RNA that catalyses. Cech and Altman took the 1989 Nobel for finding RNA could do that at all."
+  },
+  {
+    "id": "phospholipid",
+    "name": "Phospholipid",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A phosphate head and two greasy tails. In water it builds a bilayer with no help at all."
+  },
+  {
+    "id": "cholesterol",
+    "name": "Cholesterol",
+    "emoji": "💠",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An animal molecule that stiffens or loosens a membrane. Most of yours is made, not eaten."
+  },
+  {
+    "id": "vesicle",
+    "name": "Vesicle",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A bubble of bilayer with water inside. The cheapest inside there is."
+  },
+  {
+    "id": "primordial_soup",
+    "name": "Primordial Soup",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Oparin's 1924 guess at the early ocean. Haldane supplied the word soup in 1929."
+  },
+  {
+    "id": "protocell",
+    "name": "Protocell",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A bilayer sac with replicating chemistry inside. Nobody has yet made one that lives."
+  },
+  {
+    "id": "cytoplasm",
+    "name": "Cytoplasm",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "About 80% water, and so crowded with protein that nothing dissolved in it behaves normally."
+  },
+  {
+    "id": "virus",
+    "name": "Virus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A genome in a protein coat, with no metabolism. Called organisms at the edge of life."
+  },
+  {
+    "id": "binary_fission",
+    "name": "Binary Fission",
+    "emoji": "➗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One cell into two, no partner. E. coli does it about every 20 minutes at 37 °C."
+  },
+  {
+    "id": "budding",
+    "name": "Budding",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The daughter grows out of the mother's side and leaves. Yeast does it; so does a hydra."
+  },
+  {
+    "id": "cutting",
+    "name": "Cutting",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A severed stem that grows its own roots. The new plant is a clone of the one it came off."
+  },
+  {
+    "id": "tuber",
+    "name": "Tuber",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A potato is not a root. It is a swollen underground stem, and every eye on it is a bud."
+  },
+  {
+    "id": "runner",
+    "name": "Runner",
+    "emoji": "🍓",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A stolon: a stem that crawls sideways and roots where it touches. Strawberries spread this way."
+  },
+  {
+    "id": "glycogen",
+    "name": "Glycogen",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Starch's animal counterpart, branched far more. About 100 g in the liver, 400 g in muscle."
+  },
+  {
+    "id": "methane",
+    "name": "Methane",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "CH4, the simplest alkane. Some archaea make it, and nothing else alive does."
   }
 ]

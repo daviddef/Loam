@@ -229,7 +229,15 @@ export function categoryOf(el) {
  */
 
 const ART = {};
-const def = (id, fn) => { ART[id] = fn; };
+// A second def() for the same id silently replaces the first, and the loser is
+// invisible — the file still parses, the item still draws, and the drawing you
+// are looking at is not the one you edited. That cost a genuinely confusing
+// half hour when ribose and deoxyribose kept coming back identical no matter
+// how differently they were redrawn.
+const def = (id, fn) => {
+  if (ART[id]) { console.error(`  ✗ "${id}" is defined twice — the later one silently wins`); process.exitCode = 1; }
+  ART[id] = fn;
+};
 
 /* starters ─────────────────────────────────────────────────────────────── */
 def('stone',  () => [facet('lo'), facet('bs', .72), facet('hi', .34)]);
@@ -2412,6 +2420,103 @@ def('acetylene',    () => [C(20, 32, 6.4, 'ik'), C(40, 32, 6.4, 'ik'),
                            S('M13 32 L8 32', 'ik', 1.8), S('M47 32 L52 32', 'ik', 1.8)]);        // the triple bond
 def('titanium_nitride', () => [...ingot('hi', 16, 9), ...granules('bs', 4, 51, [18, 28, 42, 40])]);
 def('magnesium_nitride', () => [mound('lo', 46, 19, 17), ...granules('bs', 7, 67, [18, 32, 42, 46])]);
+
+
+/* the parts a nucleotide is made of, and where life might have started ──
+   The five bases share one convention — purines are two fused rings, the
+   pyrimidines one — because that IS the distinction, and it is what makes
+   A pair with T rather than with G. */
+// One ring or two: that is the pyrimidine/purine split, and it is the reason
+// A pairs with T and not with G. Each card then shouts the ONE group that
+// separates it from its neighbour, because that group is the whole fact.
+const pyrimidine = (r) => [hex(r, 28, 33, 14, 2.4)];
+const purine = (r) => [
+  hex(r, 22, 34, 12, 2.4),
+  P('M33 26 L45 29 L43 41 L32 42 Z', r),
+  S('M33 26 L45 29 L43 41 L32 42 Z', 'ik', 2.2),
+];
+// Adenine: one amine, top left. Guanine: that amine moved down, plus a
+// carbonyl top right — the extra oxygen is why it pairs three times, not two.
+def('adenine',  () => [...purine('gh'), C(14, 22, 5.4, 'bs'), S('M17 26 L20 29', 'ik', 1.8)]);
+def('guanine',  () => [...purine('gh'), C(15, 47, 5.4, 'bs'), S('M18 43 L21 41', 'ik', 1.8),
+                       C(46, 18, 5.4, 'hi'), ...double([46, 18], [40, 27], 'ik')]);
+// Cytosine carries an amine where uracil carries a second carbonyl, and
+// thymine is uracil with a methyl stuck on the ring.
+def('cytosine', () => [hex('gh', 26, 30, 13, 2.4), C(26, 11, 6, 'bs'), S('M26 16 L26 20', 'ik', 2),
+                       C(42, 42, 4.4, 'hi')]);
+def('uracil',   () => [hex('gh', 32, 36, 13, 2.4), C(16, 22, 5.4, 'hi'), ...double([16, 22], [24, 29], 'ik'),
+                       C(48, 22, 5.4, 'hi'), ...double([48, 22], [40, 29], 'ik')]);
+def('thymine',  () => [hex('gh', 30, 30, 13, 2.4), C(14, 44, 5.4, 'hi'), ...double([14, 44], [22, 38], 'ik'),
+                       S('M43 42 L53 50', 'ik', 3.4), C(55, 52, 4, 'lo'),
+                       C(30, 10, 4.4, 'hi')]);
+// Ribose has an -OH at position 2. Deoxyribose is that oxygen taken away, and
+// the gap is drawn as a gap.
+def('ribose',      () => [P('M30 12 L48 25 L41 46 L19 46 L12 25 Z', 'hi'),
+                          C(19, 46, 5.4, 'bs'), C(41, 46, 5.4, 'bs'), C(30, 12, 4.4, 'bs'),
+                          S('M19 46 L10 54', 'ik', 1.8), S('M41 46 L50 54', 'ik', 1.8)]);
+// Ribose drawn as a filled ring; deoxyribose as the same ring OPENED OUT into
+// the straight-chain form it also takes, with a hollow ring marking the -OH
+// that is missing at position 2. Two different pictures, because "the same
+// shape in another colour" is not a difference anyone can see on a shelf.
+def('deoxyribose', () => [
+  S('M10 44 L20 30 L32 40 L44 26 L52 36', 'ik', 2.6),
+  C(10, 44, 4.4, 'bs'), C(32, 40, 4, 'lo'), C(52, 36, 4.4, 'bs'),
+  ring('ground', 20, 30, 5.4, 2.2),
+  C(44, 20, 4, 'hi'),
+]);
+def('base_pair',() => [hex('gh', 17, 32, 11, 2.2), hex('gh', 43, 32, 11, 2.2),
+                       ...[28, 34].map(y => S(`M27 ${y} L33 ${y}`, 'hi', 1.6))]);   // the hydrogen bonds
+def('phosphate',   () => [C(30, 32, 8, 'bs'),
+                          ...[[30, 13], [14, 42], [46, 42], [30, 50]].map(([x, y]) =>
+                            [S(`M30 32 L${x} ${y}`, 'ik', 2), C(x, y, 4.4, 'hi')]).flat()]);
+def('rna',         () => [S('M24 8 Q40 20 24 32 Q8 44 24 56', 'bs', 3.4),           // one strand, not two
+                          ...[14, 26, 38, 50].map((y, i) => S(`M${i % 2 ? 26 : 22} ${y} L${i % 2 ? 42 : 38} ${y}`, 'hi', 2))]);
+def('transfer_rna',   () => [P('M30 10 L30 30', 'ik') && S('M30 10 L30 30', 'bs', 3.4),
+                             S('M30 30 L16 44', 'bs', 3.4), S('M30 30 L44 44', 'bs', 3.4),
+                             ...[[16, 44], [44, 44]].map(([x, y]) => C(x, y, 5, 'hi')),
+                             C(30, 8, 4.4, 'lo')]);                                  // the clover leaf
+def('ribosomal_rna',  () => [E(30, 26, 19, 12, 'bs'), E(30, 42, 15, 9, 'lo'),
+                             ...[[22, 24], [38, 28], [28, 42]].map(([x, y]) => C(x, y, 3, 'hi'))]);
+def('ribozyme',       () => [S('M18 12 Q40 22 20 32 Q4 42 22 52', 'bs', 3.4),
+                             C(38, 40, 7, 'hi'), ring('ik', 38, 40, 11, 1.4)]);      // RNA with an active site
+def('phospholipid',   () => [C(30, 14, 7, 'bs'),
+                             S('M27 20 Q23 34 26 50', 'ik', 2.6), S('M33 20 Q37 34 34 50', 'ik', 2.6)]);
+def('cholesterol',    () => [hex('ik', 20, 36, 9, 2), hex('ik', 32, 30, 9, 2), hex('ik', 44, 34, 9, 2),
+                             P('M48 26 L56 22', 'ik') && S('M48 28 L56 22', 'ik', 2)]);
+def('vesicle',        () => [ring('bs', 30, 32, 20, 3), ring('bs', 30, 32, 14, 3),
+                             E(30, 32, 11, 11, 'ground')]);                          // a bilayer, and nothing inside
+def('primordial_soup',() => [wave('lo', 46, 6, 24), wave('bs', 38, 5, 22),
+                             ...granules('hi', 9, 43, [14, 20, 46, 36]),
+                             bolt('hi', 40, 8, .6)]);                                // and the spark above it
+def('protocell',      () => [ring('bs', 30, 32, 19, 3),
+                             S('M22 26 Q34 34 24 42', 'hi', 2.4),                    // something replicating inside
+                             ...granules('lo', 4, 29, [22, 24, 40, 42])]);
+def('cytoplasm',      () => [ring('lo', 30, 32, 20, 2.6), E(30, 32, 16, 16, 'gh'),
+                             ...granules('bs', 8, 15, [18, 20, 42, 44])]);
+def('virus',          () => [...Array.from({ length: 6 }, (_, i) =>
+                               ['g', i * 60, 30, 28, [S('M30 44 L30 54', 'ik', 2.2), C(30, 55, 2.4, 'ik')]]),
+                             P('M30 12 L45 21 L45 37 L30 46 L15 37 L15 21 Z', 'bs'),
+                             S('M30 12 L45 21 L45 37 L30 46 L15 37 L15 21 Z', 'ik', 2)]);   // a capsid, and its legs
+def('methane',        () => [C(30, 32, 8, 'ik'),
+                             ...[[30, 12], [13, 42], [47, 42], [30, 52]].map(([x, y]) =>
+                               [S(`M30 32 L${x} ${y}`, 'ik', 1.8), C(x, y, 4, 'hi')]).flat()]);
+def('glycogen',       () => [C(30, 32, 6, 'bs'),
+                             ...Array.from({ length: 6 }, (_, i) =>
+                               ['g', i * 60, 30, 32, [S('M30 26 L30 16', 'hi', 2),
+                                                      C(30, 13, 4, 'hi'),
+                                                      S('M30 13 L24 6', 'hi', 1.4), S('M30 13 L36 6', 'hi', 1.4)]])]);
+def('binary_fission', () => [E(18, 32, 12, 13, 'bs'), E(42, 32, 12, 13, 'bs'),
+                             S('M30 18 L30 46', 'ground', 3)]);                      // one becoming two
+def('budding',        () => [C(26, 36, 15, 'bs'), C(44, 20, 8, 'hi'),
+                             S('M36 27 L38 25', 'lo', 2)]);
+def('cutting',        () => [S('M30 52 L30 14', 'lo', 3.4),
+                             leaf('hi', 20, 22, .7, -35), leaf('hi', 40, 26, .7, 35),
+                             ...[[26, 50], [34, 50]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? 20 : 40} 56`, 'bs', 1.8))]);  // new roots
+def('tuber',          () => [E(30, 38, 19, 13, 'lo'), ...granules('bs', 5, 57, [18, 32, 42, 44]),
+                             S('M22 27 Q24 18 20 10', 'hi', 2.2), S('M38 27 Q36 18 40 10', 'hi', 2.2)]);
+def('runner',         () => [S('M8 40 Q30 30 52 40', 'hi', 3),
+                             ...[[8, 40], [52, 40]].map(([x, y]) =>
+                               [leaf('hi', x, y - 12, .6, 0), S(`M${x} ${y} L${x} ${y + 8}`, 'lo', 2)]).flat()]);
 
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],

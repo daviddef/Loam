@@ -196,6 +196,10 @@ __CATEGORY_CSS__
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
   }
+  /* It belongs with the other view controls, not in the header — showing the
+     table is something you do TO the canvas, like fitting or tidying it. */
+  #zoom #ptToggle{font-size:17px}
+  #zoom #ptToggle.on{border-color:var(--orange);color:var(--orange)}
   #board{cursor:grab;touch-action:none;overscroll-behavior:contain}
   #board.panning{cursor:grabbing}
   /* The opening cue. Pointer-events none throughout: it can never be in the way,
@@ -1236,6 +1240,7 @@ __CATEGORY_CSS__
        off the end of the header at 375px. */
     #reset{display:none}
     #undo{padding:6px 9px}
+    #zoom #ptToggle{display:none}                 /* the dock is desktop-only */
     .mark svg{width:22px;height:22px}
     .goal{display:none}
     #live{display:none}
@@ -1348,7 +1353,6 @@ __CATEGORY_CSS__
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
-  <button id="ptToggle" title="Show the periodic table along the bottom">Table</button>
   <button id="undo" title="Nothing to undo yet" disabled>Undo</button>
   <button id="reset" title="Start over — wipes everything you have found">Reset</button>
   <button id="nudge" title="Put two things on the bench that go together">Nudge</button>
@@ -1364,6 +1368,7 @@ __CATEGORY_CSS__
     <div id="zoom">
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
+      <button id="ptToggle" title="Show the periodic table along the bottom">⛭</button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -1408,6 +1413,8 @@ const SCALE = __SCALE_DATA__;
    data/cautions.json — the wording is attached to the hazard, not to the item,
    so it reads the same everywhere on a chain. */
 const CAUTIONS = __CAUTION_DATA__;
+/* Food-label vocabulary → element ids. See data/labels.json. */
+const LABELS = __LABEL_DATA__;
 const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
@@ -1669,7 +1676,7 @@ function countOnBench(id) {
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
                 theme: 'specimen', ground: 'paper', chrome: 'light',
-                assist: 'on', density: 'half' };
+                assist: 'on', density: 'half', consolidate: false };
 let savedPrefs = null;
 try { savedPrefs = JSON.parse(localStorage.getItem('loam.prefs') || 'null'); } catch {}
 if (savedPrefs) Object.assign(prefs, savedPrefs);
@@ -2402,7 +2409,7 @@ function tidy() {
   const [cw] = cardSize();
   const step = cw + GAP;
   const pos = new Map();                      // chip -> x, in "slots"
-  let cursor = 0;
+  const packs = [];                           // one entry per separate chain
 
   for (let g = 0; g < nc; g++) {
     const mine = chips.filter(c => comp.get(c) === g);
@@ -2454,15 +2461,42 @@ function tidy() {
 
     const min = Math.min(...mine.map(c => pos.get(c)));
     const max = Math.max(...mine.map(c => pos.get(c)));
-    for (const c of mine) pos.set(c, pos.get(c) - min + cursor);
-    cursor += (max - min) + 2;                // a clear lane between chains
+    for (const c of mine) pos.set(c, pos.get(c) - min);        // each chain starts at nought
+    packs.push({ chips: mine, w: (max - min) + 1, h: Math.max(...mine.map(c => depth.get(c))) + 1 });
   }
 
+  // 4. Pack the chains into the shape of the BOARD, instead of one long row.
+  //
+  //    Laying every chain out side by side made the bench wider and wider while
+  //    it stayed four or five rows tall, so Fit had nothing to do but zoom out
+  //    until the width fitted — 92% of the width used and 34% of the height,
+  //    with the cards small and a lot of empty tray underneath. Chains wrap onto
+  //    a new band once the current one is wider than the board's proportions
+  //    justify, which is the same thing a page of text does with words.
   const b = boardBox();
+  const aspect = Math.max(0.6, b.width / Math.max(1, b.height));
+  const total = packs.reduce((a, p) => a + p.w + 2, 0);
+  const rowsDeep = Math.max(...packs.map(p => p.h), 1);
+  // Target width in slots: the width that makes the finished block about as
+  // wide-to-tall as the board is. Never narrower than the widest single chain.
+  const target = Math.max(
+    Math.max(...packs.map(p => p.w)),
+    Math.sqrt(total * rowsDeep * (step / ROW_H) * aspect));
+  let bandX = 0, bandY = 0, bandH = 0;
+  for (const p of packs) {
+    if (bandX && bandX + p.w > target) { bandX = 0; bandY += bandH + 1; bandH = 0; }
+    for (const c of p.chips) pos.set(c, pos.get(c) + bandX);
+    p.y = bandY;
+    bandX += p.w + 2;                          // a clear lane between chains
+    bandH = Math.max(bandH, p.h);
+  }
+
   const [ox, oy] = toWorld(b.left + 40, b.top + 40);
+  const bandOf = new Map();
+  for (const p of packs) for (const c of p.chips) bandOf.set(c, p.y);
   for (const c of chips) {
     c.style.left = (ox + pos.get(c) * step) + 'px';
-    c.style.top  = (oy + depth.get(c) * ROW_H) + 'px';
+    c.style.top  = (oy + (bandOf.get(c) + depth.get(c)) * ROW_H) + 'px';
   }
   drawLinks();
   fitAll({ min: 0.34, max: 1.0 });
@@ -2657,6 +2691,20 @@ function freeSpot(w, h, near) {
 
 const MAX_CHIPS = 140;
 function spawn(id, x, y, near) {
+  // One card per thing, if you asked for that. A bench built by hand ends up
+  // with four Waters and three Suns, because every recipe that needs one takes
+  // a fresh copy. Consolidated, the copies collapse and the lines converge on
+  // the single card instead — the same graph, drawn as a graph rather than as
+  // a list of the times you happened to need something.
+  if (prefs.consolidate) {
+    const already = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === id);
+    if (already) {
+      already.classList.remove('folded');
+      already.classList.add('pop');
+      setTimeout(() => already.classList.remove('pop'), 330);
+      return already;
+    }
+  }
   // Whatever else happens, the bench must not be able to grow without limit.
   if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
     toast('The bench is full — tidy it, or double-tap a few things to clear space');
@@ -4027,6 +4075,7 @@ function showCodex(q = '') {
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
     `<button class="ghost" id="aaBtn">Amino acids</button>` +
     `<button class="ghost" id="ladderBtn">The ladder</button>` +
+    `<button class="ghost" id="labelBtn">Read a label</button>` +
     `<button class="ghost${codexAll ? ' on' : ''}" id="allBtn">${codexAll ? 'Only what I have' : 'Show all ' + elements.length}</button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
   openSheet(`Codex · ${found.size} of ${elements.length}`);
@@ -4034,6 +4083,7 @@ function showCodex(q = '') {
     document.getElementById('sheetBody').innerHTML = periodicHTML();
     openSheet('The periodic table');
   };
+  document.getElementById('labelBtn').onclick = () => showLabelReader();
   document.getElementById('allBtn').onclick = () => {
     codexAll = !codexAll;
     showCodex(document.getElementById('q')?.value ?? '');
@@ -4221,7 +4271,14 @@ function showSettings() {
       ${tiles('ground', GROUNDS, v =>
         `<span class="gsw g-${v}"><i class="gleaf">${artSVG('leaf')}</i></span>`)}
       <h2>How much room each thing takes</h2>
-      ${tiles('density', DENSITIES, v => DENSITY_ART[v])}`) +
+      ${tiles('density', DENSITIES, v => DENSITY_ART[v])}
+      <div class="switches">
+        ${toggle('One card per thing',
+          prefs.consolidate
+            ? 'Every line for a thing runs to the same card. The bench reads as a diagram.'
+            : 'A fresh copy each time you need one. Two Waters are two cards.',
+          !!prefs.consolidate, 'data-consolidate="1"')}
+      </div>`) +
     group('Explain', '✎', `
       <h2>How much explaining</h2>
       ${row('depth', [
@@ -4256,6 +4313,17 @@ function showSettings() {
     `<p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
+  const cons = document.getElementById('sheetBody').querySelector('[data-consolidate]');
+  if (cons) cons.onclick = () => {
+    prefs.consolidate = !prefs.consolidate;
+    savePrefs();
+    if (prefs.consolidate) {
+      pushUndo('joining up the duplicates');
+      const n = consolidateBench();
+      if (n) { tidy(); toast(n === 1 ? 'One duplicate joined up' : `${n} duplicates joined up`); }
+    }
+    showSettings();
+  };
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
   if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
   const wipe = document.getElementById('sheetBody').querySelector('[data-wipe]');
@@ -4266,6 +4334,155 @@ function showSettings() {
   });
 }
 document.getElementById('settings').addEventListener('click', showSettings);
+
+
+/**
+ * Collapse every duplicate on the bench down to one card each.
+ *
+ * Turning the setting on and seeing nothing change would be worse than not
+ * having it, so it runs over what is already there: the first card of each
+ * kind is kept, every link pointing at a duplicate is rewired to the keeper,
+ * and the duplicates go. Links that would then run from a card to itself are
+ * dropped — those are the ones that only existed because two copies of Water
+ * were two different things.
+ */
+function consolidateBench() {
+  const keep = new Map();
+  const dead = [];
+  for (const c of world.querySelectorAll('.chip.board')) {
+    const id = c.dataset.id;
+    if (keep.has(id)) dead.push(c); else keep.set(id, c);
+  }
+  if (!dead.length) return 0;
+  const swap = (c) => (c && keep.get(c.dataset.id)) || c;
+  for (let i = links.length - 1; i >= 0; i--) {
+    const l = links[i];
+    l.a = swap(l.a); l.b = swap(l.b); l.out = swap(l.out);
+    if (l.out === l.a || l.out === l.b) { links.splice(i, 1); continue; }
+    // The same pair may now appear twice; one line is enough.
+    if (links.some((o, j) => j < i && o.out === l.out && o.a === l.a && o.b === l.b)) links.splice(i, 1);
+  }
+  for (const c of dead) c.remove();
+  refreshFolds();
+  drawLinks();
+  return dead.length;
+}
+
+// ---------- reading a label ----------
+/**
+ * Turn the ingredients line off a packet into cards on the bench.
+ *
+ * The interesting discovery was that the drawing was never the hard part —
+ * every element already chains back to stone, water, sun and seed with a
+ * hand-drawn card at every step. What stops a label resolving is that a label
+ * speaks a different language: it says Skim Milk where the game says milk,
+ * Live Cultures where the game says bacteria, and Mineral Salt (Calcium
+ * Citrate) where the game says calcium. So this is mostly a translation, and
+ * the translation lives in data, not here.
+ *
+ * Three outcomes per phrase, and the third is the one worth having:
+ *   found      — an element, and the chain that makes it
+ *   vague      — a phrase the law lets a label use WITHOUT saying what it means
+ *   unknown    — the game does not have it yet, said plainly
+ */
+function splitLabel(text) {
+  // Strip a leading "Ingredients:" and any percentages, then split on commas
+  // that are not inside brackets — because "Vegetable Gums (Pectin, Guar Gum)"
+  // is one ingredient with a list inside it, not three.
+  const body = text.replace(/^[\s\S]*?ingredients\s*:/i, '').replace(/\([^)]*?\d+(\.\d+)?\s*%\)/g, '');
+  const out = [];
+  for (const part of body.split(/,(?![^(]*\))/)) {
+    const t = part.trim().replace(/\.$/, '');
+    if (!t) continue;
+    const m = t.match(/^(.*?)\s*\(([^)]*)\)$/);
+    if (m && m[2].includes(',')) {
+      // the outer word is the class ("Vegetable Gums"), the brackets are the real list
+      out.push(m[1].trim());
+      for (const inner of m[2].split(',')) out.push(inner.trim());
+    } else out.push(t);
+  }
+  return out.filter(Boolean);
+}
+const labelKey = (t) => t.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+function readIngredient(text) {
+  const k = labelKey(text);
+  if (LABELS.vague[k]) return { text, kind: 'vague', note: LABELS.vague[k] };
+  // Longest alias first, so "locust bean gum" beats "gum".
+  const alias = LABELS.aliases[k];
+  if (alias && byId[alias]) return { text, kind: 'found', id: alias };
+  if (byId[k.replace(/ /g, '_')]) return { text, kind: 'found', id: k.replace(/ /g, '_') };
+  const byName = elements.find(e => nameOf(e).toLowerCase() === k);
+  if (byName) return { text, kind: 'found', id: byName.id };
+  // A contained alias: "organic skim milk powder" contains "skim milk".
+  let best = null;
+  for (const [a, id] of Object.entries(LABELS.aliases)) {
+    if (!byId[id]) continue;
+    if (new RegExp(`\\b${a.replace(/ /g, '\\s+')}\\b`).test(k) && (!best || a.length > best[0].length)) best = [a, id];
+  }
+  if (best) return { text, kind: 'found', id: best[1] };
+  for (const [v, note] of Object.entries(LABELS.vague))
+    if (new RegExp(`\\b${v.replace(/ /g, '\\s+')}\\b`).test(k)) return { text, kind: 'vague', note };
+  return { text, kind: 'unknown' };
+}
+function readLabel(text) { return splitLabel(text).map(readIngredient); }
+
+function showLabelReader(prefill = '') {
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet. Every one this
+       world knows becomes a card, with the whole chain back to stone, water, sun and seed.</p>
+    <textarea id="labelIn" class="search" rows="4" style="resize:vertical;font-size:13px"
+      placeholder="Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk)…">${prefill}</textarea>
+    <div class="cardrow" style="margin:9px 0">
+      <button class="ghost" id="labelGo">Read it</button>
+      <button class="ghost" id="labelDemo">Try an example</button>
+    </div>
+    <div id="labelOut"></div>`;
+  openSheet('Read a label');
+  const run = () => {
+    const parsed = readLabel(document.getElementById('labelIn').value);
+    document.getElementById('labelOut').innerHTML = labelResultHTML(parsed);
+    const put = document.getElementById('labelPut');
+    if (put) put.onclick = () => {
+      document.getElementById('sheet').classList.remove('on');
+      benchTouched = true;
+      const made = parsed.filter(p => p.kind === 'found');
+      for (const p of made) placeItem(p.id);
+      tidy();
+      toast(made.length === 1 ? `${nameOf(byId[made[0].id])} is on the bench`
+                              : `${made.length} of them are on the bench`);
+    };
+  };
+  document.getElementById('labelGo').onclick = run;
+  document.getElementById('labelDemo').onclick = () => {
+    document.getElementById('labelIn').value =
+      'Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk), Vegetable Gums (Pectin, Guar Gum, ' +
+      'Locust Bean Gum), Natural Flavours, Mineral Salt (Calcium Citrate), Paprika Extract, Live Cultures (Milk).';
+    run();
+  };
+}
+function labelResultHTML(parsed) {
+  if (!parsed.length) return '<p class="none">Nothing to read yet.</p>';
+  const found = parsed.filter(p => p.kind === 'found');
+  const vague = parsed.filter(p => p.kind === 'vague');
+  const unknown = parsed.filter(p => p.kind === 'unknown');
+  const depth = (id) => orderedSteps(id).length;
+  const row = (p) => {
+    const e = byId[p.id];
+    const n = depth(p.id);
+    return `<div class="ent in"><span class="g" data-entry-any="${p.id}">${glyph(p.id, 19)} ${nameOf(e)}</span>` +
+      `<span class="arw">←</span><span class="g">${n ? `${n} step${n === 1 ? '' : 's'} from the starters` : 'a starter'}</span></div>`;
+  };
+  return `<h2>Found · ${found.length} of ${parsed.length}</h2>` +
+    (found.length ? found.map(row).join('') : '<p class="none">None of these yet.</p>') +
+    (found.length ? `<div class="cardrow" style="margin:10px 0">
+        <button class="ghost" id="labelPut">Put all ${found.length} on the bench</button></div>` : '') +
+    (vague.length ? `<h2>Says nothing · ${vague.length}</h2>` + vague.map(p =>
+      `<div class="ent"><span class="g">${p.text}</span></div><p class="hint2">${p.note}</p>`).join('') : '') +
+    (unknown.length ? `<h2>Not in this world yet · ${unknown.length}</h2><div class="shelf">` +
+      unknown.map(p => `<span class="chip locked" style="--cw:auto;width:auto">${p.text}</span>`).join('') +
+      `</div><p class="hint2">Each of these is a real thing with a real story — they are simply
+        not built yet. Nothing here is invented to fill a gap.</p>` : '');
+}
 
 // ---------- shelf + buttons ----------
 // Tapping a shelf chip drops it on the bench; dragging one carries it to a spot
