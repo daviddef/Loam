@@ -3456,6 +3456,17 @@ board.addEventListener('pointerdown', ev => {
   const ghost = ev.target.closest('.chip.ghost');
   if (ghost) {
     ev.preventDefault();
+    // Neither a hub nor a placeholder ever reaches chipTap()'s own
+    // double-tap-removes below — this intercept returns before drag is ever
+    // armed — so without this, a ghost had no way off the board at all.
+    const now = Date.now();
+    if (lastChipTap.el === ghost && now - lastChipTap.t < 320) {
+      lastChipTap = { el: null, t: 0 };
+      pushUndo(`removing ${ghost.classList.contains('hub') ? nameOfProduct(ghost._scan.product) : ghost.dataset.text}`);
+      removeChip(ghost);
+      return;
+    }
+    lastChipTap = { el: ghost, t: now };
     if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
     return toast(`${ghost.dataset.text} — a real thing, just not built yet`);
   }
@@ -5467,16 +5478,25 @@ function showBarcodeScan(onIngredients) {
     // hold garbage while the base field is fine — found live: a real product
     // whose ingredients_text_en was the literal string "CURL_ING_OVERRIDE_…",
     // evidently a test script's leftovers, while ingredients_text held the
-    // genuine (French) list. Real ingredient text has lowercase letters and a
-    // comma or a space in it; a field that doesn't is not trusted, and the
-    // base field is tried instead rather than showing the garbage as if it
-    // were the product.
-    const looksReal = (t) => !!t && /[a-z]/.test(t) && /[\s,]/.test(t);
+    // genuine (French) list. Real ingredient text has letters and a comma or
+    // a space in it; a field that doesn't is not trusted, and the base field
+    // is tried instead rather than showing the garbage as if it were the
+    // product. Letters, not lowercase specifically — a real bug, found live:
+    // a packet's ingredients are routinely printed in ALL CAPS ("POPCORN
+    // (80%), SUNFLOWER OIL-HI OLEIC, SEA SALT…"), and the lowercase-only
+    // check was discarding that genuine text as if it were the same kind of
+    // garbage as CURL_ING_OVERRIDE.
+    const looksReal = (t) => !!t && /[a-zA-Z]/.test(t) && /[\s,]/.test(t);
     const text = looksReal(product.ingredients_text_en) ? product.ingredients_text_en
                : looksReal(product.ingredients_text) ? product.ingredients_text : '';
     status.innerHTML = '';
     scanned.push({ code, product, text });
-    if (scanned.length > 1) toast(`Added ${product.product_name || 'that product'} — ${scanned.length} scanned so far`);
+    // Every successful find gets a toast, the first included — the result
+    // itself lands in #bcOut, below the live camera view, easy to miss while
+    // actually holding the phone up to a barcode; without this, a scan that
+    // worked and one that silently didn't looked identical.
+    toast(scanned.length === 1 ? `Found ${product.product_name || 'that product'}`
+                                : `Added ${product.product_name || 'that product'} — ${scanned.length} scanned so far`);
     render();
   };
   document.getElementById('bcGo').onclick = () => {
