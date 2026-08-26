@@ -16,7 +16,8 @@
         "aspic",
         "smoked_fish",
         "sourdough_starter"
-      ]
+      ],
+      "severity": "acute"
     },
     "caustic": {
       "label": "Lye burns on contact",
@@ -24,7 +25,8 @@
       "ids": [
         "lye",
         "soap"
-      ]
+      ],
+      "severity": "acute"
     },
     "fire": {
       "label": "Fire and hot fat",
@@ -40,7 +42,8 @@
         "fish_and_chips",
         "caramel",
         "caramel_sauce"
-      ]
+      ],
+      "severity": "acute"
     },
     "raw": {
       "label": "Raw egg and unpasteurised milk",
@@ -52,7 +55,8 @@
         "cream",
         "curd",
         "blue_cheese"
-      ]
+      ],
+      "severity": "biological"
     },
     "alcohol": {
       "label": "Alcohol",
@@ -67,14 +71,16 @@
         "wort",
         "malt",
         "vinegar"
-      ]
+      ],
+      "severity": "chronic"
     },
     "cherry_kernel": {
       "label": "The stone, not the fruit",
       "note": "Cherry flesh is entirely safe and this caution is not about eating cherries. The kernels inside the hard pits contain amygdalin, which releases hydrogen cyanide when chewed or swallowed. Do not crack the stones open.",
       "ids": [
         "cherry"
-      ]
+      ],
+      "severity": "acute"
     },
     "mercury_toxicity": {
       "label": "Mercury is toxic, in the ore and in the metal",
@@ -82,7 +88,8 @@
       "ids": [
         "cinnabar",
         "mercury"
-      ]
+      ],
+      "severity": "chronic"
     },
     "uranium_toxicity": {
       "label": "Uranium is a heavy-metal poison first",
@@ -91,7 +98,8 @@
         "ore",
         "uranium",
         "yellowcake"
-      ]
+      ],
+      "severity": "chronic"
     },
     "reactive_metal": {
       "label": "These metals set fire to water",
@@ -100,21 +108,24 @@
         "sodium",
         "potassium",
         "magnesium"
-      ]
+      ],
+      "severity": "acute"
     },
     "lead_toxicity": {
       "label": "Lead is a neurotoxin",
       "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
       "ids": [
         "lead"
-      ]
+      ],
+      "severity": "chronic"
     },
     "chlorine_gas": {
       "label": "Chlorine gas is a poison, and was used as one",
       "note": "Elemental chlorine at high concentration is extremely dangerous and poisonous to most living organisms. It was the first gas deployed as a weapon, at the Second Battle of Ypres on 22 April 1915. This page is about where an industrial chemical comes from, and nothing on it is a method.",
       "ids": [
         "chlorine"
-      ]
+      ],
+      "severity": "acute"
     },
     "fluorine_hazard": {
       "label": "Fluorine is why chemistry has martyrs",
@@ -122,21 +133,24 @@
       "ids": [
         "fluorine",
         "fluorite"
-      ]
+      ],
+      "severity": "acute"
     },
     "arsenic_toxicity": {
       "label": "Arsenic is a poison, and a drinking-water problem",
       "note": "Arsenic compounds have been known since ancient times to be poisonous. The commonest cause of long-term exposure today is not deliberate — it is contaminated groundwater, and more than 200 million people worldwide are exposed to unsafe levels.",
       "ids": [
         "arsenic"
-      ]
+      ],
+      "severity": "acute"
     },
     "selenium_dose": {
       "label": "Essential and toxic are the same element, at different doses",
       "note": "Selenium is a required nutrient: the adult recommended intake is 55 micrograms a day and the tolerable upper limit is 400. Exceeding it causes selenosis. That is a narrow window compared with almost anything else on the shelf.",
       "ids": [
         "selenium"
-      ]
+      ],
+      "severity": "chronic"
     },
     "heavy_metal_dust": {
       "label": "Some metals are only dangerous once they are dust",
@@ -145,7 +159,8 @@
         "cadmium",
         "manganese",
         "osmium"
-      ]
+      ],
+      "severity": "chronic"
     },
     "radioactivity": {
       "label": "These are radioactive, and that is the point of some of them",
@@ -156,14 +171,16 @@
         "plutonium",
         "polonium",
         "monazite"
-      ]
+      ],
+      "severity": "chronic"
     },
     "calcium_corrosive": {
       "label": "Calcium metal burns skin on contact",
       "note": "Calcium reacts with water faster than magnesium does, giving calcium hydroxide and hydrogen. Because that reaction is exothermic, calcium metal touching the moisture on skin causes severe corrosive irritation, and swallowing it does the same to the mouth, oesophagus and stomach.",
       "ids": [
         "calcium"
-      ]
+      ],
+      "severity": "acute"
     },
     "lightning": {
       "label": "Thunder is the sound of something already close",
@@ -173,7 +190,8 @@
         "thunder",
         "storm",
         "fulgurite"
-      ]
+      ],
+      "severity": "acute"
     },
     "severe_weather": {
       "label": "Weather that kills people",
@@ -183,14 +201,16 @@
         "hurricane",
         "blizzard",
         "hail"
-      ]
+      ],
+      "severity": "acute"
     },
     "ozone": {
       "label": "Ozone is not fresh air",
       "note": "The clean smell after a thunderstorm is a toxic gas. The same oxidising power that makes ozone useful for disinfecting is what damages mucous and respiratory tissue in animals, and plant tissue too, above about 0.1 ppm — around the level that already produces headaches and burning eyes.",
       "ids": [
         "ozone"
-      ]
+      ],
+      "severity": "chronic"
     },
     "methanol_toxicity": {
       "label": "Methanol looks and smells like drinking alcohol",
@@ -198,7 +218,8 @@
       "ids": [
         "methanol",
         "wood_tar"
-      ]
+      ],
+      "severity": "acute"
     },
     "phenol_corrosive": {
       "label": "Phenol degrades protein on contact",
@@ -206,7 +227,8 @@
       "ids": [
         "phenol",
         "coal_tar"
-      ]
+      ],
+      "severity": "acute"
     },
     "formaldehyde_carcinogen": {
       "label": "Formaldehyde is a carcinogen, not just a smell",
@@ -215,7 +237,17 @@
         "formaldehyde",
         "galalith",
         "bakelite"
-      ]
+      ],
+      "severity": "chronic"
+    },
+    "venomous_spur": {
+      "label": "The platypus is a venomous mammal",
+      "note": "The male carries a spur on each hind leg fed by a gland in the thigh, and the venom is powerful enough to inflict pain in humans — swelling, and a heightened sensitivity to pain that can last as long as months. It is largely defensin-like proteins, some of them unique to the species, and the spurs are weapons males use on each other.",
+      "ids": [
+        "platypus"
+      ],
+      "severity": "acute"
     }
-  }
+  },
+  "$severity": "How loudly to say it. acute: hurts fast. chronic: hurts with exposure over time. biological: a pathogen risk. allergen: a regulated declarable allergen. The tier decides the signal on the card; it is never a ranking of how bad a thing is as a thing, and it is never advice."
 }

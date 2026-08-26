@@ -2955,8 +2955,7 @@
       "animal",
       "wild"
     ],
-    "fact": "Pushes over trees for a living, and does it thoroughly enough to turn woodland into grassland.",
-    "terminal": true
+    "fact": "Pushes over trees for a living, and does it thoroughly enough to turn woodland into grassland."
   },
   {
     "id": "lion",
@@ -3313,8 +3312,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "Not a wild species at all — a hybrid of the citron and the bitter orange, two other fruits entirely.",
-    "terminal": true
+    "fact": "Not a wild species at all — a hybrid of the citron and the bitter orange, two other fruits entirely."
   },
   {
     "id": "strawberry",
@@ -3367,8 +3365,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "A fruit with all the flowers folded away inside, and a wasp that crawls in to reach them.",
-    "terminal": true
+    "fact": "A fruit with all the flowers folded away inside, and a wasp that crawls in to reach them."
   },
   {
     "id": "coffee",
@@ -4827,7 +4824,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A share to cut the sod and a mouldboard to turn it over. Scratching the surface is not enough."
   },
   {
@@ -6910,5 +6906,928 @@
       "fire"
     ],
     "fact": "CH4, the simplest alkane. Some archaea make it, and nothing else alive does."
+  },
+  {
+    "id": "cactus",
+    "name": "Cactus",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Spines are modified leaves; the fat stem does the photosynthesis. Water can be 90% of its mass."
+  },
+  {
+    "id": "malic_acid",
+    "name": "Malic Acid",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A four-carbon acid. CAM plants build it in the dark and take it apart again in the light."
+  },
+  {
+    "id": "stoma",
+    "name": "Stoma",
+    "emoji": "👄",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A pore between two guard cells. Opening it to eat costs the plant water, every single time."
+  },
+  {
+    "id": "xylem",
+    "name": "Xylem",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Dead pipework. Wood is xylem that kept being added, one year's worth at a time."
+  },
+  {
+    "id": "phloem",
+    "name": "Phloem",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Living tissue, unlike xylem. It carries sugar downward, and it sits just inside the bark."
+  },
+  {
+    "id": "sap",
+    "name": "Sap",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Two saps, running opposite ways. Neither of them is latex, and neither of them is resin."
+  },
+  {
+    "id": "bark",
+    "name": "Bark",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Everything outside the vascular cambium. Strip a ring of it off and the tree usually dies."
+  },
+  {
+    "id": "cork",
+    "name": "Cork",
+    "emoji": "🍾",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Dead cells full of gas, walled with suberin. Stripped off a living oak, and it grows back."
+  },
+  {
+    "id": "lignin",
+    "name": "Lignin",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "20 to 35% of dry wood. Stiffens the cell wall, keeps water in the pipes, and resists rot."
+  },
+  {
+    "id": "oak",
+    "name": "Oak",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Around 500 species. The tannin that makes acorns bitter is the tannin that tanned leather."
+  },
+  {
+    "id": "pine",
+    "name": "Pine",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Evergreen and resinous. Over 90% of a conifer's timber is one cell type: the tracheid."
+  },
+  {
+    "id": "hardwood",
+    "name": "Hardwood",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "build"
+    ],
+    "terminal": true,
+    "fact": "Wood from a flowering tree, with vessels. Balsa is one, so the name is not about hardness."
+  },
+  {
+    "id": "softwood",
+    "name": "Softwood",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "build"
+    ],
+    "terminal": true,
+    "fact": "Wood from a conifer, with no pores at all. Yew is a softwood and harder than many hardwoods."
+  },
+  {
+    "id": "bamboo",
+    "name": "Bamboo",
+    "emoji": "🎋",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "build"
+    ],
+    "terminal": true,
+    "fact": "A grass. Some species add 91 cm in a day, and a culm never gets thicker than it started."
+  },
+  {
+    "id": "coconut",
+    "name": "Coconut",
+    "emoji": "🥥",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A drupe, not a nut. The husk is built for buoyancy, but people did most of the carrying."
+  },
+  {
+    "id": "coconut_water",
+    "name": "Coconut Water",
+    "emoji": "🥥",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "drink"
+    ],
+    "terminal": true,
+    "fact": "Liquid endosperm — the same tissue that later settles out as the solid white flesh."
+  },
+  {
+    "id": "mangrove",
+    "name": "Mangrove",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Filters salt out at the root and dumps the rest in old leaves. Its seeds sprout on the tree."
+  },
+  {
+    "id": "bast_fibre",
+    "name": "Bast Fibre",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Fibre out of the inner bark. Soft and flexible, unlike the stiff leaf fibres of sisal."
+  },
+  {
+    "id": "sugar_beet",
+    "name": "Sugar Beet",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "sweet"
+    ],
+    "fact": "A taproot that is 12 to 21% sucrose. Breeding took it from 8% to 18% in two centuries."
+  },
+  {
+    "id": "rubber_tree",
+    "name": "Rubber Tree",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Amazonian, and barely grown there: a leaf blight keeps plantations out of its own homeland."
+  },
+  {
+    "id": "mulberry",
+    "name": "Mulberry",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "In the fig's family. What looks like one fruit is many fruits packed against each other."
+  },
+  {
+    "id": "willow",
+    "name": "Willow",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Roots from a broken branch lying on wet ground. Its bark sap is rich in salicin."
+  },
+  {
+    "id": "salicin",
+    "name": "Salicin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Bitter as quinine. The gut turns it into salicylic acid — the compound aspirin was built on."
+  },
+  {
+    "id": "winter_wheat",
+    "name": "Winter Wheat",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "terminal": true,
+    "fact": "Sown in autumn. It will not flower until weeks of 1–7 °C have switched off its FLC repressor."
+  },
+  {
+    "id": "gibberellin",
+    "name": "Gibberellin",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "microbe"
+    ],
+    "fact": "A growth hormone, found first in a fungus that made rice grow too tall to hold itself up."
+  },
+  {
+    "id": "semi_dwarf_wheat",
+    "name": "Semi-Dwarf Wheat",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "terminal": true,
+    "fact": "Norin 10's Rht1 and Rht2, crossed in by Borlaug. Short straw, heavy head, and it stays upright."
+  },
+  {
+    "id": "graft",
+    "name": "Graft",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Cambium pressed to cambium. The top keeps its own genes, so the fruit is the scion's."
+  },
+  {
+    "id": "phytochrome",
+    "name": "Phytochrome",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A light sensor built from a cracked-open haem ring. Red switches it on, far-red switches it back."
+  },
+  {
+    "id": "foxglove",
+    "name": "Foxglove",
+    "emoji": "🔔",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Rosette one year, spire the next, then dead. Leaves, flowers and seeds all carry the poison."
+  },
+  {
+    "id": "digoxin",
+    "name": "Digoxin",
+    "emoji": "❤️",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Isolated in 1930 from the woolly foxglove, not the garden one. It blocks the sodium-potassium pump."
+  },
+  {
+    "id": "capsicum",
+    "name": "Capsicum",
+    "emoji": "🫑",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "One species. Capsaicin sits in the white pith the seeds hang off, not in the seeds themselves."
+  },
+  {
+    "id": "paprika",
+    "name": "Paprika",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Dried mild Capsicum annuum, ground. Red from carotenoids; as extract E160c it colours food."
+  },
+  {
+    "id": "pectin",
+    "name": "Pectin",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "The glue between plant cells. Ripening enzymes cut it, and that is why fruit goes soft."
+  },
+  {
+    "id": "lanolin",
+    "name": "Lanolin",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "The grease sheep secrete to keep rain out of their fleece. Washed from the wool, it goes into ointments."
+  },
+  {
+    "id": "tallow",
+    "name": "Tallow",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "fact": "Rendered beef or mutton suet. Solid at room temperature, and it keeps for months without a fridge."
+  },
+  {
+    "id": "horn",
+    "name": "Horn",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A keratin sheath over a living bone core. Grown for life and never shed, which an antler is not."
+  },
+  {
+    "id": "antler",
+    "name": "Antler",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Solid bone, grown and dropped every year. No other mammal bone grows faster."
+  },
+  {
+    "id": "feather",
+    "name": "Feather",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Beta-keratin grown from a follicle. Barbs hook to barbs with tiny barbicels to make an airtight vane."
+  },
+  {
+    "id": "down",
+    "name": "Down",
+    "emoji": "🧥",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "The under-layer with no hooks on its barbules, so it traps air instead of making a flight surface."
+  },
+  {
+    "id": "oyster",
+    "name": "Oyster",
+    "emoji": "🦪",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "A filter feeder that builds its own stone house. One can pull 190 litres of water through its gills a day."
+  },
+  {
+    "id": "pearl",
+    "name": "Pearl",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "terminal": true,
+    "fact": "Nacre wrapped around an intruder by the mantle. Rarely the grain of sand of the story."
+  },
+  {
+    "id": "nacre",
+    "name": "Nacre",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "terminal": true,
+    "fact": "Aragonite tablets half a micrometre thick, stacked in protein. That thickness is why it shimmers."
+  },
+  {
+    "id": "lac_insect",
+    "name": "Lac insect",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A scale insect that settles on a twig, feeds on sap, and coats the whole branch in resin."
+  },
+  {
+    "id": "shellac",
+    "name": "Shellac",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Insect resin melted, filtered and flaked. Dissolved in alcohol it is a varnish; pressed, it was a record."
+  },
+  {
+    "id": "cochineal",
+    "name": "Cochineal",
+    "emoji": "🐞",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A scale insect farmed on prickly pear. Up to a quarter of its dried weight is red dye."
+  },
+  {
+    "id": "carmine",
+    "name": "Carmine",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "fact": "Carminic acid locked to aluminium. The red in yoghurt, sweets and lipstick, and a real allergen."
+  },
+  {
+    "id": "rennet",
+    "name": "Rennet",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "dairy"
+    ],
+    "fact": "Chymosin from the fourth stomach of an unweaned calf — the enzyme that sets milk into curd."
+  },
+  {
+    "id": "whey",
+    "name": "Whey",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "food"
+    ],
+    "fact": "What runs off the cut curd: water, lactose, and the milk proteins rennet leaves alone."
+  },
+  {
+    "id": "ricotta",
+    "name": "Ricotta",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Recooked. Heat coagulates the whey proteins that rennet could not touch."
+  },
+  {
+    "id": "swim_bladder",
+    "name": "Swim bladder",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "A gas bag that holds a fish at depth without swimming. It is the same organ as a lung."
+  },
+  {
+    "id": "isinglass",
+    "name": "Isinglass",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Dried fish swim bladder, nearly pure collagen. It drags the yeast out of beer."
+  },
+  {
+    "id": "roe",
+    "name": "Roe",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "The ripe egg mass of a fish. A single salmon redd can hold five thousand of them."
+  },
+  {
+    "id": "whale",
+    "name": "Whale",
+    "emoji": "🐋",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A mammal that went back to the sea. It breathes air and feeds its calf milk the thickness of paste."
+  },
+  {
+    "id": "ambergris",
+    "name": "Ambergris",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Sperm whale gut secretion, weathered at sea for years until it stops smelling foul."
+  },
+  {
+    "id": "baleen",
+    "name": "Baleen",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Keratin plates that strain krill out of a mouthful of sea. Called whalebone, and it is not bone."
+  },
+  {
+    "id": "ox",
+    "name": "Ox",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A castrated bull trained to pull. Calm, heavy and steady all day — the engine before engines."
+  },
+  {
+    "id": "manure",
+    "name": "Manure",
+    "emoji": "💩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "earth"
+    ],
+    "fact": "Most of the nitrogen a grazing animal eats leaves again in the dung, ready for the next crop."
+  },
+  {
+    "id": "parchment",
+    "name": "Parchment",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "fact": "Limed skin dried under tension, never tanned. It buckles whenever the air turns damp."
+  },
+  {
+    "id": "sinew",
+    "name": "Sinew",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Tendon: collagen all lined up one way. Enormously strong along it, useless across it."
+  },
+  {
+    "id": "ivory",
+    "name": "Ivory",
+    "emoji": "🐘",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Dentine from a tusk that never stopped growing. Polished, it shows a crosshatch nothing else has."
+  },
+  {
+    "id": "royal_jelly",
+    "name": "Royal jelly",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Fed to a larva for the whole of its growth, it makes a queen out of a would-be worker."
+  },
+  {
+    "id": "s_thermophilus",
+    "name": "S. thermophilus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "dairy"
+    ],
+    "fact": "Named heat-liking, and it means it: best growth 35–42 °C. Turns milk's lactose into lactic acid."
+  },
+  {
+    "id": "l_bulgaricus",
+    "name": "L. bulgaricus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "dairy"
+    ],
+    "fact": "Isolated from Bulgarian yoghurt in 1905 and named for the country. Grows best at 40–44 °C."
+  },
+  {
+    "id": "l_acidophilus",
+    "name": "L. acidophilus",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Acid-loving, literally: grows most readily below pH 5. A gut and mouth organism, not a milk one."
+  },
+  {
+    "id": "bifidobacterium",
+    "name": "Bifidobacterium",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Branched and Y-shaped — bifid — and anaerobic. The commonest bacterium in an infant's gut."
+  },
+  {
+    "id": "l_paracasei",
+    "name": "L. paracasei",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "dairy"
+    ],
+    "terminal": true,
+    "fact": "Not a starter. It arrives later, grows in ripening cheese, and takes the proteins apart as it goes."
+  },
+  {
+    "id": "l_plantarum",
+    "name": "L. plantarum",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "The plant one. Grows anywhere from pH 3.4 to 8.8, and at 15 °C but not at 45."
+  },
+  {
+    "id": "leuconostoc",
+    "name": "Leuconostoc",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Lives on the skins of fruit and vegetables. Heterofermentative: it gives off CO₂ as well as acid."
+  },
+  {
+    "id": "lactococcus",
+    "name": "Lactococcus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "dairy"
+    ],
+    "fact": "The cheese and buttermilk bacterium. Dairy strains are plant strains that shed the genes milk made useless."
+  },
+  {
+    "id": "acetobacter",
+    "name": "Acetobacter",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "ferment"
+    ],
+    "fact": "Turns ethanol into acetic acid, and needs oxygen to do it. Pasteur found the first one in 1864."
+  },
+  {
+    "id": "penicillium",
+    "name": "Penicillium",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A soil mould of cool climates, over 300 species. One of them is why there is antibiotic in this game."
+  },
+  {
+    "id": "koji",
+    "name": "Koji",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "ferment"
+    ],
+    "fact": "Aspergillus oryzae grown on steamed grain. Its aflatoxin genes are still there and no longer work."
+  },
+  {
+    "id": "kefir_grains",
+    "name": "Kefir Grains",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "dairy"
+    ],
+    "fact": "Not an organism: bacteria and yeasts living in a matrix of the polysaccharide kefiran."
+  },
+  {
+    "id": "lactic_acid",
+    "name": "Lactic Acid",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "What homofermentative bacteria make from glucose: two lactate, two ATP, and no gas at all."
+  },
+  {
+    "id": "acetic_acid",
+    "name": "Acetic Acid",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "The sour in vinegar. Freezes to ice-like crystals just below room temperature, at 16.6 °C."
+  },
+  {
+    "id": "yoghurt_culture",
+    "name": "Yoghurt Culture",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "ferment"
+    ],
+    "fact": "Each feeds the other: amino acids from milk protein one way, folic and formic acid the other."
+  },
+  {
+    "id": "starter_culture",
+    "name": "Starter Culture",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "ferment"
+    ],
+    "fact": "The culture that actually performs the fermentation, kept alive off the food by freeze-drying."
+  },
+  {
+    "id": "pasteurised_milk",
+    "name": "Pasteurised Milk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Heated enough to kill the pathogens and not enough to sterilise. Most bacterial spores come through."
+  },
+  {
+    "id": "souring_kraut",
+    "name": "Souring Kraut",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "ferment",
+      "preserve"
+    ],
+    "fact": "Phase two in the crock: Leuconostoc has taken dominance, and the gas coming off is its doing."
+  },
+  {
+    "id": "kefir",
+    "name": "Kefir",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "ferment"
+    ],
+    "terminal": true,
+    "fact": "Sour, fizzy and faintly alcoholic — because yeasts ferment it alongside the bacteria."
+  },
+  {
+    "id": "buttermilk",
+    "name": "Buttermilk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "terminal": true,
+    "fact": "What is left in the churn after souring the cream. Under 0.5 per cent fat."
+  },
+  {
+    "id": "miso",
+    "name": "Miso",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "ferment",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Soybeans, salt and koji, left until the mould's enzymes have taken the beans apart."
+  },
+  {
+    "id": "camembert",
+    "name": "Camembert",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "terminal": true,
+    "fact": "Ripened from the rind inwards by a mould sprayed on the outside, for at least three weeks."
   }
 ]

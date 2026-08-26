@@ -10608,5 +10608,1029 @@
     "why": "Liver glycogen goes back out into the blood; muscle glycogen never does. Muscle lacks glucose 6-phosphatase, so the glycogen they store is available solely for internal use and is not shared with other cells.",
     "src": "https://en.wikipedia.org/wiki/Glycogen",
     "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "sand"
+    ],
+    "out": "cactus",
+    "why": "Where water is scarce, opening the pores by day is fatal. A cactus keeps its stomata shut through the day and opens them at night instead — 99% of the 1,700 cactus species run photosynthesis that way round.",
+    "src": "https://en.wikipedia.org/wiki/Crassulacean_acid_metabolism",
+    "verified": true
+  },
+  {
+    "in": [
+      "cactus",
+      "carbon_dioxide"
+    ],
+    "out": "malic_acid",
+    "why": "The night's carbon dioxide is parked as four-carbon malic acid in the cell vacuoles. Come daylight the malate goes to the chloroplasts, turns back into CO2, and feeds the Calvin cycle behind closed pores.",
+    "src": "https://en.wikipedia.org/wiki/Crassulacean_acid_metabolism",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "potassium"
+    ],
+    "out": "stoma",
+    "why": "A guard cell opens the pore by taking potassium in. Water follows by osmosis, the cell swells, and the pair bow apart. Plants cannot take in carbon dioxide without losing water vapour through the same hole.",
+    "src": "https://en.wikipedia.org/wiki/Stoma",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "water"
+    ],
+    "out": "xylem",
+    "why": "Water is not pushed up a tree, it is pulled. Evaporation at the leaves puts the whole column under negative pressure, and hydrogen bonds between water molecules hold it together. The cells doing it are dead.",
+    "src": "https://en.wikipedia.org/wiki/Xylem",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "sugar"
+    ],
+    "out": "phloem",
+    "why": "The other pipe, and it runs the other way. Sugar made in the leaf is loaded into cells that are still alive, and positive pressure pushes the sap to wherever it is being spent — a root, a fruit, a new shoot.",
+    "src": "https://en.wikipedia.org/wiki/Phloem",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "xylem"
+    ],
+    "out": "sap",
+    "why": "Xylem sap runs up from the roots carrying water and minerals; phloem sap runs down carrying sucrose. Latex and resin are neither of them — separate substances, separately made, doing a different job.",
+    "src": "https://en.wikipedia.org/wiki/Sap",
+    "verified": true
+  },
+  {
+    "in": [
+      "phloem",
+      "wood"
+    ],
+    "out": "bark",
+    "why": "Bark is not a skin. It is everything outside the growing layer, and the innermost part of it is the living phloem. Cut a ring of bark the whole way round and the roots are starved: the tree dies.",
+    "src": "https://en.wikipedia.org/wiki/Bark_(botany)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark"
+    ],
+    "verb": "cut",
+    "out": "cork",
+    "why": "The cork oak grows a bark thick enough to strip without killing the tree, and then grows it back. The cells inside are dead and full of gas, which is why cork floats, springs back, and keeps water out.",
+    "src": "https://en.wikipedia.org/wiki/Cork_(material)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cellulose",
+      "xylem"
+    ],
+    "out": "lignin",
+    "why": "Cellulose fibres on their own would buckle. Lignin is the water-hating polymer set between them — 20 to 35% of dry wood — and it is why a trunk stands up, why the water pipes hold, and why wood resists rot.",
+    "src": "https://en.wikipedia.org/wiki/Lignin",
+    "verified": true
+  },
+  {
+    "in": [
+      "lignin",
+      "lye"
+    ],
+    "out": "pulp",
+    "why": "Paper needs the lignin gone: it is coloured, it yellows in air, and it weakens the sheet. Lye and sulfide at 170 °C break the bonds tying it to the fibres, and about half the dry wood is left as pulp.",
+    "src": "https://en.wikipedia.org/wiki/Kraft_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "tannin",
+      "tree"
+    ],
+    "out": "oak",
+    "why": "Some 500 oaks, and every one loads leaf, acorn and bark with tannic acid against fungi and insects. It is why acorns must be leached before people can eat them, and why oak bark tanned the Old World's leather.",
+    "src": "https://en.wikipedia.org/wiki/Oak",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "tree"
+    ],
+    "out": "pine",
+    "why": "An evergreen keeps working whenever the weather lets it, and pays for that with needles: small, waxed, losing little water while the ground is frozen. Resin canals in the wood flood a wound and trap what caused it.",
+    "src": "https://en.wikipedia.org/wiki/Pinophyta",
+    "verified": true
+  },
+  {
+    "in": [
+      "oak"
+    ],
+    "verb": "cut",
+    "out": "hardwood",
+    "why": "Hardwood means wood from a flowering tree, and the giveaway under a lens is pores — vessels, wide tubes carrying water. It does not mean hard. Balsa is a hardwood and is softer than most softwoods.",
+    "src": "https://en.wikipedia.org/wiki/Hardwood",
+    "verified": true
+  },
+  {
+    "in": [
+      "pine"
+    ],
+    "verb": "cut",
+    "out": "softwood",
+    "why": "A conifer has no vessels at all. Water and support both go through tracheids, narrow cells doing the two jobs at once. Yew is a softwood, and it is harder than a good many hardwoods.",
+    "src": "https://en.wikipedia.org/wiki/Softwood",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "tree"
+    ],
+    "out": "bamboo",
+    "why": "Tree-sized, and still a grass. A culm comes out of the ground already at its final diameter and reaches full height in a single season — some species 91 cm in a day, close to 40 mm an hour.",
+    "src": "https://en.wikipedia.org/wiki/Bamboo",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "seed"
+    ],
+    "out": "coconut",
+    "why": "A husk built to float: thick, fibrous, sharply ridged. Coconuts really do colonise beaches this way — but drift models say they could not have crossed the Pacific unaided. Austronesian sailors carried them.",
+    "src": "https://en.wikipedia.org/wiki/Coconut",
+    "verified": true
+  },
+  {
+    "in": [
+      "coconut"
+    ],
+    "verb": "cut",
+    "out": "coconut_water",
+    "why": "The water is the endosperm, still liquid. Layers of it settle onto the shell wall and set as the white flesh — so the drink and the meat are the same tissue caught at two different ages.",
+    "src": "https://en.wikipedia.org/wiki/Coconut",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "tree"
+    ],
+    "out": "mangrove",
+    "why": "Roots so heavily suberised they act as an ultrafilter, keeping sodium out; whatever salt does get in is concentrated into old leaves and shed. Some species push breathing tubes up out of the airless mud.",
+    "src": "https://en.wikipedia.org/wiki/Mangrove",
+    "verified": true
+  },
+  {
+    "in": [
+      "flax",
+      "phloem"
+    ],
+    "out": "bast_fibre",
+    "why": "The fibre in linen, hemp and jute is phloem fibre out of the stem. Retting frees it — micro-organisms rot away the pectin gluing the bundles on. Leaf fibres, like sisal, come out hard and stiff instead.",
+    "src": "https://en.wikipedia.org/wiki/Bast_fibre",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "sugar"
+    ],
+    "out": "sugar_beet",
+    "why": "The same sucrose as cane, out of a temperate taproot instead of a tropical stalk. The leaves make it and the root banks it: 12 to 21% by weight, bred up from 8% over two hundred years.",
+    "src": "https://en.wikipedia.org/wiki/Sugar_beet",
+    "verified": true
+  },
+  {
+    "in": [
+      "sugar_beet"
+    ],
+    "verb": "heat",
+    "out": "sugar",
+    "why": "Cane is crushed and the juice pressed out of it. Beet is sliced into strips called cossettes and the sucrose is drawn out of the cells into water instead. Two plants, two methods, and the sugar is identical.",
+    "src": "https://en.wikipedia.org/wiki/Sugar_beet",
+    "verified": true
+  },
+  {
+    "in": [
+      "rain",
+      "tree"
+    ],
+    "out": "rubber_tree",
+    "why": "Hevea brasiliensis is Amazonian and is barely grown in the Amazon. South American leaf blight, the fungus Pseudocercospora ulei, ended plantations in its own homeland — the world's rubber grows in Asia instead.",
+    "src": "https://en.wikipedia.org/wiki/Hevea_brasiliensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber_tree"
+    ],
+    "verb": "cut",
+    "out": "latex",
+    "why": "Tapping is a shallow cut on a spiral. The latex vessels sit in the bark, mostly outside the phloem, and the cut goes just deep enough to open them without touching the growing wood, so the tree carries on.",
+    "src": "https://en.wikipedia.org/wiki/Hevea_brasiliensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "fig",
+      "tree"
+    ],
+    "out": "mulberry",
+    "why": "Same family as the fig, Moraceae, and the same trick: what looks like one fruit is many. A mulberry is a multiple fruit two to three centimetres long, built from a whole cluster of separate flowers.",
+    "src": "https://en.wikipedia.org/wiki/Morus_(plant)",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "mulberry"
+    ],
+    "out": "silkworm",
+    "why": "Bombyx mori eats mulberry leaves and nothing else, drawn to the mulberry odorant cis-jasmone. Thousands of years of breeding then left it unable to fly or fend for itself; it does not exist in the wild.",
+    "src": "https://en.wikipedia.org/wiki/Bombyx_mori",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "tree"
+    ],
+    "out": "willow",
+    "why": "Willows live on wet ground and barely bother with seed. Almost any cutting will root, and so will a broken branch that simply falls and lies there. The bark sap is rich in salicin.",
+    "src": "https://en.wikipedia.org/wiki/Salix",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "willow"
+    ],
+    "out": "salicin",
+    "why": "The bitter compound in willow bark. The gut turns it into salicylic acid, which is the part that works. Bayer acetylated that in 1897 to make something less punishing on the stomach, and called it aspirin.",
+    "src": "https://en.wikipedia.org/wiki/Aspirin",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheat"
+    ],
+    "verb": "chill",
+    "at": 4,
+    "out": "winter_wheat",
+    "why": "Autumn-sown wheat will not flower until it has had a long spell of cold — weeks somewhere between 1 and 7 °C. The cold switches off a repressor protein, FLC, and the plant carries the memory of that winter forward.",
+    "src": "https://en.wikipedia.org/wiki/Vernalization",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "rice"
+    ],
+    "out": "gibberellin",
+    "why": "Named after a rice disease. Gibberella fujikuroi floods a seedling with a surplus of growth hormone until it goes long, weak and pale — bakanae, the foolish seedling. The plant's own version drives stem growth.",
+    "src": "https://en.wikipedia.org/wiki/Bakanae",
+    "verified": true
+  },
+  {
+    "in": [
+      "gibberellin",
+      "wheat"
+    ],
+    "out": "semi_dwarf_wheat",
+    "why": "Gibberellin is what drives the stem up, so wheat bred to make less of it stays short. Short straw does not go top-heavy and fall over under heavy fertiliser, and it puts the difference into grain instead.",
+    "src": "https://en.wikipedia.org/wiki/Gibberellin",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple",
+      "cutting"
+    ],
+    "out": "graft",
+    "why": "Apples do not come true from seed — one tree's fruit can vary in size, colour and flavour. So every named variety is a cutting joined to a rootstock, cambium pressed to cambium; the top stays itself, the root sets the size.",
+    "src": "https://en.wikipedia.org/wiki/Grafting",
+    "verified": true
+  },
+  {
+    "in": [
+      "heme",
+      "leaf"
+    ],
+    "out": "phytochrome",
+    "why": "A short-day plant is really a long-night plant. Red light through the day flips phytochrome to its active form — and a few minutes of light in the middle of the night is enough to stop the plant flowering.",
+    "src": "https://en.wikipedia.org/wiki/Photoperiodism",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "meadow"
+    ],
+    "out": "foxglove",
+    "why": "A biennial: a flat rosette the first year, a spire the second, then it dies. It colonises ground that has been cleared or burnt, and bees climb right inside the tube. Leaves, flowers and seeds are all poisonous.",
+    "src": "https://en.wikipedia.org/wiki/Digitalis_purpurea",
+    "verified": true
+  },
+  {
+    "in": [
+      "foxglove"
+    ],
+    "verb": "crush",
+    "out": "digoxin",
+    "why": "It jams the sodium-potassium pump in heart muscle. Sodium builds up inside the cell, calcium follows it in, and every beat pulls harder. The margin between the dose that works and the dose that poisons is famously narrow.",
+    "src": "https://en.wikipedia.org/wiki/Digoxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "chilli",
+      "seed"
+    ],
+    "out": "capsicum",
+    "why": "Bell pepper, paprika, jalapeño and cayenne are not different plants. They are cultivars of one species, Capsicum annuum, and what separates them is how much capsaicin they hold — from none at all to a very great deal.",
+    "src": "https://en.wikipedia.org/wiki/Capsicum_annuum",
+    "verified": true
+  },
+  {
+    "in": [
+      "capsicum"
+    ],
+    "verb": "crush",
+    "out": "paprika",
+    "why": "The same species as cayenne, bred the other way. On the Scoville scale a bell pepper is 0 and a pimiento 0 to 500, while a cayenne runs 25,000 to 50,000. The scale counts capsaicinoids and nothing else.",
+    "src": "https://en.wikipedia.org/wiki/Scoville_scale",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple",
+      "lemon"
+    ],
+    "out": "pectin",
+    "why": "The two things pectin is actually made from: dried citrus peel is 85% of world production and apple pomace 14%, both of them left over from juicing. In the fruit it is the glue of the middle lamella, holding cell to cell.",
+    "src": "https://en.wikipedia.org/wiki/Pectin",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "wool"
+    ],
+    "out": "lanolin",
+    "why": "Sheep secrete lanolin from the glands that oil their skin, and it waterproofs the fleece from outside. Wash raw wool in hot water and the grease comes out with the dirt — that is where every tub of it starts.",
+    "src": "https://en.wikipedia.org/wiki/Lanolin",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "fire"
+    ],
+    "out": "tallow",
+    "why": "Rendering: heat dries the material and lets the fat separate from bone and protein. Suet run this way comes out hard at room temperature and keeps for months, which raw fat does not.",
+    "src": "https://en.wikipedia.org/wiki/Rendering_(animal_products)",
+    "verified": true
+  },
+  {
+    "in": [
+      "lye",
+      "tallow"
+    ],
+    "out": "soap",
+    "why": "The lye is consumed doing the work: it hydrolyses the triglyceride into glycerol and the fatty-acid salts that are the soap. Soda lye gives a firm bar, potash lye a soft or liquid one.",
+    "src": "https://en.wikipedia.org/wiki/Soap",
+    "verified": true
+  },
+  {
+    "in": [
+      "straw",
+      "tallow"
+    ],
+    "out": "candle",
+    "why": "The cheap candle. Beeswax burns without smoke or smell and almost nobody could afford it, so households burned tallow instead and put up with what tallow does to a room.",
+    "src": "https://en.wikipedia.org/wiki/Candle",
+    "verified": true
+  },
+  {
+    "in": [
+      "goat",
+      "keratin"
+    ],
+    "out": "horn",
+    "why": "A horn is a keratin sheath — hair and hoof protein — grown over a core of living bone. It is permanent, and that is the entire difference from an antler: horn is never shed.",
+    "src": "https://en.wikipedia.org/wiki/Horn_(anatomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "horn"
+    ],
+    "out": "lamp",
+    "why": "Horn is thermoplastic. Heat it just past the boiling point of water and it softens enough to press in a die; cut into strips it made the semi-transparent windows people glazed lanterns with before glass was cheap.",
+    "src": "https://en.wikipedia.org/wiki/Horn_(anatomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer"
+    ],
+    "verb": "wait",
+    "out": "antler",
+    "why": "An antler is bone, not horn. A stag grows a whole set each year under a living skin called velvet that feeds it oxygen and nutrients, then drops it — and while it grows it lays bone down faster than any other mammal bone.",
+    "src": "https://en.wikipedia.org/wiki/Antler",
+    "verified": true
+  },
+  {
+    "in": [
+      "antler",
+      "stone"
+    ],
+    "out": "flint",
+    "why": "Neolithic miners sank shafts through chalk to reach flint seams using picks made from red deer antler. Grime's Graves has at least 433 shafts, and the pits excavated up to 2008 averaged 142.5 antler picks each.",
+    "src": "https://en.wikipedia.org/wiki/Grime%27s_Graves",
+    "verified": true
+  },
+  {
+    "in": [
+      "duck",
+      "keratin"
+    ],
+    "out": "feather",
+    "why": "A feather grows from a follicle in the skin, out of the same keratin family as horn and claw. Barbs branch off the shaft into barbules, and hooks called barbicels zip neighbouring barbules together into a sheet that holds air.",
+    "src": "https://en.wikipedia.org/wiki/Feather",
+    "verified": true
+  },
+  {
+    "in": [
+      "duck",
+      "feather"
+    ],
+    "out": "down",
+    "why": "Down is the layer underneath, and its barbules have no hooks — they float free of each other instead of locking up. Nothing there to make a flight surface, everything to trap air, and that is the whole of why it is warm.",
+    "src": "https://en.wikipedia.org/wiki/Down_feather",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "shell"
+    ],
+    "out": "oyster",
+    "why": "The animal that made the shell. An oyster feeds by beating cilia to draw seawater across its gills and straining what is in it — up to 190 litres a day in the lab — so a bed of them is also a filter.",
+    "src": "https://en.wikipedia.org/wiki/Oyster",
+    "verified": true
+  },
+  {
+    "in": [
+      "oyster",
+      "sand"
+    ],
+    "out": "pearl",
+    "why": "The mantle wraps an intruder in the same nacre it lines the shell with, layer on layer. The intruder is usually organic — a parasite, or displaced mantle tissue. A grain of sand rarely does it, whatever the story says.",
+    "src": "https://en.wikipedia.org/wiki/Pearl",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell"
+    ],
+    "verb": "cut",
+    "out": "nacre",
+    "why": "The shell's inner lining: aragonite tablets about 0.5 µm thick stacked between sheets of protein. That thickness is close to the wavelength of visible light, so the layers interfere and the colour you see is structure, not pigment.",
+    "src": "https://en.wikipedia.org/wiki/Nacre",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "tree"
+    ],
+    "out": "lac_insect",
+    "why": "Thousands of these scale insects settle on a host tree's branches, feed on the sap and secrete resin until the twigs are encrusted with it. The coated branches are then cut off whole and sold as sticklac.",
+    "src": "https://en.wikipedia.org/wiki/Lac_(resin)",
+    "verified": true
+  },
+  {
+    "in": [
+      "lac_insect"
+    ],
+    "verb": "heat",
+    "out": "shellac",
+    "why": "Sticklac is heated in canvas tubes until the resin liquefies and seeps through, leaving bark and insects behind. Dried and broken into flakes it is shellac — a varnish once alcohol dissolves it, and once the substance of records.",
+    "src": "https://en.wikipedia.org/wiki/Shellac",
+    "verified": true
+  },
+  {
+    "in": [
+      "cactus",
+      "egg"
+    ],
+    "out": "cochineal",
+    "why": "Cochineal is a scale insect that lives on Opuntia cactus, feeding on its moisture and nutrients. It makes carminic acid — 17 to 24% of a dried insect's weight — and the acid is there to stop other insects eating it.",
+    "src": "https://en.wikipedia.org/wiki/Cochineal",
+    "verified": true
+  },
+  {
+    "in": [
+      "cochineal"
+    ],
+    "verb": "crush",
+    "out": "carmine",
+    "why": "The dye is crushed out of the dried insect and complexed with aluminium; that complex is carmine. It colours yoghurt, sweets, meat and fruit juice — and it is insect protein, which is why it is a real allergen.",
+    "src": "https://en.wikipedia.org/wiki/Carmine",
+    "verified": true
+  },
+  {
+    "in": [
+      "carmine",
+      "cloth"
+    ],
+    "out": "clothing",
+    "why": "A dye this bright still needs a mordant to stay put. The mordant forms a coordination complex with the dye and that complex attaches to the fibre — heavier, and bonded, so the colour survives washing.",
+    "src": "https://en.wikipedia.org/wiki/Mordant",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "enzyme"
+    ],
+    "out": "rennet",
+    "why": "Rennet comes from the lining of the abomasum, the fourth stomach chamber of a calf still nursing. Each ruminant makes a rennet tuned to its own species' milk, so the calf's own gut clots what it drinks and holds it there longer.",
+    "src": "https://en.wikipedia.org/wiki/Rennet",
+    "verified": true
+  },
+  {
+    "in": [
+      "milk",
+      "rennet"
+    ],
+    "out": "curd",
+    "why": "Chymosin cuts kappa-casein at one bond, between residues 105 and 106. That takes off the water-loving tail holding the micelles apart, and the water-hating remains link into a 3D net that traps the liquid. Acid curdling is a different thing.",
+    "src": "https://en.wikipedia.org/wiki/Chymosin",
+    "verified": true
+  },
+  {
+    "in": [
+      "curd"
+    ],
+    "verb": "cut",
+    "out": "whey",
+    "why": "Cutting the set gel lets it contract and press out the whey — syneresis. How small the cut is decides how much drains, and how much drains decides whether the cheese ends up soft or firm.",
+    "src": "https://en.wikipedia.org/wiki/Cheesemaking",
+    "verified": true
+  },
+  {
+    "in": [
+      "whey"
+    ],
+    "verb": "heat",
+    "at": 85,
+    "out": "ricotta",
+    "why": "Rennet never clotted the whey proteins, so they are still dissolved in what drained away. Heat close to boiling denatures them and they flocculate into a fine curd. Ricotta means recooked, and that is exactly what it is.",
+    "src": "https://en.wikipedia.org/wiki/Ricotta",
+    "supported": true
+  },
+  {
+    "in": [
+      "air",
+      "fish"
+    ],
+    "out": "swim_bladder",
+    "why": "A gas-filled organ inside a bony fish, trimmed to match the density of the water so the animal can hold a depth without swimming to stay there. It is the same organ as a lung — the two are homologous.",
+    "src": "https://en.wikipedia.org/wiki/Swim_bladder",
+    "verified": true
+  },
+  {
+    "in": [
+      "swim_bladder"
+    ],
+    "verb": "blow",
+    "out": "isinglass",
+    "why": "Dried swim bladder is almost pure collagen. Stir it into a cask and it flocculates the live yeast still hanging in the beer into a jelly that settles out — which is how a pint is made clear without filtering it.",
+    "src": "https://en.wikipedia.org/wiki/Isinglass",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "river"
+    ],
+    "out": "roe",
+    "why": "Salmon feed for years at sea and come back to the river they hatched in — magnetoreception to find the coast, then smell to find the mouth. Roe is the ripe egg mass they spawn there; one redd can hold five thousand eggs.",
+    "src": "https://en.wikipedia.org/wiki/Salmon_run",
+    "verified": true
+  },
+  {
+    "in": [
+      "milk",
+      "sea"
+    ],
+    "out": "whale",
+    "why": "A whale is a mammal that went back to the water. It has to surface to breathe, and it nurses — squirting the milk into the calf's mouth, because it cannot do it any other way underwater. That milk is so fat it has the consistency of toothpaste.",
+    "src": "https://en.wikipedia.org/wiki/Whale",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "whale"
+    ],
+    "out": "ambergris",
+    "why": "Ambergris starts as a bile-duct secretion in a sperm whale's intestine, probably to get squid beaks through it — beaks turn up inside the lumps. Passed out at sea it floats for years, and only after that weathering does the faecal smell turn sweet.",
+    "src": "https://en.wikipedia.org/wiki/Ambergris",
+    "verified": true
+  },
+  {
+    "in": [
+      "whale"
+    ],
+    "verb": "cut",
+    "out": "baleen",
+    "why": "Baleen is keratin — fingernail protein — in bristled plates across the upper jaw. The whale takes a mouthful of sea and pushes it out through the rack, keeping whatever will not go through. It is called whalebone, and it is not bone.",
+    "src": "https://en.wikipedia.org/wiki/Baleen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "wood"
+    ],
+    "out": "ox",
+    "why": "An ox is cattle trained to draught, and castrated first: without testosterone the animal is docile enough to work alongside. They are yoked in pairs — light loads take one pair, heavy work simply adds more.",
+    "src": "https://en.wikipedia.org/wiki/Ox",
+    "verified": true
+  },
+  {
+    "in": [
+      "ox",
+      "plough"
+    ],
+    "out": "field",
+    "why": "A mouldboard in heavy ground needs steady pull rather than speed, and that is what an ox is for: ploughing, hauling carts and wagons, and threshing grain by walking on it.",
+    "src": "https://en.wikipedia.org/wiki/Ox",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow"
+    ],
+    "verb": "wait",
+    "out": "manure",
+    "why": "What the animal did not keep. Dung puts organic matter and nutrients back — nitrogen above all — for the soil's bacteria and fungi to work on, and it improves the soil's structure so it holds more water and more nutrients.",
+    "src": "https://en.wikipedia.org/wiki/Manure",
+    "verified": true
+  },
+  {
+    "in": [
+      "manure",
+      "straw"
+    ],
+    "out": "soil",
+    "why": "Composting wants a carbon-to-nitrogen ratio near 25 to 1. Dung is the nitrogen, straw is the carbon, and get the balance right and the heap heats itself to somewhere around 54–71 °C on the work of its own bacteria.",
+    "src": "https://en.wikipedia.org/wiki/Compost",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "quicklime"
+    ],
+    "out": "parchment",
+    "why": "Lime loosens the hair so the skin can be scraped bare, and then it is dried stretched on a frame rather than tanned. That is the whole difference from leather — and it is why parchment buckles when the humidity moves.",
+    "src": "https://en.wikipedia.org/wiki/Parchment",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "parchment"
+    ],
+    "out": "book",
+    "why": "Parchment takes ink on both sides and outlasts papyrus, which is what made a bound codex worth making. It also never settles: parchment books needed wooden boards and clasps to hold the leaves flat against changes in damp.",
+    "src": "https://en.wikipedia.org/wiki/Parchment",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "muscle"
+    ],
+    "out": "sinew",
+    "why": "The tendon that ties one to the other: collagen fibres bundled into fascicles all running the same way, which is why it takes an enormous pull along its length. Dried and split it makes cordage that shrinks tight as it dries, so it needs no knot.",
+    "src": "https://en.wikipedia.org/wiki/Tendon",
+    "verified": true
+  },
+  {
+    "in": [
+      "elephant"
+    ],
+    "verb": "cut",
+    "out": "ivory",
+    "why": "A tusk is an incisor that never stopped growing, and it is dentine, not bone — 35 on the Vickers scale, harder than bone is. Polished, its mineralised collagen shows a checkerboard called the Schreger pattern, and that is what identification looks for.",
+    "src": "https://en.wikipedia.org/wiki/Ivory",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "egg"
+    ],
+    "out": "royal_jelly",
+    "why": "Worker bees secrete it from glands in their heads. A larva fed large amounts of it becomes a queen; a larva with identical DNA raised on ordinary food becomes a worker, and the two adults end up strongly different animals.",
+    "src": "https://en.wikipedia.org/wiki/Royal_jelly",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria"
+    ],
+    "verb": "heat",
+    "at": 40,
+    "out": "s_thermophilus",
+    "why": "Thermophilus means heat-liking, from thermē, heat, and philus, to like. Its best growth is 35–42 °C, and its yoghurt partner L. d. bulgaricus prefers it hotter still, 43–46 °C. Warm milk decides which bacteria you get.",
+    "src": "https://en.wikipedia.org/wiki/Streptococcus_thermophilus",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "milk"
+    ],
+    "out": "l_bulgaricus",
+    "why": "Stamen Grigorov found it in Bulgarian yoghurt in 1905, and it still carries the country's name. It is not only a milk organism: the strain GLB44 was extracted from the leaves of a snowdrop.",
+    "src": "https://en.wikipedia.org/wiki/Lactobacillus_delbrueckii_subsp._bulgaricus",
+    "verified": true
+  },
+  {
+    "in": [
+      "l_bulgaricus",
+      "s_thermophilus"
+    ],
+    "out": "yoghurt_culture",
+    "why": "The two are synergistic: S. thermophilus probably supplies L. d. bulgaricus with the folic and formic acid it needs to build purines. Their optima differ — 35–42 °C against 43–46 °C — so warm milk suits both at once.",
+    "src": "https://en.wikipedia.org/wiki/Streptococcus_thermophilus",
+    "verified": true
+  },
+  {
+    "in": [
+      "milk"
+    ],
+    "verb": "heat",
+    "at": 72,
+    "out": "pasteurised_milk",
+    "why": "72 °C for fifteen seconds, or 63 °C for half an hour — two equivalences confirmed by 1943 against the heat-resistant milk pathogens. It is not sterilisation: most bacterial spores come through it intact.",
+    "src": "https://en.wikipedia.org/wiki/Pasteurization",
+    "verified": true
+  },
+  {
+    "in": [
+      "pasteurised_milk",
+      "yoghurt_culture"
+    ],
+    "out": "yoghurt",
+    "why": "Milk held between 30 and 45 °C for four to twelve hours. The bacteria ferment the lactose to lactic acid, the falling pH partially coagulates the casein, and what was a liquid is a soft solid.",
+    "src": "https://en.wikipedia.org/wiki/Yogurt",
+    "verified": true
+  },
+  {
+    "in": [
+      "yoghurt_culture"
+    ],
+    "verb": "chill",
+    "out": "starter_culture",
+    "why": "Freeze-drying is the preferred way to keep the cells viable away from milk, and not all of them survive it. What comes through is a culture that starts the next batch, instead of one that has to be caught again.",
+    "src": "https://en.wikipedia.org/wiki/Lactobacillus_delbrueckii_subsp._bulgaricus",
+    "verified": true
+  },
+  {
+    "in": [
+      "salted_cabbage",
+      "starter_culture"
+    ],
+    "out": "sauerkraut",
+    "why": "Backslopping: a spoonful of the last batch begins the next. It bypasses the first and second waves of bacteria entirely — and those waves are where much of the flavour was being made.",
+    "src": "https://en.wikipedia.org/wiki/Sauerkraut",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "glucose"
+    ],
+    "out": "lactic_acid",
+    "why": "Glucose + 2 ADP + 2 Pi → 2 lactate + 2 ATP. Homofermentative bacteria stop there — no gas, no alcohol. Yeast given the same glucose gives off carbon dioxide instead; the sugar is identical, the organism is not.",
+    "src": "https://en.wikipedia.org/wiki/Lactic_acid_fermentation",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "lactic_acid"
+    ],
+    "out": "l_acidophilus",
+    "why": "Acidophilus is Neo-Latin for acid-loving, and it is not decoration: the species grows most readily below pH 5, at an optimum of 37 °C. It is found in the human gut and mouth — body temperature, not milk temperature.",
+    "src": "https://en.wikipedia.org/wiki/Lactobacillus_acidophilus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria"
+    ],
+    "verb": "smother",
+    "out": "bifidobacterium",
+    "why": "Take the air away and the anaerobes are what is left. Bifidobacterium is often branched — Y-shaped, bifid, which is where the name came from in 1899 — and it is the commonest bacterium in an infant's gut.",
+    "src": "https://en.wikipedia.org/wiki/Bifidobacterium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "cheese"
+    ],
+    "out": "l_paracasei",
+    "why": "It is not a starter. It is somewhat heat resistant, grows well in cheese as the cheese ripens, and is strongly proteolytic — taking apart the proteins the starter organisms left behind.",
+    "src": "https://en.wikipedia.org/wiki/Lacticaseibacillus_paracasei",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "grass"
+    ],
+    "out": "l_plantarum",
+    "why": "Grass cut and packed airtight is silage. Within 48 hours L. plantarum dominates everything else in it, producing lactic and acetic acid that diminish its own competition. It still grows at pH 3.4.",
+    "src": "https://en.wikipedia.org/wiki/Lactiplantibacillus_plantarum",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "fruit"
+    ],
+    "out": "leuconostoc",
+    "why": "Nothing is added: it is already living on the skins of fleshy fruit and vegetables. It is heterolactic, so from glucose it makes ethanol and CO₂ as well as lactate — the gas is the sign it has started.",
+    "src": "https://en.wikipedia.org/wiki/Leuconostoc_mesenteroides",
+    "verified": true
+  },
+  {
+    "in": [
+      "leuconostoc",
+      "salted_cabbage"
+    ],
+    "out": "souring_kraut",
+    "why": "Phase two of three. The first bacteria acidify the brine until it is too sour for themselves, and Leuconostoc species take dominance — souring it further, and giving off the gas that fills the crock.",
+    "src": "https://en.wikipedia.org/wiki/Sauerkraut",
+    "verified": true
+  },
+  {
+    "in": [
+      "l_plantarum",
+      "souring_kraut"
+    ],
+    "out": "sauerkraut",
+    "why": "Phase three, and a handover. The acid Leuconostoc made is too much for Leuconostoc. L. plantarum is untroubled by it, ferments whatever sugars are left, and lowers the pH further still.",
+    "src": "https://en.wikipedia.org/wiki/Sauerkraut",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "plant"
+    ],
+    "out": "lactococcus",
+    "why": "The cheese bacterium began as a plant bacterium. Dairy strains are thought to descend from plant strains that lost or turned down the genes of no benefit in milk — genome erosion, and it has been reproduced in the lab.",
+    "src": "https://en.wikipedia.org/wiki/Lactococcus_lactis",
+    "verified": true
+  },
+  {
+    "in": [
+      "lactococcus",
+      "milk"
+    ],
+    "out": "curd",
+    "why": "It uses enzymes to make ATP from lactose, and lactic acid is the by-product. That acid curdles the milk and the curds separate. Brie, camembert, cheddar, colby, gruyère, parmesan and roquefort all start here.",
+    "src": "https://en.wikipedia.org/wiki/Lactococcus_lactis",
+    "verified": true
+  },
+  {
+    "in": [
+      "cream",
+      "lactococcus"
+    ],
+    "out": "buttermilk",
+    "why": "Souring the cream first is not for flavour. Fat from cream at a lower pH coalesces more readily, so it churns to butter sooner. Buttermilk is what is left behind in the churn: sharp, and under 0.5 per cent fat.",
+    "src": "https://en.wikipedia.org/wiki/Buttermilk",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "ethanol"
+    ],
+    "out": "acetobacter",
+    "why": "Nobody adds them. Acetic acid bacteria are airborne and ubiquitous, active wherever sugars are fermenting to ethanol, and often carried in by fruit flies. Every one of them is an obligate aerobe.",
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid_bacteria",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetobacter",
+      "ethanol"
+    ],
+    "out": "acetic_acid",
+    "why": "C₂H₅OH + O₂ → CH₃COOH + H₂O. This is an oxidation, not a fermentation in the airless sense, so it needs oxygen: dilute alcohol left in a warm, airy place turns over a few months.",
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetic_acid",
+      "water"
+    ],
+    "out": "vinegar",
+    "why": "Vinegar is that one acid, diluted, and nothing cleverer. Traditional vinegars for eating run 4.5 to 7 per cent acidity, which puts the pH somewhere between 2.38 and 3.76.",
+    "src": "https://en.wikipedia.org/wiki/Acetic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "yeast"
+    ],
+    "out": "kefir_grains",
+    "why": "Not one organism but a community, and it builds its own housing: a biofilm of kefiran, a polysaccharide of glucose and galactose in equal parts, with lactobacilli, yeasts and acetic acid bacteria living in it.",
+    "src": "https://en.wikipedia.org/wiki/Kefir",
+    "verified": true
+  },
+  {
+    "in": [
+      "kefir_grains",
+      "milk"
+    ],
+    "out": "kefir",
+    "why": "Grains at two to five per cent of the milk, twelve to twenty-four hours at 20–25 °C. The bacteria make the acid and the yeasts make the gas and a little alcohol, which is why kefir is fizzy and yoghurt is not.",
+    "src": "https://en.wikipedia.org/wiki/Kefir",
+    "verified": true
+  },
+  {
+    "in": [
+      "mould"
+    ],
+    "verb": "chill",
+    "out": "penicillium",
+    "why": "Cold does not stop this mould, it selects for it. P. roqueforti tolerates cold, low oxygen, and both alkali and weaker acid preservatives — which is exactly what lets it thrive in a dairy, and inside a cheese.",
+    "src": "https://en.wikipedia.org/wiki/Penicillium_roqueforti",
+    "verified": true
+  },
+  {
+    "in": [
+      "cheese",
+      "penicillium"
+    ],
+    "out": "camembert",
+    "why": "Sprayed on the outside rather than mixed in: a suspension of P. camemberti on the surface, then three weeks minimum of ripening working inward from the rind. Blue cheese is the reverse — P. roqueforti, in the interior.",
+    "src": "https://en.wikipedia.org/wiki/Camembert",
+    "verified": true
+  },
+  {
+    "in": [
+      "penicillium"
+    ],
+    "verb": "wait",
+    "out": "penicillin",
+    "why": "One species out of more than three hundred. Penicillium chrysogenum, long called P. notatum, is the original industrial source and still the present-day one. The rest of the genus is doing other things.",
+    "src": "https://en.wikipedia.org/wiki/Penicillium",
+    "verified": true
+  },
+  {
+    "in": [
+      "cooked_rice",
+      "mould"
+    ],
+    "out": "koji",
+    "why": "Rice koji is grain fermented with the hyphae of Aspergillus oryzae. Genome analysis suggests it is a domesticated Aspergillus flavus: the aflatoxin gene cluster is still in there, and it no longer functions.",
+    "src": "https://en.wikipedia.org/wiki/Aspergillus_oryzae",
+    "verified": true
+  },
+  {
+    "in": [
+      "koji",
+      "soybean"
+    ],
+    "out": "miso",
+    "why": "The mould does the demolition. Its peptidases cut soy protein into free amino acids, glutamic acid among them, and they are salt-tolerant — so the salt that keeps everything else out of the paste does not stop them.",
+    "src": "https://en.wikipedia.org/wiki/Aspergillus_oryzae",
+    "verified": true
   }
 ]

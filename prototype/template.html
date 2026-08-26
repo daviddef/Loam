@@ -318,6 +318,40 @@ __CATEGORY_CSS__
   }
   aside .chip:hover .info{opacity:.8}
 
+  /* ── the mark on a thing that can hurt you ─────────────────────────────
+     Loud enough to be seen without looking for it, quiet enough that a shelf
+     of seventy-eight of them is not a wall of alarm. Acute throbs, because
+     "this can hurt you fast" is the one worth interrupting for; the rest sit
+     still and simply state themselves. It is never advice and never a
+     ranking of how bad a thing is — it says which kind of harm, and the
+     card behind it says the rest, with a source. */
+  .chip .warn{
+    position:absolute;top:3px;left:4px;width:14px;height:14px;
+    display:flex;align-items:center;justify-content:center;border-radius:4px;
+    font:800 10px/1 var(--face-data);z-index:4;cursor:help;
+    color:var(--on-accent);
+  }
+  .chip .warn.sev-acute     {background:var(--brick)}
+  .chip .warn.sev-allergen  {background:var(--mustard);color:var(--ink)}
+  .chip .warn.sev-chronic   {background:color-mix(in srgb,var(--mustard) 72%,var(--ink));color:var(--cream)}
+  .chip .warn.sev-biological{background:color-mix(in srgb,var(--avocado) 78%,var(--ink))}
+  @keyframes warnThrob{
+    0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--brick) 65%,transparent)}
+    55%    {box-shadow:0 0 0 5px color-mix(in srgb,var(--brick) 0%,transparent)}
+  }
+  .chip.board .warn.sev-acute{animation:warnThrob 2.4s ease-out infinite}
+  @media (prefers-reduced-motion:reduce){ .chip.board .warn.sev-acute{animation:none} }
+  /* A pill has no corner to spare on the left; the shelf keeps the mark but
+     drops the pulse, because a scrolling list of them would be a strobe. */
+  body.d-pill .chip.board .warn{display:none}
+  aside .chip .warn{position:static;order:-1;flex:none;width:13px;height:13px;animation:none}
+
+  /* The caution panel itself, banded by the same four tiers. */
+  .caution.sev-acute{border-left:3px solid var(--brick)}
+  .caution.sev-allergen{border-left:3px solid var(--mustard)}
+  .caution.sev-chronic{border-left:3px solid color-mix(in srgb,var(--mustard) 72%,var(--ink))}
+  .caution.sev-biological{border-left:3px solid color-mix(in srgb,var(--avocado) 78%,var(--ink))}
+
   /* ── density: half card ─────────────────────────────────────────────────
      The user's own sketch: the drawing floats free on the tray with no frame
      around it, and only the name sits in a box. :not(.cooking):not(.target)
@@ -1422,7 +1456,25 @@ function cautionsFor(id) { return CAUTION_BY_ID[id] || []; }
 function cautionHTML(id) {
   const cs = cautionsFor(id);
   if (!cs.length) return '';
-  return cs.map(c => `<div class="caution"><b>${c.label}</b><p>${c.note}</p></div>`).join('');
+  return cs.map(c => `<div class="caution sev-${c.severity || 'chronic'}">` +
+    `<b>${c.label}</b><p>${c.note}</p></div>`).join('');
+}
+/**
+ * The loudest thing said about an element, or nothing.
+ *
+ * A card that will hurt you should say so on its face, not only once you open
+ * it — a lion and a lead pipe were previously indistinguishable from a leaf.
+ * Acute beats chronic beats biological, because if a thing can hurt you fast
+ * that is the part worth showing first.
+ */
+const SEV_RANK = { acute: 3, allergen: 2, chronic: 1, biological: 1 };
+function severityOf(id) {
+  let best = null;
+  for (const c of cautionsFor(id)) {
+    const s = c.severity || 'chronic';
+    if (!best || (SEV_RANK[s] ?? 0) > (SEV_RANK[best] ?? 0)) best = s;
+  }
+  return best;
 }
 __ART_RENDER__
 const byId = Object.fromEntries(elements.map(e => [e.id, e]));
@@ -1926,7 +1978,14 @@ function chipHTML(e) {
     // Every other way into an entry was indirect — through the codex, or a
     // search, or a link inside another entry. A thing you are holding should
     // say what it is without you having to go and look it up somewhere else.
-    `<i class="info" data-info="${e.id}" title="What is ${name}?">i</i>`;
+    `<i class="info" data-info="${e.id}" title="What is ${name}?">i</i>` +
+    (() => {
+      const sev = severityOf(e.id);
+      if (!sev) return '';
+      const say = { acute: 'This one can hurt you quickly', allergen: 'A regulated allergen',
+                    chronic: 'This one harms with exposure', biological: 'A pathogen risk' }[sev];
+      return `<i class="warn sev-${sev}" title="${say} — tap the i to read why">!</i>`;
+    })();
 }
 
 /** A drawing at a given pixel size, for prose and lists. */
@@ -1976,7 +2035,7 @@ function renderShelf() {
         }).join('') + `</div>`;
     })() +
     groups.map(([f, g]) => {
-      const hits = q ? g.filter(e => e.name.toLowerCase().includes(q)) : g;
+      const hits = q ? g.filter(e => matchesSearch(e, q)) : g;
       if (!hits.length) return '';
       const shut = !q && shelfShut.has(f.id);
       const live = hits.filter(e => (secrets.get(e.id) ?? 0) > 0).length;
@@ -1994,7 +2053,7 @@ function renderShelf() {
     // how-to — which lists what that needs, and so on down.
     (() => {
       if (!q) return '';
-      const unmade = elements.filter(e => !found.has(e.id) && nameOf(e).toLowerCase().includes(q));
+      const unmade = elements.filter(e => !found.has(e.id) && matchesSearch(e, q));
       if (!unmade.length) return '';
       return `<h2 class="locked"><i></i>Not yet made<em>${unmade.length}</em></h2><div class="shelf">` +
         unmade.slice(0, 30).map(e =>
@@ -4039,12 +4098,11 @@ function showProvenance(id, mode) {
 // its own route.
 let codexAll = false;
 function codexResults(q) {
-  const hits = elements.filter(e => found.has(e.id) &&
-    (!q || nameOf(e).toLowerCase().includes(q.toLowerCase())));
+  const ql = (q || '').toLowerCase();
+  const hits = elements.filter(e => found.has(e.id) && matchesSearch(e, ql));
   // Searching should also reach things you have not made yet — otherwise there
   // is nowhere to ask "how do I make fire?", which is the whole stuck moment.
-  const unmade = q ? elements.filter(e => !found.has(e.id) &&
-    nameOf(e).toLowerCase().includes(q.toLowerCase())) : [];
+  const unmade = q ? elements.filter(e => !found.has(e.id) && matchesSearch(e, ql)) : [];
   const unmadeBlock = unmade.length
     ? `<h2 class="locked">Not yet made · ${unmade.length}</h2><div class="shelf">` +
       unmade.slice(0, 24).map(e =>
@@ -4260,25 +4318,23 @@ function showSettings() {
 
   document.getElementById('sheetBody').innerHTML =
     group('Look', '◐', `
-      <h2>How it is drawn</h2>
-      ${tiles('theme', THEMES, v => `<span class="tsw t-${v}">${artSVG('leaf')}</span>`)}
-      <div class="switches">
-        ${prefToggle('chrome', 'Light interface', 'light', 'dark',
-          'Panels, menus and the shelf on paper.',
-          'Panels, menus and the shelf dark. The drawing style is a separate choice.')}
-      </div>
-      <h2>What it sits on</h2>
-      ${tiles('ground', GROUNDS, v =>
-        `<span class="gsw g-${v}"><i class="gleaf">${artSVG('leaf')}</i></span>`)}
-      <h2>How much room each thing takes</h2>
-      ${tiles('density', DENSITIES, v => DENSITY_ART[v])}
       <div class="switches">
         ${toggle('One card per thing',
           prefs.consolidate
             ? 'Every line for a thing runs to the same card. The bench reads as a diagram.'
             : 'A fresh copy each time you need one. Two Waters are two cards.',
           !!prefs.consolidate, 'data-consolidate="1"')}
-      </div>`) +
+        ${prefToggle('chrome', 'Light interface', 'light', 'dark',
+          'Panels, menus and the shelf on paper.',
+          'Panels, menus and the shelf dark. The drawing style is a separate choice.')}
+      </div>
+      <h2>How it is drawn</h2>
+      ${tiles('theme', THEMES, v => `<span class="tsw t-${v}">${artSVG('leaf')}</span>`)}
+      <h2>What it sits on</h2>
+      ${tiles('ground', GROUNDS, v =>
+        `<span class="gsw g-${v}"><i class="gleaf">${artSVG('leaf')}</i></span>`)}
+      <h2>How much room each thing takes</h2>
+      ${tiles('density', DENSITIES, v => DENSITY_ART[v])}`) +
     group('Explain', '✎', `
       <h2>How much explaining</h2>
       ${row('depth', [
@@ -4385,31 +4441,89 @@ function consolidateBench() {
  *   vague      — a phrase the law lets a label use WITHOUT saying what it means
  *   unknown    — the game does not have it yet, said plainly
  */
+/**
+ * Does this element answer to that word?
+ *
+ * Searching the codex for "beef" found nothing, because the game calls it Meat
+ * and search only ever looked at names. But data/labels.json already knows that
+ * beef, pork, lamb and mutton all mean meat — it was written to read packets,
+ * and it turns out to be the same question a player is asking when they type a
+ * word the game does not use. So search asks it too.
+ */
+function matchesSearch(e, q) {
+  if (!q) return true;
+  const n = nameOf(e).toLowerCase();
+  if (n.includes(q)) return true;
+  for (const [phrase, id] of Object.entries(LABELS.aliases))
+    if (id === e.id && phrase.includes(q)) return true;
+  return false;
+}
+
 function splitLabel(text) {
-  // Strip a leading "Ingredients:" and any percentages, then split on commas
-  // that are not inside brackets — because "Vegetable Gums (Pectin, Guar Gum)"
-  // is one ingredient with a list inside it, not three.
-  const body = text.replace(/^[\s\S]*?ingredients\s*:/i, '').replace(/\([^)]*?\d+(\.\d+)?\s*%\)/g, '');
-  const out = [];
-  for (const part of body.split(/,(?![^(]*\))/)) {
-    const t = part.trim().replace(/\.$/, '');
-    if (!t) continue;
-    const m = t.match(/^(.*?)\s*\(([^)]*)\)$/);
-    if (m && m[2].includes(',')) {
-      // the outer word is the class ("Vegetable Gums"), the brackets are the real list
-      out.push(m[1].trim());
-      for (const inner of m[2].split(',')) out.push(inner.trim());
-    } else out.push(t);
+  // Real packets use round AND square brackets, and nest them: "chilli and lime
+  // seasoning (7%) [sugar, maltodextrin, vegetable powder (garlic, onion), ...]".
+  // Treating only round brackets as brackets glued half a list together — "chilli
+  // and lime seasoning [sugar" came out as one ingredient. Square brackets are
+  // normalised to round ones first, and then the split is depth-aware.
+  const body = text
+    .replace(/^[\s\S]*?ingredients\s*:/i, '')
+    .replace(/^[\s\S]*?all natural ingredients/i, '')
+    .replace(/[\[\{]/g, '(').replace(/[\]\}]/g, ')')
+    .replace(/\(\s*\d+(\.\d+)?\s*%\s*\)/g, '');
+  // Split on top-level commas only, counting depth as we go.
+  const parts = [];
+  let buf = '', depth = 0;
+  for (const ch of body) {
+    if (ch === '(') depth++;
+    else if (ch === ')') depth = Math.max(0, depth - 1);
+    if (ch === ',' && depth === 0) { parts.push(buf); buf = ''; continue; }
+    buf += ch;
   }
-  return out.filter(Boolean);
+  parts.push(buf);
+
+  const out = [];
+  const push = (t) => {
+    t = t.trim().replace(/[.;]$/, '').trim();
+    if (t) out.push(t);
+  };
+  for (const part of parts) {
+    const t = part.trim().replace(/[.;]$/, '');
+    if (!t) continue;
+    const m = t.match(/^(.*?)\s*\(([\s\S]*)\)$/);
+    if (m) {
+      // The outer word is usually a class ("Vegetable Gums", "food acids") and
+      // the brackets hold the things it is actually made of. Keep both: the class
+      // may be a phrase the law lets stand vague, and the contents are the answer.
+      push(m[1]);
+      for (const inner of splitLabel('ingredients:' + m[2])) push(inner);
+    } else push(t);
+  }
+  return out;
 }
 const labelKey = (t) => t.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 function readIngredient(text) {
   const k = labelKey(text);
+  // An E number is just a name, and packets often print the number alone —
+  // "food acids (330, 262)". Try the number as a name before anything else.
+  const eNum = k.match(/^e?\s?(\d{3,4}[a-z]?)$/);
+  if (eNum) {
+    const byE = LABELS.aliases['e' + eNum[1]];
+    if (byE && byId[byE]) return { text, kind: 'found', id: byE };
+    const nearE = LABELS.near?.['e' + eNum[1]];
+    if (nearE && byId[nearE]) return { text, kind: 'near', id: nearE };
+    return { text, kind: 'unknown', note: 'an E number this world does not know yet' };
+  }
+  // A phrase the law lets stand for anything is only vague if nothing INSIDE it
+  // resolved — "acidity regulator (citric acid)" names its acid, so the class
+  // word must not swallow it. The contents are pushed as their own entries by
+  // splitLabel, so a bare class word here is genuinely all the label gave.
   if (LABELS.vague[k]) return { text, kind: 'vague', note: LABELS.vague[k] };
   // Longest alias first, so "locust bean gum" beats "gum".
   const alias = LABELS.aliases[k];
   if (alias && byId[alias]) return { text, kind: 'found', id: alias };
+  // Contains it, but is not it. Calcium citrate is not calcium.
+  const near = LABELS.near?.[k];
+  if (near && byId[near]) return { text, kind: 'near', id: near };
   if (byId[k.replace(/ /g, '_')]) return { text, kind: 'found', id: k.replace(/ /g, '_') };
   const byName = elements.find(e => nameOf(e).toLowerCase() === k);
   if (byName) return { text, kind: 'found', id: byName.id };
@@ -4445,7 +4559,7 @@ function showLabelReader(prefill = '') {
     if (put) put.onclick = () => {
       document.getElementById('sheet').classList.remove('on');
       benchTouched = true;
-      const made = parsed.filter(p => p.kind === 'found');
+      const made = parsed.filter(p => p.kind === 'found' || p.kind === 'near');
       for (const p of made) placeItem(p.id);
       tidy();
       toast(made.length === 1 ? `${nameOf(byId[made[0].id])} is on the bench`
@@ -4463,6 +4577,7 @@ function showLabelReader(prefill = '') {
 function labelResultHTML(parsed) {
   if (!parsed.length) return '<p class="none">Nothing to read yet.</p>';
   const found = parsed.filter(p => p.kind === 'found');
+  const near = parsed.filter(p => p.kind === 'near');
   const vague = parsed.filter(p => p.kind === 'vague');
   const unknown = parsed.filter(p => p.kind === 'unknown');
   const depth = (id) => orderedSteps(id).length;
@@ -4474,8 +4589,13 @@ function labelResultHTML(parsed) {
   };
   return `<h2>Found · ${found.length} of ${parsed.length}</h2>` +
     (found.length ? found.map(row).join('') : '<p class="none">None of these yet.</p>') +
-    (found.length ? `<div class="cardrow" style="margin:10px 0">
-        <button class="ghost" id="labelPut">Put all ${found.length} on the bench</button></div>` : '') +
+    (near.length ? `<h2>Built from · ${near.length}</h2>` + near.map(p =>
+      `<div class="ent in"><span class="g">${p.text}</span><span class="arw">→</span>` +
+      `<span class="g" data-entry-any="${p.id}">${glyph(p.id, 19)} ${nameOf(byId[p.id])}</span></div>`).join('') +
+      `<p class="hint2">These are not that element — calcium citrate contains calcium, it is not
+        calcium — so the game shows what it is built from rather than claiming they are the same.</p>` : '') +
+    (found.length || near.length ? `<div class="cardrow" style="margin:10px 0">
+        <button class="ghost" id="labelPut">Put ${found.length + near.length} on the bench</button></div>` : '') +
     (vague.length ? `<h2>Says nothing · ${vague.length}</h2>` + vague.map(p =>
       `<div class="ent"><span class="g">${p.text}</span></div><p class="hint2">${p.note}</p>`).join('') : '') +
     (unknown.length ? `<h2>Not in this world yet · ${unknown.length}</h2><div class="shelf">` +

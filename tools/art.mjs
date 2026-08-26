@@ -2518,6 +2518,218 @@ def('runner',         () => [S('M8 40 Q30 30 52 40', 'hi', 3),
                              ...[[8, 40], [52, 40]].map(([x, y]) =>
                                [leaf('hi', x, y - 12, .6, 0), S(`M${x} ${y} L${x} ${y + 8}`, 'lo', 2)]).flat()]);
 
+
+/* plants: plumbing, not produce ─────────────────────────────────────────
+   The tier is built on how a plant WORKS, so the drawings are anatomy —
+   two pipes running opposite ways, a pore that opens at night, wood with
+   vessels against wood without. */
+def('xylem',   () => [...[20, 30, 40].map(x => [S(`M${x} 8 L${x} 54`, 'gh', 5), S(`M${x} 8 L${x} 54`, 'ground', 2)]).flat(),
+                      ...[[20, 18], [30, 30], [40, 22]].map(([x, y]) => P(`M${x - 3} ${y} L${x + 3} ${y} L${x} ${y - 6} Z`, 'hi'))]);  // water going up
+def('phloem',  () => [...[24, 36].map(x => S(`M${x} 8 L${x} 54`, 'bs', 6)),
+                      ...[[24, 44], [36, 36]].map(([x, y]) => P(`M${x - 3} ${y} L${x + 3} ${y} L${x} ${y + 6} Z`, 'hi'))]);          // sugar coming down
+def('sap',     () => [S('M14 10 L14 40', 'lo', 4),
+                      P('M14 40 Q20 48 20 52 A6 6 0 0 1 8 52 Q8 48 14 40 Z', 'hi'),
+                      C(38, 24, 3, 'hi'), C(44, 36, 2.4, 'hi')]);
+def('bark',    () => [P('M14 8 L46 8 L46 54 L14 54 Z', 'lo'),
+                      ...[20, 27, 34, 41].map((y, i) => S(`M${16 + (i % 2) * 3} ${y * 1.1} Q30 ${y * 1.1 - 4} ${44 - (i % 2) * 3} ${y * 1.1}`, 'ik', 2))]);
+def('cork',    () => [P('M18 12 L42 12 L42 50 L18 50 Z', 'bs'),
+                      ...granules('ground', 20, 61, [21, 15, 39, 47])]);          // dead air cells
+def('lignin',  () => [hex('ik', 20, 24, 9, 2.2), hex('ik', 38, 32, 9, 2.2), hex('ik', 24, 44, 9, 2.2),
+                      S('M27 27 L31 29', 'ik', 2), S('M33 39 L28 41', 'ik', 2)]);
+def('stoma',   () => [E(30, 32, 20, 15, 'hi'),
+                      P('M18 32 Q30 20 42 32 Q30 44 18 32 Z', 'ground'),
+                      S('M18 32 Q30 20 42 32', 'lo', 2.6), S('M18 32 Q30 44 42 32', 'lo', 2.6)]);   // two guard cells and the gap
+def('cactus',  () => [P('M24 54 L24 20 A6 6 0 0 1 36 20 L36 54 Z', 'bs'),
+                      P('M12 40 L12 30 A5 5 0 0 1 22 30 L22 40 Z', 'bs'),
+                      ...needles('hi', 5)]);
+def('malic_acid', () => [(() => backbone('ik', 3, 30, 32).shape)(),
+                         C(13, 28, 4.4, 'bs'), C(47, 28, 4.4, 'bs'), C(30, 46, 4, 'hi')]);
+def('hardwood', () => [P('M12 12 L48 12 L48 50 L12 50 Z', 'lo'),
+                       ...[[20, 22], [34, 20], [26, 34], [40, 38], [18, 42]].map(([x, y]) => C(x, y, 4, 'ground')),
+                       ...[16, 30, 44].map(x => S(`M${x} 12 L${x} 50`, 'bs', 1.2))]);   // vessels: the pores you can see
+def('softwood', () => [P('M12 12 L48 12 L48 50 L12 50 Z', 'hi'),
+                       ...[17, 23, 29, 35, 41, 47].map(x => S(`M${x} 12 L${x} 50`, 'bs', 1.6))]);   // tracheids, and no pores
+def('oak',     () => [S('M30 54 L30 34', 'ik', 5),
+                      P('M10 30 Q10 12 30 10 Q50 12 50 30 Q42 40 30 38 Q18 40 10 30 Z', 'bs'),
+                      E(24, 46, 4, 5, 'lo'), E(24, 41, 4, 2.4, 'ik')]);              // and an acorn
+def('pine',    () => [S('M30 54 L30 44', 'ik', 4),
+                      ...[0, 1, 2].map(i => P(`M30 ${8 + i * 12} L${44 - i * 2} ${26 + i * 12} L${16 + i * 2} ${26 + i * 12} Z`, 'bs')),
+                      ...[[16, 44], [44, 44]].map(([x, y]) => E(x, y, 4, 6, 'lo'))]);
+def('bamboo',  () => [...[22, 38].map(x => [P(`M${x - 6} 6 L${x + 6} 6 L${x + 6} 54 L${x - 6} 54 Z`, 'hi'),
+                        ...[18, 32, 46].map(y => S(`M${x - 6} ${y} L${x + 6} ${y}`, 'ik', 2.4))]).flat()]);
+def('coconut', () => [C(30, 34, 18, 'ik'), C(30, 34, 13, 'hi'),
+                      ...[[24, 26], [36, 26], [30, 20]].map(([x, y]) => C(x, y, 3, 'lo'))]);   // the three pores
+def('coconut_water', () => [C(30, 34, 18, 'ik'), P('M14 34 A18 18 0 0 0 46 34 Z', 'bs'),
+                            E(30, 34, 16, 3, 'hi')]);
+def('mangrove', () => [S('M30 8 L30 30', 'lo', 4),
+                       ...[-16, -8, 8, 16].map(dx => S(`M30 26 Q${30 + dx} 38 ${30 + dx * 1.4} 52`, 'lo', 2.6)),
+                       wave('bs', 46, 4, 26)]);                                        // stilt roots in water
+def('bast_fibre', () => [...[16, 24, 32, 40, 46].map((x, i) =>
+                           S(`M${x} 6 Q${x + (i % 2 ? 4 : -4)} 30 ${x} 54`, i % 2 ? 'hi' : 'bs', 3))]);
+def('sugar_beet', () => [P('M20 18 Q20 44 30 54 Q40 44 40 18 Z', 'hi'),
+                         ...[24, 30, 36].map(x => S(`M${x} 18 L${x} 6`, 'lo', 2.4)),
+                         S('M25 28 Q30 32 35 28', 'lo', 1.4)]);
+def('rubber_tree', () => [S('M30 54 L30 12', 'lo', 6),
+                          ...[0, 1, 2].map(i => S(`M${22 - i * 2} ${20 + i * 8} L38 ${26 + i * 8}`, 'ik', 2)),
+                          P('M38 42 Q43 50 43 54 A5 5 0 0 1 33 54 Q33 50 38 42 Z', 'hi')]);   // the tapping cuts
+def('mulberry', () => [...[[22, 26], [38, 24], [30, 40]].map(([x, y]) =>
+                         [C(x, y, 4, 'bs'), C(x - 4, y + 3, 3.4, 'bs'), C(x + 4, y + 3, 3.4, 'bs'),
+                          C(x, y + 6, 3.4, 'bs')]).flat(),
+                       leaf('hi', 46, 44, .7, 30)]);
+def('willow',  () => [S('M30 54 L30 20', 'lo', 5),
+                      ...[-14, -6, 6, 14].map(dx => S(`M${30 + dx * .4} 22 Q${30 + dx} 34 ${30 + dx * 1.2} 52`, 'hi', 2))]);
+def('salicin', () => [hex('ik', 22, 30, 11, 2.2), P('M34 26 L46 22 L48 34 L36 38 Z', 'hi'),
+                      C(14, 22, 4, 'bs')]);
+def('winter_wheat', () => [stalk('lo', 30, 54, 20),
+                           ...[[24, 20], [36, 20], [24, 28], [36, 28]].map(([x, y]) => grain('hi', x, y, .8, x < 30 ? -25 : 25)),
+                           ...[[14, 44], [46, 44]].map(([x, y]) =>
+                             [S(`M${x - 4} ${y} L${x + 4} ${y}`, 'gh', 1.8), S(`M${x} ${y - 4} L${x} ${y + 4}`, 'gh', 1.8)])
+                             .flat()]);                                                 // it needs the cold first
+def('semi_dwarf_wheat', () => [stalk('lo', 30, 54, 32),
+                               ...[[25, 26], [35, 26], [25, 34], [35, 34]].map(([x, y]) => grain('hi', x, y, .9, x < 30 ? -25 : 25)),
+                               S('M12 54 L48 54', 'ik', 2)]);                            // short straw, heavy head
+def('gibberellin', () => [(() => backbone('ik', 4, 28, 28).shape)(),
+                          hex('ik', 40, 40, 9, 2), C(14, 24, 4, 'bs')]);
+def('phytochrome', () => [C(22, 32, 11, 'bs'), C(40, 32, 11, 'hi'),
+                          S('M31 32 L31 32', 'ik', 2), S('M28 22 L34 42', 'ik', 2.4)]);  // two forms, switched by light
+def('graft',   () => [S('M30 54 L30 32', 'lo', 6), S('M30 30 L30 8', 'bs', 5),
+                      S('M20 31 L40 31', 'ik', 3),
+                      leaf('hi', 40, 16, .6, 30)]);
+def('foxglove',() => [S('M26 54 L26 10', 'lo', 3),
+                      ...[16, 26, 36, 44].map((y, i) => ['g', 20, 34, y, [E(34, y, 8, 6, i % 2 ? 'bs' : 'hi')]])]);
+def('digoxin', () => [...[[20, 34], [32, 30], [44, 34]].map(([x, y]) => hex('ik', x, y, 8, 2)),
+                      P('M20 44 L28 48 L24 56 L16 52 Z', 'bs')]);
+def('capsicum',() => [P('M22 16 Q10 26 14 40 Q18 52 30 52 Q42 52 46 40 Q50 26 38 16 Z', 'bs'),
+                      S('M30 16 L30 6', 'lo', 3), E(30, 14, 8, 3, 'lo'),
+                      S('M22 26 Q26 38 22 46', 'hi', 1.6)]);
+def('paprika', () => [mound('bs', 46, 19, 17), ...granules('lo', 12, 73, [16, 32, 44, 46]),
+                      E(30, 24, 5, 2.4, 'hi')]);
+def('pectin',  () => [...[0, 1, 2].map(i => (() => backbone('ik', 3, 30, 18 + i * 14).shape)()),
+                      ...[[18, 25], [42, 25], [18, 39], [42, 39]].map(([x, y]) => C(x, y, 3, 'hi'))]);   // chains, cross-linked
+
+/* what an animal gives besides meat ─────────────────────────────────────*/
+def('lanolin', () => [E(30, 38, 18, 11, 'hi'), E(24, 34, 6, 3, 'gh'),
+                      ...[[20, 22], [32, 18], [42, 24]].map(([x, y]) => S(`M${x} ${y} Q${x + 3} ${y + 6} ${x} ${y + 11}`, 'lo', 2.4))]);
+def('tallow',  () => [P('M16 46 L44 46 L44 26 Q30 18 16 26 Z', 'hi'), S('M16 26 Q30 18 44 26', 'gh', 2),
+                      E(30, 46, 14, 3, 'lo')]);
+def('horn',    () => [P('M14 52 Q16 24 40 10 Q34 30 30 52 Z', 'gh'),
+                      ...[22, 32, 42].map(y => S(`M${16 + (52 - y) * .3} ${y} Q26 ${y - 3} ${32 - (52 - y) * .1} ${y}`, 'lo', 1.6))]);
+def('antler',  () => [S('M28 54 L26 30', 'gh', 4.4),
+                      ...[[26, 30, 12, 14], [26, 36, 44, 20], [26, 44, 46, 38]].map(([a, b, c2, d]) => S(`M${a} ${b} L${c2} ${d}`, 'gh', 3.4)),
+                      S('M12 14 L8 6', 'gh', 2.4), S('M44 20 L50 10', 'gh', 2.4)]);
+def('feather', () => [S('M42 8 L18 52', 'ik', 2.4),
+                      ...Array.from({ length: 9 }, (_, i) =>
+                        S(`M${40 - i * 2.6} ${12 + i * 4.6} L${52 - i * 2.6} ${16 + i * 4.6}`, 'hi', 2)),
+                      ...Array.from({ length: 9 }, (_, i) =>
+                        S(`M${40 - i * 2.6} ${12 + i * 4.6} L${30 - i * 2.6} ${6 + i * 4.6}`, 'hi', 2))]);
+def('down',    () => [C(30, 34, 4, 'ik'),
+                      ...Array.from({ length: 14 }, (_, i) =>
+                        ['g', i * 26, 30, 34, [S('M30 30 Q28 18 30 6', 'hi', 1.4)]])]);       // no hooks, so it traps air
+def('oyster',  () => [P('M10 34 Q14 16 30 14 Q48 16 50 34 Q40 46 30 46 Q18 46 10 34 Z', 'lo'),
+                      ...[0, 1, 2, 3].map(i => S(`M${14 + i * 5} ${30 + i * 2} Q30 ${18 + i * 4} ${46 - i * 5} ${30 + i * 2}`, 'ground', 1.4))]);
+def('nacre',   () => [...[0, 1, 2, 3, 4].map(i =>
+                        P(`M${10 + i} ${18 + i * 7} L${50 - i} ${14 + i * 7} L${50 - i} ${20 + i * 7} L${10 + i} ${24 + i * 7} Z`,
+                          i % 2 ? 'hi' : 'gh'))]);                                            // sheets, and the colour is the sheets
+def('pearl',   () => [C(30, 32, 17, 'gh'), C(23, 25, 6, 'hi'), ring('lo', 30, 32, 12, 1)]);
+def('lac_insect', () => [S('M8 44 Q30 40 52 44', 'lo', 5),
+                         ...[[20, 36], [32, 34], [42, 37]].map(([x, y]) => [E(x, y, 6, 4.4, 'bs'), C(x + 5, y - 1, 1.6, 'ik')]).flat()]);
+def('shellac', () => [...flakes('bs', 4), E(30, 46, 15, 4, 'lo')]);
+def('cochineal', () => [E(30, 32, 13, 9, 'gh'),
+                        ...[20, 27, 34, 40].map(x => S(`M${x} 24 L${x} 40`, 'lo', 1.4)),
+                        ...[[16, 24], [44, 24], [16, 40], [44, 40]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? 8 : 52} ${y < 32 ? 18 : 46}`, 'ik', 1.4))]);
+def('carmine', () => [mound('bs', 46, 18, 17), ...granules('lo', 8, 111, [18, 34, 42, 46]),
+                      C(44, 20, 4, 'bs')]);
+def('rennet',  () => [vessel('gh', 24, 48), P('M18 32 L42 32 L41 46 Q30 49 19 46 Z', 'hi'),
+                      ...[[24, 38], [34, 40]].map(([x, y]) => C(x, y, 3, 'lo'))]);
+def('whey',    () => [vessel('gh', 22, 48), P('M16 34 L44 34 L43 46 Q30 49 17 46 Z', 'hi'),
+                      E(30, 34, 14, 3, 'ground'), C(24, 40, 2, 'lo')]);
+def('ricotta', () => [mound('hi', 46, 20, 19), ...granules('gh', 10, 23, [16, 32, 44, 46])]);
+def('swim_bladder', () => [E(30, 30, 13, 19, 'gh'), S('M30 12 L30 48', 'lo', 1.6),
+                           C(30, 52, 3, 'lo')]);
+def('isinglass', () => [...[0, 1, 2].map(i => P(`M${14 + i * 3} ${16 + i * 12} L${46 - i * 3} ${12 + i * 12} L${46 - i * 3} ${20 + i * 12} L${14 + i * 3} ${24 + i * 12} Z`, 'gh'))]);
+def('roe',     () => [...[[22, 26], [34, 24], [28, 36], [40, 34], [20, 40], [42, 44], [31, 48]]
+                        .map(([x, y]) => [C(x, y, 6, 'bs'), C(x - 2, y - 2, 2, 'hi')]).flat()]);
+def('whale',   () => [P('M6 34 Q18 20 36 24 Q50 27 54 34 Q50 41 36 44 Q18 48 6 34 Z', 'lo'),
+                      P('M36 24 L44 12 L46 26 Z', 'lo'), C(14, 31, 2, 'ground'),
+                      S('M8 30 Q10 22 8 18', 'hi', 2)]);
+def('baleen',  () => [S('M10 14 L50 14', 'ik', 3),
+                      ...Array.from({ length: 11 }, (_, i) => S(`M${12 + i * 3.6} 14 L${12 + i * 3.6} ${44 - (i % 3) * 4}`, 'gh', 2))]);
+def('ambergris', () => [lump('lo', 30, 34, 19, 15), ...granules('ik', 7, 87, [18, 24, 42, 44]),
+                        S('M18 22 Q30 16 42 22', 'hi', 1.6)]);
+def('ox',      () => [P('M14 44 Q14 28 30 28 Q46 28 46 44 Z', 'ik'),
+                      ...[20, 40].map(x => S(`M${x} 44 L${x} 54`, 'ik', 3)),
+                      S('M18 28 Q12 18 20 14', 'lo', 3), S('M42 28 Q48 18 40 14', 'lo', 3),
+                      S('M20 22 L40 22', 'gh', 3.4)]);                                    // and the yoke
+def('manure',  () => [mound('ik', 48, 20, 18), ...granules('lo', 8, 33, [16, 34, 44, 48]),
+                      ...[24, 34].map(x => S(`M${x} 26 Q${x - 3} 18 ${x} 12`, 'gh', 1.8))]);
+def('parchment', () => [P('M12 10 Q12 30 12 50 L48 50 Q48 30 48 10 Z', 'gh'),
+                        S('M12 10 Q30 16 48 10', 'lo', 2),
+                        ...[24, 32, 40].map(y => S(`M18 ${y} L42 ${y}`, 'lo', 1.2))]);
+def('sinew',   () => [...[0, 1, 2].map(i => S(`M${16 + i * 6} 8 Q${22 + i * 6} 32 ${16 + i * 6} 56`, i === 1 ? 'hi' : 'gh', 4))]);
+def('ivory',   () => [P('M12 50 Q14 22 40 8 Q34 28 30 52 Z', 'gh'),
+                      ...[26, 36, 46].map(y => S(`M${14 + (52 - y) * .25} ${y} Q24 ${y - 4} ${30 - (52 - y) * .06} ${y}`, 'lo', 1.2))]);
+def('royal_jelly', () => [P('M18 22 L42 22 L40 46 Q30 50 20 46 Z', 'gh'),
+                          P('M20 30 L40 30 L39 45 Q30 48 21 45 Z', 'hi'),
+                          C(30, 16, 4, 'lo')]);
+
+/* the named cultures, and what they make ────────────────────────────────
+   Cocci are round, bacilli are rods, bifidobacteria fork — the shapes are
+   the taxonomy, and one of them is literally in the name. */
+const cocci = (r, pts) => pts.map(([x, y]) => C(x, y, 6.4, r));
+def('s_thermophilus', () => [...cocci('bs', [[16, 32], [28, 32], [40, 32], [50, 32]]),
+                             ...[20, 42].map(y => S(`M10 ${y} L54 ${y}`, 'hi', 1.2))]);   // a chain of cocci, and it likes it hot
+def('l_bulgaricus',   () => [rod3('hi', 22, 22, 13, 5), rod3('hi', 34, 38, 13, 5),
+                             S('M10 50 L50 50', 'lo', 1.6)]);
+def('l_acidophilus',  () => [rod3('lo', 30, 24, 15, 5), rod3('lo', 26, 40, 12, 5),
+                             ...[[48, 46], [52, 38]].map(([x, y]) => C(x, y, 2.4, 'bs'))]);
+def('bifidobacterium',() => [S('M20 52 L20 30', 'bs', 6), S('M20 32 L12 16', 'bs', 6), S('M20 32 L30 16', 'bs', 6),
+                             S('M42 52 L42 34', 'bs', 6), S('M42 36 L34 24', 'bs', 6), S('M42 36 L50 24', 'bs', 6)]);  // bifid: it forks
+def('l_paracasei',    () => [rod3('bs', 24, 30, 12, 4.4), rod3('bs', 38, 42, 10, 4),
+                             C(44, 18, 3, 'hi')]);
+def('l_plantarum',    () => [rod3('hi', 28, 34, 14, 5),
+                             leaf('lo', 44, 18, .7, 30), leaf('lo', 16, 50, .6, -30)]);   // it comes off plants
+def('leuconostoc',    () => [...cocci('lo', [[22, 26], [34, 26], [24, 40], [38, 40]]),
+                             ...[[46, 18], [50, 30], [44, 48]].map(([x, y]) => C(x, y, 2.4, 'hi'))]);   // and the CO2 it gives off
+def('lactococcus',    () => [...cocci('hi', [[24, 28], [36, 28]]), ...cocci('hi', [[24, 42], [36, 42]])]);
+def('acetobacter',    () => [rod3('ik', 26, 28, 12, 4.4), rod3('ik', 34, 42, 12, 4.4),
+                             ...[[14, 16], [46, 16]].map(([x, y]) => C(x, y, 3, 'bs'))]);   // it needs the air
+def('penicillium',    () => [S('M30 54 L30 30', 'gh', 3),
+                             ...[[18, 20], [30, 14], [42, 20]].map(([x, y]) =>
+                               [S(`M30 30 L${x} ${y}`, 'gh', 2), C(x, y, 3.4, 'lo'),
+                                C(x - 4, y - 5, 3, 'lo'), C(x + 4, y - 5, 3, 'lo')]).flat()]);   // the brush it is named for
+def('koji',           () => [...granules('hi', 14, 41, [14, 30, 46, 50]),
+                             ...[[22, 22], [38, 20]].map(([x, y]) =>
+                               [S(`M${x} 34 L${x} ${y}`, 'gh', 2), C(x, y, 4, 'gh')]).flat()]);   // mould on steamed rice
+def('kefir_grains',   () => [...[[22, 26], [38, 24], [28, 40], [42, 42]].map(([x, y]) =>
+                               [E(x, y, 9, 7, 'gh'), C(x - 3, y - 2, 2.4, 'bs'), C(x + 3, y + 2, 2.4, 'hi')]).flat()]);  // bacteria AND yeast
+def('yoghurt_culture',() => [...cocci('bs', [[18, 24], [30, 22]]), rod3('hi', 34, 40, 12, 4.4),
+                             S('M24 30 Q30 34 34 36', 'ik', 1.6)]);                        // the two that need each other
+def('starter_culture',() => [vessel('gh', 24, 48), P('M18 32 L42 32 L41 46 Q30 49 19 46 Z', 'hi'),
+                             ...cocci('bs', [[24, 38], [34, 40]])]);
+def('lactic_acid',    () => [(() => backbone('ik', 2, 28, 32).shape)(),
+                             C(12, 28, 4.4, 'bs'), C(44, 36, 4.4, 'hi')]);
+def('acetic_acid',    () => [C(22, 34, 6.4, 'ik'), C(38, 30, 6, 'bs'),
+                             ...double([38, 30], [48, 22], 'ik'), C(48, 22, 4, 'hi'),
+                             S('M22 34 L12 42', 'ik', 1.8)]);
+def('pasteurised_milk', () => [vessel('gh', 22, 48), P('M16 30 L44 30 L43 46 Q30 49 17 46 Z', 'hi'),
+                               E(30, 30, 14, 3, 'ground'),
+                               ...[22, 32, 42].map(x => S(`M${x} 22 Q${x - 3} 16 ${x} 10`, 'lo', 1.8))]);   // it was heated
+def('souring_kraut',  () => [vessel('lo', 22, 48), ...[34, 40].map(y => S(`M18 ${y} Q30 ${y - 3} 42 ${y}`, 'hi', 3)),
+                             ...[[24, 26], [36, 24]].map(([x, y]) => C(x, y, 2.4, 'gh'))]);   // still bubbling
+def('kefir',          () => [vessel('gh', 22, 48), P('M16 30 L44 30 L43 46 Q30 49 17 46 Z', 'hi'),
+                             ...[[22, 36], [32, 40], [39, 34]].map(([x, y]) => C(x, y, 3, 'lo')),
+                             ...[[26, 22], [36, 20]].map(([x, y]) => C(x, y, 2, 'gh'))]);
+// Whey is the thin liquid drained OFF; buttermilk is what is left in the churn.
+// Drawn as the two different vessels they actually come out of.
+def('buttermilk',     () => [P('M20 12 L40 12 L44 44 Q44 52 30 52 Q16 52 16 44 Z', 'gh'),
+                             P('M17 30 L43 30 L44 44 Q44 52 30 52 Q16 52 16 44 Z', 'hi'),
+                             S('M20 12 L40 12', 'lo', 2.4),
+                             ...[[25, 38], [35, 41]].map(([x, y]) => C(x, y, 2.6, 'lo'))]);
+def('miso',           () => [P('M14 26 Q14 46 30 50 Q46 46 46 26 Z', 'ik'),
+                             E(30, 26, 16, 5, 'lo'), ...granules('bs', 6, 19, [20, 30, 40, 44])]);
+def('camembert',      () => [E(30, 36, 20, 12, 'gh'), E(30, 30, 20, 12, 'hi'),
+                             ...granules('gh', 9, 55, [16, 24, 44, 36])]);                    // the bloomy rind
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],
