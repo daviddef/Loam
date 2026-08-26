@@ -304,6 +304,30 @@
         "bay_leaf"
       ],
       "severity": "conditional"
+    },
+    "niacin_flush": {
+      "label": "Niacin flush is a real, dose-triggered reaction",
+      "note": "Ordinary dietary niacin is not the concern here. More than 30 mg taken as a supplement can flush the face, arms and chest — vasodilation from a spike in prostaglandin and serotonin, usually gone in 15 to 30 minutes. Sustained-release niacin at medicinal doses (500 to 3,000 mg a day) carries a real risk of liver damage.",
+      "ids": [
+        "niacin"
+      ],
+      "severity": "cumulative"
+    },
+    "b6_neuropathy": {
+      "label": "Vitamin B6 neuropathy is a supplement-dose problem",
+      "note": "Ordinary dietary B6 is not the concern. Above roughly 1,000 mg a day, taken as a supplement over a long period, pyridoxine causes a painful, sometimes irreversible nerve damage — pain and numbness in the hands and feet, and in severe cases trouble walking. Regulators disagree sharply on where the safe ceiling is: the EU sets 12 mg a day, the US 100.",
+      "ids": [
+        "vitamin_b6"
+      ],
+      "severity": "cumulative"
+    },
+    "vitamin_e_bleeding": {
+      "label": "Vitamin E can potentiate blood thinners",
+      "note": "Vitamin E from food is not the concern. Supplemental doses above roughly 300 mg a day can increase the anti-clotting action of aspirin, warfarin and other blood thinners, and the US upper intake limit of 1,000 mg a day was set from bleeding risk observed in animal studies.",
+      "ids": [
+        "vitamin_e"
+      ],
+      "severity": "cumulative"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

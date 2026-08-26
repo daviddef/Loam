@@ -3612,7 +3612,7 @@
       "microbe"
     ],
     "fact": "The biggest of the twenty, and the raw material for serotonin, melatonin and vitamin B3.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "quicklime",
@@ -8862,5 +8862,71 @@
     ],
     "terminal": true,
     "fact": "Gets stronger when dried, not weaker — the opposite of almost every other kitchen herb."
+  },
+  {
+    "id": "thiamin",
+    "name": "Thiamin",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "The first vitamin ever isolated — pulled from rice bran in 1910, the layer polishing removes."
+  },
+  {
+    "id": "riboflavin",
+    "name": "Riboflavin",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "The reason whey glows yellow-green — first isolated from it in 1879, called lactochrome."
+  },
+  {
+    "id": "niacin",
+    "name": "Niacin",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Your body makes it from tryptophan at a steep, fixed rate: 60 milligrams in for 1 milligram out."
+  },
+  {
+    "id": "folate",
+    "name": "Folate",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Named for the Latin word for leaf — first isolated by extracting it from spinach in 1941."
+  },
+  {
+    "id": "vitamin_b6",
+    "name": "Vitamin B6",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Plants build it partly as their own sunscreen, a defence against UV-B. Animals never gained that trick."
+  },
+  {
+    "id": "vitamin_e",
+    "name": "Vitamin E",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Named tocopherol, Greek for 'to bear a child' — discovered in 1922 as the fertility factor rats needed."
   }
 ]

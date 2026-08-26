@@ -12834,5 +12834,65 @@
     "why": "Its leaves pack in extra aromatic oil right at the end of the growing season, exactly when the plant is usually cut for drying — which is why dried oregano can taste stronger than fresh.",
     "src": "https://en.wikipedia.org/wiki/Oregano",
     "supported": true
+  },
+  {
+    "in": [
+      "rice"
+    ],
+    "verb": "crush",
+    "out": "thiamin",
+    "why": "Umetaro Suzuki isolated the antineuritic factor from rice bran in 1910 — the outer layer polishing strips away, and the exact deficiency Christiaan Eijkman had traced to polished rice in 1897.",
+    "src": "https://en.wikipedia.org/wiki/Thiamine",
+    "verified": true
+  },
+  {
+    "in": [
+      "whey"
+    ],
+    "verb": "crush",
+    "out": "riboflavin",
+    "why": "First isolated as 'lactochrome' from cows' milk whey in 1879, later renamed lactoflavin and then riboflavin — the same yellow-green fluorescent pigment that colours whey today.",
+    "src": "https://en.wikipedia.org/wiki/Riboflavin",
+    "verified": true
+  },
+  {
+    "in": [
+      "tryptophan"
+    ],
+    "verb": "wait",
+    "out": "niacin",
+    "why": "Conversion is fixed and wasteful: 60 milligrams of tryptophan makes 1 milligram of niacin. Corn-dependent diets caused pellagra because corn's own niacin is poorly bioavailable and its protein runs short on the tryptophan that would make up the gap.",
+    "src": "https://en.wikipedia.org/wiki/Niacin",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "enzyme"
+    ],
+    "out": "folate",
+    "why": "First isolated by extraction from spinach leaves in 1941, a decade after Lucy Wills identified the missing nutrient behind a pregnancy-related anaemia. Its name comes from folium, Latin for leaf.",
+    "src": "https://en.wikipedia.org/wiki/Folate",
+    "verified": true
+  },
+  {
+    "in": [
+      "sun",
+      "wheat"
+    ],
+    "out": "vitamin_b6",
+    "why": "Plants synthesise pyridoxine partly as their own defence against UV-B radiation in sunlight — a pathway animals never evolved, which is why every animal that has it got it from something that photosynthesises.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_B6",
+    "supported": true
+  },
+  {
+    "in": [
+      "oil",
+      "wheat"
+    ],
+    "out": "vitamin_e",
+    "why": "Discovered in 1922 as the unnamed dietary factor rats needed to carry a pregnancy to term — hence tocopherol, Greek for 'to bear a child'. Wheat germ oil is the richest known source.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_E",
+    "supported": true
   }
 ]

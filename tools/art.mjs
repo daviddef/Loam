@@ -3010,6 +3010,27 @@ def('vitamin_a', () => [(() => backbone('bs', 6, 32, 32).shape)(),
 def('vitamin_d', () => [hex('ik', 20, 40, 9, 2), hex('ik', 34, 34, 9, 2),
                         S('M40 28 L50 20', 'ik', 2.2), C(12, 50, 4, 'bs'),
                         ...[[44, 10], [50, 14]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y - 5}`, 'hi', 2))]);  // sunlight makes it
+// Six fortification vitamins, each leaning on a real structural trait so
+// "another ring with a dot" doesn't happen twice: two separate rings on a
+// bridge for thiamin, three FUSED rings in a row for riboflavin's flat
+// isoalloxazine system, one ring for niacin (the simplest of the six, on
+// purpose — it is the simplest structure), two rings with a long trailing
+// tail for folate's PABA-glutamate chain, one ring with three spidery arms
+// for pyridoxine's substituents, one ring with a long zig-zag lipid tail
+// for tocopherol's phytyl chain.
+def('thiamin',    () => [hex('ik', 18, 36, 8, 2), hex('ik', 38, 24, 8, 2),
+                         S('M25 32 L31 28', 'ik', 2), C(12, 42, 3, 'bs'), C(44, 18, 2.4, 'hi')]);
+def('riboflavin', () => [hex('ik', 14, 30, 7, 1.8), hex('ik', 30, 30, 7, 1.8), hex('ik', 46, 30, 7, 1.8),
+                         S('M21 30 L23 30', 'ik', 1.6), S('M37 30 L39 30', 'ik', 1.6)]);
+def('niacin',     () => [hex('ik', 26, 32, 12, 2.2),
+                         S('M38 26 L48 20', 'ik', 2), C(50, 16, 3, 'bs'), S('M48 20 L54 24', 'ik', 1.6)]);
+def('folate',     () => [hex('ik', 14, 22, 7, 1.8), S('M20 26 L28 34', 'ik', 2), hex('ik', 34, 40, 7, 1.8),
+                         S('M40 44 L52 50', 'ik', 2), C(54, 52, 3, 'bs')]);
+def('vitamin_b6', () => [hex('ik', 30, 34, 11, 2),
+                         S('M20 26 L12 20', 'hi', 1.8), S('M40 26 L48 20', 'hi', 1.8), S('M30 45 L30 54', 'hi', 1.8),
+                         ...[[12, 20], [48, 20], [30, 54]].map(([x, y]) => C(x, y, 2.4, 'bs'))]);
+def('vitamin_e',  () => [hex('ik', 14, 32, 8, 2),
+                         S('M22 32 L28 24 L34 32 L40 24 L46 32 L52 24', 'hi', 2.2)]);
 def('soy_sauce', () => [vessel('ik', 22, 48), P('M16 28 L44 28 L43 46 Q30 49 17 46 Z', 'lo'),
                         E(30, 28, 14, 3, 'ground'),
                         ...granules('gh', 3, 61, [22, 34, 38, 42])]);
