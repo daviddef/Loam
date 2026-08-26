@@ -58,7 +58,11 @@ const PUBLIC = [
 const NEVER = [/^RESEARCH.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG\.md$/, /^DESIGN\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
                /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
-               /^tools\/session-report\.mjs$/];
+               /^tools\/session-report\.mjs$/,
+               // Merges RESEARCH-*.md batches, which are private by definition.
+               // The tool leaks nothing by itself, but it is machinery for a
+               // workflow the public repo does not have the inputs for.
+               /^tools\/integrate-research\.mjs$/];
 
 const dest = process.argv[2];
 const checkOnly = process.argv.includes('--check');

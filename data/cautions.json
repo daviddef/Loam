@@ -191,6 +191,31 @@
       "ids": [
         "ozone"
       ]
+    },
+    "methanol_toxicity": {
+      "label": "Methanol looks and smells like drinking alcohol",
+      "note": "It is difficult to tell methanol, ethanol and isopropyl alcohol apart by appearance or odour, and methanol is far more acutely toxic. The body turns it into formaldehyde and then formate, which shuts down the enzyme cells use to breathe. As little as 4 to 15 mL has reportedly caused irreversible optic nerve damage.",
+      "ids": [
+        "methanol",
+        "wood_tar"
+      ]
+    },
+    "phenol_corrosive": {
+      "label": "Phenol degrades protein on contact",
+      "note": "Its corrosive effect on skin and mucous membrane comes from degenerating the protein itself, and prolonged contact can produce second and third-degree burns. It also passes into the blood through unbroken skin, and systemic poisoning can follow within minutes to hours.",
+      "ids": [
+        "phenol",
+        "coal_tar"
+      ]
+    },
+    "formaldehyde_carcinogen": {
+      "label": "Formaldehyde is a carcinogen, not just a smell",
+      "note": "The International Agency for Research on Cancer reclassified formaldehyde as a known human carcinogen, associated with nasal sinus and nasopharyngeal cancer. Above about 0.1 ppm in air it irritates the eyes and mucous membranes. It is also what makes smoke-tanned hide keep, and what hardened the first casein plastics.",
+      "ids": [
+        "formaldehyde",
+        "galalith",
+        "bakelite"
+      ]
     }
   }
 }

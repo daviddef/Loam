@@ -4598,5 +4598,387 @@
     ],
     "fact": "A glass tube left in the ground by a lightning strike, following the path the current took down.",
     "terminal": true
+  },
+  {
+    "id": "steel",
+    "name": "Steel",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Iron with 0.02–2.14% carbon. The carbon jams the lattice so it cannot slip."
+  },
+  {
+    "id": "bronze",
+    "name": "Bronze",
+    "emoji": "🥉",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Copper with about an eighth part tin. Melts near 950 °C and casts far better than copper."
+  },
+  {
+    "id": "brass",
+    "name": "Brass",
+    "emoji": "🔶",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "terminal": true,
+    "fact": "Copper and zinc, roughly two to one. Change the ratio and you change the colour."
+  },
+  {
+    "id": "solder",
+    "name": "Solder",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "terminal": true,
+    "fact": "A tin-lead mix that melts at 183 °C — lower than either metal on its own."
+  },
+  {
+    "id": "hide",
+    "name": "Hide",
+    "emoji": "🐃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Skin off the animal and untanned. Dries hard as board, and rots the moment it is wet again."
+  },
+  {
+    "id": "tannin",
+    "name": "Tannin",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A plant polyphenol that grabs protein and drops it out of solution. Named for tanning."
+  },
+  {
+    "id": "leather",
+    "name": "Leather",
+    "emoji": "🧳",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "fact": "Tanned hide. Dries flexible instead of hard, and will not rot when it is wetted again."
+  },
+  {
+    "id": "latex",
+    "name": "Latex",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A milky colloid that runs from a cut in the bark. Rubber is suspended in it, not dissolved."
+  },
+  {
+    "id": "rubber",
+    "name": "Rubber",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "fact": "cis-1,4-polyisoprene, 100,000 to 1,000,000 daltons. Untreated, it goes sticky in heat."
+  },
+  {
+    "id": "vulcanised_rubber",
+    "name": "Vulcanised rubber",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Rubber with sulfur chains stitched between its polymer strands. Goodyear, 1839."
+  },
+  {
+    "id": "canvas",
+    "name": "Canvas",
+    "emoji": "🎪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Plain weave in heavy yarn. The word comes from cannabis — it used to be hemp."
+  },
+  {
+    "id": "silkworm",
+    "name": "Silkworm",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bombyx mori has been bred until it cannot fly and does not exist in the wild."
+  },
+  {
+    "id": "cocoon",
+    "name": "Cocoon",
+    "emoji": "🪺",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One unbroken filament, 300 to 900 metres of it, spun in about two or three days."
+  },
+  {
+    "id": "silk",
+    "name": "Silk",
+    "emoji": "🎗️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A triangular fibre with rounded corners. It shines because it works like a prism."
+  },
+  {
+    "id": "coin",
+    "name": "Coin",
+    "emoji": "🪙",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The first ones were electrum — a natural gold-silver alloy nobody could value by eye."
+  },
+  {
+    "id": "nail",
+    "name": "Nail",
+    "emoji": "📌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Until about 1800 every one was forged singly by hand, and they were worth stealing."
+  },
+  {
+    "id": "knife",
+    "name": "Knife",
+    "emoji": "🔪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A blade and a tang running back into the handle, so the grip does not snap off it."
+  },
+  {
+    "id": "needle",
+    "name": "Needle",
+    "emoji": "🪡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The hard part was never the point. It was drilling an eye without splitting the bone."
+  },
+  {
+    "id": "rope",
+    "name": "Rope",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Every layer is twisted against the one below. That fight is the only thing holding it."
+  },
+  {
+    "id": "wheel",
+    "name": "Wheel",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The potter's wheel came first. Cart wheels were plain wooden disks with a hole in them."
+  },
+  {
+    "id": "lamp",
+    "name": "Lamp",
+    "emoji": "🪔",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A pool of oil and a wick reaching down into it. Lascaux had one 15,000 years ago."
+  },
+  {
+    "id": "shoe",
+    "name": "Shoe",
+    "emoji": "👞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The oldest known one is 5,500 years old, one piece of hide, and its laces survived."
+  },
+  {
+    "id": "pipe",
+    "name": "Pipe",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Plumbing is named after lead: plumbum. Soft enough to bend, and that was the problem."
+  },
+  {
+    "id": "plough",
+    "name": "Plough",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A share to cut the sod and a mouldboard to turn it over. Scratching the surface is not enough."
+  },
+  {
+    "id": "peat",
+    "name": "Peat",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "fact": "Dead plants that could not rot, because mud or sour water kept the oxygen off them."
+  },
+  {
+    "id": "coal",
+    "name": "Coal",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "fact": "Buried peat, squeezed and cooked for millions of years until mostly what is left is carbon."
+  },
+  {
+    "id": "coal_tar",
+    "name": "Coal tar",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The black liquid that comes off coal heated without air. Phenol and cresols are in it."
+  },
+  {
+    "id": "phenol",
+    "name": "Phenol",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An alcohol that behaves like an acid. Runge pulled the first of it out of coal tar in 1834."
+  },
+  {
+    "id": "wood_tar",
+    "name": "Wood tar",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "What drips out of wood heated without air, next to the charcoal that stays behind."
+  },
+  {
+    "id": "methanol",
+    "name": "Methanol",
+    "emoji": "🥃",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Wood alcohol. Boils at 64.7 °C, and 4 mL of it can take your sight permanently."
+  },
+  {
+    "id": "formaldehyde",
+    "name": "Formaldehyde",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "It stitches proteins to each other. That is what fixing, embalming and smoke tanning all are."
+  },
+  {
+    "id": "galalith",
+    "name": "Galalith",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Plastic made out of milk. Buttons, pen barrels and piano keys, from 1897 onwards."
+  },
+  {
+    "id": "bakelite",
+    "name": "Bakelite",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The first plastic made from synthetic parts. Baekeland, 1907. Once set it cannot be melted."
+  },
+  {
+    "id": "ethanol",
+    "name": "Ethanol",
+    "emoji": "🍾",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Boils at 78.2 °C. Distilling stops at 95.6% — past that it and water boil as one thing."
+  },
+  {
+    "id": "ethylene",
+    "name": "Ethylene",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "More of it is made than any other organic compound, and half of that becomes polythene."
+  },
+  {
+    "id": "polyethylene",
+    "name": "Polyethylene",
+    "emoji": "🛍️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The world's most used plastic, and it can be made from sugarcane instead of oil."
   }
 ]

@@ -1203,7 +1203,12 @@ __CATEGORY_CSS__
     #tray{gap:4px;padding:7px 4px}
     /* Icon and label both grow to use more of the button, even though the
        button itself is still squeezed to fit six across a phone width. */
-    .verb{width:calc((100vw - 40px)/6);min-width:0;font-size:10.5px;padding:6px 1px;gap:2px}
+    /* Sized from the number of verbs there actually are, not from the six
+       there were when this rule was written. --verbs is set at render time,
+       so adding a tool cannot silently push the tray off the screen. */
+    .verb{width:calc((100vw - 40px)/var(--verbs,6));min-width:0;font-size:10.5px;padding:6px 1px;gap:2px}
+    /* Past about eight there is no width left for a word under the icon. */
+    #tray{flex-wrap:wrap;row-gap:4px}
     /* A 94px card is a quarter of the width of a 375px phone. Smaller here, and
        cardSize() measures a real one, so placement follows without being told. */
     .chip.board{--cw:80px}
@@ -1617,13 +1622,20 @@ function countOnBench(id) {
 // Depth costs nothing to build because the data already carries both registers:
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
-                theme: 'specimen', ground: 'tray', assist: 'on', density: 'half' };
-try { Object.assign(prefs, JSON.parse(localStorage.getItem('loam.prefs') || '{}')); } catch {}
+                theme: 'specimen', ground: 'paper', chrome: 'light',
+                assist: 'on', density: 'half' };
+let savedPrefs = null;
+try { savedPrefs = JSON.parse(localStorage.getItem('loam.prefs') || 'null'); } catch {}
+if (savedPrefs) Object.assign(prefs, savedPrefs);
 // Light-or-dark used to ride along with the drawing style, so anyone who had
 // already chosen Field manual was choosing a light interface too, whether or
-// not that is what they wanted. Inherit what they had, then let them separate
-// the two — a saved file from before this split has no `chrome` at all.
-if (!prefs.chrome) prefs.chrome = prefs.theme === 'manual' ? 'light' : 'dark';
+// not that is what they wanted. They keep exactly what they had; only someone
+// arriving with no saved file at all gets the new default. Testing `savedPrefs`
+// rather than `prefs.chrome` is what separates "an old save that predates the
+// split" from "a first visit" — both look like a missing chrome otherwise, and
+// defaulting them the same way would silently repaint every existing player's
+// game the first time they came back.
+if (savedPrefs && !savedPrefs.chrome) prefs.chrome = savedPrefs.theme === 'manual' ? 'light' : 'dark';
 const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
 
 // Free play hands you the whole world at once. Real progress is put aside
@@ -1964,6 +1976,9 @@ function renderShelf() {
 
   // A tool that only says "Locked" teaches nothing. Name it, and say plainly
   // what opens it — the answer is always something you can go and make.
+  // The narrow-screen tray divides the width by how many tools there are. Say
+  // how many, so adding one never pushes the row off the edge of the phone.
+  document.documentElement.style.setProperty('--verbs', String(verbs.length));
   document.getElementById('tray').innerHTML = verbs.map(v => {
     const open = ul.has(v.id);
     const key = v.unlockedBy ? byId[v.unlockedBy] : null;
@@ -2250,8 +2265,22 @@ function zoomBy(f, cx, cy) {
   view.k = k2;
   applyView();
 }
-function fitAll() {
-  const chips = [...world.querySelectorAll('.chip.board')];
+/**
+ * Centre the bench and pick a zoom that shows it.
+ *
+ * Two bounds, because the two callers want different things. The zoom button
+ * means "show me everything at any cost" and takes the wide range. Tidy means
+ * "I just arranged this, let me read it", so it refuses to go below 0.34 —
+ * past that the names are unreadable and a tidy bench looks like scattered
+ * dust, which is the opposite of what the button promised.
+ *
+ * Only chips you can actually see count. Folded-away chips keep whatever
+ * position they had before the fold, which after a Tidy is nowhere near the
+ * new layout — including them in the bounding box pushed the zoom right out to
+ * frame cards that are not on screen at all.
+ */
+function fitAll({ min = 0.06, max = 1.4 } = {}) {
+  const chips = [...world.querySelectorAll('.chip.board:not(.hidden)')];
   if (!chips.length) return;
   const [cw, ch] = cardSize();
   let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
@@ -2261,11 +2290,8 @@ function fitAll() {
     x2 = Math.max(x2, l + cw); y2 = Math.max(y2, t + ch);
   }
   const b = boardBox(), pad = 60;
-  // The floor used to be 0.25, which is not far enough out to see a full bench.
-  // A button called "fit everything" that shows an empty board is worse than
-  // no button.
-  view.k = Math.max(0.06, Math.min(1.4, Math.min((b.width - pad) / (x2 - x1 || 1),
-                                                 (b.height - pad) / (y2 - y1 || 1))));
+  view.k = Math.max(min, Math.min(max, Math.min((b.width - pad) / (x2 - x1 || 1),
+                                                (b.height - pad) / (y2 - y1 || 1))));
   view.x = b.width / 2 - ((x1 + x2) / 2) * view.k;
   view.y = b.height / 2 - ((y1 + y2) / 2) * view.k;
   applyView();
@@ -2387,7 +2413,7 @@ function tidy() {
     c.style.top  = (oy + depth.get(c) * ROW_H) + 'px';
   }
   drawLinks();
-  fitAll();
+  fitAll({ min: 0.34, max: 1.0 });
   sfx.pick();
 }
 

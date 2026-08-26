@@ -1878,6 +1878,103 @@ def('blackware', () => [P('M20 20 L40 20 L44 42 Q44 50 30 50 Q16 50 16 42 Z', 'i
                         E(30, 20, 10, 3.5, 'lo'),
                         S('M22 30 Q30 34 38 30', 'gh', 1.6)]);         // a burnished line
 
+
+/* made things ───────────────────────────────────────────────────────────
+   Sixteen of these land in the `craft` category, whose fallback is a plain
+   box, so they are the batch most at risk of turning into sixteen boxes.
+   Each is drawn as its own silhouette — the shape you would recognise across
+   a room — rather than as its material. */
+
+def('steel',  () => [...ingot('bs', 18, 10), ...granules('ik', 5, 51, [16, 28, 44, 38])]);   // carbon in the iron
+def('bronze', () => [...ingot('bs', 16, 9), C(22, 40, 3.4, 'lo'), C(38, 40, 3.4, 'lo')]);
+def('brass',  () => [...ingot('hi', 16, 9), S('M14 40 L46 40', 'lo', 2)]);
+def('solder', () => [P('M18 44 Q20 30 30 30 Q40 30 42 44 Z', 'hi'),                          // a bead run out
+                     E(30, 44, 12, 4, 'bs'), C(24, 24, 4, 'bs'), C(37, 21, 3, 'bs')]);
+
+def('hide',   () => [P('M14 18 Q10 30 16 40 L20 50 L28 44 L32 50 L40 44 L44 50 L48 38 Q52 28 46 18 L38 22 L30 16 L22 22 Z', 'bs'),
+                     ...granules('lo', 6, 63, [20, 24, 40, 42])]);                            // still hairy
+def('leather',() => [P('M14 18 Q10 30 16 40 L20 50 L28 44 L32 50 L40 44 L44 50 L48 38 Q52 28 46 18 L38 22 L30 16 L22 22 Z', 'lo'),
+                     S('M18 26 Q30 22 44 26', 'hi', 1.6), S('M18 34 Q30 30 44 34', 'hi', 1.6)]);  // tanned, and grained
+def('tannin', () => [hex('bs', 22, 26, 9, 2.2), hex('bs', 38, 34, 9, 2.2),
+                     S('M28 30 L32 30', 'ik', 2), C(22, 17, 3, 'hi'), C(38, 43, 3, 'hi')]);   // a polyphenol, two rings
+def('latex',  () => [S('M20 12 L20 34', 'lo', 3),                                             // the cut in the bark
+                     S('M20 22 L34 30', 'lo', 2.6),
+                     P('M34 30 Q40 38 40 44 A6 6 0 0 1 28 44 Q28 38 34 30 Z', 'hi')]);        // the drop hanging
+def('rubber', () => [P('M16 26 Q16 16 30 16 Q44 16 44 26 Q44 40 30 46 Q16 40 16 26 Z', 'bs'),
+                     ring('lo', 30, 28, 8, 2.4)]);
+def('vulcanised_rubber', () => [ring('ik', 30, 32, 19, 7),                                    // a tyre, not a blob
+                                ring('lo', 30, 32, 9, 2.4),
+                                ...granules('hi', 5, 87, [22, 24, 38, 40])]);                 // the sulfur bridges
+
+def('silkworm', () => [P('M12 34 Q12 26 20 26 L42 26 Q50 26 50 34 Q50 42 42 42 L20 42 Q12 42 12 34 Z', 'hi'),
+                       ...[20, 27, 34, 41].map(x => S(`M${x} 27 L${x} 41`, 'lo', 1.4)),
+                       C(48, 31, 1.6, 'ik')]);
+def('cocoon',   () => [E(30, 32, 13, 19, 'hi'),
+                       ...[0, 1, 2].map(i => ['s', `M${18 + i * 2} ${24 + i * 8} Q30 ${20 + i * 8} ${42 - i * 2} ${24 + i * 8}`, 'lo', 1.4])]);
+def('silk',     () => [P('M10 20 Q30 14 50 20 L50 26 Q30 20 10 26 Z', 'hi'),                  // cloth with a sheen
+                       P('M10 30 Q30 24 50 30 L50 36 Q30 30 10 36 Z', 'bs'),
+                       P('M10 40 Q30 34 50 40 L50 46 Q30 40 10 46 Z', 'hi')]);
+def('canvas',   () => [P('M12 16 L48 16 L48 48 L12 48 Z', 'bs'),                              // coarse, visible weave
+                       ...[20, 28, 36, 44].map(x => S(`M${x} 16 L${x} 48`, 'lo', 2)),
+                       ...[24, 32, 40].map(y => S(`M12 ${y} L48 ${y}`, 'hi', 2))]);
+
+def('coin',   () => [C(30, 32, 17, 'bs'), ring('lo', 30, 32, 13, 1.6), C(30, 32, 6, 'hi')]);
+def('nail',   () => [P('M27 14 L33 14 L32 42 L30 50 L28 42 Z', 'bs'), E(30, 14, 9, 3, 'hi')]);
+def('knife',  () => [P('M12 30 L36 22 L40 30 L36 34 L12 34 Z', 'gh'),                          // blade, then tang
+                     P('M36 24 L50 27 L50 33 L36 32 Z', 'lo'),
+                     S('M14 32 L34 32', 'hi', 1.4)]);
+def('needle', () => [P('M26 12 L30 10 L34 12 L32 48 L30 52 L28 48 Z', 'gh'),
+                     E(30, 18, 3.4, 5, 'ground')]);                                            // the eye
+def('rope',   () => [...[0, 1, 2].map(i =>
+                       S(`M8 ${22 + i * 9} Q18 ${16 + i * 9} 28 ${22 + i * 9} Q38 ${28 + i * 9} 52 ${22 + i * 9}`,
+                         i === 1 ? 'hi' : 'bs', 5))]);                                         // laid strands
+def('wheel',  () => [ring('lo', 30, 32, 20, 5), ring('bs', 30, 32, 6, 3),
+                     ...[0, 45, 90, 135].map(a =>
+                       ['g', a, 30, 32, [S('M30 14 L30 50', 'bs', 2.2)]])]);
+def('lamp',   () => [P('M16 40 Q16 30 30 30 Q44 30 44 40 Q44 46 30 46 Q16 46 16 40 Z', 'bs'),  // a pinched oil lamp
+                     P('M44 36 L54 32 L54 38 L44 40 Z', 'bs'),
+                     flame('hi', .22, -14)]);
+def('shoe',   () => [P('M12 44 L12 32 Q12 26 20 26 L26 26 L30 32 Q38 34 46 38 Q52 40 52 44 Z', 'bs'),
+                     S('M12 44 L52 44', 'lo', 3),
+                     ...[16, 21].map(x => S(`M${x} 28 L${x + 6} 34`, 'hi', 1.4))]);            // the lacing
+def('pipe',   () => [P('M10 26 L50 26 L50 38 L10 38 Z', 'lo'),
+                     E(10, 32, 4, 6, 'bs'), E(50, 32, 4, 6, 'hi'),
+                     S('M10 29 L50 29', 'hi', 1.6)]);                                          // seen down the bore
+def('plough', () => [S('M12 18 L34 34', 'ik', 3.4),                                            // the beam
+                     P('M34 34 Q46 36 48 46 L30 46 Q30 38 34 34 Z', 'gh'),                     // the share
+                     S('M20 24 L20 44', 'ik', 2.4)]);
+
+/* the road to plastic, which never once passes through petroleum */
+def('peat',   () => [...[44, 38, 32].map((y, i) =>
+                       P(`M12 ${y} L48 ${y} L48 ${y + 6} L12 ${y + 6} Z`, i % 2 ? 'lo' : 'bs')),
+                     ...[18, 30, 42].map(x => S(`M${x} 26 Q${x + 2} 20 ${x} 14`, 'hi', 1.8))]);  // the plants still showing
+def('coal',   () => [facet('ik'), facet('lo', .55),
+                     S('M20 26 L28 20', 'hi', 1.6), S('M36 40 L44 34', 'hi', 1.6)]);            // conchoidal glints
+def('coal_tar', () => [vessel('lo', 22, 48), P('M16 32 L44 32 L43 46 Q30 50 17 46 Z', 'ik'),
+                       E(30, 32, 14, 3.4, 'ground')]);
+def('wood_tar',  () => [P('M22 12 Q22 26 30 32 Q38 26 38 12 Z', 'lo'),                          // a retort dripping
+                        P('M30 34 Q35 42 35 47 A5 5 0 0 1 25 47 Q25 42 30 34 Z', 'ik'),
+                        E(30, 52, 9, 3, 'ik')]);
+def('phenol', () => [hex('bs', 26, 34, 13, 2.4), S('M37 26 L45 20', 'ik', 2), C(46, 19, 4, 'hi')]);  // the ring and its -OH
+def('methanol', () => [C(24, 32, 6, 'ik'), C(38, 28, 5, 'hi'), S('M30 31 L34 29', 'ik', 2),
+                       S('M24 32 L16 38', 'ik', 1.8), S('M24 32 L18 24', 'ik', 1.8)]);
+def('formaldehyde', () => [C(26, 34, 6, 'ik'), C(40, 26, 5.4, 'bs'),
+                           ...double([26, 34], [40, 26], 'ik'),
+                           S('M26 34 L18 42', 'ik', 1.8), S('M26 34 L18 27', 'ik', 1.8)]);
+def('ethylene', () => [C(21, 32, 5.4, 'ik'), C(39, 32, 5.4, 'ik'),
+                       ...double([21, 32], [39, 32], 'hi'),
+                       ...[[14, 24], [14, 40], [46, 24], [46, 40]].map(([x, y]) => S(`M${x < 30 ? 21 : 39} 32 L${x} ${y}`, 'ik', 1.6))]);
+def('ethanol', () => [vessel('gh', 24, 48), P('M18 34 L42 34 L41 46 Q30 49 19 46 Z', 'hi'),
+                      E(30, 34, 12, 3, 'ground'), C(30, 20, 3, 'hi')]);
+def('galalith', () => [...[[20, 24], [40, 24], [20, 42], [40, 42]].map(([x, y]) =>
+                         [C(x, y, 8, 'hi'), C(x - 2.6, y, 1.6, 'ground'), C(x + 2.6, y, 1.6, 'ground')]).flat()]);  // buttons, which is what it was
+def('bakelite', () => [P('M14 40 Q14 24 30 24 Q46 24 46 40 Z', 'ik'),                           // a moulded case
+                       P('M14 40 L46 40 L46 46 L14 46 Z', 'lo'),
+                       C(30, 33, 5, 'lo'), ring('hi', 30, 33, 8, 1.4)]);
+def('polyethylene', () => [...backbone('ik', 6, 30, 26).shape ? [backbone('ik', 6, 30, 26).shape] : [],
+                           ...backbone('hi', 6, 30, 40).shape ? [backbone('hi', 6, 30, 40).shape] : [],
+                           ...granules('bs', 4, 141, [16, 30, 44, 38])]);                        // the chain, repeating
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],

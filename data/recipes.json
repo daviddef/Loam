@@ -7274,5 +7274,497 @@
     "why": "It does not need sand. A strike on bare rock leaves a glassy crust, or tunnels running through the rock, or in places rock turned wholly to glass.",
     "src": "https://en.wikipedia.org/wiki/Fulgurite",
     "supported": true
+  },
+  {
+    "in": [
+      "iron",
+      "carbon"
+    ],
+    "out": "steel",
+    "why": "Steel is iron with carbon in it — between 0.02% and 2.14% by weight. The carbon atoms sit in the iron lattice and stop the planes of iron sliding past each other, which is the whole of why steel is stronger than iron.",
+    "src": "https://en.wikipedia.org/wiki/Steel",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "charcoal"
+    ],
+    "out": "steel",
+    "why": "Cementation: pack iron bars in charcoal, seal the pot airtight, and heat it from below for a week. Carbon walks into the solid iron without ever melting it. The bars come out about 1% heavier, and they are steel.",
+    "src": "https://en.wikipedia.org/wiki/Cementation_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "tin"
+    ],
+    "out": "bronze",
+    "why": "About an eighth part tin in copper. Bronze melts near 950 °C, which is cooler than iron will even think about, and it pours into a mould and holds the shape — copper on its own is soft and casts badly.",
+    "src": "https://en.wikipedia.org/wiki/Bronze",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "arsenic"
+    ],
+    "out": "bronze",
+    "why": "Arsenic came before tin. Arsenical bronze work-hardens further than pure copper does, so it holds up as something to cut or chop with — and the smiths who made it were breathing arsenic to get there.",
+    "src": "https://en.wikipedia.org/wiki/Arsenical_bronze",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "zinc"
+    ],
+    "out": "brass",
+    "why": "Copper and zinc, usually about two to one. The ratio is a dial, not a recipe: move it and the colour, the hardness and how it rings all move with it. That is why there is no single brass.",
+    "src": "https://en.wikipedia.org/wiki/Brass",
+    "verified": true
+  },
+  {
+    "in": [
+      "tin",
+      "lead"
+    ],
+    "out": "solder",
+    "why": "Sixty-three parts tin to thirty-seven lead melts at 183 °C — below tin's 232 °C and far below lead's 327 °C. A eutectic mixture melts lower than either metal alone, and goes straight from solid to liquid with no mush.",
+    "src": "https://en.wikipedia.org/wiki/Solder",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "flint"
+    ],
+    "out": "hide",
+    "why": "The skin comes off in one piece, and left alone it is not leather yet. Dry it and it goes hard and translucent like a board; wet it again and it starts to rot.",
+    "src": "https://en.wikipedia.org/wiki/Rawhide_(material)",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "flint"
+    ],
+    "out": "hide",
+    "why": "Deerskin was the hide people had long before anyone kept cattle. Untanned it behaves the same way any hide does: board-hard when dry, and rotting as soon as it is wet.",
+    "src": "https://en.wikipedia.org/wiki/Rawhide_(material)",
+    "supported": true
+  },
+  {
+    "in": [
+      "oak_gall"
+    ],
+    "verb": "crush",
+    "out": "tannin",
+    "why": "Tannins are polyphenols that bind to proteins and drop them out of solution. Galls are dense with them — the word tannin comes from tan, crushed oak bark, which is where people got them before galls.",
+    "src": "https://en.wikipedia.org/wiki/Tannin",
+    "verified": true
+  },
+  {
+    "in": [
+      "oak_gall",
+      "water"
+    ],
+    "out": "tannin",
+    "why": "Tannins are water-soluble, so steeping the galls pulls them straight out. It is the same extract that makes iron gall ink — the game already turns galls and iron into writing on that basis.",
+    "src": "https://en.wikipedia.org/wiki/Oak_apple",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "tannin"
+    ],
+    "out": "leather",
+    "why": "Tannins bind to the collagen in the hide and coat it, so it stops dissolving in water and bacteria can no longer get at it. Raw hide dries hard and rots when wet; tanned hide dries flexible and does not.",
+    "src": "https://en.wikipedia.org/wiki/Tanning_(leather)",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "smoke"
+    ],
+    "out": "leather",
+    "why": "Smoke tanning works because smoke carries formaldehyde, and formaldehyde soaks into the hide's cells and gives it some resistance to microbes and to water. Same job as tannin, different molecule.",
+    "src": "https://en.wikipedia.org/wiki/Tanning_(leather)",
+    "verified": true
+  },
+  {
+    "in": [
+      "knife",
+      "tree"
+    ],
+    "out": "latex",
+    "why": "Tapping: slice a groove into the bark about 6 mm deep with a hooked knife and peel it back. The spiral runs the latex down into a cup. It is a milky colloid — the rubber is suspended in it, not dissolved.",
+    "src": "https://en.wikipedia.org/wiki/Rubber_tapping",
+    "verified": true
+  },
+  {
+    "in": [
+      "latex"
+    ],
+    "verb": "heat",
+    "out": "rubber",
+    "why": "Drive the water off and the suspended particles are forced together into a solid. What is left is cis-1,4-polyisoprene, a single molecule between 100,000 and 1,000,000 daltons — one long chain, over and over.",
+    "src": "https://en.wikipedia.org/wiki/Natural_rubber",
+    "verified": true
+  },
+  {
+    "in": [
+      "latex",
+      "vinegar"
+    ],
+    "out": "rubber",
+    "why": "Latex stays liquid only while it is kept alkaline; add an acid and the particles clump into a solid mass. Ammonia is what plantations add to stop this happening on the way to the factory.",
+    "src": "https://en.wikipedia.org/wiki/Rubber_tapping",
+    "supported": true
+  },
+  {
+    "in": [
+      "rubber",
+      "sulfur"
+    ],
+    "out": "vulcanised_rubber",
+    "why": "Goodyear dropped a rubber-and-sulfur mix into a hot pan in 1839. Chains of sulfur atoms replace some of the carbon-hydrogen bonds and stitch one polymer chain to the next, and the result stops going soft in the heat.",
+    "src": "https://en.wikipedia.org/wiki/Vulcanization",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "thread"
+    ],
+    "out": "canvas",
+    "why": "Canvas is the same over-under plain weave as any cloth, in far heavier yarn — that is the entire difference between a shirt and a sail. Denim is heavy too, but it is twill, not plain weave.",
+    "src": "https://en.wikipedia.org/wiki/Canvas",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "leaf"
+    ],
+    "out": "silkworm",
+    "why": "The domestic silk moth eats white mulberry leaves and little else. Thousands of years of breeding have left it unable to fly and unable to live outside human care — it does not exist in the wild at all.",
+    "src": "https://en.wikipedia.org/wiki/Bombyx_mori",
+    "verified": true
+  },
+  {
+    "in": [
+      "silkworm"
+    ],
+    "verb": "wait",
+    "out": "cocoon",
+    "why": "Two or three days of spinning and it has walled itself in behind roughly a mile of filament. Not many short threads wound up — one thread, 300 to 900 metres of it, unbroken.",
+    "src": "https://en.wikipedia.org/wiki/Sericulture",
+    "verified": true
+  },
+  {
+    "in": [
+      "cocoon",
+      "water"
+    ],
+    "out": "silk",
+    "why": "Boiling water dissolves the sericin gumming the cocoon together and frees the end of the filament, so the whole thing reels off in one continuous length. It also kills the pupa inside, which is the point of doing it now.",
+    "src": "https://en.wikipedia.org/wiki/Silk",
+    "verified": true
+  },
+  {
+    "in": [
+      "gold",
+      "silver"
+    ],
+    "out": "coin",
+    "why": "The first coins were electrum, a gold-silver alloy that comes out of the ground already mixed. Because the mix varies, nobody could tell what one was worth by looking — which is exactly why a stamp on it was worth something.",
+    "src": "https://en.wikipedia.org/wiki/Electrum",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "forge"
+    ],
+    "out": "nail",
+    "why": "A smith works an iron pin down to a taper and heads it, one nail at a time. Until about 1800 that was the only way there was, and nails were valuable enough that people burned abandoned houses down to get them back.",
+    "src": "https://en.wikipedia.org/wiki/Nail_(fastener)",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "wood"
+    ],
+    "out": "knife",
+    "why": "Steel holds an edge because the carbon lets it be hardened: cool it fast from red heat and the carbon is trapped in the lattice as martensite. That comes out harder than you want and brittle, so it is then tempered back.",
+    "src": "https://en.wikipedia.org/wiki/Quenching",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze",
+      "wood"
+    ],
+    "out": "knife",
+    "why": "Blades ran stone, then copper, then bronze, then iron, then steel. A bronze blade cannot be hardened by quenching the way steel can — it is hammered hard instead, and it is cast to shape rather than forged.",
+    "src": "https://en.wikipedia.org/wiki/Knife",
+    "supported": true
+  },
+  {
+    "in": [
+      "bone",
+      "flint"
+    ],
+    "out": "needle",
+    "why": "A point is easy. The eye is not: you are drilling a hole through a sliver of bone without splitting it, and that was the limit on how fine a needle could get. Ones like this are 50,000 years old.",
+    "src": "https://en.wikipedia.org/wiki/Sewing_needle",
+    "verified": true
+  },
+  {
+    "in": [
+      "fibre",
+      "fibre"
+    ],
+    "out": "rope",
+    "why": "Twist fibres into a yarn one way, twist yarns into a strand the other way, twist strands into a rope the first way again. Nothing is tied or glued: it is the successive counter-twists fighting each other that hold a rope together.",
+    "src": "https://en.wikipedia.org/wiki/Rope",
+    "verified": true
+  },
+  {
+    "in": [
+      "pot",
+      "wood"
+    ],
+    "out": "wheel",
+    "why": "The potter's wheel came first — one in western Ukraine dates to the middle of the 5th millennium BC, before anything rolled a cart. The wheels that followed were plain wooden disks with a hole cut for the axle.",
+    "src": "https://en.wikipedia.org/wiki/Wheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "olive_oil",
+      "pot"
+    ],
+    "out": "lamp",
+    "why": "A candle carries its fuel as a solid it has to melt first. A lamp keeps a pool of it liquid and lets the wick reach down — so it burns as long as the bowl holds out, and can be refilled without going out.",
+    "src": "https://en.wikipedia.org/wiki/Oil_lamp",
+    "verified": true
+  },
+  {
+    "in": [
+      "lard",
+      "stone"
+    ],
+    "out": "lamp",
+    "why": "Hollow a stone, fill it with animal fat, lay a wick in it. The oldest one found is from Lascaux, in a cave people lived in 10,000 to 15,000 years ago — light that far underground had to be carried in.",
+    "src": "https://en.wikipedia.org/wiki/Oil_lamp",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "thread"
+    ],
+    "out": "shoe",
+    "why": "The oldest leather shoe known is 5,500 years old, from a cave at Areni in Armenia. One piece of hide, gathered up around the foot — and the laces survived with it.",
+    "src": "https://en.wikipedia.org/wiki/Areni-1_shoe",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather"
+    ],
+    "verb": "cut",
+    "out": "shoe",
+    "why": "Cut from a single piece and pulled closed with a lace, no sole and no seams to speak of. That is what the Areni-1 shoe is, and it is the oldest leather footwear anyone has found.",
+    "src": "https://en.wikipedia.org/wiki/Areni-1_shoe",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "forge"
+    ],
+    "out": "pipe",
+    "why": "Plumbing is named after the metal: plumbum. Lead was the pipe material for centuries because it is soft enough to beat and bend into shape cold — the same softness that lets it leave the pipe and end up in the water.",
+    "src": "https://en.wikipedia.org/wiki/Plumbing",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "wood"
+    ],
+    "out": "plough",
+    "why": "A scratch plough only opens a furrow. A share cuts the sod horizontally under the surface and the mouldboard lifts and turns it over — which is what finally made the heavy soils of northern Europe workable.",
+    "src": "https://en.wikipedia.org/wiki/Plough",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant"
+    ],
+    "verb": "smother",
+    "out": "peat",
+    "why": "Dead plants normally rot away entirely. Under mud or in sour water the oxygen never reaches them, decay stalls part-done, and the carbon stays where it fell. That backlog is peat.",
+    "src": "https://en.wikipedia.org/wiki/Coal",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "mud"
+    ],
+    "out": "peat",
+    "why": "Mud over the top is what does it: it keeps oxygen off the dead plant matter, so it cannot finish rotting. Acidic water does the same job by a different route.",
+    "src": "https://en.wikipedia.org/wiki/Coal",
+    "verified": true
+  },
+  {
+    "in": [
+      "peat",
+      "stone"
+    ],
+    "out": "coal",
+    "why": "Bury a peat bog under sediment and leave it for millions of years. Heat and pressure drive out the water, the methane and the carbon dioxide, and what stays behind is progressively more carbon.",
+    "src": "https://en.wikipedia.org/wiki/Coal",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal"
+    ],
+    "verb": "smother",
+    "out": "coal_tar",
+    "why": "Heat coal with the air shut out and it does not burn — it comes apart. The point of doing it is the coke that stays behind, for iron and steel; the black tar that runs off is the by-product that built organic chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Coal_tar",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "lye"
+    ],
+    "out": "phenol",
+    "why": "Phenol is an alcohol that is acidic, which almost no alcohol is. Lye neutralises it into sodium phenolate; the neutral oils in the tar do nothing. Runge got the first phenol out of coal tar in 1834.",
+    "src": "https://en.wikipedia.org/wiki/Phenol",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood"
+    ],
+    "verb": "smother",
+    "out": "wood_tar",
+    "why": "The same trick as charcoal, but keeping what boils off instead of what stays. Heat wood with no air and tar and pitch drip out of it — and among the vapours are methanol and acetic acid.",
+    "src": "https://en.wikipedia.org/wiki/Wood_tar",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood_tar"
+    ],
+    "verb": "heat",
+    "at": 65,
+    "out": "methanol",
+    "why": "Wood alcohol, and it is called that because this is where it came from. It boils at 64.7 °C, so it comes over first and well ahead of the water. Four millilitres of it can destroy the optic nerve.",
+    "src": "https://en.wikipedia.org/wiki/Methanol",
+    "verified": true
+  },
+  {
+    "in": [
+      "methanol",
+      "oxygen_gas"
+    ],
+    "out": "formaldehyde",
+    "why": "Two methanol and one oxygen give two formaldehyde and two water. It is the single biggest thing methanol is used for, and most of that formaldehyde goes on to become a polymer.",
+    "src": "https://en.wikipedia.org/wiki/Methanol",
+    "verified": true
+  },
+  {
+    "in": [
+      "methanol",
+      "silver"
+    ],
+    "out": "formaldehyde",
+    "why": "The oxidation will not go usefully on its own; it needs a catalyst, and the usual one is plain silver metal. The silver is not consumed — it only makes the reaction take a path it would not otherwise take.",
+    "src": "https://en.wikipedia.org/wiki/Formaldehyde",
+    "verified": true
+  },
+  {
+    "in": [
+      "curd",
+      "formaldehyde"
+    ],
+    "out": "galalith",
+    "why": "Curd is casein, and casein is a protein — so formaldehyde cross-links it exactly as it cross-links any other. The result is a hard plastic made out of milk, and it was in buttons, pens and piano keys from 1897.",
+    "src": "https://en.wikipedia.org/wiki/Galalith",
+    "verified": true
+  },
+  {
+    "in": [
+      "phenol",
+      "formaldehyde"
+    ],
+    "out": "bakelite",
+    "why": "Phenol and formaldehyde condense into a three-dimensional network rather than long separate chains, which is why the result is infusible: there is nothing left to slide. Baekeland, 1907, and the first plastic with no natural part in it.",
+    "src": "https://en.wikipedia.org/wiki/Bakelite",
+    "verified": true
+  },
+  {
+    "in": [
+      "wine"
+    ],
+    "verb": "heat",
+    "at": 78,
+    "out": "ethanol",
+    "why": "Ethanol boils at 78.2 °C and water at 100, so heat drives the alcohol off first. Distilling stops at 95.6% though: past that the two boil together as one mixture and no amount of redistilling will separate them.",
+    "src": "https://en.wikipedia.org/wiki/Ethanol",
+    "verified": true
+  },
+  {
+    "in": [
+      "cane_juice"
+    ],
+    "verb": "ferment",
+    "out": "ethanol",
+    "why": "Yeast eats the sugar and gives back ethanol and carbon dioxide. Brazil runs this at industrial scale not for drinking but for feedstock — cane ethanol is the front end of a route to plastic that never touches oil.",
+    "src": "https://en.wikipedia.org/wiki/Bioplastic",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol"
+    ],
+    "verb": "heat",
+    "out": "ethylene",
+    "why": "Take the water out of ethanol and what is left is ethylene. Hot vapour over alumina will do it, or sulfuric acid will. More ethylene is made each year than any other organic compound — over 225 million tonnes.",
+    "src": "https://en.wikipedia.org/wiki/Ethylene",
+    "supported": true
+  },
+  {
+    "in": [
+      "ethylene"
+    ],
+    "verb": "crush",
+    "out": "polyethylene",
+    "why": "Fawcett and Gibson put ethylene under several hundred atmospheres at ICI in 1933 and found a white waxy solid. The molecules had joined end to end into chains. It is now the most used plastic in the world.",
+    "src": "https://en.wikipedia.org/wiki/Polyethylene",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethylene",
+      "oxygen_gas"
+    ],
+    "out": "polyethylene",
+    "why": "ICI could not repeat their own discovery at first. The reaction had been started by a trace of oxygen leaking into the apparatus — the contamination was the initiator, and without knowing that they had no experiment.",
+    "src": "https://en.wikipedia.org/wiki/Polyethylene",
+    "verified": true
   }
 ]
