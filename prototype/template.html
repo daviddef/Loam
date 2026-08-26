@@ -5114,11 +5114,17 @@ function readLabel(text) { return splitLabel(text).map(readIngredient); }
 
 function showLabelReader(prefill = '', scannedProducts = null) {
   document.getElementById('sheetBody').innerHTML = `
-    <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet, or scan the barcode.
-       Every one this world knows becomes a card, with the whole chain back to stone, water, sun and seed.</p>
+    <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet, scan the barcode, or
+       snap a photo of the text if the barcode won't scan. Every one this world knows becomes a card,
+       with the whole chain back to stone, water, sun and seed.</p>
     <div class="cardrow" style="margin:0 0 9px">
       <button class="ghost" id="labelScan">Scan a barcode</button>
+      <button class="ghost" id="lrSnap">Photo of the text</button>
+      <button class="ghost" id="lrPhoto">Choose a photo</button>
+      <input type="file" id="lrSnapFile" accept="image/*" capture="environment" hidden>
+      <input type="file" id="lrFile" accept="image/*" hidden>
     </div>
+    <div id="lrStatus"></div>
     <textarea id="labelIn" class="search" rows="4" style="resize:vertical;font-size:13px"
       placeholder="Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk)…">${prefill}</textarea>
     <div class="cardrow" style="margin:9px 0">
@@ -5152,6 +5158,29 @@ function showLabelReader(prefill = '', scannedProducts = null) {
       'Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk), Vegetable Gums (Pectin, Guar Gum, ' +
       'Locust Bean Gum), Natural Flavours, Mineral Salt (Calcium Citrate), Paprika Extract, Live Cultures (Milk).';
     run();
+  };
+  const lrStatus = document.getElementById('lrStatus');
+  const runOCR = async (file) => {
+    lrStatus.innerHTML = '<p class="hint2">Reading the photo — first time downloads the reader, a few MB…</p>';
+    try {
+      const text = await ocrImage(file);
+      lrStatus.innerHTML = text.trim()
+        ? ''
+        : '<p class="none">Could not make out any text — try a closer, better-lit shot of just the ingredients line.</p>';
+      if (text.trim()) { document.getElementById('labelIn').value = text; run(); }
+    } catch {
+      lrStatus.innerHTML = '<p class="none">Could not read that photo — try again, or type the ingredients instead.</p>';
+    }
+  };
+  document.getElementById('lrSnap').onclick = () => document.getElementById('lrSnapFile').click();
+  document.getElementById('lrSnapFile').onchange = (ev) => {
+    const file = ev.target.files[0]; ev.target.value = '';
+    if (file) runOCR(file);
+  };
+  document.getElementById('lrPhoto').onclick = () => document.getElementById('lrFile').click();
+  document.getElementById('lrFile').onchange = (ev) => {
+    const file = ev.target.files[0]; ev.target.value = '';
+    if (file) runOCR(file);
   };
 }
 
@@ -5223,6 +5252,44 @@ async function decodeBarcodes(source) {
     return results.map(r => r.text);
   } catch { return []; }
 }
+
+/**
+ * OCR fallback for when a barcode won't scan, or the product just isn't in
+ * Open Food Facts — a photo of the ingredients text itself, read on-device
+ * with Tesseract.js (Apache-2.0). Vendored the same way as zxing-wasm above:
+ * no CDN, nothing ever leaves the device.
+ */
+let tesseractLoad = null;
+function loadTesseract() {
+  if (tesseractLoad) return tesseractLoad;
+  tesseractLoad = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'vendor/tess/tesseract.min.js';
+    s.onload = () => resolve(window.Tesseract);
+    s.onerror = () => reject(new Error('tesseract failed to load'));
+    document.head.appendChild(s);
+  });
+  return tesseractLoad;
+}
+async function ocrImage(source) {
+  const Tesseract = await loadTesseract();
+  const worker = await Tesseract.createWorker('eng', 1, {
+    workerPath: 'vendor/tess/worker.min.js',
+    // A path ending in "js" is used exactly as given, skipping the worker's
+    // own capability probing (which wants a "relaxedsimd" core variant not
+    // worth vendoring three copies of) — simd+lstm alone is broadly enough
+    // supported to be the one version this ships.
+    corePath: 'vendor/tess/tesseract-core-simd-lstm.wasm.js',
+    langPath: 'vendor/tess/',
+  });
+  try {
+    const { data } = await worker.recognize(source);
+    return data.text;
+  } finally {
+    await worker.terminate();
+  }
+}
+
 function showBarcodeScan(onIngredients) {
   document.getElementById('sheetBody').innerHTML = `
     <p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
