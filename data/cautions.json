@@ -288,6 +288,22 @@
       "ids": [
         "bee"
       ]
+    },
+    "thujone_toxicity": {
+      "label": "Thujone in concentrated sage oil",
+      "note": "Ordinary cooking with sage leaves is not the concern here. Sage essential oil contains α- and β-thujone, a neurotoxin that can cause convulsions in animals and severe intoxication in humans, which is why European regulators cap supplemental use at 6 mg a day. The leaf on a plate and the oil in a bottle are not the same dose.",
+      "ids": [
+        "sage"
+      ],
+      "severity": "cumulative"
+    },
+    "bay_leaf_hazard": {
+      "label": "Bay leaves are for flavour, not for eating",
+      "note": "Bay leaves stay stiff even after long cooking and can pose a choking hazard or abrade the digestive tract if swallowed whole. They are meant to flavour a dish and be lifted back out before serving, never eaten.",
+      "ids": [
+        "bay_leaf"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

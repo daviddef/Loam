@@ -4818,7 +4818,14 @@ function readIngredient(text) {
   // Singularising is crude on purpose: only the endings that are safe here, and
   // only tried AFTER the exact forms have failed, so it can never steal a match
   // from a word that genuinely ends in s.
+  // "Tomatoes"/"potatoes" pluralise with -oes, and the bare-trailing-s rule
+  // below turned that into "tomatoe"/"potatoe" — a real word away from a
+  // match, which read as a genuine gap even though both were already
+  // elements with existing aliases. Named explicitly rather than a general
+  // -oes rule, which would just as happily mangle "shoes" into "sho".
+  const OES = /\b(tomato|potato|mango)es\b/g;
   const singular = (w) => w
+    .replace(OES, '$1')
     .replace(/\b([a-z]+)ies\b/g, '$1y')
     .replace(/\b([a-z]+(?:ch|sh|ss|x|z))es\b/g, '$1')
     .replace(/\b([a-z]{3,})s\b/g, '$1');

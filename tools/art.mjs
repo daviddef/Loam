@@ -2900,6 +2900,63 @@ def('marjoram',() => [S('M30 54 L30 20', 'lo', 2.4),
                       ...[[22, 24], [38, 26], [24, 34], [36, 36], [28, 44]].map(([x, y]) =>
                         leaf('hi', x, y, .45, x < 30 ? -40 : 40)),
                       C(30, 16, 4, 'hi')]);
+// Twelve herbs, twelve different silhouettes on purpose — a shelf of small
+// green sprigs is exactly the case where "another oval leaf on a stick"
+// stops being tellable apart, so each one leans on a different real trait:
+// needles, not leaves, for rosemary; a single stiff blade for bay; a fan of
+// thread for dill; grass tubes for chives. Same leaf()/stalk() kit as herb
+// and marjoram above, just asked to do a wider range of actual botany.
+def('rosemary',() => [stalk('lo', 30, 54, 10),
+                      ...[16, 22, 28, 34, 40, 46].flatMap(y => [
+                        S(`M30 ${y} L${n(30 - 9)} ${n(y - 3)}`, 'bs', 1.8),
+                        S(`M30 ${y} L${n(30 + 9)} ${n(y - 3)}`, 'hi', 1.8)])]);  // bottlebrush needles
+def('sage',    () => [stalk('lo', 30, 54, 34),
+                      ['g', -20, 22, 30, [E(22, 30, 7, 15, 'bs'), S('M22 18 L22 42', 'ik', 1)]],
+                      ['g', 20, 38, 26, [E(38, 26, 6, 13, 'hi'), S('M38 15 L38 37', 'ik', 1)]],
+                      E(30, 16, 6, 12, 'hi'), S('M30 6 L30 26', 'ik', 1)]);      // soft elongated leaves
+def('basil',   () => [stalk('lo', 30, 54, 30),
+                      ['g', -30, 20, 28, [P('M20 40 Q6 30 20 16 Q34 30 20 40 Z', 'bs'), S('M20 18 L20 38', 'ik', 1.2)]],
+                      ['g', 30, 40, 24, [P('M40 36 Q54 26 40 12 Q26 26 40 36 Z', 'hi'), S('M40 14 L40 34', 'ik', 1.2)]]]);
+                                                                                  // two big glossy broad leaves
+def('thyme',   () => [stalk('lo', 30, 54, 12),
+                      ...[18, 24, 30, 36, 42, 48].flatMap(y => [
+                        leaf('bs', n(30 - 5), y, .22, -70), leaf('hi', n(30 + 5), y, .22, 70)])]);
+                                                                                  // many tiny leaves, dense and woody
+def('parsley', () => [stalk('lo', 30, 54, 30),
+                      ...[-50, -25, 0, 25, 50].map(rot => ['g', rot, 30, 28, [
+                        P('M30 40 L27 30 L30 32 L32 22 L30 24 L34 16 L30 20 L28 10 Z', 'bs')]])]);
+                                                                                  // flat, toothed, frilly fronds
+def('mint',    () => [stalk('lo', 30, 54, 30),
+                      ['g', -25, 21, 26, [P('M21 38 L17 34 L19 30 L15 28 L18 24 L14 22 L21 12 Q30 20 21 38 Z', 'bs'),
+                        S('M21 16 L21 34', 'ik', 1), S('M21 22 L26 26 M21 28 L27 31', 'ik', .8)]],
+                      ['g', 25, 39, 22, [P('M39 34 L43 30 L41 26 L45 24 L42 20 L46 18 L39 8 Q30 16 39 34 Z', 'hi'),
+                        S('M39 12 L39 30', 'ik', 1), S('M39 18 L34 22 M39 24 L33 27', 'ik', .8)]]]);
+                                                                                  // serrated edge, visible veins
+def('tarragon',() => [stalk('lo', 30, 54, 10),
+                      ...[[24, 18, -60], [36, 28, 60], [24, 38, -55], [36, 48, 55]].map(([x, y, rot]) =>
+                        ['g', rot, x, y, [P(`M${x} ${n(y - 9)} Q${n(x + 2.5)} ${y} ${x} ${n(y + 9)} ` +
+                          `Q${n(x - 2.5)} ${y} ${x} ${n(y - 9)} Z`, 'hi')]])]);   // sparse, narrow, single leaves
+def('dill',    () => [stalk('lo', 30, 54, 14),
+                      ...[16, 22, 28, 34, 40].flatMap(y => [
+                        S(`M30 ${y} Q${n(30 - 14)} ${n(y - 6)} ${n(30 - 18)} ${n(y - 14)}`, 'hi', 1),
+                        S(`M30 ${y} Q${n(30 + 14)} ${n(y - 6)} ${n(30 + 18)} ${n(y - 14)}`, 'hi', 1)])]);
+                                                                                  // thread-fine feathery frond
+def('coriander',() => [stalk('lo', 30, 54, 34),
+                      P('M30 34 Q14 30 16 18 Q22 24 24 16 Q28 26 30 14 Q32 26 36 16 Q38 24 44 18 Q46 30 30 34 Z', 'bs'),
+                      S('M30 34 L30 18', 'ik', 1)]);                             // one broad, lobed, flat leaf
+def('chives',  () => [...[[20, 54, 20], [26, 54, 14], [30, 54, 10], [34, 54, 16], [40, 54, 22]].map(([x, base, top]) =>
+                        S(`M${x} ${base} Q${n(x - 1)} ${n((base + top) / 2)} ${x} ${top}`, 'bs', 2.2)),
+                      C(30, 10, 5, 'hi'), C(26, 8, 2, 'lo'), C(34, 8, 2, 'lo'), C(30, 6, 2, 'lo')]);
+                                                                                  // hollow grass tubes, pom-pom flower
+def('bay_leaf',() => [P('M30 8 Q46 20 40 38 Q34 54 30 54 Q26 54 20 38 Q14 20 30 8 Z', 'bs'),
+                      S('M30 12 L30 50', 'ik', 1.4),
+                      ...[18, 26, 34, 42].map(y => S(`M30 ${y} L24 ${n(y - 4)} M30 ${y} L36 ${n(y - 4)}`, 'hi', .8))]);
+                                                                                  // one single stiff glossy leaf
+def('oregano', () => [stalk('lo', 30, 54, 14),
+                      ['g', -40, 21, 40, [leaf('bs', 21, 40, .5, 0)]], ['g', 40, 39, 40, [leaf('hi', 39, 40, .5, 0)]],
+                      ['g', -35, 22, 28, [leaf('bs', 22, 28, .42, 0)]], ['g', 35, 38, 28, [leaf('hi', 38, 28, .42, 0)]],
+                      ['g', -30, 24, 18, [leaf('bs', 24, 18, .32, 0)]], ['g', 30, 36, 18, [leaf('hi', 36, 18, .32, 0)]]]);
+                                                                                  // round leaves, paired, no flower bud
 def('lime',    () => [C(30, 32, 18, 'hi'), C(30, 32, 14, 'gh'),
                       ...Array.from({ length: 8 }, (_, i) =>
                         ['g', i * 45, 30, 32, [S('M30 20 L30 32', 'hi', 1.4)]]),
@@ -3106,6 +3163,18 @@ ship.ui_settings = { c: 'craft', s: [
 ] };
 ship.ui_tidy = { c: 'craft', s: [
   S('M12 20 L48 20', 'ik', 4), S('M12 30 L48 30', 'ik', 4), S('M12 40 L40 40', 'ik', 4),
+] };
+ship.ui_undo = { c: 'craft', s: [
+  S('M40 18 A15 15 0 1 1 18 30', 'ik', 5),
+  S('M18 30 L25 23', 'ik', 5), S('M18 30 L26 35', 'ik', 5),
+] };
+ship.ui_nudge = { c: 'craft', s: [
+  S('M18 40 L42 20', 'ik', 4), S('M33.8 34.6 L26.2 25.4', 'ik', 4),
+  C(18, 40, 8, 'ik'), C(42, 20, 8, 'ik'), C(18, 40, 3, 'ground'), C(42, 20, 3, 'ground'),
+] };
+ship.ui_scan = { c: 'craft', s: [
+  S('M10 22 Q10 18 14 18 L21 18 L24 14 L36 14 L39 18 L46 18 Q50 18 50 22 L50 42 Q50 46 46 46 L14 46 Q10 46 10 42 Z', 'ik', 3.5),
+  C(30, 32, 8, 'ik'), C(30, 32, 4, 'ground'),
 ] };
 
 /* One water MOLECULE, not a body of water. It is what leaves in a condensation
