@@ -1323,6 +1323,9 @@ __CATEGORY_CSS__
     .mark svg{width:22px;height:22px}
     .goal{display:none}
     #live{display:none}
+    /* "18 of 826" says everything "18 of 826 found" did, in less width —
+       and the header is exactly where width is short on a phone. */
+    .count .fw{display:none}
     header button,.count{padding:6px 10px;font-size:12px;white-space:nowrap;flex:none}
     aside{
       position:fixed;top:50px;bottom:62px;right:0;width:min(250px,78vw);z-index:120;
@@ -2294,7 +2297,7 @@ function renderShelf() {
 
   document.getElementById('count').innerHTML = prefs.freePlay
     ? `<span class="sc">Free Play</span>`
-    : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} found</span>`;
+    : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} <b class="fw">found</b></span>`;
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
   const g = nextGoal();
   document.getElementById('goal').innerHTML = g
