@@ -1327,7 +1327,11 @@ __CATEGORY_CSS__
     *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
   }
   @media(max-width:720px){
-    header{gap:6px;padding:9px 10px;flex-wrap:nowrap;overflow:hidden}
+    /* overflow-x:auto, not hidden: a control that doesn't fit should be
+       reachable by a scroll, never simply gone with no way back to it —
+       reported live from a real phone where the settings gear ran off the
+       edge and there was nothing to do about it but reload. */
+    header{gap:6px;padding:9px 10px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden}
     h1{font-size:15px;flex:none;white-space:nowrap}
     /* Reset moves into Settings. It is destructive, and it was being clipped
        off the end of the header at 375px. */
