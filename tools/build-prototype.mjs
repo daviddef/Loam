@@ -72,6 +72,7 @@ function uiGlyph(id) {
 for (const [token, value] of [
   ['__UI_SETTINGS__', uiGlyph('ui_settings')],
   ['__UI_TIDY__', uiGlyph('ui_tidy')],
+  ['__UI_UNDO__', uiGlyph('ui_undo')],
   ['__PALETTE_CSS__', paletteCSS()],
   ['__CATEGORY_CSS__', catCSS()],
   ['__ART_RENDER__', artRender],

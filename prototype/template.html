@@ -754,6 +754,16 @@ __CATEGORY_CSS__
   }
   .cardrow button.ghost.danger{border-color:var(--brick);color:var(--brick)}
   .none{color:var(--ink-soft);font-size:13px;text-align:center;padding:18px}
+  #bcVideo{width:100%;border-radius:10px;display:none;background:#000;margin-bottom:9px}
+  #bcVideo.on{display:block}
+  .bcProduct{
+    display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;
+    background:var(--surface);border:1.5px solid var(--line);
+  }
+  .bcProduct img{width:42px;height:42px;object-fit:cover;border-radius:7px;flex:none}
+  .bcNoPic{width:42px;height:42px;border-radius:7px;flex:none;background:var(--card);border:1px dashed var(--line)}
+  .bcProduct b{display:block;font:700 13px var(--face-name);color:var(--ink)}
+  .bcProduct i{font-style:normal;font-size:11px;color:var(--ink-soft)}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
     padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
@@ -1423,7 +1433,7 @@ __CATEGORY_CSS__
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="score" title="A point for every step it took to reach what you hold"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
-  <button id="undo" title="Nothing to undo yet" disabled>Undo</button>
+  <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px">__UI_UNDO__</span></button>
   <button id="reset" title="Start over — wipes everything you have found">Reset</button>
   <button id="nudge" title="Put two things on the bench that go together">Nudge</button>
   <button id="shelfToggle" title="Hide the shelf">▤</button>
@@ -2775,6 +2785,12 @@ board.addEventListener('pointerdown', ev => {
   if (touches.size === 2) {
     const [a, b] = [...touches.values()];
     pinch = { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
+    // The first finger's chip drag may hold pointer capture — cancelling the
+    // drag without releasing it left that pointerId captured for the rest of
+    // the gesture, which is exactly the kind of leftover state that makes a
+    // pinch work sometimes and not others depending on which finger touched
+    // a chip first. Release both, harmlessly, before dropping the reference.
+    if (drag) for (const id of touches.keys()) { try { drag.chip.releasePointerCapture(id); } catch {} }
     pan = null; drag = null;                          // a second finger cancels a drag
     document.querySelectorAll('.chip.drag').forEach(c => c.classList.remove('drag'));
   }
@@ -4793,8 +4809,11 @@ function readLabel(text) { return splitLabel(text).map(readIngredient); }
 
 function showLabelReader(prefill = '') {
   document.getElementById('sheetBody').innerHTML = `
-    <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet. Every one this
-       world knows becomes a card, with the whole chain back to stone, water, sun and seed.</p>
+    <p class="hint2" style="margin-top:0">Paste the ingredients line off a packet, or scan the barcode.
+       Every one this world knows becomes a card, with the whole chain back to stone, water, sun and seed.</p>
+    <div class="cardrow" style="margin:0 0 9px">
+      <button class="ghost" id="labelScan">Scan a barcode</button>
+    </div>
     <textarea id="labelIn" class="search" rows="4" style="resize:vertical;font-size:13px"
       placeholder="Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk)…">${prefill}</textarea>
     <div class="cardrow" style="margin:9px 0">
@@ -4818,6 +4837,8 @@ function showLabelReader(prefill = '') {
     };
   };
   document.getElementById('labelGo').onclick = run;
+  document.getElementById('labelScan').onclick = () => showBarcodeScan(showLabelReader);
+  if (prefill) run();
   document.getElementById('labelDemo').onclick = () => {
     document.getElementById('labelIn').value =
       'Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk), Vegetable Gums (Pectin, Guar Gum, ' +
@@ -4825,6 +4846,141 @@ function showLabelReader(prefill = '') {
     run();
   };
 }
+
+/**
+ * A barcode in, a product's real ingredients text out — from Open Food
+ * Facts, a free public database that anyone can edit, over its own
+ * documented API. Nothing here reads an image or guesses at anything; it is
+ * a lookup, the same as typing the digits into their own website would be.
+ *
+ * Typing the number under the barcode is the path that always works and
+ * needs no permission, so it is never hidden behind a capability check.
+ * The camera is added on top of it where the browser actually supports
+ * BarcodeDetector, and falls back to the same toast-and-type path the
+ * moment anything about it fails.
+ */
+async function fetchOFFProduct(barcode) {
+  const fields = 'product_name,brands,ingredients_text,ingredients_text_en,image_front_small_url,code';
+  const res = await fetch(`https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(barcode)}.json?fields=${fields}`);
+  // OFF answers a genuine "don't have this one" with HTTP 404 and a
+  // well-formed {status:0} body, not with a network-level failure — so the
+  // body has to be read before deciding this was an error at all.
+  if (!res.ok && res.status !== 404) throw new Error(`Open Food Facts returned ${res.status}`);
+  const data = await res.json();
+  return data && data.status === 1 && data.product ? data.product : null;
+}
+function showBarcodeScan(onIngredients) {
+  document.getElementById('sheetBody').innerHTML = `
+    <p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
+       camera where this device supports it. Looked up on Open Food Facts, a free public database —
+       nothing here reads a photo or guesses; it is a straight lookup by the number.</p>
+    <div class="cardrow" style="margin:0 0 9px">
+      <input id="bcIn" class="search" inputmode="numeric" autocomplete="off"
+        placeholder="e.g. 9310072020278" style="flex:1;padding:9px 12px">
+      <button class="ghost" id="bcGo">Look it up</button>
+    </div>
+    <div class="cardrow" id="bcCameraRow" style="margin:0 0 9px" hidden>
+      <button class="ghost" id="bcCamera">Use the camera instead</button>
+      <button class="ghost" id="bcPhoto">Choose a photo</button>
+      <input type="file" id="bcFile" accept="image/*" hidden>
+    </div>
+    <video id="bcVideo" playsinline muted></video>
+    <div id="bcOut"></div>`;
+  openSheet('Scan a barcode');
+
+  const out = document.getElementById('bcOut');
+  const lookup = async (raw) => {
+    const code = (raw || '').replace(/\D/g, '');
+    if (!code) { out.innerHTML = '<p class="none">Type the digits under the barcode.</p>'; return; }
+    out.innerHTML = '<p class="hint2">Asking Open Food Facts…</p>';
+    let product;
+    try { product = await fetchOFFProduct(code); }
+    catch { out.innerHTML = '<p class="none">Could not reach Open Food Facts — check the connection and try again.</p>'; return; }
+    if (!product) {
+      out.innerHTML = `<p class="none">Barcode ${code} is not in Open Food Facts. Anyone can add it
+        there — or paste the ingredients in by hand instead.</p>`;
+      return;
+    }
+    // Open Food Facts is edited by anyone, and a language-specific field can
+    // hold garbage while the base field is fine — found live: a real product
+    // whose ingredients_text_en was the literal string "CURL_ING_OVERRIDE_…",
+    // evidently a test script's leftovers, while ingredients_text held the
+    // genuine (French) list. Real ingredient text has lowercase letters and a
+    // comma or a space in it; a field that doesn't is not trusted, and the
+    // base field is tried instead rather than showing the garbage as if it
+    // were the product.
+    const looksReal = (t) => !!t && /[a-z]/.test(t) && /[\s,]/.test(t);
+    const text = looksReal(product.ingredients_text_en) ? product.ingredients_text_en
+               : looksReal(product.ingredients_text) ? product.ingredients_text : '';
+    out.innerHTML = `
+      <div class="bcProduct">
+        ${product.image_front_small_url ? `<img src="${product.image_front_small_url}" alt="">` : `<i class="bcNoPic"></i>`}
+        <div><b>${(product.product_name || 'Unnamed product').replace(/[<>]/g, '')}</b>
+        ${product.brands ? `<i>${product.brands.replace(/[<>]/g, '')}</i>` : ''}</div>
+      </div>
+      ${text
+        ? `<div class="cardrow" style="margin-top:9px"><button class="ghost" id="bcUse">Read these ingredients</button></div>`
+        : '<p class="none">Open Food Facts has this product but no ingredients text on record for it.</p>'}`;
+    const use = document.getElementById('bcUse');
+    if (use) use.onclick = () => onIngredients('Ingredients: ' + text);
+  };
+  document.getElementById('bcGo').onclick = () => lookup(document.getElementById('bcIn').value);
+  document.getElementById('bcIn').addEventListener('keydown', ev => { if (ev.key === 'Enter') lookup(ev.target.value); });
+
+  if ('BarcodeDetector' in window) {
+    document.getElementById('bcCameraRow').hidden = false;
+    document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
+    document.getElementById('bcFile').onchange = async (ev) => {
+      const file = ev.target.files[0];
+      ev.target.value = '';                        // lets the same photo be picked again
+      if (!file) return;
+      out.innerHTML = '<p class="hint2">Reading the photo…</p>';
+      try {
+        const bitmap = await createImageBitmap(file);
+        const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
+        const codes = await detector.detect(bitmap);
+        if (!codes.length) { out.innerHTML = '<p class="none">No barcode found in that photo — try another, or type the number instead.</p>'; return; }
+        lookup(codes[0].rawValue);
+      } catch {
+        out.innerHTML = '<p class="none">Could not read that photo — try another, or type the number instead.</p>';
+      }
+    };
+    document.getElementById('bcCamera').onclick = async () => {
+      const video = document.getElementById('bcVideo');
+      let stream, detector, raf;
+      try {
+        detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+      } catch {
+        toast('Could not open the camera — type the barcode instead');
+        return;
+      }
+      video.srcObject = stream;
+      video.classList.add('on');
+      await video.play().catch(() => {});
+      const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); };
+      const tick = async () => {
+        if (!video.isConnected) { stop(); return; }        // the sheet closed mid-scan
+        try {
+          const codes = await detector.detect(video);
+          if (codes.length) { stop(); lookup(codes[0].rawValue); return; }
+        } catch {}
+        raf = requestAnimationFrame(tick);
+      };
+      tick();
+    };
+  } else {
+    // Safari has never implemented BarcodeDetector, on iOS or macOS — this is
+    // not a "not yet" gap that closes with a browser update, it is the actual
+    // state of things for a large share of phones this runs on. Hiding the
+    // row without a word left the whole scan feature looking simply missing,
+    // which is worse than admitting the limit and pointing at what still
+    // works: typing the number is not a fallback here, it is the real path.
+    out.insertAdjacentHTML('beforebegin', `<p class="hint2">This browser can't read a barcode
+      on-device (Safari doesn't support that yet) — typing the number above works everywhere.</p>`);
+  }
+}
+
 function labelResultHTML(parsed) {
   if (!parsed.length) return '<p class="none">Nothing to read yet.</p>';
   const found = parsed.filter(p => p.kind === 'found');
