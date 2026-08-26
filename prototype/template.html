@@ -709,7 +709,10 @@ __CATEGORY_CSS__
   .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--discovery);
     opacity:.45;animation:drain 6s linear forwards}
   #card:not(.mini) .timer{display:none}
-  .cardrow{display:flex;gap:8px;justify-content:center;align-items:center}
+  /* wrap, not shrink: five buttons in a narrow sheet with nowrap don't
+     overflow, they each shrink until their own label wraps mid-word — a
+     whole button dropping to the next line reads far better than that. */
+  .cardrow{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
 
   #toast{
     position:fixed;left:50%;bottom:104px;transform:translateX(-50%);z-index:150;
@@ -717,7 +720,10 @@ __CATEGORY_CSS__
     padding:9px 17px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none;
   }
   #toast.on{opacity:.95}
-  .cardrow{display:flex;gap:8px;justify-content:center;align-items:center}
+  /* wrap, not shrink: five buttons in a narrow sheet with nowrap don't
+     overflow, they each shrink until their own label wraps mid-word — a
+     whole button dropping to the next line reads far better than that. */
+  .cardrow{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
   .inner button.ghost{background:var(--surface);color:var(--ink-soft);border-color:var(--line);font-size:13px;padding:9px 15px}
 
   /* sheet: codex + provenance */
