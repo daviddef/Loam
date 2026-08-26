@@ -1,0 +1,468 @@
+{
+  "$comment": "What a food label is legally required to declare, and why. Each entry names the PROTEIN, because the allergen is a protein and the food is only its container — that is the fact this file exists to carry. Everything here is a statement about a molecule or about a statute. Nothing here is advice: this file never says what anyone should eat, avoid, or do. Jurisdiction fields record what a law requires, not what a body does.",
+  "$jurisdictions": {
+    "us": "Federal Food, Drug, and Cosmetic Act §201(qq), as amended by FALCPA 2004 and the FASTER Act 2021. Nine major food allergens.",
+    "eu": "Regulation (EU) No 1169/2011, Annex II. Fourteen substances or products causing allergies or intolerances.",
+    "$note": "The UK retains Annex II unchanged after EU exit, so eu:true and UK practice agree on all fourteen."
+  },
+  "$src": {
+    "us_statute": "https://www.law.cornell.edu/uscode/text/21/321",
+    "us_fda": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies",
+    "eu_annex2": "https://www.legislation.gov.uk/eur/2011/1169/annex/II"
+  },
+  "allergens": {
+    "milk": {
+      "name": "Milk",
+      "proteins": [
+        "alpha-S1-casein",
+        "alpha-S2-casein",
+        "beta-casein",
+        "kappa-casein",
+        "alpha-lactalbumin",
+        "beta-lactoglobulin"
+      ],
+      "proteinNote": "Caseins are the curd fraction; alpha-lactalbumin and beta-lactoglobulin are the whey fraction. Cheese-making separates them, and does not remove either.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Milk_allergy",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "EU Annex II item 7 declares milk 'and products thereof (including lactose)', with named exemptions for whey used in alcoholic distillates and for lactitol.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": null,
+      "heatStable": null,
+      "confusedWith": "lactose_intolerance",
+      "ids": [
+        "milk",
+        "pasteurised_milk",
+        "buttermilk",
+        "cream",
+        "sweet_cream",
+        "butter",
+        "garlic_butter",
+        "creamed_butter",
+        "rubbed_flour",
+        "curd",
+        "cheese",
+        "aged_cheese",
+        "blue_cheese",
+        "cheese_toastie",
+        "cheeseboard",
+        "yoghurt",
+        "garlic_yoghurt",
+        "yoghurt_culture",
+        "ice_cream",
+        "whey",
+        "kefir"
+      ]
+    },
+    "egg": {
+      "name": "Egg",
+      "proteins": [
+        "ovomucoid (Gal d 1)",
+        "ovalbumin (Gal d 2)",
+        "ovotransferrin (Gal d 3)",
+        "lysozyme (Gal d 4)",
+        "alpha-livetin (Gal d 5)"
+      ],
+      "proteinNote": "Four of the five are in the white. Ovomucoid is described as the dominant allergen. Alpha-livetin is the yolk's.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Egg_allergy",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableSrc": "https://www.law.cornell.edu/uscode/text/21/321",
+      "crossReactivity": null,
+      "heatStable": "partial",
+      "heatNote": "Heat-denaturation of Gal d 1 and Gal d 2 reduced IgE binding and basophil degranulation in vitro, with residual reactivity that varied by individual sensitisation profile.",
+      "heatSrc": "https://europepmc.org/article/MED/41489027",
+      "ids": [
+        "egg",
+        "boiled_egg",
+        "egg_sandwich",
+        "egg_mayo",
+        "mayonnaise"
+      ]
+    },
+    "peanut": {
+      "name": "Peanut",
+      "proteins": [
+        "Ara h 1 (vicilin)",
+        "Ara h 2 (2S albumin)",
+        "Ara h 3 (legumin)",
+        "Ara h 6 (2S albumin)"
+      ],
+      "proteinNote": "Ara h 1, 2, 3 and 6 are 'major' by the formal definition — each provokes a response in more than half of the sensitised population. Ara h 1 alone is 12–16% of total peanut protein.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Peanut_allergy",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "US statute exempts 'any highly refined oil derived from a food specified in paragraph (1)'. EU Annex II item 5 carries no oil exemption for peanut, unlike its item 6 exemption for fully refined soybean oil.",
+      "declarableSrc": "https://www.law.cornell.edu/uscode/text/21/321",
+      "crossReactivity": [
+        "tree_nuts",
+        "soy",
+        "lupin"
+      ],
+      "crossReactivityNote": "6–40% of people with confirmed peanut allergy react on challenge with tree nuts or legumes. The peanut–lupin link is structural: Lup an 1 is beta-conglutin, a vicilin, and so is Ara h 1.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Peanut_allergy",
+      "heatStable": null,
+      "notNote": "Peanut is a legume. It is not a tree nut and shares no botanical family with one.",
+      "notSrc": "https://en.wikipedia.org/wiki/Peanut_allergy",
+      "ids": [
+        "peanut"
+      ]
+    },
+    "tree_nuts": {
+      "name": "Tree nuts",
+      "proteins": [
+        "Cor a 14 (hazelnut, 2S albumin)",
+        "Jug r 1 (walnut, 2S albumin)",
+        "Ana o 3 (cashew, 2S albumin)"
+      ],
+      "proteinNote": "Each nut carries its own numbered set. The 2S albumins were the components most predictive of clinical reactivity in a 350-child microarray cohort.",
+      "proteinSrc": "https://europepmc.org/article/MED/41174973",
+      "elementsAbsent": [
+        "walnut",
+        "hazelnut",
+        "cashew",
+        "pistachio",
+        "pecan",
+        "brazil_nut",
+        "macadamia"
+      ],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "EU Annex II item 8 names exactly eight species. US law requires the TYPE of tree nut to be declared, and FDA guidance covers a longer list that includes pine nut and heartnut. Coconut is a drupe and is not a tree nut in either scheme.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": [
+        "peanut"
+      ],
+      "crossReactivityNote": "Cross-reactivity is not uniform inside the group. It is stronger among almond, walnut, pecan, hazelnut and Brazil nut than between those and cashew or pistachio, which are only distantly related to them.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Tree_nut_allergy",
+      "heatStable": null,
+      "ids": [
+        "almond"
+      ]
+    },
+    "fish": {
+      "name": "Fish",
+      "proteins": [
+        "beta-parvalbumin (bony fish)",
+        "alpha-parvalbumin (sharks and rays)",
+        "fish collagen",
+        "enolase",
+        "aldolase"
+      ],
+      "proteinNote": "Parvalbumin is a small calcium-binding muscle protein. Collagen is a separate and independent fish allergen, and a parvalbumin-based skin test does not detect it.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Fish_allergy",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "Both require the SPECIES to be named — 'bass, flounder, or cod' in the US statute's own example. EU Annex II item 4 exempts fish gelatine used as a vitamin carrier and fish gelatine or isinglass used as a fining agent in beer and wine, which is directly relevant to the game's `isinglass`.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": [
+        "fish"
+      ],
+      "crossReactivityNote": "High across bony fish, because parvalbumin's structure is highly conserved. Low between bony and cartilaginous fish, which carry different parvalbumin lineages. NONE to shellfish — shellfish do not make parvalbumin at all.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Shellfish_allergy",
+      "heatStable": true,
+      "heatNote": "Parvalbumin is resistant to heat and to enzymatic digestion; cooking does not diminish its allergenic potency.",
+      "heatSrc": "https://en.wikipedia.org/wiki/Fish_allergy",
+      "ids": [
+        "fish",
+        "salt_fish",
+        "grilled_fish",
+        "smoked_fish",
+        "fish_and_chips",
+        "battered_fish",
+        "fried_fish",
+        "stockfish",
+        "roe",
+        "isinglass",
+        "swim_bladder"
+      ]
+    },
+    "crustacean": {
+      "name": "Crustacean shellfish",
+      "proteins": [
+        "tropomyosin (Pen a 1, Pen j 1, Por p 1)",
+        "arginine kinase",
+        "myosin light chain",
+        "sarcoplasmic calcium-binding protein"
+      ],
+      "proteinNote": "Tropomyosin is the coiled-coil protein that lies along an actin filament and gates muscle contraction. Every animal has one; the invertebrate version is the allergen.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Shellfish_allergy",
+      "elementsAbsent": [
+        "prawn",
+        "crab",
+        "lobster"
+      ],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "US requires the species — 'crab, lobster, or shrimp'. EU Annex II item 2 is 'Crustaceans and products thereof', with no exemptions.",
+      "declarableSrc": "https://www.law.cornell.edu/uscode/text/21/321",
+      "crossReactivity": [
+        "mollusc",
+        "dust_mite",
+        "cockroach",
+        "edible_insect"
+      ],
+      "crossReactivityNote": "Tropomyosin is shared across crustaceans, molluscs and other arthropods. Inhaled dust-mite tropomyosin (Der p 10) is thought to be the primary sensitiser for shellfish allergy — an inhalant-to-food route, confirmed in a group with no history of eating shellfish at all.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Shellfish_allergy",
+      "heatStable": true,
+      "heatNote": "Tropomyosin's helix collapses on heating to 80 °C but forms no insoluble aggregate and regains its native fold on cooling to 25 °C, retaining antigenicity. Denaturation here is reversible, which is why cooking does not settle the question.",
+      "heatSrc": "https://europepmc.org/article/MED/23649255",
+      "ids": []
+    },
+    "mollusc": {
+      "name": "Molluscs",
+      "proteins": [
+        "tropomyosin — Sac g 1 in Sydney rock oyster"
+      ],
+      "proteinNote": "The same protein family as crustacean. Sac g 1 was cloned, sequenced and given its IUIS designation from Saccostrea glomerata.",
+      "proteinSrc": "https://europepmc.org/article/MED/29756679",
+      "elementsAbsent": [
+        "mussel",
+        "clam",
+        "scallop",
+        "squid",
+        "snail"
+      ],
+      "declarable": {
+        "us": false,
+        "eu": true
+      },
+      "declarableNote": "THE CLEAREST DIVERGENCE IN THE FILE. The US statute names 'Crustacean shellfish' only; molluscs are absent from all nine major food allergens. EU Annex II item 14 is 'Molluscs and products thereof'. An oyster must be declared in Dublin and need not be in Detroit.",
+      "declarableSrc": "https://www.law.cornell.edu/uscode/text/21/321",
+      "crossReactivity": [
+        "crustacean"
+      ],
+      "crossReactivityNote": "Inhibition immunoblotting showed high cross-reactivity between mollusc and crustacean tropomyosins. Oyster extract showed the highest cross-reactivity with other molluscs; mussel the weakest.",
+      "crossReactivitySrc": "https://europepmc.org/article/MED/29756679",
+      "heatStable": true,
+      "heatNote": "Tropomyosin ran as a heat-stable band in all four species tested, and IgE reactivity of the extracts was higher after cooking than before. Stated as a measurement on extracts in an assay.",
+      "heatSrc": "https://europepmc.org/article/MED/29756679",
+      "ids": [
+        "oyster"
+      ]
+    },
+    "gluten_cereals": {
+      "name": "Cereals containing gluten",
+      "proteins": [
+        "gliadin (prolamin)",
+        "glutenin (glutelin)",
+        "omega-5 gliadin",
+        "wheat albumins and globulins"
+      ],
+      "proteinNote": "Gluten is not one protein: it is the elastic network gliadin and glutenin form when flour is wetted and worked. The game already builds that network in `dough`.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Gluten",
+      "elementsAbsent": [
+        "rye",
+        "spelt"
+      ],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "NOT THE SAME SCOPE. The US lists 'wheat' alone. EU Annex II item 1 lists 'wheat (such as spelt and khorasan wheat), rye, barley, oats or their hybridised strains', with exemptions for wheat-based glucose syrups and maltodextrins, barley-based glucose syrups, and cereals used for alcoholic distillates. Barley and oats are declarable in the EU and are not US major allergens.",
+      "exemptions": [
+        "wheat based glucose syrups including dextrose",
+        "wheat based maltodextrins",
+        "glucose syrups based on barley",
+        "cereals used for making alcoholic distillates including ethyl alcohol of agricultural origin"
+      ],
+      "exemptionsNote": "Annex II attaches a footnote to the syrup and maltodextrin exemptions: they hold 'in so far as the process that they have undergone is not likely to increase the level of allergenicity assessed by the Authority for the relevant product from which they originated'. The exemption is therefore a finding about a process, not a blanket rule about an ingredient — which is why a manufacturer may still declare it, and some do.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": null,
+      "heatStable": null,
+      "confusedWith": "coeliac_disease",
+      "ids": [
+        "wheat",
+        "winter_wheat",
+        "semi_dwarf_wheat",
+        "barley",
+        "oat",
+        "flour",
+        "rubbed_flour",
+        "dough",
+        "bread",
+        "flatbread",
+        "garlic_bread",
+        "breadcrumb",
+        "malt",
+        "beer",
+        "wort"
+      ]
+    },
+    "soy": {
+      "name": "Soybean",
+      "proteins": [
+        "Gly m 5 (vicilin/beta-conglycinin)",
+        "Gly m 6 (legumin/glycinin)",
+        "Gly m 8 (2S albumin)",
+        "Gly m 4 (PR-10)"
+      ],
+      "proteinNote": "Eight are numbered by IUIS. Gly m 5 and Gly m 6 are the cupins — the same superfamily as Ara h 1 and Ara h 3.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Soy_allergy",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "Both exempt fully refined soybean oil. EU Annex II item 6 also exempts natural mixed tocopherols (E306) from soybean sources, soy-derived phytosterols and phytosterol esters, and plant stanol esters. Soy lecithin is NOT exempt in the US.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": [
+        "peanut"
+      ],
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Peanut_allergy",
+      "heatStable": null,
+      "ids": [
+        "soybean",
+        "tofu",
+        "miso"
+      ]
+    },
+    "sesame": {
+      "name": "Sesame",
+      "proteins": [
+        "Ses i 1 (2S albumin)"
+      ],
+      "proteinNote": "Ses i 1 through Ses i 7 are described. Ses i 1 is the component used for serum IgE testing.",
+      "proteinSrc": "https://europepmc.org/article/MED/41174973",
+      "elementsAbsent": [
+        "tahini"
+      ],
+      "hiddenNote": "FDA states that sesame can be included under 'flavors' and 'spices' and so is sometimes not listed by name, and that the common or usual name 'tahini' does not itself specify sesame unless the manufacturer labels it voluntarily.",
+      "hiddenSrc": "https://www.fda.gov/food/conversations-experts-food-topics/current-food-allergen-landscape",
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "declarableNote": "THE NEWEST ENTRY ON THE US LIST. The FASTER Act was signed 23 April 2021 and made sesame the ninth US major food allergen effective 1 January 2023. It had already been EU Annex II item 11 since 2011. Products in interstate commerce before that date did not have to be relabelled.",
+      "declarableSrc": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies",
+      "crossReactivity": [
+        "peanut",
+        "tree_nuts"
+      ],
+      "crossReactivityNote": "A cross-reactivity is described between sesame and peanuts, hazelnuts and almonds.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Sesame",
+      "heatStable": null,
+      "ids": [
+        "sesame"
+      ]
+    },
+    "celery": {
+      "name": "Celery",
+      "proteins": [
+        "Api g 1 (PR-10)"
+      ],
+      "proteinNote": "Api g 1 is a pathogenesis-related class 10 protein — the family that includes birch pollen's Bet v 1, which is why celery sensitisation travels with pollen sensitisation.",
+      "proteinSrc": "https://europepmc.org/article/MED/29800504",
+      "elementsAbsent": [
+        "celery"
+      ],
+      "declarable": {
+        "us": false,
+        "eu": true
+      },
+      "declarableNote": "EU Annex II item 9, 'Celery and products thereof', covers stalk, leaf, seed and celeriac, and applies down to trace amounts. Not a US major food allergen.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": [
+        "birch_pollen",
+        "mugwort_pollen"
+      ],
+      "crossReactivitySrc": "https://europepmc.org/article/MED/40565300",
+      "heatStable": "partial",
+      "heatNote": "Api g 1 is not intrinsically heat-labile in vitro. It refolds partially into an IgE-binding conformation at physiological pH, and acidic treatment produces structurally heat-resistant IgE-reactive oligomers. The apparent temperature-lability of celery seems to come from pH and from the food matrix, not from the protein.",
+      "heatSrc": "https://europepmc.org/article/MED/29800504",
+      "ids": []
+    },
+    "mustard": {
+      "name": "Mustard",
+      "proteins": [
+        "Sin a 1 (2S albumin)",
+        "Sin a 2 (11S globulin)"
+      ],
+      "proteinNote": "Sin a 1 is a napin — a 2S albumin, the same family as Ara h 2 and Ses i 1. It is described as highly stable and able to reach the intestinal epithelium intact.",
+      "proteinSrc": "https://europepmc.org/article/MED/42273869",
+      "elementsAbsent": [
+        "mustard_seed",
+        "mustard"
+      ],
+      "declarable": {
+        "us": false,
+        "eu": true
+      },
+      "declarableNote": "EU Annex II item 10, 'Mustard and products thereof'. Not a US major food allergen.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": null,
+      "heatStable": null,
+      "ids": []
+    },
+    "lupin": {
+      "name": "Lupin",
+      "proteins": [
+        "Lup an 1 (beta-conglutin, a vicilin)"
+      ],
+      "proteinNote": "Named by the IUIS nomenclature subcommittee from Lupinus angustifolius. Beta-conglutin is a vicilin — structurally the same kind of seed storage protein as peanut's Ara h 1.",
+      "proteinSrc": "https://europepmc.org/article/MED/18620408",
+      "elementsAbsent": [
+        "lupin"
+      ],
+      "declarable": {
+        "us": false,
+        "eu": true
+      },
+      "declarableNote": "EU Annex II item 13, 'Lupin and products thereof'. Not a US major food allergen. Lupin flour is used in baked goods and pasta in several EU countries, which is why the EU list carries it and the US list does not.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": [
+        "peanut"
+      ],
+      "crossReactivityNote": "Lupin and peanut are both legumes and the cross-reaction is between homologous proteins: Lup an 1 is a vicilin and so is Ara h 1.",
+      "crossReactivitySrc": "https://en.wikipedia.org/wiki/Lupin_bean",
+      "heatStable": null,
+      "ids": []
+    },
+    "sulphites": {
+      "name": "Sulphur dioxide and sulphites",
+      "proteins": [],
+      "proteinNote": "NONE. This is the entry that is not a protein, and that is the point of it. SO2 is a small inorganic molecule; there is no IgE epitope on it. It is on the declaration list because reactions to it are real and frequent enough to warrant one, not because the mechanism matches the other thirteen.",
+      "proteinSrc": "https://en.wikipedia.org/wiki/Sulfite",
+      "elementsAbsent": [],
+      "declarable": {
+        "us": true,
+        "eu": true
+      },
+      "threshold": {
+        "value": 10,
+        "units": [
+          "mg/kg",
+          "mg/litre"
+        ],
+        "basis": "total SO2, calculated for products as proposed ready for consumption or as reconstituted"
+      },
+      "declarableNote": "THE ONLY ENTRY WITH A NUMBER. EU Annex II item 12 sets the trigger at more than 10 mg/kg or 10 mg/litre of total SO2. In the US the equivalent threshold is 10 ppm, and US wine bottled after mid-1987 above that must state that it contains sulfites. Every other item on both lists is declarable at any amount.",
+      "declarableSrc": "https://www.legislation.gov.uk/eur/2011/1169/annex/II",
+      "crossReactivity": null,
+      "heatStable": null,
+      "isProteinAllergen": false,
+      "ids": [
+        "sulfur_dioxide",
+        "wine",
+        "aged_wine",
+        "cider"
+      ]
+    }
+  }
+}

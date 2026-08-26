@@ -247,6 +247,47 @@
         "platypus"
       ],
       "severity": "contact"
+    },
+    "lion_predation": {
+      "label": "Man-eating is a supplement, not a last resort",
+      "note": "The Tsavo pair stopped the Uganda Railway in 1898; Patterson claimed 135 victims and a later review of his journal put it nearer 28–31. The modern figure is larger and less famous: more than 563 people killed in Tanzania since 1990 and at least 308 injured, with attacks peaking at harvest time. Studies of man-eating lions find that African lions eat people as a supplement to other food rather than because they are starving.",
+      "severity": "acute",
+      "ids": [
+        "lion"
+      ]
+    },
+    "bear_defence": {
+      "label": "A defensive animal, not a predatory one",
+      "note": "Brown bears seldom attack on sight and usually avoid people. What changes that is surprise or a threat to cubs: sows with cubs account for the majority of injuries and fatalities in North America. That is a different mechanism from a hunting animal, and it is why the danger is a function of distance and warning rather than of hunger.",
+      "severity": "acute",
+      "ids": [
+        "bear"
+      ]
+    },
+    "elephant_musth": {
+      "label": "A herbivore, dangerous for a reason that has nothing to do with diet",
+      "note": "Adult bulls enter a periodic state of raised testosterone called musth, marked by a fluid running from the temporal gland down the side of the face. Males become extremely aggressive during it, and working elephants in musth are chained until it passes. Human–elephant conflict kills as many as 80 people a year in Sri Lanka, where farmers kill more than 230 elephants in return.",
+      "severity": "acute",
+      "ids": [
+        "elephant"
+      ]
+    },
+    "road_animal": {
+      "label": "The dangerous ones are the ones you meet at speed",
+      "note": "Deer-vehicle collisions run to 500,000 a year in Europe and 1–1.5 million in North America, and together account for some 30,000 injuries and 200 deaths. Nine out of ten animal collisions in Australia involve kangaroos, which cross at around 50 km/h and are heavy enough to come through a windscreen. By comparison only two fatal kangaroo attacks have ever been reliably documented in Australia.",
+      "severity": "acute",
+      "ids": [
+        "deer",
+        "kangaroo"
+      ]
+    },
+    "sting_anaphylaxis": {
+      "label": "The sting is a protein, and the reaction is an allergy",
+      "note": "Most stings produce a local reaction. An estimated 5–10% of people have a generalised systemic response instead, and in the United States about 40 people a year die of anaphylaxis from stinging-insect allergy. The mechanism is the same IgE pathway as a food allergy — a venom protein where a seed protein would be — which is why an insect sting and a peanut appear in the same part of a medical textbook.",
+      "severity": "conditional",
+      "ids": [
+        "bee"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

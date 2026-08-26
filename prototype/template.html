@@ -1060,6 +1060,19 @@ __CATEGORY_CSS__
   .ent .arw{color:#C6B69C;margin:0 1px}
   .ent .out{background:#FFF3E9;border-color:#F0D6C0}
   .hint2{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:4px 2px 0}
+  /* Named regulated allergens on a resolved ingredient, and a summary banner
+     above the list. Amber, not red — this states a legal fact about the label,
+     it is not a warning to act on. */
+  .allergen-banner{
+    margin:8px 0;padding:8px 11px;border-radius:9px;font-size:12px;line-height:1.4;
+    background:color-mix(in srgb,var(--mustard) 16%,var(--card));
+    border:1px solid color-mix(in srgb,var(--mustard) 45%,var(--line));
+  }
+  .allergen-tag{
+    font-style:normal;font:700 9px/1 var(--face-data);letter-spacing:.03em;text-transform:uppercase;
+    margin-left:6px;padding:2px 6px;border-radius:99px;
+    background:color-mix(in srgb,var(--mustard) 22%,var(--card));color:var(--ink);
+  }
   .hintbox{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:10px}
   .hintbox p{margin:0 0 7px;font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
   .hintbox p:last-child{margin-bottom:0}
@@ -1472,6 +1485,12 @@ const SCALE = __SCALE_DATA__;
 const CAUTIONS = __CAUTION_DATA__;
 /* Food-label vocabulary → element ids. See data/labels.json. */
 const LABELS = __LABEL_DATA__;
+/* Regulated allergens, and which of this world's elements each protein turns
+   up in. See data/allergens.json. */
+const ALLERGENS = __ALLERGEN_DATA__;
+const ALLERGEN_BY_ELEMENT = {};
+for (const [key, a] of Object.entries(ALLERGENS.allergens || {}))
+  for (const id of a.ids || []) (ALLERGEN_BY_ELEMENT[id] = ALLERGEN_BY_ELEMENT[id] || []).push({ key, ...a });
 const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
@@ -4816,10 +4835,18 @@ function labelResultHTML(parsed) {
   const row = (p) => {
     const e = byId[p.id];
     const n = depth(p.id);
+    const al = ALLERGEN_BY_ELEMENT[p.id];
     return `<div class="ent in"><span class="g" data-entry-any="${p.id}">${glyph(p.id, 19)} ${nameOf(e)}</span>` +
-      `<span class="arw">←</span><span class="g">${n ? `${n} step${n === 1 ? '' : 's'} from the starters` : 'a starter'}</span></div>`;
+      `<span class="arw">←</span><span class="g">${n ? `${n} step${n === 1 ? '' : 's'} from the starters` : 'a starter'}</span>` +
+      (al ? al.map(a => `<i class="allergen-tag" title="${a.name} — a regulated allergen">${a.name}</i>`).join('') : '') +
+      `</div>`;
   };
+  const allergensHere = [...new Map(found.flatMap(p => ALLERGEN_BY_ELEMENT[p.id] || [])
+    .map(a => [a.key, a])).values()];
   return `<h2>Found · ${found.length} of ${parsed.length}</h2>` +
+    (allergensHere.length ? `<div class="allergen-banner">` +
+      `Contains ${allergensHere.map(a => a.name).join(', ')} — regulated allergen${allergensHere.length === 1 ? '' : 's'}.` +
+      `</div>` : '') +
     (found.length ? found.map(row).join('') : '<p class="none">None of these yet.</p>') +
     (near.length ? `<h2>Built from · ${near.length}</h2>` + near.map(p =>
       `<div class="ent in"><span class="g">${p.text}</span><span class="arw">→</span>` +

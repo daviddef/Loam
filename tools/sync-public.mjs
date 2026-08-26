@@ -33,6 +33,7 @@ const PUBLIC = [
   'data/scale.json',
   'data/cautions.json',
   'data/labels.json',
+  'data/allergens.json',
   'data/vendor/README.md',
   'data/vendor/munsell-real.dat',
   'prototype/template.html',
@@ -63,7 +64,13 @@ const NEVER = [/^RESEARCH.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG\.md$/, /^DESIGN\.m
                // Merges RESEARCH-*.md batches, which are private by definition.
                // The tool leaks nothing by itself, but it is machinery for a
                // workflow the public repo does not have the inputs for.
-               /^tools\/integrate-research\.mjs$/];
+               /^tools\/integrate-research\.mjs$/,
+               // Raw third-party bulk datasets dropped into the working tree
+               // for research (FoodDB, Open Food Facts) — many gigabytes,
+               // under their own licences, and never meant to ship. Already
+               // gitignored; listed here too so sync-public refuses loudly
+               // rather than silently skipping them if that ever changes.
+               /^foodb_.*\//, /^openfoodfacts\//];
 
 const dest = process.argv[2];
 const checkOnly = process.argv.includes('--check');
