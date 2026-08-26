@@ -3064,6 +3064,241 @@ def('candied_fruit', () => [...[[22, 24], [36, 22], [28, 38], [40, 38]].map(([x,
 def('coconut_sugar', () => [mound('lo', 46, 19, 17), ...granules('ik', 9, 53, [18, 34, 42, 46]),
                             S('M22 22 Q30 14 38 22', 'hi', 2)]);                       // tapped from the blossom
 
+/* 27 new elements, no hand art yet ─────────────────────────────────────────
+ * Eight land in `living` (skeletal/structural, same molecular kit as the
+ * vitamins), nine in `grain` (herbs, mushrooms, sweeteners — drawn
+ * representationally), ten in `plant` (crop fruit/veg — simple silhouettes).
+ */
+
+/* living — skeletal chemistry, one genuinely different motif each ────────
+ * creatine is NOT cyclic (a guanidino fork on a short chain, never the
+ * shared aminoBackbone() the twenty use — arginine already owns the
+ * three-nitrogen guanidinium fan, so creatine skips the backbone entirely
+ * and reads as its own small branching molecule); citrulline IS an amino
+ * acid, so it reuses aminoBackbone()/chain(), but ends in a ureido group
+ * (one O, one N) where arginine's fan has none — the oxygen is the tell;
+ * theanine is glutamine's exact backbone and amide with one extra N-ethyl
+ * tail hanging off the far nitrogen — glutamine stops, theanine keeps going;
+ * caffeine is a genuinely fused six/five ring pair (a purine) with three
+ * methyl stubs and two carbonyl oxygens, distinct from the separately-bonded
+ * ring pairs (thiamin, vitamin_d) and from tryptophan's plain fused rings;
+ * alpha_gpc is a short glycerol backbone plus a marked phosphate and a
+ * trimethylammonium starburst — no fatty tails, which is what tells it apart
+ * from phospholipid and lecithin's twin-tail heads; synephrine is a bare
+ * phenol ring with a branching amine tail and no amino-acid backbone at all
+ * (tyrosine's icon is backbone-plus-ring; this is ring-plus-tail only);
+ * biotin is two small FUSED rings (one carries the sulfur) with a long
+ * zig-zag tail out to a carboxylic acid — folate's two rings are spaced
+ * apart on a single bond, biotin's touch; hyaluronic acid alternates a
+ * hexagon and a stroked circle along a chain to read as a repeating
+ * disaccharide, unlike dna's double helix or polypeptide's single-shape
+ * backbone dots.
+ */
+def('creatine', () => [
+  S('M20 28 L32 28 L44 22 L54 28', 'ik', 2.2),
+  ...double([20, 28], [10, 18], 'ik'),
+  S('M20 28 L10 38', 'ik', 2),
+  C(10, 18, 4.2, CPK.N), C(10, 38, 4.2, CPK.N), C(32, 28, 4.4, CPK.N),
+  S('M32 28 L32 40', 'ik', 2), C(32, 40, 4, CPK.C),
+  ...double([54, 28], [54, 16], 'ik'), C(54, 16, 4.2, CPK.O),
+  S('M54 28 L48 38', 'ik', 2), C(48, 38, 4.2, CPK.O),
+]);
+def('citrulline', () => [
+  ...aminoBackbone(), chain([[26, 39], [26, 46]]), C(26, 46, 4.4, CPK.N),
+  S('M26 46 L26 54', 'ik', 2),
+  ...double([26, 54], [36, 58], 'ik'), C(36, 58, 4.2, CPK.O),
+  S('M26 54 L16 58', 'ik', 2), C(16, 58, 4.2, CPK.N),
+]);
+def('theanine', () => [
+  ...aminoBackbone(), chain([[20, 38], [20, 47]]),
+  ...double([20, 47], [9, 53], 'ik'), C(9, 53, 4, CPK.O),
+  S('M20 47 L31 53', 'ik', 2), C(31, 53, 4.2, CPK.N),
+  S('M31 53 L41 47', 'ik', 2), C(41, 47, 4, CPK.C),
+  S('M41 47 L51 53', 'ik', 2), C(51, 53, 4, CPK.C),
+]);
+def('caffeine', () => [
+  hex('ik', 20, 30, 10, 2),
+  S('M28 23 L38 25 L41 35 L33 41 L26 36 Z', 'ik', 2),
+  S('M13 22 L6 17', 'ik', 1.8), C(6, 17, 3.6, CPK.C),
+  S('M13 39 L6 45', 'ik', 1.8), C(6, 45, 3.6, CPK.C),
+  S('M41 35 L50 40', 'ik', 1.8), C(50, 40, 3.6, CPK.C),
+  S('M20 20 L20 11', 'ik', 1.8), C(20, 11, 3.6, CPK.O),
+  S('M28 23 L32 15', 'ik', 1.8), C(32, 15, 3.6, CPK.O),
+]);
+def('alpha_gpc', () => [
+  (() => backbone('ik', 3, 22, 24).shape)(),
+  S('M39 27 L46 36', 'ik', 2.2), C(46, 36, 5.4, CPK.P),
+  S('M46 36 L46 46', 'ik', 2.2), C(46, 46, 4.6, CPK.N),
+  S('M46 46 L38 52', 'ik', 1.6), C(38, 52, 3, CPK.C),
+  S('M46 46 L54 52', 'ik', 1.6), C(54, 52, 3, CPK.C),
+  S('M46 46 L46 56', 'ik', 1.6), C(46, 56, 3, CPK.C),
+]);
+def('synephrine', () => [
+  hex('ik', 22, 24, 9, 2),
+  S('M22 33 L22 40', 'ik', 1.8), C(22, 42, 4.2, CPK.O),
+  S('M22 15 L32 10', 'ik', 2), C(32, 10, 4, CPK.C),
+  S('M32 10 L40 4', 'ik', 1.6), C(40, 4, 3.8, CPK.O),
+  S('M32 10 L42 14', 'ik', 2), C(42, 14, 4.4, CPK.N),
+  S('M42 14 L50 10', 'ik', 1.8), C(50, 10, 3.6, CPK.C),
+]);
+def('biotin', () => [
+  S('M10 22 L18 13 L27 18 L24 28 L13 29 Z', 'ik', 2),
+  S('M24 28 L34 30 L37 20 L27 18', 'ik', 2),
+  C(10, 22, 3.6, CPK.N), C(18, 13, 3.6, CPK.N), C(37, 20, 4.4, CPK.S),
+  S('M34 30 L42 26 L48 34 L54 30', 'ik', 2.2),
+  ...double([54, 30], [54, 20], 'ik'), C(54, 20, 4, CPK.O),
+  S('M54 30 L48 40', 'ik', 2), C(48, 40, 4, CPK.O),
+]);
+def('hyaluronic_acid', () => {
+  const cx = [7, 18, 29, 40, 51];
+  return [
+    ...cx.map((x, i) => i % 2 === 0 ? hex('ik', x, 30, 5.4, 1.6) : ring('ik', x, 30, 5, 1.6)),
+    ...cx.slice(0, -1).map((x, i) => S(`M${x + 5.4} 30 L${cx[i + 1] - 5} 30`, 'ik', 1.6)),
+  ];
+});
+
+/* grain — herbs/mushrooms/sweeteners, each on its own real trait ─────────
+ * shiitake is one scalloped dome on a centred stem, flecked; maitake is a
+ * CLUSTER of small overlapping fan-caps with no single dominant stem — the
+ * rosette a hen-of-the-woods actually grows as; spirulina is a true
+ * Archimedean spiral stroke, not the stacked-ring coil() used for wire
+ * filaments elsewhere; dandelion is one jagged, deeply-toothed leaf, not a
+ * fan of fronds like parsley or a single lobed leaf like coriander; ginseng
+ * is a vertical taproot that forks into legs and throws off arms — a
+ * humanoid silhouette, nothing like rhizome/ginger's horizontal knobby
+ * strokes or carrot's tapered wedge; psyllium is grain()'s pointed seed
+ * husk wrapped in a soft ghost halo for the mucilage gel, which rice/farro
+ * don't have; fos is a short open backbone capped with a small ring at each
+ * end (an oligomer of linked units), distinct from xylitol's backbone of
+ * bare dots; sucralose is glucose's Haworth ring with three hydroxyls
+ * swapped for explicit green chlorine atoms; stevia is small blunt oval
+ * leaflets (not oregano's round leaf() pairs) with a centre vein, opposite
+ * up the stem.
+ */
+def('shiitake', () => [
+  P('M8 30 Q8 20 16 16 Q22 10 30 14 Q38 10 44 16 Q52 20 52 30 Z', 'bs'),
+  P('M26 30 L34 30 L32 50 L28 50 Z', 'lo'),
+  ...[14, 22, 30, 38, 46].map(x => S(`M${x} 29 L${x} 33`, 'ik', 1)),
+  C(20, 20, 1.6, 'hi'), C(32, 16, 1.6, 'hi'), C(42, 22, 1.6, 'hi'),
+]);
+def('maitake', () => [
+  ...[[16, 40, -20], [26, 34, -5], [36, 34, 10], [46, 40, 25], [30, 46, 0]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [P(`M${x - 9} ${y + 6} Q${x - 9} ${y - 6} ${x} ${y - 8} Q${x + 9} ${y - 6} ${x + 9} ${y + 6} Z`, 'bs')]]),
+  S('M30 50 L30 56', 'lo', 2.4),
+]);
+def('spirulina', () => {
+  const pts = [];
+  for (let i = 0; i <= 40; i++) {
+    const t = i / 40, ang = t * Math.PI * 5, rad = 2 + t * 20;
+    pts.push([n(30 + rad * Math.cos(ang)), n(30 + rad * Math.sin(ang))]);
+  }
+  return [S('M' + pts.map(p => p.join(' ')).join(' L'), 'bs', 3)];
+});
+def('dandelion', () => [
+  P('M30 54 L24 46 L28 44 L20 38 L26 36 L18 30 L25 28 L16 22 L24 20 L18 12 L26 12 ' +
+    'Q30 6 34 12 Q30 20 30 28 Q30 36 30 44 Q30 50 30 54 Z', 'bs'),
+]);
+def('ginseng', () => [
+  S('M30 10 L30 32', 'lo', 3),
+  S('M30 32 L18 34 L14 50', 'lo', 2.6), S('M30 32 L42 34 L46 50', 'lo', 2.6),
+  S('M30 20 L18 18 L12 24', 'lo', 1.8), S('M30 20 L42 18 L48 24', 'lo', 1.8),
+  C(30, 8, 3, 'hi'),
+]);
+def('psyllium', () => [
+  ...[[18, 24], [36, 20], [24, 38], [42, 36], [30, 48]].map(([x, y]) =>
+    [E(x, y, 7, 10, 'gh'), grain('bs', x, y, .8, 0)]).flat(),
+]);
+def('fos', () => [
+  (() => backbone('ik', 3, 30, 32).shape)(),
+  hex('ik', 12, 28, 6, 1.6), hex('ik', 48, 36, 6, 1.6),
+]);
+def('sucralose', () => {
+  const p = [];
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    p.push([n(30 + 14 * Math.cos(a)), n(30 + 13 * Math.sin(a))]);
+  }
+  return [
+    S('M' + p.map(q => q.join(' ')).join(' L') + ' Z', 'ik', 2.2),
+    C(p[1][0], p[1][1], 4, CPK.O),
+    C(p[0][0], p[0][1], 4.2, CPK.Cl), C(p[3][0], p[3][1], 4.2, CPK.Cl),
+    S(`M${p[5][0]} ${p[5][1]} L${p[5][0]} ${n(p[5][1] - 9)}`, 'ik', 2),
+    C(p[5][0], n(p[5][1] - 9), 4.2, CPK.Cl),
+  ];
+});
+def('stevia', () => [
+  stalk('lo', 30, 54, 16),
+  ...[[22, 40], [38, 40], [20, 28], [40, 28], [24, 18], [36, 18]].map(([x, y]) =>
+    E(x, y, 5, 7, x < 30 ? 'bs' : 'hi')),
+  ...[[22, 40], [38, 40], [20, 28], [40, 28], [24, 18], [36, 18]].map(([x, y]) =>
+    S(`M${x} ${y - 5} L${x} ${y + 5}`, 'ik', .8)),
+]);
+
+/* plant — simple crop silhouettes, one recognisable trait each ───────────
+ * horsetail is a thin CLUMP of jointed stems (a stand, the way it actually
+ * grows), no thick filled block like sugarcane's single cane; aloe_vera is
+ * a rosette of thick triangular spiked leaves, nothing like cactus's two
+ * rounded columns; pineapple is the classic crown-on-a-crosshatched-oval;
+ * spinach is rounded low oval leaves on short veins, not lettuce's pointed
+ * leaf() cluster; acai is a small dark cluster UNDER a palm frond, unlike
+ * grape's plain six-circle diamond; pomegranate is a round fruit with a
+ * toothed crown calyx, unlike apple's single stem or tomato's star calyx;
+ * goji is grain()'s pointed berry shape on a twig, distinct from acai's
+ * plain circles; papaya is one big upright elongated oval, unlike
+ * cucumber's rotated pointed one; broccoli is a stalk under a bumpy
+ * granule-textured floret head, unlike cabbage's smooth concentric ball;
+ * alfalfa is thin sprout stems each topped with a tiny three-leaflet
+ * cluster, unlike legume's pod-of-peas.
+ */
+def('horsetail', () => [
+  S('M20 54 L20 18', 'bs', 2.4), S('M30 54 L30 10', 'bs', 2.6), S('M40 54 L40 22', 'bs', 2.2),
+  ...[20, 30, 40].flatMap(x => [24, 34, 44].map(y => S(`M${x - 3} ${y} L${x + 3} ${y}`, 'lo', 1.2))),
+]);
+def('aloe_vera', () => [
+  ...[-45, -22, 0, 22, 45].map((rot, i) =>
+    ['g', rot, 30, 52, [P('M30 52 L25 52 L29 20 L30 16 L31 20 L35 52 Z', i % 2 ? 'hi' : 'bs')]]),
+]);
+def('pineapple', () => [
+  E(30, 38, 13, 17, 'bs'),
+  ...[0, 1, 2, 3, 4].flatMap(row => [0, 1, 2].map(col => {
+    const y = 26 + row * 6, x = 20 + col * 7 + (row % 2 ? 3 : 0);
+    return [S(`M${x - 3} ${y - 3} L${x + 3} ${y + 3}`, 'lo', 1), S(`M${x + 3} ${y - 3} L${x - 3} ${y + 3}`, 'lo', 1)];
+  }).flat()),
+  ...[-20, -10, 0, 10, 20].map(rot => ['g', rot, 30, 18, [P('M30 18 L26 2 L30 10 L34 2 Z', 'hi')]]),
+]);
+def('spinach', () => [
+  ...[[30, 40, 0, 'bs'], [18, 44, -25, 'hi'], [42, 44, 25, 'hi'], [22, 32, -40, 'bs'], [38, 32, 40, 'bs']]
+    .map(([x, y, rot, role]) => ['g', rot, x, y, [E(x, y, 7, 10, role), S(`M${x} ${y - 8} L${x} ${y + 8}`, 'ik', 1)]]),
+]);
+def('acai', () => [
+  S('M6 44 Q30 24 54 44', 'lo', 2.6),
+  ...[[10, 42], [18, 36], [26, 34], [34, 34], [42, 36], [50, 42]].map(([x, y], i) =>
+    leaf('hi', x, y, .3, i < 3 ? -60 : 60)),
+  ...[[22, 48], [30, 44], [38, 48], [26, 54], [34, 54]].map(([x, y]) => C(x, y, 4, 'bs')),
+]);
+def('pomegranate', () => [
+  E(30, 36, 17, 16, 'bs'),
+  ...[-16, -6, 4, 14].map(x => P(`M${30 + x} 20 L${30 + x - 3} 12 L${30 + x + 3} 12 Z`, 'lo')),
+  ...granules('hi', 8, 71, [18, 28, 42, 46]),
+]);
+def('goji', () => [
+  S('M10 50 Q30 44 50 50', 'lo', 1.8),
+  ...[[16, 42], [24, 36], [34, 34], [44, 40], [28, 46]].map(([x, y], i) => grain('bs', x, y, .9, i % 2 ? -20 : 20)),
+]);
+def('papaya', () => [
+  E(30, 32, 12, 22, 'bs'), S('M30 10 L30 6', 'lo', 2), E(24, 24, 4, 6, 'hi'),
+]);
+def('broccoli', () => [
+  P('M26 54 L34 54 L32 30 L28 30 Z', 'lo'),
+  C(30, 26, 15, 'bs'),
+  ...granules('hi', 10, 44, [17, 12, 43, 32]),
+]);
+def('alfalfa', () => [
+  ...[[16, 54, 20], [30, 54, 10], [44, 54, 24]].map(([x, base, top]) =>
+    [S(`M${x} ${base} L${x} ${top}`, 'lo', 1.4),
+     ...[-1, 0, 1].map(i => leaf('bs', x + i * 4, top - 2, .28, i * 45))]).flat(),
+]);
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],

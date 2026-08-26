@@ -12964,5 +12964,275 @@
     "why": "The rhizome is beaten to a pulp and washed; the milky liquid is sieved, and the pure starch — insoluble in water — settles out at the bottom.",
     "src": "https://en.wikipedia.org/wiki/Arrowroot",
     "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "wood"
+    ],
+    "out": "shiitake",
+    "why": "Traditionally raised by cutting shii and other deciduous trees, then setting the logs beside trees already colonised by shiitake spores — log cultivation still practiced today.",
+    "src": "https://en.wikipedia.org/wiki/Shiitake",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "tree"
+    ],
+    "out": "maitake",
+    "why": "Hen-of-the-woods grows at the base of old growth oaks or maples, and is a perennial fungus that often returns to the same spot for years running, not a one-off annual growth.",
+    "src": "https://en.wikipedia.org/wiki/Grifola_frondosa",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanobacteria"
+    ],
+    "verb": "heat",
+    "out": "spirulina",
+    "why": "Spirulina is, quite literally, the dried biomass of cyanobacteria — the Kanembu people of Lake Chad have long dried it into cakes called dihe, still sold in local markets today.",
+    "src": "https://en.wikipedia.org/wiki/Spirulina_(dietary_supplement)",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle"
+    ],
+    "verb": "crush",
+    "out": "creatine",
+    "why": "Michel Eugène Chevreul isolated it from a water-extract of skeletal muscle in 1832, and named the crystals after kreas, Greek for meat.",
+    "src": "https://en.wikipedia.org/wiki/Creatine",
+    "verified": true
+  },
+  {
+    "in": [
+      "arginine",
+      "enzyme"
+    ],
+    "out": "citrulline",
+    "why": "Nitric oxide synthase oxidises arginine and releases nitric oxide as it goes — citrulline is the amino acid left over, the byproduct of the same reaction.",
+    "src": "https://en.wikipedia.org/wiki/Citrulline",
+    "verified": true
+  },
+  {
+    "in": [
+      "tea"
+    ],
+    "verb": "crush",
+    "out": "theanine",
+    "why": "Discovered in 1949 as a constituent of green tea and isolated the next year from gyokuro leaves. It makes up roughly one to two percent of dry tea leaf.",
+    "src": "https://en.wikipedia.org/wiki/Theanine",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee"
+    ],
+    "verb": "crush",
+    "out": "caffeine",
+    "why": "Friedlieb Ferdinand Runge isolated it from coffee beans Goethe gave him in 1819: \"soon thereafter I discovered therein caffeine, which became so famous on account of its high nitrogen content.\"",
+    "src": "https://en.wikipedia.org/wiki/Friedlieb_Ferdinand_Runge",
+    "verified": true
+  },
+  {
+    "in": [
+      "lecithin"
+    ],
+    "verb": "cut",
+    "out": "alpha_gpc",
+    "why": "Alpha-GPC is made by deacylating phosphatidylcholine and can be derived from purified soy lecithin — strip the two fatty acid tails and the glycerophosphocholine head is what remains.",
+    "src": "https://en.wikipedia.org/wiki/Choline_alfoscerate",
+    "supported": true
+  },
+  {
+    "in": [
+      "tyrosine"
+    ],
+    "verb": "wait",
+    "out": "synephrine",
+    "why": "Citrus is believed to build it by the same route animals use for adrenaline: tyrosine to tyramine to N-methyltyramine to synephrine, one methyl group short of the finish.",
+    "src": "https://en.wikipedia.org/wiki/Synephrine",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "sand"
+    ],
+    "out": "horsetail",
+    "why": "It absorbs silicon from the soil, rare among herbs, and its stems are coated in abrasive silicates — once used to polish pewter and wood, hence the old name 'pewterwort'.",
+    "src": "https://en.wikipedia.org/wiki/Equisetum_arvense",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "root"
+    ],
+    "out": "dandelion",
+    "why": "Named for its jagged leaves — French dent de lion, lion's tooth — and grown from an unbranched taproot that can be roasted into a caffeine-free coffee substitute.",
+    "src": "https://en.wikipedia.org/wiki/Taraxacum_officinale",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "sand"
+    ],
+    "out": "aloe_vera",
+    "why": "Succulence lets it survive low-rainfall ground; its thick leaves store water in a gel core, wrapped in an outer layer holding the toxic compound aloin.",
+    "src": "https://en.wikipedia.org/wiki/Aloe_vera",
+    "supported": true
+  },
+  {
+    "in": [
+      "root",
+      "stone"
+    ],
+    "out": "ginseng",
+    "why": "Native to mountainous ground in the Russian Far East, Northeast China and Korea. The root is usually harvested at five or six years old.",
+    "src": "https://en.wikipedia.org/wiki/Panax_ginseng",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed"
+    ],
+    "verb": "cut",
+    "out": "psyllium",
+    "why": "About a quarter of the seed's weight is mucilage, obtained by milling away the outer husk layer — this game's closest available action is cutting it free.",
+    "src": "https://en.wikipedia.org/wiki/Psyllium",
+    "supported": true
+  },
+  {
+    "in": [
+      "sugar",
+      "enzyme"
+    ],
+    "out": "fos",
+    "why": "Made by letting a fungal beta-fructosidase enzyme act on ordinary sucrose — the transfructosylation route to fructooligosaccharides, alongside inulin breakdown.",
+    "src": "https://en.wikipedia.org/wiki/Fructooligosaccharide",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit"
+    ],
+    "verb": "cut",
+    "out": "pineapple",
+    "why": "Pineapple doesn't grow from seed commercially: the plant normally propagates from the leafy offset produced at the top of a ripe fruit, or from a side shoot, cut free and rooted.",
+    "src": "https://en.wikipedia.org/wiki/Pineapple",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "wind"
+    ],
+    "out": "spinach",
+    "why": "Spinach is dioecious — separate male and female plants — and its small green flowers are wind-pollinated rather than carried by bees or other insects.",
+    "src": "https://en.wikipedia.org/wiki/Spinach",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "river"
+    ],
+    "out": "acai",
+    "why": "Acai comes from a palm native to the swamps and floodplains of eastern Amazonia, its small black-purple drupes borne in branched clusters of 500 to 900 fruit.",
+    "src": "https://en.wikipedia.org/wiki/A%C3%A7a%C3%AD_palm",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed",
+      "seed"
+    ],
+    "out": "pomegranate",
+    "why": "Botanically the pomegranate is a berry, the ripened ovary of a single flower, and an unusually seedy one: a single fruit can hold 200 to about 1,400 seeds.",
+    "src": "https://en.wikipedia.org/wiki/Pomegranate",
+    "supported": true
+  },
+  {
+    "in": [
+      "tomato",
+      "tree"
+    ],
+    "out": "goji",
+    "why": "Goji is a nightshade too — Lycium barbarum sits in the family Solanaceae alongside tomato and potato — but it grows as a woody shrub, not a vine.",
+    "src": "https://en.wikipedia.org/wiki/Lycium_barbarum",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "seedling"
+    ],
+    "out": "papaya",
+    "why": "The papaya is a large herbaceous plant, usually a single stem 5 to 10 metres tall, its huge lobed leaves (up to 70cm across) confined to the very top.",
+    "src": "https://en.wikipedia.org/wiki/Papaya",
+    "supported": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "flower"
+    ],
+    "out": "broccoli",
+    "why": "Broccoli is Brassica oleracea, the same species behind cabbage, but bred for its large flowering head, stalk and small leaves rather than a wrapped leaf ball.",
+    "src": "https://en.wikipedia.org/wiki/Broccoli",
+    "supported": true
+  },
+  {
+    "in": [
+      "legume",
+      "root_nodule"
+    ],
+    "out": "alfalfa",
+    "why": "Alfalfa is a legume that fixes nitrogen through root nodules — a symbiosis with the bacterium Sinorhizobium meliloti living inside them.",
+    "src": "https://en.wikipedia.org/wiki/Alfalfa",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg"
+    ],
+    "verb": "cut",
+    "out": "biotin",
+    "why": "First crystallized out of egg yolk in 1936, in a paper literally titled 'preparation of crystallized biotin from egg yolk.' Raw egg white blocks it instead: avidin binds it so tightly it can't be absorbed, a deficiency now called egg-white injury.",
+    "src": "https://en.wikipedia.org/wiki/Biotin",
+    "verified": true
+  },
+  {
+    "in": [
+      "chicken"
+    ],
+    "verb": "crush",
+    "out": "hyaluronic_acid",
+    "why": "First isolated from a cow's vitreous humor in 1934, then from pig skin, human skin and rooster's comb — comb remains the most common animal source today, a byproduct of the meat industry rather than a purpose-raised one.",
+    "src": "https://en.wikipedia.org/wiki/Hyaluronic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "sugar",
+      "chlorine"
+    ],
+    "out": "sucralose",
+    "why": "Made by chlorinating ordinary sucrose, replacing three hydroxyl groups with chlorine atoms — about 600 times as sweet as the sugar it started from. Discovered in 1975 when 'test it' was reportedly misheard as 'taste it.'",
+    "src": "https://en.wikipedia.org/wiki/Sucralose",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "sand"
+    ],
+    "out": "stevia",
+    "why": "Stevia rebaudiana prefers sandy-like soil and cannot survive frost, native to the warm, humid growing conditions of Paraguay and Brazil — European growers still raise it under glass for exactly that reason.",
+    "src": "https://en.wikipedia.org/wiki/Stevia_rebaudiana",
+    "verified": true
   }
 ]

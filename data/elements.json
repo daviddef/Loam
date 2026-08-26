@@ -3516,8 +3516,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "The only thing your body makes nitric oxide out of, and the last stop before urea.",
-    "terminal": true
+    "fact": "The only thing your body makes nitric oxide out of, and the last stop before urea."
   },
   {
     "id": "valine",
@@ -9009,5 +9008,300 @@
       "tool"
     ],
     "fact": "Its fine grain once made it a standard ingredient in carbonless copy paper."
+  },
+  {
+    "id": "shiitake",
+    "name": "Shiitake",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Traditionally grown on cut logs set beside trees already carrying its spores."
+  },
+  {
+    "id": "maitake",
+    "name": "Maitake",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Called 'dancing mushroom' in Japanese; grows in clumps at the base of old oak trees."
+  },
+  {
+    "id": "spirulina",
+    "name": "Spirulina",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Not algae or a plant — it's dried cyanobacterium biomass, farmed in alkaline ponds."
+  },
+  {
+    "id": "creatine",
+    "name": "Creatine",
+    "emoji": "💪",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Named for kreas, Greek for meat — Chevreul isolated it from a muscle extract in 1832."
+  },
+  {
+    "id": "citrulline",
+    "name": "Citrulline",
+    "emoji": "🍉",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Named for citrullus, Latin for watermelon — first isolated from the fruit in 1914."
+  },
+  {
+    "id": "theanine",
+    "name": "Theanine",
+    "emoji": "🧘",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "About 1-2% of green tea leaf by dry weight, discovered there in 1949, isolated in 1950."
+  },
+  {
+    "id": "caffeine",
+    "name": "Caffeine",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Runge isolated it from coffee beans Goethe gave him, weeks after they first met, in 1819."
+  },
+  {
+    "id": "alpha_gpc",
+    "name": "Alpha-GPC",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Chemically stripped from lecithin — remove its two fatty tails and this is what is left."
+  },
+  {
+    "id": "synephrine",
+    "name": "Synephrine",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Citrus makes its own stimulant: tyrosine, then tyramine, then this, in the unripe peel."
+  },
+  {
+    "id": "horsetail",
+    "name": "Horsetail",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Absorbs silicon from soil and once scoured pewter — the old name for it is 'pewterwort'."
+  },
+  {
+    "id": "dandelion",
+    "name": "Dandelion",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant",
+      "wild"
+    ],
+    "fact": "Named for its jagged leaves — French 'dent de lion', lion's tooth."
+  },
+  {
+    "id": "aloe_vera",
+    "name": "Aloe Vera",
+    "emoji": "🪴",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "food"
+    ],
+    "fact": "Its leaf holds two layers: a water-storing gel, and a laxative called aloin the FDA banned in 2002."
+  },
+  {
+    "id": "ginseng",
+    "name": "Ginseng",
+    "emoji": "🫚",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Chinese for 'person root' — named for a forked shape said to resemble a human body."
+  },
+  {
+    "id": "psyllium",
+    "name": "Psyllium",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "About a quarter of the seed's weight is mucilage, milled from its husk into dietary fiber."
+  },
+  {
+    "id": "fos",
+    "name": "Fructooligosaccharides",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "tool"
+    ],
+    "fact": "Resists human digestive enzymes; gut bacteria ferment it instead — a genuine dietary fiber."
+  },
+  {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "emoji": "🍍",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A bromeliad, not a tree. Its flowers fuse into one fruit even without pollination."
+  },
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Dioecious and wind-pollinated — separate male and female plants, unusual for a vegetable."
+  },
+  {
+    "id": "acai",
+    "name": "Acai",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A palm-tree drupe from Amazon floodplains, borne in branched clusters of up to 900 fruit."
+  },
+  {
+    "id": "pomegranate",
+    "name": "Pomegranate",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Botanically a berry — one flower's ovary, ripened into a fruit holding up to 1,400 seeds."
+  },
+  {
+    "id": "goji",
+    "name": "Goji",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A woody nightshade shrub — same family as tomato and potato, but no vine in sight."
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Its huge lobed leaves crown a single soft stem up to ten metres tall. No trunk, no wood."
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "emoji": "🥦",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Same species as cabbage, bred for the flower head instead of the wrapped leaves."
+  },
+  {
+    "id": "alfalfa",
+    "name": "Alfalfa",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A legume whose taproot can run past 15 metres, chasing water no shallow root reaches."
+  },
+  {
+    "id": "biotin",
+    "name": "Biotin",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "First crystallized from egg yolk in 1936 — but raw egg white's avidin binds it too tightly to absorb."
+  },
+  {
+    "id": "hyaluronic_acid",
+    "name": "Hyaluronic Acid",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A glycosaminoglycan first pulled from a cow's vitreous humor in 1934 — now farmed from rooster combs."
+  },
+  {
+    "id": "sucralose",
+    "name": "Sucralose",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "sweet"
+    ],
+    "fact": "E955. Sucrose with three hydroxyls swapped for chlorine — discovered when 'test' was misheard as 'taste.'"
+  },
+  {
+    "id": "stevia",
+    "name": "Stevia",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "The Guaraní called it ka'a he'ê, sweet herb — its glycosides taste up to 300 times as sweet as sugar."
   }
 ]

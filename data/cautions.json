@@ -354,6 +354,78 @@
         "blue_1"
       ],
       "severity": "conditional"
+    },
+    "shiitake_dermatitis": {
+      "label": "Raw shiitake can cause a rash",
+      "note": "Rarely, eating shiitake raw or only lightly cooked triggers 'shiitake dermatitis' — a streaky, itchy rash that appears about 24 hours later, covering much of the body including the face and scalp. Cooking it through is the difference.",
+      "ids": [
+        "shiitake"
+      ],
+      "severity": "conditional"
+    },
+    "spirulina_contamination": {
+      "label": "Spirulina supplements and contamination",
+      "note": "Spirulina itself doesn't make toxins. But some supplements have tested positive for microcystins from co-occurring toxic blue-green algae, and China's food safety regulator found lead, mercury and arsenic widespread in spirulina supplements sold there. The organism is not the hazard; unregulated sourcing is.",
+      "ids": [
+        "spirulina"
+      ],
+      "severity": "conditional"
+    },
+    "synephrine_cardio": {
+      "label": "Synephrine carries ephedra's risk profile, not a safer one",
+      "note": "Marketed as the ephedra-free stimulant after ephedra was banned, bitter orange is believed to cause the same spectrum of adverse events. Case reports link it to stroke, myocardial infarction and angina; the NCCIH found little evidence it is actually safer.",
+      "ids": [
+        "synephrine"
+      ],
+      "severity": "acute"
+    },
+    "caffeine_powder": {
+      "label": "Caffeine from coffee or tea is not the same risk as the pure powder",
+      "note": "Caffeine from coffee or tea is not the concern here — the FDA still calls it generally recognized as safe, and a lethal dose that way is something like 75 to 100 cups. Pure powdered caffeine sold as a supplement is different: a level tablespoon can be a lethal dose, and it has killed people who measured by volume instead of a scale.",
+      "ids": [
+        "caffeine"
+      ],
+      "severity": "acute"
+    },
+    "horsetail_thiaminase": {
+      "label": "Horsetail's thiaminase, over time",
+      "note": "Field horsetail contains thiaminase, an enzyme that breaks down vitamin B1. It is documented as toxic to livestock, particularly horses, when eaten over a long enough period — a dose-over-time problem, not an instant one.",
+      "ids": [
+        "horsetail"
+      ],
+      "severity": "cumulative"
+    },
+    "aloin_laxative": {
+      "label": "Aloe's outer leaf layer is not the gel",
+      "note": "Aloe vera's gel core is one thing; the outer leaf layer holds aloin, a bitter latex compound the FDA banned from over-the-counter laxatives in 2002. Oral ingestion of aloe extracts can cause abdominal pain, cramps, and hepatitis if taken chronically.",
+      "ids": [
+        "aloe_vera"
+      ],
+      "severity": "conditional"
+    },
+    "psyllium_choking": {
+      "label": "Psyllium needs water to go with it",
+      "note": "Psyllium husk swells into mucilage on contact with liquid. Taken without enough water it can thicken in the throat and become a choking hazard, or form a bowel obstruction or bezoar further down.",
+      "ids": [
+        "psyllium"
+      ],
+      "severity": "conditional"
+    },
+    "fos_fodmap": {
+      "label": "FOS is a FODMAP",
+      "note": "Fructooligosaccharides resist human digestive enzymes and are fermented by bacteria in the colon instead, producing gas. That fermentation is well tolerated by most people at ordinary doses, but not by people with Irritable Bowel Syndrome or FODMAP sensitivity.",
+      "ids": [
+        "fos"
+      ],
+      "severity": "conditional"
+    },
+    "ginseng_interactions": {
+      "label": "Ginseng interacts with medication",
+      "note": "Panax ginseng is generally considered safe for adults used under six months, but it can interact with prescription drugs such as warfarin, and its use during pregnancy and breastfeeding is considered potentially unsafe.",
+      "ids": [
+        "ginseng"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
