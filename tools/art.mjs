@@ -3219,6 +3219,25 @@ ship.ui_scan = { c: 'craft', s: [
   S('M10 22 Q10 18 14 18 L21 18 L24 14 L36 14 L39 18 L46 18 Q50 18 50 22 L50 42 Q50 46 46 46 L14 46 Q10 46 10 42 Z', 'ik', 3.5),
   C(30, 32, 8, 'ik'), C(30, 32, 4, 'ground'),
 ] };
+ship.ui_amino = { c: 'craft', s: [
+  S('M12 40 L22 26 L34 34 L48 20', 'ik', 3.4),
+  C(12, 40, 4, 'bs'), C(48, 20, 4, 'hi'),
+] };
+ship.ui_ladder = { c: 'craft', s: [
+  S('M18 8 L18 52', 'ik', 3), S('M42 8 L42 52', 'ik', 3),
+  ...[14, 26, 38, 50].map(y => S(`M18 ${y} L42 ${y}`, 'ik', 3)),
+] };
+ship.ui_eye = { c: 'craft', s: [
+  S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),
+] };
+ship.ui_circle = { c: 'craft', s: [
+  C(30, 30, 4, 'ik'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i / 6) * Math.PI * 2;
+    const x = n(30 + 16 * Math.cos(a)), y = n(30 + 16 * Math.sin(a));
+    return [S(`M30 30 L${x} ${y}`, 'gh', 1.6), C(x, y, 3, 'ik')];
+  }).flat(),
+] };
 
 /* One water MOLECULE, not a body of water. It is what leaves in a condensation
    reaction, and the whole point of showing it is that it is a molecule. */

@@ -728,8 +728,12 @@ __CATEGORY_CSS__
 
   /* sheet: codex + provenance */
   #sheet{
-    position:fixed;inset:0;display:none;z-index:180;background:rgba(var(--shade),.42);
-    backdrop-filter:blur(3px);padding:22px;
+    /* height:100dvh, not just inset:0 — Safari sizes a fixed element's
+       implicit height against the toolbar-collapsed viewport, taller than
+       what's actually visible when the address bar is showing, which
+       pushed a centred sheet's top up above the real top of the screen. */
+    position:fixed;inset:0;height:100dvh;display:none;z-index:180;
+    background:rgba(var(--shade),.42);backdrop-filter:blur(3px);padding:22px;
   }
   #sheet.on{display:grid;place-items:center}
   .sheetbox{
@@ -789,6 +793,14 @@ __CATEGORY_CSS__
   .chip.hub .rl{background:var(--brick)}
   .hubNoPic{display:block;width:100%;height:100%;border-radius:6px;
             background:var(--surface);border:1px dashed var(--line)}
+  /* A named ingredient with no card of its own — states the gap plainly
+     rather than just leaving it out of the diagram. */
+  .chip.placeholder{cursor:pointer;background:transparent;border-style:dashed;border-color:var(--line)}
+  .chip.placeholder .n{color:var(--ink-soft)}
+  .ghostNoArt{display:block;width:100%;height:100%;border-radius:6px;
+             background:repeating-linear-gradient(135deg,transparent,transparent 5px,
+             color-mix(in srgb,var(--ink-soft) 14%,transparent) 5px,
+             color-mix(in srgb,var(--ink-soft) 14%,transparent) 6px)}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
     padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
@@ -1139,6 +1151,9 @@ __CATEGORY_CSS__
      itself, so a shelf of them scans as absence rather than as low contrast. */
   .chip.locked .art{filter:grayscale(1)}
   .sheet .cardrow button.ghost.on{border-color:var(--orange);color:var(--brick)}
+  /* Icon-only cardrow buttons: square, not text-width — this is what lets
+     the codex's row of five fit on one line instead of wrapping to two. */
+  .cardrow button.ghost.icon{padding:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex:none}
   .chip.locked .q{
     font-style:normal;font:800 9.5px var(--face-name);color:var(--on-accent);background:var(--c-craft-bs);
     border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;margin-left:3px;
@@ -1481,6 +1496,7 @@ __CATEGORY_CSS__
     <div id="zoom">
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
+      <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
       <button id="ptToggle" title="Show the periodic table along the bottom">⛭</button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
@@ -1654,17 +1670,21 @@ if (!found.size) STARTERS.forEach(s => found.add(s));
  * starter and it will have come alive by the time you come back.
  */
 function benchState() {
-  // A scan hub isn't a real element and has no id to restore from — it does
-  // not survive a reload. The ingredients it named are real elements and
-  // save normally; they just come back without the hub grouping them.
-  const cards = [...world.querySelectorAll('.chip.board:not(.hub)')];
+  // A scan hub or an unresolved-ingredient placeholder isn't a real element
+  // and has no id — ghost carries whatever spawnHub()/spawnPlaceholder()
+  // needs to rebuild the same chip on restore, in place of a real id.
+  const cards = [...world.querySelectorAll('.chip.board')];
   const index = new Map(cards.map((c, i) => [c, i]));
   const jobBy = new Map([...cooking].map(j => [j.chip, j]));
   return {
     cards: cards.map(c => {
       const j = jobBy.get(c);
+      const ghost = c.classList.contains('hub') ? { type: 'hub', scan: c._scan }
+                  : c.classList.contains('placeholder') ? { type: 'placeholder', text: c.dataset.text }
+                  : null;
       return {
-        id: c.dataset.id,
+        id: ghost ? null : c.dataset.id,
+        ghost,
         x: Math.round(parseFloat(c.style.left) || 0),
         y: Math.round(parseFloat(c.style.top) || 0),
         f: c.classList.contains('folded') ? 1 : 0,
@@ -2793,6 +2813,45 @@ function tidy() {
   sfx.pick();
 }
 
+/**
+ * An alternate reading of tidy()'s own layout: any parent with two or more
+ * single-parent results — a scan hub naming ten ingredients, or a recipe
+ * like salt that makes several things at once — gets those spread evenly
+ * in a ring around it instead of stacked in the same row. Runs tidy()
+ * first for a sane starting position for everything (including chains this
+ * has nothing to say about), then only moves the chips that qualify.
+ *
+ * Only single-parent results orbit. A child of two real parents (an
+ * ordinary two-input merge) has no one centre to orbit, so those are left
+ * exactly where tidy() put them.
+ */
+function circleTidy() {
+  tidy();
+  const chips = new Set(world.querySelectorAll('.chip.board:not(.hidden)'));
+  const bySingleParent = new Map();
+  for (const l of links) {
+    if (l.b || !l.a || !l.out || !chips.has(l.a) || !chips.has(l.out)) continue;
+    if (!bySingleParent.has(l.a)) bySingleParent.set(l.a, []);
+    bySingleParent.get(l.a).push(l.out);
+  }
+  const [cw, ch] = cardSize();
+  for (const [parent, children] of bySingleParent) {
+    if (children.length < 2) continue;
+    const [pcx, pcy] = chipCentre(parent);
+    const n = children.length;
+    const spacing = Math.max(cw, ch) + 14;
+    const r = Math.max(cw * 1.1, (n * spacing) / (2 * Math.PI));
+    children.forEach((c, i) => {
+      const a = (i / n) * Math.PI * 2 - Math.PI / 2;
+      c.style.left = (pcx + r * Math.cos(a) - cw / 2) + 'px';
+      c.style.top  = (pcy + r * Math.sin(a) - ch / 2) + 'px';
+    });
+  }
+  drawLinks();
+  fitAll({ min: 0.2, max: 1.2 });
+  sfx.pick();
+}
+
 document.getElementById('zoom').addEventListener('click', ev => {
   // closest(), not ev.target: the Tidy button's clickable area is the SVG
   // inside it, so ev.target was the <svg>/<span> and dataset.z was undefined —
@@ -2805,6 +2864,7 @@ document.getElementById('zoom').addEventListener('click', ev => {
   else if (z === 'out') zoomBy(0.8);
   else if (z === 'fit') fitAll();
   else if (z === 'tidy') tidy();
+  else if (z === 'circle') circleTidy();
 });
 board.addEventListener('wheel', ev => {
   ev.preventDefault();
@@ -3066,7 +3126,10 @@ function spawn(id, x, y, near) {
 
 /** A scanned product's card — image, name, brand. Not a real element, so it
  * carries no dataset.id and never goes through byId; it exists only to be a
- * visual anchor the ingredients it named can sit around and link back to. */
+ * visual anchor the ingredients it named can sit around and link back to.
+ * Carries .ghost alongside .hub — the shared marker for "a board chip with
+ * no real element behind it," which save/restore and consolidate both need
+ * to know to leave alone. */
 function hubHTML(product) {
   const name = (product.product_name || 'Scanned product').replace(/[<>]/g, '');
   const pic = product.image_front_small_url
@@ -3078,9 +3141,32 @@ function hubHTML(product) {
 function spawnHub(scanRecord) {
   const el = document.createElement('div');
   const [cw, ch] = cardSize();
-  el.className = 'chip board hub pop';
+  el.className = 'chip board ghost hub pop';
   el.dataset.uid = 'c' + (++chipSeq);
   el.innerHTML = hubHTML(scanRecord.product);
+  world.appendChild(el);
+  const [left, top] = freeSpot(cw, ch, null);
+  el.style.left = left + 'px';
+  el.style.top = top + 'px';
+  setTimeout(() => el.classList.remove('pop'), 340);
+  return el;
+}
+/** A named ingredient the label reader could not place — not a real
+ * element either, same .ghost treatment as a hub, so it draws exactly like
+ * one of its siblings in the ring instead of just vanishing from the
+ * diagram. Tapping it explains the same honest thing the label reader's
+ * own "not in this world yet" section already says. */
+function placeholderHTML(text) {
+  return `<i class="art ghostNoArt"></i><span class="n">${(text || '?').replace(/[<>]/g, '')}</span>` +
+    `<span class="rl"></span><span class="ac">not in this world yet</span>`;
+}
+function spawnPlaceholder(text) {
+  const el = document.createElement('div');
+  const [cw, ch] = cardSize();
+  el.className = 'chip board ghost placeholder pop';
+  el.dataset.uid = 'c' + (++chipSeq);
+  el.dataset.text = text;
+  el.innerHTML = placeholderHTML(text);
   world.appendChild(el);
   const [left, top] = freeSpot(cw, ch, null);
   el.style.left = left + 'px';
@@ -3117,23 +3203,35 @@ function placeScanned(scannedProducts) {
   pushUndo(scannedProducts.length === 1
     ? `scanning ${nameOfProduct(scannedProducts[0].product)}`
     : `scanning ${scannedProducts.length} products`);
-  let totalPlaced = 0;
+  let totalPlaced = 0, totalBlank = 0;
   for (const s of scannedProducts) {
     if (!s.text) continue;
-    const made = readLabel(s.text).filter(p => p.kind === 'found' || p.kind === 'near');
-    if (!made.length) continue;
+    const parsed = readLabel(s.text);
+    const made = parsed.filter(p => p.kind === 'found' || p.kind === 'near');
+    // Not found, and not a legal class term either — a real ingredient this
+    // world just doesn't have yet. Rather than the diagram quietly showing
+    // fewer spokes than the packet actually lists, it gets a blank box in
+    // the same ring, so what's missing is as visible as what isn't.
+    const blank = parsed.filter(p => p.kind === 'unknown' || p.kind === 'vague');
+    if (!made.length && !blank.length) continue;
     const hub = spawnHub(s);
     hub._scan = s;
     for (const p of made) {
       const chip = spawn(p.id, null, null, [hub]);
       links.push({ a: hub, b: null, out: chip, fresh: true });
     }
+    for (const p of blank) {
+      const chip = spawnPlaceholder(p.text);
+      links.push({ a: hub, b: null, out: chip, fresh: true });
+    }
     totalPlaced += made.length;
+    totalBlank += blank.length;
   }
   drawLinks();
   tidy();
-  toast(totalPlaced ? `${totalPlaced} placed around ${scannedProducts.length === 1 ? 'the product' : scannedProducts.length + ' products'}`
-                     : 'Nothing on these labels resolved yet');
+  toast(totalPlaced || totalBlank
+    ? `${totalPlaced} placed${totalBlank ? `, ${totalBlank} not in this world yet` : ''} around ${scannedProducts.length === 1 ? 'the product' : scannedProducts.length + ' products'}`
+    : 'Nothing on these labels resolved yet');
 }
 const nameOfProduct = (p) => (p.product_name || 'that product').replace(/[<>]/g, '');
 
@@ -3199,12 +3297,16 @@ board.addEventListener('pointerdown', ev => {
   if (touches.size > 1) return;                       // pinching, not dragging
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
-  // A scan hub isn't a real element — it has no dataset.id, so the ordinary
-  // drag/merge/chipTap machinery below would break on it. It's a fixed
-  // anchor, not a draggable card: tapping it just opens what it was scanned
-  // from, and that's the whole interaction.
-  const hub = ev.target.closest('.chip.hub');
-  if (hub) { ev.preventDefault(); return showScannedProduct(hub); }
+  // A scan hub, or an unresolved ingredient's placeholder box, isn't a real
+  // element — neither has a dataset.id, so the ordinary drag/merge/chipTap
+  // machinery below would break on either. Both are fixed anchors, not
+  // draggable cards: tapping one just explains itself.
+  const ghost = ev.target.closest('.chip.ghost');
+  if (ghost) {
+    ev.preventDefault();
+    if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
+    return toast(`${ghost.dataset.text} — a real thing, just not built yet`);
+  }
   const chip = ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
@@ -4465,17 +4567,15 @@ function showCodex(q = '') {
     `<input id="q" class="search" placeholder="Search your discoveries…" value="${q}" autocomplete="off">` +
     `<div class="cardrow" style="margin:10px 0 2px">` +
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
-    `<button class="ghost" id="aaBtn">Amino acids</button>` +
-    `<button class="ghost" id="ladderBtn">The ladder</button>` +
-    `<button class="ghost" id="labelBtn">Read a label</button>` +
-    `<button class="ghost${codexAll ? ' on' : ''}" id="allBtn">${codexAll ? 'Only what I have' : 'Show all ' + elements.length}</button></div>` +
+    `<button class="ghost icon" id="aaBtn" title="Amino acids"><span class="gl" style="--g:16px">__UI_AMINO__</span></button>` +
+    `<button class="ghost icon" id="ladderBtn" title="The ladder"><span class="gl" style="--g:16px">__UI_LADDER__</span></button>` +
+    `<button class="ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
   openSheet(`Codex · ${found.size} of ${elements.length}`);
   document.getElementById('ptBtn').onclick = () => {
     document.getElementById('sheetBody').innerHTML = periodicHTML();
     openSheet('The periodic table');
   };
-  document.getElementById('labelBtn').onclick = () => showLabelReader();
   document.getElementById('allBtn').onclick = () => {
     codexAll = !codexAll;
     showCodex(document.getElementById('q')?.value ?? '');
@@ -4777,18 +4877,19 @@ document.getElementById('settings').addEventListener('click', showSettings);
  * were two different things.
  */
 function consolidateBench() {
-  // A scan hub has no dataset.id, so every hub would read as the same
-  // "id" (undefined) and get deduplicated down to one — two different
-  // scanned products losing one of their hubs. Hubs are never the same
-  // thing twice; leave them out of this entirely.
+  // A ghost chip (a scan hub, or an unresolved ingredient's placeholder)
+  // has no dataset.id, so every one would read as the same "id" (undefined)
+  // and get deduplicated down to one — different hubs, or different unmade
+  // ingredients, losing all but one of themselves. None of them are ever
+  // the same thing twice; leave them out of this entirely.
   const keep = new Map();
   const dead = [];
-  for (const c of world.querySelectorAll('.chip.board:not(.hub)')) {
+  for (const c of world.querySelectorAll('.chip.board:not(.ghost)')) {
     const id = c.dataset.id;
     if (keep.has(id)) dead.push(c); else keep.set(id, c);
   }
   if (!dead.length) return 0;
-  const swap = (c) => (c && !c.classList.contains('hub') && keep.get(c.dataset.id)) || c;
+  const swap = (c) => (c && !c.classList.contains('ghost') && keep.get(c.dataset.id)) || c;
   for (let i = links.length - 1; i >= 0; i--) {
     const l = links[i];
     l.a = swap(l.a); l.b = swap(l.b); l.out = swap(l.out);
@@ -5083,8 +5184,10 @@ function showBarcodeScan(onIngredients) {
     </div>
     <div class="cardrow" id="bcCameraRow" style="margin:0 0 9px" hidden>
       <button class="ghost" id="bcCamera">Scan with the camera</button>
+      <button class="ghost" id="bcSnap">Take a photo</button>
       <button class="ghost" id="bcPhoto">Choose photos</button>
       <input type="file" id="bcFile" accept="image/*" multiple hidden>
+      <input type="file" id="bcSnapFile" accept="image/*" capture="environment" hidden>
     </div>
     <video id="bcVideo" playsinline muted></video>
     <div class="cardrow" id="bcCameraControls" style="margin:0 0 9px" hidden>
@@ -5163,10 +5266,7 @@ function showBarcodeScan(onIngredients) {
   // Apple requires them all to run its engine). decodeBarcodes picks whichever
   // is available; this row no longer needs to know or care which one.
   document.getElementById('bcCameraRow').hidden = false;
-  document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
-  document.getElementById('bcFile').onchange = async (ev) => {
-    const files = [...ev.target.files];
-    ev.target.value = '';                         // lets the same photo be picked again
+  const decodePicked = async (files) => {
     if (!files.length) return;
     let misses = 0;
     for (const file of files) {
@@ -5176,6 +5276,25 @@ function showBarcodeScan(onIngredients) {
     }
     status.innerHTML = misses
       ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode.</p>` : '';
+  };
+  document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
+  document.getElementById('bcFile').onchange = (ev) => {
+    const files = [...ev.target.files];
+    ev.target.value = '';                         // lets the same photo be picked again
+    decodePicked(files);
+  };
+  // A dedicated capture="environment" input jumps straight into the camera
+  // app on a real device — no chooser sheet in between. That sheet (Photo
+  // Library / Files / Choose Files / any cloud provider) is the OS's own
+  // UI once a plain file input is tapped; a page can skip past it entirely
+  // this way, but can't split "Photos" from "Files" from "Drive" into
+  // separate direct buttons of their own — that combined list is Apple's
+  // decision, not something a web page controls.
+  document.getElementById('bcSnap').onclick = () => document.getElementById('bcSnapFile').click();
+  document.getElementById('bcSnapFile').onchange = (ev) => {
+    const files = [...ev.target.files];
+    ev.target.value = '';
+    decodePicked(files);
   };
   document.getElementById('bcCamera').onclick = async () => {
     const video = document.getElementById('bcVideo');
@@ -5752,8 +5871,16 @@ function restoreBench(saved) {
   const now = Date.now();
   const made = [];
   const cards = saved.cards.map(c => {
-    if (!byId[c.id]) return null;
-    const el = spawn(c.id, 0, 0);
+    let el;
+    if (c.ghost?.type === 'hub' && c.ghost.scan) {
+      el = spawnHub(c.ghost.scan);
+      el._scan = c.ghost.scan;
+    } else if (c.ghost?.type === 'placeholder') {
+      el = spawnPlaceholder(c.ghost.text);
+    } else {
+      if (!byId[c.id]) return null;
+      el = spawn(c.id, 0, 0);
+    }
     if (!el) return null;
     el.style.left = c.x + 'px';
     el.style.top = c.y + 'px';
