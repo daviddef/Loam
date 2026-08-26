@@ -2795,14 +2795,28 @@ board.addEventListener('wheel', ev => {
 
 // Pinch. Pointer events give us every finger, so we track them ourselves rather
 // than relying on gesture events, which only Safari implements.
+let lastTap = 0;                                        // shared with the double-tap-to-zoom listener below
 const touches = new Map();
 let pinch = null;
+// A pinch's two fingers lift moments apart, which is two pointerup events on
+// #board a few milliseconds apart — exactly what the double-tap-to-zoom
+// listener below is watching for. Without this flag, ending a pinch reads as
+// a double-tap, which calls fitAll() and undoes the zoom the pinch just did:
+// confirmed live by synthesizing a real two-finger gesture — view.k went
+// from 0.39 to 1.94 mid-pinch and snapped straight back to 0.39 on release.
+// Set the moment a pinch arms, cleared only when a fresh gesture starts —
+// not when the fingers lift — so it still covers the second finger's
+// pointerup too, which fires after touches.size has already dropped to 0.
+let wasPinch = false;
 board.addEventListener('pointerdown', ev => {
   if (ev.pointerType !== 'touch') return;
+  if (touches.size === 0) wasPinch = false;
   touches.set(ev.pointerId, ev);
   if (touches.size === 2) {
     const [a, b] = [...touches.values()];
     pinch = { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) };
+    wasPinch = true;
+    lastTap = 0;                                      // a pinch can never be half of a double-tap
     // The first finger's chip drag may hold pointer capture — cancelling the
     // drag without releasing it left that pointerId captured for the rest of
     // the gesture, which is exactly the kind of leftover state that makes a
@@ -2842,9 +2856,9 @@ addEventListener('pointerdown', ev => {
 }, true);
 
 // Double-tap zooms in, and again to fit — the standard map gesture.
-let lastTap = 0;
 board.addEventListener('pointerup', ev => {
   if (ev.target.closest('.chip.board, .verb, #zoom, #intro')) return;
+  if (wasPinch) return;              // the tail end of a pinch, not a tap
   const now = Date.now();
   if (now - lastTap < 320) { view.k > 1.05 ? fitAll() : zoomBy(1.8, ev.clientX, ev.clientY); lastTap = 0; }
   else lastTap = now;
