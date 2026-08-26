@@ -4394,10 +4394,10 @@
       "fish"
     ],
     "verb": "cut",
-    "out": "bone",
+    "out": "meat",
     "supported": true,
-    "why": "Fish bones are thin and give up their collagen in twenty minutes. Any longer and the stock turns bitter.",
-    "src": "https://en.wikipedia.org/wiki/Stock_(food)"
+    "why": "Fish is muscle like any other meat, but built for short bursts against water rather than for standing up — so it has far less connective tissue and flakes instead of needing long cooking.",
+    "src": "https://en.wikipedia.org/wiki/Fish_as_food"
   },
   {
     "in": [
@@ -5583,11 +5583,11 @@
   },
   {
     "in": [
-      "seed",
+      "field",
       "sun"
     ],
     "out": "cotton",
-    "why": "The fibre is the seed's own wrapping — it grows in a boll around the seeds themselves. The crop wants a long frost-free period and plenty of sunshine, which is why it stays a warm-country plant.",
+    "why": "The fibre is the seed's own wrapping — it grows in a boll around the seeds themselves. The crop wants a long frost-free period and plenty of sunshine, which is why it stays a warm-country field crop.",
     "src": "https://en.wikipedia.org/wiki/Cotton",
     "verified": true
   },
@@ -6704,5 +6704,15 @@
     "verified": true,
     "why": "Bismuth is not really mined, it is what is left over. Lead refining scrapes it out on purpose — calcium and magnesium go into molten lead at around 380°C and the bismuth leaves with the dross.",
     "src": "https://en.wikipedia.org/wiki/Betterton%E2%80%93Kroll_process"
+  },
+  {
+    "in": [
+      "calcium",
+      "collagen"
+    ],
+    "out": "bone",
+    "why": "Bone is about 30% flexible matrix and 70% bound mineral. The collagen gives it tensile strength and its elasticity resists fracture; the calcium phosphate gives it compressive strength. Neither alone would do — the effects are synergistic.",
+    "src": "https://en.wikipedia.org/wiki/Bone",
+    "verified": true
   }
 ]

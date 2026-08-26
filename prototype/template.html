@@ -72,21 +72,21 @@ __CATEGORY_CSS__
      Background only. Any ground works under either theme.               */
   body{background-attachment:fixed}
 
-  body.g-tray{background:
+  body.g-tray,.gsw.g-tray{background:
       radial-gradient(ellipse at 50% -10%, #33220F 0%, transparent 62%),
       var(--s-ground);}
 
-  body.g-paper{background:
+  body.g-paper,.gsw.g-paper{background:
       radial-gradient(ellipse at 50% 0%, #FFF6E6 0%, transparent 60%),
       var(--s-paper);}
 
-  body.g-graph{background:
+  body.g-graph,.gsw.g-graph{background:
       linear-gradient(var(--line) 1px, transparent 1px) 0 0/26px 26px,
       linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/26px 26px,
       var(--cream);}
 
   /* Deep — the molecular tier's ground. Cold, and very slightly starred. */
-  body.g-deep{background:
+  body.g-deep,.gsw.g-deep{background:
       radial-gradient(1.4px 1.4px at 18% 22%, rgba(210,228,240,.55) 50%, transparent 51%) 0 0/180px 140px,
       radial-gradient(1.2px 1.2px at 68% 64%, rgba(190,214,232,.42) 50%, transparent 51%) 0 0/210px 170px,
       radial-gradient(1.8px 1.8px at 42% 82%, rgba(230,240,250,.32) 50%, transparent 51%) 0 0/260px 220px,
@@ -102,7 +102,7 @@ __CATEGORY_CSS__
     50% {background-position:60% 55%, 30% 35%, 50% 50%}
     100%{background-position:0% 40%, 100% 60%, 50% 50%}
   }
-  body.g-fluid{
+  body.g-fluid,.gsw.g-fluid{
     background:
       radial-gradient(ellipse 70% 50% at 20% 40%, color-mix(in srgb, var(--c-water-bs) 42%, transparent) 0%, transparent 70%),
       radial-gradient(ellipse 60% 45% at 80% 60%, color-mix(in srgb, var(--c-molecule-lo) 46%, transparent) 0%, transparent 70%),
@@ -113,7 +113,7 @@ __CATEGORY_CSS__
   @media (prefers-reduced-motion:reduce){ body.g-fluid{animation:none} }
 
   /* Profile — the ground *is* a soil profile, O over A over B over C. */
-  body.g-profile{background:linear-gradient(
+  body.g-profile,.gsw.g-profile{background:linear-gradient(
       to bottom,
       var(--c-mineral-hi) 0%,  var(--c-mineral-hi) 9%,
       var(--c-mineral-bs) 9%,  var(--c-mineral-bs) 30%,
@@ -122,7 +122,7 @@ __CATEGORY_CSS__
   body.g-profile{--cream:var(--c-mineral-lo);}
 
   /* Void — nothing at all. For screenshots, and for anyone who wants quiet. */
-  body.g-void{background:var(--cream);}
+  body.g-void,.gsw.g-void{background:var(--cream);}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;height:100%;overflow:hidden}
   body{
@@ -283,6 +283,29 @@ __CATEGORY_CSS__
   aside .chip .n.long,aside .chip .n.vlong{font-size:9px}
   aside .chip .rl,aside .chip .ac{display:none}
 
+  /* The "what is this" button. Quiet until you go looking for it, because the
+     board is a workbench and not a form — but always in the same place, so
+     once you have found it once you never have to hunt again. */
+  .chip .info{
+    position:absolute;top:3px;right:4px;width:15px;height:15px;
+    display:flex;align-items:center;justify-content:center;border-radius:50%;
+    font:italic 700 10px/1 var(--face-name);color:var(--ink-soft);
+    background:rgba(var(--shade),.16);border:1px solid transparent;
+    opacity:0;transition:opacity .14s,color .14s,border-color .14s;
+    cursor:help;z-index:4;
+  }
+  .chip.board:hover .info,.chip.board:focus-within .info{opacity:.55}
+  .chip .info:hover{opacity:1;color:var(--orange);border-color:var(--orange)}
+  /* No hover on a touch screen, so it simply lives there, faintly. */
+  @media (hover:none){ .chip.board .info{opacity:.4} }
+  /* A pill has no corner to spare; long-press covers it there. */
+  body.d-pill .chip.board .info{display:none}
+  aside .chip .info{
+    position:static;opacity:.42;margin-left:1px;flex:none;
+    width:16px;height:16px;background:none;
+  }
+  aside .chip:hover .info{opacity:.8}
+
   /* ── density: half card ─────────────────────────────────────────────────
      The user's own sketch: the drawing floats free on the tray with no frame
      around it, and only the name sits in a box. :not(.cooking):not(.target)
@@ -379,6 +402,33 @@ __CATEGORY_CSS__
   .ring{
     position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
     border:2.5px solid var(--discovery);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  /* The moment something exists that did not exist before. The ripple says
+     "a reaction happened"; this says "and it was the first one" — so it fires
+     only on a genuine first discovery, never on remaking something you have.
+     Rays rather than a flash: they radiate from the thing itself, which points
+     at what you made instead of lighting up the whole bench. */
+  @keyframes burst{
+    0%  {transform:translate(-50%,-50%) rotate(-14deg) scale(.3); opacity:0}
+    16% {opacity:.9}
+    100%{transform:translate(-50%,-50%) rotate(34deg)  scale(1.55);opacity:0}
+  }
+  .burst{
+    position:absolute;width:250px;height:250px;pointer-events:none;z-index:4;
+    background:repeating-conic-gradient(from 0deg,
+      var(--discovery) 0deg 1.5deg, transparent 1.5deg 15deg);
+    -webkit-mask-image:radial-gradient(closest-side,transparent 30%,#000 47%,#000 63%,transparent 90%);
+    mask-image:radial-gradient(closest-side,transparent 30%,#000 47%,#000 63%,transparent 90%);
+    animation:burst .8s cubic-bezier(.16,.8,.3,1) forwards;
+  }
+  @keyframes freshGlow{
+    0%,100%{box-shadow:var(--raise)}
+    35%{box-shadow:var(--raise),0 0 0 3px color-mix(in srgb,var(--discovery) 55%,transparent)}
+  }
+  .chip.board.justmade{animation:freshGlow .9s ease-out}
+  @media (prefers-reduced-motion:reduce){
+    .burst{display:none}
+    .chip.board.justmade{animation:none}
   }
   @keyframes expel{
     0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
@@ -556,7 +606,8 @@ __CATEGORY_CSS__
   #card:not(.mini) .more{max-height:260px;padding-bottom:10px}
   .why{font-size:12.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 8px}
   .fact{display:none}
-  .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .cbtns{display:flex;gap:6px;flex:none}
   .inner button.ghost{
     background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);border-radius:99px;
     padding:4px 10px;font:600 11px var(--face-name);cursor:pointer;
@@ -726,13 +777,67 @@ __CATEGORY_CSS__
   /* settings */
   .setrow{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
   .setrow button{
-    display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;
+    display:flex;align-items:flex-start;gap:10px;text-align:left;width:100%;
     padding:9px 12px;border-radius:11px;background:var(--surface);border:1.5px solid var(--line);cursor:pointer;
   }
+  .stx{display:flex;flex-direction:column;gap:2px;min-width:0}
   .setrow button b{font:700 13.5px var(--face-name);color:var(--ink)}
   .setrow button i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
   .setrow button.on{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--card))}
   .setrow button.on b{color:var(--brick)}
+  /* The mark is a reading aid, not decoration: it repeats the option's rank
+     (A/B/C) or its state, so the column can be skimmed without reading. */
+  .smark{
+    flex:none;width:22px;height:22px;border-radius:6px;display:flex;
+    align-items:center;justify-content:center;margin-top:1px;
+    font:700 11px/1 var(--face-data);color:var(--ink-soft);
+    background:rgba(var(--shade),.16);border:1px solid var(--line);
+  }
+  .setrow button.on .smark{color:var(--on-accent);background:var(--orange);border-color:var(--orange)}
+  .setrow button.danger .smark{color:var(--brick);background:color-mix(in srgb,var(--brick) 16%,transparent);border-color:color-mix(in srgb,var(--brick) 40%,transparent)}
+  .gmark{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:19px;height:19px;margin-right:7px;border-radius:5px;vertical-align:-4px;
+    background:color-mix(in srgb,var(--orange) 20%,transparent);color:var(--orange);
+    font:700 11px/1 var(--face-data);
+  }
+
+  /* Tiles: the option that can be shown rather than described. */
+  .settiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:7px;margin-bottom:8px}
+  .settiles button{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    padding:8px 6px 7px;border-radius:11px;cursor:pointer;
+    background:var(--surface);border:1.5px solid var(--line);
+  }
+  .settiles button b{font:700 11.5px/1.15 var(--face-name);color:var(--ink);text-align:center}
+  .settiles button.on{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--card))}
+  .settiles button.on b{color:var(--brick)}
+  .gsw,.tsw,.dsw{
+    display:block;width:100%;height:40px;border-radius:7px;
+    border:1px solid var(--line);overflow:hidden;
+  }
+  /* The swatch is painted by the same rule that paints the real ground —
+     see body.g-* above — so the two can never drift apart. */
+  /* body paints its ground fixed to the viewport; a 40px swatch has to paint
+     its own box instead, or it shows whatever slice of the page sits behind it.
+     Only the attachment is overridden — each ground's own background-size is
+     what makes graph ruled and profile layered. */
+  .gsw{background-attachment:scroll !important}
+  .tsw{display:flex;align-items:center;justify-content:center;background:var(--card)}
+  .tsw svg{width:28px;height:28px}
+  /* Miniatures of the three card footprints. */
+  .dsw{display:flex;align-items:center;justify-content:center;background:var(--card)}
+  .dsw b{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+  .dbox{width:23px;height:30px;border:1px solid var(--ink-soft);border-radius:2px;padding:3px 2px;background:rgba(var(--shade),.12)}
+  .dbox .dart{display:block;width:100%;height:13px;background:var(--ink-soft);opacity:.55;border-radius:1px}
+  .dbox .dnm{display:block;width:100%;height:4px;margin-top:3px;background:var(--ink-soft);opacity:.35}
+  .dfree{width:23px}
+  .dfree .dart{display:block;width:19px;height:15px;margin:0 auto;background:var(--ink-soft);opacity:.55;border-radius:2px}
+  .dfree .dpad{display:block;width:23px;height:7px;margin-top:2px;border:1px solid var(--ink-soft);border-radius:2px;opacity:.6}
+  .dpill{flex-direction:row !important;gap:3px !important;width:38px;height:13px;padding:0 4px;
+         border:1px solid var(--ink-soft);border-radius:99px;opacity:.75}
+  .dpill .ddot{width:7px;height:7px;border-radius:50%;background:var(--ink-soft);flex:none}
+  .dpill .dline{flex:1;height:3px;border-radius:2px;background:var(--ink-soft);opacity:.55}
 
   /* depth: hide the technical layer for younger readers */
   :root[data-depth="kid"] .formula,
@@ -747,6 +852,7 @@ __CATEGORY_CSS__
 
   /* tone: straight keeps everything, just stops shouting */
   :root[data-tone="straight"] .ring,
+  :root[data-tone="straight"] .burst,
   :root[data-tone="straight"] .drop{display:none}
   :root[data-tone="straight"] .chip.folk{background:var(--card);border-color:var(--line)}
   #settings{font-size:14px;line-height:1}
@@ -872,6 +978,45 @@ __CATEGORY_CSS__
   }
 
   /* periodic table */
+  /* ── the docked periodic table ────────────────────────────────────────
+     Sits inside #board, so it covers the bench and never the shelf, and its
+     height is one custom property that the grab handle writes. */
+  #ptDock{
+    position:absolute;left:0;right:0;bottom:0;z-index:30;
+    height:var(--pth,240px);display:none;flex-direction:column;
+    background:color-mix(in srgb,var(--surface) 94%,transparent);
+    backdrop-filter:blur(10px);
+    border-top:2px solid var(--line);box-shadow:0 -12px 30px -14px rgba(var(--shade),.8);
+  }
+  body.pt-on #ptDock{display:flex}
+  #ptGrab{
+    flex:none;height:16px;display:flex;align-items:center;justify-content:center;
+    cursor:ns-resize;touch-action:none;
+  }
+  #ptGrab i{display:block;width:44px;height:4px;border-radius:99px;background:var(--line)}
+  #ptGrab:hover i{background:var(--orange)}
+  #ptHead{
+    flex:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    padding:0 12px 7px;font:400 11px/1.3 var(--face-name);color:var(--ink-soft);
+  }
+  #ptHead b{font:700 12px var(--face-name);color:var(--ink)}
+  #ptHead .legend{margin:0;gap:4px}
+  #ptHead .legend span{font-size:8.5px;padding:2px 6px}
+  #ptBody{flex:1;min-height:0;overflow:auto;padding:0 12px 12px}
+  #ptBody .ptab{margin:0}
+  /* Three states, and they mean different things: dim is not in this world at
+     all, plain is in it but you have not made it, lit is on your shelf. */
+  #ptBody .atom{cursor:pointer;opacity:.9}
+  #ptBody .atom.off{opacity:.2}
+  #ptBody .atom.have{outline:2px solid var(--discovery);outline-offset:1px}
+  #ptBody .atom:hover{transform:scale(1.14);z-index:2;position:relative}
+  #ptClose{margin-left:auto;flex:none}
+  @media(max-width:720px){ #ptToggle{display:none} body.pt-on #ptDock{display:none} }
+
+  .elfact{display:flex;gap:11px;align-items:flex-start;margin:2px 0 4px}
+  .elfact > div{min-width:0}
+  .elfact p{margin:3px 0 5px}
+  .elcat{font:700 9.5px/1 var(--face-data);letter-spacing:.9px;text-transform:uppercase;color:var(--ink-soft)}
   .ptab{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;margin:8px 0}
   .ptab .atom{width:100%;height:auto;aspect-ratio:1;border-radius:4px;min-width:0}
   .ptab .atom .sym{font-size:9px}
@@ -954,6 +1099,7 @@ __CATEGORY_CSS__
     /* Reset moves into Settings. It is destructive, and it was being clipped
        off the end of the header at 375px. */
     #reset{display:none}
+    #undo{padding:6px 9px}
     .mark svg{width:22px;height:22px}
     .goal{display:none}
     #live{display:none}
@@ -1014,8 +1160,30 @@ __CATEGORY_CSS__
               left:50%!important}
   }
   @media(max-width:400px){ h1{display:none} }
-  @media(min-width:721px){ #shelfToggle{display:none} }
   #shelfToggle{width:34px;padding:6px 0;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
+  /* On a phone the shelf slides in over the board; on a desktop it is a column
+     that can be given back to the bench. Same button, and it now does
+     something in both places — it used to be painted over its own hide rule
+     on desktop and sat there inert. */
+  body.shelf-shut aside{display:none}
+  header button:disabled{opacity:.38;cursor:default}
+  header button.on{border-color:var(--orange);color:var(--orange)}
+  #shelfToggle.off{color:var(--ink-soft);opacity:.65}
+
+  /* Every control says what it does. The browser's own tooltip takes about a
+     second to appear, renders in the OS font, and cannot be read at all on a
+     touch screen — so the title attribute is borrowed and drawn here instead,
+     in the game's own type, fast enough to be useful while scanning a row of
+     icon buttons. */
+  #tip{
+    position:fixed;z-index:900;pointer-events:none;opacity:0;
+    transform:translateY(3px);transition:opacity .12s,transform .12s;
+    max-width:230px;padding:5px 9px;border-radius:4px;
+    background:var(--card);border:1px solid var(--line);
+    box-shadow:0 8px 20px -8px rgba(var(--shade),.8);
+    font:400 11.5px/1.35 var(--face-name);color:var(--ink);
+  }
+  #tip.on{opacity:1;transform:none}
   /* A destructive control should not look like the others. */
   .danger{border-color:var(--brick)!important;color:var(--brick)!important}
 </style>
@@ -1039,9 +1207,11 @@ __CATEGORY_CSS__
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
-  <button id="reset">Reset</button>
-  <button id="nudge">Nudge</button>
-  <button id="shelfToggle" title="Shelf">▤</button>
+  <button id="ptToggle" title="Show the periodic table along the bottom">Table</button>
+  <button id="undo" title="Nothing to undo yet" disabled>Undo</button>
+  <button id="reset" title="Start over — wipes everything you have found">Reset</button>
+  <button id="nudge" title="Put two things on the bench that go together">Nudge</button>
+  <button id="shelfToggle" title="Hide the shelf">▤</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
 </header>
 
@@ -1060,6 +1230,14 @@ __CATEGORY_CSS__
     <div id="intro" aria-live="polite">
       <svg id="introArc" aria-hidden="true"><path/></svg>
       <p id="introSay"></p>
+    </div>
+    <!-- The table, docked. Not a sheet: a sheet is somewhere you go instead of
+         playing, and the point of this one is to be open beside the bench
+         while you work. Drag its edge to give it more room or push it away. -->
+    <div id="ptDock" aria-hidden="true">
+      <div id="ptGrab" title="Drag to resize · drag down to close"><i></i></div>
+      <div id="ptHead"></div>
+      <div id="ptBody"></div>
     </div>
   </div>
   <aside id="aside"></aside>
@@ -1186,6 +1364,88 @@ const save = () => {
     }));
   } catch {}
 };
+
+// ---------- tooltips ----------
+// Read straight off `title`, so a control is documented by being written
+// correctly rather than by being registered anywhere.
+const tipEl = Object.assign(document.createElement('div'), { id: 'tip' });
+document.body.appendChild(tipEl);
+let tipT = 0, tipFor = null;
+function hideTip() { clearTimeout(tipT); tipEl.classList.remove('on'); tipFor = null; }
+function showTip(el) {
+  const text = el.dataset.tip;
+  if (!text) return;
+  tipFor = el;
+  tipEl.textContent = text;
+  tipEl.classList.add('on');
+  // Measure after the text is in, then keep the whole box on screen.
+  const r = el.getBoundingClientRect(), t = tipEl.getBoundingClientRect();
+  let x = r.left + r.width / 2 - t.width / 2;
+  let y = r.bottom + 7;
+  if (y + t.height > innerHeight - 6) y = r.top - t.height - 7;
+  tipEl.style.left = Math.max(6, Math.min(x, innerWidth - t.width - 6)) + 'px';
+  tipEl.style.top = Math.max(6, y) + 'px';
+}
+// Moving the text off `title` is what stops the OS tooltip firing on top of
+// ours; retip() puts the current text back in play after a label changes.
+function retip(el) {
+  if (el.title) { el.dataset.tip = el.title; el.removeAttribute('title'); }
+  if (tipFor === el) showTip(el);
+}
+document.addEventListener('pointerover', ev => {
+  const el = ev.target.closest?.('[title],[data-tip]');
+  if (!el) { if (tipFor) hideTip(); return; }
+  if (el === tipFor) return;
+  clearTimeout(tipT);
+  if (el.title) { el.dataset.tip = el.title; el.removeAttribute('title'); }
+  tipT = setTimeout(() => showTip(el), 240);
+});
+document.addEventListener('pointerdown', hideTip, true);
+addEventListener('scroll', hideTip, true);
+addEventListener('blur', hideTip);
+
+// ---------- undo ----------
+// The bench already round-trips through benchState()/restoreBench() for the
+// save file, so undo is that same pair pointed at memory instead of disk: a
+// snapshot taken just before anything that changes the bench, and replayed if
+// you ask for it back. Nothing here touches `found` — a discovery is a fact
+// you learned, and taking a card off the bench was never meant to unlearn it.
+const UNDO_MAX = 20;
+const undoStack = [];
+let undoSuspended = false;
+function pushUndo(label) {
+  if (undoSuspended) return;
+  undoStack.push({ label, bench: benchState() });
+  if (undoStack.length > UNDO_MAX) undoStack.shift();
+  refreshUndo();
+}
+function refreshUndo() {
+  const b = document.getElementById('undo');
+  if (!b) return;
+  const top = undoStack[undoStack.length - 1];
+  b.disabled = !top;
+  b.title = top ? `Undo ${top.label}` : 'Nothing to undo yet';
+  retip(b);
+}
+function undoLast() {
+  const s = undoStack.pop();
+  if (!s) { toast('Nothing to undo'); return; }
+  undoSuspended = true;
+  try {
+    stopCooking();
+    cooking.clear();
+    links.length = 0;
+    world.querySelectorAll('.chip.board').forEach(c => c.remove());
+    lastChipTap = { el: null, t: 0 };
+    restoreBench(s.bench);
+    drawLinks();
+    refreshFolds();
+  } finally { undoSuspended = false; }
+  refreshUndo();
+  save();
+  sfx.pick();
+  toast(`Undid ${s.label}`);
+}
 
 // Moving a card should be remembered, but not written to disk sixty times a
 // second while it is in your hand.
@@ -1501,7 +1761,11 @@ function chipHTML(e) {
   return artSVG(e.id) +
     `<span class="n${fit}">${name}</span>` +
     `<span class="rl"></span>` +
-    `<span class="ac">${accessionOf(e.id)}${scaleOf(e.id) ? ' · ' + scaleOf(e.id) : ''}</span>`;
+    `<span class="ac">${accessionOf(e.id)}${scaleOf(e.id) ? ' · ' + scaleOf(e.id) : ''}</span>` +
+    // Every other way into an entry was indirect — through the codex, or a
+    // search, or a link inside another entry. A thing you are holding should
+    // say what it is without you having to go and look it up somewhere else.
+    `<i class="info" data-info="${e.id}" title="What is ${name}?">i</i>`;
 }
 
 /** A drawing at a given pixel size, for prose and lists. */
@@ -1591,6 +1855,7 @@ function renderShelf() {
     shelfAutoFolded = true;
     renderShelf();
   };
+  if (document.body.classList.contains('pt-on')) ptRender();   // tiles track the shelf
   const ra = aside.querySelector('[data-readyall]');
   if (ra) ra.onclick = ev => { ev.stopPropagation(); readyAll = !readyAll; renderShelf(); };
   aside.querySelectorAll('[data-fold]').forEach(h => h.onclick = ev => {
@@ -1642,7 +1907,14 @@ function boardBox() {
   // that subtraction produces a NEGATIVE width, which is truthy, so it was
   // used, and every position derived from it collapsed to the origin. Clamp.
   const w = Math.max(320, b.width  || (window.innerWidth  - 240) || 900);
-  const h = Math.max(320, b.height || (window.innerHeight - 120) || 600);
+  let h = Math.max(320, b.height || (window.innerHeight - 120) || 600);
+  // The docked table sits on the bottom of the board and is opaque, so the
+  // strip behind it is not somewhere a card can usefully be. Everything that
+  // places, tidies or pins a card measures through here, so taking the dock
+  // off the height here is all it takes for none of them to use that strip.
+  const dock = document.getElementById('ptDock');
+  if (dock && document.body.classList.contains('pt-on'))
+    h = Math.max(200, h - dock.getBoundingClientRect().height);
   return { left: b.left, top: b.top, width: w, height: h };
 }
 function toWorld(sx, sy) {
@@ -1748,6 +2020,7 @@ function chipTap(chip) {
   if (lastChipTap.el === chip && now - lastChipTap.t < 320) {
     lastChipTap = { el: null, t: 0 };
     if (chip.classList.contains('folded')) toggleBranch(chip);   // undo the fold the first tap did
+    pushUndo(`removing ${nameOf(byId[chip.dataset.id])}`);
     removeChip(chip);
     return;
   }
@@ -1929,19 +2202,93 @@ function tidy() {
     if (!rows.has(d)) rows.set(d, []);
     rows.get(d).push(c);
   }
+  // Generation rows alone are not a hierarchy — they were, and the result was
+  // a card in row 0 wired to a card at the far end of row 2, with the line
+  // crossing everything in between. What makes it read is the two things
+  // below: keep the chains apart, and put each card near what it came from.
+  const kids = new Map(chips.map(c => [c, []]));
+  for (const [c, ps] of parents) for (const p of ps) kids.get(p)?.push(c);
+
+  // 1. Separate chains stay separate. A bench is usually several unrelated
+  //    little trees, and interleaving them is most of what looked like a mess.
+  const comp = new Map();
+  let nc = 0;
+  for (const c of chips) {
+    if (comp.has(c)) continue;
+    const id = nc++, stack = [c];
+    comp.set(c, id);
+    while (stack.length) {
+      const x = stack.pop();
+      for (const n of [...(parents.get(x) ?? []), ...(kids.get(x) ?? [])])
+        if (n && !comp.has(n)) { comp.set(n, id); stack.push(n); }
+    }
+  }
+
+  const GAP = 18, ROW_H = 78;
+  const [cw] = cardSize();
+  const step = cw + GAP;
+  const pos = new Map();                      // chip -> x, in "slots"
+  let cursor = 0;
+
+  for (let g = 0; g < nc; g++) {
+    const mine = chips.filter(c => comp.get(c) === g);
+    const byRow = new Map();
+    for (const c of mine) {
+      const d = depth.get(c);
+      if (!byRow.has(d)) byRow.set(d, []);
+      byRow.get(d).push(c);
+    }
+    const order = [...byRow.keys()].sort((a, z) => a - z);
+    order.forEach(d => byRow.get(d).forEach((c, i) => pos.set(c, i)));
+
+    // 2. Barycentre passes: a card slides towards the average position of the
+    //    cards it is joined to, alternately looking up and down, and is then
+    //    re-ranked within its own row. This is the standard way to pull the
+    //    crossings out of a layered graph, and four passes is plenty at bench
+    //    size. Re-ranking (rather than moving freely) is what keeps rows from
+    //    collapsing two cards onto the same spot.
+    const meanOf = (ns) => ns.length ? ns.reduce((a, n) => a + pos.get(n), 0) / ns.length : null;
+    for (let pass = 0; pass < 4; pass++) {
+      const down = pass % 2 === 0;
+      for (const d of (down ? order : [...order].reverse())) {
+        const row = byRow.get(d);
+        const key = new Map(row.map(c => {
+          const m = meanOf((down ? parents.get(c) : kids.get(c)) ?? []);
+          return [c, m === null ? pos.get(c) : m];
+        }));
+        row.sort((a, z) => key.get(a) - key.get(z) || pos.get(a) - pos.get(z));
+        row.forEach((c, i) => pos.set(c, i));
+      }
+    }
+
+    // 3. Centre each card over its children, then over its parents, without
+    //    letting neighbours swap or touch — so a single result sits under the
+    //    middle of the two things that made it instead of flush left.
+    for (let pass = 0; pass < 6; pass++) {
+      for (const d of (pass % 2 === 0 ? [...order].reverse() : order)) {
+        const row = byRow.get(d);
+        for (let i = 0; i < row.length; i++) {
+          const c = row[i];
+          const want = meanOf((pass % 2 === 0 ? kids.get(c) : parents.get(c)) ?? []);
+          if (want === null) continue;
+          const lo = i ? pos.get(row[i - 1]) + 1 : -Infinity;
+          const hi = i < row.length - 1 ? pos.get(row[i + 1]) - 1 : Infinity;
+          pos.set(c, Math.max(lo, Math.min(want, hi)));
+        }
+      }
+    }
+
+    const min = Math.min(...mine.map(c => pos.get(c)));
+    const max = Math.max(...mine.map(c => pos.get(c)));
+    for (const c of mine) pos.set(c, pos.get(c) - min + cursor);
+    cursor += (max - min) + 2;                // a clear lane between chains
+  }
+
   const b = boardBox();
   const [ox, oy] = toWorld(b.left + 40, b.top + 40);
-  const rowH = 78;
-  let y = oy;
-  for (const d of [...rows.keys()].sort((a, z) => a - z)) {
-    const row = rows.get(d);
-    let x = ox;
-    for (const c of row) {
-      c.style.left = x + 'px';
-      c.style.top = y + 'px';
-      x += c.offsetWidth + 16;
-    }
-    y += rowH;
+  for (const c of chips) {
+    c.style.left = (ox + pos.get(c) * step) + 'px';
+    c.style.top  = (oy + depth.get(c) * ROW_H) + 'px';
   }
   drawLinks();
   fitAll();
@@ -2219,7 +2566,10 @@ function showCard(r, e) {
       <p class="why">${prefs.depth === 'kid' ? e.fact : r.why}</p>
       <div class="cfoot">
         ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
-        <button class="ghost" data-trace="${e.id}">Trace it</button>
+        <span class="cbtns">
+          <button class="ghost" data-info="${e.id}" title="What is ${e.name}?">Read about it</button>
+          <button class="ghost" data-trace="${e.id}">Trace it</button>
+        </span>
       </div>
     </div>
     <span class="timer"></span>`;
@@ -2231,9 +2581,12 @@ function dismissCard() { clearTimeout(cardT); cardPinned = false; document.getEl
 // ---------- the one interaction that matters ----------
 let drag = null;
 let pan = null;
+let holdT = 0;
 board.addEventListener('pointerdown', ev => {
   if (ev.target.closest('#zoom, #intro')) return;
   if (touches.size > 1) return;                       // pinching, not dragging
+  const nfo = ev.target.closest('[data-info]');
+  if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   const chip = ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
@@ -2256,6 +2609,18 @@ board.addEventListener('pointerdown', ev => {
   chip.classList.add('drag');
   chip.setPointerCapture(ev.pointerId);
   primeHitCache(chip);
+  // Press and hold, without moving, asks what the thing is. It is the same
+  // question the ⓘ answers, but it works at pill density where there is no
+  // corner to put a button in, and it is the gesture a hand reaches for
+  // anyway. Any real travel cancels it — a drag is a drag.
+  clearTimeout(holdT);
+  holdT = setTimeout(() => {
+    if (!drag || drag.chip !== chip || drag.moved) return;
+    drag = null; hitCache = null;
+    chip.classList.remove('drag', 'haslive');
+    chip.dataset.live = '';
+    openAbout(chip.dataset.id);
+  }, 520);
 });
 board.addEventListener('pointermove', ev => {
   if (pan) {
@@ -2269,6 +2634,7 @@ board.addEventListener('pointermove', ev => {
   // drag and taps never registered on a phone. Require real travel first.
   if (!drag.moved && Math.hypot(ev.clientX - drag.sx, ev.clientY - drag.sy) < 8) return;
   drag.moved = true;
+  clearTimeout(holdT);
   const [wx, wy] = toWorld(ev.clientX, ev.clientY);
   drag.chip.style.left = (wx - drag.ox) + 'px';
   drag.chip.style.top  = (wy - drag.oy) + 'px';
@@ -2287,6 +2653,7 @@ board.addEventListener('pointermove', ev => {
   }
 });
 board.addEventListener('pointerup', ev => {
+  clearTimeout(holdT);
   if (pan) { pan = null; board.classList.remove('panning'); return; }
   if (!drag) return;
   const { chip, moved } = drag; drag = null;
@@ -2483,12 +2850,30 @@ function resolve(r, chips, x, y) {
     if (ABSURD.includes(r.out) && prefs.tone === 'playful')
       setTimeout(() => toast('This one is completely true, which is the funny part'), 900);
     (byId[r.out].shelf === 'folklore' ? sfx.folklore : sfx.discover)();
+    burstAt(el);
     showCard(r, byId[r.out]);
   } else { sfx.pick(); el.classList.add('pop'); }
 }
 
+// Rays radiating off the new card, once, the first time it exists. Lives in
+// `world` so it travels with the card under pan and zoom.
+function burstAt(el) {
+  if (!el || !el.isConnected) return;
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const [cx, cy] = chipCentre(el);
+  const b = document.createElement('div');
+  b.className = 'burst';
+  b.style.left = cx + 'px'; b.style.top = cy + 'px';
+  world.appendChild(b);
+  setTimeout(() => b.remove(), 820);
+  el.classList.add('justmade');
+  setTimeout(() => el.classList.remove('justmade'), 950);
+}
+
 function applyMerge(a, b) {
-  resolve(merges.get([a.dataset.id, b.dataset.id].sort().join('+')), [a, b]);
+  const r = merges.get([a.dataset.id, b.dataset.id].sort().join('+'));
+  if (r) pushUndo(`making ${nameOf(byId[r.out])}`);
+  resolve(r, [a, b]);
 }
 
 // ---------- proximity: some things react before you ever drop them ----------
@@ -2714,6 +3099,7 @@ function applyProcess(chip, verbEl) {
   const verb = verbEl.dataset.verb;
   const r = procs.get(chip.dataset.id + '|' + verb);
   if (!r) { verbEl.classList.add('nope'); setTimeout(() => verbEl.classList.remove('nope'), 280); return; }
+  pushUndo(`making ${nameOf(byId[r.out])}`);
   const ms = TAKES_TIME[verb];
   if (!ms) return resolve(r, [chip]);
   startCooking(chip, r, verb, ms);
@@ -2958,6 +3344,88 @@ function periodicHTML() {
          : `<span class="hex" data-atom="${c.id}">${c.name}</span>`).join('') + `</div>`;
   return h;
 }
+// A card called Calcium in a family called Metals, whose only extra panel was
+// a hazard note about sodium, was telling you nothing about calcium. Seventy-odd
+// playable things ARE chemical elements and the bedrock table already holds
+// their symbol, number, group and a line of their own — so say so on the card.
+const EL_ALIAS = { aluminum: 'el_aluminium' };
+const atomFor = (id) => atomById[EL_ALIAS[id] ?? ('el_' + id)];
+const CAT_NAME = {
+  alkali: 'Alkali metal', alkaline: 'Alkaline earth metal', transition: 'Transition metal',
+  metal: 'Post-transition metal', metalloid: 'Metalloid', nonmetal: 'Nonmetal',
+  halogen: 'Halogen', noble: 'Noble gas', lanthanide: 'Lanthanide', actinide: 'Actinide',
+};
+function factsHTML(id) {
+  const a = atomFor(id);
+  if (!a) return '';
+  return `<h2>The element itself</h2>
+    <div class="elfact">
+      <span class="atom ${a.category}"><span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>
+      <div>
+        <div class="elcat">${CAT_NAME[a.category] ?? a.category} · number ${a.number}</div>
+        <p>${a.fact}</p>
+        <a class="src" href="${a.src}" target="_blank" rel="noopener">Check this</a>
+      </div>
+    </div>`;
+}
+
+// ---- the periodic table, docked along the bottom ----
+// The sheet version is a page you go to. This one stays open beside the bench,
+// which is the only way it can answer "have I got that one yet" while you are
+// actually playing — so the tiles read your shelf, not just the data file.
+const PT_MIN = 130, PT_MAX_FRAC = 0.72;
+// bedrock.json's own `inPlay` flag means "the starters are made of this", which
+// is a different and much smaller set than "you can hold this as a card" — 15
+// against 75. Lighting the dock by that flag left three quarters of the
+// playable elements looking like they were not in the game. Ask the element
+// list instead, which is the thing that actually decides.
+const PLAYABLE_ATOM = new Map();
+for (const e of elements) { const a = atomFor(e.id); if (a) PLAYABLE_ATOM.set(a.id, e.id); }
+function ptRender() {
+  const body = document.getElementById('ptBody');
+  if (!body) return;
+  const held = [...PLAYABLE_ATOM.values()].filter(id => found.has(id)).length;
+  const cats = [...new Set(BED.atoms.map(a => a.category))];
+  document.getElementById('ptHead').innerHTML =
+    `<b>The periodic table</b>` +
+    `<span>${held} of the ${PLAYABLE_ATOM.size} you can hold are on your shelf</span>` +
+    `<div class="legend">` + cats.map(c => `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>` +
+    `<button class="ghost" id="ptClose" title="Close the table">Close</button>`;
+  let h = '<div class="ptab">';
+  for (const a of BED.atoms) {
+    if (PT_GAPS[a.number] > 0) h += `<div class="gap" style="--n:${PT_GAPS[a.number]}"></div>`;
+    if (a.number === 57 || a.number === 89) h += `<div class="gap" style="--n:18"></div>`;
+    const el = PLAYABLE_ATOM.get(a.id);
+    const mine = el && found.has(el);
+    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}" ` +
+         `data-atom="${a.id}"${el ? ` data-el="${el}"` : ''} ` +
+         `title="${a.number} · ${a.name}${mine ? ' — on your shelf' : el ? ' — in this world, not yet made' : ' — reference only'}">` +
+         `<span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>`;
+  }
+  document.getElementById('ptBody').innerHTML = h + '</div>';
+  document.getElementById('ptClose').onclick = () => ptSet(false);
+}
+function ptSet(on) {
+  document.body.classList.toggle('pt-on', on);
+  document.getElementById('ptDock').setAttribute('aria-hidden', String(!on));
+  const b = document.getElementById('ptToggle');
+  b.classList.toggle('on', on);
+  b.title = on ? 'Hide the periodic table' : 'Show the periodic table along the bottom';
+  retip(b);
+  prefs.ptOpen = on ? 1 : 0; savePrefs();
+  if (on) ptRender();
+  drawLinks();
+}
+function ptHeight(px) {
+  // The RAW board, not boardBox() — boardBox subtracts the dock, so clamping
+  // against it made the ceiling fall every time the dock grew, and dragging up
+  // shrank the panel instead of enlarging it.
+  const max = Math.round((board.getBoundingClientRect().height || 600) * PT_MAX_FRAC);
+  const h = Math.max(PT_MIN, Math.min(px, max));
+  document.getElementById('ptDock').style.setProperty('--pth', h + 'px');
+  prefs.ptH = h; savePrefs();
+}
+
 const aminoById = Object.fromEntries((BED.aminos ?? []).map(a => [a.id, a]));
 const fmt = (f) => String(f).replace(/(\d+)/g, '<sub>$1</sub>');
 function showAtom(id) {
@@ -2980,13 +3448,13 @@ function showAtom(id) {
      <a class="src" href="${(a ?? c).src}" target="_blank" rel="noopener">Check this</a>`;
   openSheet((a ?? c).name);
 }
-function bedrockHTML(tally) {
+function bedrockHTML(tally, head = 'and below that') {
   const leaves = [...tally.keys()].filter(id => BED.composition[id]);
   if (!leaves.length) return '';
   const atoms = new Set();
   for (const id of leaves) for (const p of BED.composition[id]) for (const a of atomsUnder(p)) atoms.add(a);
   const syms = [...atoms].map(a => atomById[a].symbol);
-  return `<div class="bedhead">and below that</div>` +
+  return `<div class="bedhead">${head}</div>` +
     leaves.map(id =>
       `<div class="bedgroup"><div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
       `<ul class="tree bed">${BED.composition[id].map(bedTreeHTML).join('')}</ul></div>`).join('') +
@@ -3102,12 +3570,32 @@ function showEntry(id) {
       ${found.has(id) ? `<button class="ghost" data-put="${id}">Put on the bench</button>` : ''}
     </div>
     <h2>Made from${knownIn.length ? ` · ${knownIn.length}` : ''}</h2>
-    ${knownIn.length ? rows(knownIn, 'in') : '<p class="none">You have not found a way to make this yet.</p>'}
+    ${knownIn.length ? rows(knownIn, 'in')
+      : `<p class="none">${owned ? 'You have not found a way to make this yet.'
+                                 : 'You have not made this yet, so none of its routes are open.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
     <h2>Makes${knownOut.length ? ` · ${knownOut.length}` : ''}</h2>
     ${knownOut.length ? rows(knownOut, 'out') : '<p class="none">Nothing yet.</p>'}
-    ${hiddenOut > 0 ? `<p class="hint2">${hiddenOut} more thing${hiddenOut === 1 ? '' : 's'} can be made with it.</p>` : ''}`;
+    ${hiddenOut > 0 ? `<p class="hint2">${hiddenOut} more thing${hiddenOut === 1 ? '' : 's'} can be made with it.</p>` : ''}
+    ${factsHTML(id)}
+    ${bedrockHTML(leafTally(id), 'What it is made of')}`;
   openSheet(e.name);
+}
+
+/**
+ * The one answer to "what is this thing".
+ *
+ * Which page that is depends on whether you have it: a thing on your shelf has
+ * an entry — what makes it, what it makes, what it is made of underneath. A
+ * thing you have only heard of has a route instead. Every ⓘ, every long press
+ * and every "Read about it" comes through here so the answer is the same
+ * wherever the question is asked from.
+ */
+function openAbout(id) {
+  if (!byId[id]) return;
+  dismissCard();
+  sfx.pick();
+  found.has(id) ? showEntry(id) : showHint(id);
 }
 
 // Constructing beats studying roughly 2:1 across four meta-analyses, and
@@ -3386,52 +3874,71 @@ document.getElementById('goal').addEventListener('click', () => {
   found.has(t) ? showEntry(t) : showHint(t);
 });
 
+// Little schematics of the three card footprints, so "Half card" is a picture
+// of a half card rather than a sentence about one.
+const DENSITY_ART = {
+  card: `<span class="dsw"><b class="dbox"><i class="dart"></i><i class="dnm"></i></b></span>`,
+  half: `<span class="dsw"><b class="dfree"><i class="dart"></i><i class="dpad"></i></b></span>`,
+  pill: `<span class="dsw"><b class="dpill"><i class="ddot"></i><i class="dline"></i></b></span>`,
+};
 function showSettings() {
-  const row = (key, opts) => `<div class="setrow">` + opts.map(([v, label, note]) =>
+  // Stacked full-width rows turned seven grounds into a page of scrolling grey.
+  // A tile carries its own picture and its name, and four fit on a line.
+  const tiles = (key, opts, art) => `<div class="settiles">` + opts.map(([v, label, note]) =>
+    `<button class="${prefs[key] === v ? 'on' : ''}" data-pref="${key}" data-val="${v}" title="${note}">
+       ${art(v)}<b>${label}</b></button>`).join('') + `</div>`;
+  // Where the difference between options is a sentence, not a picture, the
+  // sentence has to stay — but it can sit beside a mark instead of under one.
+  const row = (key, opts) => `<div class="setrow">` + opts.map(([v, label, note, mark]) =>
     `<button class="${prefs[key] === v ? 'on' : ''}" data-pref="${key}" data-val="${v}">
-       <b>${label}</b><i>${note}</i></button>`).join('') + `</div>`;
-  const group = (title, body) => `<section class="setgroup"><h3>${title}</h3>${body}</section>`;
+       <span class="smark">${mark}</span><span class="stx"><b>${label}</b><i>${note}</i></span>
+     </button>`).join('') + `</div>`;
+  const group = (title, mark, body) =>
+    `<section class="setgroup"><h3><span class="gmark">${mark}</span>${title}</h3>${body}</section>`;
+
   document.getElementById('sheetBody').innerHTML =
-    group('Look', `
+    group('Look', '◐', `
       <h2>How it is drawn</h2>
-      ${row('theme', THEMES.map(([v, l, n]) => [v, l, n]))}
+      ${tiles('theme', THEMES, v => `<span class="tsw t-${v}">${artSVG('leaf')}</span>`)}
       <h2>What it sits on</h2>
-      ${row('ground', GROUNDS.map(([v, l, n]) => [v, l, n]))}
+      ${tiles('ground', GROUNDS, v => `<span class="gsw g-${v}"></span>`)}
       <h2>How much room each thing takes</h2>
-      ${row('density', DENSITIES.map(([v, l, n]) => [v, l, n]))}`) +
-    group('Explain', `
+      ${tiles('density', DENSITIES, v => DENSITY_ART[v])}`) +
+    group('Explain', '✎', `
       <h2>How much explaining</h2>
       ${row('depth', [
-        ['kid', 'Kid', 'One plain line. No formulas.'],
-        ['curious', 'Curious', 'The mechanism, and a source.'],
-        ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.'],
+        ['kid', 'Kid', 'One plain line. No formulas.', 'A'],
+        ['curious', 'Curious', 'The mechanism, and a source.', 'B'],
+        ['scientist', 'Scientist', 'Everything: formulas, tiers, audit marks.', 'C'],
       ])}
       <h2>How loud</h2>
       ${row('tone', [
-        ['playful', 'Playful', 'Sound, ripples, folklore up front.'],
-        ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.'],
+        ['playful', 'Playful', 'Sound, ripples, folklore up front.', '♪'],
+        ['straight', 'Straight', 'Quiet. Folklore stays, but keeps its voice down.', '·'],
       ])}
       <h2>When you pick something up</h2>
       ${row('assist', [
-        ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.'],
-        ['off', 'Say nothing',  'Work it out yourself.'],
+        ['on',  'Say how many', 'How many cards on the bench it will make something new with. Never which ones.', '3'],
+        ['off', 'Say nothing',  'Work it out yourself.', '—'],
       ])}`) +
-    group('Your data', `
+    group('Your data', '⌸', `
       <h2>Free play</h2>
       <div class="setrow">
         <button class="${prefs.freePlay ? 'on' : ''}" data-free="1">
-          <b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
+          <span class="smark">${prefs.freePlay ? '●' : '○'}</span>
+          <span class="stx"><b>${prefs.freePlay ? 'On — everything unlocked' : 'Off — discover as you go'}</b>
           <i>${prefs.freePlay
             ? 'Every element and tool available. Tap to go back to your own progress.'
-            : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`}</i>
+            : `Hands you all ${elements.length} elements and every tool at once, for trying things out. Your real progress is put aside and given back when you turn it off.`}</i></span>
         </button>
       </div>
       <h2>Start over</h2>
       <div class="setrow">
         <button class="danger" data-wipe="1">
-          <b>Wipe all discoveries</b>
+          <span class="smark">⚠</span>
+          <span class="stx"><b>Wipe all discoveries</b>
           <i>Everything you have found goes, and the four starting things come back.
-             There is no undo.</i></button>
+             There is no undo.</i></span></button>
       </div>`) +
     `<p class="hint2">Settings save automatically. None of them changes a single fact —
        only how much of it you are shown at once.</p>`;
@@ -3494,6 +4001,7 @@ function buildChain(id, x, y) {
 // The one entry point placement should go through: builds the real chain in
 // Free Play (where nothing has real ancestors yet), just places it otherwise.
 function placeItem(id, x, y) {
+  pushUndo(`putting ${nameOf(byId[id])} on the bench`);
   return prefs.freePlay ? buildChain(id, x, y) : spawn(id, x, y);
 }
 // Tapping a locked tool explains itself rather than doing nothing.
@@ -3544,15 +4052,19 @@ document.getElementById('aside').addEventListener('click', ev => {
   if (h) showHint(h.dataset.hint);
 });
 document.getElementById('aside').addEventListener('pointerdown', ev => {
+  const nfo = ev.target.closest('[data-info]');
+  if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   const c = ev.target.closest('[data-spawn]');
   if (!c) return;
-  shelfDrag = { id: c.dataset.spawn, x: ev.clientX, y: ev.clientY, moved: false, ghost: null };
+  shelfDrag = { id: c.dataset.spawn, x: ev.clientX, y: ev.clientY, moved: false, ghost: null,
+                hold: setTimeout(() => { if (shelfDrag && !shelfDrag.moved) { shelfDrag = null; openAbout(c.dataset.spawn); } }, 520) };
 });
 addEventListener('pointermove', ev => {
   if (!shelfDrag) return;
   if (!shelfDrag.moved && Math.hypot(ev.clientX - shelfDrag.x, ev.clientY - shelfDrag.y) < 7) return;
   if (!shelfDrag.moved) {
     shelfDrag.moved = true;
+    clearTimeout(shelfDrag.hold);
     const e = byId[shelfDrag.id];
     const g = document.createElement('div');
     g.className = `chip board drag fam-${familyOf(e).id}`;
@@ -3566,7 +4078,8 @@ addEventListener('pointermove', ev => {
 });
 addEventListener('pointerup', ev => {
   if (!shelfDrag) return;
-  const { id, moved, ghost } = shelfDrag; shelfDrag = null;
+  const { id, moved, ghost, hold } = shelfDrag; shelfDrag = null;
+  clearTimeout(hold);
   ghost?.remove();
   benchTouched = true;
   // Ask what is actually under the pointer rather than trusting a measured
@@ -3616,9 +4129,53 @@ function wipeProgress() {
   location.reload();
 }
 document.getElementById('reset').addEventListener('click', wipeProgress);
+document.getElementById('undo').addEventListener('click', undoLast);
+
+// ---- periodic dock: open, resize, dismiss ----
+document.getElementById('ptToggle').addEventListener('click', () =>
+  ptSet(!document.body.classList.contains('pt-on')));
+document.getElementById('ptBody').addEventListener('click', ev => {
+  const t = ev.target.closest('[data-atom]');
+  if (!t) return;
+  // A tile you can actually hold on the bench answers the game's question;
+  // one you cannot answers the chemistry's. Give whichever exists.
+  if (t.dataset.el) openAbout(t.dataset.el); else showAtom(t.dataset.atom);
+});
+{
+  let grab = null;
+  const dock = document.getElementById('ptDock');
+  document.getElementById('ptGrab').addEventListener('pointerdown', ev => {
+    grab = { y: ev.clientY, h: dock.getBoundingClientRect().height };
+    ev.target.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  addEventListener('pointermove', ev => {
+    if (!grab) return;
+    ptHeight(grab.h + (grab.y - ev.clientY));   // drag up to grow
+  });
+  addEventListener('pointerup', ev => {
+    if (!grab) return;
+    // Pushed well below its smallest useful size: you meant to put it away.
+    const shove = grab.h + (grab.y - ev.clientY);
+    grab = null;
+    if (shove < PT_MIN - 46) { ptHeight(prefs.ptH || 240); ptSet(false); }
+    else drawLinks();
+  });
+}
+if (prefs.ptH) document.getElementById('ptDock').style.setProperty('--pth', prefs.ptH + 'px');
+if (prefs.ptOpen && !matchMedia('(max-width:720px)').matches) ptSet(true);
+addEventListener('keydown', ev => {
+  if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === 'z' && !ev.shiftKey) {
+    if (ev.target.closest('input,textarea')) return;
+    ev.preventDefault(); undoLast();
+  }
+});
+refreshUndo();
 document.getElementById('card').addEventListener('click', ev => {
   const t = ev.target.closest('[data-trace]');
   if (t) { dismissCard(); return showProvenance(t.dataset.trace); }
+  const nfo = ev.target.closest('[data-info]');
+  if (nfo) return openAbout(nfo.dataset.info);
   if (ev.target.closest('a')) return;
   // A click opens it out and keeps it there — no timer, no dismiss button.
   const card = ev.currentTarget;
@@ -3630,8 +4187,23 @@ document.getElementById('card').addEventListener('click', ev => {
     dismissCard();
   }
 });
-document.getElementById('shelfToggle').addEventListener('click', () =>
-  document.getElementById('aside').classList.toggle('open'));
+document.getElementById('shelfToggle').addEventListener('click', ev => {
+  const aside = document.getElementById('aside');
+  const btn = ev.currentTarget;
+  // Narrow: the shelf is a drawer over the board. Wide: it is a column, and
+  // hiding it hands that width back to the bench.
+  if (matchMedia('(max-width:720px)').matches) {
+    const open = aside.classList.toggle('open');
+    btn.title = open ? 'Hide the shelf' : 'Show the shelf';
+  } else {
+    const shut = document.body.classList.toggle('shelf-shut');
+    btn.classList.toggle('off', shut);
+    btn.title = shut ? 'Show the shelf' : 'Hide the shelf';
+    drawLinks();
+  }
+  retip(btn);
+});
+
 
 // Lay the opening bench out on a grid sized to the board.
 let benchTouched = false;

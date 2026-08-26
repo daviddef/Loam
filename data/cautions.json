@@ -99,8 +99,7 @@
       "ids": [
         "sodium",
         "potassium",
-        "magnesium",
-        "calcium"
+        "magnesium"
       ]
     },
     "lead_toxicity": {
@@ -157,6 +156,13 @@
         "plutonium",
         "polonium",
         "monazite"
+      ]
+    },
+    "calcium_corrosive": {
+      "label": "Calcium metal burns skin on contact",
+      "note": "Calcium reacts with water faster than magnesium does, giving calcium hydroxide and hydrogen. Because that reaction is exothermic, calcium metal touching the moisture on skin causes severe corrosive irritation, and swallowing it does the same to the mouth, oesophagus and stomach.",
+      "ids": [
+        "calcium"
       ]
     }
   }
