@@ -983,7 +983,7 @@ __CATEGORY_CSS__
      height is one custom property that the grab handle writes. */
   #ptDock{
     position:absolute;left:0;right:0;bottom:0;z-index:30;
-    height:var(--pth,240px);display:none;flex-direction:column;
+    height:var(--pth,370px);display:none;flex-direction:column;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
     backdrop-filter:blur(10px);
     border-top:2px solid var(--line);box-shadow:0 -12px 30px -14px rgba(var(--shade),.8);
@@ -1003,7 +1003,35 @@ __CATEGORY_CSS__
   #ptHead .legend{margin:0;gap:4px}
   #ptHead .legend span{font-size:8.5px;padding:2px 6px}
   #ptBody{flex:1;min-height:0;overflow:auto;padding:0 12px 12px}
-  #ptBody .ptab{margin:0}
+  /* Eighteen columns of 1fr across a 1700px board makes every tile 90px wide
+     with 9px type inside it — the squares grow and the writing does not. Cap
+     the table's width instead and centre it, so a tile stays tile-sized and
+     the symbol can be read at arm's length. */
+  /* One cell size, set by ptFit() from whichever runs out first — the width of
+     the board or the height of the dock — so the whole table is on screen at
+     once instead of being something you scroll. */
+  #ptBody .ptab{
+    margin:0 auto;gap:3px;justify-content:center;
+    grid-template-columns:repeat(18,var(--ptcell,50px));
+  }
+  #ptBody .atom{
+    width:var(--ptcell,50px);height:var(--ptcell,50px);
+    padding:2px 1px;border-radius:5px;gap:0;justify-content:center;
+  }
+  #ptBody .atom .sym{font-size:calc(var(--ptcell,50px) * .29);letter-spacing:-.3px}
+  #ptBody .atom .z{display:block;font-size:calc(var(--ptcell,50px) * .16);margin-top:0}
+  /* The drawing, where the element has one — a tile you can recognise before
+     you have read it. Only the 76 you can actually hold have art. */
+  #ptBody .atom .gl{
+    display:block;--g:calc(var(--ptcell,50px) * .38);line-height:0;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.35));
+  }
+  #ptBody .atom.hasart .sym{font-size:calc(var(--ptcell,50px) * .22)}
+  #ptBody .atom.hasart .z{font-size:calc(var(--ptcell,50px) * .14)}
+  /* Below about 34px there is no room for a drawing and a symbol both, and the
+     symbol is the one that identifies the tile. */
+  #ptBody.tight .atom .gl{display:none}
+  #ptBody.tight .atom.hasart .sym{font-size:calc(var(--ptcell,50px) * .3)}
   /* Three states, and they mean different things: dim is not in this world at
      all, plain is in it but you have not made it, lit is on your shelf. */
   #ptBody .atom{cursor:pointer;opacity:.9}
@@ -3397,13 +3425,35 @@ function ptRender() {
     if (a.number === 57 || a.number === 89) h += `<div class="gap" style="--n:18"></div>`;
     const el = PLAYABLE_ATOM.get(a.id);
     const mine = el && found.has(el);
-    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}" ` +
+    // Sulfur is yellow flakes, bromine an ampoule of brown liquid, tungsten a
+    // filament coil — the drawings already say what each one is to hold, which
+    // is more than a two-letter symbol ever does. Show them on the tile.
+    const art = el && ART[el] ? `<span class="gl">${artSVG(el)}</span>` : '';
+    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}${art ? ' hasart' : ''}" ` +
          `data-atom="${a.id}"${el ? ` data-el="${el}"` : ''} ` +
          `title="${a.number} · ${a.name}${mine ? ' — on your shelf' : el ? ' — in this world, not yet made' : ' — reference only'}">` +
-         `<span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>`;
+         `${art}<span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>`;
   }
   document.getElementById('ptBody').innerHTML = h + '</div>';
   document.getElementById('ptClose').onclick = () => ptSet(false);
+  ptFit();
+}
+// Eighteen columns, sized to the width available and nothing else.
+//
+// Sizing to the dock's height instead — so that all ten rows always fit — is
+// the obvious idea and it is wrong: it drove the cell to 28px, which is too
+// small for a drawing and leaves an 8px symbol, which is the complaint this
+// was meant to fix. A tile is worth reading or it is not worth drawing. Keep
+// it readable, and let a short dock scroll; the handle is right there.
+const PT_COLS = 18, PT_GAPPX = 3;
+function ptFit() {
+  const body = document.getElementById('ptBody');
+  const tab = body?.querySelector('.ptab');
+  if (!tab) return;
+  const byW = (body.clientWidth - (PT_COLS - 1) * PT_GAPPX) / PT_COLS;
+  const cell = Math.max(34, Math.min(56, Math.floor(byW)));
+  tab.style.setProperty('--ptcell', cell + 'px');
+  body.classList.toggle('tight', cell < 40);
 }
 function ptSet(on) {
   document.body.classList.toggle('pt-on', on);
@@ -3424,6 +3474,7 @@ function ptHeight(px) {
   const h = Math.max(PT_MIN, Math.min(px, max));
   document.getElementById('ptDock').style.setProperty('--pth', h + 'px');
   prefs.ptH = h; savePrefs();
+  ptFit();                                   // taller dock, bigger tiles
 }
 
 const aminoById = Object.fromEntries((BED.aminos ?? []).map(a => [a.id, a]));
@@ -4158,10 +4209,11 @@ document.getElementById('ptBody').addEventListener('click', ev => {
     // Pushed well below its smallest useful size: you meant to put it away.
     const shove = grab.h + (grab.y - ev.clientY);
     grab = null;
-    if (shove < PT_MIN - 46) { ptHeight(prefs.ptH || 240); ptSet(false); }
+    if (shove < PT_MIN - 46) { ptHeight(prefs.ptH || 370); ptSet(false); }
     else drawLinks();
   });
 }
+addEventListener('resize', () => { if (document.body.classList.contains('pt-on')) ptFit(); });
 if (prefs.ptH) document.getElementById('ptDock').style.setProperty('--pth', prefs.ptH + 'px');
 if (prefs.ptOpen && !matchMedia('(max-width:720px)').matches) ptSet(true);
 addEventListener('keydown', ev => {
