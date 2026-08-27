@@ -2107,6 +2107,14 @@ const applyPrefs = () => {
   const densityChanged = hadDensity && !body.classList.contains('d-' + prefs.density);
   DENSITIES.forEach(([id]) => body.classList.toggle('d-' + id, prefs.density === id));
   if (densityChanged) resnapBench();
+  // Pill cards are too small for the corner ⓘ every other density has —
+  // press-and-hold answers the same question instead (see the pointerdown
+  // handler), but that gesture has no visible mark at all, so first time in
+  // it gets said once rather than left to be found by accident.
+  if (prefs.density === 'pill' && !prefs.seenPillHint) {
+    prefs.seenPillHint = true; savePrefs();
+    toast('Cards are small here — press and hold one to see what it is');
+  }
 };
 
 /**
@@ -5120,13 +5128,22 @@ function splitLabel(text) {
     .replace(/^[\s\S]*?all natural ingredients/i, '')
     .replace(/[\[\{]/g, '(').replace(/[\]\}]/g, ')')
     .replace(/\(\s*\d+(\.\d+)?\s*%\s*\)/g, '');
-  // Split on top-level commas only, counting depth as we go.
+  // Split on top-level commas — and top-level line breaks, which a
+  // photographed label needs too: an "Active Ingredients" supplement panel
+  // lists one ingredient per line with no comma anywhere ("Potassium (from
+  // Potassium Chloride) 141.06 mg\nMagnesium (from...)..."), and without
+  // this, OCR text like that reads as one unsplit blob and only the single
+  // strongest match in the whole thing is found — everything else is
+  // silently lost, not shown as unknown, just gone. A comma-separated list
+  // that happens to wrap across a photographed line splits harmlessly the
+  // same way; the only real cost is a name broken mid-phrase by the wrap,
+  // which surfaces honestly as two unknowns rather than a wrong guess.
   const parts = [];
   let buf = '', depth = 0;
   for (const ch of body) {
     if (ch === '(') depth++;
     else if (ch === ')') depth = Math.max(0, depth - 1);
-    if (ch === ',' && depth === 0) { parts.push(buf); buf = ''; continue; }
+    if ((ch === ',' || ch === '\n') && depth === 0) { parts.push(buf); buf = ''; continue; }
     buf += ch;
   }
   parts.push(buf);
@@ -5400,6 +5417,46 @@ function loadTesseract() {
   });
   return tesseractLoad;
 }
+/**
+ * Tesseract is tuned on dark text over a light page, and a real product
+ * label is routinely the opposite — pale print on a dark tin or bottle,
+ * found live: a pre-workout tub read as "NGREDIENTSE po ae rete, L-Cltrng"
+ * instead of "INGREDIENTS: Active Blend (Creatine..." off a photo the
+ * splitLabel fix above couldn't help, because the text itself was never
+ * read correctly in the first place. Grayscale, a min/max contrast
+ * stretch, and flipping to black-on-white whenever the photo is mostly
+ * dark gets every image into the shape the model expects, before any
+ * text recognition happens.
+ */
+async function preprocessForOCR(source) {
+  const bitmap = source instanceof HTMLCanvasElement ? source : await createImageBitmap(source);
+  const w = bitmap.width, h = bitmap.height;
+  const c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  const ctx = c.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(bitmap, 0, 0);
+  const img = ctx.getImageData(0, 0, w, h);
+  const d = img.data;
+  const gray = new Uint8ClampedArray(w * h);
+  let lo = 255, hi = 0, sum = 0;
+  for (let i = 0, p = 0; i < d.length; i += 4, p++) {
+    const g = 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+    gray[p] = g;
+    if (g < lo) lo = g;
+    if (g > hi) hi = g;
+    sum += g;
+  }
+  const mean = sum / gray.length;
+  const invert = mean < 128;                 // a mostly-dark photo means pale text on it
+  const range = Math.max(1, hi - lo);
+  for (let i = 0, p = 0; i < d.length; i += 4, p++) {
+    let v = ((gray[p] - lo) / range) * 255;   // stretch to the full black-white range
+    if (invert) v = 255 - v;
+    d[i] = d[i + 1] = d[i + 2] = v;
+  }
+  ctx.putImageData(img, 0, 0);
+  return c;
+}
 async function ocrImage(source) {
   const Tesseract = await loadTesseract();
   const worker = await Tesseract.createWorker('eng', 1, {
@@ -5412,7 +5469,8 @@ async function ocrImage(source) {
     langPath: 'vendor/tess/',
   });
   try {
-    const { data } = await worker.recognize(source);
+    const prepped = await preprocessForOCR(source);
+    const { data } = await worker.recognize(prepped);
     return data.text;
   } finally {
     await worker.terminate();
