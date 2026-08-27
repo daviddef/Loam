@@ -1340,6 +1340,14 @@ __CATEGORY_CSS__
   #ptBody .atom{cursor:pointer;opacity:.9}
   #ptBody .atom.off{opacity:.2}
   #ptBody .atom.have{outline:2px solid var(--discovery);outline-offset:1px}
+  /* Discovered is a fact about your shelf; this is a fact about the bench
+     right now — worth telling apart, so it gets its own live cue instead
+     of just a stronger version of .have's outline. */
+  @keyframes ptPulse{
+    0%,100%{box-shadow:0 0 0 2px var(--orange)}
+    50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--orange) 35%,transparent)}
+  }
+  #ptBody .atom.bench{animation:ptPulse 1.6s ease-in-out infinite}
   #ptBody .atom:hover{transform:scale(1.14);z-index:2;position:relative}
   /* Sits in the real empty cells of the chart (the Be/Mg-B/Al gap), not
      above it — so reading the legend and reading the table are the same
@@ -3062,6 +3070,11 @@ document.getElementById('zoom').addEventListener('click', ev => {
   else if (z === 'motes') {
     prefs.motes = !(prefs.motes !== false);
     savePrefs(); drawLinks(); syncMotesBtn();
+    // The dots only ever travel along a drawn line — toggling this on an
+    // empty or unconnected bench changes nothing you can see, which reads
+    // as a broken button rather than a setting with nothing to animate
+    // yet. A toast says the toggle worked even when the canvas can't.
+    toast(prefs.motes !== false ? 'Dots along the lines — on' : 'Dots along the lines — off');
   }
 });
 syncMotesBtn();
@@ -4461,19 +4474,24 @@ function ptRender() {
   // to the gap inbetween be/mg and b/Al?" — found live).
   h += `<div class="ptLegend" style="grid-area:3/4/5/14">` +
        cats.map(c => `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>`;
+  // "If we have an item from the table on the canvas, can it pulse in the
+  // table?" — found live. Discovered (.have) and on-the-bench-right-now
+  // (.bench) are different facts about the same tile.
+  const onBoard = new Set([...world.querySelectorAll('.chip.board')].map(c => c.dataset.id).filter(Boolean));
   for (const a of BED.atoms) {
     const [row, col] = ptCell(a.number);
     const el = PLAYABLE_ATOM.get(a.id);
     const mine = el && found.has(el);
+    const bench = el && onBoard.has(el);
     // Sulfur is yellow flakes, bromine an ampoule of brown liquid, tungsten a
     // filament coil — the drawings say what each one is to HOLD, which a
     // two-letter symbol never does. Kept, but as a watermark in the corner, so
     // the chart still reads as a chart.
     const art = el && ART[el] ? `<span class="gl">${artSVG(el)}</span>` : '';
-    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}" ` +
+    h += `<span class="atom ${a.category}${el ? '' : ' off'}${mine ? ' have' : ''}${bench ? ' bench' : ''}" ` +
          `style="grid-area:${row + 1}/${col + 1}" ` +
          `data-atom="${a.id}"${el ? ` data-el="${el}"` : ''} ` +
-         `title="${a.number} · ${a.name}${mine ? ' — on your shelf' : el ? ' — in this world, not yet made' : ' — reference only'}">` +
+         `title="${a.number} · ${a.name}${bench ? ' — on the bench' : mine ? ' — on your shelf' : el ? ' — in this world, not yet made' : ' — reference only'}">` +
          `${art}<span class="z">${a.number}</span>` +
          `<span class="sym">${a.symbol}</span>` +
          `<span class="nm">${a.name}</span></span>`;
@@ -4678,15 +4696,15 @@ function showEntry(id, skipTraceDefault) {
             ? 'You have this one, but you have not yet held everything that makes it.'
             : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
+    ${factsHTML(id)}
+    ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}
     <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}</h2>
     ${knownOut.length ? rows(knownOut, 'out') : ''}
     ${hiddenOut > 0 ? `<div class="shelf" style="margin-top:${knownOut.length ? '8px' : '0'}">` +
       usedIn.filter(r => !found.has(r.out)).map(r =>
         `<span class="chip locked" data-hint="${r.out}">${chipHTML(byId[r.out])}<i class="q">?</i></span>`).join('') +
       `</div>` : ''}
-    ${!usedIn.length ? '<p class="none">Nothing is made from this.</p>' : ''}
-    ${factsHTML(id)}
-    ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}`;
+    ${!usedIn.length ? '<p class="none">Nothing is made from this.</p>' : ''}`;
   openSheet(e.name);
 }
 

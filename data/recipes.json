@@ -13244,5 +13244,575 @@
     "why": "Fish or shellfish are mixed with salt at 10-30% and sealed in a closed container for up to two years — brief fermentation tastes fishier, extended fermentation turns nuttier and richer.",
     "src": "https://en.wikipedia.org/wiki/Fish_sauce",
     "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "lithium"
+    ],
+    "out": "lithium_graphite",
+    "why": "Charge a lithium-ion cell and the lithium migrates to the graphite anode and slides in between its carbon sheets. Fully loaded the ratio is one lithium to six carbons — LiC6 — with a theoretical capacity of 372 mAh per gram.",
+    "src": "https://en.wikipedia.org/wiki/Lithium-ion_battery",
+    "verified": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "lithium"
+    ],
+    "out": "lithium_fluoride",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides — all soluble in water except one: lithium fluoride, also the only common crystal that lets short-wavelength ultraviolet light straight through.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "lithium"
+    ],
+    "out": "lithium_chloride",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. Lithium chloride is so eager for water it is used to dry air streams, and as a flux for brazing aluminium.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "lithium"
+    ],
+    "out": "lithium_iodide",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. Lithium iodide is the standard electrolyte inside artificial pacemakers, chosen for the long cycle life it gives the cell.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "lithium",
+      "nitrogen"
+    ],
+    "out": "lithium_nitride",
+    "why": "6 Li + N2 → 2 Li3N, straight from the elements — lithium is the only alkali metal that forms a stable nitride this way. Sodium, potassium and the rest simply do not react with nitrogen gas at all.",
+    "src": "https://en.wikipedia.org/wiki/Lithium_nitride",
+    "verified": true
+  },
+  {
+    "in": [
+      "bromine",
+      "sodium"
+    ],
+    "out": "sodium_bromide",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. Sodium bromide was the standard sedative and anticonvulsant of the late 19th and early 20th centuries, before anyone understood why.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "sodium"
+    ],
+    "out": "sodium_iodide",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. Doped with a trace of thallium, sodium iodide scintillates under radiation and became the crystal at the core of the first particle detectors.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "potassium"
+    ],
+    "out": "potassium_fluoride",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. After hydrogen fluoride itself, potassium fluoride is chemistry's main working source of a free fluoride ion.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "caesium",
+      "chlorine"
+    ],
+    "out": "caesium_chloride",
+    "why": "Alkali metals react aggressively with the halogens to form the alkali metal halides. Spun fast enough, caesium chloride's own high density builds a gradient in the tube — the method that first separated DNA fragments by weight.",
+    "src": "https://en.wikipedia.org/wiki/Alkali_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "chromium",
+      "iron"
+    ],
+    "out": "stainless_steel",
+    "why": "Iron needs only 10.5% chromium mixed through it to stop rusting. The chromium reacts with air to grow a microscopically thin, invisible oxide skin that heals itself the instant it is scratched.",
+    "src": "https://en.wikipedia.org/wiki/Stainless_steel",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "copper"
+    ],
+    "out": "beryllium_copper",
+    "why": "A few percent beryllium worked into copper makes an alloy strong enough for tools, but nonmagnetic and non-sparking — which is why it is chosen for wrenches used anywhere a stray spark could ignite gas.",
+    "src": "https://en.wikipedia.org/wiki/Beryllium_copper",
+    "verified": true
+  },
+  {
+    "in": [
+      "niobium",
+      "titanium"
+    ],
+    "out": "niobium_titanium",
+    "why": "A ductile alloy of the two metals that becomes a superconductor when chilled near absolute zero. Wound into coil it is the wire inside the great majority of MRI machines' magnets.",
+    "src": "https://en.wikipedia.org/wiki/Niobium%E2%80%93titanium",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "gold"
+    ],
+    "out": "rose_gold",
+    "why": "Gold alloyed with copper turns pink rather than yellow — the whole of rose gold's colour is copper mixed through the gold, nothing more exotic than that.",
+    "src": "https://en.wikipedia.org/wiki/Colored_gold",
+    "verified": true
+  },
+  {
+    "in": [
+      "antimony",
+      "lead"
+    ],
+    "out": "hard_lead",
+    "why": "Pure lead sags under its own weight. Alloyed with 8 to 12 percent antimony it stiffens into a metal rigid enough for a battery grid — and antimony barely shrinks as it cools, which keeps a cast sharp.",
+    "src": "https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "titanium"
+    ],
+    "out": "titanium_alloy",
+    "why": "Titanium alloyed with aluminium (and, in the real alloy, a little vanadium this recipe cannot carry) is Ti-6Al-4V — strong, corrosion-resistant and light, and the single most-used titanium alloy in aircraft and rockets.",
+    "src": "https://en.wikipedia.org/wiki/Titanium_alloy",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "iron"
+    ],
+    "out": "iron_chloride",
+    "why": "2 Fe + 3 Cl2 → 2 FeCl3, iron burning directly in chlorine gas at a few hundred degrees. The compound clumps dirt out of water as a coagulant and eats bare copper straight off a circuit board.",
+    "src": "https://en.wikipedia.org/wiki/Iron(III)_chloride",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "zinc"
+    ],
+    "out": "galvanized_iron",
+    "why": "Zinc is more reactive than iron, so a zinc coating corrodes first, on purpose — a sacrificial anode that keeps protecting the iron underneath even after the coating itself is scratched through.",
+    "src": "https://en.wikipedia.org/wiki/Galvanization",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "silver"
+    ],
+    "out": "silver_chloride",
+    "why": "All four silver halides can be made by the direct reaction of their elements. Silver chloride darkens the instant light hits it, disintegrating into metallic silver — the fact photography was built on from its very beginning.",
+    "src": "https://en.wikipedia.org/wiki/Silver",
+    "verified": true
+  },
+  {
+    "in": [
+      "gold",
+      "mercury"
+    ],
+    "out": "gold_amalgam",
+    "why": "Gold amalgamates with mercury readily and quickly, forming compounds from AuHg2 up to Au8Hg. Ore washed over mercury-coated sheets let miners catch gold flour too fine for any pan to hold.",
+    "src": "https://en.wikipedia.org/wiki/Amalgam_(chemistry)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "silver"
+    ],
+    "out": "dental_amalgam",
+    "why": "Liquid mercury mixed with particles of silver, copper and tin stays workable for a few minutes and then sets hard — the alloy that has filled cavities in teeth for close to two centuries.",
+    "src": "https://en.wikipedia.org/wiki/Dental_amalgam",
+    "verified": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "xenon"
+    ],
+    "out": "xenon_tetrafluoride",
+    "why": "Xe + 2 F2 → XeF4, sealed in a nickel vessel at 400 °C — first made in 1962, proof that a noble gas could bond at all. Almost every other xenon compound traces back to a fluoride made this same way.",
+    "src": "https://en.wikipedia.org/wiki/Xenon_tetrafluoride",
+    "verified": true
+  },
+  {
+    "in": [
+      "lithium",
+      "oxygen_gas"
+    ],
+    "out": "lithium_oxide",
+    "why": "Burned in air above 100 °C, lithium metal combines with oxygen into lithium oxide, alongside a little of its peroxide. Stirred into a glaze it acts as a flux and shifts copper toward blue, cobalt toward pink.",
+    "src": "https://en.wikipedia.org/wiki/Lithium_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "sodium"
+    ],
+    "out": "sodium_peroxide",
+    "why": "Sodium ignited in excess oxygen does not stop at a simple oxide — it overshoots straight to the peroxide. The same compound that once bleached wood pulp for paper can also regenerate breathable oxygen in a sealed submarine.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_peroxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "potassium"
+    ],
+    "out": "potassium_superoxide",
+    "why": "Molten potassium burned in excess oxygen overshoots further still, to the superoxide KO2. It scrubs carbon dioxide and water vapour from sealed air while handing back oxygen — the working chemistry inside a rebreather.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_superoxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "titanium"
+    ],
+    "out": "titanium_dioxide",
+    "why": "Titanium reacts with oxygen at 1,200 °C in air, or at 610 °C in pure oxygen, forming titanium dioxide. First mass-produced in 1916, it is the most widely used white pigment there is, prized for its brightness alone.",
+    "src": "https://en.wikipedia.org/wiki/Titanium",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromium",
+      "oxygen_gas"
+    ],
+    "out": "chromium_oxide",
+    "why": "Chromium metal in air passivates instantly, growing a thin protective skin of chromium oxide with the same crystal structure as corundum. The same green compound is sold as a pigment, chrome green.",
+    "src": "https://en.wikipedia.org/wiki/Chromium",
+    "verified": true
+  },
+  {
+    "in": [
+      "nickel",
+      "oxygen_gas"
+    ],
+    "out": "nickel_oxide",
+    "why": "Heated above 400 °C, nickel powder reacts with oxygen to give nickel oxide — green as a pure crystal, black the moment it is not quite stoichiometric. It served as an electrode in the earliest nickel-iron batteries.",
+    "src": "https://en.wikipedia.org/wiki/Nickel(II)_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "manganese",
+      "oxygen_gas"
+    ],
+    "out": "manganese_dioxide",
+    "why": "Manganese tarnishes and oxidises in air the way iron rusts in wet water. Its dioxide, more often mined than grown from the metal, is what soaks up electrons inside an ordinary alkaline or zinc-carbon dry cell.",
+    "src": "https://en.wikipedia.org/wiki/Manganese_dioxide",
+    "supported": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "tin"
+    ],
+    "out": "tin_dioxide",
+    "why": "Burn tin metal in air and it becomes tin dioxide directly. Suspended in a glaze the compound scatters light rather than passing it, which is what makes an old tin-glazed pot opaque white instead of clear.",
+    "src": "https://en.wikipedia.org/wiki/Tin(IV)_oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas",
+      "palladium"
+    ],
+    "out": "palladium_hydride",
+    "why": "Palladium readily adsorbs hydrogen at room temperature, splitting the H-H bond and packing atoms into its own lattice. At standard pressure a block of it can hold nine hundred times its own volume of the gas.",
+    "src": "https://en.wikipedia.org/wiki/Palladium_hydride",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "neon"
+    ],
+    "out": "neon_light",
+    "why": "A potential of several thousand volts ionizes the gas straight through the tube, no filament needed. Pure neon gives off the popular orange light every classic neon sign is actually built from.",
+    "src": "https://en.wikipedia.org/wiki/Neon_lighting",
+    "verified": true
+  },
+  {
+    "in": [
+      "bromine",
+      "silver"
+    ],
+    "out": "silver_bromide",
+    "why": "All four silver halides can be made by the direct reaction of their elements. Silver bromide is soft, pale yellow and unusually light-sensitive — it became the basis of modern photographic film.",
+    "src": "https://en.wikipedia.org/wiki/Silver",
+    "verified": true
+  },
+  {
+    "in": [
+      "germanium",
+      "oxygen_gas"
+    ],
+    "out": "germanium_dioxide",
+    "why": "Blended with silicon dioxide as 'silica-germania,' germanium dioxide raises glass's refractive index without raising its viscosity — precisely the control a fiber-optic cable's light-guiding core needs.",
+    "src": "https://en.wikipedia.org/wiki/Germanium_dioxide",
+    "supported": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "tellurium"
+    ],
+    "out": "bismuth_telluride",
+    "why": "Bismuth and tellurium powders sealed together under vacuum and heated to 800 °C fuse into bismuth telluride, the working crystal inside every solid-state Peltier cooler and portable thermoelectric generator.",
+    "src": "https://en.wikipedia.org/wiki/Bismuth_telluride",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "vanadium"
+    ],
+    "out": "ferrovanadium",
+    "why": "Vanadium alloyed into iron gives ferrovanadium, the additive steelmakers use as a universal hardener and strengthener — it toughens steel and makes it markedly more resistant to heat and torsion.",
+    "src": "https://en.wikipedia.org/wiki/Ferrovanadium",
+    "verified": true
+  },
+  {
+    "in": [
+      "cadmium",
+      "nickel"
+    ],
+    "out": "nicad_battery",
+    "why": "A nickel oxide-hydroxide plate and a metallic cadmium plate, separated in an alkaline electrolyte, make a nickel-cadmium cell — a rechargeable battery that predates lithium-ion by decades.",
+    "src": "https://en.wikipedia.org/wiki/Nickel%E2%80%93cadmium_battery",
+    "verified": true
+  },
+  {
+    "in": [
+      "platinum",
+      "rhodium"
+    ],
+    "out": "platinum_rhodium_gauze",
+    "why": "Platinum gauze alloyed with 10% rhodium is the catalyst ammonia burns across at 900 °C in the Ostwald process, the step that turns fixed nitrogen into nitric oxide — rhodium is what keeps the gauze from wearing through.",
+    "src": "https://en.wikipedia.org/wiki/Ostwald_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "iridium",
+      "platinum"
+    ],
+    "out": "platinum_iridium",
+    "why": "Cast as Pt-10Ir, 90% platinum and 10% iridium by mass, this alloy was precise and stable enough that a single bar of it served as the world's legal definition of the kilogram for over a century.",
+    "src": "https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram",
+    "verified": true
+  },
+  {
+    "in": [
+      "iridium",
+      "osmium"
+    ],
+    "out": "osmiridium",
+    "why": "Osmiridium is not a compound but a natural alloy — grains of osmium and iridium already fused together, harder than either metal alone, found loose in the same river sands as platinum.",
+    "src": "https://en.wikipedia.org/wiki/Osmiridium",
+    "verified": true
+  },
+  {
+    "in": [
+      "platinum",
+      "ruthenium"
+    ],
+    "out": "hardened_platinum",
+    "why": "Small amounts of ruthenium measurably increase the hardness of platinum. It is why platinum jewellery, soft and scratch-prone on its own, is almost never sold pure — a trace of ruthenium is what actually holds a set stone.",
+    "src": "https://en.wikipedia.org/wiki/Ruthenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhenium",
+      "tungsten"
+    ],
+    "out": "tungsten_rhenium",
+    "why": "Rhenium alloyed with tungsten makes a thermocouple that reads temperatures up to 2,200 °C, and the same alloy's high melting point and atomic mass let it survive as an X-ray tube target under continuous electron bombardment.",
+    "src": "https://en.wikipedia.org/wiki/Rhenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "hafnium",
+      "niobium"
+    ],
+    "out": "rocket_nozzle_alloy",
+    "why": "89% niobium and 10% hafnium, with 1% titanium this recipe cannot carry, is C-103 — the alloy used for the Apollo Lunar Module's descent-engine nozzle, and later for SpaceX's Merlin Vacuum engine.",
+    "src": "https://en.wikipedia.org/wiki/Niobium",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "scandium"
+    ],
+    "out": "scandium_aluminum_alloy",
+    "why": "Scandium dissolved through aluminium forms Al3Sc precipitates that pin dislocations in the metal, raising yield strength by 50 to 70 MPa. It has flown on the MiG-29 and shown up in baseball bats and bicycle frames.",
+    "src": "https://en.wikipedia.org/wiki/Aluminium%E2%80%93scandium_alloy",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "yttrium"
+    ],
+    "out": "yag",
+    "why": "Yttrium and aluminium, plus the oxygen this recipe cannot carry, crystallise into Y3Al5O12 — transparent and hard enough to host active laser ions. Doped with neodymium it became the first working Nd:YAG laser, in 1964.",
+    "src": "https://en.wikipedia.org/wiki/Yttrium_aluminium_garnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "rubidium"
+    ],
+    "out": "rubidium_superoxide",
+    "why": "Rubidium in excess oxygen gives the superoxide RbO2, alongside lesser oxides Rb2O, Rb6O and Rb9O2 — the same overshoot potassium and caesium show, and the reason none of that column forms a simple oxide easily.",
+    "src": "https://en.wikipedia.org/wiki/Rubidium",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "strontium"
+    ],
+    "out": "strontium_chloride",
+    "why": "Strontium chloride plugs the microscopic tubules in dentin that gum recession exposes, which is why it is the active ingredient in toothpaste for sensitive teeth. Burned, the same strontium salt gives fireworks their most intense red.",
+    "src": "https://en.wikipedia.org/wiki/Strontium_chloride",
+    "supported": true
+  },
+  {
+    "in": [
+      "radium",
+      "zinc_sulfide"
+    ],
+    "out": "luminous_paint",
+    "why": "Radium mixed into copper-doped zinc sulfide phosphor is luminous paint — used on watch faces, compasses, gunsights and aircraft dials from 1908 until health concerns phased it out in the 1960s.",
+    "src": "https://en.wikipedia.org/wiki/Radioluminescence",
+    "verified": true
+  },
+  {
+    "in": [
+      "cerium",
+      "thorium"
+    ],
+    "out": "gas_mantle",
+    "why": "Welsbach's mixture of 99% thorium dioxide and 1% cerium dioxide, soaked into a fabric mantle, emits far more strongly in visible light than the flame heating it — which is why a gas lamp fitted with one burns so much brighter.",
+    "src": "https://en.wikipedia.org/wiki/Gas_mantle",
+    "verified": true
+  },
+  {
+    "in": [
+      "plutonium",
+      "uranium"
+    ],
+    "out": "warhead",
+    "why": "Fat Man's plutonium core sat inside a sphere of depleted uranium acting as a neutron-reflecting tamper. Plutonium and uranium, not steel, are what a real implosion-type weapon core is actually built from.",
+    "src": "https://en.wikipedia.org/wiki/Fat_Man",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "polonium"
+    ],
+    "out": "neutron",
+    "why": "Alpha particles off polonium striking beryllium convert to neutrons, about 93 for every million alpha particles — the same Po-BeO reaction used in real neutron sources, and historically in weapon neutron initiators.",
+    "src": "https://en.wikipedia.org/wiki/Polonium",
+    "verified": true
+  },
+  {
+    "in": [
+      "cerium",
+      "iron"
+    ],
+    "out": "ferrocerium",
+    "why": "Cerium-rich mischmetal alloyed with iron is ferrocerium. Cerium's own ignition point is only 150 to 180 °C, so a striker shaving sparks off the alloy throws particles that flare past 3,300 °C — the true 'flint' in a modern lighter.",
+    "src": "https://en.wikipedia.org/wiki/Ferrocerium",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "neodymium"
+    ],
+    "out": "neodymium_magnet",
+    "why": "Neodymium and iron, with the boron this recipe cannot carry, form Nd2Fe14B — neodymium magnets, the strongest type of permanent magnet sold commercially, developed independently by GM and Sumitomo in 1984.",
+    "src": "https://en.wikipedia.org/wiki/Neodymium_magnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "cobalt",
+      "samarium"
+    ],
+    "out": "samarium_cobalt_magnet",
+    "why": "Samarium and cobalt make SmCo, a rare-earth magnet with a Curie temperature up to 800 °C and stable use up to 550 °C — well past where a neodymium magnet gives out, which is why aerospace and high-temperature motors still use it.",
+    "src": "https://en.wikipedia.org/wiki/Samarium%E2%80%93cobalt_magnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "europium",
+      "yttrium"
+    ],
+    "out": "red_phosphor",
+    "why": "Europium activates yttrium-based phosphors, plus the oxygen this recipe cannot carry, into the red phosphor used in television screens and fluorescent lamps — half a gram to a gram of it sits inside every colour tube TV.",
+    "src": "https://en.wikipedia.org/wiki/Europium",
+    "verified": true
+  },
+  {
+    "in": [
+      "gadolinium",
+      "iron"
+    ],
+    "out": "gadolinium_steel",
+    "why": "As little as 1% gadolinium worked into iron alloys measurably improves their workability and their resistance to high-temperature oxidation — a small addition with an outsized effect on the metal.",
+    "src": "https://en.wikipedia.org/wiki/Gadolinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "promethium",
+      "zinc_sulfide"
+    ],
+    "out": "signal_paint",
+    "why": "Some signal lights use a luminous paint made of a phosphor that absorbs the beta radiation given off by promethium-147 and re-emits it as light — the same glowing-phosphor idea as radium paint, run on a far gentler isotope.",
+    "src": "https://en.wikipedia.org/wiki/Promethium",
+    "supported": true
+  },
+  {
+    "in": [
+      "fish_sauce",
+      "lime"
+    ],
+    "out": "nuoc_cham",
+    "why": "The everyday Vietnamese dipping sauce: one part fish sauce, one part sugar, two parts water, with lime juice for the acid, and often garlic and chili worked in too.",
+    "src": "https://en.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_ch%E1%BA%A5m",
+    "verified": true
   }
 ]

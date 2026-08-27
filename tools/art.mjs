@@ -159,6 +159,7 @@ const CPK = {
   H: '#FFFFFF', C: '#909090', N: '#3050F8', O: '#FF0D0D', S: '#FFFF30',
   P: '#FF8000', Ca: '#3DFF00', Fe: '#E06633', Na: '#AB5CF2', Cl: '#1FF01F',
   K: '#8F40D4', Mg: '#8AFF00', He: '#D9FFFF', Ne: '#B3E3F5',
+  F: '#90E050', Xe: '#429EB0',
 };
 
 /** A ball-and-stick molecule from a tiny spec: centre atom + ligands. */
@@ -2421,6 +2422,227 @@ def('acetylene',    () => [C(20, 32, 6.4, 'ik'), C(40, 32, 6.4, 'ik'),
 def('titanium_nitride', () => [...ingot('hi', 16, 9), ...granules('bs', 4, 51, [18, 28, 42, 40])]);
 def('magnesium_nitride', () => [mound('lo', 46, 19, 17), ...granules('bs', 7, 67, [18, 32, 42, 46])]);
 
+/* a research batch: alloys, salts and oxides ─────────────────────────────
+ * Fifty-three land in `mineral` at once, so each earns the physical form
+ * that makes it what it is — a fork, a wrench, a filmstrip, a pill — rather
+ * than another faceted lump with a different granule seed. */
+
+/* the lithium salts — five, and no two share a crystal habit */
+def('lithium_graphite',  () => [                          // LiC6: ions parked between the sheets
+  ...[16, 26, 36, 46].map(y => S(`M10 ${y} L50 ${y}`, 'ik', 2.4)),
+  ...[[18, 21], [34, 21], [26, 31], [42, 31], [18, 41], [34, 41]].map(([x, y]) => C(x, y, 3, 'hi')),
+]);
+def('lithium_fluoride',  () => [                          // its crystal passes UV nothing else lets through
+  P('M18 20 L36 14 L42 32 L24 40 Z', 'gh'), P('M18 20 L36 14 L36 30 L18 36 Z', 'hi'),
+  S('M30 6 L32 46', 'bs', 2),                              // straight through, unfiltered
+]);
+def('lithium_chloride',  () => [                          // hungry for water, one damp crystal at a time
+  facet('bs', .7),
+  ...[[14, 18], [46, 22], [40, 46]].map(([x, y]) =>
+    [E(x, y, 3, 4, 'hi'), S(`M${x} ${y + 4} L${x + (x < 30 ? 6 : -6)} ${y + 8}`, 'gh', 1)]).flat(),
+]);
+def('lithium_iodide',    () => [                          // chosen for how long it lasts, not how well it conducts
+  P('M18 24 Q18 14 30 14 Q42 14 42 24 L42 40 Q42 50 30 50 Q18 50 18 40 Z', 'lo'),
+  E(30, 24, 10, 4, 'bs'), S('M22 34 L38 34', 'hi', 1.2),
+]);
+def('lithium_nitride',   () => [                          // lithium takes nitrogen straight from the air; the others cannot
+  P('M30 12 L46 46 L14 46 Z', 'bs'),
+  ...[[8, 14], [52, 14]].map(([x, y]) => [
+    C(x, y, 2.4, 'gh'), C(x + (x < 30 ? 4 : -4), y + 2, 2.4, 'gh'),
+    S(`M${x + (x < 30 ? 2 : -2)} ${y + 3} L${x + (x < 30 ? 12 : -12)} ${y + 11}`, 'hi', 1.2),
+  ]).flat(),
+]);
+
+/* five more single-halide and single-oxide salts */
+def('sodium_bromide',    () => [                          // a sedative for eighty years, whatever salt carries it
+  E(22, 30, 10, 9, 'bs'), E(38, 30, 10, 9, 'hi'), S('M30 21 L30 39', 'lo', 1.4),
+]);
+def('sodium_iodide',     () => [                          // doped with thallium, it lights up under radiation
+  P('M24 12 L36 12 L36 48 L24 48 Z', 'gh'),
+  ...[0, 60, 120, 180, 240, 300].map(a =>
+    S(`M30 16 L${n(30 + 14 * Math.cos(a * Math.PI / 180))} ${n(16 + 14 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.4)),
+]);
+def('potassium_fluoride',() => [                          // chemistry's main working source of a fluoride ion
+  P('M30 10 L46 30 L30 50 L14 30 Z', 'bs'), C(30, 30, 4, 'hi'),
+  ...[0, 120, 240].map(a =>
+    S(`M30 30 L${n(30 + 18 * Math.cos(a * Math.PI / 180))} ${n(30 + 18 * Math.sin(a * Math.PI / 180))}`, 'gh', 1.2)),
+]);
+def('caesium_chloride',  () => [                          // the trick that first separated DNA by weight
+  P('M22 10 L38 10 L38 44 Q30 52 22 44 Z', 'gh'),
+  ...['lo', 'bs', 'hi'].map((r, i) => P(`M22 ${16 + i * 10} L38 ${16 + i * 10} L38 ${25 + i * 10} L22 ${25 + i * 10} Z`, r)),
+]);
+def('iron_chloride',     () => [                          // rust-red and thirsty for grime
+  P('M30 12 Q42 30 42 40 A12 12 0 0 1 18 40 Q18 30 30 12 Z', 'bs'),
+  ...granules('lo', 6, 71, [22, 30, 38, 44]),
+]);
+def('silver_chloride',   () => [                          // it darkens the instant light touches it
+  P('M16 16 L44 16 L44 44 L16 44 Z', 'gh'), P('M16 16 L30 16 L30 44 L16 44 Z', 'ik'),
+  S('M34 8 L34 16 M40 10 L36 18', 'hi', 1.6),
+]);
+def('silver_bromide',    () => [                          // the compound most black-and-white film was built from
+  P('M8 16 L52 16 L52 44 L8 44 Z', 'ik'),
+  ...[13, 47].flatMap(x => [12, 20, 28, 36, 44].map(y => C(x, y, 1.6, 'gh'))),
+  ...[20, 30, 40].map((x, i) => P(`M${x - 4} 18 L${x + 4} 18 L${x + 4} 42 L${x - 4} 42 Z`, i % 2 ? 'hi' : 'lo')),
+]);
+def('strontium_chloride',() => [                          // it plugs the tubules a receding gum has exposed
+  P('M22 12 L38 12 L34 44 Q30 52 26 44 Z', 'hi'),
+  ...[[26, 22], [34, 22], [24, 32], [36, 32], [27, 40]].map(([x, y]) =>
+    [S(`M${x} ${y} L${x} ${y - 3}`, 'gh', 1.2), C(x, y - 3, 1, 'bs')]).flat(),
+]);
+
+/* the oxides, peroxides and one very stubborn noble gas */
+def('xenon_tetrafluoride', () => ballStick('Xe', [['F', 0], ['F', 90], ['F', 180], ['F', 270]]));  // 1962: forced into a bond
+def('lithium_oxide',    () => [                           // a flux that changes the colours around it
+  round('gh', 40, 20, 9), ...granules('bs', 5, 19, [24, 34, 36, 42]),
+  E(20, 30, 5, 3.4, 'hi'), E(40, 26, 5, 3.4, 'lo'),        // copper's blue, cobalt's pink
+]);
+def('sodium_peroxide',  () => [                            // it once breathed for submarines
+  vessel('gh', 22, 48), wave('bs', 40, 3, 11),
+  C(24, 30, 3, 'hi'), C(33, 22, 2.4, 'hi'), C(28, 14, 1.8, 'hi'), C(37, 9, 1.3, 'hi'),
+]);
+def('potassium_superoxide', () => [                        // a rebreather's whole trick in one rock
+  P('M20 14 L40 14 L40 46 L20 46 Z', 'bs'),
+  S('M6 24 L18 24', 'lo', 2.6), S('M14 20 L18 24 L14 28', 'lo', 2),
+  S('M42 36 L54 36', 'hi', 2.6), S('M50 32 L54 36 L50 40', 'hi', 2),
+]);
+def('titanium_dioxide', () => [                            // the white in almost everything white
+  P('M14 20 L46 20 L46 46 L14 46 Z', 'hi'),
+  S('M10 14 Q20 10 30 16 Q40 22 50 16', 'gh', 3.4),
+]);
+def('chromium_oxide',   () => [                            // chrome green, and a film that heals itself
+  mound('bs', 46, 18, 16), S('M14 30 Q30 24 46 30', 'hi', 1.6),
+]);
+def('nickel_oxide',     () => [                            // green as a crystal, black the instant it is not
+  C(30, 30, 15, 'bs'), P('M24 18 L30 30 L22 34 L34 42 L26 30 L34 20 Z', 'ik'),
+]);
+def('manganese_dioxide',() => [                            // soaking up electrons inside an ordinary dry-cell battery
+  P('M20 12 L40 12 L40 48 L20 48 Z', 'lo'), ...granules('ik', 14, 43, [22, 18, 38, 44]), S('M30 8 L30 12', 'hi', 2.4),
+]);
+def('tin_dioxide',      () => [                            // the opaque white of old tin-glazed pottery
+  P('M20 16 L40 16 L44 30 L38 48 L22 48 L16 30 Z', 'hi'), E(30, 16, 10, 3, 'gh'), S('M20 30 Q30 34 40 30', 'lo', 1.4),
+]);
+def('germanium_dioxide',() => [                            // the core of a fiber-optic cable, seen end-on
+  E(30, 30, 17, 13, 'gh'), C(30, 30, 6, 'bs'), S('M12 30 Q30 20 48 30', 'hi', 1.4),
+]);
+def('yag',               () => [                           // dope it with neodymium and it lases
+  P('M24 10 L36 10 L38 50 L22 50 Z', 'gh'), S('M30 10 L30 4', 'hi', 3), C(30, 30, 3, 'bs'),
+]);
+def('luminous_paint',   () => [                            // painted onto a watch face, glowing since 1908
+  ring('lo', 30, 30, 16, 3), C(30, 30, 12, 'gh'), S('M30 30 L30 20 M30 30 L38 32', 'bs', 2.2),
+  ...[0, 90, 180, 270].map(a => ['g', a, 30, 30, [C(30, 14, 1.4, 'bs')]]),
+]);
+def('rubidium_superoxide', () => [                         // like potassium one row up, straight to superoxide
+  P('M22 16 Q22 10 30 10 Q38 10 38 16 L38 48 Q38 52 30 52 Q22 52 22 48 Z', 'bs'),
+  P('M26 8 L34 8 L34 12 L26 12 Z', 'lo'), S('M38 22 Q48 22 48 30 L48 34', 'hi', 3),
+]);
+def('red_phosphor',     () => [                            // europium is the only red they had
+  P('M12 14 L48 14 L48 46 L12 46 Z', 'ik'),
+  ...Array.from({ length: 9 }, (_, i) => C(18 + (i % 3) * 12, 20 + Math.floor(i / 3) * 10, 2.2, i % 3 === 0 ? 'bs' : 'gh')),
+]);
+def('signal_paint',     () => [                            // a gentler glow than radium's ever was
+  P('M16 12 L44 12 L44 48 L16 48 Z', 'ik'), C(30, 20, 6, 'bs'), C(30, 34, 6, 'gh'), C(30, 48, 6, 'bs'),
+  ...[[10, 20], [10, 34]].map(([x, y]) => S(`M${x} ${y} L${x + 8} ${y}`, 'lo', 1.2)),
+]);
+
+/* the alloys — each drawn as the object it actually becomes */
+def('stainless_steel',  () => [                            // chromium grows its own invisible, self-healing skin
+  ...[15, 21, 27, 33].map(x => P(`M${x} 8 L${x + 3} 8 L${x + 3} 22 L${x + 1.5} 27 L${x} 22 Z`, 'bs')),
+  P('M15 22 L36 22 L28 30 L23 30 Z', 'bs'), P('M23 30 L28 30 L29 54 L22 54 Z', 'bs'),
+  S('M17 11 L17 19', 'hi', 1.4),
+]);
+def('beryllium_copper',  () => [                           // safe to swing a wrench beside an open gas line
+  S('M20 30 L42 30', 'bs', 7), ring('bs', 14, 30, 9, 5),
+  P('M42 22 L52 14 L56 18 L48 26 Z', 'bs'), P('M42 38 L52 46 L56 42 L48 34 Z', 'bs'), C(14, 30, 3, 'hi'),
+]);
+def('niobium_titanium',  () => [                           // wound tight, then chilled near absolute zero
+  ...coilOf('bs', 5, 12, 30, 4.4),
+  ...[[8, 16], [54, 16], [8, 44], [54, 44]].map(([x, y]) =>
+    S(`M${x} ${y} L${x + (x < 30 ? -4 : 4)} ${y + (y < 30 ? -4 : 4)}`, 'hi', 1.6)),
+]);
+def('rose_gold',         () => [                           // gold does not blush on its own
+  ring('bs', 30, 34, 14, 6), ring('hi', 30, 34, 8, 1.6), E(24, 24, 4, 2.6, 'hi'),
+]);
+def('hard_lead',         () => [                           // antimony stiffens it, and stops the shrink as it cools
+  hex('bs', 30, 20, 10, 2.6), P('M26 30 L34 30 L34 52 L26 52 Z', 'bs'),
+  ...[36, 42, 48].map(y => S(`M26 ${y} L34 ${y}`, 'hi', 1.2)),
+]);
+def('titanium_alloy',    () => [                           // most of the titanium ever flown
+  P('M8 34 L40 30 L54 24 L52 30 L38 36 L44 46 L36 44 L28 36 L8 40 Z', 'bs'), S('M20 35 L40 31', 'hi', 1.4),
+]);
+def('galvanized_iron',   () => [                           // zinc sacrifices itself to a scratch so iron does not have to
+  P('M14 22 L46 22 L42 50 L18 50 Z', 'bs'), E(30, 22, 16, 4, 'hi'),
+  S('M18 40 L18 46', 'lo', 2.4), S('M12 26 Q30 16 48 26', 'ik', 2),
+]);
+def('gold_amalgam',      () => [                           // mercury drinks up gold flour too fine to pan
+  C(30, 34, 13, 'lo'), C(24, 29, 3.4, 'hi'),
+  ...[[24, 38], [34, 30], [36, 40], [26, 28]].map(([x, y]) => C(x, y, 1.6, 'bs')),
+]);
+def('dental_amalgam',    () => [                           // packed soft, hard within minutes
+  P('M18 14 Q30 8 42 14 Q46 26 40 32 L38 50 L33 34 L27 34 L22 50 L20 32 Q14 26 18 14 Z', 'hi'), E(28, 22, 7, 5, 'bs'),
+]);
+def('palladium_hydride', () => [                           // nine hundred times its own volume, packed into the lattice
+  P('M16 20 L44 20 L44 44 L16 44 Z', 'bs'), ...granules('hi', 20, 61, [18, 22, 42, 42]),
+]);
+def('bismuth_telluride', () => [                           // one face chills while the other warms, no moving parts
+  P('M14 16 L46 16 L46 30 L14 30 Z', 'hi'), P('M14 30 L46 30 L46 44 L14 44 Z', 'lo'),
+  S('M20 20 L24 24 M40 20 L36 24', 'ik', 1.4),
+  S('M20 38 Q24 34 20 40', 'ik', 1.2), S('M40 38 Q36 34 40 40', 'ik', 1.2),
+]);
+def('ferrovanadium',     () => [                           // a universal steel hardener, stirred in
+  ring('bs', 20, 22, 7, 3.2), ring('bs', 32, 28, 7, 3.2), wave('lo', 46, 4, 20),
+]);
+def('nicad_battery',     () => [                           // rechargeable long before lithium was
+  P('M22 10 L38 10 L38 16 L22 16 Z', 'hi'), P('M18 16 L42 16 L42 50 L18 50 Z', 'bs'),
+  S('M18 30 L42 30', 'lo', 2), S('M22 34 L38 34 M22 40 L38 40', 'lo', 1.2),
+]);
+def('platinum_rhodium_gauze', () => [                      // the screen ammonia burns across on its way to fertiliser
+  ...[16, 24, 32, 40, 48].map(y => S(`M10 ${y} L50 ${y}`, 'bs', 1.6)),
+  ...[16, 24, 32, 40, 48].map(x => S(`M${x} 12 L${x} 52`, 'hi', 1.6)),
+]);
+def('platinum_iridium',  () => [                           // this exact bar WAS the kilogram
+  P('M20 18 L40 18 L40 44 L20 44 Z', 'bs'), E(30, 18, 10, 3, 'hi'), E(30, 44, 10, 3, 'lo'),
+]);
+def('hardened_platinum', () => [                           // a trace of ruthenium is what actually holds the stone
+  ring('bs', 30, 40, 12, 5), ...[20, 40].map(x => S(`M${x} 30 L${x} 22`, 'bs', 2.4)),
+  P('M24 16 L30 8 L36 16 L30 22 Z', 'hi'),
+]);
+def('tungsten_rhenium',  () => [                           // good past 2,200°C, hot enough almost nothing else measures it
+  S('M12 46 Q20 30 28 22', 'bs', 2.4), S('M48 46 Q40 30 32 22', 'hi', 2.4), C(30, 20, 3.4, 'ik'),
+  S('M30 12 L30 4', 'lo', 1.6), S('M26 6 L34 10', 'lo', 1.4),
+]);
+def('rocket_nozzle_alloy', () => [                         // this exact alloy steered the Apollo Lunar Module down
+  P('M24 8 L36 8 L44 40 L34 52 L26 52 L16 40 Z', 'bs'), S('M24 8 L16 40 M36 8 L44 40', 'hi', 1.4),
+]);
+def('scandium_aluminum_alloy', () => [                     // enough to matter in a MiG or a bike frame
+  S('M14 46 L34 18 L50 46', 'bs', 4), S('M34 18 L34 46', 'hi', 3),
+  C(14, 46, 3, 'lo'), C(50, 46, 3, 'lo'), C(34, 18, 3, 'lo'),
+]);
+def('gadolinium_steel',  () => [                           // easier to work, far harder to oxidise hot
+  P('M12 38 L48 38 L48 44 L34 44 L34 50 L26 50 L26 44 L12 44 Z', 'bs'), P('M18 30 L42 30 L38 38 L22 38 Z', 'hi'),
+  S('M30 20 L30 30', 'ik', 2), S('M26 24 L34 24', 'ik', 1.4),
+]);
+def('neodymium_magnet',  () => [                           // the strongest permanent magnet you can buy
+  P('M16 20 L44 20 L44 44 L16 44 Z', 'lo'), P('M16 20 L30 20 L30 44 L16 44 Z', 'bs'),
+  S('M10 26 Q30 14 50 26', 'hi', 1.2), S('M10 34 Q30 22 50 34', 'hi', 1.2),
+]);
+def('samarium_cobalt_magnet', () => [                      // weaker than neodymium but happy past 300°C
+  ring('bs', 30, 32, 15, 7), S('M20 16 Q24 10 20 4 M30 16 Q34 10 30 4 M40 16 Q44 10 40 4', 'hi', 1.6),
+]);
+
+/* the fire-lit and craft-adjacent three */
+def('neon_light',        () => [                           // no filament at all — thousands of volts through the gas itself
+  ['s', 'M14 44 L14 18 Q14 12 20 12 L34 12 Q40 12 40 18 L40 26 Q40 32 34 32 L24 32 Q18 32 18 38 L18 44', 'bs', 3.4],
+  C(14, 44, 2.4, 'hi'), C(18, 44, 2.4, 'hi'),
+]);
+def('gas_mantle',        () => [                           // 99% thorium dioxide, turns an ordinary flame white-hot
+  P('M18 40 Q18 18 30 16 Q42 18 42 40 Z', 'gh'), ...[22, 28, 34].map(x => S(`M${x} 40 L${x - 2} 18`, 'lo', 1)),
+  flame('hi', .5, 18),
+]);
+def('ferrocerium',       () => [                           // this, not flint, is what lights a modern lighter
+  P('M24 10 L32 10 L30 46 L26 46 Z', 'bs'), S('M18 44 L34 40', 'ik', 3),
+  ...[[34, 38], [38, 32], [30, 30], [40, 42]].map(([x, y]) => S(`M${x} ${y} L${x + 4} ${y - 6}`, 'hi', 1.4)),
+]);
+
 
 /* the parts a nucleotide is made of, and where life might have started ──
    The five bases share one convention — purines are two fused rings, the
@@ -3066,6 +3288,10 @@ def('fish_sauce', () => [P('M26 8 L34 8 L34 20 Q42 26 42 34 L42 50 Q42 54 38 54 
 def('candied_fruit', () => [...[[22, 24], [36, 22], [28, 38], [40, 38]].map(([x, y]) =>
                               [P(`M${x - 7} ${y} L${x} ${y - 7} L${x + 7} ${y} L${x} ${y + 7} Z`, 'bs'),
                                ...granules('gh', 3, x * 7, [x - 6, y - 6, x + 6, y + 6])]).flat()]);
+// A shallow open bowl, not fish_sauce's sealed bottle or soy_sauce's tall
+// pot — this is mixed fresh and poured out, not kept.
+def('nuoc_cham', () => [E(30, 42, 22, 9, 'ik'), E(30, 39, 18, 6.5, 'lo'),
+                        C(24, 38, 1.6, 'bs'), C(33, 40, 1.4, 'bs'), C(28, 42, 1.2, 'bs')]);
 def('coconut_sugar', () => [mound('lo', 46, 19, 17), ...granules('ik', 9, 53, [18, 34, 42, 46]),
                             S('M22 22 Q30 14 38 22', 'hi', 2)]);                       // tapped from the blossom
 
