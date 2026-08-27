@@ -3026,6 +3026,44 @@ function drawLinksNow() {
     }
     l.fresh = false;
   }
+  // What a thing is really made of is not something you crafted, but it is
+  // just as real — so it gets drawn the same way, directly on the canvas,
+  // the instant both the composite and one of its true components are on
+  // the bench together. ("why cant i see the hydrogen and oxygen as a
+  // parent of water in the chart... same as water, h and o? why cant i
+  // open them on the canvas for the sun?" — asked four times, live, before
+  // this landed. Not a card, not an overlay: a line, like any other.)
+  const boardById = new Map();
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    if (c.dataset.id) boardById.set(c.dataset.id, c);
+  }
+  for (const [cid, out] of boardById) {
+    const comps = BED.composition[cid];
+    if (!comps) continue;
+    const [ox, oy] = chipCentre(out);
+    const atoms = new Set();
+    for (const p of comps) for (const a of atomsUnder(p)) atoms.add(a);
+    for (const a of atoms) {
+      const gid = PLAYABLE_ATOM.get(a);
+      if (!gid || gid === cid) continue;
+      const src = boardById.get(gid);
+      if (!src) continue;
+      const [sx, sy] = chipCentre(src);
+      const my = (sy + oy) / 2;
+      const d = `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`;
+      const id = `lp${++pathSeq}`;
+      parts.push(`<path id="${id}" class="made compose" d="${d}"` +
+                 ` data-from="${src.dataset.uid}" data-to="${out.dataset.uid}"/>`);
+      if (flowing) {
+        const hex = FAM_HEX[src.dataset.fam] || '#8A7B6B';
+        const dur = (2.1 + (pathSeq % 5) * 0.22).toFixed(2);
+        parts.push(
+          `<circle r="3.4" fill="${hex}" class="mote">` +
+          `<animateMotion dur="${dur}s" repeatCount="indefinite" begin="-${(pathSeq % 7) * 0.31}s">` +
+          `<mpath href="#${id}"/></animateMotion></circle>`);
+      }
+    }
+  }
   linkSvg.innerHTML = parts.join('');
 }
 
@@ -6335,8 +6373,15 @@ function materialize(r, chips) {
 function buildChain(id, x, y) {
   const steps = orderedSteps(id);
   const chipFor = new Map();
-  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
-    if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+  // "A fresh copy each time you need one" has to mean that for the very
+  // thing you asked to place, not just for the ancestors quietly built
+  // alongside it — reusing an existing board chip here ignored
+  // prefs.consolidate entirely. ("toggling on and off, no difference,
+  // still cant add 2 suns" — found live.)
+  if (prefs.consolidate) {
+    for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+      if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+    }
   }
   const ensure = (iid) => {
     if (chipFor.has(iid)) return chipFor.get(iid);
