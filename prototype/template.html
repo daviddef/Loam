@@ -7156,6 +7156,7 @@ window.smokeTest = smokeTest;
  * their own first, they never read it at all, which is the best outcome.
  */
 let introDone = found.size > 4;
+let introTimer = 0;
 const intro = () => document.getElementById('intro');
 
 function drawIntro() {
@@ -7167,6 +7168,16 @@ function drawIntro() {
   const b = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === 'water');
   if (!a || !b) { box0.classList.add('gone'); return; }
   box0.classList.remove('gone');
+  // Rubbing itself out "the moment the player makes anything" (see above)
+  // is the right first try, but it assumes they're about to act — a reset
+  // that puts it back can leave it pointing at cards the player has
+  // already looked at and moved past, with nothing left to clear it except
+  // the exact gesture it's explaining. ("this hint keeps getting in my
+  // way. can we stop showing it after 10 seconds?" — found live, right
+  // after a Clear Canvas.) A flat timer, started the first time it's
+  // actually shown rather than reset on every redraw (tidy, resize, and
+  // similar all call drawIntro() again while it's still up).
+  if (!introTimer) introTimer = setTimeout(endIntro, 10000);
 
   // Board-local coordinates from the world positions, rather than from
   // getBoundingClientRect. The rect route needs the board to have been painted;
