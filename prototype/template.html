@@ -3107,6 +3107,75 @@ function tidy() {
   const kids = new Map(chips.map(c => [c, []]));
   for (const [c, ps] of parents) for (const p of ps) kids.get(p)?.push(c);
 
+  // 0b. A short, deep chain sharing one card with an otherwise-unrelated
+  //    structure — "one card per thing" reusing an existing chip, or a
+  //    scanned ingredient's own real ancestry reaching back into a chain
+  //    already on the bench — is a real edge, correctly drawn, but forcing
+  //    both sides through the SAME depth-row grid drags a shallow fan and a
+  //    deep chain into one shared coordinate space they were never shaped
+  //    for: a bridge between a wide-shallow structure and a narrow-deep one
+  //    ends up geometrically far apart even with zero row-crossings, purely
+  //    because their natural widths differ so much. ("arent the animations
+  //    going the wrong way... its these ingredients that make the product"
+  //    led to expanding Glucose's real ancestry, whose own chain happened to
+  //    reach a card already anchoring a separate fusion chain — "circle
+  //    gives me this a messy hierarchy" and a second, worse example, both
+  //    found live.) Detected once, cheaply, over the whole bench (game-scale
+  //    graphs are dozens of edges, not thousands): for every edge, check
+  //    whether removing it disconnects the graph (a bridge — every edge in a
+  //    tree qualifies, so bridge-ness alone says nothing) AND whether the
+  //    smaller resulting side is both small in absolute count and spans
+  //    several real generations — a thin tail, not a small bush. Only that
+  //    combination is excluded from this component's own union-find walk
+  //    below, so the tail gets packed as its own compact chain next to
+  //    wherever it attaches, the same way two genuinely separate chains
+  //    already are — everything downstream (barycentre, transpose,
+  //    centring, packing) already treats "component" as its unit and needs
+  //    no other change.
+  const allAdj = new Map(chips.map(c => [c, new Set()]));
+  for (const [c, ps] of parents) for (const p of ps) if (allAdj.has(p)) { allAdj.get(c).add(p); allAdj.get(p).add(c); }
+  const edgeKey = (a, b) => { const ua = a.dataset.uid, ub = b.dataset.uid; return ua < ub ? ua + '|' + ub : ub + '|' + ua; };
+  const seenEdge = new Set();
+  const candidates = [];
+  for (const [c, ns] of allAdj) {
+    for (const n of ns) {
+      const k = edgeKey(c, n);
+      if (seenEdge.has(k)) continue;
+      seenEdge.add(k);
+      const reach = new Set([c]);
+      const stack = [c];
+      while (stack.length) {
+        const x = stack.pop();
+        for (const y of allAdj.get(x)) {
+          if ((x === c && y === n) || (x === n && y === c)) continue;   // the edge under test
+          if (!reach.has(y)) { reach.add(y); stack.push(y); }
+        }
+      }
+      if (reach.has(n)) continue;                        // not a bridge — a real cycle holds it together
+      const small = reach.size <= chips.length - reach.size ? reach : new Set(chips.filter(x => !reach.has(x)));
+      if (small.size < 2 || small.size > 8) continue;     // not a small satellite
+      const depths = [...small].map(x => depth.get(x));
+      if (Math.max(...depths) - Math.min(...depths) < 3) continue;   // not a real multi-generation tail
+      candidates.push({ k, c, n, size: small.size });
+    }
+  }
+  // A card can sit on TWO qualifying bridges at once — Cellulose, reached
+  // both from its own real ancestor (Grass) and from Glucose on the other
+  // side — and cutting both isolates it as a disconnected singleton
+  // belonging to neither side, which is worse than the merged grid this
+  // was meant to fix. Cut the biggest satellites first, and skip any cut
+  // that would leave either end of the edge with no connection left at all.
+  candidates.sort((a, b) => b.size - a.size);
+  const cutCount = new Map(chips.map(c => [c, 0]));
+  const excludedEdge = new Set();
+  for (const { k, c, n } of candidates) {
+    if (cutCount.get(c) + 1 >= allAdj.get(c).size) continue;
+    if (cutCount.get(n) + 1 >= allAdj.get(n).size) continue;
+    excludedEdge.add(k);
+    cutCount.set(c, cutCount.get(c) + 1);
+    cutCount.set(n, cutCount.get(n) + 1);
+  }
+
   // 1. Separate chains stay separate. A bench is usually several unrelated
   //    little trees, and interleaving them is most of what looked like a mess.
   const comp = new Map();
@@ -3117,8 +3186,10 @@ function tidy() {
     comp.set(c, id);
     while (stack.length) {
       const x = stack.pop();
-      for (const n of [...(parents.get(x) ?? []), ...(kids.get(x) ?? [])])
-        if (n && !comp.has(n)) { comp.set(n, id); stack.push(n); }
+      for (const n of [...(parents.get(x) ?? []), ...(kids.get(x) ?? [])]) {
+        if (!n || comp.has(n) || excludedEdge.has(edgeKey(x, n))) continue;
+        comp.set(n, id); stack.push(n);
+      }
     }
   }
 
@@ -3131,6 +3202,13 @@ function tidy() {
 
   for (let g = 0; g < nc; g++) {
     const mine = chips.filter(c => comp.get(c) === g);
+    // A chip's recorded parents/kids can now include a neighbour excluded
+    // into a different component above — its `pos` lives in that other
+    // component's own coordinate space, not this one, so every lookup
+    // within this component's own layout passes has to stay inside `mine`.
+    const mineSet = new Set(mine);
+    const parentsIn = c => (parents.get(c) ?? []).filter(p => mineSet.has(p));
+    const kidsIn = c => (kids.get(c) ?? []).filter(k => mineSet.has(k));
     const byRow = new Map();
     for (const c of mine) {
       const d = depth.get(c);
@@ -3152,7 +3230,7 @@ function tidy() {
       for (const d of (down ? order : [...order].reverse())) {
         const row = byRow.get(d);
         const key = new Map(row.map(c => {
-          const m = meanOf((down ? parents.get(c) : kids.get(c)) ?? []);
+          const m = meanOf(down ? parentsIn(c) : kidsIn(c));
           return [c, m === null ? pos.get(c) : m];
         }));
         row.sort((a, z) => key.get(a) - key.get(z) || pos.get(a) - pos.get(z));
@@ -3172,8 +3250,8 @@ function tidy() {
     //    lowers the crossing count. Repeats until a full sweep changes
     //    nothing, capped so a pathological bench can't spin forever.
     const crossDelta = (u, v) => {
-      const refsU = [...(parents.get(u) ?? []), ...(kids.get(u) ?? [])];
-      const refsV = [...(parents.get(v) ?? []), ...(kids.get(v) ?? [])];
+      const refsU = [...parentsIn(u), ...kidsIn(u)];
+      const refsV = [...parentsIn(v), ...kidsIn(v)];
       let same = 0, swapped = 0;
       for (const p of refsU) for (const q of refsV) {
         if (p === v || q === u) continue;             // an edge between u and v itself never crosses
@@ -3208,7 +3286,7 @@ function tidy() {
         const row = byRow.get(d);
         for (let i = 0; i < row.length; i++) {
           const c = row[i];
-          const want = meanOf((pass % 2 === 0 ? kids.get(c) : parents.get(c)) ?? []);
+          const want = meanOf(pass % 2 === 0 ? kidsIn(c) : parentsIn(c));
           if (want === null) continue;
           const lo = i ? pos.get(row[i - 1]) + 1 : -Infinity;
           const hi = i < row.length - 1 ? pos.get(row[i + 1]) - 1 : Infinity;
