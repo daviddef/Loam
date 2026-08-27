@@ -1518,6 +1518,9 @@ __CATEGORY_CSS__
     display:flex;align-items:center;gap:5px;padding:1px 5px;margin:0;
     font-size:11.5px;color:var(--ink-soft);background:none;cursor:pointer;
   }
+  ul.tree.bed .brow .tw{
+    font-size:9px;color:var(--ink-soft);width:11px;flex:none;text-align:center;line-height:1;
+  }
   ul.tree.bed .brow:hover{color:var(--ink)}
   ul.tree.bed .brow:hover .sym,
   ul.tree.bed .brow:hover .hex,
@@ -5121,8 +5124,18 @@ function bedTreeHTML(id) {
   const node = c.kind === 'particle'
     ? `<span class="particle">✦ ${c.name}</span>`
     : `<span class="hex">${c.name}</span>`;
-  return `<li><div class="brow" data-atom="${id}">${node}</div>` +
-         (c.of.length ? `<ul>${c.of.map(bedTreeHTML).join('')}</ul>` : '') + `</li>`;
+  const hasKids = c.of.length > 0;
+  // A composition tree runs far deeper relative to its branching than the
+  // recipe tree treeHTML() already folds past AUTO_DEPTH (Human's own tree
+  // runs 15+ rows deep from six organs alone) — so every level folds by
+  // default and opens on its own tap, reusing the exact same data-fold
+  // convention treeHTML() established rather than inventing a second one.
+  // ("these hierarchies get really really big, can we allow collapse/expand
+  // on each level? and only display level 1 by default?" — found live, a
+  // screenshot of Human's card rendered edge to edge with nothing folded.)
+  return `<li><div class="brow"${hasKids ? ' data-fold' : ` data-atom="${id}"`}>` +
+         (hasKids ? `<span class="tw">▸</span>` : '') + `${node}</div>` +
+         (hasKids ? `<ul class="fold">${c.of.map(bedTreeHTML).join('')}</ul>` : '') + `</li>`;
 }
 
 // ---- periodic table ----
