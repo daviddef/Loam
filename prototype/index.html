@@ -985,6 +985,11 @@
   .chip.hub .rl{background:var(--brick)}
   .hubNoPic{display:block;width:100%;height:100%;border-radius:6px;
             background:var(--surface);border:1px dashed var(--line)}
+  /* Nutri-Score / NOVA / Eco-Score, at a glance, without opening the sheet —
+     the same three real official colours the badges inside it use. */
+  .hubScores{position:absolute;left:-13px;top:8px;display:flex;flex-direction:column;gap:5px;z-index:1}
+  .hubPill{display:block;width:9px;height:9px;border-radius:50%;cursor:help;
+           box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 35%,transparent),var(--raise)}
   /* A named ingredient with no card of its own — states the gap plainly
      rather than just leaving it out of the diagram. */
   .chip.placeholder{cursor:pointer;background:transparent;border-style:dashed;border-color:var(--line)}
@@ -2883,7 +2888,18 @@ function removeChip(chip, instant) {
 }
 
 function toggleBranch(chip) {
-  if (!parentsOf(chip).length) {                      // nothing went into it yet
+  // A scanned ingredient's only recorded "parent" is the hub it was named
+  // by — real for tidy()'s depth math and the fold-hide cascade, but not a
+  // crafting ancestor. Counting it here meant tapping Glucose off a scanned
+  // sauce never reached expandUp() at all: parentsOf() already had one
+  // entry (the hub), so the tap just toggled a fold state that hid nothing
+  // useful — Glucose's real ancestors (from the pathway already in the
+  // recipe graph) were never offered. ("why cant i add the parents/
+  // ancestors to our product ingredients? e.g. glucost, etc?" — found
+  // live.) Hub links carry `l.hub` for exactly this: excluded from the
+  // decision here, still counted everywhere else (ancestorsOf, tidy()).
+  const real = links.filter(l => l.out === chip && !l.hub).flatMap(l => [l.a, l.b]).filter(Boolean);
+  if (!real.length) {
     expandUp(chip);
     return;
   }
@@ -3746,12 +3762,26 @@ function spawn(id, x, y, near) {
  * Carries .ghost alongside .hub — the shared marker for "a board chip with
  * no real element behind it," which save/restore and consolidate both need
  * to know to leave alone. */
+// A quick-glance strip to the left of the card — the same three real, official
+// colours the ratings badges use, just small enough to read from across the
+// bench without opening the sheet. ("can you show small pills with these
+// colours to the left of the product in the chart?" — found live.)
+function hubScoresHTML(p) {
+  const ns = (p.nutriscore_grade || '').toLowerCase();
+  const es = (p.ecoscore_grade || '').toLowerCase();
+  const nova = p.nova_group;
+  const pill = (color, title) => color ? `<i class="hubPill" style="background:${color}" title="${title}"></i>` : '';
+  const pills = pill(OFF_GRADE_COLOR[ns], `Nutri-Score ${ns ? ns.toUpperCase() : '–'} — ${SCORE_INFO.nutri.body}`) +
+    pill(OFF_NOVA_COLOR[nova], `NOVA ${nova || '–'} — ${SCORE_INFO.nova.body}`) +
+    pill(OFF_GRADE_COLOR[es], `Eco-Score ${es ? es.toUpperCase() : '–'} — ${SCORE_INFO.eco.body}`);
+  return pills ? `<div class="hubScores">${pills}</div>` : '';
+}
 function hubHTML(product) {
   const name = (product.product_name || 'Scanned product').replace(/[<>]/g, '');
   const pic = product.image_front_small_url
     ? `<img class="art" src="${product.image_front_small_url}" alt="">`
     : `<i class="art hubNoPic"></i>`;
-  return pic + `<span class="n">${name}</span><span class="rl"></span>` +
+  return hubScoresHTML(product) + pic + `<span class="n">${name}</span><span class="rl"></span>` +
     `<span class="ac">${product.brands ? product.brands.replace(/[<>]/g, '') : 'Scanned'}</span>`;
 }
 function spawnHub(scanRecord) {
@@ -7086,8 +7116,18 @@ function restoreBench(saved) {
   for (const [ai, bi, oi] of saved.links || []) {
     const out = cards[oi] && cards[oi].el;
     if (!out) continue;
-    links.push({ a: cards[ai] ? cards[ai].el : null,
-                 b: bi >= 0 && cards[bi] ? cards[bi].el : null, out, fresh: false });
+    const a = cards[ai] ? cards[ai].el : null;
+    // The save format only ever wrote [a, b, out] indices — never a `hub`
+    // flag, because there wasn't one when most saves were written. A link
+    // restored from disk would silently come back without it even after
+    // the flag started mattering, and every scanned product already on a
+    // real bench would keep animating backwards forever. Re-derived from
+    // the chip itself (`.hub` survives a save/restore round trip just
+    // fine) instead of needing a schema migration. ("note, animation still
+    // is going from the product to the ingredients?" — found live, right
+    // after the fix that was supposed to cover exactly this.)
+    links.push({ a, b: bi >= 0 && cards[bi] ? cards[bi].el : null, out, fresh: false,
+                 hub: !!(a && a.classList.contains('hub')) });
   }
 
   for (const entry of cards) {
