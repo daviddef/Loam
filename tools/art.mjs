@@ -2423,6 +2423,10 @@ def('sodium_fluoride',    () => [P('M16 24 L44 24 L44 44 L16 44 Z', 'hi'),
                                  ...[30, 36].map(y => S(`M16 ${y} L44 ${y}`, 'gh', 1.4))]);   // the lattice itself
 def('potassium_iodide',   () => [mound('lo', 46, 19, 17), ...granules('ik', 6, 37, [18, 34, 42, 44])]);
 def('hydrogen_chloride',  () => [...gasTube('bs', 2), C(30, 32, 4, 'hi')]);
+// A glass vessel, not a gas tube like hydrogen_chloride — the one acid that
+// eats the container itself, so the cloudy patch IS the drawing's subject.
+def('hydrogen_fluoride',  () => [vessel('gh', 20, 46), E(30, 34, 9, 12, 'ik'),
+                                 S('M22 24 L38 24', 'ik', 2)]);
 def('hydrogen_sulfide',   () => [C(30, 28, 8, 'hi'), C(16, 42, 5.4, 'gh'), C(44, 42, 5.4, 'gh'),
                                  S('M30 28 L16 42', 'ik', 2), S('M30 28 L44 42', 'ik', 2)]);   // bent, like water
 def('carbon_monoxide',    () => [C(22, 32, 8, 'ik'), C(40, 32, 8, 'bs'),
