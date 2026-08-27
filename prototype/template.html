@@ -1253,6 +1253,19 @@ __CATEGORY_CSS__
   .ratingBadge{flex:1;text-align:center;border-radius:10px;padding:7px 4px 6px;min-width:0}
   .ratingBadge .rbVal{display:block;font:800 19px var(--face-name);line-height:1.1}
   .ratingBadge .rbLbl{display:block;font:700 8.5px var(--face-data);letter-spacing:.03em;text-transform:uppercase;opacity:.85;margin-top:1px}
+  /* One score's own level breakdown (the "i" sheet) — a small round grade
+     badge, same heat-map colour the top-level badge already uses, beside
+     its own short description. Reusing .ent/.g here made a bare letter the
+     ONLY content of an inline pill sized for an icon+name pair — oversized
+     and stacked instead of sitting beside its text. ("can you heat map
+     colour the levels... and fit better in pills" — found live.) */
+  .levelRow{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+  .levelBadge{
+    flex:none;width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font:800 12px var(--face-name);box-shadow:var(--raise);
+  }
+  .levelDesc{flex:1;font-size:12px;line-height:1.35;color:var(--ink)}
   .offTags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 9px}
   .offTag{
     font:700 10px var(--face-data);padding:3px 8px;border-radius:99px;
@@ -4023,8 +4036,15 @@ const SCORE_INFO = {
 function showScoreInfo(key) {
   const s = SCORE_INFO[key];
   if (!s) return;
-  const levels = (s.levels || []).map(([g, d]) =>
-    `<div class="ent"><span class="g"><b>${g}</b></span><span class="g">${d}</span></div>`).join('');
+  // Same real official colours the top-level badges use, not a fresh
+  // choice — a grade means the same thing whether it's a big badge or one
+  // line of an explanation.
+  const colorOf = (g) => key === 'nova' ? OFF_NOVA_COLOR[g] : OFF_GRADE_COLOR[g.toLowerCase()];
+  const levels = (s.levels || []).map(([g, d]) => {
+    const bg = colorOf(g) || '#9c9184', dark = bg === OFF_GRADE_COLOR.c;
+    return `<div class="levelRow"><span class="levelBadge" style="background:${bg};color:${dark ? '#3a2e00' : '#fff'}">${g}</span>` +
+      `<span class="levelDesc">${d}</span></div>`;
+  }).join('');
   document.getElementById('sheetBody').innerHTML =
     `<p>${s.body}</p>${levels}<a class="src" href="${s.src}" target="_blank" rel="noopener">Check this</a>`;
   openSheet(s.title);
