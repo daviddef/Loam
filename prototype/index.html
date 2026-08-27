@@ -1340,7 +1340,8 @@
     margin:0 auto;gap:2px;justify-content:center;
     grid-template-columns:calc(var(--ptcell,54px) * .5) repeat(18,var(--ptcell,54px));
     grid-template-rows:calc(var(--ptcell,54px) * .42) repeat(7,var(--ptcell,54px))
-                       calc(var(--ptcell,54px) * .42) repeat(2,var(--ptcell,54px));
+                       calc(var(--ptcell,54px) * .42) repeat(2,var(--ptcell,54px))
+                       calc(var(--ptcell,54px) * .42);
   }
   /* Group along the top, period down the side — the two axes the chart is for. */
   #ptBody .gnum,#ptBody .pnum{
@@ -4474,8 +4475,12 @@ function ptRender() {
   // numbers down the side, and inside each tile the atomic number small at the
   // top, the symbol large, and the name under it. Everything is shifted one row
   // and one column to make room for the headers.
+  // Group numbers along the bottom, not the top — "can the elemental table
+  // numbering at the top: 1-18 move to the bottom of the table rather than
+  // the top?", found live. Row 12 is a new trailing gutter, the same
+  // height as the one row 1 used to be, past the lanthanide/actinide rows.
   let h = '<div class="ptab">';
-  for (let g = 1; g <= 18; g++) h += `<i class="gnum" style="grid-area:1/${g + 1}">${g}</i>`;
+  for (let g = 1; g <= 18; g++) h += `<i class="gnum" style="grid-area:12/${g + 1}">${g}</i>`;
   for (let pd = 1; pd <= 7; pd++) h += `<i class="pnum" style="grid-area:${pd + 1}/1">${pd}</i>`;
   // The wide gap between Be/Mg (group 2) and B/Al (group 13), periods 2-3 —
   // real empty cells nobody's tile ever occupies — is exactly where a legend
@@ -4511,7 +4516,7 @@ function ptRender() {
 // small for a drawing and leaves an 8px symbol, which is the complaint this
 // was meant to fix. A tile is worth reading or it is not worth drawing. Keep
 // it readable, and let a short dock scroll; the handle is right there.
-const PT_COLS = 18, PT_ROWS = 10, PT_GAPPX = 3;   // 7 periods, a blank, and the two f-block rows
+const PT_COLS = 18, PT_ROWS = 11, PT_GAPPX = 3;   // 7 periods, a blank, the two f-block rows, a blank for the bottom group numbers
 function ptFit() {
   const body = document.getElementById('ptBody');
   const tab = body?.querySelector('.ptab');
