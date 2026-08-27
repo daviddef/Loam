@@ -989,10 +989,7 @@
      rather than just leaving it out of the diagram. */
   .chip.placeholder{cursor:pointer;background:transparent;border-style:dashed;border-color:var(--line)}
   .chip.placeholder .n{color:var(--ink-soft)}
-  .ghostNoArt{display:block;width:100%;height:100%;border-radius:6px;
-             background:repeating-linear-gradient(135deg,transparent,transparent 5px,
-             color-mix(in srgb,var(--ink-soft) 14%,transparent) 5px,
-             color-mix(in srgb,var(--ink-soft) 14%,transparent) 6px)}
+  .ghostNoArt{display:block;width:100%;height:100%}
   .phead{
     display:flex;align-items:center;gap:10px;text-align:left;flex-wrap:wrap;
     padding:0 0 9px;border-bottom:1px solid var(--line);margin-bottom:9px;
@@ -3759,9 +3756,17 @@ function spawnHub(scanRecord) {
  * element either, same .ghost treatment as a hub, so it draws exactly like
  * one of its siblings in the ring instead of just vanishing from the
  * diagram. Tapping it explains the same honest thing the label reader's
- * own "not in this world yet" section already says. */
+ * own "not in this world yet" section already says. A diagonal hatch swatch
+ * read as a texture glitch rather than a deliberate mark ("can we create a
+ * better image for the unknown ingredients? instead of odd lines" — found
+ * live); an unfinished sketch — a dashed, not-yet-closed outline around a
+ * plain question mark — says "we haven't drawn this yet" on purpose. */
 function placeholderHTML(text) {
-  return `<i class="art ghostNoArt"></i><span class="n">${(text || '?').replace(/[<>]/g, '')}</span>` +
+  const glyph = `<svg class="art ghostNoArt" viewBox="0 0 60 60" aria-hidden="true">` +
+    `<circle cx="30" cy="30" r="19" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" stroke-dasharray="4 5" stroke-linecap="round"/>` +
+    `<path d="M24 23 Q24 15 31 15 Q38 15 38 22 Q38 27 33 29 Q30 30.5 30 35" fill="none" stroke="var(--ink-soft)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>` +
+    `<circle cx="30" cy="42" r="2.4" fill="var(--ink-soft)"/></svg>`;
+  return `${glyph}<span class="n">${(text || '?').replace(/[<>]/g, '')}</span>` +
     `<span class="rl"></span><span class="ac">not in this world yet</span>`;
 }
 function spawnPlaceholder(text) {
@@ -6100,22 +6105,56 @@ async function preprocessForOCR(source) {
   ctx.drawImage(bitmap, 0, 0, w, h);
   const img = ctx.getImageData(0, 0, w, h);
   const d = img.data;
-  const gray = new Uint8ClampedArray(w * h);
-  let lo = 255, hi = 0, sum = 0;
+  const gray = new Float32Array(w * h);
+  let sum = 0;
   for (let i = 0, p = 0; i < d.length; i += 4, p++) {
     const g = 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
     gray[p] = g;
-    if (g < lo) lo = g;
-    if (g > hi) hi = g;
     sum += g;
   }
-  const mean = sum / gray.length;
-  const invert = mean < 128;                 // a mostly-dark photo means pale text on it
-  const range = Math.max(1, hi - lo);
-  for (let i = 0, p = 0; i < d.length; i += 4, p++) {
-    let v = ((gray[p] - lo) / range) * 255;   // stretch to the full black-white range
-    if (invert) v = 255 - v;
-    d[i] = d[i + 1] = d[i + 2] = v;
+  const invert = (sum / gray.length) < 128;   // a mostly-dark photo means pale text on it
+  // A curved bottle or tin does not carry one contrast level end to end —
+  // the near edge catches more light than the far edge, so a single global
+  // lo/hi stretch either blows out the bright side or leaves the dim side
+  // too flat to read. Splitting the image into a coarse grid, measuring
+  // lo/hi within each tile, and blending between neighbouring tiles
+  // (bilinearly, so there are no hard seams at tile edges) gives every
+  // patch of the label its own real contrast instead of one borrowed from
+  // the whole photo. Found live: a curved supplement bottle's first two
+  // ingredient lines — the most curved, most unevenly lit part of the
+  // label — read as "sete? + TEER --- & -- ; Alpha aT ANE" while the
+  // flatter lines below them, lit more evenly, came through close to
+  // correct under the very same global stretch.
+  const TILE = 64;
+  const tilesX = Math.max(1, Math.ceil(w / TILE)), tilesY = Math.max(1, Math.ceil(h / TILE));
+  const tLo = new Float32Array(tilesX * tilesY).fill(255);
+  const tHi = new Float32Array(tilesX * tilesY).fill(0);
+  for (let y = 0; y < h; y++) {
+    const ty = Math.min(tilesY - 1, (y / TILE) | 0);
+    for (let x = 0; x < w; x++) {
+      const tx = Math.min(tilesX - 1, (x / TILE) | 0);
+      const g = gray[y * w + x], ti = ty * tilesX + tx;
+      if (g < tLo[ti]) tLo[ti] = g;
+      if (g > tHi[ti]) tHi[ti] = g;
+    }
+  }
+  const at = (arr, tx, ty) => arr[Math.max(0, Math.min(tilesY - 1, ty)) * tilesX + Math.max(0, Math.min(tilesX - 1, tx))];
+  for (let y = 0; y < h; y++) {
+    const fy = y / TILE - 0.5, ty0 = Math.floor(fy), fy1 = fy - ty0;
+    for (let x = 0; x < w; x++) {
+      const fx = x / TILE - 0.5, tx0 = Math.floor(fx), fx1 = fx - tx0;
+      const lo =
+        at(tLo, tx0, ty0) * (1 - fx1) * (1 - fy1) + at(tLo, tx0 + 1, ty0) * fx1 * (1 - fy1) +
+        at(tLo, tx0, ty0 + 1) * (1 - fx1) * fy1 + at(tLo, tx0 + 1, ty0 + 1) * fx1 * fy1;
+      const hi =
+        at(tHi, tx0, ty0) * (1 - fx1) * (1 - fy1) + at(tHi, tx0 + 1, ty0) * fx1 * (1 - fy1) +
+        at(tHi, tx0, ty0 + 1) * (1 - fx1) * fy1 + at(tHi, tx0 + 1, ty0 + 1) * fx1 * fy1;
+      const range = Math.max(24, hi - lo);    // never amplify an almost-flat tile into speckle
+      const p = y * w + x, i = p * 4;
+      let v = Math.max(0, Math.min(255, ((gray[p] - lo) / range) * 255));
+      if (invert) v = 255 - v;
+      d[i] = d[i + 1] = d[i + 2] = v;
+    }
   }
   ctx.putImageData(img, 0, 0);
   return c;
