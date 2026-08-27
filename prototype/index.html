@@ -1596,6 +1596,19 @@
   #tip.on{opacity:1;transform:none}
   /* A destructive control should not look like the others. */
   .danger{border-color:var(--brick)!important;color:var(--brick)!important}
+  /* Same standing as #tip — anchored to the button that opened it, never
+     the screen — but it takes clicks instead of just showing text. */
+  #resetMenu{
+    position:fixed;z-index:900;display:flex;flex-direction:column;gap:2px;
+    padding:5px;border-radius:10px;background:var(--card);border:1.5px solid var(--line);
+    box-shadow:0 12px 28px -10px rgba(var(--shade),.85);
+  }
+  #resetMenu[hidden]{display:none}
+  #resetMenu button{
+    padding:8px 16px;border-radius:7px;font:600 12.5px var(--face-name);color:var(--ink);
+    text-align:left;white-space:nowrap;border:none;background:none;
+  }
+  #resetMenu button:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}
 </style>
 
 <header>
@@ -1619,7 +1632,14 @@
   <div class="count" id="score" title="A point for every step it took to reach what you hold"></div>
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M40 18 A15 15 0 1 1 18 30" fill="none" stroke="var(--ik)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 30 L25 23" fill="none" stroke="var(--ik)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 30 L26 35" fill="none" stroke="var(--ik)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-  <button id="reset" title="Start over — wipes everything you have found">Reset</button>
+  <button id="reset" title="Start over — wipes everything you have found" aria-haspopup="true">Reset</button>
+  <!-- Anchored to the button, not a screen-covering sheet: it opens beside
+       Reset, does one of two things, and clears itself the moment you pick
+       one or look away. -->
+  <div id="resetMenu" role="menu" hidden>
+    <button id="resetBase" role="menuitem" title="Back to Stone, Water, Sun, and Seed on the bench">Base Element Canvas</button>
+    <button id="resetClear" role="menuitem" title="A genuinely empty bench — nothing placed for you" class="danger">Clear Canvas</button>
+  </div>
   <button id="nudge" title="Put two things on the bench that go together"><span class="gl" style="--g:16px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M18 40 L42 20" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.8 34.6 L26.2 25.4" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="40" r="8" fill="var(--ik)"/><circle cx="42" cy="20" r="8" fill="var(--ik)"/><circle cx="18" cy="40" r="3" fill="var(--ground)"/><circle cx="42" cy="20" r="3" fill="var(--ground)"/></svg></span></button>
   <button id="scanBtn" title="Scan a barcode or read a label"><span class="gl" style="--g:16px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M10 22 Q10 18 14 18 L21 18 L24 14 L36 14 L39 18 L46 18 Q50 18 50 22 L50 42 Q50 46 46 46 L14 46 Q10 46 10 42 Z" fill="none" stroke="var(--ik)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="32" r="8" fill="var(--ik)"/><circle cx="30" cy="32" r="4" fill="var(--ground)"/></svg></span></button>
   <button id="shelfToggle" title="Hide the shelf">▤</button>
@@ -2087,8 +2107,13 @@ const saveSoon = () => {
   if (saveTimer) return;
   saveTimer = setTimeout(() => { saveTimer = 0; save(); }, 700);
 };
-addEventListener('pagehide', () => { clearTimeout(saveTimer); save(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden) save(); });
+// wipeProgress() writes its own final answer to KEY right before reloading —
+// letting either of these fire in between would silently overwrite that
+// answer with whatever benchState() sees at that instant, which is exactly
+// the race that used to resurrect a wiped board.
+let wiping = false;
+addEventListener('pagehide', () => { clearTimeout(saveTimer); if (!wiping) save(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden && !wiping) save(); });
 
 // Free play means every tool, by definition — not merely as a side effect of
 // free play having also put fire, flint and yeast in your found set. Those
@@ -5190,7 +5215,7 @@ function showSettings() {
   const tr = document.getElementById('sheetBody').querySelector('[data-transfer]');
   if (tr) tr.onclick = showTransfer;
   const wipe = document.getElementById('sheetBody').querySelector('[data-wipe]');
-  if (wipe) wipe.onclick = wipeProgress;
+  if (wipe) wipe.onclick = () => wipeProgress(false);
   document.getElementById('sheetBody').querySelectorAll('[data-pref]').forEach(b => b.onclick = () => {
     prefs[b.dataset.pref] = b.dataset.val;
     savePrefs(); applyPrefs(); renderShelf(); showSettings();
@@ -6092,22 +6117,58 @@ document.getElementById('scanTools').addEventListener('click', ev => {
 if (!matchMedia('(pointer: coarse)').matches) {
   document.querySelector('#scanTools [data-scan="snap"]').hidden = true;
 }
-function wipeProgress() {
-  if (!confirm('Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.')) return;
+// ---- reset: two destinations, one small anchored menu ----
+const resetMenu = document.getElementById('resetMenu');
+function closeResetMenu() { resetMenu.hidden = true; }
+function openResetMenu() {
+  const btn = document.getElementById('reset');
+  resetMenu.hidden = false;
+  const r = btn.getBoundingClientRect(), m = resetMenu.getBoundingClientRect();
+  let x = r.left;
+  if (x + m.width > innerWidth - 6) x = innerWidth - m.width - 6;
+  resetMenu.style.left = Math.max(6, x) + 'px';
+  resetMenu.style.top = (r.bottom + 6) + 'px';
+}
+document.getElementById('reset').addEventListener('click', () =>
+  resetMenu.hidden ? openResetMenu() : closeResetMenu());
+document.addEventListener('pointerdown', ev => {
+  if (resetMenu.hidden) return;
+  if (ev.target === document.getElementById('reset') || resetMenu.contains(ev.target)) return;
+  closeResetMenu();
+}, true);
+function wipeProgress(clear) {
+  const msg = clear
+    ? 'Clear the canvas? Everything you have found goes away, and the bench starts genuinely empty — not even Stone, Water, Sun, and Seed. There is no undo.'
+    : 'Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.';
+  if (!confirm(msg)) return;
   // Reloading fires pagehide, which autosaves — and that autosave was racing
   // this wipe and winning: it wrote the old progress straight back into the
   // key this just removed, before the new page ever loaded, so a real Reset
-  // click quietly resurrected everything it just wiped. Clearing the live
-  // state too, not just its saved copy, means that autosave has nothing left
-  // to resurrect even if it fires.
+  // click quietly resurrected everything it just wiped. wiping=true stops
+  // that autosave from firing at all, so the answer this function is about
+  // to write is the one that survives.
+  wiping = true;
   clearTimeout(saveTimer); saveTimer = 0;
   found.clear(); seen.clear(); links.length = 0;
   cooking.clear();
   world.querySelectorAll('.chip.board').forEach(c => c.remove());
-  try { localStorage.removeItem(KEY); localStorage.removeItem(REAL_KEY); } catch {}
+  try {
+    localStorage.removeItem(REAL_KEY);
+    if (clear) {
+      // An explicitly empty bench, not merely a missing key — restoreBench()
+      // tells the two apart, so this is what keeps the starters from being
+      // respawned the instant the page comes back.
+      localStorage.setItem(KEY, JSON.stringify({
+        found: [], seen: [], bench: { cards: [], links: [], view: { x: 0, y: 0, k: 1 } },
+      }));
+    } else {
+      localStorage.removeItem(KEY);
+    }
+  } catch {}
   location.reload();
 }
-document.getElementById('reset').addEventListener('click', wipeProgress);
+document.getElementById('resetBase').addEventListener('click', () => { closeResetMenu(); wipeProgress(false); });
+document.getElementById('resetClear').addEventListener('click', () => { closeResetMenu(); wipeProgress(true); });
 document.getElementById('undo').addEventListener('click', undoLast);
 
 // ---- periodic dock: open, resize, dismiss ----
@@ -6409,7 +6470,11 @@ renderShelf();
  * welcome.
  */
 function restoreBench(saved) {
-  if (!saved || !Array.isArray(saved.cards) || !saved.cards.length) return false;
+  // No `.cards.length` check: a deliberately empty bench (Clear Canvas) is a
+  // real save, distinct from no save at all, and must not fall through to
+  // the starter-respawn below — an empty array still loops zero times and
+  // returns true just fine.
+  if (!saved || !Array.isArray(saved.cards)) return false;
   const now = Date.now();
   const made = [];
   const cards = saved.cards.map(c => {
