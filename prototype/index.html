@@ -6332,9 +6332,16 @@ function showBarcodeScan(onIngredients, autoAction) {
   // bare "Scan a barcode" entry points (the header button, the label
   // reader's own "Scan a barcode" link) arrive with no autoAction at all
   // and still want the full picker.
+  // Hiding the whole button row for 'snap'/'photo' too (rather than just
+  // the barcode-specific hint and entry) went too far the other way: on
+  // cancel, decodePicked() does nothing at all, so a sheet with nowhere
+  // even to retry read as broken rather than focused. ("closing camera now
+  // shows this totally useless" — found live, the very next report after
+  // the fix above.) The row stays for 'snap'/'photo' — only the two
+  // buttons for methods that weren't picked get trimmed out of it, below.
   const skipHint = !!autoAction;
   const skipEntry = !!autoAction;
-  const skipRow = !!autoAction;
+  const skipRow = autoAction === 'type' || autoAction === 'camera';
   document.getElementById('sheetBody').innerHTML = `
     ${skipHint ? '' : `<p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
        camera where this device supports it. Scan as many products as you like before reading them
@@ -6461,7 +6468,13 @@ function showBarcodeScan(onIngredients, autoAction) {
   // second button offered no real second option, just a misleading label
   // ("it pops up with the 'select files to upload' overlay" — found live).
   const HAS_CAMERA_INPUT = matchMedia('(pointer: coarse)').matches;
-  document.getElementById('bcSnap').hidden = !HAS_CAMERA_INPUT;
+  document.getElementById('bcSnap').hidden = !HAS_CAMERA_INPUT || autoAction === 'photo';
+  // The row itself stays for 'snap'/'photo' (see skipRow above) so there's
+  // still something to retry with — but the OTHER two methods, the ones
+  // not picked, are real clutter now that the sheet is meant to be focused
+  // on the one that was.
+  document.getElementById('bcCamera').hidden = autoAction === 'snap' || autoAction === 'photo';
+  document.getElementById('bcPhoto').hidden = autoAction === 'snap';
   const decodePicked = async (files) => {
     if (!files.length) return;
     let misses = 0;
