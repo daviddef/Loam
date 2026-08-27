@@ -3048,6 +3048,46 @@ function tidy() {
       }
     }
 
+    // 2b. Transpose: the standard second half of a barycentre layout — the
+    //    mean picks a rough order, but two cards tied (or close) on their own
+    //    barycentre just keep whatever order they arrived in even when
+    //    swapping them would remove a real crossing, because a mean is a
+    //    single number and throws that information away. This checks every
+    //    adjacent pair directly against the rows actually threading through
+    //    them (both parents above and results below share one continuous
+    //    slot scale — pos multiplies by the same `step` everywhere, so
+    //    comparing across rows is valid) and swaps whenever that strictly
+    //    lowers the crossing count. Repeats until a full sweep changes
+    //    nothing, capped so a pathological bench can't spin forever.
+    const crossDelta = (u, v) => {
+      const refsU = [...(parents.get(u) ?? []), ...(kids.get(u) ?? [])];
+      const refsV = [...(parents.get(v) ?? []), ...(kids.get(v) ?? [])];
+      let same = 0, swapped = 0;
+      for (const p of refsU) for (const q of refsV) {
+        if (p === v || q === u) continue;             // an edge between u and v itself never crosses
+        const pp = pos.get(p), pq = pos.get(q);
+        if (pp === undefined || pq === undefined) continue;
+        if (pp > pq) same++;
+        else if (pp < pq) swapped++;
+      }
+      return swapped - same;                          // negative means swapping helps
+    };
+    for (let pass = 0; pass < 6; pass++) {
+      let changed = false;
+      for (const d of (pass % 2 === 0 ? order : [...order].reverse())) {
+        const row = byRow.get(d);
+        for (let i = 0; i < row.length - 1; i++) {
+          const u = row[i], v = row[i + 1];
+          if (crossDelta(u, v) < 0) {
+            row[i] = v; row[i + 1] = u;
+            pos.set(v, i); pos.set(u, i + 1);
+            changed = true;
+          }
+        }
+      }
+      if (!changed) break;
+    }
+
     // 3. Centre each card over its children, then over its parents, without
     //    letting neighbours swap or touch — so a single result sits under the
     //    middle of the two things that made it instead of flush left.
@@ -4744,10 +4784,19 @@ function showAtom(id) {
   const a = atomById[id], c = compById[id] ?? aminoById[id];
   const node = a ? atomTile(a) : c.kind === 'particle'
     ? `<span class="particle">✦ ${c.name}</span>` : `<span class="hex">${c.name}</span>`;
+  // "why cant i open them on the canvas for the sun? same as water, h and
+  // o" — found live. Hydrogen and Helium are real playable elements same
+  // as any other card, they just arrived here through a composition tree
+  // instead of the shelf — if the player already has one, the same "Put
+  // on the bench" action every other card offers belongs here too.
+  const gameId = a && PLAYABLE_ATOM.get(a.id);
+  const canPlace = gameId && found.has(gameId);
   document.getElementById('sheetBody').innerHTML =
     `<div class="phead">${a ? `<div style="margin-bottom:8px">${node}</div>` : `<div style="margin-bottom:8px">${node}</div>`}
        <h3>${(a ?? c).name}</h3>
        <div class="pnums">${a ? `element ${a.number} · ${a.category}` : 'compound'}</div></div>
+     ${canPlace ? `<div class="cardrow" style="margin:0 0 10px">
+        <button class="ghost" data-put="${gameId}">Put on the bench</button></div>` : ''}
      ${BED.structures?.[id] ? `<div class="molbox">${moleculeSVG(id)}</div>` : ''}
      ${(a ?? c)?.formula ? `<div class="formula">${fmt((a ?? c).formula)}</div>` : ''}
      <p class="why">${(a ?? c).fact ?? 'Not yet written up — this one is reference only for now.'}</p>
