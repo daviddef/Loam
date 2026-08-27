@@ -608,17 +608,25 @@
     100%{opacity:0}
   }
   .flash{
-    position:absolute;inset:0;pointer-events:none;z-index:7;
-    /* No fixed circle size: a hardcoded radius (900px, tuned by eye on a
-       desktop tab) looked fine there and washed a mobile board into an
-       almost centerless flat red — nearly the whole 375px-wide screen
-       sat inside even the gradient's brightest ring. Leaving the size
-       unset falls back to farthest-corner, which is defined to always
-       reach the corner of this element farthest from --fx/--fy — so the
-       percentage stops below mean the same *proportion* of the flash on
-       any board size, and the origin point stays visibly the brightest
-       spot instead of disappearing into a uniform wash. */
-    background:radial-gradient(circle at var(--fx,50%) var(--fy,50%),
+    /* A child of #world, positioned in WORLD coordinates exactly like
+       .shock and .debris — not a child of #board anchored to a fixed
+       screen position. That distinction is the whole story of a real bug:
+       the new output chip's own spawn() can call ensureVisible() and pan
+       the view moments after this fires, and a board-anchored flash's
+       position was computed ONCE, before that pan — so the glow stayed
+       glued to the old screen position while everything world-anchored
+       (the rings, the debris, the reacting chips themselves) correctly
+       panned along with the content. That is exactly "the blast is not
+       starting from the combined elements, it's still dominating the
+       bottom left" (found live, twice) — not a coordinate math error
+       (which tested correct every time in isolation), a wrong choice of
+       what to anchor to. Fixed width/height in world units rather than
+       percentage-of-board: it needs to look the same size at a given
+       zoom regardless of board size, the same way a card's size doesn't
+       change just because the shelf got wider. */
+    position:absolute;width:2400px;height:2400px;margin-left:-1200px;margin-top:-1200px;
+    pointer-events:none;z-index:7;
+    background:radial-gradient(circle at 50% 50%,
       color-mix(in srgb,var(--brick) 75%,transparent) 0%,
       color-mix(in srgb,var(--brick) 25%,transparent) 16%,
       transparent 40%);
@@ -4025,12 +4033,13 @@ function resolve(r, chips, x, y) {
     // mega rippling block blast that shakes all other elements... pretty
     // weak animation" — found live; the first version undersold it.)
     if (r.violent) {
-      const bx = cx * view.k + view.x, by = cy * view.k + view.y;
+      // World-anchored, same as .shock and .debris below — see the CSS
+      // comment on .flash for why a board-anchored version was the real
+      // bug behind "the blast is still dominating the bottom left".
       const flash = document.createElement('div');
       flash.className = 'flash';
-      flash.style.setProperty('--fx', bx + 'px');
-      flash.style.setProperty('--fy', by + 'px');
-      board.appendChild(flash);
+      flash.style.left = cx + 'px'; flash.style.top = cy + 'px';
+      world.appendChild(flash);
       setTimeout(() => flash.remove(), 1750);
       // Six rings instead of three, spread further apart in time, is what
       // actually reads as "rippling" rather than one thick pulse — each one
