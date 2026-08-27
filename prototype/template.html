@@ -5544,11 +5544,18 @@ function loadTesseract() {
  */
 async function preprocessForOCR(source) {
   const bitmap = source instanceof HTMLCanvasElement ? source : await createImageBitmap(source);
-  const w = bitmap.width, h = bitmap.height;
+  // A modern phone photo comes in at 3000-4000px on the long side, which is
+  // far more than an OCR engine needs and mostly just makes it slow — a real
+  // supplement-bottle photo measured at 56s uncapped vs. 20s capped here,
+  // same accuracy either way (Tesseract's own accuracy plateaus well below
+  // this size; the extra pixels were pure runtime cost).
+  const MAX_DIM = 1800;
+  const scale = Math.min(1, MAX_DIM / Math.max(bitmap.width, bitmap.height));
+  const w = Math.round(bitmap.width * scale), h = Math.round(bitmap.height * scale);
   const c = document.createElement('canvas');
   c.width = w; c.height = h;
   const ctx = c.getContext('2d', { willReadFrequently: true });
-  ctx.drawImage(bitmap, 0, 0);
+  ctx.drawImage(bitmap, 0, 0, w, h);
   const img = ctx.getImageData(0, 0, w, h);
   const d = img.data;
   const gray = new Uint8ClampedArray(w * h);
