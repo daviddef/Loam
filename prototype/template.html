@@ -1529,7 +1529,7 @@ __CATEGORY_CSS__
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
-      <button id="ptToggle" title="Show the periodic table along the bottom">⛭</button>
+      <button id="ptToggle" title="Show the periodic table along the bottom"><span class="gl" style="--g:15px">__UI_TABLE__</span></button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -3297,15 +3297,16 @@ function showScannedProduct(hubEl) {
     offNutriRow('Protein', n, 'proteins_100g', ' g') +
     offNutriRow('Salt', n, 'salt_100g', ' g');
   document.getElementById('sheetBody').innerHTML = `
-    <div class="ratingRow">${ratings}</div>
+    ${s.code ? `<div class="ratingRow">${ratings}</div>` : ''}
     <div class="bcProduct" style="margin-bottom:9px">
       ${p.image_front_small_url ? `<img src="${p.image_front_small_url}" alt="">` : `<i class="bcNoPic"></i>`}
       <div><b>${(p.product_name || 'Unnamed product').replace(/[<>]/g, '')}</b>
       ${p.brands ? `<i>${p.brands.replace(/[<>]/g, '')}${p.quantity ? ' · ' + p.quantity.replace(/[<>]/g, '') : ''}</i>` : ''}</div>
     </div>
     ${tags ? `<div class="offTags">${tags}</div>` : ''}
-    <p class="hint2" style="margin-top:0">Barcode <b style="font:600 12px var(--face-data)">${s.code}</b> ·
-      looked up on Open Food Facts.</p>
+    <p class="hint2" style="margin-top:0">${s.code
+      ? `Barcode <b style="font:600 12px var(--face-data)">${s.code}</b> · looked up on Open Food Facts.`
+      : 'No barcode found — its ingredients text was read straight off the photo instead.'}</p>
     ${nutrition ? `<div class="offSection">Per 100g</div><table class="nutriTable">${nutrition}</table>` : ''}
     ${s.text ? `<div class="offSection">Ingredients</div><p class="why" style="margin-top:0">${s.text.replace(/[<>]/g, '')}</p>` : ''}
     <div class="cardrow" style="margin-top:9px">
@@ -5437,7 +5438,11 @@ function showBarcodeScan(onIngredients) {
          <button class="ghost" id="bcUse">Read ingredients from ${withText.length === 1 ? 'this product' : withText.length + ' products'}</button></div>`
        : '');
     const use = document.getElementById('bcUse');
-    if (use) use.onclick = () => onIngredients(withText.map(s => 'Ingredients: ' + s.text).join(', '), withText);
+    // OFF's own ingredients_text field never carries the "Ingredients:"
+    // label itself — prefixing it here is what makes it read like a real
+    // label line. Text read off a photo by OCR already has that word on it
+    // if the packet did, so prefixing again would just double it.
+    if (use) use.onclick = () => onIngredients(withText.map(s => (s.code ? 'Ingredients: ' : '') + s.text).join(', '), withText);
   }
 
   const addScan = async (code) => {
@@ -5478,6 +5483,18 @@ function showBarcodeScan(onIngredients) {
                                 : `Added ${product.product_name || 'that product'} — ${scanned.length} scanned so far`);
     render();
   };
+  // A photo with no readable barcode still has a real ingredients line
+  // printed on it somewhere — read that instead of just reporting a miss.
+  // No barcode means no Open Food Facts lookup, so this scan has no code,
+  // no brand, no photo of its own; it is still a real find, just one with a
+  // narrower story than a barcode scan can tell.
+  const addOcrScan = (text) => {
+    const product = { product_name: 'Read from a photo' };
+    scanned.push({ code: null, product, text });
+    toast(scanned.length === 1 ? 'Read ingredients from a photo'
+                                : `Read another photo — ${scanned.length} scanned so far`);
+    render();
+  };
   document.getElementById('bcGo').onclick = () => {
     const code = (document.getElementById('bcIn').value || '').replace(/\D/g, '');
     if (!code) { status.innerHTML = '<p class="none">Type the digits under the barcode.</p>'; return; }
@@ -5498,10 +5515,14 @@ function showBarcodeScan(onIngredients) {
     for (const file of files) {
       status.innerHTML = `<p class="hint2">Reading photo ${files.indexOf(file) + 1} of ${files.length}…</p>`;
       const codes = await decodeBarcodes(file);
-      if (codes.length) await addScan(codes[0]); else misses++;
+      if (codes.length) { await addScan(codes[0]); continue; }
+      status.innerHTML = `<p class="hint2">No barcode in photo ${files.indexOf(file) + 1} of ${files.length} — reading the text instead…</p>`;
+      let text = '';
+      try { text = await ocrImage(file); } catch {}
+      if (text.trim()) addOcrScan(text); else misses++;
     }
     status.innerHTML = misses
-      ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode.</p>` : '';
+      ? `<p class="none">${misses} of ${files.length} photo${files.length === 1 ? '' : 's'} had no readable barcode or text.</p>` : '';
   };
   document.getElementById('bcPhoto').onclick = () => document.getElementById('bcFile').click();
   document.getElementById('bcFile').onchange = (ev) => {

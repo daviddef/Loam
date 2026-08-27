@@ -3467,6 +3467,13 @@ ship.ui_ladder = { c: 'craft', s: [
 ship.ui_eye = { c: 'craft', s: [
   S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),
 ] };
+ship.ui_table = { c: 'craft', s: [
+  // A grid of element tiles, not a gear — the periodic-table toggle used to
+  // share a literal gear glyph with the Settings button, which is exactly
+  // the "these two buttons look the same" report this replaces.
+  ...[12, 24, 36].flatMap(x => [12, 24, 36].map(y =>
+    P(`M${x} ${y} L${x + 9} ${y} L${x + 9} ${y + 9} L${x} ${y + 9} Z`, 'ik'))),
+] };
 ship.ui_circle = { c: 'craft', s: [
   C(30, 30, 4, 'ik'),
   ...Array.from({ length: 6 }, (_, i) => {

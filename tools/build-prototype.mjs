@@ -76,6 +76,7 @@ for (const [token, value] of [
   ['__UI_NUDGE__', uiGlyph('ui_nudge')],
   ['__UI_SCAN__', uiGlyph('ui_scan')],
   ['__UI_CIRCLE__', uiGlyph('ui_circle')],
+  ['__UI_TABLE__', uiGlyph('ui_table')],
   ['__UI_AMINO__', uiGlyph('ui_amino')],
   ['__UI_LADDER__', uiGlyph('ui_ladder')],
   ['__UI_EYE__', uiGlyph('ui_eye')],
