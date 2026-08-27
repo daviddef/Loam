@@ -3588,17 +3588,57 @@ function circleTidy() {
     bySingleParent.get(l.a).push(l.out);
   }
   const [cw, ch] = cardSize();
+  const rings = [];   // {parent, children, r} — one per qualifying hub
   for (const [parent, children] of bySingleParent) {
     if (children.length < 2) continue;
-    const [pcx, pcy] = chipCentre(parent);
     const n = children.length;
     const spacing = Math.max(cw, ch) + 14;
     const r = Math.max(cw * 1.1, (n * spacing) / (2 * Math.PI));
+    const [pcx, pcy] = chipCentre(parent);
     children.forEach((c, i) => {
       const a = (i / n) * Math.PI * 2 - Math.PI / 2;
       c.style.left = (pcx + r * Math.cos(a) - cw / 2) + 'px';
       c.style.top  = (pcy + r * Math.sin(a) - ch / 2) + 'px';
     });
+    rings.push({ parent, children, r });
+  }
+  // Each ring is sized only by how many spokes it has — tidy()'s own
+  // packing above placed the hub itself as if it were one ordinary card,
+  // with no idea a big fan was coming. Two hubs a normal card-width apart
+  // is fine right up until one of them turns out to need a 200px ring, at
+  // which point the two fans draw straight through each other. A few
+  // relaxation passes push any pair of ring CENTRES (a hub and its whole
+  // fan, moved together as one rigid piece) apart along the line between
+  // them until no two rings overlap, the same idea simple circle-packing
+  // separation already uses — capped so a pathological bench can't spin
+  // forever. Known gap: a card that is itself the hub of a further nested
+  // ring gets moved as a plain child here, not with its own fan attached —
+  // rare (a hub whose spoke is itself another hub), left for later.
+  const moveRingBy = (ring, dx, dy) => {
+    const move = (el) => {
+      el.style.left = (parseFloat(el.style.left) + dx) + 'px';
+      el.style.top  = (parseFloat(el.style.top) + dy) + 'px';
+    };
+    move(ring.parent);
+    for (const c of ring.children) move(c);
+  };
+  for (let pass = 0; pass < 8; pass++) {
+    let moved = false;
+    for (let i = 0; i < rings.length; i++) {
+      for (let j = i + 1; j < rings.length; j++) {
+        const a = rings[i], b = rings[j];
+        const [ax, ay] = chipCentre(a.parent), [bx, by] = chipCentre(b.parent);
+        const dx = bx - ax, dy = by - ay;
+        const dist = Math.hypot(dx, dy) || 1;
+        const need = a.r + b.r + Math.max(cw, ch) * 0.4;
+        if (dist >= need) continue;
+        moved = true;
+        const push = (need - dist) / 2, ux = dx / dist, uy = dy / dist;
+        moveRingBy(a, -ux * push, -uy * push);
+        moveRingBy(b, ux * push, uy * push);
+      }
+    }
+    if (!moved) break;
   }
   drawLinks();
   fitAll({ min: 0.2, max: 1.2 });
@@ -3724,6 +3764,31 @@ for (const e of ['pointerup', 'pointercancel']) addEventListener(e, ev => {
   touches.delete(ev.pointerId);
   if (touches.size < 2) pinch = null;
 }, true);
+// The same gap, for the drag itself rather than just the touch/pinch
+// bookkeeping above: a drag that starts on #board can end somewhere else
+// entirely — lift the finger over the header, the tray, or off-screen —
+// and #board's own pointerup handler never runs at all, because the event
+// never bubbles through an element it isn't inside. `.chip.drag`'s lift-
+// and-rotate transform (`scale(1.09) rotate(-2deg)`) stayed on the chip
+// forever, which reads exactly like a rendering bug rather than a stuck
+// gesture. ("Chicken stock didn't even render correct?" — found live, the
+// day hub cards became draggable for the first time and so became far
+// more likely to get dragged toward a screen edge.) Bubble phase, not
+// capture, and on window rather than #board — so this runs AFTER #board's
+// own handler whenever the pointerup DID land inside it (which already
+// cleared `drag` to null by then, making this a no-op), and only ever
+// does anything on the actual gap: a pointerup #board never saw.
+for (const e of ['pointerup', 'pointercancel']) addEventListener(e, () => {
+  if (!drag) return;
+  const { chip } = drag; drag = null;
+  hitCache = null;
+  chip.classList.remove('drag', 'haslive');
+  chip.dataset.live = '';
+  document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
+  stopHeat();
+  saveSoon();
+  pinToBoard(chip);
+});
 // Last-resort sweep: if no finger is actually down, nothing may be left over.
 addEventListener('pointerdown', ev => {
   if (ev.pointerType === 'touch') return;
