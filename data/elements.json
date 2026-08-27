@@ -10382,5 +10382,17 @@
     ],
     "fact": "Graphite anode, lithium cobalt oxide cathode — the pair that actually powers a phone.",
     "terminal": true
+  },
+  {
+    "id": "lithium_hydride",
+    "name": "Lithium Hydride",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "2 Li + H2 → 2 LiH — fast even at low heat, faster still above 600°C.",
+    "terminal": true,
+    "soleRoute": true
   }
 ]

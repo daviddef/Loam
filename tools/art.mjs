@@ -2764,6 +2764,11 @@ def('nicad_battery',     () => [                           // rechargeable long 
   P('M22 10 L38 10 L38 16 L22 16 Z', 'hi'), P('M18 16 L42 16 L42 50 L18 50 Z', 'bs'),
   S('M18 30 L42 30', 'lo', 2), S('M22 34 L38 34 M22 40 L38 40', 'lo', 1.2),
 ]);
+def('lithium_hydride', () => [                             // rock-salt lattice, the same cubic structure as table salt
+  P('M18 22 L30 14 L42 22 L30 30 Z', 'hi'),
+  P('M18 22 L30 30 L30 48 L18 40 Z', 'bs'),
+  P('M42 22 L30 30 L30 48 L42 40 Z', 'gh'),
+]);
 // A flat prismatic pouch cell, not nicad_battery's cylindrical AA shape —
 // "especially in handheld electronics" is the real distinguishing fact.
 def('lithium_ion_battery', () => [

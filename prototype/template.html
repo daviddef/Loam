@@ -287,6 +287,12 @@ __CATEGORY_CSS__
   }
   aside h2:first-child{margin-top:2px}
   .shelf{display:flex;flex-wrap:wrap;gap:5px}
+  /* aside scrolls (overflow-y:auto above), so on touch a drag-out gesture
+     that starts on a chip loses the race to the browser's own scroll
+     recognizer, which fires pointercancel before shelfDrag ever sees enough
+     movement to register — the drag dies silently. Chips are always meant
+     to be picked up, never scrolled past, so they opt out of that race. */
+  .shelf .chip{touch-action:none}
   /* ── the specimen card ────────────────────────────────────────────────
      Not a pill. A fixed portrait footprint, so a rock and a cake occupy the
      same frame and are told apart by what is *in* it — which is the whole
@@ -3946,6 +3952,7 @@ function resolve(r, chips, x, y) {
   // The moment two things become one should be visible. A single ring at the
   // join, then the new chip pops in — no confetti, nothing to sit through.
   const at = chips.filter(c => c && c.isConnected).map(chipCentre);
+  let violentAt = null;
   if (at.length) {
     const cx = at.reduce((a, p) => a + p[0], 0) / at.length;
     const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
@@ -3965,6 +3972,15 @@ function resolve(r, chips, x, y) {
     // mega rippling block blast that shakes all other elements... pretty
     // weak animation" — found live; the first version undersold it.)
     if (r.violent) {
+      // The output chip normally lands wherever freeSpot() finds room, which
+      // on a crowded bench can be well outside the current view — and since
+      // that triggers ensureVisible()'s pan, the camera would jump away from
+      // the blast the instant it starts. ("the whole screen now moves and i
+      // cant even see the explosion" — found live.) Pin it to the reaction
+      // site instead: same offset spawn() already uses for a normal merge
+      // (below the parents), but forced rather than searched for, so the
+      // camera has no reason to move.
+      violentAt = [cx, cy];
       // World-anchored, same as .shock and .debris below — see the CSS
       // comment on .flash for why a board-anchored version was the real
       // bug behind "the blast is still dominating the bottom left".
@@ -4050,7 +4066,9 @@ function resolve(r, chips, x, y) {
     setTimeout(() => drop.remove(), 1100);
     toast('One water molecule leaves — that is what condensation means');
   }
-  const el = spawn(r.out, null, null, chips);
+  const el = violentAt
+    ? spawn(r.out, violentAt[0], violentAt[1] + cardSize()[1] + 22, chips)
+    : spawn(r.out, null, null, chips);
   links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
   el.classList.add('folded');                         // arrives closed
   refreshFolds();
