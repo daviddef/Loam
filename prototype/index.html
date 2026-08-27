@@ -3264,7 +3264,12 @@ function tidy() {
       if (small.size < 2 || small.size > 8) continue;     // not a small satellite
       const depths = [...small].map(x => depth.get(x));
       if (Math.max(...depths) - Math.min(...depths) < 3) continue;   // not a real multi-generation tail
-      candidates.push({ k, c, n, size: small.size });
+      // Which end of THIS edge sits on the satellite side vs the main side —
+      // kept so the satellite's pack can be seated next to the main side's
+      // pack below, rather than wherever discovery order happens to put it.
+      const satelliteAnchor = small.has(c) ? c : n;
+      const mainAnchor = small.has(c) ? n : c;
+      candidates.push({ k, c, n, size: small.size, satelliteAnchor, mainAnchor });
     }
   }
   // A card can sit on TWO qualifying bridges at once — Cellulose, reached
@@ -3276,12 +3281,14 @@ function tidy() {
   candidates.sort((a, b) => b.size - a.size);
   const cutCount = new Map(chips.map(c => [c, 0]));
   const excludedEdge = new Set();
-  for (const { k, c, n } of candidates) {
+  const attachPoint = new Map();   // satelliteAnchor chip -> mainAnchor chip, for the packing step below
+  for (const { k, c, n, satelliteAnchor, mainAnchor } of candidates) {
     if (cutCount.get(c) + 1 >= allAdj.get(c).size) continue;
     if (cutCount.get(n) + 1 >= allAdj.get(n).size) continue;
     excludedEdge.add(k);
     cutCount.set(c, cutCount.get(c) + 1);
     cutCount.set(n, cutCount.get(n) + 1);
+    attachPoint.set(satelliteAnchor, mainAnchor);
   }
 
   // 1. Separate chains stay separate. A bench is usually several unrelated
@@ -3299,6 +3306,14 @@ function tidy() {
         comp.set(n, id); stack.push(n);
       }
     }
+  }
+  // Satellite component id -> the actual chip pair it should sit beside —
+  // resolved once here so both the packing order and the direct reposition
+  // below it can use plain lookups instead of re-deriving this.
+  const attachToComp = new Map();
+  for (const [satelliteAnchor, mainAnchor] of attachPoint) {
+    if (comp.get(satelliteAnchor) !== undefined && comp.get(mainAnchor) !== undefined)
+      attachToComp.set(comp.get(satelliteAnchor), { mainComp: comp.get(mainAnchor), satelliteAnchor, mainAnchor });
   }
 
   const GAP = 18, ROW_H = 78;
@@ -3424,6 +3439,27 @@ function tidy() {
     packs.push({ chips: mine, w: (max - min) + 1, h: Math.max(...mine.map(c => visDepthOf.get(c))) + 1 });
   }
 
+  // A satellite pack split off above is compact on its own now, but left in
+  // plain discovery order it can still land nowhere near the pack it was
+  // actually cut from — still one clean shape joined to another by a long
+  // line, just two clean shapes instead of one tangled one. Seating it
+  // directly after its own attachment's pack, wherever that ends up, is
+  // what makes the two read as "this hangs off that" rather than two
+  // unrelated things that happen to share an edge. Depth-first so a
+  // satellite-of-a-satellite still nests under its own real parent, not the
+  // far end of the chain.
+  const packOrder = [];
+  const packPlaced = new Set();
+  const placePack = (g) => {
+    if (packPlaced.has(g)) return;
+    packPlaced.add(g);
+    packOrder.push(g);
+    for (const [satG, info] of attachToComp) if (info.mainComp === g) placePack(satG);
+  };
+  for (let g = 0; g < nc; g++) if (!attachToComp.has(g)) placePack(g);
+  for (let g = 0; g < nc; g++) placePack(g);   // safety net: nothing is left stranded
+  const orderedPacks = packOrder.map(g => packs[g]);
+
   // 4. Pack the chains into the shape of the BOARD, instead of one long row.
   //
   //    Laying every chain out side by side made the bench wider and wider while
@@ -3434,15 +3470,15 @@ function tidy() {
   //    justify, which is the same thing a page of text does with words.
   const b = boardBox();
   const aspect = Math.max(0.6, b.width / Math.max(1, b.height));
-  const total = packs.reduce((a, p) => a + p.w + 2, 0);
-  const rowsDeep = Math.max(...packs.map(p => p.h), 1);
+  const total = orderedPacks.reduce((a, p) => a + p.w + 2, 0);
+  const rowsDeep = Math.max(...orderedPacks.map(p => p.h), 1);
   // Target width in slots: the width that makes the finished block about as
   // wide-to-tall as the board is. Never narrower than the widest single chain.
   const target = Math.max(
-    Math.max(...packs.map(p => p.w)),
+    Math.max(...orderedPacks.map(p => p.w)),
     Math.sqrt(total * rowsDeep * (step / ROW_H) * aspect));
   let bandX = 0, bandY = 0, bandH = 0;
-  for (const p of packs) {
+  for (const p of orderedPacks) {
     if (bandX && bandX + p.w > target) { bandX = 0; bandY += bandH + 1; bandH = 0; }
     for (const c of p.chips) pos.set(c, pos.get(c) + bandX);
     p.y = bandY;
@@ -3450,9 +3486,40 @@ function tidy() {
     bandH = Math.max(bandH, p.h);
   }
 
-  const [ox, oy] = toWorld(b.left + 40, b.top + 40);
   const bandOf = new Map();
-  for (const p of packs) for (const c of p.chips) bandOf.set(c, p.y);
+  for (const p of orderedPacks) for (const c of p.chips) bandOf.set(c, p.y);
+
+  // Seating a satellite's PACK next to its attachment's pack (above) still
+  // leaves exactly where each specific chip sits inside its own pack to
+  // that pack's own barycentre passes, which know nothing about the other
+  // side — the two attachment chips themselves can still end up nowhere
+  // near each other even when their packs are adjacent, if one happens to
+  // fall at the near edge of its pack and the other at the far edge of its
+  // own. Sliding the whole satellite pack, as one rigid piece, so its own
+  // attachment chip sits directly beside (not on top of) the real anchor
+  // it was cut from is what actually shortens that one necessary line —
+  // everything else about the satellite's own internal shape, already
+  // correct, is untouched.
+  for (const [satG, { satelliteAnchor, mainAnchor }] of attachToComp) {
+    const satPack = packs[satG];
+    // Above if the satellite is really mainAnchor's own parent (Cellulose
+    // above Grass would read backwards), below otherwise — the same
+    // convention every other row here already follows. The whole pack
+    // shifts by one rigid delta so its own already-correct internal shape
+    // (relative row spacing, column order) carries over unchanged; only
+    // where that shape sits moves.
+    const satIsParent = (parents.get(mainAnchor) ?? []).includes(satelliteAnchor);
+    const wantRow = bandOf.get(mainAnchor) + visDepthOf.get(mainAnchor) + (satIsParent ? -1 : 1);
+    const dBand = wantRow - (bandOf.get(satelliteAnchor) + visDepthOf.get(satelliteAnchor));
+    const dCol = pos.get(mainAnchor) - pos.get(satelliteAnchor);
+    if (!dCol && !dBand) continue;
+    for (const c of satPack.chips) {
+      pos.set(c, pos.get(c) + dCol);
+      bandOf.set(c, bandOf.get(c) + dBand);
+    }
+  }
+
+  const [ox, oy] = toWorld(b.left + 40, b.top + 40);
   for (const c of chips) {
     c.style.left = (ox + pos.get(c) * step) + 'px';
     c.style.top  = (oy + (bandOf.get(c) + visDepthOf.get(c)) * ROW_H) + 'px';
