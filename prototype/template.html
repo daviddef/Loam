@@ -521,9 +521,42 @@ __CATEGORY_CSS__
     35%{box-shadow:var(--raise),0 0 0 3px color-mix(in srgb,var(--discovery) 55%,transparent)}
   }
   .chip.board.justmade{animation:freshGlow .9s ease-out}
+  /* An ordinary merge gets one calm ring. A pair genuinely documented as
+     violently reactive — sourced the same way every other caution in this
+     game is, never invented for effect — gets its own, rougher event: a
+     harder shockwave, the whole board flinching once, and every other chip
+     nearby kicked a little off its spot before settling back. Nothing here
+     moves a chip's REAL saved position — it's a transform on top, the same
+     trick .justmade already uses, so tidy()'s layout is never fought. */
+  @keyframes shockwave{
+    from{transform:translate(-50%,-50%) scale(.2);opacity:.9;border-width:5px}
+    to{transform:translate(-50%,-50%) scale(4.2);opacity:0;border-width:1px}
+  }
+  .shock{
+    position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;z-index:5;
+    border:5px solid var(--brick);animation:shockwave .68s cubic-bezier(.1,.8,.2,1) forwards;
+  }
+  @keyframes boardFlinch{
+    0%,100%{transform:translate(0,0) rotate(0)}
+    18%{transform:translate(-7px,4px) rotate(-.4deg)}
+    36%{transform:translate(6px,-5px) rotate(.5deg)}
+    54%{transform:translate(-5px,-3px) rotate(-.3deg)}
+    72%{transform:translate(4px,3px) rotate(.2deg)}
+    88%{transform:translate(-2px,1px) rotate(0)}
+  }
+  #board.flinch #world{animation:boardFlinch .5s ease-out}
+  @keyframes knocked{
+    0%{transform:translate(var(--kx0,0),var(--ky0,0)) rotate(var(--kr0,0))}
+    30%{transform:translate(var(--kx,0),var(--ky,0)) rotate(var(--kr,0))}
+    100%{transform:translate(0,0) rotate(0)}
+  }
+  .chip.board.knocked{animation:knocked .55s cubic-bezier(.2,.6,.3,1)}
   @media (prefers-reduced-motion:reduce){
     .burst{display:none}
     .chip.board.justmade{animation:none}
+    .shock{display:none}
+    #board.flinch #world{animation:none}
+    .chip.board.knocked{animation:none}
   }
   @keyframes expel{
     0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
@@ -1392,8 +1425,12 @@ __CATEGORY_CSS__
   .bedof{font:700 12px var(--face-name);color:var(--ink-soft);margin-bottom:4px}
   ul.tree.bed .brow{
     display:flex;align-items:center;gap:5px;padding:1px 5px;margin:0;
-    font-size:11.5px;color:var(--ink-soft);background:none;
+    font-size:11.5px;color:var(--ink-soft);background:none;cursor:pointer;
   }
+  ul.tree.bed .brow:hover{color:var(--ink)}
+  ul.tree.bed .brow:hover .sym,
+  ul.tree.bed .brow:hover .hex,
+  ul.tree.bed .brow:hover .particle{color:var(--orange)}
   .shelfbar{display:flex;gap:5px;align-items:center;margin:0 2px 8px}
   .search.sm{padding:7px 10px;font-size:12.5px;border-radius:9px}
   .shelfbar button{
@@ -1439,7 +1476,10 @@ __CATEGORY_CSS__
   .bedsum .syms i{
     font-style:normal;font:800 11px var(--face-name);color:var(--ink);
     background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:3px 7px;
+    cursor:pointer;
   }
+  .bedsum .syms i:hover{border-color:var(--orange);color:var(--orange)}
+  .bed-eq{margin-bottom:6px}
 
   @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
@@ -2305,6 +2345,7 @@ const sfx = {
   nope()     { note(150, 0, .1, .045, 'sine'); buzz(9); },
   pick()     { note(660, 0, .045, .022); },
   done()     { note(440, 0, .1, .05); note(660, .05, .22, .045); buzz(10); },
+  violent()  { note(80, 0, .22, .09, 'sawtooth'); note(64, .05, .3, .07, 'square'); buzz([20, 30, 60]); },
 };
 const board = document.getElementById('board');
 const toastEl = document.getElementById('toast');
@@ -3793,6 +3834,39 @@ function resolve(r, chips, x, y) {
     ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
     world.appendChild(ring);
     setTimeout(() => ring.remove(), 620);
+    // A pair genuinely documented as dangerously reactive — sourced the same
+    // way every caution in this game is, `r.violent` only ever set from a
+    // source that says "violent"/"explosive" outright, never inferred from
+    // the elements' families — gets its own rougher event instead of the
+    // calm ring every other merge gets: a shockwave, the board flinching
+    // once, and whatever else is nearby kicked off its spot before settling
+    // back. ("i believe the most reactive 2 together is caesium and
+    // fluorine? does absolutely nothing" — found live; this is that request.)
+    if (r.violent) {
+      const shock = document.createElement('div');
+      shock.className = 'shock';
+      shock.style.left = cx + 'px'; shock.style.top = cy + 'px';
+      world.appendChild(shock);
+      setTimeout(() => shock.remove(), 700);
+      board.classList.add('flinch');
+      setTimeout(() => board.classList.remove('flinch'), 520);
+      sfx.violent();
+      const KNOCK_RADIUS = 260, KNOCK_MAX = 26;
+      for (const c of world.querySelectorAll('.chip.board')) {
+        if (chips.includes(c)) continue;
+        const [ncx, ncy] = chipCentre(c);
+        const dx = ncx - cx, dy = ncy - cy;
+        const dist = Math.hypot(dx, dy) || 1;
+        if (dist > KNOCK_RADIUS) continue;
+        const f = (1 - dist / KNOCK_RADIUS) * KNOCK_MAX;
+        c.style.setProperty('--kx', ((dx / dist) * f).toFixed(1) + 'px');
+        c.style.setProperty('--ky', ((dy / dist) * f).toFixed(1) + 'px');
+        c.style.setProperty('--kr', ((Math.random() - 0.5) * 10).toFixed(1) + 'deg');
+        c.classList.remove('knocked'); void c.offsetWidth; c.classList.add('knocked');
+        setTimeout(() => c.classList.remove('knocked'), 560);
+      }
+      toast('A dangerously reactive pair, for real — ' + nameOf(byId[r.out]) + ' didn\'t form quietly');
+    }
   }
   // A condensation reaction physically expels a water molecule. Showing it
   // leave is both accurate and the clearest way to say why a residue in a
@@ -4345,14 +4419,14 @@ function atomTile(a, small) {
 }
 function bedTreeHTML(id) {
   const a = atomById[id];
-  if (a) return `<li><div class="brow">${atomTile(a)}<span>${a.name}</span>` +
+  if (a) return `<li><div class="brow" data-atom="${id}">${atomTile(a)}<span>${a.name}</span>` +
                 `<i class="cat">${a.category}</i></div></li>`;
   const c = compById[id];
   if (!c) return '';
   const node = c.kind === 'particle'
     ? `<span class="particle">✦ ${c.name}</span>`
     : `<span class="hex">${c.name}</span>`;
-  return `<li><div class="brow">${node}</div>` +
+  return `<li><div class="brow" data-atom="${id}">${node}</div>` +
          (c.of.length ? `<ul>${c.of.map(bedTreeHTML).join('')}</ul>` : '') + `</li>`;
 }
 
@@ -4561,18 +4635,36 @@ function showAtom(id) {
      <a class="src" href="${(a ?? c).src}" target="_blank" rel="noopener">Check this</a>`;
   openSheet((a ?? c).name);
 }
+// A recipe row reads "what you had + what you had → what you got" everywhere
+// else in this sheet; the composition story was the one place that started
+// from the far end instead ("Sun is made of: Hydrogen Fusion, which is..."),
+// which is backwards from how every other equation on this card reads. This
+// puts the real leaf atoms first, in the same "A + B → C" grammar as the
+// Makes list right below it — "Hydrogen + Helium → Sun" — with the fusion
+// step and the rest of the story still underneath for whoever wants it.
+function bedEquationHTML(id, atomIds) {
+  const atomSpan = a => `<span class="g" data-atom="${a}">${atomTile(atomById[a])}${atomById[a].name}</span>`;
+  return `<div class="ent bed-eq">${[...atomIds].map(atomSpan).join('<em>+</em>')}` +
+    `<span class="arw">→</span><span class="g out" data-entry="${id}">${glyph(id, 19)} ${byId[id].name}</span></div>`;
+}
 function bedrockHTML(tally, head = 'and below that') {
   const leaves = [...tally.keys()].filter(id => BED.composition[id]);
   if (!leaves.length) return '';
   const atoms = new Set();
-  for (const id of leaves) for (const p of BED.composition[id]) for (const a of atomsUnder(p)) atoms.add(a);
-  const syms = [...atoms].map(a => atomById[a].symbol);
+  const bySyms = new Map();                    // symbol -> atom id, for the clickable summary chips
+  for (const id of leaves) for (const p of BED.composition[id]) for (const a of atomsUnder(p)) {
+    atoms.add(a); bySyms.set(atomById[a].symbol, a);
+  }
   return `<div class="bedhead">${head}</div>` +
-    leaves.map(id =>
-      `<div class="bedgroup"><div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
-      `<ul class="tree bed">${BED.composition[id].map(bedTreeHTML).join('')}</ul></div>`).join('') +
-    `<div class="bedsum">${atoms.size} chemical elements${syms.includes('He') ? ' and starlight' : ''}` +
-    `<div class="syms">${syms.map(x => `<i>${x}</i>`).join('')}</div></div>`;
+    leaves.map(id => {
+      const own = new Set();
+      for (const p of BED.composition[id]) for (const a of atomsUnder(p)) own.add(a);
+      return `<div class="bedgroup">${bedEquationHTML(id, own)}` +
+        `<div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
+        `<ul class="tree bed">${BED.composition[id].map(bedTreeHTML).join('')}</ul></div>`;
+    }).join('') +
+    `<div class="bedsum">${atoms.size} chemical elements${bySyms.has('He') ? ' and starlight' : ''}` +
+    `<div class="syms">${[...bySyms].map(([x, a]) => `<i data-atom="${a}">${x}</i>`).join('')}</div></div>`;
 }
 // ---- the index entry: what makes this, and what this makes ----
 // Little Alchemy's own hints site draws about as much traffic as the game.
