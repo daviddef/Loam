@@ -3467,6 +3467,25 @@ ship.ui_ladder = { c: 'craft', s: [
 ship.ui_eye = { c: 'craft', s: [
   S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),
 ] };
+ship.ui_shutter = { c: 'craft', s: [
+  // A single still capture, not the live scan — a shutter ring, not a
+  // camera body, so it doesn't just repeat ui_scan's silhouette.
+  ['s', 'M30 8 A22 22 0 1 1 29.9 8', 'ik', 4],
+  C(30, 30, 9, 'ik'),
+] };
+ship.ui_gallery = { c: 'craft', s: [
+  // Two overlapping photo frames — picking from what already exists,
+  // rather than pointing a lens at something new.
+  S('M12 14 L40 14 L40 42 L12 42 Z', 'ik', 3),
+  S('M20 22 L48 22 L48 50 L20 50 Z', 'ik', 3),
+  C(28, 32, 3, 'ik'),
+] };
+ship.ui_digits = { c: 'craft', s: [
+  // A barcode's own bars, varying width — typing the number under it is
+  // the one path here that needs no camera at all.
+  ...[[10, 5], [16, 3], [21, 6], [28, 3], [33, 5], [38, 3], [43, 6], [48, 4]].map(([x, w]) =>
+    P(`M${x} 12 L${x + w} 12 L${x + w} 40 L${x} 40 Z`, 'ik')),
+] };
 ship.ui_table = { c: 'craft', s: [
   // A grid of element tiles, not a gear — the periodic-table toggle used to
   // share a literal gear glyph with the Settings button, which is exactly

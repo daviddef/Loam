@@ -77,6 +77,9 @@ for (const [token, value] of [
   ['__UI_SCAN__', uiGlyph('ui_scan')],
   ['__UI_CIRCLE__', uiGlyph('ui_circle')],
   ['__UI_TABLE__', uiGlyph('ui_table')],
+  ['__UI_SHUTTER__', uiGlyph('ui_shutter')],
+  ['__UI_GALLERY__', uiGlyph('ui_gallery')],
+  ['__UI_DIGITS__', uiGlyph('ui_digits')],
   ['__UI_AMINO__', uiGlyph('ui_amino')],
   ['__UI_LADDER__', uiGlyph('ui_ladder')],
   ['__UI_EYE__', uiGlyph('ui_eye')],
@@ -85,7 +88,7 @@ for (const [token, value] of [
   ['__ART_RENDER__', artRender],
 ]) {
   if (!html.includes(token)) { console.error(`template is missing ${token}`); process.exit(1); }
-  html = html.replace(token, value);
+  html = html.replaceAll(token, value);
 }
 
 // Parse the page script before shipping it. A syntax error here kills the whole

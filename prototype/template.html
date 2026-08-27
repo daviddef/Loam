@@ -212,10 +212,15 @@ __CATEGORY_CSS__
   }
   #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
         transition:bottom .18s}
+  /* Same cluster, same reasoning, mirrored to the left — scanning is
+     something you do TO the bench, same standing as zoom/tidy/the table. */
+  #scanTools{position:absolute;left:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
+        transition:bottom .18s}
   /* The dock is opaque and sits on the bottom of the board, so the zoom
      cluster has to climb on top of it rather than hide behind it. */
   body.pt-on #zoom{bottom:calc(var(--pth,370px) + 12px)}
-  #zoom button{
+  body.pt-on #scanTools{bottom:calc(var(--pth,370px) + 12px)}
+  #zoom button, #scanTools button{
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
   }
@@ -1524,6 +1529,12 @@ __CATEGORY_CSS__
   <div id="board">
     <div id="world">
       <svg id="links"></svg>
+    </div>
+    <div id="scanTools">
+      <button data-scan="camera" title="Scan with the camera"><span class="gl" style="--g:15px">__UI_SCAN__</span></button>
+      <button data-scan="snap" title="Take a photo"><span class="gl" style="--g:15px">__UI_SHUTTER__</span></button>
+      <button data-scan="photo" title="Choose photos"><span class="gl" style="--g:15px">__UI_GALLERY__</span></button>
+      <button data-scan="type" title="Type the barcode number"><span class="gl" style="--g:15px">__UI_DIGITS__</span></button>
     </div>
     <div id="zoom">
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
@@ -5408,7 +5419,7 @@ async function ocrImage(source) {
   }
 }
 
-function showBarcodeScan(onIngredients) {
+function showBarcodeScan(onIngredients, autoAction) {
   document.getElementById('sheetBody').innerHTML = `
     <p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
        camera where this device supports it. Scan as many products as you like before reading them
@@ -5613,6 +5624,12 @@ function showBarcodeScan(onIngredients) {
     };
     tick();
   };
+  // The floating canvas toolbar is a direct shortcut into whichever control
+  // this same sheet already has — one auto-click, nothing duplicated.
+  if (autoAction === 'camera') document.getElementById('bcCamera').click();
+  else if (autoAction === 'snap') document.getElementById('bcSnap').click();
+  else if (autoAction === 'photo') document.getElementById('bcPhoto').click();
+  else if (autoAction === 'type') document.getElementById('bcIn').focus();
 }
 
 function labelResultHTML(parsed, forHub) {
@@ -5837,6 +5854,10 @@ document.getElementById('nudge').addEventListener('click', () => {
   toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
 document.getElementById('scanBtn').addEventListener('click', () => showBarcodeScan(showLabelReader));
+document.getElementById('scanTools').addEventListener('click', ev => {
+  const b = ev.target.closest('[data-scan]');
+  if (b) showBarcodeScan(showLabelReader, b.dataset.scan);
+});
 function wipeProgress() {
   if (!confirm('Reset your progress? Everything you have found goes away, and you start over with just Stone, Water, Sun, and Seed. There is no undo.')) return;
   // Reloading fires pagehide, which autosaves — and that autosave was racing
