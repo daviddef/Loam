@@ -159,7 +159,7 @@ const CPK = {
   H: '#FFFFFF', C: '#909090', N: '#3050F8', O: '#FF0D0D', S: '#FFFF30',
   P: '#FF8000', Ca: '#3DFF00', Fe: '#E06633', Na: '#AB5CF2', Cl: '#1FF01F',
   K: '#8F40D4', Mg: '#8AFF00', He: '#D9FFFF', Ne: '#B3E3F5',
-  F: '#90E050', Xe: '#429EB0',
+  F: '#90E050', Xe: '#429EB0', Kr: '#5CB8D1',
 };
 
 /** A ball-and-stick molecule from a tiny spec: centre atom + ligands. */
@@ -435,6 +435,11 @@ def('spark',  () => [...[0, 60, 120, 180, 240, 300].map(a =>
 def('fire',   () => [flame('lo'), flame('bs', .72, 4), flame('hi', .4, 9)]);
 def('charcoal', () => [facet('lo'), facet('ik', .55),
                        ...granules('bs', 4, 33, [20, 26, 40, 36])]);
+def('phosphorus_sesquisulfide', () => [                   // red phosphorus and sulfur, melted together above 450 K
+  P('M25 40 L25 54 L35 54 L35 40 Z', 'lo'),                // the stick
+  E(30, 28, 12, 13, 'bs'),                                 // the bulbous head
+  C(25, 22, 2, 'hi'), C(35, 24, 1.6, 'hi'), C(30, 18, 1.4, 'hi'),
+]);
 
 /* plant ────────────────────────────────────────────────────────────────── */
 def('sprout', () => [stalk('bs', 30, 50, 30), leaf('hi', 24, 26, .6, -35), leaf('bs', 36, 26, .6, 35)]);
@@ -2388,6 +2393,27 @@ def('copper_sulfide', () => [facet('ik'), facet('bs', .5), ...granules('lo', 4, 
 def('zinc_sulfide',   () => [facet('gh'), ...granules('hi', 8, 5, [18, 24, 42, 40])]);
 def('lead_sulfide',   () => [P('M12 34 L26 26 L40 34 L26 42 Z', 'lo'), P('M12 34 L26 42 L26 54 L12 46 Z', 'ik'), P('M40 34 L26 42 L26 54 L40 46 Z', 'hi'),
                              P('M32 20 L42 14 L52 20 L42 26 Z', 'lo'), P('M32 20 L42 26 L42 38 L32 32 Z', 'ik')]);  // galena, stepped
+
+/* four more sulfides, direct reactions every one */
+def('aluminum_sulfide',  () => [                           // ignite the two together and the melt runs straight through steel
+  P('M10 18 L50 18 L50 42 L10 42 Z', 'bs'),
+  C(34, 30, 7, 'ground'),
+  flame('hi', .4, 26),
+]);
+def('magnesium_sulfide', () => [                           // sulfur, or even just hydrogen sulfide gas, meets the ribbon
+  S('M16 46 Q24 34 22 24', 'lo', 4),
+  ...granules('bs', 9, 131, [28, 20, 50, 46]),
+]);
+def('sodium_sulfide',    () => [                           // sodium and sulfur combine, but the tonnage all pulps wood into paper
+  P('M20 20 L48 20 L48 52 L20 52 Z', 'lo'),
+  P('M12 14 L40 14 L40 46 L12 46 Z', 'hi'),
+  S('M16 22 L36 22 M16 28 L36 28 M16 34 L36 34', 'gh', 1.2),
+]);
+def('potassium_sulfide', () => [                           // kept in check by dissolving the reaction in liquid ammonia
+  P('M22 10 L38 10 L38 40 Q38 48 30 48 Q22 48 22 40 Z', 'gh'),
+  E(30, 34, 7, 4, 'bs'),
+  S('M12 44 Q30 38 48 44', 'lo', 2.4), S('M12 50 Q30 44 48 50', 'lo', 1.8),
+]);
 def('tarnish',      () => [E(30, 36, 21, 9, 'gh'), E(30, 33, 18, 7, 'ik'), E(24, 31, 6, 2.4, 'lo')]);  // the film on a spoon
 def('potassium_chloride', () => [...[[20, 28], [38, 24], [30, 42]].map(([x, y]) =>
                                    [P(`M${x - 8} ${y} L${x} ${y - 5} L${x + 8} ${y} L${x} ${y + 5} Z`, 'gh'),
@@ -2490,8 +2516,130 @@ def('strontium_chloride',() => [                          // it plugs the tubule
     [S(`M${x} ${y} L${x} ${y - 3}`, 'gh', 1.2), C(x, y - 3, 1, 'bs')]).flat(),
 ]);
 
+/* a second batch of halides — twelve chlorides, four fluorides, four
+ * bromides and two iodides, none sharing a habit with the first round or
+ * with each other: a strip that changes colour, a prism that splits light,
+ * a dropper bottle, a lattice stretched or swapped for a wider grid. */
+def('aluminum_chloride', () => [                           // foil burning in chlorine gas, exothermic at industrial scale
+  P('M12 20 L38 16 L40 24 L14 28 Z', 'hi'),
+  P('M14 28 L40 24 L42 32 L16 36 Z', 'bs'),
+  P('M16 36 L42 32 L44 40 L18 44 Z', 'hi'),
+  flame('bs', .35, -10),
+]);
+def('copper_chloride',   () => [                           // copper at red heat, straight into chlorine — a molten result
+  P('M20 16 Q30 10 40 16 Q46 26 40 38 Q30 46 20 38 Q14 26 20 16 Z', 'bs'),
+  S('M24 20 L20 14 M36 20 L40 14 M30 10 L30 6', 'lo', 1.4),
+  C(26, 30, 2.4, 'hi'),
+]);
+def('magnesium_chloride',() => [                           // the plainest alkaline-earth-meets-halogen salt there is
+  P('M30 14 L42 21 L42 39 L30 46 L18 39 L18 21 Z', 'bs'),
+  S('M30 14 L30 46 M18 21 L42 39 M42 21 L18 39', 'gh', 1),
+]);
+def('calcium_chloride',  () => [                           // deliquescent — it pulls the water straight out of the air
+  ...[[20, 34], [38, 30], [28, 44]].map(([x, y], i) =>
+    P(`M${x - 7} ${y} L${x} ${y - 8} L${x + 7} ${y} L${x} ${y + 6} Z`, i % 2 ? 'hi' : 'bs')),
+  ...[[16, 20], [44, 18]].map(([x, y]) => S(`M${x} ${y} L${x} ${y + 6}`, 'gh', 1.2)),
+]);
+def('tin_chloride',      () => [                           // chlorine gas over tin at 115°C, a clean route to a catalyst
+  P('M24 12 L36 12 L38 26 L46 46 Q46 52 30 52 Q14 52 14 46 L22 26 Z', 'gh'),
+  E(30, 44, 14, 6, 'bs'),
+  S('M20 18 Q16 10 22 4 M40 18 Q44 10 38 4', 'hi', 1.6),
+]);
+def('lead_chloride',     () => [                           // chlorine gas, straight onto lead metal — nothing more
+  ...[-80, -35, 10, 55].map(a =>
+    S(`M30 48 L${n(30 + 24 * Math.cos(a * Math.PI / 180))} ${n(48 + 24 * Math.sin(a * Math.PI / 180))}`, 'lo', 2.2)),
+  C(30, 48, 3, 'bs'),
+]);
+def('gold_chloride',     () => [                           // Robert Boyle, 1666 — metallic gold, straight into chlorine
+  P('M18 24 L26 14 L36 16 L42 28 L34 40 L20 38 Z', 'bs'),
+  C(24, 22, 2, 'hi'), C(34, 30, 1.6, 'hi'),
+  S('M14 44 L20 38 M40 44 L34 40', 'gh', 1.2),
+]);
+def('titanium_chloride', () => [                           // cold titanium ignores chlorine; at 550°C it burns violently
+  P('M22 14 L38 14 L38 24 L46 40 Q48 50 30 50 Q12 50 14 40 L22 24 Z', 'lo'),
+  E(30, 42, 15, 6, 'bs'),
+  S('M18 20 Q10 14 14 6 M42 20 Q50 14 46 6 M30 12 Q30 4 26 0', 'hi', 1.4),
+]);
+def('cobalt_chloride',   () => [                           // blue when dry, pink the moment it drinks in water
+  P('M14 18 L30 18 L30 46 L14 46 Z', 'bs'),
+  P('M30 18 L46 18 L46 46 L30 46 Z', 'hi'),
+  S('M14 18 L46 18 M14 46 L46 46', 'ik', 1.4),
+]);
+def('chromium_chloride', () => [                           // chromium chlorinated directly — the same skin-growing metal
+  P('M30 12 L44 24 L38 44 L22 44 L16 24 Z', 'bs'),
+  S('M30 12 L44 24 L38 44 L22 44 L16 24 Z', 'gh', 1.2),
+  C(30, 26, 2.2, 'hi'),
+]);
+def('rubidium_chloride', () => [                           // dissolves into cells readily enough to carry foreign DNA in
+  ring('gh', 30, 32, 16, 2.2),
+  S('M14 20 Q22 26 18 34 Q14 42 22 46', 'bs', 2.4),
+  C(22, 46, 2.2, 'hi'),
+]);
+def('europium_chloride', () => [                           // the same europium-plus-halogen reaction, run on chlorine
+  ...[[22, 26], [38, 22], [30, 40]].map(([x, y], i) =>
+    P(`M${x - 6} ${y + 5} L${x} ${y - 6} L${x + 6} ${y + 5} Z`, i % 2 ? 'hi' : 'bs')),
+]);
+def('copper_fluoride',   () => [                           // copper and fluorine at 500°C — only half of it ever converts
+  P('M14 22 L30 22 L30 42 L14 42 Z', 'lo'),
+  P('M30 16 L46 24 L42 38 L30 42 Z', 'hi'),
+  S('M30 22 L30 42', 'gh', 1.4),
+]);
+def('rubidium_fluoride', () => [                           // table salt's own lattice, one row down the periodic table
+  P('M10 16 L50 16 L50 48 L10 48 Z', 'gh'),
+  ...[22, 38].map(x => S(`M${x} 16 L${x} 48`, 'lo', 1.2)),
+  ...[24, 32, 40].map(y => S(`M10 ${y} L50 ${y}`, 'lo', 1.2)),
+]);
+def('caesium_fluoride',  () => [                           // the most reactive metal meets the most reactive nonmetal
+  P('M16 20 L44 20 L44 48 L16 48 Z', 'gh'),
+  P('M16 20 L44 20 L44 26 L16 26 Z', 'bs'),
+  C(30, 36, 6, 'hi'), S('M26 36 L34 36 M30 32 L30 40', 'ik', 1.4),
+]);
+def('europium_fluoride', () => [                           // europium reacts with every halogen — fluorine gives this one
+  P('M30 8 L40 30 L30 52 L20 30 Z', 'hi'), C(30, 30, 2.4, 'gh'),
+]);
+def('lithium_bromide',   () => [                           // a strong solution of it dries the air inside a cooling system
+  ...coilOf('bs', 3, 14, 22, 6),
+  ...[[18, 40], [30, 44], [42, 40]].map(([x, y]) => C(x, y, 1.8, 'hi')),
+]);
+def('potassium_bromide', () => [                           // the first medicine that worked against epilepsy
+  C(30, 30, 16, 'gh'), S('M16 30 L44 30', 'ik', 1.6),
+]);
+def('rubidium_bromide',  () => [                           // table salt's lattice, stretched to fit two heavier atoms
+  P('M8 24 L52 24 L52 38 L8 38 Z', 'gh'),
+  ...[20, 30, 40].map(x => S(`M${x} 24 L${x} 38`, 'lo', 1.2)),
+]);
+def('caesium_bromide',   () => [                           // grown into crystal optics that split light in a spectrophotometer
+  P('M20 44 L30 12 L40 44 Z', 'gh'),
+  S('M20 44 L10 50', 'lo', 1.6), S('M26 44 L20 54', 'bs', 1.6), S('M34 44 L40 54', 'hi', 1.6), S('M40 44 L50 50', 'gh', 1.6),
+  S('M30 12 L30 4', 'ik', 1.6),
+]);
+def('rubidium_iodide',   () => [                           // bottled as eye drops, eight milligrams in every millilitre
+  E(30, 14, 8, 6, 'gh'), P('M26 20 L34 20 L32 46 L28 46 Z', 'bs'), C(30, 48, 2.6, 'hi'),
+]);
+def('caesium_iodide',    () => [                           // the phosphor screen that turns radiation into a picture
+  P('M10 18 L50 18 L50 42 L10 42 Z', 'ik'),
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+    S(`M30 30 L${n(30 + 9 * Math.cos(a * Math.PI / 180))} ${n(30 + 9 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.2)),
+]);
+
 /* the oxides, peroxides and one very stubborn noble gas */
 def('xenon_tetrafluoride', () => ballStick('Xe', [['F', 0], ['F', 90], ['F', 180], ['F', 270]]));  // 1962: forced into a bond
+def('carbon_tetrafluoride',  () => ballStick('C', [['F', 45], ['F', 135], ['F', 225], ['F', 315]]));   // tetrahedral — even graphite burns this way
+def('nitrogen_trifluoride',  () => ballStick('N', [['F', 100], ['F', 220], ['F', 340]]));               // nitrogen barely reacts; a spark forces this
+def('chlorine_trifluoride',  () => ballStick('Cl', [['F', 30], ['F', 210], ['F', 120]]));               // T-shaped, and it will set sand on fire
+def('phosphorus_trichloride',() => ballStick('P', [['Cl', 140, .85], ['Cl', 260, .85], ['Cl', 20, .85]]));  // phosphorus burning in chlorine
+def('sulfur_hexafluoride',   () => ballStick('S', [['F', 0], ['F', 60], ['F', 120], ['F', 180], ['F', 240], ['F', 300]]));  // octahedral, unchanged since 1901
+def('phosphorus_pentafluoride', () => ballStick('P', [['F', 18], ['F', 90], ['F', 162], ['F', 234], ['F', 306]]));  // five-coordinate phosphorus
+def('krypton_difluoride',    () => ballStick('Kr', [['F', 20, 1.3], ['F', 200, 1.3]]));                 // krypton bonds to nothing else, and only when forced
+def('carbon_disulfide',      () => [                        // S=C=S, made by heating carbon and sulfur for a century
+  ...double([12, 30], [48, 30], 'gh'),
+  S('M12 30 L48 30', 'ik', 2.6),
+  C(12, 30, 8.5, CPK.S), C(48, 30, 8.5, CPK.S), C(30, 30, 7, CPK.C),
+]);
+def('disulfur_dichloride',   () => [                        // chlorine into molten sulfur — golden liquid at room temperature
+  S('M10 42 L23 27 L37 27 L50 12', 'ik', 2.4),
+  C(10, 42, 6, CPK.Cl), C(23, 27, 7, CPK.S), C(37, 27, 7, CPK.S), C(50, 12, 6, CPK.Cl),
+]);
 def('lithium_oxide',    () => [                           // a flux that changes the colours around it
   round('gh', 40, 20, 9), ...granules('bs', 5, 19, [24, 34, 36, 42]),
   E(20, 30, 5, 3.4, 'hi'), E(40, 26, 5, 3.4, 'lo'),        // copper's blue, cobalt's pink
@@ -2542,6 +2690,23 @@ def('red_phosphor',     () => [                            // europium is the on
 def('signal_paint',     () => [                            // a gentler glow than radium's ever was
   P('M16 12 L44 12 L44 48 L16 48 Z', 'ik'), C(30, 20, 6, 'bs'), C(30, 34, 6, 'gh'), C(30, 48, 6, 'bs'),
   ...[[10, 20], [10, 34]].map(([x, y]) => S(`M${x} ${y} L${x + 8} ${y}`, 'lo', 1.2)),
+]);
+
+/* four lanthanide oxides — the tarnish IS the fact, so the amount of it is
+ * what tells them apart: none, a corner, or the whole surface gone black. */
+def('lanthanum_oxide',  () => [                            // it tarnishes almost as fast as you can watch, turning black
+  C(30, 30, 16, 'ik'), cutFace('hi', 30, 16, 16),
+]);
+def('cerium_oxide',     () => [                            // Ce + O2 → CeO2 — then it scrubs an exhaust or polishes glass flat
+  ...[[22, 22], [38, 22], [30, 34], [22, 46], [38, 46]].map(([x, y]) => hex('bs', x, y, 7, 1.6)),
+]);
+def('neodymium_oxide',  () => [                            // it flakes as it burns, always exposing fresh metal underneath
+  E(30, 32, 18, 15, 'lo'),
+  ...[[20, 24], [40, 30], [26, 42]].map(([x, y]) => E(x, y, 6, 3.4, 'ground')),
+  C(34, 20, 2, 'bs'),
+]);
+def('gadolinium_oxide',  () => [                           // gadolinium shrugs off dry air — only damp air tarnishes it
+  E(30, 30, 18, 14, 'hi'), E(40, 36, 6, 4, 'lo'),
 ]);
 
 /* the alloys — each drawn as the object it actually becomes */
@@ -2627,6 +2792,25 @@ def('neodymium_magnet',  () => [                           // the strongest perm
 ]);
 def('samarium_cobalt_magnet', () => [                      // weaker than neodymium but happy past 300°C
   ring('bs', 30, 32, 15, 7), S('M20 16 Q24 10 20 4 M30 16 Q34 10 30 4 M40 16 Q44 10 40 4', 'hi', 1.6),
+]);
+
+/* four more alloys, drawn as what they become */
+def('aluminum_copper_alloy', () => [                       // aluminium and a little copper — an aircraft frame's main alloy
+  P('M10 26 L50 20 L50 38 L10 44 Z', 'bs'),
+  ...[16, 26, 36, 46].map(x => C(x, n(23 - (x - 16) * 0.15), 2, 'hi')),
+]);
+def('magnalium',        () => [                            // light enough for an engine, or loaded up for a flare
+  P('M20 24 L40 24 L40 44 L20 44 Z', 'bs'),
+  ...[0, 60, 120, 180, 240, 300].map(a =>
+    S(`M30 20 L${n(30 + 16 * Math.cos((a - 90) * Math.PI / 180))} ${n(20 + 16 * Math.sin((a - 90) * Math.PI / 180))}`, 'hi', 1.8)),
+]);
+def('nak_alloy',        () => [                            // stays liquid at room temperature — reactor coolant since the 1960s
+  ...coilOf('hi', 4, 12, 34, 6),
+  C(34, 30, 6, 'bs'), C(30, 27, 1.8, 'gh'),
+]);
+def('tin_silver_solder', () => [                           // tin and silver's eutectic — the real alloy behind lead-free solder
+  P('M14 40 L46 40 L46 46 L14 46 Z', 'gh'),
+  E(30, 36, 9, 7, 'bs'), S('M22 30 L22 40 M38 30 L38 40', 'ik', 1.6),
 ]);
 
 /* the fire-lit and craft-adjacent three */

@@ -523,37 +523,58 @@ __CATEGORY_CSS__
   .chip.board.justmade{animation:freshGlow .9s ease-out}
   /* An ordinary merge gets one calm ring. A pair genuinely documented as
      violently reactive — sourced the same way every other caution in this
-     game is, never invented for effect — gets its own, rougher event: a
-     harder shockwave, the whole board flinching once, and every other chip
-     nearby kicked a little off its spot before settling back. Nothing here
-     moves a chip's REAL saved position — it's a transform on top, the same
-     trick .justmade already uses, so tidy()'s layout is never fought. */
+     game is, never invented for effect — gets the whole canvas reacting:
+     a flash across the glass, three shockwave rings punching out in
+     sequence, the board shaking hard enough to read as an impact, and
+     every single chip on the bench thrown off its spot, not just the
+     ones nearby. Nothing here moves a chip's REAL saved position — it's
+     all a transform on top, the same trick .justmade already uses, so
+     tidy()'s layout is never fought, and it all settles back exactly
+     where it was. ("the entire background canvas to turn into a mega
+     rippling block blast" — found live; the first version was too shy.) */
+  @keyframes screenFlash{
+    0%{opacity:0}
+    12%{opacity:.55}
+    100%{opacity:0}
+  }
+  .flash{
+    position:absolute;inset:0;pointer-events:none;z-index:7;
+    background:radial-gradient(circle 900px at var(--fx,50%) var(--fy,50%),
+      color-mix(in srgb,var(--brick) 75%,transparent) 0%,
+      color-mix(in srgb,var(--brick) 25%,transparent) 30%,
+      transparent 62%);
+    animation:screenFlash .9s ease-out forwards;
+  }
   @keyframes shockwave{
-    from{transform:translate(-50%,-50%) scale(.2);opacity:.9;border-width:5px}
-    to{transform:translate(-50%,-50%) scale(4.2);opacity:0;border-width:1px}
+    from{transform:translate(-50%,-50%) scale(.2);opacity:.95;border-width:6px}
+    to{transform:translate(-50%,-50%) scale(7);opacity:0;border-width:1px}
   }
   .shock{
-    position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;z-index:5;
-    border:5px solid var(--brick);animation:shockwave .68s cubic-bezier(.1,.8,.2,1) forwards;
+    position:absolute;width:110px;height:110px;border-radius:99px;pointer-events:none;z-index:6;
+    border:6px solid var(--brick);animation:shockwave 1.05s cubic-bezier(.1,.8,.2,1) forwards;
   }
   @keyframes boardFlinch{
     0%,100%{transform:translate(0,0) rotate(0)}
-    18%{transform:translate(-7px,4px) rotate(-.4deg)}
-    36%{transform:translate(6px,-5px) rotate(.5deg)}
-    54%{transform:translate(-5px,-3px) rotate(-.3deg)}
-    72%{transform:translate(4px,3px) rotate(.2deg)}
-    88%{transform:translate(-2px,1px) rotate(0)}
+    8% {transform:translate(-16px,10px) rotate(-1deg)}
+    18%{transform:translate(14px,-12px) rotate(1.1deg)}
+    28%{transform:translate(-13px,-9px) rotate(-.9deg)}
+    40%{transform:translate(12px,10px) rotate(.8deg)}
+    52%{transform:translate(-9px,-7px) rotate(-.5deg)}
+    64%{transform:translate(7px,6px) rotate(.4deg)}
+    76%{transform:translate(-5px,3px) rotate(-.2deg)}
+    88%{transform:translate(2px,-2px) rotate(.1deg)}
   }
-  #board.flinch #world{animation:boardFlinch .5s ease-out}
+  #board.flinch #world{animation:boardFlinch .95s cubic-bezier(.2,.6,.25,1)}
   @keyframes knocked{
     0%{transform:translate(var(--kx0,0),var(--ky0,0)) rotate(var(--kr0,0))}
-    30%{transform:translate(var(--kx,0),var(--ky,0)) rotate(var(--kr,0))}
+    22%{transform:translate(var(--kx,0),var(--ky,0)) rotate(var(--kr,0))}
     100%{transform:translate(0,0) rotate(0)}
   }
-  .chip.board.knocked{animation:knocked .55s cubic-bezier(.2,.6,.3,1)}
+  .chip.board.knocked{animation:knocked .85s cubic-bezier(.15,.7,.25,1)}
   @media (prefers-reduced-motion:reduce){
     .burst{display:none}
     .chip.board.justmade{animation:none}
+    .flash{display:none}
     .shock{display:none}
     #board.flinch #world{animation:none}
     .chip.board.knocked{animation:none}
@@ -1626,18 +1647,23 @@ __CATEGORY_CSS__
   <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
   <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px">__UI_UNDO__</span></button>
   <button id="reset" title="Start over — wipes everything you have found" aria-haspopup="true">Reset</button>
-  <!-- Anchored to the button, not a screen-covering sheet: it opens beside
-       Reset, does one of two things, and clears itself the moment you pick
-       one or look away. -->
-  <div id="resetMenu" role="menu" hidden>
-    <button id="resetBase" role="menuitem" title="Back to Stone, Water, Sun, and Seed on the bench">Base Element Canvas</button>
-    <button id="resetClear" role="menuitem" title="A genuinely empty bench — nothing placed for you" class="danger">Clear Canvas</button>
-  </div>
   <button id="nudge" title="Put two things on the bench that go together"><span class="gl" style="--g:16px">__UI_NUDGE__</span></button>
   <button id="scanBtn" title="Scan a barcode or read a label"><span class="gl" style="--g:16px">__UI_SCAN__</span></button>
   <button id="shelfToggle" title="Hide the shelf">▤</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
 </header>
+<!-- Anchored to the Reset button, not a screen-covering sheet: it opens
+     beside Reset, does one of two things, and clears itself the moment
+     you pick one or look away. Lives OUTSIDE <header> deliberately —
+     header's own backdrop-filter creates a stacking context that traps
+     any descendant, position:fixed or not, no matter what z-index that
+     descendant sets, so a copy of this menu nested inside header rendered
+     behind the shelf regardless of its own z-index:900 (found live: "reset
+     button not usable, hidin behind menu's"). -->
+<div id="resetMenu" role="menu" hidden>
+  <button id="resetBase" role="menuitem" title="Back to Stone, Water, Sun, and Seed on the bench">Base Element Canvas</button>
+  <button id="resetClear" role="menuitem" title="A genuinely empty bench — nothing placed for you" class="danger">Clear Canvas</button>
+</div>
 
 <main>
   <div id="board">
@@ -3301,15 +3327,32 @@ function freeSpot(w, h, near) {
   // The grid itself can exhaust near a packed bench — its phase shifts with
   // the centroid on every call, so cells that look free from this call's grid
   // can still land on a chip placed by an earlier, differently-phased one.
-  // Search a wide area for an actually clear spot before accepting a
-  // collision, rather than trusting the first random guess.
+  // This used to search a genuinely wide area (±15 card-widths, several
+  // thousand pixels) for a clear spot — which did find one, but often one
+  // nowhere near the visible board, so the card would "randomly pop into
+  // the canvas... off screen top bottom all over the place" the instant
+  // ensureVisible yanked the view over to it (found live, from the
+  // periodic table specifically: placeItem() calls spawn() with no x/y,
+  // which is exactly this path). Search the VISIBLE board first instead —
+  // any spot found here needs no jarring pan at all — and only fall back
+  // to the wide blind search if even that is somehow full.
+  const [vx0, vy0] = toWorld(b.left + 8, b.top + 8);
+  const [vx1, vy1] = toWorld(b.left + b.width - 8, b.top + b.height - 8);
+  for (let tries = 0; tries < 60; tries++) {
+    const x = vx0 + Math.random() * Math.max(1, vx1 - vx0 - w);
+    const y = vy0 + Math.random() * Math.max(1, vy1 - vy0 - h);
+    if (clear(x, y)) return [x, y];
+  }
   for (let tries = 0; tries < 60; tries++) {
     const x = cx - w / 2 + (Math.random() - .5) * stepX * 30;
     const y = cy - h / 2 + (Math.random() - .5) * stepY * 30;
     if (clear(x, y)) return [x, y];
   }
-  // Truly nowhere left. Put it down anyway rather than dropping the discovery.
-  return [cx - w / 2 + (Math.random() - .5) * 40, cy - h / 2 + (Math.random() - .5) * 40];
+  // Truly nowhere left. Put it down in the middle of the visible board
+  // rather than a random point somewhere off in the world — still
+  // crowded, but at least exactly where the player is already looking.
+  return [(vx0 + vx1) / 2 - w / 2 + (Math.random() - .5) * 40,
+          (vy0 + vy1) / 2 - h / 2 + (Math.random() - .5) * 40];
 }
 
 const MAX_CHIPS = 140;
@@ -3837,33 +3880,47 @@ function resolve(r, chips, x, y) {
     // A pair genuinely documented as dangerously reactive — sourced the same
     // way every caution in this game is, `r.violent` only ever set from a
     // source that says "violent"/"explosive" outright, never inferred from
-    // the elements' families — gets its own rougher event instead of the
-    // calm ring every other merge gets: a shockwave, the board flinching
-    // once, and whatever else is nearby kicked off its spot before settling
-    // back. ("i believe the most reactive 2 together is caesium and
-    // fluorine? does absolutely nothing" — found live; this is that request.)
+    // the elements' families — gets the whole canvas reacting instead of the
+    // calm ring every other merge gets: a flash across the glass, three
+    // shockwaves punching out in sequence, the board shaking hard, and
+    // EVERY chip on the bench thrown off its spot, not just the nearby
+    // ones. ("i was expecting the entire background canvas to turn into a
+    // mega rippling block blast that shakes all other elements... pretty
+    // weak animation" — found live; the first version undersold it.)
     if (r.violent) {
-      const shock = document.createElement('div');
-      shock.className = 'shock';
-      shock.style.left = cx + 'px'; shock.style.top = cy + 'px';
-      world.appendChild(shock);
-      setTimeout(() => shock.remove(), 700);
+      const bx = cx * view.k + view.x, by = cy * view.k + view.y;
+      const flash = document.createElement('div');
+      flash.className = 'flash';
+      flash.style.setProperty('--fx', bx + 'px');
+      flash.style.setProperty('--fy', by + 'px');
+      board.appendChild(flash);
+      setTimeout(() => flash.remove(), 950);
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          const shock = document.createElement('div');
+          shock.className = 'shock';
+          shock.style.left = cx + 'px'; shock.style.top = cy + 'px';
+          world.appendChild(shock);
+          setTimeout(() => shock.remove(), 1100);
+        }, i * 140);
+      }
       board.classList.add('flinch');
-      setTimeout(() => board.classList.remove('flinch'), 520);
+      setTimeout(() => board.classList.remove('flinch'), 960);
       sfx.violent();
-      const KNOCK_RADIUS = 260, KNOCK_MAX = 26;
+      const KNOCK_MAX = 70, KNOCK_FLOOR = 14;
       for (const c of world.querySelectorAll('.chip.board')) {
         if (chips.includes(c)) continue;
         const [ncx, ncy] = chipCentre(c);
         const dx = ncx - cx, dy = ncy - cy;
         const dist = Math.hypot(dx, dy) || 1;
-        if (dist > KNOCK_RADIUS) continue;
-        const f = (1 - dist / KNOCK_RADIUS) * KNOCK_MAX;
+        // Everything on the bench gets thrown, not just what's nearby — the
+        // force just tapers with distance instead of cutting off at a radius.
+        const f = KNOCK_FLOOR + KNOCK_MAX / (1 + dist / 220);
         c.style.setProperty('--kx', ((dx / dist) * f).toFixed(1) + 'px');
         c.style.setProperty('--ky', ((dy / dist) * f).toFixed(1) + 'px');
-        c.style.setProperty('--kr', ((Math.random() - 0.5) * 10).toFixed(1) + 'deg');
+        c.style.setProperty('--kr', ((Math.random() - 0.5) * 18).toFixed(1) + 'deg');
         c.classList.remove('knocked'); void c.offsetWidth; c.classList.add('knocked');
-        setTimeout(() => c.classList.remove('knocked'), 560);
+        setTimeout(() => c.classList.remove('knocked'), 850);
       }
       toast('A dangerously reactive pair, for real — ' + nameOf(byId[r.out]) + ' didn\'t form quietly');
     }
