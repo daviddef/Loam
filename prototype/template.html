@@ -3060,6 +3060,7 @@ function tidy() {
   const [cw] = cardSize();
   const step = cw + GAP;
   const pos = new Map();                      // chip -> x, in "slots"
+  const visDepthOf = new Map();                // chip -> row, with all-hidden generations collapsed out
   const packs = [];                           // one entry per separate chain
 
   for (let g = 0; g < nc; g++) {
@@ -3153,7 +3154,22 @@ function tidy() {
     const min = Math.min(...mine.map(c => pos.get(c)));
     const max = Math.max(...mine.map(c => pos.get(c)));
     for (const c of mine) pos.set(c, pos.get(c) - min);        // each chain starts at nought
-    packs.push({ chips: mine, w: (max - min) + 1, h: Math.max(...mine.map(c => depth.get(c))) + 1 });
+
+    // A folded chip's hidden ancestors still occupy real depth — a chain
+    // twenty steps deep, entirely collapsed behind one folded card, reserved
+    // twenty empty row-heights above it, which is what a visible card stranded
+    // far below everything else with a huge gap above it actually was. Every
+    // one of those rows is either fully visible or fully hidden (a row mixes
+    // only when some sibling in it is still shown), so collapsing runs of
+    // all-hidden rows down to zero height costs nothing anyone can see.
+    let vSeen = 0;
+    for (const d of order) {
+      const rowVisible = byRow.get(d).some(c => !c.classList.contains('hidden'));
+      for (const c of byRow.get(d)) visDepthOf.set(c, vSeen);
+      if (rowVisible) vSeen++;
+    }
+
+    packs.push({ chips: mine, w: (max - min) + 1, h: Math.max(...mine.map(c => visDepthOf.get(c))) + 1 });
   }
 
   // 4. Pack the chains into the shape of the BOARD, instead of one long row.
@@ -3187,7 +3203,7 @@ function tidy() {
   for (const p of packs) for (const c of p.chips) bandOf.set(c, p.y);
   for (const c of chips) {
     c.style.left = (ox + pos.get(c) * step) + 'px';
-    c.style.top  = (oy + (bandOf.get(c) + depth.get(c)) * ROW_H) + 'px';
+    c.style.top  = (oy + (bandOf.get(c) + visDepthOf.get(c)) * ROW_H) + 'px';
   }
   drawLinks();
   fitAll({ min: 0.34, max: 1.0 });
