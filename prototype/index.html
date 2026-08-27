@@ -6320,9 +6320,21 @@ function showBarcodeScan(onIngredients, autoAction) {
   // nothing else — the full sheet's explanatory paragraph, the manual
   // entry row, and the row of three camera/photo buttons are all real
   // overhead once one of them has already been picked and auto-triggered.
-  const skipHint = autoAction === 'type' || autoAction === 'camera';
-  const skipEntry = autoAction === 'camera';
-  const skipRow = autoAction === 'type' || autoAction === 'camera';
+  // Only 'type' and 'camera' were actually skipping them — 'snap' and
+  // 'photo' fell through untreated, so tapping the toolbar's own "Take a
+  // photo" icon opened the native camera on top of the full generic sheet
+  // regardless, and taking (or cancelling) that photo landed back on every
+  // other option — barcode entry, "scan with the camera" — none of which
+  // had anything to do with what was just tapped. ("why when i click the
+  // take photo button when i close the camera i land up back at a scan a
+  // barcode screen? with a bunch of irrelevant buttons" — found live.) Any
+  // toolbar-triggered action means the method is already chosen; only the
+  // bare "Scan a barcode" entry points (the header button, the label
+  // reader's own "Scan a barcode" link) arrive with no autoAction at all
+  // and still want the full picker.
+  const skipHint = !!autoAction;
+  const skipEntry = !!autoAction;
+  const skipRow = !!autoAction;
   document.getElementById('sheetBody').innerHTML = `
     ${skipHint ? '' : `<p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
        camera where this device supports it. Scan as many products as you like before reading them
