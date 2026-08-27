@@ -2764,6 +2764,13 @@ def('nicad_battery',     () => [                           // rechargeable long 
   P('M22 10 L38 10 L38 16 L22 16 Z', 'hi'), P('M18 16 L42 16 L42 50 L18 50 Z', 'bs'),
   S('M18 30 L42 30', 'lo', 2), S('M22 34 L38 34 M22 40 L38 40', 'lo', 1.2),
 ]);
+// A flat prismatic pouch cell, not nicad_battery's cylindrical AA shape —
+// "especially in handheld electronics" is the real distinguishing fact.
+def('lithium_ion_battery', () => [
+  P('M14 14 L46 14 Q50 14 50 18 L50 46 Q50 50 46 50 L14 50 Q10 50 10 46 L10 18 Q10 14 14 14 Z', 'bs'),
+  P('M24 8 L36 8 L36 14 L24 14 Z', 'hi'),
+  S('M22 32 L30 32 M26 28 L26 36', 'lo', 2.4),                // a plus terminal, etched
+]);
 def('platinum_rhodium_gauze', () => [                      // the screen ammonia burns across on its way to fertiliser
   ...[16, 24, 32, 40, 48].map(y => S(`M10 ${y} L50 ${y}`, 'bs', 1.6)),
   ...[16, 24, 32, 40, 48].map(x => S(`M${x} 12 L${x} 52`, 'hi', 1.6)),

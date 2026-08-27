@@ -9292,8 +9292,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "LiC6 — lithium ions parked between graphite's carbon sheets. This is what a battery anode actually is.",
-    "terminal": true
+    "fact": "LiC6 — lithium ions parked between graphite's carbon sheets. This is what a battery anode actually is."
   },
   {
     "id": "lithium_fluoride",
@@ -10371,6 +10370,17 @@
       "water"
     ],
     "fact": "The only common acid that eats glass, not metal — stored in plastic because it dissolves the bottle.",
+    "terminal": true
+  },
+  {
+    "id": "lithium_ion_battery",
+    "name": "Lithium-Ion Battery",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Graphite anode, lithium cobalt oxide cathode — the pair that actually powers a phone.",
     "terminal": true
   }
 ]
