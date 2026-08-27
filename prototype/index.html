@@ -2574,8 +2574,14 @@ function renderShelf() {
     ? `<span class="sc">Free Play</span>`
     : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} <b class="fw">found</b></span>`;
   document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
-  const g = nextGoal();
-  document.getElementById('goal').innerHTML = g
+  // Free Play hands over every element and tool at once, so "next goal" and
+  // "all goals made" are both meaningless here — everything reads as made
+  // the instant it turns on, which isn't a real finish line ("why is it
+  // speaking of uranium" energy — a claim the game has no business making).
+  const g = prefs.freePlay ? null : nextGoal();
+  const goalEl = document.getElementById('goal');
+  goalEl.style.display = prefs.freePlay ? 'none' : '';
+  goalEl.innerHTML = prefs.freePlay ? '' : g
     ? `<span class="glab">Next</span><b>${glyph(g.id, 18)} ${nameOf(g)}</b>` +
       `<span class="gsteps">${goalCost(g.id)} step${goalCost(g.id) === 1 ? '' : 's'}</span><i class="ask">?</i>`
     : `<span class="glab">All ${GOALS.length} goals made</span>`;
