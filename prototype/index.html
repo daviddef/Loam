@@ -663,18 +663,30 @@
     border-bottom:3px solid var(--ink); border-right:2px solid var(--ink);
     animation:debris 1.6s cubic-bezier(.1,.7,.25,1) forwards;
   }
+  /* `#world`'s own inline style carries the pan/zoom (`applyView()`'s
+     `transform:translate(view.x,view.y) scale(view.k)`), and a CSS animation
+     of the SAME property replaces that value outright for as long as it runs
+     — not composes with it. Animating `transform` here was blanking the
+     board's actual pan/zoom for the full 1.7s of every violent reaction,
+     which is exactly why the explosion (and everything else on the bench)
+     went invisible before reappearing once the shake ended — not a camera
+     pan away from the blast, the pan was being discarded outright. ("takes
+     me away from the explosion and then brings me back" — found live from a
+     screen recording, hydrogen + fluorine.) Fixed by shaking with the
+     standalone `translate`/`rotate` properties instead, which compose
+     ON TOP of `transform` rather than overriding it. */
   @keyframes boardFlinch{
-    0%,100%{transform:translate(0,0) rotate(0)}
-    5% {transform:translate(-18px,11px) rotate(-1.1deg)}
-    12%{transform:translate(16px,-14px) rotate(1.2deg)}
-    20%{transform:translate(-15px,-10px) rotate(-1deg)}
-    29%{transform:translate(14px,11px) rotate(.9deg)}
-    39%{transform:translate(-11px,-8px) rotate(-.7deg)}
-    50%{transform:translate(9px,8px) rotate(.6deg)}
-    61%{transform:translate(-7px,5px) rotate(-.4deg)}
-    72%{transform:translate(5px,-4px) rotate(.3deg)}
-    83%{transform:translate(-3px,2px) rotate(-.15deg)}
-    93%{transform:translate(1px,-1px) rotate(.05deg)}
+    0%,100%{translate:0 0; rotate:0deg}
+    5% {translate:-18px 11px; rotate:-1.1deg}
+    12%{translate:16px -14px; rotate:1.2deg}
+    20%{translate:-15px -10px; rotate:-1deg}
+    29%{translate:14px 11px; rotate:.9deg}
+    39%{translate:-11px -8px; rotate:-.7deg}
+    50%{translate:9px 8px; rotate:.6deg}
+    61%{translate:-7px 5px; rotate:-.4deg}
+    72%{translate:5px -4px; rotate:.3deg}
+    83%{translate:-3px 2px; rotate:-.15deg}
+    93%{translate:1px -1px; rotate:.05deg}
   }
   #board.flinch #world{animation:boardFlinch 1.7s cubic-bezier(.2,.6,.25,1)}
   @keyframes knocked{
