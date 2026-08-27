@@ -5911,6 +5911,7 @@ function showBarcodeScan(onIngredients, autoAction) {
     <div class="cardrow" id="bcCameraControls" style="margin:0 0 9px" hidden>
       <button class="ghost" id="bcStopCam">Stop the camera</button>
     </div>
+    <p id="bcDebug" class="hint2" hidden></p>
     <div id="bcStatus"></div>
     <div id="bcOut"></div>`;
   openSheet('Scan a barcode');
@@ -6053,6 +6054,22 @@ function showBarcodeScan(onIngredients, autoAction) {
   document.getElementById('bcCamera').onclick = async () => {
     const video = document.getElementById('bcVideo');
     const controls = document.getElementById('bcCameraControls');
+    // "Scan with the camera still does nothing" — reported live, more than
+    // once, with the barcode-lookup half confirmed correct each time. What
+    // was never confirmed: whether the live decode loop is even attempting
+    // a read, or silently finding nothing the whole time something sits in
+    // frame. This is that missing half — a live, honest readout of what the
+    // loop is actually doing, not a guess about why the next report might
+    // still say "nothing happens".
+    const dbg = document.getElementById('bcDebug');
+    let framesChecked = 0, decodeAttempts = 0, decodeErrors = 0, decodeHits = 0;
+    const paintDebug = () => {
+      dbg.hidden = false;
+      dbg.textContent = `${framesChecked} frame${framesChecked === 1 ? '' : 's'} seen · ` +
+        `${decodeAttempts} decode attempt${decodeAttempts === 1 ? '' : 's'}` +
+        (decodeErrors ? ` (${decodeErrors} errored)` : '') +
+        ` · ${decodeHits} found`;
+    };
     let stream, raf;
     try {
       stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
@@ -6069,8 +6086,9 @@ function showBarcodeScan(onIngredients, autoAction) {
     video.srcObject = stream;
     video.classList.add('on');
     controls.hidden = false;
+    paintDebug();
     await video.play().catch(() => {});
-    const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; };
+    const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; dbg.hidden = true; };
     document.getElementById('bcStopCam').onclick = stop;
     // Stays open across finds rather than closing after the first, so a
     // whole run of products can be scanned in one pass of the camera —
@@ -6084,7 +6102,9 @@ function showBarcodeScan(onIngredients, autoAction) {
       if (!video.isConnected) { stop(); return; }        // the sheet closed mid-scan
       if (!busy && video.videoWidth) {
         busy = true;
+        framesChecked++;
         try {
+          decodeAttempts++;
           let codes;
           if ('BarcodeDetector' in window) {
             codes = await decodeBarcodes(video);
@@ -6093,8 +6113,9 @@ function showBarcodeScan(onIngredients, autoAction) {
             capCtx.drawImage(video, 0, 0);
             codes = await decodeBarcodes(capCtx.getImageData(0, 0, cap.width, cap.height));
           }
-          if (codes.length) addScan(codes[0]);
-        } catch {}
+          if (codes.length) { decodeHits++; addScan(codes[0]); }
+        } catch { decodeErrors++; }
+        paintDebug();
         busy = false;
       }
       raf = requestAnimationFrame(tick);
