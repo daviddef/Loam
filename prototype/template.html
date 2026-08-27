@@ -534,7 +534,8 @@ __CATEGORY_CSS__
      rippling block blast" — found live; the first version was too shy.) */
   @keyframes screenFlash{
     0%{opacity:0}
-    12%{opacity:.55}
+    10%{opacity:.6}
+    45%{opacity:.22}
     100%{opacity:0}
   }
   .flash{
@@ -552,22 +553,23 @@ __CATEGORY_CSS__
       color-mix(in srgb,var(--brick) 75%,transparent) 0%,
       color-mix(in srgb,var(--brick) 25%,transparent) 16%,
       transparent 40%);
-    animation:screenFlash .9s ease-out forwards;
+    animation:screenFlash 1.7s ease-out forwards;
   }
   @keyframes shockwave{
     from{transform:translate(-50%,-50%) scale(.2);opacity:.95;border-width:6px}
-    to{transform:translate(-50%,-50%) scale(7);opacity:0;border-width:1px}
+    to{transform:translate(-50%,-50%) scale(9);opacity:0;border-width:1px}
   }
   .shock{
     position:absolute;width:110px;height:110px;border-radius:99px;pointer-events:none;z-index:6;
-    border:6px solid var(--brick);animation:shockwave 1.05s cubic-bezier(.1,.8,.2,1) forwards;
+    border:6px solid var(--brick);animation:shockwave 1.9s cubic-bezier(.1,.8,.2,1) forwards;
   }
   /* Literal debris, not just a glow — small blocks flung out from ground
      zero and tumbling as they go, the way a Minecraft TNT crater throws
      cubes rather than just lighting up. Two faces per block (a lighter
      top, a darker side) is enough to read as a cube at this size without
      needing real 3D. ("the type of explosion i was looking for was more
-     TL[; Minecraft]" — found live, with a picture of exactly that.) */
+     TL[; Minecraft]" — found live, with a picture of exactly that. "more
+     blocks, slower explosion, more ripple" — found live again, next.) */
   @keyframes debris{
     0%  {transform:translate(-50%,-50%) translate(0,0) rotate(0deg) scale(1);opacity:1}
     100%{transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) rotate(var(--dr)) scale(.4);opacity:0}
@@ -576,26 +578,28 @@ __CATEGORY_CSS__
     position:absolute;width:var(--ds,10px);height:var(--ds,10px);pointer-events:none;z-index:6;
     background:color-mix(in srgb,var(--brick) 55%,var(--ink-soft));
     border-bottom:3px solid var(--ink); border-right:2px solid var(--ink);
-    animation:debris .8s cubic-bezier(.15,.7,.3,1) forwards;
+    animation:debris 1.6s cubic-bezier(.1,.7,.25,1) forwards;
   }
   @keyframes boardFlinch{
     0%,100%{transform:translate(0,0) rotate(0)}
-    8% {transform:translate(-16px,10px) rotate(-1deg)}
-    18%{transform:translate(14px,-12px) rotate(1.1deg)}
-    28%{transform:translate(-13px,-9px) rotate(-.9deg)}
-    40%{transform:translate(12px,10px) rotate(.8deg)}
-    52%{transform:translate(-9px,-7px) rotate(-.5deg)}
-    64%{transform:translate(7px,6px) rotate(.4deg)}
-    76%{transform:translate(-5px,3px) rotate(-.2deg)}
-    88%{transform:translate(2px,-2px) rotate(.1deg)}
+    5% {transform:translate(-18px,11px) rotate(-1.1deg)}
+    12%{transform:translate(16px,-14px) rotate(1.2deg)}
+    20%{transform:translate(-15px,-10px) rotate(-1deg)}
+    29%{transform:translate(14px,11px) rotate(.9deg)}
+    39%{transform:translate(-11px,-8px) rotate(-.7deg)}
+    50%{transform:translate(9px,8px) rotate(.6deg)}
+    61%{transform:translate(-7px,5px) rotate(-.4deg)}
+    72%{transform:translate(5px,-4px) rotate(.3deg)}
+    83%{transform:translate(-3px,2px) rotate(-.15deg)}
+    93%{transform:translate(1px,-1px) rotate(.05deg)}
   }
-  #board.flinch #world{animation:boardFlinch .95s cubic-bezier(.2,.6,.25,1)}
+  #board.flinch #world{animation:boardFlinch 1.7s cubic-bezier(.2,.6,.25,1)}
   @keyframes knocked{
     0%{transform:translate(var(--kx0,0),var(--ky0,0)) rotate(var(--kr0,0))}
-    22%{transform:translate(var(--kx,0),var(--ky,0)) rotate(var(--kr,0))}
+    18%{transform:translate(var(--kx,0),var(--ky,0)) rotate(var(--kr,0))}
     100%{transform:translate(0,0) rotate(0)}
   }
-  .chip.board.knocked{animation:knocked .85s cubic-bezier(.15,.7,.25,1)}
+  .chip.board.knocked{animation:knocked 1.6s cubic-bezier(.15,.7,.25,1)}
   @media (prefers-reduced-motion:reduce){
     .burst{display:none}
     .chip.board.justmade{animation:none}
@@ -3919,29 +3923,33 @@ function resolve(r, chips, x, y) {
       flash.style.setProperty('--fx', bx + 'px');
       flash.style.setProperty('--fy', by + 'px');
       board.appendChild(flash);
-      setTimeout(() => flash.remove(), 950);
-      for (let i = 0; i < 3; i++) {
+      setTimeout(() => flash.remove(), 1750);
+      // Six rings instead of three, spread further apart in time, is what
+      // actually reads as "rippling" rather than one thick pulse — each one
+      // is a distinct wave passing outward, not a blur of overlapping edges.
+      const RING_N = 6, RING_GAP_MS = 260;
+      for (let i = 0; i < RING_N; i++) {
         setTimeout(() => {
           const shock = document.createElement('div');
           shock.className = 'shock';
           shock.style.left = cx + 'px'; shock.style.top = cy + 'px';
           world.appendChild(shock);
-          setTimeout(() => shock.remove(), 1100);
-        }, i * 140);
+          setTimeout(() => shock.remove(), 1950);
+        }, i * RING_GAP_MS);
       }
       board.classList.add('flinch');
-      setTimeout(() => board.classList.remove('flinch'), 960);
+      setTimeout(() => board.classList.remove('flinch'), 1750);
       sfx.violent();
       // The debris itself, not just the shockwave that announces it —
       // small blocks flung out from ground zero at random angles and
       // distances, tumbling as they thin out and vanish.
-      const DEBRIS_N = 22;
+      const DEBRIS_N = 48;
       for (let i = 0; i < DEBRIS_N; i++) {
         const d = document.createElement('div');
         d.className = 'debris';
         const angle = Math.random() * Math.PI * 2;
-        const dist = 90 + Math.random() * 260;
-        const size = 6 + Math.random() * 10;
+        const dist = 110 + Math.random() * 340;
+        const size = 6 + Math.random() * 11;
         d.style.left = cx + 'px'; d.style.top = cy + 'px';
         d.style.setProperty('--ds', size.toFixed(1) + 'px');
         d.style.setProperty('--dx', (Math.cos(angle) * dist).toFixed(1) + 'px');
@@ -3950,8 +3958,13 @@ function resolve(r, chips, x, y) {
         // sliding flat outward along the ground.
         d.style.setProperty('--dy', (Math.sin(angle) * dist - 30 - Math.random() * 30).toFixed(1) + 'px');
         d.style.setProperty('--dr', ((Math.random() - 0.5) * 900).toFixed(0) + 'deg');
-        world.appendChild(d);
-        setTimeout(() => d.remove(), 850);
+        // Staggering the spawn slightly, instead of firing all 48 on the
+        // same frame, is what makes the debris read as a spreading burst
+        // rather than a single ring of blocks all moving in lockstep.
+        setTimeout(() => {
+          world.appendChild(d);
+          setTimeout(() => d.remove(), 1650);
+        }, Math.random() * 180);
       }
       const KNOCK_MAX = 70, KNOCK_FLOOR = 14;
       for (const c of world.querySelectorAll('.chip.board')) {
@@ -3966,7 +3979,7 @@ function resolve(r, chips, x, y) {
         c.style.setProperty('--ky', ((dy / dist) * f).toFixed(1) + 'px');
         c.style.setProperty('--kr', ((Math.random() - 0.5) * 18).toFixed(1) + 'deg');
         c.classList.remove('knocked'); void c.offsetWidth; c.classList.add('knocked');
-        setTimeout(() => c.classList.remove('knocked'), 850);
+        setTimeout(() => c.classList.remove('knocked'), 1650);
       }
       toast('A dangerously reactive pair, for real — ' + nameOf(byId[r.out]) + ' didn\'t form quietly');
     }
