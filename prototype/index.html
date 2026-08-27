@@ -304,10 +304,6 @@
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
   }
-  /* It belongs with the other view controls, not in the header — showing the
-     table is something you do TO the canvas, like fitting or tidying it. */
-  #zoom #ptToggle{font-size:17px}
-  #zoom #ptToggle.on{border-color:var(--orange);color:var(--orange)}
   #board{cursor:grab;touch-action:none;overscroll-behavior:contain}
   #board.panning{cursor:grabbing}
   /* The opening cue. Pointer-events none throughout: it can never be in the way,
@@ -1317,6 +1313,21 @@
     border-top:2px solid var(--line);box-shadow:0 -12px 30px -14px rgba(var(--shade),.8);
   }
   body.pt-on #ptDock{display:flex}
+  /* The tab: a permanent fixture of the board's bottom edge, not a button
+     among other buttons — always there to grab, whether the drawer under
+     it is open or shut, and it rides up to sit on the dock's own edge
+     once that drawer opens instead of vanishing into it. */
+  #ptTab{
+    position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:31;
+    display:flex;align-items:center;gap:6px;padding:6px 14px 5px;cursor:pointer;
+    background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
+    border:2px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0;
+    font:700 11px var(--face-name);color:var(--ink-soft);transition:bottom .18s,color .15s,border-color .15s;
+  }
+  #ptTab:hover,#ptTab.on{color:var(--orange);border-color:var(--orange)}
+  #ptTab .gl{--g:14px}
+  body.pt-on #ptTab{bottom:var(--pth,370px)}
+  @media(max-width:720px){ #ptTab{display:none} }
   #ptGrab{
     flex:none;height:16px;display:flex;align-items:center;justify-content:center;
     cursor:ns-resize;touch-action:none;
@@ -1398,7 +1409,7 @@
   }
   #ptBody.tight .ptLegend span{padding:2px 5px}
   #ptClose{margin-left:auto;flex:none}
-  @media(max-width:720px){ #ptToggle{display:none} body.pt-on #ptDock{display:none} }
+  @media(max-width:720px){ body.pt-on #ptDock{display:none} }
 
   .elfact{display:flex;gap:11px;align-items:flex-start;margin:2px 0 4px}
   .elfact > div{min-width:0}
@@ -1491,7 +1502,6 @@
        off the end of the header at 375px. */
     #reset{display:none}
     #undo{padding:6px 9px}
-    #zoom #ptToggle{display:none}                 /* the dock is desktop-only */
     .mark svg{width:22px;height:22px}
     .goal{display:none}
     #live{display:none}
@@ -1631,7 +1641,6 @@
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M12 20 L48 20" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 30 L48 30" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 40 L40 40" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><circle cx="30" cy="30" r="4" fill="var(--ik)"/><path d="M30 30 L46 30" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="30" r="3" fill="var(--ik)"/><path d="M30 30 L38 43.86" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="43.86" r="3" fill="var(--ik)"/><path d="M30 30 L22 43.86" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="43.86" r="3" fill="var(--ik)"/><path d="M30 30 L14 30" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="30" r="3" fill="var(--ik)"/><path d="M30 30 L22 16.14" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="16.14" r="3" fill="var(--ik)"/><path d="M30 30 L38 16.14" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="16.14" r="3" fill="var(--ik)"/></svg></span></button>
-      <button id="ptToggle" title="Show the periodic table along the bottom"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M12 12 L21 12 L21 21 L12 21 Z" fill="var(--ik)"/><path d="M12 24 L21 24 L21 33 L12 33 Z" fill="var(--ik)"/><path d="M12 36 L21 36 L21 45 L12 45 Z" fill="var(--ik)"/><path d="M24 12 L33 12 L33 21 L24 21 Z" fill="var(--ik)"/><path d="M24 24 L33 24 L33 33 L24 33 Z" fill="var(--ik)"/><path d="M24 36 L33 36 L33 45 L24 45 Z" fill="var(--ik)"/><path d="M36 12 L45 12 L45 21 L36 21 Z" fill="var(--ik)"/><path d="M36 24 L45 24 L45 33 L36 33 Z" fill="var(--ik)"/><path d="M36 36 L45 36 L45 45 L36 45 Z" fill="var(--ik)"/></svg></span></button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -1640,6 +1649,12 @@
       <svg id="introArc" aria-hidden="true"><path/></svg>
       <p id="introSay"></p>
     </div>
+    <!-- A tab, not a button among buttons: it lives on the board's own bottom
+         edge and rides up to sit on the dock's edge once open, the way a
+         drawer pull stays put whether the drawer is open or shut. -->
+    <button id="ptTab" title="Show the periodic table along the bottom">
+      <span class="gl" style="--g:14px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M12 12 L21 12 L21 21 L12 21 Z" fill="var(--ik)"/><path d="M12 24 L21 24 L21 33 L12 33 Z" fill="var(--ik)"/><path d="M12 36 L21 36 L21 45 L12 45 Z" fill="var(--ik)"/><path d="M24 12 L33 12 L33 21 L24 21 Z" fill="var(--ik)"/><path d="M24 24 L33 24 L33 33 L24 33 Z" fill="var(--ik)"/><path d="M24 36 L33 36 L33 45 L24 45 Z" fill="var(--ik)"/><path d="M36 12 L45 12 L45 21 L36 21 Z" fill="var(--ik)"/><path d="M36 24 L45 24 L45 33 L36 33 Z" fill="var(--ik)"/><path d="M36 36 L45 36 L45 45 L36 45 Z" fill="var(--ik)"/></svg></span>Elements
+    </button>
     <!-- The table, docked. Not a sheet: a sheet is somewhere you go instead of
          playing, and the point of this one is to be open beside the bench
          while you work. Drag its edge to give it more room or push it away. -->
@@ -4529,7 +4544,7 @@ function ptFit() {
 function ptSet(on) {
   document.body.classList.toggle('pt-on', on);
   document.getElementById('ptDock').setAttribute('aria-hidden', String(!on));
-  const b = document.getElementById('ptToggle');
+  const b = document.getElementById('ptTab');
   b.classList.toggle('on', on);
   b.title = on ? 'Hide the periodic table' : 'Show the periodic table along the bottom';
   retip(b);
@@ -6096,7 +6111,7 @@ document.getElementById('reset').addEventListener('click', wipeProgress);
 document.getElementById('undo').addEventListener('click', undoLast);
 
 // ---- periodic dock: open, resize, dismiss ----
-document.getElementById('ptToggle').addEventListener('click', () =>
+document.getElementById('ptTab').addEventListener('click', () =>
   ptSet(!document.body.classList.contains('pt-on')));
 // A single tap drops the card straight on the bench — the table is a
 // source of material, not a reference you have to drag out every time
