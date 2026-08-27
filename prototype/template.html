@@ -2848,9 +2848,21 @@ function expandUp(chip) {
           .map(a => PLAYABLE_ATOM.get(a)).filter(g => g && g !== id)
       : [];
     if (real.length) {
+      // buildChain() already learned this lesson (below) — "a fresh copy
+      // each time" has to be true here too, not just for a top-level
+      // placement. This reuse ran unconditionally, so every product
+      // expanded via a tap shared the same Hydrogen/Carbon/Oxygen... chips
+      // regardless of the toggle, which is exactly what turned a board of
+      // several scanned products into one dense web of crossing lines no
+      // layout algorithm was ever going to untangle — the toggle meant to
+      // prevent that never actually applied to this path. ("Iva tried
+      // turning one card off still doesn't work" — found live, tracing
+      // back to this.)
       const already = new Map();
-      for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
-        if (!already.has(c.dataset.id)) already.set(c.dataset.id, c);
+      if (prefs.consolidate) {
+        for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+          if (!already.has(c.dataset.id)) already.set(c.dataset.id, c);
+        }
       }
       for (const gid of real) {
         const el = already.get(gid) || spawn(gid, null, null, [chip]);
@@ -2867,9 +2879,14 @@ function expandUp(chip) {
     setTimeout(() => chip.classList.remove('pulse'), 380);
     return;
   }
+  // Same fix as the composition branch above, and as buildChain() already
+  // has: only reuse an existing board chip for a crafted ancestor when
+  // "one card per thing" is actually on.
   const chipFor = new Map();
-  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
-    if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+  if (prefs.consolidate) {
+    for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+      if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
+    }
   }
   chipFor.set(id, chip);
   const ensure = (iid) => {
