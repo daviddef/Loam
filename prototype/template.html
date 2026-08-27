@@ -1259,8 +1259,6 @@ __CATEGORY_CSS__
     padding:0 12px 7px;font:400 11px/1.3 var(--face-name);color:var(--ink-soft);
   }
   #ptHead b{font:700 12px var(--face-name);color:var(--ink)}
-  #ptHead .legend{margin:0;gap:4px}
-  #ptHead .legend span{font-size:8.5px;padding:2px 6px}
   #ptBody{flex:1;min-height:0;overflow:auto;padding:0 12px 12px}
   /* Eighteen columns of 1fr across a 1700px board makes every tile 90px wide
      with 9px type inside it — the squares grow and the writing does not. Cap
@@ -1317,6 +1315,18 @@ __CATEGORY_CSS__
   #ptBody .atom.off{opacity:.2}
   #ptBody .atom.have{outline:2px solid var(--discovery);outline-offset:1px}
   #ptBody .atom:hover{transform:scale(1.14);z-index:2;position:relative}
+  /* Sits in the real empty cells of the chart (the Be/Mg-B/Al gap), not
+     above it — so reading the legend and reading the table are the same
+     motion instead of a look-up-then-back-down. */
+  .ptLegend{
+    display:flex;flex-wrap:wrap;align-content:center;justify-content:center;
+    gap:4px;padding:4px;
+  }
+  .ptLegend span{
+    font:700 calc(var(--ptcell,54px) * .16) var(--face-name);color:var(--on-accent);
+    padding:3px 7px;border-radius:99px;white-space:nowrap;
+  }
+  #ptBody.tight .ptLegend span{padding:2px 5px}
   #ptClose{margin-left:auto;flex:none}
   @media(max-width:720px){ #ptToggle{display:none} body.pt-on #ptDock{display:none} }
 
@@ -4351,7 +4361,6 @@ function ptRender() {
   document.getElementById('ptHead').innerHTML =
     `<b>The periodic table</b>` +
     `<span>${held} of the ${PLAYABLE_ATOM.size} you can hold are on your shelf</span>` +
-    `<div class="legend">` + cats.map(c => `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>` +
     `<button class="ghost" id="ptClose" title="Close the table">Close</button>`;
   // Laid out the way a wall chart is: group numbers along the top, period
   // numbers down the side, and inside each tile the atomic number small at the
@@ -4360,6 +4369,12 @@ function ptRender() {
   let h = '<div class="ptab">';
   for (let g = 1; g <= 18; g++) h += `<i class="gnum" style="grid-area:1/${g + 1}">${g}</i>`;
   for (let pd = 1; pd <= 7; pd++) h += `<i class="pnum" style="grid-area:${pd + 1}/1">${pd}</i>`;
+  // The wide gap between Be/Mg (group 2) and B/Al (group 13), periods 2-3 —
+  // real empty cells nobody's tile ever occupies — is exactly where a legend
+  // fits without covering a single element ("can we format better and move
+  // to the gap inbetween be/mg and b/Al?" — found live).
+  h += `<div class="ptLegend" style="grid-area:3/4/5/14">` +
+       cats.map(c => `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>`;
   for (const a of BED.atoms) {
     const [row, col] = ptCell(a.number);
     const el = PLAYABLE_ATOM.get(a.id);
