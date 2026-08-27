@@ -2042,7 +2042,7 @@ function showTransfer() {
   document.getElementById('saveLoad').onclick = () => {
     const r = importSave(document.getElementById('saveIn').value);
     if (!r.ok) { sfx.nope(); toast(r.why); return; }
-    document.getElementById('sheet').classList.remove('on');
+    closeSheet();
     sfx.discover();
     toast(r.dropped
       ? `${r.n} discoveries brought back — ${r.dropped} were from an older world and could not be`
@@ -3806,7 +3806,7 @@ function showScannedProduct(hubEl) {
     </div>`;
   openSheet('Scanned product');
   document.getElementById('hubRemove').onclick = () => {
-    document.getElementById('sheet').classList.remove('on');
+    closeSheet();
     pushUndo(`removing ${nameOfProduct(p)}`);
     removeChip(hubEl);
   };
@@ -3817,7 +3817,7 @@ function showScannedProduct(hubEl) {
  * spawn()'s own near-anchor placement and the ordinary links/drawLinks
  * machinery rather than inventing a second layout system. */
 function placeScanned(scannedProducts) {
-  document.getElementById('sheet').classList.remove('on');
+  closeSheet();
   benchTouched = true;
   pushUndo(scannedProducts.length === 1
     ? `scanning ${nameOfProduct(scannedProducts[0].product)}`
@@ -5454,7 +5454,7 @@ document.getElementById('sheet').addEventListener('click', ev => {
     return;
   }
   if (ev.target.id === 'sheet' || ev.target.id === 'sheetClose')
-    ev.currentTarget.classList.remove('on');
+    closeSheet();
   const md = ev.target.closest('[data-mode]');
   if (md) return showProvenance(md.dataset.for, md.dataset.mode);
   const ea = ev.target.closest('[data-entry-any]');
@@ -5468,7 +5468,7 @@ document.getElementById('sheet').addEventListener('click', ev => {
   const en = ev.target.closest('[data-entry]');
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
-  if (put) { document.getElementById('sheet').classList.remove('on'); benchTouched = true; return placeItem(put.dataset.put); }
+  if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
   const t = ev.target.closest('[data-trace]');
   if (t) showProvenance(t.dataset.trace);
   const qv = ev.target.closest('[data-quickview]');
@@ -5881,7 +5881,7 @@ function showLabelReader(prefill = '', scannedProducts = null) {
     // product get its own hub with its own ring of children. Pasted text has
     // no such per-product split — those still just place flat, as before.
     if (put) put.onclick = scannedProducts ? () => placeScanned(scannedProducts) : () => {
-      document.getElementById('sheet').classList.remove('on');
+      closeSheet();
       benchTouched = true;
       const made = parsed.filter(p => p.kind === 'found' || p.kind === 'near');
       for (const p of made) placeItem(p.id);
@@ -6116,6 +6116,19 @@ async function ocrImage(source) {
   }
 }
 
+// Closing the sheet (the Close button, the backdrop, or any of the flows
+// below that dismiss it themselves) only ever removed a CSS class — the
+// live camera underneath, if one was open, kept recording and decoding
+// forever. Its own cleanup loop checks `video.isConnected` (is the element
+// still in the DOM), which stays true when the sheet is merely hidden, not
+// removed, so that guard never fired. Every "close the sheet" call site
+// now goes through here instead of toggling the class directly, so a scan
+// in progress is stopped the moment the sheet actually closes.
+let activeCameraStop = null;
+function closeSheet() {
+  document.getElementById('sheet').classList.remove('on');
+  if (activeCameraStop) { activeCameraStop(); activeCameraStop = null; }
+}
 function showBarcodeScan(onIngredients, autoAction) {
   // Each floating-toolbar icon asked for exactly its own control and
   // nothing else — the full sheet's explanatory paragraph, the manual
@@ -6322,7 +6335,12 @@ function showBarcodeScan(onIngredients, autoAction) {
     controls.hidden = false;
     paintDebug();
     await video.play().catch(() => {});
-    const stop = () => { cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); video.classList.remove('on'); controls.hidden = true; dbg.hidden = true; };
+    const stop = () => {
+      cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop());
+      video.classList.remove('on'); controls.hidden = true; dbg.hidden = true;
+      if (activeCameraStop === stop) activeCameraStop = null;
+    };
+    activeCameraStop = stop;
     document.getElementById('bcStopCam').onclick = stop;
     // Stays open across finds rather than closing after the first, so a
     // whole run of products can be scanned in one pass of the camera —
@@ -6898,7 +6916,7 @@ function smokeTest() {
 
   found.clear(); held.forEach(id => found.add(id));
   renderShelf();
-  document.getElementById('sheet').classList.remove('on');
+  closeSheet();
 
   const result = { panels: elements.length * 4 + THEMES.length * GROUNDS.length + 3,
                    errors: errors.length, first: errors.slice(0, 8), pass: !errors.length };
