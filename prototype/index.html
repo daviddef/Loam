@@ -6078,12 +6078,28 @@ document.getElementById('undo').addEventListener('click', undoLast);
 // ---- periodic dock: open, resize, dismiss ----
 document.getElementById('ptToggle').addEventListener('click', () =>
   ptSet(!document.body.classList.contains('pt-on')));
+// A single tap drops the card straight on the bench — the table is a
+// source of material, not a reference you have to drag out every time
+// ("single click pops up info? it should drop on canvas" — found live).
+// A tile with nothing to hold still only has the chemistry to give, so
+// that one keeps opening on a plain tap. A second tap on the SAME tile
+// within the window instead opens the info card — the same manual timing
+// chipTap() uses for its own double-tap, not native dblclick, which
+// fires two click events first and would place the card twice before it
+// ever got there.
+let lastPtTap = { el: null, t: 0 };
 document.getElementById('ptBody').addEventListener('click', ev => {
   const t = ev.target.closest('[data-atom]');
   if (!t || ptDragged) return;
-  // A tile you can actually hold on the bench answers the game's question;
-  // one you cannot answers the chemistry's. Give whichever exists.
-  if (t.dataset.el) openAbout(t.dataset.el); else showAtom(t.dataset.atom);
+  if (!t.dataset.el) return showAtom(t.dataset.atom);
+  const now = Date.now();
+  if (lastPtTap.el === t && now - lastPtTap.t < 320) {
+    lastPtTap = { el: null, t: 0 };
+    return openAbout(t.dataset.el);
+  }
+  lastPtTap = { el: t, t: now };
+  benchTouched = true;
+  placeItem(t.dataset.el);
 });
 // Tapping a tile opened its entry, and there it stopped — the table was a
 // reference you could read and not a drawer you could take from. A tile whose
