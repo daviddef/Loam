@@ -2762,6 +2762,26 @@ function chipTap(chip) {
   lastChipTap = { el: chip, t: now };
   toggleBranch(chip);
 }
+// A scan hub, or an unresolved ingredient's placeholder box: what a plain
+// tap (not a drag) on either one means. A hub's tap opens a sheet that
+// covers the board, so a real second tap can never land back on the chip
+// underneath it — double-tap-to-remove is a dead gesture there no matter
+// how it's wired, and showScannedProduct gets its own "Remove from canvas"
+// button instead. A placeholder's tap is just a toast, nothing covers the
+// chip, so double-tap still works fine there — same pattern chipTap() uses
+// for a real chip.
+function ghostTap(ghost) {
+  if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
+  const now = Date.now();
+  if (lastChipTap.el === ghost && now - lastChipTap.t < 320) {
+    lastChipTap = { el: null, t: 0 };
+    pushUndo(`removing ${ghost.dataset.text}`);
+    removeChip(ghost);
+    return;
+  }
+  lastChipTap = { el: ghost, t: now };
+  toast(`${ghost.dataset.text} — a real thing, just not built yet`);
+}
 
 function removeChip(chip, instant) {
   // Orphaned links would draw to nothing, so drop them with it.
@@ -4062,30 +4082,21 @@ board.addEventListener('pointerdown', ev => {
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   // A scan hub, or an unresolved ingredient's placeholder box, isn't a real
-  // element — neither has a dataset.id, so the ordinary drag/merge/chipTap
-  // machinery below would break on either. Both are fixed anchors, not
-  // draggable cards: tapping one just explains itself.
+  // element — neither has a dataset.id, so it can never be a merge input or
+  // target, and the ordinary hold-to-explain/hit-cache machinery below
+  // doesn't apply to either. That used to mean neither could be dragged at
+  // all — every other card on the canvas moves, tidy() actively repositions
+  // both of these same as any other chip, and there was no way to nudge one
+  // afterward. ("i dont seem to be able to move eg the products or the read
+  // from a photo products... they all seem locked into a position on the
+  // canvas unmovable" — found live.) A ghost drags to reposition exactly
+  // like a real chip now; what it still never does is merge, fold, or open
+  // the hold-timer's "what is this" card, and its OWN tap meaning (the hub
+  // sheet, or the placeholder's toast/double-tap-remove) is decided on
+  // release rather than immediately, so a real drag doesn't also fire it.
   const ghost = ev.target.closest('.chip.ghost');
-  if (ghost) {
-    ev.preventDefault();
-    // A hub's tap opens a sheet that covers the board, so a real second tap
-    // can never land back on the chip underneath it — double-tap-to-remove
-    // is a dead gesture there no matter how it's wired. showScannedProduct
-    // gets its own "Remove from canvas" button instead. A placeholder's tap
-    // is just a toast, nothing covers the chip, so double-tap still works
-    // fine there — same pattern chipTap() uses for a real chip.
-    if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
-    const now = Date.now();
-    if (lastChipTap.el === ghost && now - lastChipTap.t < 320) {
-      lastChipTap = { el: null, t: 0 };
-      pushUndo(`removing ${ghost.dataset.text}`);
-      removeChip(ghost);
-      return;
-    }
-    lastChipTap = { el: ghost, t: now };
-    return toast(`${ghost.dataset.text} — a real thing, just not built yet`);
-  }
-  const chip = ev.target.closest('.chip.board:not(.cooking)');
+  if (ghost) ev.preventDefault();                      // a hub's <img> shouldn't start its own native drag
+  const chip = ghost || ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
     board.classList.add('panning');
@@ -4096,7 +4107,7 @@ board.addEventListener('pointerdown', ev => {
   endIntro();
   // A card in the hand is the moment the question "what does this go with?"
   // is actually being asked, so answer it then and nowhere else.
-  if (prefs.assist !== 'off') {
+  if (!ghost && prefs.assist !== 'off') {
     const n = livePartnersOn(chip);
     chip.dataset.live = n ? String(n) : '';
     chip.classList.toggle('haslive', n > 0);
@@ -4106,6 +4117,7 @@ board.addEventListener('pointerdown', ev => {
            sx: ev.clientX, sy: ev.clientY, moved: false };
   chip.classList.add('drag');
   chip.setPointerCapture(ev.pointerId);
+  if (ghost) return;
   primeHitCache(chip);
   // Press and hold, without moving, asks what the thing is. It is the same
   // question the ⓘ answers, but it works at pill density where there is no
@@ -4137,6 +4149,7 @@ board.addEventListener('pointermove', ev => {
   drag.chip.style.left = (wx - drag.ox) + 'px';
   drag.chip.style.top  = (wy - drag.oy) + 'px';
   drawLinksFor(drag.chip);                            // only the lines that moved
+  if (drag.chip.classList.contains('ghost')) return;  // repositioning only — never a merge source or target
   const t = hitCached(ev.clientX, ev.clientY, drag.chip);
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (t) t.classList.add('target');
@@ -4160,6 +4173,12 @@ board.addEventListener('pointerup', ev => {
   chip.classList.remove('drag', 'haslive');
   chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
+  if (chip.classList.contains('ghost')) {
+    if (!moved) return ghostTap(chip);                // a real tap keeps its own meaning — the sheet, or the toast
+    saveSoon();
+    pinToBoard(chip);
+    return;
+  }
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
   // If the dial was climbing, letting go IS the decision — it has already
