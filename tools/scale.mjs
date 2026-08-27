@@ -85,7 +85,7 @@ const SCALE = {
           'fish_and_chips', 'chicken', 'dinner', 'breakfast', 'choucroute',
           'cheeseboard', 'stone_soup', 'ambrosia', 'cornucopia', 'clean_hands',
           'pot', 'stoneware', 'sickle', 'barrel', 'plant', 'vine', 'feast'],
-  '0':   ['calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'scarecrow', 'greenhouse'],
+  '0':   ['calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'scarecrow', 'greenhouse', 'human'],
   '1':   ['oak', 'pine', 'rubber_tree', 'elephant', 'giraffe'],
   '2':   ['mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop'],
   '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river'],

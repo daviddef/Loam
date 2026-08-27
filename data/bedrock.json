@@ -1705,6 +1705,131 @@
       "srcTitle": "Muscle tissue",
       "fact": "Cells packed with protein filaments that ratchet past each other. Meat is this, rested.",
       "src": "https://en.wikipedia.org/wiki/Muscle"
+    },
+    {
+      "id": "bed_epithelial_tissue",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Epithelium",
+      "of": [
+        "bed_cell",
+        "bed_protein"
+      ],
+      "srcTitle": "Epithelium",
+      "fact": "Cells packed edge to edge with almost no space between them, stitched together by their own cadherins and keratin. Skin's outer face is this.",
+      "src": "https://en.wikipedia.org/wiki/Epithelium"
+    },
+    {
+      "id": "bed_connective_tissue",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Connective Tissue",
+      "of": [
+        "bed_cell",
+        "bed_protein",
+        "bed_water_molecule"
+      ],
+      "srcTitle": "Connective tissue",
+      "fact": "Cells scattered through fiber and fluid instead of packed together. Collagen fiber is a quarter of all the protein in a mammal, and this is where most of it lives.",
+      "src": "https://en.wikipedia.org/wiki/Connective_tissue"
+    },
+    {
+      "id": "bed_nervous_tissue",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Nervous Tissue",
+      "of": [
+        "bed_cell",
+        "bed_lipid"
+      ],
+      "srcTitle": "Nervous tissue",
+      "fact": "Neurons that fire, and glial cells that keep them fed and insulated in a fatty myelin sheath.",
+      "src": "https://en.wikipedia.org/wiki/Nervous_tissue"
+    },
+    {
+      "id": "bed_heart",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Heart",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Heart",
+      "fact": "Cardiac muscle does the squeezing, a collagen framework gives the wall its shape, epithelium lines every chamber, and its own pacemaker cells set the beat.",
+      "src": "https://en.wikipedia.org/wiki/Heart"
+    },
+    {
+      "id": "bed_lung",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Lung",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Lung",
+      "fact": "Epithelium lines the airway down to the alveoli, elastic and collagen fiber let the tissue recoil, smooth muscle rings the bronchioles, and the vagus nerve reaches in to set their width.",
+      "src": "https://en.wikipedia.org/wiki/Lung"
+    },
+    {
+      "id": "bed_brain",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Brain",
+      "of": [
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Brain",
+      "fact": "Composed primarily of two kinds of cell: neurons that signal, and the glial cells that support, feed and insulate them.",
+      "src": "https://en.wikipedia.org/wiki/Brain"
+    },
+    {
+      "id": "bed_liver",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Liver",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Liver",
+      "fact": "Epithelium lines its bile ducts, and a fibrous connective-tissue capsule wraps the whole organ and threads through it, carrying the vessels in.",
+      "src": "https://en.wikipedia.org/wiki/Liver"
+    },
+    {
+      "id": "bed_skin",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Skin",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Skin",
+      "fact": "Epithelium on the outside, connective tissue beneath it cushioning every stress, nerve endings that sense touch, and a tiny muscle at the root of every hair.",
+      "src": "https://en.wikipedia.org/wiki/Skin"
+    },
+    {
+      "id": "bed_kidney",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Kidney",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Kidney",
+      "fact": "At least 26 distinct cell types, epithelial, endothelial, stromal and smooth muscle among them, all wrapped in a tough fibrous capsule and wired to the renal plexus.",
+      "src": "https://en.wikipedia.org/wiki/Kidney"
     }
   ],
   "composition": {
@@ -1775,6 +1900,14 @@
     ],
     "yeast": [
       "bed_cell"
+    ],
+    "human": [
+      "bed_heart",
+      "bed_lung",
+      "bed_brain",
+      "bed_liver",
+      "bed_skin",
+      "bed_kidney"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",
@@ -2188,6 +2321,11 @@
       "id": "tissue",
       "name": "Tissues",
       "blurb": "Cells of one kind, doing one job together."
+    },
+    {
+      "id": "organ",
+      "name": "Organs",
+      "blurb": "Different tissues, working together as one structure with one job."
     }
   ],
   "linkages": [

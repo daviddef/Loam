@@ -1262,6 +1262,13 @@ def('fetus', () => [                                      // the same curl, furt
   C(36, 22, 8, 'lo'), C(33, 19, 2.4, 'hi'), C(38, 21, 1.6, 'ik'),
   S('M20 34 Q26 42 22 48', 'lo', 2.4), S('M28 36 Q34 40 34 46', 'lo', 2),
 ]);
+def('human', () => [                                      // uncurled at last: upright, on two legs
+  C(30, 13, 7, 'bs'), C(27, 11, 2, 'hi'),                  // head
+  P('M22 21 L38 21 L36 40 L24 40 Z', 'bs'),                // torso
+  S('M23 23 L13 34', 'bs', 3.6), S('M37 23 L47 34', 'bs', 3.6),  // arms, out and down
+  S('M27 40 L23 55', 'bs', 4), S('M33 40 L37 55', 'bs', 4),      // legs, apart
+  S('M25 28 Q30 32 35 28', 'lo', 1.6),                     // waistline
+]);
 
 def('penicillin', () => [                                 // the beta-lactam ring
   P('M20 26 L32 26 L32 38 L20 38 Z', 'ik'),
