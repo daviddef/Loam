@@ -3058,6 +3058,11 @@ def('vitamin_e',  () => [hex('ik', 14, 32, 8, 2),
 def('soy_sauce', () => [vessel('ik', 22, 48), P('M16 28 L44 28 L43 46 Q30 49 17 46 Z', 'lo'),
                         E(30, 28, 14, 3, 'ground'),
                         ...granules('gh', 3, 61, [22, 34, 38, 42])]);
+// A narrow bottle, not soy_sauce's wide-mouth pot — fish sauce is sealed
+// and kept, not stirred, and the real container shape says that.
+def('fish_sauce', () => [P('M26 8 L34 8 L34 20 Q42 26 42 34 L42 50 Q42 54 38 54 L22 54 Q18 54 18 50 L18 34 Q18 26 26 20 Z', 'lo'),
+                        P('M18 36 L42 36 L42 50 Q42 54 38 54 L22 54 Q18 54 18 50 Z', 'ik'),
+                        P('M24 40 L28 40 L28 50 L24 50 Z', 'hi')]);
 def('candied_fruit', () => [...[[22, 24], [36, 22], [28, 38], [40, 38]].map(([x, y]) =>
                               [P(`M${x - 7} ${y} L${x} ${y - 7} L${x + 7} ${y} L${x} ${y + 7} Z`, 'bs'),
                                ...granules('gh', 3, x * 7, [x - 6, y - 6, x + 6, y + 6])]).flat()]);
