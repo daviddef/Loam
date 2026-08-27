@@ -2799,8 +2799,38 @@ function expandUp(chip) {
   const id = chip.dataset.id;
   if (!id) return;
   const steps = orderedSteps(id);
-  if (!steps.length) {                                // a starter — nothing is above it
-    chip.classList.add('pulse');
+  if (!steps.length) {
+    // No crafting route doesn't mean nothing made it — Sun really is
+    // hydrogen and helium, water really is hydrogen and oxygen, the game
+    // just hands them to you for free instead of making you build them.
+    // Same tap-reveals-what-made-this affordance, same bedrock data the
+    // passive canvas lines already draw from, just materializing the real
+    // component chips instead of only linking ones already on the bench.
+    // ("still cant expand suns parents or waters parents from the canvas
+    // like the other. all the rest show me a number and i can click and
+    // they show me their parents" — found live, asked five times.)
+    const comps = BED.composition[id];
+    const real = comps
+      ? [...new Set(comps.flatMap(p => [...atomsUnder(p)]))]
+          .map(a => PLAYABLE_ATOM.get(a)).filter(g => g && g !== id)
+      : [];
+    if (real.length) {
+      const already = new Map();
+      for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+        if (!already.has(c.dataset.id)) already.set(c.dataset.id, c);
+      }
+      for (const gid of real) {
+        const el = already.get(gid) || spawn(gid, null, null, [chip]);
+        links.push({ a: el, b: null, out: chip, fresh: true });
+      }
+      benchTouched = true;
+      refreshFolds();
+      drawLinks();
+      tidy();
+      sfx.pick();
+      return;
+    }
+    chip.classList.add('pulse');                        // truly nothing above it
     setTimeout(() => chip.classList.remove('pulse'), 380);
     return;
   }
@@ -2886,10 +2916,18 @@ let pathSeq = 0;
 function drawLinksNow() {
   const parts = [];
   // Pulses are the expensive part, so drop them on a busy board or when the
-  // player has asked for quiet. The lines themselves always draw.
+  // player has asked for quiet. The lines themselves always draw. The cap
+  // has to count what is actually on screen right now, not links.length —
+  // that counts every crafted link this save has ever made, so a long game
+  // crossed 40 total crafts ages before the bench itself got busy, and the
+  // toggle went dead with no toast, no visual change, nothing to explain
+  // why. ("dots along the line toggle no longer working... no dots on line
+  // even though toggle on?" — found live, on a real 64-discovery save.)
+  const visibleLinkCount = links.reduce((n, l) =>
+    n + (l.out.isConnected && !l.out.classList.contains('hidden') ? 1 : 0), 0);
   const flowing = prefs.motes !== false && prefs.tone === 'playful'
     && !matchMedia('(prefers-reduced-motion: reduce)').matches
-    && links.length <= 40;
+    && visibleLinkCount <= 40;
   for (const l of links) {
     if (!l.out.isConnected || l.out.classList.contains('hidden')) continue;
     const [ox, oy] = chipCentre(l.out);
@@ -3637,10 +3675,32 @@ function spawnPlaceholder(text) {
 // 4 steps borrow the same green-to-red positions rather than inventing one).
 const OFF_GRADE_COLOR = { a: '#038141', b: '#85BB2F', c: '#FECB02', d: '#EE8100', e: '#E63E11' };
 const OFF_NOVA_COLOR = { 1: '#038141', 2: '#85BB2F', 3: '#EE8100', 4: '#E63E11' };
-function offBadge(label, value, color) {
+// What each of the three regulated scales actually means — real definitions,
+// real sources, not this game inventing what a Nutri-Score grade stands for.
+const SCORE_INFO = {
+  nutri: { title: 'Nutri-Score',
+    body: 'A front-of-pack nutrition label used across several European countries. Grades run A (green) to E (red), computed per 100g/100ml from a points formula: points added for energy, saturated fat, sugars and salt; points subtracted for fibre, protein, and the share of fruit, vegetables, legumes and nuts.',
+    src: 'https://en.wikipedia.org/wiki/Nutri-Score' },
+  nova: { title: 'NOVA Processing',
+    body: 'A classification of foods by how much they have been processed, and why — not by nutrient content. Four groups: unprocessed or minimally processed foods; processed culinary ingredients (oils, salt, sugar); processed foods (bread, cheese, canned vegetables); and ultra-processed food and drink products. Developed by researchers at the University of São Paulo in 2009.',
+    src: 'https://en.wikipedia.org/wiki/Nova_classification' },
+  eco: { title: 'Eco-Score',
+    body: 'An environmental grade, A (green) to E (red), built from a life-cycle analysis produced by ADEME and INRAE in France — sixteen environmental impacts, adjusted for packaging, transport, certifications and origin. Introduced in 2021 by a group of independent food and nutrition apps, including Open Food Facts.',
+    src: 'https://en.wikipedia.org/wiki/Eco-score' },
+};
+function showScoreInfo(key) {
+  const s = SCORE_INFO[key];
+  if (!s) return;
+  document.getElementById('sheetBody').innerHTML =
+    `<p>${s.body}</p><a class="src" href="${s.src}" target="_blank" rel="noopener">Check this</a>`;
+  openSheet(s.title);
+}
+function offBadge(label, value, color, infoKey) {
   const bg = color || '#9c9184', dark = bg === OFF_GRADE_COLOR.c;
   return `<div class="ratingBadge" style="background:${bg};color:${dark ? '#3a2e00' : '#fff'}">` +
-    `<span class="rbVal">${value}</span><span class="rbLbl">${label}</span></div>`;
+    `<span class="rbVal">${value}</span><span class="rbLbl">${label}</span>` +
+    (infoKey ? `<i class="info" data-scoreinfo="${infoKey}" title="What is ${label}?">i</i>` : '') +
+    `</div>`;
 }
 const offHumanize = (t) => (t || '').replace(/^\w\w:/, '').replace(/-/g, ' ')
   .replace(/\b\w/g, c => c.toUpperCase());
@@ -3662,9 +3722,9 @@ function showScannedProduct(hubEl) {
   const ns = (p.nutriscore_grade || '').toLowerCase();
   const es = (p.ecoscore_grade || '').toLowerCase();
   const nova = p.nova_group;
-  const ratings = offBadge('Nutri-Score', ns && OFF_GRADE_COLOR[ns] ? ns.toUpperCase() : '–', OFF_GRADE_COLOR[ns]) +
-    offBadge('Processing', OFF_NOVA_COLOR[nova] ? `NOVA ${nova}` : '–', OFF_NOVA_COLOR[nova]) +
-    offBadge('Eco-Score', es && OFF_GRADE_COLOR[es] ? es.toUpperCase() : '–', OFF_GRADE_COLOR[es]);
+  const ratings = offBadge('Nutri-Score', ns && OFF_GRADE_COLOR[ns] ? ns.toUpperCase() : '–', OFF_GRADE_COLOR[ns], 'nutri') +
+    offBadge('Processing', OFF_NOVA_COLOR[nova] ? `NOVA ${nova}` : '–', OFF_NOVA_COLOR[nova], 'nova') +
+    offBadge('Eco-Score', es && OFF_GRADE_COLOR[es] ? es.toUpperCase() : '–', OFF_GRADE_COLOR[es], 'eco');
   const tags = [
     ...(p.labels_tags || []).map(t => `<span class="offTag">${offHumanize(t)}</span>`),
     ...(p.allergens_tags || []).map(t => `<span class="offTag warn">Contains ${offHumanize(t)}</span>`),
@@ -5349,6 +5409,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (md) return showProvenance(md.dataset.for, md.dataset.mode);
   const ea = ev.target.closest('[data-entry-any]');
   if (ea) return showEntry(ea.dataset.entryAny);
+  const si = ev.target.closest('[data-scoreinfo]');
+  if (si) return showScoreInfo(si.dataset.scoreinfo);
   const hn = ev.target.closest('[data-hint]');
   if (hn) return showHint(hn.dataset.hint);
   const mr = ev.target.closest('[data-more]');
