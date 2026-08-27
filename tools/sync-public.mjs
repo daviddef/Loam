@@ -68,7 +68,7 @@ const PUBLIC = [
 ];
 
 /** Anything matching these must never reach the public repo. */
-const NEVER = [/^RESEARCH.*\.md$/, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG\.md$/, /^DESIGN\.md$/,
+const NEVER = [/^RESEARCH.*\.md$/, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
                /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
                /^tools\/session-report\.mjs$/,

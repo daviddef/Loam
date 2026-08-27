@@ -14294,5 +14294,395 @@
     "why": "2 Li + H2 → 2 LiH, direct from the elements — especially rapid above 600°C, though it proceeds even well below that.",
     "src": "https://en.wikipedia.org/wiki/Lithium_hydride",
     "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "uranium"
+    ],
+    "out": "neptunium",
+    "why": "U-238 catches a neutron and becomes U-239, which beta-decays in 23 minutes into neptunium-239 — the reaction McMillan and Abelson used in a Berkeley cyclotron in 1940 to find the first element past uranium.",
+    "src": "https://en.wikipedia.org/wiki/Neptunium",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "plutonium"
+    ],
+    "out": "americium",
+    "why": "Plutonium-239 in a reactor catches two neutrons to become plutonium-241, which beta-decays over 14.35 years into americium-241 — the only artificial element that ends up inside an ordinary household smoke detector.",
+    "src": "https://en.wikipedia.org/wiki/Americium",
+    "verified": true
+  },
+  {
+    "in": [
+      "helium",
+      "plutonium"
+    ],
+    "out": "curium",
+    "why": "Pu-239 + He-4 → Cm-242 + n — Seaborg, James and Ghiorso fired alpha particles at plutonium in a 60-inch cyclotron in 1944, then kept the discovery secret until after the war ended.",
+    "src": "https://en.wikipedia.org/wiki/Curium",
+    "verified": true
+  },
+  {
+    "in": [
+      "americium",
+      "helium"
+    ],
+    "out": "berkelium",
+    "why": "Am-241 + He-4 → Bk-243 + 2n — 35 MeV alpha particles fired at americium for six hours in the Berkeley 60-inch cyclotron, December 1949.",
+    "src": "https://en.wikipedia.org/wiki/Berkelium",
+    "verified": true
+  },
+  {
+    "in": [
+      "curium",
+      "helium"
+    ],
+    "out": "californium",
+    "why": "A microgram target of curium-242 bombarded with 35 MeV alpha particles in the Berkeley cyclotron produced californium-245 plus a free neutron, February 1950.",
+    "src": "https://en.wikipedia.org/wiki/Californium",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "thorium"
+    ],
+    "out": "protactinium",
+    "why": "Th-232 + n → Th-233, which beta-decays in 22.3 minutes to protactinium-233 — the first step of the thorium fuel cycle, on the way to fissile uranium-233.",
+    "src": "https://en.wikipedia.org/wiki/Protactinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "radium"
+    ],
+    "out": "actinium",
+    "why": "Actinium is prepared, in milligram amounts, by the neutron irradiation of radium-226 in a nuclear reactor — Ra-226 catches a neutron, becomes Ra-227, and beta-decays to Ac-227 in 42 minutes.",
+    "src": "https://en.wikipedia.org/wiki/Actinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "molybdenum",
+      "proton"
+    ],
+    "out": "technetium",
+    "why": "The reaction 100Mo(p,2n)99mTc — 22 MeV protons fired at a molybdenum-100 target in a medical cyclotron — was demonstrated in 1971 and is still used today when technetium-99m supplies run short.",
+    "src": "https://en.wikipedia.org/wiki/Technetium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "helium"
+    ],
+    "out": "astatine",
+    "why": "Corson, MacKenzie and Segrè made the first astatine in 1940 by firing alpha particles at bismuth-209 in a Berkeley cyclotron, knocking out two neutrons to leave astatine-211 behind.",
+    "src": "https://en.wikipedia.org/wiki/Astatine",
+    "verified": true
+  },
+  {
+    "in": [
+      "californium",
+      "carbon"
+    ],
+    "out": "rutherfordium",
+    "why": "249Cf + 12C → 261Rf* → 257Rf + 4n — a Berkeley team fired carbon-12 ions at a californium-249 target in 1969 and traced the alpha decay of the result down to its known daughter nucleus.",
+    "src": "https://en.wikipedia.org/wiki/Rutherfordium",
+    "verified": true
+  },
+  {
+    "in": [
+      "californium",
+      "nitrogen"
+    ],
+    "out": "dubnium",
+    "why": "249Cf + 15N → 260Db + 4n — a Berkeley team fired nitrogen-15 ions at californium-249 in April 1970, claiming element 105 in a priority dispute with Dubna that ran for years.",
+    "src": "https://en.wikipedia.org/wiki/Dubnium",
+    "verified": true
+  },
+  {
+    "in": [
+      "californium",
+      "oxygen"
+    ],
+    "out": "seaborgium",
+    "why": "249Cf + 18O → 263mSg + 4n — Seaborg's own team fired oxygen-18 ions at californium-249 in 1974, and the element eventually took his name while he was still alive to see it.",
+    "src": "https://en.wikipedia.org/wiki/Seaborgium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "chromium"
+    ],
+    "out": "bohrium",
+    "why": "209Bi + 54Cr → 262Bh + n — a GSI Darmstadt team fired chromium-54 nuclei at bismuth-209 in 1981, catching five atoms of bohrium-262 before they decayed away.",
+    "src": "https://en.wikipedia.org/wiki/Bohrium",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "lead"
+    ],
+    "out": "hassium",
+    "why": "The GSI Darmstadt team bombarded a lead-208 target with accelerated iron-58 nuclei in 1984, catching three atoms of hassium-265 before they decayed away.",
+    "src": "https://en.wikipedia.org/wiki/Hassium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "iron"
+    ],
+    "out": "meitnerium",
+    "why": "209Bi + 58Fe → 266Mt + n — the GSI Darmstadt team fired iron-58 nuclei at bismuth-209 on August 29, 1982, and detected a single atom of meitnerium.",
+    "src": "https://en.wikipedia.org/wiki/Meitnerium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "nickel"
+    ],
+    "out": "darmstadtium",
+    "why": "208Pb + 62Ni → 269Ds + n — the GSI Darmstadt team fired nickel-62 nuclei at lead-208 on November 9, 1994, catching a single atom of darmstadtium-269.",
+    "src": "https://en.wikipedia.org/wiki/Darmstadtium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "nickel"
+    ],
+    "out": "roentgenium",
+    "why": "209Bi + 64Ni → 272Rg + n — the GSI Darmstadt team fired nickel-64 nuclei at bismuth-209 on December 8, 1994, catching three atoms of roentgenium.",
+    "src": "https://en.wikipedia.org/wiki/Roentgenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "zinc"
+    ],
+    "out": "copernicium",
+    "why": "208Pb + 70Zn → 277Cn + n — the GSI Darmstadt team fired zinc-70 nuclei at lead-208 on February 9, 1996, producing a single atom of copernicium.",
+    "src": "https://en.wikipedia.org/wiki/Copernicium",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "chlorine"
+    ],
+    "out": "beryllium_chloride",
+    "why": "Be + Cl2 → BeCl2 at high temperature — a covalent halide, not an ionic salt, since beryllium is too small and polarizing to bond like the rest of the alkaline earths. It catalyzes Friedel-Crafts reactions and feeds beryllium electrolysis.",
+    "src": "https://en.wikipedia.org/wiki/Beryllium_chloride",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "bromine"
+    ],
+    "out": "beryllium_bromide",
+    "why": "Be + Br2 → BeBr2, beryllium metal burning directly in bromine vapor at 500-700°C. Like all of beryllium's halides it bonds covalently rather than ionically — the one alkaline earth metal too small and too polarizing to build a true salt.",
+    "src": "https://en.wikipedia.org/wiki/Beryllium_bromide",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "iodine"
+    ],
+    "out": "beryllium_iodide",
+    "why": "Be + I2 → BeI2, beryllium metal and iodine combining directly at 500-700°C. Decomposed again on a white-hot tungsten filament, the same compound deposits ultra-pure beryllium metal back out.",
+    "src": "https://en.wikipedia.org/wiki/Beryllium_iodide",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "fluorine"
+    ],
+    "out": "beryllium_fluoride",
+    "why": "Alkaline earth metals react with the halogens to form halides — though beryllium's own bonds are covalent, not ionic, unlike the rest of the group. Reducing beryllium fluoride with magnesium at 1,300°C is the main route to metallic beryllium itself.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "magnesium"
+    ],
+    "out": "magnesium_fluoride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Magnesium fluoride's own crystal stays transparent from deep ultraviolet to the infrared, which is why it coats the lenses of cameras and space telescopes.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "bromine",
+      "magnesium"
+    ],
+    "out": "magnesium_bromide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Magnesium bromide once served as a sedative and anticonvulsant; today it survives mostly as a Lewis-acid catalyst that steers the aldol reaction.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "magnesium"
+    ],
+    "out": "magnesium_iodide",
+    "why": "Mixing powdered magnesium metal straight into elemental iodine, kept strictly free of moisture, makes magnesium iodide directly. Chemists use it to strip methyl groups off aromatic ethers and to steer the Baylis-Hillman reaction.",
+    "src": "https://en.wikipedia.org/wiki/Magnesium_iodide",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "fluorine"
+    ],
+    "out": "fluorite",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides — calcium chloride is the general page's own worked example, and the fluoride version of that same reaction is fluorite, CaF2, the very mineral that gave fluorine its name.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "bromine",
+      "calcium"
+    ],
+    "out": "calcium_bromide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Calcium bromide's dense brine gets pumped down oil wells as drilling fluid, and stirred into burning coal it captures mercury before it can vent up the stack.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "calcium",
+      "iodine"
+    ],
+    "out": "calcium_iodide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Calcium iodide has served both early photography and, more recently, as an iodine supplement stirred straight into cat food.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "strontium"
+    ],
+    "out": "strontium_fluoride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Strontium fluoride's crystal carries radioactive strontium-90 inside a radioisotope thermoelectric generator, decaying quietly for decades to keep it powered.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "bromine",
+      "strontium"
+    ],
+    "out": "strontium_bromide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Strontium bromide goes into flares for the same reason any strontium salt does: burned, it throws off strontium's own signature deep red.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "strontium"
+    ],
+    "out": "strontium_iodide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Doped with europium, strontium iodide catches gamma rays and flashes light — a scintillation crystal grown a whole cylinder at a time.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "barium",
+      "fluorine"
+    ],
+    "out": "barium_fluoride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Barium fluoride stays clear to infrared light and flashes when it catches a gamma photon, which is why PET scanners use crystals of it as detectors.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "barium",
+      "chlorine"
+    ],
+    "out": "barium_chloride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Barium chloride is the standard laboratory reagent for weighing out exactly how much sulfate a solution is hiding.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "barium",
+      "bromine"
+    ],
+    "out": "barium_bromide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Marie Curie used barium bromide's own crystallization habits to fractionate radium out of the barium ore it comes mixed with.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "barium",
+      "iodine"
+    ],
+    "out": "barium_iodide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Barium iodide is the least-documented of barium's four halides — even its own reference entry has no use to name for it.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "fluorine",
+      "radium"
+    ],
+    "out": "radium_fluoride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Radium fluoride even crystallizes in fluorite's own cubic form — the same column of the periodic table, just heavier and radioactive.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "radium"
+    ],
+    "out": "radium_chloride",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Radium chloride was the first radium compound ever isolated pure — Marie Curie and André-Louis Debierne's own separation of radium from barium.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "bromine",
+      "radium"
+    ],
+    "out": "radium_bromide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Pierre and Marie Curie discovered this salt in 1898; it later glowed on watch dials until the danger was understood, phased out only by the 1960s-70s.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
+  },
+  {
+    "in": [
+      "iodine",
+      "radium"
+    ],
+    "out": "radium_iodide",
+    "why": "Alkaline earth metals react with the halogens to form ionic halides. Radium iodide is a yellow, water-soluble salt — one of the rarest compounds here, and one Wikipedia devotes only a handful of sentences to.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "supported": true
   }
 ]

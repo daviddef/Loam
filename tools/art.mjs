@@ -1433,6 +1433,49 @@ def('promethium', () => [...disc('hi', 2), ...Array.from({ length: 5 }, (_, i) =
   return C(n2(30 + 20 * Math.cos(a)), n2(32 + 20 * Math.sin(a)), 2.4, 'gh');
 })]);
 
+/* the actinides finished, and the transactinides beyond them — synthetic,
+   made an atom or a handful at a time. Drawn as the small bulk that little
+   ever amounts to: an ingot, a rod, shot, foil, a sponge — never elaborate,
+   just dense grey metal in whatever form the little of it that exists
+   actually takes. */
+def('neptunium',     () => [...ingot('bs', 17, 10, 4), C(21, 27, 1.8, 'hi')]);
+def('protactinium',  () => [rod('bs', 24, 4, 48), C(30, 32, 2, 'hi')]);
+def('actinium',       () => [...coil('bs', 4, 8), C(30, 13, 2, 'hi')]);
+def('americium',      () => [...shot('bs', 5, 401)]);
+def('curium',          () => [...flakes('bs', 3), ...granules('hi', 4, 521, [16, 20, 44, 26])]);
+def('berkelium',       () => [...disc('bs', 1), S('M18 30 L42 30', 'hi', 1.4)]);
+def('californium',    () => [                              // a small irregular nugget, not the palladium foil
+  P('M14 24 L28 14 L46 20 L44 38 L26 46 L12 36 Z', 'bs'),
+  C(34, 22, 2, 'hi'), C(20, 34, 1.6, 'gh'),
+]);
+def('technetium',     () => [                               // a thin blade, not the selenium needle-fan
+  P('M20 30 L30 14 L40 30 L30 46 Z', 'bs'), S('M30 14 L30 46', 'hi', 1.4),
+]);
+def('astatine',        () => [                             // the rarest element on earth, drawn as barely there
+  ring('gh', 30, 30, 15, 1), C(34, 26, 1.6, 'bs'),
+  ...granules('gh', 2, 887, [22, 30, 38, 38]),
+]);
+def('rutherfordium',   () => [...sponge('bs', 727)]);
+def('dubnium',          () => [...ingot('bs', 11, 14, 8), ...granules('hi', 3, 613, [20, 24, 40, 30])]);
+def('seaborgium',      () => [hex('bs', 30, 30, 14, 2.4), C(30, 30, 4, 'hi')]);
+def('bohrium',          () => [...dendrite('bs', 6)]);
+def('hassium',          () => [rod('bs', 18, 3, 20), rod('lo', 18, 3, -20)]);
+def('meitnerium',      () => [                             // a briquette, not the rare_earth heap
+  P('M18 20 L42 20 L46 34 L36 46 L24 46 L14 34 Z', 'bs'), S('M22 26 L38 26', 'hi', 1.6),
+]);
+def('darmstadtium',    () => [                             // a handful of atoms, decaying as they're made
+  ...Array.from({ length: 7 }, (_, i) => {
+    const a = (i * 51.43) * Math.PI / 180;
+    return S(`M30 30 L${n2(30 + 19 * Math.cos(a))} ${n2(30 + 19 * Math.sin(a))}`, 'gh', 1.4);
+  }), C(30, 30, 4, 'bs'),
+]);
+def('roentgenium',     () => [ring('hi', 30, 30, 17, 2), ring('bs', 30, 30, 10, 2), C(30, 30, 3, 'hi')]);
+def('copernicium',     () => [                             // the heaviest confirmed, held in orbit rather than a lump
+  ring('gh', 30, 30, 19, 1.2),
+  ...[0, 90, 180, 270].map(a => C(n2(30 + 19 * Math.cos(a * Math.PI / 180)), n2(30 + 19 * Math.sin(a * Math.PI / 180)), 2.6, 'bs')),
+  C(30, 30, 5, 'hi'),
+]);
+
 /* the wider crop roster ───────────────────────────────────────────────── */
 def('cotton', () => [                                      // the boll, split, fibre escaping
   ...[[24, 26], [36, 26], [22, 36], [38, 36], [30, 22], [30, 40]].map(([x, y]) => C(x, y, 9, 'hi')),
@@ -2624,6 +2667,75 @@ def('caesium_iodide',    () => [                           // the phosphor scree
   P('M10 18 L50 18 L50 42 L10 42 Z', 'ik'),
   ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
     S(`M30 30 L${n(30 + 9 * Math.cos(a * Math.PI / 180))} ${n(30 + 9 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.2)),
+]);
+
+/* the alkaline-earth halides — every one built on the same facet() crystal
+   chunk the rest of the salt family already uses, scaled up metal by metal
+   down the group (beryllium smallest, radium largest), with a mark specific
+   to the halogen: fluoride is pierced by a straight line, chloride weeps
+   little droplets, bromide beads dark, iodide sheds a wisp as it sublimes. */
+def('beryllium_fluoride', () => [facet('bs', .48), facet('hi', .22), S('M20 18 L40 42', 'ik', 1.6)]);
+def('beryllium_chloride', () => [
+  facet('bs', .52),
+  E(15, 17, 2.6, 3.4, 'hi'), S('M15 20 L18 25', 'gh', 1),
+  E(45, 21, 2.6, 3.4, 'hi'), S('M45 24 L42 29', 'gh', 1),
+]);
+def('beryllium_bromide',  () => [facet('bs', .56), C(39, 41, 3, 'lo'), C(38, 40, 1, 'hi')]);
+def('beryllium_iodide',   () => [facet('bs', .6), S('M22 15 Q27 9 23 4', 'gh', 1.4)]);
+
+def('magnesium_fluoride', () => [facet('bs', .65), facet('hi', .3), S('M40 16 L20 44', 'ik', 1.6)]);
+def('magnesium_bromide',  () => [
+  facet('bs', .69),
+  C(17, 27, 2.8, 'lo'), C(43, 33, 2.8, 'lo'), C(16, 26, 1, 'hi'), C(42, 32, 1, 'hi'),
+]);
+def('magnesium_iodide',   () => [
+  facet('bs', .73),
+  S('M18 16 Q23 10 19 5', 'gh', 1.4), S('M42 18 Q47 12 43 7', 'gh', 1.4),
+]);
+
+def('calcium_bromide', () => [
+  facet('bs', .8),
+  C(30, 12, 2.8, 'lo'), C(30, 48, 2.8, 'lo'), C(29, 11, 1, 'hi'), C(29, 47, 1, 'hi'),
+]);
+def('calcium_iodide',  () => [facet('bs', .84), S('M14 30 Q9 25 13 20', 'gh', 1.4), C(11, 22, 1.4, 'bs')]);
+
+def('strontium_fluoride', () => [facet('bs', .95), facet('hi', .4), S('M30 8 L30 52', 'ik', 1.6)]);
+def('strontium_bromide',  () => [
+  facet('bs', .99), C(24, 14, 2.8, 'lo'), C(38, 16, 2.8, 'lo'), C(31, 47, 2.8, 'lo'),
+]);
+def('strontium_iodide',   () => [
+  facet('bs', 1.03),
+  S('M16 22 Q10 18 12 12', 'gh', 1.4), S('M44 24 Q50 20 48 14', 'gh', 1.4),
+]);
+
+def('barium_fluoride', () => [facet('bs', 1.1), facet('hi', .5), S('M14 14 L46 46', 'ik', 1.6)]);
+def('barium_chloride', () => [
+  facet('bs', 1.14),
+  ...[[13, 20], [47, 22], [30, 52]].map(([x, y]) =>
+    [E(x, y, 2.6, 3.2, 'hi'), S(`M${x} ${y + 3} L${x} ${y + 8}`, 'gh', 1)]).flat(),
+]);
+def('barium_bromide',  () => [
+  facet('bs', 1.18), C(15, 15, 3, 'lo'), C(45, 45, 3, 'lo'), C(14, 14, 1, 'hi'), C(44, 44, 1, 'hi'),
+]);
+def('barium_iodide',   () => [
+  facet('bs', 1.22), S('M12 34 Q6 30 8 24', 'gh', 1.4), C(9, 26, 1.4, 'bs'), C(48, 30, 1.4, 'bs'),
+]);
+
+def('radium_fluoride', () => [
+  facet('bs', 1.25), facet('hi', .55), S('M18 10 L42 50', 'ik', 1.6), C(50, 12, 1.2, 'gh'),
+]);
+def('radium_chloride', () => [
+  facet('bs', 1.29),
+  E(12, 18, 2.8, 3.6, 'hi'), S('M12 21 L15 27', 'gh', 1),
+  E(48, 22, 2.8, 3.6, 'hi'), S('M48 25 L45 31', 'gh', 1),
+  C(30, 8, 1.2, 'gh'),
+]);
+def('radium_bromide',  () => [
+  facet('bs', 1.33), C(30, 46, 3.4, 'lo'), C(29, 45, 1.2, 'hi'), C(8, 14, 1.2, 'gh'),
+]);
+def('radium_iodide',   () => [
+  facet('bs', 1.37),
+  S('M14 16 Q8 12 10 6', 'gh', 1.4), S('M46 18 Q52 14 50 8', 'gh', 1.4), C(30, 52, 1.2, 'gh'),
 ]);
 
 /* the oxides, peroxides and one very stubborn noble gas */
