@@ -1724,6 +1724,7 @@ __CATEGORY_CSS__
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
       <button data-z="motes" id="motesBtn" title="Dots along the lines"><span class="gl" style="--g:15px">__UI_MOTES__</span></button>
+      <button data-z="consolidate" id="consolidateBtn" title="One card per thing"><span class="gl" style="--g:15px">__UI_CONSOLIDATE__</span></button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -3204,6 +3205,28 @@ function syncMotesBtn() {
   b.title = on ? 'Dots along the lines — on' : 'Dots along the lines — off';
   retip(b);
 }
+// Same button/Settings duality as motes above, but the toggle itself does
+// real work the instant it goes on — see consolidateBench().
+function syncConsolidateBtn() {
+  const on = !!prefs.consolidate;
+  const b = document.getElementById('consolidateBtn');
+  b.classList.toggle('on', on);
+  b.title = on ? 'One card per thing — on' : 'One card per thing — off';
+  retip(b);
+}
+function toggleConsolidate() {
+  prefs.consolidate = !prefs.consolidate;
+  savePrefs();
+  if (prefs.consolidate) {
+    pushUndo('joining up the duplicates');
+    const n = consolidateBench();
+    if (n) { tidy(); toast(n === 1 ? 'One duplicate joined up' : `${n} duplicates joined up`); }
+    else toast('One card per thing — on');
+  } else {
+    toast('One card per thing — off');
+  }
+  syncConsolidateBtn();
+}
 document.getElementById('zoom').addEventListener('click', ev => {
   // closest(), not ev.target: the Tidy button's clickable area is the SVG
   // inside it, so ev.target was the <svg>/<span> and dataset.z was undefined —
@@ -3226,8 +3249,10 @@ document.getElementById('zoom').addEventListener('click', ev => {
     // yet. A toast says the toggle worked even when the canvas can't.
     toast(prefs.motes !== false ? 'Dots along the lines — on' : 'Dots along the lines — off');
   }
+  else if (z === 'consolidate') toggleConsolidate();
 });
 syncMotesBtn();
+syncConsolidateBtn();
 board.addEventListener('wheel', ev => {
   ev.preventDefault();
   zoomBy(ev.deltaY < 0 ? 1.12 : 0.89, ev.clientX, ev.clientY);
@@ -5435,16 +5460,7 @@ function showSettings() {
   const td = document.getElementById('sheetBody').querySelector('[data-tracedefault]');
   if (td) td.onclick = () => { prefs.traceDefault = !prefs.traceDefault; savePrefs(); showSettings(); };
   const cons = document.getElementById('sheetBody').querySelector('[data-consolidate]');
-  if (cons) cons.onclick = () => {
-    prefs.consolidate = !prefs.consolidate;
-    savePrefs();
-    if (prefs.consolidate) {
-      pushUndo('joining up the duplicates');
-      const n = consolidateBench();
-      if (n) { tidy(); toast(n === 1 ? 'One duplicate joined up' : `${n} duplicates joined up`); }
-    }
-    showSettings();
-  };
+  if (cons) cons.onclick = () => { toggleConsolidate(); showSettings(); };
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
   if (fp) fp.onclick = () => { setFreePlay(!prefs.freePlay); showSettings(); };
   const tr = document.getElementById('sheetBody').querySelector('[data-transfer]');

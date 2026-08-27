@@ -3932,6 +3932,15 @@ ship.ui_motes = { c: 'craft', s: [
   S('M8 46 Q22 46 30 30 Q38 14 52 14', 'ik', 3),
   C(14, 44, 4.2, 'ik'), C(30, 30, 3.4, 'ik'), C(46, 16, 2.6, 'ik'),
 ] };
+ship.ui_consolidate = { c: 'craft', s: [
+  // Two duplicate outlines folding into one solid card — the toolbar
+  // preview of what the "one card per thing" toggle actually does to
+  // the bench, the same way ui_motes previews the dots it turns on.
+  S('M8 12 L22 12 L22 26 L8 26 Z', 'ik', 2.4),
+  S('M14 18 L28 18 L28 32 L14 32 Z', 'ik', 2.4),
+  S('M30 22 L40 22', 'ik', 3.2),
+  P('M42 12 L56 12 L56 26 L42 26 Z', 'ik'),
+] };
 ship.ui_circle = { c: 'craft', s: [
   C(30, 30, 4, 'ik'),
   ...Array.from({ length: 6 }, (_, i) => {

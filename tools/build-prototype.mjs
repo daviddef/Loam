@@ -77,6 +77,7 @@ for (const [token, value] of [
   ['__UI_SCAN__', uiGlyph('ui_scan')],
   ['__UI_CIRCLE__', uiGlyph('ui_circle')],
   ['__UI_MOTES__', uiGlyph('ui_motes')],
+  ['__UI_CONSOLIDATE__', uiGlyph('ui_consolidate')],
   ['__UI_TABLE__', uiGlyph('ui_table')],
   ['__UI_SHUTTER__', uiGlyph('ui_shutter')],
   ['__UI_GALLERY__', uiGlyph('ui_gallery')],
