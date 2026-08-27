@@ -277,7 +277,7 @@
     background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 13px;
   }
   button:active{transform:translateY(1px)}
-  main{flex:1;display:flex;min-height:0}
+  main{flex:1;display:flex;min-height:0;position:relative}
   #board{flex:1;position:relative;overflow:hidden;touch-action:none}
   /* the canvas: an unbounded world you pan and zoom, not a fixed bench */
   #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
@@ -333,9 +333,22 @@
               font:400 10px/1.3 var(--face-data);letter-spacing:.06em;
               text-transform:uppercase;color:var(--ink-soft)}
   aside{
-    width:238px;flex:none;border-left:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);
+    width:var(--asw,238px);flex:none;border-left:2px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);
     overflow-y:auto;padding:10px;
   }
+  /* Straddles the seam so the drag target is exactly where the eye expects
+     one — width tracks the same --asw the pane itself uses, so it rides
+     along automatically as the pane grows or shrinks, no reflow needed. */
+  #asideGrab{
+    position:absolute;top:0;bottom:0;right:var(--asw,238px);width:11px;
+    transform:translateX(50%);cursor:ew-resize;z-index:5;touch-action:none;
+  }
+  #asideGrab::after{
+    content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:4px;height:44px;border-radius:99px;background:var(--line);
+  }
+  #asideGrab:hover::after{background:var(--orange)}
+  @media(max-width:720px){ #asideGrab{display:none} }
   aside h2{
     font:700 10.5px/1 var(--face-name);letter-spacing:.9px;text-transform:uppercase;
     color:var(--ink-soft);margin:12px 4px 7px;
@@ -1684,6 +1697,11 @@
       <div id="ptBody"></div>
     </div>
   </div>
+  <!-- Sits over the board/shelf boundary, not inside either — the pane
+       widens or narrows by dragging the seam itself, same idea as ptGrab
+       on the table dock below. Desktop only: the shelf becomes a slide-in
+       drawer on a phone, where there is no spare width to hand over. -->
+  <div id="asideGrab" title="Drag to resize the shelf"></div>
   <aside id="aside"></aside>
 </main>
 
@@ -6238,6 +6256,30 @@ document.getElementById('ptBody').addEventListener('pointerdown', ev => {
 addEventListener('resize', () => { if (document.body.classList.contains('pt-on')) ptFit(); });
 if (prefs.ptH) document.body.style.setProperty('--pth', prefs.ptH + 'px');
 if (prefs.ptOpen && !matchMedia('(max-width:720px)').matches) ptSet(true);
+// ---- shelf pane: drag the board/shelf seam to widen it on a bigger screen ----
+function asideWidth(px) {
+  const max = Math.max(238, Math.min(640, Math.round(innerWidth * 0.5)));
+  const w = Math.max(200, Math.min(px, max));
+  document.body.style.setProperty('--asw', w + 'px');
+  prefs.asideW = w; savePrefs();
+}
+if (prefs.asideW) document.body.style.setProperty('--asw', prefs.asideW + 'px');
+{
+  let grab = null;
+  const asideEl = document.getElementById('aside');
+  document.getElementById('asideGrab').addEventListener('pointerdown', ev => {
+    grab = { x: ev.clientX, w: asideEl.getBoundingClientRect().width };
+    ev.target.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  addEventListener('pointermove', ev => {
+    if (!grab) return;
+    asideWidth(grab.w + (grab.x - ev.clientX));   // drag left to grow
+  });
+  addEventListener('pointerup', () => { grab = null; });
+}
+// A width chosen against yesterday's window can overshoot a narrower one.
+addEventListener('resize', () => { if (prefs.asideW) asideWidth(prefs.asideW); });
 addEventListener('keydown', ev => {
   if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === 'z' && !ev.shiftKey) {
     if (ev.target.closest('input,textarea')) return;
