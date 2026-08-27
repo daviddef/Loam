@@ -6599,7 +6599,18 @@ function showBarcodeScan(onIngredients, autoAction) {
     try {
       stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
     } catch {
+      // Told to type the barcode instead, on a sheet that hid the very field
+      // to type it into — autoAction:'camera' skips the manual-entry row on
+      // the assumption the camera will actually open. When the OS or browser
+      // blocks it (a denied or since-revoked permission), that assumption
+      // was wrong, and the toast's own advice became impossible to follow —
+      // Close was the only thing left on the sheet. ("barcode doesnt even
+      // let me enter a barcode anymore" — found live.) A failed camera falls
+      // back to the full picker, not just a dead end with a suggestion.
       toast('Could not open the camera — type the barcode instead');
+      document.getElementById('bcIn').closest('.cardrow').hidden = false;
+      document.getElementById('bcCameraRow').hidden = false;
+      document.getElementById('bcIn').focus();
       return;
     }
     if (!('BarcodeDetector' in window)) { status.innerHTML = '<p class="hint2">Loading the barcode reader…</p>'; await loadZXing().catch(() => {}); status.innerHTML = ''; }
