@@ -235,6 +235,7 @@ __CATEGORY_CSS__
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
   }
+  #zoom button.on{border-color:var(--orange);color:var(--orange)}
   #board{cursor:grab;touch-action:none;overscroll-behavior:contain}
   #board.panning{cursor:grabbing}
   /* The opening cue. Pointer-events none throughout: it can never be in the way,
@@ -1605,6 +1606,7 @@ __CATEGORY_CSS__
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
+      <button data-z="motes" id="motesBtn" title="Dots along the lines"><span class="gl" style="--g:15px">__UI_MOTES__</span></button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -3034,6 +3036,16 @@ function circleTidy() {
   sfx.pick();
 }
 
+// The toolbar button and the Settings toggle both change prefs.motes, so
+// both need to end up showing the same state — this is the one place that
+// reads it back onto the button, called from either.
+function syncMotesBtn() {
+  const on = prefs.motes !== false;
+  const b = document.getElementById('motesBtn');
+  b.classList.toggle('on', on);
+  b.title = on ? 'Dots along the lines — on' : 'Dots along the lines — off';
+  retip(b);
+}
 document.getElementById('zoom').addEventListener('click', ev => {
   // closest(), not ev.target: the Tidy button's clickable area is the SVG
   // inside it, so ev.target was the <svg>/<span> and dataset.z was undefined —
@@ -3047,7 +3059,12 @@ document.getElementById('zoom').addEventListener('click', ev => {
   else if (z === 'fit') fitAll();
   else if (z === 'tidy') tidy();
   else if (z === 'circle') circleTidy();
+  else if (z === 'motes') {
+    prefs.motes = !(prefs.motes !== false);
+    savePrefs(); drawLinks(); syncMotesBtn();
+  }
 });
+syncMotesBtn();
 board.addEventListener('wheel', ev => {
   ev.preventDefault();
   zoomBy(ev.deltaY < 0 ? 1.12 : 0.89, ev.clientX, ev.clientY);
@@ -5112,7 +5129,7 @@ function showSettings() {
        only how much of it you are shown at once.</p>`;
   openSheet('Settings');
   const mo = document.getElementById('sheetBody').querySelector('[data-motes]');
-  if (mo) mo.onclick = () => { prefs.motes = !(prefs.motes !== false); savePrefs(); drawLinks(); showSettings(); };
+  if (mo) mo.onclick = () => { prefs.motes = !(prefs.motes !== false); savePrefs(); drawLinks(); syncMotesBtn(); showSettings(); };
   const td = document.getElementById('sheetBody').querySelector('[data-tracedefault]');
   if (td) td.onclick = () => { prefs.traceDefault = !prefs.traceDefault; savePrefs(); showSettings(); };
   const cons = document.getElementById('sheetBody').querySelector('[data-consolidate]');

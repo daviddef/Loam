@@ -3498,6 +3498,14 @@ ship.ui_table = { c: 'craft', s: [
   ...[12, 24, 36].flatMap(x => [12, 24, 36].map(y =>
     P(`M${x} ${y} L${x + 9} ${y} L${x + 9} ${y + 9} L${x} ${y + 9} Z`, 'ik'))),
 ] };
+ship.ui_motes = { c: 'craft', s: [
+  // A line with three dots travelling along it, shrinking as they go —
+  // the same thing drawLinksNow() actually draws on the bench, in
+  // miniature, so the toolbar icon reads as a preview of the toggle
+  // rather than an arbitrary symbol standing in for it.
+  S('M8 46 Q22 46 30 30 Q38 14 52 14', 'ik', 3),
+  C(14, 44, 4.2, 'ik'), C(30, 30, 3.4, 'ik'), C(46, 16, 2.6, 'ik'),
+] };
 ship.ui_circle = { c: 'craft', s: [
   C(30, 30, 4, 'ik'),
   ...Array.from({ length: 6 }, (_, i) => {
