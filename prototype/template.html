@@ -2934,16 +2934,31 @@ function drawLinksNow() {
       // A curve, not a spoke: it reads as flow rather than wiring, and two
       // parents converging on one child stop looking like a Y of straight lines.
       const my = (sy + oy) / 2;
-      const d = `M ${sx} ${sy} C ${sx} ${my}, ${ox} ${my}, ${ox} ${oy}`;
+      // A scanned product's own links run backwards from every other link in
+      // this array — `a` is the hub (the product), `out` is the ingredient,
+      // the reverse of a crafted link's real parent→child order. That choice
+      // is placeScanned()'s to keep (each ingredient's own near-anchor
+      // positioning and tidy()'s depth math both read `[hub]` as the parent
+      // to sit under), but drawing the line and its motion in that same
+      // a→out order made the dots read as the sauce flowing OUT into its
+      // ingredients, when the ingredients are what made the sauce. ("arent
+      // the animations going the wrong way for the produce/food? they go
+      // from the product out to the ingredients? but in reality its these
+      // ingredients that make the product?" — found live.) Only which end
+      // the line and dots visually run between flips here.
+      const [fx, fy, tx, ty, fromEl, toEl] = l.hub
+        ? [ox, oy, sx, sy, l.out, src]
+        : [sx, sy, ox, oy, src, l.out];
+      const d = `M ${fx} ${fy} C ${fx} ${my}, ${tx} ${my}, ${tx} ${ty}`;
       const id = `lp${++pathSeq}`;
       // The two ends are recorded on the element so a drag can update only the
       // lines it actually moves.
       parts.push(`<path id="${id}" class="made${l.fresh ? ' fresh' : ''}" d="${d}"` +
-                 ` data-from="${src.dataset.uid}" data-to="${l.out.dataset.uid}"/>`);
+                 ` data-from="${fromEl.dataset.uid}" data-to="${toEl.dataset.uid}"/>`);
       if (flowing) {
         // A mote of the ingredient travelling into what it becomes — gold from
         // the sun, blue from water. Offset starts so they never march in step.
-        const hex = FAM_HEX[src.dataset.fam] || '#8A7B6B';
+        const hex = FAM_HEX[fromEl.dataset.fam] || '#8A7B6B';
         const dur = (2.1 + (pathSeq % 5) * 0.22).toFixed(2);
         parts.push(
           `<circle r="3.4" fill="${hex}" class="mote">` +
@@ -3792,11 +3807,11 @@ function placeScanned(scannedProducts) {
     hub._scan = s;
     for (const p of made) {
       const chip = spawn(p.id, null, null, [hub]);
-      links.push({ a: hub, b: null, out: chip, fresh: true });
+      links.push({ a: hub, b: null, out: chip, fresh: true, hub: true });
     }
     for (const p of blank) {
       const chip = spawnPlaceholder(p.text);
-      links.push({ a: hub, b: null, out: chip, fresh: true });
+      links.push({ a: hub, b: null, out: chip, fresh: true, hub: true });
     }
     totalPlaced += made.length;
     totalBlank += blank.length;
