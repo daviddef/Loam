@@ -1830,6 +1830,118 @@
       "srcTitle": "Kidney",
       "fact": "At least 26 distinct cell types, epithelial, endothelial, stromal and smooth muscle among them, all wrapped in a tough fibrous capsule and wired to the renal plexus.",
       "src": "https://en.wikipedia.org/wiki/Kidney"
+    },
+    {
+      "id": "bed_elephant_heart",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Elephant Heart",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Elephant",
+      "fact": "Its apex splits into two points instead of one — an unusual trait among mammals, shared only with the sirenians, manatees and dugongs.",
+      "src": "https://en.wikipedia.org/wiki/Elephant"
+    },
+    {
+      "id": "bed_elephant_lung",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Elephant Lung",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Elephant",
+      "fact": "No pleural cavity — connective tissue fills that space instead, fusing lung straight to diaphragm, which may be what lets an elephant equalize pressure while it snorkels on its trunk.",
+      "src": "https://en.wikipedia.org/wiki/Elephant"
+    },
+    {
+      "id": "bed_elephant_brain",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Elephant Brain",
+      "of": [
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Elephant",
+      "fact": "The largest brain of any terrestrial mammal — 4.5 to 5.5 kilograms, its temporal lobes so oversized they bulge out to the sides of the skull.",
+      "src": "https://en.wikipedia.org/wiki/Elephant"
+    },
+    {
+      "id": "bed_elephant_skin",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Elephant Skin",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Elephant",
+      "fact": "An inch thick over the back and head — tough enough to look armored, yet sensitive enough to need a daily mud bath against burning and insect bites.",
+      "src": "https://en.wikipedia.org/wiki/Elephant"
+    },
+    {
+      "id": "bed_chicken_lung",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Chicken Lung",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Air sac",
+      "fact": "No in-and-out breath: air sacs push air one way through the lung, their walls nothing but epithelium laid over an elastic connective-tissue scaffold, barely touched by a blood vessel.",
+      "src": "https://en.wikipedia.org/wiki/Air_sac"
+    },
+    {
+      "id": "bed_chicken_heart",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Chicken Heart",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Bird anatomy",
+      "fact": "Four chambers, like a mammal's — a design birds evolved on their own, shared only with the crocodilians among reptiles, built to move enough oxygen for constant high activity.",
+      "src": "https://en.wikipedia.org/wiki/Bird_anatomy"
+    },
+    {
+      "id": "bed_chicken_kidney",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Chicken Kidney",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Bladder",
+      "fact": "No urinary bladder — nearly no bird has one. Urine runs straight from ureter to cloaca, the one opening that serves as reservoir for urine, dung and egg alike.",
+      "src": "https://en.wikipedia.org/wiki/Bladder"
+    },
+    {
+      "id": "bed_chicken_brain",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Chicken Brain",
+      "of": [
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Bird anatomy",
+      "fact": "No layered cortex — neurons cluster into three-dimensional nuclei instead, in a pallium that does a mammal cortex's job well enough to give birds a large brain-to-body ratio and real intelligence.",
+      "src": "https://en.wikipedia.org/wiki/Bird_anatomy"
     }
   ],
   "composition": {
@@ -1908,6 +2020,18 @@
       "bed_liver",
       "bed_skin",
       "bed_kidney"
+    ],
+    "elephant": [
+      "bed_elephant_heart",
+      "bed_elephant_lung",
+      "bed_elephant_brain",
+      "bed_elephant_skin"
+    ],
+    "chicken": [
+      "bed_chicken_lung",
+      "bed_chicken_heart",
+      "bed_chicken_kidney",
+      "bed_chicken_brain"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",

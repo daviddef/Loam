@@ -227,10 +227,6 @@ __CATEGORY_CSS__
      something you do TO the bench, same standing as zoom/tidy/the table. */
   #scanTools{position:absolute;left:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
         transition:bottom .18s}
-  /* The dock is opaque and sits on the bottom of the board, so the zoom
-     cluster has to climb on top of it rather than hide behind it. */
-  body.pt-on #zoom{bottom:calc(var(--pth,370px) + 12px)}
-  body.pt-on #scanTools{bottom:calc(var(--pth,370px) + 12px)}
   #zoom button, #scanTools button{
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
@@ -812,8 +808,6 @@ __CATEGORY_CSS__
     opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s;
   }
   #card.on{opacity:1;transform:none;pointer-events:auto}
-  /* Same reason as #zoom: the discovery card must clear the docked table. */
-  body.pt-on #card{bottom:calc(var(--pth,370px) + 82px)}
   .inner{
     position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:13px;
     box-shadow:0 5px 16px rgba(var(--shade),.13);overflow:hidden;cursor:pointer;
@@ -1374,35 +1368,20 @@ __CATEGORY_CSS__
   /* ── the docked periodic table ────────────────────────────────────────
      Sits inside #board, so it covers the bench and never the shelf, and its
      height is one custom property that the grab handle writes. */
-  #ptDock{
-    position:absolute;left:0;right:0;bottom:0;z-index:30;
-    height:var(--pth,370px);display:none;flex-direction:column;
-    background:color-mix(in srgb,var(--surface) 94%,transparent);
-    backdrop-filter:blur(10px);
-    border-top:2px solid var(--line);box-shadow:0 -12px 30px -14px rgba(var(--shade),.8);
+  /* Now a normal flex child of <aside> rather than a fixed overlay docked
+     over the board's bottom edge — see the "Shelf"/"Elements" tabs below.
+     Shown/hidden by aside.elements, the same way #asideShelf is. */
+  #ptDock{display:none;flex-direction:column;min-height:0}
+  aside.elements #ptDock{display:flex}
+  aside.elements #asideShelf{display:none}
+  #asideTabs{display:flex;gap:4px;margin:0 0 9px}
+  #asideTabs .atab{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:5px;
+    padding:6px 6px;border-radius:8px;font:700 11px var(--face-name);
+    color:var(--ink-soft);background:none;cursor:pointer;
   }
-  body.pt-on #ptDock{display:flex}
-  /* The tab: a permanent fixture of the board's bottom edge, not a button
-     among other buttons — always there to grab, whether the drawer under
-     it is open or shut, and it rides up to sit on the dock's own edge
-     once that drawer opens instead of vanishing into it. */
-  #ptTab{
-    position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:31;
-    display:flex;align-items:center;gap:6px;padding:6px 14px 5px;cursor:pointer;
-    background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
-    border:2px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0;
-    font:700 11px var(--face-name);color:var(--ink-soft);transition:bottom .18s,color .15s,border-color .15s;
-  }
-  #ptTab:hover,#ptTab.on{color:var(--orange);border-color:var(--orange)}
-  #ptTab .gl{--g:14px}
-  body.pt-on #ptTab{bottom:var(--pth,370px)}
-  @media(max-width:720px){ #ptTab{display:none} }
-  #ptGrab{
-    flex:none;height:16px;display:flex;align-items:center;justify-content:center;
-    cursor:ns-resize;touch-action:none;
-  }
-  #ptGrab i{display:block;width:44px;height:4px;border-radius:99px;background:var(--line)}
-  #ptGrab:hover i{background:var(--orange)}
+  #asideTabs .atab:hover{color:var(--ink)}
+  #asideTabs .atab.on{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
   #ptHead{
     flex:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
     padding:0 12px 7px;font:400 11px/1.3 var(--face-name);color:var(--ink-soft);
@@ -1486,7 +1465,6 @@ __CATEGORY_CSS__
   }
   #ptBody.tight .ptLegend span{padding:2px 5px}
   #ptClose{margin-left:auto;flex:none}
-  @media(max-width:720px){ body.pt-on #ptDock{display:none} }
 
   .elfact{display:flex;gap:11px;align-items:flex-start;margin:2px 0 4px}
   .elfact > div{min-width:0}
@@ -1763,27 +1741,29 @@ __CATEGORY_CSS__
       <svg id="introArc" aria-hidden="true"><path/></svg>
       <p id="introSay"></p>
     </div>
-    <!-- A tab, not a button among buttons: it lives on the board's own bottom
-         edge and rides up to sit on the dock's edge once open, the way a
-         drawer pull stays put whether the drawer is open or shut. -->
-    <button id="ptTab" title="Show the periodic table along the bottom">
-      <span class="gl" style="--g:14px">__UI_TABLE__</span>Elements
-    </button>
-    <!-- The table, docked. Not a sheet: a sheet is somewhere you go instead of
-         playing, and the point of this one is to be open beside the bench
-         while you work. Drag its edge to give it more room or push it away. -->
+  </div>
+  <!-- Sits over the board/shelf boundary, not inside either — the pane
+       widens or narrows by dragging the seam itself. Desktop only: the
+       shelf becomes a slide-in drawer on a phone, where there is no spare
+       width to hand over. -->
+  <div id="asideGrab" title="Drag to resize the shelf"></div>
+  <aside id="aside">
+    <!-- The periodic table used to be a separate button and a drawer
+         docked over the bottom of the board — a second surface for
+         something that is, at heart, another way to look at the shelf.
+         A tab beside "Shelf" says so directly, and means the canvas never
+         loses height to a drawer sitting on top of it again either. -->
+    <div id="asideTabs">
+      <button class="atab on" data-asidetab="shelf">Shelf</button>
+      <button class="atab" data-asidetab="elements">
+        <span class="gl" style="--g:13px">__UI_TABLE__</span>Elements</button>
+    </div>
+    <div id="asideShelf"></div>
     <div id="ptDock" aria-hidden="true">
-      <div id="ptGrab" title="Drag to resize · drag down to close"><i></i></div>
       <div id="ptHead"></div>
       <div id="ptBody"></div>
     </div>
-  </div>
-  <!-- Sits over the board/shelf boundary, not inside either — the pane
-       widens or narrows by dragging the seam itself, same idea as ptGrab
-       on the table dock below. Desktop only: the shelf becomes a slide-in
-       drawer on a phone, where there is no spare width to hand over. -->
-  <div id="asideGrab" title="Drag to resize the shelf"></div>
-  <aside id="aside"></aside>
+  </aside>
 </main>
 
 <div id="tray"></div>
@@ -2538,7 +2518,7 @@ function renderShelf() {
     FAMILIES.forEach(f => shelfShut.add(f.id));
     shelfAutoFolded = true;
   }
-  const aside = document.getElementById('aside');
+  const aside = document.getElementById('asideShelf');
   const allShut = !q && groups.length > 0 && groups.every(([f]) => shelfShut.has(f.id));
   aside.innerHTML =
     `<div class="shelfbar">
@@ -2605,7 +2585,7 @@ function renderShelf() {
     shelfAutoFolded = true;
     renderShelf();
   };
-  if (document.body.classList.contains('pt-on')) ptRender();   // tiles track the shelf
+  if (document.getElementById('aside').classList.contains('elements')) ptRender();   // tiles track the shelf
   const ra = aside.querySelector('[data-readyall]');
   if (ra) ra.onclick = ev => { ev.stopPropagation(); readyAll = !readyAll; renderShelf(); };
   aside.querySelectorAll('[data-fold]').forEach(h => h.onclick = ev => {
@@ -2670,14 +2650,7 @@ function boardBox() {
   // that subtraction produces a NEGATIVE width, which is truthy, so it was
   // used, and every position derived from it collapsed to the origin. Clamp.
   const w = Math.max(320, b.width  || (window.innerWidth  - 240) || 900);
-  let h = Math.max(320, b.height || (window.innerHeight - 120) || 600);
-  // The docked table sits on the bottom of the board and is opaque, so the
-  // strip behind it is not somewhere a card can usefully be. Everything that
-  // places, tidies or pins a card measures through here, so taking the dock
-  // off the height here is all it takes for none of them to use that strip.
-  const dock = document.getElementById('ptDock');
-  if (dock && document.body.classList.contains('pt-on'))
-    h = Math.max(200, h - dock.getBoundingClientRect().height);
+  const h = Math.max(320, b.height || (window.innerHeight - 120) || 600);
   return { left: b.left, top: b.top, width: w, height: h };
 }
 function toWorld(sx, sy) {
@@ -5218,11 +5191,11 @@ function factsHTML(id) {
     </div>`;
 }
 
-// ---- the periodic table, docked along the bottom ----
-// The sheet version is a page you go to. This one stays open beside the bench,
-// which is the only way it can answer "have I got that one yet" while you are
-// actually playing — so the tiles read your shelf, not just the data file.
-const PT_MIN = 130, PT_MAX_FRAC = 0.72;
+// ---- the periodic table, a tab of the shelf pane ----
+// The sheet version (periodicHTML) is a page you go to. This one stays open
+// beside the bench, which is the only way it can answer "have I got that
+// one yet" while you are actually playing — so the tiles read your shelf,
+// not just the data file.
 // bedrock.json's own `inPlay` flag means "the starters are made of this", which
 // is a different and much smaller set than "you can hold this as a card" — 15
 // against 75. Lighting the dock by that flag left three quarters of the
@@ -5299,26 +5272,17 @@ function ptFit() {
   tab.style.setProperty('--ptcell', cell + 'px');
   body.classList.toggle('tight', cell < 44);
 }
+// Which tab of the aside pane is showing — the normal shelf, or the table.
+// Kept as one function so every caller (the tab buttons, "Close", the
+// restored-on-load preference) agrees on what "on" actually changes.
 function ptSet(on) {
-  document.body.classList.toggle('pt-on', on);
+  const aside = document.getElementById('aside');
+  aside.classList.toggle('elements', on);
   document.getElementById('ptDock').setAttribute('aria-hidden', String(!on));
-  const b = document.getElementById('ptTab');
-  b.classList.toggle('on', on);
-  b.title = on ? 'Hide the periodic table' : 'Show the periodic table along the bottom';
-  retip(b);
+  document.querySelectorAll('#asideTabs .atab').forEach(b =>
+    b.classList.toggle('on', (b.dataset.asidetab === 'elements') === on));
   prefs.ptOpen = on ? 1 : 0; savePrefs();
   if (on) ptRender();
-  drawLinks();
-}
-function ptHeight(px) {
-  // The RAW board, not boardBox() — boardBox subtracts the dock, so clamping
-  // against it made the ceiling fall every time the dock grew, and dragging up
-  // shrank the panel instead of enlarging it.
-  const max = Math.round((board.getBoundingClientRect().height || 600) * PT_MAX_FRAC);
-  const h = Math.max(PT_MIN, Math.min(px, max));
-  document.body.style.setProperty('--pth', h + 'px');
-  prefs.ptH = h; savePrefs();
-  ptFit();                                   // taller dock, bigger tiles
 }
 
 const aminoById = Object.fromEntries((BED.aminos ?? []).map(a => [a.id, a]));
@@ -7055,9 +7019,11 @@ document.getElementById('resetBase').addEventListener('click', () => { closeRese
 document.getElementById('resetClear').addEventListener('click', () => { closeResetMenu(); wipeProgress(true); });
 document.getElementById('undo').addEventListener('click', undoLast);
 
-// ---- periodic dock: open, resize, dismiss ----
-document.getElementById('ptTab').addEventListener('click', () =>
-  ptSet(!document.body.classList.contains('pt-on')));
+// ---- periodic table: a tab of the shelf pane ----
+document.getElementById('asideTabs').addEventListener('click', ev => {
+  const t = ev.target.closest('[data-asidetab]');
+  if (t) ptSet(t.dataset.asidetab === 'elements');
+});
 // A single tap drops the card straight on the bench — the table is a
 // source of material, not a reference you have to drag out every time
 // ("single click pops up info? it should drop on canvas" — found live).
@@ -7092,36 +7058,21 @@ document.getElementById('ptBody').addEventListener('pointerdown', ev => {
   shelfDrag = { id: t.dataset.el, x: ev.clientX, y: ev.clientY, moved: false, ghost: null,
                 hold: setTimeout(() => { if (shelfDrag && !shelfDrag.moved) { shelfDrag = null; openAbout(t.dataset.el); } }, 520) };
 });
-{
-  let grab = null;
-  const dock = document.getElementById('ptDock');
-  document.getElementById('ptGrab').addEventListener('pointerdown', ev => {
-    grab = { y: ev.clientY, h: dock.getBoundingClientRect().height };
-    ev.target.setPointerCapture(ev.pointerId);
-    ev.preventDefault();
-  });
-  addEventListener('pointermove', ev => {
-    if (!grab) return;
-    ptHeight(grab.h + (grab.y - ev.clientY));   // drag up to grow
-  });
-  addEventListener('pointerup', ev => {
-    if (!grab) return;
-    // Pushed well below its smallest useful size: you meant to put it away.
-    const shove = grab.h + (grab.y - ev.clientY);
-    grab = null;
-    if (shove < PT_MIN - 46) { ptHeight(prefs.ptH || 370); ptSet(false); }
-    else drawLinks();
-  });
-}
-addEventListener('resize', () => { if (document.body.classList.contains('pt-on')) ptFit(); });
-if (prefs.ptH) document.body.style.setProperty('--pth', prefs.ptH + 'px');
-if (prefs.ptOpen && !matchMedia('(max-width:720px)').matches) ptSet(true);
+// Resizing is #asideGrab's job now — the table just fills whatever width
+// the pane already has, same as the shelf list does.
+addEventListener('resize', () => {
+  if (document.getElementById('aside').classList.contains('elements')) ptFit();
+});
+if (prefs.ptOpen) ptSet(true);
 // ---- shelf pane: drag the board/shelf seam to widen it on a bigger screen ----
 function asideWidth(px) {
   const max = Math.max(238, Math.min(640, Math.round(innerWidth * 0.5)));
   const w = Math.max(200, Math.min(px, max));
   document.body.style.setProperty('--asw', w + 'px');
   prefs.asideW = w; savePrefs();
+  // The table now lives in the same pane the width-drag resizes, so a
+  // wider pane should mean bigger tiles, not just more empty margin.
+  if (document.getElementById('aside').classList.contains('elements')) ptFit();
 }
 if (prefs.asideW) document.body.style.setProperty('--asw', prefs.asideW + 'px');
 {
