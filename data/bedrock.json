@@ -1942,6 +1942,189 @@
       "srcTitle": "Bird anatomy",
       "fact": "No layered cortex — neurons cluster into three-dimensional nuclei instead, in a pallium that does a mammal cortex's job well enough to give birds a large brain-to-body ratio and real intelligence.",
       "src": "https://en.wikipedia.org/wiki/Bird_anatomy"
+    },
+    {
+      "id": "bed_osseous_tissue",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Bone Tissue",
+      "of": [
+        "bed_cell",
+        "bed_protein",
+        "el_calcium",
+        "el_phosphorus"
+      ],
+      "srcTitle": "Bone",
+      "fact": "About 30% flexible collagen matrix and 70% bound calcium phosphate mineral, laid down by osteoblasts and steadily broken back down by osteoclasts — never finished, always being rebuilt.",
+      "src": "https://en.wikipedia.org/wiki/Bone"
+    },
+    {
+      "id": "bed_cartilage",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Cartilage",
+      "of": [
+        "bed_cell",
+        "bed_protein"
+      ],
+      "srcTitle": "Cartilage",
+      "fact": "Chondrocytes packed in their own matrix of collagen and proteoglycan, with no blood vessels reaching in at all — cut off from blood, and free of feeling because of it.",
+      "src": "https://en.wikipedia.org/wiki/Cartilage"
+    },
+    {
+      "id": "bed_ligament",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Ligament",
+      "of": [
+        "bed_protein"
+      ],
+      "srcTitle": "Ligament",
+      "fact": "Bone tied straight to bone: dense bundles of collagen fiber, with no muscle involved at all — that job belongs to a tendon instead.",
+      "src": "https://en.wikipedia.org/wiki/Ligament"
+    },
+    {
+      "id": "bed_patella",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Patella",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Patella",
+      "fact": "The largest sesamoid bone in the human body — grown inside the quadriceps tendon itself rather than jointed to a neighbour, which lets it increase the leverage that tendon can put through the knee.",
+      "src": "https://en.wikipedia.org/wiki/Patella"
+    },
+    {
+      "id": "bed_tibia",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Tibia",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Tibia",
+      "fact": "The shin bone — second largest bone in the body after the femur, and the one whose upper surface actually meets the femur to carry weight through the knee.",
+      "src": "https://en.wikipedia.org/wiki/Tibia"
+    },
+    {
+      "id": "bed_skull",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Skull",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Skull",
+      "fact": "Forty-four separate bony pieces at birth, fused through the closing fontanelles down to twenty-two by adulthood — eight cranial, fourteen facial — built to keep the brain from injury.",
+      "src": "https://en.wikipedia.org/wiki/Skull"
+    },
+    {
+      "id": "bed_mandible",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Mandible",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Mandible",
+      "fact": "The skull's only movable bone — every other piece is fixed in place, while the jaw alone hinges at both temples, and still counts as the strongest bone in the face.",
+      "src": "https://en.wikipedia.org/wiki/Mandible"
+    },
+    {
+      "id": "bed_vertebral_column",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Spine",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Spinal column",
+      "fact": "A segmented stack of vertebrae running the length of the back, wrapped around the spinal cord the whole way down to protect it.",
+      "src": "https://en.wikipedia.org/wiki/Spinal_column"
+    },
+    {
+      "id": "bed_rib_cage",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Rib Cage",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Rib cage",
+      "fact": "Twelve pairs of ribs closed by the sternum in front and anchored to the thoracic vertebrae in back — a cage built around the heart and lungs, not just near them.",
+      "src": "https://en.wikipedia.org/wiki/Rib_cage"
+    },
+    {
+      "id": "bed_pelvis",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Pelvis",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Pelvis",
+      "fact": "A pair of hip bones fused to the sacrum and coccyx behind them, forming the bowl that carries the whole upper body's weight down into the legs.",
+      "src": "https://en.wikipedia.org/wiki/Pelvis"
+    },
+    {
+      "id": "bed_femur",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Femur",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Femur",
+      "fact": "The longest and thickest bone in the human body — strong enough that some measures call it the strongest bone there is, though the temporal bone gives it real competition.",
+      "src": "https://en.wikipedia.org/wiki/Femur"
+    },
+    {
+      "id": "bed_synovial_fluid",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Synovial Fluid",
+      "of": [
+        "bed_protein",
+        "bed_water_molecule"
+      ],
+      "srcTitle": "Synovial fluid",
+      "fact": "Blood plasma filtered thin and thickened with hyaluronan and lubricin, so a joint's surfaces can slide against each other without ever actually touching.",
+      "src": "https://en.wikipedia.org/wiki/Synovial_fluid"
+    },
+    {
+      "id": "bed_knee",
+      "kind": "compound",
+      "tier": "joint",
+      "name": "Knee",
+      "of": [
+        "bed_femur",
+        "bed_tibia",
+        "bed_patella",
+        "bed_cartilage",
+        "bed_synovial_fluid",
+        "bed_ligament"
+      ],
+      "srcTitle": "Knee",
+      "fact": "Really two joints in one: femur meets tibia to carry weight, femur meets patella to lever the quadriceps — the whole thing held by ligament, cushioned by cartilage, and bathed in synovial fluid throughout.",
+      "src": "https://en.wikipedia.org/wiki/Knee"
+    },
+    {
+      "id": "bed_skeleton",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Skeleton",
+      "of": [
+        "bed_skull",
+        "bed_mandible",
+        "bed_vertebral_column",
+        "bed_rib_cage",
+        "bed_pelvis",
+        "bed_femur"
+      ],
+      "srcTitle": "Human skeleton",
+      "fact": "Around 270 bones at birth, fused down to about 206 by adulthood — the frame that holds the body's shape, shields the organs inside it, and gives every joint something to move against.",
+      "src": "https://en.wikipedia.org/wiki/Human_skeleton"
     }
   ],
   "composition": {
@@ -2019,7 +2202,9 @@
       "bed_brain",
       "bed_liver",
       "bed_skin",
-      "bed_kidney"
+      "bed_kidney",
+      "bed_knee",
+      "bed_skeleton"
     ],
     "elephant": [
       "bed_elephant_heart",
@@ -2447,9 +2632,24 @@
       "blurb": "Cells of one kind, doing one job together."
     },
     {
+      "id": "bone",
+      "name": "Bones",
+      "blurb": "Collagen and mineral cast into a shape, built for load, leverage or protection."
+    },
+    {
+      "id": "fluid",
+      "name": "Fluids",
+      "blurb": "Water carrying dissolved protein, doing one job without ever setting solid."
+    },
+    {
       "id": "organ",
       "name": "Organs",
       "blurb": "Different tissues, working together as one structure with one job."
+    },
+    {
+      "id": "joint",
+      "name": "Joints",
+      "blurb": "Where two bones meet — cushioned, lubricated, and held together well enough to move without touching."
     }
   ],
   "linkages": [
