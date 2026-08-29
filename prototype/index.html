@@ -3716,6 +3716,17 @@ function circleTidy() {
   drawLinks();
   fitAll({ min: 0.2, max: 1.2 });
   sfx.pick();
+  // Most of a bench built by ordinary crafting is two-parent merges, and
+  // none of those ever qualify for a ring — only a single parent with 2+
+  // single-parent results does (a scan hub naming many ingredients, or a
+  // hub element like Sun). Measured live on a real 70-chip, 42-link bench
+  // built from genuine recipe chains: zero chips qualified, so this ran
+  // tidy() and changed nothing further — which reads exactly like a
+  // broken button, not a mode with nothing to say about this particular
+  // bench. ("the 2 types of tidy ups result in the same layouts" — found
+  // live.) Same toast pattern the motes button already uses for its own
+  // version of this problem.
+  if (!rings.length) toast('No hubs to ring here — every result on your bench has two real parents');
 }
 
 // The toolbar button and the Settings toggle both change prefs.motes, so
