@@ -2927,7 +2927,7 @@ function expandUp(chip) {
         }
       }
       for (const gid of real) {
-        const el = already.get(gid) || spawn(gid, null, null, [chip]);
+        const el = already.get(gid) || spawn(gid, null, null, [chip], true);
         links.push({ a: el, b: null, out: chip, fresh: true });
       }
       benchTouched = true;
@@ -2953,7 +2953,7 @@ function expandUp(chip) {
   chipFor.set(id, chip);
   const ensure = (iid) => {
     if (chipFor.has(iid)) return chipFor.get(iid);
-    const el = spawn(iid, null, null, [chip]);
+    const el = spawn(iid, null, null, [chip], true);
     chipFor.set(iid, el);
     return el;
   };
@@ -3904,7 +3904,7 @@ function freeSpot(w, h, near) {
 }
 
 const MAX_CHIPS = 140;
-function spawn(id, x, y, near) {
+function spawn(id, x, y, near, above) {
   // One card per thing, if you asked for that. A bench built by hand ends up
   // with four Waters and three Suns, because every recipe that needs one takes
   // a fresh copy. Consolidated, the copies collapse and the lines converge on
@@ -3935,10 +3935,18 @@ function spawn(id, x, y, near) {
   world.appendChild(el);
   const [cw, ch] = cardSize();
   let anchor = null;
-  if (near && near.length) {                          // sit the result near its parents
+  if (near && near.length) {
     const pts = near.filter(n => n && n.isConnected).map(chipCentre);
+    // A crafted result sits BELOW the parents that made it — the direction
+    // tidy() itself lays the whole bench out in. But expandUp() reuses this
+    // same anchor to spawn the opposite relationship, an ANCESTOR above the
+    // chip that revealed it, and this offset used to always go down
+    // regardless — a real ancestor tap put parents underneath their own
+    // child. ("why when i click on an object it expands its made from path
+    // on the graph, but the elements appear underneath the object, rather
+    // than above" — found live.) `above` flips it.
     if (pts.length) anchor = [pts.reduce((a, p) => a + p[0], 0) / pts.length,
-                              pts.reduce((a, p) => a + p[1], 0) / pts.length + ch + 22];
+                              pts.reduce((a, p) => a + p[1], 0) / pts.length + (above ? -ch - 22 : ch + 22)];
   }
   const [left, top] = x == null ? freeSpot(cw, ch, anchor) : [x - cw / 2, y - ch / 2];
   const bb = boardBox();
