@@ -6685,7 +6685,11 @@ function showBarcodeScan(onIngredients, autoAction) {
   // the fix above.) The row stays for 'snap'/'photo' — only the two
   // buttons for methods that weren't picked get trimmed out of it, below.
   const skipHint = !!autoAction;
-  const skipEntry = !!autoAction;
+  // 'type' means "I want to type a barcode" — hiding the entry row for it
+  // too, same as every other method, left the one button whose entire job
+  // is manual entry opening a sheet with nowhere to type. ("type a barcode
+  // button doesnt let me type at all?" — found live.)
+  const skipEntry = !!autoAction && autoAction !== 'type';
   const skipRow = autoAction === 'type' || autoAction === 'camera';
   document.getElementById('sheetBody').innerHTML = `
     ${skipHint ? '' : `<p class="hint2" style="margin-top:0">Type the numbers under the barcode, or scan it with the
