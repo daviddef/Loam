@@ -5,11 +5,13 @@
     "phylum",
     "subphylum",
     "class",
+    "superorder",
     "order",
+    "suborder",
+    "infraorder",
     "family",
     "subfamily",
-    "genus",
-    "species"
+    "genus"
   ],
   "groups": [
     {
@@ -803,6 +805,276 @@
       "fact": "Isopods — seven pairs of walking legs and a body of overlapping plates. Most are marine, but the woodlice of suborder Oniscidea are the only crustaceans to have fully adapted to life on dry land.",
       "srcTitle": "Isopoda",
       "src": "https://en.wikipedia.org/wiki/Isopoda"
+    },
+    {
+      "id": "tx_dinosauria",
+      "rank": "superorder",
+      "parent": "tx_reptilia",
+      "name": "Dinosauria",
+      "fact": "Defined by hip and hindlimb traits that hold the body upright, off to the side, rather than sprawled like a lizard's — includes every dinosaur that ever lived, and, since birds are its one surviving lineage, still does.",
+      "srcTitle": "Dinosaur",
+      "src": "https://en.wikipedia.org/wiki/Dinosaur"
+    },
+    {
+      "id": "tx_saurischia",
+      "rank": "order",
+      "parent": "tx_dinosauria",
+      "name": "Saurischia",
+      "fact": "The 'lizard-hipped' dinosaurs, named for a pubis bone pointed forward as in a lizard — an ironic name, since this is the saurischian line, not the 'bird-hipped' Ornithischia, that actually gave rise to birds.",
+      "srcTitle": "Saurischia",
+      "src": "https://en.wikipedia.org/wiki/Saurischia"
+    },
+    {
+      "id": "tx_ornithischia",
+      "rank": "order",
+      "parent": "tx_dinosauria",
+      "name": "Ornithischia",
+      "fact": "The 'bird-hipped' dinosaurs, named for a backward-pointed pubis bone that happens to resemble a bird's — despite the name, every living bird actually descends from the other dinosaur lineage, Saurischia.",
+      "srcTitle": "Ornithischia",
+      "src": "https://en.wikipedia.org/wiki/Ornithischia"
+    },
+    {
+      "id": "tx_theropoda",
+      "rank": "suborder",
+      "parent": "tx_saurischia",
+      "name": "Theropoda",
+      "fact": "Bipedal, mostly meat-eating dinosaurs, hollow-boned and three-toed — and the only dinosaur lineage with living members, since every bird alive today is technically a theropod.",
+      "srcTitle": "Theropoda",
+      "src": "https://en.wikipedia.org/wiki/Theropoda"
+    },
+    {
+      "id": "tx_sauropodomorpha",
+      "rank": "suborder",
+      "parent": "tx_saurischia",
+      "name": "Sauropodomorpha",
+      "fact": "Long-necked, small-headed herbivorous dinosaurs, running from early bipedal forms through the four-legged giants of Sauropoda — the largest land animals that have ever lived.",
+      "srcTitle": "Sauropodomorpha",
+      "src": "https://en.wikipedia.org/wiki/Sauropodomorpha"
+    },
+    {
+      "id": "tx_thyreophora",
+      "rank": "suborder",
+      "parent": "tx_ornithischia",
+      "name": "Thyreophora",
+      "fact": "Armoured herbivorous dinosaurs, defined as everything closer to Ankylosaurus and Stegosaurus than to Iguanodon or Triceratops — rows of bony plates or spikes set into the skin distinguish the group across 130 million years.",
+      "srcTitle": "Thyreophora",
+      "src": "https://en.wikipedia.org/wiki/Thyreophora"
+    },
+    {
+      "id": "tx_marginocephalia",
+      "rank": "suborder",
+      "parent": "tx_ornithischia",
+      "name": "Marginocephalia",
+      "fact": "Herbivorous dinosaurs sharing a bony shelf or margin at the back of the skull — in ceratopsians it flares into a frill, in pachycephalosaurs it thickens into a dome.",
+      "srcTitle": "Marginocephalia",
+      "src": "https://en.wikipedia.org/wiki/Marginocephalia"
+    },
+    {
+      "id": "tx_ornithopoda",
+      "rank": "suborder",
+      "parent": "tx_ornithischia",
+      "name": "Ornithopoda",
+      "fact": "Beaked, mostly bipedal-capable herbivorous dinosaurs with increasingly sophisticated batteries of grinding teeth — the line that runs from small early browsers up to the duck-billed hadrosaurs.",
+      "srcTitle": "Ornithopoda",
+      "src": "https://en.wikipedia.org/wiki/Ornithopoda"
+    },
+    {
+      "id": "tx_coelurosauria",
+      "rank": "infraorder",
+      "parent": "tx_theropoda",
+      "name": "Coelurosauria",
+      "fact": "Every theropod closer to birds than to Allosaurus — tyrannosaurs, ostrich-mimics, raptors and birds all belong here, and fossil skin impressions show even its earliest members were feathered.",
+      "srcTitle": "Coelurosauria",
+      "src": "https://en.wikipedia.org/wiki/Coelurosauria"
+    },
+    {
+      "id": "tx_megalosauroidea",
+      "rank": "infraorder",
+      "parent": "tx_theropoda",
+      "name": "Megalosauroidea",
+      "fact": "A lineage of large-bodied theropods including the spinosaurids — sail- or ridge-backed, often long-snouted predators adapted, in several members, to hunting near or in water.",
+      "srcTitle": "Megalosauroidea",
+      "src": "https://en.wikipedia.org/wiki/Megalosauroidea"
+    },
+    {
+      "id": "tx_carnosauria",
+      "rank": "infraorder",
+      "parent": "tx_theropoda",
+      "name": "Carnosauria",
+      "fact": "Large predatory theropods closer to Allosaurus than to living birds — a group that, despite the name's old association with the biggest meat-eaters, does not include Tyrannosaurus, which classifies elsewhere, in Coelurosauria.",
+      "srcTitle": "Carnosauria",
+      "src": "https://en.wikipedia.org/wiki/Carnosauria"
+    },
+    {
+      "id": "tx_paraves",
+      "rank": "infraorder",
+      "parent": "tx_coelurosauria",
+      "name": "Paraves",
+      "fact": "Every theropod closer to living birds than to the oviraptorosaurs — split between the sickle-clawed Deinonychosauria and Avialae, the birds themselves. It is the clade where the line between 'dinosaur' and 'bird' gets genuinely hard to draw.",
+      "srcTitle": "Paraves",
+      "src": "https://en.wikipedia.org/wiki/Paraves"
+    },
+    {
+      "id": "tx_deinonychosauria",
+      "rank": "infraorder",
+      "parent": "tx_paraves",
+      "name": "Deinonychosauria",
+      "fact": "The 'raptors' — dromaeosaurids and troodontids — small to mid-sized feathered theropods best known for an enlarged, sickle-shaped claw on the second toe of each foot.",
+      "srcTitle": "Deinonychosauria",
+      "src": "https://en.wikipedia.org/wiki/Deinonychosauria"
+    },
+    {
+      "id": "tx_sauropoda",
+      "rank": "infraorder",
+      "parent": "tx_sauropodomorpha",
+      "name": "Sauropoda",
+      "fact": "Four-legged, long-necked, long-tailed herbivores with small heads and pillar-like legs — the largest land animals ever to exist, some reaching well over 30 metres long.",
+      "srcTitle": "Sauropoda",
+      "src": "https://en.wikipedia.org/wiki/Sauropoda"
+    },
+    {
+      "id": "tx_stegosauria",
+      "rank": "infraorder",
+      "parent": "tx_thyreophora",
+      "name": "Stegosauria",
+      "fact": "Thyreophorans carrying rows of upright plates or spikes down the back and tail rather than the fused armour of their ankylosaur relatives.",
+      "srcTitle": "Stegosauria",
+      "src": "https://en.wikipedia.org/wiki/Stegosauria"
+    },
+    {
+      "id": "tx_ankylosauria",
+      "rank": "infraorder",
+      "parent": "tx_thyreophora",
+      "name": "Ankylosauria",
+      "fact": "Heavily armoured, low-slung thyreophorans covered in fused bony plates called osteoderms, several with a stiffened, weaponised tail tip.",
+      "srcTitle": "Ankylosauria",
+      "src": "https://en.wikipedia.org/wiki/Ankylosauria"
+    },
+    {
+      "id": "tx_ceratopsia",
+      "rank": "infraorder",
+      "parent": "tx_marginocephalia",
+      "name": "Ceratopsia",
+      "fact": "Beaked, herbivorous dinosaurs running from small, largely bipedal early forms to the massive horned, frilled quadrupeds of the Late Cretaceous.",
+      "srcTitle": "Ceratopsia",
+      "src": "https://en.wikipedia.org/wiki/Ceratopsia"
+    },
+    {
+      "id": "tx_pachycephalosauria",
+      "rank": "infraorder",
+      "parent": "tx_marginocephalia",
+      "name": "Pachycephalosauria",
+      "fact": "Thick-skulled, mostly bipedal herbivores whose skull roof thickened, in some species, into a solid dome believed to have been used in head-to-head combat.",
+      "srcTitle": "Pachycephalosauria",
+      "src": "https://en.wikipedia.org/wiki/Pachycephalosauria"
+    },
+    {
+      "id": "tx_iguanodontia",
+      "rank": "infraorder",
+      "parent": "tx_ornithopoda",
+      "name": "Iguanodontia",
+      "fact": "Beaked ornithopods running from Iguanodon-grade forms up through the duck-billed hadrosaurs nested inside it — what were once called separate 'iguanodontid' families are now understood as steps along one continuous lineage.",
+      "srcTitle": "Iguanodontia",
+      "src": "https://en.wikipedia.org/wiki/Ornithopoda"
+    },
+    {
+      "id": "tx_tyrannosauridae",
+      "rank": "family",
+      "parent": "tx_coelurosauria",
+      "name": "Tyrannosauridae",
+      "fact": "Large-bodied coelurosaurs with deep, massive skulls, tiny two-fingered forelimbs and bone-crushing bite force — Tyrannosaurus is the largest and last-surviving member.",
+      "srcTitle": "Tyrannosauridae",
+      "src": "https://en.wikipedia.org/wiki/Tyrannosauridae"
+    },
+    {
+      "id": "tx_compsognathidae",
+      "rank": "family",
+      "parent": "tx_coelurosauria",
+      "name": "Compsognathidae",
+      "fact": "Small, lightly built coelurosaurs, among them some of the smallest dinosaurs known — Compsognathus itself once held that record.",
+      "srcTitle": "Compsognathidae",
+      "src": "https://en.wikipedia.org/wiki/Compsognathidae"
+    },
+    {
+      "id": "tx_brachiosauridae",
+      "rank": "family",
+      "parent": "tx_sauropoda",
+      "name": "Brachiosauridae",
+      "fact": "Sauropods with forelimbs longer than their hindlimbs, tilting the body into a steep, giraffe-like incline built for browsing well above the heads of other sauropods.",
+      "srcTitle": "Brachiosauridae",
+      "src": "https://en.wikipedia.org/wiki/Brachiosauridae"
+    },
+    {
+      "id": "tx_diplodocidae",
+      "rank": "family",
+      "parent": "tx_sauropoda",
+      "name": "Diplodocidae",
+      "fact": "Extremely long, whip-tailed sauropods with comparatively slender builds and squared, peg-toothed snouts suited to stripping low vegetation — Apatosaurus and Diplodocus both belong here.",
+      "srcTitle": "Diplodocidae",
+      "src": "https://en.wikipedia.org/wiki/Diplodocidae"
+    },
+    {
+      "id": "tx_protoceratopsidae",
+      "rank": "family",
+      "parent": "tx_ceratopsia",
+      "name": "Protoceratopsidae",
+      "fact": "Small, mostly hornless early ceratopsians with a bony frill already present but not yet the huge horns of their later ceratopsid cousins — a real side-branch of the family, not a direct ancestor of them.",
+      "srcTitle": "Protoceratopsidae",
+      "src": "https://en.wikipedia.org/wiki/Protoceratopsidae"
+    },
+    {
+      "id": "tx_ceratopsidae",
+      "rank": "family",
+      "parent": "tx_ceratopsia",
+      "name": "Ceratopsidae",
+      "fact": "The large, quadrupedal, horned ceratopsians of the Late Cretaceous — Triceratops among them — carrying the group's biggest horns and most elaborate frills.",
+      "srcTitle": "Ceratopsidae",
+      "src": "https://en.wikipedia.org/wiki/Ceratopsidae"
+    },
+    {
+      "id": "tx_hadrosauridae",
+      "rank": "family",
+      "parent": "tx_iguanodontia",
+      "name": "Hadrosauridae",
+      "fact": "The 'duck-billed dinosaurs' — the most derived branch of Iguanodontia, with broad, toothless beaks backed by hundreds of grinding teeth, and in several lineages, elaborate hollow head crests.",
+      "srcTitle": "Hadrosauridae",
+      "src": "https://en.wikipedia.org/wiki/Hadrosauridae"
+    },
+    {
+      "id": "tx_pterosauria",
+      "rank": "order",
+      "parent": "tx_reptilia",
+      "name": "Pterosauria",
+      "fact": "Flying reptiles that shared the Mesozoic skies with the dinosaurs below them — close archosaur relatives of Dinosauria, but not dinosaurs themselves; wings formed from a skin membrane stretched to a hugely elongated fourth finger.",
+      "srcTitle": "Pterosaur",
+      "src": "https://en.wikipedia.org/wiki/Pterosaur"
+    },
+    {
+      "id": "tx_azhdarchidae",
+      "rank": "family",
+      "parent": "tx_pterosauria",
+      "name": "Azhdarchidae",
+      "fact": "Large to enormous late Cretaceous pterosaurs with long, stiffened necks and long jaws — the group that includes Quetzalcoatlus, a leading contender for the largest flying animal ever known.",
+      "srcTitle": "Azhdarchidae",
+      "src": "https://en.wikipedia.org/wiki/Azhdarchidae"
+    },
+    {
+      "id": "tx_plesiosauria",
+      "rank": "order",
+      "parent": "tx_reptilia",
+      "name": "Plesiosauria",
+      "fact": "Marine reptiles with four flipper-like limbs, found from the Early Jurassic to the end of the Cretaceous — swimming alongside the dinosaurs, in the same seas, but no closer to them than any other reptile group.",
+      "srcTitle": "Plesiosauria",
+      "src": "https://en.wikipedia.org/wiki/Plesiosaur"
+    },
+    {
+      "id": "tx_elasmosauridae",
+      "rank": "family",
+      "parent": "tx_plesiosauria",
+      "name": "Elasmosauridae",
+      "fact": "Plesiosaurs with the most extreme necks in the group, built from as many as 70 or more vertebrae — Elasmosaurus itself carried 72, among the highest counts known.",
+      "srcTitle": "Elasmosauridae",
+      "src": "https://en.wikipedia.org/wiki/Elasmosauridae"
     }
   ]
 }
