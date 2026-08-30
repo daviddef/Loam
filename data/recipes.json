@@ -10248,8 +10248,8 @@
       "thymine"
     ],
     "out": "base_pair",
-    "why": "A pairs with T across two hydrogen bonds, and only with T — the shapes and the pattern of donors and acceptors do not fit any other way. That constraint is the whole of why one strand can specify the other.",
-    "src": "https://en.wikipedia.org/wiki/Base_pair",
+    "why": "A pairs with T across two hydrogen bonds, and only with T — the shapes and hydrogen-bond pattern do not fit any other way. That constraint is exactly why Chargaff found, by measurement alone, that A always equals T in any sample of DNA.",
+    "src": "https://en.wikipedia.org/wiki/Chargaff%27s_rules",
     "verified": true
   },
   {
@@ -10268,8 +10268,8 @@
       "base_pair"
     ],
     "out": "dna",
-    "why": "Stack the pairs and you have the helix: backbone outside, pairs lying flat as rungs in the middle. Every rung is the same width whichever pair it is, which is why the two strands stay a constant distance apart.",
-    "src": "https://en.wikipedia.org/wiki/Base_pair",
+    "why": "Stack the pairs and you have the double helix Watson and Crick described in 1953: two antiparallel strands, backbone outside, pairs lying flat as rungs about 2 nanometres apart, one full turn every 3.4 nanometres.",
+    "src": "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix",
     "supported": true
   },
   {
@@ -23454,5 +23454,165 @@
     "why": "An airport is the whole system, not one building: a control tower sequences traffic by radio while taxiways link runways to hangars and terminals — the same layout logic a rail yard uses to sort wagons, just built for aircraft.",
     "src": "https://en.wikipedia.org/wiki/Airport",
     "verified": true
+  },
+  {
+    "in": [
+      "atp",
+      "dna"
+    ],
+    "out": "dna_helicase",
+    "why": "Helicase is a motor protein that burns ATP to break the hydrogen bonds between base pairs, prying the double helix apart at a replication fork so each strand can be copied separately.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA_helicase"
+  },
+  {
+    "in": [
+      "dna_helicase",
+      "rna"
+    ],
+    "out": "primase",
+    "why": "Primase is an RNA polymerase that lays a short RNA primer onto the single-stranded DNA helicase has just exposed — DNA polymerase can only extend an existing 3' end, so replication cannot start without one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Primase"
+  },
+  {
+    "in": [
+      "nucleotide",
+      "primase"
+    ],
+    "out": "dna_polymerase",
+    "why": "DNA polymerase extends the RNA primer primase lays down, adding free nucleotides to its exposed 3' end one at a time and pairing each one against the template strand.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA_polymerase"
+  },
+  {
+    "in": [
+      "dna_helicase",
+      "dna_polymerase"
+    ],
+    "out": "okazaki_fragment",
+    "why": "DNA polymerase can only build in the 5' to 3' direction, so on the lagging strand it works in short bursts behind the moving helicase, leaving a series of short, disconnected pieces called Okazaki fragments.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Okazaki_fragments"
+  },
+  {
+    "in": [
+      "enzyme",
+      "okazaki_fragment"
+    ],
+    "out": "dna_ligase",
+    "why": "Ligase is the enzyme that seals the nicks left between neighbouring Okazaki fragments, forming the final phosphodiester bond that joins them into one continuous lagging strand.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA_ligase"
+  },
+  {
+    "in": [
+      "dna_ligase",
+      "dna_polymerase"
+    ],
+    "out": "dna_replication",
+    "why": "Leading-strand synthesis runs continuous while the lagging strand is built in fragments and ligase seals the last nicks — together they make replication semiconservative: each new double helix keeps one original strand and one freshly made one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA_replication"
+  },
+  {
+    "in": [
+      "chromatin",
+      "enzyme"
+    ],
+    "out": "rna_polymerase",
+    "why": "RNA polymerase binds a promoter sequence in the DNA, prises the two strands apart, and builds a strand of RNA against the exposed template — the enzyme that turns any gene in that chromatin into a working molecule.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/RNA_polymerase"
+  },
+  {
+    "in": [
+      "gene",
+      "rna_polymerase"
+    ],
+    "out": "transcription",
+    "why": "Transcription is RNA polymerase reading one strand of a gene 5' to 3' and building a complementary strand of messenger RNA — the first of the two steps, transcription and translation, that turn a gene into a protein.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Transcription_(biology)"
+  },
+  {
+    "in": [
+      "messenger_rna",
+      "nucleotide"
+    ],
+    "out": "codon",
+    "why": "A codon is a run of three consecutive bases on a messenger RNA strand. Four possible bases in each of three positions gives 64 codons, 61 of which each specify one particular amino acid.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Genetic_code"
+  },
+  {
+    "in": [
+      "codon",
+      "transfer_rna"
+    ],
+    "out": "anticodon",
+    "why": "A tRNA's anticodon is the three-base loop at the opposite end from its amino acid attachment site. It base-pairs with a matching codon on the mRNA — the physical step that matches the right amino acid to the right instruction.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Anticodon"
+  },
+  {
+    "in": [
+      "anticodon",
+      "ribosome"
+    ],
+    "out": "translation",
+    "why": "Translation is the ribosome reading an mRNA strand three bases at a time, matching each codon to the tRNA anticodon that base-pairs with it, and linking the amino acids those tRNAs carry into a growing polypeptide chain.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Translation_(biology)"
+  },
+  {
+    "in": [
+      "gene",
+      "messenger_rna"
+    ],
+    "out": "intron",
+    "why": "An intron is a non-coding stretch transcribed from a gene into the initial RNA transcript but cut out before the mature messenger RNA leaves the nucleus — in humans, introns make up far more of that first transcript than the exons that remain.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Intron"
+  },
+  {
+    "in": [
+      "gene",
+      "transcription"
+    ],
+    "out": "exon",
+    "why": "Exons are the segments of a gene's RNA transcript that remain once splicing removes the introns between them; stitched end to end, they are what becomes the mature messenger RNA that leaves the nucleus.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Exon"
+  },
+  {
+    "in": [
+      "exon",
+      "intron"
+    ],
+    "out": "splicing",
+    "why": "Splicing is carried out by the spliceosome, a large RNA-protein complex that cuts the introns out of a pre-mRNA transcript and joins the remaining exons together to make the mature messenger RNA.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/RNA_splicing"
+  },
+  {
+    "in": [
+      "codon",
+      "mutation"
+    ],
+    "out": "point_mutation",
+    "why": "A point mutation swaps one base pair for another. Depending on which base changes and where in a codon, the effect is silent (same amino acid), missense (a different amino acid), or nonsense (a premature stop signal).",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Point_mutation"
+  },
+  {
+    "in": [
+      "mutation",
+      "nucleotide"
+    ],
+    "out": "frameshift_mutation",
+    "why": "Insert or delete a run of bases that isn't a multiple of three and every codon downstream shifts by one letter, scrambling the amino acid sequence read from that point on — a frameshift mutation.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Frameshift_mutation"
   }
 ]

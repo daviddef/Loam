@@ -19957,5 +19957,165 @@
     ],
     "fact": "Runways, taxiways, hangars and a tower, all working as one system to move aircraft, not just park them.",
     "terminal": true
+  },
+  {
+    "id": "dna_helicase",
+    "name": "DNA Helicase",
+    "emoji": "\ud83d\udd13",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A motor protein that burns ATP to unwind the double helix at a replication fork."
+  },
+  {
+    "id": "primase",
+    "name": "Primase",
+    "emoji": "\ud83e\uddf5",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Lays a short RNA primer on bare DNA \u2014 polymerase can only extend an end, never start one."
+  },
+  {
+    "id": "dna_polymerase",
+    "name": "DNA Polymerase",
+    "emoji": "\ud83e\uddf1",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Adds nucleotides to a primer's 3' end, one at a time, reading the template strand."
+  },
+  {
+    "id": "okazaki_fragment",
+    "name": "Okazaki Fragment",
+    "emoji": "\ud83e\uddf7",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A short burst of DNA made on the lagging strand, later stitched together with the rest."
+  },
+  {
+    "id": "dna_ligase",
+    "name": "DNA Ligase",
+    "emoji": "\ud83e\udea1",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Seals the nicks between Okazaki fragments into one unbroken strand."
+  },
+  {
+    "id": "dna_replication",
+    "name": "DNA Replication",
+    "emoji": "\u264a",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Semiconservative copying: every new double helix keeps one old strand and one new one."
+  },
+  {
+    "id": "rna_polymerase",
+    "name": "RNA Polymerase",
+    "emoji": "\ud83d\udda8\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Binds a promoter, pries the helix open, and builds RNA against the exposed template."
+  },
+  {
+    "id": "transcription",
+    "name": "Transcription",
+    "emoji": "\ud83d\udcdd",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "DNA's sequence copied into RNA \u2014 the first of the two steps that build a protein."
+  },
+  {
+    "id": "codon",
+    "name": "Codon",
+    "emoji": "\ud83d\udd24",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Three mRNA bases in a row. 64 combinations, 61 of them each naming one amino acid."
+  },
+  {
+    "id": "anticodon",
+    "name": "Anticodon",
+    "emoji": "\ud83d\udd20",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The three bases on a tRNA that pair with a codon, matching amino acid to instruction."
+  },
+  {
+    "id": "translation",
+    "name": "Translation",
+    "emoji": "\ud83c\udfd7\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The ribosome reads codons three at a time and strings amino acids into a protein."
+  },
+  {
+    "id": "intron",
+    "name": "Intron",
+    "emoji": "\ud83d\uddd1\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Non-coding filler transcribed into pre-mRNA, then cut out before the message ships."
+  },
+  {
+    "id": "exon",
+    "name": "Exon",
+    "emoji": "\ud83d\udcdc",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The coding pieces of a transcript left over once splicing removes the introns."
+  },
+  {
+    "id": "splicing",
+    "name": "Splicing",
+    "emoji": "\ud83c\udfac",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The spliceosome cuts introns out and stitches exons together into mature mRNA."
+  },
+  {
+    "id": "point_mutation",
+    "name": "Point Mutation",
+    "emoji": "\ud83c\udfaf",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One base pair swapped for another \u2014 silent, missense, or nonsense depending on where."
+  },
+  {
+    "id": "frameshift_mutation",
+    "name": "Frameshift Mutation",
+    "emoji": "\ud83c\udf0a",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Insert or delete bases not in threes and every codon downstream reads wrong."
   }
 ]
