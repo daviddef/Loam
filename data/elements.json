@@ -2817,8 +2817,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Silver deposited on the back of a sheet of glass — Justus von Liebig's process, 1835.",
-    "terminal": true
+    "fact": "Silver deposited on the back of a sheet of glass — Justus von Liebig's process, 1835."
   },
   {
     "id": "enriched_uranium",
@@ -3499,8 +3498,7 @@
     "tags": [
       "sweet"
     ],
-    "fact": "Ground until the particles are under 20 micrometres — finer than the tongue can detect.",
-    "terminal": true
+    "fact": "Ground until the particles are under 20 micrometres — finer than the tongue can detect."
   },
   {
     "id": "glycine",
@@ -5052,7 +5050,6 @@
       "earth",
       "tool"
     ],
-    "terminal": true,
     "fact": "Volcanic glass. It froze too fast for one crystal to start, so it has no crystals at all."
   },
   {
@@ -14467,8 +14464,7 @@
       "wild"
     ],
     "fact": "Every scorpion species glows blue-green under ultraviolet light, and unlike almost every other arachnid, it gives birth to live young instead of laying eggs.",
-    "taxon": "tx_scorpiones",
-    "terminal": true
+    "taxon": "tx_scorpiones"
   },
   {
     "id": "tick",
@@ -16656,5 +16652,267 @@
     "soleRoute": true,
     "terminal": true,
     "fact": "Groundwater heated past boiling but held down by its own weight, until it flashes to steam all at once."
+  },
+  {
+    "id": "eagle",
+    "name": "Eagle",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Hunts open country from cliffside nests, diving at up to 320 km/h to take prey."
+  },
+  {
+    "id": "jaguar",
+    "name": "Jaguar",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The only big cat that regularly cracks turtle shells, killing with a bite to the skull."
+  },
+  {
+    "id": "turquoise",
+    "name": "Turquoise",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A hydrous phosphate of copper and aluminium -- one of the oldest gemstones ever mined."
+  },
+  {
+    "id": "quetzalcoatl",
+    "name": "Quetzalcoatl",
+    "emoji": "🐍",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec feathered-serpent god of wind, Venus and learning. The name means Precious Serpent."
+  },
+  {
+    "id": "tezcatlipoca",
+    "name": "Tezcatlipoca",
+    "emoji": "🪞",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec god of night and sorcery. His name means Smoking Mirror, for the obsidian he is shown in."
+  },
+  {
+    "id": "huitzilopochtli",
+    "name": "Huitzilopochtli",
+    "emoji": "🦅",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec sun and war god, patron of Tenochtitlan, born fully armed from Coatlicue.",
+    "terminal": true
+  },
+  {
+    "id": "tlaloc",
+    "name": "Tlaloc",
+    "emoji": "🌧️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec rain god known by his goggle eyes and fangs; ruled the paradise of Tlalocan."
+  },
+  {
+    "id": "coatlicue",
+    "name": "Coatlicue",
+    "emoji": "🗿",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec earth goddess, 'Serpent Skirt' -- mother of Huitzilopochtli and of the stars."
+  },
+  {
+    "id": "tonatiuh",
+    "name": "Tonatiuh",
+    "emoji": "🔆",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec sun god of the current, fifth cosmic age; demanded sacrifice to keep moving."
+  },
+  {
+    "id": "mictlantecuhtli",
+    "name": "Mictlantecuhtli",
+    "emoji": "💀",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Skeletal Aztec god of the dead, king of Mictlan's lowest level."
+  },
+  {
+    "id": "xiuhtecuhtli",
+    "name": "Xiuhtecuhtli",
+    "emoji": "🔥",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec fire god, the Turquoise Lord -- turquoise was fire's own stone to him.",
+    "terminal": true
+  },
+  {
+    "id": "centeotl",
+    "name": "Centeotl",
+    "emoji": "🌽",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec young maize god, his face marked by a black line from brow to jaw.",
+    "terminal": true
+  },
+  {
+    "id": "xolotl",
+    "name": "Xolotl",
+    "emoji": "🐕",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Dog-headed Aztec god who guides the dead through Mictlan; the axolotl bears his name."
+  },
+  {
+    "id": "fifth_sun",
+    "name": "Fifth Sun",
+    "emoji": "🌅",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The current Aztec cosmic age, born when two gods leapt into a divine bonfire."
+  },
+  {
+    "id": "sun_stone",
+    "name": "Sun Stone",
+    "emoji": "🪨",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A 24-tonne Aztec basalt disc carved under Moctezuma II, recording the cosmic ages.",
+    "terminal": true
+  },
+  {
+    "id": "mictlan",
+    "name": "Mictlan",
+    "emoji": "⚰️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aztec underworld of nine levels; the dead take four years to reach the deepest one.",
+    "terminal": true
+  },
+  {
+    "id": "kukulkan",
+    "name": "Kukulkan",
+    "emoji": "🐍",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yucatec Maya feathered serpent; his shadow descends Chichen Itza's pyramid each equinox.",
+    "terminal": true
+  },
+  {
+    "id": "itzamna",
+    "name": "Itzamna",
+    "emoji": "📜",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Maya creator god credited with inventing writing; often shown as an aged sky lord."
+  },
+  {
+    "id": "ixchel",
+    "name": "Ixchel",
+    "emoji": "🐆",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Aged Maya jaguar goddess of medicine, childbirth and water; consort of Itzamna.",
+    "terminal": true
+  },
+  {
+    "id": "chaac",
+    "name": "Chaac",
+    "emoji": "🌩️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Maya rain god, long-nosed, who strikes clouds with a lightning axe to bring rain.",
+    "terminal": true
+  },
+  {
+    "id": "ek_chuah",
+    "name": "Ek Chuah",
+    "emoji": "🪙",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Maya god of merchants, travellers and cacao, honoured each year in its harvest season."
+  },
+  {
+    "id": "popol_vuh",
+    "name": "Popol Vuh",
+    "emoji": "📖",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "K'iche' Maya sacred text: creation, the Hero Twins, and a people's own history."
+  },
+  {
+    "id": "hero_twins",
+    "name": "Hero Twins",
+    "emoji": "👬",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hunahpu and Xbalanque, the Maya Hero Twins who out-tricked the lords of Xibalba.",
+    "terminal": true
+  },
+  {
+    "id": "xibalba",
+    "name": "Xibalba",
+    "emoji": "🕳️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The K'iche' Maya underworld, 'place of fright,' ruled by One Death and Seven Death."
+  },
+  {
+    "id": "cacao_of_the_gods",
+    "name": "Cacao of the Gods",
+    "emoji": "🍫",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Cacao's mythic origin as a gift from the gods -- hence its genus name, 'food of the gods.'",
+    "terminal": true
   }
 ]
