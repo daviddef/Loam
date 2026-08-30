@@ -3653,11 +3653,25 @@ function tidy() {
 function circleTidy() {
   tidy();
   const chips = new Set(world.querySelectorAll('.chip.board:not(.hidden)'));
+  // A ring's centre is whichever end of a single-parent link plays the
+  // "hub" role — and that's a different end depending on how the link was
+  // built. A scanned product's named ingredients use {a: hub, out:
+  // ingredient, hub: true} (found live: circleTidy calling only `l.a` the
+  // centre matched that shape and nothing else). But "made of" composition
+  // and any single-input crafted step (egg|wait→chicken) both use the
+  // opposite direction, {a: part, out: result} — the SAME direction the
+  // fold/ancestor system needs so a chip's real ancestors hide behind it —
+  // so composition never qualified as a hub at all, even though a body
+  // made of six organs is exactly the fan shape a ring exists to draw.
+  // ("i expected that 'is made of' e.g. humans would be tidy'd up as a
+  // ring... why doesnt it work like that?" — found live.)
   const bySingleParent = new Map();
   for (const l of links) {
     if (l.b || !l.a || !l.out || !chips.has(l.a) || !chips.has(l.out)) continue;
-    if (!bySingleParent.has(l.a)) bySingleParent.set(l.a, []);
-    bySingleParent.get(l.a).push(l.out);
+    const center = l.hub ? l.a : l.out;
+    const spoke  = l.hub ? l.out : l.a;
+    if (!bySingleParent.has(center)) bySingleParent.set(center, []);
+    bySingleParent.get(center).push(spoke);
   }
   const [cw, ch] = cardSize();
   const rings = [];   // {parent, children, r} — one per qualifying hub
