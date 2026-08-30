@@ -553,6 +553,17 @@
         "histamine"
       ],
       "severity": "conditional"
+    },
+    "shark_bite": {
+      "label": "Rare, but the numbers are real",
+      "note": "Unprovoked bites are uncommon set against how many people swim in shark habitat, but they are documented: 351 unprovoked great white bites since 1580, 59 of them fatal, and the tiger shark ranks second worldwide for fatal attacks. Bull sharks are one of the three species most often implicated in bites on people, and oceanic whitetips were blamed for attacks on shipwreck survivors as recently as the 1945 sinking of the USS Indianapolis.",
+      "severity": "acute",
+      "ids": [
+        "great_white_shark",
+        "tiger_shark",
+        "bull_shark",
+        "oceanic_whitetip_shark"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

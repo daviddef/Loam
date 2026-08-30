@@ -1095,7 +1095,6 @@
       "wild"
     ],
     "fact": "A shell of 50 to 60 of its own bones — ribs and vertebrae, fused outward and capped in keratin.",
-    "terminal": true,
     "taxon": "tx_testudines"
   },
   {
@@ -3263,7 +3262,6 @@
       "animal"
     ],
     "fact": "Full term runs 39 to 40 weeks. Then labour ends the pregnancy and a newborn leaves the body it grew inside.",
-    "terminal": true,
     "taxon": "tx_primates"
   },
   {
@@ -5528,7 +5526,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "Made from the debris of a Mars-sized body hitting the Earth about 4.4 billion years ago."
   },
   {
@@ -5788,7 +5785,6 @@
       "water",
       "earth"
     ],
-    "terminal": true,
     "fact": "A ring of reef around a lagoon. The island it grew on sank, and the coral grew upward to keep pace."
   },
   {
@@ -7147,7 +7143,6 @@
       "plant",
       "wild"
     ],
-    "terminal": true,
     "fact": "Filters salt out at the root and dumps the rest in old leaves. Its seeds sprout on the tree."
   },
   {
@@ -12003,7 +11998,6 @@
       "animal"
     ],
     "fact": "Born in a river, grown at sea, and it fights back upstream to the exact place it hatched.",
-    "terminal": true,
     "taxon": "tx_actinopterygii"
   },
   {
@@ -12016,7 +12010,6 @@
       "animal"
     ],
     "fact": "A fish that runs warmer than the water around it — one of only three that can.",
-    "terminal": true,
     "taxon": "tx_actinopterygii"
   },
   {
@@ -13108,5 +13101,369 @@
     "terminal": true,
     "fact": "An adult female turkey, typically 2.5 to 5.4 kg — much smaller than the tom.",
     "taxon": "tx_galliformes"
+  },
+  {
+    "id": "basking_shark",
+    "name": "Basking Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Second-largest fish alive, filter-feeding zooplankton by swimming with its huge mouth held open.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "megamouth_shark",
+    "name": "Megamouth Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Undiscovered until 1976 and still one of the rarest sharks alive, with fewer than 300 ever recorded.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "sand_tiger_shark",
+    "name": "Sand Tiger Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Swims with its mouth open baring three rows of ragged teeth, yet has never killed anyone.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "great_white_shark",
+    "name": "Great White Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Can sprint at 24 km/h and keeps parts of its body warmer than the sea around it.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "mako_shark",
+    "name": "Shortfin Mako Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The fastest shark alive, clocked bursting through the water at 74 km/h.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "salmon_shark",
+    "name": "Salmon Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Keeps its stomach 16-19°C warmer than the cold Pacific water it hunts salmon in.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "thresher_shark",
+    "name": "Thresher Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A tail as long as its own body, used to whip and stun the small fish it hunts.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "goblin_shark",
+    "name": "Goblin Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Its jaws catapult forward from its skull to snatch prey — the fastest bite of any shark.",
+    "terminal": true,
+    "taxon": "tx_lamniformes"
+  },
+  {
+    "id": "eagle_ray",
+    "name": "Spotted Eagle Ray",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "White-spotted and built to leap clear of the water, with teeth shaped to crush shellfish.",
+    "terminal": true,
+    "taxon": "tx_myliobatiformes"
+  },
+  {
+    "id": "manta_ray",
+    "name": "Giant Manta Ray",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest ray alive, and it carries the largest brain of any fish — up to 200 grams.",
+    "terminal": true,
+    "taxon": "tx_myliobatiformes"
+  },
+  {
+    "id": "catshark",
+    "name": "Small-spotted Catshark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Lays its eggs in a tendrilled ‘mermaid’s purse’ anchored to the seabed.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "tope_shark",
+    "name": "Tope Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Tagged individuals have crossed entire oceans, one swimming from Britain to Iceland.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "leopard_shark",
+    "name": "Leopard Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Harmless to people, despite dark saddle-and-spot markings down a silvery back.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "tiger_shark",
+    "name": "Tiger Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Eats almost anything — sea turtles turn up in a fifth of the stomachs studied.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "lemon_shark",
+    "name": "Lemon Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Yellow-brown skin camouflages it over the sandy seafloor it hunts across.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "bull_shark",
+    "name": "Bull Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Tolerates fresh water so well it has been tracked 4,000 km up the Amazon.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "orca",
+    "name": "Orca",
+    "emoji": "🐬",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest dolphin alive, and an apex predator that even hunts other whales.",
+    "terminal": true,
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "nautilus",
+    "name": "Nautilus",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A living fossil, little changed in hundreds of millions of years, with up to 90 tentacles.",
+    "terminal": true,
+    "taxon": "tx_cephalopoda"
+  },
+  {
+    "id": "blacktip_shark",
+    "name": "Blacktip Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Leaps clear of the water and spins three or four times while chasing schooling fish.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "oceanic_whitetip_shark",
+    "name": "Oceanic Whitetip Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Once so common around shipwrecks it earned the nickname ‘shipwreck shark’.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "silky_shark",
+    "name": "Silky Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Named for its smooth skin, and almost always found trailing a school of tuna.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "blacktip_reef_shark",
+    "name": "Blacktip Reef Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The most common shark on Indo-Pacific coral reefs, patrolling shallow lagoons.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "grey_reef_shark",
+    "name": "Grey Reef Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The first shark ever recorded performing a threat display before it charges.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "whitetip_reef_shark",
+    "name": "Whitetip Reef Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Can pump water over its own gills and lie still — most sharks must swim or drown.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "great_hammerhead",
+    "name": "Great Hammerhead",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A solitary hunter that pins stingrays down with its huge hammer-shaped head.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "scalloped_hammerhead",
+    "name": "Scalloped Hammerhead",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Schools hundreds strong near seamounts by day — most hammerheads hunt alone.",
+    "terminal": true,
+    "taxon": "tx_carcharhiniformes"
   }
 ]
