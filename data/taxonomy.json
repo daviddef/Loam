@@ -1516,6 +1516,249 @@
       "fact": "The edelweiss genus — around 30-40 species of small, woolly-haired alpine daisies across the mountains of Europe and Asia.",
       "srcTitle": "Leontopodium",
       "src": "https://en.wikipedia.org/wiki/Leontopodium"
+    },
+    {
+      "id": "tx_fungi",
+      "rank": "kingdom",
+      "parent": null,
+      "name": "Fungi",
+      "fact": "Eukaryotes with cell walls of chitin rather than cellulose, feeding by secreting enzymes onto their food and absorbing the result — neither eating it like an animal nor making it by photosynthesis like a plant.",
+      "srcTitle": "Fungus",
+      "src": "https://en.wikipedia.org/wiki/Fungus"
+    },
+    {
+      "id": "tx_basidiomycota",
+      "rank": "phylum",
+      "parent": "tx_fungi",
+      "name": "Basidiomycota",
+      "fact": "Reproduces sexually via club-shaped cells called basidia, each usually bearing spores externally — about 31,500 species, including most mushrooms, puffballs, bracket fungi, rusts and smuts.",
+      "srcTitle": "Basidiomycota",
+      "src": "https://en.wikipedia.org/wiki/Basidiomycota"
+    },
+    {
+      "id": "tx_ascomycota",
+      "rank": "phylum",
+      "parent": "tx_fungi",
+      "name": "Ascomycota",
+      "fact": "The largest fungal phylum, over 64,000 species, defined by the ascus — a microscopic sac in which spores form internally, unlike the external spores of Basidiomycota.",
+      "srcTitle": "Ascomycota",
+      "src": "https://en.wikipedia.org/wiki/Ascomycota"
+    },
+    {
+      "id": "tx_agaricales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Agaricales",
+      "fact": "Around 46 families, 400-plus genera and over 25,000 described species — the classic gilled mushrooms, but also non-agaric forms like puffballs and coral fungi that molecular studies placed here.",
+      "srcTitle": "Agaricales",
+      "src": "https://en.wikipedia.org/wiki/Agaricales"
+    },
+    {
+      "id": "tx_cantharellales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Cantharellales",
+      "fact": "United less by looks than by microscopic structure — spindle-shaped nuclei arranged lengthwise in the basidia — a group spanning chanterelles, tooth fungi and coral-like clavarioid fungi.",
+      "srcTitle": "Cantharellales",
+      "src": "https://en.wikipedia.org/wiki/Cantharellales"
+    },
+    {
+      "id": "tx_boletales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Boletales",
+      "fact": "Over 1,300 species with a surprising range of fruiting-body shapes, uniting the pored boletes with agarics, puffballs and other forms that turn out to be close relatives underneath.",
+      "srcTitle": "Boletales",
+      "src": "https://en.wikipedia.org/wiki/Boletales"
+    },
+    {
+      "id": "tx_phallales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Phallales",
+      "fact": "Around 195 species across three families, best known for the stinkhorns — fruiting bodies that skip wind dispersal entirely and instead smell of carrion to recruit flies as spore carriers.",
+      "srcTitle": "Phallales",
+      "src": "https://en.wikipedia.org/wiki/Phallales"
+    },
+    {
+      "id": "tx_polyporales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Polyporales",
+      "fact": "About 1,800 species of wood-decaying fungi, breaking timber down either by white rot, which strips out lignin, or brown rot, which strips out cellulose instead.",
+      "srcTitle": "Polyporales",
+      "src": "https://en.wikipedia.org/wiki/Polyporales"
+    },
+    {
+      "id": "tx_tremellales",
+      "rank": "order",
+      "parent": "tx_basidiomycota",
+      "name": "Tremellales",
+      "fact": "Gelatinous fruiting bodies, and nearly every species that produces one is a parasite of another fungus rather than an independent decomposer — the yeast phase of the life cycle is the free-living exception.",
+      "srcTitle": "Tremellales",
+      "src": "https://en.wikipedia.org/wiki/Tremellales"
+    },
+    {
+      "id": "tx_pezizales",
+      "rank": "order",
+      "parent": "tx_ascomycota",
+      "name": "Pezizales",
+      "fact": "About 1,683 species whose asci pop open through a hinged lid, an operculum — a group spanning morels, truffles and ordinary cup fungi across soil, wood and dung.",
+      "srcTitle": "Pezizales",
+      "src": "https://en.wikipedia.org/wiki/Pezizales"
+    },
+    {
+      "id": "tx_hypocreales",
+      "rank": "order",
+      "parent": "tx_ascomycota",
+      "name": "Hypocreales",
+      "fact": "Identified in the field by vividly coloured spore-producing structures — yellow, orange or red — and containing many of the fungi that parasitise insects, other fungi or plants rather than decomposing dead matter.",
+      "srcTitle": "Hypocreales",
+      "src": "https://en.wikipedia.org/wiki/Hypocreales"
+    },
+    {
+      "id": "tx_xylariales",
+      "rank": "order",
+      "parent": "tx_ascomycota",
+      "name": "Xylariales",
+      "fact": "About 164 genera across 22 families, built around dense, often charcoal-black fungal tissue called a stroma — living as endophytes inside plants, as pathogens, or as decomposers of wood.",
+      "srcTitle": "Xylariales",
+      "src": "https://en.wikipedia.org/wiki/Xylariales"
+    },
+    {
+      "id": "tx_amanitaceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Amanitaceae",
+      "fact": "Mushrooms that emerge from an egg-like universal veil, mostly in the genus Amanita — a family holding both prized edibles and the species responsible for over half of all fatal mushroom poisonings.",
+      "srcTitle": "Amanitaceae",
+      "src": "https://en.wikipedia.org/wiki/Amanitaceae"
+    },
+    {
+      "id": "tx_mycenaceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Mycenaceae",
+      "fact": "Small saprobic mushrooms of worldwide distribution, split out of the old family Tricholomataceae once DNA sequencing showed genera like Mycena and Panellus formed their own separate branch.",
+      "srcTitle": "Mycenaceae",
+      "src": "https://en.wikipedia.org/wiki/Mycenaceae"
+    },
+    {
+      "id": "tx_agaricaceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Agaricaceae",
+      "fact": "About 85 genera and 1,340 species, headed by the commercially important genus Agaricus and now also holding groups once classified separately, among them several ink caps and parasol mushrooms.",
+      "srcTitle": "Agaricaceae",
+      "src": "https://en.wikipedia.org/wiki/Agaricaceae"
+    },
+    {
+      "id": "tx_physalacriaceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Physalacriaceae",
+      "fact": "A family running from arctic to tropical habitat and even into fresh water, holding the genus Armillaria — among them the organism argued to be the largest living thing on Earth.",
+      "srcTitle": "Physalacriaceae",
+      "src": "https://en.wikipedia.org/wiki/Physalacriaceae"
+    },
+    {
+      "id": "tx_nidulariaceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Nidulariaceae",
+      "fact": "The bird's nest fungi — five genera whose fruiting bodies form tiny cup-shaped 'nests' holding egg-like peridioles, built specifically to be launched out by a falling raindrop.",
+      "srcTitle": "Nidulariaceae",
+      "src": "https://en.wikipedia.org/wiki/Nidulariaceae"
+    },
+    {
+      "id": "tx_cantharellaceae",
+      "rank": "family",
+      "parent": "tx_cantharellales",
+      "name": "Cantharellaceae",
+      "fact": "The chanterelles and their relatives, with a smooth, wrinkled or blunt-ridged spore-bearing surface rather than the sharp true gills of an ordinary mushroom.",
+      "srcTitle": "Cantharellaceae",
+      "src": "https://en.wikipedia.org/wiki/Cantharellaceae"
+    },
+    {
+      "id": "tx_boletaceae",
+      "rank": "family",
+      "parent": "tx_boletales",
+      "name": "Boletaceae",
+      "fact": "About 59 genera of mushrooms with small pores instead of gills on the underside of the cap, most forming ectomycorrhizal partnerships with the roots of trees and shrubs.",
+      "srcTitle": "Boletaceae",
+      "src": "https://en.wikipedia.org/wiki/Boletaceae"
+    },
+    {
+      "id": "tx_phallaceae",
+      "rank": "family",
+      "parent": "tx_phallales",
+      "name": "Phallaceae",
+      "fact": "The stinkhorn family proper — around 21 genera and 77 species whose foul-smelling spore slime draws flies, beetles and other insects in to carry the spores away.",
+      "srcTitle": "Phallaceae",
+      "src": "https://en.wikipedia.org/wiki/Phallaceae"
+    },
+    {
+      "id": "tx_polyporaceae",
+      "rank": "family",
+      "parent": "tx_polyporales",
+      "name": "Polyporaceae",
+      "fact": "About 114 genera and 1,621 species of wood-decaying fungi carrying their fertile layer in vertical pores on the underside of the cap, the origin of the common name 'polypore'.",
+      "srcTitle": "Polyporaceae",
+      "src": "https://en.wikipedia.org/wiki/Polyporaceae"
+    },
+    {
+      "id": "tx_tremellaceae",
+      "rank": "family",
+      "parent": "tx_tremellales",
+      "name": "Tremellaceae",
+      "fact": "Now narrowed to a single genus, Tremella, with around 40 species of gelatinous fungi whose sexual form is almost always a parasite living on the mycelium of a different fungus.",
+      "srcTitle": "Tremellaceae",
+      "src": "https://en.wikipedia.org/wiki/Tremellaceae"
+    },
+    {
+      "id": "tx_morchellaceae",
+      "rank": "family",
+      "parent": "tx_pezizales",
+      "name": "Morchellaceae",
+      "fact": "Fruiting bodies that are pitted and sponge-like in Morchella, thimble-shaped in Verpa, or shallow and cup-like in Disciotis, alongside several lesser-known genera that fruit entirely underground.",
+      "srcTitle": "Morchellaceae",
+      "src": "https://en.wikipedia.org/wiki/Morchellaceae"
+    },
+    {
+      "id": "tx_tuberaceae",
+      "rank": "family",
+      "parent": "tx_pezizales",
+      "name": "Tuberaceae",
+      "fact": "A family of mycorrhizal fungi that evolved during the Jurassic, holding the genus Tuber — true truffles — alongside several rarer genera of underground fungi.",
+      "srcTitle": "Tuberaceae",
+      "src": "https://en.wikipedia.org/wiki/Tuberaceae"
+    },
+    {
+      "id": "tx_ophiocordycipitaceae",
+      "rank": "family",
+      "parent": "tx_hypocreales",
+      "name": "Ophiocordycipitaceae",
+      "fact": "A family of parasitic fungi holding Ophiocordyceps and several related genera, many of which infect and kill insects and other arthropods as their normal way of life.",
+      "srcTitle": "Ophiocordycipitaceae",
+      "src": "https://en.wikipedia.org/wiki/Ophiocordycipitaceae"
+    },
+    {
+      "id": "tx_xylariaceae",
+      "rank": "family",
+      "parent": "tx_xylariales",
+      "name": "Xylariaceae",
+      "fact": "Mostly small, dark-fruited fungi that decay wood and colonise other dead plant material, found across both temperate and tropical regions worldwide.",
+      "srcTitle": "Xylariaceae",
+      "src": "https://en.wikipedia.org/wiki/Xylariaceae"
+    },
+    {
+      "id": "tx_amanita",
+      "rank": "genus",
+      "parent": "tx_amanitaceae",
+      "name": "Amanita",
+      "fact": "About 600 described species, identifiable by a ring and a cup-like volva on the stem, free gills and a white spore print — and responsible for around 95% of fatal mushroom poisonings worldwide.",
+      "srcTitle": "Amanita",
+      "src": "https://en.wikipedia.org/wiki/Amanita"
     }
   ]
 }

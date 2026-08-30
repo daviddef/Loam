@@ -7082,7 +7082,6 @@
       "plant",
       "build"
     ],
-    "terminal": true,
     "fact": "Wood from a flowering tree, with vessels. Balsa is one, so the name is not about hardness."
   },
   {
@@ -7094,7 +7093,6 @@
       "plant",
       "build"
     ],
-    "terminal": true,
     "fact": "Wood from a conifer, with no pores at all. Yew is a softwood and harder than many hardwoods."
   },
   {
@@ -15066,5 +15064,214 @@
     "fact": "Its pleated trunk expands like an accordion to store rainwater — and it may take 75 years to grow its first arm.",
     "taxon": "tx_carnegiea",
     "terminal": true
+  },
+  {
+    "id": "fly_agaric",
+    "name": "Fly Agaric",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_amanita",
+    "terminal": true,
+    "fact": "Amanita muscaria, the classic red toadstool. Psychoactive, but no documented death from it in over a century."
+  },
+  {
+    "id": "death_cap",
+    "name": "Death Cap",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_amanita",
+    "terminal": true,
+    "fact": "Amanita phalloides causes about 90% of fatal mushroom poisonings worldwide. Half a cap can be a lethal dose."
+  },
+  {
+    "id": "chanterelle",
+    "name": "Chanterelle",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_cantharellaceae",
+    "terminal": true,
+    "fact": "Ridges instead of true gills, and a faint smell of apricots — a long-prized wild edible."
+  },
+  {
+    "id": "porcini",
+    "name": "Porcini",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_boletaceae",
+    "terminal": true,
+    "fact": "Boletus edulis has pores, not gills, under its cap, and can grow to 3 kg — a huge, prized wild mushroom."
+  },
+  {
+    "id": "morel",
+    "name": "Morel",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_morchellaceae",
+    "terminal": true,
+    "fact": "Its honeycomb cap is prized by chefs, but morels contain toxins that only cooking destroys — never eaten raw."
+  },
+  {
+    "id": "puffball",
+    "name": "Puffball",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_agaricaceae",
+    "terminal": true,
+    "fact": "A single raindrop can trigger it to eject over a million spores at around a metre a second."
+  },
+  {
+    "id": "bioluminescent_fungus",
+    "name": "Foxfire Fungus",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_mycenaceae",
+    "terminal": true,
+    "fact": "Panellus stipticus glows along its gill edges — the chemistry behind 'foxfire', wood that glows at night."
+  },
+  {
+    "id": "stinkhorn",
+    "name": "Stinkhorn",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_phallaceae",
+    "terminal": true,
+    "fact": "Smells of carrion to draw flies, which carry off its spores. Can grow 15 cm taller in an hour."
+  },
+  {
+    "id": "turkey_tail",
+    "name": "Turkey Tail",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_polyporaceae",
+    "terminal": true,
+    "fact": "Fan-shaped bands of colour tiled across dead logs. Eaten in China as 'Yunzhi' for thousands of years."
+  },
+  {
+    "id": "slime_mold",
+    "name": "Slime Mold",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Not a fungus at all — a brainless, single-celled amoeba that can still solve a maze."
+  },
+  {
+    "id": "truffle",
+    "name": "Truffle",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_tuberaceae",
+    "terminal": true,
+    "fact": "Grows entirely underground, fused to oak roots. Périgord black truffles have sold for over €1,000 a kilo."
+  },
+  {
+    "id": "shaggy_mane",
+    "name": "Shaggy Mane",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "taxon": "tx_agaricaceae",
+    "terminal": true,
+    "fact": "Its gills turn from white to black within hours as the whole cap dissolves itself into ink."
+  },
+  {
+    "id": "birds_nest_fungus",
+    "name": "Bird's Nest Fungus",
+    "emoji": "🪺",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_nidulariaceae",
+    "terminal": true,
+    "fact": "A raindrop hitting its tiny cup flings egg-like spore packets up to a metre away."
+  },
+  {
+    "id": "zombie_ant_fungus",
+    "name": "Zombie-Ant Fungus",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_ophiocordycipitaceae",
+    "terminal": true,
+    "fact": "Ophiocordyceps unilateralis drives an infected ant to clamp its jaws onto a leaf vein and die there."
+  },
+  {
+    "id": "humongous_fungus",
+    "name": "Humongous Fungus",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_physalacriaceae",
+    "terminal": true,
+    "fact": "One Armillaria ostoyae in Oregon spans about 2,200 acres and is roughly 8,000 years old."
+  },
+  {
+    "id": "dead_mans_fingers",
+    "name": "Dead Man's Fingers",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_xylariaceae",
+    "terminal": true,
+    "fact": "Black, upright clubs push through bark at the base of rotting stumps — Xylaria polymorpha."
+  },
+  {
+    "id": "witchs_butter",
+    "name": "Witch's Butter",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "taxon": "tx_tremellaceae",
+    "terminal": true,
+    "fact": "A gelatinous orange-yellow jelly fungus that parasitizes other wood-rotting fungi, not the wood itself."
   }
 ]

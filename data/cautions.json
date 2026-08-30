@@ -629,6 +629,38 @@
       "ids": [
         "bracken_fern"
       ]
+    },
+    "amatoxin_poisoning": {
+      "label": "The deadliest mushroom, and a real cause of death every year",
+      "note": "Amanita phalloides causes roughly 90% of fatal mushroom poisonings worldwide. Its amatoxins are thermostable — cooking or freezing does nothing to them — and as little as half a cap can be a lethal dose. Symptoms are deceptively delayed: gastrointestinal illness appears 6 to 12 hours in and eases for a few days before liver and kidney failure follow.",
+      "ids": [
+        "death_cap"
+      ],
+      "severity": "acute"
+    },
+    "muscimol_toxicity": {
+      "label": "Psychoactive, and a real poisoning risk",
+      "note": "Amanita muscaria's muscimol and ibotenic acid bring on vomiting, delirium and altered consciousness at roughly the dose in one cap. The North American Mycological Association has found no reliably documented death from it in the past century, but that is not the same as safe to eat — this game explains the chemistry, it is not a foraging guide.",
+      "ids": [
+        "fly_agaric"
+      ],
+      "severity": "conditional"
+    },
+    "morel_raw_toxicity": {
+      "label": "Morels are toxic raw",
+      "note": "True morels contain thermolabile toxins and must always be cooked before eating — consuming them raw is specifically discouraged. Even properly cooked morels can reportedly upset the stomach when eaten alongside alcohol.",
+      "ids": [
+        "morel"
+      ],
+      "severity": "conditional"
+    },
+    "puffball_amanita_confusion": {
+      "label": "A deadly Amanita's 'egg' stage can look like a young puffball",
+      "note": "Puffballs are eaten only while young and solid white all the way through. That same immature stage is exactly how a death cap or other deadly Amanita first looks, sliced open from its 'egg' — foraging guides insist on checking the inside of every puffball before eating it, precisely because of that resemblance.",
+      "ids": [
+        "puffball"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
