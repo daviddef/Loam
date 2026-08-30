@@ -3456,7 +3456,34 @@ function tidy() {
           if (want === null) continue;
           const lo = i ? pos.get(row[i - 1]) + 1 : -Infinity;
           const hi = i < row.length - 1 ? pos.get(row[i + 1]) - 1 : Infinity;
-          pos.set(c, Math.max(lo, Math.min(want, hi)));
+          // `want` is a MEAN of one or more neighbour positions — fractional
+          // the moment a card has two children/parents whose positions
+          // differ by an odd number (Grass, with Soil at one slot and Seed
+          // three along, means to 1.5). Every other place in this function
+          // stores positions as plain integer slots; this was the one spot
+          // that stored the raw fraction, and it propagates upward through
+          // whatever centres on THIS card next (Soil's own centring reads
+          // Grass's half-slot, Stone's reads Soil's) — a chip a full half
+          // card-width off the grid, close enough to its row neighbour to
+          // visually overlap it rather than merely sit off-centre. Rounding
+          // keeps every card on the same integer grid this whole layout is
+          // built on. ("image 2 how your tidy up does it... notice
+          // anything?" — found live: Stone landing exactly half a slot from
+          // Oxygen, close enough that OXYGEN and STONE's labels overlapped.)
+          pos.set(c, Math.round(Math.max(lo, Math.min(want, hi))));
+        }
+        // The sweep above only ever compares each card against its row
+        // neighbours' values AT THE MOMENT it runs — the right-hand bound
+        // in particular can still be a stale, pre-pass value that itself
+        // moves later in this same loop. Six passes usually iron that out,
+        // but a card whose own `want` came back null (nothing to centre
+        // on this pass) never gets re-clamped even after a neighbour slides
+        // into its slot — two real cards on the exact same spot, not just
+        // close. One last monotonic sweep, left to right, catches that:
+        // never actually changes a correctly-spaced row.
+        for (let i = 1; i < row.length; i++) {
+          const need = pos.get(row[i - 1]) + 1;
+          if (pos.get(row[i]) < need) pos.set(row[i], need);
         }
       }
     }
