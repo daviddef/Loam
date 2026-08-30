@@ -331,6 +331,33 @@
       "fact": "Roundworms — an unsegmented, tubular body with a fluid-filled pseudocoelom. The most numerous animal phylum by individual count; most species are free-living, but some, like Ascaris, are parasites.",
       "srcTitle": "Nematode",
       "src": "https://en.wikipedia.org/wiki/Nematode"
+    },
+    {
+      "id": "tx_proboscidea",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Proboscidea",
+      "fact": "Elephants and their extinct relatives — the only living mammal order defined by a trunk, a fusion of the nose and upper lip used for breathing, feeding, and grasping.",
+      "srcTitle": "Proboscidea",
+      "src": "https://en.wikipedia.org/wiki/Proboscidea"
+    },
+    {
+      "id": "tx_diprotodontia",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Diprotodontia",
+      "fact": "The largest order of marsupials — kangaroos, koalas, wombats and possums — named for their two large, forward-pointing lower incisors.",
+      "srcTitle": "Diprotodontia",
+      "src": "https://en.wikipedia.org/wiki/Diprotodontia"
+    },
+    {
+      "id": "tx_monotremata",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Monotremata",
+      "fact": "The only mammal order that lays eggs rather than giving live birth — just the platypus and four echidna species survive today.",
+      "srcTitle": "Monotreme",
+      "src": "https://en.wikipedia.org/wiki/Monotreme"
     }
   ]
 }

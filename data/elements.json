@@ -2978,7 +2978,8 @@
       "wild"
     ],
     "fact": "Hop it fast enough and it costs less energy, not more — the opposite of most ways of moving.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_diprotodontia"
   },
   {
     "id": "koala",
@@ -2990,7 +2991,8 @@
       "wild"
     ],
     "fact": "Eats almost nothing but eucalyptus — and out of 600-plus species on offer, sticks to about 30.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_diprotodontia"
   },
   {
     "id": "dingo",
@@ -3015,7 +3017,8 @@
       "wild"
     ],
     "fact": "A mammal that lays eggs, carries a venomous spur, and hunts by sensing electricity.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_monotremata"
   },
   {
     "id": "elephant",
@@ -3026,7 +3029,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Pushes over trees for a living, and does it thoroughly enough to turn woodland into grassland."
+    "fact": "Pushes over trees for a living, and does it thoroughly enough to turn woodland into grassland.",
+    "taxon": "tx_proboscidea"
   },
   {
     "id": "lion",
@@ -7395,7 +7399,8 @@
       "animal",
       "water"
     ],
-    "fact": "A filter feeder that builds its own stone house. One can pull 190 litres of water through its gills a day."
+    "fact": "A filter feeder that builds its own stone house. One can pull 190 litres of water through its gills a day.",
+    "taxon": "tx_bivalvia"
   },
   {
     "id": "pearl",
@@ -7430,7 +7435,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A scale insect that settles on a twig, feeds on sap, and coats the whole branch in resin."
+    "fact": "A scale insect that settles on a twig, feeds on sap, and coats the whole branch in resin.",
+    "taxon": "tx_insecta"
   },
   {
     "id": "shellac",
@@ -7453,7 +7459,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A scale insect farmed on prickly pear. Up to a quarter of its dried weight is red dye."
+    "fact": "A scale insect farmed on prickly pear. Up to a quarter of its dried weight is red dye.",
+    "taxon": "tx_insecta"
   },
   {
     "id": "carmine",
@@ -7580,7 +7587,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A castrated bull trained to pull. Calm, heavy and steady all day — the engine before engines."
+    "fact": "A castrated bull trained to pull. Calm, heavy and steady all day — the engine before engines.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "manure",
@@ -7944,7 +7952,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A dairy cow has to calve to keep milking, so a dairy makes calves whether it wants them or not."
+    "fact": "A dairy cow has to calve to keep milking, so a dairy makes calves whether it wants them or not.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "veal",
@@ -12660,7 +12669,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Fertile from about seven months old. Only a few are kept intact — most male calves are castrated."
+    "fact": "Fertile from about seven months old. Only a few are kept intact — most male calves are castrated.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "heifer",
@@ -12670,7 +12680,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A female that has not yet calved. Dairy heifers are often kept on to replace their own mothers."
+    "fact": "A female that has not yet calved. Dairy heifers are often kept on to replace their own mothers.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "steer",
@@ -12680,7 +12691,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A castrated male raised for beef. The same animal, elsewhere, might just as easily be called an ox."
+    "fact": "A castrated male raised for beef. The same animal, elsewhere, might just as easily be called an ox.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "chick",
@@ -12690,7 +12702,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Uses an egg tooth to break out of the shell after about 21 days, feeding at first on its last yolk."
+    "fact": "Uses an egg tooth to break out of the shell after about 21 days, feeding at first on its last yolk.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "cockerel",
@@ -12700,7 +12713,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A young male chicken — not yet the rooster he will grow into."
+    "fact": "A young male chicken — not yet the rooster he will grow into.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "pullet",
@@ -12710,7 +12724,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A young female chicken, sexually immature — under about 22 weeks old in the poultry trade."
+    "fact": "A young female chicken, sexually immature — under about 22 weeks old in the poultry trade.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "rooster",
@@ -12721,7 +12736,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A fertile adult male chicken. The word is an 18th-century American euphemism for 'cock'."
+    "fact": "A fertile adult male chicken. The word is an 18th-century American euphemism for 'cock'.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "hen",
@@ -12731,7 +12747,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An adult female chicken. One bred for laying can produce more than 300 eggs a year."
+    "fact": "An adult female chicken. One bred for laying can produce more than 300 eggs a year.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "capon",
@@ -12743,7 +12760,8 @@
       "food"
     ],
     "terminal": true,
-    "fact": "A male chicken castrated or neutered young, traditionally to make the meat milder and fattier."
+    "fact": "A male chicken castrated or neutered young, traditionally to make the meat milder and fattier.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "ram",
@@ -12754,7 +12772,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An intact male sheep, occasionally called a tup. Kept mostly for breeding."
+    "fact": "An intact male sheep, occasionally called a tup. Kept mostly for breeding.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "ewe",
@@ -12765,7 +12784,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult female sheep. Pronounced 'yoo' — nothing like it looks spelled."
+    "fact": "An adult female sheep. Pronounced 'yoo' — nothing like it looks spelled.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "wether",
@@ -12776,7 +12796,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A castrated male sheep. Most male lambs not kept for breeding become one."
+    "fact": "A castrated male sheep. Most male lambs not kept for breeding become one.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "kid",
@@ -12786,7 +12807,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A juvenile goat. The word comes from Old Norse kið, carried in by Scandinavian settlers."
+    "fact": "A juvenile goat. The word comes from Old Norse kið, carried in by Scandinavian settlers.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "buck",
@@ -12797,7 +12819,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An intact adult male goat. Acquires a strong, distinctive odour during the autumn rut."
+    "fact": "An intact adult male goat. Acquires a strong, distinctive odour during the autumn rut.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "doe",
@@ -12808,7 +12831,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult female goat. Many breeders wait until she reaches 70% of adult weight before breeding."
+    "fact": "An adult female goat. Many breeders wait until she reaches 70% of adult weight before breeding.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "piglet",
@@ -12818,7 +12842,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Newborn into a litter that was once yearly — by the 19th century, twice a year in Europe."
+    "fact": "Newborn into a litter that was once yearly — by the 19th century, twice a year in Europe.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "boar",
@@ -12829,7 +12854,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A male pig of breeding age, kept intact rather than castrated."
+    "fact": "A male pig of breeding age, kept intact rather than castrated.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "gilt",
@@ -12839,7 +12865,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A young female pig, not yet mated or not yet farrowed — the exact line shifts by local usage."
+    "fact": "A young female pig, not yet mated or not yet farrowed — the exact line shifts by local usage.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "barrow",
@@ -12849,7 +12876,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A male pig castrated before puberty — a stag is the same operation done after."
+    "fact": "A male pig castrated before puberty — a stag is the same operation done after.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "sow",
@@ -12860,7 +12888,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A breeding female pig, or one after her first or second litter."
+    "fact": "A breeding female pig, or one after her first or second litter.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "foal",
@@ -12870,7 +12899,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An equine up to one year old. A mare 'in foal' is pregnant; to 'foal' is to give birth."
+    "fact": "An equine up to one year old. A mare 'in foal' is pregnant; to 'foal' is to give birth.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "colt",
@@ -12880,7 +12910,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A male foal — the term holds until the horse turns three or four."
+    "fact": "A male foal — the term holds until the horse turns three or four.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "filly",
@@ -12890,7 +12921,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A female foal — the term holds until the horse turns three or four."
+    "fact": "A female foal — the term holds until the horse turns three or four.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "stallion",
@@ -12900,7 +12932,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An intact adult male horse — a colt becomes one at three, or four in racing."
+    "fact": "An intact adult male horse — a colt becomes one at three, or four in racing.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "mare",
@@ -12910,7 +12943,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An adult female horse — a filly becomes one at three, or four in racing."
+    "fact": "An adult female horse — a filly becomes one at three, or four in racing.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "gelding",
@@ -12921,7 +12955,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A castrated male horse, of any age — the one horse term untouched by puberty."
+    "fact": "A castrated male horse, of any age — the one horse term untouched by puberty.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "buffalo",
@@ -12931,7 +12966,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Swamp-type buffaloes wallow on purpose, digging mudholes with their own horns."
+    "fact": "Swamp-type buffaloes wallow on purpose, digging mudholes with their own horns.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "carabeef",
@@ -12990,7 +13026,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult male duck — 'duck' itself technically names the female, or 'hen' in ornithology."
+    "fact": "An adult male duck — 'duck' itself technically names the female, or 'hen' in ornithology.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "duckling",
@@ -13000,7 +13037,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A young duck in downy plumage. In the food trade the word can also mean a tender young adult."
+    "fact": "A young duck in downy plumage. In the food trade the word can also mean a tender young adult.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "goose",
@@ -13022,7 +13060,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult male goose. Set beside 'goose' it draws a sex line the word alone does not."
+    "fact": "An adult male goose. Set beside 'goose' it draws a sex line the word alone does not.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "gosling",
@@ -13032,7 +13071,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A young goose before fledging — not yet able to fly."
+    "fact": "A young goose before fledging — not yet able to fly.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "poult",
@@ -13042,7 +13082,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An infant turkey — 'chick' works too, but poult is the word specific to it."
+    "fact": "An infant turkey — 'chick' works too, but poult is the word specific to it.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "tom",
@@ -13053,7 +13094,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult male turkey, also called a gobbler — up to twice the weight of the hen."
+    "fact": "An adult male turkey, also called a gobbler — up to twice the weight of the hen.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "turkey_hen",
@@ -13064,6 +13106,7 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "An adult female turkey, typically 2.5 to 5.4 kg — much smaller than the tom."
+    "fact": "An adult female turkey, typically 2.5 to 5.4 kg — much smaller than the tom.",
+    "taxon": "tx_galliformes"
   }
 ]
