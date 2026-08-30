@@ -4826,7 +4826,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "The potter's wheel came first. Cart wheels were plain wooden disks with a hole in them."
   },
   {
@@ -6503,8 +6502,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Galena. The main lead-bearing mineral, and mostly found sitting with zinc ores.",
-    "terminal": true
+    "fact": "Galena. The main lead-bearing mineral, and mostly found sitting with zinc ores."
   },
   {
     "id": "tarnish",
@@ -15277,8 +15275,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Iron(III) oxide, Fe2O3 — the world's most important iron ore, red streak and all.",
-    "terminal": true
+    "fact": "Iron(III) oxide, Fe2O3 — the world's most important iron ore, red streak and all."
   },
   {
     "id": "magnetite",
@@ -16914,5 +16911,118 @@
     ],
     "fact": "Cacao's mythic origin as a gift from the gods -- hence its genus name, 'food of the gods.'",
     "terminal": true
+  },
+  {
+    "id": "open_pit_mining",
+    "name": "Open-Pit Mining",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Dug in stepped benches, with haul roads spiralling up the walls — a million tons a day from the biggest pits."
+  },
+  {
+    "id": "strip_mining",
+    "name": "Strip Mining",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Digs a shallow seam one long trench at a time, burying each strip's waste in the void left by the last."
+  },
+  {
+    "id": "mountaintop_removal",
+    "name": "Mountaintop Removal",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Blasts up to 120 metres off a summit to reach thin coal, dumping the rock in the next valley over.",
+    "terminal": true
+  },
+  {
+    "id": "placer_mining",
+    "name": "Placer Mining",
+    "emoji": "💦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Washes loose sand and gravel through water and lets density sort out anything worth keeping."
+  },
+  {
+    "id": "room_and_pillar_mining",
+    "name": "Room-and-Pillar Mining",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Digs rooms out of a seam while leaving pillars of untouched rock standing to hold the roof up."
+  },
+  {
+    "id": "longwall_mining",
+    "name": "Longwall Mining",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A shearer cuts a long coal face while supports advance and the roof is let collapse behind them.",
+    "terminal": true
+  },
+  {
+    "id": "block_caving",
+    "name": "Block Caving",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Undercuts a huge ore column and lets gravity fracture it, falling into tunnels dug below.",
+    "terminal": true
+  },
+  {
+    "id": "bauxite",
+    "name": "Bauxite",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Aluminium's ore, and it sits so close to the surface there's barely any overburden to remove."
+  },
+  {
+    "id": "spodumene",
+    "name": "Spodumene",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A lithium aluminium silicate that crystallises in granite pegmatite — most hard-rock lithium's source."
+  },
+  {
+    "id": "bastnasite",
+    "name": "Bastnäsite",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A rare-earth fluorocarbonate — almost all of Mountain Pass, California's rare earths ride in this one mineral."
   }
 ]

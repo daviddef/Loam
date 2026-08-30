@@ -80,12 +80,29 @@
     },
     "mercury_toxicity": {
       "label": "Mercury is toxic, in the ore and in the metal",
-      "note": "Mercury and its compounds are toxic to the nervous system, immune system and kidneys, and both mining cinnabar and refining mercury from it are historic causes of mercury poisoning. This is chemistry to understand, not something to try at home.",
+      "note": "Mercury and its compounds are toxic to the nervous system, immune system and kidneys, and both mining cinnabar and refining mercury from it are historic causes of mercury poisoning. Small-scale placer gold miners still use mercury to amalgamate gold from river sediment today, and it remains one of the largest ongoing sources of mercury pollution worldwide. This is chemistry to understand, not something to try at home.",
       "ids": [
         "cinnabar",
-        "mercury"
+        "mercury",
+        "placer_mining"
       ],
       "severity": "cumulative"
+    },
+    "mine_collapse": {
+      "label": "Pillars can fail without warning",
+      "note": "Room-and-pillar mines depend on the rock or coal pillars left standing to hold the roof up. When an array of pillars fails, it can happen with almost no warning and injure miners working well away from the collapse — a hazard mine-safety regulators still study and track.",
+      "ids": [
+        "room_and_pillar_mining"
+      ],
+      "severity": "acute"
+    },
+    "mine_subsidence": {
+      "label": "Undermining a deposit can bring the surface down",
+      "note": "Block caving lets a whole column of rock collapse under its own weight, and that collapse does not stop at the ore body — the ground above can sink into a crater-like depression, sometimes swallowing existing surface workings.",
+      "ids": [
+        "block_caving"
+      ],
+      "severity": "conditional"
     },
     "uranium_toxicity": {
       "label": "Uranium is a heavy-metal poison first",

@@ -20364,5 +20364,175 @@
     "why": "Linnaeus later named the plant Theobroma -- Greek for 'food of the gods' -- echoing exactly this belief, held on both sides of the Maya-Aztec divide.",
     "src": "https://en.wikipedia.org/wiki/Theobroma_cacao",
     "supported": true
+  },
+  {
+    "in": [
+      "hematite",
+      "wheel"
+    ],
+    "out": "open_pit_mining",
+    "why": "Big low-grade deposits like hematite are exactly what open-pit mining is built for: dug in stepped benches, with haul roads spiralling up the walls so wheeled trucks can carry blasted rock out — up to a million tons a day from the largest pits.",
+    "src": "https://en.wikipedia.org/wiki/Open-pit_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "soil"
+    ],
+    "out": "strip_mining",
+    "why": "Strip mining works a shallow, flat seam like coal one long trench at a time: the overburden — soil and rock above the seam — dug from each new strip is dumped into the void the previous strip left, and the operation walks down the seam.",
+    "src": "https://en.wikipedia.org/wiki/Surface_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "strip_mining",
+      "coal"
+    ],
+    "out": "mountaintop_removal",
+    "why": "Mountaintop removal takes strip mining to its most drastic form: explosives blast up to 120 metres off an Appalachian summit to reach thin coal seams beneath, and the shattered rock is dumped into the valley next door as valley fill.",
+    "src": "https://en.wikipedia.org/wiki/Mountaintop_removal_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "flood",
+      "sand"
+    ],
+    "out": "placer_mining",
+    "why": "Hydraulic mining points pressurised water at a bank of loose sand and gravel and blasts it apart on purpose — an engineered flood — then sluices the debris through, letting anything dense enough to sink stay behind.",
+    "src": "https://en.wikipedia.org/wiki/Placer_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "wood"
+    ],
+    "out": "room_and_pillar_mining",
+    "why": "Room-and-pillar mining leaves blocks of coal standing as pillars to hold the roof up while rooms are dug out between them, the ceiling braced further with timber props — one of the oldest ways to work a seam underground.",
+    "src": "https://en.wikipedia.org/wiki/Room_and_pillar_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "room_and_pillar_mining",
+      "coal"
+    ],
+    "out": "longwall_mining",
+    "why": "A longwall panel starts as gate roads driven the room-and-pillar way; a shearer then cuts the face while hydraulic supports advance and let the roof collapse behind — about 80% of the coal comes out, against 60% for room-and-pillar.",
+    "src": "https://en.wikipedia.org/wiki/Longwall_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "copper"
+    ],
+    "out": "block_caving",
+    "why": "Block caving works the same huge, low-grade ore body an open pit would, once it's too deep to strip: undercut the base and gravity fractures the column into tunnels below. Palabora's copper mine went from open pit to block cave in 2002.",
+    "src": "https://www.mining-technology.com/projects/palabora/",
+    "verified": true
+  },
+  {
+    "in": [
+      "strip_mining",
+      "granite"
+    ],
+    "out": "bauxite",
+    "why": "Bauxite is what a rock like granite becomes after ages of weathering under intense tropical rainfall: everything but aluminium washes away, leaving bauxite so close to the surface it's almost always strip mined, not dug from a pit.",
+    "src": "https://en.wikipedia.org/wiki/Bauxite",
+    "verified": true
+  },
+  {
+    "in": [
+      "bauxite",
+      "spark"
+    ],
+    "out": "aluminum",
+    "why": "Bauxite is virtually the only ore aluminium comes from, and it's split apart the same way any aluminium ore is — in a Hall–Héroult electrolysis cell, the 1886 process that finally made the metal cheap enough for everyday use.",
+    "src": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "granite"
+    ],
+    "out": "spodumene",
+    "why": "Spodumene, a lithium aluminium silicate, crystallises in granite pegmatites — Greenbushes in Western Australia, the world's biggest hard-rock lithium deposit, is a single enormous open-pit mine dug into one.",
+    "src": "https://en.wikipedia.org/wiki/Spodumene",
+    "verified": true
+  },
+  {
+    "in": [
+      "spodumene"
+    ],
+    "verb": "heat",
+    "out": "lithium",
+    "why": "Spodumene locks its lithium into a crystal structure acid alone can't touch. Roasting the ore first converts it to more reactive β-spodumene, and only then does dissolving it in acid actually free the lithium.",
+    "src": "https://en.wikipedia.org/wiki/Spodumene",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "ore"
+    ],
+    "out": "bastnasite",
+    "why": "Mountain Pass, California's only working rare-earth mine, digs its ore from a 1.4-billion-year-old carbonatite as a single open pit — almost all the rare-earth content in that ore rides in one mineral, bastnäsite.",
+    "src": "https://en.wikipedia.org/wiki/Mountain_Pass_Rare_Earth_Mine",
+    "verified": true
+  },
+  {
+    "in": [
+      "bastnasite",
+      "hydrogen_chloride"
+    ],
+    "out": "rare_earth",
+    "why": "Bastnäsite gives up its rare earths to acid, not lye: the ore is roasted, then dissolved in hydrochloric acid down to a pH under 5 — a different chemistry from monazite's caustic crack, but the same rare-earth mixture at the end.",
+    "src": "https://en.wikipedia.org/wiki/Bastn%C3%A4site",
+    "verified": true
+  },
+  {
+    "in": [
+      "placer_mining",
+      "river"
+    ],
+    "out": "tin",
+    "why": "Most of the world's tin isn't dug from hard rock at all — cassiterite survives weathering and piles up in river gravel, and placer mining is how Malaysia, Thailand and Indonesia have supplied most of the world's tin for generations.",
+    "src": "https://en.wikipedia.org/wiki/Cassiterite",
+    "verified": true
+  },
+  {
+    "in": [
+      "placer_mining",
+      "sand"
+    ],
+    "out": "monazite",
+    "why": "Monazite is dense enough to survive weathering whole, and placer mining — the same density trick that concentrates gold — piles it up in beach and river sand alongside other heavy minerals like zircon.",
+    "src": "https://en.wikipedia.org/wiki/Monazite",
+    "verified": true
+  },
+  {
+    "in": [
+      "room_and_pillar_mining",
+      "lead_sulfide"
+    ],
+    "out": "lead",
+    "why": "Missouri's Viburnum Trend, some of the purest lead ore on Earth, is worked entirely by room-and-pillar mining: crews blast dolomite rock loaded with galena, leaving pillars standing to hold the roof up.",
+    "src": "https://doerun.com/what-we-do/mining-milling/",
+    "verified": true
+  },
+  {
+    "in": [
+      "room_and_pillar_mining",
+      "zinc_sulfide"
+    ],
+    "out": "zinc",
+    "why": "The same Viburnum Trend room-and-pillar mines that produce Missouri's lead also produce its zinc — crews blast dolomite rock loaded with sphalerite, zinc sulfide, sitting right alongside the galena that gives up the lead.",
+    "src": "https://doerun.com/what-we-do/mining-milling/",
+    "verified": true
   }
 ]
