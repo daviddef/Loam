@@ -64,6 +64,9 @@ const SCALE = {
           'yoghurt_culture', 'cytoplasm', 'alga', 'cell', 'mitosis', 'meiosis', 'sperm', 'polar_body', 'stem_cell', 'protozoan', 'eimeria',
           'plasmodium', 'toxoplasma_gondii', 'giardia', 'entamoeba_histolytica', 'trichomonas_vaginalis', 'cryptosporidium'],
   '-4':  ['coconut_sugar', 'guar_gum', 'locust_bean_gum', 'silicon_dioxide', 'annatto', 'caramel_colour', 'agar', 'paprika', 'carmine', 'shellac', 'roe', 'hydroxyapatite', 'fluorapatite', 'magnesium_oxide', 'zinc_oxide', 'copper_oxide', 'litharge', 'mercuric_oxide', 'alumina', 'potassium_chloride', 'potassium_iodide', 'sodium_fluoride', 'magnesium_nitride',
+          // mining comprehensive batch — bagged/prilled granular chemicals and fine ground mill product,
+          // same grain-size bucket as sand/clay
+          'ammonium_nitrate', 'anfo', 'concentrate',
           // textiles batch 1 — a lake pigment, the same rack as carmine
           'rose_madder',
           'beryllium_fluoride', 'beryllium_chloride', 'beryllium_bromide', 'beryllium_iodide', 'magnesium_fluoride', 'magnesium_bromide', 'magnesium_iodide', 'calcium_bromide', 'calcium_iodide', 'strontium_fluoride', 'strontium_bromide', 'strontium_iodide', 'barium_fluoride', 'barium_chloride', 'barium_bromide', 'barium_iodide', 'radium_fluoride', 'radium_chloride', 'radium_bromide', 'radium_iodide',
@@ -82,7 +85,10 @@ const SCALE = {
           'mosquito', 'trichinella_spiralis', 'head_louse', 'body_louse', 'bed_bug',
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
-  '-2':  ['sundew', 'edelweiss', 'moss', 'liverwort',
+  '-2':  [// mining comprehensive batch — broken/loose rock and small cast metal, hand-sample scale
+          // alongside ore/stone/ballast/diamond/coin
+          'run_of_mine', 'waste_rock', 'assay', 'dore',
+          'sundew', 'edelweiss', 'moss', 'liverwort',
           'seahorse',
           'drupe', 'walnut', 'sumac', 'lime', 'makrut_lime', 'jalapeno', 'chipotle', 'candied_fruit', 'steak',
           'kiwi', 'raspberry', 'blackberry', 'cranberry', 'blueberry', 'date', 'shrimp',
@@ -123,7 +129,11 @@ const SCALE = {
           // railways batch 1 — crushed rock, hand-sample scale alongside quartzite/gneiss
           'ballast',
           'icsi_needle', 'nerve', 'stm_tip'],
-  '-1':  ['venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
+  '-1':  [// mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
+          // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
+          'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
+          'nitric_acid', 'cyanide', 'matte', 'blister_copper', 'copper_cathode',
+          'venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
           'eagle', 'fifth_sun', 'popol_vuh',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
@@ -186,6 +196,8 @@ const SCALE = {
           'petroleum', 'jet_fuel'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
+          // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
+          'resource_estimation',
           'welwitschia', 'rafflesia', 'bracken_fern',
           'jaguar', 'sun_stone', 'hero_twins',
           'quetzalcoatl', 'tezcatlipoca', 'huitzilopochtli', 'tlaloc', 'coatlicue', 'tonatiuh',
@@ -224,7 +236,11 @@ const SCALE = {
           // aviation batch 1 — metre-scale aircraft parts and engine stages
           'wing_spar', 'tail_stabilizer', 'aileron', 'rudder', 'tail_elevator', 'landing_gear',
           'propeller', 'compressor', 'combustor', 'turbine', 'jet_engine', 'turbofan'],
-  '1':   ['saguaro', 'airplane',
+  '1':   [// mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
+          // scale, the same bucket as drilling_rig/ball_mill/haul_truck above
+          'exploration_drilling', 'bench', 'blasting', 'excavator', 'grade_control',
+          'magnetic_separation', 'gravity_separation', 'road_freight', 'car_dumper',
+          'saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'de_extinction', 'giraffe', 'nile_crocodile', 'american_alligator',
           'climax_community', 'food_chain',
           'basking_shark', 'megamouth_shark', 'great_white_shark', 'thresher_shark', 'goblin_shark',
@@ -252,7 +268,11 @@ const SCALE = {
           'communications_satellite', 'gps_satellite',
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
-  '2':   ['giant_sequoia', 'coast_redwood',
+  '2':   [// mining comprehensive batch — hundred-plus-metre engineered structures and yards,
+          // the same bucket as stockpile/bulk_carrier/hangar above
+          'haul_road', 'mine_infrastructure', 'waste_dump', 'heap_leach', 'tailings_dam',
+          'port_stockpile', 'stacker_reclaimer', 'ship_loader',
+          'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest', 'evolution', 'common_ancestor', 'genetic_diversity',
           // geography batch 1 — coastal and karst features and single landforms, tens to a couple hundred metres
@@ -268,7 +288,9 @@ const SCALE = {
           'skyscraper',
           // aviation batch 1 — an airship envelope (the Hindenburg was 245m) and a big airfield building, hundreds of metres
           'airship', 'hangar', 'taxiway'],
-  '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
+  '3':   [// mining comprehensive batch — a slurry pipeline running tens of kilometres, km scale like the pit
+          'slurry_pipeline',
+          'atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
           'trophic_cascade',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
           'mountain', 'volcano', 'canyon', 'glacier', 'fjord', 'meander', 'oxbow_lake', 'delta', 'floodplain', 'lagoon', 'estuary', 'caldera', 'plateau',

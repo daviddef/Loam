@@ -930,7 +930,26 @@
       "label": "A tailings dam can fail catastrophically",
       "note": "Tailings dams hold back millions of tonnes of waste slurry, often built up in stages from the tailings themselves. When one fails, the release can travel for kilometres in minutes — the Brumadinho dam collapse in Brazil in January 2019 killed 272 people.",
       "ids": [
-        "tailings"
+        "tailings",
+        "tailings_dam"
+      ],
+      "severity": "acute"
+    },
+    "cyanide_poisoning": {
+      "label": "Cyanide is lethal in small doses",
+      "note": "Sodium cyanide dissolved in water is what leaches gold out of ore, and it is genuinely lethal — plants have to keep the solution alkaline, above pH 10.5, specifically to stop toxic hydrogen cyanide gas from forming. The 2000 Baia Mare spill in Romania, when a tailings dam holding cyanide solution failed and released it into the Tisza river, killed enormous numbers of fish across three countries. This is industrial chemistry, not something to handle casually.",
+      "ids": [
+        "cyanide",
+        "dore"
+      ],
+      "severity": "acute"
+    },
+    "blasting_hazard": {
+      "label": "Blasting is a controlled explosion, not a safe one",
+      "note": "ANFO and other blasting agents are designed to fragment solid rock, and the same holes and timing that make a blast predictable can misfire, throw flyrock well beyond the blast area, or detonate early if handled wrong. Mine blasting crews follow strict exclusion zones and licensing for exactly this reason.",
+      "ids": [
+        "anfo",
+        "blasting"
       ],
       "severity": "acute"
     },

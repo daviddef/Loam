@@ -4855,7 +4855,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Plumbing is named after lead: plumbum. Soft enough to bend, and that was the problem."
   },
   {
@@ -5234,7 +5234,7 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Carbon rearranged. It is stable only 150 km down, so every one you see was carried up."
   },
   {
@@ -6477,7 +6477,7 @@
       "earth"
     ],
     "fact": "Chalcocite in the ground. Most of the world's copper is roasted out of this.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "zinc_sulfide",
@@ -12243,7 +12243,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Bare RNA even smaller than a viroid's. It cannot replicate at all without borrowing a helper virus's proteins."
   },
   {
@@ -16326,7 +16326,7 @@
       "earth"
     ],
     "soleRoute": true,
-    "terminal": true,
+    "terminal": false,
     "fact": "Continental crust that collided and had nowhere to go but up \u2014 the Himalayas are still rising."
   },
   {
@@ -18118,8 +18118,7 @@
     "tags": [
       "tool"
     ],
-    "soleRoute": true,
-    "terminal": true,
+    "terminal": false,
     "fact": "Bores rows of blast-holes up to 27cm across and 40+ metres deep before a bench is ever blasted."
   },
   {
@@ -18199,7 +18198,6 @@
     "tags": [
       "tool"
     ],
-    "soleRoute": true,
     "fact": "A gyratory or jaw crusher, essentially a moving steel jaw, breaks boulder-sized ore to fist-sized chunks."
   },
   {
@@ -18233,7 +18231,7 @@
       "earth"
     ],
     "soleRoute": true,
-    "terminal": true,
+    "terminal": false,
     "fact": "The roughly 99% of ground rock flotation doesn't want, pumped as slurry to a storage dam."
   },
   {
@@ -18255,7 +18253,6 @@
     "tags": [
       "tool"
     ],
-    "soleRoute": true,
     "fact": "Buffers a mine's day-to-day grade swings by blending many truckloads of ore into one consistent pile."
   },
   {
@@ -18277,7 +18274,6 @@
     "tags": [
       "tool"
     ],
-    "soleRoute": true,
     "fact": "Where ore stops being a stockpile and becomes an export \u2014 Port Hedland alone ships 500+ million tonnes a year."
   },
   {
@@ -18288,7 +18284,6 @@
     "tags": [
       "tool"
     ],
-    "soleRoute": true,
     "terminal": true,
     "fact": "Capesize ships too big for the Suez or Panama Canal carry about 75% of the world's seaborne iron ore."
   },
@@ -18377,7 +18372,7 @@
       "tool"
     ],
     "fact": "A sloped floor and bottom gates dump bulk coal, ore or grain without anyone shovelling.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "tank_car",
@@ -20117,5 +20112,390 @@
       "microbe"
     ],
     "fact": "Insert or delete bases not in threes and every codon downstream reads wrong."
+  },
+  {
+    "id": "geological_mapping",
+    "name": "Geological Mapping",
+    "emoji": "\ud83d\uddfa\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Rock types and structures \u2014 faults, folds, intrusions \u2014 plotted onto a map before a single hole gets drilled; the oldest surviving one, the Turin papyrus, mapped Egyptian gold deposits 3,000 years ago."
+  },
+  {
+    "id": "target_generation",
+    "name": "Target Generation",
+    "emoji": "\ud83c\udfaf",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Small basaltic intrusions and dense ore bodies both distort a magnetic field enough to show up as an anomaly \u2014 where the anomaly lines up with the mapped geology is where the drill gets pointed."
+  },
+  {
+    "id": "exploration_drilling",
+    "name": "Exploration Drilling",
+    "emoji": "\ud83e\ude9b",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A diamond-set bit wears away as it cuts, exposing fresh diamonds underneath \u2014 the same wearing action Rodolphe Leschot's 1863 core bit ran on."
+  },
+  {
+    "id": "resource_estimation",
+    "name": "Resource Estimation",
+    "emoji": "\ud83d\udcca",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A deposit gets carved into thousands of identically sized blocks, each one assigned its own grade \u2014 that block model is where a mine's tonnage and grade actually come from."
+  },
+  {
+    "id": "feasibility_study",
+    "name": "Feasibility Study",
+    "emoji": "\ud83d\udccb",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Scoping, pre-feasibility and definitive feasibility studies get progressively more precise about the same question: will this deposit actually turn a profit."
+  },
+  {
+    "id": "haul_road",
+    "name": "Haul Road",
+    "emoji": "\ud83d\udee3\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "soleRoute": true,
+    "fact": "Built to the haul truck fleet's own weight and turning circle, not to any public road standard \u2014 width, grade and subbase all sized around the machine, not the other way round."
+  },
+  {
+    "id": "mine_infrastructure",
+    "name": "Mine Infrastructure",
+    "emoji": "\ud83c\udfd7\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "soleRoute": true,
+    "fact": "A power plant, water-management ponds and a camp to house the workforce, all built before a single tonne of ore moves.",
+    "terminal": true
+  },
+  {
+    "id": "overburden",
+    "name": "Overburden",
+    "emoji": "\ud83d\udfeb",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Soil and rock with no value at all, sitting on top of the deposit \u2014 has to come off first, every time, before the ore underneath is reachable."
+  },
+  {
+    "id": "bench",
+    "name": "Bench",
+    "emoji": "\ud83e\ude9c",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "An open pit isn't one hole \u2014 it's a stack of stepped terraces, each one worked, drilled and hauled a level at a time."
+  },
+  {
+    "id": "nitric_acid",
+    "name": "Nitric Acid",
+    "emoji": "\ud83e\uddea",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Made by burning ammonia over hot platinum \u2014 the Ostwald process, still how nearly all of the world's supply gets made."
+  },
+  {
+    "id": "ammonium_nitrate",
+    "name": "Ammonium Nitrate",
+    "emoji": "\ud83e\uddca",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Doesn't burn on its own, but as an oxidiser it will accelerate almost anything else that does \u2014 which is exactly why it ends up in explosives."
+  },
+  {
+    "id": "anfo",
+    "name": "ANFO",
+    "emoji": "\ud83d\udca5",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "94% ammonium nitrate prills soaked in 6% fuel oil \u2014 cheap and easy enough to mix at the borehole that it's now the mining industry's default explosive."
+  },
+  {
+    "id": "blasting",
+    "name": "Blasting",
+    "emoji": "\ud83e\udde8",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Rows of drilled holes, loaded and detonated in a timed sequence \u2014 the step that actually breaks rock too solid for any bucket to just dig into."
+  },
+  {
+    "id": "excavator",
+    "name": "Excavator",
+    "emoji": "\ud83d\ude9c",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Hydraulic pumps, not cables and gears, drive the bucket \u2014 the actual 'load' half of load-and-haul."
+  },
+  {
+    "id": "run_of_mine",
+    "name": "Run-of-Mine",
+    "emoji": "\ud83e\udea8",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Raw material exactly as it exists in the mine \u2014 loaded and hauled out, but not yet crushed, sorted or processed in any way."
+  },
+  {
+    "id": "waste_rock",
+    "name": "Waste Rock",
+    "emoji": "\u2b1b",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Mined, but never processed \u2014 it's fragmented by the same blast as the ore next to it and simply has nowhere useful to go."
+  },
+  {
+    "id": "waste_dump",
+    "name": "Waste Dump",
+    "emoji": "\u26f0\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Also called a spoil tip, boney pile, or mine dump depending where you are \u2014 an engineered pile, not just wherever a truck happens to tip its load.",
+    "terminal": true
+  },
+  {
+    "id": "assay",
+    "name": "Assay",
+    "emoji": "\u2696\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Accurate to one part in ten thousand on a bead of gold \u2014 still the most reliable way there is to measure exactly how much precious metal a rock actually holds."
+  },
+  {
+    "id": "grade_control",
+    "name": "Grade Control",
+    "emoji": "\ud83d\udd0d",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Every load gets checked against the cut-off grade \u2014 the minimum worth processing at all \u2014 before it's allowed anywhere near the mill."
+  },
+  {
+    "id": "magnetic_separation",
+    "name": "Magnetic Separation",
+    "emoji": "\ud83e\uddf2",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Magnetite needs just one kilogauss of field strength to respond \u2014 weak enough that a modest magnet is all it takes to pull it out of a ground-ore stream."
+  },
+  {
+    "id": "gravity_separation",
+    "name": "Gravity Separation",
+    "emoji": "\ud83d\udca7",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "No chemicals, low cost \u2014 density alone does the sorting, the same trick placer mining uses, just built into a machine."
+  },
+  {
+    "id": "concentrate",
+    "name": "Concentrate",
+    "emoji": "\u2728",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "What's left once nearly all the worthless rock is gone \u2014 a flotation copper concentrate can run 25-30% metal against roughly 0.5% in the ore it came from."
+  },
+  {
+    "id": "cyanide",
+    "name": "Cyanide",
+    "emoji": "\u2620\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "One carbon atom triple-bonded to one nitrogen atom, CN\u207b \u2014 simple enough that it also turns up naturally in interstellar clouds and comets."
+  },
+  {
+    "id": "dore",
+    "name": "Dor\u00e9 Bar",
+    "emoji": "\ud83d\udfe1",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A semi-pure gold-silver alloy, at least 70% precious metal by weight \u2014 an unrefined bar poured on-site, not yet investment-grade metal."
+  },
+  {
+    "id": "heap_leach",
+    "name": "Heap Leach",
+    "emoji": "\ud83e\udea3",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Recovers roughly 60-70% of the copper in a heap of crushed low-grade ore \u2014 lower than a mill manages, but cheap enough on ore that low-grade to be worth it anyway."
+  },
+  {
+    "id": "copper_cathode",
+    "name": "Copper Cathode",
+    "emoji": "\ud83d\udfe7",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "99.99% pure \u2014 the actual traded commodity form, whether it got there by smelting and electrorefining or by heap leach and electrowinning.",
+    "terminal": true
+  },
+  {
+    "id": "matte",
+    "name": "Copper Matte",
+    "emoji": "\u26ab",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "soleRoute": true,
+    "fact": "30 to 70% copper, still mixed with iron sulfide \u2014 most of the impurities smelting hasn't burned off yet."
+  },
+  {
+    "id": "blister_copper",
+    "name": "Blister Copper",
+    "emoji": "\ud83d\udfe0",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "soleRoute": true,
+    "fact": "About 98% pure \u2014 named for the pitted surface sulfur dioxide gas leaves behind as it escapes while the metal cools."
+  },
+  {
+    "id": "tailings_dam",
+    "name": "Tailings Dam",
+    "emoji": "\ud83d\udea7",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "soleRoute": true,
+    "fact": "Designed, unlike almost anything else a mine builds, to hold its contents forever \u2014 often raised in stages using the tailings themselves as fill.",
+    "terminal": true
+  },
+  {
+    "id": "road_freight",
+    "name": "Road Freight",
+    "emoji": "\ud83d\ude9a",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Zimbabwe alone trucked roughly 1.13 million tons of spodumene concentrate to port in 2025, before a dedicated rail line existed to replace it."
+  },
+  {
+    "id": "slurry_pipeline",
+    "name": "Slurry Pipeline",
+    "emoji": "\ud83d\udeb0",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Tasmania's Savage River pipeline has carried iron concentrate slurry 85km since 1967, on one span 167 metres above the river below it."
+  },
+  {
+    "id": "car_dumper",
+    "name": "Car Dumper",
+    "emoji": "\ud83d\udd04",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A 1909 rotary car dumper could already empty five loaded mine cars a minute; modern ones rotate a car without even uncoupling it from the train."
+  },
+  {
+    "id": "port_stockpile",
+    "name": "Port Stockpile",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Built far bigger than anything the mine itself needed \u2014 the whole point is blending trainload after trainload into one grade a ship can load from without stopping."
+  },
+  {
+    "id": "stacker_reclaimer",
+    "name": "Stacker-Reclaimer",
+    "emoji": "\ud83e\uddbe",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "One machine stacks incoming ore into the yard; the other, often the very same gantry, pulls it back off again \u2014 blending as it goes."
+  },
+  {
+    "id": "ship_loader",
+    "name": "Ship Loader",
+    "emoji": "\ud83d\udce4",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Its boom moves front to back and up and down on separate drives, so it can reach every part of a hold as the ship's own draught deepens while it fills."
   }
 ]

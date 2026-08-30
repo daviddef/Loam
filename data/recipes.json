@@ -23614,5 +23614,475 @@
     "why": "Insert or delete a run of bases that isn't a multiple of three and every codon downstream shifts by one letter, scrambling the amino acid sequence read from that point on — a frameshift mutation.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Frameshift_mutation"
+  },
+  {
+    "in": [
+      "satellite",
+      "mountain"
+    ],
+    "out": "geological_mapping",
+    "why": "Modern geological mapping drapes satellite imagery over a mountain's exposed rock and combines it with GPS-positioned field data, plotting rock types and structures onto a map before anyone decides where to drill.",
+    "src": "https://en.wikipedia.org/wiki/Geological_mapping",
+    "supported": true
+  },
+  {
+    "in": [
+      "geological_mapping",
+      "magnetic_field"
+    ],
+    "out": "target_generation",
+    "why": "Laid over the same geological mapping, a magnetic field survey flags anomalies — some mineral deposits raise or lower the abundance of magnetic minerals enough to register — and where those anomalies sit on the mapped structures is exactly where target generation points the drill next.",
+    "src": "https://en.wikipedia.org/wiki/Aeromagnetic_survey",
+    "verified": true
+  },
+  {
+    "in": [
+      "target_generation",
+      "diamond"
+    ],
+    "out": "exploration_drilling",
+    "why": "Once target generation narrows the search to one anomaly, a bit set with industrial diamonds — the soft metal around them wearing away to expose fresh diamonds as it cuts — bores down to bring up an intact rock core from exactly that spot.",
+    "src": "https://en.wikipedia.org/wiki/Exploration_diamond_drilling",
+    "verified": true
+  },
+  {
+    "in": [
+      "exploration_drilling",
+      "computer"
+    ],
+    "out": "resource_estimation",
+    "why": "Every core exploration drilling brings up gets assayed and logged, and a computer turns hundreds of those point samples into a 3D block model — thousands of identically sized blocks, each assigned its own grade — which is how a deposit's tonnage and grade actually get calculated.",
+    "src": "https://en.wikipedia.org/wiki/Mineral_resource_estimation",
+    "verified": true
+  },
+  {
+    "in": [
+      "resource_estimation",
+      "open_pit_mining"
+    ],
+    "out": "feasibility_study",
+    "why": "A feasibility study prices a specific mining method — open-pit mining here — against resource estimation's own block model of tonnage and grade; scoping, pre-feasibility and definitive studies get progressively more precise before anyone commits capital to digging.",
+    "src": "https://en.wikipedia.org/wiki/Feasibility_study",
+    "supported": true
+  },
+  {
+    "in": [
+      "resource_estimation",
+      "room_and_pillar_mining"
+    ],
+    "out": "feasibility_study",
+    "why": "The same block model from resource estimation can instead be priced against going underground — room-and-pillar mining here — when a deposit sits too deep or too steep for open-pit stripping to reach it economically.",
+    "src": "https://en.wikipedia.org/wiki/Room_and_pillar_mining",
+    "supported": true
+  },
+  {
+    "in": [
+      "feasibility_study",
+      "stone"
+    ],
+    "out": "haul_road",
+    "why": "Once a feasibility study clears a deposit for development, one of the first things built is the haul road itself — a subbase of compacted stone and crushed rock engineered around the haul truck fleet's own weight, width and turning circle, not built to any ordinary road standard.",
+    "src": "https://en.wikipedia.org/wiki/Haul_road",
+    "supported": true
+  },
+  {
+    "in": [
+      "feasibility_study",
+      "concrete"
+    ],
+    "out": "mine_infrastructure",
+    "why": "The same green light from a feasibility study pays for the rest of a mine's infrastructure before any ore moves — a power plant, water-management ponds, and a camp built around the mine to house the workforce — concrete under nearly every foundation of it.",
+    "src": "https://en.wikipedia.org/wiki/Mining_camp",
+    "supported": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "soil"
+    ],
+    "out": "overburden",
+    "why": "Before an open pit can reach the ore itself, the overburden — soil and rock with no value that simply happens to sit on top of the deposit — has to be pre-stripped and moved out of the way first; how many tonnes of it that takes for every tonne of ore recovered is the mine's strip ratio, and it alone can decide whether a pit is worth digging.",
+    "src": "https://en.wikipedia.org/wiki/Overburden",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "haul_road"
+    ],
+    "out": "bench",
+    "why": "An open pit is dug in stepped benches, not a single hole, and each bench carries its own segment of haul road spiralling up the wall so trucks can climb one level at a time — the bench is the actual unit an open pit gets mined in.",
+    "src": "https://en.wikipedia.org/wiki/Open-pit_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "oxygen"
+    ],
+    "out": "nitric_acid",
+    "why": "The Ostwald process burns ammonia in oxygen over a hot platinum catalyst, oxidises the result further, and absorbs it in water — nitric acid, made this way, is nearly all of the world's supply.",
+    "src": "https://en.wikipedia.org/wiki/Ostwald_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "nitric_acid"
+    ],
+    "out": "ammonium_nitrate",
+    "why": "Ammonia neutralises nitric acid in a straightforward acid-base reaction, HNO3 + NH3 → NH4NO3, and evaporating off the water leaves solid ammonium nitrate — a powerful oxidiser that doesn't burn on its own but accelerates almost anything else that does.",
+    "src": "https://en.wikipedia.org/wiki/Ammonium_nitrate",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonium_nitrate",
+      "petroleum"
+    ],
+    "out": "anfo",
+    "why": "ANFO is nothing more than ammonium nitrate prills soaked with about 6% fuel oil, a petroleum product — cheap and easy enough to mix right at the borehole that the mining industry now accounts for most of the explosive tonnage used this way.",
+    "src": "https://en.wikipedia.org/wiki/ANFO",
+    "verified": true
+  },
+  {
+    "in": [
+      "drilling_rig",
+      "anfo"
+    ],
+    "out": "blasting",
+    "why": "The rows of holes a drilling rig bores across a bench get loaded with ANFO and detonated in a timed sequence, and that is blasting — the step that actually fractures rock too solid for any bucket or blade to just dig into.",
+    "src": "https://en.wikipedia.org/wiki/Rock_blasting",
+    "verified": true
+  },
+  {
+    "in": [
+      "blasting",
+      "hydraulic_pump"
+    ],
+    "out": "excavator",
+    "why": "Once blasting fragments the rock, a hydraulic excavator's bucket — driven by hydraulic pumps rather than the cables and gears older shovels used — claws into the broken pile and swings each load up into a waiting truck; that's the actual 'load' half of load-and-haul.",
+    "src": "https://en.wikipedia.org/wiki/Hydraulic_excavator",
+    "supported": true
+  },
+  {
+    "in": [
+      "excavator",
+      "haul_truck"
+    ],
+    "out": "run_of_mine",
+    "why": "What an excavator loads and a haul truck hauls out, before it has been crushed, sorted or processed in any way, is run-of-mine ore — raw material exactly as it exists in the mine.",
+    "src": "https://www.angloamerican.com/futuresmart/stories/our-industry/mining-explained/mining-terms-explained-a-to-z",
+    "supported": true
+  },
+  {
+    "in": [
+      "excavator",
+      "granite"
+    ],
+    "out": "waste_rock",
+    "why": "The same excavator that loads ore also loads the barren rock a blast fragments alongside it — granite and other country rock with no value — and that material is displaced during mining without ever being processed; it's waste rock.",
+    "src": "https://en.wikipedia.org/wiki/Overburden",
+    "verified": true
+  },
+  {
+    "in": [
+      "waste_rock",
+      "haul_truck"
+    ],
+    "out": "waste_dump",
+    "why": "Waste rock has nowhere useful to go, so the same haul trucks that carry ore to the crusher carry it instead to a waste dump — also called a spoil tip or mine dump — a deliberately engineered pile, not just wherever a truck happens to tip its load.",
+    "src": "https://en.wikipedia.org/wiki/Spoil_tip",
+    "verified": true
+  },
+  {
+    "in": [
+      "overburden",
+      "haul_truck"
+    ],
+    "out": "waste_dump",
+    "why": "Overburden stripped off before mining even starts gets hauled by the same trucks to the same waste dump as the mine's ordinary waste rock — a spoil tip is built from both, whichever stage of the pit produced it.",
+    "src": "https://en.wikipedia.org/wiki/Spoil_tip",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "lead"
+    ],
+    "out": "assay",
+    "why": "Fire assay mixes crushed ore with a flux containing lead oxide; carbon in the flux reduces that to metallic lead, which alloys with any gold or silver present as everything melts and sinks together into a button, while the barren rock floats off as slag — accurate to one part in ten thousand on the bead of gold that's left.",
+    "src": "https://en.wikipedia.org/wiki/Fire_assay",
+    "verified": true
+  },
+  {
+    "in": [
+      "run_of_mine",
+      "assay"
+    ],
+    "out": "grade_control",
+    "why": "Grade control continuously assays samples of run-of-mine ore against the cut-off grade — the minimum grade worth processing at all — catching dilution, barren wall rock that blasting inevitably mixes into the ore, before diluted material reaches the mill instead of the dump.",
+    "src": "https://en.wikipedia.org/wiki/Cut-off_grade",
+    "verified": true
+  },
+  {
+    "in": [
+      "grade_control",
+      "steel"
+    ],
+    "out": "crusher",
+    "why": "Once grade control has confirmed a load is genuinely ore, above cut-off, it goes to the same steel-jawed primary crusher every other load does — grading happens before crushing, not after, so nothing gets ground down for nothing.",
+    "src": "https://en.wikipedia.org/wiki/Crusher",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball_mill",
+      "magnet"
+    ],
+    "out": "magnetic_separation",
+    "why": "A magnet pulls the strongly ferromagnetic grains straight out of a ball mill's ground-ore stream — magnetite needs just one kilogauss of field strength to respond — while the non-magnetic gangue simply carries on past.",
+    "src": "https://en.wikipedia.org/wiki/Magnetic_separation",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball_mill",
+      "water"
+    ],
+    "out": "gravity_separation",
+    "why": "Ground ore from a ball mill, slurried in water and run down a spiral trough, sorts itself by density alone — heavier grains sink and migrate to the centre of the spiral while lighter waste rides the outside edge, no chemicals needed.",
+    "src": "https://en.wikipedia.org/wiki/Spiral_concentrator",
+    "verified": true
+  },
+  {
+    "in": [
+      "flotation_cell",
+      "copper_sulfide"
+    ],
+    "out": "concentrate",
+    "why": "Comminution already reduced this copper sulfide to sand-sized grains before it ever reached the flotation cell; the sulfide grains stick to the rising air bubbles and are skimmed off as concentrate, running 25-30% copper against roughly 0.5% in the ore it started as.",
+    "src": "https://en.wikipedia.org/wiki/Froth_flotation",
+    "supported": true
+  },
+  {
+    "in": [
+      "magnetic_separation",
+      "magnetite"
+    ],
+    "out": "concentrate",
+    "why": "Magnetite is strongly ferromagnetic on its own, no roasting needed first, so magnetic separation alone turns it into a concentrate running well over 60% iron — the ore this method was practically built for.",
+    "src": "https://en.wikipedia.org/wiki/Magnetic_separation",
+    "supported": true
+  },
+  {
+    "in": [
+      "gravity_separation",
+      "rutile"
+    ],
+    "out": "concentrate",
+    "why": "Rutile is one of the dense heavy minerals — titanium dioxide sitting alongside ilmenite and zircon in beach and river sands — that gravity separation is built to pull out, a spiral trough sorting it from ordinary quartz sand by density alone into a heavy-mineral concentrate.",
+    "src": "https://en.wikipedia.org/wiki/Spiral_concentrator",
+    "supported": true
+  },
+  {
+    "in": [
+      "carbon",
+      "nitrogen"
+    ],
+    "out": "cyanide",
+    "why": "The cyanide ion is nothing more than one carbon atom triple-bonded to one nitrogen atom, CN⁻ — simple enough that it also forms naturally in interstellar clouds and comets, not just industrially.",
+    "src": "https://en.wikipedia.org/wiki/Cyanide",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanide",
+      "ball_mill"
+    ],
+    "out": "dore",
+    "why": "Cyanide leaches straight through a ball mill's ground ore, dissolving any gold present into a soluble complex — 4Au + 8NaCN + O2 + 2H2O → 4Na[Au(CN)2] + 4NaOH — and what's recovered from that solution on-site is doré, an unrefined bar at least 70% gold and silver by weight, not yet pure metal.",
+    "src": "https://en.wikipedia.org/wiki/Gold_cyanidation",
+    "verified": true
+  },
+  {
+    "in": [
+      "dore",
+      "chlorine"
+    ],
+    "out": "gold",
+    "why": "The Miller process bubbles chlorine gas through molten doré; every base-metal contaminant reacts with the chlorine and boils off as a chloride vapour while the gold itself is untouched at that temperature, leaving 99.5% pure gold behind.",
+    "src": "https://en.wikipedia.org/wiki/Miller_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "sulfuric_acid",
+      "stockpile"
+    ],
+    "out": "heap_leach",
+    "why": "Dilute sulfuric acid sprayed over a stockpile of crushed low-grade copper ore, heaped on a lined pad, percolates all the way through and dissolves the copper out as it goes — recovering roughly 60-70% of the copper in the ore, lower than a mill manages, but cheap enough on ore that low-grade to be worth it anyway.",
+    "src": "https://en.wikipedia.org/wiki/Heap_leaching",
+    "verified": true
+  },
+  {
+    "in": [
+      "heap_leach",
+      "current"
+    ],
+    "out": "copper_cathode",
+    "why": "Run a current through heap leach's copper-bearing solution and the dissolved copper plates straight onto a cathode — electrowinning, the 'EW' half of solvent-extraction/electrowinning, recovers copper this way without the solution ever touching a smelter.",
+    "src": "https://en.wikipedia.org/wiki/Electrowinning",
+    "verified": true
+  },
+  {
+    "in": [
+      "concentrate"
+    ],
+    "verb": "heat",
+    "out": "matte",
+    "why": "Smelting concentrate in a furnace melts the sulfide grains together into copper matte, a 30-70% copper mixture still carrying most of its iron sulfide — the impurities haven't been burned off yet.",
+    "src": "https://en.wikipedia.org/wiki/Blister_copper",
+    "verified": true
+  },
+  {
+    "in": [
+      "matte"
+    ],
+    "verb": "blow",
+    "out": "blister_copper",
+    "why": "Blowing air through molten matte oxidises the iron sulfide to slag and burns the remaining sulfur off as sulfur dioxide gas — the escaping gas is what leaves blister copper's surface pitted, and the metal that's left is about 98% pure.",
+    "src": "https://en.wikipedia.org/wiki/Blister_copper",
+    "verified": true
+  },
+  {
+    "in": [
+      "blister_copper",
+      "electrolysis"
+    ],
+    "out": "copper_cathode",
+    "why": "Blister copper is still only 98% pure, so it's cast as an anode and put through electrolysis: current dissolves the impure copper off the anode and plates 99.99% pure copper onto the cathode on the other side, the last impurities dropping away as anode slime.",
+    "src": "https://en.wikipedia.org/wiki/Copper_extraction",
+    "supported": true
+  },
+  {
+    "in": [
+      "tailings",
+      "concrete"
+    ],
+    "out": "tailings_dam",
+    "why": "A tailings dam is usually raised in stages using the tailings themselves as fill once the starter embankment is up, but that first embankment and any engineered barrier layer need concrete and rockfill — designed, unlike almost anything else a mine builds, to hold its contents forever.",
+    "src": "https://en.wikipedia.org/wiki/Tailings_dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "haul_road",
+      "concentrate"
+    ],
+    "out": "road_freight",
+    "why": "Not every mine produces enough concentrate to justify a unit train — Zimbabwe alone trucked roughly 1.13 million tons of spodumene concentrate to ports in Mozambique and South Africa in 2025 over ordinary roads, connected all the way back to the haul road built at the mine, before a dedicated rail line existed to replace it.",
+    "src": "https://miningindaba.com/articles/zimbabwe-opens-new-rail-route-for-lithium-exp",
+    "verified": true
+  },
+  {
+    "in": [
+      "concentrate",
+      "pipe"
+    ],
+    "out": "slurry_pipeline",
+    "why": "Concentrate mixed with water into a slurry can be pumped through an ordinary pipe instead of railed or trucked — Tasmania's Savage River pipeline has carried iron concentrate slurry this way since 1967, 85km including one span 167 metres above the river.",
+    "src": "https://en.wikipedia.org/wiki/Slurry_pipeline",
+    "verified": true
+  },
+  {
+    "in": [
+      "hopper_car",
+      "port"
+    ],
+    "out": "car_dumper",
+    "why": "At the terminal, a rotary car dumper clamps a loaded hopper car — without even uncoupling it from the rest of the train, in the modern rotary-coupler design — and rotates the whole car to empty it in one motion; a 1909 dumper could already empty five cars a minute.",
+    "src": "https://en.wikipedia.org/wiki/Rotary_car_dumper",
+    "verified": true
+  },
+  {
+    "in": [
+      "car_dumper",
+      "stockpile"
+    ],
+    "out": "port_stockpile",
+    "why": "What a car dumper empties gets stockpiled again, into yards built far bigger than the mine's own stockpile ever needed to be — blending trainload after trainload of variable-grade ore into one consistent grade a ship can load from without stopping. The alternative is a ship idling at berth past its allotted time, racking up demurrage, a per-day penalty charged for exactly that delay.",
+    "src": "https://www.ausimm.com/publications/conference-proceedings/iron-ore-2013/the-role-of-precrusher-stockpiling-for-grade-control-in-mining/",
+    "supported": true
+  },
+  {
+    "in": [
+      "port_stockpile",
+      "conveyor_belt"
+    ],
+    "out": "stacker_reclaimer",
+    "why": "A stacker lays incoming ore onto the port stockpile in the first place, and its own reclaiming arm — often the same travelling gantry, riding the same conveyor-belt technology moving ore everywhere else in the chain — later pulls material back off, blending the stacked product as it goes so throughput to the ship stays continuous.",
+    "src": "https://en.wikipedia.org/wiki/Reclaimer",
+    "verified": true
+  },
+  {
+    "in": [
+      "stacker_reclaimer",
+      "conveyor_belt"
+    ],
+    "out": "ship_loader",
+    "why": "A ship loader is the stacker-reclaimer's own conveyor extended out on a boom that swings and luffs to reach every part of a ship's hold as it fills and its draught deepens — the last machine in the chain before the cargo is actually on board.",
+    "src": "https://en.wikipedia.org/wiki/Ship_loader",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship_loader",
+      "sea"
+    ],
+    "out": "bulk_carrier",
+    "why": "Only once a ship loader has actually loaded a waiting vessel out on the sea does ore become cargo instead of stockpile — and the moment the last tonne crosses the ship's rail, the cargo is FOB: the exporter's responsibility ends and the buyer's begins.",
+    "src": "https://en.wikipedia.org/wiki/Bulk_carrier",
+    "verified": true
+  },
+  {
+    "in": [
+      "conveyor_belt",
+      "concentrate"
+    ],
+    "out": "stockpile",
+    "why": "Concentrate rides the same conveyor belt crushed bulk ore does out to the yard, but instead of being screened for size like iron ore, it gets stockpiled to blend flotation or leach batches from different shifts into one uniform grade before anything moves further down the chain.",
+    "src": "https://www.ausimm.com/publications/conference-proceedings/iron-ore-2013/the-role-of-precrusher-stockpiling-for-grade-control-in-mining/",
+    "supported": true
+  },
+  {
+    "in": [
+      "bench",
+      "tungsten_carbide"
+    ],
+    "out": "drilling_rig",
+    "why": "A blast-hole rig doesn't drill just anywhere in an open pit — it works one bench at a time, boring rows of tungsten-carbide-tipped holes up to 27cm across and 40+ metres deep straight across that bench's own surface.",
+    "src": "https://en.wikipedia.org/wiki/Open-pit_mining",
+    "supported": true
+  },
+  {
+    "in": [
+      "road_freight",
+      "sea"
+    ],
+    "out": "port",
+    "why": "Road freight reaches the same bulk terminal a unit train does — plenty of ports load ships from truck-delivered concentrate as well as railed ore, especially where no dedicated line exists yet, the truck fleet's own last stop before the sea.",
+    "src": "https://en.wikipedia.org/wiki/Bulk_cargo",
+    "supported": true
+  },
+  {
+    "in": [
+      "slurry_pipeline",
+      "sea"
+    ],
+    "out": "port",
+    "why": "A slurry pipeline can end at a port terminal just as a railway does — filter presses strip the water back out of the concentrate on arrival, and from there it's stockpiled and shipped exactly like anything that came in by rail, ready for the sea.",
+    "src": "https://en.wikipedia.org/wiki/Slurry_pipeline",
+    "verified": true
   }
 ]
