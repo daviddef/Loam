@@ -438,7 +438,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Forages 5 km out and reports good ground back to the hive by dancing."
+    "fact": "Forages 5 km out and reports good ground back to the hive by dancing.",
+    "taxon": "tx_hymenoptera"
   },
   {
     "id": "honey",
@@ -1004,7 +1005,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "1.8 m at the shoulder, foul-tempered, extinct since 1627."
+    "fact": "1.8 m at the shoulder, foul-tempered, extinct since 1627.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "cow",
@@ -1014,7 +1016,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Every cow alive descends from roughly 80 tamed aurochs."
+    "fact": "Every cow alive descends from roughly 80 tamed aurochs.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "milk",
@@ -1034,7 +1037,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Domesticated jungle bird. Around three alive per living human."
+    "fact": "Domesticated jungle bird. Around three alive per living human.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "egg",
@@ -1054,7 +1058,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The first vertebrates. Your skeleton is a variation on their design."
+    "fact": "The first vertebrates. Your skeleton is a variation on their design.",
+    "taxon": "tx_actinopterygii"
   },
   {
     "id": "lizard",
@@ -1065,7 +1070,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Over 7,000 species, and every one an ectotherm — basking in the sun is a requirement, not a habit."
+    "fact": "Over 7,000 species, and every one an ectotherm — basking in the sun is a requirement, not a habit.",
+    "taxon": "tx_squamata"
   },
   {
     "id": "snake",
@@ -1076,7 +1082,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Legless, with 175 to 400-plus vertebrae — and, in most species, only one working lung."
+    "fact": "Legless, with 175 to 400-plus vertebrae — and, in most species, only one working lung.",
+    "taxon": "tx_squamata"
   },
   {
     "id": "turtle",
@@ -1088,7 +1095,8 @@
       "wild"
     ],
     "fact": "A shell of 50 to 60 of its own bones — ribs and vertebrae, fused outward and capped in keratin.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_testudines"
   },
   {
     "id": "rattlesnake",
@@ -1100,7 +1108,8 @@
       "wild"
     ],
     "fact": "Its rattle is hollow keratin segments — modified tail scales, buzzed by a dedicated muscle.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_squamata"
   },
   {
     "id": "salt_fish",
@@ -2098,7 +2107,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Domesticated from wild bezoars; browses scrub and rock where cattle starve."
+    "fact": "Domesticated from wild bezoars; browses scrub and rock where cattle starve.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "carbon",
@@ -2853,7 +2863,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Domesticated twice over, independently: near the Tigris, and separately in China."
+    "fact": "Domesticated twice over, independently: near the Tigris, and separately in China.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "lard",
@@ -2873,7 +2884,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Grazes grass flat where a goat would rather climb and browse the scrub instead."
+    "fact": "Grazes grass flat where a goat would rather climb and browse the scrub instead.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "wool",
@@ -2893,7 +2905,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing."
+    "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "duck",
@@ -2903,7 +2916,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Almost every domestic duck breed on Earth comes down from one wild bird: the mallard."
+    "fact": "Almost every domestic duck breed on Earth comes down from one wild bird: the mallard.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "turkey",
@@ -2913,7 +2927,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Spends all day foraging the ground, then flies up into a tree every night to roost."
+    "fact": "Spends all day foraging the ground, then flies up into a tree every night to roost.",
+    "taxon": "tx_galliformes"
   },
   {
     "id": "wolf",
@@ -2925,7 +2940,8 @@
       "wild"
     ],
     "fact": "Dogs and wolves share a common wolf ancestor — today's wolves are cousins, not quite the parents.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_carnivora"
   },
   {
     "id": "deer",
@@ -2936,7 +2952,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Lives in the seam between forest and open ground — cover on one side, grazing on the other."
+    "fact": "Lives in the seam between forest and open ground — cover on one side, grazing on the other.",
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "bear",
@@ -2948,7 +2965,8 @@
       "wild"
     ],
     "fact": "Along parts of the Alaskan coast, this bear eats almost nothing but salmon while the run lasts.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_carnivora"
   },
   {
     "id": "kangaroo",
@@ -2984,7 +3002,8 @@
       "wild"
     ],
     "fact": "A domestic dog gone wild — feral for well over 3,000 years, and now Australia's apex predator.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_carnivora"
   },
   {
     "id": "platypus",
@@ -3019,7 +3038,8 @@
       "wild"
     ],
     "fact": "The most social cat there is — it lives in family groups where other big cats hunt alone.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_carnivora"
   },
   {
     "id": "zebra",
@@ -3031,7 +3051,8 @@
       "wild"
     ],
     "fact": "Those stripes are there to stop flies landing, not to help it hide or keep cool.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "giraffe",
@@ -3043,7 +3064,8 @@
       "wild"
     ],
     "fact": "A heart that runs at roughly twice human blood pressure, just to get blood up to the brain.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "camel",
@@ -3054,7 +3076,8 @@
       "animal"
     ],
     "fact": "The hump is fat, not water — up to 36 kg of it, burned for energy when food runs short.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_artiodactyla"
   },
   {
     "id": "chromatin",
@@ -3236,7 +3259,8 @@
       "animal"
     ],
     "fact": "Full term runs 39 to 40 weeks. Then labour ends the pregnancy and a newborn leaves the body it grew inside.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_primates"
   },
   {
     "id": "cotton",
@@ -4723,7 +4747,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Bombyx mori has been bred until it cannot fly and does not exist in the wild."
+    "fact": "Bombyx mori has been bred until it cannot fly and does not exist in the wild.",
+    "taxon": "tx_lepidoptera"
   },
   {
     "id": "cocoon",
@@ -5713,7 +5738,8 @@
       "animal",
       "water"
     ],
-    "fact": "A sac two cell layers thick with one opening, and that opening is both mouth and exit."
+    "fact": "A sac two cell layers thick with one opening, and that opening is both mouth and exit.",
+    "taxon": "tx_cnidaria"
   },
   {
     "id": "zooxanthellae",
@@ -5735,7 +5761,8 @@
       "animal",
       "water"
     ],
-    "fact": "An animal taking up to 90% of its food from the algae growing inside its own tissue."
+    "fact": "An animal taking up to 90% of its food from the algae growing inside its own tissue.",
+    "taxon": "tx_cnidaria"
   },
   {
     "id": "reef",
@@ -5770,7 +5797,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "White because the algae have gone. The animal is not dead yet; it is starving."
+    "fact": "White because the algae have gone. The animal is not dead yet; it is starving.",
+    "taxon": "tx_cnidaria"
   },
   {
     "id": "detritus",
@@ -5791,7 +5819,8 @@
       "animal",
       "earth"
     ],
-    "fact": "Breathes through its skin, so it needs damp soil — and so rain does not drown it."
+    "fact": "Breathes through its skin, so it needs damp soil — and so rain does not drown it.",
+    "taxon": "tx_annelida"
   },
   {
     "id": "humus",
@@ -7516,7 +7545,8 @@
       "wild",
       "water"
     ],
-    "fact": "A mammal that went back to the sea. It breathes air and feeds its calf milk the thickness of paste."
+    "fact": "A mammal that went back to the sea. It breathes air and feeds its calf milk the thickness of paste.",
+    "taxon": "tx_cetacea"
   },
   {
     "id": "ambergris",
@@ -11925,7 +11955,8 @@
       "animal"
     ],
     "fact": "A decapod crustacean built for swimming — an elongated body, not a crab's sideways scuttle.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "crab",
@@ -11937,7 +11968,8 @@
       "animal"
     ],
     "fact": "Its tail is folded flat under its own body — that's the trait that lets it run sideways.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "lobster",
@@ -11949,7 +11981,8 @@
       "animal"
     ],
     "fact": "Ten legs by the strict count — the two big front pincers are legs too.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "salmon",
@@ -11961,7 +11994,8 @@
       "animal"
     ],
     "fact": "Born in a river, grown at sea, and it fights back upstream to the exact place it hatched.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_actinopterygii"
   },
   {
     "id": "tuna",
@@ -11973,7 +12007,8 @@
       "animal"
     ],
     "fact": "A fish that runs warmer than the water around it — one of only three that can.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_actinopterygii"
   },
   {
     "id": "guacamole",
@@ -12930,7 +12965,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "Descended from the African wild ass, at home in true desert rather than open grassland."
+    "fact": "Descended from the African wild ass, at home in true desert rather than open grassland.",
+    "taxon": "tx_perissodactyla"
   },
   {
     "id": "rabbit",
@@ -12941,7 +12977,8 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "Livestock since at least the first century BC in Rome, kept for meat, fur and wool."
+    "fact": "Livestock since at least the first century BC in Rome, kept for meat, fur and wool.",
+    "taxon": "tx_lagomorpha"
   },
   {
     "id": "drake",
@@ -12972,7 +13009,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Paired with 'gander' it means specifically the female; alone it can mean either sex."
+    "fact": "Paired with 'gander' it means specifically the female; alone it can mean either sex.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "gander",

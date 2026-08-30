@@ -1,0 +1,327 @@
+{
+  "$comment": "A second family tree, orthogonal to bedrock.json's composition tree. Composition asks 'what is X made of' (organs, cells, molecules — downward into parts). Taxonomy asks 'what IS X' (a classification by shared traits — upward into categories). Every group has exactly one parent: real taxonomic rank is a strict hierarchy, not a DAG like composition can be. Sourced from Wikipedia rather than the school-level PDFs that prompted this file, to match every other fact in this game.",
+  "ranks": [
+    "kingdom",
+    "phylum",
+    "subphylum",
+    "class",
+    "order"
+  ],
+  "groups": [
+    {
+      "id": "tx_animalia",
+      "rank": "kingdom",
+      "parent": null,
+      "name": "Animalia",
+      "fact": "Multicellular, eukaryotic, and unlike plants or fungi, gets its energy by eating other organisms rather than making its own food.",
+      "srcTitle": "Animal",
+      "src": "https://en.wikipedia.org/wiki/Animal"
+    },
+    {
+      "id": "tx_chordata",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Chordata",
+      "fact": "Defined by a notochord, a dorsal hollow nerve cord, and paired pharyngeal slits — all present at some point in development, even in species where the adult loses them.",
+      "srcTitle": "Chordate",
+      "src": "https://en.wikipedia.org/wiki/Chordate"
+    },
+    {
+      "id": "tx_vertebrata",
+      "rank": "subphylum",
+      "parent": "tx_chordata",
+      "name": "Vertebrata",
+      "fact": "The notochord present in every chordate embryo is replaced, in this group alone, by a bony or cartilaginous vertebral column by adulthood.",
+      "srcTitle": "Vertebrate",
+      "src": "https://en.wikipedia.org/wiki/Vertebrate"
+    },
+    {
+      "id": "tx_mammalia",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Mammalia",
+      "fact": "Warm-blooded, has hair or fur at some life stage, and the females produce milk from mammary glands — the trait that gives the class its name.",
+      "srcTitle": "Mammal",
+      "src": "https://en.wikipedia.org/wiki/Mammal"
+    },
+    {
+      "id": "tx_aves",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Aves",
+      "fact": "The only living animals with feathers. Warm-blooded, lays hard-shelled eggs, and its forelimbs are modified into wings even in flightless species.",
+      "srcTitle": "Bird",
+      "src": "https://en.wikipedia.org/wiki/Bird"
+    },
+    {
+      "id": "tx_reptilia",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Reptilia",
+      "fact": "Cold-blooded, breathes with lungs, and covered in dry, scaly skin rather than the moist skin of an amphibian. Most lay leathery or hard-shelled eggs on land.",
+      "srcTitle": "Reptile",
+      "src": "https://en.wikipedia.org/wiki/Reptile"
+    },
+    {
+      "id": "tx_amphibia",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Amphibia",
+      "fact": "Cold-blooded with smooth, permeable skin used for extra gas exchange — most start life in water breathing through gills and move onto land as lungs develop.",
+      "srcTitle": "Amphibian",
+      "src": "https://en.wikipedia.org/wiki/Amphibian"
+    },
+    {
+      "id": "tx_actinopterygii",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Ray-finned fish",
+      "fact": "Fins supported by bony spines (rays) rather than the fleshy lobes of a lungfish or the cartilage of a shark — about 96% of all living fish species belong here.",
+      "srcTitle": "Actinopterygii",
+      "src": "https://en.wikipedia.org/wiki/Actinopterygii"
+    },
+    {
+      "id": "tx_chondrichthyes",
+      "rank": "class",
+      "parent": "tx_vertebrata",
+      "name": "Cartilaginous fish",
+      "fact": "A skeleton built entirely of cartilage rather than bone — sharks, rays and skates all belong here, one of the oldest still-living vertebrate lineages.",
+      "srcTitle": "Chondrichthyes",
+      "src": "https://en.wikipedia.org/wiki/Chondrichthyes"
+    },
+    {
+      "id": "tx_arthropoda",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Arthropoda",
+      "fact": "A segmented body in a jointed exoskeleton, which has to be moulted to grow — the largest animal phylum by far, over 80% of all described animal species.",
+      "srcTitle": "Arthropod",
+      "src": "https://en.wikipedia.org/wiki/Arthropod"
+    },
+    {
+      "id": "tx_insecta",
+      "rank": "class",
+      "parent": "tx_arthropoda",
+      "name": "Insecta",
+      "fact": "A body in three parts — head, thorax, abdomen — six jointed legs, and usually two antennae. More described species than every other animal class combined.",
+      "srcTitle": "Insect",
+      "src": "https://en.wikipedia.org/wiki/Insect"
+    },
+    {
+      "id": "tx_arachnida",
+      "rank": "class",
+      "parent": "tx_arthropoda",
+      "name": "Arachnida",
+      "fact": "Eight legs and no antennae, unlike an insect's six legs and two antennae. Spiders, scorpions, ticks and mites all belong here.",
+      "srcTitle": "Arachnid",
+      "src": "https://en.wikipedia.org/wiki/Arachnid"
+    },
+    {
+      "id": "tx_malacostraca",
+      "rank": "class",
+      "parent": "tx_arthropoda",
+      "name": "Malacostraca",
+      "fact": "The largest class of crustaceans — crabs, lobsters, shrimp and woodlice — typically with a body in a head, thorax and abdomen, and paired appendages on most segments.",
+      "srcTitle": "Malacostraca",
+      "src": "https://en.wikipedia.org/wiki/Malacostraca"
+    },
+    {
+      "id": "tx_mollusca",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Mollusca",
+      "fact": "Soft-bodied, usually with a muscular foot and a mantle that in most species secretes a shell — the second-largest animal phylum after arthropods.",
+      "srcTitle": "Mollusca",
+      "src": "https://en.wikipedia.org/wiki/Mollusca"
+    },
+    {
+      "id": "tx_gastropoda",
+      "rank": "class",
+      "parent": "tx_mollusca",
+      "name": "Gastropoda",
+      "fact": "Snails and slugs — molluscs that move on a single broad foot, most with a coiled shell, though slugs have reduced or lost theirs entirely.",
+      "srcTitle": "Gastropoda",
+      "src": "https://en.wikipedia.org/wiki/Gastropod"
+    },
+    {
+      "id": "tx_cephalopoda",
+      "rank": "class",
+      "parent": "tx_mollusca",
+      "name": "Cephalopoda",
+      "fact": "Octopuses, squid and cuttlefish — the foot is drawn up around the head into arms or tentacles, and this is the most intelligent class of invertebrate known.",
+      "srcTitle": "Cephalopod",
+      "src": "https://en.wikipedia.org/wiki/Cephalopod"
+    },
+    {
+      "id": "tx_bivalvia",
+      "rank": "class",
+      "parent": "tx_mollusca",
+      "name": "Bivalvia",
+      "fact": "Mussels, oysters, clams and scallops — a shell in two hinged halves and no radula, the rasping tongue almost every other mollusc feeds with.",
+      "srcTitle": "Bivalvia",
+      "src": "https://en.wikipedia.org/wiki/Bivalvia"
+    },
+    {
+      "id": "tx_cnidaria",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Cnidaria",
+      "fact": "Radially symmetric, with stinging cells called cnidocytes on its tentacles — jellyfish, corals and sea anemones all belong here.",
+      "srcTitle": "Cnidaria",
+      "src": "https://en.wikipedia.org/wiki/Cnidaria"
+    },
+    {
+      "id": "tx_echinodermata",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Echinodermata",
+      "fact": "Exclusively marine, with a calcium-carbonate skeleton just under the skin and a water-driven vascular system used for movement — starfish, sea urchins, sea cucumbers.",
+      "srcTitle": "Echinoderm",
+      "src": "https://en.wikipedia.org/wiki/Echinoderm"
+    },
+    {
+      "id": "tx_annelida",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Annelida",
+      "fact": "Segmented worms — earthworms, leeches, ragworms — the body divided into repeating rings, each usually carrying its own set of internal organs.",
+      "srcTitle": "Annelid",
+      "src": "https://en.wikipedia.org/wiki/Annelid"
+    },
+    {
+      "id": "tx_platyhelminthes",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Platyhelminthes",
+      "fact": "Flatworms — soft, unsegmented, with no body cavity and a gut (where present) with only one opening, serving as both mouth and anus.",
+      "srcTitle": "Flatworm",
+      "src": "https://en.wikipedia.org/wiki/Flatworm"
+    },
+    {
+      "id": "tx_porifera",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Porifera",
+      "fact": "Sponges — no true tissues, nerves or organs, just a loose aggregate of specialised cells filtering food from water pumped through the body's own pores.",
+      "srcTitle": "Sponge",
+      "src": "https://en.wikipedia.org/wiki/Sponge"
+    },
+    {
+      "id": "tx_primates",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Primates",
+      "fact": "Forward-facing eyes for depth perception, a large brain relative to body size, and grasping hands — includes lemurs, monkeys, apes, and humans.",
+      "srcTitle": "Primate",
+      "src": "https://en.wikipedia.org/wiki/Primate"
+    },
+    {
+      "id": "tx_carnivora",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Carnivora",
+      "fact": "Named for a shared ancestor's diet, not every member's — pandas and some other carnivorans eat mostly plants — but nearly all keep the order's blade-like carnassial teeth.",
+      "srcTitle": "Carnivora",
+      "src": "https://en.wikipedia.org/wiki/Carnivora"
+    },
+    {
+      "id": "tx_cetacea",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Cetacea",
+      "fact": "Whales, dolphins and porpoises — mammals that returned to full-time ocean life, breathing air through a blowhole and giving birth to live young underwater.",
+      "srcTitle": "Cetacea",
+      "src": "https://en.wikipedia.org/wiki/Cetacean"
+    },
+    {
+      "id": "tx_artiodactyla",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Artiodactyla",
+      "fact": "Even-toed hoofed mammals — cattle, pigs, sheep, goats, camels, deer and giraffes — weight-bearing carried on the third and fourth toes equally.",
+      "srcTitle": "Even-toed ungulate",
+      "src": "https://en.wikipedia.org/wiki/Artiodactyla"
+    },
+    {
+      "id": "tx_perissodactyla",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Perissodactyla",
+      "fact": "Odd-toed hoofed mammals — horses, zebras, donkeys, and rhinoceroses — weight carried mainly on a single central toe.",
+      "srcTitle": "Odd-toed ungulate",
+      "src": "https://en.wikipedia.org/wiki/Perissodactyla"
+    },
+    {
+      "id": "tx_rodentia",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Rodentia",
+      "fact": "A single pair of ever-growing incisors in each jaw, worn down by constant gnawing — the largest order of mammals, over 40% of all mammal species.",
+      "srcTitle": "Rodent",
+      "src": "https://en.wikipedia.org/wiki/Rodent"
+    },
+    {
+      "id": "tx_lagomorpha",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Lagomorpha",
+      "fact": "Rabbits, hares and pikas — often mistaken for rodents, but with an extra, tiny pair of upper incisors set behind the main pair, which rodents lack.",
+      "srcTitle": "Lagomorpha",
+      "src": "https://en.wikipedia.org/wiki/Lagomorpha"
+    },
+    {
+      "id": "tx_squamata",
+      "rank": "order",
+      "parent": "tx_reptilia",
+      "name": "Squamata",
+      "fact": "Lizards and snakes — the largest reptile order, unified by skin covered in overlapping horny scales and, in most, a lower jaw loosely hinged for a wide gape.",
+      "srcTitle": "Squamata",
+      "src": "https://en.wikipedia.org/wiki/Squamata"
+    },
+    {
+      "id": "tx_testudines",
+      "rank": "order",
+      "parent": "tx_reptilia",
+      "name": "Testudines",
+      "fact": "Turtles and tortoises — a bony shell fused to the spine and ribs, unique among vertebrates, with the shoulder and hip girdles inside the rib cage rather than outside it.",
+      "srcTitle": "Turtle",
+      "src": "https://en.wikipedia.org/wiki/Turtle"
+    },
+    {
+      "id": "tx_galliformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Galliformes",
+      "fact": "Heavy-bodied, mostly ground-feeding birds — chickens, turkeys, pheasants, quail — strong legs built for scratching at the ground rather than sustained flight.",
+      "srcTitle": "Galliformes",
+      "src": "https://en.wikipedia.org/wiki/Galliformes"
+    },
+    {
+      "id": "tx_anseriformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Anseriformes",
+      "fact": "Waterfowl — ducks, geese and swans — webbed feet and a broad, flattened bill often edged with comb-like lamellae for filtering food from water.",
+      "srcTitle": "Anseriformes",
+      "src": "https://en.wikipedia.org/wiki/Anseriformes"
+    },
+    {
+      "id": "tx_hymenoptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Hymenoptera",
+      "fact": "Bees, wasps and ants — two pairs of membranous wings linked by tiny hooks so they beat as one, and among the most social insects in the animal kingdom.",
+      "srcTitle": "Hymenoptera",
+      "src": "https://en.wikipedia.org/wiki/Hymenoptera"
+    },
+    {
+      "id": "tx_lepidoptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Lepidoptera",
+      "fact": "Butterflies and moths — wings covered in tiny overlapping scales, which is where the order's name comes from: Greek for 'scale wing'.",
+      "srcTitle": "Lepidoptera",
+      "src": "https://en.wikipedia.org/wiki/Lepidoptera"
+    }
+  ]
+}

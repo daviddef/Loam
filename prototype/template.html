@@ -5408,6 +5408,27 @@ function atomsUnder(id, seen = new Set(), out = new Set()) {
   for (const x of (compById[id]?.of ?? [])) atomsUnder(x, seen, out);
   return out;
 }
+
+// ---- taxonomy: what a thing IS, not what it's made from or made of ----
+// A third family tree alongside the recipe graph (crafted-from) and bedrock
+// (made-of). Recipes and composition are both DAGs — a leaf can have several
+// paths above it. Real taxonomic rank never does: every group has exactly
+// one parent, so a lineage is always a straight line, not a tree to fold.
+const TAX = DATA.taxonomy;
+const taxById = Object.fromEntries(TAX.groups.map(g => [g.id, g]));
+/** From a taxon up to its root (Kingdom), leaf-first. */
+function taxLineage(id) {
+  const out = [];
+  for (let g = taxById[id]; g; g = taxById[g.parent]) out.push(g);
+  return out;
+}
+/** Direct children of a taxon — there is no stored `of` list, so this is
+ * derived on demand from the flat group list rather than kept in sync by hand. */
+function taxChildren(id) { return TAX.groups.filter(g => g.parent === id); }
+/** Every game element whose own lineage passes through this taxon. */
+function elementsUnderTaxon(taxId) {
+  return elements.filter(e => e.taxon && taxLineage(e.taxon).some(g => g.id === taxId));
+}
 // ---- ball-and-stick renderer ----
 // Structure is authored data, not derived: a formula cannot tell you a shape.
 function moleculeSVG(id, size = 190) {
@@ -5770,6 +5791,44 @@ function bedrockHTML(tally, head = 'and below that') {
         `<ul class="tree bed">${BED.composition[id].map(k => bedTreeHTML(k, id)).join('')}</ul></div>`;
     }).join('');
 }
+// A lineage is a straight line, so it reads as a single clickable path — the
+// same "A › B › C" grammar as the made-from/made-of paths already on this
+// card — rather than the foldable tree bedTreeHTML needs for a branching one.
+function taxonPathHTML(elId) {
+  const e = byId[elId];
+  if (!e?.taxon || !taxById[e.taxon]) return '';
+  const chain = taxLineage(e.taxon);
+  return `<h2>Classified as</h2><div class="ent taxpath">` +
+    chain.map(g => `<span class="g" data-taxon="${g.id}">${g.name}</span>`).join('<span class="arw">›</span>') +
+    `</div>`;
+}
+function showTaxon(id) {
+  const g = taxById[id];
+  if (!g) return;
+  const chain = taxLineage(id);
+  const kids = taxChildren(id);
+  const members = elementsUnderTaxon(id);
+  const ownedMembers = members.filter(e => found.has(e.id));
+  document.getElementById('sheetBody').innerHTML = `
+    <div class="phead">
+      <h3>${g.name}</h3>
+      <div class="pnums">${g.rank}</div>
+      <div class="pfrom">${g.fact}</div>
+    </div>
+    <div class="ent taxpath">${chain.map(a => `<span class="g" data-taxon="${a.id}">${a.name}</span>`)
+      .join('<span class="arw">›</span>')}</div>
+    ${kids.length ? `<h2>Groups within ${g.name} · ${kids.length}</h2><div class="shelf" style="gap:7px">` +
+      kids.map(k => `<span class="hex" data-taxon="${k.id}">${k.name}</span>`).join('') + `</div>` : ''}
+    <h2>Elements${members.length ? ` · ${ownedMembers.length} of ${members.length}` : ''}</h2>
+    ${ownedMembers.length ? `<div class="shelf">${ownedMembers.map(e =>
+        `<span class="chip" data-entry="${e.id}">${chipHTML(e)}</span>`).join('')}</div>` : ''}
+    ${members.length - ownedMembers.length > 0 ? `<div class="shelf" style="margin-top:${ownedMembers.length ? '8px' : '0'}">` +
+      members.filter(e => !found.has(e.id)).map(e =>
+        `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`).join('') + `</div>` : ''}
+    ${!members.length ? '<p class="none">Nothing in this world is tagged here yet.</p>' : ''}
+    <a class="src" href="${g.src}" target="_blank" rel="noopener">Check this</a>`;
+  openSheet(g.name);
+}
 // ---- the index entry: what makes this, and what this makes ----
 // Little Alchemy's own hints site draws about as much traffic as the game.
 // Stuck is the highest-intent moment a player has, so serve it here — but
@@ -5906,6 +5965,7 @@ function showEntry(id, skipTraceDefault) {
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}
+    ${taxonPathHTML(id)}
     <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}</h2>
     ${knownOut.length ? rows(knownOut, 'out') : ''}
     ${hiddenOut > 0 ? `<div class="shelf" style="margin-top:${knownOut.length ? '8px' : '0'}">` +
@@ -6241,6 +6301,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (qv) return showEntry(qv.dataset.quickview, true);
   const at = ev.target.closest('[data-atom]');
   if (at) showAtom(at.dataset.atom);
+  const tx = ev.target.closest('[data-taxon]');
+  if (tx) showTaxon(tx.dataset.taxon);
 });
 // A backgrounded tab should cost nothing at all.
 document.addEventListener('visibilitychange', () => {

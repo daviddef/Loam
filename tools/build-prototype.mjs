@@ -9,6 +9,7 @@ const data = {
   recipes:  J('../data/recipes.json'),
   verbs:    J('../data/verbs.json').verbs,
   bedrock:  J('../data/bedrock.json'),
+  taxonomy: J('../data/taxonomy.json'),
 };
 const art = J('../data/art.json');
 const palette = J('../data/palette.json');
@@ -99,7 +100,7 @@ const script = html.match(/<script>([\s\S]*?)<\/script>/);
 if (!script) { console.error('no <script> block found'); process.exit(1); }
 try {
   new Function(script[1]
-    .replace('__GAME_DATA__', '{elements:[],recipes:[],verbs:[],bedrock:{atoms:[],compounds:[],composition:{}}}')
+    .replace('__GAME_DATA__', '{elements:[],recipes:[],verbs:[],bedrock:{atoms:[],compounds:[],composition:{}},taxonomy:{ranks:[],groups:[]}}')
     .replace('__ART_DATA__', '{}')
     .replace('__SCALE_DATA__', '{}')
     .replace('__CAUTION_DATA__', '{}')

@@ -12,6 +12,7 @@ const u = (f) => new URL(`../data/${f}`, import.meta.url);
 const recipes  = JSON.parse(readFileSync(u('recipes.json'), 'utf8'));
 const elements = JSON.parse(readFileSync(u('elements.json'), 'utf8'));
 const bedrock  = JSON.parse(readFileSync(u('bedrock.json'), 'utf8'));
+const taxonomy = JSON.parse(readFileSync(u('taxonomy.json'), 'utf8'));
 const srcFile  = JSON.parse(readFileSync(u('sources.json'), 'utf8'));
 const srcMap   = srcFile.map;
 const srcUrls  = srcFile.urls ?? {};
@@ -91,7 +92,7 @@ if (cmd === 'report') {
 const bedrockNodes = [...bedrock.atoms, ...bedrock.compounds,
   ...(bedrock.aminos ?? []), ...(bedrock.linkages ?? [])];
 const titles = [...new Set([...Object.values(srcMap), ...Object.values(srcGest),
-  ...bedrockNodes.map((n) => n.srcTitle)])];
+  ...bedrockNodes.map((n) => n.srcTitle), ...taxonomy.groups.map((g) => g.srcTitle)])];
 console.log(`resolving ${titles.length} distinct titles against en.wikipedia.org …\n`);
 const res = await resolve(titles);
 
@@ -134,6 +135,10 @@ if (cmd === 'apply') {
   for (const node of bedrockNodes) node.src = titleUrl(res.get(node.srcTitle).final);
   writeFileSync(u('bedrock.json'), JSON.stringify(bedrock, null, 2) + '\n');
   console.log(`\nwrote src onto ${bedrockNodes.length} bedrock nodes`);
+
+  for (const g of taxonomy.groups) g.src = titleUrl(res.get(g.srcTitle).final);
+  writeFileSync(u('taxonomy.json'), JSON.stringify(taxonomy, null, 2) + '\n');
+  console.log(`wrote src onto ${taxonomy.groups.length} taxonomy groups`);
 
   // A `verified` recipe has been read against one specific article. Moving its
   // source silently would leave the audit mark attached to a source nobody
