@@ -695,6 +695,114 @@
       "fact": "North American sunfish and bass on one branch, Australian grunters and hawkfishes on another — recently split out of Perciformes, and still missing from some textbooks even as fish databases now accept it.",
       "srcTitle": "Centrarchiformes",
       "src": "https://en.wikipedia.org/wiki/Centrarchiformes"
+    },
+    {
+      "id": "tx_coleoptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Coleoptera",
+      "fact": "Beetles — the largest insect order by far, with more described species than any other order in the animal kingdom. Defined by a hardened pair of forewings, elytra, that meet in a straight line down the back and cover the flight wings beneath.",
+      "srcTitle": "Beetle",
+      "src": "https://en.wikipedia.org/wiki/Beetle"
+    },
+    {
+      "id": "tx_odonata",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Odonata",
+      "fact": "Dragonflies and damselflies — one of the oldest still-living insect lineages, with a fossil record going back over 300 million years, long before dinosaurs.",
+      "srcTitle": "Odonata",
+      "src": "https://en.wikipedia.org/wiki/Odonata"
+    },
+    {
+      "id": "tx_orthoptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Orthoptera",
+      "fact": "Grasshoppers, crickets and locusts — powerful hind legs built for jumping, and in most species, sound produced by rubbing one body part against another.",
+      "srcTitle": "Orthoptera",
+      "src": "https://en.wikipedia.org/wiki/Orthoptera"
+    },
+    {
+      "id": "tx_mantodea",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Mantodea",
+      "fact": "Praying mantises — an elongated thorax and a pair of spiked, grasping forelegs held folded in front of the body, ready to snap out at passing prey.",
+      "srcTitle": "Mantis",
+      "src": "https://en.wikipedia.org/wiki/Mantis"
+    },
+    {
+      "id": "tx_blattodea",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Blattodea",
+      "fact": "Cockroaches, and, nested inside them as their closest living relatives, termites — a group united by molecular evidence more than by looks.",
+      "srcTitle": "Blattodea",
+      "src": "https://en.wikipedia.org/wiki/Blattodea"
+    },
+    {
+      "id": "tx_siphonaptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Siphonaptera",
+      "fact": "Fleas — wingless, laterally flattened, and built almost entirely around one skill: jumping onto a passing host to feed on its blood.",
+      "srcTitle": "Flea",
+      "src": "https://en.wikipedia.org/wiki/Flea"
+    },
+    {
+      "id": "tx_araneae",
+      "rank": "order",
+      "parent": "tx_arachnida",
+      "name": "Araneae",
+      "fact": "Spiders — every one of the roughly 50,000 described species has silk-producing spinnerets and fanged chelicerae, though not every species spins a web to catch prey.",
+      "srcTitle": "Spider",
+      "src": "https://en.wikipedia.org/wiki/Spider"
+    },
+    {
+      "id": "tx_scorpiones",
+      "rank": "order",
+      "parent": "tx_arachnida",
+      "name": "Scorpiones",
+      "fact": "Scorpions — a pair of grasping pedipalps and a narrow, segmented tail ending in a venomous stinger, the telson. Unusually among arachnids, every species gives birth to live young.",
+      "srcTitle": "Scorpion",
+      "src": "https://en.wikipedia.org/wiki/Scorpion"
+    },
+    {
+      "id": "tx_ixodida",
+      "rank": "order",
+      "parent": "tx_arachnida",
+      "name": "Ixodida",
+      "fact": "Ticks — obligate blood-feeders at every stage past the egg, and the primary route by which diseases like Lyme disease pass from wildlife into people.",
+      "srcTitle": "Tick",
+      "src": "https://en.wikipedia.org/wiki/Tick"
+    },
+    {
+      "id": "tx_chilopoda",
+      "rank": "class",
+      "parent": "tx_arthropoda",
+      "name": "Chilopoda",
+      "fact": "Centipedes — fast, venomous predators with exactly one pair of legs per body segment, injected through forcipules, a modified front pair of legs rather than fangs.",
+      "srcTitle": "Centipede",
+      "src": "https://en.wikipedia.org/wiki/Centipede"
+    },
+    {
+      "id": "tx_diplopoda",
+      "rank": "class",
+      "parent": "tx_arthropoda",
+      "name": "Diplopoda",
+      "fact": "Millipedes — slow-moving detritivores with two pairs of legs per body segment, twice a centipede's count, and no species with anywhere near 1,000 legs.",
+      "srcTitle": "Millipede",
+      "src": "https://en.wikipedia.org/wiki/Millipede"
+    },
+    {
+      "id": "tx_isopoda",
+      "rank": "order",
+      "parent": "tx_malacostraca",
+      "name": "Isopoda",
+      "fact": "Isopods — seven pairs of walking legs and a body of overlapping plates. Most are marine, but the woodlice of suborder Oniscidea are the only crustaceans to have fully adapted to life on dry land.",
+      "srcTitle": "Isopoda",
+      "src": "https://en.wikipedia.org/wiki/Isopoda"
     }
   ]
 }

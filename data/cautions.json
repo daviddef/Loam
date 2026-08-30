@@ -597,6 +597,22 @@
       "ids": [
         "piranha"
       ]
+    },
+    "scorpion_sting": {
+      "label": "Real venom, and it varies a lot by species",
+      "note": "Most scorpion stings cause pain and swelling and nothing worse. A handful of genera in the family Buthidae are the exception — Androctonus and Leiurus in North Africa and the Middle East, Centruroides in Mexico, Tityus in South America — with venom that can be medically serious. Scorpion stings are estimated to cause around 3,000 deaths a year worldwide, concentrated in the regions those genera live.",
+      "severity": "conditional",
+      "ids": [
+        "scorpion"
+      ]
+    },
+    "tick_borne_disease": {
+      "label": "A real disease risk, tied to how long it feeds",
+      "note": "Ixodes ticks are the main carrier of Lyme disease, and transmission risk rises sharply the longer a tick stays attached to its host, with most studies putting the threshold around 24 hours. Even so, only an estimated 1.2 to 1.4% of recognised tick bites result in Lyme disease, and people treated with antibiotics within days of the first symptoms have the best outcomes.",
+      "severity": "conditional",
+      "ids": [
+        "tick"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
