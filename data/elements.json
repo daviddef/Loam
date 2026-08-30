@@ -2893,8 +2893,7 @@
     "tags": [
       "animal"
     ],
-    "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing.",
-    "terminal": true
+    "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing."
   },
   {
     "id": "duck",
@@ -12616,5 +12615,416 @@
     "fact": "H2 + I2 → 2 HI — the reaction still used to make the highest-purity samples today.",
     "terminal": true,
     "soleRoute": true
+  },
+  {
+    "id": "bull",
+    "name": "Bull",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Fertile from about seven months old. Only a few are kept intact — most male calves are castrated."
+  },
+  {
+    "id": "heifer",
+    "name": "Heifer",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A female that has not yet calved. Dairy heifers are often kept on to replace their own mothers."
+  },
+  {
+    "id": "steer",
+    "name": "Steer",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A castrated male raised for beef. The same animal, elsewhere, might just as easily be called an ox."
+  },
+  {
+    "id": "chick",
+    "name": "Chick",
+    "emoji": "🐤",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Uses an egg tooth to break out of the shell after about 21 days, feeding at first on its last yolk."
+  },
+  {
+    "id": "cockerel",
+    "name": "Cockerel",
+    "emoji": "🐓",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A young male chicken — not yet the rooster he will grow into."
+  },
+  {
+    "id": "pullet",
+    "name": "Pullet",
+    "emoji": "🐔",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A young female chicken, sexually immature — under about 22 weeks old in the poultry trade."
+  },
+  {
+    "id": "rooster",
+    "name": "Rooster",
+    "emoji": "🐓",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A fertile adult male chicken. The word is an 18th-century American euphemism for 'cock'."
+  },
+  {
+    "id": "hen",
+    "name": "Hen",
+    "emoji": "🐔",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An adult female chicken. One bred for laying can produce more than 300 eggs a year."
+  },
+  {
+    "id": "capon",
+    "name": "Capon",
+    "emoji": "🍗",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "A male chicken castrated or neutered young, traditionally to make the meat milder and fattier."
+  },
+  {
+    "id": "ram",
+    "name": "Ram",
+    "emoji": "🐏",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An intact male sheep, occasionally called a tup. Kept mostly for breeding."
+  },
+  {
+    "id": "ewe",
+    "name": "Ewe",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult female sheep. Pronounced 'yoo' — nothing like it looks spelled."
+  },
+  {
+    "id": "wether",
+    "name": "Wether",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A castrated male sheep. Most male lambs not kept for breeding become one."
+  },
+  {
+    "id": "kid",
+    "name": "Kid",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A juvenile goat. The word comes from Old Norse kið, carried in by Scandinavian settlers."
+  },
+  {
+    "id": "buck",
+    "name": "Buck",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An intact adult male goat. Acquires a strong, distinctive odour during the autumn rut."
+  },
+  {
+    "id": "doe",
+    "name": "Doe",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult female goat. Many breeders wait until she reaches 70% of adult weight before breeding."
+  },
+  {
+    "id": "piglet",
+    "name": "Piglet",
+    "emoji": "🐷",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Newborn into a litter that was once yearly — by the 19th century, twice a year in Europe."
+  },
+  {
+    "id": "boar",
+    "name": "Boar",
+    "emoji": "🐗",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A male pig of breeding age, kept intact rather than castrated."
+  },
+  {
+    "id": "gilt",
+    "name": "Gilt",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A young female pig, not yet mated or not yet farrowed — the exact line shifts by local usage."
+  },
+  {
+    "id": "barrow",
+    "name": "Barrow",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A male pig castrated before puberty — a stag is the same operation done after."
+  },
+  {
+    "id": "sow",
+    "name": "Sow",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A breeding female pig, or one after her first or second litter."
+  },
+  {
+    "id": "foal",
+    "name": "Foal",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An equine up to one year old. A mare 'in foal' is pregnant; to 'foal' is to give birth."
+  },
+  {
+    "id": "colt",
+    "name": "Colt",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A male foal — the term holds until the horse turns three or four."
+  },
+  {
+    "id": "filly",
+    "name": "Filly",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A female foal — the term holds until the horse turns three or four."
+  },
+  {
+    "id": "stallion",
+    "name": "Stallion",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An intact adult male horse — a colt becomes one at three, or four in racing."
+  },
+  {
+    "id": "mare",
+    "name": "Mare",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An adult female horse — a filly becomes one at three, or four in racing."
+  },
+  {
+    "id": "gelding",
+    "name": "Gelding",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A castrated male horse, of any age — the one horse term untouched by puberty."
+  },
+  {
+    "id": "buffalo",
+    "name": "Water Buffalo",
+    "emoji": "🐃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Swamp-type buffaloes wallow on purpose, digging mudholes with their own horns."
+  },
+  {
+    "id": "carabeef",
+    "name": "Carabeef",
+    "emoji": "🥩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Buffalo meat — the word is a 1970s Philippine-English portmanteau of carabao and beef."
+  },
+  {
+    "id": "chevon",
+    "name": "Chevon",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "food"
+    ],
+    "terminal": true,
+    "fact": "Goat meat. A 1922 trade-association coinage — chevre crossed with mouton — that never caught on."
+  },
+  {
+    "id": "donkey",
+    "name": "Donkey",
+    "emoji": "🫏",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Descended from the African wild ass, at home in true desert rather than open grassland."
+  },
+  {
+    "id": "rabbit",
+    "name": "Rabbit",
+    "emoji": "🐇",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Livestock since at least the first century BC in Rome, kept for meat, fur and wool."
+  },
+  {
+    "id": "drake",
+    "name": "Drake",
+    "emoji": "🦆",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult male duck — 'duck' itself technically names the female, or 'hen' in ornithology."
+  },
+  {
+    "id": "duckling",
+    "name": "Duckling",
+    "emoji": "🐥",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A young duck in downy plumage. In the food trade the word can also mean a tender young adult."
+  },
+  {
+    "id": "goose",
+    "name": "Goose",
+    "emoji": "🪿",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Paired with 'gander' it means specifically the female; alone it can mean either sex."
+  },
+  {
+    "id": "gander",
+    "name": "Gander",
+    "emoji": "🪿",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult male goose. Set beside 'goose' it draws a sex line the word alone does not."
+  },
+  {
+    "id": "gosling",
+    "name": "Gosling",
+    "emoji": "🐥",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A young goose before fledging — not yet able to fly."
+  },
+  {
+    "id": "poult",
+    "name": "Poult",
+    "emoji": "🐥",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An infant turkey — 'chick' works too, but poult is the word specific to it."
+  },
+  {
+    "id": "tom",
+    "name": "Tom Turkey",
+    "emoji": "🦃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult male turkey, also called a gobbler — up to twice the weight of the hen."
+  },
+  {
+    "id": "turkey_hen",
+    "name": "Turkey Hen",
+    "emoji": "🦃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "An adult female turkey, typically 2.5 to 5.4 kg — much smaller than the tom."
   }
 ]

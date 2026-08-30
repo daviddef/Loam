@@ -2079,16 +2079,6 @@
   },
   {
     "in": [
-      "goat"
-    ],
-    "verb": "cut",
-    "out": "meat",
-    "why": "A trade association coined the word chevon for it in 1922 — chevre crossed with mouton — and the USDA adopted it in 1928. Nobody used it. In South Asia the word for goat meat is simply mutton.",
-    "src": "https://en.wikipedia.org/wiki/Goat_meat",
-    "verified": true
-  },
-  {
-    "in": [
       "plant",
       "wood"
     ],
@@ -16354,5 +16344,485 @@
     "why": "H2 + I2 → 2 HI, a reaction that can be catalyzed by platinum and is used to generate high-purity samples.",
     "src": "https://en.wikipedia.org/wiki/Hydrogen_iodide",
     "verified": true
+  },
+  {
+    "in": [
+      "goat"
+    ],
+    "verb": "cut",
+    "out": "chevon",
+    "why": "A trade association coined the word chevon for it in 1922 — chevre crossed with mouton — and the USDA adopted it in 1928. Nobody used it. In South Asia the word for goat meat is simply mutton.",
+    "src": "https://en.wikipedia.org/wiki/Goat_meat",
+    "verified": true
+  },
+  {
+    "in": [
+      "calf"
+    ],
+    "verb": "wait",
+    "out": "bull",
+    "verified": true,
+    "why": "Nearly all male cattle are castrated as calves for beef or work. The minority left intact grow up into the bull that breeds the herd's next generation.",
+    "src": "https://en.wikipedia.org/wiki/Bull"
+  },
+  {
+    "in": [
+      "calf",
+      "pasture"
+    ],
+    "out": "heifer",
+    "verified": true,
+    "why": "Female calves with the right breeding are raised up rather than sold — kept as replacement cows for the very herd their mothers belong to.",
+    "src": "https://en.wikipedia.org/wiki/Dairy_cattle"
+  },
+  {
+    "in": [
+      "bull"
+    ],
+    "verb": "cut",
+    "out": "steer",
+    "verified": true,
+    "why": "The female counterpart to a bull is a cow; a castrated male is a steer, ox or bullock — the choice of word tracks region and purpose more than biology.",
+    "src": "https://en.wikipedia.org/wiki/Bull"
+  },
+  {
+    "in": [
+      "bull",
+      "wood"
+    ],
+    "out": "ox",
+    "verified": true,
+    "why": "Oxen are commonly castrated adult male cattle, trained to draught in a yoke — castration makes them calm enough to work in harness rather than fight it.",
+    "src": "https://en.wikipedia.org/wiki/Ox"
+  },
+  {
+    "in": [
+      "heifer"
+    ],
+    "verb": "wait",
+    "out": "cow",
+    "supported": true,
+    "why": "A heifer that finally calves earns the name cow — the replacement heifers a dairy herd holds back become the herd itself, one generation on.",
+    "src": "https://en.wikipedia.org/wiki/Dairy_cattle"
+  },
+  {
+    "in": [
+      "steer"
+    ],
+    "verb": "cut",
+    "out": "beef",
+    "verified": true,
+    "why": "Other than the few bulls kept for breeding, nearly all male cattle are castrated and slaughtered for meat before the age of three — a steer is exactly that animal, raised for beef rather than work.",
+    "src": "https://en.wikipedia.org/wiki/Bull"
+  },
+  {
+    "in": [
+      "chicken",
+      "egg"
+    ],
+    "out": "chick",
+    "verified": true,
+    "why": "Hens stay on the nest about two days after the first chick hatches, brooding the rest to keep them warm while the newly hatched feed on their last yolk.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "chick"
+    ],
+    "verb": "wait",
+    "out": "cockerel",
+    "supported": true,
+    "why": "Chick is simply the word for a young chicken of either sex; cockerel and pullet are what the two sexes are called once they are old enough to tell apart.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "chick",
+      "grain"
+    ],
+    "out": "pullet",
+    "verified": true,
+    "why": "Pullets are raised on feed toward their first egg — sexually immature by definition, and under 22 weeks old in the poultry industry's own usage.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "cockerel"
+    ],
+    "verb": "wait",
+    "out": "rooster",
+    "verified": true,
+    "why": "'Rooster' displaced 'cock' in North American usage from the 18th century on — probably to sidestep the word's other meaning, not because the bird changed.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "pullet"
+    ],
+    "verb": "wait",
+    "out": "hen",
+    "verified": true,
+    "why": "A pullet stops being immature and starts laying in earnest — a hen bred for it can produce more than 300 eggs in a single year.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "cockerel"
+    ],
+    "verb": "cut",
+    "out": "capon",
+    "verified": true,
+    "why": "Caponising is done young, before the cockerel it targets ever becomes a rooster — a male chicken castrated or neutered, traditionally to make the meat milder and fattier.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "hen",
+      "seed"
+    ],
+    "out": "egg",
+    "supported": true,
+    "why": "The chicken card already lays eggs generically; a hen is the specific bird that actually does it — an adult female bred for laying can produce more than 300 a year.",
+    "src": "https://en.wikipedia.org/wiki/Chicken"
+  },
+  {
+    "in": [
+      "lamb",
+      "meadow"
+    ],
+    "out": "ram",
+    "verified": true,
+    "why": "Rams needed for breeding, or valuable enough for their genetics, are usually the only male sheep past puberty that are not castrated.",
+    "src": "https://en.wikipedia.org/wiki/Sheep"
+  },
+  {
+    "in": [
+      "lamb",
+      "pasture"
+    ],
+    "out": "ewe",
+    "verified": true,
+    "why": "A ewe and her direct descendants often move as one unit within a larger flock — sheep relationships stay closest among related animals.",
+    "src": "https://en.wikipedia.org/wiki/Sheep"
+  },
+  {
+    "in": [
+      "lamb"
+    ],
+    "verb": "cut",
+    "out": "wether",
+    "verified": true,
+    "why": "Lamb marking, ear tagging, docking and castrating are all carried out together, several weeks after birth. Most male lambs get the cut; a few rams do not.",
+    "src": "https://en.wikipedia.org/wiki/Sheep"
+  },
+  {
+    "in": [
+      "goat"
+    ],
+    "verb": "wait",
+    "out": "kid",
+    "verified": true,
+    "why": "Gestation runs about 150 days, and birthing — kidding — usually produces twins rather than a single kid alone.",
+    "src": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+    "in": [
+      "kid"
+    ],
+    "verb": "wait",
+    "out": "buck",
+    "verified": true,
+    "why": "Bucks of Swiss and northern breeds come into rut each autumn, when a strong, distinctive odour sets an intact male apart from a wether at ten paces.",
+    "src": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+    "in": [
+      "kid",
+      "grass"
+    ],
+    "out": "doe",
+    "verified": true,
+    "why": "Many breeders postpone breeding until a doe reaches 70% of her adult weight — though on open range that kind of separation from the herd is rarely possible.",
+    "src": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+    "in": [
+      "pig"
+    ],
+    "verb": "wait",
+    "out": "piglet",
+    "verified": true,
+    "why": "A sow digs a body-sized hollow in the last day before farrowing and gives birth lying down, unlike most other hoofed animals, which give birth standing.",
+    "src": "https://en.wikipedia.org/wiki/Pig"
+  },
+  {
+    "in": [
+      "piglet"
+    ],
+    "verb": "wait",
+    "out": "boar",
+    "supported": true,
+    "why": "Most male piglets are castrated. The ones kept intact for breeding are simply given time to reach it — a boar is a male pig of breeding age, nothing more.",
+    "src": "https://en.wikipedia.org/wiki/Pig_farming"
+  },
+  {
+    "in": [
+      "piglet",
+      "grain"
+    ],
+    "out": "gilt",
+    "verified": true,
+    "why": "Feeder pigs sold on to be finished for slaughter are weaned gilts or barrows between 18 and 37 kg — a gilt simply a young female not yet mated or farrowed.",
+    "src": "https://en.wikipedia.org/wiki/Pig_farming"
+  },
+  {
+    "in": [
+      "piglet"
+    ],
+    "verb": "cut",
+    "out": "barrow",
+    "verified": true,
+    "why": "Barrow and stag name the same operation at two different ages: barrow is castrated before puberty, stag after. Nearly all male pigs not kept for breeding are cut young.",
+    "src": "https://en.wikipedia.org/wiki/Pig_farming"
+  },
+  {
+    "in": [
+      "gilt"
+    ],
+    "verb": "wait",
+    "out": "sow",
+    "verified": true,
+    "why": "The word changes with the litter, not a birthday: a gilt becomes a sow once she has farrowed her first or second time, whichever local usage counts.",
+    "src": "https://en.wikipedia.org/wiki/Pig_farming"
+  },
+  {
+    "in": [
+      "barrow"
+    ],
+    "verb": "cut",
+    "out": "pork",
+    "verified": true,
+    "why": "Most market hogs sold for slaughter are weaned gilts or barrows — a barrow, castrated before puberty, is one of the two animals pork most often actually comes from.",
+    "src": "https://en.wikipedia.org/wiki/Pig_farming"
+  },
+  {
+    "in": [
+      "horse"
+    ],
+    "verb": "wait",
+    "out": "foal",
+    "verified": true,
+    "why": "When the mare gives birth she is 'foaling', the birth itself usually stated as 'to foal', and what results, newborn, is 'foaled' — a foal until its first birthday.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "foal"
+    ],
+    "verb": "wait",
+    "out": "colt",
+    "verified": true,
+    "why": "After weaning from its dam a foal is called a weanling, then simply ages onward as colt or filly — the sex-specific names that hold until three or four.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "foal",
+      "grain"
+    ],
+    "out": "filly",
+    "verified": true,
+    "why": "Colt and filly are the same word twice over, split only by sex — both used from birth until the horse reaches three or four years old.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "colt"
+    ],
+    "verb": "wait",
+    "out": "stallion",
+    "verified": true,
+    "why": "When young horses reach breeding maturity the terms change again: a colt over three years old — four, in horse racing — is a stallion from then on.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "filly"
+    ],
+    "verb": "wait",
+    "out": "mare",
+    "verified": true,
+    "why": "A filly over three years old — four in horse racing — is called a mare from then on; the same age line that turns a colt into a stallion.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "stallion"
+    ],
+    "verb": "cut",
+    "out": "gelding",
+    "verified": true,
+    "why": "A gelding is called that regardless of age — the only horse term that does not shift at puberty, because castration is what defines it, not the calendar.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "mare"
+    ],
+    "verb": "wait",
+    "out": "foal",
+    "supported": true,
+    "why": "When a mare gives birth she is 'foaling' — the more precise version of the same event the generic horse card already stands in for.",
+    "src": "https://en.wikipedia.org/wiki/Foal"
+  },
+  {
+    "in": [
+      "river",
+      "mud"
+    ],
+    "out": "buffalo",
+    "verified": true,
+    "why": "Swamp buffaloes wallow deliberately, digging mudholes with their horns and coating themselves in mud — water and mud both matter to how they keep cool.",
+    "src": "https://en.wikipedia.org/wiki/Water_buffalo"
+  },
+  {
+    "in": [
+      "buffalo"
+    ],
+    "verb": "cut",
+    "out": "carabeef",
+    "verified": true,
+    "why": "In India and Nepal the same meat is called red beef or buff; in the Philippines, where the name was coined in the 1970s, it is carabeef.",
+    "src": "https://en.wikipedia.org/wiki/Buffalo_meat"
+  },
+  {
+    "in": [
+      "dune",
+      "pasture"
+    ],
+    "out": "donkey",
+    "verified": true,
+    "why": "The African wild ass lives in the deserts and arid country of the Horn of Africa — drier ground than the grassland that drew in the horse. Domesticated there some 5,000 to 7,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Donkey"
+  },
+  {
+    "in": [
+      "grass",
+      "soil"
+    ],
+    "out": "rabbit",
+    "verified": true,
+    "why": "Rabbits live alone or in groups in nests or burrows dug into the ground, grazing the grass around them — livestock since Roman cuniculture, at the latest.",
+    "src": "https://en.wikipedia.org/wiki/Rabbit"
+  },
+  {
+    "in": [
+      "duck"
+    ],
+    "verb": "wait",
+    "out": "duckling",
+    "verified": true,
+    "why": "A duckling is a young duck in downy plumage — the word covers everything from newly hatched to a young adult still tender enough for the table.",
+    "src": "https://en.wikipedia.org/wiki/Duck"
+  },
+  {
+    "in": [
+      "duckling"
+    ],
+    "verb": "wait",
+    "out": "drake",
+    "verified": true,
+    "why": "A duckling grows into whichever adult name fits its sex — drake for the male, duck (or 'hen', in ornithology) for the female it already shares a name with.",
+    "src": "https://en.wikipedia.org/wiki/Duck"
+  },
+  {
+    "in": [
+      "duckling",
+      "grain"
+    ],
+    "out": "duck",
+    "verified": true,
+    "why": "A duckling raised up rather than sold on for the tender-meat trade simply becomes a duck — 'duck' already naming the adult female, 'hen' in ornithology.",
+    "src": "https://en.wikipedia.org/wiki/Duck"
+  },
+  {
+    "in": [
+      "river",
+      "grain"
+    ],
+    "out": "goose",
+    "verified": true,
+    "why": "Greylag geese, ancestor of most domestic geese, feed chiefly on grasses and are often found grazing in pastures alongside sheep or cows — needing water close by too.",
+    "src": "https://en.wikipedia.org/wiki/Greylag_goose"
+  },
+  {
+    "in": [
+      "goose"
+    ],
+    "verb": "wait",
+    "out": "gosling",
+    "verified": true,
+    "why": "Young geese are called goslings only up until they fledge — the point their flight feathers finish growing in and they can finally fly.",
+    "src": "https://en.wikipedia.org/wiki/Goose"
+  },
+  {
+    "in": [
+      "gosling"
+    ],
+    "verb": "wait",
+    "out": "gander",
+    "verified": true,
+    "why": "'Goose' alone can mean either sex, but set beside 'gander' it narrows to the female — the pairing is what does the work, not either word by itself.",
+    "src": "https://en.wikipedia.org/wiki/Goose"
+  },
+  {
+    "in": [
+      "gosling",
+      "grass"
+    ],
+    "out": "goose",
+    "supported": true,
+    "why": "A gosling that fledges into a female is simply a goose — the collective term for a group of them is a gaggle on the ground, a skein or a wedge in flight.",
+    "src": "https://en.wikipedia.org/wiki/Goose"
+  },
+  {
+    "in": [
+      "goose"
+    ],
+    "verb": "cut",
+    "out": "meat",
+    "supported": true,
+    "why": "Geese are eaten too, same as the domestic fowl already on this table — cut for meat exactly the way chicken, duck and turkey already are.",
+    "src": "https://en.wikipedia.org/wiki/Meat"
+  },
+  {
+    "in": [
+      "turkey"
+    ],
+    "verb": "wait",
+    "out": "poult",
+    "verified": true,
+    "why": "Wild turkey hens lay a clutch of 10 to 14 eggs, incubated at least 28 days; what hatches out, precocial and already able to leave the nest within a day, is a poult.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey"
+  },
+  {
+    "in": [
+      "poult"
+    ],
+    "verb": "wait",
+    "out": "tom",
+    "verified": true,
+    "why": "An adult male turkey — tom or gobbler, either name works — normally weighs 5 to 11 kg, close to twice the 2.5 to 5.4 kg of the adult female.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey"
+  },
+  {
+    "in": [
+      "poult",
+      "grain"
+    ],
+    "out": "turkey_hen",
+    "verified": true,
+    "why": "The adult female turkey is typically much smaller than the male — 2.5 to 5.4 kg against the tom's 5 to 11 — though both come from the same poult.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey"
   }
 ]
