@@ -941,6 +941,24 @@
         "plain_bearing"
       ],
       "severity": "acute"
+    },
+    "mri_magnetic_field": {
+      "label": "A magnetic field strong enough to make metal fly",
+      "note": "An MRI magnet's field is always on, tens of thousands of times Earth's, and it does not turn off between patients. A loose ferromagnetic object — an oxygen tank, a chair, a tool left in a pocket — can be pulled across the room and become a lethal projectile, which is why screening happens before anyone enters.",
+      "severity": "acute",
+      "ids": [
+        "superconducting_magnet",
+        "mri_scan"
+      ]
+    },
+    "pet_radiotracer": {
+      "label": "A radioactive tracer, injected on purpose",
+      "note": "FDG carries fluorine-18, a real radioisotope, directly into the bloodstream. A clinical PET scan uses a dose weighed and justified by a physician against the diagnostic benefit — not a quantity to approximate outside medical supervision.",
+      "severity": "conditional",
+      "ids": [
+        "fdg",
+        "positron"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

@@ -36,12 +36,14 @@ const SCALE = {
           'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas',
           'helium', 'neon',
           'carbon_tetrafluoride', 'nitrogen_trifluoride', 'chlorine_trifluoride', 'sulfur_hexafluoride', 'phosphorus_pentafluoride',
-          'bromine_trifluoride', 'iodine_pentafluoride', 'bromine_monochloride', 'iodine_monochloride', 'iodine_monobromide', 'hydrogen_bromide', 'hydrogen_iodide'],
+          'bromine_trifluoride', 'iodine_pentafluoride', 'bromine_monochloride', 'iodine_monochloride', 'iodine_monobromide', 'hydrogen_bromide', 'hydrogen_iodide',
+          'positron'],
   '-9':  ['urushiol', 'juglone', 'piperine', 'gingerol', 'shogaol', 'vitamin_a', 'vitamin_d', 'thiamin', 'riboflavin', 'niacin', 'folate', 'vitamin_b6', 'vitamin_e', 'citric_acid', 'sodium_acetate', 'msg', 'inosinate', 'guanylate', 'ribonucleotides', 'beta_carotene', 'curcumin', 'betanin', 'ponceau_4r', 'red_40', 'yellow_5', 'yellow_6', 'blue_1', 'sorbate', 'benzoate', 'sulfite', 'nitrite', 'trans_fat', 'monoglyceride', 'lecithin', 'sorbitol', 'xylitol', 'aspartame', 'malic_acid', 'salicin', 'gibberellin', 'digoxin', 'lactic_acid', 'acetic_acid', 'lanolin', 'ribose', 'deoxyribose', 'adenine', 'guanine', 'cytosine', 'thymine', 'uracil', 'base_pair', 'phospholipid', 'cholesterol', 'thyroxine', 'ascorbate', 'hydroxyproline', 'porphyrin', 'heme', 'chlorophyll', 'cobalamin', 'retinal', 'selenocysteine', 'fatty_acid', 'iron_sulfur_cluster', 'methanol', 'formaldehyde', 'ethylene', 'phenol', 'tannin', 'glycine', 'alanine', 'serine', 'proline', 'tyrosine', 'aspartic_acid', 'glutamic_acid', 'glutamine', 'asparagine', 'arginine', 'valine', 'leucine', 'isoleucine', 'threonine', 'methionine', 'lysine', 'histidine', 'phenylalanine', 'tryptophan', 'glucose', 'amino_acid', 'cysteine', 'dipeptide', 'nucleotide', 'atp',
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet',
           'creatine', 'citrulline', 'theanine', 'caffeine', 'alpha_gpc', 'synephrine', 'biotin', 'sucralose', 'fos',
           'salicylic_acid', 'aspirin', 'streptomycin', 'insulin',
-          'nitrophenol', 'aminophenol', 'paracetamol', 'histamine', 'arachidonic_acid', 'prostaglandin'],
+          'nitrophenol', 'aminophenol', 'paracetamol', 'histamine', 'arachidonic_acid', 'prostaglandin',
+          'fdg', 'fullerene', 'nanotube'],
   '-8':  ['maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
           'denatured_protein', 'starch', 'gelatin', 'ribosome', 'messenger_rna',
           'hyaluronic_acid', 'satellite'],
@@ -104,7 +106,8 @@ const SCALE = {
           'producer', 'whale_barnacle', 'golden_poison_frog',
           'stem', 'node', 'internode', 'terminal_bud', 'axillary_bud', 'leaf_scar', 'cotyledon',
           // railways batch 1 — crushed rock, hand-sample scale alongside quartzite/gneiss
-          'ballast'],
+          'ballast',
+          'icsi_needle', 'nerve', 'stm_tip'],
   '-1':  ['venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
           'eagle', 'fifth_sun', 'popol_vuh',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
@@ -156,7 +159,10 @@ const SCALE = {
           'baboon', 'lemur', 'bald_eagle', 'peregrine_falcon', 'snowy_owl', 'turkey_vulture',
           'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander',
           // railways batch 1 — small machine parts, hand-tool scale
-          'roller_bearing', 'plain_bearing', 'air_brake'],
+          'roller_bearing', 'plain_bearing', 'air_brake',
+          'transducer', 'sound_wave', 'echo', 'ultrasound_scan', 'myoelectric_signal', 'bionic_arm',
+          'hydraulic_pump', 'artificial_heart', 'reinforced_concrete', 'laser', 'holographic_plate', 'hologram',
+          'scanning_tunneling_microscope'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           'welwitschia', 'rafflesia', 'bracken_fern',
@@ -186,7 +192,9 @@ const SCALE = {
           'gorilla', 'chimpanzee', 'orangutan',
           'king_cobra', 'komodo_dragon',
           // railways batch 1 — metre-scale machine parts and infrastructure units
-          'piston', 'axle', 'bogie', 'coupler', 'sleeper', 'block_signal'],
+          'piston', 'axle', 'bogie', 'coupler', 'sleeper', 'block_signal',
+          // medical-technology batch 1 — machines the size of the room they sit in
+          'superconducting_magnet', 'mri_scan', 'pet_scan', 'robotic_surgery'],
   '1':   ['saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'giraffe', 'nile_crocodile', 'american_alligator',
           'climax_community', 'food_chain',
@@ -208,7 +216,9 @@ const SCALE = {
           'freight_wagon', 'hopper_car', 'tank_car', 'flatcar', 'boxcar', 'caboose',
           'rail', 'points_switch',
           // consumer-electronics batch 1 — the IMAX theatre and screen, tens of metres, the same bucket as a sea cave
-          'imax_3d_projection'],
+          'imax_3d_projection',
+          // medical-technology batch 1 — a curtain wall as drawn: one building face, tens of metres
+          'curtain_wall'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest',
@@ -220,7 +230,9 @@ const SCALE = {
           'placer_mining', 'room_and_pillar_mining', 'longwall_mining',
           // mining value chains batch 2 — a hundred-plus-metre machine or heap: Big Muskie was 150m long,
           // a Capesize bulk carrier about 290m, an ore stockpile a similarly sized mound
-          'dragline_excavator', 'stockpile', 'bulk_carrier'],
+          'dragline_excavator', 'stockpile', 'bulk_carrier',
+          // medical-technology batch 1 — a skyscraper as drawn, hundreds of metres tall
+          'skyscraper'],
   '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
           'trophic_cascade',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
@@ -232,7 +244,9 @@ const SCALE = {
           'ore_railway', 'port',
           // railways batch 1 — a classification yard's full ladder of tracks, km scale
           'rail_yard'],
-  '4':   ['rift_valley', 'trench'],
+  '4':   ['rift_valley', 'trench',
+          // medical-technology batch 1 — the LHC's 27 km ring
+          'hadron_collider'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest'],
   '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],
