@@ -2939,7 +2939,6 @@
       "wild"
     ],
     "fact": "Dogs and wolves share a common wolf ancestor — today's wolves are cousins, not quite the parents.",
-    "terminal": true,
     "taxon": "tx_carnivora"
   },
   {
@@ -13803,5 +13802,82 @@
     "fact": "A tiger population isolated on Java when rising seas cut its land bridge to the mainland. Declared extinct in 2008 — the last confirmed sighting was in 1976.",
     "terminal": true,
     "taxon": "tx_panthera"
+  },
+  {
+    "id": "pakicetus",
+    "name": "Pakicetus",
+    "emoji": "🦫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct"
+    ],
+    "fact": "Wolf-sized and four-legged, foraging along Eocene rivers 50 Mya — earliest known cetacean, by its whale-type inner ear.",
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "ambulocetus",
+    "name": "Ambulocetus",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct",
+      "water"
+    ],
+    "fact": "Its name means 'walking whale'. Crocodile-like, it bore weight on land but swam by paddling its hind feet.",
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "rodhocetus",
+    "name": "Rodhocetus",
+    "emoji": "🦭",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct",
+      "water"
+    ],
+    "fact": "A protocetid that paddled with its hind feet rather than walked — sacrum unfused, so on land it could only shuffle.",
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "basilosaurus",
+    "name": "Basilosaurus",
+    "emoji": "🐳",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct",
+      "water"
+    ],
+    "fact": "Fully aquatic, up to 20 m, serpentine — hind legs shrunk to a useless 35 cm. The name means 'king lizard'; it's a whale.",
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "dorudon",
+    "name": "Dorudon",
+    "emoji": "🐬",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct",
+      "water"
+    ],
+    "fact": "A smaller basilosaurid, ~5 m, sharing Eocene seas with Basilosaurus — and sometimes its prey. First true tail fluke.",
+    "taxon": "tx_cetacea"
+  },
+  {
+    "id": "llanocetus",
+    "name": "Llanocetus",
+    "emoji": "🐋",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "extinct",
+      "water"
+    ],
+    "fact": "An early mysticete that still had teeth, not baleen — gripped and sheared prey instead of filtering. One of the oldest known.",
+    "taxon": "tx_cetacea"
   }
 ]

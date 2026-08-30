@@ -17344,5 +17344,75 @@
     "why": "Not an ancestor of the modern tiger, but a subspecies of it: tigers colonised the Sunda Islands over a land bridge during the last glacial period, and rising seas then isolated Java's population from the mainland's. Since a 2017 revision it's classified as the same subspecies as the Sumatran and Bali tigers, P. t. sondaica. The last confirmed sighting was in 1976; it was declared extinct in 2008.",
     "src": "https://en.wikipedia.org/wiki/Javan_tiger",
     "verified": true
+  },
+  {
+    "in": [
+      "wolf",
+      "river"
+    ],
+    "out": "pakicetus",
+    "why": "Pakicetus was a wolf-like mammal that foraged along Pakistan's rivers about 50 million years ago, wading in for fish. It's the earliest recognized cetacean, identified not by its legs but by a dense, air-filled inner-ear bone every whale still has.",
+    "src": "https://en.wikipedia.org/wiki/Pakicetus",
+    "verified": true
+  },
+  {
+    "in": [
+      "pakicetus"
+    ],
+    "out": "ambulocetus",
+    "why": "Within a few million years the pakicetid line produced fully amphibious hunters like Ambulocetus — crocodile-like, with a long snout and eyes on top of its skull for hunting half-submerged, but hind legs still powerful enough to bear its weight on land.",
+    "src": "https://en.wikipedia.org/wiki/Ambulocetus",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "ambulocetus"
+    ],
+    "out": "rodhocetus",
+    "why": "The protocetids that followed, like Rodhocetus, swam mainly by paddling with their hind feet rather than walking. Their sacrum lost the fused vertebrae that anchor a leg to a spine for weight-bearing, so on land they could only shuffle on their bellies.",
+    "src": "https://en.wikipedia.org/wiki/Rodhocetus",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "rodhocetus"
+    ],
+    "out": "basilosaurus",
+    "why": "By the time of Basilosaurus, the hind limbs had shrunk to a pair of legs just 35 cm long in some specimens — too small to ever reach the ground, and likely kept only for grasping during mating. It never returned to land again.",
+    "src": "https://en.wikipedia.org/wiki/Basilosaurus",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "basilosaurus"
+    ],
+    "out": "dorudon",
+    "why": "Basilosaurus and Dorudon shared late Eocene seas — and the same food chain: fossilized Basilosaurus stomachs held young Dorudon bones. Dorudon's build carries forward — short spine, true tail fluke, swum by oscillating up and down like every living whale.",
+    "src": "https://en.wikipedia.org/wiki/Dorudon",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "dorudon"
+    ],
+    "out": "llanocetus",
+    "why": "Within that dorudontine lineage the skull lengthened and the teeth simplified into worn, gapped pegs. Llanocetus, an early mysticete, still gripped and sheared prey with those teeth — baleen hadn't evolved yet, but the broad mysticete jaw already had.",
+    "src": "https://en.wikipedia.org/wiki/Llanocetus",
+    "verb": "wait",
+    "verified": true
+  },
+  {
+    "in": [
+      "llanocetus"
+    ],
+    "out": "whale",
+    "why": "Stem mysticetes like Llanocetus fed by gripping and suction rather than filtering. Later members of the same lineage lost their teeth for good, replacing them with baleen — keratin filter plates that let a modern baleen whale strain krill from open water by the ton.",
+    "src": "https://en.wikipedia.org/wiki/Mysticeti",
+    "verb": "wait",
+    "verified": true
   }
 ]
