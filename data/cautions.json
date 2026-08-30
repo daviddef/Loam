@@ -189,6 +189,15 @@
       ],
       "severity": "acute"
     },
+    "volcanic_activity": {
+      "label": "An erupting volcano kills at a distance",
+      "note": "A pyroclastic flow can move at up to 700 km/h at around 1,000 °C, far too fast to outrun, and it is the most immediately lethal part of an eruption. Lava flows bury roads, farmland and buildings in their path; ash inhaled causes long-term respiratory harm, and heavy ashfall alone can collapse roofs. None of this is a hazard to work around up close.",
+      "ids": [
+        "volcano",
+        "caldera"
+      ],
+      "severity": "acute"
+    },
     "severe_weather": {
       "label": "Weather that kills people",
       "note": "Flood, storm surge, hurricane, blizzard and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land.",

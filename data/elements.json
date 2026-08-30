@@ -16332,5 +16332,329 @@
     ],
     "fact": "The largest population an environment's food, water and space can sustain before growth stops.",
     "terminal": true
+  },
+  {
+    "id": "mountain",
+    "name": "Mountain",
+    "emoji": "🗻",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Continental crust that collided and had nowhere to go but up — the Himalayas are still rising."
+  },
+  {
+    "id": "trench",
+    "name": "Ocean Trench",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "The seafloor sagging where one plate bends and dives beneath another. The Mariana reaches 10,994 m."
+  },
+  {
+    "id": "volcano",
+    "name": "Volcano",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "soleRoute": true,
+    "fact": "A vent to a magma chamber. Alternating layers of lava and ash, erupted again and again, build the cone."
+  },
+  {
+    "id": "rift_valley",
+    "name": "Rift Valley",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A continent stretched thin enough to crack: the block between two faults drops as the land splits."
+  },
+  {
+    "id": "floodplain",
+    "name": "Floodplain",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Flat land beside a river, built up flood by flood from the thin layer of silt each overflow leaves."
+  },
+  {
+    "id": "meander",
+    "name": "Meander",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Fast water wears the outer bank away, slow water drops sand on the inner one, and the bend migrates sideways."
+  },
+  {
+    "id": "oxbow_lake",
+    "name": "Oxbow Lake",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A meander looped back on itself until its own neck was cut through, stranding the old bend as a lake."
+  },
+  {
+    "id": "delta",
+    "name": "River Delta",
+    "emoji": "▲",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A river hits still water, slows, and can no longer carry its load — the sediment drops and builds land."
+  },
+  {
+    "id": "canyon",
+    "name": "Canyon",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A river cutting down through rock lifted thousands of feet beneath it — the Grand Canyon's whole story."
+  },
+  {
+    "id": "waterfall",
+    "name": "Waterfall",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Hard rock over soft: the soft layer erodes faster, and the drop between them grows a little every year."
+  },
+  {
+    "id": "sea_cliff",
+    "name": "Sea Cliff",
+    "emoji": "🧗",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Waves cut a notch at the rock's foot; the overhang above eventually has nothing left to stand on."
+  },
+  {
+    "id": "sea_cave",
+    "name": "Sea Cave",
+    "emoji": "🕳",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Waves force their way into a crack in the cliff and hollow it out — always along an existing weakness."
+  },
+  {
+    "id": "sea_arch",
+    "name": "Sea Arch",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "A sea cave that finally breaks all the way through a thin headland, leaving an opening beneath the rock."
+  },
+  {
+    "id": "sea_stack",
+    "name": "Sea Stack",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "An arch's roof gives way at last, and what is left standing apart from the cliff is the stack."
+  },
+  {
+    "id": "estuary",
+    "name": "Estuary",
+    "emoji": "🔀",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Where a river's fresh water meets the moon-pulled tide and the two measurably mix, rather than staying apart."
+  },
+  {
+    "id": "lagoon",
+    "name": "Lagoon",
+    "emoji": "🏖️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Shallow water fenced off from the open sea by a narrow bar of sand, with only a thin inlet through."
+  },
+  {
+    "id": "glacier",
+    "name": "Glacier",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Snow that piled up faster than it melted, for centuries, compressed to ice, and is now sliding downhill."
+  },
+  {
+    "id": "moraine",
+    "name": "Moraine",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A glacier works like a conveyor belt: it carries stone for miles and drops it all at the melting end."
+  },
+  {
+    "id": "iceberg",
+    "name": "Iceberg",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A slab of a glacier that calved — broke free — and now drifts on the salt water it did not come from."
+  },
+  {
+    "id": "fjord",
+    "name": "Fjord",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A glacier gouges a valley far below sea level; the ice retreats, and the sea moves in to fill it."
+  },
+  {
+    "id": "cavern",
+    "name": "Cavern",
+    "emoji": "🌑",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Rainwater turned faintly acidic by carbon dioxide dissolves limestone along a crack for centuries."
+  },
+  {
+    "id": "sinkhole",
+    "name": "Sinkhole",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A cavern hollowed out below keeps growing until the ground above it can no longer hold its own weight."
+  },
+  {
+    "id": "plateau",
+    "name": "Plateau",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "High ground, flat on top: a broad slab of crust swollen upward by magma rising underneath it."
+  },
+  {
+    "id": "mesa",
+    "name": "Mesa",
+    "emoji": "🟧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A plateau's edge eaten back by weather until an isolated, flat-topped island of hard caprock remains."
+  },
+  {
+    "id": "butte",
+    "name": "Butte",
+    "emoji": "🔶",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A mesa worn narrower still, until almost nothing is left of the caprock that was protecting it."
+  },
+  {
+    "id": "caldera",
+    "name": "Caldera",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A magma chamber empties in a great eruption, and the volcano above it has nothing left to hold it up."
+  },
+  {
+    "id": "geyser",
+    "name": "Geyser",
+    "emoji": "⛲",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "fire"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Groundwater heated past boiling but held down by its own weight, until it flashes to steam all at once."
   }
 ]

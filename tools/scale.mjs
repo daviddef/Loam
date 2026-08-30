@@ -164,12 +164,19 @@ const SCALE = {
           'basilosaurus', 'dorudon', 'llanocetus',
           'swordfish', 'marlin',
           'allosaurus', 'spinosaurus', 'tyrannosaurus', 'plateosaurus', 'brachiosaurus', 'apatosaurus',
-          'stegosaurus', 'ankylosaurus', 'triceratops', 'iguanodon', 'parasaurolophus', 'quetzalcoatlus', 'elasmosaurus'],
+          'stegosaurus', 'ankylosaurus', 'triceratops', 'iguanodon', 'parasaurolophus', 'quetzalcoatlus', 'elasmosaurus',
+          // geography batch 1 — a sea cave (tens of metres) and a geyser's eruption column, both roughly building-scale
+          'sea_cave', 'geyser'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
-          'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest'],
+          'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest',
+          // geography batch 1 — coastal and karst features and single landforms, tens to a couple hundred metres
+          'sea_cliff', 'sea_arch', 'sea_stack', 'waterfall', 'sinkhole', 'cavern', 'moraine', 'mesa', 'butte', 'iceberg'],
   '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
-          'trophic_cascade'],
+          'trophic_cascade',
+          // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
+          'mountain', 'volcano', 'canyon', 'glacier', 'fjord', 'meander', 'oxbow_lake', 'delta', 'floodplain', 'lagoon', 'estuary', 'caldera', 'plateau'],
+  '4':   ['rift_valley', 'trench'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest'],
   '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],

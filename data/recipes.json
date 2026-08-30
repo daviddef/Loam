@@ -19594,5 +19594,275 @@
     "why": "The maximum population an environment can sustain, given its food, water and space — push a population above that threshold and it typically decreases again, capped by whatever runs out first.",
     "src": "https://en.wikipedia.org/wiki/Carrying_capacity",
     "verified": true
+  },
+  {
+    "in": [
+      "granite",
+      "granite"
+    ],
+    "out": "mountain",
+    "why": "Two slabs of continental crust collide and neither can sink beneath the other, so the crust between them thickens and compression pushes it upward — the Himalayas have been rising this way for 65 million years.",
+    "src": "https://en.wikipedia.org/wiki/Orogeny",
+    "supported": true
+  },
+  {
+    "in": [
+      "basalt",
+      "sea"
+    ],
+    "out": "trench",
+    "why": "Where a slab of oceanic crust flexes downward and begins diving beneath another plate, the seafloor above the bend sags into a long, narrow trench — the Mariana reaches 10,994 metres down.",
+    "src": "https://en.wikipedia.org/wiki/Oceanic_trench",
+    "supported": true
+  },
+  {
+    "in": [
+      "magma",
+      "trench"
+    ],
+    "out": "volcano",
+    "why": "Above a trench, the down-going plate lets go of water that lowers the mantle's melting point above it. That magma rises, and erupting again and again in alternating layers of lava and ash builds the cone.",
+    "src": "https://en.wikipedia.org/wiki/Subduction",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite"
+    ],
+    "verb": "cut",
+    "out": "rift_valley",
+    "why": "Stretched continental crust thins and cracks along two parallel faults, and the block between them drops to leave a valley — the mechanism opening East Africa's rift right now, at 8-9 mm a year.",
+    "src": "https://en.wikipedia.org/wiki/East_African_Rift",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "magma"
+    ],
+    "out": "plateau",
+    "why": "Magma rising from the mantle beneath a broad, flat slab of crust swells the ground upward without folding it — a plateau, raised whole rather than crumpled like a mountain range.",
+    "src": "https://en.wikipedia.org/wiki/Plateau",
+    "supported": true
+  },
+  {
+    "in": [
+      "plateau",
+      "river"
+    ],
+    "out": "canyon",
+    "why": "The Colorado River cut its channel through layer after layer of rock while the Colorado Plateau it was crossing was itself being lifted 5,000-10,000 feet — the two together are why the Grand Canyon is so deep.",
+    "src": "https://en.wikipedia.org/wiki/Grand_Canyon",
+    "verified": true
+  },
+  {
+    "in": [
+      "flood"
+    ],
+    "verb": "wait",
+    "out": "floodplain",
+    "why": "Each time a river tops its banks it drops a thin veneer of sediment on the land beside it, coarsest nearest the channel. Flood after flood, that layering builds the flat ground of the floodplain.",
+    "src": "https://en.wikipedia.org/wiki/Floodplain",
+    "verified": true
+  },
+  {
+    "in": [
+      "floodplain",
+      "river"
+    ],
+    "out": "meander",
+    "why": "Water runs faster on the outside of any bend, eroding it, and slower on the inside, dropping sand there instead. Bend by bend the channel migrates back and forth across its own floodplain.",
+    "src": "https://en.wikipedia.org/wiki/Meander",
+    "verified": true
+  },
+  {
+    "in": [
+      "meander"
+    ],
+    "verb": "wait",
+    "out": "oxbow_lake",
+    "why": "Erosion of the two banks either side of a meander's neck, or one strong flood, finally cuts straight through it. The river takes the new shortcut, and sediment seals the old loop off as its own lake.",
+    "src": "https://en.wikipedia.org/wiki/Oxbow_lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "sea"
+    ],
+    "out": "delta",
+    "why": "A river's sediment load rides all the way to where the current stops. In standing water the flow spreads out and slows, loses the capacity to carry that load, and drops it — building the delta outward.",
+    "src": "https://en.wikipedia.org/wiki/River_delta",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "river"
+    ],
+    "out": "waterfall",
+    "why": "A river crossing from resistant rock onto softer rock beneath erodes the soft layer faster and undercuts the hard cap above it. The unsupported ledge keeps breaking off, so the drop grows a little every year.",
+    "src": "https://en.wikipedia.org/wiki/Waterfall",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "sea"
+    ],
+    "out": "sea_cliff",
+    "why": "Waves attacking the foot of coastal rock cut a notch by constant abrasion. The notch grows until the overhang above it collapses under its own weight, and the cliff retreats a step inland.",
+    "src": "https://en.wikipedia.org/wiki/Cliffed_coast",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea_cliff"
+    ],
+    "verb": "cut",
+    "out": "sea_cave",
+    "why": "Waves force their way into an existing crack — a fault or a joint — in the cliff face, and the water trapped in that confined space hits it with far more force than open water ever could, widening it into a cave.",
+    "src": "https://en.wikipedia.org/wiki/Sea_cave",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea_cave"
+    ],
+    "verb": "wait",
+    "out": "sea_arch",
+    "why": "Kept up long enough, the same erosion that hollowed the cave eventually breaks all the way through the headland behind it. Where the cave used to end in rock, there is now an opening straight through.",
+    "src": "https://en.wikipedia.org/wiki/Natural_arch",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea_arch"
+    ],
+    "verb": "wait",
+    "out": "sea_stack",
+    "why": "An arch has no support underneath its roof, only either side of it, and erosion never stops working on it. Eventually the roof collapses, and the harder rock that was the arch's pillar is left standing alone.",
+    "src": "https://en.wikipedia.org/wiki/Stack_(geology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "moon",
+      "river"
+    ],
+    "out": "estuary",
+    "why": "The moon's pull raises a tide that pushes into a river mouth twice a day. Where that salt water measurably dilutes with the river's fresh water rather than staying apart, the mixing zone is an estuary.",
+    "src": "https://en.wikipedia.org/wiki/Estuary",
+    "supported": true
+  },
+  {
+    "in": [
+      "dune",
+      "sea"
+    ],
+    "out": "lagoon",
+    "why": "A ridge of sand piled by wind along a shoreline can grow into a barrier separating a strip of shallow water from the open sea behind it, connected only by a narrow inlet or two.",
+    "src": "https://en.wikipedia.org/wiki/Lagoon",
+    "supported": true
+  },
+  {
+    "in": [
+      "snow"
+    ],
+    "verb": "wait",
+    "out": "glacier",
+    "why": "Where snowfall outpaces melting for centuries, each year's layer presses the one below into denser and denser ice. Once that ice is thick enough it starts to flow downhill under its own weight.",
+    "src": "https://en.wikipedia.org/wiki/Glacier",
+    "verified": true
+  },
+  {
+    "in": [
+      "glacier",
+      "stone"
+    ],
+    "out": "moraine",
+    "why": "A glacier picks up rock shed from the valley walls above it and, like a conveyor belt, carries that debris from the top of the ice down to wherever the glacier finally melts and drops it.",
+    "src": "https://en.wikipedia.org/wiki/Moraine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glacier"
+    ],
+    "verb": "cut",
+    "out": "iceberg",
+    "why": "A chunk of a glacier's leading edge breaks — calves — away from the rest of the ice and floats off on its own. The largest icebergs on record calved from the Ross Ice Shelf in Antarctica.",
+    "src": "https://en.wikipedia.org/wiki/Iceberg",
+    "verified": true
+  },
+  {
+    "in": [
+      "glacier",
+      "sea"
+    ],
+    "out": "fjord",
+    "why": "A glacier grinds a U-shaped valley far below present sea level as it advances. When it retreats and the ocean rises to meet the empty trough, the flooded valley is a fjord.",
+    "src": "https://en.wikipedia.org/wiki/Fjord",
+    "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "water"
+    ],
+    "out": "cavern",
+    "why": "Rainwater picks up carbon dioxide from soil and air and turns faintly acidic. That acid dissolves limestone wherever it seeps through a crack, and the crack widens into a cave over centuries.",
+    "src": "https://en.wikipedia.org/wiki/Cave",
+    "verified": true
+  },
+  {
+    "in": [
+      "cavern"
+    ],
+    "verb": "wait",
+    "out": "sinkhole",
+    "why": "Dissolution keeps hollowing the rock below a cavern's roof, and the surface stays intact right up until it no longer has enough support. Then it collapses all at once, opening a sinkhole.",
+    "src": "https://en.wikipedia.org/wiki/Sinkhole",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau"
+    ],
+    "verb": "wait",
+    "out": "mesa",
+    "why": "Weather eats back a plateau's edge unevenly: a hard caprock resists while the softer rock beneath it is sapped away, and the margin retreats until an isolated flat-topped block of the old plateau is left standing.",
+    "src": "https://en.wikipedia.org/wiki/Mesa",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesa"
+    ],
+    "verb": "wait",
+    "out": "butte",
+    "why": "The same retreat that made the mesa keeps going. Once the protective caprock has caved away to the point where only a little remains, the same landform under a smaller cap is called a butte instead.",
+    "src": "https://en.wikipedia.org/wiki/Mesa",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano"
+    ],
+    "verb": "crush",
+    "out": "caldera",
+    "why": "A major eruption can empty enough of the magma chamber beneath a volcano that the walls and roof above it can no longer support their own weight, and the summit collapses down into the space left behind.",
+    "src": "https://en.wikipedia.org/wiki/Caldera",
+    "verified": true
+  },
+  {
+    "in": [
+      "magma",
+      "steam"
+    ],
+    "out": "geyser",
+    "why": "Groundwater sinks to where magma-heated rock waits about 2,000 metres down. The water above holds the pressure too high for the superheated water below to boil — until it flashes to steam all at once and erupts.",
+    "src": "https://en.wikipedia.org/wiki/Geyser",
+    "verified": true
   }
 ]
