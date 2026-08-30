@@ -572,6 +572,20 @@
   }
   .chip.board.folded{border-style:solid}
   .chip.board.folded:not([data-fold=""])::after{content:attr(data-fold)}
+  /* Systems thinking: what a removed element takes with it. Grayscale reads as
+     "drained of life" in both themes without a literal colour that would only
+     work in one of them — .starved is the same treatment, just held back so
+     "still standing, weaker" reads differently from "gone". */
+  .chip.board.decayed{filter:grayscale(1);opacity:.4;transition:filter .5s ease,opacity .5s ease}
+  .chip.board.starved{filter:grayscale(.65);opacity:.72;transition:filter .5s ease,opacity .5s ease}
+  .chip.board.decay-root{outline:2px dashed var(--brick);outline-offset:3px}
+  .chip.board.decay-root::before{
+    content:'🥀';position:absolute;top:-9px;left:-8px;font-size:12px;line-height:1;
+    filter:none;opacity:1;background:var(--card);border-radius:99px;padding:1px 4px;
+    box-shadow:0 1px 3px rgba(var(--shade),.3);
+  }
+  #links path.made.link-decayed{stroke:var(--ink-soft);opacity:.14}
+  #links path.made.link-starved{stroke:var(--ink-soft);opacity:.28}
   @keyframes ripple{
     from{transform:translate(-50%,-50%) scale(.25);opacity:.75}
     to{transform:translate(-50%,-50%) scale(2.6);opacity:0}
@@ -5485,6 +5499,109 @@ const bestRecipe = new Map();
   }
 })();
 
+// ---------- systems thinking: what breaks if this goes away? ----------
+// treeHTML above is the forward direction — what X is made from. This is the
+// reverse: the full transitive closure of what stops being reachable if one
+// element is taken off the table entirely. That's a real trophic cascade or
+// Theory of Constraints bottleneck, not a metaphor for one — take away the
+// DNA and see how much of the bench actually depends on it.
+//
+// Ports tools/validate.mjs's own unlock-aware reachability BFS client-side,
+// so "what's reachable" is computed exactly the way the whole game gets
+// checked for playability, just re-run with one element made permanently
+// unavailable and diffed against the unmodified result.
+function reachableSet(excludeId) {
+  const known = new Set(startersSet);
+  known.delete(excludeId);
+  const unlocked = new Set(verbs.filter(v => !v.unlockedBy).map(v => v.id));
+  for (let wave = 0; wave < 500; wave++) {
+    let grew = false;
+    for (const v of verbs) {
+      if (!unlocked.has(v.id) && v.id !== excludeId && v.unlockedBy !== excludeId && known.has(v.unlockedBy)) {
+        unlocked.add(v.id); grew = true;
+      }
+    }
+    for (const r of DATA.recipes) {
+      if (r.out === excludeId || known.has(r.out)) continue;
+      if (r.verb && !unlocked.has(r.verb)) continue;
+      if (r.in.includes(excludeId) || !r.in.every(i => known.has(i))) continue;
+      known.add(r.out);
+      grew = true;
+    }
+    if (!grew) break;
+  }
+  return known;
+}
+// A real reachability-diff, not a flood-fill: many elements have several true
+// routes in (meat comes from goat, chicken, fish, duck, turkey alike), so
+// removing one ingredient only actually breaks a downstream thing if EVERY
+// route to it needed that ingredient. "starved" is the honest middle ground
+// the Yellowstone wolf/willow story argues for keeping: still reachable, but
+// with real redundancy actually spent — some route that used to work no
+// longer does, even though a different one still gets there.
+function decayImpact(id) {
+  const before = reachableSet(null);
+  const after = reachableSet(id);
+  const broken = new Set([...before].filter(x => !after.has(x)));
+  const starved = new Set();
+  for (const x of after) {
+    if (x === id) continue;
+    const lostARoute = DATA.recipes.some(r =>
+      r.out === x && r.in.every(i => before.has(i)) && !r.in.every(i => after.has(i)));
+    if (lostARoute) starved.add(x);
+  }
+  return { broken, starved };
+}
+// The player-facing side of the above: a discreet, reversible visual — grey
+// and dim what the removal breaks or weakens, directly on the bench the
+// player is already looking at, no popup and nothing to confirm. A second
+// tap on the same element clears it, so exploring "what if X went away" for
+// several different elements in a row never requires Undo at all.
+function decayElement(id) {
+  // Same lookup onCanvas() uses to decide whether the button even shows —
+  // a folded/hidden root chip still counts, so the badge and the button
+  // agree about what's clickable.
+  const rootChip = () => world.querySelector(`.chip.board[data-id="${id}"]`);
+  const clearAll = () => world.querySelectorAll('.chip.board').forEach(c =>
+    c.classList.remove('decayed', 'starved', 'decay-root'));
+  const already = rootChip()?.classList.contains('decay-root');
+  clearAll();
+  if (already) {
+    drawLinksNow(); paintDecayLinks();
+    toast(`${nameOf(byId[id])} restored`);
+    sfx.pick();
+    return;
+  }
+  const { broken, starved } = decayImpact(id);
+  for (const c of world.querySelectorAll('.chip.board')) {
+    if (broken.has(c.dataset.id)) c.classList.add('decayed');
+    else if (starved.has(c.dataset.id)) c.classList.add('starved');
+  }
+  rootChip()?.classList.add('decay-root');
+  drawLinksNow();
+  paintDecayLinks();
+  sfx.violent();
+  const n = broken.size - 1, s = starved.size;   // -1: broken always includes id itself
+  toast(n > 0
+    ? `Removing ${nameOf(byId[id])} breaks ${n} thing${n === 1 ? '' : 's'} outright` +
+      (s ? `, weakens ${s} more` : '')
+    : s ? `Removing ${nameOf(byId[id])} breaks nothing outright, but weakens ${s} thing${s === 1 ? '' : 's'}`
+        : `Removing ${nameOf(byId[id])} breaks nothing else — full redundancy`);
+}
+// The chip classes above are the source of truth; the connecting lines just
+// read off them, same as .hidden already does for folded chips.
+function paintDecayLinks() {
+  const byUid = new Map();
+  for (const c of world.querySelectorAll('.chip.board')) byUid.set(c.dataset.uid, c);
+  for (const p of linkSvg.querySelectorAll('path.made')) {
+    const a = byUid.get(p.dataset.from), b = byUid.get(p.dataset.to);
+    const decayed = (a && a.classList.contains('decayed')) || (b && b.classList.contains('decayed'));
+    const starved = !decayed && ((a && a.classList.contains('starved')) || (b && b.classList.contains('starved')));
+    p.classList.toggle('link-decayed', !!decayed);
+    p.classList.toggle('link-starved', !!starved);
+  }
+}
+
 const memo = new Map();
 function expanded(id) {
   if (startersSet.has(id)) return { steps: 0, leaves: 1 };
@@ -6108,11 +6225,18 @@ function showEntry(id, mode) {
   // 24px icon centred in a full-width flex row was reading as a wasted
   // line. ("Make sure consistent and well placed so it doesn't waste
   // entire lines" — found live.)
+  // Decay only makes sense for something that already has a real chip on the
+  // bench to visibly wither — the whole point is watching the chain react,
+  // not a hypothetical. It reuses the same icon-button language as the
+  // bench-add, just at the far end past it.
+  const decayBtn = onCanvas(id)
+    ? `<button class="addroute decay" data-decay="${id}" title="Decay this — see what it breaks">🥀</button>` : '';
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="${entryMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
        <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
+       ${decayBtn}
      </div>` : '';
   document.getElementById('sheetBody').innerHTML =
     (entryMode === 'quick' ? quickViewHTML(id) : provenanceHTML(id)).replace('__TABS__', tabs);
@@ -6492,6 +6616,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   }
   const put = ev.target.closest('[data-put]');
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
+  const dc = ev.target.closest('[data-decay]');
+  if (dc) { closeSheet(); return decayElement(dc.dataset.decay); }
   const t = ev.target.closest('[data-trace]');
   if (t) showEntry(t.dataset.trace, 'cards');
   const qv = ev.target.closest('[data-quickview]');
