@@ -3459,9 +3459,31 @@ function tidy() {
     const mineSet = new Set(mine);
     const parentsIn = c => (parents.get(c) ?? []).filter(p => mineSet.has(p));
     const kidsIn = c => (kids.get(c) ?? []).filter(k => mineSet.has(k));
+    // Bucket by VISIBLE row, not raw depth. A folded ancestor's own chain
+    // can run many raw generations deep behind it — Fetus, next to Human's
+    // eight composition organs (all raw depth 0), has 30-odd raw depths of
+    // its own hidden ancestry between it and depth 0. Grouping by raw depth
+    // put the organs in row 0 and Fetus dozens of rows away, and every pass
+    // below (barycentre, transpose, centring) only ever looks ONE row up or
+    // down — none of them had a chance to pull two things back together
+    // that were only ever dozens of INVISIBLE rows apart, not dozens of
+    // real ones. Collapsing runs of all-hidden raw depths into whichever
+    // row they'd share once revealed is the same rule the visDepthOf pass
+    // below already applies to the final pixel height — just moved here so
+    // it also governs which row two things are grouped and centred in, not
+    // only how far apart the rows end up drawn. ("i click on human it adds
+    // fetus on the bottom left? why not on above?" — found live.)
+    const rawDepths = [...new Set(mine.map(c => depth.get(c)))].sort((a, z) => a - z);
+    const rowOf = new Map();
+    let seenRow = 0;
+    for (const d of rawDepths) {
+      const atThisDepth = mine.filter(c => depth.get(c) === d);
+      for (const c of atThisDepth) rowOf.set(c, seenRow);
+      if (atThisDepth.some(c => !c.classList.contains('hidden'))) seenRow++;
+    }
     const byRow = new Map();
     for (const c of mine) {
-      const d = depth.get(c);
+      const d = rowOf.get(c);
       if (!byRow.has(d)) byRow.set(d, []);
       byRow.get(d).push(c);
     }
