@@ -5174,16 +5174,6 @@
   },
   {
     "in": [
-      "meadow",
-      "wood"
-    ],
-    "out": "wolf",
-    "why": "Wolves live in forest, wetland, shrubland, grassland, tundra, pasture, desert and rocky peaks alike, hunting the hooved animals each place has to offer.",
-    "src": "https://en.wikipedia.org/wiki/Wolf",
-    "verified": true
-  },
-  {
-    "in": [
       "grass",
       "wood"
     ],
@@ -18153,6 +18143,66 @@
     "out": "elasmosaurus",
     "why": "A fish-hunting plesiosaur, not a dinosaur, that patrolled open-ocean currents and swallowed stones as gastroliths — ballast or a digestive aid for grinding down the fish it caught with its long, tooth-lined jaws at the end of an extraordinary 7-metre neck.",
     "src": "https://en.wikipedia.org/wiki/Elasmosaurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "meat",
+      "fruit"
+    ],
+    "out": "leptocyon",
+    "why": "Leptocyon was omnivorous, and its diet stayed largely unchanged for millions of years: small animals and fruit, not the specialised meat-only diet later canids evolved toward.",
+    "src": "https://en.wikipedia.org/wiki/Leptocyon",
+    "verified": true
+  },
+  {
+    "in": [
+      "leptocyon"
+    ],
+    "verb": "wait",
+    "out": "eucyon",
+    "why": "Within the same canine lineage, Leptocyon's small, generalist form gave way to the larger, jackal-sized Eucyon by the late Miocene.",
+    "src": "https://en.wikipedia.org/wiki/Eucyon",
+    "verified": true
+  },
+  {
+    "in": [
+      "eucyon"
+    ],
+    "verb": "wait",
+    "out": "canis_lepophagus",
+    "why": "Eucyon is understood to have given rise to the genus Canis around 6 million years ago, with Canis lepophagus among its earliest members.",
+    "src": "https://en.wikipedia.org/wiki/Eucyon",
+    "verified": true
+  },
+  {
+    "in": [
+      "canis_lepophagus"
+    ],
+    "verb": "wait",
+    "out": "canis_etruscus",
+    "why": "The evolutionary lineage of the gray wolf traces back roughly 2 million years, through the Early Pleistocene Canis etruscus.",
+    "src": "https://en.wikipedia.org/wiki/Evolution_of_the_wolf",
+    "verified": true
+  },
+  {
+    "in": [
+      "canis_etruscus"
+    ],
+    "verb": "wait",
+    "out": "canis_mosbachensis",
+    "why": "Canis etruscus was succeeded by the smaller Canis mosbachensis across Middle Pleistocene Eurasia, a wolf comparable in size to today's Indian wolf.",
+    "src": "https://en.wikipedia.org/wiki/Evolution_of_the_wolf",
+    "verified": true
+  },
+  {
+    "in": [
+      "canis_mosbachensis"
+    ],
+    "verb": "wait",
+    "out": "wolf",
+    "why": "The earliest specimens recognisable as the modern gray wolf, Canis lupus, date to around 400,000 years ago, descended directly from Canis mosbachensis.",
+    "src": "https://en.wikipedia.org/wiki/Evolution_of_the_wolf",
     "verified": true
   }
 ]
