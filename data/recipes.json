@@ -16838,10 +16838,10 @@
   {
     "in": [
       "current",
-      "moon"
+      "ice"
     ],
     "out": "megamouth_shark",
-    "why": "A deep-sea filter feeder first caught in 1976 and still barely known — fewer than 300 have ever been recorded. Its pale mouth band isn't bioluminescent, just reflective, in water down to 1,500 metres deep.",
+    "why": "A deep-sea filter feeder first caught in 1976 and still barely known — fewer than 300 have ever been recorded. It spends daylight hours in the near-freezing water below 150 m, rising each night to feed where it is warmer.",
     "src": "https://en.wikipedia.org/wiki/Megamouth_shark",
     "verified": true
   },
@@ -16897,11 +16897,11 @@
   },
   {
     "in": [
-      "moon",
-      "sand"
+      "sand",
+      "mud"
     ],
     "out": "goblin_shark",
-    "why": "A deep-sea shark of dark continental slopes, its long electroreceptive snout finds prey by their electric field alone. Elastic jaw ligaments let it launch its jaws forward at up to 3.14 m/s to catch it.",
+    "why": "A deep-sea shark of dark continental slopes and soft sea-floor sediment, its long electroreceptive snout finds prey by their electric field alone. Elastic jaw ligaments let it launch its jaws forward at up to 3.14 m/s to catch it.",
     "src": "https://en.wikipedia.org/wiki/Goblin_shark",
     "verified": true
   },
@@ -17058,7 +17058,7 @@
   {
     "in": [
       "coral",
-      "moon"
+      "fish"
     ],
     "out": "whitetip_reef_shark",
     "why": "Unlike most requiem sharks, which must keep swimming to breathe, this reef-dweller can pump water over its gills and rest still in a coral cave by day. By night it hunts fish and octopus through reef crevices in packs.",
