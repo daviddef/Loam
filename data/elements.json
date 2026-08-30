@@ -5958,7 +5958,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Two coils on one iron ring. Voltage out over voltage in is just the ratio of the turns."
   },
   {
@@ -9504,8 +9503,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Pure lead sags. A little antimony stiffens it — and, oddly, stops it shrinking as it cools.",
-    "terminal": true
+    "fact": "Pure lead sags. A little antimony stiffens it — and, oddly, stops it shrinking as it cools."
   },
   {
     "id": "titanium_alloy",
@@ -17618,5 +17616,287 @@
     ],
     "terminal": true,
     "fact": "A mangrove's snorkel root, poking up out of waterlogged mud to pull in air."
+  },
+  {
+    "id": "movable_type",
+    "name": "Movable Type",
+    "emoji": "🔤",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Cast from lead, tin and antimony in a hand mould — one reusable piece per letter.",
+    "soleRoute": true
+  },
+  {
+    "id": "printing_press",
+    "name": "Printing Press",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A screw-driven bar presses inked type onto paper. Gutenberg, working from about 1436.",
+    "soleRoute": true
+  },
+  {
+    "id": "telescope",
+    "name": "Telescope",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A convex lens focuses light, a concave eyepiece spreads it out magnified. Galileo, 1609.",
+    "soleRoute": true
+  },
+  {
+    "id": "steam_engine",
+    "name": "Steam Engine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Watt split the condenser from the cylinder in 1769, so the cylinder never cools between strokes.",
+    "soleRoute": true
+  },
+  {
+    "id": "barometer",
+    "name": "Barometer",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Mercury in a sealed glass tube, held up by the weight of the air alone. Torricelli, 1643.",
+    "soleRoute": true
+  },
+  {
+    "id": "pendulum_clock",
+    "name": "Pendulum Clock",
+    "emoji": "🕰️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A pendulum's swing takes the same time regardless of its width, so it can pace a clock. Huygens, 1656.",
+    "soleRoute": true
+  },
+  {
+    "id": "cotton_gin",
+    "name": "Cotton Gin",
+    "emoji": "🗜️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Iron teeth comb cotton through slots too narrow for the seeds. Whitney, 1793.",
+    "soleRoute": true
+  },
+  {
+    "id": "sewing_machine",
+    "name": "Sewing Machine",
+    "emoji": "🪡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "An eye-pointed needle carries thread through cloth to meet a shuttle's thread below. Howe, 1845.",
+    "soleRoute": true
+  },
+  {
+    "id": "elevator",
+    "name": "Elevator",
+    "emoji": "🛗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A spring drives pawls into the guide rails' teeth the instant the hoisting rope goes slack. Otis, 1852.",
+    "soleRoute": true
+  },
+  {
+    "id": "telegraph",
+    "name": "Telegraph",
+    "emoji": "📟",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A key switches current down a wire; the current switches an electromagnet at the far end. Morse, 1844.",
+    "soleRoute": true
+  },
+  {
+    "id": "telephone",
+    "name": "Telephone",
+    "emoji": "☎️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "An iron diaphragm near a magnet turns sound into a matching current, and back again. Bell, 1876.",
+    "soleRoute": true
+  },
+  {
+    "id": "radio",
+    "name": "Radio",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A discharging capacitor oscillates across a spark gap and radiates from a wire antenna. Marconi, 1896.",
+    "soleRoute": true
+  },
+  {
+    "id": "vacuum_tube",
+    "name": "Vacuum Tube",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A heated filament boils electrons into a vacuum; they cross to the plate only one way. Fleming, 1904.",
+    "soleRoute": true
+  },
+  {
+    "id": "phonograph",
+    "name": "Phonograph",
+    "emoji": "📀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A vibrating needle indents hill-and-dale grooves into tinfoil on a turning cylinder. Edison, 1877.",
+    "soleRoute": true
+  },
+  {
+    "id": "x_ray",
+    "name": "X-Ray",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Electrons striking the wall of an evacuated tube throw off radiation that photographs bone. Röntgen, 1895.",
+    "soleRoute": true
+  },
+  {
+    "id": "camera_obscura",
+    "name": "Camera Obscura",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Light through a small hole lands inverted and reversed on the far wall of a dark box.",
+    "soleRoute": true
+  },
+  {
+    "id": "photographic_plate",
+    "name": "Photographic Plate",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Silver fumed with iodine forms silver iodide, a compound so light-sensitive that exposure darkens it.",
+    "soleRoute": true
+  },
+  {
+    "id": "photograph",
+    "name": "Photograph",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A camera projects onto a light-sensitive plate; mercury vapor develops the invisible result. Daguerre, 1839.",
+    "soleRoute": true
+  },
+  {
+    "id": "ether",
+    "name": "Ether",
+    "emoji": "💤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Sulfuric acid dehydrates ethanol into ether — the anesthetic Morton demonstrated in 1846.",
+    "soleRoute": true
+  },
+  {
+    "id": "integrated_circuit",
+    "name": "Integrated Circuit",
+    "emoji": "🔳",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Every part of a circuit, not just the transistors, built into one block of semiconductor. Kilby, 1958.",
+    "soleRoute": true
+  },
+  {
+    "id": "microprocessor",
+    "name": "Microprocessor",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "An entire CPU's arithmetic, logic and control on a single chip. Intel's 4004, 1971.",
+    "soleRoute": true
+  },
+  {
+    "id": "internal_combustion_engine",
+    "name": "Internal Combustion Engine",
+    "emoji": "⛽",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Otto compressed the fuel-air mixture in a cylinder before igniting it, for far higher efficiency. 1876.",
+    "soleRoute": true
+  },
+  {
+    "id": "airplane",
+    "name": "Airplane",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A cambered wing lifts, warped wingtips steer, a chain-driven propeller pulls. Kitty Hawk, 1903.",
+    "soleRoute": true
+  },
+  {
+    "id": "typewriter",
+    "name": "Typewriter",
+    "emoji": "⌨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A struck key swings a metal bar that prints its letter, reversed on the bar, through an inked ribbon.",
+    "soleRoute": true
   }
 ]

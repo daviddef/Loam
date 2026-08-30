@@ -2363,6 +2363,68 @@ def('refrigerator',() => [P('M16 10 L44 10 L44 52 L16 52 Z', 'gh'), S('M16 30 L4
                           S('M40 18 L40 24', 'ik', 3), S('M40 36 L40 42', 'ik', 3),
                           ...[22, 28].map(x => S(`M${x} 40 Q${x - 3} 44 ${x} 48`, 'bs', 1.6))]);
 
+/* invention milestones ───────────────────────────────────────────────────
+   Mechanical, communications and computing devices, each drawn from its own
+   working part rather than a generic box: the press's screw and platen, the
+   telegraph's key and coil, the transistor chip's pins, the Flyer's wing and
+   propeller. Where a device shares real kinship with something already drawn
+   here — a coil, a diaphragm, a filament — it reuses that same piece. */
+def('movable_type', () => [...[15, 24, 33, 42].map((x, i) =>
+                            P(`M${x - 4} 16 L${x + 4} 16 L${x + 4} 46 L${x - 4} 46 Z`, i % 2 ? 'hi' : 'bs')),
+                           ...[15, 24, 33, 42].map(x => S(`M${x - 2} 24 L${x + 2} 24 M${x - 2} 32 L${x + 2} 32`, 'ik', 1.4))]);
+def('printing_press', () => [P('M14 8 L20 8 L20 48 L14 48 Z', 'lo'), P('M40 8 L46 8 L46 48 L40 48 Z', 'lo'),
+                             P('M13 22 L47 22 L47 29 L13 29 Z', 'bs'),      // the platen
+                             S('M30 8 L30 22', 'ik', 3.4),                  // the screw
+                             P('M17 44 L43 44 L43 50 L17 50 Z', 'hi')]);    // the bed
+def('telescope', () => [P('M9 36 L47 21 L51 29 L13 44 Z', 'lo'),
+                        E(11, 40, 5, 7, 'hi'), E(49, 25, 4, 5.4, 'bs')]);
+def('steam_engine', () => [P('M12 24 L34 24 L34 40 L12 40 Z', 'lo'), S('M34 32 L44 32', 'ik', 3.4),
+                           ring('bs', 46, 32, 8, 3), ['g', 0, 46, 32, [S('M46 24 L46 40', 'ik', 1.6)]],
+                           ['g', 90, 46, 32, [S('M46 24 L46 40', 'ik', 1.6)]]]);
+def('barometer', () => [P('M27 6 L33 6 L33 46 L27 46 Z', 'gh'), P('M28 20 L32 20 L32 46 L28 46 Z', 'bs'),
+                        E(30, 48, 14, 5, 'lo')]);
+def('pendulum_clock', () => [P('M18 8 L42 8 L42 40 Q42 48 30 48 Q18 48 18 40 Z', 'lo'),
+                             ring('bs', 30, 22, 8, 2.4), S('M30 30 L30 42', 'ik', 2), C(30, 44, 4, 'hi')]);
+def('cotton_gin', () => [ring('lo', 20, 32, 11, 3),
+                         ...Array.from({ length: 8 }, (_, i) => ['g', i * 45, 20, 32, [S('M20 21 L20 15', 'ik', 1.6)]]),
+                         ring('hi', 44, 32, 8, 4)]);
+def('sewing_machine', () => [P('M26 8 L30 6 L34 8 L32 38 L30 42 L28 38 Z', 'gh'), E(30, 14, 3, 4.4, 'ground'),
+                             ring('bs', 30, 47, 10, 3)]);
+def('elevator', () => [P('M18 6 L42 6 L42 52 L18 52 Z', 'gh'), P('M22 18 L38 18 L38 38 L22 38 Z', 'bs'),
+                       S('M14 6 L14 52', 'ik', 2), S('M46 6 L46 52', 'ik', 2),
+                       ...[14, 22, 30, 38, 46].map(y => [S(`M11 ${y} L16 ${y}`, 'ik', 1.4), S(`M44 ${y} L49 ${y}`, 'ik', 1.4)]).flat()]);
+def('telegraph', () => [P('M10 40 L50 40 L50 46 L10 46 Z', 'lo'), P('M18 40 L18 34 L38 34 L38 40 Z', 'bs'),
+                        S('M12 28 L28 34', 'ik', 3), ...coilOf('hi', 3, 30, 18, 3)]);
+def('telephone', () => [ring('lo', 20, 32, 14, 3), C(20, 32, 4, 'bs'), ...coilOf('hi', 3, 32, 32, 4)]);
+def('radio', () => [S('M30 4 L30 18', 'ik', 2.4), P('M18 18 L42 18 L42 40 L18 40 Z', 'lo'),
+                    ...coilOf('bs', 2, 20, 29, 4), S('M27 34 L33 34', 'hi', 2.2)]);
+def('vacuum_tube', () => [P('M18 12 A12 12 0 1 1 42 12 L42 46 L18 46 Z', 'gh'),
+                          ...coilOf('hi', 3, 22, 36, 3), S('M22 18 L38 18', 'ik', 2.4)]);
+def('phonograph', () => [ring('lo', 18, 32, 10, 3.4), P('M26 30 L46 16 Q52 12 50 20 L32 36 Z', 'bs')]);
+def('x_ray', () => [P('M12 24 L48 24 L48 38 L12 38 Z', 'gh'), S('M18 24 L18 38', 'ik', 3), S('M42 24 L42 38', 'ik', 3),
+                    ...[24, 30, 36].map(x => S(`M${x} 24 L${x} 38`, 'hi', 2))]);
+def('camera_obscura', () => [P('M12 14 L48 14 L48 46 L12 46 Z', 'lo'), C(14, 30, 2.2, 'ik'),
+                             P('M38 22 L46 22 L46 38 L38 38 Z', 'hi')]);
+def('photographic_plate', () => [P('M14 14 L46 14 L46 46 L14 46 Z', 'lo'), ...granules('hi', 10, 51, [18, 18, 42, 42])]);
+def('photograph', () => [P('M12 10 L48 10 L48 50 L12 50 Z', 'ik'), P('M18 16 L42 16 L42 44 L18 44 Z', 'hi'),
+                         C(30, 28, 6, 'lo')]);
+def('ether', () => [P('M24 10 L36 10 L36 22 L44 44 Q44 50 30 50 Q16 50 16 44 L24 22 Z', 'gh'),
+                    P('M18 34 L42 34 L44 44 Q44 50 30 50 Q16 50 16 44 Z', 'hi'),
+                    S('M20 8 Q24 4 20 2', 'lo', 1.4), S('M36 8 Q40 4 36 2', 'lo', 1.4)]);
+def('integrated_circuit', () => [P('M18 18 L42 18 L42 42 L18 42 Z', 'ik'),
+                                 ...[22, 30, 38].map(x => [S(`M${x} 18 L${x} 12`, 'bs', 2), S(`M${x} 42 L${x} 48`, 'bs', 2)]).flat(),
+                                 ...granules('hi', 4, 71, [22, 22, 38, 38])]);
+def('microprocessor', () => [P('M16 16 L44 16 L44 44 L16 44 Z', 'ik'),
+                             ...[20, 26, 32, 38].map(x => [S(`M${x} 16 L${x} 10`, 'bs', 2), S(`M${x} 44 L${x} 50`, 'bs', 2)]).flat(),
+                             ...[20, 26, 32, 38].map(y => [S(`M16 ${y} L10 ${y}`, 'bs', 2), S(`M44 ${y} L50 ${y}`, 'bs', 2)]).flat(),
+                             C(30, 30, 6, 'hi')]);
+def('internal_combustion_engine', () => [P('M18 14 L42 14 L42 40 L18 40 Z', 'lo'), P('M22 40 L38 40 L38 50 L22 50 Z', 'bs'),
+                                         S('M30 8 L30 14', 'ik', 2.6), C(30, 8, 2.4, 'hi')]);
+def('airplane', () => [P('M8 30 L52 30 L52 34 L8 34 Z', 'bs'), P('M24 20 L36 20 L40 44 L20 44 Z', 'lo'),
+                       ring('hi', 14, 32, 4, 2), S('M14 24 L14 40', 'ik', 1.8)]);
+def('typewriter', () => [P('M12 34 L48 34 L48 46 L12 46 Z', 'lo'), ...[18, 26, 34, 42].map(x => C(x, 30, 3, 'bs')),
+                         S('M30 30 L30 14', 'ik', 2.2), C(30, 12, 3, 'hi')]);
+
 /* what the elements do inside a body ────────────────────────────────────
    The porphyrin family shares one square-planar ring with a metal at its
    centre, because that IS the fact: change the metal and you change what

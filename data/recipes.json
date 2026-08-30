@@ -21034,5 +21034,245 @@
     "why": "In waterlogged mud, some mangrove roots grow upward into pneumatophores studded with porous lenticels leading to spongy aerenchyma that carries oxygen down to the buried roots.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Pneumatophore"
+  },
+  {
+    "in": [
+      "hard_lead",
+      "tin"
+    ],
+    "out": "movable_type",
+    "why": "Type metal is hard lead with tin stirred in: Gutenberg's own mix was lead, tin and antimony, cast one letter per piece in a hand mould so a page could be assembled and reused instead of carved from a single block. It stayed standard for 550 years.",
+    "src": "https://en.wikipedia.org/wiki/Movable_type",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "movable_type"
+    ],
+    "out": "printing_press",
+    "why": "Gutenberg developed an oil-based ink that stuck to metal type instead of beading like the water-based ink scribes used; a lever-driven screw then pressed the inked type against the paper.",
+    "src": "https://en.wikipedia.org/wiki/Printing_press",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "wood"
+    ],
+    "out": "telescope",
+    "why": "A convex glass lens set in a wooden tube bends distant light to a focus; a concave glass eyepiece spreads it back out, magnifying the view without flipping it. Lippershey filed the first patent in 1608, Galileo built his own in 1609.",
+    "src": "https://en.wikipedia.org/wiki/Galilean_telescope",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "steam"
+    ],
+    "out": "steam_engine",
+    "why": "Newcomen's engine cooled its cylinder every stroke to condense the steam, then reheated it before the next. Watt's separate condenser, 1769, does the condensing elsewhere, so the iron cylinder stays hot throughout.",
+    "src": "https://en.wikipedia.org/wiki/Watt_steam_engine",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "mercury"
+    ],
+    "out": "barometer",
+    "why": "A glass tube of mercury, sealed at one end and stood in a dish of mercury, leaves a vacuum at the closed top. Torricelli, 1643: it is the weight of the air on the open dish that holds the column up, not the vacuum pulling.",
+    "src": "https://en.wikipedia.org/wiki/Barometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "wheel"
+    ],
+    "out": "pendulum_clock",
+    "why": "A pendulum's swing takes the same time regardless of how wide it swings, so Huygens, 1656, coupled one to an escapement: each swing releases an iron-toothed wheel by exactly one tooth, pacing the whole clock.",
+    "src": "https://en.wikipedia.org/wiki/Pendulum_clock",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotton",
+      "iron"
+    ],
+    "out": "cotton_gin",
+    "why": "A cylinder of iron teeth pulls cotton fiber through slots in a metal plate too narrow for the seeds to follow; a second brushed cylinder wipes the fiber off before it can jam the teeth. Whitney, 1793.",
+    "src": "https://en.wikipedia.org/wiki/Cotton_gin",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "thread"
+    ],
+    "out": "sewing_machine",
+    "why": "Howe's iron needle carries its eye near the point instead of the back, so it can push a loop of thread through the cloth from above; a shuttle underneath passes a second thread through that loop, locking the stitch. 1845.",
+    "src": "https://en.wikipedia.org/wiki/Sewing_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "steel"
+    ],
+    "out": "elevator",
+    "why": "Otis hung the platform from a steel spring under the hoisting rope's tension. Let the rope go slack — as it would if it broke — and the spring drives two pawls out to lock into ratchet teeth on the iron guide rails. 1852.",
+    "src": "https://www.explainthatstuff.com/how-elevators-work.html",
+    "supported": true
+  },
+  {
+    "in": [
+      "current",
+      "electromagnet"
+    ],
+    "out": "telegraph",
+    "why": "A key at one station switches the current in a wire circuit on and off; at the far end, that current switches an electromagnet, moving an armature that clicks or embosses the dots and dashes of the message. Morse, 1837–1844.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_telegraph",
+    "verified": true
+  },
+  {
+    "in": [
+      "electromagnet",
+      "iron"
+    ],
+    "out": "telephone",
+    "why": "Bell's telephone used permanent magnets with iron diaphragms: sound vibrates the iron disc near the magnet's coil, inducing a fluctuating current shaped like the sound itself, which a second diaphragm turns back into sound.",
+    "src": "https://en.wikipedia.org/wiki/History_of_the_telephone",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "transformer"
+    ],
+    "out": "radio",
+    "why": "A transformer charges a capacitor; discharged across a gap, the current oscillates back and forth and radiates from a wire antenna as a radio wave. Marconi built the first practical version around 1896.",
+    "src": "https://en.wikipedia.org/wiki/Spark-gap_transmitter",
+    "verified": true
+  },
+  {
+    "in": [
+      "filament",
+      "radio"
+    ],
+    "out": "vacuum_tube",
+    "why": "Fleming built his 'oscillation valve' specifically to rectify a radio-frequency current: a heated filament boils electrons into a vacuum, and they cross to the plate only when it is positive, never the other way. 1904.",
+    "src": "https://en.wikipedia.org/wiki/Vacuum_tube",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "tin"
+    ],
+    "out": "phonograph",
+    "why": "An iron diaphragm-and-needle assembly indents hill-and-dale grooves into tinfoil wrapped around a rotating, threaded cylinder as sound vibrates it; tracing the groove afterward vibrates the diaphragm again, faintly reproducing the sound.",
+    "src": "https://en.wikipedia.org/wiki/Phonograph",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "glass"
+    ],
+    "out": "x_ray",
+    "why": "High voltage across electrodes sealed in an evacuated glass tube drives cathode rays that strike the far wall and throw off penetrating radiation. Röntgen photographed his wife's hand with it in 1895 — she saw her own skeleton.",
+    "src": "https://en.wikipedia.org/wiki/Wilhelm_R%C3%B6ntgen",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "wood"
+    ],
+    "out": "camera_obscura",
+    "why": "Light through a small hole in one wall of a box lands inverted and reversed on the far wall. Della Porta suggested catching that image on a sheet of paper as a drawing aid, centuries before any lens improved it.",
+    "src": "https://en.wikipedia.org/wiki/Camera_obscura",
+    "verified": true
+  },
+  {
+    "in": [
+      "iodine",
+      "silver"
+    ],
+    "out": "photographic_plate",
+    "why": "Silver fumed with iodine vapor forms a coating of silver iodide — a compound so light-sensitive that exposure alone converts some of its ions back to visible metallic silver.",
+    "src": "https://en.wikipedia.org/wiki/Silver_iodide",
+    "verified": true
+  },
+  {
+    "in": [
+      "camera_obscura",
+      "photographic_plate"
+    ],
+    "out": "photograph",
+    "why": "Daguerre's camera projects the scene onto the light-sensitized plate; where light struck hardest, the most silver darkens. Mercury vapor then develops that faint, invisible result into a picture anyone can see. 1839.",
+    "src": "https://en.wikipedia.org/wiki/Daguerreotype",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol",
+      "sulfuric_acid"
+    ],
+    "out": "ether",
+    "why": "Sulfuric acid dehydrates two ethanol molecules into one molecule of ether — a reaction known since the 13th century. Morton demonstrated inhaling its vapor for painless surgery in Boston, October 16, 1846.",
+    "src": "https://en.wikipedia.org/wiki/Diethyl_ether",
+    "verified": true
+  },
+  {
+    "in": [
+      "silicon",
+      "transistor"
+    ],
+    "out": "integrated_circuit",
+    "why": "Kilby's 1958 chip put every component of a circuit — not just the transistors — onto one block of semiconductor, wired together instead of joined by hand. Noyce's silicon version, 1959, is what modern chips still follow.",
+    "src": "https://en.wikipedia.org/wiki/Integrated_circuit",
+    "verified": true
+  },
+  {
+    "in": [
+      "integrated_circuit",
+      "transistor"
+    ],
+    "out": "microprocessor",
+    "why": "Faggin's Intel 4004, 1971, packed 2,300 transistors onto one integrated circuit — instruction decoding, computation, result routing and register storage, an entire CPU's worth of components, all on the same chip.",
+    "src": "https://en.wikipedia.org/wiki/Intel_4004",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "iron"
+    ],
+    "out": "internal_combustion_engine",
+    "why": "Otto's engine, 1876, was the first to compress the fuel-air mixture — coal gas and air — inside an iron cylinder before igniting it, for far higher efficiency than any engine that just burned the mixture unpressurized.",
+    "src": "https://en.wikipedia.org/wiki/Four-stroke_engine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotton",
+      "internal_combustion_engine"
+    ],
+    "out": "airplane",
+    "why": "The Flyer's wings, cambered 1-in-20 to generate lift, were covered in cotton muslin; wing-warping twisted the tips to steer; a chain drive off their own 12-horsepower engine spun the propellers. Kitty Hawk, December 17 1903.",
+    "src": "https://en.wikipedia.org/wiki/Wright_Flyer",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "iron"
+    ],
+    "out": "typewriter",
+    "why": "Press a key and an iron typebar swings up, its letter molded in reverse on the striking head, and hits an inked ribbon against the paper on the platen, printing the letter right-reading. Sholes and Glidden, patented 1868.",
+    "src": "https://en.wikipedia.org/wiki/Typewriter",
+    "verified": true
   }
 ]
