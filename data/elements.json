@@ -14953,8 +14953,7 @@
       "wild"
     ],
     "fact": "Seeds are dust-fine with no food reserve of their own — almost every species needs a fungus just to germinate.",
-    "taxon": "tx_orchidaceae",
-    "terminal": true
+    "taxon": "tx_orchidaceae"
   },
   {
     "id": "giant_sequoia",
@@ -17399,5 +17398,225 @@
     "fact": "Its black-and-yellow pattern is a warning label for the neurotoxin it secretes from its skin.",
     "terminal": true,
     "taxon": "tx_salamandra"
+  },
+  {
+    "id": "stem",
+    "name": "Stem",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The plant's upright main axis — bears leaves and buds, and pipes water and food between root and leaf."
+  },
+  {
+    "id": "node",
+    "name": "Node",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The point on a stem where a leaf attaches; buds and branches start here too."
+  },
+  {
+    "id": "internode",
+    "name": "Internode",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The stretch of stem between two nodes — it elongates to space the leaves out."
+  },
+  {
+    "id": "terminal_bud",
+    "name": "Terminal Bud",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The bud at a stem's growing tip; its auxin keeps the buds below it suppressed.",
+    "terminal": true
+  },
+  {
+    "id": "axillary_bud",
+    "name": "Axillary Bud",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A dormant side-bud sitting in a leaf's axil, ready to become a new branch.",
+    "terminal": true
+  },
+  {
+    "id": "leaf_scar",
+    "name": "Leaf Scar",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The corky mark a fallen leaf leaves behind, right where it once attached.",
+    "terminal": true
+  },
+  {
+    "id": "lenticel",
+    "name": "Lenticel",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A loosely packed pore in bark that lets a woody stem's living tissue breathe."
+  },
+  {
+    "id": "root_cap",
+    "name": "Root Cap",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The tough cap of cells shielding a root's tip as it pushes through soil."
+  },
+  {
+    "id": "root_meristem",
+    "name": "Root Meristem",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A knot of ceaselessly dividing cells behind the root cap — source of every new root cell."
+  },
+  {
+    "id": "elongation_zone",
+    "name": "Elongation Zone",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Where new root cells stop dividing and stretch lengthwise, pushing the tip forward."
+  },
+  {
+    "id": "root_hair",
+    "name": "Root Hair",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A fine tubular outgrowth that multiplies a root's surface for soaking up water."
+  },
+  {
+    "id": "cotyledon",
+    "name": "Cotyledon",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "An embryonic seed-leaf, often the first green tissue to unfurl as a seed sprouts."
+  },
+  {
+    "id": "monocot",
+    "name": "Monocot",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A flowering plant that sprouts with one cotyledon — grasses, lilies, palms, orchids."
+  },
+  {
+    "id": "dicot",
+    "name": "Dicot",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A flowering plant that sprouts with two cotyledons — historically over half of species."
+  },
+  {
+    "id": "kapok",
+    "name": "Kapok",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Ceiba pentandra, the 'cotton tree' — a rainforest giant with huge plank buttress roots."
+  },
+  {
+    "id": "buttress_root",
+    "name": "Buttress Root",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Wide, thin plank roots that stop a tall, shallow-rooted rainforest tree toppling over."
+  },
+  {
+    "id": "brace_root",
+    "name": "Brace Root",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Adventitious roots from maize's above-ground stem nodes, arching down to prop it up."
+  },
+  {
+    "id": "ivy",
+    "name": "Ivy",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Hedera helix: an evergreen climber that grips trees and walls with clinging roots."
+  },
+  {
+    "id": "clinging_root",
+    "name": "Clinging Root",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A root that glues itself to a surface for grip, instead of drinking from the soil."
+  },
+  {
+    "id": "aerial_root",
+    "name": "Aerial Root",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A green, chlorophyll-bearing root some orchids hang in open air — no soil needed."
+  },
+  {
+    "id": "pneumatophore",
+    "name": "Pneumatophore",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "A mangrove's snorkel root, poking up out of waterlogged mud to pull in air."
   }
 ]

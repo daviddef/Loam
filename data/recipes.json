@@ -328,24 +328,6 @@
   },
   {
     "in": [
-      "root"
-    ],
-    "verb": "wait",
-    "out": "bulb",
-    "why": "A bulb is a bud wrapped in fat leaf bases — a whole plant packed with next season's food, sitting underground.",
-    "src": "https://en.wikipedia.org/wiki/Bulb"
-  },
-  {
-    "in": [
-      "root",
-      "soil"
-    ],
-    "out": "potato",
-    "why": "A potato is not a root. It is a swollen underground stem, storing starch for next year's shoots — which is why it has eyes.",
-    "src": "https://en.wikipedia.org/wiki/Tuber"
-  },
-  {
-    "in": [
       "bulb",
       "soil"
     ],
@@ -2369,16 +2351,6 @@
   },
   {
     "in": [
-      "root"
-    ],
-    "verb": "chill",
-    "out": "bulb",
-    "why": "Many bulbs need a cold spell before they will flower — vernalisation. Without a winter, they simply sit.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Bulb"
-  },
-  {
-    "in": [
       "flower",
       "leaf"
     ],
@@ -2476,16 +2448,6 @@
     "why": "Puddled mud seals the paddy floor so the water sits rather than draining. That standing water is the whole system.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Paddy_field"
-  },
-  {
-    "in": [
-      "root",
-      "straw"
-    ],
-    "out": "potato",
-    "why": "Earth up the stems with straw and the buried part makes more tubers. The potato grows in the dark, not in the soil's nutrients.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Tuber"
   },
   {
     "in": [
@@ -20824,5 +20786,253 @@
     "why": "Fire salamanders spend their days hidden in damp deciduous forest, tucked into fallen leaves or under wood and mossy trunks, emerging to hunt at night.",
     "src": "https://en.wikipedia.org/wiki/Fire_salamander",
     "verified": true
+  },
+  {
+    "in": [
+      "stem"
+    ],
+    "verb": "wait",
+    "out": "bulb",
+    "why": "A bulb is a bud wrapped in fat leaf bases — a whole plant packed with next season's food, sitting underground.",
+    "src": "https://en.wikipedia.org/wiki/Bulb"
+  },
+  {
+    "in": [
+      "stem",
+      "soil"
+    ],
+    "out": "potato",
+    "why": "A potato is not a root. It is a swollen underground stem, storing starch for next year's shoots — which is why it has eyes.",
+    "src": "https://en.wikipedia.org/wiki/Tuber"
+  },
+  {
+    "in": [
+      "stem"
+    ],
+    "verb": "chill",
+    "out": "bulb",
+    "why": "Many bulbs need a cold spell before they will flower — vernalisation. Without a winter, they simply sit.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Bulb"
+  },
+  {
+    "in": [
+      "stem",
+      "straw"
+    ],
+    "out": "potato",
+    "why": "Earth up the stems with straw and the buried part makes more tubers. The potato grows in the dark, not in the soil's nutrients.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tuber"
+  },
+  {
+    "in": [
+      "seedling",
+      "wind"
+    ],
+    "out": "stem",
+    "why": "Mechanical stress from wind suppresses a stem's internode elongation and thickens it instead — plants build a shorter, sturdier stem in direct response to being pushed around.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Thigmomorphogenesis"
+  },
+  {
+    "in": [
+      "stem",
+      "leaf"
+    ],
+    "out": "node",
+    "why": "A node is the point of attachment of a leaf on a stem — a small growth zone that can also produce buds, branches, or extra roots.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Plant_stem"
+  },
+  {
+    "in": [
+      "node",
+      "stem"
+    ],
+    "out": "internode",
+    "why": "An internode is the stretch of stem between two nodes. It elongates to space the leaves apart, while the compact node itself barely grows at all.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Plant_stem"
+  },
+  {
+    "in": [
+      "internode"
+    ],
+    "verb": "wait",
+    "out": "terminal_bud",
+    "why": "The bud capping a stem's growing tip, past its last internode. While active it produces auxin that suppresses the buds below — apical dominance — so removing it makes a plant branch instead of just growing taller.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Apical_dominance"
+  },
+  {
+    "in": [
+      "node"
+    ],
+    "verb": "wait",
+    "out": "axillary_bud",
+    "why": "An axillary bud sits in the axil where a leaf meets the stem, right at a node — dormant while the terminal bud dominates, but able to grow into a side branch.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Bud"
+  },
+  {
+    "in": [
+      "node"
+    ],
+    "verb": "cut",
+    "out": "leaf_scar",
+    "why": "Cut the leaf away and the abscission layer at the node seals over, leaving a corky leaf scar — the exact mark of where the leaf used to attach.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Leaf_scar"
+  },
+  {
+    "in": [
+      "stem",
+      "bark"
+    ],
+    "out": "lenticel",
+    "why": "As a stem thickens, bark replaces the smooth skin outside it — but that skin still needs to breathe, so lenticels form: loosely packed cork cells that let gases through.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Plant_stem"
+  },
+  {
+    "in": [
+      "root"
+    ],
+    "verb": "wait",
+    "out": "root_cap",
+    "why": "A growing root tip is shielded by its root cap — a layer of cells that takes the abrasion of pushing through soil and is constantly shed and replaced, helping the root penetrate.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Root"
+  },
+  {
+    "in": [
+      "root_cap"
+    ],
+    "verb": "wait",
+    "out": "root_meristem",
+    "why": "Just behind the root cap sits the apical meristem: a knot of ceaselessly dividing cells that produces every new cell the root will ever have.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Root"
+  },
+  {
+    "in": [
+      "root_meristem"
+    ],
+    "verb": "wait",
+    "out": "elongation_zone",
+    "why": "Cells born in the meristem stop dividing and stretch lengthwise in the elongation zone — that expansion, not more division, is what actually pushes the root tip forward.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Root"
+  },
+  {
+    "in": [
+      "elongation_zone"
+    ],
+    "verb": "wait",
+    "out": "root_hair",
+    "why": "Once a cell finishes elongating it matures, and in this zone many grow a root hair — a fine tubular outgrowth that multiplies the root's surface for taking up water and minerals.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Root"
+  },
+  {
+    "in": [
+      "sprout"
+    ],
+    "verb": "wait",
+    "out": "cotyledon",
+    "why": "As a seed sprouts, its embryonic seed-leaf — the cotyledon — is often the first green tissue to unfurl, still carrying the food reserve that fed germination.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cotyledon"
+  },
+  {
+    "in": [
+      "cotyledon",
+      "grass"
+    ],
+    "out": "monocot",
+    "why": "Grasses germinate with a single cotyledon — the one-seed-leaf trait that defines the monocots, a group that also includes lilies, orchids and palms.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Monocotyledon"
+  },
+  {
+    "in": [
+      "cotyledon",
+      "legume"
+    ],
+    "out": "dicot",
+    "why": "Legumes split open to show two fat cotyledons packed with stored food — the two-seed-leaf trait that defines the dicots, historically over half of flowering-plant species.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Dicotyledon"
+  },
+  {
+    "in": [
+      "humus",
+      "tree"
+    ],
+    "out": "kapok",
+    "why": "Ceiba pentandra grows wide plank buttresses instead of a deep taproot, spreading sideways through the thin, nutrient-rich humus layer of rainforest soil that a taproot would simply miss.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Buttress_root"
+  },
+  {
+    "in": [
+      "kapok",
+      "root"
+    ],
+    "out": "buttress_root",
+    "why": "Buttress roots are large, wide roots on all sides of a shallowly rooted tropical tree — support that substitutes for a deep taproot in thin, waterlogged rainforest soil.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Buttress_root"
+  },
+  {
+    "in": [
+      "node",
+      "maize"
+    ],
+    "out": "brace_root",
+    "why": "In maize, adventitious roots emerge from stem nodes above the ground and arch down into the soil — brace roots that physically prop up a tall, top-heavy stalk.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Brace_roots"
+  },
+  {
+    "in": [
+      "tree",
+      "vine"
+    ],
+    "out": "ivy",
+    "why": "English ivy climbs trees and walls by growing as a vine, gripping the surface with clinging roots along the shaded side of each shoot rather than rooting in soil there.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Hedera_helix"
+  },
+  {
+    "in": [
+      "ivy",
+      "root_hair"
+    ],
+    "out": "clinging_root",
+    "why": "Ivy's clinging roots are covered in root hairs that secrete an adhesive and reshape themselves around the surface — a permanent structural grip, not a nutrient-seeking one.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Aerial_root"
+  },
+  {
+    "in": [
+      "orchid",
+      "air"
+    ],
+    "out": "aerial_root",
+    "why": "Many epiphytic orchids grow with no soil at all: spongy, velamen-covered roots hang in open air, turn green with chlorophyll, and both catch rainwater and photosynthesize.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Aerial_root"
+  },
+  {
+    "in": [
+      "mangrove",
+      "lenticel"
+    ],
+    "out": "pneumatophore",
+    "why": "In waterlogged mud, some mangrove roots grow upward into pneumatophores studded with porous lenticels leading to spongy aerenchyma that carries oxygen down to the buried roots.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pneumatophore"
   }
 ]

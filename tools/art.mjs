@@ -4419,6 +4419,129 @@ def('taco', () => [                                            // the shell fold
   ...granules('bs', 8, 55, [14, 30, 46, 40]),
 ]);
 
+/* plant anatomy batch 1 — stem, external stem morphology, internal root-growth
+   zones, monocot/dicot, and named specialized roots. `root` already draws a
+   forking taproot and `rhizome` already draws a horizontal budded stem, so
+   this set is built to stay clear of both: `stem` is a bare vertical axis cut
+   open at the base, the stem-morphology items are all marks ON that axis, the
+   root-zone items are a single vertical root tip broken into its four real
+   bands, and the named roots each get the one silhouette that is actually
+   theirs (a flare, an arch, a hooked grip, a hanging cord). */
+def('stem', () => [                                            // the bare axis, cut open at the base
+  S('M30 6 L30 46', 'bs', 5),
+  E(30, 48, 9, 5, 'lo'),
+  C(30, 48, 3.4, 'hi'), C(27, 46, 1.6, 'ground'), C(33, 50, 1.6, 'ground'),
+  C(30, 6, 3, 'hi'),                                           // the growing tip
+]);
+def('node', () => [                                            // one ringed attachment point, one stub
+  S('M30 6 L30 54', 'bs', 4),
+  ring('lo', 30, 30, 5, 2.4),
+  P('M35 30 L48 24 L48 30 L35 33 Z', 'hi'),                    // the leaf stub it carries
+  C(41, 22, 2, 'gh'),                                          // the bud tucked in the angle
+]);
+def('internode', () => [                                       // the measured gap between two rings
+  S('M30 6 L30 54', 'bs', 4),
+  ring('lo', 30, 12, 4.5, 2), ring('lo', 30, 48, 4.5, 2),
+  S('M30 16 L30 44', 'hi', 6),                                 // the segment that actually elongates
+  S('M40 16 L40 44', 'gh', 1.2), S('M37 16 L43 16', 'gh', 1.2), S('M37 44 L43 44', 'gh', 1.2),
+]);
+def('terminal_bud', () => [                                    // the capped tip, past the last internode
+  S('M30 54 L30 30', 'lo', 4),
+  P('M30 30 Q20 26 20 14 Q20 4 30 4 Q40 4 40 14 Q40 26 30 30 Z', 'bs'),
+  P('M30 30 Q23 26 23 16 Q23 8 30 8 Z', 'hi'),                 // an overlapping scale
+]);
+def('axillary_bud', () => [                                    // small, dormant, in the leaf's angle
+  S('M30 54 L30 10', 'bs', 4),
+  leaf('hi', 30, 16, .9, -35),
+  E(24, 30, 4, 5.4, 'lo'),                                     // tucked right in the axil
+]);
+def('leaf_scar', () => [                                       // the stem alone — the leaf is already gone
+  S('M30 54 L30 6', 'bs', 4),
+  E(30, 28, 7, 5, 'lo'),
+  ...[[27, 26], [30, 30], [33, 26]].map(([x, y]) => C(x, y, 1.3, 'gh')),  // the bundle scars inside it
+]);
+def('lenticel', () => [                                        // bark's own texture, with pale breathing pores
+  P('M14 8 L46 8 L46 54 L14 54 Z', 'lo'),
+  ...[20, 27, 34, 41].map((y, i) => S(`M${16 + (i % 2) * 3} ${y * 1.1} Q30 ${y * 1.1 - 4} ${44 - (i % 2) * 3} ${y * 1.1}`, 'ik', 2)),
+  ...[[20, 18], [36, 26], [24, 38], [40, 46]].map(([x, y]) => E(x, y, 2.6, 1.4, 'hi')),
+]);
+def('root_cap', () => [                                        // the shielded tip, shedding cells as it goes
+  S('M30 4 L30 30', 'bs', 5),
+  P('M22 30 Q22 46 30 50 Q38 46 38 30 Z', 'hi'),
+  ...granules('gh', 6, 19, [20, 46, 40, 54]),                  // the slick of shed cap cells
+]);
+def('root_meristem', () => [                                   // a knot of small cells, all dividing at once
+  S('M30 4 L30 22', 'bs', 5),
+  C(30, 34, 13, 'lo'),
+  ...[[24, 28], [36, 28], [24, 40], [36, 40], [30, 34]].map(([x, y]) => C(x, y, 3.6, 'hi')),
+]);
+def('elongation_zone', () => [                                 // the same cells, now stretched not dividing
+  S('M30 4 L30 16', 'bs', 5),
+  ...[22, 30, 38].map(x => S(`M${x} 18 L${x} 50`, 'hi', 4)),
+  ...[[22, 34], [30, 26], [38, 42]].map(([x, y]) => S(`M${x} ${y} L${x} ${y + 10}`, 'lo', 1.2)),
+]);
+def('root_hair', () => [                                       // a root segment, bristling with fine hairs
+  S('M30 4 L30 54', 'bs', 5),
+  ...[16, 24, 34, 42].map((y, i) => [
+    S(`M30 ${y} L${18 - (i % 2) * 4} ${y - 4}`, 'gh', 1),
+    S(`M30 ${y} L${42 + (i % 2) * 4} ${y - 4}`, 'gh', 1),
+  ]).flat(),
+]);
+def('cotyledon', () => [                                       // the seed coat splitting, two seed-leaves up
+  P('M20 54 Q20 46 30 46 Q40 46 40 54 Z', 'lo'),
+  leaf('hi', 22, 34, .85, -25), leaf('hi', 38, 34, .85, 25),
+  S('M30 46 L30 38', 'bs', 2),
+]);
+def('monocot', () => [                                         // one blade, parallel veins start to finish
+  P('M30 54 Q22 36 30 6 Q38 36 30 54 Z', 'bs'),
+  ...[14, 20, 26, 34, 40].map(dy => S(`M${28 - dy * .06} ${52 - dy} L${28 - dy * .06} ${18 - dy * .3 < 8 ? 8 : 18 - dy * .3}`, 'hi', 1)),
+]);
+def('dicot', () => [                                           // one broad leaf, a branching net of veins
+  leaf('bs', 30, 30, 1.6),
+  S('M30 44 L30 16', 'lo', 1.6),
+  ...[[26, 30, -1], [34, 30, 1], [24, 22, -1], [36, 22, 1]].map(([x, y, s]) =>
+    S(`M30 ${y} L${x} ${y - s * 4}`, 'lo', 1)),
+  ...[[24, 44], [36, 44]].map(([x, y]) => leaf('hi', x, y, .5, x < 30 ? -40 : 40)),  // its two cotyledons, low down
+]);
+def('kapok', () => [                                            // a rainforest giant flared into plank roots
+  S('M30 40 L30 8', 'ik', 5),
+  E(28, 18, 15, 12, 'lo'), E(24, 14, 10, 8, 'bs'),
+  ...[-14, -6, 6, 14].map(dx => P(`M30 40 L${30 + dx} 40 L${30 + dx * 1.7} 54 L${30 + dx * .3} 54 Z`, 'hi')),
+]);
+def('buttress_root', () => [                                    // the flare alone, no canopy — thin plank wings
+  S('M30 14 L30 30', 'lo', 4),
+  ...[-18, -9, 9, 18].map(dx => P(`M30 30 L${30 + dx * .3} 30 L${30 + dx} 54 L${30 + dx * .6} 54 Z`, 'bs')),
+  ...[-18, 18].map(dx => S(`M30 30 L${30 + dx} 54`, 'ik', 1)),
+]);
+def('brace_root', () => [                                       // roots arching down FROM a node, well above soil
+  S('M30 54 L30 10', 'bs', 4),
+  ring('lo', 30, 26, 4.5, 2),
+  ...[-1, 1].map(s => S(`M30 26 Q${30 + s * 16} 30 ${30 + s * 20} 48`, 'hi', 2.6)),
+  horizon('ground', 50),
+]);
+def('ivy', () => [                                              // a vine spiralling up a straight support
+  S('M42 54 L42 6', 'ik', 3),                                   // the trunk it climbs
+  S('M14 54 Q14 40 26 38 Q38 36 26 26 Q14 18 26 8 Q34 2 42 10', 'bs', 2.6),
+  ...[[24, 34], [22, 20]].map(([x, y]) => leaf('hi', x, y, .55, -30)),
+  ...[[34, 30], [34, 14]].map(([x, y]) => C(x, y, 1.6, 'gh')),  // clinging roots touching the trunk
+]);
+def('clinging_root', () => [                                    // a shoot pressed flat, gripping a wall
+  P('M40 8 L46 8 L46 54 L40 54 Z', 'lo'),                        // the surface
+  S('M38 54 L38 8', 'bs', 3.4),
+  ...[14, 24, 34, 44].map(y => S(`M38 ${y} L44 ${y}`, 'hi', 2)),
+  ...[14, 24, 34, 44].map(y => C(44.5, y, 1.3, 'gh')),          // the adhesive pads at each grip
+]);
+def('aerial_root', () => [                                      // green, fleshy, dangling with nothing below
+  E(30, 10, 12, 6, 'plant-bs'),
+  ...[-10, -2, 6, 14].map((dx, i) => S(`M${30 + dx} 12 Q${34 + dx} 30 ${28 + dx * .6} ${48 - i}`, 'bs', 3.2)),
+  ...[[20, 26], [30, 34], [38, 40]].map(([x, y]) => C(x, y, 1.4, 'hi')),  // velamen fleck
+]);
+def('pneumatophore', () => [                                    // snorkels standing up out of the mud
+  wave('lo', 46, 4, 24),
+  ...[-14, -5, 5, 14].map(dx => S(`M${30 + dx} 50 L${30 + dx * .7} 14`, 'bs', 3)),
+  ...[-14, -5, 5, 14].map(dx => C(30 + dx * .7, 28, 1.4, 'gh')),  // the lenticels along each one
+]);
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],
