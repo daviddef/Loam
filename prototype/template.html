@@ -4121,11 +4121,19 @@ function spawnPlaceholder(text) {
  * periodic-table tile instead, since it IS the real thing, just reached by
  * a different door than the shelf. ("why cant i see a human can also be
  * made from these organs so i can add that path to the chart" — found live.) */
+// A bare outline read as "not drawn yet" — the same mistake the old
+// placeholder glyph deliberately avoids for an unresolved ingredient, made
+// again here by accident. Filled with the same lavender a compound pill
+// has used all along (bedTreeHTML's own .hex, still styled below for
+// showAtom's reference view), so a made-of hexagon reads as its own
+// considered shape, not an empty box. ("why do our made of not have any
+// images? you used to put so much attention to this?" — found live.)
 function compoGlyphHTML(bedId) {
   const a = atomById[bedId];
   if (a) return `<span class="art compoatom">${atomTile(a)}</span>`;
   return `<svg class="art compohex" viewBox="0 0 60 60" aria-hidden="true">` +
-    `<polygon points="30,4 53,17 53,43 30,56 7,43 7,17" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
+    `<polygon points="30,4 53,17 53,43 30,56 7,43 7,17" fill="#EFE6F5" stroke="#5B3E7A" stroke-width="2.5" stroke-linejoin="round"/>` +
+    `<circle cx="30" cy="30" r="8" fill="#5B3E7A" opacity=".25"/></svg>`;
 }
 function compoHTML(bedId) {
   const a = atomById[bedId], c = compById[bedId];
@@ -4226,6 +4234,13 @@ function placeComposition(id) {
   const already = boardAlready();
   const out = findBoardChip(id) || already.get(id) || spawn(id, null, null, null);
   already.set(id, out);
+  // A chip already folded (the normal state for anything placed via "Put on
+  // the bench" in Free Play) hides ALL its ancestors, including ones added
+  // just now — the data lands correctly but nothing shows for it, reading
+  // as a dead button. ("+chart not doing anything?" — found live: a Human
+  // chip already folded behind its own 34-chip crafted chain absorbed the
+  // 8 new organs invisibly, badge jumping 34→42 with nothing new on screen.)
+  out.classList.remove('folded');
   for (const bedId of comps) {
     const el = ensureCompoChild(bedId, [out], already);
     links.push({ a: el, b: null, out, fresh: true });
@@ -4261,8 +4276,10 @@ function placeRoute(id, idx) {
   };
   const parents = r.in.map(ensure);
   let out = findBoardChip(id) || already.get(id);
-  if (out) links.push({ a: parents[0], b: parents[1] ?? null, out, fresh: true });
-  else out = materialize(r, parents);
+  if (out) {
+    out.classList.remove('folded');   // see the matching note in placeComposition
+    links.push({ a: parents[0], b: parents[1] ?? null, out, fresh: true });
+  } else out = materialize(r, parents);
   benchTouched = true;
   refreshFolds();
   drawLinks();
@@ -4282,6 +4299,7 @@ function placeCompoNode(ownerId, bedId) {
   const already = boardAlready();
   const out = findBoardChip(ownerId) || already.get(ownerId) || spawn(ownerId, null, null, null);
   already.set(ownerId, out);
+  out.classList.remove('folded');   // see the matching note in placeComposition
   const el = ensureCompoChild(bedId, [out], already);
   links.push({ a: el, b: null, out, fresh: true });
   benchTouched = true;
