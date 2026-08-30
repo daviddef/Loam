@@ -19133,5 +19133,191 @@
     "terminal": true,
     "soleRoute": true,
     "fact": "Superconducting magnets steer two proton beams to near light speed, then crash them together."
+  },
+  {
+    "id": "wool_card",
+    "name": "Wool Card",
+    "emoji": "\ud83e\udeae",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A paddle set with fine wire teeth that combs locked wool fibres straight and parallel."
+  },
+  {
+    "id": "carded_wool",
+    "name": "Carded Wool",
+    "emoji": "\u2601\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Every fibre now runs the same direction, and the trapped bits of straw and dirt are gone."
+  },
+  {
+    "id": "felt",
+    "name": "Felt",
+    "emoji": "\ud83d\udfeb",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "No thread, no loom. Wet wool's own microscopic scales lock together under heat and rubbing."
+  },
+  {
+    "id": "spindle",
+    "name": "Spindle",
+    "emoji": "\ud83e\uddf5",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A weighted rod that twists loose fibre into thread as it spins in the hand or against the thigh."
+  },
+  {
+    "id": "spinning_wheel",
+    "name": "Spinning Wheel",
+    "emoji": "\ud83c\udfa1",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "The wheel drives the spindle instead of a hand doing it \u2014 over ten times faster."
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "emoji": "\ud83d\udd78\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A frame that holds the warp threads taut so the weft can be woven back and forth through them."
+  },
+  {
+    "id": "flying_shuttle",
+    "name": "Flying Shuttle",
+    "emoji": "\ud83c\udff9",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Kay's 1733 shuttle rode on wheels, so one weaver alone could work cloth twice as wide."
+  },
+  {
+    "id": "knitting_needles",
+    "name": "Knitting Needles",
+    "emoji": "\ud83e\udd62",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Two tapered rods: one holds the loops, the other draws a fresh loop through each one."
+  },
+  {
+    "id": "knitted_fabric",
+    "name": "Knitted Fabric",
+    "emoji": "\ud83e\udde6",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "One yarn meandering into interlocked loops \u2014 not two sets crossing at right angles like cloth."
+  },
+  {
+    "id": "indigo",
+    "name": "Indigo",
+    "emoji": "\ud83c\udf43",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "soleRoute": true,
+    "fact": "A shrub in the bean family, field-grown across the tropics for the blue dye locked in its leaves."
+  },
+  {
+    "id": "leuco_indigo",
+    "name": "Leuco-Indigo",
+    "emoji": "\ud83d\udfe1",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Indigo won't dissolve in water until fermentation turns it into this \u2014 pale yellow, not blue."
+  },
+  {
+    "id": "madder",
+    "name": "Madder",
+    "emoji": "\ud83c\udf3f",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "soleRoute": true,
+    "fact": "A root grown over a metre long on purpose \u2014 the whole point is the red dye packed inside it."
+  },
+  {
+    "id": "alizarin",
+    "name": "Alizarin",
+    "emoji": "\ud83d\udd34",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "The exact anthraquinone molecule inside madder root that's actually responsible for the red."
+  },
+  {
+    "id": "alum",
+    "name": "Alum",
+    "emoji": "\u26aa",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A double sulfate of aluminium \u2014 for centuries, the dye trade's single most common mordant."
+  },
+  {
+    "id": "rose_madder",
+    "name": "Rose Madder",
+    "emoji": "\ud83c\udf39",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Alizarin alone washes straight out. Bonded to alum, it becomes a dye that survives the wash."
+  },
+  {
+    "id": "dyed_cloth",
+    "name": "Dyed Cloth",
+    "emoji": "\ud83c\udfa8",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Colour bonded into the fibre itself, not sitting on top of it \u2014 the difference a mordant makes."
   }
 ]

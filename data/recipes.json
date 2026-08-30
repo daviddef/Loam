@@ -22444,5 +22444,205 @@
     "why": "Superconducting dipole magnets, cooled to 1.9 K, bend two beams of protons around a 27-kilometre ring and steer them into a head-on collision at nearly the speed of light — recreating energies not seen since a fraction of a second after the Big Bang.",
     "src": "https://en.wikipedia.org/wiki/Large_Hadron_Collider",
     "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "copper_wire"
+    ],
+    "out": "wool_card",
+    "why": "Hand cards are wooden paddles set with fine wire teeth that break up locked clumps of fibre and comb them straight and parallel to each other, ready to spin.",
+    "src": "https://en.wikipedia.org/wiki/Carding",
+    "verified": true
+  },
+  {
+    "in": [
+      "wool",
+      "wool_card"
+    ],
+    "out": "carded_wool",
+    "why": "A wool card's wire teeth disentangle, clean and intermix raw wool's fibres into a continuous web, aligning them and combing out the vegetable-matter contaminants still caught in the fleece.",
+    "src": "https://en.wikipedia.org/wiki/Carding",
+    "verified": true
+  },
+  {
+    "in": [
+      "carded_wool",
+      "water"
+    ],
+    "out": "felt",
+    "why": "Wool fibres are covered in microscopic scales; heat, moisture and agitation make those scales open and latch onto their neighbours, matting the fibres into felt without any spinning or weaving.",
+    "src": "https://en.wikipedia.org/wiki/Felt",
+    "verified": true
+  },
+  {
+    "in": [
+      "carded_wool"
+    ],
+    "verb": "crush",
+    "out": "thread",
+    "why": "Carding produces a continuous, aligned web of fibre suitable for spinning \u2014 the same drawing-and-twisting act that turns any prepared fibre into thread, just starting from fibres that already run one way.",
+    "src": "https://en.wikipedia.org/wiki/Carding",
+    "verified": true
+  },
+  {
+    "in": [
+      "silk"
+    ],
+    "verb": "crush",
+    "out": "thread",
+    "why": "Reeled silk filament is too fine and weak on its own \u2014 throwing cleans it, adds a twist and winds it onto bobbins, turning raw filament into thread strong enough to serve as warp or weft.",
+    "src": "https://en.wikipedia.org/wiki/Silk_throwing",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "clay"
+    ],
+    "out": "spindle",
+    "why": "A spindle twists fibre into yarn as it spins, and a whorl \u2014 a weight of wood, stone, clay or bone fixed partway down the shaft \u2014 keeps it spinning longer; whorls turn up in the archaeological record from 12,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Spindle_(textiles)",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "thread"
+    ],
+    "out": "spinning_wheel",
+    "why": "The first mechanised spinning mounted the spindle horizontally so it could be spun by a cord encircling a large, hand-turned wheel \u2014 the wheel driving the spindle instead of a hand doing it, more than ten times as fast as spinning by hand alone.",
+    "src": "https://en.wikipedia.org/wiki/Spinning_wheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "thread",
+      "stone"
+    ],
+    "out": "loom",
+    "why": "A loom's whole job is to hold warp threads under tension so weft threads can be woven through them; the earliest kind, the warp-weighted loom, may date to the Neolithic and used hanging stone or clay weights to do exactly that.",
+    "src": "https://en.wikipedia.org/wiki/Loom",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "wheel"
+    ],
+    "out": "flying_shuttle",
+    "why": "John Kay's 1733 flying shuttle ran along the loom on cords and pickers mounted on wheels, letting a single weaver throw it from side to side alone \u2014 roughly doubling weaving productivity and the width of cloth one person could weave.",
+    "src": "https://en.wikipedia.org/wiki/Flying_shuttle",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "bone"
+    ],
+    "out": "knitting_needles",
+    "why": "A knitting needle's shaft holds a fabric's live loops while its tapered end draws a fresh loop of yarn through each one; antique needles were carved from bone or ivory, and modern ones are typically wood, bamboo or steel.",
+    "src": "https://en.wikipedia.org/wiki/Knitting_needle",
+    "verified": true
+  },
+  {
+    "in": [
+      "thread",
+      "knitting_needles"
+    ],
+    "out": "knitted_fabric",
+    "why": "A pair of knitting needles interloops one meandering strand of thread into a row of connected loops, unlike weaving's straight, right-angled warp and weft \u2014 the oldest knitted finds are 11th-century cotton socks from Fustat, near Cairo.",
+    "src": "https://en.wikipedia.org/wiki/Knitting",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "herb"
+    ],
+    "out": "indigo",
+    "why": "Indigofera tinctoria is a shrub in the bean family, native from West Africa to Southeast Asia, grown as a field crop specifically for its leaves \u2014 one of the original plant sources of indigo dye.",
+    "src": "https://en.wikipedia.org/wiki/Indigofera_tinctoria",
+    "verified": true
+  },
+  {
+    "in": [
+      "indigo"
+    ],
+    "verb": "ferment",
+    "out": "leuco_indigo",
+    "why": "Fresh indigo leaves are soaked and pressed in a vat; fermentation hydrolyses the indican inside them, and after 12 to 15 hours the result is leucoindigo \u2014 a yellow compound that, unlike indigo itself, actually dissolves in water.",
+    "src": "https://en.wikipedia.org/wiki/Indigo_dye",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "soil"
+    ],
+    "out": "madder",
+    "why": "Rubia tinctorum is grown in soil for its roots, which run over a metre long and up to 12mm thick \u2014 the source of the red dyes known as rose madder and Turkey red.",
+    "src": "https://en.wikipedia.org/wiki/Rubia_tinctorum",
+    "verified": true
+  },
+  {
+    "in": [
+      "madder"
+    ],
+    "verb": "crush",
+    "out": "alizarin",
+    "why": "Crushing the dried madder root releases alizarin, an anthraquinone-group pigment and the actual chemical compound behind the root's red colour.",
+    "src": "https://en.wikipedia.org/wiki/Rubia_tinctorum",
+    "supported": true
+  },
+  {
+    "in": [
+      "bauxite",
+      "sulfuric_acid"
+    ],
+    "out": "alum",
+    "why": "Aluminium sulfate, the base of alum, is obtained by treating minerals like bauxite with sulfuric acid \u2014 and alum itself was the most common mordant used by the dye industry, especially in the Islamic world, in the Middle Ages.",
+    "src": "https://en.wikipedia.org/wiki/Alum",
+    "verified": true
+  },
+  {
+    "in": [
+      "alizarin",
+      "alum"
+    ],
+    "out": "rose_madder",
+    "why": "A mordant like alum forms a coordination complex with a dye molecule, and that complex \u2014 not the loose dye alone \u2014 is what attaches permanently to the fibre; alizarin bound to alum this way is the pigment historically called rose madder.",
+    "src": "https://en.wikipedia.org/wiki/Mordant",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "rose_madder"
+    ],
+    "out": "dyed_cloth",
+    "why": "Rose madder is alizarin already bonded to its mordant, so working it into cloth bonds the dye straight to the fibre instead of leaving it to wash back out later.",
+    "src": "https://en.wikipedia.org/wiki/Mordant",
+    "supported": true
+  },
+  {
+    "in": [
+      "cloth",
+      "leuco_indigo"
+    ],
+    "out": "dyed_cloth",
+    "why": "Leucoindigo soaks into cloth's fibres while still dissolved, and the moment the dyed cloth is pulled out into the air it reoxidises back into insoluble blue indigo, trapped in the fibre for good.",
+    "src": "https://en.wikipedia.org/wiki/Indigo_dye",
+    "verified": true
+  },
+  {
+    "in": [
+      "dyed_cloth"
+    ],
+    "verb": "cut",
+    "out": "clothing",
+    "why": "Piece dyeing colours the woven fabric itself, and garment dyeing waits until after cutting and sewing \u2014 either way, dyed cloth gets cut and stitched into clothing exactly like plain cloth does.",
+    "src": "https://en.wikipedia.org/wiki/Dyeing",
+    "verified": true
   }
 ]
