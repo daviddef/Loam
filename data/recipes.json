@@ -17284,5 +17284,65 @@
     "why": "Native to the Red Sea and the Indian Ocean's coral reefs, it was first recorded in the Mediterranean off Israel in 1991 after entering through the human-built Suez Canal, armed with 13 long, venomous dorsal spines that have caused human deaths.",
     "src": "https://en.wikipedia.org/wiki/Pterois_miles",
     "verified": true
+  },
+  {
+    "in": [
+      "meat",
+      "tree"
+    ],
+    "out": "proailurus",
+    "why": "A cat-sized carnivore, proportioned like a civet and at least partly a tree-climber, ranging the treed valleys and flatlands of Eurasia. Most studies place it as the basal member of the whole cat family, and a likely ancestor of Pseudaelurus.",
+    "src": "https://en.wikipedia.org/wiki/Proailurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "proailurus"
+    ],
+    "verb": "wait",
+    "out": "pseudaelurus",
+    "why": "Grew from cat-sized to about 5 feet as the animals it hunted grew bigger, spreading through Europe, Asia and North America over the Miocene. Fossils show it shared its bone structure with modern cats, and it is considered ancestral to essentially every cat alive today.",
+    "src": "https://en.wikipedia.org/wiki/Pseudaelurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "pseudaelurus"
+    ],
+    "verb": "chill",
+    "out": "homotherium",
+    "why": "A genuine side branch, not a step toward the tiger: Machairodontinae, the sabertooth-cat subfamily, is the earliest-diverging branch of the whole cat family and DNA shows it isn't closely related to any living cat. Homotherium ranged across Eurasia, Africa and North America — a mummified cub recovered from Siberian permafrost still had its wide, rounded paws built for snow.",
+    "src": "https://en.wikipedia.org/wiki/Homotherium",
+    "verified": true
+  },
+  {
+    "in": [
+      "pseudaelurus"
+    ],
+    "verb": "wait",
+    "out": "panthera_zdanskyi",
+    "why": "The lineage that led to today's big cats: Pantherinae split from the rest of the cat family in the Miocene. Panthera zdanskyi's skull, unearthed in Gansu, China and dated to about 2.5 million years ago, is the oldest complete pantherine skull ever found — its describers named it the 'Longdan tiger' for how closely it resembles a modern tiger's, though later studies argue it may be the same species as the slightly older Panthera palaeosinensis.",
+    "src": "https://en.wikipedia.org/wiki/Panthera_zdanskyi",
+    "verified": true
+  },
+  {
+    "in": [
+      "panthera_zdanskyi"
+    ],
+    "verb": "wait",
+    "out": "tiger",
+    "why": "The modern tiger, Panthera tigris. The earliest fossils attributed to the species itself are jaw fragments from Lantian, China, dated to the early Pleistocene — not long after Panthera zdanskyi's own skull, the closest fossil match yet found to how the tiger's distinctive look began.",
+    "src": "https://en.wikipedia.org/wiki/Tiger",
+    "verified": true
+  },
+  {
+    "in": [
+      "tiger"
+    ],
+    "verb": "wait",
+    "out": "javan_tiger",
+    "why": "Not an ancestor of the modern tiger, but a subspecies of it: tigers colonised the Sunda Islands over a land bridge during the last glacial period, and rising seas then isolated Java's population from the mainland's. Since a 2017 revision it's classified as the same subspecies as the Sumatran and Bali tigers, P. t. sondaica. The last confirmed sighting was in 1976; it was declared extinct in 2008.",
+    "src": "https://en.wikipedia.org/wiki/Javan_tiger",
+    "verified": true
   }
 ]

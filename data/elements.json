@@ -3042,7 +3042,7 @@
     ],
     "fact": "The most social cat there is — it lives in family groups where other big cats hunt alone.",
     "terminal": true,
-    "taxon": "tx_carnivora"
+    "taxon": "tx_panthera"
   },
   {
     "id": "zebra",
@@ -13729,5 +13729,79 @@
     "fact": "Its banded spines carry a real venom, and since slipping through the Suez Canal in 1991 it has spread across the Mediterranean.",
     "terminal": true,
     "taxon": "tx_perciformes"
+  },
+  {
+    "id": "proailurus",
+    "name": "Proailurus",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "About the size of a house cat and at least partly a tree-climber — most studies place it as the basal member of the whole cat family, and a likely ancestor of every cat alive today.",
+    "taxon": "tx_felidae"
+  },
+  {
+    "id": "pseudaelurus",
+    "name": "Pseudaelurus",
+    "emoji": "🐈‍⬛",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Grew from cat-sized to about 5 feet as the animals it hunted grew bigger — the last common ancestor before the cat family split into today's small cats, today's big cats, and the extinct sabertooths.",
+    "taxon": "tx_felidae"
+  },
+  {
+    "id": "homotherium",
+    "name": "Homotherium",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A sabertooth, not a big cat — its subfamily split off from the rest of the cat family before the ancestors of any living species did, and it left no descendants among them.",
+    "terminal": true,
+    "taxon": "tx_machairodontinae"
+  },
+  {
+    "id": "panthera_zdanskyi",
+    "name": "Panthera zdanskyi",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its 2.5-million-year-old skull, dug up in Gansu, China, is the oldest complete pantherine skull ever found — and closely resembles a modern tiger's.",
+    "taxon": "tx_panthera"
+  },
+  {
+    "id": "tiger",
+    "name": "Tiger",
+    "emoji": "🐯",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Popularly billed as the biggest cat alive — true of the largest individuals, though average size trades places with the lion depending which subspecies you compare. No two tigers share the same stripe pattern.",
+    "taxon": "tx_panthera"
+  },
+  {
+    "id": "javan_tiger",
+    "name": "Javan Tiger",
+    "emoji": "🐅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A tiger population isolated on Java when rising seas cut its land bridge to the mainland. Declared extinct in 2008 — the last confirmed sighting was in 1976.",
+    "terminal": true,
+    "taxon": "tx_panthera"
   }
 ]

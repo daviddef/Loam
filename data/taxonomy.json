@@ -5,7 +5,10 @@
     "phylum",
     "subphylum",
     "class",
-    "order"
+    "order",
+    "family",
+    "subfamily",
+    "genus"
   ],
   "groups": [
     {
@@ -529,6 +532,42 @@
       "fact": "Once defined so broadly it held around 41% of all bony fish species, until molecular studies split most of that apart. What's left has since absorbed the former orders Scorpaeniformes and Gasterosteiformes, so groupers, lionfish and stonefish now classify here too, alongside perches and basses.",
       "srcTitle": "Perciformes",
       "src": "https://en.wikipedia.org/wiki/Perciformes"
+    },
+    {
+      "id": "tx_felidae",
+      "rank": "family",
+      "parent": "tx_carnivora",
+      "name": "Felidae",
+      "fact": "Retractile claws and carnassial teeth built for tearing and cutting flesh — every one of the 41 living species is an obligate carnivore, meat is not optional.",
+      "srcTitle": "Felidae",
+      "src": "https://en.wikipedia.org/wiki/Felidae"
+    },
+    {
+      "id": "tx_pantherinae",
+      "rank": "subfamily",
+      "parent": "tx_felidae",
+      "name": "Pantherinae",
+      "fact": "The 'big cat' subfamily — five Panthera species plus the two clouded leopards — split from the rest of Felidae in the Miocene, roughly 6 to 10 million years ago.",
+      "srcTitle": "Pantherinae",
+      "src": "https://en.wikipedia.org/wiki/Pantherinae"
+    },
+    {
+      "id": "tx_machairodontinae",
+      "rank": "subfamily",
+      "parent": "tx_felidae",
+      "name": "Machairodontinae",
+      "fact": "The sabertooth cats — elongated upper canines, the earliest-diverging branch of the whole cat family, and gone since the end-Pleistocene extinction with no living descendants.",
+      "srcTitle": "Machairodontinae",
+      "src": "https://en.wikipedia.org/wiki/Machairodontinae"
+    },
+    {
+      "id": "tx_panthera",
+      "rank": "genus",
+      "parent": "tx_pantherinae",
+      "name": "Panthera",
+      "fact": "Tiger, lion, jaguar, leopard and snow leopard — unified by an incompletely ossified hyoid bone and an elastic-padded larynx that lets every member roar, except the snow leopard.",
+      "srcTitle": "Panthera",
+      "src": "https://en.wikipedia.org/wiki/Panthera"
     }
   ]
 }
