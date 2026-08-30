@@ -13603,5 +13603,131 @@
     "fact": "A coral-eating starfish with up to 21 venomous arms — one can strip 6 square metres of reef a year.",
     "taxon": "tx_asteroidea",
     "terminal": true
+  },
+  {
+    "id": "whale_shark",
+    "name": "Whale Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest fish alive, yet a filter feeder — it even eats clouds of egg and sperm from mass coral spawning.",
+    "terminal": true,
+    "taxon": "tx_orectolobiformes"
+  },
+  {
+    "id": "zebra_shark",
+    "name": "Zebra Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Born striped like its namesake, then grows into a pattern of leopard-like spots as an adult.",
+    "terminal": true,
+    "taxon": "tx_orectolobiformes"
+  },
+  {
+    "id": "nurse_shark",
+    "name": "Nurse Shark",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Hunts muddy, sandy seafloors by night, using suction strong enough to pull prey from reef crevices.",
+    "terminal": true,
+    "taxon": "tx_orectolobiformes"
+  },
+  {
+    "id": "anglerfish",
+    "name": "Anglerfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "In the deep sea's permanent dark, it dangles a glowing lure grown from its own fin, lit by colonies of bacteria.",
+    "terminal": true,
+    "taxon": "tx_lophiiformes"
+  },
+  {
+    "id": "pink_frogmouth",
+    "name": "Pink Frogmouth",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A rosy, loose-skinned 'sea toad' that sits on the continental shelf, sometimes half a kilometre down, waiting for prey.",
+    "terminal": true,
+    "taxon": "tx_lophiiformes"
+  },
+  {
+    "id": "psychedelic_frogfish",
+    "name": "Psychedelic Frogfish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "No two share the same swirling pink pattern, and instead of swimming, it walks the seafloor on its fins.",
+    "terminal": true,
+    "taxon": "tx_lophiiformes"
+  },
+  {
+    "id": "giant_grouper",
+    "name": "Giant Grouper",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest bony fish on the reef, big enough to swallow juvenile sea turtles and small sharks whole.",
+    "terminal": true,
+    "taxon": "tx_perciformes"
+  },
+  {
+    "id": "stonefish",
+    "name": "Stonefish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Camouflaged as a lump of encrusted rock on the seabed, it carries the most potent venom of any fish alive.",
+    "terminal": true,
+    "taxon": "tx_perciformes"
+  },
+  {
+    "id": "common_lionfish",
+    "name": "Common Lionfish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Its banded spines carry a real venom, and since slipping through the Suez Canal in 1991 it has spread across the Mediterranean.",
+    "terminal": true,
+    "taxon": "tx_perciformes"
   }
 ]

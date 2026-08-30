@@ -580,6 +580,15 @@
       "ids": [
         "box_jellyfish"
       ]
+    },
+    "venomous_fish_sting": {
+      "label": "A real venom, and a real treatment for it",
+      "note": "Stonefish carry the most potent venom of any fish known — stings have caused documented deaths in Australia and Japan, and stonefish antivenom is the second most-administered antivenom in Australia. Lionfish deliver a milder but genuine venom through long dorsal spines; it rarely kills a healthy adult but has killed young children, the elderly, and people allergic to it. For both, hot water above 45°C denatures the venom and is the standard field first aid, alongside proper medical care.",
+      "severity": "acute",
+      "ids": [
+        "stonefish",
+        "common_lionfish"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

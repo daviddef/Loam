@@ -502,6 +502,33 @@
       "fact": "Starfish — about 1,900 species, moving on a hydraulic water-vascular system of fluid-filled canals, and many able to regrow an entire lost arm.",
       "srcTitle": "Asteroidea",
       "src": "https://en.wikipedia.org/wiki/Starfish"
+    },
+    {
+      "id": "tx_orectolobiformes",
+      "rank": "order",
+      "parent": "tx_chondrichthyes",
+      "name": "Orectolobiformes",
+      "fact": "Carpet sharks — around 43 species in 7 families, with a small mouth that never extends past the eyes and, in most species, a pair of sensory barbels beside the nostrils. Bottom-dwelling nurse and wobbegong sharks belong here, and so does the whale shark, the largest fish alive.",
+      "srcTitle": "Orectolobiformes",
+      "src": "https://en.wikipedia.org/wiki/Carpet_shark"
+    },
+    {
+      "id": "tx_lophiiformes",
+      "rank": "order",
+      "parent": "tx_actinopterygii",
+      "name": "Lophiiformes",
+      "fact": "Anglerfishes — about 13 families united by the illicium, a modified fin ray tipped with a lure called the esca that draws prey close. In deep-sea species the esca glows, lit by colonies of symbiotic bioluminescent bacteria.",
+      "srcTitle": "Lophiiformes",
+      "src": "https://en.wikipedia.org/wiki/Anglerfish"
+    },
+    {
+      "id": "tx_perciformes",
+      "rank": "order",
+      "parent": "tx_actinopterygii",
+      "name": "Perciformes",
+      "fact": "Once defined so broadly it held around 41% of all bony fish species, until molecular studies split most of that apart. What's left has since absorbed the former orders Scorpaeniformes and Gasterosteiformes, so groupers, lionfish and stonefish now classify here too, alongside perches and basses.",
+      "srcTitle": "Perciformes",
+      "src": "https://en.wikipedia.org/wiki/Perciformes"
     }
   ]
 }
