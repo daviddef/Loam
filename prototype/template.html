@@ -2940,7 +2940,7 @@ function expandUp(chip) {
       benchTouched = true;
       refreshFolds();
       drawLinks();
-      tidy();
+      runTidy();
       sfx.pick();
       return;
     }
@@ -2977,7 +2977,7 @@ function expandUp(chip) {
   benchTouched = true;
   refreshFolds();
   drawLinks();
-  tidy();
+  runTidy();
   sfx.pick();
 }
 
@@ -3183,6 +3183,16 @@ function fitAll({ min = 0.06, max = 1.4 } = {}) {
   view.y = b.height / 2 - ((y1 + y2) / 2) * view.k;
   applyView();
 }
+// Which layout the player last asked for explicitly — Tidy or Circle Tidy —
+// so that adding a new chip (expanding a chip's ancestors, placing a
+// composition part, scanning a product) re-applies THAT one instead of
+// always silently falling back to plain tidy(). Before this, ringing a hub
+// and then revealing one more thing behind it threw the ring away with no
+// way to get it back short of clicking Circle Tidy again by hand. ("why is
+// this not tidying in a ring when i add them?" — found live: circleTidy()
+// itself rings correctly, the ring just never survived the next chip.)
+let tidyMode = 'tidy';
+function runTidy() { (tidyMode === 'circle' ? circleTidy : tidy)(); }
 // Tidy: lay the whole bench out as the diagram it already is — sources at the
 // top, each result on the row below its parents. Nothing is removed; this is
 // arrangement, not cleanup.
@@ -3667,7 +3677,7 @@ function toggleConsolidate() {
   if (prefs.consolidate) {
     pushUndo('joining up the duplicates');
     const n = consolidateBench();
-    if (n) { tidy(); toast(n === 1 ? 'One duplicate joined up' : `${n} duplicates joined up`); }
+    if (n) { runTidy(); toast(n === 1 ? 'One duplicate joined up' : `${n} duplicates joined up`); }
     else toast('One card per thing — on');
   } else {
     toast('One card per thing — off');
@@ -3685,8 +3695,8 @@ document.getElementById('zoom').addEventListener('click', ev => {
   if (z === 'in') zoomBy(1.25);
   else if (z === 'out') zoomBy(0.8);
   else if (z === 'fit') fitAll();
-  else if (z === 'tidy') tidy();
-  else if (z === 'circle') circleTidy();
+  else if (z === 'tidy') { tidyMode = 'tidy'; tidy(); }
+  else if (z === 'circle') { tidyMode = 'circle'; circleTidy(); }
   else if (z === 'motes') {
     prefs.motes = !(prefs.motes !== false);
     savePrefs(); drawLinks(); syncMotesBtn();
@@ -4179,7 +4189,7 @@ function expandCompo(ghost) {
   benchTouched = true;
   refreshFolds();
   drawLinks();
-  tidy();
+  runTidy();
   sfx.pick();
 }
 // The card's own "+ Chart" button on a "Made of" row — puts what a thing is
@@ -4201,7 +4211,7 @@ function placeComposition(id) {
   benchTouched = true;
   refreshFolds();
   drawLinks();
-  tidy();
+  runTidy();
   sfx.pick();
   save();
   // tidy() can move `out` well outside the current view on a busy board —
@@ -4234,7 +4244,7 @@ function placeRoute(id, idx) {
   benchTouched = true;
   refreshFolds();
   drawLinks();
-  tidy();
+  runTidy();
   sfx.pick();
   save();
   ensureVisible(out);
@@ -4255,7 +4265,7 @@ function placeCompoNode(ownerId, bedId) {
   benchTouched = true;
   refreshFolds();
   drawLinks();
-  tidy();
+  runTidy();
   sfx.pick();
   save();
   ensureVisible(el);
@@ -4429,7 +4439,7 @@ function placeScanned(scannedProducts) {
     totalBlank += blank.length;
   }
   drawLinks();
-  tidy();
+  runTidy();
   toast(totalPlaced || totalBlank
     ? `${totalPlaced} placed${totalBlank ? `, ${totalBlank} not in this world yet` : ''} around ${scannedProducts.length === 1 ? 'the product' : scannedProducts.length + ' products'}`
     : 'Nothing on these labels resolved yet');
@@ -6558,7 +6568,7 @@ function showLabelReader(prefill = '', scannedProducts = null) {
       benchTouched = true;
       const made = parsed.filter(p => p.kind === 'found' || p.kind === 'near');
       for (const p of made) placeItem(p.id);
-      tidy();
+      runTidy();
       toast(made.length === 1 ? `${nameOf(byId[made[0].id])} is on the bench`
                               : `${made.length} of them are on the bench`);
     };
