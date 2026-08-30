@@ -8072,6 +8072,80 @@ function smokeTest() {
 window.smokeTest = smokeTest;
 
 /**
+ * Regression test.
+ *
+ * selfTest() and smokeTest() above check that nothing is broken in general.
+ * This checks specific things stay true — real assertions with expected
+ * answers, not just "didn't throw" — for the graph-logic bugs this session
+ * actually found and fixed, so a later change that reopens one of them fails
+ * loud instead of waiting to be caught live again.
+ *
+ *     regressionTest()
+ *
+ * Bench-neutral like the other two: builds its own scratch state and puts
+ * everything back before returning.
+ */
+function regressionTest() {
+  const checks = [];
+  const check = (label, pass) => checks.push({ label, pass: !!pass });
+
+  // decayImpact: a real reachability-diff, not a flood-fill. DNA sits
+  // upstream of a long, single-route chain to human — every one of those
+  // links should break. ("take away the dna and the human cannot exist" —
+  // this is the literal claim the mechanic exists to demonstrate.)
+  const dna = decayImpact('dna');
+  check('decay: removing dna breaks human', dna.broken.has('human'));
+  check('decay: removing dna breaks the whole zygote->fetus chain',
+    ['zygote', 'embryo', 'fetus'].every(x => dna.broken.has(x)));
+
+  // Real redundancy must be honoured: acacia is only ONE of giraffe's two
+  // true routes in (the other is meadow+tree), so removing it should
+  // starve giraffe, never break it outright. Getting this wrong would mean
+  // the mechanic can't tell a genuine bottleneck from ordinary redundancy —
+  // the entire point of doing a diff instead of a flood-fill.
+  const acacia = decayImpact('acacia');
+  check('decay: removing acacia starves giraffe (real redundancy survives)',
+    acacia.starved.has('giraffe') && !acacia.broken.has('giraffe'));
+  check('decay: removing acacia does not touch an unrelated starter',
+    !acacia.broken.has('water') && !acacia.starved.has('water'));
+
+  // tidy()'s satellite-shift collision fix: this exact graph shape (a short,
+  // deep chain reaching an existing card that already anchors a separate,
+  // wider structure) is precisely what landed two cards on the same pixel
+  // before the fix — see BACKLOG "tidy()'s satellite-pack shift...".
+  const before = new Set([...world.querySelectorAll('.chip.board')].map(c => c.dataset.id));
+  const held = new Set(found);
+  const consolidate0 = prefs.consolidate;
+  prefs.consolidate = true;
+  buildChain('giraffe');
+  found.add('meadow'); found.add('tree');
+  ['stone', 'seed', 'water', 'sun', 'sprout', 'seedling', 'sand', 'acacia', 'giraffe']
+    .forEach(id => found.add(id));
+  placeRoute('giraffe', 0);
+  tidy();
+  const cards = [...world.querySelectorAll('.chip.board')].filter(c => !before.has(c.dataset.id));
+  const [cw, ch] = cardSize();
+  const at = cards.map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
+  let overlaps = 0;
+  for (let i = 0; i < at.length; i++)
+    for (let j = i + 1; j < at.length; j++)
+      if (Math.abs(at[i][0] - at[j][0]) < cw && Math.abs(at[i][1] - at[j][1]) < ch) overlaps++;
+  check('tidy(): the giraffe/acacia satellite case lays out with zero overlaps', overlaps === 0);
+
+  cards.forEach(c => c.remove());
+  prefs.consolidate = consolidate0;
+  found.clear(); held.forEach(id => found.add(id));
+  renderShelf();
+  drawLinks();
+
+  const failed = checks.filter(c => !c.pass);
+  const result = { total: checks.length, failed: failed.length, failedLabels: failed.map(c => c.label), pass: !failed.length };
+  console.log(result.pass ? '✓ regressions ok' : '✗ regression broken', result);
+  return result;
+}
+window.regressionTest = regressionTest;
+
+/**
  * The opening cue.
  *
  * The old version was a dialog with a Start button, which is the standard move
