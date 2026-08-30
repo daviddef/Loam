@@ -385,6 +385,123 @@
       "fact": "Stingrays and their relatives — eagle rays, cownose rays and manta rays among them. Most carry one or more venomous barbed spines at the base of the tail; the mantas are the exception, having lost the spine entirely.",
       "srcTitle": "Myliobatiformes",
       "src": "https://en.wikipedia.org/wiki/Myliobatiformes"
+    },
+    {
+      "id": "tx_octopoda",
+      "rank": "order",
+      "parent": "tx_cephalopoda",
+      "name": "Octopoda",
+      "fact": "About 300 species, all eight-armed and, since their coleoid ancestors internalised it, entirely without a shell — internal or external.",
+      "srcTitle": "Octopus",
+      "src": "https://en.wikipedia.org/wiki/Octopus"
+    },
+    {
+      "id": "tx_vampyromorphida",
+      "rank": "order",
+      "parent": "tx_cephalopoda",
+      "name": "Vampyromorphida",
+      "fact": "A single living species, Vampyroteuthis infernalis. Molecular studies place it as the sister group to octopuses, diverging before true squid and octopuses split.",
+      "srcTitle": "Vampyromorphida",
+      "src": "https://en.wikipedia.org/wiki/Vampyromorphida"
+    },
+    {
+      "id": "tx_oegopsida",
+      "rank": "order",
+      "parent": "tx_cephalopoda",
+      "name": "Oegopsida",
+      "fact": "Open-eyed squid — the eye has no corneal covering at all. One of several orders 'Teuthida' used to lump together before that grouping was abandoned; giant squid belongs here.",
+      "srcTitle": "Oegopsida",
+      "src": "https://en.wikipedia.org/wiki/Oegopsida"
+    },
+    {
+      "id": "tx_nautilida",
+      "rank": "order",
+      "parent": "tx_cephalopoda",
+      "name": "Nautilida",
+      "fact": "A once-diverse order reduced to a single family today, Nautilidae — the only living cephalopods that still carry an external shell.",
+      "srcTitle": "Nautilida",
+      "src": "https://en.wikipedia.org/wiki/Nautilida"
+    },
+    {
+      "id": "tx_anthozoa",
+      "rank": "subphylum",
+      "parent": "tx_cnidaria",
+      "name": "Anthozoa",
+      "fact": "Corals, sea anemones and their relatives — every one of them spends its whole life as a polyp. No cnidarian in this group ever has a free-swimming medusa stage.",
+      "srcTitle": "Anthozoa",
+      "src": "https://en.wikipedia.org/wiki/Anthozoa"
+    },
+    {
+      "id": "tx_hexacorallia",
+      "rank": "class",
+      "parent": "tx_anthozoa",
+      "name": "Hexacorallia",
+      "fact": "Anthozoans built on six-fold symmetry — stony reef-building corals and sea anemones both belong here, against the eight-fold symmetry of the soft corals in Octocorallia.",
+      "srcTitle": "Hexacorallia",
+      "src": "https://en.wikipedia.org/wiki/Hexacorallia"
+    },
+    {
+      "id": "tx_actiniaria",
+      "rank": "order",
+      "parent": "tx_hexacorallia",
+      "name": "Actiniaria",
+      "fact": "True sea anemones — solitary polyps with no skeleton at all, holding their shape with a hydrostatic skeleton of fluid instead.",
+      "srcTitle": "Actiniaria",
+      "src": "https://en.wikipedia.org/wiki/Sea_anemone"
+    },
+    {
+      "id": "tx_medusozoa",
+      "rank": "subphylum",
+      "parent": "tx_cnidaria",
+      "name": "Medusozoa",
+      "fact": "Cnidarians whose life cycle includes a free-swimming medusa stage — the bell-and-tentacles body plan most people picture when they hear 'jellyfish'.",
+      "srcTitle": "Medusozoa",
+      "src": "https://en.wikipedia.org/wiki/Medusozoa"
+    },
+    {
+      "id": "tx_scyphozoa",
+      "rank": "class",
+      "parent": "tx_medusozoa",
+      "name": "Scyphozoa",
+      "fact": "The 'true' jellyfish. A single sessile polyp buds off a stack of young medusae, one at a time, in a process called strobilation.",
+      "srcTitle": "Scyphozoa",
+      "src": "https://en.wikipedia.org/wiki/Scyphozoa"
+    },
+    {
+      "id": "tx_cubozoa",
+      "rank": "class",
+      "parent": "tx_medusozoa",
+      "name": "Cubozoa",
+      "fact": "Box jellyfish were classed as an order of Scyphozoa until 1973, when their own life cycle and their true, lensed eyes earned them a class of their own.",
+      "srcTitle": "Cubozoa",
+      "src": "https://en.wikipedia.org/wiki/Box_jellyfish"
+    },
+    {
+      "id": "tx_hydrozoa",
+      "rank": "class",
+      "parent": "tx_medusozoa",
+      "name": "Hydrozoa",
+      "fact": "The most varied cnidarian class — solitary hydroids and colonial siphonophores both belong here, most alternating between a polyp stage and a medusa stage.",
+      "srcTitle": "Hydrozoa",
+      "src": "https://en.wikipedia.org/wiki/Hydrozoa"
+    },
+    {
+      "id": "tx_siphonophorae",
+      "rank": "order",
+      "parent": "tx_hydrozoa",
+      "name": "Siphonophorae",
+      "fact": "Colonies built from specialised zooids that bud from one fertilised egg and stay fused — no single member could survive alone, but the colony functions as one animal.",
+      "srcTitle": "Siphonophore",
+      "src": "https://en.wikipedia.org/wiki/Siphonophore"
+    },
+    {
+      "id": "tx_asteroidea",
+      "rank": "class",
+      "parent": "tx_echinodermata",
+      "name": "Asteroidea",
+      "fact": "Starfish — about 1,900 species, moving on a hydraulic water-vascular system of fluid-filled canals, and many able to regrow an entire lost arm.",
+      "srcTitle": "Asteroidea",
+      "src": "https://en.wikipedia.org/wiki/Starfish"
     }
   ]
 }

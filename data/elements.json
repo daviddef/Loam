@@ -13465,5 +13465,143 @@
     "fact": "Schools hundreds strong near seamounts by day — most hammerheads hunt alone.",
     "terminal": true,
     "taxon": "tx_carcharhiniformes"
+  },
+  {
+    "id": "octopus",
+    "name": "Octopus",
+    "emoji": "🐙",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Three hearts and copper-based blue blood — two-thirds of its half-billion neurons sit out in its arms.",
+    "taxon": "tx_octopoda"
+  },
+  {
+    "id": "giant_pacific_octopus",
+    "name": "Giant Pacific Octopus",
+    "emoji": "🐙",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest octopus species. A mother starves guarding her eggs for six months and dies as they hatch.",
+    "taxon": "tx_octopoda",
+    "terminal": true
+  },
+  {
+    "id": "blue_ringed_octopus",
+    "name": "Blue-ringed Octopus",
+    "emoji": "🐙",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A bite can kill in minutes with no antivenom, yet it has never once been recorded attacking unprovoked.",
+    "taxon": "tx_octopoda",
+    "terminal": true
+  },
+  {
+    "id": "giant_squid",
+    "name": "Giant Squid",
+    "emoji": "🦑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Eyes up to 27 cm across, the largest of any animal, built to watch the dark for one predator: the sperm whale.",
+    "taxon": "tx_oegopsida",
+    "terminal": true
+  },
+  {
+    "id": "vampire_squid",
+    "name": "Vampire Squid",
+    "emoji": "🦑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Neither vampire nor squid — closer kin to an octopus, and it doesn't hunt: it collects sinking marine snow.",
+    "taxon": "tx_vampyromorphida",
+    "terminal": true
+  },
+  {
+    "id": "box_jellyfish",
+    "name": "Box Jellyfish",
+    "emoji": "🪼",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "24 eyes with real lenses and corneas across four clusters, and among the most venomous animals alive.",
+    "taxon": "tx_cubozoa",
+    "terminal": true
+  },
+  {
+    "id": "lions_mane_jellyfish",
+    "name": "Lion's Mane Jellyfish",
+    "emoji": "🪼",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The largest jellyfish species — a bell over 2 m wide, tentacles once measured past 36 m long.",
+    "taxon": "tx_scyphozoa",
+    "terminal": true
+  },
+  {
+    "id": "man_o_war",
+    "name": "Portuguese Man o' War",
+    "emoji": "🎐",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Not a jellyfish — a colony of thousands of genetically identical zooids, all budded from one fertilised egg.",
+    "taxon": "tx_siphonophorae",
+    "terminal": true
+  },
+  {
+    "id": "sea_anemone",
+    "name": "Magnificent Sea Anemone",
+    "emoji": "🪸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "A single polyp that can span a metre, with no stony skeleton — clownfish live in it, immune to its sting.",
+    "taxon": "tx_actiniaria",
+    "terminal": true
+  },
+  {
+    "id": "crown_of_thorns",
+    "name": "Crown-of-thorns Starfish",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A coral-eating starfish with up to 21 venomous arms — one can strip 6 square metres of reef a year.",
+    "taxon": "tx_asteroidea",
+    "terminal": true
   }
 ]
