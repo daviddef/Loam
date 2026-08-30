@@ -216,7 +216,7 @@ const SCALE = {
           'open_pit_mining', 'strip_mining', 'mountaintop_removal', 'block_caving',
           // mining value chains batch 2 — a unit train (the record run was 7.35km) and the port precinct it feeds,
           // kilometre scale like the pit above them
-          'rail', 'port'],
+          'ore_railway', 'port'],
   '4':   ['rift_valley', 'trench'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest'],

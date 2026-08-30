@@ -21600,7 +21600,7 @@
       "locomotive",
       "stockpile"
     ],
-    "out": "rail",
+    "out": "ore_railway",
     "why": "Stockpiled ore is loaded into hopper cars and hauled out as a dedicated unit train. BHP's Pilbara train set the world record for longest and heaviest ever: 7.35km long, 682 cars, 99,734 tonnes, hauled by eight locomotives.",
     "src": "https://www.railwaygazette.com/news/bhp-breaks-its-own-heaviest-train-record/29603.article",
     "verified": true
@@ -21617,7 +21617,7 @@
   },
   {
     "in": [
-      "rail",
+      "ore_railway",
       "sea"
     ],
     "out": "port",
