@@ -1536,7 +1536,9 @@ __CATEGORY_CSS__
     font:700 9.5px var(--face-name);color:var(--on-accent);padding:3px 8px;border-radius:99px;
   }
 
-  /* bedrock: the substrate, deliberately quieter than the game above it */
+  /* bedrock: same pill and row language as "Made From" above it now, not a
+     quieter, differently-shaped tree of its own. ("can we make the section
+     and pills look consistent?" — found live.) */
   .bedhead{
     text-align:center;font:700 9px var(--face-name);letter-spacing:1.2px;text-transform:uppercase;
     color:#A8977E;margin:14px 0 8px;position:relative;
@@ -1545,19 +1547,22 @@ __CATEGORY_CSS__
     content:'';position:absolute;top:50%;width:26%;height:2px;background:var(--line);
   }
   .bedhead::before{left:2%} .bedhead::after{right:2%}
-  .bedgroup{margin-bottom:8px;opacity:.72}
+  .bedgroup{margin-bottom:8px}
   .bedof{font:700 12px var(--face-name);color:var(--ink-soft);margin-bottom:4px}
   ul.tree.bed .brow{
-    display:flex;align-items:center;gap:5px;padding:1px 5px;margin:0;
-    font-size:11.5px;color:var(--ink-soft);background:none;cursor:pointer;
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:6px 8px;margin:0 0 4px;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:10px;
+    font-size:12.5px;color:var(--ink);cursor:pointer;
   }
   ul.tree.bed .brow .tw{
     font-size:9px;color:var(--ink-soft);width:11px;flex:none;text-align:center;line-height:1;
   }
-  ul.tree.bed .brow:hover{color:var(--ink)}
-  ul.tree.bed .brow:hover .sym,
-  ul.tree.bed .brow:hover .hex,
-  ul.tree.bed .brow:hover .particle{color:var(--orange)}
+  ul.tree.bed .brow .g{
+    display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:99px;
+    background:var(--card);border:1px solid var(--line);cursor:pointer;font-weight:600;
+  }
+  ul.tree.bed .brow .g:hover{border-color:var(--orange)}
+  ul.tree.bed .brow .addroute{margin-left:auto}
   .shelfbar{display:flex;gap:5px;align-items:center;margin:0 2px 8px}
   .search.sm{padding:7px 10px;font-size:12.5px;border-radius:9px}
   .shelfbar button{
@@ -1586,26 +1591,6 @@ __CATEGORY_CSS__
     display:inline-block;width:8px;height:8px;border-radius:99px;margin-right:6px;
     background:var(--fam,var(--line));vertical-align:middle;
   }
-  ul.tree.bed .brow{gap:8px}
-  ul.tree.bed .brow .cat{
-    font-style:normal;font:700 8.5px var(--face-name);text-transform:uppercase;
-    letter-spacing:.6px;color:var(--ink-soft);margin-left:auto;
-  }
-  ul.tree.bed .brow b{
-    font-size:9.5px;font-weight:800;color:var(--on-accent);background:#A8977E;border-radius:5px;
-    min-width:19px;height:15px;line-height:15px;text-align:center;
-  }
-  .bedsum{
-    text-align:center;font:800 12.5px var(--face-name);color:var(--brick);
-    padding:9px;border:1.5px dashed var(--line);border-radius:11px;margin-top:5px;
-  }
-  .bedsum .syms{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:9px}
-  .bedsum .syms i{
-    font-style:normal;font:800 11px var(--face-name);color:var(--ink);
-    background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:3px 7px;
-    cursor:pointer;
-  }
-  .bedsum .syms i:hover{border-color:var(--orange);color:var(--orange)}
   .bed-eq{margin-bottom:6px}
 
   @media(prefers-reduced-motion:reduce){
@@ -4197,6 +4182,12 @@ function placeComposition(id) {
   tidy();
   sfx.pick();
   save();
+  // tidy() can move `out` well outside the current view on a busy board —
+  // a "+ Chart" tap that silently rearranges something off-screen reads as
+  // having done nothing at all. ("the + Chart buttons arent adding things
+  // to the chart" — found live; they were, just not anywhere visible.)
+  ensureVisible(out);
+  toast(`${nameOf(byId[id])}'s composition added — ${comps.length} part${comps.length === 1 ? '' : 's'}`);
 }
 // The card's own "+ Chart" button on one "Made From" row — places THAT
 // specific real route, not whichever one bestRecipe's single heuristic
@@ -4224,6 +4215,29 @@ function placeRoute(id, idx) {
   tidy();
   sfx.pick();
   save();
+  ensureVisible(out);
+  toast(`${nameOf(byId[id])} added — ${r.in.map(i => nameOf(byId[i])).join(r.verb ? '' : ' + ')}`);
+}
+// A single node from the "Made of" tree, added on its own — everything
+// above places a whole route or a whole composition at once; this is the
+// finer-grained "just this one part" version, reusing the exact same
+// resolve-or-ghost logic expandCompo already uses for a tap on the canvas.
+function placeCompoNode(ownerId, bedId) {
+  const name = (atomById[bedId] ?? compById[bedId])?.name ?? bedId;
+  pushUndo(`putting ${name} on the bench`);
+  const already = boardAlready();
+  const out = findBoardChip(ownerId) || already.get(ownerId) || spawn(ownerId, null, null, null);
+  already.set(ownerId, out);
+  const el = ensureCompoChild(bedId, [out], already);
+  links.push({ a: el, b: null, out, fresh: true });
+  benchTouched = true;
+  refreshFolds();
+  drawLinks();
+  tidy();
+  sfx.pick();
+  save();
+  ensureVisible(el);
+  toast(`${name} added`);
 }
 // Open Food Facts' own regulated colour scales — real, official values
 // (the EU Nutri-Score palette; NOVA has no equally-official scale, so its
@@ -5334,16 +5348,21 @@ function atomTile(a, small) {
   return `<span class="atom ${a.category}" title="${a.name}">` +
          `<span class="sym">${a.symbol}</span><span class="z">${a.number}</span></span>`;
 }
-function bedTreeHTML(id) {
+// `ownerId` is the playable element this tree hangs off (e.g. `egg`) — only
+// passed by bedrockHTML's own owned-composition view, never by showAtom's
+// abstract reference one, since "add to the chart" only means something
+// when there's a real chip for it to attach to. Its presence is what turns
+// on the per-node "+ Chart" button.
+function bedTreeHTML(id, ownerId) {
   const a = atomById[id];
-  if (a) return `<li><div class="brow" data-atom="${id}">${atomTile(a)}<span>${a.name}</span>` +
-                `<i class="cat">${a.category}</i></div></li>`;
-  const c = compById[id];
-  if (!c) return '';
-  const node = c.kind === 'particle'
-    ? `<span class="particle">✦ ${c.name}</span>`
-    : `<span class="hex">${c.name}</span>`;
-  const hasKids = c.of.length > 0;
+  const c = !a && compById[id];
+  if (!a && !c) return '';
+  const pill = a
+    ? `<span class="g" data-atom="${id}">${atomTile(a)}${a.name}</span>`
+    : `<span class="g" data-atom="${id}">${c.kind === 'particle' ? '✦ ' : ''}${c.name}</span>`;
+  const hasKids = c && c.of.length > 0;
+  const addBtn = ownerId
+    ? `<button class="addroute" data-put-compo-node="${ownerId}::${id}" title="Add this to the chart">+ Chart</button>` : '';
   // A composition tree runs far deeper relative to its branching than the
   // recipe tree treeHTML() already folds past AUTO_DEPTH (Human's own tree
   // runs 15+ rows deep from six organs alone) — so every level folds by
@@ -5352,9 +5371,9 @@ function bedTreeHTML(id) {
   // ("these hierarchies get really really big, can we allow collapse/expand
   // on each level? and only display level 1 by default?" — found live, a
   // screenshot of Human's card rendered edge to edge with nothing folded.)
-  return `<li><div class="brow"${hasKids ? ' data-fold' : ` data-atom="${id}"`}>` +
-         (hasKids ? `<span class="tw">▸</span>` : '') + `${node}</div>` +
-         (hasKids ? `<ul class="fold">${c.of.map(bedTreeHTML).join('')}</ul>` : '') + `</li>`;
+  return `<li><div class="brow"${hasKids ? ' data-fold' : ''}>` +
+         (hasKids ? `<span class="tw">▸</span>` : '') + pill + addBtn + `</div>` +
+         (hasKids ? `<ul class="fold">${c.of.map(k => bedTreeHTML(k, ownerId)).join('')}</ul>` : '') + `</li>`;
 }
 
 // ---- periodic table ----
@@ -5630,24 +5649,24 @@ function bedEquationHTML(id, atomIds) {
     (BED.composition[id] ? `<button class="addroute" data-put-compo="${id}" title="Add this path to the chart">+ Chart</button>` : '') +
     `</div>`;
 }
+// The equation row (bedEquationHTML, above every leaf's own tree) already
+// lists that leaf's own atoms as the same clickable pills — a trailing
+// "N chemical elements" tally of the identical set just below it repeated
+// the same letters twice for no reason. ("why do we have carbon hydrogen
+// etc showing in a made from section, and again in a 6 chemical elements
+// section? remove the 6 chemical elements section, no point duplicating"
+// — found live.)
 function bedrockHTML(tally, head = 'and below that') {
   const leaves = [...tally.keys()].filter(id => BED.composition[id]);
   if (!leaves.length) return '';
-  const atoms = new Set();
-  const bySyms = new Map();                    // symbol -> atom id, for the clickable summary chips
-  for (const id of leaves) for (const p of BED.composition[id]) for (const a of atomsUnder(p)) {
-    atoms.add(a); bySyms.set(atomById[a].symbol, a);
-  }
   return `<div class="bedhead">${head}</div>` +
     leaves.map(id => {
       const own = new Set();
       for (const p of BED.composition[id]) for (const a of atomsUnder(p)) own.add(a);
       return `<div class="bedgroup">${bedEquationHTML(id, own)}` +
         `<div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
-        `<ul class="tree bed">${BED.composition[id].map(bedTreeHTML).join('')}</ul></div>`;
-    }).join('') +
-    `<div class="bedsum">${atoms.size} chemical elements${bySyms.has('He') ? ' and starlight' : ''}` +
-    `<div class="syms">${[...bySyms].map(([x, a]) => `<i data-atom="${a}">${x}</i>`).join('')}</div></div>`;
+        `<ul class="tree bed">${BED.composition[id].map(k => bedTreeHTML(k, id)).join('')}</ul></div>`;
+    }).join('');
 }
 // ---- the index entry: what makes this, and what this makes ----
 // Little Alchemy's own hints site draws about as much traffic as the game.
@@ -5885,8 +5904,15 @@ function stepCard(r, i) {
     </div></div>`;
 }
 
+// A guess is worth asking for the FIRST time a chain is opened — but "Where
+// it came from" also reaches something sitting right there on the bench,
+// already wired to its own real ancestors by the link lines on screen. Being
+// quizzed on a count you could just read off the board is not active recall,
+// it's friction. ("by default, if a item is on our canvas, just show me
+// where it came from, stop asking me" — found live.)
+const onCanvas = (id) => !!world.querySelector(`.chip.board[data-id="${id}"]`);
 function showProvenance(id, mode) {
-  if (!guessed.has(id) && expanded(id).leaves > 3) return askFirst(id, () => showProvenance(id, mode));
+  if (!guessed.has(id) && !onCanvas(id) && expanded(id).leaves > 3) return askFirst(id, () => showProvenance(id, mode));
   provMode = mode || provMode;
   const x = expanded(id), d = distinctOf(id).size, t = leafTally(id), e = byId[id];
   document.getElementById('sheetBody').innerHTML =
@@ -6056,6 +6082,16 @@ function openSheet(title) {
   document.getElementById('sheet').classList.add('on');
 }
 document.getElementById('sheet').addEventListener('click', ev => {
+  // These three "+ Chart" buttons can sit INSIDE a foldable row (a
+  // composition tree node that also has children) — checked before
+  // data-fold below so a tap on the button adds it instead of just
+  // toggling the fold it happens to be nested in.
+  const pr = ev.target.closest('[data-put-route]');
+  if (pr) { const [rid, idx] = pr.dataset.putRoute.split('::'); closeSheet(); return placeRoute(rid, Number(idx)); }
+  const pc = ev.target.closest('[data-put-compo]');
+  if (pc) { closeSheet(); return placeComposition(pc.dataset.putCompo); }
+  const pn = ev.target.closest('[data-put-compo-node]');
+  if (pn) { const [oid, bid] = pn.dataset.putCompoNode.split('::'); return placeCompoNode(oid, bid); }
   const fold = ev.target.closest('[data-fold]');
   if (fold) {
     const ul = fold.parentElement.querySelector(':scope > ul');
@@ -6083,10 +6119,6 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
-  const pr = ev.target.closest('[data-put-route]');
-  if (pr) { const [rid, idx] = pr.dataset.putRoute.split('::'); closeSheet(); return placeRoute(rid, Number(idx)); }
-  const pc = ev.target.closest('[data-put-compo]');
-  if (pc) { closeSheet(); return placeComposition(pc.dataset.putCompo); }
   const t = ev.target.closest('[data-trace]');
   if (t) showProvenance(t.dataset.trace);
   const qv = ev.target.closest('[data-quickview]');
@@ -6596,22 +6628,45 @@ function loadZXing() {
   });
   return zxingLoad;
 }
-const ZX_FORMATS = ['EAN-13', 'EAN-8', 'UPC-A', 'UPC-E'];
+const ZX_FORMATS = ['EAN-13', 'EAN-8', 'UPC-A', 'UPC-E', 'DataMatrix'];
+/**
+ * A small package that can't fit a linear barcode carries a 2D GS1
+ * DataMatrix instead — same underlying product identifier, different
+ * symbology. Its payload isn't a bare number the way an EAN-13 is: it's
+ * one or more Application-Identifier fields (01 = GTIN, 17 = expiry, 10 =
+ * batch...) run together, GTIN almost always first. A lookup only needs
+ * the GTIN, and GS1's own rule for a GTIN-14 with a leading "0" indicator
+ * digit is that it IS an EAN-13, just zero-padded — so stripping that
+ * digit recovers the same 1D number a barcode reader would have found on
+ * a bigger package. A nonzero indicator digit means a case/pallet-level
+ * code rather than a single consumer unit; kept as the full GTIN-14; Open
+ * Food Facts' own lookup accepts either length. Text that doesn't start
+ * with a GTIN field at all (a non-GS1 2D code, or already a bare linear
+ * code) passes through unchanged. ("some products have 2d barcodes, that
+ * our api isnt picking up... convert to a 1d, etc?" — found live, with a
+ * real DataMatrix photo.)
+ */
+function gtinFromGS1(text) {
+  const m = /^01(\d{14})/.exec(text);
+  if (!m) return text;
+  const gtin14 = m[1];
+  return gtin14[0] === '0' ? gtin14.slice(1) : gtin14;
+}
 /** Every source of a barcode this sheet reads funnels through here — a
  * picked photo (Blob/File/ImageBitmap) or a live camera frame (ImageData) —
  * so the two scan paths don't duplicate which engine wins. */
 async function decodeBarcodes(source) {
   if ('BarcodeDetector' in window) {
     try {
-      const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e'] });
+      const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'data_matrix'] });
       const codes = await detector.detect(source);
-      if (codes.length) return codes.map(c => c.rawValue);
+      if (codes.length) return codes.map(c => gtinFromGS1(c.rawValue));
     } catch {}
   }
   try {
     const ZX = await loadZXing();
     const results = await ZX.readBarcodes(source, { formats: ZX_FORMATS, tryHarder: true });
-    return results.map(r => r.text);
+    return results.map(r => gtinFromGS1(r.text));
   } catch { return []; }
 }
 
