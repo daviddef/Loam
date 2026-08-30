@@ -15914,5 +15914,25 @@
     "why": "A small tortilla folded by hand around a filling and eaten straight away — the game's own wrap, given a real, named filling.",
     "src": "https://en.wikipedia.org/wiki/Taco",
     "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "sun"
+    ],
+    "out": "cassava",
+    "why": "A tropical crop, frost-sensitive and needing a long warm season — planted across the tropics for exactly that reason, where potato's own temperate growing season would fail it.",
+    "src": "https://en.wikipedia.org/wiki/Cassava",
+    "verified": true
+  },
+  {
+    "in": [
+      "cassava"
+    ],
+    "verb": "crush",
+    "out": "tapioca",
+    "why": "Grated and pressed, cassava gives up its starch as a milky liquid; washed and dried, it becomes tapioca flour or pearls.",
+    "src": "https://en.wikipedia.org/wiki/Tapioca",
+    "verified": true
   }
 ]

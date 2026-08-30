@@ -3083,6 +3083,14 @@ def('cutting',        () => [S('M30 52 L30 14', 'lo', 3.4),
                              ...[[26, 50], [34, 50]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? 20 : 40} 56`, 'bs', 1.8))]);  // new roots
 def('tuber',          () => [E(30, 38, 19, 13, 'lo'), ...granules('bs', 5, 57, [18, 32, 42, 44]),
                              S('M22 27 Q24 18 20 10', 'hi', 2.2), S('M38 27 Q36 18 40 10', 'hi', 2.2)]);
+// A true elongated root, tapered top to tip — deliberately not the round
+// tuber silhouette potato/tuber already use, since cassava is genuinely a
+// root, not a modified stem the way those are.
+def('cassava',         () => [E(30, 32, 8, 22, 'bs'), E(30, 50, 4, 8, 'lo'),
+                             S('M24 16 Q22 10 18 8', 'hi', 2), S('M36 16 Q38 10 42 8', 'hi', 2),
+                             ...[22, 27, 33, 38].map(y => S(`M23 ${y} L37 ${y}`, 'lo', 1.4))]);
+def('tapioca',         () => [24, 34, 30, 20, 38].flatMap((x, i) =>
+                             [E(x, 34 + (i % 2) * 10, 5, 5, i % 2 ? 'lo' : 'hi')]));
 def('runner',         () => [S('M8 40 Q30 30 52 40', 'hi', 3),
                              ...[[8, 40], [52, 40]].map(([x, y]) =>
                                [leaf('hi', x, y - 12, .6, 0), S(`M${x} ${y} L${x} ${y + 8}`, 'lo', 2)]).flat()]);

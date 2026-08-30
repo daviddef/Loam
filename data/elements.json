@@ -12121,5 +12121,26 @@
     ],
     "fact": "A tortilla folded by hand around a filling and eaten straight from the hand.",
     "terminal": true
+  },
+  {
+    "id": "cassava",
+    "name": "Cassava",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Unlike a potato's swollen stem, cassava's edible part really is a root — swollen with starch, and, raw, laced with cyanogenic compounds that processing has to remove."
+  },
+  {
+    "id": "tapioca",
+    "name": "Tapioca",
+    "emoji": "🧋",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Cassava root, grated and pressed until its starch washes out as a milky liquid, then dried into flour or pearls — raw cassava is toxic, so this processing is not optional.",
+    "terminal": true
   }
 ]
