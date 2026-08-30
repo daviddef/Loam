@@ -172,7 +172,9 @@ const SCALE = {
           'roller_bearing', 'plain_bearing', 'air_brake',
           'transducer', 'sound_wave', 'echo', 'ultrasound_scan', 'myoelectric_signal', 'bionic_arm',
           'hydraulic_pump', 'artificial_heart', 'reinforced_concrete', 'laser', 'holographic_plate', 'hologram',
-          'scanning_tunneling_microscope'],
+          'scanning_tunneling_microscope',
+          // tech breakthroughs batch 1 — handheld and tabletop electronics, same bucket as telephone/radio/digital_camera
+          'atomic_clock', 'gps', 'cellular_telephone', 'smartphone', 'router', 'film_reel', 'movie_camera', 'cinematography'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           'welwitschia', 'rafflesia', 'bracken_fern',
@@ -207,7 +209,9 @@ const SCALE = {
           // railways batch 1 — metre-scale machine parts and infrastructure units
           'piston', 'axle', 'bogie', 'coupler', 'sleeper', 'block_signal',
           // medical-technology batch 1 — machines the size of the room they sit in
-          'superconducting_magnet', 'mri_scan', 'pet_scan', 'robotic_surgery'],
+          'superconducting_magnet', 'mri_scan', 'pet_scan', 'robotic_surgery',
+          // tech breakthroughs batch 1 — a desktop computer tower and monitor, same appliance bucket as lcd_screen/refrigerator
+          'computer', 'television', 'film_projector'],
   '1':   ['saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'giraffe', 'nile_crocodile', 'american_alligator',
           'climax_community', 'food_chain',
@@ -231,7 +235,9 @@ const SCALE = {
           // consumer-electronics batch 1 — the IMAX theatre and screen, tens of metres, the same bucket as a sea cave
           'imax_3d_projection',
           // medical-technology batch 1 — a curtain wall as drawn: one building face, tens of metres
-          'curtain_wall'],
+          'curtain_wall',
+          // tech breakthroughs batch 1 — a satellite bus with solar panels extended, tens of metres like an airplane
+          'communications_satellite', 'gps_satellite'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest',
@@ -261,7 +267,9 @@ const SCALE = {
           // medical-technology batch 1 — the LHC's 27 km ring
           'hadron_collider'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
-          'tundra', 'desert', 'taiga', 'rainforest'],
+          'tundra', 'desert', 'taiga', 'rainforest',
+          // tech breakthroughs batch 1 — a worldwide network, the same planet-spanning bucket as sky/sea/desert
+          'internet'],
   '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],
 };
 

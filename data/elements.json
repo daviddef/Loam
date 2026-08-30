@@ -5999,7 +5999,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A wire held at 2,500 \u00b0C in gas that will not react with it. Most of what leaves is heat."
   },
   {
@@ -6103,7 +6103,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A diode in the light. The junction's field pulls the pair apart before they recombine."
   },
   {
@@ -17739,7 +17739,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "An iron diaphragm near a magnet turns sound into a matching current, and back again. Bell, 1876.",
     "soleRoute": true
   },
@@ -17762,7 +17762,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A heated filament boils electrons into a vacuum; they cross to the plate only one way. Fleming, 1904.",
     "soleRoute": true
   },
@@ -17855,7 +17855,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "An entire CPU's arithmetic, logic and control on a single chip. Intel's 4004, 1971.",
     "soleRoute": true
   },
@@ -18673,7 +18673,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "White light through two crossed polarizers with a twistable crystal between decides each pixel.",
     "shelf": "workshop"
   },
@@ -19319,5 +19319,159 @@
       "tool"
     ],
     "fact": "Colour bonded into the fibre itself, not sitting on top of it \u2014 the difference a mordant makes."
+  },
+  {
+    "id": "atomic_clock",
+    "name": "Atomic Clock",
+    "emoji": "\u23f1\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Quartz tuned to vibrate at the exact frequency of a caesium atom's transition."
+  },
+  {
+    "id": "communications_satellite",
+    "name": "Communications Satellite",
+    "emoji": "\ud83d\udef0\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A radio transceiver with nothing to plug into, kept running by solar cells."
+  },
+  {
+    "id": "gps_satellite",
+    "name": "GPS Satellite",
+    "emoji": "\ud83d\udce1",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "24 of these orbit twice daily, each one carrying an atomic clock."
+  },
+  {
+    "id": "gps",
+    "name": "GPS",
+    "emoji": "\ud83d\udccd",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Times signals from four-plus satellites and trilaterates one point where they agree."
+  },
+  {
+    "id": "cellular_telephone",
+    "name": "Cellular Telephone",
+    "emoji": "\ud83d\udcf1",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A telephone's mouthpiece and earpiece wired to a radio that hands off tower to tower."
+  },
+  {
+    "id": "smartphone",
+    "name": "Smartphone",
+    "emoji": "\ud83d\udcf2",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A cellular phone with a general-purpose microprocessor added \u2014 it computes now, not just calls."
+  },
+  {
+    "id": "computer",
+    "name": "Computer",
+    "emoji": "\ud83d\udda5\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A microprocessor paired with memory for its program and data \u2014 the stored-program design."
+  },
+  {
+    "id": "router",
+    "name": "Router",
+    "emoji": "\ud83d\udd00",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Reads each packet's address and switches it out the right wire, one hop closer."
+  },
+  {
+    "id": "internet",
+    "name": "The Internet",
+    "emoji": "\ud83c\udf10",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Not one network but many, glued by routers forwarding packets hop by hop."
+  },
+  {
+    "id": "film_reel",
+    "name": "Film Reel",
+    "emoji": "\ud83c\udf9e\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A cellulose strip coated with the same silver-bromide emulsion still photography uses."
+  },
+  {
+    "id": "movie_camera",
+    "name": "Movie Camera",
+    "emoji": "\ud83c\udfa5",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A camera obscura whose lens exposes a moving film strip one frame at a time."
+  },
+  {
+    "id": "film_projector",
+    "name": "Film Projector",
+    "emoji": "\ud83d\udcfd\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A bright bulb shines through the same sprocketed film a camera exposed, onto a screen."
+  },
+  {
+    "id": "cinematography",
+    "name": "Cinematography",
+    "emoji": "\ud83c\udfac",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A camera at 24 frames a second and a projector running them past a lamp at the same rate."
+  },
+  {
+    "id": "television",
+    "name": "Television",
+    "emoji": "\ud83d\udcfa",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A radio tuned to a video channel instead of an audio one, feeding a screen."
   }
 ]
