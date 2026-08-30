@@ -2847,7 +2847,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A stack of pages bound at one edge \u2014 the biggest advance in bookmaking before the printing press."
   },
   {
@@ -4516,7 +4516,7 @@
       "fire"
     ],
     "fact": "Air exploding away from a channel at about 30,000 K. Three seconds a kilometre.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "hail",
@@ -14443,7 +14443,7 @@
     ],
     "fact": "A spiderling can disperse for hundreds of kilometres by 'ballooning' \u2014 releasing a silk thread that catches the wind and carries it off, sometimes riding jet streams for weeks.",
     "taxon": "tx_araneae",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "scorpion",
@@ -17025,7 +17025,7 @@
       "wild"
     ],
     "fact": "Leopards drag kills heavier than themselves into trees \u2014 once a giraffe calf hauled 5.7 m up.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_panthera"
   },
   {
@@ -20497,5 +20497,131 @@
     ],
     "soleRoute": true,
     "fact": "Its boom moves front to back and up and down on separate drives, so it can reach every part of a hold as the ship's own draught deepens while it fills."
+  },
+  {
+    "id": "shango",
+    "name": "Shango",
+    "emoji": "\ud83e\ude93",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba orisha of thunder, lightning and drumming; deified after his reign as the third Alaafin of Oyo."
+  },
+  {
+    "id": "obatala",
+    "name": "Obatala",
+    "emoji": "\u26aa",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba orisha of creation and purity, called King of White Cloth; molded humankind from clay and water."
+  },
+  {
+    "id": "orisha",
+    "name": "Orisha",
+    "emoji": "\ud83d\ude4f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The Yoruba pantheon of intermediary spirits sent by Olodumare; tradition numbers them at four hundred and one."
+  },
+  {
+    "id": "eshu",
+    "name": "Eshu",
+    "emoji": "\ud83d\udcef",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba trickster-messenger orisha who carries sacrifices between humans and the other orisha."
+  },
+  {
+    "id": "elegua",
+    "name": "Elegua",
+    "emoji": "\ud83d\udd11",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Guardian of roads and crossroads in Cuban Santeria, given the keys to past, present and future by Olodumare.",
+    "terminal": true
+  },
+  {
+    "id": "olorun",
+    "name": "Olorun",
+    "emoji": "\ud83c\udf0c",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Supreme Yoruba sky god, also called Olodumare; worshipped indirectly, through the orisha he sends to earth."
+  },
+  {
+    "id": "yemoja",
+    "name": "Yemoja",
+    "emoji": "\ud83c\udf0a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba river goddess, her name means 'mother of fish children'; became a sea goddess in the diaspora.",
+    "terminal": true
+  },
+  {
+    "id": "anansi",
+    "name": "Anansi",
+    "emoji": "\ud83d\udd77",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Akan trickster spider who won ownership of the sky god Nyame's stories -- still told today as Anansi tales.",
+    "terminal": true
+  },
+  {
+    "id": "oya",
+    "name": "Oya",
+    "emoji": "\ud83c\udf2a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba orisha of storms and the Niger River who can shapeshift into a buffalo; guardian of the ancestral dead.",
+    "terminal": true
+  },
+  {
+    "id": "babalu_aye",
+    "name": "Babalu-Aye",
+    "emoji": "\ud83e\uddaf",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Yoruba orisha of epidemic disease, his body wrapped in palm straw; also known as Sopona or Omolu."
+  },
+  {
+    "id": "abassi",
+    "name": "Abassi",
+    "emoji": "\u26c5",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Efik supreme creator god who forbade the first humans to farm or have children; both rules were broken.",
+    "terminal": true
+  },
+  {
+    "id": "bumba",
+    "name": "Bumba",
+    "emoji": "\ud83c\udf05",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Kuba (Bushongo) creator god who vomited up the sun, moon, stars and every animal out of primordial darkness.",
+    "terminal": true
   }
 ]

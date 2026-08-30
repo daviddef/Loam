@@ -203,6 +203,8 @@ const SCALE = {
           'quetzalcoatl', 'tezcatlipoca', 'huitzilopochtli', 'tlaloc', 'coatlicue', 'tonatiuh',
           'mictlantecuhtli', 'xiuhtecuhtli', 'centeotl', 'xolotl', 'kukulkan', 'itzamna',
           'ixchel', 'chaac', 'ek_chuah',
+          // african mythology batch 1 — Yoruba, Efik and Kuba deities, same human/idol scale as the Mesoamerican gods above
+          'shango', 'obatala', 'orisha', 'eshu', 'elegua', 'olorun', 'yemoja', 'anansi', 'oya', 'babalu_aye', 'abassi', 'bumba',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
