@@ -19334,5 +19334,265 @@
     "why": "Rather than amplifying an existing vibration, a synthesizer's oscillator generates an electrical current oscillating into a waveform from scratch; Robert Moog's 1964 transistor-based voltage-controlled oscillator became the standard circuit for doing it.",
     "src": "https://en.wikipedia.org/wiki/Moog_synthesizer",
     "supported": true
+  },
+  {
+    "in": [
+      "chloroplast",
+      "leaf"
+    ],
+    "out": "producer",
+    "why": "A leaf's chloroplasts make sugar from sunlight without eating anything else — plants and algae are producers because they manufacture their own food by photosynthesis, the base every food chain runs on.",
+    "src": "https://en.wikipedia.org/wiki/Trophic_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "grass"
+    ],
+    "out": "primary_consumer",
+    "why": "Animals that eat producers like plants are called herbivores — deer graze grass directly, making them primary consumers, the food chain's first animal step above the producer itself.",
+    "src": "https://en.wikipedia.org/wiki/Trophic_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "wolf"
+    ],
+    "out": "secondary_consumer",
+    "why": "Wolves prey mostly on large herbivores like deer — primary consumers, which eat plants — which makes a wolf a secondary consumer, one step further up the same food chain than its prey.",
+    "src": "https://en.wikipedia.org/wiki/Apex_predator",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "detritus"
+    ],
+    "out": "decomposer",
+    "why": "Fungi feed on waste and dead matter, converting it into inorganic chemicals that can be recycled as mineral nutrients for plants to use again — the recycling step no food chain can skip.",
+    "src": "https://en.wikipedia.org/wiki/Trophic_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "primary_consumer",
+      "producer"
+    ],
+    "out": "trophic_level",
+    "why": "Trophic level is simply an organism's position in a food web — a producer occupies the first rung, and the herbivore that eats it sits one rung higher on the exact same ladder.",
+    "src": "https://en.wikipedia.org/wiki/Trophic_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "primary_consumer",
+      "secondary_consumer"
+    ],
+    "out": "food_chain",
+    "why": "A linear network of links, typically starting with a producer and running up through consumer after consumer to whatever eats last — the simplest possible picture of who-eats-whom.",
+    "src": "https://en.wikipedia.org/wiki/Food_chain",
+    "verified": true
+  },
+  {
+    "in": [
+      "food_chain",
+      "food_chain"
+    ],
+    "out": "food_web",
+    "why": "A real ecosystem is never just one food chain — a food web is the natural interconnection of many food chains, a full graph of what eats what across a whole community at once.",
+    "src": "https://en.wikipedia.org/wiki/Food_web",
+    "verified": true
+  },
+  {
+    "in": [
+      "food_chain",
+      "secondary_consumer"
+    ],
+    "out": "apex_predator",
+    "why": "A predator at the top of a food chain with few or no natural predators of its own, if any — the last link in the chain, not simply another consumer somewhere along the way.",
+    "src": "https://en.wikipedia.org/wiki/Apex_predator",
+    "verified": true
+  },
+  {
+    "in": [
+      "keystone_species",
+      "wolf"
+    ],
+    "out": "trophic_cascade",
+    "why": "Suppressing a whole trophic level ripples down every level beneath it — Yellowstone's wolves are the textbook case, though the ecosystem as a whole never fully reverted to how it was before they were wiped out.",
+    "src": "https://en.wikipedia.org/wiki/Trophic_cascade",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp",
+      "sea"
+    ],
+    "out": "sea_urchin",
+    "why": "Feeds mainly on algae and can chew straight through a kelp plant's holdfast; enough sea urchins grazing unchecked will strip a kelp forest down to a landscape of bare, denuded rock.",
+    "src": "https://en.wikipedia.org/wiki/Kelp_forest",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "sea_urchin"
+    ],
+    "out": "sea_otter",
+    "why": "Bites through an urchin's spines from the soft underside and licks out the contents — sea otters keep populations of benthic herbivores, particularly sea urchins, in check by eating them.",
+    "src": "https://en.wikipedia.org/wiki/Sea_otter",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp",
+      "sea_otter"
+    ],
+    "out": "kelp_forest",
+    "why": "North Pacific coastlines without sea otters often turn into urchin barrens instead — abundant sea urchins and no kelp forest, because nothing is left eating the urchins that graze the kelp.",
+    "src": "https://en.wikipedia.org/wiki/Sea_otter",
+    "verified": true
+  },
+  {
+    "in": [
+      "kelp_forest",
+      "sea_otter"
+    ],
+    "out": "keystone_species",
+    "why": "A species whose effect on its ecosystem is disproportionate to its own numbers: hunt sea otters to near-extinction and the kelp forests they protected largely disappear soon after.",
+    "src": "https://en.wikipedia.org/wiki/Keystone_species",
+    "verified": true
+  },
+  {
+    "in": [
+      "clownfish",
+      "sea_anemone"
+    ],
+    "out": "mutualism",
+    "why": "Each side is genuinely better off: the anemone's sting protects the clownfish from predators that cannot tolerate it, and in return the clownfish drives off butterflyfish that would eat the anemone.",
+    "src": "https://en.wikipedia.org/wiki/Mutualism_(biology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "whale",
+      "whale_barnacle"
+    ],
+    "out": "commensalism",
+    "why": "One species benefits and the other is essentially unaffected: a whale barnacle embedded in the skin gets a free ride and a feeding platform, an arrangement generally reckoned to cost the whale nothing.",
+    "src": "https://en.wikipedia.org/wiki/Whale_barnacle",
+    "verified": true
+  },
+  {
+    "in": [
+      "flea",
+      "wolf"
+    ],
+    "out": "parasitism",
+    "why": "One organism feeds off another and gives nothing back: a flea is an ectoparasite living on the host's surface, hematophagic and feeding on its blood — real, one-sided harm, not an exchange.",
+    "src": "https://en.wikipedia.org/wiki/Parasitism",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "whale"
+    ],
+    "out": "whale_barnacle",
+    "why": "Deeply embedded in the whale's skin for stability, a barnacle filters plankton and detritus out of the water with feathery cirri while the current made by the swimming whale carries food past it.",
+    "src": "https://en.wikipedia.org/wiki/Whale_barnacle",
+    "verified": true
+  },
+  {
+    "in": [
+      "lichen",
+      "moss"
+    ],
+    "out": "pioneer_species",
+    "why": "The first colonisers of bare ground before there is any soil to work with — the stages of primary succession explicitly begin with pioneer species such as lichens and mosses.",
+    "src": "https://en.wikipedia.org/wiki/Ecological_succession",
+    "verified": true
+  },
+  {
+    "in": [
+      "pioneer_species",
+      "soil"
+    ],
+    "out": "succession",
+    "why": "Ecological succession is how species composition in a community changes over time — pioneers give way to grasses, then shrubs, then trees, one wave of colonisers replaced by the next.",
+    "src": "https://en.wikipedia.org/wiki/Ecological_succession",
+    "supported": true
+  },
+  {
+    "in": [
+      "oak",
+      "succession"
+    ],
+    "out": "climax_community",
+    "why": "A climax community is the final, stable stage of succession — self-perpetuating and in equilibrium with the habitat, the community, like a mature oak forest, that stops replacing itself.",
+    "src": "https://en.wikipedia.org/wiki/Ecological_succession",
+    "supported": true
+  },
+  {
+    "in": [
+      "ice",
+      "moss"
+    ],
+    "out": "tundra",
+    "why": "Permafrost keeps the subsoil permanently frozen, so tree growth is hindered by the cold and short seasons — nothing taller than dwarf shrubs, grasses, moss and lichen actually roots there.",
+    "src": "https://en.wikipedia.org/wiki/Tundra",
+    "verified": true
+  },
+  {
+    "in": [
+      "cactus",
+      "sand"
+    ],
+    "out": "desert",
+    "why": "A desert is defined by dryness, generally under 250 mm of rain a year, and a cactus survives it by dispensing with leaves entirely, storing water instead in a modified, swollen trunk.",
+    "src": "https://en.wikipedia.org/wiki/Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "pine",
+      "snow"
+    ],
+    "out": "taiga",
+    "why": "The world's largest land biome: coniferous forest of mostly pine, spruce and larch across the subarctic, where a long, cold winter with heavy snow is the dominant feature of the year.",
+    "src": "https://en.wikipedia.org/wiki/Taiga",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "rain"
+    ],
+    "out": "rainforest",
+    "why": "Needs no less than 1.68 m of rain a year, and enough leaf canopy overhead that the forest floor below receives only about 2% of the sunlight that falls on the top of the trees.",
+    "src": "https://en.wikipedia.org/wiki/Tropical_rainforest",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "sun"
+    ],
+    "out": "limiting_factor",
+    "why": "Growth is controlled not by the total resources available but by the scarcest one — the textbook case is sunlight in a rainforest, where the canopy takes nearly all of it before it reaches the floor.",
+    "src": "https://en.wikipedia.org/wiki/Limiting_factor",
+    "verified": true
+  },
+  {
+    "in": [
+      "limiting_factor",
+      "primary_consumer"
+    ],
+    "out": "carrying_capacity",
+    "why": "The maximum population an environment can sustain, given its food, water and space — push a population above that threshold and it typically decreases again, capped by whatever runs out first.",
+    "src": "https://en.wikipedia.org/wiki/Carrying_capacity",
+    "verified": true
   }
 ]

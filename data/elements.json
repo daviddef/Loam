@@ -14262,7 +14262,6 @@
       "water"
     ],
     "fact": "Lives in a sea anemone's stinging tentacles, protected by mucus that mimics the anemone's own chemistry; the breeding male changes sex if the female dies.",
-    "terminal": true,
     "taxon": "tx_blenniiformes"
   },
   {
@@ -14443,8 +14442,7 @@
       "wild"
     ],
     "fact": "Powerful hind legs launch it up to 110 times its own body length, and historically, rodent fleas carrying Yersinia pestis were a major route by which the Black Death reached people.",
-    "taxon": "tx_siphonaptera",
-    "terminal": true
+    "taxon": "tx_siphonaptera"
   },
   {
     "id": "spider",
@@ -15002,8 +15000,7 @@
       "wild"
     ],
     "fact": "No roots or water-carrying vessels — just rhizoids for grip, and a film of water its swimming sperm need to fertilise.",
-    "taxon": "tx_bryophyta",
-    "terminal": true
+    "taxon": "tx_bryophyta"
   },
   {
     "id": "liverwort",
@@ -16042,6 +16039,298 @@
       "electrophone"
     ],
     "fact": "Generates its waveform electronically from scratch, rather than amplifying a vibration that already exists.",
+    "terminal": true
+  },
+  {
+    "id": "producer",
+    "name": "Producer",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Makes its own food from sunlight instead of eating anything — the base of every food chain."
+  },
+  {
+    "id": "primary_consumer",
+    "name": "Primary Consumer",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Eats producers directly and nothing else — the first animal step in a food chain, a herbivore."
+  },
+  {
+    "id": "secondary_consumer",
+    "name": "Secondary Consumer",
+    "emoji": "🐺",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A carnivore eating the herbivores that ate the plants — one rung above a primary consumer."
+  },
+  {
+    "id": "decomposer",
+    "name": "Decomposer",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Fungi and bacteria that feed on waste and the dead, turning it back into nutrients plants can use.",
+    "terminal": true
+  },
+  {
+    "id": "trophic_level",
+    "name": "Trophic Level",
+    "emoji": "🪜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An organism's rung on the food chain — producer, then herbivore, then the carnivores above it.",
+    "terminal": true
+  },
+  {
+    "id": "food_chain",
+    "name": "Food Chain",
+    "emoji": "⛓️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A straight line of who-eats-whom, from a producer up through consumers to whatever eats last."
+  },
+  {
+    "id": "food_web",
+    "name": "Food Web",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Every real ecosystem's food chains tangled together — the actual network, not one single line.",
+    "terminal": true
+  },
+  {
+    "id": "apex_predator",
+    "name": "Apex Predator",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Sits at the top of a food chain with few or no natural predators of its own left to eat it.",
+    "terminal": true
+  },
+  {
+    "id": "trophic_cascade",
+    "name": "Trophic Cascade",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Remove a top predator and the effects ripple down every level below it — rarely simply, or fully.",
+    "terminal": true
+  },
+  {
+    "id": "sea_urchin",
+    "name": "Sea Urchin",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Grazes algae and kelp holdfasts with its teeth; enough of them can strip a seafloor bare."
+  },
+  {
+    "id": "sea_otter",
+    "name": "Sea Otter",
+    "emoji": "🦦",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Bites through a sea urchin's spines from underneath and licks out the soft contents inside."
+  },
+  {
+    "id": "kelp_forest",
+    "name": "Kelp Forest",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "wild"
+    ],
+    "fact": "Dense underwater kelp, kept alive by otters eating the urchins that would otherwise graze it bare."
+  },
+  {
+    "id": "keystone_species",
+    "name": "Keystone Species",
+    "emoji": "🗝️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A species whose effect on its ecosystem is far bigger than its numbers alone would suggest."
+  },
+  {
+    "id": "mutualism",
+    "name": "Mutualism",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Two species, each genuinely better off for the other's presence — not one exploiting the other.",
+    "terminal": true
+  },
+  {
+    "id": "commensalism",
+    "name": "Commensalism",
+    "emoji": "🤷",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "One species benefits from the other, which is left neither better nor worse off by it.",
+    "terminal": true
+  },
+  {
+    "id": "parasitism",
+    "name": "Parasitism",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "One organism lives on or in another and feeds off it, causing the host real, one-sided harm.",
+    "terminal": true
+  },
+  {
+    "id": "whale_barnacle",
+    "name": "Whale Barnacle",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Embeds in whale skin and filters passing plankton with feathery limbs, usually at no cost to the whale."
+  },
+  {
+    "id": "pioneer_species",
+    "name": "Pioneer Species",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "earth"
+    ],
+    "fact": "The first life to colonise bare ground — often lichen or moss — before anything else can take hold."
+  },
+  {
+    "id": "succession",
+    "name": "Ecological Succession",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "earth"
+    ],
+    "fact": "How a community of species changes over time, one wave of colonisers replaced by the next."
+  },
+  {
+    "id": "climax_community",
+    "name": "Climax Community",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "earth"
+    ],
+    "fact": "The stable, self-sustaining end stage of succession — the community that stops replacing itself.",
+    "terminal": true
+  },
+  {
+    "id": "tundra",
+    "name": "Tundra",
+    "emoji": "🌨️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "wild"
+    ],
+    "fact": "Permafrost keeps the subsoil frozen year-round, so nothing taller than moss and lichen can root.",
+    "terminal": true
+  },
+  {
+    "id": "desert",
+    "name": "Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "wild"
+    ],
+    "fact": "Under 250 mm of rain a year defines it; little there stores water like a cactus's swollen stem.",
+    "terminal": true
+  },
+  {
+    "id": "taiga",
+    "name": "Taiga",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "The world's largest land biome — a belt of pine, spruce and larch across the subarctic.",
+    "terminal": true
+  },
+  {
+    "id": "rainforest",
+    "name": "Tropical Rainforest",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "At least 1.68 m of rain a year, and a canopy so dense the forest floor gets 2% of the sunlight."
+  },
+  {
+    "id": "limiting_factor",
+    "name": "Limiting Factor",
+    "emoji": "🚧",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Growth is capped by whichever resource is scarcest, not by the total of everything available."
+  },
+  {
+    "id": "carrying_capacity",
+    "name": "Carrying Capacity",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The largest population an environment's food, water and space can sustain before growth stops.",
     "terminal": true
   }
 ]
