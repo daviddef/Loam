@@ -1548,21 +1548,29 @@ __CATEGORY_CSS__
   }
   .bedhead::before{left:2%} .bedhead::after{right:2%}
   .bedgroup{margin-bottom:8px}
-  .bedof{font:700 12px var(--face-name);color:var(--ink-soft);margin-bottom:4px}
+  .bedof{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    font:700 12px var(--face-name);color:var(--ink-soft);margin-bottom:4px;
+  }
+  .bedof .addroute{flex:none;padding:2px 8px;font-size:9.5px}
+  /* Thinner than a "Made From" row on purpose — this list is often eight or
+     more items long (a body's whole organ set), and giving each one the
+     full card-row treatment reads as a lot more scrolling than the same
+     content needs. ("maybe a bit thinner for each item?" — found live.) */
   ul.tree.bed .brow{
-    display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:6px 8px;margin:0 0 4px;
-    background:var(--surface);border:1.5px solid var(--line);border-radius:10px;
-    font-size:12.5px;color:var(--ink);cursor:pointer;
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:4px 7px;margin:0 0 3px;
+    background:var(--surface);border:1.5px solid var(--line);border-radius:9px;
+    font-size:12px;color:var(--ink);cursor:pointer;
   }
   ul.tree.bed .brow .tw{
     font-size:9px;color:var(--ink-soft);width:11px;flex:none;text-align:center;line-height:1;
   }
   ul.tree.bed .brow .g{
-    display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:99px;
+    display:inline-flex;align-items:center;gap:4px;padding:1.5px 6px;border-radius:99px;
     background:var(--card);border:1px solid var(--line);cursor:pointer;font-weight:600;
   }
   ul.tree.bed .brow .g:hover{border-color:var(--orange)}
-  ul.tree.bed .brow .addroute{margin-left:auto}
+  ul.tree.bed .brow .addroute{margin-left:auto;padding:2px 7px;font-size:9.5px}
   .shelfbar{display:flex;gap:5px;align-items:center;margin:0 2px 8px}
   .search.sm{padding:7px 10px;font-size:12.5px;border-radius:9px}
   .shelfbar button{
@@ -5678,7 +5686,8 @@ function bedrockHTML(tally, head = 'and below that') {
       const own = new Set();
       for (const p of BED.composition[id]) for (const a of atomsUnder(p)) own.add(a);
       return `<div class="bedgroup">${bedEquationHTML(id, own)}` +
-        `<div class="bedof">${glyph(id, 20)} ${byId[id].name} is made of</div>` +
+        `<div class="bedof"><span>${glyph(id, 20)} ${byId[id].name} is made of</span>` +
+        `<button class="addroute" data-put-compo="${id}" title="Add every part below to the chart">+ Chart all</button></div>` +
         `<ul class="tree bed">${BED.composition[id].map(k => bedTreeHTML(k, id)).join('')}</ul></div>`;
     }).join('');
 }
@@ -7178,6 +7187,9 @@ function materialize(r, chips) {
   return el;
 }
 function buildChain(id, x, y) {
+  // Captured before a single ancestor is spawned, and restored below — see
+  // the note by ensureVisible(el) further down for why.
+  const view0 = { x: view.x, y: view.y };
   const steps = orderedSteps(id);
   const chipFor = new Map();
   // "A fresh copy each time you need one" has to mean that for the very
@@ -7203,9 +7215,23 @@ function buildChain(id, x, y) {
   }
   const el = chipFor.get(id) || ensure(id);
   if (x != null) {
+    // Every ancestor spawned above via bare spawn(iid) — no x/y — panned the
+    // view to itself as it landed (spawn's own ensureVisible). On a deep
+    // chain that's a dozen pans in a row, and the LAST one wins — so by the
+    // time `el` gets explicitly moved to the actual drop point, the view had
+    // already drifted off chasing wherever the final ancestor happened to
+    // be, and the world coordinates the drop was computed in no longer
+    // mapped to the same spot on screen. ("i drag something... into the
+    // middle, and it pops it at the top, rather in the exact spot i
+    // released" — found live.) Undo all of that drift first — the view the
+    // player was actually looking at when they let go is the one `x, y`
+    // was computed against — then place `el` and do at most the one small
+    // nudge ensureVisible needs to keep it fully on screen.
+    view.x = view0.x; view.y = view0.y; applyView();
     const [cw, ch] = cardSize();
     el.style.left = (x - cw / 2) + 'px';
     el.style.top  = (y - ch / 2) + 'px';
+    ensureVisible(el);
   }
   refreshFolds();
   save();
