@@ -2287,8 +2287,7 @@ function countOnBench(id) {
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
                 theme: 'specimen', ground: 'paper', chrome: 'light',
-                assist: 'on', density: 'half', consolidate: false, motes: true,
-                traceDefault: false };
+                assist: 'on', density: 'half', consolidate: false, motes: true };
 let savedPrefs = null;
 try { savedPrefs = JSON.parse(localStorage.getItem('loam.prefs') || 'null'); } catch {}
 if (savedPrefs) Object.assign(prefs, savedPrefs);
@@ -5912,15 +5911,13 @@ function showHint(id) {
   openSheet(`How to make ${nameOf(e)}`);
 }
 
-function showEntry(id, skipTraceDefault) {
-  // Opt-in: skip the quick Made-From/Makes card and go straight to the full
-  // derivation story every time, the same view "Where it came from" already
-  // opened on request. Only for something actually owned — an unmade
-  // element has no provenance to show yet, so it still gets the ordinary
-  // locked-entry view below. showProvenance's own "Quick view" link passes
-  // skipTraceDefault so there is still a way back to this card when the
-  // setting is on.
-  if (prefs.traceDefault && found.has(id) && !skipTraceDefault) return showProvenance(id);
+function showEntry(id) {
+  // Quick view is always where a tap lands — the short Made-From/Makes card,
+  // not the full derivation story. "Where it came from" below is the one way
+  // in. ("i asked firstly for you to default to the 'quick view' tab. start
+  // there" — asked more than once; this used to be a settings toggle that
+  // could drift to the other state per device, which is exactly what kept
+  // happening. Removed the toggle rather than rely on it staying off.)
   const e = byId[id], f = familyOf(e);
   const routesIn  = DATA.recipes.filter(r => r.out === id);
   const owned     = found.has(id);
@@ -6298,7 +6295,7 @@ document.getElementById('sheet').addEventListener('click', ev => {
   const t = ev.target.closest('[data-trace]');
   if (t) showProvenance(t.dataset.trace);
   const qv = ev.target.closest('[data-quickview]');
-  if (qv) return showEntry(qv.dataset.quickview, true);
+  if (qv) return showEntry(qv.dataset.quickview);
   const at = ev.target.closest('[data-atom]');
   if (at) showAtom(at.dataset.atom);
   const tx = ev.target.closest('[data-taxon]');
@@ -6416,11 +6413,6 @@ function showSettings() {
         ${prefToggle('assist', 'Count the partners', 'on', 'off',
           'When you pick a card up, how many things on the bench it will make something new with. Never which ones.',
           'Say nothing — work it out yourself.')}
-        ${toggle('Open straight to "Where it came from"',
-          prefs.traceDefault
-            ? 'Tapping something you have made opens its full derivation story first. A "Quick view" link is still there for the short card.'
-            : 'Tapping something you have made opens the short card — what it is built from, what it makes.',
-          !!prefs.traceDefault, 'data-tracedefault="1"')}
       </div>`) +
     group('Your data', '⌸', `
       <div class="switches">
@@ -6451,8 +6443,6 @@ function showSettings() {
   openSheet('Settings');
   const mo = document.getElementById('sheetBody').querySelector('[data-motes]');
   if (mo) mo.onclick = () => { prefs.motes = !(prefs.motes !== false); savePrefs(); drawLinks(); syncMotesBtn(); showSettings(); };
-  const td = document.getElementById('sheetBody').querySelector('[data-tracedefault]');
-  if (td) td.onclick = () => { prefs.traceDefault = !prefs.traceDefault; savePrefs(); showSettings(); };
   const cons = document.getElementById('sheetBody').querySelector('[data-consolidate]');
   if (cons) cons.onclick = () => { toggleConsolidate(); showSettings(); };
   const fp = document.getElementById('sheetBody').querySelector('[data-free]');
