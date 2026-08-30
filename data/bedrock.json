@@ -2696,6 +2696,30 @@
       "src": "https://en.wikipedia.org/wiki/Ventral_nerve_cord"
     },
     {
+      "id": "bed_ovariole",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ovariole",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Ovariole",
+      "fact": "The basic unit of egg production, not one shared ovary the way vertebrates have — a germarium of germline stem cells at the tip feeds a row of developing oocytes down the tube toward a shared duct, and the whole ovary is just a bundle of these tubes working in parallel.",
+      "src": "https://en.wikipedia.org/wiki/Ovariole"
+    },
+    {
+      "id": "bed_spermatheca",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Spermatheca",
+      "of": [
+        "bed_insect_cuticle"
+      ],
+      "srcTitle": "Insect reproductive system",
+      "fact": "A cuticle-lined tube or sac where sperm from mating is held in reserve, separate from fertilization itself — sperm sits here until an egg is ready to be fertilized on its way out, and by biasing which sperm gets used, the female keeps a say in whose offspring result long after mating is over.",
+      "src": "https://en.wikipedia.org/wiki/Insect_reproductive_system"
+    },
+    {
       "id": "bed_reptile_scale",
       "kind": "compound",
       "tier": "tissue",
@@ -3370,7 +3394,9 @@
       "bed_dorsal_vessel",
       "bed_hemolymph",
       "bed_ganglion",
-      "bed_ventral_nerve_cord"
+      "bed_ventral_nerve_cord",
+      "bed_ovariole",
+      "bed_spermatheca"
     ],
     "snake": [
       "bed_snake_vertebral_column",
