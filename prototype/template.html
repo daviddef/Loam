@@ -1252,16 +1252,30 @@ __CATEGORY_CSS__
   .ent em{font-style:normal;color:var(--ink-soft);font-size:11px;font-weight:700}
   .ent .arw{color:#C6B69C;margin:0 1px}
   .ent .out{background:#FFF3E9;border-color:#F0D6C0}
-  /* A bare "+" instead of "+ Chart" / "+ Chart all" — the label was
-     costing real estate on every single row of every derivation list for
-     no information a tooltip doesn't already carry. ("wasting real
-     estate on words and big buttons" — found live.) */
-  .ent .addroute{
-    margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;
+  /* A bare "+" instead of "+ Chart" / "+ Chart all" / "Put on the bench" —
+     the label was costing real estate on every single row of every
+     derivation list for no information a tooltip doesn't already carry.
+     One shape everywhere, not scoped to just the .ent rows it started in —
+     scoping it there was itself the bug that let "Put on the bench" (which
+     lives in .cardrow, not .ent) fall through to an unstyled default and
+     visibly disagree with every other "+". ("Why two different versions of
+     the plus sign... Make sure consistent" — found live.) */
+  .addroute{
+    flex:none;display:inline-flex;align-items:center;justify-content:center;
     width:24px;height:24px;padding:0;border-radius:99px;border:1.5px solid var(--line);
     background:var(--card);color:var(--ink-soft);font:700 15px/1 var(--face-name);cursor:pointer;
   }
-  .ent .addroute:hover{border-color:var(--orange);color:var(--brick)}
+  .ent .addroute{margin-left:auto}
+  .addroute:hover{border-color:var(--orange);color:var(--brick)}
+  /* "+ Chart all" (the whole tree below a node) reads as a stronger action
+     than "+ Chart" (one path) — a filled accent says so without more text.
+     ("keep the ones that add all a darker shade" — found live.) Deliberately
+     --orange/--on-accent, not --ink/--ink-soft: those are TEXT tokens that
+     invert between themes (light ink on dark backgrounds in dark mode), so
+     using them as a fill read as lighter, not darker, in dark mode — caught
+     by measuring the actual rendered colour, not by eye. */
+  .addroute.all{background:var(--orange);border-color:var(--orange);color:var(--on-accent)}
+  .addroute.all:hover{background:var(--brick);border-color:var(--brick);color:var(--on-accent)}
   .hint2{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:4px 2px 0}
   /* Named regulated allergens on a resolved ingredient, and a summary banner
      above the list. Amber, not red — this states a legal fact about the label,
@@ -5382,7 +5396,7 @@ function leafTally(id) {
 // anything past AUTO_DEPTH starts folded and opens on tap.
 const AUTO_DEPTH = 4;
 function subtreeSize(id) { return expanded(id).steps + 1; }
-function treeHTML(id, depth, seen = new Set()) {
+function treeHTML(id, depth, seen = new Set(), foldAt = AUTO_DEPTH) {
   // The recipe graph deliberately contains loops — chicken and egg really do
   // make each other. Without a guard this recursed until the tab died.
   if (seen.has(id) || depth > 40) {
@@ -5393,14 +5407,14 @@ function treeHTML(id, depth, seen = new Set()) {
   seen = new Set(seen); seen.add(id);
   const r = bestRecipe.get(id), e = byId[id];
   const v = r && r.verb ? verbs.find(x => x.id === r.verb) : null;
-  const hidden = r && depth >= AUTO_DEPTH;
+  const hidden = r && depth >= foldAt;
   const n = r ? subtreeSize(id) - 1 : 0;
   const row = `<div class="prow${depth === 0 ? ' root' : ''}${r ? ' has' : ''}"${r ? ' data-fold' : ''}>` +
               `${r ? `<span class="tw">${hidden ? '▸' : '▾'}</span>` : '<span class="tw dot">·</span>'}` +
               `<span class="pe">${glyph(e.id, 22)}</span><span class="pn">${e.name}</span>` +
               (hidden && n ? `<span class="more">+${n}</span>` : '') +
               (v ? `<span class="pv">${glyph('verb_' + v.id, 17)} ${v.name}</span>` : '') + `</div>`;
-  const kids = r ? `<ul${hidden ? ' class="fold"' : ''}>${r.in.map(i => treeHTML(i, depth + 1)).join('')}</ul>` : '';
+  const kids = r ? `<ul${hidden ? ' class="fold"' : ''}>${r.in.map(i => treeHTML(i, depth + 1, seen, foldAt)).join('')}</ul>` : '';
   return `<li>${row}${kids}</li>`;
 }
 
@@ -5780,8 +5794,8 @@ function showAtom(id) {
     `<div class="phead">${a ? `<div style="margin-bottom:8px">${node}</div>` : `<div style="margin-bottom:8px">${node}</div>`}
        <h3>${(a ?? c).name}</h3>
        <div class="pnums">${a ? `element ${a.number} · ${a.category}` : 'compound'}</div></div>
-     ${canPlace ? `<div class="cardrow" style="margin:0 0 10px">
-        <button class="ghost" data-put="${gameId}">Put on the bench</button></div>` : ''}
+     ${canPlace ? `<div class="cardrow" style="margin:0 0 10px;justify-content:flex-start">
+        <button class="addroute" data-put="${gameId}" title="Put on the bench">+</button></div>` : ''}
      ${BED.structures?.[id] ? `<div class="molbox">${moleculeSVG(id)}</div>` : ''}
      ${(a ?? c)?.formula ? `<div class="formula">${fmt((a ?? c).formula)}</div>` : ''}
      <p class="why">${(a ?? c).fact ?? 'Not yet written up — this one is reference only for now.'}</p>
@@ -5824,7 +5838,7 @@ function bedrockHTML(tally, head = 'and below that') {
       for (const p of BED.composition[id]) for (const a of atomsUnder(p)) own.add(a);
       return `<div class="bedgroup">${bedEquationHTML(id, own)}` +
         `<div class="bedof"><span>${glyph(id, 20)} ${byId[id].name} is made of</span>` +
-        `<button class="addroute" data-put-compo="${id}" title="Add every part below to the chart">+</button></div>` +
+        `<button class="addroute all" data-put-compo="${id}" title="Add every part below to the chart">+</button></div>` +
         `<ul class="tree bed">${BED.composition[id].map(k => bedTreeHTML(k, id)).join('')}</ul></div>`;
     }).join('');
 }
@@ -5965,10 +5979,16 @@ function showEntry(id, mode) {
     return askFirst(id, () => showEntry(id, mode));
   entryMode = owned ? (mode || entryMode || 'quick') : 'quick';
   const e = byId[id], f = familyOf(e);
+  // The bench-add rides the same row as the tabs, pushed to the far end,
+  // rather than getting a whole centred .cardrow to itself below — a lone
+  // 24px icon centred in a full-width flex row was reading as a wasted
+  // line. ("Make sure consistent and well placed so it doesn't waste
+  // entire lines" — found live.)
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="${entryMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
+       <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
      </div>` : '';
   document.getElementById('sheetBody').innerHTML =
     (entryMode === 'quick' ? quickViewHTML(id) : provenanceHTML(id)).replace('__TABS__', tabs);
@@ -6013,18 +6033,17 @@ function quickViewHTML(id) {
     </div>
     ${cautionHTML(id)}
     __TABS__
-    <div class="cardrow" style="margin:10px 0 10px">
+    ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
       ${!owned ? `<button class="ghost" data-hint="${id}">How do I make it?</button>` : ''}
       ${hiddenIn > 0 ? `<button class="ghost" data-hint="${id}">Other ways to make it</button>` : ''}
-      ${owned ? `<button class="addroute" data-put="${id}" title="Put on the bench">+</button>` : ''}
-    </div>
+    </div>` : ''}
     <h2>Made from${knownIn.length ? ` · ${knownIn.length}` : ''}</h2>
     ${knownIn.length ? rows(knownIn, 'in')
       : `<p class="none">${owned
             ? 'You have this one, but you have not yet held everything that makes it.'
             : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
-    ${owned && bestRecipe.get(id) ? `<h2>Ancestry</h2><ul class="tree">${treeHTML(id, 0)}</ul>` : ''}
+    ${owned && bestRecipe.get(id) ? `<h2>Ancestry</h2><ul class="tree">${treeHTML(id, 0, new Set(), 1)}</ul>` : ''}
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}
     ${taxonPathHTML(id)}
