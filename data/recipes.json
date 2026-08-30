@@ -22815,5 +22815,333 @@
     "out": "television",
     "why": "A television is a radio receiver tuned to a video channel instead of an audio one, feeding the picture it decodes to a screen — LCDs replaced the cathode-ray tube but not that basic job.",
     "src": "https://en.wikipedia.org/wiki/History_of_television"
+  },
+  {
+    "in": [
+      "dna",
+      "gamma_ray"
+    ],
+    "out": "mutation",
+    "why": "Ionizing radiation like gamma rays breaks DNA strands directly; when the repair machinery patches the break imperfectly, the sequence comes back changed — a mutation.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mutagen"
+  },
+  {
+    "in": [
+      "dna",
+      "sun"
+    ],
+    "out": "mutation",
+    "why": "The UV component of sunlight fuses two adjacent thymine bases into a dimer that DNA polymerase can misread when it copies past the kink, which is how sun-damaged skin picks up new mutations.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Pyrimidine_dimer"
+  },
+  {
+    "in": [
+      "mutation"
+    ],
+    "verb": "wait",
+    "out": "natural_selection",
+    "why": "A mutation that raises the odds of surviving to reproduce gets passed on more often than the alleles competing with it — run that quietly for enough generations and that's the whole mechanism of natural selection.",
+    "src": "https://en.wikipedia.org/wiki/Natural_selection"
+  },
+  {
+    "in": [
+      "malaria",
+      "mutation"
+    ],
+    "out": "natural_selection",
+    "why": "One copy of the sickle-cell mutation distorts red blood cells just enough to starve the malaria parasite of a hospitable cell, so carriers in malaria regions survive at higher rates — natural selection favouring a single mutant allele.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sickle_cell_trait"
+  },
+  {
+    "in": [
+      "natural_selection"
+    ],
+    "verb": "wait",
+    "out": "evolution",
+    "why": "Natural selection acting generation after generation is the mechanism Darwin identified: keep it running long enough on a population and its traits drift into something new.",
+    "src": "https://en.wikipedia.org/wiki/Evolution"
+  },
+  {
+    "in": [
+      "evolution",
+      "rna"
+    ],
+    "out": "common_ancestor",
+    "why": "The tree of life's root sits in an RNA world before DNA existed — a soup of self-copying RNA molecules is the leading hypothesis for the chemistry of the last common ancestor every branch evolved from.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Last_universal_common_ancestor"
+  },
+  {
+    "in": [
+      "evolution",
+      "protocell"
+    ],
+    "out": "common_ancestor",
+    "why": "A protocell, a membrane-bound sac of replicating chemistry, is the structural starting point every branch of the tree of life is thought to share, however far evolution has carried what grows from it since.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Protocell"
+  },
+  {
+    "in": [
+      "gene",
+      "mutation"
+    ],
+    "out": "allele",
+    "why": "A mutation inside a gene's sequence creates a new version of it — a new allele — while copies of that gene elsewhere in the population stay as they were.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Allele"
+  },
+  {
+    "in": [
+      "chromosome",
+      "chromosome"
+    ],
+    "out": "allele",
+    "why": "Humans carry two copies of every chromosome, one from each parent. Line up the same gene on both copies and it often reads slightly differently between them — two alleles of one gene.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Allele"
+  },
+  {
+    "in": [
+      "mutation",
+      "mutation"
+    ],
+    "out": "genetic_diversity",
+    "why": "Every new mutation is one more variant added to a population's shared pool of alleles; enough of them accumulated across a population is what geneticists call its genetic diversity.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Genetic_diversity"
+  },
+  {
+    "in": [
+      "allele",
+      "natural_selection"
+    ],
+    "out": "genetic_diversity",
+    "why": "Balancing selection is natural selection actively preserving variation instead of erasing it — the same force that keeps one copy of the sickle-cell allele common in malaria regions without ever letting it take over.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Balancing_selection"
+  },
+  {
+    "in": [
+      "mutation",
+      "protein"
+    ],
+    "out": "cystic_fibrosis",
+    "why": "The most common CF-causing mutation deletes three DNA bases from the CFTR gene, removing one amino acid from the chloride-channel protein it codes for; the misfolded channel is destroyed before it reaches the cell surface.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cystic_fibrosis"
+  },
+  {
+    "in": [
+      "allele",
+      "allele"
+    ],
+    "out": "cystic_fibrosis",
+    "why": "Cystic fibrosis is autosomal recessive: it takes two mutated CFTR alleles, one inherited from each parent, before the chloride channel fails everywhere — one faulty allele paired with a working one causes no disease.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cystic_fibrosis"
+  },
+  {
+    "in": [
+      "hemoglobin",
+      "mutation"
+    ],
+    "out": "sickle_cell_anemia",
+    "why": "A single-base mutation in the beta-globin gene swaps one amino acid in hemoglobin; the altered protein polymerizes into rigid rods when oxygen runs low, bending red blood cells into the sickle shape that names the disease.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sickle_cell_disease"
+  },
+  {
+    "in": [
+      "egg",
+      "sperm"
+    ],
+    "out": "sickle_cell_anemia",
+    "why": "Sickle cell disease is autosomal recessive: only when both the egg and the sperm carry the mutated beta-globin allele does the child inherit two copies and develop full disease — one copy alone gives sickle cell trait, not the disease.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sickle_cell_disease"
+  },
+  {
+    "in": [
+      "cell",
+      "mutation"
+    ],
+    "out": "cancer",
+    "why": "Mutations that pile up in the genes controlling cell division let a cell divide without limit; the extra cells form a mass called a tumor, and cancer is what happens when it invades surrounding tissue.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cancer"
+  },
+  {
+    "in": [
+      "mitosis",
+      "mutation"
+    ],
+    "out": "cancer",
+    "why": "Cancer is fundamentally a disease of mitosis gone wrong — mutations disable the checkpoints that normally stop a damaged cell from dividing, so division runs on unchecked.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cancer"
+  },
+  {
+    "in": [
+      "gene",
+      "virus"
+    ],
+    "out": "gene_therapy",
+    "why": "A virus is disabled so it can't cause disease, then loaded with a working copy of a gene the patient's own version can't make properly; when it infects the patient's cells, they start reading the healthy gene instead.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Gene_therapy"
+  },
+  {
+    "in": [
+      "crispr",
+      "sickle_cell_anemia"
+    ],
+    "out": "gene_therapy",
+    "why": "Sickle cell disease was one of the first diseases cured by gene editing: a 2023-approved CRISPR therapy edits a patient's own bone-marrow stem cells to switch fetal hemoglobin back on, compensating for the faulty adult hemoglobin.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Exagamglogene_autotemcel"
+  },
+  {
+    "in": [
+      "bacteria",
+      "enzyme"
+    ],
+    "out": "crispr",
+    "why": "CRISPR began as a bacterial immune system: bacteria store snippets of virus DNA and use a Cas enzyme, guided by matching RNA, to slice up any virus DNA that matches on a future infection.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/CRISPR"
+  },
+  {
+    "in": [
+      "enzyme",
+      "rna"
+    ],
+    "out": "crispr",
+    "why": "The lab tool is just two parts: a short guide RNA that finds the matching DNA sequence by base-pairing, and the Cas9 enzyme it drags along to cut the DNA there. Swap the guide RNA and the whole system retargets.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/CRISPR_gene_editing"
+  },
+  {
+    "in": [
+      "cutting"
+    ],
+    "verb": "wait",
+    "out": "cloning",
+    "why": "A rooted cutting isn't a hypothesis about cloning, it's cloning already done — left to grow, it becomes a mature plant carrying the exact same DNA as the one the stem was cut from.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cutting_(plant)"
+  },
+  {
+    "in": [
+      "egg",
+      "nucleus"
+    ],
+    "out": "cloning",
+    "why": "Somatic cell nuclear transfer: an egg cell has its own nucleus destroyed and replaced with a donor's, so the embryo that grows carries only the donor's DNA. This is how Dolly the sheep was made in 1996.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Dolly_(sheep)"
+  },
+  {
+    "in": [
+      "parthenogenesis"
+    ],
+    "verb": "wait",
+    "out": "cloning",
+    "why": "Left to develop, an unfertilized egg that divides by parthenogenesis grows into an offspring with DNA identical to its mother's — nature's own version of cloning, no lab required.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Parthenogenesis"
+  },
+  {
+    "in": [
+      "egg",
+      "mitosis"
+    ],
+    "out": "parthenogenesis",
+    "why": "In parthenogenesis an egg cell divides and develops into an embryo without ever being fertilized by sperm — aphid mothers produce daughters this way by mitosis alone, each one a genetic clone of her.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Parthenogenesis"
+  },
+  {
+    "in": [
+      "crispr",
+      "elephant"
+    ],
+    "out": "de_extinction",
+    "why": "The leading woolly-mammoth revival plan edits mammoth genes for shaggy hair and cold tolerance, recovered from frozen remains, directly into the genome of the Asian elephant, the mammoth's closest living relative.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/De-extinction"
+  },
+  {
+    "in": [
+      "cloning",
+      "elephant"
+    ],
+    "out": "de_extinction",
+    "why": "Cloning is the other real de-extinction route: in 2003 the extinct Pyrenean ibex was briefly revived by cloning a preserved cell into a goat's egg, the same nuclear-transfer approach proposed for reviving the mammoth in an elephant egg.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/De-extinction"
+  },
+  {
+    "in": [
+      "chromosome",
+      "enzyme"
+    ],
+    "out": "dna_sequencing",
+    "why": "Sanger sequencing hijacks the enzyme that copies a chromosome, DNA polymerase, mixing in a small fraction of modified bases that stop the chain wherever they're inserted — sorting the stopped fragments by length reads out the sequence.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Sanger_sequencing"
+  },
+  {
+    "in": [
+      "gene",
+      "membrane"
+    ],
+    "out": "dna_sequencing",
+    "why": "Nanopore sequencing threads a single strand of a gene's DNA through a pore in a membrane and reads the sequence directly from the distinctive dip in electrical current each base causes as it passes — no copying step required.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Nanopore_sequencing"
+  },
+  {
+    "in": [
+      "dna",
+      "mitochondrion"
+    ],
+    "out": "mitochondrial_dna",
+    "why": "Mitochondria carry their own small loop of DNA, separate from the DNA in the nucleus — a leftover from the free-living bacterium a cell engulfed roughly two billion years ago.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mitochondrial_DNA"
+  },
+  {
+    "in": [
+      "egg",
+      "mitochondrion"
+    ],
+    "out": "mitochondrial_dna",
+    "why": "Almost none of a father's mitochondria survive fertilization; the egg's own mitochondria are what pass to the embryo, which is why mitochondrial DNA traces a single unbroken maternal line back through history.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Mitochondrial_DNA"
+  },
+  {
+    "in": [
+      "cell",
+      "dna_sequencing"
+    ],
+    "out": "dna_profile",
+    "why": "As few as five skin cells left at a scene hold enough DNA to sequence certain repeat regions and produce a profile — a set of DNA markers specific enough to match one person out of a population, or clear everyone else.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/DNA_profiling"
+  },
+  {
+    "in": [
+      "dna_sequencing",
+      "mitochondrial_dna"
+    ],
+    "out": "dna_profile",
+    "why": "Comparing mitochondrial DNA sequences let geneticists match a skeleton dug up from a parking lot to two living relatives of Richard III of England through an unbroken maternal line — identification made from bone buried since 1485.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Exhumation_and_reburial_of_Richard_III_of_England"
   }
 ]

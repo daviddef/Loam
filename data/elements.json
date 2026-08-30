@@ -6208,7 +6208,7 @@
       "animal"
     ],
     "fact": "Four chains, four hemes, four oxygens \u2014 and it lifts blood's oxygen capacity seventyfold.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "myoglobin",
@@ -6846,7 +6846,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A bilayer sac with replicating chemistry inside. Nobody has yet made one that lives."
   },
   {
@@ -15634,7 +15634,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Fever comes in waves timed to red blood cells bursting open, all at once, every one to three days."
   },
   {
@@ -19473,5 +19473,185 @@
     "terminal": true,
     "soleRoute": true,
     "fact": "A radio tuned to a video channel instead of an audio one, feeding a screen."
+  },
+  {
+    "id": "mutation",
+    "name": "Mutation",
+    "emoji": "\ud83c\udfb2",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A change in the DNA sequence, from a copying mistake or damage. You carry about 60 unique to you."
+  },
+  {
+    "id": "natural_selection",
+    "name": "Natural Selection",
+    "emoji": "\ud83d\udc26",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Mutations that help you survive or reproduce spread through a population; harmful ones tend to vanish."
+  },
+  {
+    "id": "evolution",
+    "name": "Evolution",
+    "emoji": "\ud83d\udc12",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "Heritable change in a population's traits across generations \u2014 natural selection, given enough time."
+  },
+  {
+    "id": "common_ancestor",
+    "name": "Common Ancestor",
+    "emoji": "\ud83c\udf33",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Every living thing on Earth traces back to one ancestral population, about four billion years ago."
+  },
+  {
+    "id": "allele",
+    "name": "Allele",
+    "emoji": "\ud83c\udfad",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A different version of the same gene. You carry two of almost every one, one from each parent."
+  },
+  {
+    "id": "genetic_diversity",
+    "name": "Genetic Diversity",
+    "emoji": "\ud83c\udf08",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "How many different alleles exist across a population's genes. Bigger pools survive change better."
+  },
+  {
+    "id": "cystic_fibrosis",
+    "name": "Cystic Fibrosis",
+    "emoji": "\ud83e\udec1",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A faulty chloride-channel gene clogs the lungs and gut with thick mucus. Inherited, not contagious."
+  },
+  {
+    "id": "sickle_cell_anemia",
+    "name": "Sickle Cell Anemia",
+    "emoji": "\ud83e\ude78",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "One swapped amino acid bends red blood cells into a sickle shape that jams in blood vessels."
+  },
+  {
+    "id": "cancer",
+    "name": "Cancer",
+    "emoji": "\ud83c\udf97\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Mutations disable the brakes on cell division, and a mass of runaway cells forms a tumor."
+  },
+  {
+    "id": "gene_therapy",
+    "name": "Gene Therapy",
+    "emoji": "\ud83d\udc89",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Delivering a working copy of a gene into a patient's cells to make up for a faulty one."
+  },
+  {
+    "id": "crispr",
+    "name": "CRISPR",
+    "emoji": "\u2702\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A bacterial defence system repurposed as molecular scissors that cut DNA at a chosen sequence."
+  },
+  {
+    "id": "cloning",
+    "name": "Cloning",
+    "emoji": "\ud83d\udc6f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Producing an individual with DNA identical to another's \u2014 plants and labs both know how."
+  },
+  {
+    "id": "parthenogenesis",
+    "name": "Parthenogenesis",
+    "emoji": "\ud83e\udd5a",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "An egg develops into an embryo without fertilization. The offspring is a clone of the mother."
+  },
+  {
+    "id": "de_extinction",
+    "name": "De-extinction",
+    "emoji": "\ud83e\udda3",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Splicing an extinct species' genes into a living relative's genome to bring back lost traits."
+  },
+  {
+    "id": "dna_sequencing",
+    "name": "DNA Sequencing",
+    "emoji": "\ud83d\udd21",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Reading out the exact order of bases in a stretch of DNA, one letter at a time."
+  },
+  {
+    "id": "mitochondrial_dna",
+    "name": "Mitochondrial DNA",
+    "emoji": "\ud83d\udd0b",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "DNA inside mitochondria, inherited only from the mother, unchanged down the maternal line."
+  },
+  {
+    "id": "dna_profile",
+    "name": "DNA Profile",
+    "emoji": "\ud83d\udd75\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A person's unique pattern of DNA markers, precise enough to match evidence to one person."
   }
 ]
