@@ -520,6 +520,39 @@
         "nutmeg"
       ],
       "severity": "acute"
+    },
+    "ecoli_illness": {
+      "label": "E. coli is usually harmless, and sometimes isn't",
+      "note": "Most E. coli strains are part of the normal gut microbiota and are harmless or even beneficial. Pathogenic strains are a different matter: some cause serious food poisoning, and virulent strains can cause gastroenteritis, urinary tract infections, neonatal meningitis, and hemorrhagic colitis.",
+      "ids": [
+        "e_coli",
+        "colibacillosis"
+      ],
+      "severity": "conditional"
+    },
+    "paracetamol_overdose": {
+      "label": "Paracetamol overdose is a leading cause of acute liver failure",
+      "note": "Paracetamol is safe at the recommended dose and dangerous well before it tastes dangerous. Taking more than the maximum adult daily dose — three to four grams — can cause potentially fatal liver damage. Paracetamol toxicity is one of the leading causes of poisoning in high-income countries, and the single most common cause of acute liver failure in many of them.",
+      "ids": [
+        "paracetamol"
+      ],
+      "severity": "acute"
+    },
+    "cowpox_zoonosis": {
+      "label": "Cowpox still circulates — now mostly by way of cats",
+      "note": "Despite the name, cowpox's usual wild hosts are woodland rodents, particularly voles, not cattle. Domestic cats catch it from those rodents and can pass it on to their owners, which is how most human cowpox cases happen today.",
+      "ids": [
+        "cowpox"
+      ],
+      "severity": "conditional"
+    },
+    "histamine_scombroid": {
+      "label": "Histamine is also a real fish-poisoning toxin",
+      "note": "Above about 16°C, bacteria on improperly stored fish convert the histidine already in the flesh into histamine, and enough of it causes scombroid food poisoning: flushed skin, headache, itching and cramps, usually from tuna, mackerel or other dark-fleshed fish left too warm for too long.",
+      "ids": [
+        "histamine"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

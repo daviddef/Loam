@@ -3652,8 +3652,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Its ring has a pKa near 6, close enough to swap a proton in a living cell. Active sites are full of it.",
-    "terminal": true
+    "fact": "Its ring has a pKa near 6, close enough to swap a proton in a living cell. Active sites are full of it."
   },
   {
     "id": "phenylalanine",
@@ -4788,7 +4787,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "The hard part was never the point. It was drilling an eye without splitting the bone."
   },
   {
@@ -7939,7 +7937,6 @@
       "animal",
       "food"
     ],
-    "terminal": true,
     "fact": "Domesticated birds kept for meat, eggs or feathers. A wild bird shot for the pot is game."
   },
   {
@@ -12142,5 +12139,194 @@
     ],
     "fact": "Cassava root, grated and pressed until its starch washes out as a milky liquid, then dried into flour or pearls — raw cassava is toxic, so this processing is not optional.",
     "terminal": true
+  },
+  {
+    "id": "avibirnavirus",
+    "name": "Avibirnavirus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A double-stranded RNA genus, bare and non-enveloped. Its only member's natural hosts are chickens and turkeys."
+  },
+  {
+    "id": "infectious_bursal_disease",
+    "name": "Gumboro Disease",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Also called infectious bursal disease. Destroys a young chicken's B-lymphocytes right where they form."
+  },
+  {
+    "id": "gammacoronavirus",
+    "name": "Gammacoronavirus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A coronavirus genus from the avian gene pool. Goose, duck and chicken each carry their own species in it."
+  },
+  {
+    "id": "infectious_bronchitis",
+    "name": "Infectious Bronchitis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A chicken-only coronavirus disease. Fouls the airway first, then can reach the kidney and the oviduct."
+  },
+  {
+    "id": "e_coli",
+    "name": "E. coli",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Normal gut flora in almost every warm-blooded animal, harmless there — until one strain gets the wrong genes."
+  },
+  {
+    "id": "colibacillosis",
+    "name": "Colibacillosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "What a virulent E. coli strain causes once it reaches tissue the harmless kind never goes. Costly to poultry."
+  },
+  {
+    "id": "ascaridia_galli",
+    "name": "Ascaridia galli",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A roundworm living nowhere but a bird's small intestine. Free-range chickens catch it from an earthworm."
+  },
+  {
+    "id": "ascaridiasis",
+    "name": "Ascaridiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Heavy Ascaridia galli infection in a chicken's gut, from eggs that persist for years in soil and water."
+  },
+  {
+    "id": "satellite",
+    "name": "Satellite",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Bare RNA even smaller than a viroid's. It cannot replicate at all without borrowing a helper virus's proteins."
+  },
+  {
+    "id": "cowpox",
+    "name": "Cowpox",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A real Orthopoxvirus — its usual wild host is voles, not cattle, which only catch it occasionally."
+  },
+  {
+    "id": "vaccine",
+    "name": "Vaccine",
+    "emoji": "💉",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A weakened, killed, or fragmentary pathogen, given on purpose so the immune system meets the real one first."
+  },
+  {
+    "id": "immunity",
+    "name": "Immunity",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "The immune system's memory of a pathogen it has already met — faster and stronger, the second time around."
+  },
+  {
+    "id": "nitrophenol",
+    "name": "Nitrophenol",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Phenol with a nitro group on its fourth carbon. Bright yellow, and paracetamol's classical first step."
+  },
+  {
+    "id": "aminophenol",
+    "name": "Aminophenol",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Nitrophenol's nitro group, reduced to an amine. One reaction away from paracetamol."
+  },
+  {
+    "id": "paracetamol",
+    "name": "Paracetamol",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Relieves pain and fever. Exactly how is still not settled science, after more than a century of use."
+  },
+  {
+    "id": "histamine",
+    "name": "Histamine",
+    "emoji": "🤧",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "One amino acid, one step. The actual cause of a runny nose in an allergic reaction — not the allergen protein."
+  },
+  {
+    "id": "arachidonic_acid",
+    "name": "Arachidonic Acid",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A polyunsaturated fatty acid built into cell-membrane phospholipids until an enzyme cuts it free."
+  },
+  {
+    "id": "prostaglandin",
+    "name": "Prostaglandin",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Made from arachidonic acid by the enzyme painkillers target. The real signal behind pain, fever and swelling."
   }
 ]

@@ -15934,5 +15934,185 @@
     "why": "Grated and pressed, cassava gives up its starch as a milky liquid; washed and dried, it becomes tapioca flour or pearls.",
     "src": "https://en.wikipedia.org/wiki/Tapioca",
     "verified": true
+  },
+  {
+    "in": [
+      "virus",
+      "chicken"
+    ],
+    "out": "avibirnavirus",
+    "why": "IBDV is a double-stranded RNA virus in the genus Avibirnavirus, its capsid non-enveloped and its genome split across two segments. The natural hosts of IBD are chickens and turkeys — a virus this narrowly hosted earns its own genus, not just a species name.",
+    "src": "https://en.wikipedia.org/wiki/Infectious_bursal_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "avibirnavirus",
+      "chicken"
+    ],
+    "out": "infectious_bursal_disease",
+    "why": "Gumboro disease is Avibirnavirus at work inside a young chicken: it destroys the lymphoid follicles in the bursa of Fabricius, and the circulating B-cells with them. Infection travels the oro-fecal route, and affected birds shed the virus for about two weeks.",
+    "src": "https://en.wikipedia.org/wiki/Infectious_bursal_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "virus",
+      "poultry"
+    ],
+    "out": "gammacoronavirus",
+    "why": "The gamma coronavirus genus is drawn from the avian gene pool, and its members split cleanly by bird: goose coronavirus, duck coronavirus, and Gammacoronavirus galli — named for Gallus, the chicken's own genus.",
+    "src": "https://en.wikipedia.org/wiki/Gammacoronavirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "gammacoronavirus",
+      "chicken"
+    ],
+    "out": "infectious_bronchitis",
+    "why": "Gammacoronavirus galli is infectious bronchitis virus's real name, chicken right there in the species. Inhaled, it binds sialic-acid receptors on ciliated airway cells, stopping the cilia and filling the tract with mucus before spreading to kidney or oviduct.",
+    "src": "https://en.wikipedia.org/wiki/Infectious_bronchitis_virus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "manure"
+    ],
+    "out": "e_coli",
+    "why": "E. coli commonly lives in the lower intestine of warm-blooded organisms, and its cells survive only a limited time outside the body — so finding it in dung is itself the test, which is why it's used as an indicator organism for fecal contamination.",
+    "src": "https://en.wikipedia.org/wiki/Escherichia_coli",
+    "supported": true
+  },
+  {
+    "in": [
+      "e_coli",
+      "chicken"
+    ],
+    "out": "colibacillosis",
+    "why": "Most E. coli strains stay harmless commensals as long as they never pick up genes for virulence factors. The ones that do can reach tissue the ordinary gut strain never touches, and in poultry the resulting fecal-oral infection is called colibacillosis.",
+    "src": "https://en.wikipedia.org/wiki/Colibacillosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthworm",
+      "chicken"
+    ],
+    "out": "ascaridia_galli",
+    "why": "Ascaridia galli is a parasitic roundworm, and transport hosts such as earthworms are thought to play a role in its spread. Free-range birds carry a higher risk of infection than caged ones for exactly this reason — there's an earthworm to eat.",
+    "src": "https://en.wikipedia.org/wiki/Ascaridia_galli",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascaridia_galli",
+      "chicken"
+    ],
+    "out": "ascaridiasis",
+    "why": "Ascaridiasis is a disease of poultry from heavy A. galli infection, particularly in chickens and turkeys. The worm lives in the small intestine, and its eggs have thick, resistant shells that persist in the environment long after they're shed.",
+    "src": "https://en.wikipedia.org/wiki/Ascaridia_galli",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna",
+      "virus"
+    ],
+    "out": "satellite",
+    "why": "A satellite nucleic acid is bare RNA, exactly like a viroid, except it encodes no structural proteins of its own. It is completely dependent on coinfecting a cell alongside a full helper virus, borrowing that virus's own proteins to get copied and packaged.",
+    "src": "https://en.wikipedia.org/wiki/Satellite_(biology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "virus"
+    ],
+    "out": "cowpox",
+    "why": "Cowpox virus, genus Orthopoxvirus, is closely related to Vaccinia, the strain later smallpox vaccines used. Its usual wild reservoir is woodland voles — cattle catch it only occasionally, which is exactly how Edward Jenner first found it.",
+    "src": "https://en.wikipedia.org/wiki/Cowpox",
+    "verified": true
+  },
+  {
+    "in": [
+      "cowpox",
+      "needle"
+    ],
+    "out": "vaccine",
+    "why": "On 14 May 1796, Edward Jenner scraped pus from cowpox blisters on a milkmaid's hand and scratched it into eight-year-old James Phipps' arm. Weeks later, deliberate exposure to real smallpox produced no disease — the first documented deliberate vaccination.",
+    "src": "https://en.wikipedia.org/wiki/Edward_Jenner",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine"
+    ],
+    "verb": "wait",
+    "out": "immunity",
+    "why": "Memory B and T cells built after a first exposure don't need a second signal to act again — they divide faster and answer harder the next time the same threat shows up. That is exactly what a vaccine trains in advance, before any real infection happens.",
+    "src": "https://en.wikipedia.org/wiki/Immunological_memory",
+    "supported": true
+  },
+  {
+    "in": [
+      "nitrate",
+      "phenol"
+    ],
+    "out": "nitrophenol",
+    "why": "Nitrating phenol with nitric acid gives 4-nitrophenol, the classical first step toward paracetamol. The game's nitrate ion stands in for the acid's reactive nitrogen, the same kind of stand-in aspirin's own recipe already uses for acetic anhydride.",
+    "src": "https://en.wikipedia.org/wiki/Paracetamol",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen",
+      "nitrophenol"
+    ],
+    "out": "aminophenol",
+    "why": "4-nitrophenol is reduced to 4-aminophenol by hydrogenation over Raney nickel — the real second step of paracetamol's classical synthesis, one reaction away from the finished drug.",
+    "src": "https://en.wikipedia.org/wiki/Paracetamol",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetic_acid",
+      "aminophenol"
+    ],
+    "out": "paracetamol",
+    "why": "The classical last step acetylates 4-aminophenol with acetic anhydride. The game's acetic acid stands in for the anhydride — the same honest substitution aspirin's own recipe already makes, not a claim that vinegar makes paracetamol.",
+    "src": "https://en.wikipedia.org/wiki/Paracetamol",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "histidine"
+    ],
+    "out": "histamine",
+    "why": "Histidine decarboxylase strips one carboxyl group from the amino acid histidine in a single reaction, producing histamine directly. Turning that one amino acid into histamine is the enzyme's only known job.",
+    "src": "https://en.wikipedia.org/wiki/Histidine_decarboxylase",
+    "verified": true
+  },
+  {
+    "in": [
+      "phospholipid"
+    ],
+    "verb": "cut",
+    "out": "arachidonic_acid",
+    "why": "Arachidonic acid sits pre-built into membrane phospholipids until phospholipase A2 hydrolyses it free. That release is the real first step behind every prostaglandin, and the step every NSAID ultimately works upstream of.",
+    "src": "https://en.wikipedia.org/wiki/Arachidonic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "arachidonic_acid",
+      "enzyme"
+    ],
+    "out": "prostaglandin",
+    "why": "Cyclooxygenase converts arachidonic acid into prostaglandin H2, the precursor every other prostaglandin is built from — the actual signal behind pain, fever, inflammation and swelling, not the injury itself.",
+    "src": "https://en.wikipedia.org/wiki/Ibuprofen",
+    "verified": true
   }
 ]

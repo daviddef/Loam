@@ -2825,6 +2825,152 @@
       "src": "https://en.wikipedia.org/wiki/Rattlesnake"
     },
     {
+      "id": "bed_cow_rumen",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Rumen",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Rumen",
+      "fact": "The largest of a cow's four stomach compartments, and no cellulase of its own — millions of resident bacteria, archaea, protozoa and fungi ferment the cellulose instead, against a wall lined in fingerlike papillae built to absorb what they produce.",
+      "src": "https://en.wikipedia.org/wiki/Rumen"
+    },
+    {
+      "id": "bed_cow_abomasum",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Abomasum",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Abomasum",
+      "fact": "The fourth and final stomach compartment, and the only one that works anything like ours — a true glandular stomach, secreting acid to break down the microbial and dietary protein the first three chambers already fermented.",
+      "src": "https://en.wikipedia.org/wiki/Abomasum"
+    },
+    {
+      "id": "bed_cow_horn",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Horn",
+      "of": [
+        "bed_osseous_tissue",
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Horn (anatomy)",
+      "fact": "Where cattle carry them, horns are never shed — a core of live bone that starts as subcutaneous connective tissue and later fuses to the skull, sheathed for life in the same keratin protein as hoof and hair.",
+      "src": "https://en.wikipedia.org/wiki/Horn_(anatomy)"
+    },
+    {
+      "id": "bed_cow_udder",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Udder",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Udder",
+      "fact": "Two pairs of mammary glands fused into one hanging mass, each alveolus lined in milk-secreting cells and wrapped in its own contractile myoepithelium — cattle nurse from four teats on the milk line near the groin, not the pair on a chest that primates and elephants use.",
+      "src": "https://en.wikipedia.org/wiki/Udder"
+    },
+    {
+      "id": "bed_whale_blowhole",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Blowhole",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Blowhole (anatomy)",
+      "fact": "A nostril, relocated — homologous with any other mammal's, moved by degrees to the top of the head. Toothed whales keep one; baleen whales split into two, set in a V. A muscular plug seals it on every dive and relaxes open again at the surface.",
+      "src": "https://en.wikipedia.org/wiki/Blowhole_(anatomy)"
+    },
+    {
+      "id": "bed_whale_blubber",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Blubber",
+      "of": [
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Blubber",
+      "fact": "A vascularized layer of fat laced through with collagen fiber, up to 30 centimeters thick in the biggest whales and as much as half the animal's body mass — insulation that, unlike fur, doesn't compress and lose its effect under diving pressure.",
+      "src": "https://en.wikipedia.org/wiki/Blubber"
+    },
+    {
+      "id": "bed_whale_flipper",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Flipper",
+      "of": [
+        "bed_osseous_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Cetacean",
+      "fact": "A hand, paddled flat: shortened arm bones and elongated finger bones, the middle two fingers multiplying their own joints (hyperphalangy) instead of ending at a wrist. The shoulder is the only joint in the whole limb that still moves.",
+      "src": "https://en.wikipedia.org/wiki/Cetacean"
+    },
+    {
+      "id": "bed_whale_lung",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Whale Lung",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Cetacean",
+      "fact": "Every breath swaps up to 90% of total lung volume, against roughly 15% for a land mammal — but past about 100 meters down, water pressure compresses the lung nearly flat regardless, so the real oxygen reserve for a deep dive is stored in the muscle instead.",
+      "src": "https://en.wikipedia.org/wiki/Cetacean"
+    },
+    {
+      "id": "bed_fish_gill",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Gill",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Gill",
+      "fact": "Comb-like filaments folded into lamellae to maximize surface area, with water flowing over them in the direction opposite the blood inside — that countercurrent arrangement alone recovers as much as 90% of the oxygen dissolved in the water.",
+      "src": "https://en.wikipedia.org/wiki/Gill"
+    },
+    {
+      "id": "bed_fish_heart",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Fish Heart",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Fish physiology",
+      "fact": "Two true chambers, not four — one atrium, one ventricle — pumping blood through a single loop: gills first, then straight on to the rest of the body, with no second pass back through the heart the way a bird's or mammal's blood gets.",
+      "src": "https://en.wikipedia.org/wiki/Fish_physiology"
+    },
+    {
+      "id": "bed_fish_lateral_line",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Lateral Line",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Lateral line",
+      "fact": "A line of neuromasts under the skin, each one a cluster of hair cells capped by a flexible, jellylike cupula. Water movement bends the hairs, and that bend alone is what lets a fish sense vibration, pressure change and the pull of its own school.",
+      "src": "https://en.wikipedia.org/wiki/Lateral_line"
+    },
+    {
       "id": "bed_eggshell_membrane",
       "kind": "compound",
       "tier": "tissue",
@@ -3240,6 +3386,23 @@
       "bed_venom_gland",
       "bed_pit_organ",
       "bed_rattle"
+    ],
+    "cow": [
+      "bed_cow_rumen",
+      "bed_cow_abomasum",
+      "bed_cow_horn",
+      "bed_cow_udder"
+    ],
+    "whale": [
+      "bed_whale_blowhole",
+      "bed_whale_blubber",
+      "bed_whale_flipper",
+      "bed_whale_lung"
+    ],
+    "fish": [
+      "bed_fish_gill",
+      "bed_fish_heart",
+      "bed_fish_lateral_line"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",
