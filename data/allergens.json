@@ -188,7 +188,9 @@
         "stockfish",
         "roe",
         "isinglass",
-        "swim_bladder"
+        "swim_bladder",
+        "salmon",
+        "tuna"
       ]
     },
     "crustacean": {
@@ -201,11 +203,7 @@
       ],
       "proteinNote": "Tropomyosin is the coiled-coil protein that lies along an actin filament and gates muscle contraction. Every animal has one; the invertebrate version is the allergen.",
       "proteinSrc": "https://en.wikipedia.org/wiki/Shellfish_allergy",
-      "elementsAbsent": [
-        "prawn",
-        "crab",
-        "lobster"
-      ],
+      "elementsAbsent": [],
       "declarable": {
         "us": true,
         "eu": true
@@ -223,7 +221,11 @@
       "heatStable": true,
       "heatNote": "Tropomyosin's helix collapses on heating to 80 °C but forms no insoluble aggregate and regains its native fold on cooling to 25 °C, retaining antigenicity. Denaturation here is reversible, which is why cooking does not settle the question.",
       "heatSrc": "https://europepmc.org/article/MED/23649255",
-      "ids": []
+      "ids": [
+        "shrimp",
+        "crab",
+        "lobster"
+      ]
     },
     "mollusc": {
       "name": "Molluscs",

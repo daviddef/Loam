@@ -461,6 +461,57 @@
         "penicillin"
       ],
       "severity": "conditional"
+    },
+    "apricot_kernel": {
+      "label": "The kernel, not the flesh",
+      "note": "Apricot flesh is entirely safe and this caution is not about eating apricots. The kernel inside the pit contains amygdalin — bitter kernels run about 5% amygdalin, sweet ones about 0.9% — which breaks down into cyanide. Do not eat the kernel.",
+      "ids": [
+        "apricot"
+      ],
+      "severity": "acute"
+    },
+    "rhubarb_leaf": {
+      "label": "The stalk, not the leaf",
+      "note": "Rhubarb's stalk is what's eaten. The leaf blade contains oxalic acid, a nephrotoxin, and real poisonings have followed eating the leaves — including a wartime shortage-era recommendation in Britain that was later withdrawn.",
+      "ids": [
+        "rhubarb"
+      ],
+      "severity": "acute"
+    },
+    "bean_lectin": {
+      "label": "Raw beans are not a recipe you can eyeball",
+      "note": "Raw or undercooked common beans contain phytohaemagglutinin, a toxic lectin — most concentrated in red kidney beans, but present across the species. A full rolling boil for at least 30 minutes destroys it; a slow cooker's lower heat does not.",
+      "ids": [
+        "bean",
+        "black_bean",
+        "pinto_bean",
+        "kidney_bean"
+      ],
+      "severity": "acute"
+    },
+    "cashew_shell": {
+      "label": "The shell is a poison-ivy relative",
+      "note": "Raw cashew shells and unroasted seeds carry anacardic acid, a potent skin-irritant resin chemically related to the toxin in poison ivy. Commercial cashews are always shelled and roasted or steamed before sale for exactly this reason.",
+      "ids": [
+        "cashew"
+      ],
+      "severity": "contact"
+    },
+    "cassia_coumarin": {
+      "label": "Cassia cinnamon carries far more coumarin than Ceylon",
+      "note": "Cassia cinnamon — the common supermarket kind — runs well over 1mg of coumarin per gram, sometimes far more; true Ceylon cinnamon carries only trace amounts. High coumarin intake over time risks liver and kidney harm.",
+      "ids": [
+        "cinnamon"
+      ],
+      "severity": "cumulative"
+    },
+    "nutmeg_myristicin": {
+      "label": "Nutmeg's own toxin, in excess",
+      "note": "Myristicin, nutmeg's own compound, is a toxin in pure form — consuming excessive amounts of nutmeg can cause real myristicin poisoning, not just an upset stomach.",
+      "ids": [
+        "nutmeg"
+      ],
+      "severity": "acute"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

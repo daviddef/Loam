@@ -3903,6 +3903,489 @@ def('salmonella',   () => [rod3('bs', 30, 30, 14, 5),
 def('viroid',       () => [ring('bs', 30, 32, 13, 3),
                            ...[0, 60, 120, 180, 240, 300].map(a => ['g', a, 30, 32, [S('M30 19 L30 15', 'ik', 1.4)]])]);
 
+/* food100 batch 1 — vegetables ─────────────────────────────────────────── */
+def('sweet_potato', () => [                                // tapered, no eyes — unlike potato
+  P('M14 34 Q14 19 30 17 Q46 19 46 34 Q46 49 30 51 Q14 49 14 34 Z', 'bs'),
+  S('M19 26 Q30 22 41 26', 'lo', 1.4),
+  S('M30 17 L28 10', 'plant-lo', 1.6),
+]);
+def('cauliflower', () => [                                 // curd wrapped in leaves, bumpier than broccoli
+  leaf('lo', 13, 42, .6, -55), leaf('lo', 47, 42, .6, 55),
+  C(30, 27, 16, 'bs'),
+  ...granules('hi', 16, 61, [15, 13, 45, 34]),
+]);
+def('zucchini', () => [                                    // straight cylinder, blossom-end taper
+  P('M18 14 Q16 14 16 19 L16 40 Q16 51 26 53 L34 53 Q44 51 44 40 L44 19 Q44 14 42 14 Z', 'bs'),
+  S('M22 20 L23 47', 'hi', 1.6), S('M30 17 L30 51', 'hi', 1.2),
+  S('M30 14 L30 7', 'plant-lo', 2),
+]);
+def('eggplant', () => [                                    // teardrop, green calyx cap
+  P('M30 15 Q46 21 46 37 Q46 53 30 55 Q14 53 14 37 Q14 21 30 15 Z', 'bs'),
+  ...[-1, 0, 1].map(i => leaf('plant-bs', 30 + i * 7, 13, .4, i * 40)),
+  E(24, 27, 5, 7, 'hi'),
+]);
+def('asparagus', () => [                                   // a bundle of spears, scaled tips
+  ...[18, 30, 42].map((x, i) => [
+    P(`M${x - 3} 52 L${x - 2} 15 Q${x} 9 ${x + 2} 15 L${x + 3} 52 Z`, i % 2 ? 'bs' : 'hi'),
+    ...[19, 25, 31].map(y => S(`M${x - 2} ${y} L${x + 2} ${y - 3}`, 'lo', 1)),
+  ]).flat(),
+]);
+def('radish', () => [                                      // round, red-shouldered, taproot tail
+  E(30, 34, 13, 13, 'bs'),
+  S('M30 47 L30 54', 'lo', 2),
+  ...[[24, 20], [30, 15], [36, 20]].map(([x, y]) => leaf('plant-bs', x, y, .5)),
+  E(25, 29, 3, 3, 'hi'),
+]);
+def('turnip', () => [                                      // two-tone bulb: pale below, coloured shoulder
+  P('M17 30 A13 13 0 0 0 43 30 L43 34 Q43 48 30 50 Q17 48 17 34 Z', 'hi'),
+  P('M17 30 A13 13 0 0 1 43 30 Q30 22 17 30 Z', 'bs'),
+  ...[[24, 16], [30, 11], [36, 16]].map(([x, y]) => leaf('plant-bs', x, y, .55)),
+]);
+def('leek', () => [                                        // pale shaft, fanning dark leaves, roots
+  P('M24 54 L24 27 Q24 21 30 21 Q36 21 36 27 L36 54 Z', 'hi'),
+  ...[-1, 1].map(i => P(`M30 25 L${30 + i * 3} 25 L${30 + i * 11} 6 L${30 + i * 2} 10 Z`, 'bs')),
+  ...granules('lo', 5, 5, [26, 52, 34, 58]),
+]);
+def('brussels_sprout', () => [                             // small buds up a thick stalk, helical
+  S('M30 8 L30 54', 'lo', 3),
+  ...[[22, 16], [38, 22], [22, 28], [38, 34], [22, 40], [38, 46]].map(([x, y], i) =>
+    C(x, y, 6.4, i % 2 ? 'hi' : 'bs')),
+]);
+def('kale', () => [                                        // ruffled fanning leaves, no head
+  ...[[30, 16, 0], [16, 30, -55], [44, 30, 55], [22, 44, -25], [38, 44, 25]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [P(`M${x} ${y - 12} Q${x + 12} ${y - 4} ${x + 4} ${y + 6} Q${x} ${y + 2} ${x - 4} ${y + 6} Q${x - 12} ${y - 4} ${x} ${y - 12} Z`, 'bs')]]),
+  S('M30 52 L30 40', 'lo', 2.4),
+]);
+def('artichoke', () => [                                   // layered bract-scales on a bud
+  P('M30 12 Q44 18 44 34 Q44 50 30 54 Q16 50 16 34 Q16 18 30 12 Z', 'bs'),
+  ...[[22, 24], [38, 24], [21, 37], [39, 37], [30, 45], [30, 20]].map(([x, y]) =>
+    P(`M${x} ${y - 6} Q${x + 5} ${y} ${x} ${y + 6} Q${x - 5} ${y} ${x} ${y - 6} Z`, 'hi')),
+]);
+def('okra', () => [                                        // ridged, pointed pod
+  P('M30 9 Q37 9 37 20 L34 51 Q34 55 30 55 Q26 55 26 51 L23 20 Q23 9 30 9 Z', 'bs'),
+  ...[24, 30, 36].map(x => S(`M${x} 16 L${x} 50`, 'lo', 1)),
+  leaf('plant-bs', 30, 7, .4),
+]);
+def('mushroom', () => [                                    // domed cap, thick stem — unlike shiitake/maitake
+  P('M9 25 Q9 9 30 9 Q51 9 51 25 Z', 'bs'),
+  P('M24 25 L36 25 L34 53 L26 53 Z', 'hi'),
+  ...[15, 21, 27, 33, 39, 45].map(x => S(`M${x} 24 L${x} 19`, 'ik', 1)),
+]);
+def('avocado', () => [                                     // pear-shape, cut to show the pit
+  P('M30 9 Q42 13 44 27 Q46 43 34 51 Q30 53 26 51 Q14 43 16 27 Q18 13 30 9 Z', 'lo'),
+  P('M30 13 Q40 17 42 27 Q44 41 32 49 Q30 50 28 49 Q16 41 18 27 Q20 17 30 13 Z', 'bs'),
+  C(30, 33, 9, 'hi'),
+]);
+def('arugula', () => [                                     // small jagged lobed leaves
+  ...[[22, 40, -20], [38, 40, 20], [30, 46, 0], [24, 28, -30], [36, 28, 30]].map(([x, y, rot]) =>
+    leaf('bs', x, y, .4, rot)),
+  S('M30 50 L30 40', 'lo', 1.6),
+]);
+def('rhubarb', () => [                                     // prominent red stalks, one modest leaf
+  ...[22, 30, 38].map(x => S(`M${x} 52 Q${x} 30 ${x} 13`, 'bs', 4)),
+  leaf('plant-lo', 30, 9, .8),
+]);
+def('watercress', () => [                                  // round leaflets on a floating stem
+  S('M16 44 Q24 38 32 44 Q40 38 30 24', 'lo', 1.4),
+  ...[[16, 44], [24, 38], [32, 44], [40, 38], [24, 30], [36, 30], [30, 24]].map(([x, y]) =>
+    C(x, y, 4, 'bs')),
+]);
+
+/* food100 batch 2 — fruits ─────────────────────────────────────────────── */
+def('orange', () => [                                       // round citrus, one wedge cut to show segments
+  C(30, 32, 16, 'bs'),
+  P('M30 32 L30 17 A15 15 0 0 1 43 39 Z', 'hi'),
+  S('M32 22 L38 33', 'lo', 1), S('M32 26 L40 34', 'lo', 1), S('M31 30 L41 36', 'lo', 1),
+  S('M30 17 L28 11', 'plant-lo', 1.6),
+]);
+def('grapefruit', () => [                                   // bigger, thicker rind band than orange
+  C(30, 32, 17, 'lo'),
+  C(30, 32, 14, 'bs'),
+  P('M30 32 L30 20 A12 12 0 0 1 41 39 Z', 'hi'),
+]);
+def('peach', () => [                                        // the cleft is the tell
+  C(30, 32, 16, 'bs'),
+  S('M30 17 Q27 32 30 47', 'lo', 1.6),
+  leaf('plant-bs', 41, 17, .4, 30),
+]);
+def('plum', () => [                                         // small, dark, a bloom highlight
+  E(30, 33, 13, 12, 'lo'),
+  E(30, 33, 12, 11, 'bs'),
+  E(24, 27, 4, 3, 'hi'),
+  S('M30 21 L29 15', 'lo', 1.4),
+]);
+def('apricot', () => [                                      // fuzzed skin, a cleft, cut to the stone
+  E(30, 32, 13, 12, 'bs'),
+  S('M30 20 Q28 32 30 44', 'lo', 1.4),
+  C(30, 32, 4, 'hi'),
+  ...[[22, 24], [38, 24], [22, 40], [38, 40]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? x - 2 : x + 2} ${y}`, 'gh', 1)),
+]);
+def('nectarine', () => [                                    // same fruit as peach, no fuzz — a gloss instead
+  C(30, 32, 15, 'bs'),
+  E(23, 23, 6, 8, 'hi'),
+  S('M30 18 L29 13', 'lo', 1.4),
+]);
+def('watermelon', () => [                                   // striped rind, cut to pink flesh and seeds
+  E(30, 32, 18, 15, 'bs'),
+  S('M20 19 Q17 32 20 45', 'lo', 1.6), S('M30 17 Q27 32 30 47', 'lo', 1.6), S('M40 19 Q43 32 40 45', 'lo', 1.6),
+  P('M30 32 L30 17 A15 15 0 0 1 44 38 Z', 'hi'),
+  ...[[34, 26], [38, 30], [36, 34]].map(([x, y]) => E(x, y, 1.4, 2, 'ik')),
+]);
+def('cantaloupe', () => [                                   // netted rind, cut to orange flesh
+  C(30, 32, 16, 'bs'),
+  ...granules('lo', 16, 27, [16, 18, 44, 46]),
+  P('M30 32 L30 17 A15 15 0 0 1 44 39 Z', 'hi'),
+]);
+def('kiwi', () => [                                         // the iconic radiating cross-section
+  C(30, 32, 15, 'lo'), C(30, 32, 12, 'hi'), C(30, 32, 4, 'bs'),
+  ...Array.from({ length: 10 }, (_, i) => {
+    const a = (i / 10) * Math.PI * 2;
+    return S(`M${n(30 + 4 * Math.cos(a))} ${n(32 + 4 * Math.sin(a))} L${n(30 + 11 * Math.cos(a))} ${n(32 + 11 * Math.sin(a))}`, 'ik', .8);
+  }),
+]);
+def('raspberry', () => [                                    // drupelet dome, hollow core — comes off the plant
+  ...[[24, 26], [36, 25], [30, 20], [22, 34], [38, 34], [30, 38], [26, 30], [34, 30]].map(([x, y]) => C(x, y, 4.2, 'bs')),
+  C(30, 29, 2, 'gh'),
+]);
+def('blackberry', () => [                                   // drupelet cluster, solid core — stays on picking
+  ...[[26, 22], [34, 22], [22, 30], [30, 28], [38, 30], [26, 38], [34, 38], [30, 44]].map(([x, y]) => C(x, y, 4, 'lo')),
+  C(30, 30, 3, 'bs'),
+]);
+def('cranberry', () => [                                    // floating on the flooded bog water
+  wave('lo', 44, 4, 22),
+  ...[[20, 36], [30, 32], [40, 38], [26, 40], [34, 42]].map(([x, y]) => C(x, y, 5, 'bs')),
+  ...[[20, 36], [30, 32], [40, 38]].map(([x, y]) => C(x - 1, y - 1, 1.4, 'hi')),
+]);
+def('blueberry', () => [                                    // the 5-point crown on each berry is the tell
+  ...[[22, 30], [34, 26], [26, 40], [38, 38], [30, 32]].map(([x, y]) => [
+    C(x, y, 6, 'bs'),
+    ...Array.from({ length: 5 }, (_, i) => {
+      const a = (i / 5) * Math.PI * 2;
+      return S(`M${x} ${y} L${n(x + 2 * Math.cos(a))} ${n(y + 2 * Math.sin(a))}`, 'ik', .8);
+    }),
+  ]).flat(),
+]);
+def('date', () => [                                         // a hanging bunch, oval and dark
+  S('M14 16 Q30 10 46 16', 'lo', 2),
+  ...[[20, 26], [30, 22], [40, 28], [24, 38], [36, 38]].map(([x, y]) => E(x, y, 5, 8, 'bs')),
+]);
+def('persimmon', () => [                                    // flat-round, a 4-lobed calyx cap
+  E(30, 35, 16, 14, 'bs'),
+  leaf('plant-lo', 24, 19, .45, -25), leaf('plant-lo', 36, 19, .45, 25),
+  leaf('plant-lo', 28, 16, .45, -95), leaf('plant-lo', 32, 16, .45, 95),
+]);
+def('guava', () => [                                        // cut to show the pink flesh and seeds
+  E(30, 32, 14, 15, 'lo'),
+  P('M30 32 L30 18 A14 14 0 0 1 42 40 Z', 'hi'),
+  ...granules('bs', 10, 33, [24, 26, 38, 38]),
+]);
+
+/* food100 batch 3 — grains, legumes, a bean family ─────────────────────── */
+def('rye', () => [                                          // slender awned spike, single file
+  stalk('lo', 30, 54, 12),
+  ...Array.from({ length: 6 }, (_, i) => grain('bs', 30 + (i % 2 ? 3 : -3), 15 + i * 6, .8, i % 2 ? 20 : -20)),
+  ...[15, 21, 27].map(y => S(`M28 ${y} L23 ${y - 6}`, 'gh', 1)),
+]);
+def('quinoa', () => [                                       // a bushy branched panicle, not a linear head
+  stalk('lo', 30, 54, 20),
+  ...[[22, 16], [30, 10], [38, 16], [26, 22], [34, 22], [30, 18]].map(([x, y]) => C(x, y, 2.6, 'bs')),
+]);
+def('buckwheat', () => [                                    // the three-cornered seed is the whole tell
+  ...[[20, 24], [34, 20], [26, 36], [40, 34], [30, 46]].map(([x, y], i) =>
+    P(`M${x} ${y - 5} L${x + 5} ${y + 4} L${x - 5} ${y + 4} Z`, i % 2 ? 'hi' : 'bs')),
+]);
+def('millet', () => [                                       // a dense bottlebrush spike
+  S('M30 52 L30 10', 'lo', 2),
+  ...Array.from({ length: 14 }, (_, i) => C(30 + (i % 2 ? 3 : -3), 13 + i * 2.6, 2, i % 2 ? 'hi' : 'bs')),
+]);
+def('sorghum', () => [                                      // a loose head, bigger seeds than millet
+  stalk('lo', 30, 54, 24),
+  ...[[24, 16], [36, 16], [20, 22], [30, 14], [40, 22], [26, 26], [34, 26]].map(([x, y]) => C(x, y, 3.4, 'bs')),
+]);
+def('chickpea', () => [                                     // round, with the point that gives it the name
+  P('M12 30 Q30 16 48 30 Q30 42 12 30 Z', 'lo'),
+  ...[20, 30, 40].map(x => [C(x, 30, 5, 'bs'), S(`M${x} 25 L${x} 23`, 'hi', 1.4)]).flat(),
+]);
+def('bean', () => [                                         // the plain kidney silhouette — the base cultivar
+  P('M20 20 Q40 14 42 30 Q44 46 26 46 Q10 46 12 30 Q14 22 20 20 Z', 'bs'),
+  E(24, 26, 4, 3, 'hi'),
+]);
+def('black_bean', () => [                                   // same silhouette, dark and shining
+  P('M20 20 Q40 14 42 30 Q44 46 26 46 Q10 46 12 30 Q14 22 20 20 Z', 'lo'),
+  E(22, 24, 3, 2, 'hi'),
+]);
+def('pinto_bean', () => [                                   // the silhouette, but mottled — "painted"
+  P('M20 20 Q40 14 42 30 Q44 46 26 46 Q10 46 12 30 Q14 22 20 20 Z', 'hi'),
+  ...granules('lo', 11, 71, [16, 22, 38, 42]),
+]);
+def('kidney_bean', () => [                                  // bigger, the notch emphasised
+  P('M18 18 Q42 12 44 28 Q46 48 28 48 Q8 48 10 28 Q10 20 18 18 Z', 'bs'),
+  P('M18 18 Q24 24 22 30 Q20 24 18 18 Z', 'lo'),
+]);
+def('semolina', () => [                                     // coarse pointed grains, not flour's fine dust
+  mound('lo', 46, 20, 18),
+  ...[[18, 38], [26, 42], [34, 40], [42, 38], [22, 46], [38, 46], [30, 36]].map(([x, y], i) =>
+    grain('bs', x, y, 1.1, i % 2 ? -20 : 20)),
+]);
+def('couscous', () => [                                     // rolled into round pellets, then steamed
+  round('lo', 40, 20, 9),
+  ...granules('hi', 22, 88, [14, 30, 46, 48]),
+]);
+
+/* food100 batch 4 — spices ──────────────────────────────────────────────── */
+def('cinnamon', () => [                                     // a bark stick, spiral-rolled end showing
+  S('M16 44 L44 16', 'bs', 8),
+  ['s', 'M40 12 A6 6 0 1 1 39.9 12', 'lo', 2],
+  ['s', 'M40 12 A3 3 0 1 1 39.9 12', 'hi', 1.4],
+]);
+def('nutmeg', () => [                                       // an oval seed, grain lines lengthwise
+  E(30, 32, 14, 17, 'bs'),
+  S('M24 18 Q26 32 24 46', 'lo', 1.2), S('M30 16 Q32 32 30 48', 'lo', 1.2), S('M36 18 Q38 32 36 46', 'lo', 1.2),
+]);
+def('clove', () => [                                        // the nail shape it's named for
+  C(30, 18, 7, 'bs'),
+  P('M27 24 L33 24 L31 52 L29 52 Z', 'lo'),
+  ...[0, 90, 180, 270].map(a => S(`M30 18 L${n(30 + 9 * Math.cos(a * Math.PI / 180))} ${n(18 + 9 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.6)),
+]);
+def('cardamom', () => [                                     // triangular cross-section, spindle-shaped
+  P('M30 10 L42 24 L36 50 L24 50 L18 24 Z', 'bs'),
+  S('M30 10 L30 50', 'lo', 1), S('M30 10 L42 24', 'lo', 1), S('M30 10 L18 24', 'lo', 1),
+]);
+def('vanilla', () => [                                      // a long thin curved pod
+  P('M14 50 Q10 30 22 12 Q26 10 28 14 Q18 30 22 48 Z', 'bs'),
+  S('M18 44 Q16 30 24 16', 'hi', 1),
+]);
+def('saffron', () => [                                      // three thread-thin crimson stigmas
+  ...[[20, 44, -15], [30, 42, 0], [40, 44, 15]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [S(`M${x} ${y} Q${x - 2} ${y - 14} ${x + 3} ${y - 26}`, 'bs', 2.4), C(x + 3, y - 26, 1.6, 'hi')]]),
+]);
+def('fennel', () => [                                       // a bulb, with frond wisps rising off it
+  E(30, 42, 15, 11, 'bs'),
+  ...[22, 30, 38].map(x => S(`M${x} 32 L${x} 12`, 'lo', 1.6)),
+  ...[22, 30, 38].flatMap(x => [S(`M${x} 16 Q${x - 6} 10 ${x - 10} 6`, 'hi', 1), S(`M${x} 16 Q${x + 6} 10 ${x + 10} 6`, 'hi', 1)]),
+]);
+def('mustard_seed', () => [                                 // a thin pod, small round seeds inside
+  P('M16 30 Q30 16 44 30 Q30 26 16 30 Z', 'lo'),
+  ...[[22, 30], [27, 28], [32, 30], [37, 28]].map(([x, y]) => C(x, y, 3, 'bs')),
+]);
+def('allspice', () => [                                     // dried round, like a large rough peppercorn
+  C(30, 32, 10, 'bs'),
+  ...granules('lo', 6, 41, [22, 24, 38, 40]),
+]);
+def('star_anise', () => [                                   // the eight-point star, whole
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return P(`M30 30 L${n(30 + 16 * Math.cos(a - 0.2))} ${n(30 + 16 * Math.sin(a - 0.2))} L${n(30 + 16 * Math.cos(a + 0.2))} ${n(30 + 16 * Math.sin(a + 0.2))} Z`, 'bs');
+  }),
+  C(30, 30, 4, 'lo'),
+]);
+def('wasabi', () => [                                       // a knobbly rhizome, grated pile beside it
+  P('M22 14 Q14 20 16 30 Q12 40 20 46 Q28 50 30 42 Q34 48 40 42 Q46 36 40 28 Q44 18 34 16 Q28 10 22 14 Z', 'bs'),
+  ...granules('hi', 6, 29, [20, 36, 38, 46]),
+]);
+
+/* food100 batch 5 — nuts and named cheeses ──────────────────────────────── */
+def('cashew', () => [                                        // the boxing-glove curve is the tell
+  P('M20 20 Q10 24 12 36 Q14 48 26 48 Q40 48 40 34 Q40 22 28 18 Q22 16 20 20 Z', 'bs'),
+  E(24, 26, 4, 3, 'hi'),
+]);
+def('pistachio', () => [                                     // the shell, split, green nut showing through
+  P('M22 14 Q16 20 16 32 Q16 46 30 50 Q44 46 44 32 Q44 20 38 14 Z', 'lo'),
+  S('M30 16 Q30 30 30 48', 'ik', 1.6),
+  E(26, 30, 3, 8, 'bs'), E(34, 30, 3, 8, 'bs'),
+]);
+def('pecan', () => [                                          // two elongated wrinkled lobes, husk cracked open
+  P('M22 14 Q14 22 16 32 Q14 44 24 50 Q28 44 26 32 Q28 20 22 14 Z', 'bs'),
+  P('M38 14 Q46 22 44 32 Q46 44 36 50 Q32 44 34 32 Q32 20 38 14 Z', 'bs'),
+  S('M20 20 Q18 32 22 44', 'lo', 1), S('M40 20 Q42 32 38 44', 'lo', 1),
+]);
+def('hazelnut', () => [                                       // round, with its own frilly husk collar
+  C(30, 34, 13, 'bs'),
+  P('M17 26 Q30 14 43 26 Q30 20 17 26 Z', 'lo'),
+  C(30, 20, 2, 'lo'),
+]);
+def('macadamia', () => [                                      // just about a perfect sphere — the tell
+  C(30, 32, 15, 'bs'),
+  E(24, 26, 4, 3, 'hi'),
+  S('M18 32 Q30 36 42 32', 'lo', 1),
+]);
+def('mozzarella', () => [                                     // a glossy ball sitting in its own liquid
+  wave('gh', 46, 3, 18),
+  C(30, 32, 14, 'hi'),
+  E(24, 27, 4, 3, 'bs'),
+]);
+def('cheddar', () => [                                        // a wedge, not a block — cut, stacked, turned
+  P('M14 44 L46 44 L30 14 Z', 'bs'),
+  P('M14 44 L46 44 L44 40 L16 40 Z', 'lo'),
+]);
+def('parmesan', () => [                                       // a wedge, grainy with its own crystals
+  P('M14 44 L46 44 L30 14 Z', 'lo'),
+  ...granules('hi', 11, 59, [18, 24, 42, 42]),
+]);
+def('feta', () => [                                           // crumbly cubes, sitting in brine
+  wave('gh', 46, 2, 20),
+  ...[[20, 36], [30, 32], [40, 38], [26, 42]].map(([x, y]) =>
+    P(`M${x - 5} ${y - 5} L${x + 5} ${y - 5} L${x + 5} ${y + 5} L${x - 5} ${y + 5} Z`, 'hi')),
+]);
+def('cottage_cheese', () => [                                 // a bowl of loose irregular curds
+  round('lo', 40, 20, 9),
+  ...[[20, 36], [26, 32], [32, 36], [38, 32], [24, 40], [34, 40]].map(([x, y]) => E(x, y, 3.4, 2.6, 'hi')),
+]);
+def('evaporated_milk', () => [                                // a plain can
+  P('M18 14 L42 14 L42 50 L18 50 Z', 'hi'),
+  E(30, 14, 12, 3, 'lo'), E(30, 50, 12, 3, 'lo'),
+  S('M18 24 L42 24', 'ik', 1),
+]);
+def('condensed_milk', () => [                                 // a can, with the thick sweet drizzle it's known for
+  P('M18 18 L42 18 L42 50 L18 50 Z', 'lo'),
+  E(30, 18, 12, 3, 'hi'), E(30, 50, 12, 3, 'hi'),
+  P('M30 50 Q26 56 30 60 Q34 56 30 50 Z', 'bs'),
+]);
+def('custard', () => [                                        // a smooth bowl, its own skin catching the light
+  round('lo', 40, 20, 10),
+  E(30, 33, 17, 7, 'hi'),
+  S('M20 33 Q30 30 40 33', 'gh', 1),
+]);
+
+/* food100 batch 6 — pantry condiments and staples ───────────────────────── */
+def('ketchup', () => [                                        // the classic squeeze-bottle neck
+  P('M22 10 L38 10 L38 20 L34 24 L34 50 Q34 54 30 54 Q26 54 26 50 L26 24 L22 20 Z', 'bs'),
+]);
+def('maple_syrup', () => [                                    // a jug, with the handle
+  P('M20 14 L40 14 L40 48 Q40 54 34 54 L26 54 Q20 54 20 48 Z', 'gh'),
+  P('M22 30 L38 30 L38 48 Q38 52 34 52 L26 52 Q22 52 22 48 Z', 'bs'),
+  P('M40 20 Q48 20 48 28 Q48 34 40 32', 'lo'),
+]);
+def('peanut_butter', () => [                                  // a straight-sided jar, a lid band
+  P('M18 20 L42 20 L42 50 Q42 54 38 54 L22 54 Q18 54 18 50 Z', 'bs'),
+  P('M16 16 L44 16 L44 22 L16 22 Z', 'lo'),
+]);
+def('jam', () => [                                            // the jar, with its cloth cap tied over
+  P('M18 22 L42 22 L42 50 Q42 54 38 54 L22 54 Q18 54 18 50 Z', 'hi'),
+  C(30, 16, 13, 'lo'),
+  S('M18 16 Q30 24 42 16', 'ik', 1),
+]);
+def('cornstarch', () => [                                     // a tall box, a flap-top
+  P('M16 14 L44 14 L44 54 L16 54 Z', 'hi'),
+  P('M16 14 L44 14 L40 22 L20 22 Z', 'lo'),
+]);
+def('baking_soda', () => [                                    // a low wide box, banded label
+  P('M14 24 L46 24 L46 52 L14 52 Z', 'bs'),
+  P('M14 24 L46 24 L46 30 L14 30 Z', 'lo'),
+]);
+def('baking_powder', () => [                                  // a squat round tin
+  P('M18 26 L42 26 L42 50 L18 50 Z', 'lo'),
+  E(30, 26, 12, 3.4, 'hi'),
+  S('M18 34 L42 34', 'ik', 1),
+]);
+def('worcestershire_sauce', () => [                            // a tall thin bottle, dark
+  P('M26 8 L34 8 L34 18 L37 22 L37 50 Q37 54 33 54 L27 54 Q23 54 23 50 L23 22 L26 18 Z', 'lo'),
+]);
+def('hot_sauce', () => [                                       // a slim bottle, capped
+  P('M24 12 L36 12 L36 20 L39 24 L39 50 Q39 54 35 54 L25 54 Q21 54 21 50 L21 24 L24 20 Z', 'bs'),
+  C(30, 10, 3, 'lo'),
+]);
+def('tahini', () => [                                          // a shorter, wider paste jar
+  P('M16 26 L44 26 L44 50 Q44 54 40 54 L20 54 Q16 54 16 50 Z', 'bs'),
+  S('M20 32 Q30 28 40 32 Q30 36 20 32', 'hi', 1.4),
+]);
+def('vanilla_extract', () => [                                 // a small tincture bottle
+  P('M27 8 L33 8 L33 16 L36 20 L36 50 Q36 54 32 54 L28 54 Q24 54 24 50 L24 20 L27 16 Z', 'lo'),
+]);
+def('mustard', () => [                                         // a rounder squeeze bottle than ketchup's
+  P('M20 16 L40 16 L40 24 L36 28 L36 50 Q36 54 32 54 L28 54 Q24 54 24 50 L24 28 L20 24 Z', 'bs'),
+]);
+
+/* food100 batch 7 — seafood ─────────────────────────────────────────────── */
+def('shrimp', () => [                                          // the classic C-curve, tail fan, walking legs
+  P('M14 40 Q14 20 34 16 Q46 16 46 26 Q46 34 36 34 Q40 40 34 46 Q24 50 14 40 Z', 'bs'),
+  ...[20, 26, 32].map(x => S(`M${x} 44 L${x - 2} 50`, 'lo', 1.2)),
+  C(38, 20, 1.6, 'ik'),
+]);
+def('crab', () => [                                            // top-down: shell, claws, legs sideways
+  E(30, 32, 16, 12, 'bs'),
+  ...[-1, 1].map(s => P(`M${30 + s * 16} 26 Q${30 + s * 24} 20 ${30 + s * 28} 24 Q${30 + s * 24} 28 ${30 + s * 18} 30 Z`, 'lo')),
+  ...[-1, 1].flatMap(s => [16, 24, 32].map(y => S(`M${30 + s * 14} ${y} L${30 + s * 22} ${y + 4}`, 'lo', 1.4))),
+]);
+def('lobster', () => [                                         // body, tail fan, the two big front claws
+  E(28, 32, 14, 7, 'bs'),
+  P('M42 32 L52 27 L52 37 Z', 'lo'),
+  E(12, 22, 6, 4, 'hi'), E(12, 42, 6, 4, 'hi'),
+  S('M18 22 L14 22', 'ik', 1.6), S('M18 42 L14 42', 'ik', 1.6),
+]);
+def('salmon', () => [                                          // the leap upstream, arced
+  P('M10 44 Q20 14 40 14 Q54 16 50 26 Q40 22 30 30 Q34 40 24 46 Q16 50 10 44 Z', 'bs'),
+  C(38, 18, 1.8, 'ik'),
+  S('M26 30 Q28 36 24 42', 'hi', 1.4),
+]);
+def('tuna', () => [                                            // torpedo body, small dorsal, forked tail
+  E(26, 32, 18, 9, 'bs'),
+  P('M44 32 L56 24 L56 40 Z', 'lo'),
+  S('M50 30 L54 32 L50 34', 'gh', 1),
+  P('M28 22 L32 13 L34 22 Z', 'hi'),
+  C(14, 30, 1.6, 'ik'),
+]);
+
+/* food100 batch 8 — prepared dishes ─────────────────────────────────────── */
+def('guacamole', () => [                                       // the mound, and a chip stuck in
+  round('lo', 40, 20, 9),
+  P('M14 40 Q30 22 46 40 Z', 'bs'),
+  P('M36 24 L46 14 L44 26 Z', 'grain-hi'),
+]);
+def('hummus', () => [                                          // swirled, an oil pool at the centre
+  round('lo', 40, 20, 9),
+  E(30, 36, 15, 6, 'hi'),
+  C(30, 36, 3, 'bs'),
+  ...[22, 38].map(x => C(x, 32, 2, 'grain-bs')),
+]);
+def('salsa', () => [                                           // chunky diced squares, not round grains
+  round('lo', 40, 20, 9),
+  ...[[18, 32], [26, 28], [34, 34], [40, 30], [22, 40], [36, 40], [30, 26]].map(([x, y], i) =>
+    P(`M${x - 3} ${y - 3} L${x + 3} ${y - 3} L${x + 3} ${y + 3} L${x - 3} ${y + 3} Z`, i % 2 ? 'hi' : 'bs')),
+]);
+def('coleslaw', () => [                                        // thin shredded strands
+  round('lo', 40, 20, 9),
+  ...Array.from({ length: 8 }, (_, i) => S(`M${16 + i * 4} 44 Q${18 + i * 4} 34 ${16 + i * 4} 28`, 'bs', 1.6)),
+]);
+def('omelette', () => [                                        // folded in half, not a whole egg
+  round('lo', 42, 21, 8),
+  P('M16 34 Q30 20 44 34 Q44 42 30 42 Q16 42 16 34 Z', 'hi'),
+]);
+def('pancake', () => [                                         // a stack, with butter on top
+  ...[40, 34, 28].map((y, i) => E(30, y, 16 - i, 4, i % 2 ? 'hi' : 'bs')),
+  P('M30 24 Q26 20 30 16 Q34 20 30 24 Z', 'grain-lo'),
+]);
+def('waffle', () => [                                          // one disc, the grid pressed in
+  round('lo', 38, 18, 8),
+  E(30, 36, 16, 7, 'bs'),
+  ...[-8, 0, 8].map(x => S(`M${30 + x} 30 L${30 + x} 42`, 'lo', 1.2)),
+  ...[31, 36, 41].map(y => S(`M16 ${y} L44 ${y}`, 'lo', 1)),
+]);
+def('burger', () => [                                          // domed top bun, wavy lettuce edge, round base
+  P('M14 22 Q30 8 46 22 L46 28 L14 28 Z', 'grain-hi'),
+  E(30, 30, 16, 4, 'lo'),
+  S('M14 34 Q22 30 30 34 Q38 38 46 34', 'plant-bs', 3),
+  E(30, 42, 16, 6, 'grain-hi'),
+]);
+def('hot_dog', () => [                                         // the sausage, showing through the slit bun
+  P('M10 34 Q10 24 20 24 L40 24 Q50 24 50 34 Q50 40 40 40 L20 40 Q10 40 10 34 Z', 'grain-hi'),
+  E(30, 32, 17, 5, 'bs'),
+]);
+def('sandwich', () => [                                        // the diagonal cut, filling at the edge
+  P('M12 44 L12 20 L48 44 Z', 'grain-hi'),
+  P('M14 40 L14 26 L42 40 Z', 'bs'),
+]);
+def('fried_rice', () => [                                      // rice, with egg and scallion flecked through
+  round('lo', 40, 20, 9),
+  ...granules('hi', 14, 91, [16, 28, 44, 42]),
+  ...[[22, 32], [34, 30]].map(([x, y]) => C(x, y, 2.4, 'grain-bs')),
+  C(38, 36, 1.6, 'plant-bs'),
+]);
+def('taco', () => [                                            // the shell folded open, filling inside
+  P('M10 40 Q10 20 30 20 Q50 20 50 40 Q30 34 10 40 Z', 'grain-hi'),
+  ...granules('bs', 8, 55, [14, 30, 46, 40]),
+]);
+
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],
   craft:    id => [P('M16 24 L44 24 L44 44 L16 44 Z', 'lo'), P('M20 28 L40 28 L40 40 L20 40 Z', 'bs')],

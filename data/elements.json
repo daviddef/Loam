@@ -1657,8 +1657,7 @@
     "tags": [
       "dish"
     ],
-    "fact": "Flatbread used as cutlery, which is how most of the world ate.",
-    "terminal": true
+    "fact": "Flatbread used as cutlery, which is how most of the world ate."
   },
   {
     "id": "spaghetti_meatballs",
@@ -1679,8 +1678,7 @@
     "tags": [
       "dish"
     ],
-    "fact": "Beer that met the wrong bacteria, to everyone’s benefit.",
-    "terminal": true
+    "fact": "Beer that met the wrong bacteria, to everyone’s benefit."
   },
   {
     "id": "caramel_sauce",
@@ -4404,8 +4402,7 @@
     "tags": [
       "water"
     ],
-    "fact": "Not frozen dew. Water vapour deposits straight onto a cold surface as ice, skipping liquid altogether.",
-    "terminal": true
+    "fact": "Not frozen dew. Water vapour deposits straight onto a cold surface as ice, skipping liquid altogether."
   },
   {
     "id": "rain",
@@ -6951,7 +6948,6 @@
     "tags": [
       "plant"
     ],
-    "terminal": true,
     "fact": "Two saps, running opposite ways. Neither of them is latex, and neither of them is resin."
   },
   {
@@ -7186,7 +7182,6 @@
       "plant",
       "tool"
     ],
-    "terminal": true,
     "fact": "Cambium pressed to cambium. The top keeps its own genes, so the fruit is the scion's."
   },
   {
@@ -10975,5 +10970,1110 @@
     ],
     "terminal": true,
     "fact": "Two peptide chains, A and B, held by two disulfide bonds — a third closes a loop inside the A chain."
+  },
+  {
+    "id": "sweet_potato",
+    "name": "Sweet Potato",
+    "emoji": "🍠",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A different family from potato entirely. Grown from cuttings of its own vine, not from seed.",
+    "terminal": true
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "emoji": "🥦",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Same species as cabbage and broccoli — a head of flower buds that never opened.",
+    "terminal": true
+  },
+  {
+    "id": "zucchini",
+    "name": "Zucchini",
+    "emoji": "🥒",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A squash, picked immature — the seeds and rind are still soft enough to eat.",
+    "terminal": true
+  },
+  {
+    "id": "eggplant",
+    "name": "Eggplant",
+    "emoji": "🍆",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A nightshade, like chilli and tomato — a berry, botanically, that follows the flower.",
+    "terminal": true
+  },
+  {
+    "id": "asparagus",
+    "name": "Asparagus",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The part eaten is a young shoot — spears sent up each spring by a perennial root.",
+    "terminal": true
+  },
+  {
+    "id": "radish",
+    "name": "Radish",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Ready to pull within a month. Grows best in light, sandy soil for a straight root.",
+    "terminal": true
+  },
+  {
+    "id": "turnip",
+    "name": "Turnip",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A biennial root — it spends its first year storing food, and only flowers in its second.",
+    "terminal": true
+  },
+  {
+    "id": "leek",
+    "name": "Leek",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "An allium, like onion — grown for up to six months in loose, well-drained soil.",
+    "terminal": true
+  },
+  {
+    "id": "brussels_sprout",
+    "name": "Brussels Sprout",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A cabbage cultivar bred for its buds, which mature up a thick stalk over several weeks.",
+    "terminal": true
+  },
+  {
+    "id": "kale",
+    "name": "Kale",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A cabbage cultivar whose leaves never form a head — hardy enough to survive -15°C.",
+    "terminal": true
+  },
+  {
+    "id": "artichoke",
+    "name": "Artichoke",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A cultivated thistle. Its bud must be cut before the flower opens or it turns woody.",
+    "terminal": true
+  },
+  {
+    "id": "okra",
+    "name": "Okra",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A mallow-family seed pod — cotton's cousin — that turns mucilaginous once cut.",
+    "terminal": true
+  },
+  {
+    "id": "mushroom",
+    "name": "Mushroom",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "microbe"
+    ],
+    "fact": "Agaricus bisporus, the common button mushroom — grown on composted manure, not wood.",
+    "terminal": true
+  },
+  {
+    "id": "avocado",
+    "name": "Avocado",
+    "emoji": "🥑",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A single-seeded berry. Named varieties are grafted onto rootstock, not grown from seed."
+  },
+  {
+    "id": "arugula",
+    "name": "Arugula",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A mustard-family salad leaf, ready in 40 to 50 days of full sun and moist soil.",
+    "terminal": true
+  },
+  {
+    "id": "rhubarb",
+    "name": "Rhubarb",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "The edible part is only the leaf stalk. The leaf blade itself is poisonous — oxalic acid.",
+    "terminal": true
+  },
+  {
+    "id": "watercress",
+    "name": "Watercress",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "An aquatic mustard relative with hollow floating stems — grows straight in flowing streams.",
+    "terminal": true
+  },
+  {
+    "id": "orange",
+    "name": "Orange",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A citrus hybrid — pomelo crossed with mandarin. Named varieties are grafted, same as lemon's own kin."
+  },
+  {
+    "id": "grapefruit",
+    "name": "Grapefruit",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "An accidental hybrid of sweet orange and pomelo, first crossed in the 17th-century Caribbean.",
+    "terminal": true
+  },
+  {
+    "id": "peach",
+    "name": "Peach",
+    "emoji": "🍑",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A stone fruit that starts bearing within 2-3 years — and is finished within about 20."
+  },
+  {
+    "id": "plum",
+    "name": "Plum",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A stone fruit of Prunus, kept pruned to a modest 5-6 metres for picking.",
+    "terminal": true
+  },
+  {
+    "id": "apricot",
+    "name": "Apricot",
+    "emoji": "🍑",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A stone fruit. The kernel inside the pit is not a snack — it carries a real cyanide compound.",
+    "terminal": true
+  },
+  {
+    "id": "nectarine",
+    "name": "Nectarine",
+    "emoji": "🍑",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a hybrid — the same species as peach, missing fuzz because of one recessive gene.",
+    "terminal": true
+  },
+  {
+    "id": "watermelon",
+    "name": "Watermelon",
+    "emoji": "🍉",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "91% water. Botanically a pepo — a modified berry with a thick rind.",
+    "terminal": true
+  },
+  {
+    "id": "cantaloupe",
+    "name": "Cantaloupe",
+    "emoji": "🍈",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Cucumis melo — a true melon, the same genus as cucumber, not related to watermelon.",
+    "terminal": true
+  },
+  {
+    "id": "kiwi",
+    "name": "Kiwi",
+    "emoji": "🥝",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A berry from a woody vine — and the vine itself is either male or female, never both.",
+    "terminal": true
+  },
+  {
+    "id": "raspberry",
+    "name": "Raspberry",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "An aggregate of tiny drupelets. Its cane grows one year and only fruits the next.",
+    "terminal": true
+  },
+  {
+    "id": "blackberry",
+    "name": "Blackberry",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Same aggregate-drupelet fruit as raspberry, but the core stays in when you pick it.",
+    "terminal": true
+  },
+  {
+    "id": "cranberry",
+    "name": "Cranberry",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Harvested by flooding the bed — the ripe berries float free of the vine.",
+    "terminal": true
+  },
+  {
+    "id": "blueberry",
+    "name": "Blueberry",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A true berry that changes colour three times before it's ripe — green, then red, then blue.",
+    "terminal": true
+  },
+  {
+    "id": "date",
+    "name": "Date",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A palm's drupe. Wild-pollinated by wind — growers do it by hand for a reliable crop.",
+    "terminal": true
+  },
+  {
+    "id": "persimmon",
+    "name": "Persimmon",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Ripens after its own tree has already dropped its leaves for the year.",
+    "terminal": true
+  },
+  {
+    "id": "guava",
+    "name": "Guava",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A myrtle-family tree berry — fruiting within two years of its own seed, for up to forty.",
+    "terminal": true
+  },
+  {
+    "id": "rye",
+    "name": "Rye",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A wheat-tribe cereal that survives snow cover heavy enough to kill winter wheat.",
+    "terminal": true
+  },
+  {
+    "id": "quinoa",
+    "name": "Quinoa",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Not a grain at all — a seed, from a plant related to spinach, not to wheat.",
+    "terminal": true
+  },
+  {
+    "id": "buckwheat",
+    "name": "Buckwheat",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "No relation to wheat — it's a cousin of rhubarb, eaten like a grain only because of its starch.",
+    "terminal": true
+  },
+  {
+    "id": "millet",
+    "name": "Millet",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Small-seeded, drought-tolerant grasses grown as a grain across dry regions worldwide.",
+    "terminal": true
+  },
+  {
+    "id": "sorghum",
+    "name": "Sorghum",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A grass grain bred for drought and heat — nitrogen-efficient where most cereals struggle.",
+    "terminal": true
+  },
+  {
+    "id": "chickpea",
+    "name": "Chickpea",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A pulse — each small pod on the plant holds only two or three seeds."
+  },
+  {
+    "id": "bean",
+    "name": "Bean",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "Phaseolus vulgaris — black, kidney and pinto beans are all one species, bred different colours."
+  },
+  {
+    "id": "black_bean",
+    "name": "Black Bean",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "The common bean, dried — anthocyanin pigment in the seed coat is what turns it black.",
+    "terminal": true
+  },
+  {
+    "id": "pinto_bean",
+    "name": "Pinto Bean",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Spanish for 'painted' — named for the mottled speckling on its seed coat.",
+    "terminal": true
+  },
+  {
+    "id": "kidney_bean",
+    "name": "Kidney Bean",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A common bean cultivar. Raw, it carries the highest lectin toxin load of any bean.",
+    "terminal": true
+  },
+  {
+    "id": "semolina",
+    "name": "Semolina",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A coarser grind than flour — the granules couscous and pasta both start from."
+  },
+  {
+    "id": "couscous",
+    "name": "Couscous",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Semolina rolled wet by hand into tiny pellets, then steamed light and fluffy.",
+    "terminal": true
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Inner tree bark, pried off in strips that curl into quills as they dry.",
+    "terminal": true
+  },
+  {
+    "id": "nutmeg",
+    "name": "Nutmeg",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A seed, sun-dried for up to 30 weeks until it rattles loose in its own shell.",
+    "terminal": true
+  },
+  {
+    "id": "clove",
+    "name": "Clove",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Not a seed or a berry — a flower bud, picked before it ever opens.",
+    "terminal": true
+  },
+  {
+    "id": "cardamom",
+    "name": "Cardamom",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Ginger's own family — triangular papery pods holding small black seeds.",
+    "terminal": true
+  },
+  {
+    "id": "vanilla",
+    "name": "Vanilla",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "An orchid's seed pod. Every plant grown today is hand-pollinated — its own flower can't self-pollinate."
+  },
+  {
+    "id": "saffron",
+    "name": "Saffron",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "The dried stigma of an autumn crocus. A kilogram takes 150,000 flowers, hand-picked.",
+    "terminal": true
+  },
+  {
+    "id": "fennel",
+    "name": "Fennel",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Carrot's own family — its dried seeds are the spice, its bulb the vegetable.",
+    "terminal": true
+  },
+  {
+    "id": "mustard_seed",
+    "name": "Mustard Seed",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Cabbage's own family — the small round seed the whole mustard condiment starts from."
+  },
+  {
+    "id": "allspice",
+    "name": "Allspice",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Picked green and unripe, then sun-dried until it looks like a large peppercorn.",
+    "terminal": true
+  },
+  {
+    "id": "star_anise",
+    "name": "Star Anise",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A star-shaped fruit of 6 to 8 pods in a whorl, picked from the tree just before it ripens.",
+    "terminal": true
+  },
+  {
+    "id": "wasabi",
+    "name": "Wasabi",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A real Brassicaceae rhizome, ground fresh — most 'wasabi' served is horseradish and dye.",
+    "terminal": true
+  },
+  {
+    "id": "cashew",
+    "name": "Cashew",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A drupe hanging off the cashew apple. Its shell carries a poison-ivy relative — toxic until roasted.",
+    "terminal": true
+  },
+  {
+    "id": "pistachio",
+    "name": "Pistachio",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A drupe whose shell pops open on its own as it ripens — a trait people bred for.",
+    "terminal": true
+  },
+  {
+    "id": "pecan",
+    "name": "Pecan",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "Not really a nut — a hickory drupe, a single stone inside a husk.",
+    "terminal": true
+  },
+  {
+    "id": "hazelnut",
+    "name": "Hazelnut",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A true nut, unlike most 'nuts' here — it drops free of its husk 7 to 8 months after pollination.",
+    "terminal": true
+  },
+  {
+    "id": "macadamia",
+    "name": "Macadamia",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "crop"
+    ],
+    "fact": "A Proteaceae tree native to Australia. Perfectly edible for people — toxic to dogs.",
+    "terminal": true
+  },
+  {
+    "id": "mozzarella",
+    "name": "Mozzarella",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Pasta filata — curd heated and kneaded until it turns into one smooth, stretchy paste.",
+    "terminal": true
+  },
+  {
+    "id": "cheddar",
+    "name": "Cheddar",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Named for the process, not the place — curd repeatedly kneaded, cut, stacked and turned to drain the whey.",
+    "terminal": true
+  },
+  {
+    "id": "parmesan",
+    "name": "Parmesan",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Hard and granular from unpasteurised cow's milk, aged a minimum of a year and often two.",
+    "terminal": true
+  },
+  {
+    "id": "feta",
+    "name": "Feta",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Greek and brined — sheep's milk, or a mix of sheep and goat, never cow alone.",
+    "terminal": true
+  },
+  {
+    "id": "cottage_cheese",
+    "name": "Cottage Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Acid-set curds, drained and mixed straight back with cream — never aged, never pressed.",
+    "terminal": true
+  },
+  {
+    "id": "evaporated_milk",
+    "name": "Evaporated Milk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Milk with 60% of its water boiled off, canned and heat-sterilised — no sugar added."
+  },
+  {
+    "id": "condensed_milk",
+    "name": "Condensed Milk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "dairy"
+    ],
+    "fact": "Evaporated milk with sugar stirred in at a roughly 9:11 ratio — the sugar is what keeps it shelf-stable.",
+    "terminal": true
+  },
+  {
+    "id": "custard",
+    "name": "Custard",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Cream thickened by egg protein alone — coagulating between 70 and 80°C, curdling past it.",
+    "terminal": true
+  },
+  {
+    "id": "ketchup",
+    "name": "Ketchup",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Tomato, sugar and vinegar — the vinegar and sugar are what keep it shelf-stable.",
+    "terminal": true
+  },
+  {
+    "id": "maple_syrup",
+    "name": "Maple Syrup",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Boiled down from tree sap — it takes 20 to 50 litres of sap for one litre of syrup.",
+    "terminal": true
+  },
+  {
+    "id": "peanut_butter",
+    "name": "Peanut Butter",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Roasted peanuts, ground twice — medium, then fine — until it's a paste.",
+    "terminal": true
+  },
+  {
+    "id": "jam",
+    "name": "Jam",
+    "emoji": "🍓",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Crushed fruit and sugar, boiled to 104°C — the fruit's own pectin is what sets it.",
+    "terminal": true
+  },
+  {
+    "id": "cornstarch",
+    "name": "Cornstarch",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Pure starch, milled out of the corn kernel's endosperm — nothing else left in it."
+  },
+  {
+    "id": "baking_soda",
+    "name": "Baking Soda",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "NaHCO3 — releases carbon dioxide the moment it meets acid or heat, which is the entire trick."
+  },
+  {
+    "id": "baking_powder",
+    "name": "Baking Powder",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Baking soda pre-mixed with a weak acid and cornstarch — self-contained, unlike soda alone.",
+    "terminal": true
+  },
+  {
+    "id": "worcestershire_sauce",
+    "name": "Worcestershire Sauce",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A fermented anchovy-and-malt-vinegar sauce, invented by two Worcester pharmacists.",
+    "terminal": true
+  },
+  {
+    "id": "hot_sauce",
+    "name": "Hot Sauce",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Chilli and vinegar, at its simplest — nothing more is required.",
+    "terminal": true
+  },
+  {
+    "id": "tahini",
+    "name": "Tahini",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Ground sesame seeds, toasted first — an oily paste, not unlike peanut butter's own process."
+  },
+  {
+    "id": "vanilla_extract",
+    "name": "Vanilla Extract",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Vanilla pods steeped in ethanol and water — carries hundreds of flavour compounds beyond vanillin alone.",
+    "terminal": true
+  },
+  {
+    "id": "mustard",
+    "name": "Mustard",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Ground mustard seed mixed with vinegar or another liquid into a paste.",
+    "terminal": true
+  },
+  {
+    "id": "shrimp",
+    "name": "Shrimp",
+    "emoji": "🦐",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "A decapod crustacean built for swimming — an elongated body, not a crab's sideways scuttle.",
+    "terminal": true
+  },
+  {
+    "id": "crab",
+    "name": "Crab",
+    "emoji": "🦀",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Its tail is folded flat under its own body — that's the trait that lets it run sideways.",
+    "terminal": true
+  },
+  {
+    "id": "lobster",
+    "name": "Lobster",
+    "emoji": "🦞",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Ten legs by the strict count — the two big front pincers are legs too.",
+    "terminal": true
+  },
+  {
+    "id": "salmon",
+    "name": "Salmon",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Born in a river, grown at sea, and it fights back upstream to the exact place it hatched.",
+    "terminal": true
+  },
+  {
+    "id": "tuna",
+    "name": "Tuna",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "A fish that runs warmer than the water around it — one of only three that can.",
+    "terminal": true
+  },
+  {
+    "id": "guacamole",
+    "name": "Guacamole",
+    "emoji": "🥑",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Mashed avocado and salt, traditionally worked with a mortar and pestle.",
+    "terminal": true
+  },
+  {
+    "id": "hummus",
+    "name": "Hummus",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Cooked mashed chickpeas blended with tahini — the two ingredients that make it hummus.",
+    "terminal": true
+  },
+  {
+    "id": "salsa",
+    "name": "Salsa",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Chopped tomato and onion at its simplest — the base every other salsa builds from."
+  },
+  {
+    "id": "coleslaw",
+    "name": "Coleslaw",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Shredded raw cabbage in a dressing — cabbage is the only ingredient every recipe agrees on.",
+    "terminal": true
+  },
+  {
+    "id": "omelette",
+    "name": "Omelette",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Beaten egg, fried in butter — the whole dish is just that one transformation.",
+    "terminal": true
+  },
+  {
+    "id": "pancake",
+    "name": "Pancake",
+    "emoji": "🥞",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "A starch batter, cooked flat on a hot griddle — no patterned plates involved.",
+    "terminal": true
+  },
+  {
+    "id": "waffle",
+    "name": "Waffle",
+    "emoji": "🧇",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Leavened batter, cooked between two patterned plates — the grid is pressed in, not poured.",
+    "terminal": true
+  },
+  {
+    "id": "burger",
+    "name": "Burger",
+    "emoji": "🍔",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Ground meat, cooked into a patty, inside a sliced bun — the whole definition in one line.",
+    "terminal": true
+  },
+  {
+    "id": "hot_dog",
+    "name": "Hot Dog",
+    "emoji": "🌭",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "A cooked sausage in a partially sliced bun — nothing more is required to call it one.",
+    "terminal": true
+  },
+  {
+    "id": "sandwich",
+    "name": "Sandwich",
+    "emoji": "🥪",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Any filling between two slices of bread — the bread is the only fixed part of the definition.",
+    "terminal": true
+  },
+  {
+    "id": "fried_rice",
+    "name": "Fried Rice",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Cooked rice, stir-fried — the day-old rice recipe every household reaches for.",
+    "terminal": true
+  },
+  {
+    "id": "taco",
+    "name": "Taco",
+    "emoji": "🌮",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "A tortilla folded by hand around a filling and eaten straight from the hand.",
+    "terminal": true
   }
 ]

@@ -14894,5 +14894,985 @@
     "why": "Humulin, approved in 1982, was the first medicine made by inserting actual human DNA into a host cell, E. coli, turning bacteria into an insulin factory and ending the reliance on animal pancreases.",
     "src": "https://en.wikipedia.org/wiki/Insulin_(medication)",
     "verified": true
+  },
+  {
+    "in": [
+      "vine"
+    ],
+    "verb": "cut",
+    "out": "sweet_potato",
+    "why": "Sweet potatoes are mostly propagated by stem or root cuttings — pieces of vine planted directly, not grown from true seed.",
+    "src": "https://en.wikipedia.org/wiki/Sweet_potato",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "water"
+    ],
+    "out": "cauliflower",
+    "why": "Brassica oleracea var. botrytis — the same species as cabbage and broccoli, bred for a dense curd of undeveloped flower buds, grown as a cool-season crop that needs steady moisture.",
+    "src": "https://en.wikipedia.org/wiki/Cauliflower",
+    "supported": true
+  },
+  {
+    "in": [
+      "vine",
+      "grass"
+    ],
+    "out": "zucchini",
+    "why": "Cucurbita pepo var. cylindrica, a vining herbaceous plant whose fruit is harvested while the seeds and rind are still soft — a young, unripe squash rather than a separate vegetable.",
+    "src": "https://en.wikipedia.org/wiki/Zucchini",
+    "supported": true
+  },
+  {
+    "in": [
+      "chilli",
+      "flower"
+    ],
+    "out": "eggplant",
+    "why": "Solanum melongena is a nightshade, the same family as chilli and tomato, grown for the berry-like fruit that follows its own flower.",
+    "src": "https://en.wikipedia.org/wiki/Eggplant",
+    "supported": true
+  },
+  {
+    "in": [
+      "sprout",
+      "root"
+    ],
+    "out": "asparagus",
+    "why": "A perennial flowering plant whose young shoots — spears — are the spring vegetable. It grows from a planted crown, and the first shoots appear each spring.",
+    "src": "https://en.wikipedia.org/wiki/Asparagus",
+    "supported": true
+  },
+  {
+    "in": [
+      "root",
+      "sand"
+    ],
+    "out": "radish",
+    "why": "A fast-growing mustard-family root crop that grows best in full sun in light, sandy loams — the loose soil is what lets the root come up straight.",
+    "src": "https://en.wikipedia.org/wiki/Radish",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "field"
+    ],
+    "out": "turnip",
+    "why": "Brassica rapa subsp. rapa, a root vegetable grown in temperate fields — the average time from planting to harvest runs 55 to 60 days.",
+    "src": "https://en.wikipedia.org/wiki/Turnip",
+    "supported": true
+  },
+  {
+    "in": [
+      "bulb",
+      "field"
+    ],
+    "out": "leek",
+    "why": "A biennial allium cultivar grown the way onions are — in loose, well-drained soil — but left up to six months from planting before it's harvested.",
+    "src": "https://en.wikipedia.org/wiki/Leek",
+    "supported": true
+  },
+  {
+    "in": [
+      "cabbage"
+    ],
+    "verb": "wait",
+    "out": "brussels_sprout",
+    "why": "A Brassica oleracea cultivar grown for edible buds that grow in a helix along a thick stalk, maturing over several weeks from the bottom up.",
+    "src": "https://en.wikipedia.org/wiki/Brussels_sprout",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage"
+    ],
+    "verb": "chill",
+    "out": "kale",
+    "why": "A Brassica oleracea cultivar grown for its leaves, which never form a head, and which is hardy enough to survive temperatures as low as -15°C.",
+    "src": "https://en.wikipedia.org/wiki/Kale",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower"
+    ],
+    "verb": "cut",
+    "out": "artichoke",
+    "why": "A cultivated thistle whose edible portion is the flower bud, harvested before the flower comes into bloom — once the bud opens the structure turns coarse and barely edible.",
+    "src": "https://en.wikipedia.org/wiki/Artichoke",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotton",
+      "flower"
+    ],
+    "out": "okra",
+    "why": "Abelmoschus esculentus is a flowering plant in the mallow family, the same family as cotton, grown for its seed capsule — mucilaginous, releasing the characteristic 'goo' once cooked.",
+    "src": "https://en.wikipedia.org/wiki/Okra",
+    "supported": true
+  },
+  {
+    "in": [
+      "fungus",
+      "compost"
+    ],
+    "out": "mushroom",
+    "why": "Agaricus bisporus, the most widely cultivated edible mushroom, is grown from sterilised spawn on composted horse manure rather than on wood, unlike shiitake or maitake.",
+    "src": "https://en.wikipedia.org/wiki/Agaricus_bisporus",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "graft"
+    ],
+    "out": "avocado",
+    "why": "An evergreen laurel-family tree; prime named varieties don't come true from seed, so they're propagated by grafting to rootstock — the same real mechanism apple already uses in this world.",
+    "src": "https://en.wikipedia.org/wiki/Avocado",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "field"
+    ],
+    "out": "arugula",
+    "why": "An annual Brassicaceae salad green that prefers full sun and moist, fertile soil, reaching maturity within 40 to 50 days.",
+    "src": "https://en.wikipedia.org/wiki/Arugula",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "leaf"
+    ],
+    "out": "rhubarb",
+    "why": "A herbaceous perennial that grows from a thick rhizome; what's eaten is the fleshy leaf stalk (petiole), not the leaf blade itself.",
+    "src": "https://en.wikipedia.org/wiki/Rhubarb",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "river"
+    ],
+    "out": "watercress",
+    "why": "An aquatic Brassicaceae plant with hollow, floating stems that thrives directly in clear, fast-flowing streams.",
+    "src": "https://en.wikipedia.org/wiki/Watercress",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemon",
+      "graft"
+    ],
+    "out": "orange",
+    "why": "Citrus x sinensis, a hybrid of pomelo and mandarin. Growers start a rootstock from seed, then graft a bud from the named variety into its bark — the same real propagation this world already uses for apple and avocado.",
+    "src": "https://en.wikipedia.org/wiki/Orange_(fruit)",
+    "verified": true
+  },
+  {
+    "in": [
+      "orange",
+      "tree"
+    ],
+    "out": "grapefruit",
+    "why": "Citrus x paradisi, an accidental cross between sweet orange and pomelo, first found in the 17th-century Caribbean — a second citrus hybrid grown the same way orange already is.",
+    "src": "https://en.wikipedia.org/wiki/Grapefruit",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "harvest"
+    ],
+    "out": "peach",
+    "why": "Prunus persica, a stone fruit tree that begins producing fruit only two or three years after sprouting, and rarely lives past twenty.",
+    "src": "https://en.wikipedia.org/wiki/Peach",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "field"
+    ],
+    "out": "plum",
+    "why": "A fruit of Prunus subg. Prunus, a drupe whose fleshy fruit surrounds a single hard stone — the commercially important trees are kept pruned to 5-6 metres.",
+    "src": "https://en.wikipedia.org/wiki/Plum",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "bee"
+    ],
+    "out": "apricot",
+    "why": "Prunus armeniaca, an orange-yellow stone fruit whose single kernel is a hard-shelled seed — a different part of the plant from the sweet flesh around it.",
+    "src": "https://en.wikipedia.org/wiki/Apricot",
+    "supported": true
+  },
+  {
+    "in": [
+      "peach",
+      "graft"
+    ],
+    "out": "nectarine",
+    "why": "Nectarines are the same species as peaches, differing only by a recessive allele for smooth skin — a naturally occurring variant fixed into a nameable variety by grafting, same as any other named fruit tree here.",
+    "src": "https://en.wikipedia.org/wiki/Nectarine",
+    "supported": true
+  },
+  {
+    "in": [
+      "vine",
+      "sand"
+    ],
+    "out": "watermelon",
+    "why": "A trailing cucurbit vine whose fruit is a pepo — a modified berry, 91% water — historically valued in arid, sandy-soil climates as a stored source of water.",
+    "src": "https://en.wikipedia.org/wiki/Watermelon",
+    "supported": true
+  },
+  {
+    "in": [
+      "vine",
+      "leaf"
+    ],
+    "out": "cantaloupe",
+    "why": "Cucumis melo, a true melon with sweet, aromatic, usually orange flesh, grown on a vining plant.",
+    "src": "https://en.wikipedia.org/wiki/Cantaloupe",
+    "supported": true
+  },
+  {
+    "in": [
+      "vine",
+      "wind"
+    ],
+    "out": "kiwi",
+    "why": "The edible berry of a dioecious woody vine — each plant is strictly male or female, and a female vine needs a male one nearby to bear fruit at all.",
+    "src": "https://en.wikipedia.org/wiki/Kiwifruit",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe"
+    ],
+    "verb": "wait",
+    "out": "raspberry",
+    "why": "An aggregate fruit of many small drupelets, grown on a cane that spends its first season only growing — the fruit doesn't come until the second season's growth.",
+    "src": "https://en.wikipedia.org/wiki/Raspberry",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "leaf"
+    ],
+    "out": "blackberry",
+    "why": "An aggregate of small drupelets, distinct from raspberry because the torus stays with the fruit when picked — grown on a first-year cane that trails 3 to 6 metres, carrying large compound leaves.",
+    "src": "https://en.wikipedia.org/wiki/Blackberry",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "water"
+    ],
+    "out": "cranberry",
+    "why": "A Vaccinium shrub whose berries are harvested by flooding the growing beds with 15 to 20cm of water, then driving a harvester through to knock the floating fruit off the vines.",
+    "src": "https://en.wikipedia.org/wiki/Cranberry",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "river"
+    ],
+    "out": "blueberry",
+    "why": "A perennial flowering Vaccinium shrub, ranging from 10cm to 4m tall, bearing a true berry that turns from pale green through reddish-purple to blue as it ripens.",
+    "src": "https://en.wikipedia.org/wiki/Blueberry",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "wind"
+    ],
+    "out": "date",
+    "why": "The date palm's fruit is a drupe with a single stone, naturally wind-pollinated — though oasis and commercial growers hand-pollinate instead for a reliable yield.",
+    "src": "https://en.wikipedia.org/wiki/Date_palm",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "field"
+    ],
+    "out": "persimmon",
+    "why": "Diospyros kaki, a tree the shape of an apple tree, grown mostly in Chinese, Japanese and Korean orchards — its fruit ripens only after the tree has already dropped its leaves.",
+    "src": "https://en.wikipedia.org/wiki/Diospyros_kaki",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "sand"
+    ],
+    "out": "guava",
+    "why": "Psidium guajava, a small myrtle-family tree bearing a true berry — grown from seed it fruits within two years and keeps doing so for up to forty, tolerant of brief cold down to about -4°C.",
+    "src": "https://en.wikipedia.org/wiki/Guava",
+    "supported": true
+  },
+  {
+    "in": [
+      "grass",
+      "frost"
+    ],
+    "out": "rye",
+    "why": "A grass of the wheat tribe, grown as a grain — it withstands cold better than any other small grain, surviving snow cover that would kill winter wheat, which already exists in this world.",
+    "src": "https://en.wikipedia.org/wiki/Rye",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "leaf"
+    ],
+    "out": "quinoa",
+    "why": "A pseudocereal — not a grass at all but a flowering plant related to spinach and amaranth. What's harvested is a true seed, and by hand: the plants ripen too unevenly for a machine.",
+    "src": "https://en.wikipedia.org/wiki/Quinoa",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed",
+      "sand"
+    ],
+    "out": "buckwheat",
+    "why": "Not a grass or a cereal at all — a pseudocereal related to rhubarb and knotweed, eaten like a grain purely because its starchy seed cooks the same way.",
+    "src": "https://en.wikipedia.org/wiki/Buckwheat",
+    "supported": true
+  },
+  {
+    "in": [
+      "grass",
+      "sand"
+    ],
+    "out": "millet",
+    "why": "A group of small-seeded grasses grown as a grain, highly tolerant of drought and extreme weather — a crop suited to loose, arid ground.",
+    "src": "https://en.wikipedia.org/wiki/Millet",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "dust"
+    ],
+    "out": "sorghum",
+    "why": "Sorghum bicolor, a grass grown as a cereal grain, drought- and heat-tolerant enough to be a staple crop where dry conditions rule out most other grains.",
+    "src": "https://en.wikipedia.org/wiki/Sorghum",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "sun"
+    ],
+    "out": "chickpea",
+    "why": "An annual Fabaceae legume grown for its edible seeds — a pulse crop whose feathery-leaved plant sets small pods holding just two or three peas each.",
+    "src": "https://en.wikipedia.org/wiki/Chickpea",
+    "supported": true
+  },
+  {
+    "in": [
+      "legume",
+      "water"
+    ],
+    "out": "bean",
+    "why": "Phaseolus vulgaris, the common bean — a single species behind most of the world's named bean varieties, from black turtle beans to kidney and pinto.",
+    "src": "https://en.wikipedia.org/wiki/Common_bean",
+    "supported": true
+  },
+  {
+    "in": [
+      "bean"
+    ],
+    "verb": "wait",
+    "out": "black_bean",
+    "why": "A small, shiny cultivar of the common bean — its dried seed coat carries anthocyanins, the pigment that gives it its black colour.",
+    "src": "https://en.wikipedia.org/wiki/Black_turtle_bean",
+    "supported": true
+  },
+  {
+    "in": [
+      "bean",
+      "sun"
+    ],
+    "out": "pinto_bean",
+    "why": "A common bean cultivar named for its mottled seed coat — Spanish pinto, 'painted' or 'spotted'.",
+    "src": "https://en.wikipedia.org/wiki/Pinto_bean",
+    "verified": true
+  },
+  {
+    "in": [
+      "bean",
+      "field"
+    ],
+    "out": "kidney_bean",
+    "why": "A cultivar of the common bean, kidney-shaped and dark red — the variety in which the bean family's own raw-lectin toxin runs most concentrated.",
+    "src": "https://en.wikipedia.org/wiki/Common_bean",
+    "supported": true
+  },
+  {
+    "in": [
+      "wheat"
+    ],
+    "verb": "crush",
+    "out": "semolina",
+    "why": "A coarser wheat grind than flour, milled specifically for making couscous and durum pasta.",
+    "src": "https://en.wikipedia.org/wiki/Couscous",
+    "supported": true
+  },
+  {
+    "in": [
+      "semolina",
+      "water"
+    ],
+    "out": "couscous",
+    "why": "Semolina is sprinkled with water and rolled by hand into small pellets, sieved to keep them separate, then steamed until light and fluffy.",
+    "src": "https://en.wikipedia.org/wiki/Couscous",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark"
+    ],
+    "verb": "blow",
+    "out": "cinnamon",
+    "why": "The inner bark of a Cinnamomum tree, pried off in long strips once loosened — it's the drying itself that curls the strips into the familiar quills.",
+    "src": "https://en.wikipedia.org/wiki/Cinnamon",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed"
+    ],
+    "verb": "wait",
+    "out": "nutmeg",
+    "why": "A Myristica seed, dried gradually in the sun for up to 30 weeks — long enough that it visibly shrinks away from its own hard shell and starts to rattle.",
+    "src": "https://en.wikipedia.org/wiki/Nutmeg",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "harvest"
+    ],
+    "out": "clove",
+    "why": "The unopened flower bud of Syzygium aromaticum, picked at 1.5 to 2cm long, before the four petals inside it ever open.",
+    "src": "https://en.wikipedia.org/wiki/Clove",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "seed"
+    ],
+    "out": "cardamom",
+    "why": "A spice from the Zingiberaceae — the ginger family this world's ginger already belongs to — whose seed pods are triangular and spindle-shaped, holding small black seeds.",
+    "src": "https://en.wikipedia.org/wiki/Cardamom",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine"
+    ],
+    "verb": "wait",
+    "out": "vanilla",
+    "why": "An orchid vine grown for its seed pods — since the flower can't pollinate itself, every plant grown commercially today is pollinated entirely by hand before the pod is left to mature.",
+    "src": "https://en.wikipedia.org/wiki/Vanilla",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower"
+    ],
+    "verb": "chill",
+    "out": "saffron",
+    "why": "Crocus sativus is sterile and blooms only in autumn — its crimson stigmas are hand-picked and dried, and it takes about 150,000 flowers to make one kilogram of the spice.",
+    "src": "https://en.wikipedia.org/wiki/Saffron",
+    "verified": true
+  },
+  {
+    "in": [
+      "celery",
+      "seed"
+    ],
+    "out": "fennel",
+    "why": "Foeniculum vulgare, a carrot-family plant related to celery — the dried seeds are used as an anise-flavoured spice, while the bulb is eaten as its own vegetable.",
+    "src": "https://en.wikipedia.org/wiki/Fennel",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "seed"
+    ],
+    "out": "mustard_seed",
+    "why": "A crop of the mustard family, Brassicaceae — the same family cabbage belongs to in this world — grown for its harvested seed.",
+    "src": "https://en.wikipedia.org/wiki/Mustard_plant",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "wind"
+    ],
+    "out": "allspice",
+    "why": "The dried unripe berry of Pimenta dioica, picked green and traditionally dried in the sun until brown, resembling a large smooth peppercorn.",
+    "src": "https://en.wikipedia.org/wiki/Allspice",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "wind"
+    ],
+    "out": "star_anise",
+    "why": "The star-shaped fruit of an evergreen tree native to South China and Vietnam, picked just before it ripens — six to eight seed-bearing follicles arranged in a single whorl.",
+    "src": "https://en.wikipedia.org/wiki/Illicium_verum",
+    "supported": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "field"
+    ],
+    "out": "wasabi",
+    "why": "A Brassicaceae plant, related to horseradish and mustard but its own separate species, grown specifically for its rhizome, which is ground into a paste.",
+    "src": "https://en.wikipedia.org/wiki/Wasabi",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "fruit"
+    ],
+    "out": "cashew",
+    "why": "The true fruit of the cashew tree is a drupe that grows at the end of the cashew apple — a second, separate fruit on the same stalk.",
+    "src": "https://en.wikipedia.org/wiki/Cashew",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe"
+    ],
+    "verb": "heat",
+    "out": "pistachio",
+    "why": "A drupe whose seed is the edible part — as it ripens in the warmth, the shell shifts colour and abruptly splits open with an audible pop, a trait growers deliberately selected for.",
+    "src": "https://en.wikipedia.org/wiki/Pistachio",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "soil"
+    ],
+    "out": "pecan",
+    "why": "A species of hickory, native to the southern US and northern Mexico — botanically a drupe, not a true nut, with a single stone inside a husk.",
+    "src": "https://en.wikipedia.org/wiki/Pecan",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "root"
+    ],
+    "out": "hazelnut",
+    "why": "The fruit of a Corylus hazel tree — a genuine botanical nut, with a fibrous husk it falls free of about seven to eight months after pollination.",
+    "src": "https://en.wikipedia.org/wiki/Hazelnut",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "straw"
+    ],
+    "out": "macadamia",
+    "why": "A genus of trees in the Proteaceae family, native to Australia — the source of the world's macadamia nut crop.",
+    "src": "https://en.wikipedia.org/wiki/Macadamia",
+    "supported": true
+  },
+  {
+    "in": [
+      "curd"
+    ],
+    "verb": "heat",
+    "out": "mozzarella",
+    "why": "The pasta filata method: curd is heated and hand-kneaded until it becomes a single smooth, shiny, stretchy paste, then pulled and cut into individual balls.",
+    "src": "https://en.wikipedia.org/wiki/Mozzarella",
+    "verified": true
+  },
+  {
+    "in": [
+      "curd"
+    ],
+    "verb": "crush",
+    "out": "cheddar",
+    "why": "'Cheddaring': after heating, the curd is kneaded with salt, cut into cubes to drain the whey, then stacked and turned — repeated mechanical working, not ageing, is what makes cheddar cheddar.",
+    "src": "https://en.wikipedia.org/wiki/Cheddar_cheese",
+    "verified": true
+  },
+  {
+    "in": [
+      "aged_cheese"
+    ],
+    "verb": "wait",
+    "out": "parmesan",
+    "why": "A hard, granular Italian cheese from unpasteurised cow's milk, aged a minimum of 12 months and averaging two years — considerably longer than an ordinarily aged cheese.",
+    "src": "https://en.wikipedia.org/wiki/Parmigiano-Reggiano",
+    "supported": true
+  },
+  {
+    "in": [
+      "cheese",
+      "goat"
+    ],
+    "out": "feta",
+    "why": "A Greek brined cheese made from sheep's milk, or a mixture of sheep and goat — this world's existing brined-cheese recipe already covers the process; this is the specific goat-milk variant.",
+    "src": "https://en.wikipedia.org/wiki/Feta",
+    "verified": true
+  },
+  {
+    "in": [
+      "curd",
+      "cream"
+    ],
+    "out": "cottage_cheese",
+    "why": "Acid-set curds — this world's own curd, from milk plus vinegar or wine — drained and mixed back with cream and salt, with no ageing at all.",
+    "src": "https://en.wikipedia.org/wiki/Cottage_cheese",
+    "verified": true
+  },
+  {
+    "in": [
+      "milk",
+      "fire"
+    ],
+    "out": "evaporated_milk",
+    "why": "Fresh milk with about 60% of its water removed by heat, then canned and heat-sterilised for a shelf-stable product — unlike condensed milk, no sugar is added.",
+    "src": "https://en.wikipedia.org/wiki/Evaporated_milk",
+    "verified": true
+  },
+  {
+    "in": [
+      "evaporated_milk",
+      "sugar"
+    ],
+    "out": "condensed_milk",
+    "why": "Sugar is added to milk that's already had 60% of its water evaporated off, until it reaches roughly a 9:11 ratio of sugar to evaporated milk — the sugar itself is what preserves it.",
+    "src": "https://en.wikipedia.org/wiki/Condensed_milk",
+    "verified": true
+  },
+  {
+    "in": [
+      "cream",
+      "egg"
+    ],
+    "out": "custard",
+    "why": "Cream cooked with egg to thicken it — the egg protein coagulates starting around 70°C and must stay under 80°C, or the custard curdles instead of setting smooth.",
+    "src": "https://en.wikipedia.org/wiki/Custard",
+    "verified": true
+  },
+  {
+    "in": [
+      "tomato",
+      "vinegar"
+    ],
+    "out": "ketchup",
+    "why": "Modern tomato ketchup is made from tomatoes, sugar and vinegar, with seasoning added — the vinegar and sugar content is what lets it keep without spoiling.",
+    "src": "https://en.wikipedia.org/wiki/Ketchup",
+    "verified": true
+  },
+  {
+    "in": [
+      "sap"
+    ],
+    "verb": "heat",
+    "out": "maple_syrup",
+    "why": "Maple sap, boiled down over an open fire until 20 to 50 volumes of it reduce to just one volume of finished syrup.",
+    "src": "https://en.wikipedia.org/wiki/Maple_syrup",
+    "verified": true
+  },
+  {
+    "in": [
+      "peanut"
+    ],
+    "verb": "crush",
+    "out": "peanut_butter",
+    "why": "A paste made from dry-roasted peanuts, sent through two grinders in succession — a medium grind, then a fine one — until smooth.",
+    "src": "https://en.wikipedia.org/wiki/Peanut_butter",
+    "verified": true
+  },
+  {
+    "in": [
+      "strawberry",
+      "sugar"
+    ],
+    "out": "jam",
+    "why": "Whole fruit crushed and heated with sugar to about 104°C — at that point the fruit's own acid and pectin react with the sugar, and it sets on cooling.",
+    "src": "https://en.wikipedia.org/wiki/Fruit_preserves",
+    "verified": true
+  },
+  {
+    "in": [
+      "maize"
+    ],
+    "verb": "crush",
+    "out": "cornstarch",
+    "why": "Starch powder milled from the endosperm of the corn kernel, with the germ, fibre and gluten all washed away.",
+    "src": "https://en.wikipedia.org/wiki/Corn_starch",
+    "verified": true
+  },
+  {
+    "in": [
+      "sodium",
+      "carbon_dioxide"
+    ],
+    "out": "baking_soda",
+    "why": "Sodium bicarbonate, NaHCO3 — hit with acid or heat, it releases carbon dioxide, which is exactly what makes a batter rise.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_bicarbonate",
+    "supported": true
+  },
+  {
+    "in": [
+      "baking_soda",
+      "cornstarch"
+    ],
+    "out": "baking_powder",
+    "why": "A dry leavening mixture of bicarbonate, a weak acid and a desiccant — cornstarch, named directly by the source — that reacts on its own once dampened, unlike baking soda, which needs an acid already in the recipe.",
+    "src": "https://en.wikipedia.org/wiki/Baking_powder",
+    "supported": true
+  },
+  {
+    "in": [
+      "fish",
+      "malt_vinegar"
+    ],
+    "out": "worcestershire_sauce",
+    "why": "A fermented condiment invented by two Worcester pharmacists — its two headline ingredients, named directly by the source, are anchovies and malt vinegar.",
+    "src": "https://en.wikipedia.org/wiki/Worcestershire_sauce",
+    "verified": true
+  },
+  {
+    "in": [
+      "chilli",
+      "vinegar"
+    ],
+    "out": "hot_sauce",
+    "why": "A condiment made from chili peppers — many hot sauces are nothing more than chilli, salt and vinegar.",
+    "src": "https://en.wikipedia.org/wiki/Hot_sauce",
+    "verified": true
+  },
+  {
+    "in": [
+      "sesame"
+    ],
+    "verb": "crush",
+    "out": "tahini",
+    "why": "A seed butter made from sesame seeds — hulled, toasted, and ground until they release their own oil into a smooth paste.",
+    "src": "https://en.wikipedia.org/wiki/Tahini",
+    "verified": true
+  },
+  {
+    "in": [
+      "vanilla",
+      "ethanol"
+    ],
+    "out": "vanilla_extract",
+    "why": "A solution made by macerating vanilla pods in ethanol and water, pulling out several hundred flavour compounds beyond vanillin alone.",
+    "src": "https://en.wikipedia.org/wiki/Vanilla_extract",
+    "verified": true
+  },
+  {
+    "in": [
+      "mustard_seed",
+      "vinegar"
+    ],
+    "out": "mustard",
+    "why": "Ground, cracked or bruised mustard seeds mixed with vinegar (or water, wine, or lemon juice) into the condiment's familiar paste.",
+    "src": "https://en.wikipedia.org/wiki/Mustard_(condiment)",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell",
+      "sand"
+    ],
+    "out": "shrimp",
+    "why": "A decapod crustacean with an elongated, swimming body, distinct from the walking crabs and lobsters — most caught species live over sandy coastal seabeds.",
+    "src": "https://en.wikipedia.org/wiki/Shrimp",
+    "supported": true
+  },
+  {
+    "in": [
+      "shell",
+      "stone"
+    ],
+    "out": "crab",
+    "why": "A heavily armoured decapod crustacean whose tail is concealed folded under its body — built to run sideways and hide in rocky crevices.",
+    "src": "https://en.wikipedia.org/wiki/Crab",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell",
+      "mud"
+    ],
+    "out": "lobster",
+    "why": "A decapod crustacean with a long body and a muscular tail, living in crevices or burrows dug into the sea floor.",
+    "src": "https://en.wikipedia.org/wiki/Lobster",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "current"
+    ],
+    "out": "salmon",
+    "why": "An anadromous fish — it hatches in a freshwater river, grows to adulthood at sea, then swims back against the current to its own birthplace to spawn.",
+    "src": "https://en.wikipedia.org/wiki/Salmon",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "current"
+    ],
+    "out": "tuna",
+    "why": "A mackerel-family open-ocean fish, among the fastest-swimming of any pelagic species — one of only three fish able to hold a body temperature above the surrounding water.",
+    "src": "https://en.wikipedia.org/wiki/Tuna",
+    "verified": true
+  },
+  {
+    "in": [
+      "avocado"
+    ],
+    "verb": "crush",
+    "out": "guacamole",
+    "why": "An avocado-based dip, traditionally made by mashing peeled, ripe avocado and salt together with a mortar and pestle.",
+    "src": "https://en.wikipedia.org/wiki/Guacamole",
+    "verified": true
+  },
+  {
+    "in": [
+      "chickpea",
+      "tahini"
+    ],
+    "out": "hummus",
+    "why": "A Levantine dip made from cooked, mashed chickpeas blended with tahini — both already real elements in this world.",
+    "src": "https://en.wikipedia.org/wiki/Hummus",
+    "verified": true
+  },
+  {
+    "in": [
+      "tomato",
+      "onion"
+    ],
+    "out": "salsa",
+    "why": "A Mexican sauce and dip usually built from chopped or cooked tomatoes and onion, with chili peppers and cilantro layered in from there.",
+    "src": "https://en.wikipedia.org/wiki/Salsa_(sauce)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "mayonnaise"
+    ],
+    "out": "coleslaw",
+    "why": "Finely shredded raw cabbage dressed with mayonnaise — the most common of the dressings real recipes use, though cabbage is the only ingredient they all agree on.",
+    "src": "https://en.wikipedia.org/wiki/Coleslaw",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "butter"
+    ],
+    "out": "omelette",
+    "why": "Beaten eggs fried with butter or oil in a frying pan — the base of the dish, before any filling gets folded in.",
+    "src": "https://en.wikipedia.org/wiki/Omelette",
+    "verified": true
+  },
+  {
+    "in": [
+      "batter"
+    ],
+    "verb": "heat",
+    "out": "pancake",
+    "why": "A flat batter-bread, cooked on a hot flat surface like a griddle or frying pan.",
+    "src": "https://en.wikipedia.org/wiki/Pancake",
+    "verified": true
+  },
+  {
+    "in": [
+      "batter",
+      "fire"
+    ],
+    "out": "waffle",
+    "why": "A leavened batter or dough, cooked between two hot patterned plates rather than on a flat griddle — the grid pattern is what tells it apart from a pancake.",
+    "src": "https://en.wikipedia.org/wiki/Waffle",
+    "supported": true
+  },
+  {
+    "in": [
+      "mince",
+      "bread"
+    ],
+    "out": "burger",
+    "why": "A cooked patty of ground meat placed inside a sliced bun — the definition holds whatever else gets added on top.",
+    "src": "https://en.wikipedia.org/wiki/Hamburger",
+    "verified": true
+  },
+  {
+    "in": [
+      "sausage",
+      "bread"
+    ],
+    "out": "hot_dog",
+    "why": "A cooked — grilled, steamed or boiled — sausage, served in the slit of a partially sliced bun.",
+    "src": "https://en.wikipedia.org/wiki/Hot_dog",
+    "verified": true
+  },
+  {
+    "in": [
+      "bread",
+      "meat"
+    ],
+    "out": "sandwich",
+    "why": "A filling — meat, cheese, sauces or vegetables — placed between slices of bread; this is the plainest real version of it.",
+    "src": "https://en.wikipedia.org/wiki/Sandwich",
+    "verified": true
+  },
+  {
+    "in": [
+      "cooked_rice",
+      "egg"
+    ],
+    "out": "fried_rice",
+    "why": "Cooked rice stir-fried in a wok or pan, usually mixed with egg alongside whatever vegetables or meat are on hand.",
+    "src": "https://en.wikipedia.org/wiki/Fried_rice",
+    "verified": true
+  },
+  {
+    "in": [
+      "wrap",
+      "salsa"
+    ],
+    "out": "taco",
+    "why": "A small tortilla folded by hand around a filling and eaten straight away — the game's own wrap, given a real, named filling.",
+    "src": "https://en.wikipedia.org/wiki/Taco",
+    "verified": true
   }
 ]
