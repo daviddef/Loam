@@ -19064,5 +19064,275 @@
     "why": "A bed bug feeds exclusively on human blood but never lives on the body — it spends its time hidden in dark seams nearby, classically a mattress, between meals.",
     "src": "https://en.wikipedia.org/wiki/Cimex_lectularius",
     "verified": true
+  },
+  {
+    "in": [
+      "harvest",
+      "vine"
+    ],
+    "out": "gourd",
+    "why": "Gourds are Cucurbitaceae fruit grown on a vine and harvested; left to cure they dry out into a hollow, hard shell used worldwide for containers and instruments.",
+    "src": "https://en.wikipedia.org/wiki/Gourd",
+    "verified": true
+  },
+  {
+    "in": [
+      "hardwood",
+      "iron"
+    ],
+    "out": "mbira",
+    "why": "The mbira dzavadzimu's soundboard is hardwood (mubvamaropa), and its tines were traditionally smelted iron, each one filed to a different length for a different pitch.",
+    "src": "https://en.wikipedia.org/wiki/Mbira",
+    "supported": true
+  },
+  {
+    "in": [
+      "bronze",
+      "forge"
+    ],
+    "out": "gong",
+    "why": "Gong bronze (about 78% copper, 22% tin) is brittle if simply cast and cooled, so it's heated red-hot and quenched, which makes it soft enough to hammer, then hardened again by reheating.",
+    "src": "https://en.wikipedia.org/wiki/Gong",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze"
+    ],
+    "verb": "cut",
+    "out": "cymbal",
+    "why": "A cast bronze cymbal blank is hot-forged, hammered, then lathed — cutting away up to two-thirds of its weight, thinning it and carving the tone grooves that shape its sound.",
+    "src": "https://en.wikipedia.org/wiki/Cymbal_making",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze"
+    ],
+    "verb": "heat",
+    "out": "bell",
+    "why": "A bell is cast mouth-down from molten bell metal — bronze around 23% tin — poured into a buried two-part mould and left to cool slowly.",
+    "src": "https://en.wikipedia.org/wiki/Bell_(instrument)",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood"
+    ],
+    "verb": "cut",
+    "out": "xylophone",
+    "why": "A xylophone's wooden bars are cut to length and struck with mallets; as with the closely related marimba, bars are longer and wider for the lowest notes and shorter for the higher ones.",
+    "src": "https://en.wikipedia.org/wiki/Marimba",
+    "supported": true
+  },
+  {
+    "in": [
+      "bamboo",
+      "rope"
+    ],
+    "out": "angklung",
+    "why": "An angklung is bamboo tubes, cut to different lengths and tuned, bound with rattan cord into a bamboo frame — shaking it makes the loose tubes knock against the frame and sound.",
+    "src": "https://ich.unesco.org/en/RL/indonesian-angklung-00393",
+    "supported": true
+  },
+  {
+    "in": [
+      "gourd",
+      "stone"
+    ],
+    "out": "maraca",
+    "why": "A maraca is a dried Lagenaria gourd shell with a few pebbles inserted before it's sealed, so shaking it makes the pebbles rattle inside.",
+    "src": "https://en.wikipedia.org/wiki/Maraca",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "wood"
+    ],
+    "out": "djembe",
+    "why": "A djembe's goblet-shaped body is carved from a single log of hardwood while the wood is still moist and soft, and its head is untanned rawhide, most often goatskin, tensioned by rope.",
+    "src": "https://en.wikipedia.org/wiki/Djembe",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "iron"
+    ],
+    "out": "tabla",
+    "why": "The tabla's black tuning spot, the syahi, is a paste of iron filings and starch built up in layers on the drum's skin head — it's what gives the tabla its distinctive, bell-like pitched tone.",
+    "src": "https://en.wikipedia.org/wiki/Syahi",
+    "supported": true
+  },
+  {
+    "in": [
+      "copper",
+      "hide"
+    ],
+    "out": "timpani",
+    "why": "A timpano's bowl is traditionally copper, under a stretched calfskin or goatskin head; screw tensioning made timpani tunable to a definite pitch, unlike most other drums.",
+    "src": "https://en.wikipedia.org/wiki/Timpani",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "hide"
+    ],
+    "out": "daf",
+    "why": "A daf is a wooden frame with a goat- or fish-skin head, ringed on the inside with dozens of small brass or steel rings that jingle with every strike or shake.",
+    "src": "https://en.wikipedia.org/wiki/Daf",
+    "supported": true
+  },
+  {
+    "in": [
+      "thread",
+      "wood"
+    ],
+    "out": "guitar",
+    "why": "A guitar's hollow wood body resonates strings under tension across it; plucking or strumming them by hand is what sets them vibrating, with no bow and no hammer involved.",
+    "src": "https://en.wikipedia.org/wiki/Guitar",
+    "supported": true
+  },
+  {
+    "in": [
+      "sap",
+      "wood"
+    ],
+    "out": "violin",
+    "why": "A violin's carved wood body and bow stick give it its shape, but its strings are bowed rather than plucked — and bow hair alone is too slick to grip a string, so players rub on rosin, a resin from pine sap, for the friction to sound it.",
+    "src": "https://en.wikipedia.org/wiki/Rosin",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "wood"
+    ],
+    "out": "morin_khuur",
+    "why": "The morin khuur's two strings and its bow hair are traditionally horsehair — one string from about 130 stallion-tail hairs, the other from 105 mare-tail hairs — and its wooden scroll is carved into a horse's head.",
+    "src": "https://en.wikipedia.org/wiki/Morin_khuur",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "gourd"
+    ],
+    "out": "sitar",
+    "why": "The sitar's rounded resonating chamber is a hollowed calabash gourd; its strings are metal, brass among them, and a set of thin sympathetic strings beneath vibrate on their own by resonance, never plucked.",
+    "src": "https://en.wikipedia.org/wiki/Sitar",
+    "supported": true
+  },
+  {
+    "in": [
+      "gourd",
+      "hide"
+    ],
+    "out": "kora",
+    "why": "A kora's body is a large calabash gourd cut in half and covered with cow skin as a resonator, carrying 21 strings over a long hardwood neck.",
+    "src": "https://en.wikipedia.org/wiki/Kora_(instrument)",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "wool"
+    ],
+    "out": "piano",
+    "why": "A piano's steel strings can pull with up to 20 tons of combined tension, enough that the frame holding them is cast iron rather than wood; pressing a key swings a wool-felt-covered hammer to strike them.",
+    "src": "https://en.wikipedia.org/wiki/Piano",
+    "verified": true
+  },
+  {
+    "in": [
+      "bamboo"
+    ],
+    "verb": "cut",
+    "out": "flute",
+    "why": "A flute is a tube, often bamboo, with finger holes cut along its length; covering and uncovering them changes the effective length of the vibrating air column, and that changes the pitch.",
+    "src": "https://en.wikipedia.org/wiki/Flute",
+    "verified": true
+  },
+  {
+    "in": [
+      "bamboo",
+      "thread"
+    ],
+    "out": "pan_flute",
+    "why": "A pan flute is several bamboo tubes of different lengths, each stopped at the bottom and sounding one note, tied together side by side with woven cord — unlike a flute, it has no finger holes at all.",
+    "src": "https://en.wikipedia.org/wiki/Panpipes",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "forge"
+    ],
+    "out": "trumpet",
+    "why": "A trumpet is brass tubing, shaped and bent twice into a rounded loop; sound starts when the player buzzes their lips into the cupped mouthpiece, setting up a standing wave in the air column.",
+    "src": "https://en.wikipedia.org/wiki/Trumpet",
+    "verified": true
+  },
+  {
+    "in": [
+      "termite",
+      "wood"
+    ],
+    "out": "didgeridoo",
+    "why": "A traditional didgeridoo comes from a eucalyptus branch termites have already hollowed from the inside — they eat the dead heartwood, since a chemical in the living sapwood repels them.",
+    "src": "https://en.wikipedia.org/wiki/Didgeridoo",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "hide"
+    ],
+    "out": "bagpipes",
+    "why": "A bagpipe's bag is an airtight reservoir, traditionally a whole goat-, sheep- or cowskin, that the player's arm keeps squeezed — feeding a steady stream of air to the reed pipes so the sound never pauses for breath.",
+    "src": "https://en.wikipedia.org/wiki/Bagpipes",
+    "verified": true
+  },
+  {
+    "in": [
+      "horn"
+    ],
+    "verb": "heat",
+    "out": "shofar",
+    "why": "A ram's horn is keratin around a bony core; heat softens the keratin enough to flatten and straighten it into a shofar, which is then hollowed from tip to base.",
+    "src": "https://en.wikipedia.org/wiki/Shofar",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "human"
+    ],
+    "out": "theremin",
+    "why": "A theremin's two metal antennas are wired into an oscillating circuit; a player's hand acts as the other plate of a capacitor, and its distance from an antenna shifts the circuit's frequency and volume — played without ever being touched.",
+    "src": "https://en.wikipedia.org/wiki/Theremin",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "steel"
+    ],
+    "out": "electric_guitar",
+    "why": "A pickup is a magnet wrapped in a coil of copper wire; a vibrating steel string moves the magnet's field, and that induces a matching electrical current in the coil, sent on to an amplifier.",
+    "src": "https://en.wikipedia.org/wiki/Pickup_(music_technology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "transistor"
+    ],
+    "out": "synthesizer",
+    "why": "Rather than amplifying an existing vibration, a synthesizer's oscillator generates an electrical current oscillating into a waveform from scratch; Robert Moog's 1964 transistor-based voltage-controlled oscillator became the standard circuit for doing it.",
+    "src": "https://en.wikipedia.org/wiki/Moog_synthesizer",
+    "supported": true
   }
 ]

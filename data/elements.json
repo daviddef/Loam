@@ -4650,7 +4650,6 @@
     "tags": [
       "metal"
     ],
-    "terminal": true,
     "fact": "Copper and zinc, roughly two to one. Change the ratio and you change the colour."
   },
   {
@@ -6103,7 +6102,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A small current at one terminal ruling a large one at another. Everything modern sits on it."
   },
   {
@@ -7100,7 +7098,6 @@
       "plant",
       "build"
     ],
-    "terminal": true,
     "fact": "A grass. Some species add 91 cm in a day, and a culm never gets thicker than it started."
   },
   {
@@ -14434,8 +14431,7 @@
       "wild"
     ],
     "fact": "It can't digest the wood it eats on its own — a gut community of bacteria and protists breaks down the cellulose for it.",
-    "taxon": "tx_blattodea",
-    "terminal": true
+    "taxon": "tx_blattodea"
   },
   {
     "id": "flea",
@@ -15725,5 +15721,327 @@
     ],
     "terminal": true,
     "fact": "The second-most economically devastating parasitic disease on Earth, after malaria alone."
+  },
+  {
+    "id": "gourd",
+    "name": "Gourd",
+    "emoji": "🧉",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A Cucurbitaceae fruit that, dried out, leaves a hollow, hard shell — a container waiting to happen."
+  },
+  {
+    "id": "mbira",
+    "name": "Mbira",
+    "emoji": "🎼",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "Zimbabwe's thumb piano: metal tines on a hardwood board, each tine a different length for a different pitch.",
+    "terminal": true
+  },
+  {
+    "id": "gong",
+    "name": "Gong",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "A bronze disc quenched from red heat so it can be hammered soft, then hardened again by reheating.",
+    "terminal": true
+  },
+  {
+    "id": "cymbal",
+    "name": "Cymbal",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "Cast bronze, lathed thin — cutting can shave off two-thirds the blank's weight, carving in the tone grooves.",
+    "terminal": true
+  },
+  {
+    "id": "bell",
+    "name": "Bell",
+    "emoji": "🔔",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "Cast from bell metal, a bronze around 23% tin — the ratio empirically settled on for the best tone.",
+    "terminal": true
+  },
+  {
+    "id": "xylophone",
+    "name": "Xylophone",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "Wooden bars cut to length and struck — as with the marimba, longer bars ring lower, shorter bars higher.",
+    "terminal": true
+  },
+  {
+    "id": "angklung",
+    "name": "Angklung",
+    "emoji": "🎋",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "West Javanese bamboo tubes tuned to a note, shaken so the tubes knock inside their own bamboo frame.",
+    "terminal": true
+  },
+  {
+    "id": "maraca",
+    "name": "Maraca",
+    "emoji": "🪇",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "idiophone"
+    ],
+    "fact": "A dried gourd shell with a handful of pebbles or seeds sealed inside, shaken for the rattle.",
+    "terminal": true
+  },
+  {
+    "id": "djembe",
+    "name": "Djembe",
+    "emoji": "🪘",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "membranophone"
+    ],
+    "fact": "A West African goblet drum carved from one log while the wood is still green, headed with goatskin.",
+    "terminal": true
+  },
+  {
+    "id": "tabla",
+    "name": "Tabla",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "membranophone"
+    ],
+    "fact": "The North Indian hand drum pair's black tuning spot, the syahi, is iron filings bound in a starch paste.",
+    "terminal": true
+  },
+  {
+    "id": "timpani",
+    "name": "Timpani",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "membranophone"
+    ],
+    "fact": "A copper kettle under a skin head — almost alone among drums, it can be tuned to a definite pitch.",
+    "terminal": true
+  },
+  {
+    "id": "daf",
+    "name": "Daf",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "membranophone"
+    ],
+    "fact": "A Middle Eastern and Central Asian frame drum ringed inside with dozens of small jingling metal rings.",
+    "terminal": true
+  },
+  {
+    "id": "guitar",
+    "name": "Guitar",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "A hollow wood body resonates strings plucked or strummed by hand, no bow and no hammer involved.",
+    "terminal": true
+  },
+  {
+    "id": "violin",
+    "name": "Violin",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "Its strings are bowed, not plucked — and the bow hair needs pine-resin rosin to actually grip and sound them.",
+    "terminal": true
+  },
+  {
+    "id": "morin_khuur",
+    "name": "Morin Khuur",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "Mongolia's horsehead fiddle: strings and bow both traditionally horsehair, scroll carved as a horse's head.",
+    "terminal": true
+  },
+  {
+    "id": "sitar",
+    "name": "Sitar",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "A hollowed calabash gourd resonates metal strings — plus a set that vibrate on their own, never plucked.",
+    "terminal": true
+  },
+  {
+    "id": "kora",
+    "name": "Kora",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "A West African 21-string harp-lute: a gourd sliced in half and sealed with cow skin as its resonator.",
+    "terminal": true
+  },
+  {
+    "id": "piano",
+    "name": "Piano",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "A cast-iron frame holds up to 20 tons of string tension; felt-covered hammers strike the strings, not fingers.",
+    "terminal": true
+  },
+  {
+    "id": "flute",
+    "name": "Flute",
+    "emoji": "🪈",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "Holes cut along a tube shorten or lengthen the vibrating air column inside it, and that sets the pitch.",
+    "terminal": true
+  },
+  {
+    "id": "pan_flute",
+    "name": "Pan Flute",
+    "emoji": "🪈",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "Many tubes of different lengths bound side by side, each one closed at the bottom and sounding one note.",
+    "terminal": true
+  },
+  {
+    "id": "trumpet",
+    "name": "Trumpet",
+    "emoji": "🎺",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "Brass tubing bent twice into a loop; the player's own buzzing lips against the mouthpiece make the sound.",
+    "terminal": true
+  },
+  {
+    "id": "didgeridoo",
+    "name": "Didgeridoo",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "An Aboriginal Australian drone pipe — traditionally a eucalyptus branch termites hollowed out first.",
+    "terminal": true
+  },
+  {
+    "id": "bagpipes",
+    "name": "Bagpipes",
+    "emoji": "🎶",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "An airtight animal-skin bag, squeezed by the arm, feeds reed pipes so the sound never stops for breath.",
+    "terminal": true
+  },
+  {
+    "id": "shofar",
+    "name": "Shofar",
+    "emoji": "🐏",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "A ram's horn with no mouthpiece at all — heat softens its keratin enough to flatten and straighten it.",
+    "terminal": true
+  },
+  {
+    "id": "theremin",
+    "name": "Theremin",
+    "emoji": "🎛️",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "electrophone"
+    ],
+    "fact": "Played without ever being touched: a hand's distance from an antenna changes the circuit's own pitch.",
+    "terminal": true
+  },
+  {
+    "id": "electric_guitar",
+    "name": "Electric Guitar",
+    "emoji": "🎸⚡",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "electrophone"
+    ],
+    "fact": "A vibrating steel string disturbs a magnet's field and induces current in a coil — no hollow body needed.",
+    "terminal": true
+  },
+  {
+    "id": "synthesizer",
+    "name": "Synthesizer",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "electrophone"
+    ],
+    "fact": "Generates its waveform electronically from scratch, rather than amplifying a vibration that already exists.",
+    "terminal": true
   }
 ]
