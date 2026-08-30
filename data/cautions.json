@@ -835,6 +835,96 @@
         "head_louse"
       ],
       "severity": "conditional"
+    },
+    "crocodilian_bite": {
+      "label": "Real predators, and real numbers",
+      "note": "The Nile crocodile is estimated to cause 275 to 745 attacks a year, about 63% of them fatal — more human deaths than every other crocodilian species combined. The American alligator bites far less often and far less often fatally, but its measured bite force is among the strongest of any living animal. Both are ambush predators, not something to test at the water's edge.",
+      "severity": "acute",
+      "ids": [
+        "nile_crocodile",
+        "american_alligator"
+      ]
+    },
+    "king_cobra_venom": {
+      "label": "The longest venomous snake alive",
+      "note": "A single bite can deliver several hundred milligrams of venom, and an untreated bite can kill in as little as 30 minutes. Confirmed human bites are rare — only a handful of clinical cases appear in the medical literature — but a polyvalent antivenom exists in India for when one occurs.",
+      "severity": "acute",
+      "ids": [
+        "king_cobra"
+      ]
+    },
+    "komodo_dragon_bite": {
+      "label": "A genuinely venomous bite, not just a dirty mouth",
+      "note": "For decades the danger of a Komodo dragon bite was blamed on bacteria in its mouth; 2009 research instead found dedicated venom glands secreting toxic proteins. Komodo National Park recorded 24 attacks on people between 1974 and 2012, 5 of them fatal — rare, but the largest living lizard is a genuine apex predator on its home islands.",
+      "severity": "acute",
+      "ids": [
+        "komodo_dragon"
+      ]
+    },
+    "gila_monster_venom": {
+      "label": "Real venom, very rarely dangerous",
+      "note": "The only lizard native to the United States that is venomous, delivering it by chewing rather than injecting. It is not generally dangerous to a healthy adult — only one confirmed fatality has been recorded since 1930. A compound unique to its saliva, exendin-4, became the basis of a real class of diabetes medication.",
+      "severity": "conditional",
+      "ids": [
+        "gila_monster"
+      ]
+    },
+    "poison_dart_frog_toxin": {
+      "label": "The most toxic vertebrate known by weight",
+      "note": "A single wild golden poison frog carries an estimated one milligram of batrachotoxin on its skin — enough, by weight, to kill 10 to 20 adult humans. The toxin is diet-derived: frogs raised away from their natural wild diet lose it entirely. The Emberá people of Colombia have used it to tip blowdarts for generations.",
+      "severity": "acute",
+      "ids": [
+        "golden_poison_frog"
+      ]
+    },
+    "cane_toad_toxin": {
+      "label": "Poison in the skin, real risk to pets",
+      "note": "When threatened, a cane toad's shoulder glands secrete a milky bufotoxin. Dogs that bite or mouth one are especially at risk — drooling, red gums and seizures call for a vet immediately — and human deaths from consuming the toad have been recorded, though they are rare.",
+      "severity": "conditional",
+      "ids": [
+        "cane_toad"
+      ]
+    },
+    "salamander_toxin": {
+      "label": "A real neurotoxin, right on the skin",
+      "note": "The fire salamander's black-and-yellow pattern warns of samandarin, a neurotoxin secreted from glands on its skin that is toxic to the mammals, birds and fish that try to eat it. No antidote exists, though ordinary handling with unbroken skin poses little risk to a person.",
+      "severity": "contact",
+      "ids": [
+        "fire_salamander"
+      ]
+    },
+    "polar_bear_attack": {
+      "label": "A predator, not a defensive animal",
+      "note": "A peer-reviewed survey found 73 confirmed polar bear attacks across all five range countries from 1870 to 2014, killing 20 people and injuring 63. Nutritionally stressed adult males were the most common attackers, and in most cases the bear was acting as a predator rather than defending itself or cubs — a different mechanism from a brown bear's usual defensive attack.",
+      "severity": "acute",
+      "ids": [
+        "polar_bear"
+      ]
+    },
+    "big_cat_attack": {
+      "label": "Rare, but the history is real",
+      "note": "Unprovoked attacks on people are uncommon for either species, but both have documented cases: the 'Leopard of Rudraprayag' killed more than 125 people in India before being shot in 1926, and confirmed cougar attacks in North America rose from 53 between 1890 and 1990 to 88 by 2004, with about 20 deaths recorded over that span.",
+      "severity": "acute",
+      "ids": [
+        "leopard",
+        "cougar"
+      ]
+    },
+    "coyote_attack": {
+      "label": "Rare, and rarely serious — but real",
+      "note": "Coyotes are shy around people, and confirmed attacks are uncommon: 367 documented in the US and Canada between 1977 and 2015, most of them minor. Two are confirmed fatal — a 3-year-old in 1981 and an adult in 2009 — the only known deaths from an unprovoked coyote attack on record.",
+      "severity": "conditional",
+      "ids": [
+        "coyote"
+      ]
+    },
+    "chimpanzee_attack": {
+      "label": "Strength enough to cause severe injury",
+      "note": "A chimpanzee's strength and sharp teeth mean an attack, even on an adult human, can cause severe and disfiguring injury — one well-documented case cost the victim her hands, eyes, nose and part of her jaw. Wild chimps rarely target people; nearly every serious case on record involves a captive or formerly captive animal.",
+      "severity": "acute",
+      "ids": [
+        "chimpanzee"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

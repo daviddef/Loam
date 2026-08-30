@@ -3050,7 +3050,6 @@
       "wild"
     ],
     "fact": "Those stripes are there to stop flies landing, not to help it hide or keep cool.",
-    "terminal": true,
     "taxon": "tx_perissodactyla"
   },
   {
@@ -3063,7 +3062,6 @@
       "wild"
     ],
     "fact": "A heart that runs at roughly twice human blood pressure, just to get blood up to the brain.",
-    "terminal": true,
     "taxon": "tx_artiodactyla"
   },
   {
@@ -17024,5 +17022,382 @@
     ],
     "soleRoute": true,
     "fact": "A rare-earth fluorocarbonate — almost all of Mountain Pass, California's rare earths ride in this one mineral."
+  },
+  {
+    "id": "leopard",
+    "name": "Leopard",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Leopards drag kills heavier than themselves into trees — once a giraffe calf hauled 5.7 m up.",
+    "terminal": true,
+    "taxon": "tx_panthera"
+  },
+  {
+    "id": "snow_leopard",
+    "name": "Snow Leopard",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its tail is thick with stored fat and fur, worn like a blanket over its face while it sleeps.",
+    "terminal": true,
+    "taxon": "tx_panthera"
+  },
+  {
+    "id": "cheetah",
+    "name": "Cheetah",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Goes 0 to 97 km/h in under 3 seconds — faster off the line than most sports cars.",
+    "terminal": true,
+    "taxon": "tx_acinonyx"
+  },
+  {
+    "id": "cougar",
+    "name": "Cougar",
+    "emoji": "🐆",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Ranges from the Yukon to the southern Andes — the widest span of any wild land mammal.",
+    "terminal": true,
+    "taxon": "tx_puma"
+  },
+  {
+    "id": "red_fox",
+    "name": "Red Fox",
+    "emoji": "🦊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Earthworms can supply over 60% of its calories some months — hunted mostly by ear.",
+    "terminal": true,
+    "taxon": "tx_vulpes"
+  },
+  {
+    "id": "coyote",
+    "name": "Coyote",
+    "emoji": "🐺",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Hunts in loose bands to bring down prey too big for one alone, a habit noted since 1805.",
+    "terminal": true,
+    "taxon": "tx_canis_latrans"
+  },
+  {
+    "id": "african_wild_dog",
+    "name": "African Wild Dog",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Some Serengeti packs specialise in hunting adult zebra six times their own weight.",
+    "terminal": true,
+    "taxon": "tx_lycaon"
+  },
+  {
+    "id": "polar_bear",
+    "name": "Polar Bear",
+    "emoji": "🐻‍❄️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Waits motionless for hours by a seal's breathing hole in the ice, then strikes the instant it surfaces.",
+    "terminal": true,
+    "taxon": "tx_ursus"
+  },
+  {
+    "id": "giant_panda",
+    "name": "Giant Panda",
+    "emoji": "🐼",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Evolved an extra 'thumb' from a wrist bone just to grip bamboo, despite being classed a carnivore.",
+    "terminal": true,
+    "taxon": "tx_ailuropoda"
+  },
+  {
+    "id": "sun_bear",
+    "name": "Sun Bear",
+    "emoji": "🐻",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The smallest bear has the longest tongue of any bear, for licking honey from tight spaces.",
+    "terminal": true,
+    "taxon": "tx_helarctos"
+  },
+  {
+    "id": "gorilla",
+    "name": "Gorilla",
+    "emoji": "🦍",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Western lowland gorillas eat far more fruit than mountain gorillas, who barely touch it.",
+    "terminal": true,
+    "taxon": "tx_gorilla"
+  },
+  {
+    "id": "chimpanzee",
+    "name": "Chimpanzee",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Chimps strip leaves off twigs to fish termites from mounds, the first wild tool use ever recorded.",
+    "terminal": true,
+    "taxon": "tx_pan"
+  },
+  {
+    "id": "orangutan",
+    "name": "Orangutan",
+    "emoji": "🦧",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The most arboreal great ape — it crosses the canopy climbing and swinging, rarely touching ground.",
+    "terminal": true,
+    "taxon": "tx_pongo"
+  },
+  {
+    "id": "baboon",
+    "name": "Olive Baboon",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Troops hunt cooperatively on the open savanna, taking prey as large as young gazelles.",
+    "terminal": true,
+    "taxon": "tx_papio"
+  },
+  {
+    "id": "lemur",
+    "name": "Ring-tailed Lemur",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Sunbathes every cold morning, sitting upright and facing the sun like a devotee.",
+    "terminal": true,
+    "taxon": "tx_lemur"
+  },
+  {
+    "id": "bald_eagle",
+    "name": "Bald Eagle",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Builds the largest tree nest of any North American bird — one weighed over a metric ton.",
+    "terminal": true,
+    "taxon": "tx_haliaeetus"
+  },
+  {
+    "id": "peregrine_falcon",
+    "name": "Peregrine Falcon",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The fastest animal on Earth — it can exceed 320 km/h in its hunting dive.",
+    "terminal": true,
+    "taxon": "tx_falco"
+  },
+  {
+    "id": "snowy_owl",
+    "name": "Snowy Owl",
+    "emoji": "🦉",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Unlike most owls, it hunts mainly by daylight across the open Arctic tundra.",
+    "terminal": true,
+    "taxon": "tx_bubo"
+  },
+  {
+    "id": "turkey_vulture",
+    "name": "Turkey Vulture",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Locates carrion by smell, an ability most birds lack, sniffing out decay from the air.",
+    "terminal": true,
+    "taxon": "tx_cathartes"
+  },
+  {
+    "id": "king_cobra",
+    "name": "King Cobra",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its genus name means 'snake-eater' — king cobras prey chiefly on other snakes.",
+    "terminal": true,
+    "taxon": "tx_ophiophagus"
+  },
+  {
+    "id": "komodo_dragon",
+    "name": "Komodo Dragon",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The world's largest lizard, up to 3 m and 150 kg, with a genuinely venomous bite.",
+    "terminal": true,
+    "taxon": "tx_varanus"
+  },
+  {
+    "id": "gila_monster",
+    "name": "Gila Monster",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The only venomous lizard native to the US — it chews its venom in through grooved teeth.",
+    "terminal": true,
+    "taxon": "tx_heloderma"
+  },
+  {
+    "id": "nile_crocodile",
+    "name": "Nile Crocodile",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its bite force measures about 22 kN — among the strongest of any living animal.",
+    "terminal": true,
+    "taxon": "tx_crocodylus"
+  },
+  {
+    "id": "american_alligator",
+    "name": "American Alligator",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The female guards her mud nest for 65 days, then carries hatchlings to water in her mouth.",
+    "terminal": true,
+    "taxon": "tx_alligator"
+  },
+  {
+    "id": "golden_poison_frog",
+    "name": "Golden Poison Frog",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The most toxic vertebrate known by weight — one wild frog carries enough poison for 10-20 people.",
+    "terminal": true,
+    "taxon": "tx_phyllobates"
+  },
+  {
+    "id": "american_bullfrog",
+    "name": "American Bullfrog",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A voracious ambush predator whose stomach contents have included snakes, birds and bats.",
+    "terminal": true,
+    "taxon": "tx_lithobates"
+  },
+  {
+    "id": "cane_toad",
+    "name": "Cane Toad",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Introduced to Australia in 1935 to fight cane beetles that lived too high on the stalks to reach.",
+    "terminal": true,
+    "taxon": "tx_rhinella"
+  },
+  {
+    "id": "axolotl",
+    "name": "Axolotl",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Unlike other salamanders, it never leaves the water or metamorphoses — it keeps its gills for life.",
+    "terminal": true,
+    "taxon": "tx_ambystoma"
+  },
+  {
+    "id": "fire_salamander",
+    "name": "Fire Salamander",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its black-and-yellow pattern is a warning label for the neurotoxin it secretes from its skin.",
+    "terminal": true,
+    "taxon": "tx_salamandra"
   }
 ]

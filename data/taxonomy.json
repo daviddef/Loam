@@ -1759,6 +1759,483 @@
       "fact": "About 600 described species, identifiable by a ring and a cup-like volva on the stem, free gills and a white spore print — and responsible for around 95% of fatal mushroom poisonings worldwide.",
       "srcTitle": "Amanita",
       "src": "https://en.wikipedia.org/wiki/Amanita"
+    },
+    {
+      "id": "tx_felinae",
+      "rank": "subfamily",
+      "parent": "tx_felidae",
+      "name": "Felinae",
+      "fact": "Every Felidae species except Panthera and the two clouded leopards — 32 species from the domestic cat to the cheetah and cougar, none of them able to roar.",
+      "srcTitle": "Felinae",
+      "src": "https://en.wikipedia.org/wiki/Felinae"
+    },
+    {
+      "id": "tx_acinonyx",
+      "rank": "genus",
+      "parent": "tx_felinae",
+      "name": "Acinonyx",
+      "fact": "A single living species, the cheetah — claws that stay only semi-retracted, unlike almost every other cat, for extra grip during its high-speed chase.",
+      "srcTitle": "Cheetah",
+      "src": "https://en.wikipedia.org/wiki/Cheetah"
+    },
+    {
+      "id": "tx_puma",
+      "rank": "genus",
+      "parent": "tx_felinae",
+      "name": "Puma",
+      "fact": "Two living species, the cougar and the small, tropical jaguarundi — the cougar alone has the widest range of any wild land mammal in the Americas.",
+      "srcTitle": "Puma (genus)",
+      "src": "https://en.wikipedia.org/wiki/Puma_(genus)"
+    },
+    {
+      "id": "tx_vulpes",
+      "rank": "genus",
+      "parent": "tx_canidae",
+      "name": "Vulpes",
+      "fact": "Twelve living species of true fox — the red fox among them by far the most abundant and widely distributed of the group.",
+      "srcTitle": "Vulpes",
+      "src": "https://en.wikipedia.org/wiki/Vulpes"
+    },
+    {
+      "id": "tx_lycaon",
+      "rank": "genus",
+      "parent": "tx_canidae",
+      "name": "Lycaon",
+      "fact": "A single living species, the African wild dog — big rounded ears, and only four toes per foot, one fewer than every other canid.",
+      "srcTitle": "African wild dog",
+      "src": "https://en.wikipedia.org/wiki/African_wild_dog"
+    },
+    {
+      "id": "tx_canis_latrans",
+      "rank": "species",
+      "parent": "tx_canis",
+      "name": "Canis latrans",
+      "fact": "The coyote — able to interbreed with wolves and domestic dogs alike, since every species in genus Canis shares the same 78 chromosomes.",
+      "srcTitle": "Coyote",
+      "src": "https://en.wikipedia.org/wiki/Coyote"
+    },
+    {
+      "id": "tx_ursidae",
+      "rank": "family",
+      "parent": "tx_carnivora",
+      "name": "Ursidae",
+      "fact": "Eight living bear species share plantigrade feet and non-retractable claws, and nearly all are broadly omnivorous despite sitting inside the meat-eating order Carnivora.",
+      "srcTitle": "Bear",
+      "src": "https://en.wikipedia.org/wiki/Bear"
+    },
+    {
+      "id": "tx_ursus",
+      "rank": "genus",
+      "parent": "tx_ursidae",
+      "name": "Ursus",
+      "fact": "Six of the eight living bear species, including the brown and polar bears — the polar bear is the most carnivorous of the family, and the largest living land carnivore.",
+      "srcTitle": "Ursus (genus)",
+      "src": "https://en.wikipedia.org/wiki/Ursus_(mammal)"
+    },
+    {
+      "id": "tx_ailuropoda",
+      "rank": "genus",
+      "parent": "tx_ursidae",
+      "name": "Ailuropoda",
+      "fact": "A single living species, the giant panda — the only bear whose diet is almost entirely bamboo.",
+      "srcTitle": "Giant panda",
+      "src": "https://en.wikipedia.org/wiki/Giant_panda"
+    },
+    {
+      "id": "tx_helarctos",
+      "rank": "genus",
+      "parent": "tx_ursidae",
+      "name": "Helarctos",
+      "fact": "A single living species, the sun bear — the smallest of all eight bears, built for climbing trees and prying open rotten logs.",
+      "srcTitle": "Sun bear",
+      "src": "https://en.wikipedia.org/wiki/Sun_bear"
+    },
+    {
+      "id": "tx_hominidae",
+      "rank": "family",
+      "parent": "tx_primates",
+      "name": "Hominidae",
+      "fact": "The great apes — gorillas, chimpanzees, orangutans and humans, sharing a common ancestor, and every genus but the orangutan getting around on the ground by knuckle-walking.",
+      "srcTitle": "Hominidae",
+      "src": "https://en.wikipedia.org/wiki/Hominidae"
+    },
+    {
+      "id": "tx_gorilla",
+      "rank": "genus",
+      "parent": "tx_hominidae",
+      "name": "Gorilla",
+      "fact": "Two living gorilla species, split from each other roughly two million years ago by the Congo river basin lying between them.",
+      "srcTitle": "Gorilla",
+      "src": "https://en.wikipedia.org/wiki/Gorilla"
+    },
+    {
+      "id": "tx_pan",
+      "rank": "genus",
+      "parent": "tx_hominidae",
+      "name": "Pan",
+      "fact": "Humans' closest living relatives — the chimpanzee and the bonobo — sharing roughly 98% of their DNA with us.",
+      "srcTitle": "Pan (genus)",
+      "src": "https://en.wikipedia.org/wiki/Pan_(genus)"
+    },
+    {
+      "id": "tx_pongo",
+      "rank": "genus",
+      "parent": "tx_hominidae",
+      "name": "Pongo",
+      "fact": "Three orangutan species, all critically endangered and all confined to the rainforests of Borneo and Sumatra.",
+      "srcTitle": "Orangutan",
+      "src": "https://en.wikipedia.org/wiki/Orangutan"
+    },
+    {
+      "id": "tx_cercopithecidae",
+      "rank": "family",
+      "parent": "tx_primates",
+      "name": "Cercopithecidae",
+      "fact": "The Old World monkeys — over 130 species, set apart from apes by a tail and from New World monkeys by narrow, downward-pointing nostrils.",
+      "srcTitle": "Old World monkey",
+      "src": "https://en.wikipedia.org/wiki/Old_World_monkey"
+    },
+    {
+      "id": "tx_papio",
+      "rank": "genus",
+      "parent": "tx_cercopithecidae",
+      "name": "Papio",
+      "fact": "Six baboon species, among the largest monkeys alive and, unusually for a primate, mostly ground-dwelling rather than arboreal.",
+      "srcTitle": "Baboon",
+      "src": "https://en.wikipedia.org/wiki/Baboon"
+    },
+    {
+      "id": "tx_lemuridae",
+      "rank": "family",
+      "parent": "tx_primates",
+      "name": "Lemuridae",
+      "fact": "A family found nowhere on Earth outside Madagascar and the small islands around it.",
+      "srcTitle": "Lemuridae",
+      "src": "https://en.wikipedia.org/wiki/Lemuridae"
+    },
+    {
+      "id": "tx_lemur",
+      "rank": "genus",
+      "parent": "tx_lemuridae",
+      "name": "Lemur",
+      "fact": "A single living species, the ring-tailed lemur — the most terrestrial of all lemurs, spending far more of its day on the ground than its tree-bound relatives.",
+      "srcTitle": "Ring-tailed lemur",
+      "src": "https://en.wikipedia.org/wiki/Ring-tailed_lemur"
+    },
+    {
+      "id": "tx_accipitriformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Accipitriformes",
+      "fact": "Diurnal birds of prey with strongly hooked bills and powerful grasping talons — eagles, hawks and kites among them.",
+      "srcTitle": "Accipitriformes",
+      "src": "https://en.wikipedia.org/wiki/Accipitriformes"
+    },
+    {
+      "id": "tx_accipitridae",
+      "rank": "family",
+      "parent": "tx_accipitriformes",
+      "name": "Accipitridae",
+      "fact": "The largest family of daytime raptors, hunting mainly by keen eyesight rather than the scent- or hearing-led methods some other predators rely on.",
+      "srcTitle": "Accipitridae",
+      "src": "https://en.wikipedia.org/wiki/Accipitridae"
+    },
+    {
+      "id": "tx_haliaeetus",
+      "rank": "genus",
+      "parent": "tx_accipitridae",
+      "name": "Haliaeetus",
+      "fact": "The sea eagles — eight species built around fishing, with bare, unfeathered legs and a strong preference for hunting near open water.",
+      "srcTitle": "Haliaeetus",
+      "src": "https://en.wikipedia.org/wiki/Haliaeetus"
+    },
+    {
+      "id": "tx_falconiformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Falconiformes",
+      "fact": "Falcons and their relatives — a lineage genetics places closer to parrots and songbirds than to the hawks and eagles they superficially resemble.",
+      "srcTitle": "Falconiformes",
+      "src": "https://en.wikipedia.org/wiki/Falconiformes"
+    },
+    {
+      "id": "tx_falconidae",
+      "rank": "family",
+      "parent": "tx_falconiformes",
+      "name": "Falconidae",
+      "fact": "Falcons kill with a notched, tooth-like edge on the beak that severs a prey animal's spinal cord, rather than crushing it with the feet the way a hawk or eagle does.",
+      "srcTitle": "Falcon",
+      "src": "https://en.wikipedia.org/wiki/Falcon"
+    },
+    {
+      "id": "tx_falco",
+      "rank": "genus",
+      "parent": "tx_falconidae",
+      "name": "Falco",
+      "fact": "About 40 species of true falcon, from the sparrow-sized kestrels to the peregrine — the fastest animal on Earth in its hunting dive.",
+      "srcTitle": "Falco (genus)",
+      "src": "https://en.wikipedia.org/wiki/Falcon"
+    },
+    {
+      "id": "tx_strigiformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Strigiformes",
+      "fact": "Owls — roughly 250 species of mostly nocturnal raptor, with forward-facing eyes fixed in their sockets and a head that swivels to compensate.",
+      "srcTitle": "Owl",
+      "src": "https://en.wikipedia.org/wiki/Owl"
+    },
+    {
+      "id": "tx_strigidae",
+      "rank": "family",
+      "parent": "tx_strigiformes",
+      "name": "Strigidae",
+      "fact": "The 'true owls,' set apart from barn owls by a round rather than heart-shaped facial disc.",
+      "srcTitle": "Strigidae",
+      "src": "https://en.wikipedia.org/wiki/Strigidae"
+    },
+    {
+      "id": "tx_bubo",
+      "rank": "genus",
+      "parent": "tx_strigidae",
+      "name": "Bubo",
+      "fact": "The largest living owls sit in this genus, the snowy owl and the eagle-owls among them.",
+      "srcTitle": "Bubo (genus)",
+      "src": "https://en.wikipedia.org/wiki/Horned_owl"
+    },
+    {
+      "id": "tx_cathartiformes",
+      "rank": "order",
+      "parent": "tx_aves",
+      "name": "Cathartiformes",
+      "fact": "New World vultures — sometimes classed as their own order, sometimes folded into Accipitriformes, but genuinely unrelated to Old World vultures despite the resemblance.",
+      "srcTitle": "Cathartiformes",
+      "src": "https://en.wikipedia.org/wiki/Cathartiformes"
+    },
+    {
+      "id": "tx_cathartidae",
+      "rank": "family",
+      "parent": "tx_cathartiformes",
+      "name": "Cathartidae",
+      "fact": "Seven living species, unified less by shared ancestry with other raptors than by having independently evolved the same scavenging lifestyle as Old World vultures.",
+      "srcTitle": "New World vulture",
+      "src": "https://en.wikipedia.org/wiki/New_World_vulture"
+    },
+    {
+      "id": "tx_cathartes",
+      "rank": "genus",
+      "parent": "tx_cathartidae",
+      "name": "Cathartes",
+      "fact": "Three vulture species, the turkey vulture among them — one of the very few birds with a genuinely useful sense of smell.",
+      "srcTitle": "Cathartes",
+      "src": "https://en.wikipedia.org/wiki/Cathartes"
+    },
+    {
+      "id": "tx_anura",
+      "rank": "order",
+      "parent": "tx_amphibia",
+      "name": "Anura",
+      "fact": "Frogs and toads — over 7,000 species, unified by a tailless adult body built around powerful hind legs for jumping.",
+      "srcTitle": "Frog",
+      "src": "https://en.wikipedia.org/wiki/Frog"
+    },
+    {
+      "id": "tx_dendrobatidae",
+      "rank": "family",
+      "parent": "tx_anura",
+      "name": "Dendrobatidae",
+      "fact": "The poison dart frogs — small, brightly coloured, and many genuinely toxic in the wild, though captive-bred individuals typically lose the toxin entirely.",
+      "srcTitle": "Poison dart frog",
+      "src": "https://en.wikipedia.org/wiki/Poison_dart_frog"
+    },
+    {
+      "id": "tx_phyllobates",
+      "rank": "genus",
+      "parent": "tx_dendrobatidae",
+      "name": "Phyllobates",
+      "fact": "Just five species, but the most toxic of all the dart frogs — Phyllobates terribilis alone carries enough poison to kill several grown adults.",
+      "srcTitle": "Phyllobates",
+      "src": "https://en.wikipedia.org/wiki/Phyllobates"
+    },
+    {
+      "id": "tx_ranidae",
+      "rank": "family",
+      "parent": "tx_anura",
+      "name": "Ranidae",
+      "fact": "The 'true frogs' — a huge, nearly worldwide family of smooth-skinned, long-legged frogs, most of them strong jumpers and swimmers.",
+      "srcTitle": "True frog",
+      "src": "https://en.wikipedia.org/wiki/Ranidae"
+    },
+    {
+      "id": "tx_lithobates",
+      "rank": "genus",
+      "parent": "tx_ranidae",
+      "name": "Lithobates",
+      "fact": "North American true frogs, the American bullfrog among them — some taxonomists still fold this genus back into the older, broader Rana.",
+      "srcTitle": "Lithobates",
+      "src": "https://en.wikipedia.org/wiki/Lithobates"
+    },
+    {
+      "id": "tx_bufonidae",
+      "rank": "family",
+      "parent": "tx_anura",
+      "name": "Bufonidae",
+      "fact": "The 'true toads' — squat, warty-skinned frogs, nearly all of them carrying toxin-secreting parotoid glands behind the eyes.",
+      "srcTitle": "True toad",
+      "src": "https://en.wikipedia.org/wiki/True_toad"
+    },
+    {
+      "id": "tx_rhinella",
+      "rank": "genus",
+      "parent": "tx_bufonidae",
+      "name": "Rhinella",
+      "fact": "South and Central American toads, the cane toad among them — introduced far outside this genus's native range as a would-be pest-control agent, with disastrous results.",
+      "srcTitle": "Rhinella",
+      "src": "https://en.wikipedia.org/wiki/Rhinella"
+    },
+    {
+      "id": "tx_caudata",
+      "rank": "order",
+      "parent": "tx_amphibia",
+      "name": "Caudata",
+      "fact": "Salamanders and newts — the only living amphibians that keep a tail into adulthood, and the group with the greatest capacity of any vertebrate for regenerating lost limbs.",
+      "srcTitle": "Salamander",
+      "src": "https://en.wikipedia.org/wiki/Salamander"
+    },
+    {
+      "id": "tx_ambystomatidae",
+      "rank": "family",
+      "parent": "tx_caudata",
+      "name": "Ambystomatidae",
+      "fact": "The mole salamanders, named for spending most of their lives burrowed underground — except for a handful of species, the axolotl among them, that never leave the water at all.",
+      "srcTitle": "Mole salamander",
+      "src": "https://en.wikipedia.org/wiki/Mole_salamander"
+    },
+    {
+      "id": "tx_ambystoma",
+      "rank": "genus",
+      "parent": "tx_ambystomatidae",
+      "name": "Ambystoma",
+      "fact": "About 32 species of mole salamander, native only to North America.",
+      "srcTitle": "Ambystoma",
+      "src": "https://en.wikipedia.org/wiki/Mole_salamander"
+    },
+    {
+      "id": "tx_salamandridae",
+      "rank": "family",
+      "parent": "tx_caudata",
+      "name": "Salamandridae",
+      "fact": "The 'true salamanders' and newts — a family whose members are, almost without exception, defended by toxic skin secretions.",
+      "srcTitle": "Salamandridae",
+      "src": "https://en.wikipedia.org/wiki/Salamandridae"
+    },
+    {
+      "id": "tx_salamandra",
+      "rank": "genus",
+      "parent": "tx_salamandridae",
+      "name": "Salamandra",
+      "fact": "The genus that gives salamanders their name — Salamandra salamandra, the fire salamander, is its best-known member.",
+      "srcTitle": "Salamandra",
+      "src": "https://en.wikipedia.org/wiki/Salamandra"
+    },
+    {
+      "id": "tx_elapidae",
+      "rank": "family",
+      "parent": "tx_squamata",
+      "name": "Elapidae",
+      "fact": "Front-fanged venomous snakes with short, permanently erect fangs — cobras, mambas, coral snakes and sea snakes all belong here.",
+      "srcTitle": "Elapidae",
+      "src": "https://en.wikipedia.org/wiki/Elapidae"
+    },
+    {
+      "id": "tx_ophiophagus",
+      "rank": "genus",
+      "parent": "tx_elapidae",
+      "name": "Ophiophagus",
+      "fact": "The king cobra — the longest venomous snake alive, and closer kin to the mambas than to the true cobras, despite the common name.",
+      "srcTitle": "King cobra",
+      "src": "https://en.wikipedia.org/wiki/King_cobra"
+    },
+    {
+      "id": "tx_varanidae",
+      "rank": "family",
+      "parent": "tx_squamata",
+      "name": "Varanidae",
+      "fact": "The monitor lizards — every living species falls into a single genus, Varanus, found across Africa, Asia and Australia.",
+      "srcTitle": "Varanidae",
+      "src": "https://en.wikipedia.org/wiki/Varanidae"
+    },
+    {
+      "id": "tx_varanus",
+      "rank": "genus",
+      "parent": "tx_varanidae",
+      "name": "Varanus",
+      "fact": "About 80 monitor lizard species, spanning from lizards smaller than a house cat to the three-metre Komodo dragon.",
+      "srcTitle": "Varanus",
+      "src": "https://en.wikipedia.org/wiki/Monitor_lizard"
+    },
+    {
+      "id": "tx_helodermatidae",
+      "rank": "family",
+      "parent": "tx_squamata",
+      "name": "Helodermatidae",
+      "fact": "Just two living species worldwide — the Gila monster and the Mexican beaded lizard — the only venomous lizards outside the monitor lineage.",
+      "srcTitle": "Helodermatidae",
+      "src": "https://en.wikipedia.org/wiki/Helodermatidae"
+    },
+    {
+      "id": "tx_heloderma",
+      "rank": "genus",
+      "parent": "tx_helodermatidae",
+      "name": "Heloderma",
+      "fact": "Delivers venom by chewing it into a wound through grooved teeth, rather than injecting it through hollow fangs the way a snake does.",
+      "srcTitle": "Heloderma",
+      "src": "https://en.wikipedia.org/wiki/Heloderma"
+    },
+    {
+      "id": "tx_crocodylia",
+      "rank": "order",
+      "parent": "tx_reptilia",
+      "name": "Crocodylia",
+      "fact": "Crocodiles, alligators, caimans and gharials — the closest living relatives birds have among the reptiles, the last two survivors of the Archosauria.",
+      "srcTitle": "Crocodilia",
+      "src": "https://en.wikipedia.org/wiki/Crocodylia"
+    },
+    {
+      "id": "tx_crocodylidae",
+      "rank": "family",
+      "parent": "tx_crocodylia",
+      "name": "Crocodylidae",
+      "fact": "True crocodiles — their lower fourth tooth fits into a groove on the outside of the upper jaw and stays visible even with the mouth closed.",
+      "srcTitle": "Crocodile",
+      "src": "https://en.wikipedia.org/wiki/Crocodile"
+    },
+    {
+      "id": "tx_crocodylus",
+      "rank": "genus",
+      "parent": "tx_crocodylidae",
+      "name": "Crocodylus",
+      "fact": "About 13 living crocodile species, the Nile crocodile among them — one of the most dangerous large predators to humans anywhere in the world.",
+      "srcTitle": "Crocodylus",
+      "src": "https://en.wikipedia.org/wiki/Crocodylus"
+    },
+    {
+      "id": "tx_alligatoridae",
+      "rank": "family",
+      "parent": "tx_crocodylia",
+      "name": "Alligatoridae",
+      "fact": "Alligators and caimans — a broader, more U-shaped snout than a crocodile's, and lower teeth that fit into sockets on the inside of the upper jaw, hidden when the mouth is shut.",
+      "srcTitle": "Alligatoridae",
+      "src": "https://en.wikipedia.org/wiki/Alligatoridae"
+    },
+    {
+      "id": "tx_alligator",
+      "rank": "genus",
+      "parent": "tx_alligatoridae",
+      "name": "Alligator",
+      "fact": "Just two living species — the American alligator and the far rarer Chinese alligator, the only other member of the genus.",
+      "srcTitle": "Alligator",
+      "src": "https://en.wikipedia.org/wiki/Alligator"
     }
   ]
 }
