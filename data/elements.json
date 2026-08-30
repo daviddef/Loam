@@ -4729,7 +4729,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Plain weave in heavy yarn. The word comes from cannabis \u2014 it used to be hemp."
   },
   {
@@ -9511,7 +9511,7 @@
       "metal"
     ],
     "fact": "Aluminium in the lattice makes titanium fly. This one alloy is most of the titanium ever flown.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "iron_chloride",
@@ -19653,5 +19653,309 @@
     ],
     "terminal": true,
     "fact": "A person's unique pattern of DNA markers, precise enough to match evidence to one person."
+  },
+  {
+    "id": "wing_spar",
+    "name": "Wing spar",
+    "emoji": "\ud83d\udccf",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "The beam running the length of the wing that carries almost all of its bending load."
+  },
+  {
+    "id": "wing",
+    "name": "Wing",
+    "emoji": "\ud83e\udebd",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A cambered airfoil at the right angle of attack turns air downward and gets pushed up in return."
+  },
+  {
+    "id": "fuselage",
+    "name": "Fuselage",
+    "emoji": "\ud83d\udeeb",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "The main body. In a stressed-skin design the outer shell itself carries structural load."
+  },
+  {
+    "id": "tail_stabilizer",
+    "name": "Tailplane",
+    "emoji": "\ud83d\udcd0",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A small fixed aerofoil at the tail that balances the main wing's lift and holds the nose steady."
+  },
+  {
+    "id": "aileron",
+    "name": "Aileron",
+    "emoji": "\ud83d\udee9\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A hinged flap at the wingtip's trailing edge. One goes up as the other goes down, and the aircraft rolls.",
+    "terminal": true
+  },
+  {
+    "id": "rudder",
+    "name": "Rudder",
+    "emoji": "\u2694\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A hinged panel on the fin at the tail, swinging the nose left or right \u2014 a ship's steering, borrowed.",
+    "terminal": true
+  },
+  {
+    "id": "tail_elevator",
+    "name": "Tail elevator",
+    "emoji": "\u2195\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A hinged panel on the tailplane's trailing edge. Deflect it and the nose pitches up or down.",
+    "terminal": true
+  },
+  {
+    "id": "landing_gear",
+    "name": "Landing gear",
+    "emoji": "\ud83d\udede",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A wheel on an oleo strut, a telescoping tube of gas and oil that soaks up the shock of touchdown."
+  },
+  {
+    "id": "propeller",
+    "name": "Propeller",
+    "emoji": "\ud83c\udf00",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A spinning airfoil, twisted so every point along the blade meets the air at a useful angle."
+  },
+  {
+    "id": "petroleum",
+    "name": "Petroleum",
+    "emoji": "\ud83e\udea8",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "fact": "Buried marine algae and plankton, cooked by millions of years of heat and pressure into crude oil."
+  },
+  {
+    "id": "jet_fuel",
+    "name": "Jet fuel",
+    "emoji": "\ud83e\udea3",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Kerosene: the fraction of crude oil that boils off between petrol and diesel."
+  },
+  {
+    "id": "compressor",
+    "name": "Compressor",
+    "emoji": "\ud83c\udf00",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Alternating spinning and fixed blades squeeze incoming air into a fraction of its intake volume."
+  },
+  {
+    "id": "combustor",
+    "name": "Combustor",
+    "emoji": "\ud83d\udd25",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "Fuel burns continuously in a steady stream of compressed air, not stroke by stroke like a piston engine."
+  },
+  {
+    "id": "turbine",
+    "name": "Turbine",
+    "emoji": "\ud83c\udf00",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Blades in the hottest gas in the engine, spun by the exhaust and geared straight to the compressor."
+  },
+  {
+    "id": "jet_engine",
+    "name": "Jet engine",
+    "emoji": "\u2708\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A turbine drives a compressor on the same shaft, with fuel burning continuously in between."
+  },
+  {
+    "id": "turbofan",
+    "name": "Turbofan",
+    "emoji": "\ud83c\udf00",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A ducted fan bolted to the front of a jet engine; most of its thrust comes from air the core never touches."
+  },
+  {
+    "id": "glider",
+    "name": "Glider",
+    "emoji": "\ud83e\ude82",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An aircraft with no engine at all, trading height for speed and finding air that rises faster than it sinks.",
+    "terminal": true
+  },
+  {
+    "id": "hot_air_balloon",
+    "name": "Hot air balloon",
+    "emoji": "\ud83c\udf88",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "Air heated by an open flame is less dense than the air around it, so the whole envelope floats."
+  },
+  {
+    "id": "airship",
+    "name": "Airship",
+    "emoji": "\ud83d\udef8",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Unlike a balloon, it steers: engines and control surfaces added to a gas-filled envelope.",
+    "terminal": true
+  },
+  {
+    "id": "rotor",
+    "name": "Rotor",
+    "emoji": "\ud83c\udf00",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Long, narrow airfoils exactly like a wing's, spun around a hub so they make their own airspeed."
+  },
+  {
+    "id": "helicopter",
+    "name": "Helicopter",
+    "emoji": "\ud83d\ude81",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A spinning rotor lifts it straight up with no runway, and a tail rotor stops the fuselage spinning too.",
+    "terminal": true
+  },
+  {
+    "id": "parachute",
+    "name": "Parachute",
+    "emoji": "\ud83e\ude82",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A wide canopy multiplies the drag of a falling body until it settles to a survivable speed.",
+    "terminal": true
+  },
+  {
+    "id": "jet_airliner",
+    "name": "Jet airliner",
+    "emoji": "\u2708\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A fuselage carried by engines that burn fuel continuously instead of turning a propeller.",
+    "terminal": true
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "emoji": "\ud83d\udeec",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A paved strip long enough to reach flying speed on wheels, numbered for the compass heading it points."
+  },
+  {
+    "id": "hangar",
+    "name": "Hangar",
+    "emoji": "\ud83c\udfed",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A roof wide enough to clear a whole wingspan with no column standing in the way."
+  },
+  {
+    "id": "taxiway",
+    "name": "Taxiway",
+    "emoji": "\ud83d\udea7",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Paved like a runway but marked yellow, not white \u2014 where aircraft move on their own engines, not full speed."
+  },
+  {
+    "id": "control_tower",
+    "name": "Control tower",
+    "emoji": "\ud83d\uddfc",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A glass-walled cab high enough to see the whole airfield, sequencing aircraft entirely by radio."
+  },
+  {
+    "id": "airport",
+    "name": "Airport",
+    "emoji": "\ud83d\udeeb",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Runways, taxiways, hangars and a tower, all working as one system to move aircraft, not just park them.",
+    "terminal": true
   }
 ]

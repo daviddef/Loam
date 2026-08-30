@@ -942,6 +942,14 @@
       ],
       "severity": "acute"
     },
+    "airship_hydrogen": {
+      "label": "Hydrogen lift is real, and it really burns",
+      "note": "Hydrogen is flammable across a huge range of concentrations in air, and needs very little energy to ignite. The Hindenburg's hydrogen-filled envelope caught fire on landing at Lakehurst, New Jersey on 6 May 1937, killing 36 people — the reason every airship built since switched to inert helium instead.",
+      "ids": [
+        "airship"
+      ],
+      "severity": "acute"
+    },
     "mri_magnetic_field": {
       "label": "A magnetic field strong enough to make metal fly",
       "note": "An MRI magnet's field is always on, tens of thousands of times Earth's, and it does not turn off between patients. A loose ferromagnetic object — an oxygen tank, a chair, a tool left in a pocket — can be pulled across the room and become a lethal projectile, which is why screening happens before anyone enters.",

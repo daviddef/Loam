@@ -174,7 +174,9 @@ const SCALE = {
           'hydraulic_pump', 'artificial_heart', 'reinforced_concrete', 'laser', 'holographic_plate', 'hologram',
           'scanning_tunneling_microscope',
           // tech breakthroughs batch 1 — handheld and tabletop electronics, same bucket as telephone/radio/digital_camera
-          'atomic_clock', 'gps', 'cellular_telephone', 'smartphone', 'router', 'film_reel', 'movie_camera', 'cinematography'],
+          'atomic_clock', 'gps', 'cellular_telephone', 'smartphone', 'router', 'film_reel', 'movie_camera', 'cinematography',
+          // aviation batch 1 — a poured or drummed liquid, same item scale as oil
+          'petroleum', 'jet_fuel'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           'welwitschia', 'rafflesia', 'bracken_fern',
@@ -211,7 +213,10 @@ const SCALE = {
           // medical-technology batch 1 — machines the size of the room they sit in
           'superconducting_magnet', 'mri_scan', 'pet_scan', 'robotic_surgery',
           // tech breakthroughs batch 1 — a desktop computer tower and monitor, same appliance bucket as lcd_screen/refrigerator
-          'computer', 'television', 'film_projector'],
+          'computer', 'television', 'film_projector',
+          // aviation batch 1 — metre-scale aircraft parts and engine stages
+          'wing_spar', 'tail_stabilizer', 'aileron', 'rudder', 'tail_elevator', 'landing_gear',
+          'propeller', 'compressor', 'combustor', 'turbine', 'jet_engine', 'turbofan'],
   '1':   ['saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'de_extinction', 'giraffe', 'nile_crocodile', 'american_alligator',
           'climax_community', 'food_chain',
@@ -237,7 +242,9 @@ const SCALE = {
           // medical-technology batch 1 — a curtain wall as drawn: one building face, tens of metres
           'curtain_wall',
           // tech breakthroughs batch 1 — a satellite bus with solar panels extended, tens of metres like an airplane
-          'communications_satellite', 'gps_satellite'],
+          'communications_satellite', 'gps_satellite',
+          // aviation batch 1 — whole airframes and airfield buildings, tens of metres
+          'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest', 'evolution', 'common_ancestor', 'genetic_diversity',
@@ -251,7 +258,9 @@ const SCALE = {
           // a Capesize bulk carrier about 290m, an ore stockpile a similarly sized mound
           'dragline_excavator', 'stockpile', 'bulk_carrier',
           // medical-technology batch 1 — a skyscraper as drawn, hundreds of metres tall
-          'skyscraper'],
+          'skyscraper',
+          // aviation batch 1 — an airship envelope (the Hindenburg was 245m) and a big airfield building, hundreds of metres
+          'airship', 'hangar', 'taxiway'],
   '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
           'trophic_cascade',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
@@ -262,10 +271,14 @@ const SCALE = {
           // kilometre scale like the pit above them
           'ore_railway', 'port',
           // railways batch 1 — a classification yard's full ladder of tracks, km scale
-          'rail_yard'],
+          'rail_yard',
+          // aviation batch 1 — a major runway can run 3-4 km, km scale like the yard above it
+          'runway'],
   '4':   ['rift_valley', 'trench',
           // medical-technology batch 1 — the LHC's 27 km ring
-          'hadron_collider'],
+          'hadron_collider',
+          // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
+          'airport'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest',
           // tech breakthroughs batch 1 — a worldwide network, the same planet-spanning bucket as sky/sea/desert

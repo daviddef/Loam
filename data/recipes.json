@@ -23143,5 +23143,316 @@
     "why": "Comparing mitochondrial DNA sequences let geneticists match a skeleton dug up from a parking lot to two living relatives of Richard III of England through an unbroken maternal line — identification made from bone buried since 1485.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Exhumation_and_reburial_of_Richard_III_of_England"
+  },
+  {
+    "in": [
+      "aluminum"
+    ],
+    "verb": "cut",
+    "out": "wing_spar",
+    "why": "The spar is the beam running the length of the wing, carrying almost all its bending load. Modern spars are aluminium alloy, machined or extruded to a tapered shape rather than carved from solid spruce, the way early builders made them.",
+    "src": "https://en.wikipedia.org/wiki/Spar_(aeronautics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing_spar",
+      "canvas"
+    ],
+    "out": "wing",
+    "why": "A cambered wing turns air down; by Newton's third law the air pushes back. Bernoulli's pressure drop describes the same event, not a rival theory — unlike the false 'equal transit time' myth. Ribs on the spar hold the curve; canvas carries none of the load.",
+    "src": "https://en.wikipedia.org/wiki/Lift_(force)",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "canvas"
+    ],
+    "out": "fuselage",
+    "why": "Early fuselages were an open truss of welded steel tubing, with canvas stretched over it for aerodynamics only — the canvas carried none of the structural load, the steel frame carried all of it.",
+    "src": "https://en.wikipedia.org/wiki/Monocoque",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "forge"
+    ],
+    "out": "fuselage",
+    "why": "A monocoque fuselage drops the internal frame and lets the aluminium skin itself be the primary structure — worked and formed at the same forge that shapes any other sheet metal, it is stressed skin, not just a cover.",
+    "src": "https://en.wikipedia.org/wiki/Monocoque",
+    "verified": true
+  },
+  {
+    "in": [
+      "fuselage",
+      "aluminum"
+    ],
+    "out": "tail_stabilizer",
+    "why": "The tailplane is a small fixed aerofoil at the rear of the fuselage, built from the same aluminium sheet as the wing but far smaller, giving a steady pitching force that balances the wing's own lift and keeps the aircraft flying level.",
+    "src": "https://en.wikipedia.org/wiki/Empennage",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "steel"
+    ],
+    "out": "aileron",
+    "why": "Hinged in steel at the wing's trailing edge, the aileron increases lift on one wing while decreasing it on the other, rolling the aircraft — it replaced the Wright brothers' wing-warping, which twisted the whole wing instead, by about 1915.",
+    "src": "https://en.wikipedia.org/wiki/Aileron",
+    "verified": true
+  },
+  {
+    "in": [
+      "fuselage",
+      "steel"
+    ],
+    "out": "rudder",
+    "why": "A steel-hinged panel on the fixed fin at the tail of the fuselage, the rudder swings the nose left or right — yaw control borrowed directly from a ship's rudder, and the earliest control surface aircraft designers built.",
+    "src": "https://en.wikipedia.org/wiki/Empennage",
+    "verified": true
+  },
+  {
+    "in": [
+      "tail_stabilizer",
+      "steel"
+    ],
+    "out": "tail_elevator",
+    "why": "A steel-hinged panel on the tailplane's own trailing edge, the elevator changes the tailplane's lift and pitches the nose up or down — pitch control, the third and last of the three flight-control axes.",
+    "src": "https://en.wikipedia.org/wiki/Empennage",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "oil"
+    ],
+    "out": "landing_gear",
+    "why": "The wheel rides on an oleo strut: a telescoping tube where compressed gas acts as a spring, but it is oil forced through a narrow metering orifice as the strut compresses that actually damps the shock of touchdown.",
+    "src": "https://en.wikipedia.org/wiki/Oleo_strut",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "wheel"
+    ],
+    "out": "propeller",
+    "why": "The Wright brothers realised a propeller is really a wing, spun on a hub that turns like any wheel instead of pushed straight through air — their carved wooden blades, twisted along their length like a wing tapers, reached about 82% efficiency.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft_propeller",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "wheel"
+    ],
+    "out": "propeller",
+    "why": "Modern propeller blades are cast or forged aluminium alloy, keeping the same twisted airfoil shape, bolted to a hub that spins on the engine's shaft like any other wheel.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft_propeller",
+    "verified": true
+  },
+  {
+    "in": [
+      "alga",
+      "mud"
+    ],
+    "out": "petroleum",
+    "why": "Petroleum forms mostly from marine algae and plankton that settled into seafloor mud, were sealed off from oxygen, buried deeper by more sediment, and slowly cooked by heat and pressure into crude oil over millions of years.",
+    "src": "https://en.wikipedia.org/wiki/Petroleum",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum"
+    ],
+    "verb": "heat",
+    "at": 175,
+    "out": "jet_fuel",
+    "why": "Fractional distillation separates petroleum by boiling point. Kerosene, the cut used as jet fuel, boils off between about 175 and 325°C — lighter than diesel, heavier than the petrol cut below it.",
+    "src": "https://en.wikipedia.org/wiki/Kerosene",
+    "verified": true
+  },
+  {
+    "in": [
+      "titanium_alloy",
+      "wheel"
+    ],
+    "out": "compressor",
+    "why": "A compressor is rows of titanium alloy blades on a spinning wheel-like disc, alternating with fixed ones, each stage squeezing the air a little more — titanium works here because the air is still cool enough for it to keep its strength.",
+    "src": "https://www.eng-atoms.msm.cam.ac.uk/RoyalSocDemos/Metals-up-close/CompressorBlade",
+    "verified": true
+  },
+  {
+    "in": [
+      "compressor",
+      "jet_fuel"
+    ],
+    "out": "combustor",
+    "why": "Jet fuel sprays continuously into the compressor's stream of compressed air and burns in a steady, unbroken flame — a jet engine never stops combustion the way a piston engine's cylinders do, stroke by stroke.",
+    "src": "https://en.wikipedia.org/wiki/Combustor",
+    "verified": true
+  },
+  {
+    "in": [
+      "combustor",
+      "nickel"
+    ],
+    "out": "turbine",
+    "why": "The turbine sits right behind the combustor's flame, in gas that can reach 1,370°C — too hot for the compressor's titanium, so turbine blades are cast from nickel-based superalloy instead, and geared straight back to spin the compressor.",
+    "src": "https://en.wikipedia.org/wiki/Turbine_blade",
+    "verified": true
+  },
+  {
+    "in": [
+      "turbine",
+      "compressor"
+    ],
+    "out": "jet_engine",
+    "why": "The turbine and compressor share one shaft: hot gas spinning the turbine is what turns the compressor at the front, the two halves of a turbojet mechanically locked together rather than connected by any belt or gearbox.",
+    "src": "https://en.wikipedia.org/wiki/Turbojet",
+    "verified": true
+  },
+  {
+    "in": [
+      "jet_engine",
+      "propeller"
+    ],
+    "out": "turbofan",
+    "why": "A turbofan bolts a large ducted fan — mechanically a shrouded propeller — onto the front of a jet engine's core. Most of the incoming air bypasses the hot core entirely, and that cool bypass air alone supplies 30 to 70% of the engine's total thrust.",
+    "src": "https://en.wikipedia.org/wiki/Turbofan",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "fuselage"
+    ],
+    "out": "glider",
+    "why": "A glider is an airframe of wing and fuselage with no engine at all: it trades altitude for forward speed in a shallow, continuous descent, and a pilot stays up for hours by finding air itself rising faster than the glider sinks.",
+    "src": "https://en.wikipedia.org/wiki/Glider_(sailplane)",
+    "verified": true
+  },
+  {
+    "in": [
+      "canvas",
+      "fire"
+    ],
+    "out": "hot_air_balloon",
+    "why": "Fire heats the air inside a canvas envelope until it's less dense than the cool air outside, so the whole balloon floats the way a bubble rises in water. The Montgolfier brothers flew the first manned flight this way on 21 November 1783.",
+    "src": "https://en.wikipedia.org/wiki/Montgolfier_brothers",
+    "verified": true
+  },
+  {
+    "in": [
+      "hot_air_balloon",
+      "hydrogen_gas"
+    ],
+    "out": "airship",
+    "why": "Unlike a plain hot air balloon, which only drifts with the wind, an airship adds engines and steering, swapping hot air for a dedicated lifting gas. Early rigid airships used hydrogen, cheap and buoyant but flammable — Zeppelin's LZ1 flew on it in 1900.",
+    "src": "https://en.wikipedia.org/wiki/Airship",
+    "verified": true
+  },
+  {
+    "in": [
+      "hot_air_balloon",
+      "helium"
+    ],
+    "out": "airship",
+    "why": "After the hydrogen-filled Hindenburg burned in 1937, airships swapped their hot air balloon ancestor's flame for a sealed envelope of helium — non-flammable, if scarcer and less buoyant — while keeping the engines that make an airship steerable, not adrift.",
+    "src": "https://en.wikipedia.org/wiki/Airship",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "wheel"
+    ],
+    "out": "rotor",
+    "why": "A rotor blade is an airfoil exactly like a wing's, long and narrow — mounted instead on a hub that spins like a wheel on a shaft, so it generates its own airspeed rather than needing the whole aircraft to move forward first.",
+    "src": "https://en.wikipedia.org/wiki/Helicopter_rotor",
+    "verified": true
+  },
+  {
+    "in": [
+      "rotor",
+      "fuselage"
+    ],
+    "out": "helicopter",
+    "why": "A spinning rotor lifts the fuselage straight up with no runway, but spinning it also twists the fuselage the other way by simple reaction — why Igor Sikorsky's VS-300, developed from 1939, added a second small rotor at the tail purely to cancel that torque.",
+    "src": "https://en.wikipedia.org/wiki/Helicopter",
+    "verified": true
+  },
+  {
+    "in": [
+      "silk",
+      "rope"
+    ],
+    "out": "parachute",
+    "why": "A wide canopy multiplies the drag of a falling body, so a jumper settles to a survivable speed instead of freefall's terminal velocity; rope lines gather the canopy's pull to a harness. Garnerin made the first descent under a frameless silk parachute in 1797.",
+    "src": "https://en.wikipedia.org/wiki/Parachute",
+    "verified": true
+  },
+  {
+    "in": [
+      "fuselage",
+      "turbofan"
+    ],
+    "out": "jet_airliner",
+    "why": "A fuselage carried aloft by turbofans instead of propellers is what makes a jet airliner: the de Havilland Comet, first flown in 1949 and flying fare-paying passengers by 1952, was the world's first, powered by four turbojet engines in its wing roots.",
+    "src": "https://en.wikipedia.org/wiki/De_Havilland_Comet",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "landing_gear"
+    ],
+    "out": "runway",
+    "why": "Runway concrete doesn't need steel reinforcement the way a bridge deck does — plain concrete resists the compressive load a landing gear applies well enough alone, which is why most runways go unreinforced except at the expansion joints.",
+    "src": "https://en.wikipedia.org/wiki/Runway",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "concrete"
+    ],
+    "out": "hangar",
+    "why": "Aircraft need a roof with no column in the way of their wingspan, so the US Navy's WWII hangars — some of the largest freestanding timber structures ever built — spanned the width in wide wooden trusses, set on a poured concrete floor built to bear the load.",
+    "src": "https://en.wikipedia.org/wiki/Hangar",
+    "verified": true
+  },
+  {
+    "in": [
+      "runway",
+      "hangar"
+    ],
+    "out": "taxiway",
+    "why": "A taxiway is paved like a runway but marked differently — one continuous yellow centreline instead of the runway's white markings, lit blue rather than white at night — because it's where aircraft move on their own engines between the runway and the hangar.",
+    "src": "https://en.wikipedia.org/wiki/Taxiway",
+    "verified": true
+  },
+  {
+    "in": [
+      "radio",
+      "glass"
+    ],
+    "out": "control_tower",
+    "why": "Controllers work from a glass-walled cab tall enough to see the whole airfield in every direction, but they sequence aircraft on the runways and taxiways below entirely by two-way radio — the world's first control tower opened at Croydon Airport in 1920.",
+    "src": "https://en.wikipedia.org/wiki/Air_traffic_control_tower",
+    "verified": true
+  },
+  {
+    "in": [
+      "taxiway",
+      "control_tower"
+    ],
+    "out": "airport",
+    "why": "An airport is the whole system, not one building: a control tower sequences traffic by radio while taxiways link runways to hangars and terminals — the same layout logic a rail yard uses to sort wagons, just built for aircraft.",
+    "src": "https://en.wikipedia.org/wiki/Airport",
+    "verified": true
   }
 ]
