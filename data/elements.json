@@ -18533,5 +18533,296 @@
     "fact": "Not a station — a ladder of switches sorts wagons onto tracks to build new trains.",
     "terminal": true,
     "soleRoute": true
+  },
+  {
+    "id": "capacitor",
+    "name": "Capacitor",
+    "emoji": "🔲",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two conductors and an insulating gap. Glass, ceramic, paper, even air can serve as that gap.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "accelerometer",
+    "name": "Accelerometer",
+    "emoji": "📐",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A silicon mass on springs. Acceleration shifts it, and a capacitor reads the shift as motion.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "photodiode",
+    "name": "Photodiode",
+    "emoji": "🔅",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Silicon answers light from 190 to 1100 nanometres — deep into the infrared a remote control uses.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "click_wheel",
+    "name": "Click Wheel",
+    "emoji": "⭕",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A ring of electrodes under plastic. A fingertip's own capacitance tells it where the finger sits.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "flash_memory",
+    "name": "Flash Memory",
+    "emoji": "💾",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A gate buried in oxide traps electrons there for years — a bit that survives the power going off.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "ipod",
+    "name": "iPod",
+    "emoji": "🎵",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Apple, 2001. A hard drive of songs, then flash memory, controlled by a touch-sensitive wheel.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "nike_plus_sensor",
+    "name": "Nike+iPod Sensor",
+    "emoji": "📡",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A pad under the insole radios a packet to the iPod once a second, running or not, for ten more.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "midsole_foam",
+    "name": "Midsole Foam",
+    "emoji": "🫧",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Foam rubber or EVA, both blown into closed gas cells — the give under a running shoe's arch.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "athletic_shoe",
+    "name": "Athletic Shoe",
+    "emoji": "👟",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A foam midsole over a rubber outsole, tuned to how much the wearer's foot naturally rolls inward.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "polarizer",
+    "name": "Polarizer",
+    "emoji": "🕶️",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Iodine chains stretched straight through plastic film absorb light vibrating one way, pass the rest.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "liquid_crystal",
+    "name": "Liquid Crystal",
+    "emoji": "🧪",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Reinitzer heated cholesteryl benzoate in 1888 and it melted twice, through a cloudy phase between.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "thin_film_transistor",
+    "name": "Thin-Film Transistor",
+    "emoji": "🟩",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A transistor grown on glass instead of cut from a wafer — one per pixel, switching it alone.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "liquid_crystal_cell",
+    "name": "Liquid Crystal Cell",
+    "emoji": "🔷",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One transistor, one crystal, repeated millions of times — every pixel twisted open or shut alone.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "lcd_screen",
+    "name": "LCD Screen",
+    "emoji": "🖥️",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "White light through two crossed polarizers with a twistable crystal between decides each pixel.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "imax_3d_projection",
+    "name": "IMAX 3-D Projection",
+    "emoji": "🎬",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Two lenses, two polarizing filters at right angles — one image per eye, sorted out by the glasses.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "laser_diode",
+    "name": "Laser Diode",
+    "emoji": "🔴",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A diode's own cleaved faces work as mirrors, turning ordinary light emission into a coherent beam.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "dvd_player",
+    "name": "DVD Player",
+    "emoji": "💿",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A laser reads a spiral of pits by interference; Blu-ray's bluer laser reads pits four times smaller.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "photosite",
+    "name": "Photosite",
+    "emoji": "⚪",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A capacitor built in silicon. Light frees electrons and the capacitor holds them, pixel by pixel.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "ccd_sensor",
+    "name": "CCD Sensor",
+    "emoji": "📷",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Boyle and Smith, 1969. Each photosite's charge shuffles down the row like a bucket brigade to be read.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "digital_camera",
+    "name": "Digital Camera",
+    "emoji": "📸",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A converter assigns each photosite's charge a binary number — light becomes a file, not a negative.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "magnetic_tape",
+    "name": "Magnetic Tape",
+    "emoji": "🎞️",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A magnetizable coating on a strip of plastic film — sound and picture stored as magnetism, not light.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "vhs",
+    "name": "VHS Cassette",
+    "emoji": "📼",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "JVC's format beat Sony's sharper Betamax in the 1980s because its decks were cheaper and taped longer.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "magnetron",
+    "name": "Magnetron",
+    "emoji": "🌀",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A magnet spirals boiling-off electrons past cavities cut into a copper block, which ring at 2.45 GHz.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "microwave_oven",
+    "name": "Microwave Oven",
+    "emoji": "♨️",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Percy Spencer, 1946. A field flipping 2.45 billion times a second spins polar molecules, not just water.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "scanner",
+    "name": "Scanner",
+    "emoji": "📠",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Mirrors bounce light from the original onto a CCD array, one thin strip at a time as the head crawls.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "barcode_scanner",
+    "name": "Barcode Scanner",
+    "emoji": "🏷️",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A spinning mirror sweeps a laser across the bars up to 1,200 times a second; a detector reads the flicker.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "fingerprint_scanner",
+    "name": "Fingerprint Scanner",
+    "emoji": "🫆",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A grid of capacitor plates under the surface — ridges sit closer than valleys, and that reads as a print.",
+    "shelf": "workshop"
+  },
+  {
+    "id": "wii_remote",
+    "name": "Wii Remote",
+    "emoji": "🎮",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A camera tracks two infrared LED clusters for pointing while an accelerometer senses the swing.",
+    "shelf": "workshop"
   }
 ]

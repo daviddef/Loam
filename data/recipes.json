@@ -21617,16 +21617,6 @@
   },
   {
     "in": [
-      "ash",
-      "meat"
-    ],
-    "out": "quetzalcoatlus",
-    "why": "A ground-hunting predator of small prey, not a dinosaur but a pterosaur — and, like the non-avian dinosaurs themselves, wiped out at the Cretaceous's end, the boundary marked worldwide by a thin, telltale layer of ash.",
-    "src": "https://en.wikipedia.org/wiki/Quetzalcoatlus",
-    "verified": true
-  },
-  {
-    "in": [
       "iron",
       "graphite"
     ],
@@ -21883,6 +21873,296 @@
     "out": "rail_yard",
     "why": "Not a station — a ladder of switches routes each wagon off the arrival track onto its own classification track, sorting one jumbled train into the separate trains it needs to become.",
     "src": "https://en.wikipedia.org/wiki/Classification_yard",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "meat"
+    ],
+    "out": "quetzalcoatlus",
+    "why": "A ground-hunting predator of small prey, not a dinosaur but a pterosaur — and, like the non-avian dinosaurs themselves, wiped out at the Cretaceous's end, the boundary marked worldwide by a thin, telltale layer of ash.",
+    "src": "https://en.wikipedia.org/wiki/Quetzalcoatlus",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "glass"
+    ],
+    "out": "capacitor",
+    "why": "A capacitor is two conductors with an insulating gap between them — glass, ceramic, paper, and oxide layers all serve as that dielectric, with copper as the plates.",
+    "src": "https://en.wikipedia.org/wiki/Capacitor",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "silicon"
+    ],
+    "out": "accelerometer",
+    "why": "A MEMS accelerometer is a proof mass on silicon springs, wired as one plate of a capacitor; acceleration deflects the mass, changing the capacitance against a fixed plate, and that shift is read as motion.",
+    "src": "https://en.wikipedia.org/wiki/Accelerometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "silicon",
+      "photon"
+    ],
+    "out": "photodiode",
+    "why": "Silicon absorbs photons from 190 to 1100 nanometres, well into the infrared — why a plain silicon photodiode, not a special sensor, is what receives an infrared remote control's beam.",
+    "src": "https://en.wikipedia.org/wiki/Photodiode",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "copper_wire"
+    ],
+    "out": "click_wheel",
+    "why": "The iPod's Click Wheel senses touch by capacitive sensing: a ring of copper electrodes under its plastic cover forms a capacitor, and a finger's own capacitance tells the controller where it is resting.",
+    "src": "https://en.wikipedia.org/wiki/Click_wheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "transistor",
+      "silicon_dioxide"
+    ],
+    "out": "flash_memory",
+    "why": "A floating-gate transistor's extra gate is electrically isolated by an insulating oxide layer, so electrons placed there stay trapped — a stored bit that survives with the power off.",
+    "src": "https://en.wikipedia.org/wiki/Flash_memory",
+    "verified": true
+  },
+  {
+    "in": [
+      "flash_memory",
+      "click_wheel"
+    ],
+    "out": "ipod",
+    "why": "The fifth-generation iPod paired flash memory for offline music storage with the touch-sensitive Click Wheel for navigation, once Apple's design moved on from a spinning hard drive.",
+    "src": "https://en.wikipedia.org/wiki/IPod",
+    "supported": true
+  },
+  {
+    "in": [
+      "quartz",
+      "athletic_shoe"
+    ],
+    "out": "nike_plus_sensor",
+    "why": "A piezoelectric sensor — the effect quartz shows under pressure — sits under the shoe's insole and radios a packet to the iPod once a second while the wearer walks or runs, and for ten seconds after.",
+    "src": "https://en.wikipedia.org/wiki/Nike%2B",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber"
+    ],
+    "verb": "heat",
+    "out": "midsole_foam",
+    "why": "EVA foam is what shoemakers call an expanded rubber or foam rubber, blown under heat into a mass of closed gas cells — Nike sells its own compression-moulded version, Phylon, for running-shoe midsoles.",
+    "src": "https://en.wikipedia.org/wiki/Ethylene-vinyl_acetate",
+    "supported": true
+  },
+  {
+    "in": [
+      "midsole_foam",
+      "rubber"
+    ],
+    "out": "athletic_shoe",
+    "why": "A foam midsole cushions between a rubber outsole and the foot. Pronation, the foot's natural inward roll on landing, is normal and necessary — shoe support only changes how much of it happens.",
+    "src": "https://en.wikipedia.org/wiki/Pronation_of_the_foot",
+    "verified": true
+  },
+  {
+    "in": [
+      "iodine",
+      "glass"
+    ],
+    "out": "polarizer",
+    "why": "A polarizing filter is plastic film with iodine chains stretched straight through it: light vibrating along the chains is absorbed, the perpendicular light passes. In an LCD that film rides on glass.",
+    "src": "https://en.wikipedia.org/wiki/Polarizer",
+    "verified": true
+  },
+  {
+    "in": [
+      "cholesterol"
+    ],
+    "verb": "heat",
+    "out": "liquid_crystal",
+    "why": "Friedrich Reinitzer heated cholesteryl benzoate in 1888 and found it did not melt like other compounds: at 145.5°C it turned into a cloudy liquid, and only at 178.5°C did that liquid clear.",
+    "src": "https://en.wikipedia.org/wiki/Liquid_crystal",
+    "verified": true
+  },
+  {
+    "in": [
+      "transistor",
+      "glass"
+    ],
+    "out": "thin_film_transistor",
+    "why": "A thin-film transistor is grown on a non-conducting substrate such as glass rather than cut from a wafer — which is how an LCD gives every pixel its own transistor without going opaque.",
+    "src": "https://en.wikipedia.org/wiki/Thin-film_transistor",
+    "verified": true
+  },
+  {
+    "in": [
+      "thin_film_transistor",
+      "liquid_crystal"
+    ],
+    "out": "liquid_crystal_cell",
+    "why": "The whole benefit of TFT technology is a separate transistor for each pixel, so every liquid crystal in the panel twists open or shut on its own, independent of its neighbours.",
+    "src": "https://en.wikipedia.org/wiki/Thin-film_transistor",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquid_crystal_cell",
+      "polarizer"
+    ],
+    "out": "lcd_screen",
+    "why": "Each pixel sits between two crossed polarizing filters. Voltage untwists the liquid crystal between them, rotating light through to the second filter, and colour filters split it into red, green, blue.",
+    "src": "https://en.wikipedia.org/wiki/Liquid-crystal_display",
+    "verified": true
+  },
+  {
+    "in": [
+      "polarizer",
+      "mirror"
+    ],
+    "out": "imax_3d_projection",
+    "why": "IMAX 3-D films are shot with two cameras joined by a beam-splitter mirror, their lenses closer than the camera bodies allow; projection then sends each eye's film through a polarizing filter set at right angles to the other, sorted by matching glasses.",
+    "src": "https://en.wikipedia.org/wiki/Polarized_3D_system",
+    "supported": true
+  },
+  {
+    "in": [
+      "diode",
+      "mirror"
+    ],
+    "out": "laser_diode",
+    "why": "A laser diode's crystal is cleaved to perfectly smooth, parallel edges that form a resonant cavity; light bounces between those mirror-facets and is amplified until the diode begins to lase.",
+    "src": "https://en.wikipedia.org/wiki/Laser_diode",
+    "verified": true
+  },
+  {
+    "in": [
+      "laser_diode",
+      "aluminum"
+    ],
+    "out": "dvd_player",
+    "why": "A laser diode reads a spiral of pits stamped into a thin aluminum reflective layer: light off a pit's peak returns half a wavelength out of phase with light off the land beside it, and a photodiode reads that flicker as data.",
+    "src": "https://en.wikipedia.org/wiki/Compact_disc",
+    "verified": true
+  },
+  {
+    "in": [
+      "photodiode",
+      "capacitor"
+    ],
+    "out": "photosite",
+    "why": "A CCD pixel is a metal-oxide-semiconductor capacitor: light frees electrons the way a photodiode does, and the capacitor traps that charge, building up proportional to the light received.",
+    "src": "https://en.wikipedia.org/wiki/Charge-coupled_device",
+    "verified": true
+  },
+  {
+    "in": [
+      "photosite",
+      "transistor"
+    ],
+    "out": "ccd_sensor",
+    "why": "A control circuit shifts each photosite's charge to its neighbour like a bucket brigade until the last one reaches a transistor amplifier, which converts the arriving charge into a voltage.",
+    "src": "https://en.wikipedia.org/wiki/Charge-coupled_device",
+    "supported": true
+  },
+  {
+    "in": [
+      "ccd_sensor",
+      "current"
+    ],
+    "out": "digital_camera",
+    "why": "Light striking the CCD sensor becomes an analog current; an analog-to-digital converter samples that current and outputs a digital number for every photosite, making the picture a file, not a voltage trace.",
+    "src": "https://en.wikipedia.org/wiki/Analog-to-digital_converter",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetite",
+      "current"
+    ],
+    "out": "magnetic_tape",
+    "why": "Magnetic tape coats a strip of plastic film with magnetizable particles like magnetite; a recording head fed by the signal's current imprints that coating with a matching pattern of magnetism.",
+    "src": "https://en.wikipedia.org/wiki/Magnetic_tape",
+    "supported": true
+  },
+  {
+    "in": [
+      "magnetic_tape",
+      "electromagnet"
+    ],
+    "out": "vhs",
+    "why": "A tape head is an electromagnet: a ring of magnetic material with a narrow gap and a coil wound around it — fully reversible, so the same gap that magnetizes the tape recording it reads the pattern back on playback.",
+    "src": "https://en.wikipedia.org/wiki/Recording_head",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "copper"
+    ],
+    "out": "magnetron",
+    "why": "Electrons boiling off a heated cathode are bent into spirals by a magnet's field, sweeping past cavities cut into a solid copper block and exciting them into microwave oscillation.",
+    "src": "https://en.wikipedia.org/wiki/Cavity_magnetron",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetron",
+      "water"
+    ],
+    "out": "microwave_oven",
+    "why": "A magnetron's alternating field makes polar molecules — not only water — keep rotating to face it, about 2.45 billion times a second; that molecular friction heats the food, not surface radiant heat.",
+    "src": "https://en.wikipedia.org/wiki/Microwave_oven",
+    "verified": true
+  },
+  {
+    "in": [
+      "ccd_sensor",
+      "mirror"
+    ],
+    "out": "scanner",
+    "why": "A flatbed scanner shines light onto the original and reads the intensity and colour reflected back, a line at a time; mirrors and a lens direct that light onto the moving CCD array.",
+    "src": "https://en.wikipedia.org/wiki/Image_scanner",
+    "supported": true
+  },
+  {
+    "in": [
+      "scanner",
+      "laser_diode"
+    ],
+    "out": "barcode_scanner",
+    "why": "A barcode reader swaps a flatbed scanner's CCD array for a single sweeping laser diode spot: a rotating mirror sweeps the beam across the bars up to 1,200 times a second, and a photodetector reads the reflected brightness to decode it.",
+    "src": "https://en.wikipedia.org/wiki/Barcode_reader",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "human"
+    ],
+    "out": "fingerprint_scanner",
+    "why": "A capacitive fingerprint sensor is a grid of tiny capacitors, and current between them forms the image; a human fingertip's ridges sit closer to the sensor than the valleys between them do, so they read differently.",
+    "src": "https://en.wikipedia.org/wiki/Fingerprint_scanner",
+    "supported": true
+  },
+  {
+    "in": [
+      "photodiode",
+      "accelerometer"
+    ],
+    "out": "wii_remote",
+    "why": "The Wii Remote points using an array of photodiodes — a PixArt optical sensor — that tracks the Sensor Bar's ten infrared LEDs by triangulation, while a separate MEMS accelerometer senses acceleration along three axes.",
+    "src": "https://en.wikipedia.org/wiki/Wii_Remote",
     "verified": true
   }
 ]
