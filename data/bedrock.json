@@ -2219,6 +2219,116 @@
       "src": "https://en.wikipedia.org/wiki/Cloaca"
     },
     {
+      "id": "bed_esophagus",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Esophagus",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Esophagus",
+      "fact": "Muscle switches type on the way down — striated at the top for a voluntary swallow, smooth at the bottom for the involuntary squeeze that finishes it — with the myenteric plexus threaded between the layers.",
+      "src": "https://en.wikipedia.org/wiki/Esophagus"
+    },
+    {
+      "id": "bed_stomach",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Stomach",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Stomach",
+      "fact": "Glandular epithelium supplies gastric juice's acid and pepsinogen, three muscle layers churn it — including an oblique layer found nowhere else in the gut — inside a connective-tissue serosa laced with the myenteric plexus.",
+      "src": "https://en.wikipedia.org/wiki/Stomach"
+    },
+    {
+      "id": "bed_gallbladder",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Gallbladder",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Gallbladder",
+      "fact": "Concentrates the liver's bile three- to tenfold, pulling out water and salts behind a microvilli-brushed epithelial lining and a smooth-muscle layer running longitudinal, oblique and transverse all at once.",
+      "src": "https://en.wikipedia.org/wiki/Gallbladder"
+    },
+    {
+      "id": "bed_pancreas",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Pancreas",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Pancreas",
+      "fact": "Ninety-nine percent exocrine, one percent endocrine: acinar cells in thin fibrous-walled lobes push out digestive enzymes, while scattered islets of Langerhans answer for the insulin instead.",
+      "src": "https://en.wikipedia.org/wiki/Pancreas"
+    },
+    {
+      "id": "bed_small_intestine",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Small Intestine",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Small intestine",
+      "fact": "Duodenum, jejunum and ileum in series — villi comb the epithelial lining for absorption, two muscle layers drive peristalsis, and Meissner's and Auerbach's plexuses run it largely independent of the brain.",
+      "src": "https://en.wikipedia.org/wiki/Small_intestine"
+    },
+    {
+      "id": "bed_large_intestine",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Large Intestine",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Large intestine",
+      "fact": "Taeniae coli — muscle ribbons shorter than the tube itself — gather it into pouch-like haustra, while glands sunk into the epithelium pull water and salts back out for over 700 resident bacterial species to finish.",
+      "src": "https://en.wikipedia.org/wiki/Large_intestine"
+    },
+    {
+      "id": "bed_appendix",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Appendix",
+      "of": [
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Appendix (anatomy)",
+      "fact": "Reassessed since the early 2000s, no longer written off as vestigial: gut-associated lymphoid tissue packs its wall, standing immune watch and, per one 2007 hypothesis, sheltering the gut's bacteria through illness or antibiotics.",
+      "src": "https://en.wikipedia.org/wiki/Appendix_(anatomy)"
+    },
+    {
+      "id": "bed_anal_canal",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Anal Canal",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Anal canal",
+      "fact": "Two sphincters, not one: an inner ring under involuntary control, an outer ring the body can clench at will, wrapped around a lining that changes type on the way out — columnar, then squamous, keratinized at the skin.",
+      "src": "https://en.wikipedia.org/wiki/Anal_canal"
+    },
+    {
       "id": "bed_n_acetylglucosamine",
       "kind": "compound",
       "tier": "monomer",
@@ -2584,6 +2694,145 @@
       "srcTitle": "Eggs as food",
       "fact": "A pocket of ordinary air trapped between the two shell membranes at the egg's blunt end, formed as the contents cool and shrink after laying — the bigger it grows in storage, the older the egg.",
       "src": "https://en.wikipedia.org/wiki/Eggs_as_food"
+    },
+    {
+      "id": "bed_sulfite_ion",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Sulfite Ion",
+      "formula": "SO3²⁻",
+      "of": [
+        "el_sulfur",
+        "el_oxygen"
+      ],
+      "srcTitle": "Sulfite",
+      "fact": "One sulfur, three oxygens and a lone pair, arranged pyramidal like ammonia — the ion at the core of every food-preservative sulfite salt.",
+      "src": "https://en.wikipedia.org/wiki/Sulfite"
+    },
+    {
+      "id": "bed_bisulfite_ion",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Bisulfite Ion",
+      "formula": "HSO3⁻",
+      "of": [
+        "bed_sulfite_ion",
+        "el_hydrogen"
+      ],
+      "srcTitle": "Bisulfite",
+      "fact": "Sulfite with one proton added — the conjugate acid of sulfite and the conjugate base of sulfurous acid, sitting one rung apart from each on the same acid-base ladder.",
+      "src": "https://en.wikipedia.org/wiki/Bisulfite"
+    },
+    {
+      "id": "bed_disulfite_ion",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Metabisulfite Ion",
+      "formula": "S2O5²⁻",
+      "of": [
+        "bed_bisulfite_ion"
+      ],
+      "srcTitle": "Disulfite",
+      "fact": "Two bisulfite ions condense and shed a water molecule, welding an SO2 group onto an SO3 group through a single sulfur-sulfur bond — commonly called metabisulfite or pyrosulfite.",
+      "src": "https://en.wikipedia.org/wiki/Disulfite"
+    },
+    {
+      "id": "bed_sodium_sulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Sodium Sulfite",
+      "formula": "Na2SO3",
+      "of": [
+        "el_sodium",
+        "bed_sulfite_ion"
+      ],
+      "srcTitle": "Sodium sulfite",
+      "fact": "E221. Sodium paired with the sulfite ion — an antioxidant and reducing agent that keeps dried fruit from browning and helps preserve meat.",
+      "src": "https://en.wikipedia.org/wiki/Sodium_sulfite"
+    },
+    {
+      "id": "bed_sodium_bisulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Sodium Bisulfite",
+      "formula": "NaHSO3",
+      "of": [
+        "el_sodium",
+        "bed_bisulfite_ion"
+      ],
+      "srcTitle": "Sodium bisulfite",
+      "fact": "E222. Not really a solid at all — the name for sodium and bisulfite ions dissolved together in water; try to crystallize it and what comes out is sodium metabisulfite instead. Bleaches starches and delays spoilage.",
+      "src": "https://en.wikipedia.org/wiki/Sodium_bisulfite"
+    },
+    {
+      "id": "bed_sodium_metabisulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Sodium Metabisulfite",
+      "formula": "Na2S2O5",
+      "of": [
+        "el_sodium",
+        "bed_disulfite_ion"
+      ],
+      "srcTitle": "Sodium metabisulfite",
+      "fact": "E223. An antimicrobial and antioxidant behind a wine bottle's 'Contains Sulfites' label, and the chip shop's trick for keeping cut potatoes from browning before the fryer.",
+      "src": "https://en.wikipedia.org/wiki/Sodium_metabisulfite"
+    },
+    {
+      "id": "bed_potassium_metabisulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Potassium Metabisulfite",
+      "formula": "K2S2O5",
+      "of": [
+        "el_potassium",
+        "bed_disulfite_ion"
+      ],
+      "srcTitle": "Potassium metabisulfite",
+      "fact": "E224. Sodium metabisulfite's potassium twin, chemically similar enough that the two are sometimes used interchangeably as a winemaking antioxidant and a source of disinfecting sulfur dioxide.",
+      "src": "https://en.wikipedia.org/wiki/Potassium_metabisulfite"
+    },
+    {
+      "id": "bed_calcium_sulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Calcium Sulfite",
+      "formula": "CaSO3",
+      "of": [
+        "el_calcium",
+        "bed_sulfite_ion"
+      ],
+      "srcTitle": "Calcium sulfite",
+      "fact": "E226. Calcium's version of the same oxygen-scavenging antioxidant, preserving wine, cider, fruit juice and canned produce; sodium and magnesium sulfites have mostly displaced it in industrial wood pulping.",
+      "src": "https://en.wikipedia.org/wiki/Calcium_sulfite"
+    },
+    {
+      "id": "bed_calcium_bisulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Calcium Bisulfite",
+      "formula": "Ca(HSO3)2",
+      "of": [
+        "el_calcium",
+        "bed_bisulfite_ion"
+      ],
+      "srcTitle": "Calcium bisulfite",
+      "fact": "E227. Calcium and two bisulfite ions, made by dosing lime with excess sulfur dioxide and water — used to brine cherries and, at industrial scale, to pulp wood into paper.",
+      "src": "https://en.wikipedia.org/wiki/Calcium_bisulfite"
+    },
+    {
+      "id": "bed_potassium_bisulfite",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Potassium Bisulfite",
+      "formula": "KHSO3",
+      "of": [
+        "el_potassium",
+        "bed_bisulfite_ion"
+      ],
+      "srcTitle": "Potassium bisulfite",
+      "fact": "E228. Like its sodium counterpart, not a true solid but potassium and bisulfite ions in solution — used as a sterilising agent in brewing and winemaking.",
+      "src": "https://en.wikipedia.org/wiki/Potassium_bisulfite"
     }
   ],
   "composition": {
@@ -2611,6 +2860,15 @@
       "bed_chalazae",
       "bed_yolk",
       "bed_air_cell"
+    ],
+    "sulfite": [
+      "bed_sodium_sulfite",
+      "bed_sodium_bisulfite",
+      "bed_sodium_metabisulfite",
+      "bed_potassium_metabisulfite",
+      "bed_calcium_sulfite",
+      "bed_calcium_bisulfite",
+      "bed_potassium_bisulfite"
     ],
     "milk": [
       "bed_water_molecule",
@@ -2665,7 +2923,15 @@
       "bed_skin",
       "bed_kidney",
       "bed_knee",
-      "bed_skeleton"
+      "bed_skeleton",
+      "bed_esophagus",
+      "bed_stomach",
+      "bed_gallbladder",
+      "bed_pancreas",
+      "bed_small_intestine",
+      "bed_large_intestine",
+      "bed_appendix",
+      "bed_anal_canal"
     ],
     "elephant": [
       "bed_elephant_heart",
