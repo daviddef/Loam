@@ -2125,6 +2125,206 @@
       "srcTitle": "Human skeleton",
       "fact": "Around 270 bones at birth, fused down to about 206 by adulthood — the frame that holds the body's shape, shields the organs inside it, and gives every joint something to move against.",
       "src": "https://en.wikipedia.org/wiki/Human_skeleton"
+    },
+    {
+      "id": "bed_chicken_crop",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Chicken Crop",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Crop (anatomy)",
+      "fact": "A thin-walled pouch off the esophagus where swallowed feed waits before digestion even starts — chickens keep one, along with turkeys, ducks, geese and parrots.",
+      "src": "https://en.wikipedia.org/wiki/Crop_(anatomy)"
+    },
+    {
+      "id": "bed_chicken_proventriculus",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Proventriculus",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Proventriculus",
+      "fact": "The bird's glandular 'true stomach' — secretory glands lining it add hydrochloric acid and pepsinogen to the feed, and it contracts on its own to help mix everything before the gizzard takes over.",
+      "src": "https://en.wikipedia.org/wiki/Proventriculus"
+    },
+    {
+      "id": "bed_chicken_gizzard",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Gizzard",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Gizzard",
+      "fact": "Muscular bands grind food the way teeth would in a bird that has none, protected from their own crushing by a multi-layered koilin lining laid down over the muscle.",
+      "src": "https://en.wikipedia.org/wiki/Gizzard"
+    },
+    {
+      "id": "bed_chicken_small_intestine",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Small Intestine",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Small intestine",
+      "fact": "Villi comb the epithelial lining for absorption, two layers of smooth muscle drive peristalsis, and its own nerve plexuses — Meissner's in the submucosa, Auerbach's between the muscle layers — run largely independent of the brain.",
+      "src": "https://en.wikipedia.org/wiki/Small_intestine"
+    },
+    {
+      "id": "bed_chicken_ceca",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ceca",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Cecum",
+      "fact": "Blind pouches at the junction of the small and large intestine, usually paired in a bird — though not always: parrots have none at all, and the secretarybird carries two full pairs.",
+      "src": "https://en.wikipedia.org/wiki/Cecum"
+    },
+    {
+      "id": "bed_chicken_large_intestine",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Large Intestine",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Large intestine",
+      "fact": "Water and salts are pulled back out through a lining of simple columnar epithelium that dips down into intestinal glands, while muscle keeps everything moving along toward the cloaca.",
+      "src": "https://en.wikipedia.org/wiki/Large_intestine"
+    },
+    {
+      "id": "bed_chicken_cloaca",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Cloaca",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Cloaca",
+      "fact": "One rear opening does the job of three systems — in birds, as in amphibians, reptiles and cartilaginous fish, the digestive, reproductive and urinary tracts all exit through this single vent.",
+      "src": "https://en.wikipedia.org/wiki/Cloaca"
+    },
+    {
+      "id": "bed_n_acetylglucosamine",
+      "kind": "compound",
+      "tier": "monomer",
+      "name": "N-Acetylglucosamine",
+      "formula": "C8H15NO6",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "N-Acetylglucosamine",
+      "fact": "An amide derivative of glucose — swap one hydroxyl for an acetamide group, and this is the monomer chitin is built from.",
+      "src": "https://en.wikipedia.org/wiki/N-Acetylglucosamine"
+    },
+    {
+      "id": "bed_chitin",
+      "kind": "compound",
+      "tier": "polymer",
+      "name": "Chitin",
+      "formula": "(C8H13NO5)n",
+      "of": [
+        "bed_n_acetylglucosamine"
+      ],
+      "via": "glycosidic",
+      "srcTitle": "Chitin",
+      "fact": "A long chain of N-acetylglucosamine units — the same structural molecule that stiffens a mushroom's cell wall and a crab's shell, here built into every insect's exoskeleton.",
+      "src": "https://en.wikipedia.org/wiki/Chitin"
+    },
+    {
+      "id": "bed_insect_cuticle",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Insect Cuticle",
+      "of": [
+        "bed_chitin",
+        "bed_protein"
+      ],
+      "srcTitle": "Arthropod exoskeleton",
+      "fact": "Not skin, not bone — fibrous chitin set in a protein matrix, laid down in layers by a sheet of living epidermal cells underneath it. Every tube, plate and joint an insect has is built from this.",
+      "src": "https://en.wikipedia.org/wiki/Arthropod_exoskeleton"
+    },
+    {
+      "id": "bed_spiracle",
+      "kind": "compound",
+      "tier": "tube",
+      "name": "Spiracle",
+      "of": [
+        "bed_insect_cuticle",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Spiracle (arthropods)",
+      "fact": "An opening in the exoskeleton itself, not a separate structure — its own ring of closer muscle opens it to admit air and shuts it again to hold water in.",
+      "src": "https://en.wikipedia.org/wiki/Spiracle_(arthropods)"
+    },
+    {
+      "id": "bed_trachea",
+      "kind": "compound",
+      "tier": "tube",
+      "name": "Trachea",
+      "of": [
+        "bed_insect_cuticle"
+      ],
+      "srcTitle": "Respiratory system of insects",
+      "fact": "Reinforced from inside by taenidia — a thin, spiral 'wire' of its own cuticle winding through the wall so the tube can flex and stretch like a vacuum hose without collapsing.",
+      "src": "https://en.wikipedia.org/wiki/Respiratory_system_of_insects"
+    },
+    {
+      "id": "bed_tracheole",
+      "kind": "compound",
+      "tier": "tube",
+      "name": "Tracheole",
+      "of": [
+        "bed_insect_cuticle",
+        "bed_cell"
+      ],
+      "srcTitle": "Respiratory system of insects",
+      "fact": "Where the tube finally ends: a single cell wraps each fine branch, keeping its tip filled with fluid so oxygen can dissolve and cross straight into the cytoplasm of the cell next door.",
+      "src": "https://en.wikipedia.org/wiki/Respiratory_system_of_insects"
+    },
+    {
+      "id": "bed_tracheal_system",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Tracheal System",
+      "of": [
+        "bed_spiracle",
+        "bed_trachea",
+        "bed_tracheole"
+      ],
+      "srcTitle": "Insect",
+      "fact": "Air runs spiracle to trachea to tracheole to cell, with no lung and no heartbeat in the chain — the blood does not carry oxygen at all, only nutrients, circulating loose in an open hemocoel instead of vessels.",
+      "src": "https://en.wikipedia.org/wiki/Insect"
+    },
+    {
+      "id": "bed_malpighian_tubule",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Malpighian Tubules",
+      "of": [
+        "bed_cell",
+        "bed_protein"
+      ],
+      "srcTitle": "Malpighian tubule system",
+      "fact": "Fine tubes closed at one end, a single layer of cells thick, floating loose in the hemolymph. Ions get pumped into the tube and water follows by osmosis, until what's left precipitates into uric acid once it reaches the hindgut.",
+      "src": "https://en.wikipedia.org/wiki/Malpighian_tubule_system"
     }
   ],
   "composition": {
@@ -2216,7 +2416,18 @@
       "bed_chicken_lung",
       "bed_chicken_heart",
       "bed_chicken_kidney",
-      "bed_chicken_brain"
+      "bed_chicken_brain",
+      "bed_chicken_crop",
+      "bed_chicken_proventriculus",
+      "bed_chicken_gizzard",
+      "bed_chicken_small_intestine",
+      "bed_chicken_ceca",
+      "bed_chicken_large_intestine",
+      "bed_chicken_cloaca"
+    ],
+    "bee": [
+      "bed_tracheal_system",
+      "bed_malpighian_tubule"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",
@@ -2630,6 +2841,11 @@
       "id": "tissue",
       "name": "Tissues",
       "blurb": "Cells of one kind, doing one job together."
+    },
+    {
+      "id": "tube",
+      "name": "Tubes",
+      "blurb": "Chitin-lined channels that carry air from an opening in the body wall straight to the cells that need it — no lungs, no vessels, no blood involved."
     },
     {
       "id": "bone",

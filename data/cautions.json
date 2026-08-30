@@ -421,6 +421,46 @@
         "ginseng"
       ],
       "severity": "conditional"
+    },
+    "salmonella_illness": {
+      "label": "Salmonella causes real food poisoning",
+      "note": "Nontyphoidal Salmonella infection generally causes gastroenteritis — food poisoning, in plain terms — and the US alone counts about 1,200,000 cases a year. Most healthy adults recover without incident; infants, the elderly, organ-transplant recipients and anyone immunocompromised are the ones genuinely at risk of it turning severe.",
+      "ids": [
+        "salmonella"
+      ],
+      "severity": "conditional"
+    },
+    "aspirin_reye": {
+      "label": "Reye syndrome links aspirin to a rare, severe childhood illness",
+      "note": "About 90% of Reye syndrome cases in children are associated with aspirin (salicylate) use during a viral illness, which is why health guidance in the United States says aspirin should not be given to anyone under 19 during a fever-causing illness. The syndrome itself is rare — under one in a million children a year — but death occurs in 20 to 40% of those affected, and about a third of survivors are left with lasting brain damage.",
+      "ids": [
+        "aspirin"
+      ],
+      "severity": "conditional"
+    },
+    "streptomycin_ototoxicity": {
+      "label": "Streptomycin can cause permanent hearing and balance damage",
+      "note": "Like other aminoglycoside antibiotics, streptomycin's most concerning side effects are kidney and ear toxicity. Damage to the vestibulocochlear nerve can be transient or permanent, causing tinnitus, vertigo, loss of balance, or deafness — and use during pregnancy has been linked to permanent congenital deafness in the child.",
+      "ids": [
+        "streptomycin"
+      ],
+      "severity": "cumulative"
+    },
+    "insulin_hypoglycemia": {
+      "label": "Too much insulin is a medical emergency, not a dosing error to shrug off",
+      "note": "Insulin in excess of what the body needs to handle the carbohydrate it has eaten causes hypoglycemic coma and can kill. Symptoms include dizziness, weakness, trembling, seizures, confusion and drowsiness, escalating to coma.",
+      "ids": [
+        "insulin"
+      ],
+      "severity": "acute"
+    },
+    "penicillin_allergy": {
+      "label": "Penicillin allergy is common to claim, rare to confirm",
+      "note": "About 10% of people in the United States report a penicillin allergy, but the great majority were never truly allergic or have outgrown it — skin-test positivity drops by about 10% with every year of avoidance, and roughly 90% of self-reported cases can eventually tolerate penicillin again. A true IgE-mediated anaphylactic reaction is rare, occurring in roughly 0.01% of patients, though a milder rash affects 1 to 10%.",
+      "ids": [
+        "penicillin"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

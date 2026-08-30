@@ -449,6 +449,9 @@ def('plant',  () => [stalk('lo', 30, 52, 16), leaf('bs', 20, 30, .9, -50), leaf(
                      leaf('bs', 30, 16, .7, 0)]);
 def('tree',   () => [S('M30 52 L30 32', 'lo', 4),
                      E(30, 24, 18, 15, 'lo'), E(28, 22, 14, 11, 'bs'), E(25, 19, 8, 6, 'hi')]);
+def('acacia', () => [S('M30 52 L30 26', 'lo', 3),
+                     E(30, 20, 26, 6, 'lo'), E(30, 18, 21, 4.5, 'bs'), E(28, 16, 14, 3, 'hi'),
+                     S('M12 22 L6 14', 'ik', 1.4), S('M48 22 L54 14', 'ik', 1.4)]);
 def('leaf',   () => [leaf('bs', 30, 30, 1.5), S('M30 44 L30 16', 'lo', 1.6)]);
 def('grass',  () => [stalk('bs', 20, 52, 22), stalk('hi', 28, 52, 14), stalk('bs', 36, 52, 20),
                      stalk('lo', 44, 52, 28)]);
@@ -3140,6 +3143,29 @@ def('foxglove',() => [S('M26 54 L26 10', 'lo', 3),
                       ...[16, 26, 36, 44].map((y, i) => ['g', 20, 34, y, [E(34, y, 8, 6, i % 2 ? 'bs' : 'hi')]])]);
 def('digoxin', () => [...[[20, 34], [32, 30], [44, 34]].map(([x, y]) => hex('ik', x, y, 8, 2)),
                       P('M20 44 L28 48 L24 56 L16 52 Z', 'bs')]);
+def('salicylic_acid', () => [hex('ik', 22, 32, 11, 2.2),
+                      S('M31 25 L40 20', 'ik', 2), C(40, 20, 4, 'bs'),
+                      ...double([40, 20], [48, 24], 'ik'), C(48, 24, 3.2, 'hi'),   // the -COOH, untouched
+                      S('M31 39 L40 44', 'ik', 2), C(40, 44, 3.6, 'hi')]);         // the free -OH
+def('aspirin', () => [hex('ik', 18, 30, 10, 2.2),
+                      S('M26 24 L34 20', 'ik', 2), C(34, 20, 3.6, 'bs'),
+                      ...double([34, 20], [42, 24], 'ik'), C(42, 24, 3, 'hi'),     // the -COOH, still there
+                      S('M26 36 L34 42', 'ik', 2), C(34, 42, 3.2, 'hi'),           // the ester oxygen
+                      S('M34 42 L42 46', 'ik', 1.8),
+                      ...double([42, 46], [48, 42], 'ik'), C(48, 42, 3, 'bs'),     // the acetyl carbonyl
+                      S('M42 46 L40 54', 'ik', 1.8), C(40, 54, 2.8, 'lo')]);       // the methyl cap
+def('streptomyces', () => [S('M10 46 Q18 30 12 20 Q20 10 32 14 Q46 18 40 32 Q34 44 48 48', 'bs', 3),
+                      ...[[12, 42], [14, 28], [20, 16], [32, 14], [42, 22], [38, 34], [46, 46]]
+                        .map(([x, y]) => C(x, y, 2.6, 'hi'))]);                    // a spore chain, not a brush
+def('streptomycin', () => [hex('ik', 16, 26, 8, 2), hex('ik', 32, 36, 8, 2), hex('ik', 46, 22, 8, 2),
+                      S('M23 29 L26 32', 'ik', 1.8), S('M39 32 L40 27', 'ik', 1.8),
+                      C(10, 20, 3, CPK.N), C(52, 15, 3, CPK.N)]);                  // the amino sugars, picked out
+def('pancreas', () => [P('M9 30 Q9 22 19 22 L44 17 Q53 17 53 26 Q53 35 44 34 L19 39 Q9 39 9 30 Z', 'bs'),
+                      S('M13 30 Q30 26 49 23', 'lo', 1.6),                        // the duct
+                      ...[[20, 28], [30, 25], [40, 27]].map(([x, y]) => C(x, y, 2.2, 'hi'))]); // islets
+def('insulin', () => [backbone('ik', 3, 20, 20).shape, backbone('ik', 4, 24, 42).shape,
+                      S('M17 22 L17 39', 'hi', 2), S('M29 20 L31 40', 'hi', 2),   // two interchain bonds
+                      S('M12 16 Q8 20 12 24', 'lo', 1.6)]);                       // and one closing the A chain
 def('capsicum',() => [P('M22 16 Q10 26 14 40 Q18 52 30 52 Q42 52 46 40 Q50 26 38 16 Z', 'bs'),
                       S('M30 16 L30 6', 'lo', 3), E(30, 14, 8, 3, 'lo'),
                       S('M22 26 Q26 38 22 46', 'hi', 1.6)]);
@@ -3848,6 +3874,34 @@ def('alfalfa', () => [
     [S(`M${x} ${base} L${x} ${top}`, 'lo', 1.4),
      ...[-1, 0, 1].map(i => leaf('bs', x + i * 4, top - 2, .28, i * 45))]).flat(),
 ]);
+
+/* pathogens — closing the virus dead end, and the parasites/bacteria that
+   never had a place before. A bacteriophage is drawn as `virus`'s own small
+   capsid, landing on a bacterium instead of floating free; lysis is the same
+   bacterium coming apart into fresh capsids; a prophage is that capsid's DNA
+   folded into the host's own chromosome loop. */
+def('bacteriophage', () => [rod3('hi', 30, 46, 13, 5),
+                            P('M30 6 L38 10 L38 18 L30 22 L22 18 L22 10 Z', 'bs'),
+                            S('M30 6 L38 10 L38 18 L30 22 L22 18 L22 10 Z', 'ik', 1.6),
+                            S('M30 22 L30 33', 'ik', 2.4),
+                            S('M30 32 Q22 36 17 42', 'ik', 1.4), S('M30 32 Q38 36 43 42', 'ik', 1.4)]);
+def('prophage',     () => [ring('lo', 30, 32, 17, 3),
+                           S('M15 24 A17 17 0 0 1 24 16', 'bs', 5), C(24, 16, 2.6, 'ik')]);
+def('lysis',        () => [rod3('gh', 30, 32, 13, 5),
+                           ...[[10, 10], [50, 10], [8, 32], [52, 32], [10, 54], [50, 54]].map(([x, y]) =>
+                             P(`M${x} ${y - 4} L${x + 4} ${y - 2} L${x + 4} ${y + 2} L${x} ${y + 4} L${x - 4} ${y + 2} L${x - 4} ${y - 2} Z`, 'bs'))]);
+def('protozoan',    () => [E(30, 32, 18, 13, 'bs'), C(34, 30, 5, 'hi'),
+                           S('M46 32 Q54 28 52 20', 'lo', 2.2)]);
+def('eimeria',       () => [E(30, 32, 16, 20, 'lo'),
+                            ...[[24, 26], [36, 26], [24, 38], [36, 38]].map(([x, y]) => C(x, y, 4, 'hi'))]);
+def('coccidiosis',  () => [S('M8 20 Q19 10 30 20 Q41 30 52 20', 'lo', 5),
+                           S('M8 32 Q19 22 30 32 Q41 42 52 32', 'lo', 5),
+                           S('M8 44 Q19 34 30 44 Q41 54 52 44', 'lo', 5),
+                           ...[[18, 20], [34, 32], [22, 44]].map(([x, y]) => C(x, y, 3, 'bs'))]);
+def('salmonella',   () => [rod3('bs', 30, 30, 14, 5),
+                           ...[[10, 18], [8, 30], [10, 42]].map(([x, y]) => S(`M18 30 L${x} ${y}`, 'ik', 1.4))]);
+def('viroid',       () => [ring('bs', 30, 32, 13, 3),
+                           ...[0, 60, 120, 180, 240, 300].map(a => ['g', a, 30, 32, [S('M30 19 L30 15', 'ik', 1.4)]])]);
 
 const FAMILY = {
   mineral:  id => [facet('lo', .95), facet('bs', .6), ...granules('hi', 4, hash(id), [20, 26, 40, 38])],

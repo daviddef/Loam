@@ -269,6 +269,16 @@
     "fact": "A plant that spends a fortune on a trunk to outgrow its neighbours."
   },
   {
+    "id": "acacia",
+    "name": "Acacia",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A savanna thorn tree armed with paired spines — one long and straight, one short and curved."
+  },
+  {
     "id": "straw",
     "name": "Straw",
     "emoji": "🎋",
@@ -6808,7 +6818,6 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
     "fact": "A genome in a protein coat, with no metabolism. Called organisms at the edge of life."
   },
   {
@@ -7133,7 +7142,6 @@
     "tags": [
       "plant"
     ],
-    "terminal": true,
     "fact": "Bitter as quinine. The gut turns it into salicylic acid — the compound aspirin was built on."
   },
   {
@@ -10819,5 +10827,153 @@
     ],
     "fact": "A yellow, water-soluble radium salt — one of the rarest compounds here, one of Wikipedia's shortest pages.",
     "terminal": true
+  },
+  {
+    "id": "bacteriophage",
+    "name": "Bacteriophage",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A virus built to infect nothing but bacteria. The name is Greek for devourer of bacteria — and it means it."
+  },
+  {
+    "id": "prophage",
+    "name": "Prophage",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A phage genome stitched into a bacterium's own chromosome, copied for free at every division. Waiting."
+  },
+  {
+    "id": "lysis",
+    "name": "Lysis",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A cell bursting open once its own internal pressure overcomes a wall that phage enzymes have already breached."
+  },
+  {
+    "id": "protozoan",
+    "name": "Protozoan",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "water"
+    ],
+    "fact": "A single eukaryotic cell living entirely on its own. Common wherever there's water, even a damp patch of soil."
+  },
+  {
+    "id": "eimeria",
+    "name": "Eimeria",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "An apicomplexan parasite genus, almost always locked to one host for life. Several live only in chickens."
+  },
+  {
+    "id": "coccidiosis",
+    "name": "Coccidiosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "An intestinal disease caused by coccidian parasites invading the gut lining. Spread through droppings."
+  },
+  {
+    "id": "salmonella",
+    "name": "Salmonella",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A genus of rod-shaped bacteria behind roughly 1.2 million food-poisoning cases a year in the US alone."
+  },
+  {
+    "id": "viroid",
+    "name": "Viroid",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Bare circular RNA, no protein coat, about 1/80th the size of a typical virus. Only known to infect plants."
+  },
+  {
+    "id": "salicylic_acid",
+    "name": "Salicylic Acid",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Raffaele Piria split salicin into a sugar and a second piece, then oxidised that piece into this."
+  },
+  {
+    "id": "aspirin",
+    "name": "Aspirin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Felix Hoffmann acetylated salicylic acid in 1897 using acetic anhydride. Bayer called the result aspirin."
+  },
+  {
+    "id": "streptomyces",
+    "name": "Streptomyces",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Filamentous, spore-forming soil bacteria — as a genus they make over two-thirds of nature's known antibiotics."
+  },
+  {
+    "id": "streptomycin",
+    "name": "Streptomycin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Isolated from Streptomyces griseus, 19 October 1943, out of New Jersey soil. The first cure for tuberculosis."
+  },
+  {
+    "id": "pancreas",
+    "name": "Pancreas",
+    "emoji": "🥘",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Ninety-nine percent of it is exocrine, making digestive enzymes. The other one percent makes insulin."
+  },
+  {
+    "id": "insulin",
+    "name": "Insulin",
+    "emoji": "💉",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Two peptide chains, A and B, held by two disulfide bonds — a third closes a loop inside the A chain."
   }
 ]

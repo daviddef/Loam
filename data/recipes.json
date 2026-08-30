@@ -194,6 +194,16 @@
   },
   {
     "in": [
+      "seedling",
+      "sand"
+    ],
+    "out": "acacia",
+    "why": "Vachellia tortilis, the classic African acacia, is native to savanna and Sahel and tolerates drought, extreme heat and sandy, stony soil that would defeat most trees.",
+    "src": "https://en.wikipedia.org/wiki/Vachellia_tortilis",
+    "verified": true
+  },
+  {
+    "in": [
       "tree"
     ],
     "verb": "cut",
@@ -5279,6 +5289,16 @@
     ],
     "out": "giraffe",
     "why": "Giraffes feed up to 4.5 m high, where even a large competitor like a kudu reaches only about 2 m. Its heart must generate roughly double a human's blood pressure to supply the brain.",
+    "src": "https://en.wikipedia.org/wiki/Giraffe",
+    "verified": true
+  },
+  {
+    "in": [
+      "acacia"
+    ],
+    "verb": "wait",
+    "out": "giraffe",
+    "why": "Giraffes preferentially browse acacia for its calcium and protein, reaching twigs a kudu never could — and get past the thorns with a flexible, hairy upper lip and an 18-inch black tongue.",
     "src": "https://en.wikipedia.org/wiki/Giraffe",
     "verified": true
   },
@@ -14694,5 +14714,185 @@
     "why": "Alkaline earth metals react with the halogens to form ionic halides. Radium iodide is a yellow, water-soluble salt — one of the rarest compounds here, and one Wikipedia devotes only a handful of sentences to.",
     "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
     "supported": true
+  },
+  {
+    "in": [
+      "virus",
+      "bacteria"
+    ],
+    "out": "bacteriophage",
+    "why": "Phage is Greek for devourer, and a bacteriophage is exactly that: a virus that infects and replicates only inside bacteria. It starts by binding a specific receptor on the bacterium's surface, then injects its genome through the wall.",
+    "src": "https://en.wikipedia.org/wiki/Bacteriophage",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteriophage"
+    ],
+    "verb": "wait",
+    "out": "prophage",
+    "why": "A temperate phage does not always replicate right away. Its genome integrates into the host chromosome as a prophage, copied passively every time the bacterium divides — quiet for generation after generation until something disturbs it.",
+    "src": "https://en.wikipedia.org/wiki/Lysogenic_cycle",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteriophage"
+    ],
+    "verb": "cut",
+    "out": "lysis",
+    "why": "A virulent phage skips the wait: it copies itself inside the bacterium, then uses its own proteins to dissolve the cell wall. The cell bursts under its own pressure and scatters new phage. The event is named for what happens to the host — lysis.",
+    "src": "https://en.wikipedia.org/wiki/Lytic_cycle",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "water"
+    ],
+    "out": "protozoan",
+    "why": "A protozoan is just a single eukaryotic cell living free, with no tissue and no colony around it. Free-living protozoa are abundant wherever there's water — fresh, salt, brackish, or just a damp patch of soil.",
+    "src": "https://en.wikipedia.org/wiki/Protozoa",
+    "supported": true
+  },
+  {
+    "in": [
+      "protozoan",
+      "chicken"
+    ],
+    "out": "eimeria",
+    "why": "Eimeria is a genus of apicomplexan parasites, and most species are locked to one host for life. Three of them — E. tenella, E. acervulina, E. maxima — are the ones that matter economically, and all three live nowhere but a chicken's gut.",
+    "src": "https://en.wikipedia.org/wiki/Eimeria",
+    "verified": true
+  },
+  {
+    "in": [
+      "eimeria",
+      "chicken"
+    ],
+    "out": "coccidiosis",
+    "why": "Coccidiosis is what Eimeria causes once it's inside an intestine: its sporozoites invade the gut lining directly. The disease spreads from bird to bird through contact with infected droppings or infected tissue.",
+    "src": "https://en.wikipedia.org/wiki/Coccidiosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "chicken"
+    ],
+    "out": "salmonella",
+    "why": "Salmonella is a genus of rod-shaped, Gram-negative bacteria, and ordinary meat carries a real chance of being contaminated with it — chicken and pork both, by the article's own account.",
+    "src": "https://en.wikipedia.org/wiki/Salmonella",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "egg"
+    ],
+    "out": "salmonella",
+    "why": "An egg can carry Salmonella before it is even cracked. Contamination happens as the shell exits the hen through the cloaca, picking up whatever bacteria are on the bird's own droppings on the way out.",
+    "src": "https://en.wikipedia.org/wiki/Egg_as_food",
+    "verified": true
+  },
+  {
+    "in": [
+      "rna",
+      "plant"
+    ],
+    "out": "viroid",
+    "why": "Viroids are the strangest known infectious agents: circular RNA a few hundred bases long, with no protein coat at all — no gene for one, even. Every host they're known to infect is a plant, reached by aphids, contaminated tools, or simple leaf contact.",
+    "src": "https://en.wikipedia.org/wiki/Viroid",
+    "verified": true
+  },
+  {
+    "in": [
+      "salicin"
+    ],
+    "verb": "wait",
+    "out": "salicylic_acid",
+    "why": "Salicin is metabolised in the human gut into salicylic acid, the part that actually relieves pain and fever. Willow bark has carried this compound for at least 2,400 years, long before either had a name.",
+    "src": "https://en.wikipedia.org/wiki/Aspirin",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetic_acid",
+      "salicylic_acid"
+    ],
+    "out": "aspirin",
+    "why": "Felix Hoffmann made the first pure, stable acetylsalicylic acid in 1897 by attaching an acetyl group to salicylic acid's hydroxyl group. The real reagent was acetic anhydride, vinegar's sharper cousin, not the acid itself.",
+    "src": "https://en.wikipedia.org/wiki/Aspirin",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "soil"
+    ],
+    "out": "streptomyces",
+    "why": "Streptomyces bacteria live predominantly in soil and decaying vegetation, most species growing as spore-forming filaments rather than loose single cells. As a genus they produce over two-thirds of the clinically useful antibiotics ever found in nature.",
+    "src": "https://en.wikipedia.org/wiki/Streptomyces",
+    "verified": true
+  },
+  {
+    "in": [
+      "streptomyces"
+    ],
+    "verb": "wait",
+    "out": "streptomycin",
+    "why": "Albert Schatz isolated streptomycin from Streptomyces griseus on 19 October 1943, in Selman Waksman's lab at Rutgers, out of a microbe found in New Jersey soil. It became the first antibiotic cure for tuberculosis.",
+    "src": "https://en.wikipedia.org/wiki/Streptomycin",
+    "verified": true
+  },
+  {
+    "in": [
+      "streptomycin"
+    ],
+    "verb": "wait",
+    "out": "resistance",
+    "why": "Regimens built on a single drug lead to rapid resistance and treatment failure. That is exactly what happened once streptomycin alone met a bacterium that reproduces about as fast as it mutates.",
+    "src": "https://en.wikipedia.org/wiki/Tuberculosis_management",
+    "supported": true
+  },
+  {
+    "in": [
+      "soil",
+      "streptomycin"
+    ],
+    "out": "resistance",
+    "why": "Streptomyces itself grows surrounded by other soil organisms it has spent eons chemically fighting. Resistance genes were already common in soil microbial communities before anyone had purified an antibiotic out of one.",
+    "src": "https://en.wikipedia.org/wiki/Antimicrobial_resistance",
+    "supported": true
+  },
+  {
+    "in": [
+      "pig",
+      "tissue"
+    ],
+    "out": "pancreas",
+    "why": "Insulin extraction ran at industrial scale on pig and cow pancreas for six decades. Porcine insulin differs from the human hormone by exactly one amino acid, which is most of why it worked.",
+    "src": "https://en.wikipedia.org/wiki/Insulin_(medication)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pancreas"
+    ],
+    "verb": "crush",
+    "out": "insulin",
+    "why": "Extracting insulin at that scale took roughly two tons of pig pancreas to purify eight ounces of the hormone.",
+    "src": "https://en.wikipedia.org/wiki/Insulin_(medication)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "dna"
+    ],
+    "out": "insulin",
+    "why": "Humulin, approved in 1982, was the first medicine made by inserting actual human DNA into a host cell, E. coli, turning bacteria into an insulin factory and ending the reliance on animal pancreases.",
+    "src": "https://en.wikipedia.org/wiki/Insulin_(medication)",
+    "verified": true
   }
 ]
