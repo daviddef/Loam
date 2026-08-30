@@ -11956,7 +11956,6 @@
       "animal"
     ],
     "fact": "A decapod crustacean built for swimming — an elongated body, not a crab's sideways scuttle.",
-    "terminal": true,
     "taxon": "tx_malacostraca"
   },
   {
@@ -11969,7 +11968,6 @@
       "animal"
     ],
     "fact": "Its tail is folded flat under its own body — that's the trait that lets it run sideways.",
-    "terminal": true,
     "taxon": "tx_malacostraca"
   },
   {
@@ -13583,8 +13581,7 @@
       "water"
     ],
     "fact": "A single polyp that can span a metre, with no stony skeleton — clownfish live in it, immune to its sting.",
-    "taxon": "tx_actiniaria",
-    "terminal": true
+    "taxon": "tx_actiniaria"
   },
   {
     "id": "crown_of_thorns",
@@ -14091,5 +14088,230 @@
     "fact": "Bred for centuries in China purely as an imperial companion — pet pugs were reportedly kept in luxury and guarded by soldiers.",
     "terminal": true,
     "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "atlantic_cod",
+    "name": "Atlantic Cod",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "One female releases up to 15 million eggs in a season, yet overfishing crashed the Grand Banks cod by over 95% by 1992.",
+    "terminal": true,
+    "taxon": "tx_gadiformes"
+  },
+  {
+    "id": "atlantic_herring",
+    "name": "Atlantic Herring",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Schools can hold four billion fish across four cubic kilometres of ocean — tight enough their ripples show from a mile off.",
+    "terminal": true,
+    "taxon": "tx_clupeiformes"
+  },
+  {
+    "id": "rainbow_trout",
+    "name": "Rainbow Trout",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Some stay in freshwater for life; others, called steelhead, swim to sea and back, spawning several times instead of dying after one run.",
+    "terminal": true,
+    "taxon": "tx_salmoniformes"
+  },
+  {
+    "id": "northern_pike",
+    "name": "Northern Pike",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "An ambush predator that strikes in a fraction of a second — and eats smaller pike as readily as any other fish.",
+    "terminal": true,
+    "taxon": "tx_salmoniformes"
+  },
+  {
+    "id": "common_carp",
+    "name": "Common Carp",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal",
+      "wild"
+    ],
+    "fact": "A bottom-feeder tough enough for water too muddy and low in oxygen for most fish; Romans farmed it in ponds two thousand years ago.",
+    "taxon": "tx_cypriniformes"
+  },
+  {
+    "id": "goldfish",
+    "name": "Goldfish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Bred from colour-mutated carp in China for a thousand years — kept in ceramic pots instead of open ponds so mutants survived to be bred.",
+    "terminal": true,
+    "taxon": "tx_cypriniformes"
+  },
+  {
+    "id": "koi",
+    "name": "Koi",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "An ornamental Amur carp bred for colour in Niigata, Japan since the 1820s — released to the wild, it reverts to its ancestor's plain colouring in a few generations.",
+    "terminal": true,
+    "taxon": "tx_cypriniformes"
+  },
+  {
+    "id": "european_eel",
+    "name": "European Eel",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Lives the reverse of a salmon: it grows for years in European rivers, then swims to the Sargasso Sea to spawn once and die.",
+    "terminal": true,
+    "taxon": "tx_anguilliformes"
+  },
+  {
+    "id": "wels_catfish",
+    "name": "Wels Catfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Europe's largest native freshwater fish — scaleless, with six barbels it uses to smell out prey along the muddy riverbed.",
+    "terminal": true,
+    "taxon": "tx_siluriformes"
+  },
+  {
+    "id": "swordfish",
+    "name": "Swordfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Loses every tooth and scale by adulthood; organs by its eyes and brain keep its vision 10 to 15°C warmer than the cold water it hunts in.",
+    "terminal": true,
+    "taxon": "tx_carangiformes"
+  },
+  {
+    "id": "marlin",
+    "name": "Marlin",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Reaching 5 metres and 800 kilograms, it flares blue and lavender stripes down its flanks in a flash just before striking prey.",
+    "terminal": true,
+    "taxon": "tx_carangiformes"
+  },
+  {
+    "id": "european_plaice",
+    "name": "European Plaice",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Hatches symmetrical like any fish; within weeks one eye migrates across its skull, and it settles flat onto the seabed for life.",
+    "terminal": true,
+    "taxon": "tx_carangiformes"
+  },
+  {
+    "id": "seahorse",
+    "name": "Seahorse",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "The male gets pregnant, not the female — she deposits eggs into his brood pouch, and he carries them up to 45 days before giving birth.",
+    "terminal": true,
+    "taxon": "tx_syngnathiformes"
+  },
+  {
+    "id": "clownfish",
+    "name": "Clownfish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Lives in a sea anemone's stinging tentacles, protected by mucus that mimics the anemone's own chemistry; the breeding male changes sex if the female dies.",
+    "terminal": true,
+    "taxon": "tx_blenniiformes"
+  },
+  {
+    "id": "piranha",
+    "name": "Piranha",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Its reputation as a pack hunter is a myth — most species are omnivores that school mainly to protect themselves, not to hunt in a frenzy.",
+    "terminal": true,
+    "taxon": "tx_characiformes"
+  },
+  {
+    "id": "largemouth_bass",
+    "name": "Largemouth Bass",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "The male alone builds the nest and guards the eggs and fry for weeks — a level of care that's helped it invade rivers from Japan to Guatemala.",
+    "terminal": true,
+    "taxon": "tx_centrarchiformes"
+  },
+  {
+    "id": "nile_perch",
+    "name": "Nile Perch",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "animal"
+    ],
+    "fact": "Introduced to Lake Victoria in the 1950s, it ate through the native cichlids so completely it's blamed for several hundred extinctions.",
+    "terminal": true,
+    "taxon": "tx_carangiformes"
   }
 ]

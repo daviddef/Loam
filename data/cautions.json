@@ -589,6 +589,14 @@
         "stonefish",
         "common_lionfish"
       ]
+    },
+    "piranha_bite": {
+      "label": "Rare, and rarely serious — but real",
+      "note": "The pack-hunter reputation is mostly myth, and unprovoked attacks on people are uncommon. But piranhas do bite: incidents at crowded swimming spots in Brazil and Argentina have sent dozens of people to hospital with foot and heel wounds in a single day, mostly minor, occasionally needing stitches. Fatal attacks are exceptionally rare.",
+      "severity": "conditional",
+      "ids": [
+        "piranha"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
