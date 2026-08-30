@@ -2236,6 +2236,105 @@
       "fact": "Just two living species — the American alligator and the far rarer Chinese alligator, the only other member of the genus.",
       "srcTitle": "Alligator",
       "src": "https://en.wikipedia.org/wiki/Alligator"
+    },
+    {
+      "id": "tx_herrerasauria",
+      "rank": "suborder",
+      "parent": "tx_saurischia",
+      "name": "Herrerasauria",
+      "fact": "An early saurischian lineage among the very earliest known dinosaurs, so close to the theropod/sauropodomorph split its own branch is still debated.",
+      "srcTitle": "Herrerasauria",
+      "src": "https://en.wikipedia.org/wiki/Herrerasauria"
+    },
+    {
+      "id": "tx_ceratosauria",
+      "rank": "infraorder",
+      "parent": "tx_theropoda",
+      "name": "Ceratosauria",
+      "fact": "Theropods sharing a more recent common ancestor with Ceratosaurus than with birds — mostly Southern Hemisphere predators with ornamented skulls and short forelimbs.",
+      "srcTitle": "Ceratosauria",
+      "src": "https://en.wikipedia.org/wiki/Ceratosauria"
+    },
+    {
+      "id": "tx_abelisauridae",
+      "rank": "family",
+      "parent": "tx_ceratosauria",
+      "name": "Abelisauridae",
+      "fact": "Stocky-legged ceratosaurian predators of Cretaceous Gondwana, with ornate, pitted skulls and forelimbs reduced almost to uselessness.",
+      "srcTitle": "Abelisauridae",
+      "src": "https://en.wikipedia.org/wiki/Abelisauridae"
+    },
+    {
+      "id": "tx_carcharodontosauridae",
+      "rank": "family",
+      "parent": "tx_carnosauria",
+      "name": "Carcharodontosauridae",
+      "fact": "Carnosaurs that rivaled Tyrannosaurus for largest land predator ever, with blade-like serrated teeth built for slicing rather than crushing bone.",
+      "srcTitle": "Carcharodontosauridae",
+      "src": "https://en.wikipedia.org/wiki/Carcharodontosauridae"
+    },
+    {
+      "id": "tx_spinosauridae",
+      "rank": "family",
+      "parent": "tx_megalosauroidea",
+      "name": "Spinosauridae",
+      "fact": "Long-snouted, crocodile-skulled megalosauroids with conical teeth, some carrying tall sail-like neural spines, adapted toward hunting fish.",
+      "srcTitle": "Spinosauridae",
+      "src": "https://en.wikipedia.org/wiki/Spinosauridae"
+    },
+    {
+      "id": "tx_therizinosauria",
+      "rank": "infraorder",
+      "parent": "tx_coelurosauria",
+      "name": "Therizinosauria",
+      "fact": "Herbivorous coelurosaurs with the longest claws of any known animal, a long neck, and hips that convergently resemble an ornithischian's.",
+      "srcTitle": "Therizinosauria",
+      "src": "https://en.wikipedia.org/wiki/Therizinosauria"
+    },
+    {
+      "id": "tx_oviraptorosauria",
+      "rank": "infraorder",
+      "parent": "tx_coelurosauria",
+      "name": "Oviraptorosauria",
+      "fact": "Feathered, beaked, mostly toothless maniraptorans, some crested like a cassowary — among the theropods closest to birds.",
+      "srcTitle": "Oviraptorosauria",
+      "src": "https://en.wikipedia.org/wiki/Oviraptorosauria"
+    },
+    {
+      "id": "tx_ornithomimosauria",
+      "rank": "infraorder",
+      "parent": "tx_coelurosauria",
+      "name": "Ornithomimosauria",
+      "fact": "Ostrich-mimic coelurosaurs — long-legged, small-headed and fast, ranging in diet from omnivorous to herbivorous.",
+      "srcTitle": "Ornithomimosauria",
+      "src": "https://en.wikipedia.org/wiki/Ornithomimosauria"
+    },
+    {
+      "id": "tx_psittacosauridae",
+      "rank": "family",
+      "parent": "tx_ceratopsia",
+      "name": "Psittacosauridae",
+      "fact": "The earliest well-known ceratopsians, an early offshoot rather than a direct ancestor of the later horned, frilled forms.",
+      "srcTitle": "Psittacosauridae",
+      "src": "https://en.wikipedia.org/wiki/Psittacosaurus"
+    },
+    {
+      "id": "tx_centrosaurinae",
+      "rank": "subfamily",
+      "parent": "tx_ceratopsidae",
+      "name": "Centrosaurinae",
+      "fact": "Ceratopsids with a large nose horn, short brow horns and elaborately spiked frills, known mostly from western North America.",
+      "srcTitle": "Centrosaurinae",
+      "src": "https://en.wikipedia.org/wiki/Centrosaurinae"
+    },
+    {
+      "id": "tx_chasmosaurinae",
+      "rank": "subfamily",
+      "parent": "tx_ceratopsidae",
+      "name": "Chasmosaurinae",
+      "fact": "Ceratopsids with long, prominent brow horns and long frills carrying little spiking, unlike Centrosaurinae's shorter-horned, heavier ornamentation.",
+      "srcTitle": "Chasmosaurinae",
+      "src": "https://en.wikipedia.org/wiki/Chasmosaurinae"
     }
   ]
 }

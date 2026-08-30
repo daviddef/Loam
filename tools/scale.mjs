@@ -144,7 +144,7 @@ const SCALE = {
           'atlantic_herring', 'rainbow_trout', 'northern_pike', 'common_carp', 'goldfish', 'koi',
           'european_eel', 'european_plaice', 'clownfish', 'piranha', 'largemouth_bass',
           'dragonfly', 'locust', 'mantis', 'scorpion',
-          'eoraptor', 'compsognathus', 'archaeopteryx',
+          'eoraptor', 'compsognathus', 'archaeopteryx', 'microraptor', 'psittacosaurus',
           'leptocyon',
           'ascaris_lumbricoides', 'lymphatic_filariasis',
           'sea_urchin', 'mutualism', 'pioneer_species', 'decomposer',
@@ -169,6 +169,7 @@ const SCALE = {
           'pakicetus', 'ambulocetus', 'rodhocetus',
           'atlantic_cod', 'wels_catfish', 'nile_perch',
           'coelophysis', 'velociraptor', 'deinonychus', 'protoceratops', 'pachycephalosaurus', 'stegoceras',
+          'herrerasaurus', 'oviraptor', 'massospondylus', 'camptosaurus',
           'primary_consumer', 'secondary_consumer', 'trophic_level', 'apex_predator', 'sea_otter', 'keystone_species', 'commensalism',
           'leopard', 'jaguar', 'snow_leopard', 'cheetah', 'cougar',
           'red_fox', 'coyote', 'african_wild_dog',
@@ -184,6 +185,9 @@ const SCALE = {
           'swordfish', 'marlin',
           'allosaurus', 'spinosaurus', 'tyrannosaurus', 'plateosaurus', 'brachiosaurus', 'apatosaurus',
           'stegosaurus', 'ankylosaurus', 'triceratops', 'iguanodon', 'parasaurolophus', 'quetzalcoatlus', 'elasmosaurus',
+          // dinosaurs batch 2 — a second sourced pass, same tens-of-metres/large-animal bucket as their batch 1 kin
+          'dilophosaurus', 'ceratosaurus', 'carnotaurus', 'giganotosaurus', 'baryonyx', 'therizinosaurus',
+          'gallimimus', 'diplodocus', 'euoplocephalus', 'styracosaurus', 'pentaceratops', 'maiasaura',
           // geography batch 1 — a sea cave (tens of metres) and a geyser's eruption column, both roughly building-scale
           'sea_cave', 'geyser'],
   '2':   ['giant_sequoia', 'coast_redwood',
