@@ -14337,8 +14337,7 @@
       "wild"
     ],
     "fact": "A colony functions almost as a single superorganism: one or more queens do all the reproducing, and thousands of sterile female workers do everything else.",
-    "taxon": "tx_hymenoptera",
-    "terminal": true
+    "taxon": "tx_hymenoptera"
   },
   {
     "id": "ladybird",
@@ -14859,5 +14858,213 @@
     ],
     "fact": "A Middle Pleistocene Eurasian wolf, smaller than a modern gray wolf and comparable in size to today's Indian wolf — the direct predecessor of Canis lupus itself.",
     "taxon": "tx_canis"
+  },
+  {
+    "id": "venus_flytrap",
+    "name": "Venus Flytrap",
+    "emoji": "🪤",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Two trigger hairs must be touched within 20 seconds of each other before the trap snaps shut in a tenth of a second.",
+    "taxon": "tx_dionaea",
+    "terminal": true
+  },
+  {
+    "id": "nepenthes",
+    "name": "Pitcher Plant",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A wax-slicked rim tips ants and other insects into the fluid below — how it gets nitrogen from poor tropical soil.",
+    "taxon": "tx_nepenthes",
+    "terminal": true
+  },
+  {
+    "id": "sundew",
+    "name": "Sundew",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Greek for 'dewy' — its glistening mucilage traps an insect and finishes digesting it in about 15 minutes.",
+    "taxon": "tx_drosera",
+    "terminal": true
+  },
+  {
+    "id": "mistletoe",
+    "name": "Mistletoe",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A hemiparasite: its haustorium taps a host tree's water and minerals while its own green leaves still photosynthesise.",
+    "taxon": "tx_viscum",
+    "terminal": true
+  },
+  {
+    "id": "rafflesia",
+    "name": "Rafflesia",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "No leaves, stem or roots of its own — just a flower up to a metre across, bursting from a host vine and reeking of rot.",
+    "taxon": "tx_rafflesia",
+    "terminal": true
+  },
+  {
+    "id": "welwitschia",
+    "name": "Welwitschia",
+    "emoji": "🎗️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Grows exactly two leaves in its entire life and never sheds them — some Namib Desert plants are 2,000 years old.",
+    "taxon": "tx_welwitschia",
+    "terminal": true
+  },
+  {
+    "id": "water_lily",
+    "name": "Water Lily",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Air channels called aerenchyma keep its floating leaves buoyant and pipe oxygen down to roots anchored in the mud.",
+    "taxon": "tx_nymphaea",
+    "terminal": true
+  },
+  {
+    "id": "duckweed",
+    "name": "Duckweed",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "The world's smallest flowering plants — Wolffia's flower is just 0.3mm — reproducing mostly by budding, not seed.",
+    "taxon": "tx_lemnoideae",
+    "terminal": true
+  },
+  {
+    "id": "orchid",
+    "name": "Orchid",
+    "emoji": "🪻",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Seeds are dust-fine with no food reserve of their own — almost every species needs a fungus just to germinate.",
+    "taxon": "tx_orchidaceae",
+    "terminal": true
+  },
+  {
+    "id": "giant_sequoia",
+    "name": "Giant Sequoia",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "The most massive tree alive by volume — bark nearly a metre thick shields it from the fires that pop open its cones.",
+    "taxon": "tx_sequoiadendron",
+    "terminal": true
+  },
+  {
+    "id": "coast_redwood",
+    "name": "Coast Redwood",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "The tallest tree species alive, over 116m — its needles pull fog straight through their skin, bypassing the xylem.",
+    "taxon": "tx_sequoia",
+    "terminal": true
+  },
+  {
+    "id": "moss",
+    "name": "Moss",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "No roots or water-carrying vessels — just rhizoids for grip, and a film of water its swimming sperm need to fertilise.",
+    "taxon": "tx_bryophyta",
+    "terminal": true
+  },
+  {
+    "id": "liverwort",
+    "name": "Liverwort",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Among the first plants to leave the water, 470 million years ago — raindrops still launch its spore-filled gemmae.",
+    "taxon": "tx_marchantiophyta",
+    "terminal": true
+  },
+  {
+    "id": "bracken_fern",
+    "name": "Bracken Fern",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "One of the world's most widespread plants, spreading mainly by rhizome — its ptaquiloside is a documented carcinogen.",
+    "taxon": "tx_pteridium",
+    "terminal": true
+  },
+  {
+    "id": "edelweiss",
+    "name": "Edelweiss",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Dense white wool on its star-shaped flower head scatters UV radiation near the snowline, 1,800 to 3,400m up.",
+    "taxon": "tx_leontopodium",
+    "terminal": true
+  },
+  {
+    "id": "saguaro",
+    "name": "Saguaro",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Its pleated trunk expands like an accordion to store rainwater — and it may take 75 years to grow its first arm.",
+    "taxon": "tx_carnegiea",
+    "terminal": true
   }
 ]

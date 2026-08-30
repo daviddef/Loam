@@ -613,6 +613,22 @@
       "ids": [
         "tick"
       ]
+    },
+    "mistletoe_toxicity": {
+      "label": "Mistletoe berries and leaves are toxic if eaten",
+      "note": "American mistletoe contains phoratoxins that can cause blurred vision, nausea, diarrhoea and vomiting, though the US National Capital Poison Center notes severe reactions are rare and usually limited to minor stomach upset. European mistletoe contains viscumin (a lectin) which at high doses can disrupt protein synthesis in cells. Both berries and leaves carry the risk, across species.",
+      "severity": "conditional",
+      "ids": [
+        "mistletoe"
+      ]
+    },
+    "bracken_ptaquiloside": {
+      "label": "Bracken fern carries a documented carcinogen",
+      "note": "Pteridium aquilinum contains ptaquiloside, linked to haemorrhagic disease and tumours in grazing livestock, and to elevated stomach and oesophageal cancer risk in human populations where the young fronds are traditionally eaten. The compound is water-soluble and breaks down with soaking, boiling, or age.",
+      "severity": "cumulative",
+      "ids": [
+        "bracken_fern"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

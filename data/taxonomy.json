@@ -1093,6 +1093,429 @@
       "fact": "A jackal-sized Miocene canid, and the genus most directly responsible for spreading the canine lineage out of North America and into Eurasia.",
       "srcTitle": "Eucyon",
       "src": "https://en.wikipedia.org/wiki/Eucyon"
+    },
+    {
+      "id": "tx_plantae",
+      "rank": "kingdom",
+      "parent": null,
+      "name": "Plantae",
+      "fact": "Multicellular eukaryotes that make their own food by photosynthesis, walled in cellulose rather than the chitin of a fungus or the flexible membrane of an animal cell.",
+      "srcTitle": "Plant",
+      "src": "https://en.wikipedia.org/wiki/Plant"
+    },
+    {
+      "id": "tx_bryophyta",
+      "rank": "phylum",
+      "parent": "tx_plantae",
+      "name": "Bryophyta",
+      "fact": "Mosses: no roots, just thread-like rhizoids for grip, and no xylem or phloem to move water internally — every cell is close enough to the surface to hydrate on its own.",
+      "srcTitle": "Moss",
+      "src": "https://en.wikipedia.org/wiki/Moss"
+    },
+    {
+      "id": "tx_marchantiophyta",
+      "rank": "phylum",
+      "parent": "tx_plantae",
+      "name": "Marchantiophyta",
+      "fact": "Liverworts: among the very first plant lineages to leave the water, over 470 million years ago, still dependent like mosses on a film of surface water for their sperm to swim through.",
+      "srcTitle": "Marchantiophyta",
+      "src": "https://en.wikipedia.org/wiki/Liverwort"
+    },
+    {
+      "id": "tx_tracheophyta",
+      "rank": "phylum",
+      "parent": "tx_plantae",
+      "name": "Tracheophyta",
+      "fact": "Vascular plants: internal piping — xylem for water, phloem for sugar — that lets a plant stand tall and move resources far from where roots or leaves actually are.",
+      "srcTitle": "Vascular plant",
+      "src": "https://en.wikipedia.org/wiki/Vascular_plant"
+    },
+    {
+      "id": "tx_polypodiopsida",
+      "rank": "class",
+      "parent": "tx_tracheophyta",
+      "name": "Polypodiopsida",
+      "fact": "Ferns: vascular, but reproducing by spore rather than seed or flower, with fronds that typically unfurl from a tight coil called a fiddlehead.",
+      "srcTitle": "Fern",
+      "src": "https://en.wikipedia.org/wiki/Fern"
+    },
+    {
+      "id": "tx_polypodiales",
+      "rank": "order",
+      "parent": "tx_polypodiopsida",
+      "name": "Polypodiales",
+      "fact": "The largest order of ferns by far, holding roughly 80% of all living fern species — nearly every fern you're likely to recognise sits somewhere inside it.",
+      "srcTitle": "Polypodiales",
+      "src": "https://en.wikipedia.org/wiki/Polypodiales"
+    },
+    {
+      "id": "tx_dennstaedtiaceae",
+      "rank": "family",
+      "parent": "tx_polypodiales",
+      "name": "Dennstaedtiaceae",
+      "fact": "A family of mostly coarse, fast-spreading ferns, several of them — bracken among them — able to dominate open, disturbed ground more aggressively than almost any other fern.",
+      "srcTitle": "Dennstaedtiaceae",
+      "src": "https://en.wikipedia.org/wiki/Dennstaedtiaceae"
+    },
+    {
+      "id": "tx_pteridium",
+      "rank": "genus",
+      "parent": "tx_dennstaedtiaceae",
+      "name": "Pteridium",
+      "fact": "Bracken — a genus of just a handful of species, but between them one of the most widely distributed plant genera on Earth, native to every continent except Antarctica.",
+      "srcTitle": "Pteridium",
+      "src": "https://en.wikipedia.org/wiki/Bracken"
+    },
+    {
+      "id": "tx_spermatophyta",
+      "rank": "subphylum",
+      "parent": "tx_tracheophyta",
+      "name": "Spermatophyta",
+      "fact": "Seed plants: an embryo packaged with its own food supply inside a protective coat, able to lie dormant for years rather than needing water on hand the moment it's released.",
+      "srcTitle": "Spermatophyte",
+      "src": "https://en.wikipedia.org/wiki/Seed_plant"
+    },
+    {
+      "id": "tx_pinophyta",
+      "rank": "class",
+      "parent": "tx_spermatophyta",
+      "name": "Pinophyta",
+      "fact": "Conifers: cone-bearing, mostly evergreen, needle- or scale-leaved gymnosperms — seed plants that never evolved a flower or a fruit around the seed.",
+      "srcTitle": "Conifer",
+      "src": "https://en.wikipedia.org/wiki/Conifer"
+    },
+    {
+      "id": "tx_cupressales",
+      "rank": "order",
+      "parent": "tx_pinophyta",
+      "name": "Cupressales",
+      "fact": "Cypresses and their relatives — one of the two great living conifer orders, and the one that holds the redwoods and giant sequoia alongside junipers and true cypresses.",
+      "srcTitle": "Cupressales",
+      "src": "https://en.wikipedia.org/wiki/Cupressales"
+    },
+    {
+      "id": "tx_cupressaceae",
+      "rank": "family",
+      "parent": "tx_cupressales",
+      "name": "Cupressaceae",
+      "fact": "The cypress family — around 30 genera worldwide, spanning scale-leaved hedge cypresses, junipers, and the three redwood genera of subfamily Sequoioideae.",
+      "srcTitle": "Cupressaceae",
+      "src": "https://en.wikipedia.org/wiki/Cupressaceae"
+    },
+    {
+      "id": "tx_sequoioideae",
+      "rank": "subfamily",
+      "parent": "tx_cupressaceae",
+      "name": "Sequoioideae",
+      "fact": "The redwood subfamily: just three living genera left of a once wider group — Sequoia on the California coast, Sequoiadendron in the Sierra Nevada, and Metasequoia in China.",
+      "srcTitle": "Sequoioideae",
+      "src": "https://en.wikipedia.org/wiki/Sequoioideae"
+    },
+    {
+      "id": "tx_sequoiadendron",
+      "rank": "genus",
+      "parent": "tx_sequoioideae",
+      "name": "Sequoiadendron",
+      "fact": "A monotypic genus — one living species, the giant sequoia — with a fossil record reaching back to the Late Cretaceous, over 66 million years before the present.",
+      "srcTitle": "Sequoiadendron",
+      "src": "https://en.wikipedia.org/wiki/Sequoiadendron"
+    },
+    {
+      "id": "tx_sequoia",
+      "rank": "genus",
+      "parent": "tx_sequoioideae",
+      "name": "Sequoia",
+      "fact": "Also monotypic today, holding only the coast redwood — sister genus to Sequoiadendron, though the two split onto opposite sides of California long ago.",
+      "srcTitle": "Sequoia (genus)",
+      "src": "https://en.wikipedia.org/wiki/Sequoia_(genus)"
+    },
+    {
+      "id": "tx_gnetophyta",
+      "rank": "class",
+      "parent": "tx_spermatophyta",
+      "name": "Gnetophyta",
+      "fact": "The strangest gymnosperms: just three surviving genera — Gnetum, Ephedra and Welwitschia — sharing vessel elements in their wood, a feature otherwise almost exclusive to flowering plants.",
+      "srcTitle": "Gnetophyta",
+      "src": "https://en.wikipedia.org/wiki/Gnetidae"
+    },
+    {
+      "id": "tx_welwitschiales",
+      "rank": "order",
+      "parent": "tx_gnetophyta",
+      "name": "Welwitschiales",
+      "fact": "An order containing a single family and a single genus — Welwitschia — one of the most extreme cases of taxonomic isolation among living plants.",
+      "srcTitle": "Welwitschiales",
+      "src": "https://en.wikipedia.org/wiki/Welwitschiaceae"
+    },
+    {
+      "id": "tx_welwitschiaceae",
+      "rank": "family",
+      "parent": "tx_welwitschiales",
+      "name": "Welwitschiaceae",
+      "fact": "A monotypic family built around one desert-adapted genus, Welwitschia, found nowhere but a narrow strip of the Namib Desert coast.",
+      "srcTitle": "Welwitschiaceae",
+      "src": "https://en.wikipedia.org/wiki/Welwitschiaceae"
+    },
+    {
+      "id": "tx_welwitschia",
+      "rank": "genus",
+      "parent": "tx_welwitschiaceae",
+      "name": "Welwitschia",
+      "fact": "One living species, Welwitschia mirabilis, growing just two strap-shaped leaves for its entire lifetime — some individuals estimated at close to 2,000 years old.",
+      "srcTitle": "Welwitschia",
+      "src": "https://en.wikipedia.org/wiki/Welwitschia"
+    },
+    {
+      "id": "tx_angiospermae",
+      "rank": "class",
+      "parent": "tx_spermatophyta",
+      "name": "Angiospermae",
+      "fact": "Flowering plants: seeds enclosed inside an ovary that ripens into fruit — over 300,000 species, by far the largest and most diverse group of living plants.",
+      "srcTitle": "Flowering plant",
+      "src": "https://en.wikipedia.org/wiki/Flowering_plant"
+    },
+    {
+      "id": "tx_nymphaeales",
+      "rank": "order",
+      "parent": "tx_angiospermae",
+      "name": "Nymphaeales",
+      "fact": "Water lilies and their relatives sit among the earliest-diverging lineages of flowering plants — branching off near the base of the angiosperm family tree, close behind Amborella.",
+      "srcTitle": "Nymphaeales",
+      "src": "https://en.wikipedia.org/wiki/Nymphaeales"
+    },
+    {
+      "id": "tx_nymphaeaceae",
+      "rank": "family",
+      "parent": "tx_nymphaeales",
+      "name": "Nymphaeaceae",
+      "fact": "The true water lily family — floating or emergent aquatic herbs rooted in mud, with air-channelled leaves and stems built to keep submerged tissue oxygenated.",
+      "srcTitle": "Nymphaeaceae",
+      "src": "https://en.wikipedia.org/wiki/Nymphaeaceae"
+    },
+    {
+      "id": "tx_nymphaea",
+      "rank": "genus",
+      "parent": "tx_nymphaeaceae",
+      "name": "Nymphaea",
+      "fact": "The true water lilies, and the genus that gives the whole family its name — around 50 species found on every continent except Antarctica.",
+      "srcTitle": "Nymphaea",
+      "src": "https://en.wikipedia.org/wiki/Nymphaea"
+    },
+    {
+      "id": "tx_monocots",
+      "rank": "superorder",
+      "parent": "tx_angiospermae",
+      "name": "Monocots",
+      "fact": "Flowering plants with a single seed leaf, parallel-veined leaves, and vascular bundles scattered through the stem rather than arranged in a ring — grasses, palms and orchids among them.",
+      "srcTitle": "Monocotyledon",
+      "src": "https://en.wikipedia.org/wiki/Monocotyledon"
+    },
+    {
+      "id": "tx_alismatales",
+      "rank": "order",
+      "parent": "tx_monocots",
+      "name": "Alismatales",
+      "fact": "A monocot order unusually rich in aquatic and wetland plants — pondweeds, arrowheads, seagrasses and the arum family all sit inside it.",
+      "srcTitle": "Alismatales",
+      "src": "https://en.wikipedia.org/wiki/Alismatales"
+    },
+    {
+      "id": "tx_araceae",
+      "rank": "family",
+      "parent": "tx_alismatales",
+      "name": "Araceae",
+      "fact": "The arum family — from towering titan arums down to duckweed, now classified inside this family as subfamily Lemnoideae despite once being ranked as its own family entirely.",
+      "srcTitle": "Araceae",
+      "src": "https://en.wikipedia.org/wiki/Araceae"
+    },
+    {
+      "id": "tx_lemnoideae",
+      "rank": "subfamily",
+      "parent": "tx_araceae",
+      "name": "Lemnoideae",
+      "fact": "Duckweeds: flowering plants reduced to a floating frond a few millimetres across at most, with the genus Wolffia holding the smallest flower of any plant known, just 0.3mm long.",
+      "srcTitle": "Lemnoideae",
+      "src": "https://en.wikipedia.org/wiki/Lemnoideae"
+    },
+    {
+      "id": "tx_asparagales",
+      "rank": "order",
+      "parent": "tx_monocots",
+      "name": "Asparagales",
+      "fact": "A large monocot order — asparagus, agaves, irises and, most diverse of all its families, the orchids.",
+      "srcTitle": "Asparagales",
+      "src": "https://en.wikipedia.org/wiki/Asparagales"
+    },
+    {
+      "id": "tx_orchidaceae",
+      "rank": "family",
+      "parent": "tx_asparagales",
+      "name": "Orchidaceae",
+      "fact": "One of the two largest families of flowering plants, around 28,000 species, most producing seeds so fine and food-free that they need a mycorrhizal fungus just to germinate.",
+      "srcTitle": "Orchidaceae",
+      "src": "https://en.wikipedia.org/wiki/Orchid"
+    },
+    {
+      "id": "tx_eudicots",
+      "rank": "superorder",
+      "parent": "tx_angiospermae",
+      "name": "Eudicots",
+      "fact": "The larger of the two great flowering-plant lineages — pollen with three furrows rather than one, and typically two seed leaves rather than a monocot's single one.",
+      "srcTitle": "Eudicots",
+      "src": "https://en.wikipedia.org/wiki/Eudicots"
+    },
+    {
+      "id": "tx_caryophyllales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Caryophyllales",
+      "fact": "An order that unites cacti, beets and carnations with two entire carnivorous-plant families — Droseraceae and Nepenthaceae both evolved their traps somewhere inside it.",
+      "srcTitle": "Caryophyllales",
+      "src": "https://en.wikipedia.org/wiki/Caryophyllales"
+    },
+    {
+      "id": "tx_droseraceae",
+      "rank": "family",
+      "parent": "tx_caryophyllales",
+      "name": "Droseraceae",
+      "fact": "Three genera — Drosera, Dionaea and Aldrovanda — sharing one carnivorous ancestor; molecular evidence shows the two snap-trap genera are each other's closest relative, so the snap trap evolved only once.",
+      "srcTitle": "Droseraceae",
+      "src": "https://en.wikipedia.org/wiki/Droseraceae"
+    },
+    {
+      "id": "tx_dionaea",
+      "rank": "genus",
+      "parent": "tx_droseraceae",
+      "name": "Dionaea",
+      "fact": "A single living species, the Venus flytrap, native to nowhere but a small patch of the Carolinas — one of the most geographically restricted carnivorous plants on Earth.",
+      "srcTitle": "Dionaea",
+      "src": "https://en.wikipedia.org/wiki/Dionaea"
+    },
+    {
+      "id": "tx_drosera",
+      "rank": "genus",
+      "parent": "tx_droseraceae",
+      "name": "Drosera",
+      "fact": "The sundews — at least 194 species, making this the largest genus of carnivorous plants by far, unified by sticky, glistening, dew-like traps on every leaf.",
+      "srcTitle": "Drosera",
+      "src": "https://en.wikipedia.org/wiki/Drosera"
+    },
+    {
+      "id": "tx_nepenthaceae",
+      "rank": "family",
+      "parent": "tx_caryophyllales",
+      "name": "Nepenthaceae",
+      "fact": "A monotypic family holding only the genus Nepenthes, the tropical pitcher plants, concentrated on Borneo, Sumatra and the Philippines.",
+      "srcTitle": "Nepenthaceae",
+      "src": "https://en.wikipedia.org/wiki/Nepenthes"
+    },
+    {
+      "id": "tx_nepenthes",
+      "rank": "genus",
+      "parent": "tx_nepenthaceae",
+      "name": "Nepenthes",
+      "fact": "The tropical pitcher plants, trapping prey passively — no moving parts, just a slippery wax-lined pitfall baited with nectar around the rim.",
+      "srcTitle": "Nepenthes",
+      "src": "https://en.wikipedia.org/wiki/Nepenthes"
+    },
+    {
+      "id": "tx_cactaceae",
+      "rank": "family",
+      "parent": "tx_caryophyllales",
+      "name": "Cactaceae",
+      "fact": "The cactus family, almost entirely native to the Americas — around 1,750 species, nearly all running photosynthesis backwards, opening their pores at night rather than by day.",
+      "srcTitle": "Cactaceae",
+      "src": "https://en.wikipedia.org/wiki/Cactus"
+    },
+    {
+      "id": "tx_carnegiea",
+      "rank": "genus",
+      "parent": "tx_cactaceae",
+      "name": "Carnegiea",
+      "fact": "A single living species, the saguaro — the columnar giant of the Sonoran Desert, named for the steel magnate Andrew Carnegie.",
+      "srcTitle": "Carnegiea gigantea",
+      "src": "https://en.wikipedia.org/wiki/Saguaro"
+    },
+    {
+      "id": "tx_santalales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Santalales",
+      "fact": "An order unusually full of parasites — sandalwoods and mistletoes both belong here, tapping into a host plant's tissue rather than making everything they need from scratch.",
+      "srcTitle": "Santalales",
+      "src": "https://en.wikipedia.org/wiki/Santalales"
+    },
+    {
+      "id": "tx_santalaceae",
+      "rank": "family",
+      "parent": "tx_santalales",
+      "name": "Santalaceae",
+      "fact": "The sandalwood family, expanded in modern classification to absorb the former mistletoe family Viscaceae — Viscum, the type genus of true mistletoe, sits inside it.",
+      "srcTitle": "Santalaceae",
+      "src": "https://en.wikipedia.org/wiki/Santalaceae"
+    },
+    {
+      "id": "tx_viscum",
+      "rank": "genus",
+      "parent": "tx_santalaceae",
+      "name": "Viscum",
+      "fact": "True mistletoe — around 100 hemiparasitic species, each tapping a host tree's xylem through a haustorium while still photosynthesising with its own green leaves.",
+      "srcTitle": "Viscum",
+      "src": "https://en.wikipedia.org/wiki/Viscum"
+    },
+    {
+      "id": "tx_malpighiales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Malpighiales",
+      "fact": "A huge, famously hard-to-define eudicot order — willows and violets sit here alongside Rafflesiaceae, whose giant flowers gave no visual hint of the relationship until DNA evidence forced the reclassification.",
+      "srcTitle": "Malpighiales",
+      "src": "https://en.wikipedia.org/wiki/Malpighiales"
+    },
+    {
+      "id": "tx_rafflesiaceae",
+      "rank": "family",
+      "parent": "tx_malpighiales",
+      "name": "Rafflesiaceae",
+      "fact": "Just three genera and around 36 species, every one a leafless, stemless, rootless parasite living inside a host vine until it's time to flower.",
+      "srcTitle": "Rafflesiaceae",
+      "src": "https://en.wikipedia.org/wiki/Rafflesiaceae"
+    },
+    {
+      "id": "tx_rafflesia",
+      "rank": "genus",
+      "parent": "tx_rafflesiaceae",
+      "name": "Rafflesia",
+      "fact": "The genus that includes Rafflesia arnoldii, whose flower — at over a metre across and up to 10kg — is the largest single bloom of any flowering plant on Earth.",
+      "srcTitle": "Rafflesia",
+      "src": "https://en.wikipedia.org/wiki/Rafflesia"
+    },
+    {
+      "id": "tx_asterales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Asterales",
+      "fact": "An order dominated by one family, Asteraceae, whose flower heads pack dozens or hundreds of tiny individual flowers into what looks, from a bee's-eye view, like a single bloom.",
+      "srcTitle": "Asterales",
+      "src": "https://en.wikipedia.org/wiki/Asterales"
+    },
+    {
+      "id": "tx_asteraceae",
+      "rank": "family",
+      "parent": "tx_asterales",
+      "name": "Asteraceae",
+      "fact": "The daisy family — one of the two largest families of flowering plants, its 'flower' almost always a composite head of many small florets crowded together.",
+      "srcTitle": "Asteraceae",
+      "src": "https://en.wikipedia.org/wiki/Asteraceae"
+    },
+    {
+      "id": "tx_leontopodium",
+      "rank": "genus",
+      "parent": "tx_asteraceae",
+      "name": "Leontopodium",
+      "fact": "The edelweiss genus — around 30-40 species of small, woolly-haired alpine daisies across the mountains of Europe and Asia.",
+      "srcTitle": "Leontopodium",
+      "src": "https://en.wikipedia.org/wiki/Leontopodium"
     }
   ]
 }
