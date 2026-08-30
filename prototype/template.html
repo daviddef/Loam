@@ -525,6 +525,66 @@ __CATEGORY_CSS__
     position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
     border:2.5px solid var(--discovery);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
   }
+  /* A merge's real physical-process category (tools/reactions.mjs, read off
+     the recipe's own why text), given its own colour and — for freeze and
+     dissolve, the two whose real mechanism reads as a genuinely different
+     SHAPE of change, not just a different heat level — its own shape too.
+     Melt/boil/burn/corrode/crystallize/ferment share the ripple's timing and
+     just recolour it: real, honest, and doesn't ask CSS to fake eight
+     distinct physical simulations. */
+  .ring-freeze{border-color:var(--c-water-lo);
+    clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);border-radius:0}
+  .ring-melt{border-color:var(--c-fire-lo)}
+  .ring-boil{border-color:var(--c-fire-hi)}
+  .ring-burn{border-color:var(--c-fire-bs)}
+  .ring-ferment{border-color:var(--c-ferment-bs)}
+  .ring-corrode{border-color:var(--c-mineral-lo)}
+  .ring-crystallize{border-color:var(--c-mineral-hi)}
+  @keyframes dissolveRipple{
+    from{transform:translate(-50%,-50%) scale(1.4);opacity:.6}
+    to{transform:translate(-50%,-50%) scale(.15);opacity:0}
+  }
+  .ring-dissolve{border-color:var(--c-water-bs);animation-name:dissolveRipple}
+  /* melt/boil: the ring itself stays the plain ripple above; this rising,
+     thinning blob layered on top is the "soft upward shimmer" — real vapor
+     reads as loss of definition while it climbs, not a clean expanding line. */
+  @keyframes riseAndFade{
+    0%{transform:translate(-50%,-50%) scale(.6);opacity:.5;filter:blur(1px)}
+    100%{transform:translate(-50%,-70px) scale(1.3);opacity:0;filter:blur(4px)}
+  }
+  .shimmer{
+    position:absolute;width:40px;height:40px;border-radius:99px;pointer-events:none;
+    animation:riseAndFade .9s ease-out forwards;
+  }
+  .shimmer-melt{background:radial-gradient(circle,color-mix(in srgb,var(--c-fire-lo) 55%,transparent),transparent 70%)}
+  .shimmer-boil{background:radial-gradient(circle,color-mix(in srgb,var(--c-fire-hi) 55%,transparent),transparent 70%)}
+  /* corrode: a few small pits spreading outward and staying — oxidation
+     doesn't ripple once and vanish, it marks the surface. */
+  @keyframes pit{
+    0%{transform:translate(-50%,-50%) scale(0);opacity:0}
+    30%{opacity:.85}
+    100%{transform:translate(-50%,-50%) scale(1);opacity:.55}
+  }
+  .fleck{
+    position:absolute;width:5px;height:5px;border-radius:99px;pointer-events:none;
+    background:var(--c-mineral-lo);animation:pit .5s ease-out forwards;
+  }
+  /* crystallize: wide angular shards, not the fine repeating rays .burst
+     uses for a first discovery — a mineral snapping into facets reads as a
+     handful of hard-edged planes, not a burst of light. */
+  @keyframes facetSnap{
+    0%{transform:translate(-50%,-50%) rotate(0deg) scale(.2);opacity:0}
+    30%{opacity:.9}
+    100%{transform:translate(-50%,-50%) rotate(22deg) scale(1.2);opacity:0}
+  }
+  .facets{
+    position:absolute;width:140px;height:140px;pointer-events:none;z-index:4;
+    background:repeating-conic-gradient(from 0deg,
+      var(--c-mineral-hi) 0deg 8deg,transparent 8deg 45deg);
+    -webkit-mask-image:radial-gradient(closest-side,transparent 25%,#000 45%,#000 60%,transparent 85%);
+    mask-image:radial-gradient(closest-side,transparent 25%,#000 45%,#000 60%,transparent 85%);
+    animation:facetSnap .55s cubic-bezier(.16,.8,.3,1) forwards;
+  }
   /* The moment something exists that did not exist before. The ripple says
      "a reaction happened"; this says "and it was the first one" — so it fires
      only on a genuine first discovery, never on remaking something you have.
@@ -697,6 +757,13 @@ __CATEGORY_CSS__
   .chip.target{
     border-color:var(--orange);background:color-mix(in srgb,var(--orange) 16%,var(--card));transform:scale(1.07);
     box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 18%,transparent), 0 8px 18px -6px rgba(var(--shade),.3);
+  }
+  /* "See what the reaction looks like before you commit" — a small dot in
+     the same colour the payoff ring will actually use, shown on the drop
+     target while you're still deciding whether to let go. */
+  .chip.target.target-reaction::after{
+    content:'';position:absolute;top:-5px;right:-5px;width:11px;height:11px;border-radius:99px;
+    background:var(--reaction-color);border:1.5px solid var(--card);box-shadow:0 1px 2px rgba(var(--shade),.35);
   }
   @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
   .chip.pop{animation:pop .32s cubic-bezier(.3,1.5,.5,1)}
@@ -1894,6 +1961,23 @@ const ALLERGENS = __ALLERGEN_DATA__;
 const ALLERGEN_BY_ELEMENT = {};
 for (const [key, a] of Object.entries(ALLERGENS.allergens || {}))
   for (const id of a.ids || []) (ALLERGEN_BY_ELEMENT[id] = ALLERGEN_BY_ELEMENT[id] || []).push({ key, ...a });
+/* Every recipe's real physical-reaction category, read straight off its own
+   why text by tools/reactions.mjs — see data/reactions.json. Keyed the same
+   way validate.mjs's own ambiguity check keys a gesture: sorted inputs for a
+   merge, input|verb for a process, +@temp for a banded one. */
+const REACTIONS = __REACTION_DATA__;
+const reactionSig = (r) => {
+  const base = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+  return r.at !== undefined ? `${base}@${r.at}` : base;
+};
+const reactionOf = (r) => REACTIONS[reactionSig(r)] ?? null;
+// The same category -> palette-token mapping the payoff ring's own CSS
+// (.ring-freeze etc.) uses, so a live-drag preview and the merge's actual
+// payoff always agree.
+const REACTION_COLOR_VAR = {
+  freeze: 'c-water-lo', melt: 'c-fire-lo', boil: 'c-fire-hi', burn: 'c-fire-bs',
+  ferment: 'c-ferment-bs', corrode: 'c-mineral-lo', crystallize: 'c-mineral-hi', dissolve: 'c-water-bs',
+};
 const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
@@ -4698,8 +4782,20 @@ board.addEventListener('pointermove', ev => {
   drawLinksFor(drag.chip);                            // only the lines that moved
   if (drag.chip.classList.contains('ghost')) return;  // repositioning only — never a merge source or target
   const t = hitCached(ev.clientX, ev.clientY, drag.chip);
-  document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
-  if (t) t.classList.add('target');
+  document.querySelectorAll('.target').forEach(n => n.classList.remove('target', 'target-reaction'));
+  if (t) {
+    t.classList.add('target');
+    // A preview of what dropping here would actually look like — "see the
+    // reaction before you commit to it" — reusing the same colour tokens
+    // the merge's own payoff ring uses, so the preview and the payoff read
+    // as the same thing, not two unrelated pieces of UI.
+    const r = t.dataset.id ? merges.get([drag.chip.dataset.id, t.dataset.id].sort().join('+')) : null;
+    const reaction = r && !r.violent ? reactionOf(r) : null;
+    if (reaction) {
+      t.classList.add('target-reaction');
+      t.style.setProperty('--reaction-color', `var(--${REACTION_COLOR_VAR[reaction]})`);
+    }
+  }
   applyForces(drag.chip, ev.clientX, ev.clientY, t);
   // Resting the card on a tool that has more than one answer for it starts
   // the dial climbing. Move off and it cools straight back down.
@@ -4856,11 +4952,45 @@ function resolve(r, chips, x, y) {
   if (at.length) {
     const cx = at.reduce((a, p) => a + p[0], 0) / at.length;
     const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
+    // A real physical-process category read off the recipe's own why text
+    // (see tools/reactions.mjs) gets the plain ring tinted and shaped to
+    // match, instead of every merge reading identically regardless of
+    // whether it froze, dissolved, or burned. `violent` is handled below —
+    // it's a severity axis, not one of these, and already has its own
+    // full effect.
+    const reaction = r.violent ? null : reactionOf(r);
     const ring = document.createElement('div');
-    ring.className = 'ring';
+    ring.className = 'ring' + (reaction ? ` ring-${reaction}` : '');
     ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
     world.appendChild(ring);
     setTimeout(() => ring.remove(), 620);
+    // The three categories whose real mechanism needs more than a recoloured
+    // ring: rising vapour for melt/boil, a handful of hard facets snapping in
+    // for crystallize, a few pits spreading for corrode.
+    if (reaction === 'melt' || reaction === 'boil') {
+      const shimmer = document.createElement('div');
+      shimmer.className = `shimmer shimmer-${reaction}`;
+      shimmer.style.left = cx + 'px'; shimmer.style.top = cy + 'px';
+      world.appendChild(shimmer);
+      setTimeout(() => shimmer.remove(), 950);
+    } else if (reaction === 'crystallize') {
+      const facets = document.createElement('div');
+      facets.className = 'facets';
+      facets.style.left = cx + 'px'; facets.style.top = cy + 'px';
+      world.appendChild(facets);
+      setTimeout(() => facets.remove(), 600);
+    } else if (reaction === 'corrode') {
+      for (let i = 0; i < 5; i++) {
+        const ang = Math.random() * Math.PI * 2, dist = 14 + Math.random() * 22;
+        const fleck = document.createElement('div');
+        fleck.className = 'fleck';
+        fleck.style.left = (cx + Math.cos(ang) * dist) + 'px';
+        fleck.style.top = (cy + Math.sin(ang) * dist) + 'px';
+        fleck.style.animationDelay = (Math.random() * 200) + 'ms';
+        world.appendChild(fleck);
+        setTimeout(() => fleck.remove(), 750);
+      }
+    }
     // A pair genuinely documented as dangerously reactive — sourced the same
     // way every caution in this game is, `r.violent` only ever set from a
     // source that says "violent"/"explosive" outright, never inferred from

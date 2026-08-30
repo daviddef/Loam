@@ -594,6 +594,66 @@
     position:absolute;width:96px;height:96px;border-radius:99px;pointer-events:none;
     border:2.5px solid var(--discovery);animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards;
   }
+  /* A merge's real physical-process category (tools/reactions.mjs, read off
+     the recipe's own why text), given its own colour and — for freeze and
+     dissolve, the two whose real mechanism reads as a genuinely different
+     SHAPE of change, not just a different heat level — its own shape too.
+     Melt/boil/burn/corrode/crystallize/ferment share the ripple's timing and
+     just recolour it: real, honest, and doesn't ask CSS to fake eight
+     distinct physical simulations. */
+  .ring-freeze{border-color:var(--c-water-lo);
+    clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);border-radius:0}
+  .ring-melt{border-color:var(--c-fire-lo)}
+  .ring-boil{border-color:var(--c-fire-hi)}
+  .ring-burn{border-color:var(--c-fire-bs)}
+  .ring-ferment{border-color:var(--c-ferment-bs)}
+  .ring-corrode{border-color:var(--c-mineral-lo)}
+  .ring-crystallize{border-color:var(--c-mineral-hi)}
+  @keyframes dissolveRipple{
+    from{transform:translate(-50%,-50%) scale(1.4);opacity:.6}
+    to{transform:translate(-50%,-50%) scale(.15);opacity:0}
+  }
+  .ring-dissolve{border-color:var(--c-water-bs);animation-name:dissolveRipple}
+  /* melt/boil: the ring itself stays the plain ripple above; this rising,
+     thinning blob layered on top is the "soft upward shimmer" — real vapor
+     reads as loss of definition while it climbs, not a clean expanding line. */
+  @keyframes riseAndFade{
+    0%{transform:translate(-50%,-50%) scale(.6);opacity:.5;filter:blur(1px)}
+    100%{transform:translate(-50%,-70px) scale(1.3);opacity:0;filter:blur(4px)}
+  }
+  .shimmer{
+    position:absolute;width:40px;height:40px;border-radius:99px;pointer-events:none;
+    animation:riseAndFade .9s ease-out forwards;
+  }
+  .shimmer-melt{background:radial-gradient(circle,color-mix(in srgb,var(--c-fire-lo) 55%,transparent),transparent 70%)}
+  .shimmer-boil{background:radial-gradient(circle,color-mix(in srgb,var(--c-fire-hi) 55%,transparent),transparent 70%)}
+  /* corrode: a few small pits spreading outward and staying — oxidation
+     doesn't ripple once and vanish, it marks the surface. */
+  @keyframes pit{
+    0%{transform:translate(-50%,-50%) scale(0);opacity:0}
+    30%{opacity:.85}
+    100%{transform:translate(-50%,-50%) scale(1);opacity:.55}
+  }
+  .fleck{
+    position:absolute;width:5px;height:5px;border-radius:99px;pointer-events:none;
+    background:var(--c-mineral-lo);animation:pit .5s ease-out forwards;
+  }
+  /* crystallize: wide angular shards, not the fine repeating rays .burst
+     uses for a first discovery — a mineral snapping into facets reads as a
+     handful of hard-edged planes, not a burst of light. */
+  @keyframes facetSnap{
+    0%{transform:translate(-50%,-50%) rotate(0deg) scale(.2);opacity:0}
+    30%{opacity:.9}
+    100%{transform:translate(-50%,-50%) rotate(22deg) scale(1.2);opacity:0}
+  }
+  .facets{
+    position:absolute;width:140px;height:140px;pointer-events:none;z-index:4;
+    background:repeating-conic-gradient(from 0deg,
+      var(--c-mineral-hi) 0deg 8deg,transparent 8deg 45deg);
+    -webkit-mask-image:radial-gradient(closest-side,transparent 25%,#000 45%,#000 60%,transparent 85%);
+    mask-image:radial-gradient(closest-side,transparent 25%,#000 45%,#000 60%,transparent 85%);
+    animation:facetSnap .55s cubic-bezier(.16,.8,.3,1) forwards;
+  }
   /* The moment something exists that did not exist before. The ripple says
      "a reaction happened"; this says "and it was the first one" — so it fires
      only on a genuine first discovery, never on remaking something you have.
@@ -766,6 +826,13 @@
   .chip.target{
     border-color:var(--orange);background:color-mix(in srgb,var(--orange) 16%,var(--card));transform:scale(1.07);
     box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 18%,transparent), 0 8px 18px -6px rgba(var(--shade),.3);
+  }
+  /* "See what the reaction looks like before you commit" — a small dot in
+     the same colour the payoff ring will actually use, shown on the drop
+     target while you're still deciding whether to let go. */
+  .chip.target.target-reaction::after{
+    content:'';position:absolute;top:-5px;right:-5px;width:11px;height:11px;border-radius:99px;
+    background:var(--reaction-color);border:1.5px solid var(--card);box-shadow:0 1px 2px rgba(var(--shade),.35);
   }
   @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.16)}100%{transform:scale(1);opacity:1}}
   .chip.pop{animation:pop .32s cubic-bezier(.3,1.5,.5,1)}
@@ -1963,6 +2030,23 @@ const ALLERGENS = {"$comment":"What a food label is legally required to declare,
 const ALLERGEN_BY_ELEMENT = {};
 for (const [key, a] of Object.entries(ALLERGENS.allergens || {}))
   for (const id of a.ids || []) (ALLERGEN_BY_ELEMENT[id] = ALLERGEN_BY_ELEMENT[id] || []).push({ key, ...a });
+/* Every recipe's real physical-reaction category, read straight off its own
+   why text by tools/reactions.mjs — see data/reactions.json. Keyed the same
+   way validate.mjs's own ambiguity check keys a gesture: sorted inputs for a
+   merge, input|verb for a process, +@temp for a banded one. */
+const REACTIONS = {"stone|wait":"freeze","ash+sand":"melt","water|chill":"freeze","water|heat@100":"freeze","wood|heat":"burn","fire+wood":"burn","ash+water":"dissolve","leaf|heat":"corrode","beeswax+straw":"burn","noodle|heat":"boil","malt+water":"ferment","wort+yeast":"boil","wine|ferment":"ferment","apple_juice|ferment":"ferment","cane_juice|heat":"crystallize","honey+water":"ferment","brine+cucumber":"ferment","herb+olive_oil":"dissolve","tea+water":"boil","meat+water":"dissolve","broth|chill":"dissolve","cooked_rice+vinegar":"ferment","potato|heat":"boil","bread+cheese":"melt","soup+stone":"boil","bread+garlic_butter":"melt","cream+sugar":"freeze","ice+sweet_cream":"freeze","beer+flour":"boil","mince+salt":"dissolve","kimchi_paste+salted_cabbage":"ferment","stone+water":"dissolve","river|wait":"boil","ice|wait":"melt","sea|heat":"boil","flint+stone":"burn","grape|ferment":"ferment","wood+wood":"burn","adobe|heat":"dissolve","river|chill":"freeze","tree+water":"boil","fire+leaf":"corrode","beeswax+fire":"burn","noodle+water":"boil","malt+steam":"boil","wort|ferment":"ferment","cider|ferment":"ferment","stone+sugarcane":"boil","cane_juice+fire":"crystallize","fire+sugar":"burn","cucumber+vinegar":"ferment","brine+fish":"burn","broth+herb":"boil","sweet_cream|chill":"freeze","rice+water":"boil","cheese+flatbread":"melt","curd+pizza_base":"melt","ash+sea":"burn","ghee+herb":"burn","brine|heat":"boil","glass|crush":"melt","apple|wait":"ferment","garlic+ghee":"burn","honey+ice_cream":"freeze","baked_potato+mayonnaise":"boil","brine+dough":"dissolve","cream+honey":"freeze","chilli+onion":"ferment","charcoal+tempered_clay":"burn","cement_meal+fire":"burn","cabbage+sea":"ferment","bone|heat":"dissolve","cysteine+oxygen_gas":"corrode","glucose+oxygen_gas":"ferment","sun+water":"boil","ice+sun":"melt","charcoal+ore":"burn","lead|heat":"corrode","ore+wood":"melt","ore+pot":"boil","cinnabar|heat":"boil","aluminum+ore":"burn","limestone+sea":"dissolve","salt+spark":"melt","lye+spark":"melt","wood|crush":"dissolve","pig|heat":"boil","field+sun":"freeze","cocoa|ferment":"ferment","muscle+nitrogen":"burn","glucose|ferment":"ferment","ice|heat@0":"melt","quicklime+water":"boil","brine+chlorine":"corrode","fire+kelp":"burn","copper+spark":"dissolve","ore+oxygen_gas":"corrode","ore+sulfur":"crystallize","platinum+river":"dissolve","hydrogen_gas+ore":"melt","hydrogen_gas+molybdenite":"burn","zinc|heat":"boil","magnesium+ore":"melt","ore+sodium":"melt","tantalum+water":"crystallize","lye+monazite":"dissolve","caesium+pollucite":"crystallize","aluminum+baryte":"melt","barium+ore":"crystallize","rare_earth|heat":"dissolve","rare_earth+spark":"melt","lanthanum+rare_earth":"boil","calcium+lead":"melt","shell|wait":"dissolve","calcium+carbon_dioxide":"dissolve","charcoal|blow":"burn","fire|smother":"burn","bone|smother":"burn","fog+sun":"boil","air+ice":"freeze","grass|chill":"freeze","snow|heat":"freeze","cloud|chill":"freeze","storm|chill":"freeze","steam+storm":"boil","lightning+sand":"melt","charcoal+iron":"melt","copper+tin":"melt","lead+tin":"melt","hide+tannin":"dissolve","knife+tree":"dissolve","cocoon+water":"boil","forge+iron":"burn","olive_oil+pot":"melt","coal|smother":"burn","wood|smother":"boil","wood_tar|heat@65":"boil","wine|heat@78":"boil","stone|heat@1080":"melt","gneiss|heat@650":"melt","air+magma":"melt","lava|chill":"melt","lava+sea":"freeze","lava+steam":"freeze","magma+water":"dissolve","basalt|wait":"corrode","sand|wait":"crystallize","limestone+magma":"dissolve","quartz+water":"dissolve","hydrogen+sun":"burn","sun|wait":"burn","cosmic_dust+ice":"freeze","bacteria+milk":"ferment","lichen+stone":"dissolve","cellulose+rumen":"ferment","bee+meadow":"ferment","generator+steam":"boil","current+tungsten":"melt","carbon+current":"boil","filament+glass":"boil","argon+filament":"boil","sulfur_dioxide+water":"burn","current+water":"dissolve","brine+current":"dissolve","copper+electrolysis":"dissolve","electrolysis+silver":"dissolve","ammonia+electric_motor":"boil","refrigerator+water":"freeze","glucose+leaf":"corrode","photosystem_ii+water":"corrode","enzyme+selenocysteine":"corrode","magnesium+oxygen_gas":"burn","oxygen_gas+zinc":"burn","iron+oxygen_gas":"corrode","lead+oxygen_gas":"melt","sulfur+zinc":"burn","lead+sulfur":"melt","chlorine+hydrogen_gas":"dissolve","calcium_carbide+water":"burn","magnesium+nitrogen":"burn","carbon|blow":"burn","carbon|smother":"burn","oxygen_gas+sulfur":"burn","hydrogen_gas+sulfur":"melt","ammonia+oxygen_gas":"burn","nitrogen_dioxide+rain":"dissolve","cytosine+guanine":"melt","enzyme+water":"dissolve","root+water":"boil","snow+tree":"freeze","flower+meadow":"burn","straw+tallow":"burn","fire+horn":"boil","lac_insect|heat":"dissolve","whey|heat@85":"boil","pasteurised_milk+yoghurt_culture":"ferment","yoghurt_culture|chill":"freeze","l_plantarum+souring_kraut":"ferment","bacteria+ethanol":"ferment","acetobacter+ethanol":"ferment","cooked_rice+mould":"ferment","fire+mutton":"melt","beef|chill@1":"freeze","red_alga+water":"melt","agar+broth":"melt","kelp+lye":"dissolve","mould+sugar":"ferment","lemon|crush":"crystallize","glutamic_acid+sodium":"dissolve","kelp+sodium":"crystallize","meat+sodium":"ferment","bacteria+sugar":"ferment","malt+starch":"boil","ammonia+sugar":"corrode","sodium+sulfur_dioxide":"crystallize","bacteria+nitrate":"ferment","hydrogenated_oil+nickel":"melt","soybean+water":"dissolve","drupe+vine":"boil","seed|crush":"boil","herb+oil":"dissolve","coconut+nectar":"boil","fire+herb":"freeze","herb+smoke":"burn","coal_tar|heat":"corrode","bacteria+leaf":"ferment","arginine+enzyme":"corrode","egg|cut":"crystallize","herb+sand":"freeze","fish|ferment":"ferment","fluorine+lithium":"violent","chlorine+lithium":"violent","iodine+lithium":"violent","bromine+sodium":"violent","iodine+sodium":"violent","fluorine+potassium":"violent","caesium+chlorine":"violent","chromium+iron":"corrode","beryllium+copper":"burn","chlorine+iron":"burn","iron+zinc":"corrode","lithium+oxygen_gas":"burn","oxygen_gas+sodium":"burn","oxygen_gas+potassium":"melt","manganese+oxygen_gas":"corrode","oxygen_gas+tin":"burn","platinum+rhodium":"burn","rhenium+tungsten":"melt","aluminum+scandium":"dissolve","aluminum+yttrium":"crystallize","chlorine+strontium":"burn","cerium+thorium":"burn","cerium+iron":"burn","carbon+fluorine":"burn","phosphorus+sulfur":"burn","aluminum+sulfur":"violent","chlorine+copper":"melt","aluminum+magnesium":"burn","silver+tin":"melt","fluorine+rubidium":"crystallize","chlorine+rubidium":"dissolve","bromine+rubidium":"crystallize","chlorine+titanium":"violent","chlorine+chromium":"corrode","lanthanum+oxygen_gas":"burn","neodymium+oxygen_gas":"burn","europium+fluorine":"crystallize","chlorine+europium":"crystallize","fluorine+hydrogen":"violent","beryllium+bromine":"burn","bromine+calcium":"burn","bromine+strontium":"burn","barium+bromine":"crystallize","fluorine+radium":"crystallize","bacteriophage|cut":"dissolve","evaporated_milk+sugar":"boil","sap|heat":"boil","fish+malt_vinegar":"ferment","bread+sausage":"boil","root+sun":"freeze","beryllium+oxygen_gas":"burn","oxygen_gas+strontium":"burn","caesium+oxygen_gas":"burn","hydrogen+sodium":"melt","nitrogen+strontium":"burn","fluorine+iodine":"burn","current+ice":"freeze","ice+salmon":"freeze","fish+ice":"burn","fungus+oak":"freeze","ash+fungus":"burn","iron+magma":"crystallize","carbon+magma":"crystallize","marble|crush":"dissolve","carbon_dioxide+copper":"dissolve","copper+limestone":"corrode","calcium+sulfur":"boil","calcite+pyrite":"corrode","magma+magnesium":"crystallize","basalt|crush":"crystallize","beryllium+granite":"melt","olivine+water":"freeze","bronze|heat":"melt"};
+const reactionSig = (r) => {
+  const base = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
+  return r.at !== undefined ? `${base}@${r.at}` : base;
+};
+const reactionOf = (r) => REACTIONS[reactionSig(r)] ?? null;
+// The same category -> palette-token mapping the payoff ring's own CSS
+// (.ring-freeze etc.) uses, so a live-drag preview and the merge's actual
+// payoff always agree.
+const REACTION_COLOR_VAR = {
+  freeze: 'c-water-lo', melt: 'c-fire-lo', boil: 'c-fire-hi', burn: 'c-fire-bs',
+  ferment: 'c-ferment-bs', corrode: 'c-mineral-lo', crystallize: 'c-mineral-hi', dissolve: 'c-water-bs',
+};
 const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
@@ -4806,8 +4890,20 @@ board.addEventListener('pointermove', ev => {
   drawLinksFor(drag.chip);                            // only the lines that moved
   if (drag.chip.classList.contains('ghost')) return;  // repositioning only — never a merge source or target
   const t = hitCached(ev.clientX, ev.clientY, drag.chip);
-  document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
-  if (t) t.classList.add('target');
+  document.querySelectorAll('.target').forEach(n => n.classList.remove('target', 'target-reaction'));
+  if (t) {
+    t.classList.add('target');
+    // A preview of what dropping here would actually look like — "see the
+    // reaction before you commit to it" — reusing the same colour tokens
+    // the merge's own payoff ring uses, so the preview and the payoff read
+    // as the same thing, not two unrelated pieces of UI.
+    const r = t.dataset.id ? merges.get([drag.chip.dataset.id, t.dataset.id].sort().join('+')) : null;
+    const reaction = r && !r.violent ? reactionOf(r) : null;
+    if (reaction) {
+      t.classList.add('target-reaction');
+      t.style.setProperty('--reaction-color', `var(--${REACTION_COLOR_VAR[reaction]})`);
+    }
+  }
   applyForces(drag.chip, ev.clientX, ev.clientY, t);
   // Resting the card on a tool that has more than one answer for it starts
   // the dial climbing. Move off and it cools straight back down.
@@ -4964,11 +5060,45 @@ function resolve(r, chips, x, y) {
   if (at.length) {
     const cx = at.reduce((a, p) => a + p[0], 0) / at.length;
     const cy = at.reduce((a, p) => a + p[1], 0) / at.length;
+    // A real physical-process category read off the recipe's own why text
+    // (see tools/reactions.mjs) gets the plain ring tinted and shaped to
+    // match, instead of every merge reading identically regardless of
+    // whether it froze, dissolved, or burned. `violent` is handled below —
+    // it's a severity axis, not one of these, and already has its own
+    // full effect.
+    const reaction = r.violent ? null : reactionOf(r);
     const ring = document.createElement('div');
-    ring.className = 'ring';
+    ring.className = 'ring' + (reaction ? ` ring-${reaction}` : '');
     ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
     world.appendChild(ring);
     setTimeout(() => ring.remove(), 620);
+    // The three categories whose real mechanism needs more than a recoloured
+    // ring: rising vapour for melt/boil, a handful of hard facets snapping in
+    // for crystallize, a few pits spreading for corrode.
+    if (reaction === 'melt' || reaction === 'boil') {
+      const shimmer = document.createElement('div');
+      shimmer.className = `shimmer shimmer-${reaction}`;
+      shimmer.style.left = cx + 'px'; shimmer.style.top = cy + 'px';
+      world.appendChild(shimmer);
+      setTimeout(() => shimmer.remove(), 950);
+    } else if (reaction === 'crystallize') {
+      const facets = document.createElement('div');
+      facets.className = 'facets';
+      facets.style.left = cx + 'px'; facets.style.top = cy + 'px';
+      world.appendChild(facets);
+      setTimeout(() => facets.remove(), 600);
+    } else if (reaction === 'corrode') {
+      for (let i = 0; i < 5; i++) {
+        const ang = Math.random() * Math.PI * 2, dist = 14 + Math.random() * 22;
+        const fleck = document.createElement('div');
+        fleck.className = 'fleck';
+        fleck.style.left = (cx + Math.cos(ang) * dist) + 'px';
+        fleck.style.top = (cy + Math.sin(ang) * dist) + 'px';
+        fleck.style.animationDelay = (Math.random() * 200) + 'ms';
+        world.appendChild(fleck);
+        setTimeout(() => fleck.remove(), 750);
+      }
+    }
     // A pair genuinely documented as dangerously reactive — sourced the same
     // way every caution in this game is, `r.violent` only ever set from a
     // source that says "violent"/"explosive" outright, never inferred from
