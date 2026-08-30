@@ -7350,6 +7350,10 @@ function buildChain(id, x, y) {
   const view0 = { x: view.x, y: view.y };
   const steps = orderedSteps(id);
   const chipFor = new Map();
+  // Every chip THIS call actually creates, as opposed to one it reuses from
+  // an existing board via prefs.consolidate — see the translate step below
+  // for why the distinction matters.
+  const fresh = new Set();
   // "A fresh copy each time you need one" has to mean that for the very
   // thing you asked to place, not just for the ancestors quietly built
   // alongside it — reusing an existing board chip here ignored
@@ -7364,31 +7368,44 @@ function buildChain(id, x, y) {
     if (chipFor.has(iid)) return chipFor.get(iid);
     const el = spawn(iid);
     chipFor.set(iid, el);
+    fresh.add(el);
     return el;
   };
   for (const r of steps) {
     if (chipFor.has(r.out)) continue;
     const parents = r.in.map(ensure);
-    chipFor.set(r.out, materialize(r, parents));
+    const out = materialize(r, parents);
+    chipFor.set(r.out, out);
+    fresh.add(out);
   }
   const el = chipFor.get(id) || ensure(id);
   if (x != null) {
-    // Every ancestor spawned above via bare spawn(iid) — no x/y — panned the
-    // view to itself as it landed (spawn's own ensureVisible). On a deep
-    // chain that's a dozen pans in a row, and the LAST one wins — so by the
-    // time `el` gets explicitly moved to the actual drop point, the view had
-    // already drifted off chasing wherever the final ancestor happened to
-    // be, and the world coordinates the drop was computed in no longer
-    // mapped to the same spot on screen. ("i drag something... into the
-    // middle, and it pops it at the top, rather in the exact spot i
-    // released" — found live.) Undo all of that drift first — the view the
-    // player was actually looking at when they let go is the one `x, y`
-    // was computed against — then place `el` and do at most the one small
-    // nudge ensureVisible needs to keep it fully on screen.
+    // Every ancestor above was spawned via bare spawn(iid) — no x, no y, no
+    // anchor at all — so it landed wherever freeSpot's context-free default
+    // happened to be, with nothing relating it to the chain it's actually
+    // part of. Only `el` itself (the one thing this call was asked to
+    // place) ever got a real position, which is exactly why a deep chain
+    // read as "the result landed here, and one real ancestor is stranded
+    // hundreds of pixels away with a single long line back to it."
+    // ("lizard was NOT on board before" — Snake's own freshly-built Lizard
+    // ancestor, confirmed live.) runTidy() gives the WHOLE fresh chain a
+    // real layout relative to itself first — then, since tidy() has no
+    // notion of "anchor this at a point," the entire chain is slid as one
+    // rigid piece so `el` ends up exactly at the drop point, preserving
+    // whatever sensible relative arrangement tidy() just gave everything
+    // else in it.
+    runTidy();
     view.x = view0.x; view.y = view0.y; applyView();
     const [cw, ch] = cardSize();
+    const dx = (x - cw / 2) - (parseFloat(el.style.left) || 0);
+    const dy = (y - ch / 2) - (parseFloat(el.style.top) || 0);
+    for (const c of fresh) {
+      c.style.left = (parseFloat(c.style.left) + dx) + 'px';
+      c.style.top  = (parseFloat(c.style.top) + dy) + 'px';
+    }
     el.style.left = (x - cw / 2) + 'px';
     el.style.top  = (y - ch / 2) + 'px';
+    drawLinks();
     ensureVisible(el);
   }
   refreshFolds();
