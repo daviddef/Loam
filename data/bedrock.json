@@ -2127,6 +2127,148 @@
       "src": "https://en.wikipedia.org/wiki/Human_skeleton"
     },
     {
+      "id": "bed_hematopoietic_stem_cell",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Hematopoietic Stem Cell",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Hematopoietic stem cell",
+      "fact": "A small, self-renewing population in the marrow that gives rise to every other blood cell — splitting into a myeloid line and a lymphoid line, which between them build every red cell, white cell and platelet in circulation.",
+      "src": "https://en.wikipedia.org/wiki/Hematopoietic_stem_cell"
+    },
+    {
+      "id": "bed_neutrophil",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Neutrophil",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Neutrophil",
+      "fact": "40 to 70 percent of all white blood cells, more than any other kind — a short-lived cell with a nucleus split into two to five lobes, usually the first one to reach a site of infection.",
+      "src": "https://en.wikipedia.org/wiki/Neutrophil"
+    },
+    {
+      "id": "bed_lymphocyte",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Lymphocyte",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Lymphocyte",
+      "fact": "T cells and B cells run the adaptive immune response between them — B cells manufacture antibodies against a pathogen, and cytotoxic T cells kill the cells it has already infected.",
+      "src": "https://en.wikipedia.org/wiki/Lymphocyte"
+    },
+    {
+      "id": "bed_monocyte",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Monocyte",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Monocyte",
+      "fact": "The largest white blood cell in circulation, and only briefly — after one to three days in the bloodstream it moves into body tissue and becomes a macrophage or dendritic cell, the phagocyte that does the actual eating.",
+      "src": "https://en.wikipedia.org/wiki/Monocyte"
+    },
+    {
+      "id": "bed_megakaryocyte",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Megakaryocyte",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Megakaryocyte",
+      "fact": "A bone marrow cell ten to fifteen times the size of a red blood cell, its nucleus copied over past the ordinary two sets of DNA — grown that large for one purpose, to break its own cytoplasm into thousands of platelets.",
+      "src": "https://en.wikipedia.org/wiki/Megakaryocyte"
+    },
+    {
+      "id": "bed_hemoglobin",
+      "kind": "compound",
+      "tier": "assembly",
+      "name": "Hemoglobin",
+      "of": [
+        "bed_protein",
+        "el_iron"
+      ],
+      "srcTitle": "Hemoglobin",
+      "fact": "Four folded protein chains, each cradling an iron-holding heme group — the iron is what actually grabs an oxygen molecule and lets blood carry it from the lungs to every other tissue.",
+      "src": "https://en.wikipedia.org/wiki/Hemoglobin"
+    },
+    {
+      "id": "bed_erythrocyte",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Red Blood Cell",
+      "of": [
+        "bed_membrane",
+        "bed_hemoglobin"
+      ],
+      "srcTitle": "Red blood cell",
+      "fact": "Built with no nucleus and no organelles at all — both are expelled during development to clear more room for hemoglobin, which ends up filling about a third of the cell's total volume.",
+      "src": "https://en.wikipedia.org/wiki/Red_blood_cell"
+    },
+    {
+      "id": "bed_platelet",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Platelet",
+      "of": [
+        "bed_membrane",
+        "bed_protein"
+      ],
+      "srcTitle": "Platelet",
+      "fact": "Not actually a cell — just a fragment of cytoplasm broken off a megakaryocyte, with no nucleus of its own, that clumps at the site of an injured vessel to start a clot.",
+      "src": "https://en.wikipedia.org/wiki/Platelet"
+    },
+    {
+      "id": "bed_plasma",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Plasma",
+      "of": [
+        "bed_protein",
+        "bed_water_molecule"
+      ],
+      "srcTitle": "Blood plasma",
+      "fact": "Up to 95 percent water, carrying the dissolved albumin, globulins and fibrinogen that hold osmotic pressure steady, fight infection and clot a wound — every blood cell rides suspended in it, not part of it.",
+      "src": "https://en.wikipedia.org/wiki/Blood_plasma"
+    },
+    {
+      "id": "bed_bone_marrow",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Bone Marrow",
+      "of": [
+        "bed_hematopoietic_stem_cell",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Bone marrow",
+      "fact": "Red marrow is where the body actually builds its blood, turning out about 500 billion new blood cells a day from hematopoietic stem cells held in a reticular connective-tissue framework — the yellow marrow further out in the skeleton has converted almost entirely to fat and does none of it.",
+      "src": "https://en.wikipedia.org/wiki/Bone_marrow"
+    },
+    {
+      "id": "bed_blood",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Blood",
+      "of": [
+        "bed_plasma",
+        "bed_erythrocyte",
+        "bed_neutrophil",
+        "bed_lymphocyte",
+        "bed_monocyte",
+        "bed_platelet"
+      ],
+      "srcTitle": "Blood",
+      "fact": "Blood cells suspended in plasma — by volume roughly 45 percent red cells and 54 percent plasma, with white cells making up less than one percent, though white cells and platelets do nearly all of the immune and clotting work.",
+      "src": "https://en.wikipedia.org/wiki/Blood"
+    },
+    {
       "id": "bed_chicken_crop",
       "kind": "compound",
       "tier": "organ",
@@ -2931,7 +3073,9 @@
       "bed_small_intestine",
       "bed_large_intestine",
       "bed_appendix",
-      "bed_anal_canal"
+      "bed_anal_canal",
+      "bed_bone_marrow",
+      "bed_blood"
     ],
     "elephant": [
       "bed_elephant_heart",
@@ -3378,6 +3522,11 @@
       "id": "cell",
       "name": "Cells",
       "blurb": "The smallest thing that is unambiguously alive."
+    },
+    {
+      "id": "blood_cell",
+      "name": "Blood Cells",
+      "blurb": "The formed elements suspended in blood plasma — most are living cells doing one specific job, but a mature red cell has no nucleus left and a platelet was never a whole cell to begin with."
     },
     {
       "id": "tissue",
