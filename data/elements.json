@@ -6563,8 +6563,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "As hard as corundum and close to diamond. The tip of the tool that cuts the steel.",
-    "terminal": true
+    "fact": "As hard as corundum and close to diamond. The tip of the tool that cuts the steel."
   },
   {
     "id": "calcium_carbide",
@@ -16972,8 +16971,7 @@
       "tool"
     ],
     "soleRoute": true,
-    "fact": "A shearer cuts a long coal face while supports advance and the roof is let collapse behind them.",
-    "terminal": true
+    "fact": "A shearer cuts a long coal face while supports advance and the roof is let collapse behind them."
   },
   {
     "id": "block_caving",
@@ -18114,5 +18112,187 @@
     ],
     "fact": "Its name means 'good mother lizard' — hatchlings with unworn legs but worn teeth show adults fed the nest.",
     "taxon": "tx_hadrosauridae"
+  },
+  {
+    "id": "drilling_rig",
+    "name": "Drilling Rig",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Bores rows of blast-holes up to 27cm across and 40+ metres deep before a bench is ever blasted."
+  },
+  {
+    "id": "dragline_excavator",
+    "name": "Dragline Excavator",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Strip mining's biggest machine, almost always run on grid power through a trailing cable, not diesel."
+  },
+  {
+    "id": "diesel_electric_drive",
+    "name": "Diesel-Electric Drive",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Skips the gearbox: a generator makes electricity, and motors turn it back into torque at the wheel."
+  },
+  {
+    "id": "haul_truck",
+    "name": "Haul Truck",
+    "emoji": "🚛",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "The largest, BelAZ's 75710, carries 450 tonnes on eight tyres 4 metres across."
+  },
+  {
+    "id": "continuous_miner",
+    "name": "Continuous Miner",
+    "emoji": "🔃",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A rotating drum rips coal straight off the face, replacing separate cutting, drilling and blasting crews."
+  },
+  {
+    "id": "longwall_shearer",
+    "name": "Longwall Shearer",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "The machine longwall mining is named for: twin drums shear coal off the face as supports advance behind it."
+  },
+  {
+    "id": "locomotive",
+    "name": "Locomotive",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Diesel-electric transmission reached railways before mining trucks — most freight locomotives use it."
+  },
+  {
+    "id": "crusher",
+    "name": "Crusher",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A gyratory or jaw crusher, essentially a moving steel jaw, breaks boulder-sized ore to fist-sized chunks."
+  },
+  {
+    "id": "ball_mill",
+    "name": "Ball Mill",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A rotating steel drum tumbling with forged steel balls grinds crushed ore down to sand-sized grains."
+  },
+  {
+    "id": "flotation_cell",
+    "name": "Flotation Cell",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Blows air through a ground-ore slurry so valuable, chemically-treated grains stick to bubbles and float off."
+  },
+  {
+    "id": "tailings",
+    "name": "Tailings",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "The roughly 99% of ground rock flotation doesn't want, pumped as slurry to a storage dam."
+  },
+  {
+    "id": "conveyor_belt",
+    "name": "Conveyor Belt",
+    "emoji": "➡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A closed loop of reinforced rubber slung between pulleys — cheaper per tonne-kilometre than trucking."
+  },
+  {
+    "id": "stockpile",
+    "name": "Stockpile",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Buffers a mine's day-to-day grade swings by blending many truckloads of ore into one consistent pile."
+  },
+  {
+    "id": "rail",
+    "name": "Ore Railway",
+    "emoji": "🛤️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "A dedicated unit train, one commodity and one route — the record run was 7.35km long, 99,734 tonnes."
+  },
+  {
+    "id": "port",
+    "name": "Bulk Terminal",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Where ore stops being a stockpile and becomes an export — Port Hedland alone ships 500+ million tonnes a year."
+  },
+  {
+    "id": "bulk_carrier",
+    "name": "Bulk Carrier",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Capesize ships too big for the Suez or Panama Canal carry about 75% of the world's seaborne iron ore."
   }
 ]

@@ -925,6 +925,14 @@
       "ids": [
         "chimpanzee"
       ]
+    },
+    "tailings_dam_failure": {
+      "label": "A tailings dam can fail catastrophically",
+      "note": "Tailings dams hold back millions of tonnes of waste slurry, often built up in stages from the tailings themselves. When one fails, the release can travel for kilometres in minutes — the Brumadinho dam collapse in Brazil in January 2019 killed 272 people.",
+      "ids": [
+        "tailings"
+      ],
+      "severity": "acute"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

@@ -108,6 +108,8 @@ const SCALE = {
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
           'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
           'carbon_disulfide', 'disulfur_dichloride', 'phosphorus_trichloride', 'titanium_chloride', 'aluminum_copper_alloy', 'magnalium', 'nak_alloy', 'tin_silver_solder', 'beef', 'pork', 'mutton', 'venison', 'poultry', 'game', 'aged_beef', 'ham', 'stew', 'turmeric', 'carob', 'red_alga', 'hydrogenated_oil', 'sap', 'bark', 'cork', 'xylem', 'phloem', 'coconut', 'coconut_water', 'sugar_beet', 'mulberry', 'graft', 'hardwood', 'softwood', 'tallow', 'horn', 'antler', 'feather', 'down', 'oyster', 'swim_bladder', 'ambergris', 'baleen', 'manure', 'parchment', 'ivory', 'royal_jelly', 'rennet', 'whey', 'ricotta', 'starter_culture', 'pasteurised_milk', 'souring_kraut', 'kefir', 'buttermilk', 'miso', 'camembert', 'tuber', 'cutting', 'runner', 'obsidian', 'pumice', 'lignite', 'anthracite', 'marble', 'slate', 'magnet', 'copper_wire', 'voltaic_pile', 'electromagnet', 'heating_element', 'light_bulb', 'sulfuric_acid', 'lead_acid_cell', 'electrolysis', 'electroplating', 'solar_cell', 'fungus', 'lichen', 'mycelium', 'mycorrhiza', 'root_nodule', 'polyp', 'coral', 'bleached_coral', 'earthworm', 'ascaridia_galli', 'detritus', 'humus', 'compost', 'rumen', 'pancreas', 'current', 'magnetic_field', 'barometer', 'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal', 'coal_tar', 'wood_tar', 'ethanol', 'bakelite', 'polyethylene', 'snow', 'smoke', 'ozone', 'air', 'loess', 'fulgurite', 'bone_char', 'bottle', 'blackware', 'stockfish', 'chlorine', 'fluorine', 'bromine', 'argon', 'krypton', 'xenon', 'noble_mix', 'kelp', 'book', 'fetus', 'maize', 'barley', 'oat', 'carrot', 'lettuce', 'pumpkin', 'beet', 'banana', 'brewed_coffee', 'cocoa', 'duck', 'turkey', 'koala', 'platypus', 'lizard', 'turtle', 'cloth', 'clothing', 'paper', 'pulp', 'flax', 'water', 'mud', 'soil', 'tempered_clay', 'concrete', 'fire', 'steam',
+          // mining value chains batch 2 — belt material and waste slurry, same item scale as rope/mud
+          'conveyor_belt', 'tailings',
           'shiitake', 'maitake', 'spirulina', 'horsetail', 'dandelion', 'aloe_vera', 'ginseng', 'psyllium',
           'fly_agaric', 'death_cap', 'chanterelle', 'porcini', 'morel', 'puffball', 'stinkhorn', 'turkey_tail', 'slime_mold', 'shaggy_mane',
           'pineapple', 'spinach', 'acai', 'pomegranate', 'goji', 'papaya', 'broccoli', 'alfalfa', 'stevia',
@@ -150,7 +152,9 @@ const SCALE = {
           'sea_urchin', 'mutualism', 'pioneer_species', 'decomposer',
           'baboon', 'lemur', 'bald_eagle', 'peregrine_falcon', 'snowy_owl', 'turkey_vulture',
           'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander'],
-  '0':   ['welwitschia', 'rafflesia', 'bracken_fern',
+  '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
+          'diesel_electric_drive',
+          'welwitschia', 'rafflesia', 'bracken_fern',
           'jaguar', 'sun_stone', 'hero_twins',
           'quetzalcoatl', 'tezcatlipoca', 'huitzilopochtli', 'tlaloc', 'coatlicue', 'tonatiuh',
           'mictlantecuhtli', 'xiuhtecuhtli', 'centeotl', 'xolotl', 'kukulkan', 'itzamna',
@@ -171,7 +175,7 @@ const SCALE = {
           'coelophysis', 'velociraptor', 'deinonychus', 'protoceratops', 'pachycephalosaurus', 'stegoceras',
           'herrerasaurus', 'oviraptor', 'massospondylus', 'camptosaurus',
           'primary_consumer', 'secondary_consumer', 'trophic_level', 'apex_predator', 'sea_otter', 'keystone_species', 'commensalism',
-          'leopard', 'jaguar', 'snow_leopard', 'cheetah', 'cougar',
+          'leopard', 'snow_leopard', 'cheetah', 'cougar',
           'red_fox', 'coyote', 'african_wild_dog',
           'polar_bear', 'giant_panda', 'sun_bear',
           'gorilla', 'chimpanzee', 'orangutan',
@@ -189,7 +193,9 @@ const SCALE = {
           'dilophosaurus', 'ceratosaurus', 'carnotaurus', 'giganotosaurus', 'baryonyx', 'therizinosaurus',
           'gallimimus', 'diplodocus', 'euoplocephalus', 'styracosaurus', 'pentaceratops', 'maiasaura',
           // geography batch 1 — a sea cave (tens of metres) and a geyser's eruption column, both roughly building-scale
-          'sea_cave', 'geyser'],
+          'sea_cave', 'geyser',
+          // mining value chains batch 2 — a single machine, tens of metres, the same bucket as a sea cave
+          'drilling_rig', 'haul_truck', 'continuous_miner', 'longwall_shearer', 'crusher', 'ball_mill', 'flotation_cell', 'locomotive'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest',
@@ -198,13 +204,19 @@ const SCALE = {
           // mythology batch 1 — underworld realms, described and drawn room-scale
           'mictlan', 'xibalba',
           // mining batch 1 — the mine working itself, room to building scale
-          'placer_mining', 'room_and_pillar_mining', 'longwall_mining'],
+          'placer_mining', 'room_and_pillar_mining', 'longwall_mining',
+          // mining value chains batch 2 — a hundred-plus-metre machine or heap: Big Muskie was 150m long,
+          // a Capesize bulk carrier about 290m, an ore stockpile a similarly sized mound
+          'dragline_excavator', 'stockpile', 'bulk_carrier'],
   '3':   ['atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
           'trophic_cascade',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
           'mountain', 'volcano', 'canyon', 'glacier', 'fjord', 'meander', 'oxbow_lake', 'delta', 'floodplain', 'lagoon', 'estuary', 'caldera', 'plateau',
           // mining batch 1 — the whole open working, kilometre scale
-          'open_pit_mining', 'strip_mining', 'mountaintop_removal', 'block_caving'],
+          'open_pit_mining', 'strip_mining', 'mountaintop_removal', 'block_caving',
+          // mining value chains batch 2 — a unit train (the record run was 7.35km) and the port precinct it feeds,
+          // kilometre scale like the pit above them
+          'rail', 'port'],
   '4':   ['rift_valley', 'trench'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest'],

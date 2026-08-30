@@ -21454,5 +21454,175 @@
     "why": "Hatchling leg bones were too underdeveloped to walk, while their teeth already showed wear — direct evidence adults brought bark, leaves and other fibrous plant food back to the nest.",
     "src": "https://en.wikipedia.org/wiki/Maiasaura",
     "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "meat"
+    ],
+    "out": "quetzalcoatlus",
+    "why": "A ground-hunting predator of small prey, not a dinosaur but a pterosaur — and, like the non-avian dinosaurs themselves, wiped out at the Cretaceous's end, the boundary marked worldwide by a thin, telltale layer of ash.",
+    "src": "https://en.wikipedia.org/wiki/Quetzalcoatlus",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "tungsten_carbide"
+    ],
+    "out": "drilling_rig",
+    "why": "Before an open pit's bench is blasted, a rotary rig with tungsten-carbide-tipped bits bores rows of holes across it — up to 27cm wide and over 40 metres deep, the pattern every blast round is built from.",
+    "src": "https://www.epiroc.com/en-us/products/drill-rigs/surface-blasthole-drill-rigs/dml",
+    "supported": true
+  },
+  {
+    "in": [
+      "strip_mining",
+      "electric_motor"
+    ],
+    "out": "dragline_excavator",
+    "why": "Draglines strip the overburden off a coal seam, and almost all large ones run on grid electricity delivered by a trailing cable rather than diesel — Big Muskie's ran at 13,800 volts, stripping 8,000 cubic yards an hour.",
+    "src": "https://en.wikipedia.org/wiki/Big_Muskie",
+    "verified": true
+  },
+  {
+    "in": [
+      "generator",
+      "electric_motor"
+    ],
+    "out": "diesel_electric_drive",
+    "why": "A diesel engine turns a generator instead of a gearbox; the electricity it makes feeds motors that turn the wheels. It skips the mechanical transmission entirely, which is why locomotives and giant mining trucks both use it.",
+    "src": "https://en.wikipedia.org/wiki/Diesel%E2%80%93electric_transmission",
+    "verified": true
+  },
+  {
+    "in": [
+      "open_pit_mining",
+      "diesel_electric_drive"
+    ],
+    "out": "haul_truck",
+    "why": "The haul roads spiralling up an open pit's walls exist for one machine. BelAZ's 75710 hauls 450 tonnes on eight tyres 4 metres across, each rear wheel turned by its own electric motor fed by an onboard diesel-electric drivetrain.",
+    "src": "https://en.wikipedia.org/wiki/BelAZ_75710",
+    "verified": true
+  },
+  {
+    "in": [
+      "room_and_pillar_mining",
+      "tungsten_carbide"
+    ],
+    "out": "continuous_miner",
+    "why": "A continuous miner's rotating steel drum, fitted with tungsten-carbide picks, scrapes up to 14 tons of coal a minute straight off the seam — no separate drilling or blasting, the way older room-and-pillar work needed.",
+    "src": "https://en.wikipedia.org/wiki/Coal_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "longwall_mining",
+      "tungsten_carbide"
+    ],
+    "out": "longwall_shearer",
+    "why": "Tungsten carbide is literally what a longwall shearer's picks are made of, one of the material's standard mining uses alongside rock-drill bits and plough chisels. The drums shear coal off the face as hydraulic supports advance behind them.",
+    "src": "https://en.wikipedia.org/wiki/Tungsten_carbide",
+    "verified": true
+  },
+  {
+    "in": [
+      "diesel_electric_drive",
+      "wheel"
+    ],
+    "out": "locomotive",
+    "why": "Diesel-electric transmission reached railways before it reached mining trucks: a locomotive's engine turns a generator, and traction motors geared to the wheels supply the torque — the drivetrain of nearly every modern freight locomotive.",
+    "src": "https://en.wikipedia.org/wiki/Diesel%E2%80%93electric_transmission",
+    "verified": true
+  },
+  {
+    "in": [
+      "haul_truck",
+      "steel"
+    ],
+    "out": "crusher",
+    "why": "Every haul truck dumps its load straight into a primary crusher — a gyratory or jaw crusher, essentially a moving steel jaw, that breaks head-sized boulders down to fist-sized chunks before anything else happens to the ore.",
+    "src": "https://en.wikipedia.org/wiki/Crusher",
+    "verified": true
+  },
+  {
+    "in": [
+      "crusher",
+      "steel"
+    ],
+    "out": "ball_mill",
+    "why": "Crushed ore still isn't fine enough for flotation. A ball mill takes over: a rotating steel drum tumbling with forged steel grinding balls reduces it further, to sand- and silt-sized grains, before the ore can go anywhere else.",
+    "src": "https://www.911metallurgist.com/blog/sag-mill-grinding-circuit-design/",
+    "supported": true
+  },
+  {
+    "in": [
+      "air",
+      "ball_mill"
+    ],
+    "out": "flotation_cell",
+    "why": "Ground ore becomes a slurry; blow air through it with a reagent that makes the valuable grains hydrophobic, and they stick to the rising bubbles and float off as a froth. Froth flotation is the main way sulfide ores are recovered.",
+    "src": "https://en.wikipedia.org/wiki/Froth_flotation",
+    "verified": true
+  },
+  {
+    "in": [
+      "flotation_cell",
+      "ore"
+    ],
+    "out": "tailings",
+    "why": "Flotation only wants the sliver of the rock that's valuable mineral. Almost everything else — roughly 99% of what the ball mill ground, still wet — leaves as tailings, pumped to a dam built to hold the slurry back.",
+    "src": "https://en.wikipedia.org/wiki/Tailings",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber",
+      "wheel"
+    ],
+    "out": "conveyor_belt",
+    "why": "A conveyor belt is a closed loop of reinforced rubber slung between rotating pulleys — cheaper per tonne-kilometre than trucking, which is why crushed ore usually rides a belt for the rest of its trip through a plant.",
+    "src": "https://en.wikipedia.org/wiki/Conveyor_belt",
+    "verified": true
+  },
+  {
+    "in": [
+      "conveyor_belt",
+      "crusher"
+    ],
+    "out": "stockpile",
+    "why": "Crushed ore rides a conveyor out to open stockpiles, where truckloads of different grades get blended into one consistent pile — buffering the swings in ore grade the mill or the ship both need smoothed out.",
+    "src": "https://www.ausimm.com/publications/conference-proceedings/iron-ore-2013/the-role-of-precrusher-stockpiling-for-grade-control-in-mining/",
+    "supported": true
+  },
+  {
+    "in": [
+      "locomotive",
+      "stockpile"
+    ],
+    "out": "rail",
+    "why": "Stockpiled ore is loaded into hopper cars and hauled out as a dedicated unit train. BHP's Pilbara train set the world record for longest and heaviest ever: 7.35km long, 682 cars, 99,734 tonnes, hauled by eight locomotives.",
+    "src": "https://www.railwaygazette.com/news/bhp-breaks-its-own-heaviest-train-record/29603.article",
+    "verified": true
+  },
+  {
+    "in": [
+      "port",
+      "conveyor_belt"
+    ],
+    "out": "bulk_carrier",
+    "why": "A shiploader — a travelling conveyor on a gantry — is what actually gets stockpiled ore into a waiting hold. Capesize ships, up to 400,000 tonnes deadweight and too big for the Suez or Panama Canal, carry about 75% of the world's seaborne iron ore.",
+    "src": "https://en.wikipedia.org/wiki/Bulk_carrier",
+    "verified": true
+  },
+  {
+    "in": [
+      "rail",
+      "sea"
+    ],
+    "out": "port",
+    "why": "Pilbara ore railways run to one kind of destination: a dedicated bulk-export terminal. Port Hedland, the world's biggest bulk export port by tonnage, shipped 531.5 million tonnes of iron ore in a single year.",
+    "src": "https://en.wikipedia.org/wiki/Port_of_Port_Hedland",
+    "verified": true
   }
 ]
