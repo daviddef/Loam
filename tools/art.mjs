@@ -4587,6 +4587,24 @@ ship.ui_ladder = { c: 'craft', s: [
 ship.ui_eye = { c: 'craft', s: [
   S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),
 ] };
+// The aside pane's own tabs, converted from text to icons ("could the side
+// panel 'shelf' and 'elements' turn to just icons?" — asked more than once).
+// Three items sitting on a line, for a shelf holding what you've found.
+ship.ui_shelf = { c: 'craft', s: [
+  S('M10 44 L50 44', 'ik', 3.5), C(20, 34, 4, 'bs'), C(32, 30, 4, 'hi'), C(44, 36, 4, 'bs'),
+] };
+// A plain list — bullet and rule, three times — distinct from ui_table's
+// grid, since this tab is the flat catalogue, not the periodic chart.
+ship.ui_elements = { c: 'craft', s: [
+  C(9, 17, 2.4, 'ik'), S('M17 17 L48 17', 'ik', 3.2),
+  C(9, 30, 2.4, 'ik'), S('M17 30 L48 30', 'ik', 3.2),
+  C(9, 43, 2.4, 'ik'), S('M17 43 L48 43', 'ik', 3.2),
+] };
+// A paw: one pad, three toes — geometric circles only, matching ui_eye's
+// restraint rather than a literal illustrated paw print.
+ship.ui_animals = { c: 'craft', s: [
+  C(30, 38, 9, 'bs'), C(17, 22, 5, 'hi'), C(30, 15, 5, 'hi'), C(43, 22, 5, 'hi'),
+] };
 ship.ui_shutter = { c: 'craft', s: [
   // A single still capture, not the live scan — a shutter ring, not a
   // camera body, so it doesn't just repeat ui_scan's silhouette.
