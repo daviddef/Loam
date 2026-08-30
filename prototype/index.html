@@ -3699,6 +3699,15 @@ function tidy() {
   // it was cut from is what actually shortens that one necessary line —
   // everything else about the satellite's own internal shape, already
   // correct, is untouched.
+  // The rigid slide above had no idea what the main pack already occupies,
+  // so a satellite could land squarely on top of an existing card — the
+  // exact overlap David caught live on an entirely ordinary short chain.
+  // Track every cell already spoken for and, if the natural one-row offset
+  // would collide, push the satellite one further row away (same side,
+  // same column) until it clears — bounded, since a satellite is at most
+  // 8 cards and this only has to escape whatever's directly in the way.
+  const cellKey = (col, row) => col + '|' + row;
+  const occupied = new Set(chips.map(c => cellKey(pos.get(c), bandOf.get(c) + visDepthOf.get(c))));
   for (const [satG, { satelliteAnchor, mainAnchor }] of attachToComp) {
     const satPack = packs[satG];
     // Above if the satellite is really mainAnchor's own parent (Cellulose
@@ -3708,14 +3717,21 @@ function tidy() {
     // (relative row spacing, column order) carries over unchanged; only
     // where that shape sits moves.
     const satIsParent = (parents.get(mainAnchor) ?? []).includes(satelliteAnchor);
-    const wantRow = bandOf.get(mainAnchor) + visDepthOf.get(mainAnchor) + (satIsParent ? -1 : 1);
-    const dBand = wantRow - (bandOf.get(satelliteAnchor) + visDepthOf.get(satelliteAnchor));
+    const dir = satIsParent ? -1 : 1;
     const dCol = pos.get(mainAnchor) - pos.get(satelliteAnchor);
+    let dBand, tries = 0;
+    do {
+      const wantRow = bandOf.get(mainAnchor) + visDepthOf.get(mainAnchor) + dir * (1 + tries);
+      dBand = wantRow - (bandOf.get(satelliteAnchor) + visDepthOf.get(satelliteAnchor));
+      tries++;
+    } while (tries < 24 && satPack.chips.some(c =>
+      occupied.has(cellKey(pos.get(c) + dCol, bandOf.get(c) + visDepthOf.get(c) + dBand))));
     if (!dCol && !dBand) continue;
     for (const c of satPack.chips) {
       pos.set(c, pos.get(c) + dCol);
       bandOf.set(c, bandOf.get(c) + dBand);
     }
+    for (const c of satPack.chips) occupied.add(cellKey(pos.get(c), bandOf.get(c) + visDepthOf.get(c)));
   }
 
   const [ox, oy] = toWorld(b.left + 40, b.top + 40);
