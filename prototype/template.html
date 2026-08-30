@@ -1209,12 +1209,14 @@ __CATEGORY_CSS__
     flex:1;min-width:0;background:var(--surface);border:1.5px solid var(--line);
     border-radius:11px;padding:8px 10px;
   }
-  .stepgest{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+  .stepgest{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-bottom:5px;cursor:pointer}
   .stepgest .g{
     display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px;
     background:var(--card);border:1px solid var(--line);font:600 11.5px var(--face-name);cursor:pointer;
   }
   .stepgest em{font-style:normal;color:var(--ink-soft);font:700 10.5px var(--face-name)}
+  .stepgest .tw.why{margin-left:auto;color:var(--ink-soft);font-size:11px}
+  .stepwhy.fold{display:none}
   .stepbody p{margin:0 0 5px;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
   .stepbody .src{margin:0;font-size:10.5px}
   /* guess before the reveal */
@@ -5964,16 +5966,23 @@ function orderedSteps(id) {
   }
   return out;
 }
+// The chain itself — bare gestures, one line each — is the default; the
+// prose is opt-in per step, not shown for every step at once. ("by default
+// it should just show stone wait soil + seed -> grass... no text. only if
+// we click story it should expand out" — found live, a real 4-step chain
+// with all four paragraphs open at once.)
 function stepCard(r, i) {
   const v = r.verb ? verbs.find(x => x.id === r.verb) : null;
   const bit = (id) => `<span class="g" data-entry="${id}">${glyph(id, 19)} ${nameOf(byId[id])}</span>`;
   return `<div class="step">
     <div class="stepno">${i + 1}</div>
     <div class="stepbody">
-      <div class="stepgest">${bit(r.in[0])}${v ? `<em>${glyph('verb_' + v.id, 17)} ${v.name}</em>` : `<em>+</em>${bit(r.in[1])}`}
-        <span class="arw">→</span>${bit(r.out)}</div>
-      <p>${r.why}</p>
-      ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
+      <div class="stepgest" data-stepwhy>${bit(r.in[0])}${v ? `<em>${glyph('verb_' + v.id, 17)} ${v.name}</em>` : `<em>+</em>${bit(r.in[1])}`}
+        <span class="arw">→</span>${bit(r.out)}<span class="tw why">▸</span></div>
+      <div class="stepwhy fold">
+        <p>${r.why}</p>
+        ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
+      </div>
     </div></div>`;
 }
 
@@ -6190,6 +6199,13 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (mr) { hintLevel.set(mr.dataset.more, (hintLevel.get(mr.dataset.more) ?? 0) + 1); return showHint(mr.dataset.more); }
   const en = ev.target.closest('[data-entry]');
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
+  const sw = ev.target.closest('[data-stepwhy]');
+  if (sw) {
+    const open = !sw.nextElementSibling?.classList.toggle('fold');
+    const tw = sw.querySelector('.tw.why');
+    if (tw) tw.textContent = open ? '▾' : '▸';
+    return;
+  }
   const put = ev.target.closest('[data-put]');
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
   const t = ev.target.closest('[data-trace]');

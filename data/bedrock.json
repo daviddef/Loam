@@ -2579,6 +2579,123 @@
       "src": "https://en.wikipedia.org/wiki/Malpighian_tubule_system"
     },
     {
+      "id": "bed_ecdysone",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Ecdysone",
+      "formula": "C27H44O6",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Ecdysone",
+      "fact": "The prohormone of 20-hydroxyecdysone, the insect molting hormone proper — secreted from the prothoracic glands, and a rise in its concentration is what switches on the genes a larva needs for its next molt.",
+      "src": "https://en.wikipedia.org/wiki/Ecdysone"
+    },
+    {
+      "id": "bed_juvenile_hormone",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Juvenile Hormone",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Juvenile hormone",
+      "fact": "Secreted by the corpora allata, a pair of glands behind the brain — in a honey bee, plenty of it keeps ecdysone driving larva-to-larva molts, less of it switches ecdysone over to pupation, and its complete absence is what finally lets the adult form.",
+      "src": "https://en.wikipedia.org/wiki/Juvenile_hormone"
+    },
+    {
+      "id": "bed_foregut",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Foregut",
+      "of": [
+        "bed_insect_cuticle"
+      ],
+      "srcTitle": "Insect physiology",
+      "fact": "An invagination of the epidermis, lined with cuticle just like the exoskeleton outside it — this is the section that stores, grinds and moves food onward, and the whole lining sheds with every moult, right along with the rest of the exoskeleton.",
+      "src": "https://en.wikipedia.org/wiki/Insect_physiology"
+    },
+    {
+      "id": "bed_midgut",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Midgut",
+      "of": [
+        "bed_cell",
+        "bed_protein"
+      ],
+      "srcTitle": "Insect physiology",
+      "fact": "Unlike the gut sections on either side of it, this one isn't lined with cuticle at all — just rapidly dividing epithelial cells, constantly replacing themselves while secreting the enzymes that digest the food and absorb the nutrients.",
+      "src": "https://en.wikipedia.org/wiki/Insect_physiology"
+    },
+    {
+      "id": "bed_hindgut",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Hindgut",
+      "of": [
+        "bed_insect_cuticle"
+      ],
+      "srcTitle": "Insect physiology",
+      "fact": "Cuticle-lined like the foregut, and shed with it at every moult — three sections, the ileum, the colon and the wide rectum, doing the last work of reclaiming water and salt before what's left becomes a fecal pellet.",
+      "src": "https://en.wikipedia.org/wiki/Insect_physiology"
+    },
+    {
+      "id": "bed_hemolymph",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Hemolymph",
+      "of": [
+        "bed_water_molecule",
+        "bed_protein",
+        "bed_cell"
+      ],
+      "srcTitle": "Hemolymph",
+      "fact": "Water carrying dissolved salts, sugar and protein, plus free-floating hemocyte cells for immune defense — and unlike vertebrate blood, none of it carries oxygen: that job belongs entirely to the tracheal system instead.",
+      "src": "https://en.wikipedia.org/wiki/Hemolymph"
+    },
+    {
+      "id": "bed_dorsal_vessel",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Dorsal Vessel",
+      "of": [
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Heart",
+      "fact": "A muscular tube running the length of the body, not a chambered pump — hemolymph seeps in through many small one-way channels along its length, and the tube pumps it straight into the hemocoel, the open cavity between the organs, instead of through any vessels.",
+      "src": "https://en.wikipedia.org/wiki/Heart"
+    },
+    {
+      "id": "bed_ganglion",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ganglion",
+      "of": [
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Ganglion",
+      "fact": "A cluster of neuron cell bodies acting as its own local nerve center — vertebrates reserve the word for structures outside the brain and spinal cord, but among invertebrates that restriction is dropped entirely, and the main mass of an insect's own brain is itself called the cerebral ganglion.",
+      "src": "https://en.wikipedia.org/wiki/Ganglion"
+    },
+    {
+      "id": "bed_ventral_nerve_cord",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ventral Nerve Cord",
+      "of": [
+        "bed_ganglion",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Ventral nerve cord",
+      "fact": "Not a single cord along the back but a rope-ladder strung along the belly instead: physically separate ganglia at each segment, made of nervous tissue, linked lengthwise by connectives and rung by cross-tracts called commissures, carrying signal both up to the brain and back down to the body.",
+      "src": "https://en.wikipedia.org/wiki/Ventral_nerve_cord"
+    },
+    {
       "id": "bed_reptile_scale",
       "kind": "compound",
       "tier": "tissue",
@@ -3098,7 +3215,16 @@
     ],
     "bee": [
       "bed_tracheal_system",
-      "bed_malpighian_tubule"
+      "bed_malpighian_tubule",
+      "bed_ecdysone",
+      "bed_juvenile_hormone",
+      "bed_foregut",
+      "bed_midgut",
+      "bed_hindgut",
+      "bed_dorsal_vessel",
+      "bed_hemolymph",
+      "bed_ganglion",
+      "bed_ventral_nerve_cord"
     ],
     "snake": [
       "bed_snake_vertebral_column",
