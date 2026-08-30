@@ -8,7 +8,8 @@
     "order",
     "family",
     "subfamily",
-    "genus"
+    "genus",
+    "species"
   ],
   "groups": [
     {
@@ -568,6 +569,33 @@
       "fact": "Tiger, lion, jaguar, leopard and snow leopard — unified by an incompletely ossified hyoid bone and an elastic-padded larynx that lets every member roar, except the snow leopard.",
       "srcTitle": "Panthera",
       "src": "https://en.wikipedia.org/wiki/Panthera"
+    },
+    {
+      "id": "tx_canidae",
+      "rank": "family",
+      "parent": "tx_carnivora",
+      "name": "Canidae",
+      "fact": "Long legs and a lithe body built for chasing prey, non-retractable claws, and carnassial teeth shaped for shearing flesh — around 37 living species, from the 24 cm fennec fox to the gray wolf.",
+      "srcTitle": "Canidae",
+      "src": "https://en.wikipedia.org/wiki/Canidae"
+    },
+    {
+      "id": "tx_canis",
+      "rank": "genus",
+      "parent": "tx_canidae",
+      "name": "Canis",
+      "fact": "Wolves, coyotes, jackals and the domestic dog — every species here has 78 chromosomes and can potentially interbreed with every other.",
+      "srcTitle": "Canis",
+      "src": "https://en.wikipedia.org/wiki/Canis"
+    },
+    {
+      "id": "tx_canis_lupus",
+      "rank": "species",
+      "parent": "tx_canis",
+      "name": "Canis lupus",
+      "fact": "One species holding the gray wolf and every domestic dog breed alike — Canis lupus familiaris is formally a subspecies of the wolf, not a separate species, and the dingo is another.",
+      "srcTitle": "Wolf",
+      "src": "https://en.wikipedia.org/wiki/Wolf"
     }
   ]
 }

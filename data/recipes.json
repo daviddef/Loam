@@ -17414,5 +17414,185 @@
     "src": "https://en.wikipedia.org/wiki/Mysticeti",
     "verb": "wait",
     "verified": true
+  },
+  {
+    "in": [
+      "wolf"
+    ],
+    "verb": "wait",
+    "out": "dog",
+    "why": "Dogs did not descend from any wolf alive today. DNA shows all dogs and wolves share a common ancestor: a Late Pleistocene wolf population, now extinct, whose lineage split from today's wolves somewhere between 27,000 and 40,000 years ago — long before there was any farming for a dog to be useful to.",
+    "src": "https://en.wikipedia.org/wiki/Origin_of_the_domestic_dog",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog"
+    ],
+    "verb": "wait",
+    "out": "pug",
+    "why": "Bred for many generations in China purely as a companion, with no working job at all — pet pugs were valued highly enough by Chinese emperors that the royal dogs were kept in luxury and guarded by soldiers. Dutch traders carried the breed to Europe in the 16th century, where it became a favourite of European royalty, Queen Victoria among them.",
+    "src": "https://en.wikipedia.org/wiki/Pug",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog"
+    ],
+    "verb": "chill",
+    "out": "siberian_husky",
+    "why": "Developed by the Chukchi people of the Chukchi Peninsula in eastern Siberia as a sled-pulling and companion dog able to survive extreme cold, with a double coat built to withstand temperatures as low as -50 to -60°C. Introduced to Alaska around 1908 during the Nome Gold Rush, it went on to dominate sled-dog racing on a combination of speed and endurance.",
+    "src": "https://en.wikipedia.org/wiki/Siberian_Husky",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "sheep"
+    ],
+    "out": "border_collie",
+    "why": "Bred in the hill country of the England-Scotland border to herd sheep using 'the eye' — a fixed, intimidating stare that moves a flock without the dog touching it. Stanley Coren's 1994 survey of obedience-trial judges ranked it the most trainable of 138 breeds tested, and it is often called the most intelligent dog breed.",
+    "src": "https://en.wikipedia.org/wiki/Border_Collie",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "pasture"
+    ],
+    "out": "german_shepherd",
+    "why": "Max von Stephanitz founded the breed in 1899 from traditional German herding dogs that worked sheep and cattle across the pasture, breeding strictly for intelligence and working ability rather than looks. That same working drive later made the breed a mainstay of police, military, search-and-rescue and disability-assistance work.",
+    "src": "https://en.wikipedia.org/wiki/German_Shepherd",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "cow"
+    ],
+    "out": "rottweiler",
+    "why": "The breed descends from Roman legion drover dogs that helped move cattle over the Alps to feed the army. Those dogs interbred with local dogs around the German town of Rottweil, where butchers used them to herd cattle and other livestock and pull carts of meat to market — earning the breed its old name, the 'Rottweil butcher's dog.'",
+    "src": "https://en.wikipedia.org/wiki/Rottweiler",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "snow"
+    ],
+    "out": "saint_bernard",
+    "why": "Monks at the Great St Bernard Hospice, on a treacherous Alpine pass between Switzerland and Italy, began keeping dogs around 1660 and by the mid-1700s were using them for search and rescue — strong enough to cross deep snow drifts and track lost travelers by scent. One dog, Barry, is credited with saving somewhere between 40 and 100 lives.",
+    "src": "https://en.wikipedia.org/wiki/St._Bernard_(dog)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "wood"
+    ],
+    "out": "basenji",
+    "why": "Basenjis come from the old-growth forest of the Congo Basin in Central Africa, where villagers used them to drive game silently through the wood and into nets. Its unusually shaped larynx cannot produce a true bark — instead it makes a yodel-like sound, which is how it earned the name 'the barkless dog.'",
+    "src": "https://en.wikipedia.org/wiki/Basenji",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "field"
+    ],
+    "out": "greyhound",
+    "why": "Historically used for hunting in the open, where its pursuit speed and keen eyesight — rather than scent — let it chase down prey across open fields by sight, a technique called coursing. Its light, muscular build, large heart and flexible spine let it reach peak speeds of at least 69 km/h (43 mph).",
+    "src": "https://en.wikipedia.org/wiki/Greyhound",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "silk"
+    ],
+    "out": "afghan_hound",
+    "why": "One of the oldest dog lineages, genetically distinct from most breeds first developed in the 19th century. Its thick, fine, silky coat evolved as protection from the harsh mountain climate of Afghanistan, and its large paw pads act as shock absorbers on rocky ground.",
+    "src": "https://en.wikipedia.org/wiki/Afghan_Hound",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "deer"
+    ],
+    "out": "bloodhound",
+    "why": "Descended from hounds bred by monks at the Abbey of Saint-Hubert in Belgium to hunt deer and wild boar by scent — bred so carefully that they were known as 'blooded hounds,' hounds of pure lineage, likely the origin of the name. Its olfactory bulb is roughly 40 times bigger than a human's relative to brain size, letting it follow a trail days old; canine identification like this has been accepted as evidence in some courts.",
+    "src": "https://en.wikipedia.org/wiki/Bloodhound",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "rabbit"
+    ],
+    "out": "beagle",
+    "why": "Bred primarily for hunting rabbit and hare by scent, a pursuit known as beagling. Its keen nose and unintimidating size later made it the breed of choice for the US Department of Agriculture's 'Beagle Brigade,' which sniffs airport luggage for prohibited food.",
+    "src": "https://en.wikipedia.org/wiki/Beagle",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "soil"
+    ],
+    "out": "dachshund",
+    "why": "The name comes from German Dachs (badger) and Hund (dog): the breed was built to scent, chase, and dig badgers and other burrowing animals out of the soil. Its short legs and long body suit tunnel work, its oversized front paws are shaped like paddles for digging, and its loose skin keeps from tearing underground.",
+    "src": "https://en.wikipedia.org/wiki/Dachshund",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "meadow"
+    ],
+    "out": "jack_russell_terrier",
+    "why": "Developed by the Reverend John 'Jack' Russell starting in 1819 from a terrier named Trump, purpose-built to run alongside mounted foxhound packs across the meadows and countryside of North Devon, then go to ground and bolt the fox from its den once the hounds ran it there.",
+    "src": "https://en.wikipedia.org/wiki/Jack_Russell_Terrier",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "rope"
+    ],
+    "out": "bull_terrier",
+    "why": "Descends from 'bull and terrier' dogs bred for bull-baiting, in which a bull was tethered by a collar and rope staked to the ground while dogs attacked it. After the sport was outlawed, James Hinks crossed these fighting dogs with the English White Terrier in the 1850s-60s to breed a cleaner-looking dog, fixing the breed's now-famous egg-shaped head by 1862.",
+    "src": "https://en.wikipedia.org/wiki/Bull_Terrier",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "water"
+    ],
+    "out": "labrador_retriever",
+    "why": "Descended from St. John's water dogs bred by fishermen in Newfoundland to haul nets and retrieve fish from the water, brought to Britain in the 1830s and crossed with British hunting dogs. Its 'soft mouth' — the ability to carry game and waterfowl without damaging it — made it the standard retriever, and by 2006 the UK and US each had more than twice as many registered Labradors as the next most popular breed.",
+    "src": "https://en.wikipedia.org/wiki/Labrador_Retriever",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "duck"
+    ],
+    "out": "golden_retriever",
+    "why": "Bred at the Guisachan estate in the Scottish Highlands beginning in the 1860s by Dudley Marjoribanks, Lord Tweedmouth, who crossed a Flat-coated Retriever with a Tweed Water Spaniel — later adding Red Setter, Labrador and Bloodhound blood — to build a gundog able to retrieve shot ducks and other game from both water and land.",
+    "src": "https://en.wikipedia.org/wiki/Golden_Retriever",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "sand"
+    ],
+    "out": "chihuahua",
+    "why": "Named for the Mexican state of Chihuahua, most of which lies in the Chihuahuan Desert, where Spanish conquistadors found small dogs already plentiful. The modern breed is the smallest recognized in the world, with an ideal weight of just 1.5 to 2.5 kg (3.3 to 5.5 lb).",
+    "src": "https://en.wikipedia.org/wiki/Chihuahua_(dog)",
+    "verified": true
   }
 ]

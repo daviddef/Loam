@@ -2939,7 +2939,7 @@
       "wild"
     ],
     "fact": "Dogs and wolves share a common wolf ancestor — today's wolves are cousins, not quite the parents.",
-    "taxon": "tx_carnivora"
+    "taxon": "tx_canis_lupus"
   },
   {
     "id": "deer",
@@ -3003,7 +3003,7 @@
     ],
     "fact": "A domestic dog gone wild — feral for well over 3,000 years, and now Australia's apex predator.",
     "terminal": true,
-    "taxon": "tx_carnivora"
+    "taxon": "tx_canis_lupus"
   },
   {
     "id": "platypus",
@@ -4769,7 +4769,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A triangular fibre with rounded corners. It shines because it works like a prism."
   },
   {
@@ -4822,7 +4821,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Every layer is twisted against the one below. That fight is the only thing holding it."
   },
   {
@@ -13005,7 +13003,6 @@
     "tags": [
       "animal"
     ],
-    "terminal": true,
     "fact": "Livestock since at least the first century BC in Rome, kept for meat, fur and wool.",
     "taxon": "tx_lagomorpha"
   },
@@ -13879,5 +13876,220 @@
     ],
     "fact": "An early mysticete that still had teeth, not baleen — gripped and sheared prey instead of filtering. One of the oldest known.",
     "taxon": "tx_cetacea"
+  },
+  {
+    "id": "dog",
+    "name": "Dog",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The first animal humans ever domesticated, tens of thousands of years before any other — and still, formally, the same species as the wolf: Canis lupus familiaris.",
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "german_shepherd",
+    "name": "German Shepherd",
+    "emoji": "🐕‍🦺",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred from traditional German herding dogs in 1899 by one man, Max von Stephanitz, for working ability over looks — now a mainstay of police, military and service work.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "border_collie",
+    "name": "Border Collie",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Often ranked the most intelligent dog breed; herds sheep with a silent, fixed stare called 'the eye' instead of barking or nipping.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "rottweiler",
+    "name": "Rottweiler",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Descended from Roman legion drover dogs — by the Middle Ages it was the 'Rottweil butcher's dog,' herding cattle and pulling meat carts to market.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "saint_bernard",
+    "name": "Saint Bernard",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred at the Great St Bernard Hospice in the Alps to search for lost travelers in deep snow — one dog, Barry, is credited with saving 40 to 100 lives.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "siberian_husky",
+    "name": "Siberian Husky",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred by the Chukchi people of northeastern Siberia to pull sleds; its coat can withstand temperatures down to -50 to -60°C.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "basenji",
+    "name": "Basenji",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Doesn't bark — its unusually shaped larynx makes a yodel-like sound instead, earning it the nickname 'the barkless dog.'",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "greyhound",
+    "name": "Greyhound",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One of the fastest dogs alive, reaching peak speeds of at least 69 km/h (43 mph) on a large heart and a flexible spine.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "afghan_hound",
+    "name": "Afghan Hound",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A 'basal' breed that predates the 19th-century founding of most modern breeds — genetic studies place it among the oldest dog lineages alive.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "bloodhound",
+    "name": "Bloodhound",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its olfactory bulb is roughly 40 times bigger than a human's relative to brain size — trail identifications from it have been accepted as evidence in some courts.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "beagle",
+    "name": "Beagle",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred to hunt rabbits and hares by scent; the USDA's 'Beagle Brigade' now uses beagles to sniff out banned food in airport luggage.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "dachshund",
+    "name": "Dachshund",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its name means 'badger dog' in German — short legs, an elongated body and oversized paddle-shaped paws are all built for digging into a badger's burrow.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "jack_russell_terrier",
+    "name": "Jack Russell Terrier",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred from 1819 by an English parson, Jack Russell, starting with a single terrier named Trump, to run with foxhounds and bolt foxes from their dens.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "bull_terrier",
+    "name": "Bull Terrier",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its head is famously egg-shaped in profile, curving smoothly from skull to nose — one of the few dog breeds with triangular eyes.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "labrador_retriever",
+    "name": "Labrador Retriever",
+    "emoji": "🐕‍🦺",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The most-registered dog breed across the UK, US, Canada and New Zealand for decades running; a 'soft mouth' lets it carry downed game without leaving a mark.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "golden_retriever",
+    "name": "Golden Retriever",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Developed in the 1860s by a single Scottish breeder, Lord Tweedmouth, by crossing a Flat-coated Retriever with a now-extinct Tweed Water Spaniel.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "chihuahua",
+    "name": "Chihuahua",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The smallest recognized dog breed in the world, weighing as little as 1.5 kg (3.3 lb) fully grown.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
+  },
+  {
+    "id": "pug",
+    "name": "Pug",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred for centuries in China purely as an imperial companion — pet pugs were reportedly kept in luxury and guarded by soldiers.",
+    "terminal": true,
+    "taxon": "tx_canis_lupus"
   }
 ]
