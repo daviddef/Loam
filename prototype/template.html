@@ -330,6 +330,13 @@ __CATEGORY_CSS__
   }
   .chip.board{--cw:94px}
   .chip.board .art{width:60px;height:60px}
+  /* A compo-ghost's glyph — a compound's hexagon, or a leaf atom's real
+     periodic-table tile, centred in the same .art slot every other card's
+     drawing fills. */
+  .chip.board .art.compoatom{display:flex;align-items:center;justify-content:center}
+  .chip.board .art.compoatom .atom{width:36px;height:36px}
+  .chip.board .art.compoatom .atom .sym{font-size:14px}
+  .chip.board .art.compoatom .atom .z{font-size:8px}
   .chip.board .n{font-size:10px}
   .chip.board .ac{font-size:8px}
   /* Shelf chips are scanned, not read: drawing and name only. The shelf is
@@ -1243,6 +1250,12 @@ __CATEGORY_CSS__
   .ent em{font-style:normal;color:var(--ink-soft);font-size:11px;font-weight:700}
   .ent .arw{color:#C6B69C;margin:0 1px}
   .ent .out{background:#FFF3E9;border-color:#F0D6C0}
+  .ent .addroute{
+    margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:3px;
+    padding:3px 9px;border-radius:99px;border:1.5px solid var(--line);
+    background:var(--card);color:var(--ink-soft);font:700 10.5px var(--face-name);cursor:pointer;
+  }
+  .ent .addroute:hover{border-color:var(--orange);color:var(--brick)}
   .hint2{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:4px 2px 0}
   /* Named regulated allergens on a resolved ingredient, and a summary banner
      above the list. Amber, not red — this states a legal fact about the label,
@@ -2842,6 +2855,7 @@ function ghostTap(ghost) {
     return;
   }
   lastChipTap = { el: ghost, t: now };
+  if (ghost.classList.contains('compo')) return expandCompo(ghost);
   toast(`${ghost.dataset.text} — a real thing, just not built yet`);
 }
 
@@ -4058,6 +4072,158 @@ function spawnPlaceholder(text) {
   el.style.top = top + 'px';
   setTimeout(() => el.classList.remove('pop'), 340);
   return el;
+}
+/** A step in a "made of" chain that has no real playable-element counterpart
+ * — an organ, a tissue, an intermediate compound. Same .ghost treatment as a
+ * placeholder (not a real element, single tap explains/expands, double tap
+ * removes), but drawn as a hexagon — the same shape bedTreeHTML's own pills
+ * already use for a compound, so the glyph itself says "this is a made-of
+ * step" rather than "we haven't drawn this yet". A leaf atom gets the real
+ * periodic-table tile instead, since it IS the real thing, just reached by
+ * a different door than the shelf. ("why cant i see a human can also be
+ * made from these organs so i can add that path to the chart" — found live.) */
+function compoGlyphHTML(bedId) {
+  const a = atomById[bedId];
+  if (a) return `<span class="art compoatom">${atomTile(a)}</span>`;
+  return `<svg class="art compohex" viewBox="0 0 60 60" aria-hidden="true">` +
+    `<polygon points="30,4 53,17 53,43 30,56 7,43 7,17" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
+}
+function compoHTML(bedId) {
+  const a = atomById[bedId], c = compById[bedId];
+  const item = a ?? c;
+  if (!item) return '';
+  const kids = !a && c.of;
+  const openable = kids && kids.length;
+  return compoGlyphHTML(bedId) + `<span class="n">${item.name}</span><span class="rl"></span>` +
+    `<span class="ac">${a ? a.category : openable ? 'made of — tap to open' : 'a compound'}</span>`;
+}
+function spawnCompo(bedId, near, above) {
+  const el = document.createElement('div');
+  const [cw, ch] = cardSize();
+  el.className = 'chip board ghost compo pop';
+  el.dataset.uid = 'c' + (++chipSeq);
+  el.dataset.bed = bedId;
+  el.dataset.text = (atomById[bedId] ?? compById[bedId])?.name ?? bedId;
+  el.innerHTML = compoHTML(bedId);
+  world.appendChild(el);
+  let anchor = null;
+  if (near && near.length) {
+    const pts = near.filter(n => n && n.isConnected).map(chipCentre);
+    if (pts.length) anchor = [pts.reduce((a, p) => a + p[0], 0) / pts.length,
+                              pts.reduce((a, p) => a + p[1], 0) / pts.length + (above ? -ch - 22 : ch + 22)];
+  }
+  const [left, top] = freeSpot(cw, ch, anchor);
+  el.style.left = left + 'px';
+  el.style.top = top + 'px';
+  setTimeout(() => el.classList.remove('pop'), 340);
+  return el;
+}
+// The specific chip a "+ Chart" button's own element is already standing as
+// on the board, if any — checked regardless of prefs.consolidate, the same
+// way expandUp() always reuses the exact chip that was tapped even when
+// "one card per thing" is off (that toggle governs whether OTHER matching
+// elements get reused, not whether the very thing you are looking at
+// duplicates itself the moment you add a second path for it).
+function findBoardChip(id) {
+  return [...world.querySelectorAll('.chip.board:not(.hidden)')].find(c => c.dataset.id === id);
+}
+// A snapshot of what is already standing on the bench, keyed by real element
+// id or (for a compo-ghost) its bedrock id — so placeComposition/expandCompo
+// can reuse an existing chip instead of spawning a duplicate, same
+// "one card per thing" convention prefs.consolidate already governs
+// everywhere else placement happens.
+function boardAlready() {
+  const m = new Map();
+  if (prefs.consolidate) {
+    for (const el of world.querySelectorAll('.chip.board:not(.hidden)')) {
+      const key = el.dataset.id || el.dataset.bed;
+      if (key && !m.has(key)) m.set(key, el);
+    }
+  }
+  return m;
+}
+// One step of a "made of" chain: the real playable element it resolves to
+// (a leaf atom the player can actually hold, like Hydrogen or Carbon), or a
+// compo-ghost otherwise. Shared by placeComposition (the card's top-level
+// "+ Chart" button) and expandCompo (tapping a compo-ghost already on the
+// bench to open its own next level down) so both walk the tree the same way.
+function ensureCompoChild(bedId, near, already) {
+  const realId = PLAYABLE_ATOM.get(bedId);
+  const key = realId || bedId;
+  if (already.has(key)) return already.get(key);
+  const el = realId ? spawn(realId, null, null, near, true) : spawnCompo(bedId, near, true);
+  already.set(key, el);
+  return el;
+}
+function expandCompo(ghost) {
+  const bedId = ghost.dataset.bed;
+  const c = compById[bedId];
+  const kids = c && c.of;
+  if (!kids || !kids.length) {
+    ghost.classList.add('pulse');
+    setTimeout(() => ghost.classList.remove('pulse'), 380);
+    return;
+  }
+  const already = boardAlready();
+  for (const kid of kids) {
+    const el = ensureCompoChild(kid, [ghost], already);
+    links.push({ a: el, b: null, out: ghost, fresh: true });
+  }
+  benchTouched = true;
+  refreshFolds();
+  drawLinks();
+  tidy();
+  sfx.pick();
+}
+// The card's own "+ Chart" button on a "Made of" row — puts what a thing is
+// made of onto the canvas as its own linked chips, the same relationship a
+// crafted ancestor already gets, just reached through composition instead
+// of a recipe. ("made of and made from? i should be able to add either
+// path to the chart!" — found live, the clearest statement of this.)
+function placeComposition(id) {
+  const comps = BED.composition[id];
+  if (!comps || !comps.length) return;
+  pushUndo(`putting ${nameOf(byId[id])}'s composition on the bench`);
+  const already = boardAlready();
+  const out = findBoardChip(id) || already.get(id) || spawn(id, null, null, null);
+  already.set(id, out);
+  for (const bedId of comps) {
+    const el = ensureCompoChild(bedId, [out], already);
+    links.push({ a: el, b: null, out, fresh: true });
+  }
+  benchTouched = true;
+  refreshFolds();
+  drawLinks();
+  tidy();
+  sfx.pick();
+  save();
+}
+// The card's own "+ Chart" button on one "Made From" row — places THAT
+// specific real route, not whichever one bestRecipe's single heuristic
+// would have picked. Reuses the chip already standing for `id` (if any) and
+// links this route's parents into it, rather than spawning a duplicate.
+function placeRoute(id, idx) {
+  const knownIn = DATA.recipes.filter(r => r.out === id && r.in.every(i => found.has(i)));
+  const r = knownIn[idx];
+  if (!r) return;
+  pushUndo(`putting ${nameOf(byId[id])} on the bench`);
+  const already = boardAlready();
+  const ensure = (iid) => {
+    if (already.has(iid)) return already.get(iid);
+    const el = spawn(iid);
+    already.set(iid, el);
+    return el;
+  };
+  const parents = r.in.map(ensure);
+  let out = findBoardChip(id) || already.get(id);
+  if (out) links.push({ a: parents[0], b: parents[1] ?? null, out, fresh: true });
+  else out = materialize(r, parents);
+  benchTouched = true;
+  refreshFolds();
+  drawLinks();
+  tidy();
+  sfx.pick();
+  save();
 }
 // Open Food Facts' own regulated colour scales — real, official values
 // (the EU Nutri-Score palette; NOVA has no equally-official scale, so its
@@ -5460,7 +5626,9 @@ function showAtom(id) {
 function bedEquationHTML(id, atomIds) {
   const atomSpan = a => `<span class="g" data-atom="${a}">${atomTile(atomById[a])}${atomById[a].name}</span>`;
   return `<div class="ent bed-eq">${[...atomIds].map(atomSpan).join('<em>+</em>')}` +
-    `<span class="arw">→</span><span class="g out" data-entry="${id}">${glyph(id, 19)} ${byId[id].name}</span></div>`;
+    `<span class="arw">→</span><span class="g out" data-entry="${id}">${glyph(id, 19)} ${byId[id].name}</span>` +
+    (BED.composition[id] ? `<button class="addroute" data-put-compo="${id}" title="Add this path to the chart">+ Chart</button>` : '') +
+    `</div>`;
 }
 function bedrockHTML(tally, head = 'and below that') {
   const leaves = [...tally.keys()].filter(id => BED.composition[id]);
@@ -5581,9 +5749,21 @@ function showEntry(id, skipTraceDefault) {
   const knownOut  = owned ? usedIn.filter(r => found.has(r.out)) : [];
   const hiddenIn  = routesIn.length - knownIn.length;
   const hiddenOut = usedIn.length - knownOut.length;
-  const rows = (list, cls) => list.map(r =>
+  // Every real route in the "Made From" list used to be read-only — the
+  // card would list two, sometimes six, genuine ways to make a thing (Meat
+  // alone has goat/chicken/muscle/fish/duck/turkey) but only ever offered
+  // ONE of them onto the canvas, picked for you by bestRecipe, with no way
+  // to say which. "when i click meat, why does duck come up? could have
+  // been lamb, beef, duck, chicken, etc" and "made of and made from? i
+  // should be able to add either path to the chart!" — found live, asked
+  // repeatedly. Each 'in' row now carries its own index into `knownIn` so
+  // placeRoute() can place THAT specific route, not whichever one a single
+  // heuristic favours.
+  const rows = (list, cls) => list.map((r, i) =>
     `<div class="ent ${cls}">${gestureHTML(r)}<span class="arw">→</span>` +
-    `<span class="g out" data-entry="${r.out}">${glyph(r.out, 19)} ${byId[r.out].name}</span></div>`).join('');
+    `<span class="g out" data-entry="${r.out}">${glyph(r.out, 19)} ${byId[r.out].name}</span>` +
+    (cls === 'in' ? `<button class="addroute" data-put-route="${id}::${i}" title="Add this path to the chart">+ Chart</button>` : '') +
+    `</div>`).join('');
 
   document.getElementById('sheetBody').innerHTML = `
     <div class="phead fam-${f.id}">
@@ -5903,6 +6083,10 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (en && found.has(en.dataset.entry)) return showEntry(en.dataset.entry);
   const put = ev.target.closest('[data-put]');
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
+  const pr = ev.target.closest('[data-put-route]');
+  if (pr) { const [rid, idx] = pr.dataset.putRoute.split('::'); closeSheet(); return placeRoute(rid, Number(idx)); }
+  const pc = ev.target.closest('[data-put-compo]');
+  if (pc) { closeSheet(); return placeComposition(pc.dataset.putCompo); }
   const t = ev.target.closest('[data-trace]');
   if (t) showProvenance(t.dataset.trace);
   const qv = ev.target.closest('[data-quickview]');
