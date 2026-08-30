@@ -3262,6 +3262,383 @@
       "srcTitle": "Potassium bisulfite",
       "fact": "E228. Like its sodium counterpart, not a true solid but potassium and bisulfite ions in solution — used as a sterilising agent in brewing and winemaking.",
       "src": "https://en.wikipedia.org/wiki/Potassium_bisulfite"
+    },
+    {
+      "id": "bed_thyroid",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Thyroid",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Thyroid",
+      "fact": "Follicles of epithelium wrapped around a protein-rich colloid core — the follicular cells draw in iodine to build thyroxine and triiodothyronine, while scattered C cells nearby make calcitonin instead, a second hormone system riding in the same gland.",
+      "src": "https://en.wikipedia.org/wiki/Thyroid"
+    },
+    {
+      "id": "bed_adrenal_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Adrenal Gland",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Adrenal gland",
+      "fact": "Two glands stacked in one organ, not one: an outer cortex making steroid hormones — cortisol, aldosterone — and an inner medulla, developmentally more nerve tissue than gland, that fires adrenaline and noradrenaline straight into the bloodstream.",
+      "src": "https://en.wikipedia.org/wiki/Adrenal_gland"
+    },
+    {
+      "id": "bed_pituitary_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Pituitary Gland",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Pituitary gland",
+      "fact": "Two glands fused into one pea-sized organ at the base of the brain: a front lobe of secretory epithelium taking orders from the hypothalamus by blood, a rear lobe that is actually hypothalamus tissue itself, releasing hormones stored at the end of its own nerve fibers.",
+      "src": "https://en.wikipedia.org/wiki/Pituitary_gland"
+    },
+    {
+      "id": "bed_pineal_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Pineal Gland",
+      "of": [
+        "bed_nervous_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Pineal gland",
+      "fact": "A pea-sized cone of nervous tissue near the brain's center, evolved from cells related to the retina's own light sensors — it takes its timing cue from the eyes by way of the brain's clock, and answers only with melatonin, on darkness.",
+      "src": "https://en.wikipedia.org/wiki/Pineal_gland"
+    },
+    {
+      "id": "bed_thyroxine",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Thyroxine",
+      "formula": "C15H11I4NO4",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen",
+        "el_iodine"
+      ],
+      "srcTitle": "Thyroxine",
+      "fact": "Four iodine atoms hung off a tyrosine backbone — the only hormone built around a halogen at all — secreted by the thyroid as a slow-acting store that peripheral tissue converts to the sharper triiodothyronine as needed.",
+      "src": "https://en.wikipedia.org/wiki/Thyroxine"
+    },
+    {
+      "id": "bed_cortisol",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Cortisol",
+      "formula": "C21H30O5",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Cortisol",
+      "fact": "A steroid built in the adrenal cortex's zona fasciculata, released on a daily rhythm and again under stress — it raises blood sugar by favoring glucose over storage, and dials the immune system down while it's high.",
+      "src": "https://en.wikipedia.org/wiki/Cortisol"
+    },
+    {
+      "id": "bed_adrenaline",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Adrenaline",
+      "formula": "C9H13NO3",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Adrenaline",
+      "fact": "Fired from the adrenal medulla in seconds, not the hours a steroid hormone takes — it is what actually arrives first in a fight-or-flight response, spiking heart rate and blood sugar before cortisol's slower rise catches up.",
+      "src": "https://en.wikipedia.org/wiki/Adrenaline"
+    },
+    {
+      "id": "bed_melatonin",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Melatonin",
+      "formula": "C13H16N2O2",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Melatonin",
+      "fact": "Made from serotonin in the pineal gland, and only in the dark — light striking the retina suppresses it directly, which is the whole mechanism by which a bright screen at night keeps the brain from feeling sleepy.",
+      "src": "https://en.wikipedia.org/wiki/Melatonin"
+    },
+    {
+      "id": "bed_growth_hormone",
+      "kind": "compound",
+      "tier": "assembly",
+      "name": "Growth Hormone",
+      "of": [
+        "bed_protein"
+      ],
+      "srcTitle": "Growth hormone",
+      "fact": "A single 191-amino-acid chain made by the anterior pituitary, not a steroid at all — it drives growth partly on its own and partly by pushing the liver to release IGF-1, the hormone that actually does most of the work on bone and muscle.",
+      "src": "https://en.wikipedia.org/wiki/Growth_hormone"
+    },
+    {
+      "id": "bed_lymph_node",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Lymph Node",
+      "of": [
+        "bed_connective_tissue",
+        "bed_lymphocyte"
+      ],
+      "srcTitle": "Lymph node",
+      "fact": "A fibrous capsule around a mesh of connective tissue, cortex packed with B cells in follicles and T cells in the paracortex beneath it — lymph slows to a crawl passing through, giving resident macrophages time to trap whatever it's carrying.",
+      "src": "https://en.wikipedia.org/wiki/Lymph_node"
+    },
+    {
+      "id": "bed_spleen",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Spleen",
+      "of": [
+        "bed_connective_tissue",
+        "bed_lymphocyte",
+        "bed_erythrocyte"
+      ],
+      "srcTitle": "Spleen",
+      "fact": "Red pulp and white pulp doing two different jobs in one capsule — red pulp macrophages filter worn-out red blood cells and recycle their iron, while white pulp holds the same B- and T-cell arrangement a lymph node does.",
+      "src": "https://en.wikipedia.org/wiki/Spleen"
+    },
+    {
+      "id": "bed_thymus",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Thymus",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_lymphocyte",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Thymus",
+      "fact": "A scaffold of epithelial cells with immature T cells crowded through the mesh between them — cortex first, testing whether a T cell can recognize the body's own markers, before the medulla weeds out the ones that would attack the body itself.",
+      "src": "https://en.wikipedia.org/wiki/Thymus"
+    },
+    {
+      "id": "bed_lymph",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Lymph",
+      "of": [
+        "bed_water_molecule",
+        "bed_protein",
+        "bed_lymphocyte"
+      ],
+      "srcTitle": "Lymph",
+      "fact": "Interstitial fluid once it's been collected into a vessel — closer to blood plasma than anything else, richer in lymphocytes by the time it leaves a node, and the only route fat absorbed in the gut has to reach the bloodstream at all.",
+      "src": "https://en.wikipedia.org/wiki/Lymph"
+    },
+    {
+      "id": "bed_eosinophil",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Eosinophil",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Eosinophil",
+      "fact": "One to three percent of white blood cells, named for how eagerly its granules soak up the red dye eosin — its actual job is multicellular parasites, too big for a single phagocyte to swallow whole.",
+      "src": "https://en.wikipedia.org/wiki/Eosinophil"
+    },
+    {
+      "id": "bed_basophil",
+      "kind": "compound",
+      "tier": "blood_cell",
+      "name": "Basophil",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Basophil",
+      "fact": "The rarest white blood cell in circulation, under one percent — it carries histamine and heparin in its granules and fires them on an allergen, which is most of what an allergic reaction actually is.",
+      "src": "https://en.wikipedia.org/wiki/Basophil"
+    },
+    {
+      "id": "bed_macrophage",
+      "kind": "compound",
+      "tier": "cell",
+      "name": "Macrophage",
+      "of": [
+        "bed_monocyte"
+      ],
+      "srcTitle": "Macrophage",
+      "fact": "What a monocyte becomes within a day or three of leaving the bloodstream for tissue — it engulfs pathogens and debris whole through phagocytosis, then breaks them down in a fused phagosome-lysosome before signaling other immune cells in.",
+      "src": "https://en.wikipedia.org/wiki/Macrophage"
+    },
+    {
+      "id": "bed_eye",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Eye",
+      "of": [
+        "bed_cornea",
+        "bed_lens",
+        "bed_retina",
+        "bed_iris"
+      ],
+      "srcTitle": "Human eye",
+      "fact": "Light crosses the cornea for most of its bending, passes through an iris-ringed pupil that sets how much gets in, gets fine-focused by the lens, and lands on the retina, which is the only part that actually senses it.",
+      "src": "https://en.wikipedia.org/wiki/Human_eye"
+    },
+    {
+      "id": "bed_cornea",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Cornea",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Cornea",
+      "fact": "Five layers doing most of the eye's focusing before light ever reaches the lens — kept perfectly transparent by having no blood vessels at all, drawing its oxygen straight from tear film instead.",
+      "src": "https://en.wikipedia.org/wiki/Cornea"
+    },
+    {
+      "id": "bed_lens",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Lens",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_protein"
+      ],
+      "srcTitle": "Lens (vertebrate anatomy)",
+      "fact": "A biconvex capsule of crystallin protein packed in concentric fiber layers like an onion, kept clear by fiber cells that discard their own nucleus and mitochondria — with no blood vessels reaching in, it feeds entirely off the fluid bathing it.",
+      "src": "https://en.wikipedia.org/wiki/Lens_(vertebrate_anatomy)"
+    },
+    {
+      "id": "bed_retina",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Retina",
+      "of": [
+        "bed_nervous_tissue",
+        "bed_rod_cell",
+        "bed_cone_cell"
+      ],
+      "srcTitle": "Retina",
+      "fact": "Ten stacked layers of nervous tissue at the back of the eye, photoreceptors facing away from the light so it has to pass through the whole stack first — about 92 million rods for dim light far outnumber the roughly 6 million cones that handle color and detail.",
+      "src": "https://en.wikipedia.org/wiki/Retina"
+    },
+    {
+      "id": "bed_iris",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Iris",
+      "of": [
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Iris (anatomy)",
+      "fact": "Two smooth-muscle rings working against each other — one circular to shrink the pupil, one radial to widen it — fronted by a pigmented layer whose melanin decides eye color and blocks any light that isn't going through the pupil.",
+      "src": "https://en.wikipedia.org/wiki/Iris_(anatomy)"
+    },
+    {
+      "id": "bed_rod_cell",
+      "kind": "compound",
+      "tier": "cell",
+      "name": "Rod Cell",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Rod cell",
+      "fact": "Sensitive enough to fire on a single photon, about a hundred times more so than a cone — the roughly 92 million of them in a human retina are what night vision runs on, at the cost of color and fine detail.",
+      "src": "https://en.wikipedia.org/wiki/Rod_cell"
+    },
+    {
+      "id": "bed_cone_cell",
+      "kind": "compound",
+      "tier": "cell",
+      "name": "Cone Cell",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Cone cell",
+      "fact": "Three types, each carrying a different opsin protein tuned to red, green or blue wavelengths — comparing how strongly each type fires against the others is the entire mechanism behind seeing color at all.",
+      "src": "https://en.wikipedia.org/wiki/Cone_cell"
+    },
+    {
+      "id": "bed_ear",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ear",
+      "of": [
+        "bed_tympanic_membrane",
+        "bed_ossicles",
+        "bed_cochlea"
+      ],
+      "srcTitle": "Ear",
+      "fact": "Three sections in series, not one organ: an outer funnel to the eardrum, a middle chamber of three tiny bones to amplify its vibration, and a fluid-filled inner spiral that turns that vibration into the signal the brain hears.",
+      "src": "https://en.wikipedia.org/wiki/Ear"
+    },
+    {
+      "id": "bed_tympanic_membrane",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Eardrum",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Eardrum",
+      "fact": "Three layers — skin outside, mucosa inside, a fibrous layer of collagen fibers holding the shape between them — stretched taut enough to bridge the middle ear's air and the inner ear's fluid, converting one kind of vibration into the other.",
+      "src": "https://en.wikipedia.org/wiki/Eardrum"
+    },
+    {
+      "id": "bed_ossicles",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Ossicles",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Ossicles",
+      "fact": "Malleus, incus and stapes — the three smallest bones in the body, the stapes smallest of all — forming a lever chain across the middle ear that turns the eardrum's vibration into enough force to move fluid on the other side.",
+      "src": "https://en.wikipedia.org/wiki/Ossicles"
+    },
+    {
+      "id": "bed_cochlea",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Cochlea",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_hair_cell",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Cochlea",
+      "fact": "A fluid-filled spiral making almost three full turns, its basilar membrane stiff near the base and floppy near the tip so different points along its length answer to different pitches — hair cells riding that membrane are what actually turn the vibration into nerve signal.",
+      "src": "https://en.wikipedia.org/wiki/Cochlea"
+    },
+    {
+      "id": "bed_hair_cell",
+      "kind": "compound",
+      "tier": "cell",
+      "name": "Hair Cell",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Hair cell",
+      "fact": "Named for the tuft of stereocilia on top that bends with the slightest vibration, opening ion channels that fire a nerve signal — the human inner ear cannot regrow a damaged one, which is why hearing loss from noise or age is permanent.",
+      "src": "https://en.wikipedia.org/wiki/Hair_cell"
     }
   ],
   "composition": {
@@ -3362,7 +3739,25 @@
       "bed_appendix",
       "bed_anal_canal",
       "bed_bone_marrow",
-      "bed_blood"
+      "bed_blood",
+      "bed_thyroid",
+      "bed_adrenal_gland",
+      "bed_pituitary_gland",
+      "bed_pineal_gland",
+      "bed_thyroxine",
+      "bed_cortisol",
+      "bed_adrenaline",
+      "bed_melatonin",
+      "bed_growth_hormone",
+      "bed_lymph_node",
+      "bed_spleen",
+      "bed_thymus",
+      "bed_lymph",
+      "bed_eosinophil",
+      "bed_basophil",
+      "bed_macrophage",
+      "bed_eye",
+      "bed_ear"
     ],
     "elephant": [
       "bed_elephant_heart",
