@@ -101,7 +101,9 @@ const SCALE = {
           'snail', 'hookworm', 'enterobius_vermicularis', 'wuchereria_bancrofti', 'schistosoma', 'clonorchis_sinensis',
           'malaria', 'toxoplasmosis', 'giardiasis', 'amoebiasis', 'trichinosis', 'schistosomiasis',
           'producer', 'whale_barnacle', 'golden_poison_frog',
-          'stem', 'node', 'internode', 'terminal_bud', 'axillary_bud', 'leaf_scar', 'cotyledon'],
+          'stem', 'node', 'internode', 'terminal_bud', 'axillary_bud', 'leaf_scar', 'cotyledon',
+          // railways batch 1 — crushed rock, hand-sample scale alongside quartzite/gneiss
+          'ballast'],
   '-1':  ['venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
           'eagle', 'fifth_sun', 'popol_vuh',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
@@ -151,7 +153,9 @@ const SCALE = {
           'ascaris_lumbricoides', 'lymphatic_filariasis',
           'sea_urchin', 'mutualism', 'pioneer_species', 'decomposer',
           'baboon', 'lemur', 'bald_eagle', 'peregrine_falcon', 'snowy_owl', 'turkey_vulture',
-          'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander'],
+          'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander',
+          // railways batch 1 — small machine parts, hand-tool scale
+          'roller_bearing', 'plain_bearing', 'air_brake'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           'welwitschia', 'rafflesia', 'bracken_fern',
@@ -179,7 +183,9 @@ const SCALE = {
           'red_fox', 'coyote', 'african_wild_dog',
           'polar_bear', 'giant_panda', 'sun_bear',
           'gorilla', 'chimpanzee', 'orangutan',
-          'king_cobra', 'komodo_dragon'],
+          'king_cobra', 'komodo_dragon',
+          // railways batch 1 — metre-scale machine parts and infrastructure units
+          'piston', 'axle', 'bogie', 'coupler', 'sleeper', 'block_signal'],
   '1':   ['saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'giraffe', 'nile_crocodile', 'american_alligator',
           'climax_community', 'food_chain',
@@ -195,7 +201,11 @@ const SCALE = {
           // geography batch 1 — a sea cave (tens of metres) and a geyser's eruption column, both roughly building-scale
           'sea_cave', 'geyser',
           // mining value chains batch 2 — a single machine, tens of metres, the same bucket as a sea cave
-          'drilling_rig', 'haul_truck', 'continuous_miner', 'longwall_shearer', 'crusher', 'ball_mill', 'flotation_cell', 'locomotive'],
+          'drilling_rig', 'haul_truck', 'continuous_miner', 'longwall_shearer', 'crusher', 'ball_mill', 'flotation_cell', 'locomotive',
+          // railways batch 1 — vehicle-scale rolling stock and locomotives, 10-20 m
+          'steam_locomotive', 'diesel_electric_locomotive', 'electric_locomotive',
+          'freight_wagon', 'hopper_car', 'tank_car', 'flatcar', 'boxcar', 'caboose',
+          'rail', 'points_switch'],
   '2':   ['giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest',
@@ -216,7 +226,9 @@ const SCALE = {
           'open_pit_mining', 'strip_mining', 'mountaintop_removal', 'block_caving',
           // mining value chains batch 2 — a unit train (the record run was 7.35km) and the port precinct it feeds,
           // kilometre scale like the pit above them
-          'ore_railway', 'port'],
+          'ore_railway', 'port',
+          // railways batch 1 — a classification yard's full ladder of tracks, km scale
+          'rail_yard'],
   '4':   ['rift_valley', 'trench'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest'],

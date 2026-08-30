@@ -21457,16 +21457,6 @@
   },
   {
     "in": [
-      "ash",
-      "meat"
-    ],
-    "out": "quetzalcoatlus",
-    "why": "A ground-hunting predator of small prey, not a dinosaur but a pterosaur — and, like the non-avian dinosaurs themselves, wiped out at the Cretaceous's end, the boundary marked worldwide by a thin, telltale layer of ash.",
-    "src": "https://en.wikipedia.org/wiki/Quetzalcoatlus",
-    "verified": true
-  },
-  {
-    "in": [
       "open_pit_mining",
       "tungsten_carbide"
     ],
@@ -21623,6 +21613,276 @@
     "out": "port",
     "why": "Pilbara ore railways run to one kind of destination: a dedicated bulk-export terminal. Port Hedland, the world's biggest bulk export port by tonnage, shipped 531.5 million tonnes of iron ore in a single year.",
     "src": "https://en.wikipedia.org/wiki/Port_of_Port_Hedland",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "meat"
+    ],
+    "out": "quetzalcoatlus",
+    "why": "A ground-hunting predator of small prey, not a dinosaur but a pterosaur — and, like the non-avian dinosaurs themselves, wiped out at the Cretaceous's end, the boundary marked worldwide by a thin, telltale layer of ash.",
+    "src": "https://en.wikipedia.org/wiki/Quetzalcoatlus",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "graphite"
+    ],
+    "out": "piston",
+    "why": "Grey cast iron self-lubricates: graphite flakes already in its microstructure reduce galling and wear on their own, which is why piston rings — most of them cast iron — can seal a moving cylinder without a separate lubricant film.",
+    "src": "https://en.wikipedia.org/wiki/Gray_iron",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "wheel"
+    ],
+    "out": "axle",
+    "why": "A wheelset is two wheels mounted rigidly on one steel axle so they always rotate together — the axle is what actually turns; the wheel is just the part that touches the rail.",
+    "src": "https://en.wikipedia.org/wiki/Wheelset_(rail_transport)",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "roller_bearing"
+    ],
+    "out": "bogie",
+    "why": "A bogie is the frame under a rail car to which axles are attached through bearings; the whole frame pivots so a pair of wheelsets can swivel together and steer the car around a curve without the axles themselves bending.",
+    "src": "https://en.wikipedia.org/wiki/Bogie",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "piston"
+    ],
+    "out": "steam_locomotive",
+    "why": "Steam pushes the piston; a connecting rod carries that push to a crank pin fixed on the driving wheel itself, turning straight-line force into rotation one stroke at a time.",
+    "src": "https://en.wikipedia.org/wiki/Steam_locomotive",
+    "verified": true
+  },
+  {
+    "in": [
+      "diesel_electric_drive",
+      "bogie"
+    ],
+    "out": "diesel_electric_locomotive",
+    "why": "The diesel engine never drives the wheels directly. It spins a generator, and the current from that generator powers electric traction motors mounted right on the bogie — diesel-electric transmission, standard since the 1930s.",
+    "src": "https://en.wikipedia.org/wiki/Diesel%E2%80%93electric_transmission",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_motor",
+      "current"
+    ],
+    "out": "electric_locomotive",
+    "why": "No onboard engine at all: current is drawn straight from an overhead wire or third rail and fed to the traction motors — the real difference from a diesel-electric, which only generates its own current.",
+    "src": "https://en.wikipedia.org/wiki/Electric_locomotive",
+    "verified": true
+  },
+  {
+    "in": [
+      "bogie",
+      "steel"
+    ],
+    "out": "freight_wagon",
+    "why": "An unpowered steel-framed car riding on bogies at each end, fitted with standardised couplers and air-brake hoses so different wagon types can all be assembled into the same train.",
+    "src": "https://en.wikipedia.org/wiki/Goods_wagon",
+    "verified": true
+  },
+  {
+    "in": [
+      "freight_wagon",
+      "coal"
+    ],
+    "out": "hopper_car",
+    "why": "A sloped floor and bottom gates let a hopper car dump loose bulk cargo — coal, ore, grain — without a shovel; the type developed alongside automated coal loading and unloading.",
+    "src": "https://en.wikipedia.org/wiki/Hopper_car",
+    "verified": true
+  },
+  {
+    "in": [
+      "freight_wagon",
+      "glass"
+    ],
+    "out": "tank_car",
+    "why": "A cylindrical pressure vessel for liquid or gas cargo, bolted to the underframe; some interiors are lined in glass or other coatings so corrosive contents never touch the steel shell.",
+    "src": "https://en.wikipedia.org/wiki/Tank_car",
+    "verified": true
+  },
+  {
+    "in": [
+      "freight_wagon",
+      "steel"
+    ],
+    "out": "flatcar",
+    "why": "No sides or roof, just an open deck for loads too big or heavy for a boxcar — the deck can be wood or steel, and heavy-duty flatcars use a steel-plated one.",
+    "src": "https://en.wikipedia.org/wiki/Flatcar",
+    "verified": true
+  },
+  {
+    "in": [
+      "freight_wagon",
+      "wood"
+    ],
+    "out": "boxcar",
+    "why": "The original enclosed freight car: a wood-sided box on wheels with sliding doors, built to keep general merchandise dry — all-steel sides only became standard decades later.",
+    "src": "https://en.wikipedia.org/wiki/Boxcar",
+    "verified": true
+  },
+  {
+    "in": [
+      "boxcar",
+      "glass"
+    ],
+    "out": "caboose",
+    "why": "Cabooses started life as flatcars or modified boxcars with a cabin added; the glass-windowed cupola on the roof let the crew watch their own train for shifting loads and overheating axles.",
+    "src": "https://en.wikipedia.org/wiki/Caboose",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "forge"
+    ],
+    "out": "coupler",
+    "why": "Push two cars together and the knuckle pivots shut and locks itself, no one standing between them — Eli Janney's forged-steel knuckle coupler, patented April 1873, replacing the link-and-pin worked by hand.",
+    "src": "https://en.wikipedia.org/wiki/Eli_H._Janney",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "chromium"
+    ],
+    "out": "roller_bearing",
+    "why": "Bearing steel is iron with about 1% carbon and 1.5% chromium, hardened until the rollers packed between the races can carry an axle's full load while barely sliding at all.",
+    "src": "https://www.xometry.com/resources/materials/52100-alloy-steel/",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "graphite"
+    ],
+    "out": "plain_bearing",
+    "why": "The simplest bearing has no rolling parts: the axle just slides inside a sleeve. Graphite packed into that sliding surface was how 19th-century axleboxes were lubricated before rollers took over.",
+    "src": "https://en.wikipedia.org/wiki/Plain_bearing",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "air"
+    ],
+    "out": "air_brake",
+    "why": "Compressed air runs the length of the train and presses a shoe against each wheel; break the train apart and the line loses pressure — which is exactly what makes the brakes clamp on, not release.",
+    "src": "https://en.wikipedia.org/wiki/Air_brake_(rail)",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "rail"
+    ],
+    "out": "block_signal",
+    "why": "A track circuit runs current straight through the rails themselves, and a train's own axles short it — that trips a signal, genuinely different from a road signal, which runs on a fixed timer, not on where the traffic actually is.",
+    "src": "https://en.wikipedia.org/wiki/Track_circuit",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel"
+    ],
+    "verb": "heat",
+    "out": "rail",
+    "why": "All modern rails are hot-rolled steel: reheated and passed through grooved rollers until the bar takes the asymmetric I-beam profile that resists wear at the head and bolts down at the foot.",
+    "src": "https://en.wikipedia.org/wiki/Rail_profile",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron"
+    ],
+    "verb": "heat",
+    "out": "rail",
+    "why": "Early rails were wrought iron, not steel — hot-worked the same way but weaker under load. Steel only took over the rails once quality control caught up, decades after it had replaced iron elsewhere.",
+    "src": "https://en.wikipedia.org/wiki/Rail_profile",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "coal_tar"
+    ],
+    "out": "sleeper",
+    "why": "Creosote is a coal-tar distillate, and it is still the most common preservative for wooden railway ties — soaked in, it keeps the crosstie from rotting under a century of weather.",
+    "src": "https://en.wikipedia.org/wiki/Railroad_tie",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "steel"
+    ],
+    "out": "sleeper",
+    "why": "A prestressed concrete tie is cast around steel wires stretched taut before the pour; once the concrete cures and the wires relax, they squeeze it into permanent compression that resists cracking under load.",
+    "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11174923/",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartzite"
+    ],
+    "verb": "crush",
+    "out": "ballast",
+    "why": "Ballast has to be sharp, angular and hard enough to interlock and stay put under a rolling load — quartzite is one of the rock types railways crush for exactly that durability.",
+    "src": "https://railroadrails.com/information/what-is-railway-ballast/",
+    "verified": true
+  },
+  {
+    "in": [
+      "gneiss"
+    ],
+    "verb": "crush",
+    "out": "ballast",
+    "why": "Ballast has to be sharp, angular and hard enough to interlock and stay put under load — gneiss is one of the parent rock types different railways crush into ballast for that same durability.",
+    "src": "https://railroadrails.com/information/what-is-railway-ballast/",
+    "verified": true
+  },
+  {
+    "in": [
+      "rail",
+      "forge"
+    ],
+    "out": "points_switch",
+    "why": "The oldest switches are forged rail and rod, thrown by a lever in a signal box and moved entirely by hand — the tapered points swing across to send the train onto one track or the other.",
+    "src": "https://en.wikipedia.org/wiki/Railroad_switch",
+    "verified": true
+  },
+  {
+    "in": [
+      "rail",
+      "electric_motor"
+    ],
+    "out": "points_switch",
+    "why": "Modern switches move the rail itself with a remote point machine — an electric motor, or a pneumatic or hydraulic actuator — strong enough to throw points too stiff to move by hand.",
+    "src": "https://en.wikipedia.org/wiki/Railroad_switch",
+    "verified": true
+  },
+  {
+    "in": [
+      "rail",
+      "points_switch"
+    ],
+    "out": "rail_yard",
+    "why": "Not a station — a ladder of switches routes each wagon off the arrival track onto its own classification track, sorting one jumbled train into the separate trains it needs to become.",
+    "src": "https://en.wikipedia.org/wiki/Classification_yard",
     "verified": true
   }
 ]

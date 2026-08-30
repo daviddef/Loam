@@ -2084,8 +2084,7 @@
     "tags": [
       "build"
     ],
-    "fact": "Rock, glued. The most used material on Earth after water.",
-    "terminal": true
+    "fact": "Rock, glued. The most used material on Earth after water."
   },
   {
     "id": "river",
@@ -5193,7 +5192,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "Sandstone whose grains have fused. Break it and the crack runs through them, not around."
   },
   {
@@ -15289,8 +15287,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Pure carbon, the same as diamond, laid out in slippery sheets instead of a rigid cage.",
-    "terminal": true
+    "fact": "Pure carbon, the same as diamond, laid out in slippery sheets instead of a rigid cage."
   },
   {
     "id": "calcite",
@@ -18294,5 +18291,247 @@
     "soleRoute": true,
     "terminal": true,
     "fact": "Capesize ships too big for the Suez or Panama Canal carry about 75% of the world's seaborne iron ore."
+  },
+  {
+    "id": "piston",
+    "name": "Piston",
+    "emoji": "🛠️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Grey cast iron pistons and rings carry their own lubricant: graphite already inside the metal."
+  },
+  {
+    "id": "axle",
+    "name": "Axle",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A wheelset: two wheels fixed rigidly to one steel shaft, so they always turn together."
+  },
+  {
+    "id": "bogie",
+    "name": "Bogie",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A pivoted frame under a rail car holding two or more axles, so a long car can still take a curve."
+  },
+  {
+    "id": "steam_locomotive",
+    "name": "Steam locomotive",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Steam pushes a piston; a connecting rod turns that push into a crank pin on the driving wheel.",
+    "terminal": true
+  },
+  {
+    "id": "diesel_electric_locomotive",
+    "name": "Diesel-electric locomotive",
+    "emoji": "🚆",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The diesel engine never touches the wheels — it spins a generator that feeds traction motors.",
+    "terminal": true
+  },
+  {
+    "id": "electric_locomotive",
+    "name": "Electric locomotive",
+    "emoji": "🚄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "No engine on board — current from an overhead wire or third rail drives the motors directly.",
+    "terminal": true
+  },
+  {
+    "id": "freight_wagon",
+    "name": "Freight wagon",
+    "emoji": "🚃",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An unpowered steel-framed car riding on bogies, built to be coupled into a train of many."
+  },
+  {
+    "id": "hopper_car",
+    "name": "Hopper car",
+    "emoji": "🚋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A sloped floor and bottom gates dump bulk coal, ore or grain without anyone shovelling.",
+    "terminal": true
+  },
+  {
+    "id": "tank_car",
+    "name": "Tank car",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A cylindrical steel vessel for liquid or gas — some are lined in glass to protect the shell.",
+    "terminal": true
+  },
+  {
+    "id": "flatcar",
+    "name": "Flatcar",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "No sides, no roof — an open deck for loads too big or heavy for any other kind of wagon.",
+    "terminal": true
+  },
+  {
+    "id": "boxcar",
+    "name": "Boxcar",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A fully enclosed wagon with sliding doors, built to keep general freight dry."
+  },
+  {
+    "id": "caboose",
+    "name": "Caboose",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The crew's car at the back — a cupola let them watch the whole train roll by for trouble.",
+    "terminal": true
+  },
+  {
+    "id": "coupler",
+    "name": "Coupler",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Push two cars together and the knuckle locks itself shut — no one stands between them.",
+    "terminal": true
+  },
+  {
+    "id": "roller_bearing",
+    "name": "Roller bearing",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Hardened chromium-steel rollers between two rings — the axle turns on them, not against them."
+  },
+  {
+    "id": "plain_bearing",
+    "name": "Plain bearing",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "No rolling parts at all — the axle just slides in a graphite-lubricated sleeve.",
+    "terminal": true
+  },
+  {
+    "id": "air_brake",
+    "name": "Air brake",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Compressed air presses the shoe to the wheel — and clamps shut if the line ever breaks.",
+    "terminal": true
+  },
+  {
+    "id": "block_signal",
+    "name": "Block signal",
+    "emoji": "🚦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One train per block, always — a rail circuit senses the train itself, not a fixed timer.",
+    "terminal": true
+  },
+  {
+    "id": "rail",
+    "name": "Rail",
+    "emoji": "🛤️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "metal"
+    ],
+    "fact": "Hot-rolled steel, I-beam in cross-section — standard gauge sets the rails 1,435 mm apart."
+  },
+  {
+    "id": "sleeper",
+    "name": "Sleeper",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The crosstie that holds the gauge — wood needs creosote against rot; concrete needs none.",
+    "terminal": true
+  },
+  {
+    "id": "ballast",
+    "name": "Ballast",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Sharp, angular crushed rock — the interlocking edges keep the sleepers from creeping.",
+    "terminal": true
+  },
+  {
+    "id": "points_switch",
+    "name": "Points",
+    "emoji": "🔀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A pair of tapered rails that pivot to send a train onto one track or another."
+  },
+  {
+    "id": "rail_yard",
+    "name": "Rail yard",
+    "emoji": "🚉",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Not a station — a ladder of switches sorts wagons onto tracks to build new trains.",
+    "terminal": true,
+    "soleRoute": true
   }
 ]
