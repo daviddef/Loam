@@ -2325,6 +2325,265 @@
       "srcTitle": "Malpighian tubule system",
       "fact": "Fine tubes closed at one end, a single layer of cells thick, floating loose in the hemolymph. Ions get pumped into the tube and water follows by osmosis, until what's left precipitates into uric acid once it reaches the hindgut.",
       "src": "https://en.wikipedia.org/wiki/Malpighian_tubule_system"
+    },
+    {
+      "id": "bed_reptile_scale",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Reptile Scale",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Scale (zoology)",
+      "fact": "Keratinized epidermis thickened and folded into overlapping plates — the same protein family ordinary skin already uses, just packed denser. In turtles and crocodilians a plate of bone sits underneath as well; most snakes and lizards have no such backing.",
+      "src": "https://en.wikipedia.org/wiki/Scale_(zoology)"
+    },
+    {
+      "id": "bed_snake_skin",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Snake Skin",
+      "of": [
+        "bed_reptile_scale",
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Snake",
+      "fact": "Shed whole rather than flaked off piece by piece — the entire outer layer peels backward from head to tail in one go, the way a dust jacket comes off a book, leaving a fresh layer already grown underneath.",
+      "src": "https://en.wikipedia.org/wiki/Snake"
+    },
+    {
+      "id": "bed_snake_vertebral_column",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Snake Spine",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Snake skeleton",
+      "fact": "Between 175 and more than 400 vertebrae, almost every one of them carrying its own pair of movable ribs — and no living snake retains any trace of the shoulder girdle its four-legged ancestors had.",
+      "src": "https://en.wikipedia.org/wiki/Snake_skeleton"
+    },
+    {
+      "id": "bed_snake_skull",
+      "kind": "compound",
+      "tier": "bone",
+      "name": "Snake Skull",
+      "of": [
+        "bed_osseous_tissue"
+      ],
+      "srcTitle": "Snake",
+      "fact": "The lower jaw hinges to the skull through an extra bone, the quadrate, that most vertebrates don't have free this way — the added joint is what lets a snake work its mouth around prey wider than its own head.",
+      "src": "https://en.wikipedia.org/wiki/Snake"
+    },
+    {
+      "id": "bed_snake_lung",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Snake Lung",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Snake",
+      "fact": "One lung does almost all the work — the left lung is often small or missing outright, so in most species only the right lung is actually functional.",
+      "src": "https://en.wikipedia.org/wiki/Snake"
+    },
+    {
+      "id": "bed_vomeronasal_organ",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Vomeronasal Organ",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Vomeronasal organ",
+      "fact": "A second, separate sense of smell in the roof of the mouth: the forked tongue flicks out to collect particles from the air or ground, then touches them to this organ on the way back in for analysis.",
+      "src": "https://en.wikipedia.org/wiki/Vomeronasal_organ"
+    },
+    {
+      "id": "bed_turtle_shell",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Turtle Shell",
+      "of": [
+        "bed_osseous_tissue",
+        "bed_reptile_scale"
+      ],
+      "srcTitle": "Turtle",
+      "fact": "Fifty to sixty of the animal's own bones, not an add-on: the domed carapace is ribs and vertebrae fused outward, the flatter plastron is built from the shoulder girdle and sternum, and keratin scutes cap the whole thing.",
+      "src": "https://en.wikipedia.org/wiki/Turtle"
+    },
+    {
+      "id": "bed_venom_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Venom Gland",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Snake venom",
+      "fact": "A modified salivary gland, not a new invention — venom is made and stored in sac-like alveoli, wrapped in its own sheath of muscle, then travels down a duct to the base of the fangs.",
+      "src": "https://en.wikipedia.org/wiki/Snake_venom"
+    },
+    {
+      "id": "bed_pit_organ",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Pit Organ",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Infrared sensing in snakes",
+      "fact": "A membrane strung between the eye and the nostril, so thick with heat-sensing nerve endings from the trigeminal nerve that infrared radiation alone forms a picture — evolved independently in pit vipers, boas and pythons.",
+      "src": "https://en.wikipedia.org/wiki/Infrared_sensing_in_snakes"
+    },
+    {
+      "id": "bed_rattle",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Rattle",
+      "of": [
+        "bed_reptile_scale",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Rattlesnake",
+      "fact": "Hollow keratin segments, made by modifying the ordinary scales at the tip of the tail and left interlocked after every shed instead of falling away — a dedicated 'shaker' muscle contracts to buzz them against each other.",
+      "src": "https://en.wikipedia.org/wiki/Rattlesnake"
+    },
+    {
+      "id": "bed_eggshell_membrane",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Eggshell Membrane",
+      "of": [
+        "bed_protein"
+      ],
+      "srcTitle": "Eggshell membrane",
+      "fact": "Two sheets of fibrous protein, mostly collagen type I, lining the shell's interior — outer and inner — that separate at the blunt end as the egg's contents cool and shrink after laying, opening the air cell between them.",
+      "src": "https://en.wikipedia.org/wiki/Eggshell_membrane"
+    },
+    {
+      "id": "bed_albumen_thick",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Thick Albumen",
+      "of": [
+        "bed_water_molecule",
+        "bed_protein"
+      ],
+      "srcTitle": "Egg white",
+      "fact": "About 90% water carrying a dense tangle of dissolved protein — four times the ovomucin of the thin white around it, which is what gives it the gel-like body that cushions the yolk.",
+      "src": "https://en.wikipedia.org/wiki/Egg_white"
+    },
+    {
+      "id": "bed_albumen_thin",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Thin Albumen",
+      "of": [
+        "bed_water_molecule",
+        "bed_protein"
+      ],
+      "srcTitle": "Egg white",
+      "fact": "The same 90% water and dissolved protein as the thick white beside it, just a quarter of the ovomucin — thin enough to run, which is why it spreads first the moment a shell cracks.",
+      "src": "https://en.wikipedia.org/wiki/Egg_white"
+    },
+    {
+      "id": "bed_chalazae",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Chalazae",
+      "of": [
+        "bed_protein"
+      ],
+      "srcTitle": "Chalaza",
+      "fact": "Two spiral bands of albumen, twisted in opposite directions off each end of the yolk, doing one job: holding it suspended and centered in the white no matter which way the egg turns.",
+      "src": "https://en.wikipedia.org/wiki/Chalaza"
+    },
+    {
+      "id": "bed_vitelline_membrane",
+      "kind": "compound",
+      "tier": "tissue",
+      "name": "Vitelline Membrane",
+      "of": [
+        "bed_protein"
+      ],
+      "srcTitle": "Vitelline membrane",
+      "fact": "Two layers of its own glycoproteins wrapping the yolk, structurally nothing like a cell membrane — it lets water and nutrients cross over from the white while still holding the yolk's shape.",
+      "src": "https://en.wikipedia.org/wiki/Vitelline_membrane"
+    },
+    {
+      "id": "bed_yolk_mass",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Yolk Mass",
+      "of": [
+        "bed_water_molecule",
+        "bed_lipid",
+        "bed_protein"
+      ],
+      "srcTitle": "Yolk",
+      "fact": "More than 90% of the yolk's own cytoplasm by the time of fertilization, packed into granules of lipid, protein and enzyme, with the fat alone outweighing the protein by nearly two to one.",
+      "src": "https://en.wikipedia.org/wiki/Yolk"
+    },
+    {
+      "id": "bed_germinal_disc",
+      "kind": "compound",
+      "tier": "eggpart",
+      "name": "Germinal Disc",
+      "of": [
+        "bed_water_molecule",
+        "bed_protein"
+      ],
+      "srcTitle": "Blastodisc",
+      "fact": "A small disc of cytoplasm only a couple of millimetres across, sitting on the yolk's surface at its animal pole — the one spot on the whole yolk built to become an embryo.",
+      "src": "https://en.wikipedia.org/wiki/Blastodisc"
+    },
+    {
+      "id": "bed_yolk",
+      "kind": "compound",
+      "tier": "eggpart",
+      "name": "Yolk",
+      "of": [
+        "bed_vitelline_membrane",
+        "bed_yolk_mass",
+        "bed_germinal_disc"
+      ],
+      "srcTitle": "Yolk",
+      "fact": "A membrane-wrapped sphere of stored fat and protein, suspended in the white by the chalazae and carrying one small disc of living cytoplasm on its surface.",
+      "src": "https://en.wikipedia.org/wiki/Yolk"
+    },
+    {
+      "id": "bed_eggshell",
+      "kind": "compound",
+      "tier": "eggpart",
+      "name": "Eggshell",
+      "of": [
+        "bed_calcium_carbonate",
+        "bed_protein",
+        "bed_eggshell_membrane"
+      ],
+      "srcTitle": "Eggshell",
+      "fact": "95 to 97% calcium carbonate crystal, stabilized by its own protein matrix and grown in columns from proteoglycan-rich mammillae, capped with a thin outer cuticle and threaded with pores for gas exchange.",
+      "src": "https://en.wikipedia.org/wiki/Eggshell"
+    },
+    {
+      "id": "bed_air_cell",
+      "kind": "compound",
+      "tier": "eggpart",
+      "name": "Air Cell",
+      "of": [
+        "el_oxygen",
+        "el_nitrogen"
+      ],
+      "srcTitle": "Eggs as food",
+      "fact": "A pocket of ordinary air trapped between the two shell membranes at the egg's blunt end, formed as the contents cool and shrink after laying — the bigger it grows in storage, the older the egg.",
+      "src": "https://en.wikipedia.org/wiki/Eggs_as_food"
     }
   ],
   "composition": {
@@ -2346,10 +2605,12 @@
       "bed_fusion"
     ],
     "egg": [
-      "bed_protein",
-      "bed_lipid",
-      "bed_calcium_carbonate",
-      "bed_water_molecule"
+      "bed_eggshell",
+      "bed_albumen_thick",
+      "bed_albumen_thin",
+      "bed_chalazae",
+      "bed_yolk",
+      "bed_air_cell"
     ],
     "milk": [
       "bed_water_molecule",
@@ -2428,6 +2689,21 @@
     "bee": [
       "bed_tracheal_system",
       "bed_malpighian_tubule"
+    ],
+    "snake": [
+      "bed_snake_vertebral_column",
+      "bed_snake_skull",
+      "bed_snake_lung",
+      "bed_vomeronasal_organ",
+      "bed_snake_skin"
+    ],
+    "turtle": [
+      "bed_turtle_shell"
+    ],
+    "rattlesnake": [
+      "bed_venom_gland",
+      "bed_pit_organ",
+      "bed_rattle"
     ]
   },
   "$comment_atoms": "The full periodic table is present as a reference set. Only those marked inPlay carry authored text and appear in a provenance tree today; the rest are here so later domains (metallurgy, medicine) have somewhere to attach, and so the table reads as complete to a curious player.",
@@ -2866,6 +3142,11 @@
       "id": "joint",
       "name": "Joints",
       "blurb": "Where two bones meet — cushioned, lubricated, and held together well enough to move without touching."
+    },
+    {
+      "id": "eggpart",
+      "name": "Egg Structures",
+      "blurb": "Built around a single cell before it ever leaves the body — shell, membrane, white and yolk, secreted rather than grown from living tissue."
     }
   ],
   "linkages": [

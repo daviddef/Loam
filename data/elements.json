@@ -1057,6 +1057,52 @@
     "fact": "The first vertebrates. Your skeleton is a variation on their design."
   },
   {
+    "id": "lizard",
+    "name": "Lizard",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Over 7,000 species, and every one an ectotherm — basking in the sun is a requirement, not a habit."
+  },
+  {
+    "id": "snake",
+    "name": "Snake",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Legless, with 175 to 400-plus vertebrae — and, in most species, only one working lung."
+  },
+  {
+    "id": "turtle",
+    "name": "Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A shell of 50 to 60 of its own bones — ribs and vertebrae, fused outward and capped in keratin.",
+    "terminal": true
+  },
+  {
+    "id": "rattlesnake",
+    "name": "Rattlesnake",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its rattle is hollow keratin segments — modified tail scales, buzzed by a dedicated muscle.",
+    "terminal": true
+  },
+  {
     "id": "salt_fish",
     "name": "Salt Fish",
     "emoji": "🐟",

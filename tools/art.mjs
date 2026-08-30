@@ -689,6 +689,31 @@ def('camel',  () => [E(26, 38, 16, 8, 'bs'),
                      P('M38 36 Q44 26 44 18 L50 18 Q50 30 43 38 Z', 'bs'),
                      C(48, 16, 5, 'bs'),
                      ...[-9, -3, 5, 10].map(dx => S(`M${26 + dx} 45 L${26 + dx} 54`, 'lo', 2.2))]);
+/* reptiles ─────────────────────────────────────────────────────────────────
+   No sprawled-mammal legs, no fleece, no fur — the one thing every reptile
+   drawing here has to get right is the thing its fact line is about: a
+   splayed sprawl for the lizard, a legless sinuous body for the snake, a
+   domed and seamed shell for the turtle, a diamond back and rattle tail
+   for the rattlesnake. */
+def('lizard', () => [E(26, 35, 16, 7, 'bs'),                                    // low, flat body
+                     P('M41 35 L52 31 L52 39 Z', 'bs'),                          // pointed head
+                     S('M10 35 Q1 40 4 48', 'bs', 3),                            // long tapering tail
+                     S('M16 40 L9 48 M24 41 L20 49', 'lo', 2),                   // hind legs, splayed
+                     S('M30 28 L26 20 M38 29 L35 21', 'lo', 2)]);                // fore legs, splayed
+def('snake',  () => [S('M8 44 Q18 17 30 32 Q42 47 52 16', 'bs', 7),              // one sinuous stroke
+                     C(52, 14, 4, 'bs'),                                         // the head
+                     S('M55 11 L59 8 M55 13 L59 14', 'ik', 1.4)]);               // forked tongue
+def('turtle', () => [E(30, 32, 20, 15, 'bs'),                                    // domed carapace
+                     ...[[30, 16], [14, 25], [46, 25], [17, 42], [43, 42]]
+                       .map(([x, y]) => S(`M30 32 L${x} ${y}`, 'lo', 1.6)),       // scute seams
+                     C(48, 33, 5, 'hi'),                                         // head, poking clear
+                     P('M12 39 L6 43 L12 45 Z', 'hi')]);                         // a leg, poking clear
+def('rattlesnake', () => [S('M10 40 Q22 15 32 30 Q42 45 50 20', 'bs', 7),
+                          C(50, 18, 4, 'bs'),                                    // the head
+                          ...[[16, 36], [24, 25], [32, 32], [40, 30]]
+                            .map(([x, y]) => C(x, y, 2.2, 'lo')),                // diamond back pattern
+                          ...[[6, 44], [10, 47], [14, 49]]
+                            .map(([x, y], i) => C(x, y, n(3 - i * 0.5), 'hi'))]); // tapering rattle
 
 def('fish',   () => [P('M12 32 Q26 20 42 32 Q26 44 12 32 Z', 'bs'),
                      P('M42 32 L52 25 L52 39 Z', 'lo'), C(20, 30, 2.4, 'ik'),

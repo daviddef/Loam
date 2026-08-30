@@ -5314,6 +5314,46 @@
   },
   {
     "in": [
+      "stone",
+      "sun"
+    ],
+    "out": "lizard",
+    "why": "Lizards are ectotherms with no internal thermostat of their own — over 7,000 species, and every one of them has to seek out and bask in sunlight before it can become fully active.",
+    "src": "https://en.wikipedia.org/wiki/Lizard",
+    "verified": true
+  },
+  {
+    "in": [
+      "lizard",
+      "sand"
+    ],
+    "out": "snake",
+    "why": "Fossil evidence points to snakes evolving from burrowing lizards during the Cretaceous — Najash rionegrina, a two-legged, fully terrestrial burrower, is one of the fossils behind that case.",
+    "src": "https://en.wikipedia.org/wiki/Snake",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "pasture"
+    ],
+    "out": "turtle",
+    "why": "Most turtle species are opportunistic omnivores, but the land-dwelling tortoises are the most herbivorous group of all, grazing on grasses, leaves and fruit instead.",
+    "src": "https://en.wikipedia.org/wiki/Turtle",
+    "verified": true
+  },
+  {
+    "in": [
+      "snake",
+      "sand"
+    ],
+    "out": "rattlesnake",
+    "why": "Rattlesnakes are the pit vipers of the genera Crotalus and Sistrurus, native to the Americas from southern Canada to central Argentina, with most species living in arid country.",
+    "src": "https://en.wikipedia.org/wiki/Rattlesnake",
+    "verified": true
+  },
+  {
+    "in": [
       "wool"
     ],
     "verb": "crush",
