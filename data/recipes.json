@@ -18534,5 +18534,535 @@
     "why": "Tremella mesenterica doesn't simply grow on wood — its spores parasitize the mycelium of other wood-rotting crust fungi, while its own gelatinous orange-yellow lobes swell after rain and dry into a hard reddish crust.",
     "src": "https://en.wikipedia.org/wiki/Tremella_mesenterica",
     "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "sulfur"
+    ],
+    "out": "pyrite",
+    "why": "Coal beds often contain significant pyrite — iron and sulfur, the two elements of FeS2, sitting together in the same oxygen-starved swamp that became the coal.",
+    "src": "https://en.wikipedia.org/wiki/Pyrite",
+    "verified": true
+  },
+  {
+    "in": [
+      "shale",
+      "sulfur"
+    ],
+    "out": "pyrite",
+    "why": "Pyrite, iron disulfide FeS2, is common as an accessory mineral in shale — sulfur and iron precipitating together, straight out of anoxic seawater, onto the sea-floor mud that became the rock.",
+    "src": "https://en.wikipedia.org/wiki/Pyrite",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "oxygen"
+    ],
+    "out": "hematite",
+    "why": "Iron(III) oxide, Fe2O3 — the world's most important iron ore, and the mineral filling Earth's oldest and largest iron deposits, the banded iron formations.",
+    "src": "https://en.wikipedia.org/wiki/Hematite",
+    "verified": true
+  },
+  {
+    "in": [
+      "pyrite",
+      "oxygen_gas"
+    ],
+    "out": "hematite",
+    "why": "Roasting pyrite in air runs 4 FeS2 + 11 O2 → 2 Fe2O3 + 8 SO2. The sulfur dioxide was historically the point, bound for sulfuric acid — the iron oxide was the cinder left behind.",
+    "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron"
+    ],
+    "verb": "smother",
+    "out": "magnetite",
+    "why": "Starve iron of full oxygen and it stalls at magnetite, Fe3O4, caught at an intermediate oxidation state — give it all the air it wants instead and it goes the rest of the way to hematite.",
+    "src": "https://en.wikipedia.org/wiki/Magnetite",
+    "supported": true
+  },
+  {
+    "in": [
+      "magma",
+      "iron"
+    ],
+    "out": "magnetite",
+    "why": "Small grains of magnetite are very common in igneous rock — magnetite is one of the first minerals to crystallise out of an iron-bearing magma as it cools.",
+    "src": "https://en.wikipedia.org/wiki/Magnetite",
+    "supported": true
+  },
+  {
+    "in": [
+      "magnetite",
+      "lightning"
+    ],
+    "out": "lodestone",
+    "why": "A lightning strike's field is far stronger than Earth's own 0.5 gauss — strong enough to line up magnetite's domains permanently and turn the ordinary iron oxide into a lodestone.",
+    "src": "https://en.wikipedia.org/wiki/Lodestone",
+    "verified": true
+  },
+  {
+    "in": [
+      "anthracite"
+    ],
+    "verb": "heat",
+    "out": "graphite",
+    "why": "All naturally occurring graphite forms from the metamorphism of carbonaceous rock, and coal taken far enough by heat is the classic route — anthracite is graphite that has not finished cooking.",
+    "src": "https://en.wikipedia.org/wiki/Graphite",
+    "verified": true
+  },
+  {
+    "in": [
+      "magma",
+      "carbon"
+    ],
+    "out": "graphite",
+    "why": "Graphite is pure carbon, crystallised — and besides growing out of cooked sediment, it also occurs in igneous rock, precipitating directly out of carbon-bearing magma as it cools.",
+    "src": "https://en.wikipedia.org/wiki/Graphite",
+    "supported": true
+  },
+  {
+    "in": [
+      "limestone"
+    ],
+    "verb": "crush",
+    "out": "calcite",
+    "why": "Limestone is a rock; calcite is the mineral it is made of. Crush it and what falls out is calcium carbonate, CaCO3 — by far limestone's most common mineral.",
+    "src": "https://en.wikipedia.org/wiki/Calcite",
+    "verified": true
+  },
+  {
+    "in": [
+      "marble"
+    ],
+    "verb": "crush",
+    "out": "calcite",
+    "why": "Marble is calcite too, just recrystallised — heat and pressure dissolve the original grains and regrow them larger and interlocked. Crushed, it comes apart as the same calcite it started as.",
+    "src": "https://en.wikipedia.org/wiki/Calcite",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "carbon_dioxide"
+    ],
+    "out": "malachite",
+    "why": "Malachite is copper carbonate hydroxide, Cu2CO3(OH)2 — copper ore weathering in water charged with dissolved carbon dioxide precipitates it, in the oxidised zone above a deposit.",
+    "src": "https://en.wikipedia.org/wiki/Malachite",
+    "supported": true
+  },
+  {
+    "in": [
+      "copper",
+      "limestone"
+    ],
+    "out": "azurite",
+    "why": "Azurite, Cu3(CO3)2(OH)2, grows in the oxidised zone of a weathering copper deposit — and that zone is often cut through limestone, the carbonate rock supplying the carbonate it needs.",
+    "src": "https://en.wikipedia.org/wiki/Azurite",
+    "supported": true
+  },
+  {
+    "in": [
+      "azurite"
+    ],
+    "verb": "wait",
+    "out": "malachite",
+    "why": "Azurite is unstable in open air and, given time, is pseudomorphically replaced by malachite — water swapping in for carbon dioxide until the crystal is malachite through and through, still wearing azurite's shape.",
+    "src": "https://en.wikipedia.org/wiki/Azurite",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "sulfur"
+    ],
+    "out": "gypsum",
+    "why": "Calcium sulfate, precipitated straight out of evaporating water — lake water, seawater, hot springs and volcanic vapour all deposit gypsum this way.",
+    "src": "https://en.wikipedia.org/wiki/Gypsum",
+    "supported": true
+  },
+  {
+    "in": [
+      "pyrite",
+      "calcite"
+    ],
+    "out": "gypsum",
+    "why": "Gypsum also forms as a by-product of sulfide oxidation: pyrite oxidising underground generates sulfuric acid, and that acid reacting with calcite is what grows gypsum on a cave wall.",
+    "src": "https://en.wikipedia.org/wiki/Gypsum",
+    "verified": true
+  },
+  {
+    "in": [
+      "magma",
+      "magnesium"
+    ],
+    "out": "olivine",
+    "why": "Magnesium-rich, silica-poor magma is exactly what crystallises olivine, (Mg,Fe)2SiO4 — it separates out of that kind of melt first, which is why it seeds mafic rock like basalt.",
+    "src": "https://en.wikipedia.org/wiki/Olivine",
+    "verified": true
+  },
+  {
+    "in": [
+      "basalt"
+    ],
+    "verb": "crush",
+    "out": "olivine",
+    "why": "Olivine crystallises early enough out of basaltic magma that whole grains of it are still sitting in the finished rock — crush the basalt and the olivine comes out separate.",
+    "src": "https://en.wikipedia.org/wiki/Olivine",
+    "supported": true
+  },
+  {
+    "in": [
+      "schist",
+      "iron"
+    ],
+    "out": "garnet",
+    "why": "Almandine, iron aluminium silicate, is the classic garnet of metamorphic rock — it grows as an index mineral through progressive metamorphism, and mica schist is exactly where it does it.",
+    "src": "https://en.wikipedia.org/wiki/Garnet",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "granite"
+    ],
+    "out": "beryl",
+    "why": "Beryl, beryllium aluminium silicate, is found most commonly in granitic pegmatites — the last, water-rich, mineral-hungry dregs of a granite melt as it finishes cooling.",
+    "src": "https://en.wikipedia.org/wiki/Beryl",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "schist"
+    ],
+    "out": "beryl",
+    "why": "Pegmatites are not the only address for beryllium aluminium silicate — beryl also occurs in mica schists, grown the same way garnet does, as metamorphism runs its course.",
+    "src": "https://en.wikipedia.org/wiki/Beryl",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryl",
+      "chromium"
+    ],
+    "out": "emerald",
+    "why": "Colour beryl with a trace of chromium and it is emerald — the exact same substitution that turns colourless corundum into ruby, just running in a different host crystal.",
+    "src": "https://en.wikipedia.org/wiki/Emerald",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryl",
+      "iron"
+    ],
+    "out": "aquamarine",
+    "why": "Aquamarine is beryl coloured pale blue by iron in its Fe2+ state — the same element that turns sapphire blue, reading as a completely different colour in a different crystal.",
+    "src": "https://en.wikipedia.org/wiki/Beryl",
+    "verified": true
+  },
+  {
+    "in": [
+      "olivine",
+      "water"
+    ],
+    "out": "serpentine",
+    "why": "Serpentinisation: water hydrates olivine-rich rock at anywhere from freezing up to about 600°C, and the chemical reaction turns the olivine into the serpentine group of minerals.",
+    "src": "https://en.wikipedia.org/wiki/Serpentine_subgroup",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "water"
+    ],
+    "out": "mosquito",
+    "why": "Aedes mosquitoes lay their eggs singly on damp mud rather than on open water — and those eggs hatch only once flooding reaches them, the exact trigger this pairing represents.",
+    "src": "https://en.wikipedia.org/wiki/Mosquito",
+    "verified": true
+  },
+  {
+    "in": [
+      "granary"
+    ],
+    "verb": "wait",
+    "out": "cat",
+    "why": "Cats were drawn to early agricultural settlements by their thriving rodent populations — house mice thriving in grain stores gave wildcats a new food source, and a reason to linger near people.",
+    "src": "https://en.wikipedia.org/wiki/Domestication_of_the_cat",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell",
+      "water"
+    ],
+    "out": "snail",
+    "why": "A gastropod that carries its own calcium-carbonate shell and lives its whole life in fresh water — some freshwater species carry the larvae of Schistosoma, making them indirectly among the deadliest animals to people.",
+    "src": "https://en.wikipedia.org/wiki/Freshwater_snail",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "protozoan"
+    ],
+    "out": "plasmodium",
+    "why": "Plasmodium's life cycle runs through a blood-feeding insect host that injects it into a vertebrate during a blood meal — Anopheles mosquitoes are the ones that carry the five Plasmodium species that infect humans.",
+    "src": "https://en.wikipedia.org/wiki/Plasmodium",
+    "verified": true
+  },
+  {
+    "in": [
+      "cat",
+      "protozoan"
+    ],
+    "out": "toxoplasma_gondii",
+    "why": "Members of the cat family are the only known definitive hosts in which Toxoplasma gondii can complete sexual reproduction — every other warm-blooded animal, humans included, is only ever an intermediate host.",
+    "src": "https://en.wikipedia.org/wiki/Toxoplasma_gondii",
+    "verified": true
+  },
+  {
+    "in": [
+      "protozoan",
+      "water"
+    ],
+    "out": "giardia",
+    "why": "Giardia's cyst form is the infectious stage, and it survives readily in water — cold water keeps a cyst infectious for up to three months, and swallowing just a few is enough to start an infection.",
+    "src": "https://en.wikipedia.org/wiki/Giardiasis",
+    "verified": true
+  },
+  {
+    "in": [
+      "protozoan",
+      "soil"
+    ],
+    "out": "entamoeba_histolytica",
+    "why": "Entamoeba histolytica's cyst form survives outside a host in water, soil, and contaminated food — the trophozoite form that causes disease exists only inside a host or in fresh loose feces.",
+    "src": "https://en.wikipedia.org/wiki/Entamoeba_histolytica",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "protozoan"
+    ],
+    "out": "trichomonas_vaginalis",
+    "why": "Trichomonas vaginalis spreads by direct skin-to-skin contact during sex — a protozoan whose entire real transmission route runs through one human touching another, not through water or soil at all.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "supported": true
+  },
+  {
+    "in": [
+      "protozoan",
+      "river"
+    ],
+    "out": "cryptosporidium",
+    "why": "Cryptosporidium's hardy oocysts survive for lengthy periods in water, rivers and other surface sources included, and shrug off the chlorine levels that stop most other waterborne contaminants.",
+    "src": "https://en.wikipedia.org/wiki/Cryptosporidium",
+    "supported": true
+  },
+  {
+    "in": [
+      "human",
+      "plasmodium"
+    ],
+    "out": "malaria",
+    "why": "A mosquito bite injects Plasmodium from its saliva straight into a person's blood. Fever follows when infected red blood cells burst open together, releasing merozoites, waste, and cell fragments all at once.",
+    "src": "https://en.wikipedia.org/wiki/Malaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "toxoplasma_gondii"
+    ],
+    "out": "toxoplasmosis",
+    "why": "Undercooked meat — pork and lamb by name — is one of Toxoplasma's two main routes into a person, the tissue cysts inside it surviving the trip to a new host's gut.",
+    "src": "https://en.wikipedia.org/wiki/Toxoplasmosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "giardia",
+      "human"
+    ],
+    "out": "giardiasis",
+    "why": "Once a Giardia cyst is swallowed by a person, it transforms into the motile trophozoite form and attaches to the intestinal wall — giardiasis is that organism doing what it does inside a human gut.",
+    "src": "https://en.wikipedia.org/wiki/Giardiasis",
+    "verified": true
+  },
+  {
+    "in": [
+      "entamoeba_histolytica",
+      "water"
+    ],
+    "out": "amoebiasis",
+    "why": "A person gets amoebiasis by swallowing water — or food — contaminated with Entamoeba histolytica cysts; the resulting disease ranges from bloody dysentery to a liver abscess.",
+    "src": "https://en.wikipedia.org/wiki/Entamoeba_histolytica",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "water"
+    ],
+    "out": "ascaris_lumbricoides",
+    "why": "Ascaris infects a person via the fecal-oral route, specifically by swallowing water contaminated with eggs that have already matured in soil for weeks.",
+    "src": "https://en.wikipedia.org/wiki/Ascaris_lumbricoides",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "soil"
+    ],
+    "out": "hookworm",
+    "why": "Hookworm doesn't need to be swallowed at all — its larvae hatch in warm, moist soil and penetrate straight through the skin of anyone walking barefoot over them.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm",
+    "verified": true
+  },
+  {
+    "in": [
+      "dust",
+      "human"
+    ],
+    "out": "enterobius_vermicularis",
+    "why": "Pinworm eggs are light enough to go airborne; inhaling and then swallowing them is a real, if secondary, route into the only host this parasite has ever been found in — a human.",
+    "src": "https://en.wikipedia.org/wiki/Enterobius_vermicularis",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "pork"
+    ],
+    "out": "trichinella_spiralis",
+    "why": "Trichinella larvae bore out of the gut, travel the bloodstream, and encyst specifically in striated muscle — exactly the tissue a person eats when the pork carrying them goes undercooked.",
+    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "mosquito"
+    ],
+    "out": "wuchereria_bancrofti",
+    "why": "Wuchereria's microfilariae pass from person to person through mosquito species like Culex and Anopheles, which pick the larvae up in one blood meal and deliver them in the next.",
+    "src": "https://en.wikipedia.org/wiki/Wuchereria_bancrofti",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "trichinella_spiralis"
+    ],
+    "out": "trichinosis",
+    "why": "Symptoms of trichinosis can start as soon as twelve hours after a person eats meat carrying Trichinella's encysted larvae, which the stomach's own acid releases from their nurse cells.",
+    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "wuchereria_bancrofti"
+    ],
+    "out": "lymphatic_filariasis",
+    "why": "Adult Wuchereria worms live in a person's own lymphatic vessels and physically obstruct them; the resulting chronic lymphedema is lymphatic filariasis, elephantiasis in its most severe form.",
+    "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "pork"
+    ],
+    "out": "taenia_solium",
+    "why": "A person becomes Taenia solium's definitive host by eating undercooked pork carrying its cysticerci — the larva everts inside the small intestine and attaches with its own hooks and suckers.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_solium",
+    "verified": true
+  },
+  {
+    "in": [
+      "beef",
+      "human"
+    ],
+    "out": "taenia_saginata",
+    "why": "Humans contract Taenia saginata's infective cysticerci by eating raw or undercooked beef; the larva matures into an adult worm in the human gut five to twelve weeks later.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_saginata",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "snail"
+    ],
+    "out": "schistosoma",
+    "why": "Schistosoma's larvae must first pass through a freshwater snail before the stage that can infect a person emerges — cercariae that penetrate human skin directly on contact with contaminated water.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "snail"
+    ],
+    "out": "clonorchis_sinensis",
+    "why": "Clonorchis passes through two intermediate hosts in strict sequence — a freshwater snail, then a freshwater fish — before infecting whichever mammal eats that fish raw or undercooked.",
+    "src": "https://en.wikipedia.org/wiki/Clonorchis_sinensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "schistosoma",
+      "water"
+    ],
+    "out": "schistosomiasis",
+    "why": "People catch schistosomiasis when Schistosoma cercariae in contaminated water penetrate their skin on contact — while bathing, wading, or just walking through it.",
+    "src": "https://en.wikipedia.org/wiki/Schistosomiasis",
+    "verified": true
+  },
+  {
+    "in": [
+      "human"
+    ],
+    "verb": "cut",
+    "out": "head_louse",
+    "why": "A head louse bites into the skin four to five times a day to feed on blood, and spreads only by direct head-to-head contact — it cannot jump or fly to reach a new host at all.",
+    "src": "https://en.wikipedia.org/wiki/Head_louse",
+    "verified": true
+  },
+  {
+    "in": [
+      "clothing",
+      "human"
+    ],
+    "out": "body_louse",
+    "why": "Body lice lay the majority of their eggs directly on clothing rather than on the scalp hair a head louse prefers — the clothing itself is where an infestation actually lives.",
+    "src": "https://en.wikipedia.org/wiki/Body_louse",
+    "verified": true
+  },
+  {
+    "in": [
+      "human"
+    ],
+    "verb": "wait",
+    "out": "scabies_mite",
+    "why": "An impregnated female Sarcoptes scabiei burrows into a person's skin and lays two or three eggs a day for the rest of her life — about three to four weeks, and no longer.",
+    "src": "https://en.wikipedia.org/wiki/Sarcoptes_scabiei",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "human"
+    ],
+    "out": "bed_bug",
+    "why": "A bed bug feeds exclusively on human blood but never lives on the body — it spends its time hidden in dark seams nearby, classically a mattress, between meals.",
+    "src": "https://en.wikipedia.org/wiki/Cimex_lectularius",
+    "verified": true
   }
 ]

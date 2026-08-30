@@ -110,7 +110,8 @@
       "label": "Lead is a neurotoxin",
       "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
       "ids": [
-        "lead"
+        "lead",
+        "lead_sulfide"
       ],
       "severity": "cumulative"
     },
@@ -659,6 +660,153 @@
       "note": "Puffballs are eaten only while young and solid white all the way through. That same immature stage is exactly how a death cap or other deadly Amanita first looks, sliced open from its 'egg' — foraging guides insist on checking the inside of every puffball before eating it, precisely because of that resemblance.",
       "ids": [
         "puffball"
+      ],
+      "severity": "conditional"
+    },
+    "beryllium_disease": {
+      "label": "Beryllium dust causes a chronic lung disease",
+      "note": "Inhaled beryllium-containing dust is toxic and can cause berylliosis (chronic beryllium disease), a life-threatening allergic lung condition that can progress to pulmonary fibrosis and heart failure. This applies to the ore as much as the refined metal — commercial beryllium handling requires dedicated dust control.",
+      "ids": [
+        "beryllium",
+        "beryl"
+      ],
+      "severity": "cumulative"
+    },
+    "chrysotile_asbestos": {
+      "label": "Some serpentine is asbestos",
+      "note": "Chrysotile, a fibrous form of serpentine, is one of the most important asbestos minerals. Breaking or excavating serpentine rock that contains it can release asbestos fibres into the air, a long-term lung health hazard from inhalation.",
+      "ids": [
+        "serpentine"
+      ],
+      "severity": "cumulative"
+    },
+    "malaria_burden": {
+      "label": "Malaria still kills hundreds of thousands a year",
+      "note": "In 2024 an estimated 282 million malaria cases caused around 610,000 deaths, about 95% of them in sub-Saharan Africa. The fever itself comes from red blood cells bursting in near-synchrony as the parasite completes each replication cycle.",
+      "ids": [
+        "plasmodium",
+        "malaria"
+      ],
+      "severity": "acute"
+    },
+    "toxoplasmosis_risk": {
+      "label": "Usually silent, but not always harmless",
+      "note": "Toxoplasma gondii infection is generally asymptomatic in healthy adults, and up to half the world's population may carry it without ever knowing. Infants infected before birth and anyone immunocompromised face real risk of serious illness.",
+      "ids": [
+        "toxoplasma_gondii",
+        "toxoplasmosis"
+      ],
+      "severity": "conditional"
+    },
+    "giardiasis_illness": {
+      "label": "A few swallowed cysts are enough",
+      "note": "Ingesting only a handful of Giardia cysts can start an infection, and in some developing countries as much as 30% of the population carries it. Illness is usually gastrointestinal and self-limiting, not life-threatening.",
+      "ids": [
+        "giardia",
+        "giardiasis"
+      ],
+      "severity": "conditional"
+    },
+    "amoebiasis_illness": {
+      "label": "A real, sometimes fatal dysentery",
+      "note": "Entamoeba histolytica infects an estimated 35 to 50 million people worldwide and is thought to kill more than 55,000 of them a year, mostly through amoebic dysentery or a liver abscess.",
+      "ids": [
+        "entamoeba_histolytica",
+        "amoebiasis"
+      ],
+      "severity": "acute"
+    },
+    "trichomoniasis_sti": {
+      "label": "A common sexually transmitted infection",
+      "note": "Trichomonas vaginalis causes an estimated 160 million infections a year worldwide. Most people who carry it, roughly 85% of women and 77% of men, have no symptoms at all, but it still spreads person to person through sexual contact.",
+      "ids": [
+        "trichomonas_vaginalis"
+      ],
+      "severity": "conditional"
+    },
+    "cryptosporidiosis_illness": {
+      "label": "Resists the chlorine that stops most water contaminants",
+      "note": "Cryptosporidium's oocysts are highly resistant to ordinary chlorine disinfection, which has made it a real cause of large waterborne outbreaks. Illness is usually watery diarrhea, worse and longer-lasting in anyone immunocompromised.",
+      "ids": [
+        "cryptosporidium"
+      ],
+      "severity": "conditional"
+    },
+    "soil_transmitted_helminths": {
+      "label": "The leading cause of anemia in developing countries",
+      "note": "Ascaris, hookworm, and pinworm are among the most common human parasitic infections worldwide — hookworm alone is closely associated with poverty and is the leading cause of anemia and undernutrition where it's endemic.",
+      "ids": [
+        "ascaris_lumbricoides",
+        "hookworm",
+        "enterobius_vermicularis"
+      ],
+      "severity": "conditional"
+    },
+    "trichinosis_illness": {
+      "label": "From undercooked meat, sometimes seriously",
+      "note": "Trichinosis symptoms can start within twelve hours of eating meat carrying Trichinella's encysted larvae. Most cases are mild, but heavy larval loads can cause serious muscle and cardiac complications.",
+      "ids": [
+        "trichinella_spiralis",
+        "trichinosis"
+      ],
+      "severity": "conditional"
+    },
+    "lymphatic_filariasis_burden": {
+      "label": "Chronic swelling that builds over repeated exposure",
+      "note": "Around 40 million people live with lymphatic filariasis, the disfiguring swelling of elephantiasis among its most severe forms. The damage comes from adult worms physically obstructing the lymphatic system, and it accumulates with repeated infection rather than appearing all at once.",
+      "ids": [
+        "wuchereria_bancrofti",
+        "lymphatic_filariasis"
+      ],
+      "severity": "cumulative"
+    },
+    "tapeworm_infection": {
+      "label": "Large, long-lived, and usually mild",
+      "note": "Taenia solium and Taenia saginata are among the largest parasites that infect humans — the beef tapeworm can exceed 22 metres and live in a person for 25 years. Most infections cause mild or no symptoms, detected only when a segment passes.",
+      "ids": [
+        "taenia_solium",
+        "taenia_saginata"
+      ],
+      "severity": "conditional"
+    },
+    "schistosomiasis_burden": {
+      "label": "The second-most devastating parasitic disease, after malaria",
+      "note": "The World Health Organization considers schistosomiasis the second-most socioeconomically devastating parasitic disease after malaria. An estimated 600 to 700 million people live at risk of it, and eggs trapped in tissue are what cause most of the lasting damage.",
+      "ids": [
+        "schistosoma",
+        "schistosomiasis"
+      ],
+      "severity": "conditional"
+    },
+    "liver_fluke_infection": {
+      "label": "A parasite that can live in one host for decades",
+      "note": "Clonorchis sinensis, the Chinese liver fluke, can survive around 30 years in a single human host after being eaten in raw or undercooked freshwater fish. Long-term infection is linked to chronic liver and bile-duct disease.",
+      "ids": [
+        "clonorchis_sinensis"
+      ],
+      "severity": "conditional"
+    },
+    "body_louse_disease_vector": {
+      "label": "A real historical epidemic-disease carrier",
+      "note": "Body lice can transmit epidemic typhus, relapsing fever, and trench fever between people — diseases that caused massive historical outbreaks in crowded, unsanitary conditions such as wartime trenches and refugee camps.",
+      "ids": [
+        "body_louse"
+      ],
+      "severity": "conditional"
+    },
+    "scabies_infestation": {
+      "label": "Intensely itchy, and it spreads easily",
+      "note": "Scabies mites spread readily through skin contact and are common in crowded settings such as care homes, schools, refugee camps, prisons, and hospitals. The infestation itself is rarely dangerous, but it is intensely itchy and highly contagious.",
+      "ids": [
+        "scabies_mite"
+      ],
+      "severity": "conditional"
+    },
+    "head_lice_infestation": {
+      "label": "Extremely common, not a sign of poor hygiene",
+      "note": "Head lice spread through direct head-to-head contact and cause millions of treated cases every year in the US alone. They're a nuisance, not a health danger — lice do not spread disease the way body lice can.",
+      "ids": [
+        "head_louse"
       ],
       "severity": "conditional"
     }

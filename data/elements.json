@@ -1614,8 +1614,7 @@
     "tags": [
       "dish"
     ],
-    "fact": "Surplus, stored. It bought the first bad year, and the first bureaucracy.",
-    "terminal": true
+    "fact": "Surplus, stored. It bought the first bad year, and the first bureaucracy."
   },
   {
     "id": "smoked_fish",
@@ -2768,8 +2767,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Cloth cut and stitched to the shape of a body — the point of the whole fibre chain.",
-    "terminal": true
+    "fact": "Cloth cut and stitched to the shape of a body — the point of the whole fibre chain."
   },
   {
     "id": "pulp",
@@ -5192,7 +5190,6 @@
       "earth",
       "build"
     ],
-    "terminal": true,
     "fact": "Limestone recrystallised. The calcite grains grow and interlock, and the fossils go."
   },
   {
@@ -5226,7 +5223,6 @@
       "earth",
       "fire"
     ],
-    "terminal": true,
     "fact": "The last rank of coal: 86–97% carbon, hard and glossy, with the tar cooked out of it."
   },
   {
@@ -15273,5 +15269,461 @@
     "taxon": "tx_tremellaceae",
     "terminal": true,
     "fact": "A gelatinous orange-yellow jelly fungus that parasitizes other wood-rotting fungi, not the wood itself."
+  },
+  {
+    "id": "pyrite",
+    "name": "Pyrite",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Iron disulfide, FeS2 — brassy enough to fool a prospector, which is exactly its nickname."
+  },
+  {
+    "id": "hematite",
+    "name": "Hematite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Iron(III) oxide, Fe2O3 — the world's most important iron ore, red streak and all.",
+    "terminal": true
+  },
+  {
+    "id": "magnetite",
+    "name": "Magnetite",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Fe3O4, iron caught halfway oxidised — and the only mineral that turns into a lodestone."
+  },
+  {
+    "id": "graphite",
+    "name": "Graphite",
+    "emoji": "✏️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Pure carbon, the same as diamond, laid out in slippery sheets instead of a rigid cage.",
+    "terminal": true
+  },
+  {
+    "id": "calcite",
+    "name": "Calcite",
+    "emoji": "◽",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Calcium carbonate, CaCO3 — the mineral that limestone, marble and eggshell are all built from."
+  },
+  {
+    "id": "malachite",
+    "name": "Malachite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Copper carbonate hydroxide — banded green, and the reason a weathered copper vein turns that colour.",
+    "terminal": true
+  },
+  {
+    "id": "azurite",
+    "name": "Azurite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Deep-blue copper carbonate, and chemically restless — left alone it slowly turns into malachite.",
+    "soleRoute": true
+  },
+  {
+    "id": "gypsum",
+    "name": "Gypsum",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Calcium sulfate dihydrate, soft enough to scratch with a fingernail — plaster's raw material.",
+    "terminal": true
+  },
+  {
+    "id": "olivine",
+    "name": "Olivine",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Magnesium iron silicate, olive-green and named for it — the first mineral out of a cooling basalt melt."
+  },
+  {
+    "id": "garnet",
+    "name": "Garnet",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "An iron-aluminium silicate that grows inside metamorphic rock as an index of how hot it got.",
+    "terminal": true
+  },
+  {
+    "id": "beryl",
+    "name": "Beryl",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Beryllium aluminium silicate — colourless on its own; every gem colour in it comes from an impurity."
+  },
+  {
+    "id": "aquamarine",
+    "name": "Aquamarine",
+    "emoji": "🩵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Beryl tinted pale sea-blue by iron in its Fe2+ state — the mildest of beryl's colour tricks.",
+    "terminal": true
+  },
+  {
+    "id": "serpentine",
+    "name": "Serpentine",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Mottled green and named for snakeskin — what olivine becomes once water gets into it.",
+    "terminal": true
+  },
+  {
+    "id": "mosquito",
+    "name": "Mosquito",
+    "emoji": "🦟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Only females drink blood — for the protein to make eggs. Males live entirely on nectar."
+  },
+  {
+    "id": "cat",
+    "name": "Cat",
+    "emoji": "🐈",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its ancestor is the African wildcat. Grain stores drew in rodents, and rodents drew in the cat."
+  },
+  {
+    "id": "snail",
+    "name": "Snail",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A shelled gastropod. Some freshwater species are, indirectly, among the deadliest animals to people."
+  },
+  {
+    "id": "plasmodium",
+    "name": "Plasmodium",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A single-celled parasite genus that replicates inside red blood cells. Five species infect humans."
+  },
+  {
+    "id": "toxoplasma_gondii",
+    "name": "Toxoplasma gondii",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Cats are its only sexual host. Roughly half of people alive may carry it, mostly without symptoms."
+  },
+  {
+    "id": "giardia",
+    "name": "Giardia",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A tough cyst form can stay infectious in cold water for up to three months, waiting to be swallowed."
+  },
+  {
+    "id": "entamoeba_histolytica",
+    "name": "Entamoeba histolytica",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "An amoeba that mostly infects humans and other primates, and almost nothing else."
+  },
+  {
+    "id": "trichomonas_vaginalis",
+    "name": "Trichomonas vaginalis",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "A flagellated protozoan spread by direct sexual contact — no other route reliably passes it on."
+  },
+  {
+    "id": "cryptosporidium",
+    "name": "Cryptosporidium",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Its oocyst shrugs off ordinary chlorine, which is why it's a real hazard even in treated water."
+  },
+  {
+    "id": "ascaris_lumbricoides",
+    "name": "Ascaris lumbricoides",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Up to a billion people carry it. A single female can lay 200,000 eggs a day."
+  },
+  {
+    "id": "hookworm",
+    "name": "Hookworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Doesn't wait to be swallowed — its larvae simply burrow straight through bare skin."
+  },
+  {
+    "id": "enterobius_vermicularis",
+    "name": "Pinworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Its entire life cycle happens inside one human gut — humans are its only known host."
+  },
+  {
+    "id": "trichinella_spiralis",
+    "name": "Trichinella spiralis",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The smallest nematode known to parasitize humans, yet one female can produce 1,500 larvae."
+  },
+  {
+    "id": "wuchereria_bancrofti",
+    "name": "Wuchereria bancrofti",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its larvae peak in the blood between 10 pm and 4 am, timed to when the night-biting mosquito feeds."
+  },
+  {
+    "id": "taenia_solium",
+    "name": "Taenia solium",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "The pork tapeworm can grow past 8 metres long from a single scolex barely a millimetre wide."
+  },
+  {
+    "id": "taenia_saginata",
+    "name": "Taenia saginata",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "The beef tapeworm can top 22 metres and live in a human gut for 25 years."
+  },
+  {
+    "id": "schistosoma",
+    "name": "Schistosoma",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A blood fluke that needs a freshwater snail as a stepping stone before it can reach a person at all."
+  },
+  {
+    "id": "clonorchis_sinensis",
+    "name": "Clonorchis sinensis",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "The Chinese liver fluke can live 30 years in one host, passing through a snail and a fish to get there."
+  },
+  {
+    "id": "head_louse",
+    "name": "Head Louse",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Cannot jump or fly at all — it only spreads by direct head-to-head contact."
+  },
+  {
+    "id": "body_louse",
+    "name": "Body Louse",
+    "emoji": "👕",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Lives and lays its eggs in clothing seams, not on the body it feeds from."
+  },
+  {
+    "id": "scabies_mite",
+    "name": "Scabies Mite",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "A burrowing female lays two or three eggs a day in a skin tunnel until her four-week life ends there."
+  },
+  {
+    "id": "bed_bug",
+    "name": "Bed Bug",
+    "emoji": "🛏️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Never lives on its host — it hides in dark seams nearby, like a mattress, between blood meals."
+  },
+  {
+    "id": "malaria",
+    "name": "Malaria",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Fever comes in waves timed to red blood cells bursting open, all at once, every one to three days."
+  },
+  {
+    "id": "toxoplasmosis",
+    "name": "Toxoplasmosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Caught from cyst-laden undercooked meat as easily as from a cat's litter box."
+  },
+  {
+    "id": "giardiasis",
+    "name": "Giardiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Swallowing only a handful of cysts is enough to start an infection."
+  },
+  {
+    "id": "amoebiasis",
+    "name": "Amoebiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Kills more than 55,000 people worldwide a year, mostly through amoebic dysentery."
+  },
+  {
+    "id": "trichinosis",
+    "name": "Trichinosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "First symptoms can appear in as little as twelve hours after eating the wrong meat."
+  },
+  {
+    "id": "lymphatic_filariasis",
+    "name": "Lymphatic Filariasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Adult worms block the body's own lymph vessels — the swelling of elephantiasis follows from there."
+  },
+  {
+    "id": "schistosomiasis",
+    "name": "Schistosomiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "The second-most economically devastating parasitic disease on Earth, after malaria alone."
   }
 ]
