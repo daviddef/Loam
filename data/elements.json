@@ -3036,7 +3036,7 @@
       "wild"
     ],
     "fact": "The most social cat there is \u2014 it lives in family groups where other big cats hunt alone.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_panthera"
   },
   {
@@ -3412,7 +3412,7 @@
       "crop"
     ],
     "fact": "A berry, growing on the largest herb on Earth. What looks like a trunk is not a trunk.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "pear",
@@ -4771,7 +4771,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "The first ones were electrum \u2014 a natural gold-silver alloy nobody could value by eye."
   },
   {
@@ -12738,7 +12738,7 @@
     "tags": [
       "animal"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "An intact male sheep, occasionally called a tup. Kept mostly for breeding.",
     "taxon": "tx_artiodactyla"
   },
@@ -20622,6 +20622,233 @@
       "myth"
     ],
     "fact": "Kuba (Bushongo) creator god who vomited up the sun, moon, stars and every animal out of primordial darkness.",
+    "terminal": true
+  },
+  {
+    "id": "lotus",
+    "name": "Lotus",
+    "emoji": "\ud83e\udeb7",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Aquatic flower rooted in mud; a 1,300-year-old seed from a dry lakebed still germinated when planted in 1994."
+  },
+  {
+    "id": "swan",
+    "name": "Swan",
+    "emoji": "\ud83e\udda2",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "One of the heaviest birds still capable of flight, favoring slow rivers and larger lakes."
+  },
+  {
+    "id": "veena",
+    "name": "Veena",
+    "emoji": "\ud83c\udfbb",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "chordophone"
+    ],
+    "fact": "A South Asian string instrument, traditionally built from hollowed wood and a gourd resonator."
+  },
+  {
+    "id": "conch",
+    "name": "Conch",
+    "emoji": "\ud83d\udc1a",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A large sea snail's shell; with its spire tip cut off, it becomes a blown ceremonial trumpet."
+  },
+  {
+    "id": "trident",
+    "name": "Trident",
+    "emoji": "\ud83d\udd31",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A three-pronged spear, used to harpoon fish and, forged in iron, carried as a weapon."
+  },
+  {
+    "id": "mouse",
+    "name": "Mouse",
+    "emoji": "\ud83d\udc2d",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A small rodent that thrives in fields and farmland as readily as in houses, alongside people."
+  },
+  {
+    "id": "monkey",
+    "name": "Monkey",
+    "emoji": "\ud83d\udc12",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Old and New World monkeys together number well over 200 species, most of them tree-dwelling."
+  },
+  {
+    "id": "brahma",
+    "name": "Brahma",
+    "emoji": "\ud83d\udcda",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Four-headed Hindu creator deity, one head reciting each of the four Vedas; his mount is a swan.",
+    "terminal": true
+  },
+  {
+    "id": "vishnu",
+    "name": "Vishnu",
+    "emoji": "\ud83d\udc1a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu preserver god; reclines on the serpent Shesha in the cosmic ocean, holding a conch and lotus.",
+    "terminal": true
+  },
+  {
+    "id": "shiva",
+    "name": "Shiva",
+    "emoji": "\ud83d\udd31",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu destroyer god; carries a trishula trident, body ash-covered, a cobra coiled at his neck."
+  },
+  {
+    "id": "saraswati",
+    "name": "Saraswati",
+    "emoji": "\ud83e\udda2",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu goddess of knowledge and the arts; plays the veena, a hamsa (swan) resting at her feet.",
+    "terminal": true
+  },
+  {
+    "id": "lakshmi",
+    "name": "Lakshmi",
+    "emoji": "\ud83e\udeb7",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu goddess of wealth; four-armed, seated on a lotus, gold coins pouring from one hand.",
+    "terminal": true
+  },
+  {
+    "id": "parvati",
+    "name": "Parvati",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu goddess, daughter of the Himalayan king Himavan; mother of Ganesha, her mounts a lion and tiger.",
+    "terminal": true
+  },
+  {
+    "id": "durga",
+    "name": "Durga",
+    "emoji": "\ud83e\udd81",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu warrior goddess with up to eighteen arms, each bearing a weapon; slew the buffalo demon Mahishasura.",
+    "terminal": true
+  },
+  {
+    "id": "kali",
+    "name": "Kali",
+    "emoji": "\ud83d\udc80",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Fierce Hindu goddess of time and death, garlanded with skulls; calmed by standing on Shiva's chest.",
+    "terminal": true
+  },
+  {
+    "id": "ganesha",
+    "name": "Ganesha",
+    "emoji": "\ud83d\udc18",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Elephant-headed Hindu god of beginnings, one tusk broken; rides a mouse and removes obstacles.",
+    "terminal": true
+  },
+  {
+    "id": "hanuman",
+    "name": "Hanuman",
+    "emoji": "\ud83d\udc12",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Monkey god and son of Vayu; carried an entire Himalayan herb-mountain to Lanka to save Lakshmana.",
+    "terminal": true
+  },
+  {
+    "id": "indra",
+    "name": "Indra",
+    "emoji": "\u26a1",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "King of the Hindu devas; wields the thunderbolt vajra and rides the white elephant Airavata.",
+    "terminal": true
+  },
+  {
+    "id": "agni",
+    "name": "Agni",
+    "emoji": "\ud83d\udd25",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu fire god and messenger between humans and gods; exists as fire on earth, lightning in the sky.",
+    "terminal": true
+  },
+  {
+    "id": "surya",
+    "name": "Surya",
+    "emoji": "\ud83c\udf1e",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu sun god, driven across the sky in a chariot pulled by seven horses, Aruna at the reins.",
+    "terminal": true
+  },
+  {
+    "id": "vayu",
+    "name": "Vayu",
+    "emoji": "\ud83c\udf2c\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hindu wind god and father of Hanuman; revered in the Upanishads as prana, the world's life-breath.",
     "terminal": true
   }
 ]

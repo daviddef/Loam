@@ -112,6 +112,8 @@ const SCALE = {
           'blue_cheese', 'egg', 'boiled_egg', 'golden_egg', 'apple', 'tomato',
           'onion', 'garlic', 'bulb', 'potato', 'cassava', 'chilli', 'meatball', 'sausage',
           'bacon', 'chips', 'leaf', 'flower', 'root', 'herb', 'sprout', 'seedling',
+          // Hindu mythology batch 1 — an aquatic flower, same rack as flower/leaf/root
+          'lotus',
           'corn_dolly', 'gingerbread_man', 'philosopher_stone', 'sugarcane',
           'turquoise', 'cacao_of_the_gods',
           'cucumber', 'wheat', 'grass', 'salt_fish', 'cured_meat', 'meat', 'bone', 'shell',
@@ -184,6 +186,10 @@ const SCALE = {
           'ascaris_lumbricoides', 'lymphatic_filariasis',
           'sea_urchin', 'mutualism', 'pioneer_species', 'decomposer',
           'baboon', 'lemur', 'bald_eagle', 'peregrine_falcon', 'snowy_owl', 'turkey_vulture',
+          // Hindu mythology batch 1 — a waterfowl (goose/duck scale), a house mouse (rabbit-adjacent small
+          // mammal), a tree-dwelling primate (baboon/lemur scale), a hand-held stringed instrument
+          // (sitar scale) and a hand-carried sea-snail shell (knife/shoe scale)
+          'swan', 'mouse', 'monkey', 'veena', 'conch',
           'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander',
           // railways batch 1 — small machine parts, hand-tool scale
           'roller_bearing', 'plain_bearing', 'air_brake',
@@ -205,6 +211,11 @@ const SCALE = {
           'ixchel', 'chaac', 'ek_chuah',
           // african mythology batch 1 — Yoruba, Efik and Kuba deities, same human/idol scale as the Mesoamerican gods above
           'shango', 'obatala', 'orisha', 'eshu', 'elegua', 'olorun', 'yemoja', 'anansi', 'oya', 'babalu_aye', 'abassi', 'bumba',
+          // Hindu mythology batch 1 — deities drawn at human/idol scale, the same rack as the Aztec/Maya pantheon above
+          'brahma', 'vishnu', 'shiva', 'saraswati', 'lakshmi', 'parvati', 'durga', 'kali',
+          'ganesha', 'hanuman', 'indra', 'agni', 'surya', 'vayu',
+          // a full pole weapon, the same order of magnitude as the human wielding it
+          'trident',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press

@@ -24324,5 +24324,415 @@
     "why": "Among the nine creatures Bumba is said to have vomited up next were the leopard and the goat, followed at last by humankind itself.",
     "src": "https://en.wikipedia.org/wiki/Mbombo",
     "supported": true
+  },
+  {
+    "in": [
+      "mud",
+      "seed"
+    ],
+    "out": "lotus",
+    "why": "Lotus seeds are extraordinarily durable — one recovered from a dry lakebed and dated to about 1,300 years old still germinated in mud in 1994.",
+    "src": "https://en.wikipedia.org/wiki/Nelumbo_nucifera",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "mud"
+    ],
+    "out": "lotus",
+    "why": "Its roots (rhizomes) anchor and spread through the mud of slow rivers and ponds, beneath blossoms that stay clean above the waterline.",
+    "src": "https://en.wikipedia.org/wiki/Nelumbo_nucifera",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "feather"
+    ],
+    "out": "swan",
+    "why": "Mute swans favor slow-flowing rivers and larger lakes, and are one of the heaviest birds still capable of flight.",
+    "src": "https://en.wikipedia.org/wiki/Mute_swan",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "feather"
+    ],
+    "out": "swan",
+    "why": "They reach submerged plants with their long necks and graze on land too, taking the occasional fish or frog.",
+    "src": "https://en.wikipedia.org/wiki/Mute_swan",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "gourd"
+    ],
+    "out": "veena",
+    "why": "Traditionally built from hollowed wood and a gourd resonator, the veena is strung with melody and drone strings alike.",
+    "src": "https://en.wikipedia.org/wiki/Veena",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell"
+    ],
+    "out": "conch",
+    "why": "A large sea snail's shell, its spire tip cut off so it can be blown as a trumpet — one of Hinduism's eight auspicious symbols.",
+    "src": "https://en.wikipedia.org/wiki/Turbinella_pyrum",
+    "verified": true,
+    "verb": "blow"
+  },
+  {
+    "in": [
+      "shell",
+      "wind"
+    ],
+    "out": "conch",
+    "why": "Blowing air across the cut spire of this marine gastropod's shell produces the deep note used to open rituals.",
+    "src": "https://en.wikipedia.org/wiki/Turbinella_pyrum",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "fish"
+    ],
+    "out": "trident",
+    "why": "In Ancient Greece the trident was used as a harpoon for tuna and other large fish, its barbed tines trapping the catch.",
+    "src": "https://en.wikipedia.org/wiki/Trident",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "human"
+    ],
+    "out": "trident",
+    "why": "Roman gladiators called retiarii fought with a trident and a net, pitted against an opponent called a secutor.",
+    "src": "https://en.wikipedia.org/wiki/Trident",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "grain"
+    ],
+    "out": "mouse",
+    "why": "House mice thrive in open fields and farmland as readily as indoors, feeding on whatever crops and stores go unattended.",
+    "src": "https://en.wikipedia.org/wiki/House_mouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "grain"
+    ],
+    "out": "mouse",
+    "why": "Living commensally alongside people, house mice retreat into buildings for warmth and stored food each autumn and winter.",
+    "src": "https://en.wikipedia.org/wiki/House_mouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "banana"
+    ],
+    "out": "monkey",
+    "why": "Many monkey species are arboreal, tree-dwelling foragers whose varied diet includes fruit such as bananas.",
+    "src": "https://en.wikipedia.org/wiki/Monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "banana"
+    ],
+    "out": "monkey",
+    "why": "The Old and New World monkey families together add up to well over 200 species, many of them fruit-eating and tree-dwelling.",
+    "src": "https://en.wikipedia.org/wiki/Monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "lotus",
+      "swan"
+    ],
+    "out": "brahma",
+    "why": "Brahma is seated on a lotus, and his vahana is a hamsa — a swan, goose or crane — that carries him wherever he goes.",
+    "src": "https://en.wikipedia.org/wiki/Brahma",
+    "supported": true
+  },
+  {
+    "in": [
+      "book",
+      "swan"
+    ],
+    "out": "brahma",
+    "why": "His four heads each represent and recite one of the four Vedas, while a hamsa serves as his vahana.",
+    "src": "https://en.wikipedia.org/wiki/Brahma",
+    "supported": true
+  },
+  {
+    "in": [
+      "conch",
+      "lotus"
+    ],
+    "out": "vishnu",
+    "why": "Two of Vishnu's traditional held objects: the Panchajanya conch and the Padma lotus, alongside his mace and discus.",
+    "src": "https://en.wikipedia.org/wiki/Vishnu",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea",
+      "snake"
+    ],
+    "out": "vishnu",
+    "why": "Vishnu reclines on the coils of the serpent Shesha, afloat on the cosmic ocean of milk, with Lakshmi at his side.",
+    "src": "https://en.wikipedia.org/wiki/Vishnu",
+    "supported": true
+  },
+  {
+    "in": [
+      "trident",
+      "ash"
+    ],
+    "out": "shiva",
+    "why": "Shiva carries the trishula trident and covers his body in ash (vibhuti), a reminder that material existence is impermanent.",
+    "src": "https://en.wikipedia.org/wiki/Shiva",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "moon"
+    ],
+    "out": "shiva",
+    "why": "He wears the serpent Vasuki garlanded around his neck and the crescent moon set in his matted hair.",
+    "src": "https://en.wikipedia.org/wiki/Shiva",
+    "supported": true
+  },
+  {
+    "in": [
+      "veena",
+      "swan"
+    ],
+    "out": "saraswati",
+    "why": "Saraswati plays the veena, her signature instrument, with a hamsa (swan) shown resting at her feet.",
+    "src": "https://en.wikipedia.org/wiki/Saraswati",
+    "supported": true
+  },
+  {
+    "in": [
+      "book",
+      "river"
+    ],
+    "out": "saraswati",
+    "why": "She carries a book as goddess of learning, and in the earliest Vedic hymns was herself the Saraswati river personified.",
+    "src": "https://en.wikipedia.org/wiki/Saraswati",
+    "supported": true
+  },
+  {
+    "in": [
+      "coin",
+      "lotus"
+    ],
+    "out": "lakshmi",
+    "why": "Lakshmi is shown seated on a lotus with gold coins pouring from one of her four hands, symbolizing fortune.",
+    "src": "https://en.wikipedia.org/wiki/Lakshmi",
+    "supported": true
+  },
+  {
+    "in": [
+      "elephant",
+      "lotus"
+    ],
+    "out": "lakshmi",
+    "why": "In her Gajalakshmi form she stands on a lotus flanked by elephants, which represent water, rain and fertility.",
+    "src": "https://en.wikipedia.org/wiki/Lakshmi",
+    "supported": true
+  },
+  {
+    "in": [
+      "mountain",
+      "tiger"
+    ],
+    "out": "parvati",
+    "why": "Parvati is the daughter of Himavan, king of the Himalayas, and the tiger is named among her mounts.",
+    "src": "https://en.wikipedia.org/wiki/Parvati",
+    "supported": true
+  },
+  {
+    "in": [
+      "mountain",
+      "lion"
+    ],
+    "out": "parvati",
+    "why": "Born of that same Himalayan lineage, she is also shown mounted on a lion, the other of her two named vahanas.",
+    "src": "https://en.wikipedia.org/wiki/Parvati",
+    "supported": true
+  },
+  {
+    "in": [
+      "trident",
+      "buffalo"
+    ],
+    "out": "durga",
+    "why": "Durga slew the shapeshifting buffalo demon Mahishasura with her trident, ending his reign of terror.",
+    "src": "https://en.wikipedia.org/wiki/Durga",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "trident"
+    ],
+    "out": "durga",
+    "why": "Riding her lion into battle, she wielded the trident among the many weapons the gods had gifted her.",
+    "src": "https://en.wikipedia.org/wiki/Durga",
+    "supported": true
+  },
+  {
+    "in": [
+      "bone",
+      "shiva"
+    ],
+    "out": "kali",
+    "why": "Garlanded with skulls and rampaging out of control, Kali was only calmed when she found herself standing on Shiva's chest.",
+    "src": "https://en.wikipedia.org/wiki/Kali",
+    "supported": true
+  },
+  {
+    "in": [
+      "fire",
+      "bone"
+    ],
+    "out": "kali",
+    "why": "Goddess of time and death, she was originally pictured in a cremation ground, her iconography built from bone and skull.",
+    "src": "https://en.wikipedia.org/wiki/Kali",
+    "supported": true
+  },
+  {
+    "in": [
+      "elephant",
+      "mouse"
+    ],
+    "out": "ganesha",
+    "why": "Ganesha's elephant head sits atop a body carried everywhere by his vahana, the mouse Mushika.",
+    "src": "https://en.wikipedia.org/wiki/Ganesha",
+    "supported": true
+  },
+  {
+    "in": [
+      "book",
+      "mouse"
+    ],
+    "out": "ganesha",
+    "why": "Tradition credits him with breaking off his own tusk to use as a pen, transcribing the Mahabharata for the sage Vyasa.",
+    "src": "https://en.wikipedia.org/wiki/Ganesha",
+    "supported": true
+  },
+  {
+    "in": [
+      "monkey",
+      "mountain"
+    ],
+    "out": "hanuman",
+    "why": "When Lakshmana lay dying, Hanuman flew off and carried back an entire Himalayan mountain of healing herbs.",
+    "src": "https://en.wikipedia.org/wiki/Hanuman",
+    "supported": true
+  },
+  {
+    "in": [
+      "monkey",
+      "fire"
+    ],
+    "out": "hanuman",
+    "why": "Captured and set alight in Lanka, Hanuman shrank his burning tail free and burned the city rooftop by rooftop.",
+    "src": "https://en.wikipedia.org/wiki/Hanuman",
+    "supported": true
+  },
+  {
+    "in": [
+      "lightning",
+      "elephant"
+    ],
+    "out": "indra",
+    "why": "Indra wields the thunderbolt vajra and rides Airavata, his white elephant, as king of the devas.",
+    "src": "https://en.wikipedia.org/wiki/Indra",
+    "supported": true
+  },
+  {
+    "in": [
+      "elephant",
+      "rain"
+    ],
+    "out": "indra",
+    "why": "As the Vedic god of storms and rains, he governs the weather from atop Airavata, his elephant mount.",
+    "src": "https://en.wikipedia.org/wiki/Indra",
+    "supported": true
+  },
+  {
+    "in": [
+      "fire",
+      "ram"
+    ],
+    "out": "agni",
+    "why": "Agni's vahana is the ram, and a dramatic halo of flames leaps upward from his crown.",
+    "src": "https://en.wikipedia.org/wiki/Agni",
+    "supported": true
+  },
+  {
+    "in": [
+      "fire",
+      "lightning"
+    ],
+    "out": "agni",
+    "why": "Vedic doctrine places him at three levels at once: fire on earth, lightning in the atmosphere, the sun in the sky.",
+    "src": "https://en.wikipedia.org/wiki/Agni",
+    "supported": true
+  },
+  {
+    "in": [
+      "horse",
+      "wheel"
+    ],
+    "out": "surya",
+    "why": "The Konark Sun Temple recreates Surya's chariot in stone, its twelve carved wheels drawn by seven horses.",
+    "src": "https://en.wikipedia.org/wiki/Surya",
+    "supported": true
+  },
+  {
+    "in": [
+      "sun",
+      "horse"
+    ],
+    "out": "surya",
+    "why": "Surya's chariot is pulled by seven horses, read as the seven colours of visible light or the seven days of the week.",
+    "src": "https://en.wikipedia.org/wiki/Surya",
+    "supported": true
+  },
+  {
+    "in": [
+      "wind",
+      "monkey"
+    ],
+    "out": "vayu",
+    "why": "Vayu fathered Hanuman, who carries the epithet Pavanaputra — son of Pavana, one of Vayu's own names.",
+    "src": "https://en.wikipedia.org/wiki/Vayu",
+    "supported": true
+  },
+  {
+    "in": [
+      "air",
+      "human"
+    ],
+    "out": "vayu",
+    "why": "The Upanishads praise him as prana, the life-breath of the world sustaining every human body.",
+    "src": "https://en.wikipedia.org/wiki/Vayu",
+    "supported": true
   }
 ]
