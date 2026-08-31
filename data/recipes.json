@@ -28474,5 +28474,85 @@
     "why": "A meerkat pack always keeps a sentry standing upright, watching for predators; eye sockets covering over a fifth of the skull's length hold the nerve tissue behind wide binocular vision, turning that watch into an early warning for the whole group.",
     "src": "https://en.wikipedia.org/wiki/Meerkat",
     "verified": true
+  },
+  {
+    "in": [
+      "cecum",
+      "colon"
+    ],
+    "out": "large_intestine",
+    "why": "The large intestine is the cecum, colon, rectum and anal canal end to end — together they reclaim water and salt from what digestion left behind, rather than absorbing nutrients, which the small intestine already finished doing.",
+    "src": "https://en.wikipedia.org/wiki/Large_intestine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cecum",
+      "muscle"
+    ],
+    "out": "colon",
+    "why": "The colon picks up where the cecum ends and runs ascending, transverse, descending, then sigmoid, turning at the hepatic and splenic flexures; it extracts water and salt and is where gut microbiota ferment what the small intestine couldn't absorb.",
+    "src": "https://en.wikipedia.org/wiki/Large_intestine",
+    "verified": true
+  },
+  {
+    "in": [
+      "colon",
+      "nerve"
+    ],
+    "out": "haustra",
+    "why": "The colon's segmented pouches were long explained by its muscle bands (teniae coli) running shorter than the tube itself — the more commonly accepted explanation now is that enteric nervous system activity drives the puckering instead.",
+    "src": "https://en.wikipedia.org/wiki/Haustrum_(anatomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "colon",
+      "tissue"
+    ],
+    "out": "rectum",
+    "why": "Five centimetres above the rectum the colon's three muscle bands blend into one continuous sheath — the sacculated haustra disappear with them, leaving a smooth reservoir, the rectal ampulla, that stores feces until release.",
+    "src": "https://en.wikipedia.org/wiki/Rectum",
+    "verified": true
+  },
+  {
+    "in": [
+      "cecum",
+      "white_blood_cell"
+    ],
+    "out": "appendix",
+    "why": "A blind-ended tube off the cecum, no longer written off as vestigial since the early 2000s: its wall is packed with gut-associated lymphoid tissue standing immune watch, and a 2007 Duke hypothesis says it shelters gut bacteria through illness or antibiotics.",
+    "src": "https://en.wikipedia.org/wiki/Appendix_(anatomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "neuron",
+      "muscle"
+    ],
+    "out": "peristalsis",
+    "why": "Circular muscle relaxes ahead of the load and contracts behind it while longitudinal muscle pushes forward, coordinated by the gut's own neurons — though the large intestine mostly skips it, relying instead on a few mass-action contractions a day.",
+    "src": "https://en.wikipedia.org/wiki/Peristalsis",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "large_intestine"
+    ],
+    "out": "gut_flora",
+    "why": "The large intestine holds the largest bacterial ecosystem in the human body, and research finds the relationship isn't simple tenancy — it's mutualistic, not merely commensal, with host and microbes each depending on the other.",
+    "src": "https://en.wikipedia.org/wiki/Gut_microbiota",
+    "verified": true
+  },
+  {
+    "in": [
+      "gut_flora"
+    ],
+    "verb": "ferment",
+    "out": "vitamin_k",
+    "why": "Bacteria in the gut flora — E. coli among them, resident in the large intestine — convert vitamin K1 into K2 forms and can synthesize their own, supplying part of the body's vitamin K even though most still comes from the diet.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_K",
+    "verified": true
   }
 ]
