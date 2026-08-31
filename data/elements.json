@@ -5087,7 +5087,7 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A silicate built in sheets, bonded so weakly between them that it splits into elastic plates."
   },
   {
@@ -5256,7 +5256,7 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Corundum with iron and titanium. An electron hops between the pair and the stone reads blue."
   },
   {
@@ -9621,7 +9621,7 @@
       "earth"
     ],
     "fact": "The white in almost everything white — paint, paper, toothpaste — chosen purely for its brightness.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "chromium_oxide",
@@ -15308,7 +15308,7 @@
       "earth"
     ],
     "fact": "Copper carbonate hydroxide — banded green, and the reason a weathered copper vein turns that colour.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "azurite",
@@ -15386,7 +15386,7 @@
     ],
     "soleRoute": true,
     "fact": "Mottled green and named for snakeskin — what olivine becomes once water gets into it.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "mosquito",
@@ -24366,5 +24366,1121 @@
     "fact": "A positron bound to an antiproton — a whole antimatter atom, first made at CERN in 1995.",
     "soleRoute": true,
     "terminal": true
+  },
+  {
+    "id": "pyrope",
+    "name": "Pyrope",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Magnesium aluminium silicate garnet, carried up from the mantle in basalt and kimberlite pipes.",
+    "soleRoute": true
+  },
+  {
+    "id": "spessartine",
+    "name": "Spessartine",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Manganese aluminium silicate garnet — the orange member, grown in granite pegmatite and rhyolite.",
+    "soleRoute": true
+  },
+  {
+    "id": "grossular",
+    "name": "Grossular",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium aluminium silicate garnet, grown where metamorphism cooks impure limestone.",
+    "soleRoute": true
+  },
+  {
+    "id": "andradite",
+    "name": "Andradite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium iron silicate garnet — swap in chromium and its demantoid variety outshines emerald in fire.",
+    "soleRoute": true
+  },
+  {
+    "id": "uvarovite",
+    "name": "Uvarovite",
+    "emoji": "💚",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium chromium silicate garnet, always green, grown in chromium-rich serpentinite.",
+    "soleRoute": true
+  },
+  {
+    "id": "heliodor",
+    "name": "Heliodor",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Golden beryl, coloured by iron in its Fe3+ state — grown in the same granite pegmatites as beryl itself.",
+    "soleRoute": true
+  },
+  {
+    "id": "morganite",
+    "name": "Morganite",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Pink beryl, coloured by manganese in its Mn2+ state — the same element that turns red beryl scarlet in a hotter state.",
+    "soleRoute": true
+  },
+  {
+    "id": "red_beryl",
+    "name": "Red Beryl",
+    "emoji": "❤️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Manganese-coloured beryl grown in volcanic gas cavities, not pegmatite — rarer than diamond.",
+    "soleRoute": true
+  },
+  {
+    "id": "amethyst",
+    "name": "Amethyst",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Quartz coloured violet by iron impurities plus natural background irradiation.",
+    "soleRoute": true
+  },
+  {
+    "id": "citrine",
+    "name": "Citrine",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Quartz whose iron centres have been driven from purple to gold — most of it is heat-turned amethyst.",
+    "soleRoute": true
+  },
+  {
+    "id": "rose_quartz",
+    "name": "Rose Quartz",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Quartz pink not from a dissolved impurity but from microscopic fibres of a mineral related to dumortierite.",
+    "soleRoute": true
+  },
+  {
+    "id": "smoky_quartz",
+    "name": "Smoky Quartz",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Quartz with aluminium standing in for a little silicon, smoked brown by the same irradiation that colours amethyst.",
+    "soleRoute": true
+  },
+  {
+    "id": "aventurine_quartz",
+    "name": "Aventurine Quartz",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Quartz glittering with included flakes of fuchsite mica — the sparkle is reflection, not the quartz's own colour.",
+    "soleRoute": true
+  },
+  {
+    "id": "tigers_eye",
+    "name": "Tiger's Eye",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Silicified crocidolite — asbestos fibres replaced by quartz, then stained gold-brown by iron oxide.",
+    "soleRoute": true
+  },
+  {
+    "id": "rutilated_quartz",
+    "name": "Rutilated Quartz",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Quartz grown around needles of rutile, titanium dioxide, that crystallised first and got trapped.",
+    "soleRoute": true
+  },
+  {
+    "id": "chalcedony",
+    "name": "Chalcedony",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Cryptocrystalline quartz, its crystals too small to see — deposited from silica-laden groundwater in rock cavities.",
+    "soleRoute": true
+  },
+  {
+    "id": "agate",
+    "name": "Agate",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Chalcedony banded in successive layers as silica-bearing water deposits it again and again in the same cavity.",
+    "soleRoute": true
+  },
+  {
+    "id": "carnelian",
+    "name": "Carnelian",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Chalcedony coloured brownish-red by impurities of iron oxide — hematite, specifically.",
+    "soleRoute": true
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Opaque chalcedony, its common red-brown colour is iron inclusions running right through it.",
+    "soleRoute": true
+  },
+  {
+    "id": "chrysoprase",
+    "name": "Chrysoprase",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Chalcedony coloured apple-green by trace nickel — unlike emerald's chromium, in a completely different host.",
+    "soleRoute": true
+  },
+  {
+    "id": "bloodstone",
+    "name": "Bloodstone",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Green jasper flecked red — the spots are hematite inclusions, not literally blood, whatever the legend says.",
+    "soleRoute": true
+  },
+  {
+    "id": "moss_agate",
+    "name": "Moss Agate",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Chalcedony with dendrites of manganese or iron oxide branching through it like moss — no plant was ever involved.",
+    "soleRoute": true
+  },
+  {
+    "id": "petrified_wood",
+    "name": "Petrified Wood",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Wood buried and starved of oxygen, its cell walls replaced molecule by molecule with chalcedony carried in by water.",
+    "soleRoute": true
+  },
+  {
+    "id": "tourmaline",
+    "name": "Tourmaline",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A boron silicate that crystallises in granite pegmatite — boron is what makes it tourmaline at all.",
+    "soleRoute": true
+  },
+  {
+    "id": "schorl",
+    "name": "Schorl",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Iron-rich tourmaline, black and by far the commonest kind — about 95% of all tourmaline found is this.",
+    "soleRoute": true
+  },
+  {
+    "id": "dravite",
+    "name": "Dravite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Magnesium-rich tourmaline, brown, named for the Drave district where it was first described.",
+    "soleRoute": true
+  },
+  {
+    "id": "rubellite",
+    "name": "Rubellite",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Manganese-rich tourmaline, pink to red — the lithium-bearing elbaite branch of the tourmaline family.",
+    "soleRoute": true
+  },
+  {
+    "id": "indicolite",
+    "name": "Indicolite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Blue tourmaline — an iron and titanium pair trading an electron back and forth, the same trick that colours sapphire.",
+    "soleRoute": true
+  },
+  {
+    "id": "watermelon_tourmaline",
+    "name": "Watermelon Tourmaline",
+    "emoji": "🍉",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A single crystal zoned pink to green as it grew — manganese ran out and iron took over partway through.",
+    "soleRoute": true
+  },
+  {
+    "id": "padparadscha",
+    "name": "Padparadscha",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Corundum needing both ruby's chromium and sapphire's iron and titanium together to land on pink-orange.",
+    "soleRoute": true
+  },
+  {
+    "id": "spinel",
+    "name": "Spinel",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Magnesium aluminium oxide — grown alongside ruby in metamorphosed limestone, and mistaken for it for centuries.",
+    "soleRoute": true
+  },
+  {
+    "id": "sodalite",
+    "name": "Sodalite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Sodium aluminosilicate with chlorine locked in its cage structure — a feldspar relative too low in silica to be one.",
+    "soleRoute": true
+  },
+  {
+    "id": "hauyne",
+    "name": "Hauyne",
+    "emoji": "💙",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A sulfate cousin of sodalite, in the same feldspathoid family, first found in Vesuvius's ejected limestone blocks.",
+    "soleRoute": true
+  },
+  {
+    "id": "lapis_lazuli",
+    "name": "Lapis Lazuli",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Not one mineral but a rock: sodalite-group lazurite for the blue, pyrite for the gold flecks.",
+    "soleRoute": true
+  },
+  {
+    "id": "scapolite",
+    "name": "Scapolite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A calcium-sodium aluminosilicate that traps chlorine, carbonate or sulfate in its structure — metamorphosed feldspar.",
+    "soleRoute": true
+  },
+  {
+    "id": "zircon",
+    "name": "Zircon",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Zirconium silicate — chemically nothing like the metal zirconium is cut from, though it is zirconium's ore.",
+    "soleRoute": true
+  },
+  {
+    "id": "vesuvianite",
+    "name": "Vesuvianite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A complex calcium-magnesium-aluminium silicate grown where limestone gets baked by an intruding melt — a skarn mineral.",
+    "soleRoute": true
+  },
+  {
+    "id": "taaffeite",
+    "name": "Taaffeite",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Beryllium magnesium aluminium oxide, close kin to spinel — it was sold as spinel for years before anyone noticed.",
+    "soleRoute": true
+  },
+  {
+    "id": "benitoite",
+    "name": "Benitoite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Barium titanium silicate, blue and fluorescent — first mistaken for sapphire before its own mineral was recognised.",
+    "soleRoute": true
+  },
+  {
+    "id": "topaz",
+    "name": "Topaz",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "An aluminium silicate that locks fluorine into every unit — fluorine is what makes it topaz and not something else.",
+    "soleRoute": true
+  },
+  {
+    "id": "chrysoberyl",
+    "name": "Chrysoberyl",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Beryllium aluminium oxide — shares beryllium and aluminium with beryl, but is a completely different mineral.",
+    "soleRoute": true
+  },
+  {
+    "id": "alexandrite",
+    "name": "Alexandrite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Chromium-bearing chrysoberyl that reads green in daylight and red under incandescent light — same trick as ruby's chromium, doubled.",
+    "soleRoute": true
+  },
+  {
+    "id": "cymophane",
+    "name": "Cymophane",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Cat's-eye chrysoberyl — parallel needle-like inclusions focus light into one moving band across the stone.",
+    "soleRoute": true
+  },
+  {
+    "id": "andalusite",
+    "name": "Andalusite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Aluminium silicate, Al2SiO5 — one of three minerals with that exact formula, sorted out by pressure and heat.",
+    "soleRoute": true
+  },
+  {
+    "id": "chiastolite",
+    "name": "Chiastolite",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Andalusite grown around carbon and clay swept to its corners, leaving a black cross in cross-section.",
+    "soleRoute": true
+  },
+  {
+    "id": "sillimanite",
+    "name": "Sillimanite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Al2SiO5 again, but andalusite's higher-temperature twin — the same formula, rearranged by more heat.",
+    "soleRoute": true
+  },
+  {
+    "id": "kyanite",
+    "name": "Kyanite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Al2SiO5 a third time — andalusite's higher-pressure twin, grown deeper where the rock is squeezed harder.",
+    "soleRoute": true
+  },
+  {
+    "id": "enstatite",
+    "name": "Enstatite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Magnesium silicate pyroxene, MgSiO3 — the iron-free end of a solid-solution series that runs to ferrosilite.",
+    "soleRoute": true
+  },
+  {
+    "id": "hypersthene",
+    "name": "Hypersthene",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Enstatite with enough iron mixed in to sit halfway to ferrosilite — common in both igneous rock and meteorites.",
+    "soleRoute": true
+  },
+  {
+    "id": "iolite",
+    "name": "Iolite",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Cordierite to a mineralogist: a magnesium iron aluminium silicate grown by baking clay-rich rock.",
+    "soleRoute": true
+  },
+  {
+    "id": "peridot",
+    "name": "Peridot",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Gem-grade olivine, specifically its magnesium-rich forsterite end — one of only two gems that form in the mantle, not the crust.",
+    "soleRoute": true
+  },
+  {
+    "id": "sinhalite",
+    "name": "Sinhalite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Magnesium aluminium borate, close enough to spinel's own recipe that it was mistaken for peridot for decades.",
+    "soleRoute": true
+  },
+  {
+    "id": "kunzite",
+    "name": "Kunzite",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Spodumene coloured lilac-pink by manganese — the same lithium aluminium silicate, a different trace element.",
+    "soleRoute": true
+  },
+  {
+    "id": "hiddenite",
+    "name": "Hiddenite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Spodumene coloured green by chromium — kunzite's twin, with ruby and emerald's own colouring element instead.",
+    "soleRoute": true
+  },
+  {
+    "id": "zoisite",
+    "name": "Zoisite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Calcium aluminium silicate grown in calcium-rich schist — colourless until a trace element gets into it.",
+    "soleRoute": true
+  },
+  {
+    "id": "tanzanite",
+    "name": "Tanzanite",
+    "emoji": "💜",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Zoisite coloured blue-violet by vanadium, then heat-treated to burn off a brownish veil and leave the blue.",
+    "soleRoute": true
+  },
+  {
+    "id": "thulite",
+    "name": "Thulite",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Zoisite coloured pink by manganese — tanzanite's sibling, with manganese standing in for vanadium.",
+    "soleRoute": true
+  },
+  {
+    "id": "moonstone",
+    "name": "Moonstone",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Feldspar that cooled slowly enough to separate into alternating orthoclase and albite layers, scattering light between them.",
+    "soleRoute": true
+  },
+  {
+    "id": "labradorite",
+    "name": "Labradorite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Calcium-rich plagioclase feldspar — thin exsolved layers inside it split light the way a soap film does.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "albite",
+    "name": "Albite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The sodium end of the plagioclase feldspar series — pure NaAlSi3O8, calcium's opposite number.",
+    "soleRoute": true
+  },
+  {
+    "id": "sunstone",
+    "name": "Sunstone",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Albite-type feldspar glittering with flat copper platelets grown inside it — Oregon's stone specifically owes its sparkle to copper.",
+    "soleRoute": true
+  },
+  {
+    "id": "amazonite",
+    "name": "Amazonite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A green-blue microcline feldspar, its colour tied to trace lead locked in the same triclinic structure.",
+    "soleRoute": true
+  },
+  {
+    "id": "jadeite",
+    "name": "Jadeite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A sodium aluminium pyroxene — one of two unrelated minerals both called jade, made only where plates subduct.",
+    "soleRoute": true
+  },
+  {
+    "id": "nephrite",
+    "name": "Nephrite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A calcium magnesium iron amphibole — jade's other mineral, chemically nothing like jadeite despite the shared name.",
+    "soleRoute": true
+  },
+  {
+    "id": "chrysocolla",
+    "name": "Chrysocolla",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A hydrous copper silicate that grows where malachite and azurite weather further in silica-bearing water.",
+    "soleRoute": true
+  },
+  {
+    "id": "dioptase",
+    "name": "Dioptase",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Hydrous copper silicate, deep emerald-green — grown in the same oxidised copper-deposit zone as malachite, with silica instead of carbonate.",
+    "soleRoute": true
+  },
+  {
+    "id": "dolomite",
+    "name": "Dolomite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Calcium magnesium carbonate — limestone with roughly half its calcium swapped for magnesium by passing groundwater.",
+    "soleRoute": true
+  },
+  {
+    "id": "aragonite",
+    "name": "Aragonite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcite's higher-pressure polymorph — identical formula, CaCO3, packed into a different crystal shape.",
+    "soleRoute": true
+  },
+  {
+    "id": "rhodochrosite",
+    "name": "Rhodochrosite",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Manganese carbonate, rose-red from Mn2+ — baked further by metamorphism and it turns into the silicate rhodonite.",
+    "soleRoute": true
+  },
+  {
+    "id": "rhodonite",
+    "name": "Rhodonite",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Manganese silicate — what rhodochrosite becomes when metamorphism drives off its carbon dioxide and leaves silicate behind.",
+    "soleRoute": true
+  },
+  {
+    "id": "smithsonite",
+    "name": "Smithsonite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Zinc carbonate, grown the same way malachite is — in the weathered, oxidised cap above a metal-sulfide deposit.",
+    "soleRoute": true
+  },
+  {
+    "id": "cerussite",
+    "name": "Cerussite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Lead carbonate, formed the same way malachite is — weathering in carbon-dioxide-charged water above a lead deposit.",
+    "soleRoute": true
+  },
+  {
+    "id": "anglesite",
+    "name": "Anglesite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Lead sulfate — what galena becomes when it oxidises in air, the lead equivalent of pyrite turning to hematite.",
+    "soleRoute": true
+  },
+  {
+    "id": "celestine",
+    "name": "Celestine",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Strontium sulfate, precipitated out of evaporating water exactly the way gypsum is, with strontium standing in for calcium.",
+    "soleRoute": true
+  },
+  {
+    "id": "titanite",
+    "name": "Titanite",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium titanium silicate, also called sphene — one of the few common minerals built around titanium.",
+    "soleRoute": true
+  },
+  {
+    "id": "epidote",
+    "name": "Epidote",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A calcium aluminium iron silicate that grows where hot fluids alter calcium-rich feldspar — iron is what turns it pistachio-green.",
+    "soleRoute": true
+  },
+  {
+    "id": "staurolite",
+    "name": "Staurolite",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "An unusually aluminium-rich silicate that grows in schist alongside garnet, twinning into a natural cross.",
+    "soleRoute": true
+  },
+  {
+    "id": "danburite",
+    "name": "Danburite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium borosilicate, grown where boron-bearing fluids cook limestone during contact metamorphism.",
+    "soleRoute": true
+  },
+  {
+    "id": "datolite",
+    "name": "Datolite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium borosilicate with a hydroxyl group — a classic mineral of gas cavities in basalt, grown alongside zeolites.",
+    "soleRoute": true
+  },
+  {
+    "id": "axinite",
+    "name": "Axinite",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A calcium aluminium borosilicate that grows where a granite intrusion's boron-rich fluids meet its contact zone.",
+    "soleRoute": true
+  },
+  {
+    "id": "dumortierite",
+    "name": "Dumortierite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An aluminium borosilicate that grows fibrous in aluminium-rich rock cooked by regional metamorphism.",
+    "soleRoute": true
+  },
+  {
+    "id": "prehnite",
+    "name": "Prehnite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium aluminium silicate, another classic mineral of gas cavities in basalt — named for the officer who first brought it to Europe.",
+    "soleRoute": true
+  },
+  {
+    "id": "petalite",
+    "name": "Petalite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Lithium aluminium silicate, grown in the same lithium-bearing granite pegmatites as spodumene.",
+    "soleRoute": true
+  },
+  {
+    "id": "euclase",
+    "name": "Euclase",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A hydroxyl-bearing beryllium aluminium silicate — beryl's chemistry with water folded into the structure.",
+    "soleRoute": true
+  },
+  {
+    "id": "brazilianite",
+    "name": "Brazilianite",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Sodium aluminium phosphate, grown in phosphate-rich granite pegmatite — named for the country its type locality is in.",
+    "soleRoute": true
+  },
+  {
+    "id": "beryllonite",
+    "name": "Beryllonite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Sodium beryllium phosphate — pegmatite chemistry that swaps beryl's silicate framework for a phosphate one.",
+    "soleRoute": true
+  },
+  {
+    "id": "amblygonite",
+    "name": "Amblygonite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A lithium aluminium fluorophosphate, grown alongside spodumene as one more lithium mineral in the same pegmatite.",
+    "soleRoute": true
+  },
+  {
+    "id": "phosphophyllite",
+    "name": "Phosphophyllite",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "A rare zinc iron phosphate, grown in hydrothermal veins — named for its leaf-like, phyllite-style cleavage.",
+    "soleRoute": true
+  },
+  {
+    "id": "hambergite",
+    "name": "Hambergite",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Beryllium borate with a hydroxyl group — one of the few gem minerals built directly from beryllium and boron.",
+    "soleRoute": true
+  },
+  {
+    "id": "scheelite",
+    "name": "Scheelite",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Calcium tungstate, CaWO4 — named for the chemist who discovered tungsten, and still an ore of it today.",
+    "soleRoute": true
+  },
+  {
+    "id": "cassiterite",
+    "name": "Cassiterite",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Tin oxide, SnO2 — the ore the Bronze Age's tin was smelted from, and still the main tin ore now.",
+    "soleRoute": true
+  },
+  {
+    "id": "jet",
+    "name": "Jet",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "terminal": true,
+    "fact": "Driftwood buried in marine mud and compressed for millions of years — lignite dense enough to carve and polish.",
+    "soleRoute": true
+  },
+  {
+    "id": "amber",
+    "name": "Amber",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "terminal": true,
+    "fact": "Fossilised conifer resin, sometimes with an insect from millions of years ago trapped inside as it set.",
+    "soleRoute": true
+  },
+  {
+    "id": "tortoiseshell",
+    "name": "Tortoiseshell",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "terminal": true,
+    "fact": "Keratin scutes from a hawksbill sea turtle's carapace — the trade nearly took the species with it, and is now banned worldwide.",
+    "soleRoute": true
   }
 ]

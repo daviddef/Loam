@@ -29614,5 +29614,945 @@
     "why": "A positron bound to an antiproton is a complete antimatter atom — antihydrogen, first synthesised at CERN in 1995 and first trapped and held for study by the ALPHA experiment in 2010.",
     "src": "https://en.wikipedia.org/wiki/Antihydrogen",
     "verified": true
+  },
+  {
+    "in": [
+      "basalt",
+      "magnesium"
+    ],
+    "out": "pyrope",
+    "why": "Pyrope is the magnesium end of the garnet group, Mg3Al2(SiO4)3, and it turns up as grains carried up from the mantle in basalt and kimberlite — the same volcanic lift that brings diamond to the surface.",
+    "src": "https://en.wikipedia.org/wiki/Pyrope",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "manganese"
+    ],
+    "out": "spessartine",
+    "why": "Spessartine is the manganese end of the garnet group, Mn3Al2(SiO4)3, and its classic address is granite pegmatite and manganese-bearing rhyolite — exactly where granite's own leftover fluids concentrate rare elements.",
+    "src": "https://en.wikipedia.org/wiki/Spessartine",
+    "supported": true
+  },
+  {
+    "in": [
+      "marble",
+      "aluminum"
+    ],
+    "out": "grossular",
+    "why": "Grossular is the calcium-aluminium end of the garnet group, Ca3Al2(SiO4)3, and it grows where metamorphism cooks an impure limestone — marble with just enough aluminium in it to build garnet instead of more calcite.",
+    "src": "https://en.wikipedia.org/wiki/Grossular",
+    "supported": true
+  },
+  {
+    "in": [
+      "marble",
+      "iron"
+    ],
+    "out": "andradite",
+    "why": "Andradite is the calcium-iron end of the garnet group, Ca3Fe2(SiO4)3, grown in skarn — marble baked and metasomatised by an iron-bearing igneous intrusion at the contact zone.",
+    "src": "https://en.wikipedia.org/wiki/Andradite",
+    "supported": true
+  },
+  {
+    "in": [
+      "serpentine",
+      "chromium"
+    ],
+    "out": "uvarovite",
+    "why": "Uvarovite is the calcium-chromium end of the garnet group, Ca3Cr2(SiO4)3, and its only real address is chromium-rich serpentinite — wherever there is enough chromium loose in an ultramafic rock to build it.",
+    "src": "https://en.wikipedia.org/wiki/Uvarovite",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "iron"
+    ],
+    "out": "heliodor",
+    "why": "Heliodor is golden beryl, coloured by iron in its Fe3+ state, and it crystallises in the same granite pegmatites that grow colourless and green beryl — iron is the only difference.",
+    "src": "https://en.wikipedia.org/wiki/Beryl",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryl",
+      "manganese"
+    ],
+    "out": "morganite",
+    "why": "Morganite is beryl with manganese standing in for a trace of aluminium: \"the pink colour of morganite is attributed to Mn2+ ions,\" the same trick chromium plays for emerald in the same host crystal.",
+    "src": "https://en.wikipedia.org/wiki/Beryl",
+    "verified": true
+  },
+  {
+    "in": [
+      "lava",
+      "manganese"
+    ],
+    "out": "red_beryl",
+    "why": "Red beryl gets its colour from manganese too, but grows in volcanic gas cavities inside rhyolite lava rather than a pegmatite — a completely different address for the same beryllium aluminium silicate, which is part of why it is rarer than diamond.",
+    "src": "https://en.wikipedia.org/wiki/Red_beryl",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartz",
+      "iron"
+    ],
+    "out": "amethyst",
+    "why": "Amethyst is quartz with iron impurities sitting in for silicon, turned violet by natural background irradiation acting on those iron centres over geological time.",
+    "src": "https://en.wikipedia.org/wiki/Amethyst",
+    "supported": true
+  },
+  {
+    "in": [
+      "amethyst"
+    ],
+    "verb": "heat",
+    "out": "citrine",
+    "why": "Heat amethyst past a few hundred degrees and its iron colour centres flip from the state that reads purple to the one that reads gold — most citrine on the market started life as amethyst.",
+    "src": "https://en.wikipedia.org/wiki/Citrine",
+    "supported": true
+  },
+  {
+    "in": [
+      "quartz",
+      "dumortierite"
+    ],
+    "out": "rose_quartz",
+    "why": "Rose quartz's pink turned out not to be a dissolved impurity at all: it is caused by microscopic inclusions of a fibrous silicate mineral related to dumortierite, threaded all through the quartz.",
+    "src": "https://en.wikipedia.org/wiki/Rose_quartz",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartz",
+      "aluminum"
+    ],
+    "out": "smoky_quartz",
+    "why": "Smoky quartz forms when aluminium substitutes for a little silicon in the quartz lattice and natural irradiation then activates that site into a colour centre, smoking the crystal brown to black.",
+    "src": "https://en.wikipedia.org/wiki/Smoky_quartz",
+    "supported": true
+  },
+  {
+    "in": [
+      "quartz",
+      "mica"
+    ],
+    "out": "aventurine_quartz",
+    "why": "Aventurine quartz owes its glitter to included flakes of fuchsite mica catching the light — the sparkle is reflection off the mica, not any colour the quartz itself has taken on.",
+    "src": "https://en.wikipedia.org/wiki/Aventurine",
+    "supported": true
+  },
+  {
+    "in": [
+      "quartz",
+      "hematite"
+    ],
+    "out": "tigers_eye",
+    "why": "Tiger's eye starts as crocidolite, a fibrous blue asbestos, silicified fibre by fibre into quartz; hematite then stains the silicified fibres gold-brown and keeps the silky, chatoyant sheen of the original asbestos.",
+    "src": "https://en.wikipedia.org/wiki/Tiger's_eye",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartz",
+      "rutile"
+    ],
+    "out": "rutilated_quartz",
+    "why": "Rutilated quartz grows around needles of rutile, titanium dioxide, that crystallised first and simply got walled in as the quartz kept growing around them.",
+    "src": "https://en.wikipedia.org/wiki/Rutilated_quartz",
+    "supported": true
+  },
+  {
+    "in": [
+      "basalt",
+      "water"
+    ],
+    "out": "chalcedony",
+    "why": "Chalcedony is quartz too fine-grained to see as separate crystals, deposited by silica-bearing groundwater filling cavities and vesicles — basalt's own gas bubbles are a classic address for it.",
+    "src": "https://en.wikipedia.org/wiki/Chalcedony",
+    "supported": true
+  },
+  {
+    "in": [
+      "chalcedony"
+    ],
+    "verb": "wait",
+    "out": "agate",
+    "why": "Agate is chalcedony banded by repeated deposition: silica-bearing water fills the same cavity again and again over time, and each pulse lays down one more band.",
+    "src": "https://en.wikipedia.org/wiki/Agate",
+    "supported": true
+  },
+  {
+    "in": [
+      "chalcedony",
+      "hematite"
+    ],
+    "out": "carnelian",
+    "why": "Carnelian and sard are both chalcedony \"coloured by impurities of iron oxide\" — hematite specifically, dispersed finely enough to leave the stone translucent.",
+    "src": "https://en.wikipedia.org/wiki/Carnelian",
+    "verified": true
+  },
+  {
+    "in": [
+      "chalcedony",
+      "iron"
+    ],
+    "out": "jasper",
+    "why": "Jasper is opaque chalcedony, and its common reddish colour is iron inclusions running right through the stone rather than sitting as a thin translucent stain the way carnelian's do.",
+    "src": "https://en.wikipedia.org/wiki/Jasper",
+    "verified": true
+  },
+  {
+    "in": [
+      "chalcedony",
+      "nickel"
+    ],
+    "out": "chrysoprase",
+    "why": "Chrysoprase is chalcedony that \"contains small quantities of nickel\" — nickel, not chromium, is what turns this quartz apple-green.",
+    "src": "https://en.wikipedia.org/wiki/Chrysoprase",
+    "verified": true
+  },
+  {
+    "in": [
+      "jasper",
+      "hematite"
+    ],
+    "out": "bloodstone",
+    "why": "Bloodstone, or heliotrope, is \"green chalcedony and red jasper that contains inclusions of hematite\" — the red flecks are hematite sitting inside the green jasper base, not literal blood.",
+    "src": "https://en.wikipedia.org/wiki/Heliotrope_(mineral)",
+    "verified": true
+  },
+  {
+    "in": [
+      "chalcedony",
+      "manganese"
+    ],
+    "out": "moss_agate",
+    "why": "Moss agate is chalcedony with dendritic inclusions — mainly oxides of manganese or iron — branching through a clear or milky base in patterns that only resemble moss.",
+    "src": "https://en.wikipedia.org/wiki/Moss_agate",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "chalcedony"
+    ],
+    "out": "petrified_wood",
+    "why": "Buried wood, kept from rotting by waterlogging, has its cell walls permineralised as silica — often specifically chalcedony — precipitates out of mineral-laden water and fills every empty space cell by cell.",
+    "src": "https://en.wikipedia.org/wiki/Petrified_wood",
+    "verified": true
+  },
+  {
+    "in": [
+      "granite",
+      "boron"
+    ],
+    "out": "tourmaline",
+    "why": "Tourmaline is a boron silicate — boron is the one element every member of the group must have — and it crystallises out of boron-rich fluids in granite pegmatite.",
+    "src": "https://en.wikipedia.org/wiki/Tourmaline",
+    "supported": true
+  },
+  {
+    "in": [
+      "tourmaline",
+      "iron"
+    ],
+    "out": "schorl",
+    "why": "Schorl is iron-rich tourmaline, black and by a wide margin the commonest tourmaline there is — roughly 95% of all tourmaline found is schorl.",
+    "src": "https://en.wikipedia.org/wiki/Tourmaline",
+    "supported": true
+  },
+  {
+    "in": [
+      "tourmaline",
+      "magnesium"
+    ],
+    "out": "dravite",
+    "why": "Dravite is tourmaline's magnesium-rich end, brown, first described from the Drave district of Carinthia that gave it its name.",
+    "src": "https://en.wikipedia.org/wiki/Tourmaline",
+    "supported": true
+  },
+  {
+    "in": [
+      "tourmaline",
+      "manganese"
+    ],
+    "out": "rubellite",
+    "why": "Rubellite is tourmaline coloured pink to red by manganese, part of the lithium-bearing elbaite branch of the tourmaline group rather than the iron- or magnesium-rich branches.",
+    "src": "https://en.wikipedia.org/wiki/Rubellite",
+    "supported": true
+  },
+  {
+    "in": [
+      "tourmaline",
+      "titanium_dioxide"
+    ],
+    "out": "indicolite",
+    "why": "Indicolite is tourmaline's blue variety, its colour built the same way sapphire's is: an iron ion and a titanium ion sit side by side and trade an electron, absorbing everything but blue.",
+    "src": "https://en.wikipedia.org/wiki/Elbaite",
+    "supported": true
+  },
+  {
+    "in": [
+      "rubellite",
+      "iron"
+    ],
+    "out": "watermelon_tourmaline",
+    "why": "A watermelon tourmaline is one crystal that zoned as it grew: manganese coloured the pink core rubellite, then the chemistry of the growing fluid shifted and iron coloured a green rim around it.",
+    "src": "https://en.wikipedia.org/wiki/Watermelon_tourmaline",
+    "supported": true
+  },
+  {
+    "in": [
+      "ruby",
+      "sapphire"
+    ],
+    "out": "padparadscha",
+    "why": "Padparadscha needs both colouring acts in the same corundum crystal at once — chromium, the element behind ruby's red, and iron paired with titanium, the pair behind sapphire's blue — landing together on pink-orange.",
+    "src": "https://en.wikipedia.org/wiki/Sapphire",
+    "supported": true
+  },
+  {
+    "in": [
+      "corundum",
+      "magnesium"
+    ],
+    "out": "spinel",
+    "why": "Spinel is magnesium aluminium oxide, MgAl2O4, and it grows alongside corundum in metamorphosed limestone and silica-poor igneous rock — which is exactly why spinel and ruby are so often found together, and were sold as the same gem for centuries.",
+    "src": "https://en.wikipedia.org/wiki/Spinel",
+    "verified": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "salt"
+    ],
+    "out": "sodalite",
+    "why": "Sodalite, Na8(Al6Si6O24)Cl2, is a feldspathoid — too low in silica to be a true feldspar — that locks salt's own chlorine into cages within an aluminosilicate framework, in silica-poor igneous rock.",
+    "src": "https://en.wikipedia.org/wiki/Sodalite",
+    "supported": true
+  },
+  {
+    "in": [
+      "sodalite",
+      "sulfur"
+    ],
+    "out": "hauyne",
+    "why": "Hauyne is a sulfate-bearing member of the sodalite group, forming a solid solution with sodalite itself — sulfur is what it has that sodalite does not.",
+    "src": "https://en.wikipedia.org/wiki/Hauyne",
+    "supported": true
+  },
+  {
+    "in": [
+      "sodalite",
+      "pyrite"
+    ],
+    "out": "lapis_lazuli",
+    "why": "Lapis lazuli is not one mineral but a rock, \"composed primarily of the minerals lazurite, pyrite, diopside, and calcite\" — lazurite is a sodalite-group mineral, and the pyrite is what supplies the gold flecks.",
+    "src": "https://en.wikipedia.org/wiki/Lapis_lazuli",
+    "verified": true
+  },
+  {
+    "in": [
+      "marble",
+      "feldspar"
+    ],
+    "out": "scapolite",
+    "why": "Scapolite is what metamorphism makes of calcium-rich feldspar in a marble-hosted rock, trapping chlorine, carbonate or sulfate from the surrounding fluid into its structure as it grows.",
+    "src": "https://en.wikipedia.org/wiki/Scapolite",
+    "supported": true
+  },
+  {
+    "in": [
+      "zirconium",
+      "silicon_dioxide"
+    ],
+    "out": "zircon",
+    "why": "Zircon is zirconium silicate, ZrSiO4 — a completely different substance from metallic zirconium, even though zircon ore is where that metal is actually mined from.",
+    "src": "https://en.wikipedia.org/wiki/Zircon",
+    "verified": true
+  },
+  {
+    "in": [
+      "marble",
+      "magnesium"
+    ],
+    "out": "vesuvianite",
+    "why": "Vesuvianite, also called idocrase, occurs as skarn: limestone baked by contact metamorphism next to an intruding melt, with magnesium among the cations built into its complex silicate structure.",
+    "src": "https://en.wikipedia.org/wiki/Vesuvianite",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "spinel"
+    ],
+    "out": "taaffeite",
+    "why": "Taaffeite is close enough to spinel's own magnesium aluminium oxide, with beryllium worked in, that every known piece was sold and catalogued as spinel until 1945, when one buyer's stone tested wrong.",
+    "src": "https://en.wikipedia.org/wiki/Taaffeite",
+    "verified": true
+  },
+  {
+    "in": [
+      "barium",
+      "titanium_dioxide"
+    ],
+    "out": "benitoite",
+    "why": "Benitoite is a barium titanium silicate, and it was mistaken for sapphire on discovery — the colour was close, but a hardness test immediately gave it away as something new.",
+    "src": "https://en.wikipedia.org/wiki/Benitoite",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "fluorine"
+    ],
+    "out": "topaz",
+    "why": "Topaz is \"a silicate mineral made of aluminum and fluorine,\" Al2SiO4(F,OH)2 — fluorine locked into the structure is what makes it topaz rather than some other aluminosilicate.",
+    "src": "https://en.wikipedia.org/wiki/Topaz",
+    "verified": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "corundum"
+    ],
+    "out": "chrysoberyl",
+    "why": "Chrysoberyl is an aluminate of beryllium, BeAl2O4: \"despite the similarity of their names, chrysoberyl and beryl are two completely different gemstones,\" though chrysoberyl does share beryllium, aluminium and oxygen with corundum's own aluminium oxide.",
+    "src": "https://en.wikipedia.org/wiki/Chrysoberyl",
+    "verified": true
+  },
+  {
+    "in": [
+      "chrysoberyl",
+      "chromium"
+    ],
+    "out": "alexandrite",
+    "why": "Alexandrite is chrysoberyl coloured by chromium — the same element behind ruby's red — but chrysoberyl's own crystal field splits the absorption so finely that the stone reads green in daylight and red under incandescent light.",
+    "src": "https://en.wikipedia.org/wiki/Chrysoberyl",
+    "supported": true
+  },
+  {
+    "in": [
+      "chrysoberyl",
+      "rutile"
+    ],
+    "out": "cymophane",
+    "why": "Cymophane is cat's-eye chrysoberyl: parallel needle-like inclusions, often rutile, focus reflected light into a single moving band across the cut stone.",
+    "src": "https://en.wikipedia.org/wiki/Chrysoberyl",
+    "supported": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "silicon_dioxide"
+    ],
+    "out": "andalusite",
+    "why": "Andalusite is aluminium silicate, Al2SiO5 — one of three minerals with that exact formula, and the one that is stable at moderate pressure and moderate temperature.",
+    "src": "https://en.wikipedia.org/wiki/Andalusite",
+    "verified": true
+  },
+  {
+    "in": [
+      "andalusite",
+      "carbon"
+    ],
+    "out": "chiastolite",
+    "why": "Chiastolite is andalusite that grew with dark inclusions of carbon or clay swept to its corners as the crystal formed, leaving a cruciform pattern in cross-section.",
+    "src": "https://en.wikipedia.org/wiki/Andalusite",
+    "verified": true
+  },
+  {
+    "in": [
+      "andalusite"
+    ],
+    "verb": "heat",
+    "out": "sillimanite",
+    "why": "\"At higher temperatures and pressures, andalusite may convert to sillimanite\" — the identical formula, Al2SiO5, rearranged into a new crystal structure by more heat.",
+    "src": "https://en.wikipedia.org/wiki/Andalusite",
+    "verified": true
+  },
+  {
+    "in": [
+      "andalusite"
+    ],
+    "verb": "crush",
+    "out": "kyanite",
+    "why": "Andalusite, kyanite and sillimanite are all Al2SiO5, sorted only by the pressure and temperature they formed under — kyanite is the polymorph that needs the higher pressure of the three.",
+    "src": "https://en.wikipedia.org/wiki/Andalusite",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnesium",
+      "silicon_dioxide"
+    ],
+    "out": "enstatite",
+    "why": "Enstatite is magnesium silicate pyroxene, MgSiO3, the iron-free end of a solid-solution series that runs all the way to iron-only ferrosilite.",
+    "src": "https://en.wikipedia.org/wiki/Enstatite",
+    "verified": true
+  },
+  {
+    "in": [
+      "enstatite",
+      "iron"
+    ],
+    "out": "hypersthene",
+    "why": "Hypersthene is what the enstatite-ferrosilite series is called partway along, once enough iron has mixed in that neither pure end-member name still applies.",
+    "src": "https://en.wikipedia.org/wiki/Hypersthene",
+    "verified": true
+  },
+  {
+    "in": [
+      "shale",
+      "magnesium"
+    ],
+    "out": "iolite",
+    "why": "Iolite, cordierite to a mineralogist, typically occurs in contact or regional metamorphism of pelitic (clay-rich) rock like shale, with magnesium as its dominant cation.",
+    "src": "https://en.wikipedia.org/wiki/Cordierite",
+    "verified": true
+  },
+  {
+    "in": [
+      "olivine",
+      "magnesium"
+    ],
+    "out": "peridot",
+    "why": "Peridot is \"a yellow-green transparent variety of olivine, specifically the magnesium rich end member called forsterite\" — more magnesium relative to iron is exactly what makes olivine gem-grade.",
+    "src": "https://en.wikipedia.org/wiki/Peridot",
+    "verified": true
+  },
+  {
+    "in": [
+      "spinel",
+      "boron"
+    ],
+    "out": "sinhalite",
+    "why": "Sinhalite, MgAl(BO4), sits close enough to spinel's own magnesium aluminium oxide, with boron worked in, that for decades every known piece was catalogued as peridot instead.",
+    "src": "https://en.wikipedia.org/wiki/Sinhalite",
+    "supported": true
+  },
+  {
+    "in": [
+      "spodumene",
+      "manganese"
+    ],
+    "out": "kunzite",
+    "why": "Kunzite is spodumene, the lithium aluminium silicate, coloured lilac to pink by manganese — named for the mineralogist who first described it in 1902.",
+    "src": "https://en.wikipedia.org/wiki/Spodumene",
+    "verified": true
+  },
+  {
+    "in": [
+      "spodumene",
+      "chromium"
+    ],
+    "out": "hiddenite",
+    "why": "Hiddenite is spodumene coloured emerald-green by chromium — the same element, in the same lithium aluminium silicate host, that colours kunzite pink is swapped out for the one that colours ruby and emerald.",
+    "src": "https://en.wikipedia.org/wiki/Spodumene",
+    "supported": true
+  },
+  {
+    "in": [
+      "schist",
+      "calcium"
+    ],
+    "out": "zoisite",
+    "why": "Zoisite is a calcium aluminium silicate that grows in calcium-rich schist and amphibolite during metamorphism — colourless on its own, like beryl and corundum before a trace element gets in.",
+    "src": "https://en.wikipedia.org/wiki/Zoisite",
+    "supported": true
+  },
+  {
+    "in": [
+      "zoisite",
+      "vanadium"
+    ],
+    "out": "tanzanite",
+    "why": "Tanzanite is \"the blue and violet variety of the mineral zoisite... the color is caused by small amounts of vanadium,\" and it usually needs heat treatment afterward to burn off a brownish veil and let the blue-violet through.",
+    "src": "https://en.wikipedia.org/wiki/Tanzanite",
+    "verified": true
+  },
+  {
+    "in": [
+      "zoisite",
+      "manganese"
+    ],
+    "out": "thulite",
+    "why": "Thulite is zoisite coloured pink by manganese — tanzanite's sibling variety, with manganese standing in for the vanadium that colours tanzanite blue-violet.",
+    "src": "https://en.wikipedia.org/wiki/Zoisite",
+    "supported": true
+  },
+  {
+    "in": [
+      "feldspar"
+    ],
+    "verb": "chill",
+    "out": "moonstone",
+    "why": "Moonstone's schiller, adularescence, comes from feldspar that cooled slowly enough to separate into alternating microscopic layers of orthoclase and albite — light diffracts between the layers rather than through one uniform crystal.",
+    "src": "https://en.wikipedia.org/wiki/Moonstone_(gemstone)",
+    "verified": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "calcium"
+    ],
+    "out": "labradorite",
+    "why": "Labradorite is the calcium-rich end of the plagioclase feldspar series — its own exsolved compositional layering is what splits light into labradorescence's shifting colours.",
+    "src": "https://en.wikipedia.org/wiki/Labradorite",
+    "supported": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "sodium"
+    ],
+    "out": "albite",
+    "why": "Albite is the sodium end of the plagioclase feldspar series, NaAlSi3O8 — labradorite's opposite number on the same solid-solution scale.",
+    "src": "https://en.wikipedia.org/wiki/Albite",
+    "verified": true
+  },
+  {
+    "in": [
+      "albite",
+      "copper"
+    ],
+    "out": "sunstone",
+    "why": "Oregon sunstone's glitter comes from \"inclusions of red copper... in the form of minute scales\" grown inside an albite-type feldspar — other sunstone gets the same schiller from hematite or goethite platelets instead.",
+    "src": "https://en.wikipedia.org/wiki/Sunstone",
+    "verified": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "lead"
+    ],
+    "out": "amazonite",
+    "why": "Amazonite is green-blue microcline, \"a variety of the potassium feldspar,\" KAlSi3O8, with its colour tied to trace lead built into the same triclinic structure.",
+    "src": "https://en.wikipedia.org/wiki/Amazonite",
+    "supported": true
+  },
+  {
+    "in": [
+      "albite"
+    ],
+    "verb": "crush",
+    "out": "jadeite",
+    "why": "Jadeite, NaAlSi2O6, forms only where subduction squeezes rock at high pressure and low temperature — the pressure that same setting applies to albite, NaAlSi3O8, drives off a silicon dioxide unit and collapses it straight into jadeite.",
+    "src": "https://en.wikipedia.org/wiki/Jadeite",
+    "supported": true
+  },
+  {
+    "in": [
+      "dolomite",
+      "quartz"
+    ],
+    "out": "nephrite",
+    "why": "Nephrite is a tremolite-actinolite amphibole, Ca2(Mg,Fe)5Si8O22(OH)2 — the other, unrelated mineral called jade, grown where silica-bearing fluid reacts with a magnesium-calcium carbonate rock like dolomite.",
+    "src": "https://en.wikipedia.org/wiki/Nephrite",
+    "supported": true
+  },
+  {
+    "in": [
+      "malachite",
+      "quartz"
+    ],
+    "out": "chrysocolla",
+    "why": "Chrysocolla is a hydrous copper silicate that grows where malachite and azurite, copper's carbonates, weather further in the presence of silica-bearing water in the same oxidised zone.",
+    "src": "https://en.wikipedia.org/wiki/Chrysocolla",
+    "supported": true
+  },
+  {
+    "in": [
+      "copper",
+      "quartz"
+    ],
+    "out": "dioptase",
+    "why": "Dioptase is hydrous copper silicate, grown in the same oxidised zone above a copper deposit as malachite — silica took the carbonate's place in the reaction.",
+    "src": "https://en.wikipedia.org/wiki/Dioptase",
+    "supported": true
+  },
+  {
+    "in": [
+      "limestone",
+      "magnesium"
+    ],
+    "out": "dolomite",
+    "why": "Dolomite is calcium magnesium carbonate — limestone that magnesium-bearing groundwater has partly replaced, swapping in magnesium for roughly half the original calcium.",
+    "src": "https://en.wikipedia.org/wiki/Dolomite_(mineral)",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcite"
+    ],
+    "verb": "crush",
+    "out": "aragonite",
+    "why": "Calcite and aragonite are both CaCO3 — identical formula, different crystal packing — and aragonite is the polymorph that is stable at the higher pressure.",
+    "src": "https://en.wikipedia.org/wiki/Aragonite",
+    "supported": true
+  },
+  {
+    "in": [
+      "manganese",
+      "carbon_dioxide"
+    ],
+    "out": "rhodochrosite",
+    "why": "Rhodochrosite is manganese carbonate, MnCO3, its rose-red colour coming straight from the manganese ion — the same carbonate chemistry that builds malachite out of copper instead.",
+    "src": "https://en.wikipedia.org/wiki/Rhodochrosite",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhodochrosite",
+      "silicon_dioxide"
+    ],
+    "out": "rhodonite",
+    "why": "Bake rhodochrosite with silica present and metamorphism drives off its carbon dioxide, converting the manganese carbonate straight into rhodonite, the manganese silicate — the two are close enough to be mistaken for each other.",
+    "src": "https://en.wikipedia.org/wiki/Rhodonite",
+    "supported": true
+  },
+  {
+    "in": [
+      "zinc_sulfide",
+      "carbon_dioxide"
+    ],
+    "out": "smithsonite",
+    "why": "Smithsonite is zinc carbonate, ZnCO3, precipitated as a secondary mineral where zinc sulfide ore weathers in the oxidised cap above a zinc deposit — the zinc equivalent of malachite's own carbonate chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Smithsonite",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "carbon_dioxide"
+    ],
+    "out": "cerussite",
+    "why": "Cerussite is lead carbonate, PbCO3, formed the same way malachite is — weathering in carbon-dioxide-charged water in the oxidised zone above a lead deposit.",
+    "src": "https://en.wikipedia.org/wiki/Cerussite",
+    "supported": true
+  },
+  {
+    "in": [
+      "lead_sulfide",
+      "oxygen_gas"
+    ],
+    "out": "anglesite",
+    "why": "Anglesite, lead sulfate, is what galena becomes when it oxidises in air — the lead equivalent of pyrite roasting down to hematite, with sulfate left standing in for the original sulfide.",
+    "src": "https://en.wikipedia.org/wiki/Anglesite",
+    "supported": true
+  },
+  {
+    "in": [
+      "strontium",
+      "sulfur"
+    ],
+    "out": "celestine",
+    "why": "Celestine, strontium sulfate, precipitates straight out of evaporating water exactly the way gypsum does — strontium taking calcium's usual seat in the same reaction.",
+    "src": "https://en.wikipedia.org/wiki/Celestine_(mineral)",
+    "supported": true
+  },
+  {
+    "in": [
+      "calcium",
+      "titanium_dioxide"
+    ],
+    "out": "titanite",
+    "why": "Titanite, also called sphene, is calcium titanium silicate — one of the few common rock-forming minerals built directly around titanium.",
+    "src": "https://en.wikipedia.org/wiki/Titanite",
+    "supported": true
+  },
+  {
+    "in": [
+      "feldspar",
+      "iron"
+    ],
+    "out": "epidote",
+    "why": "Epidote grows where hydrothermal fluids alter calcium-rich feldspar, with iron taking up part of the aluminium site and turning the resulting silicate its characteristic pistachio green.",
+    "src": "https://en.wikipedia.org/wiki/Epidote",
+    "supported": true
+  },
+  {
+    "in": [
+      "schist",
+      "aluminum"
+    ],
+    "out": "staurolite",
+    "why": "Staurolite is unusually aluminium-rich for a silicate, Fe2Al9O6(SiO4)4(O,OH)2, and grows in schist during regional metamorphism alongside almandine garnet and kyanite — often twinned into a natural cross.",
+    "src": "https://en.wikipedia.org/wiki/Staurolite",
+    "verified": true
+  },
+  {
+    "in": [
+      "marble",
+      "boron"
+    ],
+    "out": "danburite",
+    "why": "Danburite, calcium borosilicate, \"typically occurs in contact metamorphic rocks\" — limestone cooked by an intrusion, with boron-bearing fluid supplying what marble alone does not have.",
+    "src": "https://en.wikipedia.org/wiki/Danburite",
+    "verified": true
+  },
+  {
+    "in": [
+      "basalt",
+      "boron"
+    ],
+    "out": "datolite",
+    "why": "Datolite is a calcium boron silicate that \"occurs as a secondary mineral in mafic igneous rocks, often filling vesicles along with zeolites in basalt\" — a gas bubble in cooling lava, filled in afterward.",
+    "src": "https://en.wikipedia.org/wiki/Datolite",
+    "verified": true
+  },
+  {
+    "in": [
+      "schist",
+      "boron"
+    ],
+    "out": "axinite",
+    "why": "Axinite is a calcium aluminium borosilicate that grows at metamorphic contact zones where boron-rich fluid reaches a rock like schist — pyroelectric and piezoelectric, like tourmaline, for the same low-symmetry reason.",
+    "src": "https://en.wikipedia.org/wiki/Axinite",
+    "supported": true
+  },
+  {
+    "in": [
+      "shale",
+      "boron"
+    ],
+    "out": "dumortierite",
+    "why": "Dumortierite, an aluminium borosilicate, grows as fibrous crystals in aluminium-rich rock like shale once regional metamorphism and boron-bearing fluid get to it.",
+    "src": "https://en.wikipedia.org/wiki/Dumortierite",
+    "supported": true
+  },
+  {
+    "in": [
+      "basalt",
+      "calcium"
+    ],
+    "out": "prehnite",
+    "why": "Prehnite, a calcium aluminium silicate, is a classic secondary mineral of basalt's own gas cavities — grown alongside zeolites and datolite in the same amygdules.",
+    "src": "https://en.wikipedia.org/wiki/Prehnite",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "lithium"
+    ],
+    "out": "petalite",
+    "why": "Petalite, lithium aluminium silicate, crystallises in the same lithium-bearing granite pegmatites that grow spodumene — one more mineral competing for the same lithium.",
+    "src": "https://en.wikipedia.org/wiki/Petalite",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryl",
+      "water"
+    ],
+    "out": "euclase",
+    "why": "Euclase is beryl's beryllium aluminium silicate chemistry with a hydroxyl group folded in from hydrothermal water — named for how easily it cleaves, from the Greek for \"good fracture.\"",
+    "src": "https://en.wikipedia.org/wiki/Euclase",
+    "supported": true
+  },
+  {
+    "in": [
+      "granite",
+      "phosphate"
+    ],
+    "out": "brazilianite",
+    "why": "Brazilianite, sodium aluminium phosphate, grows in phosphate-rich granite pegmatite — one of several phosphate minerals competing for space alongside the more familiar silicates.",
+    "src": "https://en.wikipedia.org/wiki/Brazilianite",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "phosphate"
+    ],
+    "out": "beryllonite",
+    "why": "Beryllonite, sodium beryllium phosphate, is pegmatite chemistry with a phosphate framework in place of beryl's usual silicate one, but the same beryllium underneath.",
+    "src": "https://en.wikipedia.org/wiki/Beryllonite",
+    "supported": true
+  },
+  {
+    "in": [
+      "lithium",
+      "phosphate"
+    ],
+    "out": "amblygonite",
+    "why": "Amblygonite, a lithium aluminium fluorophosphate, is one more lithium mineral competing for space in the same granite pegmatites that grow spodumene and petalite.",
+    "src": "https://en.wikipedia.org/wiki/Amblygonite",
+    "supported": true
+  },
+  {
+    "in": [
+      "zinc",
+      "phosphate"
+    ],
+    "out": "phosphophyllite",
+    "why": "Phosphophyllite, a rare zinc iron phosphate, grows in hydrothermal veins and takes its name from a leaf-like cleavage — phyllon, Greek for leaf.",
+    "src": "https://en.wikipedia.org/wiki/Phosphophyllite",
+    "supported": true
+  },
+  {
+    "in": [
+      "beryllium",
+      "boron"
+    ],
+    "out": "hambergite",
+    "why": "Hambergite, beryllium borate with a hydroxyl group, is one of the few gem minerals built directly out of beryllium and boron together rather than beryllium and silica.",
+    "src": "https://en.wikipedia.org/wiki/Hambergite",
+    "supported": true
+  },
+  {
+    "in": [
+      "calcium",
+      "tungsten"
+    ],
+    "out": "scheelite",
+    "why": "Scheelite is calcium tungstate, CaWO4, named for the chemist who discovered tungsten in it — and it is still mined as a tungsten ore today.",
+    "src": "https://en.wikipedia.org/wiki/Scheelite",
+    "verified": true
+  },
+  {
+    "in": [
+      "tin",
+      "oxygen"
+    ],
+    "out": "cassiterite",
+    "why": "Cassiterite is tin oxide, SnO2 — the ore the Bronze Age's tin came from, and still the most important tin ore now.",
+    "src": "https://en.wikipedia.org/wiki/Cassiterite",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "sea"
+    ],
+    "out": "jet",
+    "why": "Jet is \"derived from wood that has changed under extreme pressure,\" commonly Araucariaceae driftwood buried in marine sediment and compressed for millions of years into something dense enough to carve and polish.",
+    "src": "https://en.wikipedia.org/wiki/Jet_(gemstone)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pine"
+    ],
+    "verb": "wait",
+    "out": "amber",
+    "why": "Amber is fossilised conifer resin — pine's own sticky sap, buried and left for millions of years until every volatile compound has gone and only the hardened resin remains.",
+    "src": "https://en.wikipedia.org/wiki/Amber",
+    "supported": true
+  },
+  {
+    "in": [
+      "turtle"
+    ],
+    "verb": "cut",
+    "out": "tortoiseshell",
+    "why": "Tortoiseshell is keratin, cut from the carapace scutes of mainly the hawksbill sea turtle — exploitation for exactly this trade helped push the species to critically endangered, and it has been banned in most countries since the 1970s.",
+    "src": "https://en.wikipedia.org/wiki/Tortoiseshell",
+    "verified": true
   }
 ]

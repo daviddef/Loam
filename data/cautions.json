@@ -128,7 +128,9 @@
       "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
       "ids": [
         "lead",
-        "lead_sulfide"
+        "lead_sulfide",
+        "cerussite",
+        "anglesite"
       ],
       "severity": "cumulative"
     },
@@ -713,7 +715,17 @@
       "note": "Inhaled beryllium-containing dust is toxic and can cause berylliosis (chronic beryllium disease), a life-threatening allergic lung condition that can progress to pulmonary fibrosis and heart failure. This applies to the ore as much as the refined metal \u2014 commercial beryllium handling requires dedicated dust control.",
       "ids": [
         "beryllium",
-        "beryl"
+        "beryl",
+        "heliodor",
+        "morganite",
+        "red_beryl",
+        "chrysoberyl",
+        "alexandrite",
+        "cymophane",
+        "taaffeite",
+        "euclase",
+        "beryllonite",
+        "hambergite"
       ],
       "severity": "cumulative"
     },
