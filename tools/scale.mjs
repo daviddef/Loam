@@ -217,6 +217,8 @@ const SCALE = {
           'ascaris_lumbricoides', 'lymphatic_filariasis',
           'sea_urchin', 'mutualism', 'pioneer_species', 'decomposer',
           'baboon', 'lemur', 'bald_eagle', 'peregrine_falcon', 'snowy_owl', 'turkey_vulture',
+          // animal physiology batch 1 (How Animals Work) -- smaller mammals, same rack as baboon/lemur/monkey
+          'sloth', 'armadillo', 'hedgehog', 'meerkat',
           // Hindu mythology batch 1 — a waterfowl (goose/duck scale), a house mouse (rabbit-adjacent small
           // mammal), a tree-dwelling primate (baboon/lemur scale), a hand-held stringed instrument
           // (sitar scale) and a hand-carried sea-snail shell (knife/shoe scale)
@@ -281,6 +283,8 @@ const SCALE = {
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
           'spinning_wheel', 'loom',
           'elevator', 'internal_combustion_engine', 'lcd_screen', 'microwave_oven', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'acacia', 'scarecrow', 'greenhouse', 'human', 'natural_selection', 'cystic_fibrosis', 'sickle_cell_anemia', 'cancer', 'gene_therapy', 'dna_profile', 'cloning', 'snake', 'rattlesnake',
+          // animal physiology batch 1 (How Animals Work) -- large mammals, same rack as lion/camel/dingo
+          'rhinoceros', 'hyena',
           'proailurus', 'pseudaelurus', 'homotherium', 'panthera_zdanskyi', 'tiger', 'javan_tiger',
           'eucyon', 'canis_lepophagus', 'canis_etruscus', 'canis_mosbachensis',
           'dog', 'german_shepherd', 'border_collie', 'rottweiler', 'saint_bernard', 'siberian_husky', 'greyhound', 'afghan_hound', 'bloodhound', 'labrador_retriever', 'golden_retriever', 'bull_terrier',

@@ -23193,5 +23193,83 @@
     ],
     "fact": "King of Ithaca, hero of the Odyssey. Roman Ulysses. Known for his cunning, metis.",
     "terminal": true
+  },
+  {
+    "id": "rhinoceros",
+    "name": "Indian Rhinoceros",
+    "emoji": "\ud83e\udd8f",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Wart-like bumps armor its deeply folded skin \u2014 adults face almost no natural predator.",
+    "terminal": true,
+    "taxon": "tx_rhinoceros"
+  },
+  {
+    "id": "hyena",
+    "name": "Spotted Hyena",
+    "emoji": "\ud83d\udc3e",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A bite 40% stronger than a leopard's lets it crush bone that would defeat most carnivores.",
+    "terminal": true,
+    "taxon": "tx_crocuta"
+  },
+  {
+    "id": "sloth",
+    "name": "Sloth",
+    "emoji": "\ud83e\udda5",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Leaves can take more than a month to digest \u2014 no other mammal's gut works that slowly.",
+    "terminal": true,
+    "taxon": "tx_folivora"
+  },
+  {
+    "id": "armadillo",
+    "name": "Three-Banded Armadillo",
+    "emoji": "\ud83d\udc3e",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The only armadillo that can roll its whole body into a sealed, armored ball.",
+    "terminal": true,
+    "taxon": "tx_tolypeutes"
+  },
+  {
+    "id": "hedgehog",
+    "name": "Hedgehog",
+    "emoji": "\ud83e\udd94",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its spines are just hair, stiffened with keratin \u2014 and two back muscles roll it into a spiky, sealed ball.",
+    "terminal": true,
+    "taxon": "tx_erinaceus"
+  },
+  {
+    "id": "meerkat",
+    "name": "Meerkat",
+    "emoji": "\ud83d\udc3e",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Eye sockets covering over a fifth of its skull power the binocular vision behind its sentry watch.",
+    "terminal": true,
+    "taxon": "tx_suricata"
   }
 ]

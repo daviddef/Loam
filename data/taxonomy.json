@@ -2335,6 +2335,132 @@
       "fact": "Ceratopsids with long, prominent brow horns and long frills carrying little spiking, unlike Centrosaurinae's shorter-horned, heavier ornamentation.",
       "srcTitle": "Chasmosaurinae",
       "src": "https://en.wikipedia.org/wiki/Chasmosaurinae"
+    },
+    {
+      "id": "tx_rhinocerotidae",
+      "rank": "family",
+      "parent": "tx_perissodactyla",
+      "name": "Rhinocerotidae",
+      "fact": "Five living rhinoceros species on massive, thick-skinned bodies -- the two African species carry two horns, the three Asian species one horn or none.",
+      "srcTitle": "Rhinoceros",
+      "src": "https://en.wikipedia.org/wiki/Rhinoceros"
+    },
+    {
+      "id": "tx_rhinoceros",
+      "rank": "genus",
+      "parent": "tx_rhinocerotidae",
+      "name": "Rhinoceros",
+      "fact": "Two living species, the Indian and Javan rhinoceros, each carrying a single horn and skin thrown into deep folds that give it an armor-plated look.",
+      "srcTitle": "Indian rhinoceros",
+      "src": "https://en.wikipedia.org/wiki/Indian_rhinoceros"
+    },
+    {
+      "id": "tx_hyaenidae",
+      "rank": "family",
+      "parent": "tx_carnivora",
+      "name": "Hyaenidae",
+      "fact": "Just four living species, and despite a dog-like build, genetically closer to cats and mongooses than to any canid -- hyenas sit in the cat-like suborder Feliformes, not the dog-like Caniformes.",
+      "srcTitle": "Hyena",
+      "src": "https://en.wikipedia.org/wiki/Hyena"
+    },
+    {
+      "id": "tx_crocuta",
+      "rank": "genus",
+      "parent": "tx_hyaenidae",
+      "name": "Crocuta",
+      "fact": "A single living species, the spotted hyena -- the largest hyena, and unlike its striped and brown relatives, a formidable hunter in its own right, not only a scavenger.",
+      "srcTitle": "Spotted hyena",
+      "src": "https://en.wikipedia.org/wiki/Spotted_hyena"
+    },
+    {
+      "id": "tx_xenarthra",
+      "rank": "superorder",
+      "parent": "tx_mammalia",
+      "name": "Xenarthra",
+      "fact": "Sloths, anteaters, and armadillos, named for extra 'xenarthrous' joints between their lower spine vertebrae, found in no other mammal, which add rigidity to the lower back.",
+      "srcTitle": "Xenarthra",
+      "src": "https://en.wikipedia.org/wiki/Xenarthra"
+    },
+    {
+      "id": "tx_folivora",
+      "rank": "suborder",
+      "parent": "tx_xenarthra",
+      "name": "Folivora",
+      "fact": "The sloths -- six living species split between two-toed and three-toed genera that are not each other's closest relatives, despite the shared name and lifestyle.",
+      "srcTitle": "Sloth",
+      "src": "https://en.wikipedia.org/wiki/Sloth"
+    },
+    {
+      "id": "tx_cingulata",
+      "rank": "order",
+      "parent": "tx_xenarthra",
+      "name": "Cingulata",
+      "fact": "Armadillos -- the only living mammals with a carapace of bony dermal plates covered in overlapping keratin scutes.",
+      "srcTitle": "Armadillo",
+      "src": "https://en.wikipedia.org/wiki/Armadillo"
+    },
+    {
+      "id": "tx_chlamyphoridae",
+      "rank": "family",
+      "parent": "tx_cingulata",
+      "name": "Chlamyphoridae",
+      "fact": "Most living armadillo species, including the giant armadillo and the three-banded armadillos -- split from the long-nosed armadillos of Dasypodidae by molecular studies within the last two decades.",
+      "srcTitle": "Armadillo",
+      "src": "https://en.wikipedia.org/wiki/Armadillo"
+    },
+    {
+      "id": "tx_tolypeutes",
+      "rank": "genus",
+      "parent": "tx_chlamyphoridae",
+      "name": "Tolypeutes",
+      "fact": "Two living species of three-banded armadillo -- the only armadillos able to roll their whole body into a fully enclosed, armored ball; every other genus has too many plates to close all the way.",
+      "srcTitle": "Three-banded armadillo",
+      "src": "https://en.wikipedia.org/wiki/Tolypeutes"
+    },
+    {
+      "id": "tx_eulipotyphla",
+      "rank": "order",
+      "parent": "tx_mammalia",
+      "name": "Eulipotyphla",
+      "fact": "Hedgehogs, moles, and shrews -- small, mostly insect-eating mammals once lumped into a wider 'Insectivora' grouping since abandoned as not a true evolutionary group.",
+      "srcTitle": "Eulipotyphla",
+      "src": "https://en.wikipedia.org/wiki/Eulipotyphla"
+    },
+    {
+      "id": "tx_erinaceidae",
+      "rank": "family",
+      "parent": "tx_eulipotyphla",
+      "name": "Erinaceidae",
+      "fact": "Hedgehogs and their smooth-furred, spineless cousins the gymnures -- the only Eulipotyphlans that grow a coat of spines instead of ordinary fur.",
+      "srcTitle": "Erinaceidae",
+      "src": "https://en.wikipedia.org/wiki/Erinaceidae"
+    },
+    {
+      "id": "tx_erinaceus",
+      "rank": "genus",
+      "parent": "tx_erinaceidae",
+      "name": "Erinaceus",
+      "fact": "Old World hedgehogs, including the European hedgehog -- spines that are hollow hairs stiffened with keratin, rolled into a closed ball by a pair of large muscles across the back.",
+      "srcTitle": "Hedgehog",
+      "src": "https://en.wikipedia.org/wiki/Hedgehog"
+    },
+    {
+      "id": "tx_herpestidae",
+      "rank": "family",
+      "parent": "tx_carnivora",
+      "name": "Herpestidae",
+      "fact": "The mongoose family -- over 30 species, in the same cat-like suborder Feliformes as the hyenas, though built more like a weasel than a cat.",
+      "srcTitle": "Mongoose",
+      "src": "https://en.wikipedia.org/wiki/Mongoose"
+    },
+    {
+      "id": "tx_suricata",
+      "rank": "genus",
+      "parent": "tx_herpestidae",
+      "name": "Suricata",
+      "fact": "A single living species, the meerkat -- Kalahari-dwelling and living in mobs where some members always stand sentry to watch for predators while the rest forage.",
+      "srcTitle": "Meerkat",
+      "src": "https://en.wikipedia.org/wiki/Meerkat"
     }
   ]
 }
