@@ -160,6 +160,7 @@ const CPK = {
   P: '#FF8000', Ca: '#3DFF00', Fe: '#E06633', Na: '#AB5CF2', Cl: '#1FF01F',
   K: '#8F40D4', Mg: '#8AFF00', He: '#D9FFFF', Ne: '#B3E3F5',
   F: '#90E050', Xe: '#429EB0', Kr: '#5CB8D1',
+  Br: '#A62929', I: '#940094',
 };
 
 /** A ball-and-stick molecule from a tiny spec: centre atom + ligands. */
@@ -411,6 +412,161 @@ def('river',  () => [S('M10 50 Q22 34 30 30 Q38 26 50 12', 'lo', 8),
 def('steam',  () => [S('M22 46 Q14 36 22 28 Q30 20 24 12', 'bs', 3),
                      S('M34 48 Q26 38 34 30 Q42 22 36 14', 'hi', 3),
                      S('M44 46 Q38 38 44 32', 'bs', 2.4)]);
+
+/* water — batch additions ───────────────────────────────────────────────
+ * hydrogen_bromide/hydrogen_iodide are drawn as ball-and-stick diatomics
+ * like hydrogen_chloride/hydrogen_fluoride (both tagged water, not
+ * molecule) — but neither reuses hydrogen_chloride's gasTube silhouette;
+ * a plain bond between a small H and a large halogen atom, one horizontal
+ * one vertical, the halogen sized up for iodine's larger atomic radius.
+ * The landform cluster (meander/oxbow_lake/waterfall/estuary/lagoon/
+ * glacier/iceberg/fjord/geyser) each key on the one feature that actually
+ * distinguishes it, not a generic water body. The cloud cluster likewise:
+ * cumulus is one flat-based heap, cirrus is combed wisps, stratus is a
+ * bare flat sheet, cumulonimbus adds the anvil, nimbostratus adds rain to
+ * the sheet, supercell spirals, monsoon reverses, low_pressure carries
+ * actual warm/cold front symbols, sleet falls hard and bounces, drizzle is
+ * fine granules misted rather than fallen.
+ */
+def('hydrogen_bromide', () => [                             // H-Br, the heavier hydrohalic acid here
+  S('M18 30 L44 30', 'ik', 2.4),
+  C(18, 30, 5, 'hi'), C(44, 30, 9, 'bs'),
+]);
+def('hydrogen_iodide', () => [                               // H-I, iodine drawn as the largest halogen atom
+  S('M30 18 L30 46', 'ik', 2.4),
+  C(30, 18, 5, 'hi'), C(30, 46, 10, 'lo'),
+]);
+def('kelp_forest', () => [                                    // tall blades, not river's single ribbon
+  ...[[16, -6], [26, 4], [36, -3], [46, 5]].map(([x, k], i) =>
+    S(`M${x} 52 Q${x + k} 34 ${x - k * .6} 18 Q${x + k * .4} 8 ${x} 4`, i % 2 ? 'hi' : 'bs', 3)),
+  ...[16, 26, 36, 46].map(x => C(x, 53, 2, 'lo')),            // holdfasts, on the seabed
+]);
+def('meander', () => [                                        // the bend, migrating until it nearly closes
+  S('M8 46 Q8 24 26 22 Q44 20 44 34 Q44 46 28 44 Q16 42 20 32', 'lo', 7),
+  S('M8 46 Q8 24 26 22 Q44 20 44 34 Q44 46 28 44 Q16 42 20 32', 'bs', 4),
+]);
+def('oxbow_lake', () => [                                     // the loop, cut through and stranded
+  P('M14 40 Q10 24 26 20 Q42 16 44 30 Q46 44 30 44 Q16 44 14 40 Z', 'gh'),
+  ring('bs', 30, 32, 15, 5),
+  S('M8 44 L52 44', 'lo', 4),                                 // the river, now running straight past
+]);
+def('waterfall', () => [                                      // the ledge, and the drop
+  P('M8 12 L40 12 L40 20 L8 20 Z', 'gh'),
+  ...[16, 24, 32].map((x, i) => S(`M${x} 20 L${x + 2} 46`, i === 1 ? 'hi' : 'bs', 3)),
+  ...pool('lo'),
+]);
+def('estuary', () => [                                        // the river narrows in, fanning wide toward the sea
+  P('M26 8 L34 8 L48 44 L12 44 Z', 'gh'),
+  wave('bs', 38, 5, 16),
+  wave('hi', 44, 3, 20),
+]);
+def('lagoon', () => [                                         // a sandbar fencing shallow water off the sea
+  wave('bs', 34, 5, 18), wave('hi', 40, 3, 14),
+  P('M8 44 Q30 52 52 44 L52 48 Q30 56 8 48 Z', 'lo'),          // the bar, with a narrow inlet gap
+]);
+def('glacier', () => [                                        // a tongue of ice, cracked, sliding downhill
+  P('M22 6 L38 6 L46 30 L42 54 L18 54 L14 30 Z', 'hi'),
+  P('M22 6 L38 6 L42 20 L18 20 Z', 'bs'),
+  S('M22 24 L30 32 M38 22 L32 32 M20 38 L28 44 M40 38 L32 44', 'gh', 1.2),  // crevasses
+]);
+def('iceberg', () => [                                        // the nine-tenths below, the one-tenth showing
+  P('M14 32 L46 32 L40 52 L20 52 Z', 'bs'),
+  P('M22 32 L30 12 L38 32 Z', 'hi'),
+  S('M8 32 L52 32', 'lo', 1.6),                                // the waterline
+]);
+def('fjord', () => [                                          // a deep, narrow, steep-walled inlet
+  P('M6 8 L20 8 L20 54 L6 54 Z', 'lo'), P('M40 8 L54 8 L54 54 L40 54 Z', 'lo'),
+  wave('bs', 40, 4, 10), wave('hi', 46, 3, 8),
+]);
+def('geyser', () => [                                         // one forceful jet, not steam's soft wisps
+  E(30, 52, 10, 4, 'lo'),                                      // the vent
+  S('M30 48 L26 14 M30 48 L34 10', 'bs', 3),
+  ...[[20, 20], [40, 16], [24, 10], [36, 24]].map(([x, y]) => C(x, y, 2, 'hi')),
+]);
+def('tide', () => [                                            // the moon's pull, and the sea answering
+  C(46, 12, 6, 'gh'),
+  wave('bs', 40, 7, 22), wave('hi', 46, 4, 16),
+  S('M40 12 L34 24', 'gh', 1.2),
+]);
+def('intertidal_zone', () => [                                 // banded: barnacles above, kelp below, tide between
+  P('M14 10 L46 10 L46 54 L14 54 Z', 'gh'),
+  ...[18, 24, 30, 36, 42].map(x => C(x, 18, 1.6, 'hi')),        // barnacles, at the top
+  S('M14 34 L46 34', 'lo', 1.4),                                // the waterline, mid-tide
+  ...[20, 30, 40].map(x => S(`M${x} 48 Q${x - 2} 42 ${x} 36`, 'bs', 2)),  // kelp, at the bottom
+]);
+def('tide_pool', () => [                                       // seawater stranded in a rock hollow
+  P('M8 30 Q6 48 24 50 Q42 52 52 38 Q56 26 42 22 Q26 18 8 30 Z', 'lo'),
+  E(30, 36, 16, 10, 'bs'),
+  C(24, 34, 2, 'hi'), C(36, 38, 1.6, 'hi'),
+]);
+def('dry_ice', () => [                                         // solid straight to gas — no puddle, ever
+  P('M16 26 L44 26 L40 50 L20 50 Z', 'hi'),
+  S('M16 26 L20 50 M44 26 L40 50', 'gh', 1),
+  ...[22, 30, 38].map(x => S(`M${x} 26 Q${x} 16 ${x + 2} 6`, 'bs', 1.6)),
+]);
+def('green_alga', () => [                                      // simple floating cells, not kelp's blades
+  ...[[20, 24], [34, 20], [26, 36], [40, 34], [30, 46]].map(([x, y], i) =>
+    E(x, y, 5, 4, i % 2 ? 'hi' : 'bs')),
+  S('M20 24 Q26 30 26 36 M34 20 Q30 28 30 46', 'gh', 1),
+]);
+def('tsunami', () => [                                         // one huge curling wall, not sea's calm bands
+  P('M6 52 Q6 20 30 14 Q40 12 38 24 Q34 34 44 30 Q52 28 52 40 Q52 52 30 52 Z', 'bs'),
+  P('M34 24 Q38 20 42 24 Q40 28 34 28 Z', 'hi'),                // the curling crest
+]);
+def('liquid_hydrogen', () => [                                 // a cryo flask, 20 degrees above absolute zero
+  vessel('gh', 20, 48),
+  wave('bs', 40, 4, 13), wave('hi', 36, 2.4, 10),
+  ...[[22, 20], [30, 16], [38, 20]].map(([x, y]) => S(`M${x} ${y} L${x} ${y - 6}`, 'gh', 1.2)),  // boil-off
+]);
+def('cumulus', () => [                                         // one heap, flat base, built by convection
+  ...puff('hi', 30, 30, 1.3),
+  horizon('lo', 44),
+]);
+def('cirrus', () => [                                          // wisps combed out high, not mist's flat lines
+  S('M8 20 Q20 14 30 20 Q40 26 52 18', 'hi', 2),
+  S('M10 32 Q22 27 34 32 Q44 37 54 30', 'bs', 1.8),
+  S('M6 42 Q18 38 28 42', 'gh', 1.4),
+]);
+def('stratus', () => [                                         // one flat grey sheet, no lobes at all
+  P('M6 26 L54 26 L54 36 L6 36 Z', 'bs'),
+  S('M6 30 L54 30', 'hi', 1),
+]);
+def('cumulonimbus', () => [                                    // a cumulus that kept growing into an anvil
+  ...puff('bs', 26, 34, 1),
+  P('M14 18 L46 18 L52 12 L20 12 Z', 'hi'),
+]);
+def('nimbostratus', () => [                                    // a flat layer, wringing out steady rain
+  P('M6 20 L54 20 L54 30 L6 30 Z', 'lo'),
+  ...[16, 26, 36, 46].map(x => S(`M${x} 32 L${x - 2} 50`, 'bs', 2)),
+]);
+def('supercell', () => {
+  const pts = [];
+  for (let i = 0; i <= 30; i++) {
+    const t = i / 30, ang = t * Math.PI * 4, rad = 2 + t * 20;
+    pts.push([n(30 + rad * Math.cos(ang)), n(24 + rad * Math.sin(ang))]);
+  }
+  return [...puff('bs', 30, 20, 1.1), S('M' + pts.map(p => p.join(' ')).join(' L'), 'hi', 2)];
+});
+def('monsoon', () => [                                         // the wind reversing, season to season
+  S('M10 20 Q30 10 46 20 A8 8 0 1 1 40 32', 'bs', 2.6),
+  ...[16, 26, 36].map(x => S(`M${x} 40 L${x - 2} 52`, 'hi', 2)),
+]);
+def('low_pressure', () => [                                    // a warm front and a cold front, spun round a low
+  ring('gh', 30, 30, 18, 1.4),
+  ...[0, 60, 120].map(a => ['g', a, 30, 30, [P('M14 30 L20 27 L20 33 Z', 'bs')]]),   // cold front: triangles
+  ...[180, 240, 300].map(a => ['g', a, 30, 30, [E(17, 30, 3, 3, 'hi')]]),            // warm front: bumps
+  C(30, 30, 3, 'lo'),
+]);
+def('sleet', () => [                                           // hard refrozen pellets, not drizzle's mist
+  ...[[18, 14], [30, 10], [42, 16]].map(([x, y]) => C(x, y, 2.2, 'hi')),
+  ...[[18, 14], [30, 10], [42, 16]].map(([x, y]) => S(`M${x} ${y} L${x - 2} 44`, 'bs', 1.4)),
+  ...[16, 28, 40].map(x => S(`M${x - 3} 48 L${x + 3} 48`, 'lo', 1.6)),   // bouncing off the ground
+]);
+def('drizzle', () => [                                         // droplets under 0.5mm, misted rather than fallen
+  P('M6 14 L54 14 L54 22 L6 22 Z', 'gh'),
+  ...granules('hi', 14, 501, [10, 26, 50, 50]),
+]);
+
 // The atom and the gas are drawn in the same language as everywhere else in
 // the molecular tier: a lone sphere is a lone atom; two bonded spheres are the
 // molecule. Splitting hydrogen and oxygen into an atom tier and a gas tier
@@ -449,6 +605,89 @@ def('phosphorus_sesquisulfide', () => [                   // red phosphorus and 
   P('M25 40 L25 54 L35 54 L35 40 Z', 'lo'),                // the stick
   E(30, 28, 12, 13, 'bs'),                                 // the bulbous head
   C(25, 22, 2, 'hi'), C(35, 24, 1.6, 'hi'), C(30, 18, 1.4, 'hi'),
+]);
+
+/* fire — batch additions ─────────────────────────────────────────────────
+ * sound_wave is a sonar-style ping (concentric arcs off one source point),
+ * distinct from photon/gamma_ray's sine waves and from ultrasound_scan's
+ * probe cone; echo adds the boundary line and the return arc; jet_fuel is
+ * the liquid itself (a vessel), not jet_engine's hardware. The stellar
+ * cluster keys off what the fact says: protostar has no fusion yet, so no
+ * rays, just a glow with infall streams; brown_dwarf has no rays either
+ * and is shown cooling; supergiant is a much bigger circle than red_giant
+ * with surface flares; accretion_disc is a true spiral (like spirulina's),
+ * with the companion star it is feeding on; cepheid_variable shows its
+ * min/max size as ghost rings around the current one; spectrum is a fanned
+ * wedge with absorption lines; ultraviolet is drawn 'gh' — invisible — with
+ * the glow it causes as the only solid mark.
+ */
+def('sound_wave', () => [                                  // a ping, not photon's or gamma_ray's sine wave
+  ...[8, 15, 22].map(r => S(`M12 ${30 - r} A${r} ${r} 0 0 1 12 ${30 + r}`, 'bs', 2)),
+  C(12, 30, 2, 'hi'),
+]);
+def('echo', () => [                                         // bounced back at a boundary, and timed
+  S('M42 8 L42 52', 'gh', 1.6),
+  S('M8 20 Q22 20 30 30', 'bs', 2),
+  S('M8 40 Q22 40 30 30', 'hi', 2),
+]);
+def('myoelectric_signal', () => [                            // an electrical twitch, standing in for a hand
+  C(12, 30, 4, 'hi'),
+  S('M12 30 L20 30', 'ik', 2),
+  S('M20 30 L26 30 L29 14 L33 46 L36 24 L40 34 L48 30', 'bs', 2),
+]);
+def('jet_fuel', () => [                                      // the kerosene itself, not jet_engine's hardware
+  vessel('gh', 22, 48),
+  wave('bs', 40, 4, 13), wave('hi', 36, 2.4, 10),
+  P('M46 14 Q50 20 46 26 Q42 20 46 14 Z', 'lo'),              // a flame lick, off to the side — flammable
+]);
+def('protostar', () => [                                     // gathering, glowing from infall — no fusion yet
+  E(30, 30, 20, 16, 'lo'),
+  E(26, 28, 12, 10, 'bs'),
+  C(28, 28, 5, 'hi'),
+  S('M8 14 Q16 20 22 24 M52 46 Q44 40 38 36', 'gh', 1.4),
+]);
+def('brown_dwarf', () => [                                   // too little mass to fuse — it just cools
+  C(30, 30, 11, 'lo'),
+  S('M18 20 Q14 14 10 12 M42 20 Q46 14 50 12 M30 42 Q30 48 30 52', 'gh', 1),
+]);
+def('supergiant', () => [                                     // 8+ solar masses, almost always ending in supernova
+  C(30, 30, 22, 'bs'),
+  ...granules('lo', 6, 313, [16, 16, 44, 44]),
+  ...[20, 80, 140, 220, 300].map(a => ['g', a, 30, 30, [S('M30 6 L30 0', 'hi', 2.4)]]),
+]);
+def('accretion_disc', () => {                                 // gas pulled from a companion, spiralling in
+  const pts = [];
+  for (let i = 0; i <= 24; i++) {
+    const t = i / 24, ang = t * Math.PI * 3, rad = 3 + t * 17;
+    pts.push([n(30 + rad * Math.cos(ang)), n(30 + rad * Math.sin(ang))]);
+  }
+  return [
+    S('M' + pts.map(p => p.join(' ')).join(' L'), 'bs', 2.4),
+    C(30, 30, 3, 'hi'),
+    C(50, 12, 3, 'lo'),
+    S('M47 14 L38 22', 'gh', 1.2),
+  ];
+});
+def('cepheid_variable', () => [                                // swells and shrinks on a clock
+  ring('gh', 30, 30, 20, 1.2),
+  ring('gh', 30, 30, 10, 1.2),
+  C(30, 30, 15, 'bs'),
+  S('M30 8 L30 4', 'hi', 1.6),
+]);
+def('spectrum', () => [                                        // starlight fanned out, dark lines giving it away
+  P('M8 44 L52 44 L40 12 L20 12 Z', 'lo'),
+  P('M8 44 L28 44 L24 12 L20 12 Z', 'bs'),
+  P('M28 44 L36 44 L32 12 L24 12 Z', 'hi'),
+  ...[16, 30, 44].map(x => S(`M${x} 16 L${x} 40`, 'ik', 1)),
+]);
+def('ultraviolet', () => [                                      // invisible — drawn 'gh' — until it lands
+  S('M6 30 Q12 20 18 30 Q24 40 30 30 Q36 20 42 30 Q48 40 54 30', 'gh', 2),
+  C(54, 30, 2.6, 'hi'),
+]);
+def('corium', () => [                                           // Chernobyl's 'elephant's foot'
+  P('M14 20 Q10 34 18 44 Q26 54 34 50 Q44 46 42 34 Q40 22 30 16 Q20 12 14 20 Z', 'lo'),
+  ...granules('ik', 6, 919, [18, 22, 38, 40]),
+  S('M24 24 L20 36 M34 22 L38 34', 'gh', 1.6),                    // fuel rod and structure, fused in
 ]);
 
 /* plant ────────────────────────────────────────────────────────────────── */
@@ -1859,6 +2098,12 @@ def('garlic_bread', () => [P('M12 42 Q12 26 30 26 Q48 26 48 42 Z', 'bs'),
 def('granary', () => [P('M12 42 Q12 24 30 24 Q48 24 48 42 Z', 'lo'),
                       P('M16 42 Q16 30 30 30 Q44 30 44 42 Z', 'bs'),
                       ...granules('hi', 8, 227, [18, 28, 42, 40])]);
+def('hardtack', () => [                                      // flour, water, salt — docking holes, not round like flatbread
+  P('M12 14 L48 14 L48 46 L12 46 Z', 'bs'),
+  S('M12 14 L48 14 L48 46 L12 46 Z', 'ik', 1.6),
+  ...[[20, 22], [30, 22], [40, 22], [20, 30], [30, 30], [40, 30], [20, 38], [30, 38], [40, 38]]
+    .map(([x, y]) => C(x, y, 1.6, 'hi')),
+]);
 def('cake',   () => [P('M14 44 L46 44 L46 30 L14 30 Z', 'bs'),
                      P('M14 30 L46 30 L46 25 L14 25 Z', 'hi'),
                      S('M14 37 L46 37', 'lo', 1.4), S('M14 44 L46 44', 'ik', 1.6)]);
@@ -3084,6 +3329,59 @@ def('loess',  () => [...[[46, 'bs'], [40, 'lo'], [34, 'bs'], [28, 'lo']].map(([y
 def('fulgurite', () => [P('M28 10 L34 10 L33 24 L38 26 L34 38 L37 40 L31 52 L27 40 L30 38 L26 26 L31 24 Z', 'gh'),
                         ...granules('bs', 8, 77, [16, 40, 46, 52])]);  // glass tube in the sand
 
+/* mineral — landform batch: the shapes the surface itself takes. Each one is
+   drawn as the cross-section or silhouette that makes the landform legible,
+   not a generic hill — a mesa, a butte and a plateau share one "table"
+   silhouette narrowed step by step, exactly as one erodes into the next. */
+def('tundra',   () => [P('M4 44 L56 44 L56 52 L4 52 Z', 'bs'),
+                       S('M18 44 L18 52 M36 44 L38 52 M10 48 L50 48', 'gh', 1),   // permafrost polygons
+                       ...granules('hi', 5, 15, [10, 45, 50, 50])]);              // moss and lichen, nothing taller
+def('desert',   () => [horizon('lo', 50),                                        // a saguaro, water hoarded in the stem
+                       P('M27 50 L27 16 Q27 10 30 10 Q33 10 33 16 L33 50 Z', 'bs'),
+                       P('M18 50 L18 28 Q18 24 22 24 L22 34 L27 34 Z', 'bs'),
+                       P('M42 50 L42 32 Q42 28 38 28 L38 38 L33 38 Z', 'bs')]);
+def('mountain', () => [P('M6 50 L24 14 L32 26 L44 8 L54 50 Z', 'bs'),            // twin peaks, still rising
+                       P('M24 14 L29 22 L19 22 Z', 'hi'), P('M44 8 L48 16 L40 16 Z', 'hi')]);
+def('trench',   () => [wave('lo', 18, 4, 26),
+                       P('M6 22 L54 22 L40 30 Q30 56 20 30 Z', 'bs'),             // the seafloor sagging into the V
+                       S('M6 22 L20 30 M54 22 L40 30', 'ik', 1.6)]);              // one plate diving under the other
+def('volcano',  () => [P('M14 50 L28 16 L32 16 L46 50 Z', 'bs'),
+                       P('M24 50 Q30 40 36 50 Z', 'lo'),                          // the lava trickle
+                       flame('hi', .4, -6), S('M14 50 L46 50', 'ik', 1.6)]);
+def('rift_valley', () => [P('M6 50 L20 20 L20 50 Z', 'lo'), P('M54 50 L40 20 L40 50 Z', 'lo'),
+                          P('M20 50 L20 38 L40 38 L40 50 Z', 'bs'),               // the block that dropped
+                          S('M20 20 L20 50 M40 20 L40 50', 'ik', 1.6)]);
+def('floodplain', () => [P('M8 40 L52 40 L52 50 L8 50 Z', 'bs'), wave('lo', 34, 3, 10),
+                         ...[38, 42, 46].map(y => S(`M10 ${y} L50 ${y}`, 'hi', 1))]);  // one silt layer per flood
+def('delta',    () => [wave('lo', 44, 4, 26),
+                       P('M22 12 L38 12 L50 50 L10 50 Z', 'bs'),                  // the fan of dropped sediment
+                       S('M30 12 L30 28 M30 28 L18 50 M30 28 L30 50 M30 28 L42 50', 'ik', 1.8)]);  // distributaries
+def('canyon',   () => [...[12, 20, 28, 36].map((y, i) => P(`M4 ${y} L20 ${y} L14 ${y + 8} L4 ${y + 8} Z`, i % 2 ? 'hi' : 'bs')),
+                       ...[12, 20, 28, 36].map((y, i) => P(`M56 ${y} L40 ${y} L46 ${y + 8} L56 ${y + 8} Z`, i % 2 ? 'hi' : 'bs')),
+                       wave('lo', 48, 3, 10)]);                                   // the river still cutting down
+def('sea_cliff', () => [P('M14 8 L46 8 L46 40 L14 40 Z', 'bs'),
+                        P('M14 34 L46 34 L40 44 L20 44 Z', 'lo'),                 // the notch waves cut at its foot
+                        wave('hi', 48, 4, 20)]);
+def('sea_cave', () => [P('M10 10 L50 10 L50 46 L10 46 Z', 'bs'),
+                       P('M22 46 Q22 30 30 30 Q38 30 38 46 Z', 'ik'),             // hollowed along one weakness
+                       wave('hi', 50, 3, 20)]);
+def('sea_arch', () => [P('M8 46 L8 14 L22 14 L22 30 Q30 38 38 30 L38 14 L52 14 L52 46 Z', 'bs'),  // broken all the way through
+                       wave('hi', 50, 3, 22)]);
+def('sea_stack', () => [P('M24 12 L36 12 L38 46 L22 46 Z', 'bs'),                // the arch's roof, gone
+                        wave('lo', 46, 4, 24), wave('hi', 52, 3, 20)]);
+def('moraine',  () => [mound('bs', 48, 22, 18),
+                       ...[[16, 42, 4], [26, 44, 3], [36, 40, 5], [42, 46, 3]].map(([x, y, r]) => C(x, y, r, 'lo'))]);  // till, carried and dropped
+def('cavern',   () => [P('M6 30 Q6 12 30 12 Q54 12 54 30 L54 50 L6 50 Z', 'ik'),
+                       ...[18, 30, 42].map(x => P(`M${x - 3} 12 L${x + 3} 12 L${x} 26 Z`, 'gh')),   // stalactites
+                       ...[18, 30, 42].map(x => P(`M${x - 3} 50 L${x + 3} 50 L${x} 36 Z`, 'hi'))]);  // stalagmites
+def('sinkhole', () => [ring('bs', 30, 30, 20, 4), C(30, 30, 13, 'ik'),
+                       S('M14 18 L20 24 M46 18 L40 24', 'gh', 1.2)]);              // the ground giving way
+def('plateau',  () => [P('M4 20 L14 44 L46 44 L56 20 Z', 'bs'), S('M4 20 L56 20', 'hi', 2)]);   // wide and flat
+def('mesa',     () => [P('M16 44 L20 22 L40 22 L44 44 Z', 'bs'), P('M18 22 L42 22 L42 28 L18 28 Z', 'hi')]);  // narrower, caprock visible
+def('butte',    () => [P('M24 44 L26 20 L34 20 L36 44 Z', 'bs'), P('M25 20 L35 20 L35 25 L25 25 Z', 'hi')]);  // narrower still
+def('caldera',  () => [ring('bs', 30, 30, 20, 5), E(30, 32, 13, 9, 'lo'), flame('hi', .3, 20)]);  // the chamber that emptied
+
+
 /* what the two new verbs make ──────────────────────────────────────────── */
 def('smoke',  () => [...[[20, 'bs'], [30, 'hi'], [40, 'bs']].map(([x, r]) =>
                        S(`M${x} 52 Q${x - 8} 40 ${x} 30 Q${x + 8} 20 ${x - 3} 10`, r, 3.2))]);
@@ -3276,6 +3574,228 @@ def('emerald',  () => [P('M18 12 L42 12 L48 20 L48 42 L42 50 L18 50 L12 42 L12 2
 def('opal',     () => [lump('gh', 30, 32, 20, 17),
                        ...[[22, 26, 'bs'], [36, 24, 'hi'], [30, 38, 'lo'], [40, 38, 'bs'], [21, 38, 'hi']]
                          .map(([x, y, r]) => E(x, y, 6, 4, r))]);                        // play of colour
+
+/* mineral — gemstone & named-variety batch ───────────────────────────────
+   Sixty-one species and varieties, most only tellable apart by habit: a
+   garnet's rounded rhombic ball, beryl's flat-topped hexagonal column,
+   tourmaline's striated trigonal one, feldspar's cleavage block. Colour
+   comes from each item's own hue page automatically — habit is what has
+   to carry the difference here, so every real habit detail (chiastolite's
+   cross, amazonite's tartan twinning, a watermelon slice's rind) earns
+   its place. */
+const hexPath = (cx, cy, rad) => {
+  const p = [];
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    p.push(`${n(cx + rad * Math.cos(a))} ${n(cy + rad * Math.sin(a))}`);
+  }
+  return `M${p.join(' L')} Z`;
+};
+// Garnet's rounded rhombic dodecahedron, flattened to a creased hexagon.
+const garnetBall = (r, hiR = 'hi', cx = 30, cy = 32, rad = 18) => [
+  P(hexPath(cx, cy, rad), r),
+  P(`M${cx} ${n(cy - rad)} L${n(cx + rad * .87)} ${n(cy - rad / 2)} L${cx} ${cy} L${n(cx - rad * .87)} ${n(cy - rad / 2)} Z`, hiR),
+  S(`M${cx} ${n(cy - rad)} L${cx} ${n(cy + rad)} M${n(cx - rad * .87)} ${n(cy - rad / 2)} L${n(cx + rad * .87)} ${n(cy + rad / 2)} M${n(cx + rad * .87)} ${n(cy - rad / 2)} L${n(cx - rad * .87)} ${n(cy + rad / 2)}`, 'ik', .8),
+];
+// Beryl's flat-topped hexagonal column, angled so one top facet shows.
+const prism6 = (r, hiR = 'hi', cx = 30, topY = 14, botY = 50, rad = 11) => [
+  P(`M${n(cx - rad)} ${topY} L${n(cx + rad)} ${topY} L${n(cx + rad)} ${botY} L${n(cx - rad)} ${botY} Z`, r),
+  P(`M${n(cx - rad)} ${topY} L${n(cx - rad * .4)} ${n(topY - 6)} L${n(cx + rad * .6)} ${n(topY - 6)} L${n(cx + rad)} ${topY} Z`, hiR),
+  S(`M${n(cx - rad * .3)} ${topY} L${n(cx - rad * .3)} ${botY} M${n(cx + rad * .3)} ${topY} L${n(cx + rad * .3)} ${botY}`, 'lo', 1),
+];
+// A square-cross-section prism, seen face-on — scapolite and vesuvianite's habit.
+const prism4 = (r, hiR = 'hi', cx = 30, topY = 16, botY = 50, w = 10) => [
+  P(`M${n(cx - w)} ${topY} L${n(cx + w)} ${topY} L${n(cx + w)} ${botY} L${n(cx - w)} ${botY} Z`, r),
+  P(`M${n(cx - w)} ${topY} L${n(cx + w)} ${topY} L${n(cx + w * .6)} ${n(topY + 8)} L${n(cx - w * .6)} ${n(topY + 8)} Z`, hiR),
+  S(`M${n(cx - w * .6)} ${n(topY + 8)} L${n(cx - w * .6)} ${botY} M${n(cx + w * .6)} ${n(topY + 8)} L${n(cx + w * .6)} ${botY}`, 'lo', 1),
+];
+// Tourmaline's rounded-triangular, deeply striated column.
+const triColumn = (r, hiR = 'hi', cx = 30, topY = 12, botY = 52, rad = 12) => [
+  P(`M${cx} ${topY} Q${n(cx + rad)} ${n(topY + 8)} ${n(cx + rad * .8)} ${n(botY - 6)} L${n(cx + rad * .5)} ${botY} L${n(cx - rad * .5)} ${botY} L${n(cx - rad * .8)} ${n(botY - 6)} Q${n(cx - rad)} ${n(topY + 8)} ${cx} ${topY} Z`, r),
+  ...[-.5, 0, .5].map(k => S(`M${n(cx + rad * k * .7)} ${n(topY + 10)} L${n(cx + rad * k * .55)} ${n(botY - 4)}`, hiR, 1)),
+];
+
+/* the garnets — one plain rhombic ball, one with dispersion's fire,
+   one that never grows bigger than a droplet on its host rock */
+def('grossular', () => [...garnetBall('bs', 'hi', 30, 32, 18)]);
+def('andradite', () => [...garnetBall('bs', 'hi', 30, 32, 16),
+                        ...[20, 80, 140, 200, 260, 320].map(a =>
+                          S(`M${n(30 + 17 * Math.cos(a * Math.PI / 180))} ${n(32 + 17 * Math.sin(a * Math.PI / 180))} L${n(30 + 23 * Math.cos(a * Math.PI / 180))} ${n(32 + 23 * Math.sin(a * Math.PI / 180))}`, 'gh', 1))]);  // demantoid's fire
+def('uvarovite', () => [facet('lo', .8),                    // the chromium-rich serpentinite it grows in
+                        ...[[18, 26], [26, 20], [34, 24], [22, 34], [38, 32], [30, 18]].map(([x, y]) =>
+                          P(`M${x} ${y - 4} L${x + 3} ${y + 2} L${x - 3} ${y + 2} Z`, 'bs'))]);  // druse, never a big gem
+
+/* beryl — same hexagonal column, three very different sizes and settings */
+def('heliodor',  () => [...prism6('bs', 'hi', 30, 12, 50, 10)]);
+def('morganite',  () => [...prism6('bs', 'hi', 30, 18, 48, 14)]);
+def('red_beryl',  () => [facet('gh', .9),                   // the volcanic gas cavity it grew in
+                         ...prism6('bs', 'hi', 30, 22, 42, 6)]);  // small, and rarer than diamond
+
+/* quartz, macrocrystalline — a point, a cluster, or no crystal face at all */
+def('amethyst', () => [P('M14 50 L14 28 L20 18 L26 50 Z', 'lo'),
+                       P('M22 50 L22 20 L30 8 L38 20 L38 50 Z', 'bs'),
+                       P('M34 50 L34 30 L40 22 L46 50 Z', 'hi')]);   // a druse of three points
+def('citrine',  () => [P('M22 50 L22 22 L30 10 L38 22 L38 50 Z', 'bs'),
+                       P('M22 34 L38 34 L38 50 L22 50 Z', 'hi'),    // the zone heat carried gold into
+                       S('M22 34 L38 34', 'ik', 1)]);
+def('rose_quartz', () => [lump('bs', 30, 32, 19, 16),
+                          S('M18 26 Q24 22 20 34 M34 24 Q38 30 32 40', 'gh', 1)]);  // the fibres that give it colour, no crystal face
+def('smoky_quartz', () => [P('M20 50 L20 24 L30 8 L40 24 L40 50 Z', 'lo'),
+                           ...[24, 30, 36].map(x => S(`M${x} ${x === 30 ? 12 : 26} L${x} 50`, 'ik', .8))]);
+def('aventurine_quartz', () => [lump('bs', 30, 32, 20, 17), ...granules('hi', 10, 141, [14, 18, 46, 46])]);  // fuchsite flakes, not the quartz's own colour
+def('tigers_eye', () => [E(30, 32, 21, 14, 'lo'),
+                         ...[24, 30, 36, 42].map(y => S(`M11 ${y} Q30 ${y - 3} 49 ${y}`, 'bs', 2)),
+                         S('M13 30 Q30 26 47 30', 'hi', 2.4)]);      // the single moving band of chatoyance
+def('rutilated_quartz', () => [P('M18 50 L18 20 L30 8 L42 20 L42 50 Z', 'gh'),
+                               S('M20 16 L44 40 M40 14 L18 42 M16 26 L46 30', 'bs', 1.4)]);  // rutile needles trapped inside
+
+/* chalcedony — cryptocrystalline, so no crystal face ever shows; habit
+   and pattern (botryoidal, banded, mottled, dendritic) do the work instead */
+def('chalcedony', () => [...[[18, 38, 8], [30, 42, 9], [42, 38, 8], [24, 30, 7], [36, 30, 7]]
+                           .map(([x, y, r]) => E(x, y, r, r * .75, 'bs')),
+                         ...[[18, 38], [30, 42], [42, 38]].map(([x, y]) => E(x - 2, y - 3, 3, 2, 'hi'))]);  // botryoidal
+def('agate',    () => [...banded('lo', 'hi', 6, 4), S('M8 12 Q30 8 52 12 L52 52 L8 52 Z', 'gh', 1)]);  // silica deposited layer on layer
+def('carnelian', () => [P('M14 30 Q12 18 26 16 Q42 14 46 28 Q48 42 34 46 Q18 48 14 34 Z', 'bs'), E(26, 26, 6, 3.4, 'hi')]);  // plain, translucent, warm
+def('jasper',   () => [lump('bs', 30, 32, 20, 17), ...granules('lo', 12, 71, [12, 18, 48, 46])]);  // opaque, iron running through it
+def('chrysoprase', () => [...[[22, 36, 9], [38, 36, 9], [30, 26, 8]].map(([x, y, r]) => E(x, y, r, r * .8, 'bs')),
+                          ...[[22, 36], [38, 36], [30, 26]].map(([x, y]) => E(x - 2, y - 2, 3, 2, 'hi'))]);  // fewer, bigger lobes than chalcedony
+def('bloodstone', () => [lump('lo', 30, 32, 19, 16),
+                         S('M11 32 A19 16 0 0 1 49 32', 'ik', 1),
+                         ...[[20, 24, 4], [36, 40, 3.6], [24, 42, 3.2]].map(([x, y, rr]) => C(x, y, rr, 'bs'))]);  // hematite droplets
+def('moss_agate', () => [E(30, 32, 20, 16, 'gh'),
+                         S('M18 44 Q20 34 16 26 M18 44 L22 36 M18 44 L14 38', 'bs', 1.4),
+                         S('M40 20 Q38 30 42 40 M40 20 L36 26 M40 20 L44 24', 'bs', 1.4),
+                         S('M26 46 Q28 36 24 30', 'bs', 1.2)]);  // no plant was ever involved
+def('petrified_wood', () => [C(30, 32, 20, 'lo'),
+                             ...[16, 11, 6].map((r, i) => ring(i % 2 ? 'hi' : 'bs', 30, 32, r, 1.4)),
+                             S('M30 32 L30 14 M30 32 L44 40', 'gh', 1)]);  // rings, in cross-section
+
+/* tourmaline — trigonal and striated, told apart by proportion and trace element */
+def('tourmaline', () => [...triColumn('bs', 'hi', 30, 12, 52, 12)]);
+def('schorl',   () => [...triColumn('ik', 'lo', 30, 18, 50, 15)]);   // iron-black, thick, the commonest 95%
+def('dravite',  () => [P('M20 16 L40 16 L37 50 L23 50 Z', 'bs'),     // a flat, unpointed termination
+                       S('M23 22 L35 44 M37 22 L25 44', 'hi', .8)]);  // cross-hatched, not striated
+def('rubellite', () => [...triColumn('bs', 'hi', 30, 12, 52, 9), P('M30 12 L36 18 L24 18 Z', 'lo')]);  // slender, and pointed
+def('indicolite', () => [P('M26 10 L34 10 L40 20 L40 44 L34 54 L26 54 L20 44 L20 20 Z', 'bs'),  // more often faceted than left raw, tall and narrow
+                         P('M26 10 L34 10 L40 20 L20 20 Z', 'hi'),
+                         S('M23 30 L37 30', 'lo', 1)]);
+def('watermelon_tourmaline', () => [C(30, 32, 19, 'lo'), C(30, 32, 11, 'bs'), ring('ik', 30, 32, 19, 1)]);  // a slice, pink core to green rind
+def('padparadscha', () => [P('M20 50 L20 24 L30 10 L40 24 L40 50 Z', 'bs'),   // corundum's barrel, needing two colouring elements at once
+                           P('M20 24 L40 24 L40 32 L20 32 Z', 'hi'),
+                           P('M20 32 L40 32 L40 50 L20 50 Z', 'lo')]);
+
+/* oxides, feldspathoids, and a handful of one-off habits */
+def('spinel',   () => [P('M30 8 L48 30 L30 34 L12 30 Z', 'hi'), P('M30 34 L48 30 L30 52 L12 30 Z', 'bs'),
+                       S('M30 8 L30 34 L30 52 M12 30 L48 30', 'ik', 1)]);   // a perfect octahedron
+def('sodalite', () => [lump('bs', 30, 32, 20, 17), S('M14 28 Q26 20 34 30 Q42 38 48 32', 'hi', 1.6)]);  // white veining, no gold
+def('hauyne',   () => [facet('gh', .85),                     // the ejected limestone block it turned up in
+                       ...[[22, 26], [36, 30], [26, 38]].map(([x, y]) => P(`M${x} ${y - 4} L${x + 4} ${y} L${x} ${y + 4} L${x - 4} ${y} Z`, 'bs'))]);
+def('lapis_lazuli', () => [lump('bs', 30, 32, 20, 17),
+                           ...granules('hi', 7, 271, [14, 20, 46, 44]),   // pyrite — the gold flecks
+                           S('M16 40 Q26 44 36 38', 'gh', 1.2)]);          // calcite streak
+def('scapolite', () => [...prism4('bs', 'hi', 30, 14, 50, 10)]);
+def('zircon',   () => [P('M30 10 L42 24 L30 30 L18 24 Z', 'hi'), P('M18 24 L30 30 L42 24 L36 44 L24 44 Z', 'bs'),
+                       P('M24 44 L30 30 L36 44 L30 54 Z', 'lo'), S('M30 10 L30 54', 'ik', .8)]);  // a tetragonal dipyramid
+def('vesuvianite', () => [...prism4('bs', 'hi', 30, 14, 46, 8), ...granules('lo', 5, 331, [16, 42, 44, 52])]);  // the skarn it grew in
+def('taaffeite', () => [P('M22 46 L18 30 L30 14 L42 30 L38 46 Z', 'gh'),   // the spinel octahedron it was sold as, for years
+                        E(30, 32, 12, 9, 'bs'), E(26, 28, 4, 2.6, 'hi')]);
+def('benitoite', () => [P('M30 12 L44 28 L16 28 Z', 'hi'), P('M16 28 L44 28 L30 50 Z', 'bs'),
+                        S('M30 12 L30 50', 'ik', .8), E(30, 28, 20, 6, 'gh')]);  // a trigonal dipyramid, fluorescing
+
+/* aluminium silicate polymorphs and other prisms of a particular season */
+def('topaz',    () => [P('M22 50 L22 22 L26 14 L34 14 L38 22 L38 50 Z', 'bs'),   // a wedge termination, not a point
+                       P('M26 14 L34 14 L38 22 L22 22 Z', 'hi'),
+                       ...[26, 34].map(x => S(`M${x} 22 L${x} 50`, 'ik', .8))]);
+def('chrysoberyl', () => [...[0, 60, 120].map(a =>
+                            ['g', a, 30, 32, [P('M18 26 L42 26 L42 38 L18 38 Z', a === 60 ? 'hi' : 'bs')]])]);  // the trilling twin
+def('alexandrite', () => [P('M14 24 L30 20 L30 44 L14 40 Z', 'bs'), P('M30 20 L46 24 L46 40 L30 44 Z', 'hi'),
+                          S('M30 20 L30 44', 'ik', 1.2)]);   // green by day, red by candlelight
+def('cymophane', () => [E(30, 34, 21, 15, 'bs'), E(26, 29, 8, 5, 'hi'), S('M12 34 L48 34', 'gh', 2.4)]);  // one moving cat's-eye band
+def('andalusite', () => [P('M14 14 L46 14 L46 46 L14 46 Z', 'bs'),   // square, seen end-on down the c-axis
+                         P('M14 14 L46 14 L38 22 L22 22 Z', 'hi'),
+                         S('M22 22 L22 46 M38 22 L38 46', 'lo', 1)]);
+def('chiastolite', () => [P('M14 14 L46 14 L46 46 L14 46 Z', 'gh'),
+                          S('M14 14 L46 46 M46 14 L14 46', 'ik', 4)]);   // the black cross of trapped carbon
+def('sillimanite', () => [...[0, 1, 2, 3, 4, 5].map(i => S(`M${16 + i * 5.6} 12 L${16 + i * 5.6} 50`, i % 2 ? 'hi' : 'bs', 1.6))]);  // a tight fibrous bundle
+def('kyanite',  () => [...[-18, 0, 18].map(a =>
+                         ['g', a, 30, 32, [P('M30 8 L34 16 L32 48 L28 48 L26 16 Z', a === 0 ? 'bs' : 'hi')]])]);  // a fan of flat blades
+
+/* pyroxenes, cordierite, olivine, and the borate mistaken for it */
+def('enstatite', () => [P('M18 46 L18 20 L42 20 L42 46 Z', 'bs'), S('M18 20 L42 46 M42 20 L18 46', 'lo', 1)]);  // near-90° cleavage
+def('hypersthene', () => [P('M18 46 L18 20 L42 20 L42 46 Z', 'lo'), S('M20 42 Q30 24 40 24', 'hi', 3)]);  // the bronzy schiller
+def('iolite',   () => [P('M14 20 L30 12 L30 50 L14 42 Z', 'gh'), P('M30 12 L46 20 L46 42 L30 50 Z', 'bs'),
+                       S('M30 12 L30 50', 'ik', 1)]);   // one crystal, two visibly different colours
+def('peridot',  () => [E(30, 32, 19, 14, 'bs'), S('M11 32 L49 32 M18 22 L42 42 M42 22 L18 42', 'hi', 1),
+                       E(30, 32, 6, 4, 'hi')]);   // the classic oval cut
+def('sinhalite', () => [E(30, 32, 19, 14, 'gh'),   // the peridot outline it was mistaken for
+                        E(30, 30, 15, 11, 'bs'), E(25, 26, 5, 3, 'hi')]);
+
+/* spodumene, zoisite, and feldspar — all cleave or split along one plane,
+   and each variety's trace element or exsolution gets its own mark */
+def('kunzite',  () => [P('M30 8 L35 16 L35 46 L30 54 L25 46 L25 16 Z', 'bs'),
+                       ...[27, 33].map(x => S(`M${x} 16 L${x} 46`, 'hi', 1))]);   // pointed both ends, deeply striated
+def('hiddenite', () => [P('M22 48 L22 18 L38 14 L38 48 Z', 'bs'),
+                        S('M24 20 L30 34 L24 46', 'ik', 1.2)]);   // one flat termination, and the near-perfect cleavage crack
+def('zoisite',  () => [P('M22 50 L22 16 L38 16 L38 50 Z', 'gh'),
+                       S('M24 16 L24 50 M36 16 L36 50', 'lo', .8), E(30, 20, 5, 3, 'hi')]);   // colourless before treatment, wide-set striae
+def('tanzanite', () => [P('M22 50 L22 16 L38 16 L38 50 Z', 'bs'),
+                        P('M22 16 L30 16 L30 50 L22 50 Z', 'lo'), P('M30 16 L38 16 L38 33 L30 33 Z', 'hi')]);  // trichroic — three zones
+def('thulite',  () => [lump('bs', 30, 32, 20, 17), ...granules('hi', 8, 601, [14, 18, 46, 46])]);  // massive, not crystalline
+def('moonstone', () => [P('M18 44 L22 18 L42 16 L44 42 Z', 'gh'), E(29, 28, 9, 5, 'hi'), S('M22 18 L44 42', 'lo', 1)]);  // adularescence, floating
+def('labradorite', () => [P('M18 44 L22 18 L42 16 L44 42 Z', 'lo'),
+                          ...[[22, 24, 'bs'], [30, 20, 'hi'], [36, 32, 'bs']].map(([x, y, role]) => E(x, y, 6, 3, role))]);  // the flash across a cleavage plane
+def('albite',   () => [P('M18 44 L22 18 L42 16 L44 42 Z', 'bs'),
+                       S('M22 18 L44 42', 'lo', 1.4), S('M20 30 L43 28', 'lo', 1.2)]);   // sodium's plain end-member
+def('sunstone', () => [P('M18 44 L22 18 L42 16 L44 42 Z', 'bs'), ...granules('hi', 8, 401, [22, 22, 42, 40])]);  // copper platelets
+def('amazonite', () => [P('M18 44 L22 18 L42 16 L44 42 Z', 'bs'),
+                        ...[24, 30, 36].map(x => S(`M${x} 17 L${n(x + 2)} 43`, 'lo', .8)),
+                        ...[24, 30, 36].map(y => S(`M19 ${y} L43 ${n(y - 2)}`, 'hi', .8))]);   // tartan twinning
+
+/* one pyroxene that is carved, not cut */
+def('jadeite',  () => [lump('bs', 30, 32, 20, 16), E(24, 26, 6, 3, 'hi'), ...granules('lo', 10, 501, [14, 20, 46, 44])]);
+
+/* mineral — specimen batch: minerals sold, not synthesised — each drawn as
+   the specimen you would actually pick up, in the habit that identifies it. */
+def('pyrite',   () => [...cubes('bs'),                                            // fool's gold, cubes with the tell
+                       S('M16 30 L22 30 M16 34 L22 34 M16 38 L22 38', 'ik', .8),
+                       S('M32 24 L38 24 M32 28 L38 28 M32 32 L38 32', 'ik', .8)]); // striated faces, the real diagnostic
+def('hematite', () => [C(22, 36, 12, 'bs'), C(38, 32, 11, 'lo'), C(30, 22, 10, 'hi'),  // kidney ore, botryoidal lobes
+                       S('M14 46 L46 46', 'ik', 1.6)]);
+def('magnetite', () => [P('M30 8 L48 30 L30 34 L12 30 Z', 'ik'), P('M30 34 L48 30 L30 52 L12 30 Z', 'lo'),
+                        S('M12 30 L48 30', 'hi', 1.4),                            // the octahedron
+                        ...[[6, 20], [54, 18], [8, 44]].map(([x, y]) =>
+                          S(`M${x} ${y} L${x > 30 ? x - 6 : x + 6} ${n(y + (y < 30 ? 4 : -4))}`, 'gh', 1))]);  // filings, pulled in
+def('graphite', () => [...[0, 1, 2, 3].map(i =>
+                         P(`M${10 + i * 5} ${16 + i * 9} L${52 + i} ${14 + i * 9} L${52 + i} ${20 + i * 9} L${10 + i * 5} ${22 + i * 9} Z`,
+                           i % 2 ? 'hi' : 'ik'))]);                                // sheets that slide past each other
+def('calcite',  () => [P('M20 46 L26 14 L44 20 L38 52 Z', 'gh'),                  // rhombohedral spar
+                       S('M30 20 L30 46', 'ik', 1.6), S('M31 21 L31 47', 'hi', 1)]);  // one line, doubled — birefringence
+def('malachite', () => [...[14, 10, 6].map((r, i) => E(22, 36, r, r * .75, i % 2 ? 'hi' : 'bs')),
+                        ...[10, 7, 4].map((r, i) => E(42, 24, r, r * .75, i % 2 ? 'bs' : 'hi'))]);  // banded, concentric nodules
+def('azurite',  () => [P('M14 40 L22 24 L34 24 L30 40 Z', 'bs'), P('M28 46 L36 30 L48 32 L42 48 Z', 'hi'),
+                       S('M22 24 L34 24 M28 46 L36 30', 'ik', 1)]);               // blocky deep-blue crystals
+def('gypsum',   () => [P('M22 52 L20 14 L26 10 L28 48 Z', 'gh'), P('M34 50 L36 16 L41 14 L40 46 Z', 'hi'),
+                       S('M20 14 L26 10 M36 16 L41 14', 'ik', 1)]);               // selenite, bladed and translucent
+def('olivine',  () => [P('M10 44 L50 44 L50 52 L10 52 Z', 'lo'),                  // out of the basalt melt first
+                       ...[[18, 38], [30, 34], [40, 40]].map(([x, y]) =>
+                         P(`M${x} ${y - 8} L${x + 6} ${y} L${x} ${y + 8} L${x - 6} ${y} Z`, 'bs'))]);
+def('garnet',   () => [...banded('lo', 'hi', 3, 3), C(30, 30, 10, 'bs'),
+                       ...[0, 72, 144, 216, 288].map(a =>
+                         S(`M30 30 L${n(30 + 10 * Math.cos(a * Math.PI / 180))} ${n(30 + 10 * Math.sin(a * Math.PI / 180))}`, 'ik', 1))]);  // an index mineral, grown in the rock
+def('beryl',    () => [P('M20 8 L40 8 L46 30 L40 52 L20 52 L14 30 Z', 'bs'),      // rough hexagonal column
+                       S('M20 8 L14 30 M40 8 L46 30', 'ik', 1.2)]);
+def('aquamarine', () => [P('M30 8 L46 22 L40 52 L20 52 L14 22 Z', 'hi'),          // the same beryl, cut and faceted
+                         P('M30 8 L46 22 L14 22 Z', 'bs'),
+                         S('M20 52 L30 22 L40 52', 'ground', 1.2)]);
+def('serpentine', () => [lump('lo', 30, 32, 21, 18),
+                         ...[[20, 26, 6, 4], [38, 24, 5, 3], [26, 40, 7, 5], [42, 38, 4, 3]].map(([x, y, rx, ry]) => E(x, y, rx, ry, 'hi'))]);  // snakeskin mottling
+def('turquoise', () => [lump('bs', 30, 32, 20, 17),
+                        S('M14 24 Q22 30 18 40 M46 26 Q38 20 42 34 M24 46 Q30 38 36 46', 'ik', 1)]);  // limonite spiderweb veining
+def('bauxite',  () => [P('M10 20 L50 20 L50 48 L10 48 Z', 'lo'),
+                       ...[[18, 28, 5], [30, 24, 6], [42, 32, 5], [22, 40, 4], [38, 42, 5]]
+                         .map(([x, y, r]) => [C(x, y, r, 'bs'), C(x, y, r * .5, 'hi')]).flat()]);  // pisolites, ring inside ring
+def('spodumene', () => [P('M27 6 L33 6 L36 30 L33 54 L27 54 L24 30 Z', 'bs'),      // one long lithium pyroxene blade
+                        S('M27 6 L24 30 M33 6 L36 30', 'hi', 1)]);
 
 /* mineral — batch additions: real carbonate/silicate/phosphate gem species,
    each in its own actual crystal habit rather than another faceted lump. */
@@ -3480,6 +4000,319 @@ def('gas_giant',() => [C(30, 32, 21, 'bs'),
                        E(38, 26, 6, 4, 'lo')]);                                  // the storm
 def('ice_giant',() => [C(30, 32, 20, 'lo'), C(30, 32, 13, 'hi'),
                        ['g', -70, 30, 32, [E(30, 32, 27, 3, 'bs')]]]);           // the tilted rings
+
+/* mineral — chunk 04 additions ───────────────────────────────────────────
+ * A grab-bag that lands in `mineral` by tag accident: deep-sky objects and
+ * weather (tagged `earth`, for "where it happens"), and stonework/dams
+ * (tagged `build`). Drawn as what they actually are, not as rock. */
+
+/* deep sky — beyond the solar system */
+def('supermassive_black_hole', () => [
+  ['g', -18, 30, 32, [E(30, 32, 27, 6, 'bs')]],                                  // the feeding disc, edge-on and wide
+  C(30, 32, 12, 'ground'),                                                       // the horizon — nothing gets back out
+  ring('hi', 30, 32, 16, 1.4),                                                   // light bent all the way around it
+  S('M30 6 L30 21', 'hi', 3), S('M30 43 L30 58', 'hi', 3),                       // jets, punched straight out the poles
+]);
+def('active_galaxy', () => [
+  E(30, 32, 24, 9, 'lo'),                                                        // the disc, seen nearly edge-on
+  S('M9 30 Q21 19 30 30 Q39 41 51 32', 'bs', 2.4),                               // one arm, wound tight around a hot core
+  C(30, 32, 6, 'hi'),
+]);
+def('quasar', () => [
+  C(30, 32, 5, 'hi'),                                                            // the galaxy around it is too far to see
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => ['g', a, 30, 32, [S('M30 16 L30 22', 'bs', 1.6)]]),
+  S('M30 32 L46 12', 'lo', 2.2),                                                 // the jet, aimed straight at us
+]);
+def('seyfert_galaxy', () => [
+  E(30, 32, 23, 8, 'lo'),
+  S('M13 29 Q21 18 31 23 Q41 28 47 20', 'hi', 1.8),                              // two arms, wound tighter than an active galaxy's one
+  S('M13 37 Q21 47 31 42 Q41 37 47 45', 'hi', 1.8),
+  C(30, 32, 4, 'bs'),
+]);
+def('radio_galaxy', () => [
+  E(30, 32, 9, 4.5, 'lo'),                                                       // the visible galaxy, small at this scale
+  S('M30 32 L11 13', 'bs', 1.6), S('M30 32 L49 51', 'bs', 1.6),                  // jets running light-years past it
+  E(9, 11, 7, 5, 'hi'), E(51, 53, 7, 5, 'hi'),                                   // the radio lobes they inflate
+]);
+def('exoplanet', () => [
+  C(30, 32, 18, 'hi'),                                                           // the host star, blazing
+  C(13, 22, 5, 'ground'),                                                        // the planet, caught mid-transit
+  S('M4 22 L56 22', 'gh', 1),                                                    // the chord it crosses
+]);
+def('redshift', () => [
+  S('M8 20 Q14 14 20 20 Q26 26 32 20', 'gh', 1.8),                               // the light as it left — short wavelength
+  S('M8 44 Q20 36 32 44 Q44 52 56 44', 'bs', 2.4),                               // the same light, arrived stretched longer
+  S('M30 27 L30 37', 'ik', 1.6), P('M27 35 L30 41 L33 35 Z', 'ik'),
+]);
+def('dark_energy', () => [
+  ...[[18, 18], [42, 18], [42, 42], [18, 42]].map(([x, y]) => C(x, y, 3, 'hi')),  // galaxies, once closer together
+  ...[[18, 18, 10, 10], [42, 18, 50, 10], [42, 42, 50, 50], [18, 42, 10, 50]]
+    .map(([x, y, x2, y2]) => S(`M${x} ${y} L${x2} ${y2}`, 'bs', 1.8)),            // what keeps pushing them apart
+  C(30, 30, 2, 'gh'),
+]);
+def('dark_matter', () => [
+  C(30, 32, 7, 'hi'),                                                            // the visible galaxy — a sliver of the mass
+  ring('gh', 30, 32, 20, 1.2),                                                   // the halo, inferred, never seen directly
+  S('M9 20 Q21 10 33 14', 'bs', 1.8), S('M51 44 Q39 54 27 50', 'bs', 1.8),        // light, bent around mass that isn't visible
+]);
+def('cosmic_microwave_background', () => [
+  E(30, 32, 24, 15, 'lo'),                                                       // the whole sky, unrolled flat
+  ...granules('hi', 10, 5, [10, 20, 50, 44]),
+  ...granules('bs', 8, 47, [10, 20, 50, 44]),                                    // tiny variations, the seeds of every galaxy
+]);
+def('globular_cluster', () => [
+  ...granules('hi', 18, 13, [15, 17, 45, 47]),
+  ...granules('bs', 10, 71, [22, 24, 38, 40]),                                   // denser toward the core, symmetric all around
+  C(30, 32, 2, 'ik'),
+]);
+def('orion_nebula', () => [
+  P('M10 40 Q14 18 30 20 Q46 22 50 40 Q40 48 30 46 Q18 44 10 40 Z', 'lo'),        // the glow, wings spread wide
+  ...granules('bs', 6, 19, [16, 22, 44, 40]),
+  ...[[27, 31], [33, 31], [27, 35], [33, 35]].map(([x, y]) => C(x, y, 1.6, 'hi')),// the Trapezium, four young stars at its heart
+]);
+def('pleiades', () => [
+  ...[[16, 40], [22, 27], [30, 19], [38, 26], [44, 37], [25, 40], [36, 42]]
+    .map(([x, y], i) => C(x, y, i === 2 ? 3 : 2, 'hi')),                         // seven, unmistakably
+  S('M27 19 L27 12', 'gh', 1), S('M33 19 L33 12', 'gh', 1),
+  S('M13 40 L6 40', 'gh', 1), S('M13 44 L6 46', 'gh', 1),
+]);
+
+/* the ground itself — a rift, a meteorite, a mineral, a seep */
+def('afar_triangle', () => [
+  P('M30 12 L52 46 L8 46 Z', 'gh'),                                              // the triangle, three plates meeting
+  S('M30 30 L30 12', 'bs', 2.4), S('M30 30 L52 46', 'bs', 2.4), S('M30 30 L8 46', 'bs', 2.4),  // rifts, pulling apart along each edge
+  C(30, 30, 3, 'ik'),
+]);
+def('fluorescent_mineral', () => [
+  facet('lo', .9), facet('bs', .55),
+  ...[0, 72, 144, 216, 288].map(a => ['g', a, 30, 30, [S('M30 4 L30 15', 'gh', 1.6)]]),  // UV falling on it
+  ring('hi', 30, 30, 25, 1),                                                     // the glow it throws back, a colour the rock never shows by day
+]);
+def('hoba', () => [
+  horizon('lo', 48),
+  P('M10 44 L14 26 L46 24 L50 42 Z', 'lo'),                                      // sixty tonnes, never fragmented on impact
+  P('M14 26 L46 24 L44 30 L16 32 Z', 'hi'),                                      // the face weathering has polished flat
+  ...granules('ik', 5, 33, [18, 28, 42, 32]),
+]);
+def('bitumen', () => [
+  horizon('lo', 46),
+  P('M8 46 Q8 34 20 30 Q30 26 40 30 Q52 34 52 46 Z', 'ik'),                      // welling up through a crack, not refined from anything
+  E(24, 34, 4, 2, 'hi'), E(36, 30, 3, 1.6, 'hi'),                                 // a bubble breaking the surface
+  S('M30 46 L30 40', 'gh', 1.6),
+]);
+
+/* weather, drawn like a map — synoptic symbols, not clouds */
+def('anticyclone', () => [
+  ring('gh', 30, 32, 22, 1.2), ring('lo', 30, 32, 15, 1.4), ring('bs', 30, 32, 8, 1.8),
+  ...[0, 90, 180, 270].map(a => ['g', a, 30, 32, [S('M30 10 Q37 10 39 17', 'hi', 2)]]),  // air spiraling outward, clockwise
+]);
+def('cold_front', () => [
+  S('M8 30 Q30 24 52 30', 'ik', 2.6),
+  ...[16, 30, 44].map(x => P(`M${x - 5} 33 L${x} 42 L${x + 5} 33 Z`, 'bs')),      // spikes, pointed toward the warm air it's shoving aside
+]);
+def('warm_front', () => [
+  S('M8 34 Q30 28 52 34', 'ik', 2.6),
+  ...[16, 30, 44].map(x => C(x, 29, 4, 'bs')),                                   // bumps — warm air climbing gently, not shoving
+]);
+def('tropical_climate', () => [
+  C(46, 14, 6, 'hi'),
+  ...[18, 30, 42].map((x, i) => [S(`M${x} 50 L${x} 34`, 'lo', 3),
+    leaf('bs', x, 30, 1, i % 2 ? -25 : 25), leaf('bs', x, 25, .8, i % 2 ? 25 : -25)]).flat(),
+  ...[[10, 46], [24, 50], [38, 46]].map(([x, y]) => S(`M${x} ${y - 8} L${x - 2} ${y}`, 'gh', 1.6)),
+]);
+def('arid_climate', () => [
+  C(30, 14, 8, 'bs'),                                                            // an unshaded sun, nothing to filter it
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => ['g', a, 30, 14, [S('M30 2 L30 6', 'hi', 1.6)]]),
+  horizon('lo', 42),
+  ...[[16, 42, 22, 50], [30, 42, 26, 52], [30, 42, 36, 50], [44, 42, 40, 52]]
+    .map(([x, y, x2, y2]) => S(`M${x} ${y} L${x2} ${y2}`, 'ik', 1.4)),           // ground, cracked dry
+]);
+def('temperate_climate', () => [
+  S('M30 50 L30 22', 'lo', 3),                                                   // one trunk, two states
+  leaf('bs', 22, 22, .9, -20), leaf('bs', 22, 16, .8, -35),                       // the leafed side
+  S('M38 22 L44 16', 'gh', 1.4), S('M38 26 L46 24', 'gh', 1.4),                  // the bare side
+  C(46, 12, 5, 'hi'),                                                            // a mild sun, not a blazing one
+]);
+
+/* the solar system's named worlds — each drawn for its one real tell */
+def('mercury_planet', () => [
+  C(30, 32, 17, 'lo'),
+  ...[[22, 24, 3], [36, 26, 2.4], [27, 38, 2.8], [38, 40, 2]].map(([x, y, r]) => C(x, y, r, 'ik')),  // craters — nothing has smoothed this in billions of years
+  E(44, 26, 4, 10, 'hi'),                                                        // the sun-scorched limb, this close in
+]);
+def('venus', () => [
+  C(30, 32, 18, 'bs'),
+  ...[24, 30, 36].map((y, i) => P(`M12 ${y} Q30 ${y + 4} 48 ${y} L48 ${y + 3} Q30 ${y + 7} 12 ${y + 3} Z`, i % 2 ? 'hi' : 'lo')),  // sulfuric cloud — nothing else ever shows
+]);
+def('earth', () => [
+  C(30, 32, 18, 'hi'),
+  P('M16 22 Q24 18 28 24 Q22 30 16 28 Z', 'bs'), P('M34 34 Q44 32 46 40 Q38 44 34 38 Z', 'bs'),  // continents
+  E(38, 22, 7, 3, 'gh'),                                                         // a cloud swirl
+]);
+def('mars', () => [
+  C(30, 32, 18, 'lo'),
+  C(30, 20, 4, 'hi'),                                                            // the north polar cap
+  S('M18 34 Q30 32 42 36', 'ik', 2),                                             // a canyon long enough to cross a continent
+  ...granules('bs', 5, 9, [18, 30, 42, 44]),
+]);
+def('jupiter', () => [
+  C(30, 32, 20, 'bs'),
+  ...[18, 24, 30, 36, 42].map((y, i) => P(`M9 ${y} Q30 ${y + 2} 51 ${y} L51 ${y + 3} Q30 ${y + 5} 9 ${y + 3} Z`, i % 2 ? 'hi' : 'lo')),
+  E(40, 36, 5, 3, 'ik'),                                                         // a storm, one of many bands' worth
+]);
+def('saturn', () => [
+  C(30, 33, 14, 'bs'),
+  ...[27, 33].map((y, i) => P(`M17 ${y} Q30 ${y + 2} 43 ${y} L43 ${y + 2} Q30 ${y + 4} 17 ${y + 2} Z`, i % 2 ? 'hi' : 'lo')),
+  ['g', -12, 30, 33, [E(30, 33, 25, 5, 'hi')]],                                  // the rings — Saturn's whole silhouette
+]);
+def('uranus_planet', () => [
+  C(30, 32, 17, 'hi'),
+  ['g', -82, 30, 32, [E(30, 32, 24, 3, 'lo')]],                                  // rings nearly edge-on — it spins on its side
+  E(26, 26, 4, 6, 'gh'),
+]);
+def('neptune', () => [
+  C(30, 32, 17, 'bs'),
+  E(20, 26, 5, 3.4, 'ik'),                                                       // the Great Dark Spot, a storm the size of Earth
+  S('M14 38 Q30 42 46 36', 'hi', 1.6),                                           // wind streaks, the fastest in the solar system
+]);
+def('pluto', () => [
+  C(30, 32, 12, 'lo'),
+  P('M30 30 Q24 24 20 30 Q20 36 30 40 Q40 36 40 30 Q36 24 30 30 Z', 'hi'),       // Tombaugh Regio, the heart-shaped plain
+]);
+
+/* moons — each keyed to its one identifying feature */
+def('io', () => [
+  C(30, 32, 15, 'bs'),
+  ...[[22, 26], [38, 30], [26, 40], [36, 40]].map(([x, y]) => C(x, y, 3, 'hi')), // sulfur — every color but grey, no two patches alike
+  P('M40 20 L44 10 L46 20 Z', 'lo'), S('M43 20 L43 10', 'gh', 1),                // a plume, mid-eruption
+]);
+def('europa', () => [
+  C(30, 32, 15, 'hi'),
+  S('M12 24 Q22 30 34 26 Q44 22 50 30', 'lo', 1.6), S('M14 40 Q26 34 38 40 Q46 44 50 38', 'lo', 1.6),  // the cracks, ice over a hidden ocean
+]);
+def('ganymede', () => [
+  C(30, 32, 17, 'lo'),
+  P('M14 24 Q30 18 46 24 L46 30 Q30 24 14 30 Z', 'hi'),                          // grooved terrain, banding the darker crust
+  C(24, 40, 2.4, 'ik'), C(38, 38, 2, 'ik'),
+]);
+def('callisto', () => [
+  C(30, 32, 17, 'lo'),
+  ...shot('ik', 10, 5),                                                          // saturated with craters — nothing left to erase them
+]);
+def('saturn_rings', () => [
+  ['g', -8, 30, 30, [E(30, 30, 26, 7, 'bs'), E(30, 30, 20, 5.4, 'hi'), E(30, 30, 13, 3.4, 'lo')]],  // three rings, closer than the eye ever sees them
+]);
+def('cassini_division', () => [
+  ring('bs', 30, 30, 24, 5),                                                     // the B ring, bright and broad
+  ring('hi', 30, 30, 14, 4),                                                     // the A ring, fainter, further out
+  ring('ground', 30, 30, 19.5, 2),                                               // the gap between them — 4,800 km, swept clean
+]);
+def('titan', () => [
+  C(30, 32, 17, 'bs'),
+  ring('hi', 30, 32, 20, 3),                                                     // a haze thick enough to hide the ground completely
+  ring('gh', 30, 32, 23, 1.4),
+]);
+def('enceladus', () => [
+  C(30, 28, 12, 'hi'),
+  ...[-20, 0, 20].map(a => ['g', a, 30, 40, [S('M30 40 L30 24', 'gh', 1.6)]]),   // plumes, venting from the south pole
+]);
+def('mimas', () => [
+  C(30, 32, 14, 'lo'),
+  C(20, 24, 7, 'ik'), C(20, 24, 4, 'hi'),                                        // one crater a third of its own width
+]);
+def('titania', () => [
+  C(30, 32, 14, 'hi'),
+  S('M18 20 Q26 30 20 44', 'lo', 2),                                             // a canyon system scoring the ice
+  C(38, 26, 2, 'ik'),
+]);
+def('oberon', () => [
+  C(30, 32, 14, 'lo'),
+  ...[[22, 26, 2.6], [36, 24, 2], [26, 40, 3], [40, 38, 2.2]].map(([x, y, r]) => C(x, y, r, 'ik')),
+  S('M26 40 L26 34', 'hi', 1.6),                                                 // a peak rising from a crater floor
+]);
+def('miranda', () => [
+  C(30, 32, 13, 'lo'),
+  P('M18 28 L26 20 L34 28 L26 34 Z', 'hi'),                                      // a corona — geology that doesn't match its neighbors
+  S('M36 30 L44 24', 'gh', 1.4),
+]);
+def('triton', () => [
+  C(30, 32, 15, 'hi'),
+  ...granules('lo', 10, 61, [16, 20, 44, 44]),                                   // cantaloupe terrain, dimpled like the fruit
+  S('M40 20 L42 10', 'gh', 1.4),                                                 // a nitrogen geyser, venting at -235°C
+]);
+def('phobos', () => [
+  E(30, 32, 13, 10, 'lo'),
+  C(22, 28, 6, 'ik'), C(22, 28, 3.4, 'hi'),                                      // Stickney, a crater that nearly broke it apart
+]);
+def('deimos', () => [
+  E(30, 32, 9, 7, 'hi'),
+  ...granules('gh', 4, 3, [24, 28, 36, 36]),                                     // smooth — regolith has buried most of what hit it
+]);
+def('charon', () => [
+  C(30, 32, 13, 'lo'),
+  E(30, 22, 7, 4, 'ik'),                                                         // Mordor Macula, a dark red cap of its own
+]);
+
+/* dwarf planets and one storm, close enough to matter on its own */
+def('ceres', () => [
+  C(30, 32, 15, 'lo'),
+  C(24, 28, 1.6, 'hi'), C(27, 30, 1.2, 'hi'),                                    // bright spots — salt, left behind when ice sublimed
+  ...granules('ik', 4, 17, [20, 34, 40, 42]),
+]);
+def('eris', () => [
+  C(30, 32, 11, 'hi'),
+  C(44, 42, 2.4, 'lo'),                                                          // Dysnomia, its one moon
+  ring('gh', 30, 32, 17, 1),
+]);
+def('great_red_spot', () => [
+  C(30, 32, 9, 'lo'),
+  E(30, 32, 20, 13, 'bs'),
+  S('M14 32 Q22 24 30 32 Q38 40 46 32', 'ik', 2),                                // the swirl, centuries old
+]);
+
+/* built things — walls and water, not stone for its own sake */
+def('lanse_aux_meadows', () => [
+  horizon('lo', 46),
+  P('M12 46 L12 32 L30 20 L48 32 L48 46 Z', 'bs'),                               // a turf-roofed longhouse, not a stone one
+  P('M12 32 L30 20 L48 32 L48 36 L30 24 L12 36 Z', 'hi'),                        // the sod roof itself
+]);
+def('castle', () => [
+  P('M10 50 L10 24 L16 24 L16 18 L22 18 L22 24 L38 24 L38 18 L44 18 L44 24 L50 24 L50 50 Z', 'lo'),  // the curtain wall, crenellated
+  P('M22 50 L22 34 L30 26 L38 34 L38 50 Z', 'bs'),                               // the keep behind it
+  P('M28 50 L28 40 L32 40 L32 50 Z', 'ik'),                                      // the gate
+]);
+def('moat', () => [
+  ring('bs', 30, 32, 21, 7),                                                     // the water, a ring around
+  C(24, 30, 9, 'lo'),                                                            // the island it protects, off-center in the loop
+  S('M30 11 L30 21', 'ik', 3),                                                   // the causeway crossing it
+]);
+def('drawbridge', () => [
+  P('M4 40 L18 40 L18 50 L4 50 Z', 'lo'), P('M42 40 L56 40 L56 50 L42 50 Z', 'lo'),  // the two banks
+  P('M18 40 L48 24 L48 28 L18 44 Z', 'bs'),                                      // the plank, caught mid-raise
+  S('M46 26 L52 12', 'ik', 1.8), S('M42 28 L48 14', 'ik', 1.8),                  // the chains hauling it up
+]);
+def('colosseum', () => [
+  C(30, 32, 9, 'lo'),                                                            // the arena floor
+  ring('bs', 30, 32, 19, 9),                                                     // tiered arches, seen from above
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => ['g', a, 30, 32, [S('M30 12 L30 22', 'hi', 1.6)]]),
+]);
+def('great_wall', () => [
+  S('M6 44 Q18 30 30 36 Q42 42 54 24', 'lo', 5),                                 // the wall, following the ridge, not fighting it
+  ...[[16, 40], [30, 36], [44, 28]].map(([x, y]) => P(`M${x - 3} ${y - 6} L${x + 3} ${y - 6} L${x + 3} ${y} L${x - 3} ${y} Z`, 'bs')),  // watchtowers, spaced along it
+]);
+def('hydroelectric_dam', () => [
+  P('M8 48 L8 18 Q30 12 52 18 L52 48 Z', 'lo'),                                  // the wall
+  wave('bs', 18, 4, 20),                                                         // the reservoir, backed up behind it
+  S('M30 48 Q28 54 24 56', 'hi', 3),                                             // the release, generating as it falls
+]);
+def('ichthyosaur', () => [
+  P('M6 40 L54 40 L54 50 L6 50 Z', 'lo'),                                        // the slab it was split from
+  S('M14 34 Q30 30 46 34', 'ik', 2),                                             // the spine, curved like a fish's
+  ...[18, 24, 30, 36, 42].map(x => S(`M${x} 33 L${x - 2} 40`, 'gh', 1.4)),        // ribs
+  E(14, 32, 3, 5, 'bs'),                                                         // the eye socket, enormous for its skull
+  P('M6 30 L14 32 L6 34 Z', 'bs'),                                               // the long toothed snout
+]);
+
 
 /* mineral — batch additions: neutron_star already has straight static beams
    and nebula is already a soft cloud, so this run keeps clear of both —
@@ -5640,6 +6473,70 @@ def('radium_iodide',   () => [
   S('M14 16 Q8 12 10 6', 'gh', 1.4), S('M46 18 Q52 14 50 8', 'gh', 1.4), C(30, 52, 1.2, 'gh'),
 ]);
 
+/* mineral — chemistry batch: three phenols on paracetamol's own synthesis
+   route, the s-block oxides/hydrides/nitrides as the same scaled facet()
+   crystal the halides above already use (they are the same kind of ionic
+   solid), and the interhalogens as real ball-and-stick molecules. */
+
+/* nitrophenol → aminophenol → paracetamol: one ring, the same -OH throughout,
+   and the para group that changes at each step — nitro, then amine, then the
+   acetamide that makes it the drug. */
+def('nitrophenol', () => [
+  hex('ik', 30, 30, 12, 2.2),
+  S('M30 18 L30 9', 'ik', 2), C(30, 7, 4, CPK.O),
+  S('M30 41 L30 51', 'ik', 2), C(30, 53, 4.4, CPK.N),
+  ...double([30, 53], [21, 58], 'ik'), C(19, 59, 3.2, CPK.O),
+  ...double([30, 53], [39, 58], 'ik'), C(35, 59, 3.2, CPK.O),
+]);
+def('aminophenol', () => [
+  hex('ik', 30, 30, 12, 2.2),
+  S('M30 18 L30 9', 'ik', 2), C(30, 7, 4, CPK.O),
+  S('M30 41 L30 52', 'ik', 2), C(30, 54, 4.8, CPK.N),          // the nitro group, reduced to one plain amine
+]);
+def('paracetamol', () => [
+  hex('ik', 30, 30, 12, 2.2),
+  S('M30 18 L30 9', 'ik', 2), C(30, 7, 4, CPK.O),
+  S('M30 41 L30 49', 'ik', 2), C(30, 51, 4, CPK.N),
+  S('M30 51 L39 55', 'ik', 1.8), C(40, 56, 3.4, CPK.C),
+  ...double([40, 56], [48, 52], 'ik'), C(50, 50, 3, CPK.O),     // the acetamide carbonyl
+  S('M40 56 L34 60', 'ik', 1.6), C(32, 61, 2.8, CPK.C),         // its methyl cap
+]);
+
+/* the s-block oxides, hydrides and nitrides — every one an ionic lattice
+   like the halides above, so it keeps that family's facet() crystal, scaled
+   metal by metal down its own group, marked with the real colour of the ion
+   that sets it apart: oxide red, hydride white, nitride blue — one marker
+   per ion in the formula, so BeO gets one and Ca3N2 gets two. */
+def('beryllium_oxide',  () => [facet('bs', .5), facet('hi', .22), C(30, 8, 3.4, CPK.O)]);
+def('strontium_oxide',  () => [facet('bs', .97), facet('hi', .44), C(30, 53, 4, CPK.O)]);
+def('barium_oxide',     () => [facet('bs', 1.12), facet('hi', .5), C(50, 20, 4, CPK.O)]);
+def('caesium_superoxide', () => [                              // CsO2 — one O-O radical anion, not two plain oxides
+  facet('bs', 1.05), facet('hi', .48),
+  S('M24 10 L32 10', 'ik', 1.8), C(24, 10, 3, CPK.O), C(32, 10, 3, CPK.O),
+]);
+def('calcium_hydride',    () => [facet('bs', .8), facet('hi', .36), C(16, 20, 3, CPK.H), C(44, 44, 3, CPK.H)]);
+def('magnesium_hydride',  () => [facet('bs', .65), facet('hi', .3), C(18, 44, 2.8, CPK.H), C(42, 18, 2.8, CPK.H)]);
+def('strontium_hydride',  () => [facet('bs', .97), facet('hi', .44), C(14, 34, 3.2, CPK.H), C(46, 28, 3.2, CPK.H)]);
+def('barium_hydride',     () => [facet('bs', 1.12), facet('hi', .5), C(20, 10, 3.4, CPK.H), C(40, 52, 3.4, CPK.H)]);
+def('sodium_hydride',     () => [facet('bs', .85), facet('hi', .38), C(30, 10, 3.6, CPK.H)]);       // 1:1, so one marker
+def('potassium_hydride',  () => [facet('bs', 1), facet('hi', .46), C(10, 30, 3.6, CPK.H)]);
+def('rubidium_hydride',   () => [facet('bs', 1.08), facet('hi', .5), C(50, 30, 3.6, CPK.H)]);
+def('caesium_hydride',    () => [facet('bs', 1.15), facet('hi', .54), C(30, 50, 3.6, CPK.H)]);
+def('beryllium_nitride',  () => [facet('bs', .5), facet('hi', .22), C(20, 12, 2.8, CPK.N), C(40, 12, 2.8, CPK.N)]);
+def('calcium_nitride',    () => [facet('bs', .8), facet('hi', .36), C(18, 46, 3, CPK.N), C(42, 46, 3, CPK.N)]);
+def('strontium_nitride',  () => [facet('bs', .97), facet('hi', .44), C(12, 24, 3.2, CPK.N), C(48, 36, 3.2, CPK.N)]);
+def('barium_nitride',     () => [facet('bs', 1.12), facet('hi', .5), C(14, 42, 3.4, CPK.N), C(46, 18, 3.4, CPK.N)]);
+def('radium_nitride',     () => [facet('ik', 1.2), facet('lo', .55),                          // the reason it goes black in air
+  C(30, 10, 3.6, CPK.N), C(30, 50, 3.6, CPK.N)]);
+
+/* the interhalogens — real ball-and-stick molecules, CPK throughout */
+def('bromine_trifluoride', () => ballStick('Br', [['F', 0], ['F', 140], ['F', 250]]));
+def('iodine_pentafluoride', () => ballStick('I', [['F', 10], ['F', 82], ['F', 154], ['F', 226], ['F', 298]]));
+def('bromine_monochloride', () => [S('M16 24 L44 36', 'ik', 3), C(16, 24, 7, CPK.Br), C(44, 36, 6, CPK.Cl)]);
+def('iodine_monochloride',  () => [S('M14 36 L46 24', 'ik', 3), C(14, 36, 8, CPK.I), C(46, 24, 6, CPK.Cl)]);
+def('iodine_monobromide',   () => [S('M30 12 L30 48', 'ik', 3), C(30, 12, 8, CPK.I), C(30, 48, 7, CPK.Br)]);
+
+
 /* the oxides, peroxides and one very stubborn noble gas */
 def('xenon_tetrafluoride', () => ballStick('Xe', [['F', 0], ['F', 90], ['F', 180], ['F', 270]]));  // 1962: forced into a bond
 def('carbon_tetrafluoride',  () => ballStick('C', [['F', 45], ['F', 135], ['F', 225], ['F', 315]]));   // tetrahedral — even graphite burns this way
@@ -5855,6 +6752,333 @@ def('gas_mantle',        () => [                           // 99% thorium dioxid
 def('ferrocerium',       () => [                           // this, not flint, is what lights a modern lighter
   P('M24 10 L32 10 L30 46 L26 46 Z', 'bs'), S('M18 44 L34 40', 'ik', 3),
   ...[[34, 38], [38, 32], [30, 30], [40, 42]].map(([x, y]) => S(`M${x} ${y} L${x + 4} ${y - 6}`, 'hi', 1.4)),
+]);
+
+/* mineral — mine chain, infrastructure, geology and explosives batch ────
+ * Sixty-one land in `mineral` at once by tag, but they are not all the same
+ * kind of thing: a doré bar is a physical object, nitroglycerin is a
+ * molecule, a transform boundary is a process seen in cross-section. Each
+ * gets the drawing its own identity calls for — real bonds where it is a
+ * compound, the real physical form where it is a lump or a slab or a plate. */
+
+/* the mine chain — waste on one end, refined metal on the other, each stage
+   its own physical form so the ladder actually reads as a ladder */
+def('run_of_mine', () => [                                 // straight off the blast, unsorted, ore and waste together
+  P('M8 48 L52 48 L52 52 L8 52 Z', 'gh'),
+  P('M14 48 L20 32 L30 36 L26 48 Z', 'bs'), P('M28 48 L36 28 L46 34 L40 48 Z', 'lo'),
+  P('M20 48 L26 40 L32 46 L30 48 Z', 'hi'),
+]);
+def('waste_rock', () => [                                  // blasted the same as the ore beside it, marked off, going nowhere
+  facet('lo', .85), S('M18 20 L40 42 M40 20 L18 42', 'gh', 1.6),
+]);
+def('overburden', () => [                                  // the barren layer, always lifted off first
+  P('M8 40 L52 40 L52 52 L8 52 Z', 'lo'),
+  P('M8 12 L52 12 L52 24 L8 24 Z', 'hi'),
+  S('M30 27 L30 37', 'ik', 2.4), S('M25 32 L30 37 L35 32', 'ik', 2.4),
+]);
+def('bench', () => [                                       // an open pit, worked one stepped terrace at a time
+  P('M6 52 L6 42 L18 42 L18 32 L30 32 L30 22 L42 22 L42 12 L54 12 L54 52 Z', 'lo'),
+  ...[42, 32, 22, 12].map((y, i) => S(`M${6 + i * 12} ${y} L${18 + i * 12} ${y}`, 'hi', 2)),
+]);
+def('waste_dump', () => [                                  // an engineered pile, raised lift over lift, not just dumped
+  ...[0, 1, 2, 3].map(i =>
+    P(`M${10 + i * 4} ${48 - i * 10} L${50 - i * 4} ${48 - i * 10} L${46 - i * 4} ${40 - i * 10} L${14 + i * 4} ${40 - i * 10} Z`,
+      i % 2 ? 'hi' : 'lo')),
+]);
+def('concentrate', () => [                                 // what's left once nearly all the worthless rock is gone
+  P('M14 20 L46 20 L44 48 L16 48 Z', 'bs'),
+  ...granules('hi', 16, 67, [18, 24, 42, 46]),
+]);
+def('tailings', () => [                                    // the roughly 99% flotation doesn't want, pumped out as slurry
+  P('M8 30 L52 30 L52 48 L8 48 Z', 'gh'),
+  wave('lo', 34, 3, 20),
+  ...granules('bs', 12, 41, [10, 38, 50, 47]),
+]);
+def('tailings_dam', () => [                                // raised in stages, built to hold its contents forever
+  P('M6 52 L6 26 L20 14 L20 52 Z', 'ik'),
+  P('M20 30 L54 30 L54 52 L20 52 Z', 'bs'),
+  S('M24 34 Q34 30 44 34 Q50 36 54 34', 'hi', 1.6),
+]);
+def('matte', () => [                                       // 30-70% copper, iron sulfide still mixed through it
+  E(30, 36, 18, 8, 'lo'), E(24, 34, 5, 2, 'hi'),
+  ...granules('bs', 6, 29, [16, 34, 44, 40]),
+]);
+def('blister_copper', () => [                               // 98% pure, pitted by the sulfur dioxide escaping as it cools
+  C(30, 30, 17, 'bs'),
+  ...[[22, 22], [38, 24], [26, 38], [40, 36], [30, 20]].map(([x, y]) => C(x, y, 2.2, 'gh')),
+]);
+def('dore', () => [                                         // at least 70% gold and silver, poured on-site, not yet refined
+  ...ingot('hi', 18, 10, 6), C(30, 29, 3, 'lo'), S('M22 24 Q30 20 38 24', 'gh', 1.4),
+]);
+def('copper_cathode', () => [                                // 99.99% pure, the actual traded commodity form
+  P('M16 12 L44 12 L44 18 L16 18 Z', 'ik'),
+  P('M20 18 L40 18 L40 50 L20 50 Z', 'bs'),
+  C(20, 12, 2, 'gh'), C(44, 12, 2, 'gh'),
+]);
+def('port_stockpile', () => [                                // built far bigger than the mine ever needed, one grade blended
+  P('M4 48 L16 30 L44 30 L56 48 Z', 'lo'),
+  S('M16 30 L44 30', 'hi', 2),
+  S('M30 14 L30 30', 'ik', 3), S('M14 14 L46 14', 'ik', 3),
+]);
+def('mine_infrastructure', () => [                           // a power plant, ponds and a camp, built before any ore moves
+  P('M6 32 L16 32 L16 46 L6 46 Z', 'bs'),
+  P('M20 26 L32 26 L32 46 L20 46 Z', 'hi'),
+  S('M26 26 L26 18', 'ik', 2), C(26, 16, 2, 'gh'),
+  P('M36 40 Q44 34 52 40 Q44 46 36 40 Z', 'lo'),
+]);
+def('haul_road', () => [                                    // built to the truck fleet's own weight and turning circle
+  P('M10 52 L20 14 L40 14 L50 52 Z', 'gh'),
+  S('M10 52 L20 14', 'ik', 3), S('M50 52 L40 14', 'ik', 3),
+  S('M24 40 L36 40 M25 28 L35 28 M26 18 L34 18', 'lo', 1.6),
+]);
+
+/* rail, laid down the ore travels on — three parts, three different shapes */
+def('rail', () => [                                         // hot-rolled steel, the I-beam profile in cross-section
+  P('M20 12 L40 12 L40 18 L32 22 L32 42 L38 46 L38 52 L22 52 L22 46 L28 42 L28 22 L20 18 Z', 'bs'),
+  S('M20 12 L40 12', 'hi', 2),
+]);
+def('sleeper', () => [                                      // the crosstie that holds the gauge
+  P('M6 26 L54 26 L54 38 L6 38 Z', 'lo'),
+  P('M16 22 L26 22 L26 26 L16 26 Z', 'hi'), P('M34 22 L44 22 L44 26 L34 26 Z', 'hi'),
+]);
+def('ballast', () => [                                      // sharp, angular, interlocking so the sleepers can't creep
+  ...[[14, 40, 'lo'], [26, 44, 'bs'], [38, 40, 'hi'], [46, 46, 'lo'], [20, 48, 'bs'], [34, 48, 'hi']]
+    .map(([x, y, r]) => P(`M${x - 5} ${y} L${x - 1} ${y - 6} L${x + 5} ${y - 3} L${x + 3} ${y + 4} L${x - 3} ${y + 5} Z`, r)),
+]);
+
+/* what's built once ore becomes revenue */
+def('reinforced_concrete', () => [                          // steel rebar gives concrete the tensile strength it lacks alone
+  P('M10 14 L50 14 L50 46 L10 46 Z', 'bs'),
+  S('M18 14 L18 46 M42 14 L42 46', 'ik', 2.2),
+  S('M10 24 L50 24 M10 36 L50 36', 'ik', 2.2),
+]);
+def('curtain_wall', () => [                                 // non-structural glass skin, carrying only its own weight
+  ...[0, 1, 2].flatMap(row => [0, 1].map(col =>
+    P(`M${14 + col * 20} ${12 + row * 12} L${30 + col * 20} ${12 + row * 12} L${30 + col * 20} ${22 + row * 12} L${14 + col * 20} ${22 + row * 12} Z`,
+      row % 2 ? 'hi' : 'gh'))),
+]);
+def('skyscraper', () => [                                   // a steel-and-concrete core takes the load, stepped as it rises
+  P('M14 52 L14 24 L24 24 L24 10 L36 10 L36 24 L46 24 L46 52 Z', 'lo'),
+  S('M14 52 L46 52', 'ik', 2),
+  ...[18, 30, 42].map(x => S(`M${x} 52 L${x} 24`, 'hi', 1.2)),
+]);
+def('runway', () => [                                       // long enough to reach flying speed, numbered for its heading
+  P('M10 20 L50 20 L50 44 L10 44 Z', 'lo'),
+  S('M30 20 L30 44', 'hi', 2),
+  P('M14 24 L20 24 L17 32 Z', 'gh'), P('M40 24 L46 24 L43 32 Z', 'gh'),
+]);
+def('hangar', () => [                                       // a clear span wide enough for a whole wingspan
+  P('M8 46 Q8 16 30 14 Q52 16 52 46 Z', 'bs'),
+  P('M22 30 L38 30 L38 46 L22 46 Z', 'gh'),
+]);
+def('taxiway', () => [                                      // paved like the runway, but where aircraft move under their own power
+  P('M10 50 Q10 24 34 18 L44 10 L48 16 L38 24 Q22 30 22 50 Z', 'gh'),
+  S('M12 48 Q14 26 34 21 L42 14', 'hi', 1.6),
+]);
+def('control_tower', () => [                                // a glass cab high enough to see the whole field
+  P('M26 20 L34 20 L34 50 L26 50 Z', 'lo'),
+  P('M14 8 L46 8 L44 20 L16 20 Z', 'gh'),
+  C(30, 4, 2, 'hi'),
+]);
+
+/* plate tectonics — one continuous process, drawn as the six moments of it */
+def('tectonic_plate', () => [                                // Earth's brittle outer shell, broken into semirigid slabs
+  P('M6 30 L54 30 L54 40 L6 40 Z', 'lo'),
+  wave('hi', 52, 4, 26),
+  ...granules('bs', 4, 19, [10, 32, 50, 38]),
+]);
+def('divergent_boundary', () => [                             // two plates pull apart, magma rises to freeze into new crust
+  P('M4 20 L26 20 L22 44 L4 44 Z', 'lo'), P('M56 20 L34 20 L38 44 L56 44 Z', 'lo'),
+  P('M26 44 L30 20 L34 44 Z', 'bs'),
+  S('M14 12 L20 18', 'ik', 1.6), S('M46 12 L40 18', 'ik', 1.6),
+]);
+def('convergent_boundary', () => [                            // one plate dives beneath the other, or both crumple up
+  P('M4 24 L30 30 L30 40 L4 36 Z', 'lo'),
+  P('M56 16 L30 30 L30 48 L56 54 Z', 'bs'),
+  P('M22 8 L34 8 L30 22 Z', 'hi'),
+]);
+def('transform_boundary', () => [                             // two plates grind sideways past each other along a fault
+  P('M4 22 L56 22 L56 30 L4 30 Z', 'lo'), P('M4 32 L56 32 L56 40 L4 40 Z', 'bs'),
+  S('M14 22 L10 14', 'ik', 2), S('M46 40 L50 48', 'ik', 2),
+]);
+def('earthquake', () => [                                     // strain built along a locked fault, suddenly released
+  S('M10 50 L26 30 L34 34 L50 10', 'ik', 2.4),
+  ...[8, 14, 20].map(rad => ring('gh', 30, 32, rad, 1.2)),
+]);
+def('mid_ocean_ridge', () => [                                 // a continuous seam of brand-new seafloor along the rift
+  P('M4 40 L26 40 L30 30 L34 40 L56 40 L56 50 L4 50 Z', 'lo'),
+  ...[[18, 45], [42, 45]].map(([x, y]) => P(`M${x - 6} ${y} L${x} ${y - 8} L${x + 6} ${y} Z`, 'bs')),
+  wave('hi', 20, 4, 20),
+]);
+def('island', () => [                                          // land walled in by water on every side
+  wave('bs', 46, 4, 26),
+  P('M20 46 L30 24 L40 46 Z', 'hi'),
+  C(30, 30, 2, 'gh'),
+]);
+
+/* fossils — the trace left, and the trace that bridges two groups */
+def('fossil', () => [                                          // minerals slowly replace the original shell
+  P('M8 12 L52 12 L52 48 L8 48 Z', 'gh'),
+  S('M30 40 Q42 38 40 26 Q38 16 28 18 Q20 20 22 28 Q24 34 30 32', 'ik', 2),
+]);
+def('transitional_fossil', () => [                              // carrying features of both the ancestral and descendant form
+  P('M8 14 L52 14 L52 46 L8 46 Z', 'gh'),
+  S('M14 30 L30 26 L46 20', 'ik', 2.2),
+  ...[18, 24, 30, 36, 42].map((x, i) => S(`M${x} ${29 - i * 2} L${x + 2} ${34 - i * 2}`, i < 2 ? 'lo' : 'hi', 1.6)),
+]);
+
+/* two seaweeds, told apart by the one feature each is known for */
+def('bladder_wrack', () => [                                    // kept afloat by paired air bladders along the fronds
+  S('M30 54 Q26 40 30 28 Q34 16 30 6', 'bs', 2.6),
+  ...[[24, 42], [36, 40], [23, 26], [37, 24], [25, 12]].map(([x, y]) => C(x, y, 3, 'hi')),
+]);
+def('sea_lettuce', () => [                                      // only two cells thick — a thin, ruffled, translucent sheet
+  P('M14 50 Q10 30 20 14 Q30 4 40 14 Q50 30 46 50 Q30 58 14 50 Z', 'gh'),
+  S('M20 44 Q26 30 20 18', 'hi', 1.2), S('M40 44 Q34 30 40 18', 'hi', 1.2),
+]);
+
+def('gallium', () => [                                          // solid and brittle at room temperature — barely
+  P('M16 40 L20 20 L36 14 L46 26 L42 44 L26 50 Z', 'bs'),
+  E(38, 50, 5, 3, 'lo'),                                          // melts in your palm the instant it warms
+]);
+
+def('petroleum', () => [                                        // marine algae, cooked for millions of years under rock
+  P('M6 20 L54 20 L54 30 L6 30 Z', 'gh'),
+  P('M6 30 L54 30 L54 48 L6 48 Z', 'lo'),
+  E(30, 40, 20, 7, 'bs'),
+]);
+
+def('fullerene', () => [                                        // sixty carbon atoms closed into a soccer-ball cage
+  C(30, 30, 18, 'gh'),
+  ...[0, 72, 144, 216, 288].map(a =>
+    S(`M${n2(30 + 18 * Math.cos(a * Math.PI / 180))} ${n2(30 + 18 * Math.sin(a * Math.PI / 180))} L${n2(30 + 18 * Math.cos((a + 72) * Math.PI / 180))} ${n2(30 + 18 * Math.sin((a + 72) * Math.PI / 180))}`, 'ik', 1.6)),
+  ...[36, 108, 180, 252, 324].map(a => C(n2(30 + 10 * Math.cos(a * Math.PI / 180)), n2(30 + 10 * Math.sin(a * Math.PI / 180)), 2, 'bs')),
+]);
+def('nanotube', () => [                                         // a sheet of graphite's own lattice, rolled seamless
+  P('M16 8 L44 8 L44 52 L16 52 Z', 'gh'),
+  ...[0, 1, 2, 3, 4].map(i => S(`M16 ${12 + i * 9} L44 ${12 + i * 9}`, 'lo', 1)),
+  ...[0, 1, 2, 3].map(i => S(`M${20 + i * 8} 8 L${20 + i * 8} 52`, 'ik', 1.2)),
+]);
+
+/* the crystal habit IS the mineral: a hexagonal host, two garnet builds */
+def('bastnasite', () => [                                        // almost all of Mountain Pass's rare earths ride in this one
+  hex('bs', 30, 30, 16, 2.4), C(30, 30, 4, 'hi'),
+  ...granules('lo', 5, 173, [20, 20, 40, 26]),
+]);
+def('pyrope', () => [                                             // carried up from the mantle in basalt and kimberlite
+  P('M30 8 L44 20 L44 40 L30 52 L16 40 L16 20 Z', 'bs'),
+  P('M30 8 L44 20 L30 30 L16 20 Z', 'hi'),
+  S('M16 20 L44 20 M16 40 L44 40 M30 30 L30 52', 'ground', 1.2),
+]);
+def('spessartine', () => [                                        // the orange member, grown in granite pegmatite
+  P('M8 40 L20 20 L42 16 L52 38 L44 52 L16 52 Z', 'gh'),
+  P('M30 22 L40 30 L36 44 L24 44 L20 30 Z', 'bs'),
+  C(30, 33, 3, 'hi'),
+]);
+
+/* the antimatter twins — mirrored against the proton/neutron/electron already
+   drawn: a ring instead of a filled disc, a plus instead of a minus */
+def('positron', () => [                                          // the electron's twin: same mass, opposite charge
+  C(30, 30, 6, 'hi'), S('M24 30 L36 30 M30 24 L30 36', 'ik', 2.2),
+]);
+def('antiproton', () => [                                        // same mass as a proton, opposite charge — hollow, not solid
+  ring('bs', 30, 32, 15, 3), S('M23 32 L37 32', 'ik', 3),
+]);
+def('antihydrogen', () => [                                      // a positron bound to an antiproton — a whole antimatter atom
+  ring('lo', 30, 32, 9, 3), S('M25 32 L35 32', 'ik', 2.4),
+  ring('gh', 30, 32, 20, 1.4), C(46, 32, 4, 'hi'), S('M43 32 L49 32 M46 29 L46 35', 'ik', 1.4),
+]);
+
+/* nitrogen chemistry mined, refined and turned into an explosive — each
+   stage its own real structure or its own real physical form */
+def('nitric_acid', () => [                                        // the Ostwald process: ammonia burned over hot platinum
+  S('M30 32 L30 16 M30 32 L14 42 M30 32 L46 42', 'ik', 2.2),
+  ...double([30, 32], [30, 16], 'ik'),
+  C(30, 32, 7, CPK.N), C(30, 16, 5, CPK.O), C(14, 42, 5, CPK.O), C(46, 42, 5, CPK.O),
+  S('M46 42 L52 50', 'ik', 1.8), C(52, 50, 3.4, CPK.H),
+]);
+def('ammonium_nitrate', () => [                                   // an oxidiser that accelerates almost anything else that burns
+  C(14, 30, 6, CPK.N),
+  ...[[6, 20], [22, 20], [6, 40], [22, 40]].map(([x, y]) => [S(`M14 30 L${x} ${y}`, 'ik', 1.8), C(x, y, 3, CPK.H)]).flat(),
+  C(46, 30, 6, CPK.N),
+  ...[[46, 16], [34, 42], [58, 42]].map(([x, y]) => [S(`M46 30 L${x} ${y}`, 'ik', 1.8), C(x, y, 4, CPK.O)]).flat(),
+]);
+def('anfo', () => [                                                // 94% ammonium nitrate prills, soaked in 6% fuel oil
+  ...granules('lo', 14, 53, [10, 24, 50, 46]),
+  E(30, 46, 16, 5, 'bs'), S('M20 44 Q30 40 40 44', 'hi', 1.4),
+]);
+def('cyanide', () => [                                             // one carbon triple-bonded to one nitrogen, CN⁻
+  C(20, 32, 7, CPK.C), C(40, 32, 6.4, CPK.N),
+  ...[-3, 0, 3].map(dy => S(`M27 ${32 + dy} L33 ${32 + dy}`, 'ik', 1.6)),
+  S('M12 26 L12 30', 'gh', 1.8),
+]);
+def('potassium_nitrate', () => [                                   // washed through ash, the nitrate crystallises into needles
+  ...[-60, -20, 20, 60].map(a =>
+    S(`M30 40 L${n2(30 + 22 * Math.sin(a * Math.PI / 180))} ${n2(40 - 22 * Math.cos(a * Math.PI / 180))}`, a % 40 ? 'hi' : 'bs', 2.2)),
+  C(30, 40, 3, 'lo'),
+]);
+def('glycerol', () => {                                            // propane-1,2,3-triol: three carbons, an OH on each
+  const { pts, shape } = backbone('ik', 2, 30, 34);
+  return [shape, ...pts.map(p => C(p[0], p[1], 4, CPK.C)),
+    ...pts.map(p => [S(`M${p[0]} ${p[1]} L${p[0]} ${p[1] - 12}`, 'ik', 1.8), C(p[0], p[1] - 12, 3.6, CPK.O)]).flat()];
+});
+def('toluene', () => [                                             // methylbenzene: the one substituent that isn't benzene
+  hex('ik', 30, 32, 14, 2.2),
+  S('M30 18 L30 8', 'ik', 2), C(30, 8, 4, CPK.C),
+]);
+def('tnt', () => [                                                  // 2,4,6-trinitrotoluene: the methyl, and three nitro groups
+  hex('ik', 30, 32, 13, 2.2),
+  S('M30 19 L30 10', 'ik', 1.8), C(30, 10, 3.4, CPK.C),
+  S('M18 26 L10 22', 'ik', 1.6), C(10, 22, 3.2, CPK.N), C(6, 17, 2.2, CPK.O), C(4, 25, 2.2, CPK.O),
+  S('M42 26 L50 22', 'ik', 1.6), C(50, 22, 3.2, CPK.N), C(54, 17, 2.2, CPK.O), C(56, 25, 2.2, CPK.O),
+  S('M30 45 L30 54', 'ik', 1.6), C(30, 54, 3.2, CPK.N), C(25, 58, 2.2, CPK.O), C(35, 58, 2.2, CPK.O),
+]);
+def('gunpowder', () => [                                            // 75% saltpetre, 15% charcoal, 10% sulfur
+  mound('gh', 47, 20, 15),
+  ...granules('bs', 12, 71, [12, 32, 48, 47]),
+  ...granules('lo', 4, 29, [14, 36, 46, 48]),
+  ...granules('hi', 3, 13, [16, 38, 44, 47]),
+]);
+def('dynamite', () => [                                             // nitroglycerin soaked into kieselguhr, stable enough to ship
+  P('M18 16 L42 16 L42 44 L18 44 Z', 'bs'),
+  P('M14 16 L18 16 L18 44 L14 44 Z', 'lo'), P('M42 16 L46 16 L46 44 L42 44 Z', 'lo'),
+  S('M30 16 L30 6', 'ik', 2), C(30, 4, 2, 'hi'),
+]);
+def('nitroglycerin', () => {                                       // glycerol's backbone, each OH extended to an -O-NO2 ester
+  const { pts, shape } = backbone('ik', 2, 30, 40);
+  const arm = p => {
+    const ox = p[0], oy = p[1] - 9, nx = ox, ny = oy - 7;
+    return [S(`M${p[0]} ${p[1]} L${ox} ${oy}`, 'ik', 1.6), C(ox, oy, 3, CPK.O),
+      S(`M${ox} ${oy} L${nx} ${ny}`, 'ik', 1.6), C(nx, ny, 3.2, CPK.N), C(n2(nx + 4), n2(ny - 1), 2.2, CPK.O)];
+  };
+  return [shape, ...pts.map(p => C(p[0], p[1], 4, CPK.C)), ...pts.map(arm).flat()];
+});
+def('alum', () => [                                                 // a double sulfate of aluminium, the dye trade's mordant
+  P('M30 8 L48 24 L30 40 L12 24 Z', 'hi'),
+  P('M30 40 L48 24 L48 26 L30 52 Z', 'lo'), P('M30 40 L12 24 L12 26 L30 52 Z', 'lo'),
+  S('M12 24 L48 24', 'ik', 1.2),
+]);
+def('fdg', () => {                                                  // ordinary glucose, one hydroxyl swapped for fluorine-18
+  const p = [];
+  for (let i = 0; i < 6; i++) { const a = Math.PI / 6 + (i * Math.PI) / 3; p.push([n(30 + 15 * Math.cos(a)), n(32 + 13 * Math.sin(a))]); }
+  return [
+    S('M' + p.map(q => q.join(' ')).join(' L') + ' Z', 'ik', 2.2),
+    C(p[1][0], p[1][1], 4.2, CPK.O),
+    C(p[0][0], p[0][1], 3.4, CPK.F),
+    ...[2, 3, 4].map(i => C(p[i][0], p[i][1], 3.4, CPK.O)),
+    S(`M${p[5][0]} ${p[5][1]} L${p[5][0]} ${n(p[5][1] - 10)}`, 'ik', 2),
+    C(p[5][0], n(p[5][1] - 10), 3.4, CPK.O),
+  ];
+});
+
+def('wind_shear', () => [                                           // wind changing speed or direction with height
+  S('M10 14 L38 14', 'ik', 2.4), P('M38 14 L32 10 L32 18 Z', 'ik'),
+  S('M14 30 L46 30', 'ik', 2.4), P('M46 30 L40 26 L40 34 Z', 'ik'),
+  S('M18 46 L36 40', 'ik', 2.4), P('M36 40 L30 39 L33 46 Z', 'ik'),
+]);
+def('tornado', () => [                                              // a mesocyclone, stretched and tightened until it touches down
+  P('M14 8 L46 8 L34 30 L38 44 L30 56 L26 44 L28 30 Z', 'gh'),
+  ...[14, 22, 30].map(y => S(`M${n2(18 - (y - 8) * 0.1)} ${y} Q30 ${y - 3} ${n2(42 + (y - 8) * 0.1)} ${y}`, 'hi', 1.4)),
 ]);
 
 
@@ -7781,6 +9005,46 @@ def('stevia', () => [
     S(`M${x} ${y - 5} L${x} ${y + 5}`, 'ik', .8)),
 ]);
 
+/* grain — mushroom batch additions, each on its own real trait ──────────
+ * chanterelle is a funnel with radiating false ridges, not shiitake's flat
+ * flecked dome or maitake's rosette; porcini is a bulbous thick stem under
+ * a domed cap with pores (dots), not gills; morel is a honeycomb-pitted
+ * cap on a plain stem; puffball has no stem or cap division at all, just a
+ * sphere with spores mid-eject; truffle is drawn cut open, underground,
+ * showing the marbled interior (the "everything cooked is drawn open"
+ * rule extended to "everything found underground"); shaggy_mane is a tall
+ * cylinder, shaggy at the edges, dissolving into ink drips at the base.
+ */
+def('chanterelle', () => [
+  P('M16 26 Q30 12 44 26 Q40 44 30 54 Q20 44 16 26 Z', 'bs'),
+  ...[24, 30, 36].map(x => S(`M${x} 28 L${x} 48`, 'lo', 1)),
+]);
+def('porcini', () => [
+  P('M18 30 Q18 16 30 14 Q42 16 42 30 Z', 'bs'),
+  P('M22 30 L20 54 Q30 58 40 54 L38 30 Z', 'hi'),
+  ...granules('lo', 8, 111, [22, 30, 38, 34]),
+]);
+def('morel', () => [
+  E(30, 24, 12, 14, 'bs'),
+  P('M26 38 L34 38 L33 54 L27 54 Z', 'hi'),
+  ...[[24, 16], [30, 14], [36, 18], [24, 26], [36, 28], [30, 32]].map(([x, y]) =>
+    S(`M${x - 3} ${y} L${x + 3} ${y + 4} M${x + 3} ${y} L${x - 3} ${y + 4}`, 'ik', .8)),
+]);
+def('puffball', () => [
+  C(30, 38, 15, 'bs'),
+  ...[[20, 18], [26, 10], [34, 10], [40, 18], [30, 6]].map(([x, y]) => C(x, y, 1.4, 'gh')),
+]);
+def('truffle', () => [
+  E(30, 32, 17, 14, 'lo'),
+  cutFace('hi', 32, 15, 11),
+  S('M18 28 Q24 32 20 38 M34 26 Q40 30 38 36 M26 24 Q30 30 26 36', 'gh', 1),
+]);
+def('shaggy_mane', () => [
+  P('M22 12 Q18 30 22 48 Q30 52 38 48 Q42 30 38 12 Q30 8 22 12 Z', 'hi'),
+  ...[24, 30, 36].map(x => S(`M${x} 44 L${x - 1} 56`, 'ik', 1.6)),
+  S('M22 20 L18 18 M38 20 L42 18 M22 30 L17 30', 'gh', 1),
+]);
+
 /* plant — simple crop silhouettes, one recognisable trait each ───────────
  * horsetail is a thin CLUMP of jointed stems (a stand, the way it actually
  * grows), no thick filled block like sugarcane's single cane; aloe_vera is
@@ -8662,6 +9926,90 @@ def('tuna', () => [                                            // torpedo body, 
   C(14, 30, 1.6, 'ik'),
 ]);
 
+/* grain — freshwater/saltwater fish batch, each on the trait that actually
+ * IDs the species, distinct from salmon's leaping arc and tuna's plain
+ * torpedo: cod carries a chin barbel and three dorsal fins; herring is
+ * slim with a deeply forked tail and a belly scute ridge; rainbow_trout
+ * is spotted with an adipose fin ahead of the tail; northern_pike has a
+ * flat duck-bill snout and its dorsal set far back; common_carp has two
+ * mouth barbels, one long dorsal, and big scales; wels_catfish is a long
+ * scaleless body fringed with six whisker barbels; swordfish carries the
+ * flat sword itself; marlin carries a round spear and a tall sail dorsal;
+ * european_plaice lies flat with both eyes migrated to one side; bass has
+ * a mouth reaching past the eye; nile_perch has a big eye and a spiny
+ * dorsal ─────────────────────────────────────────────────────────────── */
+def('atlantic_cod', () => [
+  E(26, 32, 18, 9, 'bs'),
+  ...[[14, 22], [24, 20], [34, 21]].map(([x, y]) => P(`M${x} ${y} L${x - 3} 14 L${x + 3} ${y} Z`, 'lo')),
+  P('M44 32 L54 26 L54 38 Z', 'hi'),
+  S('M14 38 L14 44', 'ik', 1.6),                                // the chin barbel
+  C(10, 30, 1.6, 'ik'),
+]);
+def('atlantic_herring', () => [
+  E(26, 32, 16, 6, 'hi'),
+  P('M42 32 L52 24 L46 32 L52 40 Z', 'bs'),                     // deeply forked tail
+  P('M22 26 L26 18 L30 26 Z', 'lo'),
+  S('M12 38 L40 38', 'gh', 1),                                  // the belly scute ridge
+  C(12, 31, 1.4, 'ik'),
+]);
+def('rainbow_trout', () => [
+  E(26, 32, 17, 8, 'bs'),
+  P('M42 32 L52 26 L52 38 Z', 'lo'),
+  C(40, 24, 1.6, 'hi'),                                         // the adipose fin, ahead of the tail
+  ...granules('ik', 8, 71, [16, 24, 40, 38]),
+  C(10, 30, 1.4, 'ik'),
+]);
+def('northern_pike', () => [
+  E(28, 32, 22, 6, 'lo'),
+  P('M4 30 L14 27 L14 37 L4 34 Z', 'bs'),                       // the flat duck-bill snout
+  P('M40 24 L48 20 L48 28 Z', 'hi'),                            // dorsal set far back, near the tail
+  P('M50 32 L58 27 L58 37 Z', 'bs'),
+  C(12, 30, 1.4, 'ik'),
+]);
+def('common_carp', () => [
+  E(28, 32, 18, 10, 'hi'),
+  P('M18 22 L40 20 L38 26 L20 27 Z', 'bs'),                     // one long dorsal fin
+  S('M10 34 L6 38 M10 36 L6 40', 'lo', 1.4),                    // two barbels at the mouth
+  ...[[20, 28], [28, 30], [36, 28]].map(([x, y]) => S(`M${x - 3} ${y} A4 4 0 0 1 ${x + 3} ${y}`, 'gh', 1)),
+  C(12, 32, 1.6, 'ik'),
+]);
+def('wels_catfish', () => [
+  P('M6 26 Q6 18 16 18 L46 22 Q54 26 46 30 L16 34 Q6 34 6 26 Z', 'lo'),
+  S('M8 22 Q2 18 2 14 M8 26 Q2 26 2 24 M8 30 Q2 32 2 36', 'hi', 1.2),
+  S('M14 20 Q10 14 8 10 M14 22 Q8 20 4 22', 'gh', 1),
+  C(14, 24, 1.6, 'ik'),
+]);
+def('swordfish', () => [
+  E(30, 32, 12, 6, 'lo'),
+  P('M18 32 L2 31 L2 33 Z', 'bs'),                              // the long flat sword bill
+  P('M42 26 L54 18 L44 32 L54 46 L42 38 Z', 'hi'),
+]);
+def('marlin', () => [
+  E(30, 34, 13, 6, 'bs'),
+  S('M18 34 L2 33', 'lo', 2),                                   // the round spear bill
+  P('M26 28 L32 8 L40 28 Z', 'hi'),                             // the tall sail dorsal
+  P('M42 30 L54 24 L46 34 L54 44 L42 38 Z', 'lo'),
+  S('M20 30 L36 30 M20 38 L36 38', 'gh', 1),
+]);
+def('european_plaice', () => [
+  round('bs', 32, 20, 13),
+  C(24, 24, 2, 'ik'), C(30, 22, 2, 'ik'),                       // both eyes, migrated to one side
+  ...granules('hi', 6, 91, [18, 26, 42, 38]),
+]);
+def('largemouth_bass', () => [
+  E(30, 32, 17, 11, 'hi'),
+  P('M13 30 L28 26 L28 36 L13 34 Z', 'lo'),                     // the mouth, reaching past the eye
+  C(24, 28, 1.6, 'ik'),
+  S('M18 32 Q26 32 34 32 Q42 32 46 32', 'gh', 2),
+  P('M46 26 L54 22 L54 40 L46 38 Z', 'bs'),
+]);
+def('nile_perch', () => [
+  E(28, 32, 19, 11, 'lo'),
+  C(16, 28, 3, 'hi'),                                           // the big eye
+  ...[20, 25, 30, 35].map(x => S(`M${x} 22 L${x} 14`, 'bs', 1.6)),  // the spiny dorsal
+  P('M44 28 L54 22 L54 42 L44 36 Z', 'hi'),
+]);
+
 /* food100 batch 8 — prepared dishes ─────────────────────────────────────── */
 def('guacamole', () => [                                       // the mound, and a chip stuck in
   round('lo', 40, 20, 9),
@@ -8843,6 +10191,328 @@ def('pneumatophore', () => [                                    // snorkels stan
   wave('lo', 46, 4, 24),
   ...[-14, -5, 5, 14].map(dx => S(`M${30 + dx} 50 L${30 + dx * .7} 14`, 'bs', 3)),
   ...[-14, -5, 5, 14].map(dx => C(30 + dx * .7, 28, 1.4, 'gh')),  // the lenticels along each one
+]);
+
+/* plant — psychoactive/medicinal, ancient lineages, tree anatomy, named
+   trees, and tropical fruit additions ───────────────────────────────────
+ * Four items here (nicotine, morphine, mescaline, artemisinin) are drawn as
+ * molecules, same call as salicin/digoxin/gibberellin/salicylic_acid before
+ * them — their fact lines are entirely about structure, not morphology, so
+ * drawing them as leaves would be a lie the art tells about the data. The
+ * cactus trio stays apart on purpose: `cactus` is paired columns with
+ * needles, peyote is a flattened spineless button with faint tufts instead,
+ * san_pedro is one tall fluted column topped with a flower. rootstock/scion
+ * both split off from `graft`'s two-tone trunk, but rootstock is all root
+ * fan and a bare stub (nothing grafted on yet), scion is all cutting and
+ * leaves (a short stub below, no root fan at all). cambium/sapwood/heartwood
+ * each get a different metaphor rather than three recolored rings: cambium
+ * is the vertical stem-axis view (matching stem/node/internode above it),
+ * sapwood is a true top-down cross-section, heartwood is a cut log end.
+ */
+def('tobacco', () => [                                          // Nicotiana: big basal leaves, small flower spike
+  S('M30 54 L30 12', 'lo', 3),
+  E(16, 44, 11, 6, 'bs'), E(44, 44, 11, 6, 'bs'),
+  E(20, 30, 8, 4.5, 'hi'), E(40, 30, 8, 4.5, 'hi'),
+  ...[[24, 14], [30, 10], [36, 14]].map(([x, y]) => C(x, y, 3, 'fire-bs')),
+]);
+def('nicotine', () => [                                          // the pyridine ring fused to a small pyrrolidine
+  hex('ik', 20, 30, 9, 2),
+  C(11, 30, 2.6, CPK.N),
+  S('M29 30 L40 26', 'ik', 2),
+  ring('bs', 46, 24, 6, 2.2),
+  C(46, 18, 2.2, CPK.N),
+]);
+def('opium_poppy', () => [                                       // the unripe pod, lanced, oozing latex
+  S('M30 54 L30 26', 'lo', 3),
+  E(30, 20, 10, 13, 'bs'),
+  S('M24 20 L36 20', 'ik', 1.6),
+  E(29, 26, 2.2, 3.4, 'hi'),
+  C(20, 8, 4, 'gh'), C(40, 8, 4, 'gh'),
+]);
+def('morphine', () => [                                          // two fused rings, two free hydroxyls
+  hex('ik', 18, 24, 9, 2),
+  hex('ik', 38, 36, 9, 2),
+  S('M26 20 L32 22', 'ik', 1.8), S('M26 28 L32 34', 'ik', 1.8),
+  C(9, 24, 2.6, CPK.O), C(47, 36, 2.6, CPK.O),
+]);
+def('peyote', () => [                                            // spineless, flattened, ribbed — the one cactus with no needles
+  E(30, 38, 22, 12, 'bs'),
+  ...[14, 22, 30, 38, 46].map(x => S(`M${x} 30 Q${x} 38 ${x} 46`, 'lo', 1.4)),
+  ...[[14, 30], [22, 28], [30, 27], [38, 28], [46, 30]].map(([x, y]) => C(x, y, 1.6, 'gh')),
+]);
+def('san_pedro_cactus', () => [                                  // one tall fluted column, flowering at the crown
+  P('M20 54 L20 16 Q30 8 40 16 L40 54 Z', 'bs'),
+  ...[24, 30, 36].map(x => S(`M${x} 14 L${x} 54`, 'lo', 1.6)),
+  ...[0, 72, 144, 216, 288].map(a => E(n(30 + 7 * Math.cos(a * Math.PI / 180)), n(10 + 7 * Math.sin(a * Math.PI / 180)), 3, 3, 'hi')),
+]);
+def('mescaline', () => [                                         // a benzene ring with three methoxy oxygens and an amine tail
+  hex('ik', 22, 30, 9, 2),
+  ...[[10, 24], [10, 36], [22, 44]].map(([x, y]) => C(x, y, 2.4, CPK.O)),
+  S('M31 30 L42 26 L48 32', 'ik', 2),
+  C(48, 32, 2.8, CPK.N),
+]);
+def('morning_glory', () => [                                     // twining vine, one funnel-shaped trumpet flower
+  S('M10 54 Q20 40 14 28 Q8 16 22 12 Q34 8 40 20', 'bs', 2.6),
+  P('M40 8 Q54 12 52 24 Q50 34 38 30 Q32 24 34 16 Q36 10 40 8 Z', 'hi'),
+  S('M40 8 L38 30', 'ik', 1),
+]);
+def('betel_nut', () => [                                         // the areca nut, wrapped in its folded leaf, dabbed with lime
+  P('M20 20 L40 20 L34 44 L26 44 Z', 'hi'),
+  C(30, 30, 6, 'bs'),
+  C(30, 24, 1.6, 'lo'),
+  S('M30 20 L30 8', 'lo', 2), leaf('gh', 24, 8, .4, -30),
+]);
+def('ayahuasca_vine', () => [                                    // a thick woody liana, braided as it climbs — not a thin twiner
+  S('M20 54 Q10 40 22 32 Q34 24 20 16 Q10 8 22 4', 'bs', 4),
+  S('M24 50 Q16 40 26 30 Q36 22 24 14', 'lo', 2),
+]);
+def('salvia_divinorum', () => [                                  // mint-family leaves, a tall spike of small flowers
+  S('M30 54 L30 20', 'bs', 3),
+  leaf('hi', 20, 42, .9, -35), leaf('hi', 40, 42, .9, 35),
+  ...[16, 22, 28].map(y => E(30, y, 4, 2.4, 'gh')),
+]);
+def('sweet_flag', () => [                                        // the aromatic rhizome, a sword leaf, the spadix off to one side
+  S('M12 46 Q30 42 48 46', 'lo', 5),
+  ...[18, 30, 42].map(x => S(`M${x} 46 L${x - 2} 54`, 'gh', 1.4)),
+  P('M30 46 L26 8 L30 4 L34 8 Z', 'bs'),
+  S('M30 20 L42 12', 'hi', 2.6),
+]);
+def('mescal_bean', () => [                                       // "red hots" — bright red seeds in a woody pod
+  P('M14 24 Q30 14 46 24 Q46 40 30 46 Q14 40 14 24 Z', 'lo'),
+  ...[[22, 26], [30, 22], [38, 28], [26, 36], [34, 34]].map(([x, y]) => C(x, y, 3.6, 'fire-bs')),
+]);
+def('stonewort', () => [                                         // whorled branchlets at each joint, crusted with lime
+  S('M30 54 L30 14', 'bs', 2.2),
+  ...[20, 30, 40].flatMap(y => [-1, 1].map(s => S(`M30 ${y} L${30 + s * 10} ${y - 4}`, 'hi', 1.4))),
+  ...granules('gh', 10, 23, [16, 10, 44, 50]),
+]);
+def('cycad', () => [                                             // palm-like, but a naked cone at its crown, not a fruit
+  P('M24 54 L36 54 L34 26 L26 26 Z', 'lo'),
+  ...[-70, -35, 0, 35, 70].map(a => ['g', a, 30, 26, [P('M30 26 L28 8 L30 4 L32 8 Z', 'bs')]]),
+  E(30, 22, 5, 8, 'hi'),
+]);
+def('ginkgo', () => [                                            // the one fan-shaped, notched leaf — no other tree has it
+  P('M30 50 L30 40 Q14 34 16 16 Q22 26 30 24 Q38 26 44 16 Q46 34 30 40 Z', 'bs'),
+  S('M30 24 Q26 16 24 8 M30 24 Q34 16 36 8', 'lo', 1),
+]);
+def('hornwort', () => [                                          // the flat thallus, and the tapering horns it's named for
+  E(30, 46, 20, 8, 'bs'),
+  S('M22 44 L18 10 M30 44 L30 6 M38 44 L42 12', 'lo', 2),
+]);
+def('clubmoss', () => [                                          // scaly stem, a club-shaped spore cone at the tip
+  S('M30 54 L30 20', 'bs', 3),
+  ...[26, 34, 42, 48].map(y => S(`M27 ${y} L33 ${y}`, 'lo', 1)),
+  E(30, 14, 4, 10, 'hi'),
+]);
+def('artemisinin', () => [                                       // two fused rings and the one true feature: an O-O peroxide bridge
+  hex('ik', 18, 24, 9, 2),
+  hex('ik', 38, 36, 9, 2),
+  S('M26 20 L32 28', 'ik', 1.6),
+  C(31, 12, 2.4, CPK.O), C(37, 12, 2.4, CPK.O), S('M31 12 L37 12', 'ik', 2.4),
+]);
+def('sapling', () => [                                           // the trunk itself, half still green, half already woody
+  S('M30 54 L30 34', 'lo', 3),
+  S('M30 34 L30 18', 'plant-bs', 3),
+  leaf('hi', 22, 20, .6, -35), leaf('hi', 38, 20, .6, 35), leaf('bs', 30, 12, .5, 0),
+]);
+def('cambium', () => [                                           // the vertical axis, wrapped in one thin dividing ring
+  S('M30 6 L30 54', 'bs', 6),
+  ring('hi', 30, 30, 4, 2),
+  S('M24 30 L20 30', 'lo', 1.6), S('M36 30 L40 30', 'lo', 1.6),
+]);
+def('sapwood', () => [                                           // a true cross-section: pale living ring, small core not yet reached
+  C(30, 30, 17, 'hi'),
+  C(30, 30, 7, 'gh'),
+  ring('ik', 30, 30, 17, 1),
+]);
+def('heartwood', () => [                                         // a cut log end — the dead core is most of the face
+  cutFace('lo', 34, 20, 14),
+  cutFace('bs', 34, 13, 9),
+  S('M10 34 L50 34', 'ik', 1.4),
+]);
+def('cone', () => [                                              // the classic pinecone, overlapping scales
+  P('M30 8 Q42 12 42 30 Q42 46 30 54 Q18 46 18 30 Q18 12 30 8 Z', 'bs'),
+  ...[16, 24, 32, 40, 48].map(y => S(`M20 ${y} Q30 ${y - 3} 40 ${y}`, 'lo', 1.6)),
+]);
+def('conifer', () => [                                           // one solid triangle, needle fringe, a cone at the base — not pine's tiers
+  P('M30 6 L48 54 L12 54 Z', 'lo'),
+  P('M30 14 L42 50 L18 50 Z', 'bs'),
+  S('M20 40 L14 44 M40 40 L46 44 M24 26 L18 30 M36 26 L42 30', 'hi', 1.4),
+  E(40, 46, 3, 6, 'gh'),
+]);
+def('gymnosperm', () => [                                        // seeds sitting naked on an open scale — no fruit around them
+  P('M14 30 Q30 14 46 30 Q30 34 14 30 Z', 'lo'),
+  E(24, 26, 3, 4, 'bs'), E(36, 26, 3, 4, 'bs'),
+]);
+def('abscission', () => [                                        // the cork layer sealing across the stalk — that's what actually drops the leaf
+  leaf('hi', 34, 20, .8, 25),
+  S('M30 40 L30 34', 'bs', 4),
+  E(30, 40, 4, 2.4, 'lo'),
+  S('M20 50 Q26 44 30 40', 'gh', 1.2),
+]);
+def('deciduous', () => [                                         // bare branches, leaves already scattered — no canopy left
+  S('M30 54 L30 30', 'lo', 4),
+  S('M30 30 L18 14 M30 30 L42 14 M30 30 L30 10', 'lo', 2),
+  leaf('hi', 14, 48, .5, -30), leaf('bs', 44, 50, .5, 20), leaf('hi', 30, 20, .4, 60),
+]);
+def('samara', () => [                                            // the papery wing and its seed — a tiny helicopter blade
+  P('M30 30 Q50 20 52 8 Q40 14 30 30 Z', 'hi'),
+  E(26, 34, 5, 7, 'bs'),
+]);
+def('catkin', () => [                                            // a drooping spike of tiny petal-less flowers
+  S('M30 8 Q26 30 30 52', 'lo', 2),
+  ...[14, 20, 26, 32, 38, 44].map(y => E(n(30 - (y - 8) * .08), y, n(5 - (y - 8) * .03), 2.6, 'bs')),
+]);
+def('larch', () => [                                             // the one conifer that sheds — soft tufts, a few needles already loose
+  S('M30 54 L30 10', 'ik', 3),
+  ...[16, 24, 32, 40].map(y => S(`M18 ${y} L30 ${y - 4} L42 ${y}`, 'hi', 1.6)),
+  ...[[16, 40], [42, 20]].map(([x, y]) => leaf('gh', x, y, .3, 0)),
+]);
+def('cedar', () => [                                             // tiered branches, a barrel-shaped cone flaking apart scale by scale
+  S('M14 44 L30 30 L46 44', 'lo', 3),
+  S('M18 30 L30 18 L42 30', 'lo', 3),
+  E(38, 16, 5, 8, 'bs'),
+  S('M46 10 L48 12 M50 18 L52 20', 'gh', 1),
+]);
+def('juniper', () => [                                           // needle branches with fleshy, fused cone-berries — the gin flavour
+  S('M14 50 L30 26 L46 50', 'lo', 2),
+  S('M18 36 L10 30 M30 24 L30 14 M42 36 L50 30', 'hi', 1.6),
+  ...[[22, 42], [30, 36], [38, 44]].map(([x, y]) => C(x, y, 4, 'bs')),
+]);
+def('holly', () => [                                             // the spiny, zigzag leaf outline, red winter berries
+  P('M30 14 L38 22 L34 22 L44 30 L38 30 L30 46 L22 30 L16 30 L26 22 L22 22 Z', 'bs'),
+  ...[[22, 40], [30, 44], [38, 40]].map(([x, y]) => C(x, y, 3, 'fire-bs')),
+]);
+def('magnolia', () => [                                          // large waxy petals, cupped upright like a tulip
+  P('M30 54 L14 20 Q22 8 30 20 Q38 8 46 20 Z', 'hi'),
+  P('M30 54 L22 24 Q30 16 30 24 Q30 16 38 24 Z', 'bs'),
+  S('M30 54 L30 40', 'lo', 2),
+]);
+def('maple', () => [                                             // the lobed leaf silhouette — the single feature everyone knows it by
+  P('M30 10 L34 22 L46 18 L38 28 L48 32 L36 32 L40 44 L30 36 L20 44 L24 32 L12 32 L22 28 L14 18 L26 22 Z', 'bs'),
+  S('M30 36 L30 50', 'lo', 2),
+]);
+def('birch', () => [                                             // a thin white trunk, strips of bark curling loose, catkins alongside
+  P('M26 6 L34 6 L34 54 L26 54 Z', 'hi'),
+  ...[14, 24, 34, 44].map(y => P(`M26 ${y} Q22 ${y - 2} 20 ${y - 5} L20 ${y - 1} Q24 ${y + 1} 26 ${y + 3} Z`, 'lo')),
+  S('M42 12 L42 26', 'gh', 1.6), S('M46 16 L46 30', 'gh', 1.6),
+]);
+def('beech', () => [                                             // smooth, unbroken bark, mast husks up in the crown
+  S('M30 54 L30 14', 'ik', 5),
+  E(24, 36, 5, 4, 'lo'),
+  ...[[18, 10], [26, 8], [34, 10]].map(([x, y]) => P(`M${x} ${y} L${x - 3} ${y + 6} L${x + 3} ${y + 6} Z`, 'bs')),
+]);
+def('elm', () => [                                               // the classic vase-shaped crown, a beetle's gallery under the bark
+  S('M30 54 L30 30', 'ik', 4),
+  P('M14 30 Q10 14 30 8 Q50 14 46 30 Q40 22 30 24 Q20 22 14 30 Z', 'bs'),
+  ...[[36, 20], [40, 24]].map(([x, y]) => S(`M${x - 3} ${y} Q${x} ${y - 2} ${x + 3} ${y}`, 'gh', 1)),
+]);
+def('eucalyptus', () => [                                        // narrow, sickle-curved leaves — the shape koalas actually eat
+  ...[[20, 20, -60], [36, 18, -20], [24, 36, -70], [40, 34, -30]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [P(`M${x} ${y - 12} Q${x + 5} ${y} ${x} ${y + 12} Q${x - 5} ${y} ${x} ${y - 12} Z`, 'hi')]]),
+  C(26, 24, 1, 'gh'), C(34, 30, 1, 'gh'),
+]);
+def('baobab', () => [                                            // the swollen, water-storing trunk, sparse "upside down" branches
+  P('M18 54 Q14 30 22 12 Q30 4 38 12 Q46 30 42 54 Z', 'lo'),
+  S('M22 12 Q16 4 10 2 M30 8 L30 2 M38 12 Q44 4 50 2', 'gh', 1.6),
+]);
+def('banyan', () => [                                            // roots dropping straight from a branch, already thickened into new trunks
+  S('M14 20 L46 20', 'lo', 3),
+  ...[-18, -6, 6, 18].map(dx => S(`M${30 + dx} 20 L${30 + dx * .6} 52`, 'hi', 2)),
+  ...[-18, 18].map(dx => P(`M${30 + dx * .6 - 3} 52 L${30 + dx * .6 + 3} 52 L${30 + dx * .6 + 2} 56 L${30 + dx * .6 - 2} 56 Z`, 'lo')),
+]);
+def('aspen', () => [                                             // the flattened stalk, twisted sideways — why one breeze quakes the whole crown
+  S('M30 54 L30 22', 'ik', 3),
+  ...[[20, 18, -30], [30, 10, 0], [40, 18, 30]].map(([x, y, rot]) => ['g', rot, x, y, [
+    leaf('hi', x, y, .55, 0),
+    S(`M${x} ${y + 8} L${x + 3} ${y + 11}`, 'lo', 1),
+  ]]),
+  S('M14 16 L18 20 M46 16 L42 20', 'gh', 1),
+]);
+def('rootstock', () => [                                         // all root fan — a bare stub above, waiting for a scion
+  S('M30 30 L30 10', 'gh', 3),
+  S('M22 10 L38 10', 'ik', 2.4),
+  S('M30 30 Q18 38 12 54', 'bs', 3), S('M30 30 Q42 38 48 54', 'bs', 3), S('M30 30 L30 54', 'lo', 2.6),
+]);
+def('scion', () => [                                             // all cutting and leaves — a clone, with no root fan of its own
+  S('M30 54 L30 38', 'gh', 3),
+  S('M22 38 L38 38', 'ik', 2.4),
+  S('M30 38 L30 10', 'bs', 3),
+  leaf('hi', 22, 18, .55, -30), leaf('hi', 38, 18, .55, 30),
+]);
+def('crabapple', () => [                                         // a cluster of small, sour fruit — nothing like one big apple
+  S('M30 16 L30 8', 'lo', 2),
+  ...[[20, 26], [32, 22], [40, 30], [24, 38], [36, 40]].flatMap(([x, y]) => [E(x, y, 5, 5, 'bs'), C(x - 1, y - 1, 1.6, 'hi')]),
+]);
+def('chill_hours', () => [                                       // a shut bud, a frost mark, the tally still counting up
+  S('M30 54 L30 20', 'lo', 3),
+  C(30, 14, 4, 'gh'),
+  ...[0, 60, 120, 180, 240, 300].map(a => S(`M30 14 L${n(30 + 7 * Math.cos(a * Math.PI / 180))} ${n(14 + 7 * Math.sin(a * Math.PI / 180))}`, 'hi', 1)),
+  ...[10, 16, 22, 28, 34, 40, 46].map(x => C(x, 52, 1, 'bs')),
+]);
+def('breadfruit', () => [                                        // the quilted, hexagon-patterned rind
+  C(30, 32, 18, 'bs'),
+  ...[0, 60, 120, 180, 240, 300].flatMap(a => [8, 16].map(rad =>
+    C(n(30 + rad * Math.cos(a * Math.PI / 180)), n(32 + rad * Math.sin(a * Math.PI / 180)), 1.6, 'lo'))),
+  S('M30 14 L30 8', 'lo', 2),
+]);
+def('jackfruit', () => [                                         // enormous — the largest fruit grown on any tree — with a spiked rind
+  E(30, 32, 17, 24, 'lo'),
+  ...[[20, 12], [30, 10], [40, 12], [14, 20], [46, 20], [16, 32], [44, 32], [20, 44], [40, 44], [30, 50]].map(([x, y]) =>
+    P(`M${x - 2} ${y} L${x} ${y - 3.4} L${x + 2} ${y} Z`, 'hi')),
+]);
+def('lychee', () => [                                            // knobbly red rind, a peeled patch showing the translucent aril and its one seed
+  C(30, 32, 16, 'lo'),
+  ...granules('bs', 12, 51, [16, 18, 44, 46]),
+  E(38, 24, 8, 8, 'hi'),
+  C(38, 24, 2.6, 'ik'),
+]);
+def('rambutan', () => [                                          // lychee's spiky cousin — soft "hair" all around, its literal name
+  C(30, 32, 15, 'bs'),
+  ...Array.from({ length: 14 }, (_, i) => {
+    const a = i * (360 / 14) * Math.PI / 180;
+    return S(`M${n(30 + 15 * Math.cos(a))} ${n(32 + 15 * Math.sin(a))} L${n(30 + 22 * Math.cos(a))} ${n(32 + 22 * Math.sin(a))}`, 'hi', 1.6);
+  }),
+]);
+def('longan', () => [                                            // smooth skin, and the dark seed showing through like an eye
+  C(30, 32, 14, 'lo'),
+  C(30, 32, 10, 'hi'),
+  C(30, 32, 4, 'ik'), C(28, 30, 1.4, 'gh'),
+]);
+def('tamarind', () => [                                          // the long curved pod, seeds visible through its brittle shell
+  P('M12 26 Q30 18 48 28 Q46 36 30 38 Q14 36 12 26 Z', 'lo'),
+  ...[20, 30, 40].map(x => C(x, 30, 3, 'bs')),
+  S('M12 26 Q30 34 48 28', 'gh', 1),
+]);
+def('dragon_fruit', () => [                                      // the flame-like bracts scaling its skin
+  E(30, 34, 16, 18, 'bs'),
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => {
+    const x1 = n(30 + 16 * Math.cos(a * Math.PI / 180)), y1 = n(34 + 19 * Math.sin(a * Math.PI / 180));
+    const x2 = n(30 + 23 * Math.cos(a * Math.PI / 180)), y2 = n(34 + 26 * Math.sin(a * Math.PI / 180));
+    return P(`M${x1 - 2} ${y1} L${x2} ${y2} L${x1 + 2} ${y1} Z`, 'hi');
+  }),
+]);
+def('starfruit', () => [                                         // sliced crosswise, five ridges make a perfect star
+  P('M30 12 L34.11 24.34 L47.12 24.44 L36.66 32.16 L40.58 44.56 L30 37 L19.42 44.56 L23.34 32.16 L12.88 24.44 L25.89 24.34 Z', 'bs'),
+  C(30, 30, 3, 'hi'),
+]);
+def('soursop', () => [                                           // spiny green skin, a torn patch showing the soft custardy pulp
+  E(30, 32, 16, 20, 'bs'),
+  ...Array.from({ length: 14 }, (_, i) => {
+    const a = i * (360 / 14) * Math.PI / 180;
+    const x = n(30 + 15 * Math.cos(a) * .95), y = n(32 + 19 * Math.sin(a) * .95);
+    return S(`M${x} ${y} Q${n(x + 3 * Math.cos(a))} ${n(y + 3 * Math.sin(a) - 1)} ${n(x + 1)} ${n(y + 3 * Math.sin(a))}`, 'lo', 1.2);
+  }),
+  E(24, 22, 5, 6, 'hi'),
+]);
+def('akee', () => [                                              // toxic until its own capsule splits — three open lobes, yellow flesh, black seeds
+  ...[-100, 20, 140].map(a => ['g', a, 30, 28, [P('M30 28 Q22 14 30 6 Q38 14 30 28 Z', 'lo')]]),
+  ...[[24, 26], [36, 26], [30, 34]].flatMap(([x, y]) => [C(x, y, 3.6, 'hi'), C(x, y - 1, 1.4, 'ik')]),
+]);
+def('curry_leaf', () => [                                        // small paired leaflets on a sprig, aroma released in hot oil
+  S('M14 46 Q30 50 46 46', 'lo', 2),
+  ...[18, 24, 30, 36, 42].map((x, i) => leaf('bs', x, 46 - (i % 2 ? 4 : 0), .32, i % 2 ? -20 : 20)),
+  ...puff('gh', 30, 20, .5),
 ]);
 
 /* craft — invention/machine batch + philosophy batch 2 additions ─────────
