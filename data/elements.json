@@ -8916,7 +8916,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "The reason whey glows yellow-green — first isolated from it in 1879, called lactochrome."
   },
   {
@@ -23584,5 +23584,170 @@
     ],
     "fact": "Legs too short for much but clinging — it eats, mates and sleeps on the wing.",
     "terminal": true
+  },
+  {
+    "id": "cartilage",
+    "name": "Cartilage",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Collagen-rich connective tissue with no blood supply of its own — firm but flexible where bone is rigid."
+  },
+  {
+    "id": "whisker",
+    "name": "Whisker",
+    "emoji": "〰",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A hair whose root carries 100–200 nerve endings — enough to feel a gap's width in the dark."
+  },
+  {
+    "id": "floating_clavicle",
+    "name": "Floating Clavicle",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A collarbone with no joint to the rest of the skeleton — anchored only by connective tissue."
+  },
+  {
+    "id": "retractable_claw",
+    "name": "Retractable Claw",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Sheathed in skin and fur at rest, so the point never dulls on the ground."
+  },
+  {
+    "id": "tapetum_lucidum",
+    "name": "Tapetum Lucidum",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A riboflavin-and-zinc mirror behind the retina — nearly 130 times as reflective as a human eye."
+  },
+  {
+    "id": "righting_reflex",
+    "name": "Righting Reflex",
+    "emoji": "🙃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A falling cat rights itself by inner ear, then twists its front half and rear half in turn.",
+    "terminal": true
+  },
+  {
+    "id": "purr",
+    "name": "Purr",
+    "emoji": "🎶",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Made possible by a fully bony hyoid — a big cat's stays gristly, so it roars instead.",
+    "terminal": true
+  },
+  {
+    "id": "barbed_tongue",
+    "name": "Barbed Tongue",
+    "emoji": "👅",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A muscle studded with backward-hooked keratin spines — a built-in hairbrush.",
+    "terminal": true
+  },
+  {
+    "id": "vomeronasal_organ",
+    "name": "Vomeronasal Organ",
+    "emoji": "👃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A mouth-roof organ wired to its own nerve, not the main smell nerve — it reads pheromones.",
+    "terminal": true
+  },
+  {
+    "id": "slit_pupil",
+    "name": "Slit Pupil",
+    "emoji": "👁",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Snaps to a vertical slit in bright light — stays round in a cat the size of a tiger.",
+    "terminal": true
+  },
+  {
+    "id": "manx",
+    "name": "Manx",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A dominant mutation shortens the spine to nothing — lethal if inherited from both parents.",
+    "terminal": true,
+    "taxon": "tx_felis"
+  },
+  {
+    "id": "siamese",
+    "name": "Siamese",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A heat-sensitive enzyme switches pigment on only where the skin runs cool.",
+    "terminal": true,
+    "taxon": "tx_felis"
+  },
+  {
+    "id": "sphynx",
+    "name": "Sphynx",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A recessive keratin-gene mutation stops each hair from growing a proper root.",
+    "terminal": true,
+    "taxon": "tx_felis"
+  },
+  {
+    "id": "devon_rex",
+    "name": "Devon Rex",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its curl looks like the Cornish Rex's but comes from a mutation at a different gene entirely.",
+    "terminal": true,
+    "taxon": "tx_felis"
+  },
+  {
+    "id": "scottish_fold",
+    "name": "Scottish Fold",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A dominant cartilage-gene mutation folds the ear — and softens joints all over the body.",
+    "terminal": true,
+    "taxon": "tx_felis"
   }
 ]

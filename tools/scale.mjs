@@ -154,7 +154,10 @@ const SCALE = {
           'ballast',
           'icsi_needle', 'nerve', 'stm_tip',
           // evolution batch 1 — a fossilized bone or shell, hand-sample scale alongside bone/shell
-          'fossil'],
+          'fossil',
+          // domestic-cat batch 1 — hand-sample body parts, the same rack as bone/muscle/claw/nerve
+          'cartilage', 'whisker', 'floating_clavicle', 'retractable_claw', 'tapetum_lucidum',
+          'barbed_tongue', 'vomeronasal_organ', 'slit_pupil'],
   '-1':  [// mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
           // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
           'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
@@ -301,6 +304,8 @@ const SCALE = {
           'dog', 'german_shepherd', 'border_collie', 'rottweiler', 'saint_bernard', 'siberian_husky', 'greyhound', 'afghan_hound', 'bloodhound', 'labrador_retriever', 'golden_retriever', 'bull_terrier',
           'piano',
           'cat', 'taenia_solium', 'taenia_saginata',
+          // domestic-cat batch 1 — cat-scale reflex/behaviour and breeds, same rack as cat/dog
+          'righting_reflex', 'purr', 'manx', 'siamese', 'sphynx', 'devon_rex', 'scottish_fold',
           'sand_tiger_shark', 'mako_shark', 'salmon_shark', 'eagle_ray', 'tope_shark', 'leopard_shark',
           'lemon_shark', 'bull_shark', 'blacktip_shark', 'oceanic_whitetip_shark', 'silky_shark',
           'blacktip_reef_shark', 'grey_reef_shark', 'whitetip_reef_shark', 'scalloped_hammerhead',
