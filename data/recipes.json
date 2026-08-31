@@ -19549,11 +19549,81 @@
   },
   {
     "in": [
+      "basalt",
+      "granite"
+    ],
+    "out": "tectonic_plate",
+    "why": "Earth's outermost shell is broken into semirigid tectonic plates built from both kinds of crust — basalt flooring nearly every ocean and granite forming the continents riding on top of it.",
+    "src": "https://en.wikipedia.org/wiki/Plate_tectonics",
+    "supported": true
+  },
+  {
+    "in": [
+      "tectonic_plate",
+      "magma"
+    ],
+    "out": "divergent_boundary",
+    "why": "Where two plates are pulled apart, magma from the mantle rises into the gap and freezes into new crust — mostly beneath the oceans, along a divergent boundary.",
+    "src": "https://en.wikipedia.org/wiki/Divergent_boundary",
+    "supported": true
+  },
+  {
+    "in": [
+      "tectonic_plate",
+      "tectonic_plate"
+    ],
+    "out": "convergent_boundary",
+    "why": "Where two plates converge, their leading edges either crumple upward into mountains or, if one is thinner and denser, get shoved beneath the other — a convergent boundary either way.",
+    "src": "https://en.wikipedia.org/wiki/Convergent_boundary",
+    "supported": true
+  },
+  {
+    "in": [
+      "tectonic_plate"
+    ],
+    "verb": "cut",
+    "out": "transform_boundary",
+    "why": "Two plates sliding horizontally past one another neither build crust nor destroy it — California's 810-mile San Andreas Fault, between the Pacific and North American plates, is the textbook transform boundary.",
+    "src": "https://en.wikipedia.org/wiki/San_Andreas_Fault",
+    "supported": true
+  },
+  {
+    "in": [
+      "transform_boundary"
+    ],
+    "verb": "wait",
+    "out": "earthquake",
+    "why": "Stress builds for years along a locked fault like the San Andreas until it slips all at once, releasing the strain as seismic waves — an earthquake.",
+    "src": "https://en.wikipedia.org/wiki/Earthquake",
+    "supported": true
+  },
+  {
+    "in": [
+      "divergent_boundary",
+      "sea"
+    ],
+    "out": "mid_ocean_ridge",
+    "why": "Beneath the oceans a divergent boundary never stops welling up fresh basalt, building a continuous seam of new seafloor that circles the planet for about 65,000 km — the mid-ocean ridge system.",
+    "src": "https://en.wikipedia.org/wiki/Mid-ocean_ridge",
+    "supported": true
+  },
+  {
+    "in": [
       "granite",
       "granite"
     ],
     "out": "mountain",
     "why": "Two slabs of continental crust collide and neither can sink beneath the other, so the crust between them thickens and compression pushes it upward — the Himalayas have been rising this way for 65 million years.",
+    "src": "https://en.wikipedia.org/wiki/Orogeny",
+    "supported": true
+  },
+  {
+    "in": [
+      "convergent_boundary",
+      "granite"
+    ],
+    "out": "mountain",
+    "why": "Where a convergent boundary joins two slabs of continental crust like granite, neither can sink beneath the other, so compression thickens and folds the crust upward — the mechanism that has been raising the Himalayas for 65 million years.",
     "src": "https://en.wikipedia.org/wiki/Orogeny",
     "supported": true
   },
@@ -19565,6 +19635,16 @@
     "out": "trench",
     "why": "Where a slab of oceanic crust flexes downward and begins diving beneath another plate, the seafloor above the bend sags into a long, narrow trench — the Mariana reaches 10,994 metres down.",
     "src": "https://en.wikipedia.org/wiki/Oceanic_trench",
+    "supported": true
+  },
+  {
+    "in": [
+      "convergent_boundary",
+      "basalt"
+    ],
+    "out": "trench",
+    "why": "Where a convergent boundary meets oceanic crust like basalt, the thinner, denser plate is forced down in subduction, and the seafloor above the bend sags into a trench.",
+    "src": "https://en.wikipedia.org/wiki/Subduction",
     "supported": true
   },
   {
@@ -19584,6 +19664,16 @@
     "verb": "cut",
     "out": "rift_valley",
     "why": "Stretched continental crust thins and cracks along two parallel faults, and the block between them drops to leave a valley — the mechanism opening East Africa's rift right now, at 8-9 mm a year.",
+    "src": "https://en.wikipedia.org/wiki/East_African_Rift",
+    "supported": true
+  },
+  {
+    "in": [
+      "divergent_boundary",
+      "granite"
+    ],
+    "out": "rift_valley",
+    "why": "On continents, the same pulling-apart that widens ocean basins elsewhere stretches and cracks granite crust until the block between two faults drops — the mechanism opening East Africa's rift today.",
     "src": "https://en.wikipedia.org/wiki/East_African_Rift",
     "supported": true
   },
@@ -22883,6 +22973,36 @@
     "why": "A protocell, a membrane-bound sac of replicating chemistry, is the structural starting point every branch of the tree of life is thought to share, however far evolution has carried what grows from it since.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Protocell"
+  },
+  {
+    "in": [
+      "common_ancestor",
+      "book"
+    ],
+    "out": "taxonomy",
+    "why": "Organizing everything descended from life's shared ancestry needed a system: Linnaeus's 1758 Systema Naturae, published as a book, ranked all life into a nested hierarchy — kingdom down to genus and species — named with two-part Latin binomials.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Systema_Naturae"
+  },
+  {
+    "in": [
+      "taxonomy",
+      "evolution"
+    ],
+    "out": "tree_of_life",
+    "why": "A tree of life diagrams evolution's branching pattern using taxonomy's classified groups, showing how each one relates back through common descent — Darwin sketched the first version in 1837.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Tree_of_life_(biology)"
+  },
+  {
+    "in": [
+      "tree_of_life",
+      "mutation"
+    ],
+    "out": "cladistics",
+    "why": "Cladistics groups organisms by shared derived traits — mutations since a common ancestor — rather than overall resemblance; rebuilding the tree of life this way revealed the whale's closest living kin is the hippopotamus.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Cladistics"
   },
   {
     "in": [

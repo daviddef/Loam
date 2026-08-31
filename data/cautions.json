@@ -215,6 +215,15 @@
       ],
       "severity": "acute"
     },
+    "earthquake_hazard": {
+      "label": "The shaking itself rarely kills \u2014 what falls on you does",
+      "note": "Most earthquake deaths come from collapsing buildings, falling debris and the fires and landslides a strong quake triggers, not from the ground motion itself. A major strike-slip rupture like the San Andreas Fault can move tens of feet in seconds, and aftershocks can bring down structures already weakened by the main shock for days afterward.",
+      "ids": [
+        "earthquake",
+        "transform_boundary"
+      ],
+      "severity": "acute"
+    },
     "severe_weather": {
       "label": "Weather that kills people",
       "note": "Flood, storm surge, hurricane, blizzard and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land.",

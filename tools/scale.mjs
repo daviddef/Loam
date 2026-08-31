@@ -337,6 +337,8 @@ const SCALE = {
           'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest', 'evolution', 'common_ancestor', 'genetic_diversity',
+          // living-earth batch 1 — abstract classification concepts, the same "as diagrammed" scale as common_ancestor/evolution
+          'taxonomy', 'tree_of_life', 'cladistics',
           // geography batch 1 — coastal and karst features and single landforms, tens to a couple hundred metres
           'sea_cliff', 'sea_arch', 'sea_stack', 'waterfall', 'sinkhole', 'cavern', 'moraine', 'mesa', 'butte', 'iceberg',
           // mythology batch 1 — underworld realms, described and drawn room-scale
@@ -375,7 +377,9 @@ const SCALE = {
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           'tundra', 'desert', 'taiga', 'rainforest',
           // tech breakthroughs batch 1 — a worldwide network, the same planet-spanning bucket as sky/sea/desert
-          'internet'],
+          'internet',
+          // living-earth batch 1 — a plate, a plate boundary, or the fault system/ridge it forms, all continent-to-ocean-basin scale like desert/tundra/sea; earthquake grouped with the storm/hurricane phenomena it belongs beside
+          'tectonic_plate', 'divergent_boundary', 'convergent_boundary', 'transform_boundary', 'mid_ocean_ridge', 'earthquake'],
   '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],
 };
 

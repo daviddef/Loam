@@ -16325,7 +16325,6 @@
     "tags": [
       "earth"
     ],
-    "soleRoute": true,
     "terminal": false,
     "fact": "Continental crust that collided and had nowhere to go but up \u2014 the Himalayas are still rising."
   },
@@ -16338,7 +16337,6 @@
       "earth",
       "water"
     ],
-    "soleRoute": true,
     "fact": "The seafloor sagging where one plate bends and dives beneath another. The Mariana reaches 10,994 m."
   },
   {
@@ -16361,7 +16359,6 @@
     "tags": [
       "earth"
     ],
-    "soleRoute": true,
     "terminal": true,
     "fact": "A continent stretched thin enough to crack: the block between two faults drops as the land splits."
   },
@@ -19507,7 +19504,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Every living thing on Earth traces back to one ancestral population, about four billion years ago."
   },
   {
@@ -22503,5 +22500,108 @@
       "myth"
     ],
     "fact": "Shinto guardian kami with a seven-span nose and eyes like mirrors; blocked the descent of the heavenly gods."
+  },
+  {
+    "id": "tectonic_plate",
+    "name": "Tectonic Plate",
+    "emoji": "\ud83e\udde9",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Earth's brittle outer shell broken into semirigid slabs \u2014 seven major ones, a dozen or so smaller."
+  },
+  {
+    "id": "divergent_boundary",
+    "name": "Divergent Boundary",
+    "emoji": "\u2194\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Where two plates pull apart and magma rises to freeze into new crust, mostly along mid-ocean ridges."
+  },
+  {
+    "id": "convergent_boundary",
+    "name": "Convergent Boundary",
+    "emoji": "\ud83e\udde7",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Where two plates are driven together \u2014 one dives beneath the other, or both crumple upward instead."
+  },
+  {
+    "id": "transform_boundary",
+    "name": "Transform Boundary",
+    "emoji": "\ud83d\udd00",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Where two plates grind sideways past one another along a fault, neither building crust nor destroying it."
+  },
+  {
+    "id": "earthquake",
+    "name": "Earthquake",
+    "emoji": "\ud83e\udea8",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "The ground's sudden release of strain built up along a locked fault, radiating out as seismic waves."
+  },
+  {
+    "id": "mid_ocean_ridge",
+    "name": "Mid-Ocean Ridge",
+    "emoji": "\ud83c\udf0a",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A continuous seam of brand-new seafloor, welling up along a divergent boundary for about 65,000 km."
+  },
+  {
+    "id": "taxonomy",
+    "name": "Taxonomy",
+    "emoji": "\ud83d\uddc2\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "The nested system \u2014 kingdom down to species \u2014 that gives every living thing exactly one place and one name."
+  },
+  {
+    "id": "tree_of_life",
+    "name": "Tree of Life",
+    "emoji": "\ud83c\udf32",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "A branching diagram connecting every classified group of life back through common ancestry."
+  },
+  {
+    "id": "cladistics",
+    "name": "Cladistics",
+    "emoji": "\ud83e\uddec",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Grouping organisms by shared derived traits, not overall looks \u2014 the method behind the whale-hippo surprise."
   }
 ]
