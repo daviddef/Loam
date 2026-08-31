@@ -28904,8 +28904,7 @@
     "why": "A dominant mutation in TRPV4, a gene for cartilage and bone formation, folds the Scottish Fold's ear forward — but the same mutation runs through every cartilage in the body, causing a degenerative joint disease even with just one copy.",
     "src": "https://en.wikipedia.org/wiki/Scottish_Fold",
     "verified": true
-  }
-,
+  },
   {
     "in": [
       "moon",
@@ -29075,5 +29074,185 @@
     "why": "A porcelain crab is a filter feeder more closely related to hermit crabs than to true crabs; sharp spines on its legs grip slick kelp holdfasts so it can slide its flattened body into their hollows.",
     "src": "https://en.wikipedia.org/wiki/Porcelain_crab",
     "supported": true
+  },
+  {
+    "in": [
+      "ovum",
+      "water"
+    ],
+    "out": "frogspawn",
+    "why": "Amphibians never evolved the amniotic membrane that keeps a reptile or bird egg from drying out; an ovum wrapped only in jelly has no shell, and must stay in water or moisture to survive.",
+    "src": "https://en.wikipedia.org/wiki/Amphibian"
+  },
+  {
+    "in": [
+      "mucus",
+      "water"
+    ],
+    "out": "frogspawn",
+    "why": "A frog's grip during mating triggers her to release eggs \"wrapped in jelly, as spawn\" — a swollen gel coat, not a shell, that only forms once it takes up water.",
+    "src": "https://en.wikipedia.org/wiki/Frog"
+  },
+  {
+    "in": [
+      "frogspawn"
+    ],
+    "verb": "wait",
+    "out": "tadpole",
+    "why": "Frog eggs hatch into fully aquatic larvae called tadpoles, which have tails and gills weeks before any leg appears.",
+    "src": "https://en.wikipedia.org/wiki/Frog"
+  },
+  {
+    "in": [
+      "tadpole",
+      "water"
+    ],
+    "out": "gill",
+    "why": "When first hatched, tadpoles grow external gills that are eventually covered by skin, forming a chamber with internal gills beneath — both stages pull oxygen straight from the water.",
+    "src": "https://en.wikipedia.org/wiki/Tadpole"
+  },
+  {
+    "in": [
+      "metamorphosis",
+      "oxygen_gas"
+    ],
+    "out": "lung",
+    "why": "As thyroid hormone drives metamorphosis, a tadpole's gills and gill sac disappear while its lungs develop rapidly to take over gas exchange in air.",
+    "src": "https://en.wikipedia.org/wiki/Metamorphosis"
+  },
+  {
+    "in": [
+      "tadpole",
+      "thyroxine"
+    ],
+    "out": "metamorphosis",
+    "why": "Metamorphosis in amphibians is regulated by thyroxine concentration in the blood, which stimulates the transformation from a gilled tadpole into an air-breathing adult.",
+    "src": "https://en.wikipedia.org/wiki/Metamorphosis"
+  },
+  {
+    "in": [
+      "axolotl",
+      "iodine"
+    ],
+    "out": "metamorphosis",
+    "why": "An axolotl normally lacks enough thyroid-stimulating hormone to change; dosing one with iodine or thyroid hormone reliably triggers the same transformation into a land-going salamander anyway.",
+    "src": "https://en.wikipedia.org/wiki/Axolotl"
+  },
+  {
+    "in": [
+      "membrane",
+      "mucus"
+    ],
+    "out": "amphibian_skin",
+    "why": "Amphibian skin contains little keratin and lacks scales; glands keep its surface constantly wet with mucus so gas can diffuse across it.",
+    "src": "https://en.wikipedia.org/wiki/Amphibian"
+  },
+  {
+    "in": [
+      "keratin",
+      "mucus"
+    ],
+    "out": "amphibian_skin",
+    "why": "Salamanders and frogs moult their skin regularly and often eat it — the whole keratinised outer layer replaced at once, not worn down gradually like reptile scales.",
+    "src": "https://en.wikipedia.org/wiki/Moulting"
+  },
+  {
+    "in": [
+      "amphibian_skin",
+      "oxygen_gas"
+    ],
+    "out": "cutaneous_respiration",
+    "why": "Plethodontid salamanders, the largest amphibian family, lack lungs entirely and conduct all their respiration through their skin and the tissues lining their mouths.",
+    "src": "https://en.wikipedia.org/wiki/Plethodontidae"
+  },
+  {
+    "in": [
+      "amphibian_skin",
+      "water"
+    ],
+    "out": "cutaneous_respiration",
+    "why": "To enable sufficient cutaneous respiration, the surface of an amphibian's highly vascularised skin must stay moist enough for oxygen to diffuse across it fast enough to matter.",
+    "src": "https://en.wikipedia.org/wiki/Amphibian"
+  },
+  {
+    "in": [
+      "cutaneous_respiration",
+      "tadpole"
+    ],
+    "out": "indicator_species",
+    "why": "With their complex reproductive needs and permeable skins, amphibians are often used as ecological indicators of habitat conditions — canaries for a whole pond.",
+    "src": "https://en.wikipedia.org/wiki/Amphibian"
+  },
+  {
+    "in": [
+      "tadpole",
+      "nerve"
+    ],
+    "out": "lateral_line",
+    "why": "Most amphibian larvae, and some fully aquatic adults, keep a mechanosensitive lateral line system that senses movement and pressure changes in the water around them.",
+    "src": "https://en.wikipedia.org/wiki/Lateral_line"
+  },
+  {
+    "in": [
+      "fish",
+      "nerve"
+    ],
+    "out": "lateral_line",
+    "why": "The lateral line is a system of sensory organs found in fish that detects movement, vibration, and pressure gradients in the surrounding water — the same system aquatic amphibian larvae keep.",
+    "src": "https://en.wikipedia.org/wiki/Lateral_line"
+  },
+  {
+    "in": [
+      "earthworm",
+      "soil"
+    ],
+    "out": "caecilian",
+    "why": "Caecilians are limbless, worm-shaped amphibians that live hidden in soil, burrowing with trunk muscle built to push through the ground and sensing their way with a pair of tentacles found in no other vertebrate.",
+    "src": "https://en.wikipedia.org/wiki/Caecilian"
+  },
+  {
+    "in": [
+      "cutaneous_respiration",
+      "river"
+    ],
+    "out": "japanese_giant_salamander",
+    "why": "Entirely aquatic and functionally lungless, the Japanese giant salamander absorbs oxygen through skin folded to increase its surface area, restricted to the clear, cool, fast-flowing mountain streams that supply enough of it.",
+    "src": "https://en.wikipedia.org/wiki/Japanese_giant_salamander"
+  },
+  {
+    "in": [
+      "amphibian_skin",
+      "frogspawn"
+    ],
+    "out": "surinam_toad",
+    "why": "Surinam toad eggs are pressed into the female's swollen back skin, which closes into individual pockets; the embryos develop right through to the toadlet stage inside, never becoming free-swimming tadpoles.",
+    "src": "https://en.wikipedia.org/wiki/Surinam_toad"
+  },
+  {
+    "in": [
+      "ant",
+      "golden_poison_frog"
+    ],
+    "out": "batrachotoxin",
+    "why": "Poison-dart frogs do not produce their toxin themselves; they are believed to gain it from the toxin-carrying insects they eat, then secrete it through the skin. Captive-bred frogs raised without that diet make none.",
+    "src": "https://en.wikipedia.org/wiki/Batrachotoxin"
+  },
+  {
+    "in": [
+      "limestone",
+      "river"
+    ],
+    "out": "olm",
+    "why": "The olm lives in the underground rivers of the Dinaric Alps' limestone karst; permanent darkness left it blind and depigmented, and unlike the axolotl, its tissues stay unresponsive to thyroxine, so it never metamorphoses.",
+    "src": "https://en.wikipedia.org/wiki/Olm"
+  },
+  {
+    "in": [
+      "gill",
+      "lung"
+    ],
+    "out": "siren",
+    "why": "Unlike most other salamanders, sirens keep external gills bunched on the neck as both larvae and adults, while also remaining obligate air-breathers with well-developed lungs.",
+    "src": "https://en.wikipedia.org/wiki/Siren_(amphibian)"
   }
 ]

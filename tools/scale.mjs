@@ -52,7 +52,9 @@ const SCALE = {
           // brain batch 1 — neurotransmitter molecules and their precursor, same molecule scale as histamine/thyroxine
           'neurotransmitter', 'choline', 'acetylcholine', 'dopamine', 'serotonin', 'glutamate', 'gaba', 'noradrenaline',
           // large-intestine batch 1 — a molecular-scale vitamin, the same rack as vitamin_a/vitamin_d/folate
-          'vitamin_k'],
+          'vitamin_k',
+          // amphibian batch 1 — an alkaloid toxin, the same molecule scale as digoxin/thyroxine
+          'batrachotoxin'],
   '-8':  ['maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'allele', 'crispr', 'dna_sequencing', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
           // DNA-completeness batch 1 — the replication and expression machinery,
           // same enzyme/process scale as chromatin/gene/enzyme/protein
@@ -159,7 +161,11 @@ const SCALE = {
           'cartilage', 'whisker', 'floating_clavicle', 'retractable_claw', 'tapetum_lucidum',
           'barbed_tongue', 'vomeronasal_organ', 'slit_pupil',
           // seashore batch 1 — small shelled intertidal animals, the same cm-scale rack as shrimp/seahorse/snail/shell
-          'barnacle', 'periwinkle', 'limpet', 'chiton', 'whelk', 'hermit_crab', 'sand_dollar', 'porcelain_crab'],
+          'barnacle', 'periwinkle', 'limpet', 'chiton', 'whelk', 'hermit_crab', 'sand_dollar', 'porcelain_crab',
+          // amphibian batch 1 — a clump of spawn, a larva, and organ/process-scale anatomy,
+          // the same hand-sample rack as bone/muscle/nerve/golden_poison_frog above
+          'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
+          'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [// mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
           // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
           'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
@@ -260,7 +266,9 @@ const SCALE = {
           // evolution batch 1 — a museum-specimen fossil and a living animal, same rack as archaeopteryx/fish
           'transitional_fossil', 'living_fossil',
           // seashore batch 1 — hand-sized shore animals and shore seaweed fronds, same rack as crab/oyster/kelp
-          'mussel', 'sea_star', 'brittle_star', 'razor_clam', 'bladder_wrack', 'sea_lettuce'],
+          'mussel', 'sea_star', 'brittle_star', 'razor_clam', 'bladder_wrack', 'sea_lettuce',
+          // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
+          'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
@@ -337,7 +345,9 @@ const SCALE = {
           'peripheral_nervous_system', 'central_nervous_system', 'nervous_system',
           'autonomic_nervous_system', 'sympathetic_nervous_system', 'parasympathetic_nervous_system',
           // seashore batch 1 — a rock pool a person looks down into, the same viewed-object scale as human/sea_otter
-          'tide_pool'],
+          'tide_pool',
+          // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
+          'japanese_giant_salamander'],
   '1':   [// mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
           // scale, the same bucket as drilling_rig/ball_mill/haul_truck above
           'exploration_drilling', 'bench', 'blasting', 'excavator', 'grade_control',

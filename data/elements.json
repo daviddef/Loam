@@ -6125,7 +6125,7 @@
       "microbe"
     ],
     "fact": "Two tyrosine rings joined, carrying four iodine atoms. T3 is the same molecule one iodine lighter.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "ascorbate",
@@ -17333,7 +17333,7 @@
       "wild"
     ],
     "fact": "The most toxic vertebrate known by weight — one wild frog carries enough poison for 10-20 people.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_phyllobates"
   },
   {
@@ -17372,7 +17372,7 @@
       "wild"
     ],
     "fact": "Unlike other salamanders, it never leaves the water or metamorphoses — it keeps its gills for life.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_ambystoma"
   },
   {
@@ -23941,5 +23941,178 @@
     ],
     "taxon": "tx_malacostraca",
     "fact": "A filter feeder closer kin to hermit crabs than true crabs, gripping kelp holdfasts with spiny legs."
+  },
+  {
+    "id": "frogspawn",
+    "name": "Frogspawn",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A clump of eggs wrapped only in jelly, no shell — most amphibians must lay it in water or it dries out."
+  },
+  {
+    "id": "tadpole",
+    "name": "Tadpole",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A fully aquatic larva with a tail and gills, hatched from spawn — nothing like the frog it will become.",
+    "soleRoute": true
+  },
+  {
+    "id": "gill",
+    "name": "Gill",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A feathery, blood-vessel-rich fringe that pulls dissolved oxygen straight out of water.",
+    "soleRoute": true
+  },
+  {
+    "id": "lung",
+    "name": "Lung",
+    "emoji": "🫁",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An air sac that only finishes growing once a tadpole's gills are on their way out.",
+    "soleRoute": true
+  },
+  {
+    "id": "metamorphosis",
+    "name": "Metamorphosis",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Thyroid hormone remakes a gilled swimmer into an air-breather, tail eaten by its own cells."
+  },
+  {
+    "id": "amphibian_skin",
+    "name": "Amphibian Skin",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Little keratin, no scales — a permeable membrane that must stay damp to work at all."
+  },
+  {
+    "id": "cutaneous_respiration",
+    "name": "Cutaneous Respiration",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Breathing through the skin itself — some salamanders rely on it completely and have no lungs at all."
+  },
+  {
+    "id": "indicator_species",
+    "name": "Indicator Species",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Permeable skin and a water-bound larva make an amphibian population an early warning for pollution.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "lateral_line",
+    "name": "Lateral Line",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A row of pressure-sensing \"plaques\" down the head and flanks, for water, not air.",
+    "terminal": true
+  },
+  {
+    "id": "caecilian",
+    "name": "Caecilian",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Limbless and burrowing, built so much like an earthworm most people miss that it's a vertebrate.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "japanese_giant_salamander",
+    "name": "Japanese Giant Salamander",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Among the largest living amphibians at 1.5 m — its wrinkled skin exists purely to breathe underwater.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "surinam_toad",
+    "name": "Surinam Toad",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Eggs sink into the mother's back skin, which closes into pockets until a toadlet climbs out.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "batrachotoxin",
+    "name": "Batrachotoxin",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The frog doesn't make its own poison — it concentrates it from the ants and mites it eats.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "olm",
+    "name": "Olm",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Blind and pale from a lifetime in cave rivers, larval for life — its tissues ignore thyroxine.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "siren",
+    "name": "Siren",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Keeps functioning lungs and external gills side by side for life, unlike any other salamander.",
+    "soleRoute": true,
+    "terminal": true
   }
 ]
