@@ -6410,8 +6410,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "The alchemists' philosopher's wool: white fume off burning zinc, caught and collected.",
-    "terminal": true
+    "fact": "The alchemists' philosopher's wool: white fume off burning zinc, caught and collected."
   },
   {
     "id": "copper_oxide",
@@ -6443,8 +6442,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Lead's oxide. Red below 486 °C, yellow above it — one compound, two crystal packings.",
-    "terminal": true
+    "fact": "Lead's oxide. Red below 486 °C, yellow above it — one compound, two crystal packings."
   },
   {
     "id": "mercuric_oxide",
@@ -25440,7 +25438,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "Tin oxide, SnO2 — the ore the Bronze Age's tin was smelted from, and still the main tin ore now.",
     "soleRoute": true
   },
@@ -25655,5 +25652,23 @@
     ],
     "fact": "A dome of mammoth bones and tusks, weighted and covered with hide, on treeless Ice Age steppe.",
     "terminal": true
+  },
+  {
+    "id": "coke",
+    "name": "Coke",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": ["earth", "fire"],
+    "soleRoute": true,
+    "fact": "Coal heated past 1,000°C with no air doesn't burn — it comes apart, leaving this near-pure carbon behind."
+  },
+  {
+    "id": "pig_iron",
+    "name": "Pig Iron",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": ["metal"],
+    "soleRoute": true,
+    "fact": "Cast in branching sand moulds off one channel — piglets nursed by a sow is where the name comes from."
   }
 ]

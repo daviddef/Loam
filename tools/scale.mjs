@@ -232,6 +232,8 @@ const SCALE = {
           'wool_card', 'felt', 'spindle', 'flying_shuttle', 'knitting_needles', 'knitted_fabric', 'indigo', 'madder', 'dyed_cloth', 'coal_tar', 'wood_tar', 'ethanol', 'bakelite', 'polyethylene', 'snow', 'smoke', 'ozone', 'air', 'loess', 'fulgurite', 'bone_char', 'bottle', 'blackware', 'stockfish', 'chlorine', 'fluorine', 'bromine', 'argon', 'krypton', 'xenon', 'noble_mix', 'kelp', 'book', 'fetus', 'maize', 'barley', 'oat', 'carrot', 'lettuce', 'pumpkin', 'beet', 'banana', 'brewed_coffee', 'cocoa', 'duck', 'turkey', 'koala', 'platypus', 'lizard', 'turtle', 'cloth', 'clothing', 'paper', 'pulp', 'flax', 'water', 'mud', 'soil', 'tempered_clay', 'concrete', 'fire', 'steam',
           // mining value chains batch 2 — belt material and waste slurry, same item scale as rope/mud
           'conveyor_belt', 'tailings',
+          // mining refining chains batch 1 — fuel lump and cast-metal lump, same rack as coal/steel
+          'coke', 'pig_iron',
           'shiitake', 'maitake', 'spirulina', 'horsetail', 'dandelion', 'aloe_vera', 'ginseng', 'psyllium',
           'fly_agaric', 'death_cap', 'chanterelle', 'porcini', 'morel', 'puffball', 'stinkhorn', 'turkey_tail', 'slime_mold', 'shaggy_mane',
           'pineapple', 'spinach', 'acai', 'pomegranate', 'goji', 'papaya', 'broccoli', 'alfalfa', 'stevia',

@@ -30734,5 +30734,93 @@
     "why": "More than 70 mammoth-bone dwellings have been found on the East European Plain. Some were built by modern humans who entered Europe 30,000 to 40,000 years ago, continuing a practice already established by Neanderthals.",
     "src": "https://en.wikipedia.org/wiki/Woolly_mammoth",
     "supported": true
+  },
+  {
+    "in": ["coal"],
+    "verb": "heat",
+    "at": 1000,
+    "out": "coke",
+    "why": "Coking: heated past 1,000 °C with the air shut out, coal doesn't burn, it decomposes — water, coal gas and tar drive off, leaving the porous, almost-pure carbon a blast furnace runs on.",
+    "src": "https://en.wikipedia.org/wiki/Coke_(fuel)",
+    "verified": true
+  },
+  {
+    "in": ["concentrate", "coke"],
+    "out": "pig_iron",
+    "why": "A blast furnace: ore concentrate, coke and limestone flux go in the top, hot air blows in the bottom, and carbon monoxide off the burning coke reduces the ore — Fe2O3 + 3CO to 2Fe + 3CO2 — while limestone melts the leftover rock into slag.",
+    "src": "https://en.wikipedia.org/wiki/Blast_furnace",
+    "verified": true
+  },
+  {
+    "in": ["pig_iron"],
+    "verb": "heat",
+    "out": "iron",
+    "why": "Pig iron fresh from the blast furnace is brittle and full of carbon. Remelted with scrap and its composition adjusted, it becomes cast iron — poured into a mould rather than forged like wrought iron or steel.",
+    "src": "https://en.wikipedia.org/wiki/Pig_iron",
+    "supported": true
+  },
+  {
+    "in": ["pig_iron"],
+    "verb": "blow",
+    "out": "steel",
+    "why": "The basic oxygen process: a lance blows pure oxygen through molten pig iron at supersonic speed, burning off the excess carbon in under 40 minutes — by 2000 this made 60% of the world's steel.",
+    "src": "https://en.wikipedia.org/wiki/Basic_oxygen_steelmaking",
+    "verified": true
+  },
+  {
+    "in": ["gravity_separation", "cassiterite"],
+    "out": "concentrate",
+    "why": "Cassiterite is heavy — a specific gravity around 7.0, roughly double ordinary rock — so hydraulic and spiral gravity concentration sort tin ore from waste by weight alone, no chemicals needed.",
+    "src": "https://en.wikipedia.org/wiki/Cassiterite",
+    "verified": true
+  },
+  {
+    "in": ["concentrate", "charcoal"],
+    "out": "tin",
+    "why": "Tin smelting is carbothermic reduction straight to metal, SnO2 + C to Sn + CO2, run in a reverberatory or electric furnace — cassiterite reduces cleanly, with no matte or blister stage in between.",
+    "src": "https://en.wikipedia.org/wiki/Tin",
+    "supported": true
+  },
+  {
+    "in": ["flotation_cell", "zinc_sulfide"],
+    "out": "concentrate",
+    "why": "The same froth flotation that lifts copper sulfide off its gangue does the same job on sphalerite, zinc sulfide — a xanthate collector is what actually separates it from the galena it's usually found sitting next to.",
+    "src": "https://en.wikipedia.org/wiki/Froth_flotation",
+    "verified": true
+  },
+  {
+    "in": ["flotation_cell", "lead_sulfide"],
+    "out": "concentrate",
+    "why": "Sodium ethyl xanthate as a collector floats galena, lead sulfide, off the sphalerite it's usually mined alongside — the same froth flotation cell copper's ore runs through, just tuned to a different mineral.",
+    "src": "https://en.wikipedia.org/wiki/Froth_flotation",
+    "verified": true
+  },
+  {
+    "in": ["concentrate", "oxygen_gas"],
+    "out": "zinc_oxide",
+    "why": "Roasting: burn a zinc sulfide concentrate in a stream of air and the chemistry runs directly, 2ZnS + 3O2 to 2ZnO + 2SO2 — around 90% of the zinc converts to oxide, and the sulfur dioxide is captured for sulfuric acid.",
+    "src": "https://en.wikipedia.org/wiki/Zinc_smelting",
+    "verified": true
+  },
+  {
+    "in": ["zinc_oxide", "electrolysis"],
+    "out": "zinc",
+    "why": "Roast-leach-electrowin: roasted zinc oxide dissolves in sulfuric acid to a zinc sulfate solution, and current through it plates pure zinc onto the cathode — the same electrowinning that turns copper's leach solution into cathode.",
+    "src": "https://en.wikipedia.org/wiki/Zinc_smelting",
+    "verified": true
+  },
+  {
+    "in": ["concentrate", "air"],
+    "out": "litharge",
+    "why": "Sintering a lead concentrate in a blast of air does the roasting chemistry directly: the sulfide oxidises to a sulfite, which decomposes straight through to lead oxide and sulfur dioxide gas — litharge, ready for the blast furnace.",
+    "src": "https://en.wikipedia.org/wiki/Lead_smelting",
+    "verified": true
+  },
+  {
+    "in": ["litharge", "coke"],
+    "out": "lead",
+    "why": "The sinter goes into a blast furnace with coke and a flux; carbon monoxide off the burning coke pulls the last oxygen out of the lead oxide, and the reduced metal taps out the bottom as lead bullion.",
+    "src": "https://en.wikipedia.org/wiki/Lead_smelting",
+    "verified": true
   }
 ]
