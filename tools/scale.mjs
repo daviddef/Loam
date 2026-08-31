@@ -179,6 +179,11 @@ const SCALE = {
           'blue_cheese', 'egg', 'boiled_egg', 'golden_egg', 'apple', 'tomato',
           'onion', 'garlic', 'bulb', 'potato', 'cassava', 'chilli', 'meatball', 'sausage',
           'bacon', 'chips', 'leaf', 'flower', 'root', 'herb', 'sprout', 'seedling',
+          // trees/plants batch 1 — tree-anatomy structures and a growth stage, same
+          // small-scale rack as leaf/seedling
+          'cambium', 'sapwood', 'heartwood', 'abscission', 'samara', 'catkin',
+          'rootstock', 'scion', 'chill_hours', 'cone', 'deciduous', 'conifer',
+          'gymnosperm', 'sapling',
           // Hindu mythology batch 1 — an aquatic flower, same rack as flower/leaf/root
           'lotus',
           'corn_dolly', 'gingerbread_man', 'philosopher_stone', 'sugarcane',
@@ -234,7 +239,10 @@ const SCALE = {
           'toucan', 'woodpecker', 'pelican', 'heron', 'cormorant', 'parrot', 'swift',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
-          'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
+          'mango', 'ginger', 'rhizome', 'celery',
+          // trees/plants batch 1 — hand-scale tropical fruits, same rack as mango
+          'breadfruit', 'jackfruit', 'lychee', 'rambutan', 'longan', 'tamarind',
+          'dragon_fruit', 'starfruit', 'soursop', 'akee', 'curry_leaf', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
           'carbon_disulfide', 'disulfur_dichloride', 'phosphorus_trichloride', 'titanium_chloride', 'aluminum_copper_alloy', 'magnalium', 'nak_alloy', 'tin_silver_solder', 'beef', 'pork', 'mutton', 'venison', 'poultry', 'game', 'aged_beef', 'ham', 'stew', 'turmeric', 'carob', 'red_alga', 'green_alga', 'hydrogenated_oil', 'sap', 'bark', 'cork', 'xylem', 'phloem', 'coconut', 'coconut_water', 'sugar_beet', 'mulberry', 'graft', 'hardwood', 'softwood', 'tallow', 'horn', 'antler', 'feather', 'down', 'oyster', 'swim_bladder', 'ambergris', 'baleen', 'manure', 'parchment', 'ivory', 'royal_jelly', 'rennet', 'whey', 'ricotta', 'starter_culture', 'pasteurised_milk', 'souring_kraut', 'kefir', 'buttermilk', 'miso', 'camembert', 'tuber', 'cutting', 'runner', 'obsidian', 'pumice', 'lignite', 'anthracite', 'marble', 'slate', 'magnet', 'copper_wire', 'voltaic_pile', 'electromagnet', 'heating_element', 'light_bulb', 'ipod', 'nike_plus_sensor', 'midsole_foam', 'athletic_shoe', 'polarizer', 'dvd_player', 'magnetic_tape', 'vhs', 'magnetron', 'scanner', 'barcode_scanner', 'wii_remote', 'digital_camera', 'sulfuric_acid',
           // sandboxels gapfill batch 1 — poured/drummed industrial liquids, the same item scale as sulfuric_acid
           'glycerol', 'toluene', 'nitroglycerin', 'liquid_hydrogen', 'liquid_nitrogen',
@@ -254,6 +262,8 @@ const SCALE = {
           'ultraviolet', 'lichtenberg_figure',
           // careers batch 1 — real hand tools, the same rack as knife/rope
           'chisel', 'stethoscope', 'dental_drill', 'compass', 'fire_hose', 'chalk',
+          // cutaways batch 1 — small hand-scale parts
+          'control_rod', 'heat_shield_tile', 'swashplate', 'rivet',
           // great inventors batch 1 — hand-scale devices and materials
           'bitumen', 'crankshaft', 'thermostat', 'bifocals', 'centrifugal_governor',
           'heliography', 'antiseptic_dressing', 'blasting_cap', 'metal_detector',
@@ -404,6 +414,10 @@ const SCALE = {
           // vehicle-scale meteorite (the largest single intact one known)
           'moat', 'drawbridge', 'viking', 'columbus', 'gladiator', 'tickle', 'sneeze',
           'hardtack', 'hoba',
+          // science-for-learners batch 1 — medical/conceptual/historical-work entries,
+          // no literal size, same convention as natural_selection above
+          'leprosy', 'chaulmoogra_ester', 'artemisinin', 'lamarckism', 'abo_blood_group',
+          'waggle_dance', 'book_of_optics', 'event_horizon_telescope',
           // super-nature batch 1 — medium-animal scale, same rack as fox
           'aardvark', 'beaver', 'pronghorn', 'satin_bowerbird', 'leatherback_turtle',
           'electric_eel', 'coconut_crab',
@@ -425,6 +439,10 @@ const SCALE = {
           'fuel_cell', 'als', 'echolocation', 'biomimicry', 'frozen_zoo',
           // great inventors batch 1 — appliance/vehicle-scale devices and 2 abstractions
           'archimedes_screw', 'elephant_clock', 'submarine', 'lightning_rod', 'automobile',
+          // cutaways batch 1 — vehicle/appliance-scale machines
+          'nuclear_reactor', 'corium', 'tunnel_boring_machine', 'ct_scanner', 'stand_mixer',
+          'electric_car', 'icebreaker', 'snow_groomer', 'turboprop', 'abrams_tank',
+          'tiger_tank', 'radar', 'stealth_aircraft', 'elliptical_wing',
           'ac_induction_motor', 'autogyro', 'liquid_fuel_rocket', 'enigma_machine', 'bombe',
           'hypertext', 'world_wide_web',
           // poisonous plants batch 1 — herb/shrub/vine-scale toxic and psychoactive
@@ -499,6 +517,9 @@ const SCALE = {
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'de_extinction', 'giraffe', 'nile_crocodile', 'american_alligator',
           // natural history book batch 1 — tree-scale seed plants
           'cycad', 'ginkgo',
+          // trees/plants batch 1 — real tree species, same tree scale as oak/pine
+          'larch', 'cedar', 'juniper', 'holly', 'magnolia', 'maple', 'birch', 'beech',
+          'elm', 'eucalyptus', 'baobab', 'banyan', 'aspen', 'crabapple',
           // poisonous plants batch 1 — full-sized trees and a tall columnar cactus,
           // the same rack as oak/pine/saguaro above
           'yew', 'strychnine_tree', 'horse_chestnut', 'betel_nut', 'san_pedro_cactus',
@@ -509,6 +530,8 @@ const SCALE = {
           'climax_community', 'food_chain',
           'basking_shark', 'megamouth_shark', 'great_white_shark', 'thresher_shark', 'goblin_shark',
           'manta_ray', 'tiger_shark', 'orca', 'great_hammerhead', 'giant_squid', 'lions_mane_jellyfish', 'whale_shark',
+          // science-for-learners batch 1 — a dolphin-scale marine reptile
+          'ichthyosaur',
           'basilosaurus', 'dorudon', 'llanocetus',
           'swordfish', 'marlin',
           'allosaurus', 'spinosaurus', 'tyrannosaurus', 'plateosaurus', 'brachiosaurus', 'apatosaurus',
@@ -540,6 +563,8 @@ const SCALE = {
           'temple_of_artemis', 'ziggurat', 'hanging_gardens',
           // did you know batch 1 — hundred-metre-plus historical structures
           'castle', 'colosseum',
+          // cutaways batch 1 — hundred-metre-plus engineered structures
+          'nuclear_power_plant', 'hydroelectric_dam', 'ocean_liner',
           'port_stockpile', 'stacker_reclaimer', 'ship_loader',
           'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',

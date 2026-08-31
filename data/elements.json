@@ -10796,8 +10796,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Graphite anode, lithium cobalt oxide cathode — the pair that actually powers a phone.",
-    "terminal": true
+    "fact": "Graphite anode, lithium cobalt oxide cathode — the pair that actually powers a phone."
   },
   {
     "id": "lithium_hydride",
@@ -11683,8 +11682,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "A stone fruit. The kernel inside the pit is not a snack — it carries a real cyanide compound.",
-    "terminal": true
+    "fact": "A stone fruit. The kernel inside the pit is not a snack — it carries a real cyanide compound."
   },
   {
     "id": "nectarine",
@@ -15430,8 +15428,7 @@
       "wild"
     ],
     "fact": "The most massive tree alive by volume — bark nearly a metre thick shields it from the fires that pop open its cones.",
-    "taxon": "tx_sequoiadendron",
-    "terminal": true
+    "taxon": "tx_sequoiadendron"
   },
   {
     "id": "coast_redwood",
@@ -15443,8 +15440,7 @@
       "wild"
     ],
     "fact": "The tallest tree species alive, over 116m — its needles pull fog straight through their skin, bypassing the xylem.",
-    "taxon": "tx_sequoia",
-    "terminal": true
+    "taxon": "tx_sequoia"
   },
   {
     "id": "moss",
@@ -30226,5 +30222,811 @@
       "year": 1990,
       "note": "Berners-Lee builds HTTP, HTML, the URL and the first browser and server at CERN."
     }
+  },
+  {
+    "id": "ichthyosaur",
+    "name": "Ichthyosaur",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "extinct"
+    ],
+    "terminal": true,
+    "fact": "Joseph Anning found the skull in 1811; his sister Mary spent months excavating the rest of the skeleton.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1812,
+      "note": "Mary Anning completes excavating the first Ichthyosaurus skeleton to draw scientific attention, at Lyme Regis."
+    }
+  },
+  {
+    "id": "leprosy",
+    "name": "Leprosy",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Mycobacterium leprae divides so slowly that symptoms can take five years or more to appear.",
+    "soleRoute": true
+  },
+  {
+    "id": "chaulmoogra_ester",
+    "name": "Chaulmoogra Ester",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Alice Ball turned chaulmoogra oil's fatty acids into ethyl esters in 1916 — finally soluble enough to inject.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1916,
+      "note": "Alice Ball develops the ethyl-ester method at the University of Hawaii, but dies before publishing it herself."
+    }
+  },
+  {
+    "id": "artemisinin",
+    "name": "Artemisinin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "terminal": true,
+    "fact": "Sweet wormwood's antimalarial compound — heat destroys it, so the extraction has to stay cold.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1972,
+      "note": "Tu Youyou's team isolates artemisinin; she shares the 2015 Nobel Prize in Physiology or Medicine for the discovery."
+    }
+  },
+  {
+    "id": "lamarckism",
+    "name": "Lamarckism",
+    "emoji": "🦒",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Lamarck's giraffe: a neck stretched in one lifetime, passed on already lengthened to the next.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1809,
+      "note": "Lamarck publishes Philosophie Zoologique, proposing that acquired traits pass to offspring."
+    }
+  },
+  {
+    "id": "abo_blood_group",
+    "name": "ABO Blood Group",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Mix the wrong two and red cells clump together — why blood gets typed before a transfusion.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1901,
+      "note": "Karl Landsteiner publishes the ABO system; he receives the 1930 Nobel Prize in Physiology or Medicine for it."
+    }
+  },
+  {
+    "id": "waggle_dance",
+    "name": "Waggle Dance",
+    "emoji": "💃",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "A bee's waggle run points at an angle from vertical equal to the food's angle from the Sun.",
+    "soleRoute": true
+  },
+  {
+    "id": "book_of_optics",
+    "name": "Book of Optics",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Argued vision happens because light enters the eye, not because the eye sends out rays.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 1021,
+      "note": "Ibn al-Haytham completes the seven-volume Book of Optics (Kitab al-Manazir)."
+    }
+  },
+  {
+    "id": "event_horizon_telescope",
+    "name": "Event Horizon Telescope",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Linked telescopes worldwide into one Earth-sized dish and imaged a black hole's shadow, 2019.",
+    "soleRoute": true,
+    "discovered": {
+      "year": 2019,
+      "note": "The EHT Collaboration releases the first image of a black hole, M87*, on 10 April 2019."
+    }
+  },
+  {
+    "id": "sapling",
+    "name": "Sapling",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A young tree past the seedling stage: its stem has turned from soft and green to properly woody."
+  },
+  {
+    "id": "cambium",
+    "name": "Cambium",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A ring of dividing cells under the bark — it builds new xylem inward and new phloem outward each year."
+  },
+  {
+    "id": "sapwood",
+    "name": "Sapwood",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The living outer wood of a trunk, still carrying water up from the roots before it hardens into heartwood."
+  },
+  {
+    "id": "heartwood",
+    "name": "Heartwood",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The dead, dark core of an old trunk — chemically toughened sapwood that still braces the tree once it's gone."
+  },
+  {
+    "id": "cone",
+    "name": "Cone",
+    "emoji": "🎍",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A conifer's seed case — it ripens over months, and some species keep it sealed shut on the tree for years."
+  },
+  {
+    "id": "conifer",
+    "name": "Conifer",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Cone-bearing, needle- or scale-leaved, and mostly evergreen — pines, firs, cedars and cypresses among them."
+  },
+  {
+    "id": "gymnosperm",
+    "name": "Gymnosperm",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A seed plant with naked seeds — no fruit wrapped around them, unlike an angiosperm's."
+  },
+  {
+    "id": "abscission",
+    "name": "Abscission",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The layer of cork cells a plant grows across a leaf stalk, which is what actually makes the leaf fall."
+  },
+  {
+    "id": "deciduous",
+    "name": "Deciduous",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Sheds its leaves on a seasonal cue rather than keeping them through winter like an evergreen does."
+  },
+  {
+    "id": "samara",
+    "name": "Samara",
+    "emoji": "🚁",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A winged seed shaped like a tiny airfoil — maple and ash both spin theirs down like a helicopter blade."
+  },
+  {
+    "id": "catkin",
+    "name": "Catkin",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A dangling, petal-less flower spike built for wind pollination, not for attracting insects."
+  },
+  {
+    "id": "larch",
+    "name": "Larch",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A conifer that breaks its own family's rule: it drops its needles every autumn like a broadleaf tree."
+  },
+  {
+    "id": "cedar",
+    "name": "Cedar",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A resinous evergreen conifer with barrel-shaped cones that disintegrate scale by scale on the tree."
+  },
+  {
+    "id": "juniper",
+    "name": "Juniper",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A conifer whose cone scales fuse into a fleshy, berry-like ball — the 'berries' that flavour gin."
+  },
+  {
+    "id": "holly",
+    "name": "Holly",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Spiny, glossy evergreen leaves and red winter berries — festive to look at, mildly toxic if eaten."
+  },
+  {
+    "id": "magnolia",
+    "name": "Magnolia",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "An ancient flowering tree — its lineage predates bees, so beetles still do the pollinating."
+  },
+  {
+    "id": "maple",
+    "name": "Maple",
+    "emoji": "🍁",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Winged samara seeds, and in some species sap sweet enough to boil down into syrup."
+  },
+  {
+    "id": "birch",
+    "name": "Birch",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Thin, papery bark that peels off in horizontal strips, and catkins instead of showy flowers."
+  },
+  {
+    "id": "beech",
+    "name": "Beech",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Smooth grey bark and 'mast' — oil-rich beechnuts once used to fatten pigs before winter."
+  },
+  {
+    "id": "elm",
+    "name": "Elm",
+    "emoji": "🪲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Its bark carries the beetle that spreads the fungus behind Dutch elm disease."
+  },
+  {
+    "id": "eucalyptus",
+    "name": "Eucalyptus",
+    "emoji": "🐨",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Oil-rich leaves toxic to most browsers — koalas are among the few animals that can stomach them."
+  },
+  {
+    "id": "baobab",
+    "name": "Baobab",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A trunk swollen enough to store up to 120,000 litres of water against the next drought."
+  },
+  {
+    "id": "banyan",
+    "name": "Banyan",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Sends roots straight down from its branches; each one thickens into another trunk until it's a forest."
+  },
+  {
+    "id": "aspen",
+    "name": "Aspen",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Its leaf stalks are flattened sideways, so even a light breeze sets the whole canopy quaking."
+  },
+  {
+    "id": "rootstock",
+    "name": "Rootstock",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "fact": "The rooted half of a graft — swap it and you can dwarf a full-size apple tree without touching the fruit."
+  },
+  {
+    "id": "scion",
+    "name": "Scion",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "tool"
+    ],
+    "fact": "The cutting grafted onto a rootstock — every graft of it is a genetic clone of one original tree."
+  },
+  {
+    "id": "crabapple",
+    "name": "Crabapple",
+    "emoji": "🍏",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Grow an apple from its own seed and you get this: small, sour, and nothing like its parent."
+  },
+  {
+    "id": "chill_hours",
+    "name": "Chill Hours",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The quota of winter cold a fruit tree must clock up before it will flower properly in spring."
+  },
+  {
+    "id": "breadfruit",
+    "name": "Breadfruit",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Starchy enough to be a staple food across the Pacific — baked, boiled or fried, never eaten raw."
+  },
+  {
+    "id": "jackfruit",
+    "name": "Jackfruit",
+    "emoji": "🍈",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "The largest fruit grown on any tree, up to 55 kg, in the same genus as breadfruit."
+  },
+  {
+    "id": "lychee",
+    "name": "Lychee",
+    "emoji": "🍒",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "A rind hiding a translucent, sweet aril wrapped around one seed — botanically, a drupe."
+  },
+  {
+    "id": "rambutan",
+    "name": "Rambutan",
+    "emoji": "🦔",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Lychee's spiky cousin in the soapberry family — its name is just Malay for 'hair.'"
+  },
+  {
+    "id": "longan",
+    "name": "Longan",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Lychee's other cousin, named for the way its black seed shows through the flesh like an eye."
+  },
+  {
+    "id": "tamarind",
+    "name": "Tamarind",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "A legume tree — its pod fruit is sour enough to season food across three continents."
+  },
+  {
+    "id": "dragon_fruit",
+    "name": "Dragon Fruit",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "The fruit of a climbing cactus, one that scales trees for support without ever rooting in them."
+  },
+  {
+    "id": "starfruit",
+    "name": "Starfruit",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Slice it crosswise and its five ridges turn every piece into a perfect star."
+  },
+  {
+    "id": "soursop",
+    "name": "Soursop",
+    "emoji": "🍈",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "A relative of the custard apple and cherimoya, with spiny green skin and soft, custardy pulp."
+  },
+  {
+    "id": "akee",
+    "name": "Akee",
+    "emoji": "⚠️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Jamaica's national fruit — and toxic until its own capsule splits open on the tree."
+  },
+  {
+    "id": "curry_leaf",
+    "name": "Curry Leaf",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "food"
+    ],
+    "fact": "Fried in hot oil at the start of a dish, which is how its aroma actually gets released."
+  },
+  {
+    "id": "control_rod",
+    "name": "Control Rod",
+    "emoji": "🎛️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Slides into the reactor core to soak up neutrons and choke off the chain reaction on demand."
+  },
+  {
+    "id": "nuclear_reactor",
+    "name": "Nuclear Reactor",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The same fission as a bomb, just held on the edge of runaway instead of let loose."
+  },
+  {
+    "id": "corium",
+    "name": "Corium",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "terminal": true,
+    "fact": "Chernobyl's 'elephant's foot' — fuel, control rods and structure melted into one radioactive lava."
+  },
+  {
+    "id": "nuclear_power_plant",
+    "name": "Nuclear Power Plant",
+    "emoji": "🏭",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "The reactor never spins anything itself — it just boils water for a turbine to do that."
+  },
+  {
+    "id": "heat_shield_tile",
+    "name": "Heat Shield Tile",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Silica fiber fired so light it's 90% empty space, yet it shrugged off 1,260°C on re-entry."
+  },
+  {
+    "id": "tunnel_boring_machine",
+    "name": "Tunnel Boring Machine",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "terminal": true,
+    "fact": "A rotating steel cutterhead chews the tunnel face while hydraulic rams shove the machine forward."
+  },
+  {
+    "id": "ct_scanner",
+    "name": "CT Scanner",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "An X-ray tube and detectors spin around the patient; a computer stacks the angles into 3D."
+  },
+  {
+    "id": "hydroelectric_dam",
+    "name": "Hydroelectric Dam",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Water drops through a penstock into a turbine — a whole river's fall, spent turning one shaft."
+  },
+  {
+    "id": "stand_mixer",
+    "name": "Stand Mixer",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Named for its beater's own motion — it spins on its own axis while orbiting the bowl, like a planet."
+  },
+  {
+    "id": "swashplate",
+    "name": "Swashplate",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "soleRoute": true,
+    "fact": "A tilting plate that changes each rotor blade's pitch differently through the turn — how a helicopter steers."
+  },
+  {
+    "id": "electric_car",
+    "name": "Electric Car",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "No engine, no gearbox, no idle — a battery and a motor with full torque from a dead stop."
+  },
+  {
+    "id": "icebreaker",
+    "name": "Icebreaker",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Doesn't climb the ice and crush it — a reinforced bow bends and breaks it under the hull at speed."
+  },
+  {
+    "id": "snow_groomer",
+    "name": "Snow Groomer",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A tracked tiller combs the piste into corduroy, winched up the steepest slopes on a cable."
+  },
+  {
+    "id": "turboprop",
+    "name": "Turboprop",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A gas turbine that barely bothers with jet thrust — a gearbox sends nearly all its power to a propeller."
+  },
+  {
+    "id": "abrams_tank",
+    "name": "M1 Abrams",
+    "emoji": "🪖",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A tank engine borrowed from an idea more common in helicopters — a 1,500hp gas turbine, not a diesel."
+  },
+  {
+    "id": "tiger_tank",
+    "name": "Tiger Tank",
+    "emoji": "🐅",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Flat, vertical armor plates and an 88mm gun — no sloping, unlike its own stablemate the Panther."
+  },
+  {
+    "id": "radar",
+    "name": "Radar",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Times a radio echo's round trip — half the delay, times the speed of light, is the range."
+  },
+  {
+    "id": "stealth_aircraft",
+    "name": "Stealth Aircraft",
+    "emoji": "🥷",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Faceted panels fling radar's echo away from the receiver instead of straight back at it."
+  },
+  {
+    "id": "rivet",
+    "name": "Rivet",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "soleRoute": true,
+    "fact": "Driven red-hot through two plates and hammered into a second head, it only clamps tight once it cools."
+  },
+  {
+    "id": "ocean_liner",
+    "name": "Ocean Liner",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Watertight bulkheads split the hull into compartments — Titanic's simply didn't reach high enough."
+  },
+  {
+    "id": "elliptical_wing",
+    "name": "Elliptical Wing",
+    "emoji": "🛩️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "The lift distribution with the least induced drag of any wing planform — the Spitfire's signature shape."
   }
 ]

@@ -35168,5 +35168,815 @@
     "why": "Hypertext and the Internet had both existed since the 1960s, but nobody had combined them: Berners-Lee's 1989 CERN proposal described a hypertext database running over the Internet, and by December 1990 he'd built HTTP, HTML, the URL, and the first browser.",
     "src": "https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web",
     "verified": true
+  },
+  {
+    "in": [
+      "fossil",
+      "sea"
+    ],
+    "out": "ichthyosaur",
+    "why": "In 1811 twelve-year-old Mary Anning's brother Joseph found a skull at Lyme Regis; months later she excavated the rest of a 5-metre skeleton, the first ichthyosaur specimen to draw serious scientific attention.",
+    "src": "https://en.wikipedia.org/wiki/Mary_Anning",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "human"
+    ],
+    "out": "leprosy",
+    "why": "Mycobacterium leprae (or the rarer M. lepromatosis) spreads mainly through nasal droplets, not touch — about 95% of people exposed never develop symptoms, and it can take five years or more to show up.",
+    "src": "https://en.wikipedia.org/wiki/Leprosy",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol",
+      "fatty_acid"
+    ],
+    "out": "chaulmoogra_ester",
+    "why": "Chaulmoogra oil's fatty acids, esterified with ethanol, turn soluble enough to inject. Alice Ball worked this out in 1915-16 at Hawaii — the first effective leprosy treatment before antibiotics — though she died at 24 before publishing it herself.",
+    "src": "https://en.wikipedia.org/wiki/Alice_Ball",
+    "supported": true
+  },
+  {
+    "in": [
+      "herb"
+    ],
+    "verb": "chill",
+    "out": "artemisinin",
+    "why": "Ge Hong's 4th-century recipe said to steep the plant in cold water, not boil it. Heat wrecks the compound's activity — cold extraction from Artemisia annua isolated artemisinin in 1972, earning Tu Youyou a share of the 2015 Nobel Prize.",
+    "src": "https://en.wikipedia.org/wiki/Artemisinin",
+    "verified": true
+  },
+  {
+    "in": [
+      "evolution",
+      "giraffe"
+    ],
+    "out": "lamarckism",
+    "why": "In his 1809 Philosophie Zoologique, Lamarck proposed that organs strengthen with use and weaken with disuse, and that acquired traits pass to offspring — his own example was a giraffe's neck lengthening, generation by generation, to reach higher leaves.",
+    "src": "https://en.wikipedia.org/wiki/Lamarckism",
+    "supported": true
+  },
+  {
+    "in": [
+      "blood",
+      "blood"
+    ],
+    "out": "abo_blood_group",
+    "why": "Mixing serum and red cells from different people, Karl Landsteiner found some combinations clumped and some didn't, sorting blood into groups he called A, B, and C in 1900-01. C was later renamed O, and his students found a fourth group, AB, the next year.",
+    "src": "https://en.wikipedia.org/wiki/ABO_blood_group_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "sun"
+    ],
+    "out": "waggle_dance",
+    "why": "A returning forager runs a figure eight, waggling along the straight middle stretch. The run's angle from vertical shows the food's angle from the Sun, and the waggle's length shows the distance — a code Karl von Frisch spent decades decoding.",
+    "src": "https://en.wikipedia.org/wiki/Waggle_dance",
+    "supported": true
+  },
+  {
+    "in": [
+      "book",
+      "camera_obscura"
+    ],
+    "out": "book_of_optics",
+    "why": "Ibn al-Haytham's seven-volume Book of Optics (1011-1021 CE) broke with the old idea that eyes emit rays, arguing instead that vision happens because light enters the eye — and used the camera obscura's inverted image, among other experiments, to make the case.",
+    "src": "https://en.wikipedia.org/wiki/Book_of_Optics",
+    "supported": true
+  },
+  {
+    "in": [
+      "radio_telescope",
+      "radio_telescope"
+    ],
+    "out": "event_horizon_telescope",
+    "why": "Eight radio observatories on four continents, linked by interferometry into one Earth-sized virtual telescope. Katie Bouman helped build the CHIRP algorithm that reconstructed the image — the first picture of a black hole, M87*, released 10 April 2019.",
+    "src": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotyledon",
+      "sun"
+    ],
+    "out": "sapling",
+    "why": "A germinating seed's first green leaves, its cotyledons, turn photosynthetic in the light and power the seedling's climb toward becoming a sapling.",
+    "src": "https://en.wikipedia.org/wiki/Cotyledon",
+    "supported": true
+  },
+  {
+    "in": [
+      "seedling",
+      "chlorophyll"
+    ],
+    "out": "sapling",
+    "why": "Photosynthesis, run on chlorophyll, is what actually funds a seedling's growth into a woody sapling — sunlight is the fuel behind the whole climb.",
+    "src": "https://en.wikipedia.org/wiki/Chlorophyll",
+    "supported": true
+  },
+  {
+    "in": [
+      "sapling"
+    ],
+    "verb": "wait",
+    "out": "tree",
+    "why": "Given years and enough light, a sapling's single woody stem keeps thickening until it is unmistakably a tree — trunk, crown and all.",
+    "src": "https://en.wikipedia.org/wiki/Tree",
+    "supported": true
+  },
+  {
+    "in": [
+      "xylem",
+      "phloem"
+    ],
+    "out": "cambium",
+    "why": "The vascular cambium is the ring of dividing cells sandwiched between xylem and phloem; it builds new xylem inward and new phloem outward every growing season.",
+    "src": "https://en.wikipedia.org/wiki/Vascular_cambium",
+    "supported": true
+  },
+  {
+    "in": [
+      "cambium"
+    ],
+    "verb": "wait",
+    "out": "sapwood",
+    "why": "Cambium cells divide every growing season to lay down new sapwood — the living, water-conducting wood just inside the bark.",
+    "src": "https://en.wikipedia.org/wiki/Sapwood",
+    "supported": true
+  },
+  {
+    "in": [
+      "bark",
+      "xylem"
+    ],
+    "out": "sapwood",
+    "why": "Sapwood is simply the newest xylem: the living outer wood layer that actively conducts water from root to leaf.",
+    "src": "https://en.wikipedia.org/wiki/Sapwood",
+    "supported": true
+  },
+  {
+    "in": [
+      "sapwood"
+    ],
+    "verb": "wait",
+    "out": "heartwood",
+    "why": "As a tree ages, its oldest sapwood undergoes a genetically programmed chemical change and becomes heartwood — no longer conducting water, but more resistant to decay.",
+    "src": "https://en.wikipedia.org/wiki/Heartwood",
+    "supported": true
+  },
+  {
+    "in": [
+      "cambium",
+      "lignin"
+    ],
+    "out": "heartwood",
+    "why": "Heartwood forms when a tree's cambium-built wood is impregnated with extra lignin and resins, converting living sapwood into tough, dead structural timber.",
+    "src": "https://en.wikipedia.org/wiki/Heartwood",
+    "supported": true
+  },
+  {
+    "in": [
+      "giant_sequoia"
+    ],
+    "verb": "wait",
+    "out": "cone",
+    "why": "A giant sequoia's seed cone takes 18 to 20 months to mature, and can then stay green and sealed shut on the tree for as long as twenty years.",
+    "src": "https://en.wikipedia.org/wiki/Sequoiadendron_giganteum",
+    "supported": true
+  },
+  {
+    "in": [
+      "coast_redwood"
+    ],
+    "verb": "wait",
+    "out": "cone",
+    "why": "Coast redwoods, like their giant sequoia relatives, are conifers that reproduce with small woody seed cones instead of flowers.",
+    "src": "https://en.wikipedia.org/wiki/Conifer_cone",
+    "supported": true
+  },
+  {
+    "in": [
+      "pine",
+      "cone"
+    ],
+    "out": "conifer",
+    "why": "Conifers are defined by their cones: pines, firs, cedars and cypresses all reproduce with male and female cones instead of flowers.",
+    "src": "https://en.wikipedia.org/wiki/Conifer",
+    "supported": true
+  },
+  {
+    "in": [
+      "conifer",
+      "cycad"
+    ],
+    "out": "gymnosperm",
+    "why": "Conifers and cycads are both gymnosperms — seed plants whose seeds sit exposed on a scale or leaf rather than enclosed inside a fruit.",
+    "src": "https://en.wikipedia.org/wiki/Gymnosperm",
+    "supported": true
+  },
+  {
+    "in": [
+      "conifer",
+      "ginkgo"
+    ],
+    "out": "gymnosperm",
+    "why": "Ginkgo is a gymnosperm too, right alongside the conifers — one of a handful of ancient lineages whose seeds were never enclosed in a fruit.",
+    "src": "https://en.wikipedia.org/wiki/Gymnosperm",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "cork"
+    ],
+    "out": "abscission",
+    "why": "A tree sheds a leaf by growing a layer of cork cells across the base of its stalk — the abscission layer, which severs the leaf on purpose.",
+    "src": "https://en.wikipedia.org/wiki/Abscission",
+    "supported": true
+  },
+  {
+    "in": [
+      "tree",
+      "abscission"
+    ],
+    "out": "deciduous",
+    "why": "A deciduous tree drops its leaves through abscission on a seasonal schedule, rather than holding onto them year-round the way an evergreen does.",
+    "src": "https://en.wikipedia.org/wiki/Deciduous",
+    "supported": true
+  },
+  {
+    "in": [
+      "oak",
+      "abscission"
+    ],
+    "out": "deciduous",
+    "why": "Many oaks are deciduous, shedding their leaves each autumn through the same corky abscission layer that drops leaves on any other deciduous tree.",
+    "src": "https://en.wikipedia.org/wiki/Deciduous",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed",
+      "wing"
+    ],
+    "out": "samara",
+    "why": "A samara is a winged seed — a flattened, papery wing that makes it autorotate as it falls, the way a maple's or an ash's does.",
+    "src": "https://en.wikipedia.org/wiki/Samara_(fruit)",
+    "supported": true
+  },
+  {
+    "in": [
+      "pollen",
+      "tree"
+    ],
+    "out": "catkin",
+    "why": "A catkin is a dangling spike of tiny, petal-less flowers built to shed pollen on the wind rather than lure in an insect.",
+    "src": "https://en.wikipedia.org/wiki/Catkin",
+    "supported": true
+  },
+  {
+    "in": [
+      "conifer",
+      "abscission"
+    ],
+    "out": "larch",
+    "why": "Larches are the rare deciduous conifers: unlike almost every other cone-bearing tree, they drop every needle each autumn.",
+    "src": "https://en.wikipedia.org/wiki/Larix",
+    "supported": true
+  },
+  {
+    "in": [
+      "cone",
+      "sap"
+    ],
+    "out": "cedar",
+    "why": "True cedars are resinous evergreen conifers whose aromatic wood is naturally repellent to moths, with barrel-shaped cones that disintegrate scale by scale on the tree.",
+    "src": "https://en.wikipedia.org/wiki/Cedrus",
+    "supported": true
+  },
+  {
+    "in": [
+      "cone",
+      "frost"
+    ],
+    "out": "juniper",
+    "why": "Juniper cone scales fuse into a fleshy, berry-like ball, and it's this 'juniper berry' — not a true berry at all — that flavours gin.",
+    "src": "https://en.wikipedia.org/wiki/Juniper",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "frost"
+    ],
+    "out": "holly",
+    "why": "Holly keeps its spiny, glossy leaves through winter frost, and its bright red berries are mildly toxic if a person eats them.",
+    "src": "https://en.wikipedia.org/wiki/Ilex",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "bark"
+    ],
+    "out": "magnolia",
+    "why": "Magnolia is an ancient genus — its flowers evolved before bees existed, so beetles have always done the pollinating.",
+    "src": "https://en.wikipedia.org/wiki/Magnolia",
+    "supported": true
+  },
+  {
+    "in": [
+      "samara",
+      "sap"
+    ],
+    "out": "maple",
+    "why": "A maple is known by its winged samara seeds — and by its sap, which in species like the sugar maple is boiled down into maple syrup.",
+    "src": "https://en.wikipedia.org/wiki/Maple",
+    "supported": true
+  },
+  {
+    "in": [
+      "bark",
+      "catkin"
+    ],
+    "out": "birch",
+    "why": "Birch bark peels off in thin, papery, horizontal strips, and its flowers hang as long, drooping catkins.",
+    "src": "https://en.wikipedia.org/wiki/Betula",
+    "supported": true
+  },
+  {
+    "in": [
+      "bark",
+      "humus"
+    ],
+    "out": "beech",
+    "why": "Beech trees have smooth, thin grey bark, and their oil-rich nuts — beech mast — once fattened pigs turned loose in the woods each autumn.",
+    "src": "https://en.wikipedia.org/wiki/Fagus",
+    "supported": true
+  },
+  {
+    "in": [
+      "bark",
+      "fungus"
+    ],
+    "out": "elm",
+    "why": "Dutch elm disease is a fungus spread by elm bark beetles; it has killed the majority of elms across North America and Europe since the 20th century.",
+    "src": "https://en.wikipedia.org/wiki/Dutch_elm_disease",
+    "supported": true
+  },
+  {
+    "in": [
+      "oil",
+      "tree"
+    ],
+    "out": "eucalyptus",
+    "why": "Eucalyptus leaves are packed with aromatic oil that most animals cannot stomach — koalas are among the few mammals able to tolerate it.",
+    "src": "https://en.wikipedia.org/wiki/Eucalyptus",
+    "supported": true
+  },
+  {
+    "in": [
+      "desert",
+      "tree"
+    ],
+    "out": "baobab",
+    "why": "A baobab's swollen trunk can store up to 120,000 litres of water, an adaptation for surviving long droughts in dry African savanna.",
+    "src": "https://en.wikipedia.org/wiki/Adansonia",
+    "supported": true
+  },
+  {
+    "in": [
+      "fig",
+      "rainforest"
+    ],
+    "out": "banyan",
+    "why": "A banyan is a strangler fig that spreads by growing aerial roots down from its branches; each one thickens into a new trunk until a single tree looks like a grove.",
+    "src": "https://en.wikipedia.org/wiki/Banyan",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "wind"
+    ],
+    "out": "aspen",
+    "why": "A quaking aspen's leaf stalks are flattened sideways, so they twist and flutter — quake — in even a light wind.",
+    "src": "https://en.wikipedia.org/wiki/Populus_tremuloides",
+    "supported": true
+  },
+  {
+    "in": [
+      "root",
+      "graft"
+    ],
+    "out": "rootstock",
+    "why": "In grafting, the rootstock is the lower plant supplying the root system; graft an apple onto a dwarfing rootstock and the tree stays small no matter what size the variety normally grows.",
+    "src": "https://en.wikipedia.org/wiki/Rootstock",
+    "supported": true
+  },
+  {
+    "in": [
+      "cutting",
+      "graft"
+    ],
+    "out": "scion",
+    "why": "The scion is the upper cutting joined onto a rootstock in a graft — it carries the genes for the fruit, and every scion of a variety is a genetic clone.",
+    "src": "https://en.wikipedia.org/wiki/Grafting",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed",
+      "apple"
+    ],
+    "out": "crabapple",
+    "why": "Apples don't breed true from seed — they're extreme genetic heterozygotes, so a seed-grown tree reverts toward something small and sour, much like a wild crabapple.",
+    "src": "https://en.wikipedia.org/wiki/Apple",
+    "supported": true
+  },
+  {
+    "in": [
+      "frost",
+      "apricot"
+    ],
+    "out": "chill_hours",
+    "why": "Apricots and other stone fruit need a minimum number of accumulated winter chilling hours before their dormant buds will break properly come spring.",
+    "src": "https://en.wikipedia.org/wiki/Chilling_requirement",
+    "supported": true
+  },
+  {
+    "in": [
+      "starch",
+      "tree"
+    ],
+    "out": "breadfruit",
+    "why": "Breadfruit is starchy enough to be a Pacific staple food, eaten baked, boiled or fried but never raw.",
+    "src": "https://en.wikipedia.org/wiki/Breadfruit",
+    "supported": true
+  },
+  {
+    "in": [
+      "breadfruit",
+      "seed"
+    ],
+    "out": "jackfruit",
+    "why": "Jackfruit is breadfruit's close relative, same genus Artocarpus, but far bigger — up to 55 kg — with large edible seeds most breadfruit varieties lack.",
+    "src": "https://en.wikipedia.org/wiki/Jackfruit",
+    "supported": true
+  },
+  {
+    "in": [
+      "drupe",
+      "rainforest"
+    ],
+    "out": "lychee",
+    "why": "Lychee is native to the forests of southern China, a drupe fruit whose sweet, translucent flesh (the aril) wraps a single inedible seed.",
+    "src": "https://en.wikipedia.org/wiki/Litchi",
+    "supported": true
+  },
+  {
+    "in": [
+      "lychee",
+      "tree"
+    ],
+    "out": "rambutan",
+    "why": "Rambutan is lychee's close cousin in the soapberry family — its name is just Malay for 'hair,' after its spiky-haired skin.",
+    "src": "https://en.wikipedia.org/wiki/Rambutan",
+    "supported": true
+  },
+  {
+    "in": [
+      "rambutan",
+      "lychee"
+    ],
+    "out": "longan",
+    "why": "Longan is the third of the trio with lychee and rambutan in the soapberry family — its Chinese name means 'dragon eye,' for the black seed showing through the flesh.",
+    "src": "https://en.wikipedia.org/wiki/Longan",
+    "supported": true
+  },
+  {
+    "in": [
+      "legume",
+      "desert"
+    ],
+    "out": "tamarind",
+    "why": "Tamarind is a legume tree, drought-tolerant enough for arid soil, whose pod fruit holds a sour-sweet pulp used to season food from Mexico to India.",
+    "src": "https://en.wikipedia.org/wiki/Tamarind",
+    "supported": true
+  },
+  {
+    "in": [
+      "cactus",
+      "flower"
+    ],
+    "out": "dragon_fruit",
+    "why": "Dragon fruit grows on a climbing cactus that scales nearby trees for support, its stems never rooting in the ground.",
+    "src": "https://en.wikipedia.org/wiki/Pitaya",
+    "supported": true
+  },
+  {
+    "in": [
+      "fruit",
+      "knife"
+    ],
+    "out": "starfruit",
+    "why": "Star fruit gets its name from its five ridges — slice it crosswise and every piece is shaped like a star.",
+    "src": "https://en.wikipedia.org/wiki/Carambola",
+    "supported": true
+  },
+  {
+    "in": [
+      "fruit",
+      "rainforest"
+    ],
+    "out": "soursop",
+    "why": "Soursop is in the same genus as cherimoya and sugar apple, a custard-apple relative with large, spiny green fruit.",
+    "src": "https://en.wikipedia.org/wiki/Soursop",
+    "supported": true
+  },
+  {
+    "in": [
+      "fruit",
+      "humus"
+    ],
+    "out": "akee",
+    "why": "Unripe akee is toxic — it contains hypoglycin A and must be left to split open naturally on the tree before it is safe to eat. Ripe, it's Jamaica's national fruit.",
+    "src": "https://en.wikipedia.org/wiki/Blighia_sapida",
+    "supported": true
+  },
+  {
+    "in": [
+      "leaf",
+      "oil"
+    ],
+    "out": "curry_leaf",
+    "why": "Curry leaves are usually fried in hot oil at the very start of cooking, which is how South Asian cooks release their aroma.",
+    "src": "https://en.wikipedia.org/wiki/Curry_tree",
+    "supported": true
+  },
+  {
+    "in": [
+      "boron",
+      "steel"
+    ],
+    "out": "control_rod",
+    "why": "Boron carbide is a standard control-rod neutron absorber in both pressurized- and boiling-water reactors — it soaks up neutrons fast enough to choke off the chain reaction.",
+    "src": "https://en.wikipedia.org/wiki/Control_rod",
+    "verified": true
+  },
+  {
+    "in": [
+      "cadmium",
+      "steel"
+    ],
+    "out": "control_rod",
+    "why": "A silver-indium-cadmium alloy, roughly 5% cadmium, is a common control-rod material in pressurized-water reactors — a second real absorber alongside boron carbide.",
+    "src": "https://en.wikipedia.org/wiki/Control_rod",
+    "supported": true
+  },
+  {
+    "in": [
+      "graphite",
+      "uranium"
+    ],
+    "out": "nuclear_reactor",
+    "why": "The RBMK design that exploded at Chernobyl is graphite-moderated: graphite slows fission neutrons enough to sustain the chain reaction without needing enriched fuel.",
+    "src": "https://en.wikipedia.org/wiki/RBMK",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "uranium"
+    ],
+    "out": "nuclear_reactor",
+    "why": "Most of the world's power reactors moderate and cool with the same ordinary water — the light-water reactor design, genuinely distinct from a graphite-moderated one.",
+    "src": "https://en.wikipedia.org/wiki/Light-water_reactor",
+    "supported": true
+  },
+  {
+    "in": [
+      "control_rod",
+      "fire"
+    ],
+    "out": "corium",
+    "why": "Chernobyl's corium was literally fuel, control rods and structural metal melted together into one radioactive lava once the core lost its coolant.",
+    "src": "https://en.wikipedia.org/wiki/Corium_(nuclear_reactor)",
+    "verified": true
+  },
+  {
+    "in": [
+      "uranium",
+      "fire"
+    ],
+    "out": "corium",
+    "why": "Past about 2,700°C the uranium oxide fuel itself melts and the core structure collapses into the same lava-like corium, mostly heated by the fission products' own decay.",
+    "src": "https://en.wikipedia.org/wiki/Corium_(nuclear_reactor)",
+    "supported": true
+  },
+  {
+    "in": [
+      "nuclear_reactor",
+      "turbine"
+    ],
+    "out": "nuclear_power_plant",
+    "why": "A reactor never spins a generator directly — it boils water (or heats it under pressure), and it's that steam driving an ordinary turbine that makes the electricity.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_power_plant",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "fire"
+    ],
+    "out": "heat_shield_tile",
+    "why": "Space Shuttle tiles were fired from essentially pure quartz sand into a silica-fiber ceramic so porous it's 90% empty space, yet it held off 1,260°C on re-entry.",
+    "src": "https://en.wikipedia.org/wiki/Space_Shuttle_thermal_protection_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydraulic_pump",
+      "steel"
+    ],
+    "out": "tunnel_boring_machine",
+    "why": "Hydraulic cylinders press the machine's steel shield against the tunnel lining and shove the rotating cutterhead into the rock face — the real thrust mechanism of a TBM.",
+    "src": "https://en.wikipedia.org/wiki/Tunnel_boring_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "reinforced_concrete",
+      "steel"
+    ],
+    "out": "tunnel_boring_machine",
+    "why": "A shielded TBM erects precast concrete rings behind itself as it advances, built by a steel erector arm — the lining half of the same real machine.",
+    "src": "https://en.wikipedia.org/wiki/Tunnel_boring_machine",
+    "supported": true
+  },
+  {
+    "in": [
+      "x_ray",
+      "electric_motor"
+    ],
+    "out": "ct_scanner",
+    "why": "A motor spins an X-ray tube and its detectors around the patient; a computer turns the angled measurements into cross-sectional slices — Hounsfield's 1972 invention.",
+    "src": "https://en.wikipedia.org/wiki/CT_scan",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "turbine"
+    ],
+    "out": "hydroelectric_dam",
+    "why": "At Hoover Dam, water drops through penstocks reaching 85mph before it ever touches a turbine — the concrete arch-gravity structure exists to hold that head of water up.",
+    "src": "https://en.wikipedia.org/wiki/Hoover_Dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_motor",
+      "steel"
+    ],
+    "out": "stand_mixer",
+    "why": "A planetary mixer's motor drives a set of gears so the beater spins on its own axis while it also orbits the bowl — the motion the machine is named for.",
+    "src": "https://en.wikipedia.org/wiki/Mixer_(appliance)",
+    "verified": true
+  },
+  {
+    "in": [
+      "rotor",
+      "hydraulic_pump"
+    ],
+    "out": "swashplate",
+    "why": "A stationary plate tilted by hydraulic actuators changes a rotating plate's angle, which pitch links carry to each rotor blade differently through the turn — a helicopter's actual steering.",
+    "src": "https://en.wikipedia.org/wiki/Swashplate_(aeronautics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "swashplate",
+      "fuselage"
+    ],
+    "out": "helicopter",
+    "why": "It's the swashplate, not the rotor alone, that lets a pilot steer: tilting it cycles each blade's pitch as it passes through the turn, pushing the whole helicopter sideways.",
+    "src": "https://en.wikipedia.org/wiki/Swashplate_(aeronautics)",
+    "supported": true
+  },
+  {
+    "in": [
+      "electric_motor",
+      "lithium_ion_battery"
+    ],
+    "out": "electric_car",
+    "why": "An electric car's only source of propulsion is the electricity stored in its battery — no combustion, no gearbox in most designs, and full torque from a standing start.",
+    "src": "https://en.wikipedia.org/wiki/Electric_car",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "steel"
+    ],
+    "out": "icebreaker",
+    "why": "Contrary to the popular idea of a ship climbing onto ice to crush it, most icebreaking happens at cruising speed: a reinforced steel bow simply breaks the low-strength ice under the hull.",
+    "src": "https://en.wikipedia.org/wiki/Icebreaker",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber",
+      "steel"
+    ],
+    "out": "snow_groomer",
+    "why": "A tracked vehicle with a front blade and a rear tiller combs a ski slope into the ridged pattern called corduroy, winched by cable up gradients too steep to grip.",
+    "src": "https://en.wikipedia.org/wiki/Snow_grooming",
+    "verified": true
+  },
+  {
+    "in": [
+      "turbine",
+      "propeller"
+    ],
+    "out": "turboprop",
+    "why": "A turboprop is a gas turbine that sends almost all its power through a reduction gearbox to a propeller instead of out the exhaust — unlike a turbojet, the jet thrust is a rounding error.",
+    "src": "https://en.wikipedia.org/wiki/Turboprop",
+    "verified": true
+  },
+  {
+    "in": [
+      "turbine",
+      "steel"
+    ],
+    "out": "abrams_tank",
+    "why": "The M1 Abrams runs on a 1,500-horsepower Honeywell/Lycoming AGT1500 gas turbine, not a diesel — the engine choice that set it apart from its rival design from the start.",
+    "src": "https://en.wikipedia.org/wiki/M1_Abrams",
+    "verified": true
+  },
+  {
+    "in": [
+      "internal_combustion_engine",
+      "steel"
+    ],
+    "out": "tiger_tank",
+    "why": "The Tiger I's armor plates were flat and vertical, not sloped like the Panther's — its protection came from raw thickness and an 88mm gun instead of angled steel.",
+    "src": "https://en.wikipedia.org/wiki/Tiger_I",
+    "verified": true
+  },
+  {
+    "in": [
+      "radio",
+      "current"
+    ],
+    "out": "radar",
+    "why": "Radar sends a short radio pulse and times how long its reflection takes to return — half the round-trip delay, times the speed of light, gives the range to the object.",
+    "src": "https://en.wikipedia.org/wiki/Radar",
+    "verified": true
+  },
+  {
+    "in": [
+      "radar",
+      "airplane"
+    ],
+    "out": "stealth_aircraft",
+    "why": "A stealth aircraft's faceted panels fling radar's radio waves off at an angle instead of straight back at the receiver, which is what actually makes it hard to see on a screen.",
+    "src": "https://en.wikipedia.org/wiki/Stealth_aircraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "fire"
+    ],
+    "out": "rivet",
+    "why": "Heated to a 'cherry red' near 900°C, driven through two plates and hammered into a second head, a rivet only grips tight as it cools and contracts back down.",
+    "src": "https://en.wikipedia.org/wiki/Rivet",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "rivet"
+    ],
+    "out": "ocean_liner",
+    "why": "Titanic's hull was closed by three million rivets and divided by watertight bulkheads — but the bulkheads stopped short of the top deck, so water simply spilled over them.",
+    "src": "https://en.wikipedia.org/wiki/Titanic",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "wing_spar"
+    ],
+    "out": "elliptical_wing",
+    "why": "An elliptical planform gives the lowest induced drag of any wing shape for a given span — the aerodynamic reason the Spitfire's wing has its famous curved outline.",
+    "src": "https://en.wikipedia.org/wiki/Elliptical_wing",
+    "verified": true
   }
 ]
