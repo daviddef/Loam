@@ -1324,7 +1324,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "An accident on a windowsill in 1928, and a decade of work to make it a drug."
+    "fact": "An accident on a windowsill in 1928, and a decade of work to make it a drug.",
+    "discovered": {
+      "year": 1928,
+      "note": "An accidental windowsill contamination leads to its discovery."
+    }
   },
   {
     "id": "ice_cream",
@@ -2165,7 +2169,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Carries the energy and holds DNA together. The scarcest of the six."
+    "fact": "Carries the energy and holds DNA together. The scarcest of the six.",
+    "discovered": {
+      "year": 1842,
+      "note": "Lawes patents treating bone ash with sulfuric acid, starting the artificial fertiliser industry."
+    }
   },
   {
     "id": "legume",
@@ -2235,7 +2243,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Twenty of them, in every living thing, all the same handedness."
+    "fact": "Twenty of them, in every living thing, all the same handedness.",
+    "discovered": {
+      "year": 1952,
+      "note": "Miller sparks a flask of methane, ammonia, hydrogen and water for a week, and finds amino acids in the result."
+    }
   },
   {
     "id": "cysteine",
@@ -2335,7 +2347,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "The instructions, in four letters, for building the thing holding it."
+    "fact": "The instructions, in four letters, for building the thing holding it.",
+    "discovered": {
+      "year": 1953,
+      "note": "Watson and Crick describe the double helix."
+    }
   },
   {
     "id": "membrane",
@@ -2435,7 +2451,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Two thirds RNA — and the RNA, not the protein, is the part that does the chemistry."
+    "fact": "Two thirds RNA — and the RNA, not the protein, is the part that does the chemistry.",
+    "discovered": {
+      "year": 1955,
+      "note": "Palade first sees them in a spun-down cell pellet, and they're called Palade granules before they have a proper name."
+    }
   },
   {
     "id": "messenger_rna",
@@ -2456,7 +2476,11 @@
       "microbe"
     ],
     "terminal": false,
-    "fact": "The survivors of a course of antibiotics are, by definition, the ones it did not kill."
+    "fact": "The survivors of a course of antibiotics are, by definition, the ones it did not kill.",
+    "discovered": {
+      "year": 1945,
+      "note": "Fleming predicts the rise of drug-resistant bacteria, warning what could happen once penicillin is sold over the counter."
+    }
   },
   {
     "id": "hydrogen_gas",
@@ -2596,7 +2620,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "The commonest metal in Earth's crust — once so hard to isolate it cost more than gold, until 1886."
+    "fact": "The commonest metal in Earth's crust — once so hard to isolate it cost more than gold, until 1886.",
+    "discovered": {
+      "year": 1886,
+      "note": "Isolation becomes cheap enough to end the days when it cost more than gold."
+    }
   },
   {
     "id": "nickel",
@@ -2606,7 +2634,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Named after a mischievous spirit — miners dug up a copper-look ore and got no copper out of it."
+    "fact": "Named after a mischievous spirit — miners dug up a copper-look ore and got no copper out of it.",
+    "discovered": {
+      "year": 1751,
+      "note": "Cronstedt tries to pull copper from an ore miners called 'Kupfernickel' and finds a new white metal instead."
+    }
   },
   {
     "id": "chromium",
@@ -2626,7 +2658,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "So reactive that heating its ore with carbon — the trick that works for iron — just makes a ceramic instead."
+    "fact": "So reactive that heating its ore with carbon — the trick that works for iron — just makes a ceramic instead.",
+    "discovered": {
+      "year": 1932,
+      "note": "Kroll first produces titanium metal outside a laboratory, reducing titanium tetrachloride with calcium."
+    }
   },
   {
     "id": "platinum",
@@ -2646,7 +2682,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Named for a planet, and it took fifty years between finding the ore and finally isolating the metal itself."
+    "fact": "Named for a planet, and it took fifty years between finding the ore and finally isolating the metal itself.",
+    "discovered": {
+      "year": 1841,
+      "note": "Péligot isolates the first sample of uranium metal, heating uranium tetrachloride with potassium."
+    }
   },
   {
     "id": "helium",
@@ -2656,7 +2696,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "First spotted in sunlight during an 1868 eclipse, not found on Earth for another 27 years."
+    "fact": "First spotted in sunlight during an 1868 eclipse, not found on Earth for another 27 years.",
+    "discovered": {
+      "year": 1868,
+      "note": "First spotted in sunlight during a solar eclipse, decades before it's found on Earth."
+    }
   },
   {
     "id": "neon",
@@ -2696,7 +2740,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "A metal that catches fire on contact with water — which is why it is never found free in nature."
+    "fact": "A metal that catches fire on contact with water — which is why it is never found free in nature.",
+    "discovered": {
+      "year": 1924,
+      "note": "Commercial production by electrolysis of molten salt is patented."
+    }
   },
   {
     "id": "potassium",
@@ -2776,7 +2824,11 @@
     "tags": [
       "tool"
     ],
-    "fact": "Cellulose fibre beaten loose and suspended in water, waiting to be drained into a sheet."
+    "fact": "Cellulose fibre beaten loose and suspended in water, waiting to be drained into a sheet.",
+    "discovered": {
+      "year": 1843,
+      "note": "Wood pulp is invented, going on to become the dominant kind of paper."
+    }
   },
   {
     "id": "paper",
@@ -2816,7 +2868,11 @@
     "tags": [
       "tool"
     ],
-    "fact": "Silver deposited on the back of a sheet of glass — Justus von Liebig's process, 1835."
+    "fact": "Silver deposited on the back of a sheet of glass — Justus von Liebig's process, 1835.",
+    "discovered": {
+      "year": 1835,
+      "note": "Justus von Liebig develops the process of depositing silver on the back of glass."
+    }
   },
   {
     "id": "enriched_uranium",
@@ -3586,7 +3642,11 @@
       "microbe"
     ],
     "fact": "The first amino acid anyone ever isolated, out of asparagus juice, in 1806.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1806,
+      "note": "The first amino acid ever isolated, out of asparagus juice."
+    }
   },
   {
     "id": "arginine",
@@ -3638,7 +3698,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "The last of the twenty to be found, in 1935, and one of only two with two chiral centres."
+    "fact": "The last of the twenty to be found, in 1935, and one of only two with two chiral centres.",
+    "discovered": {
+      "year": 1935,
+      "note": "The last of the twenty standard amino acids to be identified."
+    }
   },
   {
     "id": "methionine",
@@ -3741,7 +3805,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Named for its colour — khlōrós, pale green — and the first gas ever used as a weapon, at Ypres in 1915."
+    "fact": "Named for its colour — khlōrós, pale green — and the first gas ever used as a weapon, at Ypres in 1915.",
+    "discovered": {
+      "year": 1915,
+      "note": "First used as a weapon, in gas attacks at Ypres."
+    }
   },
   {
     "id": "fluorine",
@@ -3751,7 +3819,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Reacts with everything but the lightest noble gases. The chemists who chased it are called fluorine martyrs."
+    "fact": "Reacts with everything but the lightest noble gases. The chemists who chased it are called fluorine martyrs.",
+    "discovered": {
+      "year": 1886,
+      "note": "Moissan finally manages the low-temperature electrolysis needed to isolate it."
+    }
   },
   {
     "id": "bromine",
@@ -3771,7 +3843,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Found by accident in seaweed ash in 1811, and named for the violet vapour that came off it."
+    "fact": "Found by accident in seaweed ash in 1811, and named for the violet vapour that came off it.",
+    "discovered": {
+      "year": 1811,
+      "note": "Found by accident in seaweed ash."
+    }
   },
   {
     "id": "silicon",
@@ -3781,7 +3857,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "27.2% of the crust by weight, second only to oxygen — and almost never found loose."
+    "fact": "27.2% of the crust by weight, second only to oxygen — and almost never found loose.",
+    "discovered": {
+      "year": 1824,
+      "note": "Berzelius gets there first, by a route entirely different from carbothermic reduction."
+    }
   },
   {
     "id": "boron",
@@ -3791,7 +3871,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Claimed in 1808 and arguably not made pure until 1909 — a hundred and one years of nearly-boron."
+    "fact": "Claimed in 1808 and arguably not made pure until 1909 — a hundred and one years of nearly-boron.",
+    "discovered": {
+      "year": 1808,
+      "note": "First claimed to be isolated, though arguably not made pure until 1909."
+    }
   },
   {
     "id": "arsenic",
@@ -3811,7 +3895,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Named for the moon, because tellurium had already taken the earth. Nearly all of it comes out of copper."
+    "fact": "Named for the moon, because tellurium had already taken the earth. Nearly all of it comes out of copper.",
+    "discovered": {
+      "year": 1817,
+      "note": "Berzelius finds it in the sludge of a sulfuric acid plant."
+    }
   },
   {
     "id": "antimony",
@@ -3841,7 +3929,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "About as rare in the crust as platinum, and a 15 mg dose gives you garlic breath for months."
+    "fact": "About as rare in the crust as platinum, and a 15 mg dose gives you garlic breath for months.",
+    "discovered": {
+      "year": 1782,
+      "note": "Müller von Reichenstein finds it in Transylvanian gold ore."
+    }
   },
   {
     "id": "argon",
@@ -3971,7 +4063,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Named after a rose, for the colour of one of its salts. Under one part per billion of the crust."
+    "fact": "Named after a rose, for the colour of one of its salts. Under one part per billion of the crust.",
+    "discovered": {
+      "year": 1803,
+      "note": "Wollaston pulls it out of crude platinum, and names it for the rose-colored salt it forms."
+    }
   },
   {
     "id": "iridium",
@@ -4021,7 +4117,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Chemically almost indistinguishable from zirconium, so it hid inside it until 1923 — then it got Copenhagen."
+    "fact": "Chemically almost indistinguishable from zirconium, so it hid inside it until 1923 — then it got Copenhagen.",
+    "discovered": {
+      "year": 1923,
+      "note": "Identified after decades hiding, chemically almost indistinguishable, inside zirconium ore."
+    }
   },
   {
     "id": "zirconium",
@@ -4131,7 +4231,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "The second is defined as 9,192,631,770 cycles of one caesium transition. This metal is the clock."
+    "fact": "The second is defined as 9,192,631,770 cycles of one caesium transition. This metal is the clock.",
+    "discovered": {
+      "year": 1860,
+      "note": "First element ever found with a spectroscope."
+    }
   },
   {
     "id": "rubidium",
@@ -4191,7 +4295,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Three times as common as uranium, and for a century most of what was mined went into gas lamp mantles."
+    "fact": "Three times as common as uranium, and for a century most of what was mined went into gas lamp mantles.",
+    "discovered": {
+      "year": 1829,
+      "note": "Berzelius announces it, though only an impure sample."
+    }
   },
   {
     "id": "plutonium",
@@ -4241,7 +4349,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Nd2Fe14B — the strongest permanent magnets known. The name just means 'new twin'."
+    "fact": "Nd2Fe14B — the strongest permanent magnets known. The name just means 'new twin'.",
+    "discovered": {
+      "year": 1885,
+      "note": "Von Welsbach finally splits 'didymium', the element that didn't exist, in two."
+    }
   },
   {
     "id": "samarium",
@@ -4281,7 +4393,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "No stable isotope at all. About 560 grams exist in the entire crust, made by uranium quietly fissioning."
+    "fact": "No stable isotope at all. About 560 grams exist in the entire crust, made by uranium quietly fissioning.",
+    "discovered": {
+      "year": 1945,
+      "note": "Found at Oak Ridge in the wreckage of fissioned uranium fuel, by ion-exchange chromatography."
+    }
   },
   {
     "id": "noble_mix",
@@ -4301,7 +4417,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "In 1962 it formed a compound, and \"the noble gases do not react\" quietly stopped being true."
+    "fact": "In 1962 it formed a compound, and \"the noble gases do not react\" quietly stopped being true.",
+    "discovered": {
+      "year": 1962,
+      "note": "It forms a compound, disproving the assumption that noble gases never react."
+    }
   },
   {
     "id": "bismuth",
@@ -4719,7 +4839,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "Rubber with sulfur chains stitched between its polymer strands. Goodyear, 1839."
+    "fact": "Rubber with sulfur chains stitched between its polymer strands. Goodyear, 1839.",
+    "discovered": {
+      "year": 1839,
+      "note": "Goodyear stitches sulfur chains between rubber's polymer strands, vulcanizing it."
+    }
   },
   {
     "id": "canvas",
@@ -4908,7 +5032,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "An alcohol that behaves like an acid. Runge pulled the first of it out of coal tar in 1834."
+    "fact": "An alcohol that behaves like an acid. Runge pulled the first of it out of coal tar in 1834.",
+    "discovered": {
+      "year": 1834,
+      "note": "Runge first pulls it out of coal tar."
+    }
   },
   {
     "id": "wood_tar",
@@ -4949,7 +5077,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "Plastic made out of milk. Buttons, pen barrels and piano keys, from 1897 onwards."
+    "fact": "Plastic made out of milk. Buttons, pen barrels and piano keys, from 1897 onwards.",
+    "discovered": {
+      "year": 1897,
+      "note": "First made as a plastic out of milk, for buttons, pen barrels, and piano keys."
+    }
   },
   {
     "id": "bakelite",
@@ -4960,7 +5092,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "The first plastic made from synthetic parts. Baekeland, 1907. Once set it cannot be melted."
+    "fact": "The first plastic made from synthetic parts. Baekeland, 1907. Once set it cannot be melted.",
+    "discovered": {
+      "year": 1907,
+      "note": "Baekeland invents it, the first plastic made from synthetic parts."
+    }
   },
   {
     "id": "ethanol",
@@ -4992,7 +5128,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "The world's most used plastic, and it can be made from sugarcane instead of oil."
+    "fact": "The world's most used plastic, and it can be made from sugarcane instead of oil.",
+    "discovered": {
+      "year": 1933,
+      "note": "Fawcett and Gibson put ethylene under several hundred atmospheres at ICI and find a white waxy solid."
+    }
   },
   {
     "id": "magma",
@@ -5566,7 +5706,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "DNA loose in the cytoplasm, no nucleus, no organelles. The other, older way to be a cell."
+    "fact": "DNA loose in the cytoplasm, no nucleus, no organelles. The other, older way to be a cell.",
+    "discovered": {
+      "year": 1882,
+      "note": "Fanny Hesse suggests agar as a culture medium in Koch's lab, replacing gelatin almost at once."
+    }
   },
   {
     "id": "archaea",
@@ -5576,7 +5720,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "A third domain, separated from bacteria in 1977. Its membranes use a chemistry nothing else does."
+    "fact": "A third domain, separated from bacteria in 1977. Its membranes use a chemistry nothing else does.",
+    "discovered": {
+      "year": 1977,
+      "note": "Recognized as a third domain of life, separate from bacteria."
+    }
   },
   {
     "id": "mitochondrion",
@@ -5885,7 +6033,11 @@
     "tags": [
       "fire"
     ],
-    "fact": "The region where a magnet or a current pushes. Iron filings on paper lie along its lines."
+    "fact": "The region where a magnet or a current pushes. Iron filings on paper lie along its lines.",
+    "discovered": {
+      "year": 1820,
+      "note": "Ørsted notices a compass needle swing near a live wire, linking electricity and magnetism."
+    }
   },
   {
     "id": "copper_wire",
@@ -5906,7 +6058,11 @@
     "tags": [
       "tool"
     ],
-    "fact": "Volta, 1800: zinc and copper discs stacked with brine-soaked card. The first steady current."
+    "fact": "Volta, 1800: zinc and copper discs stacked with brine-soaked card. The first steady current.",
+    "discovered": {
+      "year": 1800,
+      "note": "Volta stacks zinc and copper discs with brine-soaked card, producing the first steady current."
+    }
   },
   {
     "id": "generator",
@@ -5916,7 +6072,11 @@
     "tags": [
       "tool"
     ],
-    "fact": "Faraday's disk, 1831. Spin a conductor through a field and the field pays back in current."
+    "fact": "Faraday's disk, 1831. Spin a conductor through a field and the field pays back in current.",
+    "discovered": {
+      "year": 1831,
+      "note": "Faraday spins a conductor through a magnetic field with his disk, generating current."
+    }
   },
   {
     "id": "current",
@@ -6021,7 +6181,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "Planté, 1859 — the first battery you could refill with current instead of throw away."
+    "fact": "Planté, 1859 — the first battery you could refill with current instead of throw away.",
+    "discovered": {
+      "year": 1859,
+      "note": "Planté builds the first battery you could refill with current instead of throwing away."
+    }
   },
   {
     "id": "electrolysis",
@@ -6453,7 +6617,11 @@
       "earth"
     ],
     "fact": "The red powder that gave up oxygen to Priestley in 1774, before the gas had a name.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1774,
+      "note": "It gives up oxygen to Priestley, before the gas even has a name."
+    }
   },
   {
     "id": "alumina",
@@ -6569,7 +6737,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "A rock that makes a flammable gas when it gets wet. It lit mines for fifty years."
+    "fact": "A rock that makes a flammable gas when it gets wet. It lit mines for fifty years.",
+    "discovered": {
+      "year": 1892,
+      "note": "Becomes possible once the electric arc furnace can supply the energy the reaction needs."
+    }
   },
   {
     "id": "acetylene",
@@ -6714,7 +6886,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Named from guano, isolated from bird droppings in 1844. The crystals also make fish scales shine."
+    "fact": "Named from guano, isolated from bird droppings in 1844. The crystals also make fish scales shine.",
+    "discovered": {
+      "year": 1844,
+      "note": "First isolated from bird droppings, the guano it's named for."
+    }
   },
   {
     "id": "cytosine",
@@ -6744,7 +6920,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "RNA's U. Found in the Murchison meteorite, and in 2023 in a sample from the asteroid Ryugu."
+    "fact": "RNA's U. Found in the Murchison meteorite, and in 2023 in a sample from the asteroid Ryugu.",
+    "discovered": {
+      "year": 2023,
+      "note": "Found in a sample from the asteroid Ryugu."
+    }
   },
   {
     "id": "base_pair",
@@ -6794,7 +6974,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "RNA that catalyses. Cech and Altman took the 1989 Nobel for finding RNA could do that at all."
+    "fact": "RNA that catalyses. Cech and Altman took the 1989 Nobel for finding RNA could do that at all.",
+    "discovered": {
+      "year": 1989,
+      "note": "Cech and Altman take the Nobel for finding RNA can catalyse reactions."
+    }
   },
   {
     "id": "phospholipid",
@@ -6834,7 +7018,11 @@
     "tags": [
       "water"
     ],
-    "fact": "Oparin's 1924 guess at the early ocean. Haldane supplied the word soup in 1929."
+    "fact": "Oparin's 1924 guess at the early ocean. Haldane supplied the word soup in 1929.",
+    "discovered": {
+      "year": 1924,
+      "note": "Oparin publishes his guess at the chemistry of the early ocean."
+    }
   },
   {
     "id": "protocell",
@@ -7184,7 +7372,11 @@
     "tags": [
       "plant"
     ],
-    "fact": "Bitter as quinine. The gut turns it into salicylic acid — the compound aspirin was built on."
+    "fact": "Bitter as quinine. The gut turns it into salicylic acid — the compound aspirin was built on.",
+    "discovered": {
+      "year": 1897,
+      "note": "Bayer acetylates the salicylic acid it yields, creating aspirin."
+    }
   },
   {
     "id": "winter_wheat",
@@ -7261,7 +7453,11 @@
       "plant"
     ],
     "terminal": true,
-    "fact": "Isolated in 1930 from the woolly foxglove, not the garden one. It blocks the sodium-potassium pump."
+    "fact": "Isolated in 1930 from the woolly foxglove, not the garden one. It blocks the sodium-potassium pump.",
+    "discovered": {
+      "year": 1930,
+      "note": "First isolated from the woolly foxglove."
+    }
   },
   {
     "id": "capsicum",
@@ -7638,7 +7834,11 @@
       "microbe",
       "dairy"
     ],
-    "fact": "Isolated from Bulgarian yoghurt in 1905 and named for the country. Grows best at 40–44 °C."
+    "fact": "Isolated from Bulgarian yoghurt in 1905 and named for the country. Grows best at 40–44 °C.",
+    "discovered": {
+      "year": 1905,
+      "note": "Grigorov finds it in Bulgarian yoghurt, and it still carries the country's name."
+    }
   },
   {
     "id": "l_acidophilus",
@@ -7660,7 +7860,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Branched and Y-shaped — bifid — and anaerobic. The commonest bacterium in an infant's gut."
+    "fact": "Branched and Y-shaped — bifid — and anaerobic. The commonest bacterium in an infant's gut.",
+    "discovered": {
+      "year": 1899,
+      "note": "Named for its often Y-shaped, bifid form."
+    }
   },
   {
     "id": "l_paracasei",
@@ -7716,7 +7920,11 @@
       "microbe",
       "ferment"
     ],
-    "fact": "Turns ethanol into acetic acid, and needs oxygen to do it. Pasteur found the first one in 1864."
+    "fact": "Turns ethanol into acetic acid, and needs oxygen to do it. Pasteur found the first one in 1864.",
+    "discovered": {
+      "year": 1864,
+      "note": "Pasteur finds the first one."
+    }
   },
   {
     "id": "penicillium",
@@ -8102,7 +8310,11 @@
       "food",
       "tool"
     ],
-    "fact": "E330. Nearly all of it is grown, not squeezed — a mould fed on sugar, since 1919."
+    "fact": "E330. Nearly all of it is grown, not squeezed — a mould fed on sugar, since 1919.",
+    "discovered": {
+      "year": 1919,
+      "note": "Commercial production shifts to a mould fed on sugar, instead of squeezing citrus."
+    }
   },
   {
     "id": "sodium_acetate",
@@ -8124,7 +8336,11 @@
       "food",
       "tool"
     ],
-    "fact": "E621. The sodium salt of glutamate. Ikeda pulled it out of kombu in 1908 and named the taste umami."
+    "fact": "E621. The sodium salt of glutamate. Ikeda pulled it out of kombu in 1908 and named the taste umami.",
+    "discovered": {
+      "year": 1908,
+      "note": "Ikeda pulls it out of kombu and names the taste umami."
+    }
   },
   {
     "id": "inosinate",
@@ -8179,7 +8395,11 @@
       "food",
       "tool"
     ],
-    "fact": "Plant protein taken apart into free amino acids. Where the loose glutamate in savoury food comes from."
+    "fact": "Plant protein taken apart into free amino acids. Where the loose glutamate in savoury food comes from.",
+    "discovered": {
+      "year": 1831,
+      "note": "Berzelius gets a bouillon taste this way."
+    }
   },
   {
     "id": "silicon_dioxide",
@@ -8234,7 +8454,11 @@
       "food",
       "plant"
     ],
-    "fact": "E100. Turmeric's yellow. It barely dissolves in water and goes readily into alcohol or oil."
+    "fact": "E100. Turmeric's yellow. It barely dissolves in water and goes readily into alcohol or oil.",
+    "discovered": {
+      "year": 1815,
+      "note": "Vogel and Pelletier report the first isolation."
+    }
   },
   {
     "id": "betanin",
@@ -8278,7 +8502,11 @@
       "food",
       "preserve"
     ],
-    "fact": "E200–203. Named for the rowan it was distilled from in 1859. Now essentially all synthetic."
+    "fact": "E200–203. Named for the rowan it was distilled from in 1859. Now essentially all synthetic.",
+    "discovered": {
+      "year": 1859,
+      "note": "First distilled from rowan, the source of its name."
+    }
   },
   {
     "id": "benzoate",
@@ -8322,7 +8550,11 @@
       "food",
       "tool"
     ],
-    "fact": "Liquid oil with hydrogen added across its double bonds, so it sets solid. Normann's patent, 1902."
+    "fact": "Liquid oil with hydrogen added across its double bonds, so it sets solid. Normann's patent, 1902.",
+    "discovered": {
+      "year": 1902,
+      "note": "Normann patents the process of hydrogenating liquid oil so it sets solid."
+    }
   },
   {
     "id": "trans_fat",
@@ -8354,7 +8586,11 @@
       "food",
       "tool"
     ],
-    "fact": "E322. Named from lekithos, the Greek for egg yolk, where Gobley found it in 1845."
+    "fact": "E322. Named from lekithos, the Greek for egg yolk, where Gobley found it in 1845.",
+    "discovered": {
+      "year": 1845,
+      "note": "Gobley finds it in egg yolk, the source of its name."
+    }
   },
   {
     "id": "sorbitol",
@@ -8407,7 +8643,11 @@
     "tags": [
       "crop"
     ],
-    "fact": "Its capsules burst when the seed is ripe and scatter it. Cereals were bred out of that habit; sesame was not."
+    "fact": "Its capsules burst when the seed is ripe and scatter it. Cereals were bred out of that habit; sesame was not.",
+    "discovered": {
+      "year": 1943,
+      "note": "An indehiscent mutant, whose seed capsule doesn't shatter, turns up and breeders have chased it since."
+    }
   },
   {
     "id": "almond",
@@ -8483,7 +8723,11 @@
       "plant"
     ],
     "terminal": true,
-    "fact": "2–4% of a fresh walnut husk. Stains hands brown and stops other plants growing under the tree."
+    "fact": "2–4% of a fresh walnut husk. Stains hands brown and stops other plants growing under the tree.",
+    "discovered": {
+      "year": 1926,
+      "note": "Walnut trees standing in an alfalfa field are found to have killed the alfalfa while leaving the grass untouched."
+    }
   },
   {
     "id": "black_pepper",
@@ -8713,7 +8957,11 @@
       "food"
     ],
     "terminal": true,
-    "fact": "Not a vitamin. UVB builds it in your skin from a cholesterol precursor, so it is a hormone you make."
+    "fact": "Not a vitamin. UVB builds it in your skin from a cholesterol precursor, so it is a hormone you make.",
+    "discovered": {
+      "year": 1922,
+      "note": "Gets its name for being the fourth vitamin found."
+    }
   },
   {
     "id": "soy_sauce",
@@ -8725,7 +8973,11 @@
       "food"
     ],
     "terminal": true,
-    "fact": "Koji, brine and months. 17–20% salt, so only the halophiles get to work."
+    "fact": "Koji, brine and months. 17–20% salt, so only the halophiles get to work.",
+    "discovered": {
+      "year": 1933,
+      "note": "La Choy begins selling the acid-hydrolyzed version in the United States."
+    }
   },
   {
     "id": "candied_fruit",
@@ -8904,7 +9156,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "The first vitamin ever isolated — pulled from rice bran in 1910, the layer polishing removes."
+    "fact": "The first vitamin ever isolated — pulled from rice bran in 1910, the layer polishing removes.",
+    "discovered": {
+      "year": 1910,
+      "note": "The first vitamin ever isolated, pulled from rice bran."
+    }
   },
   {
     "id": "riboflavin",
@@ -8915,7 +9171,11 @@
       "microbe"
     ],
     "terminal": false,
-    "fact": "The reason whey glows yellow-green — first isolated from it in 1879, called lactochrome."
+    "fact": "The reason whey glows yellow-green — first isolated from it in 1879, called lactochrome.",
+    "discovered": {
+      "year": 1879,
+      "note": "First isolated from whey, called lactochrome."
+    }
   },
   {
     "id": "niacin",
@@ -8937,7 +9197,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Named for the Latin word for leaf — first isolated by extracting it from spinach in 1941."
+    "fact": "Named for the Latin word for leaf — first isolated by extracting it from spinach in 1941.",
+    "discovered": {
+      "year": 1941,
+      "note": "First isolated by extracting it from spinach."
+    }
   },
   {
     "id": "vitamin_b6",
@@ -8959,7 +9223,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Named tocopherol, Greek for 'to bear a child' — discovered in 1922 as the fertility factor rats needed."
+    "fact": "Named tocopherol, Greek for 'to bear a child' — discovered in 1922 as the fertility factor rats needed.",
+    "discovered": {
+      "year": 1922,
+      "note": "Discovered as the fertility factor rats need, later named tocopherol."
+    }
   },
   {
     "id": "red_40",
@@ -8971,7 +9239,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "Invented in 1971 to replace amaranth, the red dye the FDA later banned for causing cancer."
+    "fact": "Invented in 1971 to replace amaranth, the red dye the FDA later banned for causing cancer.",
+    "discovered": {
+      "year": 1971,
+      "note": "Invented to replace amaranth, the red dye later banned by the FDA."
+    }
   },
   {
     "id": "yellow_5",
@@ -8983,7 +9255,11 @@
       "tool"
     ],
     "terminal": true,
-    "fact": "A 2024 discovery: this yellow dye can turn live mouse skin briefly transparent under light."
+    "fact": "A 2024 discovery: this yellow dye can turn live mouse skin briefly transparent under light.",
+    "discovered": {
+      "year": 2024,
+      "note": "Found to briefly turn live mouse skin transparent under light."
+    }
   },
   {
     "id": "yellow_6",
@@ -9029,7 +9305,11 @@
       "food",
       "microbe"
     ],
-    "fact": "E418. About half the concentration of agar reaches the same gel strength."
+    "fact": "E418. About half the concentration of agar reaches the same gel strength.",
+    "discovered": {
+      "year": 1978,
+      "note": "Its bacterium is first isolated from lily plant tissue in a Pennsylvania pond."
+    }
   },
   {
     "id": "arrowroot",
@@ -9087,7 +9367,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Named for kreas, Greek for meat — Chevreul isolated it from a muscle extract in 1832."
+    "fact": "Named for kreas, Greek for meat — Chevreul isolated it from a muscle extract in 1832.",
+    "discovered": {
+      "year": 1832,
+      "note": "Chevreul isolates it from a muscle extract."
+    }
   },
   {
     "id": "citrulline",
@@ -9098,7 +9382,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Named for citrullus, Latin for watermelon — first isolated from the fruit in 1914."
+    "fact": "Named for citrullus, Latin for watermelon — first isolated from the fruit in 1914.",
+    "discovered": {
+      "year": 1914,
+      "note": "First isolated from watermelon, the source of its name."
+    }
   },
   {
     "id": "theanine",
@@ -9109,7 +9397,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "About 1-2% of green tea leaf by dry weight, discovered there in 1949, isolated in 1950."
+    "fact": "About 1-2% of green tea leaf by dry weight, discovered there in 1949, isolated in 1950.",
+    "discovered": {
+      "year": 1949,
+      "note": "Discovered in green tea leaf, isolated the following year."
+    }
   },
   {
     "id": "caffeine",
@@ -9120,7 +9412,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Runge isolated it from coffee beans Goethe gave him, weeks after they first met, in 1819."
+    "fact": "Runge isolated it from coffee beans Goethe gave him, weeks after they first met, in 1819.",
+    "discovered": {
+      "year": 1819,
+      "note": "Runge isolates it from coffee beans given to him by Goethe."
+    }
   },
   {
     "id": "alpha_gpc",
@@ -9301,7 +9597,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "First crystallized from egg yolk in 1936 — but raw egg white's avidin binds it too tightly to absorb."
+    "fact": "First crystallized from egg yolk in 1936 — but raw egg white's avidin binds it too tightly to absorb.",
+    "discovered": {
+      "year": 1936,
+      "note": "First crystallized from egg yolk."
+    }
   },
   {
     "id": "hyaluronic_acid",
@@ -9312,7 +9612,11 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "A glycosaminoglycan first pulled from a cow's vitreous humor in 1934 — now farmed from rooster combs."
+    "fact": "A glycosaminoglycan first pulled from a cow's vitreous humor in 1934 — now farmed from rooster combs.",
+    "discovered": {
+      "year": 1934,
+      "note": "First pulled from a cow's vitreous humor."
+    }
   },
   {
     "id": "sucralose",
@@ -9323,7 +9627,11 @@
       "food",
       "sweet"
     ],
-    "fact": "E955. Sucrose with three hydroxyls swapped for chlorine — discovered when 'test' was misheard as 'taste.'"
+    "fact": "E955. Sucrose with three hydroxyls swapped for chlorine — discovered when 'test' was misheard as 'taste.'",
+    "discovered": {
+      "year": 1975,
+      "note": "Discovered when 'test it' is reportedly misheard as 'taste it.'"
+    }
   },
   {
     "id": "stevia",
@@ -9575,7 +9883,11 @@
       "earth"
     ],
     "fact": "1962: proof the noble gases were never entirely noble. The first one ever forced into a bond.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1962,
+      "note": "Forced into being as the first proof noble gases could bond after all."
+    }
   },
   {
     "id": "lithium_oxide",
@@ -9619,7 +9931,11 @@
       "earth"
     ],
     "fact": "The white in almost everything white — paint, paper, toothpaste — chosen purely for its brightness.",
-    "terminal": false
+    "terminal": false,
+    "discovered": {
+      "year": 1916,
+      "note": "First mass-produced as a pigment."
+    }
   },
   {
     "id": "chromium_oxide",
@@ -9817,7 +10133,11 @@
       "earth"
     ],
     "fact": "Yttrium, aluminium and oxygen in a crystal clear enough to host a laser. Dope it with neodymium and it lases.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1964,
+      "note": "Doped with neodymium, it becomes the first working Nd:YAG laser."
+    }
   },
   {
     "id": "rubidium_superoxide",
@@ -9850,7 +10170,11 @@
       "earth"
     ],
     "fact": "Radium mixed into zinc sulfide, painted onto a watch face, glowing green in the dark since 1908.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1908,
+      "note": "First painted onto watch faces, radium in zinc sulfide glowing green in the dark."
+    }
   },
   {
     "id": "gas_mantle",
@@ -9883,7 +10207,11 @@
       "metal"
     ],
     "fact": "Neodymium, iron, and boron this recipe cannot carry — the strongest permanent magnet you can buy.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1984,
+      "note": "Developed independently by GM and Sumitomo, becoming the strongest commercially sold permanent magnet."
+    }
   },
   {
     "id": "samarium_cobalt_magnet",
@@ -9982,7 +10310,11 @@
       "earth"
     ],
     "fact": "Made by fluorinating chlorine gas — and so reactive once formed it will set sand itself on fire.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1930,
+      "note": "First made by fluorinating chlorine gas."
+    }
   },
   {
     "id": "disulfur_dichloride",
@@ -10015,7 +10347,11 @@
       "earth"
     ],
     "fact": "Discovered in 1901 by simply exposing sulfur to fluorine gas — nothing about making it has changed since.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1901,
+      "note": "Discovered by simply exposing sulfur to fluorine gas."
+    }
   },
   {
     "id": "phosphorus_pentafluoride",
@@ -10158,7 +10494,11 @@
       "earth"
     ],
     "fact": "Robert Boyle proved gold could react with something in 1666: metallic gold, straight into chlorine gas.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1666,
+      "note": "Robert Boyle proves gold can react with something, putting it straight into chlorine gas."
+    }
   },
   {
     "id": "copper_fluoride",
@@ -10467,7 +10807,11 @@
       "metal"
     ],
     "fact": "Named for the next planet past Uranus — a neutron fired into uranium made the first atom of it in 1940.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1940,
+      "note": "First made by firing a neutron into uranium."
+    }
   },
   {
     "id": "americium",
@@ -10487,7 +10831,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Named for Marie and Pierre Curie — first made in 1944 by firing alpha particles at plutonium."
+    "fact": "Named for Marie and Pierre Curie — first made in 1944 by firing alpha particles at plutonium.",
+    "discovered": {
+      "year": 1944,
+      "note": "First made by firing alpha particles at plutonium."
+    }
   },
   {
     "id": "berkelium",
@@ -10498,7 +10846,11 @@
       "metal"
     ],
     "fact": "Named for Berkeley, California — the same cyclotron there later made californium too.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1949,
+      "note": "First made by firing alpha particles at americium for six hours in the Berkeley cyclotron."
+    }
   },
   {
     "id": "californium",
@@ -10508,7 +10860,11 @@
     "tags": [
       "metal"
     ],
-    "fact": "Half a milligram gives off enough neutrons to start up a nuclear reactor or find oil in a well."
+    "fact": "Half a milligram gives off enough neutrons to start up a nuclear reactor or find oil in a well.",
+    "discovered": {
+      "year": 1950,
+      "note": "First made by bombarding a microgram target of curium-242 with alpha particles in the Berkeley cyclotron."
+    }
   },
   {
     "id": "protactinium",
@@ -10552,7 +10908,11 @@
       "earth"
     ],
     "fact": "So rare that less than a gram of it exists naturally in the entire Earth's crust at any moment.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1940,
+      "note": "Corson, MacKenzie and Segrè make the first astatine by firing alpha particles at bismuth-209."
+    }
   },
   {
     "id": "rutherfordium",
@@ -10563,7 +10923,11 @@
       "metal"
     ],
     "fact": "Named for Ernest Rutherford, the physicist who first split the atom and mapped out its nucleus.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1969,
+      "note": "A Berkeley team fires carbon-12 ions at californium-249 and traces the result's decay to its known daughter nucleus."
+    }
   },
   {
     "id": "dubnium",
@@ -10574,7 +10938,11 @@
       "metal"
     ],
     "fact": "Named for Dubna, Russia — the lab whose decade-long priority dispute with Berkeley became legend.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1970,
+      "note": "A Berkeley team fires nitrogen-15 ions at californium-249, claiming element 105 in a priority dispute with Dubna."
+    }
   },
   {
     "id": "seaborgium",
@@ -10585,7 +10953,11 @@
       "metal"
     ],
     "fact": "One of only two elements named for someone still alive at the time — chemist Glenn Seaborg himself.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1974,
+      "note": "Seaborg's own team fires oxygen-18 ions at californium-249; the element later takes his name."
+    }
   },
   {
     "id": "bohrium",
@@ -10596,7 +10968,11 @@
       "metal"
     ],
     "fact": "Named for Niels Bohr, who put electrons into orbits around the nucleus like tiny planets.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1981,
+      "note": "A GSI Darmstadt team fires chromium-54 nuclei at bismuth-209, catching five atoms before they decay away."
+    }
   },
   {
     "id": "hassium",
@@ -10607,7 +10983,11 @@
       "metal"
     ],
     "fact": "Named for Hesse, the German state — Hassia in Latin — home to the lab that first made it in 1984.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1984,
+      "note": "First made at a laboratory in Hesse, Germany."
+    }
   },
   {
     "id": "meitnerium",
@@ -10618,7 +10998,11 @@
       "metal"
     ],
     "fact": "The only element named specifically for a real woman — physicist Lise Meitner, co-discoverer of fission.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1982,
+      "note": "A GSI Darmstadt team fires iron-58 nuclei at bismuth-209, detecting a single atom."
+    }
   },
   {
     "id": "darmstadtium",
@@ -10629,7 +11013,11 @@
       "metal"
     ],
     "fact": "Named for Darmstadt, the German city whose heavy-ion accelerator has now made half a dozen elements.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1994,
+      "note": "A GSI Darmstadt team fires nickel-62 nuclei at lead-208, catching a single atom."
+    }
   },
   {
     "id": "roentgenium",
@@ -10640,7 +11028,11 @@
       "metal"
     ],
     "fact": "Named for Wilhelm Röntgen, who discovered X-rays and won physics' very first Nobel Prize.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1994,
+      "note": "A GSI Darmstadt team fires nickel-64 nuclei at bismuth-209, catching three atoms."
+    }
   },
   {
     "id": "copernicium",
@@ -10651,7 +11043,11 @@
       "metal"
     ],
     "fact": "Named for Copernicus, who worked out that the planets circle the Sun rather than the Earth.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1996,
+      "note": "A GSI Darmstadt team fires zinc-70 nuclei at lead-208, producing a single atom."
+    }
   },
   {
     "id": "beryllium_fluoride",
@@ -10860,7 +11256,11 @@
       "earth"
     ],
     "fact": "Discovered by the Curies in 1898; it later glowed on watch dials until the danger was understood.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1898,
+      "note": "Discovered by the Curies."
+    }
   },
   {
     "id": "radium_iodide",
@@ -11002,7 +11402,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Isolated from Streptomyces griseus, 19 October 1943, out of New Jersey soil. The first cure for tuberculosis."
+    "fact": "Isolated from Streptomyces griseus, 19 October 1943, out of New Jersey soil. The first cure for tuberculosis.",
+    "discovered": {
+      "year": 1943,
+      "note": "Isolated from Streptomyces griseus found in New Jersey soil, the first cure for tuberculosis."
+    }
   },
   {
     "id": "pancreas",
@@ -11023,7 +11427,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Two peptide chains, A and B, held by two disulfide bonds — a third closes a loop inside the A chain."
+    "fact": "Two peptide chains, A and B, held by two disulfide bonds — a third closes a loop inside the A chain.",
+    "discovered": {
+      "year": 1982,
+      "note": "Humulin is approved, the first medicine made by inserting human DNA into a host bacterium."
+    }
   },
   {
     "id": "sweet_potato",
@@ -12412,7 +12820,11 @@
     ],
     "fact": "Magnesium, hydrogenated directly — though the first prep needed 200 atmospheres and 500°C.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1951,
+      "note": "First reported via direct hydrogenation of magnesium metal under high pressure and heat."
+    }
   },
   {
     "id": "strontium_hydride",
@@ -12568,7 +12980,11 @@
     ],
     "fact": "I2 + 5 F2 → 2 IF5 — first made in 1891 by burning solid iodine in fluorine gas, and still the method today.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1891,
+      "note": "First made by burning solid iodine in fluorine gas."
+    }
   },
   {
     "id": "bromine_monochloride",
@@ -12960,7 +13376,11 @@
       "food"
     ],
     "terminal": true,
-    "fact": "Goat meat. A 1922 trade-association coinage — chevre crossed with mouton — that never caught on."
+    "fact": "Goat meat. A 1922 trade-association coinage — chevre crossed with mouton — that never caught on.",
+    "discovered": {
+      "year": 1922,
+      "note": "Coined by a trade association, blending chevre and mouton, and it never caught on."
+    }
   },
   {
     "id": "donkey",
@@ -13103,7 +13523,11 @@
     ],
     "fact": "Undiscovered until 1976 and still one of the rarest sharks alive, with fewer than 300 ever recorded.",
     "terminal": true,
-    "taxon": "tx_lamniformes"
+    "taxon": "tx_lamniformes",
+    "discovered": {
+      "year": 1976,
+      "note": "First discovered, and still one of the rarest sharks alive."
+    }
   },
   {
     "id": "sand_tiger_shark",
@@ -13660,7 +14084,11 @@
     ],
     "fact": "No two share the same swirling pink pattern, and instead of swimming, it walks the seafloor on its fins.",
     "terminal": true,
-    "taxon": "tx_lophiiformes"
+    "taxon": "tx_lophiiformes",
+    "discovered": {
+      "year": 2008,
+      "note": "First photographed alive by recreational divers near Ambon Island, Indonesia."
+    }
   },
   {
     "id": "giant_grouper",
@@ -13876,7 +14304,11 @@
     ],
     "fact": "Bred from traditional German herding dogs in 1899 by one man, Max von Stephanitz, for working ability over looks — now a mainstay of police, military and service work.",
     "terminal": true,
-    "taxon": "tx_canis_lupus"
+    "taxon": "tx_canis_lupus",
+    "discovered": {
+      "year": 1899,
+      "note": "Max von Stephanitz breeds it from traditional German herding dogs, valuing working ability over looks."
+    }
   },
   {
     "id": "border_collie",
@@ -13912,7 +14344,11 @@
     ],
     "fact": "Bred at the Great St Bernard Hospice in the Alps to search for lost travelers in deep snow — one dog, Barry, is credited with saving 40 to 100 lives.",
     "terminal": true,
-    "taxon": "tx_canis_lupus"
+    "taxon": "tx_canis_lupus",
+    "discovered": {
+      "year": 1660,
+      "note": "Monks at the Great St Bernard Hospice begin keeping dogs, later used for Alpine search and rescue."
+    }
   },
   {
     "id": "siberian_husky",
@@ -14008,7 +14444,11 @@
     ],
     "fact": "Bred from 1819 by an English parson, Jack Russell, starting with a single terrier named Trump, to run with foxhounds and bolt foxes from their dens.",
     "terminal": true,
-    "taxon": "tx_canis_lupus"
+    "taxon": "tx_canis_lupus",
+    "discovered": {
+      "year": 1819,
+      "note": "Jack Russell begins breeding it, starting with a single terrier named Trump."
+    }
   },
   {
     "id": "bull_terrier",
@@ -14020,7 +14460,11 @@
     ],
     "fact": "Its head is famously egg-shaped in profile, curving smoothly from skull to nose — one of the few dog breeds with triangular eyes.",
     "terminal": true,
-    "taxon": "tx_canis_lupus"
+    "taxon": "tx_canis_lupus",
+    "discovered": {
+      "year": 1862,
+      "note": "James Hinks fixes the breed's now-famous egg-shaped head."
+    }
   },
   {
     "id": "labrador_retriever",
@@ -14605,7 +15049,11 @@
       "extinct"
     ],
     "fact": "A sickle-clawed predator whose 1969 description sparked the 'Dinosaur Renaissance' — the real model for Jurassic Park's raptors.",
-    "taxon": "tx_deinonychosauria"
+    "taxon": "tx_deinonychosauria",
+    "discovered": {
+      "year": 1969,
+      "note": "Its scientific description sparks the 'Dinosaur Renaissance' in paleontology."
+    }
   },
   {
     "id": "archaeopteryx",
@@ -14653,7 +15101,11 @@
       "extinct"
     ],
     "fact": "A 21-23 m Jurassic sauropod first named Brontosaurus in 1879, ruled a duplicate in 1903, reinstated as its own genus by a 2015 study.",
-    "taxon": "tx_diplodocidae"
+    "taxon": "tx_diplodocidae",
+    "discovered": {
+      "year": 1879,
+      "note": "First named Brontosaurus."
+    }
   },
   {
     "id": "stegosaurus",
@@ -14737,7 +15189,11 @@
       "extinct"
     ],
     "fact": "Named in 1825 for teeth shaped like an iguana's — only the second dinosaur ever described, its reconstruction revised radically since.",
-    "taxon": "tx_iguanodontia"
+    "taxon": "tx_iguanodontia",
+    "discovered": {
+      "year": 1825,
+      "note": "Named for teeth shaped like an iguana's, only the second dinosaur ever described."
+    }
   },
   {
     "id": "parasaurolophus",
@@ -16025,7 +16481,11 @@
       "electrophone"
     ],
     "fact": "Generates its waveform electronically from scratch, rather than amplifying a vibration that already exists.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1964,
+      "note": "Robert Moog's transistor-based voltage-controlled oscillator becomes the standard circuit for generating a waveform from scratch."
+    }
   },
   {
     "id": "producer",
@@ -16867,7 +17327,11 @@
     "tags": [
       "myth"
     ],
-    "fact": "K'iche' Maya sacred text: creation, the Hero Twins, and a people's own history."
+    "fact": "K'iche' Maya sacred text: creation, the Hero Twins, and a people's own history.",
+    "discovered": {
+      "year": 1550,
+      "note": "Recorded from oral memory, in the tradition of writing credited to the god Itzamna."
+    }
   },
   {
     "id": "hero_twins",
@@ -17362,7 +17826,11 @@
     ],
     "fact": "Introduced to Australia in 1935 to fight cane beetles that lived too high on the stalks to reach.",
     "terminal": true,
-    "taxon": "tx_rhinella"
+    "taxon": "tx_rhinella",
+    "discovered": {
+      "year": 1935,
+      "note": "Introduced to Australia to fight cane beetles living too high on the stalks to reach."
+    }
   },
   {
     "id": "axolotl",
@@ -17631,7 +18099,11 @@
     ],
     "terminal": true,
     "fact": "A screw-driven bar presses inked type onto paper. Gutenberg, working from about 1436.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1436,
+      "note": "Gutenberg begins working on it."
+    }
   },
   {
     "id": "telescope",
@@ -17643,7 +18115,11 @@
     ],
     "terminal": true,
     "fact": "A convex lens focuses light, a concave eyepiece spreads it out magnified. Galileo, 1609.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1609,
+      "note": "Galileo builds his telescope from a convex lens and a concave eyepiece."
+    }
   },
   {
     "id": "steam_engine",
@@ -17655,7 +18131,11 @@
     ],
     "terminal": true,
     "fact": "Watt split the condenser from the cylinder in 1769, so the cylinder never cools between strokes.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1769,
+      "note": "Watt splits the condenser from the cylinder, so it never cools between strokes."
+    }
   },
   {
     "id": "barometer",
@@ -17667,7 +18147,11 @@
     ],
     "terminal": true,
     "fact": "Mercury in a sealed glass tube, held up by the weight of the air alone. Torricelli, 1643.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1643,
+      "note": "Torricelli builds the first mercury barometer."
+    }
   },
   {
     "id": "pendulum_clock",
@@ -17679,7 +18163,11 @@
     ],
     "terminal": true,
     "fact": "A pendulum's swing takes the same time regardless of its width, so it can pace a clock. Huygens, 1656.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1656,
+      "note": "Huygens builds the first pendulum clock."
+    }
   },
   {
     "id": "cotton_gin",
@@ -17691,7 +18179,11 @@
     ],
     "terminal": true,
     "fact": "Iron teeth comb cotton through slots too narrow for the seeds. Whitney, 1793.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1793,
+      "note": "Whitney invents the cotton gin."
+    }
   },
   {
     "id": "sewing_machine",
@@ -17703,7 +18195,11 @@
     ],
     "terminal": true,
     "fact": "An eye-pointed needle carries thread through cloth to meet a shuttle's thread below. Howe, 1845.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1845,
+      "note": "Howe builds his eye-pointed needle sewing machine."
+    }
   },
   {
     "id": "elevator",
@@ -17715,7 +18211,11 @@
     ],
     "terminal": true,
     "fact": "A spring drives pawls into the guide rails' teeth the instant the hoisting rope goes slack. Otis, 1852.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1852,
+      "note": "Otis invents the safety brake that catches a hoisting rope the instant it goes slack."
+    }
   },
   {
     "id": "telegraph",
@@ -17727,7 +18227,11 @@
     ],
     "terminal": true,
     "fact": "A key switches current down a wire; the current switches an electromagnet at the far end. Morse, 1844.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1844,
+      "note": "Morse demonstrates his electric telegraph."
+    }
   },
   {
     "id": "telephone",
@@ -17739,7 +18243,11 @@
     ],
     "terminal": false,
     "fact": "An iron diaphragm near a magnet turns sound into a matching current, and back again. Bell, 1876.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1876,
+      "note": "Bell patents the telephone."
+    }
   },
   {
     "id": "radio",
@@ -17750,7 +18258,11 @@
       "tool"
     ],
     "fact": "A discharging capacitor oscillates across a spark gap and radiates from a wire antenna. Marconi, 1896.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1896,
+      "note": "Marconi builds his spark-gap radio transmitter."
+    }
   },
   {
     "id": "vacuum_tube",
@@ -17762,7 +18274,11 @@
     ],
     "terminal": false,
     "fact": "A heated filament boils electrons into a vacuum; they cross to the plate only one way. Fleming, 1904.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1904,
+      "note": "Fleming invents the vacuum tube diode."
+    }
   },
   {
     "id": "phonograph",
@@ -17774,7 +18290,11 @@
     ],
     "terminal": true,
     "fact": "A vibrating needle indents hill-and-dale grooves into tinfoil on a turning cylinder. Edison, 1877.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1877,
+      "note": "Edison invents the phonograph."
+    }
   },
   {
     "id": "x_ray",
@@ -17786,7 +18306,11 @@
     ],
     "terminal": true,
     "fact": "Electrons striking the wall of an evacuated tube throw off radiation that photographs bone. Röntgen, 1895.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1895,
+      "note": "Röntgen discovers X-rays."
+    }
   },
   {
     "id": "camera_obscura",
@@ -17820,7 +18344,11 @@
     ],
     "terminal": true,
     "fact": "A camera projects onto a light-sensitive plate; mercury vapor develops the invisible result. Daguerre, 1839.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1839,
+      "note": "Daguerre unveils his photographic process."
+    }
   },
   {
     "id": "ether",
@@ -17832,7 +18360,11 @@
     ],
     "terminal": true,
     "fact": "Sulfuric acid dehydrates ethanol into ether — the anesthetic Morton demonstrated in 1846.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1846,
+      "note": "Morton publicly demonstrates it as an anesthetic."
+    }
   },
   {
     "id": "integrated_circuit",
@@ -17843,7 +18375,11 @@
       "tool"
     ],
     "fact": "Every part of a circuit, not just the transistors, built into one block of semiconductor. Kilby, 1958.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1958,
+      "note": "Kilby builds the first integrated circuit."
+    }
   },
   {
     "id": "microprocessor",
@@ -17855,7 +18391,11 @@
     ],
     "terminal": false,
     "fact": "An entire CPU's arithmetic, logic and control on a single chip. Intel's 4004, 1971.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1971,
+      "note": "Intel releases the 4004, the first microprocessor."
+    }
   },
   {
     "id": "internal_combustion_engine",
@@ -17866,7 +18406,11 @@
       "tool"
     ],
     "fact": "Otto compressed the fuel-air mixture in a cylinder before igniting it, for far higher efficiency. 1876.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1876,
+      "note": "Otto builds his four-stroke engine, compressing the fuel-air mixture before ignition."
+    }
   },
   {
     "id": "airplane",
@@ -17878,7 +18422,11 @@
     ],
     "terminal": true,
     "fact": "A cambered wing lifts, warped wingtips steer, a chain-driven propeller pulls. Kitty Hawk, 1903.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1903,
+      "note": "First flown at Kitty Hawk, with a cambered wing, warped wingtips, and a chain-driven propeller."
+    }
   },
   {
     "id": "typewriter",
@@ -17890,7 +18438,11 @@
     ],
     "terminal": true,
     "fact": "A struck key swings a metal bar that prints its letter, reversed on the bar, through an inked ribbon.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1868,
+      "note": "Sholes and Glidden patent it."
+    }
   },
   {
     "id": "herrerasaurus",
@@ -18425,7 +18977,11 @@
       "metal"
     ],
     "fact": "Push two cars together and the knuckle locks itself shut — no one stands between them.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1873,
+      "note": "Eli Janney patents his forged-steel knuckle coupler, replacing the link-and-pin worked by hand."
+    }
   },
   {
     "id": "roller_bearing",
@@ -18586,7 +19142,11 @@
     ],
     "terminal": true,
     "fact": "Apple, 2001. A hard drive of songs, then flash memory, controlled by a touch-sensitive wheel.",
-    "shelf": "workshop"
+    "shelf": "workshop",
+    "discovered": {
+      "year": 2001,
+      "note": "Apple releases the iPod, controlled by a touch-sensitive wheel."
+    }
   },
   {
     "id": "nike_plus_sensor",
@@ -18637,7 +19197,11 @@
       "tool"
     ],
     "fact": "Reinitzer heated cholesteryl benzoate in 1888 and it melted twice, through a cloudy phase between.",
-    "shelf": "workshop"
+    "shelf": "workshop",
+    "discovered": {
+      "year": 1888,
+      "note": "Reinitzer heats cholesteryl benzoate and finds it melts twice, discovering liquid crystals."
+    }
   },
   {
     "id": "thin_film_transistor",
@@ -18720,7 +19284,11 @@
       "tool"
     ],
     "fact": "Boyle and Smith, 1969. Each photosite's charge shuffles down the row like a bucket brigade to be read.",
-    "shelf": "workshop"
+    "shelf": "workshop",
+    "discovered": {
+      "year": 1969,
+      "note": "Boyle and Smith invent the CCD sensor."
+    }
   },
   {
     "id": "digital_camera",
@@ -19008,7 +19576,11 @@
       "build"
     ],
     "soleRoute": true,
-    "fact": "Steel rebar gives concrete the tensile strength it lacks entirely on its own."
+    "fact": "Steel rebar gives concrete the tensile strength it lacks entirely on its own.",
+    "discovered": {
+      "year": 1867,
+      "note": "Joseph Monier patents embedding iron mesh in wet concrete, so the two share the load."
+    }
   },
   {
     "id": "curtain_wall",
@@ -19077,7 +19649,11 @@
     ],
     "soleRoute": true,
     "fact": "Sixty carbon atoms closed into a cage shaped exactly like a soccer ball.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1985,
+      "note": "A laser vaporizing graphite rods condenses carbon vapor into cage-like 60-atom spheres, a Nobel-winning discovery."
+    }
   },
   {
     "id": "nanotube",
@@ -19207,7 +19783,11 @@
     ],
     "terminal": true,
     "soleRoute": true,
-    "fact": "Kay's 1733 shuttle rode on wheels, so one weaver alone could work cloth twice as wide."
+    "fact": "Kay's 1733 shuttle rode on wheels, so one weaver alone could work cloth twice as wide.",
+    "discovered": {
+      "year": 1733,
+      "note": "Kay's shuttle rides on wheels, letting one weaver work cloth twice as wide."
+    }
   },
   {
     "id": "knitting_needles",
@@ -19570,7 +20150,11 @@
       "microbe"
     ],
     "terminal": true,
-    "fact": "Delivering a working copy of a gene into a patient's cells to make up for a faulty one."
+    "fact": "Delivering a working copy of a gene into a patient's cells to make up for a faulty one.",
+    "discovered": {
+      "year": 2023,
+      "note": "A CRISPR therapy for sickle cell disease is approved, editing bone-marrow stem cells to switch fetal hemoglobin back on."
+    }
   },
   {
     "id": "crispr",
@@ -19590,7 +20174,11 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Producing an individual with DNA identical to another's — plants and labs both know how."
+    "fact": "Producing an individual with DNA identical to another's — plants and labs both know how.",
+    "discovered": {
+      "year": 1996,
+      "note": "Dolly the sheep is made this way, by somatic cell nuclear transfer."
+    }
   },
   {
     "id": "parthenogenesis",
@@ -19613,7 +20201,11 @@
       "animal"
     ],
     "terminal": true,
-    "fact": "Splicing an extinct species' genes into a living relative's genome to bring back lost traits."
+    "fact": "Splicing an extinct species' genes into a living relative's genome to bring back lost traits.",
+    "discovered": {
+      "year": 2003,
+      "note": "The extinct Pyrenean ibex is briefly revived by cloning a preserved cell into a goat's egg."
+    }
   },
   {
     "id": "dna_sequencing",
@@ -19698,7 +20290,11 @@
       "metal"
     ],
     "fact": "A hinged flap at the wingtip's trailing edge. One goes up as the other goes down, and the aircraft rolls.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1915,
+      "note": "It replaces the Wright brothers' wing-warping, which twisted the whole wing to roll the aircraft."
+    }
   },
   {
     "id": "rudder",
@@ -19842,7 +20438,11 @@
       "tool",
       "fire"
     ],
-    "fact": "Air heated by an open flame is less dense than the air around it, so the whole envelope floats."
+    "fact": "Air heated by an open flame is less dense than the air around it, so the whole envelope floats.",
+    "discovered": {
+      "year": 1783,
+      "note": "The Montgolfier brothers fly the first manned flight under one."
+    }
   },
   {
     "id": "airship",
@@ -19853,7 +20453,11 @@
       "tool"
     ],
     "fact": "Unlike a balloon, it steers: engines and control surfaces added to a gas-filled envelope.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1900,
+      "note": "Zeppelin's LZ1, an early rigid airship, flies on hydrogen."
+    }
   },
   {
     "id": "rotor",
@@ -19875,7 +20479,11 @@
       "tool"
     ],
     "fact": "A spinning rotor lifts it straight up with no runway, and a tail rotor stops the fuselage spinning too.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1939,
+      "note": "Sikorsky's VS-300 adds a small tail rotor purely to cancel the main rotor's torque."
+    }
   },
   {
     "id": "parachute",
@@ -19886,7 +20494,11 @@
       "tool"
     ],
     "fact": "A wide canopy multiplies the drag of a falling body until it settles to a survivable speed.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1797,
+      "note": "Garnerin makes the first descent under a frameless silk parachute."
+    }
   },
   {
     "id": "jet_airliner",
@@ -19897,7 +20509,11 @@
       "tool"
     ],
     "fact": "A fuselage carried by engines that burn fuel continuously instead of turning a propeller.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1949,
+      "note": "The de Havilland Comet, the world's first jet airliner, first flies."
+    }
   },
   {
     "id": "runway",
@@ -19937,7 +20553,11 @@
     "tags": [
       "build"
     ],
-    "fact": "A glass-walled cab high enough to see the whole airfield, sequencing aircraft entirely by radio."
+    "fact": "A glass-walled cab high enough to see the whole airfield, sequencing aircraft entirely by radio.",
+    "discovered": {
+      "year": 1920,
+      "note": "The world's first control tower opens, at Croydon Airport."
+    }
   },
   {
     "id": "airport",
@@ -20141,7 +20761,11 @@
       "tool"
     ],
     "soleRoute": true,
-    "fact": "A diamond-set bit wears away as it cuts, exposing fresh diamonds underneath — the same wearing action Rodolphe Leschot's 1863 core bit ran on."
+    "fact": "A diamond-set bit wears away as it cuts, exposing fresh diamonds underneath — the same wearing action Rodolphe Leschot's 1863 core bit ran on.",
+    "discovered": {
+      "year": 1863,
+      "note": "Leschot's core bit runs on the same wearing action drill bits still use."
+    }
   },
   {
     "id": "resource_estimation",
@@ -20628,7 +21252,11 @@
     "tags": [
       "plant"
     ],
-    "fact": "Aquatic flower rooted in mud; a 1,300-year-old seed from a dry lakebed still germinated when planted in 1994."
+    "fact": "Aquatic flower rooted in mud; a 1,300-year-old seed from a dry lakebed still germinated when planted in 1994.",
+    "discovered": {
+      "year": 1994,
+      "note": "A 1,300-year-old seed from a dry lakebed still germinates when planted."
+    }
   },
   {
     "id": "swan",
@@ -21367,7 +21995,11 @@
       "animal",
       "wild"
     ],
-    "fact": "Egypt's 'jackal' turned out on closer genetic inspection to be a distinct wolf species."
+    "fact": "Egypt's 'jackal' turned out on closer genetic inspection to be a distinct wolf species.",
+    "discovered": {
+      "year": 2015,
+      "note": "Genetic testing shows it's a distinct species, more closely related to the grey wolf than to the golden jackal."
+    }
   },
   {
     "id": "ibis",
@@ -22579,7 +23211,11 @@
       "microbe"
     ],
     "soleRoute": true,
-    "fact": "The nested system — kingdom down to species — that gives every living thing exactly one place and one name."
+    "fact": "The nested system — kingdom down to species — that gives every living thing exactly one place and one name.",
+    "discovered": {
+      "year": 1758,
+      "note": "Linnaeus's Systema Naturae ranks all life into a nested hierarchy, named with two-part Latin binomials."
+    }
   },
   {
     "id": "tree_of_life",
@@ -22590,7 +23226,11 @@
       "microbe"
     ],
     "soleRoute": true,
-    "fact": "A branching diagram connecting every classified group of life back through common ancestry."
+    "fact": "A branching diagram connecting every classified group of life back through common ancestry.",
+    "discovered": {
+      "year": 1837,
+      "note": "Darwin sketches the first version, diagramming evolution's branching pattern."
+    }
   },
   {
     "id": "cladistics",
@@ -22781,7 +23421,11 @@
     ],
     "soleRoute": true,
     "terminal": true,
-    "fact": "A living species so little changed from its fossil relatives it looks like it stepped out of deep time."
+    "fact": "A living species so little changed from its fossil relatives it looks like it stepped out of deep time.",
+    "discovered": {
+      "year": 1938,
+      "note": "A living coelacanth, presumed extinct for 65 million years, is hauled up off South Africa, coining the term."
+    }
   },
   {
     "id": "extinction",
@@ -23724,7 +24368,11 @@
     ],
     "fact": "A recessive keratin-gene mutation stops each hair from growing a proper root.",
     "terminal": true,
-    "taxon": "tx_felis"
+    "taxon": "tx_felis",
+    "discovered": {
+      "year": 1966,
+      "note": "First bred from Prune, a spontaneously hairless kitten born in Toronto."
+    }
   },
   {
     "id": "devon_rex",
@@ -24238,7 +24886,11 @@
     "tags": [
       "earth"
     ],
-    "fact": "Named for tolu balsam, the resin it was isolated from in 1841 — now mostly made from petroleum instead."
+    "fact": "Named for tolu balsam, the resin it was isolated from in 1841 — now mostly made from petroleum instead.",
+    "discovered": {
+      "year": 1841,
+      "note": "First isolated from tolu balsam, the resin that gives it its name."
+    }
   },
   {
     "id": "tnt",
@@ -24250,7 +24902,11 @@
     ],
     "fact": "2,4,6-trinitrotoluene, first made in 1863 as a yellow dye — a military explosive only from 1902.",
     "soleRoute": true,
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1902,
+      "note": "First used as a military explosive, decades after it was made as a yellow dye."
+    }
   },
   {
     "id": "gunpowder",
@@ -24261,7 +24917,11 @@
       "earth"
     ],
     "fact": "75% potassium nitrate, 15% charcoal, 10% sulfur — a ratio traced to its 11th-century Chinese origin.",
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1044,
+      "note": "The earliest known written formula for it appears in the Chinese military text Wujing Zongyao."
+    }
   },
   {
     "id": "dynamite",
@@ -24273,7 +24933,11 @@
     ],
     "fact": "Nobel's 1867 patent: nitroglycerin soaked into kieselguhr, a diatom silica, stable enough to ship.",
     "soleRoute": true,
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1867,
+      "note": "Nobel patents it, nitroglycerin soaked into diatom silica to make it stable enough to ship."
+    }
   },
   {
     "id": "nitroglycerin",
@@ -24359,7 +25023,11 @@
       "earth"
     ],
     "fact": "The proton's antimatter twin — same mass, opposite charge — confirmed to exist in 1955 at Berkeley.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1955,
+      "note": "Confirmed to exist at Berkeley."
+    }
   },
   {
     "id": "antihydrogen",
@@ -24371,7 +25039,11 @@
     ],
     "fact": "A positron bound to an antiproton — a whole antimatter atom, first made at CERN in 1995.",
     "soleRoute": true,
-    "terminal": true
+    "terminal": true,
+    "discovered": {
+      "year": 1995,
+      "note": "First made at CERN, a positron bound to an antiproton."
+    }
   },
   {
     "id": "pyrope",
@@ -24820,7 +25492,11 @@
     ],
     "terminal": true,
     "fact": "Beryllium magnesium aluminium oxide, close kin to spinel — it was sold as spinel for years before anyone noticed.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1945,
+      "note": "Every known piece had been sold and catalogued as spinel until one buyer's stone tests wrong."
+    }
   },
   {
     "id": "benitoite",
@@ -24997,7 +25673,11 @@
     ],
     "terminal": true,
     "fact": "Spodumene coloured lilac-pink by manganese — the same lithium aluminium silicate, a different trace element.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1902,
+      "note": "Named for the mineralogist who first described it."
+    }
   },
   {
     "id": "hiddenite",
