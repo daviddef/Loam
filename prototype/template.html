@@ -761,6 +761,16 @@ __CATEGORY_CSS__
                               50%{box-shadow:0 0 0 4px rgba(197,120,60,.4)}}
   .chip.sprinkling{border-color:var(--orange);animation:sprinkleBreathe 1.6s ease-in-out infinite}
   @media (prefers-reduced-motion:reduce){ .chip.sprinkling{animation:none;box-shadow:0 0 0 3px rgba(197,120,60,.35)} }
+  /* A grain: the same drawing a real chip uses, none of the rest — no name,
+     no icons, no border, no gesture handlers (pointer-events:none, so it
+     never competes with panning or dragging a real card underneath it).
+     Cheap enough to hold hundreds; see GRAIN_CAP. */
+  .grain{
+    position:absolute;width:26px;height:26px;pointer-events:none;
+    border-radius:50%;overflow:hidden;z-index:2;
+  }
+  .grain svg{width:100%;height:100%;display:block}
+  @media (prefers-reduced-motion:reduce){ .grain{animation:none} }
   /* With a card in your hand: how many cards on the bench it will make
      something new with. A number, never a partner. */
   .chip.board.haslive::before{
@@ -5230,26 +5240,63 @@ function applyMerge(a, b) {
   resolve(r, [a, b]);
 }
 
-// ---------- sprinkle mode: continuous spawn, reacting on touch ----------
+// ---------- sprinkle mode: cheap grains that pour and react, not cards ----------
 // "what if there was a 'sprinkle' mode ... so if i sprinkled sheep they
 // would fall endlessly on the pallette, but i could 'sprinkle' any element i
 // wanted, and they would react to one another if they were to touch?" —
-// found live. This is a recombination of machinery that already exists
-// rather than a new engine: the same REACTIONS data and hit-and-merge path
-// a manual drag-drop already uses, ticking on a timer instead of a pointer.
+// found live. First cut reused the full .chip.board card for every grain —
+// name label, info icon, sprinkle icon, drag/tap handlers, all of it — which
+// is exactly why it hit the wall at MAX_CHIPS=140 almost immediately on any
+// real board. "the sprinkles are not hierarchies, not detailed objects they
+// are just instances of the objects that need to interact ... without them
+// acting like 'cards'" — found live, the real fix. A grain is a tiny,
+// pointer-events:none div: the same artSVG() drawing, no chrome, no gesture
+// handlers, never entered into `links`/save/undo/decay at all — cheap enough
+// to hold hundreds at once. Two grains touching react and become one new
+// grain, chain-reacting at the same cheap level. A grain touching something
+// real already on the bench promotes properly into an actual .chip.board via
+// the existing applyMerge()/resolve() pipeline — that moment stays a real,
+// full discovery; only the raw pour is lightweight.
 // Deliberately not named "decay" anywhere — that word already means
 // something unrelated in this codebase (decayElement's reachability
 // toggle).
 const SPRINKLE_MS = 100;
+const GRAIN_SIZE = 26;                  // world px — a card is roughly 3-4x this
+const GRAIN_CAP = 800;                  // no event listeners, no layout chrome: room for far more than a real chip
 let sprinkle = null;                    // { id, timer }
-// Tracked passively, cheaply, at all times (not just while sprinkling) — a
-// single client-coordinate pair, no different from what every drag handler
-// in this file already reads off its own pointermove. Sprinkling reads it
-// rather than picking a random board spot, so it falls where you're
-// actually pointing. ("sprinkle mode needs to follow my cursor, not
-// randomly spawn, ie they sprinkle where i move" — found live.)
-let lastPointer = null;
+let grains = [];                        // [{el, id, wx, wy}], oldest first
 addEventListener('pointermove', ev => { lastPointer = { x: ev.clientX, y: ev.clientY }; }, { passive: true });
+let lastPointer = null;
+function spawnGrain(id, wx, wy) {
+  const el = document.createElement('div');
+  el.className = `grain fam-${familyOf(byId[id]).id}`;
+  el.style.left = (wx - GRAIN_SIZE / 2) + 'px';
+  el.style.top  = (wy - GRAIN_SIZE / 2) + 'px';
+  el.innerHTML = artSVG(id);
+  world.appendChild(el);
+  const rec = { el, id, wx, wy };
+  grains.push(rec);
+  return rec;
+}
+function removeGrain(rec) {
+  rec.el.remove();
+  const i = grains.indexOf(rec);
+  if (i >= 0) grains.splice(i, 1);
+}
+function clearGrains() { while (grains.length) removeGrain(grains[grains.length - 1]); }
+// Self-tracked world coordinates, not getBoundingClientRect — that's the
+// whole reason this scales past what hit()/hitAgainst() do for real chips.
+// "touching" is an approximation (two roughly-GRAIN_SIZE circles overlap
+// once their centres are within one grain-width of each other), not a pixel-
+// exact hit test, which is the right tradeoff at this population.
+function nearestGrain(wx, wy) {
+  let best = null, bestD = GRAIN_SIZE;
+  for (const g of grains) {
+    const d = Math.hypot(g.wx - wx, g.wy - wy);
+    if (d < bestD) { bestD = d; best = g; }
+  }
+  return best;
+}
 function sprinklingSelector(id) {
   // Both the shelf/tab card AND any matching chip already on the bench —
   // sprinkling is a property of the element, not of one specific card.
@@ -5260,14 +5307,11 @@ function stopSprinkle(silent) {
   clearInterval(sprinkle.timer);
   const stoppedId = sprinkle.id;
   sprinkle = null;
+  clearGrains();
   document.querySelectorAll(sprinklingSelector(stoppedId)).forEach(c => c.classList.remove('sprinkling'));
   if (!silent) toast(`Stopped sprinkling ${nameOf(byId[stoppedId])}`);
 }
 function sprinkleTick(id) {
-  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
-    toast('The bench is full — stopped sprinkling');
-    return stopSprinkle(true);
-  }
   const b = boardBox();
   if (!b.width || !b.height) return;
   // Fall at the cursor — a little jitter so consecutive ticks spread into a
@@ -5275,10 +5319,7 @@ function sprinkleTick(id) {
   // visible board so a cursor that's drifted over the shelf or tray doesn't
   // spawn there. Falls back to a random board spot only if the pointer has
   // never once been seen (e.g. sprinkle armed by script, or a pure-keyboard
-  // session). NOT via freeSpot, which exists specifically to avoid overlap —
-  // sprinkling wants the opposite: a landing spot that CAN fall on an
-  // existing chip, so it can actually touch and react, the way a manual
-  // drag dropped onto another chip already does.
+  // session).
   const jitter = 10;
   let px, py;
   if (lastPointer) {
@@ -5290,19 +5331,34 @@ function sprinkleTick(id) {
   }
   px = Math.max(b.left + 8, Math.min(px, b.left + b.width - 8));
   py = Math.max(b.top + 8, Math.min(py, b.top + b.height - 8));
-  // Always land exactly where it fell, cursor-tracked or not — freeSpot's
-  // non-overlapping search is the wrong tool once the whole point is
-  // following the cursor rather than tidily filling the board.
   const [wx, wy] = toWorld(px, py);
-  const el = spawn(id, wx, wy, null, null, true);
-  // Hit-test using the chip's OWN rect as the probe, exactly like a manual
-  // drag-drop does (`hit(ev.clientX, ev.clientY, el)`) — a bare point test
-  // needs the jitter to land inside another card's exact pixels, which
-  // missed constantly; the real card-vs-card overlap this uses is what
-  // "touch" actually means here.
-  const target = hit(px, py, el);
-  const pair = target?.dataset.id ? merges.get([id, target.dataset.id].sort().join('+')) : null;
-  if (pair) applyMerge(el, target);
+
+  // Touching something REAL first — that's still a genuine discovery moment,
+  // so it promotes straight to a full .chip.board through the ordinary
+  // merge pipeline, same visual/audio payoff a manual drag always had.
+  const target = hit(px, py);
+  const realPair = target?.dataset.id ? merges.get([id, target.dataset.id].sort().join('+')) : null;
+  if (realPair) {
+    const el = spawn(id, wx, wy, null, null, true);
+    applyMerge(el, target);
+    return;
+  }
+
+  // Otherwise it's cheap sand: spawn a grain, and if it landed on another
+  // grain that it genuinely reacts with, both vanish and the result appears
+  // as a new grain at the midpoint — chain reactions stay at grain level
+  // instead of flooding the bench with full cards for every intermediate.
+  if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
+  const mine = spawnGrain(id, wx, wy);
+  const near = nearestGrain(wx, wy);
+  const grainPair = near ? merges.get([id, near.id].sort().join('+')) : null;
+  if (grainPair) {
+    const mx = (mine.wx + near.wx) / 2, my = (mine.wy + near.wy) / 2;
+    removeGrain(mine);
+    removeGrain(near);
+    if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
+    spawnGrain(grainPair.out, mx, my);
+  }
 }
 function toggleSprinkle(id) {
   if (sprinkle && sprinkle.id === id) return stopSprinkle();
