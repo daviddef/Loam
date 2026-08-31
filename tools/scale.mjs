@@ -103,6 +103,8 @@ const SCALE = {
           // alongside ore/stone/ballast/diamond/coin
           'run_of_mine', 'waste_rock', 'assay', 'dore',
           'sundew', 'edelweiss', 'moss', 'liverwort',
+          // Greek/Roman mythology batch 1 — large-insect scale, the same rack as cockroach/dung_beetle
+          'cicada',
           'seahorse',
           'drupe', 'walnut', 'sumac', 'lime', 'makrut_lime', 'jalapeno', 'chipotle', 'candied_fruit', 'steak',
           'kiwi', 'raspberry', 'blackberry', 'cranberry', 'blueberry', 'date', 'shrimp',
@@ -157,6 +159,8 @@ const SCALE = {
           'eagle', 'fifth_sun', 'popol_vuh',
           // egyptian gods batch 1 — a wading marsh bird alongside duck/goose, and a hand-held organ alongside knife/rope
           'ibis', 'heart',
+          // Greek/Roman mythology batch 1 — bird, hand-tool, instrument and small-plant scale
+          'peacock', 'owl', 'helmet', 'lyre', 'poppy', 'arrow',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
           'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
@@ -266,6 +270,12 @@ const SCALE = {
           'izanagi', 'izanami', 'amaterasu', 'susanoo', 'tsukuyomi', 'kagutsuchi', 'inari',
           'ryujin', 'fujin', 'raijin', 'hachiman', 'tenjin', 'uke_mochi', 'mikaboshi',
           'ame_no_uzume', 'sarutahiko', 'fox',
+          // Greek/Roman mythology batch 1 — human- or large-animal-scale figures, the
+          // same rack as the Aztec/Maya gods and jaguar above
+          'zeus', 'hera', 'poseidon', 'hades', 'athena', 'apollo', 'artemis', 'ares',
+          'aphrodite', 'hermes', 'dionysus', 'demeter', 'persephone', 'hephaestus',
+          'cronus', 'gaia', 'uranus', 'rhea', 'eros', 'nike', 'helios', 'selene', 'eos',
+          'pan', 'hypnos', 'heracles', 'odysseus', 'cerberus',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press

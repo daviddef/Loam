@@ -27664,5 +27664,695 @@
     "why": "When industrial soot darkened English tree bark in the 1800s, dark peppered moths survived being spotted by birds far better than the pale form did — camouflage evolving in real time.",
     "src": "https://en.wikipedia.org/wiki/Peppered_moth",
     "supported": true
+  },
+  {
+    "in": [
+      "rooster",
+      "feather"
+    ],
+    "out": "peacock",
+    "why": "A large pheasant relative of the domestic fowl, native to South Asia and Sri Lanka.",
+    "src": "https://en.wikipedia.org/wiki/Indian_peafowl",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "feather"
+    ],
+    "out": "peacock",
+    "why": "Males spread their iridescent, eye-marked tail feathers -- the train -- in a courtship display to attract females.",
+    "src": "https://en.wikipedia.org/wiki/Indian_peafowl",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "moon"
+    ],
+    "out": "owl",
+    "why": "Comb-like serrations on the leading edge of its flight feathers break up turbulence, letting it hunt by night in near silence.",
+    "src": "https://en.wikipedia.org/wiki/Owl",
+    "supported": true
+  },
+  {
+    "in": [
+      "rabbit",
+      "moon"
+    ],
+    "out": "owl",
+    "why": "Exceptional low-light vision and near-silent flight make many owls effective night hunters of small mammals.",
+    "src": "https://en.wikipedia.org/wiki/Owl",
+    "supported": true
+  },
+  {
+    "in": [
+      "bronze",
+      "leather"
+    ],
+    "out": "helmet",
+    "why": "Many ancient helmets combined a bronze bowl, like the crested Corinthian design, with a snug leather liner underneath.",
+    "src": "https://en.wikipedia.org/wiki/Corinthian_helmet",
+    "supported": true
+  },
+  {
+    "in": [
+      "shell",
+      "thread"
+    ],
+    "out": "lyre",
+    "why": "The classic form of the ancient Greek lyre used a hollowed tortoise shell as its soundbox, strung with gut strings.",
+    "src": "https://en.wikipedia.org/wiki/Lyre",
+    "supported": true
+  },
+  {
+    "in": [
+      "shell",
+      "sinew"
+    ],
+    "out": "lyre",
+    "why": "The classic lyre (chelys) used a tortoise-shell soundbox with sinew or gut strings stretched across it — the kithara later swapped in a wooden soundbox instead.",
+    "src": "https://en.wikipedia.org/wiki/Kithara",
+    "supported": true
+  },
+  {
+    "in": [
+      "seed",
+      "wheat"
+    ],
+    "out": "poppy",
+    "why": "The scarlet corn poppy, Papaver rhoeas, grows wild as a weed among barley and wheat fields.",
+    "src": "https://en.wikipedia.org/wiki/Papaver_rhoeas",
+    "supported": true
+  },
+  {
+    "in": [
+      "rain",
+      "seed"
+    ],
+    "out": "poppy",
+    "why": "Poppy seeds can lie dormant in undisturbed soil for decades; rain onto freshly churned earth triggered the mass blooms across WWI battlefields that made it a symbol of remembrance.",
+    "src": "https://en.wikipedia.org/wiki/Papaver_rhoeas",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "wood"
+    ],
+    "out": "arrow",
+    "why": "Fletching -- feathers fixed to the shaft's tail -- spins and stabilises an arrow in flight.",
+    "src": "https://en.wikipedia.org/wiki/Arrow",
+    "supported": true
+  },
+  {
+    "in": [
+      "copper",
+      "wood"
+    ],
+    "out": "arrow",
+    "why": "Copper was among the first metals shaped into arrowheads, before harder bronze and iron took over.",
+    "src": "https://en.wikipedia.org/wiki/Arrow",
+    "supported": true
+  },
+  {
+    "in": [
+      "soil",
+      "sun"
+    ],
+    "out": "cicada",
+    "why": "Nymphs live in the soil for years, feeding on root sap, before tunnelling up into the sun to moult into winged adults.",
+    "src": "https://en.wikipedia.org/wiki/Cicada",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "sun"
+    ],
+    "out": "cicada",
+    "why": "Males vibrate a pair of ribbed membranes called tymbals to produce one of the loudest sounds of any insect, usually in summer heat.",
+    "src": "https://en.wikipedia.org/wiki/Cicada",
+    "supported": true
+  },
+  {
+    "in": [
+      "dog",
+      "snake"
+    ],
+    "out": "cerberus",
+    "why": "Ancient writers gave him a mane of snakes and a serpent for a tail -- a monstrous dog Hesiod even made fifty-headed, though three heads became the standard image.",
+    "src": "https://en.wikipedia.org/wiki/Cerberus",
+    "supported": true
+  },
+  {
+    "in": [
+      "volcano",
+      "snake"
+    ],
+    "out": "cerberus",
+    "why": "Offspring of the serpent-woman Echidna and the monster Typhon, who ancient tradition says lies imprisoned beneath Mount Etna's fire.",
+    "src": "https://en.wikipedia.org/wiki/Typhon",
+    "supported": true
+  },
+  {
+    "in": [
+      "thunder",
+      "eagle"
+    ],
+    "out": "zeus",
+    "why": "The Cyclopes forged his thunderbolt for him out of gratitude at being freed, and it became his signature weapon; the eagle was his sacred bird and the shape he took to sweep up Ganymede.",
+    "src": "https://en.wikipedia.org/wiki/Zeus",
+    "supported": true
+  },
+  {
+    "in": [
+      "oak",
+      "sky"
+    ],
+    "out": "zeus",
+    "why": "At Dodona, an oracle second only to Delphi in prestige, his priests and priestesses read the future in the rustling of a sacred oak's leaves.",
+    "src": "https://en.wikipedia.org/wiki/Dodona",
+    "supported": true
+  },
+  {
+    "in": [
+      "cow",
+      "pomegranate"
+    ],
+    "out": "hera",
+    "why": "Her Homeric epithet Boopis, 'cow-eyed,' recalls her archaic cattle-cult roots; the pomegranate she carries is an emblem of the sacred marriage that bound her to Zeus.",
+    "src": "https://en.wikipedia.org/wiki/Hera",
+    "supported": true
+  },
+  {
+    "in": [
+      "peacock",
+      "apple"
+    ],
+    "out": "hera",
+    "why": "Her chariot, in later art, was drawn by peacocks; she was also one of three goddesses who contested Paris's golden apple inscribed 'to the fairest' -- the dispute that lit the Trojan War.",
+    "src": "https://en.wikipedia.org/wiki/Judgment_of_Paris",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea",
+      "horse"
+    ],
+    "out": "poseidon",
+    "why": "His epithet Hippios, 'of horses,' recalls the myth that he struck a rock with his trident to create the very first horse, Skyphios.",
+    "src": "https://en.wikipedia.org/wiki/Poseidon",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea",
+      "bull"
+    ],
+    "out": "poseidon",
+    "why": "He sent King Minos a pure white bull as a sign of favor; when Minos refused to sacrifice it, Poseidon's revenge -- cursing Pasiphae -- produced the Minotaur.",
+    "src": "https://en.wikipedia.org/wiki/Cretan_Bull",
+    "supported": true
+  },
+  {
+    "in": [
+      "cerberus",
+      "coin"
+    ],
+    "out": "hades",
+    "why": "Guarded by his three-headed dog Cerberus, and known by the euphemism Plouton, 'the rich one,' for the earth's buried wealth -- the dead paid a single coin, Charon's obol, to cross into his realm.",
+    "src": "https://en.wikipedia.org/wiki/Hades",
+    "supported": true
+  },
+  {
+    "in": [
+      "helmet",
+      "smoke"
+    ],
+    "out": "hades",
+    "why": "The Cyclopes forged him a helm that made its wearer invisible, which he wore to fight unseen alongside Zeus and Poseidon in the war against the Titans.",
+    "src": "https://en.wikipedia.org/wiki/Hades",
+    "supported": true
+  },
+  {
+    "in": [
+      "olive",
+      "owl"
+    ],
+    "out": "athena",
+    "why": "She won the patronage of Athens from Poseidon by gifting the city its first olive tree; the little owl, glaukopis, became her sacred bird and the city's own civic emblem.",
+    "src": "https://en.wikipedia.org/wiki/Athena",
+    "supported": true
+  },
+  {
+    "in": [
+      "helmet",
+      "snake"
+    ],
+    "out": "athena",
+    "why": "Shown in a crested helmet, she carried an aegis bearing the severed, snake-haired head of the Gorgon Medusa.",
+    "src": "https://en.wikipedia.org/wiki/Athena",
+    "supported": true
+  },
+  {
+    "in": [
+      "bay_leaf",
+      "snake"
+    ],
+    "out": "apollo",
+    "why": "The nymph Daphne became a laurel tree fleeing him, and his arrow killed the serpent Python at Delphi -- the laurel became his tree, and Delphi his most famous oracle.",
+    "src": "https://en.wikipedia.org/wiki/Apollo",
+    "supported": true
+  },
+  {
+    "in": [
+      "lyre",
+      "flute"
+    ],
+    "out": "apollo",
+    "why": "His lyre beat the satyr Marsyas's double-piped aulos in a contest judged by the Muses; for his hubris in challenging a god, Apollo had Marsyas flayed alive.",
+    "src": "https://en.wikipedia.org/wiki/Marsyas",
+    "supported": true
+  },
+  {
+    "in": [
+      "deer",
+      "water"
+    ],
+    "out": "artemis",
+    "why": "When the hunter Actaeon glimpsed her bathing, she turned him into a stag -- and his own hounds, not recognising their master, tore him apart.",
+    "src": "https://en.wikipedia.org/wiki/Artemis",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "bear"
+    ],
+    "out": "artemis",
+    "why": "Her name may derive from arktos, 'bear': at Brauron, girls performed the arkteia, 'acting the bear,' in her honor before marriage.",
+    "src": "https://en.wikipedia.org/wiki/Artemis",
+    "supported": true
+  },
+  {
+    "in": [
+      "rooster",
+      "ox"
+    ],
+    "out": "ares",
+    "why": "At Sparta he was offered an ox in thanks for a victory won by stratagem, or a rooster for a victory won by open onslaught.",
+    "src": "https://en.wikipedia.org/wiki/Ares",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "seed"
+    ],
+    "out": "ares",
+    "why": "His sacred dragon guarded a spring at Thebes; when Cadmus killed it and sowed its teeth like seed, armed warriors -- the Spartoi -- sprang from the ground, and Ares made Cadmus serve him eight years in penance.",
+    "src": "https://en.wikipedia.org/wiki/Cadmus",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea",
+      "uranus"
+    ],
+    "out": "aphrodite",
+    "why": "Cronus cast Uranus's severed flesh into the sea; where it fell, the foam bore her -- her very name means 'foam-arisen.'",
+    "src": "https://en.wikipedia.org/wiki/Aphrodite",
+    "supported": true
+  },
+  {
+    "in": [
+      "apple",
+      "gold"
+    ],
+    "out": "aphrodite",
+    "why": "Paris awarded her the golden apple inscribed 'to the fairest' over Hera and Athena -- the judgment that lit the Trojan War.",
+    "src": "https://en.wikipedia.org/wiki/Judgment_of_Paris",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "snake"
+    ],
+    "out": "hermes",
+    "why": "His winged sandals, the talaria, gave him speed; his caduceus, a herald's staff twined with two serpents, is his badge of office.",
+    "src": "https://en.wikipedia.org/wiki/Hermes",
+    "supported": true
+  },
+  {
+    "in": [
+      "turtle",
+      "cow"
+    ],
+    "out": "hermes",
+    "why": "As a newborn he stole Apollo's cattle, then made peace by inventing the lyre from a tortoise shell and cow-gut strings, trading it to Apollo for the herd.",
+    "src": "https://en.wikipedia.org/wiki/Hermes",
+    "supported": true
+  },
+  {
+    "in": [
+      "lightning",
+      "grape"
+    ],
+    "out": "dionysus",
+    "why": "His mortal mother Semele was incinerated by Zeus's lightning; Zeus sewed the unborn wine-god into his own thigh to finish his gestation, hence his epithet 'twice-born.'",
+    "src": "https://en.wikipedia.org/wiki/Dionysus",
+    "supported": true
+  },
+  {
+    "in": [
+      "leopard",
+      "ivy"
+    ],
+    "out": "dionysus",
+    "why": "His thyrsus staff was wound with ivy, and later art shows his chariot drawn by leopards or panthers amid the ecstatic revels of his followers, the Maenads.",
+    "src": "https://en.wikipedia.org/wiki/Dionysus",
+    "supported": true
+  },
+  {
+    "in": [
+      "wheat",
+      "poppy"
+    ],
+    "out": "demeter",
+    "why": "Her emblem, the scarlet poppy, grows wild among the barley she blesses as goddess of the grain harvest.",
+    "src": "https://en.wikipedia.org/wiki/Demeter",
+    "supported": true
+  },
+  {
+    "in": [
+      "grain",
+      "snake"
+    ],
+    "out": "demeter",
+    "why": "She taught the youth Triptolemus the art of agriculture and gave him a chariot drawn by serpents, in which he flew across the world sowing wheat.",
+    "src": "https://en.wikipedia.org/wiki/Triptolemus",
+    "supported": true
+  },
+  {
+    "in": [
+      "pomegranate",
+      "hades"
+    ],
+    "out": "persephone",
+    "why": "Hades tricked her into eating pomegranate seeds before releasing her, binding her to the underworld for part of every year after.",
+    "src": "https://en.wikipedia.org/wiki/Persephone",
+    "supported": true
+  },
+  {
+    "in": [
+      "flower",
+      "demeter"
+    ],
+    "out": "persephone",
+    "why": "Abducted while picking flowers in the fields of Nysa, she is daughter to Demeter, whose grief at the loss brings winter each year she is away.",
+    "src": "https://en.wikipedia.org/wiki/Persephone",
+    "supported": true
+  },
+  {
+    "in": [
+      "volcano",
+      "forge"
+    ],
+    "out": "hephaestus",
+    "why": "His workshop lay beneath Mount Etna -- his epithet Aitnaios means 'of Etna' -- where twenty bellows worked at his command.",
+    "src": "https://en.wikipedia.org/wiki/Hephaestus",
+    "supported": true
+  },
+  {
+    "in": [
+      "clay",
+      "fire"
+    ],
+    "out": "hephaestus",
+    "why": "At Zeus's order he molded Pandora, humanity's first woman, out of earth.",
+    "src": "https://en.wikipedia.org/wiki/Pandora",
+    "supported": true
+  },
+  {
+    "in": [
+      "sickle",
+      "sky"
+    ],
+    "out": "cronus",
+    "why": "Given a flint sickle by his mother Gaia, he castrated his own father Uranus, the sky, and seized the throne of the cosmos.",
+    "src": "https://en.wikipedia.org/wiki/Cronus",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "harvest"
+    ],
+    "out": "cronus",
+    "why": "He swallowed each of his children at birth, until Rhea tricked him with a stone wrapped in swaddling cloth in place of baby Zeus; an old harvest-god besides, he gave his name to the harvest month Kronion.",
+    "src": "https://en.wikipedia.org/wiki/Cronus",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "sky"
+    ],
+    "out": "gaia",
+    "why": "Mother Earth bore Uranus, the sky, unaided, to cover and encircle her on every side.",
+    "src": "https://en.wikipedia.org/wiki/Gaia",
+    "supported": true
+  },
+  {
+    "in": [
+      "sickle",
+      "mountain"
+    ],
+    "out": "gaia",
+    "why": "She fashioned the flint sickle her son Cronus used to castrate Uranus, and bore the Mountains, the Ourea, by herself.",
+    "src": "https://en.wikipedia.org/wiki/Gaia",
+    "supported": true
+  },
+  {
+    "in": [
+      "star",
+      "cloud"
+    ],
+    "out": "uranus",
+    "why": "Uranus personifies the starry heavens themselves, stretched over Gaia, the earth, as an everlasting seat for the gods, wrapped in cloud above her.",
+    "src": "https://en.wikipedia.org/wiki/Uranus_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "sickle",
+      "sea"
+    ],
+    "out": "uranus",
+    "why": "Cronus castrated him with Gaia's flint sickle and cast the severed flesh into the sea, ending his reign; from the foam where it fell, Aphrodite was born.",
+    "src": "https://en.wikipedia.org/wiki/Uranus_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "mountain"
+    ],
+    "out": "rhea",
+    "why": "To save infant Zeus from being swallowed, she tricked Cronus with a stone wrapped in swaddling cloth, and hid the true child in a cave on Crete's Mount Ida.",
+    "src": "https://en.wikipedia.org/wiki/Rhea_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "wheel"
+    ],
+    "out": "rhea",
+    "why": "Later identified with the Anatolian goddess Cybele, she is shown enthroned on a chariot drawn by a pair of lions.",
+    "src": "https://en.wikipedia.org/wiki/Rhea_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "arrow"
+    ],
+    "out": "eros",
+    "why": "His gold-tipped arrows kindled love on the spot; a second kind, tipped with lead, drove love away, according to Ovid.",
+    "src": "https://en.wikipedia.org/wiki/Eros",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "aphrodite"
+    ],
+    "out": "eros",
+    "why": "Later tradition makes him the winged son of Aphrodite, always shown at her side.",
+    "src": "https://en.wikipedia.org/wiki/Eros",
+    "supported": true
+  },
+  {
+    "in": [
+      "bay_leaf",
+      "wing"
+    ],
+    "out": "nike",
+    "why": "The winged goddess of victory crowned champions with a laurel wreath.",
+    "src": "https://en.wikipedia.org/wiki/Nike_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "river",
+      "thunder"
+    ],
+    "out": "nike",
+    "why": "Daughter of the river Styx, she was among the first to side with Zeus in the war against the Titans, and he kept her by his side ever after.",
+    "src": "https://en.wikipedia.org/wiki/Nike_(mythology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "fire",
+      "horse"
+    ],
+    "out": "helios",
+    "why": "He drives a golden chariot pulled by four fire-named horses -- Pyrois, Aeos, Aethon and Phlegon -- across the sky each day.",
+    "src": "https://en.wikipedia.org/wiki/Helios",
+    "supported": true
+  },
+  {
+    "in": [
+      "sun",
+      "cow"
+    ],
+    "out": "helios",
+    "why": "When Odysseus's starving crew ate his sacred cattle on Thrinacia against every warning, Zeus destroyed their ship with lightning in punishment.",
+    "src": "https://en.wikipedia.org/wiki/Helios",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "ox"
+    ],
+    "out": "selene",
+    "why": "In some accounts her chariot is drawn not by horses but by a pair of oxen, crossing the night sky.",
+    "src": "https://en.wikipedia.org/wiki/Selene",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "mountain"
+    ],
+    "out": "selene",
+    "why": "She fell in love with the mortal Endymion, asleep forever in a cave on Mount Latmus, and asked Zeus to let him stay ageless so she could visit him nightly.",
+    "src": "https://en.wikipedia.org/wiki/Selene",
+    "supported": true
+  },
+  {
+    "in": [
+      "star",
+      "horse"
+    ],
+    "out": "eos",
+    "why": "Her chariot team, named Firebright and Daybright in the Odyssey, carried her across the sky ahead of the sun each dawn.",
+    "src": "https://en.wikipedia.org/wiki/Eos",
+    "supported": true
+  },
+  {
+    "in": [
+      "human",
+      "cicada"
+    ],
+    "out": "eos",
+    "why": "She won immortality for her mortal lover, the Trojan prince Tithonus, but forgot to ask for eternal youth -- he withered with endless age until she turned him into a cicada.",
+    "src": "https://en.wikipedia.org/wiki/Eos",
+    "supported": true
+  },
+  {
+    "in": [
+      "goat",
+      "pan_flute"
+    ],
+    "out": "pan",
+    "why": "His own legs and horns are a goat's; his signature pipes were cut from reeds that were once the nymph Syrinx, transformed while fleeing his advances.",
+    "src": "https://en.wikipedia.org/wiki/Pan_(god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "sheep",
+      "mountain"
+    ],
+    "out": "pan",
+    "why": "Patron of shepherds and flocks across the wild highlands of Arcadia, his sudden shout in lonely places is said to be the origin of the word 'panic.'",
+    "src": "https://en.wikipedia.org/wiki/Pan_(god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "poppy",
+      "mountain"
+    ],
+    "out": "hypnos",
+    "why": "His lightless cave, deep in a silent mountain, is ringed with poppies and other soporific plants.",
+    "src": "https://en.wikipedia.org/wiki/Hypnos",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "zeus"
+    ],
+    "out": "hypnos",
+    "why": "The winged god of sleep once lulled Zeus himself at Hera's request, so she could raise a storm against Heracles -- and woke to an enraged Zeus hunting for him.",
+    "src": "https://en.wikipedia.org/wiki/Hypnos",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "snake"
+    ],
+    "out": "heracles",
+    "why": "He wore the pelt of the invincible Nemean Lion he had strangled, and later cut down the many-headed Hydra, which grew two heads for every one severed.",
+    "src": "https://en.wikipedia.org/wiki/Heracles",
+    "supported": true
+  },
+  {
+    "in": [
+      "river",
+      "manure"
+    ],
+    "out": "heracles",
+    "why": "For his sixth labor he diverted the rivers Alpheius and Peneus through the Augean stables, washing out decades of filth in a single day.",
+    "src": "https://en.wikipedia.org/wiki/Heracles",
+    "supported": true
+  },
+  {
+    "in": [
+      "athena",
+      "horse"
+    ],
+    "out": "odysseus",
+    "why": "Odysseus devised the hollow wooden horse -- built by Epeius 'through Pallas's [Athena's] divine art' -- that let Greek soldiers slip into Troy hidden inside it.",
+    "src": "https://en.wikipedia.org/wiki/Trojan_Horse",
+    "supported": true
+  },
+  {
+    "in": [
+      "olive",
+      "fire"
+    ],
+    "out": "odysseus",
+    "why": "He sharpened an olive-wood stake and hardened it in the fire to blind the drunken Cyclops Polyphemus, then escaped by calling himself 'Nobody.'",
+    "src": "https://en.wikipedia.org/wiki/Odysseus",
+    "supported": true
   }
 ]
