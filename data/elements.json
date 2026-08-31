@@ -5618,7 +5618,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "Gravity so strong that nothing, light included, can cross back out of the event horizon."
   },
   {
@@ -13734,7 +13733,6 @@
       "water"
     ],
     "fact": "The largest dolphin alive, and an apex predator that even hunts other whales.",
-    "terminal": true,
     "taxon": "tx_cetacea"
   },
   {
@@ -16818,7 +16816,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "A continent stretched thin enough to crack: the block between two faults drops as the land splits."
   },
   {
@@ -23187,7 +23184,6 @@
       "water"
     ],
     "soleRoute": true,
-    "terminal": true,
     "fact": "A continuous seam of brand-new seafloor, welling up along a divergent boundary for about 65,000 km."
   },
   {
@@ -23606,8 +23602,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Goddess of the hunt, wilderness and the moon. Roman Diana. Twin sister of Apollo.",
-    "terminal": true
+    "fact": "Goddess of the hunt, wilderness and the moon. Roman Diana. Twin sister of Apollo."
   },
   {
     "id": "ares",
@@ -23746,8 +23741,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Winged personification of victory. Roman Victoria. Daughter of the Titan Pallas and the river Styx.",
-    "terminal": true
+    "fact": "Winged personification of victory. Roman Victoria. Daughter of the Titan Pallas and the river Styx."
   },
   {
     "id": "helios",
@@ -23757,8 +23751,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "God who personifies the sun. Roman Sol. Drives a four-horse chariot across the sky each day.",
-    "terminal": true
+    "fact": "God who personifies the sun. Roman Sol. Drives a four-horse chariot across the sky each day."
   },
   {
     "id": "selene",
@@ -24999,8 +24992,7 @@
       "gas"
     ],
     "fact": "Boils at -196°C. Splashed on something warm it floats on its own vapour — the Leidenfrost effect.",
-    "soleRoute": true,
-    "terminal": true
+    "soleRoute": true
   },
   {
     "id": "antiproton",
@@ -27340,6 +27332,723 @@
     ],
     "fact": "Requires professional qualification, typically including pedagogy -- the science of teaching.",
     "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "khufu",
+    "name": "Khufu",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Commissioned the Great Pyramid; his only surviving portrait is a 3-inch ivory statuette found in 1903.",
+    "soleRoute": true
+  },
+  {
+    "id": "great_pyramid",
+    "name": "Great Pyramid of Giza",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Khufu's tomb at Giza, roughly 2.3 million limestone and granite blocks. The only Wonder still standing.",
+    "terminal": true
+  },
+  {
+    "id": "pheidias",
+    "name": "Pheidias",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Athenian sculptor (c. 480-430 BC) whose chryselephantine cult statues defined Greek monumental art."
+  },
+  {
+    "id": "chryselephantine",
+    "name": "Chryselephantine",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Greek for 'gold and ivory' -- ivory flesh and gold-leaf robes built over a hidden wooden statue core.",
+    "soleRoute": true
+  },
+  {
+    "id": "statue_of_zeus",
+    "name": "Statue of Zeus at Olympia",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Pheidias's roughly 12-meter seated, chryselephantine Zeus at Olympia -- lost by the 5th century AD.",
+    "terminal": true
+  },
+  {
+    "id": "nebuchadnezzar",
+    "name": "Nebuchadnezzar II",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Neo-Babylonian king (605-562 BC) who rebuilt Babylon's walls, palaces, and temples almost entirely in brick.",
+    "soleRoute": true
+  },
+  {
+    "id": "ziggurat",
+    "name": "Ziggurat",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Stepped Mesopotamian temple tower; Babylon's own, Etemenanki, may underlie the Tower of Babel story.",
+    "soleRoute": true
+  },
+  {
+    "id": "ishtar_gate",
+    "name": "Ishtar Gate",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Babylon's processional gate to Marduk's temple, its mudbrick fired under a lapis-blue glaze.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "hanging_gardens",
+    "name": "Hanging Gardens of Babylon",
+    "emoji": "🌿",
+    "shelf": "folklore",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Legendary terraced gardens; no Babylonian text or excavation confirms they ever stood at Babylon at all.",
+    "terminal": true
+  },
+  {
+    "id": "croesus",
+    "name": "Croesus",
+    "emoji": "🪙",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Lydian king whose vast wealth gave English the phrase 'rich as Croesus.'",
+    "soleRoute": true
+  },
+  {
+    "id": "temple_of_artemis",
+    "name": "Temple of Artemis",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Ephesus's great sanctuary to Artemis; its final, marble version had over 127 columns."
+  },
+  {
+    "id": "herostratus",
+    "name": "Herostratus",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Burned the Temple of Artemis in 356 BC purely to be remembered -- and still is.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "sostratus",
+    "name": "Sostratus of Cnidus",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Architect credited, though disputedly, with the Lighthouse of Alexandria; Ptolemy let him sign it.",
+    "soleRoute": true
+  },
+  {
+    "id": "lighthouse_of_alexandria",
+    "name": "Lighthouse of Alexandria",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "The Pharos, over 100 meters tall on Alexandria's harbor island; stood for more than a thousand years.",
+    "terminal": true
+  },
+  {
+    "id": "mausolus",
+    "name": "Mausolus",
+    "emoji": "🦁",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Carian ruler (377-353 BC) who began his own vast marble tomb while still alive.",
+    "soleRoute": true
+  },
+  {
+    "id": "artemisia_ii",
+    "name": "Artemisia II",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Mausolus's sister-wife; ruled Caria alone for two years after his death in 353 BC.",
+    "soleRoute": true
+  },
+  {
+    "id": "mausoleum_halicarnassus",
+    "name": "Mausoleum at Halicarnassus",
+    "emoji": "⚱️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Mausolus's tomb at Halicarnassus -- so famous its name now means any grand tomb.",
+    "terminal": true
+  },
+  {
+    "id": "chares",
+    "name": "Chares of Lindos",
+    "emoji": "🛠️",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Sculptor of Lindos, on Rhodes, who cast the Colossus of Rhodes over twelve years."
+  },
+  {
+    "id": "colossus_of_rhodes",
+    "name": "Colossus of Rhodes",
+    "emoji": "🗽",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "108-foot bronze Helios at Rhodes's harbor; stood 56 years before an earthquake felled it.",
+    "terminal": true
+  },
+  {
+    "id": "protostar",
+    "name": "Protostar",
+    "emoji": "🌟",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "A collapsing cloud fragment gathering mass, glowing from infall — no core fusion yet.",
+    "soleRoute": true
+  },
+  {
+    "id": "brown_dwarf",
+    "name": "Brown Dwarf",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "13 to 80 Jupiter masses — too little to fuse hydrogen, so it just cools for the rest of time.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "supergiant",
+    "name": "Supergiant",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "8+ solar masses and up to a million times as luminous. Almost every one ends in a supernova.",
+    "soleRoute": true
+  },
+  {
+    "id": "pulsar",
+    "name": "Pulsar",
+    "emoji": "💫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A spinning neutron star sweeping a radio beam past Earth — found by Jocelyn Bell in 1967.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "crab_nebula",
+    "name": "Crab Nebula",
+    "emoji": "🦀",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Wreckage of the supernova Chinese astronomers logged in 1054 CE, still expanding, pulsar at its core."
+  },
+  {
+    "id": "spectroscope",
+    "name": "Spectroscope",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Splits starlight into a rainbow crossed by dark lines — each line naming an element."
+  },
+  {
+    "id": "radio_telescope",
+    "name": "Radio Telescope",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "soleRoute": true,
+    "fact": "Karl Jansky's antenna caught radio hiss from the galactic center in 1932, founding the field."
+  },
+  {
+    "id": "galaxy",
+    "name": "Galaxy",
+    "emoji": "🪩",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Stars, gas, dust and dark matter bound by gravity. Up to 2 trillion of them, by one estimate.",
+    "soleRoute": true
+  },
+  {
+    "id": "milky_way",
+    "name": "Milky Way",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Our barred spiral, 100-400 billion stars. The Sun orbits its center once every 240 million years."
+  },
+  {
+    "id": "andromeda_galaxy",
+    "name": "Andromeda Galaxy",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Proved a separate galaxy by Hubble in 1925, using Cepheids. 2.5 million light-years off, and closing."
+  },
+  {
+    "id": "spiral_galaxy",
+    "name": "Spiral Galaxy",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A rotating disc of stars, gas and dust with arms of active star birth. About 60% of galaxies today."
+  },
+  {
+    "id": "elliptical_galaxy",
+    "name": "Elliptical Galaxy",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Smooth and featureless, red with old stars. The giants of this shape sit at the hearts of clusters."
+  },
+  {
+    "id": "barred_spiral_galaxy",
+    "name": "Barred Spiral Galaxy",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A spiral with a straight stellar bar through its core. About two-thirds of spirals have one — ours does.",
+    "terminal": true
+  },
+  {
+    "id": "lenticular_galaxy",
+    "name": "Lenticular Galaxy",
+    "emoji": "🫓",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A lens-shaped hybrid: a disc like a spiral's, but no arms, and gas long used up like an elliptical's.",
+    "terminal": true
+  },
+  {
+    "id": "local_group",
+    "name": "Local Group",
+    "emoji": "👥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Our galaxy group: 100+ members, dominated by two spirals — the Milky Way and Andromeda."
+  },
+  {
+    "id": "galaxy_cluster",
+    "name": "Galaxy Cluster",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Hundreds to thousands of galaxies bound by gravity — the biggest bound structures in the universe."
+  },
+  {
+    "id": "supercluster",
+    "name": "Supercluster",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A group of galaxy clusters and groups. The Local Group sits inside the Laniakea Supercluster.",
+    "terminal": true
+  },
+  {
+    "id": "supermassive_black_hole",
+    "name": "Supermassive Black Hole",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Millions to billions of solar masses. Almost every large galaxy has one anchoring its center."
+  },
+  {
+    "id": "accretion_disc",
+    "name": "Accretion Disc",
+    "emoji": "💿",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "soleRoute": true,
+    "fact": "Gas pulled from a companion star spirals in and heats enough to blaze in X-rays before it falls in."
+  },
+  {
+    "id": "active_galaxy",
+    "name": "Active Galaxy",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A galaxy outshone by its own nucleus — matter falling onto a central supermassive black hole."
+  },
+  {
+    "id": "quasar",
+    "name": "Quasar",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The most luminous class of active galaxy — 3C 273 alone outshines the Milky Way by 100 times.",
+    "terminal": true
+  },
+  {
+    "id": "seyfert_galaxy",
+    "name": "Seyfert Galaxy",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "An ordinary-looking spiral with an extraordinarily bright core — Carl Seyfert named the class in 1943.",
+    "terminal": true
+  },
+  {
+    "id": "radio_galaxy",
+    "name": "Radio Galaxy",
+    "emoji": "📶",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A giant elliptical blasting jets of radio-emitting particles for millions of light-years past its disc.",
+    "terminal": true
+  },
+  {
+    "id": "exoplanet",
+    "name": "Exoplanet",
+    "emoji": "🪐",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A planet around another star. Mayor and Queloz confirmed the first one, 51 Pegasi b, in 1995.",
+    "terminal": true
+  },
+  {
+    "id": "cepheid_variable",
+    "name": "Cepheid Variable",
+    "emoji": "💓",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "soleRoute": true,
+    "fact": "A star that swells and shrinks on a clock — its period reveals its true brightness. Leavitt, 1908-12.",
+    "terminal": true
+  },
+  {
+    "id": "spectrum",
+    "name": "Spectrum",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "soleRoute": true,
+    "fact": "Starlight fanned out by wavelength — its dark lines give away a star's elements, heat, and motion."
+  },
+  {
+    "id": "redshift",
+    "name": "Redshift",
+    "emoji": "🟥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Light stretched to longer wavelengths by recession or expansion. Hubble read it as the universe's growth."
+  },
+  {
+    "id": "dark_energy",
+    "name": "Dark Energy",
+    "emoji": "🌑",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "About 68% of the universe, and it's speeding up the expansion. Found in 1998 supernova redshifts.",
+    "terminal": true
+  },
+  {
+    "id": "dark_matter",
+    "name": "Dark Matter",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Unseen mass, about 27% of the universe — Vera Rubin found galaxies spinning too fast without it.",
+    "terminal": true
+  },
+  {
+    "id": "cosmic_microwave_background",
+    "name": "Cosmic Microwave Background",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "The universe's first light, redshifted down to 2.7 kelvin. Penzias and Wilson found it by accident in 1965.",
+    "terminal": true
+  },
+  {
+    "id": "globular_cluster",
+    "name": "Globular Cluster",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Hundreds of thousands of ancient stars packed in a sphere, up to 12.7 billion years old.",
+    "terminal": true
+  },
+  {
+    "id": "orion_nebula",
+    "name": "Orion Nebula",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "The nearest big stellar nursery, 1,300 light-years off — naked-eye visible in Orion's sword."
+  },
+  {
+    "id": "pleiades",
+    "name": "Pleiades",
+    "emoji": "7️⃣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "The Seven Sisters: an open cluster of 1,000+ young stars, 444 light-years away, naked-eye visible."
+  },
+  {
+    "id": "als",
+    "name": "ALS",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "fact": "Also called Lou Gehrig's disease: a person's motor neurons die while their mind stays intact.",
+    "soleRoute": true
+  },
+  {
+    "id": "echolocation",
+    "name": "Echolocation",
+    "emoji": "🔊",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "Bouncing sound off the world to see it: orcas and other toothed whales click and read back the echoes.",
+    "soleRoute": true
+  },
+  {
+    "id": "biomimicry",
+    "name": "Biomimicry",
+    "emoji": "🛠️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Engineering copies nature's homework: a humpback's bumpy flipper now shapes wind-turbine blades.",
+    "soleRoute": true
+  },
+  {
+    "id": "frozen_zoo",
+    "name": "Frozen Zoo",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "A bank of frozen sperm, eggs, and cells from over 1,300 endangered species, ready to thaw.",
+    "soleRoute": true
+  },
+  {
+    "id": "ultraviolet",
+    "name": "Ultraviolet",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Light one octave bluer than violet, invisible to us -- it's what sunburns skin and makes minerals glow.",
+    "soleRoute": true
+  },
+  {
+    "id": "fluorescent_mineral",
+    "name": "Fluorescent Mineral",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "Drinks invisible UV light and throws visible color back -- fluorite even gave 'fluorescence' its name.",
+    "soleRoute": true
+  },
+  {
+    "id": "aerogel",
+    "name": "Aerogel",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Nicknamed 'frozen smoke': a solid that's up to 99.8% air, one of the lightest solids ever made.",
+    "soleRoute": true
+  },
+  {
+    "id": "lichtenberg_figure",
+    "name": "Lichtenberg Figure",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "The branching, fractal scar a strong charge burns through an insulator as it discharges -- lightning is one.",
+    "soleRoute": true
+  },
+  {
+    "id": "fuel_cell",
+    "name": "Fuel Cell",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Combines hydrogen and oxygen without burning them, making electricity, heat, and water -- no soot.",
+    "soleRoute": true
+  },
+  {
+    "id": "afar_triangle",
+    "name": "Afar Triangle",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "fact": "The one place on Earth where seafloor-spreading-style rifting is happening on dry land, not underwater.",
     "soleRoute": true
   }
 ]

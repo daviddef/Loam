@@ -237,8 +237,14 @@ const SCALE = {
           // early-people batch 1 — hand-worked stone and wooden tools, the same rack as knife/rope/horn/antler
           'oldowan_tool', 'acheulean_handaxe', 'fire_drill', 'bow_drill', 'venus_figurine', 'atlatl',
           'current', 'magnetic_field', 'barometer', 'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
+          // big idea science batch 1 — a light form and a branching burn scar, same rack as x_ray/fulgurite
+          'ultraviolet', 'lichtenberg_figure',
           // careers batch 1 — real hand tools, the same rack as knife/rope
           'chisel', 'stethoscope', 'dental_drill', 'compass', 'fire_hose', 'chalk',
+          // big idea science batch 1 — hand-sample-scale mineral/material specimens
+          'fluorescent_mineral', 'aerogel',
+          // seven wonders batch 1 — gold-and-ivory sculpting technique, a material not a structure
+          'chryselephantine',
           // textiles batch 1 — hand tools, prepared crops and finished fabric, the same rack as knife/cloth/silk
           'wool_card', 'felt', 'spindle', 'flying_shuttle', 'knitting_needles', 'knitted_fabric', 'indigo', 'madder', 'dyed_cloth', 'coal_tar', 'wood_tar', 'ethanol', 'bakelite', 'polyethylene', 'snow', 'smoke', 'ozone', 'air', 'loess', 'fulgurite', 'bone_char', 'bottle', 'blackware', 'stockfish', 'chlorine', 'fluorine', 'bromine', 'argon', 'krypton', 'xenon', 'noble_mix', 'kelp', 'book', 'fetus', 'maize', 'barley', 'oat', 'carrot', 'lettuce', 'pumpkin', 'beet', 'banana', 'brewed_coffee', 'cocoa', 'duck', 'turkey', 'koala', 'platypus', 'lizard', 'turtle', 'cloth', 'clothing', 'paper', 'pulp', 'flax', 'water', 'mud', 'soil', 'tempered_clay', 'concrete', 'fire', 'steam',
           // mining value chains batch 2 — belt material and waste slurry, same item scale as rope/mud
@@ -366,6 +372,12 @@ const SCALE = {
           'pan', 'hypnos', 'heracles', 'odysseus', 'cerberus',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
+          // eyewitness universe batch 1 — observing instruments, same appliance scale as telescope
+          'spectroscope', 'radio_telescope',
+          // big idea science batch 1 — an appliance-scale device, and abstract medical/
+          // conceptual/institutional entries with no literal size, same convention
+          // natural_selection already uses at this same human/appliance scale
+          'fuel_cell', 'als', 'echolocation', 'biomimicry', 'frozen_zoo',
           // poisonous plants batch 1 — herb/shrub/vine-scale toxic and psychoactive
           // plants, the same rack as foxglove/cactus/willow above
           'deadly_nightshade', 'poison_hemlock', 'water_hemlock', 'castor_bean', 'oleander',
@@ -381,6 +393,9 @@ const SCALE = {
           'veterinarian', 'farm_manager', 'medical_doctor', 'dentist', 'railroad_engineer',
           'ships_captain', 'airline_pilot', 'firefighter', 'paramedic', 'chef', 'photographer',
           'jewelry_designer', 'textile_designer', 'teacher',
+          // seven wonders batch 1 — the named historical people behind each wonder, human scale
+          'khufu', 'pheidias', 'nebuchadnezzar', 'croesus', 'herostratus', 'sostratus',
+          'mausolus', 'artemisia_ii', 'chares',
           'natural_selection', 'cystic_fibrosis', 'sickle_cell_anemia', 'cancer', 'gene_therapy', 'dna_profile', 'cloning', 'snake', 'rattlesnake',
           // animal physiology batch 1 (How Animals Work) -- large mammals, same rack as lion/camel/dingo
           'rhinoceros', 'hyena',
@@ -434,6 +449,8 @@ const SCALE = {
           // poisonous plants batch 1 — full-sized trees and a tall columnar cactus,
           // the same rack as oak/pine/saguaro above
           'yew', 'strychnine_tree', 'horse_chestnut', 'betel_nut', 'san_pedro_cactus',
+          // seven wonders batch 1 — statue/gate-scale monuments, tens of metres
+          'statue_of_zeus', 'colossus_of_rhodes', 'ishtar_gate',
           'climax_community', 'food_chain',
           'basking_shark', 'megamouth_shark', 'great_white_shark', 'thresher_shark', 'goblin_shark',
           'manta_ray', 'tiger_shark', 'orca', 'great_hammerhead', 'giant_squid', 'lions_mane_jellyfish', 'whale_shark',
@@ -463,6 +480,9 @@ const SCALE = {
   '2':   [// mining comprehensive batch — hundred-plus-metre engineered structures and yards,
           // the same bucket as stockpile/bulk_carrier/hangar above
           'haul_road', 'mine_infrastructure', 'waste_dump', 'heap_leach', 'tailings_dam',
+          // seven wonders batch 1 — hundred-metre-plus ancient monuments
+          'great_pyramid', 'lighthouse_of_alexandria', 'mausoleum_halicarnassus',
+          'temple_of_artemis', 'ziggurat', 'hanging_gardens',
           'port_stockpile', 'stacker_reclaimer', 'ship_loader',
           'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
@@ -506,6 +526,8 @@ const SCALE = {
           'ore_railway', 'port',
           // railways batch 1 — a classification yard's full ladder of tracks, km scale
           'rail_yard',
+          // big idea science batch 1 — a real triple-junction rift region, same km scale as rift_valley
+          'afar_triangle',
           // aviation batch 1 — a major runway can run 3-4 km, km scale like the yard above it
           'runway',
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
@@ -525,7 +547,18 @@ const SCALE = {
           // storm/hurricane-scale phenomenon bucket as earthquake; wind shear is the atmosphere-deep
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
-  '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],
+  '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun',
+          // eyewitness universe batch 1 — everything astronomical/cosmological this
+          // scale system has no bucket bigger than: stars, nebulae, galaxies, and
+          // the universe's own large-scale abstractions all share this ceiling,
+          // same as star/nebula/black_hole/planet above
+          'protostar', 'brown_dwarf', 'supergiant', 'pulsar', 'crab_nebula',
+          'galaxy', 'milky_way', 'andromeda_galaxy', 'spiral_galaxy', 'elliptical_galaxy',
+          'barred_spiral_galaxy', 'lenticular_galaxy', 'local_group', 'galaxy_cluster',
+          'supercluster', 'supermassive_black_hole', 'accretion_disc', 'active_galaxy',
+          'quasar', 'seyfert_galaxy', 'radio_galaxy', 'exoplanet', 'cepheid_variable',
+          'spectrum', 'redshift', 'dark_energy', 'dark_matter', 'cosmic_microwave_background',
+          'globular_cluster', 'orion_nebula', 'pleiades'],
 };
 
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
