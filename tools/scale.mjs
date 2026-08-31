@@ -73,6 +73,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  ['s_thermophilus', 'l_bulgaricus', 'l_acidophilus', 'bifidobacterium', 'l_paracasei', 'l_plantarum', 'leuconostoc', 'lactococcus', 'acetobacter', 'penicillium', 'stoma', 'virus', 'vesicle', 'protocell', 'binary_fission', 'budding', 'bacteria', 'archaea', 'cyanobacteria', 'rhizobium', 'zooxanthellae', 'mitochondrion', 'chloroplast', 'spore', 'pollen', 'action_potential', 'yeast', 'mould', 'resistance', 'chromosome', 'nucleus', 'mitochondrial_dna',
+          // natural history book batch 1 — single-celled protists, same microscopic scale
+          'foraminifera', 'radiolarian', 'dinoflagellate', 'diatom_organism', 'euglena', 'paramecium',
           'bacteriophage', 'prophage', 'lysis', 'salmonella', 'streptomyces',
           'avibirnavirus', 'gammacoronavirus', 'e_coli',
           'cowpox', 'vaccine', 'immunity',
@@ -105,9 +107,13 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  ['cumin', 'black_pepper', 'lentil', 'split_pea', 'farro', 'raisin', 'sesame', 'peanut', 'almond', 'lac_insect', 'cochineal', 'pearl', 'kefir_grains', 'koji', 'dew', 'frost', 'hail', 'seed', 'grain', 'rice', 'cooked_rice', 'sushi_rice', 'pilaf', 'legume',
+          // super-nature batch 1 — a ~0.5mm tardigrade, same grain scale as seed/tick
+          'tardigrade',
           'rye', 'quinoa', 'buckwheat', 'millet', 'sorghum', 'semolina', 'couscous',
           'nutmeg', 'clove', 'cardamom', 'saffron', 'mustard_seed', 'allspice', 'star_anise',
           'nectar', 'spark', 'beeswax', 'straw', 'bee', 'olive', 'grape', 'honey',
+          // verb audit fixes batch 1 — dried grass, same bulk scale as straw
+          'hay',
           'cane_juice', 'manna', 'granary', 'rutile',
           'ant', 'ladybird', 'termite', 'flea', 'tick',
           'duckweed', 'birds_nest_fungus', 'zombie_ant_fungus',
@@ -117,6 +123,8 @@ const SCALE = {
   '-2':  [// mining comprehensive batch — broken/loose rock and small cast metal, hand-sample scale
           // alongside ore/stone/ballast/diamond/coin
           'run_of_mine', 'waste_rock', 'assay', 'dore',
+          // verb audit fixes batch 1 — crushed glass aggregate, same hand-sample scale
+          'cullet',
           // meteorite-impact batch 1 — hand-sample-scale fallen rock and impact
           // glass, same rack as stone/quartz/kunzite
           'meteorite', 'tektite', 'moldavite', 'australite',
@@ -214,6 +222,8 @@ const SCALE = {
           'nitric_acid', 'cyanide', 'matte', 'blister_copper', 'copper_cathode',
           'venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
           'eagle', 'fifth_sun', 'popol_vuh',
+          // egyptian gods batch 2 — a large raptor, same wingspan scale as eagle
+          'griffon_vulture',
           // egyptian gods batch 1 — a wading marsh bird alongside duck/goose, and a hand-held organ alongside knife/rope
           'ibis', 'heart',
           // Greek/Roman mythology batch 1 — bird, hand-tool, instrument and small-plant scale
@@ -289,6 +299,10 @@ const SCALE = {
           'djembe', 'tabla', 'timpani', 'daf',
           'guitar', 'violin', 'morin_khuur', 'sitar', 'kora',
           'flute', 'pan_flute', 'trumpet', 'didgeridoo', 'bagpipes', 'shofar',
+          // musical instruments batch 2 — reed/free-reed instruments and their own
+          // reed blades, same hand-scale rack as flute/trumpet
+          'cane', 'bellows', 'clarinet', 'saxophone', 'oboe', 'bassoon', 'harmonica',
+          'reed', 'double_reed', 'free_reed',
           // japanese gods batch 1 — a hand-held bow and a portable drum, the same rack as knife/gong
           'bow', 'taiko',
           'theremin', 'electric_guitar', 'synthesizer',
@@ -310,6 +324,18 @@ const SCALE = {
           // sandboxels gapfill batch 1 — a small commensal mammal and bird, and a walking toad,
           // the same rack as mouse/swan/cane_toad
           'rat', 'feral_pigeon', 'common_toad',
+          // natural history book batch 1 — small invertebrates, small plants, small
+          // mammals, birds, and reptiles, same small-animal scale as rat above
+          'sponge', 'comb_jelly', 'hydra', 'planarian', 'leech', 'ribbon_worm',
+          'bryozoan', 'lampshell', 'velvet_worm', 'horseshoe_crab', 'sea_spider',
+          'tusk_shell', 'sea_cucumber', 'feather_star', 'slug', 'cuttlefish',
+          'stonewort', 'hornwort', 'clubmoss',
+          'hyrax', 'sengi', 'tenrec', 'golden_mole', 'colugo', 'echidna', 'opossum',
+          'mesite', 'kagu', 'sunbittern', 'turaco', 'hoatzin', 'seriema', 'cuckoo_roller',
+          'tuatara', 'amphisbaenian',
+          // super-nature batch 1 — small-animal scale, same rack as rat
+          'naked_mole_rat', 'fennec_fox', 'vampire_bat', 'aye_aye', 'star_nosed_mole',
+          'barn_owl', 'archerfish', 'mantis_shrimp', 'pistol_shrimp', 'bombardier_beetle',
           // railways batch 1 — small machine parts, hand-tool scale
           'roller_bearing', 'plain_bearing', 'air_brake',
           'transducer', 'sound_wave', 'echo', 'ultrasound_scan', 'myoelectric_signal', 'bionic_arm',
@@ -354,6 +380,9 @@ const SCALE = {
           // egyptian gods batch 1 — deities and idols at human scale, and their new base ingredients:
           // a boat as drawn (a small hull), and animals in the ox/lion/wolf size class
           'ra', 'osiris', 'isis', 'horus', 'set', 'anubis', 'thoth', 'bastet', 'sobek', 'hathor',
+          // egyptian gods batch 2 — same human/idol scale as the pantheon above
+          'neith', 'seshat', 'nefertem', 'nekhbet', 'min', 'renenutet',
+          'bes', 'mut', 'tefnut', 'sokar', 'wepwawet',
           'sekhmet', 'nephthys', 'nut', 'geb', 'shu', 'khnum', 'ptah', 'amun', 'maat', 'khonsu',
           'taweret', 'serket', 'wadjet', 'apep',
           'boat', 'hippopotamus', 'jackal', 'egyptian_cobra',
@@ -364,6 +393,11 @@ const SCALE = {
           'izanagi', 'izanami', 'amaterasu', 'susanoo', 'tsukuyomi', 'kagutsuchi', 'inari',
           'ryujin', 'fujin', 'raijin', 'hachiman', 'tenjin', 'uke_mochi', 'mikaboshi',
           'ame_no_uzume', 'sarutahiko', 'fox',
+          // super-nature batch 1 — medium-animal scale, same rack as fox
+          'aardvark', 'beaver', 'pronghorn', 'satin_bowerbird', 'leatherback_turtle',
+          'electric_eel', 'coconut_crab',
+          // natural history book batch 1 — medium-large mammals, same rack as fox
+          'manatee', 'dugong', 'pangolin', 'tapir', 'giant_anteater', 'wombat',
           // Greek/Roman mythology batch 1 — human- or large-animal-scale figures, the
           // same rack as the Aztec/Maya gods and jaguar above
           'zeus', 'hera', 'poseidon', 'hades', 'athena', 'apollo', 'artemis', 'ares',
@@ -403,6 +437,8 @@ const SCALE = {
           'eucyon', 'canis_lepophagus', 'canis_etruscus', 'canis_mosbachensis',
           'dog', 'german_shepherd', 'border_collie', 'rottweiler', 'saint_bernard', 'siberian_husky', 'greyhound', 'afghan_hound', 'bloodhound', 'labrador_retriever', 'golden_retriever', 'bull_terrier',
           'piano',
+          // musical instruments batch 2 — furniture-scale free-reed keyboard instruments
+          'accordion', 'reed_organ',
           'cat', 'taenia_solium', 'taenia_saginata',
           // domestic-cat batch 1 — cat-scale reflex/behaviour and breeds, same rack as cat/dog
           'righting_reflex', 'purr', 'manx', 'siamese', 'sphynx', 'devon_rex', 'scottish_fold',
@@ -446,6 +482,8 @@ const SCALE = {
           'magnetic_separation', 'gravity_separation', 'road_freight', 'car_dumper',
           'saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'de_extinction', 'giraffe', 'nile_crocodile', 'american_alligator',
+          // natural history book batch 1 — tree-scale seed plants
+          'cycad', 'ginkgo',
           // poisonous plants batch 1 — full-sized trees and a tall columnar cactus,
           // the same rack as oak/pine/saguaro above
           'yew', 'strychnine_tree', 'horse_chestnut', 'betel_nut', 'san_pedro_cactus',

@@ -3174,10 +3174,20 @@
       "glass"
     ],
     "verb": "crush",
-    "out": "sand",
-    "why": "Crushed glass — cullet — melts at a lower temperature than raw sand, so every glassworks recycles its own.",
+    "out": "cullet",
+    "why": "Crushed glass is called cullet — a sand substitute for aggregate, not chemically or mineralogically the same material as quartz sand.",
     "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Sand"
+    "src": "https://en.wikipedia.org/wiki/Glass_recycling"
+  },
+  {
+    "in": [
+      "cullet"
+    ],
+    "verb": "heat",
+    "out": "glass",
+    "why": "Cullet melts at a lower temperature than raw silica sand, so every glassworks remelts its own scrap back into new glass.",
+    "supported": true,
+    "src": "https://en.wikipedia.org/wiki/Glass_recycling"
   },
   {
     "in": [
@@ -3194,10 +3204,10 @@
       "grass"
     ],
     "verb": "wait",
-    "out": "straw",
-    "why": "Cut grass left to dry is hay — winter feed, and the reason livestock could be kept through a season with nothing growing.",
+    "out": "hay",
+    "why": "Cut grass left to dry in the sun is hay, not straw — winter feed, and the reason livestock could be kept through a season with nothing growing.",
     "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Straw"
+    "src": "https://en.wikipedia.org/wiki/Hay"
   },
   {
     "in": [
@@ -3885,7 +3895,7 @@
     ],
     "verb": "heat",
     "out": "phosphorus",
-    "why": "Bone ash is calcium phosphate, and plants cannot take it up in that form. Treat it with sulfuric acid and it becomes single superphosphate, which dissolves — which is the whole of what artificial fertiliser originally meant.",
+    "why": "Bone ash ground and treated with sulfuric acid dehydrates to calcium metaphosphate. Mixed with charcoal and heat-distilled in a retort, that gives off phosphorus vapour — the original 18th-century route to the element itself, not just to fertiliser.",
     "src": "https://en.wikipedia.org/wiki/Phosphorus",
     "verified": true
   },
@@ -19289,6 +19299,126 @@
   },
   {
     "in": [
+      "harvest",
+      "river"
+    ],
+    "out": "cane",
+    "why": "Arundo donax, the giant cane used for almost all woodwind reeds, grows in dense stands along riverbanks; mature stalks are harvested and dried in the sun for weeks before use.",
+    "src": "https://en.wikipedia.org/wiki/Arundo_donax",
+    "supported": true
+  },
+  {
+    "in": [
+      "cane"
+    ],
+    "verb": "cut",
+    "out": "reed",
+    "why": "A single reed is a thin blade cut and shaved from one stalk of cane, roughly rectangular with a tip rounded to match the mouthpiece; clamped on by a ligature, it beats against the mouthpiece itself.",
+    "src": "https://en.wikipedia.org/wiki/Reed_(mouthpiece)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cane",
+      "cork"
+    ],
+    "out": "double_reed",
+    "why": "A double reed is two thin blades of cane tied together with wire onto a small metal staple, the lower half of the staple wrapped in cork for an airtight seal into the instrument — no mouthpiece at all; the two blades beat against each other.",
+    "src": "https://en.wikipedia.org/wiki/Double_reed",
+    "verified": true
+  },
+  {
+    "in": [
+      "reed",
+      "wood"
+    ],
+    "out": "clarinet",
+    "why": "A clarinet's single reed of cane beats against the mouthpiece; its body is a cylindrical wood bore, traditionally African blackwood, which gives the instrument its dark, covered tone.",
+    "src": "https://en.wikipedia.org/wiki/Clarinet",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "reed"
+    ],
+    "out": "saxophone",
+    "why": "A saxophone uses the same single cane reed as a clarinet, but its body is sheet brass rolled into a conical bore; Adolphe Sax patented the family of instruments in 1846.",
+    "src": "https://en.wikipedia.org/wiki/Saxophone",
+    "verified": true
+  },
+  {
+    "in": [
+      "double_reed",
+      "wood"
+    ],
+    "out": "oboe",
+    "why": "An oboe's double reed has no mouthpiece — its two cane blades beat against each other — feeding into a narrow conical wood bore, traditionally African blackwood, that gives the oboe its bright, penetrating tone.",
+    "src": "https://en.wikipedia.org/wiki/Oboe",
+    "verified": true
+  },
+  {
+    "in": [
+      "double_reed",
+      "hardwood"
+    ],
+    "out": "bassoon",
+    "why": "A bassoon uses the same double reed as an oboe, but on a conical bore 2.54 m long — grown from hardwood, usually maple — that has to fold back on itself so the finished instrument stands just 1.34 m tall.",
+    "src": "https://en.wikipedia.org/wiki/Bassoon",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass"
+    ],
+    "verb": "cut",
+    "out": "free_reed",
+    "why": "A free reed is a thin tongue cut from brass and fitted into a frame slot just barely wider than itself, so it can swing freely back and forth through the slot without ever touching its edges — unlike a cane reed beating against a mouthpiece.",
+    "src": "https://en.wikipedia.org/wiki/Free_reed_aerophone",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "leather"
+    ],
+    "out": "bellows",
+    "why": "Bellows are a pleated, airtight chamber of flexible material — cloth and cardboard reinforced with leather — that draws in air as it expands and forces out a jet of it when squeezed shut.",
+    "src": "https://en.wikipedia.org/wiki/Bellows",
+    "supported": true
+  },
+  {
+    "in": [
+      "free_reed",
+      "wood"
+    ],
+    "out": "harmonica",
+    "why": "A harmonica's free reeds, usually brass, are mounted to a wood comb — reeds on the inner side sound on the blow, reeds on the outer side sound on the draw — and it's played by breath alone, with no bellows at all.",
+    "src": "https://en.wikipedia.org/wiki/Harmonica",
+    "verified": true
+  },
+  {
+    "in": [
+      "bellows",
+      "free_reed"
+    ],
+    "out": "accordion",
+    "why": "An accordion's hand-squeezed bellows of cloth and leather drive air across banks of free reeds, usually brass or steel; Cyrill Demian patented the name in Vienna in 1829.",
+    "src": "https://en.wikipedia.org/wiki/Accordion",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "free_reed"
+    ],
+    "out": "reed_organ",
+    "why": "A reed organ has no pipes at all: foot-pumped bellows drive air over banks of free reeds, thin metal strips vibrating in a frame, to sound its keys — the same free-reed principle Alexandre Debain patented as the harmonium in 1840.",
+    "src": "https://en.wikipedia.org/wiki/Reed_organ",
+    "verified": true
+  },
+  {
+    "in": [
       "chloroplast",
       "leaf"
     ],
@@ -32515,5 +32645,1343 @@
     "why": "Where the Arabian, Nubian, and Somali plates meet in a triple junction, the same crust-thinning rifting that opens ocean basins elsewhere is happening above sea level -- parts of the Afar Triangle already lie over 100m below sea level.",
     "src": "https://en.wikipedia.org/wiki/Afar_Triangle",
     "supported": true
+  },
+  {
+    "in": [
+      "claw",
+      "termite"
+    ],
+    "out": "aardvark",
+    "why": "A nocturnal forager covering 2-5 km a night, the aardvark rips into termite mounds and ant nests with stout claws and an unusually reinforced forearm, then sweeps up its meal -- as many as 50,000 insects a night -- on a long, sticky tongue.",
+    "src": "https://en.wikipedia.org/wiki/Aardvark",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "soil"
+    ],
+    "out": "aardvark",
+    "why": "Each tooth is a cluster of up to 1,500 thin hexagonal tubes of vasodentin with no enamel coating, worn away and regrown continuously -- unique dentition in the only living species of the order Tubulidentata.",
+    "src": "https://en.wikipedia.org/wiki/Aardvark",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "wood"
+    ],
+    "out": "beaver",
+    "why": "A beaver stacks logs across a stream and packs them with mud and stone, damming the current into a pond -- an ecosystem-engineering habit that reshapes more landscape than almost any other animal's.",
+    "src": "https://en.wikipedia.org/wiki/Beaver",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "wood"
+    ],
+    "out": "beaver",
+    "why": "Its four chisel incisors grow continuously and never dull: iron compounds stain the enamel orange-red and keep the softer dentine behind it wearing faster, so gnawing wood keeps the edge self-sharpening.",
+    "src": "https://en.wikipedia.org/wiki/Beaver",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "termite"
+    ],
+    "out": "naked_mole_rat",
+    "why": "Naked mole rat colonies run on insect-style eusociality: a single breeding queen and one to three males reproduce, while 75 to 300-plus workers -- sorted by size into diggers and nest-tenders -- do the rest.",
+    "src": "https://en.wikipedia.org/wiki/Naked_mole-rat",
+    "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "soil"
+    ],
+    "out": "naked_mole_rat",
+    "why": "Its skin nerve fibers lack the neurotransmitter that normally signals acid pain, an adaptation to the carbon-dioxide-thick air of crowded burrows -- and its body temperature drifts with its surroundings rather than being held constant.",
+    "src": "https://en.wikipedia.org/wiki/Naked_mole-rat",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "wind"
+    ],
+    "out": "pronghorn",
+    "why": "The fastest land mammal in the Western Hemisphere, a pronghorn can hit 55 mph (88.5 km/h) in short bursts and still sustain 35 mph (56 km/h) for four miles -- outlasting even a cheetah on endurance.",
+    "src": "https://en.wikipedia.org/wiki/Pronghorn",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "heart"
+    ],
+    "out": "pronghorn",
+    "why": "Its speed far exceeds any predator alive in North America today -- evidence it evolved to outrun the extinct American cheetah, and it runs on an oversized heart, lungs, and windpipe built to move huge volumes of air.",
+    "src": "https://en.wikipedia.org/wiki/Pronghorn",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "fox"
+    ],
+    "out": "fennec_fox",
+    "why": "The fennec fox has the largest ear-to-body ratio of any canid -- up to 10 cm long on a fox that weighs barely a kilogram -- radiating desert heat away from its body while picking up the sound of prey moving underground.",
+    "src": "https://en.wikipedia.org/wiki/Fennec_fox",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "blood",
+      "moon"
+    ],
+    "out": "vampire_bat",
+    "why": "Hunting only in full darkness, a vampire bat homes in on a heat-sensitive nerve channel in its nose, tuned to fire at skin-warm temperatures, to find a blood vessel close to the surface before it ever bites.",
+    "src": "https://en.wikipedia.org/wiki/Vampire_bat",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "nerve"
+    ],
+    "out": "vampire_bat",
+    "why": "Its saliva carries anticoagulants that keep a wound bleeding long after the bite -- one of them, desmoteplase, has been studied as a stroke drug for its ability to dissolve blood clots.",
+    "src": "https://en.wikipedia.org/wiki/Vampire_bat",
+    "verified": true
+  },
+  {
+    "in": [
+      "echo",
+      "tree"
+    ],
+    "out": "aye_aye",
+    "why": "An aye-aye taps a branch up to eight times a second and listens to the echo, a technique called percussive foraging that reveals hollow tunnels chewed by grubs beneath the bark.",
+    "src": "https://en.wikipedia.org/wiki/Aye-aye",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "wood"
+    ],
+    "out": "aye_aye",
+    "why": "Once it finds a hollow, the aye-aye gnaws a hole through the wood and fishes the grub out with one thin, bony middle finger on a ball-and-socket joint tipped with a hooked nail -- filling a niche woodpeckers hold elsewhere.",
+    "src": "https://en.wikipedia.org/wiki/Aye-aye",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "nerve"
+    ],
+    "out": "star_nosed_mole",
+    "why": "Twenty-two fleshy tentacles ringing its nostrils carry over 25,000 Eimer's organs, mechanical touch sensors so fine the star-nosed mole can identify and eat a piece of food in as little as 120 milliseconds -- the fastest forager known.",
+    "src": "https://en.wikipedia.org/wiki/Star-nosed_mole",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "field",
+      "moon"
+    ],
+    "out": "barn_owl",
+    "why": "An owl's ear openings sit at different heights on the skull, so a sound reaches each ear a few dozen microseconds apart -- enough for strictly nocturnal hunters like barn owls to pinpoint prey in total darkness by hearing alone.",
+    "src": "https://en.wikipedia.org/wiki/Owl",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "feather",
+      "tree"
+    ],
+    "out": "satin_bowerbird",
+    "why": "A male satin bowerbird builds a stick bower separate from any nest and decorates it, as he matures, with more and more blue objects -- a display females inspect before choosing a mate.",
+    "src": "https://en.wikipedia.org/wiki/Satin_bowerbird",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "trench",
+      "turtle"
+    ],
+    "out": "leatherback_turtle",
+    "why": "A countercurrent network of blood vessels around its flippers and windpipe, wrapped in an insulating layer of brown fat, lets a leatherback hold its core 18°C above the surrounding water -- and dive to 1,280 m, deeper than any other reptile.",
+    "src": "https://en.wikipedia.org/wiki/Leatherback_sea_turtle",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "fish",
+      "leaf"
+    ],
+    "out": "archerfish",
+    "why": "An archerfish shapes a groove in its mouth to fire a water jet that outruns itself and balls up just before impact, almost always hitting an insect on the first shot -- correcting, as it aims, for how light bends where air meets water.",
+    "src": "https://en.wikipedia.org/wiki/Archerfish",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "mud",
+      "spark"
+    ],
+    "out": "electric_eel",
+    "why": "Not a true eel, this Amazonian fish stacks about 6,000 electricity-generating cells into a single organ that can discharge over 600 volts -- with a second, low-voltage organ used just to sense its surroundings.",
+    "src": "https://en.wikipedia.org/wiki/Electric_eel",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "spark"
+    ],
+    "out": "electric_eel",
+    "why": "It can curl its body around prey to strike it with both poles of its electric organ at once, doubling the shock -- and a leaping eel can deliver a jolt strong enough to drive off an animal as large as a horse.",
+    "src": "https://en.wikipedia.org/wiki/Electric_eel",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell",
+      "shrimp"
+    ],
+    "out": "mantis_shrimp",
+    "why": "A smashing mantis shrimp's raptorial claw accelerates at over 10,000 g to speeds of 23 m/s, hard enough to crack mollusk shells outright -- and the collapsing cavitation bubble it leaves behind delivers a second, separate hit.",
+    "src": "https://en.wikipedia.org/wiki/Mantis_shrimp",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "shrimp"
+    ],
+    "out": "mantis_shrimp",
+    "why": "Its compound eyes carry 12 to 16 types of photoreceptor, versus four in humans, and can detect circularly polarized light -- a sense not documented in any other animal.",
+    "src": "https://en.wikipedia.org/wiki/Mantis_shrimp",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "shrimp"
+    ],
+    "out": "pistol_shrimp",
+    "why": "Snapping its oversized claw shut fires a jet fast enough to collapse a cavitation bubble in a flash of light -- if the light were purely thermal, it would take a temperature over 5,000 K, hotter than the Sun's surface.",
+    "src": "https://en.wikipedia.org/wiki/Alpheidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "echo",
+      "shrimp"
+    ],
+    "out": "pistol_shrimp",
+    "why": "The collapsing bubble's snap peaks at 218 decibels underwater, loud enough to stun small fish outright -- and in large colonies, the combined noise can interfere with sonar and submarine detection.",
+    "src": "https://en.wikipedia.org/wiki/Alpheidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "smoke",
+      "spark"
+    ],
+    "out": "bombardier_beetle",
+    "why": "A bombardier beetle mixes stored hydroquinones and hydrogen peroxide with catalytic enzymes in an internal chamber; the exothermic reaction hits near 100°C and fires out in some 70 pulses a second, aimed by a nozzle that can swivel 270 degrees.",
+    "src": "https://en.wikipedia.org/wiki/Bombardier_beetle",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "moss",
+      "sand"
+    ],
+    "out": "tardigrade",
+    "why": "Facing drying-out, a tardigrade pulls in its legs and forms a desiccated 'tun,' flooding its cells with protective proteins that let it survive years without water and temperatures from -272°C to 149°C.",
+    "src": "https://en.wikipedia.org/wiki/Tardigrade",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "star"
+    ],
+    "out": "tardigrade",
+    "why": "In a 2007 European Space Agency experiment, dehydrated tardigrades were exposed directly to the vacuum of space for ten days -- the vacuum alone did little harm, though direct solar ultraviolet radiation proved far more lethal.",
+    "src": "https://en.wikipedia.org/wiki/Tardigrade",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "coconut"
+    ],
+    "out": "coconut_crab",
+    "why": "The largest land-living arthropod, weighing up to 4.1 kg, a coconut crab strips a coconut's husk from its germination pores and strikes until one gives way -- and as an adult it abandons the borrowed shell its hermit-crab relatives still carry.",
+    "src": "https://en.wikipedia.org/wiki/Coconut_crab",
+    "verified": true,
+    "soleRoute": true
+  },
+  {
+    "in": [
+      "bone",
+      "sun"
+    ],
+    "out": "griffon_vulture",
+    "why": "Griffon vultures eat only carrion, and their bald heads flush with bare skin to shed heat in the sun instead of growing feathers that would foul with rot.",
+    "src": "https://en.wikipedia.org/wiki/Griffon_vulture",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "desert"
+    ],
+    "out": "griffon_vulture",
+    "why": "A wingspan up to 2.8 metres lets a griffon vulture soar for hours at barely more than its resting metabolism, ranging from North Africa's deserts into the mountains of Asia.",
+    "src": "https://en.wikipedia.org/wiki/Griffon_vulture",
+    "verified": true
+  },
+  {
+    "in": [
+      "bow",
+      "arrow"
+    ],
+    "out": "neith",
+    "why": "Neith's own hieroglyph is a shield crossed by two bows -- she was Sais's warrior goddess of hunting and archery long before she was called a creator.",
+    "src": "https://en.wikipedia.org/wiki/Neith",
+    "supported": true
+  },
+  {
+    "in": [
+      "horus",
+      "set"
+    ],
+    "out": "neith",
+    "why": "When the gods split over which nephew should inherit the throne, they wrote to Neith at Sais for a verdict, and she advised that Horus, not Set, should be king.",
+    "src": "https://en.wikipedia.org/wiki/Neith",
+    "supported": true
+  },
+  {
+    "in": [
+      "rope",
+      "star"
+    ],
+    "out": "seshat",
+    "why": "In the 'stretching of the cord' ceremony, Seshat and the pharaoh each held a stake and pulled a cord taut between them to align a new temple's corners to the stars.",
+    "src": "https://en.wikipedia.org/wiki/Seshat",
+    "supported": true
+  },
+  {
+    "in": [
+      "ink",
+      "thoth"
+    ],
+    "out": "seshat",
+    "why": "Seshat was said to be Thoth's own sister, wife or daughter depending on the telling, and myth credited her with inventing writing, which Thoth then taught to humanity.",
+    "src": "https://en.wikipedia.org/wiki/Seshat",
+    "supported": true
+  },
+  {
+    "in": [
+      "lotus",
+      "ra"
+    ],
+    "out": "nefertem",
+    "why": "The Book of the Dead has the deceased pray to 'rise like Nefertem from the blue water-lily, to the nostrils of Ra' -- Nefertem himself was that first lotus opening at creation.",
+    "src": "https://en.wikipedia.org/wiki/Nefertem",
+    "supported": true
+  },
+  {
+    "in": [
+      "lotus",
+      "ptah"
+    ],
+    "out": "nefertem",
+    "why": "Nefertem completed the Memphis triad as the son of the creator god Ptah, a beautiful young god shown crowned with the same blue lotus he was born from.",
+    "src": "https://en.wikipedia.org/wiki/Nefertem",
+    "supported": true
+  },
+  {
+    "in": [
+      "griffon_vulture",
+      "wadjet"
+    ],
+    "out": "nekhbet",
+    "why": "Nekhbet and Wadjet were worshipped together as the 'Two Ladies,' vulture and cobra standing for Upper and Lower Egypt on the pharaoh's own crown.",
+    "src": "https://en.wikipedia.org/wiki/Nekhbet",
+    "supported": true
+  },
+  {
+    "in": [
+      "griffon_vulture",
+      "stone"
+    ],
+    "out": "nekhbet",
+    "why": "Her shrine at Nekheb, in what is now El Kab, is reckoned one of Egypt's earliest temples, founded in the Predynastic period around 3200 BCE.",
+    "src": "https://en.wikipedia.org/wiki/Nekhbet",
+    "supported": true
+  },
+  {
+    "in": [
+      "lettuce",
+      "harvest"
+    ],
+    "out": "min",
+    "why": "At the Min Festival, priests carried his image out to bless the fields at harvest, and worshippers ate the tall, milky-sapped wild lettuce sacred to him for potency.",
+    "src": "https://en.wikipedia.org/wiki/Min_(god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "cow",
+      "feather"
+    ],
+    "out": "min",
+    "why": "Min's shrine at Coptos was crowned with real bull horns for his sacred white bull, and New Kingdom images gave him a crown of two tall feather plumes.",
+    "src": "https://en.wikipedia.org/wiki/Min_(god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "egyptian_cobra",
+      "granary"
+    ],
+    "out": "renenutet",
+    "why": "Images of the cobra goddess stood in kitchens, granaries and cellars, invoked to guard stored grain against mice and insects.",
+    "src": "https://en.wikipedia.org/wiki/Renenutet",
+    "supported": true
+  },
+  {
+    "in": [
+      "sobek",
+      "harvest"
+    ],
+    "out": "renenutet",
+    "why": "Renenutet was sometimes paired with Sobek, whose Nile floodwaters laid down the silt that made her own bountiful harvests possible.",
+    "src": "https://en.wikipedia.org/wiki/Renenutet",
+    "supported": true
+  },
+  {
+    "in": [
+      "taweret",
+      "human"
+    ],
+    "out": "bes",
+    "why": "Bes and the hippo goddess Taweret were both invoked at childbirth, their images kept close by to protect mother and newborn.",
+    "src": "https://en.wikipedia.org/wiki/Bes",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "human"
+    ],
+    "out": "bes",
+    "why": "Scholars trace Bes's earliest form to a lion rearing up on its hind legs, long before he became the dwarf figure familiar from later household amulets.",
+    "src": "https://en.wikipedia.org/wiki/Bes",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "ra"
+    ],
+    "out": "mut",
+    "why": "One tradition described Mut as a great serpent coiled around her own father Ra, rebirthing him each day as her son Khonsu.",
+    "src": "https://en.wikipedia.org/wiki/Mut",
+    "supported": true
+  },
+  {
+    "in": [
+      "amun",
+      "griffon_vulture"
+    ],
+    "out": "mut",
+    "why": "As Amun's wife at Karnak, Mut wore the vulture headdress with the double crown of Upper and Lower Egypt layered on top.",
+    "src": "https://en.wikipedia.org/wiki/Mut",
+    "supported": true
+  },
+  {
+    "in": [
+      "dew",
+      "ra"
+    ],
+    "out": "tefnut",
+    "why": "The Pyramid Texts say Atum-Ra sneezed, and the moisture of his own breath became Tefnut -- a wet twin born alongside Shu, the air.",
+    "src": "https://en.wikipedia.org/wiki/Tefnut",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "shu"
+    ],
+    "out": "tefnut",
+    "why": "As a fierce lioness-headed Eye of Ra, Tefnut was Shu's own twin sister and consort, and together the pair parented Geb and Nut.",
+    "src": "https://en.wikipedia.org/wiki/Tefnut",
+    "supported": true
+  },
+  {
+    "in": [
+      "osiris",
+      "peregrine_falcon"
+    ],
+    "out": "sokar",
+    "why": "Sokar ruled the Memphis necropolis as a mummified falcon, and his fusion with Osiris as Ptah-Sokar-Osiris made him patron of the resurrected dead.",
+    "src": "https://en.wikipedia.org/wiki/Sokar",
+    "supported": true
+  },
+  {
+    "in": [
+      "boat",
+      "silver"
+    ],
+    "out": "sokar",
+    "why": "At his own Henu-barque festival, Sokar's image sailed in an oryx-prowed boat, and the Book of the Dead says he fashioned bowls of silver.",
+    "src": "https://en.wikipedia.org/wiki/Sokar",
+    "supported": true
+  },
+  {
+    "in": [
+      "anubis",
+      "wolf"
+    ],
+    "out": "wepwawet",
+    "why": "Wepwawet shared jackal iconography and even a cult city with Anubis, and over time myth settled the overlap by making the two wolf gods brothers.",
+    "src": "https://en.wikipedia.org/wiki/Wepwawet",
+    "supported": true
+  },
+  {
+    "in": [
+      "bow",
+      "wolf"
+    ],
+    "out": "wepwawet",
+    "why": "Carried on the army's lead standard and armed with mace and bow, Wepwawet was invoked to 'open the way' to the pharaoh's own victory.",
+    "src": "https://en.wikipedia.org/wiki/Wepwawet",
+    "supported": true
+  },
+  {
+    "in": [
+      "reef",
+      "water"
+    ],
+    "out": "sponge",
+    "why": "A sponge has no nerves or organs: choanocytes, collar cells with a whip-like flagellum, pump water through the body's pores, capturing roughly 80% of its food — one of the oldest surviving animal body plans.",
+    "src": "https://en.wikipedia.org/wiki/Sponge",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef",
+      "spark"
+    ],
+    "out": "comb_jelly",
+    "why": "A comb jelly is a distinct phylum from the jellyfish it resembles. Its eight rows of fused cilia (ctenes) form a natural photonic crystal, splitting light into rainbow bands as it swims — pure optics, not the bioluminescence some species also produce when disturbed.",
+    "src": "https://en.wikipedia.org/wiki/Ctenophora",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "river"
+    ],
+    "out": "hydra",
+    "why": "A well-fed Hydra buds a genetic clone off its own body wall roughly every two days, and if cut in half each piece regrows the missing end. Its stem cells divide indefinitely, a case researchers study for clues to negligible senescence — though whether it truly never ages is still debated.",
+    "src": "https://en.wikipedia.org/wiki/Hydra_(genus)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "stone"
+    ],
+    "out": "planarian",
+    "why": "A planarian flatworm carries neoblasts, adult stem cells making up a fifth or more of its body, able to become any cell type; a fragment as small as roughly 1/279th of the worm can regenerate a complete animal within about two weeks.",
+    "src": "https://en.wikipedia.org/wiki/Planarian",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthworm",
+      "river"
+    ],
+    "out": "leech",
+    "why": "A leech is an annelid, close kin to the earthworm in the shared class Clitellata. A blood-feeding species' saliva contains hirudin, an anticoagulant so effective that leeches are still used in microsurgery to keep blood flowing through reattached tissue.",
+    "src": "https://en.wikipedia.org/wiki/Leech",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "tide_pool"
+    ],
+    "out": "ribbon_worm",
+    "why": "A nemertean hunts by firing an eversible proboscis from a separate internal cavity, in venomous species tipped with a barbed stylet. One washed-up bootlace worm was reported at up to 54m, though zoologists warn the measurement is unreliable, with sturdier estimates nearer 30m.",
+    "src": "https://en.wikipedia.org/wiki/Nemertea",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "reef"
+    ],
+    "out": "bryozoan",
+    "why": "A bryozoan colony (\"moss animal\") is built from thousands of genetically identical zooids, each under a millimetre, feeding through its own lophophore, a ciliated tentacle crown — cooperating so closely the colony acts almost like one larger animal.",
+    "src": "https://en.wikipedia.org/wiki/Bryozoa",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "reef"
+    ],
+    "out": "lampshell",
+    "why": "A lampshell's two valves are dorsal and ventral, not left-right like a bivalve mollusc's, and it feeds through a U-shaped lophophore rather than gills. The clam-like shape evolved independently in Brachiopoda — convergent evolution on an unrelated body plan.",
+    "src": "https://en.wikipedia.org/wiki/Brachiopod",
+    "verified": true
+  },
+  {
+    "in": [
+      "dew",
+      "moss"
+    ],
+    "out": "tardigrade",
+    "why": "A dehydrated tardigrade curls into a tun, metabolism nearly stopped, its cells stabilised by protein-based glassy matrices. It has tolerated temperatures from near absolute zero to 149°C and survived the vacuum of space in a 2007 ESA test, though full solar UV proved lethal to most.",
+    "src": "https://en.wikipedia.org/wiki/Tardigrade",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthworm",
+      "rainforest"
+    ],
+    "out": "velvet_worm",
+    "why": "Onychophora pairs a soft, worm-like body with clawed, arthropod-like legs, long discussed as a possible bridge between annelid worms and arthropods. It hunts by shooting two oscillating slime jets, usually about a centimetre and rarely to 10cm, weaving prey into a sticky net.",
+    "src": "https://en.wikipedia.org/wiki/Onychophora",
+    "verified": true
+  },
+  {
+    "in": [
+      "moon",
+      "sand"
+    ],
+    "out": "horseshoe_crab",
+    "why": "Horseshoe crabs mass-spawn on sandy beaches at the highest tides around full and new moons. Their blue, copper-based blood carries amebocytes that clot instantly around bacterial endotoxin — the basis of the LAL test still used to screen vaccines for contamination.",
+    "src": "https://en.wikipedia.org/wiki/Horseshoe_crab",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "spider"
+    ],
+    "out": "sea_spider",
+    "why": "A sea spider (Pycnogonida) is not an arachnid but its own arthropod lineage. Its trunk is so small that branches of the gut and gonads extend into the legs themselves, and most species breathe by simple diffusion, with no dedicated gills or heart at all.",
+    "src": "https://en.wikipedia.org/wiki/Sea_spider",
+    "verified": true
+  },
+  {
+    "in": [
+      "foraminifera",
+      "sand"
+    ],
+    "out": "tusk_shell",
+    "why": "A scaphopod lives buried head-down in sand or mud, its curved, tapering shell open at both ends. It hunts with dozens of thread-like tentacles called captacula, reaching into the sediment to pluck out single-celled foraminifera.",
+    "src": "https://en.wikipedia.org/wiki/Scaphopoda",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "sea_star"
+    ],
+    "out": "sea_cucumber",
+    "why": "A sea cucumber shares the sea star's water-vascular tube feet, but some reef species defend themselves by expelling sticky Cuvierian tubules through the anus to snare a predator; the discharge can also carry a soap-like toxin, and lost tubules regrow within weeks.",
+    "src": "https://en.wikipedia.org/wiki/Sea_cucumber",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef",
+      "sea_star"
+    ],
+    "out": "feather_star",
+    "why": "Crinoids are the most ancient living echinoderm class, dating back some 480 million years. A feather star extends branched, mucus-covered arms into the current to trap plankton, then grips a reef with claw-like cirri rather than crawling on tube feet.",
+    "src": "https://en.wikipedia.org/wiki/Crinoid",
+    "verified": true
+  },
+  {
+    "in": [
+      "snail",
+      "soil"
+    ],
+    "out": "slug",
+    "why": "A slug is a gastropod, the same broad group as the snail, but its external shell has been lost or reduced to an internal plate used mainly for calcium storage — independently, in multiple lineages, making \"slug\" a body plan rather than one evolutionary group.",
+    "src": "https://en.wikipedia.org/wiki/Slug",
+    "verified": true
+  },
+  {
+    "in": [
+      "octopus",
+      "sea"
+    ],
+    "out": "cuttlefish",
+    "why": "A cuttlefish is a cephalopod cousin of the octopus with an internal, aragonite cuttlebone; adjusting the gas-to-liquid ratio inside its chambers fine-tunes buoyancy at almost any depth. Its pupils form a smooth W-shape, widening its view of polarised light.",
+    "src": "https://en.wikipedia.org/wiki/Cuttlefish",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "water"
+    ],
+    "out": "foraminifera",
+    "why": "A foraminiferan is a single amoeba-like cell that secretes a multi-chambered shell, usually of calcium carbonate. Nummulitic limestone, made almost entirely from fossil foraminifera shells, is the actual building stone of the Great Pyramid of Giza.",
+    "src": "https://en.wikipedia.org/wiki/Foraminifera",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "sea"
+    ],
+    "out": "radiolarian",
+    "why": "A radiolarian secretes an internal silica skeleton in elaborate, often symmetrical lattices. Accumulated skeletons blanket parts of the ocean floor as siliceous ooze, which can later become the rock chert — and their geometry inspired Ernst Haeckel's famous illustrations.",
+    "src": "https://en.wikipedia.org/wiki/Radiolaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "spark",
+      "tide_pool"
+    ],
+    "out": "dinoflagellate",
+    "why": "A dinoflagellate swims with two flagella, one wrapped in a groove around the cell. In bioluminescent species, disturbance triggers a luciferin-luciferase reaction in organelles called scintillons, flashing blue light — other dinoflagellate blooms turn the water red and release toxins.",
+    "src": "https://en.wikipedia.org/wiki/Dinoflagellate",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "water"
+    ],
+    "out": "diatom_organism",
+    "why": "A diatom builds a two-part cell wall, or frustule, of silica glass so precisely shaped the larger half overlaps the smaller like a pillbox lid. As a group, diatoms are estimated to generate a fifth to half of the oxygen produced on Earth each year.",
+    "src": "https://en.wikipedia.org/wiki/Diatom",
+    "verified": true
+  },
+  {
+    "in": [
+      "dew",
+      "sun"
+    ],
+    "out": "euglena",
+    "why": "Euglena's chloroplasts, wrapped in three membranes rather than two, came from engulfing a green alga generations ago. In light it photosynthesises; in the dark it swims by flagellum and absorbs food instead — a genuine straddle of the plant/animal divide.",
+    "src": "https://en.wikipedia.org/wiki/Euglena",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus",
+      "river"
+    ],
+    "out": "paramecium",
+    "why": "A paramecium is covered in thousands of cilia beating in coordinated waves, an effect often compared to wind rippling a field of grain. The same beating rows sweep bacteria and detritus down an oral groove — though this can burn over half its total energy budget.",
+    "src": "https://en.wikipedia.org/wiki/Paramecium",
+    "verified": true
+  },
+  {
+    "in": [
+      "dew",
+      "limestone"
+    ],
+    "out": "stonewort",
+    "why": "A stonewort (Charales) is a green alga whose whorled branches often crust over with deposited calcium carbonate, masking the chlorophyll and giving the group its name. Stoneworts sit among the charophyte algae counted as the closest living algal relatives of land plants.",
+    "src": "https://en.wikipedia.org/wiki/Charophyta",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "sun"
+    ],
+    "out": "cycad",
+    "why": "Cycads are gymnosperms with a fossil record stretching back some 300 million years, predating flowering plants. Despite bearing seeds, several genera still produce motile sperm — a trait otherwise limited to ferns and mosses — and host nitrogen-fixing bacteria in special roots.",
+    "src": "https://en.wikipedia.org/wiki/Cycad",
+    "verified": true
+  },
+  {
+    "in": [
+      "smoke",
+      "tree"
+    ],
+    "out": "ginkgo",
+    "why": "Ginkgo biloba is the sole surviving species of the order Ginkgoales, which first appeared over 290 million years ago, and is strikingly resistant to disease, insects and pollution. Six ginkgo trees 1-2km from the 1945 Hiroshima blast survived it, and all six are alive today.",
+    "src": "https://en.wikipedia.org/wiki/Ginkgo_biloba",
+    "verified": true
+  },
+  {
+    "in": [
+      "liverwort",
+      "mud"
+    ],
+    "out": "hornwort",
+    "why": "A hornwort is a distinct, ancient lineage of non-vascular land plant, its own division apart from mosses and liverworts. Unlike almost every other plant, most hornwort cells carry one large chloroplast, and many species host nitrogen-fixing cyanobacteria in internal cavities.",
+    "src": "https://en.wikipedia.org/wiki/Hornwort",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "spore"
+    ],
+    "out": "clubmoss",
+    "why": "Despite the name, a clubmoss belongs to Lycopodiopsida, a vascular, spore-dispersing land-plant lineage that split off before ferns even existed, with fossils reaching the Silurian. Its dried, oil-rich spores burn in a bright flash with little heat, once used for Victorian stage fire effects.",
+    "src": "https://en.wikipedia.org/wiki/Lycopodiopsida",
+    "verified": true
+  },
+  {
+    "in": [
+      "mangrove",
+      "river"
+    ],
+    "out": "manatee",
+    "why": "A manatee grazes over 60 kinds of freshwater and saltwater plants, up to seven hours a day, eating roughly a tenth of its body weight. Its low metabolic rate and thin fat leave it unable to survive prolonged cold, forcing seasonal migration to warm springs.",
+    "src": "https://en.wikipedia.org/wiki/Manatee",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "sea"
+    ],
+    "out": "dugong",
+    "why": "Unlike its river-tolerant manatee relatives, a dugong lives entirely in the sea, uprooting whole seagrass plants and shaking off sand before eating, leaving furrowed trails on the seabed. Sailors' half-glimpsed sightings are credited as a real source of mermaid folklore.",
+    "src": "https://en.wikipedia.org/wiki/Dugong",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "stone"
+    ],
+    "out": "hyrax",
+    "why": "Despite its size, the hyrax belongs to Afrotheria, the same mammalian branch as elephants and sirenians. It has poor internal temperature control, so it basks on sun-warmed rock outcrops; its communal dung middens fossilise into hyraceum, used historically in perfumery.",
+    "src": "https://en.wikipedia.org/wiki/Hyrax",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "spider"
+    ],
+    "out": "sengi",
+    "why": "Sengis (elephant shrews) look and forage like shrews, hunting insects and spiders, but genetics places them in Afrotheria with elephants and aardvarks, not true shrews. Several species patrol cleared trail networks daily, and some run as fast as 28.8km/h.",
+    "src": "https://en.wikipedia.org/wiki/Sengi",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus",
+      "island"
+    ],
+    "out": "tenrec",
+    "why": "Tenrecs radiated across Madagascar into forms convergently resembling hedgehogs, shrews, moles and otters found nowhere on the island naturally. The lowland streaked tenrec makes sound by rubbing quills together, and tenrecs run unusually low body temperatures for placental mammals.",
+    "src": "https://en.wikipedia.org/wiki/Tenrec",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "soil"
+    ],
+    "out": "golden_mole",
+    "why": "A golden mole has no functional eyes or external ears, and iridescent fur that helps it glide through soil. Grant's golden mole, of Namibia's desert dunes, presses its head to the sand to detect prey through an oversized malleus, an inner-ear bone tuned to seismic vibration.",
+    "src": "https://en.wikipedia.org/wiki/Golden_mole",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "tree"
+    ],
+    "out": "colugo",
+    "why": "A colugo's patagium, a skin membrane running from shoulder to fingertip to tail-tip, is the most extensive gliding membrane of any mammal, covering 70m or more between rainforest trees in a single glide. Genetics places it nearer primates than any lemur, and it never achieves true flight.",
+    "src": "https://en.wikipedia.org/wiki/Colugo",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "egg"
+    ],
+    "out": "echidna",
+    "why": "Like the platypus, the echidna is a monotreme, one of the only egg-laying mammals. A female lays a single soft-shelled egg, about 1.4cm long, into a temporary pouch; the hatchling laps milk oozing from bare skin patches, since echidnas have no nipples.",
+    "src": "https://en.wikipedia.org/wiki/Echidna",
+    "verified": true
+  },
+  {
+    "in": [
+      "keratin",
+      "termite"
+    ],
+    "out": "pangolin",
+    "why": "A pangolin's overlapping scales are keratin, the same protein as human fingernails, not bone or reptile scale. Entirely toothless, it rips open termite nests with strong foreclaws, sweeps up prey with a long tongue anchored deep in its chest, and grinds its meal with swallowed stones.",
+    "src": "https://en.wikipedia.org/wiki/Pangolin",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "river"
+    ],
+    "out": "tapir",
+    "why": "A tapir's short, prehensile snout works almost like a limited trunk, flexible enough to grab foliage out of easy reach. It wades into rivers, sinks to the bottom and walks the riverbed to feed, sometimes staying under long enough for fish to pick parasites from its skin.",
+    "src": "https://en.wikipedia.org/wiki/Tapir",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "claw"
+    ],
+    "out": "giant_anteater",
+    "why": "A giant anteater has no teeth and only limited jaw movement; it tears open a nest with one massive foreclaw, then flicks a sticky tongue up to 60cm long roughly 160 times a minute. It may raid 200 nests and eat 35,000 insects a day, digesting them with formic acid from its own prey.",
+    "src": "https://en.wikipedia.org/wiki/Giant_anteater",
+    "verified": true
+  },
+  {
+    "in": [
+      "pouch",
+      "snake"
+    ],
+    "out": "opossum",
+    "why": "The Virginia opossum's \"playing dead\" (thanatosis) is an involuntary catatonic collapse from extreme stress, not a choice — heart rate halves until the threat passes. It also carries unusual natural resistance to pit-viper venom, from blood peptides now studied for antivenom.",
+    "src": "https://en.wikipedia.org/wiki/Virginia_opossum",
+    "verified": true
+  },
+  {
+    "in": [
+      "pouch",
+      "soil"
+    ],
+    "out": "wombat",
+    "why": "A wombat's pouch faces backward, so tunnelling through its own burrow system doesn't fling soil onto its joey. Its droppings emerge as distinct cubes, shaped by alternating stiff and flexible sections of the intestine wall, keeping the scent-marking dung stacked instead of rolling off.",
+    "src": "https://en.wikipedia.org/wiki/Wombat",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "leaf"
+    ],
+    "out": "mesite",
+    "why": "All three living mesite species are found only in Madagascar, gleaning insects and seeds from the forest floor. Despite having wings, they are weak, reluctant fliers, using short escape flutters rather than sustained flight — common among birds that evolved without mammalian predators.",
+    "src": "https://en.wikipedia.org/wiki/Mesitornithiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthworm",
+      "island"
+    ],
+    "out": "kagu",
+    "why": "The kagu survives only in New Caledonia's mountain forests and lacks the flight muscles for sustained flight. It probes leaf litter for earthworms and snails using nasal corns, flap-like structures over its nostrils that keep out soil and debris — found on no other living bird.",
+    "src": "https://en.wikipedia.org/wiki/Kagu",
+    "verified": true
+  },
+  {
+    "in": [
+      "feather",
+      "mangrove"
+    ],
+    "out": "sunbittern",
+    "why": "A sunbittern forages alone along tropical American riverbanks. Startled, it spreads its wings and tail into a sudden fan, revealing large red, yellow and black eyespots on the flight feathers — a defensive illusion meant to look bigger and more dangerous than it is.",
+    "src": "https://en.wikipedia.org/wiki/Sunbittern",
+    "verified": true
+  },
+  {
+    "in": [
+      "feather",
+      "copper"
+    ],
+    "out": "turaco",
+    "why": "A turaco's feathers contain turacoverdin and turacin, real copper-based pigments found in no other bird. Almost every other \"green\" bird gets its colour from feather structure scattering light over yellow pigment, not a genuine green pigment.",
+    "src": "https://en.wikipedia.org/wiki/Turaco",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "leaf"
+    ],
+    "out": "hoatzin",
+    "why": "The hoatzin is the only bird known to rely on foregut fermentation, breaking down leaves with gut microbes in an enlarged crop much like a cow's rumen. Its chicks hatch with claws on their wing digits, letting them climb back up after dropping into water to dodge a predator.",
+    "src": "https://en.wikipedia.org/wiki/Hoatzin",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "desert"
+    ],
+    "out": "seriema",
+    "why": "A seriema is the nearest living relative of the giant, extinct terror birds (Phorusrhacidae). It hunts snakes, lizards and large insects on foot across South America's open country, killing prey by seizing it in the beak and beating it against the ground.",
+    "src": "https://en.wikipedia.org/wiki/Seriema",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "tree"
+    ],
+    "out": "cuckoo_roller",
+    "why": "The cuckoo-roller is the sole living species in its own order, Leptosomiformes, found only in Madagascar and the Comoro Islands. Its name reflects a passing resemblance to cuckoos and rollers, not any kinship — genetics places it as an early, isolated branch of its own.",
+    "src": "https://en.wikipedia.org/wiki/Cuckoo-roller",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "island"
+    ],
+    "out": "tuatara",
+    "why": "The tuatara is the sole survivor of Rhynchocephalia, a reptile order that split from squamates over 240 million years ago. Hatchlings carry a functioning parietal (\"third\") eye on top of the skull, later covered by scales, and an egg can take well over a year to hatch.",
+    "src": "https://en.wikipedia.org/wiki/Tuatara",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "snake"
+    ],
+    "out": "amphisbaenian",
+    "why": "Most amphisbaenians (\"worm lizards\") have lost all four limbs and burrow forward or backward with near-equal ease, bunching ring-like skin against the tunnel wall to push. A blunt tail that vaguely mimics the head gave rise to old folk beliefs in a two-headed serpent.",
+    "src": "https://en.wikipedia.org/wiki/Amphisbaenia",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "cartilage"
+    ],
+    "out": "pig",
+    "why": "A pig's snout is stiffened by a dedicated prenasal bone with a disc of cartilage at the tip, built for rooting — and pigs lack functional sweat glands except a few on the snout, which is why they wallow instead of sweating.",
+    "src": "https://en.wikipedia.org/wiki/Pig",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "tissue"
+    ],
+    "out": "sheep",
+    "why": "Like other ruminants, a sheep's lower incisors bite against a hard, toothless dental pad in its upper jaw instead of opposing teeth — the mechanism it uses to crop grass close to the ground.",
+    "src": "https://en.wikipedia.org/wiki/Sheep",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "tissue"
+    ],
+    "out": "turkey",
+    "why": "A tom turkey's snood, a fleshy flap on the bill, and its wattles flush red as blood flow to the head surges when it displays — the same signal spreads across its otherwise bare head and neck skin.",
+    "src": "https://en.wikipedia.org/wiki/Wild_turkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "muscle"
+    ],
+    "out": "turtle",
+    "why": "A turtle's ribs are fused into its shell and can't expand to draw breath, so abdominal muscles pull its large liver down to inflate the lungs, then push it back up to force air out.",
+    "src": "https://en.wikipedia.org/wiki/Turtle",
+    "verified": true
+  },
+  {
+    "in": [
+      "action_potential",
+      "nerve"
+    ],
+    "out": "rattlesnake",
+    "why": "Between each eye and nostril, a rattlesnake carries a heat-sensing pit that works like a pinhole camera for infrared — its densely nerve-packed membrane resolves temperature changes as small as 0.003°C.",
+    "src": "https://en.wikipedia.org/wiki/Rattlesnake",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "horn"
+    ],
+    "out": "buffalo",
+    "why": "River-type water buffalo grow horns that curve down, back, then spiral upward; swamp-type buffalo instead grow horns sweeping out into a flat semicircle — both keratin-sheathed bone fused to the skull.",
+    "src": "https://en.wikipedia.org/wiki/Water_buffalo",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoof",
+      "sand"
+    ],
+    "out": "donkey",
+    "why": "A donkey's hooves are more elastic than a horse's and wear down more slowly, suited to rocky desert ground — and its oversized ears may pick up distant sounds and help cool its blood in the heat.",
+    "src": "https://en.wikipedia.org/wiki/Donkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "cecum",
+      "tissue"
+    ],
+    "out": "rabbit",
+    "why": "A rabbit ferments fibrous plant matter in its cecum, then expels the result as soft cecotropes it reingests whole — cecotrophy that passes nutrients through the gut and small intestine a second time.",
+    "src": "https://en.wikipedia.org/wiki/Rabbit",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartilage",
+      "hide"
+    ],
+    "out": "snow_leopard",
+    "why": "A snow leopard's nostrils are unusually large for its skull, warming frigid mountain air before it reaches the lungs, while fur on the underside of its broad paws grips ice and insulates against the cold.",
+    "src": "https://en.wikipedia.org/wiki/Snow_leopard",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartilage",
+      "muscle"
+    ],
+    "out": "cougar",
+    "why": "All Panthera species — lions, tigers, jaguars, leopards — have an incompletely ossified hyoid that lets them roar; a cougar's hyoid isn't built that way, since it sits in Felinae, not Panthera, and purrs instead of roaring.",
+    "src": "https://en.wikipedia.org/wiki/Panthera",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "nerve"
+    ],
+    "out": "red_fox",
+    "why": "A red fox's pupils are oval and vertically oriented, not round — closer to a cat's than a typical dog's, a shape suited to judging distance precisely when pouncing at dusk or night.",
+    "src": "https://en.wikipedia.org/wiki/Red_fox",
+    "verified": true
+  },
+  {
+    "in": [
+      "sagittal_crest",
+      "tooth"
+    ],
+    "out": "coyote",
+    "why": "A coyote's sagittal crest, the bone ridge anchoring its chewing muscle, is low or flattened compared to a wolf's, giving it a weaker bite; its molars run larger instead, suited to grinding plant matter.",
+    "src": "https://en.wikipedia.org/wiki/Coyote",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartilage",
+      "nerve"
+    ],
+    "out": "african_wild_dog",
+    "why": "An African wild dog's ears are outsized even by the standards of genus Canis — large cartilage-framed structures densely packed with nerve tissue, tuned for tracking distant pack members and prey by sound.",
+    "src": "https://en.wikipedia.org/wiki/African_wild_dog",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "claw"
+    ],
+    "out": "sun_bear",
+    "why": "A sun bear's front claws are long, sickle-shaped, and anchored in bone, strong enough to tear open hollow trees — its bite can then reach roughly 2,000 newtons at the rear molar, disproportionate for its small size.",
+    "src": "https://en.wikipedia.org/wiki/Sun_bear",
+    "verified": true
+  },
+  {
+    "in": [
+      "hide",
+      "tooth"
+    ],
+    "out": "baboon",
+    "why": "Male olive baboons carry enlarged canine teeth used in dominance displays, and like most cercopithecine monkeys they have a cheek pouch, a flexible pocket of skin inside the mouth for stashing foraged food.",
+    "src": "https://en.wikipedia.org/wiki/Olive_baboon",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "tooth"
+    ],
+    "out": "lemur",
+    "why": "A ring-tailed lemur's lower incisors and canines angle forward into a toothcomb for grooming fur, and a specialized claw on its second toe, unlike every other digit's flat nail, rakes through fur its mouth can't reach.",
+    "src": "https://en.wikipedia.org/wiki/Ring-tailed_lemur",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "nerve"
+    ],
+    "out": "bald_eagle",
+    "why": "A bald eagle's grip is roughly ten times stronger than a human hand's, and its enlarged hind talon is angled to pierce a prey animal's vital organs while the front toes hold it immobile.",
+    "src": "https://en.wikipedia.org/wiki/Bald_eagle",
+    "verified": true
+  },
+  {
+    "in": [
+      "feather",
+      "tissue"
+    ],
+    "out": "snowy_owl",
+    "why": "A snowy owl's toe feathers average 33 mm long, more than double the next-longest owl's, insulating its feet against Arctic cold — and its ears sit placed almost symmetrically, unlike owls tuned for pinpoint directional hearing.",
+    "src": "https://en.wikipedia.org/wiki/Snowy_owl",
+    "verified": true
+  },
+  {
+    "in": [
+      "tissue",
+      "wing"
+    ],
+    "out": "turkey_vulture",
+    "why": "A turkey vulture perches wings-spread in a 'horaltic stance' to dry its feathers, warm itself, and bake off bacteria, and cools by defecating onto its own bare legs so the evaporating liquid pulls heat away.",
+    "src": "https://en.wikipedia.org/wiki/Turkey_vulture",
+    "verified": true
+  },
+  {
+    "in": [
+      "action_potential",
+      "tissue"
+    ],
+    "out": "komodo_dragon",
+    "why": "A Komodo dragon's long forked tongue flicks to collect scent particles, firing nerve impulses from Jacobson's organ tissue in the roof of its mouth — with a favorable wind, it can detect carrion from as far as 9.5 km away.",
+    "src": "https://en.wikipedia.org/wiki/Komodo_dragon",
+    "verified": true
+  },
+  {
+    "in": [
+      "fatty_acid",
+      "tissue"
+    ],
+    "out": "gila_monster",
+    "why": "A Gila monster stores fat in its tail as an energy reserve, letting it survive on as few as three or four large meals a year rather than needing to feed often.",
+    "src": "https://en.wikipedia.org/wiki/Gila_monster",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "muscle"
+    ],
+    "out": "nile_crocodile",
+    "why": "Crocodilians are the only living reptiles with a true four-chambered heart; its elongated cardiac septum lets a Nile crocodile oxygenate blood efficiently, physiologically closer to a bird's heart than a typical reptile's.",
+    "src": "https://en.wikipedia.org/wiki/Nile_crocodile",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "tooth"
+    ],
+    "out": "american_alligator",
+    "why": "An American alligator's hatchling sex is set by nest temperature, not chromosomes, and throughout its life it keeps replacing worn teeth roughly once a year — cycling through more than 2,000 over a lifetime.",
+    "src": "https://en.wikipedia.org/wiki/American_alligator",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "tissue"
+    ],
+    "out": "golden_poison_frog",
+    "why": "A golden poison frog doesn't make its own batrachotoxin — it sequesters the toxin from small arthropods in its diet, likely a beetle; frogs raised in captivity on other food lose their toxicity entirely.",
+    "src": "https://en.wikipedia.org/wiki/Golden_poison_frog",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartilage",
+      "tissue"
+    ],
+    "out": "american_bullfrog",
+    "why": "An American bullfrog's tympanum, the eardrum disc ringed in cartilage just behind the eye, is larger than the eye itself in males and about eye-sized in females — the clearest way to tell the sexes apart.",
+    "src": "https://en.wikipedia.org/wiki/American_bullfrog",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "tissue"
+    ],
+    "out": "cane_toad",
+    "why": "A cane toad's parotoid glands sit behind each eye and ooze a milky bufotoxin when threatened, while its lungs simultaneously inflate to puff up its body and look larger to whatever's attacking it.",
+    "src": "https://en.wikipedia.org/wiki/Cane_toad",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "tissue"
+    ],
+    "out": "axolotl",
+    "why": "An axolotl can regrow an entire lost limb or tail over months, and even regenerate more vital tissue like the eye or heart — it will accept and functionally integrate a transplanted organ from another individual.",
+    "src": "https://en.wikipedia.org/wiki/Axolotl",
+    "verified": true
+  },
+  {
+    "in": [
+      "amphibian_skin",
+      "tissue"
+    ],
+    "out": "fire_salamander",
+    "why": "A fire salamander's poison glands cluster around its head and along its back, secreting samandarin, an alkaloid that triggers strong muscle convulsions and hyperventilation in the vertebrates that attack it.",
+    "src": "https://en.wikipedia.org/wiki/Fire_salamander",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "tooth"
+    ],
+    "out": "piranha",
+    "why": "A piranha's single row of tightly interlocking, blade-like teeth shears flesh, and its jaw muscles attach close to the jaw tip for a mechanical advantage that favors raw force over bite speed.",
+    "src": "https://en.wikipedia.org/wiki/Piranha",
+    "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "tooth"
+    ],
+    "out": "orca",
+    "why": "An orca's upper teeth fall into the gaps between its lower teeth when the jaw closes, with the front teeth angled forward and outward to resist a struggling prey's jerks, while echolocation clicks guide the hunt.",
+    "src": "https://en.wikipedia.org/wiki/Orca",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "sagittal_crest"
+    ],
+    "out": "dingo",
+    "why": "A dingo's skull carries a flatter cranium and a larger sagittal crest than a domestic dog's, and unusually flexible wrist and shoulder joints let it rotate its paws to open latches and climb fences or trees.",
+    "src": "https://en.wikipedia.org/wiki/Dingo",
+    "verified": true
   }
 ]

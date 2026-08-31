@@ -126,6 +126,17 @@
     "fact": "An amorphous solid — no crystal structure. It does not flow, whatever you have heard."
   },
   {
+    "id": "cullet",
+    "name": "Cullet",
+    "emoji": "🔹",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Crushed scrap glass — a sand substitute for aggregate, not the same mineral as sand itself.",
+    "soleRoute": true
+  },
+  {
     "id": "sea",
     "name": "Sea",
     "emoji": "🌊",
@@ -287,6 +298,18 @@
       "plant"
     ],
     "fact": "The stalk left after the grain is taken. Tinder, thatch and bedding."
+  },
+  {
+    "id": "hay",
+    "name": "Hay",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Grass cut and dried in the sun — winter feed for grazing animals when nothing else grows.",
+    "soleRoute": true,
+    "terminal": true
   },
   {
     "id": "sprout",
@@ -3415,8 +3438,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "94.9% water, so it cannot be frozen, canned or dried. Eat it now or do not eat it.",
-    "terminal": true
+    "fact": "94.9% water, so it cannot be frozen, canned or dried. Eat it now or do not eat it."
   },
   {
     "id": "pumpkin",
@@ -7204,7 +7226,6 @@
       "plant",
       "tool"
     ],
-    "terminal": true,
     "fact": "Dead cells full of gas, walled with suberin. Stripped off a living oak, and it grows back."
   },
   {
@@ -15452,8 +15473,7 @@
       "wild"
     ],
     "fact": "Among the first plants to leave the water, 470 million years ago — raindrops still launch its spore-filled gemmae.",
-    "taxon": "tx_marchantiophyta",
-    "terminal": true
+    "taxon": "tx_marchantiophyta"
   },
   {
     "id": "bracken_fern",
@@ -16481,6 +16501,140 @@
       "year": 1964,
       "note": "Robert Moog's transistor-based voltage-controlled oscillator becomes the standard circuit for generating a waveform from scratch."
     }
+  },
+  {
+    "id": "cane",
+    "name": "Cane",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Arundo donax, a giant cane grass in dense stands along riverbanks — source of nearly all woodwind reeds."
+  },
+  {
+    "id": "reed",
+    "name": "Reed",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A thin blade shaved from cane, clamped by a ligature — it beats against the mouthpiece itself to sound."
+  },
+  {
+    "id": "double_reed",
+    "name": "Double Reed",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two cane blades bound onto a metal staple, cork-wrapped and sealed into the instrument — no mouthpiece at all."
+  },
+  {
+    "id": "clarinet",
+    "name": "Clarinet",
+    "emoji": "🪈",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "A single cane reed beats against the mouthpiece; a cylindrical wood bore gives it a dark, covered tone.",
+    "terminal": true
+  },
+  {
+    "id": "saxophone",
+    "name": "Saxophone",
+    "emoji": "🎷",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "The same single reed as a clarinet, but on a conical brass body — Adolphe Sax patented the family in 1846.",
+    "terminal": true
+  },
+  {
+    "id": "oboe",
+    "name": "Oboe",
+    "emoji": "🪈",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "Two cane blades beat against each other, no mouthpiece; a narrow conical wood bore gives its bright tone.",
+    "terminal": true
+  },
+  {
+    "id": "bassoon",
+    "name": "Bassoon",
+    "emoji": "🪈",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "The oboe's double reed on a 2.54 m maple bore, folded back so the finished instrument stands only 1.34 m tall.",
+    "terminal": true
+  },
+  {
+    "id": "free_reed",
+    "name": "Free Reed",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A thin brass tongue fitted to a slot just wide enough to swing freely through it, never touching the frame."
+  },
+  {
+    "id": "bellows",
+    "name": "Bellows",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A pleated chamber of leather and cloth: squeezing it forces out a jet of air, expanding draws more back in."
+  },
+  {
+    "id": "harmonica",
+    "name": "Harmonica",
+    "emoji": "🎶",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "A wood comb holds brass free reeds — one set sounds on the blow, another on the draw, no bellows at all.",
+    "terminal": true
+  },
+  {
+    "id": "accordion",
+    "name": "Accordion",
+    "emoji": "🪗",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "Hand-squeezed bellows drive air across free reeds — Cyrill Demian patented the name in Vienna, 1829.",
+    "terminal": true
+  },
+  {
+    "id": "reed_organ",
+    "name": "Reed Organ",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "aerophone"
+    ],
+    "fact": "A keyboard instrument with no pipes at all — foot-pumped bellows drive air over banks of free reeds instead.",
+    "terminal": true
   },
   {
     "id": "producer",
@@ -22086,8 +22240,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Jackal-headed god of embalming who weighed the hearts of the dead against Ma'at's feather.",
-    "terminal": true
+    "fact": "Jackal-headed god of embalming who weighed the hearts of the dead against Ma'at's feather."
   },
   {
     "id": "thoth",
@@ -22118,8 +22271,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Crocodile god of the Nile's waters and marshes, merged with Ra as Sobek-Ra.",
-    "terminal": true
+    "fact": "Crocodile god of the Nile's waters and marshes, merged with Ra as Sobek-Ra."
   },
   {
     "id": "hathor",
@@ -22181,8 +22333,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "God of air and light who forced Geb and Nut apart; fog and cloud were called his own bones.",
-    "terminal": true
+    "fact": "God of air and light who forced Geb and Nut apart; fog and cloud were called his own bones."
   },
   {
     "id": "khnum",
@@ -22203,8 +22354,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Creator god of Memphis, patron of craftsmen, said to have conceived the world in his heart.",
-    "terminal": true
+    "fact": "Creator god of Memphis, patron of craftsmen, said to have conceived the world in his heart."
   },
   {
     "id": "amun",
@@ -22246,8 +22396,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Hippopotamus goddess who protected women in childbirth and sided with Horus against Set.",
-    "terminal": true
+    "fact": "Hippopotamus goddess who protected women in childbirth and sided with Horus against Set."
   },
   {
     "id": "serket",
@@ -22268,8 +22417,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Cobra goddess of Lower Egypt who became the uraeus, the rearing serpent on the pharaoh's crown.",
-    "terminal": true
+    "fact": "Cobra goddess of Lower Egypt who became the uraeus, the rearing serpent on the pharaoh's crown."
   },
   {
     "id": "apep",
@@ -28050,5 +28198,930 @@
     "terminal": true,
     "fact": "The one place on Earth where seafloor-spreading-style rifting is happening on dry land, not underwater.",
     "soleRoute": true
+  },
+  {
+    "id": "aardvark",
+    "name": "Aardvark",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its claws tear open termite mounds; a single night's foraging can down 50,000 insects on its sticky tongue.",
+    "terminal": true
+  },
+  {
+    "id": "beaver",
+    "name": "Beaver",
+    "emoji": "🦫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "A keystone engineer: its dams reshape rivers into wetlands, and its four incisors never stop growing.",
+    "terminal": true
+  },
+  {
+    "id": "naked_mole_rat",
+    "name": "Naked Mole Rat",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A eusocial mammal with one breeding queen per colony, near cold-blooded, and immune to acid-triggered pain.",
+    "terminal": true
+  },
+  {
+    "id": "pronghorn",
+    "name": "Pronghorn",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The fastest land mammal in the Americas -- built to outrun a cheetah species extinct for 12,000 years.",
+    "terminal": true
+  },
+  {
+    "id": "fennec_fox",
+    "name": "Fennec Fox",
+    "emoji": "🦊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its ears are the largest of any canid relative to body size -- radiators for heat, dishes for sound.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "vampire_bat",
+    "name": "Vampire Bat",
+    "emoji": "🦇",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Hunts only in total darkness, reading a warm vein through heat sensors in its nose before its bite.",
+    "terminal": true
+  },
+  {
+    "id": "aye_aye",
+    "name": "Aye-Aye",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Taps wood eight times a second, listens for the echo of a hollow tunnel, then fishes out the grub inside.",
+    "terminal": true
+  },
+  {
+    "id": "star_nosed_mole",
+    "name": "Star-Nosed Mole",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its 22-tentacled nose carries 25,000+ touch sensors and can identify prey in 120 milliseconds flat.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "barn_owl",
+    "name": "Barn Owl",
+    "emoji": "🦉",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its two ears sit at different heights on its skull, letting it strike prey in pitch darkness by sound alone.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "satin_bowerbird",
+    "name": "Satin Bowerbird",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The male builds no nest -- he builds a stick bower and decorates it almost entirely in blue to court females.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "leatherback_turtle",
+    "name": "Leatherback Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Holds its core 18°C above cold water via countercurrent heat exchange, and dives deeper than any reptile.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "archerfish",
+    "name": "Archerfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Spits a shaped water jet to knock insects off leaves, correcting its aim for light bending at the surface.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "electric_eel",
+    "name": "Electric Eel",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Not a true eel: 6,000 stacked cells fire up to 860 volts, and it curls around prey to shock it twice.",
+    "terminal": true
+  },
+  {
+    "id": "mantis_shrimp",
+    "name": "Mantis Shrimp",
+    "emoji": "🦐",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Its claw strikes at 23 m/s, fast enough to flash-boil a bubble that hits prey with a second, separate blow.",
+    "terminal": true
+  },
+  {
+    "id": "pistol_shrimp",
+    "name": "Pistol Shrimp",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild",
+      "water"
+    ],
+    "fact": "Snaps a claw shut fast enough to flash-heat a bubble past the Sun's surface temperature, at 218 decibels.",
+    "terminal": true
+  },
+  {
+    "id": "bombardier_beetle",
+    "name": "Bombardier Beetle",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Mixes two stored chemicals to fire a near-boiling, pulsed spray it can aim almost anywhere on its own body.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "tardigrade",
+    "name": "Tardigrade",
+    "emoji": "🐻",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Dries itself into a glass-like 'tun' to survive years without water, -272°C to 149°C, and the vacuum of space.",
+    "terminal": true
+  },
+  {
+    "id": "coconut_crab",
+    "name": "Coconut Crab",
+    "emoji": "🥥",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The largest land arthropod alive; adults give up the borrowed shell of their hermit-crab kin entirely.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "neith",
+    "name": "Neith",
+    "emoji": "🏹",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Warrior-weaver goddess of Sais, worshipped as a creator; crossed bows were her own emblem.",
+    "terminal": true
+  },
+  {
+    "id": "seshat",
+    "name": "Seshat",
+    "emoji": "📏",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Goddess of writing and measurement who founded temples with the king in the 'stretching of the cord' rite.",
+    "terminal": true
+  },
+  {
+    "id": "nefertem",
+    "name": "Nefertem",
+    "emoji": "🪷",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Young god who rose from the primordial waters as a lotus at Ra's own nostrils; member of the Memphis triad.",
+    "terminal": true
+  },
+  {
+    "id": "nekhbet",
+    "name": "Nekhbet",
+    "emoji": "🦅",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Vulture goddess of Upper Egypt, worshipped at Nekheb; paired with Wadjet as the crown's 'Two Ladies.'",
+    "terminal": true
+  },
+  {
+    "id": "min",
+    "name": "Min",
+    "emoji": "🌾",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Ithyphallic fertility god of Coptos and Akhmim whose festival carried his image to the fields at harvest.",
+    "terminal": true
+  },
+  {
+    "id": "renenutet",
+    "name": "Renenutet",
+    "emoji": "🐍",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Cobra goddess of the grain harvest, name meaning 'to nurse'; guarded granaries and nursed royal infants.",
+    "terminal": true
+  },
+  {
+    "id": "bes",
+    "name": "Bes",
+    "emoji": "🎭",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Dwarf protector of households and childbirth, shown facing forward instead of in profile to scare off evil.",
+    "terminal": true
+  },
+  {
+    "id": "mut",
+    "name": "Mut",
+    "emoji": "👑",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Mother goddess of Karnak, wife of Amun and mother of Khonsu in the Theban Triad; wears both of Egypt's crowns.",
+    "terminal": true
+  },
+  {
+    "id": "tefnut",
+    "name": "Tefnut",
+    "emoji": "💧",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Moisture goddess sneezed or spat into being by Atum-Ra; twin sister and consort of Shu, mother of Geb and Nut.",
+    "terminal": true
+  },
+  {
+    "id": "sokar",
+    "name": "Sokar",
+    "emoji": "⚱️",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Falcon god of the Memphis necropolis, fused into Ptah-Sokar-Osiris, patron of craftsmen and the dead.",
+    "terminal": true
+  },
+  {
+    "id": "wepwawet",
+    "name": "Wepwawet",
+    "emoji": "🐺",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Wolf-formed 'opener of the ways' of Asyut, a standard-bearer who led the pharaoh's army and later the dead.",
+    "terminal": true
+  },
+  {
+    "id": "griffon_vulture",
+    "name": "Griffon Vulture",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A carrion-eating scavenger whose bald head sheds heat, soaring on one of the largest wingspans of any raptor."
+  },
+  {
+    "id": "sponge",
+    "name": "Sponge",
+    "emoji": "🧽",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "No true tissues, nerves or organs — just specialised cells filtering food from water pumped through its own pores."
+  },
+  {
+    "id": "comb_jelly",
+    "name": "Comb Jelly",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Not a jellyfish — its own animal phylum, swum by eight rows of beating cilia that split light into rainbow bands."
+  },
+  {
+    "id": "hydra",
+    "name": "Hydra",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A freshwater cnidarian that clones a new body off its own side by budding, and barely seems to age."
+  },
+  {
+    "id": "planarian",
+    "name": "Planarian",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Cut it into pieces and each piece can regrow a whole worm — brain included — within a couple of weeks."
+  },
+  {
+    "id": "leech",
+    "name": "Leech",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A segmented worm related to the earthworm — its bite injects an anticoagulant still used in modern surgery."
+  },
+  {
+    "id": "ribbon_worm",
+    "name": "Ribbon Worm",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Fires an eversible, sometimes venom-barbed proboscis at prey — possibly Earth's longest animal."
+  },
+  {
+    "id": "bryozoan",
+    "name": "Bryozoan",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A colony of thousands of near-identical animals under a millimetre long, sharing one skeleton — long mistaken for moss."
+  },
+  {
+    "id": "lampshell",
+    "name": "Lampshell",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Looks like a two-shelled clam, but a brachiopod's valves sit top and bottom, not left and right."
+  },
+  {
+    "id": "velvet_worm",
+    "name": "Velvet Worm",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Ambushes prey by firing two crossing jets of sticky slime from glands beside its jaws."
+  },
+  {
+    "id": "horseshoe_crab",
+    "name": "Horseshoe Crab",
+    "emoji": "🦀",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Its blue, copper-based blood clots on contact with bacterial toxins and still tests every batch of injectable medicine."
+  },
+  {
+    "id": "sea_spider",
+    "name": "Sea Spider",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Not a true spider — its body is so reduced that its own gut and gonads run out into its legs."
+  },
+  {
+    "id": "tusk_shell",
+    "name": "Tusk Shell",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A tusk-shaped shell open at both ends, buried head-down in sand, catching prey with thread-like tentacles."
+  },
+  {
+    "id": "sea_cucumber",
+    "name": "Sea Cucumber",
+    "emoji": "🥒",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "When threatened, some species eject sticky internal organs through the anus to entangle a predator, then regrow them."
+  },
+  {
+    "id": "feather_star",
+    "name": "Feather Star",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A sea-star relative filtering plankton with feathery arms, gripping the reef with claws instead of tube feet."
+  },
+  {
+    "id": "slug",
+    "name": "Slug",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A land snail that lost its shell, or reduced it to an internal remnant, in several separate lineages."
+  },
+  {
+    "id": "cuttlefish",
+    "name": "Cuttlefish",
+    "emoji": "🦑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Its porous internal cuttlebone works like a submarine's ballast tank, and its pupils are shaped like a W."
+  },
+  {
+    "id": "foraminifera",
+    "name": "Foraminifera",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A single cell that builds an elaborate calcium-carbonate shell — fossil shells like these built the Great Pyramid."
+  },
+  {
+    "id": "radiolarian",
+    "name": "Radiolarian",
+    "emoji": "💠",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "A single cell in an intricate glassy skeleton, its geometry the inspiration for Ernst Haeckel's illustrations."
+  },
+  {
+    "id": "dinoflagellate",
+    "name": "Dinoflagellate",
+    "emoji": "💫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "The single-celled organism behind a glowing night wave — some species flash blue light the instant it's disturbed."
+  },
+  {
+    "id": "diatom_organism",
+    "name": "Diatom",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Encased in two interlocking glass shells fitting like a pillbox — makes a fifth or more of Earth's oxygen."
+  },
+  {
+    "id": "euglena",
+    "name": "Euglena",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Carries a plant's chloroplasts to photosynthesise in light, then swims off to swallow food like an animal in the dark."
+  },
+  {
+    "id": "paramecium",
+    "name": "Paramecium",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "Covered in thousands of beating hairs that row it through the water and sweep food into a mouth-like groove."
+  },
+  {
+    "id": "stonewort",
+    "name": "Stonewort",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "water",
+      "wild"
+    ],
+    "fact": "A freshwater alga often crusted in limestone, among the closest living algal relatives that land plants have."
+  },
+  {
+    "id": "cycad",
+    "name": "Cycad",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "A palm-like gymnosperm older than the dinosaurs — several genera still make sperm cells that swim."
+  },
+  {
+    "id": "ginkgo",
+    "name": "Ginkgo",
+    "emoji": "🍁",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "The last living species of its plant order, famous for outliving almost anything thrown at it — even an atomic bomb."
+  },
+  {
+    "id": "hornwort",
+    "name": "Hornwort",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "water",
+      "wild"
+    ],
+    "fact": "Most cells hold just one giant chloroplast — unique among land plants — often housing nitrogen-fixing bacteria."
+  },
+  {
+    "id": "clubmoss",
+    "name": "Clubmoss",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Not a moss at all — a vascular, spore-dispersing lineage older than ferns, whose oily spores once lit stage magic."
+  },
+  {
+    "id": "manatee",
+    "name": "Manatee",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "The gentle \"sea cow\" grazes seagrass and mangrove leaves in warm shallow water, and can chill to death below 20°C."
+  },
+  {
+    "id": "dugong",
+    "name": "Dugong",
+    "emoji": "🧜",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water",
+      "wild"
+    ],
+    "fact": "The only truly marine grazing mammal — its seagrass-feeding trails across the seabed likely inspired mermaid legends."
+  },
+  {
+    "id": "hyrax",
+    "name": "Hyrax",
+    "emoji": "🐹",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A rabbit-sized rock-dweller whose closest living relatives are the elephant and the manatee."
+  },
+  {
+    "id": "sengi",
+    "name": "Sengi",
+    "emoji": "🐭",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Not a shrew — its closest relatives are elephants, and it can outrun almost anything its own size."
+  },
+  {
+    "id": "tenrec",
+    "name": "Tenrec",
+    "emoji": "🦔",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Madagascar's answer to hedgehogs, shrews, and otters all at once — one species \"talks\" by rubbing its own spines."
+  },
+  {
+    "id": "golden_mole",
+    "name": "Golden Mole",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Blind and earless, it \"swims\" through loose sand — some species find prey by sensing vibration through the skull."
+  },
+  {
+    "id": "colugo",
+    "name": "Colugo",
+    "emoji": "🦇",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Wrongly called a \"flying lemur\" — not a lemur, and can't fly, but glides on the largest skin membrane of any mammal."
+  },
+  {
+    "id": "echidna",
+    "name": "Echidna",
+    "emoji": "🦔",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A spiny, egg-laying mammal — lays one leathery egg straight into its own temporary pouch, then hatches it there."
+  },
+  {
+    "id": "pangolin",
+    "name": "Pangolin",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The only mammal covered in true scales, built from keratin — the same protein as hair and nail."
+  },
+  {
+    "id": "tapir",
+    "name": "Tapir",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Uses a short, flexible snout to grab leaves, and submerges in rivers to feed and let small fish groom parasites off it."
+  },
+  {
+    "id": "giant_anteater",
+    "name": "Giant Anteater",
+    "emoji": "👅",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Has no teeth at all — a sticky tongue up to 60cm long, flicking around 160 times a minute, does all the work."
+  },
+  {
+    "id": "opossum",
+    "name": "Opossum",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "North America's only marsupial — its famous \"playing dead\" is an involuntary fainting spell, not a decision."
+  },
+  {
+    "id": "wombat",
+    "name": "Wombat",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Digs vast burrow systems and produces cube-shaped droppings — an intestinal trick that stops them rolling away."
+  },
+  {
+    "id": "mesite",
+    "name": "Mesite",
+    "emoji": "🦤",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A weak-flying, ground-foraging bird found only in Madagascar's forests."
+  },
+  {
+    "id": "kagu",
+    "name": "Kagu",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A near-flightless bird found only on New Caledonia, hunting earthworms with nostril flaps found on no other bird."
+  },
+  {
+    "id": "sunbittern",
+    "name": "Sunbittern",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "When threatened, it fans its wings to reveal huge fake eyespots, briefly looking like a much larger animal."
+  },
+  {
+    "id": "turaco",
+    "name": "Turaco",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "One of the only birds with true green and red feather pigments — most bird \"green\" is a trick of light, not colour."
+  },
+  {
+    "id": "hoatzin",
+    "name": "Hoatzin",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Digests leaves by fermenting them in an oversized crop, like a cow — and its chicks are born with claws on their wings."
+  },
+  {
+    "id": "seriema",
+    "name": "Seriema",
+    "emoji": "🦖",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The closest living relative of the extinct terror birds, killing prey by beating it against the ground."
+  },
+  {
+    "id": "cuckoo_roller",
+    "name": "Cuckoo-roller",
+    "emoji": "🐦‍⬛",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "The only member of its own bird order — despite the name, unrelated to true cuckoos or true rollers."
+  },
+  {
+    "id": "tuatara",
+    "name": "Tuatara",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "New Zealand's \"living fossil\" reptile, the last of its order, with a light-sensing third eye on a hatchling's skull."
+  },
+  {
+    "id": "amphisbaenian",
+    "name": "Amphisbaenian",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A limbless burrower whose blunt tail looks so much like its head that some cultures call it \"two-headed.\""
   }
 ]

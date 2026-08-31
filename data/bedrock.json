@@ -3639,6 +3639,460 @@
       "srcTitle": "Hair cell",
       "fact": "Named for the tuft of stereocilia on top that bends with the slightest vibration, opening ion channels that fire a nerve signal — the human inner ear cannot regrow a damaged one, which is why hearing loss from noise or age is permanent.",
       "src": "https://en.wikipedia.org/wiki/Hair_cell"
+    },
+    {
+      "id": "bed_epidermis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Epidermis",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Epidermis",
+      "fact": "Four or five layers of keratinocytes, nine tenths of the cells here, replaced completely about every 48 days — and with no blood supply of its own, fed only by oxygen diffusing straight from the air.",
+      "src": "https://en.wikipedia.org/wiki/Epidermis"
+    },
+    {
+      "id": "bed_dermis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Dermis",
+      "of": [
+        "bed_connective_tissue",
+        "bed_nervous_tissue"
+      ],
+      "srcTitle": "Dermis",
+      "fact": "Dense connective tissue in two layers, papillary and reticular, laced with collagen and elastic fibers — its blood vessels feed the bloodless epidermis above, and its nerve endings are what let skin feel anything at all.",
+      "src": "https://en.wikipedia.org/wiki/Dermis"
+    },
+    {
+      "id": "bed_hypodermis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Hypodermis",
+      "of": [
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Subcutaneous tissue",
+      "fact": "Loose connective tissue packed with fat cells beneath the dermis — padding, an energy reserve, a layer of insulation, and the fibrous bands that anchor skin down to whatever lies underneath it.",
+      "src": "https://en.wikipedia.org/wiki/Subcutaneous_tissue"
+    },
+    {
+      "id": "bed_melanocyte",
+      "kind": "compound",
+      "tier": "cell",
+      "name": "Melanocyte",
+      "of": [
+        "bed_cell"
+      ],
+      "srcTitle": "Melanocyte",
+      "fact": "Sits in the epidermis's deepest layer and packages melanin into organelles called melanosomes, handing them off to nearby keratinocytes — the pigment is dark enough to absorb most UV light before it gets any deeper.",
+      "src": "https://en.wikipedia.org/wiki/Melanocyte"
+    },
+    {
+      "id": "bed_hair_follicle",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Hair Follicle",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Hair follicle",
+      "fact": "An organ in its own right, built around a connective-tissue papilla and its capillary loop, with a matrix of dividing cells producing new hair — a tiny arrector pili muscle attaches to it and pulls it upright, which is the entire mechanism behind a goosebump.",
+      "src": "https://en.wikipedia.org/wiki/Hair_follicle"
+    },
+    {
+      "id": "bed_sweat_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Sweat Gland",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Sweat gland",
+      "fact": "Two kinds doing different jobs: eccrine glands nearly everywhere on the body cool it by evaporating a watery sweat, while apocrine glands confined to the armpits and groin secrete a thicker fluid that bacteria turn into odor.",
+      "src": "https://en.wikipedia.org/wiki/Sweat_gland"
+    },
+    {
+      "id": "bed_sebaceous_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Sebaceous Gland",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Sebaceous gland",
+      "fact": "Attached to nearly every hair follicle, it makes sebum by holocrine secretion — the gland's own cells rupture and die to release it, an oily coating that lubricates skin and hair and helps waterproof both.",
+      "src": "https://en.wikipedia.org/wiki/Sebaceous_gland"
+    },
+    {
+      "id": "bed_nail",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Nail",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Nail (anatomy)",
+      "fact": "Hardened alpha-keratin, the same protein family as claws, hooves and horns, pushed forward continuously by a matrix of dividing cells at its root — fingernails grow about 3.5 millimeters a month, toenails roughly half that.",
+      "src": "https://en.wikipedia.org/wiki/Nail_(anatomy)"
+    },
+    {
+      "id": "bed_nephron",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Nephron",
+      "of": [
+        "bed_glomerulus",
+        "bed_renal_tubule"
+      ],
+      "srcTitle": "Nephron",
+      "fact": "The kidney's working unit, one to one and a half million per kidney — a filtering corpuscle feeding a long tubule, running filtration, reabsorption, secretion and excretion in sequence to turn blood plasma into urine.",
+      "src": "https://en.wikipedia.org/wiki/Nephron"
+    },
+    {
+      "id": "bed_glomerulus",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Glomerulus",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Glomerulus (kidney)",
+      "fact": "A tuft of capillaries packed inside Bowman's capsule at the start of every nephron — podocytes wrap each vessel and, together with the capillary wall itself, filter blood plasma into the fluid that becomes urine.",
+      "src": "https://en.wikipedia.org/wiki/Glomerulus_(kidney)"
+    },
+    {
+      "id": "bed_renal_tubule",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Renal Tubule",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Renal tubule",
+      "fact": "A long pipe of cuboidal epithelium running from Bowman's capsule through the loop of Henle to a collecting duct — its first stretch alone reclaims 80% of filtered glucose and over half the filtered salt and water.",
+      "src": "https://en.wikipedia.org/wiki/Nephron"
+    },
+    {
+      "id": "bed_ureter",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ureter",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Ureter",
+      "fact": "A 20-to-30-centimeter tube of stretch-tolerant urothelium wrapped in two, then three, layers of smooth muscle in its lower third — nothing drains through it by gravity, it is pushed toward the bladder by peristalsis alone.",
+      "src": "https://en.wikipedia.org/wiki/Ureter"
+    },
+    {
+      "id": "bed_bladder",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Bladder",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Urinary bladder",
+      "fact": "A hollow organ lined with transitional urothelium three to six cell layers deep, holding 300 to 500 milliliters before the urge to empty it starts — the detrusor, a smooth-muscle coat spiraling through the wall, is what does the emptying.",
+      "src": "https://en.wikipedia.org/wiki/Bladder"
+    },
+    {
+      "id": "bed_urethra",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Urethra",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue"
+      ],
+      "srcTitle": "Urethra",
+      "fact": "About 4 centimeters long in a woman, 18 to 20 in a man, whose urethra also carries semen — the lining shifts from transitional cells near the bladder to flatter cells near the outer opening.",
+      "src": "https://en.wikipedia.org/wiki/Urethra"
+    },
+    {
+      "id": "bed_urea",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Urea",
+      "formula": "CH4N2O",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_nitrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Urea",
+      "fact": "Assembled in the liver's urea cycle from the ammonia that amino-acid breakdown leaves behind — it makes up more than half the dissolved solids in urine, the body's main way of shedding nitrogen it can't use.",
+      "src": "https://en.wikipedia.org/wiki/Urea"
+    },
+    {
+      "id": "bed_urine",
+      "kind": "compound",
+      "tier": "fluid",
+      "name": "Urine",
+      "of": [
+        "bed_water_molecule",
+        "bed_urea"
+      ],
+      "srcTitle": "Urine",
+      "fact": "About 91 to 96% water carrying dissolved urea, salts and other metabolic leftovers — roughly a liter and a half of it a day is how the kidneys clear the bloodstream of what it doesn't need.",
+      "src": "https://en.wikipedia.org/wiki/Urine"
+    },
+    {
+      "id": "bed_testis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Testis",
+      "of": [
+        "bed_seminiferous_tubule",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Testicle",
+      "fact": "Coiled seminiferous tubules doing the sperm-making, with Leydig cells packed in the connective tissue between tubules doing something entirely different — making the testosterone that puberty runs on.",
+      "src": "https://en.wikipedia.org/wiki/Testicle"
+    },
+    {
+      "id": "bed_seminiferous_tubule",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Seminiferous Tubule",
+      "of": [
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Seminiferous tubule",
+      "fact": "Its lining is Sertoli cells, tall columnar cells nursing developing sperm cells through meiosis between them — this coiled tube inside the testis is the one place in the body spermatozoa are actually made.",
+      "src": "https://en.wikipedia.org/wiki/Seminiferous_tubule"
+    },
+    {
+      "id": "bed_epididymis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Epididymis",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Epididymis",
+      "fact": "Six meters of duct coiled onto the back of each testis, its pseudostratified lining backed by smooth muscle that thickens from head to tail — sperm arrive unable to swim or fertilize anything and spend two to six days here gaining both.",
+      "src": "https://en.wikipedia.org/wiki/Epididymis"
+    },
+    {
+      "id": "bed_vas_deferens",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Vas Deferens",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Vas deferens",
+      "fact": "No other hollow organ has a higher muscle-to-lumen ratio — three thick layers of smooth muscle wrapped around a narrow pseudostratified core, built to contract hard on ejaculation and drive sperm forward by peristalsis alone.",
+      "src": "https://en.wikipedia.org/wiki/Vas_deferens"
+    },
+    {
+      "id": "bed_seminal_vesicle",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Seminal Vesicle",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Seminal vesicle",
+      "fact": "A pair of convoluted glands behind the bladder supplying 70 to 85% of semen's volume — fructose and citric acid from its own secretion are what give sperm the fuel to keep swimming after ejaculation.",
+      "src": "https://en.wikipedia.org/wiki/Seminal_vesicles"
+    },
+    {
+      "id": "bed_prostate",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Prostate",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Prostate",
+      "fact": "Glandular tissue wrapped in fibrous and smooth-muscle connective tissue, doubling as the mechanical switch between urination and ejaculation — its own secretion makes up close to 30% of semen's volume.",
+      "src": "https://en.wikipedia.org/wiki/Prostate"
+    },
+    {
+      "id": "bed_penis",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Penis",
+      "of": [
+        "bed_connective_tissue",
+        "bed_epithelial_tissue"
+      ],
+      "srcTitle": "Penis",
+      "fact": "Two parallel corpora cavernosa and a single corpus spongiosum carrying the urethra through it — all three are blood sinusoids meshed through sheets of connective tissue, and filling those sinusoids with blood is the entire mechanism of an erection.",
+      "src": "https://en.wikipedia.org/wiki/Penis"
+    },
+    {
+      "id": "bed_ovary",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ovary",
+      "of": [
+        "bed_ovarian_follicle",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Ovary",
+      "fact": "About a million follicles are present at birth and only around one in two thousand will ever ovulate — between cycles of releasing an egg, the gland also secretes estrogen and progesterone straight into the bloodstream.",
+      "src": "https://en.wikipedia.org/wiki/Ovary"
+    },
+    {
+      "id": "bed_ovarian_follicle",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Ovarian Follicle",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Ovarian follicle",
+      "fact": "A single oocyte ringed by granulosa cells and, past a basement membrane, two further layers called the theca — roughly once a month, one follicle in the whole ovary wins the competition to release its egg.",
+      "src": "https://en.wikipedia.org/wiki/Ovarian_follicle"
+    },
+    {
+      "id": "bed_fallopian_tube",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Fallopian Tube",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Fallopian tube",
+      "fact": "Cilia on its columnar lining beat in time with muscular contractions to carry an egg from ovary to uterus — the ampulla, its widest stretch, is where a released egg is actually fertilized, not the uterus itself.",
+      "src": "https://en.wikipedia.org/wiki/Fallopian_tube"
+    },
+    {
+      "id": "bed_uterus",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Uterus",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Uterus",
+      "fact": "Three layers, inside out: endometrium, where a blastocyst implants and which is shed monthly if none does; myometrium, smooth muscle thick enough to deliver a baby; and perimetrium, a thin connective-tissue coat over the outside.",
+      "src": "https://en.wikipedia.org/wiki/Uterus"
+    },
+    {
+      "id": "bed_cervix",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Cervix",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Cervix",
+      "fact": "Smooth muscle and fibrous connective tissue around a canal lined in two kinds of epithelium — mucus output multiplies tenfold around ovulation, and the same tissue that stays rigid all cycle must dilate past 10 centimeters in labor.",
+      "src": "https://en.wikipedia.org/wiki/Cervix"
+    },
+    {
+      "id": "bed_vagina",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Vagina",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_muscle_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Vagina",
+      "fact": "A fibromuscular canal: stratified squamous epithelium inside, circular and longitudinal smooth muscle around that, and an outer connective-tissue adventitia — built to serve as birth canal, menstrual outlet and copulatory passage all at once.",
+      "src": "https://en.wikipedia.org/wiki/Vagina"
+    },
+    {
+      "id": "bed_placenta",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Placenta",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Placenta",
+      "fact": "Grows from the trophoblast, the blastocyst's own outer layer, into an organ shared by two separate circulatory systems — maternal and fetal blood exchange gases and nutrients across a barrier without ever actually mixing.",
+      "src": "https://en.wikipedia.org/wiki/Placenta"
+    },
+    {
+      "id": "bed_mammary_gland",
+      "kind": "compound",
+      "tier": "organ",
+      "name": "Mammary Gland",
+      "of": [
+        "bed_epithelial_tissue",
+        "bed_connective_tissue"
+      ],
+      "srcTitle": "Mammary gland",
+      "fact": "A modified sweat gland: alveoli of milk-secreting cells wrapped in contractile myoepithelial cells, grouped into lobules — a suckling infant triggers oxytocin, and oxytocin is what actually squeezes the milk out.",
+      "src": "https://en.wikipedia.org/wiki/Mammary_gland"
+    },
+    {
+      "id": "bed_testosterone",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Testosterone",
+      "formula": "C19H28O2",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Testosterone",
+      "fact": "Made by Leydig cells inside the testis, this steroid drives the development of the testes and prostate themselves and then keeps building on top of that — more muscle and bone mass, more body hair, most of what puberty does to a male body.",
+      "src": "https://en.wikipedia.org/wiki/Testosterone"
+    },
+    {
+      "id": "bed_estradiol",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Estradiol",
+      "formula": "C18H24O2",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Estradiol",
+      "fact": "The predominant estrogen through a woman's reproductive years, produced in ovarian follicles among other tissues — it builds breast tissue and hip width at puberty, then keeps running the menstrual cycle every month after.",
+      "src": "https://en.wikipedia.org/wiki/Estradiol"
+    },
+    {
+      "id": "bed_progesterone",
+      "kind": "compound",
+      "tier": "molecule",
+      "name": "Progesterone",
+      "formula": "C21H30O2",
+      "of": [
+        "el_carbon",
+        "el_hydrogen",
+        "el_oxygen"
+      ],
+      "srcTitle": "Progesterone",
+      "fact": "Poured out by the corpus luteum after ovulation, this steroid converts the endometrium into its secretory phase — the uterine lining a fertilized egg actually needs in order to implant at all.",
+      "src": "https://en.wikipedia.org/wiki/Progesterone"
     }
   ],
   "composition": {
@@ -3757,7 +4211,37 @@
       "bed_basophil",
       "bed_macrophage",
       "bed_eye",
-      "bed_ear"
+      "bed_ear",
+      "bed_epidermis",
+      "bed_dermis",
+      "bed_hypodermis",
+      "bed_melanocyte",
+      "bed_hair_follicle",
+      "bed_sweat_gland",
+      "bed_sebaceous_gland",
+      "bed_nail",
+      "bed_nephron",
+      "bed_ureter",
+      "bed_bladder",
+      "bed_urethra",
+      "bed_urea",
+      "bed_urine",
+      "bed_testis",
+      "bed_epididymis",
+      "bed_vas_deferens",
+      "bed_seminal_vesicle",
+      "bed_prostate",
+      "bed_penis",
+      "bed_ovary",
+      "bed_fallopian_tube",
+      "bed_uterus",
+      "bed_cervix",
+      "bed_vagina",
+      "bed_placenta",
+      "bed_mammary_gland",
+      "bed_testosterone",
+      "bed_estradiol",
+      "bed_progesterone"
     ],
     "elephant": [
       "bed_elephant_heart",
