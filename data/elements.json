@@ -10978,7 +10978,11 @@
       "plant"
     ],
     "terminal": true,
-    "fact": "Felix Hoffmann acetylated salicylic acid in 1897 using acetic anhydride. Bayer called the result aspirin."
+    "fact": "Felix Hoffmann acetylated salicylic acid in 1897 using acetic anhydride. Bayer called the result aspirin.",
+    "discovered": {
+      "year": 1897,
+      "note": "Felix Hoffmann acetylates salicylic acid at Bayer."
+    }
   },
   {
     "id": "streptomyces",
@@ -24280,7 +24284,11 @@
       "earth"
     ],
     "fact": "Sobrero made it first, in 1846, and was so alarmed by how easily it detonates he opposed weaponising it.",
-    "soleRoute": true
+    "soleRoute": true,
+    "discovered": {
+      "year": 1846,
+      "note": "Ascanio Sobrero first makes it, and is alarmed enough to oppose weaponising it."
+    }
   },
   {
     "id": "wind_shear",

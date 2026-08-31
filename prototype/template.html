@@ -6132,6 +6132,24 @@ function bedrockIdFor(gameId) {
   if (aminoById[aminoKey]) return aminoKey;
   return null;
 }
+
+// ---- timeline: real, sourced years already sitting in elements' own fact
+// text, surfaced rather than researched fresh. See DESIGN-timeline-view.md —
+// v1 on purpose: one line in the sheet that's already there, not a new view.
+const TIMELINE = elements.filter(e => e.discovered)
+  .map(e => ({ id: e.id, year: e.discovered.year }))
+  .sort((a, b) => a.year - b.year);
+function nearestInTimeHTML(id) {
+  const mine = byId[id]?.discovered;
+  if (!mine || TIMELINE.length < 2) return '';
+  const others = TIMELINE.filter(t => t.id !== id && found.has(t.id))
+    .sort((a, b) => Math.abs(a.year - mine.year) - Math.abs(b.year - mine.year))
+    .slice(0, 2).sort((a, b) => a.year - b.year);
+  if (!others.length) return '';
+  return `<p class="hint2">Around the same time: ` + others.map(o =>
+    `<span class="g" data-entry="${o.id}">${glyph(o.id, 17)} ${byId[o.id].name} (${o.year})</span>`
+  ).join(', ') + `</p>`;
+}
 const fmt = (f) => String(f).replace(/(\d+)/g, '<sub>$1</sub>');
 // The Proteins tab: the same twenty-amino-acid grid showAtom('amino_acid')
 // already draws for its own sheet, reused here rather than reinvented, one
@@ -6417,6 +6435,7 @@ function quickViewHTML(id) {
       <div class="pfrom">${e.fact}</div>
     </div>
     ${(() => { const bid = bedrockIdFor(id); const svg = bid ? moleculeSVG(bid) : ''; return svg ? `<div class="molbox">${svg}</div>` : ''; })()}
+    ${e.discovered ? `<p class="pfrom">🕐 <b>${e.discovered.year}</b> · ${e.discovered.note}</p>${nearestInTimeHTML(id)}` : ''}
     ${cautionHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
