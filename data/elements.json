@@ -5681,7 +5681,6 @@
       "water",
       "earth"
     ],
-    "terminal": true,
     "fact": "Rock, dust and frozen water, carbon dioxide, methane and ammonia. A dirty snowball."
   },
   {
@@ -5702,7 +5701,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "Mostly hydrogen and helium — over 90% by mass. Jupiter and Saturn are the two here."
   },
   {
@@ -5714,7 +5712,6 @@
       "water",
       "earth"
     ],
-    "terminal": true,
     "fact": "Only about 20% hydrogen and helium. The rest is water, ammonia and methane."
   },
   {
@@ -6614,8 +6611,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Iron's failure mode. Flaky, friable, and offering the metal underneath no protection at all.",
-    "terminal": true
+    "fact": "Iron's failure mode. Flaky, friable, and offering the metal underneath no protection at all."
   },
   {
     "id": "litharge",
@@ -10128,8 +10124,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "Niobium and hafnium, a whisper of titanium — this exact alloy steered the Apollo Lunar Module down.",
-    "terminal": true
+    "fact": "Niobium and hafnium, a whisper of titanium — this exact alloy steered the Apollo Lunar Module down."
   },
   {
     "id": "scandium_aluminum_alloy",
@@ -17244,7 +17239,6 @@
       "fire"
     ],
     "soleRoute": true,
-    "terminal": true,
     "fact": "Groundwater heated past boiling but held down by its own weight, until it flashes to steam all at once."
   },
   {
@@ -18276,7 +18270,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Watt split the condenser from the cylinder in 1769, so the cylinder never cools between strokes.",
     "soleRoute": true,
     "discovered": {
@@ -18580,7 +18573,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A struck key swings a metal bar that prints its letter, reversed on the bar, through an inked ribbon.",
     "soleRoute": true,
     "discovered": {
@@ -20127,7 +20119,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "soleRoute": true,
     "fact": "Not one network but many, glued by routers forwarding packets hop by hop."
   },
@@ -25046,7 +25037,6 @@
       "earth"
     ],
     "fact": "75% potassium nitrate, 15% charcoal, 10% sulfur — a ratio traced to its 11th-century Chinese origin.",
-    "terminal": true,
     "discovered": {
       "year": 1044,
       "note": "The earliest known written formula for it appears in the Chinese military text Wujing Zongyao."
@@ -29367,5 +29357,874 @@
     ],
     "fact": "The mid-latitude belt, 23.5° to 66.5°, where most of humanity lives through four real seasons.",
     "terminal": true
+  },
+  {
+    "id": "mercury_planet",
+    "name": "Mercury",
+    "emoji": "☿️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "70% metal by mass, giving it the largest iron core of any planet by volume — 57% of it.",
+    "terminal": true
+  },
+  {
+    "id": "venus",
+    "name": "Venus",
+    "emoji": "♀️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "96.5% carbon dioxide atmosphere traps heat so well it beats Mercury for hottest planet.",
+    "terminal": true
+  },
+  {
+    "id": "earth",
+    "name": "Earth",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The only known world with stable liquid water on its surface, covering 71% of it.",
+    "terminal": true
+  },
+  {
+    "id": "mars",
+    "name": "Mars",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Iron oxide dust rusted red over billions of years — hence the nickname, the Red Planet."
+  },
+  {
+    "id": "jupiter",
+    "name": "Jupiter",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Radiates more heat than it gets from the Sun, still shrinking from its own formation."
+  },
+  {
+    "id": "saturn",
+    "name": "Saturn",
+    "emoji": "🪐",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The only planet less dense than water — a big enough bathtub and it would float."
+  },
+  {
+    "id": "uranus_planet",
+    "name": "Uranus",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Coldest planetary atmosphere in the solar system, -224°C, though not the farthest out."
+  },
+  {
+    "id": "neptune",
+    "name": "Neptune",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Found by math before anyone saw it — Le Verrier calculated it, Galle spotted it in 1846."
+  },
+  {
+    "id": "pluto",
+    "name": "Pluto",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Largest known body in the Kuiper belt by volume, found by Clyde Tombaugh in 1930."
+  },
+  {
+    "id": "io",
+    "name": "Io",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "fact": "The most volcanically active body in the solar system, squeezed by Jupiter's tides.",
+    "terminal": true
+  },
+  {
+    "id": "europa",
+    "name": "Europa",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "An icy shell over an ocean holding two to three times the water of every ocean on Earth.",
+    "terminal": true
+  },
+  {
+    "id": "ganymede",
+    "name": "Ganymede",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Bigger than Mercury and the only moon known to make its own magnetic field.",
+    "terminal": true
+  },
+  {
+    "id": "callisto",
+    "name": "Callisto",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The most heavily cratered surface known — unchanged and un-resurfaced for 4.5 billion years.",
+    "terminal": true
+  },
+  {
+    "id": "saturn_rings",
+    "name": "Saturn's Rings",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "99.9% pure water ice, in pieces from dust grains to houses, spread out paper-thin."
+  },
+  {
+    "id": "cassini_division",
+    "name": "Cassini Division",
+    "emoji": "➗",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A 4,800 km gap Cassini spotted in 1675, swept clear by the moon Mimas's gravity."
+  },
+  {
+    "id": "titan",
+    "name": "Titan",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The only moon with a thick atmosphere, and lakes of liquid methane on its surface.",
+    "terminal": true
+  },
+  {
+    "id": "enceladus",
+    "name": "Enceladus",
+    "emoji": "⛲",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Geysers of ice erupt from its south pole, feeding Saturn's E ring, seen by Cassini in 2005.",
+    "terminal": true
+  },
+  {
+    "id": "mimas",
+    "name": "Mimas",
+    "emoji": "🌑",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "One crater a third of its own width away from looking exactly like the Death Star."
+  },
+  {
+    "id": "titania",
+    "name": "Titania",
+    "emoji": "🧚‍♀️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Uranus's largest moon, half ice half rock, scarred by a 1,500 km canyon."
+  },
+  {
+    "id": "oberon",
+    "name": "Oberon",
+    "emoji": "🧚‍♂️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Its reddish, crater-pocked face hides an unexplained 11 km peak near the south pole."
+  },
+  {
+    "id": "miranda",
+    "name": "Miranda",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Jumbled chevron terrain and a 20 km cliff suggest it was shattered and re-assembled."
+  },
+  {
+    "id": "triton",
+    "name": "Triton",
+    "emoji": "🔱",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Orbits Neptune backward — the sign of a captured world, not one born in place.",
+    "terminal": true
+  },
+  {
+    "id": "phobos",
+    "name": "Phobos",
+    "emoji": "😱",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Spiraling inward toward Mars; in 30-50 million years it will crash or shred into a ring."
+  },
+  {
+    "id": "deimos",
+    "name": "Deimos",
+    "emoji": "😨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Found six days before its sibling Phobos, and drifting away from Mars, not toward it."
+  },
+  {
+    "id": "charon",
+    "name": "Charon",
+    "emoji": "⛴️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Pluto and Charon orbit a point outside Pluto itself, each always showing the other one face."
+  },
+  {
+    "id": "ceres",
+    "name": "Ceres",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Holds 40% of the asteroid belt's mass, a quarter of it water ice, found in 1801.",
+    "terminal": true
+  },
+  {
+    "id": "eris",
+    "name": "Eris",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "27% more massive than Pluto — the discovery in 2005 that got Pluto demoted.",
+    "terminal": true
+  },
+  {
+    "id": "great_red_spot",
+    "name": "Great Red Spot",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A storm wider than Earth, tracked continuously since 1878 and still shrinking."
+  },
+  {
+    "id": "longship",
+    "name": "Longship",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "history"
+    ],
+    "fact": "Clinker-built Viking warship with one square sail of rough wool -- shallow enough to row up rivers.",
+    "soleRoute": true
+  },
+  {
+    "id": "viking",
+    "name": "Viking",
+    "emoji": "🪓",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Norse seafarers and raiders; their word vikingr is rare before the 1100s, mostly seen on runestones.",
+    "soleRoute": true
+  },
+  {
+    "id": "lanse_aux_meadows",
+    "name": "L'Anse aux Meadows",
+    "emoji": "🏕️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Norse base camp in Newfoundland, tree-ring dated to 1021 CE -- Europe's earliest footprint in the Americas.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "castle",
+    "name": "Castle",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Malbork Castle in Poland, finished 1406, is the world's largest brick castle -- walls enclosing 21 hectares.",
+    "soleRoute": true
+  },
+  {
+    "id": "moat",
+    "name": "Moat",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "A defensive ditch around a fortification, dry or water-filled, keeping siege engines off the walls.",
+    "soleRoute": true
+  },
+  {
+    "id": "drawbridge",
+    "name": "Drawbridge",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "A castle's moat-crossing bridge, pivoted at the gatehouse and winched up by chain to seal the entrance shut.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "colosseum",
+    "name": "Colosseum",
+    "emoji": "🏟️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Rome's amphitheatre, finished 80 CE, seated up to 80,000 for gladiator bouts and staged animal hunts.",
+    "soleRoute": true
+  },
+  {
+    "id": "gladiator",
+    "name": "Gladiator",
+    "emoji": "⚔️",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Rome's arena fighters; the earliest were prisoners of war, named and armed after the enemies Rome just beat.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "great_wall",
+    "name": "Great Wall of China",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "history"
+    ],
+    "fact": "Ming builders bonded its bricks with mortar of slaked lime and sticky-rice soup -- stronger than lime alone.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "caravel",
+    "name": "Caravel",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "history"
+    ],
+    "fact": "Portuguese ship with a narrow hull and lateen sails, able to sail closer to the wind than a square-rigger.",
+    "soleRoute": true
+  },
+  {
+    "id": "columbus",
+    "name": "Christopher Columbus",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "history"
+    ],
+    "fact": "Crossed the Atlantic in 1492 on a fleet including two caravels, and insisted for years he had reached Asia.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "hardtack",
+    "name": "Hardtack",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "history"
+    ],
+    "fact": "Flour, water, and salt baked into a dense unleavened cracker, dry enough to survive months at sea unspoiled.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "hoba",
+    "name": "Hoba Meteorite",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest intact meteorite ever found -- a 60-tonne iron-nickel mass a plough struck in Namibia in 1920.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "tickle",
+    "name": "Tickle",
+    "emoji": "😆",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cerebellum predicts the feel of your own touch and dampens it, which is why you can't tickle yourself.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "sneeze",
+    "name": "Sneeze",
+    "emoji": "🤧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A nerve reflex fired by nasal irritants; high-speed video has caught its plume carrying 8 meters.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "bitumen",
+    "name": "Bitumen",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Petroleum's heaviest fraction — what's left once everything lighter than 500°C boils away.",
+    "soleRoute": true
+  },
+  {
+    "id": "archimedes_screw",
+    "name": "Archimedes' Screw",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A helical blade in a tube lifts water as it turns. Traditionally credited to Archimedes, 3rd century BC.",
+    "discovered": {
+      "year": -250,
+      "note": "Traditionally credited to Archimedes, though it may predate him."
+    },
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "elephant_clock",
+    "name": "Elephant Clock",
+    "emoji": "🐘",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A sinking float trips a see-saw every half hour, dropping a ball to strike a bell. al-Jazari, 1206.",
+    "discovered": {
+      "year": 1206,
+      "note": "al-Jazari describes it in The Book of Knowledge of Ingenious Mechanical Devices."
+    }
+  },
+  {
+    "id": "crankshaft",
+    "name": "Crankshaft",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Turns circular motion into back-and-forth motion, or the reverse. al-Jazari's water-raising pump, 1206.",
+    "discovered": {
+      "year": 1206,
+      "note": "al-Jazari combines a crank with a connecting rod in a twin-cylinder water pump."
+    },
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "submarine",
+    "name": "Submarine",
+    "emoji": "🚤",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A leather-covered wooden hull, rowed underwater by oars sealed through the sides. Drebbel, 1620.",
+    "discovered": {
+      "year": 1620,
+      "note": "Drebbel demonstrates the first navigable submarine beneath the Thames."
+    }
+  },
+  {
+    "id": "thermostat",
+    "name": "Thermostat",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Expanding mercury pushes a lever that closes a damper — an early feedback-controlled device. Drebbel, 1620s.",
+    "discovered": {
+      "year": 1620,
+      "note": "Drebbel builds a self-regulating mercury thermostat for a chicken incubator."
+    },
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "lightning_rod",
+    "name": "Lightning Rod",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A grounded iron point gives a stroke somewhere safe to go instead of the building beneath it. Franklin, 1752.",
+    "discovered": {
+      "year": 1752,
+      "note": "Franklin proposes the pointed, grounded lightning rod."
+    }
+  },
+  {
+    "id": "bifocals",
+    "name": "Bifocals",
+    "emoji": "👓",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Two lenses' halves set in one frame, near vision below and far above. Franklin is generally credited, by 1784.",
+    "discovered": {
+      "year": 1784,
+      "note": "Franklin is generally credited with combining two half-lenses in one frame."
+    },
+    "soleRoute": true
+  },
+  {
+    "id": "centrifugal_governor",
+    "name": "Centrifugal Governor",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "terminal": true,
+    "fact": "Spinning flyweights swing outward as speed rises and choke the throttle. Watt, 1788.",
+    "discovered": {
+      "year": 1788,
+      "note": "Watt adapts the flyball governor, already used on windmills, to regulate his steam engine."
+    },
+    "soleRoute": true
+  },
+  {
+    "id": "heliography",
+    "name": "Heliography",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Bitumen hardens where light strikes it; washing off the rest leaves the world's first photo. Niépce, c.1827.",
+    "discovered": {
+      "year": 1827,
+      "note": "Niépce fixes a permanent image on a bitumen-coated pewter plate."
+    }
+  },
+  {
+    "id": "antiseptic_dressing",
+    "name": "Antiseptic Dressing",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "fact": "Cotton soaked in undiluted carbolic acid, packed onto a wound. Lister's first case, 1865.",
+    "discovered": {
+      "year": 1865,
+      "note": "Lister soaks cotton dressings in carbolic acid to treat a compound fracture."
+    },
+    "soleRoute": true
+  },
+  {
+    "id": "blasting_cap",
+    "name": "Blasting Cap",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "hazard"
+    ],
+    "terminal": true,
+    "fact": "A small charge that detonates a bigger one it can't ignite by itself. Nobel adds mercury fulminate, 1867.",
+    "discovered": {
+      "year": 1867,
+      "note": "Nobel packs mercury fulminate into a copper capsule to reliably detonate nitroglycerin."
+    },
+    "soleRoute": true
+  },
+  {
+    "id": "automobile",
+    "name": "Automobile",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A single-cylinder engine bolted to a three-wheeled carriage — the first car built for sale. Benz, 1885–86.",
+    "discovered": {
+      "year": 1886,
+      "note": "Benz patents the Motorwagen, the first automobile put into production."
+    }
+  },
+  {
+    "id": "metal_detector",
+    "name": "Metal Detector",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Two induction coils balance against each other until metal nearby throws them off. Bell, 1881.",
+    "discovered": {
+      "year": 1881,
+      "note": "Bell builds an induction-balance detector searching for the bullet in President Garfield."
+    }
+  },
+  {
+    "id": "tesla_coil",
+    "name": "Tesla Coil",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Two coils tuned to the same resonant frequency step a spark-gap pulse up to very high voltage. Tesla, 1891.",
+    "discovered": {
+      "year": 1891,
+      "note": "Tesla patents his resonant air-core transformer circuit."
+    }
+  },
+  {
+    "id": "ac_induction_motor",
+    "name": "AC Induction Motor",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A rotating magnetic field drags an unpowered rotor around with it — no brushes needed. Tesla, 1887–88.",
+    "discovered": {
+      "year": 1888,
+      "note": "Tesla patents his alternating-current induction motor."
+    }
+  },
+  {
+    "id": "autogyro",
+    "name": "Autogyro",
+    "emoji": "🚁",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A propeller pulls it forward while an unpowered rotor autorotates and lifts it. de la Cierva, 1923.",
+    "discovered": {
+      "year": 1923,
+      "note": "de la Cierva flies the first autogyro, lifted by an unpowered, freely autorotating rotor."
+    }
+  },
+  {
+    "id": "liquid_fuel_rocket",
+    "name": "Liquid-Fuel Rocket",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Ethanol and liquid oxygen burn through an alloy nozzle built to survive it. Von Braun's V-2, 1942.",
+    "discovered": {
+      "year": 1942,
+      "note": "Von Braun's V-2, burning ethanol and liquid oxygen, becomes the first rocket to reach space."
+    }
+  },
+  {
+    "id": "enigma_machine",
+    "name": "Enigma Machine",
+    "emoji": "🔐",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": false,
+    "fact": "A keyboard and wired rotors light one of 26 lamps per keystroke, a different letter. Scherbius, 1918.",
+    "discovered": {
+      "year": 1918,
+      "note": "Scherbius patents the rotor cipher machine."
+    },
+    "soleRoute": true
+  },
+  {
+    "id": "bombe",
+    "name": "Bombe",
+    "emoji": "🔍",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Electromechanical drums replicate dozens of Enigma rotor settings at once, ruling most out. Turing, 1939.",
+    "discovered": {
+      "year": 1939,
+      "note": "Turing designs the British bombe at Bletchley Park to find the Enigma's daily settings."
+    }
+  },
+  {
+    "id": "mercaptopurine",
+    "name": "Mercaptopurine",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "A purine ring with sulfur where guanine has oxygen — it jams DNA synthesis in dividing cells. Elion, 1953.",
+    "discovered": {
+      "year": 1953,
+      "note": "Elion and Hitchings develop it at Burroughs Wellcome as the first chemotherapy for childhood leukemia."
+    }
+  },
+  {
+    "id": "hypertext",
+    "name": "Hypertext",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Text wired with links a reader can jump through, instead of reading straight down the page. Nelson, 1965.",
+    "soleRoute": true
+  },
+  {
+    "id": "world_wide_web",
+    "name": "World Wide Web",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Berners-Lee married hypertext to the Internet: one naming scheme, one protocol, one markup language. 1989–91.",
+    "discovered": {
+      "year": 1990,
+      "note": "Berners-Lee builds HTTP, HTML, the URL and the first browser and server at CERN."
+    }
   }
 ]

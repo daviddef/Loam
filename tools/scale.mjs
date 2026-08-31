@@ -254,6 +254,10 @@ const SCALE = {
           'ultraviolet', 'lichtenberg_figure',
           // careers batch 1 — real hand tools, the same rack as knife/rope
           'chisel', 'stethoscope', 'dental_drill', 'compass', 'fire_hose', 'chalk',
+          // great inventors batch 1 — hand-scale devices and materials
+          'bitumen', 'crankshaft', 'thermostat', 'bifocals', 'centrifugal_governor',
+          'heliography', 'antiseptic_dressing', 'blasting_cap', 'metal_detector',
+          'tesla_coil', 'mercaptopurine',
           // big idea science batch 1 — hand-sample-scale mineral/material specimens
           'fluorescent_mineral', 'aerogel',
           // seven wonders batch 1 — gold-and-ivory sculpting technique, a material not a structure
@@ -396,6 +400,10 @@ const SCALE = {
           'izanagi', 'izanami', 'amaterasu', 'susanoo', 'tsukuyomi', 'kagutsuchi', 'inari',
           'ryujin', 'fujin', 'raijin', 'hachiman', 'tenjin', 'uke_mochi', 'mikaboshi',
           'ame_no_uzume', 'sarutahiko', 'fox',
+          // did you know batch 1 — human-scale people, structures, and a genuinely
+          // vehicle-scale meteorite (the largest single intact one known)
+          'moat', 'drawbridge', 'viking', 'columbus', 'gladiator', 'tickle', 'sneeze',
+          'hardtack', 'hoba',
           // super-nature batch 1 — medium-animal scale, same rack as fox
           'aardvark', 'beaver', 'pronghorn', 'satin_bowerbird', 'leatherback_turtle',
           'electric_eel', 'coconut_crab',
@@ -415,6 +423,10 @@ const SCALE = {
           // conceptual/institutional entries with no literal size, same convention
           // natural_selection already uses at this same human/appliance scale
           'fuel_cell', 'als', 'echolocation', 'biomimicry', 'frozen_zoo',
+          // great inventors batch 1 — appliance/vehicle-scale devices and 2 abstractions
+          'archimedes_screw', 'elephant_clock', 'submarine', 'lightning_rod', 'automobile',
+          'ac_induction_motor', 'autogyro', 'liquid_fuel_rocket', 'enigma_machine', 'bombe',
+          'hypertext', 'world_wide_web',
           // poisonous plants batch 1 — herb/shrub/vine-scale toxic and psychoactive
           // plants, the same rack as foxglove/cactus/willow above
           'deadly_nightshade', 'poison_hemlock', 'water_hemlock', 'castor_bean', 'oleander',
@@ -492,6 +504,8 @@ const SCALE = {
           'yew', 'strychnine_tree', 'horse_chestnut', 'betel_nut', 'san_pedro_cactus',
           // seven wonders batch 1 — statue/gate-scale monuments, tens of metres
           'statue_of_zeus', 'colossus_of_rhodes', 'ishtar_gate',
+          // did you know batch 1 — ship- and settlement-scale, tens of metres
+          'longship', 'caravel', 'lanse_aux_meadows',
           'climax_community', 'food_chain',
           'basking_shark', 'megamouth_shark', 'great_white_shark', 'thresher_shark', 'goblin_shark',
           'manta_ray', 'tiger_shark', 'orca', 'great_hammerhead', 'giant_squid', 'lions_mane_jellyfish', 'whale_shark',
@@ -524,6 +538,8 @@ const SCALE = {
           // seven wonders batch 1 — hundred-metre-plus ancient monuments
           'great_pyramid', 'lighthouse_of_alexandria', 'mausoleum_halicarnassus',
           'temple_of_artemis', 'ziggurat', 'hanging_gardens',
+          // did you know batch 1 — hundred-metre-plus historical structures
+          'castle', 'colosseum',
           'port_stockpile', 'stacker_reclaimer', 'ship_loader',
           'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
@@ -583,6 +599,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
+          // did you know batch 1 — thousands of kilometres long, same regional scale
+          'great_wall',
           // weather batch 2 — storm-system and climate-zone scale, same as storm/hurricane above
           'supercell', 'monsoon', 'anticyclone', 'low_pressure', 'warm_front', 'cold_front',
           'tropical_climate', 'arid_climate', 'temperate_climate',
@@ -606,7 +624,13 @@ const SCALE = {
           'supercluster', 'supermassive_black_hole', 'accretion_disc', 'active_galaxy',
           'quasar', 'seyfert_galaxy', 'radio_galaxy', 'exoplanet', 'cepheid_variable',
           'spectrum', 'redshift', 'dark_energy', 'dark_matter', 'cosmic_microwave_background',
-          'globular_cluster', 'orion_nebula', 'pleiades'],
+          'globular_cluster', 'orion_nebula', 'pleiades',
+          // planets batch 1 — the Sun's own planets, real moons, and ring systems,
+          // same ceiling scale as planet/gas_giant/ice_giant above
+          'mercury_planet', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus_planet',
+          'neptune', 'pluto', 'io', 'europa', 'ganymede', 'callisto', 'saturn_rings',
+          'cassini_division', 'titan', 'enceladus', 'mimas', 'titania', 'oberon',
+          'miranda', 'triton', 'phobos', 'deimos', 'charon', 'ceres', 'eris', 'great_red_spot'],
 };
 
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };

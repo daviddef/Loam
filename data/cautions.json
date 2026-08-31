@@ -1044,6 +1044,14 @@
       ],
       "severity": "acute"
     },
+    "blasting_cap_hazard": {
+      "label": "A detonator's whole job is to go off from a small shock",
+      "note": "Mercury fulminate and other primary explosives used in blasting caps detonate from a shock or friction far too small to set off the explosive charge they trigger — that sensitivity is the point of a detonator, and it is also why they are made and stored in tiny quantities, kept apart from the explosive itself until the moment of use. This is licensed industrial chemistry, not something to make or handle.",
+      "ids": [
+        "blasting_cap"
+      ],
+      "severity": "acute"
+    },
     "tropane_alkaloid_poisoning": {
       "label": "Deadly nightshade, datura and angel's trumpet are true poisons",
       "note": "Atropa belladonna, Datura stramonium and Brugmansia all carry tropane alkaloids (atropine, scopolamine, hyoscyamine) in every tissue, seeds and root most concentrated. Symptoms include dilated pupils, dry mouth, delirium, tachycardia and hallucinations; a fatal adult dose can be as few as 10-20 seeds' worth. Severe intoxication is a medical emergency treated with physostigmine.",
