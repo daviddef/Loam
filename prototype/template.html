@@ -8258,11 +8258,20 @@ function regressionTest() {
   const check = (label, pass) => checks.push({ label, pass: !!pass });
 
   // decayImpact: a real reachability-diff, not a flood-fill. DNA sits
-  // upstream of a long, single-route chain to human — every one of those
-  // links should break. ("take away the dna and the human cannot exist" —
-  // this is the literal claim the mechanic exists to demonstrate.)
+  // upstream of a long, single-route chain through zygote/embryo/fetus —
+  // every one of those links should break outright. Human itself used to
+  // break too ("take away the dna and the human cannot exist" — the
+  // original literal claim), but an early-people batch gave human a
+  // second real route (homo_heidelbergensis+sun, the evolutionary lineage
+  // rather than individual gestation) that doesn't pass through dna at
+  // all — so removing dna now genuinely only starves human, the same
+  // "real redundancy survives" case already covered below for giraffe.
+  // That is the correct, truthful answer for the graph as it now stands,
+  // not a regression: the mechanic telling starved apart from broken is
+  // exactly the point, and now has a second real-content example of it.
   const dna = decayImpact('dna');
-  check('decay: removing dna breaks human', dna.broken.has('human'));
+  check('decay: removing dna starves human (a second real route survives)',
+    dna.starved.has('human') && !dna.broken.has('human'));
   check('decay: removing dna breaks the whole zygote->fetus chain',
     ['zygote', 'embryo', 'fetus'].every(x => dna.broken.has(x)));
 

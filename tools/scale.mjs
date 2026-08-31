@@ -121,6 +121,8 @@ const SCALE = {
           'cashew', 'pistachio', 'pecan', 'hazelnut', 'macadamia', 'veal', 'lamb', 'nacre', 'sinew', 'bast_fibre', 'capsicum', 'quartz', 'feldspar', 'mica', 'corundum', 'diamond', 'ruby', 'sapphire', 'emerald', 'opal', 'copper_sulfide', 'zinc_sulfide', 'lead_sulfide', 'tarnish', 'rust', 'tungsten_carbide', 'calcium_carbide', 'titanium_nitride', 'p_type', 'n_type', 'diode', 'led', 'transistor', 'capacitor', 'accelerometer', 'photodiode', 'click_wheel', 'flash_memory', 'thin_film_transistor', 'liquid_crystal_cell', 'liquid_crystal', 'laser_diode', 'ccd_sensor', 'fingerprint_scanner', 'lodestone', 'filament', 'nichrome', 'coin', 'nail', 'needle', 'solder', 'galalith', 'manganese', 'cobalt', 'tungsten', 'molybdenum', 'vanadium', 'cadmium', 'palladium', 'rhodium', 'iridium', 'osmium', 'ruthenium', 'rhenium', 'hafnium', 'zirconium', 'tantalum', 'niobium', 'scandium', 'yttrium', 'lithium', 'caesium', 'rubidium', 'beryllium', 'strontium', 'barium', 'radium', 'thorium', 'plutonium', 'polonium', 'bismuth', 'cerium', 'lanthanum', 'neodymium', 'samarium', 'europium', 'gadolinium', 'promethium', 'silicon', 'boron', 'arsenic', 'selenium', 'antimony', 'germanium', 'tellurium', 'iodine', 'fluorite', 'borax', 'pyrolusite', 'molybdenite', 'osmiridium', 'pollucite', 'monazite', 'rare_earth', 'baryte', 'palladium_hydride', 'bismuth_telluride', 'yag', 'ferrocerium',
           // textiles batch 1 — a hand-sample mineral, the same rack as borax/fluorite
           'alum',
+          // early-people batch 1 — a ground earth pigment, the same hand-sample scale as hematite/pyrite
+          'ochre',
           'pyrite', 'hematite', 'magnetite', 'graphite', 'calcite', 'malachite', 'azurite', 'gypsum', 'olivine', 'garnet', 'beryl', 'aquamarine', 'serpentine',
           'bauxite', 'spodumene', 'bastnasite',
           // gemstones batch 1 — hand-sample mineral specimens, the same rack as
@@ -223,6 +225,8 @@ const SCALE = {
           // large-intestine batch 1 — organ-scale body parts and gut-physiology concepts, same rack
           // as cecum/rumen/pancreas above and mutualism/decomposer below
           'large_intestine', 'colon', 'haustra', 'rectum', 'appendix', 'peristalsis', 'gut_flora',
+          // early-people batch 1 — hand-worked stone and wooden tools, the same rack as knife/rope/horn/antler
+          'oldowan_tool', 'acheulean_handaxe', 'fire_drill', 'bow_drill', 'venus_figurine', 'atlatl',
           'current', 'magnetic_field', 'barometer', 'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
           // textiles batch 1 — hand tools, prepared crops and finished fabric, the same rack as knife/cloth/silk
           'wool_card', 'felt', 'spindle', 'flying_shuttle', 'knitting_needles', 'knitted_fabric', 'indigo', 'madder', 'dyed_cloth', 'coal_tar', 'wood_tar', 'ethanol', 'bakelite', 'polyethylene', 'snow', 'smoke', 'ozone', 'air', 'loess', 'fulgurite', 'bone_char', 'bottle', 'blackware', 'stockfish', 'chlorine', 'fluorine', 'bromine', 'argon', 'krypton', 'xenon', 'noble_mix', 'kelp', 'book', 'fetus', 'maize', 'barley', 'oat', 'carrot', 'lettuce', 'pumpkin', 'beet', 'banana', 'brewed_coffee', 'cocoa', 'duck', 'turkey', 'koala', 'platypus', 'lizard', 'turtle', 'cloth', 'clothing', 'paper', 'pulp', 'flax', 'water', 'mud', 'soil', 'tempered_clay', 'concrete', 'fire', 'steam',
@@ -368,6 +372,8 @@ const SCALE = {
           'red_fox', 'coyote', 'african_wild_dog',
           'polar_bear', 'giant_panda', 'sun_bear',
           'gorilla', 'chimpanzee', 'orangutan',
+          // early-people batch 1 — hominin species and a wall-sized cave painting, human/idol scale like human/gorilla, and a low dwelling, boat-sized like the vehicles above
+          'australopithecus_afarensis', 'homo_habilis', 'homo_erectus', 'homo_heidelbergensis', 'homo_neanderthalensis', 'cave_painting', 'mammoth_bone_hut',
           'king_cobra', 'komodo_dragon',
           // railways batch 1 — metre-scale machine parts and infrastructure units
           'piston', 'axle', 'bogie', 'coupler', 'sleeper', 'block_signal',
@@ -385,7 +391,9 @@ const SCALE = {
           'tide_pool',
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
-  '1':   [// mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
+  '1':   [// early-people batch 1 — a woolly mammoth, elephant-scale
+          'mammoth',
+          // mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
           // scale, the same bucket as drilling_rig/ball_mill/haul_truck above
           'exploration_drilling', 'bench', 'blasting', 'excavator', 'grade_control',
           'magnetic_separation', 'gravity_separation', 'road_freight', 'car_dumper',

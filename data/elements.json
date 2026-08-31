@@ -7605,7 +7605,7 @@
       "animal",
       "wild"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Dentine from a tusk that never stopped growing. Polished, it shows a crosshatch nothing else has."
   },
   {
@@ -25482,5 +25482,178 @@
     "terminal": true,
     "fact": "Keratin scutes from a hawksbill sea turtle's carapace — the trade nearly took the species with it, and is now banned worldwide.",
     "soleRoute": true
+  },
+  {
+    "id": "australopithecus_afarensis",
+    "name": "Australopithecus afarensis",
+    "emoji": "🦶",
+    "shelf": "workshop",
+    "tags": [
+      "hominin"
+    ],
+    "fact": "Walked upright by 3.7 million years ago -- the Laetoli footprints prove it -- with a brain a third our size.",
+    "soleRoute": true
+  },
+  {
+    "id": "homo_habilis",
+    "name": "Homo habilis",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "hominin"
+    ],
+    "fact": "‘Handy man’ -- the first Homo species, named for knapping the Oldowan stone tools that made it famous.",
+    "soleRoute": true
+  },
+  {
+    "id": "homo_erectus",
+    "name": "Homo erectus",
+    "emoji": "🪓",
+    "shelf": "workshop",
+    "tags": [
+      "hominin"
+    ],
+    "fact": "First hominin with a humanlike stride, and the first to walk out of Africa into Asia and Europe.",
+    "soleRoute": true
+  },
+  {
+    "id": "homo_heidelbergensis",
+    "name": "Homo heidelbergensis",
+    "emoji": "🏕️",
+    "shelf": "workshop",
+    "tags": [
+      "hominin"
+    ],
+    "fact": "Big-brained, organized big-game hunter, likely ancestor of both Neanderthals and modern humans.",
+    "soleRoute": true
+  },
+  {
+    "id": "homo_neanderthalensis",
+    "name": "Homo neanderthalensis",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "hominin"
+    ],
+    "fact": "Stocky and cold-built for Ice Age Europe. Buried its dead, and left DNA in most people alive outside Africa.",
+    "soleRoute": true
+  },
+  {
+    "id": "oldowan_tool",
+    "name": "Oldowan Tool",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The oldest recognized stone-tool kit: sharp flakes struck off a stone core with a hammerstone, nothing more.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "acheulean_handaxe",
+    "name": "Acheulean Handaxe",
+    "emoji": "🔻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A teardrop struck symmetrically from both faces of a stone core -- the same design used for 1.5 million years.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "fire_drill",
+    "name": "Fire Drill",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "Spin a wooden shaft against a wooden board by hand until the hot dust it grinds off glows into an ember.",
+    "soleRoute": true
+  },
+  {
+    "id": "bow_drill",
+    "name": "Bow Drill",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "A cord wound around the spindle and driven by a bow turns hand-spinning into fast, steady strokes.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "ochre",
+    "name": "Ochre",
+    "emoji": "🟧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An iron-rich earth pigment, red from hematite, ground fine enough to paint or stain skin.",
+    "soleRoute": true
+  },
+  {
+    "id": "cave_painting",
+    "name": "Cave Painting",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "art"
+    ],
+    "fact": "Animal figures in mineral pigment on cave walls, like those at Lascaux and Altamira.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "venus_figurine",
+    "name": "Venus Figurine",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "art"
+    ],
+    "fact": "Faceless, wide-hipped female carvings found from Spain to Russia, most made 26,000 to 21,000 years ago.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "atlatl",
+    "name": "Atlatl",
+    "emoji": "🪃",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A hooked shaft that extends the throwing arm, hurling a dart far harder than any bare hand can.",
+    "terminal": true
+  },
+  {
+    "id": "mammoth",
+    "name": "Woolly Mammoth",
+    "emoji": "🦣",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A tundra grazer built for cold -- shaggy coat, curved tusks -- eating roughly 180 kg of grass and sedge a day.",
+    "soleRoute": true
+  },
+  {
+    "id": "mammoth_bone_hut",
+    "name": "Mammoth-Bone Hut",
+    "emoji": "⛺",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A dome of mammoth bones and tusks, weighted and covered with hide, on treeless Ice Age steppe.",
+    "terminal": true
   }
 ]

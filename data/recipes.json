@@ -30554,5 +30554,185 @@
     "why": "Tortoiseshell is keratin, cut from the carapace scutes of mainly the hawksbill sea turtle — exploitation for exactly this trade helped push the species to critically endangered, and it has been banned in most countries since the 1970s.",
     "src": "https://en.wikipedia.org/wiki/Tortoiseshell",
     "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "bone"
+    ],
+    "out": "australopithecus_afarensis",
+    "why": "As East African forest gave way to grassland, early hominins spent more time foraging and scavenging bones on the ground -- a shift that favoured walking upright. Australopithecus afarensis, like ‘Lucy’, lived 3.9 to 2.9 million years ago.",
+    "src": "https://en.wikipedia.org/wiki/Australopithecus_afarensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "australopithecus_afarensis",
+      "flint"
+    ],
+    "out": "homo_habilis",
+    "why": "Around 2.4 million years ago, Australopithecus gave rise to the genus Homo. Its first species, Homo habilis -- ‘handy man’ -- is defined by knapping flint and other stone into the Oldowan industry, the earliest recognized stone tools.",
+    "src": "https://en.wikipedia.org/wiki/Homo_habilis",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_habilis",
+      "flint"
+    ],
+    "out": "homo_erectus",
+    "why": "By about 1.9 million years ago, Homo erectus had a markedly bigger brain and body than Homo habilis, and struck flint and stone into a new kind of tool, the bifacial Acheulean handaxe. Its humanlike stride made it the first hominin to leave Africa.",
+    "src": "https://en.wikipedia.org/wiki/Homo_erectus",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_erectus",
+      "spear"
+    ],
+    "out": "homo_heidelbergensis",
+    "why": "By around 700,000 years ago, an African population of Homo erectus had evolved into Homo heidelbergensis, a bigger-brained hunter of large game whose people made the 300,000-year-old wooden spears found at Schöningen, Germany.",
+    "src": "https://en.wikipedia.org/wiki/Homo_heidelbergensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_heidelbergensis",
+      "glacier"
+    ],
+    "out": "homo_neanderthalensis",
+    "why": "Homo heidelbergensis populations that stayed in Ice Age Europe grew stockier and cold-adapted as glaciers advanced and retreated, becoming Homo neanderthalensis. Neanderthals buried their dead, and later interbred with the Homo sapiens who reached Europe.",
+    "src": "https://en.wikipedia.org/wiki/Neanderthal",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_heidelbergensis",
+      "sun"
+    ],
+    "out": "human",
+    "why": "The African branch of Homo heidelbergensis (sometimes called Homo rhodesiensis) that stayed on the warm continent, rather than spreading into Ice Age Europe, evolved into Homo sapiens by at least 300,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Homo_sapiens",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_habilis",
+      "stone"
+    ],
+    "out": "oldowan_tool",
+    "why": "Homo habilis produced the Oldowan industry, the oldest recognized stone-tool tradition, from about 2.9 to 1.7 million years ago: a hammerstone struck against a stone core to knock off sharp flakes for butchering meat and crushing bone.",
+    "src": "https://en.wikipedia.org/wiki/Oldowan",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_erectus",
+      "flint"
+    ],
+    "out": "acheulean_handaxe",
+    "why": "Homo erectus invented the Acheulean industry by at least 1.95 million years ago: flakes struck from both faces of a flint or stone core left a symmetrical, teardrop-shaped edge -- the longest-used tool design in human history.",
+    "src": "https://en.wikipedia.org/wiki/Hand_axe",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_erectus",
+      "wood"
+    ],
+    "out": "fire_drill",
+    "why": "The simplest friction fire-starting method needs no rope or bow: a thin wooden shaft is spun by hand against a wooden hearth board until the hot dust it grinds off glows into an ember.",
+    "src": "https://en.wikipedia.org/wiki/Fire_making",
+    "supported": true
+  },
+  {
+    "in": [
+      "fire_drill",
+      "leather"
+    ],
+    "out": "bow_drill",
+    "why": "Wind a leather cord around the same spindle used in a hand drill and drive it with a bow instead: longer, easier strokes spin the shaft faster and protect the palms, working in conditions too poor for hand-spinning alone.",
+    "src": "https://en.wikipedia.org/wiki/Fire_making",
+    "supported": true
+  },
+  {
+    "in": [
+      "hematite",
+      "clay"
+    ],
+    "out": "ochre",
+    "why": "Ochre is a natural earth pigment: hematite gives it a red streak, mixed through clay and sand. Ground fine, it is the pigment humans have used for painting and body decoration for at least 300,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Ochre",
+    "verified": true
+  },
+  {
+    "in": [
+      "ochre",
+      "cavern"
+    ],
+    "out": "cave_painting",
+    "why": "The animal paintings on the walls of caves like Chauvet (about 35,000 years old), Lascaux (about 17,000), and Altamira (about 15,500) were made with ochre and other mineral pigments, sometimes blown onto the rock through a hollow bone.",
+    "src": "https://en.wikipedia.org/wiki/Cave_painting",
+    "verified": true
+  },
+  {
+    "in": [
+      "flint",
+      "ivory"
+    ],
+    "out": "venus_figurine",
+    "why": "Small carved female figures -- ‘Venus figurines’ -- were shaped from mammoth ivory, bone, or soft stone using flint tools. Most date from the Gravettian period, 26,000 to 21,000 years ago, and are found from Spain to Russia.",
+    "src": "https://en.wikipedia.org/wiki/Venus_figurine",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "wood"
+    ],
+    "out": "atlatl",
+    "why": "A spear-thrower is a wooden shaft with a hook or cup at the end that engages the butt of a dart, extending the throwing arm for far more force. Homo sapiens used them from at least the Upper Paleolithic, about 30,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Spear-thrower",
+    "supported": true
+  },
+  {
+    "in": [
+      "human",
+      "antler"
+    ],
+    "out": "atlatl",
+    "why": "The oldest known spear-thrower, about 17,500 years old, was carved from reindeer antler and found at Combe Saunière in France -- one of many made from bone or antler rather than plain wood.",
+    "src": "https://en.wikipedia.org/wiki/Spear-thrower",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "glacier"
+    ],
+    "out": "mammoth",
+    "why": "Woolly mammoths grazed the mammoth steppe, the cold, dry tundra-grassland that spread across Ice Age Eurasia and North America -- a six-tonne adult ate roughly 180 kg of grasses and sedges a day.",
+    "src": "https://en.wikipedia.org/wiki/Woolly_mammoth",
+    "verified": true
+  },
+  {
+    "in": [
+      "homo_neanderthalensis",
+      "mammoth"
+    ],
+    "out": "mammoth_bone_hut",
+    "why": "On the treeless East European Plain, both Neanderthals and modern humans built dome-shaped dwellings from mammoth bones -- long bones and skulls for the frame, tusks for the entrance -- weighted down and covered with hide.",
+    "src": "https://en.wikipedia.org/wiki/Woolly_mammoth",
+    "supported": true
+  },
+  {
+    "in": [
+      "human",
+      "mammoth"
+    ],
+    "out": "mammoth_bone_hut",
+    "why": "More than 70 mammoth-bone dwellings have been found on the East European Plain. Some were built by modern humans who entered Europe 30,000 to 40,000 years ago, continuing a practice already established by Neanderthals.",
+    "src": "https://en.wikipedia.org/wiki/Woolly_mammoth",
+    "supported": true
   }
 ]
