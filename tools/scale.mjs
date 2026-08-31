@@ -157,7 +157,9 @@ const SCALE = {
           'fossil',
           // domestic-cat batch 1 — hand-sample body parts, the same rack as bone/muscle/claw/nerve
           'cartilage', 'whisker', 'floating_clavicle', 'retractable_claw', 'tapetum_lucidum',
-          'barbed_tongue', 'vomeronasal_organ', 'slit_pupil'],
+          'barbed_tongue', 'vomeronasal_organ', 'slit_pupil',
+          // seashore batch 1 — small shelled intertidal animals, the same cm-scale rack as shrimp/seahorse/snail/shell
+          'barnacle', 'periwinkle', 'limpet', 'chiton', 'whelk', 'hermit_crab', 'sand_dollar', 'porcelain_crab'],
   '-1':  [// mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
           // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
           'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
@@ -256,7 +258,9 @@ const SCALE = {
           // norse gods batch 1 — hand-tool and small-object scale, the same rack as rope/shoe/horn
           'raven', 'hammer', 'rune',
           // evolution batch 1 — a museum-specimen fossil and a living animal, same rack as archaeopteryx/fish
-          'transitional_fossil', 'living_fossil'],
+          'transitional_fossil', 'living_fossil',
+          // seashore batch 1 — hand-sized shore animals and shore seaweed fronds, same rack as crab/oyster/kelp
+          'mussel', 'sea_star', 'brittle_star', 'razor_clam', 'bladder_wrack', 'sea_lettuce'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
@@ -331,7 +335,9 @@ const SCALE = {
           'propeller', 'compressor', 'combustor', 'turbine', 'jet_engine', 'turbofan',
           // brain batch 1 — nervous-system-level organ systems, whole-body scale like human
           'peripheral_nervous_system', 'central_nervous_system', 'nervous_system',
-          'autonomic_nervous_system', 'sympathetic_nervous_system', 'parasympathetic_nervous_system'],
+          'autonomic_nervous_system', 'sympathetic_nervous_system', 'parasympathetic_nervous_system',
+          // seashore batch 1 — a rock pool a person looks down into, the same viewed-object scale as human/sea_otter
+          'tide_pool'],
   '1':   [// mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
           // scale, the same bucket as drilling_rig/ball_mill/haul_truck above
           'exploration_drilling', 'bench', 'blasting', 'excavator', 'grade_control',
@@ -390,7 +396,9 @@ const SCALE = {
           // medical-technology batch 1 — a skyscraper as drawn, hundreds of metres tall
           'skyscraper',
           // aviation batch 1 — an airship envelope (the Hindenburg was 245m) and a big airfield building, hundreds of metres
-          'airship', 'hangar', 'taxiway'],
+          'airship', 'hangar', 'taxiway',
+          // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
+          'intertidal_zone'],
   '3':   [// mining comprehensive batch — a slurry pipeline running tens of kilometres, km scale like the pit
           'slurry_pipeline',
           'atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
@@ -407,7 +415,9 @@ const SCALE = {
           // railways batch 1 — a classification yard's full ladder of tracks, km scale
           'rail_yard',
           // aviation batch 1 — a major runway can run 3-4 km, km scale like the yard above it
-          'runway'],
+          'runway',
+          // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
+          'tide'],
   '4':   ['rift_valley', 'trench',
           // medical-technology batch 1 — the LHC's 27 km ring
           'hadron_collider',

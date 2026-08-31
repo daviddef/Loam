@@ -28905,4 +28905,175 @@
     "src": "https://en.wikipedia.org/wiki/Scottish_Fold",
     "verified": true
   }
+,
+  {
+    "in": [
+      "moon",
+      "sea"
+    ],
+    "out": "tide",
+    "why": "Twice a day the sea rises and falls along the shore, a tide raised mainly by the Moon's gravity pulling the ocean into a bulge, with the Sun adding a smaller pull of its own.",
+    "src": "https://en.wikipedia.org/wiki/Tide",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "tide"
+    ],
+    "out": "intertidal_zone",
+    "why": "Between the highest and lowest reach of the tide lies a band that floods and drains twice a day. On a rocky shore it runs from barnacles at the top, down through wrack seaweeds, to the kelp only the lowest tides uncover.",
+    "src": "https://en.wikipedia.org/wiki/Intertidal_zone",
+    "supported": true
+  },
+  {
+    "in": [
+      "intertidal_zone",
+      "water"
+    ],
+    "out": "tide_pool",
+    "why": "Water left behind in a rocky hollow when the tide retreats becomes its own miniature sea, where temperature, saltiness, and oxygen can swing wildly until the tide returns to refresh it.",
+    "src": "https://en.wikipedia.org/wiki/Tide_pool",
+    "supported": true
+  },
+  {
+    "in": [
+      "intertidal_zone",
+      "shell"
+    ],
+    "out": "barnacle",
+    "why": "Despite the shell, a barnacle is a crustacean, not a mollusk: it cements its head to the rock for life and beats six pairs of feathery legs, called cirri, to kick passing food into its mouth.",
+    "src": "https://en.wikipedia.org/wiki/Barnacle",
+    "supported": true
+  },
+  {
+    "in": [
+      "shell",
+      "tide"
+    ],
+    "out": "mussel",
+    "why": "A mussel spends every low tide out of water with its shell shut, anchored to the rock by byssus, tough protein threads spun by a gland in its foot.",
+    "src": "https://en.wikipedia.org/wiki/Mussel",
+    "supported": true
+  },
+  {
+    "in": [
+      "shell",
+      "tide_pool"
+    ],
+    "out": "periwinkle",
+    "why": "A periwinkle grazes algae from the rock around a tide pool on a muscular foot lubricated with mucus, then seals the gap between shell and stone with that same mucus to avoid drying out.",
+    "src": "https://en.wikipedia.org/wiki/Common_periwinkle",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "tide_pool"
+    ],
+    "out": "limpet",
+    "why": "A limpet clings to bare rock with a single powerful suction-cup foot, scours a shallow home scar into the stone, and returns to that exact spot after each low-tide grazing trip.",
+    "src": "https://en.wikipedia.org/wiki/Limpet",
+    "supported": true
+  },
+  {
+    "in": [
+      "intertidal_zone",
+      "stone"
+    ],
+    "out": "chiton",
+    "why": "A chiton's shell is eight overlapping plates held by a muscular girdle that suctions the animal to rock, or lets it curl into a ball if pried loose; its teeth are capped with iron-rich magnetite.",
+    "src": "https://en.wikipedia.org/wiki/Chiton",
+    "supported": true
+  },
+  {
+    "in": [
+      "crab",
+      "shell"
+    ],
+    "out": "hermit_crab",
+    "why": "A hermit crab has no shell of its own, it backs its soft, curled abdomen into the empty shell of a dead sea snail, and moves to a bigger one every time it outgrows the last.",
+    "src": "https://en.wikipedia.org/wiki/Hermit_crab",
+    "supported": true
+  },
+  {
+    "in": [
+      "mussel",
+      "water"
+    ],
+    "out": "sea_star",
+    "why": "A sea star's hundreds of tube feet run on a water-filled hydraulic system, not muscle alone; it uses that grip to slowly pull a mussel's two shells apart and push its own stomach inside to digest it.",
+    "src": "https://en.wikipedia.org/wiki/Starfish",
+    "supported": true
+  },
+  {
+    "in": [
+      "sand",
+      "sea_urchin"
+    ],
+    "out": "sand_dollar",
+    "why": "A sand dollar is a sea urchin flattened for life buried in sand, its long defensive spines reduced to a dense fur of short, mobile ones used for burrowing and crawling instead.",
+    "src": "https://en.wikipedia.org/wiki/Sand_dollar",
+    "supported": true
+  },
+  {
+    "in": [
+      "barnacle",
+      "snail"
+    ],
+    "out": "whelk",
+    "why": "A dog whelk is a predatory sea snail that uses a sharp spine on the lip of its own shell to pry apart the plates of a barnacle and reach the flesh inside.",
+    "src": "https://en.wikipedia.org/wiki/Dog_whelk",
+    "supported": true
+  },
+  {
+    "in": [
+      "air",
+      "kelp"
+    ],
+    "out": "bladder_wrack",
+    "why": "Unlike its low-shore kelp relatives, bladder wrack keeps its fronds near the surface using paired air bladders blown up along each frond, buoyancy that lets it dominate the middle shore instead.",
+    "src": "https://en.wikipedia.org/wiki/Fucus_vesiculosus",
+    "supported": true
+  },
+  {
+    "in": [
+      "estuary",
+      "water"
+    ],
+    "out": "sea_lettuce",
+    "why": "Sea lettuce is a green alga only two cells thick, simple enough to grow from full-strength seawater down into the brackish water of an estuary, where thicker seaweeds can't cope with the changing salt.",
+    "src": "https://en.wikipedia.org/wiki/Ulva_lactuca",
+    "supported": true
+  },
+  {
+    "in": [
+      "sand",
+      "tide_pool"
+    ],
+    "out": "razor_clam",
+    "why": "A razor clam lives buried in shore sand and, if uncovered, can dig itself back down with its muscular foot almost as fast as a person can dig down after it.",
+    "src": "https://en.wikipedia.org/wiki/Razor_clam",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea_star",
+      "stone"
+    ],
+    "out": "brittle_star",
+    "why": "A brittle star hides under shore rocks by day and moves by throwing its long, thin arms into snake-like curves; unlike a sea star's, those arms snap off easily under threat and simply regrow.",
+    "src": "https://en.wikipedia.org/wiki/Brittle_star",
+    "supported": true
+  },
+  {
+    "in": [
+      "hermit_crab",
+      "kelp"
+    ],
+    "out": "porcelain_crab",
+    "why": "A porcelain crab is a filter feeder more closely related to hermit crabs than to true crabs; sharp spines on its legs grip slick kelp holdfasts so it can slide its flattened body into their hollows.",
+    "src": "https://en.wikipedia.org/wiki/Porcelain_crab",
+    "supported": true
+  }
 ]

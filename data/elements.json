@@ -16492,7 +16492,6 @@
       "water"
     ],
     "soleRoute": true,
-    "terminal": true,
     "fact": "Where a river's fresh water meets the moon-pulled tide and the two measurably mix, rather than staying apart."
   },
   {
@@ -23749,5 +23748,198 @@
     "fact": "A dominant cartilage-gene mutation folds the ear — and softens joints all over the body.",
     "terminal": true,
     "taxon": "tx_felis"
+  },
+  {
+    "id": "tide",
+    "name": "Tide",
+    "emoji": "🌗",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Raised mainly by the Moon's pull on the sea, with a smaller pull from the Sun added in."
+  },
+  {
+    "id": "intertidal_zone",
+    "name": "Intertidal Zone",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Flooded and drained twice a day; barnacles mark its top, kelp its lowest fringe."
+  },
+  {
+    "id": "tide_pool",
+    "name": "Tide Pool",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Seawater stranded in a rocky hollow at low tide, a miniature and harshly changeable sea."
+  },
+  {
+    "id": "barnacle",
+    "name": "Barnacle",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "A crustacean, not a mollusk. It cements its head to rock and kicks food in with feathery legs."
+  },
+  {
+    "id": "mussel",
+    "name": "Mussel",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_bivalvia",
+    "fact": "Anchors itself to rock with byssus, tough protein threads spun by a gland in its foot."
+  },
+  {
+    "id": "periwinkle",
+    "name": "Periwinkle",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_gastropoda",
+    "fact": "Grazes rock on a mucus-lubricated foot, then seals its shell to the stone with the same mucus."
+  },
+  {
+    "id": "limpet",
+    "name": "Limpet",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_gastropoda",
+    "fact": "Clings to rock with one powerful suction foot and homes back to its own worn scar after grazing."
+  },
+  {
+    "id": "chiton",
+    "name": "Chiton",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_mollusca",
+    "fact": "Eight overlapping shell plates on a muscular girdle; its teeth are capped with iron-rich magnetite."
+  },
+  {
+    "id": "hermit_crab",
+    "name": "Hermit Crab",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_malacostraca",
+    "fact": "Has no shell of its own. It lives in an empty snail shell and moves to a bigger one as it grows."
+  },
+  {
+    "id": "sea_star",
+    "name": "Sea Star",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_asteroidea",
+    "fact": "Moves on hundreds of tube feet run by a water-filled hydraulic system, not muscle alone."
+  },
+  {
+    "id": "sand_dollar",
+    "name": "Sand Dollar",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_echinodermata",
+    "fact": "A sea urchin flattened for burrowing in sand, its spines reduced to short, mobile ones."
+  },
+  {
+    "id": "whelk",
+    "name": "Dog Whelk",
+    "emoji": "🔶",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_gastropoda",
+    "fact": "A predatory sea snail that uses a spine on its own shell's lip to pry open a barnacle's plates."
+  },
+  {
+    "id": "bladder_wrack",
+    "name": "Bladder Wrack",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A brown seaweed kept afloat near the surface by paired air bladders along its fronds."
+  },
+  {
+    "id": "sea_lettuce",
+    "name": "Sea Lettuce",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A green alga only two cells thick, simple enough to grow from seawater into a brackish estuary."
+  },
+  {
+    "id": "razor_clam",
+    "name": "Razor Clam",
+    "emoji": "🪒",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_bivalvia",
+    "fact": "Buried in shore sand, it can dig itself down almost as fast as a person can dig after it."
+  },
+  {
+    "id": "brittle_star",
+    "name": "Brittle Star",
+    "emoji": "✳️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_echinodermata",
+    "fact": "Whips its thin arms in snake-like curves to move; a lost arm snaps off easily and regrows."
+  },
+  {
+    "id": "porcelain_crab",
+    "name": "Porcelain Crab",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "taxon": "tx_malacostraca",
+    "fact": "A filter feeder closer kin to hermit crabs than true crabs, gripping kelp holdfasts with spiny legs."
   }
 ]
