@@ -33,7 +33,7 @@ const SCALE = {
   // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
   // them as nuggets was a mislabel, not a drawing mistake.
   '-10': ['methane', 'phosphate', 'up_quark', 'down_quark', 'proton', 'neutron', 'electron', 'atomic_nucleus', 'photon', 'gamma_ray', 'deuterium', 'tritium', 'fission_product', 'carbon_monoxide', 'sulfur_dioxide', 'hydrogen_sulfide', 'nitric_oxide', 'nitrogen_dioxide', 'nitrate', 'hydrogen_chloride', 'hydrogen_fluoride', 'ammonia', 'acetylene', 'hydrogen', 'oxygen', 'nitrogen', 'carbon', 'sulfur', 'phosphorus',
-          'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas',
+          'carbon_dioxide', 'disulfide', 'hydrogen_gas', 'oxygen_gas', 'nitrogen_gas',
           'helium', 'neon',
           'carbon_tetrafluoride', 'nitrogen_trifluoride', 'chlorine_trifluoride', 'sulfur_hexafluoride', 'phosphorus_pentafluoride',
           'bromine_trifluoride', 'iodine_pentafluoride', 'bromine_monochloride', 'iodine_monochloride', 'iodine_monobromide', 'hydrogen_bromide', 'hydrogen_iodide',
@@ -57,20 +57,26 @@ const SCALE = {
           'dna_helicase', 'primase', 'dna_polymerase', 'dna_ligase', 'dna_replication',
           'rna_polymerase', 'transcription', 'translation', 'exon', 'intron', 'splicing',
           'denatured_protein', 'starch', 'gelatin', 'ribosome', 'messenger_rna',
-          'hyaluronic_acid', 'satellite'],
+          'hyaluronic_acid', 'satellite',
+          // cell biology batch 1 — membrane-sheet and DNA-loop scale, the same rack as membrane/chromatin/gene
+          'nuclear_envelope', 'endoplasmic_reticulum', 'rough_endoplasmic_reticulum', 'smooth_endoplasmic_reticulum', 'cytoskeleton', 'cell_wall', 'plasmid'],
   '-6':  ['s_thermophilus', 'l_bulgaricus', 'l_acidophilus', 'bifidobacterium', 'l_paracasei', 'l_plantarum', 'leuconostoc', 'lactococcus', 'acetobacter', 'penicillium', 'stoma', 'virus', 'vesicle', 'protocell', 'binary_fission', 'budding', 'bacteria', 'archaea', 'cyanobacteria', 'rhizobium', 'zooxanthellae', 'mitochondrion', 'chloroplast', 'spore', 'pollen', 'action_potential', 'yeast', 'mould', 'resistance', 'chromosome', 'nucleus', 'mitochondrial_dna',
           'bacteriophage', 'prophage', 'lysis', 'salmonella', 'streptomyces',
           'avibirnavirus', 'gammacoronavirus', 'e_coli',
           'cowpox', 'vaccine', 'immunity',
           // brain batch 1 — sub-cellular neural structures, same organelle/junction scale as vesicle/nucleus
-          'axon', 'dendrite', 'myelin_sheath', 'synapse'],
+          'axon', 'dendrite', 'myelin_sheath', 'synapse',
+          // cell biology batch 1 — organelle scale, the same rack as mitochondrion/chloroplast/nucleus/vesicle
+          'nucleolus', 'golgi_apparatus', 'lysosome', 'vacuole', 'centriole', 'cilia',
+          // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
+          'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  ['photosite',
           'yoghurt_culture', 'cytoplasm', 'alga', 'cell', 'mitosis', 'meiosis', 'sperm', 'polar_body', 'stem_cell', 'protozoan', 'eimeria',
-          // flagship-animal-anatomy batch 1 — a single blood cell, same rack as 'cell'
-          'red_blood_cell',
           'plasmodium', 'toxoplasma_gondii', 'giardia', 'entamoeba_histolytica', 'trichomonas_vaginalis', 'cryptosporidium',
           // brain batch 1 — individual nerve and glial cells, same single-cell scale as cell/stem_cell
-          'neuron', 'glia', 'astrocyte', 'oligodendrocyte'],
+          'glia', 'astrocyte', 'oligodendrocyte',
+          // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
+          'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  ['coconut_sugar', 'guar_gum', 'locust_bean_gum', 'silicon_dioxide', 'annatto', 'caramel_colour', 'agar', 'paprika', 'carmine', 'shellac', 'roe', 'hydroxyapatite', 'fluorapatite', 'magnesium_oxide', 'zinc_oxide', 'copper_oxide', 'litharge', 'mercuric_oxide', 'alumina', 'potassium_chloride', 'potassium_iodide', 'sodium_fluoride', 'magnesium_nitride',
           // mining comprehensive batch — bagged/prilled granular chemicals and fine ground mill product,
           // same grain-size bucket as sand/clay
@@ -173,6 +179,8 @@ const SCALE = {
           'burger', 'hot_dog', 'sandwich', 'fried_rice', 'taco',
           'orange', 'grapefruit', 'peach', 'plum', 'apricot', 'nectarine', 'watermelon', 'cantaloupe', 'persimmon', 'guava',
           'brine', 'wort', 'sourdough_starter', 'mead_must', 'milk', 'cream',
+          // cell biology batch 1 — a viscous body fluid, the same rack as broth/cream
+          'mucus', 'blood',
           'sweet_cream', 'yoghurt', 'garlic_yoghurt', 'mayonnaise', 'egg_mayo',
           'broth', 'soup', 'passata', 'caramel_sauce', 'batter', 'cake_batter',
           'cake_mix', 'meatball_mix', 'meatball_sauce', 'kimchi_paste', 'tea',

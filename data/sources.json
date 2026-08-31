@@ -258,6 +258,8 @@
   },
   "$comment3": "Per-gesture overrides. Several recipes can produce the same element while making quite different claims (soil-rooting vs light-greening both yield a seedling), so a source keyed only by output would mis-cite one of them. Keyed by gesture signature: sorted inputs joined by +, or input|verb.",
   "gestures": {
+    "nucleolus+protein": "Nucleolus",
+    "palisade_cell+xylem": "Leaf",
     "sun+water": "Evaporation",
     "ice+sun": "Snowmelt",
     "sprout+sun": "Etiolation",

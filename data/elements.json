@@ -2455,7 +2455,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "The survivors of a course of antibiotics are, by definition, the ones it did not kill."
   },
   {
@@ -18941,7 +18941,6 @@
     "tags": [
       "animal"
     ],
-    "soleRoute": true,
     "fact": "A cable of axons carrying electrical impulses at up to 120 metres a second."
   },
   {
@@ -22001,5 +22000,295 @@
       "animal"
     ],
     "fact": "Where finger bones meet \u2014 some apes lock this joint rigid and walk on the back of it."
+  },
+  {
+    "id": "nuclear_envelope",
+    "name": "Nuclear Envelope",
+    "emoji": "\ud83d\udd2c",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A double membrane around the genome, its outer layer wired straight into the ER, perforated by thousands of pores."
+  },
+  {
+    "id": "endoplasmic_reticulum",
+    "name": "Endoplasmic Reticulum",
+    "emoji": "\ud83d\udd78\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A network of membrane tubules threading through the cytoplasm, physically continuous with the nucleus."
+  },
+  {
+    "id": "rough_endoplasmic_reticulum",
+    "name": "Rough Endoplasmic Reticulum",
+    "emoji": "\ud83d\udd78\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Ribosomes stud its outer face, giving it a rough look under the microscope and a job making proteins."
+  },
+  {
+    "id": "smooth_endoplasmic_reticulum",
+    "name": "Smooth Endoplasmic Reticulum",
+    "emoji": "\ud83d\udd78\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The same tubular network minus the ribosomes \u2014 its business is building lipids, not protein."
+  },
+  {
+    "id": "nucleolus",
+    "name": "Nucleolus",
+    "emoji": "\ud83d\udd2c",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The largest thing inside the nucleus, and a ribosome factory with no membrane of its own."
+  },
+  {
+    "id": "golgi_apparatus",
+    "name": "Golgi Apparatus",
+    "emoji": "\ud83d\udce6",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Stacked membrane sacs that take in what the rough ER ships out, then modify, sort and repackage it."
+  },
+  {
+    "id": "lysosome",
+    "name": "Lysosome",
+    "emoji": "\ud83e\uddea",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A membrane bag of over sixty digestive enzymes, budded straight off the Golgi apparatus."
+  },
+  {
+    "id": "vacuole",
+    "name": "Vacuole",
+    "emoji": "\ud83e\udee7",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Smaller vesicles fuse into one big one; in a mature plant cell it can fill most of the space."
+  },
+  {
+    "id": "cytoskeleton",
+    "name": "Cytoskeleton",
+    "emoji": "\ud83e\uddb4",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Microtubules plus actin filaments plus intermediate filaments: the scaffolding every cell builds itself from."
+  },
+  {
+    "id": "centriole",
+    "name": "Centriole",
+    "emoji": "\ud83d\udd2c",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Nine microtubule triplets ringed into a cylinder, always kept in a pair near the nucleus."
+  },
+  {
+    "id": "cilia",
+    "name": "Cilia",
+    "emoji": "\ud83e\udeae",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Hundreds of short hairs beating in unison, each built on a nine-plus-two ring of microtubules."
+  },
+  {
+    "id": "flagella",
+    "name": "Flagella",
+    "emoji": "\u3030\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The same nine-plus-two core as a cilium, just one or two per cell instead of hundreds, and far longer."
+  },
+  {
+    "id": "cell_wall",
+    "name": "Cell Wall",
+    "emoji": "\ud83e\uddf1",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A rigid cellulose layer laid down just outside the membrane \u2014 a plant cell building its own exoskeleton."
+  },
+  {
+    "id": "plasmid",
+    "name": "Plasmid",
+    "emoji": "\ud83d\udc8d",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A loop of DNA a bacterium keeps on the side, copying itself independently of the main chromosome."
+  },
+  {
+    "id": "diffusion",
+    "name": "Diffusion",
+    "emoji": "\ud83d\udca8",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Molecules drift from where they're crowded to where they're not \u2014 no energy required, no pump needed."
+  },
+  {
+    "id": "osmosis",
+    "name": "Osmosis",
+    "emoji": "\ud83d\udca7",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Diffusion's special case: water alone, crossing a selective membrane toward wherever solutes are thicker."
+  },
+  {
+    "id": "active_transport",
+    "name": "Active Transport",
+    "emoji": "\u2699\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Moving a substance the wrong way down its own gradient \u2014 and it always costs a burnt ATP."
+  },
+  {
+    "id": "endocytosis",
+    "name": "Endocytosis",
+    "emoji": "\u2b07\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The membrane folds around something outside, pinches shut, and the outside becomes an inside."
+  },
+  {
+    "id": "exocytosis",
+    "name": "Exocytosis",
+    "emoji": "\u2b06\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The Golgi apparatus's shipping side in action: a vesicle docks at the membrane and empties itself outward."
+  },
+  {
+    "id": "phagocytosis",
+    "name": "Phagocytosis",
+    "emoji": "\ud83c\udf7d\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A cell doesn't just absorb a bacterium \u2014 it wraps its whole membrane around it and swallows it whole."
+  },
+  {
+    "id": "muscle_cell",
+    "name": "Muscle Cell",
+    "emoji": "\ud83d\udcaa",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Actin ordered into thousands of repeating sarcomeres, burning ATP directly to slide past itself."
+  },
+  {
+    "id": "white_blood_cell",
+    "name": "White Blood Cell",
+    "emoji": "\u26aa",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Its lysosomes are loaded and waiting for whatever it engulfs by phagocytosis."
+  },
+  {
+    "id": "guard_cell",
+    "name": "Guard Cell",
+    "emoji": "\ud83d\udeaa",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "One of the only epidermal cells that keeps its chloroplasts \u2014 the other reason it can pump salt and swell."
+  },
+  {
+    "id": "palisade_cell",
+    "name": "Palisade Cell",
+    "emoji": "\ud83c\udf3f",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Long, tightly packed cylinders under a leaf's upper skin, carrying more chloroplasts than any other leaf cell."
+  },
+  {
+    "id": "goblet_cell",
+    "name": "Goblet Cell",
+    "emoji": "\ud83c\udffa",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A secretory cell built around an oversized Golgi apparatus, its whole shape swollen with mucin granules."
+  },
+  {
+    "id": "mucus",
+    "name": "Mucus",
+    "emoji": "\ud83e\uded7",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Ninety to ninety-five percent water; the rest is mucin, and together they trap whatever the air brings in."
+  },
+  {
+    "id": "ciliated_cell",
+    "name": "Ciliated Cell",
+    "emoji": "\ud83e\udeae",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Hundreds of beating hairs on one cell, sweeping the trachea's mucus blanket up and out."
+  },
+  {
+    "id": "blood",
+    "name": "Blood",
+    "emoji": "\ud83e\ude78",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Mostly plasma by volume, but the two kinds of cell suspended in it do entirely different jobs."
+  },
+  {
+    "id": "nitrogen_gas",
+    "name": "Nitrogen Gas",
+    "emoji": "\ud83d\udd35\ud83d\udd35",
+    "shelf": "workshop",
+    "tags": [
+      "gas"
+    ],
+    "fact": "N2 \u2014 two nitrogen atoms locked by a triple bond so strong almost nothing can break it, which is why it makes up 78% of the air and does almost nothing while it is there."
   }
 ]
