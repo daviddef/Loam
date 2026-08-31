@@ -138,6 +138,8 @@ const SCALE = {
           'tissue', 'muscle', 'wood', 'glass', 'pickle', 'sauerkraut', 'kimchi',
           // flagship-animal-anatomy batch 1 — hand-sample body parts, same rack as bone/muscle
           'tooth', 'sagittal_crest', 'claw', 'knuckle',
+          // birds batch 1 — hand-sample body parts, same rack as bone/claw/tooth
+          'beak', 'talon', 'hollow_bone',
           'salted_cabbage', 'cabbage', 'fruit', 'noodle', 'pasta_dough', 'pastry',
           'dough', 'salted_dough', 'risen_dough', 'flatbread', 'garlic_bread',
           'cheese_toastie', 'wrap', 'egg_sandwich', 'baked_potato', 'sundae',
@@ -163,6 +165,10 @@ const SCALE = {
           'ibis', 'heart',
           // Greek/Roman mythology batch 1 — bird, hand-tool, instrument and small-plant scale
           'peacock', 'owl', 'helmet', 'lyre', 'poppy', 'arrow',
+          // birds batch 1 — organ/whole-bird scale, same rack as feather/down/eagle/owl/duck/swan/raven
+          'keel', 'flight_muscle', 'flight_feather', 'air_sac',
+          'hummingbird', 'penguin', 'flamingo', 'albatross', 'ostrich', 'kiwi_bird',
+          'toucan', 'woodpecker', 'pelican', 'heron', 'cormorant', 'parrot', 'swift',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
           'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
