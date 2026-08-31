@@ -143,6 +143,8 @@ const SCALE = {
           'nitric_acid', 'cyanide', 'matte', 'blister_copper', 'copper_cathode',
           'venus_flytrap', 'nepenthes', 'mistletoe', 'water_lily', 'orchid',
           'eagle', 'fifth_sun', 'popol_vuh',
+          // egyptian gods batch 1 — a wading marsh bird alongside duck/goose, and a hand-held organ alongside knife/rope
+          'ibis', 'heart',
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
           'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
@@ -228,6 +230,12 @@ const SCALE = {
           'ganesha', 'hanuman', 'indra', 'agni', 'surya', 'vayu',
           // a full pole weapon, the same order of magnitude as the human wielding it
           'trident',
+          // egyptian gods batch 1 — deities and idols at human scale, and their new base ingredients:
+          // a boat as drawn (a small hull), and animals in the ox/lion/wolf size class
+          'ra', 'osiris', 'isis', 'horus', 'set', 'anubis', 'thoth', 'bastet', 'sobek', 'hathor',
+          'sekhmet', 'nephthys', 'nut', 'geb', 'shu', 'khnum', 'ptah', 'amun', 'maat', 'khonsu',
+          'taweret', 'serket', 'wadjet', 'apep',
+          'boat', 'hippopotamus', 'jackal', 'egyptian_cobra',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press

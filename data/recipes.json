@@ -25244,5 +25244,605 @@
     "why": "Neurogenesis is the creation of new neurons from neural stem cells; in adult mammals it continues in the hippocampus, feeding into learning and memory, though whether it happens at any meaningful rate in adult humans is still genuinely contested.",
     "src": "https://en.wikipedia.org/wiki/Adult_neurogenesis",
     "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "rope"
+    ],
+    "out": "boat",
+    "why": "The oldest boat hulls were logs or planks bound together with rope or cord -- buoyant long before anyone added a sail or an engine.",
+    "src": "https://en.wikipedia.org/wiki/Boat",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "wood_tar"
+    ],
+    "out": "boat",
+    "why": "Since prehistoric times, wood tar has waterproofed boat hulls, sails and roofs -- a coating still used on traditional wooden boats today.",
+    "src": "https://en.wikipedia.org/wiki/Wood_tar",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "flood"
+    ],
+    "out": "hippopotamus",
+    "why": "Spends the day cooling in the shallows the Nile's flood leaves behind, then travels miles at night to graze on grasses before returning to the water by dawn.",
+    "src": "https://en.wikipedia.org/wiki/Hippopotamus",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "river"
+    ],
+    "out": "hippopotamus",
+    "why": "Its skin secretes a reddish oily substance nicknamed 'blood sweat' -- neither blood nor sweat, but a natural sunscreen that protects it through hours submerged in the river.",
+    "src": "https://en.wikipedia.org/wiki/Hippopotamus",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "wolf"
+    ],
+    "out": "jackal",
+    "why": "Long classified as an African variant of the golden jackal, genetic testing in 2015 showed it is a distinct species more closely related to the grey wolf, ranging Egypt's desert margins.",
+    "src": "https://en.wikipedia.org/wiki/African_golden_wolf",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "desert"
+    ],
+    "out": "jackal",
+    "why": "In Egypt it ranges from the Nile shoreline at Lake Nasser out into agricultural land and desert margins alike -- at home on both sides of the river's edge.",
+    "src": "https://en.wikipedia.org/wiki/African_golden_wolf",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "snail"
+    ],
+    "out": "ibis",
+    "why": "Wades shallow Nile wetlands and mudflats hunting snails, worms and insects with its long curved bill.",
+    "src": "https://en.wikipedia.org/wiki/African_sacred_ibis",
+    "verified": true
+  },
+  {
+    "in": [
+      "wing",
+      "stone"
+    ],
+    "out": "ibis",
+    "why": "Once mummified as a votive offering to Thoth by the millions -- an estimated eight million birds entombed -- yet the species had vanished from Egypt itself by the 1850s.",
+    "src": "https://en.wikipedia.org/wiki/African_sacred_ibis",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "snake"
+    ],
+    "out": "egyptian_cobra",
+    "why": "Ranges North Africa's deserts and savannas at up to 1.4 metres long; unlike some African cobras, it delivers its venom by a direct bite rather than a spray.",
+    "src": "https://en.wikipedia.org/wiki/Egyptian_cobra",
+    "verified": true
+  },
+  {
+    "in": [
+      "snake",
+      "rabbit"
+    ],
+    "out": "egyptian_cobra",
+    "why": "Prefers toads above all, but also preys on small mammals, birds and eggs, and often slips into villages hunting the rats that follow people.",
+    "src": "https://en.wikipedia.org/wiki/Egyptian_cobra",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "oxygen"
+    ],
+    "out": "heart",
+    "why": "Packed with mitochondria for a constant supply of energy, cardiac muscle burns oxygen non-stop and almost never fatigues.",
+    "src": "https://en.wikipedia.org/wiki/Cardiac_muscle",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "current"
+    ],
+    "out": "heart",
+    "why": "Its own natural pacemaker, the sinoatrial node, creates an electrical signal that travels through the heart and makes the muscle contract -- no outside signal required.",
+    "src": "https://en.wikipedia.org/wiki/Heart",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "sun"
+    ],
+    "out": "ra",
+    "why": "Ra crossed the sky by day in the falcon-headed Mandjet barque, then switched to the ram-headed Mesektet barque to sail the underworld through the hours of night.",
+    "src": "https://en.wikipedia.org/wiki/Ra",
+    "supported": true
+  },
+  {
+    "in": [
+      "dung_beetle",
+      "sun"
+    ],
+    "out": "ra",
+    "why": "Khepri, the scarab beetle who rolls the sun up like a ball of dung, was seen as Ra's own morning manifestation.",
+    "src": "https://en.wikipedia.org/wiki/Ra",
+    "supported": true
+  },
+  {
+    "in": [
+      "grain",
+      "flood"
+    ],
+    "out": "osiris",
+    "why": "Egyptians shaped 'Osiris beds' in his own likeness, filled them with soil and sowed them with grain -- the sprouting seed, fed by the Nile's flood, was Osiris rising from the dead.",
+    "src": "https://en.wikipedia.org/wiki/Osiris",
+    "supported": true
+  },
+  {
+    "in": [
+      "set",
+      "river"
+    ],
+    "out": "osiris",
+    "why": "Set tricked Osiris into lying in a chest, then sealed it with lead and threw it into the Nile to drown him.",
+    "src": "https://en.wikipedia.org/wiki/Osiris",
+    "supported": true
+  },
+  {
+    "in": [
+      "wing",
+      "osiris"
+    ],
+    "out": "isis",
+    "why": "Isis took the form of a kite and fanned breath and life back into Osiris's body with her wings, conceiving Horus from his restored corpse.",
+    "src": "https://en.wikipedia.org/wiki/Osiris_myth",
+    "supported": true
+  },
+  {
+    "in": [
+      "clay",
+      "snake"
+    ],
+    "out": "isis",
+    "why": "She molded a snake that bit the aging Ra himself, sickening him with venom only she could cure -- and cured him only once he whispered her his true, secret name.",
+    "src": "https://en.wikipedia.org/wiki/Isis",
+    "supported": true
+  },
+  {
+    "in": [
+      "peregrine_falcon",
+      "isis"
+    ],
+    "out": "horus",
+    "why": "Born falcon-headed, Horus was raised by his mother Isis in hiding among the papyrus marshes of the Nile Delta, safe from his murderous uncle Set.",
+    "src": "https://en.wikipedia.org/wiki/Horus",
+    "supported": true
+  },
+  {
+    "in": [
+      "set",
+      "thoth"
+    ],
+    "out": "horus",
+    "why": "Set tore out Horus's eye during their battle for the throne; Thoth reassembled it whole, and the restored Eye of Horus became Egypt's most powerful protective symbol.",
+    "src": "https://en.wikipedia.org/wiki/Eye_of_Horus",
+    "supported": true
+  },
+  {
+    "in": [
+      "desert",
+      "storm"
+    ],
+    "out": "set",
+    "why": "Set was lord of the 'Red Land,' Egypt's desert of storms and disorder, the balance to Horus's rule over the fertile 'Black Land.'",
+    "src": "https://en.wikipedia.org/wiki/Set_(deity)",
+    "supported": true
+  },
+  {
+    "in": [
+      "horus",
+      "desert"
+    ],
+    "out": "set",
+    "why": "Set ruled the desert red land as Horus ruled the fertile black land -- two gods, defeated and victor, dividing Egypt between chaos and order.",
+    "src": "https://en.wikipedia.org/wiki/Set_(deity)",
+    "supported": true
+  },
+  {
+    "in": [
+      "jackal",
+      "osiris"
+    ],
+    "out": "anubis",
+    "why": "Jackal-headed Anubis, god of embalming, was the deity who prepared and guided Osiris's own body toward the afterlife.",
+    "src": "https://en.wikipedia.org/wiki/Anubis",
+    "supported": true
+  },
+  {
+    "in": [
+      "heart",
+      "feather"
+    ],
+    "out": "anubis",
+    "why": "Anubis weighed the heart of the dead against ma'at, shown as an ostrich feather -- a heart too heavy with sin was devoured, one lighter than the feather passed into paradise.",
+    "src": "https://en.wikipedia.org/wiki/Anubis",
+    "supported": true
+  },
+  {
+    "in": [
+      "ibis",
+      "moon"
+    ],
+    "out": "thoth",
+    "why": "Depicted with the head of an ibis, Thoth was god of the moon, wisdom, writing and hieroglyphs, the record-keeper of the gods.",
+    "src": "https://en.wikipedia.org/wiki/Thoth",
+    "supported": true
+  },
+  {
+    "in": [
+      "ink",
+      "baboon"
+    ],
+    "out": "thoth",
+    "why": "As A'an, god of equilibrium, Thoth also took the form of a dog-faced baboon -- and either way, he was credited with inventing the written word.",
+    "src": "https://en.wikipedia.org/wiki/Thoth",
+    "supported": true
+  },
+  {
+    "in": [
+      "cat",
+      "ra"
+    ],
+    "out": "bastet",
+    "why": "Bastet was worshipped as the daughter of Ra, her cat form beloved throughout Egypt as a protector against disease and evil spirits.",
+    "src": "https://en.wikipedia.org/wiki/Bastet",
+    "supported": true
+  },
+  {
+    "in": [
+      "cat",
+      "fire"
+    ],
+    "out": "bastet",
+    "why": "More than 300,000 mummified cats were unearthed at her temple in Bubastis, whose annual festival by the Nile once drew some 700,000 pilgrims a year.",
+    "src": "https://en.wikipedia.org/wiki/Bastet",
+    "supported": true
+  },
+  {
+    "in": [
+      "nile_crocodile",
+      "river"
+    ],
+    "out": "sobek",
+    "why": "Sobek was worshipped in crocodile form as lord of the Nile's waters and marshes, his temples keeping live sacred crocodiles that were mummified when they died.",
+    "src": "https://en.wikipedia.org/wiki/Sobek",
+    "supported": true
+  },
+  {
+    "in": [
+      "nile_crocodile",
+      "ra"
+    ],
+    "out": "sobek",
+    "why": "Sobek's link to the sun god deepened over time into Sobek-Ra, fusing the crocodile lord of the marshes with Egypt's own supreme solar deity.",
+    "src": "https://en.wikipedia.org/wiki/Sobek",
+    "supported": true
+  },
+  {
+    "in": [
+      "beer",
+      "sekhmet"
+    ],
+    "out": "hathor",
+    "why": "Ra dyed beer red and flooded the land with it to stop the rampaging lioness Sekhmet from destroying humanity; she drank it mistaking it for blood, and woke again as the gentle Hathor.",
+    "src": "https://en.wikipedia.org/wiki/Hathor",
+    "supported": true
+  },
+  {
+    "in": [
+      "cow",
+      "star"
+    ],
+    "out": "hathor",
+    "why": "Called 'Mistress of the Sky' and 'Mistress of the Stars,' Hathor was also imagined as the great celestial cow who birthed the sun god and carried him between her horns.",
+    "src": "https://en.wikipedia.org/wiki/Hathor",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "ra"
+    ],
+    "out": "sekhmet",
+    "why": "As the vengeful Eye of Ra, his own daughter, Sekhmet took lioness form and was sent to destroy the humans who had conspired against her father's rule.",
+    "src": "https://en.wikipedia.org/wiki/Sekhmet",
+    "supported": true
+  },
+  {
+    "in": [
+      "lion",
+      "desert"
+    ],
+    "out": "sekhmet",
+    "why": "Sekhmet was said to breathe fire, the desert's hot winds likened to her own breath -- the same goddess invoked both to bring plague and to heal it.",
+    "src": "https://en.wikipedia.org/wiki/Sekhmet",
+    "supported": true
+  },
+  {
+    "in": [
+      "set",
+      "isis"
+    ],
+    "out": "nephthys",
+    "why": "Nephthys completed the four children of Geb and Nut: sister to Isis, and sister-wife to Set.",
+    "src": "https://en.wikipedia.org/wiki/Nephthys",
+    "supported": true
+  },
+  {
+    "in": [
+      "osiris",
+      "isis"
+    ],
+    "out": "nephthys",
+    "why": "When Set murdered and dismembered Osiris, it was Nephthys who helped her sister Isis gather the scattered pieces of his body and mourn him.",
+    "src": "https://en.wikipedia.org/wiki/Nephthys",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "thoth"
+    ],
+    "out": "nut",
+    "why": "Thoth gambled with the moon itself and won five days' worth of its light -- extra days outside the calendar year, in which Nut was finally free to give birth to Osiris, Set, Isis and Nephthys.",
+    "src": "https://en.wikipedia.org/wiki/Thoth",
+    "supported": true
+  },
+  {
+    "in": [
+      "sky",
+      "geb"
+    ],
+    "out": "nut",
+    "why": "Nut personified the star-filled sky, arched on her fingertips and toes above her husband Geb, who was the earth stretched out beneath her.",
+    "src": "https://en.wikipedia.org/wiki/Nut_(goddess)",
+    "supported": true
+  },
+  {
+    "in": [
+      "mud",
+      "wheat"
+    ],
+    "out": "geb",
+    "why": "Geb was the earth itself, whose ground let crops grow and whose own laughter, the Egyptians believed, was the cause of earthquakes.",
+    "src": "https://en.wikipedia.org/wiki/Geb",
+    "supported": true
+  },
+  {
+    "in": [
+      "mud",
+      "nut"
+    ],
+    "out": "geb",
+    "why": "Husband to the sky goddess Nut, Geb embraced her so closely that their son Shu had to force his way between earth and sky to hold them apart.",
+    "src": "https://en.wikipedia.org/wiki/Geb",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "air"
+    ],
+    "out": "shu",
+    "why": "Shu, whose name means 'emptiness,' was shown with an ostrich feather on his head -- a symbol of the lightness of the air and light he embodied.",
+    "src": "https://en.wikipedia.org/wiki/Shu_(Egyptian_god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "mist",
+      "air"
+    ],
+    "out": "shu",
+    "why": "Fog and clouds were called Shu's own bones -- the primordial god of air given the sky's own weather as his body.",
+    "src": "https://en.wikipedia.org/wiki/Shu_(Egyptian_god)",
+    "supported": true
+  },
+  {
+    "in": [
+      "clay",
+      "wheel"
+    ],
+    "out": "khnum",
+    "why": "Ram-headed Khnum fashioned human bodies, and the life force called the ka, out of Nile clay on a potter's wheel, then placed them in their mothers' wombs.",
+    "src": "https://en.wikipedia.org/wiki/Khnum",
+    "supported": true
+  },
+  {
+    "in": [
+      "ram",
+      "river"
+    ],
+    "out": "khnum",
+    "why": "From his post at Elephantine, ram-headed Khnum was believed to regulate the Nile's own inundation, guarding the river's First Cataract at its source.",
+    "src": "https://en.wikipedia.org/wiki/Khnum",
+    "supported": true
+  },
+  {
+    "in": [
+      "stone",
+      "sekhmet"
+    ],
+    "out": "ptah",
+    "why": "In the Memphite Triad, Ptah -- patron of the sculptors and craftsmen who shaped stone -- was husband to Sekhmet and father to Nefertem.",
+    "src": "https://en.wikipedia.org/wiki/Ptah",
+    "supported": true
+  },
+  {
+    "in": [
+      "heart",
+      "stone"
+    ],
+    "out": "ptah",
+    "why": "Egyptian theology held that Ptah conceived the entire world in his heart and spoke it into being with his tongue -- a craftsman who thought a universe into stone and everything else.",
+    "src": "https://en.wikipedia.org/wiki/Ptah",
+    "supported": true
+  },
+  {
+    "in": [
+      "ram",
+      "ra"
+    ],
+    "out": "amun",
+    "why": "Amun merged with Ra to become Amun-Ra, Egypt's supreme creator god -- and took on the ram as his sacred animal through his identification with a Kushite ram deity.",
+    "src": "https://en.wikipedia.org/wiki/Amun",
+    "supported": true
+  },
+  {
+    "in": [
+      "air",
+      "wheat"
+    ],
+    "out": "amun",
+    "why": "His name means 'the hidden one' -- so hidden the Pyramid Texts call him 'the great god whose name is unknown' -- yet he began as a humble Theban god of crops and fertility.",
+    "src": "https://en.wikipedia.org/wiki/Amun",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "star"
+    ],
+    "out": "maat",
+    "why": "Crowned with an ostrich feather, Ma'at personified truth and order, and was said to regulate the stars, the seasons, and the actions of gods and mortals alike.",
+    "src": "https://en.wikipedia.org/wiki/Maat",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "osiris"
+    ],
+    "out": "maat",
+    "why": "In Osiris's own hall of judgment, the heart of the dead was weighed against Ma'at's feather -- the measure of whether a soul could reach paradise.",
+    "src": "https://en.wikipedia.org/wiki/Maat",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "amun"
+    ],
+    "out": "khonsu",
+    "why": "Khonsu, whose name means 'traveller' for the moon's nightly journey across the sky, completed the Theban Triad as the son of Amun and Mut.",
+    "src": "https://en.wikipedia.org/wiki/Khonsu",
+    "supported": true
+  },
+  {
+    "in": [
+      "moon",
+      "human"
+    ],
+    "out": "khonsu",
+    "why": "Khonsu's reputation as a healer spread beyond Egypt itself -- a stela records a foreign princess cured the instant his image arrived, and Ptolemy IV called himself 'Beloved of Khonsu, who drives away evil spirits.'",
+    "src": "https://en.wikipedia.org/wiki/Khonsu",
+    "supported": true
+  },
+  {
+    "in": [
+      "hippopotamus",
+      "egg"
+    ],
+    "out": "taweret",
+    "why": "Shown pregnant herself, hippopotamus-formed Taweret was invoked throughout pregnancy and childbirth as protector of mother and child.",
+    "src": "https://en.wikipedia.org/wiki/Taweret",
+    "supported": true
+  },
+  {
+    "in": [
+      "hippopotamus",
+      "horus"
+    ],
+    "out": "taweret",
+    "why": "Despite her fearsome hippopotamus shape, later myth placed Taweret firmly on the side of order, joining Horus's own forces against Set.",
+    "src": "https://en.wikipedia.org/wiki/Taweret",
+    "supported": true
+  },
+  {
+    "in": [
+      "scorpion",
+      "isis"
+    ],
+    "out": "serket",
+    "why": "In one myth, seven scorpions -- each an emanation of Serket herself -- guarded the pregnant Isis and her unborn child from harm.",
+    "src": "https://en.wikipedia.org/wiki/Serket",
+    "supported": true
+  },
+  {
+    "in": [
+      "scorpion",
+      "gold"
+    ],
+    "out": "serket",
+    "why": "Serket was carved alongside Isis, Nephthys and Neith on Tutankhamun's own gilded canopic shrine, each of the four goddesses standing guard with arms outstretched.",
+    "src": "https://en.wikipedia.org/wiki/Tutankhamun%27s_tomb",
+    "supported": true
+  },
+  {
+    "in": [
+      "egyptian_cobra",
+      "isis"
+    ],
+    "out": "wadjet",
+    "why": "With the help of Isis, cobra-goddess Wadjet nursed and protected the infant Horus in the swamps of the Nile Delta, hidden from his murderous uncle Set.",
+    "src": "https://en.wikipedia.org/wiki/Wadjet",
+    "supported": true
+  },
+  {
+    "in": [
+      "egyptian_cobra",
+      "ra"
+    ],
+    "out": "wadjet",
+    "why": "Coiled upon the head of Ra as his protector, Wadjet's rearing cobra form became the uraeus, the serpent worn on every pharaoh's crown.",
+    "src": "https://en.wikipedia.org/wiki/Wadjet",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "boat"
+    ],
+    "out": "apep",
+    "why": "Apep, the 'World-Encircler,' was a giant serpent that rose against Ra's own sun barque every night as it crossed the underworld, held off by Ra's crew of defenders.",
+    "src": "https://en.wikipedia.org/wiki/Apep",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "fire"
+    ],
+    "out": "apep",
+    "why": "Temple priests performed the annual Ritual of Overthrowing Apophis, building an effigy of the serpent and burning it to hold off his evil for another year.",
+    "src": "https://en.wikipedia.org/wiki/Apep",
+    "supported": true
   }
 ]

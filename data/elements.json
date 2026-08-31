@@ -14341,7 +14341,7 @@
     ],
     "fact": "Scarabaeus satyrus rolls its dung ball in a straight line at night by steering off the Milky Way \u2014 the first animal shown to navigate by the stars.",
     "taxon": "tx_coleoptera",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "firefly",
@@ -16269,7 +16269,7 @@
       "wild"
     ],
     "fact": "Under 250 mm of rain a year defines it; little there stores water like a cactus's swollen stem.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "taiga",
@@ -17194,7 +17194,7 @@
       "wild"
     ],
     "fact": "Troops hunt cooperatively on the open savanna, taking prey as large as young gazelles.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_papio"
   },
   {
@@ -17233,7 +17233,7 @@
       "wild"
     ],
     "fact": "The fastest animal on Earth \u2014 it can exceed 320 km/h in its hunting dive.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_falco"
   },
   {
@@ -17311,7 +17311,7 @@
       "wild"
     ],
     "fact": "Its bite force measures about 22 kN \u2014 among the strongest of any living animal.",
-    "terminal": true,
+    "terminal": false,
     "taxon": "tx_crocodylus"
   },
   {
@@ -21349,5 +21349,323 @@
       "animal"
     ],
     "fact": "Neural stem cells dividing into working neurons \u2014 in adult mammals this still happens in the hippocampus, though how much it happens in adult humans is genuinely contested."
+  },
+  {
+    "id": "hippopotamus",
+    "name": "Hippopotamus",
+    "emoji": "\ud83e\udd9b",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Grazes grasslands by night and cools in the river by day; its skin oozes a reddish natural sunscreen."
+  },
+  {
+    "id": "jackal",
+    "name": "Jackal",
+    "emoji": "\ud83d\udc3a",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Egypt's 'jackal' turned out on closer genetic inspection to be a distinct wolf species."
+  },
+  {
+    "id": "ibis",
+    "name": "Ibis",
+    "emoji": "\ud83d\udc26",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A wading marsh bird, mummified by the millions in antiquity, that had vanished from Egypt by the 1850s."
+  },
+  {
+    "id": "boat",
+    "name": "Boat",
+    "emoji": "\u26f5",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A hollowed or lashed hull, buoyant long before anyone added a sail or an engine."
+  },
+  {
+    "id": "egyptian_cobra",
+    "name": "Egyptian Cobra",
+    "emoji": "\ud83d\udc0d",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "North Africa's hooding cobra, delivering venom by direct bite rather than a spray."
+  },
+  {
+    "id": "heart",
+    "name": "Heart",
+    "emoji": "\ud83e\udec0",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Cardiac muscle so packed with mitochondria for oxygen that it almost never fatigues."
+  },
+  {
+    "id": "ra",
+    "name": "Ra",
+    "emoji": "\ud83c\udf1e",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Egyptian sun god who crossed the sky by day in one barque and the underworld by night in another."
+  },
+  {
+    "id": "osiris",
+    "name": "Osiris",
+    "emoji": "\ud83c\udf3e",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Egyptian king of the dead, murdered by his brother Set and made whole again by Isis."
+  },
+  {
+    "id": "isis",
+    "name": "Isis",
+    "emoji": "\ud83e\ude7d",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Egypt's most powerful goddess -- a healer and magician who revived Osiris and raised Horus in hiding."
+  },
+  {
+    "id": "horus",
+    "name": "Horus",
+    "emoji": "\ud83e\udd85",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Falcon-headed son of Isis and Osiris; lost his eye to Set in battle, and Thoth restored it."
+  },
+  {
+    "id": "set",
+    "name": "Set",
+    "emoji": "\ud83c\udf2a\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Egyptian god of chaos, storms and the desert who murdered his own brother Osiris."
+  },
+  {
+    "id": "anubis",
+    "name": "Anubis",
+    "emoji": "\u2696\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Jackal-headed god of embalming who weighed the hearts of the dead against Ma'at's feather.",
+    "terminal": true
+  },
+  {
+    "id": "thoth",
+    "name": "Thoth",
+    "emoji": "\ud83d\udcdc",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Ibis-headed god of writing, wisdom and the moon, also shown as a baboon."
+  },
+  {
+    "id": "bastet",
+    "name": "Bastet",
+    "emoji": "\ud83d\udc08",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Cat goddess of Bubastis, daughter of Ra, whose annual festival drew crowds by the hundred thousand.",
+    "terminal": true
+  },
+  {
+    "id": "sobek",
+    "name": "Sobek",
+    "emoji": "\ud83d\udc0a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Crocodile god of the Nile's waters and marshes, merged with Ra as Sobek-Ra.",
+    "terminal": true
+  },
+  {
+    "id": "hathor",
+    "name": "Hathor",
+    "emoji": "\ud83d\udc04",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Cow goddess of music and love -- the gentle form the rampaging Sekhmet settled back into.",
+    "terminal": true
+  },
+  {
+    "id": "sekhmet",
+    "name": "Sekhmet",
+    "emoji": "\ud83e\udd81",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Lioness goddess of war and plague, daughter of Ra, sent to punish a rebellious humanity."
+  },
+  {
+    "id": "nephthys",
+    "name": "Nephthys",
+    "emoji": "\ud83c\udfda\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Sister of Isis and wife of Set, who helped gather and mourn Osiris's dismembered body.",
+    "terminal": true
+  },
+  {
+    "id": "nut",
+    "name": "Nut",
+    "emoji": "\ud83c\udf0c",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Sky goddess arched above her husband Geb, mother of Osiris, Isis, Set and Nephthys."
+  },
+  {
+    "id": "geb",
+    "name": "Geb",
+    "emoji": "\ud83c\udf0d",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Earth god whose laughter was said to cause earthquakes; husband of the sky goddess Nut."
+  },
+  {
+    "id": "shu",
+    "name": "Shu",
+    "emoji": "\ud83d\udca8",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "God of air and light who forced Geb and Nut apart; fog and cloud were called his own bones.",
+    "terminal": true
+  },
+  {
+    "id": "khnum",
+    "name": "Khnum",
+    "emoji": "\ud83f\udefa",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Ram-headed god who fashioned human bodies and their life force from clay on a potter's wheel.",
+    "terminal": true
+  },
+  {
+    "id": "ptah",
+    "name": "Ptah",
+    "emoji": "\ud83d\udee0\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Creator god of Memphis, patron of craftsmen, said to have conceived the world in his heart.",
+    "terminal": true
+  },
+  {
+    "id": "amun",
+    "name": "Amun",
+    "emoji": "\ud83d\udc0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "'The Hidden One' -- a minor Theban god who rose to King of the Gods, merged with Ra as Amun-Ra."
+  },
+  {
+    "id": "maat",
+    "name": "Ma'at",
+    "emoji": "\ud83e\udeb6",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Goddess of truth and cosmic order; her ostrich feather was weighed against the hearts of the dead.",
+    "terminal": true
+  },
+  {
+    "id": "khonsu",
+    "name": "Khonsu",
+    "emoji": "\ud83c\udf19",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Moon god of Thebes, son of Amun -- 'the Traveller,' credited with instant miraculous healings.",
+    "terminal": true
+  },
+  {
+    "id": "taweret",
+    "name": "Taweret",
+    "emoji": "\ud83d\udee1\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Hippopotamus goddess who protected women in childbirth and sided with Horus against Set.",
+    "terminal": true
+  },
+  {
+    "id": "serket",
+    "name": "Serket",
+    "emoji": "\ud83e\udd82",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Scorpion goddess who guards against venom, carved guarding Tutankhamun's canopic shrine.",
+    "terminal": true
+  },
+  {
+    "id": "wadjet",
+    "name": "Wadjet",
+    "emoji": "\ud83d\udc51",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Cobra goddess of Lower Egypt who became the uraeus, the rearing serpent on the pharaoh's crown.",
+    "terminal": true
+  },
+  {
+    "id": "apep",
+    "name": "Apep",
+    "emoji": "\ud83d\udc09",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The 'World-Encircler' -- a giant serpent that attacked Ra's sun barque every night in the underworld.",
+    "terminal": true
   }
 ]
