@@ -237,6 +237,8 @@ const SCALE = {
           // early-people batch 1 — hand-worked stone and wooden tools, the same rack as knife/rope/horn/antler
           'oldowan_tool', 'acheulean_handaxe', 'fire_drill', 'bow_drill', 'venus_figurine', 'atlatl',
           'current', 'magnetic_field', 'barometer', 'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
+          // careers batch 1 — real hand tools, the same rack as knife/rope
+          'chisel', 'stethoscope', 'dental_drill', 'compass', 'fire_hose', 'chalk',
           // textiles batch 1 — hand tools, prepared crops and finished fabric, the same rack as knife/cloth/silk
           'wool_card', 'felt', 'spindle', 'flying_shuttle', 'knitting_needles', 'knitted_fabric', 'indigo', 'madder', 'dyed_cloth', 'coal_tar', 'wood_tar', 'ethanol', 'bakelite', 'polyethylene', 'snow', 'smoke', 'ozone', 'air', 'loess', 'fulgurite', 'bone_char', 'bottle', 'blackware', 'stockfish', 'chlorine', 'fluorine', 'bromine', 'argon', 'krypton', 'xenon', 'noble_mix', 'kelp', 'book', 'fetus', 'maize', 'barley', 'oat', 'carrot', 'lettuce', 'pumpkin', 'beet', 'banana', 'brewed_coffee', 'cocoa', 'duck', 'turkey', 'koala', 'platypus', 'lizard', 'turtle', 'cloth', 'clothing', 'paper', 'pulp', 'flax', 'water', 'mud', 'soil', 'tempered_clay', 'concrete', 'fire', 'steam',
           // mining value chains batch 2 — belt material and waste slurry, same item scale as rope/mud
@@ -373,7 +375,13 @@ const SCALE = {
           'sweet_flag', 'mescal_bean',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
           'spinning_wheel', 'loom',
-          'elevator', 'internal_combustion_engine', 'lcd_screen', 'microwave_oven', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'acacia', 'scarecrow', 'greenhouse', 'human', 'natural_selection', 'cystic_fibrosis', 'sickle_cell_anemia', 'cancer', 'gene_therapy', 'dna_profile', 'cloning', 'snake', 'rattlesnake',
+          'elevator', 'internal_combustion_engine', 'lcd_screen', 'microwave_oven', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'acacia', 'scarecrow', 'greenhouse', 'human',
+          // careers batch 1 — a person doing a job, same human scale as human itself
+          'carpenter', 'electrician', 'plumber', 'astronomer', 'meteorologist', 'astronaut',
+          'veterinarian', 'farm_manager', 'medical_doctor', 'dentist', 'railroad_engineer',
+          'ships_captain', 'airline_pilot', 'firefighter', 'paramedic', 'chef', 'photographer',
+          'jewelry_designer', 'textile_designer', 'teacher',
+          'natural_selection', 'cystic_fibrosis', 'sickle_cell_anemia', 'cancer', 'gene_therapy', 'dna_profile', 'cloning', 'snake', 'rattlesnake',
           // animal physiology batch 1 (How Animals Work) -- large mammals, same rack as lion/camel/dingo
           'rhinoceros', 'hyena',
           'proailurus', 'pseudaelurus', 'homotherium', 'panthera_zdanskyi', 'tiger', 'javan_tiger',

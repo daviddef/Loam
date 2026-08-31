@@ -31515,5 +31515,265 @@
     "why": "Methane is the main component of natural gas, and it is highly flammable — a spark is enough to ignite it. Historically the leading cause of coal-mining disasters was exactly this: \"firedamp\", methane seeping out of the coal seam, igniting from a stray spark.",
     "src": "https://en.wikipedia.org/wiki/Firedamp",
     "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "hammer"
+    ],
+    "out": "chisel",
+    "why": "A chisel is a hand tool with a wedge-shaped cutting edge, usually steel, driven into the material by a mallet or hammer.",
+    "src": "https://en.wikipedia.org/wiki/Chisel",
+    "verified": true
+  },
+  {
+    "in": [
+      "vulcanised_rubber",
+      "wood"
+    ],
+    "out": "stethoscope",
+    "why": "Laennec's 1816 stethoscope was a hollow wooden tube; Arthur Leared's 1851 binaural redesign is the ancestor of today's flexible-tubed instrument.",
+    "src": "https://en.wikipedia.org/wiki/Stethoscope",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "diamond"
+    ],
+    "out": "dental_drill",
+    "why": "A dental drill spins a bur -- a small cutting tip usually made of tungsten carbide or diamond -- fast enough to cut through tooth enamel.",
+    "src": "https://en.wikipedia.org/wiki/Dental_drill",
+    "verified": true
+  },
+  {
+    "in": [
+      "needle",
+      "magnet"
+    ],
+    "out": "compass",
+    "why": "A magnetised compass needle, mounted on a low-friction pivot, rotates freely and aligns with the horizontal component of Earth's magnetic field.",
+    "src": "https://en.wikipedia.org/wiki/Compass",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "vulcanised_rubber"
+    ],
+    "out": "fire_hose",
+    "why": "Jan van der Heyden's 1673 Amsterdam fire hose was sewn leather; vulcanised rubber later replaced leather's tendency to burst under pressure.",
+    "src": "https://en.wikipedia.org/wiki/Fire_hose",
+    "verified": true
+  },
+  {
+    "in": [
+      "gypsum"
+    ],
+    "verb": "crush",
+    "out": "chalk",
+    "why": "A blackboard is written on with sticks of calcium sulphate or calcium carbonate -- chalk. Most classroom chalk today is the cheaper gypsum kind.",
+    "src": "https://en.wikipedia.org/wiki/Blackboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "chisel"
+    ],
+    "out": "carpenter",
+    "why": "Carpenters cut and shape wood with tools including chisels; formal training runs apprentice to journeyman over three to four years in many countries.",
+    "src": "https://en.wikipedia.org/wiki/Carpenter",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "vulcanised_rubber"
+    ],
+    "out": "electrician",
+    "why": "Electricians install and maintain building wiring; 19th- and early-20th-century cable was commonly insulated with rubber over the copper conductor.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_cable",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "water"
+    ],
+    "out": "plumber",
+    "why": "Plumbing uses pipes, valves, and fixtures to convey fluids -- potable water supply and waste drainage chief among them -- installed and kept working by plumbers.",
+    "src": "https://en.wikipedia.org/wiki/Plumbing",
+    "verified": true
+  },
+  {
+    "in": [
+      "telescope",
+      "star"
+    ],
+    "out": "astronomer",
+    "why": "Astronomers study stars, planets, and galaxies through observation; most now expose a CCD camera through the telescope rather than watch at the eyepiece.",
+    "src": "https://en.wikipedia.org/wiki/Astronomer",
+    "verified": true
+  },
+  {
+    "in": [
+      "barometer",
+      "cloud"
+    ],
+    "out": "meteorologist",
+    "why": "Meteorologists collect surface data with basic instruments -- thermometers, barometers, weather vanes -- and track clouds, precipitation, and wind to forecast conditions.",
+    "src": "https://en.wikipedia.org/wiki/Meteorology",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen",
+      "helmet"
+    ],
+    "out": "astronaut",
+    "why": "A spacesuit's sealed helmet supplies breathable oxygen and removes carbon dioxide, exchanged with the spacecraft or a self-contained Portable Life Support System.",
+    "src": "https://en.wikipedia.org/wiki/Space_suit",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine",
+      "stethoscope"
+    ],
+    "out": "veterinarian",
+    "why": "Veterinarians combine a stethoscope exam with diagnostic tests and preventive care -- vaccination against illnesses such as distemper or rabies chief among them.",
+    "src": "https://en.wikipedia.org/wiki/Veterinarian",
+    "verified": true
+  },
+  {
+    "in": [
+      "plough",
+      "seed"
+    ],
+    "out": "farm_manager",
+    "why": "A plough loosens and turns the soil, burying weeds and bringing fresh nutrients up, before a field is sown with seed -- planning that sequence is a farm manager's job.",
+    "src": "https://en.wikipedia.org/wiki/Plough",
+    "verified": true
+  },
+  {
+    "in": [
+      "stethoscope",
+      "x_ray"
+    ],
+    "out": "medical_doctor",
+    "why": "A physician examines patients with tools including the stethoscope and X-ray, after four to five years of medical school and a supervised residency.",
+    "src": "https://en.wikipedia.org/wiki/Physician",
+    "verified": true
+  },
+  {
+    "in": [
+      "dental_drill",
+      "x_ray"
+    ],
+    "out": "dentist",
+    "why": "A dentist treats what dental X-rays commonly diagnose -- cavities and other oral problems -- after earning a B.D.S., D.M.D., or D.D.S. degree.",
+    "src": "https://en.wikipedia.org/wiki/Dentist",
+    "verified": true
+  },
+  {
+    "in": [
+      "locomotive",
+      "rail"
+    ],
+    "out": "railroad_engineer",
+    "why": "A train driver is in charge of a locomotive's speed and handling on the rails; in the US, engineers must be certified and recertified every two to three years.",
+    "src": "https://en.wikipedia.org/wiki/Train_driver",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "compass"
+    ],
+    "out": "ships_captain",
+    "why": "A ship's captain is, under the law, ultimately responsible for its safe navigation, seaworthiness, cargo handling, and crew -- steered in part by a magnetic compass.",
+    "src": "https://en.wikipedia.org/wiki/Sea_captain",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "gps"
+    ],
+    "out": "airline_pilot",
+    "why": "An Airline Transport Pilot License -- the certificate required to captain an airliner -- sits atop a ladder that starts with a Private Pilot License and 35-plus flight hours.",
+    "src": "https://en.wikipedia.org/wiki/Airline_pilot",
+    "verified": true
+  },
+  {
+    "in": [
+      "helmet",
+      "fire_hose"
+    ],
+    "out": "firefighter",
+    "why": "A firefighter's helmet is part of a protective turnout-gear kit, and the fire hose delivers the water; the skills come from a fire academy before active duty.",
+    "src": "https://en.wikipedia.org/wiki/Firefighter",
+    "verified": true
+  },
+  {
+    "in": [
+      "stethoscope",
+      "oxygen"
+    ],
+    "out": "paramedic",
+    "why": "Paramedics administer oxygen and monitor patients in the field; US certification requires 1,500-plus classroom hours and 500-plus clinical hours.",
+    "src": "https://en.wikipedia.org/wiki/Paramedic",
+    "verified": true
+  },
+  {
+    "in": [
+      "knife",
+      "fire"
+    ],
+    "out": "chef",
+    "why": "Like many skilled trades, chefs typically go through a three- to four-year apprenticeship combining classroom instruction with on-the-job kitchen training.",
+    "src": "https://en.wikipedia.org/wiki/Chef",
+    "verified": true
+  },
+  {
+    "in": [
+      "digital_camera",
+      "camera_obscura"
+    ],
+    "out": "photographer",
+    "why": "Camera obscura boxes were directly adapted by Niepce, Daguerre, and Talbot to expose the first photographs -- the same box-and-lens principle a digital camera still uses.",
+    "src": "https://en.wikipedia.org/wiki/Camera_obscura",
+    "verified": true
+  },
+  {
+    "in": [
+      "gold",
+      "diamond"
+    ],
+    "out": "jewelry_designer",
+    "why": "Jewelry designers work in precious metals -- 24-karat gold was favored in antiquity for being more accessible than silver -- and in cut gemstones such as diamond.",
+    "src": "https://en.wikipedia.org/wiki/Jewellery_design",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "dyed_cloth"
+    ],
+    "out": "textile_designer",
+    "why": "Woven textile design produces fabric on a loom by interlacing a vertical warp yarn with a horizontal weft; printed textile design instead works over cloth already dyed.",
+    "src": "https://en.wikipedia.org/wiki/Textile_design",
+    "verified": true
+  },
+  {
+    "in": [
+      "book",
+      "chalk"
+    ],
+    "out": "teacher",
+    "why": "Blackboards, written on with sticks of chalk, became synonymous with education from the 16th century on; teaching itself requires professional training in pedagogy.",
+    "src": "https://en.wikipedia.org/wiki/Blackboard",
+    "verified": true
   }
 ]

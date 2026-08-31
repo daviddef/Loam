@@ -4838,7 +4838,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Rubber with sulfur chains stitched between its polymer strands. Goodyear, 1839.",
     "discovered": {
       "year": 1839,
@@ -15786,8 +15785,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Calcium sulfate dihydrate, soft enough to scratch with a fingernail — plaster's raw material.",
-    "terminal": true
+    "fact": "Calcium sulfate dihydrate, soft enough to scratch with a fingernail — plaster's raw material."
   },
   {
     "id": "olivine",
@@ -18112,7 +18110,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A convex lens focuses light, a concave eyepiece spreads it out magnified. Galileo, 1609.",
     "soleRoute": true,
     "discovered": {
@@ -18144,7 +18141,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Mercury in a sealed glass tube, held up by the weight of the air alone. Torricelli, 1643.",
     "soleRoute": true,
     "discovered": {
@@ -18303,7 +18299,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Electrons striking the wall of an evacuated tube throw off radiation that photographs bone. Röntgen, 1895.",
     "soleRoute": true,
     "discovered": {
@@ -18419,7 +18414,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A cambered wing lifts, warped wingtips steer, a chain-driven propeller pulls. Kitty Hawk, 1903.",
     "soleRoute": true,
     "discovered": {
@@ -19296,7 +19290,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "A converter assigns each photosite's charge a binary number — light becomes a file, not a negative.",
     "shelf": "workshop"
   },
@@ -19930,7 +19923,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "soleRoute": true,
     "fact": "Times signals from four-plus satellites and trilaterates one point where they agree."
   },
@@ -27043,5 +27035,311 @@
     ],
     "fact": "Third of the five Pandava brothers and wielder of the celestial bow Gandiva; Krishna served as his charioteer.",
     "terminal": true
+  },
+  {
+    "id": "chisel",
+    "name": "Chisel",
+    "emoji": "🪚",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A wedge-shaped steel blade, driven into wood, stone, or metal by a mallet or hammer.",
+    "soleRoute": true
+  },
+  {
+    "id": "stethoscope",
+    "name": "Stethoscope",
+    "emoji": "🩺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Laennec's 1816 original was a hollow wooden tube; the binaural rubber-tubed design followed in 1851.",
+    "soleRoute": true
+  },
+  {
+    "id": "dental_drill",
+    "name": "Dental Drill",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Its cutting bur is usually tipped with tungsten carbide or diamond.",
+    "soleRoute": true
+  },
+  {
+    "id": "compass",
+    "name": "Compass",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A magnetised needle, free to pivot, that aligns itself with Earth's magnetic field.",
+    "soleRoute": true
+  },
+  {
+    "id": "fire_hose",
+    "name": "Fire Hose",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Amsterdam fire chief Jan van der Heyden sewed the first leather fire hose in 1673.",
+    "soleRoute": true
+  },
+  {
+    "id": "chalk",
+    "name": "Chalk",
+    "emoji": "🖍️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Most classroom chalk today is gypsum, not true calcium-carbonate chalk.",
+    "soleRoute": true
+  },
+  {
+    "id": "carpenter",
+    "name": "Carpenter",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Trains as an apprentice for three to four years before becoming a journeyman.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "electrician",
+    "name": "Electrician",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "US apprenticeships run three to five years and 4,000 to 6,000 hours of paid on-the-job training.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "plumber",
+    "name": "Plumber",
+    "emoji": "🔧",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Installs and maintains the pipes that carry a building's water in and its waste out.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "astronomer",
+    "name": "Astronomer",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Now more often exposes a CCD camera for minutes than peers through an eyepiece.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "meteorologist",
+    "name": "Meteorologist",
+    "emoji": "🌦️",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Reads pressure, temperature, and wind to forecast weather from local to global scale.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "astronaut",
+    "name": "Astronaut",
+    "emoji": "🧑‍🚀",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A sealed helmet exchanges breathable oxygen and carbon dioxide with the spacecraft.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "veterinarian",
+    "name": "Veterinarian",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Completes a dedicated veterinary-medicine degree covering anatomy, pharmacology, and surgery.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "farm_manager",
+    "name": "Farm Manager",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Plans the sequence from ploughing and sowing through to harvest.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "medical_doctor",
+    "name": "Medical Doctor",
+    "emoji": "👨‍⚕️",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Four to five years of medical school, then a supervised residency, before independent practice.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "dentist",
+    "name": "Dentist",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Earns a B.D.S., D.M.D., or D.D.S. degree before treating patients.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "railroad_engineer",
+    "name": "Railroad Engineer",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "US train drivers must be certified, and recertified every two to three years.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "ships_captain",
+    "name": "Ship's Captain",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Legally responsible for a ship's safe navigation, seaworthiness, cargo, and crew.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "airline_pilot",
+    "name": "Airline Pilot",
+    "emoji": "🛫",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Captaining an airliner requires an Airline Transport Pilot License, the highest pilot certificate.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "firefighter",
+    "name": "Firefighter",
+    "emoji": "🧑‍🚒",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Trains at a local, regional, or state-approved fire academy before active duty.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "paramedic",
+    "name": "Paramedic",
+    "emoji": "🚑",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "US certification takes 1,500-plus classroom hours and 500-plus clinical hours.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "chef",
+    "name": "Chef",
+    "emoji": "👨‍🍳",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Typically apprentices for three to four years, mixing classroom instruction with kitchen work.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "photographer",
+    "name": "Photographer",
+    "emoji": "📸",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Still frames light through a box and a lens, exactly as the first cameras did.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "jewelry_designer",
+    "name": "Jewelry Designer",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Ancient jewelry favored 24-karat gold, more accessible then than silver.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "textile_designer",
+    "name": "Textile Designer",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Interlaces a vertical warp yarn with a horizontal weft on a loom to design woven cloth.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "teacher",
+    "name": "Teacher",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Requires professional qualification, typically including pedagogy -- the science of teaching.",
+    "terminal": true,
+    "soleRoute": true
   }
 ]
