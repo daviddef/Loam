@@ -33983,5 +33983,295 @@
     "why": "A dingo's skull carries a flatter cranium and a larger sagittal crest than a domestic dog's, and unusually flexible wrist and shoulder joints let it rotate its paws to open latches and climb fences or trees.",
     "src": "https://en.wikipedia.org/wiki/Dingo",
     "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "field"
+    ],
+    "out": "cumulus",
+    "why": "Sunlight heats open ground until bubbles of moist air break free and rise as thermals; cooling as they climb turns the moisture in a cloud into cumulus's puffy, flat-bottomed heaps.",
+    "src": "https://en.wikipedia.org/wiki/Cumulus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "desert"
+    ],
+    "out": "cumulus",
+    "why": "Bare desert ground heats faster than almost any other surface, driving the strong afternoon thermals that build fair-weather cumulus fastest and biggest.",
+    "src": "https://en.wikipedia.org/wiki/Cumulus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "wind_shear"
+    ],
+    "out": "cirrus",
+    "why": "Cirrus is a high genus of ice-crystal cloud, 6,000 to 20,000 m up, where strong winds aloft comb it into hooked strands nicknamed mare's tails.",
+    "src": "https://en.wikipedia.org/wiki/Cirrus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "sea"
+    ],
+    "out": "stratus",
+    "why": "A stratus deck is essentially fog that never reached the ground: moist air cools to its dew point and condenses into a flat grey sheet under 2,000 m instead of touching down.",
+    "src": "https://en.wikipedia.org/wiki/Stratus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "fog",
+      "wind"
+    ],
+    "out": "stratus",
+    "why": "Lift a bank of morning fog off the ground and it keeps its shape as a layer cloud — one of stratus's two main ways of forming.",
+    "src": "https://en.wikipedia.org/wiki/Stratus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "cumulus",
+      "storm"
+    ],
+    "out": "cumulonimbus",
+    "why": "Kept fed by rising air instead of running out of instability, a cumulus keeps swelling until it reaches the tropopause and spreads into cumulonimbus's flat anvil top.",
+    "src": "https://en.wikipedia.org/wiki/Cumulonimbus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "cold_front"
+    ],
+    "out": "cumulonimbus",
+    "why": "A cold front's lifting is sharp and narrow, forcing cloud straight up into the towering, hail- and lightning-bearing cumulonimbus rather than a wide layer.",
+    "src": "https://en.wikipedia.org/wiki/Weather_front",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloud",
+      "warm_front"
+    ],
+    "out": "nimbostratus",
+    "why": "Warm air gliding up over the retreating cold wedge of a warm front spreads cloud into nimbostratus, the thick dark layer that can rain steadily for days.",
+    "src": "https://en.wikipedia.org/wiki/Nimbostratus_cloud",
+    "verified": true
+  },
+  {
+    "in": [
+      "cumulonimbus",
+      "wind_shear"
+    ],
+    "out": "supercell",
+    "why": "Enough wind shear tilts a cumulonimbus's rising air into a persistent rotating updraught — a mesocyclone — turning an ordinary storm into a supercell.",
+    "src": "https://en.wikipedia.org/wiki/Supercell",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "sea"
+    ],
+    "out": "monsoon",
+    "why": "Farmland heats and cools far faster than the ocean beside it; that seasonal contrast reverses the wind twice a year, driving monsoons like South Asia's.",
+    "src": "https://en.wikipedia.org/wiki/Monsoon",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "sea"
+    ],
+    "out": "monsoon",
+    "why": "The starkest version of the same imbalance: hot, dry land beside warm ocean sharpens the pressure gradient that drags moist monsoon winds ashore each summer.",
+    "src": "https://en.wikipedia.org/wiki/Monsoon",
+    "verified": true
+  },
+  {
+    "in": [
+      "supercell",
+      "wind_shear"
+    ],
+    "out": "tornado",
+    "why": "Wind shear can stretch a supercell's mesocyclone tighter and thinner until it reaches down to touch the ground as a tornado.",
+    "src": "https://en.wikipedia.org/wiki/Tornado",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "sky"
+    ],
+    "out": "anticyclone",
+    "why": "Air sinking at about 30° latitude spreads out at the surface as a subtropical ridge of high pressure — the same descending, drying air that starves deserts of rain.",
+    "src": "https://en.wikipedia.org/wiki/Horse_latitudes",
+    "verified": true
+  },
+  {
+    "in": [
+      "cold_front",
+      "warm_front"
+    ],
+    "out": "low_pressure",
+    "why": "A mid-latitude depression is built from exactly these two: a warm front and a cold front spiralling in around a shared centre of low pressure, the classic frontal-cyclone shape.",
+    "src": "https://en.wikipedia.org/wiki/Extratropical_cyclone",
+    "verified": true
+  },
+  {
+    "in": [
+      "low_pressure",
+      "rain"
+    ],
+    "out": "flood",
+    "why": "Sustained heavy rainfall is one of the standard causes of river flooding, and a slow-moving low-pressure system is exactly what can supply rain steadily enough, for long enough, over the same ground.",
+    "src": "https://en.wikipedia.org/wiki/Flood",
+    "verified": true
+  },
+  {
+    "in": [
+      "steam",
+      "wind"
+    ],
+    "out": "warm_front",
+    "why": "A warm front is exactly this: an advancing mass of warm, moist air riding up and over the retreating cold air ahead of it, arriving slowly under a wide sheet of cloud.",
+    "src": "https://en.wikipedia.org/wiki/Weather_front",
+    "verified": true
+  },
+  {
+    "in": [
+      "frost",
+      "wind"
+    ],
+    "out": "cold_front",
+    "why": "A cold front is dense cold air undercutting the warmer air ahead of it, moving up to twice as fast as a warm front and triggering a much sharper line of storms.",
+    "src": "https://en.wikipedia.org/wiki/Weather_front",
+    "verified": true
+  },
+  {
+    "in": [
+      "frost",
+      "rain"
+    ],
+    "out": "sleet",
+    "why": "Ice pellets, what Americans call sleet, form when raindrops fall through a sub-freezing layer near the ground and refreeze solid before they land — hard enough to bounce.",
+    "src": "https://en.wikipedia.org/wiki/Ice_pellets",
+    "verified": true
+  },
+  {
+    "in": [
+      "mist",
+      "stratus"
+    ],
+    "out": "drizzle",
+    "why": "Drizzle is official only below 0.5 mm across — droplets that shallow, misty stratus and stratocumulus clouds produce without the collision-and-growth process that builds heavier rain.",
+    "src": "https://en.wikipedia.org/wiki/Drizzle",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "wind"
+    ],
+    "out": "anemometer",
+    "why": "Wind spins hemispherical cups mounted on a shaft, because a cup's hollow face catches more drag than its convex back — Robinson's design, 1846.",
+    "src": "https://en.wikipedia.org/wiki/Anemometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "pot",
+      "rain"
+    ],
+    "out": "rain_gauge",
+    "why": "A funnel feeding a graduated cylinder converts rainfall depth straight into a number. Korea's cheugugi, standardised in 1441, was the first version issued nationwide.",
+    "src": "https://en.wikipedia.org/wiki/Rain_gauge",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze",
+      "wind"
+    ],
+    "out": "weather_vane",
+    "why": "An asymmetric tail catches more wind than the pointed head, so the whole vane swings to face into the wind. Athens' Tower of the Winds carried a bronze Triton doing exactly this, around 50 BCE.",
+    "src": "https://en.wikipedia.org/wiki/Weather_vane",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "keratin"
+    ],
+    "out": "hygrometer",
+    "why": "Human hair — pure keratin — lengthens measurably as humidity rises. De Saussure built the first hair hygrometer around a single strand in 1783.",
+    "src": "https://en.wikipedia.org/wiki/Hygrometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "monsoon",
+      "rainforest"
+    ],
+    "out": "tropical_climate",
+    "why": "Both Köppen's tropical rainforest and tropical monsoon types share the same rule: every month averages 18°C or warmer, and they differ only in how the rain is timed across the year.",
+    "src": "https://en.wikipedia.org/wiki/Tropical_climate",
+    "verified": true
+  },
+  {
+    "in": [
+      "monsoon",
+      "sea"
+    ],
+    "out": "tropical_climate",
+    "why": "Warm tropical seas keep even the coolest month above Köppen's 18°C tropical threshold, and it's that same warm water that feeds the monsoon winds blowing off it.",
+    "src": "https://en.wikipedia.org/wiki/Tropical_climate",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "sun"
+    ],
+    "out": "arid_climate",
+    "why": "Köppen draws the arid line on evaporation, not heat: where potential evaporation driven by strong sun outstrips whatever rain falls, however little, the climate counts as arid.",
+    "src": "https://en.wikipedia.org/wiki/Desert_climate",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "wind"
+    ],
+    "out": "arid_climate",
+    "why": "Wind speeds up evaporation from what little moisture the ground holds, widening the same gap between rainfall and evaporative demand that defines an arid climate.",
+    "src": "https://en.wikipedia.org/wiki/Desert_climate",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "rain"
+    ],
+    "out": "temperate_climate",
+    "why": "Steady seasonal rain across the mid-latitudes is what lets temperate farmland exist at all — Köppen's Class C zone, coldest month between −3°C and 18°C.",
+    "src": "https://en.wikipedia.org/wiki/Temperate_climate",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "storm"
+    ],
+    "out": "temperate_climate",
+    "why": "Thunderstorms breaking up warm spells are a routine feature of temperate summers, the mid-latitude belt between the tropics and the polar circles.",
+    "src": "https://en.wikipedia.org/wiki/Temperate_climate",
+    "verified": true
   }
 ]

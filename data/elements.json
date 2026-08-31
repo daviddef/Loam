@@ -29123,5 +29123,249 @@
       "wild"
     ],
     "fact": "A limbless burrower whose blunt tail looks so much like its head that some cultures call it \"two-headed.\""
+  },
+  {
+    "id": "cumulus",
+    "name": "Cumulus",
+    "emoji": "🌥️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "A heap cloud built by convection over warm ground, its flat base usually below 550 m."
+  },
+  {
+    "id": "cirrus",
+    "name": "Cirrus",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Ice crystals 6,000 to 20,000 m up, combed by strong winds aloft into curls called mare's tails.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "stratus",
+    "name": "Stratus",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "A flat grey sheet under 2,000 m, named for lying in layers. Lower it to the ground and it is fog."
+  },
+  {
+    "id": "cumulonimbus",
+    "name": "Cumulonimbus",
+    "emoji": "🌩️",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "A cumulus that kept growing until it hit the tropopause and spread into an anvil, often past 12,000 m."
+  },
+  {
+    "id": "nimbostratus",
+    "name": "Nimbostratus",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "A thick dark layer riding in on a warm front, wringing out steady rain or snow for hours.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "supercell",
+    "name": "Supercell",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "A thunderstorm organised around a mesocyclone, a deep updraught that keeps rotating for hours.",
+    "soleRoute": true
+  },
+  {
+    "id": "monsoon",
+    "name": "Monsoon",
+    "emoji": "☔",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "A seasonal wind that reverses because land heats and cools faster than the ocean beside it."
+  },
+  {
+    "id": "anticyclone",
+    "name": "Anticyclone",
+    "emoji": "🌞",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Sinking air spreads out at the surface as high pressure, clearing the sky it descends through.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "low_pressure",
+    "name": "Low-Pressure System",
+    "emoji": "🔃",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "A mid-latitude cyclone: a warm front and a cold front, rotating together round a shared low.",
+    "soleRoute": true
+  },
+  {
+    "id": "warm_front",
+    "name": "Warm Front",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Warm air riding up and over a retreating wedge of cold, denser air — a slow, wide advance.",
+    "soleRoute": true
+  },
+  {
+    "id": "cold_front",
+    "name": "Cold Front",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Dense cold air undercutting the warmer air ahead of it, moving up to twice a warm front's speed.",
+    "soleRoute": true
+  },
+  {
+    "id": "sleet",
+    "name": "Sleet",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Snow that melted crossing a warm layer aloft, then refroze into a hard pellet near the ground.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "drizzle",
+    "name": "Drizzle",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Droplets under 0.5 mm across, misted out of a low stratus deck — too light to fall as rain.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "anemometer",
+    "name": "Anemometer",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Four hemispherical cups on a shaft, spun by wind pressure. Robinson's design, 1846.",
+    "terminal": true,
+    "soleRoute": true,
+    "discovered": {
+      "year": 1846,
+      "note": "John Thomas Romney Robinson builds the four-cup anemometer."
+    }
+  },
+  {
+    "id": "rain_gauge",
+    "name": "Rain Gauge",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A funnel over a graduated cylinder. Korea's cheugugi, standardised in 1441, was the first of its kind.",
+    "terminal": true,
+    "soleRoute": true,
+    "discovered": {
+      "year": 1441,
+      "note": "The cheugugi rain gauge is standardised across Joseon Korea under King Sejong."
+    }
+  },
+  {
+    "id": "weather_vane",
+    "name": "Weather Vane",
+    "emoji": "🐓",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An asymmetric pointer that swings to face into the wind. Athens' Tower of the Winds carried a bronze one.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "hygrometer",
+    "name": "Hygrometer",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Human hair lengthens as humidity rises. De Saussure built the first hair hygrometer from one in 1783.",
+    "terminal": true,
+    "soleRoute": true,
+    "discovered": {
+      "year": 1783,
+      "note": "Horace-Bénédict de Saussure builds a hygrometer using a strand of human hair."
+    }
+  },
+  {
+    "id": "tropical_climate",
+    "name": "Tropical Climate",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "wild"
+    ],
+    "fact": "Köppen's line for it: every month averages 18°C or warmer. There is no real winter here.",
+    "terminal": true
+  },
+  {
+    "id": "arid_climate",
+    "name": "Arid Climate",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "wild"
+    ],
+    "fact": "Defined by evaporation outrunning rainfall, not by temperature — deserts and dry steppe both qualify.",
+    "terminal": true
+  },
+  {
+    "id": "temperate_climate",
+    "name": "Temperate Climate",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "wild"
+    ],
+    "fact": "The mid-latitude belt, 23.5° to 66.5°, where most of humanity lives through four real seasons.",
+    "terminal": true
   }
 ]

@@ -246,7 +246,10 @@ const SCALE = {
           'large_intestine', 'colon', 'haustra', 'rectum', 'appendix', 'peristalsis', 'gut_flora',
           // early-people batch 1 — hand-worked stone and wooden tools, the same rack as knife/rope/horn/antler
           'oldowan_tool', 'acheulean_handaxe', 'fire_drill', 'bow_drill', 'venus_figurine', 'atlatl',
-          'current', 'magnetic_field', 'barometer', 'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
+          'current', 'magnetic_field', 'barometer',
+          // weather batch 2 — hand-scale weather instruments, same rack as barometer
+          'anemometer', 'rain_gauge', 'weather_vane', 'hygrometer',
+          'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
           // big idea science batch 1 — a light form and a branching burn scar, same rack as x_ray/fulgurite
           'ultraviolet', 'lichtenberg_figure',
           // careers batch 1 — real hand tools, the same rack as knife/rope
@@ -524,6 +527,8 @@ const SCALE = {
           'port_stockpile', 'stacker_reclaimer', 'ship_loader',
           'giant_sequoia', 'coast_redwood',
           'mangrove', 'magma', 'lava', 'reef', 'dune', 'mist', 'fog', 'rain', 'wind', 'field', 'meadow', 'pasture', 'harvest', 'early_crop',
+          // weather batch 2 — precipitation types, same scale as rain
+          'sleet', 'drizzle',
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest', 'evolution', 'common_ancestor', 'genetic_diversity',
           // living-earth batch 1 — abstract classification concepts, the same "as diagrammed" scale as common_ancestor/evolution
           'taxonomy', 'tree_of_life', 'cladistics',
@@ -550,6 +555,8 @@ const SCALE = {
   '3':   [// mining comprehensive batch — a slurry pipeline running tens of kilometres, km scale like the pit
           'slurry_pipeline',
           'atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
+          // weather batch 2 — cloud genera, same km scale as generic cloud
+          'cumulus', 'cirrus', 'stratus', 'cumulonimbus', 'nimbostratus',
           'trophic_cascade',
           // meteorite-impact batch 1 — a km-scale landform, same rack as volcano/mountain/caldera
           'impact_crater',
@@ -576,6 +583,9 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   ['primordial_soup', 'planetesimal', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
+          // weather batch 2 — storm-system and climate-zone scale, same as storm/hurricane above
+          'supercell', 'monsoon', 'anticyclone', 'low_pressure', 'warm_front', 'cold_front',
+          'tropical_climate', 'arid_climate', 'temperate_climate',
           'tundra', 'desert', 'taiga', 'rainforest',
           // tech breakthroughs batch 1 — a worldwide network, the same planet-spanning bucket as sky/sea/desert
           'internet',
