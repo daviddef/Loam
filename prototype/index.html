@@ -3586,13 +3586,34 @@ function tidy() {
       if (reach.has(n)) continue;                        // not a bridge — a real cycle holds it together
       const small = reach.size <= chips.length - reach.size ? reach : new Set(chips.filter(x => !reach.has(x)));
       if (small.size < 2 || small.size > 8) continue;     // not a small satellite
-      const depths = [...small].map(x => depth.get(x));
-      if (Math.max(...depths) - Math.min(...depths) < 3) continue;   // not a real multi-generation tail
       // Which end of THIS edge sits on the satellite side vs the main side —
       // kept so the satellite's pack can be seated next to the main side's
       // pack below, rather than wherever discovery order happens to put it.
       const satelliteAnchor = small.has(c) ? c : n;
       const mainAnchor = small.has(c) ? n : c;
+      // How many real hops the small side extends, walked from the cut edge
+      // OUTWARD and staying inside the small side — not each chip's absolute
+      // depth in the whole graph. Absolute depth mixes in whatever unrelated
+      // ancestry the MAIN side happens to have: Straw+Spark→Fire's Spark
+      // sits at depth 0 while Fire sits at depth 4 purely because Straw's
+      // OWN real ancestry (Soil, Grass, ...) runs four generations deep —
+      // by absolute depth that reads as a four-generation tail, even though
+      // Fire is genuinely one hop off Straw and Spark is a shallow, ordinary
+      // second ingredient, not a tail at all. ("why one long line?" — a
+      // single Straw feeding five Spark+Straw→Fire results, each Fire cut
+      // into its own satellite and stacked one per row, found live.) Local,
+      // satellite-relative depth is immune to that: it only grows when the
+      // small side genuinely chains several hops deep on its own.
+      const localDepth = new Map([[satelliteAnchor, 0]]);
+      const queue = [satelliteAnchor];
+      while (queue.length) {
+        const x = queue.shift();
+        for (const y of allAdj.get(x)) {
+          if (small.has(y) && !localDepth.has(y)) { localDepth.set(y, localDepth.get(x) + 1); queue.push(y); }
+        }
+      }
+      const localDepths = [...small].map(x => localDepth.get(x) ?? 0);
+      if (Math.max(...localDepths) - Math.min(...localDepths) < 3) continue;   // not a real multi-generation tail
       candidates.push({ k, c, n, size: small.size, satelliteAnchor, mainAnchor });
     }
   }
