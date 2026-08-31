@@ -5008,7 +5008,7 @@
   {
     "id": "lava",
     "name": "Lava",
-    "emoji": "🌋",
+    "emoji": "🟠",
     "shelf": "workshop",
     "tags": [
       "earth",
@@ -25658,7 +25658,10 @@
     "name": "Coke",
     "emoji": "⬛",
     "shelf": "workshop",
-    "tags": ["earth", "fire"],
+    "tags": [
+      "earth",
+      "fire"
+    ],
     "soleRoute": true,
     "fact": "Coal heated past 1,000°C with no air doesn't burn — it comes apart, leaving this near-pure carbon behind."
   },
@@ -25667,7 +25670,9 @@
     "name": "Pig Iron",
     "emoji": "🐖",
     "shelf": "workshop",
-    "tags": ["metal"],
+    "tags": [
+      "metal"
+    ],
     "soleRoute": true,
     "fact": "Cast in branching sand moulds off one channel — piglets nursed by a sow is where the name comes from."
   }

@@ -6045,6 +6045,34 @@ function setAsideTab(tab) {
 }
 
 const aminoById = Object.fromEntries((BED.aminos ?? []).map(a => [a.id, a]));
+// PLAYABLE_ATOM (above) only ever looked inside atomById — true chemical
+// elements — so an amino acid could never get the same "+ Put on the bench"
+// button a real element does, even on the 19 of 20 amino acids that ARE
+// also real, already-craftable Loam elements (glycine, alanine, ...). Bedrock
+// amino ids are systematically `bed_<the matching game id>`, one exception
+// (aspartic_acid's own Wikipedia-titled bedrock id is bed_aspartate) aliased
+// the same way EL_ALIAS handles aluminum/aluminium.
+// ("why cant i drag e.g. these proteins/amino acids in?" — found live.)
+const AMINO_ALIAS = { aspartic_acid: 'bed_aspartate' };
+const PLAYABLE_AMINO = new Map();
+for (const e of elements) {
+  const bid = AMINO_ALIAS[e.id] ?? ('bed_' + e.id);
+  if (aminoById[bid]) PLAYABLE_AMINO.set(bid, e.id);
+}
+// The reverse of PLAYABLE_ATOM/PLAYABLE_AMINO: given a Loam game id, which
+// bedrock node (if any) is its real molecular structure filed under? Lets
+// quickViewHTML draw the same ball-and-stick diagram showAtom's own sheet
+// already does, instead of that diagram only ever being reachable through
+// the periodic table / Proteins tab detour. ("i see in your browser glycine
+// has a proper drawn out scientific image, but i dont see that? ... can we
+// include in our quick view?" — found live.)
+function bedrockIdFor(gameId) {
+  const atomKey = EL_ALIAS[gameId] ?? ('el_' + gameId);
+  if (atomById[atomKey]) return atomKey;
+  const aminoKey = AMINO_ALIAS[gameId] ?? ('bed_' + gameId);
+  if (aminoById[aminoKey]) return aminoKey;
+  return null;
+}
 const fmt = (f) => String(f).replace(/(\d+)/g, '<sub>$1</sub>');
 // The Proteins tab: the same twenty-amino-acid grid showAtom('amino_acid')
 // already draws for its own sheet, reused here rather than reinvented, one
@@ -6076,13 +6104,15 @@ function showAtom(id) {
   // o" — found live. Hydrogen and Helium are real playable elements same
   // as any other card, they just arrived here through a composition tree
   // instead of the shelf — if the player already has one, the same "Put
-  // on the bench" action every other card offers belongs here too.
-  const gameId = a && PLAYABLE_ATOM.get(a.id);
+  // on the bench" action every other card offers belongs here too. Amino
+  // acids need the same check against PLAYABLE_AMINO, not PLAYABLE_ATOM —
+  // they live in a different bedrock table (see PLAYABLE_AMINO above).
+  const gameId = a ? PLAYABLE_ATOM.get(a.id) : (aminoById[id] ? PLAYABLE_AMINO.get(id) : null);
   const canPlace = gameId && found.has(gameId);
   document.getElementById('sheetBody').innerHTML =
     `<div class="phead">${a ? `<div style="margin-bottom:8px">${node}</div>` : `<div style="margin-bottom:8px">${node}</div>`}
        <h3>${(a ?? c).name}</h3>
-       <div class="pnums">${a ? `element ${a.number} · ${a.category}` : 'compound'}</div></div>
+       <div class="pnums">${a ? `element ${a.number} · ${a.category}` : c.kind === 'amino' ? 'amino acid' : c.kind === 'particle' ? 'particle' : 'compound'}</div></div>
      ${canPlace ? `<div class="cardrow" style="margin:0 0 10px;justify-content:flex-start">
         <button class="addroute" data-put="${gameId}" title="Put on the bench">+</button></div>` : ''}
      ${BED.structures?.[id] ? `<div class="molbox">${moleculeSVG(id)}</div>` : ''}
@@ -6327,6 +6357,7 @@ function quickViewHTML(id) {
       <div class="pnums">${f.name}${e.terminal ? ' · nothing is made from this' : ''}</div>
       <div class="pfrom">${e.fact}</div>
     </div>
+    ${(() => { const bid = bedrockIdFor(id); const svg = bid ? moleculeSVG(bid) : ''; return svg ? `<div class="molbox">${svg}</div>` : ''; })()}
     ${cautionHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
@@ -6339,7 +6370,9 @@ function quickViewHTML(id) {
             ? 'You have this one, but you have not yet held everything that makes it.'
             : 'You have not made this yet.'}</p>`}
     ${hiddenIn > 0 ? `<p class="hint2">${hiddenIn} other way${hiddenIn === 1 ? '' : 's'} to make it ${hiddenIn === 1 ? 'exists' : 'exist'}.</p>` : ''}
-    ${owned && bestRecipe.get(id) ? `<h2>Ancestry</h2><ul class="tree">${treeHTML(id, 0, new Set(), 1)}</ul>` : ''}
+    ${owned && bestRecipe.get(id) ? `<h2>Ancestry</h2>
+      <p class="hint2">One real route back — several of these steps have other real parents too (Bone's own Meat, for instance, is just as truly Goat, Chicken, Fish, or Turkey).</p>
+      <ul class="tree">${treeHTML(id, 0, new Set(), 1)}</ul>` : ''}
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}
     ${taxonPathHTML(id)}
@@ -7854,7 +7887,21 @@ addEventListener('pointerup', ev => {
 
 document.getElementById('aside').addEventListener('click', ev => {
   const h = ev.target.closest('[data-hint]');
-  if (h) showHint(h.dataset.hint);
+  if (h) return showHint(h.dataset.hint);
+  // The Proteins and Animals tabs render the same [data-atom]/[data-taxon]
+  // cards the periodic table and an element's own "Classified as" trail
+  // already use — but those two only ever got wired up inside #sheet's own
+  // click delegation, so a tap here did nothing at all. Route to the same
+  // showAtom/showTaxon sheet everywhere else already goes to, which is what
+  // actually carries the "+ Put on the bench" button that places a real,
+  // already-found element — the same action the periodic table's atoms and
+  // an element's taxonomy trail already offer, not a new one.
+  // ("why cant i drag e.g. these proteins/amino acids in? ... make this
+  // standardised" — found live.)
+  const at = ev.target.closest('[data-atom]');
+  if (at) return showAtom(at.dataset.atom);
+  const tx = ev.target.closest('[data-taxon]');
+  if (tx) return showTaxon(tx.dataset.taxon);
 });
 document.getElementById('aside').addEventListener('pointerdown', ev => {
   const nfo = ev.target.closest('[data-info]');
