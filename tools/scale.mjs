@@ -146,7 +146,9 @@ const SCALE = {
           'stem', 'node', 'internode', 'terminal_bud', 'axillary_bud', 'leaf_scar', 'cotyledon',
           // railways batch 1 — crushed rock, hand-sample scale alongside quartzite/gneiss
           'ballast',
-          'icsi_needle', 'nerve', 'stm_tip'],
+          'icsi_needle', 'nerve', 'stm_tip',
+          // evolution batch 1 — a fossilized bone or shell, hand-sample scale alongside bone/shell
+          'fossil'],
   '-1':  [// mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
           // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
           'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
@@ -232,7 +234,9 @@ const SCALE = {
           'cerebrospinal_fluid', 'blood_brain_barrier', 'cranial_nerve', 'spinal_nerve',
           'short_term_memory', 'long_term_memory', 'neuroplasticity', 'neurogenesis',
           // norse gods batch 1 — hand-tool and small-object scale, the same rack as rope/shoe/horn
-          'raven', 'hammer', 'rune'],
+          'raven', 'hammer', 'rune',
+          // evolution batch 1 — a museum-specimen fossil and a living animal, same rack as archaeopteryx/fish
+          'transitional_fossil', 'living_fossil'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
@@ -339,6 +343,9 @@ const SCALE = {
           'food_web', 'succession', 'limiting_factor', 'carrying_capacity', 'kelp_forest', 'evolution', 'common_ancestor', 'genetic_diversity',
           // living-earth batch 1 — abstract classification concepts, the same "as diagrammed" scale as common_ancestor/evolution
           'taxonomy', 'tree_of_life', 'cladistics',
+          // evolution batch 1 — abstract mechanism and evidence concepts, the same conceptual rack as evolution/common_ancestor/genetic_diversity
+          'genetic_drift', 'gene_flow', 'adaptation', 'sexual_selection', 'artificial_selection', 'reproductive_isolation', 'speciation',
+          'adaptive_radiation', 'homology', 'vestigial_structure', 'fossil_record', 'extinction', 'mass_extinction', 'camouflage',
           // geography batch 1 — coastal and karst features and single landforms, tens to a couple hundred metres
           'sea_cliff', 'sea_arch', 'sea_stack', 'waterfall', 'sinkhole', 'cavern', 'moraine', 'mesa', 'butte', 'iceberg',
           // mythology batch 1 — underworld realms, described and drawn room-scale
@@ -360,6 +367,8 @@ const SCALE = {
           'trophic_cascade',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
           'mountain', 'volcano', 'canyon', 'glacier', 'fjord', 'meander', 'oxbow_lake', 'delta', 'floodplain', 'lagoon', 'estuary', 'caldera', 'plateau',
+          // evolution batch 1 — a kilometre-scale landform, the same bucket as atoll/mountain
+          'island',
           // mining batch 1 — the whole open working, kilometre scale
           'open_pit_mining', 'strip_mining', 'mountaintop_removal', 'block_caving',
           // mining value chains batch 2 — a unit train (the record run was 7.35km) and the port precinct it feeds,

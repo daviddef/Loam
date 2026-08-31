@@ -27464,5 +27464,205 @@
     "why": "While fishing in a river near Ise, a giant clam trapped his hand and he drowned.",
     "src": "https://en.wikipedia.org/wiki/Sarutahiko_%C5%8Ckami",
     "supported": true
+  },
+  {
+    "in": [
+      "volcano",
+      "sea"
+    ],
+    "out": "island",
+    "why": "Undersea volcanic eruptions pile up layer after layer of cooled lava until the peak breaches the ocean surface — the way the Hawaiian Islands, and Darwin's own Galápagos, both formed.",
+    "src": "https://en.wikipedia.org/wiki/Volcanic_island",
+    "supported": true
+  },
+  {
+    "in": [
+      "bone",
+      "sand"
+    ],
+    "out": "fossil",
+    "why": "Buried in sediment and left long enough, a bone's minerals are gradually replaced by rock, atom by atom, until it turns to stone — the slow process that makes a fossil.",
+    "src": "https://en.wikipedia.org/wiki/Fossil",
+    "supported": true
+  },
+  {
+    "in": [
+      "allele"
+    ],
+    "verb": "wait",
+    "out": "genetic_drift",
+    "why": "Left to run across generations with no help from fitness, an allele's frequency drifts up or down by chance alone — genetic drift, strongest of all in small populations.",
+    "src": "https://en.wikipedia.org/wiki/Genetic_drift",
+    "supported": true
+  },
+  {
+    "in": [
+      "pollen",
+      "wind"
+    ],
+    "out": "gene_flow",
+    "why": "Wind carrying one population's pollen into another population's flowers carries their alleles along with it — gene flow, the movement of genetic variants between populations.",
+    "src": "https://en.wikipedia.org/wiki/Gene_flow",
+    "supported": true
+  },
+  {
+    "in": [
+      "gene_flow",
+      "mutation"
+    ],
+    "out": "genetic_diversity",
+    "why": "New mutations and alleles arriving with migrants both add fresh variants to a population's gene pool — mutation and gene flow are evolution's two sources of new genetic diversity.",
+    "src": "https://en.wikipedia.org/wiki/Genetic_diversity",
+    "supported": true
+  },
+  {
+    "in": [
+      "natural_selection",
+      "genetic_diversity"
+    ],
+    "out": "adaptation",
+    "why": "Natural selection acting on a population's genetic diversity, generation after generation, leaves behind adaptation: traits well-suited to survive and reproduce in that environment.",
+    "src": "https://en.wikipedia.org/wiki/Adaptation",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "genetic_diversity"
+    ],
+    "out": "sexual_selection",
+    "why": "Peahens choosing mates with the most elaborate tail feathers pulled that ornament past what pure survival would ever favour — sexual selection acting on a population's genetic diversity.",
+    "src": "https://en.wikipedia.org/wiki/Sexual_selection",
+    "supported": true
+  },
+  {
+    "in": [
+      "genetic_diversity",
+      "human"
+    ],
+    "out": "artificial_selection",
+    "why": "Breeders repeatedly choosing which individuals in a population reproduce — from fancy pigeon breeds to today's dog breeds — is the same mechanism as natural selection, with a person as the filter.",
+    "src": "https://en.wikipedia.org/wiki/Selective_breeding",
+    "supported": true
+  },
+  {
+    "in": [
+      "island",
+      "genetic_drift"
+    ],
+    "out": "reproductive_isolation",
+    "why": "Marooned on an island in numbers too small for gene flow back to the mainland, a population's genetic drift pulls its gene pool apart from its relatives until the two can no longer interbreed.",
+    "src": "https://en.wikipedia.org/wiki/Reproductive_isolation",
+    "supported": true
+  },
+  {
+    "in": [
+      "adaptation",
+      "reproductive_isolation"
+    ],
+    "out": "speciation",
+    "why": "A population that has both adapted to its own conditions and become reproductively isolated from its relatives has crossed the line into a new species.",
+    "src": "https://en.wikipedia.org/wiki/Speciation",
+    "supported": true
+  },
+  {
+    "in": [
+      "speciation",
+      "island"
+    ],
+    "out": "adaptive_radiation",
+    "why": "One finch species blown off course to the Galápagos speciated again and again across the islands' separate niches, radiating into thirteen species with thirteen different beaks.",
+    "src": "https://en.wikipedia.org/wiki/Darwin%27s_finches",
+    "supported": true
+  },
+  {
+    "in": [
+      "mass_extinction",
+      "genetic_diversity"
+    ],
+    "out": "adaptive_radiation",
+    "why": "With the dinosaurs gone after the mass extinction 65 million years ago, mammals drew on their existing genetic diversity to radiate rapidly into the niches left empty, growing larger and more varied.",
+    "src": "https://en.wikipedia.org/wiki/Adaptive_radiation",
+    "supported": true
+  },
+  {
+    "in": [
+      "bone",
+      "common_ancestor"
+    ],
+    "out": "homology",
+    "why": "A bat's wing, a whale's flipper, and a human hand all share the same five-fingered bone plan, inherited from a shared four-limbed common ancestor and reshaped for different jobs — homology.",
+    "src": "https://en.wikipedia.org/wiki/Homology_(biology)",
+    "supported": true
+  },
+  {
+    "in": [
+      "homology",
+      "natural_selection"
+    ],
+    "out": "vestigial_structure",
+    "why": "Once natural selection stops favouring a homologous structure — a horse's side toes, a snake's hip bones — it shrinks over generations to a nonfunctional vestige built from the same ancestral parts.",
+    "src": "https://en.wikipedia.org/wiki/Vestigiality",
+    "supported": true
+  },
+  {
+    "in": [
+      "fossil",
+      "evolution"
+    ],
+    "out": "fossil_record",
+    "why": "Enough fossils, laid down in order through successive rock strata, become the fossil record — the closest thing evolution has to a paper trail, chronicling life's change across billions of years.",
+    "src": "https://en.wikipedia.org/wiki/Fossil_record",
+    "supported": true
+  },
+  {
+    "in": [
+      "fossil",
+      "archaeopteryx"
+    ],
+    "out": "transitional_fossil",
+    "why": "Archaeopteryx carries teeth and a bony tail from its reptile ancestry alongside true flight feathers — a fossil bridging two groups so cleanly it is the textbook transitional fossil.",
+    "src": "https://en.wikipedia.org/wiki/Transitional_fossil",
+    "supported": true
+  },
+  {
+    "in": [
+      "fossil_record",
+      "fish"
+    ],
+    "out": "living_fossil",
+    "why": "The coelacanth was known only from the fossil record and presumed extinct for 65 million years until a living one was hauled up off South Africa in 1938 — the fish that coined \"living fossil.\"",
+    "src": "https://en.wikipedia.org/wiki/Coelacanth",
+    "supported": true
+  },
+  {
+    "in": [
+      "limiting_factor",
+      "carrying_capacity"
+    ],
+    "out": "extinction",
+    "why": "When limiting factors squeeze a population below the numbers its environment's carrying capacity would otherwise allow, and it can't recover, the species goes extinct.",
+    "src": "https://en.wikipedia.org/wiki/Extinction",
+    "supported": true
+  },
+  {
+    "in": [
+      "extinction",
+      "fossil_record"
+    ],
+    "out": "mass_extinction",
+    "why": "Mass extinction shows up in the fossil record as a sudden, global loss of a huge share of species at once — 90 percent at the end of the Permian, most dinosaurs 65 million years ago.",
+    "src": "https://en.wikipedia.org/wiki/Extinction_event",
+    "supported": true
+  },
+  {
+    "in": [
+      "adaptation",
+      "smoke"
+    ],
+    "out": "camouflage",
+    "why": "When industrial soot darkened English tree bark in the 1800s, dark peppered moths survived being spotted by birds far better than the pale form did — camouflage evolving in real time.",
+    "src": "https://en.wikipedia.org/wiki/Peppered_moth",
+    "supported": true
   }
 ]

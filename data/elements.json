@@ -16315,7 +16315,7 @@
       "wild"
     ],
     "fact": "The largest population an environment's food, water and space can sustain before growth stops.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "mountain",
@@ -19525,7 +19525,7 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "How many different alleles exist across a population's genes. Bigger pools survive change better."
   },
   {
@@ -22603,5 +22603,220 @@
     "soleRoute": true,
     "terminal": true,
     "fact": "Grouping organisms by shared derived traits, not overall looks \u2014 the method behind the whale-hippo surprise."
+  },
+  {
+    "id": "island",
+    "name": "Island",
+    "emoji": "\ud83c\udfdd\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "soleRoute": true,
+    "fact": "Land walled in by water on every side. Isolation is exactly what makes island wildlife so distinctive."
+  },
+  {
+    "id": "fossil",
+    "name": "Fossil",
+    "emoji": "\ud83e\uddb4",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "extinct"
+    ],
+    "soleRoute": true,
+    "fact": "Ancient remains preserved in rock after minerals slowly replace the original bone or shell."
+  },
+  {
+    "id": "genetic_drift",
+    "name": "Genetic Drift",
+    "emoji": "\ud83c\udfb2",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "Random, chance shifts in a population's allele frequencies \u2014 strongest of all in small populations."
+  },
+  {
+    "id": "gene_flow",
+    "name": "Gene Flow",
+    "emoji": "\ud83c\udf43",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "soleRoute": true,
+    "fact": "Alleles moving between populations as individuals, pollen, or seeds cross from one to another."
+  },
+  {
+    "id": "adaptation",
+    "name": "Adaptation",
+    "emoji": "\ud83e\udd8e",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A trait shaped over generations by natural selection to fit its bearer to its environment."
+  },
+  {
+    "id": "sexual_selection",
+    "name": "Sexual Selection",
+    "emoji": "\ud83e\udd9a",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Mate choice or rivalry favouring traits that win breeding success, not just plain survival."
+  },
+  {
+    "id": "artificial_selection",
+    "name": "Artificial Selection",
+    "emoji": "\ud83d\udc15",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Humans, not nature, choosing which individuals breed \u2014 the same mechanism, a different judge."
+  },
+  {
+    "id": "reproductive_isolation",
+    "name": "Reproductive Isolation",
+    "emoji": "\ud83d\udea7",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "Populations diverged enough that they can no longer produce fertile offspring together."
+  },
+  {
+    "id": "speciation",
+    "name": "Speciation",
+    "emoji": "\ud83d\udc24",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "The point at which diverging populations can no longer interbreed and become separate species."
+  },
+  {
+    "id": "adaptive_radiation",
+    "name": "Adaptive Radiation",
+    "emoji": "\ud83d\udc26",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "terminal": true,
+    "fact": "One ancestral population fanning rapidly into many species, each fit to a different niche."
+  },
+  {
+    "id": "homology",
+    "name": "Homology",
+    "emoji": "\ud83d\udd90\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "soleRoute": true,
+    "fact": "Shared underlying structure \u2014 the same bone plan in a wing, a flipper, and a hand \u2014 from common descent."
+  },
+  {
+    "id": "vestigial_structure",
+    "name": "Vestigial Structure",
+    "emoji": "\ud83e\uddb5",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A once-useful body part reduced to a nonfunctional leftover once selection stopped favouring it."
+  },
+  {
+    "id": "fossil_record",
+    "name": "Fossil Record",
+    "emoji": "\ud83d\udcdc",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "The total, ordered archive of fossils across rock strata \u2014 evolution's clearest paper trail."
+  },
+  {
+    "id": "transitional_fossil",
+    "name": "Transitional Fossil",
+    "emoji": "\ud83e\udeb6",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "extinct"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A fossil bridging two groups, carrying features of both the ancestral and the descendant form."
+  },
+  {
+    "id": "living_fossil",
+    "name": "Living Fossil",
+    "emoji": "\ud83d\udc1f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "A living species so little changed from its fossil relatives it looks like it stepped out of deep time."
+  },
+  {
+    "id": "extinction",
+    "name": "Extinction",
+    "emoji": "\ud83d\udc80",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "The permanent disappearance of a species when the last individual dies without descendants."
+  },
+  {
+    "id": "mass_extinction",
+    "name": "Mass Extinction",
+    "emoji": "\u2604\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A sudden, global loss of a large share of species all at once, resetting evolution's course."
+  },
+  {
+    "id": "camouflage",
+    "name": "Camouflage",
+    "emoji": "\ud83c\udf42",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "soleRoute": true,
+    "terminal": true,
+    "fact": "Colouring or pattern that blends its bearer into the background \u2014 adaptation you can see at a glance."
   }
 ]
