@@ -4173,12 +4173,22 @@ addEventListener('pointerdown', ev => {
   if (touches.size) { touches.clear(); pinch = null; }
 }, true);
 
-// Double-tap zooms in, and again to fit — the standard map gesture.
+// Double-tap zooms in, and again to fit — the standard map gesture. While
+// sprinkling, empty canvas is usually the only thing NOT covered by a real
+// chip's own drag/tap handling or a pointer-events:none grain, so it doubles
+// as the fastest way to stop — a double-tap there stops the pour instead of
+// zooming, which would be a confusing thing to do mid-rain anyway.
+// ("i cant stop the sprinkle.. let me double click on the empty canvas to
+// stop the sprinkle" — found live.)
 board.addEventListener('pointerup', ev => {
   if (ev.target.closest('.chip.board, .verb, #zoom, #intro')) return;
   if (wasPinch) return;              // the tail end of a pinch, not a tap
   const now = Date.now();
-  if (now - lastTap < 320) { view.k > 1.05 ? fitAll() : zoomBy(1.8, ev.clientX, ev.clientY); lastTap = 0; }
+  if (now - lastTap < 320) {
+    lastTap = 0;
+    if (sprinkle) return stopSprinkle();
+    view.k > 1.05 ? fitAll() : zoomBy(1.8, ev.clientX, ev.clientY);
+  }
   else lastTap = now;
 });
 
@@ -5432,7 +5442,6 @@ function removeGrain(rec) {
   const i = grains.indexOf(rec);
   if (i >= 0) grains.splice(i, 1);
 }
-function clearGrains() { while (grains.length) removeGrain(grains[grains.length - 1]); }
 // Self-tracked world coordinates, not getBoundingClientRect — that's the
 // whole reason this scales past what hit()/hitAgainst() do for real chips.
 // "touching" is an approximation (two roughly-GRAIN_SIZE circles overlap
@@ -5456,7 +5465,12 @@ function stopSprinkle(silent) {
   clearInterval(sprinkle.timer);
   const stoppedId = sprinkle.id;
   sprinkle = null;
-  clearGrains();
+  // NOT clearGrains() — "why does sprinkling one element remove all my other
+  // sprinkled elements?" — found live. Stopping (or switching to pour a
+  // different element) only halts the interval that's adding NEW grains; it
+  // must never sweep away what already fell. The whole point of sprinkling
+  // several things is watching them sit together and react when a later pour
+  // touches them — wiping the board on every switch defeated that.
   document.querySelectorAll(sprinklingSelector(stoppedId)).forEach(c => c.classList.remove('sprinkling'));
   if (!silent) toast(`Stopped sprinkling ${nameOf(byId[stoppedId])}`);
 }
