@@ -1991,6 +1991,7 @@
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><circle cx="30" cy="30" r="4" fill="var(--ik)"/><path d="M30 30 L46 30" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="30" r="3" fill="var(--ik)"/><path d="M30 30 L38 43.86" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="43.86" r="3" fill="var(--ik)"/><path d="M30 30 L22 43.86" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="43.86" r="3" fill="var(--ik)"/><path d="M30 30 L14 30" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="30" r="3" fill="var(--ik)"/><path d="M30 30 L22 16.14" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="16.14" r="3" fill="var(--ik)"/><path d="M30 30 L38 16.14" fill="none" stroke="var(--gh)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="38" cy="16.14" r="3" fill="var(--ik)"/></svg></span></button>
       <button data-z="motes" id="motesBtn" title="Dots along the lines"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M8 46 Q22 46 30 30 Q38 14 52 14" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="44" r="4.2" fill="var(--ik)"/><circle cx="30" cy="30" r="3.4" fill="var(--ik)"/><circle cx="46" cy="16" r="2.6" fill="var(--ik)"/></svg></span></button>
       <button data-z="consolidate" id="consolidateBtn" title="One card per thing"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M8 12 L22 12 L22 26 L8 26 Z" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 18 L28 18 L28 32 L14 32 Z" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 22 L40 22" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 12 L56 12 L56 26 L42 26 Z" fill="var(--ik)"/></svg></span></button>
+      <button data-z="decay" id="decayBtn" title="Decay mode — tap anything to see what removing it would break">🥀</button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
@@ -4070,6 +4071,7 @@ document.getElementById('zoom').addEventListener('click', ev => {
     toast(prefs.motes !== false ? 'Dots along the lines — on' : 'Dots along the lines — off');
   }
   else if (z === 'consolidate') toggleConsolidate();
+  else if (z === 'decay') toggleDecayPick();
 });
 syncMotesBtn();
 syncConsolidateBtn();
@@ -4893,13 +4895,46 @@ function dismissCard() { clearTimeout(cardT); cardPinned = false; document.getEl
 let drag = null;
 let pan = null;
 let holdT = 0;
+// ---------- right-click paint-to-erase ----------
+// "could 'right click' paint a deletion of objects it touches?" — found
+// live. A desktop-mouse-only gesture (there is no touch equivalent of a
+// second mouse button), so it lives entirely on `button === 2` and never
+// interferes with the ordinary left-button drag/tap/pan paths above and
+// below it. One pushUndo() per gesture, not per chip erased — benchState()
+// snapshots the WHOLE bench, so a single call at the start of the drag
+// already restores everything the drag went on to remove.
+board.addEventListener('contextmenu', ev => ev.preventDefault());
+let eraseDrag = false;
+function eraseAt(x, y) {
+  const chip = hit(x, y);
+  if (chip && chip.matches('.chip.board')) removeChip(chip, true);
+  const [wx, wy] = toWorld(x, y);
+  const g = nearestGrain(wx, wy);
+  if (g) removeGrain(g);
+}
 board.addEventListener('pointerdown', ev => {
+  if (ev.button !== 2) return;
+  ev.preventDefault();
+  eraseDrag = true;
+  pushUndo('erasing what the pointer touched');
+  eraseAt(ev.clientX, ev.clientY);
+});
+addEventListener('pointermove', ev => { if (eraseDrag) eraseAt(ev.clientX, ev.clientY); });
+addEventListener('pointerup', ev => { if (ev.button === 2) eraseDrag = false; });
+addEventListener('pointercancel', () => { eraseDrag = false; });
+
+board.addEventListener('pointerdown', ev => {
+  if (ev.button === 2) return;                        // handled above, not a drag/pan
   if (ev.target.closest('#zoom, #intro')) return;
   if (touches.size > 1) return;                       // pinching, not dragging
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   const spr = ev.target.closest('[data-sprinkle]');
   if (spr) { ev.preventDefault(); return toggleSprinkle(spr.dataset.sprinkle); }
+  if (decayPickMode) {
+    const target = ev.target.closest('.chip.board:not(.cooking)');
+    if (target && target.dataset.id) { ev.preventDefault(); return decayElement(target.dataset.id); }
+  }
   // A scan hub, or an unresolved ingredient's placeholder box, isn't a real
   // element — neither has a dataset.id, so it can never be a merge input or
   // target, and the ordinary hold-to-explain/hit-cache machinery below
@@ -5889,6 +5924,21 @@ function decayImpact(id) {
     if (lostARoute) starved.add(x);
   }
   return { broken, starved };
+}
+// A toolbar-level entry point into decayElement, so trying "what if X went
+// away" no longer requires opening a sheet first. ("could we add another
+// grey button right middle for 'decay'?" — found live.) Stays armed across
+// multiple taps, same as sprinkle's own toggle — decayElement() already
+// clears whatever was previously shown before applying the new target, so
+// tapping through several elements in a row just replaces the overlay each
+// time rather than stacking.
+let decayPickMode = false;
+function toggleDecayPick() {
+  decayPickMode = !decayPickMode;
+  document.getElementById('decayBtn').classList.toggle('on', decayPickMode);
+  toast(decayPickMode
+    ? 'Decay mode — tap anything to see what removing it would break'
+    : 'Decay mode off');
 }
 // The player-facing side of the above: a discreet, reversible visual — grey
 // and dim what the removal breaks or weakens, directly on the bench the
