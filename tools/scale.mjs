@@ -200,6 +200,8 @@ const SCALE = {
           'djembe', 'tabla', 'timpani', 'daf',
           'guitar', 'violin', 'morin_khuur', 'sitar', 'kora',
           'flute', 'pan_flute', 'trumpet', 'didgeridoo', 'bagpipes', 'shofar',
+          // japanese gods batch 1 — a hand-held bow and a portable drum, the same rack as knife/gong
+          'bow', 'taiko',
           'theremin', 'electric_guitar', 'synthesizer',
           'atlantic_herring', 'rainbow_trout', 'northern_pike', 'common_carp', 'goldfish', 'koi',
           'european_eel', 'european_plaice', 'clownfish', 'piranha', 'largemouth_bass',
@@ -256,6 +258,10 @@ const SCALE = {
           // norse gods batch 1 — human/idol scale, the same rack as the Aztec/Maya deities above; spear is a ~2 m weapon, same order as a human
           'spear', 'odin', 'thor', 'loki', 'freyja', 'frigg', 'baldr', 'heimdall', 'tyr',
           'njord', 'skadi', 'sif', 'bragi', 'idun', 'hel', 'vidar', 'freyr',
+          // japanese gods batch 1 — human-scale figures, the same rack as the Aztec/Maya deities above
+          'izanagi', 'izanami', 'amaterasu', 'susanoo', 'tsukuyomi', 'kagutsuchi', 'inari',
+          'ryujin', 'fujin', 'raijin', 'hachiman', 'tenjin', 'uke_mochi', 'mikaboshi',
+          'ame_no_uzume', 'sarutahiko', 'fox',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
@@ -335,6 +341,8 @@ const SCALE = {
           'sea_cliff', 'sea_arch', 'sea_stack', 'waterfall', 'sinkhole', 'cavern', 'moraine', 'mesa', 'butte', 'iceberg',
           // mythology batch 1 — underworld realms, described and drawn room-scale
           'mictlan', 'xibalba',
+          // japanese gods batch 1 — a single rock cave, the same rack as cavern
+          'ame_no_iwato',
           // mining batch 1 — the mine working itself, room to building scale
           'placer_mining', 'room_and_pillar_mining', 'longwall_mining',
           // mining value chains batch 2 — a hundred-plus-metre machine or heap: Big Muskie was 150m long,

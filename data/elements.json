@@ -7593,7 +7593,7 @@
       "animal",
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "Tendon: collagen all lined up one way. Enormously strong along it, useless across it."
   },
   {
@@ -11250,7 +11250,7 @@
       "crop"
     ],
     "fact": "A stone fruit of Prunus, kept pruned to a modest 5-6 metres for picking.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "apricot",
@@ -11426,7 +11426,7 @@
       "crop"
     ],
     "fact": "Small-seeded, drought-tolerant grasses grown as a grain across dry regions worldwide.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "sorghum",
@@ -22290,5 +22290,218 @@
       "gas"
     ],
     "fact": "N2 \u2014 two nitrogen atoms locked by a triple bond so strong almost nothing can break it, which is why it makes up 78% of the air and does almost nothing while it is there."
+  },
+  {
+    "id": "fox",
+    "name": "Fox",
+    "emoji": "\ud83e\udd8a",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Most widely distributed member of the dog family, found across the entire Northern Hemisphere."
+  },
+  {
+    "id": "bow",
+    "name": "Bow",
+    "emoji": "\ud83c\udff9",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A flexed stave that stores energy in its limbs, released through a string to launch an arrow."
+  },
+  {
+    "id": "taiko",
+    "name": "Taiko",
+    "emoji": "\ud83e\udd41",
+    "shelf": "workshop",
+    "tags": [
+      "instrument",
+      "membranophone"
+    ],
+    "fact": "Japanese drum family with cowhide heads stretched over a wooden shell, beaten with sticks.",
+    "soleRoute": true
+  },
+  {
+    "id": "izanagi",
+    "name": "Izanagi",
+    "emoji": "\ud83d\uddfe",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Primordial Shinto god who churned the sea into Japan's islands, then fled the underworld Yomi in horror."
+  },
+  {
+    "id": "izanami",
+    "name": "Izanami",
+    "emoji": "\u26b0\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Primordial Shinto goddess who died bearing the fire god Kagutsuchi and became ruler of the underworld Yomi."
+  },
+  {
+    "id": "amaterasu",
+    "name": "Amaterasu",
+    "emoji": "\u2600\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto sun goddess and mythical ancestor of Japan's imperial line; hid in a cave, darkening the world.",
+    "terminal": true
+  },
+  {
+    "id": "susanoo",
+    "name": "Susanoo",
+    "emoji": "\ud83c\udf0a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto storm god exiled from Heaven for his rampage; slew the eight-headed serpent Yamata-no-Orochi."
+  },
+  {
+    "id": "tsukuyomi",
+    "name": "Tsukuyomi",
+    "emoji": "\ud83c\udf19",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto moon god who killed the food goddess Uke Mochi in disgust, forever separating day from night.",
+    "terminal": true
+  },
+  {
+    "id": "kagutsuchi",
+    "name": "Kagutsuchi",
+    "emoji": "\ud83c\udf0b",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto fire god; his birth killed his mother Izanami, so his father beheaded and dismembered him in revenge.",
+    "terminal": true
+  },
+  {
+    "id": "inari",
+    "name": "Inari",
+    "emoji": "\u26e9\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto kami of rice, fertility and industry, whose messengers are white foxes -- kitsune.",
+    "terminal": true
+  },
+  {
+    "id": "ryujin",
+    "name": "Ryujin",
+    "emoji": "\ud83d\udc09",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto dragon king of the sea, ruling a palace of red and white coral beneath the waves.",
+    "terminal": true
+  },
+  {
+    "id": "fujin",
+    "name": "Fujin",
+    "emoji": "\ud83d\udca8",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto wind god, one of the eldest kami, shown carrying a huge bag of winds on his shoulders.",
+    "terminal": true
+  },
+  {
+    "id": "raijin",
+    "name": "Raijin",
+    "emoji": "\u26a1",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto thunder god who beats drums ringed with the tomoe symbol from atop the clouds.",
+    "terminal": true
+  },
+  {
+    "id": "hachiman",
+    "name": "Hachiman",
+    "emoji": "\ud83d\udee1\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto god of war and archery, syncretic spirit of Emperor Ojin; guardian kami of the samurai.",
+    "terminal": true
+  },
+  {
+    "id": "tenjin",
+    "name": "Tenjin",
+    "emoji": "\ud83d\udcda",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto god of scholarship -- the deified spirit of the exiled courtier-poet Sugawara no Michizane.",
+    "terminal": true
+  },
+  {
+    "id": "uke_mochi",
+    "name": "Uke Mochi",
+    "emoji": "\ud83c\udf5a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto food goddess killed by Tsukuyomi; crops and livestock grew from her corpse afterward."
+  },
+  {
+    "id": "mikaboshi",
+    "name": "Mikaboshi",
+    "emoji": "\u2b50",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto star god, the only deity who refused to submit to the heavenly gods' conquest of the earth.",
+    "terminal": true
+  },
+  {
+    "id": "ame_no_iwato",
+    "name": "Ame-no-Iwato",
+    "emoji": "\ud83d\udd73\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The heavenly rock cave where Amaterasu hid after Susanoo's rampage, plunging the world into darkness."
+  },
+  {
+    "id": "ame_no_uzume",
+    "name": "Ame-no-Uzume",
+    "emoji": "\ud83d\udc83",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto goddess of dawn and mirth; her bawdy dance lured Amaterasu out of hiding and founded kagura dance."
+  },
+  {
+    "id": "sarutahiko",
+    "name": "Sarutahiko",
+    "emoji": "\ud83d\udc7a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shinto guardian kami with a seven-span nose and eyes like mirrors; blocked the descent of the heavenly gods."
   }
 ]
