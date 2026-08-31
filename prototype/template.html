@@ -730,6 +730,12 @@ __CATEGORY_CSS__
   .chip.board.pulse{animation:pulse .38s ease}
   #waiting{color:var(--teal);font-weight:700}
   .chip.live{border-color:var(--avocado);box-shadow:0 0 0 2px rgba(107,142,78,.13)}
+  /* The armed shelf card for sprinkle mode — a slow breathing glow, not a
+     badge or a popup, so it reads at a glance without adding new UI chrome. */
+  @keyframes sprinkleBreathe{0%,100%{box-shadow:0 0 0 2px rgba(197,120,60,.18)}
+                              50%{box-shadow:0 0 0 4px rgba(197,120,60,.4)}}
+  .chip.sprinkling{border-color:var(--orange);animation:sprinkleBreathe 1.6s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){ .chip.sprinkling{animation:none;box-shadow:0 0 0 3px rgba(197,120,60,.35)} }
   /* With a card in your hand: how many cards on the bench it will make
      something new with. A number, never a partner. */
   .chip.board.haslive::before{
@@ -4154,13 +4160,18 @@ function freeSpot(w, h, near) {
 }
 
 const MAX_CHIPS = 140;
-function spawn(id, x, y, near, above) {
+function spawn(id, x, y, near, above, forceNew) {
   // One card per thing, if you asked for that. A bench built by hand ends up
   // with four Waters and three Suns, because every recipe that needs one takes
   // a fresh copy. Consolidated, the copies collapse and the lines converge on
   // the single card instead — the same graph, drawn as a graph rather than as
   // a list of the times you happened to need something.
-  if (prefs.consolidate) {
+  //
+  // Sprinkle mode's whole point is genuine duplicates raining onto the
+  // board, so its ticks pass forceNew to skip this — consolidate staying on
+  // would otherwise make every tick after the first just re-pulse the one
+  // existing chip, which is not sprinkling anything.
+  if (prefs.consolidate && !forceNew) {
     const already = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === id);
     if (already) {
       already.classList.remove('folded');
@@ -5184,6 +5195,54 @@ function applyMerge(a, b) {
   const r = merges.get([a.dataset.id, b.dataset.id].sort().join('+'));
   if (r) pushUndo(`making ${nameOf(byId[r.out])}`);
   resolve(r, [a, b]);
+}
+
+// ---------- sprinkle mode: continuous spawn, reacting on touch ----------
+// "what if there was a 'sprinkle' mode ... so if i sprinkled sheep they
+// would fall endlessly on the pallette, but i could 'sprinkle' any element i
+// wanted, and they would react to one another if they were to touch?" —
+// found live. This is a recombination of machinery that already exists
+// rather than a new engine: the same REACTIONS data and hit-and-merge path
+// a manual drag-drop already uses, ticking on a timer instead of a pointer.
+// Deliberately not named "decay" anywhere — that word already means
+// something unrelated in this codebase (decayElement's reachability
+// toggle).
+const SPRINKLE_MS = 350;
+let sprinkle = null;                    // { id, timer }
+function stopSprinkle(silent) {
+  if (!sprinkle) return;
+  clearInterval(sprinkle.timer);
+  const stoppedId = sprinkle.id;
+  sprinkle = null;
+  document.querySelectorAll(`[data-spawn="${stoppedId}"]`).forEach(c => c.classList.remove('sprinkling'));
+  if (!silent) toast(`Stopped sprinkling ${nameOf(byId[stoppedId])}`);
+}
+function sprinkleTick(id) {
+  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
+    toast('The bench is full — stopped sprinkling');
+    return stopSprinkle(true);
+  }
+  const b = boardBox();
+  if (!b.width || !b.height) return;
+  // Land somewhere across the visible board — NOT via freeSpot, which
+  // exists specifically to avoid overlap. Sprinkling wants the opposite: a
+  // landing spot that CAN fall on an existing chip, so two things sprinkled
+  // near each other can actually touch and react, the way a manual drag
+  // dropped onto another chip already does.
+  const px = b.left + 16 + Math.random() * Math.max(1, b.width - 32);
+  const py = b.top + 16 + Math.random() * Math.max(1, b.height - 32);
+  const target = hit(px, py);
+  const pair = target?.dataset.id ? merges.get([id, target.dataset.id].sort().join('+')) : null;
+  const [wx, wy] = toWorld(px, py);
+  const el = spawn(id, pair ? wx : null, pair ? wy : null, null, null, true);
+  if (pair) applyMerge(el, target);
+}
+function toggleSprinkle(id) {
+  if (sprinkle && sprinkle.id === id) return stopSprinkle();
+  stopSprinkle(true);
+  sprinkle = { id, timer: setInterval(() => sprinkleTick(id), SPRINKLE_MS) };
+  document.querySelectorAll(`[data-spawn="${id}"]`).forEach(c => c.classList.add('sprinkling'));
+  toast(`Sprinkling ${nameOf(byId[id])} — tap its shelf card twice again to stop`);
 }
 
 // ---------- proximity: some things react before you ever drop them ----------
@@ -6712,6 +6771,9 @@ document.getElementById('sheet').addEventListener('click', ev => {
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     stopCooking();
+    // Left running, a backgrounded tab would come back to a full, silently
+    // maxed-out bench — MAX_CHIPS stops the spawning but not the surprise.
+    if (sprinkle) stopSprinkle(true);
     try { ac?.suspend(); } catch {}
   } else {
     // Credit the time that passed while we were away, then carry on.
@@ -7726,6 +7788,7 @@ function labelResultHTML(parsed, forHub) {
 // you choose. Both work, because on a phone a tap is quicker and on a desktop a
 // drag is what the hand expects.
 let shelfDrag = null;
+let lastShelfTap = { id: null, t: 0 };
 
 // Free Play hands you everything at once, which means a thing you place there
 // was never actually built — it has no ancestors, so "Where it came from"
@@ -7947,10 +8010,22 @@ addEventListener('pointerup', ev => {
     const t = hit(ev.clientX, ev.clientY, el);
     if (t) { t.dataset.verb ? applyProcess(el, t) : applyMerge(el, t); }
   } else if (!moved) {
-    // Tapping a result while searching is a lookup, not a placement — you are
-    // asking "what is this", and dragging remains how you actually place it.
-    if (shelfQuery) { showEntry(id); sfx.pick(); }
-    else { placeItem(id); sfx.pick(); }
+    // A second quick tap on the SAME shelf card arms sprinkle mode for it,
+    // rather than placing a third copy — the first tap already placed one,
+    // same as any single tap does, so double-tapping reads as "tap harder
+    // for more" instead of adding new-gesture latency to every plain tap.
+    const now = Date.now();
+    if (lastShelfTap.id === id && now - lastShelfTap.t < 320) {
+      lastShelfTap = { id: null, t: 0 };
+      toggleSprinkle(id);
+    } else {
+      lastShelfTap = { id, t: now };
+      // Tapping a result while searching is a lookup, not a placement — you
+      // are asking "what is this", and dragging remains how you actually
+      // place it.
+      if (shelfQuery) { showEntry(id); sfx.pick(); }
+      else { placeItem(id); sfx.pick(); }
+    }
   }
   if (moved) { ptDragged = true; setTimeout(() => { ptDragged = false; }, 0); }
 });
