@@ -258,6 +258,8 @@ const SCALE = {
           // weather batch 2 — hand-scale weather instruments, same rack as barometer
           'anemometer', 'rain_gauge', 'weather_vane', 'hygrometer',
           'pendulum_clock', 'sewing_machine', 'telegraph', 'telephone', 'radio', 'phonograph', 'x_ray', 'camera_obscura', 'photographic_plate', 'photograph', 'ether', 'typewriter', 'steel', 'bronze', 'brass', 'hide', 'leather', 'latex', 'rubber', 'vulcanised_rubber', 'canvas', 'silk', 'silkworm', 'cocoon', 'knife', 'rope', 'wheel', 'lamp', 'shoe', 'pipe', 'coal',
+          // philosophy batch 1 — small hand-scale objects
+          'box', 'veil',
           // big idea science batch 1 — a light form and a branching burn scar, same rack as x_ray/fulgurite
           'ultraviolet', 'lichtenberg_figure',
           // careers batch 1 — real hand tools, the same rack as knife/rope
@@ -410,6 +412,10 @@ const SCALE = {
           'izanagi', 'izanami', 'amaterasu', 'susanoo', 'tsukuyomi', 'kagutsuchi', 'inari',
           'ryujin', 'fujin', 'raijin', 'hachiman', 'tenjin', 'uke_mochi', 'mikaboshi',
           'ame_no_uzume', 'sarutahiko', 'fox',
+          // philosophy batch 1 — real philosophers, human scale
+          'socrates', 'plato', 'aristotle', 'descartes', 'locke', 'kant', 'wittgenstein',
+          'beauvoir', 'confucius', 'gautama_buddha', 'avicenna', 'plutarch', 'epicurus',
+          'searle', 'turing', 'foot', 'rawls', 'aquinas',
           // did you know batch 1 — human-scale people, structures, and a genuinely
           // vehicle-scale meteorite (the largest single intact one known)
           'moat', 'drawbridge', 'viking', 'columbus', 'gladiator', 'tickle', 'sneeze',

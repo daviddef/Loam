@@ -4927,7 +4927,6 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
     "fact": "Until about 1800 every one was forged singly by hand, and they were worth stealing."
   },
   {
@@ -26516,7 +26515,6 @@
     ],
     "fact": "Purple-blotched hollow stems along streams and ditches. Socrates was made to drink a decoction of it in 399 BC.",
     "taxon": "tx_conium",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -27465,7 +27463,6 @@
       "trade"
     ],
     "fact": "Requires professional qualification, typically including pedagogy -- the science of teaching.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -31028,5 +31025,226 @@
     "soleRoute": true,
     "terminal": true,
     "fact": "The lift distribution with the least induced drag of any wing planform — the Spitfire's signature shape."
+  },
+  {
+    "id": "box",
+    "name": "Box",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A rigid container, traditionally built from flat wooden panels joined edge to edge and nailed."
+  },
+  {
+    "id": "veil",
+    "name": "Veil",
+    "emoji": "🧕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A piece of fine, often sheer cloth worn to cover the head or face, traditionally woven in silk."
+  },
+  {
+    "id": "socrates",
+    "name": "Socrates",
+    "emoji": "💬",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Athenian philosopher executed in 399 BCE for impiety and corrupting the youth; wrote nothing himself.",
+    "terminal": true
+  },
+  {
+    "id": "plato",
+    "name": "Plato",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Student of Socrates; founded The Academy in Athens in 387 BCE, Europe's first university.",
+    "terminal": true
+  },
+  {
+    "id": "aristotle",
+    "name": "Aristotle",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Tutored the young Alexander the Great and founded The Lyceum, teaching logic, biology, and physics.",
+    "terminal": true
+  },
+  {
+    "id": "descartes",
+    "name": "René Descartes",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "French philosopher and mathematician who united algebra and geometry into the coordinate system.",
+    "terminal": true
+  },
+  {
+    "id": "locke",
+    "name": "John Locke",
+    "emoji": "📝",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "English philosopher who argued the mind at birth is a blank slate, filled only by experience.",
+    "terminal": true
+  },
+  {
+    "id": "kant",
+    "name": "Immanuel Kant",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "German philosopher who argued morality rests on unbreakable, universal rules reason gives itself.",
+    "terminal": true
+  },
+  {
+    "id": "wittgenstein",
+    "name": "Ludwig Wittgenstein",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Austrian philosopher of language and logic who gave away his fortune to teach village schoolchildren.",
+    "terminal": true
+  },
+  {
+    "id": "beauvoir",
+    "name": "Simone de Beauvoir",
+    "emoji": "✒️",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "French existentialist philosopher and author of The Second Sex, a founding text of modern feminism.",
+    "terminal": true
+  },
+  {
+    "id": "confucius",
+    "name": "Confucius",
+    "emoji": "🥈",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Chinese philosopher and teacher whose sayings on virtue and reciprocity fill the Analects.",
+    "terminal": true
+  },
+  {
+    "id": "gautama_buddha",
+    "name": "Buddha",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Born Siddhartha Gautama, a prince who renounced his palace and, on reaching enlightenment, became the Buddha.",
+    "terminal": true
+  },
+  {
+    "id": "avicenna",
+    "name": "Avicenna",
+    "emoji": "🕴️",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Persian polymath and physician whose Canon of Medicine was a standard European textbook for 600 years.",
+    "terminal": true
+  },
+  {
+    "id": "plutarch",
+    "name": "Plutarch",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Greek-born biographer and priest at the Delphic oracle who wrote the paired Lives of Greeks and Romans.",
+    "terminal": true
+  },
+  {
+    "id": "epicurus",
+    "name": "Epicurus",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Athenian philosopher who taught in a garden school, The Garden, that unusually admitted women as students.",
+    "terminal": true
+  },
+  {
+    "id": "searle",
+    "name": "John Searle",
+    "emoji": "🀄",
+    "shelf": "workshop",
+    "soleRoute": true,
+    "tags": [
+      "person"
+    ],
+    "fact": "American philosopher who devised the Chinese Room argument against machine understanding in 1980.",
+    "terminal": true
+  },
+  {
+    "id": "turing",
+    "name": "Alan Turing",
+    "emoji": "🤖",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "British mathematician who laid computing's theoretical foundation and devised a test for machine intelligence.",
+    "terminal": true
+  },
+  {
+    "id": "foot",
+    "name": "Philippa Foot",
+    "emoji": "🚋",
+    "shelf": "workshop",
+    "soleRoute": true,
+    "tags": [
+      "person"
+    ],
+    "fact": "British philosopher who devised the runaway-tram dilemma known as the trolley problem in 1967.",
+    "terminal": true
+  },
+  {
+    "id": "rawls",
+    "name": "John Rawls",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "soleRoute": true,
+    "tags": [
+      "person"
+    ],
+    "fact": "American philosopher who devised the 'veil of ignorance' thought experiment for choosing a just society.",
+    "terminal": true
+  },
+  {
+    "id": "aquinas",
+    "name": "Thomas Aquinas",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "person"
+    ],
+    "fact": "Dominican friar and theologian who argued from motion to an unmoved first mover he called God.",
+    "terminal": true
   }
 ]
