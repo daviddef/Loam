@@ -339,6 +339,8 @@ const SCALE = {
           // Hindu mythology batch 1 — deities drawn at human/idol scale, the same rack as the Aztec/Maya pantheon above
           'brahma', 'vishnu', 'shiva', 'saraswati', 'lakshmi', 'parvati', 'durga', 'kali',
           'ganesha', 'hanuman', 'indra', 'agni', 'surya', 'vayu',
+          // Hindu mythology batch 2 (Krishna/Rama) — same human/idol scale as the pantheon above
+          'krishna', 'radha', 'yashoda', 'kansa', 'rama', 'sita', 'ravana', 'lakshmana', 'arjuna',
           // a full pole weapon, the same order of magnitude as the human wielding it
           'trident',
           // egyptian gods batch 1 — deities and idols at human scale, and their new base ingredients:

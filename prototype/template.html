@@ -4815,7 +4815,13 @@ board.addEventListener('contextmenu', ev => ev.preventDefault());
 let eraseDrag = false;
 function eraseAt(x, y) {
   const chip = hit(x, y);
-  if (chip && chip.matches('.chip.board')) removeChip(chip, true);
+  // removeChip(_, true) — the "instant" path — splices the chip out of
+  // `links` but, unlike the animated path, never redraws the SVG itself;
+  // its other callers already trigger a redraw some other way afterward.
+  // This one doesn't, so the line stayed drawn to a chip that was already
+  // gone. ("right paint deleting the object, the lines still remain?" —
+  // found live.)
+  if (chip && chip.matches('.chip.board')) { removeChip(chip, true); drawLinks(); }
   const [wx, wy] = toWorld(x, y);
   const g = nearestGrain(wx, wy);
   if (g) removeGrain(g);
@@ -5339,9 +5345,10 @@ function removeGrain(rec) {
 // "touching" is an approximation (two roughly-GRAIN_SIZE circles overlap
 // once their centres are within one grain-width of each other), not a pixel-
 // exact hit test, which is the right tradeoff at this population.
-function nearestGrain(wx, wy) {
+function nearestGrain(wx, wy, exclude) {
   let best = null, bestD = GRAIN_SIZE;
   for (const g of grains) {
+    if (g === exclude) continue;
     const d = Math.hypot(g.wx - wx, g.wy - wy);
     if (d < bestD) { bestD = d; best = g; }
   }
@@ -5399,12 +5406,16 @@ function sprinkleTick(id) {
     return;
   }
 
-  // Otherwise it's cheap sand: spawn a grain, and if it landed on another
-  // grain that it genuinely reacts with, both vanish and the result appears
-  // as a new grain at the midpoint — chain reactions stay at grain level
-  // instead of flooding the bench with full cards for every intermediate.
+  // Otherwise it's cheap sand: check for a reaction BEFORE creating the new
+  // grain, not after — spawnGrain() immediately pushes into `grains`, so
+  // checking nearestGrain() afterward always found the just-created grain
+  // itself first (distance exactly 0 to its own landing point, scanned last,
+  // beating any real neighbour's positive distance). In practice that meant
+  // only an element reacting with ITSELF (stone+stone->spark) ever actually
+  // fired here — two different things sitting right next to each other,
+  // like water and sun, never got a chance to. ("i feel like if i put water
+  // over sun there should be some kind of reaction?" — found live.)
   if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
-  const mine = spawnGrain(id, wx, wy);
   const near = nearestGrain(wx, wy);
   const grainPair = near ? merges.get([id, near.id].sort().join('+')) : null;
   if (grainPair) {
@@ -5415,12 +5426,33 @@ function sprinkleTick(id) {
     // own) keeps the result near where the two actually touched without the
     // mathematically-too-neat pull toward the middle. ("why do sprinkles
     // sometimes organise themselves?" — found live.)
-    const mx = (mine.wx + near.wx) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
-    const my = (mine.wy + near.wy) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
-    removeGrain(mine);
+    const mx = (wx + near.wx) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
+    const my = (wy + near.wy) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
     removeGrain(near);
     if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
     spawnGrain(grainPair.out, mx, my);
+  } else {
+    spawnGrain(id, wx, wy);
+  }
+  // Freshly-landed grains only ever check the ONE spot they fell on — a big
+  // pile built up before this fix (or just settled unevenly) can still sit
+  // full of touching pairs nothing ever re-examines. Recheck a handful of
+  // existing grains every tick so a backlog like that keeps resolving
+  // instead of sitting inert forever.
+  ambientGrainSweep(8);
+}
+function ambientGrainSweep(n) {
+  for (let i = 0; i < n && grains.length > 1; i++) {
+    const g = grains[Math.floor(Math.random() * grains.length)];
+    const near = nearestGrain(g.wx, g.wy, g);
+    const pair = near ? merges.get([g.id, near.id].sort().join('+')) : null;
+    if (!pair) continue;
+    const mx = (g.wx + near.wx) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
+    const my = (g.wy + near.wy) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
+    removeGrain(g);
+    removeGrain(near);
+    if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
+    spawnGrain(pair.out, mx, my);
   }
 }
 function toggleSprinkle(id) {
