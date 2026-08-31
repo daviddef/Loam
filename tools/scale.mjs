@@ -56,7 +56,10 @@ const SCALE = {
           // large-intestine batch 1 — a molecular-scale vitamin, the same rack as vitamin_a/vitamin_d/folate
           'vitamin_k',
           // amphibian batch 1 — an alkaloid toxin, the same molecule scale as digoxin/thyroxine
-          'batrachotoxin'],
+          'batrachotoxin',
+          // poisonous plants batch 1 — alkaloid/cannabinoid toxins and psychoactive
+          // compounds, the same molecule scale as digoxin/batrachotoxin above
+          'atropine', 'thc', 'cocaine', 'nicotine', 'morphine', 'mescaline', 'psilocybin'],
   '-8':  ['maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'allele', 'crispr', 'dna_sequencing', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
           // DNA-completeness batch 1 — the replication and expression machinery,
           // same enzyme/process scale as chromatin/gene/enzyme/protein
@@ -65,7 +68,10 @@ const SCALE = {
           'denatured_protein', 'starch', 'gelatin', 'ribosome', 'messenger_rna',
           'hyaluronic_acid', 'satellite',
           // cell biology batch 1 — membrane-sheet and DNA-loop scale, the same rack as membrane/chromatin/gene
-          'nuclear_envelope', 'endoplasmic_reticulum', 'rough_endoplasmic_reticulum', 'smooth_endoplasmic_reticulum', 'cytoskeleton', 'cell_wall', 'plasmid'],
+          'nuclear_envelope', 'endoplasmic_reticulum', 'rough_endoplasmic_reticulum', 'smooth_endoplasmic_reticulum', 'cytoskeleton', 'cell_wall', 'plasmid',
+          // poisonous plants batch 1 — a ribosome-inactivating protein, the same
+          // protein scale as hemoglobin/enzyme/ferritin above
+          'ricin'],
   '-6':  ['s_thermophilus', 'l_bulgaricus', 'l_acidophilus', 'bifidobacterium', 'l_paracasei', 'l_plantarum', 'leuconostoc', 'lactococcus', 'acetobacter', 'penicillium', 'stoma', 'virus', 'vesicle', 'protocell', 'binary_fission', 'budding', 'bacteria', 'archaea', 'cyanobacteria', 'rhizobium', 'zooxanthellae', 'mitochondrion', 'chloroplast', 'spore', 'pollen', 'action_potential', 'yeast', 'mould', 'resistance', 'chromosome', 'nucleus', 'mitochondrial_dna',
           'bacteriophage', 'prophage', 'lysis', 'salmonella', 'streptomyces',
           'avibirnavirus', 'gammacoronavirus', 'e_coli',
@@ -236,6 +242,10 @@ const SCALE = {
           'coke', 'pig_iron',
           'shiitake', 'maitake', 'spirulina', 'horsetail', 'dandelion', 'aloe_vera', 'ginseng', 'psyllium',
           'fly_agaric', 'death_cap', 'chanterelle', 'porcini', 'morel', 'puffball', 'stinkhorn', 'turkey_tail', 'slime_mold', 'shaggy_mane',
+          // poisonous plants batch 1 — a small psilocybin mushroom, same cap scale as
+          // the mushroom rack above; peyote is a famously tiny button cactus, a few
+          // centimetres across, closer to this scale than a shrub's
+          'psilocybin_mushroom', 'peyote',
           'pineapple', 'spinach', 'acai', 'pomegranate', 'goji', 'papaya', 'broccoli', 'alfalfa', 'stevia',
           'sweet_potato', 'cauliflower', 'zucchini', 'eggplant', 'asparagus', 'radish', 'turnip', 'leek',
           'brussels_sprout', 'kale', 'artichoke', 'okra', 'mushroom', 'avocado', 'arugula', 'rhubarb', 'watercress',
@@ -349,6 +359,13 @@ const SCALE = {
           'pan', 'hypnos', 'heracles', 'odysseus', 'cerberus',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
+          // poisonous plants batch 1 — herb/shrub/vine-scale toxic and psychoactive
+          // plants, the same rack as foxglove/cactus/willow above
+          'deadly_nightshade', 'poison_hemlock', 'water_hemlock', 'castor_bean', 'oleander',
+          'aconite', 'autumn_crocus', 'mayapple', 'pokeweed', 'larkspur', 'lily_of_the_valley',
+          'giant_hogweed', 'rhododendron', 'datura', 'angels_trumpet', 'cannabis', 'coca',
+          'tobacco', 'opium_poppy', 'morning_glory', 'ayahuasca_vine', 'salvia_divinorum',
+          'sweet_flag', 'mescal_bean',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
           'spinning_wheel', 'loom',
           'elevator', 'internal_combustion_engine', 'lcd_screen', 'microwave_oven', 'plough', 'peat', 'forge', 'warhead', 'pig', 'sheep', 'horse', 'wolf', 'deer', 'bear', 'kangaroo', 'dingo', 'zebra', 'lion', 'camel', 'cow', 'goat', 'aurochs', 'tree', 'acacia', 'scarecrow', 'greenhouse', 'human', 'natural_selection', 'cystic_fibrosis', 'sickle_cell_anemia', 'cancer', 'gene_therapy', 'dna_profile', 'cloning', 'snake', 'rattlesnake',
@@ -401,6 +418,9 @@ const SCALE = {
           'magnetic_separation', 'gravity_separation', 'road_freight', 'car_dumper',
           'saguaro', 'airplane',
           'oak', 'pine', 'rubber_tree', 'kapok', 'elephant', 'de_extinction', 'giraffe', 'nile_crocodile', 'american_alligator',
+          // poisonous plants batch 1 — full-sized trees and a tall columnar cactus,
+          // the same rack as oak/pine/saguaro above
+          'yew', 'strychnine_tree', 'horse_chestnut', 'betel_nut', 'san_pedro_cactus',
           'climax_community', 'food_chain',
           'basking_shark', 'megamouth_shark', 'great_white_shark', 'thresher_shark', 'goblin_shark',
           'manta_ray', 'tiger_shark', 'orca', 'great_hammerhead', 'giant_squid', 'lions_mane_jellyfish', 'whale_shark',

@@ -2470,6 +2470,609 @@
       "fact": "A single living species, the meerkat -- Kalahari-dwelling and living in mobs where some members always stand sentry to watch for predators while the rest forage.",
       "srcTitle": "Meerkat",
       "src": "https://en.wikipedia.org/wiki/Meerkat"
+    },
+    {
+      "id": "tx_solanales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Solanales",
+      "fact": "Unites the nightshade family and the morning-glory family -- two lineages that independently lean hard on alkaloid chemistry to deter being eaten.",
+      "srcTitle": "Solanales",
+      "src": "https://en.wikipedia.org/wiki/Solanales"
+    },
+    {
+      "id": "tx_ranunculales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Ranunculales",
+      "fact": "The earliest-branching order of eudicots, and disproportionately toxic: buttercups, poppies and barberries all sit here.",
+      "srcTitle": "Ranunculales",
+      "src": "https://en.wikipedia.org/wiki/Ranunculales"
+    },
+    {
+      "id": "tx_apiales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Apiales",
+      "fact": "The carrot order: small flowers packed into flat-topped umbels, a family trait that makes its edible and lethal members look alike.",
+      "srcTitle": "Apiales",
+      "src": "https://en.wikipedia.org/wiki/Apiales"
+    },
+    {
+      "id": "tx_gentianales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Gentianales",
+      "fact": "An order defined by opposite leaves and fused petals, containing two of the deadliest alkaloid families in the plant kingdom.",
+      "srcTitle": "Gentianales",
+      "src": "https://en.wikipedia.org/wiki/Gentianales"
+    },
+    {
+      "id": "tx_sapindales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Sapindales",
+      "fact": "The soapberry order -- citrus, maples and horse chestnuts, unified by molecular evidence rather than by looking alike.",
+      "srcTitle": "Sapindales",
+      "src": "https://en.wikipedia.org/wiki/Sapindales"
+    },
+    {
+      "id": "tx_fabales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Fabales",
+      "fact": "The legume order: nitrogen-fixing root nodules make this one of the most agriculturally important lineages on Earth, poisonous outliers included.",
+      "srcTitle": "Fabales",
+      "src": "https://en.wikipedia.org/wiki/Fabales"
+    },
+    {
+      "id": "tx_lamiales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Lamiales",
+      "fact": "A huge order of square-stemmed, often aromatic herbs, named for the mint family at its center.",
+      "srcTitle": "Lamiales",
+      "src": "https://en.wikipedia.org/wiki/Lamiales"
+    },
+    {
+      "id": "tx_rosales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Rosales",
+      "fact": "The rose order, a molecular-era regrouping that pulled hemp and hops in alongside roses, elms and mulberries once DNA showed where they actually belonged.",
+      "srcTitle": "Rosales",
+      "src": "https://en.wikipedia.org/wiki/Rosales"
+    },
+    {
+      "id": "tx_ericales",
+      "rank": "order",
+      "parent": "tx_eudicots",
+      "name": "Ericales",
+      "fact": "The heath order: acid-soil specialists including blueberries, camellias, persimmons -- and rhododendrons, whose nectar several species load with neurotoxin.",
+      "srcTitle": "Ericales",
+      "src": "https://en.wikipedia.org/wiki/Ericales"
+    },
+    {
+      "id": "tx_arecales",
+      "rank": "order",
+      "parent": "tx_monocots",
+      "name": "Arecales",
+      "fact": "A single-family order: the palms, nearly all of them tree-form monocots with an unbranched trunk topped by a crown of leaves.",
+      "srcTitle": "Arecales",
+      "src": "https://en.wikipedia.org/wiki/Arecales"
+    },
+    {
+      "id": "tx_liliales",
+      "rank": "order",
+      "parent": "tx_monocots",
+      "name": "Liliales",
+      "fact": "The true lily order, distinguished from the superficially similar Asparagales by details of seed coat and floral anatomy rather than by looks alone.",
+      "srcTitle": "Liliales",
+      "src": "https://en.wikipedia.org/wiki/Liliales"
+    },
+    {
+      "id": "tx_acorales",
+      "rank": "order",
+      "parent": "tx_monocots",
+      "name": "Acorales",
+      "fact": "A single living genus, Acorus, that molecular phylogenetics places as the single earliest-diverging lineage within the entire monocot clade.",
+      "srcTitle": "Acorales",
+      "src": "https://en.wikipedia.org/wiki/Acorales"
+    },
+    {
+      "id": "tx_pinales",
+      "rank": "order",
+      "parent": "tx_pinophyta",
+      "name": "Pinales",
+      "fact": "The order that now holds every living conifer family after DNA evidence folded yews -- once considered too anomalous to be conifers at all -- into it.",
+      "srcTitle": "Pinales",
+      "src": "https://en.wikipedia.org/wiki/Pinales"
+    },
+    {
+      "id": "tx_hymenogastraceae",
+      "rank": "family",
+      "parent": "tx_agaricales",
+      "name": "Hymenogastraceae",
+      "fact": "A gilled-mushroom family that absorbed the bluing hallucinogenic Psilocybe species after a 2010 molecular study moved them out of the older Strophariaceae.",
+      "srcTitle": "Hymenogastraceae",
+      "src": "https://en.wikipedia.org/wiki/Hymenogastraceae"
+    },
+    {
+      "id": "tx_psilocybe",
+      "rank": "genus",
+      "parent": "tx_hymenogastraceae",
+      "name": "Psilocybe",
+      "fact": "Species in this genus bruise blue-green when handled, an oxidation reaction of the same psilocybin that gives them their psychoactive effect.",
+      "srcTitle": "Psilocybe",
+      "src": "https://en.wikipedia.org/wiki/Psilocybe"
+    },
+    {
+      "id": "tx_solanaceae",
+      "rank": "family",
+      "parent": "tx_solanales",
+      "name": "Solanaceae",
+      "fact": "The nightshade family: nearly every member runs on tropane or steroidal alkaloids, from the tomato's mild solanine to belladonna's atropine.",
+      "srcTitle": "Solanaceae",
+      "src": "https://en.wikipedia.org/wiki/Solanaceae"
+    },
+    {
+      "id": "tx_atropa",
+      "rank": "genus",
+      "parent": "tx_solanaceae",
+      "name": "Atropa",
+      "fact": "Named for Atropos, the Fate who cuts the thread of life -- a genus of three species built almost entirely around tropane alkaloids.",
+      "srcTitle": "Atropa",
+      "src": "https://en.wikipedia.org/wiki/Atropa"
+    },
+    {
+      "id": "tx_datura",
+      "rank": "genus",
+      "parent": "tx_solanaceae",
+      "name": "Datura",
+      "fact": "Herbaceous annuals with upward-facing trumpet flowers and spine-covered seed capsules, distinguishing them from the related woody, downward-hanging Brugmansia.",
+      "srcTitle": "Datura",
+      "src": "https://en.wikipedia.org/wiki/Datura"
+    },
+    {
+      "id": "tx_brugmansia",
+      "rank": "genus",
+      "parent": "tx_solanaceae",
+      "name": "Brugmansia",
+      "fact": "Woody South American shrubs and small trees whose pendulous trumpet flowers hang down, the reverse of their herbaceous relative Datura.",
+      "srcTitle": "Brugmansia",
+      "src": "https://en.wikipedia.org/wiki/Brugmansia"
+    },
+    {
+      "id": "tx_nicotiana",
+      "rank": "genus",
+      "parent": "tx_solanaceae",
+      "name": "Nicotiana",
+      "fact": "About 75 species, nearly all capable of synthesising nicotine in their roots as a defence against insect herbivores.",
+      "srcTitle": "Nicotiana",
+      "src": "https://en.wikipedia.org/wiki/Nicotiana"
+    },
+    {
+      "id": "tx_convolvulaceae",
+      "rank": "family",
+      "parent": "tx_solanales",
+      "name": "Convolvulaceae",
+      "fact": "The morning-glory family, sister to the nightshades within Solanales -- most members twine, and several load their seeds with ergot-line alkaloids.",
+      "srcTitle": "Convolvulaceae",
+      "src": "https://en.wikipedia.org/wiki/Convolvulaceae"
+    },
+    {
+      "id": "tx_ipomoea",
+      "rank": "genus",
+      "parent": "tx_convolvulaceae",
+      "name": "Ipomoea",
+      "fact": "Over 600 species of twining vine; several Mesoamerican species were used ritually for centuries before their LSA content was chemically identified.",
+      "srcTitle": "Ipomoea",
+      "src": "https://en.wikipedia.org/wiki/Ipomoea"
+    },
+    {
+      "id": "tx_ranunculaceae",
+      "rank": "family",
+      "parent": "tx_ranunculales",
+      "name": "Ranunculaceae",
+      "fact": "The buttercup family: mostly herbaceous, and a disproportionate number of its genera -- Aconitum, Delphinium, Helleborus -- are seriously toxic.",
+      "srcTitle": "Ranunculaceae",
+      "src": "https://en.wikipedia.org/wiki/Ranunculaceae"
+    },
+    {
+      "id": "tx_aconitum",
+      "rank": "genus",
+      "parent": "tx_ranunculaceae",
+      "name": "Aconitum",
+      "fact": "Around 250 species of hooded, helmet-shaped flowers, every part of every species loaded with aconitine -- long used on arrow tips and wolf bait.",
+      "srcTitle": "Aconitum",
+      "src": "https://en.wikipedia.org/wiki/Aconitum"
+    },
+    {
+      "id": "tx_delphinium",
+      "rank": "genus",
+      "parent": "tx_ranunculaceae",
+      "name": "Delphinium",
+      "fact": "Named for the dolphin-shaped nectar spur of the unopened flower bud; western rangeland species are the leading cause of cattle poisoning deaths in the region.",
+      "srcTitle": "Delphinium",
+      "src": "https://en.wikipedia.org/wiki/Delphinium"
+    },
+    {
+      "id": "tx_papaveraceae",
+      "rank": "family",
+      "parent": "tx_ranunculales",
+      "name": "Papaveraceae",
+      "fact": "The poppy family, in the same order as the buttercups despite the very different flowers -- unified by shared latex ducts and alkaloid chemistry.",
+      "srcTitle": "Papaveraceae",
+      "src": "https://en.wikipedia.org/wiki/Papaveraceae"
+    },
+    {
+      "id": "tx_papaver",
+      "rank": "genus",
+      "parent": "tx_papaveraceae",
+      "name": "Papaver",
+      "fact": "Around 70 poppy species; only one, Papaver somniferum, has been bred over millennia for the opium latex in its unripe seed pods.",
+      "srcTitle": "Papaver",
+      "src": "https://en.wikipedia.org/wiki/Papaver"
+    },
+    {
+      "id": "tx_berberidaceae",
+      "rank": "family",
+      "parent": "tx_ranunculales",
+      "name": "Berberidaceae",
+      "fact": "The barberry family, a third Ranunculales lineage independently built around toxic alkaloids -- here isoquinolines like podophyllotoxin rather than aconitine.",
+      "srcTitle": "Berberidaceae",
+      "src": "https://en.wikipedia.org/wiki/Berberidaceae"
+    },
+    {
+      "id": "tx_podophyllum",
+      "rank": "genus",
+      "parent": "tx_berberidaceae",
+      "name": "Podophyllum",
+      "fact": "A small genus of forest-floor herbs whose single umbrella-like leaf shelters a rhizome so rich in podophyllotoxin it became the starting material for a class of cancer drugs.",
+      "srcTitle": "Podophyllum",
+      "src": "https://en.wikipedia.org/wiki/Podophyllum"
+    },
+    {
+      "id": "tx_apiaceae",
+      "rank": "family",
+      "parent": "tx_apiales",
+      "name": "Apiaceae",
+      "fact": "The carrot family: flat umbels of small flowers make its edible members (carrot, parsley, dill) hard to distinguish by eye from its most lethal ones.",
+      "srcTitle": "Apiaceae",
+      "src": "https://en.wikipedia.org/wiki/Apiaceae"
+    },
+    {
+      "id": "tx_conium",
+      "rank": "genus",
+      "parent": "tx_apiaceae",
+      "name": "Conium",
+      "fact": "A single widespread species, Conium maculatum, identified by purple-blotched hollow stems -- the plant that killed Socrates in 399 BC.",
+      "srcTitle": "Conium",
+      "src": "https://en.wikipedia.org/wiki/Conium"
+    },
+    {
+      "id": "tx_cicuta",
+      "rank": "genus",
+      "parent": "tx_apiaceae",
+      "name": "Cicuta",
+      "fact": "Water hemlock: a genus of wetland umbellifers whose tuberous roots concentrate cicutoxin, widely cited as North America's most acutely toxic native plant.",
+      "srcTitle": "Cicuta",
+      "src": "https://en.wikipedia.org/wiki/Cicuta"
+    },
+    {
+      "id": "tx_heracleum",
+      "rank": "genus",
+      "parent": "tx_apiaceae",
+      "name": "Heracleum",
+      "fact": "Named for Heracles, for its outsized stature; several species carry furanocoumarins that sensitise skin to sunlight and cause severe burns on contact.",
+      "srcTitle": "Heracleum",
+      "src": "https://en.wikipedia.org/wiki/Heracleum"
+    },
+    {
+      "id": "tx_apocynaceae",
+      "rank": "family",
+      "parent": "tx_gentianales",
+      "name": "Apocynaceae",
+      "fact": "The dogbane family: milky latex and cardiac glycosides run through it, from garden oleander to the milkweeds monarch caterpillars depend on.",
+      "srcTitle": "Apocynaceae",
+      "src": "https://en.wikipedia.org/wiki/Apocynaceae"
+    },
+    {
+      "id": "tx_nerium",
+      "rank": "genus",
+      "parent": "tx_apocynaceae",
+      "name": "Nerium",
+      "fact": "A single species, Nerium oleander, cultivated worldwide as an ornamental despite every part of the plant containing cardiac glycosides.",
+      "srcTitle": "Nerium",
+      "src": "https://en.wikipedia.org/wiki/Nerium"
+    },
+    {
+      "id": "tx_loganiaceae",
+      "rank": "family",
+      "parent": "tx_gentianales",
+      "name": "Loganiaceae",
+      "fact": "A small tropical family sharing Gentianales with the dogbanes; its type genus Strychnos supplies two of the most notorious alkaloids in toxicology.",
+      "srcTitle": "Loganiaceae",
+      "src": "https://en.wikipedia.org/wiki/Loganiaceae"
+    },
+    {
+      "id": "tx_strychnos",
+      "rank": "genus",
+      "parent": "tx_loganiaceae",
+      "name": "Strychnos",
+      "fact": "Around 200 tropical species; the bitter seeds of S. nux-vomica concentrate strychnine and brucine, alkaloids that block an inhibitory spinal neurotransmitter.",
+      "srcTitle": "Strychnos",
+      "src": "https://en.wikipedia.org/wiki/Strychnos"
+    },
+    {
+      "id": "tx_sapindaceae",
+      "rank": "family",
+      "parent": "tx_sapindales",
+      "name": "Sapindaceae",
+      "fact": "The soapberry family, expanded by molecular-era reclassification to absorb the maples and the horse chestnuts, once each considered its own family.",
+      "srcTitle": "Sapindaceae",
+      "src": "https://en.wikipedia.org/wiki/Sapindaceae"
+    },
+    {
+      "id": "tx_aesculus",
+      "rank": "genus",
+      "parent": "tx_sapindaceae",
+      "name": "Aesculus",
+      "fact": "Horse chestnuts and buckeyes: their glossy brown seeds pack triterpene saponins called aescins, toxic raw but usable medicinally once processed.",
+      "srcTitle": "Aesculus",
+      "src": "https://en.wikipedia.org/wiki/Aesculus"
+    },
+    {
+      "id": "tx_fabaceae",
+      "rank": "family",
+      "parent": "tx_fabales",
+      "name": "Fabaceae",
+      "fact": "The legume family -- beans, peas, clover, and a scattering of genera like Sophora whose seeds carry quinolizidine alkaloids instead of storage protein alone.",
+      "srcTitle": "Fabaceae",
+      "src": "https://en.wikipedia.org/wiki/Fabaceae"
+    },
+    {
+      "id": "tx_sophora",
+      "rank": "genus",
+      "parent": "tx_fabaceae",
+      "name": "Sophora",
+      "fact": "A genus of roughly 45 species; the bright red seeds of S. secundiflora concentrate cytisine, a nicotinic alkaloid now used as a smoking-cessation drug.",
+      "srcTitle": "Sophora",
+      "src": "https://en.wikipedia.org/wiki/Sophora"
+    },
+    {
+      "id": "tx_lamiaceae",
+      "rank": "family",
+      "parent": "tx_lamiales",
+      "name": "Lamiaceae",
+      "fact": "The mint family: square stems and opposite leaves link basil, rosemary and lavender to Salvia divinorum, whose hallucinogen is a chemical outlier for the family.",
+      "srcTitle": "Lamiaceae",
+      "src": "https://en.wikipedia.org/wiki/Lamiaceae"
+    },
+    {
+      "id": "tx_salvia",
+      "rank": "genus",
+      "parent": "tx_lamiaceae",
+      "name": "Salvia",
+      "fact": "The largest genus in the mint family, over 900 species; S. divinorum alone produces salvinorin A, the only known hallucinogenic diterpenoid with no nitrogen atom.",
+      "srcTitle": "Salvia",
+      "src": "https://en.wikipedia.org/wiki/Salvia"
+    },
+    {
+      "id": "tx_cannabaceae",
+      "rank": "family",
+      "parent": "tx_rosales",
+      "name": "Cannabaceae",
+      "fact": "A small family reshuffled by DNA evidence to include hops alongside hemp and the hackberries -- once placed in unrelated orders entirely.",
+      "srcTitle": "Cannabaceae",
+      "src": "https://en.wikipedia.org/wiki/Cannabaceae"
+    },
+    {
+      "id": "tx_cannabis",
+      "rank": "genus",
+      "parent": "tx_cannabaceae",
+      "name": "Cannabis",
+      "fact": "A genus whose taxonomy is still debated between one variable species and three; every form synthesises cannabinoids in the resin glands of its female flowers.",
+      "srcTitle": "Cannabis",
+      "src": "https://en.wikipedia.org/wiki/Cannabis"
+    },
+    {
+      "id": "tx_euphorbiaceae",
+      "rank": "family",
+      "parent": "tx_malpighiales",
+      "name": "Euphorbiaceae",
+      "fact": "The spurge family: one of the largest plant families, defined by a unique three-lobed fruit and a habit of manufacturing toxic or irritant latex and seed proteins.",
+      "srcTitle": "Euphorbiaceae",
+      "src": "https://en.wikipedia.org/wiki/Euphorbiaceae"
+    },
+    {
+      "id": "tx_ricinus",
+      "rank": "genus",
+      "parent": "tx_euphorbiaceae",
+      "name": "Ricinus",
+      "fact": "A single species, Ricinus communis, whose mottled seeds yield both castor oil, a mild laxative, and ricin, one of the most toxic proteins known.",
+      "srcTitle": "Ricinus",
+      "src": "https://en.wikipedia.org/wiki/Ricinus"
+    },
+    {
+      "id": "tx_erythroxylaceae",
+      "rank": "family",
+      "parent": "tx_malpighiales",
+      "name": "Erythroxylaceae",
+      "fact": "A mostly tropical family of around 240 species, almost all in genus Erythroxylum -- one Andean species alone accumulates the alkaloid cocaine in its leaves.",
+      "srcTitle": "Erythroxylaceae",
+      "src": "https://en.wikipedia.org/wiki/Erythroxylaceae"
+    },
+    {
+      "id": "tx_erythroxylum",
+      "rank": "genus",
+      "parent": "tx_erythroxylaceae",
+      "name": "Erythroxylum",
+      "fact": "Chewed whole and buffered with lime, the leaves of E. coca release cocaine slowly through the oral mucosa -- a use documented among Andean peoples for millennia.",
+      "srcTitle": "Erythroxylum",
+      "src": "https://en.wikipedia.org/wiki/Erythroxylum"
+    },
+    {
+      "id": "tx_malpighiaceae",
+      "rank": "family",
+      "parent": "tx_malpighiales",
+      "name": "Malpighiaceae",
+      "fact": "A mostly tropical American family of woody vines and shrubs, the order's namesake -- Banisteriopsis caapi is its best-known psychoactive member.",
+      "srcTitle": "Malpighiaceae",
+      "src": "https://en.wikipedia.org/wiki/Malpighiaceae"
+    },
+    {
+      "id": "tx_banisteriopsis",
+      "rank": "genus",
+      "parent": "tx_malpighiaceae",
+      "name": "Banisteriopsis",
+      "fact": "A liana genus of the Amazon; B. caapi's bark supplies beta-carboline MAO inhibitors that let an otherwise orally inactive tryptamine survive digestion.",
+      "srcTitle": "Banisteriopsis",
+      "src": "https://en.wikipedia.org/wiki/Banisteriopsis"
+    },
+    {
+      "id": "tx_phytolaccaceae",
+      "rank": "family",
+      "parent": "tx_caryophyllales",
+      "name": "Phytolaccaceae",
+      "fact": "The pokeweed family, a small Caryophyllales lineage sharing the order's habit of packing tissues with betalain pigments and, here, toxic saponins.",
+      "srcTitle": "Phytolaccaceae",
+      "src": "https://en.wikipedia.org/wiki/Phytolaccaceae"
+    },
+    {
+      "id": "tx_phytolacca",
+      "rank": "genus",
+      "parent": "tx_phytolaccaceae",
+      "name": "Phytolacca",
+      "fact": "The magenta-stemmed pokeweeds; birds eat the ripe berries and disperse the seeds unharmed while the same fruit sickens mammals, humans included.",
+      "srcTitle": "Phytolacca",
+      "src": "https://en.wikipedia.org/wiki/Phytolacca"
+    },
+    {
+      "id": "tx_lophophora",
+      "rank": "genus",
+      "parent": "tx_cactaceae",
+      "name": "Lophophora",
+      "fact": "Spineless, button-forming cacti of the Chihuahuan Desert; L. williamsii is the sole source of ceremonial peyote among Indigenous North American traditions.",
+      "srcTitle": "Lophophora",
+      "src": "https://en.wikipedia.org/wiki/Lophophora"
+    },
+    {
+      "id": "tx_echinopsis",
+      "rank": "genus",
+      "parent": "tx_cactaceae",
+      "name": "Echinopsis",
+      "fact": "A large columnar-cactus genus; E. pachanoi, the San Pedro cactus, has been used ceremonially in the Andes for a documented 3,000 years.",
+      "srcTitle": "Echinopsis",
+      "src": "https://en.wikipedia.org/wiki/Echinopsis"
+    },
+    {
+      "id": "tx_asparagaceae",
+      "rank": "family",
+      "parent": "tx_asparagales",
+      "name": "Asparagaceae",
+      "fact": "A family expanded by molecular reclassification to absorb the old lily-of-the-valley family, hyacinths and agaves alongside true asparagus.",
+      "srcTitle": "Asparagaceae",
+      "src": "https://en.wikipedia.org/wiki/Asparagaceae"
+    },
+    {
+      "id": "tx_convallaria",
+      "rank": "genus",
+      "parent": "tx_asparagaceae",
+      "name": "Convallaria",
+      "fact": "One or two species of rhizome-spreading forest herb, every part -- including the vase water its cut flowers stand in -- carrying convallatoxin.",
+      "srcTitle": "Convallaria",
+      "src": "https://en.wikipedia.org/wiki/Convallaria"
+    },
+    {
+      "id": "tx_arecaceae",
+      "rank": "family",
+      "parent": "tx_arecales",
+      "name": "Arecaceae",
+      "fact": "The palm family; nearly 2,600 species, almost all tropical, sharing an unbranched stem crowned by a rosette of large, persistent leaves.",
+      "srcTitle": "Arecaceae",
+      "src": "https://en.wikipedia.org/wiki/Arecaceae"
+    },
+    {
+      "id": "tx_areca",
+      "rank": "genus",
+      "parent": "tx_arecaceae",
+      "name": "Areca",
+      "fact": "A palm genus of about 50 species; A. catechu's seed, chewed with lime as betel quid, is used habitually by an estimated 600 million people worldwide.",
+      "srcTitle": "Areca",
+      "src": "https://en.wikipedia.org/wiki/Areca"
+    },
+    {
+      "id": "tx_colchicaceae",
+      "rank": "family",
+      "parent": "tx_liliales",
+      "name": "Colchicaceae",
+      "fact": "A small Liliales family named for and chemically defined by colchicine, an alkaloid found across nearly every genus it contains.",
+      "srcTitle": "Colchicaceae",
+      "src": "https://en.wikipedia.org/wiki/Colchicaceae"
+    },
+    {
+      "id": "tx_colchicum",
+      "rank": "genus",
+      "parent": "tx_colchicaceae",
+      "name": "Colchicum",
+      "fact": "Bulb-forming perennials that flower in autumn without leaves; C. autumnale is the original source of colchicine, still prescribed today to treat gout.",
+      "srcTitle": "Colchicum",
+      "src": "https://en.wikipedia.org/wiki/Colchicum"
+    },
+    {
+      "id": "tx_acoraceae",
+      "rank": "family",
+      "parent": "tx_acorales",
+      "name": "Acoraceae",
+      "fact": "A one-genus family holding the small aromatic wetland herbs known as sweet flag -- the most basal lineage in the entire monocot clade.",
+      "srcTitle": "Acoraceae",
+      "src": "https://en.wikipedia.org/wiki/Acoraceae"
+    },
+    {
+      "id": "tx_acorus",
+      "rank": "genus",
+      "parent": "tx_acoraceae",
+      "name": "Acorus",
+      "fact": "Sweet flag: swordlike leaves and an aromatic rhizome chewed traditionally as a stimulant, though its beta-asarone content is banned from US food products.",
+      "srcTitle": "Acorus",
+      "src": "https://en.wikipedia.org/wiki/Acorus"
+    },
+    {
+      "id": "tx_taxaceae",
+      "rank": "family",
+      "parent": "tx_pinales",
+      "name": "Taxaceae",
+      "fact": "The yew family: conifers whose seed sits exposed in a fleshy, berry-like red aril rather than in a woody cone, once thought too unusual to be conifers at all.",
+      "srcTitle": "Taxaceae",
+      "src": "https://en.wikipedia.org/wiki/Taxaceae"
+    },
+    {
+      "id": "tx_taxus",
+      "rank": "genus",
+      "parent": "tx_taxaceae",
+      "name": "Taxus",
+      "fact": "Every part of every yew species except the sweet red aril is loaded with taxine alkaloids; the bark's taxol became the chemotherapy drug paclitaxel.",
+      "srcTitle": "Taxus",
+      "src": "https://en.wikipedia.org/wiki/Taxus"
+    },
+    {
+      "id": "tx_ericaceae",
+      "rank": "family",
+      "parent": "tx_ericales",
+      "name": "Ericaceae",
+      "fact": "The heath family: blueberries, cranberries and azaleas share it with rhododendrons, several of which load their nectar with grayanotoxin.",
+      "srcTitle": "Ericaceae",
+      "src": "https://en.wikipedia.org/wiki/Ericaceae"
+    },
+    {
+      "id": "tx_rhododendron",
+      "rank": "genus",
+      "parent": "tx_ericaceae",
+      "name": "Rhododendron",
+      "fact": "Over a thousand species; Xenophon's army recorded the effects of eating Rhododendron ponticum honey in Anatolia in 401 BC, the oldest known account of grayanotoxin poisoning.",
+      "srcTitle": "Rhododendron",
+      "src": "https://en.wikipedia.org/wiki/Rhododendron"
     }
   ]
 }

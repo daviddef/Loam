@@ -30855,5 +30855,405 @@
     "why": "The sinter goes into a blast furnace with coke and a flux; carbon monoxide off the burning coke pulls the last oxygen out of the lead oxide, and the reduced metal taps out the bottom as lead bullion.",
     "src": "https://en.wikipedia.org/wiki/Lead_smelting",
     "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "stem"
+    ],
+    "out": "deadly_nightshade",
+    "why": "Atropa belladonna's dull purple, bell-shaped flowers hang from branching stems; root and stem concentrate the tropane alkaloids most heavily.",
+    "src": "https://en.wikipedia.org/wiki/Atropa_belladonna",
+    "verified": true
+  },
+  {
+    "in": [
+      "deadly_nightshade"
+    ],
+    "verb": "crush",
+    "out": "atropine",
+    "why": "Crushing the plant releases the tropane alkaloid atropine, along with scopolamine and hyoscyamine, from every tissue.",
+    "src": "https://en.wikipedia.org/wiki/Atropine",
+    "verified": true
+  },
+  {
+    "in": [
+      "stem",
+      "river"
+    ],
+    "out": "poison_hemlock",
+    "why": "Conium maculatum's purple-blotched hollow stems grow along streambanks and roadside ditches, the plant that killed Socrates.",
+    "src": "https://en.wikipedia.org/wiki/Conium_maculatum",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "snow"
+    ],
+    "out": "water_hemlock",
+    "why": "Cicuta grows near wetlands, stream edges and mountain snowmelt; its tuberous root is the most toxic part of the plant.",
+    "src": "https://en.wikipedia.org/wiki/Cicuta",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "oil"
+    ],
+    "out": "castor_bean",
+    "why": "Ricinus communis's spiny seed capsule is pressed for castor oil; the toxic protein ricin stays behind in the leftover mash.",
+    "src": "https://en.wikipedia.org/wiki/Ricinus_communis",
+    "verified": true
+  },
+  {
+    "in": [
+      "castor_bean"
+    ],
+    "verb": "crush",
+    "out": "ricin",
+    "why": "Crushing the seed releases ricin, a ribosome-inactivating protein potent enough that a few milligrams can be lethal.",
+    "src": "https://en.wikipedia.org/wiki/Ricin",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "heart"
+    ],
+    "out": "oleander",
+    "why": "Nerium oleander's cardiac glycosides are the same class of chemistry traditional Chinese medicine has used to treat congestive heart failure.",
+    "src": "https://en.wikipedia.org/wiki/Oleander",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "mountain"
+    ],
+    "out": "aconite",
+    "why": "Aconitum's hooded purple flowers grow in mountain meadows worldwide; every tissue carries aconitine, historically used on arrow tips.",
+    "src": "https://en.wikipedia.org/wiki/Aconitum",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "frost"
+    ],
+    "out": "autumn_crocus",
+    "why": "Colchicum autumnale flowers leafless as the first frosts of fall arrive, its bulb and flower both carrying colchicine.",
+    "src": "https://en.wikipedia.org/wiki/Colchicum_autumnale",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "stem"
+    ],
+    "out": "mayapple",
+    "why": "Podophyllum peltatum's single umbrella leaf tops a stem rising from a rhizome dense with podophyllotoxin.",
+    "src": "https://en.wikipedia.org/wiki/Podophyllum_peltatum",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "tree"
+    ],
+    "out": "yew",
+    "why": "Taxus bark yielded the compound taxol, later developed into the chemotherapy drug paclitaxel; the tree's needles carry the related, toxic taxine.",
+    "src": "https://en.wikipedia.org/wiki/Taxus",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "stem"
+    ],
+    "out": "pokeweed",
+    "why": "Phytolacca americana's purple stem carries clusters of berries that birds eat safely while the same fruit sickens mammals.",
+    "src": "https://en.wikipedia.org/wiki/Phytolacca_americana",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "sheep"
+    ],
+    "out": "larkspur",
+    "why": "Delphinium's spurred flower spikes are the leading recorded cause of cattle and sheep poisoning deaths on western rangeland.",
+    "src": "https://en.wikipedia.org/wiki/Delphinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "wine"
+    ],
+    "out": "lily_of_the_valley",
+    "why": "Convallaria majalis's bell-shaped flowers carry convallatoxin; Soviet-era medicine once paired the plant with alcohol to treat dropsy.",
+    "src": "https://en.wikipedia.org/wiki/Convallaria_majalis",
+    "verified": true
+  },
+  {
+    "in": [
+      "stem",
+      "sun"
+    ],
+    "out": "giant_hogweed",
+    "why": "Heracleum mantegazzianum's sap sensitises skin to sunlight; the furanocoumarins it carries cause burns only where sun then reaches the sap.",
+    "src": "https://en.wikipedia.org/wiki/Heracleum_mantegazzianum",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "mouse"
+    ],
+    "out": "strychnine_tree",
+    "why": "Strychnos nux-vomica's bitter seeds concentrate strychnine, an alkaloid so effective it is still sold today as rodent poison.",
+    "src": "https://en.wikipedia.org/wiki/Strychnos_nux-vomica",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "honey"
+    ],
+    "out": "rhododendron",
+    "why": "Several rhododendron species load their nectar with grayanotoxin; bees that forage it make honey documented as toxic since 401 BC.",
+    "src": "https://en.wikipedia.org/wiki/Rhododendron",
+    "verified": true
+  },
+  {
+    "in": [
+      "nut",
+      "tree"
+    ],
+    "out": "horse_chestnut",
+    "why": "Aesculus hippocastanum's glossy brown seed -- a conker -- packs the saponin aescin, toxic raw but processed medicinally.",
+    "src": "https://en.wikipedia.org/wiki/Aesculus_hippocastanum",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "moon"
+    ],
+    "out": "datura",
+    "why": "Datura's trumpet flower points upward and typically opens toward dusk; its spine-covered seed capsule carries the plant's alkaloids.",
+    "src": "https://en.wikipedia.org/wiki/Datura_stramonium",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "rain"
+    ],
+    "out": "angels_trumpet",
+    "why": "Brugmansia's pendulous trumpet flowers hang from woody shrubs across the wet tropical and subtropical Andes.",
+    "src": "https://en.wikipedia.org/wiki/Brugmansia",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "smoke"
+    ],
+    "out": "cannabis",
+    "why": "Resin glands on the female flower buds of Cannabis sativa manufacture the cannabinoids that are concentrated when the dried flower is smoked.",
+    "src": "https://en.wikipedia.org/wiki/Cannabis",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannabis"
+    ],
+    "verb": "crush",
+    "out": "thc",
+    "why": "Crushing the resin-rich flower releases THC, the cannabinoid chiefly responsible for cannabis's psychoactive effect.",
+    "src": "https://en.wikipedia.org/wiki/Tetrahydrocannabinol",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "mountain"
+    ],
+    "out": "coca",
+    "why": "Erythroxylum coca is an Andean mountain shrub; its leaf, chewed and buffered with lime, has been used for a documented 5,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Erythroxylum_coca",
+    "verified": true
+  },
+  {
+    "in": [
+      "coca"
+    ],
+    "verb": "crush",
+    "out": "cocaine",
+    "why": "Crushing and chemically processing the leaf concentrates its alkaloid into cocaine, far more potent than chewing the raw leaf.",
+    "src": "https://en.wikipedia.org/wiki/Cocaine",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "pipe"
+    ],
+    "out": "tobacco",
+    "why": "Nicotiana tabacum's leaves, dried and smoked in a pipe, deliver the nicotine the plant manufactures in its roots as an insect defence.",
+    "src": "https://en.wikipedia.org/wiki/Nicotiana_tabacum",
+    "verified": true
+  },
+  {
+    "in": [
+      "tobacco"
+    ],
+    "verb": "crush",
+    "out": "nicotine",
+    "why": "Crushing and curing the leaf concentrates nicotine, an alkaloid absorbed easily through skin and lung alike.",
+    "src": "https://en.wikipedia.org/wiki/Nicotine",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "needle"
+    ],
+    "out": "opium_poppy",
+    "why": "Papaver somniferum's unripe seed pod is lanced with a blade, and the wound oozes a latex resin that dries into raw opium.",
+    "src": "https://en.wikipedia.org/wiki/Opium_poppy",
+    "verified": true
+  },
+  {
+    "in": [
+      "opium_poppy"
+    ],
+    "verb": "cut",
+    "out": "morphine",
+    "why": "Cutting the ripening pod and collecting its dried latex yields raw opium, from which morphine was first isolated in 1803.",
+    "src": "https://en.wikipedia.org/wiki/Morphine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cactus",
+      "desert"
+    ],
+    "out": "peyote",
+    "why": "Lophophora williamsii is a spineless, button-forming cactus of the Chihuahuan Desert, used ceremonially by the Native American Church.",
+    "src": "https://en.wikipedia.org/wiki/Peyote",
+    "verified": true
+  },
+  {
+    "in": [
+      "peyote"
+    ],
+    "verb": "crush",
+    "out": "mescaline",
+    "why": "Crushing the cactus's buttons releases mescaline, a phenethylamine alkaloid structurally closer to amphetamines than to most plant hallucinogens.",
+    "src": "https://en.wikipedia.org/wiki/Mescaline",
+    "verified": true
+  },
+  {
+    "in": [
+      "cactus",
+      "mountain"
+    ],
+    "out": "san_pedro_cactus",
+    "why": "Echinopsis pachanoi is a fast-growing columnar cactus native to the high Andes, used ceremonially there for a documented 3,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Echinopsis_pachanoi",
+    "verified": true
+  },
+  {
+    "in": [
+      "san_pedro_cactus"
+    ],
+    "verb": "crush",
+    "out": "mescaline",
+    "why": "San Pedro produces the same mescaline as peyote, independently, in a different genus on a different continent's mountains.",
+    "src": "https://en.wikipedia.org/wiki/Mescaline",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "cow"
+    ],
+    "out": "psilocybin_mushroom",
+    "why": "Psilocybe cubensis fruits readily on the dung of grazing cattle in warm, wet pastures.",
+    "src": "https://en.wikipedia.org/wiki/Psilocybe_cubensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "psilocybin_mushroom"
+    ],
+    "verb": "crush",
+    "out": "psilocybin",
+    "why": "Crushing the mushroom releases psilocybin, a prodrug the body converts to psilocin, the compound responsible for the hallucinogenic effect.",
+    "src": "https://en.wikipedia.org/wiki/Psilocybin",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine",
+      "moon"
+    ],
+    "out": "morning_glory",
+    "why": "Ipomoea's trumpet flowers typically open in early morning and close by afternoon; its black seeds carry the ergoline alkaloid LSA.",
+    "src": "https://en.wikipedia.org/wiki/Morning_glory",
+    "verified": true
+  },
+  {
+    "in": [
+      "nut",
+      "lime"
+    ],
+    "out": "betel_nut",
+    "why": "Areca catechu's seed is chewed together with lime -- calcium hydroxide -- which raises the pH and releases the stimulant arecoline.",
+    "src": "https://en.wikipedia.org/wiki/Areca_nut",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine",
+      "fire"
+    ],
+    "out": "ayahuasca_vine",
+    "why": "Banisteriopsis caapi's bark is traditionally simmered for hours over a fire, brewed together with a DMT-bearing admixture plant.",
+    "src": "https://en.wikipedia.org/wiki/Banisteriopsis_caapi",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "smoke"
+    ],
+    "out": "salvia_divinorum",
+    "why": "Salvia divinorum's leaves, traditionally chewed fresh by the Mazatec, can also be dried and smoked to release salvinorin A.",
+    "src": "https://en.wikipedia.org/wiki/Salvia_divinorum",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "rain"
+    ],
+    "out": "sweet_flag",
+    "why": "Acorus calamus grows its aromatic rhizome in wet ground and stream edges; pioneers chewed the dried root as a stimulant on long treks.",
+    "src": "https://en.wikipedia.org/wiki/Acorus_calamus",
+    "verified": true
+  },
+  {
+    "in": [
+      "seed",
+      "desert"
+    ],
+    "out": "mescal_bean",
+    "why": "Sophora secundiflora is a southwestern desert-scrub shrub whose bright red seeds -- red hots -- concentrate the alkaloid cytisine.",
+    "src": "https://en.wikipedia.org/wiki/Sophora_secundiflora",
+    "verified": true
   }
 ]

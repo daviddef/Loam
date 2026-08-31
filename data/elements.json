@@ -26363,5 +26363,537 @@
     ],
     "soleRoute": true,
     "fact": "Cast in branching sand moulds off one channel — piglets nursed by a sow is where the name comes from."
+  },
+  {
+    "id": "deadly_nightshade",
+    "name": "Deadly Nightshade",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Atropa belladonna. Renaissance women dropped its juice into their eyes to dilate the pupils -- bella donna, beautiful lady.",
+    "taxon": "tx_atropa",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "atropine",
+    "name": "Atropine",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "hazard"
+    ],
+    "fact": "A tropane alkaloid that blocks the nervous system's rest-and-digest signal, which is why it dilates pupils and speeds a stopped heart.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "poison_hemlock",
+    "name": "Poison Hemlock",
+    "emoji": "🥀",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Purple-blotched hollow stems along streams and ditches. Socrates was made to drink a decoction of it in 399 BC.",
+    "taxon": "tx_conium",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "water_hemlock",
+    "name": "Water Hemlock",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Its tuberous root is widely cited as North America's most acutely toxic native plant -- seizures can begin within an hour.",
+    "taxon": "tx_cicuta",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "castor_bean",
+    "name": "Castor Bean",
+    "emoji": "🫞",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "The mottled seed yields castor oil, a mild laxative -- and, left behind in the pressed mash, one of the most toxic proteins known.",
+    "taxon": "tx_ricinus",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "ricin",
+    "name": "Ricin",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "hazard"
+    ],
+    "fact": "A ribosome-inactivating protein: it shuts down protein synthesis inside a cell so completely that a few milligrams can kill an adult.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "oleander",
+    "name": "Oleander",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Every part of this Mediterranean shrub carries cardiac glycosides -- the same class of chemistry China has used medicinally to treat heart failure.",
+    "taxon": "tx_nerium",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "aconite",
+    "name": "Aconite",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Monkshood. Its hooded purple flower conceals aconitine in every tissue, historically smeared on arrow tips and used as wolf bait.",
+    "taxon": "tx_aconitum",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "autumn_crocus",
+    "name": "Autumn Crocus",
+    "emoji": "🌷",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Colchicum autumnale flowers leafless in fall. Its colchicine is still prescribed for gout, and used in labs to double a plant's chromosomes.",
+    "taxon": "tx_colchicum",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "mayapple",
+    "name": "Mayapple",
+    "emoji": "☂️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "One umbrella-shaped leaf shelters a rhizome so rich in podophyllotoxin it became the starting material for the chemotherapy drug etoposide.",
+    "taxon": "tx_podophyllum",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "yew",
+    "name": "Yew",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Every part except the sweet red aril carries taxine alkaloids. The bark's taxol was developed into paclitaxel, a chemotherapy drug.",
+    "taxon": "tx_taxus",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "pokeweed",
+    "name": "Pokeweed",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Birds strip its magenta-stemmed berry clusters unharmed and scatter the seed; the same fruit sickens the mammals that eat it.",
+    "taxon": "tx_phytolacca",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "larkspur",
+    "name": "Larkspur",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Delphinium, named for the dolphin-shaped spur on its unopened bud. Its methyllycaconitine is the leading cause of cattle deaths on western rangeland.",
+    "taxon": "tx_delphinium",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "lily_of_the_valley",
+    "name": "Lily of the Valley",
+    "emoji": "🔔",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Its convallatoxin is potent enough that even the water a cut stem stands in becomes toxic -- Soviet-era medicine once paired it with alcohol to treat dropsy.",
+    "taxon": "tx_convallaria",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "giant_hogweed",
+    "name": "Giant Hogweed",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Its sap contains furanocoumarins that bind skin's DNA when hit by sunlight, causing burns and blistering that can recur for years.",
+    "taxon": "tx_heracleum",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "strychnine_tree",
+    "name": "Strychnine Tree",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Strychnos nux-vomica. Its bitter seeds concentrate strychnine, an alkaloid so effective a rodent poison it is still sold as one.",
+    "taxon": "tx_strychnos",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "rhododendron",
+    "name": "Rhododendron",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Some species load their nectar with grayanotoxin -- Xenophon's soldiers recorded being poisoned by wild honey made from it in 401 BC.",
+    "taxon": "tx_rhododendron",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "horse_chestnut",
+    "name": "Horse Chestnut",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "The glossy brown seed -- a conker -- is packed with the saponin aescin, toxic raw but processed medicinally to treat vein disorders.",
+    "taxon": "tx_aesculus",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "datura",
+    "name": "Datura",
+    "emoji": "🌚",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Jimsonweed. Its trumpet flower points upward and opens toward dusk; British troops in 1676 Jamestown ate it and spent a fortnight out of their minds.",
+    "taxon": "tx_datura",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "angels_trumpet",
+    "name": "Angel's Trumpet",
+    "emoji": "🎺",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Brugmansia. Its pendulous trumpet flowers hang downward, the mirror image of its herbaceous relative datura, which points its blooms up.",
+    "taxon": "tx_brugmansia",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "cannabis",
+    "name": "Cannabis",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Resin glands on the female flower buds manufacture cannabinoids, chief among them the psychoactive THC.",
+    "taxon": "tx_cannabis",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "thc",
+    "name": "THC",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Tetrahydrocannabinol, the cannabinoid mainly responsible for cannabis's psychoactive effects -- one of over sixty the plant produces.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "coca",
+    "name": "Coca",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Andean peoples have chewed its leaf, buffered with lime to raise its pH, for a documented 5,000 years without the dependence refined cocaine produces.",
+    "taxon": "tx_erythroxylum",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "cocaine",
+    "name": "Cocaine",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "hazard"
+    ],
+    "fact": "The coca leaf's alkaloid, isolated and concentrated: it blocks the reuptake of dopamine and norepinephrine at the nerve synapse.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "tobacco",
+    "name": "Tobacco",
+    "emoji": "🚬",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Nicotiana tabacum manufactures nicotine in its roots as an insect defence; nearly all of the genus's 75 species can do the same.",
+    "taxon": "tx_nicotiana",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "nicotine",
+    "name": "Nicotine",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "hazard"
+    ],
+    "fact": "An alkaloid absorbed easily through skin and lung alike. The old 40-60 mg lethal-dose figure was debunked in 2014; the real lower limit is closer to 500-1000 mg.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "opium_poppy",
+    "name": "Opium Poppy",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Papaver somniferum, not the wild corn poppy. Lancing its unripe seed pod oozes a latex resin that dries into raw opium.",
+    "taxon": "tx_papaver",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "morphine",
+    "name": "Morphine",
+    "emoji": "💤",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Isolated from opium in 1803 and named for Morpheus, the god of dreams -- medicine's benchmark analgesic ever since.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "peyote",
+    "name": "Peyote",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Lophophora williamsii, a spineless button cactus of the Chihuahuan Desert, is the sole source of ceremonial peyote for the Native American Church.",
+    "taxon": "tx_lophophora",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "san_pedro_cactus",
+    "name": "San Pedro Cactus",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Echinopsis pachanoi, a fast-growing columnar cactus of the high Andes, used ceremonially for a documented 3,000 years.",
+    "taxon": "tx_echinopsis",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "mescaline",
+    "name": "Mescaline",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A phenethylamine alkaloid, structurally closer to amphetamines than to most other plant hallucinogens, made independently by peyote and San Pedro.",
+    "terminal": true
+  },
+  {
+    "id": "psilocybin_mushroom",
+    "name": "Psilocybin Mushroom",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Psilocybe cubensis fruits readily on the dung of grazing cattle in warm pastures, bruising blue-green wherever it is bruised or cut.",
+    "taxon": "tx_psilocybe",
+    "terminal": false,
+    "soleRoute": true
+  },
+  {
+    "id": "psilocybin",
+    "name": "Psilocybin",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A prodrug: the body converts it to psilocin, the compound actually responsible for the hallucinogenic effect.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "morning_glory",
+    "name": "Morning Glory",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Ipomoea seeds contain LSA, an ergoline alkaloid related to LSD; the Zapotec used one Mexican species ritually for centuries before its chemistry was known.",
+    "taxon": "tx_ipomoea",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "betel_nut",
+    "name": "Betel Nut",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "Chewed with lime inside a betel leaf, the areca palm's seed is consumed habitually by an estimated 600 million people worldwide.",
+    "taxon": "tx_areca",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "ayahuasca_vine",
+    "name": "Ayahuasca Vine",
+    "emoji": "🨢",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Banisteriopsis caapi's bark supplies beta-carboline MAO inhibitors that let an otherwise orally inactive tryptamine survive digestion when brewed together.",
+    "taxon": "tx_banisteriopsis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "salvia_divinorum",
+    "name": "Salvia Divinorum",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Diviner's sage. Its salvinorin A is the only known naturally occurring hallucinogen with no nitrogen atom in its structure at all.",
+    "taxon": "tx_salvia",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "sweet_flag",
+    "name": "Sweet Flag",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Calamus. Its aromatic rhizome was chewed by pioneers as a stimulant and thirst-quencher, though its beta-asarone is now banned from US food products.",
+    "taxon": "tx_acorus",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "mescal_bean",
+    "name": "Mescal Bean",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "wild"
+    ],
+    "fact": "Sophora secundiflora's bright red seeds -- red hots -- concentrate cytisine, used in a Native American vision-seeking rite that predates peyote's spread.",
+    "taxon": "tx_sophora",
+    "terminal": true,
+    "soleRoute": true
   }
 ]

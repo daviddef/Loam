@@ -960,7 +960,7 @@
     },
     "tailings_dam_failure": {
       "label": "A tailings dam can fail catastrophically",
-      "note": "Tailings dams hold back millions of tonnes of waste slurry, often built up in stages from the tailings themselves. When one fails, the release can travel for kilometres in minutes — the Brumadinho dam collapse in Brazil in January 2019 killed 272 people.",
+      "note": "Tailings dams hold back millions of tonnes of waste slurry, often built up in stages from the tailings themselves. When one fails, the release can travel for kilometres in minutes \u2014 the Brumadinho dam collapse in Brazil in January 2019 killed 272 people.",
       "ids": [
         "tailings",
         "tailings_dam"
@@ -969,7 +969,7 @@
     },
     "cyanide_poisoning": {
       "label": "Cyanide is lethal in small doses",
-      "note": "Sodium cyanide dissolved in water is what leaches gold out of ore, and it is genuinely lethal — plants have to keep the solution alkaline, above pH 10.5, specifically to stop toxic hydrogen cyanide gas from forming. The 2000 Baia Mare spill in Romania, when a tailings dam holding cyanide solution failed and released it into the Tisza river, killed enormous numbers of fish across three countries. This is industrial chemistry, not something to handle casually.",
+      "note": "Sodium cyanide dissolved in water is what leaches gold out of ore, and it is genuinely lethal \u2014 plants have to keep the solution alkaline, above pH 10.5, specifically to stop toxic hydrogen cyanide gas from forming. The 2000 Baia Mare spill in Romania, when a tailings dam holding cyanide solution failed and released it into the Tisza river, killed enormous numbers of fish across three countries. This is industrial chemistry, not something to handle casually.",
       "ids": [
         "cyanide",
         "dore"
@@ -987,7 +987,7 @@
     },
     "hotbox": {
       "label": "Overheated bearings start real fires",
-      "note": "The term comes from journal-bearing axleboxes packed with oil-soaked waste to cut friction. When the oil ran dry the bearing overheated and could set the whole car alight before anyone noticed — trackside hot-box detectors, and later roller bearings, were built specifically to catch and prevent it.",
+      "note": "The term comes from journal-bearing axleboxes packed with oil-soaked waste to cut friction. When the oil ran dry the bearing overheated and could set the whole car alight before anyone noticed \u2014 trackside hot-box detectors, and later roller bearings, were built specifically to catch and prevent it.",
       "ids": [
         "plain_bearing"
       ],
@@ -995,7 +995,7 @@
     },
     "airship_hydrogen": {
       "label": "Hydrogen lift is real, and it really burns",
-      "note": "Hydrogen is flammable across a huge range of concentrations in air, and needs very little energy to ignite. The Hindenburg's hydrogen-filled envelope caught fire on landing at Lakehurst, New Jersey on 6 May 1937, killing 36 people — the reason every airship built since switched to inert helium instead.",
+      "note": "Hydrogen is flammable across a huge range of concentrations in air, and needs very little energy to ignite. The Hindenburg's hydrogen-filled envelope caught fire on landing at Lakehurst, New Jersey on 6 May 1937, killing 36 people \u2014 the reason every airship built since switched to inert helium instead.",
       "ids": [
         "airship"
       ],
@@ -1003,7 +1003,7 @@
     },
     "mri_magnetic_field": {
       "label": "A magnetic field strong enough to make metal fly",
-      "note": "An MRI magnet's field is always on, tens of thousands of times Earth's, and it does not turn off between patients. A loose ferromagnetic object — an oxygen tank, a chair, a tool left in a pocket — can be pulled across the room and become a lethal projectile, which is why screening happens before anyone enters.",
+      "note": "An MRI magnet's field is always on, tens of thousands of times Earth's, and it does not turn off between patients. A loose ferromagnetic object \u2014 an oxygen tank, a chair, a tool left in a pocket \u2014 can be pulled across the room and become a lethal projectile, which is why screening happens before anyone enters.",
       "severity": "acute",
       "ids": [
         "superconducting_magnet",
@@ -1012,7 +1012,7 @@
     },
     "pet_radiotracer": {
       "label": "A radioactive tracer, injected on purpose",
-      "note": "FDG carries fluorine-18, a real radioisotope, directly into the bloodstream. A clinical PET scan uses a dose weighed and justified by a physician against the diagnostic benefit — not a quantity to approximate outside medical supervision.",
+      "note": "FDG carries fluorine-18, a real radioisotope, directly into the bloodstream. A clinical PET scan uses a dose weighed and justified by a physician against the diagnostic benefit \u2014 not a quantity to approximate outside medical supervision.",
       "severity": "conditional",
       "ids": [
         "fdg",
@@ -1038,11 +1038,195 @@
     },
     "gunpowder_hazard": {
       "label": "Black powder ignites easily and burns explosively fast",
-      "note": "Gunpowder ignites from a spark, flame or even friction, and once confined it burns fast enough to act as an explosive rather than a controlled fire. A gunpowder store igniting in Delft in 1654 — the 'Delft Thunderclap' — killed at least 100 people and levelled a large part of the city, which is why powder magazines have been built isolated and underground ever since. It is real energetic chemistry, not a firework to make at home.",
+      "note": "Gunpowder ignites from a spark, flame or even friction, and once confined it burns fast enough to act as an explosive rather than a controlled fire. A gunpowder store igniting in Delft in 1654 \u2014 the 'Delft Thunderclap' \u2014 killed at least 100 people and levelled a large part of the city, which is why powder magazines have been built isolated and underground ever since. It is real energetic chemistry, not a firework to make at home.",
       "ids": [
         "gunpowder"
       ],
       "severity": "acute"
+    },
+    "tropane_alkaloid_poisoning": {
+      "label": "Deadly nightshade, datura and angel's trumpet are true poisons",
+      "note": "Atropa belladonna, Datura stramonium and Brugmansia all carry tropane alkaloids (atropine, scopolamine, hyoscyamine) in every tissue, seeds and root most concentrated. Symptoms include dilated pupils, dry mouth, delirium, tachycardia and hallucinations; a fatal adult dose can be as few as 10-20 seeds' worth. Severe intoxication is a medical emergency treated with physostigmine.",
+      "severity": "acute",
+      "ids": [
+        "deadly_nightshade",
+        "atropine",
+        "datura",
+        "angels_trumpet"
+      ]
+    },
+    "coniine_poisoning": {
+      "label": "Poison hemlock killed Socrates",
+      "note": "Conium maculatum's coniine paralyses the respiratory muscles from the extremities inward, leaving the victim conscious to the end -- the death Plato describes in the Phaedo. It resembles several edible carrot-family plants closely enough that misidentification is the main real-world risk.",
+      "severity": "acute",
+      "ids": [
+        "poison_hemlock"
+      ]
+    },
+    "cicutoxin_poisoning": {
+      "label": "Water hemlock's root is North America's most violent plant poison",
+      "note": "Cicutoxin attacks the central nervous system directly, causing seizures within 15-60 minutes of ingesting the root -- widely cited as the most acutely toxic native plant in North America. It has repeatedly been mistaken for edible wild parsnip.",
+      "severity": "acute",
+      "ids": [
+        "water_hemlock"
+      ]
+    },
+    "ricin_toxicity": {
+      "label": "Ricin is one of the most toxic substances known",
+      "note": "Ricinus communis's seed contains ricin, a ribosome-inactivating protein; the lethal dose in adults is considered to be four to eight seeds, though actual poisonings are relatively rare in practice since intact raw seeds are poorly absorbed unless chewed. Purified ricin has also been used as a poisoning weapon historically.",
+      "severity": "acute",
+      "ids": [
+        "castor_bean",
+        "ricin"
+      ]
+    },
+    "cardiac_glycoside_poisoning": {
+      "label": "Oleander and lily of the valley stop hearts, not just upset stomachs",
+      "note": "Both plants carry cardiac glycosides that slow the heart rate toward arrest by disrupting electrolyte balance; sinus bradycardia down to 50-60 beats per minute is the documented pattern in poisoning. The same chemistry, at controlled doses, treats congestive heart failure in conventional and traditional medicine alike.",
+      "severity": "acute",
+      "ids": [
+        "oleander",
+        "lily_of_the_valley"
+      ]
+    },
+    "aconitine_poisoning": {
+      "label": "Aconite is called the queen of poisons for a reason",
+      "note": "Aconitum's aconitine acts on sodium channels in nerve and heart tissue; there is no antidote, and historic use on arrow tips and as wolf bait reflects its potency. Every part of the plant, including root and nectar, carries the toxin.",
+      "severity": "acute",
+      "ids": [
+        "aconite"
+      ]
+    },
+    "colchicine_toxicity": {
+      "label": "Colchicine's therapeutic and lethal doses sit close together",
+      "note": "Colchicum autumnale is the original source of colchicine, still prescribed for gout, but the margin between an effective dose and a fatal one is narrow and there is no specific antidote. Its bitter bulb has been fatally mistaken for an onion.",
+      "severity": "acute",
+      "ids": [
+        "autumn_crocus"
+      ]
+    },
+    "podophyllotoxin_toxicity": {
+      "label": "Mayapple's rhizome is a powerful, unpredictable purgative",
+      "note": "Podophyllum peltatum's podophyllotoxin is cytostatic -- it halts cell division, the same property later exploited in the chemotherapy drug etoposide -- and excessive ingestion of the rhizome or resin can cause severe catharsis, coma or death. The ripe fruit alone is considered edible.",
+      "severity": "conditional",
+      "ids": [
+        "mayapple"
+      ]
+    },
+    "taxine_poisoning": {
+      "label": "Yew is toxic in every part except the aril",
+      "note": "Taxus needles and seeds carry taxine alkaloids that can cause cardiac arrest; even chewing the leaves can trigger a severe reaction, and there is no antidote. Only the sweet, fleshy red aril around the seed is safe to eat -- the seed inside it is not.",
+      "severity": "acute",
+      "ids": [
+        "yew"
+      ]
+    },
+    "phytolacca_toxicity": {
+      "label": "Pokeweed's root is far more toxic than its berry",
+      "note": "Phytolacca americana's phytolaccatoxin and related saponins are concentrated in the root; a mild dose is typically self-limiting nausea and vomiting, but heavier ingestion has caused low blood pressure and dangerous heart rhythm changes. Young leaves are eaten only after repeated boiling with water changes.",
+      "severity": "conditional",
+      "ids": [
+        "pokeweed"
+      ]
+    },
+    "larkspur_toxicity": {
+      "label": "Larkspur is the leading cause of cattle poisoning on western rangeland",
+      "note": "Delphinium's methyllycaconitine and related diterpenoid alkaloids cause convulsions and respiratory paralysis; there is no antidote, though most human exposures are minor because the plant tastes acrid and bitter.",
+      "severity": "acute",
+      "ids": [
+        "larkspur"
+      ]
+    },
+    "furanocoumarin_phototoxicity": {
+      "label": "Giant hogweed's sap burns only where sunlight reaches it",
+      "note": "Heracleum mantegazzianum's furanocoumarins bind skin's DNA and only become damaging once activated by ultraviolet light -- phytophotodermatitis -- producing burns and blistering that can leave skin light-sensitive for months or years. Related, milder Apiaceae like cow parsnip and angelica share the same chemistry at lower concentration.",
+      "severity": "contact",
+      "ids": [
+        "giant_hogweed"
+      ]
+    },
+    "strychnine_poisoning": {
+      "label": "Strychnine causes death by asphyxiation through muscle convulsion",
+      "note": "Strychnos nux-vomica's strychnine blocks an inhibitory spinal neurotransmitter, so every muscle in the body contracts at once; death, when it occurs, is from respiratory exhaustion. It remains sold commercially as a rodent poison.",
+      "severity": "acute",
+      "ids": [
+        "strychnine_tree"
+      ]
+    },
+    "grayanotoxin_honey": {
+      "label": "\"Mad honey\" from rhododendron nectar is a documented, ancient hazard",
+      "note": "Grayanotoxin from some rhododendron species' nectar passes into honey made from it; Xenophon's Anabasis records Greek soldiers disabled by eating it in Anatolia in 401 BC. Modern cases are usually self-limiting nausea and low blood pressure, rarely fatal.",
+      "severity": "conditional",
+      "ids": [
+        "rhododendron"
+      ]
+    },
+    "nicotine_toxicity": {
+      "label": "Nicotine is acutely toxic in concentrated or pure form",
+      "note": "A widely repeated 40-60 mg lethal-dose figure for nicotine was debunked in a 2014 reassessment; the real lower limit for a fatal outcome is estimated at 500-1000 mg. Nicotine is still absorbed readily through skin as well as the lungs -- a real hazard in tobacco harvesting known as green tobacco sickness, and in concentrated liquid form. Smoked tobacco's dominant long-term harm, however, is cumulative: addiction and the cancers linked to chronic use.",
+      "severity": "acute",
+      "ids": [
+        "tobacco",
+        "nicotine"
+      ]
+    },
+    "cocaine_dependency": {
+      "label": "Refined cocaine is addictive in a way chewed coca leaf is not",
+      "note": "Chewing raw coca leaf, buffered with lime, has no strong documented history of dependence; concentrating the leaf's alkaloid into cocaine hydrochloride or freebase produces a drug with high addiction potential and real cardiovascular, respiratory and stroke risk with chronic use.",
+      "severity": "cumulative",
+      "ids": [
+        "coca",
+        "cocaine"
+      ]
+    },
+    "opioid_overdose": {
+      "label": "Opium poppy alkaloids depress breathing at high doses",
+      "note": "Morphine and the other opiates in opium poppy latex are central nervous system depressants; at doses above the therapeutic range they slow and eventually stop breathing, the mechanism behind opioid overdose deaths. The same chemistry, at controlled doses, remains medicine's benchmark pain reliever.",
+      "severity": "acute",
+      "ids": [
+        "opium_poppy",
+        "morphine"
+      ]
+    },
+    "betel_nut_carcinogen": {
+      "label": "Habitual betel-nut chewing is linked to oral cancer",
+      "note": "Areca catechu's arecoline is a mild stimulant on its own, but habitual chewers of betel quid are documented to be at substantially higher risk of oral cancer, and the practice can also cause tooth and gum disease. Effects are dose- and habit-dependent, not acute.",
+      "severity": "cumulative",
+      "ids": [
+        "betel_nut"
+      ]
+    },
+    "ayahuasca_mao_interaction": {
+      "label": "Ayahuasca's MAO inhibitors interact dangerously with some medicines",
+      "note": "Banisteriopsis caapi's beta-carboline alkaloids inhibit monoamine oxidase; combined with SSRIs or other serotonergic drugs this can trigger a hypertensive crisis or serotonin syndrome. The interaction, not the plant alone, is the acute risk.",
+      "severity": "conditional",
+      "ids": [
+        "ayahuasca_vine"
+      ]
+    },
+    "sweet_flag_carcinogen": {
+      "label": "Sweet flag's beta-asarone is banned from US food products",
+      "note": "Acorus calamus rhizome contains cis-isoasarone and beta-asarone, shown to be carcinogenic to laboratory animals with long-term exposure; the FDA has banned its use as a food additive in the United States since 1968, though other countries still sell it.",
+      "severity": "cumulative",
+      "ids": [
+        "sweet_flag"
+      ]
+    },
+    "mescal_bean_toxicity": {
+      "label": "Mescal bean seeds can cause convulsions and respiratory paralysis",
+      "note": "Sophora secundiflora's bright red seeds concentrate cytisine, an alkaloid that in serious overdose can cause convulsions and paralysis of the respiratory muscles; fatalities are rare but the seed's toxicity is why it was historically replaced by peyote in vision-seeking ritual once peyote's milder profile became known.",
+      "severity": "acute",
+      "ids": [
+        "mescal_bean"
+      ]
+    },
+    "morning_glory_seed_treatment": {
+      "label": "Commercial morning glory seeds are often chemically treated",
+      "note": "Garden-centre morning glory seeds are frequently coated with fungicides, pesticides, or historically methylmercury to prevent spoilage and pest damage -- a real, separate hazard from the seed's own LSA content, which alone has comparatively low toxicity.",
+      "severity": "conditional",
+      "ids": [
+        "morning_glory"
+      ]
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
