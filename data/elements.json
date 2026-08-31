@@ -6368,7 +6368,7 @@
       "animal"
     ],
     "fact": "Sodium in, potassium out. Almost no ions actually move, and the voltage swings anyway.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "retinal",
@@ -20849,5 +20849,505 @@
     ],
     "fact": "Hindu wind god and father of Hanuman; revered in the Upanishads as prana, the world's life-breath.",
     "terminal": true
+  },
+  {
+    "id": "axon",
+    "name": "Axon",
+    "emoji": "\u3030\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A neuron's single output cable, sometimes over a metre long in a human leg, built to carry one electrical impulse away from the cell."
+  },
+  {
+    "id": "dendrite",
+    "name": "Dendrite",
+    "emoji": "\ud83c\udf3f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A branching antenna studded with receptor proteins, built to catch neurotransmitter signals arriving from other cells."
+  },
+  {
+    "id": "neuron",
+    "name": "Neuron",
+    "emoji": "\ud83d\udfe3",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A cell body flanked by branching dendrites and a single long axon \u2014 roughly half the brain's 86 billion cells are built this way."
+  },
+  {
+    "id": "glia",
+    "name": "Glia",
+    "emoji": "\ud83e\udd1d",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Roughly half the brain's cells, and none of them fire a signal \u2014 they feed, insulate, and clean up after the neurons that do."
+  },
+  {
+    "id": "astrocyte",
+    "name": "Astrocyte",
+    "emoji": "\u2b50",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Star-shaped glial cells that wrap around brain capillaries and decide what crosses from blood into brain tissue."
+  },
+  {
+    "id": "oligodendrocyte",
+    "name": "Oligodendrocyte",
+    "emoji": "\ud83e\udde3",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A glial cell built to manufacture myelin, the fatty membrane that insulates a nearby axon."
+  },
+  {
+    "id": "myelin_sheath",
+    "name": "Myelin Sheath",
+    "emoji": "\ud83e\uddf6",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Concentric wraps of fatty membrane coiled around an axon, letting an impulse jump gap to gap instead of crawling the whole length."
+  },
+  {
+    "id": "synapse",
+    "name": "Synapse",
+    "emoji": "\ud83c\udf09",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The junction between two neurons \u2014 a gap of about 20 nanometres that only a chemical messenger, not electricity, can cross directly."
+  },
+  {
+    "id": "neurotransmitter",
+    "name": "Neurotransmitter",
+    "emoji": "\u2709\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A chemical messenger, packaged in vesicles and dumped into a synaptic cleft the instant an arriving impulse lets calcium in."
+  },
+  {
+    "id": "choline",
+    "name": "Choline",
+    "emoji": "\ud83e\uddea",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The amine head-group of phosphatidylcholine, the most abundant phospholipid in a cell membrane, and the raw material for one neurotransmitter."
+  },
+  {
+    "id": "acetylcholine",
+    "name": "Acetylcholine",
+    "emoji": "\u2699\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Choline with an acetyl group stapled on. Released at the neuromuscular junction, it is the one neurotransmitter nerve agents and nicotine both target."
+  },
+  {
+    "id": "dopamine",
+    "name": "Dopamine",
+    "emoji": "\ud83c\udfc6",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Built from tyrosine in two enzyme steps. Reuptake of it is exactly what cocaine blocks, flooding the receiving neuron's receptors."
+  },
+  {
+    "id": "serotonin",
+    "name": "Serotonin",
+    "emoji": "\ud83d\ude0c",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Built from tryptophan in two enzyme steps \u2014 the reason tryptophan-rich food gets credited, correctly or not, with lifting mood."
+  },
+  {
+    "id": "glutamate",
+    "name": "Glutamate",
+    "emoji": "\ud83d\udd25",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The same molecule that builds proteins as glutamic acid does a second job once packaged into a synaptic vesicle: the brain's main excitatory signal."
+  },
+  {
+    "id": "gaba",
+    "name": "GABA",
+    "emoji": "\ud83e\uddd8",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One enzyme away from glutamate, its own excitatory opposite \u2014 snip a carboxyl group off and the brain's chief excitatory signal becomes its chief inhibitory one."
+  },
+  {
+    "id": "noradrenaline",
+    "name": "Noradrenaline",
+    "emoji": "\ud83d\udea8",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Dopamine plus one oxygen atom, added by an enzyme that borrows it straight from the air. Drives arousal and the fight-or-flight response."
+  },
+  {
+    "id": "white_matter",
+    "name": "White Matter",
+    "emoji": "\ud83e\udd0d",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Long-range nerve fibers sheathed in fatty myelin \u2014 about 60 percent of the brain's tissue by volume, wiring its regions to each other."
+  },
+  {
+    "id": "gray_matter",
+    "name": "Gray Matter",
+    "emoji": "\ud83e\ude76",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Densely packed neuron cell bodies and their synapses, forming the brain's thin, wrinkled outer layer and the cores of its deeper nuclei."
+  },
+  {
+    "id": "cerebral_cortex",
+    "name": "Cerebral Cortex",
+    "emoji": "\ud83d\uddfa\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A folded sheet about 2.5 millimetres thick, six layers of gray matter over a bed of white matter, doing sensory processing, language, and conscious experience."
+  },
+  {
+    "id": "spinal_cord",
+    "name": "Spinal Cord",
+    "emoji": "\ud83e\ude22",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "About 45 centimetres of nerve tracts wrapped around a butterfly-shaped core of gray matter, running from the brain stem down through the vertebral column."
+  },
+  {
+    "id": "brainstem",
+    "name": "Brain Stem",
+    "emoji": "\ud83c\udf8b",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The stalk linking thalamus, forebrain, and spinal cord \u2014 its midbrain, pons, and medulla run the reflexes and rhythms that keep a body alive without being asked."
+  },
+  {
+    "id": "thalamus",
+    "name": "Thalamus",
+    "emoji": "\ud83d\udce1",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A thumb-sized relay station between cortex and lower brain. Every sense but smell is routed through it before the cortex gets to process it."
+  },
+  {
+    "id": "hypothalamus",
+    "name": "Hypothalamus",
+    "emoji": "\ud83c\udf21\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A finger-tip-sized cluster of nuclei below the thalamus, running temperature, hunger, thirst, sleep, and the hormone system that keeps the body in balance."
+  },
+  {
+    "id": "pituitary_gland",
+    "name": "Pituitary Gland",
+    "emoji": "\ud83c\udf9b\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A pea-sized gland taking direct orders from the hypothalamus \u2014 one lobe is even made of the hypothalamus's own nerve tissue, extended down a stalk."
+  },
+  {
+    "id": "hippocampus",
+    "name": "Hippocampus",
+    "emoji": "\ud83d\udcad",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A seahorse-shaped fold of gray matter where new memories first form, before they're gradually handed off to the cortex for permanent storage."
+  },
+  {
+    "id": "amygdala",
+    "name": "Amygdala",
+    "emoji": "\ud83d\ude28",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A pair of almond-shaped nuclei tucked in the medial temporal lobe, best known for attaching fear to a stimulus and holding onto it."
+  },
+  {
+    "id": "corpus_callosum",
+    "name": "Corpus Callosum",
+    "emoji": "\ud83d\udd17",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A dense band of white-matter tracts that is the brain's biggest single connection: everything one hemisphere knows can cross it to reach the other."
+  },
+  {
+    "id": "cerebrum",
+    "name": "Cerebrum",
+    "emoji": "\ud83c\udf30",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The two-hemisphere bulk of the forebrain, cortex on the outside and joined across the middle by the corpus callosum \u2014 about 90 percent of the brain's weight."
+  },
+  {
+    "id": "cerebellum",
+    "name": "Cerebellum",
+    "emoji": "\ud83e\udd66",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The 'little brain' behind the brain stem, its own tightly folded gray-matter surface holding more neurons than the rest of the brain put together."
+  },
+  {
+    "id": "hindbrain",
+    "name": "Hindbrain",
+    "emoji": "\u2b07\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The evolutionarily oldest part of the brain \u2014 cerebellum plus brain stem \u2014 running the reflexes and movement coordination a body cannot live without."
+  },
+  {
+    "id": "brain",
+    "name": "Brain",
+    "emoji": "\ud83e\udde0",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "About 86 billion neurons and roughly as many glia, split into a forebrain that does the thinking and a smaller midbrain and hindbrain that keep the body running."
+  },
+  {
+    "id": "frontal_lobe",
+    "name": "Frontal Lobe",
+    "emoji": "\ud83e\udd14",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cortex's front quarter, home to the primary motor cortex that sends the corticospinal tract down to the spinal cord to move the body on command."
+  },
+  {
+    "id": "parietal_lobe",
+    "name": "Parietal Lobe",
+    "emoji": "\ud83d\udc46",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cortex region the thalamus routes touch and body-position signals into \u2014 where a scattered sense of skin and joints becomes one coherent map of the body."
+  },
+  {
+    "id": "temporal_lobe",
+    "name": "Temporal Lobe",
+    "emoji": "\ud83d\udcac",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The lobe that houses the amygdala at its medial edge, and on its surface carries the language and emotion processing the amygdala's neighbourhood implies."
+  },
+  {
+    "id": "occipital_lobe",
+    "name": "Occipital Lobe",
+    "emoji": "\ud83d\udc41\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cortex's rearmost lobe, reached by the optic radiation \u2014 a thick, myelinated white-matter tract that is vision's last stop before it becomes seeing."
+  },
+  {
+    "id": "meninges",
+    "name": "Meninges",
+    "emoji": "\ud83d\udee1\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Three membranes \u2014 dura, arachnoid, and pia mater \u2014 wrapped around the brain so it never has to touch bone directly."
+  },
+  {
+    "id": "cerebrospinal_fluid",
+    "name": "Cerebrospinal Fluid",
+    "emoji": "\ud83d\udca7",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A liter of fluid, mostly water, made inside the brain's own ventricles and replaced three to four times a day, floating the brain so its own weight can't crush it."
+  },
+  {
+    "id": "blood_brain_barrier",
+    "name": "Blood-Brain Barrier",
+    "emoji": "\ud83d\udea7",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Tight junctions between capillary cells, policed by astrocyte end-feet, that keep most of what's in the blood from ever reaching brain tissue."
+  },
+  {
+    "id": "cranial_nerve",
+    "name": "Cranial Nerve",
+    "emoji": "\ud83d\udd0c",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One of 12 nerve pairs that connect straight to the brain rather than routing through the spinal cord \u2014 10 of them plug directly into the brain stem."
+  },
+  {
+    "id": "spinal_nerve",
+    "name": "Spinal Nerve",
+    "emoji": "\ud83e\ude9c",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One of 31 nerve pairs, one above each vertebra, each splitting into a sensory branch heading up and a motor branch heading back out to the body."
+  },
+  {
+    "id": "peripheral_nervous_system",
+    "name": "Peripheral Nervous System",
+    "emoji": "\ud83d\udd78\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Every nerve outside the brain and spinal cord \u2014 built from the spinal nerves and cranial nerves that branch out to reach the entire body."
+  },
+  {
+    "id": "central_nervous_system",
+    "name": "Central Nervous System",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The brain and spinal cord together \u2014 the two organs the rest of the nervous system exists to serve and connect to."
+  },
+  {
+    "id": "nervous_system",
+    "name": "Nervous System",
+    "emoji": "\ud83c\udf10",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Central plus peripheral: an organ system so extensive that all of one body's nerves, laid end to end, could circle the Earth two and a half times."
+  },
+  {
+    "id": "autonomic_nervous_system",
+    "name": "Autonomic Nervous System",
+    "emoji": "\ud83d\udd04",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The involuntary branch of the peripheral nervous system, run by the hypothalamus, that keeps heart rate, digestion, and breathing going without being asked."
+  },
+  {
+    "id": "sympathetic_nervous_system",
+    "name": "Sympathetic Nervous System",
+    "emoji": "\ud83c\udfc3",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The autonomic branch that emerges from the spinal cord's chest and abdominal segments to run the fight-or-flight response."
+  },
+  {
+    "id": "parasympathetic_nervous_system",
+    "name": "Parasympathetic Nervous System",
+    "emoji": "\ud83d\ude34",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The autonomic branch carried chiefly by the cranial nerves, running the rest-and-digest state that undoes what sympathetic activation just did."
+  },
+  {
+    "id": "short_term_memory",
+    "name": "Short-Term Memory",
+    "emoji": "\ud83d\udcdd",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A held pattern of ongoing synaptic activity in the frontal lobe's prefrontal cortex, gone within seconds unless something consolidates it."
+  },
+  {
+    "id": "long_term_memory",
+    "name": "Long-Term Memory",
+    "emoji": "\ud83d\uddc4\ufe0f",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "What a short-term memory becomes once the hippocampus finishes gradually reorganizing it into the cortex's own long-lived networks."
+  },
+  {
+    "id": "neuroplasticity",
+    "name": "Neuroplasticity",
+    "emoji": "\ud83d\udd27",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Cells that fire together wire together: a synapse used repeatedly recruits more receptors and strengthens, while an unused one fades."
+  },
+  {
+    "id": "neurogenesis",
+    "name": "Neurogenesis",
+    "emoji": "\ud83c\udf31",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Neural stem cells dividing into working neurons \u2014 in adult mammals this still happens in the hippocampus, though how much it happens in adult humans is genuinely contested."
   }
 ]

@@ -48,7 +48,9 @@ const SCALE = {
           'nitrophenol', 'aminophenol', 'paracetamol', 'histamine', 'arachidonic_acid', 'prostaglandin',
           'fdg', 'fullerene', 'nanotube',
           // textiles batch 1 — dye-chemistry molecules, the same rack as tannin/curcumin/betanin
-          'alizarin', 'leuco_indigo'],
+          'alizarin', 'leuco_indigo',
+          // brain batch 1 — neurotransmitter molecules and their precursor, same molecule scale as histamine/thyroxine
+          'neurotransmitter', 'choline', 'acetylcholine', 'dopamine', 'serotonin', 'glutamate', 'gaba', 'noradrenaline'],
   '-8':  ['maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'allele', 'crispr', 'dna_sequencing', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
           // DNA-completeness batch 1 — the replication and expression machinery,
           // same enzyme/process scale as chromatin/gene/enzyme/protein
@@ -59,10 +61,14 @@ const SCALE = {
   '-6':  ['s_thermophilus', 'l_bulgaricus', 'l_acidophilus', 'bifidobacterium', 'l_paracasei', 'l_plantarum', 'leuconostoc', 'lactococcus', 'acetobacter', 'penicillium', 'stoma', 'virus', 'vesicle', 'protocell', 'binary_fission', 'budding', 'bacteria', 'archaea', 'cyanobacteria', 'rhizobium', 'zooxanthellae', 'mitochondrion', 'chloroplast', 'spore', 'pollen', 'action_potential', 'yeast', 'mould', 'resistance', 'chromosome', 'nucleus', 'mitochondrial_dna',
           'bacteriophage', 'prophage', 'lysis', 'salmonella', 'streptomyces',
           'avibirnavirus', 'gammacoronavirus', 'e_coli',
-          'cowpox', 'vaccine', 'immunity'],
+          'cowpox', 'vaccine', 'immunity',
+          // brain batch 1 — sub-cellular neural structures, same organelle/junction scale as vesicle/nucleus
+          'axon', 'dendrite', 'myelin_sheath', 'synapse'],
   '-5':  ['photosite',
           'yoghurt_culture', 'cytoplasm', 'alga', 'cell', 'mitosis', 'meiosis', 'sperm', 'polar_body', 'stem_cell', 'protozoan', 'eimeria',
-          'plasmodium', 'toxoplasma_gondii', 'giardia', 'entamoeba_histolytica', 'trichomonas_vaginalis', 'cryptosporidium'],
+          'plasmodium', 'toxoplasma_gondii', 'giardia', 'entamoeba_histolytica', 'trichomonas_vaginalis', 'cryptosporidium',
+          // brain batch 1 — individual nerve and glial cells, same single-cell scale as cell/stem_cell
+          'neuron', 'glia', 'astrocyte', 'oligodendrocyte'],
   '-4':  ['coconut_sugar', 'guar_gum', 'locust_bean_gum', 'silicon_dioxide', 'annatto', 'caramel_colour', 'agar', 'paprika', 'carmine', 'shellac', 'roe', 'hydroxyapatite', 'fluorapatite', 'magnesium_oxide', 'zinc_oxide', 'copper_oxide', 'litharge', 'mercuric_oxide', 'alumina', 'potassium_chloride', 'potassium_iodide', 'sodium_fluoride', 'magnesium_nitride',
           // mining comprehensive batch — bagged/prilled granular chemicals and fine ground mill product,
           // same grain-size bucket as sand/clay
@@ -199,7 +205,13 @@ const SCALE = {
           // tech breakthroughs batch 1 — handheld and tabletop electronics, same bucket as telephone/radio/digital_camera
           'atomic_clock', 'gps', 'cellular_telephone', 'smartphone', 'router', 'film_reel', 'movie_camera', 'cinematography',
           // aviation batch 1 — a poured or drummed liquid, same item scale as oil
-          'petroleum', 'jet_fuel'],
+          'petroleum', 'jet_fuel',
+          // brain batch 1 — brain regions, tissue types, and brain-scale processes, same organ scale as pancreas/nerve
+          'white_matter', 'gray_matter', 'cerebral_cortex', 'spinal_cord', 'brainstem', 'thalamus', 'hypothalamus',
+          'pituitary_gland', 'hippocampus', 'amygdala', 'corpus_callosum', 'cerebrum', 'cerebellum', 'hindbrain',
+          'brain', 'frontal_lobe', 'parietal_lobe', 'temporal_lobe', 'occipital_lobe', 'meninges',
+          'cerebrospinal_fluid', 'blood_brain_barrier', 'cranial_nerve', 'spinal_nerve',
+          'short_term_memory', 'long_term_memory', 'neuroplasticity', 'neurogenesis'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
@@ -248,7 +260,10 @@ const SCALE = {
           'computer', 'television', 'film_projector',
           // aviation batch 1 — metre-scale aircraft parts and engine stages
           'wing_spar', 'tail_stabilizer', 'aileron', 'rudder', 'tail_elevator', 'landing_gear',
-          'propeller', 'compressor', 'combustor', 'turbine', 'jet_engine', 'turbofan'],
+          'propeller', 'compressor', 'combustor', 'turbine', 'jet_engine', 'turbofan',
+          // brain batch 1 — nervous-system-level organ systems, whole-body scale like human
+          'peripheral_nervous_system', 'central_nervous_system', 'nervous_system',
+          'autonomic_nervous_system', 'sympathetic_nervous_system', 'parasympathetic_nervous_system'],
   '1':   [// mining comprehensive batch — tens-of-metres mining/processing equipment and a bench's own
           // scale, the same bucket as drilling_rig/ball_mill/haul_truck above
           'exploration_drilling', 'bench', 'blasting', 'excavator', 'grade_control',
