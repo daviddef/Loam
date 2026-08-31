@@ -220,18 +220,28 @@
       "note": "Most earthquake deaths come from collapsing buildings, falling debris and the fires and landslides a strong quake triggers, not from the ground motion itself. A major strike-slip rupture like the San Andreas Fault can move tens of feet in seconds, and aftershocks can bring down structures already weakened by the main shock for days afterward.",
       "ids": [
         "earthquake",
-        "transform_boundary"
+        "transform_boundary",
+        "convergent_boundary"
+      ],
+      "severity": "acute"
+    },
+    "tsunami_hazard": {
+      "label": "A tsunami outruns a person on foot",
+      "note": "A tsunami crossing the open ocean travels as fast as a jet airliner and can arrive with almost no visible warning beyond the sea pulling back from the shore. The 2004 Indian Ocean earthquake generated a tsunami that killed roughly 230,000 people across fourteen countries, most of whom had no warning system to tell them to move to higher ground.",
+      "ids": [
+        "tsunami"
       ],
       "severity": "acute"
     },
     "severe_weather": {
       "label": "Weather that kills people",
-      "note": "Flood, storm surge, hurricane, blizzard and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land.",
+      "note": "Flood, storm surge, hurricane, blizzard, tornado and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land; a tornado's winds can exceed 300 km/h in the strongest, rarest cases.",
       "ids": [
         "flood",
         "hurricane",
         "blizzard",
-        "hail"
+        "hail",
+        "tornado"
       ],
       "severity": "acute"
     },
@@ -996,6 +1006,31 @@
         "fdg",
         "positron"
       ]
+    },
+    "nitroglycerin_instability": {
+      "label": "Unstabilised nitroglycerin can detonate on its own",
+      "note": "Nitroglycerin can detonate from shock, friction or heat with almost no warning, which is exactly why its own discoverer, Ascanio Sobrero, was horrified at the idea of weaponising it after he first made it in 1846. It killed and maimed people in transport and storage for twenty years before Alfred Nobel found a way to stabilise it into dynamite. This is industrial chemistry, not something to make or handle.",
+      "ids": [
+        "nitroglycerin"
+      ],
+      "severity": "acute"
+    },
+    "high_explosive_hazard": {
+      "label": "TNT and dynamite are designed to detonate",
+      "note": "TNT and dynamite are real high explosives, engineered to detonate reliably on command with a blasting cap. Both were part of the cargo when a munitions ship collided in Halifax harbour in 1917 and detonated, killing at least 1,782 people in the largest human-made explosion before the nuclear age. Making, storing or handling either is licensed, regulated work.",
+      "ids": [
+        "tnt",
+        "dynamite"
+      ],
+      "severity": "acute"
+    },
+    "gunpowder_hazard": {
+      "label": "Black powder ignites easily and burns explosively fast",
+      "note": "Gunpowder ignites from a spark, flame or even friction, and once confined it burns fast enough to act as an explosive rather than a controlled fire. A gunpowder store igniting in Delft in 1654 — the 'Delft Thunderclap' — killed at least 100 people and levelled a large part of the city, which is why powder magazines have been built isolated and underground ever since. It is real energetic chemistry, not a firework to make at home.",
+      "ids": [
+        "gunpowder"
+      ],
+      "severity": "acute"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

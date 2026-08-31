@@ -29254,5 +29254,365 @@
     "out": "siren",
     "why": "Unlike most other salamanders, sirens keep external gills bunched on the neck as both larvae and adults, while also remaining obligate air-breathers with well-developed lungs.",
     "src": "https://en.wikipedia.org/wiki/Siren_(amphibian)"
+  },
+  {
+    "in": [
+      "bauxite",
+      "lye"
+    ],
+    "out": "gallium",
+    "why": "Bauxite carries gallium as a trace impurity, and refining it into aluminium by the Bayer process — dissolving it in hot lye — concentrates that gallium in the leftover liquor, which is where almost all of the world's supply is recovered from.",
+    "src": "https://en.wikipedia.org/wiki/Gallium",
+    "verified": true
+  },
+  {
+    "in": [
+      "zinc_sulfide",
+      "lye"
+    ],
+    "out": "gallium",
+    "why": "Zinc's own ore, zinc sulfide, carries enough trace gallium that leaching it out is a real secondary commercial source — smaller than bauxite refining, but a genuine byproduct stream of its own.",
+    "src": "https://en.wikipedia.org/wiki/Gallium",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon_dioxide"
+    ],
+    "verb": "chill",
+    "out": "dry_ice",
+    "why": "Carbon dioxide freezes at -78.5°C, and at ordinary atmospheric pressure it has no liquid phase to pass through on the way — its triple point sits above 5 atmospheres, so chilling the gas takes it straight to solid.",
+    "src": "https://en.wikipedia.org/wiki/Dry_ice",
+    "verified": true
+  },
+  {
+    "in": [
+      "dry_ice"
+    ],
+    "verb": "heat",
+    "out": "carbon_dioxide",
+    "why": "Warmed dry ice skips liquid entirely and sublimates straight back to carbon dioxide gas — the visible fog around it is ordinary water vapour condensing in the cold, not the invisible carbon dioxide itself.",
+    "src": "https://en.wikipedia.org/wiki/Dry_ice",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "manure"
+    ],
+    "out": "housefly",
+    "why": "Musca domestica lives in close association with people and their livestock, and its larvae develop in the manure and other decaying organic matter that association produces.",
+    "src": "https://en.wikipedia.org/wiki/Housefly",
+    "verified": true
+  },
+  {
+    "in": [
+      "compost",
+      "meat"
+    ],
+    "out": "housefly",
+    "why": "A housefly cannot bite — its mouthparts form a soft, retractable sponge that liquefies rotting meat and food scraps before it drinks them, exactly what a compost heap offers.",
+    "src": "https://en.wikipedia.org/wiki/Housefly",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "manure"
+    ],
+    "out": "rat",
+    "why": "Rattus norvegicus is a commensal pest of grain stores and farm middens, thriving wherever people stockpile grain or keep livestock manure close by.",
+    "src": "https://en.wikipedia.org/wiki/Brown_rat",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "meat"
+    ],
+    "out": "rat",
+    "why": "An omnivorous scavenger of human leftovers, the brown rat spread out of northern China along trade and migration routes and now lives almost everywhere people do.",
+    "src": "https://en.wikipedia.org/wiki/Brown_rat",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "egg"
+    ],
+    "out": "feral_pigeon",
+    "why": "Feral pigeons descend from domestic rock doves that escaped captivity, and they still lay their eggs on bare building ledges the way their ancestors nested on sea cliffs.",
+    "src": "https://en.wikipedia.org/wiki/Domestic_pigeon",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "egg"
+    ],
+    "out": "feral_pigeon",
+    "why": "A newly hatched squab is fed crop milk, a fat- and protein-rich secretion from its parents' crop lining, not the seeds and grain the adults eat once it is grown.",
+    "src": "https://en.wikipedia.org/wiki/Domestic_pigeon",
+    "verified": true
+  },
+  {
+    "in": [
+      "snail",
+      "leaf"
+    ],
+    "out": "garden_snail",
+    "why": "Cornu aspersum grazes garden leaves and is a hermaphrodite: a mating pair each fire a calcite 'love dart' into the other before exchanging sperm.",
+    "src": "https://en.wikipedia.org/wiki/Cornu_aspersum",
+    "verified": true
+  },
+  {
+    "in": [
+      "snail",
+      "mud"
+    ],
+    "out": "garden_snail",
+    "why": "To survive cold or drought it seals its shell's opening with a dried mucus membrane called an epiphragm, tough enough to hold up through temperatures down to -5°C.",
+    "src": "https://en.wikipedia.org/wiki/Cornu_aspersum",
+    "verified": true
+  },
+  {
+    "in": [
+      "mud",
+      "wood"
+    ],
+    "out": "common_toad",
+    "why": "Bufo bufo shelters by day under log piles and leaf litter in damp woodland, and unlike a frog it walks on all four legs rather than hopping.",
+    "src": "https://en.wikipedia.org/wiki/Common_toad",
+    "verified": true
+  },
+  {
+    "in": [
+      "meadow",
+      "mud"
+    ],
+    "out": "common_toad",
+    "why": "More than 80% of common toads return every spring to breed in the exact pond where they themselves hatched, finding their way back even from kilometres away.",
+    "src": "https://en.wikipedia.org/wiki/Common_toad",
+    "verified": true
+  },
+  {
+    "in": [
+      "alga",
+      "sun"
+    ],
+    "out": "green_alga",
+    "why": "Chlorophyta carry chlorophyll a and b and store surplus sugar as starch inside the chloroplast — the same pigment pair and storage strategy land plants use, the strongest evidence the two share a common ancestor.",
+    "src": "https://en.wikipedia.org/wiki/Chlorophyta",
+    "verified": true
+  },
+  {
+    "in": [
+      "alga",
+      "water"
+    ],
+    "out": "green_alga",
+    "why": "About 90% of green algae species live in fresh water, not the ocean — the opposite of the mostly-marine red algae they are often mistaken for.",
+    "src": "https://en.wikipedia.org/wiki/Chlorophyta",
+    "verified": true
+  },
+  {
+    "in": [
+      "manure",
+      "ash"
+    ],
+    "out": "potassium_nitrate",
+    "why": "Traditional niter beds packed manure and straw together for a year or more while soil bacteria oxidised the ammonia into nitrate; leaching that through wood ash swapped in potassium to crystallise out saltpetre.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_nitrate",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "nitric_acid"
+    ],
+    "out": "potassium_nitrate",
+    "why": "Reacting nitric acid directly with the potash in wood ash crystallises potassium nitrate straight out, replacing a year-long niter bed with an afternoon of chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_nitrate",
+    "verified": true
+  },
+  {
+    "in": [
+      "tallow",
+      "steam"
+    ],
+    "out": "glycerol",
+    "why": "High-pressure steam splits tallow's fat molecules apart into glycerol and free fatty acids — industrial 'fat splitting' that reaches glycerol without needing lye at all.",
+    "src": "https://en.wikipedia.org/wiki/Glycerol",
+    "verified": true
+  },
+  {
+    "in": [
+      "methanol",
+      "tallow"
+    ],
+    "out": "glycerol",
+    "why": "Reacting tallow's fat with methanol strips off its fatty acids as biodiesel and leaves glycerol behind as the byproduct — the same splitting reaction, run for fuel instead of soap.",
+    "src": "https://en.wikipedia.org/wiki/Glycerol",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "steam"
+    ],
+    "out": "toluene",
+    "why": "Toluene is a byproduct of coking coal into coal tar, and steam-distilling that tar was how it was first separated out and named, after the aromatic tolu balsam it chemically resembles.",
+    "src": "https://en.wikipedia.org/wiki/Toluene",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum",
+      "platinum"
+    ],
+    "out": "toluene",
+    "why": "Almost all toluene made today comes from reforming petroleum naphtha over a platinum catalyst, not coal tar — a byproduct of making higher-octane petrol.",
+    "src": "https://en.wikipedia.org/wiki/Toluene",
+    "verified": true
+  },
+  {
+    "in": [
+      "toluene",
+      "nitric_acid"
+    ],
+    "out": "tnt",
+    "why": "Nitrating toluene three times over with nitric and sulfuric acid builds up to 2,4,6-trinitrotoluene, first made in 1863 as a yellow dye and not adopted as a military explosive until 1902, once armies valued how insensitive to shock it is.",
+    "src": "https://en.wikipedia.org/wiki/TNT",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium_nitrate",
+      "charcoal"
+    ],
+    "out": "gunpowder",
+    "why": "Black powder is roughly 75% potassium nitrate as the oxidiser and 15% charcoal as fuel, with sulfur making up the rest — the earliest known written formula for it appears in the Chinese military text Wujing Zongyao, from 1044.",
+    "src": "https://en.wikipedia.org/wiki/Gunpowder",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium_nitrate",
+      "sulfur"
+    ],
+    "out": "gunpowder",
+    "why": "Sulfur is only 10% of black powder by weight, but it lowers the mixture's ignition temperature enough that a spark reliably sets off the potassium nitrate and charcoal around it.",
+    "src": "https://en.wikipedia.org/wiki/Gunpowder",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitroglycerin",
+      "silicon_dioxide"
+    ],
+    "out": "dynamite",
+    "why": "Alfred Nobel found that soaking nitroglycerin into kieselguhr, a diatom-shell silica he collected near his factory on the Elbe, made it stable enough to transport and stack safely — patented in 1867.",
+    "src": "https://en.wikipedia.org/wiki/Dynamite",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycerol",
+      "nitric_acid"
+    ],
+    "out": "nitroglycerin",
+    "why": "Nitrating glycerol with nitric acid, held near 22°C to stop the reaction running away, is how Ascanio Sobrero first made nitroglycerin in 1846.",
+    "src": "https://en.wikipedia.org/wiki/Nitroglycerin",
+    "verified": true
+  },
+  {
+    "in": [
+      "wind",
+      "sky"
+    ],
+    "out": "wind_shear",
+    "why": "Surface wind and the air higher in the sky rarely blow at the same speed or from the same direction, and that mismatch between them is wind shear.",
+    "src": "https://en.wikipedia.org/wiki/Wind_shear",
+    "verified": true
+  },
+  {
+    "in": [
+      "storm",
+      "wind_shear"
+    ],
+    "out": "tornado",
+    "why": "Enough wind shear over a thunderstorm tilts its rising air into a rotating mesocyclone, and stretching that rotation vertically is what turns a supercell into a tornado.",
+    "src": "https://en.wikipedia.org/wiki/Tornado",
+    "verified": true
+  },
+  {
+    "in": [
+      "hurricane",
+      "wind"
+    ],
+    "out": "tornado",
+    "why": "Landfalling hurricanes spawn their own tornadoes too, clustered in the right-front quadrant of the storm as its outer rainbands cross the coast.",
+    "src": "https://en.wikipedia.org/wiki/Tornado",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthquake",
+      "sea"
+    ],
+    "out": "tsunami",
+    "why": "A megathrust earthquake at a subduction zone shoves the seafloor vertically, and it is that vertical displacement, not the earthquake's shaking, that moves the whole water column above it as a tsunami.",
+    "src": "https://en.wikipedia.org/wiki/Tsunami",
+    "verified": true
+  },
+  {
+    "in": [
+      "convergent_boundary"
+    ],
+    "verb": "wait",
+    "out": "earthquake",
+    "why": "Subduction-zone earthquakes at convergent boundaries, where one plate grinds down beneath another, produce the most powerful earthquakes on Earth — the 1960 Chile and 2011 Tōhoku quakes among them.",
+    "src": "https://en.wikipedia.org/wiki/Earthquake",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_gas"
+    ],
+    "verb": "chill",
+    "out": "liquid_hydrogen",
+    "why": "Hydrogen gas condenses to liquid at -252.87°C, just 20 degrees above absolute zero — cold enough that it is used, alongside liquid oxygen, as the highest-performance chemical rocket propellant there is.",
+    "src": "https://en.wikipedia.org/wiki/Liquid_hydrogen",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrogen_gas"
+    ],
+    "verb": "chill",
+    "out": "liquid_nitrogen",
+    "why": "Nitrogen gas condenses to liquid at -196°C, and because air is 78% nitrogen it is cheap enough to be the everyday cryogen for freezing biological samples and shrink-fitting machine parts.",
+    "src": "https://en.wikipedia.org/wiki/Liquid_nitrogen",
+    "verified": true
+  },
+  {
+    "in": [
+      "hadron_collider",
+      "proton"
+    ],
+    "out": "antiproton",
+    "why": "Smashing a proton beam into a target at high enough energy creates a proton and an antiproton together — how the antiproton was first confirmed in 1955 at Berkeley's Bevatron, winning Chamberlain and Segrè the 1959 Nobel Prize.",
+    "src": "https://en.wikipedia.org/wiki/Antiproton",
+    "verified": true
+  },
+  {
+    "in": [
+      "positron",
+      "antiproton"
+    ],
+    "out": "antihydrogen",
+    "why": "A positron bound to an antiproton is a complete antimatter atom — antihydrogen, first synthesised at CERN in 1995 and first trapped and held for study by the ALPHA experiment in 2010.",
+    "src": "https://en.wikipedia.org/wiki/Antihydrogen",
+    "verified": true
   }
 ]

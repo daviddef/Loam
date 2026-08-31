@@ -37,7 +37,9 @@ const SCALE = {
           'helium', 'neon',
           'carbon_tetrafluoride', 'nitrogen_trifluoride', 'chlorine_trifluoride', 'sulfur_hexafluoride', 'phosphorus_pentafluoride',
           'bromine_trifluoride', 'iodine_pentafluoride', 'bromine_monochloride', 'iodine_monochloride', 'iodine_monobromide', 'hydrogen_bromide', 'hydrogen_iodide',
-          'positron'],
+          'positron',
+          // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
+          'antiproton', 'antihydrogen'],
   '-9':  ['urushiol', 'juglone', 'piperine', 'gingerol', 'shogaol', 'vitamin_a', 'vitamin_d', 'thiamin', 'riboflavin', 'niacin', 'folate', 'vitamin_b6', 'vitamin_e', 'citric_acid', 'sodium_acetate', 'msg', 'inosinate', 'guanylate', 'ribonucleotides', 'beta_carotene', 'curcumin', 'betanin', 'ponceau_4r', 'red_40', 'yellow_5', 'yellow_6', 'blue_1', 'sorbate', 'benzoate', 'sulfite', 'nitrite', 'trans_fat', 'monoglyceride', 'lecithin', 'sorbitol', 'xylitol', 'aspartame', 'malic_acid', 'salicin', 'gibberellin', 'digoxin', 'lactic_acid', 'acetic_acid', 'lanolin', 'ribose', 'deoxyribose', 'adenine', 'guanine', 'cytosine', 'thymine', 'uracil', 'base_pair', 'phospholipid', 'cholesterol', 'thyroxine', 'ascorbate', 'hydroxyproline', 'porphyrin', 'heme', 'chlorophyll', 'cobalamin', 'retinal', 'selenocysteine', 'fatty_acid', 'iron_sulfur_cluster', 'methanol', 'formaldehyde', 'ethylene', 'phenol', 'tannin', 'glycine', 'alanine', 'serine', 'proline', 'tyrosine', 'aspartic_acid', 'glutamic_acid', 'glutamine', 'asparagine', 'arginine', 'valine', 'leucine', 'isoleucine', 'threonine', 'methionine', 'lysine', 'histidine', 'phenylalanine', 'tryptophan', 'glucose', 'amino_acid', 'cysteine', 'dipeptide', 'nucleotide', 'atp',
           'penicillin', 'dna', 'alpha_helix', 'beta_sheet', 'mutation',
           // DNA-completeness batch 1 — nucleotide/base-pair-scale sequence elements,
@@ -85,6 +87,9 @@ const SCALE = {
           // mining comprehensive batch — bagged/prilled granular chemicals and fine ground mill product,
           // same grain-size bucket as sand/clay
           'ammonium_nitrate', 'anfo', 'concentrate',
+          // sandboxels gapfill batch 1 — a crystalline/granular explosive-precursor salt and mixed powder,
+          // the same grain-size bucket as ammonium_nitrate/anfo
+          'potassium_nitrate', 'gunpowder',
           // textiles batch 1 — a lake pigment, the same rack as carmine
           'rose_madder',
           'beryllium_fluoride', 'beryllium_chloride', 'beryllium_bromide', 'beryllium_iodide', 'magnesium_fluoride', 'magnesium_bromide', 'magnesium_iodide', 'calcium_bromide', 'calcium_iodide', 'strontium_fluoride', 'strontium_bromide', 'strontium_iodide', 'barium_fluoride', 'barium_chloride', 'barium_bromide', 'barium_iodide', 'radium_fluoride', 'radium_chloride', 'radium_bromide', 'radium_iodide',
@@ -119,10 +124,15 @@ const SCALE = {
           'pyrite', 'hematite', 'magnetite', 'graphite', 'calcite', 'malachite', 'azurite', 'gypsum', 'olivine', 'garnet', 'beryl', 'aquamarine', 'serpentine',
           'bauxite', 'spodumene', 'bastnasite',
           'iron', 'copper', 'gold', 'silver', 'tin', 'lead', 'zinc', 'mercury', 'aluminum', 'nickel', 'chromium', 'titanium', 'platinum', 'uranium', 'magnesium', 'calcium', 'sodium', 'potassium', 'enriched_uranium',
+          // sandboxels gapfill batch 1 — a hand-sample metal ingot, the same rack as tin/mercury/aluminum
+          'gallium',
           'neptunium', 'americium', 'curium', 'berkelium', 'californium', 'protactinium', 'actinium', 'technetium', 'astatine', 'rutherfordium', 'dubnium', 'seaborgium', 'bohrium', 'hassium', 'meitnerium', 'darmstadtium', 'roentgenium', 'copernicium',
           'movable_type', 'vacuum_tube', 'integrated_circuit', 'microprocessor',
           'bioluminescent_fungus', 'truffle', 'dead_mans_fingers', 'witchs_butter',
           'lard', 'wool', 'embryo', 'parthenogenesis', 'cotton', 'popcorn', 'soybean', 'tofu', 'pea', 'lemon', 'strawberry', 'pear', 'cherry', 'fig', 'coffee', 'cocoa_bean', 'chocolate', 'stone', 'flint', 'limestone', 'ice', 'brick', 'adobe', 'mortar', 'candle', 'coccidiosis',
+          // sandboxels gapfill batch 1 — a frozen block and a cast/pressed explosive charge,
+          // the same hand-sample bucket as ice/candle
+          'dry_ice', 'tnt', 'dynamite',
           'infectious_bursal_disease', 'infectious_bronchitis', 'colibacillosis', 'ascaridiasis',
           'ore', 'cinnabar', 'yellowcake', 'quicklime', 'oak_gall', 'thread', 'fibre', 'ink', 'mirror',
           // textiles batch 1 — a wisp of prepared fibre, the same rack as wool/thread/fibre
@@ -148,6 +158,9 @@ const SCALE = {
           'ice_cream', 'caramel', 'malt_vinegar', 'vinegar', 'olive_oil',
           'herb_oil', 'garlic_butter', 'creamed_butter',
           'butterfly', 'dung_beetle', 'firefly', 'cockroach', 'spider', 'centipede', 'millipede', 'woodlouse',
+          // sandboxels gapfill batch 1 — a hand-scale insect, and a shelled gastropod, the same rack as
+          // butterfly/cockroach and snail
+          'housefly', 'garden_snail',
           'snail', 'hookworm', 'enterobius_vermicularis', 'wuchereria_bancrofti', 'schistosoma', 'clonorchis_sinensis',
           'malaria', 'toxoplasmosis', 'giardiasis', 'amoebiasis', 'trichinosis', 'schistosomiasis',
           'producer', 'whale_barnacle', 'golden_poison_frog',
@@ -183,7 +196,10 @@ const SCALE = {
           'monocot', 'dicot', 'buttress_root', 'brace_root', 'clinging_root', 'aerial_root', 'pneumatophore', 'ivy',
           'rooster', 'hen', 'chick', 'cockerel', 'pullet', 'capon', 'drake', 'duckling', 'gander', 'goose', 'gosling', 'tom', 'turkey_hen', 'poult', 'rabbit', 'kid', 'foal', 'piglet', 'carabeef', 'chevon',
           'mango', 'ginger', 'rhizome', 'celery', 'marjoram', 'parsley', 'sage', 'rosemary', 'basil', 'thyme', 'mint', 'tarragon', 'dill', 'coriander', 'chives', 'bay_leaf', 'oregano', 'sunflower', 'oil', 'soy_sauce', 'fish_sauce', 'nuoc_cham', 'lithium_graphite', 'stainless_steel', 'beryllium_copper', 'niobium_titanium', 'rose_gold', 'hard_lead', 'titanium_alloy', 'galvanized_iron', 'gold_amalgam', 'dental_amalgam', 'neon_light', 'ferrovanadium', 'nicad_battery', 'lithium_ion_battery', 'platinum_rhodium_gauze', 'platinum_iridium', 'hardened_platinum', 'tungsten_rhenium', 'rocket_nozzle_alloy', 'scandium_aluminum_alloy', 'gas_mantle', 'neodymium_magnet', 'samarium_cobalt_magnet', 'gadolinium_steel',
-          'carbon_disulfide', 'disulfur_dichloride', 'phosphorus_trichloride', 'titanium_chloride', 'aluminum_copper_alloy', 'magnalium', 'nak_alloy', 'tin_silver_solder', 'beef', 'pork', 'mutton', 'venison', 'poultry', 'game', 'aged_beef', 'ham', 'stew', 'turmeric', 'carob', 'red_alga', 'hydrogenated_oil', 'sap', 'bark', 'cork', 'xylem', 'phloem', 'coconut', 'coconut_water', 'sugar_beet', 'mulberry', 'graft', 'hardwood', 'softwood', 'tallow', 'horn', 'antler', 'feather', 'down', 'oyster', 'swim_bladder', 'ambergris', 'baleen', 'manure', 'parchment', 'ivory', 'royal_jelly', 'rennet', 'whey', 'ricotta', 'starter_culture', 'pasteurised_milk', 'souring_kraut', 'kefir', 'buttermilk', 'miso', 'camembert', 'tuber', 'cutting', 'runner', 'obsidian', 'pumice', 'lignite', 'anthracite', 'marble', 'slate', 'magnet', 'copper_wire', 'voltaic_pile', 'electromagnet', 'heating_element', 'light_bulb', 'ipod', 'nike_plus_sensor', 'midsole_foam', 'athletic_shoe', 'polarizer', 'dvd_player', 'magnetic_tape', 'vhs', 'magnetron', 'scanner', 'barcode_scanner', 'wii_remote', 'digital_camera', 'sulfuric_acid', 'lead_acid_cell', 'electrolysis', 'electroplating', 'solar_cell', 'fungus', 'lichen', 'mycelium', 'mycorrhiza', 'root_nodule', 'polyp', 'coral', 'bleached_coral', 'earthworm', 'ascaridia_galli', 'detritus', 'humus', 'compost', 'rumen', 'pancreas',
+          'carbon_disulfide', 'disulfur_dichloride', 'phosphorus_trichloride', 'titanium_chloride', 'aluminum_copper_alloy', 'magnalium', 'nak_alloy', 'tin_silver_solder', 'beef', 'pork', 'mutton', 'venison', 'poultry', 'game', 'aged_beef', 'ham', 'stew', 'turmeric', 'carob', 'red_alga', 'green_alga', 'hydrogenated_oil', 'sap', 'bark', 'cork', 'xylem', 'phloem', 'coconut', 'coconut_water', 'sugar_beet', 'mulberry', 'graft', 'hardwood', 'softwood', 'tallow', 'horn', 'antler', 'feather', 'down', 'oyster', 'swim_bladder', 'ambergris', 'baleen', 'manure', 'parchment', 'ivory', 'royal_jelly', 'rennet', 'whey', 'ricotta', 'starter_culture', 'pasteurised_milk', 'souring_kraut', 'kefir', 'buttermilk', 'miso', 'camembert', 'tuber', 'cutting', 'runner', 'obsidian', 'pumice', 'lignite', 'anthracite', 'marble', 'slate', 'magnet', 'copper_wire', 'voltaic_pile', 'electromagnet', 'heating_element', 'light_bulb', 'ipod', 'nike_plus_sensor', 'midsole_foam', 'athletic_shoe', 'polarizer', 'dvd_player', 'magnetic_tape', 'vhs', 'magnetron', 'scanner', 'barcode_scanner', 'wii_remote', 'digital_camera', 'sulfuric_acid',
+          // sandboxels gapfill batch 1 — poured/drummed industrial liquids, the same item scale as sulfuric_acid
+          'glycerol', 'toluene', 'nitroglycerin', 'liquid_hydrogen', 'liquid_nitrogen',
+          'lead_acid_cell', 'electrolysis', 'electroplating', 'solar_cell', 'fungus', 'lichen', 'mycelium', 'mycorrhiza', 'root_nodule', 'polyp', 'coral', 'bleached_coral', 'earthworm', 'ascaridia_galli', 'detritus', 'humus', 'compost', 'rumen', 'pancreas',
           // flagship-animal-anatomy batch 1 — external/organ body parts, same rack as horn/antler/rumen/pancreas
           'mane', 'ossicone', 'shoulder_hump', 'pouch', 'hoof', 'trunk', 'cecum',
           // large-intestine batch 1 — organ-scale body parts and gut-physiology concepts, same rack
@@ -246,6 +262,9 @@ const SCALE = {
           // (sitar scale) and a hand-carried sea-snail shell (knife/shoe scale)
           'swan', 'mouse', 'monkey', 'veena', 'conch',
           'gila_monster', 'american_bullfrog', 'cane_toad', 'axolotl', 'fire_salamander',
+          // sandboxels gapfill batch 1 — a small commensal mammal and bird, and a walking toad,
+          // the same rack as mouse/swan/cane_toad
+          'rat', 'feral_pigeon', 'common_toad',
           // railways batch 1 — small machine parts, hand-tool scale
           'roller_bearing', 'plain_bearing', 'air_brake',
           'transducer', 'sound_wave', 'echo', 'ultrasound_scan', 'myoelectric_signal', 'bionic_arm',
@@ -438,7 +457,11 @@ const SCALE = {
           // tech breakthroughs batch 1 — a worldwide network, the same planet-spanning bucket as sky/sea/desert
           'internet',
           // living-earth batch 1 — a plate, a plate boundary, or the fault system/ridge it forms, all continent-to-ocean-basin scale like desert/tundra/sea; earthquake grouped with the storm/hurricane phenomena it belongs beside
-          'tectonic_plate', 'divergent_boundary', 'convergent_boundary', 'transform_boundary', 'mid_ocean_ridge', 'earthquake'],
+          'tectonic_plate', 'divergent_boundary', 'convergent_boundary', 'transform_boundary', 'mid_ocean_ridge', 'earthquake',
+          // sandboxels gapfill batch 1 — a rotating vortex and an ocean-basin-crossing wave, the same
+          // storm/hurricane-scale phenomenon bucket as earthquake; wind shear is the atmosphere-deep
+          // differential that drives them, same scale as the storm system it forms over
+          'wind_shear', 'tornado', 'tsunami'],
   '9':   ['star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun'],
 };
 

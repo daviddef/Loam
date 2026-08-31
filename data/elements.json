@@ -19120,7 +19120,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "soleRoute": true,
     "fact": "Superconducting magnets steer two proton beams to near light speed, then crash them together."
   },
@@ -22552,8 +22552,7 @@
     "tags": [
       "earth"
     ],
-    "soleRoute": true,
-    "terminal": true,
+    "terminal": false,
     "fact": "The ground's sudden release of strain built up along a locked fault, radiating out as seismic waves."
   },
   {
@@ -24112,6 +24111,259 @@
       "wild"
     ],
     "fact": "Keeps functioning lungs and external gills side by side for life, unlike any other salamander.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "gallium",
+    "name": "Gallium",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Melts at 29.8°C, liquid in your palm — Mendeleev predicted it in 1871, four years before it was found.",
+    "terminal": true
+  },
+  {
+    "id": "dry_ice",
+    "name": "Dry Ice",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Frozen carbon dioxide. Below 5 atmospheres it has no liquid phase — it sublimates straight to gas.",
+    "soleRoute": true
+  },
+  {
+    "id": "housefly",
+    "name": "Housefly",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Musca domestica tastes through chemoreceptors on its feet, and has only one pair of wings, not two.",
+    "terminal": true
+  },
+  {
+    "id": "rat",
+    "name": "Rat",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Rattus norvegicus. Its incisors never stop growing — about 12 cm a year — so it gnaws constantly.",
+    "terminal": true
+  },
+  {
+    "id": "feral_pigeon",
+    "name": "Feral Pigeon",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Descended from the rock dove, and it still nests on window ledges the way its ancestors nested on sea cliffs.",
+    "terminal": true
+  },
+  {
+    "id": "garden_snail",
+    "name": "Garden Snail",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Cornu aspersum. Hermaphrodite — a mating pair each fire a calcite 'love dart' before mating.",
+    "terminal": true
+  },
+  {
+    "id": "common_toad",
+    "name": "Common Toad",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Bufo bufo walks on four legs rather than hopping, and returns every spring to the exact pond it hatched in.",
+    "terminal": true
+  },
+  {
+    "id": "green_alga",
+    "name": "Green Alga",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "plant"
+    ],
+    "fact": "Chlorophyta — chlorophyll a and b, starch storage, mostly fresh water. Land plants share all three.",
+    "terminal": true
+  },
+  {
+    "id": "potassium_nitrate",
+    "name": "Potassium Nitrate",
+    "emoji": "🧂",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "KNO3, saltpetre. Bacteria turn manure's ammonia into nitrate; wash it through ash and it crystallises."
+  },
+  {
+    "id": "glycerol",
+    "name": "Glycerol",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Named from the Greek for sweet — the backbone left once a fat's three fatty acids are split off it."
+  },
+  {
+    "id": "toluene",
+    "name": "Toluene",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Named for tolu balsam, the resin it was isolated from in 1841 — now mostly made from petroleum instead."
+  },
+  {
+    "id": "tnt",
+    "name": "TNT",
+    "emoji": "🧨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "2,4,6-trinitrotoluene, first made in 1863 as a yellow dye — a military explosive only from 1902.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "gunpowder",
+    "name": "Gunpowder",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "75% potassium nitrate, 15% charcoal, 10% sulfur — a ratio traced to its 11th-century Chinese origin.",
+    "terminal": true
+  },
+  {
+    "id": "dynamite",
+    "name": "Dynamite",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Nobel's 1867 patent: nitroglycerin soaked into kieselguhr, a diatom silica, stable enough to ship.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "nitroglycerin",
+    "name": "Nitroglycerin",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Sobrero made it first, in 1846, and was so alarmed by how easily it detonates he opposed weaponising it.",
+    "soleRoute": true
+  },
+  {
+    "id": "wind_shear",
+    "name": "Wind Shear",
+    "emoji": "↕️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Wind changing speed or direction with height. Enough of it over a thunderstorm tilts the updraft into a spin.",
+    "soleRoute": true
+  },
+  {
+    "id": "tornado",
+    "name": "Tornado",
+    "emoji": "🌪️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A supercell's rotating mesocyclone, stretched and tightened by wind shear until it touches the ground.",
+    "terminal": true
+  },
+  {
+    "id": "tsunami",
+    "name": "Tsunami",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "earth"
+    ],
+    "fact": "Not a wind-driven wave — the whole water column shoved sideways by a subduction-zone earthquake.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "liquid_hydrogen",
+    "name": "Liquid Hydrogen",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "water"
+    ],
+    "fact": "Boils at -252.87°C, just 20 degrees above absolute zero — colder than every other cryogenic liquid but helium.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "liquid_nitrogen",
+    "name": "Liquid Nitrogen",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "gas"
+    ],
+    "fact": "Boils at -196°C. Splashed on something warm it floats on its own vapour — the Leidenfrost effect.",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "antiproton",
+    "name": "Antiproton",
+    "emoji": "➖",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The proton's antimatter twin — same mass, opposite charge — confirmed to exist in 1955 at Berkeley.",
+    "soleRoute": true
+  },
+  {
+    "id": "antihydrogen",
+    "name": "Antihydrogen",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A positron bound to an antiproton — a whole antimatter atom, first made at CERN in 1995.",
     "soleRoute": true,
     "terminal": true
   }
