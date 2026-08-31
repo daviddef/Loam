@@ -31255,5 +31255,65 @@
     "why": "Sophora secundiflora is a southwestern desert-scrub shrub whose bright red seeds -- red hots -- concentrate the alkaloid cytisine.",
     "src": "https://en.wikipedia.org/wiki/Sophora_secundiflora",
     "verified": true
+  },
+  {
+    "in": [
+      "asteroid",
+      "air"
+    ],
+    "out": "meteorite",
+    "why": "Atmospheric friction and ablation burn a meteoroid as it falls — that streak is a meteor. One that survives intact and reaches the ground is a meteorite; only five to ten are recovered worldwide in a typical year.",
+    "src": "https://en.wikipedia.org/wiki/Meteorite",
+    "verified": true
+  },
+  {
+    "in": [
+      "meteorite",
+      "stone"
+    ],
+    "out": "impact_crater",
+    "why": "Meteorites strike at up to tens of km/s. The shock wave compresses rock past a million bar in an instant, excavating a bowl-shaped cavity and leaving shatter cones and shocked quartz in the walls.",
+    "src": "https://en.wikipedia.org/wiki/Impact_crater",
+    "verified": true
+  },
+  {
+    "in": [
+      "meteorite",
+      "moon"
+    ],
+    "out": "impact_crater",
+    "why": "The Moon has no atmosphere or weather to erase a scar, so nearly every impact it has ever taken stays legible — radiometric dating of Apollo impact-melt rock clusters between 3.8 and 4.1 billion years old.",
+    "src": "https://en.wikipedia.org/wiki/Moon",
+    "verified": true
+  },
+  {
+    "in": [
+      "impact_crater",
+      "quartz"
+    ],
+    "out": "tektite",
+    "why": "Impact melt thrown clear of the crater cools too fast for any crystal to start. It lands as tektite: over 65% silica, completely glassy, and with less than 0.02% water by weight — far drier than volcanic glass.",
+    "src": "https://en.wikipedia.org/wiki/Tektite",
+    "verified": true
+  },
+  {
+    "in": [
+      "tektite",
+      "sand"
+    ],
+    "out": "moldavite",
+    "why": "At the Ries crater the impact melted the sandy Cenozoic cover over the crystalline basement. That glass, tinted green by trace iron, was thrown up to 450 km and fell across Bohemia and Moravia 15 million years ago.",
+    "src": "https://en.wikipedia.org/wiki/Ries_impact",
+    "verified": true
+  },
+  {
+    "in": [
+      "tektite",
+      "air"
+    ],
+    "out": "australite",
+    "why": "Most tektites are simple splash forms. Australites were flung clear of the atmosphere and re-entered it a second time — that second, high-velocity pass re-melted and reshaped them into aerodynamic buttons and flanges.",
+    "src": "https://en.wikipedia.org/wiki/Australite",
+    "supported": true
   }
 ]

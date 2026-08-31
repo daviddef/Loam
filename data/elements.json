@@ -5672,7 +5672,6 @@
     "tags": [
       "earth"
     ],
-    "terminal": true,
     "fact": "The whole belt weighs 3% of the Moon. Jupiter threw out over 99% of what was there."
   },
   {
@@ -26895,5 +26894,61 @@
     "taxon": "tx_sophora",
     "terminal": true,
     "soleRoute": true
+  },
+  {
+    "id": "meteorite",
+    "name": "Meteorite",
+    "emoji": "🌑",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "A meteoroid that survives the trip through the atmosphere and reaches the ground — most don't."
+  },
+  {
+    "id": "impact_crater",
+    "name": "Impact Crater",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Struck near 20 km/s, rock is compressed past a million bar — melted, vaporized, or turned to coesite."
+  },
+  {
+    "id": "tektite",
+    "name": "Tektite",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "soleRoute": true,
+    "fact": "Impact-melted terrestrial rock, quenched airborne into glass — no crystals, under 0.02% water by weight."
+  },
+  {
+    "id": "moldavite",
+    "name": "Moldavite",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Green tektite glass from one event: the Ries impact, 15 million years ago, its melt landing 450 km away."
+  },
+  {
+    "id": "australite",
+    "name": "Australite",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "terminal": true,
+    "soleRoute": true,
+    "fact": "Tektite reshaped by a second trip through the atmosphere — the flanged button NASA modeled Apollo capsules on."
   }
 ]

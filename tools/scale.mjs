@@ -117,6 +117,9 @@ const SCALE = {
   '-2':  [// mining comprehensive batch — broken/loose rock and small cast metal, hand-sample scale
           // alongside ore/stone/ballast/diamond/coin
           'run_of_mine', 'waste_rock', 'assay', 'dore',
+          // meteorite-impact batch 1 — hand-sample-scale fallen rock and impact
+          // glass, same rack as stone/quartz/kunzite
+          'meteorite', 'tektite', 'moldavite', 'australite',
           'sundew', 'edelweiss', 'moss', 'liverwort',
           // Greek/Roman mythology batch 1 — large-insect scale, the same rack as cockroach/dung_beetle
           'cicada',
@@ -480,6 +483,8 @@ const SCALE = {
           'slurry_pipeline',
           'atoll', 'cloud', 'lightning', 'thunder', 'flood', 'rainbow', 'river', 'humongous_fungus',
           'trophic_cascade',
+          // meteorite-impact batch 1 — a km-scale landform, same rack as volcano/mountain/caldera
+          'impact_crater',
           // geography batch 1 — kilometre-scale landscape features, the same bucket as river/atoll/flood
           'mountain', 'volcano', 'canyon', 'glacier', 'fjord', 'meander', 'oxbow_lake', 'delta', 'floodplain', 'lagoon', 'estuary', 'caldera', 'plateau',
           // evolution batch 1 — a kilometre-scale landform, the same bucket as atoll/mountain
