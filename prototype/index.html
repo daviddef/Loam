@@ -5317,6 +5317,14 @@ function applyMerge(a, b) {
 // toggle).
 const SPRINKLE_MS = 350;
 let sprinkle = null;                    // { id, timer }
+// Tracked passively, cheaply, at all times (not just while sprinkling) — a
+// single client-coordinate pair, no different from what every drag handler
+// in this file already reads off its own pointermove. Sprinkling reads it
+// rather than picking a random board spot, so it falls where you're
+// actually pointing. ("sprinkle mode needs to follow my cursor, not
+// randomly spawn, ie they sprinkle where i move" — found live.)
+let lastPointer = null;
+addEventListener('pointermove', ev => { lastPointer = { x: ev.clientX, y: ev.clientY }; }, { passive: true });
 function stopSprinkle(silent) {
   if (!sprinkle) return;
   clearInterval(sprinkle.timer);
@@ -5332,17 +5340,38 @@ function sprinkleTick(id) {
   }
   const b = boardBox();
   if (!b.width || !b.height) return;
-  // Land somewhere across the visible board — NOT via freeSpot, which
-  // exists specifically to avoid overlap. Sprinkling wants the opposite: a
-  // landing spot that CAN fall on an existing chip, so two things sprinkled
-  // near each other can actually touch and react, the way a manual drag
-  // dropped onto another chip already does.
-  const px = b.left + 16 + Math.random() * Math.max(1, b.width - 32);
-  const py = b.top + 16 + Math.random() * Math.max(1, b.height - 32);
-  const target = hit(px, py);
-  const pair = target?.dataset.id ? merges.get([id, target.dataset.id].sort().join('+')) : null;
+  // Fall at the cursor — a little jitter so consecutive ticks spread into a
+  // cluster rather than stacking on the exact same pixel — clamped onto the
+  // visible board so a cursor that's drifted over the shelf or tray doesn't
+  // spawn there. Falls back to a random board spot only if the pointer has
+  // never once been seen (e.g. sprinkle armed by script, or a pure-keyboard
+  // session). NOT via freeSpot, which exists specifically to avoid overlap —
+  // sprinkling wants the opposite: a landing spot that CAN fall on an
+  // existing chip, so it can actually touch and react, the way a manual
+  // drag dropped onto another chip already does.
+  const jitter = 22;
+  let px, py;
+  if (lastPointer) {
+    px = lastPointer.x + (Math.random() - 0.5) * jitter * 2;
+    py = lastPointer.y + (Math.random() - 0.5) * jitter * 2;
+  } else {
+    px = b.left + 16 + Math.random() * Math.max(1, b.width - 32);
+    py = b.top + 16 + Math.random() * Math.max(1, b.height - 32);
+  }
+  px = Math.max(b.left + 8, Math.min(px, b.left + b.width - 8));
+  py = Math.max(b.top + 8, Math.min(py, b.top + b.height - 8));
+  // Always land exactly where it fell, cursor-tracked or not — freeSpot's
+  // non-overlapping search is the wrong tool once the whole point is
+  // following the cursor rather than tidily filling the board.
   const [wx, wy] = toWorld(px, py);
-  const el = spawn(id, pair ? wx : null, pair ? wy : null, null, null, true);
+  const el = spawn(id, wx, wy, null, null, true);
+  // Hit-test using the chip's OWN rect as the probe, exactly like a manual
+  // drag-drop does (`hit(ev.clientX, ev.clientY, el)`) — a bare point test
+  // needs the jitter to land inside another card's exact pixels, which
+  // missed constantly; the real card-vs-card overlap this uses is what
+  // "touch" actually means here.
+  const target = hit(px, py, el);
+  const pair = target?.dataset.id ? merges.get([id, target.dataset.id].sort().join('+')) : null;
   if (pair) applyMerge(el, target);
 }
 function toggleSprinkle(id) {
