@@ -25844,5 +25844,405 @@
     "why": "Temple priests performed the annual Ritual of Overthrowing Apophis, building an effigy of the serpent and burning it to hold off his evil for another year.",
     "src": "https://en.wikipedia.org/wiki/Apep",
     "supported": true
+  },
+  {
+    "in": [
+      "wolf",
+      "snow"
+    ],
+    "out": "raven",
+    "why": "Ravens trail wolf packs as kleptoparasites, scavenging carcasses through the winter -- and have even been seen leading wolves to prey.",
+    "src": "https://en.wikipedia.org/wiki/Common_raven",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "wing"
+    ],
+    "out": "raven",
+    "why": "Among the highest-flying birds on record, common ravens have been counted as high as 6,350 m on Mount Everest.",
+    "src": "https://en.wikipedia.org/wiki/Common_raven",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "flint"
+    ],
+    "out": "spear",
+    "why": "The 300,000-year-old Schoningen spears were wood alone; flint blades came later, bound to the shaft with cord, sinew or resin.",
+    "src": "https://en.wikipedia.org/wiki/Spear",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "bronze"
+    ],
+    "out": "spear",
+    "why": "Bronze Age spearheads were cast in the metal, then bound or socketed onto a wooden shaft -- sharper and tougher than any flaked stone tip.",
+    "src": "https://en.wikipedia.org/wiki/Spear",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "stone"
+    ],
+    "out": "hammer",
+    "why": "The first hammers with handles were a stone head lashed to a wooden haft with strips of leather or sinew, in use by about 30,000 BCE.",
+    "src": "https://en.wikipedia.org/wiki/Hammer",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "iron"
+    ],
+    "out": "hammer",
+    "why": "A forged iron head later replaced the stone one, hafted the same way and often leather-wrapped at the grip.",
+    "src": "https://en.wikipedia.org/wiki/Hammer",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "iron"
+    ],
+    "out": "rune",
+    "why": "Runestones -- memorial boulders raised across Scandinavia -- were carved with iron tools into letterforms built to be cut, not written.",
+    "src": "https://en.wikipedia.org/wiki/Runes",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "iron"
+    ],
+    "out": "rune",
+    "why": "Runes were also carved with an iron point into everyday bone and antler objects -- combs, pins, sticks -- not just monumental stone.",
+    "src": "https://en.wikipedia.org/wiki/Runes",
+    "verified": true
+  },
+  {
+    "in": [
+      "raven",
+      "spear"
+    ],
+    "out": "odin",
+    "why": "His ravens Huginn and Muninn fly out at dawn and tell him everything they see and hear by evening; he carries the spear Gungnir into battle.",
+    "src": "https://en.wikipedia.org/wiki/Odin",
+    "supported": true
+  },
+  {
+    "in": [
+      "eagle",
+      "mead"
+    ],
+    "out": "odin",
+    "why": "He drank the Mead of Poetry dry inside the giant Suttungr's mountain, then fled in eagle form -- later spitting it out to gift poets among gods and men.",
+    "src": "https://en.wikipedia.org/wiki/Mead_of_poetry",
+    "supported": true
+  },
+  {
+    "in": [
+      "hammer",
+      "iron"
+    ],
+    "out": "thor",
+    "why": "Mjolnir is one of his three great possessions, alongside the belt Megingjord and the iron gloves Jarngreipr -- he must wear the gloves to wield the hammer at all.",
+    "src": "https://en.wikipedia.org/wiki/Mj%C3%B6lnir",
+    "supported": true
+  },
+  {
+    "in": [
+      "goat",
+      "hammer"
+    ],
+    "out": "thor",
+    "why": "He slaughters and eats his two goats, Tanngrisnir and Tanngnjostr, each night, then blesses their skins and bones with Mjolnir to raise them again by morning.",
+    "src": "https://en.wikipedia.org/wiki/Tanngrisnir_and_Tanngnj%C3%B3str",
+    "supported": true
+  },
+  {
+    "in": [
+      "mare",
+      "stallion"
+    ],
+    "out": "loki",
+    "why": "In the form of a mare, Loki was pursued and mounted by the stallion Svadilfari, and gave birth to the eight-legged horse Sleipnir.",
+    "src": "https://en.wikipedia.org/wiki/Loki",
+    "supported": true
+  },
+  {
+    "in": [
+      "wolf",
+      "snake"
+    ],
+    "out": "loki",
+    "why": "With the giantess Angrboda he fathered three monstrous children: the wolf Fenrir, the serpent Jormungandr, and the being Hel.",
+    "src": "https://en.wikipedia.org/wiki/Loki",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "cat"
+    ],
+    "out": "freyja",
+    "why": "She rides a chariot pulled by two cats and owns the golden necklace Brisingamen, said to be earned by spending a night with each of the four dwarves who forged it.",
+    "src": "https://en.wikipedia.org/wiki/Freyja",
+    "supported": true
+  },
+  {
+    "in": [
+      "feather",
+      "wing"
+    ],
+    "out": "freyja",
+    "why": "Owns a cloak of falcon feathers that lets its wearer shift into falcon shape -- Loki borrows it more than once, including to fly off and rescue Idun.",
+    "src": "https://en.wikipedia.org/wiki/Freyja",
+    "supported": true
+  },
+  {
+    "in": [
+      "star",
+      "spinning_wheel"
+    ],
+    "out": "frigg",
+    "why": "The three stars of Orion's Belt were known in Scandinavian tradition as 'Frigg's Distaff' (friggerock), her spinning tool set among the stars.",
+    "src": "https://en.wikipedia.org/wiki/Orion_(constellation)",
+    "supported": true
+  },
+  {
+    "in": [
+      "mistletoe",
+      "wood"
+    ],
+    "out": "frigg",
+    "why": "She made every weapon and even wood itself swear never to hurt her son Baldr -- but thought the young mistletoe too harmless to bother asking.",
+    "src": "https://en.wikipedia.org/wiki/Frigg",
+    "supported": true
+  },
+  {
+    "in": [
+      "odin",
+      "frigg"
+    ],
+    "out": "baldr",
+    "why": "Son of Odin and Frigg, said to be so bright and beautiful that light shone from him.",
+    "src": "https://en.wikipedia.org/wiki/Baldr",
+    "supported": true
+  },
+  {
+    "in": [
+      "mistletoe",
+      "spear"
+    ],
+    "out": "baldr",
+    "why": "Frigg had won an oath from every object in the world not to harm Baldr -- except the mistletoe, which Loki shaped into a weapon and used to kill him.",
+    "src": "https://en.wikipedia.org/wiki/Baldr",
+    "supported": true
+  },
+  {
+    "in": [
+      "rainbow",
+      "horn"
+    ],
+    "out": "heimdall",
+    "why": "Stands guard where the rainbow bridge Bifrost meets the sky, and will blow his horn Gjallarhorn -- heard in all nine worlds -- to open Ragnarok.",
+    "src": "https://en.wikipedia.org/wiki/Heimdall",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "sea"
+    ],
+    "out": "heimdall",
+    "why": "Nicknamed Gullintanni, 'gold teeth,' and born of nine sisters usually read as the Nine Daughters of Aegir and Ran, personifications of the sea's waves.",
+    "src": "https://en.wikipedia.org/wiki/Heimdall",
+    "supported": true
+  },
+  {
+    "in": [
+      "wolf",
+      "rope"
+    ],
+    "out": "tyr",
+    "why": "To get the fetter Gleipnir -- thin as a silken ribbon, yet stronger than any iron chain -- onto Fenrir, the gods needed Tyr to place his hand in the wolf's mouth as a pledge.",
+    "src": "https://en.wikipedia.org/wiki/Gleipnir",
+    "supported": true
+  },
+  {
+    "in": [
+      "wolf",
+      "bone"
+    ],
+    "out": "tyr",
+    "why": "When Fenrir realized he had been tricked, he bit off Tyr's hand at what is still called 'the wolf-joint' -- the wrist.",
+    "src": "https://en.wikipedia.org/wiki/T%C3%BDr",
+    "supported": true
+  },
+  {
+    "in": [
+      "sea",
+      "wind"
+    ],
+    "out": "njord",
+    "why": "God of the sea, navigation, fishing and wind; sailors prayed to him for a safe voyage, and storms were believed to rise when he was angered.",
+    "src": "https://en.wikipedia.org/wiki/Nj%C3%B6r%C3%B0r",
+    "supported": true
+  },
+  {
+    "in": [
+      "mountain",
+      "sea"
+    ],
+    "out": "njord",
+    "why": "Married to Skadi, he complained that howling mountain wolves woke him after nine nights, while she said shrieking sea-gulls cost her sleep at his shore.",
+    "src": "https://en.wikipedia.org/wiki/Nj%C3%B6r%C3%B0r",
+    "supported": true
+  },
+  {
+    "in": [
+      "goat",
+      "rope"
+    ],
+    "out": "skadi",
+    "why": "As a condition of peace with her, Loki made her laugh by tying a cord between a nanny goat's beard and his own body and tugging until both squealed.",
+    "src": "https://en.wikipedia.org/wiki/Ska%C3%B0i",
+    "supported": true
+  },
+  {
+    "in": [
+      "mountain",
+      "snow"
+    ],
+    "out": "skadi",
+    "why": "Goddess of winter, mountains and skiing -- she left her sea-god husband Njord to live alone in Thrymheimr, her father's permanently snowbound peaks.",
+    "src": "https://en.wikipedia.org/wiki/Ska%C3%B0i",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "wheat"
+    ],
+    "out": "sif",
+    "why": "Her golden hair, cut off by Loki as a prank and replaced with real forged gold, has long been read by scholars as standing for fields of golden wheat.",
+    "src": "https://en.wikipedia.org/wiki/Sif",
+    "supported": true
+  },
+  {
+    "in": [
+      "gold",
+      "spear"
+    ],
+    "out": "sif",
+    "why": "The dwarven Sons of Ivaldi forged both her golden hair and Odin's spear Gungnir in the same commission.",
+    "src": "https://en.wikipedia.org/wiki/Brokkr",
+    "supported": true
+  },
+  {
+    "in": [
+      "rune",
+      "human"
+    ],
+    "out": "bragi",
+    "why": "The Poetic Edda's Sigrdrifumal lists runes carved 'on the bear's paw and on Bragi's tongue,' among the charms every person ought to know.",
+    "src": "https://en.wikipedia.org/wiki/Bragi",
+    "supported": true
+  },
+  {
+    "in": [
+      "human",
+      "mead"
+    ],
+    "out": "bragi",
+    "why": "In skaldic poems he greets fallen kings arriving in Valhalla, welcoming the newly dead with mead and verse.",
+    "src": "https://en.wikipedia.org/wiki/Bragi",
+    "supported": true
+  },
+  {
+    "in": [
+      "apple",
+      "eagle"
+    ],
+    "out": "idun",
+    "why": "The giant Thjazi, disguised as an eagle, lured her out of Asgard and abducted her along with the apples she carried -- and without them, the gods began to age.",
+    "src": "https://en.wikipedia.org/wiki/I%C3%B0unn",
+    "supported": true
+  },
+  {
+    "in": [
+      "apple",
+      "human"
+    ],
+    "out": "idun",
+    "why": "Keeps the apples the gods bite into as they grow old to become young again, a cycle said to continue right up until Ragnarok.",
+    "src": "https://en.wikipedia.org/wiki/I%C3%B0unn",
+    "supported": true
+  },
+  {
+    "in": [
+      "loki",
+      "ice"
+    ],
+    "out": "hel",
+    "why": "Daughter of Loki, appointed by Odin to govern a realm called Hel, set within the icy world of Niflheim.",
+    "src": "https://en.wikipedia.org/wiki/Hel_(being)",
+    "supported": true
+  },
+  {
+    "in": [
+      "snake",
+      "human"
+    ],
+    "out": "hel",
+    "why": "One of three monstrous children born to Loki -- her brother the serpent Jormungandr among them -- she alone was given power over the ordinary dead, those who die of sickness or age rather than battle.",
+    "src": "https://en.wikipedia.org/wiki/Hel_(being)",
+    "supported": true
+  },
+  {
+    "in": [
+      "shoe",
+      "wolf"
+    ],
+    "out": "vidar",
+    "why": "His thick shoe, cobbled from every scrap of leather people ever trimmed from their own shoes, lets him pin the wolf Fenrir's jaw and tear it apart at Ragnarok.",
+    "src": "https://en.wikipedia.org/wiki/Vidar",
+    "supported": true
+  },
+  {
+    "in": [
+      "shoe",
+      "odin"
+    ],
+    "out": "vidar",
+    "why": "Son of Odin and nearly as strong as Thor, known as 'Vidar the Silent' -- he survives Ragnarok to avenge his father's death.",
+    "src": "https://en.wikipedia.org/wiki/Vidar",
+    "supported": true
+  },
+  {
+    "in": [
+      "boar",
+      "gold"
+    ],
+    "out": "freyr",
+    "why": "Rides the dwarf-made boar Gullinbursti, whose golden bristles glow bright enough to light his master's way in the dark.",
+    "src": "https://en.wikipedia.org/wiki/Freyr",
+    "supported": true
+  },
+  {
+    "in": [
+      "rain",
+      "wheat"
+    ],
+    "out": "freyr",
+    "why": "Rules over the rain and the shining of the sun, and with them the fruit of the earth -- the Prose Edda says it is good to call on him for peace and fruitful seasons.",
+    "src": "https://en.wikipedia.org/wiki/Freyr",
+    "supported": true
   }
 ]

@@ -4539,7 +4539,7 @@
     ],
     "soleRoute": true,
     "fact": "Always 42\u00b0 out from the point opposite the sun. The geometry belongs to the drop.",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "ozone",
@@ -4844,7 +4844,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "The oldest known one is 5,500 years old, one piece of hide, and its laces survived."
   },
   {
@@ -12820,7 +12820,7 @@
     "tags": [
       "animal"
     ],
-    "terminal": true,
+    "terminal": false,
     "fact": "A male pig of breeding age, kept intact rather than castrated.",
     "taxon": "tx_artiodactyla"
   },
@@ -14884,7 +14884,7 @@
     ],
     "fact": "A hemiparasite: its haustorium taps a host tree's water and minerals while its own green leaves still photosynthesise.",
     "taxon": "tx_viscum",
-    "terminal": true
+    "terminal": false
   },
   {
     "id": "rafflesia",
@@ -19185,7 +19185,7 @@
     "tags": [
       "tool"
     ],
-    "terminal": true,
+    "terminal": false,
     "soleRoute": true,
     "fact": "The wheel drives the spindle instead of a hand doing it \u2014 over ten times faster."
   },
@@ -21666,6 +21666,220 @@
       "myth"
     ],
     "fact": "The 'World-Encircler' -- a giant serpent that attacked Ra's sun barque every night in the underworld.",
+    "terminal": true
+  },
+  {
+    "id": "raven",
+    "name": "Raven",
+    "emoji": "\ud83d\udc26\u200d\u2b1b",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A kleptoparasite of wolves -- it trails packs to steal from their kills, and has led wolves to prey."
+  },
+  {
+    "id": "spear",
+    "name": "Spear",
+    "emoji": "\ud83d\udd31",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The oldest wooden spears are 300,000 years old; stone, bronze and iron tips came later, bound on."
+  },
+  {
+    "id": "hammer",
+    "name": "Hammer",
+    "emoji": "\ud83d\udd28",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Perhaps the oldest tool with definite evidence: unhafted stone hammerstones date to 3.3 million years ago."
+  },
+  {
+    "id": "rune",
+    "name": "Rune",
+    "emoji": "\u16b1",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Germanic letters cut in straight strokes -- a horizontal line would split the wood grain."
+  },
+  {
+    "id": "odin",
+    "name": "Odin",
+    "emoji": "\ud83d\udc41\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Chief of the AEsir. His ravens report the world to him each day; he traded an eye for wisdom."
+  },
+  {
+    "id": "thor",
+    "name": "Thor",
+    "emoji": "\u26a1",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Odin's son, god of thunder. Wields the hammer Mjolnir, gripped only with his iron gloves.",
+    "terminal": true
+  },
+  {
+    "id": "loki",
+    "name": "Loki",
+    "emoji": "\ud83c\udfad",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Shapeshifting trickster. As a mare he bore Sleipnir; he also fathered the wolf Fenrir and a serpent."
+  },
+  {
+    "id": "freyja",
+    "name": "Freyja",
+    "emoji": "\ud83d\udc08",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Vanir goddess of love and war. Rides a cat-drawn chariot and owns the necklace Brisingamen.",
+    "terminal": true
+  },
+  {
+    "id": "frigg",
+    "name": "Frigg",
+    "emoji": "\ud83e\uddf6",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Odin's wife. Orion's Belt was known in Scandinavia as 'Frigg's Distaff,' her spinning tool."
+  },
+  {
+    "id": "baldr",
+    "name": "Baldr",
+    "emoji": "\u2600\ufe0f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Odin and Frigg's son. Every object swore never to harm him except the mistletoe that killed him.",
+    "terminal": true
+  },
+  {
+    "id": "heimdall",
+    "name": "Heimdall",
+    "emoji": "\ud83c\udf08",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Watchman of the rainbow bridge Bifrost. His horn Gjallarhorn will sound the start of Ragnarok.",
+    "terminal": true
+  },
+  {
+    "id": "tyr",
+    "name": "Tyr",
+    "emoji": "\ud83e\udd1a",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "God of law and single combat. Lost his right hand in the wolf Fenrir's jaws binding it.",
+    "terminal": true
+  },
+  {
+    "id": "njord",
+    "name": "Njord",
+    "emoji": "\u2693",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Vanir sea god, father of Freyr and Freyja. His mountain marriage to Skadi failed within nights.",
+    "terminal": true
+  },
+  {
+    "id": "skadi",
+    "name": "Skadi",
+    "emoji": "\ud83c\udfbf",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Giantess of winter and skiing. Chose her husband by his feet alone, expecting the god Baldr.",
+    "terminal": true
+  },
+  {
+    "id": "sif",
+    "name": "Sif",
+    "emoji": "\ud83c\udf3e",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Thor's wife, her golden hair cut off by Loki and replaced with real gold by dwarven smiths.",
+    "terminal": true
+  },
+  {
+    "id": "bragi",
+    "name": "Bragi",
+    "emoji": "\ud83c\udfb5",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "God of poetry, said to have runes carved on his own tongue. Greets the slain into Valhalla.",
+    "terminal": true
+  },
+  {
+    "id": "idun",
+    "name": "Idun",
+    "emoji": "\ud83c\udf4f",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Keeper of the apples that keep the gods young. The giant Thjazi once stole her, eagle-shaped.",
+    "terminal": true
+  },
+  {
+    "id": "hel",
+    "name": "Hel",
+    "emoji": "\ud83d\udc80",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Loki's daughter, half flesh and half corpse. Rules the dead who die of sickness or old age.",
+    "terminal": true
+  },
+  {
+    "id": "vidar",
+    "name": "Vidar",
+    "emoji": "\ud83d\udc62",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Odin's silent, near-mightiest son. His huge shoe is made to kill the wolf Fenrir.",
+    "terminal": true
+  },
+  {
+    "id": "freyr",
+    "name": "Freyr",
+    "emoji": "\ud83d\udc17",
+    "shelf": "folklore",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Vanir god of harvest, rides the golden boar Gullinbursti; traded his sword for a giantess.",
     "terminal": true
   }
 ]

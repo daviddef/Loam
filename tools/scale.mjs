@@ -213,7 +213,9 @@ const SCALE = {
           'pituitary_gland', 'hippocampus', 'amygdala', 'corpus_callosum', 'cerebrum', 'cerebellum', 'hindbrain',
           'brain', 'frontal_lobe', 'parietal_lobe', 'temporal_lobe', 'occipital_lobe', 'meninges',
           'cerebrospinal_fluid', 'blood_brain_barrier', 'cranial_nerve', 'spinal_nerve',
-          'short_term_memory', 'long_term_memory', 'neuroplasticity', 'neurogenesis'],
+          'short_term_memory', 'long_term_memory', 'neuroplasticity', 'neurogenesis',
+          // norse gods batch 1 — hand-tool and small-object scale, the same rack as rope/shoe/horn
+          'raven', 'hammer', 'rune'],
   '0':   [// mining value chains batch 2 — machine-sized equipment, a room-scale appliance
           'diesel_electric_drive',
           // mining comprehensive batch — a computer-built block model, same appliance bucket as computer
@@ -236,6 +238,9 @@ const SCALE = {
           'sekhmet', 'nephthys', 'nut', 'geb', 'shu', 'khnum', 'ptah', 'amun', 'maat', 'khonsu',
           'taweret', 'serket', 'wadjet', 'apep',
           'boat', 'hippopotamus', 'jackal', 'egyptian_cobra',
+          // norse gods batch 1 — human/idol scale, the same rack as the Aztec/Maya deities above; spear is a ~2 m weapon, same order as a human
+          'spear', 'odin', 'thor', 'loki', 'freyja', 'frigg', 'baldr', 'heimdall', 'tyr',
+          'njord', 'skadi', 'sif', 'bragi', 'idun', 'hel', 'vidar', 'freyr',
           'bull', 'heifer', 'steer', 'buffalo', 'donkey', 'boar', 'sow', 'gilt', 'barrow', 'ram', 'ewe', 'wether', 'buck', 'doe', 'stallion', 'mare', 'colt', 'filly', 'gelding',
           'calf', 'cactus', 'foxglove', 'winter_wheat', 'semi_dwarf_wheat', 'willow', 'bamboo', 'ox', 'whale', 'granite', 'basalt', 'sandstone', 'mudstone', 'shale', 'conglomerate', 'phyllite', 'schist', 'gneiss', 'quartzite', 'generator', 'electric_motor', 'transformer', 'refrigerator', 'printing_press', 'telescope', 'steam_engine', 'cotton_gin',
           // textiles batch 1 — floor-standing apparatus, the same rack as cotton_gin/printing_press
