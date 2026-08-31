@@ -553,6 +553,14 @@
       ],
       "severity": "contact"
     },
+    "cassava_cyanogenic_toxicity": {
+      "label": "Raw cassava is toxic — bitter varieties badly so",
+      "note": "Cassava's roots, peel and leaves carry cyanogenic glycosides — mainly linamarin — that release hydrogen cyanide once the plant's own enzyme breaks them down, which is exactly what happens when it's chewed raw. Sweet varieties carry only a little; bitter varieties can carry fifty times as much, and need soaking, grating and fermenting for days before the toxin drops to a safe level, not just cooking. Long-term exposure to poorly processed cassava causes konzo, a real, irreversible paralytic disease still seen where processing is rushed.",
+      "ids": [
+        "cassava"
+      ],
+      "severity": "conditional"
+    },
     "cassia_coumarin": {
       "label": "Cassia cinnamon carries far more coumarin than Ceylon",
       "note": "Cassia cinnamon — the common supermarket kind — runs well over 1mg of coumarin per gram, sometimes far more; true Ceylon cinnamon carries only trace amounts. High coumarin intake over time risks liver and kidney harm.",
