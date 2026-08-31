@@ -1388,6 +1388,7 @@ __CATEGORY_CSS__
     background:var(--card);color:var(--ink-soft);font:700 15px/1 var(--face-name);cursor:pointer;
   }
   .ent .addroute{margin-left:auto}
+  .addroute.fav.on{border-color:var(--orange);color:var(--orange)}
   .addroute:hover{border-color:var(--orange);color:var(--brick)}
   /* "+ Chart all" (the whole tree below a node) reads as a stronger action
      than "+ Chart" (one path) — a filled accent says so without more text.
@@ -1963,11 +1964,13 @@ __CATEGORY_CSS__
       <button class="atab" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px">__UI_ELEMENTS__</span></button>
       <button class="atab" data-asidetab="proteins" title="Proteins — the twenty amino acids"><span class="gl" style="--g:19px">__UI_AMINO__</span></button>
       <button class="atab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px">__UI_ANIMALS__</span></button>
+      <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
     </div>
     <div id="asideShelf" class="apane on"></div>
     <div id="asideElements" class="apane"></div>
     <div id="asideProteins" class="apane"></div>
     <div id="asideAnimals" class="apane"></div>
+    <div id="asideFavourites" class="apane"></div>
   </aside>
 </main>
 
@@ -2117,10 +2120,13 @@ function scoreNow() {
 }
 const KEY = 'loam.v1';
 
-let found = new Set(), seen = new Set(), savedBench = null;
+let found = new Set(), seen = new Set(), savedBench = null, favourites = new Set();
 try {
   const s = JSON.parse(localStorage.getItem(KEY));
-  if (s) { found = new Set(s.found); seen = new Set(s.seen); savedBench = s.bench || null; }
+  if (s) {
+    found = new Set(s.found); seen = new Set(s.seen); savedBench = s.bench || null;
+    favourites = new Set(s.favourites || []);
+  }
 } catch {}
 if (!found.size) STARTERS.forEach(s => found.add(s));
 // Storage is unavailable in private browsing and on opaque origins. Never let
@@ -2174,7 +2180,7 @@ function benchState() {
 const save = () => {
   try {
     localStorage.setItem(KEY, JSON.stringify({
-      found: [...found], seen: [...seen], bench: benchState(),
+      found: [...found], seen: [...seen], bench: benchState(), favourites: [...favourites],
     }));
   } catch {}
 };
@@ -5388,7 +5394,15 @@ function sprinkleTick(id) {
   const near = nearestGrain(wx, wy);
   const grainPair = near ? merges.get([id, near.id].sort().join('+')) : null;
   if (grainPair) {
-    const mx = (mine.wx + near.wx) / 2, my = (mine.wy + near.wy) / 2;
+    // The exact geometric midpoint, repeated over many chained reactions in
+    // a tight cluster, statistically drags surviving positions toward the
+    // cluster's own centroid — real sand doesn't converge like that, it just
+    // settles unevenly. A little jitter here (much smaller than the fall's
+    // own) keeps the result near where the two actually touched without the
+    // mathematically-too-neat pull toward the middle. ("why do sprinkles
+    // sometimes organise themselves?" — found live.)
+    const mx = (mine.wx + near.wx) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
+    const my = (mine.wy + near.wy) / 2 + (Math.random() - 0.5) * GRAIN_SIZE * 0.6;
     removeGrain(mine);
     removeGrain(near);
     if (grains.length >= GRAIN_CAP) removeGrain(grains[0]);
@@ -6264,7 +6278,8 @@ function renderAsideElements(q = asideElQuery) {
 // turn to just icons? and then add another for 'proteins' and animals?").
 let asideTab = 'shelf';
 const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
-                      proteins: 'asideProteins', animals: 'asideAnimals' };
+                      proteins: 'asideProteins', animals: 'asideAnimals',
+                      favourites: 'asideFavourites' };
 function setAsideTab(tab) {
   asideTab = tab;
   for (const [t, id] of Object.entries(ASIDE_PANE))
@@ -6274,6 +6289,29 @@ function setAsideTab(tab) {
   if (tab === 'elements') renderAsideElements();
   if (tab === 'proteins') renderAsideProteins();
   if (tab === 'animals') renderAsideAnimals();
+  if (tab === 'favourites') renderAsideFavourites();
+}
+// "can you allow me to 'favourite' elements, adding a favourite group/tab" —
+// found live. Starred from an element's own Quick View (the same action-row
+// language as +Put on the bench / 🥀 Decay), listed here the same draggable
+// shelf-card way the Elements tab already renders found elements — so a
+// favourite is placeable/sprinklable immediately, not just a bookmark.
+function toggleFavourite(id) {
+  const on = favourites.has(id);
+  if (on) favourites.delete(id); else favourites.add(id);
+  save();
+  if (asideTab === 'favourites') renderAsideFavourites();
+  toast(on ? `Removed ${nameOf(byId[id])} from Favourites` : `Added ${nameOf(byId[id])} to Favourites`);
+}
+function renderAsideFavourites() {
+  const ids = [...favourites].filter(id => found.has(id) && byId[id]);
+  const body = ids.length
+    ? `<div class="shelf">` + ids.map(id => {
+        const e = byId[id], f = familyOf(e);
+        return `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${id}">${chipHTML(e)}</span>`;
+      }).join('') + `</div>`
+    : `<p class="none">Nothing favourited yet — open anything's Quick View and tap ☆ to add it here.</p>`;
+  document.getElementById('asideFavourites').innerHTML = body;
 }
 
 const aminoById = Object.fromEntries((BED.aminos ?? []).map(a => [a.id, a]));
@@ -6559,11 +6597,14 @@ function showEntry(id, mode) {
   // bench-add, just at the far end past it.
   const decayBtn = onCanvas(id)
     ? `<button class="addroute decay" data-decay="${id}" title="Decay this — see what it breaks">🥀</button>` : '';
+  const favOn = favourites.has(id);
+  const favBtn = `<button class="addroute fav${favOn ? ' on' : ''}" data-fav="${id}" title="${favOn ? 'Remove from' : 'Add to'} Favourites">${favOn ? '★' : '☆'}</button>`;
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="${entryMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
        <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
+       ${favBtn}
        ${decayBtn}
      </div>` : '';
   document.getElementById('sheetBody').innerHTML =
@@ -6950,6 +6991,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
   const dc = ev.target.closest('[data-decay]');
   if (dc) { closeSheet(); return decayElement(dc.dataset.decay); }
+  const fv = ev.target.closest('[data-fav]');
+  if (fv) { toggleFavourite(fv.dataset.fav); return showEntry(fv.dataset.fav, entryMode); }
   const t = ev.target.closest('[data-trace]');
   if (t) showEntry(t.dataset.trace, 'cards');
   const qv = ev.target.closest('[data-quickview]');
