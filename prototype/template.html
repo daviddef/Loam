@@ -2938,18 +2938,28 @@ function unstack() {
     seenAt.push([x, y]);
   }
 }
-let lastChipTap = { el: null, t: 0 };
+let lastChipTap = { el: null, t: 0, spawned: [] };
 function chipTap(chip) {
   const now = Date.now();
   if (lastChipTap.el === chip && now - lastChipTap.t < 320) {
-    lastChipTap = { el: null, t: 0 };
+    const spawned = lastChipTap.spawned;
+    lastChipTap = { el: null, t: 0, spawned: [] };
     if (chip.classList.contains('folded')) toggleBranch(chip);   // undo the fold the first tap did
     pushUndo(`removing ${nameOf(byId[chip.dataset.id])}`);
+    // The first tap of THIS double-click may have materialized ancestor
+    // chips via expandUp (a chip with nothing above it on the board yet
+    // gets its real ancestry built in, not just a fold toggled) — undo
+    // those along with the chip itself, or a completed double-tap nets a
+    // pile of new chips instead of the removal it asked for. ("double
+    // click was intended to be a 'remove' but it first single clicks then
+    // removes so i land up with more from the ancestry rather than a
+    // removal" — found live.)
+    for (const el of spawned) if (el && el.isConnected) removeChip(el, true);
     removeChip(chip);
     return;
   }
-  lastChipTap = { el: chip, t: now };
-  toggleBranch(chip);
+  const spawned = toggleBranch(chip);
+  lastChipTap = { el: chip, t: now, spawned: spawned || [] };
 }
 // A scan hub, or an unresolved ingredient's placeholder box: what a plain
 // tap (not a drag) on either one means. A hub's tap opens a sheet that
@@ -2963,13 +2973,18 @@ function ghostTap(ghost) {
   if (ghost.classList.contains('hub')) return showScannedProduct(ghost);
   const now = Date.now();
   if (lastChipTap.el === ghost && now - lastChipTap.t < 320) {
-    lastChipTap = { el: null, t: 0 };
+    const spawned = lastChipTap.spawned;
+    lastChipTap = { el: null, t: 0, spawned: [] };
     pushUndo(`removing ${ghost.dataset.text}`);
+    // Same fix as chipTap's own double-tap: undo whatever expandCompo just
+    // materialized on the first tap before removing the ghost itself.
+    for (const el of spawned) if (el && el.isConnected) removeChip(el, true);
     removeChip(ghost);
     return;
   }
-  lastChipTap = { el: ghost, t: now };
-  if (ghost.classList.contains('compo')) return expandCompo(ghost);
+  const spawned = ghost.classList.contains('compo') ? expandCompo(ghost) : null;
+  lastChipTap = { el: ghost, t: now, spawned: spawned || [] };
+  if (spawned) return;
   toast(`${ghost.dataset.text} — a real thing, just not built yet`);
 }
 
@@ -3002,12 +3017,12 @@ function toggleBranch(chip) {
   // decision here, still counted everywhere else (ancestorsOf, tidy()).
   const real = links.filter(l => l.out === chip && !l.hub).flatMap(l => [l.a, l.b]).filter(Boolean);
   if (!real.length) {
-    expandUp(chip);
-    return;
+    return expandUp(chip);
   }
   chip.classList.toggle('folded');
   refreshFolds();
   sfx.pick();
+  return [];
 }
 /**
  * A found chip standing with nothing feeding into it — placed directly,
@@ -3020,7 +3035,7 @@ function toggleBranch(chip) {
  */
 function expandUp(chip) {
   const id = chip.dataset.id;
-  if (!id) return;
+  if (!id) return [];
   const steps = orderedSteps(id);
   if (!steps.length) {
     // No crafting route doesn't mean nothing made it — Sun really is
@@ -3054,8 +3069,10 @@ function expandUp(chip) {
           if (!already.has(c.dataset.id)) already.set(c.dataset.id, c);
         }
       }
+      const freshlyAdded = [];
       for (const gid of real) {
-        const el = already.get(gid) || spawn(gid, null, null, [chip], true);
+        let el = already.get(gid);
+        if (!el) { el = spawn(gid, null, null, [chip], true); freshlyAdded.push(el); }
         links.push({ a: el, b: null, out: chip, fresh: true });
       }
       benchTouched = true;
@@ -3063,11 +3080,11 @@ function expandUp(chip) {
       drawLinks();
       runTidy();
       sfx.pick();
-      return;
+      return freshlyAdded;
     }
     chip.classList.add('pulse');                        // truly nothing above it
     setTimeout(() => chip.classList.remove('pulse'), 380);
-    return;
+    return [];
   }
   // Same fix as the composition branch above, and as buildChain() already
   // has: only reuse an existing board chip for a crafted ancestor when
@@ -3079,10 +3096,12 @@ function expandUp(chip) {
     }
   }
   chipFor.set(id, chip);
+  const freshlyAdded = [];
   const ensure = (iid) => {
     if (chipFor.has(iid)) return chipFor.get(iid);
     const el = spawn(iid, null, null, [chip], true);
     chipFor.set(iid, el);
+    freshlyAdded.push(el);
     return el;
   };
   for (const r of steps) {
@@ -3093,13 +3112,16 @@ function expandUp(chip) {
     }
     if (chipFor.has(r.out)) continue;
     const parents = r.in.map(ensure);
-    chipFor.set(r.out, materialize(r, parents));
+    const el = materialize(r, parents);
+    chipFor.set(r.out, el);
+    freshlyAdded.push(el);
   }
   benchTouched = true;
   refreshFolds();
   drawLinks();
   runTidy();
   sfx.pick();
+  return freshlyAdded;
 }
 
 // Connections persist, so the canvas becomes a diagram of what you built
@@ -4373,11 +4395,14 @@ function expandCompo(ghost) {
   if (!kids || !kids.length) {
     ghost.classList.add('pulse');
     setTimeout(() => ghost.classList.remove('pulse'), 380);
-    return;
+    return [];
   }
   const already = boardAlready();
+  const freshlyAdded = [];
   for (const kid of kids) {
+    const before = already.get(PLAYABLE_ATOM.get(kid) || kid);
     const el = ensureCompoChild(kid, [ghost], already);
+    if (el !== before) freshlyAdded.push(el);
     links.push({ a: el, b: null, out: ghost, fresh: true });
   }
   benchTouched = true;
@@ -4385,6 +4410,7 @@ function expandCompo(ghost) {
   drawLinks();
   runTidy();
   sfx.pick();
+  return freshlyAdded;
 }
 // The card's own "+ Chart" button on a "Made of" row — puts what a thing is
 // made of onto the canvas as its own linked chips, the same relationship a
@@ -7729,7 +7755,19 @@ function buildChain(id, x, y) {
     // rigid piece so `el` ends up exactly at the drop point, preserving
     // whatever sensible relative arrangement tidy() just gave everything
     // else in it.
-    runTidy();
+    //
+    // But tidy()/circleTidy() lay out EVERY chip on the board, not just this
+    // call's own fresh set — so calling it whenever anything else already
+    // sits on the board silently rearranges chips nobody touched, just from
+    // placing one new item. ("you restructure my board, and try tidy it up?
+    // why? all i want is the object on my board, if i want to tidy it up i
+    // will click the button" — found live.) Only worth it when the fresh
+    // chain genuinely IS the whole board right now — nothing else to
+    // disturb — otherwise skip straight to sliding the chain by its own
+    // already-assigned spawn() positions, leaving every pre-existing chip
+    // exactly where the player put it.
+    const somethingElseOnBoard = world.querySelectorAll('.chip.board').length > fresh.size;
+    if (!somethingElseOnBoard) runTidy();
     view.x = view0.x; view.y = view0.y; applyView();
     const [cw, ch] = cardSize();
     const dx = (x - cw / 2) - (parseFloat(el.style.left) || 0);
