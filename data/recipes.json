@@ -61713,12 +61713,82 @@
   },
   {
     "in": [
-      "moon"
+      "moon",
+      "astronomer"
+    ],
+    "out": "metonic_cycle",
+    "why": "Meton of Athens tracked the Moon over decades in the 5th century BC and found that 235 lunar months come to almost exactly 19 solar years, so the phases return to the same calendar dates. The Greek and Hebrew calendars still add a leap month in seven of those nineteen years to stay in step with the seasons.",
+    "src": "https://en.wikipedia.org/wiki/Metonic_cycle",
+    "verified": true
+  },
+  {
+    "in": [
+      "gene",
+      "apoptosis"
+    ],
+    "out": "tumor_suppressor_gene",
+    "why": "A tumor suppressor gene like p53 works two ways: it halts the cell cycle at a damage checkpoint, or, if the damage can't be fixed, it triggers apoptosis outright.",
+    "src": "https://en.wikipedia.org/wiki/Tumor_suppressor_gene",
+    "verified": true
+  },
+  {
+    "in": [
+      "oncogene",
+      "tumor_suppressor_gene"
+    ],
+    "out": "tumor",
+    "why": "An oncogene stuck on the accelerator and a tumor suppressor gene with its brakes cut, together, let a cell divide without limit — the uncoordinated mass that results is a tumor, benign until proven otherwise.",
+    "src": "https://en.wikipedia.org/wiki/Neoplasm",
+    "verified": true
+  },
+  {
+    "in": [
+      "tumor",
+      "mutation"
+    ],
+    "out": "cancer",
+    "why": "A further mutation can let a tumor's cells breach the boundary of the tissue they started in and invade what's next door — that invasion, not the growth alone, is what makes a tumor cancer.",
+    "src": "https://en.wikipedia.org/wiki/Neoplasm",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer"
     ],
     "verb": "wait",
-    "out": "metonic_cycle",
-    "why": "Meton of Athens, tracking the Moon over decades in the 5th century BC, found that 235 lunar months come to almost exactly 19 solar years, so the phases return to the same calendar dates. The Greek and Hebrew calendars still add a leap month in seven of those nineteen years to stay in step with the seasons.",
-    "src": "https://en.wikipedia.org/wiki/Metonic_cycle",
+    "out": "metastasis",
+    "why": "Given time, cancer cells break off, enter the bloodstream or lymphatic system, and colonize a distant organ — metastasis this way, not the original tumor, is behind the large majority of cancer deaths.",
+    "src": "https://en.wikipedia.org/wiki/Metastasis",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "brain"
+    ],
+    "out": "glioma",
+    "why": "When cancer takes hold in the brain it most often grows from glial cells, the brain's support tissue, rather than from neurons themselves — gliomas make up roughly 80% of malignant brain tumors.",
+    "src": "https://en.wikipedia.org/wiki/Glioma",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "skin"
+    ],
+    "out": "melanoma",
+    "why": "Skin cancer that starts in melanocytes, the pigment-making cells UV light damages most directly — melanoma is rarer than other skin cancers but by far the deadliest.",
+    "src": "https://en.wikipedia.org/wiki/Melanoma",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "blood"
+    ],
+    "out": "leukemia",
+    "why": "Cancer that begins in the bone marrow rather than forming a solid tumor, flooding the bloodstream itself with abnormal blood cells instead.",
+    "src": "https://en.wikipedia.org/wiki/Leukemia",
     "verified": true
   }
 ]

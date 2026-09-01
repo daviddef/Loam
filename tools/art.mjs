@@ -24933,6 +24933,33 @@ def('metonic_cycle', () => [                                    // 19 years, 235
   ring('ik', 30, 30, 20, 1.2),
 ]);
 
+def('tumor_suppressor_gene', () => [                              // the real stop signal — a checkpoint the gene enforces
+  S('M10 40 Q22 20 34 40', 'bs', 3),                               // the gene's own curve, same family as oncogene's line
+  S('M38 14 L38 46', 'ik', 3),                                     // a hard barrier where it stops the runaway
+  P('M34 14 L42 14 L38 22 Z', 'lo'),                                // the checkpoint flag
+]);
+def('tumor', () => [                                               // a mass, still contained — no boundary crossed yet
+  ...[[24, 28, 7], [34, 26, 6], [28, 36, 6], [20, 34, 5]].map(([x, y, r]) => C(x, y, r, 'lo')),
+  ring('gh', 27, 30, 16, 1.4),                                     // the boundary it hasn't broken through
+]);
+def('metastasis', () => [                                          // cells breaking off, riding the blood or lymph to a distant site
+  ...[[14, 30, 6], [20, 24, 5], [10, 22, 4]].map(([x, y, r]) => C(x, y, r, 'lo')),  // the origin
+  S('M22 28 Q34 20 46 16', 'gh', 1.6),                              // the route out
+  C(48, 14, 3, 'bs'), C(52, 20, 2.2, 'bs'),                          // and the new colony
+]);
+def('glioma', () => [                                              // grows from the brain's own glial support cells, not its neurons
+  P('M10 30 Q8 14 26 8 Q42 3 50 16 Q56 26 48 34 Q52 42 40 42 Q38 50 30 50 Q26 50 24 44 Q14 44 10 36 Q6 34 10 30 Z', 'gh'),
+  ...[[30, 24, 6], [38, 20, 5], [34, 30, 5]].map(([x, y, r]) => C(x, y, r, 'lo')),  // the growth, not the organ itself
+]);
+def('melanoma', () => [                                            // an irregular, asymmetric mark — the classic warning shape
+  P('M6 40 L54 40 L54 54 L6 54 Z', 'hi'),                           // the skin it grows on
+  P('M20 30 Q14 24 22 18 Q30 12 36 20 Q44 22 40 32 Q42 40 32 38 Q22 40 20 30 Z', 'lo'),  // asymmetric, ragged border
+]);
+def('leukemia', () => [                                            // abnormal cells flooding the bloodstream, not one solid mass
+  ...[8, 18, 46].map(x => C(x, 44, 2.2, 'gh')),                     // a few normal cells, crowded out
+  ...[[22, 20, 6], [34, 16, 5], [30, 30, 6], [42, 28, 5]].map(([x, y, r]) => C(x, y, r, 'lo')),  // abnormal cells, flooding in
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -20132,7 +20132,6 @@
     "tags": [
       "microbe"
     ],
-    "terminal": true,
     "fact": "Mutations disable the brakes on cell division, and a mass of runaway cells forms a tumor."
   },
   {
@@ -27239,7 +27238,6 @@
       "trade"
     ],
     "fact": "Now more often exposes a CCD camera for minutes than peers through an eyepiece.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -56170,8 +56168,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Programmed cell death: mitochondria release cytochrome c, an apoptosome assembles, and a cascade of caspase enzymes dismantles the cell from the inside out.",
-    "terminal": true
+    "fact": "Programmed cell death: mitochondria release cytochrome c, an apoptosome assembles, and a cascade of caspase enzymes dismantles the cell from the inside out."
   },
   {
     "id": "cell_cycle",
@@ -56248,8 +56245,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "A mutated or overactive version of a normal growth gene — push the cell cycle's accelerator hard enough and a tumor is what you get.",
-    "terminal": true
+    "fact": "A mutated or overactive version of a normal growth gene — push the cell cycle's accelerator hard enough and a tumor is what you get."
   },
   {
     "id": "nondisjunction",
@@ -56660,6 +56656,76 @@
       "history"
     ],
     "fact": "Almost exactly 19 years and 235 lunar months, after which the Moon's phases fall on the same calendar dates again.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "tumor_suppressor_gene",
+    "name": "Tumor Suppressor Gene",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The real stop signal: halts a damaged cell, or forces it to self-destruct. p53 is disabled in a third of cancers.",
+    "soleRoute": true
+  },
+  {
+    "id": "tumor",
+    "name": "Tumor",
+    "emoji": "⬤",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "An uncoordinated mass of tissue growth. Most stay contained — invading nearby tissue is what makes one cancer.",
+    "soleRoute": true
+  },
+  {
+    "id": "metastasis",
+    "name": "Metastasis",
+    "emoji": "🔀",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Cancer cells breaking off to colonize a distant organ — over 90% of cancer deaths trace to this.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "glioma",
+    "name": "Glioma",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Grows from the brain's glial support cells, not its neurons — about 80% of malignant brain tumors.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "melanoma",
+    "name": "Melanoma",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Grows from melanocytes, the skin's pigment cells. Caused mainly by UV — the deadliest skin cancer.",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "leukemia",
+    "name": "Leukemia",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Begins in bone marrow and floods the bloodstream with abnormal cells, instead of forming one solid mass.",
     "terminal": true,
     "soleRoute": true
   }
