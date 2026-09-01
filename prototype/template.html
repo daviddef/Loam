@@ -4300,6 +4300,13 @@ function spawn(id, x, y, near, above, forceNew) {
       already.classList.remove('folded');
       already.classList.add('pop');
       setTimeout(() => already.classList.remove('pop'), 330);
+      // Consolidate means this pulses the existing card instead of adding a
+      // second one — correct, but if that card is off-screen the player sees
+      // nothing happen at all and reads it as the drop being refused. ("i
+      // want to add cell onto a canvas that has cancer on it? but app wont
+      // let me?" — found live: cell was already on the bench, just scrolled
+      // out of view.) Pan to it so the response is visible where they are.
+      ensureVisible(already);
       return already;
     }
   }

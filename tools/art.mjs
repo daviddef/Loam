@@ -24925,6 +24925,14 @@ def('flag_of_papua_new_guinea', () => [                            // designed b
   P('M38 20 Q34 16 36 22 Q30 22 34 26 Q30 28 36 28 Q34 32 38 28 Q42 32 40 27 Q46 27 42 24 Q46 22 40 22 Q42 17 38 20 Z', 'hi'),
 ]);
 
+def('metonic_cycle', () => [                                    // 19 years, 235 moons, the phase returns to the same mark
+  ...Array.from({ length: 19 }, (_, i) => {
+    const a = (i / 19) * Math.PI * 2 - Math.PI / 2;
+    return C(n(30 + 20 * Math.cos(a)), n(30 + 20 * Math.sin(a)), i === 0 ? 3 : 1.5, i === 0 ? 'hi' : 'gh');
+  }),
+  ring('ik', 30, 30, 20, 1.2),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
