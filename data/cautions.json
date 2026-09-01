@@ -21,12 +21,30 @@
     },
     "caustic": {
       "label": "Lye burns on contact",
-      "note": "Sodium hydroxide is strongly caustic. It damages skin and eyes immediately and generates heat when it meets water. Historic soap-making is a good story and a bad first experiment.",
+      "note": "Sodium hydroxide and potassium hydroxide are strongly caustic. Both damage skin and eyes immediately and generate heat when they meet water. Historic soap-making is a good story and a bad first experiment.",
       "ids": [
         "lye",
-        "soap"
+        "soap",
+        "sodium_hydroxide",
+        "potassium_hydroxide"
       ],
       "severity": "acute"
+    },
+    "peroxide_oxidizer": {
+      "label": "Concentrated hydrogen peroxide is a strong oxidiser",
+      "note": "Dilute solutions bleach hair and disinfect small cuts; concentrated ones react violently with organic material and burn skin on contact. It has to be kept in dark, vented containers, because light alone is enough to decompose it and build up pressure.",
+      "ids": [
+        "hydrogen_peroxide"
+      ],
+      "severity": "contact"
+    },
+    "silver_nitrate_corrosive": {
+      "label": "Silver nitrate burns and stains on contact",
+      "note": "Concentrated solutions are corrosive enough that it is still used on purpose to cauterise tissue — the old name for it was 'lunar caustic'. Skin contact leaves a black stain as the silver reduces, and that stain does not wash off; it wears off only as the skin sheds.",
+      "ids": [
+        "silver_nitrate"
+      ],
+      "severity": "contact"
     },
     "fire": {
       "label": "Fire and hot fat",
@@ -130,7 +148,10 @@
         "lead",
         "lead_sulfide",
         "cerussite",
-        "anglesite"
+        "anglesite",
+        "litharge",
+        "lead_iodide",
+        "lead_acetate"
       ],
       "severity": "cumulative"
     },
@@ -155,7 +176,8 @@
       "label": "Arsenic is a poison, and a drinking-water problem",
       "note": "Arsenic compounds have been known since ancient times to be poisonous. The commonest cause of long-term exposure today is not deliberate — it is contaminated groundwater, and more than 200 million people worldwide are exposed to unsafe levels.",
       "ids": [
-        "arsenic"
+        "arsenic",
+        "arsenic_trioxide"
       ],
       "severity": "acute"
     },
@@ -344,7 +366,8 @@
       "label": "Thujone in concentrated sage oil",
       "note": "Ordinary cooking with sage leaves is not the concern here. Sage essential oil contains α- and β-thujone, a neurotoxin that can cause convulsions in animals and severe intoxication in humans, which is why European regulators cap supplemental use at 6 mg a day. The leaf on a plate and the oil in a bottle are not the same dose.",
       "ids": [
-        "sage"
+        "sage",
+        "absinthe_wormwood"
       ],
       "severity": "cumulative"
     },
@@ -541,7 +564,8 @@
         "bean",
         "black_bean",
         "pinto_bean",
-        "kidney_bean"
+        "kidney_bean",
+        "lima_bean"
       ],
       "severity": "acute"
     },
@@ -565,7 +589,8 @@
       "label": "Cassia cinnamon carries far more coumarin than Ceylon",
       "note": "Cassia cinnamon — the common supermarket kind — runs well over 1mg of coumarin per gram, sometimes far more; true Ceylon cinnamon carries only trace amounts. High coumarin intake over time risks liver and kidney harm.",
       "ids": [
-        "cinnamon"
+        "cinnamon",
+        "coumarin"
       ],
       "severity": "cumulative"
     },
@@ -573,7 +598,8 @@
       "label": "Nutmeg's own toxin, in excess",
       "note": "Myristicin, nutmeg's own compound, is a toxin in pure form — consuming excessive amounts of nutmeg can cause real myristicin poisoning, not just an upset stomach.",
       "ids": [
-        "nutmeg"
+        "nutmeg",
+        "myristicin"
       ],
       "severity": "acute"
     },
@@ -980,7 +1006,11 @@
       "note": "Sodium cyanide dissolved in water is what leaches gold out of ore, and it is genuinely lethal — plants have to keep the solution alkaline, above pH 10.5, specifically to stop toxic hydrogen cyanide gas from forming. The 2000 Baia Mare spill in Romania, when a tailings dam holding cyanide solution failed and released it into the Tisza river, killed enormous numbers of fish across three countries. This is industrial chemistry, not something to handle casually.",
       "ids": [
         "cyanide",
-        "dore"
+        "dore",
+        "potassium_cyanide",
+        "hydrogen_cyanide",
+        "hydrocyanic_acid",
+        "sodium_cyanide"
       ],
       "severity": "acute"
     },
@@ -1265,6 +1295,464 @@
       "note": "Unripe akee arils and the fruit's inedible parts contain hypoglycin A and B, toxins that block the body's ability to make glucose and can cause severe, sometimes fatal vomiting sickness. The fruit is only safe once its own capsule has split open naturally on the tree; forcing it open early leaves the toxin concentration unsafe.",
       "ids": [
         "akee"
+      ],
+      "severity": "acute"
+    },
+    "corrosive_acid": {
+      "label": "Strong acids burn on contact",
+      "note": "Concentrated hydrochloric and sulfuric acid damage skin and eyes immediately on contact, and both can release dangerous fumes or heat if mishandled. This page is about where these acids come from and what industry uses them for, not a method for handling them.",
+      "ids": [
+        "hydrochloric_acid",
+        "sulfuric_acid"
+      ],
+      "severity": "acute"
+    },
+    "carbon_tetrachloride_toxicity": {
+      "label": "Carbon tetrachloride damages the liver and kidneys",
+      "note": "Carbon tetrachloride is toxic with repeated exposure, a suspected human carcinogen, and an ozone-depleting substance with an atmospheric lifetime of roughly 85 years. It was withdrawn from consumer products once these effects were understood — this page describes chemistry history, not a substance to keep around.",
+      "ids": [
+        "carbon_tetrachloride"
+      ],
+      "severity": "cumulative"
+    },
+    "barium_toxicity": {
+      "label": "Soluble barium salts are toxic if swallowed",
+      "note": "Barium nitrate and other soluble barium compounds block the potassium channels muscle and nerve cells depend on, driving potassium out of the blood and, in severe cases, causing paralysis or fatal cardiac arrhythmia. Insoluble barium sulfate is harmless by comparison — solubility is what makes a barium compound dangerous.",
+      "ids": [
+        "barium_nitrate"
+      ],
+      "severity": "acute"
+    },
+    "hexavalent_chromium": {
+      "label": "Hexavalent chromium is a recognised carcinogen",
+      "note": "Sodium chromate and dichromate carry chromium in its +6 oxidation state, which the IARC classes as a Group 1 human carcinogen and which is regulated as a drinking-water contaminant — the compound at the centre of the Hinkley, California case made famous by Erin Brockovich. Chromium(III), the oxide this game reaches it from, is a different, far less hazardous oxidation state.",
+      "ids": [
+        "sodium_chromate",
+        "dichromate",
+        "potassium_chromate",
+        "chromic_acid",
+        "chromate",
+        "potassium_dichromate"
+      ],
+      "severity": "cumulative"
+    },
+    "hydrofluoric_hazard": {
+      "label": "Hydrofluoric acid injures before it hurts",
+      "note": "Unlike most acids, dilute hydrofluoric acid barely stings on contact, so a splash can go unnoticed while the fluoride ion penetrates skin and binds calcium in the blood and underlying bone. Burns are treated with calcium gluconate, not just rinsing, and a hand-sized splash of concentrated acid has been fatal. This is industrial chemistry to understand, not to handle casually.",
+      "ids": [
+        "hydrogen_fluoride",
+        "hydrofluoric_acid"
+      ],
+      "severity": "acute"
+    },
+    "strong_oxidizer_acid": {
+      "label": "Chlorine's stronger oxoacids are real oxidiser hazards",
+      "note": "Chlorate, perchlorate and chlorine dioxide chemistry is genuinely dangerous in concentrated or dried form: these compounds are powerful oxidisers that can react explosively with organic material, metals or reducing agents. Perchloric acid work is done only in dedicated, water-washed fume hoods for exactly this reason, and sodium chlorate weedkiller has caused real poisonings and fires when stored carelessly.",
+      "ids": [
+        "sodium_chlorate",
+        "chlorine_dioxide",
+        "sodium_perchlorate",
+        "barium_chlorate",
+        "barium_chlorite",
+        "chlorous_acid",
+        "chloric_acid",
+        "perchloric_acid",
+        "iodic_acid"
+      ],
+      "severity": "acute"
+    },
+    "oxalic_acid_toxicity": {
+      "label": "Oxalic acid is a real poison, not just a rhubarb-leaf curiosity",
+      "note": "Concentrated oxalic acid is corrosive and toxic if swallowed — it precipitates calcium out of the blood the same way it does in rhubarb-leaf poisoning, and industrial safety sheets treat it as a genuine hazard, not just a kitchen warning.",
+      "ids": [
+        "oxalic_acid"
+      ],
+      "severity": "acute"
+    },
+    "hexavalent_chromium_carcinogen": {
+      "label": "Hexavalent chromium is a confirmed carcinogen",
+      "note": "Chromium(VI) compounds -- sodium chromate and dichromate among them -- are IARC Group 1 carcinogens, most dangerously when airborne and inhaled. Ingestion causes cancer of the mouth and small intestine and damages the liver. The same chemistry, leaked into groundwater from a cooling-tower additive, was the contamination behind the Hinkley, California case that made Erin Brockovich famous. It is also directly corrosive to eyes.",
+      "ids": [
+        "sodium_chromate",
+        "sodium_dichromate"
+      ],
+      "severity": "cumulative"
+    },
+    "acetaldehyde_carcinogen": {
+      "label": "Acetaldehyde is what your body already makes from alcohol",
+      "note": "The IARC classifies acetaldehyde associated with the consumption of alcoholic beverages as a Group 1 human carcinogen. It occurs naturally in ripe fruit, coffee and bread, and every drink of ethanol is turned into it by the liver before being broken down further -- concentrated acetaldehyde itself is simply more of the same acutely irritant, carcinogenic substance.",
+      "ids": [
+        "acetaldehyde"
+      ],
+      "severity": "cumulative"
+    },
+    "perc_solvent_toxicity": {
+      "label": "Perc is a probable carcinogen, not just a dry-cleaning smell",
+      "note": "The EPA and IARC classify tetrachloroethylene as a probable human carcinogen. Exposure harms the nervous system, liver, kidneys and reproductive system, and decades of research have pushed the dry-cleaning industry to look for replacements.",
+      "ids": [
+        "tetrachloroethylene"
+      ],
+      "severity": "cumulative"
+    },
+    "oxidizer_hazard": {
+      "label": "Strong oxidisers burn on contact and burn what they touch",
+      "note": "Concentrated hydrogen peroxide and sodium chlorate are both powerful oxidisers -- a world apart from the dilute 3% antiseptic or the trace exposure most people ever see. A dose of only a few grams of chlorate is lethal, destroying red blood cells' ability to carry oxygen; concentrated peroxide is corrosive enough to burn skin on contact and was once flown as rocket propellant for exactly that reactivity.",
+      "ids": [
+        "hydrogen_peroxide",
+        "barium_peroxide",
+        "sodium_chlorate"
+      ],
+      "severity": "acute"
+    },
+    "nickel_dermatitis": {
+      "label": "Nickel is the most common metal allergy there is",
+      "note": "Soluble nickel salts like nickel nitrate and nickel acetate are more readily absorbed through skin than the metal itself, and nickel contact allergy is the single most common metal sensitisation in humans -- a rash from a cheap watch strap and an industrial soluble-nickel exposure are the same underlying immune reaction, just different doses.",
+      "ids": [
+        "nickel_nitrate",
+        "nickel_acetate"
+      ],
+      "severity": "conditional"
+    },
+    "phosgene_toxicity": {
+      "label": "Phosgene killed more people than any other WWI gas",
+      "note": "Phosgene is colourless and, at first, faintly grass-smelling — deceptive, because its worst damage to the lungs is delayed for hours after exposure. It caused roughly 85,000 of the deaths from gas warfare in the First World War, more than any other agent used, and it remains an important industrial chemical today, made and consumed immediately on-site rather than stored or shipped.",
+      "ids": [
+        "phosgene"
+      ],
+      "severity": "acute"
+    },
+    "bleach_fumes": {
+      "label": "Bleach mixed with acid or ammonia makes toxic gas",
+      "note": "Sodium hypochlorite solutions, such as liquid bleach, release toxic chlorine gas when mixed with an acid such as vinegar. Mixed instead with ammonia, ammonium salts, urea or other amines, it produces chloramines — both classes of gaseous product can cause acute lung injury. This is why cleaning products are never mixed.",
+      "ids": [
+        "bleach"
+      ],
+      "severity": "acute"
+    },
+    "ammonium_nitrite_instability": {
+      "label": "Ammonium nitrite can explode when heated",
+      "note": "Ammonium nitrite decomposes into nitrogen and water even at room temperature, and may explode at 60 to 70°C. It is classified as explosive with low sensitivity to shock and friction, which is exactly why it is never stored or handled in pure, isolated form.",
+      "ids": [
+        "ammonium_nitrite"
+      ],
+      "severity": "acute"
+    },
+    "sodium_amide_reactivity": {
+      "label": "Sodium amide reacts violently with water",
+      "note": "Sodium amide reacts violently with water, and in poorly sealed containers exposed to limited air and moisture it can form explosive peroxide mixtures. It is handled under inert gas, not open air.",
+      "ids": [
+        "sodium_amide"
+      ],
+      "severity": "acute"
+    },
+    "ethylene_oxide_carcinogen": {
+      "label": "Ethylene oxide is flammable and carcinogenic",
+      "note": "Ethylene oxide is a very flammable, carcinogenic, mutagenic, irritating and anaesthetic gas, carrying GHS hazard codes for cancer risk (H350) and reproductive harm (H360FD). The same reactivity that makes it useful for sterilising hospital equipment is what makes it dangerous to handle directly.",
+      "ids": [
+        "ethylene_oxide"
+      ],
+      "severity": "cumulative"
+    },
+    "bromate_carcinogen": {
+      "label": "Bromate is a suspected carcinogen",
+      "note": "Bromate is a suspected human carcinogen; the US EPA caps it at 10 parts per billion in drinking water. Its presence in bottled water has forced product recalls.",
+      "ids": [
+        "bromate"
+      ],
+      "severity": "cumulative"
+    },
+    "chlorate_oxidizer": {
+      "label": "Potassium chlorate is a powerful oxidizer",
+      "note": "Potassium chlorate reacts vigorously, and in some cases spontaneously ignites or explodes, when mixed with combustible materials — sugar, sulfur and phosphorus among them. It is why safety matches keep the oxidizer in the striking strip and the fuel in the match head, never combined loose.",
+      "ids": [
+        "potassium_chlorate"
+      ],
+      "severity": "acute"
+    },
+    "hydrazine_toxicity": {
+      "label": "Hydrazine is corrosive, toxic, and probably carcinogenic",
+      "note": "Hydrazine causes skin sensitization and respiratory irritation on contact, damages the liver and kidneys, and is rated by IARC as probably carcinogenic to humans, with occupational exposure linked to lung cancer. It also reacts with certain oxidizers on contact, no spark needed, which is exactly why it flies spacecraft.",
+      "ids": [
+        "hydrazine"
+      ],
+      "severity": "acute"
+    },
+    "violent_hydrolysis": {
+      "label": "These react violently with water",
+      "note": "Phosphorus pentachloride and potassium oxide both tear themselves apart on contact with water — PCl5 back into phosphoric and hydrochloric acid, K2O into caustic potassium hydroxide — releasing heat fast enough to spatter and burn.",
+      "ids": [
+        "phosphorus_pentachloride",
+        "potassium_oxide"
+      ],
+      "severity": "acute"
+    },
+    "hexane_neurotoxicity": {
+      "label": "Chronic hexane exposure damages nerves",
+      "note": "Chronic occupational exposure to n-hexane vapor is a documented cause of peripheral neuropathy — nerve damage recorded in auto mechanics, and in printing, shoe and furniture workers who use it as a solvent.",
+      "ids": [
+        "hexane"
+      ],
+      "severity": "cumulative"
+    },
+    "bleach_mixing_hazard": {
+      "label": "Never mix bleach with acid or ammonia",
+      "note": "Sodium hypochlorite bleach releases toxic chlorine gas when mixed with an acid — vinegar included — and releases toxic chloramine gases when mixed with ammonia or urine. Both are real causes of acute lung injury from ordinary household cleaning.",
+      "ids": [
+        "hypochlorite"
+      ],
+      "severity": "acute"
+    },
+    "dmso_skin_penetration": {
+      "label": "DMSO carries whatever is dissolved in it through skin",
+      "note": "DMSO increases how fast other compounds absorb through skin, so contaminants, toxins or medicines dissolved in it can be pulled into the body along with it — part of why handling it calls for butyl rubber or fluoroelastomer gloves rather than ordinary nitrile ones.",
+      "ids": [
+        "dimethyl_sulfoxide"
+      ],
+      "severity": "conditional"
+    },
+    "peanut_allergy": {
+      "label": "Peanut allergy can be fatal, and trace amounts are enough",
+      "note": "Peanut allergy is a real IgE-mediated immune reaction, not a matter of taste — in a sensitised person even trace cross-contact from shared manufacturing equipment can trigger a reaction, and it's a leading cause of fatal and near-fatal food-allergy incidents. That's why processed foods carry 'may contain peanuts' warnings even when peanuts are never an ingredient.",
+      "ids": [
+        "peanut",
+        "peanut_butter"
+      ],
+      "severity": "acute"
+    },
+    "isocyanate_sensitization": {
+      "label": "Isocyanates are a leading cause of occupational asthma",
+      "note": "Isocyanates present respiratory hazards as particulates, vapors or aerosols, and both the dose and duration of exposure can trigger respiratory sensitization — occupational asthma that, once it develops, can be acutely fatal on re-exposure. Skin contact alone is also enough to sensitize someone. This is industrial chemistry behind polyurethane, not something to spray without the ventilation and protective equipment autobody shops are built around.",
+      "ids": [
+        "isocyanate"
+      ],
+      "severity": "cumulative"
+    },
+    "crystalline_silica_dust": {
+      "label": "Fine silica dust causes silicosis",
+      "note": "Inhaling finely divided crystalline silica dust lodges in the lungs and continuously irritates the tissue, causing silicosis, bronchitis or lung cancer, and heavy occupational exposure is also linked to autoimmune diseases like lupus and rheumatoid arthritis. The risk is in the fine dust from grinding, cutting or blasting — sandblasting, stone-countertop work and furnace operations among them — not the solid material sitting still.",
+      "ids": [
+        "silicon_carbide",
+        "borosilicate_glass"
+      ],
+      "severity": "cumulative"
+    },
+    "capsaicin_irritant": {
+      "label": "Capsaicin burns skin and eyes on contact",
+      "note": "Handling hot peppers bare-handed puts capsaicin on your skin, and it stays there until it's actively removed — plain water barely touches it, since capsaicin dissolves in oil and alcohol, not water. Touch an eye afterward and it causes intense tearing, pain and spasm of the eyelid. Gloves while cutting, and washing hands with soap before they go anywhere near your face, are what actually work.",
+      "ids": [
+        "chilli",
+        "capsicum",
+        "paprika",
+        "cayenne",
+        "jalapeno",
+        "hot_sauce",
+        "capsaicin"
+      ],
+      "severity": "contact"
+    },
+    "ptfe_fume_fever": {
+      "label": "Overheated PTFE releases toxic fumes",
+      "note": "PTFE is stable at cookware temperatures, but above roughly 260 °C it starts to decompose, and the fumes cause polymer fume fever -- flu-like symptoms from a few hours' exposure. The classic case is a pet bird, whose respiratory system is far more sensitive, dying from a dry, overheated non-stick pan in another room.",
+      "ids": [
+        "ptfe"
+      ],
+      "severity": "acute"
+    },
+    "vinyl_chloride_carcinogen": {
+      "label": "Vinyl chloride monomer is a known human carcinogen",
+      "note": "Long-term exposure to vinyl chloride gas causes a rare liver cancer, angiosarcoma, first identified in PVC-plant workers in the 1970s. The finished PVC plastic is chemically stable and not itself considered carcinogenic this way -- the hazard belongs to the monomer.",
+      "ids": [
+        "vinyl_chloride"
+      ],
+      "severity": "cumulative"
+    },
+    "pvc_combustion": {
+      "label": "Burning PVC releases hydrogen chloride",
+      "note": "PVC produces hydrogen chloride, water and carbon dioxide when it burns. HCl gas is corrosive to lungs and eyes even in small concentrations, which is why PVC smoke is far more dangerous to breathe than the smoke from most other plastics.",
+      "ids": [
+        "pvc"
+      ],
+      "severity": "acute"
+    },
+    "diazonium_salt_explosive": {
+      "label": "Dry diazonium salts are explosive",
+      "note": "Benzenediazonium chloride is dangerously explosive as a dry solid -- it is made cold, kept in solution, and used within the hour, never isolated dry. Swapping the counterion for tetrafluoroborate gives a shock-insensitive salt instead, which is the whole reason that detour exists.",
+      "ids": [
+        "benzenediazonium_chloride"
+      ],
+      "severity": "acute"
+    },
+    "acetonitrile_cyanide": {
+      "label": "Acetonitrile is metabolised into cyanide",
+      "note": "The body converts acetonitrile into hydrogen cyanide, which is the actual source of its toxic effects — and because that conversion takes hours, poisoning symptoms are delayed rather than immediate. Acetonitrile-based nail-polish remover has caused fatal child poisonings, which is why it has been banned from cosmetics in the European Economic Area since 2000.",
+      "ids": [
+        "acetonitrile"
+      ],
+      "severity": "acute"
+    },
+    "nitrous_oxide_misuse": {
+      "label": "Nitrous oxide misuse causes real nerve damage",
+      "note": "Recreational inhaling — from whipped-cream chargers as much as anywhere else — inactivates vitamin B12 by oxidising it, and heavy repeated use is neurotoxic: documented cases show peripheral neuropathy, gait problems and numbness that can become permanent if it continues untreated.",
+      "ids": [
+        "dinitrogen_monoxide"
+      ],
+      "severity": "cumulative"
+    },
+    "phenolphthalein_carcinogen": {
+      "label": "Phenolphthalein was pulled from laxatives over cancer risk",
+      "note": "It was used as a laxative for over a century before regulators phased it out of over-the-counter products; it sits on the IARC's 'possibly carcinogenic to humans' list, and US brands that once contained it were reformulated with other active ingredients entirely.",
+      "ids": [
+        "phenolphthalein"
+      ],
+      "severity": "conditional"
+    },
+    "barium_peroxide_hazard": {
+      "label": "Barium peroxide is an oxidiser, and barium compounds are toxic",
+      "note": "As an oxidiser it can intensify a fire it's anywhere near, and it's harmful if swallowed or inhaled in its own right — the same reactivity that gives fireworks their green colour makes it a substance to keep away from anything that burns.",
+      "ids": [
+        "barium_peroxide"
+      ],
+      "severity": "acute"
+    },
+    "trichloroacetic_acid_corrosive": {
+      "label": "Trichloroacetic acid burns skin the same way in a clinic or a spill",
+      "note": "It causes severe skin burns and eye damage on contact — the identical mechanism a dermatologist uses on purpose in a controlled chemical peel destroys tissue indiscriminately outside that setting, and it's toxic to aquatic life besides.",
+      "ids": [
+        "trichloroacetic_acid"
+      ],
+      "severity": "acute"
+    },
+    "sulfur_trioxide_corrosive": {
+      "label": "Sulfur trioxide turns to sulfuric acid the instant it meets water",
+      "note": "It reacts violently with water — including the moisture already in air — to produce corrosive sulfuric acid on the spot, and it's a strong enough dehydrating agent to ignite organic material through the heat of that reaction alone.",
+      "ids": [
+        "sulfur_trioxide"
+      ],
+      "severity": "acute"
+    },
+    "hydrogen_peroxide_concentration": {
+      "label": "Hydrogen peroxide's hazard is almost entirely about concentration",
+      "note": "The 3% bottle in a bathroom cabinet is mild enough that it mostly just stings; above roughly 40% it meets the formal definition of an oxidiser hazard, and concentrations near 98% dissolve paper on contact. It's the same molecule at every strength — only the number on the label changes what it can do.",
+      "ids": [
+        "hydrogen_peroxide"
+      ],
+      "severity": "conditional"
+    },
+    "benzene_carcinogen": {
+      "label": "Benzene is a known human carcinogen",
+      "note": "Long-term benzene exposure is linked to leukaemia and other blood cancers, and it's classified as carcinogenic to humans. It also suppresses the bone marrow's ability to make new blood cells, which is why workplace exposure limits are strict.",
+      "ids": [
+        "benzene"
+      ],
+      "severity": "cumulative"
+    },
+    "copper_sulfate_toxicity": {
+      "label": "Copper sulfate is toxic well below fungicide doses",
+      "note": "Copper(II) salts have an LD50 around 100 mg/kg, and copper sulfate was once dosed deliberately as an emetic until it was recognised as too toxic for that use. It remains a WHO poison-control antidote entry, not a home remedy.",
+      "ids": [
+        "copper_sulfate"
+      ],
+      "severity": "acute"
+    },
+    "camphor_toxicity": {
+      "label": "Camphor is a real paediatric poisoning risk",
+      "note": "As little as 3 to 5 mL of 20% camphor oil, or roughly 30 mg/kg, can be lethal to a small child, and seizures have started within five minutes of ingestion. Camphor accounts for thousands of US poison-centre calls a year, most involving children under six.",
+      "ids": [
+        "camphor"
+      ],
+      "severity": "acute"
+    },
+    "silver_nitrate_caustic": {
+      "label": "Silver nitrate burns and stains on contact",
+      "note": "Historically called 'lunar caustic,' silver nitrate is corrosive enough to cauterise tissue on purpose, and it stains skin permanently black wherever it touches by depositing metallic silver in the flesh. It also reacts explosively with ethanol.",
+      "ids": [
+        "silver_nitrate"
+      ],
+      "severity": "contact"
+    },
+    "lpg_flammability": {
+      "label": "Butane and propane are pressurised, flammable gases",
+      "note": "Both are the fuel behind lighters, camp stoves and bottled LPG, and both form an explosive mix with air across a wide concentration range. Leaked gas pooling in an enclosed space, not the flame itself, is what turns a leak into an explosion.",
+      "ids": [
+        "butane",
+        "propane"
+      ],
+      "severity": "acute"
+    },
+    "elderberry_raw": {
+      "label": "Only the flower is eaten raw",
+      "note": "Elderflower itself — what cordial and pressé are made from — needs no cooking. Every other part of the elder plant is different: the raw berries, leaves, bark and stems carry cyanogenic glycosides and cause nausea, vomiting and diarrhoea if eaten without cooking first.",
+      "ids": [
+        "elderflower"
+      ],
+      "severity": "acute"
+    },
+    "theobromine_pet_toxicity": {
+      "label": "Chocolate is toxic to dogs and cats",
+      "note": "Theobromine is mild in humans but animals metabolize it far more slowly. A human LD50 near 800 mg/kg compares to roughly 300 mg/kg in dogs and 200 mg/kg in cats — dark and baking chocolate carry the highest doses.",
+      "ids": [
+        "theobromine",
+        "chocolate"
+      ],
+      "severity": "conditional"
+    },
+    "glycyrrhizin_hypertension": {
+      "label": "Liquorice root can raise blood pressure",
+      "note": "Glycyrrhizin blocks the enzyme that breaks down cortisol, and enough of it over enough time causes real sodium retention, potassium loss and high blood pressure — the FDA's own threshold sits around 0.2 mg per kilogram of body weight a day. Large amounts during pregnancy are linked to premature birth, so liquorice root is best avoided then.",
+      "ids": [
+        "licorice",
+        "glycyrrhizin"
+      ],
+      "severity": "conditional"
+    },
+    "fenugreek_pregnancy": {
+      "label": "Fenugreek seed and pregnancy don't mix",
+      "note": "Fenugreek seed contains saponins that can act as a uterine stimulant, which is why it is considered unsafe in pregnancy. It can also lower blood sugar and interact with blood thinners — not as harmless as a kitchen spice sounds.",
+      "ids": [
+        "fenugreek"
+      ],
+      "severity": "conditional"
+    },
+    "allyl_isothiocyanate_irritant": {
+      "label": "Allyl isothiocyanate is a lachrymatory irritant",
+      "note": "The same compound that gives mustard, wasabi and horseradish their sting activates pain and irritant receptors directly — concentrated mustard oil is a genuine eye and skin irritant, not just a strong flavour.",
+      "ids": [
+        "allyl_isothiocyanate",
+        "mustard_seed",
+        "mustard"
+      ],
+      "severity": "contact"
+    },
+    "safrole_carcinogen": {
+      "label": "Safrole was banned as a food additive in 1960",
+      "note": "Ordinary cooking with nutmeg or mace is not the concern here. Safrole, a minor compound in both, proved to cause liver tumours in rats at high, sustained doses, and the US FDA banned it outright as a food additive in 1960 — long before sassafras root beer switched to a safrole-free extract.",
+      "ids": [
+        "safrole"
+      ],
+      "severity": "cumulative"
+    },
+    "glycyrrhizin_arrhythmia": {
+      "label": "Black liquorice and the FDA's 2 oz warning",
+      "note": "Glycyrrhizin, liquorice's sweet compound, can drive down blood potassium. The FDA has warned that eating 2 oz of black liquorice a day for at least two weeks — if you're 40 or older — can bring on an irregular heartbeat; the effect is usually reversible once you stop.",
+      "ids": [
+        "liquorice",
+        "glycyrrhizin"
+      ],
+      "severity": "cumulative"
+    },
+    "poppy_seed_opiate_residue": {
+      "label": "Poppy seeds carry real trace opiates",
+      "note": "Poppy seed hulls can be contaminated with trace morphine and codeine left over from harvest, enough that eating poppy seed foods can produce a positive result on an opiate drug test — refined tests can usually tell the difference. It takes a large quantity, roughly 300 to 400 grams, brewed as tea to reach a pharmacologically significant dose.",
+      "ids": [
+        "poppy"
+      ],
+      "severity": "conditional"
+    },
+    "rabies_exposure": {
+      "label": "Rabies is nearly always fatal once symptoms start",
+      "note": "Rabies virus travels from a bite along nerves to the brain over days to months, and once neurological symptoms appear the disease is almost always fatal; the only real protection is prompt post-exposure vaccination before that happens. It still kills an estimated 55,000 people a year worldwide.",
+      "ids": [
+        "rabies_virus"
       ],
       "severity": "acute"
     }

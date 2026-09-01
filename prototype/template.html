@@ -428,6 +428,20 @@ __CATEGORY_CSS__
   }
   .chip.board .warn.sev-acute{animation:warnThrob 2.4s ease-out infinite}
   @media (prefers-reduced-motion:reduce){ .chip.board .warn.sev-acute{animation:none} }
+  /* Radioactive: its own colour (teal, unused elsewhere in the hazard tier
+     scheme, so it never reads as "worse" or "milder" than brick/mustard —
+     just different in kind). It pulses on the board the same way sev-acute
+     does and for the same reason (below): the mark itself already says
+     "decays"; the board — where you're looking at one or a few things at a
+     time — is where a literal pulse reads as that fact instead of noise.
+     ("can we pulse these?" — found live.) */
+  .chip .warn.radioactive{background:var(--teal);color:var(--on-accent)}
+  @keyframes radioactivePulse{
+    0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--teal) 60%,transparent)}
+    50%    {box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 0%,transparent)}
+  }
+  .chip.board .warn.radioactive{animation:radioactivePulse 1.7s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){ .chip.board .warn.radioactive{animation:none} }
   /* A pill has no corner to spare on the left; the shelf keeps the mark but
      drops the pulse, because a scrolling list of them would be a strobe. */
   body.d-pill .chip.board .warn{display:none}
@@ -770,7 +784,29 @@ __CATEGORY_CSS__
     border-radius:50%;overflow:hidden;z-index:2;
   }
   .grain svg{width:100%;height:100%;display:block}
-  @media (prefers-reduced-motion:reduce){ .grain{animation:none} }
+  /* Landing, and reacting — the two moments a grain is ever seen changing,
+     both pure CSS so they cost nothing per-grain beyond a class toggle. No
+     continuous physics loop (no gravity, no falling arc): grains are cheap
+     specifically because nothing about them runs every frame, and hundreds
+     of them animating on a timer would undo that. */
+  @keyframes grainSpawn{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}
+  .grain.spawning{animation:grainSpawn .22s cubic-bezier(.34,1.56,.64,1) both}
+  @keyframes grainReact{
+    0%,100%{transform:translate(0,0) scale(1)}
+    20%{transform:translate(-2px,1px) scale(1.08)}
+    40%{transform:translate(2px,-1px) scale(1.12)}
+    60%{transform:translate(-1px,-1px) scale(1.08)}
+    80%{transform:translate(1px,1px) scale(1.1)}
+  }
+  .grain.reacting{
+    animation:grainReact .32s ease-in-out both;
+    box-shadow:0 0 0 5px color-mix(in srgb,var(--fam) 55%,transparent);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .grain{animation:none}
+    .grain.spawning{opacity:1;transform:none}
+    .grain.reacting{animation:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--fam) 55%,transparent)}
+  }
   /* With a card in your hand: how many cards on the bench it will make
      something new with. A number, never a partner. */
   .chip.board.haslive::before{
@@ -2721,6 +2757,13 @@ function chipHTML(e) {
     // sprinkle the element already on board" — found live.)
     (found.has(e.id) ? `<i class="sprinkle-btn" data-sprinkle="${e.id}" title="Sprinkle ${name}">⁘</i>` : '') +
     (() => {
+      // Radioactivity gets its own mark, not the generic "!" — the badge
+      // slot only holds one thing, and "this decays" is a more specific,
+      // more interesting fact than a bare severity tier. It wins the slot
+      // over whatever else the element is also flagged for; the caution
+      // panel behind the i still lists every hazard, this is just the cover.
+      if (cautionsFor(e.id).some(c => c.kind === 'radioactivity'))
+        return `<i class="warn radioactive" title="This one is radioactive — tap the i to read why">☢</i>`;
       const sev = severityOf(e.id);
       if (!sev) return '';
       const say = { acute: 'This one can kill or permanently injure',
@@ -4988,6 +5031,22 @@ board.addEventListener('pointerup', ev => {
   const t = hit(ev.clientX, ev.clientY, chip);        // fresh and authoritative for the actual drop
   if (t?.dataset.verb) applyProcess(chip, t);
   else if (t) applyMerge(chip, t);
+  else {
+    // Nothing real under the drop — but grains are pointer-events:none, so
+    // hit() above can never see them. A card dropped into a sprinkled field
+    // ("throw fire on the methane grains") still needs its own check, by
+    // world coordinate rather than DOM overlap, same as sprinkleTick() does
+    // for a pour landing on something real, just in the other direction.
+    const [wx, wy] = toWorld(ev.clientX, ev.clientY);
+    const g = nearestReactiveGrain(chip.dataset.id, wx, wy);
+    if (g) {
+      const gx = g.wx, gy = g.wy;
+      const gEl = spawn(g.id, gx, gy, null, null, true);
+      removeGrain(g);
+      applyMerge(chip, gEl);
+      igniteField(chip.dataset.id, gx, gy);
+    }
+  }
   pinToBoard(chip);
 });
 
@@ -5347,11 +5406,12 @@ addEventListener('pointermove', ev => { lastPointer = { x: ev.clientX, y: ev.cli
 let lastPointer = null;
 function spawnGrain(id, wx, wy) {
   const el = document.createElement('div');
-  el.className = `grain fam-${familyOf(byId[id]).id}`;
+  el.className = `grain spawning fam-${familyOf(byId[id]).id}`;
   el.style.left = (wx - GRAIN_SIZE / 2) + 'px';
   el.style.top  = (wy - GRAIN_SIZE / 2) + 'px';
   el.innerHTML = artSVG(id);
   world.appendChild(el);
+  setTimeout(() => el.classList.remove('spawning'), 220);
   const rec = { el, id, wx, wy };
   grains.push(rec);
   return rec;
@@ -5374,6 +5434,73 @@ function nearestGrain(wx, wy, exclude) {
     if (d < bestD) { bestD = d; best = g; }
   }
   return best;
+}
+// The nearest grain a real chip in hand could actually react with — a wider
+// reach than nearestGrain()'s own touching-distance, because a dropped card
+// is a deliberate aim, not two grains that happened to land on each other.
+function nearestReactiveGrain(triggerId, wx, wy) {
+  let best = null, bestD = GRAIN_SIZE * 1.6;
+  for (const g of grains) {
+    if (!merges.has([triggerId, g.id].sort().join('+'))) continue;
+    const d = Math.hypot(g.wx - wx, g.wy - wy);
+    if (d < bestD) { bestD = d; best = g; }
+  }
+  return best;
+}
+// "if i throw fire on only the first methane object, all close by reactive
+// elements should also burn, not just the one i touch" — found live. A real
+// chip touching one grain in a field does not just react with that grain: it
+// spreads, the same way a flame front moves through anything flammable it is
+// touching, not just the one spot it was struck. Breadth-first outward from
+// the ignition point (wx,wy — where the real chip made contact, not a grain
+// object, since the grain actually touched is usually being promoted into a
+// real chip of its own via applyMerge, not converted in place), over the
+// field's own touching-distance graph (the same GRAIN_SIZE radius
+// nearestGrain() already treats as "touching"), each hop re-checking the
+// trigger against a grain that has not caught yet — so it only spreads
+// through grains the trigger can actually react with, and it spreads exactly
+// as far as that connected field goes, then stops. Staggered in time rather
+// than firing all at once, so a big field visibly catches grain-by-grain
+// outward instead of the whole thing flashing at once.
+const IGNITE_STAGGER_MS = 55;
+const REACT_FLASH_MS = 320;
+function igniteField(triggerId, wx, wy) {
+  const seen = new Set();
+  const queue = [];
+  for (const n of grains) {
+    if (Math.hypot(n.wx - wx, n.wy - wy) >= GRAIN_SIZE * 1.4) continue;
+    if (!merges.has([triggerId, n.id].sort().join('+'))) continue;
+    seen.add(n);
+    queue.push(n);
+  }
+  let hop = 0;
+  while (queue.length) {
+    const g = queue.shift();
+    const delay = hop * IGNITE_STAGGER_MS + Math.random() * IGNITE_STAGGER_MS;
+    igniteOne(triggerId, g, delay);
+    for (const n of grains) {
+      if (seen.has(n)) continue;
+      if (Math.hypot(n.wx - g.wx, n.wy - g.wy) >= GRAIN_SIZE * 1.4) continue;
+      if (!merges.has([triggerId, n.id].sort().join('+'))) continue;
+      seen.add(n);
+      queue.push(n);
+    }
+    hop++;
+  }
+}
+function igniteOne(triggerId, g, delay) {
+  setTimeout(() => {
+    if (!grains.includes(g)) return;                 // already consumed by another chain
+    const r = merges.get([triggerId, g.id].sort().join('+'));
+    if (!r) return;
+    g.el.classList.add('reacting');
+    setTimeout(() => {
+      if (!grains.includes(g)) return;
+      const { wx, wy } = g;
+      removeGrain(g);
+      spawnGrain(r.out, wx, wy);
+    }, REACT_FLASH_MS);
+  }, delay);
 }
 function sprinklingSelector(id) {
   // Both the shelf/tab card AND any matching chip already on the bench —
@@ -5424,6 +5551,7 @@ function sprinkleTick(id) {
   if (realPair) {
     const el = spawn(id, wx, wy, null, null, true);
     applyMerge(el, target);
+    igniteField(target.dataset.id, wx, wy);
     return;
   }
 
@@ -6669,7 +6797,6 @@ function showEntry(id, mode) {
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
-       <button class="${entryMode === 'tree' ? 'on' : ''}" data-mode="tree" data-for="${id}">The tree</button>
        <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
        ${favBtn}
        ${decayBtn}
@@ -6848,7 +6975,7 @@ function stepCard(r, i) {
 // it's friction. ("by default, if a item is on our canvas, just show me
 // where it came from, stop asking me" — found live.)
 const onCanvas = (id) => !!world.querySelector(`.chip.board[data-id="${id}"]`);
-// The story/tree tab bodies — the tab bar itself now comes from showEntry,
+// The story tab body — the tab bar itself now comes from showEntry,
 // shared with quick view, so this only ever renders what sits below it.
 function provenanceHTML(id) {
   const x = expanded(id), d = distinctOf(id).size, t = leafTally(id), e = byId[id];
@@ -6860,9 +6987,7 @@ function provenanceHTML(id) {
        <div class="pfrom">Bottoms out in ${[...t].sort((a,b)=>b[1]-a[1])
          .map(([k,n]) => `${glyph(k, 17)} ${byId[k].name} ×${n}`).join(' · ')}</div></div>
      __TABS__
-     ${entryMode === 'tree'
-        ? `<ul class="tree">${treeHTML(id, 0)}</ul>`
-        : `<div class="steps">${orderedSteps(id).map(stepCard).join('')}</div>`}
+     <div class="steps">${orderedSteps(id).map(stepCard).join('')}</div>
      ${bedrockHTML(t)}`;
 }
 
@@ -8646,7 +8771,6 @@ function smokeTest() {
     run(`entry:${e.id}`, () => showEntry(e.id));
     run(`hint:${e.id}`, () => showHint(e.id));
     run(`story:${e.id}`, () => showEntry(e.id, 'cards'));
-    run(`tree:${e.id}`, () => showEntry(e.id, 'tree'));
   }
   const theme = prefs.theme, ground = prefs.ground;
   for (const [t] of THEMES) for (const [g] of GROUNDS) {

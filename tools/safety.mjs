@@ -63,6 +63,7 @@ const CLEARED = {
   gingerbread_man: 'a quotation from the folk tale',
   stoneware: 'generic — what tempering makes possible, not a step',
   amino_acid: 'about human biochemistry: we can build eleven of the twenty',
+  james: 'a direct quotation from William James himself, not the reader',
 };
 
 const instructional = [];

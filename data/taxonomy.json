@@ -105,13 +105,103 @@
       "src": "https://en.wikipedia.org/wiki/Arthropod"
     },
     {
+      "id": "tx_hexapoda",
+      "rank": "subphylum",
+      "parent": "tx_arthropoda",
+      "name": "Hexapoda",
+      "fact": "Named for its three-part thorax bearing three pairs of legs — a group made up of Insecta plus three smaller classes of non-insect hexapods, including the springtails.",
+      "srcTitle": "Hexapoda",
+      "src": "https://en.wikipedia.org/wiki/Hexapoda"
+    },
+    {
       "id": "tx_insecta",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_hexapoda",
       "name": "Insecta",
       "fact": "A body in three parts — head, thorax, abdomen — six jointed legs, and usually two antennae. More described species than every other animal class combined.",
       "srcTitle": "Insect",
       "src": "https://en.wikipedia.org/wiki/Insect"
+    },
+    {
+      "id": "tx_collembola",
+      "rank": "class",
+      "parent": "tx_hexapoda",
+      "name": "Collembola",
+      "fact": "Springtails — wingless hexapods, not classed as true insects, most with a forked furcula tucked under the abdomen that flicks them into the air when released.",
+      "srcTitle": "Springtail",
+      "src": "https://en.wikipedia.org/wiki/Springtail"
+    },
+    {
+      "id": "tx_archaeognatha",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Archaeognatha",
+      "fact": "Jumping bristletails — wingless and among the most primitive living insects, appearing in the fossil record around the same time as the first arachnids.",
+      "srcTitle": "Archaeognatha",
+      "src": "https://en.wikipedia.org/wiki/Archaeognatha"
+    },
+    {
+      "id": "tx_zygentoma",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Zygentoma",
+      "fact": "Silverfish and firebrats — wingless insects that, unlike almost every other insect order, keep moulting for their entire adult lives.",
+      "srcTitle": "Zygentoma",
+      "src": "https://en.wikipedia.org/wiki/Zygentoma"
+    },
+    {
+      "id": "tx_ephemeroptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Ephemeroptera",
+      "fact": "Mayflies — one of the oldest winged insect lineages alive, and the only insects that moult again after already growing functional wings.",
+      "srcTitle": "Ephemeroptera",
+      "src": "https://en.wikipedia.org/wiki/Ephemeroptera"
+    },
+    {
+      "id": "tx_dermaptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Dermaptera",
+      "fact": "Earwigs — identified by the pincer-like cerci at the tip of the abdomen, and unusual among insects for the maternal care some females give their eggs and young nymphs.",
+      "srcTitle": "Dermaptera",
+      "src": "https://en.wikipedia.org/wiki/Dermaptera"
+    },
+    {
+      "id": "tx_phasmatodea",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Phasmatodea",
+      "fact": "Stick and leaf insects — camouflaged to replicate the exact form of the plant matter around them, and in some species even swaying to mimic vegetation in the wind.",
+      "srcTitle": "Phasmatodea",
+      "src": "https://en.wikipedia.org/wiki/Phasmatodea"
+    },
+    {
+      "id": "tx_diptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Diptera",
+      "fact": "True flies — named for a single functional pair of wings; the hindwings are reduced to small club-shaped halteres that sense rotation and give precise flight control.",
+      "srcTitle": "Diptera",
+      "src": "https://en.wikipedia.org/wiki/Diptera"
+    },
+    {
+      "id": "tx_hemiptera",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Hemiptera",
+      "fact": "True bugs, cicadas, aphids and their relatives — over 80,000 species united by a piercing-sucking mouthpart called a rostrum, used to feed on plant or animal fluids.",
+      "srcTitle": "Hemiptera",
+      "src": "https://en.wikipedia.org/wiki/Hemiptera"
+    },
+    {
+      "id": "tx_psocodea",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Psocodea",
+      "fact": "Bark lice, booklice and true lice — a 2021 genetic study confirmed that parasitic lice evolved from within this order, rather than forming a separate lineage of their own.",
+      "srcTitle": "Psocodea",
+      "src": "https://en.wikipedia.org/wiki/Psocodea"
     },
     {
       "id": "tx_arachnida",
