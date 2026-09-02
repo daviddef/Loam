@@ -87,6 +87,7 @@ for (const [token, value] of [
   ['__UI_AMINO__', uiGlyph('ui_amino')],
   ['__UI_LADDER__', uiGlyph('ui_ladder')],
   ['__UI_EYE__', uiGlyph('ui_eye')],
+  ['__UI_CARCINOGEN__', uiGlyph('ui_carcinogen')],
   ['__UI_SHELF__', uiGlyph('ui_shelf')],
   ['__UI_ELEMENTS__', uiGlyph('ui_elements')],
   ['__UI_ANIMALS__', uiGlyph('ui_animals')],

@@ -33387,6 +33387,21 @@ ship.ui_ladder = { c: 'craft', s: [
   S('M18 8 L18 52', 'ik', 3), S('M42 8 L42 52', 'ik', 3),
   ...[14, 26, 38, 50].map(y => S(`M18 ${y} L42 ${y}`, 'ik', 3)),
 ] };
+// The GHS "health hazard" pictogram — a torso with a starburst radiating from
+// inside the chest. It is the international mark for carcinogens, mutagens and
+// reproductive toxins, which is exactly the claim being made. Deliberately not
+// the biohazard trefoil (that means infectious material) and not the radiation
+// trefoil (which this badge already uses, and which wins the slot over this).
+ship.ui_carcinogen = { c: 'craft', s: [
+  S('M30 10 A7 7 0 1 1 29.9 10', 'ik', 3),                                    // head
+  S('M18 44 Q18 24 30 24 Q42 24 42 44', 'ik', 3),                             // shoulders and torso
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * Math.PI) / 4;
+    return S(`M${n(30 + 3.5 * Math.cos(a))} ${n(36 + 3.5 * Math.sin(a))} ` +
+             `L${n(30 + 9 * Math.cos(a))} ${n(36 + 9 * Math.sin(a))}`, 'ik', 2.4);
+  }),                                                                          // the burst inside the chest
+  C(30, 36, 3.2, 'ik'),
+] };
 ship.ui_eye = { c: 'craft', s: [
   S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),
 ] };

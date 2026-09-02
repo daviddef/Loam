@@ -436,6 +436,12 @@ __CATEGORY_CSS__
      time — is where a literal pulse reads as that fact instead of noise.
      ("can we pulse these?" — found live.) */
   .chip .warn.radioactive{background:var(--teal);color:var(--on-accent)}
+  /* The health-hazard mark is a drawn glyph, not a character, so it needs a
+     box to sit in rather than a font size. Purple keeps it distinct from the
+     teal radioactive badge and from every severity colour. */
+  .chip .warn.carcinogen{background:var(--plum,#6B4E71);color:var(--on-accent);padding:0}
+  .chip .warn.carcinogen svg{width:100%;height:100%;display:block}
+  .chip .warn.carcinogen svg *{stroke:currentColor!important;fill:none!important}
   @keyframes radioactivePulse{
     0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--teal) 60%,transparent)}
     50%    {box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 0%,transparent)}
@@ -2774,6 +2780,14 @@ function chipHTML(e) {
       // panel behind the i still lists every hazard, this is just the cover.
       if (cautionsFor(e.id).some(c => c.kind === 'radioactivity'))
         return `<i class="warn radioactive" title="This one is radioactive — tap the i to read why">☢</i>`;
+      // Carcinogens get the GHS health-hazard mark, for the same reason
+      // radioactivity gets its own: "this causes cancer" is a more specific and
+      // more useful thing to say than a severity tier. Radioactivity still wins
+      // the slot, because several radioactive elements are also carcinogenic and
+      // the decay is the sharper fact. The caution panel behind the i lists
+      // every hazard either way — this is only the cover.
+      if (cautionsFor(e.id).some(c => c.carcinogen))
+        return `<i class="warn carcinogen" title="This one causes cancer — tap the i to read why">__UI_CARCINOGEN__</i>`;
       const sev = severityOf(e.id);
       if (!sev) return '';
       const say = { acute: 'This one can kill or permanently injure',

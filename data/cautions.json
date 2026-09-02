@@ -130,7 +130,8 @@
         "uranium",
         "yellowcake"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "reactive_metal": {
       "label": "These metals set fire to water",
@@ -304,7 +305,8 @@
         "galalith",
         "bakelite"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "venomous_spur": {
       "label": "The platypus is a venomous mammal",
@@ -711,7 +713,8 @@
       "severity": "cumulative",
       "ids": [
         "bracken_fern"
-      ]
+      ],
+      "carcinogen": true
     },
     "amatoxin_poisoning": {
       "label": "The deadliest mushroom, and a real cause of death every year",
@@ -773,7 +776,8 @@
         "serpentinite",
         "mesothelioma"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "malaria_burden": {
       "label": "Malaria still kills hundreds of thousands a year",
@@ -1245,7 +1249,8 @@
       "severity": "cumulative",
       "ids": [
         "betel_nut"
-      ]
+      ],
+      "carcinogen": true
     },
     "ayahuasca_mao_interaction": {
       "label": "Ayahuasca's MAO inhibitors interact dangerously with some medicines",
@@ -1261,7 +1266,8 @@
       "severity": "cumulative",
       "ids": [
         "sweet_flag"
-      ]
+      ],
+      "carcinogen": true
     },
     "mescal_bean_toxicity": {
       "label": "Mescal bean seeds can cause convulsions and respiratory paralysis",
@@ -1318,7 +1324,8 @@
       "ids": [
         "carbon_tetrachloride"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "barium_toxicity": {
       "label": "Soluble barium salts are toxic if swallowed",
@@ -1339,7 +1346,8 @@
         "chromate",
         "potassium_dichromate"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "hydrofluoric_hazard": {
       "label": "Hydrofluoric acid injures before it hurts",
@@ -1381,7 +1389,8 @@
         "sodium_chromate",
         "sodium_dichromate"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "acetaldehyde_carcinogen": {
       "label": "Acetaldehyde is what your body already makes from alcohol",
@@ -1389,7 +1398,8 @@
       "ids": [
         "acetaldehyde"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "perc_solvent_toxicity": {
       "label": "Perc is a probable carcinogen, not just a dry-cleaning smell",
@@ -1397,7 +1407,8 @@
       "ids": [
         "tetrachloroethylene"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "oxidizer_hazard": {
       "label": "Strong oxidisers burn on contact and burn what they touch",
@@ -1456,7 +1467,8 @@
       "ids": [
         "ethylene_oxide"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "bromate_carcinogen": {
       "label": "Bromate is a suspected carcinogen",
@@ -1464,7 +1476,8 @@
       "ids": [
         "bromate"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "chlorate_oxidizer": {
       "label": "Potassium chlorate is a powerful oxidizer",
@@ -1480,7 +1493,8 @@
       "ids": [
         "hydrazine"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "carcinogen": true
     },
     "violent_hydrolysis": {
       "label": "These react violently with water",
@@ -1539,7 +1553,8 @@
         "silicon_carbide",
         "borosilicate_glass"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "capsaicin_irritant": {
       "label": "Capsaicin burns skin and eyes on contact",
@@ -1569,7 +1584,8 @@
       "ids": [
         "vinyl_chloride"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "pvc_combustion": {
       "label": "Burning PVC releases hydrogen chloride",
@@ -1609,7 +1625,8 @@
       "ids": [
         "phenolphthalein"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "carcinogen": true
     },
     "barium_peroxide_hazard": {
       "label": "Barium peroxide is an oxidiser, and barium compounds are toxic",
@@ -1649,7 +1666,8 @@
       "ids": [
         "benzene"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "copper_sulfate_toxicity": {
       "label": "Copper sulfate is toxic well below fungicide doses",
@@ -1734,7 +1752,8 @@
       "ids": [
         "safrole"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "glycyrrhizin_arrhythmia": {
       "label": "Black liquorice and the FDA's 2 oz warning",
@@ -1791,7 +1810,8 @@
       "ids": [
         "aflatoxin"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "carcinogen": true
     },
     "clostridial_wound_risk": {
       "label": "Deep wounds and soil are a real combination",
