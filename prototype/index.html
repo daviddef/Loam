@@ -517,6 +517,11 @@
      Pinned here rather than by out-specifying each variant, because the next
      .art rule someone adds would reopen it. */
   .chip .warn svg{width:100%!important;height:100%!important;display:block}
+  .chip .warn[data-hazard]{cursor:pointer}
+  .hzhead{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+  .hzhead .warn{position:static;width:26px;height:26px;font-size:15px;flex:none}
+  .hzhead .warn svg{width:100%;height:100%;display:block}
+  .hzhead h3{margin:0;font-size:16px;line-height:1.25}
   .chip .warn.carcinogen svg *{stroke:currentColor!important;fill:none!important}
   .chip .warn.biohazard{background:var(--avocado);color:var(--ink)}
   /* Everything hazardous on a thing's route, collapsed by default — it is
@@ -2166,6 +2171,9 @@ const CAUTION_BY_ID = {};
 for (const [kind, h] of Object.entries(CAUTIONS))
   for (const id of h.ids) (CAUTION_BY_ID[id] = CAUTION_BY_ID[id] || []).push({ kind, ...h });
 function cautionsFor(id) { return CAUTION_BY_ID[id] || []; }
+// The same hazards keyed the other way, so a badge can look one up by kind.
+const CAUTIONS_BY_KIND = Object.fromEntries(
+  Object.entries(CAUTIONS).map(([kind, h]) => [kind, { kind, ...h }]));
 function cautionHTML(id) {
   const cs = cautionsFor(id);
   if (!cs.length) return '';
@@ -2933,7 +2941,7 @@ function chipHTML(e) {
       // over whatever else the element is also flagged for; the caution
       // panel behind the i still lists every hazard, this is just the cover.
       if (cautionsFor(e.id).some(c => c.kind === 'radioactivity'))
-        return `<i class="warn radioactive" title="This one is radioactive — tap the i to read why">☢</i>`;
+        return `<i class="warn radioactive" data-hazard="radioactivity" data-hazard-of="${e.id}" title="Radioactive — tap to see everything that carries it">☢</i>`;
       // Carcinogens get the GHS health-hazard mark, for the same reason
       // radioactivity gets its own: "this causes cancer" is a more specific and
       // more useful thing to say than a severity tier. Radioactivity still wins
@@ -2941,21 +2949,21 @@ function chipHTML(e) {
       // the decay is the sharper fact. The caution panel behind the i lists
       // every hazard either way — this is only the cover.
       if (cautionsFor(e.id).some(c => c.carcinogen))
-        return `<i class="warn carcinogen" title="This one causes cancer — tap the i to read why"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 10 A7 7 0 1 1 29.9 10" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 44 Q18 24 30 24 Q42 24 42 44" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.5 36 L39 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 38.47 L36.36 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 39.5 L30 45" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 38.47 L23.64 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.5 36 L21 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 33.53 L23.64 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 32.5 L30 27" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 33.53 L36.36 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="36" r="3.2" fill="var(--ik)"/></svg></i>`;
+        return `<i class="warn carcinogen" data-hazard="${cautionsFor(e.id).find(c => c.carcinogen).kind}" data-hazard-of="${e.id}" title="Causes cancer — tap to see everything that carries it"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 10 A7 7 0 1 1 29.9 10" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 44 Q18 24 30 24 Q42 24 42 44" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.5 36 L39 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 38.47 L36.36 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 39.5 L30 45" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 38.47 L23.64 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.5 36 L21 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 33.53 L23.64 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 32.5 L30 27" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 33.53 L36.36 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="36" r="3.2" fill="var(--ik)"/></svg></i>`;
       // Biological hazards get the trefoil, which here is the right symbol
       // rather than a borrowed one — ☣ means infectious material, and that is
       // exactly the claim. It sits below the other two because a thing that is
       // both radioactive and infectious is rarer than the badge slot is
       // valuable, and because the decay and the cancer are the sharper facts.
       if (cautionsFor(e.id).some(c => c.biohazard))
-        return `<i class="warn biohazard" title="This one is infectious — tap the i to read why">☣</i>`;
+        return `<i class="warn biohazard" data-hazard="${cautionsFor(e.id).find(c => c.biohazard).kind}" data-hazard-of="${e.id}" title="Infectious — tap to see everything that carries it">☣</i>`;
       const sev = severityOf(e.id);
       if (!sev) return '';
       const say = { acute: 'This one can kill or permanently injure',
                     contact: 'This one burns or envenomates on contact',
                     cumulative: 'This one harms with exposure over time',
                     conditional: 'This one harms some people, or in some circumstances' }[sev];
-      return `<i class="warn sev-${sev}" title="${say} — tap the i to read why">!</i>`;
+      return `<i class="warn sev-${sev}" data-hazard="${(cautionsFor(e.id).find(c => (c.severity || 'cumulative') === sev) || {}).kind || ''}" data-hazard-of="${e.id}" title="${say} — tap to see everything that carries it">!</i>`;
     })();
 }
 
@@ -7402,6 +7410,74 @@ const onCanvas = (id) => !!world.querySelector(`.chip.board[data-id="${id}"]`);
  * of the corpus from anywhere, so every food would carry an identical wall of
  * warnings. A list that says the same thing about everything says nothing.
  */
+// "instead of tapping I, can we rather show the details in a separate overlay
+// when we click the toxin, carcinogen, poison, etc icon, and also show all
+// ancestors and descendents that carry that same risk?"
+//
+// The badge was decoration with a tooltip; it is the control now. What it can
+// say that the upstream panel cannot is the shape of the risk across the whole
+// graph — not just what is on the way to this card, but everything else that
+// inherits the same hazard.
+let HAZ_SPREAD = null;
+function hazardSpread() {
+  // One pass over every element's canonical ancestry, built on first use and
+  // kept. It is the same walk hazardReach() does, and it costs a few ms.
+  if (HAZ_SPREAD) return HAZ_SPREAD;
+  HAZ_SPREAD = new Map();
+  for (const e of elements) {
+    for (const a of distinctOf(e.id)) {
+      for (const c of cautionsFor(a)) {
+        let m = HAZ_SPREAD.get(c.kind);
+        if (!m) HAZ_SPREAD.set(c.kind, m = new Set());
+        m.add(e.id);
+      }
+    }
+  }
+  return HAZ_SPREAD;
+}
+function hazardChips(ids, cap = 60) {
+  const shown = ids.slice(0, cap);
+  return `<div class="shelf">` + shown.map(id => {
+    const e = byId[id];
+    if (!e) return '';
+    const f = familyOf(e);
+    return found.has(id)
+      ? `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${id}">${chipHTML(e)}</span>`
+      : `<span class="chip locked" data-hint="${id}">${chipHTML(e)}<i class="q">?</i></span>`;
+  }).join('') + `</div>` +
+    (ids.length > cap ? `<p class="hint2">and ${ids.length - cap} more.</p>` : '');
+}
+function showHazard(kind, fromId) {
+  const all = CAUTIONS_BY_KIND[kind];
+  if (!all) return;
+  const carriers = all.ids.filter(i => byId[i]);
+  const spread = [...(hazardSpread().get(kind) || [])].filter(i => !carriers.includes(i));
+  // Which carriers are on the route to the card you tapped, and which of the
+  // downstream things is this card itself — said plainly rather than implied.
+  const anc = fromId ? new Set(distinctOf(fromId)) : new Set();
+  const onYourRoute = carriers.filter(i => anc.has(i));
+  const sev = all.severity || 'cumulative';
+  const badge = all.kind === 'radioactivity' ? '☢' : all.carcinogen ? '<svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 10 A7 7 0 1 1 29.9 10" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 44 Q18 24 30 24 Q42 24 42 44" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.5 36 L39 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 38.47 L36.36 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 39.5 L30 45" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 38.47 L23.64 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.5 36 L21 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 33.53 L23.64 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 32.5 L30 27" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 33.53 L36.36 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="36" r="3.2" fill="var(--ik)"/></svg>'
+              : all.biohazard ? '☣' : '!';
+  const cls = all.kind === 'radioactivity' ? 'radioactive' : all.carcinogen ? 'carcinogen'
+            : all.biohazard ? 'biohazard' : 'sev-' + sev;
+  document.getElementById('sheetBody').innerHTML =
+    `<div class="hzhead"><i class="warn ${cls}">${badge}</i><h3>${all.label}</h3></div>
+     <p class="why">${all.note}</p>` +
+    (fromId && byId[fromId]
+      ? `<h2>Why ${nameOf(byId[fromId])} shows it</h2>` +
+        (onYourRoute.length
+          ? `<p class="hint2">It is on the route here, through ${onYourRoute.map(i => nameOf(byId[i])).join(', ')}.</p>`
+          : `<p class="hint2">${nameOf(byId[fromId])} carries it directly.</p>`)
+      : '') +
+    `<h2>Carries it directly · ${carriers.length}</h2>${hazardChips(carriers)}` +
+    (spread.length
+      ? `<h2>Inherits it further down · ${spread.length}</h2>` +
+        `<p class="hint2">Everything whose own route passes through one of the above.</p>` +
+        hazardChips(spread)
+      : `<p class="hint2">Nothing else in the game descends from these.</p>`);
+  openSheet('Who carries this');
+}
 function upstreamHazards(id) {
   const seen = new Map();                     // caution key -> {c, from:Set}
   for (const a of distinctOf(id)) {
@@ -7595,6 +7671,14 @@ function openSheet(title) {
   document.getElementById('sheetTitle').textContent = title;
   document.getElementById('sheet').classList.add('on');
 }
+// The hazard badge is a control wherever it appears — board, shelf, any panel —
+// so this is captured at the document before the chip handlers see it.
+document.addEventListener('click', ev => {
+  const hz = ev.target.closest('[data-hazard]');
+  if (!hz || !hz.dataset.hazard) return;
+  ev.preventDefault(); ev.stopPropagation();
+  showHazard(hz.dataset.hazard, hz.dataset.hazardOf);
+}, true);
 document.getElementById('sheet').addEventListener('click', ev => {
   // These three "+ Chart" buttons can sit INSIDE a foldable row (a
   // composition tree node that also has children) — checked before
