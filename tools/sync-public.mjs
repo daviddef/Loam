@@ -65,6 +65,7 @@ const PUBLIC = [
   'tools/reactions.mjs',
   'tools/strip.mjs',
   'tools/safety.mjs',
+  'tools/derivation.mjs',
   'tools/audit.mjs',
   'tools/contact-sheet.mjs',
   'tools/sync-public.mjs',
