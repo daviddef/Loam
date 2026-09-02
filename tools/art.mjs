@@ -33224,6 +33224,141 @@ def('mesothelioma', () => [                                                     
     S(`M${38 + k * 3.6} ${46 - k * 6} l0 4`, 'gh', 1.2)),                             // twenty years, counted off
   S('M36 50 L54 50', 'gh', 1),
 ]);
+
+/* ── the derivation wave's new elements ──────────────────────────────────
+   Continents are drawn as the landmass, not a globe: a globe would be the
+   same drawing five times over. Taxonomic groups take the one character the
+   name is diagnosed on, which is also what their recipe keys on. */
+
+def('africa', () => [P('M22 10 L40 12 L42 26 L34 34 L32 50 L24 44 L20 28 L16 18 Z', 'bs'),
+                     S('M22 10 L40 12 L42 26 L34 34 L32 50 L24 44 L20 28 L16 18 Z', 'lo', 1.4)]);
+def('asia', () => [P('M10 16 L46 12 L50 24 L38 30 L40 40 L28 38 L18 30 L12 24 Z', 'bs'),
+                   S('M10 16 L46 12 L50 24 L38 30 L40 40 L28 38 L18 30 L12 24 Z', 'lo', 1.4)]);
+def('europe', () => [P('M16 18 L34 14 L44 20 L38 28 L40 38 L26 36 L18 30 Z', 'bs'),
+                     S('M16 18 L34 14 L44 20 L38 28 L40 38 L26 36 L18 30 Z', 'lo', 1.4),
+                     S('M40 20 L44 32', 'hi', 1.6)]);                       // the Urals, the conventional seam
+def('north_america', () => [P('M14 14 L42 12 L38 24 L34 30 L30 46 L24 34 L16 26 Z', 'bs'),
+                            S('M14 14 L42 12 L38 24 L34 30 L30 46 L24 34 L16 26 Z', 'lo', 1.4)]);
+def('south_america', () => [P('M24 12 L38 16 L36 30 L30 48 L24 38 L20 24 Z', 'bs'),
+                            S('M24 12 L38 16 L36 30 L30 48 L24 38 L20 24 Z', 'lo', 1.4)]);
+
+def('ape', () => [C(30, 20, 9, 'bs'), E(30, 38, 12, 11, 'bs'),
+                  C(21, 20, 3.2, 'lo'), C(39, 20, 3.2, 'lo'),               // no tail, and the ears show
+                  S('M20 40 Q30 48 40 40', 'lo', 2)]);
+def('beetle', () => [E(30, 34, 13, 16, 'bs'), C(30, 15, 6, 'lo'),
+                     S('M30 20 L30 48', 'ik', 1.8),                          // the elytra seam
+                     S('M22 12 L18 6 M38 12 L42 6', 'lo', 1.6)]);
+def('crocodilian', () => [P('M8 32 L44 26 L54 30 L44 36 L8 36 Z', 'bs'),
+                          ...[14, 22, 30, 38].map(x => P(`M${x} 26 L${x + 3} 20 L${x + 6} 26 Z`, 'lo')),
+                          C(48, 30, 1.6, 'ik')]);
+def('theropod', () => [P('M18 20 Q34 18 40 26 Q44 34 36 38 L24 38 Q16 32 18 20 Z', 'bs'),
+                       S('M36 38 L44 50 M28 38 L26 50', 'lo', 2.6),          // three toes and a claw
+                       S('M44 50 L48 48 M26 50 L22 48', 'ik', 1.6),
+                       C(22, 24, 1.6, 'ik')]);
+def('lagomorph', () => [E(28, 38, 13, 10, 'bs'), C(40, 30, 6, 'bs'),
+                        E(38, 17, 3, 10, 'lo'), E(45, 18, 3, 9, 'lo'),       // the ears
+                        C(46, 30, 1.4, 'ik')]);
+def('perissodactyl', () => [E(28, 30, 16, 9, 'bs'),
+                            S('M18 38 L18 48 M26 38 L26 48 M34 38 L34 48 M42 38 L42 48', 'bs', 3),
+                            ...[18, 26, 34, 42].map(x => P(`M${x - 3} 48 L${x + 3} 48 L${x} 53 Z`, 'ik'))]);  // one toe down
+def('isopod', () => [E(30, 30, 12, 17, 'bs'),
+                     ...[18, 24, 30, 36, 42].map(y => S(`M19 ${y} L41 ${y}`, 'lo', 1.4)),
+                     S('M26 12 L22 6 M34 12 L38 6', 'lo', 1.5)]);
+def('spurge', () => [S('M30 50 L30 24', 'lo', 3),
+                     ...[[22, 24], [38, 24], [30, 18]].map(([x, y]) => C(x, y, 5, 'bs')),
+                     ...[[24, 40], [36, 36]].map(([x, y]) => C(x, y, 2.4, 'hi'))]);   // the milky latex
+def('scorpionfish', () => [E(28, 34, 15, 10, 'bs'), P('M43 34 L52 28 L52 40 Z', 'bs'),
+                           ...[16, 22, 28, 34].map(x => S(`M${x} 26 L${x - 2} 14`, 'lo', 1.8)),  // venomous spines
+                           C(19, 32, 1.5, 'ik')]);
+def('requiem_shark', () => [P('M8 32 Q28 22 46 30 Q30 40 8 32 Z', 'bs'),
+                            P('M28 24 L32 12 L36 26 Z', 'bs'),
+                            P('M46 30 L54 24 L52 32 L54 38 Z', 'bs'),
+                            C(14, 31, 1.4, 'ik')]);
+def('myriapod', () => [S('M10 34 Q22 26 32 34 Q42 42 50 34', 'bs', 7),
+                       ...[14, 20, 26, 32, 38, 44].map(x => S(`M${x} 28 L${x} 20 M${x} 40 L${x} 48`, 'lo', 1.4)),
+                       C(11, 33, 1.4, 'ik')]);
+def('sauropod', () => [E(30, 38, 15, 9, 'bs'),
+                       S('M18 34 Q10 22 16 12', 'bs', 5), C(16, 11, 3.4, 'bs'),   // the long neck
+                       S('M44 36 Q54 34 56 26', 'bs', 3.4),
+                       ...[22, 30, 38].map(x => S(`M${x} 46 L${x} 52`, 'lo', 3))]);
+def('pterosaur', () => [P('M30 30 L8 20 L14 34 Z', 'bs'), P('M30 30 L52 20 L46 34 Z', 'bs'),
+                        E(30, 32, 5, 8, 'bs'), P('M30 24 L38 14 L28 18 Z', 'lo'),   // the crest
+                        C(31, 20, 1.2, 'ik')]);
+def('fern', () => [S('M30 52 Q30 34 30 18', 'lo', 2.4),
+                   ...[20, 26, 32, 38, 44].map((y, i) => [
+                     S(`M30 ${y} Q${22 - i} ${y - 3} ${16 - i} ${y + 1}`, 'bs', 2),
+                     S(`M30 ${y} Q${38 + i} ${y - 3} ${44 + i} ${y + 1}`, 'bs', 2)]).flat(),
+                   S('M30 18 Q26 12 30 8', 'bs', 2.2)]);                      // the unrolling crozier
+
+def('equus', () => [E(28, 32, 15, 8, 'bs'), S('M40 28 Q48 22 46 14', 'bs', 5), C(46, 12, 3.4, 'bs'),
+                    ...[18, 26, 34].map(x => S(`M${x} 40 L${x} 50`, 'bs', 2.6)),
+                    ...[18, 26, 34].map(x => P(`M${x - 2.5} 50 L${x + 2.5} 50 L${x} 54 Z`, 'ik'))]);
+def('wild_dromedary', () => [E(28, 34, 15, 8, 'bs'), P('M22 26 Q30 14 38 26 Z', 'bs'),
+                             S('M42 30 Q50 24 48 16', 'bs', 4), C(48, 14, 3, 'bs'),
+                             ...[20, 28, 36].map(x => S(`M${x} 42 L${x} 50`, 'bs', 2.4))]);
+def('mongoose', () => [E(26, 36, 14, 7, 'bs'), C(41, 32, 5, 'bs'),
+                       S('M12 36 Q4 32 6 24', 'bs', 4),
+                       C(44, 30, 1.3, 'ik'), S('M20 43 L20 48 M32 43 L32 48', 'lo', 2)]);
+def('african_wild_ass', () => [E(28, 32, 14, 8, 'bs'), S('M40 28 Q47 22 45 14', 'bs', 4.6), C(45, 12, 3.2, 'bs'),
+                               E(42, 7, 2, 5, 'lo'), E(48, 8, 2, 5, 'lo'),
+                               ...[20, 28, 36].map(x => S(`M${x} 40 L${x} 50`, 'bs', 2.4)),
+                               ...[42, 46].map(y => S(`M16 ${y} L24 ${y}`, 'ik', 1.4))]);   // the leg stripes
+def('wild_boar', () => [E(28, 34, 15, 9, 'bs'), C(42, 32, 6, 'bs'), P('M46 32 L52 34 L46 36 Z', 'lo'),
+                        P('M45 36 L48 42 L43 38 Z', 'hi'),                        // the tusk
+                        S('M20 22 L22 16 M28 21 L29 15 M36 22 L38 16', 'lo', 1.6)]);
+def('pipefish', () => [S('M8 34 Q20 26 32 34 Q44 42 52 34', 'bs', 5),
+                       P('M52 30 L58 28 L56 34 L58 40 Z', 'bs'),
+                       ...[14, 22, 30, 38, 46].map(x => S(`M${x} 29 L${x} 39`, 'lo', 1.2)),  // the bony rings
+                       C(11, 33, 1.2, 'ik')]);
+def('mackerel', () => [E(28, 32, 18, 9, 'bs'), P('M46 32 L56 25 L54 32 L56 39 Z', 'bs'),
+                       ...[16, 22, 28, 34, 40].map(x => S(`M${x} 26 Q${x + 3} 32 ${x} 38`, 'ik', 1.5)),
+                       C(15, 31, 1.3, 'ik')]);
+def('okapi', () => [E(28, 34, 14, 8, 'bs'), S('M40 30 Q48 24 47 16', 'bs', 4.2), C(47, 14, 3.2, 'bs'),
+                    ...[42, 46, 50].map(y => S(`M14 ${y - 6} L24 ${y - 6}`, 'ik', 1.5)),   // striped hindquarters only
+                    S('M45 11 L44 6 M49 11 L50 6', 'lo', 1.4)]);
+def('areca_palm', () => [S('M30 52 L30 22', 'lo', 3),
+                         ...[0, 1, 2, 3, 4].map(i => S(`M30 22 Q${30 + (i - 2) * 9} ${14 - Math.abs(i - 2) * 2} ${30 + (i - 2) * 15} ${20 - Math.abs(i - 2) * 2}`, 'bs', 2.2)),
+                         ...[26, 34].map(x => C(x, 26, 2.2, 'hi'))]);
+def('wild_coca', () => [S('M30 52 L30 20', 'lo', 2.4),
+                        ...[[22, 26], [38, 26], [24, 34], [36, 34]].map(([x, y]) => E(x, y, 6, 3.4, 'bs')),
+                        ...[[27, 20], [33, 20]].map(([x, y]) => C(x, y, 2, 'hi'))]);
+def('wild_tobacco', () => [S('M30 52 L30 22', 'lo', 2.6),
+                           ...[[21, 32], [39, 32], [22, 42], [38, 42]].map(([x, y]) => E(x, y, 8, 4.5, 'bs')),
+                           P('M30 22 Q26 12 30 8 Q34 12 30 22 Z', 'hi')]);
+def('wild_turkey', () => [E(26, 36, 12, 9, 'bs'), C(38, 28, 5, 'bs'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M16 36 Q${8 - i} ${30 - i * 3} ${12 - i} ${20 - i * 3}`, 'lo', 2.2)),
+                          P('M42 29 L46 33 L42 34 Z', 'hi'), C(40, 26, 1.2, 'ik')]);
+def('mallard', () => [E(26, 36, 13, 8, 'bs'), C(40, 28, 5.5, 'living-lo'),
+                      P('M45 28 L53 30 L45 32 Z', 'hi'),
+                      S('M14 34 Q6 30 8 24', 'bs', 3.4), C(42, 26, 1.2, 'ik')]);
+def('mouflon', () => [E(28, 36, 13, 8, 'bs'), C(41, 30, 5.5, 'bs'),
+                      S('M42 25 Q50 20 48 30 Q46 36 40 32', 'lo', 2.6),          // the curled horn
+                      ...[22, 30].map(x => S(`M${x} 43 L${x} 50`, 'bs', 2.2))]);
+def('bezoar_ibex', () => [E(28, 36, 13, 8, 'bs'), C(41, 30, 5.5, 'bs'),
+                          S('M42 25 Q52 14 50 6', 'lo', 3),                       // the long swept-back horn
+                          P('M39 34 L38 42 L36 34 Z', 'lo'),                       // the beard
+                          ...[22, 30].map(x => S(`M${x} 43 L${x} 50`, 'bs', 2.2))]);
+def('junglefowl', () => [E(26, 36, 12, 8, 'bs'), C(38, 27, 5, 'bs'),
+                         P('M36 21 Q38 15 41 21 Q43 16 45 22 Z', 'lo'),         // the comb
+                         P('M43 28 L49 30 L43 32 Z', 'hi'),
+                         ...[0, 1, 2].map(i => S(`M15 34 Q${7 - i * 2} ${28 - i * 4} ${13 - i * 2} ${20 - i * 4}`, 'lo', 2.2)),
+                         C(40, 26, 1.2, 'ik')]);
+def('wild_water_buffalo', () => [E(28, 36, 16, 9, 'bs'), C(43, 32, 6, 'bs'),
+                                 S('M40 27 Q30 16 18 22', 'lo', 3),
+                                 S('M46 27 Q56 16 52 8', 'lo', 3),                 // the great swept horns
+                                 ...[20, 28, 36].map(x => S(`M${x} 44 L${x} 51`, 'bs', 2.6))]);
+def('grasshopper', () => [E(28, 32, 14, 7, 'bs'), C(41, 30, 4.5, 'bs'),
+                          S('M24 36 Q18 46 28 48', 'lo', 3),                       // the jumping hind leg
+                          S('M44 26 L52 18 M45 28 L54 24', 'lo', 1.4),
+                          C(43, 28, 1.2, 'ik')]);
+def('greylag_goose', () => [E(26, 38, 14, 8, 'bs'), S('M38 34 Q46 26 45 16', 'bs', 5), C(45, 14, 4, 'bs'),
+                            P('M49 14 L56 16 L49 18 Z', 'hi'),
+                            S('M12 36 Q4 32 6 26', 'bs', 3.4), C(43, 12, 1.2, 'ik')]);
+def('wild_silk_moth', () => [E(30, 32, 4, 9, 'bs'),
+                             P('M28 26 Q12 18 10 30 Q14 40 28 36 Z', 'lo'),
+                             P('M32 26 Q48 18 50 30 Q46 40 32 36 Z', 'lo'),
+                             S('M28 24 Q24 16 20 14 M32 24 Q36 16 40 14', 'ik', 1.4)]);   // the plumed antennae
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

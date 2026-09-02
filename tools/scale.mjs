@@ -209,6 +209,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          'grasshopper', 'wild_silk_moth', 'isopod', 'beetle', 'pipefish',
           /* asbestos chain, 2 Sep */ 'asbestos',
           /* crops and materials wave, 2 Sep */
           'alfalfa_sprout', 'aonla', 'boysenberry', 'chilli_pepper', 'currant', 'einkorn', 'elderberry', 'emmer',
@@ -331,6 +332,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          'mongoose', 'junglefowl', 'mallard', 'mackerel', 'myriapod', 'scorpionfish', 'lagomorph',
           /* crops and materials wave, 2 Sep */
           'abaca', 'acorn_squash', 'bamboo_shoot', 'blood_orange', 'bok_choy', 'canaigre_dock', 'chaya', 'chayote',
           'cherimoya', 'clover', 'coir', 'collard_green', 'daikon_radish', 'endive', 'fennel_bulb', 'honeydew_melon',
@@ -520,6 +522,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          'wild_boar', 'mouflon', 'bezoar_ibex', 'wild_turkey', 'greylag_goose', 'ape', 'wild_coca', 'wild_tobacco', 'spurge', 'fern', 'requiem_shark', 'crocodilian', 'perissodactyl', 'african_wild_ass', 'equus', 'wild_dromedary', 'okapi', 'wild_water_buffalo', 'theropod',
           /* asbestos chain, 2 Sep */ 'mesothelioma',
           /* crops and materials wave, 2 Sep */
           'cattail_reed', 'coffee_crop', 'dill_crop', 'fennel_crop', 'guayule_shrub', 'hemp', 'papyrus_reed', 'sea_buckthorn',
@@ -708,6 +711,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          'areca_palm', 'sauropod', 'pterosaur',
           /* crops and materials wave, 2 Sep */
           'agarwood_tree', 'alder_tree', 'almond_tree', 'argan_tree', 'ash_tree', 'camphor_tree', 'cashew_tree', 'cherry_wood_tree',
           'chestnut_tree', 'cinchona_tree', 'cinnamon_crop', 'clove_crop', 'cork_oak_tree', 'cypress_tree', 'date_palm', 'ebony_tree',
@@ -867,6 +871,7 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          'africa', 'asia', 'europe', 'north_america', 'south_america',
           /* unblocking-nouns wave, 2 Sep */
           'atmosphere', 'aurora', 'great_oxidation_event', 'snowball_earth',
           /* completeness-audit wave, 2 Sep */
