@@ -30690,6 +30690,2511 @@ def('braising', () => [                                              // brown it
   ...[24, 31, 38].map(x => S(`M${x} 33 Q${x + 3} 39 ${x} 44`, 'hi', 1.4)),
 ]);
 
+def('nucleoside', () => [                                                            // sugar and base only — the phosphate is the whole difference from a nucleotide
+  hex('ik', 22, 26, 9, 2),                                                            // base
+  P('M30 34 L38 30 L44 36 L38 44 L30 42 Z', 'ik'),                                    // sugar, same outline the nucleotide uses
+  P('M31 34.6 L37.6 31.2 L42.6 36.2 L37.6 42.6 L31 41.2 Z', 'bs'),
+  S('M44 38 L49 40', 'gh', 1.4),                                                      // the bond that would carry a phosphate...
+  C(52, 40, 4.6, 'gh'),                                                               // ...and the empty place where one is not
+]);
+def('double_helix', () => {                                                           // two antiparallel strands about one axis — the shape, not the molecule
+  const out = [S('M30 6 L30 54', 'gh', 0.8)];                                         // the shared axis
+  const A = [], B = [];
+  for (let i = 0; i <= 24; i++) {
+    const y = 7 + i * 1.95, s = Math.sin(i * 0.42);
+    A.push(`${i ? 'L' : 'M'}${n(30 + 15 * s)} ${n(y)}`);
+    B.push(`${i ? 'L' : 'M'}${n(30 - 15 * s)} ${n(y)}`);
+  }
+  out.push(S(A.join(' '), 'ik', 2.2), S(B.join(' '), 'bs', 2.2));
+  out.push(S('M34 10 L30 6 L26 10', 'ik', 1.6));                                      // running up...
+  out.push(S('M26 50 L30 54 L34 50', 'bs', 1.6));                                     // ...and the other one down
+  return out;
+});
+def('rosalind_franklin', () => [                                                      // Photo 51 — the X is what says helix
+  P('M8 8 L52 8 L52 52 L8 52 Z', 'lo'),                                               // the plate
+  ...[-1, 1].map(d => S(`M${n(30 - d * 15)} 16 L${n(30 + d * 15)} 44`, 'gh', 1)),      // the two arms of the X
+  ...[[-1, 0], [-1, 1], [-1, 2], [-1, 3], [1, 0], [1, 1], [1, 2], [1, 3]]
+    .map(([d, k]) => E(30 + d * (4.5 + k * 3.4), 22 + k * 5.2, 2.4, 1.5, 'hi')),       // the layer-line spots
+  ...[[-1, 0], [-1, 1], [1, 0], [1, 1]]
+    .map(([d, k]) => E(30 + d * (4.5 + k * 3.4), 38 - k * 5.2, 2.4, 1.5, 'hi')),
+  S('M14 46 L22 46', 'ik', 1.4),                                                      // the plate's own label edge
+]);
+
+/* war, drawn as organisation rather than as weapons — the weapons already have
+   their own icons, and none of these ids is a weapon. */
+def('war', () => [                                                   // Jebel Sahaba, 13,400 years old: 64 burials, and stone points still in 21 of the bodies
+  ...[[15, 20], [30, 20], [45, 20], [15, 40], [30, 40], [45, 40]].map(([x, y]) => E(x, y, 8, 6.5, 'lo')),
+  ...[[15, 20], [30, 20], [45, 20], [15, 40], [30, 40], [45, 40]].map(([x, y]) =>
+    P(`M${x - 4} ${y + 2} Q${x - 4} ${y - 4} ${x} ${y - 4} Q${x + 4} ${y - 4} ${x + 4} ${y + 2} Q${x} ${y + 5} ${x - 4} ${y + 2} Z`, 'bs')),
+  ...[[15, 20], [45, 20], [30, 40]].map(([x, y]) =>
+    P(`M${x - 3} ${y + 3} L${x + 3} ${y - 3} L${x + 4.5} ${y + 1.5} Z`, 'ik')),  // and the points are inside them, not beside them
+  S('M4 53 L56 53', 'ik', 1.6),
+]);
+def('soldier', () => [                                               // through 'one paid a wage' back to the solidus: paid first, and armed second
+  S('M17 55 L17 14', 'lo', 2.4),
+  P('M15 15 L17 2 L19 15 Z', 'hi'),                                   // a narrow socketed head, so it is a spear and not an arrow
+  S('M17 31 L17 38', 'ik', 4),
+  ring('ik', 41, 18, 9, 1.8), C(41, 18, 4, 'ik'),                     // the coin the word is actually made of
+  ...[0, 1, 2].map(i => E(41, n(48 - i * 7), 12, 4, i % 2 ? 'hi' : 'bs')),
+]);
+def('army', () => [                                                  // corps, then divisions, then battalions of 500 to 750 — and it is that last row that fights
+  C(30, 7, 4, 'bs'),
+  S('M30 11 L14 19 M30 11 L30 19 M30 11 L46 19', 'ik', 1.6),
+  ...[14, 30, 46].map(x => C(x, 22, 3.2, 'hi')),
+  ...[14, 30, 46].flatMap(x => [S(`M${x} 25 L${x - 5} 32`, 'ik', 1.2), S(`M${x} 25 L${x + 5} 32`, 'ik', 1.2)]),
+  ...[9, 19, 25, 35, 41, 51].map(x => C(x, 35, 2.4, 'bs')),
+  ...[9, 19, 25, 35, 41, 51].map(x => S(`M${x} 38 L${x} 43`, 'gh', 1)),
+  ...Array.from({ length: 19 }, (_, i) => C(n(6 + i * 2.7), 48, 1.3, 'lo')),
+]);
+def('navy', () => [                                                  // Athens voted the Laurion silver into triremes, and that fleet broke Persia at Salamis three years later
+  ...[0, 1, 2].flatMap(k => [22, 34, 46].map(x =>
+    S(`M${x} ${34 + k * 3} L${x - 14} ${45 + k * 3}`, 'bs', 1.6))),    // three banks of oars, which is the whole design
+  P('M6 22 L50 22 L45 35 Q30 39 11 35 Z', 'lo'),
+  P('M50 22 L58 28 L47 31 Z', 'ik'),                                  // the bronze ram — the ship is the weapon
+  P('M14 3 L26 3 L29 12 L11 12 Z', 'hi'),
+  S('M20 13 L20 18', 'ik', 1.6), P('M16 17 L24 17 L20 22 Z', 'ik'),
+  S('M2 54 L58 54', 'gh', 1.6),
+]);
+def('air_force', () => [                                             // the Flying Corps and the Naval Air Service folded into one service on 1 April 1918
+  P('M3 9 L22 5 L20 16 L5 18 Z', 'lo'),
+  P('M57 9 L38 5 L40 16 L55 18 Z', 'lo'),
+  S('M13 19 Q20 26 26 30', 'ik', 1.6), S('M47 19 Q40 26 34 30', 'ik', 1.6),
+  C(30, 40, 15, 'bs'), C(30, 40, 10, 'hi'), C(30, 40, 5, 'lo'),       // and one roundel over the pair of them
+]);
+def('infantry', () => [                                              // the largest part of nearly every army there has ever been, and the part that walks
+  ...[[6, 0], [24, 5.5], [42, 0]].flatMap(([y, off]) => [0, 1, 2, 3, 4].flatMap(i => {
+    const x = n(7 + off + i * 10.5);
+    return [
+      C(x, y, 2.4, 'hi'),
+      P(`M${n(x - 2.4)} ${y + 3} L${n(x + 2.4)} ${y + 3} L${n(x + 3.2)} ${y + 9} L${n(x - 3.2)} ${y + 9} Z`, 'bs'),
+      S(`M${n(x - 1.6)} ${y + 9} L${n(x - 2.2)} ${y + 12} M${n(x + 1.6)} ${y + 9} L${n(x + 2.2)} ${y + 12}`, 'lo', 1.8),
+    ];
+  })),
+  ...[0, 1, 2, 3, 4].map(i => C(n(7 + i * 10.5), 58, 2.4, 'gh')),     // and the ranks keep going off the bottom of the picture
+]);
+def('cavalry', () => [                                               // height, speed and mass bought with numbers — and between the wars nearly all of it turned into tracks
+  S('M18 27 A14 14 0 1 1 42 27', 'bs', 5),
+  S('M18 27 L18 32 M42 27 L42 32', 'bs', 5),
+  ...[[21, 15], [26, 10], [34, 10], [39, 15]].map(([x, y]) => C(x, y, 1.3, 'ik')),
+  S('M30 34 L30 38', 'ik', 1.6), P('M25 37 L35 37 L30 42 Z', 'ik'),
+  P('M14 44 L46 44 Q54 44 54 50 Q54 56 46 56 L14 56 Q6 56 6 50 Q6 44 14 44 Z', 'lo'),
+  ...[15, 26, 37, 46].map(x => C(x, 50, 3.6, 'hi')),
+]);
+def('artillery_branch', () => [                                      // guns given officers of their own — and they killed more men than everything else on the field put together
+  P('M8.2 45.6 L42.2 19.6 L45.8 24.4 L11.8 50.4 Z', 'lo'),           // the piece, laid over to an angle somebody worked out
+  P('M41 18.4 L47.4 27 L44.4 29.2 L38 20.6 Z', 'bs'),
+  C(11, 47, 5.4, 'bs'),
+  S('M4 52 L26 52', 'ik', 2.6),
+  S('M33 47 A21 21 0 0 0 28.8 34.4', 'ik', 1.2),                     // the quadrant: the elevation is read off a scale, not guessed
+  ...[8, 16, 24, 32].map(d => {
+    const a = -d * Math.PI / 180;
+    return S(`M${n(11 + 19 * Math.cos(a))} ${n(47 + 19 * Math.sin(a))} ` +
+             `L${n(11 + 23 * Math.cos(a))} ${n(47 + 23 * Math.sin(a))}`, 'ik', 1.2);
+  }),
+  S('M48 17 L51.5 14 M54 11.5 L57.5 8.5', 'hi', 1.6),
+  C(58, 5, 2, 'hi'),
+]);
+def('phalanx', () => [                                               // each shield covers its own man's left and his neighbour's right, so the far right file is half-open
+  ...[0, 1, 2].map(i => S(`M${9 + i * 5} 11 L${33 + i * 5} 3`, 'ik', 1.4)),
+  ...[0, 1, 2, 3].flatMap(row => [0, 1, 2].map(col => {
+    const x = 13 + col * 12, y = 18 + row * 10;
+    return P(`M${x - 7} ${y - 5} L${x + 7} ${y - 5} L${x + 7} ${y + 2} Q${x} ${y + 7} ${x - 7} ${y + 2} Z`,
+             (row + col) % 2 ? 'bs' : 'lo');
+  })),
+  ...[0, 1, 2, 3].map(row => P(`M42 ${13 + row * 10} L49 ${13 + row * 10} L49 ${20 + row * 10} ` +
+                               `Q45.5 ${25 + row * 10} 42 ${20 + row * 10} Z`, 'gh')),
+]);
+def('legion', () => [                                                // ten cohorts of foot, and three hundred horse out on the wing
+  ...Array.from({ length: 10 }, (_, i) => {
+    const x = 6 + (i % 5) * 8, y = 16 + Math.floor(i / 5) * 15;
+    return P(`M${x} ${y} L${x + 6} ${y} L${x + 6} ${y + 12} L${x} ${y + 12} Z`, i === 0 ? 'hi' : 'bs');
+  }),
+  ...[[52, 20], [56, 30], [52, 40]].map(([x, y]) => C(x, y, 3.2, 'lo')),
+  S('M4 50 L44 50', 'ik', 1.4),
+]);
+def('fortification', () => [                                         // to make strong: at Solnitsata the wall was already 1.4 m of stone by about 4700 BC
+  P('M12 18 L48 18 L48 46 L12 46 Z', 'bs'),
+  P('M9 9 L16 9 L16 14 L23 14 L23 9 L30 9 L30 14 L37 14 L37 9 L44 9 L44 14 L51 14 L51 18 L9 18 Z', 'hi'),
+  S('M12 18 L12 46', 'ik', 2.6), S('M48 18 L48 46', 'ik', 2.6),
+  ...granules('lo', 12, 907, [15, 21, 45, 43]),                       // two faces and a rubble core, which is how thickness is made cheap
+  S('M12 53 L48 53', 'ik', 1.4),
+  P('M12 53 L19 50 L19 56 Z', 'ik'), P('M48 53 L41 50 L41 56 Z', 'ik'),
+  S('M4 18 L9 18 M4 46 L9 46', 'gh', 1.2),                            // and thickness, not height, is the measurement that matters
+]);
+def('city_wall', () => [                                             // Jericho had one in the 8th millennium BC — and a wall with one gate is a toll booth as much as a defence
+  S('M26 46 L20 46 L8 32 L12 14 L30 6 L48 14 L52 32 L40 46 L34 46', 'bs', 4),
+  ...[[22, 20], [33, 18], [40, 28], [24, 32], [35, 32]].map(([x, y]) =>
+    P(`M${x - 4} ${y - 4} L${x + 4} ${y - 4} L${x + 4} ${y + 4} L${x - 4} ${y + 4} Z`, 'hi')),
+  S('M10 56 L27 48 M50 56 L33 48 M30 57 L30 48', 'ik', 1.4),          // and every load in or out goes through the one gap
+  P('M30 47 L26 53 L34 53 Z', 'ik'),
+]);
+def('keep', () => [                                                  // the last thing to fall, so the walls run about 7.3 m thick and the room inside is small
+  P('M14 52 L14 13 L19 13 L19 9 L24 9 L24 13 L27 13 L27 9 L33 9 L33 13 L36 13 L36 9 L41 9 L41 13 L46 13 L46 52 Z', 'bs'),
+  P('M26 22 L34 22 L34 52 L26 52 Z', 'gh'),
+  S('M26 22 L26 52 M34 22 L34 52', 'ik', 1.6),
+  S('M30 27 L30 34', 'lo', 2.4),                                      // one slit, because a window is a way in
+  ...granules('lo', 5, 811, [16, 26, 24, 48]),
+  ...granules('lo', 5, 313, [36, 26, 44, 48]),
+  S('M8 52 L52 52', 'ik', 2),
+]);
+def('motte_and_bailey', () => [                                      // a heap of earth, a timber tower on top, a ditched yard below: no masons needed, and 741 went up after 1066
+  P('M2 48 L9 48 L13 42 L31 42 L35 50 L38 50 L40 27 L48 27 L51 50 L58 50 L58 54 L2 54 Z', 'bs'),
+  ...[15, 20, 25, 30].map(x => S(`M${x} 42 L${x} 33`, 'ik', 2.4)),    // the bailey's palisade, all of it timber
+  P('M39 27 L49 27 L49 12 L46 12 L46 8 L42 8 L42 12 L39 12 Z', 'hi'),
+  S('M44 27 L44 12', 'lo', 1.4),
+  S('M2 54 L58 54', 'ik', 1.4),
+]);
+def('portcullis', () => [                                            // a grille dropped down grooves cut in the jambs, and a gatehouse often had two, to shut you in between them
+  P('M4 4 L12 4 L12 56 L4 56 Z', 'bs'), P('M48 4 L56 4 L56 56 L48 56 Z', 'bs'),
+  ...[18, 26, 34, 42].map(x => S(`M${x} 7 L${x} 17`, 'gh', 2)),       // the second one, still up
+  S('M14 12 L46 12', 'gh', 2),
+  ...[18, 26, 34, 42].flatMap(x => [S(`M${x} 21 L${x} 42`, 'hi', 3),
+                                    P(`M${x - 3} 42 L${x + 3} 42 L${x} 49 Z`, 'ik')]),
+  ...[27, 35].map(y => S(`M14 ${y} L46 ${y}`, 'hi', 3)),
+  S('M12 8 L48 8', 'ik', 2),
+]);
+def('bastion_fort', () => [                                          // low and thick behind a ditch, with diamond bastions so no stretch of wall lies outside another's fire
+  S('M30 1 L59 30 L30 59 L1 30 Z', 'gh', 1.4),
+  P('M16 16 L44 16 L44 44 L16 44 Z', 'bs'),
+  ...[[16, 16], [44, 16], [44, 44], [16, 44]].map(([x, y]) =>
+    P(`M${x} ${y - 11} L${x + 11} ${y} L${x} ${y + 11} L${x - 11} ${y} Z`, 'hi')),
+  ...[[17, 18, 43, 18], [42, 17, 42, 43], [17, 42, 43, 42], [18, 17, 18, 43]]
+    .map(([a, b, c, d]) => S(`M${a} ${b} L${c} ${d}`, 'ik', 1)),      // every face swept from the bastion beside it
+  P('M23 23 L37 23 L37 37 L23 37 Z', 'lo'),                           // and the height all went into thickness
+]);
+def('siege', () => [                                                 // Leningrad: 872 days of it, and most of the million dead died of hunger rather than shells
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = (i * Math.PI) / 8;
+    return S(`M${n(30 + 17 * Math.cos(a))} ${n(25 + 17 * Math.sin(a))} ` +
+             `L${n(30 + 23 * Math.cos(a))} ${n(25 + 23 * Math.sin(a))}`, 'ik', 2.4);
+  }),
+  ...[[25, 20], [34, 19], [24, 30], [34, 30]].map(([x, y]) =>
+    P(`M${x - 4} ${y - 4} L${x + 4} ${y - 4} L${x + 4} ${y + 4} L${x - 4} ${y + 4} Z`, 'bs')),
+  ...Array.from({ length: 9 }, (_, i) => S(`M${8 + i * 5} 52 L${8 + i * 5} 58`, 'gh', 1.6)),  // and it is counted in days
+]);
+def('blockade', () => [                                              // cutting a whole region off from supply instead of taking it — unlawful where the object is to starve civilians
+  P('M2 3 Q14 16 12 30 Q10 44 2 57 Z', 'lo'),
+  ...[16, 30, 44].map(y => P(`M26 ${y - 5} L38 ${y - 5} L34 ${y + 3} L30 ${y + 3} Z`, 'bs')),
+  S('M32 2 L32 58', 'gh', 1.2),                                       // a line, not a ring: nobody is encircling anything
+  ...[16, 44].map(y => S(`M57 ${y} L50 ${y}`, 'ik', 1.6)),
+  ...[16, 44].map(y => S(`M40 ${y - 4} L48 ${y + 4} M48 ${y - 4} L40 ${y + 4}`, 'ik', 1.8)),
+]);
+def('attrition', () => [                                             // Falkenhayn set out to bleed the French army; ten months on the line was where it started and 700,000 men were not
+  S('M30 2 L30 58', 'gh', 2.4),                                       // the front, which does not move at all
+  ...Array.from({ length: 6 }, (_, i) =>
+    P(`M6 ${6 + i * 9} L24 ${6 + i * 9} L24 ${12 + i * 9} L6 ${12 + i * 9} Z`, i < 2 ? 'bs' : 'gh')),
+  ...Array.from({ length: 6 }, (_, i) =>
+    P(`M36 ${6 + i * 9} L54 ${6 + i * 9} L54 ${12 + i * 9} L36 ${12 + i * 9} Z`, i < 3 ? 'hi' : 'gh')),
+]);
+def('conscription', () => [                                          // the Jourdan Law of 1798: every Frenchman owed himself to the defence of the nation, and 2.6 million were taken
+  ...Array.from({ length: 12 }, (_, i) => C(n(7 + (i % 6) * 9.2), n(5 + Math.floor(i / 6) * 8), 3, 'gh')),
+  P('M4 19 L56 19 L36 35 L36 40 L24 40 L24 35 Z', 'bs'),              // the law, and its shape is a funnel
+  ...[0, 1, 2, 3].map(i => P(`M${19 + i * 6} 44 L${23 + i * 6} 44 L${23 + i * 6} 56 L${19 + i * 6} 56 Z`, 'lo')),
+]);
+def('standing_army', () => [                                         // Tiglath-Pileser III paid off the militias about 745 BC, and after that the army never went home
+  S('M4 8 L56 8', 'gh', 1.4),
+  S('M24 3 L34 13 M34 3 L24 13', 'lo', 2.4),                          // one war, somewhere in the middle, and it changes none of the bars
+  ...Array.from({ length: 12 }, (_, i) =>
+    P(`M${n(5 + i * 4.4)} 22 L${n(8.4 + i * 4.4)} 22 L${n(8.4 + i * 4.4)} 48 L${n(5 + i * 4.4)} 48 Z`, i % 2 ? 'bs' : 'hi')),
+  S('M4 48 L56 48', 'ik', 2),
+  ...Array.from({ length: 12 }, (_, i) => C(n(6.7 + i * 4.4), 54, 1.7, 'lo')),  // paid in every one of them, which is the expensive part
+]);
+def('mercenary', () => [                                             // he fights for gain, so the 1977 Protocol gives him no combatant status at all
+  P('M18 28 Q13 48 30 52 Q47 48 42 28 Q36 24 30 24 Q24 24 18 28 Z', 'bs'),
+  S('M20 28 Q30 19 40 28', 'ik', 2),
+  S('M19 33 Q30 37 41 33', 'ik', 1.6),
+  ...[[47, 51], [54, 47], [50, 44]].map(([x, y]) => E(x, y, 3.6, 2.4, 'hi')),   // and the pay, spilling out beside it
+  P('M6 5 L22 5 L22 17 Q14 23 6 17 Z', 'gh'),                         // and the protection a soldier gets is the thing he does not
+  S('M4 3 L24 19', 'ik', 2.4),
+]);
+def('guerrilla_warfare', () => [                                     // 'little war': ambush and raid instead of battle, and Wellesley brought the word home in 1809
+  S('M2 30 L58 30', 'ik', 1.6),
+  ...[12, 22, 32, 42].map(x => C(x, 30, 3.4, 'lo')),                  // the column on the road, which is the only thing here that is a formation
+  ...[[13, 9], [35, 7], [22, 51], [46, 49]].flatMap(([x, y]) => [
+    C(x, y, 2.2, 'bs'), C(n(x + 5), n(y + (y < 30 ? 2 : -2)), 2, 'bs'), C(n(x - 4), n(y + (y < 30 ? 3 : -3)), 1.8, 'bs'),
+    S(`M${n(x + 1)} ${y < 30 ? y + 6 : y - 6} L${n(x + 5)} ${y < 30 ? 26 : 34}`, 'ik', 1.4),
+  ]),
+]);
+def('total_war', () => [                                             // Ludendorff's word, 1935: the whole economy mobilised, and the other side's civilians inside the ring with it
+  ring('ik', 30, 30, 26, 1.4),
+  ring('ik', 30, 30, 17, 1),
+  S('M30 1 L30 9 M30 51 L30 59 M1 30 L9 30 M51 30 L59 30', 'ik', 1.4),
+  P('M13 40 L27 40 L27 28 L22 28 L22 21 L17 21 L17 28 L13 28 Z', 'bs'),
+  P('M32 40 L47 40 L47 30 L39.5 24 L32 30 Z', 'hi'),
+  ...[20, 30, 40].flatMap(x => [C(x, 46, 2.6, 'lo'), S(`M${x} 49 L${x} 54`, 'lo', 2)]),
+]);
+
+/* the sky, drawn as the measurement or the mechanism, never as a pretty star */
+def('gravity', () => [                                               // 10^42 times weaker than the electric force between the same two particles, and it is the one that builds everything
+  C(7, 7, 2, 'ik'), C(19, 7, 2, 'ik'),
+  S('M12 7 L4 7 M14 7 L22 7', 'ik', 1.2),                             // the strong one, between two electrons, going nowhere
+  ...Array.from({ length: 6 }, (_, i) => {
+    const y = 16 + i * 8, sag = n(14 - Math.abs(i - 2.5) * 3);
+    return S(`M4 ${y} Q30 ${n(y + sag)} 56 ${y}`, 'gh', 1.2);
+  }),
+  C(30, 38, 8, 'bs'), C(27, 35, 3, 'hi'),
+]);
+def('orbit', () => [                                                 // Newton's cannonball: fire it hard enough and the ground curves away exactly as fast as the ball falls
+  ring('hi', 30, 34, 24, 1.8),
+  C(30, 34, 18, 'bs'),
+  P('M22 18 Q30 10 38 18 Z', 'hi'),
+  S('M30 15 L44 19', 'ik', 2.6),
+  S('M30 14 Q39 15 42.7 21.3', 'hi', 1.4),                            // the shot that lands...
+  S('M30 14 Q45 16 46.9 27.8', 'hi', 1.4),
+  C(30, 10, 2.4, 'ik'),                                               // ...and the one that keeps missing
+]);
+def('solar_system', () => [                                          // out of a molecular cloud 4.568 billion years ago, and the Sun kept 99.86% of the mass for itself
+  ...[12, 18, 24].map(rad => ring('gh', 26, 28, rad, 1)),
+  C(26, 28, 11, 'bs'), C(21, 23, 4, 'hi'),
+  C(38, 28, 2.2, 'ik'), C(26, 10, 1.8, 'ik'), C(49.6, 32.2, 2.4, 'ik'),  // everything else, at the scale it deserves
+]);
+def('escape_velocity', () => [                                       // 2.38 km/s off the Moon, 11.186 off Earth, 617.7 off the Sun — and it does not care what is leaving
+  C(11, 50, 6, 'ik'), S('M11 43 L11 36', 'ik', 2), P('M8 38 L14 38 L11 32 Z', 'ik'),
+  C(30, 52, 9, 'bs'), S('M30 42 L30 27', 'ik', 2.4), P('M26 29 L34 29 L30 21 Z', 'ik'),
+  C(51, 55, 13, 'hi'), S('M51 41 L51 13', 'ik', 3), P('M46 16 L56 16 L51 6 Z', 'ik'),
+  C(22, 33, 2.2, 'gh'), C(38, 32, 4.6, 'gh'),                         // a pebble and a ship, and the number is identical for both
+]);
+def('astronomical_unit', () => [                                     // fixed by definition at 149,597,870,700 metres, and sunlight takes 499 seconds to cross it
+  C(9, 28, 8, 'bs'),
+  ...[0, 60, 120, 180, 240, 300].map(a => S(
+    `M${n(9 + 10 * Math.cos(a * Math.PI / 180))} ${n(28 + 10 * Math.sin(a * Math.PI / 180))} ` +
+    `L${n(9 + 13 * Math.cos(a * Math.PI / 180))} ${n(28 + 13 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.4)),
+  C(53, 28, 3.4, 'lo'),
+  S('M9 44 L9 54 M53 34 L53 54', 'gh', 1.2),
+  S('M9 50 L53 50', 'ik', 1.6),
+  P('M9 50 L16 47 L16 53 Z', 'ik'), P('M53 50 L46 47 L46 53 Z', 'ik'),  // it is a distance, and a defined one
+  ...Array.from({ length: 6 }, (_, i) => S(`M${n(20 + i * 5.2)} 16 L${n(23 + i * 5.2)} 16`, 'hi', 2)),
+  P('M53 16 L46 13 L46 19 Z', 'hi'),
+]);
+def('light_year', () => [                                            // what light covers in a Julian year of 365.25 days. A length. People keep hearing a duration
+  S('M4 34 L56 34', 'ik', 2.4),
+  ...Array.from({ length: 11 }, (_, i) =>
+    S(`M${n(5 + i * 4.6)} 34 L${n(5 + i * 4.6)} ${i % 5 === 0 ? 25 : 29}`, 'ik', 1.4)),
+  ...Array.from({ length: 6 }, (_, i) => S(`M${n(7 + i * 8)} 45 L${n(12 + i * 8)} 45`, 'hi', 2.4)),
+  P('M57 45 L50 42 L50 48 Z', 'hi'),
+  C(15, 13, 8, 'gh'), S('M15 13 L15 7 M15 13 L20 15', 'gh', 1.8),
+  S('M7 5 L23 21', 'ik', 2.4),                                        // not this
+]);
+def('parsec', () => [                                                // the distance at which one AU subtends one arcsecond: 3.26 light-years, named in 1913
+  S('M8 20 L54 30 L8 40', 'ik', 1.4),
+  S('M8 20 L8 40', 'ik', 2.6),                                        // the baseline, and it is one AU
+  C(8, 20, 4.4, 'bs'), C(8, 40, 2.4, 'ik'),
+  C(54, 30, 3.6, 'hi'),
+  S('M45 27.5 A11 11 0 0 1 45 32.5', 'gh', 1.4),                      // one arcsecond, which is the whole definition
+  S('M3 20 L3 40', 'gh', 1.2),
+  P('M3 20 L0.8 25 L5.2 25 Z', 'gh'), P('M3 40 L0.8 35 L5.2 35 Z', 'gh'),
+]);
+def('main_sequence', () => [                                         // where core hydrogen burns, and where a star spends about 90% of the time it has
+  S('M10 5 L10 52 L57 52', 'ik', 1.6),
+  P('M14 9 L24 9 L52 45 L42 45 Z', 'bs'),                             // the band, and nearly everything is on it
+  ...[[19, 13], [27, 23], [41, 39], [47, 44]].map(([x, y]) => C(x, y, 2.2, 'hi')),
+  C(34, 31, 4, 'lo'),                                                 // the Sun, two-thirds of the way through its turn on it
+  C(47, 12, 2.4, 'gh'), C(52, 19, 2.4, 'gh'), C(18, 45, 2, 'gh'),     // and the few that are not
+]);
+def('red_dwarf', () => [                                             // three-quarters of every fusing star in the galaxy, not one visible to the eye, and none has ever died
+  S('M3 12 Q13 4 23 12 Q13 20 3 12 Z', 'gh', 1.4), C(13, 12, 2.4, 'gh'),
+  S('M2 19 L24 5', 'ik', 2.4),                                        // nobody has ever seen one without a telescope
+  C(46, 13, 12, 'gh'),                                                // a Sun, drawn for scale
+  ...Array.from({ length: 12 }, (_, i) => {
+    const x = 10 + (i % 4) * 10, y = 31 + Math.floor(i / 4) * 10;
+    return C(x, y, i < 9 ? 3.4 : 5, i < 9 ? 'bs' : 'hi');
+  }),
+]);
+def('planetary_nebula', () => [                                      // Herschel's misnomer, and it lasts about ten thousand years: gas a dying star shed, lit from inside
+  ...granules('gh', 9, 733, [10, 10, 50, 50]),
+  ring('bs', 30, 28, 20, 4.5),
+  ring('hi', 30, 28, 13, 2),
+  C(30, 28, 3.4, 'hi'),                                              // and this is all that is left of the star
+  C(50, 51, 4.2, 'gh'), ['g', -20, 50, 51, [E(50, 51, 8.5, 2.4, 'gh')]],
+  S('M42 58 L58 44', 'ik', 2.4),                                     // there is no planet anywhere in it
+]);
+def('supernova_remnant', () => [                                     // ejecta at a tenth of light speed ploughing into the gas around it — and where the galaxy's cosmic rays are made
+  ...granules('gh', 10, 617, [26, 8, 56, 52]),
+  S('M18 4 A26 26 0 0 1 18 54', 'bs', 4.5),                          // the shock front, and it is the front that matters
+  S('M8 10 A22 22 0 0 1 8 48', 'hi', 2),
+  ...[16, 29, 42].map(y => S(`M4 ${y} L16 ${y}`, 'hi', 1.6)),
+  ...[[44, 12, -4], [50, 30, 0], [45, 46, 4]].map(([x, y, dy]) =>
+    S(`M${x} ${y} L${x + 9} ${y + dy}`, 'ik', 1.8)),                  // and a few things come out of it much faster than that
+]);
+def('binary_star', () => [                                           // a third of the systems in the galaxy, and the only way anyone has ever weighed a star directly
+  S('M6 30 A24 12 0 1 0 54 30 A24 12 0 1 0 6 30', 'gh', 1.2),
+  S('M20 30 A10 5 0 1 0 40 30 A10 5 0 1 0 20 30', 'gh', 1.2),
+  S('M26 26 L34 34 M34 26 L26 34', 'ik', 1.8),                        // the barycentre, and where it sits is the mass ratio
+  C(20, 30, 7.5, 'bs'), C(17, 27, 2.6, 'hi'),
+  C(54, 30, 4.5, 'hi'),
+]);
+def('stellar_classification', () => [                                // O B A F G K M, hottest first — Annie Jump Cannon's order, and the Sun falls out at G2V
+  ...Array.from({ length: 7 }, (_, i) =>
+    P(`M${n(4 + i * 7.6)} 11 L${n(10.6 + i * 7.6)} 11 L${n(10.6 + i * 7.6)} 40 L${n(4 + i * 7.6)} 40 Z`,
+      i < 2 ? 'hi' : i < 5 ? 'bs' : 'lo')),
+  ...Array.from({ length: 7 }, (_, i) =>
+    S(`M${n(4 + i * 7.6)} ${17 + (i % 3) * 5} L${n(10.6 + i * 7.6)} ${17 + (i % 3) * 5}`, 'ik', 1.2)),
+  ...Array.from({ length: 7 }, (_, i) =>
+    S(`M${n(4 + i * 7.6)} ${n(28 + (i % 2) * 6)} L${n(10.6 + i * 7.6)} ${n(28 + (i % 2) * 6)}`, 'ik', 1)),
+  S('M4 44 L57 44', 'ik', 1.4),                                       // the order is by spectrum, which is why the letters are out of order
+  P('M34.4 46 L41 46 L37.7 53 Z', 'bs'),
+]);
+def('apparent_magnitude', () => [                                    // backwards and logarithmic: five steps is exactly a hundred times, and a good eye stops near +6.5
+  S('M4 40 L56 40', 'ik', 1.8),
+  ...Array.from({ length: 7 }, (_, i) => S(`M${n(10 + i * 7.3)} 40 L${n(10 + i * 7.3)} 45`, 'ik', 1.2)),
+  ...Array.from({ length: 7 }, (_, i) =>
+    C(n(10 + i * 7.3), 25, n(8.5 / (1 + i * .62)), i === 6 ? 'gh' : 'bs')),  // the number goes up as the star goes down
+  S('M50 12 L50 47', 'ik', 2),
+  S('M24 53 L8 53', 'ik', 1.4), P('M8 53 L15 50 L15 56 Z', 'ik'),
+]);
+def('asteroid_belt', () => [                                         // 2.06 to 3.27 AU, and 99.9% of the mass that was there has gone — the rest adds up to 3% of the Moon
+  C(30, 30, 3.4, 'hi'),
+  ring('gh', 30, 30, 10, 1),
+  ring('gh', 30, 30, 26, 1),                                          // Jupiter's orbit, which is the reason for the emptiness
+  ...Array.from({ length: 26 }, (_, i) => {
+    const a = (i * 137.5) * Math.PI / 180, rad = 14 + ((i * 7) % 9);
+    return C(n(30 + rad * Math.cos(a)), n(30 + rad * Math.sin(a)), n(1 + (i % 3) * .5), 'bs');
+  }),
+  ...[[19, 21], [41, 39]].map(([x, y]) => C(x, y, 2.8, 'hi')),
+]);
+def('meteoroid', () => [                                             // the IAU drew both lines in 2017: 30 micrometres at one end, one metre at the other
+  C(9, 32, 1.6, 'gh'),
+  P('M23 24 L32 20 L38 28 L34 38 L24 38 L19 31 Z', 'bs'),             // and only this middle band is the word
+  P('M46 13 L56 17 L58 33 L50 46 L43 42 L41 25 Z', 'gh'),
+  S('M15 11 L15 50 M40 11 L40 50', 'ik', 1.6),
+  S('M15 53 L40 53', 'ik', 1.2),
+  P('M15 53 L21 50 L21 56 Z', 'ik'), P('M40 53 L34 50 L34 56 Z', 'ik'),
+]);
+def('meteor', () => [                                                // the streak is air being compressed in front of it, not rubbed — it starts near 120 km and is over by 50
+  S('M4 14 L56 14', 'gh', 1.4),
+  S('M4 44 L56 44', 'gh', 1.4),                                       // and the whole event happens between these two lines
+  S('M30 16 L36 25', 'gh', 1.6), S('M46 17 L51 25', 'gh', 1.6),
+  S('M18 14 L38 42', 'bs', 4),
+  C(38, 42, 3.2, 'hi'),
+  S('M46.6 42 L40.9 46.1 L35.2 50.1', 'hi', 1.8),
+  S('M51.1 44.9 L43.8 50.1 L36.5 55.3', 'hi', 1.4),   // the air piling up ahead of it, which is what is actually glowing
+]);
+def('heliosphere', () => [                                           // the bubble the solar wind inflates against interstellar space — Voyager 1 came out of it at 121 AU
+  P('M6 30 Q10 10 28 6 L58 11 L58 49 L28 54 Q10 50 6 30 Z', 'gh'),
+  S('M14 30 Q17 16 30 12 L56 16 M14 30 Q17 44 30 48 L56 44', 'bs', 1.6),  // the termination shock, well inside it
+  C(24, 30, 5, 'hi'),
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => S(
+    `M${n(24 + 7 * Math.cos(a * Math.PI / 180))} ${n(30 + 7 * Math.sin(a * Math.PI / 180))} ` +
+    `L${n(24 + 11 * Math.cos(a * Math.PI / 180))} ${n(30 + 11 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.2)),
+  ...[14, 30, 46].map(y => S(`M1 ${y} L7 ${y}`, 'ik', 1.2)),          // pressed on from outside, which is what gives it a nose
+  C(47, 6, 2, 'ik'), S('M40 19 L48 7', 'ik', 1.2),
+]);
+def('magnetosphere', () => [                                         // held off at five to ten Earth radii on the day side, and drawn out behind into a tail 6.3 million km long
+  ...[6, 18, 42, 54].flatMap(y => [S(`M1 ${y} L9 ${y}`, 'ik', 1.2),
+                                   P(`M9 ${y} L4 ${y - 2.4} L4 ${y + 2.4} Z`, 'ik')]),
+  S('M20 6 Q2 20 2 30 Q2 40 20 54', 'gh', 1.6),
+  S('M20 12 Q8 22 8 30 Q8 38 20 48', 'bs', 2.4),                      // squashed close in on the side facing the Sun
+  S('M22 22 Q34 14 58 16 M22 38 Q34 46 58 44', 'bs', 2),
+  S('M28 30 L58 30', 'gh', 1.2),
+  C(20, 30, 6, 'hi'), S('M20 24 L20 36', 'ik', 1.4),
+]);
+def('aurora', () => [                                                // atomic oxygen struck by electrons coming down the field lines: green at 100 km, red only above 150
+  ...[0, 1, 2, 3].flatMap(i => [S(`M${n(9 + i * 14)} 2 L${n(9 + i * 14)} 7`, 'ik', 1.2),
+                                P(`M${n(6 + i * 14)} 6 L${n(12 + i * 14)} 6 L${n(9 + i * 14)} 12 Z`, 'ik')]),
+  P('M4 17 Q16 11 30 17 Q44 23 56 15 L56 31 Q44 39 30 33 Q16 27 4 33 Z', 'lo'),
+  P('M4 33 Q16 27 30 33 Q44 39 56 31 L56 47 Q44 55 30 49 Q16 43 4 49 Z', 'bs'),  // two heights, two lines, one gas
+  ...[10, 20, 30, 40, 50].map(x => S(`M${x} 18 L${x} 48`, 'hi', 1)),
+]);
+def('sunspot', () => [                                               // magnetism strangling the convection: 3,000 K against 5,780, so it is dark only by comparison
+  ...Array.from({ length: 24 }, (_, i) =>
+    C(n(6 + (i % 6) * 9.6), n(7 + Math.floor(i / 6) * 15), n(4 + (i % 3) * .8), 'hi')),
+  ...Array.from({ length: 20 }, (_, i) => {
+    const a = (i * 18) * Math.PI / 180;
+    return S(`M${n(32 + 8 * Math.cos(a))} ${n(36 + 6.4 * Math.sin(a))} ` +
+             `L${n(32 + 15.5 * Math.cos(a))} ${n(36 + 12.4 * Math.sin(a))}`, 'lo', 1.4);
+  }),
+  E(32, 36, 8, 6.4, 'lo'),
+  S('M21 24 Q32 2 43 24', 'ik', 1.8),                                 // the flux tube, out of the surface and back into it
+]);
+def('coronal_mass_ejection', () => [                                 // 1.6 billion tonnes of corona at about 489 km/s, and one of them put Quebec's grid out on 13 March 1989
+  P('M1 3 Q15 30 1 57 Z', 'bs'),
+  S('M8 6 A25 25 0 0 1 8 54', 'hi', 3.4),                             // the bright front...
+  S('M8 16 A15 15 0 0 1 8 44', 'lo', 2),                              // ...the cavity behind it...
+  C(15, 30, 4, 'bs'),                                                 // ...and the dense core inside that
+  S('M44 54 L44 28 M56 54 L56 28', 'ik', 2.2),                       // a transmission line, which is the part that failed
+  S('M40 30 L48 30 M52 30 L59 30', 'ik', 1.6),
+  S('M44 33 Q50 41 56 33', 'ik', 1.4),
+  bolt('lo', 50, 2, .55),                                             // and eighty seconds later, no lights in Quebec
+]);
+def('solar_eclipse', () => [                                         // 400 times wider and 400 times further off, so the discs match — and totality never runs past 7 min 32 s
+  P('M46 2 Q36 30 46 58 L59 58 L59 2 Z', 'bs'),
+  S('M10 21 L41.4 30 M10 39 L41.4 30', 'ik', 1.2),                    // the umbral cone, and it only just reaches
+  S('M10 21 L45 38.4 M10 39 L45 21.6', 'gh', 1.2),
+  C(10, 30, 9, 'hi'),
+  C(33, 30, 3.4, 'bs'), ring('ik', 33, 30, 3.4, 1),                   // 400 times smaller, and 400 times nearer
+  C(41.6, 30, 2.2, 'lo'),                                              // and the totality is that small a spot, moving fast
+]);
+
+/* ── completeness batch: the astronomy scaffolding, the immune system and
+ *    how it is read, the men who worked out asepsis, and the words genetics
+ *    needs before any of the rest of it will parse ───────────────────────*/
+
+def('lunar_eclipse', () => [                                          // the Moon walks into Earth's shadow, and Earth's own air paints what lands there
+  P('M12 20 L58 26 L58 34 L12 40 Z', 'bs'),                            // the umbra, narrowing away from the Sun
+  C(12, 30, 11, 'lo'),                                                 // Earth, and from here it is only a silhouette
+  ring('hi', 12, 30, 11.8, 1.6),                                       // its atmosphere — which is the one thing lighting the Moon at all
+  S('M1 15 Q8 21 15 24', 'gh', 1.4), S('M1 45 Q8 39 15 36', 'gh', 1.4),  // sunlight arriving, and bending as it grazes
+  C(43, 30, 7.5, 'hi'), ring('lo', 43, 30, 7.5, 1.4), C(46, 27, 2.2, 'bs'),                          // the Moon, deep in the shadow and still perfectly visible
+]);
+def('hubbles_law', () => [                                            // v = H0 D, and a century on the slope still will not settle
+  S('M10 50 L54 50', 'ik', 1.6), S('M10 50 L10 8', 'ik', 1.6),         // distance across, recession speed up
+  S('M10 50 L52 14', 'bs', 2.4),                                       // one measurement of the constant...
+  S('M10 50 L52 22', 'lo', 2.4),                                       // ...and the other, which does not agree with it
+  ...[[16, 45], [22, 40], [27, 35], [33, 30], [38, 26], [45, 20], [49, 17]]
+    .map(([x, y]) => C(x, y, 2.2, 'hi')),                              // the galaxies the line was drawn through
+]);
+def('cosmic_inflation', () => [                                       // one patch, its size doubling every ten-to-the-minus-thirty-seven of a second
+  ...[3, 6, 12, 24, 44].map((w, i) =>
+    S(`M8 52 L${8 + w} 52 L${8 + w} ${52 - w} L8 ${52 - w} Z`, i === 4 ? 'bs' : 'gh', 1.6)),
+  C(9.6, 50.4, 1.8, 'bs'),                                             // it started small enough to have been all one temperature
+  S('M11 5 L21 5', 'hi', 3), S('M43 5 L53 5', 'hi', 3),                // which is the only reason opposite skies read the same
+]);
+def('observable_universe', () => [                                    // 46.5 billion light-years out, from light that only ever travelled 13.8
+  C(30, 30, 25, 'gh'),
+  ring('lo', 30, 30, 25, 1.6),                                         // the edge, as far out as it now stands
+  ring('bs', 30, 30, 13, 2),                                           // and where the light that reaches us actually set out from
+  ...[[19, 15], [42, 17], [47, 33], [24, 45], [38, 46], [14, 34], [33, 10], [50, 43]]
+    .map(([x, y]) => E(x, y, 3, 1.6, 'lo')),                           // the galaxies in between, all of them receding
+  C(30, 30, 2.6, 'hi'),                                                // us, unavoidably at the middle of our own sphere
+  ...[35, 160, 275].map(deg => {                                       // and expansion, carrying that edge further out the whole time
+    const a = deg * Math.PI / 180;
+    const x1 = n(30 + 17 * Math.cos(a)), y1 = n(30 + 17 * Math.sin(a));
+    const x2 = n(30 + 23 * Math.cos(a)), y2 = n(30 + 23 * Math.sin(a));
+    return [S(`M${x1} ${y1} L${x2} ${y2}`, 'hi', 1.8),
+            S(`M${x2} ${y2} L${n(x2 - 3.6 * Math.cos(a - 0.5))} ${n(y2 - 3.6 * Math.sin(a - 0.5))}`, 'hi', 1.6),
+            S(`M${x2} ${y2} L${n(x2 - 3.6 * Math.cos(a + 0.5))} ${n(y2 - 3.6 * Math.sin(a + 0.5))}`, 'hi', 1.6)];
+  }).flat(),
+]);
+def('event_horizon', () => {                                          // where escape velocity reaches c, and every direction out of it points back in
+  const cone = (px, py, deg) => {
+    const arm = d => {
+      const a = deg * Math.PI / 180 + d;
+      return [n(px + 12 * Math.cos(a)), n(py + 12 * Math.sin(a))];
+    };
+    const [ax, ay] = arm(0.42), [bx, by] = arm(-0.42);
+    return [S(`M${ax} ${ay} L${px} ${py} L${bx} ${by}`, 'hi', 1.8),
+            S(`M${ax} ${ay} L${bx} ${by}`, 'gh', 1.2)];
+  };
+  return [
+    C(18, 32, 14, 'lo'),                                               // there is no surface here — only the boundary
+    ring('bs', 18, 32, 14, 2.6),
+    S('M56 32 L34 32', 'gh', 1.2),                                     // one path in, and three futures along it
+    ...cone(54, 32, -90),                                              // far out, the future still opens away from it
+    ...cone(42, 32, -150),                                             // nearer, it has tipped over
+    ...cone(31, 32, 180),                                              // and at the boundary there is nowhere left but in
+  ];
+});
+def('gravitational_wave', () => {                                     // space stretched one way while it squeezes the other, by a thousandth of a proton
+  const oval = (cx, cy, rx, ry, r, w) =>
+    S(`M${n(cx - rx)} ${cy} A${rx} ${ry} 0 1 1 ${n(cx + rx)} ${cy} ` +
+      `A${rx} ${ry} 0 1 1 ${n(cx - rx)} ${cy}`, r, w);
+  const pts = [];
+  for (let i = 0; i <= 30; i++) {
+    const amp = 1 + i * 0.18, ph = i * i * 0.018 + i * 0.28;
+    pts.push(`${i ? 'L' : 'M'}${n(6 + i * 1.6)} ${n(45 + amp * Math.sin(ph))}`);
+  }
+  return [
+    oval(16, 19, 13, 6.5, 'bs', 2.4),                                  // a ring of free masses, pulled wide...
+    oval(45, 19, 6.5, 13, 'hi', 2.4),                                  // ...and a quarter cycle later, pulled tall instead
+    S('M31 19 L36 19', 'gh', 1.4), P('M35 16.5 L40 19 L35 21.5 Z', 'gh'),
+    S(pts.join(' '), 'ik', 1.8),                                       // the chirp: louder and faster right up to the merger
+  ];
+});
+def('gravitational_lensing', () => [                                  // mass bends light, and by exactly twice what Newton allowed for
+  ring('gh', 30, 32, 18, 1),                                           // dead-on alignment would smear the source right round
+  S('M30 32 L19.7 17.3', 'gh', 1.2), S('M30 32 L40.3 46.7', 'gh', 1.2),  // both of these are the one object behind
+  S('M13.69 24.39 A18 18 0 0 1 28.43 14.07', 'hi', 4),                 // slightly off, and it arrives as arcs instead
+  S('M46.31 39.61 A18 18 0 0 1 31.57 49.93', 'hi', 4),
+  C(30, 32, 9, 'bs'), C(26, 28, 3, 'lo'),                              // the mass in front, doing all of the bending
+]);
+
+def('antibiotic', () => {                                             // Waksman's 1942 word: what one microbe makes to stop another, and the clear ring is the whole test
+  const lawn = [];
+  let s = 811 >>> 0;
+  const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
+  while (lawn.length < 24) {
+    const x = 4 + rnd() * 52, y = 4 + rnd() * 52, r = 1.2 + rnd() * 1.2;
+    if (Math.hypot(x - 30, y - 30) < 20) continue;                     // nothing grows inside the zone
+    lawn.push(C(n(x), n(y), n(r), 'lo'));
+  }
+  return [
+    ...lawn,                                                           // a lawn of bacteria, everywhere it is allowed
+    ring('gh', 30, 30, 19, 1.4),                                       // the edge of inhibition
+    C(30, 30, 7, 'bs'), ring('hi', 30, 30, 4, 1.4),                    // the colony it diffused out from
+  ];
+});
+def('antiviral', () => [                                              // it copies itself with your machinery, so the drug jams the copying rather than the virus
+  S('M6 8 Q30 3 54 8', 'gh', 1.4),                                     // all of it happening inside one of your own cells
+  S('M6 40 L40 40', 'ik', 1.8),
+  ...[10, 18, 26, 34].map(x => C(x, 40, 4.2, 'bs')),                   // the chain, running along nicely
+  C(42, 40, 4.6, 'lo'),                                                // then the analogue goes in
+  S('M48 33 L48 47', 'ik', 3),                                         // and it has no 3' hydroxyl to attach the next one to
+  C(55, 40, 4, 'gh'),                                                  // which therefore never arrives
+  S('M14 26 A18 18 0 0 1 46 26', 'hi', 2.6),                           // the viral polymerase, clamped over the join it just made
+]);
+def('antifungal', () => [                                             // a fungus is a eukaryote like you; the one usable difference is the sterol in the membrane
+  ...[15, 45].flatMap(x => [S(`M${x - 5} 10 L${x - 5} 44`, 'ik', 2),
+                            S(`M${x + 5} 10 L${x + 5} 44`, 'ik', 2)]), // two bilayers, near enough the same
+  P('M11 22 L19 22 L19 32 L11 32 Z', 'hi'),                            // yours, built on cholesterol
+  P('M41 22 L49 22 L49 32 L41 32 Z', 'bs'),                            // and the fungus's, on ergosterol — the one usable difference
+  S('M38 19 L52 35 M52 19 L38 35', 'ik', 3),                           // so that is the only thing there is to aim at
+  ...[[45, 49], [51, 54], [39, 53]].map(([x, y]) => C(x, y, 2.4, 'gh')),  // take it out and the membrane goes, and the cell with it
+]);
+def('macrophage', () => [                                             // one cell type under a dozen local names, crawling through tissue on pseudopods
+  P('M6 30 Q4 18 16 14 Q26 4 34 12 Q48 8 50 20 Q58 28 50 36 Q52 50 40 48 ' +
+    'Q30 58 22 48 Q8 46 6 30 Z', 'bs'),
+  P('M20 24 Q26 14 36 20 Q44 26 36 32 Q30 26 22 32 Q17 30 20 24 Z', 'lo'),  // the kidney-shaped nucleus that tells it from a neutrophil
+  ...[[26, 40], [36, 40], [43, 30]].map(([x, y]) => C(x, y, 3.4, 'hi')),    // vacuoles, with the last meal still in them
+]);
+def('neutrophil', () => [                                             // dead within hours, and able to kill by throwing its own chromatin out as a net
+  C(22, 30, 15, 'bs'),
+  ...[[16, 24], [24, 21], [28, 32], [18, 38]].map(([x, y]) => C(x, y, 4.4, 'lo')),  // the nucleus, in lobes...
+  S('M18 26 L23 23 M26 25 L27 30 M25 35 L20 36', 'lo', 1.6),           // ...joined by threads, which is all polymorphonuclear ever meant
+  S('M40 13 Q52 30 40 47', 'hi', 1.4), S('M33 18 Q47 30 34 43', 'hi', 1.4),
+  ...[[38, 14], [48, 22], [52, 34], [45, 45], [36, 49]]
+    .map(([x, y]) => S(`M34 30 L${x} ${y}`, 'hi', 1.3)),               // the net, flung out and sticky
+  rod3('ik', 45, 31, 5, 2.4),                                          // with a bacterium caught in it
+]);
+def('innate_immunity', () => [                                        // it reads a pattern whole classes of pathogen share and none of your own cells carry
+  S('M4 46 L56 46', 'ik', 2.6),                                        // your own surface
+  ...[16, 40].map(x => P(`M${x - 6} 46 L${x - 6} 38 L${x - 2} 38 L${x - 2} 41 ` +
+                         `L${x + 2} 41 L${x + 2} 38 L${x + 6} 38 L${x + 6} 46 Z`, 'bs')),  // the receptor, notched for one shape and no other
+  rod3('lo', 13, 16, 8, 4),                                            // three quite unrelated things...
+  C(31, 13, 7, 'lo'),
+  hex('lo', 48, 18, 7, 2.4),
+  ...[[13, 22], [31, 21], [48, 26]].map(([x, y]) =>
+    P(`M${x - 2} ${y} L${x + 2} ${y} L${x + 2} ${y + 4} L${x - 2} ${y + 4} Z`, 'hi')),     // ...all carrying the same tag
+]);
+def('adaptive_immunity', () => [                                      // a small library of segments, cut and rejoined into a receptor for what has never been met
+  ...Array.from({ length: 7 }, (_, i) =>
+    P(`M${5 + i * 7.4} 6 L${10 + i * 7.4} 6 L${10 + i * 7.4} 12 L${5 + i * 7.4} 12 Z`,
+      i === 3 ? 'bs' : 'gh')),                                         // V
+  ...Array.from({ length: 3 }, (_, i) =>
+    P(`M${16 + i * 10} 17 L${21 + i * 10} 17 L${21 + i * 10} 23 L${16 + i * 10} 23 Z`,
+      i === 2 ? 'bs' : 'gh')),                                         // D
+  ...Array.from({ length: 4 }, (_, i) =>
+    P(`M${11 + i * 9} 28 L${16 + i * 9} 28 L${16 + i * 9} 34 L${11 + i * 9} 34 Z`,
+      i === 1 ? 'bs' : 'gh')),                                         // J
+  S('M30 12 L38 17 M38 23 L22 28 M22 34 L30 44', 'ik', 1.3),           // one taken from each row, the rest thrown away
+  S('M30 44 L30 56', 'lo', 3.4), S('M30 44 L23 37', 'bs', 3), S('M30 44 L37 37', 'bs', 3),
+]);
+def('pus', () => [                                                    // mostly neutrophils that died doing the job, and green from the enzyme that killed for them
+  P('M14 22 Q30 13 46 22 Q53 36 42 46 Q30 55 18 46 Q7 36 14 22 Z', 'bs'),
+  ...[[22, 29], [35, 26], [41, 37], [23, 41], [32, 45]].map(([x, y]) =>
+    S(`M${x - 5} ${y} Q${x} ${y - 5} ${x + 5} ${y} Q${x} ${y + 4} ${x - 5} ${y}`, 'hi', 1.4)),  // the cells, burst
+  hex('lo', 30, 34, 5, 1.8),                                           // myeloperoxidase — the colour is a protein, not the bacteria
+]);
+def('abscess', () => [                                                // pus collected into a pocket, and the treatment is still to open it and let it out
+  P('M2 20 L58 20 L58 58 L2 58 Z', 'gh'),                              // the tissue it has made a home in
+  S('M2 20 L58 20', 'ik', 2),
+  P('M13 40 Q11 27 24 26 Q40 24 45 34 Q49 46 36 51 Q20 54 13 40 Z', 'bs'),
+  S('M13 40 Q11 27 24 26 Q40 24 45 34 Q49 46 36 51 Q20 54 13 40 Z', 'ik', 3.4),  // walled off, which is what stops a drug reaching it
+  ...granules('hi', 9, 617, [18, 31, 40, 47]),
+  P('M25 26 L33 26 L34 20 L24 20 Z', 'bs'),                            // so it is opened, and the tract carries it out
+  ...[[29, 14, 2.4], [33, 8, 1.8], [25, 7, 1.4]].map(([x, y, r]) => C(x, y, r, 'bs')),
+]);
+def('bone_marrow', () => [                                            // five per cent of you, releasing half a trillion new blood cells a day
+  ring('gh', 24, 32, 16, 5),                                           // the bone, cut across
+  C(24, 32, 12, 'lo'),                                                 // the marrow filling it
+  ...granules('bs', 9, 733, [15, 23, 33, 41]),
+  S('M14 27 Q24 33 33 25 M15 39 Q26 33 34 41', 'hi', 1.3),             // the trabeculae it grows between
+  S('M38 25 L45 18 M39 31 L50 28 M38 36 L47 39 M36 41 L52 49', 'gh', 1.2),
+  ...[[46, 16], [52, 27], [49, 40], [54, 51]].map(([x, y]) => C(x, y, 3, 'bs')),  // and the output, leaving all day, every day
+]);
+def('thymus', () => [                                                 // it kills off every T cell that would have turned on you, and then it turns to fat
+  P('M28 5 Q15 8 13 20 Q12 30 22 33 L28 31 Z', 'bs'),                  // two lobes...
+  P('M32 5 Q45 8 47 20 Q48 30 38 33 L32 31 Z', 'gh'),                  // ...one of them already going over
+  ...[[40, 15], [44, 24], [36, 25]].map(([x, y]) => C(x, y, 3, 'hi')), // to fat, which is all that is left of it by forty
+  ...[[15, 44], [30, 44], [45, 44]].map(([x, y]) => C(x, y, 5, 'lo')), // the cells it is testing, one at a time
+  S('M15 50 L15 57 M45 50 L45 57', 'bs', 2.4),                         // two pass...
+  S('M25 39 L35 49 M35 39 L25 49', 'ik', 2.2),                         // ...and the one that reacted against you is made to kill itself
+]);
+def('parasite', () => [                                               // not a lineage at all — a way of making a living, arrived at over and over by things unrelated
+  S('M4 34 Q30 27 56 34', 'ik', 3.4),                                  // one host, and all of this on it
+  S('M11 31 Q8 20 15 15 Q22 12 19 22 Q17 28 13 30', 'bs', 2.2),        // a worm
+  C(28, 21, 4, 'lo'),
+  ...[-1, 1].flatMap(d => [S(`M${28 + d * 4} 19 L${28 + d * 8} 14`, 'lo', 1.2),
+                           S(`M${28 + d * 4} 23 L${28 + d * 8} 26`, 'lo', 1.2)]),  // a louse
+  ring('hi', 40, 20, 6, 2),                                            // a ringworm, which is a fungus
+  S('M51 31 L51 13', 'bs', 2),
+  leaf('bs', 46, 19, .34, -40), leaf('bs', 56, 16, .34, 40),           // and a flowering plant, at the identical trade
+]);
+def('toxin', () => [                                                  // Brieger's word for a poison a living thing makes, and the fatal dose can be too small to see
+  C(14, 17, 9, 'bs'), C(14, 17, 3.4, 'lo'),                            // the cell that made it
+  ...[[25, 25], [32, 32], [39, 39]].map(([x, y]) =>
+    P(`M${x} ${y - 3.4} L${x + 3.4} ${y} L${x} ${y + 3.4} L${x - 3.4} ${y} Z`, 'hi')),  // and it travels
+  S('M14 52 L38 52', 'ik', 2.8),                                       // something of yours that was working
+  P('M44 52 L47.4 48.6 L50.8 52 L47.4 55.4 Z', 'hi'),                  // one molecule docks on it...
+  S('M52 52 L57 52', 'gh', 2.8),                                       // ...and from there on it is not working any more
+]);
+def('antitoxin', () => [                                              // an antibody grown in an animal against one toxin, and against that one only
+  P('M7 10 L19 10 L19 44 Q19 50 13 50 Q7 50 7 44 Z', 'gh'),            // the serum it was drawn off in
+  P('M9 28 L17 28 L17 44 Q17 48 13 48 Q9 48 9 44 Z', 'bs'),
+  S('M5 10 L21 10', 'ik', 1.8),
+  S('M40 26 L40 46', 'ik', 3), S('M40 26 L32 15', 'bs', 3), S('M40 26 L48 15', 'bs', 3),
+  P('M28 6 L36 6 L36 14 L28 14 Z', 'lo'),                              // gripping the one shape it was raised against
+  P('M44 6 L52 6 L52 14 L44 14 Z', 'lo'),
+  C(53, 44, 5, 'hi'),                                                  // any other toxin walks straight past it
+]);
+def('passive_immunity', () => [                                       // borrowed antibodies: full protection from the first minute, and gone in a few months
+  S('M8 50 L54 50', 'ik', 1.6), S('M8 50 L8 8', 'ik', 1.6),
+  S('M8 12 Q22 15 34 34 Q42 46 52 49', 'bs', 2.6),                     // it starts at the top and only ever goes down
+  S('M54 12 L45 17', 'gh', 1.4),                                       // because it came from somewhere else...
+  ...[[38, 14], [47, 10]].flatMap(([x, y]) => [
+    S(`M${x} ${y} L${x} ${y + 7}`, 'lo', 2),
+    S(`M${x} ${y} L${x - 4} ${y - 4}`, 'lo', 2), S(`M${x} ${y} L${x + 4} ${y - 4}`, 'lo', 2),
+  ]),                                                                  // ...and nothing here ever learned how to make more
+]);
+def('opsonization', () => [                                           // from "I prepare victuals for" — a coating that makes a microbe worth eating
+  C(34, 30, 11, 'lo'),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = i * Math.PI / 4;
+    return [S(`M${n(34 + 11 * Math.cos(a))} ${n(30 + 11 * Math.sin(a))} ` +
+              `L${n(34 + 16 * Math.cos(a))} ${n(30 + 16 * Math.sin(a))}`, 'bs', 1.6),
+            C(n(34 + 17.5 * Math.cos(a)), n(30 + 17.5 * Math.sin(a)), 2, 'bs')];
+  }).flat(),                                                           // coated all over, and only now
+  S('M14 6 Q1 30 14 54', 'hi', 3.4),                                   // the phagocyte, which would not otherwise have bothered
+  ...[[10, 19], [8, 30], [10, 41]].map(([x, y]) => S(`M${x} ${y} L${x + 7} ${y}`, 'hi', 2)),
+]);
+def('airborne_transmission', () => [                                  // no 5-micron line — it is a continuum, and only the big end falls inside two metres
+  P('M5 20 Q14 13 16 22 Q16 31 8 33 Q3 28 5 20 Z', 'lo'),              // the source
+  S('M4 51 L57 51', 'ik', 2),
+  S('M20 51 L20 46', 'gh', 1.6), S('M35 51 L35 46', 'gh', 1.6),        // two metres, marked out
+  ...[[22, 28, 3.2], [27, 34, 2.6], [31, 41, 2], [34, 48, 1.6]]
+    .map(([x, y, r]) => C(x, y, r, 'bs')),                             // the heavy end, down inside it
+  ...[[26, 21, 1.4], [34, 17, 1.2], [42, 22, 1.1], [49, 15, 1], [55, 24, .9], [46, 31, 1]]
+    .map(([x, y, r]) => C(x, y, r, 'hi')),                             // and everything smaller, still up and still going
+]);
+def('contagion', () => [                                              // it once meant touch and nothing else; the working test now is whether separating people slows it
+  C(16, 17, 8, 'bs'), C(31, 17, 8, 'lo'),
+  S('M23 17 L26 17', 'ik', 2.4), P('M25 14 L30 17 L25 20 Z', 'ik'),    // in contact, it crosses
+  C(13, 44, 8, 'bs'), C(43, 44, 8, 'gh'),
+  S('M28 32 L28 56', 'ik', 2),                                         // held apart...
+  S('M22 44 L25 44', 'ik', 2.2), S('M31 41 L37 47 M37 41 L31 47', 'ik', 1.8),  // ...it does not
+]);
+def('quarantine', () => [                                             // Ragusa held arrivals thirty days from 1377; Venice made it forty, and quaranta named it
+  S('M3 4 L3 57', 'ik', 3.4),                                          // the shore they may not reach
+  ...Array.from({ length: 40 }, (_, i) => {
+    const x = n(7 + (i % 5) * 2.4), y = n(8 + Math.floor(i / 5) * 5.8);
+    return S(`M${x} ${y} L${x} ${n(y + 4)}`, i < 30 ? 'bs' : 'hi', 1.2);
+  }),                                                                  // thirty days, then ten more on top
+  S('M22 4 L22 57', 'gh', 1.6),                                        // the line drawn in the water
+  ...[30, 44].map(y => S(`M25 ${y} Q31 ${y - 3} 37 ${y} Q43 ${y + 3} 49 ${y}`, 'gh', 1.2)),
+  P('M28 48 L58 48 L54 56 L32 56 Z', 'lo'),                            // and the ship, riding it out on the far side
+  S('M43 48 L43 16', 'ik', 2), S('M33 22 L53 22', 'ik', 1.6),
+  P('M34 23 L52 23 L52 34 L34 34 Z', 'bs'),                            // she is not going anywhere for forty days
+]);
+def('outbreak', () => [                                               // more cases than that place in that season normally makes — the baseline is the whole claim
+  ...[6, 12, 18, 24, 30, 36, 42, 48].map((x, i) => {
+    const h = [7, 5, 8, 6, 7, 16, 24, 20][i];
+    return P(`M${x} ${50 - h} L${x + 5} ${50 - h} L${x + 5} 50 L${x} 50 Z`, i > 4 ? 'bs' : 'gh');
+  }),
+  S('M3 41 L57 41', 'lo', 1.6),                                        // what you were expecting
+  S('M3 50 L57 50', 'ik', 1.6),
+]);
+def('contact_tracing', () => [                                        // smallpox fell not to blanket vaccination but to finding the contacts and immunising the ring
+  ...[0, 72, 144, 216, 288].map(a => {
+    const r0 = (a - 90) * Math.PI / 180;
+    const x = n(30 + 14 * Math.cos(r0)), y = n(30 + 14 * Math.sin(r0));
+    return [S(`M30 30 L${x} ${y}`, 'ik', 1.4), C(x, y, 3.4, 'lo')];
+  }).flat(),                                                           // everyone they met, found one at a time
+  C(30, 30, 5, 'bs'),                                                  // the case at the middle of it
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = i * Math.PI / 8;
+    return S(`M${n(30 + 22 * Math.cos(a))} ${n(30 + 22 * Math.sin(a))} ` +
+             `L${n(30 + 27 * Math.cos(a))} ${n(30 + 27 * Math.sin(a))}`, 'hi', 2);
+  }),                                                                  // and then a ring of immunity closed round the lot of them
+]);
+def('epidemiology', () => [                                           // "what is upon the people" — it works on populations, and never once on a patient
+  ...Array.from({ length: 25 }, (_, i) =>
+    C(8 + (i % 5) * 9, 8 + Math.floor(i / 5) * 8, 3,
+      [0, 3, 7, 12, 18, 21].includes(i) ? 'bs' : 'gh')),
+  S('M6 49 L54 49', 'ik', 1.6),
+  P('M6 51 L17.5 51 L17.5 57 L6 57 Z', 'bs'),                          // what it reports back is a rate...
+  P('M17.5 51 L54 51 L54 57 L17.5 57 Z', 'gh'),                        // ...never a name
+]);
+def('incubation_period', () => [                                      // exposure, then nothing at all while it multiplies toward the level that makes a symptom
+  S('M6 50 L56 50', 'ik', 1.8),
+  S('M8 47 L8 10', 'bs', 2.4),                                         // exposure
+  S('M6 20 L56 20', 'gh', 1.6),                                        // the threshold
+  ...[[11, 48, 1.2], [17, 46, 1.6], [23, 43, 2.2], [29, 38, 2.8], [35, 32, 3.4],
+      [41, 25, 4], [46, 17, 4.6]].map(([x, y, r]) => C(x, y, r, 'lo')),
+  S('M47 12 L47 5', 'hi', 2.4), C(47, 3, 2.4, 'hi'),                   // and only now the first symptom
+  ...[14, 22, 30, 38].map(x => S(`M${x} 55 Q${x + 3} 52 ${x + 6} 55`, 'gh', 1.2)),  // though it was leaving you the whole time
+]);
+def('petri_dish', () => [                                             // Koch had the dish; Petri's 1887 change was the lid over it, and nothing has needed changing since
+  P('M12 34 L48 34 L48 46 Q48 49 45 49 L15 49 Q12 49 12 46 Z', 'gh'),  // the base
+  P('M14 40 L46 40 L46 46 Q46 47 44 47 L16 47 Q14 47 14 46 Z', 'bs'),  // the agar poured into it
+  S('M12 36 L48 36', 'gh', 1.2),                                       // and the gap that lets air in and keeps dust out
+  P('M8 18 L52 18 L52 31 Q52 33 49 33 L11 33 Q8 33 8 31 Z', 'hi'),     // the lid, wider, sitting clear over the rim
+  S('M8 18 L52 18', 'ik', 2),
+]);
+def('pure_culture', () => [                                           // axenic: one species and nothing else, because the streak thinned it until each colony came from one cell
+  ring('gh', 30, 30, 24, 2),
+  S('M12 21 Q21 12 31 15 Q22 23 14 27', 'lo', 3.4),                    // the first streak, still a smear
+  S('M18 33 Q28 27 39 31', 'bs', 2),                                   // dragged out thinner
+  S('M23 41 Q34 39 45 43', 'bs', 1.4),
+  ...[[30, 47], [39, 48], [46, 39], [49, 29]].map(([x, y]) => C(x, y, 3, 'lo')),  // until what comes up is single, separate and all the same
+]);
+def('aseptic_technique', () => [                                      // the goal was never sterility — it is that nothing gets into the field to begin with
+  P('M10 26 Q30 20 50 26 L52 54 Q30 58 8 54 Z', 'gh'),                 // the field: a cloth laid down, and kept rather than cleaned
+  S('M10 26 Q30 20 50 26', 'ik', 2.4),
+  ...[[5, 12], [55, 12], [30, 6], [16, 16], [45, 17]].map(([x, y]) => C(x, y, 2.6, 'lo')),
+  ...[[9, 17], [51, 17]].map(([x, y]) =>
+    S(`M${x} ${y} Q${x + 3} ${y + 4} ${x} ${y + 8}`, 'gh', 1.2)),      // they are still out there; they are simply not in here
+  S('M46 49 L32 38', 'ik', 2.4), ring('bs', 29, 36, 3.4, 1.8),             // the inoculating loop, brought in the one clean way there is
+  P('M17 30 Q22 37 17 45 Q12 37 17 30 Z', 'hi'),                       // through the flame
+]);
+def('edward_jenner', () => [                                          // cowpox into a boy's arm in May 1796, smallpox in July, and nothing whatever happened
+  P('M6 6 Q18 2 26 8 Q28 16 20 19 Q9 20 6 12 Z', 'lo'),                // a milkmaid's cowpox sore, which is where the whole thing came from
+  ...[[12, 10], [19, 9], [16, 15]].map(([x, y]) => C(x, y, 2, 'hi')),
+  S('M22 22 L20 32', 'gh', 1.4), P('M17 30 L23 30 L20 35 Z', 'gh'),
+  P('M4 40 Q30 33 56 40 L56 54 Q30 48 4 54 Z', 'hi'),                  // the boy's arm
+  S('M14 47 L27 36', 'ik', 2.2),                                       // the lancet's scratch
+  C(20, 42, 4.4, 'bs'), C(20, 42, 1.8, 'lo'),                          // and the one vesicle it raised
+  ...[[43, 12, 2.4], [47, 20, 2], [44, 28, 1.6]].map(([x, y, r]) => C(x, y, r, 'gh')),  // then smallpox, six weeks later...
+  S('M36 35 L54 35', 'ik', 3),                                         // ...and it got precisely nowhere
+]);
+def('alexander_fleming', () => [                                      // home from holiday to a spoiled staph plate, and "that's funny"
+  ring('ik', 30, 32, 24, 2),                                           // the plate he had left out
+  P('M14 20 Q24 12 32 18 Q28 28 18 28 Q12 26 14 20 Z', 'bs'),          // the mould that got into it
+  ...Array.from({ length: 7 }, (_, i) => {
+    const a = -0.5 + i * 0.35;
+    return S(`M${n(23 + 8 * Math.cos(a))} ${n(21 + 8 * Math.sin(a))} ` +
+             `L${n(23 + 13 * Math.cos(a))} ${n(21 + 13 * Math.sin(a))}`, 'hi', 1.2);
+  }),
+  ...[[16, 40, 1.3], [30, 40, 1.8], [38, 34, 1.9], [46, 24, 2.6], [22, 48, 3],
+      [34, 50, 4.1], [44, 44, 4.3]].map(([x, y, r]) => C(x, y, r, 'lo')),  // the staphylococci, smaller the nearer they got to it
+]);
+def('joseph_lister', () => [                                          // a compound fracture packed with lint soaked in carbolic; four days on, still no infection
+  P('M5 25 Q30 19 55 25 L55 41 Q30 47 5 41 Z', 'gh'),                  // the limb
+  S('M9 35 L25 33', 'hi', 5), S('M37 31 L53 33', 'hi', 5),             // the bone, in two pieces
+  P('M24 27 L34 23 L38 31 L28 35 Z', 'ik'),                            // the break, open to the air — which is what used to finish you
+  P('M20 11 L40 11 L40 26 L20 26 Z', 'lo'),                            // the lint, packed straight into the break
+  ...[15, 19, 23].map(y => S(`M21 ${y} L39 ${y}`, 'hi', 1)),
+  P('M52 3 Q56 5 55 10 L47 21 Q44 23 42 20 Q41 17 43 15 Z', 'bs'),     // the bottle of carbolic, tipped over it
+  ...[[38, 23, 2], [34, 28, 1.6]].map(([x, y, r]) => C(x, y, r, 'bs')),  // and four days later, no infection at all
+]);
+def('ignaz_semmelweis', () => [                                       // 18.3% of the mothers in April; chlorinated lime from mid-May; 1.2% by July
+  P('M7 6 L17 6 L17 46 L7 46 Z', 'lo'),
+  P('M22 43 L32 43 L32 46 L22 46 Z', 'bs'),                            // the same clinic, the same doctors, three months apart
+  S('M3 46 L36 46', 'ik', 1.8),
+  P('M40 14 Q40 10 44 10 L50 10 Q54 10 54 14 L54 22 Q54 27 47 27 Q40 27 40 22 Z', 'hi'),
+  ...[43, 47, 51].map(x => S(`M${x} 11 L${x} 4`, 'hi', 2.2)),          // the hands
+  ...[[45, 30], [50, 32], [47, 35]].map(([x, y]) => C(x, y, 1.4, 'bs')),
+  P('M37 38 Q37 50 47 50 Q57 50 57 38 Z', 'gh'),                       // and the basin of chlorinated lime he made them use
+]);
+def('genome', () => [                                                 // all of it, coding or not — and 98 bases in every 100 never become a protein
+  ...[[6, 14, 34], [12, 10, 40], [18, 16, 32], [24, 12, 38],
+      [30, 18, 30], [36, 14, 34], [42, 20, 28], [48, 16, 32]]
+    .map(([x, y, h]) => P(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + h} L${x} ${y + h} Z`, 'gh')),
+  ...[[6, 22], [12, 31], [18, 25], [24, 35], [30, 27], [36, 39], [42, 31], [48, 21]]
+    .map(([x, y]) => P(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + 2} L${x} ${y + 2} Z`, 'bs')),
+  S('M4 55 L56 55', 'ik', 1.4),                                        // the whole set, and only those slivers are read out
+]);
+def('prokaryote', () => [                                             // no nucleus, no organelles at all, and the chemistry runs straight across the membrane
+  rod3('bs', 30, 32, 23, 11),
+  S('M17 34 Q22 25 28 32 Q34 39 40 30 Q44 25 46 31', 'lo', 2.4),       // the nucleoid, loose in the cytoplasm behind no membrane whatever
+  ...granules('hi', 9, 863, [14, 25, 46, 40]),                         // ribosomes — and that is the entire inventory
+  ...[15, 26, 37, 46].map(x => S(`M${x} 26 L${x} 16`, 'ik', 1.5)),     // so the membrane itself does the work an organelle would
+  ...[15, 26, 37, 46].flatMap(x => [S(`M${x} 16 L${n(x - 2.4)} 19`, 'ik', 1.3),
+                                    S(`M${x} 16 L${n(x + 2.4)} 19`, 'ik', 1.3)]),
+]);
+def('symbiosis', () => [                                              // de Bary's word for unlike things living together — the arrangement only, never the verdict
+  hex('bs', 22, 24, 13, 2.6),
+  ring('lo', 39, 30, 12, 2.6),                                         // two organisms that are nothing like each other, sharing one life
+  S('M6 50 L12 50 M9 47 L9 53 M15 50 L21 50 M18 47 L18 53', 'hi', 2),  // both better off...
+  S('M25 50 L31 50 M28 47 L28 53', 'hi', 2), C(37, 50, 2.2, 'gh'),     // ...one better off and one unbothered...
+  S('M42 50 L48 50 M45 47 L45 53', 'hi', 2), S('M51 50 L57 50', 'gh', 2),  // ...or one better off at the other's cost. All three count
+]);
+def('eusociality', () => [                                            // three tests and all of them required: one breeder, generations overlapping, brood raised by everyone
+  E(16, 14, 11, 7, 'bs'), C(4, 14, 4, 'bs'),                           // the one that breeds
+  ...[[36, 12], [46, 18], [54, 10]].map(([x, y]) =>
+    [E(x, y, 5, 3, 'lo'), C(x - 6, y, 2.4, 'lo')]).flat(),             // and the ones that never will
+  E(24, 26, 6, 3.5, 'gh'),                                             // last year's brood, still here alongside this year's
+  ...[[21, 45], [31, 48], [41, 45]].map(([x, y]) => E(x, y, 4.5, 6.5, 'hi')),
+  S('M34 16 Q28 32 23 38', 'gh', 1.4), S('M50 22 Q46 34 42 38', 'gh', 1.4),  // which every one of them helps to raise
+]);
+def('kin_selection', () => [                                          // rB > C. Haldane got there first as a joke: two brothers, or eight cousins
+  P('M24 54 L36 54 L30 42 Z', 'ik'), S('M30 42 L30 23', 'ik', 2),
+  S('M9 23 L51 23', 'ik', 2.6),                                        // and the beam sits level
+  S('M12 23 L12 28', 'gh', 1.4), S('M48 23 L48 28', 'gh', 1.4),
+  C(7, 34, 5, 'bs'), C(17, 34, 5, 'bs'),                               // two brothers, at one half each...
+  ...Array.from({ length: 8 }, (_, i) =>
+    C(41 + (i % 4) * 5, 31 + Math.floor(i / 4) * 6, 2.5, 'lo')),       // ...or eight cousins, at one eighth
+]);
+def('clade', () => [                                                  // an ancestor and every last descendant; leave one branch out and it stops being one
+  S('M30 57 L30 44', 'ik', 2.4),
+  S('M30 44 L14 32 M30 44 L42 30', 'ik', 2.2),
+  S('M14 32 L7 17 M14 32 L21 15', 'ik', 2),
+  S('M42 30 L34 14 M42 30 L52 14', 'bs', 2.2),
+  ...[[7, 17], [21, 15]].map(([x, y]) => C(x, y, 3, 'gh')),
+  ...[[34, 14], [52, 14]].map(([x, y]) => C(x, y, 3.4, 'bs')), C(42, 30, 3, 'bs'),
+  S('M43 39 Q29 37 28 22 Q27 7 43 6 Q59 7 58 22 Q57 37 43 39 Z', 'lo', 2),  // a loop that closes: the node and all of it
+  S('M2 26 Q9 38 22 34', 'gh', 1.6),                                   // and one that does not, because it left a descendant outside
+]);
+def('heredity', () => {                                               // traits arrive as units and keep their edges; blend them and there is soon nothing left to select
+  const box = (x, y, r) => P(`M${x} ${y} L${x + 8} ${y} L${x + 8} ${y + 8} L${x} ${y + 8} Z`, r);
+  return [
+    S('M30 5 L30 55', 'gh', 1.4),
+    box(4, 8, 'lo'), box(15, 8, 'hi'),                                 // blending: two parents...
+    box(4, 22, 'bs'), box(15, 22, 'bs'),
+    box(4, 36, 'bs'), box(15, 36, 'bs'),                               // ...and by the third row there is nothing to choose between them
+    box(37, 8, 'lo'), box(48, 8, 'hi'),                                // as units: the same start...
+    box(37, 22, 'lo'), box(48, 22, 'hi'),
+    box(37, 36, 'hi'), box(48, 36, 'lo'),                              // ...and the difference is still whole, and still there to act on
+    S('M8 16 L8 22 M19 16 L19 22 M8 30 L8 36 M19 30 L19 36', 'ik', 1.2),
+    S('M41 16 L41 22 M52 16 L52 22 M41 30 L52 36 M52 30 L41 36', 'ik', 1.2),
+  ];
+});
+def('mendelian_inheritance', () => [                                  // dominance, segregation, independent assortment — out of 28,000 pea plants, then ignored for 34 years
+  C(15, 9, 6, 'bs'), C(45, 9, 6, 'gh'),                                // two parents, as unlike as he could breed them
+  S('M21 9 L39 9', 'ik', 1.4),
+  S('M30 13 L18 22 M30 13 L30 22 M30 13 L42 22', 'ik', 1.2),
+  ...[18, 30, 42].map(x => C(x, 28, 5, 'bs')),                         // and every one of the first generation takes after just the one
+  S('M30 33 L12 41 M30 33 L24 41 M30 33 L36 41 M30 33 L48 41', 'ik', 1.2),
+  ...[12, 24, 36].map(x => C(x, 47, 5, 'bs')), C(48, 47, 5, 'gh'),     // three to one, and the trait that vanished is back
+]);
+def('recessive_allele', () => {                                       // it only ever shows when both copies match, and the carrier never finds out
+  const pair = (x, a, b) => [
+    P(`M${x - 9} 11 L${x - 3} 11 L${x - 3} 26 L${x - 9} 26 Z`, a),
+    P(`M${x + 3} 11 L${x + 9} 11 L${x + 9} 26 L${x + 3} 26 Z`, b),
+  ];
+  return [
+    ...pair(14, 'bs', 'bs'), ...pair(30, 'bs', 'lo'), ...pair(46, 'lo', 'lo'),
+    ...[14, 30, 46].map(x => S(`M${x} 29 L${x} 37`, 'ik', 1.4)),
+    C(14, 45, 7, 'bs'),
+    C(30, 45, 7, 'bs'),                                                // one dominant copy and it is hidden completely...
+    C(46, 45, 7, 'lo'),                                                // ...so only the matched pair ever shows it
+  ];
+});
+def('heterozygous', () => [                                           // Rr — the dominant is what you see; the other rides along quietly and is passed on regardless
+  S('M30 6 L30 37', 'hi', 1.2),
+  S('M8 16 L52 16', 'ik', 5), S('M8 28 L52 28', 'ik', 5),              // the two homologues, one from each parent
+  P('M25 11 L35 11 L35 21 L25 21 Z', 'bs'),                            // the same locus on both...
+  P('M25 23 L35 23 L35 33 L25 33 Z', 'gh'),                            // ...carrying two different alleles
+  S('M30 37 L16 43 M30 37 L44 43', 'ik', 1.4),
+  S('M6 47 L24 47', 'ik', 4), P('M11 42 L19 42 L19 52 L11 52 Z', 'bs'),  // half the gametes take one...
+  S('M36 47 L54 47', 'ik', 4), P('M41 42 L49 42 L49 52 L41 52 Z', 'gh'),  // ...half the other, whatever it was you could see
+]);
+
+/* inheritance drawn as mechanism — each one the step the next cannot do ──── */
+def('homozygous', () => [                                            // PP or pp: the same allele twice, and only then can a recessive show
+  ...[19, 41].flatMap(x => [
+    P(`M${x - 5} 6 L${x + 5} 6 L${x + 5} 32 L${x - 5} 32 Z`, 'gh'),
+    P(`M${x - 5} 15 L${x + 5} 15 L${x + 5} 21 L${x - 5} 21 Z`, 'bs'),  // the same band, at the same place, on both
+  ]),
+  S('M30 5 L30 33', 'ik', 1),
+  C(30, 45, 9, 'lo'),
+  S('M22 45 Q26 40 30 45 Q34 50 38 45', 'hi', 1.6),                  // Mendel's wrinkled pea, turning up in the pp quarter
+  S('M23 50 Q27 46 31 51', 'hi', 1.4),
+]);
+def('heterozygote_advantage', () => [                                // one allele limits malaria, two cause the anaemia — so the middle wins
+  C(12, 15, 8, 'gh'),
+  ...[[9, 12], [15, 14], [11, 19]].map(([x, y]) => C(x, y, 1.8, 'ik')),   // two normal alleles, and the parasite is at home
+  C(30, 15, 8, 'gh'),
+  P('M30 5 Q40 10 36 21 Q35 14 27 13 Q33 10 30 5 Z', 'bs'),          // one of each: infected cells sickle and get cleared
+  P('M44 5 Q54 10 50 21 Q49 14 41 13 Q47 10 44 5 Z', 'bs'),
+  P('M40 17 Q50 22 46 33 Q45 26 37 25 Q43 22 40 17 Z', 'bs'),        // two, and that is the anaemia
+  ...[[12, 13], [30, 24], [48, 7]].map(([x, h]) =>
+    P(`M${x - 7} 54 L${x + 7} 54 L${x + 7} ${54 - h} L${x - 7} ${54 - h} Z`, h > 20 ? 'bs' : 'lo')),
+  S('M3 55 L57 55', 'ik', 1.4),                                      // and that is why a lethal allele stays common
+]);
+def('genetic_code', () => [                                          // 64 codons for 20 amino acids and a stop, so most have several spellings
+  ...Array.from({ length: 64 }, (_, i) => {
+    const c = i % 8, r = (i / 8) | 0;
+    return P(`M${n(5 + c * 6.8)} ${n(5 + r * 6.8)} l5 0 l0 5 l-5 0 Z`,
+             i > 60 ? 'ik' : ((c >> 1) + r) % 2 ? 'bs' : 'hi');      // neighbours sharing a meaning — that is the redundancy
+  }),
+  P('M5 5 l5 0 l0 5 l-5 0 Z', 'lo'),                                 // poly-U, read first in 1961: phenylalanine
+]);
+def('central_dogma', () => [                                         // a claim about direction, not about steps
+  S('M6 20 L18 20 M6 26 L18 26', 'ik', 2.4),                         // DNA, two strands
+  S('M25 15 Q32 23 25 31', 'bs', 2.4),                               // RNA, one
+  ...[38, 44, 50].map(x => C(x, 23, 3, 'hi')),                       // and a chain of residues
+  S('M8 38 L50 38', 'ik', 2), P('M54 38 L46 34 L46 42 Z', 'ik'),     // information goes this way
+  S('M16 50 L48 50', 'gh', 2), P('M12 50 L20 46 L20 54 Z', 'gh'),
+  S('M24 44 L36 56 M36 44 L24 56', 'ik', 2.6),                       // once it is in protein it never gets back out
+]);
+def('gene_expression', () => [                                       // the same genome in every cell; what differs is which genes run, and how hard
+  ...[13, 30, 47].flatMap(y => [
+    S(`M6 ${y} L54 ${y}`, 'gh', 2.2),
+    ...[0, 1, 2, 3, 4].map(k => S(`M${9 + k * 9} ${y - 5} L${9 + k * 9} ${y + 5}`, 'gh', 1)),
+  ]),
+  ...[[13, 0, 5.4], [13, 3, 2.6], [30, 1, 4], [30, 2, 5.4], [30, 4, 3], [47, 2, 5.4]]
+    .map(([y, k, w]) => S(`M${9 + k * 9} ${y} L${18 + k * 9} ${y}`, w > 4.5 ? 'bs' : 'hi', w)),
+]);
+def('epigenetics', () => [                                           // Waddington's landscape, and the marble edits not one base on the way down
+  S('M30 8 Q30 20 17 31 Q8 39 6 54', 'gh', 2),                       // the valleys, dividing as the cell goes on
+  S('M30 8 Q30 22 25 35 Q22 45 21 54', 'gh', 2),
+  S('M30 8 Q30 22 35 35 Q38 45 39 54', 'lo', 2.4),
+  S('M30 8 Q30 20 43 31 Q52 39 54 54', 'gh', 2),
+  C(30, 9, 4.6, 'bs'),                                               // the marble, at the top, still free to go any of the four ways
+  C(38, 47, 4.6, 'hi'),                                              // and then committed, with the genome unaltered
+]);
+def('dna_methylation', () => [                                       // a methyl parked on carbon 5, and the promoter goes quiet
+  S('M5 42 L55 42', 'ik', 3),
+  ...[13, 24, 35, 46].flatMap(x => [S(`M${x} 42 L${x} 30`, 'ik', 1.6), C(x, 27, 4, 'bs')]),
+  C(46, 27, 4, 'gh'),                                                // about three CpG sites in four carry one
+  hex('lo', 30, 12, 7, 2),                                           // the cytosine ring itself
+  C(38, 7, 2.8, 'hi'), S('M34.6 9.6 L36 8', 'ik', 1.4),              // and the group hung off its fifth carbon
+]);
+def('crossing_over', () => [                                         // inferred in 1912, caught in the act in 1931 at the chiasma
+  S('M16 6 L16 22 L44 38 L44 54', 'bs', 4.2),
+  S('M44 6 L44 22 L16 38 L16 54', 'lo', 4.2),
+  S('M16 12 L16 18', 'hi', 4.2),                                     // the piece that started on one homologue...
+  S('M16 44 L16 50', 'hi', 4.2),                                     // ...and finished on the other
+  C(30, 30, 3.4, 'ik'),
+]);
+def('sex_chromosome', () => [                                        // about 1,500 genes against 78, and one of the 78 is the switch
+  S('M10 10 Q20 27 10 44', 'bs', 5), S('M26 10 Q16 27 26 44', 'bs', 5),
+  ...[15, 22, 29, 36].map(y => S(`M12 ${y} L24 ${y}`, 'gh', 1.2)),
+  S('M38 14 Q45 24 38 34', 'lo', 5), S('M52 14 Q45 24 52 34', 'lo', 5),
+  C(45, 22, 3, 'hi'),                                                // SRY, and it is the whole difference
+  S('M45 26 L45 40 M41 36 L45 42 L49 36', 'ik', 1.6),
+]);
+def('centromere', () => [                                            // the constriction, and the only place a kinetochore will build
+  ...[-1, 1].map(d => P(
+    `M${30 + d * 6} 8 L${30 + d * 14} 8 L${30 + d * 14} 24 L${30 + d * 8} 27 ` +
+    `L${30 + d * 8} 31 L${30 + d * 14} 34 L${30 + d * 14} 56 L${30 + d * 6} 56 Z`, 'bs')),
+  P('M24 26 L36 26 L36 32 L24 32 Z', 'lo'),                          // a short arm above the pinch and a long one below
+  ...[27, 33].map(x => C(x, 29, 1.6, 'hi')),                         // CENP-A in place of H3, and nowhere else on the chromosome
+  S('M22 29 L6 25 M22 29 L6 33', 'ik', 1.6),
+  S('M38 29 L54 25 M38 29 L54 33', 'ik', 1.6),                       // which is the only thing the spindle can pull on
+]);
+def('karyotype', () => [                                             // every one of them stained, cut out and laid down in pairs
+  S('M4 30 L56 30', 'gh', 1),
+  ...Array.from({ length: 6 }, (_, p) => [0, 1].flatMap(k => {
+    const x = n(5 + p * 8.5 + k * 3.7), h = n(21 - p * 2.8);
+    return [
+      P(`M${x} ${n(30 - h)} L${n(x + 2.6)} ${n(30 - h)} L${n(x + 2.6)} ${n(30 + h)} L${x} ${n(30 + h)} Z`,
+        k ? 'hi' : 'bs'),
+      S(`M${x} ${n(30 - h * .45)} L${n(x + 2.6)} ${n(30 - h * .45)}`, 'ik', 1.4),
+      S(`M${x} ${n(30 + h * .35)} L${n(x + 2.6)} ${n(30 + h * .35)}`, 'ik', 1.4),   // G-bands, 300 to 400 of them
+    ];
+  })).flat(),
+]);
+
+/* what evolution does with a part it already has ─────────────────────────── */
+def('exaptation', () => [                                            // Gould and Vrba's word, because 'preadaptation' sounded like aiming at something
+  P('M12 50 Q9 29 30 9 Q39 24 20 46 Z', 'bs'),                       // one part, and it does not change
+  S('M12 50 L32 7', 'ik', 2),
+  ...[0, 1, 2, 3, 4].map(i => S(`M${n(15 + i * 3.6)} ${n(45 - i * 7.6)} L${n(23 + i * 3.6)} ${n(42 - i * 7.6)}`, 'lo', 1)),
+  ...[[42, 46], [49, 42]].map(([x, y]) => S(`M${x} ${y} Q${n(x + 4)} ${n(y - 5)} ${x} ${n(y - 10)}`, 'gh', 1.8)),
+  S('M37 50 L55 28', 'ik', 1.8),                                     // it was keeping an animal warm — and that job is over
+  S('M34 18 Q45 12 54 15', 'hi', 2.4), P('M57 16 L50 11 L50 18 Z', 'hi'),   // this one it was never shaped for
+]);
+def('neoteny', () => [                                               // grown up without growing out of it — Kollmann's word, after the axolotl
+  P('M4 34 Q4 26 14 25 L40 27 Q52 30 54 36 L40 44 Q20 45 8 42 Q4 40 4 34 Z', 'bs'),   // an adult, in profile, still shaped like a larva
+  P('M52 30 Q58 34 52 42 L46 37 Z', 'lo'),                           // the tail fin never went away either
+  C(11, 32, 2.2, 'ik'),
+  S('M5 38 Q11 41 18 39', 'ik', 1.4),                                // and the face it had as a hatchling
+  ...[18, 24, 30].map((x, k) => [
+    S(`M${x} 26 L${n(x - 2 + k * 2)} ${n(12 - k)}`, 'lo', 1.8),
+    ...[0, 1, 2].map(j => {
+      const t = .3 + j * .28, px = n(x + (-2 + k * 2) * t), py = n(26 - (14 + k) * t);
+      return S(`M${px} ${py} L${n(px - 5)} ${n(py - 3)}`, 'hi', 1.3);
+    }),
+    ...[0, 1, 2].map(j => {
+      const t = .3 + j * .28, px = n(x + (-2 + k * 2) * t), py = n(26 - (14 + k) * t);
+      return S(`M${px} ${py} L${n(px + 5)} ${n(py - 3)}`, 'hi', 1.3);
+    }),
+  ]).flat(),                                                         // external gills, which should have been resorbed years ago
+]);
+def('sexual_dimorphism', () => [                                     // two plans in one species — and in eclectus parrots it is the hen who is scarlet
+  ...[[16, 'bs', 1], [44, 'hi', -1]].flatMap(([x, r, d]) => [
+    E(x, 35, 9, 13, r),
+    C(n(x + d * 3), 18, 6, r),
+    P(`M${n(x + d * 8)} 16 L${n(x + d * 15)} 18 L${n(x + d * 8)} 21 Z`, 'ik'),
+    S(`M${x} 48 L${x} 54`, 'lo', 2.2),
+  ]),
+  S('M30 8 L30 52', 'gh', 1.2),                                      // same bird, mirrored — and the cock is the green one
+]);
+
+/* deep time, drawn as the evidence it left ──────────────────────────────── */
+def('great_oxidation_event', () => [                                 // the oxygen went into the rock first, and only then into the air
+  ...Array.from({ length: 7 }, (_, i) =>
+    P(`M6 ${n(33 + i * 3)} L54 ${n(33 + i * 3)} L54 ${n(35 + i * 3)} L6 ${n(35 + i * 3)} Z`, i % 2 ? 'lo' : 'bs')),
+  S('M6 29 L22 29 Q31 29 33 21 L54 17', 'ik', 2.4),                  // up to about a tenth of today's, and it stayed
+  ...[8, 13, 18].map(y => S(`M50 ${y} L54 ${y}`, 'gh', 1)),
+  C(40, 9, 2.4, 'hi'), C(46, 12, 2.4, 'hi'),                         // free O2 at last, and 80% of the biosphere gone with it
+]);
+def('snowball_earth', () => [                                        // ice all the way to the equator, and it happened twice
+  C(30, 30, 22, 'hi'),
+  S('M8 30 L52 30', 'ik', 1.6),                                      // which is the line it was not supposed to cross
+  ...[[18, 16], [34, 12], [42, 25], [21, 41], [38, 44]].map(([x, y]) =>
+    P(`M${x} ${y - 5} L${x + 4} ${y} L${x} ${y + 5} L${x - 4} ${y} Z`, 'lo')),
+  P('M32 8.4 A22 22 0 0 1 46 15 Q37 18 32 14 Z', 'bs'),              // and one thin lead of open water, if you believe in it
+  ring('ik', 30, 30, 22, 1.6),
+]);
+def('trilobite', () => [                                             // three lobes lengthwise, which is what the name counts — not head, thorax, tail
+  P('M14 11 Q30 3 46 11 L46 18 L14 18 Z', 'bs'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const w = n(15 - i * 1.3), y = n(19 + i * 5);
+    return P(`M${n(30 - w)} ${y} L${n(30 + w)} ${y} L${n(29 + w)} ${n(y + 4)} L${n(31 - w)} ${n(y + 4)} Z`,
+             i % 2 ? 'hi' : 'bs');
+  }),
+  P('M22 48 Q30 56 38 48 Z', 'lo'),
+  S('M22 9 L22 50 M38 9 L38 50', 'ik', 1.4),                         // the two furrows that do the dividing
+  E(19, 12, 3.4, 2.4, 'lo'), E(41, 12, 3.4, 2.4, 'lo'),
+  ...[19, 41].flatMap(x => [C(x - 1.4, 11, 1, 'ik'), C(x + 1.4, 11, 1, 'ik'), C(x, 13.6, 1, 'ik')]),
+]);                                                                  // every lens one crystal of calcite, up to 15,000 under a cornea
+def('permian_triassic_extinction', () => [                           // 81% of marine species inside perhaps 60,000 years
+  S('M6 9 L52 9', 'gh', 4),
+  S('M6 9 L43 9', 'ik', 4),                                          // that is the four fifths, drawn to scale
+  ...Array.from({ length: 5 }, (_, i) =>
+    P(`M4 ${n(30 + i * 5)} L56 ${n(30 + i * 5)} L56 ${n(34 + i * 5)} L4 ${n(34 + i * 5)} Z`, i % 2 ? 'lo' : 'bs')),
+  ...[16, 30, 44].map(x => S(`M${x} 30 L${x} 20`, 'ik', 2.4)),       // the Siberian fissures, flooding basalt over a continent
+  ...[16, 30, 44].map(x => C(x, 17, 2.6, 'gh')),
+]);
+def('stromatolite', () => [                                          // a millimetre a year of mat, sediment and cement, until the grazers came
+  wave('gh', 11, 3, 24),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const w = n(20 - i * 3), apex = n(16 + i * 5);
+    return P(`M${n(30 - w)} 52 Q30 ${n(2 * apex - 52)} ${n(30 + w)} 52 Z`, i % 2 ? 'hi' : 'bs');
+  }),
+  S('M6 52 L54 52', 'ik', 2),
+  ...granules('lo', 6, 271, [16, 26, 44, 44]),                       // grain by grain, trapped in the mat and held
+]);
+def('rna_world', () => {                                             // one molecule holding the message and doing the chemistry, before either of the others
+  const pts = [];
+  for (let i = 0; i <= 32; i++) {
+    const t = i / 32, a = -Math.PI / 2 + t * Math.PI * 2.6, rad = 15 - t * 9;
+    pts.push(`${i ? 'L' : 'M'}${n(36 + rad * Math.cos(a))} ${n(34 + rad * Math.sin(a))}`);
+  }
+  return [
+    S('M4 19 L36 19', 'bs', 3.2),                                    // one strand, read base by base — that is the message half
+    ...[9, 15, 21, 27].map(x => S(`M${x} 19 L${x} 11`, 'hi', 1.8)),
+    S(pts.join(' '), 'bs', 3.2),                                     // and the same molecule folded into a shape that does chemistry
+    C(33, 30, 2.4, 'lo'), C(41, 36, 2.4, 'lo'),
+    S('M35 32 L39 34', 'ik', 1.8),                                   // with no protein anywhere near it, and no DNA yet
+  ];
+});
+
+/* one sense, and its threshold ──────────────────────────────────────────── */
+def('hearing', () => [                                               // each pitch shakes its own spot: high at the base, low at the apex
+  P('M6 26 L54 14 L54 46 L6 34 Z', 'gh'),
+  S('M8 30 L52 30', 'ik', 1),
+  ...[[14, 3], [30, 6], [45, 10]].map(([x, a]) =>
+    S(`M${x - 7} 30 Q${n(x - 3.5)} ${30 - a} ${x} 30 Q${n(x + 3.5)} ${30 + a} ${x + 7} 30`, 'bs', 2)),
+  ...[[14, 1.7], [30, 3], [45, 5]].flatMap(([x, s]) =>
+    [0, 1, 2, 3].map(k => S(`M${n(x - 5 + k * s)} 5 L${n(x - 5 + k * s)} 11`, 'hi', 1.2))),
+  ...[14, 30, 45].map(x => S(`M${x} 13 L${x} 21`, 'gh', 1.2)),       // 20 Hz at one end, 20,000 at the other, and the brain reads the map
+]);
+def('deafness', () => [                                              // an audiogram: 25 dB to be diagnosed, 90 for profound
+  S('M12 6 L12 52 L56 52', 'ik', 1.6),
+  S('M12 17 L56 17', 'gh', 1.4),                                     // the 25 dB line
+  S('M12 44 L56 44', 'gh', 1.2),                                     // and 90, a long way under it
+  ...[20, 30, 40, 50].map(x => S(`M${x} 50 L${x} 54`, 'gh', 1)),
+  S('M17 13 L27 16 L37 27 L47 40 L54 46', 'bs', 2.6),                // the high notes going first, as they nearly always do
+  ...[[17, 13], [27, 16], [37, 27], [47, 40]].map(([x, y]) => C(x, y, 2.2, 'lo')),
+]);
+
+/* three cups, and the difference is the proportions ─────────────────────── */
+def('latte', () => [                                                 // a 230 ml glass, and the foam is a millimetre, not a layer
+  S('M18 6 L21 54 L39 54 L42 6', 'ik', 2),
+  P('M20.4 30 L39.6 30 L38 52 L22 52 Z', 'lo'),                      // espresso, and then lost in the milk
+  P('M19.2 15 L40.8 15 L39.6 30 L20.4 30 Z', 'hi'),
+  S('M19.4 13 L40.6 13', 'bs', 2.6),
+  E(30, 54, 9, 2, 'gh'),
+]);
+def('cappuccino', () => [                                            // 150 to 180 ml, in equal thirds, and named for the colour of a habit
+  P('M16 20 L44 20 L41 44 Q30 48 19 44 Z', 'gh'),
+  P('M19.6 36 L40.4 36 L41 44 Q30 48 19 44 Z', 'lo'),
+  P('M17.8 28 L42.2 28 L40.4 36 L19.6 36 Z', 'bs'),
+  P('M16 20 L44 20 L42.2 28 L17.8 28 Z', 'hi'),                      // a third of the cup is foam, and that is the whole definition
+  S('M44 25 Q53 28 44 37', 'ik', 2.4),
+  S('M12 52 L48 52', 'ik', 2),
+]);
+def('masala_chai', () => [                                           // boiled, not steeped — milk, sugar and spice all in the pan together
+  P('M10 28 L44 28 L40 47 Q26 51 14 47 Z', 'lo'),
+  S('M44 32 L57 28', 'ik', 3),
+  P('M13 33 L41 33 L38 45 Q26 49 15 45 Z', 'bs'),
+  ...[18, 27, 36].map(x => S(`M${x} 25 Q${n(x + 3)} 19 ${x} 13`, 'gh', 1.6)),
+  ...[[20, 38], [30, 41], [37, 37]].map(([x, y]) => grain('hi', x, y, .55, 25)),
+  P('M46 6 L54 6 L54 20 L46 20 Z', 'hi'), S('M50 6 L50 20', 'lo', 1.6),   // cassia, which the tea board thought was a waste
+  C(8, 15, 2.4, 'lo'), C(14, 10, 2, 'lo'),
+]);
+
+/* the solid earth and what it does ──────────────────────────────────────── */
+def('mont_blanc', () => [                                            // a snow dome, not a spire — and a metre lower in a dry year
+  P('M4 52 L18 30 Q30 11 42 30 L56 52 Z', 'lo'),
+  P('M14 36 Q30 16 46 36 Q30 29 14 36 Z', 'hi'),
+  S('M6 23 L54 23', 'gh', 1.2),                                      // the summit height, remeasured every other year
+  S('M4 52 L56 52', 'ik', 1.6),
+  C(20, 41, 2, 'ik'), C(27, 34, 2, 'ik'), S('M20 41 L27 34', 'ik', 1.2),   // Balmat and Paccard, roped, 8 August 1786
+]);
+def('soviet_union', () => [                                          // a treaty of republics under one party, and then not
+  ...Array.from({ length: 15 }, (_, i) =>
+    P(`M${n(9 + (i % 5) * 8.6)} ${n(18 + ((i / 5) | 0) * 8.6)} l7 0 l0 7 l-7 0 Z`, i === 7 ? 'bs' : 'hi')),
+  ...[[12.5, 21.5], [46.9, 21.5], [12.5, 38.7], [46.9, 38.7]].map(([x, y]) =>
+    S(`M29.7 30.1 L${x} ${y}`, 'ik', 1.4)),                          // one party, running out to all fifteen of them
+  C(29.7, 30.1, 3.4, 'ik'),
+  S('M4 9 L56 9 L56 51', 'ik', 2),                                   // a treaty, 30 December 1922...
+  S('M4 9 L4 51 M4 51 L56 51', 'gh', 2),                             // ...and gone again on 26 December 1991
+]);
+def('atmosphere', () => [                                            // gas a world can hold down, thinning until its gravity loses
+  P('M0 46 Q30 33 60 46 L60 60 L0 60 Z', 'lo'),
+  ...[0, 1, 2, 3].map(i => S(`M2 ${n(42 - i * 8)} Q30 ${n(29 - i * 9)} 58 ${n(42 - i * 8)}`,
+                             i > 1 ? 'gh' : 'bs', n(3 - i * .6))),
+  ...Array.from({ length: 10 }, (_, i) =>
+    C(n(7 + i * 5.2), 41, 1.8, i === 3 || i === 8 ? 'hi' : 'bs')),   // four parts nitrogen to one of oxygen, and a rounding error of everything else
+]);
+def('eruption', () => [                                              // dissolved gas coming out of solution as the magma decompresses
+  P('M24 56 L36 56 L33 30 L27 30 Z', 'lo'),
+  ...[[30, 52, 1.2], [27, 47, 1.8], [33, 43, 2.4], [28, 38, 3], [32, 33, 3.6]].map(([x, y, r]) =>
+    C(x, y, r, 'gh')),                                               // gas coming out of solution, all the way up the conduit
+  P('M27 30 Q7 23 11 11 Q19 2 30 8 Q42 1 49 12 Q51 24 33 30 Z', 'bs'),
+  ...granules('ik', 9, 617, [13, 5, 47, 23]),                        // and at the top it stops being a liquid at all
+  S('M10 27 L4 34', 'lo', 2), S('M50 27 L56 34', 'lo', 2),           // most of it never gets past a 2 on the scale
+]);
+def('seismograph', () => [                                           // a mass too lazy to move while its frame goes with the ground
+  S('M6 6 L6 52 L24 52', 'ik', 3),                                   // the frame, which goes wherever the ground goes
+  S('M6 10 L22 10', 'ik', 2.4),
+  S('M22 10 L22 24', 'gh', 1.6),
+  P('M14 24 L30 24 L30 38 L14 38 Z', 'bs'),                          // and a mass too lazy to follow it
+  S('M30 31 L40 31', 'ik', 2.4),
+  ring('lo', 45, 31, 12, 3.4),
+  S('M34 31 Q38 25 42 31 Q46 37 50 28 Q53 24 56 30', 'hi', 1.8),     // the gap between the two is the whole measurement
+  S('M9 56 L21 56', 'ik', 1.6), P('M5 56 L11 53 L11 59 Z', 'ik'),
+]);
+
+/* two ways of closing with an enemy ─────────────────────────────────────── */
+def('joust', () => [                                                 // the tilt is the point: they pass, they never meet
+  P('M4 36 L56 36 L56 44 L4 44 Z', 'lo'),                            // the tilt, and the whole point of it is that they pass
+  ...[10, 24, 38, 52].map(x => S(`M${x} 44 L${x} 53`, 'lo', 2.4)),
+  S('M5 26 Q14 19 25 25', 'bs', 4),                                  // one horse's back...
+  S('M55 26 Q46 19 35 25', 'hi', 4),
+  S('M7 23 L28 14', 'bs', 3.4), P('M28 17 L37 12 L29 10 Z', 'ik'),   // ...one lance, still whole...
+  S('M53 9 L38 14', 'hi', 3.4),                                      // ...and one that has done what it was built to do
+  ...[[34, 8], [40, 5], [30, 3]].map(([x, y]) => S(`M${x} ${y} L${n(x + 5)} ${n(y - 2)}`, 'ik', 1.4)),
+]);
+def('siege_of_jerusalem', () => [                                    // five weeks, and it turned on two wheeled towers and a ram
+  P('M4 16 L4 54 L22 54 L22 16 Z', 'lo'),
+  ...[4, 10, 16].map(x => P(`M${x} 12 l4 0 l0 4 l-4 0 Z`, 'lo')),
+  P('M36 10 L56 10 L56 50 L36 50 Z', 'bs'),                          // built from the timber of the ships that brought them
+  S('M38 18 L54 18 M38 27 L54 27 M38 36 L54 36', 'ik', 1.2),
+  C(40, 53, 3, 'ik'), C(52, 53, 3, 'ik'),
+  P('M22 18 L36 14 L36 20 L22 24 Z', 'hi'),                          // the bridge, dropped onto the parapet on 15 July 1099
+  S('M26 44 L36 44', 'ik', 3), P('M22 41 L28 44 L22 47 Z', 'hi'),    // and an iron head on a beam, below it
+]);
+
+/* four things out of the old stories, each drawn as its own hinge ───────── */
+def('bellerophon', () => [                                           // the bridle came first: without it there is no ride, and no Chimera either
+  P('M4 16 L18 9 Q30 7 34 18 L40 42 Q42 52 34 55 L25 53 Q27 39 22 30 Q15 24 4 22 Z', 'gh'),
+  P('M23 11 L26 2 L31 11 Z', 'gh'),                                  // the horse at the Pirene spring, taken standing
+  C(19, 16, 1.8, 'ik'),
+  S('M8 14 Q12 20 10 24', 'bs', 2.6),                                // the noseband...
+  S('M25 10 Q20 18 13 22', 'bs', 2.6),                               // ...the cheek strap...
+  S('M11 23 Q28 32 44 27', 'bs', 2.2),                               // ...and the rein, which was the whole gift
+  C(50, 10, 2.2, 'ik'), S('M47 8 L53 12 M47 12 L53 8', 'ik', 1),     // one gadfly, and Zeus needed only the one
+  P('M48 30 L54 34 L48 52 L42 47 Z', 'lo'),
+]);
+def('fenrir', () => [                                                // two iron fetters snapped; a soft ribbon held, and Tyr paid for it
+  P('M10 24 L50 4 L54 11 L14 31 Z', 'bs'),                           // the jaw, thrown right open...
+  P('M10 38 L50 58 L54 51 L14 31 Z', 'bs'),
+  C(13, 31, 5.4, 'bs'), C(17, 25, 1.8, 'ik'),
+  ...[[26, 25], [36, 20], [45, 16]].map(([x, y]) => P(`M${x} ${y} L${x + 5} ${y - 2} L${x + 2} ${y + 6} Z`, 'hi')),
+  ...[[27, 38], [37, 43]].map(([x, y]) => P(`M${x} ${y} L${x + 5} ${y + 2} L${x + 2} ${y - 6} Z`, 'hi')),
+  P('M30 27 Q41 24 45 31 Q41 39 30 36 Z', 'lo'),                     // ...and Tyr's hand in it, as a pledge he knew was a lie
+  S('M6 17 Q20 11 30 15', 'gh', 2.4),                                // Gleipnir: a ribbon, and it was the one that held
+  S('M4 49 A4.4 4.4 0 1 1 13 49', 'ik', 2), S('M17 55 A4.4 4.4 0 1 0 26 55', 'ik', 2),
+]);
+def('norns', () => [                                                 // three of them, daubing the root every day so it will not rot
+  S('M48 5 L48 40', 'lo', 6),
+  S('M48 40 Q41 44 35 49 M48 40 L48 51', 'lo', 3),
+  ring('ik', 13, 46, 9, 2), wave('hi', 46, 3, 7),                    // the well they draw from
+  ...[[10, 17], [22, 13], [34, 17]].flatMap(([x, y]) => [
+    C(x, y, 4, 'bs'),
+    P(`M${x - 4} ${y + 5} L${x + 4} ${y + 5} L${x + 3} ${y + 17} L${x - 3} ${y + 17} Z`, 'bs'),
+  ]),
+  S('M38 21 Q44 23 46 29', 'hi', 2),                                 // water and white clay, going onto the trunk
+  C(41, 19, 1.8, 'hi'), C(45, 25, 1.8, 'hi'),
+]);
+def('rabbi_loew', () => [                                            // what he actually left was books; the golem only turns up in print in 1834
+  P('M42 6 L54 6 L54 30 L42 30 Z', 'gh'),
+  S('M44 11 L52 11', 'gh', 1.4), S('M45 30 L45 38 M51 30 L51 38', 'gh', 1.4),
+  C(18, 13, 7, 'lo'),
+  P('M11 16 Q18 30 25 16 Z', 'ik'),                                  // the Maharal, in the Prague post from 1573
+  P('M6 36 Q17 30 29 36 L29 52 Q17 46 6 52 Z', 'bs'),
+  P('M31 36 Q43 30 54 36 L54 52 Q43 46 31 52 Z', 'bs'),
+  S('M30 36 L30 52', 'ik', 1.6),
+]);
+def('prague', () => [                                                // the Vltava, the bridge over it, and a great many more spires than a hundred
+  ...[[10, 18, 'hi'], [17, 9, 'bs'], [24, 20, 'hi'], [31, 5, 'lo'], [38, 15, 'hi'], [45, 11, 'bs'], [52, 21, 'hi']]
+    .map(([x, y, r]) => P(`M${x - 3} 36 L${x + 3} 36 L${x + 3} ${y + 6} L${x} ${y} L${x - 3} ${y + 6} Z`, r)),
+  S('M4 40 L56 40', 'ik', 2.6),
+  ...[0, 1, 2, 3, 4].map(i => S(`M${n(8 + i * 11)} 46 A5.2 5.2 0 0 1 ${n(18 + i * 11)} 46`, 'ik', 2)),
+  wave('bs', 50, 4, 26), wave('lo', 55, 3, 26),
+]);
+
+/* things that were built, and what each one actually solved ─────────────── */
+def('cauldron', () => [                                              // it hangs, so the fire can be under it and the pot still comes off
+  S('M15 20 A15.4 11 0 0 1 45 20', 'ik', 2.4),
+  P('M13 22 L47 22 Q51 34 40 40 Q30 43 20 40 Q9 34 13 22 Z', 'bs'),
+  E(30, 22, 17, 4, 'lo'),
+  ...[[22, 45], [30, 42], [38, 45]].map(([x, top]) => P(
+    `M${x} 55 Q${x - 5} 50 ${x - 2} ${top} Q${x + 1} ${top + 4} ${x + 2} ${top + 2} Q${x + 5} 50 ${x} 55 Z`, 'hi')),
+  S('M12 56 L48 56', 'lo', 3), S('M17 52 L43 58', 'lo', 2.4),        // an open fire under it, which is the whole design
+  ...[[22, 17], [36, 16]].map(([x, y]) => S(`M${x} ${y} Q${n(x + 3)} ${n(y - 5)} ${x} ${n(y - 9)}`, 'gh', 1.4)),
+]);
+def('phonograph_record', () => {                                     // one groove, spiralling inward from the rim the whole side
+  const pts = [];
+  for (let i = 0; i <= 80; i++) {
+    const t = i / 80, a = t * Math.PI * 8, rad = 24 - t * 13;
+    pts.push(`${i ? 'L' : 'M'}${n(30 + rad * Math.cos(a))} ${n(30 + rad * Math.sin(a))}`);
+  }
+  return [
+    C(30, 30, 25, 'lo'),
+    S(pts.join(' '), 'gh', .8),
+    C(30, 30, 10, 'bs'),                                             // 78 rpm on shellac, then 22 minutes a side at 33 1/3
+    C(30, 30, 2, 'ik'),
+  ];
+});
+def('qwerty', () => [                                                // five years of shuffling an alphabetical keyboard, and it stopped here
+  ...Array.from({ length: 8 }, (_, c) => P(`M${n(6 + c * 5.6)} 5 l4.6 0 l0 5 l-4.6 0 Z`, 'gh')),
+  S('M30 12 L30 17', 'gh', 1.6), P('M30 21 L26.6 15 L33.4 15 Z', 'gh'),
+  ...[[3, 9], [5.6, 9], [9.4, 7]].flatMap(([x0, cnt], r) =>
+    Array.from({ length: cnt }, (_, c) =>
+      P(`M${n(x0 + c * 5.6)} ${n(25 + r * 8)} l4.6 0 l0 6.4 l-4.6 0 Z`, r === 0 && c < 6 ? 'bs' : 'lo'))),
+]);
+def('wireless_telegraphy', () => [                                   // dots and dashes on a spark, and the spark is broad enough to jam everyone
+  C(20, 45, 4, 'lo'), C(34, 45, 4, 'lo'),
+  S('M24 45 L27 40 L27 50 L30 45', 'hi', 1.8),                       // the gap it jumps
+  ...[11, 17, 23].map(rad => S(`M${n(27 - rad)} 41 A${n(rad + .3)} ${n(rad + .3)} 0 0 1 ${n(27 + rad)} 41`, 'gh', 1.4)),
+  S('M5 22 Q9 8 13 22 Q17 32 21 22 Q24 17 27 22 Q29 24 31 22', 'bs', 2),   // damped: every train dies away as it goes
+  C(38, 15, 2, 'ik'), C(44, 15, 2, 'ik'),
+  S('M49 15 L56 15', 'ik', 3.4),                                     // and across the Atlantic by 1901
+]);
+def('space_race', () => [                                            // announced 29 July 1955, answered five days later, ended with a handshake
+  S('M4 56 L56 56', 'ik', 2),
+  P('M10 46 L18 46 L18 28 L14 20 L10 28 Z', 'bs'),                   // one announced on 29 July 1955...
+  P('M7 46 L10 39 L10 46 Z', 'bs'), P('M21 46 L18 39 L18 46 Z', 'bs'),
+  P('M12 46 L16 46 L14 54 Z', 'hi'),
+  P('M42 52 L50 52 L50 34 L46 26 L42 34 Z', 'lo'),                   // ...and the answer came five days later
+  P('M39 52 L42 45 L42 52 Z', 'lo'), P('M53 52 L50 45 L50 52 Z', 'lo'),
+  P('M44 52 L48 52 L46 58 Z', 'hi'),
+  ring('bs', 20, 10, 5, 2.6), ring('lo', 42, 10, 5, 2.6),            // and it ended latched together in orbit, July 1975
+  P('M25 7 L37 7 L37 13 L25 13 Z', 'ik'),
+]);
+
+/* three sauces, and none of them is the same operation ──────────────────── */
+def('pesto', () => [                                                 // pestâ, to pound: the order is garlic and nuts, then basil, then cheese
+  P('M10 26 L50 26 Q48 46 30 50 Q12 46 10 26 Z', 'gh'),
+  P('M14 32 L46 32 Q44 44 30 47 Q16 44 14 32 Z', 'bs'),
+  S('M40 30 L52 9', 'lo', 5), C(52, 8, 4, 'lo'),                     // marble and wood, and no blade anywhere near it
+  grain('hi', 20, 38, .8, 20), grain('hi', 27, 42, .8, -15),
+  leaf('hi', 21, 21, .55, -30),
+]);
+def('mole_sauce', () => [                                            // molli is just 'sauce'; poblano runs to twenty things and Oaxaca past thirty
+  E(30, 40, 23, 12, 'lo'),
+  E(30, 40, 18, 8.4, 'bs'),
+  ring('ik', 30, 40, 22, 1.4),
+  S('M7 8 Q13 15 8 23', 'bs', 3.4), S('M7 8 L5 4', 'lo', 1.6),       // chiles, which is where the colour comes from
+  P('M15 7 l8 0 l0 8 l-8 0 Z', 'lo'), S('M15 11 L23 11', 'gh', 1.2),
+  grain('hi', 29, 10, 1.1, 20), grain('hi', 34, 16, 1.1, -20),
+  C(41, 11, 3.4, 'lo'),
+  P('M47 5 L54 5 L54 19 L47 19 Z', 'hi'), S('M50.5 5 L50.5 19', 'lo', 1.2),
+  ...[13, 24, 35, 46].map(x => C(x, 25, 1.4, 'gh')),                 // and about sixteen more behind those
+]);
+def('marinara', () => [                                              // sailor's style — which is about who cooked it, not what went in
+  P('M10 30 L50 30 Q48 47 30 51 Q12 47 10 30 Z', 'lo'),
+  E(30, 36, 16, 7, 'bs'),
+  ...[[22, 35], [31, 38], [39, 35]].map(([x, y]) => E(x, y, 4.4, 3.4, 'hi')),
+  leaf('hi', 45, 25, .55, 25),
+  C(15, 25, 2.4, 'hi'), C(20, 21, 2, 'hi'),                          // garlic and oregano, and oil to carry them
+  P('M6 12 Q14 4 24 12 Q14 20 6 12 Z', 'gh'), P('M24 12 L31 7 L31 17 Z', 'gh'),
+  S('M4 4 L34 20', 'ik', 2.4),                                       // the fish stays out
+]);
+/* crops, fruit, timber and fibre — chunk ca_0 ─────────────────────────────
+ * Every one of these would default to "a leaf on a stem", so each is drawn
+ * as the one thing that distinguishes it: the fibre, the seed head, the
+ * bark, the root form, the industrial output.
+ */
+def('abaca', () => [                                              // a banana grown for rope, not fruit
+  ...[8, 14, 20].map((rad, i) => ring(i % 2 ? 'lo' : 'bs', 27, 30, rad, 5)),   // Manila hawser, coiled down
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * Math.PI * 2;
+    return S(`M${n(27 + 17.5 * Math.cos(a))} ${n(30 + 17.5 * Math.sin(a))} ` +
+             `L${n(27 + 22.5 * Math.cos(a + 0.3))} ${n(30 + 22.5 * Math.sin(a + 0.3))}`, 'gh', 1.2);
+  }),                                                             // the lay of the strands
+  ...[0, 1].map(i => S(`M46 46 Q${52 + i * 2} ${48 + i * 3} ${50 - i * 3} ${56 - i * 4}`, 'hi', 1.6)),  // frayed back to leaf-sheath fibre
+]);
+def('acorn_squash', () => [                                       // a summer squash left on the vine until the rind sets
+  P('M30 10 Q47 12 47 28 Q47 44 30 54 Q13 44 13 28 Q13 12 30 10 Z', 'bs'),
+  ...[-10, 0, 10].map(dx => S(`M${n(30 + dx)} 13 Q${n(30 + dx * 1.5)} 30 ${n(30 + dx * 0.5)} 50`, 'lo', 2.2)),  // the deep ridges
+  S('M30 10 L30 4', 'plant-lo', 3.6),                             // and the stem gone woody: that is what makes it a winter squash
+]);
+def('agarwood_tree', () => [                                      // pale and scentless until a mould gets in
+  C(30, 30, 22, 'hi'),
+  ...[9, 15, 20].map(rad => ring('gh', 30, 30, rad, 1)),          // heartwood, cut across
+  P('M30 9 L37 12 L33 19 L43 17 L37 26 L45 31 L35 35 L39 45 L29 39 L23 48 L22 36 L13 38 L18 28 L11 22 L21 20 L17 11 L26 16 Z', 'lo'),
+  P('M42 12 L53 5 L50 17 Z', 'ik'),                               // the wound — and the resin it floods in is oud
+]);
+def('alder_tree', () => [                                         // it does not rot once it is under water
+  wave('water-bs', 20, 5, 27),
+  S('M30 4 L30 34', 'craft-lo', 5),                               // the pile — most of Venice stands on these
+  ...[[14, 41], [46, 41], [22, 51], [38, 51]].map(([x, y]) => [
+    S(`M30 32 Q${x} ${n(y - 10)} ${x} ${y}`, 'craft-bs', 2.4),
+    C(x, y, 5, 'bs'), C(n(x - 1.6), n(y - 1.6), 1.6, 'hi'),       // Frankia nodules, some of them fist-sized
+  ]).flat(),
+]);
+def('alfalfa_sprout', () => [                                     // three days, five to eight centimetres, and done
+  ...[[16, 52, -1], [23, 54, 1], [30, 52, -1], [37, 54, 1], [44, 52, -1]].map(([x, base, d]) =>
+    S(`M${x} ${base} Q${n(x + d * 7)} ${n(base - 20)} ${n(x + d * 1)} ${n(base - 35)}`, 'hi', 1.8)),
+  ...[[15, 17], [24, 19], [29, 17], [38, 19], [43, 17]].map(([x, y]) => C(x, y, 2.6, 'bs')),  // the seed coat still riding the tip
+]);
+def('almond_tree', () => [                                        // one mutation between lethal and edible
+  P('M26 6 Q10 18 12 34 Q14 50 27 56 Q22 44 22 31 Q22 18 26 6 Z', 'bs'),       // the hull, split along the suture
+  P('M34 6 Q50 18 48 34 Q46 50 33 56 Q38 44 38 31 Q38 18 34 6 Z', 'bs'),
+  P('M30 12 Q37 22 36 33 Q35 45 30 51 Q25 45 24 33 Q23 22 30 12 Z', 'craft-lo'),
+  ...granules('gh', 9, 77, [25, 20, 35, 46]),                                  // the pitted stone
+  P('M30 20 Q34 27 33 34 Q32 41 30 44 Q28 41 27 34 Q26 27 30 20 Z', 'hi'),     // and the sweet kernel the whole crop rests on
+]);
+def('amaranth', () => [                                           // a C4 pseudocereal, and the plume is the tell
+  S('M30 54 L30 18', 'lo', 3),
+  ...Array.from({ length: 11 }, (_, i) => {
+    const t = i / 10;
+    return C(n(30 + 17 * Math.sin(t * 1.9)), n(18 + 30 * t * t), n(4.6 - t * 1.8), i % 2 ? 'bs' : 'hi');
+  }),                                                             // the heavy drooping tassel
+]);
+def('aonla', () => [                                              // called a gooseberry, related to none
+  C(30, 30, 20, 'bs'), C(30, 30, 17, 'hi'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i / 6) * Math.PI * 2 - Math.PI / 2;
+    return P(`M30 30 L${n(30 + 11 * Math.cos(a - 0.32))} ${n(30 + 11 * Math.sin(a - 0.32))} ` +
+             `L${n(30 + 14 * Math.cos(a))} ${n(30 + 14 * Math.sin(a))} ` +
+             `L${n(30 + 11 * Math.cos(a + 0.32))} ${n(30 + 11 * Math.sin(a + 0.32))} Z`, 'craft-lo');
+  }),                                                             // the stone comes apart in six, and so does the fruit
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i / 6) * Math.PI * 2 - Math.PI / 3;
+    return S(`M${n(30 + 13 * Math.cos(a))} ${n(30 + 13 * Math.sin(a))} L${n(30 + 20 * Math.cos(a))} ${n(30 + 20 * Math.sin(a))}`, 'lo', 1.6);
+  }),
+  C(30, 30, 3.4, 'lo'),                                           // 37% emblicanin, and it tastes like it
+]);
+def('argan_tree', () => [                                         // the slowest step in the oil, and still done by hand
+  P('M7 52 Q5 42 18 40 Q34 38 45 41 Q55 43 53 52 Z', 'mineral-hi'),      // the anvil stone
+  E(30, 36, 7, 9, 'dish-lo'),                                            // the nut the goats climbed for and spat out
+  S('M25 32 L35 41 M35 32 L25 41', 'ik', 1.6),
+  P('M11 10 Q29 3 45 11 Q47 20 30 22 Q13 20 11 10 Z', 'mineral-bs'),     // and the stone that comes down on it
+  ...[[18, 27], [42, 27]].map(([x, y]) => S(`M${x} ${y} L${n(x + (x < 30 ? -4 : 4))} ${n(y + 5)}`, 'gh', 1.2)),
+]);
+def('ash_tree', () => [                                           // what is actually happening to ash
+  P('M10 8 L50 8 L50 52 L10 52 Z', 'craft-lo'),
+  ...[[18, 13], [31, 11], [43, 15]].map(([x, y]) =>
+    S(`M${x} ${y} Q${x + 9} ${y + 9} ${x - 4} ${y + 17} Q${x - 13} ${y + 25} ${x + 3} ${y + 33}`, 'hi', 2.4)),  // emerald ash borer galleries
+  P('M40 44 L47 42 L44 49 Z', 'ik'),                              // the D-shaped exit hole
+]);
+def('bamboo_shoot', () => [                                       // boil it, or eat the cyanide
+  P('M30 5 L45 53 L15 53 Z', 'bs'),
+  ...[20, 30, 40, 50].map(y => {
+    const w = n((y - 5) * 15 / 48);
+    return S(`M${n(30 - w)} ${y} Q30 ${n(y - 8)} ${n(30 + w)} ${y}`, 'lo', 1.8);
+  }),                                                             // overlapping culm sheaths
+  S('M30 5 Q35 2 39 3', 'hi', 1.4),
+]);
+def('blood_orange', () => [                                       // the crimson only comes with cold nights
+  C(30, 32, 19, 'lo'), C(30, 32, 16, 'bs'),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const a = (i / 9) * Math.PI * 2;
+    return S(`M30 32 L${n(30 + 16 * Math.cos(a))} ${n(32 + 16 * Math.sin(a))}`, 'lo', 1.2);
+  }),
+  ...[[24, 24], [38, 28], [28, 41], [39, 39]].map(([x, y]) => C(x, y, 4.2, 'fire-lo')),   // anthocyanin, rare in any citrus
+  S('M6 8 L16 18 M16 8 L6 18 M11 6 L11 20', 'gh', 1.4),           // and it keeps deepening in the cold store
+]);
+def('bok_choy', () => [                                           // baak choi — 'white vegetable', for the stalks
+  ...[-9, 0, 9].map(dx => P(`M${n(26 + dx * 0.5)} 54 Q${n(26 + dx * 0.8)} 40 ${n(26 + dx)} 28 ` +
+    `L${n(34 + dx)} 28 Q${n(34 + dx * 0.8)} 40 ${n(34 + dx * 0.5)} 54 Z`, 'hi')),
+  ...[-9, 0, 9].map(dx => S(`M${n(30 + dx * 0.5)} 52 L${n(30 + dx)} 30`, 'lo', 1.2)),
+  ...[[-16, -35], [0, 0], [16, 35]].map(([dx, rot]) =>
+    ['g', rot, n(30 + dx), 26, [P(`M${n(30 + dx)} 3 Q${n(40 + dx)} 12 ${n(36 + dx)} 26 ` +
+      `L${n(24 + dx)} 26 Q${n(20 + dx)} 12 ${n(30 + dx)} 3 Z`, 'bs')]]),   // loose blades: it never forms a head
+]);
+def('boysenberry', () => [                                        // four berries went into it
+  ...[[13, 11], [25, 6], [37, 6], [49, 11]].map(([x, y]) => [
+    S(`M${x} ${y} Q${n((x + 30) / 2)} 22 30 32`, 'lo', 1.6),
+    C(x, y, 3.4, 'hi'),
+  ]).flat(),
+  ...[[30, 32], [24, 37], [36, 37], [22, 45], [30, 43], [38, 45], [30, 51]].map(([x, y]) => C(x, y, 4.6, 'bs')),
+]);
+def('camphor_tree', () => [                                       // camphor came out of steam, not out of sap
+  P('M10 34 L34 34 L34 52 L10 52 Z', 'craft-lo'),
+  ...granules('gh', 9, 133, [13, 37, 31, 49]),                    // the wood, pulverised
+  S('M18 30 Q22 24 18 18 M27 30 Q31 24 27 18', 'gh', 2),          // steam driven through it
+  S('M34 42 Q46 42 46 30', 'ik', 2.6),                            // to the condenser
+  ...[[46, 18], [40, 11], [52, 11]].map(([x, y]) =>
+    P(`M${x} ${n(y - 5)} L${n(x + 5)} ${y} L${x} ${n(y + 5)} L${n(x - 5)} ${y} Z`, 'hi')),  // and it crystallises out
+]);
+def('canaigre_dock', () => [                                      // tanner's dock — the roots are the crop
+  S('M30 30 L30 8', 'lo', 2.4),
+  leaf('bs', 21, 14, .6, -30), leaf('bs', 39, 14, .6, 30),
+  S('M10 31 L50 31', 'gh', 1.2),
+  ...[[19, 45, -22], [30, 49, 0], [41, 45, 22]].map(([x, y, rot]) => [
+    S(`M30 31 L${x} ${n(y - 11)}`, 'lo', 1.4),
+    ['g', rot, x, y, [E(x, y, 5, 11, 'dish-lo')]],                // tannin-rich tubers, and a warm brown dye
+  ]).flat(),
+]);
+def('canola', () => [                                             // rapeseed with the erucic acid bred out of it
+  ...[0, 90, 180, 270].map(a => ['g', a, 20, 20, [E(20, 12, 5, 7, 'hi')]]),   // the four-petal crucifer flower
+  C(20, 20, 3, 'bs'),
+  P('M36 48 Q34 30 40 12 L45 12 Q47 30 45 48 Z', 'bs'),           // the silique
+  ...[20, 27, 34, 41].map(y => C(41, y, 2.4, 'lo')),
+  P('M14 40 Q20 48 20 52 A6 6 0 0 1 8 52 Q8 48 14 40 Z', 'grain-hi'),   // under two percent, and it became a food oil
+]);
+def('cashew_tree', () => [                                        // the nut hangs under a false fruit
+  S('M30 4 L30 12', 'lo', 2),
+  P('M30 12 Q43 15 43 27 Q43 37 30 39 Q17 37 17 27 Q17 15 30 12 Z', 'fire-bs'),   // the swollen stalk everyone takes for the fruit
+  P('M22 39 Q13 42 14 49 Q15 56 24 55 Q34 54 33 46 Q32 41 26 41 Q24 45 23 48 Q21 46 22 39 Z', 'craft-lo'),
+  C(37, 49, 2.2, 'ik'), C(40, 54, 1.4, 'ik'),                     // shell liquid: poison ivy's chemistry, sold as a resin
+]);
+def('cattail_reed', () => [                                       // the down that filled life vests when kapok ran out
+  S('M30 54 L30 26', 'lo', 3),
+  P('M25 27 Q25 13 30 11 Q35 13 35 27 Z', 'craft-lo'),
+  ...[[17, 13], [24, 6], [36, 6], [43, 13], [30, 3], [12, 21], [48, 20]].map(([x, y]) => C(x, y, 4.2, 'hi')),
+  ...[[18, 38], [42, 36]].map(([x, y]) => S(`M30 ${n(y + 10)} Q${x} ${y} ${x} ${n(y - 12)}`, 'bs', 2)),
+]);
+def('chaya', () => [                                              // twenty minutes' simmer, and never in aluminium
+  ['g', -20, 34, 16, [P('M34 2 L38 11 L46 8 L42 17 L50 18 L34 24 L18 18 L26 17 L22 8 L30 11 Z', 'bs')]],
+  P('M10 31 L50 31 L46 51 Q30 56 14 51 Z', 'craft-lo'),
+  P('M6 27 L54 27 L54 32 L6 32 Z', 'craft-bs'),
+  ...[[22, 40], [30, 45], [38, 39], [26, 49]].map(([x, y]) => C(x, y, 2.6, 'water-hi')),
+  ...[15, 45].map(x => S(`M${x} 23 Q${n(x + 3)} 17 ${x} 11`, 'gh', 1.8)),
+]);
+def('chayote', () => [                                            // one flat stone, up to ten centimetres of it
+  P('M30 5 Q38 9 38 17 Q46 23 46 34 Q46 50 30 54 Q14 50 14 34 Q14 23 22 17 Q22 9 30 5 Z', 'hi'),
+  S('M22 46 Q30 40 38 46', 'lo', 2), S('M25 51 Q30 47 35 51', 'lo', 1.6),     // the puckered blossom end
+  P('M30 16 Q37 26 35 36 Q33 44 30 46 Q27 44 25 36 Q23 26 30 16 Z', 'bs'),
+  S('M30 5 L30 1', 'plant-lo', 2),
+]);
+def('cherimoya', () => [                                          // female first, male by afternoon, so a beetle must carry it
+  P('M30 9 Q46 17 45 33 Q44 50 30 54 Q16 50 15 33 Q14 17 30 9 Z', 'bs'),
+  ...[[24, 20], [36, 20], [20, 30], [30, 30], [40, 30], [24, 40], [36, 40], [30, 48]].map(([x, y]) =>
+    S(`M${n(x - 5)} ${n(y + 4)} Q${x} ${n(y - 5)} ${n(x + 5)} ${n(y + 4)}`, 'lo', 1.4)),   // thumbprint scales
+  E(46, 12, 4, 2.6, 'ik'),
+  S('M42 10 L37 7 M42 14 L37 16', 'ik', 1),                       // the nitidulid sap beetle
+]);
+def('cherry_wood_tree', () => [                                   // the finest cabinet wood, and a livestock killer
+  P('M12 8 L48 8 L48 30 L12 30 Z', 'craft-lo'),
+  ...[14, 20, 26].map(y => S(`M12 ${y} Q30 ${n(y - 5)} 48 ${y}`, 'craft-bs', 1.4)),   // planed, and figured
+  S('M26 32 L26 40', 'lo', 1.6),
+  ['g', 30, 26, 44, [leaf('lo', 26, 44, 1)]],                     // one wilted leaf
+  C(34, 54, 2.6, 'gh'),                                           // letting go of hydrogen cyanide
+]);
+def('chestnut_tree', () => [                                      // thirteen percent tannin is the whole preservative
+  P('M5 33 L55 33 L55 56 L5 56 Z', 'mineral-bs'),
+  ...granules('mineral-hi', 8, 401, [10, 37, 50, 52]),
+  P('M24 6 L36 6 L36 54 L24 54 Z', 'craft-hi'),                   // a cleft post in ground contact, untreated
+  ...[11, 19, 27].map(y => S(`M26 ${y} Q30 ${n(y - 3)} 34 ${y}`, 'craft-bs', 1.2)),
+  hex('bs', 30, 44, 6, 1.8),
+  E(30, 6, 6, 2.4, 'bs'),                                         // cut from a stool on a 12-to-30-year rotation
+]);
+def('chia', () => [                                               // it soaks up twelve times its own weight
+  E(12, 30, 4.4, 3.4, 'lo'), E(10.6, 28.6, 1.4, 1, 'hi'),         // dry, it is one to two millimetres
+  S('M20 30 L28 30 M25 27 L28 30 L25 33', 'gh', 1.6),
+  C(41, 30, 17, 'gh'), ring('craft-lo', 41, 30, 17, 1.2),         // wet, it sheathes itself in mucilage
+  E(41, 30, 5, 4, 'bs'), E(39.4, 28.6, 1.6, 1.2, 'hi'),
+]);
+def('chilli_pepper', () => [                                      // five domesticated species, seventeen million years of genus
+  P('M24 12 Q35 12 36 25 Q38 41 30 53 Q27 57 25 53 Q21 41 20 27 Q19 14 24 12 Z', 'fire-bs'),
+  ...[0, 72, 144, 216, 288].map(a =>
+    S(`M28 12 L${n(28 + 8 * Math.cos(a * Math.PI / 180 - Math.PI / 2))} ${n(12 + 8 * Math.sin(a * Math.PI / 180 - Math.PI / 2))}`, 'plant-bs', 2)),
+  S('M28 12 L28 4', 'plant-lo', 2.2),
+  S('M26 22 Q29 34 27 46', 'fire-hi', 1.4),
+]);
+def('cinchona_tree', () => [                                      // the fever tree, and until 1944 nothing else worked
+  P('M16 4 L27 4 L27 56 L16 56 Z', 'craft-lo'),
+  P('M16 16 L27 16 L27 44 L16 44 Z', 'hi'),                       // the bark taken off
+  P('M28 16 Q43 21 45 33 Q47 47 33 53 Q41 42 39 32 Q37 22 28 20 Z', 'bs'),
+  P('M28 16 Q36 22 38 32 Q40 43 33 53 Q32 42 32 32 Q31 22 28 20 Z', 'lo'),   // the strip, curling as it dries
+  hex('ik', 46, 11, 6, 1.8), S('M46 17 L46 21', 'ik', 1.6),                  // eight to thirteen percent quinine
+]);
+def('cinnamon_crop', () => [                                      // a fifteen-metre tree kept as a three-metre bush
+  E(30, 51, 14, 4, 'craft-lo'),
+  ...[-11, -4, 4].map(dx => S(`M${n(30 + dx * 0.4)} 51 Q${n(30 + dx)} 32 ${n(30 + dx * 1.7)} 10`, 'bs', 3.4)),
+  S('M32 51 Q39 32 44 14', 'hi', 3.4),                            // one shoot, first cut at three years old
+  P('M41 15 Q53 23 50 35 L44 32 Q46 23 39 18 Z', 'lo'),           // the bark comes away as a ribbon
+  ['s', 'M47 40 A5 5 0 1 1 46.9 40', 'lo', 2.4],                  // and rolls itself into a quill
+]);
+def('clove_crop', () => [                                         // picked shut, the moment they turn red
+  S('M30 54 L30 34', 'craft-lo', 3),
+  ...[[17, 15], [30, 9], [43, 15]].map(([x, y]) => [
+    S(`M30 34 L${x} ${n(y + 12)}`, 'craft-lo', 1.6),
+    P(`M${n(x - 2.6)} ${n(y + 3)} L${n(x + 2.6)} ${n(y + 3)} L${n(x + 1.6)} ${n(y + 15)} L${n(x - 1.6)} ${n(y + 15)} Z`, 'bs'),
+    C(x, y, 4, 'fire-bs'),                                        // 1.5 to 2 cm, and not one petal open
+  ]).flat(),
+  leaf('lo', 11, 37, .7, -40), leaf('lo', 49, 37, .7, 40),
+]);
+def('clover', () => [                                             // the nitrogen the cities ate and never sent back
+  ...[0, 120, 240].map(a => ['g', a, 30, 22, [P('M30 22 Q19 15 24 7 Q30 3 36 7 Q41 15 30 22 Z', 'bs')]]),
+  S('M30 22 L30 37', 'lo', 2),
+  S('M11 37 L49 37', 'gh', 1.2),
+  ...[[21, 46], [30, 51], [39, 45]].map(([x, y]) => [
+    S(`M30 37 L${x} ${y}`, 'lo', 1.4), C(x, y, 3.6, 'hi'),        // rhizobial nodules, putting it back
+  ]).flat(),
+]);
+def('coffee_crop', () => [                                        // three to five years to fruit, then fifty years of it
+  S('M6 47 Q30 35 54 21', 'craft-lo', 3),
+  ...[[14, 44], [23, 40], [32, 35], [41, 31], [50, 26]].map(([x, y]) => [
+    C(x, y, 4.6, 'fire-lo'), C(n(x - 1.5), n(y - 1.5), 1.5, 'hi'),
+  ]).flat(),
+  ...[[19, 30], [36, 20], [45, 38]].map(([x, y], i) => leaf('bs', x, y, .75, i % 2 ? 35 : -35)),
+]);
+def('coir', () => [                                               // saltwater will not rot it
+  P('M10 32 A20 20 0 0 0 50 32 Z', 'craft-lo'),
+  ['s', 'M15 32 A15 15 0 0 0 45 32', 'lo', 2],                    // half a coconut husk
+  ...[16, 22, 28, 34, 40, 44].map((x, i) =>
+    S(`M${x} 31 Q${n(x + (i % 2 ? 3 : -3))} 18 ${n(x + (i % 2 ? 6 : -6))} 5`, i % 2 ? 'hi' : 'bs', 2.2)),  // lignified fibre, retted ten months
+  S('M6 10 L6 46', 'ik', 3.4),                                    // and beaten free with an iron rod
+]);
+def('collard_green', () => [                                      // an upright stalk, sometimes six feet of it
+  S('M30 56 L30 6', 'lo', 3),
+  ...[[17, 13, -30], [43, 20, 30], [16, 29, -30], [44, 35, 30], [19, 45, -25]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [E(x, y, 10, 7, 'bs'), S(`M${n(x - 9)} ${y} L${n(x + 9)} ${y}`, 'lo', 1)]]),
+]);
+def('cork_oak_tree', () => [                                      // stripped every nine years, for two centuries
+  P('M9 10 Q30 2 51 10 Q46 20 30 20 Q14 20 9 10 Z', 'bs'),
+  P('M24 18 L36 18 L36 54 L24 54 Z', 'craft-lo'),
+  P('M24 31 L36 31 L36 50 L24 50 Z', 'hi'),                       // the year's strip, back to living tissue
+  S('M24 31 L36 31', 'ik', 2),
+  P('M40 33 Q49 31 51 39 L49 52 Q42 54 40 47 Z', 'craft-bs'),     // the slab, off the tree and unharmed
+]);
+def('currant', () => [                                            // banned for most of a century, over a rust
+  S('M17 8 Q22 20 20 33', 'lo', 2),
+  ...[[13, 16], [23, 18], [14, 25], [24, 27], [16, 33], [23, 38], [19, 44]].map(([x, y]) => [
+    C(x, y, 4, 'bs'), C(n(x - 1.4), n(y - 1.4), 1.2, 'hi'),       // the strig, hanging
+  ]).flat(),
+  S('M45 54 L45 14', 'lo', 1.8),
+  ...[20, 27, 34, 41].map(y => [S(`M45 ${y} L37 ${n(y - 7)}`, 'gh', 1), S(`M45 ${y} L53 ${n(y - 7)}`, 'gh', 1)]).flat(),
+  ...[[39, 22], [51, 30]].map(([x, y]) => C(x, y, 2.6, 'fire-hi')),   // white pine blister rust, which needs both hosts
+]);
+def('cypress_tree', () => [                                       // one on the Black River rings back to 605 BC
+  P('M27 4 L33 4 L33 30 L43 45 L17 45 L27 30 Z', 'craft-lo'),     // the fluted, buttressed base
+  ...[[15, 10], [45, 10], [12, 19], [48, 19]].map(([x, y]) =>
+    S(`M30 ${n(y + 7)} Q${n((x + 30) / 2)} ${y} ${x} ${n(y + 3)}`, 'bs', 2.4)),   // feathery, and deciduous
+  ...[28, 32].map(x => S(`M${x} 8 L${x} 30`, 'ik', 1)),
+  wave('water-bs', 47, 4, 27),
+  ...[[9, 46], [16, 49], [44, 49], [51, 46]].map(([x, y]) =>
+    P(`M${n(x - 3)} 56 Q${n(x - 2.5)} ${n(y - 3)} ${x} ${n(y - 10)} Q${n(x + 2.5)} ${n(y - 3)} ${n(x + 3)} 56 Z`, 'craft-lo')),   // the knees
+]);
+def('daikon_radish', () => [                                      // sometimes left to rot in place, on purpose
+  S('M10 17 L50 17', 'gh', 1.2),
+  S('M10 31 L50 31', 'ik', 2),                                    // the compacted pan it is grown to break
+  P('M25 15 L35 15 L32 48 L30 56 L28 48 Z', 'hi'),
+  ...[22, 29, 36, 43].map(y => S(`M27 ${y} L33 ${y}`, 'lo', 1)),
+  ...[[24, 9], [30, 5], [36, 9]].map(([x, y]) => leaf('bs', x, y, .5)),
+]);
+def('date_palm', () => [                                          // male or female, never both
+  ...[15, 45].map(x => [
+    S(`M${x} 54 L${x} 27`, 'craft-lo', 3),
+    ...[-1, 1].map(d => [
+      S(`M${x} 27 Q${n(x + d * 11)} 19 ${n(x + d * 14)} 23`, 'bs', 2),
+      S(`M${x} 27 Q${n(x + d * 8)} 12 ${n(x + d * 10)} 9`, 'bs', 2),
+    ]).flat(),
+  ]).flat(),
+  ...[[41, 35], [47, 33], [43, 42], [49, 40], [45, 48]].map(([x, y]) => E(x, y, 2.6, 3.6, 'hi')),   // only one of the two ever bears
+  ...[[11, 34], [15, 32], [19, 34]].map(([x, y]) => C(x, y, 1.6, 'gh')),                            // the other only ever pollinates
+]);
+def('dill_crop', () => [                                          // one Greek word, split by Latin into two
+  S('M30 54 L30 32', 'lo', 2.4),
+  S('M30 32 Q23 28 18 22', 'lo', 1.8), S('M30 32 Q37 28 42 22', 'lo', 1.8),
+  ...[18, 42].map(cx => [
+    ...[-8, -4, 0, 4, 8].map(dx => S(`M${cx} 22 L${n(cx + dx)} 12`, 'hi', 1.2)),
+    ...[-8, -4, 0, 4, 8].map(dx => C(n(cx + dx), 12, 1.8, 'bs')),   // anethum, and anisum
+  ]).flat(),
+]);
+def('ebony_tree', () => [                                         // the one timber that sinks
+  wave('water-bs', 14, 4, 26),
+  P('M19 34 L45 30 L47 45 L21 49 Z', 'lo'),
+  S('M19 34 L21 49', 'gh', 1.4),                                  // 1,200 kg per cubic metre, on the bottom
+  ...[[26, 26], [33, 21], [30, 30]].map(([x, y]) => C(x, y, 2, 'gh')),
+  P('M8 52 L52 52 L52 56 L8 56 Z', 'gh'),
+]);
+def('einkorn', () => [                                            // 'single grain', and it means it
+  S('M30 50 L30 12', 'lo', 2),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const y = 14 + i * 7, d = i % 2 ? 1 : -1;
+    return [grain('bs', n(30 + d * 5), y, 1, d * 20),
+            S(`M${n(30 + d * 6)} ${n(y - 6)} L${n(30 + d * 11)} ${n(y - 15)}`, 'gh', 1)];
+  }).flat(),
+  grain('hi', 46, 46, 1.7, 20),                                   // one spikelet, one grain
+]);
+def('elderberry', () => [                                         // the flowers and the ripe fruit, and nothing else
+  S('M30 54 L30 30', 'lo', 2.4),
+  ...[-16, -8, 0, 8, 16].map(dx => S(`M30 30 Q${n(30 + dx * 0.6)} 22 ${n(30 + dx)} 18`, 'lo', 1.2)),
+  ...[-16, -8, 0, 8, 16].flatMap(dx =>
+    [[dx - 3, 13], [dx + 3, 13], [dx, 19]].map(([ddx, y]) => C(n(30 + ddx), y, 3, 'bs'))),   // a flat-topped cyme
+]);
+def('emmer', () => [                                              // the wild spikelet plants itself
+  S('M8 47 L52 47', 'gh', 1.6),
+  grain('bs', 30, 39, 1.6, 0), grain('lo', 30, 31, 1.4, 0),       // two grains to a spikelet, point down
+  S('M28 24 Q18 14 11 5', 'hi', 2.2), S('M32 24 Q42 14 49 5', 'hi', 2.2),   // awns: open by night, clamped by day
+  ...[[16, 11], [22, 18], [44, 11], [38, 18]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(x + (x < 30 ? 5 : -5))} ${n(y + 5)}`, 'gh', 1)),      // silica barbs, so it can only go down
+]);
+def('endive', () => [                                             // one crop, grown three ways at once
+  leaf('bs', 12, 13, .7, -25),                                    // a bitter salad leaf
+  P('M46 4 Q52 6 52 13 L49 22 Q46 25 43 22 L40 13 Q40 6 46 4 Z', 'dish-lo'),   // a root, roasted for coffee
+  P('M6 27 L54 27 L54 56 L6 56 Z', 'craft-lo'),
+  ...granules('gh', 4, 211, [9, 31, 18, 53]), ...granules('gh', 4, 77, [43, 31, 52, 53]),
+  P('M30 29 Q36 36 36 45 Q36 54 30 56 Q24 54 24 45 Q24 36 30 29 Z', 'hi'),     // and a chicon, blanched in the dark
+  S('M30 31 L30 54', 'lo', 1.2),
+  S('M27 35 Q30 43 27 51 M33 35 Q30 43 33 51', 'lo', 1),
+]);
+def('fava_bean', () => [                                          // a plate of beans, and a haemolytic crisis
+  P('M24 5 Q34 5 36 18 L38 45 Q38 54 30 54 Q22 54 22 45 L24 18 Z', 'bs'),
+  ...[19, 31, 43].map(y => [E(30, y, 7, 5, 'hi'), S(`M25 ${n(y + 2)} L35 ${n(y + 2)}`, 'lo', 1)]).flat(),
+]);
+def('feijoa', () => [                                             // its perfume is one compound: methyl benzoate
+  P('M30 8 Q43 15 43 30 Q43 48 30 54 Q17 48 17 30 Q17 15 30 8 Z', 'bs'),
+  P('M30 17 Q39 25 38 34 Q37 44 30 48 Q23 44 22 34 Q21 25 30 17 Z', 'gh'),     // the gelatinous seed core
+  ...granules('hi', 7, 313, [25, 25, 35, 42]),
+  S('M46 18 Q54 13 52 5 M48 26 Q56 24 55 15', 'gh', 1.6),                      // straight off the cut face
+  S('M12 12 Q20 8 18 2', 'gh', 1.6),
+]);
+def('fennel_bulb', () => [                                        // not a root: leaf bases, stacked and swollen
+  P('M12 40 Q12 24 22 17 L38 17 Q48 24 48 40 Q48 50 30 52 Q12 50 12 40 Z', 'bs'),
+  P('M19 41 Q19 26 26 17 L34 17 Q41 26 41 41 Q41 48 30 49 Q19 48 19 41 Z', 'hi'),
+  P('M26 42 Q26 27 30 17 Q34 27 34 42 Q34 47 30 47 Q26 47 26 42 Z', 'bs'),
+  S('M13 43 Q30 50 47 43', 'lo', 2),
+  ...[23, 30, 37].map(x => S(`M${x} 17 L${x} 6`, 'lo', 2.6)),     // the stalks cut off short — 90% water
+]);
+def('fennel_crop', () => [                                        // two metres of it, and half of absinthe
+  S('M8 56 L8 5', 'gh', 1.2),
+  ...[6, 22, 38, 54].map(y => S(`M5 ${y} L11 ${y}`, 'gh', 1.2)),
+  S('M30 56 L30 18', 'lo', 3),
+  ...[-15, -8, 0, 8, 15].map(dx => S(`M30 18 L${n(30 + dx)} 9`, 'bs', 1.4)),
+  ...[-15, -8, 0, 8, 15].map(dx => grain('hi', n(30 + dx), 7, .55, 0)),   // trans-anethole and fenchone
+  leaf('lo', 20, 41, .5, -40), leaf('lo', 42, 33, .5, 40),
+]);
+/* crops, fruits, trees and fibres — the plant, not the packet ─────────────
+   Every one of these could default to "a leaf on a stem", so each is drawn as
+   the one thing that separates it: the fibre, the seed head, the coppice
+   stool, the cut face, the industrial output. Where the plant sits beside an
+   existing product icon (nutmeg, juniper, mulberry, kiwi, lime) the plant is
+   drawn so the two cannot be confused. */
+
+def('fiddlehead_fern', () => {                                   // the frond still wound up, weeks before it opens
+  const pts = [];
+  for (let i = 0; i <= 48; i++) {
+    const t = i / 48, a = t * Math.PI * 4.4, rad = 2 + t * 12;
+    pts.push(`${n(26 + rad * Math.cos(a))} ${n(22 + rad * Math.sin(a))}`);
+  }
+  return [
+    S('M30.7 33.4 Q35 44 31 56', 'plant-lo', 3.4),               // the stipe, below the coil
+    S('M' + pts.join(' L'), 'bs', 2.8),
+    C(26, 22, 1.8, 'hi'),
+  ];
+});
+def('finger_lime', () => [                                       // lime caviar: the vesicles come out loose
+  ['g', 34, 21, 24, [P('M15 8 Q11 24 15 40 Q21 45 27 40 Q31 24 27 8 Q21 3 15 8 Z', 'lo')]],
+  ...[[34, 34], [41, 29], [47, 36], [39, 43], [30, 46], [47, 48], [23, 50]]
+    .map(([x, y], i) => C(x, y, 3.4, i % 2 ? 'hi' : 'bs')),
+  ...[[34, 34], [47, 36], [30, 46]].map(([x, y]) => C(x - 1.2, y - 1.2, 1.2, 'hi')),
+]);
+def('fir_tree', () => [                                          // cones that stand up like candles, needles set singly
+  S('M8 42 L52 42', 'lo', 3.4),
+  ...[16, 30, 44].map(x => P(`M${x - 5} 39 Q${x - 6} 22 ${x} 13 Q${x + 6} 22 ${x + 5} 39 Z`, 'bs')),
+  ...[16, 30, 44].map(x => S(`M${x} 36 L${x} 18`, 'lo', 1.2)),
+  ...[12, 20, 25, 35, 40, 48].map(x => S(`M${x} 45 L${x} 54`, 'hi', 1.8)),
+  ...[12, 20, 25, 35, 40, 48].map(x => C(x, 44, 1.5, 'lo')),      // each on its own round base
+]);
+def('fonio', () => {                                             // digitate spikes above, a root a metre down
+  const out = [S('M6 30 L54 30', 'gh', 1.2), S('M30 30 L30 16', 'lo', 2)];
+  for (const a of [-58, -29, 0, 29, 58]) {
+    out.push(['g', a, 30, 16, [
+      S('M30 16 L30 3', 'bs', 2),
+      ...[4, 7, 10, 13].map(d => C(30 + (d % 3 ? 1.6 : -1.6), 16 - d, 1.1, 'hi')),
+    ]]);
+  }
+  out.push(S('M30 30 Q27 44 30 58', 'plant-lo', 2.4));
+  out.push(S('M30 38 L24 45 M30 46 L36 53', 'plant-lo', 1.2));
+  return out;
+});
+def('frankincense_tree', () => [                                 // a shallow cut, and the milky sap hardening into tears
+  P('M8 4 L24 4 L22 56 L6 56 Z', 'lo'),
+  ...[12, 24, 36, 48].map(y => S(`M9 ${y} L21 ${y - 3}`, 'gh', 1)),
+  P('M8 20 L23 24 L23 28.5 L8 24.5 Z', 'ik'),                    // the blaze
+  ...[[12, 29], [17.5, 31]].map(([x, y]) =>
+    P(`M${x} ${y} Q${x + 4} ${y + 6} ${x} ${y + 11} Q${x - 4} ${y + 6} ${x} ${y} Z`, 'hi')),
+  ...[[36, 44], [46, 40], [50, 49], [39, 52], [44, 47]].map(([x, y]) => C(x, y, 5, 'hi')),
+  ...[[36, 44], [50, 49]].map(([x, y]) => C(x - 1.6, y - 1.6, 1.6, 'bs')),   // picked off the bark by hand
+]);
+def('gooseberry', () => [                                        // translucent, veined, and a spine on the branch
+  S('M30 5 L30 15', 'plant-lo', 1.8),
+  S('M25 9 L18 4', 'ik', 1.6),
+  E(30, 32, 15, 16, 'bs'),
+  ...[-9, -4.5, 0, 4.5, 9].map(dx => S(`M${n(30 + dx)} 17 Q${n(30 + dx * 1.6)} 32 ${n(30 + dx)} 47`, 'lo', 1.2)),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const a = (50 + i * 20) * Math.PI / 180;
+    return S(`M30 42 L${n(30 + 6 * Math.cos(a))} ${n(42 + 6 * Math.sin(a))}`, 'ik', 1.2);
+  }),                                                            // the dried flower still on the end of it
+]);
+def('guayule_shrub', () => {                                     // desert shrub; the latex is in the stem, and carries no allergen
+  const out = [S('M8 52 L52 52', 'gh', 1.4)];
+  for (const a of [-34, -17, 0, 17, 34]) {
+    out.push(['g', a, 30, 52, [S('M30 52 L30 20', 'lo', 2.2), E(30, 23, 2.4, 5, 'bs')]]);
+  }
+  out.push(S('M34 33 L43 30', 'lo', 4.4));                        // one stem, cut across
+  out.push(C(47, 29, 7, 'hi'), C(47, 29, 2.6, 'lo'));
+  return out;
+});
+def('gum_arabic_tree', () => [                                   // strip the bark and the acacia seals it with gum
+  P('M20 4 L40 4 L38 56 L22 56 Z', 'lo'),
+  ...[12, 22, 32, 42, 52].map(y => S(`M23 ${y} L37 ${y - 3}`, 'gh', 1)),
+  P('M22 19 L38 19 L38 35 L22 35 Z', 'hi'),                      // bark taken off
+  S('M22 19 L38 19 L38 35 L22 35 Z', 'ik', 1.4),
+  ...[[19, 23], [41, 29], [19, 37]].map(([x, y]) => C(x, y, 6, 'bs')),
+  ...[[19, 23], [41, 29]].map(([x, y]) => C(x - 2, y - 2, 2, 'hi')),
+  ...[[12, 47], [19, 51], [13, 54]].map(([x, y]) => C(x, y, 3.4, 'bs')),   // seventy percent of the world's, out of Sudan
+]);
+def('hazelnut_tree', () => [                                     // the coppice stool, throwing straight rods
+  P('M17 44 Q17 39 30 39 Q43 39 43 44 L43 55 L17 55 Z', 'lo'),
+  ...[19, 26, 34, 41].map(x => S(`M${x} 55 L${x} 42`, 'ik', 1)),
+  ...[-15, -7.5, 0, 7.5, 15].map(dx => S(`M${n(30 + dx * 0.45)} 41 L${n(30 + dx * 1.5)} 5`, 'bs', 2.6)),
+  C(9, 48, 4.4, 'hi'),                                           // one nut, in its ragged husk
+  ...[0, 60, 120, 180, 240, 300].map(a =>
+    S(`M9 48 L${n(9 + 7 * Math.cos(a * Math.PI / 180))} ${n(48 + 7 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.4)),
+]);
+def('hemp', () => {                                              // the palmate leaf, and the line it has to stay under
+  const blade = L => `M30 40 L26 ${n(40 - L * .34)} L28.6 ${n(40 - L * .4)} L25 ${n(40 - L * .62)} ` +
+    `L28 ${n(40 - L * .66)} L26.6 ${n(40 - L * .86)} L30 ${n(40 - L)} L33.4 ${n(40 - L * .86)} ` +
+    `L32 ${n(40 - L * .66)} L35 ${n(40 - L * .62)} L31.4 ${n(40 - L * .4)} L34 ${n(40 - L * .34)} Z`;
+  const out = [S('M30 56 L30 40', 'lo', 2.2)];
+  for (const [a, L] of [[0, 34], [26, 30], [-26, 30], [52, 24], [-52, 24], [78, 17], [-78, 17]]) {
+    out.push(['g', a, 30, 40, [P(blade(L), 'bs')]]);
+  }
+  out.push(S('M4 46 L56 46', 'gh', 1.2));                        // 0.3 percent, and not a fraction over
+  return out;
+});
+def('honeydew_melon', () => [                                    // smooth rind, and ripeness read off its colour, not its size
+  C(30, 32, 19, 'lo'),
+  P('M11 32 A19 19 0 0 1 49 32 Z', 'bs'),
+  P('M13.8 22 A19 19 0 0 1 46.2 22 Z', 'hi'),
+  C(30, 50, 2, 'gh'),
+  ring('gh', 30, 32, 23.5, 1),                                   // size tells you nothing
+]);
+def('hop', () => [                                               // the cone, bract over bract, lupulin inside
+  S('M30 4 L30 13', 'plant-lo', 2),
+  ...[0, 1, 2, 3, 4, 5].map(i => {
+    const y = 13 + i * 6.4, w = 15 - i * 2.3;
+    return P(`M${n(30 - w)} ${y} Q30 ${n(y + 7)} ${n(30 + w)} ${y} Q30 ${n(y - 4)} ${n(30 - w)} ${y} Z`, i % 2 ? 'bs' : 'hi');
+  }),
+  ...[[26, 24], [34, 29], [28, 35], [35, 39], [30, 45]].map(([x, y]) => C(x, y, 1.7, 'lo')),
+]);
+def('horseradish', () => [                                       // nothing happens until you cut it
+  P('M22 20 L38 20 L33 48 Q30 55 27 48 Z', 'hi'),
+  ...[27, 33, 39].map(y => S(`M${n(22 + (y - 20) * .18)} ${y} L${n(38 - (y - 20) * .18)} ${y}`, 'lo', 1)),
+  S('M25 42 L18 47 M35 36 L42 40', 'hi', 1.4),
+  E(30, 20, 8, 3.2, 'bs'),                                       // the cut face
+  ...[[24, 9], [30, 5], [36, 9]].map(([x, y]) => S(`M${x} 17 Q${n(x - 4)} ${n(y + 4)} ${x} ${y}`, 'gh', 1.6)),
+]);
+def('huckleberry', () => [                                       // never planted: it comes back from the rhizome after fire
+  S('M6 34 L54 34', 'gh', 1.3),
+  ...granules('fire-lo', 7, 17, [9, 29, 51, 33]),
+  S('M8 45 Q22 50 34 45 Q45 41 54 45', 'lo', 3.4),               // the buried rhizome
+  ...[[17, 47], [30, 46], [43, 43]].map(([x, y]) => S(`M${x} ${y} L${x} 20`, 'plant-lo', 1.8)),
+  ...[[17, 22], [30, 17], [43, 20], [23, 27], [37, 25]].map(([x, y]) => C(x, y, 3.8, 'bs')),
+  ...[[17, 22], [43, 20]].map(([x, y]) => C(x - 1.3, y - 1.3, 1.2, 'hi')),
+]);
+def('jerusalem_artichoke', () => [                               // a sunflower up top, knobbly tubers underneath
+  S('M6 33 L54 33', 'gh', 1.3),
+  S('M30 33 L30 17', 'plant-lo', 2),
+  ...Array.from({ length: 10 }, (_, i) => ['g', i * 36, 30, 13, [E(30, 3, 2.4, 5, 'hi')]]),
+  C(30, 13, 5, 'ik'),
+  ...[[18, 43], [35, 45], [25, 53]].map(([x, y]) =>
+    P(`M${x - 8} ${y} Q${x - 7} ${y - 6} ${x - 1} ${y - 5} Q${x + 8} ${y - 4} ${x + 7} ${y + 2} Q${x + 1} ${y + 6} ${x - 8} ${y} Z`, 'bs')),
+  ...[[18, 43], [35, 45]].map(([x, y]) => C(x - 3, y - 1, 1.6, 'lo')),
+]);
+def('jicama', () => [                                            // one crisp taproot; the rest of the vine is rotenone
+  P('M12 36 Q12 21 30 21 Q48 21 48 36 Q48 51 30 51 Q12 51 12 36 Z', 'hi'),
+  ...[0, 1, 2, 3, 4, 5].map(i => S(`M30 22 Q${19 + i * 4.4} 36 ${21 + i * 3.6} 50`, 'lo', 1.4)),
+  E(30, 21, 5, 2.4, 'bs'),
+  S('M30 20 L30 14', 'plant-lo', 2),
+  P('M12 13 Q22 6 32 13 Q22 20 12 13 Z', 'lo'),                  // the pod...
+  ...[17, 23, 28].map(x => C(x, 13, 2, 'bs')),
+  S('M8 4 L36 22', 'ik', 3),                                     // ...and every part of it but the root is rotenone
+]);
+def('jojoba', () => [                                            // the seed is half liquid wax — and it sets
+  P('M30 8 Q42 13 42 26 Q42 39 30 43 Q18 39 18 26 Q18 13 30 8 Z', 'lo'),
+  P('M30 8 Q42 13 42 26 Q42 39 30 43 Z', 'bs'),
+  S('M30 8 L30 43', 'ik', 1.3),
+  S('M30 43 L30 48', 'gh', 1.4),
+  P('M30 47 Q34 52 34 54 A4 4 0 0 1 26 54 Q26 52 30 47 Z', 'hi'),
+  P('M44 48 L52 46 L54 53 L46 55 Z', 'hi'),                      // a flake of it, gone solid
+]);
+def('jujube', () => [                                            // sold as a red date, with a stone in it and no palm anywhere
+  P('M30 11 Q44 15 44 31 Q44 46 30 50 Q16 46 16 31 Q16 15 30 11 Z', 'bs'),
+  P('M30 11 Q44 15 44 31 Q44 46 30 50 Z', 'lo'),
+  ...[[36, 20], [40, 30], [36, 41]].map(([x, y]) => S(`M${x} ${y} Q${x + 4} ${y + 3} ${x} ${y + 6}`, 'ik', 1)),
+  P('M30 21 Q34 25 34 31 Q34 37 30 41 Q26 37 26 31 Q26 25 30 21 Z', 'hi'),
+  leaf('plant-lo', 21, 8, .42, -40), leaf('plant-lo', 39, 8, .42, 40),
+]);
+def('juniper_berry', () => [                                     // a cone, not a berry — the scales fuse into a ball
+  C(30, 30, 17, 'bs'),
+  ...[90, 210, 330].map(a =>
+    S(`M30 30 L${n(30 + 16.4 * Math.cos(a * Math.PI / 180))} ${n(30 + 16.4 * Math.sin(a * Math.PI / 180))}`, 'lo', 2.4)),
+  C(30, 30, 3.2, 'lo'),
+  E(25, 23, 5, 3.4, 'hi'),                                       // the waxy bloom
+  ...[-1, 1].map(d => S(`M${n(30 + d * 16)} 30 L${n(30 + d * 27)} ${n(30 - d * 7)}`, 'plant-lo', 1.6)),
+]);
+def('jute', () => [                                              // the golden fibre, retted out in standing monsoon water
+  wave('water-lo', 44, 6, 26), wave('water-bs', 37, 6, 26),
+  ...[-12, -6, 0, 6, 12].map(dx => S(`M${n(24 + dx * .5)} 50 L${n(32 + dx * 1.7)} 8`, 'lo', 2.4)),
+  S('M17 30 L45 26', 'ik', 1.8),                                 // the tie round the bundle
+  ...[0, 1, 2].map(i => S(`M${44 + i * 4} 9 Q${50 + i * 3} 28 ${45 + i * 4} 49`, 'hi', 1.5)),
+]);
+def('kamut', () => [                                             // khorasan: the kernel is twice the size of modern wheat
+  ['g', -14, 24, 30, [
+    P('M24 9 C31 12 34 20 34 30 C34 40 31 48 24 51 C17 48 14 40 14 30 C14 20 17 12 24 9 Z', 'bs'),
+    S('M24 12 L24 48', 'lo', 2.4),
+    S('M22 9 L21 3 M24 8 L24 2 M26 9 L27 3', 'lo', 1.2)]],       // the brush on the tip
+  ['g', -14, 47, 39, [
+    P('M47 30 C50.5 31.5 52 35 52 39 C52 43 50.5 46.5 47 48 C43.5 46.5 42 43 42 39 C42 35 43.5 31.5 47 30 Z', 'hi'),
+    S('M47 32 L47 46', 'lo', 1.2)]],                             // modern wheat, for scale
+]);
+def('kenaf', () => [                                             // one stalk, two fibres: bast round a woody core
+  C(30, 34, 20, 'lo'),
+  ring('bs', 30, 34, 16.5, 7),
+  C(30, 34, 12.5, 'hi'),
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = i * Math.PI / 8;
+    return S(`M${n(30 + 13.2 * Math.cos(a))} ${n(34 + 13.2 * Math.sin(a))} ` +
+             `L${n(30 + 19.6 * Math.cos(a))} ${n(34 + 19.6 * Math.sin(a))}`, 'lo', 1);
+  }),
+  ...Array.from({ length: 5 }, (_, i) => ['g', i * 72, 12, 11, [E(12, 5, 3, 5, 'plant-bs')]]),   // hibiscus
+  C(12, 11, 2, 'plant-lo'),
+]);
+def('kiwifruit', () => [                                         // the whole fruit on the vine, still in its fur
+  E(30, 34, 15, 19, 'lo'),
+  ...Array.from({ length: 28 }, (_, i) => {
+    const a = i / 28 * Math.PI * 2;
+    return S(`M${n(30 + 14.6 * Math.cos(a))} ${n(34 + 18.5 * Math.sin(a))} ` +
+             `L${n(30 + 18.4 * Math.cos(a))} ${n(34 + 23.3 * Math.sin(a))}`, 'gh', 1);
+  }),
+  E(24, 27, 4, 5, 'bs'),
+  S('M30 15 L30 7', 'plant-lo', 2),
+  leaf('plant-bs', 40, 9, .5, 40),
+]);
+def('kohlrabi', () => {                                          // the swollen part is a stem, and it sits above ground
+  const out = [S('M5 44 L55 44', 'gh', 1.4), C(30, 36, 13, 'bs'), C(25, 31, 4, 'hi')];
+  for (const a of [-72, -36, 0, 36, 72]) {
+    const r = a * Math.PI / 180;
+    const x0 = n(30 + 13 * Math.sin(r)), y0 = n(36 - 13 * Math.cos(r));
+    const x1 = n(30 + 24 * Math.sin(r)), y1 = n(36 - 24 * Math.cos(r));
+    out.push(S(`M${x0} ${y0} L${x1} ${y1}`, 'plant-lo', 2));
+    out.push(leaf('plant-bs', x1, y1, .48, a));
+  }
+  out.push(S('M30 49 Q32 53 30 58', 'plant-lo', 1.6));           // the real root, thin, underneath
+  return out;
+});
+def('komatsuna', () => {                                         // long strap blades off a bunched white base
+  const out = [];
+  for (const [x, a] of [[16, -28], [23, -14], [30, 0], [37, 14], [44, 28]]) {
+    out.push(['g', a, x, 50, [
+      P(`M${x} 50 C${x - 10} 39 ${x - 9} 19 ${x} 12 C${x + 9} 19 ${x + 10} 39 ${x} 50 Z`, 'bs'),
+      S(`M${x} 48 L${x} 16`, 'hi', 1.5),
+    ]]);
+  }
+  out.push(P('M22 48 L38 48 L36 56 L24 56 Z', 'hi'));
+  return out;
+});
+def('kumquat', () => [                                           // eaten backwards: the rind is the sweet part
+  E(30, 32, 14, 18, 'bs'),
+  E(30, 32, 7.5, 11, 'hi'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i * 60 + 20) * Math.PI / 180;
+    return S(`M30 32 L${n(30 + 7.2 * Math.cos(a))} ${n(32 + 10.6 * Math.sin(a))}`, 'lo', 1);
+  }),
+  S('M30 14 L30 7', 'plant-lo', 1.8),
+  leaf('plant-bs', 38, 9, .42, 38),
+]);
+def('lime_tree', () => [                                         // linden: pale, near-grainless, the carver's wood
+  P('M8 33 L52 33 L52 53 L8 53 Z', 'hi'),
+  ...[38, 43, 48].map(y => S(`M11 ${y} L49 ${y}`, 'gh', .8)),
+  P('M13 30 L21 21 L26 25 L18 34 Z', 'ik'),                      // the gouge
+  S('M22 22 L35 9', 'ik', 3.6),
+  P('M27 31 Q36 24 45 28 Q38 33 31 35 Q27 35 27 31 Z', 'bs'),    // and the shaving off its edge
+]);
+def('lingonberry', () => [                                       // evergreen, at minus forty-five, under the snow
+  ...[[16, 42], [30, 40], [44, 43]].map(([x, y]) => S(`M${x} 56 L${x} ${y - 12}`, 'lo', 2)),
+  ...[[13, 33], [21, 28], [27, 31], [34, 26], [40, 31], [48, 33]].map(([x, y]) => leaf('lo', x, y, .38, 0)),
+  ...[[17, 47], [30, 45], [43, 48], [24, 51]].map(([x, y]) => C(x, y, 5, 'bs')),
+  ...[[17, 47], [43, 48]].map(([x, y]) => C(x - 1.7, y - 1.7, 1.7, 'hi')),
+  P('M2 12 Q16 6 30 10 Q44 14 58 8 L58 24 Q44 19 30 24 Q16 20 2 25 Z', 'hi'),   // the snow it winters under
+]);
+def('lotus_root', () => [                                        // the rhizome, cut across: the holes are the whole point
+  C(30, 33, 20, 'lo'),
+  C(30, 33, 17.5, 'hi'),
+  C(30, 33, 6.4, 'ground'),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = i * Math.PI / 4;
+    return E(n(30 + 11.4 * Math.cos(a)), n(33 + 11 * Math.sin(a)), 4.2, 3.8, 'ground');
+  }),
+]);
+def('lupin', () => {                                             // the whorled spike; the seeds only edible once brined out
+  const out = [S('M30 42 L30 6', 'plant-lo', 2.6)];
+  for (let i = 0; i < 7; i++) {
+    const y = 8 + i * 5.2;
+    for (const d of [-1, 1]) {
+      out.push(P(`M${n(30 + d * 2)} ${y} Q${n(30 + d * 12)} ${n(y - 3.4)} ${n(30 + d * 11)} ${n(y + 1)} ` +
+                 `Q${n(30 + d * 9)} ${n(y + 4)} ${n(30 + d * 2)} ${y} Z`, i % 2 ? 'bs' : 'hi'));
+    }
+  }
+  out.push(P('M11 45 Q11 56 30 56 Q49 56 49 45 Z', 'gh'));       // and the brine it has to sit in
+  out.push(wave('water-bs', 49, 4, 18));
+  out.push(E(23, 52, 4.4, 3, 'lo'), E(37, 52, 4.4, 3, 'lo'));
+  return out;
+});
+def('mahogany_tree', () => [                                     // sawn, ribbon-straight, and stamped: first of its kind on CITES II
+  P('M9 14 L51 14 L51 45 L9 45 Z', 'bs'),
+  ...[19, 23, 27, 31, 35, 41].map(y => S(`M9 ${y} Q30 ${n(y + 1.4)} 51 ${y}`, 'lo', 1.2)),
+  S('M9 14 L51 14 L51 45 L9 45 Z', 'ik', 1.6),
+  C(40, 37, 6, 'hi'), ring('ik', 40, 37, 6, 1.4), S('M36 37 L44 37', 'ik', 1.4),
+  S('M14 49 L46 49', 'gh', 1.4),
+]);
+def('malabar_spinach', () => {                                   // a soft vine ten metres long, and slippery with mucilage
+  const out = [S('M41 5 L41 56', 'gh', 3)];
+  const p = [];
+  for (let i = 0; i <= 44; i++) {
+    const t = i / 44, y = n(7 + t * 47), x = n(41 + 13 * Math.sin(t * Math.PI * 3.1));
+    p.push(`${i ? 'L' : 'M'}${x} ${y}`);
+  }
+  out.push(S(p.join(' '), 'lo', 2.6));
+  for (const [x, y] of [[28, 18], [26, 32], [28, 45], [36, 53]]) {
+    out.push(P(`M${x} ${y} Q${x - 9} ${y - 6} ${x - 4} ${y - 12} Q${x + 3} ${y - 15} ${x + 6} ${y - 8} Q${x + 8} ${y - 2} ${x} ${y} Z`, 'bs'));
+  }
+  out.push(P('M17 46 Q21 52 21 54 A3.2 3.2 0 0 1 13 54 Q13 52 17 46 Z', 'hi'));
+  return out;
+});
+def('mangosteen', () => [                                        // nearly all rind, and enough tannin in it to tan leather
+  C(30, 34, 20, 'lo'),
+  C(30, 34, 9.5, 'hi'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = i * Math.PI / 3 + .35;
+    return S(`M30 34 L${n(30 + 9.2 * Math.cos(a))} ${n(34 + 9.2 * Math.sin(a))}`, 'gh', 1.2);
+  }),
+  leaf('plant-lo', 22, 13, .42, -62), leaf('plant-lo', 38, 13, .42, 62), leaf('plant-lo', 30, 10, .42, 0),
+  S('M30 12 L30 5', 'plant-lo', 2),
+]);
+def('medlar', () => [                                            // inedible until it blets — then spooned straight out of the skin
+  P('M13 36 Q13 52 30 55 Q47 52 47 36 Q47 24 30 24 Q13 24 13 36 Z', 'lo'),
+  ...[196, 232, 270, 308, 344].map(a =>
+    S(`M30 27 L${n(30 + 19 * Math.cos(a * Math.PI / 180))} ${n(27 + 15 * Math.sin(a * Math.PI / 180))}`, 'bs', 2.8)),
+  E(30, 27, 10, 6, 'ground'),                                    // the calyx, gaping wide open
+  P('M31 30 Q26 24 31 20 Q38 16 43 19 Q40 24 36 26 Q33 28 31 30 Z', 'hi'),   // flesh soft enough to lift straight out
+  S('M18 41 Q22 44 19 47', 'ik', 1),
+]);
+def('meyer_lemon', () => [                                       // not a lemon: a citron crossed into a mandarin-pomelo
+  ring('lo', 19, 32, 16, 1.8), ring('lo', 41, 32, 16, 1.8),      // it sits in the overlap of two others
+  C(30, 33, 13, 'bs'),
+  E(25, 28, 4.4, 3, 'hi'),
+  ...granules('lo', 9, 907, [21, 26, 39, 42]),                   // oil glands, in a rind thinner than a lemon's
+  S('M30 20 L30 12', 'plant-lo', 1.8),
+  leaf('plant-lo', 38, 14, .42, 40),
+]);
+def('microgreen', () => [                                        // grown in a medium and cut above the soil line
+  P('M8 41 L52 41 L50 55 L10 55 Z', 'mineral-lo'),
+  ...[15, 23, 31, 39, 47].map(x => [
+    S(`M${x} 41 L${x} 25`, 'plant-lo', 1.6),
+    leaf('plant-bs', n(x - 4), 24, .3, -56), leaf('plant-bs', n(x + 4), 24, .3, 56),
+    leaf('hi', x, 17, .26, 0),
+  ]).flat(),
+  S('M5 30 L50 30', 'ik', 1.2),
+  P('M49 26 L57 30 L49 34 Z', 'ik'),
+]);
+def('mulberry_tree', () => [                                     // the leaf, and the only animal reared to eat it
+  P('M30 53 L18 45 Q7 36 11 24 Q15 13 26 15 Q30 7 34 15 Q45 13 49 24 Q53 36 42 45 Z', 'bs'),
+  S('M30 53 L30 21', 'lo', 1.6),
+  S('M30 34 L19 25 M30 34 L41 25', 'lo', 1.2),
+  P('M14 31 Q14 27 20 27 L34 27 Q40 27 40 31 Q40 35 34 35 L20 35 Q14 35 14 31 Z', 'hi'),
+  ...[20, 26, 32].map(x => S(`M${x} 27.4 L${x} 34.6`, 'lo', 1)),
+  C(39, 29, 1.2, 'ik'),
+]);
+def('mung_bean', () => [                                         // the dry seed: small, round, and marked by a white hilum
+  ...[[12, 35], [22, 29], [32, 27], [42, 29], [52, 35]].map(([x, y]) =>
+    [C(x, y, 6.4, 'bs'), C(n(x - 2), n(y - 2), 2, 'hi'),
+     S(`M${n(x - 5.6)} ${n(y + 1)} L${n(x - 5.6)} ${n(y + 4.4)}`, 'hi', 2.2)]).flat(),
+  P('M24 46 A7 7 0 0 1 38 46 Z', 'lo'),                          // one halved
+  S('M24 46 L38 46', 'hi', 2),
+]);
+def('mung_bean_sprout', () => [                                  // caught the day the seed splits and a white root shows
+  ...[[16, -1], [30, 0], [44, 1]].map(([x, d]) => [
+    C(x, 15, 6.6, 'bs'),
+    S(`M${x - 6.4} 15 L${x + 6.4} 15`, 'lo', 1.4),               // the coat, split
+    S(`M${x} 21 Q${n(x + d * 9)} 36 ${n(x + d * 5)} 53`, 'hi', 3.6),
+  ]).flat(),
+]);
+def('mustard_green', () => [                                     // frilled, deep-lobed, and sharper than any cabbage leaf
+  P('M30 55 L30 44 Q13 44 11 34 Q19 34 22 30 Q9 26 11 17 Q19 21 24 17 Q17 9 23 4 ' +
+    'Q28 11 30 13 Q32 11 37 4 Q43 9 36 17 Q41 21 49 17 Q51 26 38 30 Q41 34 49 34 Q47 44 30 44 Z', 'bs'),
+  S('M30 55 L30 15', 'lo', 1.6),
+  ...[[45, 47], [52, 51], [45, 53]].map(([x, y]) => C(x, y, 2.6, 'lo')),   // and the seed that makes the condiment
+]);
+def('myrrh_tree', () => [                                        // low, crooked and thorny; its sap has been in use 3,000 years
+  S('M30 56 L30 34', 'lo', 5),
+  S('M30 34 L14 22 M30 34 L46 24 M30 42 L16 38 M30 40 L44 38 M30 34 L30 15', 'lo', 3.4),
+  S('M14 22 L7 11 M14 22 L19 9 M46 24 L54 15 M46 24 L43 11', 'lo', 2.4),
+  ...[[11, 16], [17, 15], [50, 19], [45, 16], [23, 29], [37, 30], [22, 40], [30, 23]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(x + 4)} ${n(y - 5)}`, 'ik', 1.4)),
+  ...[[24, 45], [36, 46], [30, 51]].map(([x, y]) => C(x, y, 3.6, 'bs')),
+  ...[[24, 45], [36, 46]].map(([x, y]) => C(x - 1.2, y - 1.2, 1.2, 'hi')),
+]);
+def('napa_cabbage', () => [                                      // a barrel of leaves, not a ball — and the inside of kimchi
+  P('M20 20 Q20 8 30 8 Q40 8 40 20 L40 46 Q40 52 30 52 Q20 52 20 46 Z', 'hi'),
+  ...[24, 30, 36].map(x => S(`M${x} 13 Q${x - 1} 32 ${x} 50`, 'lo', 1.4)),
+  ...[[22, 11], [27, 8], [33, 8], [38, 11]].map(([x, y]) =>
+    P(`M${x} ${y + 6} Q${x - 3.4} ${y} ${x} ${y - 5} Q${x + 3.4} ${y} ${x} ${y + 6} Z`, 'bs')),
+  E(30, 52, 10, 3, 'lo'),
+]);
+def('neem_tree', () => [                                         // the seed no insect will go near
+  E(26, 34, 9.5, 12.5, 'bs'), E(22.5, 29, 3, 4, 'hi'),
+  S('M26 16 L26 7', 'plant-lo', 1.8),
+  leaf('plant-lo', 17, 12, .5, -40), leaf('plant-lo', 35, 12, .5, 40),
+  ...Array.from({ length: 7 }, (_, i) => {
+    const a = (-62 + i * 21) * Math.PI / 180;
+    return S(`M${n(26 + 16 * Math.cos(a))} ${n(34 + 16 * Math.sin(a))} ` +
+             `L${n(26 + 21.5 * Math.cos(a))} ${n(34 + 21.5 * Math.sin(a))}`, 'lo', 1.8);
+  }),                                                            // azadirachtin, going out in every direction
+  E(45, 39, 4.4, 2, 'lo'), E(55, 39, 4.4, 2, 'lo'),
+  E(50, 40, 3.2, 4.6, 'lo'), C(50, 34.5, 2.6, 'lo'),
+  S('M48 32 L45 27 M52 32 L55 27', 'lo', 1.2),                   // and the insect that turns round and goes
+]);
+def('new_zealand_spinach', () => {                               // thick diamond leaves along the ground — blanched first, for the oxalate
+  const out = [S('M6 47 Q22 41 38 45 Q49 47 55 40', 'lo', 2.6)];
+  for (const [x, y, a] of [[16, 36, -20], [28, 32, 0], [40, 35, 18], [49, 27, 30]]) {
+    out.push(['g', a, x, y, [
+      P(`M${x} ${y + 9} L${x - 9} ${y - 1} L${x} ${y - 10} L${x + 9} ${y - 1} Z`, 'bs'),
+      S(`M${x} ${y + 9} L${x} ${y - 10}`, 'hi', 1.2),
+    ]]);
+  }
+  for (let i = 0; i < 3; i++) out.push(S(`M${9 + i * 5} ${18 - i * 3} Q${14 + i * 5} ${12 - i * 3} ${9 + i * 5} ${6 - i * 3}`, 'gh', 1.4));
+  return out;
+});
+def('nutmeg_crop', () => [                                       // one fruit, two spices: the seed, and the aril round it
+  P('M28 9 Q11 14 9 30 Q8 45 21 52 Q17 35 26 22 Z', 'hi'),
+  P('M32 9 Q49 14 51 30 Q52 45 39 52 Q43 35 34 22 Z', 'hi'),
+  E(30, 34, 9.5, 13, 'lo'),
+  ...[-1, 0, 1].map(d => S(`M${n(30 + d * 5)} 22 Q${n(30 + d * 10)} 34 ${n(30 + d * 4)} 47`, 'bs', 2.4)),
+  ...[-1, 1].map(d => S(`M${n(30 + d * 5)} 28 L${n(30 + d * 10)} 26 M${n(30 + d * 4)} 40 L${n(30 + d * 10)} 42`, 'bs', 2)),
+  S('M30 9 L30 3', 'plant-lo', 1.8),
+]);
+def('olive_wood_tree', () => [                                   // turned into a bowl; the grain goes nowhere straight
+  P('M10 26 Q10 48 30 51 Q50 48 50 26 Z', 'bs'),
+  E(30, 26, 20, 6, 'hi'),
+  ...[0, 1, 2, 3].map(i => S(`M${13 + i * 3} ${30 + i * 2.5} Q${23 + i * 5} ${46 - i * 4} ${45 - i * 4} ${33 + i * 3}`, 'lo', 2)),
+  S('M17 34 Q30 29 41 39', 'lo', 1.8),
+  ...[0, 1].map(i => ['g', i * 40, 34, 40, [E(34, 40, 5 - i * 2, 2.6 - i, 'lo')]]),   // a knot in it
+  E(30, 26, 12, 3.4, 'gh'),
+]);
+def('papyrus_reed', () => {                                      // the umbel above; below, two crossed layers hammered flat
+  const out = [S('M30 39 L30 22', 'lo', 3.4)];
+  for (let i = 0; i < 17; i++) {
+    const a = (-172 + i * 10.8) * Math.PI / 180;
+    out.push(S(`M30 22 L${n(30 + 17 * Math.cos(a))} ${n(22 + 17 * Math.sin(a))}`, 'bs', 1.1));
+  }
+  for (let i = 0; i < 4; i++) out.push(P(`M${10 + i * 10.4} 39 L${17 + i * 10.4} 39 L${17 + i * 10.4} 56 L${10 + i * 10.4} 56 Z`, 'hi'));
+  for (let i = 0; i < 3; i++) out.push(P(`M10 ${41 + i * 5.4} L50 ${41 + i * 5.4} L50 ${44.4 + i * 5.4} L10 ${44.4 + i * 5.4} Z`, 'bs'));
+  return out;
+});
+def('parsnip', () => [                                           // left in the frozen ground until the starch turns to sugar
+  S('M5 22 L55 22', 'gh', 1.4),
+  ...[[12, 15], [22, 12], [32, 14], [42, 11], [50, 15]].map(([x, y]) =>
+    [S(`M${x - 3} ${y} L${x + 3} ${y}`, 'gh', 1.4), S(`M${x} ${y - 3} L${x} ${y + 3}`, 'gh', 1.4)]).flat(),
+  P('M20 24 L40 24 L33 47 Q30 56 27 47 Z', 'hi'),
+  ...[29, 35, 41].map(y => S(`M${n(20 + (y - 24) * .3)} ${y} L${n(40 - (y - 24) * .3)} ${y}`, 'lo', 1)),
+  S('M25 33 L18 39 M35 39 L42 44', 'hi', 1.2),
+]);
+/* crops, fruit, roots, trees and fibres — the plant half of the closing wave.
+   The trap here is sameness: three dozen plants all defaulting to a leaf on a
+   stem. Each one is drawn as the single thing that makes it itself — the pome
+   core, the hyaline cell, the blanching pot, the haustorium. Where a tree sits
+   beside an element that shares its name (walnut the nut, tea the leaf), the
+   tree is drawn as the living organism and the other as the harvested part. */
+
+def('passionfruit', () => [                                                          // named for the flower, not the fruit: a corona, five anthers, three stigmas
+  ...Array.from({ length: 28 }, (_, i) => {
+    const a = (i / 28) * Math.PI * 2;
+    return S(`M${n(30 + 7 * Math.cos(a))} ${n(32 + 7 * Math.sin(a))} ` +
+             `L${n(30 + 21 * Math.cos(a))} ${n(32 + 21 * Math.sin(a))}`, 'bs', 1.4);
+  }),
+  C(30, 32, 7.5, 'hi'),
+  ...Array.from({ length: 5 }, (_, i) => {                                            // the five wounds read into it
+    const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+    return E(n(30 + 13 * Math.cos(a)), n(32 + 13 * Math.sin(a)), 3.6, 2.2, 'lo');
+  }),
+  ...Array.from({ length: 3 }, (_, i) => {
+    const a = -Math.PI / 2 + (i / 3) * Math.PI * 2;
+    return C(n(30 + 5 * Math.cos(a)), n(32 + 5 * Math.sin(a)), 2.2, 'ik');
+  }),
+]);
+def('pawpaw', () => [                                                                // custard flesh, two rows of big seeds, and a maroon flower beetles come to
+  P('M20 22 Q12 34 16 46 Q22 56 30 56 Q38 56 44 46 Q48 34 40 22 Q30 16 20 22 Z', 'hi'),
+  ...[[24, 30], [36, 30], [24, 40], [36, 40], [30, 49]].map(([x, y]) => E(x, y, 4.6, 3.2, 'lo')),
+  ...[0, 120, 240].map(rot => ['g', rot, 44, 13, [E(44, 6, 3, 5, 'bs')]]),
+  C(44, 13, 2.2, 'ik'),                                                               // the beetle, down in it
+]);
+def('peat_moss', () => [                                                             // a leaf, magnified: dead hyaline cells, each with its pore, holding twenty times their own weight
+  P('M7 8 L53 8 L53 50 L7 50 Z', 'bs'),                                              // the living green cells, squeezed to a mesh between them
+  ...[15, 29, 43].flatMap(y => [15, 29, 43].map(x => E(x, y, 6, 5.6, 'hi'))),
+  ...[15, 29, 43].flatMap(y => [15, 29, 43].map(x => C(x, y, 2.2, 'gh'))),
+  P('M30 52 Q34 56 30 59 Q26 56 30 52 Z', 'lo'),
+]);
+def('pecan_tree', () => [                                                            // a bottomland hickory: one pinnate leaf, and a husk that splits in four
+  S('M10 48 L40 12', 'lo', 2.4),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const x = n(12 + i * 5.6), y = n(45 - i * 6.8);
+    return [leaf('bs', n(x - 6), n(y - 3), .4, -50), leaf('bs', n(x + 6), n(y + 3), .4, -50)];
+  }).flat(),
+  S('M45 29 L45 35', 'lo', 1.6),
+  P('M45 35 Q53 42 53 48 Q53 55 45 58 Q37 55 37 48 Q37 42 45 35 Z', 'hi'),           // one nut, still whole in its shell
+  S('M45 38 L45 56', 'lo', 1.4),
+]);
+def('peppermint_crop', () => [                                                       // a hybrid of watermint and spearmint, and it sets no seed of its own
+  S('M14 54 Q20 40 30 32', 'lo', 2.2), S('M46 54 Q40 40 30 32', 'lo', 2.2),
+  S('M30 32 L30 20', 'bs', 2.8),
+  leaf('bs', 21, 26, .62, -40), leaf('hi', 39, 26, .62, 40),
+  S('M25 9 L35 19 M35 9 L25 19', 'ik', 2),
+]);
+def('poppy_seed', () => [                                                            // seed wants a dry ripe pod; the pepper-pot ring of pores does the rest
+  P('M20 28 Q19 47 30 52 Q41 47 40 28 Q30 21 20 28 Z', 'bs'),
+  E(30, 25, 9.5, 3.4, 'lo'),
+  ...Array.from({ length: 7 }, (_, i) => S(`M${n(22 + i * 2.7)} 23 L${n(22 + i * 2.7)} 18`, 'ik', 1.2)),
+  S('M30 52 L30 58', 'lo', 2),
+  ...Array.from({ length: 9 }, (_, i) => C(n(8 + (i % 3) * 4), n(34 + Math.floor(i / 3) * 7), 1.1, 'lo')),
+  ...Array.from({ length: 9 }, (_, i) => C(n(46 + (i % 3) * 4), n(36 + Math.floor(i / 3) * 7), 1.1, 'lo')),
+]);
+def('portobello_mushroom', () => [                                                   // the same button grown on: the cap opens right out and the gills go dark
+  E(30, 31, 22, 6, 'ik'),
+  ...Array.from({ length: 9 }, (_, i) => S(`M${n(11 + i * 4.8)} 29 L${n(12 + i * 4.6)} 34`, 'lo', 1.2)),
+  P('M25 32 L35 32 L33 52 L27 52 Z', 'hi'),
+  E(30, 24, 24, 9, 'bs'),
+  E(30, 20, 14, 4, 'hi'),
+]);
+def('quince', () => [                                                                // a kilogram of it, hard and gritty with stone cells right through
+  P('M30 17 Q42 19 44 31 Q47 45 34 52 Q30 55 26 52 Q13 45 16 31 Q18 19 30 17 Z', 'bs'),
+  ...granules('lo', 16, 613, [19, 25, 41, 48]),
+  ...[-6, 0, 6].map(dx => S(`M30 17 L${30 + dx} ${n(7 + Math.abs(dx) * 0.4)}`, 'lo', 1.8)),
+]);
+def('radicchio', () => [                                                             // no light, and only then the colour: heads lifted and stood in water in the dark
+  P('M6 10 L54 10 L54 17 L6 17 Z', 'ik'),
+  C(30, 34, 15, 'bs'),
+  ...[-10, -4, 4, 10].map(dx => S(`M${30 + dx} 22 Q${n(30 + dx * 1.4)} 34 ${30 + dx} 46`, 'hi', 2.2)),
+  S('M30 20 L30 48', 'hi', 2.8),
+  wave('lo', 52, 4, 24),
+]);
+def('raffia_palm', () => {                                                           // twenty-five metres of frond — the longest leaf any plant grows
+  const pt = t => [n((1 - t) ** 2 * 8 + 2 * (1 - t) * t * 26 + t * t * 48),
+                   n((1 - t) ** 2 * 54 + 2 * (1 - t) * t * 42 + t * t * 6)];
+  const out = [S('M8 54 Q26 42 48 6', 'lo', 3)];
+  for (let i = 1; i <= 10; i++) {
+    const [x, y] = pt(i / 11);
+    out.push(S(`M${x} ${y} L${n(x - 11)} ${n(y - 3)}`, 'bs', 1.6));
+    out.push(S(`M${x} ${y} L${n(x + 8)} ${n(y + 5)}`, 'bs', 1.6));
+  }
+  out.push(S('M40 52 Q47 44 44 34', 'hi', 2.4));                                      // raffia: the membrane peeled off the underside
+  out.push(P('M3 58 L14 58 L12 50 L5 50 Z', 'ik'));                                   // the trunk it all comes off, dwarfed
+  return out;
+});
+def('ramie', () => [                                                                 // alone among bast crops it will not ret — the gum is boiled off, and a quarter of the fibre with it
+  ...[16, 24, 32, 40].map((x, i) => S(`M${x} 6 Q${x + (i % 2 ? 3 : -3)} 26 ${x} 44`, i % 2 ? 'hi' : 'bs', 2.6)),
+  ...[[18, 16], [30, 22], [24, 32], [39, 18], [37, 36]].map(([x, y]) => C(x, y, 3.4, 'lo')),
+  P('M8 46 L52 46 L47 58 L13 58 Z', 'lo'),
+  wave('hi', 50, 3, 18),
+]);
+def('rattan_palm', () => {                                                           // a climbing palm with no secondary growth: one cane, one width, for hundreds of metres
+  const cane = 'M6 54 Q20 46 12 34 Q6 22 22 16 Q40 10 46 22 Q52 36 38 42 Q28 46 32 57';
+  return [
+    S(cane, 'bs', 8), S(cane, 'hi', 2.6),
+    ...[[12, 42, -30], [15, 24, 40], [30, 12, 95], [46, 30, 200], [36, 44, 250]].map(([x, y, a]) =>
+      S(`M${x} ${y} L${n(x + 9 * Math.cos(a * Math.PI / 180))} ${n(y + 9 * Math.sin(a * Math.PI / 180))}`, 'ik', 1.6)),
+  ];
+});
+def('rosewood_tree', () => [                                                         // Dalbergia — a pea in the timber trade, and now every species of it on CITES
+  C(30, 24, 18, 'hi'),                                                               // the log's cut end: pale sapwood...
+  C(30, 24, 12, 'lo'),                                                               // ...and the dark heartwood the whole trade is after
+  ...[-6, 0, 6].map(dx => S(`M${n(30 + dx)} 14 Q${n(30 + dx * 1.7)} 24 ${n(30 + dx)} 34`, 'ik', 1.4)),
+  ring('bs', 30, 24, 15, 1.4),
+  P('M11 50 Q30 44 49 50 Q30 57 11 50 Z', 'bs'),                                     // a pea pod, because that is the family it is in
+  ...[20, 30, 40].map(x => C(x, 50, 2.4, 'lo')),
+]);
+def('rutabaga', () => [                                                              // an accident that doubled its own chromosomes, found growing wild in Sweden
+  P('M30 52 Q16 48 15 34 Q14 20 30 20 Q46 20 45 34 Q44 48 30 52 Z', 'bs'),
+  ...[-8, 0, 8].map(dx => S(`M${30 + dx} 21 L${30 + dx} 11`, 'lo', 2.6)),             // the ridged, leaf-scarred neck
+  S('M30 52 Q32 56 29 59', 'lo', 1.6),
+  ...[23, 26, 33, 36].map(x => E(x, 43, 1.4, 3.4, 'hi')),                             // two sets of chromosomes where there should be one
+]);
+def('saffron_crocus', () => [                                                        // a sterile triploid: no viable seed ever, so every corm was split off another by hand
+  ...[-1, 0, 1].map(d => P(`M${n(30 + d * 9)} 9 Q${n(35 + d * 11)} 20 ${n(30 + d * 9)} 31 ` +
+                           `Q${n(25 + d * 11)} 20 ${n(30 + d * 9)} 9 Z`, 'bs')),
+  ...[-1, 0, 1].map(d => S(`M30 31 Q${n(30 + d * 7)} 23 ${n(30 + d * 10)} 15`, 'lo', 1.8)),
+  S('M30 31 L30 39', 'hi', 2),
+  E(30, 46, 11, 8, 'lo'),
+  E(45, 51, 6, 4.4, 'hi'), E(16, 51, 5, 3.6, 'hi'),                                   // and the daughter corms taken off it
+]);
+def('samphire', () => [                                                              // glasswort: its ashes were burnt for the soda that made the glass
+  ...Array.from({ length: 5 }, (_, i) => E(23, n(46 - i * 8.5), 5, 5, 'bs')),
+  ...Array.from({ length: 3 }, (_, i) => E(38, n(32 - i * 8.5), 4.4, 4.4, 'bs')),
+  S('M23 28 Q31 27 38 22', 'bs', 3),
+  ...Array.from({ length: 4 }, (_, i) => S(`M18 ${n(42 - i * 8.5)} L28 ${n(42 - i * 8.5)}`, 'lo', 1.2)),
+  mound('hi', 57, 15, 8),
+]);
+def('sandalwood_tree', () => [                                                       // a thief with roots: haustoria clamp onto three hundred other species and take what they need
+  S('M30 4 L30 27', 'lo', 4),
+  leaf('bs', 22, 12, .5, -30), leaf('bs', 38, 12, .5, 30),
+  S('M5 30 L55 30', 'ik', 1.4),
+  S('M30 27 Q28 40 15 45 M30 30 Q35 44 47 47', 'lo', 2.6),
+  ...[[13, 40], [24, 50], [45, 41], [51, 52]].map(([x, y]) => S(`M${x} ${n(y - 8)} L${x} ${n(y + 8)}`, 'gh', 2.4)),
+  ...[[15, 45], [24, 48], [47, 47], [45, 42]].map(([x, y]) => C(x, y, 3.2, 'hi')),    // and every place it taps in
+]);
+def('saskatoon_berry', () => [                                                       // not a berry but a pome — a tiny apple, carpels and calyx crown and all
+  ...[[15, 16], [29, 12], [43, 18], [20, 27]].flatMap(([x, y]) =>
+    [C(x, y, 5.5, 'bs'), S(`M${x} ${y - 6} L${x} ${y - 11}`, 'lo', 1.2)]),
+  C(34, 42, 14, 'bs'),
+  C(34, 42, 10, 'hi'),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+    return E(n(34 + 5.5 * Math.cos(a)), n(42 + 5.5 * Math.sin(a)), 2.4, 1.6, 'lo');
+  }),
+  ...[-4, 0, 4].map(dx => S(`M${34 + dx} 56 L${n(34 + dx * 1.7)} 59`, 'lo', 1.4)),
+]);
+def('sea_buckthorn', () => [                                                         // Frankia in its roots lets it take bare ground, and the fruit is loaded with vitamin C
+  S('M30 48 L30 8', 'lo', 3),
+  ...Array.from({ length: 9 }, (_, i) => C(n(24 + (i % 2) * 12), n(12 + i * 3.8), 4, 'bs')),
+  S('M30 18 L41 12', 'ik', 1.6), S('M30 32 L19 26', 'ik', 1.6), S('M30 44 L42 39', 'ik', 1.6),
+  S('M5 50 L55 50', 'gh', 1.2),
+  S('M30 48 Q24 54 16 57 M30 48 Q38 55 46 57', 'lo', 2),
+  ...[[19, 55], [42, 55], [30, 53]].map(([x, y]) => C(x, y, 3, 'hi')),                // the nodules that let it start from nothing
+]);
+def('sea_kale', () => [                                                              // forced blind under a blanching pot, and priced accordingly
+  ...[21, 30, 39].map((x, i) => S(`M${x} 50 Q${n(x + (i - 1) * 3)} 36 ${n(x + (i - 1) * 6)} 22`, 'hi', 3.4)),
+  P('M12 24 Q12 8 30 8 Q48 8 48 24 L48 32 L12 32 Z', 'lo'),
+  C(30, 7, 4, 'lo'),
+  S('M7 52 L53 52', 'ik', 2),
+]);
+def('shea_tree', () => [                                                             // 'butter seed': the kernel fat is half stearic acid, so it sets solid and stays that way
+  P('M18 13 Q30 7 42 13 Q46 25 38 33 Q30 37 22 33 Q14 25 18 13 Z', 'bs'),
+  E(30, 22, 8, 10, 'hi'),
+  P('M14 44 L40 40 L46 44 L46 54 L20 58 L14 54 Z', 'hi'),
+  P('M14 44 L40 40 L46 44 L20 48 Z', 'lo'),
+  S('M20 48 L20 58', 'gh', 1.2),
+]);
+def('sisal', () => [                                                                 // 250 spine-tipped leaves over a ten-year life, and the fibre is 4% of the weight
+  ...[-60, -36, -12, 12, 36, 60].flatMap(deg => {
+    const a = deg * Math.PI / 180, rad = Math.abs(deg) < 20 ? 34 : Math.abs(deg) < 45 ? 32 : 30;
+    const ax = Math.sin(a), ay = -Math.cos(a);
+    const tx = n(30 + rad * ax), ty = n(52 + rad * ay);
+    return [P(`M${n(30 - 5 * ay)} ${n(52 + 5 * ax)} L${tx} ${ty} L${n(30 + 5 * ay)} ${n(52 - 5 * ax)} Z`, 'bs'),
+            S(`M${tx} ${ty} L${n(tx + 5 * ax)} ${n(ty + 5 * ay)}`, 'ik', 1.6)];
+  }),
+  S('M23 21 Q17 13 19 5', 'hi', 1.6),                                                 // one fibre, pulled out of a thousand
+]);
+def('snow_pea', () => [                                                              // compressed, non-leathery — flat and thin-walled, and the seeds barely raise it
+  P('M6 36 Q10 20 26 16 Q44 11 54 20 Q50 30 34 34 Q16 39 6 36 Z', 'hi'),
+  ...[[18, 30], [28, 26], [38, 22], [47, 20]].map(([x, y]) => E(x, y, 4.2, 2.6, 'gh')),
+  S('M6 36 L2 41', 'lo', 2),
+  S('M10 46 Q30 42 50 46', 'lo', 2.4),                                                // and edge on, there is next to nothing to it
+]);
+def('sorghum_broomcorn', () => [                                                     // sorghum grown for the stiff panicle and not the grain, and tied off at the neck
+  S('M30 57 L30 32', 'lo', 3.4),
+  ...Array.from({ length: 11 }, (_, i) =>
+    S(`M30 32 L${n(9 + i * 4.2)} ${n(5 + Math.abs(i - 5) * 1.8)}`, 'bs', 1.6)),
+  S('M20 32 L40 32', 'ik', 3.4),
+]);
+def('spaghetti_squash', () => [                                                      // solid raw; cooked, the flesh comes away from the rind in strands
+  P('M5 30 Q5 15 23 15 Q40 15 40 30 Q40 45 23 45 Q5 45 5 30 Z', 'bs'),
+  P('M40 17 Q46 23 46 30 Q46 37 40 43 Q34 37 34 30 Q34 23 40 17 Z', 'hi'),
+  ...[22, 27, 33, 38].map((y, i) => S(`M41 ${y} Q50 ${n(y - 5)} 57 ${n(y + (i % 2 ? 5 : -3))}`, 'lo', 1.8)),
+  S('M13 15 L11 7', 'lo', 2.4),
+]);
+def('spanish_moss', () => [                                                          // neither Spanish nor a moss: a rootless bromeliad living off rain and dust
+  S('M3 15 Q30 21 57 12', 'ik', 3.4),
+  ...[10, 18, 26, 34, 42, 50].map((x, i) =>
+    S(`M${x} 17 Q${n(x + (i % 2 ? 8 : -8))} ${n(32 + i)} ${n(x + (i % 2 ? -3 : 4))} ${n(45 + (i % 2 ? 9 : 0))}`,
+      i % 2 ? 'bs' : 'hi', 2.2)),
+  P('M46 36 Q50 41 46 44 Q42 41 46 36 Z', 'gh'),                                      // everything it lives on arrives out of the air
+]);
+def('spearmint_crop', () => [                                                        // square-stemmed and spike-flowered, and unlike its hybrid child it still sets seed
+  S('M30 54 L30 26', 'lo', 2.6),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const y = n(24 - i * 4.2), w = n(7.5 - i * 1.3);
+    return [C(n(30 - w), y, 2.6, 'bs'), C(n(30 + w), y, 2.6, 'bs')];
+  }).flat(),
+  C(30, 3, 2.4, 'bs'),
+  leaf('hi', 20, 38, .55, -35), leaf('hi', 40, 38, .55, 35),
+  P('M6 46 L18 46 L18 58 L6 58 Z', 'ik'), P('M9 49 L15 49 L15 55 L9 55 Z', 'hi'),     // the stem, in section
+]);
+def('spelt', () => [                                                                 // hulled: thresh it and the grain is still sealed inside its husk
+  ...[[20, 38, -18], [32, 27, 5], [43, 42, 22]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [
+      P(`M${x} ${y - 16} Q${x + 7} ${y - 4} ${x + 4} ${y + 12} L${x - 4} ${y + 12} ` +
+        `Q${x - 7} ${y - 4} ${x} ${y - 16} Z`, 'bs'),
+      P(`M${x} ${y - 10} Q${x + 4} ${y - 2} ${x + 2} ${y + 7} L${x - 2} ${y + 7} ` +
+        `Q${x - 4} ${y - 2} ${x} ${y - 10} Z`, 'gh'),
+      S(`M${x} ${y - 16} L${x} ${y - 23}`, 'lo', 1.4),
+    ]]),
+]);
+def('spruce_tree', () => [                                                           // the soundboard wood: quartersawn, long fibres, stiff along the grain
+  P('M13 7 L47 7 L47 53 L13 53 Z', 'hi'),
+  ...[17, 21, 25, 29, 33, 37, 41, 45].map(x => S(`M${x} 7 L${x} 53`, 'bs', 1.4)),
+  S('M33 18 Q26 23 29 30 Q32 37 25 42', 'ik', 3),
+  C(33, 17, 3, 'ik'), C(25, 43, 3, 'ik'),                                             // one f-hole, and the reason a forest gets felled for violins
+]);
+def('star_anise_crop', () => [                                                       // eight woody carpels, picked just before they ripen
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2 - Math.PI / 2;
+    const cx = n(30 + 15 * Math.cos(a)), cy = n(30 + 15 * Math.sin(a));
+    return ['g', n(a * 180 / Math.PI + 90), cx, cy, [
+      P(`M${cx} ${n(cy - 10)} Q${n(cx + 5)} ${cy} ${cx} ${n(cy + 8)} ` +
+        `Q${n(cx - 5)} ${cy} ${cx} ${n(cy - 10)} Z`, 'bs'),
+      C(cx, n(cy + 2), 2.4, 'lo'),
+    ]];
+  }),
+  C(30, 30, 5, 'lo'),
+]);
+def('sugarsnap_pea', () => [                                                         // a shelling-pea mutant crossed onto a snow pea: round in section, and no membrane to split along
+  P('M8 36 Q8 24 20 24 L38 24 Q50 24 50 36 Q50 48 38 48 L20 48 Q8 48 8 36 Z', 'bs'),
+  ...[18, 29, 40].map(x => C(x, 36, 6.4, 'hi')),
+  S('M50 30 L57 23', 'lo', 2),
+  C(43, 11, 8, 'lo'), C(43, 11, 4.4, 'hi'),
+]);
+def('sweet_gale', () => [                                                            // bog myrtle: the bittering herb of gruit, before hops and before the tax on them
+  S('M17 54 L17 12', 'lo', 2.6),
+  ...[[11, 22], [23, 26], [11, 32], [23, 36], [11, 42]].map(([x, y]) => leaf('bs', x, y, .4, x < 17 ? -60 : 60)),
+  E(17, 10, 3, 5, 'lo'), E(24, 15, 2.6, 4.4, 'lo'),
+  P('M33 26 L52 26 L50 53 L35 53 Z', 'hi'),
+  S('M36 33 Q43 31 49 33', 'ik', 1.6),
+  S('M52 31 Q58 36 52 42', 'ik', 2),
+]);
+def('sweetcorn', () => [                                                             // a mutation stalls sugar turning to starch, so it has to be cut at the milk stage
+  P('M20 40 Q20 14 30 8 Q40 14 40 40 Q30 46 20 40 Z', 'bs'),
+  P('M24 38 Q24 19 30 13 Q36 19 36 38 Q30 42 24 38 Z', 'hi'),
+  P('M30 46 Q35 51 30 55 Q25 51 30 46 Z', 'hi'),                                      // press it now and this is what comes out
+  ...[20, 28, 36].map(y => S(`M9 ${y} L17 ${y}`, 'gh', 1.4)),
+  ...[20, 28, 36].map(y => S(`M43 ${y} L51 ${y}`, 'gh', 1.4)),
+]);
+def('swiss_chard', () => [                                                           // the same species as beetroot, bred for leaf and stalk and given no root worth the name
+  P('M27 46 L33 46 L33 22 L27 22 Z', 'bs'),
+  ...[26, 32, 38, 44].map(y => S(`M27 ${y} L33 ${y}`, 'hi', 1)),
+  P('M30 24 Q9 22 6 12 Q12 2 20 7 Q25 1 30 7 Q35 1 40 7 Q48 2 54 12 Q51 22 30 24 Z', 'lo'),
+  ...[15, 22, 38, 45].map(x => S(`M${x} 19 Q${n(x + (x < 30 ? 3 : -3))} 13 ${x} 8`, 'bs', 1.2)),
+  S('M5 48 L55 48', 'gh', 1.2),
+  S('M30 44 L30 56', 'gh', 2.4),
+]);
+def('taro', () => [                                                                  // the corm's cells are packed with needle crystals; cooking or an overnight soak defuses them
+  P('M18 21 Q14 40 24 52 Q30 56 36 52 Q46 40 42 21 Q30 15 18 21 Z', 'bs'),
+  ...[27, 36, 45].map(y => S(`M${n(17 + (y - 27) * 0.14)} ${y} Q30 ${n(y + 3)} ${n(43 - (y - 27) * 0.14)} ${y}`, 'lo', 1.2)),
+  ...Array.from({ length: 6 }, (_, i) =>
+    S(`M${n(23 + i * 1.8)} ${n(45 - i * 0.6)} L${n(31 + i * 1.8)} ${n(33 - i * 0.6)}`, 'ik', 1)),   // one raphide bundle, needles all one way
+  ...[24, 30, 36].map(x => S(`M${x} 19 L${n(x + (x - 30) * 0.6)} 6`, 'lo', 2.2)),
+]);
+def('tatsoi', () => [                                                                // a flat rosette of spoon-shaped leaves, hugging the ground and cut from under the snow
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return S(`M30 36 L${n(30 + 14 * Math.cos(a))} ${n(36 + 12 * Math.sin(a))}`, 'lo', 1.4);
+  }),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return E(n(30 + 16 * Math.cos(a)), n(36 + 14 * Math.sin(a)), 7, 6, i % 2 ? 'bs' : 'hi');
+  }),
+  C(30, 36, 5, 'lo'),
+  ...[[11, 9], [25, 5], [45, 10], [52, 4]].map(([x, y]) => C(x, y, 2, 'gh')),
+]);
+def('tea_tea', () => [                                                               // it would run to 20 m; the plucking table holds it at a flat-topped metre
+  P('M8 30 Q8 21 30 21 Q52 21 52 30 L52 50 L8 50 Z', 'bs'),
+  S('M5 23 L55 23', 'ik', 2.2),
+  ...[[15, 34], [26, 41], [38, 36], [46, 43]].map(([x, y]) => leaf('lo', x, y, .5, 20)),
+  S('M34 21 L34 9', 'lo', 2),
+  leaf('hi', 28, 13, .45, -40), leaf('hi', 40, 13, .45, 40),
+  grain('hi', 34, 6, .8),                                                             // and nothing is taken but the bud and the top leaves
+]);
+def('teak_tree', () => [                                                             // its own oils leave the timber termite-proof, with nothing put on it at all
+  P('M8 18 L42 12 L52 18 L52 42 L18 48 L8 42 Z', 'hi'),
+  P('M8 18 L42 12 L52 18 L18 24 Z', 'lo'),
+  ...[29, 35, 41].map(y => S(`M18 ${y} L52 ${n(y - 6)}`, 'bs', 1.2)),
+  C(34, 31, 3.4, 'gh'), C(24, 37, 2.4, 'gh'),
+  E(46, 55, 4.4, 2.6, 'ik'), C(40, 55, 2.2, 'ik'),
+  S('M37 53 L33 50 M37 57 L33 59', 'ik', 1),                                          // the termite that got no further
+]);
+def('teff', () => [                                                                  // the seed is under a millimetre across, and the name is thought to mean 'lost'
+  C(24, 26, 19, 'hi'),
+  ...Array.from({ length: 26 }, (_, i) => {
+    const a = i * 2.399, rr = 15.5 * Math.sqrt((i + 0.5) / 26);
+    return C(n(24 + rr * Math.cos(a)), n(26 + rr * Math.sin(a)), 1.1, 'bs');
+  }),
+  ring('lo', 24, 26, 19, 3),
+  S('M38 40 L54 56', 'lo', 4.5),
+  grain('bs', 50, 14, 1.3),                                                           // one ordinary grain, outside the lens, for scale
+]);
+def('triticale', () => [                                                             // wheat mother, rye father — and the cross stays sterile until its chromosomes are doubled
+  S('M9 56 Q12 46 15 38', 'lo', 2),
+  ...[[12, 34], [18, 34], [12, 28], [18, 28], [15, 23]].map(([x, y]) => grain('bs', x, y, .7)),
+  S('M51 56 Q48 46 45 38', 'lo', 2),
+  ...Array.from({ length: 4 }, (_, i) => grain('hi', n(45 + (i % 2 ? 3 : -3)), n(34 - i * 4), .7)),
+  ...[0, 1, 2].map(i => S(`M45 ${n(32 - i * 4)} L${n(53 + i)} ${n(26 - i * 4)}`, 'gh', 1)),
+  S('M15 20 Q22 15 28 11 M45 20 Q38 15 32 11', 'ik', 1.6),
+  ...[[27, 8], [33, 8], [27, 3], [33, 3]].map(([x, y]) => grain('lo', x, y, .7)),
+]);
+def('turmeric_crop', () => [                                                         // the standing plant, not the powder: broad leaves and a cone of bracts, rhizome out of sight
+  S('M5 42 L55 42', 'gh', 1.2),
+  P('M28 42 Q10 34 8 13 Q22 17 28 34 Z', 'bs'),
+  P('M32 42 Q50 34 52 13 Q38 17 32 34 Z', 'bs'),
+  S('M30 42 L30 9', 'lo', 2.4),
+  ...Array.from({ length: 5 }, (_, i) => {
+    const w = n(9 - i * 1.4), y = n(27 - i * 4);
+    return P(`M${n(30 - w)} ${y} Q30 ${n(y - 6)} ${n(30 + w)} ${y} Q30 ${n(y + 3)} ${n(30 - w)} ${y} Z`, 'hi');
+  }),
+  S('M17 47 Q24 53 32 49 Q40 45 47 51', 'gh', 5),
+]);
+def('walnut_tree', () => [                                                           // juglone leaks from its roots and hulls, and whatever is planted under it yellows and wilts
+  P('M12 5 Q12 23 30 25 Q48 23 48 5 Q30 0 12 5 Z', 'bs'),
+  S('M30 25 L30 42', 'ik', 5),
+  S('M4 42 L56 42', 'gh', 1.2),
+  S('M30 42 Q23 48 14 52 M30 42 Q37 48 46 52', 'ik', 2.4),
+  S('M9 51 Q30 59 51 51', 'gh', 1.6),                                                 // the juglone, spreading through the soil
+  ...[15, 45].map(x => [S(`M${x} 42 L${x} 32`, 'lo', 2),
+                        leaf('lo', n(x + 4), 33, .38, 75)]).flat(),                    // and whatever is planted under it, wilting
+]);
+def('water_chestnut', () => [                                                        // not a nut but the corm of a flooded-paddy sedge, and it stays crisp however long you boil it
+  ...[16, 24, 32, 40, 48].map((x, i) => S(`M${x} 36 L${n(x + (i - 2) * 1.5)} 5`, 'bs', 2.4)),
+  wave('hi', 38, 5, 26), wave('lo', 43, 4, 23),
+  E(30, 51, 13, 7.5, 'lo'),
+  S('M18 47 Q30 50 42 47 M20 53 Q30 56 40 53', 'ik', 1.2),
+  S('M30 42 L30 37', 'ik', 1.8),
+]);
+def('wild_rice', () => [                                                             // four species of Zizania: aquatic grasses standing in the lake with only the head above it
+  ...[19, 30, 41].map((x, i) => S(`M${x} 52 L${n(x + (i - 1) * 4)} 22`, 'lo', 2)),
+  ...[19, 30, 41].map((x, i) => {
+    const tx = n(x + (i - 1) * 4);
+    return Array.from({ length: 5 }, (_, k) => grain('bs', n(tx + (k % 2 ? 2 : -2)), n(20 - k * 3.6), .65));
+  }).flat(),
+  wave('hi', 40, 5, 26), wave('lo', 47, 4, 24),
+]);
+def('woad', () => [                                                                  // a mustard yielding the very same indigo molecule, and far too little of it to survive the sea route
+  ...Array.from({ length: 4 }, (_, i) => {
+    const a = (i / 4) * Math.PI * 2;
+    return E(n(20 + 8 * Math.cos(a)), n(17 + 8 * Math.sin(a)), 5.4, 4.2, 'hi');
+  }),
+  C(20, 17, 3, 'bs'),
+  S('M20 26 Q27 38 30 56', 'lo', 2.4),
+  ...[[36, 28], [45, 36], [34, 44]].map(([x, y]) =>
+    P(`M${x} ${y} Q${x + 6} ${y + 5} ${x + 3} ${y + 13} Q${x - 3} ${y + 7} ${x} ${y} Z`, 'bs')),
+  P('M50 9 Q55 14 50 19 Q45 14 50 9 Z', 'lo'),                                        // the one drop of blue in all of it
+]);
+def('yam', () => [                                                                   // Dioscorea vines, and a tuber that runs a metre and a half straight down
+  S('M20 23 L20 4', 'lo', 2),
+  S('M20 6 Q28 9 20 12 Q12 15 20 18 Q28 21 20 23', 'bs', 2),
+  leaf('bs', 30, 8, .45, 20), leaf('bs', 11, 16, .45, -20),
+  S('M5 24 L55 24', 'gh', 1.2),
+  P('M33 24 Q43 31 39 41 Q45 51 37 57 Q29 59 29 51 Q25 41 29 33 Q29 27 33 24 Z', 'hi'),
+  ...[[34, 33], [35, 45], [32, 53]].map(([x, y]) => C(x, y, 2, 'lo')),
+]);
+def('yardlong_bean', () => [                                                         // the pods hang in pairs and run half a yard, not the one the name promises
+  S('M7 9 L53 9', 'lo', 2.4),
+  C(24, 11, 3, 'lo'),
+  S('M24 13 Q15 29 21 43 Q26 52 19 59', 'bs', 4),
+  S('M24 13 Q35 29 30 45 Q28 53 35 59', 'bs', 4),
+  ...[[19, 27], [21, 39], [32, 29], [30, 43]].map(([x, y]) => C(x, y, 1.8, 'gh')),    // a cowpea's seeds, spaced right out
+]);
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

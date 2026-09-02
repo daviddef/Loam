@@ -49,6 +49,9 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* unblocking-nouns wave, 2 Sep */
+          'antibiotic', 'antifungal', 'antiviral', 'dna_methylation', 'genetic_code',
+          /* DNA-structure fix, 2 Sep */ 'nucleoside', 'double_helix',
           /* completeness-audit wave, 2 Sep */
           'abscisic_acid', 'catalyst', 'cytokinin', 'estrogen', 'fat', 'glucagon', 'graphene', 'melatonin',
           'progesterone', 'testosterone',
@@ -80,6 +83,8 @@ const SCALE = {
           // compounds, the same molecule scale as digoxin/batrachotoxin above
           'atropine', 'thc', 'cocaine', 'nicotine', 'morphine', 'mescaline', 'psilocybin'],
   '-8':  [
+          /* unblocking-nouns wave, 2 Sep */
+          'antitoxin', 'central_dogma', 'epigenetics', 'gene_expression', 'heterozygous', 'homozygous', 'recessive_allele', 'toxin',
           /* completeness-audit wave, 2 Sep */
           'blood_clotting', 'dominant_allele', 'gluten', 'growth_hormone', 'metabolism', 'photosynthesis', 'polymer',
           /* microbio wave, 2 Sep */
@@ -108,6 +113,9 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* unblocking-nouns wave, 2 Sep */
+          'adaptive_immunity', 'centromere', 'crossing_over', 'genome', 'innate_immunity', 'karyotype', 'opsonization', 'passive_immunity',
+          'prokaryote', 'pure_culture', 'sex_chromosome',
           /* completeness-audit wave, 2 Sep */
           'antibiotic_resistance',
           /* microbio wave, 2 Sep */
@@ -138,6 +146,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* unblocking-nouns wave, 2 Sep */
+          'macrophage', 'neutrophil',
           /* completeness-audit wave, 2 Sep */
           'capillary', 'companion_cell', 'double_fertilization', 'tracheid',
           /* microbio wave, 2 Sep */
@@ -173,6 +183,11 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* crops and materials wave, 2 Sep */
+          'amaranth', 'canola', 'chia', 'fonio', 'juniper_berry', 'mung_bean', 'poppy_seed', 'spelt',
+          'teff', 'triticale', 'wild_rice',
+          /* unblocking-nouns wave, 2 Sep */
+          'parasite',
           /* completeness-audit wave, 2 Sep */
           'apical_meristem', 'endosperm', 'gametophyte', 'meristem', 'seed_dormancy', 'spice', 'stratification', 'vascular_bundle',
           /* microbio wave, 2 Sep */
@@ -194,6 +209,14 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* crops and materials wave, 2 Sep */
+          'alfalfa_sprout', 'aonla', 'boysenberry', 'chilli_pepper', 'currant', 'einkorn', 'elderberry', 'emmer',
+          'fava_bean', 'feijoa', 'fiddlehead_fern', 'finger_lime', 'gooseberry', 'hop', 'huckleberry', 'jerusalem_artichoke',
+          'jojoba', 'jujube', 'kamut', 'kiwifruit', 'kumquat', 'lingonberry', 'lupin', 'mangosteen',
+          'medlar', 'meyer_lemon', 'microgreen', 'mung_bean_sprout', 'napa_cabbage', 'passionfruit', 'peat_moss', 'quince',
+          'ramie', 'saskatoon_berry', 'sisal', 'snow_pea', 'sugarsnap_pea', 'water_chestnut',
+          /* unblocking-nouns wave, 2 Sep */
+          'abscess', 'meteoroid', 'trilobite',
           /* completeness-audit wave, 2 Sep */
           'alkali_metal', 'allotrope', 'angiosperm', 'anther', 'arachnid', 'artery', 'arthropod', 'bronchus',
           'carpel', 'collenchyma', 'connective_tissue', 'corrosion', 'cross_pollination', 'crustacean', 'crystal', 'epithelial_tissue',
@@ -307,6 +330,16 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* crops and materials wave, 2 Sep */
+          'abaca', 'acorn_squash', 'bamboo_shoot', 'blood_orange', 'bok_choy', 'canaigre_dock', 'chaya', 'chayote',
+          'cherimoya', 'clover', 'coir', 'collard_green', 'daikon_radish', 'endive', 'fennel_bulb', 'honeydew_melon',
+          'horseradish', 'jicama', 'jute', 'kenaf', 'kohlrabi', 'komatsuna', 'lotus_root', 'malabar_spinach',
+          'mustard_green', 'new_zealand_spinach', 'parsnip', 'pawpaw', 'peppermint_crop', 'portobello_mushroom', 'radicchio', 'rutabaga',
+          'saffron_crocus', 'samphire', 'sea_kale', 'spaghetti_squash', 'spanish_moss', 'spearmint_crop', 'sweetcorn', 'swiss_chard',
+          'taro', 'tatsoi', 'turmeric_crop', 'woad', 'yam', 'yardlong_bean',
+          /* unblocking-nouns wave, 2 Sep */
+          'bone_marrow', 'cappuccino', 'cauldron', 'latte', 'marinara', 'masala_chai', 'mole_sauce', 'pesto',
+          'petri_dish', 'phonograph_record', 'pus', 'qwerty', 'seismograph', 'thymus', 'wireless_telegraphy',
           /* completeness-audit wave, 2 Sep */
           'abacus', 'acid', 'adrenal_gland', 'alloy', 'alphabet', 'alternation_of_generations', 'amalgam', 'amphibian',
           'animal', 'annelid', 'arabic_script', 'base', 'bile', 'binary_code', 'braising', 'brewing',
@@ -486,6 +519,17 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* crops and materials wave, 2 Sep */
+          'cattail_reed', 'coffee_crop', 'dill_crop', 'fennel_crop', 'guayule_shrub', 'hemp', 'papyrus_reed', 'sea_buckthorn',
+          'sorghum_broomcorn', 'sweet_gale', 'tea_tea',
+          /* unblocking-nouns wave, 2 Sep */
+          'air_force', 'airborne_transmission', 'alexander_fleming', 'army', 'artillery_branch', 'aseptic_technique', 'attrition', 'bellerophon',
+          'blockade', 'cavalry', 'clade', 'conscription', 'contact_tracing', 'contagion', 'deafness', 'edward_jenner',
+          'epidemiology', 'eusociality', 'fenrir', 'guerrilla_warfare', 'hearing', 'heredity', 'ignaz_semmelweis', 'incubation_period',
+          'infantry', 'joseph_lister', 'joust', 'legion', 'mendelian_inheritance', 'mercenary', 'navy', 'norns',
+          'outbreak', 'phalanx', 'portcullis', 'quarantine', 'rabbi_loew', 'siege', 'siege_of_jerusalem', 'soldier',
+          'space_race', 'standing_army', 'stromatolite', 'symbiosis', 'total_war', 'war',
+          /* DNA-structure fix, 2 Sep */ 'rosalind_franklin',
           /* completeness-audit wave, 2 Sep */
           'addiction', 'adhd', 'afroasiatic', 'afterlife', 'algorithm', 'amharic', 'angel', 'anorexia_nervosa',
           'arabic', 'ardipithecus', 'artillery', 'austronesian', 'autism_spectrum_disorder', 'banshee', 'bengali', 'biological_domain',
@@ -662,6 +706,14 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* crops and materials wave, 2 Sep */
+          'agarwood_tree', 'alder_tree', 'almond_tree', 'argan_tree', 'ash_tree', 'camphor_tree', 'cashew_tree', 'cherry_wood_tree',
+          'chestnut_tree', 'cinchona_tree', 'cinnamon_crop', 'clove_crop', 'cork_oak_tree', 'cypress_tree', 'date_palm', 'ebony_tree',
+          'fir_tree', 'frankincense_tree', 'gum_arabic_tree', 'hazelnut_tree', 'lime_tree', 'mahogany_tree', 'mulberry_tree', 'myrrh_tree',
+          'neem_tree', 'nutmeg_crop', 'olive_wood_tree', 'pecan_tree', 'raffia_palm', 'rattan_palm', 'rosewood_tree', 'sandalwood_tree',
+          'shea_tree', 'spruce_tree', 'star_anise_crop', 'teak_tree', 'walnut_tree',
+          /* unblocking-nouns wave, 2 Sep */
+          'keep',
           /* completeness-audit wave, 2 Sep */
           'assembly_line', 'dragon', 'icbm', 'kaaba', 'orchestra', 'u_boat',
           /* microbio wave, 2 Sep */
@@ -717,6 +769,9 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* unblocking-nouns wave, 2 Sep */
+          'bastion_fort', 'exaptation', 'fortification', 'heterozygote_advantage', 'kin_selection', 'motte_and_bailey', 'neoteny', 'permian_triassic_extinction',
+          'rna_world', 'sexual_dimorphism',
           /* completeness-audit wave, 2 Sep */
           'aircraft_carrier', 'asgard', 'domestication', 'dreadnought', 'ecological_niche', 'elysium', 'factory', 'fitness',
           'gene_pool', 'habitat', 'homologous_structure', 'mimicry', 'tartarus', 'underworld', 'wind_turbine', 'yggdrasil',
@@ -761,6 +816,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* unblocking-nouns wave, 2 Sep */
+          'city_wall', 'eruption', 'lunar_eclipse', 'mont_blanc', 'solar_eclipse',
           /* completeness-audit wave, 2 Sep */
           'avalanche', 'ecosystem', 'jerusalem', 'landslide', 'monaco', 'olympus', 'rock_cycle', 'shield_volcano',
           'stratovolcano', 'water_cycle',
@@ -794,6 +851,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* unblocking-nouns wave, 2 Sep */
+          'meteor', 'prague',
           /* completeness-audit wave, 2 Sep */
           'andorra', 'antigua_and_barbuda', 'aquifer', 'bahrain', 'barbados', 'dominica', 'fault', 'grenada',
           'liechtenstein', 'malta', 'nauru', 'saint_kitts_and_nevis', 'saint_lucia', 'saint_vincent_and_the_grenadines', 'san_marino',
@@ -805,6 +864,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* unblocking-nouns wave, 2 Sep */
+          'atmosphere', 'aurora', 'great_oxidation_event', 'snowball_earth',
           /* completeness-audit wave, 2 Sep */
           'angola', 'belarus', 'benin', 'biome', 'botswana', 'bulgaria', 'burkina_faso', 'cameroon',
           'canada', 'central_african_republic', 'chad', 'continental_drift', 'crust', 'cuba', 'earth_core', 'eritrea',
@@ -832,6 +893,11 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+          /* unblocking-nouns wave, 2 Sep */
+          'apparent_magnitude', 'asteroid_belt', 'astronomical_unit', 'binary_star', 'coronal_mass_ejection', 'cosmic_inflation', 'escape_velocity', 'event_horizon',
+          'gravitational_lensing', 'gravitational_wave', 'gravity', 'heliosphere', 'hubbles_law', 'light_year', 'magnetosphere', 'main_sequence',
+          'observable_universe', 'orbit', 'parsec', 'planetary_nebula', 'red_dwarf', 'solar_system', 'stellar_classification', 'sunspot',
+          'supernova_remnant',
           /* microbio wave, 2 Sep */
           'big_bang', 'universe',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
@@ -873,6 +939,8 @@ const SCALE = {
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
   '7':   [// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
+          /* unblocking-nouns wave, 2 Sep */
+          'soviet_union',
           'russia',
           ],
 

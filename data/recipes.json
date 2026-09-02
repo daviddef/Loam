@@ -10317,8 +10317,8 @@
       "adenine",
       "ribose"
     ],
-    "out": "nucleotide",
-    "why": "Three parts, always in the same order. A base joined to a sugar is a nucleoside; put a phosphate on the sugar and it is a nucleotide. The base carries the meaning and the other two carry the base.",
+    "out": "nucleoside",
+    "why": "Adenine joined to ribose is adenosine — a nucleoside, sugar plus base and nothing more. It is not yet a nucleotide: that needs a phosphate group attached to the sugar.",
     "src": "https://en.wikipedia.org/wiki/Nucleotide",
     "supported": true
   },
@@ -75982,6 +75982,3976 @@
     "out": "buddhism",
     "why": "Theravada, conservative and built on the Pali Canon, and Mahayana, built on sutras Theravada rejects, are Buddhism's two great surviving traditions.",
     "src": "https://en.wikipedia.org/wiki/Theravada",
+    "verified": true
+  },
+  {
+    "in": [
+      "nucleoside",
+      "phosphate"
+    ],
+    "out": "nucleotide",
+    "why": "A nucleotide is three sub-units: a five-carbon sugar, a nucleobase, and one phosphate group. Sugar and base together are already a nucleoside — the phosphate is what completes it.",
+    "src": "https://en.wikipedia.org/wiki/Nucleotide",
+    "verified": true
+  },
+  {
+    "in": [
+      "rosalind_franklin",
+      "x_ray"
+    ],
+    "out": "double_helix",
+    "why": "Raymond Gosling, working under Rosalind Franklin, took Photo 51 on 2 May 1952 — an X-ray fibre diffraction image whose pattern showed DNA's strands are helical and antiparallel.",
+    "src": "https://en.wikipedia.org/wiki/Photo_51",
+    "verified": true
+  },
+  {
+    "in": [
+      "dna",
+      "x_ray"
+    ],
+    "out": "rosalind_franklin",
+    "why": "Franklin's X-ray diffraction work on DNA fibres at King's College London produced the images that settled its helical structure; she died in 1958, four years before the Nobel her data underpinned.",
+    "src": "https://en.wikipedia.org/wiki/Photo_51",
+    "verified": true
+  },
+  {
+    "in": [
+      "settlement",
+      "spear"
+    ],
+    "out": "war",
+    "why": "Organised killing between groups appears among settled populations holding fixed ground: the dead at Jebel Sahaba, about 13,400 years old, were buried with stone projectile points still in them.",
+    "src": "https://en.wikipedia.org/wiki/Jebel_Sahaba",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "war"
+    ],
+    "out": "soldier",
+    "why": "A soldier is someone paid to fight — the word runs through Old French soudeour, 'one paid a wage', back to the solidus, a late Roman gold coin.",
+    "src": "https://en.wikipedia.org/wiki/Soldier",
+    "verified": true
+  },
+  {
+    "in": [
+      "logistics",
+      "soldier"
+    ],
+    "out": "army",
+    "why": "What separates an army from a crowd of soldiers is a command structure able to sustain operations — supply, movement and quarters, the sense the military took from French logis.",
+    "src": "https://en.wikipedia.org/wiki/Army",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "sea"
+    ],
+    "out": "navy",
+    "why": "The same organisation carried onto water: Athens turned its Laurion silver into a trireme fleet from 483 BC and used it at Salamis.",
+    "src": "https://en.wikipedia.org/wiki/Themistocles",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "cannon"
+    ],
+    "out": "navy",
+    "why": "Cutting gunports into the hull, common practice by 1501, let heavy guns sit low and fire sideways — the ship itself became the weapon.",
+    "src": "https://en.wikipedia.org/wiki/Gunport",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "army"
+    ],
+    "out": "air_force",
+    "why": "Aircraft outgrew being an army's scouting wing: Britain merged the Royal Flying Corps and the Royal Naval Air Service into an independent Royal Air Force on 1 April 1918.",
+    "src": "https://en.wikipedia.org/wiki/Royal_Air_Force",
+    "verified": true
+  },
+  {
+    "in": [
+      "soldier",
+      "spear"
+    ],
+    "out": "infantry",
+    "why": "Foot soldiers with a shafted weapon were the first military force in history, and infantry has been the largest component of most armies since.",
+    "src": "https://en.wikipedia.org/wiki/Infantry",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "soldier"
+    ],
+    "out": "cavalry",
+    "why": "Putting a soldier on a horse buys height, speed and inertial mass over an opponent on foot.",
+    "src": "https://en.wikipedia.org/wiki/Cavalry",
+    "verified": true
+  },
+  {
+    "in": [
+      "knight",
+      "stirrup"
+    ],
+    "out": "cavalry",
+    "why": "Paired stirrups with a saddle pommel and cantle let a rider take the shock of impact, which is what made the couched lance and the knight's charge possible.",
+    "src": "https://en.wikipedia.org/wiki/Cavalry",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "artillery"
+    ],
+    "out": "artillery_branch",
+    "why": "Guns stopped being machinery overseen by hired mechanics and became a service branch with its own trained officers, capable of dominating a battlefield.",
+    "src": "https://en.wikipedia.org/wiki/Artillery",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannon",
+      "napoleon"
+    ],
+    "out": "artillery_branch",
+    "why": "Napoleon trained as an artillery officer and massed his guns into concentrated batteries to break one point of a line before sending infantry and cavalry at it.",
+    "src": "https://en.wikipedia.org/wiki/Artillery",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoplite",
+      "shield"
+    ],
+    "out": "phalanx",
+    "why": "Each hoplite's metre-wide aspis rode on his left arm and covered the man beside him, so the formation only worked as an unbroken block.",
+    "src": "https://en.wikipedia.org/wiki/Phalanx",
+    "verified": true
+  },
+  {
+    "in": [
+      "infantry",
+      "sarissa"
+    ],
+    "out": "phalanx",
+    "why": "The Macedonian version stood 16 ranks deep with pikes long enough that the first three to five ranks all projected their points ahead of the front row.",
+    "src": "https://en.wikipedia.org/wiki/Phalanx",
+    "verified": true
+  },
+  {
+    "in": [
+      "infantry",
+      "roman_republic"
+    ],
+    "out": "legion",
+    "why": "Rome's citizen levy was organised into legions of 4,200 foot and 300 horse, rebuilt in the late Republic as about 5,200 men in ten cohorts.",
+    "src": "https://en.wikipedia.org/wiki/Roman_legion",
+    "verified": true
+  },
+  {
+    "in": [
+      "lorica_segmentata",
+      "pilum"
+    ],
+    "out": "legion",
+    "why": "The legionary is his standard issue: throw the pilum at roughly 30 metres to foul the enemy's shields, then close in banded iron armour behind a scutum.",
+    "src": "https://en.wikipedia.org/wiki/Roman_legion",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "war"
+    ],
+    "out": "fortification",
+    "why": "Building strong is the oldest answer to being attacked: Solnitsata's stone walls, about 4700 BC, stood 1.8 m high and 1.4 m thick.",
+    "src": "https://en.wikipedia.org/wiki/Fortification",
+    "verified": true
+  },
+  {
+    "in": [
+      "castle",
+      "moat"
+    ],
+    "out": "fortification",
+    "why": "Ditch plus rampart is the basic pairing of all fortification — the excavated earth becomes the wall, and the ditch keeps siege engines away from it.",
+    "src": "https://en.wikipedia.org/wiki/Fortification",
+    "verified": true
+  },
+  {
+    "in": [
+      "fortification",
+      "settlement"
+    ],
+    "out": "city_wall",
+    "why": "A permanent settlement's first collective defensive work: Jericho was walled by the 8th millennium BC, and Uruk is among the oldest known walled cities.",
+    "src": "https://en.wikipedia.org/wiki/Defensive_wall",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "fortification"
+    ],
+    "out": "city_wall",
+    "why": "On a floodplain with no building stone the wall is brick — Babylon's were expanded in it under Nebuchadnezzar II.",
+    "src": "https://en.wikipedia.org/wiki/Defensive_wall",
+    "verified": true
+  },
+  {
+    "in": [
+      "castle",
+      "stone"
+    ],
+    "out": "keep",
+    "why": "The keep is the castle's own strongpoint, a stone tower to hold once the outer walls are lost; the White Tower's walls reach about 7.3 m thick.",
+    "src": "https://en.wikipedia.org/wiki/Keep",
+    "verified": true
+  },
+  {
+    "in": [
+      "keep",
+      "wood"
+    ],
+    "out": "motte_and_bailey",
+    "why": "Before stone, the keep was a timber tower on a piled-earth motte — 3 to 30 m high, buildable by unskilled forced labour in months.",
+    "src": "https://en.wikipedia.org/wiki/Motte-and-bailey_castle",
+    "verified": true
+  },
+  {
+    "in": [
+      "castle",
+      "drawbridge"
+    ],
+    "out": "portcullis",
+    "why": "A gateway was closed twice over: the drawbridge raised outside, and a latticed grille dropped down grooves in the jambs behind it.",
+    "src": "https://en.wikipedia.org/wiki/Portcullis",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannon",
+      "fortification"
+    ],
+    "out": "bastion_fort",
+    "why": "Cannon made high stone walls a liability, so walls went low and thick behind a ditch, with angled bastions covering each other's faces and leaving no dead ground.",
+    "src": "https://en.wikipedia.org/wiki/Bastion_fort",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "city_wall"
+    ],
+    "out": "siege",
+    "why": "An army that cannot storm a wall encircles it instead, cutting off food and reinforcement to take the place by attrition.",
+    "src": "https://en.wikipedia.org/wiki/Siege",
+    "verified": true
+  },
+  {
+    "in": [
+      "battering_ram",
+      "siege_tower"
+    ],
+    "out": "siege",
+    "why": "The two direct answers to a defended wall — break the gate, or top the parapet — are both part of the siege train, alongside mining and bombardment.",
+    "src": "https://en.wikipedia.org/wiki/Siege",
+    "verified": true
+  },
+  {
+    "in": [
+      "navy",
+      "siege"
+    ],
+    "out": "blockade",
+    "why": "A blockade is a siege widened from a fortress to a whole coast: the Union navy grew from 42 ships to about 671 to close 3,500 miles of Confederate coastline, and cotton exports fell about 95%.",
+    "src": "https://en.wikipedia.org/wiki/Union_blockade",
+    "verified": true
+  },
+  {
+    "in": [
+      "trench_warfare",
+      "war"
+    ],
+    "out": "attrition",
+    "why": "With the trench line unbroken from Switzerland to the Channel there was no flank left to turn, so commanders fell back on repeated frontal assaults meant to wear the other side down.",
+    "src": "https://en.wikipedia.org/wiki/Attrition_warfare",
+    "verified": true
+  },
+  {
+    "in": [
+      "infantry",
+      "machine_gun"
+    ],
+    "out": "attrition",
+    "why": "Entrenched firepower that stopped an advance without moving turned assault into an exchange of casualties rather than a manoeuvre.",
+    "src": "https://en.wikipedia.org/wiki/Attrition_warfare",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "nation_state"
+    ],
+    "out": "conscription",
+    "why": "A state that can claim its citizens by law fields armies no volunteer force matches: France's levée en masse and the Jourdan Law inducted over 2.6 million men between 1800 and 1813.",
+    "src": "https://en.wikipedia.org/wiki/Conscription",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "coin"
+    ],
+    "out": "standing_army",
+    "why": "Regular pay is what holds troops under arms in peacetime; Augustus put Rome's legionaries on regularised pay, a 25-year term and a discharge bonus.",
+    "src": "https://en.wikipedia.org/wiki/Standing_army",
+    "verified": true
+  },
+  {
+    "in": [
+      "army",
+      "janissary"
+    ],
+    "out": "standing_army",
+    "why": "The Janissaries, formed under Murad I in the 14th century, are counted among the first modern standing armies on European soil.",
+    "src": "https://en.wikipedia.org/wiki/Standing_army",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "landsknecht"
+    ],
+    "out": "mercenary",
+    "why": "Landsknechte and Swiss pikemen sold trained service by contract to whoever paid — soldiering as a trade rather than an allegiance.",
+    "src": "https://en.wikipedia.org/wiki/Mercenary",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "hoplite"
+    ],
+    "out": "mercenary",
+    "why": "Cyrus the Younger hired some ten thousand Greek hoplites in 401 BC; after he was killed at Cunaxa, Xenophon's Anabasis records the march home.",
+    "src": "https://en.wikipedia.org/wiki/Mercenary",
+    "verified": true
+  },
+  {
+    "in": [
+      "napoleon",
+      "war"
+    ],
+    "out": "guerrilla_warfare",
+    "why": "Spanish and Portuguese irregulars resisting Napoleon's occupation from 1808 gave the tactic its name — guerrilla, the diminutive of guerra.",
+    "src": "https://en.wikipedia.org/wiki/Guerrilla_warfare",
+    "verified": true
+  },
+  {
+    "in": [
+      "factory",
+      "war"
+    ],
+    "out": "total_war",
+    "why": "Once armies are supplied by industry, the factory and the workforce behind it are treated as military targets like any other.",
+    "src": "https://en.wikipedia.org/wiki/Total_war",
+    "verified": true
+  },
+  {
+    "in": [
+      "conscription",
+      "industrial_revolution"
+    ],
+    "out": "total_war",
+    "why": "Mass conscription plus mass production erases the line between the front and the home front, which is what the term was coined to describe.",
+    "src": "https://en.wikipedia.org/wiki/Total_war",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple",
+      "isaac_newton"
+    ],
+    "out": "gravity",
+    "why": "Stukeley's 1752 memoir records Newton, prompted by a falling apple, asking why it always descends perpendicularly; he then compared the force holding the Moon in her orbit with gravity at Earth's surface and found the two answered pretty nearly.",
+    "src": "https://en.wikipedia.org/wiki/Isaac_Newton%27s_apple_tree",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "moon"
+    ],
+    "out": "orbit",
+    "why": "Newton's step in the 1687 Principia was that the Moon is falling toward Earth exactly as the apple does, but moving sideways fast enough that the ground keeps curving out from under it.",
+    "src": "https://en.wikipedia.org/wiki/Orbit",
+    "verified": true
+  },
+  {
+    "in": [
+      "orbit",
+      "sun"
+    ],
+    "out": "solar_system",
+    "why": "The Solar System is the Sun plus everything gravitationally bound in orbit around it — assembled from a protoplanetary disc after a molecular cloud collapsed 4.568 billion years ago.",
+    "src": "https://en.wikipedia.org/wiki/Solar_System",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "gravity"
+    ],
+    "out": "escape_velocity",
+    "why": "v = √(2GM/d) depends only on the mass and radius of the body being left, which puts Earth's escape speed at 11.186 km/s no matter what is doing the escaping.",
+    "src": "https://en.wikipedia.org/wiki/Escape_velocity",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "orbit"
+    ],
+    "out": "astronomical_unit",
+    "why": "Originally the mean Earth–Sun distance measured from Earth's orbit, and since the IAU's 2012 resolution a fixed conventional length of exactly 149,597,870,700 m.",
+    "src": "https://en.wikipedia.org/wiki/Astronomical_unit",
+    "verified": true
+  },
+  {
+    "in": [
+      "astronomical_unit",
+      "photon"
+    ],
+    "out": "light_year",
+    "why": "Light crosses one astronomical unit in 499 seconds; keep it going for a Julian year at 299,792,458 m/s and you have 63,241 AU — one light-year.",
+    "src": "https://en.wikipedia.org/wiki/Light-year",
+    "verified": true
+  },
+  {
+    "in": [
+      "astronomical_unit",
+      "parallax"
+    ],
+    "out": "parsec",
+    "why": "A parsec is the distance at which one astronomical unit subtends a parallax of one arcsecond; IAU Resolution B2 of 2015 fixed it at exactly 648000/π AU.",
+    "src": "https://en.wikipedia.org/wiki/Parsec",
+    "verified": true
+  },
+  {
+    "in": [
+      "nuclear_fusion",
+      "star"
+    ],
+    "out": "main_sequence",
+    "why": "A star joins the main sequence the moment core hydrogen fusion begins and leaves it when the core hydrogen runs out — the Sun has done 4.5 billion years of a roughly 10-billion-year stint.",
+    "src": "https://en.wikipedia.org/wiki/Main_sequence",
+    "verified": true
+  },
+  {
+    "in": [
+      "brown_dwarf",
+      "main_sequence"
+    ],
+    "out": "red_dwarf",
+    "why": "Above roughly 0.08 solar masses hydrogen fusion ignites and the object sits on the main sequence as a red dwarf; below that line it is a brown dwarf that only cools.",
+    "src": "https://en.wikipedia.org/wiki/Red_dwarf",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_giant",
+      "white_dwarf"
+    ],
+    "out": "planetary_nebula",
+    "why": "A star of 1–8 solar masses sheds its outer layers late in its red giant phase; the exposed hot core ionizes that shell for about 10,000 years and is left behind as a white dwarf.",
+    "src": "https://en.wikipedia.org/wiki/Planetary_nebula",
+    "verified": true
+  },
+  {
+    "in": [
+      "nebula",
+      "supernova"
+    ],
+    "out": "supernova_remnant",
+    "why": "Ejecta thrown out at up to 10% of the speed of light sweep interstellar gas into an expanding shock-heated shell, which survives some 30,000 years before merging back into the interstellar medium.",
+    "src": "https://en.wikipedia.org/wiki/Supernova_remnant",
+    "verified": true
+  },
+  {
+    "in": [
+      "orbit",
+      "star"
+    ],
+    "out": "binary_star",
+    "why": "Two stars bound in orbit about a common barycentre; because the orbit gives the masses directly, binaries are how the mass of every other kind of star is calibrated.",
+    "src": "https://en.wikipedia.org/wiki/Binary_star",
+    "verified": true
+  },
+  {
+    "in": [
+      "spectrum",
+      "star"
+    ],
+    "out": "stellar_classification",
+    "why": "The absorption lines in a star's spectrum sort it into the temperature sequence O B A F G K M — the Harvard scheme Annie Jump Cannon settled from 1901 and applied across the Henry Draper Catalogue.",
+    "src": "https://en.wikipedia.org/wiki/Stellar_classification",
+    "verified": true
+  },
+  {
+    "in": [
+      "hipparchus",
+      "star"
+    ],
+    "out": "apparent_magnitude",
+    "why": "The six naked-eye brightness grades of Hellenistic astronomy, traditionally credited to Hipparchus, which Norman Pogson made exact in 1856 by defining first magnitude as 100 times sixth.",
+    "src": "https://en.wikipedia.org/wiki/Apparent_magnitude",
+    "verified": true
+  },
+  {
+    "in": [
+      "asteroid",
+      "jupiter"
+    ],
+    "out": "asteroid_belt",
+    "why": "Orbital resonances with Jupiter drove collision speeds high enough that planetesimals shattered rather than accreted, so no planet formed and 99.9% of the original mass was lost.",
+    "src": "https://en.wikipedia.org/wiki/Asteroid_belt",
+    "verified": true
+  },
+  {
+    "in": [
+      "asteroid"
+    ],
+    "verb": "crush",
+    "out": "meteoroid",
+    "why": "Most meteoroids are collision debris chipped off asteroids; the IAU's 2017 definition sets the size band at 30 micrometres to one metre across.",
+    "src": "https://en.wikipedia.org/wiki/Meteoroid",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "meteoroid"
+    ],
+    "out": "meteor",
+    "why": "Entering the atmosphere at 11 to 72 km/s, a meteoroid is heated to incandescence by ram pressure and shows as a streak from about 120 km down to 50 km.",
+    "src": "https://en.wikipedia.org/wiki/Meteor",
+    "verified": true
+  },
+  {
+    "in": [
+      "solar_wind",
+      "voyager_program"
+    ],
+    "out": "heliosphere",
+    "why": "The solar wind inflates the heliosphere against interstellar space, and Voyager 1 measured its outer edge directly, crossing the heliopause at 121 AU on 25 August 2012.",
+    "src": "https://en.wikipedia.org/wiki/Heliosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetic_field",
+      "solar_wind"
+    ],
+    "out": "magnetosphere",
+    "why": "The solar wind compresses Earth's magnetic field into a dayside magnetopause 5–10 Earth radii out; Mars, which has no such field, is thought to have lost its water to the wind.",
+    "src": "https://en.wikipedia.org/wiki/Magnetosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetosphere",
+      "oxygen_gas"
+    ],
+    "out": "aurora",
+    "why": "Electrons precipitating out of the magnetotail excite atmospheric oxygen, which emits green at 557.7 nm around 100 km altitude and red at 630 nm above about 150 km.",
+    "src": "https://en.wikipedia.org/wiki/Aurora",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetic_field",
+      "sun"
+    ],
+    "out": "sunspot",
+    "why": "Concentrated magnetic flux inhibits convection and cools the umbra to 3,000–4,500 K against the 5,780 K photosphere; George Ellery Hale proved the magnetic link in 1908.",
+    "src": "https://en.wikipedia.org/wiki/Sunspot",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasma",
+      "sunspot"
+    ],
+    "out": "coronal_mass_ejection",
+    "why": "CMEs erupt from active regions of concentrated magnetic flux around sunspots, flinging about 1.6×10¹² kg of coronal plasma outward at an average 489 km/s.",
+    "src": "https://en.wikipedia.org/wiki/Coronal_mass_ejection",
+    "verified": true
+  },
+  {
+    "in": [
+      "eclipse",
+      "sun"
+    ],
+    "out": "solar_eclipse",
+    "why": "The Moon can cover the Sun only because the Sun is about 400 times wider and about 400 times more distant, matching their apparent discs; two to five occur each year.",
+    "src": "https://en.wikipedia.org/wiki/Solar_eclipse",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "eclipse"
+    ],
+    "out": "lunar_eclipse",
+    "why": "Earth's umbra falls across the Moon, and the only light reaching it is sunlight refracted through Earth's atmosphere with the blue scattered out — red, for up to 107 minutes.",
+    "src": "https://en.wikipedia.org/wiki/Lunar_eclipse",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "redshift"
+    ],
+    "out": "hubbles_law",
+    "why": "A galaxy's redshift rises in proportion to its distance, v = H₀D — derived by Lemaître in 1927 and published from observations by Hubble in 1929.",
+    "src": "https://en.wikipedia.org/wiki/Hubble%27s_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "big_bang",
+      "cosmic_microwave_background"
+    ],
+    "out": "cosmic_inflation",
+    "why": "Inflation was proposed to explain the horizon problem: the microwave background is the same temperature in patches of sky that could never have exchanged light without an early burst of expansion.",
+    "src": "https://en.wikipedia.org/wiki/Cosmic_inflation",
+    "verified": true
+  },
+  {
+    "in": [
+      "photon",
+      "universe"
+    ],
+    "out": "observable_universe",
+    "why": "What we can see is limited by how far light has had time to reach us since the Big Bang, and expansion has since carried that boundary out to a comoving 46.5 billion light-years.",
+    "src": "https://en.wikipedia.org/wiki/Observable_universe",
+    "verified": true
+  },
+  {
+    "in": [
+      "escape_velocity",
+      "gravity"
+    ],
+    "out": "event_horizon",
+    "why": "Pile enough mass into a small enough radius and the escape velocity reaches the speed of light — about 3 km for one solar mass — and that surface is the event horizon.",
+    "src": "https://en.wikipedia.org/wiki/Event_horizon",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_hole",
+      "laser"
+    ],
+    "out": "gravitational_wave",
+    "why": "LIGO splits a laser beam down two 4 km arms; on 14 September 2015 black holes of 36 and 29 solar masses merging 1.3 billion light-years away changed those arm lengths by a thousandth of a proton's width.",
+    "src": "https://en.wikipedia.org/wiki/Gravitational_wave",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "photon"
+    ],
+    "out": "gravitational_lensing",
+    "why": "Mass curves spacetime and deflects passing light by 1.75 arcseconds at the Sun's limb — twice the Newtonian value — which Eddington and Dyson measured at the eclipse of 29 May 1919.",
+    "src": "https://en.wikipedia.org/wiki/Gravitational_lens",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "quasar"
+    ],
+    "out": "gravitational_lensing",
+    "why": "The first gravitational lens ever identified, the Twin QSO found in 1979, is a single quasar split into two images by a foreground galaxy.",
+    "src": "https://en.wikipedia.org/wiki/Gravitational_lens",
+    "verified": true
+  },
+  {
+    "in": [
+      "penicillin",
+      "streptomycin"
+    ],
+    "out": "antibiotic",
+    "why": "Waksman's 1942 term covered exactly this: a substance produced by a microorganism that is antagonistic to other microorganisms — a mould's penicillin and a soil bacterium's streptomycin alike.",
+    "src": "https://en.wikipedia.org/wiki/Antibiotic",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "mould"
+    ],
+    "out": "antibiotic",
+    "why": "Antibiosis was first described in 1877, when Pasteur and Koch saw an airborne bacillus inhibit the growth of Bacillus anthracis — one microbe suppressing another is the whole definition.",
+    "src": "https://en.wikipedia.org/wiki/Antibiotic",
+    "verified": true
+  },
+  {
+    "in": [
+      "dna_polymerase",
+      "virus"
+    ],
+    "out": "antiviral",
+    "why": "Aciclovir competitively inhibits the viral DNA polymerase and then inserts itself into the viral DNA chain, terminating replication.",
+    "src": "https://en.wikipedia.org/wiki/Antiviral_drug",
+    "verified": true
+  },
+  {
+    "in": [
+      "antibiotic",
+      "virus"
+    ],
+    "out": "antiviral",
+    "why": "Antibiotics are not effective against viruses, so viral infection needed a separate drug class; the first experimental antivirals were developed in the 1960s, mostly against herpes viruses.",
+    "src": "https://en.wikipedia.org/wiki/Antiviral_drug",
+    "verified": true
+  },
+  {
+    "in": [
+      "azole",
+      "fungus"
+    ],
+    "out": "antifungal",
+    "why": "Antifungals exploit the one big difference: fungal membranes are built on ergosterol, while animal cells use cholesterol instead and are much less susceptible.",
+    "src": "https://en.wikipedia.org/wiki/Antifungal",
+    "verified": true
+  },
+  {
+    "in": [
+      "antibiotic",
+      "fungus"
+    ],
+    "out": "antifungal",
+    "why": "Antibiotics are active against bacteria and are not effective against fungi, which is why antimycotics are a separate class of drug altogether.",
+    "src": "https://en.wikipedia.org/wiki/Antibiotic",
+    "verified": true
+  },
+  {
+    "in": [
+      "phagocytosis",
+      "white_blood_cell"
+    ],
+    "out": "macrophage",
+    "why": "A macrophage is the white blood cell that engulfs and digests pathogens, debris and dying cells by phagocytosis, and is found in essentially every tissue.",
+    "src": "https://en.wikipedia.org/wiki/Macrophage",
+    "verified": true
+  },
+  {
+    "in": [
+      "inflammation",
+      "white_blood_cell"
+    ],
+    "out": "neutrophil",
+    "why": "In the acute phase of inflammation neutrophils are among the first inflammatory cells to reach the site, crossing the vessel wall and the interstitial space to get there.",
+    "src": "https://en.wikipedia.org/wiki/Neutrophil",
+    "verified": true
+  },
+  {
+    "in": [
+      "chemotaxis",
+      "white_blood_cell"
+    ],
+    "out": "neutrophil",
+    "why": "Neutrophils navigate to infection by following chemical gradients such as interleukin-8 — chemotaxis is how the most abundant granulocyte finds its target.",
+    "src": "https://en.wikipedia.org/wiki/Neutrophil",
+    "verified": true
+  },
+  {
+    "in": [
+      "immune_system",
+      "toll_like_receptor"
+    ],
+    "out": "innate_immunity",
+    "why": "Toll-like receptors are the major class of pattern recognition receptor, reading molecules broadly shared by pathogens but distinguishable from host molecules.",
+    "src": "https://en.wikipedia.org/wiki/Innate_immune_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "complement_system",
+      "macrophage"
+    ],
+    "out": "innate_immunity",
+    "why": "Two of innate immunity's core jobs: activate the complement cascade to mark bacteria, and remove foreign material with specialised phagocytic white blood cells.",
+    "src": "https://en.wikipedia.org/wiki/Innate_immune_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "b_cell",
+      "t_cell"
+    ],
+    "out": "adaptive_immunity",
+    "why": "B cells and T cells are the two lymphocyte types that carry the adaptive response — antibody production and cell-mediated immunity respectively.",
+    "src": "https://en.wikipedia.org/wiki/Adaptive_immune_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "antigen",
+      "lymphocyte"
+    ],
+    "out": "adaptive_immunity",
+    "why": "Each lymphocyte carries one unique antigen receptor assembled by V(D)J recombination, so the antigen selects a matching cell that already exists rather than instructing one.",
+    "src": "https://en.wikipedia.org/wiki/Adaptive_immune_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "infection",
+      "neutrophil"
+    ],
+    "out": "pus",
+    "why": "Cytokines call neutrophils to the site by chemotaxis; bacterial leukocidins and old age kill them, macrophages clear the bodies, and what is left is pus.",
+    "src": "https://en.wikipedia.org/wiki/Pus",
+    "verified": true
+  },
+  {
+    "in": [
+      "macrophage",
+      "neutrophil"
+    ],
+    "out": "pus",
+    "why": "Pus is a protein-rich fluid plus dead leukocytes — mostly neutrophils, destroyed by macrophages once the toxins have finished them.",
+    "src": "https://en.wikipedia.org/wiki/Pus",
+    "verified": true
+  },
+  {
+    "in": [
+      "pus",
+      "tissue"
+    ],
+    "out": "abscess",
+    "why": "An abscess is simply pus that has collected inside body tissue — usually bacterial, and in skin abscesses overwhelmingly Staphylococcus aureus.",
+    "src": "https://en.wikipedia.org/wiki/Abscess",
+    "verified": true
+  },
+  {
+    "in": [
+      "pus",
+      "scalpel"
+    ],
+    "out": "abscess",
+    "why": "Incision and drainage is the standard treatment for an uncomplicated skin or soft-tissue abscess, and in most cases adding antibiotics shows no benefit.",
+    "src": "https://en.wikipedia.org/wiki/Abscess",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "stem_cell"
+    ],
+    "out": "bone_marrow",
+    "why": "Marrow fills the spongy interior of bone and holds the haematopoietic stem cells that give rise to every white cell, red cell and platelet in circulation.",
+    "src": "https://en.wikipedia.org/wiki/Bone_marrow",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "bone"
+    ],
+    "out": "bone_marrow",
+    "why": "In birds and mammals the marrow inside bone is the primary site of haematopoiesis, producing roughly 500 billion blood cells a day in an adult human.",
+    "src": "https://en.wikipedia.org/wiki/Bone_marrow",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone_marrow",
+      "t_cell"
+    ],
+    "out": "thymus",
+    "why": "All lymphoid cells are made in bone marrow, but they must migrate elsewhere to finish; for T cells that organ is the thymus, which is what the T stands for.",
+    "src": "https://en.wikipedia.org/wiki/Thymus",
+    "verified": true
+  },
+  {
+    "in": [
+      "apoptosis",
+      "lymphocyte"
+    ],
+    "out": "thymus",
+    "why": "Positive selection in the cortex keeps thymocytes that bind MHC; negative selection in the medulla kills by apoptosis any that react against the body's own proteins.",
+    "src": "https://en.wikipedia.org/wiki/Thymus",
+    "verified": true
+  },
+  {
+    "in": [
+      "tapeworm",
+      "tick"
+    ],
+    "out": "parasite",
+    "why": "The main axis of parasite classification is invasiveness: an endoparasite like a tapeworm lives inside the host, an ectoparasite like a tick lives on its surface.",
+    "src": "https://en.wikipedia.org/wiki/Parasite",
+    "verified": true
+  },
+  {
+    "in": [
+      "mistletoe",
+      "parasitism"
+    ],
+    "out": "parasite",
+    "why": "Parasites are not one lineage — the list runs from protozoans and hookworms through parasitic fungi to flowering plants such as mistletoe and the broomrapes.",
+    "src": "https://en.wikipedia.org/wiki/Parasite",
+    "verified": true
+  },
+  {
+    "in": [
+      "endotoxin",
+      "exotoxin"
+    ],
+    "out": "toxin",
+    "why": "Both are toxins by the strict definition — poisons produced by the metabolic activity of living cells — one a secreted protein, the other the cell's own membrane lipid.",
+    "src": "https://en.wikipedia.org/wiki/Toxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "ricin",
+      "venom"
+    ],
+    "out": "toxin",
+    "why": "A toxin is distinguished from other poisons by its biological origin, which is why a plant protein and a snake's venom fall under the same word.",
+    "src": "https://en.wikipedia.org/wiki/Toxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "antibody",
+      "toxin"
+    ],
+    "out": "antitoxin",
+    "why": "An antitoxin is an antibody able to neutralise one specific toxin, and preparations are made from donors with high antibody titres against it.",
+    "src": "https://en.wikipedia.org/wiki/Antitoxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "toxin"
+    ],
+    "out": "antitoxin",
+    "why": "Inject an animal with a safe dose of the toxin, let it make the antibody, then bleed and purify it — the method Behring's group used for diphtheria and tetanus from 1890.",
+    "src": "https://en.wikipedia.org/wiki/Antitoxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "fetus",
+      "igg"
+    ],
+    "out": "passive_immunity",
+    "why": "IgG is the only antibody isotype that reaches the fetus, carried across the placenta by an FcRn receptor mostly in the third trimester — so premature babies receive less of it.",
+    "src": "https://en.wikipedia.org/wiki/Passive_immunity",
+    "verified": true
+  },
+  {
+    "in": [
+      "antitoxin",
+      "immunity"
+    ],
+    "out": "passive_immunity",
+    "why": "Injected antitoxin confers temporary passive immunity: protection is immediate, lasts a few weeks to three or four months, and carries a risk of serum sickness.",
+    "src": "https://en.wikipedia.org/wiki/Passive_immunity",
+    "verified": true
+  },
+  {
+    "in": [
+      "antibody",
+      "phagocytosis"
+    ],
+    "out": "opsonization",
+    "why": "Opsonins act as tags — bound to a target, they induce phagocytes to engulf it; Wright and Douglas proved it in 1904 by incubating bacteria in blood plasma first.",
+    "src": "https://en.wikipedia.org/wiki/Opsonin",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "complement_system"
+    ],
+    "out": "opsonization",
+    "why": "Some complement proteins evolved to bind pathogen-associated molecular patterns found only on microbial surfaces, so healthy host cells never get tagged for eating.",
+    "src": "https://en.wikipedia.org/wiki/Opsonin",
+    "verified": true
+  },
+  {
+    "in": [
+      "infection",
+      "john_snow"
+    ],
+    "out": "contagion",
+    "why": "In 1849 John Snow first proposed that cholera was a contagious disease — five years before the Broad Street pump, and decades before its bacterium was seen.",
+    "src": "https://en.wikipedia.org/wiki/Contagious_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "airborne_transmission",
+      "infection"
+    ],
+    "out": "contagion",
+    "why": "A contagious disease spreads by direct contact, indirect contact or droplet contact — the term broadened from touch alone to take in transmission through the air.",
+    "src": "https://en.wikipedia.org/wiki/Contagious_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "plague",
+      "port"
+    ],
+    "out": "quarantine",
+    "why": "A 1377 document from Ragusa required newcomers to wait 30 days on nearby islands before entering; Venice founded the first lazaret in 1403 and set 40 days in 1448.",
+    "src": "https://en.wikipedia.org/wiki/Quarantine",
+    "verified": true
+  },
+  {
+    "in": [
+      "border",
+      "epidemic"
+    ],
+    "out": "quarantine",
+    "why": "Quarantine restricts the movement of people, animals and goods who may have been exposed but are not diagnosed — distinct from isolation, which separates the confirmed sick.",
+    "src": "https://en.wikipedia.org/wiki/Quarantine",
+    "verified": true
+  },
+  {
+    "in": [
+      "contagion",
+      "pathogen"
+    ],
+    "out": "outbreak",
+    "why": "Most epidemics are caused by contagious diseases; a contagious agent entering a group produces exactly the sudden excess over expectancy that defines an outbreak.",
+    "src": "https://en.wikipedia.org/wiki/Outbreak",
+    "verified": true
+  },
+  {
+    "in": [
+      "epidemic",
+      "water"
+    ],
+    "out": "outbreak",
+    "why": "Outbreak is the wider word: it covers epidemics of infectious disease and also events with an environmental origin, such as a waterborne or foodborne disease.",
+    "src": "https://en.wikipedia.org/wiki/Outbreak",
+    "verified": true
+  },
+  {
+    "in": [
+      "outbreak",
+      "quarantine"
+    ],
+    "out": "contact_tracing",
+    "why": "Tracing identifies who an infected person exposed, so those contacts can be tested and isolated or treated before they pass it on — the step that interrupts transmission.",
+    "src": "https://en.wikipedia.org/wiki/Contact_tracing",
+    "verified": true
+  },
+  {
+    "in": [
+      "outbreak",
+      "vaccine"
+    ],
+    "out": "contact_tracing",
+    "why": "Smallpox eradication was achieved by exhaustive contact tracing to find every infected person, then isolating them and immunising the surrounding community and at-risk contacts.",
+    "src": "https://en.wikipedia.org/wiki/Contact_tracing",
+    "verified": true
+  },
+  {
+    "in": [
+      "john_snow",
+      "outbreak"
+    ],
+    "out": "epidemiology",
+    "why": "Snow's identification of the Broad Street pump as the source of the 1854 Soho cholera epidemic — he removed the handle and it stopped — is the field's founding example.",
+    "src": "https://en.wikipedia.org/wiki/Epidemiology",
+    "verified": true
+  },
+  {
+    "in": [
+      "census",
+      "outbreak"
+    ],
+    "out": "epidemiology",
+    "why": "John Graunt's 1662 analysis of London's Bills of Mortality, just before the Great Plague, produced one of the first life tables and time trends for many diseases — counting the population came first.",
+    "src": "https://en.wikipedia.org/wiki/Epidemiology",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasmodium",
+      "vector"
+    ],
+    "out": "incubation_period",
+    "why": "A biological vector has to let the pathogen develop inside it first: Plasmodium needs 10 to 28 days in the mosquito, and a female that does not outlive that extrinsic incubation period never transmits malaria at all.",
+    "src": "https://en.wikipedia.org/wiki/Incubation_period",
+    "verified": true
+  },
+  {
+    "in": [
+      "fever",
+      "infection"
+    ],
+    "out": "incubation_period",
+    "why": "The incubation period is the time from exposure to the first sign, taken up by the organism multiplying to the threshold needed to produce a symptom at all.",
+    "src": "https://en.wikipedia.org/wiki/Incubation_period",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "sneeze"
+    ],
+    "out": "airborne_transmission",
+    "why": "Breathing, talking, coughing and sneezing all throw out a continuum of particle sizes; droplets over 100 μm usually settle within 2 metres, smaller ones stay aloft and travel farther.",
+    "src": "https://en.wikipedia.org/wiki/Airborne_transmission",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "tuberculosis"
+    ],
+    "out": "airborne_transmission",
+    "why": "Tuberculosis is the standard example of an obligate airborne infection — it spreads through aerosols and by no other route.",
+    "src": "https://en.wikipedia.org/wiki/Airborne_transmission",
+    "verified": true
+  },
+  {
+    "in": [
+      "culture_medium",
+      "glass"
+    ],
+    "out": "petri_dish",
+    "why": "A shallow transparent lidded dish whose only job is to hold the agar growth medium flat and covered — the most common culture plate in biology.",
+    "src": "https://en.wikipedia.org/wiki/Petri_dish",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "robert_koch"
+    ],
+    "out": "petri_dish",
+    "why": "Koch developed the precursor dish in his private laboratory in 1881; his assistant Julius Richard Petri modified it into today's form at Berlin University in 1887.",
+    "src": "https://en.wikipedia.org/wiki/Petri_dish",
+    "verified": true
+  },
+  {
+    "in": [
+      "microbe",
+      "petri_dish"
+    ],
+    "out": "pure_culture",
+    "why": "The streak plate drags the inoculum back and forth with a loop until single cells are separated, so each colony that grows after incubation came from one cell.",
+    "src": "https://en.wikipedia.org/wiki/Microbiological_culture",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "robert_koch"
+    ],
+    "out": "pure_culture",
+    "why": "Koch made isolation in pure culture a step of his postulates and worked that way himself, isolating the cholera bacterium in pure culture on 7 January 1884.",
+    "src": "https://en.wikipedia.org/wiki/Robert_Koch",
+    "verified": true
+  },
+  {
+    "in": [
+      "autoclave",
+      "clean_hands"
+    ],
+    "out": "aseptic_technique",
+    "why": "The basic procedures are hand washing, gloves, masks and gowns, and sterilising instruments and linens by autoclaving or using disposables.",
+    "src": "https://en.wikipedia.org/wiki/Asepsis",
+    "verified": true
+  },
+  {
+    "in": [
+      "antiseptic",
+      "sterilization"
+    ],
+    "out": "aseptic_technique",
+    "why": "Asepsis grew out of antisepsis: Giuseppe Ruggi shifted the movement in the 1870s from killing germs already in the wound to keeping them out of the field.",
+    "src": "https://en.wikipedia.org/wiki/Asepsis",
+    "verified": true
+  },
+  {
+    "in": [
+      "cowpox",
+      "vaccine"
+    ],
+    "out": "edward_jenner",
+    "why": "Jenner coined Variolae vaccinae, \"pustules of the cow\", for cowpox and used it in the title of his 1798 Inquiry — vaccine and vaccination come straight from that phrase.",
+    "src": "https://en.wikipedia.org/wiki/Edward_Jenner",
+    "verified": true
+  },
+  {
+    "in": [
+      "cowpox",
+      "pus"
+    ],
+    "out": "edward_jenner",
+    "why": "On 14 May 1796 he scraped pus from cowpox blisters on milkmaid Sarah Nelmes's hands into two cuts on James Phipps's arm; a July challenge with smallpox produced nothing.",
+    "src": "https://en.wikipedia.org/wiki/Edward_Jenner",
+    "verified": true
+  },
+  {
+    "in": [
+      "mould",
+      "petri_dish"
+    ],
+    "out": "alexander_fleming",
+    "why": "Returning on 3 September 1928 he found a Penicillium contaminant on a staphylococcus plate with the colonies around it destroyed; he grew the mould in pure culture and named penicillin on 7 March 1929.",
+    "src": "https://en.wikipedia.org/wiki/Alexander_Fleming",
+    "verified": true
+  },
+  {
+    "in": [
+      "lysozyme",
+      "penicillin"
+    ],
+    "out": "alexander_fleming",
+    "why": "Both are his: lysozyme, found in his own nasal mucus and reported on 1 May 1922, and penicillin in 1928 — he noted in his Nobel lecture that penicillin was not his first antibiotic.",
+    "src": "https://en.wikipedia.org/wiki/Alexander_Fleming",
+    "verified": true
+  },
+  {
+    "in": [
+      "phenol",
+      "wound_healing"
+    ],
+    "out": "joseph_lister",
+    "why": "Carbolic acid is phenol; Lister dressed compound fractures with lint dipped in it from 12 August 1865, and amputation deaths in his wards fell from 16 in 35 before to 6 in 40 after.",
+    "src": "https://en.wikipedia.org/wiki/Joseph_Lister",
+    "verified": true
+  },
+  {
+    "in": [
+      "antiseptic",
+      "louis_pasteur"
+    ],
+    "out": "joseph_lister",
+    "why": "Thomas Anderson pointed Lister to Pasteur's papers on putrefaction around 1865; from them Lister concluded wounds rot because of germs, and set out to kill them with carbolic acid.",
+    "src": "https://en.wikipedia.org/wiki/Joseph_Lister",
+    "verified": true
+  },
+  {
+    "in": [
+      "clean_hands",
+      "hypochlorite"
+    ],
+    "out": "ignaz_semmelweis",
+    "why": "He ordered washing in chlorinated lime — calcium hypochlorite — between the autopsy room and the delivery ward, chosen because it best removed the smell of infected cadaveric tissue.",
+    "src": "https://en.wikipedia.org/wiki/Ignaz_Semmelweis",
+    "verified": true
+  },
+  {
+    "in": [
+      "clean_hands",
+      "nosocomial_infection"
+    ],
+    "out": "ignaz_semmelweis",
+    "why": "Doctors carrying cadaveric particles from autopsies to mothers is the founding case of hospital-acquired infection: the midwives' clinic, which did no autopsies, ran at a third the death rate.",
+    "src": "https://en.wikipedia.org/wiki/Ignaz_Semmelweis",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "gene"
+    ],
+    "out": "genome",
+    "why": "A genome is every gene an organism carries, packaged across its chromosomes — 3.1 billion base pairs on 24 distinct chromosome molecules in a human.",
+    "src": "https://en.wikipedia.org/wiki/Genome",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "nucleoid"
+    ],
+    "out": "prokaryote",
+    "why": "The nucleoid is what defines a prokaryotic cell: a single circular chromosome sitting in a bare tangle with no nuclear envelope around it.",
+    "src": "https://en.wikipedia.org/wiki/Prokaryote",
+    "verified": true
+  },
+  {
+    "in": [
+      "archaea",
+      "binary_fission"
+    ],
+    "out": "prokaryote",
+    "why": "Archaea are one of the two prokaryote domains, and like all prokaryotes they reproduce asexually by binary fission rather than mitosis.",
+    "src": "https://en.wikipedia.org/wiki/Prokaryote",
+    "verified": true
+  },
+  {
+    "in": [
+      "commensalism",
+      "parasitism"
+    ],
+    "out": "symbiosis",
+    "why": "De Bary's 1878 definition takes in the whole range of long-term interspecies living, from the commensal that costs its host nothing to the parasite that feeds on it.",
+    "src": "https://en.wikipedia.org/wiki/Symbiosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "lichen",
+      "mutualism"
+    ],
+    "out": "symbiosis",
+    "why": "Albert Bernhard Frank coined 'symbiosis' in 1877 for exactly one case: the lichen, a fungus and an alga living as a single body.",
+    "src": "https://en.wikipedia.org/wiki/Symbiosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "naked_mole_rat"
+    ],
+    "out": "eusociality",
+    "why": "Reproductive division of labour, overlapping generations and cooperative brood care — met by ants, and by the naked mole-rat, the first mammal found to qualify.",
+    "src": "https://en.wikipedia.org/wiki/Eusociality",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "termite"
+    ],
+    "out": "eusociality",
+    "why": "Suzanne Batra coined 'eusocial' in 1966 for halictid bees; E. O. Wilson extended it in 1971 to ants, wasps and termites, every species of which is eusocial.",
+    "src": "https://en.wikipedia.org/wiki/Eusociality",
+    "verified": true
+  },
+  {
+    "in": [
+      "eusociality",
+      "mammal"
+    ],
+    "out": "naked_mole_rat",
+    "why": "The naked mole-rat was the first mammal found to be eusocial: colonies of 75 to 80 with one breeding queen and one to three breeding males, the rest sterile workers.",
+    "src": "https://en.wikipedia.org/wiki/Naked_mole-rat",
+    "verified": true
+  },
+  {
+    "in": [
+      "eusociality",
+      "natural_selection"
+    ],
+    "out": "kin_selection",
+    "why": "Hamilton's 1964 rule rB > C shows how selection can favour a sterile worker: she passes her genes on through the relatives she helps rear.",
+    "src": "https://en.wikipedia.org/wiki/Kin_selection",
+    "verified": true
+  },
+  {
+    "in": [
+      "common_ancestor",
+      "phylogenetic_tree"
+    ],
+    "out": "clade",
+    "why": "A clade is one branch cut from the tree at a node — a common ancestor plus every descendant of it, which is also what 'monophyletic' means.",
+    "src": "https://en.wikipedia.org/wiki/Clade",
+    "verified": true
+  },
+  {
+    "in": [
+      "cladistics",
+      "tree_of_life"
+    ],
+    "out": "clade",
+    "why": "Willi Hennig's cladistics carves the tree of life by shared derived traits, and the unit it produces is the clade.",
+    "src": "https://en.wikipedia.org/wiki/Clade",
+    "verified": true
+  },
+  {
+    "in": [
+      "gene",
+      "zygote"
+    ],
+    "out": "heredity",
+    "why": "A zygote gets one full set of chromosomes from each parent and the genes on them stay discrete — particulate inheritance, not the blending Darwin assumed.",
+    "src": "https://en.wikipedia.org/wiki/Heredity",
+    "verified": true
+  },
+  {
+    "in": [
+      "gregor_mendel",
+      "heredity"
+    ],
+    "out": "mendelian_inheritance",
+    "why": "Mendel's pea crosses of 1856 to 1863 turned heredity into three stateable laws and produced the 3:1 phenotype ratio in the F2 generation.",
+    "src": "https://en.wikipedia.org/wiki/Mendelian_inheritance",
+    "verified": true
+  },
+  {
+    "in": [
+      "allele",
+      "phenotype"
+    ],
+    "out": "recessive_allele",
+    "why": "A recessive allele's effect on the phenotype is masked whenever a dominant copy is present; it appears only in the homozygous state.",
+    "src": "https://en.wikipedia.org/wiki/Dominance_(genetics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dominant_allele",
+      "recessive_allele"
+    ],
+    "out": "heterozygous",
+    "why": "One of each at a locus, written Rr: the dominant allele is expressed and the individual silently carries the recessive one.",
+    "src": "https://en.wikipedia.org/wiki/Zygosity",
+    "verified": true
+  },
+  {
+    "in": [
+      "genotype",
+      "recessive_allele"
+    ],
+    "out": "homozygous",
+    "why": "A recessive trait shows only in the homozygous-recessive genotype — Mendel's wrinkled peas are the rr quarter and nothing else.",
+    "src": "https://en.wikipedia.org/wiki/Zygosity",
+    "verified": true
+  },
+  {
+    "in": [
+      "heterozygous",
+      "malaria"
+    ],
+    "out": "heterozygote_advantage",
+    "why": "HbAS heterozygotes resist malaria because infected cells sickle and are cleared, while HbSS homozygotes get sickle-cell anaemia — balancing selection keeps both alleles.",
+    "src": "https://en.wikipedia.org/wiki/Heterozygote_advantage",
+    "verified": true
+  },
+  {
+    "in": [
+      "amino_acid",
+      "codon"
+    ],
+    "out": "genetic_code",
+    "why": "64 codons map onto 20 amino acids plus stop, so the code is redundant but never ambiguous — each codon names exactly one amino acid.",
+    "src": "https://en.wikipedia.org/wiki/Genetic_code",
+    "verified": true
+  },
+  {
+    "in": [
+      "transcription",
+      "translation"
+    ],
+    "out": "central_dogma",
+    "why": "Transcription then translation is the route Crick set out in 1957: DNA to RNA to protein, with no way back out of the protein.",
+    "src": "https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology",
+    "verified": true
+  },
+  {
+    "in": [
+      "promoter",
+      "transcription_factor"
+    ],
+    "out": "gene_expression",
+    "why": "Transcription factors bound at a gene's promoter switch it on or off — the first and largest of the levels at which expression is controlled.",
+    "src": "https://en.wikipedia.org/wiki/Gene_expression",
+    "verified": true
+  },
+  {
+    "in": [
+      "gene_expression",
+      "histone"
+    ],
+    "out": "epigenetics",
+    "why": "Acetylation and methylation of histone tails change how accessible DNA is and so which genes run, and they persist through cell division without altering the sequence.",
+    "src": "https://en.wikipedia.org/wiki/Epigenetics",
+    "verified": true
+  },
+  {
+    "in": [
+      "cytosine",
+      "epigenetics"
+    ],
+    "out": "dna_methylation",
+    "why": "The commonest epigenetic mark is a methyl group on the C5 position of a cytosine, written by DNMT3A and DNMT3B and maintained by DNMT1.",
+    "src": "https://en.wikipedia.org/wiki/DNA_methylation",
+    "verified": true
+  },
+  {
+    "in": [
+      "allele",
+      "meiosis"
+    ],
+    "out": "crossing_over",
+    "why": "In the pachytene stage of prophase I, homologous chromosomes break and rejoin across non-sister chromatids, reshuffling alleles so no gamete keeps a parental combination intact.",
+    "src": "https://en.wikipedia.org/wiki/Chromosomal_crossover",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "embryo"
+    ],
+    "out": "sex_chromosome",
+    "why": "SRY, a single gene on the human Y, is the only one that directly switches an embryo onto the male developmental path.",
+    "src": "https://en.wikipedia.org/wiki/Sex_chromosome",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "mitosis"
+    ],
+    "out": "centromere",
+    "why": "The centromere links the sister chromatids and is where the kinetochore assembles to capture spindle microtubules — without it the chromatids never separate.",
+    "src": "https://en.wikipedia.org/wiki/Centromere",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "genome"
+    ],
+    "out": "karyotype",
+    "why": "A karyotype is the genome seen as objects: chromosomes arrested at metaphase with colchicine, stained, counted and paired — 46 in a human.",
+    "src": "https://en.wikipedia.org/wiki/Karyotype",
+    "verified": true
+  },
+  {
+    "in": [
+      "adaptation",
+      "feather"
+    ],
+    "out": "exaptation",
+    "why": "Feathers evolved for heat regulation and display and were only later co-opted for flight — the example Gould and Vrba used in 1982.",
+    "src": "https://en.wikipedia.org/wiki/Exaptation",
+    "verified": true
+  },
+  {
+    "in": [
+      "axolotl",
+      "metamorphosis"
+    ],
+    "out": "neoteny",
+    "why": "The axolotl never metamorphoses — without enough thyroid hormone and iodine it keeps its larval gills and stays aquatic, and Kollmann named neoteny after it in 1885.",
+    "src": "https://en.wikipedia.org/wiki/Neoteny",
+    "verified": true
+  },
+  {
+    "in": [
+      "peacock",
+      "sexual_selection"
+    ],
+    "out": "sexual_dimorphism",
+    "why": "Darwin's 1871 account: female choice pays for the peacock's train even though it hampers flight and draws predators, while the peahen stays brown.",
+    "src": "https://en.wikipedia.org/wiki/Sexual_dimorphism",
+    "verified": true
+  },
+  {
+    "in": [
+      "lion",
+      "mane"
+    ],
+    "out": "sexual_dimorphism",
+    "why": "The mane is a male lion's secondary sexual characteristic, a trait lionesses lack entirely.",
+    "src": "https://en.wikipedia.org/wiki/Sexual_dimorphism",
+    "verified": true
+  },
+  {
+    "in": [
+      "banded_iron_formation",
+      "cyanobacteria"
+    ],
+    "out": "great_oxidation_event",
+    "why": "Oxygen from cyanobacteria precipitated dissolved iron out of the sea as banded iron formations, which peak around 2.5 Ga and vanish from the record by 1.85 Ga.",
+    "src": "https://en.wikipedia.org/wiki/Great_Oxidation_Event",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanobacteria",
+      "oxygen_gas"
+    ],
+    "out": "great_oxidation_event",
+    "why": "Cyanobacterial oxygenic photosynthesis raised free O2 from nothing to about 10% of modern atmospheric levels between roughly 2.46 and 2.06 billion years ago.",
+    "src": "https://en.wikipedia.org/wiki/Great_Oxidation_Event",
+    "verified": true
+  },
+  {
+    "in": [
+      "equator",
+      "glacier"
+    ],
+    "out": "snowball_earth",
+    "why": "Glacial deposits at tropical latitudes are the core evidence: ice-albedo feedback ran away twice in the Cryogenian, 717 to 660 and 650 to 635 Ma.",
+    "src": "https://en.wikipedia.org/wiki/Snowball_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_age",
+      "volcano"
+    ],
+    "out": "snowball_earth",
+    "why": "Volcanic outgassing under the ice is the only way out — CO2 has to build to an estimated 350 times present levels before a frozen Earth thaws.",
+    "src": "https://en.wikipedia.org/wiki/Snowball_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "burgess_shale",
+      "exoskeleton"
+    ],
+    "out": "trilobite",
+    "why": "Trilobites are the signature arthropod of Cambrian deposits like the Burgess Shale, their exoskeleton built of calcite and calcium phosphate in a chitin lattice.",
+    "src": "https://en.wikipedia.org/wiki/Trilobite",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcite",
+      "compound_eye"
+    ],
+    "out": "trilobite",
+    "why": "Each lens of a trilobite's compound eye was a single calcite crystal — a holochroal eye held 100 to 15,000 of them under one corneal membrane.",
+    "src": "https://en.wikipedia.org/wiki/Trilobite_eye",
+    "verified": true
+  },
+  {
+    "in": [
+      "basalt",
+      "mass_extinction"
+    ],
+    "out": "permian_triassic_extinction",
+    "why": "The flood basalts of the Siberian Traps released sulfur dioxide and CO2 around 251.9 Ma, acidifying the oceans and killing 81% of marine species.",
+    "src": "https://en.wikipedia.org/wiki/Permian%E2%80%93Triassic_extinction_event",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass_extinction",
+      "trilobite"
+    ],
+    "out": "permian_triassic_extinction",
+    "why": "Trilobites had dwindled to five surviving genera since the Devonian, and the end-Permian took every one of them after 270 million years.",
+    "src": "https://en.wikipedia.org/wiki/Permian%E2%80%93Triassic_extinction_event",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanobacteria",
+      "limestone"
+    ],
+    "out": "stromatolite",
+    "why": "Cyanobacteria secrete adhesive compounds that cement sand and sediment into laminated carbonate mounds; living ones survive in hypersaline Shark Bay, Western Australia.",
+    "src": "https://en.wikipedia.org/wiki/Stromatolite",
+    "verified": true
+  },
+  {
+    "in": [
+      "ribozyme",
+      "rna"
+    ],
+    "out": "rna_world",
+    "why": "Ribozymes are the crux of the hypothesis: if RNA can store the message and catalyse reactions at once, early life needed neither DNA nor protein.",
+    "src": "https://en.wikipedia.org/wiki/RNA_world",
+    "verified": true
+  },
+  {
+    "in": [
+      "primordial_soup",
+      "rna"
+    ],
+    "out": "rna_world",
+    "why": "Alexander Rich argued in 1962 that the early Earth's chemistry could produce RNA molecules that went on to acquire enzymatic and self-replicating function.",
+    "src": "https://en.wikipedia.org/wiki/RNA_world",
+    "verified": true
+  },
+  {
+    "in": [
+      "cochlea",
+      "brain"
+    ],
+    "out": "hearing",
+    "why": "Hair cells in the organ of Corti do not fire themselves — they depolarise and release neurotransmitter onto auditory nerve fibres, which carry the cochlea's frequency map to the brainstem.",
+    "src": "https://en.wikipedia.org/wiki/Hearing",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair_cell",
+      "sound"
+    ],
+    "out": "hearing",
+    "why": "A sound wave travelling through cochlear fluid vibrates the basilar membrane, and hair cells sitting on it depolarise — that is the whole conversion from pressure to signal.",
+    "src": "https://en.wikipedia.org/wiki/Hearing",
+    "verified": true
+  },
+  {
+    "in": [
+      "hearing",
+      "tuning_fork"
+    ],
+    "out": "deafness",
+    "why": "The Weber and Rinne tuning-fork tests are still how a bedside examiner separates conductive loss from sensorineural loss, before any audiogram.",
+    "src": "https://en.wikipedia.org/wiki/Hearing_loss",
+    "verified": true
+  },
+  {
+    "in": [
+      "deafness",
+      "language"
+    ],
+    "out": "sign_language",
+    "why": "'Wherever communities of deaf and hard of hearing people exist, sign languages have developed' — full natural languages with their own grammar and lexicon, and not universal: British and American Sign Language are mutually unintelligible though the hearing populations share English.",
+    "src": "https://en.wikipedia.org/wiki/Sign_language",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "milk"
+    ],
+    "out": "latte",
+    "why": "Caffè latte is literally 'coffee and milk': espresso plus steamed milk, more milk than a cappuccino carries, and no thick foam cap.",
+    "src": "https://en.wikipedia.org/wiki/Latte",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "cream"
+    ],
+    "out": "cappuccino",
+    "why": "The ancestor is Vienna's Kapuziner, on Habsburg coffeehouse menus by the late 1700s — dark coffee with whipped cream and spice, lightened to the colour of a Capuchin's habit.",
+    "src": "https://en.wikipedia.org/wiki/Cappuccino",
+    "verified": true
+  },
+  {
+    "in": [
+      "latte",
+      "steam"
+    ],
+    "out": "cappuccino",
+    "why": "The steam wand added to the espresso machine in 1903 is what makes the difference: texture the milk into foam and the latte becomes a cappuccino, one third of each.",
+    "src": "https://en.wikipedia.org/wiki/Cappuccino",
+    "verified": true
+  },
+  {
+    "in": [
+      "tea",
+      "milk"
+    ],
+    "out": "masala_chai",
+    "why": "Chai is brewed as a decoction and then boiled with milk — one Maharashtrian method uses equal parts water and milk, with the tea and masala going in together.",
+    "src": "https://en.wikipedia.org/wiki/Masala_chai",
+    "verified": true
+  },
+  {
+    "in": [
+      "tea",
+      "cardamom"
+    ],
+    "out": "masala_chai",
+    "why": "Cardamom is the commonest of the chai spices, alongside grated ginger and cinnamon, with cloves and black peppercorns behind them.",
+    "src": "https://en.wikipedia.org/wiki/Masala_chai",
+    "verified": true
+  },
+  {
+    "in": [
+      "alps",
+      "italy"
+    ],
+    "out": "mont_blanc",
+    "why": "The highest peak in the Alps stands between Italy's Aosta Valley and France's Auvergne-Rhône-Alpes, and ownership of the summit area has been disputed between the two for centuries.",
+    "src": "https://en.wikipedia.org/wiki/Mont_Blanc",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "italy"
+    ],
+    "out": "mont_blanc",
+    "why": "It sits on the frontier itself: the 11.6 km Mont Blanc Tunnel, dug 1957-65, runs under it from Courmayeur in Italy to Chamonix in France.",
+    "src": "https://en.wikipedia.org/wiki/Mont_Blanc",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "marx"
+    ],
+    "out": "soviet_union",
+    "why": "The USSR was governed through soviet councils by the Communist Party on Marxism-Leninism, and the Russian SFSR was the largest of its union republics.",
+    "src": "https://en.wikipedia.org/wiki/Soviet_Union",
+    "verified": true
+  },
+  {
+    "in": [
+      "planet",
+      "nitrogen"
+    ],
+    "out": "atmosphere",
+    "why": "An atmosphere is a layer of gases held in place by the gravity of the object it wraps — Earth's is 78.08% nitrogen before anything else.",
+    "src": "https://en.wikipedia.org/wiki/Atmosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "mars",
+      "solar_wind"
+    ],
+    "out": "atmosphere",
+    "why": "Small, cold and without a magnetic field, Mars had its outer air stripped by the solar wind and kept only about 0.6% of Earth's surface pressure.",
+    "src": "https://en.wikipedia.org/wiki/Atmosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "magma",
+      "volcano"
+    ],
+    "out": "eruption",
+    "why": "Magmatic eruptions are driven by gas release under decompression: as magma rises up the vent the dissolved gas comes out of solution and pushes the melt ahead of it.",
+    "src": "https://en.wikipedia.org/wiki/Types_of_volcanic_eruptions",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthquake",
+      "volcano"
+    ],
+    "out": "eruption",
+    "why": "Moving magma fractures the rock around it, and the swarms of volcano-tectonic quakes that result are the warning — nearly every recorded eruption was preceded by them.",
+    "src": "https://en.wikipedia.org/wiki/Volcano_tectonic_earthquake",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze",
+      "zhang_heng"
+    ],
+    "out": "seismograph",
+    "why": "Zhang Heng's Houfeng Didong Yi of about AD 132 was a bronze vessel some 2 m across with eight dragon heads holding bronze balls; a distant quake dropped one ball into a bronze toad's mouth.",
+    "src": "https://en.wikipedia.org/wiki/Seismometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "knight",
+      "plate_armor"
+    ],
+    "out": "joust",
+    "why": "Jousting armour split off from war armour in the late 15th and 16th centuries — deliberately heavier, up to 50 kg, because the wearer only had to survive one charge, not fight all day.",
+    "src": "https://en.wikipedia.org/wiki/Jousting",
+    "verified": true
+  },
+  {
+    "in": [
+      "crusades",
+      "jerusalem"
+    ],
+    "out": "siege_of_jerusalem",
+    "why": "The First Crusade reached the walls on 7 June 1099 and took the city on 15 July, after English and Genoese ships landed timber at Jaffa on 17 June for towers, ladders and an iron-headed ram.",
+    "src": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pegasus",
+      "athena"
+    ],
+    "out": "bellerophon",
+    "why": "Told to sleep in Athena's temple, he woke holding her golden bridle and used it to take the untamed winged horse drinking at the Pirene spring in Corinth.",
+    "src": "https://en.wikipedia.org/wiki/Bellerophon",
+    "verified": true
+  },
+  {
+    "in": [
+      "loki",
+      "wolf"
+    ],
+    "out": "fenrir",
+    "why": "Fenrir is Loki's son by the giantess Angrboða; at Ragnarök he comes with his upper jaw against the sky and his lower against the earth, kills Odin, and is killed by Odin's son Víðarr.",
+    "src": "https://en.wikipedia.org/wiki/Fenrir",
+    "verified": true
+  },
+  {
+    "in": [
+      "yggdrasil",
+      "thread"
+    ],
+    "out": "norns",
+    "why": "Three goddesses at the Well of Urðr under the world tree's root shape fate — the Norse ones, not the Greek Moirai, and Norse sources also describe many lesser norns of god, elf and dwarf descent who attend births.",
+    "src": "https://en.wikipedia.org/wiki/Norns",
+    "verified": true
+  },
+  {
+    "in": [
+      "yggdrasil",
+      "clay"
+    ],
+    "out": "norns",
+    "why": "Their daily task is not spinning but gardening: they carry water and clay up from the well and pack it round Yggdrasil so the tree does not rot.",
+    "src": "https://en.wikipedia.org/wiki/Norns",
+    "verified": true
+  },
+  {
+    "in": [
+      "castle",
+      "river"
+    ],
+    "out": "prague",
+    "why": "The city grew on both banks of the Vltava beneath Prague Castle, and Charles IV, who made it an imperial capital, tied the two sides together with the Charles Bridge.",
+    "src": "https://en.wikipedia.org/wiki/Prague",
+    "verified": true
+  },
+  {
+    "in": [
+      "golem",
+      "prague"
+    ],
+    "out": "rabbi_loew",
+    "why": "The clay defender of the Prague ghetto is pinned on Judah Loew ben Bezalel, who took his Prague post in 1573 and is buried in Josefov — but scholars call the tale an early-19th-century German literary invention, first printed in 1834.",
+    "src": "https://en.wikipedia.org/wiki/Judah_Loew_ben_Bezalel",
+    "verified": true
+  },
+  {
+    "in": [
+      "pot",
+      "bronze"
+    ],
+    "out": "cauldron",
+    "why": "A cauldron is a large pot or kettle for boiling over an open fire, and the surviving early ones are metal — the Battersea cauldron of about 800 BC, the Gundestrup cauldron of the 2nd-1st century BC.",
+    "src": "https://en.wikipedia.org/wiki/Cauldron",
+    "verified": true
+  },
+  {
+    "in": [
+      "dagda",
+      "pot"
+    ],
+    "out": "cauldron",
+    "why": "The Dagda's coire ansic, the 'un-dry cauldron', is one of the Four Treasures of the Tuatha Dé Danann: 'an assembly used not to go unsatisfied from it'.",
+    "src": "https://en.wikipedia.org/wiki/The_Dagda",
+    "verified": true
+  },
+  {
+    "in": [
+      "phonograph",
+      "shellac"
+    ],
+    "out": "phonograph_record",
+    "why": "Berliner's disc, sold from the 1880s and past the cylinder by about 1912, was pressed in shellac and standardised at 78 rpm.",
+    "src": "https://en.wikipedia.org/wiki/Phonograph_record",
+    "verified": true
+  },
+  {
+    "in": [
+      "phonograph",
+      "plastic"
+    ],
+    "out": "phonograph_record",
+    "why": "Columbia's 1948 LP swapped shellac for vinyl and slowed the disc to 33⅓ rpm, which is what bought it about 22 minutes a side.",
+    "src": "https://en.wikipedia.org/wiki/Phonograph_record",
+    "verified": true
+  },
+  {
+    "in": [
+      "typewriter",
+      "alphabet"
+    ],
+    "out": "qwerty",
+    "why": "Sholes' first writing machine used a piano-like keyboard in alphabetical order; five years of rearranging produced a four-row layout close to the modern one by April 1870.",
+    "src": "https://en.wikipedia.org/wiki/QWERTY",
+    "verified": true
+  },
+  {
+    "in": [
+      "telegraph",
+      "radio"
+    ],
+    "out": "wireless_telegraphy",
+    "why": "The same Morse key and the same dots and dashes, but the pulses ride radio waves instead of cable — Hertz proved the waves existed in 1887 and Marconi had a working system from 1894.",
+    "src": "https://en.wikipedia.org/wiki/Wireless_telegraphy",
+    "verified": true
+  },
+  {
+    "in": [
+      "sputnik_1",
+      "cold_war"
+    ],
+    "out": "space_race",
+    "why": "The contest grew straight out of the nuclear arms race and its ICBMs; Sputnik 1 on 4 October 1957 set off the 'Sputnik crisis' that produced NASA the following year.",
+    "src": "https://en.wikipedia.org/wiki/Space_Race",
+    "verified": true
+  },
+  {
+    "in": [
+      "sputnik_1",
+      "apollo_11"
+    ],
+    "out": "space_race",
+    "why": "Its two poles: the first artificial satellite in October 1957, and the Moon landing of July 1969 that met Kennedy's pledge to do it before the decade was out.",
+    "src": "https://en.wikipedia.org/wiki/Space_Race",
+    "verified": true
+  },
+  {
+    "in": [
+      "basil",
+      "parmesan"
+    ],
+    "out": "pesto",
+    "why": "Pesto alla genovese is Genovese basil, olive oil, pine nuts, garlic and cheese — Parmesan or Grana Padano with pecorino sardo — and the cheese goes in last, after the basil is crushed.",
+    "src": "https://en.wikipedia.org/wiki/Pesto",
+    "verified": true
+  },
+  {
+    "in": [
+      "chipotle",
+      "chocolate"
+    ],
+    "out": "mole_sauce",
+    "why": "Classic moles are built on ancho, pasilla, mulato and chipotle chillies; chocolate is a latecomer, likely added only in the early 21st century, and few if any prehispanic mole recipes contained it.",
+    "src": "https://en.wikipedia.org/wiki/Mole_(sauce)",
+    "verified": true
+  },
+  {
+    "in": [
+      "chilli",
+      "mexico"
+    ],
+    "out": "mole_sauce",
+    "why": "Two Mexican states claim the sauce — Puebla, whose mole poblano averages twenty ingredients, and Oaxaca, 'the land of the seven moles'.",
+    "src": "https://en.wikipedia.org/wiki/Mole_(sauce)",
+    "verified": true
+  },
+  {
+    "in": [
+      "tomato",
+      "oregano"
+    ],
+    "out": "marinara",
+    "why": "The Italian alla marinara is tomatoes, basil, olive oil, garlic and oregano; the story that Neapolitan ship cooks made it dates it to the mid-16th century, after Spain brought the tomato to Europe.",
+    "src": "https://en.wikipedia.org/wiki/Marinara_sauce",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannabis",
+      "fibre"
+    ],
+    "out": "hemp",
+    "why": "Hemp is Cannabis sativa grown for the bast fibre in its stem and for seed, using cultivars bred below 0.3% THC rather than for resin.",
+    "src": "https://en.wikipedia.org/wiki/Hemp",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannabis",
+      "canvas"
+    ],
+    "out": "hemp",
+    "why": "Canvas takes its name from cannabis: the heavy plain-weave cloth was originally woven from hemp bast, one of the first fibres humans ever spun.",
+    "src": "https://en.wikipedia.org/wiki/Hemp",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "turnip"
+    ],
+    "out": "canola",
+    "why": "Brassica napus is an amphidiploid formed by hybridising B. oleracea (cabbage) with B. rapa (turnip); canola is its low-erucic-acid cultivar group.",
+    "src": "https://en.wikipedia.org/wiki/Rapeseed",
+    "verified": true
+  },
+  {
+    "in": [
+      "mustard",
+      "oil"
+    ],
+    "out": "canola",
+    "why": "Canola is a mustard-family oilseed — the world's third-largest source of vegetable oil and second-largest source of protein meal.",
+    "src": "https://en.wikipedia.org/wiki/Rapeseed",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "nitrogen"
+    ],
+    "out": "clover",
+    "why": "Clover is a Trifolium legume whose root nodules fix atmospheric nitrogen; put in the rotation, it replaced the nitrogen European cities took away as food.",
+    "src": "https://en.wikipedia.org/wiki/Clover",
+    "verified": true
+  },
+  {
+    "in": [
+      "sage",
+      "seed"
+    ],
+    "out": "chia",
+    "why": "Chia is Salvia hispanica, a sage in the mint family grown entirely for its seed, which is hydrophilic enough to swell twelvefold in water.",
+    "src": "https://en.wikipedia.org/wiki/Salvia_hispanica",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "oil"
+    ],
+    "out": "jojoba",
+    "why": "A Sonoran Desert shrub whose seed is about 54% liquid wax ester, not triglyceride — which is why what it yields behaves like whale oil.",
+    "src": "https://en.wikipedia.org/wiki/Jojoba",
+    "verified": true
+  },
+  {
+    "in": [
+      "pulp",
+      "stem"
+    ],
+    "out": "kenaf",
+    "why": "Kenaf's whole stalk — 40% bast, 60% woody core — pulps to a quality similar to hardwood, which is why it is grown for newsprint.",
+    "src": "https://en.wikipedia.org/wiki/Kenaf",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "fibre"
+    ],
+    "out": "kenaf",
+    "why": "Kenaf was first grown in Egypt over 3,000 years ago, its bast fibre made into bags, cordage and the sails of Egyptian boats.",
+    "src": "https://en.wikipedia.org/wiki/Kenaf",
+    "verified": true
+  },
+  {
+    "in": [
+      "fibre",
+      "monsoon"
+    ],
+    "out": "jute",
+    "why": "Jute needs standing water and 20–40 °C monsoon humidity; the cut stems are retted in it until bast strands 1–4 m long pull free.",
+    "src": "https://en.wikipedia.org/wiki/Jute",
+    "verified": true
+  },
+  {
+    "in": [
+      "bangladesh",
+      "stem"
+    ],
+    "out": "jute",
+    "why": "India and Bangladesh produce nearly all the world's jute, stripped from the phloem — the 'skin' — of Corchorus stems.",
+    "src": "https://en.wikipedia.org/wiki/Jute",
+    "verified": true
+  },
+  {
+    "in": [
+      "agave",
+      "fibre"
+    ],
+    "out": "sisal",
+    "why": "Sisal is Agave sisalana, its stiff leaf fibre traditionally used for rope and twine and still the standard surface of a dartboard.",
+    "src": "https://en.wikipedia.org/wiki/Sisal",
+    "verified": true
+  },
+  {
+    "in": [
+      "agave"
+    ],
+    "verb": "crush",
+    "out": "sisal",
+    "why": "Sisal fibre is extracted by crushing the agave's sword-shaped leaves and washing the pulp away — the fibre is only about 4% of the plant by weight.",
+    "src": "https://en.wikipedia.org/wiki/Sisal",
+    "verified": true
+  },
+  {
+    "in": [
+      "banana",
+      "fibre"
+    ],
+    "out": "abaca",
+    "why": "Abacá is Musa textilis, a banana whose fibre comes from the leaf sheaths wrapped into its pseudostem, not from any fruit.",
+    "src": "https://en.wikipedia.org/wiki/Abac%C3%A1",
+    "verified": true
+  },
+  {
+    "in": [
+      "philippines",
+      "rope"
+    ],
+    "out": "abaca",
+    "why": "Manila hemp is abacá: stronger than true hemp and naturally salt-resistant, which made it the standard rope of maritime shipping.",
+    "src": "https://en.wikipedia.org/wiki/Abac%C3%A1",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "fibre"
+    ],
+    "out": "ramie",
+    "why": "Boehmeria nivea has been woven in China for centuries as zhu ma; the fibre is bast from the inner bark, not the woody stem.",
+    "src": "https://en.wikipedia.org/wiki/Ramie",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "cloth"
+    ],
+    "out": "ramie",
+    "why": "Ramie is stripped as a bark ribbon from fresh stems, then scraped, washed and degummed before it can be spun into cloth.",
+    "src": "https://en.wikipedia.org/wiki/Ramie",
+    "verified": true
+  },
+  {
+    "in": [
+      "indigo",
+      "mustard"
+    ],
+    "out": "woad",
+    "why": "Woad is Isatis tinctoria, a Brassicaceae, and the dye its leaves give is chemically the same indigo as Indigofera's — just at lower concentration.",
+    "src": "https://en.wikipedia.org/wiki/Isatis_tinctoria",
+    "verified": true
+  },
+  {
+    "in": [
+      "cannabis",
+      "vine"
+    ],
+    "out": "hop",
+    "why": "Humulus lupulus sits in the Cannabaceae with cannabis: a climbing bine trained up strings, of which only female plants are grown commercially.",
+    "src": "https://en.wikipedia.org/wiki/Hops",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "wort"
+    ],
+    "out": "hop",
+    "why": "The hop is a female flower cone; boiled in the wort, its humulones isomerise into the iso-alpha acids that make beer bitter, which unboiled hops barely are.",
+    "src": "https://en.wikipedia.org/wiki/Hops",
+    "verified": true
+  },
+  {
+    "in": [
+      "mutation",
+      "pea"
+    ],
+    "out": "sugarsnap_pea",
+    "why": "The modern snap pea came from a shelling-pea mutant found in 1952 by M.C. Parker, crossed with a snow pea by Calvin Lamborn and released in 1979.",
+    "src": "https://en.wikipedia.org/wiki/Snap_pea",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "sprout"
+    ],
+    "out": "mung_bean",
+    "why": "Mung beans are grown as much for sprouts as for seed: the sprout is taken 4–5 days after sowing, at the moment the seed splits.",
+    "src": "https://en.wikipedia.org/wiki/Mung_bean",
+    "verified": true
+  },
+  {
+    "in": [
+      "noodle",
+      "starch"
+    ],
+    "out": "mung_bean",
+    "why": "Cellophane or glass noodles are made from mung bean starch and water — Chinese bean thread noodles are nothing else.",
+    "src": "https://en.wikipedia.org/wiki/Cellophane_noodles",
+    "verified": true
+  },
+  {
+    "in": [
+      "dopamine",
+      "legume"
+    ],
+    "out": "fava_bean",
+    "why": "Broad beans are rich in levodopa, dopamine's direct precursor — enough that they must be avoided by anyone on irreversible MAO inhibitors.",
+    "src": "https://en.wikipedia.org/wiki/Vicia_faba",
+    "verified": true
+  },
+  {
+    "in": [
+      "legume",
+      "pickle"
+    ],
+    "out": "lupin",
+    "why": "Lupin seed carries alkaloids bitter enough to be toxic, so it is brined and pickled before anyone eats it.",
+    "src": "https://en.wikipedia.org/wiki/Lupinus",
+    "verified": true
+  },
+  {
+    "in": [
+      "poppy",
+      "seed"
+    ],
+    "out": "poppy_seed",
+    "why": "Poppy seed is harvested from the dried capsule of Papaver somniferum — the same plant as opium, but taken after the pod ripens rather than while it is green.",
+    "src": "https://en.wikipedia.org/wiki/Poppy_seed",
+    "verified": true
+  },
+  {
+    "in": [
+      "quinoa",
+      "seed"
+    ],
+    "out": "amaranth",
+    "why": "Quinoa is in the amaranth family, and both are pseudocereals — seeds eaten like grain from plants that are not grasses at all.",
+    "src": "https://en.wikipedia.org/wiki/Amaranth",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "wheat"
+    ],
+    "out": "emmer",
+    "why": "Emmer was the main wheat of Pharaonic Egypt, stored in quantity in the chambers beneath the Step Pyramid at Saqqara.",
+    "src": "https://en.wikipedia.org/wiki/Emmer",
+    "verified": true
+  },
+  {
+    "in": [
+      "emmer",
+      "wheat"
+    ],
+    "out": "spelt",
+    "why": "Spelt is hexaploid, most likely a hybrid of emmer with a bread-wheat type, which is why its ear is slenderer and its grain stays hulled.",
+    "src": "https://en.wikipedia.org/wiki/Spelt",
+    "verified": true
+  },
+  {
+    "in": [
+      "farro",
+      "wheat"
+    ],
+    "out": "spelt",
+    "why": "Italian farro is three hulled wheats, and spelt is the largest of them — farro grande, against emmer's farro medio and einkorn's farro piccolo.",
+    "src": "https://en.wikipedia.org/wiki/Spelt",
+    "verified": true
+  },
+  {
+    "in": [
+      "silk_road",
+      "wheat"
+    ],
+    "out": "kamut",
+    "why": "Khorasan wheat is named for the eastern Iranian region that formed a significant part of the Silk Road, where the grain was grown and traded.",
+    "src": "https://en.wikipedia.org/wiki/Khorasan_wheat",
+    "verified": true
+  },
+  {
+    "in": [
+      "domestication",
+      "wheat"
+    ],
+    "out": "einkorn",
+    "why": "Domesticated einkorn differs from the wild plant in one decisive thing: the ear no longer shatters, so a harvester can carry the seed home.",
+    "src": "https://en.wikipedia.org/wiki/Einkorn_wheat",
+    "verified": true
+  },
+  {
+    "in": [
+      "rye",
+      "wheat"
+    ],
+    "out": "triticale",
+    "why": "Triticale is × Triticosecale — wheat as the female parent, rye as the pollen donor — first bred in Scotland and Germany in the late 19th century.",
+    "src": "https://en.wikipedia.org/wiki/Triticale",
+    "verified": true
+  },
+  {
+    "in": [
+      "millet",
+      "savanna"
+    ],
+    "out": "fonio",
+    "why": "Fonio is a Digitaria crabgrass of the West African savanna with the smallest seeds of any millet and a root more than a metre deep against drought.",
+    "src": "https://en.wikipedia.org/wiki/Fonio",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethiopia",
+      "grass"
+    ],
+    "out": "teff",
+    "why": "Eragrostis tef is a C4 lovegrass domesticated in the Ethiopian highlands, still the staple grain of Ethiopia and Eritrea and the flour behind injera.",
+    "src": "https://en.wikipedia.org/wiki/Eragrostis_tef",
+    "verified": true
+  },
+  {
+    "in": [
+      "flood",
+      "rice"
+    ],
+    "out": "wild_rice",
+    "why": "Zizania is not Oryza, though both sit in the tribe Oryzeae; it grows in the shallow standing water of small lakes and slow streams, only its flowering head above the surface.",
+    "src": "https://en.wikipedia.org/wiki/Wild_rice",
+    "verified": true
+  },
+  {
+    "in": [
+      "cinnamon",
+      "tree"
+    ],
+    "out": "cinnamon_crop",
+    "why": "The spice is the inner bark of Cinnamomum verum, an evergreen laurel kept coppiced as a bush so its side branches can be peeled by hand.",
+    "src": "https://en.wikipedia.org/wiki/Cinnamomum_verum",
+    "verified": true
+  },
+  {
+    "in": [
+      "cinnamaldehyde",
+      "sri_lanka"
+    ],
+    "out": "cinnamon_crop",
+    "why": "Sri Lanka still supplies 80–90% of true cinnamon, whose flavour is essentially one compound, cinnamaldehyde, in the bark oil.",
+    "src": "https://en.wikipedia.org/wiki/Cinnamomum_verum",
+    "verified": true
+  },
+  {
+    "in": [
+      "clove",
+      "tree"
+    ],
+    "out": "clove_crop",
+    "why": "Cloves are the unopened flower buds of Syzygium aromaticum, an evergreen of the myrtle family that grows 8–12 m tall.",
+    "src": "https://en.wikipedia.org/wiki/Clove",
+    "verified": true
+  },
+  {
+    "in": [
+      "eugenol",
+      "indonesia"
+    ],
+    "out": "clove_crop",
+    "why": "The clove tree is native to the Maluku Islands of Indonesia, and the eugenol in its buds is what the spice trade was after.",
+    "src": "https://en.wikipedia.org/wiki/Clove",
+    "verified": true
+  },
+  {
+    "in": [
+      "indonesia",
+      "mace"
+    ],
+    "out": "nutmeg_crop",
+    "why": "One Maluku tree, Myristica fragrans, yields two different spices from a single fruit: nutmeg from the seed, mace from the crimson aril wrapped around it.",
+    "src": "https://en.wikipedia.org/wiki/Myristica_fragrans",
+    "verified": true
+  },
+  {
+    "in": [
+      "nutmeg",
+      "tree"
+    ],
+    "out": "nutmeg_crop",
+    "why": "Myristica fragrans is a dioecious evergreen 5–15 m tall; only carpellate trees set the yellow fruit that splits to show the seed.",
+    "src": "https://en.wikipedia.org/wiki/Myristica_fragrans",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "turmeric"
+    ],
+    "out": "turmeric_crop",
+    "why": "Curcuma longa is lifted every year — some rhizomes replanted for the next season, the rest boiled and dried into powder averaging 3.14% curcumin.",
+    "src": "https://en.wikipedia.org/wiki/Turmeric",
+    "verified": true
+  },
+  {
+    "in": [
+      "monsoon",
+      "turmeric"
+    ],
+    "out": "turmeric_crop",
+    "why": "Turmeric needs 20–30 °C and high annual rainfall to thrive, which is why it is a monsoon-belt crop of the Indian subcontinent and Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Turmeric",
+    "verified": true
+  },
+  {
+    "in": [
+      "chilli",
+      "domestication"
+    ],
+    "out": "chilli_pepper",
+    "why": "Capsicum was domesticated in the Americas by at least 3000 BC — chilli remains turn up in pottery from Puebla and Oaxaca.",
+    "src": "https://en.wikipedia.org/wiki/Capsicum",
+    "verified": true
+  },
+  {
+    "in": [
+      "chilli",
+      "fruit"
+    ],
+    "out": "chilli_pepper",
+    "why": "The chilli is botanically a berry on a nightshade; its name only borrows 'pepper' from black pepper, to which it has no botanical relation.",
+    "src": "https://en.wikipedia.org/wiki/Capsicum",
+    "verified": true
+  },
+  {
+    "in": [
+      "anethole",
+      "fennel"
+    ],
+    "out": "fennel_crop",
+    "why": "Fennel's fruits are loaded with trans-anethole, the same compound that makes anise taste as it does; the two together flavour absinthe.",
+    "src": "https://en.wikipedia.org/wiki/Fennel",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot",
+      "fennel"
+    ],
+    "out": "fennel_crop",
+    "why": "Foeniculum vulgare is an Apiaceae — carrot's own family — a hollow-stemmed perennial to 2.1 m whose swollen stem base is Florence fennel.",
+    "src": "https://en.wikipedia.org/wiki/Fennel",
+    "verified": true
+  },
+  {
+    "in": [
+      "anise",
+      "shikimic_acid"
+    ],
+    "out": "star_anise_crop",
+    "why": "Star anise is unrelated to anise but shares its anethole flavour; its shikimic acid was the feedstock Roche used for oseltamivir until 2012.",
+    "src": "https://en.wikipedia.org/wiki/Illicium_verum",
+    "verified": true
+  },
+  {
+    "in": [
+      "anise",
+      "vietnam"
+    ],
+    "out": "star_anise_crop",
+    "why": "Illicium verum is an evergreen tree native to South China and northeast Vietnam, and those two countries are still its main producers.",
+    "src": "https://en.wikipedia.org/wiki/Illicium_verum",
+    "verified": true
+  },
+  {
+    "in": [
+      "anise",
+      "dill"
+    ],
+    "out": "dill_crop",
+    "why": "Greek used one word for both plants; Latin split it into anethum for dill and anisum for anise, and Anethum is still dill's genus.",
+    "src": "https://en.wikipedia.org/wiki/Dill",
+    "verified": true
+  },
+  {
+    "in": [
+      "celery",
+      "dill"
+    ],
+    "out": "dill_crop",
+    "why": "Dill is an Apiaceae, the celery family, growing 0.5–1.5 m from a taproot with hollow stems and flat yellow umbels.",
+    "src": "https://en.wikipedia.org/wiki/Dill",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "saffron"
+    ],
+    "out": "saffron_crocus",
+    "why": "Crocus sativus is a sterile triploid — three sets of eight chromosomes, 24 in all — so it sets no viable seed and survives only by hand division.",
+    "src": "https://en.wikipedia.org/wiki/Saffron",
+    "verified": true
+  },
+  {
+    "in": [
+      "petal",
+      "saffron"
+    ],
+    "out": "saffron_crocus",
+    "why": "The autumn-blooming crocus is a purple flower; only its three crimson stigmas are picked and dried into the spice.",
+    "src": "https://en.wikipedia.org/wiki/Saffron",
+    "verified": true
+  },
+  {
+    "in": [
+      "carvone",
+      "mint"
+    ],
+    "out": "spearmint_crop",
+    "why": "Spearmint's smell is R-carvone — the exact mirror image of the S-carvone that makes caraway smell of rye.",
+    "src": "https://en.wikipedia.org/wiki/Spearmint",
+    "verified": true
+  },
+  {
+    "in": [
+      "spearmint_crop",
+      "water"
+    ],
+    "out": "peppermint_crop",
+    "why": "Mentha × piperita is the hybrid of spearmint (M. spicata) with watermint (M. aquatica), first identified in Hertfordshire and published in 1696.",
+    "src": "https://en.wikipedia.org/wiki/Peppermint",
+    "verified": true
+  },
+  {
+    "in": [
+      "mint",
+      "rhizome"
+    ],
+    "out": "peppermint_crop",
+    "why": "Peppermint is sterile and spreads only by wide fleshy rhizomes, so a peppermint field is one plant repeated over and over.",
+    "src": "https://en.wikipedia.org/wiki/Peppermint",
+    "verified": true
+  },
+  {
+    "in": [
+      "tea",
+      "tree"
+    ],
+    "out": "tea_tea",
+    "why": "Tea is the leaf and bud of Camellia sinensis, an evergreen of the Theaceae named for the Jesuit pharmacist Georg Kamel.",
+    "src": "https://en.wikipedia.org/wiki/Camellia_sinensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "kenya",
+      "tea"
+    ],
+    "out": "tea_tea",
+    "why": "The plant is native to the highlands between southwest China, north Myanmar and northeast India, but China, India and Kenya are now the three largest growers.",
+    "src": "https://en.wikipedia.org/wiki/Camellia_sinensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "tree"
+    ],
+    "out": "coffee_crop",
+    "why": "Coffea is a Rubiaceae shrub or small tree, 3–3.5 m in the tropics, and it takes three to five years before it fruits at all.",
+    "src": "https://en.wikipedia.org/wiki/Coffea",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "drupe"
+    ],
+    "out": "coffee_crop",
+    "why": "The coffee cherry is a drupe that takes about nine months to ripen; 5–10% of them hold a single round bean instead of two, called a peaberry.",
+    "src": "https://en.wikipedia.org/wiki/Coffea",
+    "verified": true
+  },
+  {
+    "in": [
+      "cantaloupe",
+      "vine"
+    ],
+    "out": "honeydew_melon",
+    "why": "Honeydew and cantaloupe are both Cucumis melo; honeydew is the Inodorus group — smooth-rinded and, unlike cantaloupe, with no musky smell at all.",
+    "src": "https://en.wikipedia.org/wiki/Honeydew_(melon)",
+    "verified": true
+  },
+  {
+    "in": [
+      "gelatin",
+      "kiwi"
+    ],
+    "out": "kiwifruit",
+    "why": "Actinidain was found in 1959 by A.C. Arcus, investigating why kiwifruit jellies would not set: the protease digests the gelatin.",
+    "src": "https://en.wikipedia.org/wiki/Actinidain",
+    "verified": true
+  },
+  {
+    "in": [
+      "enzyme",
+      "kiwi"
+    ],
+    "out": "kiwifruit",
+    "why": "Actinidain is a cysteine protease unique to Actinidia, sold as a meat tenderiser and denaturing at 60 °C — lower than papain or bromelain.",
+    "src": "https://en.wikipedia.org/wiki/Actinidain",
+    "verified": true
+  },
+  {
+    "in": [
+      "date",
+      "tree"
+    ],
+    "out": "date_palm",
+    "why": "Dates are the drupes of Phoenix dactylifera, a dioecious palm — growers hand-pollinate the female trees rather than leave it to the wind.",
+    "src": "https://en.wikipedia.org/wiki/Date_palm",
+    "verified": true
+  },
+  {
+    "in": [
+      "date",
+      "desert"
+    ],
+    "out": "date_palm",
+    "why": "The date palm is the tree of oasis agriculture, farmed across desert regions from the Gulf to North Africa since the 6th millennium BCE.",
+    "src": "https://en.wikipedia.org/wiki/Date_palm",
+    "verified": true
+  },
+  {
+    "in": [
+      "vine",
+      "brazil"
+    ],
+    "out": "passionfruit",
+    "why": "Passiflora edulis is a perennial vine native to southern Brazil through Paraguay and northern Argentina, producing usually one 5-7.5 cm flower at each node; missionaries in Brazil named it around 1700 after the Passion of Christ.",
+    "src": "https://en.wikipedia.org/wiki/Passiflora_edulis",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "malaysia"
+    ],
+    "out": "mangosteen",
+    "why": "Garcinia mangostana is a tropical evergreen tree 6 to 25 m tall, native to the Malay Peninsula and Borneo, which prolonged exposure below 0 °C will kill outright.",
+    "src": "https://en.wikipedia.org/wiki/Mangosteen",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "tannin"
+    ],
+    "out": "mangosteen",
+    "why": "The rind's polyphenols — xanthones and tannins — make the unripe fruit astringent enough to deter insects, fungi and animals, and the same rind has been used to tan leather in China.",
+    "src": "https://en.wikipedia.org/wiki/Mangosteen",
+    "verified": true
+  },
+  {
+    "in": [
+      "elderflower"
+    ],
+    "verb": "wait",
+    "out": "elderberry",
+    "why": "The same flat corymb, 10-25 cm across, that is picked in flower for cordial sets fruit if it is left alone; unlike the flowers, the elder's other parts and even the ripe seeds hold the cyanogenic glycoside sambunigrin.",
+    "src": "https://en.wikipedia.org/wiki/Sambucus_nigra",
+    "verified": true
+  },
+  {
+    "in": [
+      "raspberry",
+      "blackberry"
+    ],
+    "out": "boysenberry",
+    "why": "The boysenberry is a cross between European raspberry, European blackberry, American dewberry and loganberry; USDA's George Darrow and the berry grower Walter Knott tracked the surviving vines to Rudolph Boysen's abandoned Anaheim farm.",
+    "src": "https://en.wikipedia.org/wiki/Boysenberry",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "pine"
+    ],
+    "out": "currant",
+    "why": "White pine blister rust needs two hosts to complete its life cycle: a Ribes and a white pine. Because the North American pines have no co-evolved resistance, currants were banned across the United States for much of the 20th century.",
+    "src": "https://en.wikipedia.org/wiki/Blackcurrant",
+    "verified": true
+  },
+  {
+    "in": [
+      "currant",
+      "fish"
+    ],
+    "out": "gooseberry",
+    "why": "Gooseberries are Ribes, the same genus as currants; the French name groseille à maquereau translates as 'mackerel berries', from the sauce they were cooked into for mackerel in old French cuisine.",
+    "src": "https://en.wikipedia.org/wiki/Gooseberry",
+    "verified": true
+  },
+  {
+    "in": [
+      "orange",
+      "china"
+    ],
+    "out": "kumquat",
+    "why": "Kumquats are small Rutaceae trees native to southern China, the most cold-hardy of the citrus; the 2.5-5 cm fruit has a sweet pulpy skin and slightly acidic inner pulp, and the name is Cantonese gām gwāt, golden orange.",
+    "src": "https://en.wikipedia.org/wiki/Kumquat",
+    "verified": true
+  },
+  {
+    "in": [
+      "pear",
+      "iran"
+    ],
+    "out": "quince",
+    "why": "Cydonia oblonga is the only species in its genus and sits in the Malinae, the same subtribe as apple and pear; it is native to the Hyrcanian forests south of the Caspian Sea in Iran, and thrived on the Mesopotamian plain where apples would not.",
+    "src": "https://en.wikipedia.org/wiki/Quince",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "aphrodite"
+    ],
+    "out": "quince",
+    "why": "The Greeks called quince the Cydonian pome, after Kydonia on Crete, and treated it as a sacred emblem of Aphrodite; a quince figures in a lost poem of Callimachus that survives only in prose summary.",
+    "src": "https://en.wikipedia.org/wiki/Quince",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "andes"
+    ],
+    "out": "cherimoya",
+    "why": "Annona cherimola is a low-branched evergreen tree 5 to 9 m tall, native to the mountains of Honduras and Guatemala and long cultivated through the Andes; its short-lived flowers open female and turn male within hours.",
+    "src": "https://en.wikipedia.org/wiki/Cherimoya",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "china"
+    ],
+    "out": "jujube",
+    "why": "Ziziphus jujuba is a thorny buckthorn-family tree of eastern Asia whose fruit holds a single hard kernel like an olive stone; dried it wrinkles into what is sold as the Chinese or red date, though it is unrelated to Phoenix dactylifera.",
+    "src": "https://en.wikipedia.org/wiki/Jujube",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "canada"
+    ],
+    "out": "saskatoon_berry",
+    "why": "Amelanchier alnifolia is a rose-family shrub of North America bearing a small purple pome; Indigenous peoples in Canada have long eaten it fresh or dried, and it went into pemmican as flavour and preservative.",
+    "src": "https://en.wikipedia.org/wiki/Amelanchier_alnifolia",
+    "verified": true
+  },
+  {
+    "in": [
+      "guava",
+      "uruguay"
+    ],
+    "out": "feijoa",
+    "why": "Feijoa sellowiana is a myrtle-family relative of the guava with the same gritty pulp, native to the highlands of Colombia, southern Brazil and northeast Uruguay; the cultivars grown internationally descend from a handful of 'Uruguayan type' introductions.",
+    "src": "https://en.wikipedia.org/wiki/Feijoa",
+    "verified": true
+  },
+  {
+    "in": [
+      "orange",
+      "italy"
+    ],
+    "out": "blood_orange",
+    "why": "A natural mutation of the sweet orange whose flesh reddens with chrysanthemin, an anthocyanin, only when it develops through cold nights; the arancia rossa di Sicilia holds protected geographical status in Europe.",
+    "src": "https://en.wikipedia.org/wiki/Blood_orange",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemon",
+      "mandarin"
+    ],
+    "out": "meyer_lemon",
+    "why": "Citrus × meyeri is a hybrid of a citron with a mandarin/pomelo cross, rounder and less acidic than a true lemon; USDA agricultural explorer Frank N. Meyer collected it in China and introduced it to the United States in 1908.",
+    "src": "https://en.wikipedia.org/wiki/Meyer_lemon",
+    "verified": true
+  },
+  {
+    "in": [
+      "lime",
+      "rainforest"
+    ],
+    "out": "finger_lime",
+    "why": "Citrus australasica is a thorny understorey shrub of lowland subtropical rainforest on the Queensland-New South Wales border; its cylindrical 8 cm fruit holds globular juice vesicles marketed as lime caviar.",
+    "src": "https://en.wikipedia.org/wiki/Citrus_australasica",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "india"
+    ],
+    "out": "aonla",
+    "why": "Phyllanthus emblica is a small deciduous tree of tropical and southern Asia bearing a hard fruit up to 26 mm across with six vertical furrows, high in ascorbic acid and bitter with ellagitannins such as emblicanin A.",
+    "src": "https://en.wikipedia.org/wiki/Phyllanthus_emblica",
+    "verified": true
+  },
+  {
+    "in": [
+      "quince",
+      "frost"
+    ],
+    "out": "medlar",
+    "why": "Medlar and quince are both hard rose-family pomes that most varieties can only be eaten raw after bletting; the medlar is picked straight after a hard frost, which breaks down cell walls until the flesh softens enough to spoon out.",
+    "src": "https://en.wikipedia.org/wiki/Bletting",
+    "verified": true
+  },
+  {
+    "in": [
+      "cherimoya",
+      "frost"
+    ],
+    "out": "pawpaw",
+    "why": "Asimina triloba is the custard-apple family's temperate outlier, a clonal understorey tree of North American hardwood forest; like its tropical relatives it carries the neurotoxin annonacin through most of the plant, though the ripe fruit is edible.",
+    "src": "https://en.wikipedia.org/wiki/Asimina_triloba",
+    "verified": true
+  },
+  {
+    "in": [
+      "blueberry",
+      "bear"
+    ],
+    "out": "huckleberry",
+    "why": "Vaccinium membranaceum is a wild western Vaccinium, the most commonly collected of the western huckleberries; black and grizzly bears eat its leaves, stems, roots and fruit, and the shrubs resprout vigorously from buried rhizomes after low-intensity fire.",
+    "src": "https://en.wikipedia.org/wiki/Vaccinium_membranaceum",
+    "verified": true
+  },
+  {
+    "in": [
+      "cranberry",
+      "tundra"
+    ],
+    "out": "lingonberry",
+    "why": "Vaccinium vitis-idaea is the cranberry's northern relative, native to boreal forest and Arctic tundra across the Northern Hemisphere; it keeps its broad leaves all winter, is hardy to about -45 °C, and grows poorly where summers are hot.",
+    "src": "https://en.wikipedia.org/wiki/Vaccinium_vitis-idaea",
+    "verified": true
+  },
+  {
+    "in": [
+      "juniper",
+      "cone"
+    ],
+    "out": "juniper_berry",
+    "why": "A juniper berry is the female seed cone of a juniper: unlike the separated woody scales of a pine cone, its scales stay fleshy and merge into a single covering, a galbulus. Juniperus communis cones are what give gin its flavour.",
+    "src": "https://en.wikipedia.org/wiki/Juniper_berry",
+    "verified": true
+  },
+  {
+    "in": [
+      "frankia",
+      "sand"
+    ],
+    "out": "sea_buckthorn",
+    "why": "Hippophae rhamnoides roots live in symbiosis with nitrogen-fixing Frankia bacteria and spread rapidly by root suckers, which is why the shrub establishes on poor ground and is planted to stabilise slopes and cut erosion.",
+    "src": "https://en.wikipedia.org/wiki/Hippophae_rhamnoides",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrot",
+      "snow"
+    ],
+    "out": "parsnip",
+    "why": "Pastinaca sativa is an Apiaceae biennial beside carrot and parsley; its taproot is left in the ground through winter because frost converts part of the starch to sugar, and like its relatives the sap carries phototoxic furanocoumarins.",
+    "src": "https://en.wikipedia.org/wiki/Parsnip",
+    "verified": true
+  },
+  {
+    "in": [
+      "sunflower",
+      "tuber"
+    ],
+    "out": "jerusalem_artichoke",
+    "why": "Helianthus tuberosus is a sunflower native to central North America, grown for tubers that hold 8-13% inulin and little starch; humans cannot break inulin down, so colon bacteria ferment it instead.",
+    "src": "https://en.wikipedia.org/wiki/Jerusalem_artichoke",
+    "verified": true
+  },
+  {
+    "in": [
+      "maize",
+      "harvest"
+    ],
+    "out": "sweetcorn",
+    "why": "Sweet corn is a naturally occurring recessive mutation in the maize genes that convert sugar to starch inside the kernel's endosperm; it is picked immature at the milk stage, not dry at the dent stage, and stores poorly for the same reason.",
+    "src": "https://en.wikipedia.org/wiki/Sweet_corn",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "china"
+    ],
+    "out": "bok_choy",
+    "why": "Bok choy is a Chinese cabbage, Brassica rapa subsp. chinensis, whose varieties form a loose cluster rather than a head; the name is Cantonese baak choi, white vegetable, after the lighter bulbous leaf bases.",
+    "src": "https://en.wikipedia.org/wiki/Bok_choy",
+    "verified": true
+  },
+  {
+    "in": [
+      "dandelion",
+      "leaf"
+    ],
+    "out": "endive",
+    "why": "Endive is Cichorium, an Asteraceae genus alongside dandelion, covering both C. endivia and the chicories sold as Belgian endive and radicchio; varieties are grown for bitter salad leaves, for blanched buds, and for roots roasted as a coffee substitute.",
+    "src": "https://en.wikipedia.org/wiki/Endive",
+    "verified": true
+  },
+  {
+    "in": [
+      "endive",
+      "italy"
+    ],
+    "out": "radicchio",
+    "why": "Radicchio is a cultivated leaf chicory, Cichorium intybus, the same genus as endive; the deep-red white-veined form was worked out in 1860 by the agronomist Francesco Van den Borre using imbianchimento, standing lifted plants in water in darkened sheds until chlorophyll production stops.",
+    "src": "https://en.wikipedia.org/wiki/Radicchio",
+    "verified": true
+  },
+  {
+    "in": [
+      "beet",
+      "leaf"
+    ],
+    "out": "swiss_chard",
+    "why": "Chard is Beta vulgaris subsp. vulgaris, the same species as beetroot and sugar beet, selected for its leaves and thick stalks rather than its taproot; its other names — leaf beet, spinach beet, silver beet — all say so.",
+    "src": "https://en.wikipedia.org/wiki/Chard",
+    "verified": true
+  },
+  {
+    "in": [
+      "kale",
+      "stem"
+    ],
+    "out": "collard_green",
+    "why": "Collard is Brassica oleracea var. viridis, in the same headless Acephala group as kale but with broad flat leaves borne on an upright stalk that often passes two feet and reaches six in the Portuguese cultivars.",
+    "src": "https://en.wikipedia.org/wiki/Collard_(plant)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mustard_seed",
+      "leaf"
+    ],
+    "out": "mustard_green",
+    "why": "Mustard greens are the leaves of Brassica juncea, the brown or Indian mustard whose seeds are pressed for mustard oil and ground for the condiment; the species is more pungent than kale, broccoli or collard, so it is often mixed with them.",
+    "src": "https://en.wikipedia.org/wiki/Brassica_juncea",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "allyl_isothiocyanate"
+    ],
+    "out": "horseradish",
+    "why": "Armoracia rusticana is a Brassicaceae root crop whose intact root has little aroma; cutting or grating it lets the plant's own enzymes digest the glucosinolate sinigrin into allyl isothiocyanate, mustard oil, which irritates the sinuses and eyes.",
+    "src": "https://en.wikipedia.org/wiki/Horseradish",
+    "verified": true
+  },
+  {
+    "in": [
+      "tuber",
+      "vine"
+    ],
+    "out": "yam",
+    "why": "Yams are the tubers of Dioscorea, perennial herbaceous vines that reach 15 m in length and send tubers up to 1.5 m into the soil; in the United States the name is misapplied to orange-fleshed sweet potatoes, a different family entirely.",
+    "src": "https://en.wikipedia.org/wiki/Yam_(vegetable)",
+    "verified": true
+  },
+  {
+    "in": [
+      "tuber",
+      "oxalate"
+    ],
+    "out": "taro",
+    "why": "Taro is the starchy corm of Colocasia esculenta, toxic raw to humans and pets because of calcium oxalate and needle-shaped raphides in the plant cells; cooking, or steeping overnight in cold water, makes it edible.",
+    "src": "https://en.wikipedia.org/wiki/Taro",
+    "verified": true
+  },
+  {
+    "in": [
+      "root",
+      "vine"
+    ],
+    "out": "jicama",
+    "why": "Pachyrhizus erosus is a Mesoamerican vine in the pea family Fabaceae, grown for a single crisp tuberous root; the rest of the plant is very poisonous, its mature seeds, flowers and pods high in rotenone, which is used to poison insects and fish.",
+    "src": "https://en.wikipedia.org/wiki/Pachyrhizus_erosus",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "stem"
+    ],
+    "out": "kohlrabi",
+    "why": "Kohlrabi is Brassica oleracea Gongylodes Group, a low stout cultivar of the same wild cabbage as broccoli and kale; the name is German Kohl plus Rübe, cabbage-turnip, because the swollen stem resembles one, and Gongylodes means roundish in Greek.",
+    "src": "https://en.wikipedia.org/wiki/Kohlrabi",
+    "verified": true
+  },
+  {
+    "in": [
+      "fennel",
+      "bulb"
+    ],
+    "out": "fennel_bulb",
+    "why": "Florence fennel is a cultivar group of Foeniculum vulgare selected so the leaf bases inflate into a bulb-like vegetable — smaller than the wild herb, and sweeter.",
+    "src": "https://en.wikipedia.org/wiki/Fennel",
+    "verified": true
+  },
+  {
+    "in": [
+      "bamboo",
+      "sprout"
+    ],
+    "out": "bamboo_shoot",
+    "why": "A bamboo shoot is a new culm cut as it emerges from the ground; raw it contains cyanogenic glycosides, so it is boiled before any other use.",
+    "src": "https://en.wikipedia.org/wiki/Bamboo_shoot",
+    "verified": true
+  },
+  {
+    "in": [
+      "lotus",
+      "rhizome"
+    ],
+    "out": "lotus_root",
+    "why": "What is sold as lotus root is the rhizome of Nelumbo nucifera, matured six to nine months and dug out of drained pond or paddy soil.",
+    "src": "https://en.wikipedia.org/wiki/Nelumbo_nucifera",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "root"
+    ],
+    "out": "rutabaga",
+    "why": "Rutabaga and rapeseed are both Brassica napus, the same accidental cabbage-turnip hybrid Woo Jang-choon mapped in 1935 — rutabaga is the form bred for its swollen root rather than its oilseed.",
+    "src": "https://en.wikipedia.org/wiki/Rutabaga",
+    "verified": true
+  },
+  {
+    "in": [
+      "radish",
+      "soil"
+    ],
+    "out": "daikon_radish",
+    "why": "Daikon is a winter radish bred for a long napiform taproot, and in some places is deliberately left in the ground because rotting roots loosen compacted soil and recover nutrients.",
+    "src": "https://en.wikipedia.org/wiki/Daikon",
+    "verified": true
+  },
+  {
+    "in": [
+      "tuber",
+      "water"
+    ],
+    "out": "water_chestnut",
+    "why": "Under short days this sedge sends rhizomes downward that swell into a corm at the tip; the crop is grown in paddies kept submerged under about 10 cm of water.",
+    "src": "https://en.wikipedia.org/wiki/Eleocharis_dulcis",
+    "verified": true
+  },
+  {
+    "in": [
+      "gourd",
+      "vine"
+    ],
+    "out": "chayote",
+    "why": "Chayote is a Cucurbitaceae vine first cultivated between southern Mexico and Honduras, whose pear-shaped fruit holds a single flattened stone up to 10 cm long.",
+    "src": "https://en.wikipedia.org/wiki/Chayote",
+    "verified": true
+  },
+  {
+    "in": [
+      "pumpkin",
+      "zucchini"
+    ],
+    "out": "spaghetti_squash",
+    "why": "Spaghetti squash is a cultivar group of Cucurbita pepo — zucchini's own species — bred so the cooked flesh separates from the rind in ribbons and strands.",
+    "src": "https://en.wikipedia.org/wiki/Spaghetti_squash",
+    "verified": true
+  },
+  {
+    "in": [
+      "gourd",
+      "zucchini"
+    ],
+    "out": "acorn_squash",
+    "why": "Acorn squash belongs to Cucurbita pepo, the same species as every summer squash including zucchini; leaving it to harden its rind is what makes it a winter squash instead.",
+    "src": "https://en.wikipedia.org/wiki/Acorn_squash",
+    "verified": true
+  },
+  {
+    "in": [
+      "pea",
+      "green_bean"
+    ],
+    "out": "snow_pea",
+    "why": "A snow pea is to the pea what a green bean is to the bean — picked unripe and eaten whole, pod and seed together — with flat, thin pod walls rather than the snap pea's round thick ones.",
+    "src": "https://en.wikipedia.org/wiki/Snow_pea",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_eyed_pea",
+      "vine"
+    ],
+    "out": "yardlong_bean",
+    "why": "The asparagus bean is Vigna unguiculata subsp. sesquipedalis, the same cowpea species as the black-eyed pea, grown as a vigorous climbing vine for immature pods 35 to 75 cm long.",
+    "src": "https://en.wikipedia.org/wiki/Asparagus_bean",
+    "verified": true
+  },
+  {
+    "in": [
+      "bracken_fern",
+      "leaf"
+    ],
+    "out": "fiddlehead_fern",
+    "why": "Every fern frond emerges tightly coiled in circinate vernation and is cut close to the ground before it unrolls; bracken's own fiddleheads contain ptaquiloside, which is why ostrich fern is the one usually eaten.",
+    "src": "https://en.wikipedia.org/wiki/Fiddlehead_fern",
+    "verified": true
+  },
+  {
+    "in": [
+      "kale",
+      "sea"
+    ],
+    "out": "sea_kale",
+    "why": "Crambe maritima is a halophyte of the cabbage family growing wild on shingle beaches above the high-tide mark, where clumps of it trap wind-blown sand and start dunes.",
+    "src": "https://en.wikipedia.org/wiki/Crambe_maritima",
+    "verified": true
+  },
+  {
+    "in": [
+      "salt_marsh",
+      "stem"
+    ],
+    "out": "samphire",
+    "why": "Salicornia is a leafless salt-marsh succulent that tolerates immersion in seawater; the jointed green stems are the whole of what is eaten.",
+    "src": "https://en.wikipedia.org/wiki/Salicornia",
+    "verified": true
+  },
+  {
+    "in": [
+      "turnip",
+      "leaf"
+    ],
+    "out": "napa_cabbage",
+    "why": "Napa cabbage is Brassica rapa subsp. pekinensis — the turnip's own species — bred to pack its leaves into a dense head weighing 1 to 3 kg instead of swelling a root.",
+    "src": "https://en.wikipedia.org/wiki/Napa_cabbage",
+    "verified": true
+  },
+  {
+    "in": [
+      "napa_cabbage",
+      "snow"
+    ],
+    "out": "tatsoi",
+    "why": "Tatsoi is another Brassica rapa grown for greens, but as a flat rosette rather than a head: harvestable in 45 to 50 days and able to withstand −10 °C under snow.",
+    "src": "https://en.wikipedia.org/wiki/Tatsoi",
+    "verified": true
+  },
+  {
+    "in": [
+      "turnip",
+      "spinach"
+    ],
+    "out": "komatsuna",
+    "why": "Komatsuna is Brassica rapa var. perviridis, a leaf variety of the turnip's species cooked like spinach — hence its English name, Japanese mustard spinach.",
+    "src": "https://en.wikipedia.org/wiki/Komatsuna",
+    "verified": true
+  },
+  {
+    "in": [
+      "spinach",
+      "vine"
+    ],
+    "out": "malabar_spinach",
+    "why": "Basella alba is no relation to spinach: it is a Basellaceae vine climbing to 10 m, cooked for its thick semi-succulent heart-shaped leaves.",
+    "src": "https://en.wikipedia.org/wiki/Basella_alba",
+    "verified": true
+  },
+  {
+    "in": [
+      "spinach",
+      "sea"
+    ],
+    "out": "new_zealand_spinach",
+    "why": "Tetragonia tetragonioides is a halophyte of sandy shorelines, unrelated to spinach but cooked the same way — Cook's crew ate it pickled against scurvy and Joseph Banks carried seed back to Kew.",
+    "src": "https://en.wikipedia.org/wiki/Tetragonia_tetragonioides",
+    "verified": true
+  },
+  {
+    "in": [
+      "spinach",
+      "tree"
+    ],
+    "out": "chaya",
+    "why": "Chaya is a large fast-growing perennial shrub of the spurge family, cropped for leaves cooked like spinach — its English name is literally tree spinach.",
+    "src": "https://en.wikipedia.org/wiki/Cnidoscolus_aconitifolius",
+    "verified": true
+  },
+  {
+    "in": [
+      "alfalfa",
+      "sprout"
+    ],
+    "out": "alfalfa_sprout",
+    "why": "Alfalfa seed soaked and rinsed germinates into 5 to 8 cm sprouts in three to five days; both seed and sprout contain L-canavanine.",
+    "src": "https://en.wikipedia.org/wiki/Sprouting",
+    "verified": true
+  },
+  {
+    "in": [
+      "mung_bean",
+      "water"
+    ],
+    "out": "mung_bean_sprout",
+    "why": "Mung beans are soaked and kept dark and damp; the sprout is cut in the four-to-five-day window after the seed splits, while the root is still short and soft.",
+    "src": "https://en.wikipedia.org/wiki/Mung_bean",
+    "verified": true
+  },
+  {
+    "in": [
+      "sprout",
+      "cotyledon"
+    ],
+    "out": "microgreen",
+    "why": "A microgreen is defined against a sprout: it is harvested by cutting above the soil line only after the cotyledon leaves have fully developed and one set of true leaves appears.",
+    "src": "https://en.wikipedia.org/wiki/Microgreen",
+    "verified": true
+  },
+  {
+    "in": [
+      "mushroom"
+    ],
+    "verb": "wait",
+    "out": "portobello_mushroom",
+    "why": "Button, cremini and portobello are one species at three ages — leave Agaricus bisporus to mature and the cap opens to 10–15 cm and turns brown.",
+    "src": "https://en.wikipedia.org/wiki/Agaricus_bisporus",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "tree"
+    ],
+    "out": "teak_tree",
+    "why": "Teak's natural oils make the timber termite-resistant, water-resistant and durable even untreated, which is why it goes into boat building and exterior construction.",
+    "src": "https://en.wikipedia.org/wiki/Teak",
+    "verified": true
+  },
+  {
+    "in": [
+      "table",
+      "tree"
+    ],
+    "out": "mahogany_tree",
+    "why": "Swietenia's colour, durability and workability made it the cabinet and furniture timber of 18th-century Europe and North America, and overharvesting eventually put all three species under CITES.",
+    "src": "https://en.wikipedia.org/wiki/Mahogany",
+    "verified": true
+  },
+  {
+    "in": [
+      "walnut",
+      "tree"
+    ],
+    "out": "walnut_tree",
+    "why": "Juglans nigra is grown for both nuts and lumber — the USDA valued standing US walnut timber at $530 billion in 2017 — and its hulls are ground for abrasive cleansers.",
+    "src": "https://en.wikipedia.org/wiki/Juglans_nigra",
+    "verified": true
+  },
+  {
+    "in": [
+      "cherry",
+      "tree"
+    ],
+    "out": "cherry_wood_tree",
+    "why": "Prunus serotina, the black cherry, is grown far more for timber than fruit: traded simply as 'cherry', around 560 kg/m³ dried, prized for tight grain and strong orange hues.",
+    "src": "https://en.wikipedia.org/wiki/Prunus_serotina",
+    "verified": true
+  },
+  {
+    "in": [
+      "samara",
+      "tree"
+    ],
+    "out": "ash_tree",
+    "why": "Ash seeds are samaras, known as keys; the genus Fraxinus sits in the olive family and has nothing to do with the ash left behind by fire.",
+    "src": "https://en.wikipedia.org/wiki/Fraxinus",
+    "verified": true
+  },
+  {
+    "in": [
+      "heartwood",
+      "tree"
+    ],
+    "out": "ebony_tree",
+    "why": "Ceylon ebony is felled for its black heartwood alone — up to 1,200 kg/m³, twice the hardness of oak, water- and termite-resistant, and illegal to harvest in Sri Lanka.",
+    "src": "https://en.wikipedia.org/wiki/Diospyros_ebenum",
+    "verified": true
+  },
+  {
+    "in": [
+      "incense",
+      "tree"
+    ],
+    "out": "sandalwood_tree",
+    "why": "Santalum album is the traditional source of sandalwood oil and paste, burned as incense and held sacred in Hinduism — over-exploited for it to the point that the wild population is vulnerable to extinction.",
+    "src": "https://en.wikipedia.org/wiki/Santalum_album",
+    "verified": true
+  },
+  {
+    "in": [
+      "sap",
+      "tree"
+    ],
+    "out": "frankincense_tree",
+    "why": "Frankincense is the tree's own sap: a shallow incision in the trunk or branches of Boswellia sacra drains a milky substance that coagulates on contact with air.",
+    "src": "https://en.wikipedia.org/wiki/Boswellia_sacra",
+    "verified": true
+  },
+  {
+    "in": [
+      "arid_climate",
+      "tree"
+    ],
+    "out": "myrrh_tree",
+    "why": "Commiphora myrrha thrives in the arid and semi-arid country of Somalia, Ethiopia and the southern Arabian Peninsula, and Somalia is the largest producer of both myrrh and frankincense.",
+    "src": "https://en.wikipedia.org/wiki/Commiphora_myrrha",
+    "verified": true
+  },
+  {
+    "in": [
+      "cork",
+      "oak"
+    ],
+    "out": "cork_oak_tree",
+    "why": "Quercus suber is the evergreen oak cork actually comes from: past 25 years old its thick bark can be harvested every 9 to 12 years without harming a tree that may live two centuries.",
+    "src": "https://en.wikipedia.org/wiki/Quercus_suber",
+    "verified": true
+  },
+  {
+    "in": [
+      "fever",
+      "tree"
+    ],
+    "out": "cinchona_tree",
+    "why": "Cinchona species are known as fever trees for their antimalarial bark — the only effective treatment against malaria through the height of European colonialism.",
+    "src": "https://en.wikipedia.org/wiki/Cinchona",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "malaria"
+    ],
+    "out": "cinchona_tree",
+    "why": "Powdered cinchona bark entered the London Pharmacopoeia in 1677 as Cortex Peruanus, and British and Dutch plantations later mass-produced quinine from it in India and Java.",
+    "src": "https://en.wikipedia.org/wiki/Cinchona",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "india"
+    ],
+    "out": "neem_tree",
+    "why": "Azadirachta indica is native to the Indian subcontinent, where its leaves and twigs have been used against insect pests for more than 2,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Azadirachta_indica",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "seed"
+    ],
+    "out": "neem_tree",
+    "why": "Neem seeds hold the highest concentration of azadirachtin in the tree, 0.2 to 0.8 percent by weight, an antifeedant and growth disruptor active against over 600 insect species.",
+    "src": "https://en.wikipedia.org/wiki/Azadirachtin",
+    "verified": true
+  },
+  {
+    "in": [
+      "camphor",
+      "tree"
+    ],
+    "out": "camphor_tree",
+    "why": "Natural camphor is condensed from the vapour of roasted chips, or from steam passed through the pulverised wood, of this evergreen laurel.",
+    "src": "https://en.wikipedia.org/wiki/Camphor",
+    "verified": true
+  },
+  {
+    "in": [
+      "olive",
+      "wood"
+    ],
+    "out": "olive_wood_tree",
+    "why": "The olive tree's gnarled, twisted trunk yields a hard, dense, attractively figured timber that is worked for decorative objects alongside the fruit crop.",
+    "src": "https://en.wikipedia.org/wiki/Olive",
+    "verified": true
+  },
+  {
+    "in": [
+      "tree",
+      "mould"
+    ],
+    "out": "agarwood_tree",
+    "why": "Agarwood forms only after Aquilaria trees are infected by the mould Phaeoacremonium parasitica and flood the heartwood with defensive resin.",
+    "src": "https://en.wikipedia.org/wiki/Agarwood",
+    "verified": true
+  },
+  {
+    "in": [
+      "heartwood",
+      "mould"
+    ],
+    "out": "agarwood_tree",
+    "why": "Aquilaria heartwood is pale and scentless until a Phaeoacremonium mould infects it; the tree floods the wound with a dark defensive resin, and that resin-soaked heartwood is agarwood.",
+    "src": "https://en.wikipedia.org/wiki/Agarwood",
+    "verified": true
+  },
+  {
+    "in": [
+      "goat",
+      "tree"
+    ],
+    "out": "argan_tree",
+    "why": "Goats climb into argan branches to browse the fruit, and the nuts are collected after the ruminating animals spit them out, one route of the tree's seed dispersal.",
+    "src": "https://en.wikipedia.org/wiki/Argania",
+    "verified": true
+  },
+  {
+    "in": [
+      "morocco",
+      "tree"
+    ],
+    "out": "argan_tree",
+    "why": "The arganeraie forests of southwestern Morocco, a UNESCO biosphere reserve of about 8,280 square kilometres, are the tree's main native range.",
+    "src": "https://en.wikipedia.org/wiki/Argania",
+    "verified": true
+  },
+  {
+    "in": [
+      "savanna",
+      "seed"
+    ],
+    "out": "shea_tree",
+    "why": "Vitellaria paradoxa grows wild across the dry savannah belt from Senegal to the Ethiopian foothills, and it is the oil-rich seed inside the tart fruit pulp that is harvested.",
+    "src": "https://en.wikipedia.org/wiki/Vitellaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "butter",
+      "tree"
+    ],
+    "out": "shea_tree",
+    "why": "Fat roasted and pressed from its kernels is shea butter; the tree's former genus name Butyrospermum literally means 'butter seed'.",
+    "src": "https://en.wikipedia.org/wiki/Vitellaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer",
+      "violin"
+    ],
+    "out": "spruce_tree",
+    "why": "Spruce is the standard tonewood for the soundboards of violins and guitars, long cut from stands such as the Paneveggio 'Violin Forest' in the Dolomites.",
+    "src": "https://en.wikipedia.org/wiki/Spruce",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer",
+      "pulp"
+    ],
+    "out": "spruce_tree",
+    "why": "Spruce makes good pulpwood because its long fibres bind into strong paper, especially from trees over 60 years old.",
+    "src": "https://en.wikipedia.org/wiki/Spruce",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer",
+      "needle"
+    ],
+    "out": "fir_tree",
+    "why": "Firs are distinguished within the pine family by needle-like leaves attached singly on a circular base, and by upright cones that disintegrate at maturity.",
+    "src": "https://en.wikipedia.org/wiki/Fir",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer",
+      "water"
+    ],
+    "out": "cypress_tree",
+    "why": "Bald cypress grows in standing swamp water, throwing up knees around its trunk, and its mature heartwood is valued for resisting rot.",
+    "src": "https://en.wikipedia.org/wiki/Taxodium_distichum",
+    "verified": true
+  },
+  {
+    "in": [
+      "hardwood",
+      "guitar"
+    ],
+    "out": "rosewood_tree",
+    "why": "Dense, sweet-smelling Dalbergia timber is the traditional wood for guitar fretboards, marimba bars and luxury furniture.",
+    "src": "https://en.wikipedia.org/wiki/Rosewood",
+    "verified": true
+  },
+  {
+    "in": [
+      "silkworm",
+      "tree"
+    ],
+    "out": "mulberry_tree",
+    "why": "White mulberry leaves are the preferred feed of the silkworm Bombyx mori, and cultivating the tree for them began in China more than 4,700 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Morus_alba",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "paper"
+    ],
+    "out": "mulberry_tree",
+    "why": "Its fibre-rich inner bark makes mulberry paper, strong and durable enough to be the preferred support for traditional Chinese painting.",
+    "src": "https://en.wikipedia.org/wiki/Morus_alba",
+    "verified": true
+  },
+  {
+    "in": [
+      "almond",
+      "tree"
+    ],
+    "out": "almond_tree",
+    "why": "Prunus dulcis bears the almond as a drupe of hull, hard shell and seed, and domestication began by selecting sweet-kernelled trees out of bitter wild stands.",
+    "src": "https://en.wikipedia.org/wiki/Almond",
+    "verified": true
+  },
+  {
+    "in": [
+      "cyanide",
+      "tree"
+    ],
+    "out": "almond_tree",
+    "why": "Bitter almonds hydrolyse amygdalin into benzaldehyde and 4 to 9 mg of hydrogen cyanide per nut; the sweet cultivar is a mutant that cannot make it.",
+    "src": "https://en.wikipedia.org/wiki/Almond",
+    "verified": true
+  },
+  {
+    "in": [
+      "pecan",
+      "tree"
+    ],
+    "out": "pecan_tree",
+    "why": "Carya illinoinensis is a hickory whose fruit is not a true nut but a drupe, a single stone released when the four-part husk splits.",
+    "src": "https://en.wikipedia.org/wiki/Pecan",
+    "verified": true
+  },
+  {
+    "in": [
+      "cashew",
+      "tree"
+    ],
+    "out": "cashew_tree",
+    "why": "The cashew's true fruit is a kidney-shaped drupe hanging below the swollen cashew apple, which is the expanded flower stalk rather than the fruit.",
+    "src": "https://en.wikipedia.org/wiki/Cashew",
+    "verified": true
+  },
+  {
+    "in": [
+      "urushiol",
+      "tree"
+    ],
+    "out": "cashew_tree",
+    "why": "Cashew nutshell liquid carries anacardic acid and cardol, phenolic irritants related to poison ivy's urushiol, which is why cashews are never sold in the shell.",
+    "src": "https://en.wikipedia.org/wiki/Cashew",
+    "verified": true
+  },
+  {
+    "in": [
+      "chestnut",
+      "tree"
+    ],
+    "out": "chestnut_tree",
+    "why": "Castanea sativa, native to southern Europe and Anatolia, ripens starchy nuts inside a spiny bur that splits open on the tree.",
+    "src": "https://en.wikipedia.org/wiki/Sweet_chestnut",
+    "verified": true
+  },
+  {
+    "in": [
+      "tannin",
+      "fence"
+    ],
+    "out": "chestnut_tree",
+    "why": "Chestnut wood is about 13.4 percent tannin, which is what makes untreated coppiced poles durable enough for stakes and fencing in ground contact.",
+    "src": "https://en.wikipedia.org/wiki/Sweet_chestnut",
+    "verified": true
+  },
+  {
+    "in": [
+      "hazelnut",
+      "tree"
+    ],
+    "out": "hazelnut_tree",
+    "why": "Corylus avellana, in the birch family, bears hazelnuts in clusters of one to five, each held in a short leafy husk it drops free of when ripe.",
+    "src": "https://en.wikipedia.org/wiki/Corylus_avellana",
+    "verified": true
+  },
+  {
+    "in": [
+      "wattle",
+      "wood"
+    ],
+    "out": "hazelnut_tree",
+    "why": "Hazel was traditionally grown as coppice, its poles cut for wattle-and-daub building and agricultural fencing across lowland England.",
+    "src": "https://en.wikipedia.org/wiki/Corylus_avellana",
+    "verified": true
+  },
+  {
+    "in": [
+      "root_nodule",
+      "tree"
+    ],
+    "out": "alder_tree",
+    "why": "Alder roots host the nitrogen-fixing actinobacterium Frankia alni in nodules that may be as large as a fist, enriching the soil for the species that follow.",
+    "src": "https://en.wikipedia.org/wiki/Alder",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_guitar",
+      "wood"
+    ],
+    "out": "alder_tree",
+    "why": "Fender has built electric guitar bodies from alder since the 1950s, valued for an evenly balanced tone and a plain grain that takes opaque lacquer.",
+    "src": "https://en.wikipedia.org/wiki/Alder",
+    "verified": true
+  },
+  {
+    "in": [
+      "nectar",
+      "tree"
+    ],
+    "out": "lime_tree",
+    "why": "Linden's fragrant flowers are a major nectar source for beekeepers, giving a pale, richly flavoured monofloral honey.",
+    "src": "https://en.wikipedia.org/wiki/Tilia",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "fibre"
+    ],
+    "out": "lime_tree",
+    "why": "The soft inner bark of Tilia, called bast, is fibrous with high tensile strength, and gives the North American name basswood.",
+    "src": "https://en.wikipedia.org/wiki/Tilia",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "peat"
+    ],
+    "out": "peat_moss",
+    "why": "Sphagnum is the moss whose slow decay, protected by phenolic compounds in its cell walls and by anaerobic bog water, forms peat itself.",
+    "src": "https://en.wikipedia.org/wiki/Sphagnum",
+    "verified": true
+  },
+  {
+    "in": [
+      "moss",
+      "antiseptic"
+    ],
+    "out": "peat_moss",
+    "why": "Sphagnum was used as a surgical wound dressing for centuries and through the First World War, after Hotson's 1918 paper in Science argued it beat cotton.",
+    "src": "https://en.wikipedia.org/wiki/Sphagnum",
+    "verified": true
+  },
+  {
+    "in": [
+      "epiphyte",
+      "pineapple"
+    ],
+    "out": "spanish_moss",
+    "why": "Tillandsia usneoides is a bromeliad, in the pineapple family, growing as an epiphyte that absorbs water and nutrients through its own leaves rather than roots.",
+    "src": "https://en.wikipedia.org/wiki/Spanish_moss",
+    "verified": true
+  },
+  {
+    "in": [
+      "cypress_tree",
+      "epiphyte"
+    ],
+    "out": "spanish_moss",
+    "why": "It hangs chiefly from southern live oak and bald cypress, whose high rates of foliar mineral leaching supply it with calcium, magnesium, potassium and phosphorus.",
+    "src": "https://en.wikipedia.org/wiki/Spanish_moss",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "nile"
+    ],
+    "out": "papyrus_reed",
+    "why": "Papyrus sheets were made from the pith of Cyperus papyrus, a sedge of the Nile shallows, cut into strips and laid crosswise in two layers.",
+    "src": "https://en.wikipedia.org/wiki/Papyrus",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "boat"
+    ],
+    "out": "papyrus_reed",
+    "why": "The plant's highly buoyant stems were bundled into boats in ancient Egypt, which also used it for baskets, sandals, incense and fuel.",
+    "src": "https://en.wikipedia.org/wiki/Cyperus_papyrus",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizome",
+      "starch"
+    ],
+    "out": "cattail_reed",
+    "why": "Typha rhizomes are a starch store with protein comparable to maize or rice; starch grains on European grinding stones show they were eaten 30,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Typha",
+    "verified": true
+  },
+  {
+    "in": [
+      "pollen",
+      "flour"
+    ],
+    "out": "cattail_reed",
+    "why": "In midsummer the mature male spikes shed pollen collected as a flour supplement, which the Maori bake into a bread called pungapunga.",
+    "src": "https://en.wikipedia.org/wiki/Typha",
+    "verified": true
+  },
+  {
+    "in": [
+      "chair",
+      "stem"
+    ],
+    "out": "rattan_palm",
+    "why": "Rattan canes are the stems of climbing Calamoideae palms, bent and woven into wickerwork furniture; almost all of it is still cut from wild plants.",
+    "src": "https://en.wikipedia.org/wiki/Rattan",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "fibre"
+    ],
+    "out": "raffia_palm",
+    "why": "Raffia fibre is stripped from the epidermal membrane on the underside of the leaf frond, then rolled together and dried into twine.",
+    "src": "https://en.wikipedia.org/wiki/Raffia_palm",
+    "verified": true
+  },
+  {
+    "in": [
+      "coconut",
+      "fibre"
+    ],
+    "out": "coir",
+    "why": "Coir is the fibre lying between the coconut's outer coat and its hard inner shell, freed by driving the fruit down onto a spike to dehusk it.",
+    "src": "https://en.wikipedia.org/wiki/Coir",
+    "verified": true
+  },
+  {
+    "in": [
+      "coconut",
+      "rope"
+    ],
+    "out": "coir",
+    "why": "Austronesian voyagers lashed plank boats with coir cordage, and 11th-century Arab writers describe coir ropes and rigging on ships.",
+    "src": "https://en.wikipedia.org/wiki/Coir",
+    "verified": true
+  },
+  {
+    "in": [
+      "sorghum",
+      "broom"
+    ],
+    "out": "sorghum_broomcorn",
+    "why": "Levi Dickenson bound a broom from the tassels of the sorghum he grew for grain in 1797, and the panicle branches of this variety became the standard broom bristle.",
+    "src": "https://en.wikipedia.org/wiki/Broom",
+    "verified": true
+  },
+  {
+    "in": [
+      "acacia",
+      "bark"
+    ],
+    "out": "gum_arabic_tree",
+    "why": "Gum arabic is the dried exudate that runs from bark stripped off Senegalia senegal and Vachellia seyal, tapped by Sahelian pastoralists.",
+    "src": "https://en.wikipedia.org/wiki/Gum_arabic",
+    "verified": true
+  },
+  {
+    "in": [
+      "gum_arabic",
+      "tree"
+    ],
+    "out": "gum_arabic_tree",
+    "why": "E414, the stabiliser in soft drinks and the binder in watercolour paint and lithography, is harvested from wild acacia trees across the Sahel.",
+    "src": "https://en.wikipedia.org/wiki/Gum_arabic",
+    "verified": true
+  },
+  {
+    "in": [
+      "latex",
+      "desert"
+    ],
+    "out": "guayule_shrub",
+    "why": "Parthenium argentatum stores rubber in the stem tissue of a Chihuahuan Desert shrub, and the US turned to it for rubber when Japan cut off Malayan latex in the Second World War.",
+    "src": "https://en.wikipedia.org/wiki/Parthenium_argentatum",
+    "verified": true
+  },
+  {
+    "in": [
+      "latex",
+      "glove"
+    ],
+    "out": "guayule_shrub",
+    "why": "Guayule latex performs like Hevea but has none of the proteins that cause Type 1 latex allergy, the reaction that surged with glove demand in the 1980s.",
+    "src": "https://en.wikipedia.org/wiki/Parthenium_argentatum",
+    "verified": true
+  },
+  {
+    "in": [
+      "tannin",
+      "root"
+    ],
+    "out": "canaigre_dock",
+    "why": "Rumex hymenosepalus was cultivated in the southwestern United States for its roots, a good source of tannin for leather tanning.",
+    "src": "https://en.wikipedia.org/wiki/Rumex_hymenosepalus",
+    "verified": true
+  },
+  {
+    "in": [
+      "beer",
+      "leaf"
+    ],
+    "out": "sweet_gale",
+    "why": "Sweet gale was a main ingredient of gruit, the herb mixture used to bitter and flavour beer in the Low Countries before hops displaced it.",
+    "src": "https://en.wikipedia.org/wiki/Gruit",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "leaf"
+    ],
+    "out": "sweet_gale",
+    "why": "Its sweet resinous foliage is a traditional insect repellent, used by campers and marketed in Scotland against the Highland midge.",
+    "src": "https://en.wikipedia.org/wiki/Myrica_gale",
     "verified": true
   }
 ]
