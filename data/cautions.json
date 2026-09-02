@@ -2066,6 +2066,480 @@
       ],
       "severity": "conditional",
       "biohazard": true
+    },
+    "abscess_severity_by_site": {
+      "label": "Where an abscess forms decides how dangerous it is",
+      "note": "Over 90% of documented and cultured skin abscesses grow Staphylococcus aureus, and a skin abscess rarely results in death because it eventually breaks through the skin on its own — which is why drainage, not antibiotics, is the standard treatment for an uncomplicated one. The same walled-off pocket of infection inside the skull is a different illness: brain abscess still ends in death in about 10% of cases even with treatment, with roughly 70% of people recovering well.",
+      "ids": [
+        "abscess"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "actinomycosis_invasion": {
+      "label": "Ordinary mouth bacteria in the wrong tissue plane",
+      "note": "Actinomyces species live harmlessly in the mouth and gut until dental work, periodontal disease, a broken jaw or surgery lets them into oxygen-free tissue, where they form slowly spreading abscesses that drain the yellow clumps called sulfur granules. Cervicofacial, thoracic and abdominal forms all occur. It is still called the great masquerader because the mass it makes can be mistaken for a tumour, and response to penicillin is slow enough to take months.",
+      "ids": [
+        "actinomyces_israelii",
+        "actinomycosis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "adenovirus_infection": {
+      "label": "Adenovirus survives on surfaces that would kill most viruses",
+      "note": "Adenoviruses cause about 10% of respiratory infections in children and spread by respiratory droplets, aerosols and the faecal route, with onset two to fourteen days after exposure. They are unusually stable against disinfectants, adverse pH and drying, which is why outbreaks move through hospitals, nurseries, barracks, boarding schools and swimming pools. Most infections resolve on their own and treatment is supportive, but in people with weakened immune systems adenovirus can become life-threatening multi-organ disease.",
+      "ids": [
+        "adenovirus"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "anthrax_spore_persistence": {
+      "label": "Anthrax spores wait decades in the ground, and the inhaled form kills about half",
+      "note": "Bacillus anthracis survives as a spore that has caused infection after 70 years in soil, and an inhaled lethal dose is on the order of 10,000 to 20,000 spores. Untreated cutaneous anthrax kills roughly a quarter of cases; inhalation anthrax kills 50 to 80% untreated and still around 45% with modern treatment, rising to 97% once the fulminant phase begins. At least 2,000 cases a year are reported worldwide, most from contact with infected livestock, hides or wool.",
+      "ids": [
+        "bacillus_anthracis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "arboviral_disease_burden": {
+      "label": "Viruses that arrive by bite, and mostly have no drug against them",
+      "note": "Arboviruses cycle between biting arthropods and vertebrate hosts, and the group includes dengue, yellow fever, Zika, chikungunya, West Nile and tick-borne encephalitis. Dengue alone causes at least 50 million infections a year and is the most clinically important of them. No effective antiviral drugs exist for this group and antibiotics do nothing; treatment is supportive, aimed at complications such as brain swelling.",
+      "ids": [
+        "arbovirus"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "bacterial_vaginosis_risks": {
+      "label": "Common, often symptomless, and it raises the risk of other infections",
+      "note": "Bacterial vaginosis affects an estimated 23 to 29% of reproductive-age women worldwide, and about half have no symptoms at all. It roughly doubles the risk of acquiring several sexually transmitted infections including HIV, is associated with up to a six-fold increase in HIV shedding, and in pregnancy is linked to premature rupture of membranes and preterm birth. Recurrence after antibiotic treatment runs as high as 80%.",
+      "ids": [
+        "bacterial_vaginosis",
+        "gardnerella_vaginalis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "brucellosis_exposure": {
+      "label": "Raw milk and a slaughterhouse cut are the usual routes in",
+      "note": "Brucella is contracted mainly by drinking unpasteurized milk from infected animals, by handling infected animals directly, or by breathing aerosolized bacteria. The organisms survive well in aerosols and resist drying, which makes brucellosis one of the classic laboratory-acquired infections from handling a culture plate. Even with optimal antibiotic therapy, 5 to 15% of patients relapse.",
+      "ids": [
+        "brucella",
+        "brucellosis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "clostridium_toxins": {
+      "label": "One genus, and some of the most potent toxins in biology",
+      "note": "Clostridium species are obligate anaerobes that ride out oxygen as endospores and make toxin once they reach sealed tissue or sealed food: C. tetani causes tetanus, C. perfringens and C. septicum gas gangrene, C. botulinum botulism. Botulinum toxin's estimated human median lethal dose is 1.3 to 2.1 nanograms per kilogram injected, the deadliest natural substance recorded in the chemical literature. Their close relative Clostridioides difficile, which fills the gut space antibiotics empty, caused about 453,000 US cases and 29,000 deaths in 2011, and its spores are untouched by alcohol hand rub.",
+      "ids": [
+        "clostridium"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "coccidiosis_human_species": {
+      "label": "Most coccidia stay inside one host species; a few of them reach people",
+      "note": "Coccidiosis is largely an animal disease — Eimeria species are locked to poultry, cattle and rabbits and are not contagious to humans. The coccidians that do infect people, chiefly Cryptosporidium, Cyclospora and Cystoisospora belli, spread by the same fecal-oral route and develop inside the epithelial cells lining the small intestine. In healthy adults that usually means about a week of diarrhea; in AIDS patients it can run for weeks or months with weight loss, and recurs after treatment.",
+      "ids": [
+        "coccidiosis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "cyanotoxin_bloom": {
+      "label": "Blue-green blooms make liver and nerve toxins that boiling does not remove",
+      "note": "Cyanobacteria produce microcystins, which bond covalently to the protein phosphatases PP1 and PP2A in liver cells, alongside neurotoxins such as anatoxin-a and saxitoxin. The cyclic structure makes them stable across a wide range of temperature and pH, so boiling water does not clear them. At a dialysis clinic in Caruaru, Brazil in 1996, microcystin-contaminated supply water left 116 of 131 patients ill, 100 of them in acute liver failure, and at least 52 dead.",
+      "ids": [
+        "cyanobacteria"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "dermatophyte_transmission": {
+      "label": "Ringworm passes between people, animals and shared surfaces",
+      "note": "Dermatophytes may infect up to 20% of the world's population at any given time. They spread by direct contact with an infected person or animal and by contaminated objects — shared towels, clothing, footwear, hairbrushes, locker-room and pool floors, gym equipment left undisinfected. Topical antifungals usually clear an infection in one to two weeks, with treatment continued about a week past the last visible sign because the fungus outlasts the rash.",
+      "ids": [
+        "dermatophyte",
+        "ringworm"
+      ],
+      "severity": "contact",
+      "biohazard": true
+    },
+    "diphtheria_toxin_lethality": {
+      "label": "The membrane in the throat is not what kills",
+      "note": "Corynebacterium diphtheriae spreads through the air from coughs and sneezes, and symptoms appear two to five days later. Its toxin travels in the blood to the heart and nerves, causing myocarditis and paralysis: about 5 to 10% of diagnosed cases die even with treatment, and 40 to 50% of untreated ones. In 2015 there were 4,500 reported cases and 2,100 deaths worldwide, in a disease the toxoid vaccine had largely removed from vaccinated populations.",
+      "ids": [
+        "diphtheria",
+        "corynebacterium_diphtheriae"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "ebv_lifelong_infection": {
+      "label": "Almost everyone carries it, and it never entirely leaves",
+      "note": "About 95% of people have been infected with Epstein-Barr virus by age 40, usually via saliva, with symptoms appearing roughly 33 to 49 days later. Most recover from mononucleosis in two to four weeks, though fatigue lasts more than a month in an estimated 28% of cases and splenic rupture occurs in under 1%. The virus persists in B cells for life and is linked to Burkitt and Hodgkin lymphoma, nasopharyngeal and gastric carcinoma, and to multiple sclerosis.",
+      "ids": [
+        "epstein_barr_virus",
+        "infectious_mononucleosis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "endocarditis_mortality": {
+      "label": "An infection on a heart valve kills about one in four",
+      "note": "Infective endocarditis occurs in roughly 3 to 9 people per 100,000 a year in developed countries; in-hospital mortality is about 18% and overall risk of death about 25%. Staphylococcus aureus causes around 31% of cases. As many as half of patients throw septic emboli, which is how a valve infection becomes a stroke, a kidney infarct or a mycotic aneurysm. Injection drug use, prosthetic valves and previously damaged valves are the main predisposing factors.",
+      "ids": [
+        "infective_endocarditis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "endotoxin_shock": {
+      "label": "Killing the bacterium does not remove the endotoxin",
+      "note": "Lipopolysaccharide binds the CD14/TLR4/MD2 receptor complex on monocytes and macrophages, which pour out inflammatory cytokines; a dose of 1 microgram per kilogram induces shock in a human, while a mouse tolerates a thousand times more. It is shed continuously in outer membrane vesicles as well as when cells lyse, and it is not destroyed by ordinary sterilization — full breakdown takes temperatures above 300°C, which is why pharmaceutical water is tested for it separately.",
+      "ids": [
+        "endotoxin",
+        "lipopolysaccharide"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "epidemic_typhus_lice": {
+      "label": "Rickettsia arrives on ticks, mites, fleas and lice, and typhus still follows war and famine",
+      "note": "Rickettsia are obligate intracellular bacteria that cannot live outside a host cell, delivered by arthropods — ticks and mites for the spotted fever group, lice and fleas for the typhus group. Epidemic typhus, caused by R. prowazekii, is transmitted when louse faeces are scratched into the bite wound; untreated it kills about 40% of those infected, and close to none when antibiotics start within eight days. The louse-borne epidemic in Russia between 1918 and 1922 caused 2 to 3 million deaths among 20 to 30 million cases.",
+      "ids": [
+        "rickettsia"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "exotoxin_potency": {
+      "label": "Proteins potent enough that the disease is the toxin",
+      "note": "Exotoxins are secreted bacterial proteins, and the illness they cause is often entirely their doing: Clostridium botulinum, Clostridium tetani and Corynebacterium diphtheriae all work this way. AB toxins — cholera, pertussis, Shiga — use one subunit to bind the cell and another to act enzymatically inside it. Superantigens from Staphylococcus aureus and Streptococcus pyogenes bridge MHC class II to the T-cell receptor and can activate up to 50% of a person's T cells at once, which is what toxic shock syndrome is. Heat or chemical treatment inactivates most of them into toxoids, the basis of the DPT vaccine.",
+      "ids": [
+        "exotoxin"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "group_a_strep_sequelae": {
+      "label": "Strep throat is minor; what group A strep does afterwards is not",
+      "note": "Streptococcus pyogenes causes an estimated 700 million infections a year, and though overall mortality is under 0.1%, the 650,000-odd invasive cases — necrotizing fasciitis, streptococcal toxic shock — kill about a quarter of the people they strike. Untreated throat infection carries a roughly 3% risk of acute rheumatic fever, which is why 33.4 million people now live with rheumatic heart disease. Antibiotics shorten the sore throat by only about 16 hours; what they change is the rheumatic fever risk.",
+      "ids": [
+        "streptococcus_pyogenes",
+        "strep_throat"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "healthcare_associated_infection": {
+      "label": "Care itself carries an infection rate",
+      "note": "WHO reports that out of every 100 patients in acute-care hospitals, seven in high-income countries and 15 in low- and middle-income countries acquire at least one health care-associated infection, and about one in ten of those patients dies of it. In the United States an estimated 687,000 such infections in 2015 contributed to 72,000 deaths. Catheter-associated urinary tract infection is the most common type at 32%, followed by surgical site infection at 22% and ventilator-associated pneumonia at 15%.",
+      "ids": [
+        "nosocomial_infection"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "helicobacter_gastric_cancer": {
+      "label": "Most peptic ulcers are an infection, and a fraction of them end as cancer",
+      "note": "Helicobacter pylori uses urease to split urea into ammonia and bicarbonate, neutralising the acid immediately around it, which lets it live in the stomach lining for decades and pass between people by saliva or the faecal-oral route. About two-thirds of the world's population carried it as of 2023; 10 to 20% of those infected develop peptic ulcers, and 1 to 3% develop gastric cancer over a lifetime against 0.13% in the never-infected. It is classed as a group 1 carcinogen and is behind roughly 89% of all gastric cancers.",
+      "ids": [
+        "helicobacter_pylori"
+      ],
+      "severity": "cumulative",
+      "biohazard": true
+    },
+    "herpes_simplex_persistence": {
+      "label": "Herpes simplex is lifelong, and it transmits with nothing visible to see",
+      "note": "HSV settles into sensory nerve cells and reactivates for the rest of a person's life; WHO estimates 3.8 billion people under 50 carry HSV-1 and 520 million aged 15 to 49 carry HSV-2. It passes through oral, genital and skin contact, including when no sore is present. Most infections stay mild, but neonatal herpes occurs in about 10 of every 100,000 births and can cause neurological disability or death, and HSV-2 infection raises the risk of acquiring HIV roughly threefold.",
+      "ids": [
+        "herpes_simplex_virus"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "hpv_cervical_cancer": {
+      "label": "Nearly every cervical cancer begins as an HPV infection",
+      "note": "HPV is a sexually transmitted infection that almost everyone sexually active acquires at some point, usually without symptoms, and about 90% of infections clear within two years. The minority that persist can progress to cancer over a decade or more: nearly all cervical cancer is HPV-associated, and types 16 and 18 alone account for 70% of it. WHO counted roughly 660,000 new cervical cancer cases and 350,000 deaths worldwide in 2022.",
+      "ids": [
+        "human_papillomavirus"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "impetigo_contagion": {
+      "label": "A skin infection that moves between children on contact",
+      "note": "Impetigo affected about 140 million people in 2010, most of them children aged two to five, and it spreads by direct contact with the lesions or with a nasal carrier of Staphylococcus aureus or Streptococcus pyogenes. Untreated cases usually clear in about three weeks, but cellulitis and post-streptococcal glomerulonephritis, a kidney complication, can follow. Folliculitis and the boils that grow out of it trace to the same staphylococcus.",
+      "ids": [
+        "impetigo",
+        "folliculitis"
+      ],
+      "severity": "contact",
+      "biohazard": true
+    },
+    "influenza_severity": {
+      "label": "Seasonal flu kills hundreds of thousands of people every year",
+      "note": "Influenza spreads in respiratory droplets and aerosols from breathing, talking, coughing and sneezing, with symptoms appearing one to four days after exposure. WHO puts the seasonal toll at around a billion infections a year, 3 to 5 million severe cases, and 290,000 to 650,000 deaths. Adults over 65 and infants under one carry most of that risk, and 30 to 40% of those hospitalised with influenza go on to develop pneumonia.",
+      "ids": [
+        "influenza_virus"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "legionnaires_outbreak": {
+      "label": "Legionella arrives in aerosolized water, never from another person",
+      "note": "Legionella lives inside amoebae in warm plumbing, cooling towers and spa pools, and infects people who inhale contaminated mist two to ten days before symptoms start; it does not spread person to person. Legionnaires' disease kills around 10% of previously healthy people infected in the community and up to 25% of those with underlying conditions, with hospital-acquired cases near 28%. The 1976 Philadelphia convention outbreak that named it produced 182 reported cases and 29 deaths.",
+      "ids": [
+        "legionella"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "leishmaniasis_burden": {
+      "label": "Untreated visceral leishmaniasis is fatal in more than 95% of cases",
+      "note": "Leishmania parasites are transmitted by the bite of infected female phlebotomine sandflies. The visceral form runs to 50,000 to 90,000 new cases a year worldwide and kills over 95% of those left untreated; the cutaneous form, at 600,000 to 1 million new cases a year, leaves ulcers and permanent scarring instead. WHO describes the disease as tracking malnutrition, displacement and poor housing rather than geography alone.",
+      "ids": [
+        "leishmania"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "leprosy_nerve_damage": {
+      "label": "Leprosy is curable, but the nerve damage it does before treatment is permanent",
+      "note": "Mycobacterium leprae passes only through prolonged close contact with an untreated case, in droplets from the nose and mouth; around 95% of people exposed never develop the disease, and the average incubation is about five years, occasionally as long as twenty. WHO recorded 182,815 new cases in 2023, of which 9,729 already had grade-2 visible disability by the time they were found. Multidrug therapy, supplied free by WHO, cures the infection in six months for paucibacillary and twelve for multibacillary disease, but loss of sensation and paralysis already caused do not reverse.",
+      "ids": [
+        "leprosy"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "measles_severity": {
+      "label": "Measles killed an estimated 95,000 people in 2024, mostly children under five",
+      "note": "One case can generate up to 18 secondary infections, and nine in ten non-immune people sharing a home with a case catch it. About 6% develop pneumonia; blindness, severe diarrhoea and brain inflammation also follow. Around 2 in 10,000 measles cases later develop subacute sclerosing panencephalitis, a degenerative brain disease that appears on average ten years after the infection and is essentially always fatal.",
+      "ids": [
+        "measles",
+        "measles_virus"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "mould_spore_exposure": {
+      "label": "Mould spores are harmless to most lungs and dangerous to a few",
+      "note": "People inhale thousands of Aspergillus spores a day with no effect, because a working immune system clears them. Where it cannot — transplant recipients, people on steroids or other immunosuppressants — the same spores cause invasive aspergillosis, which affects around 300,000 people worldwide and carries 20% mortality at six months. Damp buildings also carry an allergic burden: as many as 21% of asthma cases have been attributed to mould exposure.",
+      "ids": [
+        "mould"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "mrsa_resistance": {
+      "label": "MRSA is ordinary staph that the beta-lactam antibiotics no longer touch",
+      "note": "The mecA gene gives Staphylococcus aureus an altered penicillin-binding protein, PBP2a, that keeps cross-linking the cell wall while methicillin and its relatives sit bound to everything else. The US CDC estimates about 80,461 invasive MRSA infections and 11,285 deaths a year, and MRSA bloodstream infection carries close to twice the odds of death of the drug-susceptible form. It moves by skin contact, shared equipment and unwashed hands, and roughly 2% of people carry it in the nose without symptoms.",
+      "ids": [
+        "mrsa"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "mucormycosis_risk": {
+      "label": "Bread mould, and in the wrong patient an infection that kills about half",
+      "note": "The Mucorales — Rhizopus and Mucor, the moulds on spoiled bread and fruit — are inhaled harmlessly by almost everyone, but invade tissue and blood vessels in people with poorly controlled diabetes, particularly diabetic ketoacidosis, and in transplant recipients and those on long-term corticosteroids. Mucormycosis is fatal in about half of sinus cases, around two-thirds when it reaches the lungs, and nearly all disseminated cases. India confirmed over 40,845 cases and 3,129 deaths by 28 June 2021, 85.5% of them following SARS-CoV-2 infection.",
+      "ids": [
+        "zygomycete"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "mumps_complications": {
+      "label": "The swollen glands pass; some of the complications do not",
+      "note": "Mumps virus is shed in saliva from about a week before symptoms to eight days after, and incubates 16 to 18 days on average. Orchitis occurs in 10 to 40% of pubertal and post-pubertal males who catch it, aseptic meningitis in 5 to 10% of cases, and hearing loss in about 4% — permanent in roughly 1 infection in 20,000. The overall case-fatality rate is 1.6 to 3.8 per 10,000.",
+      "ids": [
+        "mumps",
+        "mumps_virus"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "mycoplasma_pneumonia_illness": {
+      "label": "No cell wall means penicillin has nothing to attack",
+      "note": "Mycoplasma pneumoniae spreads by respiratory droplets and aerosols and causes atypical pneumonia, the 'walking pneumonia' that reportedly accounts for 10 to 15% of community-acquired pneumonia overall and closer to 27% in children. Because the genus has no cell wall at all, beta-lactam antibiotics such as penicillin and amoxicillin have no target and do nothing. Most infections stay mild, but the immune response can spill over into Guillain-Barré syndrome, Stevens-Johnson syndrome, haemolytic anaemia or encephalitis.",
+      "ids": [
+        "mycoplasma"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "naegleria_infection": {
+      "label": "It enters through the nose, and almost no one survives it",
+      "note": "Naegleria fowleri lives in warm fresh water and grows at temperatures up to 46°C. Infection happens only when water is forced up the nose — swallowing contaminated water does not cause it — after which the amoeba travels to the brain and causes primary amoebic meningoencephalitis. Symptoms appear one to twelve days after exposure, death usually follows within about two weeks, and the fatality rate is over 97% even with treatment; the US recorded 29 infections in the decade to 2022.",
+      "ids": [
+        "naegleria_fowleri"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "peptic_ulcer_complications": {
+      "label": "An ulcer that erodes into an artery is a surgical emergency",
+      "note": "There were about 87.4 million new peptic ulcers and 267,500 deaths worldwide in 2015, and roughly 10% of people develop one at some point. Bleeding occurs in as many as 15% of cases and carries a 5 to 10% death rate; a posterior gastric ulcer perforating into the gastroduodenal artery kills about 20%. Eradicating Helicobacter pylori changed the disease from a chronic condition into a curable one — quadruple and bismuth-based regimens clear it in around 90% of cases.",
+      "ids": [
+        "peptic_ulcer"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "pertussis_infant_risk": {
+      "label": "In infants the cough is the least of it",
+      "note": "About half of infected children under one year old are hospitalized, and roughly 1 in 200 of them dies. Pertussis caused an estimated 58,700 deaths worldwide in 2015, down from 138,000 in 1990. The paroxysms typically last one to six weeks and sometimes ten or more; the acellular vaccine is 71 to 85% effective, which is why adult and adolescent cases still circulate around infants too young to be fully immunized.",
+      "ids": [
+        "whooping_cough",
+        "bordetella_pertussis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "pneumococcal_disease": {
+      "label": "Carried harmlessly by millions, and still one of the great child killers",
+      "note": "Streptococcus pneumoniae sits in the nose and throat of 5 to 10% of healthy adults and 20 to 40% of healthy children without causing anything. When it does invade it accounts for 15 to 50% of community-acquired pneumonia, and estimates of the child deaths it causes worldwide each year run from 700,000 to a million, most of them under five. Of about 30,000 US invasive cases in 2015, 30% were resistant to one or more antibiotics.",
+      "ids": [
+        "streptococcus_pneumoniae",
+        "pneumococcal_pneumonia"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "poliomyelitis_paralysis": {
+      "label": "Most polio infections show nothing at all; a small fraction paralyse permanently",
+      "note": "Poliovirus travels the faecal-oral route through water fouled by sewage, and about three quarters of infections produce no symptoms while the infected person stays contagious for up to six weeks. Between 0.1% and 0.5% of infections progress to paralytic polio, which kills 2 to 5% of children and 15 to 30% of adults, usually through paralysis of the respiratory muscles. Vaccination brought cases from an estimated 350,000 in 1988 down to 30 confirmed in 2022, but wild poliovirus still circulates in Afghanistan and Pakistan.",
+      "ids": [
+        "poliovirus",
+        "poliomyelitis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "prion_disease": {
+      "label": "No genome, no treatment, and routine sterilization does not destroy it",
+      "note": "A prion is a misfolded protein that converts normal copies of the same protein into its own shape, and every known prion disease is untreatable and fatal. Sporadic Creutzfeldt-Jakob disease occurs at roughly 1 to 1.5 cases per million people a year, and about 70% of patients die within a year of diagnosis; variant CJD, from BSE-infected beef, has reached 178 UK cases as of 2024. Prions resist proteases, ionizing radiation and formaldehyde, surgical instruments have transmitted the disease through standard decontamination, and even 134°C for 18 minutes in a pressurized autoclave is only partly effective.",
+      "ids": [
+        "prion"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "pseudomonas_hospital_infection": {
+      "label": "One in ten hospital-acquired infections, and hard to kill",
+      "note": "Pseudomonas aeruginosa accounts for about one in ten hospital-acquired infections, striking burn patients, people with cystic fibrosis, ventilated patients, neutropenic cancer patients and premature infants. The WHO ranks it among the greatest antibiotic-resistance threats to humans: multidrug efflux pumps, beta-lactamases, a poorly permeable cell envelope and biofilm formation each blunt a different line of attack, and it thrives in the damp corners of human-made environments.",
+      "ids": [
+        "pseudomonas_infection"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "pseudomonas_resistance": {
+      "label": "The organism that infects the patients other bacteria cannot reach",
+      "note": "Pseudomonas aeruginosa is an opportunist armed with a low-permeability envelope, efflux pumps and its own AmpC beta-lactamase, which leaves it intrinsically resistant to many antibiotics. It is the most common cause of infection in burn injuries and forms chronic biofilms in cystic fibrosis lungs. The US CDC counted about 32,600 multidrug-resistant P. aeruginosa infections among hospitalized patients in 2017 and 2,700 deaths, and WHO ranks it among the greatest antibiotic-resistance threats.",
+      "ids": [
+        "pseudomonas_aeruginosa"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "psilocybe_galerina_confusion": {
+      "label": "The deadliest little brown mushroom grows in the same habit as the ones foragers hunt for",
+      "note": "Galerina marginata carries the same amatoxins as the death cap — one study measured 78 to 244 micrograms per gram fresh weight, in some specimens more than in Amanita phalloides itself, against an estimated lethal dose near 0.1 mg per kilogram of body weight. Poisonings have happened exactly this way, with collectors taking it for the hallucinogenic Psilocybe stuntzii. Amatoxin illness is deceptive: vomiting and diarrhoea some hours after the meal, then an apparent recovery, then liver failure.",
+      "ids": [
+        "psilocybin_mushroom"
+      ],
+      "severity": "acute"
+    },
+    "rabies_encephalitis_fatality": {
+      "label": "Once the virus reaches the brain there is essentially no treatment",
+      "note": "Rabies virus travels from the wound along nerve axons by retrograde transport, usually over one to three months but sometimes in under a week or after more than a year. Once encephalitis begins the disease is over 99% fatal; only about fourteen people were documented to have survived symptomatic rabies as of 2016. Vaccination given before symptoms appear prevents the disease, which is the whole reason post-exposure treatment is time-critical; some 59,000 people still die each year, more than 99% of them infected by dog bites.",
+      "ids": [
+        "rabies_encephalitis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "sars_outbreak_mortality": {
+      "label": "SARS killed roughly one in ten of the people it infected",
+      "note": "The 2002-2004 outbreak produced 8,096 confirmed cases and 783 known deaths, a case fatality rate near 11% that ranged from under 1% in people younger than 24 to over 50% in those aged 65 and older. It spread by respiratory droplets, aerosols and contaminated surfaces, with symptoms appearing four to six days after exposure. Human-to-human transmission was contained in 2003 and no case has been reported since 2004, though related coronaviruses persist in animal reservoirs.",
+      "ids": [
+        "sars_cov"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "scalded_skin_toxin": {
+      "label": "The bacterium stays put; the toxin that peels the skin travels",
+      "note": "Exfoliative toxins A and B from Staphylococcus aureus cleave desmoglein-1, the protein holding two epidermal layers together, so skin separates far from the site of infection itself. Most cases are in children under six, where mortality runs low — on the order of a few percent — but in adults, who develop it mainly alongside immunosuppression or kidney failure, reported mortality reaches 50 to 60%.",
+      "ids": [
+        "staphylococcal_scalded_skin_syndrome"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "trachoma_blindness": {
+      "label": "Repeated infection scars the eyelid until the lashes turn inward",
+      "note": "Chlamydia are obligate intracellular bacteria that alternate an infectious form with a replicating one inside the host cell. In the eye, Chlamydia trachomatis causes trachoma, spread by hands, shared cloth and flies carrying discharge from an infected person's eyes or nose; repeated infection over years scars the inner eyelid until the lashes scrape the cornea. It is the leading infectious cause of blindness worldwide, with about 1.9 million people blind or visually impaired by it and 92 million living where it is endemic.",
+      "ids": [
+        "chlamydia_bacterium"
+      ],
+      "severity": "cumulative",
+      "biohazard": true
+    },
+    "trypanosomiasis_burden": {
+      "label": "Two parasites on two continents, both fatal if nothing is done",
+      "note": "Trypanosoma brucei is injected by tsetse flies and causes human African trypanosomiasis, generally fatal untreated; sustained control has held reported cases under 1,000 a year since 2018, though about 55 million people still live where transmission is possible. Trypanosoma cruzi, carried by triatomine bugs and also passed in pregnancy, transfusion and contaminated food, infects an estimated 8 million people and causes more than 10,000 deaths a year. Up to a third of chronic Chagas infections eventually damage the heart.",
+      "ids": [
+        "trypanosoma"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "tuberculosis_burden": {
+      "label": "Latent in a quarter of humanity, and still killing over a million people a year",
+      "note": "Mycobacterium tuberculosis travels through the air from someone with active lung disease, and about a quarter of the world's population carries a latent infection that causes no symptoms and cannot be passed on. Between 5 and 10% of those infected go on to active disease. WHO counted an estimated 10.7 million new cases and 1.23 million deaths in 2024, and only about two in five people with multidrug-resistant TB reached treatment that year.",
+      "ids": [
+        "mycobacterium_tuberculosis",
+        "tuberculosis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "wart_transmission": {
+      "label": "A wart is a live viral infection, not a lump of dead skin",
+      "note": "Common warts are caused by human papillomavirus types 2 and 4 most often, with types 1, 3, 26, 29 and 57 also implicated, and the virus enters through a break in the skin. Non-genital warts are present in an estimated 1 to 13% of the general population, and public showers and pools are recognized risk settings. Most resolve on their own over months to years; a weakened immune system makes them more numerous and more persistent.",
+      "ids": [
+        "wart"
+      ],
+      "severity": "contact",
+      "biohazard": true
+    },
+    "west_nile_neuroinvasive": {
+      "label": "Silent in most people, neuroinvasive in a few",
+      "note": "About 80% of West Nile infections produce no symptoms at all, and fewer than 1% reach the nervous system as meningitis or encephalitis — but among those, roughly 10% die, and survivors can spend 60 to 90 days recovering with motor deficits and fatigue lasting more than a year. Mosquitoes carry it; blood transfusion, organ transplant and mother-to-child transmission are documented but uncommon. There is no human vaccine.",
+      "ids": [
+        "west_nile_virus"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "yellow_fever_toxic_phase": {
+      "label": "The fever that comes back is the dangerous one",
+      "note": "Yellow fever begins three to six days after the mosquito bite, and in about 15% of people the fever returns within a day of apparent recovery — the toxic phase, with jaundice, bleeding and organ failure. Among those who become jaundiced, 20 to 50% die. The WHO estimates 200,000 cases a year, about 90% of them in Africa. A single dose of vaccine protects 95% of recipients from day 10 onward and is now considered to confer lifelong immunity.",
+      "ids": [
+        "yellow_fever",
+        "yellow_fever_virus"
+      ],
+      "severity": "acute",
+      "biohazard": true
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
