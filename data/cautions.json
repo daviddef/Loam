@@ -86,7 +86,8 @@
         "mead_must",
         "wort",
         "malt",
-        "vinegar"
+        "vinegar",
+        "ethanol"
       ],
       "severity": "cumulative"
     },
@@ -2567,7 +2568,8 @@
         "wine",
         "cider",
         "mead",
-        "aged_wine"
+        "aged_wine",
+        "ethanol"
       ],
       "severity": "cumulative",
       "carcinogen": true
