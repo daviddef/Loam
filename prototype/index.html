@@ -2062,7 +2062,7 @@
       <circle cx="70" cy="26" r="8" fill="#E0A526"/><circle cx="92" cy="34" r="8" fill="#6B8E4E"/>
       <rect x="42" y="66" width="36" height="30" rx="9" fill="#E2703A"/>
     </svg>
-    <h1 title="Build a9c5784 · 2026-09-02 22:30">Loam</h1>
+    <h1 title="Build 667e1b1 · 2026-09-02 22:39">Loam</h1>
   </a>
   <button class="count" id="count" title="Open your codex"></button>
   <div class="goal" id="goal"></div>
@@ -9376,10 +9376,18 @@ function startCanvas(key) {
   world.querySelectorAll('.chip.board').forEach(el => el.remove());
   try {
     localStorage.removeItem(REAL_KEY);
-    // An explicit bench, the same shape Clear Canvas writes, so restoreBench()
-    // does not fall back to the four starters on the way back in.
+    // The cards have to be written out, not just the found list. restoreBench()
+    // returns true for an empty `cards: []` — that is deliberate, so Clear
+    // Canvas does not respawn the starters — which meant the fallback never
+    // ran and the board came up blank: the five were found and none of them
+    // was on the bench. That read as the button doing nothing.
+    const cards = ids.map((id, i) => ({
+      id, ghost: null,
+      x: 240 + (i % 5) * 150, y: 260 + Math.floor(i / 5) * 150,
+      f: 0, job: null,
+    }));
     localStorage.setItem(KEY, JSON.stringify({
-      found: ids, seen: ids, bench: { cards: [], links: [], view: { x: 0, y: 0, k: 1 } },
+      found: ids, seen: ids, bench: { cards, links: [], view: { x: 0, y: 0, k: 1 } },
       canvas: key,
     }));
   } catch {}
