@@ -509,7 +509,14 @@
      box to sit in rather than a font size. Purple keeps it distinct from the
      teal radioactive badge and from every severity colour. */
   .chip .warn.carcinogen{background:var(--plum,#6B4E71);color:var(--on-accent);padding:0}
-  .chip .warn.carcinogen svg{width:100%;height:100%;display:block}
+  /* The carcinogen mark is the only badge drawn as an SVG — the others are the
+     characters ☢ ☣ !. uiGlyph stamps it with class="art", and every .art sizing
+     rule for a board card (60px, and 44px in the half-dock) then out-specifies
+     a plain descendant selector, so the pictogram rendered at full card size
+     and sat across the drawing: bacon looked like two overlapping icons.
+     Pinned here rather than by out-specifying each variant, because the next
+     .art rule someone adds would reopen it. */
+  .chip .warn svg{width:100%!important;height:100%!important;display:block}
   .chip .warn.carcinogen svg *{stroke:currentColor!important;fill:none!important}
   .chip .warn.biohazard{background:var(--avocado);color:var(--ink)}
   /* Everything hazardous on a thing's route, collapsed by default — it is
@@ -2046,7 +2053,6 @@
       <svg id="links"></svg>
     </div>
     <div id="scanTools">
-      <button data-scan="camera" title="Scan with the camera"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M10 22 Q10 18 14 18 L21 18 L24 14 L36 14 L39 18 L46 18 Q50 18 50 22 L50 42 Q50 46 46 46 L14 46 Q10 46 10 42 Z" fill="none" stroke="var(--ik)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="32" r="8" fill="var(--ik)"/><circle cx="30" cy="32" r="4" fill="var(--ground)"/></svg></span></button>
       <button data-scan="snap" title="Take a photo"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 8 A22 22 0 1 1 29.9 8" fill="none" stroke="var(--ik)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="30" r="9" fill="var(--ik)"/></svg></span></button>
       <button data-scan="photo" title="Choose photos"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M12 14 L40 14 L40 42 L12 42 Z" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22 L48 22 L48 50 L20 50 Z" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="32" r="3" fill="var(--ik)"/></svg></span></button>
       <button data-scan="type" title="Type the barcode number"><span class="gl" style="--g:15px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M10 12 L15 12 L15 40 L10 40 Z" fill="var(--ik)"/><path d="M16 12 L19 12 L19 40 L16 40 Z" fill="var(--ik)"/><path d="M21 12 L27 12 L27 40 L21 40 Z" fill="var(--ik)"/><path d="M28 12 L31 12 L31 40 L28 40 Z" fill="var(--ik)"/><path d="M33 12 L38 12 L38 40 L33 40 Z" fill="var(--ik)"/><path d="M38 12 L41 12 L41 40 L38 40 Z" fill="var(--ik)"/><path d="M43 12 L49 12 L49 40 L43 40 Z" fill="var(--ik)"/><path d="M48 12 L52 12 L52 40 L48 40 Z" fill="var(--ik)"/></svg></span></button>
@@ -2094,14 +2100,13 @@
          not — NOT the periodic chart, which stays docked at the bottom for
          the scientist view above. -->
     <div id="asideTabs">
-      <button class="atab on" data-asidetab="shelf" title="Shelf — what you've found"><span class="gl" style="--g:19px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M10 44 L50 44" fill="none" stroke="var(--ik)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="34" r="4" fill="var(--bs)"/><circle cx="32" cy="30" r="4" fill="var(--hi)"/><circle cx="44" cy="36" r="4" fill="var(--bs)"/></svg></span></button>
-      <button class="atab" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><circle cx="9" cy="17" r="2.4" fill="var(--ik)"/><path d="M17 17 L48 17" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="30" r="2.4" fill="var(--ik)"/><path d="M17 30 L48 30" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="43" r="2.4" fill="var(--ik)"/><path d="M17 43 L48 43" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="atab on" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><circle cx="9" cy="17" r="2.4" fill="var(--ik)"/><path d="M17 17 L48 17" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="30" r="2.4" fill="var(--ik)"/><path d="M17 30 L48 30" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="43" r="2.4" fill="var(--ik)"/><path d="M17 43 L48 43" fill="none" stroke="var(--ik)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
       <button class="atab" data-asidetab="proteins" title="Proteins — the twenty amino acids"><span class="gl" style="--g:19px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M12 40 L22 26 L34 34 L48 20" fill="none" stroke="var(--ik)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="40" r="4" fill="var(--bs)"/><circle cx="48" cy="20" r="4" fill="var(--hi)"/></svg></span></button>
       <button class="atab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><circle cx="30" cy="38" r="9" fill="var(--bs)"/><circle cx="17" cy="22" r="5" fill="var(--hi)"/><circle cx="30" cy="15" r="5" fill="var(--hi)"/><circle cx="43" cy="22" r="5" fill="var(--hi)"/></svg></span></button>
       <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
     </div>
-    <div id="asideShelf" class="apane on"></div>
-    <div id="asideElements" class="apane"></div>
+    <div id="asideShelf" class="apane"></div>
+    <div id="asideElements" class="apane on"></div>
     <div id="asideProteins" class="apane"></div>
     <div id="asideAnimals" class="apane"></div>
     <div id="asideFavourites" class="apane"></div>
@@ -6649,14 +6654,26 @@ const isShut = (tab, gid) => asideShut.has(`${tab}:${gid}`);
 
 let asideElQuery = '';
 let asideElTimer = 0;
+// Elements absorbed the Shelf, so this is the old Shelf/Elements distinction
+// reduced to a filter. Remembered, because which one you want is a habit.
+let elFoundOnly = !!(prefs.foundOnly ?? 0);
+let elementsFolded = false;
 function renderAsideElements(q = asideElQuery) {
   asideElQuery = q;
   const ql = q.toLowerCase();
+  // This is the tab the game opens on now, and opened flat it is six thousand
+  // cards. Start every family closed so the landing view is ten headings you
+  // can read, and open the one you want.
+  if (!elementsFolded) {
+    for (const f of FAMILIES) asideShut.add(`elements:${f.id}`);
+    elementsFolded = true;
+  }
   // One pass, not one per family. The old form was FAMILIES.map over
   // elements.filter, so every element was tested against every family — ten
   // times the work, and ten times the matchesSearch calls.
   const bucket = new Map();
   for (const e of elements) {
+    if (elFoundOnly && !found.has(e.id)) continue;
     if (!matchesSearch(e, ql)) continue;
     const f = familyOf(e);
     let g = bucket.get(f.id);
@@ -6680,7 +6697,9 @@ function renderAsideElements(q = asideElQuery) {
         // A folded group costs no chips, so it does not eat the budget either
         // — collapsing the big families is how you get at the small ones.
         const have = g.filter(e => found.has(e.id)).length;
-        if (isShut('elements', f.id))
+        // A search overrides the fold — the whole point of typing is to see the
+        // matches, and a closed heading would read as "nothing found".
+        if (!ql && isShut('elements', f.id))
           return foldHead('elements', f.id, `fam-${f.id}`, f.name, g.length, have);
         if (budget <= 0) return foldHead('elements', f.id, `fam-${f.id}`, f.name, g.length, have);
         const shown = g.slice(0, budget);
@@ -6693,11 +6712,40 @@ function renderAsideElements(q = asideElQuery) {
           ).join('') + `</div>`;
       }).join('')
     : '<p class="none">Nothing matches.</p>';
+  // "cant elements include a filter button that toggles what i found, ie the
+  // shelf? and we just hide the shelf tab?" — two tabs were drawing the same
+  // cards off the same list, differing only in whether unfound ones showed. So
+  // it is one tab and a filter now, and the Shelf tab is gone from the bar.
+  // The one thing the Shelf had that a filter does not is Ready: the elements
+  // that still have an undiscovered recipe in them. That comes with the filter.
+  const readyHTML = (() => {
+    if (!elFoundOnly || ql) return '';
+    const secrets = secretsMap(unlockedVerbs());
+    const live = elements.filter(e => found.has(e.id) && (secrets.get(e.id) ?? 0) > 0)
+      .sort((a, b) => (secrets.get(b.id) ?? 0) - (secrets.get(a.id) ?? 0));
+    if (!live.length) return '';
+    const shown = live.slice(0, readyAll ? live.length : 12);
+    return `<h2 class="ready"><i></i>Ready<em>${live.length}</em>` +
+      (live.length > 12 ? `<span class="cv" data-readyall>${readyAll ? 'less' : 'all'}</span>` : '') +
+      `</h2><div class="shelf">` + shown.map(e => {
+        const f = familyOf(e);
+        return `<span class="chip fam-${f.id} live" data-fam="${f.id}" data-spawn="${e.id}">` +
+               `${chipHTML(e)}<i class="cnt">${secrets.get(e.id)}</i></span>`;
+      }).join('') + `</div>`;
+  })();
   document.getElementById('asideElements').innerHTML =
     `<div class="shelfbar">
        <input id="asideElQ" class="search sm" placeholder="Find…" value="${q}" autocomplete="off">
+       <button id="asideElFound" class="${elFoundOnly ? 'on' : ''}"
+               title="${elFoundOnly ? 'Showing only what you have found' : 'Showing everything in the game'}"
+       >${elFoundOnly ? 'Found' : 'All'}</button>
        ${q ? '<button id="asideElX" title="Clear">×</button>' : ''}
-     </div>` + body;
+     </div>` + readyHTML + body;
+  const fb = document.getElementById('asideElFound');
+  fb.onclick = () => { elFoundOnly = !elFoundOnly; prefs.foundOnly = elFoundOnly ? 1 : 0; savePrefs();
+                       renderAsideElements(asideElQuery); };
+  const ra = document.getElementById('asideElements').querySelector('[data-readyall]');
+  if (ra) ra.onclick = ev => { ev.stopPropagation(); readyAll = !readyAll; renderAsideElements(asideElQuery); };
   // The old handler re-rendered the whole panel — input included — then had to
   // re-find the box, re-focus it and restore the caret, on every keystroke.
   // Re-binding here is still needed because the innerHTML above replaces the
@@ -6724,7 +6772,7 @@ function renderAsideElements(q = asideElQuery) {
 // bottom dock above. Four now, not two — Shelf and Elements unchanged,
 // Proteins and Animals added ("could the side panel 'shelf' and 'elements'
 // turn to just icons? and then add another for 'proteins' and animals?").
-let asideTab = 'shelf';
+let asideTab = 'elements';
 const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
                       proteins: 'asideProteins', animals: 'asideAnimals',
                       favourites: 'asideFavourites' };
@@ -6842,6 +6890,17 @@ const AA_CLASS = [
   ['basic', 'Basic — positive', 'Nitrogen-rich side chains that pick up a proton and carry a positive charge.',
    ['lysine', 'arginine', 'histidine']],
 ];
+// An amino acid you have already made is a card like any other, so it should
+// drop on the bench the way a card does. data-spawn is what the aside's drag
+// handler looks for; without it these were reference-only and could only be
+// read ("proteins i cant drag in"). One you have not reached yet keeps
+// data-atom and still opens its chemistry.
+function aaChip(aa) {
+  const gameId = PLAYABLE_AMINO.get(aa.id);
+  const drag = gameId && found.has(gameId);
+  return `<span class="aa${drag ? ' live' : ''}" ${drag ? `data-spawn="${gameId}"` : `data-atom="${aa.id}"`}>` +
+    `<b>${aa.code1}</b><span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`;
+}
 function renderAsideProteins() {
   const aminos = BED.aminos ?? [];
   const key = aa => aa.id.replace(/^bed_/, '');
@@ -6854,17 +6913,14 @@ function renderAsideProteins() {
     if (isShut('proteins', gid)) return head;
     return head + `<p class="none" style="text-align:left;padding:0 0 6px">${blurb}</p>` +
       `<div class="aagrid">${g.map(aa =>
-        `<span class="aa" data-atom="${aa.id}"><b>${aa.code1}</b>` +
-        `<span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`).join('')}</div>`;
+        aaChip(aa)).join('')}</div>`;
   }).join('');
   // Anything the table above did not claim still has to appear — a silent drop
   // would be worse than an ugly heading.
   const rest = aminos.filter(aa => !placed.has(aa.id));
   const tail = rest.length
     ? foldHead('proteins', 'other', 'fam-other', 'Not yet classified', rest.length, 0) +
-      (isShut('proteins', 'other') ? '' : `<div class="aagrid">${rest.map(aa =>
-        `<span class="aa" data-atom="${aa.id}"><b>${aa.code1}</b>` +
-        `<span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`).join('')}</div>`)
+      (isShut('proteins', 'other') ? '' : `<div class="aagrid">${rest.map(aaChip).join('')}</div>`)
     : '';
   document.getElementById('asideProteins').innerHTML =
     `<p class="none" style="text-align:left;padding:0 0 6px">The twenty amino acids proteins are built from, grouped by side chain.</p>` +
@@ -6887,12 +6943,31 @@ function renderAsideAnimals() {
   // hand the rest to a separate sheet. It expands in place now: a phylum opens
   // into its classes and the animals sitting directly under it, and those open
   // in turn, so you can see where a thing sits without leaving the panel.
-  const branch = (id, depth) => {
+  // Chordata's only child is Vertebrata, whose only child is Mammalia. Drawn
+  // faithfully that is three clicks to reach anything, each revealing a single
+  // row — which is why this read as "it doesn't expand". A rank that holds
+  // nothing of its own and forks nowhere is not a choice, so it collapses into
+  // the next one that is, and the heading names the whole run it stands for.
+  const skip = id => {
+    const chain = [taxById[id].name];
+    let cur = id;
+    for (;;) {
+      const kids = taxChildren(cur).filter(k => elementsUnderTaxon(k.id).length);
+      const own = elementsUnderTaxon(cur).filter(e => e.taxon === cur);
+      if (kids.length !== 1 || own.length) break;
+      cur = kids[0].id;
+      chain.push(taxById[cur].name);
+    }
+    return [cur, chain];
+  };
+  const branch = (rawId, depth) => {
+    const [id, chain] = skip(rawId);
     const kids = taxChildren(id);
     const mine = elementsUnderTaxon(id);
     const held = mine.filter(e => found.has(e.id));
     const t = taxById[id];
-    const head = foldHead('animals', id, `fam-tx rank-${t.rank}`, t.name, mine.length, held.length);
+    const label = chain.length > 1 ? chain.join(' › ') : t.name;
+    const head = foldHead('animals', id, `fam-tx rank-${t.rank}`, label, mine.length, held.length);
     if (isShut('animals', id)) return head;
     // Only the elements that belong to THIS group, not to a child, so nothing
     // is listed twice on the way down.
