@@ -1678,6 +1678,14 @@ __CATEGORY_CSS__
     background:var(--surface);
   }
   @media(max-width:720px){ #asideTabs{display:none} }
+  /* Tapping the active tab again folds the pane away, the same gesture the
+     periodic dock's own tab already offers. The tab strip stays — it is on the
+     seam, not in the pane — so the way back is exactly where the way out was. */
+  body.aside-off aside{width:0;padding:0;border-left-width:0;overflow:hidden}
+  body.aside-off #asideGrab{display:none}
+  body.aside-off #asideTabs{right:0}
+  body.aside-off #asideTabs .atab.on{color:var(--ink-soft);border-color:var(--line);
+    background:color-mix(in srgb,var(--surface) 94%,transparent)}
   .apane{display:none}
   .apane.on{display:block}
   #ptHead{
@@ -6927,6 +6935,17 @@ const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
                       microbes: 'asideMicrobes', periodic: 'asidePeriodic',
                       favourites: 'asideFavourites' };
 function setAsideTab(tab) {
+  // Same tab twice folds the pane; any tab while folded brings it back on that
+  // tab. Nothing is lost by folding — the strip rides the seam, not the pane.
+  if (tab === asideTab && !document.body.classList.contains('aside-off')) {
+    document.body.classList.add('aside-off');
+    prefs.asideOff = 1; savePrefs(); drawLinks();
+    return;
+  }
+  if (document.body.classList.contains('aside-off')) {
+    document.body.classList.remove('aside-off');
+    prefs.asideOff = 0; savePrefs(); drawLinks();
+  }
   asideTab = tab;
   for (const [t, id] of Object.entries(ASIDE_PANE))
     document.getElementById(id).classList.toggle('on', t === tab);
@@ -9384,6 +9403,7 @@ function asideWidth(px) {
   prefs.asideW = w; savePrefs();
 }
 if (prefs.asideW) document.body.style.setProperty('--asw', prefs.asideW + 'px');
+if (prefs.asideOff) document.body.classList.add('aside-off');
 {
   let grab = null;
   const asideEl = document.getElementById('aside');
