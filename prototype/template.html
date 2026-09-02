@@ -3301,6 +3301,63 @@ function toggleBranch(chip) {
  * just linking INTO the chip that is already standing there rather than
  * creating a new one for the final step.
  */
+/**
+ * Put a freshly revealed set of ancestors in rows directly above the card they
+ * came from, and touch nothing else on the board.
+ *
+ * expandUp() used to finish with runTidy(), which lays out EVERY chip. So
+ * tapping one card to see what made it re-arranged the whole canvas around it:
+ * on a five-card Wuxing board, clicking Water moved Water itself across and
+ * down and shuffled the other four, and opening Lye hung Ash and Water off the
+ * BOTTOM of it -- tidy() puts sources above results, so a card sitting near the
+ * top of the board gets its own parents pushed below it once the whole layout
+ * is recomputed around them. The player asked to see two parents, not for a new
+ * layout. ("rather than just adding waters parents above the object i clicked?"
+ * and "why when i open eg Lye you add the ancestors to the bottom of the board
+ * and not the top?" -- both found live.)
+ *
+ * buildChain() already learned this and guards its own runTidy() the same way;
+ * this is the sibling path that was missed.
+ */
+function placeAbove(chip, fresh) {
+  const set = new Set(fresh.filter(Boolean));
+  if (!set.size) return;
+  // How far above the tapped card each new chip sits, following only the links
+  // this reveal just added -- so a multi-step chain stacks in real rows rather
+  // than piling into one.
+  const depth = new Map([[chip, 0]]);
+  for (const queue = [chip]; queue.length; ) {
+    const c = queue.shift();
+    for (const l of links) {
+      if (l.out !== c) continue;
+      for (const par of [l.a, l.b]) {
+        if (!par || !set.has(par) || depth.has(par)) continue;
+        depth.set(par, depth.get(c) + 1);
+        queue.push(par);
+      }
+    }
+  }
+  const rows = new Map();
+  for (const c of set) {
+    const d = depth.get(c) ?? 1;          // no link back: treat as a direct parent
+    if (!rows.has(d)) rows.set(d, []);
+    rows.get(d).push(c);
+  }
+  const [cw, ch] = cardSize();
+  const gapX = 26, gapY = 46;
+  const cx = (parseFloat(chip.style.left) || 0) + cw / 2;
+  const cy = parseFloat(chip.style.top) || 0;
+  for (const [d, row] of rows) {
+    let x = cx - (row.length * cw + (row.length - 1) * gapX) / 2;
+    const y = cy - d * (ch + gapY);
+    for (const c of row) {
+      c.style.left = Math.round(x) + 'px';
+      c.style.top = Math.round(y) + 'px';
+      x += cw + gapX;
+    }
+  }
+}
+
 function expandUp(chip) {
   const id = chip.dataset.id;
   if (!id) return [];
@@ -3344,9 +3401,13 @@ function expandUp(chip) {
         links.push({ a: el, b: null, out: chip, fresh: true });
       }
       benchTouched = true;
+      // Only re-lay-out the whole board when this reveal IS the whole board;
+      // otherwise put the parents above the card and leave the rest alone.
+      if (world.querySelectorAll('.chip.board').length > freshlyAdded.filter(Boolean).length) {
+        placeAbove(chip, freshlyAdded);
+      } else runTidy();
       refreshFolds();
       drawLinks();
-      runTidy();
       sfx.pick();
       return freshlyAdded;
     }
@@ -3385,9 +3446,11 @@ function expandUp(chip) {
     freshlyAdded.push(el);
   }
   benchTouched = true;
+  if (world.querySelectorAll('.chip.board').length > freshlyAdded.filter(Boolean).length) {
+    placeAbove(chip, freshlyAdded);
+  } else runTidy();
   refreshFolds();
   drawLinks();
-  runTidy();
   sfx.pick();
   return freshlyAdded;
 }
