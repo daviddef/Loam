@@ -182,7 +182,6 @@ __CATEGORY_CSS__
     font-variant-numeric:tabular-nums;
   }
   #score{cursor:pointer}
-  #score .sc{font-variant-numeric:tabular-nums}
   @media(max-width:900px){ #score{display:none} }
   .goal:hover{border-color:var(--orange)}
   .goal .ask{
@@ -191,18 +190,26 @@ __CATEGORY_CSS__
     display:inline-block;margin-left:5px;
   }
   .spacer{flex:1}
-  .count{font:700 13px var(--face-name);color:var(--avocado)}
-  .count.free{color:var(--on-accent);background:var(--teal);border-color:var(--teal)}
-  /* The score: not a stray fraction lost among header buttons, but a number
-     with a name, the way a scoreboard reads. */
+  /* Every header pill reads the same way: a number, then what the number
+     counts. The three used to be styled apart — only #count had the flex row,
+     so #score ran its number into its label ("0points") and #live invented its
+     own grey. One grammar, one set of rules. ("this looks odd, can we align
+     text, styles, etc and simplify?" — asked live.) */
+  .count{
+    display:flex;align-items:baseline;gap:5px;
+    font:700 13px var(--face-name);color:var(--avocado);
+  }
+  .count .sc{font:800 17px var(--face-name);font-variant-numeric:tabular-nums}
+  .count .lbl{font:600 10px var(--face-name);letter-spacing:.4px;color:var(--ink-soft);text-transform:uppercase}
+  /* Only the codex pill is a box; the other two ride the header bare, or the
+     row turns into three competing buttons. */
   #count{
-    display:flex;align-items:baseline;gap:5px;font:800 15px var(--face-name);
     padding:6px 12px;background:color-mix(in srgb,var(--avocado) 12%,var(--surface));
     border-color:color-mix(in srgb,var(--avocado) 40%,var(--line));
   }
-  #count .sc{font-size:17px}
-  #count .lbl{font:600 10px var(--face-name);letter-spacing:.4px;color:var(--ink-soft);text-transform:uppercase}
-  #count.free .lbl{color:var(--on-accent)}
+  /* .fw is desktop-only wording; .nw is the terse stand-in that replaces it
+     where the header has no width. Exactly one of the pair is ever visible. */
+  #count .nw{display:none}
   button{
     font:600 13px var(--face-name);color:var(--ink);cursor:pointer;
     background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 13px;
@@ -1878,6 +1885,7 @@ __CATEGORY_CSS__
     /* "18 of 826" says everything "18 of 826 found" did, in less width —
        and the header is exactly where width is short on a phone. */
     .count .fw{display:none}
+    #count .nw{display:inline}
     header button,.count{padding:6px 10px;font-size:12px;white-space:nowrap;flex:none}
     aside{
       position:fixed;top:50px;bottom:62px;right:0;width:min(250px,78vw);z-index:120;
@@ -2000,7 +2008,7 @@ __CATEGORY_CSS__
   <div class="spacer"></div>
   <div class="count" id="waiting" style="display:none"></div>
   <div class="count" id="score" title="A point for every step it took to reach what you hold"></div>
-  <div class="count" id="live" style="color:var(--ink-soft);font-weight:600"></div>
+  <div class="count" id="live" title="Things on your bench that can still be combined into something new"></div>
   <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px">__UI_UNDO__</span></button>
   <button id="reset" title="Start over — wipes everything you have found" aria-haspopup="true">Reset</button>
   <button id="nudge" title="Put two things on the bench that go together"><span class="gl" style="--g:16px">__UI_NUDGE__</span></button>
@@ -2915,6 +2923,28 @@ const famAttrs = (e) => {
   const f = familyOf(e);
   return `data-fam="${f.id}" class-fam="fam-${f.id}"`;
 };
+/* The header pill. "Free Play" named the mode and told you nothing; a mode you
+ * turned on yourself is not news. Both modes now report the same two numbers —
+ * what is in front of you, and how much of the game exists — so the pill has one
+ * shape and the only thing that changes is whether the corpus is "found" or
+ * merely "available".
+ *
+ * The card count cannot ride on renderShelf(): placing or binning a card moves
+ * it without changing `found`, so this is called from a mutation observer on the
+ * world as well. ("i would rather it said 6166 AVAILABLE ... 3 on Canvas with
+ * 4 of 6166 found" — asked live.)
+ */
+function renderCount() {
+  const el = document.getElementById('count');
+  if (!el) return;
+  const onCanvas = world.querySelectorAll('.chip.board').length;
+  const tail = prefs.freePlay
+    ? `${elements.length}<b class="fw"> available</b>`
+    : `${found.size}<b class="fw"> of </b><b class="nw">/</b>${elements.length}<b class="fw"> found</b>`;
+  el.innerHTML = `<span class="sc">${onCanvas}</span>` +
+                 `<span class="lbl"><b class="fw">on canvas</b> · ${tail}</span>`;
+}
+
 function renderShelf() {
   const ul = unlockedVerbs();
   const groups = FAMILIES.map(f => [f, elements.filter(e => found.has(e.id) && familyOf(e).id === f.id)])
@@ -3005,7 +3035,8 @@ function renderShelf() {
     shelfShut.has(id) ? shelfShut.delete(id) : shelfShut.add(id);
     renderShelf();
   });
-  document.getElementById('live').textContent = liveCount ? `${liveCount} still have something to give` : '';
+  document.getElementById('live').innerHTML = liveCount
+    ? `<span class="sc">${liveCount}</span><span class="lbl">still to give</span>` : '';
 
   // A tool that only says "Locked" teaches nothing. Name it, and say plainly
   // what opens it — the answer is always something you can go and make.
@@ -3022,10 +3053,7 @@ function renderShelf() {
        ${open ? '' : `<i class="lk">${key ? glyph(key.id, 15) : '·'}</i>`}</div>`;
   }).join('');
 
-  document.getElementById('count').innerHTML = prefs.freePlay
-    ? `<span class="sc">Free Play</span>`
-    : `<span class="sc">${found.size}</span><span class="lbl">of ${elements.length} <b class="fw">found</b></span>`;
-  document.getElementById('count').classList.toggle('free', !!prefs.freePlay);
+  renderCount();
   // Free Play hands over every element and tool at once, so "next goal" and
   // "all goals made" are both meaningless here — everything reads as made
   // the instant it turns on, which isn't a real finish line ("why is it
@@ -3046,6 +3074,7 @@ function renderShelf() {
 const world = document.getElementById('world');
 const linkSvg = document.getElementById('links');
 const view = { x: 0, y: 0, k: 1 };
+let countQueued = false;                               // one header recount per frame
 const links = [];                                     // {a,b,out} DOM refs
 
 function applyView() {
@@ -9779,6 +9808,18 @@ function endIntro() {
 }
 
 renderShelf();
+
+/* Cards arrive and leave by a dozen different paths — spawn, merge, undo, bin,
+ * tidy, restore — and patching every one of them to update the header is how a
+ * counter silently goes stale. Watching the world itself cannot miss a path.
+ * The effect layers (rings, sparkles, drops) also live in `world` and churn
+ * constantly, so this coalesces to one recount per frame and counts only cards.
+ */
+new MutationObserver(() => {
+  if (countQueued) return;
+  countQueued = true;
+  requestAnimationFrame(() => { countQueued = false; renderCount(); });
+}).observe(world, { childList: true });
 
 /**
  * Put the bench back.
