@@ -18,7 +18,8 @@
         "sourdough_starter",
         "clostridium_botulinum"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "caustic": {
       "label": "Lye burns on contact",
@@ -510,7 +511,8 @@
       "ids": [
         "salmonella"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "aspirin_reye": {
       "label": "Reye syndrome links aspirin to a rare, severe childhood illness",
@@ -613,7 +615,8 @@
         "e_coli",
         "colibacillosis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "paracetamol_overdose": {
       "label": "Paracetamol overdose is a leading cause of acute liver failure",
@@ -629,7 +632,8 @@
       "ids": [
         "cowpox"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "histamine_scombroid": {
       "label": "Histamine is also a real fish-poisoning toxin",
@@ -786,7 +790,8 @@
         "plasmodium",
         "malaria"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "toxoplasmosis_risk": {
       "label": "Usually silent, but not always harmless",
@@ -795,7 +800,8 @@
         "toxoplasma_gondii",
         "toxoplasmosis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "giardiasis_illness": {
       "label": "A few swallowed cysts are enough",
@@ -804,7 +810,8 @@
         "giardia",
         "giardiasis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "amoebiasis_illness": {
       "label": "A real, sometimes fatal dysentery",
@@ -813,7 +820,8 @@
         "entamoeba_histolytica",
         "amoebiasis"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "trichomoniasis_sti": {
       "label": "A common sexually transmitted infection",
@@ -821,7 +829,8 @@
       "ids": [
         "trichomonas_vaginalis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "cryptosporidiosis_illness": {
       "label": "Resists the chlorine that stops most water contaminants",
@@ -830,7 +839,8 @@
         "cryptosporidium",
         "cryptosporidiosis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "soil_transmitted_helminths": {
       "label": "The leading cause of anemia in developing countries",
@@ -849,7 +859,8 @@
         "trichinella_spiralis",
         "trichinosis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "lymphatic_filariasis_burden": {
       "label": "Chronic swelling that builds over repeated exposure",
@@ -858,7 +869,8 @@
         "wuchereria_bancrofti",
         "lymphatic_filariasis"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "biohazard": true
     },
     "tapeworm_infection": {
       "label": "Large, long-lived, and usually mild",
@@ -876,7 +888,8 @@
         "schistosoma",
         "schistosomiasis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "liver_fluke_infection": {
       "label": "A parasite that can live in one host for decades",
@@ -1778,7 +1791,8 @@
       "ids": [
         "rabies_virus"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "staphylococcus_illness": {
       "label": "Staph food poisoning survives the cooking that kills the bacterium",
@@ -1786,7 +1800,8 @@
       "ids": [
         "staphylococcus_aureus"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "listeriosis_risk": {
       "label": "Listeria keeps growing in the refrigerator",
@@ -1794,7 +1809,8 @@
       "ids": [
         "listeria_monocytogenes"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "campylobacteriosis_illness": {
       "label": "Campylobacter is the most common bacterial foodborne illness in the US",
@@ -1802,7 +1818,8 @@
       "ids": [
         "campylobacter"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "aflatoxin_carcinogen": {
       "label": "Aflatoxin is one of the most potent liver carcinogens known",
@@ -1822,7 +1839,8 @@
         "clostridium_perfringens",
         "gas_gangrene"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "tick_borne_rickettsia": {
       "label": "A tick bite can carry more than an itch",
@@ -1831,7 +1849,8 @@
         "rickettsia_rickettsii",
         "rocky_mountain_spotted_fever"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "rubella_pregnancy_risk": {
       "label": "Mild in most people, dangerous for a fetus",
@@ -1840,7 +1859,8 @@
         "rubella_virus",
         "rubella"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "gi_infection_risk": {
       "label": "Fecal-oral pathogens are a real category",
@@ -1856,7 +1876,8 @@
         "clostridioides_difficile",
         "c_diff_infection"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "bite_wound_zoonoses": {
       "label": "An animal bite or scratch is a real inoculation",
@@ -1867,7 +1888,8 @@
         "streptobacillus_moniliformis",
         "rat_bite_fever"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "gonorrhea_sti": {
       "label": "A common bacterial STI, often silent",
@@ -1876,7 +1898,8 @@
         "neisseria_gonorrhoeae",
         "gonorrhea"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "chlamydia_sti": {
       "label": "The most-reported bacterial STI in the US",
@@ -1885,7 +1908,8 @@
         "chlamydia_trachomatis",
         "chlamydia"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "syphilis_sti": {
       "label": "Syphilis can imitate other diseases for years",
@@ -1894,7 +1918,8 @@
         "treponema_pallidum",
         "syphilis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "chancroid_sti": {
       "label": "A painful genital ulcer disease, rare in wealthy countries",
@@ -1903,7 +1928,8 @@
         "haemophilus_ducreyi",
         "chancroid"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "toxic_shock_risk": {
       "label": "Toxic shock syndrome can turn fatal within hours",
@@ -1913,7 +1939,8 @@
         "tampon",
         "toxic_shock_syndrome"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "leptospirosis_exposure": {
       "label": "Leptospirosis spreads through water contaminated with animal urine",
@@ -1922,7 +1949,8 @@
         "leptospira_interrogans",
         "leptospirosis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "pyelonephritis_risk": {
       "label": "Untreated bladder infections can spread to the kidneys",
@@ -1931,7 +1959,8 @@
         "cystitis",
         "pyelonephritis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "tetanus_illness": {
       "label": "Tetanus is rare today because of vaccination, not luck",
@@ -1939,7 +1968,8 @@
       "ids": [
         "tetanus"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "botulism_illness": {
       "label": "A different toxin, a different paralysis, from a namesake genus",
@@ -1947,7 +1977,8 @@
       "ids": [
         "botulism"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "bacterial_meningitis": {
       "label": "The bacterial form of a name that also covers a mild virus",
@@ -1956,7 +1987,8 @@
         "meningitis",
         "meningococcemia"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "viral_encephalitis": {
       "label": "Brain inflammation is a different order of danger than meningitis",
@@ -1964,7 +1996,8 @@
       "ids": [
         "encephalitis"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "sepsis_deaths": {
       "label": "Sepsis is not rare, and it kills fast",
@@ -1973,7 +2006,8 @@
         "sepsis",
         "septic_shock"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "plague_mortality": {
       "label": "Plague still occurs, and pneumonic plague is nearly always fatal untreated",
@@ -1982,7 +2016,8 @@
         "plague",
         "yersinia_pestis"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "tularemia_infectivity": {
       "label": "A handful of organisms is enough for some routes",
@@ -1991,7 +2026,8 @@
         "tularemia",
         "francisella_tularensis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "aids_untreated_progression": {
       "label": "Untreated HIV disease is fatal, though slowly",
@@ -2002,7 +2038,8 @@
         "clinical_latency",
         "aids"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "biohazard": true
     },
     "hiv_opportunistic_infections": {
       "label": "AIDS-defining infections turn dangerous only once CD4+ counts collapse",
@@ -2017,7 +2054,8 @@
         "kaposis_sarcoma",
         "hiv_wasting_syndrome"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     },
     "hiv_transmission_routes": {
       "label": "HIV spreads through specific body-fluid routes, not casual contact",
@@ -2026,7 +2064,8 @@
         "needle_borne_hiv_transmission",
         "perinatal_hiv_transmission"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "biohazard": true
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

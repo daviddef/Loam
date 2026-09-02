@@ -442,6 +442,29 @@ __CATEGORY_CSS__
   .chip .warn.carcinogen{background:var(--plum,#6B4E71);color:var(--on-accent);padding:0}
   .chip .warn.carcinogen svg{width:100%;height:100%;display:block}
   .chip .warn.carcinogen svg *{stroke:currentColor!important;fill:none!important}
+  .chip .warn.biohazard{background:var(--avocado);color:var(--ink)}
+  /* Everything hazardous on a thing's route, collapsed by default — it is
+     reference, not an interruption, and most routes have nothing on them. */
+  .upstream{margin:14px 0;border:1px solid var(--rule,rgba(0,0,0,.14));border-radius:8px;background:var(--card)}
+  .upstream>summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+  .upstream>summary::-webkit-details-marker{display:none}
+  .upstream>summary::before{content:'▸ ';opacity:.55}
+  .upstream[open]>summary::before{content:'▾ '}
+  .upstream .upnote{margin:0 14px 8px;font-size:12px;opacity:.62}
+  .uprow{display:flex;gap:10px;padding:10px 14px;border-top:1px solid var(--rule,rgba(0,0,0,.1))}
+  .uprow b{display:block;font-size:14px}
+  .uprow p{margin:4px 0 0;font-size:13px;opacity:.8;line-height:1.45}
+  .upfrom{font-size:11.5px;opacity:.6}
+  .hzm{flex:0 0 22px;height:22px;border-radius:5px;display:grid;place-items:center;font-size:13px}
+  .hzm.radioactive{background:var(--teal);color:var(--on-accent)}
+  .hzm.carcinogen{background:var(--plum,#6B4E71);color:var(--on-accent);padding:2px}
+  .hzm.carcinogen svg{width:100%;height:100%}
+  .hzm.carcinogen svg *{stroke:currentColor!important;fill:none!important}
+  .hzm.biohazard{background:var(--avocado);color:var(--ink)}
+  .hzm.sev-acute{background:var(--brick);color:var(--cream)}
+  .hzm.sev-contact{background:var(--mustard);color:var(--ink)}
+  .hzm.sev-cumulative{background:color-mix(in srgb,var(--mustard) 72%,var(--ink));color:var(--cream)}
+  .hzm.sev-conditional{background:color-mix(in srgb,var(--avocado) 78%,var(--ink));color:var(--cream)}
   @keyframes radioactivePulse{
     0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--teal) 60%,transparent)}
     50%    {box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 0%,transparent)}
@@ -2788,6 +2811,13 @@ function chipHTML(e) {
       // every hazard either way — this is only the cover.
       if (cautionsFor(e.id).some(c => c.carcinogen))
         return `<i class="warn carcinogen" title="This one causes cancer — tap the i to read why">__UI_CARCINOGEN__</i>`;
+      // Biological hazards get the trefoil, which here is the right symbol
+      // rather than a borrowed one — ☣ means infectious material, and that is
+      // exactly the claim. It sits below the other two because a thing that is
+      // both radioactive and infectious is rarer than the badge slot is
+      // valuable, and because the decay and the cancer are the sharper facts.
+      if (cautionsFor(e.id).some(c => c.biohazard))
+        return `<i class="warn biohazard" title="This one is infectious — tap the i to read why">☣</i>`;
       const sev = severityOf(e.id);
       if (!sev) return '';
       const say = { acute: 'This one can kill or permanently injure',
@@ -6924,6 +6954,7 @@ function quickViewHTML(id) {
     ${(() => { const bid = bedrockIdFor(id); const svg = bid ? moleculeSVG(bid) : ''; return svg ? `<div class="molbox">${svg}</div>` : ''; })()}
     ${e.discovered ? `<p class="pfrom">🕐 <b>${e.discovered.year}</b> · ${e.discovered.note}</p>${nearestInTimeHTML(id)}` : ''}
     ${cautionHTML(id)}
+    ${upstreamHazardHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
       ${!owned ? `<button class="ghost" data-hint="${id}">How do I make it?</button>` : ''}
@@ -7056,6 +7087,53 @@ function stepCard(r, i) {
 const onCanvas = (id) => !!world.querySelector(`.chip.board[data-id="${id}"]`);
 // The story tab body — the tab bar itself now comes from showEntry,
 // shared with quick view, so this only ever renders what sits below it.
+/**
+ * Everything hazardous on this thing's route, gathered in one place.
+ *
+ * Asked for as: scan a food item, then show the carcinogens, poisons and other
+ * bad stuff up the ancestry chain rather than making someone open every card.
+ *
+ * It follows the SAME route the provenance view shows — the canonical recipe
+ * for each step — and not every possible route. That is a deliberate limit,
+ * and the copy says so. Walking every route instead was measured: from `bacon`
+ * it reaches 616 ancestors and 59 cautions, from `bread` 605 and 57, from
+ * `sausage` 609 and 58. The graph is dense enough that all-routes reaches most
+ * of the corpus from anywhere, so every food would carry an identical wall of
+ * warnings. A list that says the same thing about everything says nothing.
+ */
+function upstreamHazards(id) {
+  const seen = new Map();                     // caution key -> {c, from:Set}
+  for (const a of distinctOf(id)) {
+    for (const c of cautionsFor(a)) {
+      let rec = seen.get(c.kind);
+      if (!rec) seen.set(c.kind, rec = { c, from: new Set() });
+      rec.from.add(a);
+    }
+  }
+  // Loudest first, matching the badge priority on the cards themselves.
+  const rank = c => c.kind === 'radioactivity' ? 0 : c.carcinogen ? 1 : c.biohazard ? 2
+    : ({ acute: 3, contact: 4, cumulative: 5, conditional: 6 })[c.severity] ?? 7;
+  return [...seen.values()].sort((x, y) => rank(x.c) - rank(y.c));
+}
+
+function upstreamHazardHTML(id) {
+  const hz = upstreamHazards(id);
+  if (!hz.length) return '';
+  const mark = c => c.kind === 'radioactivity' ? '<i class="hzm radioactive">☢</i>'
+    : c.carcinogen ? '<i class="hzm carcinogen">__UI_CARCINOGEN__</i>'
+    : c.biohazard ? '<i class="hzm biohazard">☣</i>'
+    : `<i class="hzm sev-${c.severity || 'cumulative'}">!</i>`;
+  const n = hz.length;
+  return `<details class="upstream">
+      <summary>${n} thing${n === 1 ? '' : 's'} worth knowing on the way here</summary>
+      <p class="upnote">Following the route shown above, not every possible route.</p>
+      ${hz.map(({ c, from }) => `<div class="uprow">${mark(c)}<div>
+        <b>${c.label}</b>
+        <span class="upfrom">${[...from].map(f => byId[f] ? byId[f].name : f).join(' · ')}</span>
+        <p>${c.note}</p></div></div>`).join('')}
+    </details>`;
+}
+
 function provenanceHTML(id) {
   const x = expanded(id), d = distinctOf(id).size, t = leafTally(id), e = byId[id];
   return `<div class="phead"><div class="big">${glyph(e.id, 34)}</div><h3>${e.name}</h3>
@@ -7067,6 +7145,7 @@ function provenanceHTML(id) {
          .map(([k,n]) => `${glyph(k, 17)} ${byId[k].name} ×${n}`).join(' · ')}</div></div>
      __TABS__
      <div class="steps">${orderedSteps(id).map(stepCard).join('')}</div>
+     ${upstreamHazardHTML(id)}
      ${bedrockHTML(t)}`;
 }
 
