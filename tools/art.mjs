@@ -7605,8 +7605,11 @@ def('black_pepper', () => [...[[20, 26], [34, 22], [26, 38], [40, 36], [30, 48]]
                             [C(x, y, 6, 'ik'), C(x - 2, y - 2, 1.8, 'lo')]).flat()]);
 def('piperine',() => [hex('ik', 16, 28, 9, 2), (() => backbone('ik', 3, 34, 32).shape)(),
                       ring('ik', 50, 38, 6, 2), C(8, 20, 3.4, 'bs')]);
-def('jalapeno',() => [P('M26 12 Q14 22 16 34 Q18 48 30 52 Q42 48 44 34 Q46 22 34 12 Z', 'avocado') && 0,
-                      P('M26 12 Q16 24 18 36 Q22 50 30 52 Q40 48 42 34 Q44 22 34 12 Z', 'bs'),
+// The first body path was disabled with `&& 0` rather than deleted, which left
+// a bare 0 in the shape list — invisible to the renderer and to every check
+// until one was written for it. Removed rather than re-enabled: the second
+// path is the drawing.
+def('jalapeno',() => [P('M26 12 Q16 24 18 36 Q22 50 30 52 Q40 48 42 34 Q44 22 34 12 Z', 'bs'),
                       S('M30 12 L30 4', 'lo', 3), E(30, 11, 7, 3, 'lo'),
                       S('M24 22 Q20 34 24 44', 'hi', 1.6)]);
 def('chipotle',() => [P('M24 14 Q16 26 20 38 Q26 50 32 50 Q40 44 40 32 Q42 20 32 14 Z', 'ik'),
@@ -33359,6 +33362,2163 @@ def('wild_silk_moth', () => [E(30, 32, 4, 9, 'bs'),
                              P('M32 26 Q48 18 50 30 Q46 40 32 36 Z', 'lo'),
                              S('M28 24 Q24 16 20 14 M32 24 Q36 16 40 14', 'ik', 1.4)]);   // the plumed antennae
 
+
+
+
+
+/* ── bedrock drawings: out_0.js ─────────────────────── */
+/* bedrock chunk 0 — assemblies, blood cells, bones, egg parts, fluids,
+   molecules, monomers, organs, polymers and tissues. */
+
+def('bed_enzyme', () => [
+  // The pocket is the whole point: a bay cut to the shape of one molecule and
+  // nothing else. Drawn as a bite taken out of the fold, with the substrate
+  // seated in it — not as another anonymous blob with a nick in the side.
+  P('M12 10 Q38 6 44 16 A11 11 0 0 0 44 38 Q40 52 14 48 Q4 30 12 10 Z', 'lo'),
+  P('M15 14 Q36 11 40 19 A8 8 0 0 0 40 35 Q36 47 16 44 Q8 30 15 14 Z', 'bs'),
+  S('M40 19 A8 8 0 0 0 40 35', 'ik', 1.4),                    // the active site's rim
+  C(35, 27, 5, 'hi'),                                          // the one molecule that fits it
+  C(35, 27, 2.2, 'discovery'),
+]);
+
+def('bed_lymphocyte', () => [
+  C(23, 34, 15, 'hi'),                                         // a bare rim of cytoplasm
+  C(23, 34, 11.5, 'lo'),                                       // nucleus, filling nearly all of it
+  C(19, 30, 2.8, 'bs'),
+  // What a B cell does with all that: antibody, drawn as the Y it is.
+  S('M46 40 L46 28', 'bs', 2.6),
+  S('M46 28 L39 17', 'bs', 2.6), S('M46 28 L53 17', 'bs', 2.6),
+  C(39, 17, 3, 'hi'), C(53, 17, 3, 'hi'),                      // the two binding tips
+]);
+
+def('bed_patella', () => [
+  // A sesamoid: grown inside the tendon, not jointed to a neighbour. So the
+  // tendon has to be in the picture or the fact is not being drawn at all.
+  P('M23 2 L37 2 L36 20 L24 20 Z', 'lo'),                      // quadriceps tendon, above
+  P('M25 40 L35 40 L34 58 L26 58 Z', 'lo'),                    // patellar tendon, on to the shin
+  ...[26, 30, 34].map(x => S(`M${x} 3 L${x} 19`, 'gh', 1.2)),
+  ...[28, 30, 32].map(x => S(`M${x} 41 L${x} 57`, 'gh', 1.2)),
+  P('M18 17 Q30 11 42 17 Q47 28 38 40 Q30 47 22 40 Q13 28 18 17 Z', 'hi'),
+  S('M26 22 Q30 32 34 22', 'bs', 1.8),                         // the ridge that rides the femoral groove
+]);
+
+def('bed_whale_flipper', () => [
+  P('M27 4 Q45 10 49 30 Q52 47 39 55 Q25 58 19 43 Q13 22 27 4 Z', 'bs'),
+  C(28, 12, 4.4, 'hi'),                                        // the shoulder — the only joint left that moves
+  P('M24 16 L33 16 L33 24 L24 24 Z', 'hi'),                    // humerus, shortened to a block
+  P('M22 26 L27 26 L27 32 L22 32 Z', 'hi'),
+  P('M29 26 L34 26 L34 32 L29 32 Z', 'hi'),                    // radius and ulna, just as short
+  // Five digits. The middle two keep adding joints — hyperphalangy — while
+  // the outer ones stop early, which is what makes the paddle a fan.
+  ...[[17, 3], [23, 5], [29, 6], [35, 4], [40, 3]].map(([x, cnt]) =>
+    Array.from({ length: cnt }, (_, k) =>
+      P(`M${x} ${n(34 + k * 4.4)} L${x + 4.2} ${n(34 + k * 4.4)} ` +
+        `L${x + 4.2} ${n(37.6 + k * 4.4)} L${x} ${n(37.6 + k * 4.4)} Z`, 'hi'))).flat(),
+]);
+
+def('bed_eggshell', () => [
+  // A section, because the structure is all in the depth: knobs at the bottom,
+  // calcite grown up in columns from them, cuticle capping it, pore through.
+  P('M4 20 L56 20 L56 40 L4 40 Z', 'bs'),                      // the palisade of calcite columns
+  ...[11, 18, 25, 39, 46, 53].map(x => S(`M${x} 20 L${x} 40`, 'lo', 1.2)),
+  ...[8, 16, 24, 36, 44, 52].map(x => C(x, 40, 4, 'lo')),      // mammillae, where each column started
+  P('M4 14 L56 14 L56 20 L4 20 Z', 'hi'),                      // the cuticle, thin and outermost
+  P('M30 14 L34 14 L34 41 L30 41 Z', 'ground'),                // one pore, all the way through
+  S('M4 47 Q30 51 56 47', 'gh', 2.4),                          // the membrane it all sits on
+]);
+
+def('bed_synovial_fluid', () => [
+  P('M4 4 Q30 2 56 4 L56 20 Q30 26 4 20 Z', 'lo'),             // one cartilage face
+  P('M4 56 Q30 58 56 56 L56 40 Q30 34 4 40 Z', 'lo'),          // and the other, never touching it
+  wave('bs', 36, 5, 24), wave('hi', 32, 3, 19),                // plasma, filtered thin
+  ...[[12, 30], [24, 33], [36, 30], [46, 33]].map(([x, y]) =>
+    S(`M${x} ${y} Q${x + 4} ${y - 4} ${x + 8} ${y}`, 'gh', 1.4)),   // hyaluronan, long and tangled
+]);
+
+def('bed_calcium_sulfite', () => [
+  // Sulfite is pyramidal — one lone pair pushing the three oxygens down. The
+  // calcium is not bonded to it, so nothing is drawn between them.
+  S('M24 30 L12 42', 'ik', 2), S('M24 30 L36 43', 'ik', 2), S('M24 30 L24 14', 'ik', 2),
+  C(12, 42, 5, CPK.O), C(36, 43, 5, CPK.O), C(24, 14, 5, CPK.O),
+  C(24, 30, 7.4, CPK.S),
+  C(48, 22, 6.4, CPK.Ca),
+]);
+
+def('bed_halite', () => {
+  // "A cube of alternating ions" — so draw the lattice, not a heap of grains.
+  // Chloride is nearly twice sodium's radius, which is why it packs this way.
+  const pos = [];
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) pos.push([13 + c * 17, 13 + r * 17, (r + c) % 2]);
+  return [
+    ...pos.filter(p => p[0] < 40).map(p => S(`M${p[0]} ${p[1]} L${p[0] + 17} ${p[1]}`, 'ik', 1.6)),
+    ...pos.filter(p => p[1] < 40).map(p => S(`M${p[0]} ${p[1]} L${p[0]} ${p[1] + 17}`, 'ik', 1.6)),
+    ...pos.map(([x, y, k]) => C(x, y, k ? 4.6 : 7, k ? CPK.Na : CPK.Cl)),
+  ];
+});
+
+def('bed_sodium_bisulfite', () => [
+  // It is not a solid at all: two ions loose in water. Drawn dissolved, with
+  // the extra proton that makes it "bi-" sitting on one oxygen.
+  C(30, 32, 25, 'gh'),
+  S('M26 32 L14 43', 'ik', 1.8), S('M26 32 L35 44', 'ik', 1.8), S('M26 32 L26 18', 'ik', 1.8),
+  C(14, 43, 4.4, CPK.O), C(35, 44, 4.4, CPK.O), C(26, 18, 4.4, CPK.O),
+  S('M26 18 L34 11', 'ik', 1.4), C(34, 11, 3, CPK.H),
+  C(26, 32, 6.4, CPK.S),
+  C(47, 25, 5.4, CPK.Na),
+]);
+
+def('bed_amino_acid', () => [
+  // Twenty of them and every one the same hand, so the drawing has to be the
+  // three-dimensional one: hash going back, wedge coming forward.
+  ...[0, 1, 2].map(i => S(`M${n(26 - 2 - i * 1.2)} ${n(24 - i * 4)} L${n(30 + 2 + i * 1.2)} ${n(24 - i * 4)}`, 'ik', 1.6)),
+  C(28, 12, 4.2, CPK.H),
+  S('M28 30 L12 39', 'ik', 2.2), C(12, 39, 5.4, CPK.N),        // the amine
+  P('M26.8 30 L29.2 30 L45 37 L43 40 Z', 'ik'),                // the carboxyl, wedged toward you
+  ...double([44, 38.5], [54, 30], 'ik'), C(54, 30, 4.6, CPK.O),
+  S('M44 38.5 L50 50', 'ik', 2), C(50, 50, 4.6, CPK.O),
+  S('M28 30 L28 50', 'ik', 2.2), C(28, 50, 5.4, 'bs'),         // R — the only part that varies
+  C(28, 30, 5.4, CPK.C),
+]);
+
+def('bed_bladder', () => [
+  P('M30 9 Q50 13 50 29 Q50 45 30 45 Q10 45 10 29 Q10 13 30 9 Z', 'lo'),   // detrusor, a coat of smooth muscle
+  ring('bs', 30, 27, 15, 3.4),
+  E(30, 27, 12, 9.5, 'hi'),                                    // urothelium, folded up while it waits
+  S('M12 12 L21 18', 'gh', 2.4), S('M48 12 L39 18', 'gh', 2.4), // the two ureters, arriving
+  P('M26 44 L34 44 L33 57 L27 57 Z', 'lo'),                    // and one urethra, leaving
+]);
+
+def('bed_chicken_crop', () => [
+  S('M17 2 L17 58', 'lo', 7),                                  // the esophagus, running straight past
+  P('M19 16 Q41 15 46 28 Q50 43 31 45 Q20 45 19 34 Z', 'bs'),  // the pouch hung off its side
+  ...granules('hi', 8, 331, [25, 23, 43, 40]),                 // feed, waiting for digestion to start
+  S('M23 20 Q39 21 44 29', 'hi', 1.4),
+]);
+
+def('bed_cochlea', () => {
+  const pt = i => {
+    const t = i / 64, a = t * Math.PI * 5.6, r = 24 - t * 21;
+    return [n(31 + r * Math.cos(a)), n(32 + r * Math.sin(a))];
+  };
+  const d = 'M' + Array.from({ length: 65 }, (_, i) => pt(i).join(' ')).join(' L');
+  return [
+    S(d, 'lo', 7),                                             // the bony canal, almost three turns of it
+    S(d, 'bs', 3.2),                                           // fluid, all the way up
+    // Hair cells along the basilar membrane. Big and widely spaced at the
+    // stiff base, crowded and small at the floppy tip — that is the pitch map.
+    ...[4, 14, 26, 40, 52, 60].map((i, k) => C(pt(i)[0], pt(i)[1], n(3 - k * 0.35), 'hi')),
+  ];
+});
+
+def('bed_ear', () => [
+  // Three sections in series, drawn as three: funnel, bone chain, spiral.
+  P('M3 6 L19 21 L19 39 L3 54 Z', 'bs'),                       // the outer funnel
+  S('M19 19 L19 41', 'hi', 3.4),                               // the eardrum it ends at
+  S('M22 26 L28 21 L34 27', 'lo', 1.8),
+  C(22, 26, 3.4, 'hi'), C(28, 21, 3.4, 'hi'), C(34, 27, 3.4, 'hi'),  // three bones, amplifying it
+  ...(() => {
+    const pt = i => {
+      const t = i / 36, a = t * Math.PI * 4, r = 11 - t * 9;
+      return [n(46 + r * Math.cos(a)), n(34 + r * Math.sin(a))];
+    };
+    const d = 'M' + Array.from({ length: 37 }, (_, i) => pt(i).join(' ')).join(' L');
+    return [S(d, 'lo', 5), S(d, 'hi', 2)];                     // and the spiral that turns it into a signal
+  })(),
+]);
+
+def('bed_eye', () => [
+  // The path light takes, left to right: cornea, pupil, lens, retina.
+  C(34, 30, 20, 'lo'), C(34, 30, 17, 'bs'),
+  S('M34 12 A18 18 0 0 1 34 48', 'hi', 3.6),                   // retina — the only part that senses anything
+  S('M2 17 L18 24 L50 28', 'gh', 1.2), S('M2 43 L18 36 L50 32', 'gh', 1.2),
+  S('M16 19 A12 12 0 0 0 16 41', 'hi', 3.2),                   // cornea, doing most of the bending
+  P('M15 16 L21 20 L21 25 L15 23 Z', 'lo'), P('M15 44 L21 40 L21 35 L15 37 Z', 'lo'),  // iris, setting the aperture
+  E(26, 30, 5.5, 9, 'hi'),                                     // lens, fine-focusing what got in
+]);
+
+def('bed_glomerulus', () => [
+  S('M44 12 A20 20 0 1 0 44 48', 'lo', 5),                     // Bowman's capsule, open at one pole
+  // The tuft: capillary loops crammed in and doubling back on themselves. Set
+  // at uneven angles, because a knot of vessels is a tangle, not a rosette.
+  ...[14, 96, 175, 244].map(a => ['g', a, 27, 30, [
+    S('M27 30 Q13 24 18 15 Q28 8 32 18 Q35 25 27 30', 'bs', 2.6),
+  ]]),
+  C(27, 30, 3, 'hi'),
+  S('M56 18 L40 25', 'lo', 3.4),                               // afferent arteriole, wide
+  S('M56 42 L40 35', 'lo', 2),                                 // efferent, narrower — that is what holds the pressure up
+  S('M44 48 L47 57', 'hi', 3.4),                               // filtrate, off down the tubule
+]);
+
+def('bed_lens', () => [
+  // Fiber shells laid down over one another like an onion, all meeting at the
+  // suture. Nothing feeds it from inside — there is no vessel to draw. Slung
+  // between its zonules, which is what keeps it from reading as an eye.
+  ...[-1, 1].map(s => [16, 30, 44].map(y =>
+    S(`M${30 + s * 20} 30 L${30 + s * 29} ${y}`, 'gh', 1.4))).flat(),
+  P('M10 30 Q30 12 50 30 Q30 48 10 30 Z', 'bs'),
+  P('M16 30 Q30 18 44 30 Q30 42 16 30 Z', 'hi'),
+  P('M22 30 Q30 23 38 30 Q30 37 22 30 Z', 'bs'),
+  ...[90, 210, 330].map(a => S(
+    `M30 30 L${n(30 + 7 * Math.cos(a * Math.PI / 180))} ${n(30 + 7 * Math.sin(a * Math.PI / 180))}`, 'ik', 1.8)),
+]);
+
+def('bed_nephron', () => [
+  // One corpuscle feeding one long tubule, and the four jobs happen in the
+  // order the tubule runs — so the drawing is the sequence.
+  C(14, 13, 8, 'lo'), C(14, 13, 5.4, 'bs'),                    // filtration, at the top
+  S('M21 16 Q31 15 30 22 Q29 28 23 28 Q17 29 20 35 L22 41', 'bs', 3),   // proximal convolution — reabsorption
+  S('M22 41 L24 51 Q30 57 34 50 L36 34', 'hi', 3),             // the loop, down into the medulla and back
+  S('M36 34 Q41 28 35 25 Q29 23 35 17 L40 15', 'bs', 3),       // distal convolution — secretion
+  S('M40 15 L49 15 L49 56', 'lo', 4.4),                        // collecting duct, carrying it out
+]);
+
+def('bed_pituitary_gland', () => [
+  S('M30 2 L30 17', 'lo', 5),                                  // the stalk down from the hypothalamus
+  P('M30 17 Q13 18 11 32 Q9 46 26 46 Q30 41 30 31 Z', 'bs'),   // front lobe: secretory epithelium
+  ...granules('hi', 9, 173, [14, 24, 27, 42]),
+  P('M30 17 Q45 18 48 31 Q51 46 34 46 Q30 41 30 31 Z', 'lo'),  // rear lobe: still hypothalamus, structurally
+  ...[35, 39, 43].map(x => S(`M${x} 20 Q${x + 2} 32 ${x - 1} 43`, 'hi', 1.4)),  // nerve fibers, run down from the hypothalamus
+  ...[35, 39, 43].map(x => C(x - 1, 43, 2.4, 'hi')),           // each ending in the store of hormone it releases
+]);
+
+def('bed_seminiferous_tubule', () => [
+  ring('lo', 30, 30, 22, 4.4),                                 // the tube, in section
+  ...Array.from({ length: 10 }, (_, i) => ['g', i * 36, 30, 30, [
+    P('M26.5 9 L33.5 9 L32 25 L28 25 Z', 'bs'),                // Sertoli cells, spanning wall to lumen
+  ]]),
+  // Spermatozoa in the lumen — the one place in the body they are made.
+  ...[0, 120, 240].map(a => ['g', a, 30, 30, [
+    C(30, 24, 2.6, 'hi'), S('M32 24 Q36 22 39 25', 'hi', 1.2),
+  ]]),
+]);
+
+def('bed_stomach', () => [
+  S('M13 4 L20 16', 'lo', 4.4),                                // esophagus in
+  P('M20 13 Q42 11 45 27 Q47 42 32 46 Q15 48 13 32 Q12 19 20 13 Z', 'bs'),
+  S('M39 41 L52 50', 'lo', 4.4),                               // pylorus out
+  // Three muscle coats, not the gut's usual two — the innermost runs oblique.
+  S('M21 14 Q41 12 44 27', 'lo', 1.5),
+  S('M22 17.5 Q38 16 40.5 27', 'lo', 1.5),
+  S('M23 21 Q35 20 37 27', 'lo', 1.5),
+  ...[0, 1, 2].map(i => S(`M${19 + i * 8} 30 Q${23 + i * 8} 37 ${19 + i * 8} 44`, 'hi', 1.8)),  // rugae
+]);
+
+def('bed_ureter', () => [
+  // Nothing drains down it. A ring of muscle squeezes shut behind the urine
+  // and travels, so the drawing is the pinch, not the pipe.
+  P('M19 2 L19 21 Q26 30 19 39 L19 58 L41 58 L41 39 Q34 30 41 21 L41 2 Z', 'bs'),
+  P('M25 2 L25 22 Q30 30 25 38 L25 58 L35 58 L35 38 Q30 30 35 22 L35 2 Z', 'hi'),
+  ...[8, 14, 46, 52].map(y => S(`M19 ${y} Q30 ${y + 3} 41 ${y}`, 'lo', 1.6)),   // the muscle coats
+  S('M22 44 L30 49 L38 44', 'gh', 2), S('M22 50 L30 55 L38 50', 'gh', 2),       // the wave, on its way down
+]);
+
+def('bed_whale_blowhole', () => [
+  P('M1 54 Q30 22 59 54 L59 59 L1 59 Z', 'bs'),                // the top of the head, which is where the nostril ended up
+  P('M25 47 L28.6 34 L31 34.7 L27.4 47.6 Z', 'ik'),
+  P('M35 47 L31.4 34 L29 34.7 L32.6 47.6 Z', 'ik'),            // two slits in a V — a baleen whale's pair
+  S('M22 50 Q30 46 38 50', 'lo', 2),                           // the muscular plug that shuts on every dive
+  C(30, 20, 6, 'gh'), C(22, 11, 4.4, 'gh'), C(38, 9, 5.4, 'gh'), C(30, 4, 3.4, 'gh'),  // the blow
+]);
+
+def('bed_lipid', () => {
+  // A triglyceride: three fatty acids hung off one glycerol. The comb shape is
+  // the whole reason it packs so much energy into so little space.
+  const arm = y => {
+    const pts = [[22, y]];
+    for (let i = 1; i <= 5; i++) pts.push([22 + i * 6, y + (i % 2 ? -4 : 0)]);
+    return [
+      S(`M14 ${y} L22 ${y}`, 'ik', 2),
+      S('M' + pts.map(p => p.join(' ')).join(' L'), 'ik', 2.2),
+      C(22, y, 4, CPK.O),
+    ];
+  };
+  return [S('M14 8 L14 52', 'ik', 2.6), ...arm(14), ...arm(30), ...arm(46)];
+});
+
+def('bed_connective_tissue', () => [
+  // The defining thing is the spacing: cells scattered loose through fiber and
+  // fluid, not packed shoulder to shoulder the way epithelium is.
+  ...[10, 22, 34, 46].map((y, i) => S(
+    `M2 ${y} Q18 ${y + 8} 32 ${y - 2} Q46 ${y - 9} 58 ${y + 4}`, i % 2 ? 'lo' : 'bs', 2.6)),
+  S('M8 4 Q22 30 14 56', 'lo', 1.6), S('M48 4 Q40 30 52 56', 'bs', 1.6),
+  ...[[16, 21], [41, 30], [26, 43]].map(([x, y]) => [
+    P(`M${x - 9} ${y} L${x - 2} ${y - 5} L${x + 2} ${y - 5} L${x + 9} ${y} ` +
+      `L${x + 2} ${y + 5} L${x - 2} ${y + 5} Z`, 'hi'),        // fibroblasts, spread out along the fibers
+    C(x, y, 2.2, 'ik'),
+  ]).flat(),
+]);
+
+def('bed_reptile_scale', () => {
+  const scale = (x, y) => [
+    P(`M${x - 9} ${y} Q${x - 9} ${y - 10} ${x} ${y - 10} Q${x + 9} ${y - 10} ${x + 9} ${y} ` +
+      `Q${x + 9} ${y + 8} ${x} ${y + 9} Q${x - 9} ${y + 8} ${x - 9} ${y} Z`, 'bs'),
+    S(`M${x - 6} ${y - 4} Q${x} ${y - 7} ${x + 6} ${y - 4}`, 'hi', 1.4),
+  ];
+  return [
+    P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),                      // the epidermis it is all folded out of
+    // Overlapping plates, each row offset over the seam of the one above.
+    ...[[10, 16], [28, 16], [46, 16], [19, 32], [37, 32], [55, 32], [1, 32],
+        [10, 48], [28, 48], [46, 48]].map(([x, y]) => scale(x, y)).flat(),
+  ];
+});
+
+/* ── bedrock drawings: out_1.js ─────────────────────── */
+/* bedrock chunk 1 — the composition tree's own drawings.
+   Where an element of the same name is already drawn, this one is deliberately
+   built from different geometry: the element art shows the organ, these show
+   what the "made of" line actually claims — a lobule rather than a liver
+   silhouette, a spun tube rather than a smear of blood, a five-layer section
+   rather than a domed cornea. */
+
+def('bed_growth_hormone', () => [
+  // Not a steroid: one 191-residue chain folded into a four-helix bundle,
+  // which is what separates it on sight from cholesterol's fused rings.
+  ...[0, 1, 2, 3].map(k => S(
+    Array.from({ length: 9 }, (_, i) =>
+      `${i ? 'L' : 'M'}${n(13 + k * 11 + 3.2 * Math.sin(i * 1.15 + k * 2))} ${n(14 + i * 3.4)}`).join(' '),
+    k % 2 ? 'hi' : 'bs', 4.4)),
+  // the loops that make the four of them one chain and not four proteins
+  S('M13 46 Q18 54 24 46', 'ik', 1.8),
+  S('M35 46 Q40 54 46 46', 'ik', 1.8),
+  S('M24 14 Q30 5 35 14', 'ik', 1.8),
+]);
+
+def('bed_megakaryocyte', () => [
+  C(24, 32, 21, 'bs'),                                          // ten to fifteen red cells wide
+  // one nucleus, copied over past two sets of DNA until it is many-lobed
+  ...[[17, 24], [28, 21], [33, 31], [24, 40], [14, 34]].map(([x, y]) => C(x, y, 7.5, 'lo')),
+  C(21, 28, 3, 'ik'), C(30, 34, 2.6, 'ik'),
+  // and the point of growing that large: its own cytoplasm, breaking off
+  ...[[48, 16], [53, 27], [47, 39], [54, 50]].map(([x, y]) => E(x, y, 4.4, 2.8, 'hi')),
+  E(43, 45, 3.4, 2.2, 'hi'),
+]);
+
+def('bed_pelvis', () => [
+  // the two hip bones, flaring wide into the bowl that takes the whole upper body's weight
+  P('M6 11 Q1 30 16 39 L23 31 Q12 25 13 11 Z', 'bs'),
+  P('M54 11 Q59 30 44 39 L37 31 Q48 25 47 11 Z', 'bs'),
+  // the sacrum and coccyx, wedged in behind and fused to both of them
+  P('M24 9 L36 9 L34 32 L30 42 L26 32 Z', 'lo'),
+  ...[14, 20, 26].map(y => S(`M24.6 ${y} L35.4 ${y}`, 'ik', 1)),
+  C(17, 39, 6, 'hi'), C(43, 39, 6, 'hi'),                       // the sockets the load leaves through, into the legs
+  S('M20 46 Q30 55 40 46', 'bs', 4.4),                          // and the arch closing it in front
+  E(22, 44, 3.4, 2.6, 'ground'), E(38, 44, 3.4, 2.6, 'ground'),
+]);
+
+def('bed_cell', () => [
+  C(30, 30, 18, 'bs'),
+  ring('lo', 30, 30, 20, 2), ring('lo', 30, 30, 16.5, 2),       // the boundary is a bilayer, so: two rings
+  // DNA, coiled up in the middle of it
+  S('M20 21 Q31 26 20 31 Q31 36 20 41', 'ik', 2.2),
+  S('M27 21 Q16 26 27 31 Q16 36 27 41', 'ik', 2.2),
+  // protein, which is most of what the DNA is instructions for
+  C(40, 24, 4.4, 'hi'), C(43, 33, 3.4, 'hi'), C(38, 39, 3.8, 'hi'),
+  ...granules('gh', 7, 1301, [33, 18, 45, 44]),                 // and water, most of the rest
+]);
+
+def('bed_germinal_disc', () => [
+  C(30, 52, 30, 'lo'),                                          // the yolk, curving away below
+  ...granules('gh', 6, 613, [12, 38, 48, 56]),
+  E(30, 24, 15, 8, 'bs'),                                       // a couple of millimetres of cytoplasm, sitting at the animal pole
+  E(30, 23, 9, 4.6, 'hi'),
+  C(30, 22, 2.6, 'ik'),                                         // the one spot on the whole yolk built to become an embryo
+]);
+
+def('bed_urine', () => [
+  P('M10 24 Q20 18 30 24 Q40 30 50 24 L50 47 Q30 54 10 47 Z', 'bs'),   // 91 to 96 per cent water
+  S('M10 24 Q20 18 30 24 Q40 30 50 24', 'hi', 2),
+  // one urea molecule of the many dissolved in it — the nitrogen the body could not keep
+  S('M30 36 L21 42 M30 36 L39 42 M30 36 L30 29', 'ik', 1.8),
+  C(30, 28, 4, 'lo'), C(21, 43, 3.4, 'hi'), C(39, 43, 3.4, 'hi'),
+  ...granules('hi', 5, 415, [13, 31, 47, 47]),                  // and the salts going out with it
+]);
+
+def('bed_chlorophyll', () => [
+  // a photon, arriving
+  S('M4 5 Q10 9 5 13 Q0 17 6 21 Q12 25 8 29', 'hi', 2.2),
+  P('M8 29 L4 24 L13 25 Z', 'hi'),
+  // the ring that catches it, with one magnesium atom at its centre
+  ...[[36, 16], [50, 30], [36, 44], [22, 30]].map(([x, y]) => ring('ik', x, y, 6, 1.8)),
+  ...[[36, 16], [50, 30], [36, 44], [22, 30]].map(([x, y]) => S(`M36 30 L${x} ${y}`, 'ik', 1.6)),
+  C(36, 30, 5.4, CPK.Mg),
+  // and the energy handed straight on to chemistry
+  S('M28 40 L16 52', 'ik', 1.8), C(14, 54, 3.4, 'lo'),
+]);
+
+def('bed_juvenile_hormone', () => [
+  // an isoprenoid chain, not a ring system — this is what tells it from ecdysone at a glance
+  S('M12 44 L22 38 L32 44 L42 38 L50 43', 'ik', 2.4),
+  S('M22 38 L22 29', 'ik', 2), S('M42 38 L42 29', 'ik', 2),     // the methyl branches its isoprene units leave behind
+  // the epoxide closing one end: three atoms in a ring, one of them oxygen
+  S('M50 43 L57 38 L56 48 Z', 'ik', 2),
+  C(55, 43, 3.2, CPK.O),
+  // and the methyl ester at the other
+  S('M12 44 L10 34', 'ik', 2.2),
+  ...double([10, 34], [8, 24], 'ik'),
+  C(8, 24, 3.6, CPK.O),
+  S('M10 34 L20 31', 'ik', 2), C(21, 31, 3.2, CPK.O), S('M23 30 L28 26', 'ik', 1.6),
+]);
+
+def('bed_sodium_metabisulfite', () => [
+  S('M22 30 L38 30', 'ik', 2.8),                                // the S–S bond: this is one ion, not two sulfites
+  ...[[13, 19], [11, 41]].map(([x, y]) => S(`M22 30 L${x} ${y}`, 'ik', 2)),
+  ...[[47, 19], [49, 41], [38, 47]].map(([x, y]) => S(`M38 30 L${x} ${y}`, 'ik', 2)),
+  C(22, 30, 7, CPK.S), C(38, 30, 7, CPK.S),
+  ...[[13, 19], [11, 41], [47, 19], [49, 41], [38, 47]].map(([x, y]) => C(x, y, 4.4, CPK.O)),
+  C(9, 8, 5, CPK.Na), C(52, 8, 5, CPK.Na),                      // the two sodiums, bonded to none of it
+]);
+
+def('bed_fatty_acid', () => [
+  ...[[12, 10], [26, 7], [40, 10], [52, 8]].map(([x, y]) => C(x, y, 3.4, 'gh')),   // water
+  S('M4 18 L56 18', 'gh', 1.2),                                 // and the line it will not cross
+  // the carboxyl head — the only end of it water has any interest in
+  ...double([16, 36], [9, 30], 'ik'),
+  C(9, 30, 4.4, CPK.O),
+  S('M16 36 L13 46', 'ik', 2.2), C(12, 47, 4, CPK.O),
+  // and the tail: carbon and hydrogen, and nothing water can get hold of
+  S('M16 36 L25 42 L34 36 L43 42 L52 36', 'ik', 2.6),
+]);
+
+def('bed_blood', () => [
+  // drawn spun down, because the proportions are the whole fact
+  P('M18 30 L42 30 L42 50 Q42 55 36 55 L24 55 Q18 55 18 50 Z', 'bs'),   // red cells, about 45 per cent
+  E(26, 44, 3.4, 2.2, 'lo'), E(35, 38, 3.4, 2.2, 'lo'), E(30, 50, 3.4, 2.2, 'lo'),
+  P('M18 26 L42 26 L42 30 L18 30 Z', 'hi'),                     // the buffy coat: under one per cent, and nearly all of the defence and the clotting
+  P('M18 7 L42 7 L42 26 L18 26 Z', 'gh'),                       // plasma, about 54 per cent
+  S('M18 5 L18 50 Q18 55 24 55 L36 55 Q42 55 42 50 L42 5', 'ik', 2.2),
+  S('M47 8 L47 25', 'gh', 1.4), S('M47 31 L47 54', 'gh', 1.4),  // the two fractions, near enough to equal
+]);
+
+def('bed_chicken_gizzard', () => [
+  E(30, 32, 20, 19, 'lo'),
+  // two opposed muscle masses, which is the grinding, in a bird with no teeth
+  P('M9 32 Q9 13 22 15 Q27 23 27 32 Q27 41 22 49 Q9 51 9 32 Z', 'bs'),
+  P('M51 32 Q51 13 38 15 Q33 23 33 32 Q33 41 38 49 Q51 51 51 32 Z', 'bs'),
+  // koilin, laid down in layers over the muscle so it does not grind itself apart
+  P('M24 17 Q20 32 24 47 L27.5 47 Q23.5 32 27.5 17 Z', 'hi'),
+  P('M36 17 Q40 32 36 47 L32.5 47 Q36.5 32 32.5 17 Z', 'hi'),
+  ...granules('ik', 5, 917, [27, 24, 33, 41]),                  // and the grit that does the actual work
+]);
+
+def('bed_cornea', () => [
+  S('M4 9 Q17 5 30 9 Q43 13 56 9', 'gh', 2.4),                  // tear film
+  ...[16, 30, 44].map(x => [S(`M${x} 13 L${x} 19`, 'ik', 1.4),
+                            P(`M${x - 2.4} 17 L${x + 2.4} 17 L${x} 21 Z`, 'ik')]).flat(),  // oxygen, arriving the only way it can
+  P('M4 21 L56 21 L56 27 L4 27 Z', 'hi'),                       // epithelium
+  P('M4 27 L56 27 L56 30 L4 30 Z', 'ik'),                       // Bowman's layer
+  P('M4 30 L56 30 L56 43 L4 43 Z', 'bs'),                       // stroma — nine tenths of it
+  ...[8, 20, 32, 44].map(x => S(`M${x} 31 L${x + 8} 42`, 'gh', 1)),
+  P('M4 43 L56 43 L56 46 L4 46 Z', 'ik'),                       // Descemet's membrane
+  P('M4 46 L56 46 L56 51 L4 51 Z', 'lo'),                       // endothelium
+  S('M4 56 L14 56', 'lo', 3.4),                                 // and the nearest blood vessel, stopping at the rim
+]);
+
+def('bed_elephant_brain', () => [
+  E(30, 27, 21, 20, 'bs'),                                      // four and a half to five and a half kilograms of it
+  E(11, 37, 9, 8, 'lo'), E(49, 37, 9, 8, 'lo'),                 // temporal lobes so oversized they bulge out to the sides of the skull
+  ...[16, 23, 30, 37, 44].map(x => S(`M${x} 12 Q${n(x + 3)} 24 ${x} 36`, 'ik', 1.4)),
+  S('M30 8 L30 44', 'ik', 2),                                   // the midline
+  P('M26 44 L34 44 L33 57 L27 57 Z', 'lo'),                     // the stem, which is no bigger than anyone else's
+]);
+
+def('bed_fallopian_tube', () => [
+  P('M7 8 L7 46 L22 33 L22 21 Z', 'bs'),                        // the funnel that lies open over the ovary
+  ...[[7, 8, 2, 3], [7, 17, 1, 13], [7, 27, 0, 27], [7, 37, 1, 41], [7, 46, 2, 51]]
+    .map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'lo', 2.2)),   // fimbriae, fringing it
+  S('M20 27 L34 30', 'bs', 6),
+  ['g', 18, 40, 32, [E(40, 32, 11, 7.5, 'bs')]],                // the ampulla, its widest stretch
+  S('M48 35 Q55 41 55 51', 'bs', 4.4),                          // and on to the uterus
+  C(40, 32, 4.2, 'hi'), C(40, 32, 1.8, 'ik'),                   // the egg, fertilized here rather than in the uterus
+  ...[[24, 25], [30, 27], [48, 39], [52, 46]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(x + 4)} ${n(y - 4)}`, 'gh', 1.4)),        // cilia, beating in time with the muscle
+]);
+
+def('bed_hair_follicle', () => [
+  S('M4 13 L20 13 Q24 5 30 5 Q36 5 40 13 L56 13', 'gh', 1.6),   // the skin, pulled up into a bump — this is the whole of a goosebump
+  S('M30 12 L30 1', 'hi', 2.6),                                 // and the hair, stood straight up by it
+  P('M24 12 L36 12 L35 38 Q35 50 30 53 Q25 50 25 38 Z', 'lo'),  // the sheath
+  P('M27 12 L33 12 L32 38 Q32 46 30 48 Q28 46 28 38 Z', 'bs'),
+  ...[[26, 42], [30, 45], [34, 42], [28, 49], [32, 49]].map(([x, y]) => C(x, y, 2.6, 'hi')),  // the matrix, dividing
+  P('M26 58 Q30 43 34 58 Z', 'ik'),                             // the dermal papilla, pushed up into it
+  S('M29 56 Q30 48 31 56', 'bs', 1.4),                          // with its one capillary loop
+  S('M36 34 Q47 30 49 17', 'hi', 3),                            // the arrector pili, contracted — which is what raised the skin
+]);
+
+def('bed_liver', () => [
+  // one lobule, which is how the organ is actually built
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    return S(`M30 30 L${n(30 + 20 * Math.cos(a))} ${n(30 + 20 * Math.sin(a))}`, 'gh', 5);
+  }),                                                           // sinusoids, running in from every corner
+  hex('ik', 30, 30, 21, 2),
+  C(30, 30, 6, 'bs'),                                           // the central vein
+  ...Array.from({ length: 6 }, (_, i) => {                      // a portal triad at each corner; the bile duct is its epithelial third
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    return C(n(30 + 21 * Math.cos(a)), n(30 + 21 * Math.sin(a)), 3.4, 'hi');
+  }),
+  ring('lo', 30, 30, 27, 2),                                    // and the fibrous capsule wrapping the lot
+]);
+
+def('bed_ovarian_follicle', () => [
+  C(30, 30, 18, 'bs'),
+  ring('lo', 30, 30, 26, 3), ring('lo', 30, 30, 22, 3),         // theca externa and interna, both outside...
+  ring('ik', 30, 30, 19, 1.2),                                  // ...the basement membrane
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * Math.PI * 2;
+    return C(n(30 + 13 * Math.cos(a)), n(30 + 13 * Math.sin(a)), 3.2, 'hi');
+  }),                                                           // granulosa cells, ringing it
+  ...granules('gh', 5, 233, [24, 24, 36, 36]),                  // the antrum filling
+  C(30, 31, 7, 'hi'), C(30, 29, 3, 'ik'),                       // and the one oocyte all of it is for
+]);
+
+def('bed_placenta', () => [
+  P('M4 8 L56 8 L56 52 L4 52 Z', 'lo'),                         // the maternal blood space
+  ...granules('bs', 12, 771, [8, 12, 52, 48]),
+  P('M22 3 L38 3 L38 22 Q38 44 30 51 Q22 44 22 22 Z', 'hi'),    // one villus, grown out of the trophoblast
+  S('M30 5 L30 30 Q25 38 30 45', 'ik', 3),                      // the fetal capillary inside it
+  S('M26 10 L26 30 M34 10 L34 30', 'gh', 1.4),                  // and the barrier the two bloods never cross
+]);
+
+def('bed_skeleton', () => [
+  C(30, 9, 6, 'hi'),
+  P('M26 14 L34 14 L33 19 L27 19 Z', 'hi'),                     // the jaw, the one bone left free
+  S('M30 17 L30 40', 'bs', 3.4),                                // the column
+  ...[22, 26, 30, 34].flatMap(y => [
+    S(`M29 ${y} Q18 ${y + 2} 17 ${y + 7}`, 'lo', 1.6),
+    S(`M31 ${y} Q42 ${y + 2} 43 ${y + 7}`, 'lo', 1.6),
+  ]),
+  S('M24 21 L13 33', 'hi', 2.4), S('M36 21 L47 33', 'hi', 2.4),
+  P('M22 40 Q30 45 38 40 L36 47 L24 47 Z', 'bs'),               // the bowl at the bottom of it
+  S('M26 47 L23 58', 'hi', 3.4), S('M34 47 L37 58', 'hi', 3.4),
+]);
+
+def('bed_sweat_gland', () => [
+  S('M4 10 L56 10', 'gh', 1.4),                                 // the skin
+  // eccrine: nearly everywhere, coiled deep, and opening onto a pore of its own
+  S('M18 10 L18 28', 'ik', 2.4),
+  S('M18 28 Q7 31 12 37 Q23 40 12 45 Q5 49 16 52 Q27 51 21 43 Q16 35 22 32', 'bs', 3.2),
+  C(15, 5, 1.8, 'gh'), C(20, 4, 1.4, 'gh'),                     // evaporating, which is how it cools you
+  // apocrine: only the armpit and groin, thicker, and emptying into a hair instead
+  S('M44 3 Q42 20 44 42', 'hi', 2.4),
+  S('M44 26 Q52 28 50 33', 'ik', 2.2),
+  E(50, 42, 8, 6.5, 'lo'),
+  S('M45 41 Q50 46 55 41', 'ik', 1.2),
+  // and the bacteria waiting at its opening, which are what make the smell —
+  // the secretion itself has none
+  ...[[50, 6], [54, 3], [53, 9], [48, 1]].map(([x, y]) => C(x, y, 1.5, 'ik')),
+]);
+
+def('bed_urethra', () => [
+  S('M6 8 L54 8', 'lo', 4),                                     // the bladder it drains
+  P('M16 11 Q11 33 18 55 L24 55 Q18 33 23 11 Z', 'bs'),         // muscular wall...
+  P('M44 11 Q49 33 42 55 L36 55 Q42 33 37 11 Z', 'bs'),         // ...on both sides of the lumen
+  // transitional cells at the bladder end, rounded and stacked several deep
+  C(27, 15, 3, 'hi'), C(33, 15, 3, 'hi'), C(26, 21, 2.8, 'hi'), C(34, 21, 2.8, 'hi'),
+  // flattening the closer it gets to the outside
+  ...[28, 36, 44, 52].map(y => E(25, y, 3.4, 1.2, 'hi')),
+  ...[32, 40, 48, 55].map(y => E(35, y, 3.4, 1.2, 'hi')),
+  S('M27 58 L33 58', 'ik', 2),                                  // and the opening, four centimetres down or twenty
+]);
+
+def('bed_whale_blubber', () => [
+  P('M4 6 L56 6 L56 12 L4 12 Z', 'lo'),                         // skin
+  P('M4 12 L56 12 L56 47 L4 47 Z', 'bs'),                       // and then up to thirty centimetres of this
+  ...[[12, 20], [26, 18], [40, 21], [52, 19], [10, 31], [24, 30], [38, 32], [51, 30], [16, 41], [31, 41], [46, 42]]
+    .map(([x, y]) => C(x, y, 5, 'hi')),
+  ...[0, 1, 2, 3].map(i => S(`M${5 + i * 15} 12 Q${13 + i * 15} 30 ${5 + i * 15} 47`, 'ik', 1.2)),  // collagen, which is why it does not squash flat
+  S('M4 26 Q30 22 56 28', 'lo', 1.6), S('M4 39 Q30 43 56 37', 'lo', 1.6),   // and a blood supply all the way through it
+  P('M4 47 L56 47 L56 57 L4 57 Z', 'gh'),                       // muscle, underneath
+]);
+
+def('bed_polypeptide', () => [
+  S('M6 28 L54 28', 'ik', 2),
+  ...[[6, 'hi'], [14, 'bs'], [22, 'bs'], [30, 'lo'], [38, 'hi'], [46, 'lo'], [54, 'bs']]
+    .map(([x, r], i) => C(x, 28, i % 2 ? 5 : 4, r)),            // a line of them, and the order is the information
+  S('M6 28 L2 21', 'ik', 1.6), S('M54 28 L58 35', 'ik', 1.6),   // one end is not the other: N to C
+  S('M4 48 L56 48', 'gh', 2),                                   // the order, written down where it came from
+  ...[6, 14, 22, 30, 38, 46, 54].flatMap(x =>
+    [-2.4, 0, 2.4].map(d => S(`M${n(x + d)} 45 L${n(x + d)} 51`, 'gh', 1))),   // three bases to a residue
+]);
+
+def('bed_eggshell_membrane', () => [
+  S('M8 2 Q3 30 8 58', 'lo', 4),                                // the shell, at the blunt end
+  P('M9 10 Q14 21 24 26 Q39 31 56 31 L56 34 Q39 34 24 39 Q14 45 9 55 Z', 'ground'),   // the air cell, opened as the contents cool and shrink after laying
+  S('M56 30 Q39 29 24 25 Q14 20 9 9', 'bs', 3),                 // the outer sheet, against the shell
+  S('M56 34 Q39 35 24 40 Q14 46 9 56', 'hi', 3),                // the inner one, against the white
+  ...[[26, 26], [36, 29], [46, 30]].map(([x, y]) => S(`M${x} ${n(y - 4)} L${n(x + 6)} ${n(y + 3)}`, 'ik', 1)),
+  ...[[26, 39], [36, 35], [46, 34]].map(([x, y]) => S(`M${x} ${n(y + 4)} L${n(x + 6)} ${n(y - 3)}`, 'ik', 1)),
+]);
+
+def('bed_vitelline_membrane', () => [
+  C(30, 32, 20, 'hi'),                                          // the yolk it is holding in shape
+  ring('bs', 30, 32, 23, 2.4), ring('lo', 30, 32, 26, 2.4),     // two layers of its own glycoproteins — structurally nothing like a cell membrane
+  ...[-70, 25, 155].map(deg => {
+    const a = (deg * Math.PI) / 180;
+    return [
+      S(`M${n(30 + 31 * Math.cos(a))} ${n(32 + 31 * Math.sin(a))} L${n(30 + 17 * Math.cos(a))} ${n(32 + 17 * Math.sin(a))}`, 'ik', 1.8),
+      C(n(30 + 15 * Math.cos(a)), n(32 + 15 * Math.sin(a)), 2.6, 'lo'),
+    ];
+  }).flat(),                                                    // water and nutrients, crossing in from the white
+]);
+
+/* ── bedrock drawings: out_2.js ─────────────────────── */
+/* bedrock compounds, chunk 2 — the composition tree's own drawings ─────────
+ * Organs are drawn cut open or in section, the way the rest of the set does
+ * it; molecules keep the CPK atoms. Where an element of the same name is
+ * already drawn, this one is drawn from the bedrock fact instead, so the two
+ * agree about the subject without being the same picture.
+ */
+
+def('bed_hemoglobin', () => [
+  ...[[19, 21], [41, 21], [19, 43], [41, 43]].map(([x, y]) => E(x, y, 12, 11, 'lo')),   // four folded chains
+  ...[[19, 21], [41, 21], [19, 43], [41, 43]].map(([x, y]) => hex('ik', x, y, 6, 1.6)), // each cradling one heme ring
+  ...[[19, 21], [41, 21], [19, 43], [41, 43]].map(([x, y]) => C(x, y, 3.2, CPK.Fe)),    // and the iron at its centre
+  S('M41 15 L48 9', 'ik', 1.8), C(49, 8, 3.4, CPK.O),                                   // which is the part that takes the oxygen
+]);
+
+def('bed_monocyte', () => [
+  C(28, 31, 21, 'bs'),                                          // the largest cell in circulation
+  C(28, 29, 13, 'lo'),                                          // its nucleus...
+  C(26, 19, 8, 'bs'),                                           // ...bitten into a kidney by this notch, which is how you know it
+  ...granules('hi', 6, 311, [16, 36, 40, 46]),
+  P('M50 45 Q58 42 56 50 Q54 57 47 54 Q43 50 50 45 Z', 'gh'),   // and the macrophage it becomes on leaving the blood
+]);
+
+def('bed_rib_cage', () => [
+  E(30, 32, 15, 18, 'gh'),                                      // the heart and lungs it is built around, not merely near
+  ...Array.from({ length: 8 }, (_, i) => {
+    const y = n(12 + i * 4.6), w = n(13 + Math.sin(((i + 1) / 9) * Math.PI) * 9);
+    return [S(`M30 ${y} Q${n(30 - w)} ${n(y + 1)} ${n(30 - w * 0.82)} ${n(y + 11)}`, 'bs', 2.2),
+            S(`M30 ${y} Q${n(30 + w)} ${n(y + 1)} ${n(30 + w * 0.82)} ${n(y + 11)}`, 'bs', 2.2)];
+  }).flat(),
+  P('M27 10 L33 10 L33 35 L27 35 Z', 'hi'),                     // the sternum, closing the cage in front
+]);
+
+def('bed_cone_cell', () => [
+  ...[[15, 'lo'], [30, 'bs'], [45, 'hi']].map(([x, r]) => [
+    P(`M${x - 5} 32 L${x + 5} 32 L${x + 2.5} 13 Q${x} 9 ${x - 2.5} 13 Z`, r),   // the cone the cell is named for...
+    P(`M${x - 4} 32 L${x + 4} 32 L${x + 4} 42 L${x - 4} 42 Z`, r),              // ...on the inner segment
+    E(x, 47, 4.6, 5, r),
+    P(`M${x - 4} 53 L${x + 4} 53 L${x + 4} 56 L${x - 4} 56 Z`, r),              // and the foot where it reports
+  ]).flat(),
+  ...[15, 19, 23, 27, 31].map(y => S(`M25.5 ${y} L34.5 ${y}`, 'ik', 1)),        // the disc stack, each disc loaded with one opsin
+]);                                                                              // three cells, three opsins: red, green, blue, and nothing else to it
+
+def('bed_yolk', () => [
+  S('M2 24 Q7 18 11 24 Q15 30 11 36 Q7 42 2 36', 'gh', 2.2),    // the chalazae, holding it centred in the white
+  S('M58 24 Q53 18 49 24 Q45 30 49 36 Q53 42 58 36', 'gh', 2.2),
+  C(30, 32, 20, 'bs'),                                          // stored fat and protein, in one sphere
+  ring('hi', 30, 32, 20, 2),                                    // wrapped in the vitelline membrane
+  C(19, 20, 5.5, 'lo'), C(19, 20, 2.6, 'hi'),                   // and one disc of living cytoplasm, sitting on the surface
+]);
+
+def('bed_yolk_mass', () => [
+  ...[[14, 15, 8], [36, 13, 9], [50, 26, 7], [19, 36, 10], [43, 41, 8], [12, 52, 6], [33, 55, 5]]
+    .map(([x, y, r]) => C(x, y, r, 'hi')),                      // lipid granules, outweighing the protein two to one
+  ...granules('lo', 15, 907, [5, 5, 55, 55]),                   // protein and enzyme, packed in between
+  ...[[14, 15], [36, 13], [19, 36]].map(([x, y]) => C(x, y, 3.2, 'bs')),
+]);                                                             // no membrane and no edge: it is the inside of the yolk, not the yolk
+
+def('bed_cortisol', () => [
+  hex('ik', 15, 34, 8, 2), hex('ik', 29, 28, 8, 2), hex('ik', 43, 34, 8, 2),
+  S(pentaPath(52, 27, .28), 'ik', 2),                           // three six-rings and a five: a steroid, not a peptide
+  S('M8 38 L4 44', 'ik', 1.8), C(4, 45, 3.2, CPK.O),            // the ketone on the A ring
+  S('M29 20 L29 13', 'ik', 1.8), C(29, 12, 3.2, CPK.O),         // the 11-hydroxyl, the part that quiets the immune system
+  S('M55 21 L54 15', 'ik', 1.8), C(54, 13, 3.2, CPK.O),         // and the ketol arm that raises blood sugar
+]);
+
+def('bed_melatonin', () => [
+  hex('ik', 20, 30, 9, 2.2),                                    // the benzene half...
+  S('M27.8 25.5 L38 22 L44 30 L38 38 L27.8 34.5 Z', 'ik', 2.2), // ...and the five-ring fused to it: an indole, like the serotonin it is made from
+  C(44, 30, 3.4, CPK.N),
+  S('M38 22 L45 15', 'ik', 2), C(45, 15, 3.4, CPK.N),
+  S('M45 15 L53 18', 'ik', 2), S('M53 18 L53 11', 'ik', 2), C(53, 10, 3.2, CPK.O),   // the acetyl group
+  S('M12 25 L6 19', 'ik', 2), C(5, 18, 3.2, CPK.O),             // and the methoxy serotonin does not have
+]);
+
+def('bed_sodium_sulfite', () => [
+  C(22, 28, 7, CPK.S),                                          // sulfur, pyramidal, with three oxygens under it
+  ...[[10, 38], [22, 45], [34, 37]].map(([x, y]) => [S(`M22 28 L${x} ${y}`, 'ik', 2), C(x, y, 4.4, CPK.O)]).flat(),
+  C(46, 16, 6, CPK.Na), C(49, 34, 6, CPK.Na),                   // two sodiums, held by charge rather than by a bond
+  S('M43 16 L49 16 M46 13 L46 19', 'ik', 1.4),
+  S('M46 34 L52 34 M49 31 L49 37', 'ik', 1.4),
+]);
+
+def('bed_glucose', () => {
+  const p = [];
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    p.push([n(30 + 16 * Math.cos(a)), n(34 + 13 * Math.sin(a))]);
+  }
+  return [
+    S('M' + p.map(q => q.join(' ')).join(' L') + ' Z', 'ik', 2.4),                    // the ring, drawn flat the way Haworth drew it
+    C(p[5][0], p[5][1], 4.4, CPK.O),                                                 // the oxygen that closes it
+    ...[0, 1, 2].map(i => [S(`M${p[i][0]} ${p[i][1]} L${p[i][0]} ${n(p[i][1] + 7)}`, 'ik', 1.8),
+                           C(p[i][0], n(p[i][1] + 8), 3.2, CPK.O)]).flat(),
+    S(`M${p[3][0]} ${p[3][1]} L${p[3][0]} ${n(p[3][1] - 7)}`, 'ik', 1.8), C(p[3][0], n(p[3][1] - 8), 3.2, CPK.O),
+    S(`M${p[4][0]} ${p[4][1]} L30 12`, 'ik', 1.8), S('M30 12 L38 8', 'ik', 1.8), C(39, 7, 3.2, CPK.O),
+  ];                                                                                 // five hydroxyls and one arm — what a plant makes out of air
+});
+
+def('bed_starch', () => {
+  const at = [0, 1, 2, 3, 4].map(i => [8 + i * 11, i % 2 ? 36 : 24]);
+  return [
+    hex('gh', -3, 36, 7, 1.8), hex('gh', 63, 36, 7, 1.8),                 // the chain runs off both edges: thousands of units, not five
+    ...at.map(([x, y]) => hex('ik', x, y, 7, 2)),
+    ...at.slice(0, 4).map(([x, y], i) => {
+      const [x2, y2] = at[i + 1];
+      return [S(`M${n(x + 5)} ${n(y + (i % 2 ? -4 : 4))} L${n(x2 - 5)} ${n(y2 + (i % 2 ? 4 : -4))}`, 'ik', 1.8),
+              C(n((x + x2) / 2), n((y + y2) / 2), 3, CPK.O)];             // each joint is one shared oxygen
+    }).flat(),
+  ];
+});
+
+def('bed_bone_marrow', () => [
+  P('M6 5 L17 5 L17 55 L6 55 Z', 'hi'), P('M43 5 L54 5 L54 55 L43 55 Z', 'hi'),   // the bone, split open the long way
+  P('M17 5 L43 5 L43 55 L17 55 Z', 'lo'),                                          // red marrow filling the cavity
+  C(30, 15, 6, 'bs'),                                                              // one hematopoietic stem cell...
+  S('M30 21 L23 27 M30 21 L37 27 M22 33 L24 40 M38 33 L36 40', 'ik', 1.4),
+  ...[[22, 30], [38, 30], [25, 44], [35, 44]].map(([x, y]) => C(x, y, 4.4, 'bs')), // ...and five hundred billion a day out of it
+  ...[[21, 51], [30, 52], [39, 50]].map(([x, y]) => C(x, y, 4, 'gh')),             // yellow marrow, further out, doing none of this
+]);
+
+def('bed_chicken_heart', () => [
+  S('M25 14 L19 4', 'lo', 7),                                              // the great vessels, thick, and both off the same shoulder
+  S('M31 12 Q44 9 46 18', 'lo', 5),
+  P('M16 16 Q30 4 44 16 L37 40 Q33 55 30 57 Q27 55 23 40 Z', 'bs'),        // a cone, not a fist — and drawn open, because the count is the point
+  P('M18 20 Q24 17 28 19 L28 27 L19 27 Z', 'gh'), P('M42 20 Q36 17 32 19 L32 27 L41 27 Z', 'gh'),  // two atria...
+  P('M20 30 L28 30 L28 45 Q25 41 22 34 Z', 'gh'), P('M40 30 L32 30 L32 45 Q35 41 38 34 Z', 'gh'),  // ...over two ventricles
+  S('M30 14 L30 52', 'ik', 1.8),                                           // and a septum that closes all the way, as a mammal's does
+]);
+
+def('bed_cow_abomasum', () => [
+  ...[[10, 9], [22, 6], [34, 9]].map(([x, y]) => E(x, y, 7, 5, 'gh')),     // the three chambers that ferment, ahead of it
+  S('M40 12 Q46 15 46 21', 'gh', 2),
+  P('M46 20 Q52 32 44 45 Q34 54 22 50 Q10 44 12 32 Q14 22 24 20 Q34 18 40 26 Z', 'bs'),
+  ...[[25, 30], [34, 28], [38, 37], [27, 42], [18, 34]].map(([x, y]) => E(x, y, 3.2, 2, 'hi')),  // gastric glands — the only chamber that has any
+  ...granules('lo', 7, 517, [18, 34, 42, 48]),                             // and the acid they put into it
+]);
+
+def('bed_elephant_heart', () => [
+  S('M27 7 Q19 1 11 2', 'lo', 6), S('M41 10 Q50 5 58 9', 'lo', 5),                  // twenty kilos of it, and the vessels to match
+  P('M23 5 Q53 3 54 26 Q55 43 43 58 L34 45 L19 57 Q3 41 5 24 Q6 8 23 5 Z', 'bs'),   // the apex comes to two points instead of one
+  S('M31 13 Q25 27 33 44', 'lo', 2.6),                                              // a coronary running down to each of them
+  S('M31 13 Q42 26 42 41', 'lo', 2.2),
+  E(17, 22, 5, 3, 'hi'), E(44, 33, 4.4, 2.6, 'hi'),
+]);
+
+def('bed_fish_gill', () => [
+  S('M14 5 Q8 30 14 55', 'lo', 4),                                          // the arch
+  ...Array.from({ length: 9 }, (_, i) => S(`M13 ${9 + i * 5} L${44 + (i % 2) * 4} ${9 + i * 5}`, 'bs', 2.4)),  // filaments, comb-like
+  ...Array.from({ length: 9 }, (_, i) => {
+    const y = 9 + i * 5;
+    return S(`M21 ${y - 2} L21 ${y + 2} M27 ${y - 2} L27 ${y + 2} M33 ${y - 2} L33 ${y + 2} M39 ${y - 2} L39 ${y + 2}`, 'hi', 1);
+  }),                                                                        // lamellae, stacked along every one of them
+  S('M52 8 L52 48', 'gh', 2), P('M52 55 L48 46 L56 46 Z', 'gh'),             // water going down...
+  S('M5 50 L5 12', 'ik', 2), P('M5 5 L1 14 L9 14 Z', 'ik'),                  // ...against blood going up, which is what recovers the oxygen
+]);
+
+def('bed_heart', () => [
+  S('M24 10 Q18 3 12 2', 'lo', 6), S('M40 12 Q48 6 54 8', 'lo', 5),          // the great vessels, thick and off to one side
+  P('M24 8 Q47 7 50 25 Q53 43 32 54 Q18 46 13 31 Q8 13 24 8 Z', 'bs'),
+  S('M19 17 Q34 27 29 47', 'lo', 3.4), S('M31 15 Q44 30 37 49', 'lo', 3.4),  // the muscle winds around the chambers in a spiral, not in rows
+  S('M10 26 Q30 21 47 27', 'gh', 1.4), S('M15 41 Q33 44 48 35', 'gh', 1.4),  // collagen, holding the wall's shape
+  C(39, 15, 3.6, 'hi'),                                                       // its own pacemaker, needing nothing from outside...
+  S('M39 19 L34 27 M34 27 L25 39 M34 27 L40 42', 'ik', 1.8),                  // ...and the path the beat takes down from it
+]);
+
+def('bed_lung', () => [
+  P('M28 17 Q12 19 10 34 Q8 50 22 52 Q28 50 28 34 Z', 'gh'),
+  P('M32 17 Q48 19 50 34 Q52 50 38 52 Q32 50 32 34 Z', 'gh'),
+  S('M30 3 L30 20', 'ik', 4),                                                // the airway, lined the whole way down
+  S('M30 20 L20 28 M30 20 L40 28 M20 28 L15 38 M20 28 L23 38 M40 28 L45 38 M40 28 L37 38', 'ik', 2),
+  S('M16 31 L24 31 M36 31 L44 31', 'lo', 1.6),                               // smooth muscle ringing the bronchioles, setting their width
+  ...[[15, 42], [23, 42], [37, 42], [45, 42]].flatMap(([x, y]) =>
+    [C(x, y, 4, 'bs'), C(x - 3.4, y + 4.4, 3, 'bs'), C(x + 3.4, y + 4.4, 3, 'bs')]),   // and alveoli in bunches at the ends
+]);
+
+def('bed_whale_lung', () => [
+  P('M30 3 Q46 5 46 14 Q46 25 30 27 Q14 25 14 14 Q14 5 30 3 Z', 'bs'),       // one breath swaps nine tenths of this...
+  ...[24, 30, 36].map(x => S(`M${x} 29 L${x} 33`, 'ik', 2)),
+  ...[24, 30, 36].map(x => P(`M${x - 3} 33 L${x + 3} 33 L${x} 38 Z`, 'ik')),  // ...but a hundred metres down the water presses it
+  P('M14 43 Q30 40.5 46 43 Q30 45.5 14 43 Z', 'lo'),                          // nearly flat, so it holds nothing worth having
+  P('M6 52 Q30 47.5 54 52 Q30 58 6 52 Z', 'hi'),                              // the oxygen a deep dive runs on is in the muscle instead,
+  S('M14 51 Q30 48.7 46 51', 'lo', 1.2),
+  ...[17, 26, 35, 44].map(x => C(x, 54, 1.7, 'lo')),                          // bound to myoglobin, down here and not up there
+]);
+
+def('bed_ovariole', () => [
+  S('M14 4 Q13 28 16 46', 'gh', 7), S('M46 4 Q47 28 44 46', 'gh', 7),         // the ovary is a bundle of these, not one sac
+  S('M16 46 Q30 52 30 58 M44 46 Q30 52 30 58', 'gh', 3),                      // all of them feeding one duct
+  C(30, 7, 5, 'hi'),                                                           // the germarium: stem cells at the tip
+  ...[[19, 6], [30, 8], [43, 10]].map(([y, r], i) => [
+    C(30, y, r, 'bs'), C(n(30 - r * 0.45), n(y - r * 0.45), n(r * 0.34), 'lo'),
+  ]).flat(),                                                                   // and one oocyte after another, each older than the one above it
+  S('M30 12 L30 14 M30 25 L30 27 M30 36 L30 38', 'ik', 1.6),
+]);
+
+def('bed_prostate', () => [
+  P('M30 11 Q49 14 49 30 Q49 46 30 51 Q11 46 11 30 Q11 14 30 11 Z', 'lo'),    // fibrous and smooth-muscle coat
+  P('M30 15 Q45 18 45 30 Q45 42 30 47 Q15 42 15 30 Q15 18 30 15 Z', 'bs'),    // glandular tissue inside it
+  ...[[21, 23], [39, 23], [19, 37], [41, 37], [22, 31], [38, 31]].map(([x, y]) => C(x, y, 3.4, 'hi')),  // acini — a third of semen by volume
+  S('M30 2 L30 58', 'gh', 4),                                                  // the urethra runs straight through the middle...
+  S('M26 30 L34 30', 'ik', 2.6),                                               // ...and this is the switch between the two things it carries
+]);
+
+def('bed_skin', () => [
+  P('M2 13 L58 13 L58 24 L2 24 Z', 'hi'),                                      // epidermis: dead keratin, stacked
+  ...[9, 17, 25, 33, 41, 49].map(x => S(`M${x} 13 L${x} 24`, 'ik', 0.8)),
+  P('M2 24 L58 24 L58 57 L2 57 Z', 'bs'),                                      // dermis, taking the stress
+  S('M4 40 Q30 36 56 40', 'lo', 1.4), S('M4 50 Q30 47 56 50', 'lo', 1.4),
+  S('M41 10 L35 43', 'lo', 2.6), E(35, 46, 4.4, 5, 'lo'),                      // one hair, down to its root...
+  S('M35 34 Q27 32 24 26', 'ik', 2.2),                                         // ...with the muscle that stands it up
+  S('M12 57 L12 38 Q12 32 17 30', 'ik', 1.6), C(18, 29, 2.2, 'ik'),            // and a nerve ending, arriving just under the surface
+]);
+
+def('bed_testis', () => [
+  E(29, 32, 20, 23, 'bs'),
+  ...[0, 1, 2].map(i => S(`M13 ${18 + i * 10} Q30 ${11 + i * 10} 30 ${18 + i * 10} Q30 ${25 + i * 10} 46 ${18 + i * 10}`, 'lo', 3.4)),  // seminiferous tubule, folded back and forth on itself
+  S('M13 18 Q9 23 13 28 M46 28 Q50 33 46 38 M13 38 Q9 43 13 48', 'lo', 3.4),
+  ...granules('hi', 8, 811, [14, 16, 45, 48]),                                               // Leydig cells in between, making testosterone instead
+]);
+
+def('bed_uterus', () => [
+  P('M13 14 Q30 22 47 14 L43 36 Q41 51 30 53 Q19 51 17 36 Z', 'gh'),          // perimetrium, a thin coat over the outside
+  P('M17 18 Q30 25 43 18 L39 35 Q38 47 30 49 Q22 47 21 35 Z', 'bs'),          // myometrium, thick enough to deliver a baby
+  P('M22 25 Q30 31 38 25 L35 34 Q34 43 30 44 Q26 43 25 34 Z', 'hi'),          // endometrium, shed every month one does not land
+  S('M13 14 Q5 8 9 2', 'lo', 3), S('M47 14 Q55 8 51 2', 'lo', 3),
+  C(31, 32, 2.6, 'ik'),                                                        // and the blastocyst the lining is kept for
+]);
+
+def('bed_epithelial_tissue', () => {
+  const poly = (cx, cy, r) => {
+    const p = [];
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI / 6 + (i * Math.PI) / 3;
+      p.push(`${n(cx + r * Math.cos(a))} ${n(cy + r * Math.sin(a))}`);
+    }
+    return `M${p.join(' L')} Z`;
+  };
+  const cells = [];
+  for (let r = 0; r < 4; r++) {
+    const y = n(4 + r * 16.5), off = r % 2 ? 11 : 1.5;
+    for (let c = -1; c < 4; c++) cells.push([n(off + c * 19), y]);
+  }
+  return [                                                                     // the face of the sheet, not a section through it
+    ...cells.map(([x, y]) => P(poly(x, y, 11), 'bs')),
+    ...cells.map(([x, y]) => S(poly(x, y, 11), 'ik', 1.6)),                     // packed edge to edge: the junction is the only gap there is
+    ...cells.filter(([x, y]) => x > 2 && x < 58 && y > 2 && y < 58).map(([x, y]) => C(x, y, 3.4, 'lo')),
+  ];
+});
+
+def('bed_spiracle', () => [
+  P('M1 8 L23 8 L23 25 L1 25 Z', 'lo'), P('M37 8 L59 8 L59 25 L37 25 Z', 'lo'),  // the exoskeleton: the opening is a gap in it, not a fitting on it
+  S('M23 9 Q29 16.5 23 24', 'bs', 3.4), S('M37 9 Q31 16.5 37 24', 'bs', 3.4),    // its own closer muscle, on the point of shutting
+  S('M23 25 Q26 38 24 54 M37 25 Q34 38 36 54', 'hi', 2.6),                       // the trachea carrying air on inward
+  ...[32, 40, 48].map(y => S(`M25 ${y} L35 ${y}`, 'hi', 1.4)),                   // held open by its own rings
+  S('M30 1 L30 6', 'gh', 2), P('M30 14 L26 6 L34 6 Z', 'gh'),                    // air in, water kept from going out
+]);
+
+/* ── bedrock drawings: out_3.js ─────────────────────── */
+/* bedrock chunk 03 — the composition tree's own drawings ──────────────────
+   Where an element of the same name is already drawn, this one is drawn from
+   a different angle rather than recoloured: the skull from above with the
+   fontanelles still open, the membrane closed into the inside it exists to
+   make, the vagina in cross-section through its four walls, the brain from
+   above rather than in profile. Two of these share a name with a vertebrate
+   organ and are not one — the trachea and the hindgut here are an insect's,
+   so they are drawn as an insect's: a coil of taenidia, and a rectum
+   wringing the last water out of a pellet. */
+
+/* assembly ───────────────────────────────────────────────────────────────── */
+// The bilayer closed into a circle, because the point of it is the inside.
+def('bed_membrane', () => [
+  C(30, 30, 12, 'gh'),                                              // the inside it makes
+  ...Array.from({ length: 14 }, (_, i) => {
+    const a = (i * Math.PI * 2) / 14, co = Math.cos(a), si = Math.sin(a);
+    return [
+      S(`M${n(30 + 15.5 * co)} ${n(30 + 15.5 * si)} L${n(30 + 21.5 * co)} ${n(30 + 21.5 * si)}`, 'lo', 1.6),
+      C(n(30 + 14 * co), n(30 + 14 * si), 2.8, 'bs'),                // inner leaflet heads, facing in
+      C(n(30 + 23 * co), n(30 + 23 * si), 2.8, 'bs'),                // outer leaflet heads, facing the water
+    ];
+  }).flat(),
+  E(48.5, 30, 4.4, 7, 'hi'), E(30, 11.5, 7, 4.4, 'hi'),             // proteins, sunk right through it
+]);
+
+/* blood cell ─────────────────────────────────────────────────────────────── */
+// The lobed nucleus is the whole identification, so it gets the middle.
+def('bed_neutrophil', () => [
+  C(30, 31, 19, 'bs'),
+  ...granules('hi', 11, 331, [16, 18, 44, 44]),                     // the granules it is named for
+  ...[[24, 22], [38, 25], [39, 38], [25, 40]].map(([x, y]) => C(x, y, 5.4, 'lo')),
+  S('M26 25 L36 27 M39 30 L38 34 M36 40 L28 40', 'lo', 2),          // four lobes, joined by threads
+]);
+
+/* bone ───────────────────────────────────────────────────────────────────── */
+// From above, in infancy: the plates still separate and the fontanelles open.
+def('bed_skull', () => [
+  E(30, 30, 20, 25, 'bs'),
+  S('M30 6 L30 21', 'ik', 2.2),                                     // metopic suture, front
+  S('M11 27 L24 27 M36 27 L49 27', 'ik', 2.2),                      // coronal, across
+  S('M30 34 L30 40 M30 50 L30 54', 'ik', 2.2),                      // sagittal, back
+  S('M14 44 L26 46 M46 44 L34 46', 'ik', 2.2),                      // lambdoid
+  P('M30 21 L36 27 L30 34 L24 27 Z', 'ground'),                     // the anterior fontanelle, still open
+  P('M30 41 L34 45 L30 50 L26 45 Z', 'ground'),                     // and the posterior one
+]);
+
+/* cell ───────────────────────────────────────────────────────────────────── */
+// Drawn mid-bend, because a hair cell that is not bending is doing nothing.
+def('bed_hair_cell', () => [
+  wave('gh', 13, 3, 22),                                            // the vibration arriving
+  ...[[23, 7], [27, 11], [31, 14], [35, 11]].map(([x, h]) =>
+    S(`M${x} 31 Q${n(x + 3)} ${n(31 - h * 0.75)} ${n(x + 7)} ${n(31 - h)}`, 'hi', 1.8)),  // the tuft, laid over
+  ...[[38, 20], [42, 17]].map(([x, y]) => C(x, y, 1.8, 'ik')),      // ions, through the channels it just opened
+  P('M21 31 L39 31 L36 52 L24 52 Z', 'bs'),
+  S('M34 50 L46 56', 'lo', 2.4),                                    // the fibre out, and no way to replace any of it
+]);
+
+/* fluid ──────────────────────────────────────────────────────────────────── */
+// Not a puddle: a gel, held up by a tangle you can draw.
+def('bed_albumen_thick', () => [
+  E(30, 36, 24, 13, 'gh'),                                          // the thin white it sits in
+  E(30, 33, 17, 12, 'bs'),                                          // the gel body
+  S('M16 34 Q24 26 32 36 Q40 46 45 33', 'hi', 1.4),                 // four times the ovomucin —
+  S('M18 40 Q28 34 34 42 Q40 48 46 40', 'hi', 1.4),                 // the tangle that stops it running
+  S('M22 28 Q30 34 40 27', 'hi', 1.4),
+  E(24, 29, 5, 3, 'hi'),
+]);
+
+/* joint ──────────────────────────────────────────────────────────────────── */
+// Two joints in one, and the crossed ligaments nothing else has.
+def('bed_knee', () => [
+  S('M30 5 L30 23', 'hi', 7),                                       // femur
+  C(23, 27, 7, 'hi'), C(37, 27, 7, 'hi'),                           // its two condyles
+  S('M17 33 A7 7 0 0 0 29 33 M31 33 A7 7 0 0 0 43 33', 'lo', 2.4),  // cartilage, capping both
+  P('M17 37 L43 37 L43 41 L17 41 Z', 'hi'),                         // tibial plateau
+  S('M30 41 L30 56', 'hi', 6),                                      // tibia
+  S('M24 28 L36 37 M36 28 L24 37', 'bs', 2.2),                      // the cruciates, crossing inside
+  E(9, 29, 4.5, 8, 'lo'),                                           // patella, levering the quadriceps
+  ...granules('gh', 5, 419, [22, 30, 40, 36]),                      // synovial fluid, throughout
+]);
+
+/* molecule ───────────────────────────────────────────────────────────────── */
+// Two sulfurs, welded — an SO2 group on one, an SO3 group on the other.
+def('bed_disulfite_ion', () => [
+  S('M21 31 L39 31', 'ik', 3.4),                                    // the sulfur-sulfur bond itself
+  S('M21 31 L9 21 M21 31 L11 44', 'ik', 2.4),
+  S('M39 31 L51 21 M39 31 L49 44 M39 31 L37 47', 'ik', 2.4),
+  C(9, 21, 5, CPK.O), C(11, 44, 5, CPK.O),
+  C(51, 21, 5, CPK.O), C(49, 44, 5, CPK.O), C(37, 47, 5, CPK.O),
+  C(21, 31, 8, CPK.S), C(39, 31, 8, CPK.S),
+]);
+
+// A book of sheets with the top one already lifting off.
+def('bed_mica', () => [
+  ...[0, 1, 2].map(i =>
+    P(`M12 ${46 - i * 5} L48 ${42 - i * 5} L48 ${46 - i * 5} L12 ${50 - i * 5} Z`, i % 2 ? 'lo' : 'bs')),
+  P('M13 30 L45 13 L47 17 L15 34 Z', 'hi'),                         // one split away, thin enough to see through
+  S('M15 31 L44 15.5', 'gh', 1.2),
+]);
+
+// Pyramidal, not flat — and the lone pair is why.
+def('bed_sulfite_ion', () => [
+  S('M30 30 L13 41 M30 30 L47 41 M30 30 L30 50', 'ik', 2.6),
+  C(13, 41, 5.4, CPK.O), C(47, 41, 5.4, CPK.O), C(30, 50, 5.4, CPK.O),
+  C(30, 30, 9, CPK.S),
+  C(26, 17, 2.4, 'ik'), C(34, 17, 2.4, 'ik'),                       // the lone pair, pushing the three down
+]);
+
+/* monomer ────────────────────────────────────────────────────────────────── */
+// Glucose with one hydroxyl traded away — and the trade is the whole drawing.
+def('bed_n_acetylglucosamine', () => {
+  const p = [];
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    p.push([n(22 + 12 * Math.cos(a)), n(28 + 12 * Math.sin(a))]);
+  }
+  return [
+    S('M' + p.map(q => q.join(' ')).join(' L') + ' Z', 'ik', 2.2),
+    S(`M${p[0][0]} ${p[0][1]} L42 40 L52 36 L57 43`, 'ik', 2.2),    // C2 out to the acetamide
+    ...double([52, 36], [52, 27], 'ik'),                            // and its carbonyl
+    C(p[5][0], p[5][1], 4.2, CPK.O),                                // ring oxygen
+    C(p[2][0], p[2][1], 3.4, CPK.O), C(p[1][0], p[1][1], 3.4, CPK.O),
+    C(52, 25, 4.2, CPK.O),
+    C(42, 40, 4.8, CPK.N),                                          // the nitrogen, where a hydroxyl used to be
+  ];
+});
+
+/* organ ──────────────────────────────────────────────────────────────────── */
+// From above: two hemispheres, and the fissure between them is the gap.
+def('bed_brain', () => [
+  P('M29 7 Q12 10 10 27 Q9 45 29 52 Z', 'bs'),
+  P('M31 7 Q48 10 50 27 Q51 45 31 52 Z', 'bs'),
+  S('M14 18 Q21 15 26 19 M14 30 Q21 27 26 31 M15 41 Q21 39 26 43', 'ik', 1.6),
+  S('M46 18 Q39 15 34 19 M46 30 Q39 27 34 31 M45 41 Q39 39 34 43', 'ik', 1.6),
+  C(20, 24, 1.6, 'hi'), C(40, 36, 1.6, 'hi'), C(37, 23, 1.6, 'hi'),  // the glia, outnumbering the neurons
+]);
+
+// Three lobes sunk in the pelvis, and one opening at the end of it all.
+def('bed_chicken_kidney', () => [
+  E(26, 14, 10, 7, 'bs'), E(26, 28, 11, 7, 'bs'), E(26, 42, 10, 7, 'bs'),
+  S('M34 13 Q40 28 38 46', 'lo', 2.4),                              // the ureter, going straight past no bladder at all
+  C(38, 52, 5, 'lo'), C(38, 52, 2, 'ground'),                       // the cloaca — urine, dung and egg, one door
+]);
+
+// Cut lengthwise, because the live bone core inside is the surprise.
+def('bed_cow_horn', () => [
+  P('M16 54 Q12 27 35 8 Q41 26 33 54 Z', 'bs'),                     // keratin sheath, never shed
+  P('M21 52 Q19 31 33 17 Q35 30 29 52 Z', 'hi'),                    // the bone core, fused to the skull
+  S('M13 54 L35 54', 'lo', 3.4),
+  S('M18 44 Q25 41 32 44 M17 36 Q25 32 33 35', 'lo', 1.4),          // growth rings on the sheath
+]);
+
+// No pleural cavity: the gap is filled in, so the drawing has no gap.
+def('bed_elephant_lung', () => [
+  S('M30 5 L30 13', 'lo', 3.4),
+  P('M29 13 Q13 15 12 30 Q11 40 28 40 Z', 'bs'),
+  P('M31 13 Q47 15 48 30 Q49 40 32 40 Z', 'bs'),
+  ...[[19, 26], [24, 33], [41, 26], [36, 33]].map(([x, y]) => C(x, y, 2.2, 'hi')),
+  ...[14, 20, 26, 32, 38, 44].map(x => S(`M${x} 40 L${n(x + 1)} 47`, 'ik', 1.4)),  // connective tissue, filling the space
+  S('M8 51 Q30 44 52 51', 'lo', 3.4),                               // the diaphragm, fused straight on
+]);
+
+// Two chambers in series, and the blood only passes once.
+def('bed_fish_heart', () => [
+  S('M6 16 L14 20', 'gh', 4),                                       // in from the body
+  E(20, 23, 10, 8, 'lo'),                                           // one atrium
+  S('M25 30 L30 34', 'ik', 3.4),
+  E(34, 39, 12, 10, 'bs'),                                          // one ventricle
+  S('M44 45 Q54 42 53 30', 'hi', 4),                                // out, and to the gills first
+  ...[22, 27, 32].map(y => S(`M50 ${y} L57 ${n(y - 2)}`, 'gh', 1.6)),
+]);
+
+/* An insect's, not a vertebrate's — cuticle-lined, and it ends in a pellet. */
+def('bed_hindgut', () => [
+  S('M7 16 Q20 18 25 28', 'bs', 5),                                 // ileum
+  S('M25 28 Q29 36 33 39', 'bs', 5),                                // colon
+  E(42, 44, 12, 9, 'bs'),                                           // and the wide rectum
+  ...[[38, 41], [45, 41], [41, 47]].map(([x, y]) => E(x, y, 3, 2.2, 'hi')),  // rectal pads, wringing it out
+  S('M38 34 L36 27 M45 34 L47 27', 'gh', 1.6),                      // water and salt, taken back
+  C(55, 51, 4, 'lo'),                                               // what is left
+]);
+
+// Cut open: follicles ringing the cortex, lymph crawling through.
+def('bed_lymph_node', () => [
+  P('M15 24 Q30 11 45 23 Q51 33 42 43 Q29 50 18 42 Q10 34 15 24 Z', 'lo'),
+  P('M19 26 Q30 16 42 26 Q46 33 39 40 Q29 45 21 39 Q15 33 19 26 Z', 'bs'),
+  ...[[23, 27], [31, 22], [39, 28], [23, 37], [38, 37], [30, 41]].map(([x, y]) => C(x, y, 3.6, 'hi')),
+  E(30, 31, 6, 4.4, 'gh'),                                          // paracortex, T cells under the follicles
+  S('M4 18 L14 24 M12 12 L19 20 M24 8 L26 17', 'gh', 1.6),          // afferents, several
+  S('M46 40 L56 46', 'gh', 2.4),                                    // one efferent out
+]);
+
+// A million laid down at birth, and the arithmetic of what happens to them.
+def('bed_ovary', () => [
+  E(27, 33, 19, 15, 'bs'),
+  ...granules('hi', 16, 211, [14, 23, 40, 43]),                     // the million, nearly all of them for nothing
+  C(38, 36, 6.4, 'hi'), C(38, 36, 3, 'ground'),                     // the one with an antrum, this cycle
+  C(50, 18, 2.6, 'lo'), C(55, 24, 2.2, 'lo'), C(48, 26, 1.8, 'lo'), // estrogen and progesterone, straight to the blood
+]);
+
+// Scales that were kept instead of shed, and the muscle that shakes them.
+def('bed_rattle', () => [
+  E(9, 32, 5, 8, 'lo'),                                             // the shaker muscle
+  ...[0, 1, 2, 3, 4].map(i =>
+    E(n(15 + i * 8.5), 32, n(6.5 - i * 0.7), n(10 - i * 1.4), i % 2 ? 'hi' : 'bs')),
+  ...[0, 1, 2, 3].map(i => S(`M${n(19 + i * 8.5)} ${n(23 - i)} L${n(19 + i * 8.5)} ${n(41 + i)}`, 'lo', 1.2)),
+  S('M53 22 Q57 27 54 31 M53 42 Q57 37 54 33', 'gh', 1.4),          // interlocked, hollow, and buzzing
+]);
+
+// Cut open lengthwise: the fringe is the organ.
+def('bed_small_intestine', () => [
+  P('M5 13 L55 13 L55 22 L5 22 Z', 'lo'),
+  P('M5 47 L55 47 L55 38 L5 38 Z', 'lo'),
+  ...[9, 15, 21, 27, 33, 39, 45, 51].map(x => S(`M${x} 13 L${x} 17`, 'ik', 1.2)),   // circular layer
+  S('M5 19 L55 19 M5 41 L55 41', 'ik', 1.2),                                        // longitudinal layer
+  ...Array.from({ length: 12 }, (_, i) => {
+    const x = 7 + i * 4;
+    return [S(`M${x} 22 L${x} 29`, 'bs', 2), S(`M${n(x + 2)} 38 L${n(x + 2)} 31`, 'bs', 2)];
+  }).flat(),                                                                        // villi, combing the lumen
+  C(52, 30, 2, 'hi'),                                               // the plexus, running it without asking the brain
+]);
+
+// A mesh of epithelium with the cells being tested caught in it.
+def('bed_thymus', () => [
+  P('M17 9 Q45 7 47 25 Q49 46 30 53 Q11 48 12 27 Q12 11 17 9 Z', 'bs'),
+  ...[0, 1, 2, 3].map(i => S(`M14 ${n(17 + i * 9)} L46 ${n(13 + i * 9)}`, 'hi', 1.2)),
+  ...[0, 1, 2].map(i => S(`M${n(20 + i * 10)} 11 L${n(16 + i * 10)} 51`, 'hi', 1.2)),
+  E(34, 39, 10, 8, 'gh'),                                           // medulla, where the failures are weeded out
+  ...granules('lo', 12, 417, [16, 15, 44, 47]),                     // T cells, crowded through the gaps
+]);
+
+// In cross-section, through all four walls at once.
+def('bed_vagina', () => [
+  C(30, 30, 24, 'gh'),                                              // adventitia
+  C(30, 30, 20, 'lo'),                                              // longitudinal muscle
+  C(30, 30, 15.5, 'bs'),                                            // circular muscle
+  C(30, 30, 11, 'hi'),                                              // stratified squamous epithelium
+  P('M26 21 L34 21 L34 27 L36 27 L36 33 L34 33 L34 39 L26 39 L26 33 L24 33 L24 27 L26 27 Z', 'ground'),
+  ...[0, 1, 2, 3].map(i => {                                        // the two muscle coats, running crosswise
+    const a = (i * Math.PI) / 4;
+    return S(`M${n(30 + 13 * Math.cos(a))} ${n(30 + 13 * Math.sin(a))} ` +
+             `L${n(30 + 18 * Math.cos(a))} ${n(30 + 18 * Math.sin(a))}`, 'ik', 1.2);
+  }),
+]);
+
+/* particle ───────────────────────────────────────────────────────────────── */
+// Four in, one out, and the difference leaves as the light everything runs on.
+def('bed_fusion', () => [
+  ...[[11, 12], [49, 12], [11, 48], [49, 48]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(30 + (x - 30) * 0.42)} ${n(30 + (y - 30) * 0.42)}`, 'ik', 1.8)),
+  ...[[11, 12], [49, 12], [11, 48], [49, 48]].map(([x, y]) => C(x, y, 4.6, CPK.H)),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i * Math.PI) / 6;
+    return S(`M${n(30 + 13 * Math.cos(a))} ${n(30 + 13 * Math.sin(a))} ` +
+             `L${n(30 + 20 * Math.cos(a))} ${n(30 + 20 * Math.sin(a))}`, 'hi', 1.6);
+  }),                                                               // the missing mass, leaving
+  C(30, 30, 10, CPK.He),
+]);
+
+/* structure ──────────────────────────────────────────────────────────────── */
+// One chain, folded back on itself into the one shape it is allowed.
+def('bed_protein', () => [
+  S('M9 47 Q6 32 18 30 Q31 28 28 18 Q26 7 38 9 Q51 12 50 25 Q49 37 39 39 Q29 41 32 49 Q34 55 45 52', 'bs', 4),
+  ...[[9, 47, 'hi'], [18, 30, 'ik'], [28, 18, 'hi'], [38, 9, 'ik'],
+      [50, 25, 'hi'], [39, 39, 'ik'], [32, 49, 'hi'], [45, 52, 'ik']]
+    .map(([x, y, r]) => C(x, y, 3.8, r)),                           // the order of the links decides the shape
+]);
+
+/* tissue ─────────────────────────────────────────────────────────────────── */
+// Laid down in plies, each with its fibres turned, over the cells that make it.
+def('bed_insect_cuticle', () => [
+  P('M6 10 L54 10 L54 19 L6 19 Z', 'bs'),
+  P('M6 19 L54 19 L54 28 L6 28 Z', 'lo'),
+  P('M6 28 L54 28 L54 37 L6 37 Z', 'bs'),
+  ...[10, 16, 22, 28, 34, 40, 46, 52].map(x => S(`M${x} 11 L${x} 18`, 'hi', 1)),
+  ...[9, 15, 21, 27, 33, 39, 45, 51].map(x => S(`M${x} 20 L${n(x + 6)} 27`, 'hi', 1)),
+  S('M7 31 L53 31 M7 34 L53 34', 'hi', 1),
+  ...[12, 24, 36, 48].map(x => E(x, 44, 5.4, 5.4, 'hi')),           // the epidermis, laying it down from underneath
+  S('M6 50 L54 50', 'lo', 2),
+]);
+
+/* tube ───────────────────────────────────────────────────────────────────── */
+// An insect's air tube, wound inside with its own cuticle so it cannot shut.
+def('bed_trachea', () => [
+  S('M6 19 Q30 16 54 20', 'lo', 2.4),
+  S('M6 41 Q30 44 54 40', 'lo', 2.4),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const x = 8 + i * 5.4;
+    return S(`M${n(x)} ${n(19 - Math.sin(i) * 0.6)} Q${n(x + 6)} 30 ${n(x)} ${n(41 + Math.sin(i) * 0.6)}`, 'bs', 1.8);
+  }),                                                               // taenidia, one continuous spiral
+  S('M54 20 L58 15 M54 40 L58 45', 'lo', 1.8),                      // branching finer, all the way to the cells
+]);
+
+/* ── bedrock drawings: out_4.js ─────────────────────── */
+/* bedrock chunk 4 — blood cells, viscera, four molecules, and one photon.
+   Each draws the fact rather than the name: the basophil is drawn firing,
+   the platelet has no nucleus to draw, the snake skull is drawn open around
+   the extra bone that lets it open, and ecdysone is drawn as the six
+   hydroxyls that separate it from every other steroid in the set. */
+
+def('bed_basophil', () => [                                           // the rarest one, and it is drawn in the act
+  C(25, 32, 15, 'bs'),
+  E(20, 25, 6, 4.5, 'lo'), E(21, 40, 5.5, 4, 'lo'),                   // a two-lobed nucleus, mostly buried
+  S('M21 29 Q17 32 21 36', 'lo', 2),
+  ...[[31, 24], [33, 33], [29, 41], [24, 34]].map(([x, y]) => C(x, y, 3.6, 'ik')),  // granules coarse enough to hide it
+  ...[[45, 21], [51, 31], [46, 42]].map(([x, y]) => C(x, y, 2.6, 'hi')),            // histamine and heparin, already thrown
+]);
+
+def('bed_platelet', () => [                                           // no nucleus, because there is no cell
+  E(26, 34, 13, 9, 'bs'),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const a = (i / 9) * Math.PI * 2;
+    return S(`M${n(26 + 12 * Math.cos(a))} ${n(34 + 8 * Math.sin(a))} ` +
+             `L${n(26 + 19 * Math.cos(a))} ${n(34 + 14 * Math.sin(a))}`, 'lo', 1.6);
+  }),                                                                 // the spikes it throws out the moment it lands
+  E(47, 18, 7, 5, 'hi'), E(13, 15, 6, 4.5, 'hi'),                     // two more fragments, clumping in behind it
+]);
+
+def('bed_snake_skull', () => [                                        // drawn open, since the open is the whole point
+  P('M8 14 L38 22 L38 28 L10 22 Z', 'bs'),                            // upper jaw, thrown forward
+  P('M10 46 L44 36 L45 42 L12 52 Z', 'bs'),                           // and the lower one, swung right down
+  E(45, 24, 10, 8, 'bs'),                                             // the braincase behind both
+  C(38, 20, 1.8, 'ground'),
+  P('M43 30 L49 32 L48 43 L42 39 Z', 'hi'),                           // the quadrate — the extra bone, and the extra joint
+  ...[[16, 23.3], [24, 25], [32, 26.7]].map(([x, y]) => S(`M${x} ${y} L${n(x - 2)} ${n(y + 5)}`, 'ik', 1.4)),
+  ...[[18, 43.6], [26, 41.3], [34, 39]].map(([x, y]) => S(`M${x} ${y} L${n(x - 2)} ${n(y - 5)}`, 'ik', 1.4)),
+]);
+
+def('bed_macrophage', () => [                                         // all three acts: takes it in, breaks it down, calls the others
+  E(22, 32, 16, 15, 'bs'),
+  P('M32 20 Q46 13 51 19 Q42 21 36 28 Z', 'bs'),                      // one arm around it...
+  P('M32 44 Q46 51 51 45 Q42 43 36 36 Z', 'bs'),                      // ...and the other, closing
+  rod3('ik', 46, 32, 5, 2.6),                                         // taken in whole, not bitten
+  E(16, 24, 6, 4.5, 'lo'),                                            // the kidney nucleus it kept from being a monocyte
+  C(21, 37, 5.5, 'hi'), C(29, 41, 3, 'lo'),                           // a phagosome, with the lysosome fusing onto it
+  C(15, 18, 2, 'gh'), C(11, 14, 1.6, 'gh'),                           // then the signal, going out
+  C(6, 8, 5, 'gh'),                                                   // and the next immune cell, already on its way in
+]);
+
+def('bed_albumen_thin', () => [                                       // the one that runs
+  P('M11 5 Q30 1 49 5 L49 11 L43 7 L37 13 L30 7 L23 13 L17 7 L11 11 Z', 'lo'),  // the shell, just cracked
+  P('M33 11 Q30 22 36 30 Q42 36 44 42 L37 42 Q34 34 30 28 Q27 20 28 11 Z', 'gh'),  // it runs first, in a thin stream off one side
+  E(30, 46, 26, 6, 'gh'),                                             // then out flat and wide — a quarter the ovomucin
+  E(27, 45, 15, 3, 'hi'),
+  ...[[16, 47], [30, 49], [43, 46]].map(([x, y]) => C(x, y, 1.2, 'lo')),  // what little protein there is, adrift in the water
+]);
+
+def('bed_adrenaline', () => [                                         // noradrenaline plus the methyl, which is the whole difference
+  hex('ik', 18, 36, 10, 2),                                           // the catechol ring
+  S('M9.3 31 L3.5 25', 'ik', 1.8), C(3.5, 24, 3.4, CPK.O),
+  S('M9.3 41 L3.5 47', 'ik', 1.8), C(3.5, 48, 3.4, CPK.O),            // two hydroxyls, as its slower cousin has
+  S('M26.7 31 L36 26', 'ik', 2),
+  S('M36 26 L35 16', 'ik', 1.8), C(35, 15, 3.4, CPK.O),
+  S('M36 26 L46 31', 'ik', 2), C(46, 31, 4.4, CPK.N),
+  S('M46 31 L55 26', 'ik', 2), C(56, 25, 3.6, CPK.C),                 // the N-methyl: seconds, where a steroid takes hours
+]);
+
+def('bed_ecdysone', () => [                                           // a steroid told apart by how many oxygens hang off it
+  hex('ik', 13, 40, 7, 2), hex('ik', 25.1, 40, 7, 2), hex('ik', 37.2, 40, 7, 2),
+  S(pentaPath(48.5, 32, .3), 'ik', 2),                                // the four rings, as any steroid has
+  S('M6.9 43.5 L4 47', 'ik', 1.6), C(3, 48.5, 3.2, CPK.O),
+  S('M6.9 36.5 L4 33', 'ik', 1.6), C(3, 31.5, 3.2, CPK.O),            // two on the first ring
+  ...double([25.1, 47], [25.1, 53], 'ik'), C(25.1, 55, 3.2, CPK.O),   // the ketone at the sixth carbon
+  S('M37.2 33 L37 28', 'ik', 1.6), C(37, 26.5, 3.2, CPK.O),
+  S('M48.5 26 L52 20', 'ik', 1.8), C(53, 18.5, 3.2, CPK.O),
+  S('M52 20 L57 24', 'ik', 1.6), C(57.5, 25.5, 3.2, CPK.O),           // and two more out on the tail — six in all
+]);
+
+def('bed_potassium_bisulfite', () => [                                // there is no solid to draw: only the two ions, apart
+  wave('gh', 12, 4, 26),                                              // the surface of the solution it never leaves
+  C(14, 32, 7, CPK.K),
+  S('M8 44 L16 44 M12 40 L12 48', 'ik', 1.6),                         // the potassium, carrying its charge alone
+  C(40, 32, 7, CPK.S),
+  ...[[40, 19], [51, 40], [31, 42]].map(([x, y]) =>
+    [S(`M40 32 L${x} ${y}`, 'ik', 2), C(x, y, 4.4, CPK.O)]).flat(),
+  S('M31 42 L26 49', 'ik', 1.6), C(25, 50.5, 3.8, 'ik'), C(25, 50.5, 3, CPK.H),  // the one hydrogen that makes it bisulfite, not sulfite
+  S('M48 51 L56 51', 'ik', 1.6),
+]);
+
+def('bed_testosterone', () => [['g', -20, 30, 32, [                   // the same four rings, stood on end
+  hex('bs', 16, 38, 7, 2.2), hex('bs', 28.1, 38, 7, 2.2), hex('bs', 40.2, 38, 7, 2.2),
+  S(pentaPath(48.5, 30, .3), 'bs', 2.2),
+  ...double([9.9, 41.5], [4.5, 44.5], 'ik'), C(3, 45.5, 3.4, CPK.O),  // the ketone on ring A
+  S('M48.5 24 L48.5 19', 'ik', 1.8), C(48.5, 17, 3.4, CPK.O),         // the hydroxyl on ring D, and nothing else to it
+]]]);
+
+def('bed_nucleotide', () => [                                         // three parts, and only four ways to build it
+  C(10, 40, 5.4, CPK.P),                                              // phosphate
+  S('M15.4 39 L22 34', 'ik', 2),
+  P('M22 34 L30 30 L37 35 L34 43 L25 42 Z', 'ik'),                    // sugar, five-membered, drawn as an outline
+  P('M23.6 35 L29.8 31.9 L35.2 35.8 L32.7 41.6 L25.9 40.8 Z', 'bs'),
+  S('M33 30.5 L38.5 25', 'ik', 2),
+  hex('ik', 45, 19, 8, 2),                                            // and the base
+  ...[0, 1, 2, 3].map(i => C(n(8 + i * 6), 11, 2.6, i % 2 ? 'hi' : 'bs')),  // four of them spell out everything alive
+]);
+
+def('bed_cervix', () => [                                             // rigid all cycle, then ten centimetres
+  P('M14 8 Q8 30 14 52 L26 52 Q30 30 26 8 Z', 'bs'),
+  P('M46 8 Q52 30 46 52 L34 52 Q30 30 34 8 Z', 'bs'),                 // muscle and fibrous tissue, and a canal between
+  S('M26 8 Q30 30 26 52', 'hi', 2.4),                                 // columnar lining above...
+  S('M34 8 Q30 30 34 52', 'lo', 2.4),                                 // ...squamous below, meeting partway down
+  ...[[30, 16], [30, 24], [30, 32], [30, 40], [30, 48]].map(([x, y]) => C(x, y, 2.2, 'gh')),  // mucus, ten times as much at ovulation
+]);
+
+def('bed_chicken_large_intestine', () => [                            // a wall doing one job: take the water back
+  P('M4 34 L56 34 L56 46 L4 46 Z', 'bs'),
+  S('M4 40 L56 40', 'lo', 1.4),                                       // muscle, moving it all toward the cloaca
+  P('M4 26 L56 26 L56 34 L4 34 Z', 'hi'),
+  ...[10, 22, 34, 46].map(x => P(`M${x} 34 L${x + 5} 34 L${x + 5} 42 L${x} 42 Z`, 'hi')),  // simple columnar, dipping into glands
+  ...[14, 30, 44].map(x => S(`M${x} 24 L${x} 16`, 'gh', 1.8)),        // water and salts, pulled back out
+  ...[14, 30, 44].map(x => P(`M${n(x - 3.4)} 18 L${x} 12 L${n(x + 3.4)} 18 Z`, 'gh')),
+  S('M46 52 L53 52', 'ik', 1.6), P('M53 49 L58 52 L53 55 Z', 'ik'),
+]);
+
+def('bed_cow_rumen', () => [                                          // all wall, and none of the enzymes
+  P('M4 44 L56 44 L56 56 L4 56 Z', 'lo'),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const x = n(7 + i * 6), t = n(27 + (i % 2) * 6);
+    return P(`M${n(x - 2.2)} 46 Q${n(x - 2.6)} ${n(t + 2)} ${x} ${t} Q${n(x + 2.6)} ${n(t + 2)} ${n(x + 2.2)} 46 Z`, 'bs');
+  }),                                                                 // papillae, fingers of it, all surface
+  S('M8 16 Q30 10 52 16', 'plant-bs', 3),                             // cellulose it cannot touch itself
+  ...[[16, 21], [30, 14], [44, 21], [24, 10]].map(([x, y]) => C(x, y, 2.2, 'hi')),  // the bacteria and protozoa that can
+  ...[10, 28, 46].map(x => [C(x, 40, 1.6, 'gh'), S(`M${x} 46 L${x} 51`, 'gh', 1.6),
+    P(`M${n(x - 2.6)} 50 L${x} 55 L${n(x + 2.6)} 50 Z`, 'gh')]).flat(),  // a wall built to take up what they make
+]);
+
+def('bed_elephant_skin', () => [                                      // an inch of it, and still not enough
+  P('M6 18 L54 18 L54 52 L6 52 Z', 'bs'),
+  S('M6 24 L18 22 L22 31 L15 38 L19 50', 'lo', 1.8),                  // fissures, crazed, deep enough to hold water
+  S('M23 18 L27 28 L35 30 L32 41 L38 52', 'lo', 1.8),
+  S('M41 18 L45 27 L53 29 L48 38 L52 50', 'lo', 1.8),
+  S('M22 31 L13 33 M35 30 L45 27 M15 38 L32 41 M19 50 L38 52 M48 38 L32 41', 'lo', 1.4),
+  ...granules('lo', 7, 401, [10, 22, 50, 48]),
+  S('M6 13 Q30 7 54 13', 'gh', 3.4),                                  // mud, put on daily against sun and flies
+]);
+
+def('bed_fish_lateral_line', () => [                                  // one neuromast, which is all the organ really is
+  P('M4 10 L56 10 L56 18 L4 18 Z', 'lo'),                             // skin, with the canal running under it
+  P('M4 18 L56 18 L56 44 L4 44 Z', 'gh'),
+  P('M22 43 Q17 27 30 22 Q43 27 38 43 Z', 'hi'),                      // the cupula, a jelly cap, leaning with the water
+  ...[26, 30, 34].map(x => S(`M${x} 44 L${n(x + 4)} 31`, 'ik', 1.6)), // and the hair cells bent under it
+  S('M8 30 L17 30 M13 27 L17 30 L13 33', 'ik', 1.6),                  // the movement — the bend alone is the signal
+  P('M4 44 L56 44 L56 52 L4 52 Z', 'bs'),
+]);
+
+def('bed_hypodermis', () => [                                         // fat, and the strings holding the skin on
+  S('M4 9 L56 9', 'ik', 3),
+  ...[[14, 22], [30, 20], [45, 23], [20, 38], [36, 38], [50, 38]].map(([x, y]) =>
+    [C(x, y, 7.5, 'hi'), C(n(x - 2.6), n(y - 2.6), 2, 'gh')]).flat(),  // adipocytes, nearly all of the volume
+  S('M9 11 Q12 30 8 49 M24 11 Q28 30 24 49 M40 11 Q43 30 41 49 M54 11 Q51 30 54 49', 'lo', 1.3),  // fibrous bands, anchoring skin to what is under it
+  S('M4 51 L56 51', 'lo', 3),
+]);
+
+def('bed_malpighian_tubule', () => [                                  // one tube, blind at the far end, tied to nothing
+  S('M50 47 Q34 49 26 39 Q18 29 24 18 Q30 8 40 13', 'bs', 7),
+  S('M50 47 Q34 49 26 39 Q18 29 24 18 Q30 8 40 13', 'hi', 3),         // its lumen: the wall is one cell thick
+  C(41, 13, 4, 'bs'),                                                 // and closed
+  ...[[20, 34], [19, 22], [31, 10]].map(([x, y]) => S(`M${x} ${y} L${n(x - 8)} ${n(y - 3)}`, 'gh', 1.6)),  // ions pumped in, water following
+  ...[[46, 45], [51, 49], [42, 48]].map(([x, y]) => C(x, y, 2, 'lo')),  // uric acid, dry by the time it reaches the gut
+]);
+
+def('bed_pancreas', () => [                                           // ninety-nine to one, drawn to scale
+  S('M8 47 Q26 40 52 21', 'lo', 3.4),                                 // the duct all the enzyme leaves by
+  ...[[14, 30], [24, 24], [34, 18], [44, 12], [20, 44], [34, 38]].map(([x, y]) =>
+    [C(x, y, 6.5, 'bs'), C(x, y, 2.4, 'hi')]).flat(),                 // acini, lobe after lobe of them
+  S('M14 36 L16 42 M24 30 L26 40 M34 24 L36 34', 'lo', 1.4),
+  C(47, 41, 6, 'hi'), ...granules('lo', 5, 199, [43, 37, 51, 45]),    // one islet, for the whole of the other job
+]);
+
+def('bed_renal_tubule', () => [                                       // a pipe that takes back most of what was just thrown out
+  P('M28 6 Q10 6 10 16 Q10 26 28 26 Q22 16 28 6 Z', 'hi'),            // Bowman's capsule, cupped around the tuft
+  C(19, 16, 5.5, 'lo'),
+  ...[0, 1, 2, 3].map(i => {
+    const a = (i * 90 * Math.PI) / 180;
+    return C(n(19 + 3 * Math.cos(a)), n(16 + 3 * Math.sin(a)), 1.8, 'bs');
+  }),
+  S('M28 20 Q40 20 38 29 Q36 37 30 35 Q26 34 27 41 L27 46 Q27 54 34 54 Q41 54 41 46 L41 24 Q41 16 50 16', 'bs', 4.5),
+  ...[[33, 26], [29, 39], [41, 34]].map(([x, y]) => S(`M${n(x - 4)} ${y} L${n(x + 4)} ${y}`, 'ik', 1)),  // cuboidal cells, the whole way
+  ...[[47, 22], [52, 28], [45, 31]].map(([x, y]) => C(x, y, 2, 'gh')),  // four fifths of the glucose, already back
+]);
+
+def('bed_snake_lung', () => [                                         // one of the pair, and a stub where the other should be
+  S('M30 4 L30 13', 'lo', 3.4),
+  P('M30 13 Q18 15 17 28 Q16 45 22 55 Q30 56 30 44 Z', 'bs'),         // the right lung, running down the body
+  ...[[22, 22], [26, 30], [21, 35], [25, 43]].map(([x, y]) => C(x, y, 2.2, 'hi')),  // gas exchange, all at the front of it
+  P('M30 13 Q37 14 38 20 Q38 25 33 25 Q30 24 30 20 Z', 'gh'),         // the left one — small, and often not there at all
+]);
+
+def('bed_thyroid', () => [                                            // follicles, because the hormone is stored outside the cells
+  ...[[20, 22, 11], [42, 27, 9], [26, 45, 10]].map(([x, y, r]) =>
+    [ring('bs', x, y, r, 3.4), C(x, y, n(r - 3), 'hi')]).flat(),      // a ring of epithelium around a colloid core
+  ...[[36, 42], [40, 11], [9, 39]].map(([x, y]) => C(x, y, 2.6, 'lo')),  // C cells between them, on a different hormone
+  C(53, 47, 3.4, CPK.I), S('M47 45 L53 47', 'ik', 1.6),               // iodine, drawn in to build the other two
+]);
+
+def('bed_vas_deferens', () => [                                       // more muscle per millimetre of bore than anything else
+  C(30, 30, 24, 'lo'),
+  C(30, 30, 18, 'bs'),                                                // the circular coat, the thickest of the three
+  C(30, 30, 11, 'lo'),
+  ...Array.from({ length: 10 }, (_, i) => {
+    const a = (i / 10) * Math.PI * 2;
+    return S(`M${n(30 + 19 * Math.cos(a))} ${n(30 + 19 * Math.sin(a))} ` +
+             `L${n(30 + 23 * Math.cos(a))} ${n(30 + 23 * Math.sin(a))}`, 'ik', 1.2);
+  }),                                                                 // longitudinal fibres outside the circular ones
+  P('M' + Array.from({ length: 12 }, (_, i) => {
+    const a = (i * 30 * Math.PI) / 180, r = i % 2 ? 3.4 : 8;
+    return `${n(30 + r * Math.cos(a))} ${n(30 + r * Math.sin(a))}`;
+  }).join(' L') + ' Z', 'hi'),                                        // and the lumen: a narrow star of folded lining
+]);
+
+def('bed_photon', () => [                                             // the only thing here that is not matter
+  C(4, 4, 17, 'hi'),                                                  // the sun, almost entirely out of frame
+  ...[0, 1, 2].map(i => S(`M${n(14 + i * 9)} ${n(22 - i * 9)} L${n(38 + i * 9)} ${n(46 - i * 9)}`, 'bs', 3)),
+  ...[0, 1, 2].map(i => P(`M${n(38 + i * 9)} ${n(46 - i * 9)} L${n(29.8 + i * 9)} ${n(42.8 - i * 9)} ` +
+                          `L${n(34.8 + i * 9)} ${n(37.8 - i * 9)} Z`, 'bs')),  // eight minutes and nineteen seconds, then the leaf
+]);
+
+def('bed_secondary_structure', () => [                                // both of them, since the pair is the item
+  S(Array.from({ length: 13 }, (_, i) =>
+    `${i ? 'L' : 'M'}${n(16 + 8 * Math.sin(i * 0.8))} ${n(8 + i * 3.2)}`).join(' '), 'bs', 4),  // one stretch coils
+  ...[0, 1, 2].map(i => S(`M9 ${n(17 + i * 9)} L23 ${n(17 + i * 9)}`, 'gh', 1.2)),
+  S('M17 49 Q28 54 33 42', 'lo', 2.4),                                // a loop, and then the chain pleats instead
+  ...[0, 1].map(k => S(Array.from({ length: 6 }, (_, i) =>
+    `${i ? 'L' : 'M'}${n(34 + i * 4.2)} ${n(14 + k * 12 + (i % 2 ? 4 : -4))}`).join(' '), k ? 'hi' : 'bs', 3.4)),
+  ...[38.2, 46.6, 55].map(x => S(`M${x} 18 L${x} 22`, 'gh', 1.2)),    // hydrogen bonds along the backbone — nothing else holds either
+]);
+
+def('bed_ligament', () => [                                           // bone to bone, and no muscle anywhere in it
+  C(11, 14, 6.5, 'hi'), C(17, 20, 6, 'hi'),
+  C(49, 46, 6.5, 'hi'), C(43, 40, 6, 'hi'),
+  ...[-6, -2, 2, 6].map(d => S(`M${n(19 - 0.537 * d)} ${n(24 + 0.844 * d)} ` +
+                               `L${n(41 - 0.537 * d)} ${n(38 + 0.844 * d)}`, 'bs', 2.4)),  // dense parallel collagen, straight across
+  S('M21 27 L39 38', 'lo', 1.2),
+]);
+
+def('bed_tracheole', () => [                                          // where the tube stops being a tube
+  S('M4 9 L18 20', 'bs', 5),
+  S('M18 20 L30 26 M18 20 L22 35', 'bs', 3),
+  S('M30 26 L38 31 M30 26 L34 17', 'bs', 2),                          // finer at every branch
+  E(20, 25, 6, 4, 'lo'), C(19, 25, 1.8, 'ik'),                        // one cell wrapped around the whole branch
+  P('M35 30 Q44 30 46 37 Q41 41 35 36 Z', 'gh'),                      // the tip, kept full of fluid
+  C(45, 48, 12, 'hi'),                                                // the cell next door
+  ...[[40, 39], [46, 37], [39, 44]].map(([x, y]) => C(x, y, 1.6, CPK.O)),  // oxygen dissolving, then straight into the cytoplasm
+]);
+
+/* ── bedrock drawings: out_5.js ─────────────────────── */
+/* bedrock: blood cells, bones, cells, a fluid, five molecules, twelve organs,
+   a polymer, a fold and a tissue. Drawn from what each thing IS, not from a
+   label for it — a chicken lung is a rigid block with air going one way
+   through it, a foregut is skin tucked inward and lined with cuticle. */
+
+def('bed_eosinophil', () => [
+  C(30, 32, 19, 'bs'),
+  // the bilobed nucleus is the giveaway — two lobes on one thin thread
+  E(21, 27, 8, 6.5, 'lo'), E(39, 36, 8, 6.5, 'lo'),
+  S('M26 30 Q30 32 34 34', 'lo', 3.4),
+  // granules big enough to count, and greedy enough for eosin to be named for it
+  ...[[30, 19], [38, 21], [45, 28], [17, 37], [24, 43], [33, 46], [42, 45]]
+    .map(([x, y]) => C(x, y, 3.4, 'hi')),
+]);
+
+def('bed_femur', () => [
+  C(19, 13, 6.5, 'hi'),                                   // the head, sunk into the hip socket
+  S('M23 17 L30 24', 'hi', 4.5),                          // the neck, carrying the load out at an angle
+  P('M30 10 L37 11 L37 24 L29 24 Z', 'hi'),               // the trochanter, where the hip muscles take hold
+  S('M33 23 L33 44', 'hi', 7),                            // the shaft — nothing else in the body is this long
+  S('M33 28 L33 39', 'lo', 2.2),                          // the marrow cavity, hollow down the middle
+  C(27, 49, 6, 'hi'), C(39, 49, 6, 'hi'),                 // two condyles to stand on...
+  P('M30 44 L36 44 L33 53 Z', 'lo')
+]);
+
+def('bed_snake_vertebral_column', () => [
+  // vertebra, ribs, vertebra, ribs — a couple of hundred times over, and no
+  // shoulder girdle anywhere along it to interrupt the run
+  ...[9, 18, 27, 36, 45, 54].flatMap((x, i) => {
+    const y = 17 + (i % 2 ? 2 : 0);
+    return [
+      S(`M${x} ${n(y + 8)} Q${n(x - 7)} ${n(y + 18)} ${n(x - 4)} ${n(y + 28)}`, 'bs', 1.8),
+      S(`M${x} ${n(y + 8)} Q${n(x + 7)} ${n(y + 18)} ${n(x + 4)} ${n(y + 28)}`, 'bs', 1.8),
+      P(`M${n(x - 4)} ${y} L${n(x + 4)} ${y} L${n(x + 4)} ${n(y + 9)} L${n(x - 4)} ${n(y + 9)} Z`, 'hi'),
+    ];
+  }),
+  S('M4 22 Q30 20 56 24', 'lo', 1.4),                     // the cord threaded through every one of them
+]);
+
+def('bed_melanocyte', () => [
+  // a course of keratinocytes, and the one cell underneath that supplies all of them
+  ...[6, 18, 30, 42].map(x => P(`M${x} 9 L${n(x + 11)} 9 L${n(x + 11)} 19 L${x} 19 Z`, 'hi')),
+  ...[0, 12, 24, 36, 48].map(x => P(`M${x} 21 L${n(x + 11)} 21 L${n(x + 11)} 31 L${x} 31 Z`, 'hi')),
+  S('M4 50 L56 50', 'lo', 2),                             // the basement membrane, the deepest layer there is
+  ...[[11, 25], [23, 14], [35, 26], [46, 14], [50, 26]].map(([x, y]) =>
+    S(`M30 44 L${x} ${y}`, 'bs', 1.8)),                   // arms, threading up between a dozen of them
+  E(30, 44, 10, 6, 'bs'),
+  ...granules('lo', 6, 311, [25, 41, 35, 47]),            // melanin, parcelled into melanosomes...
+  ...[[11, 25], [23, 14], [35, 26], [46, 14], [50, 26]].map(([x, y]) => C(x, y, 3, 'lo')),
+]);
+
+def('bed_hemolymph', () => [
+  // no vessels at all: the body cavity is the container, and everything sits in it
+  P('M8 20 Q30 11 52 20 L52 43 Q30 52 8 43 Z', 'gh'),
+  wave('bs', 41, 5, 20), wave('hi', 32, 4, 18),
+  ...[[18, 26], [40, 25], [29, 36], [45, 39]].flatMap(([x, y]) => [
+    C(x, y, 4.6, 'lo'), C(n(x - 1.6), n(y - 1.6), 1.8, 'hi'),
+  ]),                                                     // hemocytes, loose — and not one of them carries oxygen
+  ...granules('ik', 8, 517, [12, 22, 48, 44]),            // salt, sugar and protein, in solution
+]);
+
+def('bed_bisulfite_ion', () => [
+  // pyramidal sulfite, and the one proton that makes it "bi"
+  ...[[13, 41], [30, 47], [44, 35]].map(([x, y]) => S(`M28 27 L${x} ${y}`, 'ik', 2.4)),
+  S('M44 35 L52 25', 'ik', 2),
+  C(28, 27, 8.4, CPK.S),
+  C(13, 41, 5.4, CPK.O), C(30, 47, 5.4, CPK.O), C(44, 35, 5.4, CPK.O),
+  C(53, 23, 4.6, 'ik'), C(53, 23, 3.6, CPK.H),
+  S('M6 14 L16 14', 'ik', 2.6),                           // and it is still an anion, one charge short
+]);
+
+def('bed_estradiol', () => [
+  // the steroid frame, with the aromatic ring only the estrogens have
+  hex('ik', 14, 34, 7, 2.2), hex('ik', 26.1, 34, 7, 2.2), hex('ik', 38.2, 34, 7, 2.2),
+  ring('ik', 14, 34, 3.6, 1.4),
+  S('M45.13 37.5 L51.79 39.66 L55.9 34 L51.79 28.34 L45.13 30.5 Z', 'ik', 2.2),
+  S('M7.94 37.5 L4.5 43', 'ik', 2), C(4.5, 43.5, 3.6, CPK.O),      // the phenol at one end...
+  S('M50.86 28.34 L52 21', 'ik', 2), C(52, 19.5, 3.6, CPK.O),      // ...and the single hydroxyl at the other
+]);
+
+def('bed_potassium_metabisulfite', () => [
+  // two sulfurs sharing a bond, five oxygens between them, and the potassium pair
+  S('M22 26 L36 22', 'ik', 2.6),
+  ...[[10, 18], [10, 34], [22, 39]].map(([x, y]) => S(`M22 26 L${x} ${y}`, 'ik', 2.2)),
+  ...[[36, 8], [48, 29]].map(([x, y]) => S(`M36 22 L${x} ${y}`, 'ik', 2.2)),
+  C(22, 26, 7.4, CPK.S), C(36, 22, 7.4, CPK.S),
+  ...[[10, 18], [10, 34], [22, 39], [36, 8], [48, 29]].map(([x, y]) => C(x, y, 4.6, CPK.O)),
+  C(14, 52, 5.6, CPK.K), C(42, 52, 5.6, CPK.K),           // the twins of the sodium version, swapped in whole
+]);
+
+def('bed_thyroxine', () => [
+  hex('ik', 16, 20, 7.5, 2.2),                            // the outer ring...
+  S('M16 12.5 L16 7', 'ik', 2), C(16, 5, 3.2, CPK.O),     // ...with its hydroxyl on top
+  S('M20 34 L27.5 38.25', 'ik', 2.2),
+  S('M16 27.5 L20 33', 'ik', 2.2), C(20, 34, 4, CPK.O),   // the ether oxygen joining the two rings
+  hex('ik', 34, 42, 7.5, 2.2),                            // the inner ring
+  // four iodines. Nothing else the body makes is built round a halogen at all.
+  S('M9.5 16.25 L5 14', 'ik', 2), C(4.2, 13.5, 4.6, CPK.I),
+  S('M22.5 16.25 L27 13', 'ik', 2), C(28, 12.5, 4.6, CPK.I),
+  S('M34 34.5 L39 30', 'ik', 2), C(40.5, 28.5, 4.6, CPK.I),
+  S('M27.5 45.75 L22 50', 'ik', 2), C(20.5, 51, 4.6, CPK.I),
+  S('M40.5 45.75 L47 49', 'ik', 2), C(48, 52, 3.6, CPK.N),   // the tyrosine tail it was built from
+  S('M47 49 L54 45', 'ik', 2), C(55, 44, 3.4, CPK.O),
+]);
+
+def('bed_adrenal_gland', () => [
+  // cut across, because the whole point is that it is two organs stacked
+  P('M8 46 Q8 16 30 12 Q52 16 52 46 Z', 'hi'),            // capsule and the outermost cortical zone
+  P('M14 46 Q14 22 30 18 Q46 22 46 46 Z', 'bs'),          // the fasciculata, where cortisol is made
+  P('M20 46 Q20 28 30 25 Q40 28 40 46 Z', 'lo'),          // the reticularis, under it
+  P('M25 46 Q25 34 30 32 Q35 34 35 46 Z', 'ik'),          // and the medulla, which is really nerve
+  C(28, 39, 1.8, 'hi'), C(32, 43, 1.8, 'hi'),             // its chromaffin granules, adrenaline inside
+  S('M4 41 L25 41', 'lo', 1.6),                           // a sympathetic nerve, wired straight to them
+]);
+
+def('bed_chicken_brain', () => [
+  // nothing folds here, because there is no layered cortex to fold
+  P('M6 30 Q6 14 20 12 Q34 11 38 22 Q40 32 32 39 Q18 42 8 36 Q5 34 6 30 Z', 'bs'),
+  ...[[15, 22], [24, 18], [30, 27], [18, 32], [27, 34]].map(([x, y]) => C(x, y, 4.2, 'hi')),
+  C(45, 22, 8.5, 'lo'),                                   // the cerebellum, ridged...
+  ...[-4.5, 0, 4.5].map(dy => S(`M38.5 ${n(22 + dy)} Q45 ${n(25 + dy)} 51.5 ${n(22 + dy)}`, 'hi', 1.2)),
+  C(43, 37, 7, 'hi'),                                     // ...and an optic lobe the size a bird needs
+  S('M40 43 L44 52', 'lo', 3.4),
+]);
+
+def('bed_chicken_lung', () => [
+  E(9, 30, 7, 12, 'gh'), E(51, 30, 7, 12, 'gh'),          // the air sacs — these are what actually pump
+  P('M17 16 L43 16 L43 44 L17 44 Z', 'bs'),               // the lung itself never inflates or empties
+  ...[22, 28, 34, 40].flatMap(y => [
+    S(`M17 ${y} L38 ${y}`, 'hi', 2),
+    P(`M38 ${n(y - 2.8)} L44 ${y} L38 ${n(y + 2.8)} Z`, 'hi'),
+  ]),                                                     // parabronchi: air runs one way and never comes back
+  S('M14 30 L17 30', 'ik', 1.6),
+]);
+
+def('bed_cow_udder', () => [
+  S('M4 12 Q30 8 56 12', 'gh', 2.4),                      // slung on the milk line, nowhere near the chest
+  P('M14 13 Q6 26 10 38 Q16 48 30 48 Q44 48 50 38 Q54 26 46 13 Z', 'bs'),
+  S('M30 14 L30 46', 'lo', 1.4),                          // two pairs of glands, fused into one hanging mass
+  E(21, 24, 6, 4, 'hi'),
+  ...[[17, 44], [25.5, 47.5], [34.5, 47.5], [43, 44]].map(([x, y]) =>
+    P(`M${n(x - 3.4)} ${y} Q${n(x - 2.6)} ${n(y + 8)} ${x} ${n(y + 11)} ` +
+      `Q${n(x + 2.6)} ${n(y + 8)} ${n(x + 3.4)} ${y} Z`, 'hi')),   // and four teats, not two
+]);
+
+def('bed_epidermis', () => [
+  S('M6 53 L54 53', 'ik', 1.6),                           // the basement membrane. Below it, no cell of this organ
+  ...[9, 16, 23, 30, 37, 44, 51].map(x => E(x, 49, 3.2, 3.8, 'bs')),   // basal cells, the only ones still dividing
+  ...[10, 18, 26, 34, 42, 50].map(x => E(x, 41, 4, 3, 'bs')),
+  ...[11, 21, 31, 41, 51].map(x => E(x, 33, 5, 2.2, 'hi')),            // flattening on the way up
+  ...[12, 24, 36, 48].map(x => E(x, 26, 6, 1.6, 'hi')),
+  ...[13, 27, 41].map(x => E(x, 20, 7, 1.2, 'gh')),                    // dead, flat, and about to leave
+  P('M44 15 Q52 12 56 16 Q50 19 44 18 Z', 'gh'),                       // one squame, lifting off
+  S('M20 8 L20 15', 'ik', 1.4), P('M17.6 14 L20 18 L22.4 14 Z', 'ik'), // oxygen, straight out of the air
+]);
+
+def('bed_foregut', () => [
+  S('M5 10 L5 50', 'lo', 3),                              // the body wall — this whole tube is a fold of it
+  S('M5 19 L19 19', 'bs', 7),                             // the gullet, tucked straight in from the mouth
+  E(26, 22, 9.5, 9, 'bs'),                                // the crop, holding a meal until there is time
+  S('M33 26 L39 31', 'bs', 5),
+  C(45, 34, 10, 'bs'),                                    // and the chamber that grinds it
+  ...Array.from({ length: 5 }, (_, i) => {
+    const a = (i / 5) * Math.PI * 2 + 0.3;
+    return P(`M${n(45 + 9.5 * Math.cos(a))} ${n(34 + 9.5 * Math.sin(a))} ` +
+             `L${n(45 + 3.5 * Math.cos(a + 0.3))} ${n(34 + 3.5 * Math.sin(a + 0.3))} ` +
+             `L${n(45 + 9.5 * Math.cos(a + 0.6))} ${n(34 + 9.5 * Math.sin(a + 0.6))} Z`, 'lo');
+  }),                                                     // teeth of cuticle — the same stuff as the shell outside
+  S('M5 19 Q17 19 25 24 Q32 29 45 33', 'hi', 1.3),        // the lining, and every bit of it sheds at the moult
+  S('M53 39 L58 43', 'lo', 3.2),                          // out to a midgut, which has no cuticle at all
+]);
+
+def('bed_iris', () => [
+  C(30, 30, 24, 'bs'),
+  ...Array.from({ length: 24 }, (_, i) => {
+    const a = (i / 24) * Math.PI * 2, r0 = i % 2 ? 12.5 : 11, r1 = i % 2 ? 21 : 24;
+    return S(`M${n(30 + r0 * Math.cos(a))} ${n(30 + r0 * Math.sin(a))} ` +
+             `L${n(30 + r1 * Math.cos(a))} ${n(30 + r1 * Math.sin(a))}`, 'lo', 1.2);
+  }),                                                     // the dilator, pulling outward in every direction
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return P(`M${n(30 + 11 * Math.cos(a))} ${n(30 + 11 * Math.sin(a))} ` +
+             `L${n(30 + 14 * Math.cos(a + 0.2))} ${n(30 + 14 * Math.sin(a + 0.2))} ` +
+             `L${n(30 + 11 * Math.cos(a + 0.4))} ${n(30 + 11 * Math.sin(a + 0.4))} Z`, 'hi');
+  }),                                                     // the collarette, scalloped where the two meet
+  ring('hi', 30, 30, 11, 2.6),                            // the sphincter, one ring, pulling the other way
+  C(30, 30, 8.5, 'lo'),                                   // and the only hole light is allowed through
+  C(26, 26, 2.2, 'hi'),                                   // a glint, so it reads as wet and facing you
+]);
+
+def('bed_mammary_gland', () => [
+  ...[[15, 15], [28, 11], [41, 16], [19, 27], [37, 28]].flatMap(([x, y]) => [
+    C(x, y, 6.5, 'bs'), C(n(x - 2.2), n(y - 2.2), 2.4, 'hi'),
+  ]),                                                     // alveoli — a sweat gland's plan, scaled up
+  ...[[15, 15], [28, 11], [41, 16], [19, 27], [37, 28]].map(([x, y]) =>
+    S(`M${x} ${n(y + 6)} Q${n((x + 29) / 2)} ${n((y + 40) / 2)} 29 40`, 'lo', 1.8)),
+  P('M25 40 L33 40 L32 52 L26 52 Z', 'hi'),               // ducts, all converging on one way out
+  C(29, 55, 3.4, 'lo'),
+]);
+
+def('bed_penis', () => [
+  // drawn across, because the structure is three tubes and nothing else
+  C(30, 30, 23, 'gh'),
+  C(30, 30, 20, 'lo'),                                    // the tunica, the sheath that holds the pressure in
+  C(22, 24, 10, 'hi'), C(38, 24, 10, 'hi'),               // two corpora cavernosa, side by side
+  ...granules('bs', 12, 613, [14, 16, 46, 32]),           // sinusoids — filling these is the entire mechanism
+  C(30, 43, 8.5, 'bs'),                                   // the spongiosum, one, underneath
+  C(30, 43, 3, 'ground'),                                 // with the urethra running the length of it
+]);
+
+def('bed_retina', () => [
+  P('M6 6 L54 6 L54 11 L6 11 Z', 'ik'),                   // the pigment layer at the very back
+  ...[9, 15, 21, 27, 33, 39, 45].map(x =>
+    P(`M${n(x - 2)} 11 L${n(x + 2)} 11 L${n(x + 2)} 26 L${n(x - 2)} 26 Z`, 'hi')),   // rods, and rods, and rods
+  P('M51 11 Q55 16 53 26 L48 26 Q46 16 50 11 Z', 'bs'),   // one cone for every fifteen of them
+  ...[11, 21, 31, 41, 51].map(x => C(x, 33, 3.4, 'lo')),  // bipolar cells
+  ...[13, 26, 39, 52].map(x => C(x, 43, 4.4, 'bs')),      // ganglion cells, whose axons become the optic nerve
+  S('M13 47 Q30 52 52 47', 'lo', 1.6),
+  S('M30 58 L30 52', 'ik', 2),                            // light arrives here — and has to cross the lot
+  P('M27 53 L30 48 L33 53 Z', 'ik'),
+]);
+
+def('bed_snake_skin', () => [
+  P('M16 18 L54 20 L54 40 L16 42 Z', 'bs'),               // the whole outer layer, off in one piece
+  ...[24, 30, 36].flatMap(y => [21, 30, 39, 48].map(x =>
+    S(`M${n(x - 4)} ${y} Q${x} ${n(y + 4)} ${n(x + 4)} ${y}`, 'lo', 1.3))),
+  E(16, 30, 7, 13, 'hi'),                                 // the head end, turned inside out as it came off
+  E(16, 30, 4, 9, 'ground'),                              // and nothing inside it any more
+  S('M9 20 Q3 30 9 40', 'hi', 3),                         // the cuff, rolled back on itself
+]);
+
+def('bed_tracheal_system', () => [
+  S('M4 8 L4 52', 'lo', 3),                               // the body wall
+  C(9, 30, 5.4, 'lo'), C(9, 30, 2.4, 'ground'),           // a spiracle, and its valve
+  S('M13 30 L26 30', 'bs', 5),                            // the trachea, held open by rings
+  ...[16, 19.5, 23].map(x => S(`M${x} 27.4 L${x} 32.6`, 'lo', 1)),
+  S('M26 30 L36 20 M26 30 L36 40', 'bs', 3.2),            // branching, and branching again
+  S('M36 20 L44 14 M36 20 L45 23 M36 40 L44 36 M36 40 L45 46', 'bs', 1.8),
+  ...[[44, 14], [45, 23], [44, 36], [45, 46]].map(([x, y]) =>
+    C(n(x + 5), y, 4.4, 'hi')),                           // the tracheoles end inside the cells themselves
+  ...[[44, 14], [45, 23], [44, 36], [45, 46]].map(([x, y]) =>
+    C(n(x + 5), y, 1.6, 'lo')),                           // air to the door. No lung, no heart, no blood involved
+]);
+
+def('bed_venom_gland', () => [
+  E(24, 24, 17, 15, 'lo'),                                // a salivary gland, repurposed rather than invented
+  ...[-9, 0, 9].map(dx => S(`M${n(24 + dx)} 10 Q${n(24 + dx * 1.5)} 24 ${n(24 + dx)} 38`, 'bs', 2)),
+  ...[[18, 20], [30, 19], [21, 31], [32, 30]].map(([x, y]) => C(x, y, 5, 'hi')),
+  S('M37 33 Q46 38 48 45', 'lo', 3),                      // the duct, all the way down to the tooth
+  P('M43 43 L53 43 L48 57 Z', 'ik'),
+]);
+
+def('bed_cellulose', () => {
+  // The same sugar as starch. Every second unit enters the chain upside down,
+  // and that flip is the whole reason bread is food and wood is not.
+  const out = [], R = 7.5;
+  [12, 30, 48].forEach((cx, i) => {
+    out.push(hex('ik', cx, 30, R, 2.2));
+    out.push(C(cx, i % 2 ? 37.5 : 22.5, 3.2, CPK.O));     // the ring oxygen: up, down, up
+  });
+  out.push(S('M18.5 33.75 L23.5 33.75', 'ik', 2.2), C(21, 33.75, 2.8, CPK.O));
+  out.push(S('M36.5 26.25 L41.5 26.25', 'ik', 2.2), C(39, 26.25, 2.8, CPK.O));
+  out.push(S('M2 26.25 L5.5 26.25', 'gh', 2.2), S('M54.5 33.75 L58 33.75', 'gh', 2.2));
+  return out;
+});
+
+def('bed_tertiary_fold', () => [
+  E(30, 31, 23, 21, 'gh'),                                // helices and sheets, packed into one lump
+  ...[0, 1].map(k => S(Array.from({ length: 11 }, (_, i) =>
+    `${i ? 'L' : 'M'}${n(19 + 6 * Math.sin(i * 0.9))} ${n(16 + i * 2.6)}`).join(' '),
+    k ? 'hi' : 'bs', k ? 1.6 : 4.4)),                     // one helix...
+  ...[0, 1].flatMap(k => [
+    S(`M${n(36 + k * 7)} 44 L${n(36 + k * 7)} 21`, 'bs', 3.4),
+    P(`M${n(31.5 + k * 7)} 22 L${n(36 + k * 7)} 14 L${n(40.5 + k * 7)} 22 Z`, 'bs'),
+  ]),                                                     // ...two strands beside it, packed against its face
+  S('M24 43 Q30 50 36 44', 'lo', 2.4),                    // the loop between them, and it takes about a second
+]);
+
+def('bed_muscle_tissue', () => [
+  S('M11 12 L11 48', 'ik', 3.4), S('M49 12 L49 48', 'ik', 3.4),   // the two Z discs, one sarcomere apart
+  ...[16, 24, 32, 40].flatMap(y => [
+    S(`M21 ${y} L39 ${y}`, 'bs', 4.4),
+    S(`M28 ${y} L32 ${y}`, 'lo', 4.4),
+  ]),                                                     // myosin: thick, and bare across its middle
+  ...[12, 20, 28, 36, 44].flatMap(y => [
+    S(`M11 ${y} L28 ${y}`, 'hi', 1.6),
+    S(`M32 ${y} L49 ${y}`, 'hi', 1.6),
+  ]),                                                     // actin, thin, reaching in from both ends
+                                                          // contraction is these two ratcheting past each other
+]);
+
+/* ── bedrock drawings: out_6.js ─────────────────────── */
+/* bedrock chunk 06 — blood and bone, two guts, the glands, and five molecules.
+ * Each of these draws the fact rather than the word: the red cell is drawn in
+ * profile with the nucleus it threw away lying outside it, the tibia is drawn
+ * under the femur it carries, the midgut is drawn as the one gut section with
+ * nothing lining it, and the nerve cord is drawn as the rope ladder it is.
+ * Where a bedrock id shares a name with an element already drawn — kidney,
+ * gallbladder, dermis, cartilage, progesterone, feldspar, chitin — the second
+ * drawing is built from different geometry on purpose, so the two never
+ * collapse into the same picture at shelf size. */
+
+def('bed_erythrocyte', () => [                                        // seen edge-on, because the pinch is the whole story
+  P('M8 32 Q19 20 30 27 Q41 20 52 32 Q41 44 30 37 Q19 44 8 32 Z', 'bs'),
+  ...granules('hi', 9, 33, [14, 26, 46, 38]),                         // haemoglobin — a third of the cell by volume
+  C(48, 12, 5, 'gh'),                                                 // the nucleus, pushed out and left behind, along with every organelle
+]);
+def('bed_mandible', () => [                                           // the only skull bone that moves
+  P('M8 32 L32 34 Q38 33 40 22 L42 12 Q45 21 48 13 Q51 22 50 32 Q49 44 38 46 L14 44 Q7 42 8 32 Z', 'bs'),
+  ...[10, 15, 20, 25, 30].map(x => P(`M${x} 33 L${x + 4} 33 L${x + 4} 27 L${x} 27 Z`, 'hi')),
+  S('M42 6 Q48 4 54 8', 'gh', 2.2),                                   // the temporal socket it hangs from
+  C(48, 13, 2.6, 'ik'),                                               // and the hinge, one of a pair
+]);
+def('bed_tibia', () => [                                              // the second largest bone, and the one the knee lands on
+  C(22, 7, 6, 'gh'), C(38, 7, 6, 'gh'),                               // the femur's two condyles, coming down onto it
+  P('M13 13 L47 13 L44 22 L16 22 Z', 'bs'),                           // the plateau — a flat table, which is a rare thing on a bone
+  S('M13 13 L47 13', 'hi', 2.6),
+  P('M24 21 L36 21 L34 46 L26 46 Z', 'bs'),                           // the shaft
+  S('M29 24 L31 44', 'lo', 1.6),                                      // the shin edge, right under the skin
+  P('M22 44 L38 44 L37 52 L30 55 L23 52 Z', 'bs'),                    // the ankle end
+  P('M23 51 L29 51 L28 58 L23 56 Z', 'hi'),                           // and the knob on the inside of it, the one you can feel
+]);
+def('bed_rod_cell', () => [                                           // one photon is enough, and this is what catches it
+  S('M6 6 L21 16', 'hi', 1.6), P('M22 17 L16 15 L18 10 Z', 'hi'),     // the single photon, arriving
+  P('M24 10 L36 10 L36 31 L24 31 Z', 'bs'),                           // the outer segment
+  ...Array.from({ length: 8 }, (_, i) => S(`M25 ${12 + i * 2.4} L35 ${12 + i * 2.4}`, 'lo', 1.2)),  // stacked discs, all rhodopsin
+  P('M26 31 L34 31 L34 39 L26 39 Z', 'hi'),                           // the inner segment, feeding the stack
+  C(30, 44, 4.4, 'living-lo'),                                        // nucleus
+  P('M26 48 Q30 57 34 48 Z', 'bs'),                                   // and the one synapse at the foot
+]);
+def('bed_lymph', () => [                                              // interstitial fluid, once it is inside a vessel
+  P('M4 20 L56 20 L56 44 L4 44 Z', 'gh'),
+  S('M4 20 L56 20 M4 44 L56 44', 'lo', 2.2),
+  S('M18 20 Q30 28 32 32', 'bs', 2.2), S('M18 44 Q30 36 32 32', 'bs', 2.2),   // a one-way valve, because nothing pumps this
+  ...[[10, 28], [24, 37], [42, 26]].map(([x, y]) => [C(x, y, 3.6, 'hi'), C(x, y, 2.2, 'living-lo')]).flat(),  // lymphocytes, loaded on at the node
+  C(46, 37, 3, 'bs'), C(52, 30, 2.2, 'bs'),                           // fat out of the gut, which has no other road in
+]);
+def('bed_calcium_bisulfite', () => [                                  // one calcium, two bisulfites — a salt, not a bonded molecule
+  C(30, 13, 8.5, CPK.Ca),
+  ...[16, 44].map(cx => [
+    S(`M${cx} 40 L${cx} 30 M${cx} 40 L${cx - 9} 47 M${cx} 40 L${cx + 9} 47`, 'ik', 2.4),
+  ]).flat(),
+  S('M7 47 L3 53 M53 47 L57 53', 'ik', 1.6),                          // the proton that makes it bi-, one on each
+  ...[16, 44].map(cx => [
+    C(cx, 30, 4, CPK.O), C(cx - 9, 47, 4, CPK.O), C(cx + 9, 47, 4, CPK.O),
+    C(cx, 40, 7, CPK.S),
+  ]).flat(),
+  C(3, 54, 2.6, CPK.H), C(57, 54, 2.6, CPK.H),
+]);
+def('bed_feldspar', () => [                                           // a framework, not a chain — every oxygen corner shared
+  S('M6 24 L12 12 L18 24 L24 12 L30 24 L36 12 L42 24 L48 12 L54 24', 'ik', 2.2),
+  S('M6 24 L54 24 M12 12 L48 12', 'ik', 2.2),
+  S('M6 36 L12 48 L18 36 L24 48 L30 36 L36 48 L42 36 L48 48 L54 36', 'ik', 2.2),
+  S('M6 36 L54 36 M12 48 L48 48', 'ik', 2.2),
+  ...[[12, 12], [30, 24], [48, 12], [12, 48], [30, 36], [48, 48]].map(([x, y]) => C(x, y, 2.6, CPK.O)),
+  C(20, 30, 5, CPK.K), C(42, 30, 5, CPK.K),                           // potassium, sitting loose in the channel
+]);
+def('bed_progesterone', () => [                                       // the steroid skeleton, and the acetyl that makes it this one
+  hex('ik', 15, 41, 6.4, 2.2), hex('ik', 26.09, 41, 6.4, 2.2), hex('ik', 35.69, 35.46, 6.4, 2.2),
+  S('M41.23 32.26 L35.69 29.06 L37.02 22.8 L43.38 22.13 L45.99 27.98 Z', 'ik', 2.2),
+  S('M16.2 45.6 L19.6 43.6', 'ik', 1.6),                              // the C4–C5 double bond
+  ...double([9.46, 44.2], [5.2, 46.8], 'ik'),
+  S('M43.38 22.13 L49 16', 'ik', 2.2),
+  ...double([49, 16], [49, 8], 'ik'),
+  S('M49 16 L56 19', 'ik', 2.2),                                      // the methyl: a hydroxyl here instead and it is testosterone
+  C(3.8, 48.2, 3.6, CPK.O), C(49, 6.6, 3.6, CPK.O),
+]);
+def('bed_urea', () => [                                               // the smallest possible carrier for nitrogen you cannot use
+  ...double([30, 34], [30, 18], 'ik'),
+  S('M30 34 L15 44 M30 34 L45 44', 'ik', 2.6),
+  S('M15 44 L8 50 M15 44 L11 37 M45 44 L52 50 M45 44 L49 37', 'ik', 1.6),
+  C(30, 16, 7.5, CPK.O),
+  C(15, 44, 6.5, CPK.N), C(45, 44, 6.5, CPK.N),                       // two nitrogens out — one from ammonia, one from aspartate
+  C(30, 34, 6, CPK.C),
+  ...[[7, 51], [10, 36], [53, 51], [50, 36]].map(([x, y]) => C(x, y, 3, CPK.H)),
+]);
+def('bed_anal_canal', () => [                                         // two rings, and only one of them takes instruction
+  P('M22 4 L38 4 L38 56 L22 56 Z', 'gh'),                             // the lumen, straight through
+  P('M15 4 L22 4 L22 56 L15 56 Z', 'bs'), P('M38 4 L45 4 L45 56 L38 56 Z', 'bs'),
+  ...[8, 13, 18].map(y => S(`M15 ${y} L22 ${y} M38 ${y} L45 ${y}`, 'lo', 1.2)),   // columnar cells up here, tall as the wall is thick
+  ...[32, 38].map(y => S(`M17 ${y} L22 ${y} M38 ${y} L43 ${y}`, 'hi', 1.2)),      // flattening to squamous on the way down
+  P('M15 50 L22 50 L22 56 L15 56 Z', 'lo'), P('M38 50 L45 50 L45 56 L38 56 Z', 'lo'),   // keratinised, where it becomes skin
+  S('M12 24 A18 6.5 0 1 0 48 24 A18 6.5 0 1 0 12 24', 'lo', 3.4),     // the inner ring, which is never asked
+  S('M8 41 A22 8 0 1 0 52 41 A22 8 0 1 0 8 41', 'ik', 3.4),           // and the outer one, which is
+]);
+def('bed_chicken_ceca', () => [                                       // blind means closed at the far end, and that is the point
+  S('M4 16 Q18 20 30 29', 'gh', 5),                                   // small intestine, arriving
+  S('M30 29 Q42 34 56 28', 'gh', 5),                                  // large intestine, leaving
+  S('M28 32 Q18 42 22 52', 'bs', 5),                                  // one caecum, hanging loose in the body
+  S('M34 32 Q44 42 40 52', 'bs', 5),                                  // and its pair — parrots have neither
+  C(22, 53, 3.4, 'lo'), C(40, 53, 3.4, 'lo'),                         // each ending in nothing at all
+]);
+def('bed_chicken_proventriculus', () => [                             // the glandular stomach: acid here, grinding next door
+  S('M30 2 L30 12', 'gh', 5),                                         // feed, down from the crop
+  P('M30 12 Q15 19 16 32 Q17 43 30 46 Q43 43 44 32 Q45 19 30 12 Z', 'bs'),
+  ...[[22, 24], [38, 24], [20, 33], [40, 33], [26, 40], [34, 40]].map(([x, y]) =>
+    [C(x, y, 3.2, 'lo'), S(`M${x} ${y} L${n(30 + (x - 30) * 0.35)} ${n(31 + (y - 31) * 0.35)}`, 'ik', 1.2)]).flat(),  // glands, all emptying inward
+  ...granules('hi', 5, 27, [26, 26, 35, 40]),                         // hydrochloric acid and pepsinogen, going in
+  E(30, 54, 11, 6, 'gh'),                                             // the gizzard below it, which does the actual milling
+]);
+def('bed_dermis', () => [                                             // two layers, and the wavy seam between them is the picture
+  P('M4 6 L56 6 L56 18 L4 18 Z', 'gh'),                               // epidermis, with no blood supply of its own
+  P('M4 18 Q10 9 16 18 Q22 9 28 18 Q34 9 40 18 Q46 9 52 18 L56 18 L56 33 L4 33 Z', 'bs'),  // papillary layer, pushing up into it
+  P('M4 33 L56 33 L56 54 L4 54 Z', 'lo'),                             // reticular layer, coarse and dense
+  S('M8 40 Q30 46 52 40 M8 48 Q30 42 52 48', 'hi', 1.6),              // its collagen, running the long way
+  S('M20 46 L20 20 Q22 12 24 20 L24 46', 'ik', 1.6),                  // a capillary loop, up into one papilla to feed the layer above
+]);
+def('bed_epididymis', () => [                                         // six metres of duct, folded flat onto one testis
+  E(22, 36, 15, 14, 'gh'),
+  S('M14 10 Q28 5 40 11', 'lo', 2),                                   // the head: they arrive here able to do nothing
+  S('M40 11 Q51 17 41 22 Q31 27 41 31', 'bs', 3),                     // the body, doubling back and back
+  S('M41 31 Q52 37 41 43 Q33 49 45 53', 'bs', 4.6),                   // the tail, thicker-walled, where they wait
+  C(46, 55, 2.6, 'ik'),                                               // and out
+]);
+def('bed_gallbladder', () => [                                        // it makes no bile — it takes the water back out of someone else's
+  P('M30 8 Q17 18 16 33 Q16 50 30 55 Q44 50 44 33 Q43 18 30 8 Z', 'gh'),        // the volume the liver sent down
+  P('M30 25 Q22 33 22 41 Q22 50 30 53 Q38 50 38 41 Q38 33 30 25 Z', 'bs'),      // and what is left of it: three- to tenfold less
+  ...[[13, 28, 2.6], [8, 23, 2], [4, 19, 1.4]].map(([x, y, r]) => C(x, y, r, 'hi')),
+  ...[[47, 28, 2.6], [52, 23, 2], [56, 19, 1.4]].map(([x, y, r]) => C(x, y, r, 'hi')),  // water and salts, back out through the wall
+  S('M30 8 Q35 2 43 5', 'ik', 2.4),                                   // the cystic duct — and it squeezes when fat arrives
+]);
+def('bed_kidney', () => [                                             // cut open: cortex outside, pyramids pointing in, one pipe out
+  P('M26 6 Q9 9 7 27 Q5 46 21 54 Q34 58 37 47 Q39 39 30 35 Q23 30 30 24 Q38 18 35 11 Q33 5 26 6 Z', 'bs'),
+  ...[16, 29, 42].map(y => P(`M11 ${y - 7} L27 ${y} L11 ${y + 7} Z`, 'lo')),   // the medullary pyramids, every one pointing the same way
+  P('M28 19 Q39 30 28 42 Z', 'hi'),                                   // the pelvis, collecting from all of them
+  S('M35 31 L54 36', 'ik', 3.4),                                      // and one pipe out
+  ...granules('gh', 6, 26, [12, 12, 24, 48]),                         // twenty-six kinds of cell, no two with the same job
+]);
+def('bed_midgut', () => [                                             // the one gut section with no cuticle over it at all
+  S('M2 50 L58 50', 'lo', 3),                                         // the basement membrane, and bare cells on top of it
+  ...Array.from({ length: 8 }, (_, i) => P(`M${4 + i * 7} 50 L${9 + i * 7} 50 L${9 + i * 7} 34 L${4 + i * 7} 34 Z`, 'bs')),
+  ...Array.from({ length: 19 }, (_, i) => S(`M${4 + i * 2.9} 34 L${4 + i * 2.9} 30`, 'ik', 1)),   // microvilli, straight into the food
+  ...granules('hi', 7, 61, [8, 8, 50, 24]),                           // enzymes going out, food coming back in
+  C(24, 44, 3, 'hi'), C(29, 44, 3, 'hi'),                             // a cell dividing, which they never stop doing
+]);
+def('bed_pineal_gland', () => [                                       // a cone of retina-cousins that never sees the light itself
+  C(8, 12, 4.4, 'gh'), C(8, 12, 2, 'ik'),                             // the eye it takes its cue from
+  S('M12 14 Q20 20 25 27', 'gh', 1.6),                                // second hand, by way of the clock
+  P('M30 13 Q43 32 34 48 L26 48 Q17 32 30 13 Z', 'bs'),
+  ...[26, 34, 42].map(y => S(`M${n(30 - (y - 10) * 0.3)} ${y} Q30 ${y + 3} ${n(30 + (y - 10) * 0.3)} ${y}`, 'lo', 1.4)),  // scales, since it is named for a pine cone
+  ...[[26, 54], [33, 55], [39, 51]].map(([x, y]) => C(x, y, 2.4, 'hi')),   // melatonin, its one and only answer
+]);
+def('bed_sebaceous_gland', () => [                                    // holocrine: the cells do not secrete the oil, they become it
+  S('M38 5 L30 55', 'gh', 7),                                         // the follicle it opens into
+  S('M37 8 L31 52', 'lo', 1.4),                                       // and the hair in it
+  C(18, 26, 12, 'lo'),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return C(n(18 + 8.5 * Math.cos(a)), n(26 + 8.5 * Math.sin(a)), 3, 'bs');     // intact cells around the rim
+  }),
+  C(19, 27, 5, 'hi'),                                                 // and in the middle, cells coming apart into sebum
+  S('M28 26 L33 26', 'ik', 2),
+  ...[[35, 19], [36, 12], [37, 6]].map(([x, y]) => C(x, y, 2.4, 'hi')),   // oil, up the shaft to the surface
+]);
+def('bed_spermatheca', () => [                                        // a cuticle sac that holds sperm until an egg goes past
+  C(27, 23, 16, 'ik'),                                                // the cuticle, thick and hard-lined
+  C(27, 23, 13, 'bs'),
+  ...[[21, 16], [33, 19], [20, 27], [33, 30], [26, 33]].map(([x, y]) =>
+    [C(x, y, 3, 'lo'), S(`M${x} ${y} Q${x - 5} ${y + 4} ${x - 10} ${y + 1}`, 'lo', 1.4)]).flat(),   // sperm, in store, sometimes for a whole season
+  S('M27 39 L27 50', 'ik', 3.4),                                      // the duct, opening where the egg goes past
+  S('M22 50 L32 50', 'lo', 2.6),                                      // a valve on it: by working this she picks whose sperm is used
+  E(27, 55, 6, 4, 'gh'),
+]);
+def('bed_turtle_shell', () => [                                       // fifty-odd of its own bones, not armour it put on
+  P('M6 38 Q30 2 54 38 Z', 'bs'),
+  ...[[8, 36], [15, 20], [30, 7], [45, 20], [52, 36]].map(([x, y]) => S(`M30 38 L${x} ${y}`, 'lo', 2)),  // ribs, grown outward and fused
+  C(30, 9, 3, 'hi'),                                                  // the vertebral column, along the crest
+  S('M5 38 Q30 0 55 38', 'ik', 1.4),                                  // keratin scutes, capping the lot
+  P('M12 42 L48 42 L44 50 L16 50 Z', 'hi'),                           // the plastron: shoulder girdle and sternum, flattened
+  S('M30 42 L30 50', 'ik', 1.2),
+]);
+def('bed_ventral_nerve_cord', () => [                                 // a rope ladder down the belly, not one cable down the back
+  S('M22 8 L22 54', 'bs', 3), S('M38 8 L38 54', 'bs', 3),             // the connectives, running the length
+  ...[14, 26, 38, 50].map(y => S(`M22 ${y} L38 ${y}`, 'lo', 2.4)),   // a commissure at every rung
+  ...[14, 26, 38, 50].map(y => [C(22, y, 5, 'hi'), C(38, y, 5, 'hi'),
+                                C(22, y, 2, 'living-lo'), C(38, y, 2, 'living-lo')]).flat(),   // paired ganglia, one pair per segment
+  S('M22 8 Q30 3 38 8', 'lo', 2.4),                                   // the brain up front, and barely a special case
+]);
+def('bed_chitin', () => [                                             // cellulose's chain with one thing added, on every single unit
+  S('M10.2 25.5 L3 22', 'gh', 2.2),
+  hex('ik', 18, 30, 9, 2.2), hex('ik', 42, 30, 9, 2.2),
+  S('M25.8 25.5 L34.2 25.5', 'ik', 2.2),
+  S('M18 39 L18 47 M42 39 L42 47', 'ik', 2.2),
+  S('M18 48 L26 52 M42 48 L50 52', 'ik', 2),
+  S('M49.8 34.5 L57 38', 'gh', 2.2),                                  // and on, and on, and on
+  C(18, 21, 2.8, CPK.O), C(42, 21, 2.8, CPK.O),                       // the ring oxygen — these are sugars, not benzene
+  C(30, 25.5, 3.4, CPK.O),                                            // and the β-1,4 oxygen linking one to the next
+  C(18, 48, 4, CPK.N), C(42, 48, 4, CPK.N),                           // the acetamido nitrogen: this is what plain cellulose lacks
+  C(28, 53, 3, CPK.O), C(52, 53, 3, CPK.O),
+]);
+def('bed_cartilage', () => [                                          // cells in their own matrix, and no vessel gets in
+  P('M6 10 L54 10 L54 50 L6 50 Z', 'bs'),
+  S('M8 17 Q30 23 52 17 M8 43 Q30 37 52 43', 'lo', 1.2),              // collagen and proteoglycan, all of it secreted from inside
+  ...[[16, 20], [34, 17], [46, 27], [19, 38], [38, 41], [29, 29]].map(([x, y]) =>
+    [E(x, y, 6, 5, 'hi'), C(x, y, 3, 'living-lo')]).flat(),           // each chondrocyte walled into its own lacuna
+  S('M4 55 L56 55', 'gh', 3), S('M30 55 L30 51', 'gh', 2),            // a vessel, running past and stopping dead at the edge
+]);
+def('bed_nervous_tissue', () => [                                     // one cell type fires; the other wraps it in fat and feeds it
+  S('M6 8 L14 18 M2 20 L14 18 M8 30 L14 18', 'ik', 1.6),              // dendrites, listening
+  S('M20 22 L54 46', 'ik', 2.4),                                      // the axon
+  ...[[29, 28.5], [39, 35.5], [49, 42.5]].map(([x, y]) => ['g', 37, x, y, [E(x, y, 6.5, 4, 'hi')]]),  // myelin, in separate segments — the gaps are the trick
+  C(14, 18, 8, 'bs'), C(14, 18, 3, 'living-lo'),                      // the cell body
+  C(38, 15, 4, 'lo'),
+  ...[0, 1, 2, 3].map(i => {
+    const a = (i / 4) * Math.PI * 2 + 0.4;
+    return S(`M${n(38 + 4 * Math.cos(a))} ${n(15 + 4 * Math.sin(a))} L${n(38 + 8 * Math.cos(a))} ${n(15 + 8 * Math.sin(a))}`, 'lo', 1.4);
+  }),                                                                  // a glial cell, doing the keeping-alive
+  S('M54 46 L58 43 M54 46 L57 51', 'ik', 1.4),
+]);
+
+/* ── bedrock drawings: out_7.js ─────────────────────── */
+/* bedrock chunk 07 — blood cells, bones, the gut tube's regions, and four
+   small molecules. Every tube in this chunk is drawn by what makes it that
+   tube and not the next one: the esophagus by its change of muscle, the small
+   intestine by its villi, the large by its haustra, the dorsal vessel by the
+   slits along its length, the cloaca by the three tracts arriving at it. */
+
+def('bed_hematopoietic_stem_cell', () => [
+  C(30, 12, 8, 'bs'), C(27.5, 9.5, 2.6, 'hi'),                          // the one self-renewing cell in the marrow
+  S('M25 18 L15 28', 'ik', 1.8), S('M35 18 L45 28', 'ik', 1.8),         // and the two lines it splits into
+  E(12, 38, 7, 5, 'lo'), E(12, 38, 3, 2, 'bs'),                         // myeloid: a red cell...
+  C(11, 51, 5, 'lo'), ...granules('hi', 4, 907, [7, 47, 15, 55]),       // ...a granulocyte...
+  P('M20 46 L26 44 L25 51 Z', 'lo'),                                    // ...and a platelet — all different
+  C(46, 38, 6, 'hi'), C(46, 38, 4.2, 'lo'),                             // lymphoid: two of the same, nearly all nucleus
+  C(49, 51, 5.4, 'hi'), C(49, 51, 3.8, 'lo'),
+]);
+
+def('bed_ossicles', () => [
+  S('M6 10 L6 50', 'gh', 2),                                            // the eardrum, at the near end
+  C(15, 16, 6, 'bs'), S('M13 21 L8 44', 'bs', 3.4),                     // malleus: a head, and a handle set into the drum
+  P('M25 11 L34 14 L32 23 L24 21 Z', 'hi'), S('M31 22 L36 32', 'hi', 3),  // incus: the anvil, and its long process
+  S('M36 32 L43 26 M36 32 L43 40', 'lo', 2.4),                          // stapes: two arms...
+  S('M43 26 L47 26 M43 40 L47 40', 'lo', 2.4),
+  S('M48 22 L48 44', 'lo', 4.4),                                        // ...and a footplate, small enough to move fluid
+  S('M55 12 Q59 22 55 30 Q51 38 55 48', 'gh', 2),                       // which is what is waiting on the far side
+]);
+
+def('bed_vertebral_column', () => {
+  const stack = [[32, 7], [34, 14], [33, 21], [30, 28], [27, 35], [26, 42], [28, 50]];
+  return [
+    S('M32 4 Q37 18 30 32 Q23 46 28 56', 'hi', 7),                      // the cord, one continuous run
+    ...stack.map(([x, y]) =>
+      P(`M${x - 11} ${y - 2.6} L${x + 11} ${y - 2.6} L${x + 11} ${y + 2.6} L${x - 11} ${y + 2.6} Z`, 'bs')),
+    ...stack.map(([x, y]) => S(`M${x - 11} ${y} L${x - 18} ${y + 1.5}`, 'lo', 2.2)),  // one spine off each, all the way down
+  ];
+});
+
+def('bed_air_cell', () => [
+  P('M30 6 Q46 18 44 34 A14 14 0 0 1 16 34 Q14 18 30 6 Z', 'hi'),       // the egg, blunt end down
+  P('M16 34 A14 14 0 0 0 44 34 Q30 44 16 34 Z', 'ground'),              // ordinary air, caught between the two membranes
+  S('M16 34 Q30 44 44 34', 'ik', 1.8),                                  // the inner membrane, pulling away
+  S('M16 34 A14 14 0 0 0 44 34', 'ik', 1.8),                            // the outer, staying against the shell
+]);
+
+def('bed_plasma', () => [
+  P('M19 7 L41 7 L41 44 Q41 53 30 53 Q19 53 19 44 Z', 'gh'),            // spun down, which is the only way you ever see it
+  P('M20 9 L40 9 L40 30 L20 30 Z', 'hi'),                               // the plasma: 95% water, and everything dissolved in it
+  ...granules('bs', 8, 311, [23, 12, 37, 27]),                          // albumin, globulins, fibrinogen
+  P('M20 30 L40 30 L40 44 Q40 52 30 52 Q20 52 20 44 Z', 'lo'),          // the cells, packed off at the bottom — riders, not part of it
+  S('M20 30 L40 30', 'ik', 1.6),
+]);
+
+def('bed_calcium_carbonate', () => [
+  ...double([36, 32], [36, 19], 'ik'),                                  // the carbonate ion, trigonal and flat
+  S('M36 32 L26 40', 'ik', 2.4), S('M36 32 L46 40', 'ik', 2.4),
+  C(36, 32, 5.4, CPK.C),
+  C(36, 19, 4.6, CPK.O), C(26, 40, 4.6, CPK.O), C(46, 40, 4.6, CPK.O),
+  C(13, 21, 8, CPK.Ca),                                                 // and the calcium it pairs with
+]);
+
+def('bed_glycerol', () => {                                             // three carbons, a hook on every one
+  const { pts, shape } = backbone('ik', 2, 30, 38);
+  return [shape, ...pts.map(p => C(p[0], p[1], 4, CPK.C)),
+    ...pts.map(p => [S(`M${p[0]} ${p[1]} L${p[0]} ${n(p[1] - 13)}`, 'ik', 1.8),
+                     C(p[0], n(p[1] - 13), 3.6, CPK.O)]).flat()];
+});
+
+def('bed_silica', () => [
+  S('M30 32 L30 12', 'ik', 2.4), S('M30 32 L12 42', 'ik', 2.4),         // one SiO4 tetrahedron, the unit quartz repeats
+  S('M30 32 L48 42', 'ik', 2.4), S('M30 32 L35 51', 'ik', 2.2),
+  S('M30 12 L12 42 M30 12 L48 42 M12 42 L48 42', 'gh', 1.2),            // its own edges, which is why it outlasts everything
+  C(30, 32, 7, '#F0C8A0'),
+  C(30, 12, 4.6, CPK.O), C(12, 42, 4.6, CPK.O), C(48, 42, 4.6, CPK.O), C(35, 51, 4, CPK.O),
+]);
+
+def('bed_water_molecule', () => [
+  S('M30 36 L16 22', 'ik', 3), S('M30 36 L44 22', 'ik', 3),
+  C(30, 36, 11, CPK.O), C(16, 22, 6.5, CPK.H), C(44, 22, 6.5, CPK.H),
+  S('M21 27 A13 13 0 0 1 39 27', 'gh', 1.4),                            // the angle between them — the whole reason water behaves
+]);
+
+def('bed_appendix', () => [
+  E(24, 18, 13, 8, 'gh'),                                               // the cecum it hangs off
+  S('M24 24 Q19 38 22 51', 'bs', 6), C(22, 52, 3.4, 'bs'),              // narrow, and blind at the end
+  ...[[20, 30], [23, 38], [21, 45], [23, 50]].map(([x, y]) => C(x, y, 1.8, 'hi')),  // lymphoid tissue packing the wall
+  ...[[39, 34], [45, 42], [37, 47]].map(([x, y]) => C(x, y, 2.4, 'lo')),            // and the gut's own bacteria, kept somewhere safe
+]);
+
+def('bed_chicken_cloaca', () => [
+  P('M18 30 L42 30 Q47 42 38 50 L22 50 Q13 42 18 30 Z', 'gh'),          // one chamber
+  S('M11 7 Q16 22 26 30', 'bs', 4),                                     // the gut arriving...
+  S('M30 5 L30 29', 'hi', 4),                                           // ...the reproductive tract...
+  S('M49 7 Q44 22 34 30', 'lo', 4),                                     // ...and the urinary one
+  S('M24 52 L36 52', 'ik', 4),                                          // and one vent for all three
+]);
+
+def('bed_chicken_small_intestine', () => [
+  ...Array.from({ length: 12 }, (_, i) => {                             // villi, combing the whole lining for what is in there
+    const x = 7 + i * 4.2;
+    return P(`M${n(x - 1.7)} 40 Q${n(x - 2.8)} 24 ${n(x)} 19 Q${n(x + 2.8)} 24 ${n(x + 1.7)} 40 Z`, 'hi');
+  }),
+  P('M4 40 L56 40 L56 47 L4 47 Z', 'lo'),                               // circular muscle...
+  P('M4 47 L56 47 L56 54 L4 54 Z', 'bs'),                               // ...and longitudinal, the second layer
+  ...[9, 16, 23, 30, 37, 44, 51].map(x => S(`M${x} 47 L${x} 54`, 'ik', 1)),
+  S('M6 47 Q13 50 20 47 Q27 44 34 47 Q41 50 48 47 Q52 45 56 47', 'gh', 1.2),  // its own nerve net, threaded between them
+]);
+
+def('bed_dorsal_vessel', () => [
+  ...[[13, 50], [30, 55], [46, 50]].map(([x, y]) => E(x, y, 7, 4.5, 'gh')),  // the organs, sitting loose in the cavity
+  ...granules('hi', 9, 271, [8, 44, 52, 58]),                           // hemolymph washing around them, held in nothing
+  P('M24 4 L36 4 L36 42 L24 42 Z', 'bs'),                               // one muscular tube, no chambers anywhere in it
+  ...[9, 17, 25, 33].flatMap(y => [
+    S(`M24 ${y} L24 ${y + 4}`, 'ground', 3), S(`M36 ${y} L36 ${y + 4}`, 'ground', 3)]),  // ostia, one-way, all along its length
+  ...[9, 17, 25, 33].flatMap(y => [
+    S(`M13 ${y + 2} L21 ${y + 2}`, 'gh', 1.6), S(`M47 ${y + 2} L39 ${y + 2}`, 'gh', 1.6)]),  // seeping in through every one of them
+  S('M27 42 Q23 47 17 49 M33 42 Q37 47 43 49', 'hi', 2.2),              // and straight back out into the open — no vessel to leave by
+]);
+
+def('bed_esophagus', () => [
+  S('M22 5 L22 54', 'bs', 3), S('M38 5 L38 54', 'bs', 3),
+  ...[11, 15, 19, 23].map(y => S(`M22 ${y} L38 ${y}`, 'ik', 1.2)),      // striated above: the swallow you choose to make
+  ...[[26, 34], [34, 38], [26, 42], [34, 46]].map(([x, y]) => grain('lo', x, y, 1.1, 60)),  // spindles below: the squeeze you do not
+  S('M20 29 Q30 33 40 29', 'gh', 1.6),                                  // and the line where one becomes the other
+  S('M20 52 Q30 47 40 52', 'lo', 3.4),
+]);
+
+def('bed_ganglion', () => {
+  const roots = [[2, 10], [2, 50], [58, 10], [58, 50], [30, 58]];
+  const soma = [[15, 25], [25, 22], [35, 22], [45, 25], [19, 33], [30, 35], [41, 33]];
+  return [
+    ...roots.map(([x, y]) => S(`M30 29 L${x} ${y}`, 'ik', 2.6)),        // nerves out every way — a centre in its own right, not a bulge on a wire
+    E(21, 29, 12, 10, 'bs'), E(39, 29, 12, 10, 'bs'),                   // paired lobes: in an insect, this pair IS the brain
+    ...soma.flatMap(([x, y]) => [C(x, y, 3.2, 'lo'), C(n(x + 1), n(y - 1), 1.1, 'hi')]),  // and it is nothing but cell bodies, clustered
+  ];
+});
+
+def('bed_large_intestine', () => {
+  const arc = [180, 150, 120, 90, 60, 30, 0].map(a => {
+    const t = a * Math.PI / 180;
+    return [n(30 + 19 * Math.cos(t)), n(36 - 19 * Math.sin(t))];
+  });
+  return [
+    ...arc.map(([x, y]) => C(x, y, 7.4, 'bs')),                         // haustra — the tube bunched into pouches
+    ...[165, 135, 105, 75, 45, 15].map(a => {
+      const t = a * Math.PI / 180;
+      return S(`M${n(30 + 13 * Math.cos(t))} ${n(36 - 13 * Math.sin(t))} ` +
+               `L${n(30 + 24 * Math.cos(t))} ${n(36 - 24 * Math.sin(t))}`, 'lo', 1.6);
+    }),                                                                 // the pinch between one pouch and the next
+    S('M19 36 A11 11 0 0 1 41 36', 'lo', 3.4),                          // taeniae coli: the ribbon, too short, that gathers it
+    C(11, 46, 6, 'bs'),                                                 // the cecum at the start...
+    S('M49 40 L49 55', 'hi', 6),                                        // ...the rectum at the end
+  ];
+});
+
+def('bed_nail', () => [
+  P('M16 56 L16 24 Q16 8 30 8 Q44 8 44 24 L44 56 Z', 'lo'),             // the fingertip behind it
+  P('M21 50 L21 25 Q21 13 30 13 Q39 13 39 25 L39 50 Q30 54 21 50 Z', 'bs'),  // the plate — the same keratin as a hoof or a horn
+  P('M21 25 Q21 13 30 13 Q39 13 39 25 Q30 30 21 25 Z', 'hi'),           // the lunula, showing the matrix that makes it
+  S('M21 47 Q30 51 39 47', 'ik', 1.6),                                  // the free edge it gets pushed out to
+  S('M30 33 L30 41', 'gh', 1.4), P('M27.5 40 L32.5 40 L30 44 Z', 'gh'), // 3.5 mm a month, and never finished
+]);
+
+def('bed_pit_organ', () => [
+  P('M6 18 Q28 10 50 18 Q58 28 52 42 Q28 50 10 44 Q2 32 6 18 Z', 'gh'), // the head, in profile
+  C(46, 26, 3.4, 'ik'),                                                 // the eye...
+  C(10, 31, 2, 'ik'),                                                   // ...and the nostril, with the pit between them
+  P('M14 21 L33 28 L33 37 L14 41 Z', 'bs'),                             // the pit: a funnel back into the face
+  S('M22 24 L22 39', 'hi', 2.4),                                        // the membrane strung across it
+  ...[26, 30, 34, 38].map(y => C(22, y, 1.3, 'lo')),                    // nerve endings, thick enough to form a picture
+  ...[-7, 0, 7].map(dy => S(`M2 ${30 + dy} L11 ${n(30 + dy * .6)}`, 'ik', 1.2)),  // heat, arriving as light does
+]);
+
+def('bed_seminal_vesicle', () => [
+  E(30, 9, 13, 6, 'gh'),                                                // the bladder they sit behind
+  S('M16 20 Q6 28 16 32 Q6 38 16 42 Q8 48 20 48', 'bs', 5),             // one convoluted gland...
+  S('M44 20 Q54 28 44 32 Q54 38 44 42 Q52 48 40 48', 'bs', 5),          // ...and its pair
+  ...[[12, 26], [12, 37], [48, 26], [48, 37]].map(([x, y]) => C(x, y, 1.7, 'hi')),  // fructose and citrate — the fuel they add
+  S('M20 48 L29 56 M40 48 L31 56', 'lo', 3),                            // and most of the volume, leaving
+]);
+
+def('bed_spleen', () => [
+  P('M14 18 Q34 8 46 20 Q52 32 44 42 Q32 52 18 46 Q8 38 10 26 Q10 20 14 18 Z', 'lo'),  // red pulp, most of the organ
+  ...[[22, 26], [34, 22], [30, 34], [20, 38], [38, 34]].map(([x, y]) => C(x, y, 3.2, 'hi')),  // white pulp, arranged as a lymph node is
+  ...[[26, 45], [14, 31]].map(([x, y]) => E(x, y, 4, 2.6, 'gh')),       // worn-out red cells, going in...
+  S('M45 43 L53 49', 'bs', 2.4), C(54, 51, 2.6, 'bs'),                  // ...and their iron, coming back out
+]);
+
+def('bed_tympanic_membrane', () => [
+  C(30, 30, 21, 'lo'),                                                  // the ring that holds it taut
+  C(30, 30, 18, 'bs'),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i * 30) * Math.PI / 180;
+    return S(`M${n(30 + 4 * Math.cos(a))} ${n(30 + 4 * Math.sin(a))} ` +
+             `L${n(30 + 17 * Math.cos(a))} ${n(30 + 17 * Math.sin(a))}`, 'hi', 1);
+  }),                                                                   // collagen running out from the middle...
+  ring('hi', 30, 30, 10.5, 1),                                          // ...and round it, the layer between skin and mucosa
+  S('M30 13 L30 30', 'ik', 2.4), C(30, 31, 3, 'ik'),                    // the malleus, gripping the centre
+]);
+
+def('bed_vomeronasal_organ', () => [
+  P('M5 11 Q30 5 55 11 Q57 22 40 25 L20 25 Q3 22 5 11 Z', 'gh'),        // the roof of the mouth
+  C(24, 17, 5, 'bs'), C(36, 17, 5, 'bs'),                               // two pits: a second sense of smell entirely
+  C(24, 17, 2.4, 'ground'), C(36, 17, 2.4, 'ground'),
+  S('M30 57 L30 39', 'lo', 5),                                          // the tongue, on its way back in
+  S('M30 39 L24 27 M30 39 L36 27', 'lo', 3.4),                          // forked, one tip for each pit
+  ...granules('hi', 5, 521, [21, 41, 39, 53]),                          // carrying what it picked up off the air
+]);
+
+def('bed_dna', () => {
+  const out = [];
+  for (let i = 0; i <= 14; i++) {                                       // four letters, and each one only ever pairs with its own
+    const y = n(8 + i * 3.2);
+    const x1 = n(30 + 13 * Math.sin(i * 0.62)), x2 = n(30 - 13 * Math.sin(i * 0.62));
+    const flip = i % 2 === 0;
+    out.push(S(`M${x1} ${y} L30 ${y}`, flip ? 'ik' : 'lo', flip ? 2.4 : 1.6));
+    out.push(S(`M30 ${y} L${x2} ${y}`, flip ? 'lo' : 'ik', flip ? 1.6 : 2.4));
+  }
+  ['bs', 'hi'].forEach((r, k) => out.push(S(
+    Array.from({ length: 15 }, (_, i) =>
+      `${i ? 'L' : 'M'}${n(30 + (k ? -13 : 13) * Math.sin(i * 0.62))} ${n(8 + i * 3.2)}`).join(' '), r, 3.4)));
+  return out;
+});
+
+def('bed_chalazae', () => [
+  E(30, 30, 27, 21, 'gh'),                                              // the white it all sits in
+  S('M19 30 Q14 23 10 30 Q6 37 2 30', 'lo', 3),                         // one cord, twisted this way...
+  S('M19 30 Q14 37 10 30 Q6 23 2 30', 'hi', 2),
+  S('M41 30 Q46 37 50 30 Q54 23 58 30', 'lo', 3),                       // ...and the other, twisted the other
+  S('M41 30 Q46 23 50 30 Q54 37 58 30', 'hi', 2),
+  C(30, 30, 11, 'bs'), C(26.5, 26.5, 3.4, 'hi'),                        // the yolk, held centred whichever way the egg turns
+]);
+
+def('bed_osseous_tissue', () => [
+  C(28, 30, 21, 'bs'),
+  ...[21, 16.5, 12, 7.5].map(rad => ring('lo', 28, 30, rad, 1.4)),      // lamellae, laid ring on ring and never finished
+  C(28, 30, 4.4, 'ground'),                                             // the canal down the middle of it
+  ...[[28, 16], [39, 24], [39, 38], [28, 44], [17, 38], [17, 24]].map(([x, y]) =>
+    grain('ik', x, y, .8, 30)),                                         // the cells that laid it, walled into their own work
+  ...granules('hi', 7, 619, [15, 17, 41, 43]),                          // 70% mineral by weight, 30% collagen
+  C(51, 15, 4, 'hi'),                                                   // one crew adding...
+  C(51, 45, 4.6, 'lo'), ...granules('hi', 3, 83, [44, 50, 56, 57]),     // ...and one taking it back down
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
@@ -33410,6 +35570,43 @@ const walk = shapes => shapes.forEach(s => {
   checkRole(s[s[0] === 'c' ? 4 : s[0] === 'e' ? 5 : 2]);
 });
 for (const v of Object.values(out)) walk(v.s);
+/* The bedrock defs have to be exercised BEFORE check exits, or they are never
+   run at all: four separate agents drawing them found that `check` could not
+   see a bed_ id — not its roles, not its fingerprint, not even a throw in the
+   drawing body — because the exit below fired first and the loop that invokes
+   them came after. A def that was broken would have passed check and failed
+   only at build. They are invoked here, and their shapes join the same sameness
+   report everything else is held to. */
+const BED_CAT = {
+  particle: 'molecule', molecule: 'molecule', monomer: 'molecule', polymer: 'molecule',
+  structure: 'living', assembly: 'living', cell: 'living', blood_cell: 'living',
+  tissue: 'living', tube: 'living', bone: 'living', fluid: 'living',
+  organ: 'living', joint: 'living', eggpart: 'living',
+};
+const BEDROCK = JSON.parse(readFileSync(join(root, 'data/bedrock.json'), 'utf8'));
+const bedOut = {};
+for (const c of BEDROCK.compounds) {
+  if (!ART[c.id]) continue;
+  bedOut[c.id] = { c: BED_CAT[c.tier] || 'craft', s: ART[c.id]() };
+}
+const bedMissing = BEDROCK.compounds.filter(c => !ART[c.id]).map(c => c.id);
+console.log(`\n  bedrock: ${Object.keys(bedOut).length} of ${BEDROCK.compounds.length} compounds drawn`);
+for (const v of Object.values(bedOut)) walk(v.s);   // roles, same as the elements
+
+/* A shape list must hold shapes. `.map(y => S(...)).flat()` spreads each S()
+   into loose "s", "M22 14 L38 14", "lo", 2.4 entries, and both walk() here and
+   the renderer skip non-arrays in silence — so the drawing passes every check
+   and quietly loses the shapes. One of the 205 shipped that way and was caught
+   by an agent reading another agent's code, not by any tool. */
+const malformed = [];
+for (const [id, v] of Object.entries({ ...out, ...bedOut }))
+  if (v.s.some(x => !Array.isArray(x))) malformed.push(id);
+if (malformed.length) {
+  console.error(`\n  shape lists with loose entries (a stray .flat()?): ${malformed.join(', ')}`);
+  process.exit(1);
+}
+
+
 
 const drawn = elements.length - missing.length;
 console.log(`  ${drawn}/${elements.length} items drawn by hand, ${missing.length} on the family fallback`);
@@ -33458,7 +35655,12 @@ function similarity(a, b) {
 
 function samenessReport() {
   const fp = {};
+  // Bedrock drawings are compared too, against each other and against every
+  // element in the same category. Eight agents drew 205 of them and none could
+  // see another's work; a white blood cell drawn twice as "circle with a lobed
+  // nucleus" is exactly what no single agent can catch.
   for (const [id, v] of Object.entries(out)) fp[id] = { c: v.c, f: fingerprint(v.s) };
+  for (const [id, v] of Object.entries(bedOut)) fp[id] = { c: v.c, f: fingerprint(v.s) };
   const ids = Object.keys(fp);
   const pairs = [];
   for (let i = 0; i < ids.length; i++) {
@@ -33482,28 +35684,6 @@ if (same.length) {
 } else {
   console.log('\n  no two items in a category are too alike');
 }
-
-/* The bedrock defs have to be exercised BEFORE check exits, or they are never
-   run at all: four separate agents drawing them found that `check` could not
-   see a bed_ id — not its roles, not its fingerprint, not even a throw in the
-   drawing body — because the exit below fired first and the loop that invokes
-   them came after. A def that was broken would have passed check and failed
-   only at build. They are invoked here, and their shapes join the same sameness
-   report everything else is held to. */
-const BED_CAT = {
-  particle: 'molecule', molecule: 'molecule', monomer: 'molecule', polymer: 'molecule',
-  structure: 'living', assembly: 'living', cell: 'living', blood_cell: 'living',
-  tissue: 'living', tube: 'living', bone: 'living', fluid: 'living',
-  organ: 'living', joint: 'living', eggpart: 'living',
-};
-const BEDROCK = JSON.parse(readFileSync(join(root, 'data/bedrock.json'), 'utf8'));
-const bedOut = {};
-for (const c of BEDROCK.compounds) {
-  if (!ART[c.id]) continue;
-  bedOut[c.id] = { c: BED_CAT[c.tier] || 'craft', s: ART[c.id]() };
-}
-const bedMissing = BEDROCK.compounds.filter(c => !ART[c.id]).map(c => c.id);
-console.log(`\n  bedrock: ${Object.keys(bedOut).length} of ${BEDROCK.compounds.length} compounds drawn`);
 
 if (process.argv[2] === 'check') {
   if (missing.length) console.log(`\n  still to draw:\n    ${missing.join('\n    ')}`);
