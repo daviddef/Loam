@@ -129,6 +129,17 @@ html = html.replace('__GAME_DATA__', JSON.stringify(data))
 
 // Every item must have a drawing. A missing one renders as an empty square,
 // which is the kind of thing that ships unnoticed.
+// A build stamp on the wordmark. Three times now a reported UI bug has turned
+// out to be a cached page rather than a bug, and there was no way to tell from
+// the screenshot which build it was. Hovering the title now says.
+import { execSync } from 'node:child_process';
+let stamp = 'local';
+try {
+  stamp = execSync('git rev-parse --short HEAD', { cwd: new URL('..', import.meta.url) }).toString().trim()
+        + ' · ' + new Date().toISOString().slice(0, 16).replace('T', ' ');
+} catch {}
+html = html.replace('__BUILD__', stamp);
+
 const undrawn = data.elements.filter(e => !art[e.id]).map(e => e.id);
 if (undrawn.length) { console.error(`no art for: ${undrawn.join(', ')}`); process.exit(1); }
 const unsized = data.elements.filter(e => !scale[e.id]).map(e => e.id);

@@ -33483,8 +33483,31 @@ if (same.length) {
   console.log('\n  no two items in a category are too alike');
 }
 
+/* The bedrock defs have to be exercised BEFORE check exits, or they are never
+   run at all: four separate agents drawing them found that `check` could not
+   see a bed_ id — not its roles, not its fingerprint, not even a throw in the
+   drawing body — because the exit below fired first and the loop that invokes
+   them came after. A def that was broken would have passed check and failed
+   only at build. They are invoked here, and their shapes join the same sameness
+   report everything else is held to. */
+const BED_CAT = {
+  particle: 'molecule', molecule: 'molecule', monomer: 'molecule', polymer: 'molecule',
+  structure: 'living', assembly: 'living', cell: 'living', blood_cell: 'living',
+  tissue: 'living', tube: 'living', bone: 'living', fluid: 'living',
+  organ: 'living', joint: 'living', eggpart: 'living',
+};
+const BEDROCK = JSON.parse(readFileSync(join(root, 'data/bedrock.json'), 'utf8'));
+const bedOut = {};
+for (const c of BEDROCK.compounds) {
+  if (!ART[c.id]) continue;
+  bedOut[c.id] = { c: BED_CAT[c.tier] || 'craft', s: ART[c.id]() };
+}
+const bedMissing = BEDROCK.compounds.filter(c => !ART[c.id]).map(c => c.id);
+console.log(`\n  bedrock: ${Object.keys(bedOut).length} of ${BEDROCK.compounds.length} compounds drawn`);
+
 if (process.argv[2] === 'check') {
   if (missing.length) console.log(`\n  still to draw:\n    ${missing.join('\n    ')}`);
+  if (bedMissing.length) console.log(`  bedrock still to draw: ${bedMissing.length}`);
   process.exit(same.length ? 1 : 0);
 }
 
@@ -33500,20 +33523,7 @@ for (const [id, fn] of Object.entries(VERB)) ship['verb_' + id] = { c: 'craft', 
    is emitted here instead, categorised by tier so the palette matches what the
    thing actually is. Anything still undrawn keeps the hexagon, which is the
    honest fallback rather than a wrong picture. */
-const BED_CAT = {
-  particle: 'molecule', molecule: 'molecule', monomer: 'molecule', polymer: 'molecule',
-  structure: 'living', assembly: 'living', cell: 'living', blood_cell: 'living',
-  tissue: 'living', tube: 'living', bone: 'living', fluid: 'living',
-  organ: 'living', joint: 'living', eggpart: 'living',
-};
-const BEDROCK = JSON.parse(readFileSync(join(root, 'data/bedrock.json'), 'utf8'));
-let bedDrawn = 0;
-for (const c of BEDROCK.compounds) {
-  if (!ART[c.id]) continue;
-  ship[c.id] = { c: BED_CAT[c.tier] || 'craft', s: ART[c.id]() };
-  bedDrawn++;
-}
-console.log(`  bedrock: ${bedDrawn} of ${BEDROCK.compounds.length} compounds drawn`);
+Object.assign(ship, bedOut);
 
 /* Interface marks. The gear and the stack render as full-colour emoji on some
    platforms and as text glyphs on others, which is exactly the inconsistency
