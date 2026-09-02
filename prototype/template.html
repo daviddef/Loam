@@ -4417,8 +4417,29 @@ function spawn(id, x, y, near, above, forceNew) {
   }
   // Whatever else happens, the bench must not be able to grow without limit.
   if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
-    toast('The bench is full — tidy it, or double-tap a few things to clear space');
-    return world.querySelector('.chip.board');
+    // But "full" is the wrong answer when the thing asked for is already
+    // standing there. The consolidate branch above catches that only when the
+    // preference is on; with it off, spawn never looks, so a full bench
+    // refused "Put on the bench" for a card already in front of you. Look
+    // first, and show it rather than reporting a wall.
+    const standing = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === id);
+    if (standing) {
+      standing.classList.remove('folded');
+      standing.classList.add('pop');
+      setTimeout(() => standing.classList.remove('pop'), 330);
+      ensureVisible(standing);
+      toast(`${nameOf(byId[id])} is already on the bench`);
+      return standing;
+    }
+    // Returning some other card here was the real fault. Callers take the
+    // result as "the chip for this id" and then move it, fold it, link to it
+    // and save it: restoreBench() walked a 145-card save, ran out of room at
+    // 140, and every card after that got handed the SAME first chip, which it
+    // then repositioned. That is why an exported bench came back with the
+    // whole board duplicated and a links array of [0,0,0] — every index
+    // pointing at element zero. Refusing means returning nothing.
+    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
+    return null;
   }
   const e = byId[id];
   const el = document.createElement('div');
@@ -4501,6 +4522,12 @@ function hubHTML(product) {
     `<span class="ac">${product.brands ? product.brands.replace(/[<>]/g, '') : 'Scanned'}</span>`;
 }
 function spawnHub(scanRecord) {
+  // Hubs and placeholders are real .chip.board elements and were the only two
+  // ways past the cap — which is how a bench got to 145 in the first place.
+  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
+    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it first`);
+    return null;
+  }
   const el = document.createElement('div');
   const [cw, ch] = cardSize();
   el.className = 'chip board ghost hub pop';
@@ -4531,6 +4558,12 @@ function placeholderHTML(text) {
     `<span class="rl"></span><span class="ac">not in this world yet</span>`;
 }
 function spawnPlaceholder(text) {
+  // Hubs and placeholders are real .chip.board elements and were the only two
+  // ways past the cap — which is how a bench got to 145 in the first place.
+  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
+    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it first`);
+    return null;
+  }
   const el = document.createElement('div');
   const [cw, ch] = cardSize();
   el.className = 'chip board ghost placeholder pop';
@@ -4698,6 +4731,58 @@ function placeComposition(id) {
 // specific real route, not whichever one bestRecipe's single heuristic
 // would have picked. Reuses the chip already standing for `id` (if any) and
 // links this route's parents into it, rather than spawning a duplicate.
+// The Makes list was read-only. Every row is a real recipe that this element
+// feeds, and if you hold everything it needs there is no reason you should
+// have to go and rebuild it by hand. One row, or all of them at once.
+function makesRoutes(id) {
+  return DATA.recipes
+    .filter(r => r.in.includes(id) && found.has(r.out))
+    .filter(r => r.in.every(i => found.has(i)));
+}
+function placeMakes(id, idx) {
+  const list = DATA.recipes.filter(r => r.in.includes(id) && found.has(r.out));
+  const r = list[idx];
+  if (!r) return;
+  if (!r.in.every(i => found.has(i))) {
+    const missing = r.in.filter(i => !found.has(i)).map(i => nameOf(byId[i]));
+    return toast(`You still need ${missing.join(' and ')} for that one`);
+  }
+  placeOneRecipe(r, `putting ${nameOf(byId[r.out])} on the bench`);
+}
+function placeMakesAll(id) {
+  const list = makesRoutes(id);
+  if (!list.length) return;
+  pushUndo(`putting everything ${nameOf(byId[id])} makes on the bench`);
+  // One undo for the whole batch, and one tidy at the end rather than per row —
+  // twelve separate relayouts is what made this feel like it had hung.
+  for (const r of list) placeOneRecipe(r, null);
+  benchTouched = true;
+  refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save();
+  toast(`Added ${list.length} of the things ${nameOf(byId[id])} makes`);
+}
+// The shared half of placeRoute: put a specific recipe's inputs and output on
+// the bench. `undoLabel` is null when the caller is batching its own undo.
+function placeOneRecipe(r, undoLabel) {
+  if (undoLabel) pushUndo(undoLabel);
+  const already = boardAlready();
+  const ensure = (iid) => {
+    if (already.has(iid)) return already.get(iid);
+    const el = spawn(iid);
+    already.set(iid, el);
+    return el;
+  };
+  const parents = r.in.map(ensure);
+  let out = findBoardChip(r.out) || already.get(r.out);
+  if (out) {
+    out.classList.remove('folded');
+    links.push({ a: parents[0], b: parents[1] ?? null, out, fresh: true });
+  } else out = materialize(r, parents);
+  if (undoLabel) {
+    benchTouched = true;
+    refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save(); ensureVisible(out);
+  }
+  return out;
+}
 function placeRoute(id, idx) {
   const knownIn = DATA.recipes.filter(r => r.out === id && r.in.every(i => found.has(i)));
   const r = knownIn[idx];
@@ -7159,7 +7244,9 @@ function quickViewHTML(id) {
   const rows = (list, cls) => list.map((r, i) =>
     `<div class="ent ${cls}">${gestureHTML(r)}<span class="arw">→</span>` +
     `<span class="g out" data-entry="${r.out}">${glyph(r.out, 19)} ${byId[r.out].name}</span>` +
-    (cls === 'in' ? `<button class="addroute" data-put-route="${id}::${i}" title="Add this path to the chart">+</button>` : '') +
+    (cls === 'in'
+      ? `<button class="addroute" data-put-route="${id}::${i}" title="Add this path to the chart">+</button>`
+      : `<button class="addroute" data-put-makes="${id}::${i}" title="Add ${byId[r.out].name} to the chart">+</button>`) +
     `</div>`).join('');
 
   return `
@@ -7189,7 +7276,10 @@ function quickViewHTML(id) {
     ${factsHTML(id)}
     ${BED.composition[id] ? bedrockHTML(new Map([[id, 1]]), 'What it is made of') : ''}
     ${taxonPathHTML(id)}
-    <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}</h2>
+    <h2>Makes${usedIn.length ? ` · ${knownOut.length} of ${usedIn.length}` : ''}${
+      knownOut.filter(r => r.in.every(i => found.has(i))).length > 1
+        ? `<button class="addroute" style="margin-left:auto" data-put-makes-all="${id}"
+             title="Add all ${knownOut.filter(r => r.in.every(i => found.has(i))).length} of these to the chart">++</button>` : ''}</h2>
     ${knownOut.length ? rows(knownOut, 'out') : ''}
     ${hiddenOut > 0 ? `<div class="shelf" style="margin-top:${knownOut.length ? '8px' : '0'}">` +
       usedIn.filter(r => !found.has(r.out)).map(r =>
@@ -7584,6 +7674,10 @@ document.getElementById('sheet').addEventListener('click', ev => {
   // composition tree node that also has children) — checked before
   // data-fold below so a tap on the button adds it instead of just
   // toggling the fold it happens to be nested in.
+  const pm = ev.target.closest('[data-put-makes]');
+  if (pm) { const [rid, idx] = pm.dataset.putMakes.split('::'); closeSheet(); return placeMakes(rid, Number(idx)); }
+  const pma = ev.target.closest('[data-put-makes-all]');
+  if (pma) { closeSheet(); return placeMakesAll(pma.dataset.putMakesAll); }
   const pr = ev.target.closest('[data-put-route]');
   if (pr) { const [rid, idx] = pr.dataset.putRoute.split('::'); closeSheet(); return placeRoute(rid, Number(idx)); }
   const pc = ev.target.closest('[data-put-compo]');
@@ -8691,6 +8785,7 @@ let lastShelfTap = { id: null, t: 0 };
 // except the one you asked for — exactly like a card you built by hand.
 function materialize(r, chips) {
   const el = spawn(r.out, null, null, chips);
+  if (!el) return null;                       // bench full: no chip, so no link to it
   links.push({ a: chips[0], b: chips[1] ?? null, out: el, fresh: true });
   el.classList.add('folded');
   return el;
