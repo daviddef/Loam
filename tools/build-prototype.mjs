@@ -87,6 +87,7 @@ for (const [token, value] of [
   ['__UI_AMINO__', uiGlyph('ui_amino')],
   ['__UI_LADDER__', uiGlyph('ui_ladder')],
   ['__UI_EYE__', uiGlyph('ui_eye')],
+  ['__UI_FREEPLAY__', uiGlyph('ui_freeplay')],
   ['__UI_CARCINOGEN__', uiGlyph('ui_carcinogen')],
   // ui_shelf came back: it is the All/Found toggle's mark now, which is the
   // same idea the Shelf tab used to carry.

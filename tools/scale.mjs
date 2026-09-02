@@ -212,6 +212,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* additive and metals waves, 3 Sep */
+          'indium', 'thallium', 'nihonium', 'flerovium', 'moscovium', 'livermorium', 'praseodymium', 'terbium', 'dysprosium', 'holmium', 'erbium', 'thulium', 'ytterbium', 'lutetium', 'francium', 'einsteinium', 'fermium', 'mendelevium', 'nobelium', 'lawrencium', 'cream_cheese', 'processed_cheese', 'soft_serve', 'carrageen_moss_pudding', 'jelly', 'spherified_pearl', 'dried_apricot', 'instant_mashed_potato', 'sugar_free_gum', 'tabletop_sweetener',
           'organogenesis',
           'grasshopper', 'wild_silk_moth', 'isopod', 'beetle', 'pipefish',
           /* asbestos chain, 2 Sep */ 'asbestos',
@@ -336,6 +338,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* additive and metals waves, 3 Sep */
+          'gluten_free_bread', 'oat_milk', 'coffee_creamer', 'strawberry_yoghurt', 'cola', 'diet_soda', 'cordial', 'sweet_wine', 'yellow_mustard', 'corned_beef', 'surimi', 'shortening', 'whitfields_ointment', 'canned_heat',
           'tobacco_smoke',
           'mongoose', 'junglefowl', 'mallard', 'mackerel', 'myriapod', 'scorpionfish', 'lagomorph',
           /* crops and materials wave, 2 Sep */
@@ -527,6 +531,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* additive and metals waves, 3 Sep */
+          'fracking_fluid', 'runway_deicer',
           'angiosarcoma', 'birth_defect',
           'wild_boar', 'mouflon', 'bezoar_ibex', 'wild_turkey', 'greylag_goose', 'ape', 'wild_coca', 'wild_tobacco', 'spurge', 'fern', 'requiem_shark', 'crocodilian', 'perissodactyl', 'african_wild_ass', 'equus', 'wild_dromedary', 'okapi', 'wild_water_buffalo', 'theropod',
           /* asbestos chain, 2 Sep */ 'mesothelioma',

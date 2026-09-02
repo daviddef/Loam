@@ -3363,8 +3363,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "Started life as a weed in other people's wheat fields and got domesticated more or less by accident.",
-    "terminal": true
+    "fact": "Started life as a weed in other people's wheat fields and got domesticated more or less by accident."
   },
   {
     "id": "soybean",
@@ -10791,8 +10790,7 @@
     "tags": [
       "metal"
     ],
-    "fact": "So radioactive it visibly glows pale blue in the dark, one of only a few elements that do.",
-    "terminal": true
+    "fact": "So radioactive it visibly glows pale blue in the dark, one of only a few elements that do."
   },
   {
     "id": "technetium",
@@ -31352,7 +31350,6 @@
       "preserve"
     ],
     "fact": "E261. Airports spray it on runways instead of chloride salts — just as effective, far gentler on the concrete.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -31505,7 +31502,6 @@
       "preserve"
     ],
     "fact": "Ca(CH3COO)2, E263 — vinegar poured straight onto limestone or eggshell, made this way for millennia.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -33312,8 +33308,7 @@
       "food",
       "preserve"
     ],
-    "fact": "E225. First isolated in the early 1700s, and known for a while as Stahl's sulphureous salt.",
-    "terminal": true
+    "fact": "E225. First isolated in the early 1700s, and known for a while as Stahl's sulphureous salt."
   },
   {
     "id": "silver_carbonate",
@@ -33824,8 +33819,7 @@
     "tags": [
       "food"
     ],
-    "fact": "E340. A sodium-free stand-in for trisodium phosphate, buffering cereal, sauce and cheese pH.",
-    "terminal": true
+    "fact": "E340. A sodium-free stand-in for trisodium phosphate, buffering cereal, sauce and cheese pH."
   },
   {
     "id": "silver_acetate",
@@ -35651,7 +35645,6 @@
       "earth"
     ],
     "fact": "21% nitrogen and 24% sulfur, and it acidifies alkaline soil as it feeds it — two fertiliser jobs in one salt.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -36125,7 +36118,6 @@
       "drink"
     ],
     "fact": "Mostly carbonated water: commercial cola syrup is cut roughly one part syrup to five parts carbonated water.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -51933,8 +51925,7 @@
     "tags": [
       "food"
     ],
-    "fact": "Its base is synthetic rubber, not tree resin — U.S. makers dropped chicle for it by the 1960s.",
-    "terminal": true
+    "fact": "Its base is synthetic rubber, not tree resin — U.S. makers dropped chicle for it by the 1960s."
   },
   {
     "id": "wallace_line",
@@ -69542,7 +69533,6 @@
       "preserve"
     ],
     "fact": "E210, named for gum benzoin, whose dry distillation Nostradamus described in 1556. Ripe cranberries and bilberries still carry 0.03–0.13% of it free.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -69555,7 +69545,6 @@
       "preserve"
     ],
     "fact": "E320, in food since about 1947. Two isomers sold as one antioxidant: the ring stabilises a free radical and sequesters it, so the chain reaction that turns fat rancid never gets going.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -69568,7 +69557,625 @@
       "preserve"
     ],
     "fact": "E321 — 2,6-di-tert-butyl-4-methylphenol. It hands a hydrogen atom to a peroxy radical, turning it into a hydroperoxide and breaking the autoxidation chain.",
+    "soleRoute": true
+  },
+  {
+    "id": "cream_cheese",
+    "name": "Cream Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "dish"
+    ],
+    "fact": "At least 33% milkfat, no more than 55% water, and up to 0.5% of gum to stop it weeping.",
+    "src": "https://www.law.cornell.edu/cfr/text/21/133.133",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "soft_serve",
+    "name": "Soft Serve",
+    "emoji": "🍦",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "sweet",
+      "dairy"
+    ],
+    "fact": "Drawn at −4 °C, a third of it air, and 3–6% milkfat where ice cream runs 10 to 18.",
+    "src": "https://en.wikipedia.org/wiki/Soft_serve",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "gluten_free_bread",
+    "name": "Gluten-Free Bread",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Gluten is 75–85% of the protein in bread wheat, and the reason bread rises. This loaf has none.",
+    "src": "https://en.wikipedia.org/wiki/Gluten",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "carrageen_moss_pudding",
+    "name": "Carrageen Moss Pudding",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "dairy"
+    ],
+    "fact": "The Irish milk pudding that named the additive: carraigín, 'little rock', 55% carrageenan dry.",
+    "src": "https://en.wikipedia.org/wiki/Chondrus_crispus",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "spherified_pearl",
+    "name": "Spherified Pearl",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "dish"
+    ],
+    "fact": "Liquid inside a skin of gel. Unilever documented it in the 1950s; elBulli's kitchen made it famous.",
+    "src": "https://en.wikipedia.org/wiki/Spherification",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "oat_milk",
+    "name": "Oat Milk",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Oat starch, 50–60% of the grain, cut short by amylase. US sales: $4.4m in 2017, $213m in 2020.",
+    "src": "https://en.wikipedia.org/wiki/Oat_milk",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "fracking_fluid",
+    "name": "Fracking Fluid",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "earth"
+    ],
+    "fact": "Shale oil and gas take about 90% of the guar gum India and Pakistan grow, to carry sand into rock.",
+    "src": "https://en.wikipedia.org/wiki/Guar_gum",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "processed_cheese",
+    "name": "Processed Cheese",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "dish"
+    ],
+    "fact": "Cheese melted with an emulsifying salt so it will melt again. US rules cap that salt at 3% by weight.",
+    "src": "https://www.law.cornell.edu/cfr/text/21/133.169",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "coffee_creamer",
+    "name": "Coffee Creamer",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "drink"
+    ],
+    "fact": "The pot that whitens coffee without curdling. Carnation had it in 1958 and sold it from 1961.",
+    "src": "https://en.wikipedia.org/wiki/Non-dairy_creamer",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "yellow_mustard",
+    "name": "Yellow Mustard",
+    "emoji": "🟨",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "George J. French sold it from 1904 as 'cream salad mustard' — mild seed, heavy vinegar, turmeric yellow.",
+    "src": "https://en.wikipedia.org/wiki/Mustard_(condiment)",
     "terminal": true,
     "soleRoute": true
+  },
+  {
+    "id": "strawberry_yoghurt",
+    "name": "Strawberry Yoghurt",
+    "emoji": "🍓",
+    "shelf": "workshop",
+    "tags": [
+      "dairy",
+      "food"
+    ],
+    "fact": "Chilled, short-lived and pink, which is the one thing the cooked fruit in it cannot supply on its own.",
+    "src": "https://natcol.org/betanin-ins-162-e-162/",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "cola",
+    "name": "Cola",
+    "emoji": "🥤",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Named for the kola nut, coloured by caramel, and acidified with phosphoric acid.",
+    "src": "https://en.wikipedia.org/wiki/Cola",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "jelly",
+    "name": "Jelly",
+    "emoji": "🍮",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "sweet"
+    ],
+    "fact": "Gelatin, sugar and water. It sets around 15 °C, melts again in the mouth, and sets colourless.",
+    "src": "https://en.wikipedia.org/wiki/Gelatin_dessert",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "sweet_wine",
+    "name": "Sweet Wine",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "drink",
+      "ferment"
+    ],
+    "fact": "Bottled with its sugar unfermented. The sorbate that holds it there is reckoned safe to 1.75 g a day.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_sorbate",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "cordial",
+    "name": "Cordial",
+    "emoji": "🍹",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "A concentrate for diluting, one part to four or five, and about 30% juice on average.",
+    "src": "https://en.wikipedia.org/wiki/Squash_(drink)",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "whitfields_ointment",
+    "name": "Whitfield's Ointment",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "6% benzoic acid and 3% salicylic acid in petrolatum, named for the dermatologist Arthur Whitfield.",
+    "src": "https://en.wikipedia.org/wiki/Whitfield%27s_ointment",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "dried_apricot",
+    "name": "Dried Apricot",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "Sulfured, it stays orange on the shelf. The same fruit dried without sulfite goes the brown of leather.",
+    "src": "https://en.wikipedia.org/wiki/Dried_fruit",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "corned_beef",
+    "name": "Corned Beef",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "preserve"
+    ],
+    "fact": "Named for the coarse 'corns' of salt in the brine. Brazil now cans about 80% of the world's supply.",
+    "src": "https://en.wikipedia.org/wiki/Corned_beef",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "canned_heat",
+    "name": "Canned Heat",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "tool"
+    ],
+    "fact": "Alcohol held in a gel and sold in a tin. One lit under a chafing dish burns for about twenty minutes.",
+    "src": "https://en.wikipedia.org/wiki/Calcium_acetate",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "runway_deicer",
+    "name": "Runway Deicer",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Potassium acetate in water, sprayed on airfield pavement. The same salt is the food additive E261.",
+    "src": "https://en.wikipedia.org/wiki/Potassium_acetate",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "surimi",
+    "name": "Surimi",
+    "emoji": "🍥",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Washed fish mince. Freezing wrecked its gel until Nishitani Yosuke froze it with sugars in 1969.",
+    "src": "https://en.wikipedia.org/wiki/Surimi",
+    "terminal": true
+  },
+  {
+    "id": "sugar_free_gum",
+    "name": "Sugar-Free Gum",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Sugar alcohols run 40 to 50% of a stick by weight. The sweetener is most of the gum.",
+    "src": "https://en.wikipedia.org/wiki/Chewing_gum",
+    "terminal": true
+  },
+  {
+    "id": "diet_soda",
+    "name": "Diet Soda",
+    "emoji": "🥤",
+    "shelf": "workshop",
+    "tags": [
+      "drink"
+    ],
+    "fact": "Coca-Cola launched Diet Coke in July 1982, a year before aspartame was cleared for fizzy drinks.",
+    "src": "https://en.wikipedia.org/wiki/Diet_Coke",
+    "terminal": true
+  },
+  {
+    "id": "tabletop_sweetener",
+    "name": "Tabletop Sweetener",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "sweet"
+    ],
+    "fact": "About 1.1% sweetener and the rest bulk, so a spoon of it measures like a spoon of sugar.",
+    "src": "https://en.wikipedia.org/wiki/Splenda",
+    "terminal": true
+  },
+  {
+    "id": "instant_mashed_potato",
+    "name": "Instant Mashed Potato",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "dish",
+      "food"
+    ],
+    "fact": "Cooked mash dried on a hot drum into a sheet. Two USDA researchers patented the flake in 1954.",
+    "src": "https://en.wikipedia.org/wiki/Instant_mashed_potatoes",
+    "terminal": true
+  },
+  {
+    "id": "shortening",
+    "name": "Shortening",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Procter & Gamble launched Crisco in June 1911 — the name is short for crystallized cottonseed oil.",
+    "src": "https://en.wikipedia.org/wiki/Shortening",
+    "terminal": true
+  },
+  {
+    "id": "indium",
+    "name": "Indium",
+    "emoji": "📱",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Half of all indium ends up as indium tin oxide — the transparent conductor on a flat screen.",
+    "src": "https://en.wikipedia.org/wiki/Indium",
+    "terminal": true
+  },
+  {
+    "id": "thallium",
+    "name": "Thallium",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for the green line in its spectrum. Soluble, tasteless, and absorbed straight through skin.",
+    "src": "https://en.wikipedia.org/wiki/Thallium",
+    "terminal": true
+  },
+  {
+    "id": "nihonium",
+    "name": "Nihonium",
+    "emoji": "🗾",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The first element named in Asia — Nihon, for Japan, and for the Riken lab that caught three atoms.",
+    "src": "https://en.wikipedia.org/wiki/Nihonium",
+    "discovered": {
+      "year": 2004,
+      "note": "Riken detects a single atom of element 113 after ten months of firing zinc-70 at bismuth."
+    },
+    "terminal": true
+  },
+  {
+    "id": "flerovium",
+    "name": "Flerovium",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for Georgy Flerov, who found spontaneous fission in 1940 and founded the Dubna laboratory.",
+    "src": "https://en.wikipedia.org/wiki/Flerovium",
+    "discovered": {
+      "year": 1999,
+      "note": "Dubna fires calcium-48 at plutonium-244 and this time two atoms of element 114 hold up."
+    },
+    "terminal": true
+  },
+  {
+    "id": "moscovium",
+    "name": "Moscovium",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for the Moscow region, home of Dubna — four atoms in 2003, gone in a tenth of a second.",
+    "src": "https://en.wikipedia.org/wiki/Moscovium",
+    "discovered": {
+      "year": 2003,
+      "note": "Four atoms made at Dubna, each alpha-decaying to element 113 in about 100 milliseconds."
+    },
+    "terminal": true
+  },
+  {
+    "id": "livermorium",
+    "name": "Livermorium",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for the Livermore lab, which tried the very reaction in 1977 and found nothing at all.",
+    "src": "https://en.wikipedia.org/wiki/Livermorium",
+    "discovered": {
+      "year": 2000,
+      "note": "One atom at Dubna on 19 July, identified by the flerovium it decayed into."
+    },
+    "terminal": true
+  },
+  {
+    "id": "praseodymium",
+    "name": "Praseodymium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The other half of didymium, the element that wasn't. Named for the leek-green colour of its salts.",
+    "src": "https://en.wikipedia.org/wiki/Praseodymium",
+    "terminal": true
+  },
+  {
+    "id": "terbium",
+    "name": "Terbium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Mosander found it in yttria in 1843; its name and erbium's were swapped later and never swapped back.",
+    "src": "https://en.wikipedia.org/wiki/Terbium",
+    "terminal": true
+  },
+  {
+    "id": "dysprosium",
+    "name": "Dysprosium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named dysprositos, 'hard to get at' — it took Boisbaudran more than thirty goes to get the oxide out.",
+    "src": "https://en.wikipedia.org/wiki/Dysprosium",
+    "terminal": true
+  },
+  {
+    "id": "holmium",
+    "name": "Holmium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Cleve split erbia and got two oxides: brown holmia, named for Stockholm, and green thulia.",
+    "src": "https://en.wikipedia.org/wiki/Holmium"
+  },
+  {
+    "id": "erbium",
+    "name": "Erbium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Ytterby again: Mosander pulled erbia out of yttria in 1843, and the Er3+ ion turns a solution pink.",
+    "src": "https://en.wikipedia.org/wiki/Erbium"
+  },
+  {
+    "id": "thulium",
+    "name": "Thulium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The rarest lanthanide but promethium. Charles James needed 15,000 crystallisations to get it pure.",
+    "src": "https://en.wikipedia.org/wiki/Thulium",
+    "terminal": true
+  },
+  {
+    "id": "ytterbium",
+    "name": "Ytterbium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Marignac found it hiding inside erbia in 1878; in 1907 something else turned out to be hiding in it.",
+    "src": "https://en.wikipedia.org/wiki/Ytterbium"
+  },
+  {
+    "id": "lutetium",
+    "name": "Lutetium",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The last rare earth out and the dearest: about $10,000 a kilogram, roughly a quarter the price of gold.",
+    "src": "https://en.wikipedia.org/wiki/Lutetium",
+    "terminal": true
+  },
+  {
+    "id": "francium",
+    "name": "Francium",
+    "emoji": "⏳",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The last element found in nature rather than made. About 28 grams exist in the whole crust at once.",
+    "src": "https://en.wikipedia.org/wiki/Francium",
+    "discovered": {
+      "year": 1939,
+      "note": "Marguerite Perey catches francium-223 coming off a purified sample of actinium-227."
+    },
+    "terminal": true
+  },
+  {
+    "id": "einsteinium",
+    "name": "Einsteinium",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Found in the fallout of the first hydrogen bomb, on filter papers flown through the cloud.",
+    "src": "https://en.wikipedia.org/wiki/Einsteinium",
+    "discovered": {
+      "year": 1952,
+      "note": "Identified in December by Ghiorso's team in debris from the Ivy Mike test of 1 November."
+    }
+  },
+  {
+    "id": "fermium",
+    "name": "Fermium",
+    "emoji": "🪸",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Fermium-257 is the heaviest nuclide neutron capture can reach. Past it, everything fissions at once.",
+    "src": "https://en.wikipedia.org/wiki/Fermium",
+    "discovered": {
+      "year": 1953,
+      "note": "Pulled out of irradiated coral shipped to Berkeley from Enewetak Atoll after Ivy Mike."
+    },
+    "terminal": true
+  },
+  {
+    "id": "mendelevium",
+    "name": "Mendelevium",
+    "emoji": "📋",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "The first element ever made one atom at a time — seventeen atoms of it, in 1955.",
+    "src": "https://en.wikipedia.org/wiki/Mendelevium",
+    "discovered": {
+      "year": 1955,
+      "note": "Berkeley's 60-inch cyclotron makes element 101 from a target of a billion einsteinium atoms."
+    },
+    "terminal": true
+  },
+  {
+    "id": "nobelium",
+    "name": "Nobelium",
+    "emoji": "🏅",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Claimed by Sweden, Britain, America and the USSR. Dubna's 1966 report was the first that held up.",
+    "src": "https://en.wikipedia.org/wiki/Nobelium",
+    "terminal": true
+  },
+  {
+    "id": "lawrencium",
+    "name": "Lawrencium",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Named for Ernest Lawrence, who invented the cyclotron — and made on a linear accelerator instead.",
+    "src": "https://en.wikipedia.org/wiki/Lawrencium",
+    "discovered": {
+      "year": 1961,
+      "note": "Boron ions fired at three milligrams of mixed californium isotopes at Berkeley, 14 February."
+    },
+    "terminal": true
   }
 ]

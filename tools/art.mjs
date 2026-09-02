@@ -35666,6 +35666,364 @@ def('bht', () => [                                          // two butyls, one o
   S('M40 27 L48 22 M48 22 L54 26 M48 22 L48 14', 'ik', 1.9),
 ]);
 
+/* additive wave, 3 Sep — dairy, dishes and drinks */
+/* dairy, set desserts and the soft-drink shelf ──────────────────────────────
+   Nine of these land in 'dish' and four in 'ferment', and both groups already
+   hold a crowd of tumblers, slabs and domes. The silhouette does the telling
+   apart: a wrapper, a spread block, a foil pot, a tapered tub, a cone, a plate,
+   a fluted mould, a sphere, a straight glass, a waisted bottle, a can, a
+   square-shouldered bottle, a stem. No two of the four drinks are poured into
+   the same kind of thing. */
+
+def('processed_cheese', () => [                                // a slice in its film, crimped at both ends — a wrapper, not a wedge, because the emulsifying salt is what lets it melt twice
+  P('M6 20 L54 16 L56 42 L8 46 Z', 'gh'),                      // the film, run wider than the slice
+  ...[9, 12, 50, 53].map(x => S(`M${x} 19 L${x} 45`, 'ik', 1)),// the crimped end seals
+  P('M14 23 L46 20 L48 40 L16 43 Z', 'bs'),                    // the square slice inside, sitting slightly askew
+  P('M14 23 L46 20 L47 25 L14.5 28 Z', 'hi'),
+]);
+def('cream_cheese', () => [                                    // a block whose sides bow, and the spread already taken off one end — a third milkfat, so it never firms up
+  P('M12 26 Q28 22 40 26 L38 42 Q26 46 14 42 Z', 'hi'),
+  P('M12 26 Q28 22 40 26 Q27 31 12 26 Z', 'bs'),               // the cut top face
+  S('M14 42 Q26 46 38 42', 'lo', 1.4),
+  P('M38 38 Q48 41 54 45 Q52 47 46 46 Q41 45 37 43 Z', 'hi'),  // the swipe already dragged off one corner
+  S('M41 42 Q47 43 51 45', 'gh', 1),
+]);
+def('coffee_creamer', () => [                                  // the single-serve pot with its foil corner lifted, and the white going in whole instead of curdling
+  round('lo', 46, 21, 8),                                      // the coffee, seen down into
+  S('M22 46 Q26 40 32 43 Q38 47 30 50 Q20 52 18 45', 'hi', 2.6),
+  P('M19 20 L41 20 L37 38 L23 38 Z', 'hi'),                    // the pot: squat, tapered, moulded
+  ...[24, 30, 36].map(x => S(`M${x} 24 L${x} 36`, 'gh', 1)),   // its ribs
+  round('gh', 20, 11, 3.4),                                    // the foil lid
+  P('M34 18 Q42 12 46 18 Q40 21.4 34 21 Z', 'lo'),             // the foil flap, folded back over the rim
+]);
+def('strawberry_yoghurt', () => [                              // the tapered pot, foil on, pink the whole way down — and the fruit, because pink is the one thing milk cannot supply
+  P('M16 24 L44 24 L40 52 L20 52 Z', 'gh'),
+  P('M18 30 L42 30 L40 50 L20 50 Z', 'bs'),                    // stirred through, not layered
+  round('hi', 24, 14, 3.4),                                    // the lid
+  P('M30 21 Q22 17 22 12 Q22 8 30 8 Q38 8 38 12 Q38 17 30 21 Z', 'lo'),  // the strawberry, pointed end down
+  E(30, 8, 4.6, 1.6, 'gh'), S('M30 7 L30 3', 'gh', 1.4),       // its hull and stalk
+  ...[[26, 12], [33, 12], [29, 16], [34, 15]].map(([x, y]) => C(x, y, 1, 'hi')),   // its pips
+]);
+
+def('soft_serve', () => [                                      // the swirl straight off the nozzle: three turns, each set slightly off the last, drawn at −4 °C with a third of it air
+  P('M21 30 L39 30 L30 54 Z', 'lo'),                           // a plain pointed cone, not ice_cream's flat-bottomed wafer
+  S('M24 36 L33 33 M27 43 L36 37 M25 33 L28 42 M31 31 L34 40', 'ik', 1),
+  round('hi', 29, 13, 5),
+  E(31.5, 22.5, 10, 4.4, 'bs'),
+  E(28.5, 16.5, 6.6, 3.6, 'hi'),
+  P('M29 6 Q32 9 29 13 Q26 9 29 6 Z', 'bs'),                   // the peak the nozzle leaves behind
+]);
+def('carrageen_moss_pudding', () => [                          // turned out of a plain basin: one smooth unbroken dome, no flutes anywhere on it, and the weed that set it beside the plate
+  round('gh', 46, 22, 5),                                      // the plate
+  P('M12 46 Q12 18 30 18 Q48 18 48 46 Z', 'hi'),
+  round('bs', 26, 9, 4),                                       // the light off the top of a set milk pudding
+  S('M50 46 Q57 38 53 28 M53 44 Q58 36 57 30', 'lo', 1.8),     // carraigín, the little rock
+]);
+def('jelly', () => [                                           // out of a fluted ring mould, knob and all — the flutes and the stepped shoulder are what tell it from the carrageen dome
+  round('gh', 51, 20, 4),                                      // the plate
+  P('M12 50 Q13 33 21 27 Q26 23 26 17 Q26 12 30 12 Q34 12 34 17 Q34 23 39 27 Q47 33 48 50 Z', 'bs'),
+  ...[17, 23, 30, 37, 43].map(x => S(`M${x} 48 L${x} 33`, 'lo', 1.4)),   // the flutes it kept
+  S('M18 33 Q30 28 42 33', 'hi', 1.8),                         // the step where the mould draws in
+  C(30, 15, 2.4, 'hi'),
+]);
+def('spherified_pearl', () => [                                // a skin one membrane thick, and everything inside it still liquid
+  C(30, 30, 17, 'gh'),
+  round('bs', 32, 14, 13),                                     // the juice, filling it
+  S('M17 26 Q30 21 43 26', 'hi', 1.4),                         // its meniscus — it still moves in there
+  ring('ik', 30, 30, 17, 1.6),                                 // the only part that is set
+  C(24, 23, 3.4, 'hi'),
+  ...[[10, 50], [50, 48]].map(([x, y]) => [C(x, y, 5, 'gh'), ring('ik', x, y, 5, 1.2)]).flat(),
+]);
+
+def('oat_milk', () => [                                        // a plain straight glass, filled high and opaque, and the grain it was cut out of
+  P('M23 20 L41 20 L38 52 L26 52 Z', 'gh'),
+  P('M24.4 26 L39.6 26 L38 50 L26 50 Z', 'hi'),                // pale, and not see-through
+  S('M23 20 L41 20 L38 52 L26 52 Z', 'lo', 2),
+  ...[[27, 30], [33, 34], [30, 42]].map(([x, y]) => E(x, y, 3.4, 1.6, 'bs')),  // rolled oat, still in suspension
+  grain('lo', 46, 14, .9, 25),                                 // the groat, before the amylase got at its starch
+]);
+def('cola', () => [                                            // the waisted bottle, caramel-dark to the shoulder, under a crown cap
+  P('M25 7 L35 7 L35 12 Q42 16 41 24 Q38 30 36 36 Q35 44 39 49 Q40 54 33 54 L27 54 Q20 54 21 49 Q25 44 24 36 Q22 30 19 24 Q18 16 25 12 Z', 'gh'),
+  P('M25.4 15 L34.6 15 Q41 18 40 24 Q38 30 36 36 Q35 44 39 49 Q40 54 33 54 L27 54 Q20 54 21 49 Q25 44 24 36 Q22 30 20 24 Q19 18 25.4 15 Z', 'bs'),  // filled up into the neck, and the waist the bottle is known by
+  S('M26 24 L25 45', 'hi', 2),                                 // one glint down the glass
+  P('M24 3 L36 3 L36 8 L24 8 Z', 'lo'),                        // the crown cap
+  ...[[27, 46], [33, 41], [28, 35], [34, 50], [30, 32]].map(([x, y]) => C(x, y, 1.2, 'hi')),  // the fizz phosphoric acid sharpens
+]);
+def('diet_soda', () => [                                       // a can, not a glass, and pale where cola is dark — all of the fizz and none of the sugar
+  P('M20 18 L40 18 L41 47 Q41 52 36 52 L24 52 Q19 52 19 47 Z', 'hi'),
+  P('M23 12 L37 12 L40 18 L20 18 Z', 'hi'),                    // the necked-in shoulder a can has and a glass never does
+  P('M19.2 26 L40.8 26 L41 36 L19 36 Z', 'bs'),                // the label carries the colour instead of the drink
+  S('M19 31 L41 31', 'hi', 1.6),
+  S('M23.4 21 L23 46', 'gh', 1.6),
+  round('gh', 12, 7, 2.6),                                     // the metal top
+  S('M23 12 A7 2.6 0 1 1 37 12 A7 2.6 0 1 1 23 12', 'ik', 1.2),
+  S('M28.4 12 A2.6 1.1 0 1 1 33.6 12 A2.6 1.1 0 1 1 28.4 12', 'lo', 1),   // the ring pull, lying flat on it
+]);
+def('cordial', () => [                                         // a concentrate, so a bottle and never a glass: thick and dark, and the marks you dilute it against
+  P('M22 10 L38 10 L38 20 L43 28 L43 48 Q43 53 38 53 L22 53 Q17 53 17 48 L17 28 L22 20 Z', 'gh'),
+  P('M17 30 L43 30 L43 48 Q43 53 38 53 L22 53 Q17 53 17 48 Z', 'lo'),  // syrup — one part of what finally gets drunk
+  P('M21 5 L39 5 L39 11 L21 11 Z', 'bs'),                      // the big screw cap
+  ...[36, 40, 44].map(y => S(`M19 ${y} L24 ${y}`, 'hi', 1.2)),
+]);
+def('sweet_wine', () => [                                      // a small dessert glass poured short, and the sugar that was never let ferment
+  P('M22 14 Q20 30 30 36 Q40 30 38 14 Z', 'gh'),               // a tulip bowl, narrower than the table glass
+  P('M23.4 26 Q26 34 30 35 Q34 34 36.6 26 Z', 'bs'),           // a third full, as it is served
+  S('M30 36 L30 48 M23 48 L37 48', 'lo', 2.2),
+  S('M22 14 Q20 30 30 36 Q40 30 38 14 Z', 'hi', 2),
+  ...[[44, 40], [50, 45]].map(([x, y]) => P(`M${x} ${y} l5 0 l0 5 l-5 0 Z`, 'hi')),  // the sugar still in the bottle
+]);
+
+/* additive wave, 3 Sep — preserves, powders and tins */
+/* art26 batch b — modern shelf goods, three tins and two powders among them.
+ * The silhouette does the telling: what the container is shaped like, and what
+ * is coming out of it, before any role gets a chance to help. */
+def('gluten_free_bread', () => [                              // a loaf with no net to hold the gas: low, straight-sided, sunk on top
+  P('M12 46 L12 34 Q30 29 48 34 L48 46 Z', 'bs'),
+  P('M16 46 L16 37 Q30 33 44 37 L44 46 Z', 'hi'),
+  S('M12 46 L48 46', 'ik', 1.6),
+  S('M18 33 Q30 37 42 33', 'lo', 1.2),                        // the crust dips where wheat bread domes
+  ...granules('lo', 14, 233, [19, 38, 41, 44]),               // crumb, in section — fine and tight, not open
+]);
+def('instant_mashed_potato', () => [                          // mash dried on a hot drum and broken off: platelets, and the packet they come in
+  P('M17 10 L43 10 L43 28 L17 28 Z', 'lo'),
+  S('M17 10 L23 6 L29 10 L35 6 L41 10', 'ik', 1.4),           // torn open across the top
+  ...[[23, 36, -22], [34, 39, 16], [41, 33, -8], [25, 47, 24], [37, 48, -14]].map(([x, y, rot], i) =>
+    ['g', rot, x, y, [P(`M${x - 7} ${y - 2} L${x + 7} ${y - 3} L${x + 7} ${y + 2} L${x - 7} ${y + 3} Z`, i % 2 ? 'bs' : 'hi')]]),
+]);
+def('surimi', () => {                                         // washed fish mince rolled in a coloured sheet — the cut end is the whole identification
+  const pts = [];
+  for (let i = 0; i <= 34; i++) {
+    const t = i / 34, ang = t * Math.PI * 4.4, rad = 1.5 + t * 8;
+    pts.push([n(40 + rad * Math.cos(ang)), n(30 + rad * Math.sin(ang))]);
+  }
+  return [
+    P('M10 22 L40 22 L40 38 L10 38 Z', 'hi'),                 // the stick, lying down: white all through
+    S('M10 22 L40 22', 'bs', 4), S('M10 38 L40 38', 'bs', 4), // colour only ever on the outside
+    C(40, 30, 9, 'hi'),
+    S('M' + pts.map(p => p.join(' ')).join(' L'), 'bs', 2.2), // the roll, seen end on
+  ];
+});
+def('corned_beef', () => [                                    // the tin nobody mistakes for a can: tapered, and opened with a key
+  P('M12 50 L48 50 L42 22 L18 22 Z', 'bs'),
+  P('M18 22 L42 22 L40 18 L20 18 Z', 'lo'),                   // the lid, seen a little from above
+  S('M14 42 L46 42', 'ik', 1.2),                              // the rolled seam the key winds off
+  ring('hi', 30, 11, 4, 2), S('M30 15 L30 18', 'hi', 2),      // the key, still soldered on
+]);
+def('dried_apricot', () => [                                  // a sulfured half, cut face up — the flesh has pulled back from the rim
+  P('M30 16 Q42 16 46 26 Q50 36 42 44 Q34 50 24 46 Q13 41 12 30 Q12 20 30 16 Z', 'bs'),
+  E(30, 32, 8, 7, 'lo'),                                      // the stone cavity, left open
+  E(24, 24, 5, 4, 'hi'),
+  ...[[16, 24], [20, 44], [40, 46], [46, 34], [38, 18]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(x + (30 - x) * .3)} ${n(y + (32 - y) * .3)}`, 'lo', 1.4)),  // the wrinkling, all around the edge
+]);
+def('sugar_free_gum', () => [                                 // sold as coated pellets in a blister card, not as a stick
+  P('M14 12 L46 12 L46 48 L14 48 Z', 'lo'),
+  S('M30 12 L30 48', 'gh', 1),                                // the perforation between the two columns
+  ...[[22, 20], [38, 20], [22, 30], [38, 30], [22, 40], [38, 40]].flatMap(([x, y]) =>
+    [E(x, y, 6, 4.4, 'hi'), C(x - 2, y - 1.4, 1.4, 'bs')]),   // six domes, each with its coating gloss
+]);
+def('tabletop_sweetener', () => [                             // the sachet: 1% sweetener on 99% bulk, so it pours exactly like sugar
+  P('M14 16 L32 9 L41 31 L23 38 Z', 'bs'),
+  S('M14 16 L20 12 L24 16 L30 11 L32 9', 'ik', 1.4),          // torn along the serration
+  S('M39 33 Q34 42 31 48', 'hi', 2.4),                        // the fall, thin — it is a spoonful, not a bag
+  mound('hi', 52, 10, 8),
+  ...granules('lo', 6, 331, [24, 46, 40, 51]),
+]);
+def('yellow_mustard', () => [                                 // the bottle stood on its cap, and the line it lays down
+  P('M20 8 L40 8 L36 32 L24 32 Z', 'bs'),
+  P('M24 32 L36 32 L32 40 L28 40 Z', 'lo'),                   // the cone tip, pointing down
+  S('M24 12 L36 12', 'hi', 1.6),
+  zig('bs', 48, 4, 6),                                        // the squeezed zigzag, the way it is actually applied
+]);
+def('shortening', () => [                                     // a wide low tin under an overhanging lid, and the peak a spoon lifts out
+  P('M15 32 L45 32 L45 50 L15 50 Z', 'lo'),
+  P('M12 27 L48 27 L48 33 L12 33 Z', 'bs'),                   // the lid, wider than the body
+  P('M22 27 Q22 14 30 12 Q38 12 36 20 Q33 26 30 27 Z', 'hi'), // solid fat holds its own shape at room temperature
+  S('M15 42 L45 42', 'ik', 1.2),
+]);
+def('whitfields_ointment', () => [                            // a metal tube: crimped flat at the tail, and the first worm already out
+  P('M14 22 L40 22 L40 38 L14 38 Z', 'bs'),
+  P('M10 20 L14 20 L14 40 L10 40 Z', 'lo'),
+  S('M11 22 L11 38 M13 22 L13 38', 'ik', 1),                  // the crimp, folded twice
+  P('M40 24 L44 26 L44 34 L40 36 Z', 'bs'),                   // the shoulder
+  P('M44 27 L49 27 L49 33 L44 33 Z', 'lo'),                   // the nozzle
+  S('M49 30 Q54 28 55 23', 'hi', 3.4),                        // benzoic and salicylic acid, carried in petrolatum
+]);
+def('canned_heat', () => [                                    // alcohol held in a gel and burnt straight off the open tin — no wick to draw
+  P('M14 36 L46 36 L46 48 L14 48 Z', 'lo'),
+  E(30, 48, 16, 3, 'lo'),
+  E(30, 36, 16, 4, 'bs'),                                     // the gel, flush with the rim
+  flame('hi', .5, -11),
+  S('M45 34 L52 28', 'ik', 2),                                // the lid, prised back and left there
+]);
+def('runway_deicer', () => [                                  // potassium acetate, fanned from a boom onto pavement
+  P('M4 46 L56 46 L56 54 L4 54 Z', 'lo'),
+  ...[10, 26, 42].map(x => S(`M${x} 50 L${x + 9} 50`, 'hi', 2.6)),  // the dashed centreline — pavement, not road
+  P('M8 12 L18 15 L18 21 L8 18 Z', 'lo'),                     // the nozzle
+  ...[[22, 44], [32, 43], [42, 42], [52, 40]].map(([x, y]) => S(`M18 19 L${x} ${y}`, 'bs', 1.6)),
+  ...granules('hi', 8, 353, [24, 26, 50, 42]),                // the fan breaking into droplets
+]);
+def('fracking_fluid', () => [                                 // guar-thickened water driven down a well, carrying sand into shale
+  P('M6 32 L54 32 L54 54 L6 54 Z', 'lo'),
+  S('M6 40 L54 40 M6 47 L54 47', 'ik', 1.2),                  // the bedding planes it is splitting along
+  P('M26 6 L34 6 L34 34 L26 34 Z', 'gh'),
+  P('M28 8 L32 8 L32 34 L28 34 Z', 'bs'),                     // the fluid column, thick enough to carry a load
+  S('M30 34 L18 44 M30 34 L44 47', 'bs', 2.6),                // the fracture, opened both ways
+  ...granules('hi', 8, 373, [16, 36, 46, 50]),                // sand, propping it open once the pumps stop
+  ...granules('hi', 3, 379, [27, 12, 33, 30]),                // and still suspended in the column above
+]);
+
+/* metals wave, 3 Sep -- the 20 that were periodic tiles and not cards */
+/* ── the last of the metals ───────────────────────────────────────────────
+ * Two soft post-transition metals, four superheavies, eight lanthanides, one
+ * alkali that only ever exists as somebody else's decay product, and five
+ * actinides. The rule from the rest of the table holds: draw the form the
+ * stuff is actually kept in.
+ *
+ * That rule does the most work on the lanthanides, which really are eight
+ * silvery metals with almost the same chemistry — so none of them is drawn as
+ * the metal. Each is drawn as whatever finally told it apart from its
+ * neighbours: the colour of its oxide or its ion, the habit it crystallises
+ * in, the separation that prised it out, or the one object it is bought as.
+ *
+ * The synthetics follow the convention already set by darmstadtium and
+ * copernicium — a countable number of atoms rather than a lump — and the
+ * count is the fact: one atom of livermorium, two of flerovium, three of
+ * nihonium, four of moscovium, seventeen of mendelevium.
+ */
+
+/* post-transition: two soft metals you could actually hold */
+
+def('indium', () => [                                      // soft enough to dent with a thumbnail — a pressed ingot, creased, and the "tin cry" leaving the fold
+  ...ingot('bs', 18, 9, 8),
+  S('M19 32 Q30 36 41 31', 'lo', 1.8),                     // the crease it takes and keeps
+  S('M42 26 Q49 22 48 15', 'gh', 1.6),                     // the cry: it screams when you bend it
+  S('M45 30 Q54 25 53 14', 'gh', 1.3),
+]);
+def('thallium', () => [                                    // kept under oil, because the air has it in minutes — and the tarnish it grew anyway
+  vessel('gh', 16, 50),
+  P('M18 30 L42 30 L44 47 Q30 51 16 47 Z', 'gh'),          // the oil
+  S('M17 30 L43 30', 'hi', 1.6),                           // its surface
+  E(30, 40, 11, 7, 'bs'),                                  // the lump, submerged
+  E(29, 37, 7, 3, 'lo'),                                   // dulled already on the top face
+]);
+
+/* the four superheavies: drawn as the number of atoms anyone ever had */
+
+def('nihonium', () => [                                    // three atoms in nine years of firing zinc at bismuth, each one caught alone and years from the next
+  ...[[15, 45, 11], [30, 30, 8], [45, 17, 5]].map(([x, y, rad]) => ring('gh', x, y, rad, 1.2)),
+  ...[[15, 45], [30, 30], [45, 17]].map(([x, y]) => C(x, y, 2.4, 'bs')),
+]);
+def('flerovium', () => [                                   // two atoms that held up where the earlier claims did not, and the spontaneous fission Flerov himself found
+  ring('gh', 30, 30, 20, 1.2),
+  C(23, 30, 5, 'bs'), C(38, 30, 5, 'bs'),
+  S('M18 21 L9 13', 'gh', 1.4), S('M43 39 L52 47', 'gh', 1.4),
+]);
+def('moscovium', () => [                                   // four atoms, all of them made in 2003, each one gone to element 113 in about a tenth of a second
+  ...[15, 25, 35, 45].map(x => C(x, 22, 4.4, 'bs')),
+  ...[15, 25, 35, 45].map(x => S(`M${x} 29 L${x} 41`, 'gh', 1.6)),
+  ...[15, 25, 35, 45].map(x => C(x, 47, 2.6, 'gh')),
+]);
+def('livermorium', () => [                                 // one atom, on one afternoon, and it was only ever identified by the flerovium it turned into
+  C(30, 15, 5, 'bs'),
+  S('M30 22 L30 35', 'gh', 2),
+  P('M26 34 L34 34 L30 42 Z', 'gh'),                       // the alpha it threw on the way down
+  ring('gh', 30, 47, 8, 1.4), C(30, 47, 3, 'lo'),          // the daughter, which is what was actually seen
+]);
+
+/* the lanthanides: eight metals, eight different reasons anyone could tell
+   them apart. Not one of them is drawn as the metal. */
+
+def('praseodymium', () => [                                // Pr6O11, the leek-green oxide it is named for, heaped in the dish it gets weighed out in
+  E(30, 40, 22, 8, 'gh'),
+  mound('bs', 41, 13, 14),
+  ...granules('lo', 6, 307, [21, 33, 39, 40]),
+  S('M8 40 Q30 50 52 40', 'lo', 1.6),                      // the far wall of the watch glass
+]);
+def('terbium', () => [                                     // soft and ductile enough to draw cold — thick stock into the plate, thin wire out, curling because it has no spring left
+  S('M4 19 Q14 22 22 30', 'bs', 6),
+  P('M22 10 L34 10 L34 50 L22 50 Z', 'lo'),                // the drawplate
+  P('M24 26 L32 28 L32 32 L24 34 Z', 'gh'),                // the die, tapering through it
+  S('M34 30 Q46 32 52 40 Q56 48 47 51', 'bs', 2.4),
+]);
+def('dysprosium', () => [                                  // "hard to get at" — thirty-odd separations for the oxide, and the metal still ships as cut chips, never a bar
+  P('M10 27 L22 18 L28 28 L18 36 Z', 'bs'),
+  P('M31 14 L45 17 L46 28 L34 30 L28 22 Z', 'lo'),
+  P('M20 41 L34 36 L45 44 L36 53 L23 50 Z', 'bs'),
+  S('M13 27 L20 21', 'hi', 1.4), S('M34 18 L43 20', 'hi', 1.4), S('M25 43 L37 39', 'hi', 1.4),
+]);
+def('holmium', () => [                                     // brown holmia, cast into the one piece of glass every spectrometer owns: the filter whose sharp lines are the wavelength standard
+  P('M12 13 L48 13 L48 47 L12 47 Z', 'gh'),
+  S('M12 13 L48 13 L48 47 L12 47 Z', 'lo', 2),
+  ...[[17, 2.6], [23, 1.2], [28, 3.4], [34, 1.2], [39, 2.2], [44, 1.4]]
+    .map(([x, w]) => S(`M${x} 15 L${x} 45`, 'bs', w)),
+]);
+def('erbium', () => [                                      // the Er3+ ion, and the pink it turns a solution — which is the whole reason anyone knew erbia had two things in it
+  P('M23 8 L37 8 L37 42 A7 7 0 0 1 23 42 Z', 'gh'),
+  P('M23 23 L37 23 L37 42 A7 7 0 0 1 23 42 Z', 'bs'),
+  E(30, 23, 7, 2.4, 'lo'),                                 // the meniscus, where the colour reads truest
+  S('M23 8 L23 42 A7 7 0 0 0 37 42 L37 8', 'lo', 1.8),
+  S('M26 29 L26 39', 'hi', 1.4),
+]);
+def('thulium', () => [                                     // fifteen thousand crystallisations, drawn as the series: each dish smaller, each yield less, and at the end of it a speck
+  ...[[11, 11], [26, 9], [39, 7], [50, 5]].map(([x, rx]) => E(x, 38, rx, 4.4, 'gh')),
+  ...[[11, 8], [26, 6], [39, 4]].map(([x, rx]) => E(x, 36, rx, 2.6, 'bs')),
+  C(50, 36, 1.6, 'bs'),
+  S('M18 47 L23 47 M32 47 L37 47 M44 47 L48 47', 'lo', 1.4),  // and again, and again, and again
+]);
+def('ytterbium', () => [                                   // it boils lower than any lanthanide but europium, so it is purified by distilling it — this is the crust it grows back as on the cold wall
+  S('M9 51 Q9 15 45 11', 'lo', 3),
+  ...[[12, 41, 25, 45], [11, 33, 24, 35], [14, 24, 26, 28], [20, 17, 30, 23], [29, 13, 37, 21], [39, 11, 45, 19]]
+    .map(([x1, y1, x2, y2], i) => S(`M${x1} ${y1} L${x2} ${y2}`, i % 2 ? 'hi' : 'bs', 2.4)),
+  ...granules('bs', 4, 811, [26, 46, 46, 54]),             // and what falls off the wall into the pot
+]);
+def('lutetium', () => [                                    // hardest, densest and dearest of them, and bought as one grown crystal at a time — a scintillator, cut small because that is all anyone can afford
+  P('M24 46 L24 22 L30 13 L36 22 L36 46 Z', 'bs'),
+  S('M30 13 L30 46', 'hi', 1.6),
+  P('M23 46 L37 46 L37 51 L23 51 Z', 'lo'),                // the wrapping it is mounted in
+  ...[-1, 1].map(s => S(`M${30 + s * 9} 19 L${30 + s * 17} 13`, 'gh', 1.4)),
+  ...[-1, 1].map(s => S(`M${30 + s * 10} 28 L${30 + s * 20} 26`, 'gh', 1.2)),
+]);
+
+/* alkali */
+
+def('francium', () => [                                    // never mined and never made in bulk: about 28 grams exist in the entire crust at any moment, and this is the whole crust
+  P('M3 33 L57 29 L57 53 L3 53 Z', 'lo'),
+  S('M3 33 L57 29', 'gh', 1.6),
+  ...granules('gh', 14, 419, [6, 36, 52, 50]),
+  C(38, 42, 3.4, 'hi'), ring('gh', 38, 42, 8, 1.2),        // and the one atom in it, already turning into radium
+]);
+
+/* the actinides, finished */
+
+def('einsteinium', () => [                                 // the filter paper flown through the Ivy Mike cloud — and the speck caught on it, lighting itself
+  C(30, 32, 20, 'gh'),                                     // the paper, round, and creased once to go into the holder
+  S('M11 26 Q30 20 48 28', 'lo', 1.4),
+  C(36, 28, 10, 'hi'),                                     // the glow, off to one side because that is where the speck landed
+  C(36, 28, 5.4, 'bs'), C(36, 28, 2.2, 'hi'),
+]);
+def('fermium', () => [                                     // the wall at the top of the table: Fm-257 is the last nuclide neutron capture can reach, and one more neutron splits it instead
+  C(19, 30, 12, 'bs'), C(42, 30, 11, 'bs'),
+  P('M27 24 L34 26 L34 34 L27 36 Z', 'gh'),                // the neck, on its way to not being there
+  ...[[8, 11], [53, 13], [30, 54]].map(([x, y]) => C(x, y, 2.2, 'gh')),   // and the neutrons off the split
+]);
+def('mendelevium', () => [                                 // seventeen atoms, in 1955 — the first element ever made and counted one atom at a time, so the count is the drawing
+  S('M8 13 L52 13', 'lo', 1.6),
+  ...Array.from({ length: 17 }, (_, i) =>
+    C(12 + (i % 6) * 7.2, 22 + Math.floor(i / 6) * 11, 2.6, i === 16 ? 'hi' : 'bs')),
+]);
+def('nobelium', () => [                                    // Stockholm, Harwell and Berkeley all claimed it and all three claims fell over; the fourth, Dubna's, is the one that held
+  ...[[9, 9], [51, 9], [9, 51]].map(([x, y]) => S(`M${x} ${y} L30 30`, 'gh', 1.5)),
+  S('M51 51 L30 30', 'bs', 2.8),
+  C(30, 30, 7, 'hi'), C(30, 30, 3.4, 'bs'),
+]);
+def('lawrencium', () => [                                  // named for the man who built the cyclotron, and then made on a linear accelerator: boron down a straight line into three milligrams of californium
+  ...[7, 18, 29, 40].map((x, i) => P(`M${x} 24 L${x + 8} 24 L${x + 8} 36 L${x} 36 Z`, i % 2 ? 'lo' : 'bs')),
+  S('M3 30 L57 30', 'hi', 2),                              // the beam, and it never bends
+  P('M50 18 L56 18 L56 42 L50 42 Z', 'lo'),                // the target at the end of it
+  C(53, 30, 3, 'bs'),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
@@ -35900,6 +36258,14 @@ ship.ui_carcinogen = { c: 'craft', s: [
              `L${n(30 + 9 * Math.cos(a))} ${n(36 + 9 * Math.sin(a))}`, 'ik', 2.4);
   }),                                                                          // the burst inside the chest
   C(30, 36, 3.2, 'ik'),
+] };
+// Free play, as an open padlock: the shackle is lifted clear on one side
+// rather than seated in the body. Circles and one arc only, the same
+// restraint as ui_eye — a drawn keyhole would not survive 16px.
+ship.ui_freeplay = { c: 'craft', s: [
+  S('M38 31 L38 22 A8 8 0 0 0 22 22', 'ik', 3),
+  P('M17 31 L43 31 Q45 31 45 33 L45 46 Q45 48 43 48 L17 48 Q15 48 15 46 L15 33 Q15 31 17 31 Z', 'bs'),
+  C(30, 39, 3.2, 'ground'),
 ] };
 ship.ui_eye = { c: 'craft', s: [
   S('M8 30 Q30 12 52 30 Q30 48 8 30 Z', 'ik', 3), C(30, 30, 7, 'ik'), C(30, 30, 3, 'ground'),

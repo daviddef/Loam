@@ -87,7 +87,8 @@
         "wort",
         "malt",
         "vinegar",
-        "ethanol"
+        "ethanol",
+        "sweet_wine"
       ],
       "severity": "cumulative"
     },
@@ -2567,7 +2568,8 @@
         "cider",
         "mead",
         "aged_wine",
-        "ethanol"
+        "ethanol",
+        "sweet_wine"
       ],
       "severity": "cumulative",
       "carcinogen": true
@@ -2580,7 +2582,8 @@
         "ham",
         "hot_dog",
         "cured_meat",
-        "sausage"
+        "sausage",
+        "corned_beef"
       ],
       "severity": "cumulative",
       "carcinogen": true
@@ -2680,7 +2683,9 @@
       "label": "Benzoate and vitamin C in the same bottle can make a little benzene",
       "note": "Benzoic acid can lose its carboxyl group in the presence of ascorbic or erythorbic acid, catalysed by trace copper and iron and accelerated by heat and light, and what is left is benzene. The soft drink industry raised it with the FDA in the early 1990s and reformulated by 1993; test results in November 2005 showed it happening again. FDA testing of 100 beverages in May 2006 found most below 5 ppb, with four over the federal limit. The WHO drinking-water guideline is 10 ppb, and California's limit is 1 ppb.",
       "ids": [
-        "benzoic_acid"
+        "benzoic_acid",
+        "benzoate",
+        "cordial"
       ],
       "severity": "conditional"
     },
@@ -2815,6 +2820,61 @@
       ],
       "severity": "cumulative",
       "carcinogen": true
+    },
+    "sulfite_asthma": {
+      "label": "Sulfites set off a small number of people, and asthmatics most",
+      "note": "About one person in a hundred reacts to sulfites, and roughly 5% of asthmatics are at risk, with breathing difficulty starting within minutes of eating; anaphylaxis is rare. The US FDA banned sulfites on fresh fruit and vegetables eaten raw in 1986 after reports of severe reactions. Anything above 10 mg/kg must be declared on the label, and dried apricots may legally carry up to 2,000 mg/kg. For everyone else the effect is nothing at all.",
+      "ids": [
+        "dried_apricot",
+        "potassium_sulfite"
+      ],
+      "severity": "conditional"
+    },
+    "ponceau_4r_southampton_trial": {
+      "label": "Ponceau 4R was in the mix that put a warning on European labels",
+      "note": "The 2007 Southampton trial, published in the Lancet, gave 153 three-year-olds and 144 eight- and nine-year-olds a drink containing sodium benzoate and one of two colour mixes. Mix A held ponceau 4R with sunset yellow, carmoisine and tartrazine, and both mixes raised the trial's hyperactivity score. The result is why the EU requires foods carrying any of the six dyes to say they may have an adverse effect on activity and attention in children. Europe cut the acceptable daily intake for ponceau 4R to 0.7 mg per kg of body weight against the WHO's 4.",
+      "ids": [
+        "jelly",
+        "ponceau_4r"
+      ],
+      "severity": "conditional"
+    },
+    "nitrite_endogenous_nitrosation": {
+      "label": "Nitrite becomes something else in the stomach",
+      "note": "IARC evaluated ingested nitrate and nitrite in 2010 and put them in Group 2A, probably carcinogenic to humans, under the conditions that result in endogenous nitrosation. In the acid of the stomach nitrite forms nitrosating agents that react with secondary amines and amides to give N-nitroso compounds, some of which are known carcinogens. That is the reason the EU cut the amount that may be added to meat from 150 to 80 mg per kg in October 2025, while keeping enough to hold back Clostridium botulinum.",
+      "ids": [
+        "corned_beef",
+        "potassium_nitrite"
+      ],
+      "severity": "cumulative"
+    },
+    "aspartame_phenylketonuria": {
+      "label": "Aspartame carries phenylalanine, and for one group that matters",
+      "note": "Aspartame is a methyl ester of two amino acids and one of them is phenylalanine. People born with phenylketonuria — about one baby in 12,000 — lack the enzyme phenylalanine hydroxylase and cannot clear it; untreated, that leads to intellectual disability and seizures, which is why newborns have been screened since the early 1960s. It is the reason US labels on aspartame-containing food are required to read \"Phenylketonurics: Contains Phenylalanine\". For everyone else the acceptable daily intake is 50 mg per kg of body weight in the US and 40 mg/kg in the EU, against 0.18 g in a 350 ml can.",
+      "ids": [
+        "aspartame",
+        "diet_soda"
+      ],
+      "severity": "conditional"
+    },
+    "xylitol_dog_toxicity": {
+      "label": "Xylitol is dangerous to dogs at an amount a person would not notice",
+      "note": "A dog's pancreas reads xylitol as sugar. Around 100 mg per kilogram of body weight causes a dose-dependent insulin release and hypoglycaemia, and above 500 mg/kg liver failure becomes likely — a few grams is a serious dose for a small dog. In people the assimilation and metabolism of xylitol are independent of insulin and normal consumption has not been shown to pose serious risk, so this is a hazard to the animal in the room rather than to the person chewing. Sugar-free gum is where dogs usually meet it.",
+      "ids": [
+        "sugar_free_gum",
+        "xylitol"
+      ],
+      "severity": "acute"
+    },
+    "polyol_laxation": {
+      "label": "Sugar alcohols are absorbed incompletely, and the rest reaches the colon",
+      "note": "Polyols are not fully taken up in the small intestine, so what is left ferments further down — bloating, wind and diarrhoea. The reported maximum non-laxative dose is 0.17 to 0.24 grams per kilogram of body weight for sorbitol and 0.3 to 0.42 g/kg for xylitol, and around 50 grams of xylitol in a day gives most people diarrhoea. It is dose-dependent and uncomfortable rather than harmful, and it is why sorbitol doubles as an actual laxative.",
+      "ids": [
+        "sorbitol",
+        "sugar_free_gum",
+        "xylitol"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

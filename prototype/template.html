@@ -2946,12 +2946,28 @@ const famAttrs = (e) => {
 function renderCount() {
   const el = document.getElementById('count');
   if (!el) return;
-  const onCanvas = world.querySelectorAll('.chip.board').length;
+  // Two numbers, because there are two facts and conflating them is what
+  // caused the confusion. A folded card is display:none: still on the bench,
+  // still in the save, still counted against MAX_CHIPS -- but the player is
+  // not looking at it. Reporting the total read "147 on canvas" to someone
+  // looking at 21; reporting only the visible count would have hidden why the
+  // bench then refused a new card. So say both, and only when they differ.
+  // ("there is 21 on canvas, why are you saying 140?" and "there is nothing on
+  // my board other than the snapshot i sent you" -- found live. The folded
+  // ones are the numbered badges: that board's Limestone alone carried 44.)
+  const all = world.querySelectorAll('.chip.board').length;
+  const onCanvas = world.querySelectorAll('.chip.board:not(.hidden)').length;
+  const folded = all - onCanvas;
   const tail = prefs.freePlay
     ? `${elements.length}<b class="fw"> available</b>`
     : `${found.size}<b class="fw"> of </b><b class="nw">/</b>${elements.length}<b class="fw"> found</b>`;
   el.innerHTML = `<span class="sc">${onCanvas}</span>` +
-                 `<span class="lbl"><b class="fw">on canvas</b> · ${tail}</span>`;
+                 `<span class="lbl"><b class="fw">on canvas</b>` +
+                 (folded ? ` <b class="fw">· ${folded} folded</b>` : '') +
+                 ` · ${tail}</span>`;
+  el.title = folded
+    ? `${onCanvas} cards in view, ${folded} folded away behind them — ${all} of ${MAX_CHIPS} the bench holds`
+    : 'Open your codex';
 }
 
 function renderShelf() {
@@ -3176,6 +3192,9 @@ function refreshFolds() {
   }
   unstack();
   drawLinks();
+  // Folding hides cards by class, not by removing them, so the world observer
+  // never fires -- this is the other half of keeping the header honest.
+  renderCount();
 }
 
 /**
@@ -4011,6 +4030,30 @@ function tidy() {
     packs.push({ chips: mine, w: (max - min) + 1, h: Math.max(...mine.map(c => visDepthOf.get(c))) + 1 });
   }
 
+  // A card with no links is its own component, so each one became a pack one
+  // slot wide with a two-slot lane beside it. Nine unconnected cards therefore
+  // cost 27 slots of width on their own, and the wrap below could not help --
+  // it only starts a new band BETWEEN packs, so a long run of one-wide packs
+  // still marched out sideways. On a real 140-card board that put the block
+  // 2,772px across with Nickel and Hydrogen stranded at the far edge. ("why
+  // does tidy up do this? places some things really far away from each other?"
+  // -- found live, with the canvas export.)
+  //
+  // Gather them into ONE pack laid out as a square instead. Nothing downstream
+  // needs to know: `pos` is the column and `visDepthOf` the row within the
+  // pack, which is exactly what a grid is, so barycentre, centring, packing
+  // and the collision set all keep working unchanged.
+  const loneIdx = packs.map((p, g) => [p, g]).filter(([p]) => p.chips.length === 1).map(([, g]) => g);
+  if (loneIdx.length >= 3) {
+    const lone = loneIdx.map(g => packs[g].chips[0]);
+    const cols = Math.max(1, Math.round(Math.sqrt(lone.length)));
+    lone.forEach((c, i) => { pos.set(c, i % cols); visDepthOf.set(c, Math.floor(i / cols)); });
+    packs[loneIdx[0]] = { chips: lone, w: cols, h: Math.ceil(lone.length / cols) };
+    // Emptied, not removed, so every pack index the ordering below walks
+    // stays valid; the band loop skips them.
+    for (const g of loneIdx.slice(1)) packs[g] = { chips: [], w: 0, h: 0 };
+  }
+
   // A satellite pack split off above is compact on its own now, but left in
   // plain discovery order it can still land nowhere near the pack it was
   // actually cut from — still one clean shape joined to another by a long
@@ -4030,7 +4073,7 @@ function tidy() {
   };
   for (let g = 0; g < nc; g++) if (!attachToComp.has(g)) placePack(g);
   for (let g = 0; g < nc; g++) placePack(g);   // safety net: nothing is left stranded
-  const orderedPacks = packOrder.map(g => packs[g]);
+  const orderedPacks = packOrder.map(g => packs[g]).filter(p => p.chips.length);
 
   // 4. Pack the chains into the shape of the BOARD, instead of one long row.
   //
@@ -4562,11 +4605,24 @@ function spawn(id, x, y, near, above, forceNew) {
     // first, and show it rather than reporting a wall.
     const standing = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === id);
     if (standing) {
+      // Say WHY, not just what. This branch only runs when the bench is at its
+      // cap, and the copy it finds is very often folded away or scrolled off,
+      // so "Seed is already on the bench" read as simply false to someone
+      // looking at a board with no Seed on it. ("i try to draw seed onto the
+      // board. wont let me and says 'seed is already on the bench'? it clearly
+      // is not." -- found live, with an export holding six Seeds, all of them
+      // either folded or outside the viewport.)
+      const wasHidden = standing.classList.contains('folded') ||
+                        standing.classList.contains('hidden');
+      const total = world.querySelectorAll('.chip.board').length;
       standing.classList.remove('folded');
       standing.classList.add('pop');
       setTimeout(() => standing.classList.remove('pop'), 330);
       ensureVisible(standing);
-      toast(`${nameOf(byId[id])} is already on the bench`);
+      refreshFolds();
+      toast(wasHidden
+        ? `Bench is full at ${total}. ${nameOf(byId[id])} was already here, folded away — unfolded it.`
+        : `Bench is full at ${total}. ${nameOf(byId[id])} is already on it.`);
       return standing;
     }
     // Returning some other card here was the real fault. Callers take the
@@ -7134,7 +7190,7 @@ function bedrockIdFor(gameId) {
 }
 
 // ---- timeline: real, sourced years already sitting in elements' own fact
-// text, surfaced rather than researched fresh. See DESIGN-timeline-view.md —
+// text, surfaced rather than researched fresh. See docs/DESIGN-timeline-view.md —
 // v1 on purpose: one line in the sheet that's already there, not a new view.
 const TIMELINE = elements.filter(e => e.discovered)
   .map(e => ({ id: e.id, year: e.discovered.year }))
@@ -7872,7 +7928,13 @@ function showCodex(q = '') {
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
     `<button class="ghost icon" id="aaBtn" title="Amino acids"><span class="gl" style="--g:16px">__UI_AMINO__</span></button>` +
     `<button class="ghost icon" id="ladderBtn" title="The ladder"><span class="gl" style="--g:16px">__UI_LADDER__</span></button>` +
-    `<button class="ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button></div>` +
+    `<button class="ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button>` +
+    // The eye and the padlock look adjacent and are not: the eye only SHOWS you
+    // what you have not found, free play actually hands it to you. The titles
+    // have to carry that difference, because the icons cannot.
+    `<button class="ghost icon${prefs.freePlay ? ' on' : ''}" id="fpBtn" title="${prefs.freePlay
+        ? 'Leave free play — your own progress comes back'
+        : 'Free play — unlock everything. Your progress is put aside, not lost.'}"><span class="gl" style="--g:16px">__UI_FREEPLAY__</span></button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
   openSheet(`Codex · ${found.size} of ${elements.length}`);
   document.getElementById('ptBtn').onclick = () => {
@@ -7881,6 +7943,10 @@ function showCodex(q = '') {
   };
   document.getElementById('allBtn').onclick = () => {
     codexAll = !codexAll;
+    showCodex(document.getElementById('q')?.value ?? '');
+  };
+  document.getElementById('fpBtn').onclick = () => {
+    setFreePlay(!prefs.freePlay);
     showCodex(document.getElementById('q')?.value ?? '');
   };
   document.getElementById('aaBtn').onclick = () => showAtom('amino_acid');

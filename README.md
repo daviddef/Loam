@@ -26,17 +26,18 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology and reproduction |
-| Elements | **410** (401 workshop · 9 folklore) |
-| Recipes | **677** (505 merges · 172 verb processes) |
+| Elements | **6,212** (5,856 workshop · 356 folklore) |
+| Recipes | **8,105** (7,205 merges · 900 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **410 / 410** from the four starters |
-| Deepest chain | 27 crafts |
-| Sourced | **677 / 677** recipes, every URL machine-verified |
-| Audited | **295** of 677 claims checked against primary reporting — **48 were wrong** |
+| Reachable | **6,212 / 6,212** from the four starters |
+| Deepest chain | 51 crafts |
+| Sourced | **8,105 / 8,105** recipes, every URL machine-verified |
+| Audited | **295** of the first 677 claims checked against primary reporting — **48 were wrong**. That 36% first-pass error rate is why nothing ships unverified. |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **0** unreviewed |
-| Routes per element | **1.76** · 111 with only one route so far · 3 sole-route by design |
+| Routes per element | **1.30** · 2,893 still needing a second route · 1,802 sole-route by design |
+| Hazards | **312**, covering 545 elements |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **419**, none of them emoji |
+| Drawings | **6,212**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
@@ -89,7 +90,7 @@ footprint, so a rock and a cake occupy the same frame and are told apart by what
 is *in* it. Everything below the drawing is rendered from data already in the
 repo, so the cost of a new item is one shape.
 
-**The 419 drawings** are built from a kit of about forty parts on a 60x60 grid —
+**The drawings** are built from a kit of about forty parts on a 60x60 grid —
 circles, arcs and tangent joins, placed on a grid rather than drawn freehand, so
 item 340 will still match item 12 after a six-month gap. The molecular tier gets
 its own drawing language: IUPAC skeletal convention, Jmol/RasMol CPK atom
@@ -123,7 +124,7 @@ deep, fluid, soil profile, void) cost nothing per theme.
 tools/audit.mjs          checks the numbers in our prose against the cited article
 tools/safety.mjs         instructional voice, hazard chains, guarantor language
 tools/palette.mjs        Munsell notations -> sRGB, with provenance
-tools/art.mjs            the parts kit, all 419 drawings, and a sameness check
+tools/art.mjs            the parts kit, every drawing, and a sameness check
 tools/scale.mjs          order of magnitude for every item
 tools/contact-sheet.mjs  every item, every theme, on one page
 tools/strip.mjs          a named handful, big, for checking a change
@@ -134,6 +135,23 @@ inside a category too alike to tell apart at shelf size. It found nineteen real
 collisions on its first run, including five identical drink glasses and a
 hexagonal sulfur that should have been an S8 crown.
 
+## Where things live
+
+```
+README.md      this file — what the game is and how it is built
+ROADMAP.md     the plan, in priority order, with the evidence for each call
+QUEUE.md       everything asked for and not yet shipped, with its evidence
+SOURCES.md     provenance: every source opened, and what was taken from it
+BACKLOG.md     the working log — history, not a plan
+docs/          design notes and research that are not the plan
+archive/       superseded one-offs, kept for the record, maintained by nobody
+data/          the corpus (see below)
+tools/         the build, the validator, and the checkers
+prototype/     template.html is the source; index.html is generated from it
+research/      per-batch research write-ups, one file per wave
+brand/         icon and identity
+```
+
 ## Data
 
 ```
@@ -141,7 +159,7 @@ data/elements.json   id, name, emoji, shelf, tags, fact, starter?, terminal?
                      (emoji is a label for the CLI tools only — the game draws
                       from data/art.json and never reads it)
 data/recipes.json    in[], verb?, out, why
-data/verbs.json      the six process verbs and their unlock conditions
+data/verbs.json      the eight process verbs and their unlock conditions
 ```
 
 Schema rules, enforced by the validator:

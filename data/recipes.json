@@ -67287,16 +67287,6 @@
   },
   {
     "in": [
-      "copper",
-      "electron"
-    ],
-    "out": "metal",
-    "why": "A lattice of positive ions sitting in a sea of delocalised electrons — one mechanism giving lustre, conduction and ductility at once.",
-    "src": "https://en.wikipedia.org/wiki/Metal",
-    "verified": true
-  },
-  {
-    "in": [
       "nitrogen",
       "sulfur"
     ],
@@ -80367,6 +80357,476 @@
     "out": "bht",
     "why": "BHT is a cresol wearing two tert-butyl groups. p-Cresol — toluene with a hydroxyl on the far corner of the ring — is alkylated with isobutylene over sulfuric acid, and the two bulky groups settle either side of that hydroxyl. Isobutylene is the branched four-carbon alkene from the same refinery cut that yields butane.",
     "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene",
+    "verified": true
+  },
+  {
+    "in": [
+      "cream",
+      "locust_bean_gum"
+    ],
+    "out": "cream_cheese",
+    "why": "A fresh cheese made from cream holds more water than its curd can keep, and whey weeps out on the shelf. Carob galactomannan binds that loose water at a fraction of a percent, which is why industrial cream cheese lists carob bean gum.",
+    "src": "https://en.wikipedia.org/wiki/Cream_cheese",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_cream",
+      "monoglyceride"
+    ],
+    "out": "soft_serve",
+    "why": "The emulsifier crowds milk protein off the fat globules, so fat part-coalesces into a network as the mix freezes. That network is what lets soft serve stand up dry at −4 °C holding 33 to 45% air, where ice cream needs −15 °C to keep shape.",
+    "src": "https://en.wikipedia.org/wiki/Soft_serve",
+    "verified": true
+  },
+  {
+    "in": [
+      "bread",
+      "xanthan_gum"
+    ],
+    "out": "gluten_free_bread",
+    "why": "Gluten's cross-linked network is what traps the carbon dioxide yeast makes; without it a batter cannot hold a bubble. Xanthan gum, used at 0.5% or less, supplies the stickiness gluten would have given, so the loaf rises and sets.",
+    "src": "https://en.wikipedia.org/wiki/Xanthan_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "carrageenan",
+      "milk"
+    ],
+    "out": "carrageen_moss_pudding",
+    "why": "Kappa carrageenan forms strong rigid gels with potassium ions and binds hard to dairy protein, so it sets milk rather than merely thickening it. Boiling the whole red weed in milk is the old version; E407 is that extract, purified.",
+    "src": "https://en.wikipedia.org/wiki/Carrageenan",
+    "verified": true
+  },
+  {
+    "in": [
+      "alginate",
+      "apple_juice"
+    ],
+    "out": "spherified_pearl",
+    "why": "About 0.5 g of alginate per 100 g of juice, dripped into a bath of 0.5 g calcium chloride per 100 g of water. Calcium cross-links the alginate on contact, so a skin sets in seconds while the middle is still juice.",
+    "src": "https://www.greatbritishchefs.com/how-to-cook/how-to-spherify",
+    "verified": true
+  },
+  {
+    "in": [
+      "gellan_gum",
+      "oat"
+    ],
+    "out": "oat_milk",
+    "why": "Milled oat solids settle out of water. Gellan sets a network too weak to taste but strong enough to hold plant particles suspended for the life of the carton, at about half the concentration agar would need to gel.",
+    "src": "https://en.wikipedia.org/wiki/Gellan_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "guar_gum",
+      "water"
+    ],
+    "out": "fracking_fluid",
+    "why": "The fluid runs about 90% water, 9.5% sand and 0.5% chemicals, and thin water drops its sand at the wellbore. Guar gel, cross-linked by borate above pH 9, carries grains into the fracture; a breaker or pH 3–4 thins it for flowback.",
+    "src": "https://en.wikipedia.org/wiki/Hydraulic_fracturing",
+    "verified": true
+  },
+  {
+    "in": [
+      "cheese",
+      "sodium_citrate"
+    ],
+    "out": "processed_cheese",
+    "why": "Calcium is what holds the casein network together, and heating that network gives strings and free oil. Sodium citrate takes the calcium, so the freed protein emulsifies the fat into a sauce — Gerber and Stettler's 1911 Swiss trick.",
+    "src": "https://en.wikipedia.org/wiki/Processed_cheese",
+    "verified": true
+  },
+  {
+    "in": [
+      "cream",
+      "potassium_phosphate"
+    ],
+    "out": "coffee_creamer",
+    "why": "Casein precipitates at pH 4.6 and coffee is acid enough to take it there — the white flecks called feathering. Dipotassium phosphate buffers the creamer, holding the mix off that point so the protein stays dissolved in the cup.",
+    "src": "https://www.supplysidesj.com/vitamins/making-a-better-coffee-creamer",
+    "verified": true
+  },
+  {
+    "in": [
+      "curcumin",
+      "mustard"
+    ],
+    "out": "yellow_mustard",
+    "why": "Curcumin is turmeric's yellow, sold on its own as E100, and it is what makes American mustard that colour rather than the dull tan of ground seed and vinegar. It is poorly soluble in water, so it is carried as a suspension rather than dissolved.",
+    "src": "https://en.wikipedia.org/wiki/Curcumin",
+    "verified": true
+  },
+  {
+    "in": [
+      "betanin",
+      "yoghurt"
+    ],
+    "out": "strawberry_yoghurt",
+    "why": "Betanin is beetroot red, E162. Light, heat and oxygen all break it down, which confines it to chilled or short-lived foods like yoghurt, and at yoghurt's pH of 4 to 5 it reads bright bluish-red. As a food additive it raises no safety concern.",
+    "src": "https://en.wikipedia.org/wiki/Betanin",
+    "verified": true
+  },
+  {
+    "in": [
+      "caramel_colour",
+      "carbonated_water"
+    ],
+    "out": "cola",
+    "why": "The brown of a cola is caramel colour. Soft drinks take Class IV, E150d, sugar cooked with both ammonia and sulfite, which gives a dark colour and almost no flavour of its own; JECFA sets its acceptable intake at 200 mg per kg of body weight a day.",
+    "src": "https://en.wikipedia.org/wiki/Caramel_color",
+    "verified": true
+  },
+  {
+    "in": [
+      "gelatin",
+      "ponceau_4r"
+    ],
+    "out": "jelly",
+    "why": "Gelatin sets clear, so a red jelly is a coloured one. Ponceau 4R, E124, is a synthetic azo red permitted across Europe, Asia and Australia at a European acceptable intake of 0.7 mg per kg of body weight; the US FDA has never approved it.",
+    "src": "https://en.wikipedia.org/wiki/Ponceau_4R",
+    "verified": true
+  },
+  {
+    "in": [
+      "sorbate",
+      "wine"
+    ],
+    "out": "sweet_wine",
+    "why": "Sorbate is fungistatic, not lethal: surviving yeast cannot multiply, so the sugar stays in the bottle. Up to 200 mg a litre is allowed in wine above 5 g/L of residual sugar, always alongside sulfur dioxide — lactobacilli left to eat sorbate turn it geranium.",
+    "src": "https://www.alea-evolution.com/en/potassium-sorbate-in-wine/",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple_juice",
+      "benzoate"
+    ],
+    "out": "cordial",
+    "why": "Benzoate only preserves acid drinks. Benzoic acid's pKa is 4.2 and only the undissociated molecule crosses into a microbe; once inside, an internal pH of 5 or lower cuts its fermentation of glucose by 95%. Food use runs 0.05 to 0.1%.",
+    "src": "https://en.wikipedia.org/wiki/Benzoic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "benzoic_acid",
+      "salicylic_acid"
+    ],
+    "out": "whitfields_ointment",
+    "why": "Six percent benzoic acid with three percent salicylic acid makes one fungistatic and keratolytic ointment: the second sheds the infected outer skin, the first holds back the dermatophyte in it. It is on the WHO Model List of Essential Medicines.",
+    "src": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/benzoic-acid-%20-salicylic-acid-ointment-whitfields-ointment-16687860.html",
+    "verified": true
+  },
+  {
+    "in": [
+      "apricot",
+      "potassium_sulfite"
+    ],
+    "out": "dried_apricot",
+    "why": "Sulfite blocks the browning reactions that darken fruit as it dries. The EU allows dried apricots up to 2,000 mg of sulfur dioxide per kg and sulphured fruit typically carries 200 to 2,000, so the 10 mg/kg declaration threshold is always crossed.",
+    "src": "https://nutrada.com/blog/sulfur-dioxide-dried-fruit",
+    "verified": true
+  },
+  {
+    "in": [
+      "beef",
+      "potassium_nitrite"
+    ],
+    "out": "corned_beef",
+    "why": "Nitrite in the brine is what leaves cured beef pink rather than grey, and it holds back Clostridium botulinum. Since 9 October 2025 the EU has capped what may be added to a meat product at 80 mg per kg, down from 150, to limit the nitrosamines that follow.",
+    "src": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202302108",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium_acetate",
+      "ethanol"
+    ],
+    "out": "canned_heat",
+    "why": "A saturated solution of calcium acetate poured into ethanol leaves a semisolid flammable gel that burns for around twenty minutes — the Sterno trick. The same salt is E263 in confectionery and a phosphate binder for failing kidneys.",
+    "src": "https://en.wikipedia.org/wiki/Calcium_acetate",
+    "verified": true
+  },
+  {
+    "in": [
+      "potassium_acetate",
+      "water"
+    ],
+    "out": "runway_deicer",
+    "why": "Airfields spray potassium acetate solution instead of chloride salts because it is far less corrosive and easier on soils. It freezes near -60 °C, and it is fully biodegraded within about twenty days at an oxygen demand of 0.3 g per gram.",
+    "src": "https://www.vynova-group.com/blog/how-potassium-based-de-icers-ensure-safe-air-travel",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "sorbitol"
+    ],
+    "out": "surimi",
+    "why": "Washed fish mince will not set into a gel again once it has been frozen: the actomyosin denatures in storage and the gel strength goes with it. Sorbitol is blended in before freezing to hold that structure. A 2018 trial on freshwater fish ran four cryoprotectant blends and the strongest gel came from the highest of them — 4% sucrose, 4% sorbitol and 0.3% sodium tripolyphosphate.",
+    "src": "https://iopscience.iop.org/article/10.1088/1755-1315/207/1/012046",
+    "verified": true
+  },
+  {
+    "in": [
+      "chewing_gum",
+      "xylitol"
+    ],
+    "out": "sugar_free_gum",
+    "why": "Streptococcus mutans ferments sugar into the acid that dissolves enamel, and xylitol inhibits that species specifically — about three times as effectively as sorbitol does. Gum is mostly sweetener to begin with, 40 to 50% sugar alcohol by weight, so the swap is nearly the whole product. Dose matters: below 3.44 grams of xylitol a day there is no effect, and above 10.32 grams no further one.",
+    "src": "https://en.wikipedia.org/wiki/Chewing_gum",
+    "verified": true
+  },
+  {
+    "in": [
+      "aspartame",
+      "soda"
+    ],
+    "out": "diet_soda",
+    "why": "Aspartame is about 200 times as sweet as sucrose, so the sugar in a soft drink is replaced by very little of it: a 12-fl-oz (350 ml) can of diet soda contains 0.18 grams. The FDA approved aspartame for carbonated beverages in 1983, which is what made the category possible; the acceptable daily intake is 50 mg per kg of body weight in the US and 40 mg/kg in the EU.",
+    "src": "https://en.wikipedia.org/wiki/Aspartame",
+    "verified": true
+  },
+  {
+    "in": [
+      "maltodextrin",
+      "sucralose"
+    ],
+    "out": "tabletop_sweetener",
+    "why": "Sucralose is about 600 times as sweet as sucrose, so a spoonful of the pure compound is not a thing anyone could measure. The tabletop product is almost entirely carrier: Splenda granular is roughly 1.1% sucralose spread over dextrose and maltodextrin, which is what lets it be spooned against sugar one for one. A one-gram packet carries 3.36 kcal, under the 5 kcal per serving below which US labelling permits a zero-calorie claim.",
+    "src": "https://en.wikipedia.org/wiki/Splenda",
+    "verified": true
+  },
+  {
+    "in": [
+      "bha",
+      "potato"
+    ],
+    "out": "instant_mashed_potato",
+    "why": "Dried potato has to keep for a year in a cardboard box, and the fat left in the flake is what turns first — BHA is an antioxidant used in fat-containing foods to stop that rancidification. US regulation names the use and the amount: 21 CFR 172.110 permits 50 parts per million of BHA in potato flakes and in dehydrated potato shreds, and 10 ppm in potato granules.",
+    "src": "https://www.law.cornell.edu/cfr/text/21/172.110",
+    "verified": true
+  },
+  {
+    "in": [
+      "bht",
+      "hydrogenated_oil"
+    ],
+    "out": "shortening",
+    "why": "Hydrogenation sets liquid oil solid, and shortening was sold from the start as a fat that needed no refrigeration — which leaves it a year of slow oxidation to survive. BHT is generally recognised as safe for that job as long as total antioxidants stay under 0.02% of the food's fat or oil content, and 21 CFR 172.115 separately allows 200 ppm in emulsion stabilisers for shortenings.",
+    "src": "https://www.law.cornell.edu/cfr/text/21/182.3173",
+    "verified": true
+  },
+  {
+    "in": [
+      "electrolysis",
+      "zinc_sulfide"
+    ],
+    "out": "indium",
+    "why": "Nobody mines indium. It rides in sphalerite at trace level, and in the roast-leach-electrowin route to zinc it accumulates in the iron-rich residues left behind; from those it is leached out and finished pure by electrolysis.",
+    "src": "https://en.wikipedia.org/wiki/Indium",
+    "verified": true
+  },
+  {
+    "in": [
+      "pyrite"
+    ],
+    "verb": "heat",
+    "out": "thallium",
+    "why": "Thallium is a trace passenger in iron pyrite. Roast the pyrite to make sulfuric acid and the thallium goes up the flue; it is leached back out of the flue dust with alkali or acid. Crookes first caught it there in 1861, by its green line.",
+    "src": "https://en.wikipedia.org/wiki/Thallium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bismuth",
+      "zinc"
+    ],
+    "out": "nihonium",
+    "why": "209Bi + 70Zn → 278Nh + n — Riken began firing zinc-70 at a bismuth target in September 2003, took one atom in July 2004, a second in 2005, and a third after 450 more days of beam in 2012.",
+    "src": "https://en.wikipedia.org/wiki/Nihonium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "plutonium"
+    ],
+    "out": "flerovium",
+    "why": "244Pu + 48Ca → 289Fl + 3n. Calcium-48 is both neutron-rich and doubly magic, so a fused nucleus made with it survives long enough to be seen — the hot-fusion trick that got Dubna elements 114 to 118.",
+    "src": "https://en.wikipedia.org/wiki/Flerovium",
+    "verified": true
+  },
+  {
+    "in": [
+      "americium",
+      "calcium"
+    ],
+    "out": "moscovium",
+    "why": "243Am + 48Ca → 288Mc + 3n — Dubna and Livermore bombarded an americium-243 target with calcium-48 in August 2003 and got four atoms, each alpha-decaying on to element 113 in about 100 milliseconds.",
+    "src": "https://en.wikipedia.org/wiki/Moscovium",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "curium"
+    ],
+    "out": "livermorium",
+    "why": "248Cm + 48Ca → 293Lv + 3n — Dubna fired calcium-48 at a curium-248 target on 19 July 2000 and caught a single atom, identified by the flerovium it alpha-decayed into.",
+    "src": "https://en.wikipedia.org/wiki/Livermorium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonium_nitrate",
+      "neodymium"
+    ],
+    "out": "praseodymium",
+    "why": "Didymium was never an element. Von Welsbach split it in 1885 into neodymium and a green-salted twin, and fractional crystallisation of the ammonium nitrate double salts is still how high-purity praseodymium is parted from its neighbours.",
+    "src": "https://en.wikipedia.org/wiki/Praseodymium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonium_sulfate",
+      "clay"
+    ],
+    "out": "terbium",
+    "why": "The richest terbium going is not an ore body but weathered granite. In South China's regolith the heavy rare earths cling as loose cations to kaolinite, and 0.3M ammonium sulfate pumped through the clay swaps NH4+ in and washes them straight out.",
+    "src": "https://en.wikipedia.org/wiki/Regolith-hosted_rare_earth_element_deposits",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "holmium"
+    ],
+    "out": "dysprosium",
+    "why": "Boisbaudran worked on holmium oxide in Paris in 1886, dissolving it in acid and dropping the hydroxide back out with ammonia. He had to run the cycle more than thirty times before a new oxide separated, and named it 'hard to get at'.",
+    "src": "https://en.wikipedia.org/wiki/Dysprosium",
+    "verified": true
+  },
+  {
+    "in": [
+      "erbium",
+      "nitric_acid"
+    ],
+    "out": "holmium",
+    "why": "Erbia was not one earth either. Cleve ran Mosander's nitrate method on erbium oxide, stripping out everything already known, and two new materials were left — one brown, one green. Soret had already seen the brown one's lines and called it element X.",
+    "src": "https://en.wikipedia.org/wiki/Holmium",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay",
+      "yttrium"
+    ],
+    "out": "erbium",
+    "why": "Most erbium now comes from the ion-adsorption clays of southern China. Yttrium is about two thirds of the rare earth in that concentrate and erbia 4–5% of it; dissolved in acid, the erbium ion gives the pink colour Mosander saw at Ytterby.",
+    "src": "https://en.wikipedia.org/wiki/Erbium",
+    "verified": true
+  },
+  {
+    "in": [
+      "bromine",
+      "erbium"
+    ],
+    "out": "thulium",
+    "why": "Thulia was the green half of what Cleve took out of erbia in 1879, and nobody had enough to see the colour. Charles James got there in 1911 by fractional crystallisation of the bromate — 15,000 operations before the material came out homogeneous.",
+    "src": "https://en.wikipedia.org/wiki/Thulium",
+    "verified": true
+  },
+  {
+    "in": [
+      "erbium",
+      "sodium"
+    ],
+    "out": "ytterbium",
+    "why": "Ytterbium has europium's back door. Treat a buffered solution of the trivalent rare earths with molten sodium amalgam and only Yb3+ is reduced and pulled into the alloy, leaving the rest behind. Marignac found the earth inside erbia in 1878.",
+    "src": "https://en.wikipedia.org/wiki/Ytterbium",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonium_nitrate",
+      "ytterbium"
+    ],
+    "out": "lutetium",
+    "why": "Marignac's ytterbia was two elements. Urbain split it in 1907, publishing 44 days ahead of von Welsbach, and lutetium — 0.0001% of monazite — still comes out last, crystallised as an ammonium nitrate double salt and finished by ion exchange.",
+    "src": "https://en.wikipedia.org/wiki/Lutetium",
+    "verified": true
+  },
+  {
+    "in": [
+      "actinium"
+    ],
+    "verb": "wait",
+    "out": "francium",
+    "why": "Actinium-227 mostly beta-decays, but about one atom in a hundred goes by alpha instead, and what is left behind is francium-223 — long called actinium K. Perey caught it that way in 1939, and it is why uranium ore carries a trace of francium.",
+    "src": "https://en.wikipedia.org/wiki/Francium",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_bomb",
+      "uranium"
+    ],
+    "out": "einsteinium",
+    "why": "Ivy Mike, 1 November 1952: uranium-238 in the device swallowed fifteen neutrons inside a microsecond, then beta-decayed seven times over. Aircraft flew filter papers through the cloud, and Ghiorso's team found element 99 on them that December.",
+    "src": "https://en.wikipedia.org/wiki/Einsteinium",
+    "verified": true
+  },
+  {
+    "in": [
+      "atoll",
+      "hydrogen_bomb"
+    ],
+    "out": "fermium",
+    "why": "Element 100 was an order of magnitude scarcer in the debris than element 99, so filter papers were not enough: contaminated coral from Enewetak Atoll was shipped to Berkeley, and 255Fm — uranium-238 plus seventeen neutrons — came out of it.",
+    "src": "https://en.wikipedia.org/wiki/Fermium",
+    "verified": true
+  },
+  {
+    "in": [
+      "einsteinium",
+      "helium"
+    ],
+    "out": "mendelevium",
+    "why": "253Es + 4He → 256Md + n. The target was a billion einsteinium atoms, and the arithmetic promised about one atom of element 101 per run; Berkeley's 60-inch cyclotron made seventeen in all, one at a time.",
+    "src": "https://en.wikipedia.org/wiki/Mendelevium",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "curium"
+    ],
+    "out": "nobelium",
+    "why": "248Cm + 12C → 255No + 5n. Element 102 was claimed by four countries before Dubna's 1966 report settled it, and carbon-12 fired at a curium or californium target is still how the working isotope is made.",
+    "src": "https://en.wikipedia.org/wiki/Nobelium",
+    "verified": true
+  },
+  {
+    "in": [
+      "boron",
+      "californium"
+    ],
+    "out": "lawrencium",
+    "why": "On 14 February 1961 Ghiorso's team fired boron-10 and boron-11 from Berkeley's heavy-ion linear accelerator at a three-milligram target of mixed californium isotopes. They reported 257Lr; later work showed they had actually made 258Lr.",
+    "src": "https://en.wikipedia.org/wiki/Lawrencium",
+    "verified": true
+  },
+  {
+    "in": [
+      "coke",
+      "ore"
+    ],
+    "out": "metal",
+    "why": "Metal in the ground is an oxide or a sulfide — its atoms have already handed their outer electrons to oxygen or sulfur. Carbon monoxide off burning coke takes those away again, and the freed atoms pool their electrons into the sea that makes a metal.",
+    "src": "https://en.wikipedia.org/wiki/Smelting",
     "verified": true
   }
 ]

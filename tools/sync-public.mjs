@@ -74,6 +74,18 @@ const PUBLIC = [
 /** Anything matching these must never reach the public repo. */
 const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN.*\.md$/, /^SOURCES\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
+               // QUEUE.md is the outstanding-work list: it names unopened
+               // sources, unfixed faults and commercial roadmap items.
+               /^QUEUE\.md$/,
+               // Everything under docs/ and archive/ is private by definition
+               // -- design notes, research, and superseded one-offs. These two
+               // rules exist because the patterns above are anchored to the
+               // repository root (^DESIGN, ^RESEARCH, ^roadmap.page.html), so
+               // moving those files into folders on 3 Sep silently took them
+               // out of scope. The sync refused rather than publishing them,
+               // which is exactly what it is for; anchoring the folders too is
+               // what makes a future move safe.
+               /^docs\//, /^archive\//,
                /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
                /^tools\/session-report\.mjs$/,
                // Merges RESEARCH-*.md batches, which are private by definition.
