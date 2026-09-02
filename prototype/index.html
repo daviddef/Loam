@@ -2079,7 +2079,7 @@
       <circle cx="70" cy="26" r="8" fill="#E0A526"/><circle cx="92" cy="34" r="8" fill="#6B8E4E"/>
       <rect x="42" y="66" width="36" height="30" rx="9" fill="#E2703A"/>
     </svg>
-    <h1 title="Build 15813d7 · 2026-09-02 22:44">Loam</h1>
+    <h1 title="Build 6b60310 · 2026-09-02 22:48">Loam</h1>
   </a>
   <button class="count" id="count" title="Open your codex"></button>
   <div class="goal" id="goal"></div>
@@ -6667,11 +6667,16 @@ function ptCell(z) {
   return [7, z - 100];                       // Rf → Og
 }
 function periodicHTML() {
-  const inPlay = new Set(BED.atoms.filter(a => a.inPlay).map(a => a.id));
+  // The docked table was fixed to derive this and this one was not, so the two
+  // views of the same chart disagreed: bedrock's `inPlay` means "the starters
+  // are made of this" -- 15 atoms -- while 94 can actually be held as a card.
+  // This page was calling the other 79 not in the game. Same source as the
+  // dock now: the element list, which is the thing that decides.
+  const inPlay = PLAYABLE_ATOM;
   const cats = [...new Set(BED.atoms.map(a => a.category))];
   let h = `<p class="none" style="text-align:left;padding:0 0 6px">` +
           `Shape says what a thing is; colour says which kind. ` +
-          `The ${inPlay.size} lit tiles are the ones this world is actually built from.</p>`;
+          `The ${inPlay.size} lit tiles are the ones you can hold as a card.</p>`;
   h += `<div class="legend">` + cats.map(c =>
         `<span style="background:var(--${c})">${c}</span>`).join('') + `</div>`;
   h += '<div class="ptab">';
@@ -6684,7 +6689,7 @@ function periodicHTML() {
   }
   h += '</div>';
   h += `<h2>In play · ${inPlay.size}</h2><div class="shelf">` +
-       BED.atoms.filter(a => a.inPlay).map(a =>
+       BED.atoms.filter(a => inPlay.has(a.id)).map(a =>
          `<span class="chip" data-atom="${a.id}">${atomTile(a)}&nbsp;${a.name}</span>`).join('') +
        `</div>`;
   h += `<h2>Compounds · ${BED.compounds.length}</h2><div class="shelf" style="gap:7px">` +
