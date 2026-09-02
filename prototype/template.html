@@ -1650,18 +1650,34 @@ __CATEGORY_CSS__
      plain list of every element in the game, NOT the periodic chart),
      Proteins (the twenty amino acids) and Animals (browse by taxonomy).
      Icon-only, since a text label doesn't fit four across. */
-  /* Eight tabs where there were four. A single row overflowed the pane at
-     any sensible width — measured at 258px of buttons in a 201px bar — and
-     the eighth simply sat outside it, which is the same fault the Found
-     toggle had. It wraps instead. */
-  #asideTabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 9px}
-  #asideTabs .atab{flex:1 0 auto;min-width:30px}
+  /* Real tabs on the seam, the same idea as #ptTab on the dock: a tab is
+     attached to the edge of the thing it opens, sticking out of it, rather
+     than being a button sitting inside it. Eight of them never fitted one row
+     inside the pane anyway — 258px of buttons in a 201px bar — and moving them
+     out onto the seam gives back the width the pane wanted for content.
+
+     Stacked down the left edge, rounded and bordered on three sides with the
+     seam side open, so the active one reads as continuous with the pane
+     behind it. Hidden with #asideGrab below 720px, where the shelf becomes a
+     drawer and there is no seam to hang anything on. */
+  #asideTabs{
+    position:absolute;top:64px;right:var(--asw,238px);z-index:6;
+    display:flex;flex-direction:column;gap:4px;margin:0;
+  }
   #asideTabs .atab{
-    flex:1;display:flex;align-items:center;justify-content:center;
-    padding:7px 6px;border-radius:8px;color:var(--ink-soft);background:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    width:30px;height:30px;padding:0;cursor:pointer;
+    background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
+    border:2px solid var(--line);border-right:none;border-radius:9px 0 0 9px;
+    color:var(--ink-soft);transition:color .15s,border-color .15s;
   }
   #asideTabs .atab:hover{color:var(--ink)}
-  #asideTabs .atab.on{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+  #asideTabs .atab.on{
+    color:var(--orange);border-color:var(--orange);
+    /* the pane's own ground, so the active tab and the pane read as one piece */
+    background:var(--surface);
+  }
+  @media(max-width:720px){ #asideTabs{display:none} }
   .apane{display:none}
   .apane.on{display:block}
   #ptHead{
