@@ -3066,9 +3066,14 @@ def('stoneware', () => [vessel('bs', 20), E(30, 20, 15, 3.4, 'lo'), S('M18 30 L4
 def('barrel', () => [P('M18 18 Q12 32 18 48 L42 48 Q48 32 42 18 Z', 'bs'),
                      ...[26, 40].map(y => S(`M${y === 26 ? 15 : 15} ${y} Q30 ${y - 2} 45 ${y}`, 'lo', 2.4)),
                      E(30, 18, 12, 3, 'hi')]);
-def('glass',  () => [P('M20 18 L40 18 L36 48 L24 48 Z', 'gh'),
-                     S('M20 18 L40 18 L36 48 L24 48 Z', 'hi', 2),
-                     S('M24 24 L23 42', 'hi', 1.4)]);
+// A tilted sheet, not a tumbler. The old drawing was a drinking glass, which
+// is the other sense of the word: this element is the amorphous solid made
+// from sand and ash. Shards belong to cullet and the framed pane to window,
+// so the material takes the plain leaning sheet with two glints off it.
+def('glass',  () => [P('M17 15 L43 21 L43 45 L17 39 Z', 'gh'),
+                     S('M17 15 L43 21 L43 45 L17 39 Z', 'hi', 2),
+                     S('M23 22 L23 40', 'hi', 1.4),
+                     S('M31 25 L31 42', 'hi', 1)]);
 def('flint',  () => [facet('lo', .9), facet('bs', .55),
                      S('M14 34 L26 22 M30 20 L40 30', 'hi', 1.6)]);
 def('sickle', () => [S('M16 44 Q16 18 44 20', 'hi', 3.4), S('M14 48 L24 40', 'lo', 5)]);
