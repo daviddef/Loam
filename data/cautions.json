@@ -15,7 +15,8 @@
         "bacon",
         "aspic",
         "smoked_fish",
-        "sourdough_starter"
+        "sourdough_starter",
+        "clostridium_botulinum"
       ],
       "severity": "acute"
     },
@@ -819,7 +820,8 @@
       "label": "Resists the chlorine that stops most water contaminants",
       "note": "Cryptosporidium's oocysts are highly resistant to ordinary chlorine disinfection, which has made it a real cause of large waterborne outbreaks. Illness is usually watery diarrhea, worse and longer-lasting in anyone immunocompromised.",
       "ids": [
-        "cryptosporidium"
+        "cryptosporidium",
+        "cryptosporidiosis"
       ],
       "severity": "conditional"
     },
@@ -1755,6 +1757,253 @@
         "rabies_virus"
       ],
       "severity": "acute"
+    },
+    "staphylococcus_illness": {
+      "label": "Staph food poisoning survives the cooking that kills the bacterium",
+      "note": "Staphylococcus aureus itself is destroyed by ordinary cooking, but the enterotoxin it made while growing in food beforehand is heat-stable and survives. Symptoms — nausea, vomiting, cramping — typically start within 1 to 6 hours and clear within a day.",
+      "ids": [
+        "staphylococcus_aureus"
+      ],
+      "severity": "conditional"
+    },
+    "listeriosis_risk": {
+      "label": "Listeria keeps growing in the refrigerator",
+      "note": "Listeria monocytogenes is one of the few foodborne pathogens that multiplies at refrigeration temperatures. Infection is usually mild in healthy adults but carries a 20-30% fatality rate in high-risk groups, and in pregnancy it can cause miscarriage or stillbirth.",
+      "ids": [
+        "listeria_monocytogenes"
+      ],
+      "severity": "conditional"
+    },
+    "campylobacteriosis_illness": {
+      "label": "Campylobacter is the most common bacterial foodborne illness in the US",
+      "note": "Most Campylobacter infections resolve within about a week without treatment, but roughly 1 in 3,000 go on to trigger Guillain-Barré syndrome, an autoimmune nerve disorder, weeks after the diarrhea has cleared.",
+      "ids": [
+        "campylobacter"
+      ],
+      "severity": "conditional"
+    },
+    "aflatoxin_carcinogen": {
+      "label": "Aflatoxin is one of the most potent liver carcinogens known",
+      "note": "Produced by Aspergillus flavus on stored peanuts and grain, aflatoxin B1 damages the p53 tumor-suppressor gene directly and is linked to liver cancer with chronic exposure, which is why the FDA caps it at 20 parts per billion in food.",
+      "ids": [
+        "aflatoxin"
+      ],
+      "severity": "cumulative"
+    },
+    "clostridial_wound_risk": {
+      "label": "Deep wounds and soil are a real combination",
+      "note": "Clostridium tetani and Clostridium perfringens are both anaerobic soil bacteria that thrive specifically where a wound seals off oxygen. Tetanus causes spreading muscle rigidity that starts with lockjaw; gas gangrene causes outright muscle tissue death that can progress to shock within hours. Both are why puncture wounds and deep cuts get medical attention rather than just a bandage.",
+      "ids": [
+        "clostridium_tetani",
+        "tetanus",
+        "clostridium_perfringens",
+        "gas_gangrene"
+      ],
+      "severity": "acute"
+    },
+    "tick_borne_rickettsia": {
+      "label": "A tick bite can carry more than an itch",
+      "note": "Rickettsia rickettsii is transmitted into the bloodstream by tick salivary secretions, and can start infecting a person in a feeding time as short as two hours. Before antibiotics were available, Rocky Mountain spotted fever killed more than 1 in 10 people it infected; with early treatment, mortality drops to about 1 in 200.",
+      "ids": [
+        "rickettsia_rickettsii",
+        "rocky_mountain_spotted_fever"
+      ],
+      "severity": "acute"
+    },
+    "rubella_pregnancy_risk": {
+      "label": "Mild in most people, dangerous for a fetus",
+      "note": "Rubella is generally a mild disease with a light rash. The real danger is congenital: the virus can cross the placenta and interrupt fetal cell development, and infection early in pregnancy carries a high risk of miscarriage, stillbirth, or serious birth defects.",
+      "ids": [
+        "rubella_virus",
+        "rubella"
+      ],
+      "severity": "conditional"
+    },
+    "gi_infection_risk": {
+      "label": "Fecal-oral pathogens are a real category",
+      "note": "Norovirus, hepatitis A, Cyclospora and Salmonella Typhi all spread the same basic way: something that touched contaminated feces reaches someone's mouth, often through food or water. Most cases resolve on their own, but typhoid fever and severe C. difficile colitis can turn genuinely serious.",
+      "ids": [
+        "norovirus",
+        "norovirus_gastroenteritis",
+        "hepatitis_a_virus",
+        "hepatitis_a",
+        "cyclospora_cayetanensis",
+        "cyclosporiasis",
+        "typhoid_fever",
+        "clostridioides_difficile",
+        "c_diff_infection"
+      ],
+      "severity": "conditional"
+    },
+    "bite_wound_zoonoses": {
+      "label": "An animal bite or scratch is a real inoculation",
+      "note": "Bartonella henselae (cat scratch disease) and Streptobacillus moniliformis (rat-bite fever) both live in ordinary, often-healthy pets and rodents, and both cross into a person through a scratch or bite. Most cases are mild in a healthy adult, but rat-bite fever in particular can produce genuinely high, prostrating fevers.",
+      "ids": [
+        "bartonella_henselae",
+        "cat_scratch_disease",
+        "streptobacillus_moniliformis",
+        "rat_bite_fever"
+      ],
+      "severity": "conditional"
+    },
+    "gonorrhea_sti": {
+      "label": "A common bacterial STI, often silent",
+      "note": "Neisseria gonorrhoeae infects an estimated 88 million people worldwide each year. About half of infected women and many infected men have no symptoms at all, yet untreated infection can still scar the fallopian tubes and cause pelvic inflammatory disease or infertility.",
+      "ids": [
+        "neisseria_gonorrhoeae",
+        "gonorrhea"
+      ],
+      "severity": "conditional"
+    },
+    "chlamydia_sti": {
+      "label": "The most-reported bacterial STI in the US",
+      "note": "Chlamydia trachomatis infected an estimated 61 million people worldwide in 2015. It's called the 'silent epidemic' because about 70% of infected women and half of infected men have no symptoms, which is why routine screening is recommended for sexually active people under 25.",
+      "ids": [
+        "chlamydia_trachomatis",
+        "chlamydia"
+      ],
+      "severity": "conditional"
+    },
+    "syphilis_sti": {
+      "label": "Syphilis can imitate other diseases for years",
+      "note": "Treponema pallidum caused an estimated 6 million new infections and about 107,000 deaths worldwide in 2015. Its early sores are often painless and easy to miss, and an untreated infection can resurface years later to damage the heart, brain, and blood vessels.",
+      "ids": [
+        "treponema_pallidum",
+        "syphilis"
+      ],
+      "severity": "conditional"
+    },
+    "chancroid_sti": {
+      "label": "A painful genital ulcer disease, rare in wealthy countries",
+      "note": "Haemophilus ducreyi causes chancroid, common in some low-resource settings but only around one case per two million people a year in the US, UK, and similar countries. Its open sores substantially raise the risk of acquiring HIV during sex with an infected partner.",
+      "ids": [
+        "haemophilus_ducreyi",
+        "chancroid"
+      ],
+      "severity": "conditional"
+    },
+    "toxic_shock_risk": {
+      "label": "Toxic shock syndrome can turn fatal within hours",
+      "note": "Certain Staphylococcus aureus strains release TSST-1, a superantigen that can trigger a cytokine storm, a sharp blood-pressure crash, and multi-organ failure. US incidence fell to roughly 0.3 to 0.5 cases per 100,000 people a year after high-absorbency tampons tied to the 1980 epidemic were pulled from the market, but the illness can still be fatal within hours if untreated.",
+      "ids": [
+        "staphylococcus_aureus",
+        "tampon",
+        "toxic_shock_syndrome"
+      ],
+      "severity": "acute"
+    },
+    "leptospirosis_exposure": {
+      "label": "Leptospirosis spreads through water contaminated with animal urine",
+      "note": "Leptospira interrogans causes an estimated one million infections and about 58,900 deaths worldwide each year, mostly in the tropics. The bacteria enter through mucous membranes or breaks in the skin and can persist for weeks in warm, moist soil or fresh water fouled by the urine of infected rodents and livestock.",
+      "ids": [
+        "leptospira_interrogans",
+        "leptospirosis"
+      ],
+      "severity": "conditional"
+    },
+    "pyelonephritis_risk": {
+      "label": "Untreated bladder infections can spread to the kidneys",
+      "note": "Bacterial cystitis usually stays confined to the bladder, but if the causative bacteria ascend the ureters they can cause pyelonephritis, a kidney infection affecting an estimated 1 to 2 women per 1,000 each year. Among people over 65, the risk of death from untreated pyelonephritis is around 40%.",
+      "ids": [
+        "cystitis",
+        "pyelonephritis"
+      ],
+      "severity": "conditional"
+    },
+    "tetanus_illness": {
+      "label": "Tetanus is rare today because of vaccination, not luck",
+      "note": "Clostridium tetani spores live in ordinary soil and dust and can enter through any deep or dirty wound. Tetanospasmin, the toxin it produces, kills roughly 1 in 10 who develop the disease. Routine childhood vaccination and decade boosters have cut US cases to under 40 a year, almost all in people who were never vaccinated.",
+      "ids": [
+        "tetanus"
+      ],
+      "severity": "acute"
+    },
+    "botulism_illness": {
+      "label": "A different toxin, a different paralysis, from a namesake genus",
+      "note": "Clostridium botulinum causes true botulism, distinct from the food-preservation hazard of the same name — its toxin travels through the bloodstream to block nerve signals at the neuromuscular junction. Even treated it kills 5 to 10% of those affected; untreated, closer to half.",
+      "ids": [
+        "botulism"
+      ],
+      "severity": "acute"
+    },
+    "bacterial_meningitis": {
+      "label": "The bacterial form of a name that also covers a mild virus",
+      "note": "Neisseria meningitidis and Streptococcus pneumoniae cause most bacterial meningitis, and even treated it kills roughly one in six patients. If the bacteria reach the bloodstream instead of, or alongside, the meninges, meningococcemia can follow — untreated, that form kills up to 80%. Conjugate vaccines exist against several of the major serotypes.",
+      "ids": [
+        "meningitis",
+        "meningococcemia"
+      ],
+      "severity": "acute"
+    },
+    "viral_encephalitis": {
+      "label": "Brain inflammation is a different order of danger than meningitis",
+      "note": "Untreated herpes simplex encephalitis kills about 70% of those it strikes, and even with antiviral treatment a third still die. Epidemic arboviral encephalitis varies enormously by virus, from under 1% case-fatality for La Crosse virus to 30–75% for eastern equine encephalitis.",
+      "ids": [
+        "encephalitis"
+      ],
+      "severity": "acute"
+    },
+    "sepsis_deaths": {
+      "label": "Sepsis is not rare, and it kills fast",
+      "note": "Sepsis affected an estimated 49 million people worldwide in 2017 and caused about 11 million deaths — one in five deaths worldwide that year. It is the body's own dysregulated inflammatory response to infection that does the damage, not the microbe directly, and if blood pressure will not recover with fluids alone it becomes septic shock, which carries a mortality rate near 40%.",
+      "ids": [
+        "sepsis",
+        "septic_shock"
+      ],
+      "severity": "acute"
+    },
+    "plague_mortality": {
+      "label": "Plague still occurs, and pneumonic plague is nearly always fatal untreated",
+      "note": "The WHO still receives roughly 1,000 to 2,000 reported plague cases a year. Prompt antibiotics matter: untreated bubonic plague is usually fatal, and untreated pneumonic plague kills close to 100% of those infected, sometimes within days.",
+      "ids": [
+        "plague",
+        "yersinia_pestis"
+      ],
+      "severity": "acute"
+    },
+    "tularemia_infectivity": {
+      "label": "A handful of organisms is enough for some routes",
+      "note": "Francisella tularensis is infectious enough that laboratory exposure alone has caused cases, part of why it is classified as a Tier 1 select agent. Before antibiotics, tularemia's severe forms killed up to 60% of untreated cases; treated today, mortality is under 4%.",
+      "ids": [
+        "tularemia",
+        "francisella_tularensis"
+      ],
+      "severity": "conditional"
+    },
+    "aids_untreated_progression": {
+      "label": "Untreated HIV disease is fatal, though slowly",
+      "note": "An estimated 40.9 million people were living with HIV worldwide in the most recent count, and AIDS-related illness still killed roughly 570,000 people that year — far below the epidemic's peak, thanks to antiretroviral therapy that suppresses but never eliminates the virus. Without treatment, HIV infection typically progresses to AIDS over three to twenty years.",
+      "ids": [
+        "hiv",
+        "acute_retroviral_syndrome",
+        "clinical_latency",
+        "aids"
+      ],
+      "severity": "acute"
+    },
+    "hiv_opportunistic_infections": {
+      "label": "AIDS-defining infections turn dangerous only once CD4+ counts collapse",
+      "note": "Pneumocystis pneumonia, cytomegalovirus retinitis, toxoplasmic encephalitis, and Kaposi's sarcoma are all caused by organisms many people already carry harmlessly; they become life-threatening specifically once a person's CD4+ T cell count falls to roughly 200 cells per microliter or below. Before antiretroviral therapy, these opportunistic conditions were the leading causes of death in people with AIDS.",
+      "ids": [
+        "pneumocystis_jirovecii",
+        "pneumocystis_pneumonia",
+        "toxoplasmic_encephalitis",
+        "cytomegalovirus",
+        "cmv_retinitis",
+        "human_herpesvirus_8",
+        "kaposis_sarcoma",
+        "hiv_wasting_syndrome"
+      ],
+      "severity": "conditional"
+    },
+    "hiv_transmission_routes": {
+      "label": "HIV spreads through specific body-fluid routes, not casual contact",
+      "note": "HIV transmits via blood, semen, vaginal secretions, and breast milk — not through insect bites, saliva, or casual contact. A single needlestick from HIV-infected blood carries about a 0.3% infection risk, and untreated mother-to-child transmission occurs in roughly 20% to 35% of cases, falling below 5% with antiretroviral treatment.",
+      "ids": [
+        "needle_borne_hiv_transmission",
+        "perinatal_hiv_transmission"
+      ],
+      "severity": "conditional"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

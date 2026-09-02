@@ -24960,6 +24960,5736 @@ def('leukemia', () => [                                            // abnormal c
   ...[[22, 20, 6], [34, 16, 5], [30, 30, 6], [42, 28, 5]].map(([x, y, r]) => C(x, y, r, 'lo')),  // abnormal cells, flooding in
 ]);
 
+/* microbiology / immunology / molecular-biology — batch: environmental
+   microbiology (nutrient cycles, wastewater treatment), food microbiology,
+   vaccine technology, immunology assays, epidemiology, and antibiotic
+   mechanisms. Mostly mechanism diagrams, not literal organisms — the ones
+   that are literal pathogens (clostridium_botulinum, staphylococcus_aureus,
+   listeria_monocytogenes, campylobacter) each get the one trait that makes
+   them medically distinct: botulinum's endospore, staph's grape-cluster
+   arrangement (unlike s_thermophilus's chain or lactococcus's pairs),
+   listeria dividing in the cold, campylobacter's curved cell instead of a
+   straight rod. */
+def('nitrification', () => [                                    // ammonium to nitrite to nitrate, two bacteria, two steps
+  C(12, 34, 5, 'gh'), C(30, 34, 5, 'hi'), C(48, 34, 5, 'bs'),    // NH4+, NO2-, NO3-, darkening step by step
+  S('M18 34 L24 34', 'ik', 1.8), S('M36 34 L42 34', 'ik', 1.8),
+  rod3('bs', 21, 20, 6, 2.4), rod3('bs', 39, 20, 6, 2.4),        // Nitrosomonas, then Nitrobacter
+]);
+def('denitrification', () => [                                  // nitrate reduced back to nitrogen gas once oxygen runs out
+  rod3('bs', 30, 44, 12, 5),
+  C(30, 30, 3, 'lo'),                                            // nitrate, its last meal
+  S('M30 30 L30 16', 'ik', 1.8),
+  C(24, 10, 2.4, 'gh'), C(30, 6, 2.4, 'gh'), C(36, 10, 2.4, 'gh'), // N2 gas, escaping back to air
+]);
+def('nitrogen_cycle', () => [                                    // fixation, nitrification, denitrification — one element, three homes
+  ring('bs', 30, 30, 18, 3),
+  P('M30 8 L34 14 L26 14 Z', 'hi'),                               // air, as N2
+  C(12, 42, 4, 'lo'),                                             // soil, as fixed nitrogen
+  leaf('gh', 46, 40, .8, 30),                                     // life, taking it up
+  S('M30 8 L34 4 L38 8', 'ik', 1.6),                              // the arrow, showing which way it turns
+]);
+def('carbon_cycle', () => [                                      // photosynthesis pulls it down, respiration and decay put it back
+  ring('bs', 30, 30, 18, 3),
+  leaf('hi', 30, 10, .9, 0),                                      // photosynthesis, pulling carbon down
+  hex('ik', 12, 42, 5, 1.6),                                      // CO2, breathed back out
+  E(46, 42, 6, 4, 'lo'),                                          // decay, returning it from the soil
+  S('M30 10 L34 6 L38 10', 'ik', 1.6),
+]);
+def('sulfur_cycle', () => [                                      // hydrogen sulfide oxidized to sulfate, and reduced back again
+  ring('bs', 30, 30, 18, 3),
+  C(12, 42, 4, 'gh'), S('M9 39 Q12 33 15 39', 'ik', 1.2),         // H2S, rising as gas
+  P('M46 38 L50 42 L46 46 L42 42 Z', 'hi'),                       // sulfate, a bound ion
+  S('M30 10 L34 6 L38 10', 'ik', 1.6),
+]);
+def('methanogen', () => [                                        // an archaeon: CO2 and hydrogen in, methane out — its only option
+  E(30, 34, 13, 10, 'bs'),                                        // the archaeon itself
+  hex('gh', 10, 16, 4, 1.4), S('M14 20 L22 28', 'ik', 1.4),       // CO2, going in
+  C(48, 16, 2.4, 'hi'), S('M46 19 L38 28', 'ik', 1.4),            // H2, going in
+  C(30, 50, 2.6, 'lo'), S('M30 44 L30 47', 'ik', 1.4),            // CH4, the only waste it can make
+]);
+def('extremophile', () => [                                      // doesn't just survive the extreme — needs it to grow at all
+  C(30, 32, 9, 'bs'),
+  S('M20 14 Q24 8 20 4 M30 14 Q34 8 30 4 M40 14 Q44 8 40 4', 'lo', 1.6), // heat, rippling up
+  S('M10 32 L18 32', 'ik', 2), S('M50 32 L42 32', 'ik', 2),       // pressure, squeezing in from both sides
+  ...granules('hi', 5, 61, [40, 42, 52, 52]),                     // salt, crusted at the edge
+]);
+def('thermophile', () => [                                       // 41 to 122°C is a comfortable range for this one
+  wave('lo', 46, 6, 22),                                          // the hot spring
+  C(30, 36, 7, 'bs'),                                             // the organism, right in it
+  S('M18 30 Q20 20 16 12 M30 28 Q32 18 28 10 M42 30 Q44 20 40 12', 'gh', 1.6), // steam, rising off the surface
+]);
+def('halophile', () => {                                         // some strains need water saltier than the sea itself
+  const crystal = (x, y, s) => P(`M${x} ${y - s} L${x + s} ${y} L${x} ${y + s} L${x - s} ${y} Z`, 'hi');
+  return [
+    wave('gh', 44, 5, 22),
+    C(30, 34, 7, 'bs'),
+    crystal(14, 18, 4), crystal(46, 16, 3.4), crystal(10, 40, 3), crystal(48, 38, 3.6), crystal(30, 10, 3),
+  ];
+});
+def('eutrophication', () => [                                    // algae bloom on the surplus, then rot, and the rotting steals the oxygen
+  wave('lo', 48, 6, 24),
+  mound('bs', 30, 20, 8),                                         // the algae bloom, thick on the surface
+  ...granules('hi', 8, 91, [10, 8, 50, 22]),
+  C(20, 40, 2, 'gh'), C(38, 44, 1.6, 'gh'),                       // the last few oxygen bubbles, fading below
+]);
+def('biomagnification', () => [                                  // too stable to break down — concentrating further at every step up
+  E(14, 50, 8, 5, 'gh'), C(14, 50, 1, 'lo'),                      // small fish, a trace of it
+  E(32, 34, 10, 6, 'hi'), ...[[29, 32], [35, 36]].map(([x, y]) => C(x, y, 1.4, 'lo')), // mid-size fish, more
+  E(46, 16, 12, 7, 'bs'), ...[[41, 14], [46, 17], [51, 15]].map(([x, y]) => C(x, y, 1.8, 'lo')), // top predator, the most
+]);
+def('wastewater', () => [                                        // everything from a drain, plus whatever else finds its way in
+  P('M8 10 L20 10 L20 30 L8 30 Z', 'lo'),                         // the pipe
+  wave('bs', 46, 6, 22),
+  ...granules('gh', 10, 41, [14, 30, 50, 44]),                    // whatever else came down it
+]);
+def('primary_treatment', () => [                                 // screens catch the trash, then gravity settles the rest
+  P('M8 12 L52 12 L52 50 L8 50 Z', 'gh'),                         // the tank
+  ...[16, 22, 28].map(x => S(`M${x} 14 L${x} 26`, 'ik', 1.6)),    // the screen, at the inlet
+  P('M12 42 Q30 34 48 42 L48 48 L12 48 Z', 'lo'),                 // solids, settled at the bottom
+]);
+def('activated_sludge', () => [                                  // bacteria clump into flocs, aerated, and part of every batch reseeds the next
+  P('M8 14 L52 14 L52 48 L8 48 Z', 'gh'),
+  ...[16, 26, 36, 46].map(x => S(`M${x} 44 L${x} 20`, 'lo', 1.2)), // bubbles, rising through it
+  ...[[18, 30], [30, 34], [42, 28]].map(([x, y]) => C(x, y, 4, 'bs')), // the flocs, clumped
+]);
+def('trickling_filter', () => [                                  // wastewater trickling over a bed coated in a living film a few millimetres thick
+  ...[[16, 36], [30, 40], [44, 36], [22, 46], [38, 46]].map(([x, y]) => [C(x, y, 6, 'lo'), ring('bs', x, y, 6, 1.2)]).flat(),
+  S('M20 10 L18 30 M32 8 L30 32 M44 10 L42 30', 'hi', 1.4),       // trickling down over it
+]);
+def('secondary_treatment', () => [                                // microbes finish what settling couldn't — dissolved waste turned to cells and CO2
+  P('M8 14 L52 14 L52 48 L8 48 Z', 'gh'),
+  rod3('bs', 22, 34, 8, 3), rod3('hi', 38, 30, 8, 3),
+  hex('ik', 46, 18, 4, 1.2), C(14, 20, 1.6, 'lo'),
+]);
+def('anaerobic_digestion', () => [                                // acids first, then acetate, then methanogens finish it as gas
+  vessel('gh', 16, 48),
+  C(18, 38, 3, 'lo'), C(30, 38, 3, 'hi'), C(42, 38, 3, 'bs'),     // acids, then acetate, then its precursor
+  C(30, 20, 2.4, 'gh'), S('M30 26 L30 22', 'ik', 1.4),            // methane gas, collecting at the top
+]);
+def('septic_system', () => [                                     // a tank for the anaerobic work, a drain field for the aerobic work after
+  P('M6 30 L22 30 L22 50 L6 50 Z', 'lo'),                         // the tank, underground
+  S('M22 40 L54 40', 'ik', 1.8),
+  ...[30, 40, 50].map(y => S(`M30 40 L54 ${y}`, 'hi', 1.4)),      // the drain field, fanning out
+]);
+def('indicator_organism', () => [                                 // testing every pathogen isn't practical, so this one stands in for all of them
+  rod3('bs', 24, 34, 10, 4),
+  C(46, 18, 5, 'gh'), E(48, 42, 6, 4.4, 'gh'), C(12, 44, 4, 'gh'), // the others, untested, standing behind it
+  S('M18 20 L22 24 L30 12', 'ik', 2),                             // the check, marking it as the proxy
+]);
+def('water_treatment', () => [                                    // coagulate, settle, filter, then disinfect — four stages to safe tap water
+  S('M15 8 L15 52 M30 8 L30 52 M45 8 L45 52', 'gh', 1),           // four stages
+  ...granules('lo', 5, 21, [2, 10, 13, 50]),                      // coagulating
+  C(22, 44, 4, 'lo'),                                              // settled out
+  S('M32 38 L44 38', 'bs', 1.4),                                   // filtered
+  wave('hi', 48, 4, 8),                                            // clean, disinfected water, out the other end
+]);
+def('bioremediation', () => [                                     // microbes already living there, breaking the pollution down in place
+  E(30, 44, 20, 8, 'lo'),                                          // the contaminated ground
+  rod3('bs', 20, 40, 8, 3), rod3('hi', 40, 42, 8, 3),
+  ...granules('gh', 5, 31, [10, 30, 50, 40]),                      // nutrients, added to speed it along
+]);
+def('water_activity', () => [                                     // pure water rates 1.0; jam's water is bound to sugar, not free
+  C(14, 20, 3, 'hi'), C(20, 26, 2.4, 'hi'), C(10, 30, 2, 'hi'),    // free water, loose
+  E(44, 38, 10, 8, 'lo'),                                          // sugar, bound
+  ...[[38, 32], [50, 32], [44, 46]].map(([x, y]) => [C(x, y, 2, 'bs'), S(`M44 38 L${x} ${y}`, 'ik', 1)]).flat(), // water, tethered to it
+]);
+def('food_spoilage', () => [                                      // not the same as foodborne illness — this just tastes and smells bad
+  mound('lo', 48, 20, 14),
+  ...granules('bs', 10, 51, [14, 34, 46, 46]),                     // microbes, all over it
+  S('M20 30 Q16 22 20 14 M30 28 Q26 20 30 12 M40 30 Q36 22 40 14', 'gh', 1.4), // the smell, drifting off
+]);
+def('clostridium_botulinum', () => [                               // anaerobic, and it survives as an endospore — this bulge is it
+  rod3('bs', 26, 32, 12, 5),
+  C(38, 32, 6, 'hi'),                                               // the endospore, swollen at one end
+  C(48, 20, 1.6, 'lo'),                                             // its toxin — nanograms of it can kill
+]);
+def('staphylococcus_aureus', () => [                                // harmless on skin — the toxin it leaves in food is the problem, and cooking doesn't touch it
+  ...[[22, 24], [32, 22], [26, 32], [36, 32], [30, 40], [40, 24]].map(([x, y]) => C(x, y, 5, 'bs')),
+  C(48, 12, 2, 'hi'), S('M44 16 Q46 12 48 12', 'ik', 1),            // its toxin, unbothered by heat
+]);
+def('listeria_monocytogenes', () => [                               // one of the few that keeps dividing even in the refrigerator, near 0°C
+  rod3('bs', 22, 30, 9, 4), rod3('hi', 38, 34, 8, 3.6),
+  S('M50 14 L50 22 M46 18 L54 18 M47 15 L53 21 M53 15 L47 21', 'gh', 1), // the cold, that doesn't stop it
+]);
+def('campylobacter', () => [                                        // a curved cell, not a straight rod — and most of it traces back to poultry
+  S('M18 42 Q14 24 30 18 Q42 14 40 24', 'bs', 6),
+  S('M18 42 L10 46 M40 24 L48 20', 'ik', 1.4),                      // a flagellum at each end
+]);
+def('aflatoxin', () => [                                            // a carcinogen grown by mould on stored grain — the FDA limits it strictly
+  E(30, 36, 16, 10, 'lo'),                                          // the stored grain
+  ...granules('bs', 10, 61, [16, 22, 44, 32]),                      // the mould, growing across it
+  P('M44 12 L50 22 L38 22 Z', 'gh'), S('M44 15 L44 19 M44 21 L44 21.5', 'ik', 1.2), // the warning it earns
+]);
+def('pasteurization', () => [                                       // heat it just enough to kill the microbes — not enough to cook it
+  wave('bs', 44, 6, 20),
+  S('M46 14 L46 40', 'ik', 2), C(46, 42, 3, 'lo'),                  // a thermometer, held at a moderate mark
+  S('M18 28 L24 34 M24 28 L18 34 M28 22 L34 28 M34 22 L28 28', 'gh', 1.4), // the microbes, gone
+]);
+def('food_irradiation', () => [                                     // ionizing radiation breaks microbial DNA — no heat required at all
+  E(30, 36, 16, 10, 'gh'),
+  ...[16, 30, 44].map(x => S(`M${x} 6 L${x} 26`, 'bs', 1.8)),       // radiation, passing straight through
+  S('M22 30 L26 30 M34 30 L38 30', 'ik', 1.6),                       // DNA, broken by it
+]);
+def('sake', () => [                                                 // koji's mould turns starch to sugar, yeast ferments it — both at once
+  vessel('bs', 16, 48),
+  ...[[22, 26], [30, 22], [38, 26]].map(([x, y]) => grain('hi', x, y, .8, 0)), // rice
+  ...granules('gh', 6, 41, [18, 32, 42, 40]),                        // koji mould, spreading over it
+  C(30, 42, 1.6, 'hi'), C(24, 44, 1.4, 'hi'),                        // fermentation, bubbling at the same time
+]);
+def('single_cell_protein', () => [                                  // yeast or bacteria grown on an industry's leftovers, then eaten as the harvest
+  P('M6 14 L18 14 L18 30 L6 30 Z', 'gh'),                            // the waste stream, feeding in
+  E(34, 30, 14, 12, 'bs'),                                           // the microbial mass, grown on it
+  P('M46 40 L54 40 L54 50 L46 50 Z', 'lo'),                          // harvested, as a block of protein
+]);
+def('attenuated_vaccine', () => [                                   // still alive, but weakened past the point of causing disease at home
+  S('M14 20 L46 20 Q50 20 50 26 L50 38 Q50 44 46 44 L14 44 Q10 44 10 38 L10 26 Q10 20 14 20 Z', 'gh', 1.4), // its old, full-strength outline
+  rod3('bs', 30, 32, 8, 3.4),                                        // grown down to this, in a foreign host
+]);
+def('inactivated_vaccine', () => [                                  // killed, and unable to replicate — but intact enough to still teach something
+  rod3('bs', 30, 32, 13, 5),
+  S('M20 22 L40 42 M40 22 L20 42', 'ik', 2.2),                       // dead — crossed out, but the shape survives
+]);
+def('toxoid', () => [                                               // the poison taken out by formaldehyde — the shape the immune system learns stays intact
+  P('M20 20 L26 14 L30 20 L36 12 L40 20 L34 26 L40 34 L30 30 L24 36 L22 28 Z', 'gh'), // the toxin's old, spiky shape
+  E(30, 25, 11, 9, 'bs'),                                            // disarmed, blunted, still recognizable
+]);
+def('subunit_vaccine', () => [                                      // just the one antigenic fragment — nothing left alive to cause disease
+  ring('gh', 30, 28, 16, 1.2),                                       // the whole organism, not present here
+  P('M22 22 L34 22 L32 34 L20 32 Z', 'bs'),                          // just this one fragment, taken from it
+]);
+def('conjugate_vaccine', () => [                                    // a bacterial sugar antigen bolted to a carrier a young immune system does notice
+  hex('bs', 16, 20, 6, 1.6),                                         // the sugar, easy to miss by itself
+  S('M22 24 L34 32', 'ik', 2.2),                                     // bolted on
+  E(42, 38, 11, 9, 'hi'),                                            // the carrier protein, that gets noticed
+]);
+def('mrna_vaccine', () => [                                         // not the pathogen itself — instructions the host's own cells read and build from
+  S('M6 16 Q14 10 22 16 Q30 22 38 16', 'bs', 2.4),                   // the mRNA strand, arriving
+  E(38, 34, 15, 13, 'gh'),                                           // the host cell
+  P('M38 22 L42 16 L46 22 Z', 'hi'),                                 // the antigen, built on its own surface
+]);
+def('adjuvant', () => [                                             // added to make the immune system take a weak antigen seriously
+  C(16, 34, 3, 'gh'),                                                // the antigen, faint alone
+  E(30, 34, 10, 8, 'lo'),                                            // the adjuvant particle, riding beside it
+  S('M42 34 L54 34', 'ik', 2), S('M50 30 L54 34 L50 38', 'ik', 2),   // a bigger response, because of it
+]);
+def('hybridoma', () => [                                            // a B cell fused to an immortal cancer cell — one cell, dividing forever
+  P('M30 12 A18 18 0 0 0 30 48 Z', 'bs'),                            // the B cell half
+  P('M30 12 A18 18 0 0 1 30 48 Z', 'hi'),                            // the cancer cell half, fused to it
+  S('M30 12 L30 48', 'ik', 1.4),
+]);
+def('monoclonal_antibody', () => {                                  // every copy identical, descended from one cell
+  const y = cx => [S(`M${cx} 26 L${cx} 42`, 'ik', 2.4), S(`M${cx} 26 L${cx - 8} 12`, 'bs', 2.4), S(`M${cx} 26 L${cx + 8} 12`, 'bs', 2.4),
+                    C(cx - 8, 12, 2.4, 'hi'), C(cx + 8, 12, 2.4, 'hi')];
+  return [...y(16), ...y(30), ...y(44)];
+});
+def('elisa', () => [                                                // an enzyme-tagged antibody turns the liquid visibly colored, wherever its target is
+  ...[0, 1, 2].flatMap(row => [0, 1, 2].map(col =>
+    P(`M${10 + col * 14} ${10 + row * 14} L${20 + col * 14} ${10 + row * 14} L${20 + col * 14} ${20 + row * 14} L${10 + col * 14} ${20 + row * 14} Z`,
+      row === 1 && col === 1 ? 'bs' : 'gh'))),
+]);
+def('incidence', () => [                                            // brand-new cases only, counted over one set stretch of time
+  S('M8 50 L52 50', 'ik', 1.6),
+  ...[14, 24, 34, 44].map((x, i) => S(`M${x} 50 L${x} ${50 - [10, 18, 14, 8][i]}`, 'bs', 5)),
+]);
+def('prevalence', () => [                                           // every case that exists right now, old and new both counted together
+  ...[[14, 16], [26, 14], [38, 18], [48, 14], [16, 30], [30, 30], [44, 30], [20, 44], [34, 44], [46, 44]]
+    .map(([x, y], i) => C(x, y, 3.4, [1, 4, 6, 8].includes(i) ? 'bs' : 'gh')),
+]);
+def('pandemic', () => [                                             // an epidemic that crossed borders and continents — no longer confined to one region
+  C(30, 30, 20, 'gh'),
+  S('M10 30 L50 30 M30 10 L30 50', 'ik', 1),
+  S('M14 18 Q30 10 46 18 M14 42 Q30 50 46 42', 'ik', 1),
+  ...[[18, 20], [42, 24], [24, 42], [40, 40]].map(([x, y]) => C(x, y, 3, 'bs')), // outbreaks, on every continent
+]);
+def('endemic_disease', () => [                                      // present at a steady baseline — never spiking, never vanishing
+  S('M6 30 L54 30', 'gh', 1.6),                                      // the setpoint
+  S('M6 32 Q18 28 30 32 Q42 36 54 32', 'bs', 2.4),                   // holding close to it, the whole way along
+]);
+def('epidemic', () => [                                             // a sharp, unusual rise above the normal baseline
+  S('M6 40 L54 40', 'gh', 1.6),                                      // the baseline
+  S('M6 40 Q20 38 26 40 Q32 12 38 40 Q44 40 54 40', 'bs', 2.6),       // the spike, well above it
+]);
+def('herd_immunity', () => [                                        // enough of the population immune, and the pathogen can't find hosts fast enough
+  ...[[14, 14], [26, 12], [38, 14], [48, 18], [12, 26], [48, 30], [14, 40], [26, 46], [38, 46], [48, 42]]
+    .map(([x, y]) => C(x, y, 3, 'hi')),                              // immune, ringing the outside
+  C(28, 28, 3, 'gh'), C(34, 34, 3, 'gh'),                             // the few still susceptible, shielded inside
+  S('M6 6 L10 10 M10 6 L6 10', 'ik', 1.6),                            // the pathogen, unable to get past the ring
+]);
+def('basic_reproduction_number', () => [                            // one case, and how many new ones it causes on average — no immunity anywhere yet
+  C(30, 14, 3.4, 'bs'),
+  S('M30 14 L14 44 M30 14 L30 46 M30 14 L46 44', 'ik', 1.8),
+  ...[[14, 44], [30, 46], [46, 44]].map(([x, y]) => C(x, y, 3, 'hi')), // three new infections, from the one
+]);
+def('zoonotic_disease', () => [                                     // jumping from a non-human animal into humans — most emerging diseases start this way
+  E(14, 40, 10, 6, 'lo'), C(14, 32, 5, 'lo'),                        // the animal
+  S('M22 34 L38 30', 'ik', 2), C(30, 32, 1.6, 'bs'),                 // the jump, the pathogen crossing
+  C(46, 20, 6, 'hi'), P('M38 44 L54 44 L52 52 L40 52 Z', 'hi'),      // the human, on the other side
+]);
+def('vector', () => [                                               // a living carrier — sometimes just a ride, sometimes a second home
+  C(12, 44, 4, 'gh'), C(48, 16, 4, 'gh'),                            // two hosts
+  E(30, 30, 12, 3, 'ik'), S('M40 30 L46 33', 'ik', 1.4),             // the vector, in between
+  S('M20 38 Q26 34 26 30', 'lo', 1.4), S('M34 30 Q38 24 42 20', 'lo', 1.4), // and the ride it gives the pathogen, both ways
+]);
+def('fomite', () => [                                               // a doorknob, a glass, a railing — carrying infection between people who never touched
+  P('M22 20 L38 20 L38 44 L22 44 Z', 'gh'),                          // the plate
+  C(30, 32, 6, 'lo'),                                                // the knob
+  ...[[26, 28], [34, 30], [30, 36]].map(([x, y]) => C(x, y, 1.4, 'bs')), // left behind on it
+  S('M6 14 L18 22', 'ik', 1.4), S('M54 46 L42 40', 'ik', 1.4),        // two hands, never at the same time
+]);
+def('john_snow', () => [                                            // traced 1854's cholera to a single pump, a decade before germ theory existed
+  P('M28 14 L32 14 L32 34 L28 34 Z', 'ik'), S('M30 14 L38 10', 'ik', 2), // the pump
+  ...[[20, 24], [24, 30], [34, 26], [38, 32], [22, 40], [36, 42], [30, 46], [16, 34]]
+    .map(([x, y]) => C(x, y, 2.2, 'lo')),                            // cases, clustered tightly around it
+]);
+def('nosocomial_infection', () => [                                 // picked up during treatment — not the illness the patient arrived with
+  P('M8 38 L52 38 L52 44 L8 44 Z', 'gh'), S('M12 38 L12 30 M48 38 L48 30', 'gh', 2), // the bed
+  P('M44 10 L48 10 L48 14 L52 14 L52 18 L48 18 L48 22 L44 22 L44 18 L40 18 L40 14 L44 14 Z', 'lo'), // the hospital cross
+  C(30, 32, 2.2, 'bs'),                                              // the infection, acquired here, not brought in
+]);
+def('notifiable_disease', () => [                                   // physicians are legally required to report it — so an outbreak gets spotted early
+  P('M18 10 L42 10 L42 50 L18 50 Z', 'gh'), P('M24 8 L36 8 L36 14 L24 14 Z', 'lo'), // the report
+  S('M22 24 L28 30 L38 18', 'ik', 2),                                 // confirmed
+  S('M42 30 L54 30', 'bs', 2), S('M50 26 L54 30 L50 34', 'bs', 2),    // and sent on, to the authorities
+]);
+def('beta_lactamase', () => [                                       // snaps open the ring at the heart of every penicillin-family drug
+  P('M20 24 L30 24 L30 34 L20 34 Z', 'gh'),                          // the beta-lactam ring, the same one penicillin carries
+  S('M30 24 L36 20 M30 34 L36 38', 'ik', 2),                         // the enzyme, prying it open at the seam
+  C(44, 16, 2, 'lo'), C(44, 42, 2, 'lo'),                             // the ring, broken apart
+]);
+def('cephalosporin', () => [                                        // a beta-lactam bred to dodge the enzymes that destroy natural penicillins
+  P('M18 24 L28 24 L28 34 L18 34 Z', 'ik'),                          // the same four-membered ring
+  hex('bs', 40, 29, 9, 2),                                           // fused to a six-membered ring instead — the difference that saves it
+  S('M28 27 L33 27 M28 31 L33 31', 'gh', 1.2),
+]);
+def('vancomycin', () => [                                           // binds the wall's own building block, not an enzyme — medicine's drug of last resort
+  P('M14 16 Q10 30 16 44 Q24 52 34 46 Q44 40 42 26 Q40 12 28 10 Q18 8 14 16 Z', 'bs'), // the large glycopeptide itself
+  C(42, 34, 3, 'hi'),                                                // clamped directly onto the wall precursor
+  S('M39 34 L44 34', 'ik', 1.6),
+]);
+def('tetracycline', () => [                                         // jams the ribosome's small subunit shut, so incoming tRNA can't dock
+  E(24, 36, 11, 9, 'bs'), E(24, 20, 9, 7, 'hi'),                     // the ribosome — large subunit, small subunit
+  P('M20 18 L28 18 L28 24 L20 24 Z', 'lo'),                          // the drug, wedged into the small one
+  S('M42 14 L34 18', 'ik', 1.6),                                     // tRNA, turned away
+]);
+def('macrolide', () => [                                            // binds the large subunit instead, stopping the growing chain cold
+  E(24, 36, 11, 9, 'hi'), E(24, 20, 9, 7, 'bs'),                     // the ribosome — large subunit, small subunit
+  P('M18 32 L30 32 L30 40 L18 40 Z', 'lo'),                          // the drug, wedged into the large one
+  S('M34 36 L44 36', 'gh', 2),                                       // the chain, stopped short
+]);
+def('sulfonamide', () => [                                          // a mimic of PABA, jamming folate synthesis — bacteria make their own, we don't
+  P('M14 26 L22 20 L30 26 L26 34 L18 34 Z', 'gh'),                   // PABA, the real substrate
+  P('M34 26 L42 20 L50 26 L46 34 L38 34 Z', 'bs'),                   // the mimic, nearly identical
+  S('M30 28 L34 28', 'ik', 1.6),                                     // wedged into the same slot
+]);
+
+/* microbiology, immunology & molecular mechanisms — batch ab ────────────
+ * Mostly mechanisms, not organisms: each drawing tries to BE the concept
+ * (an enzyme jammed, a chain unraveling, a curve with four named phases)
+ * rather than decorate near it, the same discipline as the cell/gene tier
+ * above and the antibiotic-resistance/virology tiers further down. */
+
+def('fluoroquinolone', () => [                                    // jams DNA gyrase mid-unwind, stopping bacterial DNA from replicating or being read
+  ...[0, 1].map(k => S(Array.from({ length: 9 }, (_, i) =>
+    `${i ? 'L' : 'M'}${n(8 + i * 5.5)} ${n(30 + 13 * Math.sin(i * 0.9 + k * Math.PI))}`).join(' '), k ? 'hi' : 'bs', 2.6)),
+  E(30, 30, 8, 11, 'lo'),                                          // gyrase, clamped at the crossing point
+  S('M24 22 L36 38 M36 22 L24 38', 'ik', 2.2),                     // and jammed — it cannot finish the twist
+]);
+def('mrsa', () => [                                                // Staph aureus in its grape-like cluster, with a wall protein methicillin can no longer grip
+  ...cocci('bs', [[18, 18], [30, 14], [24, 28], [36, 24], [28, 38], [40, 34], [20, 36]]),
+  S('M30 14 L30 6', 'ik', 1.8), C(30, 5, 2.2, 'hi'),                // the altered surface protein, reshaped
+  C(48, 10, 2.6, 'gh'), S('M48 10 L41 14', 'gh', 1.2),              // the drug, docked nowhere useful
+]);
+def('azole', () => [                                               // blocks the enzyme that finishes ergosterol, so the fungal membrane never seals
+  ...Array.from({ length: 7 }, (_, i) => {
+    const x = 8 + i * 7.4;
+    return [C(n(x), 18, 3, 'bs'), S(`M${n(x)} 21 L${n(x)} 28`, 'lo', 1.6)];
+  }).flat(),
+  E(30, 40, 7, 5, 'gh'),                                           // the gap — ergosterol never finished
+  C(30, 50, 3.6, 'lo'), S('M30 46 L30 50', 'ik', 1.6), S('M26 54 L34 54', 'ik', 1.8),  // the enzyme, blocked
+]);
+def('protease_inhibitor', () => [                                  // jams the enzyme that cuts HIV's one long protein chain into working pieces — it keeps assembling junk
+  S('M8 30 L52 30', 'bs', 6),                                       // one continuous, uncut chain
+  ...[18, 30, 42].map(x => S(`M${x} 24 L${x} 36`, 'gh', 1.8)),      // the cut sites, never opened
+  E(30, 14, 8, 6, 'lo'), S('M25 14 L35 14', 'ik', 2.2),             // the protease, docked but jammed shut
+]);
+def('chloroquine', () => [                                         // concentrates in Plasmodium-infected blood cells, blocking disposal of digested hemoglobin's toxic waste
+  C(30, 30, 20, 'gh'),                                              // the red blood cell
+  E(30, 34, 10, 8, 'lo'),                                           // the parasite's digestive vacuole
+  ...granules('bs', 8, 41, [24, 30, 36, 40]),                       // toxic heme, piling up undisposed
+  C(18, 14, 3, 'hi'), S('M18 14 L24 20', 'ik', 1.6),                // the drug, lodged right where the waste collects
+]);
+def('paul_ehrlich', () => [                                         // coined the 'magic bullet' idea — a chemical that kills a pathogen and leaves the patient untouched
+  C(14, 18, 5, 'gh'), C(46, 18, 5, 'gh'), C(14, 46, 5, 'gh'), C(46, 46, 5, 'gh'),  // healthy cells, untouched
+  rod3('bs', 30, 34, 10, 4),                                        // the one pathogen
+  S('M30 6 L30 28', 'ik', 2.2), P('M27 26 L33 26 L30 34 Z', 'ik'),  // the bullet, striking only it
+]);
+def('oseltamivir', () => [                                          // blocks neuraminidase, so freshly budded flu virions can't cut themselves free of the cell that made them
+  S('M6 46 L54 46', 'ik', 3),                                       // the host cell surface
+  ...[16, 30, 44].map(x => [C(x, 34, 5, 'bs'), S(`M${x} 39 L${x} 46`, 'lo', 1.8)]).flat(),  // virions, still tethered
+  E(30, 18, 7, 5, 'hi'), S('M26 18 L34 18', 'ik', 2),               // neuraminidase, jammed shut instead of cutting them loose
+]);
+def('endospore', () => [                                            // a bacterium's dormant, armoured backup copy — some have woken up after 25 million years
+  rod3('gh', 30, 30, 15, 6),                                        // the mother cell, fading
+  ring('ik', 20, 30, 8, 2.6), ring('hi', 20, 30, 5, 1.6),           // the spore's thick, layered coat
+  C(20, 30, 2.2, 'bs'),
+]);
+def('growth_curve', () => [                                         // lag, then exponential doubling, then a stationary plateau, then death — a closed culture's whole biography
+  S('M6 50 L6 8', 'ik', 2), S('M6 50 L54 50', 'ik', 2),             // axes
+  S('M8 46 Q16 46 20 44', 'gh', 2.6),                               // lag
+  S('M20 44 Q30 20 36 14', 'bs', 2.6),                              // exponential
+  S('M36 14 L44 14', 'hi', 2.6),                                    // stationary
+  S('M44 14 Q50 14 52 28', 'lo', 2.6),                              // death
+]);
+def('sterilization', () => [                                        // not mostly dead — completely. The one microbial control standard tough enough to also take out endospores
+  ...[[14, 18], [30, 14], [46, 20], [20, 38], [40, 36]].map(([x, y]) => C(x, y, 5, 'gh')),  // every form, killed
+  ring('gh', 30, 46, 4, 1.4),                                        // even the endospore's coat — burst
+  S('M6 52 L54 52', 'ik', 2.6),                                      // nothing left standing on the surface
+]);
+def('autoclave', () => [                                            // steam under pressure hits 121°C, hot enough to kill even endospores
+  vessel('lo', 14, 46),
+  S('M18 14 L42 14', 'ik', 3),                                       // the sealed, clamped lid
+  ...[22, 30, 38].map(x => S(`M${x} 10 Q${x + 3} 5 ${x} 1`, 'hi', 1.8)),  // steam, pressurized
+  C(46, 22, 2.4, 'bs'), S('M46 22 L46 14', 'ik', 1.4),               // the gauge, pinned high
+]);
+def('disinfectant', () => [                                         // kills most microbes on a countertop, not a body — endospores may still walk away
+  S('M6 50 L54 50', 'ik', 2.6),                                      // the countertop
+  ...[[14, 40], [26, 38], [44, 40]].map(([x, y]) => C(x, y, 4, 'gh')),  // ordinary microbes, dead
+  ring('bs', 36, 30, 5, 2), C(36, 30, 2, 'hi'),                      // one endospore, coat intact, still alive
+]);
+def('antiseptic', () => [                                           // the disinfectant gentle enough to put on skin instead of just a countertop
+  P('M6 40 Q30 30 54 40 L54 54 L6 54 Z', 'hi'),                      // skin, curved
+  ...[[16, 30], [30, 26], [44, 30]].map(([x, y]) => C(x, y, 3.6, 'gh')),  // microbes on it, dead
+  E(30, 16, 10, 6, 'bs'), S('M30 22 L30 30', 'lo', 2),               // a swab, applied
+]);
+def('hepa_filter', () => [                                          // certified to trap 99.97% of particles at 0.3 micrometres — the size that slips past filters easiest
+  ...[0, 1, 2, 3, 4, 5].map(i => S(`M${8 + i * 8} 8 L${12 + i * 8} 52 L${16 + i * 8} 8`, 'ik', 1.6)),  // the pleated mesh
+  ...[[14, 20], [30, 34], [44, 18], [22, 46]].map(([x, y]) => C(x, y, 1.6, 'gh')),  // particles, caught
+  C(50, 30, 1.3, 'bs'), S('M50 30 L56 30', 'hi', 1.2),               // the rare one that gets through
+]);
+def('germicidal_uv', () => [                                        // UV-C at 254 nanometres welds a microbe's own DNA bases together in pairs they were never meant to share
+  S('M14 10 L14 50', 'ik', 3), S('M46 10 L46 50', 'ik', 3),          // the two strands
+  ...[16, 32, 44].map(y => S(`M14 ${y} L46 ${y}`, 'gh', 2)),
+  S('M14 24 L46 24 M14 27 L46 27', 'bs', 2.4),                       // two rungs, fused into one — the dimer
+  ...[0, 1, 2].map(i => S(`M${6 + i * 8} 4 L${10 + i * 8} 10`, 'hi', 1.6)),  // UV, arriving
+]);
+def('lyophilization', () => [                                       // freeze it, then drop the pressure until the ice skips melting and sublimates straight to vapour
+  facet('bs', .8),                                                   // ice
+  S('M30 10 L30 2', 'gh', 1.8), C(30, 1, 1.6, 'hi'),
+  S('M40 14 L46 6', 'gh', 1.6), C(47, 4, 1.4, 'hi'),
+  S('M20 14 L14 6', 'gh', 1.6), C(13, 4, 1.4, 'hi'),                 // straight to vapour — no liquid phase drawn at all
+]);
+def('triclosan', () => [                                            // once in 3 of every 4 liquid soaps sold in the US — banned from them by the FDA in 2016
+  hex('ik', 20, 26, 8, 2), hex('ik', 40, 34, 8, 2),                  // its two aromatic rings
+  S('M27 26 L33 34', 'ik', 2),                                       // the ether bridge between them
+  ...[[12, 20], [12, 32], [48, 40]].map(([x, y]) => C(x, y, 2.4, CPK.Cl)),  // chlorines, studded on
+  S('M8 50 L52 50', 'gh', 2), S('M14 44 L46 56 M46 44 L14 56', 'ik', 2),  // banned from the wash it used to be in
+]);
+def('coenzyme', () => [                                             // an enzyme's reusable organic sidekick, usually cut straight from a vitamin
+  C(22, 30, 10, 'lo'), C(22, 30, 7.4, 'bs'),                         // the enzyme body
+  P('M22 22 Q28 30 22 38 Q16 30 22 22 Z', 'ground'),                 // its active site, same cleft as enzyme
+  hex('ik', 44, 20, 6, 1.6),                                         // the coenzyme, docked alongside — small, and reused after every reaction
+  S('M36 24 L40 22', 'gh', 1.4),
+]);
+def('cofactor', () => [                                             // not every enzyme works alone — some need a bound metal ion or organic helper just to hold their shape
+  C(18, 24, 9, 'lo'), C(40, 36, 9, 'lo'),                            // two lobes of one enzyme
+  C(30, 30, 3.4, CPK.Fe),                                            // the metal ion, clamped between them, holding the fold together
+  S('M23 27 L30 30 M35 33 L30 30', 'ik', 1.6),
+]);
+def('competitive_inhibition', () => [                                // a sulfa drug fits a bacterial enzyme's active site because it's built to resemble the real substrate, PABA
+  P('M22 20 Q30 12 38 20 Q34 30 30 34 Q26 30 22 20 Z', 'ground'),     // the active site — a fixed shape, either key fits
+  P('M18 6 L26 6 L26 14 L18 14 Z', 'bs'),                             // PABA, the real substrate, turned away
+  P('M34 6 L44 6 L44 16 L34 16 Z', 'hi'), S('M39 6 L39 2', 'ik', 1.6),  // the drug, wedged in instead
+]);
+def('iron_bacteria', () => [                                        // lives on oxidizing dissolved iron, leaving reddish-brown slime in wells, streambeds and pipes
+  rod3('lo', 22, 24, 10, 4), rod3('lo', 36, 34, 10, 4),
+  ...granules('bs', 10, 33, [10, 34, 50, 54]),                       // the rust-coloured slime it leaves behind
+]);
+def('anaerobic_respiration', () => [                                 // still runs an electron transport chain, just not with oxygen at the end — nitrate or sulfate stands in
+  S('M14 8 L14 52', 'ik', 3),                                        // the membrane, standing on its side
+  ...[16, 28, 40].map(y => C(14, y, 4, 'bs')),                       // the complexes, relaying electrons down it
+  C(30, 46, 3.4, CPK.N),                                             // nitrate, waiting at the bottom of the chain
+  C(48, 12, 3, 'gh'), C(52, 12, 3, 'gh'), S('M45 9 L55 15', 'ik', 1.6),  // oxygen, crossed out — not here
+]);
+def('photosystem_i', () => [                                        // named first, works second — it re-boosts spent electrons high enough to finally make NADPH
+  E(30, 34, 17, 13, 'lo'),                                           // the complex, membrane-embedded
+  S('M10 44 L22 34 L30 18', 'bs', 2.4),                              // an electron, already excited once, boosted a second time
+  C(30, 16, 3.4, 'hi'), S('M30 16 L38 10', 'ik', 1.8), C(40, 8, 2.6, CPK.N),  // and finally captured as NADPH
+]);
+def('carbon_fixation', () => [                                       // turning CO2 into something with a carbon skeleton — about 250 billion tonnes of it every year
+  C(14, 18, 3.6, CPK.C), C(9, 13, 2.6, CPK.O), C(19, 13, 2.6, CPK.O),  // CO2, arriving
+  S('M18 20 L26 26', 'ik', 2.2),
+  backbone('ik', 3, 42, 34).shape,                                    // and joining a carbon skeleton, one link longer
+  C(28, 26, 3, CPK.C),
+]);
+def('calvin_cycle', () => [                                          // fixes carbon, spends ATP and NADPH to reduce it, then rebuilds its own starting material to run again
+  ring('bs', 28, 32, 15, 3),
+  C(28, 12, 2.8, CPK.C),                                              // CO2, fixed in at the top
+  C(46, 40, 2.6, CPK.P), C(46, 26, 2.6, CPK.N),                       // ATP and NADPH, spent reducing it
+  S('M14 40 Q10 46 16 50', 'ik', 1.8), P('M16 47 L20 51 L14 53 Z', 'ik'),  // and the loop closing — its own starting sugar, rebuilt
+]);
+def('rubisco', () => [                                               // probably the most abundant enzyme on Earth — up to half of all soluble protein in a leaf is this one molecule
+  ...[[10, 10], [50, 10], [10, 50], [50, 50], [8, 30], [52, 30]].map(([x, y]) => C(x, y, 3, 'gh')),  // countless more copies, everywhere in the leaf
+  C(30, 30, 13, 'lo'), C(30, 30, 10, 'bs'),                           // one, drawn large
+  C(30, 26, 2.6, CPK.C), S('M30 26 L26 30 M30 26 L34 30', 'ik', 1.4),  // CO2, held at the active site
+]);
+def('beta_oxidation', () => [                                        // a fatty acid chain gets chewed down two carbons at a time, each bite handed off as a fresh acetyl-CoA
+  backbone('ik', 4, 40, 30).shape,                                    // what's left of the chain
+  S('M14 30 L20 30', 'gh', 2.2),                                      // the bond, about to break
+  hex('lo', 8, 30, 5, 1.6),                                            // the piece just cut free — acetyl-CoA, leaving
+  S('M14 30 L8 30', 'ik', 1.4),
+]);
+def('cellulase', () => [                                             // almost nothing alive makes this enzyme — a problem, since cellulose is Earth's most abundant organic polymer
+  ...[0, 1].map(i => backbone('gh', 5, 30, 20 + i * 20).shape),       // the cellulose fiber, mostly unbroken elsewhere
+  E(30, 30, 8, 6, 'bs'),                                               // the enzyme, docked at one point
+  S('M26 30 L34 30', 'ik', 2.4),                                       // the one bond it can actually cut
+]);
+def('ion', () => [                                                    // an atom that has gained or lost an electron — hydrogen losing its only one leaves a bare proton
+  C(22, 32, 9, 'lo'),
+  S('M18 32 L26 32 M22 28 L22 36', 'ik', 2),                          // the + charge left behind
+  S('M30 22 Q40 14 48 10', 'gh', 1.6),                                // the electron, departing
+  C(50, 8, 3, 'bs'), S('M47 8 L53 8', 'ik', 1.8),                     // and the − charge it carries off
+]);
+def('purine', () => [                                                // the double-ring nucleobases, adenine and guanine — the bulkier half of DNA and RNA's four-letter alphabet
+  hex('ik', 20, 28, 9, 2),                                            // the six-membered ring
+  S(pentaPath(37, 30, .45), 'ik', 2),                                 // fused to a five-membered ring
+  C(14, 22, 2.4, CPK.N), C(14, 34, 2.4, CPK.N),                       // two nitrogens in the six-ring
+  C(42, 22, 2.4, CPK.N), C(44, 36, 2.4, CPK.N),                       // two more in the five-ring
+]);
+def('pyrimidine', () => [                                            // the single-ring nucleobases — cytosine, thymine, and uracil — the smaller half of the genetic alphabet
+  hex('ik', 30, 30, 12, 2.2),
+  C(21, 24, 2.6, CPK.N), C(21, 36, 2.6, CPK.N),                       // two nitrogens, and nothing fused to it
+]);
+def('sucrose', () => [                                               // table sugar: one glucose and one fructose locked together by a glycosidic bond
+  hex('ik', 18, 26, 9, 2),                                            // glucose's six-membered ring
+  S(pentaPath(44, 32, .4), 'ik', 2),                                  // fructose's five-membered ring
+  S('M26 28 L36 30', 'bs', 2.2), C(31, 29, 2, CPK.O),                 // the oxygen bridging them
+]);
+def('chitin', () => [                                                // a tough polymer of nitrogen-bearing glucose units — fungal cell walls, insect and crustacean shells
+  ...[0, 1].map(i => backbone('ik', 4, 30, 22 + i * 16).shape),
+  ...[0, 1, 2, 3].map(i => C(14 + i * 8, 22, 2, CPK.N)),               // nitrogen, on every unit — cellulose's plain chain doesn't have this
+]);
+def('triglyceride', () => [                                          // glycerol with three fatty-acid tails, each attached by an ester bond that releases a water molecule
+  S('M20 14 L20 30 L20 46', 'ik', 3),                                 // the glycerol backbone
+  ...[14, 30, 46].map(y => [S(`M20 ${y} L48 ${y - 4}`, 'bs', 2.4), C(24, y - 1, 1.8, CPK.O)]).flat(),  // three tails, each hung off an ester oxygen
+]);
+def('saturated_fat', () => [                                          // no carbon=carbon double bonds — every carbon holds its maximum hydrogen and packs solid at room temperature
+  ...[14, 24, 34, 44].map(y => backbone('ik', 5, 34, y).shape),        // straight chains, stacked close and parallel
+]);
+def('unsaturated_fat', () => {                                        // at least one carbon=carbon double bond — the kink stops it packing tightly, so it stays liquid as oil
+  const b = backbone('ik', 5, 32, 30);
+  return [
+    backbone('gh', 5, 32, 16).shape, backbone('gh', 5, 32, 44).shape,  // neighbouring chains, held apart by the kink
+    b.shape,
+    ...double(b.pts[2], b.pts[3], 'ik'),                                // the double bond — and the kink it forces
+  ];
+});
+def('steroid', () => [                                                // four fused carbon rings — the shared skeleton of cholesterol, testosterone, and cortisone alike
+  hex('ik', 16, 34, 8, 2), hex('ik', 30, 28, 8, 2), hex('ik', 44, 34, 8, 2),
+  S(pentaPath(54, 40, .32), 'ik', 2),                                  // the fourth, smaller ring at the end
+]);
+def('sterol', () => [                                                 // a steroid with a hydroxyl group on its ring — cholesterol in animal membranes, ergosterol doing the same job in fungi
+  hex('ik', 14, 22, 7, 2), hex('ik', 27, 16, 7, 2), hex('ik', 40, 22, 7, 2),
+  S(pentaPath(49, 30, .28), 'ik', 2),
+  C(50, 44, 2.6, CPK.O), S('M50 44 L44 38', 'ik', 1.6),                // the hydroxyl hanging off the last ring — the one thing plain steroid lacks
+]);
+def('lipoprotein', () => [                                            // a protein shell around a fat cargo — the only way something as water-fearing as cholesterol travels through blood
+  ring('bs', 30, 30, 17, 3),                                          // the protein shell
+  ...[[24, 26], [36, 24], [30, 36], [22, 36]].map(([x, y]) => E(x, y, 5, 3.4, 'hi')),  // fat droplets, carried inside
+]);
+def('adp', () => [                                                    // adenosine with two phosphates instead of three — what's left of ATP after the cell spends its last one
+  hex('ik', 18, 22, 8, 2),
+  P('M26 30 L33 27 L38 32 L33 39 L26 37 Z', 'ik'),
+  ...[0, 1].map(i => C(40 + i * 6, 40 + i * 2, 5, CPK.P)),             // only two phosphates now
+]);
+def('denaturation', () => [                                           // heat or extreme pH unravels a protein's shape without breaking a single peptide bond — cooked, not digested
+  S('M8 40 Q14 24 22 40 Q30 24 38 40 Q46 24 52 40', 'gh', 2.6),        // the coiled, folded shape it used to hold
+  S('M8 46 Q30 34 52 50', 'bs', 3),                                    // the same chain, now a loose unravelled strand
+]);
+def('buffer', () => [                                                 // a weak acid paired with its conjugate base, holding pH nearly steady even as acid or base is added
+  S('M8 34 L52 34', 'ik', 2),                                          // the balance beam
+  C(30, 34, 3, 'lo'),                                                  // the pivot — a steady pH
+  S('M30 34 L14 20', 'bs', 2.4), C(14, 20, 6, 'bs'),                   // the weak acid, on one side
+  S('M30 34 L46 20', 'hi', 2.4), C(46, 20, 6, 'hi'),                   // its conjugate base, on the other
+]);
+def('germ_theory', () => [                                            // the idea that a specific microorganism causes a specific disease — it displaced miasma theory by the 1880s
+  P('M8 10 Q20 4 30 10 Q22 16 8 10 Z', 'gh'), S('M12 8 L26 14 M26 8 L12 14', 'ik', 1.4),  // miasma — bad air, crossed out
+  rod3('bs', 34, 40, 10, 4), S('M34 40 L44 50', 'ik', 2), C(46, 52, 3, 'lo'),  // the real cause, traced straight to the sick
+]);
+def('koch_postulates', () => [                                        // four criteria: present in every case, grown pure, reproduces disease, recovered unchanged
+  rod3('bs', 12, 14, 5, 2.4),                                          // 1. found in every case
+  E(46, 14, 7, 4, 'lo'), S('M40 14 Q30 6 34 14 Q38 22 40 14', 'ik', 1.2),  // 2. grown pure, in culture
+  rod3('hi', 46, 46, 5, 2.4),                                          // 3. reproduces the disease in a new host
+  E(12, 46, 7, 4, 'gh'),                                                // 4. recovered again, unchanged
+  S('M18 14 L38 14 M46 20 L46 40 M40 46 L20 46 M12 40 L12 20', 'gh', 1.2),  // the loop, closing back to the start
+]);
+def('louis_pasteur', () => [                                          // his swan-neck flask, open to air yet sterile inside — spontaneous generation, disproved
+  P('M20 40 Q20 52 30 52 Q40 52 40 40 L38 30 Q30 24 22 30 Z', 'lo'),   // the flask body
+  S('M30 24 Q14 14 6 20 Q10 26 20 26', 'ik', 2.2),                     // the long curved swan neck
+  wave('bs', 44, 2, 8),                                                // the broth inside, staying clear
+]);
+def('robert_koch', () => [                                            // identified the anthrax bacterium in 1876 and the tuberculosis bacterium in 1882 — both by growing them pure
+  E(30, 34, 20, 16, 'gh'),                                             // the petri dish
+  S('M14 40 Q20 24 30 30 Q40 36 46 22', 'bs', 2),                      // a single streaked line
+  ...[18, 26, 34, 42].map(x => C(x, n(30 + Math.sin(x) * 2), 2.6, 'lo')),  // one pure colony, isolated from everything else
+]);
+def('van_leeuwenhoek', () => [                                        // ground his own glass lenses to about 275x and in 1676 was first to see a living bacterium
+  P('M14 20 L46 20 L46 44 L14 44 Z', 'lo'),                            // his brass plate
+  C(30, 32, 4, 'hi'),                                                  // the single tiny bead lens
+  rod3('bs', 30, 10, 5, 2.2),                                          // and, magnified through it, the first bacterium anyone ever saw
+]);
+def('prion', () => [                                                  // a misfolded protein that forces normal copies of itself to misfold too — no DNA or RNA involved
+  S('M10 20 Q10 8 22 8 Q34 8 34 20', 'bs', 3),                         // one, still folded normally
+  S('M40 44 L40 20 L52 20 L52 32 L44 32 L44 44', 'lo', 3),             // another, forced into the same broken shape
+  S('M34 20 L40 24', 'ik', 1.8),                                       // contact — and the shape spreads
+]);
+def('helicobacter_pylori', () => [                                    // a spiral bacterium that neutralizes stomach acid with its own urease enzyme — and turned out to cause most peptic ulcers
+  S('M10 40 Q16 26 24 40 Q32 26 40 40 Q48 26 52 34', 'bs', 6),         // the corkscrew shape, distinct from any straight rod
+  ...[16, 30, 44].map(x => S(`M${x} 20 L${x} 12`, 'gh', 1.4)),         // stomach acid, arriving
+  C(30, 46, 3, 'hi'),                                                   // urease, neutralizing it right at the surface
+]);
+def('light_microscope', () => [                                       // two glass lens systems in series, magnifying to about 1000x before visible light's own wavelength blurs any more detail
+  S('M30 52 L30 8', 'lo', 3),                                          // the body tube
+  E(30, 40, 8, 3, 'bs'), E(30, 14, 6, 2.4, 'bs'),                      // objective and eyepiece lenses
+  S('M22 52 L18 20 L30 8 L42 20 L38 52', 'gh', 1.2),                   // the light path, converging through both
+]);
+def('transmission_electron_microscope', () => [                       // an electron beam through a wafer-thin specimen resolves single columns of atoms — a thousand times finer than light allows
+  S('M30 4 L30 40', 'ik', 3),                                          // the electron beam column
+  S('M18 40 L42 40', 'lo', 2.4),                                       // the thin specimen, in its path
+  ...[0, 1, 2, 3, 4].map(i => C(18 + i * 6, 50, 1.2, 'bs')),           // atom columns, resolved on the screen below
+]);
+def('scanning_electron_microscope', () => [                           // scans a beam across a metal-coated surface and reads the scattered electrons back — a 3D-looking image down to 0.4 nanometers
+  S('M12 10 L12 26 M22 10 L22 30 M32 10 L32 24 M42 10 L42 28', 'ik', 2),  // the beam, scanning left to right
+  P('M8 40 Q20 30 32 38 Q44 46 52 36 L52 52 L8 52 Z', 'lo'),           // a bumpy 3D surface, not a flat slide
+  ...[16, 34].map(x => S(`M${x} 32 Q${x + 6} 26 ${x + 10} 32`, 'hi', 1.4)),  // electrons, scattering back
+]);
+def('phase_contrast_microscope', () => [                              // converts the invisible phase shifts light makes in a transparent cell into visible brightness — no stain, no dead cells
+  ring('gh', 30, 30, 20, 1.6),                                         // the phase ring in the objective
+  S('M14 30 Q22 18 30 30 Q38 42 46 30', 'ik', 1.4),                    // an unstained, transparent cell outline — just line, no fill
+  C(30, 30, 4, 'hi'),                                                   // the one bright spot the phase shift reveals
+]);
+def('fluorescence_microscope', () => [                                // shines one wavelength at a specimen and captures only the longer wavelength it fluoresces back — labeled structures glow
+  S('M8 10 L26 26', 'bs', 2.4),                                        // the excitation beam, going in
+  C(30, 30, 16, 'ground'),                                              // a dark field — nothing else visible
+  C(24, 26, 2.6, 'hi'), C(36, 32, 2, 'hi'), C(30, 40, 1.8, 'hi'),       // only the labeled structures, glowing back
+]);
+def('confocal_microscope', () => [                                    // a laser and a pinhole that rejects light from outside the focal plane — stack the slices and reconstruct a 3D image
+  ...[0, 1, 2, 3].map(i => E(30, 14 + i * 10, 16 - i, 3, i === 1 ? 'bs' : 'gh')),  // slices, stacked
+  S('M30 4 L30 14', 'ik', 2), C(30, 4, 1.6, 'hi'),                     // the laser, and the pinhole picking out just one
+]);
+def('gram_stain', () => [                                             // crystal violet, then iodine, then alcohol, then safranin — thick-walled cells stay purple, thin-walled ones wash out pink
+  rod3('bs', 18, 30, 8, 4), ring('ik', 18, 30, 9, 2.4),                // thick-walled, stays dark — retains the first dye
+  rod3('hi', 42, 30, 8, 4),                                             // thin-walled, washed out to the counterstain instead
+]);
+def('acid_fast_stain', () => [                                        // carbolfuchsin steamed into a waxy mycolic-acid wall, rinsed with acid-alcohol strong enough to strip a plain Gram stain
+  rod3('bs', 30, 32, 12, 5), ring('hi', 30, 32, 14, 2.4),               // the waxy coat, extra thick
+  ...[0, 1, 2].map(i => S(`M${8 + i * 4} ${14 + i * 2} L${14 + i * 4} ${20 + i * 2}`, 'gh', 1.4)),  // acid-alcohol, arriving
+  S('M14 20 L10 24', 'ik', 1.4),                                        // and bouncing off — the dye holds
+]);
+def('negative_stain', () => [                                         // an acidic dye colors the background, not the cell — both are negatively charged and repel, leaving a pale silhouette
+  P('M0 0 L60 0 L60 60 L0 60 Z', 'ground'),                             // the field, filled dark by the dye
+  E(30, 30, 15, 10, 'gh'),                                              // the cell, left pale — a silhouette against it
+]);
+def('endospore_stain', () => [                                        // malachite green steamed through a spore coat nothing else penetrates — spores stay green, safranin turns the rest red
+  rod3('lo', 30, 34, 13, 5),                                            // the vegetative cell body, taking the red counterstain
+  ring('hi', 22, 26, 6, 2), C(22, 26, 3, 'bs'),                        // the endospore inside it, resisting — stays the first dye's colour
+]);
+def('peptidoglycan', () => [                                          // alternating sugar rings cross-linked by short amino acid chains into a mesh — the load-bearing wall unique to bacteria
+  ...[0, 1, 2].map(i => hex('ik', 12 + i * 18, 16, 6, 1.6)),           // one row of sugar rings
+  ...[0, 1, 2].map(i => hex('ik', 12 + i * 18, 40, 6, 1.6)),           // a second row, cross-linked to the first
+  ...[0, 1, 2].map(i => S(`M${12 + i * 18} 22 L${12 + i * 18} 34`, 'bs', 2)),  // the peptide struts holding the mesh together
+]);
+def('teichoic_acid', () => [                                          // glycerol-phosphate polymers threaded through a Gram-positive wall, gripping magnesium and calcium ions
+  ...[0, 1, 2].map(i => hex('gh', 12 + i * 18, 34, 6, 1.4)),           // the peptidoglycan mesh it runs through
+  S('M6 14 L14 20 L22 14 L30 20 L38 14 L46 20 L54 14', 'bs', 2.4),     // the glycerol-phosphate chain, threaded above it
+  ...[14, 30, 46].map(x => C(x, 20, 2, CPK.P)),                        // phosphate, every link
+  C(20, 8, 2.6, CPK.Ca), C(40, 8, 2.6, CPK.Mg),                        // calcium and magnesium, gripped along it
+]);
+
+/* immunology & microbial genetics — dendritic cell through GFP ──────────
+ * Innate and adaptive immune cells, the antigen/MHC machinery between them,
+ * a run of hypersensitivity and immune-failure states, then the gene
+ * regulation, bacterial genetics, DNA-damage/repair and cloning-toolkit
+ * vocabulary that goes with them. Organism/disease pairs elsewhere in the
+ * file (e_coli/colibacillosis, salmonella, leprosy) already set the house
+ * convention this batch follows: shared parts, different geometry. */
+def('dendritic_cell', () => [                                      // named in 1973 by Steinman — branching arms that snag antigen and haul it to a T cell
+  C(30, 30, 8, 'bs'),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = i * Math.PI / 4;
+    return S(`M${n(30 + 10 * Math.cos(a))} ${n(30 + 10 * Math.sin(a))} L${n(30 + 22 * Math.cos(a))} ${n(30 + 22 * Math.sin(a))}`, 'hi', 1.8);
+  }),
+  C(30, 12, 2, 'lo'), C(48, 30, 2, 'lo'),                           // MHC, displayed at a couple of the branch tips
+]);
+def('toll_like_receptor', () => [                                  // named for a 1985 "Das ist ja toll!" at a fly with the same broken gene
+  S('M4 34 L56 34', 'ik', 3),                                       // the membrane
+  S('M18 30 Q30 12 42 30', 'bs', 3.6),                              // its horseshoe-shaped ectodomain, outside
+  C(30, 16, 3, 'hi'),                                                // the pathogen pattern it just caught
+  S('M22 38 L22 52 M38 38 L38 52', 'ik', 2),                        // its signal, sent inward
+]);
+def('natural_killer_cell', () => [                                  // carries no antigen receptor — it kills whatever fails to show a normal MHC I badge
+  C(18, 30, 11, 'bs'),
+  ...granules('hi', 7, 211, [10, 22, 26, 38]),
+  C(46, 30, 8, 'gh'),                                                // a target cell, its MHC I badge missing
+]);
+def('mast_cell', () => [                                            // loaded with histamine and heparin, waiting
+  C(30, 30, 15, 'bs'),
+  ...granules('hi', 17, 223, [17, 17, 43, 43]),
+]);
+def('inflammation', () => [                                         // redness, heat, swelling, pain — Celsus wrote down all four around the time of Christ
+  E(30, 36, 19, 13, 'lo'),
+  ring('hi', 30, 36, 19, 2),
+  ...[16, 30, 44].map(x => S(`M${x} 18 L${x} 8`, 'bs', 2)),
+]);
+def('fever', () => [                                                // the hypothalamus's thermostat, reset upward
+  S('M27 8 L27 40 Q19 44 19 51 Q19 58 30 58 Q41 58 41 51 Q41 44 33 40 L33 8 Z', 'gh', 2),
+  P('M28 22 L32 22 L32 46 Q37 49 37 51 Q37 54 30 54 Q23 54 23 51 Q23 49 28 46 Z', 'bs'),
+  S('M21 22 L27 22', 'ik', 1.4),                                     // the line marking the old, normal setpoint
+]);
+def('antigen', () => [                                              // short for "antibody generator" — though plenty never actually trigger one
+  C(30, 30, 14, 'bs'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = i * Math.PI / 3;
+    return C(n(30 + 14 * Math.cos(a)), n(30 + 14 * Math.sin(a)), 3, 'hi');
+  }),
+]);
+def('epitope', () => [                                              // the one small patch an antibody actually touches — the rest is just scaffolding
+  P('M2 42 Q30 4 58 42 L58 60 L2 60 Z', 'gh'),
+  C(30, 20, 4, 'bs'),
+  S('M30 20 L30 6', 'ik', 2.4), C(30, 4, 2.6, 'hi'),
+]);
+def('b_cell', () => [                                               // named for a bird's bursa, even though it matures in human bone marrow
+  C(30, 30, 16, 'bs'), C(30, 30, 12, 'lo'),
+  ...[0, 72, 144, 216, 288].map(a => {
+    const rad = a * Math.PI / 180;
+    const x1 = n(30 + 16 * Math.cos(rad)), y1 = n(30 + 16 * Math.sin(rad));
+    const x2 = n(30 + 21 * Math.cos(rad)), y2 = n(30 + 21 * Math.sin(rad));
+    return S(`M${x1} ${y1} L${x2} ${y2}`, 'hi', 1.6);
+  }),
+]);
+def('t_cell', () => [                                               // named simply for the thymus, where it learns to read a fragment riding on MHC
+  C(26, 32, 13, 'bs'), C(26, 32, 9, 'lo'),
+  ...[20, 150, 280].flatMap(a => {
+    const rad = a * Math.PI / 180;
+    const x1 = n(26 + 9 * Math.cos(rad)), y1 = n(32 + 9 * Math.sin(rad));
+    const x2 = n(26 + 19 * Math.cos(rad)), y2 = n(32 + 19 * Math.sin(rad));
+    return [
+      S(`M${x1} ${y1} L${x2} ${y2}`, 'hi', 2),
+      S(`M${x2} ${y2} L${n(x2 + 3 * Math.cos(rad + 0.5))} ${n(y2 + 3 * Math.sin(rad + 0.5))}`, 'hi', 1.4),
+      S(`M${x2} ${y2} L${n(x2 + 3 * Math.cos(rad - 0.5))} ${n(y2 + 3 * Math.sin(rad - 0.5))}`, 'hi', 1.4),
+    ];
+  }),
+]);
+def('helper_t_cell', () => [                                        // carries the CD4 marker HIV also grabs onto — exactly why the virus targets this cell first
+  C(22, 26, 12, 'bs'), C(22, 26, 8.5, 'lo'),
+  S('M22 26 L38 26', 'hi', 2.4),
+  P('M40 22 L48 22 L48 30 L40 30 Z', 'ik'),                          // the CD4 co-receptor it carries
+]);
+def('cytotoxic_t_cell', () => [                                     // carries CD8 and delivers perforin and granzymes — a chemical order to self-destruct
+  C(18, 20, 11, 'bs'), C(18, 20, 7.5, 'lo'),
+  P('M28 16 L36 16 L36 24 L28 24 Z', 'ik'),                          // the CD8 co-receptor it carries
+  ...[[38, 34], [46, 42], [50, 50]].map(([x, y]) => C(x, y, 2.4, 'hi')),  // perforin and granzymes, fired at a target
+]);
+def('plasma_cell', () => [                                          // a B cell's factory form: several thousand identical antibody molecules leave it every second
+  C(26, 34, 15, 'bs'), C(18, 26, 6, 'lo'),                           // an eccentric nucleus, pushed to one side
+  ...[[42, 18], [48, 28], [44, 40]].flatMap(([x, y]) => [
+    S(`M${x} ${y} L${x} ${y - 7}`, 'ik', 1.6),
+    S(`M${x} ${y - 7} L${x - 3} ${y - 11} M${x} ${y - 7} L${x + 3} ${y - 11}`, 'ik', 1.6),
+  ]),                                                                 // antibody, streaming out by the thousand
+]);
+def('memory_cell', () => [                                          // can sit quiet in the blood for decades, then outrace a naive cell the moment its antigen returns
+  C(20, 40, 8, 'gh'),
+  ring('bs', 20, 40, 8, 1.6),
+  C(20, 40, 2.4, 'hi'),
+  S('M20 40 L20 34 M20 34 L24 34', 'ik', 1.4),                       // a clock hand, still ticking
+]);
+def('mhc_class_i', () => [                                          // every nucleated cell wears one, showing cytoplasmic protein fragments to any passing cytotoxic T cell
+  S('M4 46 L56 46', 'ik', 3),
+  P('M18 42 Q18 24 30 20 Q42 24 42 42 Z', 'bs'),
+  P('M25 31 L35 31 L33 35 L27 35 Z', 'hi'),                          // a short peptide, closed off at both ends of the groove
+]);
+def('mhc_class_ii', () => [                                         // only a few cell types make this one — dendritic cells, macrophages, B cells — to brief helper T cells
+  S('M4 46 L56 46', 'ik', 3),
+  P('M14 42 Q14 26 30 22 Q46 26 46 42 Z', 'bs'),
+  S('M12 32 L48 32', 'hi', 3.6),                                     // the peptide, longer, open at both ends of the groove
+]);
+def('clonal_selection', () => [                                     // Burnet's 1957 theory: an antigen picks out — doesn't teach — the one lymphocyte that already matches it
+  ...[[10, 12], [46, 10], [8, 32], [50, 34], [14, 50]].map(([x, y]) => C(x, y, 4.5, 'gh')),  // a diverse pool
+  C(30, 24, 2.6, 'lo'),                                              // the one antigen
+  C(30, 38, 6, 'bs'), C(23, 50, 5, 'hi'), C(37, 50, 5, 'hi'),        // the one cell that matched, copied again and again
+]);
+def('igm', () => [                                                  // a five-unit pentamer, first responder, too big to ever leave the bloodstream
+  ...Array.from({ length: 5 }, (_, i) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / 5;
+    const cx = n(30 + 12 * Math.cos(a)), cy = n(30 + 12 * Math.sin(a));
+    const a2 = a - 0.35, a3 = a + 0.35;
+    return [
+      S(`M30 30 L${cx} ${cy}`, 'ik', 1.6),
+      S(`M${cx} ${cy} L${n(cx + 7 * Math.cos(a2))} ${n(cy + 7 * Math.sin(a2))}`, 'bs', 2),
+      S(`M${cx} ${cy} L${n(cx + 7 * Math.cos(a3))} ${n(cy + 7 * Math.sin(a3))}`, 'bs', 2),
+    ];
+  }).flat(),
+  C(30, 30, 3, 'hi'),                                                // the J chain, holding all five together
+]);
+def('igg', () => [                                                  // three in every four antibodies in your blood — the only class that crosses the placenta
+  S('M30 30 L30 46', 'ik', 4), S('M30 30 L16 12', 'bs', 4), S('M30 30 L44 12', 'bs', 4),
+  C(16, 12, 4, 'hi'), C(44, 12, 4, 'hi'),
+  S('M18 52 L42 52', 'gh', 1.6), S('M30 46 L30 56', 'ik', 2),        // crossing the one barrier no other class does
+]);
+def('iga', () => [                                                  // more of this is made than every other antibody class combined — most never reaches the blood
+  S('M18 34 L18 48', 'ik', 2.6), S('M18 34 L10 18', 'bs', 2.6), S('M18 34 L26 18', 'bs', 2.6),
+  S('M42 34 L42 48', 'ik', 2.6), S('M42 34 L34 18', 'bs', 2.6), S('M42 34 L50 18', 'bs', 2.6),
+  C(30, 34, 3, 'hi'),                                                // the J chain, joining the dimer
+  S('M12 12 Q30 4 48 12', 'gh', 1.8),                                // the secretory component, guarding mucosal surfaces
+]);
+def('ige', () => [                                                  // under 0.0001% of your antibodies, bound tight to mast cells, and enough to trigger anaphylactic shock
+  S('M6 44 L54 44', 'ik', 3),                                        // the mast cell membrane it's anchored to
+  S('M30 44 L30 30', 'ik', 3.4), S('M30 30 L18 14', 'bs', 3.4), S('M30 30 L42 14', 'bs', 3.4),
+  C(18, 14, 3.6, 'hi'), C(42, 14, 3.6, 'hi'),
+]);
+def('normal_microbiota', () => [                                    // roughly 10,000 microbial species have been catalogued living across the healthy human body
+  S('M4 44 L56 44', 'gh', 2),                                        // the body surface they share
+  rod3('bs', 14, 34, 6, 3), C(26, 36, 4, 'hi'), rod3('lo', 38, 32, 5, 2.6), C(48, 37, 3.4, 'hi'),
+]);
+def('adhesin', () => [                                              // often just one minor protein riding the tip of a pilus — it decides which host cell a bacterium can grab
+  S('M8 48 L8 20', 'ik', 3),                                         // the pilus, a single long tube
+  C(8, 16, 4, 'bs'),                                                 // the adhesin at its very tip
+  S('M40 10 Q54 30 40 50', 'gh', 3),                                 // the host cell surface it's gripping
+  S('M12 16 L38 24', 'hi', 1.6),
+]);
+def('exotoxin', () => [                                             // a secreted bacterial protein, sometimes potent enough that heat alone turns it into a safe vaccine
+  rod3('bs', 20, 32, 11, 5),
+  S('M32 26 L48 18', 'ik', 2), S('M32 36 L48 44', 'ik', 2),          // secreted, out into the surroundings
+  C(50, 16, 3, 'hi'), C(50, 46, 3, 'hi'),
+]);
+def('endotoxin', () => [                                            // Lipid A, the toxic core of a Gram-negative cell's own outer membrane, released only when the cell dies
+  P('M8 24 L52 24 L47 42 L13 42 Z', 'gh'),                           // the outer membrane, broken open
+  ...[16, 24, 32, 40].map(x => S(`M${x} 24 L${x} 10`, 'bs', 2)),     // Lipid A's tails, exposed only now
+  C(30, 6, 3, 'hi'),
+]);
+def('virulence_factor', () => [                                     // adhesins, capsules, enzymes, toxins — whatever trait actually lets a microbe make a healthy host sick
+  rod3('bs', 30, 34, 12, 5),
+  ring('gh', 30, 34, 18, 1.6),                                       // a capsule
+  S('M19 27 L11 15', 'ik', 2),                                       // a pilus
+  S('M41 27 L49 15', 'ik', 2),                                       // a secreted toxin
+]);
+def('opportunistic_pathogen', () => [                                // Candida albicans lives in you harmlessly for years, until something tips its numbers out of balance
+  ...[[12, 18], [20, 32], [36, 16]].map(([x, y]) => C(x, y, 3.6, 'gh')),  // quiet, most of the time
+  C(42, 40, 9, 'bs'), C(50, 32, 6, 'bs'), C(46, 48, 5, 'bs'),        // until it overgrows
+]);
+def('hypersensitivity', () => [                                     // Gell and Coombs sorted every kind of damaging immune overreaction into just four types, in 1963
+  S('M4 44 L56 44', 'gh', 1.6),                                      // the normal, proportionate response
+  S('M4 44 Q30 8 56 6', 'bs', 3),                                    // the same trigger, met with a wildly overscaled one
+  S('M30 26 L30 20 M27 23 L33 23', 'ik', 1.6),                       // past the line into actual damage
+]);
+def('allergy', () => [                                              // cow's milk, soy, egg, wheat, peanut, tree nut, fish and shellfish cause 90% of food allergies
+  C(12, 16, 5, 'hi'),                                                // the pollen grain, otherwise harmless
+  C(34, 34, 12, 'bs'),                                                // the mast cell, primed and reacting
+  ...granules('gh', 6, 233, [26, 26, 42, 42]),
+  ...[[46, 24], [50, 34], [46, 44]].map(([x, y]) => S(`M40 34 L${x} ${y}`, 'ik', 1.6)),
+]);
+def('anaphylaxis', () => [                                          // Richet's 1902 coinage means the opposite of protection — every granule, emptied at once
+  ring('gh', 30, 30, 11, 1.6),
+  ...Array.from({ length: 10 }, (_, i) => {
+    const a = i * Math.PI / 5;
+    return C(n(30 + 22 * Math.cos(a)), n(30 + 22 * Math.sin(a)), 2.4, 'bs');
+  }),
+]);
+def('autoimmune_disease', () => [                                   // in type 1 diabetes, the immune system's own T cells are what destroy the insulin-making cells
+  E(26, 36, 17, 12, 'gh'),                                           // the body's own tissue
+  C(20, 32, 3, 'hi'),                                                 // its own, unremarkable self-marker
+  C(46, 20, 8, 'bs'),                                                 // a T cell, closing in on it anyway
+  S('M40 24 L26 32', 'ik', 2),
+]);
+def('immunodeficiency', () => [                                     // AIDS has one hard number attached to it: a CD4+ T cell count below 200 per microliter of blood
+  ...[[12, 14], [42, 12], [48, 44], [14, 46]].map(([x, y]) => C(x, y, 5, 'gh')),  // where the cells should be
+  rod3('bs', 30, 30, 11, 5),                                         // and nothing left to stop what's grown in the gap
+]);
+def('transplant_rejection', () => [                                 // T cells reading a donor organ's HLA proteins as foreign is what immunosuppressants exist to blunt
+  E(22, 32, 13, 16, 'bs'),                                            // the transplanted organ
+  C(22, 22, 2.4, 'hi'),                                               // its foreign HLA marker
+  ...[[42, 16], [48, 30], [42, 44]].map(([x, y]) => C(x, y, 5, 'lo')),  // T cells, closing in
+]);
+def('promoter', () => [                                             // DNA just upstream of a gene where RNA polymerase, sigma factor in hand, docks to start transcription
+  S('M4 30 L56 30', 'gh', 3),
+  S('M14 26 L24 26 M14 34 L24 34', 'bs', 4),                          // the promoter sequence itself
+  C(36, 18, 6, 'hi'), S('M30 26 L36 18', 'ik', 1.6),                   // RNA polymerase, docking just downstream
+]);
+def('transcription_terminator', () => [                             // a GC-rich hairpin, or the Rho protein pulling along the mRNA, knocks RNA polymerase off the DNA
+  S('M4 34 L20 34', 'bs', 3),                                         // the transcript, up to this point
+  S('M20 34 Q20 14 30 14 Q40 14 40 34', 'ik', 2.4),                   // the hairpin that forms
+  S('M24 22 L36 22 M24 27 L36 27', 'gh', 1),                          // base-pairing inside the stem
+  C(46, 34, 3, 'gh'),                                                 // and polymerase, knocked loose
+]);
+def('operator', () => [                                             // sits between the promoter and an operon's genes; a repressor parked here blocks RNA polymerase
+  S('M4 30 L56 30', 'gh', 3),
+  S('M10 26 L18 26 M10 34 L18 34', 'lo', 4),                          // the promoter
+  P('M24 24 L36 24 L36 36 L24 36 Z', 'bs'),                            // the operator, right after it
+  S('M42 26 L50 26 M42 34 L50 34', 'hi', 4),                          // the genes it controls
+]);
+def('repressor', () => [                                            // a protein that clamps an operator shut; the lac repressor lets go the moment allolactose binds it
+  S('M4 34 L56 34', 'gh', 3),
+  P('M22 22 L38 22 L38 34 L22 34 Z', 'lo'),                           // the operator, clamped shut
+  E(30, 16, 10, 7, 'bs'),                                             // the repressor, parked directly on top
+]);
+def('sigma_factor', () => [                                         // swapping RNA polymerase's sigma subunit retargets it — E. coli's sigma-32 turns on heat-shock genes
+  E(22, 30, 13, 10, 'bs'),                                            // the polymerase core
+  C(40, 22, 6, 'hi'), S('M33 26 L40 22', 'ik', 1.8),                  // the sigma subunit, docking on
+  S('M4 46 L56 46', 'gh', 2), S('M46 46 L46 30', 'lo', 1.6),          // the gene it now targets, downstream
+]);
+def('two_component_system', () => [                                 // a membrane sensor autophosphorylates on cue, then hands the phosphate to a partner that flips genes on
+  S('M4 22 L56 22', 'ik', 3),                                         // the membrane
+  E(16, 16, 7, 6, 'bs'),                                              // the sensor, outside-facing
+  C(16, 34, 3, CPK.P),                                                 // the phosphate it picked up
+  S('M16 28 Q16 40 32 44', 'gh', 1.8),                                // handed along, inside the cell
+  E(40, 46, 8, 6, 'hi'),                                              // to the response regulator
+]);
+def('rna_interference', () => [                                     // small RNA loaded into RISC finds and shreds a matching mRNA; Fire and Mello won the 2006 Nobel for it
+  S('M10 18 L28 18 M10 22 L28 22', 'bs', 2.2),                        // the short double-stranded RNA
+  C(38, 28, 9, 'lo'),                                                 // loaded into RISC
+  S('M6 46 L54 46', 'ik', 2.6),                                       // the matching mRNA, found by sequence
+  S('M30 46 L30 38', 'gh', 1.6),                                      // and cut, right where it matched
+]);
+def('open_reading_frame', () => [                                   // DNA from a start codon to a stop codon with none between; long runs get flagged as candidate genes
+  S('M4 30 L56 30', 'gh', 3),                                         // the full sequence
+  S('M14 30 L46 30', 'bs', 6),                                        // the open frame — start to stop, nothing between
+  S('M14 24 L14 36', 'ik', 1.8), S('M46 24 L46 36', 'ik', 1.8),       // start and stop, marking the ends
+]);
+def('bioinformatics', () => [                                       // BLAST checks a new sequence against a database of hundreds of billions of nucleotides to guess its job
+  ...[0, 1, 2, 3].map(i => S(`M4 ${16 + i * 8} L34 ${16 + i * 8}`, 'gh', 2.2)),  // rows of a sequence database
+  S('M4 32 L34 32', 'bs', 3),                                         // the one row that matches
+  ring('ik', 44, 22, 8, 2), S('M50 28 L56 34', 'ik', 2.4),            // a search, closing in on it
+]);
+def('metagenomics', () => [                                         // sequencing soil or seawater DNA directly finds microbes culturing misses; under 1% of species grow in a dish
+  P('M6 34 L54 34 L54 50 L6 50 Z', 'lo'),                             // the environmental sample
+  ...[16, 26, 36, 46].map(x => S(`M${x} 34 Q${x + 2} 24 ${x} 14`, 'bs', 1.8)),  // DNA, pulled straight out of it
+  ...granules('gh', 6, 241, [10, 36, 50, 48]),
+]);
+def('catabolite_repression', () => [                                // glucose keeps E. coli's lac operon off despite lactose; cAMP and CAP switch it on once glucose runs out
+  S('M4 34 L56 34', 'gh', 3),                                         // the DNA
+  hex('ik', 14, 20, 5, 1.6),                                          // glucose, still present
+  P('M24 30 L32 30 L32 38 L24 38 Z', 'gh'),                           // the CAP site, still empty
+  S('M40 30 L48 30 M40 38 L48 38', 'bs', 4),                          // the lac genes, left off
+]);
+def('antigenic_variation', () => [                                  // N. gonorrhoeae swaps which pilin gene it expresses, altering its surface protein so old antibodies miss it
+  C(30, 30, 12, 'bs'),
+  C(30, 15, 3, 'hi'), S('M30 18 L30 15', 'ik', 1.4),                  // the one variant currently displayed
+  C(15, 42, 2.4, 'gh'), C(45, 42, 2.4, 'gh'),                         // alternates, held in reserve
+]);
+def('phase_variation', () => [                                      // E. coli pili genes flip on and off by inverting a promoter inside them — no new mutation needed
+  S('M4 22 L56 22', 'gh', 2),                                         // the gene, off
+  P('M18 18 L26 18 L22 10 Z', 'lo'),                                  // the invertible promoter segment, one orientation
+  S('M4 44 L56 44', 'bs', 2),                                         // the same gene, on — after the segment flipped
+  P('M18 40 L26 40 L22 48 Z', 'hi'),
+]);
+def('auxotroph', () => [                                            // a microbe that lost the ability to make a compound, like an amino acid, and needs it supplied to grow
+  rod3('gh', 20, 32, 10, 4.5),
+  S('M30 27 L30 21 M27 24 L33 24', 'ik', 1.6),                        // the blocked step
+  C(46, 18, 4, 'hi'), S('M42 20 L36 26', 'gh', 1.4),                  // the nutrient supplied from outside instead
+]);
+def('genomic_island', () => [                                       // a stretch of chromosome over 10 kilobases whose GC content betrays that it came from another species
+  S('M4 30 L56 30', 'bs', 4),                                         // the chromosome, native composition
+  S('M22 30 L38 30', 'hi', 6),                                        // the island, visibly different
+  S('M22 22 L22 38 M38 22 L38 38', 'ik', 1.4),
+]);
+def('thymine_dimer', () => [                                        // UV light fuses two adjacent thymine bases on a DNA strand, kinking the helix and blocking replication
+  S('M12 8 L12 52', 'ik', 3), S('M48 8 L48 52', 'ik', 3),
+  S('M16 20 L24 20 M16 30 L24 30', 'gh', 2),                          // normal rungs, above and below
+  S('M27 24 L27 28 M33 24 L33 28 M27 26 L33 26', 'bs', 2.2),          // the two thymines, fused together
+  S('M12 26 Q30 20 48 26', 'ik', 1.6),                                // the kink it puts in the helix
+]);
+def('photoreactivation', () => [                                    // an enzyme, absent in humans, uses visible light to break a UV thymine dimer's bonds, undoing the damage
+  S('M12 8 L12 52', 'ik', 2.6), S('M48 8 L48 52', 'ik', 2.6),
+  S('M27 26 L33 30 M27 30 L33 26', 'gh', 1.6),                        // the dimer, bonds already breaking
+  C(30, 28, 6, 'hi'),                                                 // the enzyme, right on it
+  S('M8 12 L16 20 M8 22 L17 26 M12 8 L18 14', 'bs', 1.6),             // visible light, arriving
+]);
+def('excision_repair', () => [                                      // snips out a DNA segment with a lesion like a thymine dimer; polymerase and ligase refill and seal the gap
+  S('M6 30 L22 30', 'ik', 3), S('M38 30 L54 30', 'ik', 3),
+  S('M22 30 L38 30', 'gh', 3),                                        // the segment already excised
+  C(26, 30, 1.6, 'bs'), C(30, 30, 1.6, 'bs'), C(34, 30, 1.6, 'bs'),   // new bases, filling it back in
+]);
+def('sos_repair', () => [                                           // a bacterial last resort: an error-prone polymerase copies past DNA damage, trading accuracy for survival
+  S('M6 30 L26 30', 'ik', 3),                                         // the strand up to the damage
+  C(30, 30, 3, 'lo'),                                                 // the lesion, still there
+  S('M34 30 L54 30', 'bs', 3),                                        // synthesis, continuing straight past it anyway
+  C(38, 30, 1.8, 'hi'),                                               // the wrong base it guessed
+]);
+def('ames_test', () => [                                            // screens chemicals for mutagenicity using a histidine-starved Salmonella strain that reverts back to growth
+  E(30, 32, 22, 16, 'gh'),                                            // the petri dish, histidine-free
+  ...[[13, 19], [47, 17], [15, 47], [45, 47]].map(([x, y]) => C(x, y, 2.3, 'bs')),  // colonies that reverted and grew anyway
+  C(30, 32, 2.1, 'hi'),                                               // the test chemical, spotted at the center
+]);
+def('transposon', () => [                                           // a DNA segment that jumps to a new spot in the genome, often disrupting whatever gene it lands in
+  S('M4 44 L56 44', 'ik', 3),                                         // the gene it's about to land in
+  S('M22 44 L38 44', 'bs', 6),                                        // the segment, disrupted where it landed
+  S('M30 32 Q30 22 30 16', 'gh', 2),                                  // its own arrival, from elsewhere
+  P('M26 12 L34 12 L30 20 Z', 'hi'),
+]);
+def('f_plasmid', () => [                                            // carries the genes for its own pilus and transfer; spliced into the chromosome it makes an Hfr cell
+  ring('bs', 20, 22, 12, 2.6),
+  S('M32 22 L52 22', 'ik', 3),                                        // the pilus it builds, extending out
+  C(52, 22, 2, 'hi'),
+]);
+def('r_plasmid', () => [                                            // a resistance plasmid stacking genes for several antibiotics at once, often ten on one loop of DNA
+  ring('gh', 30, 30, 16, 1.8),
+  ...[0, 90, 180, 270].map((a, i) => {
+    const rad = a * Math.PI / 180;
+    const x1 = n(30 + 13 * Math.cos(rad)), y1 = n(30 + 13 * Math.sin(rad));
+    const x2 = n(30 + 19 * Math.cos(rad)), y2 = n(30 + 19 * Math.sin(rad));
+    return S(`M${x1} ${y1} L${x2} ${y2}`, i % 2 ? 'bs' : 'hi', 4);
+  }),                                                                  // several resistance genes, stacked on one loop
+]);
+def('replica_plating', () => [                                      // stamping a velvet-pressed copy of a colony plate onto fresh media to spot mutants without poisoning them
+  E(14, 44, 11, 8, 'gh'),                                             // the master plate
+  ...[[9, 42], [16, 46], [20, 40]].map(([x, y]) => C(x, y, 2, 'bs')),
+  P('M26 28 L36 28 L36 38 L26 38 Z', 'lo'),                           // the velvet pad, stamped and lifted
+  E(46, 18, 11, 8, 'hi'),                                             // the fresh plate, same pattern
+  ...[[41, 16], [48, 20], [52, 14]].map(([x, y]) => C(x, y, 2, 'bs')),
+]);
+def('dna_library', () => [                                          // a whole genome, cut into fragments by restriction enzymes and cloned one fragment per host cell
+  ...[[12, 16], [30, 12], [48, 18], [14, 40], [34, 42], [50, 36]].flatMap(([x, y], i) =>
+    [ring(i % 2 ? 'bs' : 'hi', x, y, 6, 1.6), C(x, y, 1.6, 'lo')]),  // many vectors, each holding a different fragment
+]);
+def('cdna', () => [                                                 // DNA copied from mature mRNA, so it skips introns entirely — bacteria can read it without splicing
+  S('M6 18 L54 18', 'bs', 3),                                         // the mRNA template, no gaps
+  S('M6 42 L54 42', 'ik', 3),                                         // the DNA copy, made straight off it
+  ...[16, 30, 44].map(x => S(`M${x} 18 L${x} 42`, 'gh', 1.4)),
+]);
+def('selectable_marker', () => [                                    // a resistance gene on a vector that lets only successfully transformed cells survive antibiotic selection
+  ring('gh', 30, 20, 12, 2),                                          // the vector
+  S('M22 16 L38 16 M22 24 L38 24', 'bs', 4),                          // the marker gene riding on it
+  ...[[14, 48], [30, 52], [46, 48]].map(([x, y], i) => C(x, y, 4, i === 1 ? 'hi' : 'gh')),  // only one cell survives selection
+]);
+def('gfp', () => [                                                  // a jellyfish protein that glows green under blue light, fused to genes to reveal exactly when they switch on
+  ring('bs', 30, 30, 14, 3),                                          // the beta-barrel, wrapped around its own chromophore
+  C(30, 30, 4.5, 'hi'),                                               // the chromophore at its core
+  ...[0, 60, 120, 180, 240, 300].map(a => S(
+    `M${n(30 + 16 * Math.cos(a * Math.PI / 180))} ${n(30 + 16 * Math.sin(a * Math.PI / 180))} L${n(30 + 22 * Math.cos(a * Math.PI / 180))} ${n(30 + 22 * Math.sin(a * Math.PI / 180))}`, 'gh', 1.4)),  // glowing, under blue light
+]);
+
+/* genetic engineering — the tools, not the organisms they act on ────────
+ * colony_blotting lifts colonies onto a membrane and rings the one hit,
+ * matching southern_blot's own idiom for "found it"; dna_probe is a single
+ * labeled strand hunting its unbound match, unlike hybridization's already-
+ * paired strands or southern_blot's already-transferred bands; fish_probe
+ * is that same hunt happening INSIDE an intact cell on a slide, not free in
+ * solution; dna_microarray is thousands of probes at once, a lit grid, not
+ * one; transgenic_plant, bt_toxin, golden_rice and ti_plasmid each hang off
+ * a real agricultural fact rather than a generic "plant plus DNA" scene.
+ */
+def('colony_blotting', () => [
+  E(30, 46, 20, 9, 'gh'),                                            // the culture plate
+  ...[[16, 44], [24, 48], [36, 48], [44, 44], [30, 42]].map(([x, y]) => C(x, y, 2.2, 'lo')),  // its colonies
+  P('M12 12 L48 12 L48 28 L12 28 Z', 'hi'),                          // the membrane, pressed onto them
+  C(30, 20, 2.6, 'bs'), ring('bs', 30, 20, 5, 1.4),                  // the one colony that blotted positive
+]);
+def('dna_probe', () => [
+  S('M8 22 Q20 14 30 22 Q40 30 52 22', 'bs', 2.4),                   // a labeled single strand
+  C(10, 22, 3.2, 'hi'),                                              // its label, riding the end
+  S('M8 40 Q20 32 30 40 Q40 48 52 40', 'gh', 1.8),                   // the exact complementary sequence it's hunting
+]);
+def('fish_probe', () => [
+  E(30, 30, 21, 16, 'gh'),                                           // the intact cell, still on the slide
+  C(30, 28, 9, 'lo'),                                                // its nucleus
+  C(30, 28, 3, 'hi'), ring('hi', 30, 28, 6, 1.6),                    // the probe, lit up right where it landed
+  S('M4 52 L56 52', 'ik', 2),                                        // the slide underneath
+]);
+def('dna_microarray', () => [
+  P('M8 8 L52 8 L52 52 L8 52 Z', 'gh'),                              // the chip
+  ...[0, 1, 2, 3].flatMap(row => [0, 1, 2, 3].map(col => {
+    const x = 15 + col * 10, y = 15 + row * 10;
+    return C(x, y, 2.6, (row + col) % 3 === 0 ? 'hi' : (row + col) % 3 === 1 ? 'bs' : 'lo');
+  })),                                                                // thousands of probes, lit by what each one caught
+]);
+def('transgenic_plant', () => [
+  stalk('bs', 30, 52, 14),
+  leaf('bs', 20, 30, .9, -35), leaf('bs', 40, 26, .9, 35),
+  ring('lo', 46, 46, 7, 2),                                          // the bacterium's plasmid, delivering the gene
+  S('M40 45 L32 47', 'ik', 1.6),                                     // the gene, going in
+]);
+def('bt_toxin', () => [
+  P('M12 30 Q12 18 30 18 Q48 18 48 30 Q48 42 30 42 Q12 42 12 30 Z', 'gh'),  // an insect's gut
+  S('M18 30 L24 22 L30 34 L36 22 L42 30', 'ik', 2.2),                // the gut wall, ruptured
+  P('M40 8 L48 8 L48 16 L40 16 Z', 'bs'),                            // the crystal toxin itself
+]);
+def('golden_rice', () => [
+  ...Array.from({ length: 7 }, (_, i) => grain('hi', 16 + (i % 4) * 10, 30 + Math.floor(i / 4) * 12, .9, -20 + i * 12)),  // grains, engineered gold
+  C(46, 14, 3.2, 'bs'), S('M46 14 L40 20', 'ik', 1.6),               // the beta-carotene pathway it now runs
+]);
+def('ti_plasmid', () => [
+  ring('bs', 20, 20, 9, 2.4),                                        // the Ti plasmid
+  S('M20 29 Q20 38 30 42', 'ik', 1.8),                               // its T-DNA, breaking away and moving in
+  E(40, 46, 11, 8, 'lo'),                                            // the crown gall tumor it causes
+]);
+def('electroporation', () => [
+  C(30, 32, 17, 'gh'),                                               // the cell membrane
+  bolt('bs', 22, 8, .8),                                             // a brief electric pulse
+  S('M30 15 L30 49', 'ik', 1),                                       // a pore, punched clean through
+  C(30, 32, 2.4, 'hi'),                                              // DNA, slipping in through it
+]);
+
+/* pathogens — organism/disease pairs, real traits kept apart ───────────
+ * Each organism is drawn as itself: the exact microscopy trait its fact
+ * line names (a palisade of club rods, a diplococcus in its capsule, a
+ * hooked spirochete). Each disease is drawn as the damage it does in a
+ * body, never the organism again — so a pair never reduces to the same
+ * shape with a different label.
+ */
+def('streptococcus_pyogenes', () => [
+  ...cocci('bs', [[14, 30], [26, 30], [38, 30], [50, 30]]),          // a chain of cocci
+  ring('gh', 30, 30, 23, 2.2),                                       // the wide zone it clears on blood agar — complete lysis
+]);
+def('strep_throat', () => [
+  P('M18 10 L42 10 L42 34 Q42 46 30 50 Q18 46 18 34 Z', 'gh'),        // the throat
+  C(22, 26, 6, 'bs'), C(38, 26, 6, 'bs'),                             // tonsils, inflamed
+  ...[[22, 26], [38, 26]].map(([x, y]) => C(x, y, 2, 'hi')),          // exudate on them
+]);
+def('corynebacterium_diphtheriae', () => [
+  ...[14, 22, 30, 38, 46].map((x, i) => [
+    S(`M${x} ${40 - (i % 2) * 4} L${x} ${18 - (i % 2) * 4}`, 'bs', 4),  // a rod...
+    C(x, 18 - (i % 2) * 4, 3, 'lo'),                                  // ...club-shaped at one end
+  ]).flat(),                                                          // lined up like a wooden fence
+]);
+def('diphtheria', () => [
+  E(28, 22, 14, 11, 'gh'),                                           // the throat
+  P('M16 18 Q28 12 40 18 Q40 26 28 28 Q16 26 16 18 Z', 'lo'),         // a grey pseudomembrane, clogging it
+  S('M30 30 Q38 42 46 50', 'ik', 2),                                 // its toxin, riding the blood outward
+  C(44, 48, 3.6, 'bs'), C(50, 48, 3.6, 'bs'), P('M42 51 L47 58 L52 51 Z', 'bs'),  // to the heart
+]);
+def('streptococcus_pneumoniae', () => [
+  C(25, 30, 7, 'bs'), C(35, 30, 7, 'bs'),                            // a diplococcus, cells in a pair
+  ring('gh', 30, 30, 15, 2),                                         // its polysaccharide capsule
+]);
+def('pneumococcal_pneumonia', () => [
+  ...[[20, 24], [40, 24], [30, 40]].map(([x, y]) => [C(x, y, 8, 'gh'), E(x, y + 2, 6, 4, 'bs')]).flat(),  // air sacs, each flooded with fluid instead of air
+]);
+def('bordetella_pertussis', () => [
+  S('M6 48 Q30 54 54 48', 'lo', 2.2),                                // the airway surface
+  ...[10, 18, 26].map(x => S(`M${x} 46 Q${x + 1} 36 ${x - 1} 26`, 'ik', 1.4)),  // cilia, still beating
+  E(38, 34, 7, 5, 'bs'),                                             // the tiny coccobacillus, clinging on
+]);
+def('whooping_cough', () => [
+  C(18, 30, 9, 'lo'),                                                // a head, mid-paroxysm
+  P('M26 28 L36 26 L36 32 Z', 'gh'),                                 // mouth, wide open
+  ...Array.from({ length: 5 }, (_, i) => {
+    const a = (-15 + i * 10) * Math.PI / 180;
+    return S(`M38 29 L${n(38 + 20 * Math.cos(a))} ${n(29 + 20 * Math.sin(a))}`, i % 2 ? 'hi' : 'bs', 1.6);
+  }),                                                                 // a burst of coughing
+  S('M46 42 Q52 46 46 50 Q52 54 46 58', 'gh', 1.6),                  // the high-pitched whoop that follows
+]);
+def('tuberculosis', () => [
+  P('M30 10 Q16 12 14 30 Q12 46 24 46 Q30 44 30 30 Z', 'bs'),         // one lung lobe
+  ring('lo', 22, 30, 6, 2), C(22, 30, 2, 'ik'),                       // a granuloma, walling the infection off
+  ...[[26, 16], [20, 40]].map(([x, y]) => C(x, y, 1.4, 'gh')),        // scattered latent foci elsewhere, still silent
+]);
+def('rhinovirus', () => [
+  P(pentaPath(30, 30, .7), 'hi'), S(pentaPath(30, 30, .7), 'ik', 1.6),  // a bare capsid, small
+  ...[0, 120, 240].map(a => S(
+    `M${n(30 + 16 * Math.cos(a * Math.PI / 180))} ${n(30 + 16 * Math.sin(a * Math.PI / 180))} L${n(30 + 21 * Math.cos(a * Math.PI / 180))} ${n(30 + 21 * Math.sin(a * Math.PI / 180))}`,
+    'gh', 1.4)),                                                      // it grows best colder than the body's core
+]);
+def('common_cold', () => [
+  P('M22 14 L38 14 L38 28 Q38 42 30 46 Q22 42 22 28 Z', 'gh'),        // the nose, in profile
+  ...[[26, 42], [30, 46], [34, 42]].map(([x, y]) => C(x, y, 2, 'bs')),  // it's running
+  S('M20 20 Q14 18 10 22', 'lo', 1.4), S('M40 20 Q46 18 50 22', 'lo', 1.4),  // stuffed passages
+]);
+def('folliculitis', () => [
+  S('M30 54 L30 30', 'lo', 2.4),                                     // the hair shaft
+  E(30, 26, 6, 8, 'bs'),                                             // the follicle, inflamed around its base
+  C(30, 18, 3, 'hi'),                                                // pus, pointing at the surface
+]);
+def('staphylococcal_scalded_skin_syndrome', () => [
+  P('M8 20 L52 20 L52 30 L8 30 Z', 'hi'),                            // the outer skin layer
+  P('M8 34 L52 34 L52 44 L8 44 Z', 'lo'),                            // the layer underneath
+  S('M8 30 Q30 24 52 30', 'ik', 1.6),                                // the toxin's cleavage line between them
+  S('M14 30 Q10 24 14 18', 'bs', 2), S('M46 30 Q50 24 46 18', 'bs', 2),  // the top layer, curling away like a scald
+]);
+def('impetigo', () => [
+  E(30, 30, 15, 11, 'lo'),                                           // a sore, on skin
+  P('M20 26 Q30 20 40 26 Q38 34 30 36 Q22 34 20 26 Z', 'hi'),         // a honey-colored crust over it
+  ...granules('gh', 5, 23, [18, 16, 42, 24]),                        // spreading wherever it's touched
+]);
+def('rickettsia_rickettsii', () => [
+  E(24, 42, 9, 7, 'lo'),                                             // a tick, feeding
+  ...[[-8, -4], [-8, 4], [8, -4], [8, 4]].map(([dx, dy]) => S(`M${24 + dx} ${42 + dy} L${24 + dx * 1.8} ${42 + dy * 1.8}`, 'ik', 1.2)),  // its legs
+  rod3('bs', 34, 20, 5, 2),                                          // the tiny rod riding into a blood vessel
+  S('M40 12 L40 30', 'gh', 4),                                       // the vessel wall it invades
+]);
+def('rocky_mountain_spotted_fever', () => [
+  S('M30 10 L30 50', 'gh', 10),                                      // a limb, in silhouette
+  ...[[26, 46], [34, 46], [24, 38], [36, 38], [28, 20], [32, 14]].map(([x, y], i) => C(x, y, 1.6, i < 4 ? 'bs' : 'hi')),  // spots starting at the wrist, working toward the trunk
+]);
+def('measles_virus', () => [
+  ring('bs', 30, 30, 15, 3),                                         // its envelope
+  ...spikes(30, 30, 15, 20, 6, 'ik', 'hi', 2, 10),                    // fusion spikes
+]);
+def('measles', () => [
+  C(30, 24, 12, 'gh'),                                                // a face
+  ...[[22, 20], [26, 18], [30, 20]].map(([x, y]) => C(x, y, 1, 'hi')),  // Koplik spots, inside the cheek first
+  ...granules('bs', 10, 26, [14, 32, 46, 52]),                        // then the rash, spreading down the body
+]);
+def('rubella_virus', () => [
+  ring('bs', 30, 30, 14, 3),                                         // enveloped
+  P(pentaPath(30, 30, .35), 'lo'), S(pentaPath(30, 30, .35), 'ik', 1.2),  // its icosahedral core — Rubivirus's own genus trait
+]);
+def('rubella', () => [
+  ...granules('bs', 9, 19, [14, 14, 46, 34]),                        // a light pink rash
+  E(30, 46, 12, 8, 'lo'),                                             // crossing the placenta is the real danger
+  C(30, 46, 3, 'gh'),                                                 // the fetus it can reach
+]);
+def('dermatophyte', () => [
+  S('M14 50 L14 20 Q14 12 22 12', 'lo', 2.2),                        // a hair shaft, its food source
+  ...[[18, 38], [22, 30], [16, 24], [24, 22]].map(([x, y]) => S(`M${x} ${y} L${x + (x > 19 ? 5 : -5)} ${y - 4}`, 'bs', 1.6)),  // hyphae, feeding on its keratin
+]);
+def('ringworm', () => [
+  ring('bs', 30, 30, 14, 4),                                         // the ring-shaped rash it's named for
+  ring('gh', 30, 30, 8, 1.6),                                        // clearer skin at the center, healing inward
+]);
+def('wart', () => [
+  E(30, 34, 13, 9, 'bs'),                                            // a raised bump
+  ...granules('hi', 6, 33, [22, 28, 38, 36]),                        // its rough surface
+  S('M20 40 L14 46', 'ik', 1.4),                                     // the tiny break it got in through
+]);
+def('clostridium_tetani', () => [
+  rod3('bs', 26, 32, 11, 4),                                         // the rod body
+  C(40, 32, 5, 'hi'), ring('ik', 40, 32, 5, 1),                      // its spore, bulging at one end — the drumstick shape
+]);
+def('tetanus', () => [
+  C(24, 28, 10, 'gh'),                                                // a jaw, clenched
+  S('M16 34 L32 34', 'ik', 3),                                       // locked shut, not opening
+  S('M40 16 L40 46', 'bs', 5),                                       // a muscle held in constant rigid contraction
+  S('M36 20 L44 20 M36 42 L44 42', 'lo', 1.6),                       // no signal ever tells it to relax
+]);
+def('clostridium_perfringens', () => [
+  rod3('bs', 22, 30, 10, 4), rod3('bs', 38, 34, 10, 4),               // two rods, dividing
+  S('M22 30 L38 34', 'gh', 1),                                       // caught mid-split
+  C(50, 20, 1.6, 'hi'), C(54, 26, 1.4, 'hi'),                        // and already again, six minutes later
+]);
+def('gas_gangrene', () => [
+  ...[16, 30, 44].map(x => S(`M${x} 10 L${x} 50`, 'lo', 5)),          // striated muscle fibers, dying outright
+  ...[[16, 22], [30, 32], [44, 18], [24, 44], [38, 46]].map(([x, y]) => C(x, y, 2.2, 'gh')),  // gas, collecting in the dead tissue
+]);
+def('pseudomonas_infection', () => [
+  P('M8 40 Q12 20 30 16 Q48 20 52 40 Q40 46 30 44 Q20 46 8 40 Z', 'lo'),  // burned skin, breached
+  ...[[20, 32], [30, 36], [40, 30]].map(([x, y]) => rod3('bs', x, y, 5, 2)),  // the rod that got in through it
+]);
+def('actinomyces_israelii', () => [
+  S('M30 50 L30 30', 'bs', 2.6),                                     // one filament...
+  S('M30 38 L18 24', 'bs', 2), S('M30 38 L42 24', 'bs', 2),           // ...branching, the way a normal mouth colonizer does
+  S('M18 24 L10 14', 'bs', 1.6), S('M42 24 L50 14', 'bs', 1.6),
+]);
+def('actinomycosis', () => [
+  S('M30 8 Q24 28 30 48', 'lo', 4),                                  // a draining tract through tissue
+  ...[[22, 18], [36, 30], [24, 40]].map(([x, y]) => C(x, y, 3, 'bs')),  // sulfur granules along it
+  S('M30 48 L30 55', 'gh', 3),                                       // draining to the surface, after trauma opened the way
+]);
+def('bartonella_henselae', () => [
+  P('M12 10 L20 2 L18 12 Z', 'lo'), P('M40 12 L44 2 L48 12 Z', 'lo'),  // a cat, just the ears
+  S('M16 20 Q30 10 44 20', 'bs', 3),                                  // the curved rod itself
+  C(50, 26, 1.6, 'ik'),                                               // the flea that ferries it along
+]);
+def('cat_scratch_disease', () => [
+  S('M14 14 L34 40 M20 12 L40 38 M26 10 L46 36', 'ik', 1.6),          // three parallel scratch lines
+  E(30, 50, 9, 6, 'bs'),                                              // the lymph node it swells, days later
+]);
+def('streptobacillus_moniliformis', () => [
+  S('M10 44 Q20 24 30 34 Q40 44 50 20', 'gh', 1.4),                   // the rod, as a wavy spine
+  ...[[12, 42], [20, 30], [30, 34], [40, 30], [48, 20]].map(([x, y], i) => C(x, y, i % 2 ? 4 : 2.4, 'bs')),  // swellings strung along it, bead by bead
+]);
+def('rat_bite_fever', () => [
+  ...[[20, 20], [40, 20]].map(([x, y]) => P(`M${x - 3} ${y} L${x} ${y + 6} L${x + 3} ${y} Z`, 'lo')),  // a rat's bite
+  flame('bs', .5, 8),                                                 // the fever that follows, days later
+  C(46, 46, 3, 'hi'),                                                 // a joint, aching too
+]);
+def('peptic_ulcer', () => [
+  S('M8 20 Q30 12 52 20', 'bs', 6),                                   // the stomach's own lining
+  P('M22 24 Q26 34 30 26 Q34 34 38 24 Q34 30 30 30 Q26 30 22 24 Z', 'lo'),  // a crater eaten into it
+  C(30, 26, 1.8, 'gh'),                                                // acid, pooling in the gap
+]);
+def('mumps_virus', () => [
+  ring('bs', 30, 30, 17, 3),                                          // enveloped
+  ...spikes(30, 30, 17, 22, 7, 'ik', 'hi', 1.6, 25),                  // fusion and attachment spikes
+  S('M22 30 Q30 24 38 30 Q30 36 22 30', 'gh', 1.4),                   // its helical nucleocapsid, coiled inside
+]);
+def('mumps', () => [
+  C(30, 26, 10, 'gh'),                                                // a face
+  E(16, 30, 7, 9, 'bs'), E(44, 30, 7, 9, 'bs'),                       // both parotid glands, swollen in front of the ears
+]);
+def('hepatitis_a_virus', () => [
+  P(pentaPath(30, 30, .6), 'lo'), S(pentaPath(30, 30, .6), 'ik', 1.6),  // bare, non-enveloped
+  ...granules('gh', 5, 81, [10, 46, 20, 54]),                         // spread through food fouled by feces
+]);
+def('hepatitis_a', () => [
+  P('M10 20 Q10 10 24 10 L46 10 Q50 10 50 18 Q50 30 40 32 Q46 40 38 44 Q24 48 14 40 Q8 32 10 20 Z', 'bs'),  // the liver
+  ring('gh', 30, 24, 6, 1.4),                                        // inflamed, briefly
+  C(44, 42, 2, 'hi'),                                                 // then clears, no lasting disease left behind
+]);
+def('clostridioides_difficile', () => [
+  rod3('bs', 30, 34, 12, 5),                                          // the rod, held in check by a healthy gut — until now
+  ...[16, 30, 44].map(x => S(`M${x} 10 L${x} 20`, 'gh', 2)),          // a wiped-out microbiome, an antibiotic left behind
+]);
+def('c_diff_infection', () => [
+  S('M10 20 L10 44 Q10 52 20 52 L40 52 Q50 52 50 44 L50 20', 'gh', 6),  // the colon
+  ...[18, 30, 42].map(x => C(x, 48, 3, 'lo')),                        // a pseudomembrane, patchy along it
+]);
+def('norovirus', () => [
+  P(pentaPath(30, 30, .5), 'bs'), S(pentaPath(30, 30, .5), 'ik', 1.4),  // bare, and very small
+  ...[[12, 12], [48, 12], [12, 48], [48, 48], [30, 10]].map(([x, y]) => P(pentaPath(x, y, .14), 'gh')),  // it barely takes any of them to start
+]);
+def('norovirus_gastroenteritis', () => [
+  S('M50 14 Q50 30 30 30 Q10 30 10 46', 'lo', 6),                    // the gut, cramping
+  ...[[44, 18], [30, 30], [16, 42]].map(([x, y]) => P(pentaPath(x, y, .16), 'bs')),  // as few as ten virions is enough
+]);
+def('cyclospora_cayetanensis', () => [
+  C(30, 30, 11, 'gh'),                                                // the oocyst wall
+  S('M22 30 Q30 24 38 30', 'ik', 1.4),                                // not yet sporulated — just an empty shell so far
+]);
+def('cyclosporiasis', () => [
+  S('M12 42 Q12 52 30 52 Q48 52 48 42', 'lo', 6),                    // the gut, upset
+  C(46, 12, 5, 'gh'), S('M46 6 Q52 12 46 18 Q40 12 46 6', 'gh', 1),   // an oocyst, still outdoors weeks before it could ever spread person to person
+]);
+def('cryptosporidiosis', () => [
+  S('M8 30 L52 30', 'gh', 3),                                        // the small intestine's inner wall
+  ...[12, 18, 24, 30, 36, 42, 48].map(x => S(`M${x} 26 L${x} 20`, 'ik', 1)),  // its brush border, worn down
+  wave('bs', 46, 4, 16),                                              // watery diarrhea, the result
+]);
+def('typhoid_fever', () => [
+  rod3('bs', 20, 34, 9, 4),                                           // Salmonella Typhi, a rod like any other
+  P('M42 12 Q48 6 48 14 Q54 18 48 24 Q42 28 42 20 Z', 'gh'),          // but with no host except us
+  flame('hi', .5, 8),                                                 // the sustained high fever it's named for
+]);
+def('urethra', () => [
+  E(30, 14, 12, 8, 'gh'),                                             // the bladder above it
+  S('M30 20 L30 48', 'bs', 7),                                        // a short duct, straight down
+  C(30, 52, 3, 'lo'),                                                 // its opening at the skin surface
+]);
+def('vagina', () => [
+  S('M22 10 Q18 30 22 50 L38 50 Q42 30 38 10 Z', 'bs'),                // the canal itself
+  ...[18, 26, 34, 42].map(y => S(`M22 ${y} Q30 ${y + 2} 38 ${y}`, 'lo', 1.2)),  // rugae, its folded lining
+  ...[[26, 16], [34, 44]].map(([x, y]) => rod3('hi', x, y, 3, 1.2)),  // resident Lactobacillus, keeping it acidic
+]);
+def('leptospira_interrogans', () => [
+  S('M10 40 Q16 20 24 30 Q32 40 40 20 Q46 8 50 14', 'bs', 2.2),        // a tightly coiled spirochete
+  S('M10 40 Q6 44 10 46', 'ik', 1.6), S('M50 14 Q54 10 50 8', 'ik', 1.6),  // hooked at both ends — its own signature
+]);
+def('gardnerella_vaginalis', () => [
+  rod3('bs', 24, 30, 6, 2.6), rod3('hi', 36, 34, 6, 2.6),              // small rods, staining unevenly — gram-variable
+  S('M14 44 Q30 50 46 44', 'gh', 1.4),                                 // displacing the normal Lactobacillus
+]);
+def('neisseria_gonorrhoeae', () => [
+  P('M18 22 Q26 16 26 30 Q26 44 18 38 Q12 30 18 22 Z', 'bs'),          // one coffee-bean cell...
+  P('M42 22 Q34 16 34 30 Q34 44 42 38 Q48 30 42 22 Z', 'bs'),          // ...and its mirror pair, flat sides touching
+  ...[0, 30, 60, 90].map(a => S(`M30 30 L${n(30 + 16 * Math.cos(a * Math.PI / 180))} ${n(30 + 16 * Math.sin(a * Math.PI / 180))}`, 'gh', 1)),  // pilin variants, reshuffling constantly
+]);
+
+/* STIs, systemic and vector-borne infections, the HIV/AIDS course, and a
+ * handful of foundational concept words — organisms drawn as organisms,
+ * diseases drawn as the damage they do, per the convention set above. ──── */
+def('chlamydia_trachomatis', () => [
+  C(30, 32, 20, 'gh'),                                            // the host cell — it can't live outside one
+  C(32, 30, 10, 'bs'),                                            // the reticulate body, dividing
+  C(18, 20, 3, 'hi'), C(44, 40, 2.6, 'hi'),                       // elementary bodies, dense and infectious
+]);
+def('treponema_pallidum', () => [
+  S('M6 30 Q10 18 14 30 Q18 42 22 30 Q26 18 30 30 Q34 42 38 30 Q42 18 46 30 Q50 42 54 30', 'gh', 3.4), // dark-field's glow — the only way to see it
+  S('M6 30 Q10 18 14 30 Q18 42 22 30 Q26 18 30 30 Q34 42 38 30 Q42 18 46 30 Q50 42 54 30', 'bs', 1.2), // the corkscrew itself, too thin to Gram-stain
+]);
+def('haemophilus_ducreyi', () => [
+  round('lo', 40, 20, 9),                                         // blood-enriched agar — it grows nowhere else
+  rod3('bs', 20, 26, 4, 2), rod3('bs', 28, 22, 4, 2), rod3('bs', 36, 28, 4, 2), // small coccobacilli, scattered on it
+]);
+def('tampon', () => [
+  P('M24 8 Q24 4 30 4 Q36 4 36 8 L36 44 Q36 54 30 54 Q24 54 24 44 Z', 'hi'), // the compressed cotton core
+  S('M22 12 L20 16 M22 19 L20 23 M22 26 L20 30 M22 33 L20 37', 'gh', 1),     // compression ridges along it
+  S('M30 54 L30 58', 'lo', 1.6),                                  // the withdrawal string
+]);
+def('cystitis', () => [
+  P('M18 20 Q30 10 42 20 Q46 34 36 40 Q30 44 24 40 Q14 34 18 20 Z', 'bs'),   // the bladder
+  S('M30 44 L30 54', 'lo', 4),                                    // urethra, below it
+  rod3('hi', 26, 50, 3, 1.6), rod3('hi', 34, 52, 3, 1.6),         // E. coli, climbing up
+]);
+def('pyelonephritis', () => [
+  P('M20 16 Q40 10 42 26 Q44 42 26 42 Q10 42 12 26 Q12 18 20 16 Z', 'lo'),   // the kidney — now the target
+  S('M30 42 L30 52', 'gh', 3),                                    // the ureter it climbed
+  rod3('bs', 26, 20, 4, 1.8), rod3('bs', 34, 25, 4, 1.8),         // arrived from below
+]);
+def('leptospirosis', () => [
+  wave('gh', 44, 4, 24),                                          // water, fouled by animal urine
+  S('M18 30 Q21 20 24 30 Q27 40 30 30 Q33 20 36 30 Q39 40 42 30', 'bs', 1.4), // a spirochete, in it
+  C(46, 14, 2.4, 'lo'), S('M46 14 L46 20', 'gh', 1),               // the drop that carried it in
+]);
+def('bacterial_vaginosis', () => [
+  wave('hi', 44, 3, 22),                                          // thin discharge — the tell
+  rod3('lo', 16, 30, 3, 1.4), rod3('lo', 36, 26, 3, 1.4), rod3('lo', 44, 34, 3, 1.4), // mixed anaerobes, replacing normal flora
+  S('M50 22 L54 18 M50 26 L55 26', 'gh', 1),                       // no inflammation — nothing else to see
+]);
+def('vulvovaginal_candidiasis', () => [
+  wave('hi', 46, 3, 20),                                          // thick white discharge
+  C(20, 30, 6, 'bs'), C(32, 26, 5, 'bs'), C(26, 36, 4, 'bs'), C(40, 32, 4, 'bs'), // Candida, overgrown
+  C(24, 27, 1.6, 'hi'), C(35, 23, 1.4, 'hi'),                      // buds, still forming
+]);
+def('toxic_shock_syndrome', () => [
+  C(24, 26, 4, 'bs'), C(32, 24, 4, 'bs'), C(28, 32, 4, 'bs'), C(36, 30, 4, 'bs'), // staph, in its grape-like clusters
+  ...Array.from({ length: 8 }, (_, i) => { const a = i * 45 * Math.PI / 180;
+    return S(`M30 28 L${n(30 + 20 * Math.cos(a))} ${n(28 + 20 * Math.sin(a))}`, 'lo', 1.4); }), // the cytokine storm it sets off
+  P('M46 44 L52 44 L49 52 Z', 'ik'),                               // and the blood pressure, crashing
+]);
+def('gonorrhea', () => [
+  P('M18 24 Q26 18 26 30 Q26 42 18 36 Q22 30 18 24 Z', 'bs'), P('M42 24 Q34 18 34 30 Q34 42 42 36 Q38 30 42 24 Z', 'bs'), // the diplococcus, two beans facing in
+  S('M14 46 Q30 50 46 46', 'gh', 2),                               // the fallopian tube it can scar, symptoms or not
+]);
+def('chlamydia', () => [
+  S('M8 22 Q30 10 52 22 Q44 32 30 32 Q16 32 8 22 Z', 'gh', 1.6),   // the reproductive tract it travels along
+  C(30, 22, 2.2, 'lo'),                                            // present, but rarely noticed
+  S('M22 40 Q30 46 38 40', 'ik', 1.8),                             // scarring it can leave, unnoticed until it matters
+]);
+def('syphilis', () => [
+  ring('lo', 18, 40, 6, 1.6), C(18, 40, 2, 'gh'),                  // the chancre — painless, so it goes unnoticed
+  C(30, 14, 2, 'bs'), C(38, 20, 2, 'bs'), C(44, 16, 2, 'bs'), C(34, 10, 2, 'bs'), // then the rash, weeks later
+  C(48, 44, 3, 'gh'),                                              // and years of silence before whatever comes last
+]);
+def('chancroid', () => [
+  P('M14 30 L20 22 L28 26 L26 36 L16 38 Z', 'lo'),                 // a ragged, painful ulcer — not smooth like syphilis's
+  S('M20 22 L14 14 M20 22 L26 14', 'ik', 1.2),                     // the pain it announces
+  E(44, 40, 8, 6, 'bs'), C(44, 40, 2.4, 'hi'),                      // a tender node, filling with pus
+]);
+def('botulism', () => [
+  S('M8 30 L30 30', 'ik', 3),                                      // the nerve, arriving
+  P('M30 26 L36 30 L30 34 Z', 'gh'),                                // the signal, about to cross
+  S('M33 20 L33 40', 'lo', 3),                                     // the toxin, blocking it outright
+  P('M40 24 L54 24 L54 36 L40 36 Z', 'bs'),                         // the muscle, waiting on a signal that won't come
+]);
+def('meningitis', () => [
+  C(30, 32, 9, 'gh'),                                              // the brain within
+  ring('lo', 30, 32, 15, 3),                                       // its coverings, inflamed
+  ...Array.from({ length: 8 }, (_, i) => { const a = i * 45 * Math.PI / 180;
+    return S(`M${n(30 + 17 * Math.cos(a))} ${n(32 + 17 * Math.sin(a))} L${n(30 + 21 * Math.cos(a))} ${n(32 + 21 * Math.sin(a))}`, 'ik', 1.2); }), // irritation, radiating outward
+]);
+def('meningococcemia', () => [
+  wave('gh', 44, 4, 22),                                           // the bloodstream — where it now lives
+  C(16, 26, 2, 'bs'), C(19, 27, 2, 'bs'), C(28, 20, 2, 'bs'), C(31, 21, 2, 'bs'), C(40, 28, 2, 'bs'), C(43, 29, 2, 'bs'), // diplococci, circulating
+  C(10, 14, 1.4, 'lo'), C(22, 10, 1.4, 'lo'), C(36, 12, 1.4, 'lo'), C(48, 16, 1.4, 'lo'), // the petechial rash it leaves under the skin
+]);
+def('poliomyelitis', () => [
+  P('M20 8 L28 8 L26 40 Q26 48 20 48 Q14 48 16 40 Z', 'bs'),        // one leg, still strong
+  S('M38 8 Q36 24 38 40 Q39 48 34 48', 'gh', 3),                    // the other, withered and flaccid
+  S('M30 51 L30 56', 'ik', 1.4),                                   // the asymmetry is the sign
+]);
+def('arbovirus', () => [
+  E(16, 40, 9, 6, 'gh'),                                            // a wild host — bird or rodent, either keeps the cycle going
+  S('M25 36 L36 26', 'ik', 1.6), P('M36 26 L44 20 L42 30 Z', 'lo'), // the mosquito or tick, mid-flight, that carries it across
+  C(30, 20, 3, 'bs'),                                               // the virus, riding along for the whole cycle
+]);
+def('west_nile_virus', () => [
+  E(16, 20, 9, 6, 'bs'), P('M8 16 L4 12 L10 12 Z', 'lo'),           // the bird — its real host
+  S('M24 24 L34 34', 'gh', 1.4),                                    // the mosquito, bridging across
+  C(44, 44, 8, 'gh'), S('M40 40 L48 48 M48 40 L40 48', 'ik', 1.6),  // and the human it reaches — an accidental dead end
+]);
+def('encephalitis', () => [
+  P('M10 30 Q8 14 26 8 Q42 3 50 16 Q56 26 48 34 Q52 42 40 42 Q38 50 30 50 Q26 50 24 44 Q14 44 10 36 Q6 34 10 30 Z', 'lo'), // the brain itself, not just its wrapping
+  ...[0, 60, 120, 180, 240, 300].map(a => { const t = a * Math.PI / 180;
+    return S(`M${n(30 + 10 * Math.cos(t))} ${n(28 + 10 * Math.sin(t))} L${n(30 + 18 * Math.cos(t))} ${n(28 + 18 * Math.sin(t))}`, 'ik', 1.2); }), // inflammation, filling the tissue
+]);
+def('rabies_encephalitis', () => [
+  S('M12 50 Q20 40 18 28 Q16 16 26 8', 'ik', 2.4),                  // riding motor-neuron transport, backward, toward the brain
+  C(38, 12, 10, 'lo'),                                              // and once inside it
+  ring('gh', 38, 12, 13, 1.6),                                      // there is no getting out again — over 99% fatal
+]);
+def('lymph_node', () => [
+  P('M16 22 Q30 12 44 22 Q48 32 40 40 Q30 46 20 40 Q12 32 16 22 Z', 'bs'), // bean-shaped
+  ...granules('hi', 10, 91, [22, 22, 38, 38]),                      // packed with B and T cells
+  S('M8 20 L16 24 M52 20 L44 24', 'gh', 1.4),                       // lymph, draining in from every side
+]);
+def('spleen', () => [
+  P('M14 18 Q34 8 46 20 Q52 32 44 42 Q32 52 18 46 Q8 38 10 26 Q10 20 14 18 Z', 'lo'), // red pulp, most of the organ
+  C(22, 26, 2.6, 'hi'), C(34, 22, 2.6, 'hi'), C(30, 34, 2.6, 'hi'), C(20, 38, 2.6, 'hi'), C(38, 34, 2.6, 'hi'), // white pulp nodules
+]);
+def('lymphocyte', () => [
+  C(30, 30, 13, 'hi'),                                              // a thin rim of cytoplasm
+  C(30, 30, 10, 'lo'),                                              // the nucleus, filling nearly the whole cell
+  C(35, 26, 1, 'ik'),                                               // barely anything else in there
+]);
+def('yersinia_pestis', () => [
+  E(30, 30, 16, 7, 'bs'),                                           // the coccobacillus
+  C(16, 30, 3, 'lo'), C(44, 30, 3, 'lo'),                           // bipolar "safety pin" staining — its classic look
+]);
+def('plague', () => [
+  E(30, 34, 14, 17, 'lo'),                                          // the swollen bubo — a lymph node gone wrong
+  ring('ik', 30, 34, 17, 1.4),                                      // tender, inflamed
+  C(46, 14, 3, 'bs'), S('M46 14 L40 20', 'ik', 1.2),                // the flea bite that started it
+]);
+def('francisella_tularensis', () => [
+  P('M24 8 L36 8 L36 38 Q36 50 30 50 Q24 50 24 38 Z', 'gh'),        // the vial — this little is enough
+  C(28, 40, 1.6, 'bs'), C(33, 44, 1.4, 'bs'), C(30, 34, 1.4, 'bs'), // a mere handful of organisms, no more needed
+]);
+def('tularemia', () => [
+  C(14, 44, 3, 'lo'), ring('gh', 14, 44, 5, 1.2),                   // the ulcer marking where it got in
+  S('M18 42 Q30 34 40 26', 'gh', 1.4),                              // draining toward the node
+  E(46, 20, 8, 10, 'bs'), ring('ik', 46, 20, 10, 1.4),              // the node it swells, tender, within days
+]);
+def('brucella', () => [
+  E(16, 24, 5, 3, 'bs'), P('M12 18 L16 10 L20 18 Z', 'lo'),         // in goats and sheep — melitensis
+  E(44, 24, 5, 3, 'bs'), E(48, 18, 4, 3, 'lo'),                     // in pigs — suis
+  E(30, 44, 5, 3, 'bs'), P('M24 40 Q30 32 36 40 Z', 'lo'),          // in cattle — abortus
+]);
+def('brucellosis', () => [
+  S('M6 30 Q14 14 22 30 Q30 46 38 30 Q46 14 54 30', 'lo', 2.4),     // undulant fever, spiking and fading in waves
+  P('M14 44 Q10 50 14 54 Q18 50 14 44 Z', 'hi'),                    // raw milk — one route in
+]);
+def('sepsis', () => [
+  wave('gh', 44, 4, 24),                                            // the bloodstream, systemic
+  C(14, 26, 3, 'lo'), C(24, 20, 3, 'lo'), C(36, 24, 3, 'lo'), C(46, 30, 3, 'lo'), C(20, 36, 3, 'lo'), C(40, 36, 3, 'lo'), // the response flooding everywhere, not contained
+  C(30, 32, 2, 'ik'),                                                // the microbe that started it, small next to the damage
+]);
+def('septic_shock', () => [
+  S('M16 14 L16 46', 'gh', 3), C(16, 12, 4, 'hi'),                  // fluids, running in
+  S('M30 16 Q40 30 30 46', 'lo', 3),                                // pressure, arcing down and staying down
+  P('M40 40 L48 40 L44 50 Z', 'ik'),                                // the falling arrow it won't recover from
+]);
+def('infective_endocarditis', () => [
+  S('M14 30 Q30 14 46 30 Q30 20 14 30 Z', 'ik', 1.6),               // the valve leaflets, meeting
+  C(38, 22, 6, 'lo'), C(35, 18, 1.6, 'bs'), C(41, 20, 1.4, 'bs'), C(38, 26, 1.4, 'bs'), // the vegetation, growing on the damaged edge
+]);
+def('epstein_barr_virus', () => [
+  ring('bs', 22, 24, 10, 2.4), P(pentaPath(22, 24, .4), 'lo'),      // enveloped, same herpesvirus build
+  C(42, 42, 9, 'gh'), C(42, 42, 4, 'hi'),                           // the B cell it settles into for good
+]);
+def('infectious_mononucleosis', () => [
+  P('M14 26 Q22 18 30 26 Q22 30 14 26 Z', 'lo'), P('M30 26 Q38 18 46 26 Q38 30 30 26 Z', 'lo'), // two mouths, close — the whole route in
+  C(30, 26, 2, 'hi'), S('M30 26 L30 34', 'gh', 1.2),                // saliva
+  E(20, 46, 10, 5, 'gh'),                                           // and the fatigue that follows, for weeks
+]);
+def('yellow_fever_virus', () => [
+  C(16, 40, 8, 'gh'), P('M10 34 Q8 28 14 26 Q12 32 16 34 Z', 'lo'), // a forest monkey, its usual host
+  S('M24 36 L34 28', 'ik', 1.4),                                    // the mosquito, bridging the cycle
+  ring('bs', 44, 20, 8, 2), P(pentaPath(44, 20, .35), 'hi'),        // the virus itself, enveloped
+]);
+def('yellow_fever', () => [
+  P('M16 10 Q10 30 16 50 Q30 58 44 50 Q50 30 44 10 Q30 4 16 10 Z', 'hi'), // the body, jaundiced yellow
+  P('M26 44 Q22 52 26 56 Q30 52 26 44 Z', 'lo'),                    // the black vomit that marks severe cases
+]);
+def('acute_retroviral_syndrome', () => [                            // the first of three stages — see clinical_latency, aids
+  S('M6 46 L54 46', 'gh', 1.2),                                     // baseline
+  S('M6 40 Q20 10 30 14 Q40 18 54 36', 'bs', 2.4),                  // viral load, spiking hard and fast
+  S('M6 20 Q20 22 30 24 Q40 26 54 28', 'hi', 2),                    // CD4 count, barely dented yet
+  C(30, 14, 2, 'ik'),                                                // the peak, and the moment symptoms show
+]);
+def('clinical_latency', () => [                                     // stage two — years with nothing outward to show
+  S('M6 46 L54 46', 'gh', 1.2),
+  S('M6 34 Q30 32 54 30', 'bs', 2),                                 // viral load, quietly holding a steady low level
+  S('M6 16 Q30 26 54 40', 'hi', 2.4),                               // CD4, sliding down for years
+]);
+def('aids', () => [                                                  // stage three — the threshold crossed
+  S('M6 46 L54 46', 'gh', 1.2),
+  S('M6 32 Q30 20 54 12', 'bs', 2.4),                               // viral load, rising again as control is lost
+  S('M6 20 Q30 34 54 44', 'hi', 2.4),                                // CD4, crashing through the defining line
+  S('M6 44 L54 44', 'ik', 1),                                        // the 200-cell threshold, now crossed
+  C(46, 16, 2.6, 'lo'),                                              // and the opportunistic disease that follows
+]);
+def('needle_borne_hiv_transmission', () => [
+  P('M20 10 L26 10 L30 42 L24 50 L18 42 Z', 'hi'),                  // the needle
+  S('M23 10 L23 4', 'ik', 2),                                       // its shaft
+  C(30, 46, 3, 'lo'), C(30, 46, 1, 'ik'),                            // one drop of blood, carrying the virus — about 0.3% of the time
+]);
+def('perinatal_hiv_transmission', () => [
+  C(20, 24, 10, 'bs'),                                               // the parent
+  C(42, 42, 6, 'hi'),                                                // the child
+  S('M28 30 L36 38', 'gh', 3),                                       // the connection birth and feeding both open
+  C(32, 34, 1.6, 'lo'),                                              // the virus, riding across it
+]);
+def('human_herpesvirus_8', () => [
+  ring('bs', 24, 22, 9, 2.2), P(pentaPath(24, 22, .38), 'lo'),      // enveloped, same herpesvirus build
+  S('M10 46 Q30 38 50 46', 'gh', 4),                                // the blood vessel lining it will one day transform
+]);
+def('kaposis_sarcoma', () => [
+  P('M6 40 L54 40 L54 54 L6 54 Z', 'hi'),                            // the skin
+  C(16, 36, 5, 'lo'), C(30, 32, 6, 'lo'), C(42, 38, 4, 'lo'),        // purple-to-black nodules, raised
+]);
+def('pneumocystis_jirovecii', () => [
+  ring('bs', 22, 26, 7, 1.8), ring('bs', 38, 34, 6, 1.6),           // cyst walls
+  ...granules('lo', 4, 12, [18, 22, 26, 30]), ...granules('lo', 3, 44, [34, 30, 42, 38]), // spores, packed inside each
+]);
+def('pneumocystis_pneumonia', () => [
+  P('M20 10 Q10 20 12 36 Q14 50 26 52 L26 10 Z', 'bs'), P('M40 10 Q50 20 48 36 Q46 50 34 52 L34 10 Z', 'bs'), // both lungs
+  ...granules('gh', 14, 22, [12, 14, 48, 50]),                       // the hazy, ground-glass infiltrate that fills them
+]);
+def('toxoplasmic_encephalitis', () => [
+  P('M10 30 Q8 16 26 10 Q42 5 48 18 Q52 28 44 34 Q36 40 26 38 Q14 38 10 30 Z', 'gh'), // brain tissue, where the cysts had stayed dormant
+  C(22, 24, 3.4, 'lo'), C(34, 20, 3.4, 'lo'), C(30, 32, 3.4, 'lo'), // reactivating now that immunity is gone
+]);
+def('cytomegalovirus', () => [
+  C(40, 20, 9, 'gh'), C(40, 20, 5, 'lo'), ring('hi', 40, 20, 6, 1.2), // an infected cell's "owl's eye" inclusion
+  ring('bs', 16, 40, 7, 2), P(pentaPath(16, 40, .3), 'lo'),         // the virus itself, same herpesvirus build
+]);
+def('cmv_retinitis', () => [
+  P('M6 30 Q30 12 54 30 Q30 48 6 30 Z', 'gh'),                       // the eye, opened for its usual chapter
+  C(30, 30, 9, 'lo'),                                                // the retina, going dark
+  C(22, 26, 2.4, 'hi'), C(36, 32, 2, 'hi'), C(28, 36, 1.8, 'hi'),   // hemorrhage and necrosis spreading across it
+]);
+def('hiv_wasting_syndrome', () => [
+  P('M18 8 Q30 4 42 8 L44 40 Q30 52 16 40 Z', 'gh'),                 // the body, outlined thin
+  S('M20 16 Q30 19 40 16 M20 24 Q30 27 40 24 M20 32 Q30 35 40 32', 'lo', 1.4), // ribs, showing through
+  S('M30 44 L30 56', 'ik', 2), P('M26 52 L30 58 L34 52 Z', 'ik'),   // weight, still falling
+]);
+def('zidovudine', () => [
+  hex('bs', 20, 30, 9, 2),                                           // the sugar ring, thymidine's usual shape
+  S('M29 30 L40 30', 'ik', 2.4),                                     // reverse transcriptase, reaching to extend the chain
+  P('M40 26 L46 30 L40 34 Z', 'lo'),                                 // and stopping cold — no 3' hydroxyl there to grab
+]);
+def('haart', () => [
+  P('M10 14 L18 14 L18 22 L10 22 Z', 'bs'), P('M26 6 L34 6 L34 14 L26 14 Z', 'hi'), P('M42 14 L50 14 L50 22 L42 22 Z', 'bs'), // several drug classes, combined
+  C(30, 38, 7, 'gh'),                                                // the virus, boxed in and suppressed
+  S('M22 50 L38 50', 'lo', 3), C(30, 50, 1.6, 'ik'),                // but the provirus, still spliced into the host genome, untouched
+]);
+def('big_bang', () => [
+  C(30, 30, 3, 'hi'),                                                 // the singular hot, dense point it all began from
+  ...Array.from({ length: 10 }, (_, i) => { const a = i * 36 * Math.PI / 180;
+    return S(`M${n(30 + 4 * Math.cos(a))} ${n(30 + 4 * Math.sin(a))} L${n(30 + 26 * Math.cos(a))} ${n(30 + 26 * Math.sin(a))}`, 'bs', 1.6); }), // everything flying outward, still, in every direction
+  ...Array.from({ length: 6 }, (_, i) => { const a = i * 60 * Math.PI / 180;
+    return C(n(30 + 26 * Math.cos(a)), n(30 + 26 * Math.sin(a)), 1.6, 'lo'); }), // matter, condensing at the expanding edge
+]);
+def('universe', () => {                                              // composition, not appearance — 68/27/under 5
+  const seg = (a0deg, a1deg, role) => {
+    const a0 = (a0deg - 90) * Math.PI / 180, a1 = (a1deg - 90) * Math.PI / 180;
+    const x0 = n(30 + 24 * Math.cos(a0)), y0 = n(30 + 24 * Math.sin(a0));
+    const x1 = n(30 + 24 * Math.cos(a1)), y1 = n(30 + 24 * Math.sin(a1));
+    const large = (a1deg - a0deg) > 180 ? 1 : 0;
+    return P(`M30 30 L${x0} ${y0} A24 24 0 ${large} 1 ${x1} ${y1} Z`, role);
+  };
+  return [
+    seg(0, 244.8, 'lo'),                                             // dark energy — most of everything, least understood
+    seg(244.8, 342, 'bs'),                                           // dark matter
+    seg(342, 360, 'hi'),                                             // ordinary matter — stars, planets, us
+  ];
+});
+def('microbe', () => [                                               // the umbrella above every specific bug in this set
+  rod3('bs', 16, 44, 8, 3.4),                                        // a bacterium
+  P(pentaPath(42, 16, .35), 'hi'), S(pentaPath(42, 16, .35), 'ik', 1.2), // a virus
+  E(40, 42, 7, 5, 'lo'),                                              // a protozoan
+  C(16, 14, 4, 'gh'),                                                 // a yeast — too small to see without help
+]);
+def('pathogen', () => [                                              // a microbe, plus the one trait that makes it this
+  C(28, 32, 12, 'bs'), C(24, 28, 3, 'hi'),                            // an ordinary microbe
+  P('M40 24 L50 16 L44 28 Z', 'ik'),                                  // the barb a harmless one wouldn't carry
+]);
+def('infection', () => [                                             // established and multiplying — before any symptom shows
+  C(30, 32, 18, 'gh'),                                                // the host, outwardly unchanged
+  C(22, 26, 2.2, 'bs'), C(36, 28, 2.4, 'bs'), C(28, 38, 2, 'bs'), C(38, 38, 2.2, 'bs'), // the pathogen, already multiplying inside
+  S('M22 26 L28 30 M36 28 L30 32', 'lo', 1),                         // caught mid-division
+]);
+def('disease', () => [                                               // the same infection, but the harm now shows
+  P('M12 32 Q10 14 30 12 Q50 10 48 30 Q52 48 32 50 Q12 52 12 32 Z', 'lo'), // the host — its outline no longer smooth
+  C(22, 26, 2, 'bs'), C(36, 30, 2.2, 'bs'), C(26, 40, 1.8, 'bs'),    // the pathogen, still there
+  S('M14 20 L10 16 M46 18 L50 14 M16 46 L12 50', 'ik', 1.4),         // and now the damage shows
+]);
+
+
+/* microbiology batch pt.ac — bacterial anatomy, taxonomy history, extremophiles,
+ * named pathogens, protist/fungal phyla, worm parasites, and the immune
+ * signaling molecules that answer them back. Organisms are drawn for the one
+ * trait their fact line is actually about — Deinococcus for its tetrad and
+ * its shrugged-off radiation, Clostridium's terminal spore versus Bacillus
+ * anthracis's central one, spirochete's flagella wound inside the coil
+ * instead of trailing free. */
+def('lipopolysaccharide', () => [
+  S('M6 34 L54 34', 'ik', 3),                                       // the outer membrane it anchors into
+  ...[14, 30, 46].map(x => [
+    S(`M${x} 34 L${x - 3} 44 M${x} 34 L${x + 3} 44`, 'lo', 1.8),    // lipid A, its two tails anchored in
+    C(x, 22, 2.6, 'bs'),                                            // the core sugar
+    S(`M${x} 22 L${x + 4} 14 L${x + 2} 8`, 'hi', 1.6), C(n(x + 2), 8, 1.6, 'hi'),  // the O-antigen chain, trailing outward
+  ]).flat(),
+]);
+def('outer_membrane', () => [
+  ...Array.from({ length: 9 }, (_, i) => C(n(8 + i * 5.6), 20, 3.2, 'bs')),         // inner leaflet — ordinary phospholipid heads
+  ...Array.from({ length: 9 }, (_, i) => S(`M${n(8 + i * 5.6)} 23 L${n(8 + i * 5.6)} 39`, 'lo', 1.6)),  // tails, between the two faces
+  ...Array.from({ length: 9 }, (_, i) => [C(n(8 + i * 5.6), 42, 3.2, 'hi'), S(`M${n(8 + i * 5.6)} 45 L${n(8 + i * 5.6)} 50`, 'gh', 1.2)]).flat(),  // outer leaflet — a different face, deliberately
+]);
+def('periplasm', () => [
+  S('M8 14 L52 14', 'ik', 2.6),                                     // the outer membrane
+  S('M8 46 L52 46', 'ik', 2.6),                                     // the inner, plasma membrane
+  ...granules('bs', 14, 71, [10, 18, 50, 42]),                      // the gel between them, packed with enzymes
+]);
+def('porin', () => [
+  S('M4 24 L16 24 M44 24 L56 24', 'ik', 3),                         // the outer membrane, broken open around the barrel
+  ring('bs', 30, 24, 11, 3),                                        // beta-strands, ringed into a barrel
+  C(30, 24, 2, 'hi'),                                                // something under 600 daltons, passing straight through
+]);
+def('mycoplasma', () => [
+  S('M14 22 L46 22 Q50 30 46 38 L14 38 Q10 30 14 22 Z', 'gh', 1.6), // the rod shape it doesn't bother keeping
+  P('M16 20 Q10 30 18 40 Q28 46 40 40 Q48 34 42 22 Q32 16 16 20 Z', 'bs'),  // its actual soft, wall-less body
+]);
+def('coccus', () => [
+  ...[[20, 22], [34, 20], [24, 34], [38, 34], [30, 46]].map(([x, y]) => [C(x, y, 6.4, 'bs'), C(x - 1.6, y - 1.6, 1.6, 'hi')]).flat(),  // pairs, chains, or a grape-like cluster — same cell either way
+]);
+def('spirochete', () => [
+  S('M6 30 Q12 14 18 30 Q24 46 30 30 Q36 14 42 30 Q48 46 54 30', 'bs', 4),  // a corkscrew body
+  S('M6 30 Q12 14 18 30 Q24 46 30 30 Q36 14 42 30 Q48 46 54 30', 'ik', 1.2),  // its flagella, wound inside the coil, never trailing free
+]);
+def('proton_motive_force', () => [
+  S('M8 30 L52 30', 'ik', 3),                                       // the membrane
+  ...[10, 16, 22].map(x => C(x, 14, 2, 'bs')),                      // protons, piled on one side
+  C(30, 30, 4, 'gh'),                                                // the channel they're about to cross
+  S('M30 30 L30 46', 'hi', 2), C(30, 50, 3, 'hi'),                  // and the turbine that flow spins on the other side
+]);
+def('bacterial_flagellum', () => [
+  ring('bs', 30, 44, 9, 2.4), ring('lo', 30, 44, 5, 2),             // the rotor, stacked rings in the cell envelope
+  S('M30 40 Q26 28 32 18 Q38 8 30 4', 'ik', 3),                     // the corkscrew filament, spinning free
+  S('M18 44 A12 12 0 0 1 28 33', 'hi', 1.4),                        // the motor turning it, up to 100,000 rpm
+]);
+def('chemotaxis', () => [
+  E(16, 18, 7, 5, 'bs'),
+  S('M9 18 Q4 15 3 20 M9 18 Q4 18 2 17 M9 18 Q4 21 3 15', 'ik', 1.6),  // bundled, beating together — a smooth run
+  S('M16 18 L28 18', 'hi', 1.6),
+  E(44, 44, 7, 5, 'bs'),
+  S('M37 44 Q30 38 34 34 M37 44 Q28 46 24 48 M37 44 Q34 50 28 54', 'ik', 1.6),  // flown apart — a tumble, no direction left at all
+]);
+def('pilus', () => [
+  rod3('bs', 30, 22, 13, 5),
+  S('M6 48 L54 48', 'ik', 2),                                       // the surface
+  ...[18, 26, 34, 42].map(x => S(`M${x} 27 L${x} 48`, 'hi', 1)),    // thin pili, gripping onto it
+]);
+def('conjugation', () => [
+  rod3('bs', 14, 42, 9, 4), rod3('hi', 46, 16, 9, 4),                // a donor and a recipient, not yet touching
+  S('M22 38 Q30 28 38 18', 'gh', 1.4),                               // the sex pilus, reeling the recipient in
+  S('M22 38 L38 18', 'ik', 2.2),                                     // and a single strand, crossing once it does
+  C(30, 28, 1.8, 'lo'),
+]);
+def('transduction', () => [
+  rod3('gh', 16, 44, 10, 4),                                        // the old host, already burst
+  P('M16 14 L24 18 L24 26 L16 30 L8 26 L8 18 Z', 'bs'),             // its capsid, carrying someone else's DNA by mistake
+  ring('hi', 16, 22, 4, 1.6),                                       // bacterial DNA, packaged instead of its own
+  S('M24 22 L42 30', 'ik', 2),
+  rod3('bs', 46, 36, 10, 4),                                        // the next cell, about to receive it
+]);
+def('nucleoid', () => [
+  rod3('gh', 30, 30, 15, 6),                                        // the cell it sits loose inside — no membrane bounds it
+  S('M18 26 Q24 20 30 26 Q36 32 30 34 Q22 36 24 30 Q28 24 34 28 Q40 32 36 36', 'bs', 2),  // a tangle, compacted a thousandfold, free in the cytoplasm
+]);
+def('capsule', () => [
+  rod3('bs', 30, 32, 12, 5),
+  E(30, 32, 22, 14, 'gh'),                                          // the slick capsule, well clear of the cell itself
+  S('M50 20 Q56 26 50 34', 'lo', 2),                                // a phagocyte's grip, sliding off it
+]);
+def('poly_hydroxybutyrate', () => [
+  rod3('gh', 30, 30, 14, 6),
+  ...[[20, 26], [30, 32], [40, 28], [24, 35], [36, 35]].map(([x, y]) => C(x, y, 3.2, 'bs')),  // storage granules, stockpiled while food is plentiful
+]);
+def('peroxisome', () => [
+  C(30, 32, 16, 'gh'),                                              // its single membrane
+  facet('bs', .5),                                                  // the catalase crystal at its core
+  ...[[18, 20], [42, 22], [20, 44]].map(([x, y]) => C(x, y, 1.6, 'hi')),  // hydrogen peroxide, broken down
+]);
+def('aquaporin', () => [
+  S('M6 10 L54 10 M6 50 L54 50', 'ik', 3),                          // the two membrane faces it spans
+  S('M30 10 L30 50', 'gh', 6),                                      // its own narrow, single-file pore
+  ...[16, 24, 32, 38, 44].map(y => C(30, y, 1.6, 'hi')),            // water, streaming through — nothing else fits
+  C(48, 6, 2.2, 'lo'), S('M48 6 L44 10', 'ik', 1),                  // an ion, turned away outside
+]);
+def('epidermis', () => [
+  ...[8, 20, 32, 44].map(x => P(`M${x} 40 L${x + 10} 40 L${x + 10} 48 L${x} 48 Z`, 'hi')),  // flat, stacked dead cells — the outermost layer
+  ...[14, 26, 38].map(x => P(`M${x} 26 L${x + 10} 26 L${x + 10} 34 L${x} 34 Z`, 'bs')),      // younger cells, still underneath
+  ...[10, 24, 38].map(x => C(x + 3, 14, 2, 'gh')),                  // flakes, already shedding off the top
+]);
+def('dermis', () => [
+  ...[14, 26, 38, 50].map(x => S(`M${x} 6 Q${x - 4} 30 ${x} 54`, 'bs', 2)),   // collagen bundles, woven through
+  ...[8, 20, 32, 44].map(x => S(`M${x} 54 Q${x + 4} 30 ${x} 6`, 'hi', 1.4)), // elastic fibers, crossing them
+  S('M4 26 Q30 20 56 26', 'lo', 3),                                 // a blood vessel, threading past
+  S('M30 46 L30 34 M30 34 L24 28 M30 34 L36 28', 'ik', 1.4),        // a nerve ending, branching to meet it
+]);
+def('plant_epidermis', () => [
+  ...[6, 20, 34, 48].map(x => P(`M${x} 8 L${x + 12} 8 L${x + 12} 20 L${x} 20 Z`, 'gh')),  // the epidermis — one layer, almost no chloroplasts
+  P('M4 24 L56 24 L56 50 L4 50 Z', 'bs'),                           // mesophyll beneath it, green and busy
+  ...[[14, 34], [30, 40], [44, 34]].map(([x, y]) => C(x, y, 2, 'hi')),
+  C(30, 14, 1.6, 'hi'),                                              // the one exception — a guard cell, keeping its own
+]);
+def('plant_cuticle', () => [
+  P('M4 30 L56 30 L56 38 L4 38 Z', 'bs'),                           // the leaf's own surface cells
+  S('M4 26 Q30 20 56 26', 'gh', 3),                                 // the waxy film they secrete over themselves
+  ...[[14, 16], [30, 12], [44, 18]].map(([x, y]) => E(x, y, 4, 5, 'hi')),  // water, beading up instead of soaking in
+]);
+def('three_domain_system', () => [
+  S('M30 54 L30 40', 'ik', 3),
+  S('M30 40 L12 18 M30 40 L30 6 M30 40 L48 18', 'bs', 2.4),         // one root, splitting into three domains at once
+  rod3('lo', 12, 13, 6, 2.4),                                       // Bacteria
+  rod3('hi', 48, 13, 6, 2.4),                                       // Archaea — its own branch, not a variant of bacteria
+  C(30, 6, 4, 'lo'), C(30, 6, 1.8, 'ground'),                       // Eucarya, with a nucleus of its own
+]);
+def('bergeys_manual', () => [
+  P('M14 8 L46 8 L46 52 L14 52 Z', 'bs'),                           // the reference volume itself
+  ...[14, 22, 30, 38, 46].map(y => S(`M46 ${y} L50 ${y}`, 'lo', 1.4)),  // tabs, one per catalogued group
+  S('M20 18 L40 18 M20 26 L40 26 M20 34 L40 34', 'hi', 1.4),        // entries, ruled inside
+]);
+def('binomial_nomenclature', () => [
+  P('M10 20 L34 14 L36 20 L12 26 Z', 'bs'),                         // Genus — capitalized, first
+  P('M14 34 L40 30 L41 36 L15 40 Z', 'hi'),                         // species — lowercase, second
+  C(10, 20, 1.6, 'ik'),                                              // the one letter that's capitalized
+]);
+def('carl_woese', () => [                                          // compared ribosomal RNA and found a domain hiding in plain sight
+  rod3('bs', 18, 30, 10, 4), rod3('bs', 42, 30, 10, 4),             // two cells, alike to the naked eye
+  ring('ik', 42, 30, 15, 1.4),                                      // a lens, turned on the second one
+  S('M30 20 L30 12 M26 16 L34 16', 'hi', 1.4),                      // and a whole domain, found hiding in it
+]);
+def('phylogenetic_tree', () => [
+  S('M4 54 L54 54', 'lo', 1.4),                                     // a common root, along the base
+  S('M10 54 L10 40 L20 24 M10 40 L4 20', 'bs', 2),                  // one lineage, forking — one branch dying out early
+  S('M30 54 L30 16', 'bs', 2),
+  S('M46 54 L46 30 L54 12 M46 30 L38 10', 'bs', 2),
+  C(20, 24, 2, 'gh'), C(4, 20, 2, 'gh'),                            // extinct tips, short of the top
+  C(30, 16, 2.4, 'hi'), C(54, 12, 2.4, 'hi'), C(38, 10, 2.4, 'hi'), // living tips, still reaching it
+]);
+def('extreme_halophile', () => [
+  rod3('lo', 30, 34, 12, 5),                                        // an archaeal cell, at home where little else survives
+  ...[[10, 14], [46, 12], [14, 48], [48, 46], [6, 30]].map(([x, y]) => P(`M${x} ${y - 3} L${x + 3} ${y} L${x} ${y + 3} L${x - 3} ${y} Z`, 'hi')),  // salt, crystallizing all around it
+]);
+def('hyperthermophile', () => [
+  rod3('lo', 26, 38, 11, 5), rod3('lo', 40, 24, 9, 4),              // an archaeal cell, thriving where nothing else can
+  ...[14, 30, 46].map(x => S(`M${x} 54 Q${x - 3} 40 ${x} 26 Q${x + 3} 12 ${x} 4`, 'gh', 1.4)),  // heat, shimmering past it
+  C(10, 46, 1.8, 'bs'), C(50, 40, 1.8, 'bs'), C(8, 20, 1.8, 'bs'), // and bubbles, boiling through
+]);
+def('nitrogen_fixation', () => [
+  C(14, 16, 3.2, 'lo'), C(20, 16, 3.2, 'lo'), S('M14 16 L20 16 M14 14 L20 14 M14 18 L20 18', 'ik', 1),  // N2, locked in a triple bond
+  E(30, 32, 9, 7, 'bs'),                                            // nitrogenase, prying it apart
+  ...[[44, 18], [50, 30], [44, 42]].map(([x, y]) => [C(x, y, 2.6, 'hi'), S(`M${x - 4} ${y + 3} L${x} ${y} M${x + 4} ${y + 3} L${x} ${y}`, 'ik', 1)]).flat(),  // ammonia, usable at last
+]);
+def('heterocyst', () => [
+  rod3('bs', 30, 8, 13, 4), rod3('hi', 30, 20, 13, 4), rod3('bs', 30, 44, 13, 4), rod3('hi', 30, 56, 13, 4),  // an ordinary filament, cell after cell
+  ring('ik', 30, 32, 9, 2.4), rod3('gh', 30, 32, 13, 4),            // one cell, walled thick to fix nitrogen in its own oxygen-free bubble
+]);
+def('rickettsia', () => [
+  E(28, 32, 20, 15, 'gh'),                                          // a host cell — the only place it can survive
+  ...[[20, 26], [32, 24], [24, 36], [36, 34]].map(([x, y]) => C(x, y, 2.2, 'bs')),  // itself, packed inside, dividing
+  C(52, 10, 2, 'gh'), S('M49 7 L55 13 M55 7 L49 13', 'ik', 1),      // outside the cell, it simply dies
+]);
+def('chlamydia_bacterium', () => [
+  E(32, 30, 18, 14, 'gh'),                                          // the host cell it never leaves
+  C(18, 26, 3, 'bs'),                                                // elementary body — dense, built just to infect
+  E(36, 38, 7, 5, 'hi'),                                             // reticulate body — larger, actually growing
+  S('M22 28 Q28 32 32 36', 'ik', 1),                                // one converting into the other, and back again
+]);
+def('myxobacteria', () => [
+  ...[[14, 48], [22, 44], [10, 40], [26, 50]].map(([x, y]) => rod3('bs', x, y, 5, 2)),  // the wolf pack, hunting together
+  S('M40 50 L40 26', 'lo', 3),                                      // and, starved, the stalk it raises
+  C(40, 18, 7, 'hi'),                                                // a fruiting body, built from its own cells
+]);
+def('deinococcus_radiodurans', () => [
+  ...[[22, 24], [38, 24], [22, 40], [38, 40]].map(([x, y]) => C(x, y, 7, 'bs')),  // its signature tetrad — four cells, always packed as one
+  ...[0, 90, 180, 270].map(a => {
+    const r1 = a * Math.PI / 180;
+    return S(`M${n(30 + 26 * Math.cos(r1))} ${n(32 + 26 * Math.sin(r1))} L${n(30 + 19 * Math.cos(r1))} ${n(32 + 19 * Math.sin(r1))}`, 'gh', 1.6);
+  }),                                                                 // gamma radiation, arriving from every side
+  ring('ik', 30, 32, 19, 1.4),                                      // and shrugged off at the boundary — repaired before it matters
+]);
+def('thermus_aquaticus', () => [
+  wave('gh', 48, 5, 26),                                             // the scalding spring it was found thriving in
+  rod3('bs', 30, 30, 13, 5),
+  S('M16 46 Q16 36 16 26', 'lo', 1.4), S('M44 46 Q44 36 44 26', 'lo', 1.4),  // heat, rippling past on both sides
+]);
+def('bdellovibrio', () => [
+  rod3('gh', 38, 32, 13, 5),                                        // the prey, larger and slower
+  C(38, 32, 3, 'bs'),                                                // it, already inside — eating from within
+  S('M10 20 Q16 24 20 28', 'bs', 2.4), S('M20 28 L26 30', 'ik', 1.4),  // and its approach, a blur of speed
+  S('M4 14 L10 20 M4 24 L14 26', 'lo', 1),                          // motion lines — that's how fast
+]);
+def('clostridium', () => [
+  rod3('bs', 24, 30, 10, 5),
+  C(40, 30, 7, 'hi'), ring('ik', 40, 30, 7, 1.6),                   // a terminal spore, swelling one end into its "drumstick" shape
+  C(10, 12, 2, 'lo'), S('M10 12 L14 16 M10 12 L6 16', 'ik', 1),     // and the toxin one cell alone can make plenty of
+]);
+def('bacillus_anthracis', () => [
+  rod3('bs', 15, 30, 8, 4), rod3('bs', 30, 30, 8, 4), rod3('bs', 45, 30, 8, 4),  // cells, linked end to end in a chain
+  ...[15, 30, 45].map(x => C(x, 30, 2.6, 'hi')),                    // spores, centered in each — not terminal, like clostridium's
+  mound('gh', 54, 16, 8),                                            // and the soil they can wait in for decades
+]);
+def('mycobacterium_tuberculosis', () => [
+  rod3('hi', 30, 32, 15, 7),                                        // a waxy coat, unusually thick
+  rod3('bs', 30, 32, 11, 5),                                        // the cell inside it
+  C(12, 12, 2, 'gh'), S('M12 12 L12 18', 'ik', 1.2),                // a stain, beaded up — it can't grip the wax
+]);
+def('pseudomonas_aeruginosa', () => [
+  rod3('bs', 30, 32, 13, 5),
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => {
+    const r1 = a * Math.PI / 180;
+    return S(`M${n(30 + 16 * Math.cos(r1))} ${n(32 + 7 * Math.sin(r1))} L${n(30 + 22 * Math.cos(r1))} ${n(32 + 10 * Math.sin(r1))}`, 'hi', 1.2);
+  }),                                                                 // its own blue-green glow
+  S('M46 10 L52 16 M52 10 L46 16', 'ik', 1.6),                      // and the antibiotics it just shrugs off
+]);
+def('legionella', () => [
+  S('M4 12 L4 50 M56 12 L56 50', 'ik', 2.6),                        // the water pipe it hides inside
+  P('M20 20 Q12 26 16 36 Q22 46 32 42 Q44 38 42 26 Q38 18 28 20 Q22 16 20 20 Z', 'gh'),  // an amoeba, living in the water
+  rod3('bs', 24, 28, 5, 2), rod3('bs', 32, 36, 5, 2),               // and itself, hiding safe inside it
+]);
+def('chytrid', () => [
+  C(22, 28, 8, 'bs'),                                                // its spore body, round like any fungal spore
+  S('M30 28 Q44 24 52 32', 'ik', 2.2),                              // but with a flagellum, swimming — no other fungus has one
+  S('M8 50 Q30 46 52 50', 'gh', 2.4),                               // amphibian skin, where it lands
+  C(16, 48, 1.6, 'lo'), C(30, 50, 1.6, 'lo'),
+]);
+def('zygomycete', () => [
+  S('M18 54 L18 22', 'lo', 2.6), C(18, 16, 8, 'bs'), ...granules('hi', 5, 91, [12, 10, 24, 16]),  // a sporangium, bursting with spores
+  C(42, 44, 7, 'gh'),
+  ...[0, 60, 120, 180, 240, 300].map(a => {
+    const r1 = a * Math.PI / 180;
+    return S(`M${n(42 + 7 * Math.cos(r1))} ${n(44 + 7 * Math.sin(r1))} L${n(42 + 10 * Math.cos(r1))} ${n(44 + 10 * Math.sin(r1))}`, 'ik', 1.2);
+  }),                                                                 // and a tough, warty zygospore, dormant beside it
+]);
+def('ascomycete', () => [
+  P('M20 10 Q14 32 20 54 Q30 58 40 54 Q46 32 40 10 Q30 6 20 10 Z', 'gh'),  // the ascus, a sac
+  ...Array.from({ length: 8 }, (_, i) => C(30, 12 + i * 4.4, 2, i % 2 ? 'bs' : 'hi')),  // eight ascospores, in a row inside it
+]);
+def('basidiomycete', () => [
+  S('M30 52 Q26 32 30 14', 'bs', 5),                                // the basidium, a swollen club
+  ...[[20, 10], [27, 4], [34, 4], [41, 10]].map(([x, y]) => [S(`M30 14 L${x} ${y}`, 'ik', 1), C(x, y, 2.2, 'hi')]).flat(),  // four spores, budding at its tip
+]);
+def('apicomplexan', () => [
+  E(34, 34, 18, 13, 'gh'),                                          // the host cell it targets
+  P('M14 20 Q22 8 30 20 Q26 26 18 26 Z', 'bs'),                     // its own body, tapered to a drilling point
+  C(17, 19, 1.8, 'ik'),                                              // the apical complex, packed into that tip
+]);
+def('oomycete', () => [
+  leaf('gh', 30, 30, 1.6),                                          // the leaf it infects
+  ...[[18, 26], [32, 20], [40, 32]].map(([x, y]) => C(x, y, 3, 'lo')),  // blighted patches, spreading across it
+  S('M30 46 L30 54', 'bs', 2), C(30, 57, 4, 'hi'),                  // and the oospore left behind, thick-walled and dormant
+]);
+def('trypanosoma', () => [
+  P('M8 32 Q16 20 30 22 Q46 24 52 32 Q46 40 30 42 Q16 44 8 32 Z', 'gh'),  // its old surface coat, already shed
+  P('M10 32 Q18 23 30 25 Q44 27 50 32 Q44 37 30 39 Q18 41 10 32 Z', 'bs'),  // and the new one it just swapped in
+  S('M50 32 L58 29', 'ik', 1.6),                                     // the whip tail, trailing off the back
+]);
+def('leishmania', () => [
+  P('M8 14 Q14 8 22 14 Q26 18 20 22 Q12 22 8 14 Z', 'bs'), S('M22 14 L30 10', 'ik', 1.4),  // whip-tailed, riding in the sandfly
+  E(42, 42, 12, 10, 'gh'),                                          // a human immune cell, once bitten in
+  C(42, 42, 4, 'hi'),                                                // and itself, now round, hiding inside it
+]);
+def('naegleria_fowleri', () => [
+  wave('gh', 46, 4, 24),                                             // warm, standing freshwater
+  P('M18 22 Q10 16 16 8 Q24 4 28 12 Q36 6 42 14 Q50 12 48 22 Q52 32 42 36 Q46 44 36 40 Q26 46 18 34 Q10 28 18 22 Z', 'bs'),  // the amoeba itself
+  C(30, 24, 2, 'lo'),
+]);
+def('nematode', () => [
+  S('M6 30 Q20 14 30 30 Q40 46 54 30', 'bs', 4),                    // a smooth, unsegmented body, tapered at both ends
+  ...[14, 24, 34, 44].map(x => C(x, 30, 1, 'ik')),                  // its nervous system — mapped neuron by neuron, the first of any animal
+]);
+def('tapeworm', () => [
+  C(8, 30, 4, 'bs'),
+  ...[0, 60, 120, 180, 240, 300].map(a => {
+    const r1 = a * Math.PI / 180;
+    return S(`M${n(8 + 4 * Math.cos(r1))} ${n(30 + 4 * Math.sin(r1))} L${n(8 + 6.5 * Math.cos(r1))} ${n(30 + 6.5 * Math.sin(r1))}`, 'ik', 1);
+  }),                                                                 // the scolex, hooked to grip the gut wall
+  ...[16, 24, 32, 40, 48].map(x => P(`M${x} 24 L${x + 6} 24 L${x + 6} 36 L${x} 36 Z`, 'hi')),  // segment after segment, absorbing food through its own skin
+]);
+def('trematode', () => [
+  E(30, 30, 18, 10, 'bs'),                                          // its flat body
+  ring('lo', 18, 28, 4, 1.6),                                       // the oral sucker, up front
+  ring('lo', 34, 32, 5, 1.8),                                       // the ventral sucker, mid-body
+]);
+def('proto_oncogene', () => [
+  S('M6 34 L54 34', 'gh', 3),                                       // an ordinary strand
+  S('M20 34 L38 34', 'bs', 6),                                      // the growth gene, working exactly as it should
+  S('M28 26 L28 42', 'ik', 1.6), C(28, 34, 2.4, 'hi'),              // one base — the single point one mutation away from an oncogene
+]);
+def('mimivirus', () => [
+  P('M30 8 L48 18 L48 38 L30 48 L12 38 L12 18 Z', 'bs'),            // an oversized capsid — mistaken, at first, for a bacterium
+  S('M30 8 L48 18 L48 38 L30 48 L12 38 L12 18 Z', 'ik', 2),
+  S('M22 24 Q30 30 22 36 Q30 40 26 34', 'hi', 1.6),                 // a genome inside it, big enough to rival a real cell's
+  P('M50 46 L54 48 L54 52 L50 54 L46 52 L46 48 Z', 'gh'),           // an ordinary virus, for scale
+]);
+def('plaque_assay', () => [
+  ...granules('bs', 46, 201, [4, 4, 56, 56]),                       // a bacterial lawn, grown thick across the plate
+  ...[[18, 20, 7], [40, 34, 5], [26, 46, 4]].map(([x, y, r]) => [C(x, y, r, 'ground'), ring('ik', x, y, r, 1.4)]).flat(),  // clear plaques — count the rings, know the titer
+]);
+def('restriction_modification_system', () => [
+  S('M10 14 L10 46', 'bs', 3),                                      // foreign DNA, unmarked
+  S('M10 30 L4 24 M10 30 L16 24', 'ik', 2),                         // cut clean through on sight
+  S('M42 14 L42 46', 'hi', 3),                                      // its own DNA
+  ...[20, 30, 40].map(y => C(46, y, 1.6, 'lo')),                    // methyl tags, keeping it safe from its own scissors
+]);
+def('cytokine', () => [
+  E(14, 30, 9, 11, 'bs'),                                            // the cell that made it
+  ...[[26, 22], [32, 30], [26, 38]].map(([x, y]) => C(x, y, 2, 'hi')),  // the signal, sent outward
+  E(48, 30, 9, 11, 'gh'),                                             // a neighboring cell, about to receive it
+]);
+def('interferon', () => [
+  E(14, 30, 8, 10, 'gh'), P('M11 27 L17 27 L17 33 L11 33 Z', 'bs'), // an infected cell, virus already inside
+  S('M22 24 L34 18 M22 36 L34 42', 'ik', 1.4),                      // its warning, sent out ahead of the infection
+  ring('hi', 44, 16, 7, 1.8), ring('hi', 44, 44, 7, 1.8),           // neighbors, already raising their own defenses
+]);
+def('complement_system', () => [
+  rod3('gh', 30, 38, 13, 5),                                        // the invader, targeted
+  ring('bs', 30, 22, 8, 3),                                          // the complex three separate pathways build together
+  ...[[10, 10], [50, 10], [10, 48]].map(([x, y]) => C(x, y, 2.6, 'hi')),  // three pathways, one converging outcome — a hole punched clean through
+]);
+
+/* mineral — completeness batch: Nordic and Baltic states, the European
+   microstates, the Balkans, Central and Eastern Europe, the Caucasus, the Horn
+   of Africa, the Great Lakes and southern Africa, the Indian Ocean and Atlantic
+   island states, and Central Africa. Each one is drawn from its own fact —
+   never an outline of the country, which at 18px is a blob either way. */
+
+def('iceland', () => [                                             // the only large island astride a mid-ocean ridge at sea level
+  P('M2 20 L24 20 L26 32 L22 46 L2 46 Z', 'bs'),                    // the North American plate
+  P('M58 20 L38 20 L34 32 L38 46 L58 46 Z', 'bs'),                  // the Eurasian plate
+  S('M30 10 L27 26 L33 40 L30 54', 'ik', 2.4),                      // the rift between them, open to the sky
+  S('M18 33 L8 33 M42 33 L52 33', 'gh', 1.4),                       // the two of them, still pulling apart
+]);
+def('norway', () => [                                              // 29,000 km of coast with the fjords counted in, 2,500 km without
+  P('M22 6 L52 6 L52 54 L22 54 Z', 'bs'),
+  S('M9 6 L9 54', 'gh', 1.6),                                       // the coast measured straight
+  S('M22 13 L43 13 M22 22 L37 22 M22 31 L46 31 M22 40 L35 40 M22 48 L41 48', 'hi', 3),  // and measured into every fjord
+]);
+def('finland', () => [                                             // over 180,000 lakes — and in 1906 the first universal suffrage in Europe
+  P('M12 6 L48 6 L45 42 L15 42 Z', 'bs'),
+  ...[[21, 13, 4.4, 2.8], [35, 11, 5, 3.2], [27, 22, 5.6, 3.6], [41, 24, 3.6, 2.4],
+      [19, 30, 4.6, 3], [34, 34, 5.2, 3.4], [26, 38, 3.4, 2.2]].map(([x, y, rx, ry]) => E(x, y, rx, ry, 'hi')),
+  P('M17 46 L43 46 L43 57 L17 57 Z', 'hi'),
+  S('M23 51 L27 55 L37 47', 'ik', 2.4),                             // 1906 — the first ballot open to everyone
+]);
+def('estonia', () => [                                             // Estonian is Finnic, not Indo-European — and 2,300 Baltic islets
+  S('M45 54 L45 24 M45 36 L35 26 M45 32 L55 22 M45 42 L37 34', 'gh', 2),  // the Indo-European tree, all around it
+  S('M14 54 L14 22', 'bs', 3.4),                                    // Estonian, on a stem of its own
+  leaf('bs', 8, 17, .6, -30), leaf('hi', 21, 15, .6, 30),
+  ...[[26, 50], [33, 45], [24, 41]].map(([x, y]) => E(x, y, 2.8, 1.8, 'hi')),  // a few of its 2,300 islets
+]);
+def('lithuania', () => [                                           // 11 March 1990 — the first Soviet republic to declare independence restored
+  P('M25 25 L53 25 L53 32 L25 32 Z', 'gh'), P('M25 37 L53 37 L53 44 L25 44 Z', 'gh'),
+  P('M25 49 L53 49 L53 56 L25 56 Z', 'gh'),                         // the other republics, still in rank
+  P('M5 9 L33 9 L33 18 L5 18 Z', 'bs'),                             // the one that stepped out first
+  S('M36 14 L47 14 M43 10 L47 14 L43 18', 'ik', 1.8),
+]);
+def('latvia', () => [                                              // declared 18 November 1918, and had to declare it again 21 August 1991
+  S('M11 54 L11 13', 'bs', 3), P('M11 13 L29 17 L11 22 Z', 'bs'),   // raised the first time
+  S('M25 54 L41 47', 'gh', 3),                                      // and brought down in between
+  S('M50 54 L50 13', 'bs', 3), P('M50 13 L34 17 L50 22 Z', 'hi'),   // and raised again, seventy-three years later
+]);
+def('denmark', () => [                                             // its highest point reaches 170.86 m; the rest is 406 islands
+  P('M5 33 L5 49 L24 49 L24 29 Q15 27 11 32 Z', 'bs'),              // Jutland, the one piece attached to anything
+  P('M10 32 Q15 24 20 32 Z', 'hi'),                                 // Møllehøj — the whole of the country's height
+  ...[[33, 29], [43, 25], [51, 34], [36, 41], [47, 44], [30, 39], [55, 20]].map(([x, y]) => E(x, y, 3.4, 2.4, 'bs')),
+  S('M4 54 L56 54', 'gh', 1.4),
+]);
+def('belgium', () => [                                             // first on the continent to industrialise, and now the EU's de facto capital
+  P('M9 54 L9 22 L17 22 L17 54 Z', 'bs'), P('M19 54 L19 30 L27 30 L27 54 Z', 'lo'),  // the first chimneys in continental Europe
+  ...puff('gh', 14, 12, .6),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return C(n(42 + 11 * Math.cos(a)), n(28 + 11 * Math.sin(a)), 2, 'hi');
+  }),                                                               // the ring of stars that ended up headquartered here
+]);
+def('luxembourg', () => [                                          // the last sovereign grand duchy — and in 2020 the first to make transport free
+  P('M16 15 L20 6 L25 15 L30 4 L35 15 L40 6 L44 15 Z', 'hi'),      // the grand-ducal coronet
+  S('M15 18 L45 18', 'lo', 2.4),
+  P('M13 25 L47 25 L47 45 L13 45 Z', 'bs'),                         // the tram anyone may board
+  P('M19 29 L28 29 L28 37 L19 37 Z', 'hi'), P('M32 29 L41 29 L41 37 L32 37 Z', 'hi'),
+  C(21, 49, 3.4, 'lo'), C(39, 49, 3.4, 'lo'),
+]);
+def('liechtenstein', () => [                                       // doubly landlocked — landlocked, and ringed by landlocked states
+  wave('gh', 7, 2, 26), wave('gh', 57, 2, 26),                      // the sea, two countries away in every direction
+  ring('lo', 30, 31, 25, 1.6),                                      // its neighbours' neighbours
+  ring('bs', 30, 31, 15, 2.6),                                      // its own neighbours
+  C(30, 31, 5.5, 'hi'),
+]);
+def('andorra', () => [                                             // Europe's highest capital, at 1,023 m — and two heads of state at once
+  P('M4 54 L30 9 L56 54 Z', 'lo'),
+  P('M24 31 L36 31 L36 23 L24 23 Z', 'bs'), S('M22 23 L30 15 L38 23', 'bs', 2.4),  // the capital, above every other in Europe
+  C(19, 45, 3.6, 'hi'), C(41, 45, 3.6, 'hi'),                       // its co-princes, neither one alone
+  S('M23 45 L37 45', 'ik', 1.2),
+]);
+def('san_marino', () => [                                          // by tradition founded AD 301 — the oldest state still standing
+  P('M6 55 L16 33 L44 33 L54 55 Z', 'lo'),                          // Monte Titano
+  P('M17 33 L23 33 L23 19 L17 19 Z', 'bs'), P('M27 33 L33 33 L33 11 L27 11 Z', 'bs'),
+  P('M37 33 L43 33 L43 19 L37 19 Z', 'bs'),                         // its three towers
+  P('M17 19 L20 13 L23 19 Z', 'hi'), P('M27 11 L30 5 L33 11 Z', 'hi'), P('M37 19 L40 13 L43 19 Z', 'hi'),
+]);
+def('monaco', () => [                                              // 2.08 km², and the most densely populated country there is
+  wave('lo', 55, 2, 26),
+  P('M9 51 L51 51 L51 46 L9 46 Z', 'bs'),                           // the whole of the country, edge to edge
+  ...[[11, 21], [16, 12], [21, 25], [26, 8], [31, 19], [36, 10], [41, 23], [46, 15]]
+    .map(([x, y]) => P(`M${x} 46 L${x + 4} 46 L${x + 4} ${y} L${x} ${y} Z`, 'hi')),  // and every one of them stacked upward
+]);
+def('malta', () => [                                               // its megalithic temples, begun 3500 BC, still stand free
+  P('M14 40 L22 40 L22 20 L14 20 Z', 'bs'), P('M38 40 L46 40 L46 20 L38 20 Z', 'bs'),
+  P('M10 20 L50 20 L50 11 L10 11 Z', 'lo'),                         // the lintel, carried across since 3500 BC
+  C(20, 50, 6.5, 'gh'), C(40, 50, 6.5, 'gh'), C(30, 43, 6.5, 'gh'), // the lobed plan of the temple behind it
+]);
+def('cyprus', () => [                                              // a cat buried here 9,500 years ago, older than Egypt
+  P('M7 29 Q30 21 53 29 L53 56 L7 56 Z', 'lo'),                     // the grave pit
+  E(31, 43, 12.5, 8, 'bs'),                                         // the cat, curled where it was laid
+  C(20, 36, 5.5, 'bs'), P('M15 33 L16 26 L21 31 Z', 'bs'), P('M23 31 L26 25 L27 33 Z', 'bs'),
+  C(18, 35, 1.3, 'ik'),
+  S('M42 41 Q51 42 48 51', 'hi', 2.2),                              // its tail, laid round the body
+]);
+def('bulgaria', () => [                                            // Cyrillic was cut at Preslav, and Varna left the oldest gold jewellery on Earth
+  S('M19 9 L19 35 L32 35 L32 22 L19 22', 'ik', 3.4),                // Б — the shape of the script made here
+  S('M40 9 L40 35 M40 9 L50 9 M40 22 L49 22', 'ik', 2.6),
+  ...[[12, 46], [21, 50], [30, 52], [39, 50], [48, 46]].map(([x, y]) => C(x, y, 3.4, 'bs')),  // Varna's gold, 6,000 years old
+  S('M9 42 Q30 57 51 42', 'hi', 1.4),
+]);
+def('north_macedonia', () => [                                     // roughly the northern third of the Macedonia region, drained by the Vardar
+  P('M9 7 L51 7 L47 29 L13 29 Z', 'bs'),                            // the third that is the country
+  S('M8 29 L52 29 L48 53 L12 53 Z', 'gh', 1.2),                     // the two thirds that are not
+  S('M41 9 Q34 21 30 33 Q26 44 21 54', 'hi', 3.4),                  // the Vardar, carrying it all south
+  E(15, 45, 8, 5, 'lo'),                                            // its share of Lake Ohrid
+]);
+def('albania', () => [                                             // Skanderbeg held the Ottoman advance off for more than two decades
+  P('M18 51 Q13 28 30 24 Q47 28 42 51 Z', 'bs'),                    // the helmet
+  S('M30 51 L30 33', 'ik', 1.8),                                    // its nasal bar
+  P('M24 24 Q22 11 13 7 Q24 8 28 20 Z', 'lo'), P('M36 24 Q38 11 47 7 Q36 8 32 20 Z', 'lo'),  // the goat's horns of its crest
+  S('M4 22 L13 26 M4 36 L13 38', 'gh', 1.8),                        // twenty-five years of advance, turned back
+]);
+def('montenegro', () => [                                          // Crna Gora, 'black mountain', after Lovćen's dark evergreens
+  P('M3 55 L21 19 L34 38 L46 13 L57 55 Z', 'lo'),                   // Lovćen
+  ...[[13, 45], [22, 41], [31, 47], [40, 41], [48, 45], [26, 32], [43, 30]]
+    .map(([x, y]) => P(`M${x - 4} ${y + 7} L${x} ${y - 7} L${x + 4} ${y + 7} Z`, 'bs')),  // the forest the name came from
+]);
+def('serbia', () => [                                              // seventeen Roman emperors were born on its ground
+  ...Array.from({ length: 13 }, (_, i) => {
+    const a = Math.PI * 0.22 + (i / 12) * Math.PI * 1.56;
+    return leaf('lo', n(30 + 22 * Math.cos(a)), n(31 + 22 * Math.sin(a)), .45, n((a * 180) / Math.PI + 90));
+  }),                                                               // the laurel
+  ...[[30, 13], [22, 21], [38, 21], [15, 31], [23, 31], [31, 31], [39, 31], [46, 31],
+      [19, 40], [27, 40], [35, 40], [43, 40], [23, 48], [31, 48], [39, 48], [27, 55], [35, 55]]
+    .map(([x, y]) => C(x, y, 2.2, 'bs')),                           // seventeen of them, more than anywhere outside Italy
+]);
+def('croatia', () => [                                             // the Adriatic's largest archipelago — over a thousand islands and islets
+  P('M5 5 L30 5 L26 20 L45 30 L40 45 L17 53 L5 40 Z', 'bs'),        // the mainland, hooking down the coast
+  ...[[37, 13], [46, 18], [52, 25], [47, 37], [54, 43], [39, 49], [30, 52], [48, 51], [53, 12]]
+    .map(([x, y]) => E(x, y, 3.4, 2.2, 'hi')),
+  S('M4 57 L56 57', 'gh', 1.4),
+]);
+def('bosnia_and_herzegovina', () => [                              // a presidency of three, one from each community, all serving at once
+  C(30, 19, 8.5, 'bs'), C(17, 42, 8.5, 'hi'), C(43, 42, 8.5, 'lo'),
+  S('M30 19 L17 42 M17 42 L43 42 M43 42 L30 19', 'ik', 1.6),
+  C(30, 34, 3.2, 'gh'),                                             // the single seat the three of them share
+]);
+def('slovenia', () => [                                            // the Karst Plateau named karst itself, and gave up the oldest wooden wheel
+  ring('bs', 19, 28, 15, 3.4),                                      // the Ljubljana Marshes Wheel
+  S('M19 13 L19 43 M4 28 L34 28 M9 18 L29 38 M29 18 L9 38', 'bs', 2.2),
+  C(19, 28, 3.4, 'lo'),
+  P('M36 22 L58 22 L58 54 L36 54 Z', 'lo'),                         // the limestone
+  E(43, 30, 5, 3.4, 'gh'), E(51, 42, 4.4, 3, 'gh'),                 // hollows dissolved out of it — the word starts here
+  S('M39 22 L39 27 M47 22 L47 26 M55 22 L55 28', 'hi', 1.6),
+]);
+def('czechia', () => [                                             // the only country in the region to stay a parliamentary democracy the whole interwar period
+  S('M11 53 L11 19', 'bs', 5),                                      // the one that stayed standing, 1918 to 1938
+  P('M4 12 L18 12 L18 19 L4 19 Z', 'hi'),
+  S('M23 53 L35 50 M29 53 L42 46 M37 53 L51 47 M45 53 L57 43', 'gh', 4),  // the parliaments around it, fallen one by one
+  S('M4 57 L56 57', 'ik', 1.6),
+]);
+def('slovakia', () => [                                            // the largest per-capita car producer anywhere — 44% of what it makes
+  P('M9 36 L18 25 L38 25 L47 36 L49 44 L7 44 Z', 'bs'),
+  P('M20 27 L36 27 L41 34 L15 34 Z', 'hi'),
+  C(18, 46, 5, 'ik'), C(40, 46, 5, 'ik'), C(18, 46, 2, 'hi'), C(40, 46, 2, 'hi'),
+  P('M7 8 L53 8 L53 17 L7 17 Z', 'gh'), P('M7 8 L27 8 L27 17 L7 17 Z', 'lo'),  // 44% of the country's industrial output
+]);
+def('hungary', () => [                                             // Hungarian is Uralic — unrelated to the Indo-European that surrounds it
+  ...[11, 23, 35, 47].flatMap(x => [11, 23, 35, 47].map(y => C(x, y, 4.4, 'gh'))),  // Indo-European Europe, on every side
+  C(29, 29, 10, 'bs'),                                              // Hungarian, related to none of it
+  C(29, 29, 4.2, 'hi'),
+]);
+def('romania', () => [                                             // Romanian descends from the Latin of Roman Dacia, taken in Trajan's wars
+  P('M23 51 L37 51 L35 15 L25 15 Z', 'bs'),                         // Trajan's Column
+  S('M25 21 L35 23 M25 29 L35 31 M25 37 L35 39 M25 45 L35 47', 'ik', 1.4),  // the Dacian Wars, winding up it
+  P('M18 51 L42 51 L42 57 L18 57 Z', 'lo'),
+  C(30, 10, 4.4, 'hi'),                                             // Trajan himself, on the top
+]);
+def('ukraine', () => [                                             // the largest country wholly in Europe, on chernozem black earth
+  P('M3 31 L57 31 L57 51 L3 51 Z', 'lo'),                           // the black earth
+  ...granules('ik', 11, 21, [8, 35, 52, 49]),
+  S('M15 31 L15 12 M30 31 L30 8 M45 31 L45 12', 'bs', 2.6),
+  grain('hi', 12, 13, .8, -25), grain('hi', 18, 13, .8, 25), grain('hi', 15, 7, .8, 0),
+  grain('hi', 27, 9, .8, -25), grain('hi', 33, 9, .8, 25), grain('hi', 30, 3, .8, 0),
+  grain('hi', 42, 13, .8, -25), grain('hi', 48, 13, .8, 25), grain('hi', 45, 7, .8, 0),
+]);
+def('moldova', () => [                                             // landlocked until 1999, when a short bank on the Danube reached the sea
+  P('M18 5 L42 5 L46 39 L30 49 L14 39 Z', 'bs'),
+  wave('hi', 57, 2, 24),                                            // the sea, finally in reach
+  S('M30 49 L30 57', 'lo', 3.4),                                    // the few hundred metres of river bank that got it there
+  C(30, 49, 2.6, 'ik'),
+]);
+def('belarus', () => [                                             // about 70% of Chernobyl's fallout came down on it, not on Ukraine
+  C(50, 11, 3.4, 'lo'),                                             // the reactor, over the border
+  S('M48 14 Q30 20 9 44', 'gh', 1.4),
+  ...[[41, 18], [33, 22], [25, 28], [17, 34], [37, 29], [29, 37], [21, 43], [45, 25], [13, 27], [34, 43]]
+    .map(([x, y]) => C(x, y, 2.6, 'bs')),                           // the plume, drifting the wrong way
+  P('M5 50 L55 50 L55 57 L5 57 Z', 'lo'),                           // and settling
+]);
+def('georgia', () => [                                             // Georgian is Kartvelian — no known relation to any other family on Earth
+  S('M45 53 L45 30 M45 30 L34 18 M45 30 L56 18 M34 18 L28 7 M56 18 L58 7', 'gh', 2),  // every other family, branching
+  C(14, 30, 8.5, 'bs'), C(14, 30, 3.4, 'hi'),                       // Kartvelian, joined to none of them
+  S('M24 30 L34 30', 'ik', 1.4), S('M26 25 L32 35', 'ik', 2.4),     // the link that has never been found
+]);
+def('armenia', () => [                                             // the first state to adopt Christianity, AD 301 — and Mashtots' alphabet, AD 405
+  P('M26 7 L34 7 L34 19 L46 19 L46 27 L34 27 L34 45 L26 45 L26 27 L14 27 L14 19 L26 19 Z', 'bs'),
+  P('M13 48 L47 48 L47 58 L13 58 Z', 'lo'),
+  S('M17 52 L21 52 M25 50 L25 55 M29 50 L33 55 M37 50 L37 55 L42 55', 'hi', 1.8),  // the thirty-six letters cut in AD 405
+]);
+def('azerbaijan', () => [                                          // the 1918 republic at Baku — the first parliamentary one in the Muslim world
+  wave('lo', 55, 3, 26),                                            // the Caspian, at its capital's door
+  S('M12 44 A18 18 0 0 1 48 44', 'bs', 3.4), S('M19 44 A11 11 0 0 1 41 44', 'bs', 3.4),  // the chamber, seated 1918
+  ...[[16, 35], [24, 29], [36, 29], [44, 35], [22, 39], [30, 37], [38, 39]].map(([x, y]) => C(x, y, 2.4, 'hi')),
+  S('M8 44 L52 44', 'ik', 1.6),
+]);
+def('sudan', () => [                                               // the Blue Nile and the White meet at Khartoum, under the pyramids of Meroë
+  S('M13 3 Q20 17 28 27', 'hi', 3.6), S('M47 3 Q40 17 32 27', 'lo', 3.6),  // two rivers, arriving
+  S('M30 27 L30 57', 'bs', 5.5),                                    // and one leaving
+  P('M6 47 L13 30 L20 47 Z', 'bs'), P('M40 47 L47 28 L54 47 Z', 'bs'), P('M48 50 L53 37 L58 50 Z', 'lo'),  // Meroë's pyramids, steeper than Egypt's
+]);
+def('south_sudan', () => [                                         // 98.83% voted to separate, and on 9 July 2011 it became the newest state
+  ['s', 'M30 8 A21 21 0 1 1 26.4 8.3', 'bs', 7],                    // the referendum, all but unanimous
+  C(30, 29, 2.6, 'ik'),
+  S('M7 52 L20 52 M26 52 L34 52 M40 52 L53 52', 'lo', 3.4),         // the newest border drawn anywhere
+]);
+def('eritrea', () => [                                             // Asmara's Italian modernist centre, listed by UNESCO in 2017
+  P('M24 7 L36 7 L36 17 L24 17 Z', 'lo'), S('M30 7 L30 1', 'ik', 2),  // the deco tower and its mast
+  P('M12 52 L12 25 Q12 17 22 17 L38 17 Q48 17 48 25 L48 52 Z', 'bs'),  // the streamlined front
+  S('M12 29 L48 29 M12 37 L48 37', 'hi', 1.6),                      // its banding
+  ...[[18, 44], [30, 44], [42, 44]].map(([x, y]) =>
+    P(`M${x - 3} ${y + 8} L${x - 3} ${y} Q${x} ${y - 5} ${x + 3} ${y} L${x + 3} ${y + 8} Z`, 'hi')),
+]);
+def('djibouti', () => [                                            // Lake Assal, the lowest point on the African continent
+  S('M4 17 L56 17', 'gh', 1.4),                                     // sea level
+  P('M4 17 L16 26 L24 43 L36 43 L44 26 L56 17 L56 57 L4 57 Z', 'bs'),
+  E(30, 43, 12, 4, 'hi'),                                           // Lake Assal, 155 m below that line
+  ...granules('lo', 7, 9, [20, 39, 40, 43]),                        // its salt crust
+]);
+def('somalia', () => [                                             // British and Italian Somaliland joined on 1 July 1960, along Africa's longest coast
+  S('M5 7 Q20 24 24 38 Q31 53 51 55', 'bs', 5),                     // 3,300 km of it, the longest on the mainland
+  P('M9 14 L23 14 L27 30 L13 30 Z', 'lo'),                          // one protectorate
+  P('M27 30 L41 30 L37 48 L21 48 Z', 'hi'),                         // and the other
+  S('M13 30 L41 30', 'ik', 2.4),                                    // the seam they were joined on
+]);
+def('uganda', () => [                                              // Mount Stanley, 5,109 m, in the Rwenzori — and Buganda, which named the country
+  P('M5 33 L18 9 L28 25 L38 5 L55 33 Z', 'lo'),                     // the Rwenzori, glaciered on the equator
+  P('M15 15 L21 15 L18 9 Z', 'hi'), P('M34 13 L42 13 L38 5 Z', 'hi'),
+  P('M18 38 L42 38 L38 55 L22 55 Z', 'bs'),                         // the Buganda drum the country is named for
+  S('M18 38 L42 38', 'ik', 2.4), S('M21 43 L39 43 M22 49 L38 49', 'hi', 1.4),
+]);
+def('rwanda', () => [                                              // a thousand hills, and Lake Kivu among the twenty deepest anywhere
+  P('M17 55 Q30 25 43 55 Z', 'bs'), P('M1 55 Q12 34 23 55 Z', 'lo'), P('M38 55 Q50 32 59 55 Z', 'lo'),
+  P('M28 55 Q36 38 44 55 Z', 'hi'),                                 // hill behind hill behind hill
+  P('M4 8 L20 8 L18 28 L14 35 L10 28 Z', 'hi'),                     // Lake Kivu, and how far down it goes
+  S('M12 12 L12 32', 'ik', 1.4),
+]);
+def('burundi', () => [                                             // 27,834 km², with the government at Gitega and the trade at Bujumbura
+  S('M4 5 L56 5 L56 57 L4 57 Z', 'gh', 1.2),                        // the scale it sits inside
+  P('M22 20 L39 20 L41 38 L24 43 Z', 'bs'),                         // one of the smallest countries in Africa
+  P('M28 25 L35 25 L35 32 L28 32 Z', 'hi'), S('M31.5 25 L31.5 18', 'ik', 1.6),  // Gitega, where the state sits
+  E(15, 44, 10, 5, 'lo'), C(23, 40, 3.4, 'lo'),                     // Bujumbura, the bigger city, down on the lake
+]);
+def('malawi', () => [                                              // the Calendar Lake — 365 miles long, 52 wide, and richer in fish than any other
+  P('M25 4 Q36 20 33 34 Q31 48 27 57 Q17 47 20 30 Q20 15 25 4 Z', 'bs'),
+  S('M22 7 L22 53', 'gh', 1),
+  ...[[27, 15], [29, 26], [25, 36], [28, 46]].flatMap(([x, y]) =>
+    [E(x, y, 4, 2.4, 'hi'), P(`M${x + 4} ${y} L${x + 9} ${y - 3} L${x + 9} ${y + 3} Z`, 'hi')]),  // more species than any lake on Earth
+]);
+def('zambia', () => [                                              // Northern Rhodesia for six decades, until 1964 renamed for the Zambezi
+  S('M3 21 Q20 30 34 25 Q48 20 57 29', 'bs', 6),                    // the river the new name came from
+  P('M8 38 L52 38 L52 46 L8 46 Z', 'gh'), S('M6 42 L54 42', 'ik', 2.6),  // 'Northern Rhodesia', struck through in 1964
+  P('M14 50 L46 50 L46 57 L14 57 Z', 'bs'),                         // and the name that took its place
+]);
+def('zimbabwe', () => [                                            // Great Zimbabwe — 'houses of stones', laid without mortar
+  ['s', 'M30 6 A24 24 0 1 1 21 7.7', 'lo', 4.4],                    // the outer wall of the Great Enclosure
+  ['s', 'M30 13 A17 17 0 1 1 23.6 14.2', 'bs', 4.4],                // and the inner
+  P('M24 49 L36 49 L33 22 L27 22 Z', 'hi'),                         // the conical tower between them
+  S('M24 49 L36 49', 'ik', 2.4),
+]);
+def('mozambique', () => [                                          // the Zambezi crosses it, and the halves either side look nothing alike
+  P('M12 3 L48 3 L45 27 L14 27 Z', 'bs'),                           // the low coastal plain to the north
+  ...granules('hi', 9, 33, [17, 8, 43, 24]),
+  P('M15 35 L45 35 L49 57 L10 57 Z', 'lo'),                         // the plateau to the south
+  S('M19 42 L27 47 L35 41 L43 48', 'hi', 2.2),
+  S('M2 31 L58 31', 'bs', 5.5),                                     // the river between them
+]);
+def('eswatini', () => [                                            // renamed by its king in 2018 — and still Africa's last absolute monarchy
+  P('M17 21 L21 7 L26 18 L30 3 L34 18 L39 7 L43 21 Z', 'bs'),       // the crown
+  S('M15 24 L45 24', 'lo', 3.4),
+  P('M22 28 L38 28 L40 51 L20 51 Z', 'hi'),                         // one throne, and no assembly beside it
+  S('M7 55 L53 55', 'ik', 1.6),
+  C(11, 45, 2.2, 'gh'), C(49, 45, 2.2, 'gh'),
+]);
+def('lesotho', () => [                                             // the only state lying wholly above 1,000 m — its lowest point is 1,400
+  S('M4 55 L56 55', 'ik', 1.6),                                     // sea level
+  S('M4 41 L56 41', 'gh', 1.4),                                     // 1,000 m
+  P('M8 34 L20 13 L30 24 L40 7 L52 34 Z', 'bs'),                    // all of the country, above both
+  S('M8 34 L52 34', 'lo', 2.6),                                     // and its floor — higher than any other country's
+]);
+def('botswana', () => [                                            // it lifts more diamonds out of the ground than anywhere else
+  P('M13 22 L47 22 L30 49 Z', 'bs'), P('M13 22 L21 11 L39 11 L47 22 Z', 'hi'),  // the crown and pavilion of a cut stone
+  S('M21 11 L26 22 L30 49 M39 11 L34 22 L30 49 M13 22 L47 22', 'ik', 1.2),
+  C(8, 51, 3.2, 'lo'), C(19, 55, 2.6, 'lo'), C(43, 54, 2.8, 'lo'), C(53, 49, 2.4, 'lo'),
+]);
+def('namibia', () => [                                             // the Namib, along its whole coast — the oldest desert in the world
+  wave('hi', 53, 3, 26),                                            // the cold Atlantic that keeps it dry
+  P('M3 33 Q13 18 23 33 Q33 20 43 33 Q51 24 58 33 L58 48 L3 48 Z', 'bs'),  // dunes standing since before the grasses
+  ...granules('lo', 11, 55, [8, 37, 52, 46]),
+  S('M3 33 Q13 18 23 33', 'ik', 1.6),                               // one crest, sharpened by a wind that never changes
+]);
+def('angola', () => [                                              // Kongo, Ndongo and Matamba held this ground before the caravels came
+  C(20, 22, 10, 'bs'), C(43, 19, 7, 'lo'), C(32, 43, 9, 'hi'),      // three kingdoms
+  ['s', 'M30 4 A26 26 0 1 1 22 5.3', 'gh', 2.4],                    // the colony drawn round them — and broken open in 1975
+]);
+def('comoros', () => [                                             // Karthala, 2,361 m, among the most active volcanoes anywhere
+  wave('lo', 53, 3, 26),
+  P('M10 49 L24 17 L36 17 L50 49 Z', 'bs'),                         // Karthala
+  P('M24 17 L36 17 L33 25 L27 25 Z', 'ik'),                         // its caldera, one of the widest there is
+  ...puff('gh', 30, 8, .7),                                         // erupting again, as it does most decades
+  C(53, 45, 3.2, 'hi'), C(6, 46, 2.6, 'hi'),                        // the other islands of the group
+]);
+def('mauritius', () => [                                           // the dodo lived here and nowhere else; last seen in 1662
+  E(26, 33, 15, 13, 'bs'),                                          // the body, far too heavy to leave
+  C(43, 18, 6.5, 'lo'),
+  P('M48 15 Q58 20 50 27 Q43 25 44 19 Z', 'lo'),                    // the hooked bill
+  C(41, 16, 1.4, 'ik'),
+  S('M10 25 Q3 30 8 36 M12 21 Q5 23 8 29', 'hi', 2.2),              // the loose plumes it had instead of a tail
+  S('M21 45 L21 55 L13 57 M32 45 L32 55 L40 57', 'ik', 2.2),
+]);
+def('seychelles', () => [                                          // the coco de mer grows on two islands only, and bears the heaviest seed there is
+  P('M22 25 Q9 27 11 39 Q13 52 30 54 Q47 52 49 39 Q51 27 38 25 Q30 20 22 25 Z', 'bs'),
+  S('M30 21 L30 54', 'ik', 2.4),                                    // the cleft down its middle
+  S('M30 21 Q27 12 20 7 M30 21 Q33 12 40 7', 'lo', 2.6),            // the palm it drops from
+  C(53, 14, 2.6, 'hi'), C(47, 6, 2.2, 'hi'),                        // two islands, and nowhere else on Earth
+]);
+def('cabo_verde', () => [                                          // ten volcanic islands, 600 km out, and nobody on them before the 1460s
+  P('M50 5 L58 5 L58 55 L50 55 Z', 'lo'),                           // the continent's westernmost cape
+  S('M46 30 L34 30', 'gh', 1.4),                                    // and the open water between
+  ...[[9, 13], [19, 9], [28, 17], [15, 24], [24, 31], [9, 35], [19, 41], [30, 45], [13, 48], [26, 54]]
+    .map(([x, y], i) => P(`M${x - 4} ${y + 4} L${x} ${y - 5} L${x + 4} ${y + 4} Z`, i % 2 ? 'bs' : 'hi')),
+]);
+def('sao_tome_and_principe', () => [                               // the equator runs through its smallest islet; by 1905 it led the world in cocoa
+  S('M3 44 L57 44', 'gh', 1.4),                                     // the line itself
+  E(24, 25, 13, 11, 'bs'), E(47, 13, 7, 6, 'bs'),                   // the two islands the country is named for
+  C(35, 44, 3, 'hi'),                                               // Ilhéu das Rolas, sitting right on it
+  E(14, 50, 5.5, 8.5, 'lo'), S('M14 41 L14 44', 'lo', 1.6),         // a cocoa pod — more of them here than anywhere, by 1905
+  S('M11 46 L11 55 M17 46 L17 55', 'ik', 1.2),
+]);
+def('gabon', () => [                                               // 89% forest — and at Oklo, a nuclear reactor that ran two billion years ago
+  ...[[10, 28], [21, 22], [32, 28], [43, 22], [53, 28]].map(([x, y]) => leaf('lo', x, y, .85, 0)),
+  P('M17 39 L43 39 L43 56 L17 56 Z', 'bs'),                         // the uranium ore body at Oklo
+  C(30, 47, 5, 'hi'),
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i / 6) * Math.PI * 2;
+    return C(n(30 + 9.5 * Math.cos(a)), n(47 + 9.5 * Math.sin(a)), 1.6, 'ik');
+  }),                                                               // fissioning long before anyone thought to build one
+]);
+def('republic_of_the_congo', () => [                               // Brazzaville and Kinshasa face each other across the river — nowhere else does that
+  S('M30 1 L30 59', 'hi', 9),                                       // the Congo, running between them
+  P('M5 19 L22 19 L22 43 L5 43 Z', 'bs'),
+  S('M8 19 L8 10 M14 19 L14 5 M19 19 L19 12', 'bs', 2.4),           // Brazzaville
+  P('M38 19 L55 19 L55 43 L38 43 Z', 'lo'),
+  S('M41 19 L41 7 M47 19 L47 12 M52 19 L52 4', 'lo', 2.4),          // Kinshasa, in plain sight across the water
+]);
+def('equatorial_guinea', () => [                                   // the only Spanish-speaking country in Africa
+  P('M7 20 L29 20 L29 51 L7 51 Z', 'gh'), E(47, 15, 8, 6, 'gh'),    // a mainland and an island
+  C(31, 13, 3.6, 'bs'),                                             // the dot of ¿ — a mark no other language on the continent uses
+  S('M31 19 Q31 28 25 32 Q18 36 21 43 Q24 49 32 46', 'bs', 4.4),
+]);
+def('cameroon', () => [                                            // 'Africa in miniature' — coast, desert, mountain, rainforest and savanna at once
+  S('M30 3 L30 57 M3 30 L57 30', 'gh', 1),                          // five landscapes, one border round them
+  P('M4 25 L14 6 L25 25 Z', 'bs'),                                  // mountain
+  ...granules('lo', 9, 17, [35, 8, 55, 22]),                        // desert
+  leaf('lo', 13, 39, .75, -20), leaf('lo', 23, 44, .75, 20),        // rainforest
+  S('M37 50 Q36 43 40 38 M45 52 Q44 44 49 39 M41 54 Q40 46 45 41', 'bs', 1.8),  // savanna
+  wave('hi', 57, 2, 12),                                            // coast
+]);
+def('central_african_republic', () => [                            // the Ubangi drains two thirds of it south; the Chari runs the other way, to Lake Chad
+  E(30, 7, 12, 5, 'lo'),                                            // Lake Chad, where the northern third ends up
+  S('M22 29 Q24 19 28 12 M38 29 Q36 19 32 12', 'lo', 2.6),
+  S('M5 30 L55 30', 'ik', 1.6),                                     // the watershed across the middle
+  S('M13 32 Q20 42 30 46 M47 32 Q40 42 30 46', 'bs', 2.6),
+  S('M30 46 L30 57', 'bs', 5.5),                                    // the Ubangi, carrying the other two thirds to the Congo
+]);
+
+/* earth — West and North Africa. Neighbours here share a region and nothing
+   else: each one is drawn from the single fact that is only true of it. */
+def('chad', () => [                                                 // named for a lake that once covered 330,000 km² and has been shrinking for 7,000 years
+  S('M6 20 Q30 6 54 20 Q56 40 30 50 Q6 42 6 20 Z', 'gh', 1.6),      // the ancient shoreline
+  S('M13 24 Q30 15 47 24 Q48 37 30 43 Q13 37 13 24 Z', 'gh', 1.2),  // and a later one, already inside it
+  P('M26 28 Q36 26 38 32 Q37 38 29 38 Q23 35 26 28 Z', 'bs'),        // what is actually left
+  ...granules('lo', 7, 331, [12, 22, 48, 44]),                       // dry basin, everywhere else
+]);
+def('niger', () => [                                                // more than 80% of it lies inside the Sahara
+  ...[[14, 18], [34, 14], [44, 26], [20, 32]].map(([x, y]) =>
+    S(`M${x - 9} ${y + 4} Q${x} ${y - 7} ${x + 9} ${y + 4}`, 'bs', 3)),  // barchan crests, marching across it
+  S('M4 52 Q16 44 28 48 Q40 52 52 42', 'hi', 4),                     // the river, clipping the south-west corner
+  C(20, 47, 2.4, 'ik'),                                              // Niamey, on its bank
+]);
+def('burkina_faso', () => [                                         // renamed in 1984 — Mooré for 'upright', joined to Dyula for 'fatherland'
+  S('M30 50 L30 23', 'bs', 4),
+  C(30, 16, 5.4, 'bs'),
+  S('M30 31 L17 23 M30 31 L43 23', 'bs', 3),                         // a figure, standing up
+  S('M8 50 L52 50', 'ik', 2.6),                                      // on the ground it is named for
+  S('M15 55 L45 55', 'lo', 1.6),
+]);
+def('togo', () => [                                                 // under 115 km wide, with 56 km of lagoon-backed coast at the bottom of it
+  P('M8 8 L22 8 L22 46 L8 46 Z', 'gh'),                              // Ghana, west
+  P('M38 8 L52 8 L52 46 L38 46 Z', 'gh'),                            // Benin, east
+  P('M25 6 L35 6 L35 44 L25 44 Z', 'bs'),                            // and the strip left between them
+  S('M23 50 Q30 55 37 50', 'hi', 3),                                 // the lagoon, and the short coast behind it
+]);
+def('benin', () => [                                                // renamed in 1975 for the Bight of Benin, the bay along its southern coast
+  P('M18 6 L42 6 L46 32 L14 32 Z', 'bs'),
+  S('M4 36 Q30 52 56 36', 'lo', 3.4),                                // the bight itself, curving away
+  wave('hi', 52, 3, 20),
+  C(30, 28, 2.4, 'ik'),                                              // Porto-Novo, on the lagoon behind it
+]);
+def('mali', () => [                                                 // named for the empire that peaked in the 14th century as Africa's wealthiest state
+  E(30, 45, 15, 5, 'lo'), E(30, 38, 12, 4.5, 'bs'), E(30, 32, 9, 4, 'hi'),   // gold, stacked up
+  ...[-40, 0, 40].map(a => S(
+    `M${n(30 + 11 * Math.cos((a - 90) * Math.PI / 180))} ${n(28 + 11 * Math.sin((a - 90) * Math.PI / 180))} ` +
+    `L${n(30 + 19 * Math.cos((a - 90) * Math.PI / 180))} ${n(28 + 19 * Math.sin((a - 90) * Math.PI / 180))}`, 'hi', 2)),
+  S('M10 51 L50 51', 'ik', 1.6),
+]);
+def('mauritania', () => [                                           // roughly 90% Sahara, with the capital pushed right out onto the Atlantic edge
+  P('M17 6 L54 6 L54 54 L17 54 Z', 'bs'),
+  ...granules('lo', 18, 907, [21, 11, 52, 50]),                      // sand, nearly all the way to the shore
+  S('M11 4 Q5 18 11 30 Q5 44 11 56', 'hi', 4),                       // the coast, running the whole western side
+  C(13, 30, 2.6, 'ik'),                                              // Nouakchott, out on it
+]);
+def('gambia', () => [                                               // continental Africa's smallest country, under 50 km wide, drawn around its river
+  P('M4 8 L56 8 L56 21 L4 21 Z', 'gh'), P('M4 43 L56 43 L56 56 L4 56 Z', 'gh'),  // Senegal, above and below
+  P('M6 24 L54 24 L54 40 L6 40 Z', 'bs'),                            // and a sliver in between
+  S('M54 31 Q38 27 26 33 Q14 38 4 32', 'hi', 4),                     // the river the sliver follows
+  C(6, 32, 2.4, 'ik'),                                               // Banjul, at the mouth
+]);
+def('guinea', () => [                                               // the Guinea Highlands hold the sources of the Niger, the Gambia and the Senegal
+  P('M13 40 Q22 17 30 17 Q38 17 47 40 Z', 'bs'),
+  S('M26 36 Q17 46 7 51', 'hi', 3), S('M30 36 L30 55', 'hi', 3), S('M34 36 Q43 46 53 51', 'hi', 3),  // three rivers, leaving three ways
+  ...granules('lo', 5, 511, [22, 24, 38, 34]),                       // bauxite, in the hills they run off
+]);
+def('guinea_bissau', () => [                                        // the 88 islands and islets of the Bijagós, lying off a low mainland
+  P('M4 8 L30 8 L26 36 Q16 44 4 40 Z', 'bs'),
+  ...granules('hi', 17, 88, [31, 13, 56, 48]),                       // the archipelago, scattered offshore
+  wave('lo', 55, 3, 22),
+  C(19, 22, 2.4, 'ik'),                                              // Bissau
+]);
+def('sierra_leone', () => [                                         // Freetown, settled in 1792 by about 1,200 Black Loyalists sailing down from Nova Scotia
+  S('M4 11 Q24 19 46 14', 'gh', 1.4),                                // the crossing they made
+  S('M32 36 L32 11', 'ik', 2), P('M32 13 L32 30 L47 25 Z', 'hi'),    // the sail
+  P('M17 36 L47 36 L42 46 L22 46 Z', 'bs'),                          // the hull, arriving
+  wave('lo', 52, 3, 24),
+]);
+def('liberia', () => {                                              // Africa's oldest continuously independent state — settled 1822, independent 1847
+  const star = [];
+  for (let i = 0; i < 10; i++) {
+    const a = (i * 36 - 90) * Math.PI / 180, rad = i % 2 ? 3 : 7;
+    star.push(`${n(17 + rad * Math.cos(a))} ${n(22 + rad * Math.sin(a))}`);
+  }
+  return [
+    ...[0, 1, 2, 3, 4, 5].map(i =>
+      P(`M6 ${13 + i * 7} L54 ${13 + i * 7} L54 ${17 + i * 7} L6 ${17 + i * 7} Z`, i % 2 ? 'lo' : 'bs')),
+    P('M6 13 L29 13 L29 31 L6 31 Z', 'ik'),                          // the canton
+    P('M' + star.join(' L') + ' Z', 'hi'),                           // and one star, for one republic
+  ];
+});
+def('tunisia', () => [                                              // Cape Angela is the northernmost point of mainland Africa, and the Atlas runs out beneath it
+  wave('hi', 13, 3, 22),                                             // the Mediterranean
+  P('M22 19 L30 15 L41 21 L45 51 L19 51 Z', 'bs'),
+  C(30, 15, 2.6, 'ik'),                                              // the cape, reaching furthest north of all
+  S('M4 41 L14 33 L23 39 L31 31 L39 37', 'lo', 3),                   // the Atlas chain, ending here
+]);
+def('libya', () => [                                                // Africa's fourth-largest country, over the world's tenth-largest proven oil reserves
+  ...granules('bs', 17, 1780, [8, 9, 52, 31]),                       // almost 1.8 million km² of it
+  S('M22 7 L38 7', 'ik', 2.4),
+  S('M30 7 L30 41', 'ik', 3),                                        // one well, dropped straight down through
+  E(30, 49, 20, 8, 'lo'),                                            // into what is under it
+  C(30, 46, 3, 'hi'),
+]);
+
+/* earth — the Caribbean and the Americas. Same rule: an island is not an
+   island-shaped blob, it is the one thing that happened there. */
+def('antigua_and_barbuda', () => [                                  // 440 km² across two islands — and an air force regardless
+  P('M8 40 Q17 32 27 36 Q33 42 24 47 Q11 48 8 40 Z', 'bs'),          // Antigua
+  P('M35 45 Q43 39 51 43 Q53 49 44 50 Q36 50 35 45 Z', 'lo'),        // Barbuda
+  S('M11 18 L47 18', 'hi', 3.4),                                     // and the aircraft over both
+  S('M31 18 L22 9 M31 18 L22 27', 'hi', 2.4),
+  S('M45 18 L41 12', 'hi', 2),
+]);
+def('bahamas', () => [                                              // some 700 islands and 2,500 cays over 800 km, and nowhere higher than 64 m
+  ...granules('bs', 22, 700, [6, 9, 54, 42]),                        // the chain, strung right across the Atlantic
+  ...granules('hi', 15, 2500, [7, 11, 53, 43]),                      // the cays, smaller again
+  S('M5 51 Q30 47 55 51', 'lo', 2.4),                                // the highest ground in the country, all 64 m of it
+  wave('gh', 57, 2, 26),
+]);
+def('barbados', () => [                                             // a republic on 30 November 2021 — the same date, 55 years after independence
+  S('M8 41 L52 41', 'ik', 2.6),                                      // one date, twice
+  S('M13 37 L13 45 M47 37 L47 45', 'ik', 2),
+  P('M5 19 L9 27 L13 19 L17 27 L21 19 L21 32 L5 32 Z', 'lo'),        // the crown, in 1966
+  ring('bs', 47, 24, 8, 3), C(47, 24, 3.4, 'hi'),                    // a president's seal, in 2021
+]);
+def('belize', () => [                                               // the only country in Central America whose sole official language is English
+  P('M5 11 Q5 7 9 7 L25 7 Q29 7 29 11 L29 21 Q29 25 25 25 L14 25 L8 31 L9 25 Q5 25 5 21 Z', 'gh'),
+  S('M9 13 Q13 11 17 13 Q21 15 25 13 M9 19 Q13 17 17 19 Q21 21 25 19', 'gh', 1.4),   // its neighbours, in another language
+  P('M31 31 Q31 27 35 27 L53 27 Q57 27 57 31 L57 45 Q57 49 53 49 L41 49 L35 55 L36 49 Q31 49 31 45 Z', 'bs'),
+  S('M35 35 L53 35 M35 41 L49 41', 'ik', 2.2),                       // and Belize, in plain ruled English
+]);
+def('canada', () => [                                               // the longest coastline of any country, on three oceans at once
+  P('M6 21 L12 16 L18 23 L26 16 L32 23 L40 15 L48 22 L54 17 L54 47 L6 47 Z', 'bs'),
+  S('M6 21 L12 16 L18 23 L26 16 L32 23 L40 15 L48 22 L54 17', 'ik', 1.6),   // ragged, the whole way
+  wave('hi', 10, 2, 24),                                             // the Arctic, north
+  S('M3 29 Q8 34 3 39', 'lo', 2.4),                                  // the Pacific, west
+  S('M57 29 Q52 34 57 39', 'lo', 2.4),                               // the Atlantic, east
+]);
+def('costa_rica', () => [                                           // the army abolished on 1 December 1948, and the ban written into the constitution the year after
+  P('M14 35 Q14 19 30 19 Q46 19 46 35 Z', 'lo'),                     // a helmet, set down
+  S('M9 37 L51 37', 'ik', 2.6),
+  S('M30 33 L30 13', 'plant-lo', 2),                                 // and something growing out of it instead
+  leaf('plant-bs', 23, 11, .55, -35), leaf('plant-bs', 37, 10, .55, 35),
+]);
+def('cuba', () => [                                                 // the Caribbean's largest country by area, a republic from 20 May 1902
+  P('M4 30 Q16 22 30 26 Q44 30 56 24 Q54 34 40 37 Q22 41 4 36 Z', 'bs'),
+  C(11, 47, 2.6, 'gh'), C(23, 49, 2, 'gh'), C(36, 47, 2.4, 'gh'), C(48, 50, 1.8, 'gh'),  // its neighbours, for scale
+  P('M15 6 L18 13 L25 13 L19 17 L21 24 L15 20 L9 24 L11 17 L5 13 L12 13 Z', 'hi'),      // the one star of 1902
+]);
+def('dominica', () => [                                             // the youngest island of the arc, and still boiling — Boiling Lake is the world's second-largest hot spring
+  P('M7 41 Q14 26 24 24 Q35 22 41 30 Q51 34 53 45 Z', 'lo'),         // the crater it sits in
+  E(30, 43, 14, 6, 'bs'),                                            // the lake, at a rolling boil
+  C(21, 41, 2.2, 'hi'), C(30, 39, 2.8, 'hi'), C(39, 42, 2, 'hi'),
+  S('M23 30 Q19 21 26 14 M37 30 Q33 21 40 14', 'gh', 2.4),           // steam, off the surface
+]);
+def('haiti', () => [                                                // the only country in history founded by a successful slave revolt, and the first in the Americas to end slavery
+  ring('ik', 16, 23, 8, 3.4),                                        // a shackle
+  ring('ik', 44, 41, 8, 3.4),
+  S('M22 29 L28 35', 'lo', 3.4),                                     // and the link between them, broken through
+  S('M38 35 L32 29', 'lo', 3.4),
+  ...[[27, 22], [35, 45], [23, 47], [41, 19]].map(([x, y]) => C(x, y, 1.6, 'hi')),   // fragments, thrown clear
+]);
+def('dominican_republic', () => [                                   // the eastern five-eighths of Hispaniola, holding the Caribbean's highest peak and its lowest point
+  P('M5 25 L21 25 L21 43 L5 43 Z', 'gh'),                            // the western three-eighths, not its own
+  P('M24 22 L55 22 L55 46 L24 46 Z', 'bs'),
+  S('M22 19 L22 49', 'ik', 1.4),                                     // the border, five-eighths across
+  P('M28 41 L36 25 L44 41 Z', 'hi'),                                 // Pico Duarte, the highest ground in the sea
+  S('M42 45 L53 45', 'lo', 2.4), E(48, 49, 5, 2, 'lo'),              // Lake Enriquillo, the lowest
+]);
+def('el_salvador', () => [                                          // the smallest and most crowded country in Central America, and the only one with no Caribbean coast
+  P('M13 19 L47 19 L47 39 L13 39 Z', 'bs'),
+  ...granules('ik', 26, 21041, [15, 21, 45, 37]),                    // 21,041 km², packed solid
+  S('M9 13 L51 13', 'gh', 1.8),                                      // a closed northern side — no second sea
+  wave('hi', 49, 3, 20),                                             // the Pacific, its only one
+]);
+def('grenada', () => [                                              // nutmeg, planted from 1843, made it the Isle of Spice
+  P('M21 11 Q38 14 40 30 Q42 47 30 51 Q17 47 19 30 Q19 17 21 11 Z', 'lo'),   // the fruit, split
+  E(30, 33, 11, 14, 'bs'),                                           // the seed inside it
+  S('M24 23 Q32 29 26 41 M36 23 Q28 31 34 43 M21 33 L39 33', 'hi', 1.6),     // mace, netting the seed
+]);
+def('guatemala', () => [                                            // about 17.6 million people — the most populous country in Central America
+  ...[[8, 14], [18, 22], [28, 34], [38, 20], [48, 12]].map(([x, h], i) =>
+    P(`M${x} 50 L${x + 7} 50 L${x + 7} ${50 - h} L${x} ${50 - h} Z`, i === 2 ? 'bs' : 'gh')),
+  S('M5 50 L57 50', 'ik', 2.6),
+  ...granules('hi', 9, 176, [29, 20, 34, 48]),                       // the people themselves, stacked in the tallest column
+]);
+def('guyana', () => [                                               // the only country on mainland South America with English as its official language
+  P('M8 21 Q30 14 52 21 L52 45 Q30 52 8 45 Z', 'bs'),                // an open book
+  S('M30 17 L30 49', 'ik', 2.2),
+  S('M13 27 L26 25 M13 33 L26 31 M13 39 L26 37 M34 25 L47 27 M34 31 L47 33 M34 37 L47 39', 'hi', 1.6),
+  wave('gh', 56, 2, 18),                                             // the Atlantic coast it reads out to
+]);
+def('honduras', () => [                                             // O. Henry coined 'banana republic' here, in 1904
+  ...[[17, 25], [25, 21], [33, 23]].map(([x, y]) =>
+    P(`M${x} ${y} Q${x + 14} ${y + 6} ${x + 8} ${y + 23} Q${x + 1} ${y + 14} ${x} ${y} Z`, 'bs')),
+  S('M15 21 L36 19', 'lo', 3.4),                                     // the stem they all hang from
+  ring('ik', 45, 44, 8, 2.4), C(45, 44, 3, 'hi'),                    // and a state seal, stamped over the top
+]);
+def('jamaica', () => [                                              // where reggae and the Rastafari movement both began
+  C(19, 43, 8, 'bs'), S('M27 43 L27 13', 'ik', 3.4),                 // one note, held
+  P('M27 13 Q40 15 45 22 Q38 19 27 21 Z', 'ik'),
+  ...[9, 14, 19].map(rad => S(
+    `M${n(35 + rad * 0.7)} ${n(38 - rad * 0.7)} A${rad} ${rad} 0 0 1 ${n(35 + rad * 0.7)} ${n(38 + rad * 0.7)}`, 'hi', 1.8)),
+]);
+def('mexico', () => [                                               // Mēxihko, the Nahuatl name for the Aztec heartland at the middle of the lake
+  E(19, 41, 9, 12, 'bs'), E(34, 35, 8, 11, 'bs'),                    // the nopal, two pads
+  S('M26 51 L26 57', 'lo', 3.4),
+  P('M21 17 L30 24 L39 17 L35 27 L30 29 L25 27 Z', 'ik'),            // the eagle on it
+  S('M25 27 Q32 32 41 29', 'lo', 2.2),                               // and the serpent in its beak
+  wave('gh', 56, 2, 20),                                             // the lake the whole city was built on
+]);
+def('nicaragua', () => [                                            // lakes and volcanoes — Momotombo's 1610 eruption finished León
+  P('M13 41 L28 13 L43 41 Z', 'lo'),
+  P('M23 24 L28 13 L34 26 Q28 21 23 24 Z', 'hi'),                    // the cone, open at the top
+  ...granules('ik', 9, 1610, [19, 3, 39, 15]),                       // ash, going up out of it
+  wave('bs', 49, 3, 26),                                             // the lake at its foot
+  P('M6 44 L15 44 L15 51 L6 51 Z', 'gh'), S('M6 44 L15 51', 'ik', 1.6),   // and León, knocked flat
+]);
+def('panama', () => [                                               // the 83 km canal cut through the isthmus, finished 1914, eleven years after seceding from Colombia
+  P('M4 11 L56 11 L56 25 L4 25 Z', 'gh'),                            // the Caribbean
+  P('M4 41 L56 41 L56 55 L4 55 Z', 'gh'),                            // the Pacific
+  P('M4 25 L56 25 L56 41 L4 41 Z', 'bs'),                            // and the land between them
+  S('M4 33 L56 33', 'hi', 5),                                        // cut through
+  S('M17 28 L17 38 M30 28 L30 38 M43 28 L43 38', 'ik', 1.8),         // by locks, in flights
+]);
+def('saint_kitts_and_nevis', () => [                                // 261 km² and about 48,000 people — the smallest sovereign state in the Western Hemisphere
+  P('M17 20 Q30 15 34 26 Q30 35 20 33 Q13 26 17 20 Z', 'bs'),        // Saint Kitts
+  C(43, 34, 7, 'lo'),                                                // Nevis, across the Narrows
+  S('M11 47 L51 47', 'ik', 1.6),                                     // measured, because the smallness is the whole fact
+  S('M11 43 L11 51 M51 43 L51 51', 'ik', 1.6),
+  ...granules('gh', 6, 261, [8, 7, 54, 13]),
+]);
+def('saint_lucia', () => [                                          // two Nobel laureates from under 200,000 people — the highest ratio of any sovereign country
+  C(20, 25, 9, 'bs'), C(20, 25, 4, 'hi'),
+  S('M14 17 L20 25 L26 17', 'lo', 3),                                // one medal
+  C(41, 35, 9, 'bs'), C(41, 35, 4, 'hi'),
+  S('M35 27 L41 35 L47 27', 'lo', 3),                                // and the other
+  S('M7 53 Q30 49 53 53', 'gh', 2.2),                                // the island underneath them both
+]);
+def('saint_vincent_and_the_grenadines', () => [                     // La Soufrière erupted in April 2021 and about 16,000 people had to get out
+  P('M9 35 L22 12 L35 35 Z', 'lo'),
+  ...granules('gh', 12, 2021, [11, 2, 33, 14]),                      // the column, going up
+  ...[0, 1, 2].map(i => C(40 + i * 7, 39 + i * 5, 3.2 - i * 0.7, 'bs')),   // the Grenadines, trailing away south
+  ...[[12, 44], [19, 47], [26, 50]].map(([x, y]) =>
+    P(`M${x} ${y} L${x + 5} ${y + 3} L${x} ${y + 6} Z`, 'hi')),      // and everyone leaving, all one way
+]);
+def('suriname', () => [                                             // the only state outside Europe with Dutch as its official language
+  P('M18 29 L42 29 L42 51 L18 51 Z', 'bs'),
+  P('M18 29 L18 23 L23 23 L23 18 L27 18 L27 12 L33 12 L33 18 L37 18 L37 23 L42 23 L42 29 Z', 'hi'),   // a stepped Dutch gable, in the tropics
+  S('M24 35 L36 35 M24 42 L36 42', 'ik', 1.6),
+  leaf('plant-bs', 8, 41, .95, -30), leaf('plant-bs', 52, 39, .95, 30),   // rainforest on either side of it
+]);
+def('trinidad_and_tobago', () => [                                  // where the steelpan was invented, along with calypso, soca and the limbo
+  E(30, 35, 21, 15, 'bs'),                                           // the pan, sunk into its dish
+  E(30, 35, 17, 11, 'lo'),
+  ...[[20, 33], [30, 29], [40, 33], [24, 41], [36, 41]].map(([x, y]) => E(x, y, 5, 3.4, 'hi')),   // the note faces, hammered in
+  S('M7 11 L18 23', 'ik', 3), C(19, 24, 3, 'ik'),                    // and one stick over it
+]);
+def('united_states', () => [                                        // fifty states, two of them nowhere near the other forty-eight
+  P('M6 14 L44 14 L44 40 L6 40 Z', 'bs'),                            // the contiguous ones
+  ...[0, 1, 2, 3].flatMap(r => [0, 1, 2, 3, 4, 5].map(c => C(10 + c * 6, 19 + r * 6, 1.8, 'hi'))),
+  C(52, 20, 3.4, 'lo'),                                              // Alaska
+  C(50, 48, 2.6, 'lo'), C(56, 51, 1.6, 'lo'),                        // Hawaii, further out again
+  S('M6 46 L34 46', 'ik', 2.6),                                      // and the line signed on 4 July 1776
+]);
+
+/* animal — the four tissues, then the levels they build into, then the
+   eleven systems. Nothing here is the same diagram twice: a tissue is its
+   arrangement, a system is its mechanism. */
+def('epithelial_tissue', () => [                                    // a continuous sheet with no vessels in it at all — fed by diffusion through the basement membrane
+  ...[0, 1, 2, 3, 4].map(i => P(
+    `M${8 + i * 9} 16 L${16 + i * 9} 16 L${16 + i * 9} 34 L${8 + i * 9} 34 Z`, 'bs')),   // cells packed edge to edge, almost no matrix between them
+  S('M8 35 L53 35', 'ik', 3.6),                                      // the basement membrane it all stands on
+  ...[14, 26, 38, 48].map(x => S(`M${x} 50 L${x} 40`, 'hi', 1.8)),   // and everything arriving up through it
+  ...[14, 26, 38, 48].map(x => P(`M${x - 2.6} 40 L${x + 2.6} 40 L${x} 37 Z`, 'hi')),
+]);
+def('connective_tissue', () => [                                    // cells marooned in a matrix they secreted themselves — type I collagen alone is a quarter of all mammalian protein
+  S('M6 17 Q30 24 54 15 M6 30 Q30 38 54 28 M6 44 Q30 51 54 42', 'bs', 2.4),   // fibre, most of the volume
+  S('M12 11 Q21 30 16 51 M46 11 Q37 30 44 51', 'lo', 1.8),
+  C(18, 22, 3.4, 'hi'), C(38, 34, 3.8, 'hi'), C(26, 47, 3, 'hi'),    // and the cells, a long way apart in it
+]);
+def('muscle_tissue', () => [                                        // actin and myosin in three arrangements — skeletal you command, cardiac you cannot, smooth in the organ walls
+  P('M6 9 L54 9 L54 21 L6 21 Z', 'bs'),
+  ...[10, 16, 22, 28, 34, 40, 46, 50].map(x => S(`M${x} 9 L${x} 21`, 'ik', 1.2)),   // skeletal: striped, straight, parallel
+  P('M8 27 L30 27 L30 38 L8 38 Z', 'lo'), P('M30 25 L52 25 L52 33 L30 33 Z', 'lo'), P('M30 33 L46 33 L46 41 L30 41 Z', 'lo'),
+  S('M15 27 L15 38 M23 27 L23 38 M38 25 L38 33 M40 33 L40 41', 'ik', 1.2),          // cardiac: striped too, but branched
+  ...[[13, 51], [25, 53], [37, 51], [48, 53]].map(([x, y]) => grain('hi', x, y, 1.2, 60)),   // smooth: spindles, no stripes at all
+]);
+def('nervous_tissue', () => [                                       // grey matter is the cell bodies and synapses; white matter is the myelinated axons carrying the answers away
+  P('M6 9 Q30 3 54 9 L54 25 Q30 31 6 25 Z', 'bs'),                   // grey matter, doing the processing
+  ...granules('lo', 14, 431, [10, 7, 50, 25]),
+  ...[15, 25, 35, 45].map(x => S(`M${x} 29 L${x} 55`, 'hi', 3.4)),   // white matter, carrying it out
+  ...[15, 25, 35, 45].flatMap(x => [36, 44, 52].map(y => S(`M${x - 3.4} ${y} L${x + 3.4} ${y}`, 'ik', 1))),   // myelin, in segments
+]);
+def('organ', () => [                                                // several tissue types joined for one job — the intestinal wall alone stacks three of them
+  P('M8 11 Q30 5 52 11 L52 21 Q30 27 8 21 Z', 'bs'),                 // epithelium, facing the lumen
+  P('M8 21 Q30 27 52 21 L52 33 Q30 39 8 33 Z', 'lo'),                // connective tissue beneath it
+  P('M8 33 Q30 39 52 33 L52 48 Q30 54 8 48 Z', 'hi'),                // smooth muscle, outermost
+  ...[16, 30, 44].map(x => S(`M${x} 36 L${x} 47`, 'ik', 1.2)),
+]);
+def('organ_system', () => {                                         // organs ganged onto a shared job — the human body runs eleven of them
+  const p = [0, 1, 2, 3, 4].map(i => {
+    const a = (i * 72 - 90) * Math.PI / 180;
+    return [n(30 + 19 * Math.cos(a)), n(30 + 19 * Math.sin(a))];
+  });
+  return [
+    ...p.map(([x, y]) => S(`M30 30 L${x} ${y}`, 'gh', 1.6)),
+    C(30, 30, 5.4, 'ik'),                                            // the one job they are all on
+    E(p[0][0], p[0][1], 8, 5, 'bs'),
+    C(p[1][0], p[1][1], 6, 'lo'),
+    P(`M${p[2][0] - 7} ${p[2][1] - 4} L${p[2][0] + 7} ${p[2][1] - 4} L${p[2][0] + 4} ${p[2][1] + 5} L${p[2][0] - 4} ${p[2][1] + 5} Z`, 'hi'),
+    grain('bs', p[3][0], p[3][1], 1.7, 30),
+    E(p[4][0], p[4][1], 5, 8, 'lo'),                                 // five different organs, one shared outcome
+  ];
+});
+def('metabolism', () => [                                           // catabolism tears molecules apart, anabolism builds them up, and both trade through ATP
+  P('M4 11 L18 11 L18 25 L4 25 Z', 'lo'),                            // something intact
+  ...[[25, 11], [32, 19], [23, 23], [33, 27]].map(([x, y]) => C(x, y, 2.4, 'lo')),   // torn into pieces
+  ...[[36, 45], [43, 41], [50, 45]].map(([x, y]) => C(x, y, 2.4, 'hi')),             // and pieces going back together
+  P('M50 31 L57 31 L57 47 L50 47 Z', 'hi'),
+  C(30, 37, 8.4, 'bs'), S('M26 33 L33 37 L26 41', 'ik', 2.2),        // ATP in the middle, turning over your own body weight in a day
+  S('M19 18 L24 18 M45 31 L50 31', 'gh', 1.4),
+]);
+def('digestion', () => [                                            // food cut small enough to cross a gut wall — amylase takes 30% of the starch before you swallow
+  P('M5 18 Q5 7 16 9 Q27 12 25 24 Q23 37 12 35 Q3 30 5 18 Z', 'bs'), // one lump, going in
+  S('M29 6 L29 54', 'ik', 3.6),                                      // the wall
+  ...[13, 22, 31, 40, 49].map(y => C(29, y, 2.6, 'ground')),         // and nothing bigger than these gets through it
+  ...[[37, 13], [45, 22], [39, 32], [49, 40], [37, 47]].map(([x, y]) => C(x, y, 2.4, 'hi')),   // what does, on the far side
+]);
+def('circulatory_system', () => [                                   // a closed double circuit — one loop to the lungs and one to everything else
+  ring('bs', 30, 16, 12, 3),                                         // the pulmonary loop
+  ring('lo', 30, 44, 12, 3),                                         // the systemic loop
+  P('M24 24 L36 24 L36 36 L24 36 Z', 'ik'),                          // the pump at the crossing, driving both
+  S('M27 28 L33 28 M27 32 L33 32', 'hi', 1.4),
+  ...[[30, 3], [30, 57], [17, 16], [43, 44]].map(([x, y]) => C(x, y, 2.2, 'hi')),   // capillary beds, where the trade actually happens
+]);
+def('respiratory_system', () => [                                   // nose to alveoli — 300 million sacs, and about 145 m² of surface for gas to cross
+  S('M30 5 L30 19', 'ik', 4),
+  S('M30 19 L18 29 M30 19 L42 29 M18 29 L11 37 M18 29 L25 37 M42 29 L35 37 M42 29 L49 37', 'ik', 2.4),
+  ...[11, 25, 35, 49].flatMap(x => [C(x - 3, 42, 3, 'bs'), C(x + 3, 42, 3, 'bs'), C(x, 46, 3, 'bs')]),   // alveoli, in bunches at every tip
+  P('M7 53 Q30 47 53 53 Q30 58 7 53 Z', 'lo'),                       // the diaphragm, flattening 12 to 16 times a minute
+]);
+def('digestive_system', () => [                                     // about nine metres of tube from one end to the other, with glands feeding in along it
+  S('M30 4 L30 13 Q30 19 22 21 Q11 24 11 32 Q11 41 24 41 Q41 41 41 32 Q41 25 26 46 Q21 55 34 57', 'bs', 4),
+  C(14, 15, 4, 'hi'), S('M17 17 L22 20', 'gh', 1.2),                 // salivary glands, starting before you swallow
+  P('M45 23 Q54 21 54 30 Q49 34 45 29 Z', 'lo'), S('M45 27 L41 29', 'gh', 1.2),   // the liver
+  E(50, 41, 6, 3, 'hi'), S('M44 40 L39 38', 'gh', 1.2),              // and the pancreas, both emptying into it
+]);
+def('skeletal_system', () => [                                      // about 270 bones at birth fusing to 206 — 80 axial, 126 appendicular — with blood made inside them
+  ...[8, 15, 22, 29, 36, 43, 50].map(y => P(`M27 ${y} L33 ${y} L33 ${y + 5} L27 ${y + 5} Z`, 'bs')),   // the axial column
+  ...[13, 22, 31].flatMap(y => [
+    S(`M27 ${y} Q15 ${y + 4} 13 ${y + 13}`, 'lo', 2.2),
+    S(`M33 ${y} Q45 ${y + 4} 47 ${y + 13}`, 'lo', 2.2)]),            // and everything appendicular, hung off it
+  C(30, 33, 2, 'hi'),                                                // marrow, making blood inside the bone
+]);
+def('muscular_system', () => [                                      // over 600 of them, some 40% of body mass, each hauling on bone through a tendon
+  S('M12 8 L12 33', 'ik', 5), S('M12 33 L47 48', 'ik', 5),           // two bones, meeting at a joint
+  C(12, 33, 4.4, 'gh'),
+  P('M19 14 Q35 20 33 34 Q31 45 20 41 Q14 30 19 14 Z', 'bs'),        // the belly, pulling across it
+  S('M19 14 L14 9 M20 41 L29 45', 'lo', 2.6),                        // the tendons at either end
+  S('M23 21 Q29 29 25 37', 'hi', 1.4),
+]);
+def('endocrine_system', () => [                                     // glands emptying straight into the blood — slower than nerves, far longer-lasting, run from the hypothalamus on top
+  C(30, 9, 6.4, 'ik'), C(30, 9, 2.4, 'hi'),                          // the hypothalamus, in charge of the lot
+  S('M30 16 L30 53', 'gh', 1.6),
+  ...[[17, 21], [43, 29], [15, 38], [41, 47]].map(([x, y]) => E(x, y, 6, 4, 'bs')),
+  ...[[17, 21], [43, 29], [15, 38], [41, 47]].flatMap(([x, y]) =>
+    [C(x + 8, y + 4, 1.6, 'hi'), C(x + 12, y + 7, 1.4, 'hi')]),      // hormones, released into the bloodstream and left to travel
+]);
+def('urinary_system', () => [                                       // 180 litres of filtrate a day, and 99% of it clawed straight back
+  S('M5 11 L55 11', 'hi', 6),                                        // everything the kidneys are handed
+  ...[19, 30, 41].map(x => S(`M${x} 13 L${x} 6`, 'hi', 1.6)),        // most of it going straight back up
+  P('M14 20 Q24 16 24 26 Q24 36 14 34 Q7 27 14 20 Z', 'bs'),
+  P('M46 20 Q36 16 36 26 Q36 36 46 34 Q53 27 46 20 Z', 'bs'),
+  S('M14 36 Q14 45 26 48 M46 36 Q46 45 34 48', 'gh', 2),             // the ureters
+  P('M22 48 L38 48 Q40 55 30 56 Q20 55 22 48 Z', 'lo'),              // the bladder, and the litre or two left over
+]);
+def('lymphatic_system', () => [                                     // around 800 nodes on a one-way network with no pump — muscle contraction alone moves it
+  S('M7 53 Q18 41 30 34 Q42 27 53 7', 'bs', 3),
+  S('M13 7 Q22 23 30 34 M51 51 Q42 42 34 32', 'bs', 2.4),            // branches, all draining the same way
+  ...[[30, 34], [20, 21], [40, 45], [45, 17]].map(([x, y]) =>
+    P(`M${x - 4.4} ${y} Q${x} ${y - 5.4} ${x + 4.4} ${y} Q${x} ${y + 5.4} ${x - 4.4} ${y} Z`, 'lo')),   // the nodes on the line
+  ...[[15, 45], [25, 30], [38, 23], [48, 12]].map(([x, y]) =>
+    P(`M${x - 3.4} ${y + 3.4} L${x} ${y - 2.4} L${x + 3.4} ${y + 3.4} Z`, 'hi')),   // valves, letting it past once and once only
+]);
+def('immune_system', () => [                                        // three layers deep — barrier, then cells that answer anything, then cells that learn one antigen and remember it
+  rod3('gh', 30, 7, 9, 4),                                           // the invader, still outside
+  S('M6 29 A24 24 0 0 1 54 29', 'ik', 4),                            // skin, mucus and stomach acid, first
+  ...[[16, 35], [30, 31], [44, 35]].map(([x, y]) => C(x, y, 4.4, 'bs')),   // innate cells, answering on sight
+  ...[[22, 48], [39, 48]].flatMap(([x, y]) => [C(x, y, 5.4, 'lo'), C(x, y, 2.2, 'hi')]),   // B and T cells, each set for one thing and keeping it
+]);
+def('reproductive_system', () => [                                  // the one organ system you can live without — gonads make the gametes, the rest is plumbing
+  E(13, 17, 8, 6, 'bs'), E(47, 17, 8, 6, 'lo'),                      // the two kinds of gonad
+  S('M13 23 Q18 34 25 39 M47 23 Q42 34 35 39', 'gh', 2),             // the plumbing that brings them together
+  C(39, 47, 8.4, 'hi'),                                              // the ovum, large and waiting
+  C(26, 46, 3, 'ik'), S('M23 46 L14 44', 'ik', 2.4), S('M14 44 Q10 48 14 52', 'ik', 1.6),   // and the sperm, small and swimming
+]);
+def('integumentary_system', () => [                                 // skin, hair, nails and glands as one system — 1.5 to 2 m², and 12 to 15% of body weight
+  P('M4 26 Q30 20 56 26 L56 50 Q30 56 4 50 Z', 'bs'),                // the largest organ system there is
+  S('M17 26 Q12 14 19 5', 'ik', 2.4), S('M33 24 Q31 12 38 3', 'ik', 2.4),   // hairs
+  C(17, 31, 2.4, 'lo'), C(33, 29, 2.4, 'lo'),                        // and the follicles they grow from
+  P('M6 37 Q14 33 22 37 L22 47 Q14 50 6 47 Z', 'hi'),                // a nail plate
+  ...[0, 1, 2, 3].map(i => S(`M43 ${36 + i * 3.4} Q51 ${34 + i * 3.4} 48 ${39 + i * 3.4}`, 'hi', 1.4)),   // and a gland, coiled up
+]);
+def('kidney', () => [                                               // a million nephrons apiece, straining 180 litres a day and taking nearly all of it back
+  P('M40 7 Q54 17 52 32 Q50 49 36 53 Q25 55 23 44 Q34 40 34 29 Q34 19 23 15 Q28 5 40 7 Z', 'bs'),
+  C(39, 19, 5, 'lo'),
+  ...[0, 1, 2, 3, 4].map(i => {                                      // the glomerulus, a knot of capillaries
+    const a = (i * 72) * Math.PI / 180;
+    return C(n(39 + 3 * Math.cos(a)), n(19 + 3 * Math.sin(a)), 1.8, 'hi');
+  }),
+  S('M39 25 Q47 30 43 38 Q39 46 45 49', 'ik', 2.2),                  // the tubule, clawing 99% of it back
+  S('M23 31 L8 31', 'gh', 3.4),                                      // and what is left, leaving
+]);
+def('liver', () => [                                                // roughly 500 separate jobs in 1.5 kg, and three quarters of its blood arrives already used, straight from the gut
+  P('M5 17 Q26 9 55 15 Q57 32 44 40 Q26 46 12 38 Q3 30 5 17 Z', 'bs'),
+  P('M8 40 Q18 45 27 43 Q25 51 14 51 Q5 49 8 40 Z', 'lo'),           // the smaller left lobe
+  S('M30 46 L30 57', 'hi', 4.4),                                     // the portal vein, up from the gut
+  S('M30 46 Q21 42 15 33 M30 46 Q39 42 47 31 M30 46 L30 33', 'hi', 2.2),
+  ...granules('gh', 8, 500, [12, 18, 48, 34]),                       // 500 jobs, all in the one organ
+]);
+/* completeness wave, chunk 02 — viscera, vessels, the endocrine loops, and
+   then music and language ─────────────────────────────────────────────────
+   Each of these draws the fact rather than the word. The gallbladder makes no
+   bile, so it is drawn concentrating someone else's; the trachea's rings are
+   all open at the back, so the gap is the picture; the estrogens are the one
+   steroid family with an aromatic ring, so that is what separates them from
+   testosterone rather than a recolour. Where a pair could collapse into one
+   shape — ovary and testis, chord and harmony, artery and vein — they are
+   built from different geometry on purpose: follicles against a coiled
+   tubule, one stack against a progression of them, a cut cross-section
+   against a length of tube. */
+
+def('gallbladder', () => [                                            // makes none of it — concentrates the liver's, and squeezes when fat arrives
+  P('M30 10 Q21 20 19 32 Q18 47 30 51 Q42 47 41 32 Q39 20 30 10 Z', 'bs'),
+  P('M30 22 Q25 29 25 35 Q25 43 30 45 Q35 43 35 35 Q35 29 30 22 Z', 'lo'),
+  S('M30 10 Q35 4 43 7 L51 12', 'ik', 2.4),                           // the cystic duct, out to the gut
+  C(53, 17, 3.6, 'hi'),
+]);
+def('esophagus', () => [                                              // striated at the top where you choose to swallow, smooth below where you do not
+  S('M23 8 L23 52', 'bs', 3), S('M37 8 L37 52', 'bs', 3),
+  ...[14, 18, 22, 26].map(y => S(`M23 ${y} L37 ${y}`, 'ik', 1.2)),
+  S('M21 10 Q30 15 39 10', 'lo', 3.4),
+  S('M21 50 Q30 45 39 50', 'lo', 3.4),                                // a sphincter ring closing each end
+]);
+def('trachea', () => [                                                // every ring incomplete, and the muscle that joins their ends is the back wall
+  ...[13, 23, 33, 43].map(y => S(`M40 ${y - 5} A13 5 0 1 0 40 ${y + 5}`, 'bs', 3.4)),
+  S('M41 6 L41 50', 'lo', 3),
+  S('M17 6 L17 50', 'gh', 1.4),
+]);
+def('bronchus', () => [                                               // the right one wider, shorter and steeper, which is where an inhaled thing ends up
+  S('M30 5 L30 20', 'bs', 6),
+  S('M30 20 L41 41', 'bs', 6),
+  S('M30 20 L15 43 L11 53', 'bs', 3.4),
+  C(41, 41, 3.6, 'ik'),
+]);
+def('artery', () => [                                                 // cut across: a thick middle coat of elastin and smooth muscle, wrapped circularly
+  C(30, 30, 21, 'lo'),
+  C(30, 30, 17, 'bs'),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * Math.PI * 2;
+    return S(`M${n(30 + 10 * Math.cos(a))} ${n(30 + 10 * Math.sin(a))} ` +
+             `L${n(30 + 16 * Math.cos(a))} ${n(30 + 16 * Math.sin(a))}`, 'ik', 1.4);
+  }),
+  C(30, 30, 9, 'ground'),                                             // a small lumen, held open against the pressure
+]);
+def('vein', () => [                                                   // thin-walled and wide, with most of the body's blood sitting in it right now
+  S('M6 17 L54 17', 'bs', 2), S('M6 43 L54 43', 'bs', 2),
+  ...granules('hi', 11, 61, [10, 21, 50, 39]),
+  S('M21 17 Q30 30 21 43', 'lo', 2.6), S('M39 17 Q30 30 39 43', 'lo', 2.6),   // and a valve, so it only goes one way
+]);
+def('capillary', () => [                                              // one endothelial cell thick, and the only place anything actually crosses
+  S('M4 23 L56 23', 'bs', 1.6), S('M4 37 L56 37', 'bs', 1.6),
+  E(19, 30, 8, 5, 'lo'), E(41, 30, 8, 5, 'lo'),                       // red cells, single file, bent to fit
+  ...[13, 30, 47].map(x => S(`M${x} 23 L${x} 15`, 'ik', 1.4)),
+  ...[13, 30, 47].map(x => S(`M${x} 37 L${x} 45`, 'ik', 1.4)),
+]);
+def('alveolus', () => [                                               // eighty square metres of it, behind a membrane a fifth of a micron thick
+  S('M4 10 L20 25', 'lo', 4),
+  ...[[27, 20], [42, 17], [46, 32], [31, 37], [17, 40]].map(([x, y]) => C(x, y, 9, 'bs')),
+  S('M8 48 Q28 56 52 46', 'hi', 2.6),                                 // the capillary, laid right across them
+  S('M22 11 L27 4', 'gh', 1.4),
+]);
+def('uterus', () => [                                                 // sixty grams of muscle, until a blastocyst lands in the lining
+  P('M14 16 Q30 23 46 16 L42 36 Q40 48 30 50 Q20 48 18 36 Z', 'bs'),
+  S('M14 16 Q7 10 11 5', 'lo', 3), S('M46 16 Q53 10 49 5', 'lo', 3),
+  S('M21 25 Q30 32 39 25', 'hi', 3.4),
+  C(34, 28, 2.6, 'ik'),
+  P('M27 50 L33 50 L32 57 L28 57 Z', 'lo'),
+]);
+def('ovary', () => [                                                  // a million at birth, one let go a cycle, five hundred in a lifetime
+  E(27, 33, 18, 13, 'bs'),
+  C(18, 31, 2.4, 'hi'), C(25, 38, 3.6, 'hi'), C(31, 28, 5, 'hi'),     // follicles, each further along than the last
+  ring('lo', 39, 34, 6.5, 2.4),                                       // and the one that has already burst
+  C(51, 21, 3, 'ik'),
+]);
+def('testis', () => [                                                 // kept two degrees short of the body, because sperm cannot be made any warmer
+  E(27, 34, 16, 18, 'bs'),
+  S('M18 44 Q17 25 28 25 Q39 25 39 39 Q39 50 29 48', 'lo', 3.2),      // one seminiferous tubule, coiled
+  P('M48 10 L53 10 L53 42 L48 42 Z', 'gh'),
+  P('M48 27 L53 27 L53 42 L48 42 Z', 'ik'),                           // a column stopped well below the rest
+]);
+def('placenta', () => [                                               // half a kilo the fetus builds and throws away, and the two bloods never touch
+  P('M8 32 Q8 15 30 15 Q52 15 52 32 Q52 41 30 41 Q8 41 8 32 Z', 'bs'),
+  S('M30 15 Q36 8 29 3', 'lo', 4),                                    // the cord, spiralling off it
+  S('M30 19 L30 31 M30 22 L21 31 M30 22 L39 31 M21 31 L17 37 M39 31 L43 37', 'hi', 1.8),
+  S('M4 45 L56 45', 'ik', 1.2),                                       // the line the mother's blood never crosses
+  ...granules('gh', 8, 23, [8, 48, 52, 56]),
+]);
+def('skull', () => [                                                  // twenty-two bones locked shut at their sutures; the jaw is the only one left free
+  P('M14 26 Q14 7 30 7 Q46 7 46 26 Q46 36 42 41 L18 41 Q14 36 14 26 Z', 'bs'),
+  S('M30 7 L30 21', 'ik', 1.8),
+  S('M15 21 L23 19 L28 23 L36 19 L45 22', 'ik', 1.8),                 // interlocked, and immovable
+  C(23, 30, 4.6, 'ground'), C(37, 30, 4.6, 'ground'),
+  P('M15 46 Q30 57 45 46 L43 42 Q30 51 17 42 Z', 'lo'),               // and the gap that lets the mandible move
+]);
+def('joint', () => [                                                  // the synovial kind, where the bones are not joined to each other at all
+  P('M18 5 L42 5 L42 23 L18 23 Z', 'hi'),
+  P('M15 23 L45 23 L45 28 L15 28 Z', 'lo'),
+  P('M15 36 L45 36 L45 41 L15 41 Z', 'lo'),                           // cartilage, one cap facing the other
+  P('M18 41 L42 41 L42 56 L18 56 Z', 'hi'),
+  ...granules('bs', 7, 47, [19, 29, 41, 35]),                         // and fluid in the space between them
+  S('M13 18 Q6 32 13 46', 'ik', 2), S('M47 18 Q54 32 47 46', 'ik', 2),
+]);
+def('femur', () => [                                                  // the longest bone, and a fixed 26.7% of the height it used to carry
+  C(19, 12, 8, 'hi'),
+  S('M23 17 L30 25', 'hi', 5),
+  P('M27 23 L36 23 L34 44 L26 44 Z', 'bs'),
+  C(26, 49, 6, 'hi'), C(37, 49, 6, 'hi'),
+  S('M52 7 L52 53', 'gh', 1.4), S('M48 7 L56 7', 'gh', 1.4), S('M48 53 L56 53', 'gh', 1.4),
+]);
+def('rib', () => [                                                    // seven joined by their own cartilage, three sharing, and two joined to nothing
+  P('M28 7 L32 7 L32 37 L28 37 Z', 'lo'),
+  ...[10, 17, 24, 31].flatMap(y => [
+    S(`M28 ${y} Q9 ${y + 3} 7 ${y + 13}`, 'bs', 2.4),
+    S(`M32 ${y} Q51 ${y + 3} 53 ${y + 13}`, 'bs', 2.4),
+  ]),
+  S('M21 43 Q11 46 9 55', 'hi', 2.4), S('M39 43 Q49 46 51 55', 'hi', 2.4),
+]);
+def('thyroid_gland', () => [                                          // twenty-five grams, and it stores its hormone outside its own cells
+  P('M26 17 Q13 20 13 32 Q13 45 24 45 Q31 42 28 32 Z', 'bs'),
+  P('M34 17 Q47 20 47 32 Q47 45 36 45 Q29 42 32 32 Z', 'bs'),
+  P('M26 28 L34 28 L34 37 L26 37 Z', 'lo'),                           // the isthmus, across the windpipe
+  ring('hi', 20, 30, 4, 1.6), ring('hi', 40, 30, 4, 1.6), ring('hi', 22, 39, 3, 1.4),
+]);
+def('adrenal_gland', () => [                                          // two different organs fused: a steroid cortex over what is really a nerve ganglion
+  P('M17 29 Q17 46 30 51 Q45 49 45 34 Q45 23 32 23 Q17 23 17 29 Z', 'gh'),
+  P('M17 23 Q21 10 31 10 Q43 10 45 23 Q34 19 17 23 Z', 'bs'),
+  P('M24 19 Q28 15 32 15 Q37 15 40 19 Q32 17 24 19 Z', 'lo'),
+  S('M41 15 L50 8', 'ik', 1.6), C(53, 6, 2.6, 'hi'),                  // and the burst it sends straight into the blood
+]);
+def('glucagon', () => [                                               // twenty-nine residues out of the alpha cells — one chain, where insulin has two
+  S('M7 45 L14 34 L21 43 L28 31 L35 39 L42 27 L50 34', 'ik', 2.4),
+  ...[[7, 45], [14, 34], [21, 43], [28, 31], [35, 39], [42, 27], [50, 34]]
+    .map(([x, y], i) => C(x, y, 2.6, i % 2 ? 'hi' : 'bs')),
+  hex('lo', 44, 12, 7, 2),                                            // and the glucose it pulls out of the liver
+]);
+def('testosterone', () => [                                           // four fused rings, and an enzyme that turns them into something gripping harder
+  hex('bs', 13, 36, 7, 2.2), hex('bs', 25.1, 36, 7, 2.2), hex('bs', 37.2, 36, 7, 2.2),
+  S('M45.5 22 L52.2 26.8 L49.6 34.7 L41.4 34.7 L38.8 26.8 Z', 'bs', 2.2),
+  C(45.5, 17, 3.2, 'hi'),
+  C(6, 36, 3.2, 'lo'),
+  S('M7 48 Q30 56 51 47', 'ik', 2.2),                                 // the receptor, the same one either version sits in
+]);
+def('estrogen', () => [                                               // the only steroid family with an aromatic ring — and they are counted by hydroxyls
+  hex('bs', 21, 33, 13, 2.6),
+  ring('bs', 21, 33, 6.5, 1.6),
+  C(7, 33, 3.2, 'lo'),
+  ...[15, 30, 45].flatMap((y, i) => [
+    C(45, y, 3, 'hi'),
+    ...Array.from({ length: i + 1 }, (_, k) => C(53, n(y - i * 2 + k * 4), 1.6, 'ik')),
+  ]),
+]);
+def('progesterone', () => [                                           // thirty milligrams a day from the corpus luteum, and by the end, this much
+  C(17, 21, 12, 'bs'),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2;
+    return S(`M${n(17 + 7 * Math.cos(a))} ${n(21 + 7 * Math.sin(a))} ` +
+             `L${n(17 + 12 * Math.cos(a))} ${n(21 + 12 * Math.sin(a))}`, 'lo', 1.4);
+  }),
+  P('M9 53 L18 53 L18 44 L9 44 Z', 'hi'),
+  P('M30 53 L52 53 L52 13 L30 13 Z', 'hi'),                           // the placenta takes over, and multiplies it eightfold
+]);
+def('growth_hormone', () => [                                         // let out in pulses, the biggest of them in deep sleep
+  S('M5 45 L55 45', 'ik', 1.6),
+  ...[[10, 9], [19, 15], [28, 32], [38, 12], [48, 19]].map(([x, h]) =>
+    S(`M${x} 45 L${x} ${45 - h}`, 'bs', 3.2)),
+  P('M20 47 L38 47 L38 54 L20 54 Z', 'gh'),                           // the hours it is not spent awake
+  C(28, 10, 3.4, 'hi'),
+]);
+def('blood_clotting', () => [                                         // thirteen zymogens, each waking the next, ending in a mesh stitched crosswise
+  ...[[10, 6], [21, 17], [32, 28]].map(([x, y]) =>
+    P(`M${x} ${y} L${x + 15} ${y} L${x + 7.5} ${y + 11} Z`, 'bs')),
+  S('M18 17 L23 19 M29 28 L34 30', 'ik', 1.6),
+  ...[0, 1, 2, 3].map(i => S(`M${5 + i * 13} 44 L${17 + i * 13} 57`, 'hi', 2)),
+  ...[0, 1, 2, 3].map(i => S(`M${17 + i * 13} 44 L${5 + i * 13} 57`, 'hi', 2)),
+  S('M5 51 L55 51', 'lo', 1.6),                                       // factor XIII, tying the strands to each other
+]);
+def('wound_healing', () => [                                          // four phases that overlap, and a scar that stops at four fifths of the strength
+  ...[0, 1, 2, 3].map(i => S(`M${6 + i * 11} ${13 - i} L${22 + i * 11} ${13 - i}`, i % 2 ? 'hi' : 'lo', 2.4)),
+  P('M5 22 L55 22 L55 42 L5 42 Z', 'bs'),
+  S('M30 22 L26 32 L30 42', 'ground', 3.4),
+  ...[27, 32, 37].map(y => S(`M22 ${y} L38 ${n(y - 4)}`, 'ik', 1.6)),  // pulled shut with new collagen, laid down wrong
+  S('M5 50 L55 50', 'gh', 2), S('M5 50 L45 50', 'lo', 3.4),
+]);
+def('thermoregulation', () => [                                       // sweat and open vessels against shivering and brown fat, to hold one number
+  P('M26 7 L34 7 L34 39 L26 39 Z', 'bs'), C(30, 46, 9, 'bs'),
+  P('M28 21 L32 21 L32 42 L28 42 Z', 'lo'), C(30, 46, 5.5, 'lo'),
+  S('M21 19 L39 19', 'ik', 1.6),                                      // the set point, near enough 36.8
+  ...[[11, 14], [13, 26], [8, 36]].map(([x, y]) =>
+    P(`M${x} ${y} Q${x - 4} ${y + 6} ${x} ${y + 8} Q${x + 4} ${y + 6} ${x} ${y} Z`, 'hi')),
+  ...[44, 51].map(x => S(`M${x} 15 L${x + 3} 21 L${x} 27 L${x + 3} 33 L${x} 39`, 'ik', 1.8)),
+]);
+def('menstrual_cycle', () => [                                        // only the first half varies; the second runs the corpus luteum's fixed fourteen days
+  S('M30 8 A22 22 0 0 0 30 52', 'gh', 3),
+  S('M30 8 A22 22 0 0 1 30 52', 'bs', 5),
+  C(30, 6, 4, 'hi'),                                                  // ovulation, the hinge between the two
+  C(10, 30, 4.5, 'hi'), C(50, 30, 5.5, 'lo'),
+  S('M30 52 L30 58', 'lo', 2.2),
+]);
+def('puberty', () => [                                                // it starts in the brain, a year or two before anything shows on the outside
+  P('M17 10 Q17 3 26 3 Q37 3 37 12 Q37 19 28 19 Q17 19 17 10 Z', 'bs'),
+  ...[25, 32, 39, 46].map((y, i) => C(27, y, n(2.4 + i * 0.5), 'hi')),  // GnRH again, after ten quiet years
+  E(27, 54, 10, 5, 'gh'),
+  S('M42 26 Q50 33 42 40', 'gh', 1.4),
+]);
+def('bile', () => [                                                   // almost all water, and green only because the pigment in it has already oxidised
+  P('M30 5 Q46 25 46 38 Q46 52 30 52 Q14 52 14 38 Q14 25 30 5 Z', 'bs'),
+  wave('hi', 35, 5, 12),
+  C(23, 43, 2.2, 'lo'), C(36, 41, 2.6, 'lo'), C(30, 47, 1.8, 'lo'),   // bilirubin — a worn-out red cell, on its way out
+]);
+def('pineal_gland', () => [                                           // a grain of rice wedged between the halves of the thalamus, going sandy with age
+  E(17, 29, 9, 12, 'gh'), E(43, 29, 9, 12, 'gh'),
+  E(30, 29, 6, 9.5, 'bs'),
+  ...granules('ik', 5, 13, [26, 24, 34, 34]),                         // brain sand, which is literally what it is called
+  S('M30 39 L30 49', 'lo', 2.2),
+]);
+def('circadian_rhythm', () => [                                       // left alone the clock runs long — twenty-four hours and eleven minutes
+  ring('bs', 30, 30, 20, 3),
+  ...[[30, 12], [48, 30], [30, 48], [12, 30]].map(([x, y]) =>
+    S(`M${x} ${y} L${n(30 + (x - 30) * 0.78)} ${n(30 + (y - 30) * 0.78)}`, 'ik', 1.6)),
+  S('M30 30 L30 13', 'ik', 2.6),
+  S('M30 30 L37 16', 'lo', 2.6),                                      // and comes back a little past where it left
+  C(30, 30, 3, 'hi'),
+]);
+def('melatonin', () => [                                              // an indole, and ten times as much of it in the dark as in the day
+  hex('bs', 21, 22, 9, 2.2),
+  S('M28.8 17.5 L38 14 L43 22 L38 30 L28.8 26.5 Z', 'bs', 2.2),       // the five-ring fused on, which is what makes it an indole
+  S('M21 31 L21 41 L30 46', 'ik', 2.2), C(30, 46, 3.2, 'hi'),
+  C(13, 13, 3, 'lo'),
+  S('M49 55 L49 34', 'lo', 4), S('M56 55 L56 50', 'gh', 4),           // night, then day
+]);
+def('nucleus_accumbens', () => [                                      // almost all of it medium spiny cells — and a place a wire gets put when nothing else works
+  E(24, 34, 16, 14, 'bs'),
+  ...[[15, 29], [24, 25], [32, 31], [19, 42], [30, 41]].flatMap(([x, y]) => [
+    C(x, y, 3, 'lo'),
+    S(`M${x} ${y} L${x - 6} ${y - 5}`, 'ik', 1),
+    S(`M${x} ${y} L${x + 6} ${y - 4}`, 'ik', 1),
+  ]),
+  ...granules('hi', 9, 77, [11, 22, 37, 46]),                         // the spines it is named for
+  S('M55 4 L36 26', 'ik', 3),
+]);
+def('human_voice', () => [                                            // two folds chopping the airflow into pulses, and a mouth that filters them
+  S('M30 57 L30 44', 'gh', 3.4),
+  P('M15 41 Q26 34 27 26 L22 23 Q11 32 15 41 Z', 'bs'),
+  P('M45 41 Q34 34 33 26 L38 23 Q49 32 45 41 Z', 'bs'),
+  ...[19, 12, 5].map((y, i) => E(30, y, n(9 - i * 1.5), 2.4, 'hi')),
+  S('M12 22 Q30 8 48 22', 'lo', 1.6),
+]);
+
+def('sound', () => [                                                  // a pressure wave: crowded, then thin, then crowded — and nothing at all in a vacuum
+  ...[5, 7, 9, 12, 16, 21, 27, 31, 34, 36, 38, 41, 45, 50, 55].map(x =>
+    S(`M${x} 11 L${x} 43`, 'bs', 2)),
+  S('M6 52 L48 52', 'ik', 2), S('M44 48 L51 52 L44 56', 'ik', 2),     // it has to be travelling through something
+]);
+
+def('pitch', () => [                                                  // not a property of the sound but a judgement about it, pinned since 1939 to 440 Hz
+  P('M25 9 L29 9 L29 33 L25 33 Z', 'bs'), P('M35 9 L39 9 L39 33 L35 33 Z', 'bs'),
+  P('M25 33 L39 33 L37 43 L27 43 Z', 'bs'), P('M29 43 L35 43 L35 54 L29 54 Z', 'lo'),
+  S('M11 51 L11 9', 'ik', 2.2), S('M7 14 L11 7 L15 14', 'ik', 2.2),   // the ear filing sounds low to high
+  ...[19, 31, 43].map(y => S(`M6 ${y} L16 ${y}`, 'gh', 1.4)),
+]);
+def('octave', () => [                                                 // halve the string and the pitch goes up by exactly one — a ratio of two to one
+  S('M8 17 L52 17', 'bs', 3.4),
+  S('M8 33 L30 33', 'bs', 3.4), S('M30 33 L52 33', 'gh', 2),
+  S('M8 11 L8 39', 'ik', 2), S('M52 11 L52 23', 'ik', 2), S('M30 27 L30 39', 'ik', 2),
+  E(14, 52, 5, 4, 'lo'), E(45, 45, 5, 4, 'hi'),                       // the same note, eight steps apart
+  S('M19 52 L19 41', 'ik', 1.6), S('M50 45 L50 37', 'ik', 1.6),
+]);
+def('musical_scale', () => [                                          // seven steps up to the octave, with twelve equal ones underneath them
+  ...[0, 1, 2, 3, 4, 5, 6].map(i =>
+    P(`M${7 + i * 6} ${45 - i * 5} L${13 + i * 6} ${45 - i * 5} L${13 + i * 6} 51 L${7 + i * 6} 51 Z`, 'bs')),
+  ...Array.from({ length: 12 }, (_, i) => S(`M${n(7 + i * 3.9)} 55 L${n(7 + i * 3.9)} 59`, 'ik', 1.2)),
+  C(48, 13, 3.6, 'hi'),                                               // the note it set out from, an octave higher
+]);
+def('chord', () => [                                                  // two or more at once; the usual three are root, third and fifth
+  E(23, 43, 7, 5, 'lo'), E(23, 34, 7, 5, 'bs'), E(23, 25, 7, 5, 'hi'),
+  S('M30 41 L30 8', 'ik', 2.6),                                       // one stem, three heads on it
+  S('M11 21 Q6 34 11 47', 'ik', 2.2),
+]);
+def('rhythm', () => [                                                 // accented set against unaccented — which fixes when each sound lands
+  S('M5 46 L55 46', 'ik', 1.6),
+  ...[[8, 21], [19, 11], [26, 11], [33, 21], [43, 11], [50, 11]].map(([x, h]) =>
+    P(`M${x} 46 L${x + 5} 46 L${x + 5} ${46 - h} L${x} ${46 - h} Z`, h > 15 ? 'bs' : 'hi')),
+  ...[8, 33].map(x => S(`M${x} 21 L${n(x + 2.5)} 16 L${x + 5} 21`, 'lo', 1.8)),
+]);
+def('tempo', () => [                                                  // beats per minute, only sayable at all once Maelzel built the box that ticked them
+  P('M21 53 L39 53 L34 7 L26 7 Z', 'bs'),
+  S('M30 51 L30 11', 'ik', 1.6),
+  S('M30 51 L39 13', 'lo', 2.6),
+  P('M32 23 L40 23 L40 30 L32 30 Z', 'hi'),                           // the weight that slides, to set the rate
+  S('M13 19 Q8 32 13 45', 'gh', 1.6), S('M47 15 Q53 30 47 45', 'gh', 1.6),
+]);
+def('melody', () => [                                                 // one line of tones the ear takes as a single thing — pitch, plus when
+  S('M8 43 L18 29 L26 34 L35 17 L45 26 L55 15', 'bs', 2.6),
+  ...[[8, 43], [18, 29], [26, 34], [35, 17], [45, 26], [55, 15]].map(([x, y]) => E(x, y, 4, 3, 'lo')),
+  S('M5 53 L52 53', 'ik', 1.4), S('M48 50 L53 53 L48 56', 'ik', 1.4),
+]);
+def('harmony', () => [                                                // the vertical axis — stacked rather than strung out, and moving from one to the next
+  ...[11, 30, 49].flatMap((x, i) => [
+    E(x, n(42 - i * 3), 5, 4, 'lo'),
+    E(x, n(32 - i * 3), 5, 4, 'bs'),
+    E(x, n(22 - i * 3), 5, 4, 'hi'),
+  ]),
+  ...[11, 30, 49].map((x, i) => S(`M${x} ${n(47 - i * 3)} L${x} ${n(53 - i * 3)}`, 'ik', 1.4)),
+  S('M18 53 L23 53 M37 53 L42 53', 'ik', 1.8),                        // a progression, which is the part that matters
+]);
+def('music', () => [                                                  // the oldest of it we still have is a bird bone with holes cut into it
+  P('M9 41 Q9 34 16 33 L45 25 Q52 24 53 29 Q54 35 47 36 L18 44 Q10 46 9 41 Z', 'bs'),
+  ...[[20, 40], [28, 38], [36, 36], [44, 33]].map(([x, y]) => C(x, y, 2.4, 'ground')),
+  E(11, 37, 4, 5, 'lo'),
+  ...[[24, 18], [39, 12]].flatMap(([x, y]) => [
+    E(x, y, 4, 3, 'hi'), S(`M${x + 4} ${y} L${x + 4} ${y - 9}`, 'ik', 1.6),
+  ]),
+]);
+def('musical_notation', () => [                                       // neumes by the ninth century, until Guido ruled them onto lines you could read cold
+  ...[15, 21, 27, 33, 39].map(y => S(`M5 ${y} L55 ${y}`, 'ik', 1.4)),
+  S('M18 48 Q18 11 25 11 Q31 11 29 22 Q27 35 20 41 Q15 46 18 48', 'bs', 2.6),
+  E(38, 27, 4, 3, 'lo'), E(47, 21, 4, 3, 'lo'),                       // and one mark per note, at a height that means something
+]);
+def('orchestra', () => [                                              // four sections in arcs, named for the floor an ancient chorus stood on
+  ...[8, 14, 20, 26].map((r, i) =>
+    S(`M${30 - r} 46 A${r} ${r} 0 0 1 ${30 + r} 46`, i % 2 ? 'bs' : 'hi', 2.8)),
+  ...[38, 32, 26, 20].map(y => C(30, y, 2, 'lo')),
+  C(30, 53, 4.4, 'ik'),                                               // and one person at the focus, facing the other way
+]);
+def('symphony', () => [                                               // three or four movements, and the first of them in sonata form
+  P('M8 11 L55 11 L55 25 L8 25 Z', 'bs'),
+  ...[24, 40].map(x => S(`M${x} 11 L${x} 25`, 'ik', 1.6)),            // exposition, development, and it all comes back
+  P('M8 31 L38 31 L38 37 L8 37 Z', 'hi'),
+  P('M8 41 L28 41 L28 47 L8 47 Z', 'hi'),
+  P('M8 51 L47 51 L47 57 L8 57 Z', 'hi'),
+  S('M4 8 L4 57', 'lo', 2.2),
+]);
+def('opera', () => [                                                  // the drama itself sung, every role of it, since about 1600
+  P('M5 7 L55 7 L55 14 L5 14 Z', 'lo'),
+  P('M5 14 Q16 23 14 45 L5 45 Z', 'bs'), P('M55 14 Q44 23 46 45 L55 45 Z', 'bs'),
+  C(30, 26, 6.5, 'ik'), P('M23 37 L37 37 L34 53 L26 53 Z', 'ik'),
+  ...[[21, 20], [17, 15], [40, 20], [44, 15]].map(([x, y]) => E(x, y, 3, 2, 'hi')),
+]);
+def('jazz', () => [                                                   // the beat divided unevenly, and a note bent on its way to the next one
+  S('M13 13 L45 13', 'ik', 3.2),
+  E(13, 31, 5, 4, 'bs'), S('M18 31 L18 13', 'ik', 2),
+  E(35, 31, 5, 4, 'bs'), S('M40 31 L40 13', 'ik', 2),
+  S('M24 22 L24 13', 'gh', 1.6),                                      // where the second one would land if it were played straight
+  S('M8 51 Q26 51 32 43 Q37 36 47 40', 'lo', 2.6),
+  C(48, 40, 3, 'hi'),
+]);
+def('cello', () => [                                                  // and the spike Servais gave it, so it stands on the floor instead of the calves
+  P('M30 11 Q42 11 42 21 Q42 27 36 30 Q42 33 42 41 Q42 50 30 50 Q18 50 18 41 Q18 33 24 30 Q18 27 18 21 Q18 11 30 11 Z', 'bs'),
+  S('M25 25 Q22 32 25 39', 'ik', 1.4), S('M35 25 Q38 32 35 39', 'ik', 1.4),
+  P('M28 2 L32 2 L31 11 L29 11 Z', 'lo'),
+  S('M30 50 L30 57', 'ik', 2.8), S('M19 57 L41 57', 'gh', 1.8),
+  C(26, 5, 1.4, 'hi'), C(26, 8, 1.4, 'hi'),
+]);
+def('harp', () => [                                                   // the strings leave the soundboard at a right angle, which is the whole definition
+  S('M11 54 L20 9', 'bs', 4),
+  S('M20 9 Q43 10 51 33', 'bs', 4),
+  S('M11 54 Q41 55 51 33', 'lo', 3.2),                                // pillar, neck, soundboard: a closed triangle
+  ...Array.from({ length: 7 }, (_, i) => {
+    const t = (i + 1) / 8;
+    const x0 = 11 + 9 * t, y0 = 54 - 45 * t, L = 29 - i * 3;
+    return S(`M${n(x0)} ${n(y0)} L${n(x0 + L * 0.98)} ${n(y0 + L * 0.2)}`, 'ik', 1);
+  }),
+]);
+def('language', () => [                                               // a finite set of rules, and no limit at all on what can come out of them
+  P('M5 20 L23 20 L23 40 L5 40 Z', 'bs'),
+  ...[[10, 26], [18, 26], [10, 34], [18, 34]].map(([x, y]) => C(x, y, 2.2, 'hi')),
+  S('M26 30 L33 30', 'ik', 2.2), S('M30 27 L34 30 L30 33', 'ik', 2.2),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const a = -0.8 + (i / 8) * 1.6;
+    return S(`M37 30 L${n(37 + 19 * Math.cos(a))} ${n(30 + 19 * Math.sin(a))}`, 'lo', 1.2);
+  }),
+]);
+def('phoneme', () => [                                                // swap one and the word means something else — that is the entire test for it
+  ...[0, 1, 2].map(i =>
+    P(`M${9 + i * 14} 20 L${19 + i * 14} 20 L${19 + i * 14} 30 L${9 + i * 14} 30 Z`, i ? 'gh' : 'bs')),
+  ...[0, 1, 2].map(i =>
+    P(`M${9 + i * 14} 38 L${19 + i * 14} 38 L${19 + i * 14} 48 L${9 + i * 14} 48 Z`, i ? 'gh' : 'lo')),
+  S('M8 14 L20 14', 'ik', 2.2), S('M8 54 L20 54', 'ik', 2.2),         // everything else about the two words is identical
+  S('M26 34 L48 34', 'gh', 1.2),
+]);
+def('word', () => [                                                   // everybody knows one when they hear it, and the three tests for it disagree
+  ...[15, 23, 31, 39].map(x => P(`M${x} 26 L${x + 5} 26 L${x + 5} 36 L${x} 36 Z`, 'bs')),
+  S('M13 19 L13 23 L37 23 L37 19', 'ik', 2.2),                        // where the sound stops
+  S('M21 14 L21 10 L46 10 L46 14', 'lo', 2.2),                        // where the grammar does
+  S('M13 45 L13 49 L46 49 L46 45', 'hi', 2.2),                        // and where the printer put a space
+]);
+def('grammar', () => [                                                // clauses out of phrases out of words, and the rules are what make it a system
+  C(30, 7, 3.2, 'bs'),
+  S('M30 10 L15 21 M30 10 L41 21', 'ik', 1.6),
+  C(15, 24, 3.2, 'hi'), C(41, 24, 3.2, 'hi'),
+  S('M41 27 L32 39 M41 27 L51 39', 'ik', 1.4),
+  C(32, 42, 2.6, 'lo'), C(51, 42, 2.6, 'lo'),
+  S('M15 27 L15 39', 'ik', 1.4), C(15, 42, 2.6, 'lo'),
+  ...[15, 32, 51].map(x => S(`M${x - 5} 52 L${x + 5} 52`, 'gh', 2.4)),
+]);
+def('writing_system', () => [                                         // an agreed mark for a piece of a language — which is what proto-writing could not manage
+  S('M7 11 Q7 4 16 4 Q27 4 27 12 Q27 20 16 20 L12 20 L7 25 Z', 'bs', 2.4),
+  S('M17 27 L17 34', 'ik', 2.2), S('M14 31 L17 36 L20 31', 'ik', 2.2),
+  ...[[6, 41], [19, 41], [32, 41], [45, 41]].map(([x, y], i) => S(
+    [`M${x} ${y} L${x + 9} ${y} M${n(x + 4.5)} ${y} L${n(x + 4.5)} ${y + 10}`,
+     `M${x} ${y + 10} L${x + 9} ${y} M${x} ${y} L${x + 9} ${y + 10}`,
+     `M${x} ${y} L${x + 9} ${y + 5} L${x} ${y + 10}`,
+     `M${x + 9} ${y} L${x} ${y} L${x} ${y + 10} L${x + 9} ${y + 10}`][i], 'lo', 2.2)),
+]);
+def('alphabet', () => [                                               // one mark per phoneme, where a syllabary spends one per syllable and a logography one per word
+  ...Array.from({ length: 8 }, (_, i) =>
+    P(`M${8 + (i % 4) * 6} ${8 + Math.floor(i / 4) * 7} L${12 + (i % 4) * 6} ${8 + Math.floor(i / 4) * 7} ` +
+      `L${12 + (i % 4) * 6} ${13 + Math.floor(i / 4) * 7} L${8 + (i % 4) * 6} ${13 + Math.floor(i / 4) * 7} Z`, 'bs')),
+  ...Array.from({ length: 4 }, (_, i) =>
+    P(`M${8 + (i % 2) * 12} ${28 + Math.floor(i / 2) * 11} L${18 + (i % 2) * 12} ${28 + Math.floor(i / 2) * 11} ` +
+      `L${18 + (i % 2) * 12} ${37 + Math.floor(i / 2) * 11} L${8 + (i % 2) * 12} ${37 + Math.floor(i / 2) * 11} Z`, 'hi')),
+  P('M36 42 L56 42 L56 57 L36 57 Z', 'lo'),                           // the same amount of language, cut three different ways
+  S('M33 6 L33 57', 'gh', 1.4),
+]);
+def('script', () => [                                                 // the characters themselves, each set filed under four letters and a number
+  ...[[9, 8], [23, 8], [37, 8], [9, 21], [23, 21], [37, 21], [9, 34], [23, 34], [37, 34]].map(([x, y], i) => S(
+    [`M${x} ${y} L${x + 10} ${y} M${x + 5} ${y} L${x + 5} ${y + 10}`,
+     `M${x} ${y + 10} Q${x + 5} ${y} ${x + 10} ${y + 10}`,
+     `M${x} ${y} L${x + 10} ${y + 10} M${x + 10} ${y} L${x} ${y + 10}`,
+     `M${x + 10} ${y} L${x} ${y} L${x} ${y + 10} L${x + 10} ${y + 10}`,
+     `M${x + 5} ${y} L${x + 5} ${y + 10} M${x} ${y + 5} L${x + 10} ${y + 5}`,
+     `M${x} ${y} Q${x + 10} ${y + 5} ${x} ${y + 10}`,
+     `M${x} ${y} L${x + 10} ${y} L${x + 5} ${y + 10} Z`,
+     `M${x} ${y + 5} Q${x + 5} ${y - 2} ${x + 10} ${y + 5} Q${x + 5} ${y + 12} ${x} ${y + 5}`,
+     `M${x} ${y} L${x} ${y + 10} L${x + 10} ${y + 10}`][i], i % 2 ? 'bs' : 'lo', 2)),
+  ...[0, 1, 2, 3].map(i => P(`M${9 + i * 9} 49 L${16 + i * 9} 49 L${16 + i * 9} 56 L${9 + i * 9} 56 Z`, 'hi')),
+]);
+def('dialect', () => [                                                // one language, and a line drawn where the words on either side stop matching
+  E(30, 30, 25, 21, 'bs'),
+  S('M31 9 Q21 30 33 51', 'ik', 2.8),
+  ...[[16, 21], [21, 34], [13, 29], [23, 44]].map(([x, y]) => C(x, y, 2.4, 'hi')),
+  ...[[41, 19], [47, 31], [39, 38], [45, 45]].map(([x, y]) => S(`M${x - 4} ${y} L${x + 4} ${y}`, 'lo', 2.4)),
+]);
+def('lingua_franca', () => [                                          // a third one, native to neither side, used because it is the only thing they share
+  C(11, 46, 8, 'bs'), C(49, 46, 8, 'lo'),
+  C(30, 13, 9.5, 'hi'),
+  S('M17 41 L25 21', 'ik', 2.6), S('M43 41 L35 21', 'ik', 2.6),
+  S('M20 48 L40 48', 'gh', 2),
+  S('M26 44 L34 52', 'ik', 2.2), S('M34 44 L26 52', 'ik', 2.2),       // and nothing at all passing straight across
+]);
+
+/* language, script and diet ─────────────────────────────────────────────── */
+/* Rule for this batch: a language is drawn as the one thing that is true of
+   it and of nothing else — a ratio, a border, a letterform. Never a flag,
+   because a flag is a country, and never a speech bubble, because that is
+   just the word "language" drawn twice. */
+
+def('language_family', () => [                                       // one proto-ancestor at the root; the tree is borrowed from biology, branch for branch
+  C(30, 10, 4.5, 'bs'),
+  S('M30 15 L30 22', 'ik', 2.4),
+  S('M14 32 L30 22 L46 32', 'ik', 2.2),
+  S('M8 48 L14 32 L22 48 M38 48 L46 32 L54 48', 'ik', 2),
+  C(14, 32, 3, 'lo'), C(46, 32, 3, 'lo'),
+  ...[8, 22, 38, 54].map(x => C(x, 50, 3.4, 'hi')),                  // the daughters, each still spoken
+]);
+def('pidgin', () => [                                                // improvised at the point of trade: scraps of several languages and not much of any
+  S('M8 12 L20 12 M8 20 L16 20', 'lo', 2.6),
+  S('M40 12 L54 12 M46 20 L54 20', 'hi', 2.6),
+  S('M24 8 L36 8', 'bs', 2.6),
+  S('M14 24 Q22 30 27 34 M48 24 Q40 30 33 34', 'gh', 1.6),           // what each side throws in
+  P('M20 36 L40 36 L40 46 L20 46 Z', 'bs'),                          // and the small thing they end up with
+  S('M26 36 L26 46 M34 36 L34 46', 'ground', 2),                     // full of holes where the grammar should be
+]);
+def('creole', () => [                                                // the pidgin grown up — one grammar, a full lexicon, and children born into it
+  S('M30 54 L30 30', 'lo', 3.6),
+  S('M12 18 L30 30 L48 18', 'bs', 2.6),
+  ...[12, 21, 30, 39, 48].map((x, i) => P(
+    `M${x - 4} ${6 + (i % 2) * 5} L${x + 4} ${6 + (i % 2) * 5} ` +
+    `L${x + 4} ${15 + (i % 2) * 5} L${x - 4} ${15 + (i % 2) * 5} Z`, i % 2 ? 'hi' : 'bs')),
+  C(30, 54, 4, 'ik'),                                                // the native speakers a pidgin never has
+]);
+def('sign_language', () => [                                         // two hands making two different signs: these are not one universal system
+  P('M10 50 L10 34 Q10 30 14 30 L22 30 Q26 30 26 34 L26 50 Z', 'bs'),
+  S('M13 30 L13 16 M18 30 L18 12 M23 30 L23 18', 'lo', 2.6),
+  P('M34 50 L34 34 Q34 30 38 30 L46 30 Q50 30 50 34 L50 50 Z', 'hi'),
+  S('M37 30 L37 20 M42 30 Q48 24 43 17 M47 30 L47 23', 'lo', 2.6),   // a different handshape entirely
+  S('M6 55 L54 55', 'gh', 1.6),
+]);
+def('loanword', () => [                                              // borrowing, they call it, though nothing leaves the lender and nothing is returned
+  S('M6 14 L24 14 L24 46 L6 46 Z', 'lo', 2.2),
+  S('M36 14 L54 14 L54 46 L36 46 Z', 'hi', 2.2),
+  P('M10 26 L20 26 L20 34 L10 34 Z', 'bs'),                          // still there
+  P('M40 26 L50 26 L50 34 L40 34 Z', 'bs'),                          // and here as well
+  S('M26 30 L33 30', 'ik', 2.4), P('M33 26 L39 30 L33 34 Z', 'ik'),
+]);
+def('literacy', () => [                                              // 55.7% of adults in 1950, and roughly five points more every decade since
+  ...[[14, 40], [24, 33], [34, 25], [44, 15]].map(([x, y], i) =>
+    P(`M${x - 4} ${y} L${x + 4} ${y} L${x + 4} 49 L${x - 4} 49 Z`, i % 2 ? 'bs' : 'hi')),
+  S('M8 49 L54 49', 'ik', 2.4),
+  S('M9 56 Q30 56 30 51 Q30 56 51 56', 'lo', 2),                     // the book held open under the climb
+]);
+def('esperanto', () => {                                             // la verda stelo — a language published in 1887 under a pen name and spoken ever since
+  const pts = [];
+  for (let i = 0; i < 10; i++) {
+    const a = -Math.PI / 2 + (i * Math.PI) / 5, rr = i % 2 ? 8.4 : 20;
+    pts.push(`${n(30 + rr * Math.cos(a))} ${n(26 + rr * Math.sin(a))}`);
+  }
+  return [
+    P(`M${pts.join(' L')} Z`, 'bs'),
+    S(`M${pts.join(' L')} Z`, 'ik', 1.4),
+    P('M14 50 L46 50 L46 56 L14 56 Z', 'lo'),                        // built rather than inherited: laid course by course
+    S('M22 50 L22 56 M30 50 L30 56 M38 50 L38 56', 'ground', 1.8),
+  ];
+});
+
+/* families ─────────────────────────────────────────────────────────────── */
+def('indo_european', () => [                                         // ten branches: eight still have speakers, two do not
+  C(30, 50, 4, 'ik'),
+  ...Array.from({ length: 10 }, (_, i) => {
+    const a = -Math.PI + (i + .5) * (Math.PI / 10);
+    const x = n(30 + 26 * Math.cos(a)), y = n(50 + 26 * Math.sin(a));
+    return [S(`M30 50 L${x} ${y}`, i < 2 ? 'gh' : 'bs', i < 2 ? 1.4 : 2.2),
+            C(x, y, i < 2 ? 2 : 3.4, i < 2 ? 'gh' : 'hi')];
+  }).flat(),
+]);
+def('sino_tibetan', () => [                                          // 1.3 of its 1.4 billion speakers sit on the Sinitic limb alone
+  S('M30 56 L30 34', 'lo', 3.4),
+  S('M30 34 L13 21 M30 34 L44 18', 'lo', 2.6),
+  E(45, 15, 14, 11, 'gh'),
+  ...granules('hi', 20, 613, [33, 5, 57, 25]),                       // that limb, loaded
+  C(13, 19, 3.2, 'bs'), C(7, 13, 2.4, 'bs'), C(17, 10, 2.2, 'bs'),   // and the other one, many languages but few speakers
+]);
+def('afroasiatic', () => [                                           // six branches — Berber, Chadic, Cushitic, Omotic, Semitic, and Egyptian, which ended
+  ...Array.from({ length: 6 }, (_, i) => {
+    const a = (i * Math.PI) / 3 - Math.PI / 2;
+    const x = n(30 + 20 * Math.cos(a)), y = n(30 + 20 * Math.sin(a));
+    return [S(`M30 30 L${x} ${y}`, 'gh', 1.6), C(x, y, i === 4 ? 3 : 5.4, i === 4 ? 'gh' : 'bs')];
+  }).flat(),
+  C(30, 30, 5.4, 'ik'),
+]);
+def('niger_congo', () => [                                           // 1,540 member languages: more than any other family on Earth
+  P('M6 52 L54 52 L54 56 L6 56 Z', 'lo'),
+  ...granules('bs', 32, 1540, [9, 11, 51, 50]),
+  ...granules('hi', 16, 77, [11, 15, 49, 48]),
+]);
+def('austronesian', () => [                                          // Taiwan to Madagascar to the Pacific, carried the whole way by outrigger canoe
+  S('M4 46 Q16 42 28 46 Q40 50 56 44', 'gh', 2),
+  P('M12 32 L44 32 L38 41 L18 41 Z', 'bs'),
+  S('M44 32 L53 36 M44 41 L53 36 M50 33 L50 39', 'lo', 2),           // the float on its booms
+  S('M27 32 L27 8', 'ik', 2.4), P('M27 10 L43 27 L27 27 Z', 'hi'),   // mast and crab-claw sail
+  C(8, 22, 2.6, 'bs'), C(52, 16, 2.2, 'bs'), C(17, 13, 2, 'bs'),
+]);
+def('dravidian', () => [                                             // 250 million in the south, and one stranded pocket as far off as Afghanistan
+  E(34, 43, 17, 12, 'bs'), E(34, 39, 11, 7, 'hi'),
+  S('M23 36 Q15 24 11 15', 'gh', 1.8),
+  C(10, 12, 4.4, 'lo'),
+  ...granules('ik', 6, 250, [25, 38, 45, 49]),
+]);
+def('turkic', () => [                                                // a continuum from the Balkans to Siberia: every variety overlaps the next one
+  ...[10, 18, 26, 34, 42, 50].map((x, i) => C(x, 28, 9, i % 2 ? 'bs' : 'hi')),
+  S('M6 45 L54 45', 'ik', 1.8),
+  S('M6 42 L6 48 M54 42 L54 48', 'ik', 1.8),
+]);
+
+/* scripts ──────────────────────────────────────────────────────────────── */
+def('greek_alphabet', () => [                                        // the first script to give the vowels signs of their own
+  S('M11 46 L21 13 L31 46 M15 34 L27 34', 'ik', 2.8),                // alpha, a vowel standing on its own
+  ...[[42, 17], [42, 31], [42, 45]].map(([x, y]) => C(x, y, 5, 'bs')),
+  ...[[53, 17], [53, 31], [53, 45]].map(([x, y]) => S(`M${x} ${y - 5} L${x} ${y + 5}`, 'lo', 2.4)),
+]);
+def('latin_alphabet', () => [                                        // the Roman capital, plus whatever marks each borrowing alphabet had to add
+  S('M17 47 L30 16 L43 47 M22 36 L38 36', 'ik', 3.4),
+  S('M12 47 L22 47 M38 47 L48 47', 'ik', 3),                         // the inscriptional serifs
+  S('M23 11 L30 4 L37 11', 'bs', 2.2),
+  C(30, 54, 2.6, 'lo'),
+]);
+def('cyrillic', () => [                                              // zhe: the letter no other alphabet in Eurasia has to draw
+  S('M30 11 L30 49', 'ik', 3.4),
+  S('M30 30 L11 11 M30 30 L11 49 M30 30 L49 11 M30 30 L49 49', 'ik', 3),
+  C(30, 30, 4, 'bs'),
+  S('M8 56 L52 56', 'gh', 1.6),
+]);
+def('devanagari', () => [                                            // the shirorekha: one headline, and every letter hangs from it
+  S('M8 18 L52 18', 'ik', 3.4),
+  S('M16 18 L16 40 Q16 46 24 46 Q30 46 30 38 L30 18', 'ik', 2.6),
+  S('M41 18 L41 47 M41 32 Q49 32 49 41', 'ik', 2.6),
+  S('M34 7 L34 18', 'bs', 2.8),                                      // a vowel matra, riding above the line
+  C(51, 45, 2.4, 'lo'),
+]);
+def('chinese_characters', () => [                                    // a logograph stands for a morpheme, not a sound; reading a newspaper takes 3,500 of them
+  S('M8 8 L52 8 L52 52 L8 52 Z', 'gh', 1.4),
+  S('M30 8 L30 52 M8 30 L52 30', 'gh', 1),                           // the practice grid
+  S('M14 20 L46 20', 'ik', 3.2),
+  S('M30 12 L30 47', 'ik', 3.2),
+  S('M30 31 L17 46', 'ik', 2.8), S('M30 31 L43 46', 'ik', 2.8),
+  S('M19 12 L25 17', 'bs', 2.4),
+]);
+def('hangul', () => [                                                // one syllable block: an initial consonant, a vowel, and a final if there is one
+  S('M10 8 L50 8 L50 52 L10 52 Z', 'gh', 1.4),
+  P('M16 13 L34 13 L34 29 L16 29 Z', 'bs'),
+  P('M40 12 L46 12 L46 33 L40 33 Z', 'hi'),
+  S('M46 22 L53 22', 'hi', 3.4),
+  P('M16 36 L46 36 L46 48 L16 48 Z', 'lo'),                          // the optional final, sitting underneath
+  S('M17 37 L17 47', 'ik', 2),
+]);
+def('kana', () => [                                                  // two syllabaries for the same morae: hiragana runs in curves, katakana in cuts
+  S('M10 14 Q26 10 22 24 Q18 38 10 33 Q7 23 26 21 Q34 21 28 45', 'bs', 2.8),
+  S('M36 14 L54 14 M46 14 L46 46 M36 33 L46 24', 'lo', 2.8),
+  S('M31 8 L31 52', 'gh', 1.4),
+]);
+def('geez_script', () => [                                           // an abjad that grew vowels: the same consonant, told apart by what is stuck to its foot
+  ...[11, 30, 49].map((x, i) => [
+    S(`M${x - 8} 20 L${x + 8} 20`, 'ik', 2.6),
+    S(`M${x - 6} 20 L${x - 6} 40 M${x + 6} 20 L${x + 6} 40`, 'ik', 2.6),
+    i === 0 ? S(`M${x - 6} 40 L${x + 6} 40`, 'bs', 2.8)
+    : i === 1 ? S(`M${x + 6} 33 L${x + 13} 33`, 'bs', 2.8)
+              : S(`M${x - 6} 40 L${x - 6} 49`, 'bs', 2.8),
+  ]).flat(),
+]);
+def('arabic_script', () => [                                         // one joined line running right to left, with dots to tell the letters apart
+  S('M53 31 Q45 40 37 31 Q31 25 25 31 Q19 40 11 31', 'ik', 3),
+  S('M11 31 Q6 39 13 44', 'ik', 3),
+  C(46, 21, 2.4, 'bs'), C(38, 20, 2.4, 'bs'),
+  C(22, 41, 2.4, 'lo'), C(28, 42, 2.4, 'lo'),
+  S('M12 54 L52 54', 'gh', 1.4), P('M18 50 L11 54 L18 58 Z', 'gh'),  // and the direction of travel
+]);
+
+/* languages ────────────────────────────────────────────────────────────── */
+def('latin', () => [                                                 // no mother tongue left, and still lending law, medicine and science their words
+  P('M11 10 L49 10 L49 42 L11 42 Z', 'lo'),
+  S('M17 19 L43 19 M17 27 L43 27 M17 35 L35 35', 'hi', 2.2),
+  C(25, 23, 1.6, 'bs'), C(37, 31, 1.6, 'bs'),                        // the interpuncts, between the words
+  S('M11 48 L25 48 M18 44 L18 48', 'ik', 2),                         // still in the law
+  P('M31 44 L37 44 L39 54 L29 54 Z', 'ik'),                          // still in the sciences
+  S('M47 44 L47 56 M42 49 L52 49', 'ik', 2),                         // still in medicine
+]);
+def('english', () => [                                               // 1.5 billion speakers, and only 372 million of them learned it first
+  P('M6 24 L54 24 L54 36 L6 36 Z', 'gh'),
+  P('M6 24 L18 24 L18 36 L6 36 Z', 'bs'),                            // the native quarter
+  ...granules('hi', 9, 372, [21, 26, 51, 34]),
+  S('M6 41 L54 41', 'ik', 1.6), S('M6 38 L6 44 M54 38 L54 44 M18 38 L18 44', 'ik', 1.6),
+  S('M18 20 L18 14', 'lo', 1.8), C(18, 11, 2.6, 'lo'),
+]);
+def('mandarin', () => [                                              // 70% of all Chinese speakers, over ground so wide that its two ends cannot follow each other
+  P('M8 18 Q20 9 30 15 Q44 9 52 20 Q56 34 44 45 Q30 52 16 44 Q5 32 8 18 Z', 'bs'),
+  S('M23 11 L19 49', 'ground', 3.4),                                 // the two places intelligibility gives out
+  S('M40 10 L45 47', 'ground', 3.4),
+  C(13, 32, 3.4, 'hi'), C(32, 30, 3.4, 'hi'), C(49, 31, 3.4, 'hi'),
+]);
+def('hindi', () => [                                                 // 347 million who grew up with it, and 264 million more who took it up later
+  C(23, 28, 17, 'bs'),
+  C(40, 32, 14, 'hi'),
+  E(31, 30, 6, 10, 'lo'),                                            // where the two of them overlap
+  S('M8 54 L52 54', 'gh', 1.6),
+]);
+def('spanish', () => [                                               // official in 21 countries, and its largest body of native speakers is in Mexico, not Spain
+  ...Array.from({ length: 21 }, (_, i) => C(11 + (i % 7) * 6.4, 12 + Math.floor(i / 7) * 6.4, 2.6, 'bs')),
+  C(22, 45, 9.5, 'hi'),                                              // Mexico
+  C(47, 46, 4.2, 'lo'),                                              // Spain
+  S('M36 36 L36 55', 'gh', 1.4),
+]);
+def('arabic', () => [                                                // 32 catalogued varieties around one shared standard that has no native speakers at all
+  ring('ik', 30, 30, 12, 2.2),
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = (i * Math.PI) / 8;
+    return C(n(30 + 23 * Math.cos(a)), n(30 + 23 * Math.sin(a)), 3, i % 2 ? 'bs' : 'hi');
+  }),
+  S('M25 30 L35 30 M30 25 L30 35', 'gh', 1.4),                       // the middle is empty; everybody learns it at school
+]);
+def('french', () => [                                                // 75 million grew up speaking it, and 258 million more were taught it
+  P('M18 6 L34 6 L34 39 L18 39 Z', 'hi'),
+  P('M18 39 L34 39 L34 49 L18 49 Z', 'bs'),
+  S('M11 49 L52 49', 'ik', 2.2),
+  S('M43 6 L43 49', 'gh', 1.4), S('M40 6 L46 6 M40 39 L46 39 M40 49 L46 49', 'gh', 1.4),
+]);
+def('bengali', () => [                                               // 242 million native speakers: the sixth-largest first language in the world
+  ...[0, 1, 2, 3, 4, 5].map(i => P(
+    `M11 ${11 + i * 7} L${50 - i * 6} ${11 + i * 7} L${50 - i * 6} ${16 + i * 7} L11 ${16 + i * 7} Z`,
+    i === 5 ? 'bs' : 'gh')),
+  ring('ik', 17, 50, 6, 2),
+  S('M8 8 L8 56', 'ik', 1.8),
+]);
+def('portuguese', () => [                                            // the most widely spoken language of the southern hemisphere
+  ring('ik', 30, 29, 21, 2),
+  P('M9 29 A21 21 0 0 0 51 29 Z', 'bs'),
+  S('M9 29 L51 29', 'ik', 2.6),
+  S('M15 39 Q30 35 45 39 M21 46 Q30 43 39 46', 'hi', 1.6),
+  C(30, 18, 3, 'gh'),
+]);
+def('russian', () => [                                               // official in four states, and still the working language of a union of fifteen
+  S('M6 10 Q30 4 54 10 Q58 30 54 50 Q30 56 6 50 Q2 30 6 10 Z', 'gh', 2),
+  P('M14 18 L28 18 L28 30 L14 30 Z', 'bs'),
+  P('M31 18 L45 18 L45 30 L31 30 Z', 'hi'),
+  P('M14 33 L28 33 L28 45 L14 45 Z', 'hi'),
+  P('M31 33 L45 33 L45 45 L31 45 Z', 'bs'),
+]);
+def('urdu', () => [                                                  // a national language almost nobody is born into: one roof over many mother tongues
+  S('M8 26 Q30 7 52 26', 'ik', 3),
+  S('M30 7 L30 17', 'ik', 2.2),
+  P('M10 44 L19 44 L19 53 L10 53 Z', 'bs'),
+  C(29, 48, 5.4, 'hi'),
+  P('M43 39 L51 53 L35 53 Z', 'lo'),
+  S('M6 57 L54 57', 'gh', 1.6),
+]);
+def('indonesian', () => [                                            // 97 in every 100 Indonesians speak it, and most of them learned it second
+  ...Array.from({ length: 100 }, (_, i) =>
+    C(8 + (i % 10) * 5, 9 + Math.floor(i / 10) * 5, 1.8, i > 96 ? 'gh' : (i % 3 ? 'bs' : 'hi'))),
+]);
+def('german', () => [                                                // official in four states that touch each other, and a national language in Namibia
+  P('M10 15 L24 15 L24 29 L10 29 Z', 'bs'),
+  P('M24 15 L38 15 L38 29 L24 29 Z', 'hi'),
+  P('M38 15 L50 15 L50 29 L38 29 Z', 'bs'),
+  P('M17 29 L38 29 L38 40 L17 40 Z', 'hi'),
+  S('M28 43 L28 49', 'gh', 1.6),
+  P('M21 50 L35 50 L35 57 L21 57 Z', 'lo'),                          // and one far away, on its own
+]);
+def('japanese', () => [                                              // the national language of exactly one country, and of nowhere else at all
+  ring('gh', 30, 32, 26, 1.4), ring('gh', 30, 32, 20, 1.4),
+  P('M18 40 Q13 28 22 21 Q31 15 37 24 Q45 31 40 40 Q30 48 18 40 Z', 'bs'),
+  C(26, 28, 3.4, 'hi'),
+  S('M9 55 L51 55', 'gh', 1.2),
+]);
+def('swahili', () => [                                               // a coastal mother tongue that became the trade language of half a continent
+  P('M7 7 L26 7 Q30 20 26 33 Q30 45 26 55 L7 55 Z', 'gh'),
+  P('M26 7 Q30 20 26 33 Q30 45 26 55 L40 55 Q46 30 40 7 Z', 'bs'),   // the strip where it is spoken first
+  S('M26 7 Q30 20 26 33 Q30 45 26 55', 'ik', 2),
+  ...granules('hi', 8, 200, [29, 12, 40, 50]),
+  S('M46 20 Q50 25 54 20 M46 36 Q50 41 54 36', 'lo', 1.8),
+]);
+def('korean', () => [                                                // one language under two names: Hangugeo in the south, Chosono in the north
+  P('M9 26 A21 21 0 0 1 51 26 Z', 'bs'),
+  P('M9 34 A21 21 0 0 0 51 34 Z', 'hi'),
+  S('M22 15 L38 15 M30 15 L30 22', 'ik', 2.6),
+  ring('ik', 30, 44, 7, 2.6),
+]);
+def('turkish', () => [                                               // agglutinating: one stem, then suffix after suffix, each carrying a piece of the sentence
+  P('M6 23 L22 23 L22 41 L6 41 Z', 'bs'),
+  P('M25 26 L36 26 L36 38 L25 38 Z', 'hi'),
+  P('M39 27 L47 27 L47 37 L39 37 Z', 'hi'),
+  P('M50 28 L56 28 L56 36 L50 36 Z', 'lo'),
+  S('M22 32 L25 32 M36 32 L39 32 M47 32 L50 32', 'ik', 2),
+  S('M6 48 L56 48', 'gh', 1.4),                                      // the longest of these stems, of all the Turkic languages
+]);
+def('vietnamese', () => [                                            // more speakers than the whole rest of the Austroasiatic family put together
+  P('M10 11 L24 11 L24 50 L10 50 Z', 'bs'),
+  ...[[31, 37], [38, 42], [45, 39], [52, 44]].map(([x, y]) =>
+    P(`M${x} ${y} L${x + 5} ${y} L${x + 5} 50 L${x} 50 Z`, 'hi')),
+  S('M8 50 L57 50', 'ik', 2.2),
+  S('M27 11 L27 50', 'gh', 1.4),
+]);
+def('tamil', () => [                                                 // incised on palm leaf since about 300 BCE, and still a first language today
+  ...[15, 27, 39].map((y, i) => [
+    P(`M6 ${y} L54 ${y} L54 ${y + 8} L6 ${y + 8} Z`, i % 2 ? 'hi' : 'bs'),
+    S(`M12 ${y + 4} L48 ${y + 4}`, 'lo', 1.2),
+  ]).flat(),
+  S('M30 9 L30 53', 'ik', 1.6),                                      // the cord, run through all of them
+  C(30, 31, 3, 'ground'),
+]);
+def('persian', () => [                                               // three standards that understand each other; two write in one script, the third in another
+  ...[14, 30, 46].map((x, i) => C(x, 23, 7, i === 2 ? 'lo' : 'bs')),
+  S('M21 23 L23 23 M37 23 L39 23', 'ik', 2.6),
+  S('M9 36 Q13 43 19 38 M25 36 Q29 43 35 38', 'hi', 2.2),            // the Arabic-derived hand, twice over
+  S('M41 36 L46 46 L51 36', 'lo', 2.2),                              // and Cyrillic, in Tajikistan
+  S('M8 53 L52 53', 'gh', 1.4),
+]);
+def('italian', () => [                                               // 64 million who grew up with it, and somewhere between 68 and 85 million all told
+  P('M8 25 L33 25 L33 36 L8 36 Z', 'bs'),                            // the part that is counted
+  P('M33 25 L51 25 L51 36 L33 36 Z', 'gh'),                          // and the spread around the rest
+  S('M35 20 L35 41 M51 20 L51 41 M35 30 L51 30', 'ik', 1.8),
+  S('M8 46 L51 46', 'lo', 1.6), C(8, 46, 2.6, 'lo'),
+]);
+def('thai', () => [                                                  // 44 consonants, 32 vowel forms, and four tone marks riding over the top of them
+  ring('ik', 15, 27, 5, 2.4), S('M20 27 L20 44 Q20 49 27 49 L31 49 L31 29', 'ik', 2.6),
+  ring('ik', 41, 27, 5, 2.4), S('M46 27 L46 49 M46 34 Q54 34 54 49', 'ik', 2.6),
+  S('M9 12 L17 12', 'bs', 2.2),
+  S('M22 15 L30 9', 'bs', 2.2),
+  S('M34 9 L38 15 L42 9', 'bs', 2.2),
+  S('M46 9 L53 15', 'bs', 2.2),
+]);
+def('polish', () => [                                                // pan or ty — the honorific is not a courtesy you may skip, and picking wrong is the error
+  C(17, 20, 6, 'bs'), S('M17 27 L17 47 M9 34 L25 34', 'bs', 2.6),
+  C(45, 17, 6, 'hi'), S('M45 24 L45 47 M37 31 L53 31', 'hi', 2.6),
+  S('M36 7 L54 7', 'ik', 2.6),                                       // and the one addressed as sir gets a mark above him
+  S('M28 41 L37 41', 'ik', 2), P('M37 37 L43 41 L37 45 Z', 'ik'),
+  S('M8 53 L53 53', 'gh', 1.4),
+]);
+def('dutch', () => [                                                 // 25 million first-language speakers, and a fifth as many again who learned it
+  P('M8 13 L38 13 L38 43 L8 43 Z', 'bs'),
+  P('M41 29 L55 29 L55 43 L41 43 Z', 'hi'),
+  C(23, 28, 4, 'lo'),
+  S('M8 49 L38 49 M41 49 L55 49', 'ik', 1.6),
+  S('M8 46 L8 52 M38 46 L38 52 M41 46 L41 52 M55 46 L55 52', 'ik', 1.6),
+]);
+def('greek', () => [                                                 // 3,400 years of written record, and 2,800 of them in the same alphabet
+  S('M7 31 L54 31', 'ik', 3),
+  ...Array.from({ length: 9 }, (_, i) =>
+    S(`M${n(9 + i * 5.5)} 31 L${n(9 + i * 5.5)} ${i % 2 ? 25 : 21}`, 'lo', 1.8)),
+  C(9, 31, 4, 'bs'),                                                 // the Mycenaean end of it
+  C(53, 31, 4, 'hi'),
+  S('M9 42 L53 42', 'gh', 1.6), S('M9 39 L9 45 M53 39 L53 45', 'gh', 1.6),
+]);
+def('hebrew', () => [                                                // eighteen centuries of liturgy with no native speakers, and then millions of them again
+  P('M22 53 L38 53 L36 34 L24 34 Z', 'lo'),                          // the stump
+  S('M24 34 L36 34', 'ik', 2),
+  S('M30 34 Q27 22 34 13', 'bs', 3.2),                               // and the shoot that came out of it
+  leaf('hi', 39, 11, .5, 40),
+  leaf('hi', 27, 19, .4, -30),
+  S('M13 57 L47 57', 'gh', 1.6),
+]);
+def('amharic', () => [                                               // what the cities do business in, whatever the households speak at home
+  C(30, 32, 6.4, 'ik'),
+  ...[[10, 15], [50, 15], [11, 48], [49, 47], [30, 6]].map(([x, y], i) => [
+    S(`M30 32 L${x} ${y}`, 'gh', 1.6),
+    P(`M${x - 6} ${y - 5} L${x + 6} ${y - 5} L${x + 6} ${y + 5} L${x - 6} ${y + 5} Z`, i % 2 ? 'bs' : 'hi'),
+  ]).flat(),
+]);
+def('hausa', () => [                                                 // the trading language of the Sahel, running clear across five national borders
+  ...[13, 24, 35, 46].map(x => S(`M${x} 7 L${x} 53`, 'gh', 1.6)),
+  S('M4 41 Q16 26 28 34 Q40 43 56 21', 'ik', 2.4),
+  ...[[7, 37], [19, 30], [32, 37], [44, 35], [55, 22]].map(([x, y], i) =>
+    C(x, y, 3.4, i % 2 ? 'bs' : 'hi')),                              // the market towns along it
+]);
+def('tagalog', () => [                                               // the first language of a quarter of the country, and the base of the national standard
+  C(30, 25, 18, 'gh'),
+  P('M30 25 L30 7 A18 18 0 0 1 48 25 Z', 'bs'),
+  ring('ik', 30, 25, 18, 1.6),
+  P('M9 48 L28 48 L28 56 L9 56 Z', 'hi'),                            // and the two official languages, side by side
+  P('M32 48 L51 48 L51 56 L32 56 Z', 'lo'),
+]);
+def('yoruba', () => [                                                // 50 million speakers, and only about two million of them picked it up later
+  P('M15 15 L45 15 L45 53 L15 53 Z', 'bs'),
+  P('M15 10 L45 10 L45 15 L15 15 Z', 'hi'),                          // the thin band who learned it second
+  S('M21 24 L39 24 M21 33 L39 33 M21 42 L39 42', 'lo', 1.4),
+  S('M52 10 L52 53', 'ik', 1.6), S('M49 10 L55 10 M49 53 L55 53', 'ik', 1.6),
+]);
+def('punjabi', () => [                                               // 150 million speakers writing one language in two scripts, one on each side of a border
+  S('M30 54 L30 33', 'bs', 3.4),
+  S('M30 33 L14 21 M30 33 L46 21', 'bs', 2.6),
+  S('M5 12 L23 12 M10 12 L10 26 M19 12 L19 26', 'ik', 2.4),          // Gurmukhi, hung from its headline
+  S('M54 19 Q47 27 40 20 Q35 15 38 9', 'ik', 2.4),                   // Shahmukhi, joined and cursive
+  C(45, 27, 2, 'lo'), C(50, 12, 2, 'lo'),
+]);
+def('javanese', () => [                                              // 68 million across the island's centre and east, with pockets left on the north-west coast
+  P('M5 30 Q18 21 32 26 Q46 21 57 30 Q46 41 32 36 Q18 41 5 30 Z', 'gh'),
+  P('M28 25 Q42 21 57 30 Q46 41 30 36 Z', 'bs'),
+  S('M5 30 Q18 21 32 26 Q46 21 57 30 Q46 41 32 36 Q18 41 5 30 Z', 'ik', 1.4),
+  C(12, 27, 3.2, 'hi'), C(20, 25, 2.4, 'hi'),                        // the pockets
+  S('M6 47 Q30 43 56 47', 'lo', 1.6),
+]);
+def('telugu', () => [                                                // the largest of the Dravidian languages, written in a hand made almost entirely of curves
+  S('M14 41 Q5 30 16 21 Q27 15 28 28 Q29 39 20 41 Q11 42 14 32', 'ik', 2.8),
+  S('M36 41 Q30 26 40 21 Q51 19 51 32 Q51 43 42 43', 'ik', 2.8),
+  C(21, 11, 2.6, 'bs'), C(44, 11, 2.6, 'bs'),
+  S('M8 51 L52 51', 'gh', 1.6),
+]);
+def('sanskrit', () => [                                              // one liturgical language behind three traditions, and the link between all of them
+  S('M8 47 L52 47', 'ik', 2.4),
+  C(30, 17, 7.4, 'bs'),
+  ...[[12, 34], [30, 35], [48, 34]].map(([x, y], i) => [
+    S(`M30 25 L${x} ${y - 6}`, 'gh', 1.6),
+    i === 0 ? P(`M${x} ${y - 6} L${x + 6} ${y + 5} L${x - 6} ${y + 5} Z`, 'hi')
+    : i === 1 ? C(x, y, 5.4, 'hi')
+              : P(`M${x - 5} ${y - 5} L${x + 5} ${y - 5} L${x + 5} ${y + 5} L${x - 5} ${y + 5} Z`, 'hi'),
+  ]).flat(),
+]);
+
+/* diet ─────────────────────────────────────────────────────────────────── */
+def('carnivore', () => [                                             // a cat cannot make its own taurine; for an obligate carnivore, flesh is a requirement
+  P('M15 11 L35 11 L37 24 Q30 30 25 24 Q19 30 13 24 Z', 'hi'),       // the crown, cusped for shearing
+  P('M18 24 L22 45 L26 25 Z', 'bs'), P('M29 25 L34 45 L35 24 Z', 'bs'),
+  S('M8 51 L54 51', 'gh', 6),
+  P('M8 48 L40 48 L40 54 L8 54 Z', 'lo'),                            // a hypercarnivore takes more than seven-tenths of its diet as meat
+  S('M40 45 L40 57', 'ik', 1.8),
+]);
+def('herbivore', () => [                                             // cellulose defeats it, so the bacteria and protozoa in its gut do the digesting instead
+  P('M12 31 Q9 15 27 14 Q45 13 49 30 Q53 46 34 49 Q15 51 12 31 Z', 'bs'),
+  ...granules('ik', 12, 909, [18, 22, 44, 43]),                      // the tenants doing the work
+  ...granules('hi', 7, 31, [21, 25, 41, 40]),
+  leaf('lo', 13, 9, .7, -35),                                        // and the leaf going in
+  S('M15 15 L21 23', 'lo', 2),
+]);
+def('omnivore', () => [                                              // not a rung on the ladder but a setting, and one bear slides it with the season
+  S('M10 33 L50 33', 'ik', 2.6),
+  S('M10 29 L10 37 M50 29 L50 37', 'ik', 2),
+  leaf('bs', 11, 17, .6, -25),                                       // all plants at this end
+  P('M43 11 L55 11 L52 22 Q49 26 45 21 Z', 'hi'),                    // all flesh at the other
+  P('M26 25 L34 25 L34 41 L26 41 Z', 'lo'),                          // and the animal, sitting somewhere between them
+  S('M30 41 L30 50', 'gh', 1.6),
+]);
+
+/* completeness batch pt.04 — behaviour and ecology, the psychology tier, and
+ * the solid earth. Each is drawn for the one thing its fact line is actually
+ * about: prey is the ten-year hare-and-lynx cycle rather than a rabbit, the
+ * id / ego / super-ego are three different relationships to one waterline
+ * rather than three stacked bands, and crust, mantle and core are a thickness
+ * comparison, a creeping shell and a dynamo — not one cutaway recoloured
+ * three times. */
+
+/* behaviour and ecology ─────────────────────────────────────────────────── */
+def('predator', () => [
+  S('M6 14 Q24 24 44 20', 'bs', 3.4),                                // jaws, closing
+  S('M6 48 Q24 38 44 42', 'bs', 3.4),
+  ...[12, 20, 28, 36].map(x => P(`M${x} 20 L${x + 4} 21 L${x + 2} 28 Z`, 'ik')),
+  ...[12, 20, 28, 36].map(x => P(`M${x} 42 L${x + 4} 41 L${x + 2} 34 Z`, 'ik')),
+  E(30, 31, 8, 5, 'lo'),                                             // the prey, caught between them
+  S('M27 29 L33 33 M33 29 L27 33', 'ik', 1.4),                       // the food dies — that, and not the eating, is the definition
+]);
+def('prey', () => [
+  S('M4 38 Q12 20 20 38 Q28 56 36 38 Q44 20 52 38', 'bs', 2.6),      // hare, swinging on a near-ten-year period
+  S('M10 40 Q18 22 26 40 Q34 58 42 40 Q50 22 58 40', 'hi', 2.6),     // lynx, following a beat behind it
+  S('M4 50 L56 50', 'gh', 1.2),                                      // ninety years of fur-trade records, read straight off
+]);
+def('pollination', () => [
+  S('M14 52 L14 26', 'lo', 2.2), E(14, 21, 5, 7, 'bs'),              // the anther, where the pollen starts
+  ...granules('hi', 5, 17, [9, 15, 19, 27]),
+  S('M46 52 L46 30', 'lo', 2.2),
+  S('M46 30 L39 21 M46 30 L53 21', 'bs', 2.6),                       // the stigma, forked and sticky, where it has to end up
+  ...[[24, 20], [31, 16], [38, 19]].map(([x, y]) => C(x, y, 2, 'hi')),  // the crossing is the whole event — the flower does none of it itself
+]);
+def('pollinator', () => [
+  E(26, 32, 12, 7, 'bs'),                                            // small enough to get inside a cacao flower, which is the job
+  E(20, 24, 8, 3.4, 'gh'), E(30, 23, 7, 3, 'gh'),
+  S('M38 32 L46 36', 'ik', 1.4),
+  ...[[18, 28], [24, 27], [30, 30], [22, 36], [30, 37], [34, 33]].map(([x, y]) => C(x, y, 1.8, 'hi')),  // pollen, caught all over it
+  ...[[46, 46], [53, 50]].map(([x, y]) => C(x, y, 1.6, 'hi')),       // and shed again at the next one
+]);
+def('nocturnal', () => [
+  P('M46 8 A14 14 0 1 0 46 36 A11 11 0 1 1 46 8 Z', 'gh'),           // a hundred and sixty million years of night
+  C(22, 30, 13, 'bs'), C(22, 30, 9.5, 'ik'),                         // an eye whose pupil never had to close
+  C(18, 26, 2.4, 'hi'),
+  S('M34 44 Q46 40 47 50 Q40 57 33 52', 'lo', 2.4),                  // and the hearing that was bought with the colour vision it lost
+]);
+def('diurnal', () => [
+  C(46, 14, 8, 'hi'),
+  ...[0, 60, 120, 180, 240, 300].map(a => { const r1 = a * Math.PI / 180;
+    return S(`M${n(46 + 10 * Math.cos(r1))} ${n(14 + 10 * Math.sin(r1))} L${n(46 + 14 * Math.cos(r1))} ${n(14 + 14 * Math.sin(r1))}`, 'hi', 1.6); }),  // full daylight
+  E(26, 38, 16, 7, 'bs'), C(11, 32, 6, 'bs'),                        // a gecko — about twenty separate lineages went back out into it
+  C(10, 31, 2.2, 'ik'),                                              // and a round pupil again, not the slit its night-going ancestors kept
+  S('M20 44 L16 52 M32 44 L36 52', 'lo', 2),
+]);
+def('mimicry', () => [
+  P('M8 20 L24 20 L24 42 L8 42 Z', 'bs'), S('M10 25 L22 25 M10 34 L22 34', 'ik', 2.2),  // the model — actually defended, and advertising it
+  P('M28 23 L42 23 L42 41 L28 41 Z', 'hi'), S('M30 27 L40 27 M30 34 L40 34', 'ik', 2),  // the mimic, wearing a warning it never earned
+  C(52, 32, 6, 'gh'), C(52, 32, 2.6, 'ik'),                          // and the dupe — three parties, never two
+]);
+def('venom', () => [
+  E(19, 13, 8, 6, 'bs'),                                             // the gland
+  P('M19 19 Q22 33 29 44 Q22 42 17 32 Q15 24 15 19 Z', 'lo'),        // the fang, curved and hollow
+  S('M19 20 Q22 32 27 42', 'hi', 1.4),                               // its duct, running the whole length
+  S('M6 44 L54 44', 'ik', 2),                                        // the wound — delivery is the line, not the chemistry
+  ...[[29, 50], [35, 54], [24, 54]].map(([x, y]) => C(x, y, 2.2, 'bs')),
+]);
+def('endoskeleton', () => [
+  P('M16 12 Q10 30 16 50 Q30 56 44 50 Q50 30 44 12 Q30 6 16 12 Z', 'gh'),  // soft tissue, laid over the top of it
+  S('M30 14 L30 40', 'bs', 4),                                       // the frame, on the inside
+  S('M30 20 L18 30 M30 20 L42 30 M30 40 L22 50 M30 40 L38 50', 'bs', 3.4),
+  ...[[30, 20], [30, 40], [18, 30], [42, 30]].map(([x, y]) => C(x, y, 2.6, 'hi')),  // joints — it grows with its owner rather than being moulted off
+]);
+def('gestation', () => [
+  E(28, 26, 20, 17, 'gh'),                                           // the uterus
+  P('M22 20 Q34 13 39 24 Q43 35 32 37 Q23 38 24 30 Z', 'bs'),        // the calf, curled up inside it
+  C(23, 21, 5, 'bs'),
+  S('M6 50 L56 50', 'ik', 1.4),
+  ...Array.from({ length: 11 }, (_, i) => S(`M${n(7 + i * 4.6)} 50 L${n(7 + i * 4.6)} 44`, 'lo', 1.4)),  // and twenty-two months of them, for an elephant
+]);
+def('larva', () => [
+  S('M4 34 L56 34', 'ik', 1.6),                                      // the line between two lives
+  ...[16, 22, 28, 34, 40].map(x => C(x, 45, 5, 'bs')),               // the larva — segmented, below, eating something else entirely
+  C(12, 45, 2, 'ik'),
+  E(34, 20, 8, 4, 'lo'),                                             // the adult, above, competing with neither its parents nor itself
+  E(28, 13, 9, 4, 'hi'), E(41, 13, 9, 4, 'hi'),
+]);
+def('habitat', () => [
+  P('M6 18 L54 18 L54 46 L6 46 Z', 'lo'),                            // one rotting log
+  ...[[16, 26], [30, 24], [42, 30], [20, 38], [36, 40], [48, 38]].map(([x, y], i) =>
+    [C(x, y, 5, 'gh'), C(x, y, i % 3 === 0 ? 2.4 : i % 3 === 1 ? 1.6 : 3.2, i % 2 ? 'bs' : 'hi')]).flat(),
+  S('M6 18 L54 18', 'ik', 1.6),                                      // each pocket its own light, humidity and temperature — and its own tenant
+]);
+def('ecosystem', () => [
+  C(11, 11, 6, 'hi'),                                                // energy, arriving from outside
+  S('M16 16 L23 23', 'gh', 1.6),
+  leaf('bs', 29, 25, .95),                                           // taken up here
+  C(47, 35, 5, 'lo'),                                                // passed along here
+  P('M8 48 L52 48 L52 54 L8 54 Z', 'bs'),                            // and returned to the ground it came out of
+  S('M34 30 Q44 30 46 33 M49 40 Q48 47 40 49 M20 48 Q13 40 22 31', 'ik', 1.8),  // nutrients going round — the loop is what makes it one system
+  P('M22 31 L19 37 L26 35 Z', 'ik'),
+]);
+def('ecological_niche', () => [
+  S('M10 50 L10 8 M10 50 L54 50 M10 50 L34 30', 'ik', 1.6),          // three of the n dimensions
+  P('M14 44 L40 44 L40 18 L14 18 Z', 'gh'),                          // everything the species could tolerate
+  P('M20 40 L33 40 L33 27 L20 27 Z', 'bs'),                          // and what its competitors actually leave it
+  S('M40 18 L33 27', 'lo', 1.4),
+]);
+def('biome', () => [
+  S('M10 52 L10 8 M10 52 L54 52', 'ik', 1.8),                        // rainfall up one axis, temperature along the other
+  P('M12 50 L52 50 L52 30 L30 44 Z', 'lo'),
+  P('M12 50 L30 44 L52 30 L52 12 L26 34 Z', 'bs'),
+  P('M12 50 L26 34 L52 12 L12 12 Z', 'hi'),                          // plot the two and the world's vegetation sorts itself into bands
+]);
+def('scavenger', () => [
+  S('M5 18 Q20 11 30 18 Q40 11 55 18', 'bs', 3.4),                   // wings held flat and still — the only way the energy arithmetic ever works
+  C(30, 20, 4, 'bs'), S('M33 20 L39 23', 'ik', 1.6),
+  S('M30 26 Q35 34 30 41', 'gh', 1.2),                               // a long unpowered spiral down
+  ...[16, 24, 32, 40].map(x => S(`M${x} 47 L${n(x + 5)} 41`, 'gh', 2)),  // to what is left
+  S('M12 51 L48 51', 'lo', 2),
+]);
+def('homologous_structure', () => {
+  const bones = (x, y) => [
+    S(`M${x} ${y} L${n(x + 8)} ${n(y + 5)}`, 'ik', 2.2),
+    S(`M${n(x + 8)} ${n(y + 5)} L${n(x + 15)} ${n(y + 8)}`, 'ik', 2),
+    ...[-4, -1, 2, 5].map(d => S(`M${n(x + 15)} ${n(y + 8)} L${n(x + 22)} ${n(y + 8 + d)}`, 'ik', 1.2)),  // the same five digits, every time
+  ];
+  return [
+    P('M5 11 Q20 7 32 19 Q18 24 5 20 Z', 'gh'), ...bones(7, 12),     // a bat's wing
+    P('M5 29 Q22 25 32 35 Q18 41 5 38 Z', 'hi'), ...bones(7, 30),    // a whale's flipper
+    P('M5 47 Q19 43 28 51 Q18 57 5 55 Z', 'bs'), ...bones(7, 48),    // a horse's foreleg — one structure, three jobs
+  ];
+});
+def('dominant_allele', () => [
+  S('M14 8 L14 32', 'gh', 3), P('M9 16 L19 16 L19 24 L9 24 Z', 'bs'),  // one copy carrying it
+  S('M32 8 L32 32', 'gh', 3),                                        // the other not
+  S('M14 36 Q23 44 32 36', 'ik', 1.6),
+  C(23, 51, 7, 'bs'),                                                // and it shows anyway — that relationship is all dominance ever was
+  S('M48 12 L48 44', 'gh', 3), P('M43 24 L53 24 L53 32 L43 32 Z', 'hi'),  // against a third allele the same one can be recessive
+]);
+def('punnett_square', () => [
+  C(23, 11, 3, 'bs'), C(45, 11, 3, 'hi'),                            // one parent's two gametes, along the top
+  C(7, 28, 3, 'bs'), C(7, 44, 3, 'hi'),                              // the other's, down the side
+  P('M18 22 L32 22 L32 34 L18 34 Z', 'bs'),                          // one...
+  P('M36 22 L50 22 L50 34 L36 34 Z', 'lo'),
+  P('M18 38 L32 38 L32 50 L18 50 Z', 'lo'),                          // ...two...
+  P('M36 38 L50 38 L50 50 L36 50 Z', 'hi'),                          // ...one — and three of the four look alike from outside
+  S('M16 20 L52 20 M16 36 L52 36 M16 52 L52 52', 'ik', 1.6),
+  S('M16 20 L16 52 M34 20 L34 52 M52 20 L52 52', 'ik', 1.6),
+]);
+def('antibiotic_resistance', () => [
+  ...[[10, 15], [18, 21], [26, 14], [34, 20], [42, 15], [50, 21]].map(([x, y]) => C(x, y, 4, 'gh')),  // the culture, before the course
+  S('M6 30 L54 30', 'lo', 1.4),                                      // the course, applied across all of it
+  ...[[10, 30], [18, 30], [26, 30], [42, 30]].map(([x]) => S(`M${n(x - 3)} 27 L${n(x + 3)} 33 M${n(x + 3)} 27 L${n(x - 3)} 33`, 'ik', 1.2)),
+  C(34, 41, 4.6, 'bs'), C(50, 41, 4.6, 'bs'),                        // the survivors are, by definition, the ones it failed to kill
+  ...[26, 38, 46, 54].map(x => C(x, 53, 3.4, 'bs')),                 // and the culture belongs to them now
+]);
+def('domestication', () => [
+  E(12, 18, 9, 5, 'gh'), P('M4 15 L6 6 L12 14 Z', 'gh'),             // the wolf it began from — long snout, ear held up
+  E(30, 31, 8, 5, 'bs'), P('M24 27 L26 19 L31 26 Z', 'bs'),
+  E(48, 43, 6, 5, 'hi'), P('M43 40 Q40 33 46 36 Z', 'hi'),           // a shorter face and a folded ear, generations later
+  S('M20 21 L24 27 M37 34 L42 40', 'ik', 1.6),
+  S('M6 54 Q20 50 34 54 Q46 57 57 52', 'lo', 2),                     // a relationship kept up long enough to change both parties — the dog was first
+]);
+def('fitness', () => [
+  C(15, 13, 6, 'bs'),
+  ...[[7, 32], [19, 32]].map(([x, y]) => [S(`M15 19 L${x} ${n(y - 4)}`, 'gh', 1.2), C(x, y, 3.4, 'bs')]).flat(),  // two
+  C(43, 13, 6, 'hi'),
+  ...[[30, 32], [38, 32], [46, 32], [54, 32], [42, 43]].map(([x, y]) => [S(`M43 19 L${x} ${n(y - 4)}`, 'gh', 1.2), C(x, y, 3.4, 'hi')]).flat(),  // five
+  S('M6 52 L54 52', 'ik', 1.2),                                      // and that average, not strength or health or lifespan, is the whole of the term
+]);
+
+/* the psychology tier ───────────────────────────────────────────────────── */
+def('psychology', () => [
+  P('M14 50 Q7 30 18 15 Q31 3 45 12 Q55 20 50 33 Q47 45 39 51 Z', 'gh'),  // the mind, argued about for centuries
+  ring('bs', 32, 28, 12, 2.4),                                       // and the instrument Wundt finally turned on it in 1879
+  S('M32 28 L38 20', 'ik', 2.2), C(32, 28, 2, 'ik'),
+  ...[0, 60, 120, 180, 240, 300].map(a => { const r1 = a * Math.PI / 180;
+    return S(`M${n(32 + 12 * Math.cos(r1))} ${n(28 + 12 * Math.sin(r1))} L${n(32 + 15.5 * Math.cos(r1))} ${n(28 + 15.5 * Math.sin(r1))}`, 'lo', 1.2); }),  // measured, in milliseconds, instead of debated
+]);
+def('parkinsons_disease', () => [
+  P('M10 19 Q30 11 50 19 Q50 28 30 30 Q12 28 10 19 Z', 'lo'),        // the substantia nigra
+  ...[[16, 20], [23, 18], [30, 21], [37, 18], [44, 20]].map(([x, y], i) => C(x, y, 2.6, i > 3 ? 'bs' : 'gh')),
+  C(23, 25, 2.6, 'gh'), C(37, 25, 2.6, 'bs'),                        // half to four-fifths of its dopamine neurons already gone
+  S('M9 44 L13 39 L17 49 L21 39 L25 49 L29 39 L33 49 L37 39 L41 49 L45 39 L51 44', 'ik', 2),  // before the first tremor ever shows
+]);
+def('autism_spectrum_disorder', () => [
+  ...[8, 25, 42].map(x => S(`M${x} 9 L${n(x + 11)} 9 L${n(x + 11)} 21 L${x} 21 Z`, 'gh', 1.4)),  // the separate labels it used to be cut into
+  P('M6 33 L54 33 L54 46 L6 46 Z', 'bs'),                            // one continuum, since 2013
+  ...Array.from({ length: 9 }, (_, i) => C(n(9 + i * 5.4), 39.5, n(1 + i * 0.45), 'hi')),  // and no two points along it the same
+]);
+def('adhd', () => [
+  S('M6 40 L54 40', 'gh', 2.4),                                      // the thing meant to be attended to
+  S('M6 40 Q12 21 18 38 Q22 51 28 29 Q32 13 38 36 Q42 51 48 23', 'bs', 2.4),  // attention, never on it for long
+  ...[[20, 12], [47, 10], [52, 44]].map(([x, y]) => [S(`M${n(x - 6)} ${n(y + 8)} L${x} ${y}`, 'lo', 1.6),
+    P(`M${x} ${y} L${n(x - 5)} ${n(y + 2)} L${n(x - 2)} ${n(y + 6)} Z`, 'lo')]).flat(),  // and acting before it has finished deciding
+]);
+def('anorexia_nervosa', () => [
+  P('M18 10 Q22 7 26 10 L27 34 Q22 41 17 34 Z', 'bs'),               // the body, held at a dangerously low weight
+  S('M32 5 L32 55', 'ik', 2),                                        // the mirror
+  P('M38 10 Q46 7 54 10 L55 36 Q46 45 37 36 Z', 'gh'),               // and what it shows back — the fear is half the diagnosis
+  S('M8 40 L14 40 L14 46 L20 46 L20 52 L26 52', 'lo', 2),            // the weight still being driven down: the highest mortality of any psychiatric diagnosis
+]);
+def('addiction', () => [
+  C(30, 30, 7, 'bs'),                                                // the ventral tegmental area's dopamine, doing exactly what it always did
+  ring('hi', 30, 30, 16, 2.6),                                       // a loop that keeps coming back to it
+  P('M44 23 L51 30 L42 34 Z', 'hi'),
+  ...[[11, 11], [50, 11], [11, 49], [50, 49]].map(([x, y]) => S(`M${n(x - 4)} ${n(y - 4)} L${n(x + 4)} ${n(y + 4)} M${n(x + 4)} ${n(y - 4)} L${n(x - 4)} ${n(y + 4)}`, 'ik', 1.6)),  // travelled anyway, with the harm stacking up outside it
+]);
+def('placebo_effect', () => [
+  P('M8 22 L26 22 A8 8 0 0 1 26 38 L8 38 A8 8 0 0 1 8 22 Z', 'gh'),  // a capsule with nothing active in it whatever
+  S('M17 22 L17 38', 'ik', 1.4),
+  S('M34 14 Q44 20 52 46', 'bs', 2.6),                               // and the pain genuinely coming down
+  ...[[37, 20], [43, 29], [48, 38]].map(([x, y]) => C(x, y, 2.4, 'hi')),  // on the brain's own opioids — block those and the effect goes with them
+]);
+def('confirmation_bias', () => [
+  C(33, 30, 9, 'bs'),                                                // the guess already held
+  ...[[7, 9, 23, 21], [30, 5, 33, 17], [55, 11, 42, 24]].map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'hi', 2.2)),
+  ...[[23, 21], [33, 17], [42, 24]].map(([x, y]) => C(x, y, 2.6, 'hi')),  // every case that fits it, gone looking for
+  C(19, 54, 3, 'gh'), S('M19 50 Q11 44 17 37', 'lo', 2.2), S('M17 37 L21 41', 'ik', 1.4),  // and the one test that could have refuted it, never once run
+]);
+def('gestalt_psychology', () => [
+  C(14, 16, 9, 'bs'), P('M14 16 L22.9 17.1 L17.5 24.3 Z', 'ground'),
+  C(46, 16, 9, 'bs'), P('M46 16 L42.5 24.3 L37.1 17.1 Z', 'ground'),
+  C(30, 46, 9, 'bs'), P('M30 46 L34.5 38.2 L25.5 38.2 Z', 'ground'),
+  // the triangle nobody drew — the whole arriving first, and the parts explaining none of it
+]);
+def('structuralism_psychology', () => [
+  ...[10, 22, 34, 46].map(x => [12, 26, 40].map(y => S(`M${x} ${y} L${n(x + 9)} ${y} L${n(x + 9)} ${n(y + 9)} L${x} ${n(y + 9)} Z`, 'gh', 1.2))).flat(),  // the mind, tabulated the way a chemist tabulates elements
+  P('M10 12 L19 12 L19 21 L10 21 Z', 'bs'),                          // sensations
+  P('M34 26 L43 26 L43 35 L34 35 Z', 'hi'),                          // images
+  P('M22 40 L31 40 L31 49 L22 49 Z', 'lo'),                          // affections — and by trained introspection, nothing else was admitted as an ingredient
+]);
+def('phrenology', () => [
+  P('M12 40 Q10 17 28 11 Q47 7 51 24 Q53 37 44 43 L42 53 L18 53 Q14 48 12 40 Z', 'gh'),  // a skull, with nothing underneath it ever measured
+  S('M18 21 Q30 15 45 22 M13 32 Q30 27 49 33 M28 11 L26 43 M38 10 L41 40', 'ik', 1.4),   // parcelled into organs of character
+  ...[[22, 19], [34, 16], [45, 29], [20, 37], [37, 35]].map(([x, y]) => C(x, y, 2, 'lo')),  // each read off a bump — discredited by the 1840s, but used to argue for slavery first
+]);
+def('lobotomy', () => [
+  P('M14 42 Q10 20 28 13 Q47 9 51 26 Q53 39 42 45 Q28 51 14 42 Z', 'gh'),  // the head
+  P('M17 37 Q14 20 28 16 Q35 16 35 27 Q35 39 26 43 Q18 44 17 37 Z', 'bs'),  // the prefrontal cortex
+  ...[22, 28, 34].map(y => S(`M35 ${y} L47 ${n(y - 2)}`, 'ik', 1.6)),  // and everything it was wired to
+  S('M31 30 L41 27', 'ground', 4.5),                                 // cut, blind, through the eye socket
+  S('M3 11 L27 25', 'ik', 2.6), P('M28 26 L22 25 L25 20 Z', 'ik'),   // by an instrument that never saw what it was severing
+]);
+def('freudian_id', () => [
+  S('M4 15 L56 15', 'ik', 2),                                        // the surface of awareness
+  P('M5 21 Q17 45 30 34 Q44 23 53 45 Q56 54 5 54 Z', 'lo'),          // and the whole of it below, never once above
+  ...[[16, 31], [30, 41], [44, 37], [24, 47], [40, 48]].map(([x, y]) => C(x, y, 3.4, 'bs')),  // uncoordinated instinctual demand, wanting satisfaction now
+  ...[16, 30, 44].map(x => S(`M${x} 25 L${x} 18`, 'hi', 2)),         // pushing up against the line the entire time
+]);
+def('ego', () => [
+  S('M4 30 L56 30', 'ik', 2),                                        // the same surface
+  C(30, 30, 9, 'bs'),                                                // the part of the id that met the outside world and was changed by the contact
+  S('M30 54 L30 41', 'lo', 2.6), P('M30 36 L25 45 L35 45 Z', 'lo'),  // the drive, arriving from below
+  S('M39 30 L50 30', 'hi', 2.6), P('M56 30 L47 25 L47 35 Z', 'hi'),  // let out sideways instead, on the reality principle's terms
+  C(30, 30, 3, 'ik'),
+]);
+def('superego', () => [
+  P('M7 53 Q5 21 30 13 Q55 21 53 53 Z', 'gh'),                       // the parent
+  P('M18 53 Q17 31 30 25 Q43 31 42 53 Z', 'bs'),                     // taken inside — and built on their super-ego, not on them
+  P('M25 53 Q24 40 30 35 Q36 40 35 53 Z', 'hi'),                     // which is how a culture's rules outlive everyone who ever held them
+  S('M11 7 L49 7', 'ik', 2.4),                                       // the rule itself, unchanged at every remove
+]);
+def('multiple_intelligences', () => [
+  ...[[7, 20], [14, 34], [21, 13], [28, 28], [35, 41], [42, 17], [49, 31], [56, 24]].map(([x, y], i) =>
+    P(`M${n(x - 2.6)} ${y} L${n(x + 2.6)} ${y} L${n(x + 2.6)} 50 L${n(x - 2.6)} 50 Z`, i % 3 === 0 ? 'bs' : i % 3 === 1 ? 'hi' : 'lo')),
+  // eight of them, proposed independent — and nothing joining them, because no published study has shown they are eight things rather than one
+]);
+def('habituation', () => [
+  S('M4 45 L56 45', 'gh', 1.2),
+  ...[[10, 8], [20, 19], [30, 28], [40, 35]].map(([x, top]) => [C(x, 51, 2, 'lo'), S(`M${x} 45 L${x} ${top}`, 'bs', 2.4)]).flat(),  // the same harmless thing again and again, and less answer each time
+  P('M48 53 L54 53 L51 48 Z', 'ik'),                                 // something else entirely
+  S('M51 45 L51 9', 'hi', 2.4),                                      // and the full response is straight back — which is what separates it from a tired sense organ
+]);
+def('mnemonic', () => [
+  S('M30 5 L30 15 Q30 26 21 26 Q13 26 13 17', 'ik', 2.6),            // one hook
+  S('M13 27 L53 27', 'gh', 1.2),
+  ...[[19, 33], [27, 38], [35, 33], [43, 38], [50, 32]].map(([x, y], i) =>
+    [S(`M${x} 27 L${x} ${y}`, 'gh', 1), C(x, n(y + 4), 3.4, i % 3 === 0 ? 'bs' : i % 3 === 1 ? 'hi' : 'lo')]).flat(),
+  // and seven colours, or five lakes, carried off it in order at no cost at all
+]);
+def('richter_scale', () => [
+  S('M4 16 L12 16 L14 9 L17 23 L20 11 L24 16 L28 16 L30 3 L33 31 L36 13 L40 16 L48 16 L56 16', 'ik', 1.6),  // the trace, and its single largest excursion
+  S('M30 3 L30 31', 'lo', 1.2),
+  ...[[10, 3], [22, 6], [34, 12], [47, 24]].map(([x, h]) =>
+    P(`M${n(x - 4)} 50 L${n(x + 4)} 50 L${n(x + 4)} ${n(50 - h)} L${n(x - 4)} ${n(50 - h)} Z`, 'bs')),  // one whole number up the scale, and about thirty-two times the energy under it
+  S('M4 50 L56 50', 'ik', 1.4),
+]);
+
+/* the solid earth ───────────────────────────────────────────────────────── */
+def('mantle', () => [
+  C(30, 30, 25, 'bs'),                                               // eighty-four per cent of the planet's volume, all of it this
+  ring('ik', 30, 30, 25, 1.4),
+  C(30, 30, 9, 'gh'),                                                // the core it wraps
+  S('M30 47 Q17 38 22 26 Q26 15 35 18', 'hi', 2),                    // and solid peridotite creeping like a fluid, given geological time
+  S('M30 13 Q43 22 38 34 Q34 45 25 42', 'hi', 2),
+  P('M35 18 L28 15 L32 11 Z', 'hi'), P('M25 42 L32 45 L28 49 Z', 'hi'),
+]);
+def('crust', () => [
+  P('M4 24 L56 24 L56 54 L4 54 Z', 'lo'),                            // mantle, underneath either way
+  P('M4 20 L28 20 L28 24 L4 24 Z', 'bs'),                            // ocean crust — five to ten kilometres of it
+  P('M28 7 L56 7 L56 24 L28 24 Z', 'hi'),                            // continental crust — twenty-five to seventy
+  wave('gh', 18, 3, 12),
+  S('M4 20 L28 20 L28 7 L56 7', 'ik', 1.8),                          // and under one per cent of the planet at either thickness
+]);
+def('earth_core', () => [
+  C(30, 30, 21, 'gh'),                                               // 2,890 km down, where the rock gives out and iron takes over
+  C(30, 30, 15, 'bs'),                                               // a liquid outer core
+  C(30, 30, 6.5, 'hi'), ring('ik', 30, 30, 6.5, 1.2),                // around a solid ball 1,221 km in radius
+  S('M28 8 Q-16 30 28 52', 'lo', 1.7),                               // and the magnetic field the liquid part alone generates
+  S('M33 8 Q77 30 33 52', 'lo', 1.7),
+  P('M28 8 L22 14 L32 15 Z', 'lo'), P('M33 8 L29 15 L39 14 Z', 'lo'),
+]);
+def('rock_cycle', () => [
+  P('M22 7 L38 7 L43 19 L17 19 Z', 'bs'),                            // igneous — cooled out of melt
+  ...[41, 45, 49].map(y => P(`M9 ${y} L27 ${y} L27 ${n(y + 3)} L9 ${n(y + 3)} Z`, 'hi')),  // sedimentary — laid down flat
+  P('M36 37 Q47 33 53 42 Q47 53 36 49 Q31 43 36 37 Z', 'lo'),
+  S('M38 40 Q46 40 50 45', 'ik', 1.2),                               // metamorphic — the same material, folded and recooked
+  S('M15 23 Q7 31 11 38 M31 53 Q41 55 45 51 M52 33 Q50 23 44 19', 'ik', 1.8),  // three stages of one loop, not three kinds of rock
+  P('M11 38 L8 32 L15 33 Z', 'ik'), P('M45 51 L47 45 L40 47 Z', 'ik'), P('M44 19 L50 21 L48 15 Z', 'ik'),
+]);
+def('evaporation', () => [
+  wave('bs', 44, 6, 24), wave('lo', 51, 5, 24),                      // a liquid surface, at no particular temperature
+  ...[[16, 36], [30, 32], [44, 34]].map(([x, y]) => C(x, y, 2.4, 'hi')),  // one molecule at a time, leaving it
+  ...[[13, 23], [32, 19], [47, 22], [22, 11], [41, 9]].map(([x, y]) => C(x, y, 2, 'hi')),  // and away — not one bubble, because no boiling is required
+  S('M4 15 L26 15', 'gh', 1.6), P('M31 15 L24 12 L24 18 Z', 'gh'),   // moving air only makes it faster
+]);
+def('water_cycle', () => [
+  wave('bs', 51, 5, 26),                                             // the ocean it leaves
+  ...[9, 14, 19].map(x => S(`M${x} 46 L${n(x - 1)} 29`, 'hi', 1.8)),
+  ...puff('gh', 31, 15, .85),                                        // about nine days up there, and no longer
+  ...[[38, 26], [44, 29], [50, 25]].map(([x, y]) => S(`M${x} ${y} L${n(x - 2)} ${n(y + 13)}`, 'lo', 1.8)),
+  P('M4 52 L20 52 L20 57 L4 57 Z', 'lo'),
+  S('M52 45 Q40 53 26 51', 'ik', 1.6), P('M21 50 L29 47 L28 54 Z', 'ik'),  // half a million cubic kilometres of it a year, round and round
+]);
+def('pangaea', () => [
+  ring('gh', 30, 30, 26, 3),                                         // Panthalassa — one ocean, the whole way round
+  P('M24 6 Q40 8 44 20 Q46 30 34 32 Q46 36 44 46 Q38 56 24 54 Q14 48 16 36 Q10 24 16 14 Q18 8 24 6 Z', 'bs'),  // and one landmass, assembled 335 million years ago
+  S('M44 20 Q33 30 44 40', 'lo', 2),                                 // the Tethys, biting into its eastern side
+]);
+def('continental_drift', () => [
+  P('M6 12 Q22 10 24 24 Q26 38 20 49 Q10 53 6 45 Z', 'bs'),          // two coastlines that fit each other
+  P('M54 14 Q40 12 36 26 Q34 40 40 51 Q50 53 54 45 Z', 'hi'),
+  ...[[16, 20, 40, 22], [17, 32, 38, 34], [15, 43, 41, 45]].map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'gh', 1.4)),  // and fossil beds lining up straight across the gap
+  ...[[16, 20], [40, 22], [17, 32], [38, 34]].map(([x, y]) => C(x, y, 2, 'lo')),
+  // right about the fact, and dismissed for fifty years for having no engine to offer
+]);
+def('plate_tectonics', () => [
+  C(30, 30, 25, 'gh'),
+  S('M6 19 L26 12 L46 21 M26 12 L28 34 M28 34 L9 43 M28 34 L49 41 M46 21 L54 35 M54 35 L49 41', 'ik', 2.2),  // seven or eight of them, and the seams between
+  ...[[16, 24], [39, 24], [20, 44], [45, 32]].map(([x, y], i) => C(x, y, 3, i % 2 ? 'bs' : 'hi')),
+  S('M13 32 L21 30', 'lo', 1.6), P('M25 29 L19 27 L19 32 Z', 'lo'),  // creeping along at nought to ten centimetres a year
+  S('M41 45 L35 47', 'lo', 1.6), P('M31 48 L37 45 L38 50 Z', 'lo'),
+]);
+def('subduction', () => [
+  P('M3 15 L26 15 L26 23 L3 23 Z', 'hi'),                            // the overriding plate
+  P('M57 13 L34 13 Q25 17 21 28 Q17 41 19 57 L29 57 Q25 41 29 28 Q34 20 57 21 Z', 'bs'),  // the one going under, bending as it goes
+  S('M26 15 L21 26', 'ik', 2),                                       // the trench, right at the hinge
+  ...[31, 41, 51].map(y => S(`M5 ${y} L14 ${y}`, 'gh', 1.2)),        // and down: some slabs have made the whole 2,890 km to the core-mantle boundary
+  P('M10 55 L17 55 L13.5 59 Z', 'gh'),
+]);
+def('fault', () => [
+  P('M4 6 L36 6 L18 54 L4 54 Z', 'gh'),                              // one side of the fracture
+  P('M40 6 L56 6 L56 54 L22 54 Z', 'gh'),                            // the other
+  P('M4 14 L33 14 L31.5 18 L4 18 Z', 'bs'),
+  P('M4 26 L28.5 26 L27 30 L4 30 Z', 'hi'),
+  P('M4 38 L24 38 L22.5 42 L4 42 Z', 'lo'),
+  P('M34 22 L56 22 L56 26 L32.5 26 Z', 'bs'),
+  P('M29.5 34 L56 34 L56 38 L28 38 Z', 'hi'),
+  P('M25 46 L56 46 L56 50 L23.5 50 Z', 'lo'),
+  S('M36 6 L18 54 M40 6 L22 54', 'ik', 1.6),                         // the same three beds, no longer level across it — that offset is the whole definition
+]);
+def('landslide', () => [
+  P('M4 6 L20 6 L24 19 L38 40 L56 50 L56 55 L4 55 Z', 'lo'),         // the slope
+  S('M20 6 Q25 12 24 19', 'ik', 2.2),                                // the scarp it tore away from
+  ...[[28, 27, 5], [34, 34, 4], [40, 41, 3.4], [46, 46, 2.6], [51, 49, 2]].map(([x, y, r]) => C(x, y, r, 'bs')),  // and the run-out below, coarsest nearest the top
+  ...[[10, 12], [15, 20], [8, 27]].map(([x, y]) => S(`M${x} ${y} L${n(x - 2)} ${n(y + 7)}`, 'hi', 1.4)),  // rain, which is usually what starts it
+]);
+def('avalanche', () => [
+  P('M4 20 L34 20 L56 51 L56 55 L4 55 Z', 'gh'),                     // a slope in the thirty-five to forty-five degree band where these happen
+  P('M6 23 L34 23 L48 43 L19 40 Z', 'hi'),                           // a cohesive slab of snow
+  S('M8 32 L41 39', 'lo', 2.8),                                      // the weak layer buried under it — no slab avalanche without one
+  S('M12 23 L9 33', 'ik', 2.2),                                      // the crown, where the slab lets go
+  ...[[37, 46], [45, 50], [52, 47]].map(([x, y]) => C(x, y, 3, 'bs')),  // and dry powder, which can pass 300 km/h
+]);
+def('aquifer', () => [
+  P('M4 11 L56 11 L56 19 L4 19 Z', 'lo'),                            // rock that will not let water through, above
+  P('M4 19 L56 19 L56 47 L4 47 Z', 'gh'),
+  ...[[12, 26], [24, 30], [36, 26], [48, 32], [16, 40], [30, 42], [44, 40]].map(([x, y]) => C(x, y, 4, 'bs')),  // pore space, holding water — necessary, and on its own not enough
+  S('M6 34 Q18 27 30 36 Q41 44 51 36', 'hi', 2.2), P('M56 34 L48 31 L49 40 Z', 'hi'),  // it has to let the water move as well
+  P('M4 47 L56 47 L56 55 L4 55 Z', 'lo'),
+]);
+def('geode', () => [
+  P('M10 32 Q8 13 24 8 Q43 3 50 20 Q57 37 44 49 Q27 59 15 46 Q10 40 10 32 Z', 'lo'),  // dull and lumpy outside — nothing about it shows
+  C(31, 30, 15, 'ground'),                                           // cracked open
+  ...Array.from({ length: 10 }, (_, i) => { const a = i * 36 * Math.PI / 180;
+    return P(`M${n(31 + 15 * Math.cos(a - .3))} ${n(30 + 15 * Math.sin(a - .3))} L${n(31 + 15 * Math.cos(a + .3))} ${n(30 + 15 * Math.sin(a + .3))} L${n(31 + 6 * Math.cos(a))} ${n(30 + 6 * Math.sin(a))} Z`, i % 2 ? 'bs' : 'hi'); }),
+  C(31, 30, 5, 'gh'),                                                // and quartz grown inward off the wall, over ages, by water that got in
+]);
+def('ice_age', () => [
+  S('M4 11 Q8 31 12 12 Q16 33 20 13 Q24 34 28 11 Q32 31 36 14 Q40 33 44 11 Q48 31 52 17 Q54 25 56 19', 'bs', 2.2),  // not one cold snap — 2.58 million years of them, one behind another
+  P('M8 33 L25 33 L21 40 L12 40 Z', 'hi'),                           // ice three to four kilometres thick
+  P('M32 31 L53 31 L48 40 L36 40 Z', 'hi'),
+  S('M4 40 L56 40', 'gh', 1.4),                                      // today's sea level
+  S('M4 51 L56 51', 'ik', 1.8),                                      // and about 110 m below it, at the last maximum
+]);
+def('stratovolcano', () => [
+  P('M14 52 L28 11 L32 11 L46 52 Z', 'bs'),                          // a steep cone — silica-rich lava too sticky to run far
+  S('M20 37 Q30 33 40 37', 'lo', 2.4),                               // a layer of tephra, a layer of lava, a layer of tephra
+  S('M17 46 Q30 42 43 46', 'lo', 2.4),
+  S('M23 25 Q30 22 37 25', 'hi', 2),
+  ...puff('gh', 30, 7, .6),                                          // stacked up by the column that built it
+  S('M14 52 L46 52', 'ik', 1.6),
+]);
+def('shield_volcano', () => [
+  P('M2 47 Q30 25 58 47 Z', 'bs'),                                   // slopes of two to ten degrees, a hundred kilometres across the base
+  S('M4 45 Q19 33 30 31 M56 45 Q41 33 30 31', 'lo', 2),              // basalt runny enough to travel for miles before it freezes
+  P('M26 31 L34 31 L32 27 L28 27 Z', 'lo'),                          // a small summit vent, and no cone worth the name
+  S('M2 47 L58 47', 'ik', 1.6),
+  C(14, 43, 2, 'hi'), C(45, 43, 2, 'hi'),
+]);
+def('kimberlite', () => [
+  ...[9, 18, 27].map(y => P(`M4 ${y} L56 ${y} L56 ${n(y + 5)} L4 ${n(y + 5)} Z`, 'gh')),  // country rock, cut straight through
+  P('M16 5 L44 5 L34 40 L32 56 L28 56 L26 40 Z', 'bs'),              // the pipe — carrot-shaped, 75 m to 1.5 km across the top
+  ...[[26, 21], [34, 27], [29, 35]].map(([x, y]) => C(x, y, 2, 'lo')),  // riding up on its own carbon dioxide from 150 to 450 km down
+  P('M30 11 L36 17 L30 25 L24 17 Z', 'hi'),                          // and bringing this along with it
+]);
+
+/* belief — what is held, and how it is held ──────────────────────────────── */
+def('god', () => [
+  C(17, 24, 12, 'bs'),                                              // one, in the traditions that count one
+  ...[[41, 14], [51, 22], [39, 30], [49, 38]].map(([x, y]) => C(x, y, 4.5, 'hi')),  // many, in the traditions that count many
+  S('M10 48 L18 48 M24 48 L32 48 M38 48 L46 48', 'gh', 2),          // and one who started it and never came back
+]);
+def('worship', () => [
+  P('M12 50 L48 50 L48 56 L12 56 Z', 'lo'),
+  P('M18 42 L42 42 L42 50 L18 50 Z', 'lo'),                         // steps, up to what is being honoured
+  C(30, 18, 8, 'bs'),                                                // worth-ship — ascribing worth to it
+  ...Array.from({ length: 6 }, (_, i) => { const a = (i * Math.PI) / 3; return S(`M${n(30 + 11 * Math.cos(a))} ${n(18 + 11 * Math.sin(a))} L${n(30 + 15 * Math.cos(a))} ${n(18 + 15 * Math.sin(a))}`, 'hi', 1.8); }),
+  S('M8 38 Q14 30 20 38', 'ik', 2.4),                               // latria, bowed lowest, kept for one
+  S('M40 36 Q46 32 52 36', 'gh', 2),                                // dulia, a lesser honour, offered to the rest
+]);
+def('prayer', () => [
+  P('M29 54 L29 6 Q20 14 22 28 Q24 42 18 48 Q24 52 29 54 Z', 'bs'), // palms brought together — pranam, and every tradition's version
+  P('M31 54 L31 6 Q40 14 38 28 Q36 42 42 48 Q36 52 31 54 Z', 'hi'),
+  S('M30 4 L30 1', 'ik', 1.6),
+  S('M20 8 L15 3 M40 8 L45 3', 'gh', 1.4),                          // addressed deliberately, and outward
+]);
+def('scripture', () => [
+  P('M12 10 L46 10 L46 50 L12 50 Z', 'bs'),                         // scriptura means only 'writing'
+  ...[18, 26, 34, 42].map(y => S(`M18 ${y} L42 ${y}`, 'ik', 1.4)),
+  E(48, 30, 7, 20, 'lo'),                                            // and the far end still on the roll —
+  ring('hi', 48, 30, 3, 1.4),                                       // Hinduism and Buddhism never closed a canon at all
+]);
+def('religion', () => [
+  P('M14 6 L46 6 L46 42 L14 42 Z', 'bs'),                           // four traditions — 73% of everyone alive
+  S('M14 15 L46 15 M14 24 L46 24 M14 33 L46 33', 'ground', 1.6),
+  P('M14 42 L46 42 L46 54 L14 54 Z', 'gh'),
+  ...granules('lo', 24, 331, [16, 43, 44, 53]),                     // and ten thousand more, in the sliver left over
+]);
+def('faith', () => [
+  P('M2 38 L20 38 L20 54 L2 54 Z', 'lo'),                           // ground, as far as it actually goes
+  ...[23, 29, 35].map(x => S(`M${x} 34 L${n(x + 3)} 34`, 'bs', 2.6)),  // the step out, with nothing under it
+  P('M42 38 L58 38 L58 54 L42 54 Z', 'gh'),                         // and ground on the other side, taken on trust
+  S('M20 32 Q30 20 42 32', 'ik', 1.4),
+]);
+def('sin', () => [
+  ...[[17, 'bs'], [11, 'lo'], [5, 'hi']].map(([r1, ro]) => ring(ro, 24, 30, r1, 2.2)),  // the mark
+  C(24, 30, 2, 'ik'),
+  S('M56 6 L38 42', 'lo', 2.4),                                     // and the shot that missed it —
+  P('M38 42 L43 37 L44 43 Z', 'ik'),                                // which is all the Hebrew word says
+]);
+def('afterlife', () => [
+  S('M30 4 L30 14 M8 14 L52 14', 'ik', 2.4),                        // Maat's balance
+  S('M12 14 L12 28 M48 14 L48 28', 'gh', 1.2),
+  S('M2 28 Q12 40 22 28', 'lo', 2), S('M38 28 Q48 40 58 28', 'lo', 2),
+  P('M12 20 Q6 16 8 24 Q10 27 12 29 Q14 27 16 24 Q18 16 12 20 Z', 'bs'),  // the heart, on one pan
+  S('M48 30 L48 16', 'hi', 2), S('M48 20 L52 17 M48 24 L52 21 M48 20 L44 17 M48 24 L44 21', 'hi', 1.2),  // the feather of truth on the other
+]);
+def('heaven', () => [
+  S('M12 9 L48 9', 'hi', 3), S('M8 18 L52 18', 'bs', 2.4), S('M4 27 L56 27', 'bs', 2.4),  // heofon, shamayim, samā' — the word is only 'sky'
+  S('M2 52 L58 52', 'lo', 1.8),
+  P('M21 52 L21 42 Q30 33 39 42 L39 52 Z', 'ground'),
+  S('M21 52 L21 42 Q30 33 39 42 L39 52', 'ik', 2.2),                // a gate, where it is a reward that lasts
+  S('M50 34 Q57 43 47 50', 'gh', 1.8), P('M47 50 L52 46 L53 52 Z', 'gh'),  // and a way back out, where it is only a stop before rebirth
+]);
+def('prophet', () => [
+  S('M6 4 L20 18', 'hi', 2.4), S('M13 2 L23 13', 'gh', 1.4),        // the word, arriving from elsewhere
+  C(25, 22, 5, 'bs'), P('M20 28 L30 28 L33 46 L17 46 Z', 'bs'),     // one who speaks it for another
+  S('M36 20 Q42 24 36 28 M40 16 Q50 24 40 32', 'lo', 1.6),          // and passes it on
+  ...[38, 45, 52].map(x => S(`M${x} 50 L${x} 57`, 'gh', 2)),        // a long line of them — the Talmud counts 55, Islam far more
+  C(30, 53, 3.6, 'ik'),                                             // and, in Islam, a seal closing the line
+]);
+def('sacrament', () => [
+  ...Array.from({ length: 7 }, (_, i) => {
+    const a = Math.PI + (i * Math.PI) / 6;
+    const x = n(30 + 22 * Math.cos(a)), y = n(48 + 22 * Math.sin(a));
+    return i < 2 ? C(x, y, 4.6, 'bs') : ring('gh', x, y, 4, 1.6);
+  }),                                                                // seven counted at Trent; two kept by everybody
+  P('M30 30 Q25 38 30 42 Q35 38 30 30 Z', 'hi'),                    // the outward sign — water, actually poured
+  S('M24 52 L36 52', 'ik', 1.4),                                    // over an inward grace nobody can see
+]);
+def('priest', () => [
+  S('M10 6 Q30 14 50 6', 'gh', 1.8),                                // the divine, above
+  ...granules('gh', 10, 77, [8, 50, 52, 57]),                       // the people, below
+  C(30, 20, 5, 'bs'), P('M23 26 L37 26 L40 46 L20 46 Z', 'bs'),     // and one authorised to stand in between
+  S('M27 26 L27 46 M33 26 L33 46', 'hi', 2),                        // the stole of the ordained —
+  S('M21 30 L11 18 M39 30 L49 18', 'ik', 2),                        // hands raised to the one, on behalf of the other
+]);
+def('pope', () => [
+  P('M22 24 L34 24 L34 50 L22 50 Z', 'lo'),                         // the Sistine chimney
+  C(28, 16, 6, 'hi'), C(23, 8, 5, 'hi'), C(34, 5, 4, 'hi'),         // white smoke — a conclave has decided
+  ...[[6, 46], [13, 53], [45, 46], [52, 53], [39, 51]].map(([x, y]) => C(x, y, 3.4, 'bs')),  // cardinals, every one of them under 80
+  S('M2 57 L58 57', 'ik', 1.6),
+]);
+def('hajj', () => [
+  P('M25 27 L35 27 L35 37 L25 37 Z', 'lo'),                         // the Kaaba, at the middle of it
+  ...Array.from({ length: 7 }, (_, i) => ring(i % 2 ? 'bs' : 'hi', 30, 32, n(9 + i * 2.7), 1.2)),  // seven circuits around it
+  S('M4 54 L18 49 M42 49 L56 54', 'gh', 2.2),                       // and the walk between Safa and Marwah
+]);
+def('ramadan', () => [
+  C(15, 21, 11, 'hi'), C(21, 18, 9, 'ground'),                      // one crescent sighted, opening the month
+  C(45, 21, 11, 'gh'), C(51, 18, 9, 'ground'),                      // and the next, closing it, 29 or 30 days later
+  S('M2 44 L58 44', 'ik', 1.6),
+  P('M18 44 A12 12 0 0 1 42 44 Z', 'bs'),                           // dawn to sunset, every one of them
+  E(30, 52, 5, 3.4, 'lo'),                                          // and a date, to break the fast on
+]);
+def('kaaba', () => [
+  P('M16 20 L34 13 L48 20 L48 46 L34 53 L16 46 Z', 'lo'),           // a stone cube, draped in the kiswah
+  P('M16 20 L34 13 L48 20 L34 27 Z', 'ik'),
+  S('M16 34 L34 41 L48 34', 'hi', 3),                               // the gold band around it
+  S('M34 27 L34 53', 'gh', 1.2),
+  C(17, 43, 2.6, 'ik'),                                             // the Black Stone, in the eastern corner
+  ...[[2, 4], [58, 4], [2, 56], [58, 56]].map(([x, y]) => S(`M${x} ${y} L${n(x + (x < 30 ? 8 : -8))} ${n(y + (y < 30 ? 6 : -6))}`, 'bs', 1.6)),  // and every mosque on Earth, aimed at it
+]);
+def('sabbath', () => [
+  S('M2 40 L58 40', 'ik', 1.6),
+  P('M6 40 A12 12 0 0 1 30 40 Z', 'bs'),                            // Friday's sun, going down
+  S('M18 40 L18 52', 'gh', 1.4),
+  ...[[46, 10], [55, 20], [42, 26]].map(([x, y]) => P(`M${x} ${n(y - 5)} L${n(x + 1.6)} ${n(y - 1.6)} L${n(x + 5)} ${y} L${n(x + 1.6)} ${n(y + 1.6)} L${x} ${n(y + 5)} L${n(x - 1.6)} ${n(y + 1.6)} L${n(x - 5)} ${y} L${n(x - 1.6)} ${n(y - 1.6)} Z`, 'hi')),  // and it ends when three stars show
+  P('M38 44 L54 44 L54 54 L38 54 Z', 'lo'), S('M36 56 L56 42', 'ik', 2.4),  // between them, 39 kinds of work, set down
+]);
+def('gospel', () => [
+  ...[[5, 16], [19, 22], [33, 27], [47, 31]].map(([x, y], i) => [
+    P(`M${x} ${y} L${n(x + 10)} ${y} L${n(x + 10)} 46 L${x} 46 Z`, i === 0 ? 'bs' : 'hi'),
+    S(`M${n(x + 2)} ${n(y + 5)} L${n(x + 8)} ${n(y + 5)}`, 'ik', 1.2),
+  ]).flat(),                                                         // Mark around AD 70, then three more over thirty years
+  ...[5, 19, 33, 47].map(x => S(`M${x} 52 L${n(x + 10)} 52`, 'gh', 1.4)),  // and a blank on all four where the author's name would be
+]);
+def('hadith', () => [
+  C(9, 11, 4.6, 'bs'),                                              // what he said, did, or let pass
+  ...[[18, 20], [27, 29], [36, 38], [45, 47]].map(([x, y]) => ring('hi', x, y, 4.6, 1.8)),  // the isnad — every carrier named, link by link
+  S('M12 14 L15 17 M21 23 L24 26 M30 32 L33 35 M39 41 L42 44', 'ik', 1.4),
+  C(54, 12, 3.4, 'lo'), C(54, 27, 3.4, 'bs'), ring('gh', 54, 42, 3.4, 1.2),  // and the grade the chain earns: sahih, hasan, da'if
+]);
+def('miracle', () => [
+  S('M2 42 L58 42', 'gh', 1.4),
+  ...[8, 17, 26, 44, 53].map(x => C(x, 42, 3, 'lo')),               // the way it has always gone before
+  C(35, 16, 5.6, 'bs'),                                             // and the once it did not
+  ...Array.from({ length: 6 }, (_, i) => { const a = (i * Math.PI) / 3; return S(`M${n(35 + 8 * Math.cos(a))} ${n(16 + 8 * Math.sin(a))} L${n(35 + 12 * Math.cos(a))} ${n(16 + 12 * Math.sin(a))}`, 'hi', 1.6); }),
+  S('M4 54 L16 54 M21 54 L33 54 M38 54 L50 54', 'ik', 1.4),         // with Hume's objection running under the whole thing
+]);
+def('angel', () => [
+  C(30, 8, 4, 'lo'), S('M30 12 L30 46', 'bs', 3),
+  S('M30 17 Q17 11 8 19 M30 17 Q43 11 52 19', 'hi', 2),             // wings in twos,
+  S('M30 27 Q16 23 9 32 M30 27 Q44 23 51 32', 'hi', 2),             // in threes,
+  S('M30 37 Q18 35 11 44 M30 37 Q42 35 49 44', 'hi', 2),            // and in fours
+  P('M24 48 L36 48 L36 55 L24 55 Z', 'ik'),                         // carrying a message — angelos means nothing more than that
+]);
+def('jerusalem', () => [
+  ...[4, 12, 20, 28, 36, 44, 52].map(x => P(`M${x} 44 L${n(x + 5)} 44 L${n(x + 5)} 49 L${x} 49 Z`, 'lo')),
+  S('M2 49 L58 49', 'ik', 2.4),                                     // 0.9 square kilometres of wall
+  P('M6 44 L6 28 L18 28 L18 44 Z', 'gh'),
+  ...[32, 36, 40].map(y => S(`M7 ${y} L17 ${y}`, 'ik', 1.2)),       // the Western Wall, course on course
+  P('M21 44 A9 9 0 0 1 39 44 Z', 'bs'), S('M30 35 L30 27', 'ik', 2),  // the Dome of the Rock
+  P('M42 44 L42 32 A6 6 0 0 1 54 32 L54 44 Z', 'hi'),               // and the Holy Sepulchre — three faiths inside one wall
+]);
+
+/* the machine age ────────────────────────────────────────────────────────── */
+def('electricity', () => [
+  P('M18 22 Q11 34 20 45 Q30 51 40 45 Q49 34 42 22 Q30 15 18 22 Z', 'bs'),  // amber — elektron, the word itself
+  E(25, 30, 5, 4, 'hi'),
+  S('M6 10 Q20 5 34 10', 'gh', 3.4),                                // rubbed with a cloth,
+  ...[[47, 15], [54, 23], [45, 8], [56, 11]].map(([x, y]) => C(x, y, 1.6, 'lo')),  // and dust comes to it across the gap
+  S('M46 19 L40 25 M52 21 L46 27', 'ik', 1.2),
+]);
+def('factory', () => [
+  ...[6, 18, 30, 42].map(x => S(`M${x} 32 L${n(x + 6)} 24 L${n(x + 6)} 32`, 'ik', 2)),  // a sawtooth roof, over the whole floor
+  P('M4 32 L54 32 L54 52 L4 52 Z', 'bs'),
+  ...[8, 21, 34, 47].map(x => P(`M${x} 37 L${n(x + 7)} 37 L${n(x + 7)} 47 L${x} 47 Z`, 'ground')),  // machines too big to keep at home
+  P('M46 8 L52 8 L52 24 L46 24 Z', 'lo'), C(48, 4, 4, 'gh'), C(56, 2, 3, 'gh'),
+  C(12, 10, 4.4, 'hi'), ring('gh', 26, 10, 4.4, 1.8),               // and two twelve-hour shifts: day, then night, then day
+]);
+def('industrial_revolution', () => [
+  S('M4 52 L56 52', 'ik', 1.6),
+  P('M10 47 L22 47 L22 52 L10 52 Z', 'lo'),                         // 10,000 horsepower of steam in 1800
+  P('M34 10 L48 10 L48 52 L34 52 Z', 'bs'),                         // 210,000 by 1815
+  S('M22 45 L34 22', 'hi', 2.2),                                    // fifteen years
+  C(30, 14, 5, 'gh'), C(24, 7, 4, 'gh'), C(33, 3, 3, 'gh'),
+]);
+def('interchangeable_parts', () => [
+  ...[[11, 46, 0], [26, 51, 22], [40, 45, -16], [51, 52, 8]].map(([x, y, rot]) =>
+    ['g', rot, x, y, [P(`M${n(x - 8)} ${n(y - 4)} L${n(x + 8)} ${n(y - 4)} L${n(x + 8)} ${n(y + 4)} L${n(x - 8)} ${n(y + 4)} Z`, 'lo'), C(x, y, 1.8, 'ground')]]),
+  // a heap of parts, every one cut to the same gauge
+  P('M14 14 L30 14 L30 24 L14 24 Z', 'bs'), C(22, 19, 1.8, 'ground'),
+  P('M30 14 L46 14 L46 24 L30 24 Z', 'hi'), C(38, 19, 1.8, 'ground'),
+  S('M30 28 L30 36', 'ik', 1.6),                                    // so any two off the pile make a working musket
+]);
+def('assembly_line', () => [
+  S('M2 42 L58 42', 'ik', 2.6),
+  ...[8, 19, 30, 41, 52].map(x => C(x, 47, 3.4, 'lo')),             // the line moves, and the work comes to the worker
+  P('M6 34 L14 34 L14 40 L6 40 Z', 'gh'),
+  P('M20 34 L28 34 L28 40 L20 40 Z', 'gh'), S('M22 29 L26 34', 'bs', 2),
+  P('M34 34 L42 34 L42 40 L34 40 Z', 'bs'), S('M36 29 L40 34', 'bs', 2), C(38, 26, 2.4, 'bs'),
+  P('M47 30 L57 30 L57 40 L47 40 Z', 'hi'),                         // split into 45 steps: 12.5 hours down to 93 minutes
+]);
+def('mass_production', () => [
+  ...[0, 1, 2, 3].map(r1 => [0, 1, 2, 3].map(c =>
+    P(`M${n(5 + c * 14)} ${n(7 + r1 * 13)} L${n(15 + c * 14)} ${n(7 + r1 * 13)} L${n(15 + c * 14)} ${n(16 + r1 * 13)} L${n(5 + c * 14)} ${n(16 + r1 * 13)} Z`, 'bs'))).flat(),
+  // the identical good, over and over,
+  ...[0, 1, 2, 3].map(r1 => S(`M55 ${n(11 + r1 * 13)} L60 ${n(11 + r1 * 13)}`, 'gh', 2.2)),  // and the flow never stopping
+]);
+def('algorithm', () => [
+  P('M19 2 L41 2 L41 11 L19 11 Z', 'lo'),                           // a definite place to start
+  S('M30 11 L30 17', 'ik', 1.6),
+  P('M30 17 L45 28 L30 39 L15 28 Z', 'bs'),                         // a test, with only two ways out of it
+  S('M45 28 L53 28 L53 48 L30 48 L30 41', 'ik', 1.6),               // one of them going back round
+  S('M15 28 L5 28 L5 52', 'ik', 1.6), P('M1 50 L9 50 L5 58 Z', 'hi'),  // the other, ending
+  S('M30 39 L30 41', 'ik', 1.6),
+]);
+def('binary_code', () => [
+  ...[[0, [1, 0, 1, 1, 0]], [1, [0, 1, 0, 0, 1]], [2, [1, 1, 0, 1, 0]]].map(([r1, row]) =>
+    row.map((b, i) => b
+      ? P(`M${n(9 + i * 11)} ${n(10 + r1 * 17)} L${n(13 + i * 11)} ${n(10 + r1 * 17)} L${n(13 + i * 11)} ${n(24 + r1 * 17)} L${n(9 + i * 11)} ${n(24 + r1 * 17)} Z`, 'bs')
+      : ring('hi', n(11 + i * 11), n(17 + r1 * 17), 5, 2))).flat(),
+  // two characters, 1 and 0, and Leibniz showed in 1703 that nothing else is needed
+]);
+def('wind_turbine', () => [
+  P('M27 22 L33 22 L36 54 L24 54 Z', 'lo'),                         // the tower
+  ...[270, 30, 150].map(a => { const r1 = (a * Math.PI) / 180;
+    return P(`M30 22 L${n(30 + 19 * Math.cos(r1) - 3.4 * Math.sin(r1))} ${n(22 + 19 * Math.sin(r1) + 3.4 * Math.cos(r1))} L${n(30 + 19 * Math.cos(r1) + 3.4 * Math.sin(r1))} ${n(22 + 19 * Math.sin(r1) - 3.4 * Math.cos(r1))} Z`, 'bs'); }),
+  C(30, 22, 3.4, 'ik'),                                             // three blades on a hub
+  S('M36 50 L48 50 L48 44', 'hi', 1.6), P('M42 34 L54 34 L54 44 L42 44 Z', 'hi'),  // charging the batteries that lit one holiday house
+]);
+def('power_grid', () => [
+  S('M4 12 L56 12', 'ik', 2),
+  ...[10, 30, 50].map(x => [S(`M${n(x - 7)} 32 L${x} 12 L${n(x + 7)} 32`, 'lo', 2), S(`M${n(x - 3.4)} 22 L${n(x + 3.4)} 22`, 'lo', 1.4)]).flat(),
+  S('M4 12 Q17 19 30 12 Q43 19 56 12', 'bs', 1.6),                  // generation at one end, use at the other
+  S('M13 50 A17 17 0 0 1 47 50', 'gh', 2),                          // and one dial the whole thing has to hold:
+  S('M30 50 L30 36', 'ik', 2.6), C(30, 50, 2.6, 'ik'),              // made and used in the same instant, needle dead centre
+  C(15, 46, 1.6, 'hi'), C(45, 46, 1.6, 'hi'),
+]);
+def('abacus', () => [
+  P('M4 6 L56 6 L56 11 L4 11 Z', 'lo'), P('M4 49 L56 49 L56 54 L4 54 Z', 'lo'),
+  P('M4 6 L9 6 L9 54 L4 54 Z', 'lo'), P('M51 6 L56 6 L56 54 L51 54 Z', 'lo'),
+  S('M9 25 L51 25', 'ik', 2.6),                                     // the bar
+  ...[16, 26, 36, 46].map(x => [
+    S(`M${x} 11 L${x} 49`, 'gh', 1.2),
+    C(x, 15, 3, 'bs'), C(x, 21, 3, 'bs'),                           // two beads above it
+    ...[29, 33.5, 38, 42.5, 47].map(y => C(x, y, 3, 'hi')),         // and five below — the suanpan, unchanged since 200 BC
+  ]).flat(),
+]);
+
+/* matter, and the rules it keeps ─────────────────────────────────────────── */
+def('atom', () => [
+  ring('gh', 30, 30, 25, 1.6),                                      // the electron cloud, a hundred picometres across
+  ...granules('gh', 26, 617, [12, 12, 48, 48]),                     // and almost nothing in it
+  ...[[13, 20], [47, 22], [21, 45], [44, 44], [30, 8]].map(([x, y]) => C(x, y, 2, 'bs')),
+  C(30, 30, 2.2, 'ik'),                                             // with all but 0.06% of the mass in that
+]);
+def('element', () => [
+  P('M12 6 L48 6 L48 42 L12 42 Z', 'lo'), S('M12 6 L48 6 L48 42 L12 42 Z', 'ik', 2),
+  ...[[24, 18], [30, 14], [36, 18], [24, 28], [30, 32], [36, 28], [30, 23]].map(([x, y]) => C(x, y, 3.4, 'bs')),
+  // count the protons and you have named it — nothing else about the atom matters
+  S('M8 50 L52 50', 'ik', 1.4),
+  ...[12, 21, 30, 39, 48].map(x => S(`M${x} 50 L${x} 54`, 'gh', 1.4)),
+  S('M39 50 L39 57', 'hi', 2.6),                                    // one place on a list of 118, of which 94 turn up on their own
+]);
+def('chemical_bond', () => [
+  C(13, 30, 8, 'bs'), C(47, 30, 8, 'hi'),                           // two nuclei, pulling
+  C(30, 25, 2.8, 'ik'), C(30, 35, 2.8, 'ik'),                       // on one pair of electrons between them — Lewis, 1916
+  S('M21 30 L26 30 M34 30 L39 30', 'gh', 1.2),
+  S('M13 44 Q30 51 47 44', 'gh', 1.4),                              // and nothing holding it but electrostatics
+]);
+def('molecule', () => [
+  S('M13 41 L30 19 L47 41', 'ik', 3.4),                             // two or more atoms, bonded
+  C(13, 41, 6, 'hi'), C(47, 41, 6, 'hi'), C(30, 19, 7.6, 'bs'),
+  S('M8 52 L22 52', 'gh', 1.4), S('M8 49 L8 55 M22 49 L22 55', 'gh', 1.4),  // and a real size — the smallest of them spans 0.74 angstroms
+]);
+def('compound', () => [
+  ...[16, 44].map(cx => [
+    S(`M${n(cx - 11)} 21 L${cx} 32 L${n(cx + 11)} 21`, 'ik', 2.6),
+    C(cx, 32, 7, 'bs'), C(n(cx - 11), 21, 4.4, 'hi'), C(n(cx + 11), 21, 4.4, 'hi'),
+  ]).flat(),                                                         // two of the one to one of the other,
+  S('M27 45 L33 45 M27 50 L33 50', 'ik', 2),                        // and the identical ratio the next time, and the time after
+]);
+def('mixture', () => [
+  ...[[11, 14], [27, 9], [41, 17], [51, 11], [19, 24], [45, 27]].map(([x, y]) => C(x, y, 4, 'bs')),
+  ...[[18, 15], [35, 12], [50, 22], [11, 27], [30, 21], [41, 6]].map(([x, y]) => P(`M${n(x - 3.6)} ${n(y - 3.6)} L${n(x + 3.6)} ${n(y - 3.6)} L${n(x + 3.6)} ${n(y + 3.6)} L${n(x - 3.6)} ${n(y + 3.6)} Z`, 'hi')),
+  // stirred together in any ratio you like, with not one bond between them
+  S('M9 33 L30 50 L51 33', 'ik', 2.2),                              // so a filter takes them apart again unchanged
+  C(25, 56, 4, 'bs'), C(36, 57, 4, 'bs'),
+]);
+def('solution', () => [
+  S('M14 8 L14 47 Q14 54 22 54 L38 54 Q46 54 46 47 L46 8', 'ik', 2),
+  P('M14 23 L46 23 L46 47 Q46 54 38 54 L22 54 Q14 54 14 47 Z', 'bs'),
+  ...granules('hi', 20, 419, [17, 25, 43, 52]),                     // the solute down to single molecules, spread even —
+  ...granules('hi', 4, 977, [18, 26, 42, 34]),                      // one phase, and nothing ever settling out of it
+]);
+def('colloid', () => [
+  P('M12 12 L48 12 L48 50 L12 50 Z', 'gh'),
+  S('M12 12 L48 12 L48 50 L12 50 Z', 'ik', 2),
+  S('M2 31 L12 31', 'hi', 3.4),                                     // a beam, going in narrow
+  P('M12 27 L48 19 L48 43 L12 35 Z', 'hi'),                         // and coming out visible, because the particles scatter it
+  ...[[19, 24], [32, 20], [40, 30], [22, 39], [34, 43], [43, 45], [28, 31]].map(([x, y]) => C(x, y, 3, 'bs')),
+  // too big to dissolve, too small to settle: 1 nanometre to 1 micrometre
+]);
+def('chemical_reaction', () => [
+  C(7, 18, 5, 'bs'), C(18, 18, 5, 'hi'), S('M12 18 L13 18', 'ik', 2.2),
+  C(7, 44, 5, 'lo'), C(18, 44, 5, 'gh'), S('M12 44 L13 44', 'ik', 2.2),
+  S('M25 31 L34 31', 'ik', 2), P('M33 27 L41 31 L33 35 Z', 'ik'),
+  C(46, 18, 5, 'bs'), C(57, 18, 5, 'gh'), S('M51 18 L52 18', 'ik', 2.2),
+  C(46, 44, 5, 'lo'), C(57, 44, 5, 'hi'), S('M51 44 L52 44', 'ik', 2.2),
+  // the same four nuclei out that went in — only the electrons between them moved
+]);
+def('catalyst', () => [
+  S('M2 46 L14 46', 'ik', 2.2),                                     // the same start,
+  S('M46 46 L58 46', 'ik', 2.2),                                    // and the same finish
+  S('M14 46 Q30 1 46 46', 'gh', 2.4),                               // the hill without one
+  S('M14 46 Q30 24 46 46', 'bs', 2.8),                              // and the hill with
+  C(7, 14, 3.4, 'lo'), C(53, 14, 3.4, 'lo'),                        // itself, identical on both sides of the reaction
+]);
+def('acid', () => [
+  E(15, 33, 12, 10, 'bs'),                                          // it hands the proton over
+  S('M28 29 L40 25', 'ik', 2.2), P('M39 21 L48 25 L39 29 Z', 'ik'),
+  C(53, 25, 4.4, 'hi'), S('M50 25 L56 25 M53 22 L53 28', 'ground', 1.4),
+  S('M4 51 L56 51', 'gh', 1.8),                                     // and the pH ends up under seven
+  P('M8 46 L17 46 L17 56 L8 56 Z', 'lo'),
+]);
+def('base', () => [
+  P('M13 18 Q13 44 30 44 Q47 44 47 18 L40 18 Q40 37 30 37 Q20 37 20 18 Z', 'bs'),  // it takes one in instead
+  C(25, 25, 2.6, 'ik'), C(35, 25, 2.6, 'ik'),                       // on the lone pair that does the accepting
+  C(30, 6, 4.4, 'hi'), S('M27 6 L33 6 M30 3 L30 9', 'ground', 1.4),
+  S('M30 11 L30 16', 'ik', 1.6),
+  S('M4 51 L56 51', 'gh', 1.8), P('M47 46 L56 46 L56 56 L47 56 Z', 'lo'),  // and the pH ends up over it
+]);
+def('ph', () => [
+  S('M11 4 L11 56', 'ik', 2.2),
+  ...Array.from({ length: 8 }, (_, i) => S(`M11 ${n(4 + i * 7.4)} L17 ${n(4 + i * 7.4)}`, 'gh', 1.4)),
+  P('M5 26 L11 30 L5 34 Z', 'hi'),                                  // the marker, sitting at neutral
+  C(32, 49, 2.4, 'bs'),                                             // one
+  ...granules('bs', 10, 733, [24, 28, 44, 40]),                     // ten
+  ...granules('lo', 32, 907, [22, 2, 57, 24]),                      // a hundred — every whole number is a factor of ten
+]);
+def('oxidation', () => [
+  C(18, 32, 10, 'bs'), ring('gh', 18, 32, 15, 1.4),
+  S('M27 26 L37 17', 'ik', 1.4), C(38, 15, 2.8, 'ik'),              // an electron, leaving — that is the whole of it
+  ...[0, 1, 2].map(i => P(`M${n(37 + i * 7)} ${n(50 - i * 9)} L${n(44 + i * 7)} ${n(50 - i * 9)} L${n(44 + i * 7)} 57 L${n(37 + i * 7)} 57 Z`, 'hi')),
+  // and the oxidation state stepping up, with or without any oxygen in the room
+]);
+def('corrosion', () => [
+  P('M6 24 L54 24 L54 44 L6 44 Z', 'gh'),                           // where the metal used to reach
+  P('M6 29 L54 29 L54 44 L6 44 Z', 'bs'),
+  ...[[13, 29, 5], [26, 29, 4], [39, 29, 6], [49, 29, 3]].map(([x, y, r1]) => C(x, y, r1, 'ground')),  // pits, eating down from the surface
+  ...[[15, 49], [30, 52], [43, 48], [24, 55]].map(([x, y]) => P(`M${x} ${y} L${n(x + 5)} ${n(y + 2)} L${n(x + 1)} ${n(y + 5)} Z`, 'lo')),  // and the metal going off as flakes
+  S('M6 20 L54 20', 'ik', 1.4),
+]);
+def('combustion', () => [
+  flame('bs', .82, 3),
+  ...[[4, 14], [4, 30], [50, 14], [50, 30]].map(([x, y]) => {
+    const x2 = n(x + (x < 30 ? 6 : -6));
+    return [S(`M${x} ${y} L${x2} ${y}`, 'ik', 1), C(x, y, 2.6, 'gh'), C(x2, y, 2.6, 'gh')];
+  }).flat(),                                                         // oxygen going in from every side,
+  ...[[6, 50], [30, 57], [54, 50]].map(([x, y]) => S(`M${x} ${y} L${n(x + (x < 30 ? 6 : x > 30 ? -6 : 0))} ${n(y - 6)}`, 'lo', 2)),
+  S('M22 55 L26 49 M34 49 L38 55', 'lo', 2),                        // and heat coming back out — 2,200 degrees, off coal
+]);
+def('hydrocarbon', () => [
+  C(9, 10, 2.8, 'bs'), S('M9 10 L3 5 M9 10 L15 5 M9 10 L3 16 M9 10 L15 16', 'ik', 1.6),  // methane, one carbon
+  hex('bs', 34, 14, 10, 2.4),                                       // benzene, six in a ring
+  backbone('bs', 4, 30, 42).shape,                                  // paraffin, as many as you please
+  S('M4 54 L56 54', 'gh', 1.2),                                     // and hydrogen and carbon in every one of them, and nothing else
+]);
+def('states_of_matter', () => [
+  S('M30 2 L30 58 M2 30 L58 30', 'gh', 1.2),
+  ...[[10, 10], [20, 10], [10, 20], [20, 20], [15, 15]].map(([x, y]) => C(x, y, 2.8, 'bs')),  // solid — shape and volume both kept
+  ...[[38, 8], [49, 12], [42, 19], [53, 21], [37, 23]].map(([x, y]) => C(x, y, 2.8, 'hi')),   // liquid — volume only
+  S('M35 26 L56 26', 'gh', 1.2),
+  ...[[7, 39], [20, 46], [11, 54], [22, 36], [15, 48]].map(([x, y]) => C(x, y, 2.2, 'lo')),   // gas — neither
+  ...[[37, 38], [50, 42], [41, 51], [53, 53]].map(([x, y]) => [C(x, y, 2.2, 'lo'), C(n(x + 4), n(y + 4), 1.2, 'ik')]).flat(),
+  // and plasma, which is about 99% of the ordinary matter there is
+]);
+def('crystal', () => [
+  ...[0, 1, 2, 3, 4].map(r1 => [0, 1, 2, 3, 4].map(c => C(n(7 + c * 11), n(9 + r1 * 11), 2.4, 'bs'))).flat(),
+  S('M18 20 L40 20 L40 42 L18 42 Z', 'ik', 2.6),                    // one unit cell
+  S('M18 20 L29 9 L51 9 L40 20 M40 42 L51 31 L51 9', 'hi', 1.4),    // and the identical cell again, in every direction there is
+]);
+def('allotrope', () => [
+  ...[[9, 17], [24, 17], [9, 35], [24, 35], [16, 26], [16, 8], [16, 46]].map(([x, y]) => C(x, y, 2.6, 'bs')),
+  S('M16 26 L9 17 M16 26 L24 17 M16 26 L9 35 M16 26 L24 35 M16 8 L16 26 M16 46 L16 26', 'ik', 1.4),
+  // diamond — carbon bonded rigidly in three directions
+  ...[13, 30, 47].map(y => hex('hi', 44, y, 7, 1.6)),               // graphite — the same carbon, in sheets that slide
+  S('M35 21 L53 21 M35 38 L53 38', 'gh', 1.2),
+]);
+def('mineral', () => [
+  P('M5 30 Q9 11 26 6 Q47 4 55 22 Q58 41 43 51 Q25 58 12 46 Q3 40 5 30 Z', 'gh'),  // a rock is only an aggregate —
+  P('M13 21 L26 15 L32 26 L19 33 Z', 'bs'),                         // of species, each naturally formed,
+  P('M34 17 L47 19 L45 32 L32 30 Z', 'hi'),                         // each of definite composition,
+  P('M17 38 L30 34 L34 47 L21 49 Z', 'lo'),                         // each ordered right through
+  P('M37 36 L49 39 L45 49 L35 46 Z', 'bs'),
+]);
+def('metal', () => [
+  ...granules('hi', 28, 553, [5, 5, 55, 55]),                       // a sea of loose electrons, belonging to no atom in particular
+  ...[0, 1, 2].map(r1 => [0, 1, 2].map(c => {
+    const x = n(13 + c * 17), y = n(13 + r1 * 17);
+    return [C(x, y, 5, 'bs'), S(`M${n(x - 2.6)} ${y} L${n(x + 2.6)} ${y} M${x} ${n(y - 2.6)} L${x} ${n(y + 2.6)}`, 'ground', 1.4)];
+  })).flat(2),                                                       // and positive ions sitting in it — the shine, the bending, all of it
+]);
+def('nonmetal', () => [
+  P('M12 10 L48 10 L48 46 L12 46 Z', 'hi'),
+  S('M12 10 L29 25 L19 46 M29 25 L48 18 M29 25 L37 46', 'ground', 2.6),  // brittle — it breaks instead of bending
+  S('M2 28 L9 28', 'lo', 2.6), S('M51 28 L58 28', 'lo', 2.6),
+  S('M26 24 L33 31 M33 24 L26 31', 'ik', 1.8),                      // and the current does not get across
+  ...[[13, 53], [24, 56], [35, 53], [46, 55], [52, 51]].map(([x, y]) => C(x, y, 2.2, 'bs')),  // five of the seventeen are 93% of all biomass
+]);
+def('metalloid', () => [
+  ...[[8, 6], [16, 14], [24, 22], [32, 30], [40, 38], [48, 46]].map(([x, y]) => [
+    P(`M${x} ${y} L${n(x + 8)} ${y} L${n(x + 8)} ${n(y + 8)} L${x} ${n(y + 8)} Z`, 'bs'),
+    S(`M${x} ${y} L${n(x + 8)} ${y} L${n(x + 8)} ${n(y + 8)} L${x} ${n(y + 8)} Z`, 'ik', 1.4),
+  ]).flat(),                                                         // the six that sit on the staircase
+  S('M8 6 L8 14 L16 14 L16 22 L24 22 L24 30 L32 30 L32 38 L40 38 L40 46 L48 46 L48 54', 'hi', 2.2),
+  P('M28 2 L44 2 L44 8 L28 8 Z', 'gh'), P('M14 50 L30 50 L30 56 L14 56 Z', 'gh'),
+  // metals on the one side of it, nonmetals on the other, and these behaving like neither
+]);
+def('alkali_metal', () => [
+  S('M2 12 L58 12', 'gh', 1.8),
+  ...[[8, 19], [49, 21], [20, 44], [55, 46]].map(([x, y]) => C(x, y, 2, 'gh')),  // kept under oil, because plain air would finish it
+  P('M15 34 Q13 51 30 53 Q45 51 46 39 Q47 31 36 29 Q23 27 15 34 Z', 'bs'),  // soft enough to cut with a table knife
+  P('M17 28 L44 24 L45 28 L18 32 Z', 'hi'),                         // the slice already off it, lying loose
+  S('M11 25 L49 19', 'ik', 2.4), P('M49 16 L58 18 L58 23 L49 22 Z', 'lo'),
+  C(34, 43, 2.8, 'hi'), ring('gh', 34, 43, 7, 1.2),                 // one electron in the outer shell, and that is the whole character
+]);
+def('noble_gas', () => [
+  C(30, 33, 9, 'bs'),
+  ring('ik', 30, 33, 17, 1.6),
+  ...Array.from({ length: 8 }, (_, i) => { const a = (i * Math.PI) / 4; return C(n(30 + 17 * Math.cos(a)), n(33 + 17 * Math.sin(a)), 3, 'hi'); }),
+  // a full outer shell — all eight places taken
+  S('M58 2 L46 12 Q39 17 45 23', 'gh', 1.8),                        // so whatever comes at it goes away again
+  P('M45 23 L41 18 L48 18 Z', 'gh'),
+]);
+def('halogen', () => [
+  S('M9.3 33 A22 22 0 0 1 50.7 33', 'ik', 1.6),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = ((200 + i * 20) * Math.PI) / 180;
+    const x = n(30 + 22 * Math.cos(a)), y = n(33 + 22 * Math.sin(a));
+    return i === 7 ? ring('gh', x, y, 3, 1.4) : C(x, y, 3, 'hi');
+  }),                                                                // seven electrons out there, and one place still open
+  ...[[5, 'lo'], [23, 'bs'], [41, 'hi']].map(([x, ro], i) => [
+    S(`M${x} 40 L${n(x + 14)} 40 L${n(x + 14)} 56 L${x} 56 Z`, 'ik', 1.2),
+    ...(i === 0 ? [C(n(x + 4), 45, 1.8, ro), C(n(x + 10), 48, 1.8, ro), C(n(x + 5), 52, 1.8, ro)]
+      : i === 1 ? [P(`M${x} 48 Q${n(x + 7)} 43 ${n(x + 14)} 48 L${n(x + 14)} 56 L${x} 56 Z`, ro)]
+      : [P(`M${n(x + 2)} 52 L${n(x + 6)} 43 L${n(x + 12)} 46 L${n(x + 11)} 54 Z`, ro)]),
+  ]).flat(),                                                         // and the only group that gives you a gas, a liquid and a solid at once
+]);
+
+/* materials, and the two nuclear reactions ───────────────────────────────
+ * Each keys on the mechanism rather than the object: an alloy is a strained
+ * lattice with the slip plane jammed, galvanization is a coat that corrodes
+ * so the steel does not, vulcanization is the sulfur bridge itself. None of
+ * them repeats steel/bronze/brass's ingot, and the two nuclear entries are
+ * opposite motions — one flying apart, one being driven together. */
+def('alloy', () => [                                          // metal dissolved in metal: the misfit atoms strain the rows
+  ...[0, 1, 2, 3].flatMap(r0 => [0, 1, 2, 3].map(c0 => [c0, r0]))
+    .filter(([c0, r0]) => !(c0 === 1 && r0 === 2) && !(c0 === 3 && r0 === 1))
+    .map(([c0, r0]) => C(15 + c0 * 10, 16 + r0 * 10, 3.2, 'bs')),
+  C(25, 36, 5.6, 'lo'), C(45, 26, 5.4, 'lo'),                 // the two that do not fit
+  S('M8 31 L24 31', 'ik', 1.8), S('M36 31 L52 31', 'gh', 1.8),// the slip plane, stopped where it meets one
+]);
+def('amalgam', () => [                                        // mercury takes almost any metal in — but never the flask it ships in
+  P('M22 8 L38 8 L38 17 Q48 23 48 40 Q48 50 30 50 Q12 50 12 40 Q12 23 22 17 Z', 'ik'),
+  P('M16 33 Q30 29 44 33 Q44 46 30 46 Q16 46 16 33 Z', 'bs'), // the mercury standing in it
+  C(24, 38, 3, 'hi'), C(34, 40, 2.4, 'hi'), C(29, 34, 2, 'hi'),// filings going into solution
+  S('M26 12 L34 12', 'lo', 2),
+]);
+def('polymer', () => [                                        // [ one small unit ] repeated, and repeated, and repeated
+  S('M20 14 L15 14 L15 46 L20 46', 'ik', 2.4),
+  S('M40 14 L45 14 L45 46 L40 46', 'ik', 2.4),
+  C(24, 30, 5, 'bs'), C(36, 30, 5, 'hi'), S('M24 30 L36 30', 'ik', 2.2),
+  S('M6 30 L15 30', 'gh', 2.2), S('M45 30 L54 30', 'gh', 2.2),// the chain running on, both ways
+  C(49, 42, 1.8, 'ik'), C(53, 42, 1.8, 'ik'),                 // and however many times you like
+]);
+def('plastic', () => [                                        // the whole point is that it moulds: a hot sheet, pressed into a die
+  P('M10 10 L50 10 L50 17 L10 17 Z', 'lo'),                   // the platen, coming down
+  S('M10 26 Q30 46 50 26', 'bs', 4),                          // the sheet, taking the cavity's shape
+  P('M8 34 L18 34 L18 50 L42 50 L42 34 L52 34 L52 54 L8 54 Z', 'ik'),
+  ...[20, 30, 40].map(x => S(`M${x} 19 L${x} 23`, 'gh', 1.4)),
+]);
+def('ceramic', () => [                                        // fired, not merely dried — and the oldest of them are figurines
+  C(30, 13, 5, 'bs'),
+  P('M24 19 Q15 25 18 34 Q20 41 26 43 L26 48 L34 48 L34 43 Q40 41 42 34 Q45 25 36 19 Z', 'bs'),
+  S('M22 30 L38 30', 'hi', 1.4),
+  S('M18 54 Q20 48 18 44', 'fire-bs', 2),
+  S('M30 56 Q33 49 30 45', 'fire-bs', 2),
+  S('M42 54 Q44 48 42 44', 'fire-bs', 2),
+]);
+def('composite_material', () => [                             // two materials that stay two, inside one part
+  P('M8 16 L44 16 L44 46 L8 46 Z', 'bs'),                     // the matrix
+  ...[0, 1, 2].map(i => S(`M8 ${22 + i * 10} L44 ${14 + i * 10}`, 'ik', 2)),
+  ...[0, 1, 2].map(i => S(`M8 ${14 + i * 10} L44 ${22 + i * 10}`, 'lo', 2)),  // the reinforcement, crossing it
+  ...[21, 31, 41].map(y => S(`M44 ${y} Q50 ${y - 4} 54 ${y + 1}`, 'ik', 1.6)),// fibres pulled clear at the break
+]);
+def('semiconductor', () => [                                  // the gap: warm it and something can cross, which no metal needs to do
+  P('M10 40 L50 40 L50 48 L10 48 Z', 'lo'),                   // the full band
+  P('M10 12 L50 12 L50 20 L10 20 Z', 'gh'),                   // the empty one
+  S('M22 40 L22 20', 'ik', 1.6),
+  C(22, 17, 3.4, 'bs'),                                       // the electron that made it across
+  ring('hi', 22, 44, 3, 1.6),                                 // and the hole it left behind
+  C(42, 44, 2.4, 'hi'),                                       // one deliberate impurity, parts per million
+]);
+def('galvanization', () => [                                  // the zinc is meant to go first, and it takes 40 years doing it
+  P('M22 8 L38 8 L38 52 L22 52 Z', 'ik'),                     // the steel, untouched
+  P('M14 8 L22 8 L22 52 L14 52 Z', 'bs'), P('M38 8 L46 8 L46 52 L38 52 Z', 'bs'),
+  C(18, 20, 2.6, 'gh'), C(42, 31, 2.6, 'gh'), C(18, 42, 2.4, 'gh'),  // pitting, in the coat only
+  S('M46 22 L54 19 M46 38 L54 41', 'hi', 1.6),                // what it gives up to save the iron
+]);
+def('vulcanization', () => [                                  // sulfur bridges stitched between chains that used to slide
+  S('M6 18 Q18 12 30 18 Q42 24 54 20', 'lo', 3),
+  S('M6 44 Q18 38 30 44 Q42 50 54 46', 'lo', 3),
+  ...[[18, 15, 41], [30, 18, 44], [42, 22, 48]].flatMap(([x, y1, y2]) => [
+    S(`M${x} ${y1} L${x} ${y2}`, 'ik', 1.4),
+    C(x, n(y1 + (y2 - y1) * 0.34), 3, 'bs'), C(x, n(y1 + (y2 - y1) * 0.66), 3, 'bs'),
+  ]),
+]);
+def('graphene', () => [                                       // one sheet of the honeycomb, and edge-on it is a line
+  ...[[23, 20], [37, 20], [16, 32], [30, 32], [44, 32], [23, 44], [37, 44]]
+    .map(([x, y]) => hex('bs', x, y, 8, 2)),
+  S('M10 54 L50 54', 'hi', 1.6),
+]);
+def('nuclear_fission', () => [                                // one neutron in, two fragments out, and more neutrons after them
+  S('M4 46 L12 42', 'gh', 1.6), C(14, 41, 2.4, 'ik'),         // the neutron that started it
+  C(24, 32, 10, 'bs'), C(44, 26, 8, 'lo'),                    // the halves, already apart
+  S('M32 26 L36 23', 'gh', 1.4),
+  C(12, 12, 2.4, 'ik'), C(34, 52, 2.4, 'ik'), C(52, 46, 2.4, 'ik'),
+  S('M18 18 L14 14 M30 46 L33 50 M46 40 L50 44', 'gh', 1.2),  // and each of those can start another
+]);
+def('nuclear_fusion', () => [                                 // driven together instead, and 0.7% of the mass does not arrive
+  ...[0, 60, 120, 180, 240, 300].map(a => S(
+    `M${n(30 + 11 * Math.cos(a * Math.PI / 180))} ${n(30 + 11 * Math.sin(a * Math.PI / 180))} ` +
+    `L${n(30 + 19 * Math.cos(a * Math.PI / 180))} ${n(30 + 19 * Math.sin(a * Math.PI / 180))}`, 'hi', 2.2)),
+  C(30, 30, 9, 'bs'),                                         // what they made
+  C(14, 44, 5, 'lo'), C(46, 16, 5, 'lo'),                     // the two going in
+  S('M19 39 L25 34', 'ik', 1.8), S('M41 21 L35 26', 'ik', 1.8),
+  C(50, 46, 2.6, 'ik'), S('M44 41 L48 44', 'gh', 1.4),        // and the neutron leaving with the rest
+]);
+
+/* myth — the creatures, the places, and four figures from four traditions.
+ * The rule inside this block: no two are the same silhouette. The creatures
+ * are each drawn from the join that makes them (eagle onto lion, woman onto
+ * fish, man against wolf); the places are each drawn from their own
+ * geography (a hall's wall, a mountain's summit, a drop measured in days);
+ * and the gods are drawn from the one object the story hands them. */
+def('dragon', () => [                                         // a serpent everywhere — and the five-clawed form only the emperor wore
+  S('M6 46 Q18 44 22 32 Q26 18 40 16 Q52 15 53 24', 'bs', 6),
+  C(53, 24, 5, 'bs'),
+  S('M51 18 L55 11 M47 19 L48 12', 'ik', 1.8),                // the horns
+  P('M24 30 Q30 12 44 11 Q36 22 32 32 Z', 'hi'),              // and the wing Europe gave it
+  ...[0, 1, 2, 3, 4].map(i => S(`M13 45 L${7 + i * 3.5} ${52 + (i % 2)}`, 'ik', 1.4)),
+]);
+def('phoenix', () => [                                        // 500 years, said Heliopolis; 1,461, said Tacitus — the Sothic cycle exactly
+  flame('fire-bs', .5, 16), flame('fire-hi', .28, 22),
+  P('M30 32 Q16 24 9 10 Q24 12 30 22 Q36 12 51 10 Q44 24 30 32 Z', 'bs'),
+  C(30, 34, 4, 'bs'), P('M34 33 L41 34.5 L34 36 Z', 'ik'),
+  S('M30 38 L30 44', 'hi', 2),
+]);
+def('griffin', () => [                                        // eagle at the front, lion behind — head, wings and fore-talons of one
+  E(21, 38, 15, 9, 'lo'),
+  S('M7 34 Q3 42 8 48', 'lo', 2.6),                           // the tufted lion tail
+  S('M17 46 L17 54 M26 46 L26 54', 'lo', 2.4),                // its hind legs
+  C(45, 23, 7, 'bs'),                                         // the eagle head
+  P('M51 21 L58 24 L51 27 Z', 'ik'),                          // the beak
+  P('M28 30 Q34 11 49 9 Q42 24 36 32 Z', 'hi'),               // the wing
+  S('M40 32 L40 46', 'bs', 2.6), S('M40 46 L34 52 M40 46 L45 52', 'ik', 1.8),
+]);
+def('unicorn', () => [                                        // Ctesias' animal was a wild ass, white and red and black, not a horse
+  E(23, 38, 15, 9, 'hi'),
+  P('M33 36 Q39 28 39 20 L45 20 Q45 32 38 40 Z', 'hi'),
+  S('M41 17 Q43 10 38 7', 'lo', 2.4),                         // the long ass's ear
+  S('M45 19 L49 13', 'hi', 3.4), S('M49 13 L52 9', 'bs', 3.4), S('M52 9 L56 3', 'ik', 3),  // the horn, in its three colours
+  ...[-8, 0, 8].map(dx => S(`M${23 + dx} 46 L${23 + dx} 54`, 'lo', 2.2)),
+]);
+def('mermaid', () => [                                        // Atargatis at Ashkelon: a woman's face on a fish, centuries early
+  C(30, 11, 6, 'hi'),
+  P('M24 17 Q30 15 36 17 Q40 27 34 37 L26 37 Q20 27 24 17 Z', 'bs'),
+  P('M26 37 L34 37 Q36 45 30 49 Q24 45 26 37 Z', 'bs'),
+  P('M30 49 L21 43 L23 55 L30 50 L37 55 L39 43 Z', 'lo'),     // the fluke
+  S('M26 41 L34 41 M27 45 L33 45', 'hi', 1.2),                // scales
+]);
+def('werewolf', () => [                                       // werwulf, 'man-wolf' — and the line runs down the middle of him
+  P('M15 54 L15 30 Q15 22 23 22 L30 22 L30 54 Z', 'lo'),
+  C(23, 13, 7, 'lo'),
+  P('M30 22 L38 22 Q46 22 46 30 L46 54 L30 54 Z', 'bs'),
+  P('M30 19 Q34 7 40 9 Q46 11 45 18 L55 21 L44 24 Q34 25 30 19 Z', 'bs'),
+  C(40, 16, 1.8, 'ik'),
+  S('M30 6 L30 56', 'gh', 1.4),
+]);
+def('golem', () => [                                          // emet and it walks; rub out the first letter and met stops it
+  P('M18 54 L18 26 Q18 18 30 18 Q42 18 42 26 L42 54 Z', 'bs'),
+  P('M21 6 L39 6 L39 22 L21 22 Z', 'lo'),
+  S('M24 14 L28 14', 'gh', 2.6),                              // the letter already gone
+  S('M30 14 L33 14', 'ik', 2.6), S('M35 14 L38 14', 'ik', 2.6),
+  ...granules('lo', 4, 331, [22, 32, 38, 48]),                // it is still only mud
+]);
+def('banshee', () => [                                        // bean sí, 'woman of the fairy mound' — and the family hears it anyway
+  P('M6 48 Q19 26 32 48 Z', 'lo'),                            // the mound she comes from
+  C(19, 38, 4, 'bs'),
+  ...[9, 15, 21].map((rad, i) => ['s',
+    `M${n(26 + rad * .3)} ${n(38 - rad)} A${rad} ${rad} 0 0 1 ${n(26 + rad * .3)} ${n(38 + rad)}`,
+    i === 1 ? 'hi' : 'bs', 1.8]),
+  P('M44 46 L54 46 L54 34 L49 29 L44 34 Z', 'gh'),            // the house it reaches, miles off
+  S('M6 52 L54 52', 'ik', 1.4),
+]);
+def('troll', () => [                                          // caught by the sun, and from the waist down a boulder with a name
+  P('M19 34 Q19 17 30 17 Q41 17 41 34 Z', 'bs'),
+  C(30, 11, 6, 'bs'), C(27, 10, 1.6, 'ik'), C(33, 10, 1.6, 'ik'),
+  P('M13 52 L20 34 L40 34 L47 52 Z', 'lo'),                   // already stone
+  S('M23 40 L28 47 M38 39 L34 47', 'gh', 1.4),
+  ...[0, 1, 2].map(i => S(`M${54 - i * 4} ${5 + i * 5} L${45 - i * 4} ${11 + i * 5}`, 'hi', 1.6)),
+]);
+def('underworld', () => [                                     // Duat, Mictlan, Yomi, Sheol, Diyu, Xibalba — always directly below
+  P('M8 24 Q8 50 30 53 Q52 50 52 24 Z', 'lo'),                // the hollow under the floor of the world
+  S('M4 24 L56 24', 'ik', 2.6),
+  ...[14, 30, 46].map(x => S(`M${x} 24 L${x} 15`, 'gh', 1.6)),// what is standing on it
+  ...[[20, 40], [30, 44], [40, 40]].map(([x, y]) =>
+    P(`M${x - 4} ${y + 6} Q${x - 4} ${y - 6} ${x} ${y - 6} Q${x + 4} ${y - 6} ${x + 4} ${y + 6} Z`, 'gh')),
+]);
+def('olympus', () => [                                        // 2,917 m at Mytikas, and nobody stood on it until August 1913
+  P('M8 52 L30 11 L52 52 Z', 'bs'),
+  P('M23 22 L30 11 L37 22 Z', 'hi'),                          // the bare summit block
+  S('M13 36 Q30 30 47 36', 'gh', 5),                          // the cloud that always sat below it
+  S('M30 11 L30 4', 'ik', 1.6), P('M30 3 L39 6 L30 9 Z', 'lo'),
+]);
+def('elysium', () => [                                        // no snow, no storm, no rain — only the west wind, and nothing above
+  ...[0, 1, 2].map(i => S(`M6 ${16 + i * 8} Q26 ${11 + i * 8} 47 ${16 + i * 8}`, 'hi', 2)),
+  ...[0, 1, 2].map(i => S(`M42 ${13 + i * 8} L48 ${16 + i * 8} L42 ${19 + i * 8}`, 'hi', 1.6)),
+  S('M6 44 L54 44', 'ik', 1.6),
+  ...[12, 22, 32, 42, 50].map(x => S(`M${x} 44 Q${x + 2} 38 ${x} 33`, 'bs', 1.8)),
+]);
+def('asgard', () => [                                         // Ásgarðr, 'enclosure of the Æsir' — the wall is the whole story
+  ...[0, 1, 2].flatMap(row => [0, 1, 2, 3].map(col => {
+    const x = 4 + col * 13 + (row % 2 ? 6 : 0);
+    return P(`M${x} ${30 + row * 8} L${x + 11} ${30 + row * 8} L${x + 11} ${37 + row * 8} L${x} ${37 + row * 8} Z`,
+             row % 2 ? 'bs' : 'lo');
+  })),
+  P('M24 54 L24 42 Q30 36 36 42 L36 54 Z', 'ground'),         // the gate through it
+  S('M42 4 L42 20', 'gh', 1.4), P('M35 20 L49 20 L49 28 L35 28 Z', 'hi'),  // the last stone, still on the rope
+]);
+def('yggdrasil', () => [                                      // three roots, and each one reaches a different well
+  S('M30 36 L30 14', 'lo', 5),
+  E(30, 15, 18, 9, 'bs'), E(27, 12, 11, 5, 'hi'),
+  S('M30 36 Q17 39 11 45 M30 36 L30 45 M30 36 Q43 39 49 45', 'lo', 3),
+  ...[11, 30, 49].flatMap(x => [ring('ik', x, 50, 5, 1.6), E(x, 50, 3.2, 2, 'hi')]),
+]);
+def('trickster', () => [                                      // he breaks the line, and in breaking it puts it back
+  S('M5 34 L23 34', 'ik', 3), S('M37 34 L55 34', 'ik', 3),
+  S('M23 34 Q30 26 37 34', 'gh', 2),                          // where the rule used to run
+  ...[[15, 47], [23, 41], [34, 27], [42, 21]].map(([x, y]) => E(x, y, 3.2, 2, 'bs')),  // the tracks going through
+  C(47, 16, 4, 'lo'),
+]);
+def('moirai', () => [                                         // one spins it, one measures it off, one decides where it ends
+  S('M11 30 L45 30', 'bs', 2.6),
+  E(11, 30, 5, 9, 'lo'), S('M11 20 L11 40', 'ik', 1.4),       // the distaff
+  ...[21, 27, 33].map(x => S(`M${x} 25 L${x} 35`, 'gh', 1.4)),// the length taken off it
+  S('M43 19 L55 34', 'ik', 2.4), S('M43 41 L55 26', 'ik', 2.4),
+  C(46, 30, 2, 'ik'),
+]);
+def('tartarus', () => [                                       // nine days from heaven to earth, and nine more from earth to here
+  S('M6 6 L54 6', 'gh', 1.6),
+  S('M6 30 L54 30', 'ik', 2),                                 // earth, exactly halfway down
+  S('M6 54 L54 54', 'lo', 2.6),
+  P('M22 13 L38 13 L34 20 L26 20 Z', 'bs'),                   // the bronze anvil, still falling
+  S('M30 21 L30 28 M30 33 L30 49', 'gh', 1.4),
+  ...[23, 37].map(x => S(`M${x} 44 L${x} 50`, 'gh', 1.2)),
+]);
+def('nuwa', () => [                                           // nobles shaped by hand; everyone else flicked off a cord through mud
+  C(15, 14, 6, 'hi'),
+  S('M15 20 Q15 36 28 40 Q42 44 40 53', 'bs', 6),             // her serpent half
+  S('M24 15 Q39 13 54 21', 'lo', 2),                          // the cord, dragged
+  ...[[33, 22], [41, 25], [49, 29]].flatMap(([x, y]) =>
+    [C(x, y, 3, 'lo'), S(`M${x} ${y + 3} L${x} ${y + 8}`, 'lo', 1.4)]),
+]);
+def('pangu', () => [                                          // ten feet a day for eighteen thousand years, holding them apart
+  P('M6 9 L54 9 L54 15 L6 15 Z', 'gh'),                       // the sky, still rising
+  P('M6 45 L54 45 L54 51 L6 51 Z', 'lo'),                     // the earth, still sinking
+  ['s', 'M13 40 A15 15 0 0 1 13 20', 'gh', 1.6],              // the shell he hatched out of
+  ['s', 'M47 20 A15 15 0 0 1 47 40', 'gh', 1.6],
+  C(30, 23, 4, 'bs'), S('M30 27 L30 41', 'bs', 3.4),
+  S('M30 29 L21 17 M30 29 L39 17', 'bs', 2.6),
+  S('M30 41 L25 45 M30 41 L35 45', 'bs', 2.4),
+]);
+def('perun', () => [                                          // silver head, gold moustache, and into the Dnieper in 988
+  ['g', 22, 30, 30, [
+    P('M23 20 L37 20 L37 46 L23 46 Z', 'lo'),
+    C(30, 13, 7, 'hi'),
+    S('M24 16 Q30 20 36 16', 'bs', 2.6),
+  ]],
+  bolt('ik', 48, 6, .45),
+  wave('bs', 50, 5, 24), wave('hi', 55, 3, 19),
+]);
+def('dagda', () => [                                          // one end kills, the other gives it back — over the cauldron
+  ['g', -26, 28, 24, [
+    P('M10 20 L34 20 L34 28 L10 28 Z', 'lo'),
+    P('M34 15 L49 15 L49 33 L34 33 Z', 'ik'),                 // the killing end
+    P('M3 22 L10 18 L10 30 L3 26 Z', 'hi'),                   // and the end that undoes it
+  ]],
+  P('M14 38 Q14 34 20 34 L40 34 Q46 34 46 38 Q46 52 30 52 Q14 52 14 38 Z', 'bs'),
+  S('M20 34 Q30 30 40 34', 'hi', 1.6),
+]);
+
+/* the flower taken apart, plus the tissues and the two life-halves ───────
+ * Twenty-seven plant items in one chunk, which is exactly how a category
+ * turns into twenty-seven green blobs. So: the four whorls are four
+ * different geometries (a ring of leaves, one petal, a whole stamen, a
+ * sectioned anther), the carpel's three parts are drawn at three different
+ * scales, and the four cell types are told apart by their walls — thin,
+ * cornered, lignified-and-dead, and the palisade-over-spongy pair. */
+def('photosynthesis', () => [                                 // 130 terawatts, and 100 billion tonnes of carbon put away a year
+  leaf('bs', 30, 32, 1.55),
+  ...[0, 1, 2].map(i => S(`M${7 + i * 4} ${9 + i * 6} L${17 + i * 4} ${17 + i * 6}`, 'hi', 1.8)),
+  C(14, 45, 3.4, 'lo'), S('M18 45 L25 42', 'lo', 1.4),        // carbon dioxide, going in
+  C(47, 19, 3.4, 'hi'), S('M43 21 L38 24', 'hi', 1.4),        // oxygen, coming out
+  ...granules('gh', 4, 137, [25, 30, 37, 42]),                // and the carbon, laid down as sugar
+]);
+def('angiosperm', () => [                                     // the seed shut inside an ovary, not naked on a scale
+  S('M30 54 L30 38', 'lo', 3), leaf('lo', 20, 46, .6, -40),
+  E(30, 28, 12, 11, 'bs'),                                    // the ovary, closed round them
+  C(26, 26, 2.8, 'hi'), C(34, 27, 2.8, 'hi'), C(30, 33, 2.6, 'hi'),
+  S('M30 17 L30 8', 'lo', 2),
+  leaf('gh', 21, 14, .55, -35), leaf('gh', 39, 14, .55, 35),  // the flower that is the other half of the deal
+]);
+def('gametophyte', () => [                                    // the haploid half — in a flowering plant, three cells and no more
+  ring('gh', 30, 34, 17, 2.4),                                // all of it, hidden inside one pollen grain
+  C(24, 30, 6, 'bs'), C(36, 30, 6, 'bs'), C(30, 42, 6, 'bs'),
+  S('M12 14 L12 26', 'ik', 3.4),                              // one set of chromosomes
+]);
+def('sporophyte', () => [                                     // the diploid half, and the one you actually notice
+  S('M30 54 L30 18', 'lo', 4),
+  ...[0, 1, 2].flatMap(i => [
+    S(`M30 ${23 + i * 9} Q20 ${18 + i * 9} 11 ${23 + i * 9}`, 'bs', 2.4),
+    S(`M30 ${23 + i * 9} Q40 ${18 + i * 9} 49 ${23 + i * 9}`, 'bs', 2.4)]),
+  S('M12 8 L12 20 M18 8 L18 20', 'ik', 3.4),                  // two sets
+  E(30, 53, 6, 3, 'gh'),                                      // the generation it grew off, reduced to nothing
+]);
+def('alternation_of_generations', () => [                     // two lives in turn, and which one you see flips between moss and oak
+  ring('gh', 19, 30, 12, 2.4), ring('gh', 41, 30, 12, 2.4),
+  C(19, 30, 5, 'hi'),                                         // small this turn
+  C(41, 30, 9, 'bs'),                                         // large the next
+  P('M26 17 L34 15 L31 22 Z', 'ik'),                          // meiosis, one way round
+  P('M34 43 L26 45 L29 38 Z', 'ik'),                          // fertilisation, the other
+]);
+def('double_fertilization', () => [                           // two sperm, two fusions: one the embryo, one the food for it
+  E(35, 32, 18, 15, 'gh'),
+  S('M4 19 Q15 21 23 25', 'lo', 3),                           // the tube, arriving
+  C(27, 22, 3, 'bs'), C(29, 32, 3, 'bs'),                     // the two it carried
+  C(39, 19, 5, 'hi'),                                         // the egg
+  C(40, 39, 5, 'hi'), C(47, 34, 5, 'hi'),                     // and the two nuclei that make the triploid tissue
+  S('M30 21 L34 20 M32 33 L36 36', 'ik', 1.4),
+]);
+def('endosperm', () => [                                      // three sets of chromosomes, and most of the grain by weight
+  P('M30 5 Q46 19 46 33 Q46 49 30 54 Q14 49 14 33 Q14 19 30 5 Z', 'lo'),
+  P('M30 11 Q41 21 41 33 Q41 45 30 49 Q19 45 19 33 Q19 21 30 11 Z', 'hi'),
+  P('M26 39 Q21 45 26 50 Q31 47 30 39 Z', 'bs'),              // the embryo, off to one side of it
+  ...[[26, 25], [33, 23], [30, 32]].map(([x, y]) => C(x, y, 2, 'gh')),
+]);
+def('sepal', () => [                                          // the outermost whorl, and the only green part of the flower
+  ...[0, 1, 2, 3, 4].map(i => {
+    const a = (i * 72 - 90) * Math.PI / 180;
+    return leaf('bs', n(30 + 13 * Math.cos(a)), n(33 + 13 * Math.sin(a)), .8, i * 72);
+  }),
+  E(30, 33, 8, 8, 'gh'),                                      // the bud they are still holding shut
+  S('M30 46 L30 56', 'lo', 2.4),
+]);
+def('petal', () => [                                          // and the half of the advertising we cannot see at all
+  P('M30 54 Q10 39 12 23 Q14 7 30 5 Q46 7 48 23 Q50 39 30 54 Z', 'bs'),
+  P('M30 46 Q20 37 21 27 Q22 16 30 15 Q38 16 39 27 Q40 37 30 46 Z', 'hi'),
+  E(30, 44, 9, 7, 'lo'),                                      // the bullseye, showing only under ultraviolet
+  E(30, 44, 4, 3, 'ik'),
+]);
+def('stamen', () => [                                         // one filament with its anther, and the whorl standing behind it
+  S('M21 54 Q17 34 21 22', 'gh', 2), S('M39 54 Q43 34 39 22', 'gh', 2),
+  E(21, 18, 4, 6, 'gh'), E(39, 18, 4, 6, 'gh'),
+  S('M30 54 Q25 34 30 24', 'lo', 3),
+  E(26, 17, 4, 7, 'bs'), E(34, 17, 4, 7, 'bs'),               // the anther, two lobes of it
+  ...granules('hi', 4, 613, [24, 5, 38, 11]),
+]);
+def('anther', () => [                                         // four pollen sacs, and the lengthwise slit they open by
+  S('M30 54 L30 45', 'lo', 3),
+  P('M18 15 L42 15 L42 45 L18 45 Z', 'bs'),
+  ...[[24, 24], [36, 24], [24, 36], [36, 36]].map(([x, y]) => E(x, y, 5, 6, 'hi')),
+  S('M30 13 L30 47', 'ground', 2.4),
+  ...granules('lo', 3, 89, [25, 4, 36, 10]),
+]);
+def('stigma', () => [                                         // the pad it has to land on, and the tube starting the moment it does
+  P('M11 30 Q11 15 24 15 Q30 15 30 23 Q30 15 36 15 Q49 15 49 30 Q40 36 30 34 Q20 36 11 30 Z', 'bs'),
+  ...Array.from({ length: 9 }, (_, i) =>
+    S(`M${13 + i * 4} ${n(19 - Math.abs(i - 4) * .8)} L${13 + i * 4} ${n(12 - Math.abs(i - 4) * .8)}`, 'hi', 1.6)),
+  C(38, 25, 4, 'gh'), S('M38 29 Q36 39 33 47', 'ik', 1.4),
+]);
+def('flower_style', () => [                                   // maize silk is one of these, and the tube runs it at a centimetre an hour
+  P('M24 8 L36 8 L34 50 L26 50 Z', 'gh'),
+  C(30, 7, 5, 'lo'),                                          // the grain, up at the top of it
+  S('M30 11 Q27 25 31 37 Q32 43 30 47', 'bs', 2.4),
+  C(30, 47, 2.4, 'hi'),                                       // the tip, still going
+  E(30, 54, 8, 4, 'gh'),
+]);
+def('carpel', () => [                                         // morphologically a leaf, folded round the ovules and sealed
+  P('M30 6 Q10 23 16 39 Q22 54 30 54 Q38 54 44 39 Q50 23 30 6 Z', 'bs'),
+  S('M30 6 L30 54', 'lo', 1.6),                               // the midrib, doing duty as the axis
+  ...[[23, 28], [23, 38], [24, 46]].map(([x, y]) => C(x, y, 3, 'hi')),
+  ...[18, 28, 38, 47].map(y => S(`M27 ${y} L33 ${y}`, 'ik', 1.4)),  // the seam it closed along
+]);
+def('flower_ovary', () => [                                   // its wall is what becomes the fruit — a tomato's flesh is this
+  E(30, 34, 21, 19, 'gh'),                                    // what it will be, later
+  E(30, 34, 15, 14, 'bs'),                                    // the wall, drawn thick because the wall is the point
+  E(30, 34, 9, 9, 'ground'),
+  ...[[26, 30], [34, 32], [29, 38]].map(([x, y]) => C(x, y, 2.6, 'hi')),
+  S('M30 15 L30 5', 'lo', 2.4),
+]);
+def('meristem', () => [                                       // undifferentiated, totipotent, and never finished
+  ...[0, 1, 2].flatMap(row => [0, 1, 2].map(col =>
+    S(`M${16 + col * 10} ${18 + row * 10} L${25 + col * 10} ${18 + row * 10} ` +
+      `L${25 + col * 10} ${27 + row * 10} L${16 + col * 10} ${27 + row * 10} Z`, 'bs', 1.8))),
+  ...[0, 1, 2].flatMap(row => [0, 1, 2].map(col => C(20.5 + col * 10, 22.5 + row * 10, 1.8, 'hi'))),
+  S('M30.5 28 L30.5 37', 'ik', 2),                            // one caught in the act, as one always is
+]);
+def('apical_meristem', () => [                                // the dome that makes every leaf, and holds the buds below it shut
+  P('M20 30 Q20 11 30 11 Q40 11 40 30 Z', 'bs'),
+  ['s', 'M22 26 A9 9 0 0 1 38 26', 'hi', 1.2],
+  ['s', 'M24 20 A6 6 0 0 1 36 20', 'hi', 1.2],
+  leaf('lo', 15, 28, .55, -40), leaf('lo', 45, 28, .55, 40),  // the two leaves it has made so far
+  P('M26 30 L34 30 L34 54 L26 54 Z', 'lo'),
+  C(30, 38, 2, 'hi'), C(30, 45, 2, 'hi'),                     // auxin, going down
+  E(38, 48, 4, 3, 'gh'),                                      // the side bud, kept shut by it
+]);
+def('cytokinin', () => [                                      // crystallised in 1954 out of autoclaved herring sperm DNA
+  ...purine('bs'),
+  S('M45 29 L53 23', 'ik', 2), C(54, 21, 3.4, 'hi'),          // the side chain that makes an adenine into this
+  C(12, 49, 5, 'gh'), C(23, 52, 5, 'gh'),                     // and the cell division it sets off
+  S('M17 46 L18 55', 'ik', 1.4),
+]);
+def('abscisic_acid', () => [                                  // it barely does abscission at all: it shuts stomata and keeps seeds asleep
+  E(22, 20, 6, 11, 'bs'), E(38, 20, 6, 11, 'bs'),             // two guard cells, gone slack and closed
+  S('M30 9 L30 31', 'ground', 1.6),                           // the pore, shut to a line
+  grain('lo', 30, 44, 1.9),
+  ring('gh', 30, 44, 12, 1.4),                                // the seed, held dormant
+]);
+def('gravitropism', () => [                                   // the sensor is a pile of starch grains heavy enough to sink
+  S('M30 5 L30 25', 'bs', 4),                                 // shoot, up
+  S('M30 25 L30 44', 'lo', 4),                                // root, down
+  P('M22 43 Q22 54 30 54 Q38 54 38 43 Z', 'bs'),              // the root cap, and the cell that does the sensing
+  ...granules('ik', 5, 421, [25, 47, 35, 52]),
+  S('M51 12 L51 28', 'gh', 1.6), P('M47 28 L55 28 L51 34 Z', 'gh'),
+]);
+def('thigmotropism', () => [                                  // the touched side grows slower, so the tendril winds itself on
+  P('M39 5 L46 5 L46 54 L39 54 Z', 'gh'),                     // the support it found
+  ...[0, 1, 2, 3].map(i => ['s', `M42.5 ${13 + i * 10} A9 5.5 0 1 1 42.5 ${19 + i * 10}`, 'bs', 2.4]),
+  S('M5 50 Q19 51 29 45 Q35 41 40 36', 'lo', 3),              // and the stem that arrived free
+  S('M42 48 Q50 50 52 44', 'bs', 2),
+]);
+def('parenchyma', () => [                                     // thin wall, still alive, still able to divide — potato flesh, fruit pulp
+  ...[[17, 21], [40, 19], [30, 36], [15, 45], [43, 43]].flatMap(([x, y]) =>
+    [E(x, y, 9, 7, 'bs'), C(n(x - 3), n(y - 2), 2.4, 'ik')]),
+  ...[[30, 20], [26, 48], [46, 29]].map(([x, y]) => C(x, y, 2, 'gh')),  // air, in between them
+]);
+def('collenchyma', () => [                                    // thickened at the corners only: stiff, and still able to stretch
+  ...[[22, 24], [38, 24], [22, 41], [38, 41]].map(([x, y]) =>
+    S(`M${x - 8} ${y - 8} L${x + 8} ${y - 8} L${x + 8} ${y + 8} L${x - 8} ${y + 8} Z`, 'bs', 1.6)),
+  ...[14, 30, 46].flatMap(x => [16, 33, 49].map(y => C(x, y, 3.4, 'lo'))),
+  ...[[22, 24], [38, 24], [22, 41], [38, 41]].map(([x, y]) => C(x, y, 1.8, 'ik')),  // and still alive in there
+]);
+def('sclerenchyma', () => [                                   // it lays down a lignified second wall, then dies inside it
+  ...[15, 30, 45].flatMap(x => [ring('lo', x, 21, 8, 6), C(x, 21, 2, 'ground')]),
+  ring('lo', 30, 42, 11, 7), C(30, 42, 2.4, 'ground'),        // a stone cell — the grit in a pear
+  ...[0, 60, 120, 180, 240, 300].map(a => S(
+    `M${n(30 + 3 * Math.cos(a * Math.PI / 180))} ${n(42 + 3 * Math.sin(a * Math.PI / 180))} ` +
+    `L${n(30 + 9 * Math.cos(a * Math.PI / 180))} ${n(42 + 9 * Math.sin(a * Math.PI / 180))}`, 'ground', 1)),
+]);
+def('mesophyll', () => [                                      // a palisade standing on end, over a layer that is mostly air
+  P('M7 10 L53 10 L53 16 L7 16 Z', 'gh'),
+  ...[0, 1, 2, 3, 4].map(i => P(`M${10 + i * 8} 16 L${16 + i * 8} 16 L${16 + i * 8} 33 L${10 + i * 8} 33 Z`, 'bs')),
+  ...[[15, 40], [27, 38], [39, 42], [48, 38], [21, 48], [35, 48]].map(([x, y]) => E(x, y, 6, 4, 'lo')),
+  P('M7 52 L53 52 L53 57 L7 57 Z', 'gh'),
+]);
+def('companion_cell', () => [                                 // the tube throws its nucleus away; the cell alongside keeps one and runs it
+  P('M17 6 L33 6 L33 54 L17 54 Z', 'bs'),
+  ...[21, 39].flatMap(y => [18, 23, 28].map(x => S(`M${x} ${y} L${x + 3} ${y}`, 'ground', 2.6))),
+  P('M36 17 L48 17 L48 45 L36 45 Z', 'lo'),
+  C(42, 25, 4, 'ik'),                                         // the nucleus, the only one left between them
+  E(40, 35, 3, 1.8, 'hi'), E(45, 38, 3, 1.8, 'hi'),           // and the mitochondria it runs the pipe on
+]);
+def('tracheid', () => [                                       // long, tapered, dead — and conifer wood is almost nothing else
+  P('M21 4 Q27 16 27 29 Q27 42 21 53 Q15 42 15 29 Q15 16 21 4 Z', 'bs'),
+  P('M39 9 Q45 21 45 34 Q45 47 39 56 Q33 47 33 34 Q33 21 39 9 Z', 'bs'),
+  ...[22, 32, 42].flatMap(y => [ring('lo', 30, y, 4, 1.6), C(30, y, 1.4, 'ground')]),
+  S('M21 20 L21 38', 'gh', 1.2),
+]);
+
+
+/* plant — water, sex, dormancy and girth: how a plant actually operates ── */
+def('transpiration', () => [                                   // nearly all of it lifted only to be thrown away again
+  S('M30 54 L30 26', 'lo', 3),
+  leaf('bs', 22, 22, .8, -35), leaf('bs', 38, 22, .8, 35),
+  ...[[16, 12], [24, 7], [36, 7], [44, 12]].map(([x, y]) =>
+    S(`M${x} ${n(y + 8)} Q${n(x - 3)} ${n(y + 3)} ${x} ${y} Q${n(x + 3)} ${n(y - 3)} ${x} ${n(y - 6)}`, 'gh', 1.6)),
+  C(30, 46, 2.2, 'hi'),                                        // the two per cent that is actually kept
+]);
+def('self_pollination', () => [                                // the flower need never open at all
+  P('M22 50 Q17 26 30 8 Q43 26 38 50 Z', 'bs'),                // a bud, still shut
+  S('M30 45 L30 25', 'lo', 2),                                 // its own style, standing inside
+  E(30, 22, 5, 3.4, 'hi'),
+  S('M34 25 Q39 33 31 39', 'ik', 1.6), P('M30 40 L35 35 L36 41 Z', 'ik'),  // pollen with nowhere else to fall
+]);
+def('cross_pollination', () => [                               // half of all species stop their own pollen dead
+  ...[14, 46].map((x, i) => [
+    S(`M${x} 54 L${x} 32`, 'lo', 2),
+    ...[0, 72, 144, 216, 288].map(a => E(
+      n(x + 9 * Math.cos((a - 90) * Math.PI / 180)),
+      n(32 + 9 * Math.sin((a - 90) * Math.PI / 180)), 4.4, 3.2, i ? 'hi' : 'bs')),
+    C(x, 32, 3, i ? 'bs' : 'hi'),
+  ]).flat(),
+  S('M20 14 Q30 4 40 14', 'ik', 1.6), P('M41 15 L34 12 L38 8 Z', 'ik'),   // carried the whole way across
+]);
+def('seed_dispersal', () => [                                  // the parent's own shade is the one place not to land
+  P('M24 44 Q19 32 30 29 Q41 32 36 44 Z', 'lo'),               // the pod, split
+  S('M24 44 Q30 40 36 44', 'ik', 1.6),
+  ...[[10, 14], [22, 6], [40, 8], [52, 18], [50, 40], [12, 34]].map(([x, y]) => grain('bs', x, y, .8, 25)),
+  ...[[10, 14], [22, 6], [40, 8], [52, 18]].map(([x, y]) => S(`M30 29 L${x} ${y}`, 'gh', 1)),
+]);
+def('xerophyte', () => [                                       // wax on top, and the pore sunk into a pit out of the wind
+  P('M8 22 L52 22 L52 41 L8 41 Z', 'bs'),                      // the leaf, in section
+  P('M7 17 L53 17 L53 24 L7 24 Z', 'hi'),                      // cuticle, thickened until it barely leaks
+  P('M25 41 Q25 31 30 31 Q35 31 35 41 Z', 'ground'),           // the stoma, down a crypt
+  ...[[22, 45], [38, 45]].map(([x, y]) => S(`M${x} ${y} L${x} ${n(y + 7)}`, 'gh', 1.4)),
+]);
+def('succulent', () => [                                       // tissue that is almost nothing but stored water
+  ...[0, 60, 120, 180, 240, 300].map(a => ['g', a, 30, 32, [E(30, 18, 7.5, 12, 'bs')]]),
+  C(30, 32, 9, 'hi'),
+  C(30, 32, 4.4, 'water-bs'),                                  // nineteen parts in twenty
+]);
+def('epiphyte', () => [                                        // it rents the perch and takes nothing out of it
+  S('M4 25 L56 27', 'lo', 4),                                  // somebody else's branch
+  ...[-50, 0, 50].map(a => ['g', a, 30, 19, [leaf('bs', 30, 10, .7)]]),
+  ...[[24, 40], [30, 44], [36, 40]].map(([x, y]) => S(`M${x} 28 Q${n(x - 2)} ${n(y - 6)} ${n(x + 1)} ${y}`, 'hi', 2)),
+  ...[[24, 40], [30, 44], [36, 40]].map(([x, y]) => C(n(x + 1), y, 1.6, 'hi')),   // roots that end in open air
+]);
+def('halophyte', () => [                                       // salt taken up, then pushed straight back out
+  ...[0, 1, 2, 3].map(i => E(30, n(47 - i * 11), 7.5, 6, 'bs')),   // jointed, swollen segments
+  ...[0, 1, 2].map(i => S(`M23 ${n(42 - i * 11)} L37 ${n(42 - i * 11)}`, 'lo', 1.6)),
+  ...[[19, 20], [42, 27], [18, 35], [43, 42]].map(([x, y]) =>
+    P(`M${x} ${n(y - 3.4)} L${n(x + 3.4)} ${y} L${x} ${n(y + 3.4)} L${n(x - 3.4)} ${y} Z`, 'hi')),
+]);
+def('seed_dormancy', () => [                                   // held shut by one hormone until another lets go
+  grain('lo', 30, 32, 2.4), grain('bs', 30, 32, 1.7),
+  S('M13 33 L47 33', 'ik', 3.4),                               // the bar across it
+  S('M31 46 Q32 52 27 55', 'gh', 2),                           // the root it has not sent out in two thousand years
+]);
+def('stratification', () => [                                  // winter, faked in a bag of damp sand at the back of a fridge
+  P('M10 34 Q10 29 17 29 L43 29 Q50 29 50 34 L50 53 L10 53 Z', 'lo'),
+  ...granules('bs', 14, 31, [14, 34, 46, 50]),
+  ...[[22, 42], [33, 47], [40, 39]].map(([x, y]) => grain('hi', x, y, .9, 15)),
+  ...[[16, 15], [30, 10], [44, 15]].map(([x, y]) =>
+    S(`M${n(x - 4)} ${y} L${n(x + 4)} ${y} M${x} ${n(y - 4)} L${x} ${n(y + 4)}`, 'gh', 1.6)),
+]);
+def('vernalization', () => [                                   // weeks of cold silence one gene, and only then can it flower
+  P('M11 40 L49 40 L49 47 L11 47 Z', 'lo'),                    // the gene that blocks flowering
+  S('M13 50 L47 37', 'ik', 2.8),                               // switched off by the winter
+  ...[0, 72, 144, 216, 288].map(a => E(
+    n(30 + 9 * Math.cos((a - 90) * Math.PI / 180)),
+    n(19 + 9 * Math.sin((a - 90) * Math.PI / 180)), 4.6, 3.6, 'bs')),
+  C(30, 19, 4, 'hi'),                                          // what it was holding back
+]);
+def('senescence', () => [                                      // dismantling, not wearing out
+  P('M31 47 Q9 33 30 9 Q41 26 37 47 Z', 'hi'),                 // carotenoid, uncovered by the loss
+  P('M31 47 Q22 30 30 9 Q35 26 33 47 Z', 'bs'),                // the last of the chlorophyll
+  S('M31 47 L31 55', 'lo', 2.6),
+  S('M35 38 L35 51', 'ik', 1.6), P('M35 55 L31 47 L39 47 Z', 'ik'),   // nitrogen, shipped back into the plant
+]);
+def('secondary_growth', () => [                                // wider, not longer — one cambial layer a year
+  C(30, 30, 23, 'bs'), C(30, 30, 18, 'lo'), C(30, 30, 13, 'bs'), C(30, 30, 8, 'lo'),
+  ring('ik', 30, 30, 23, 1), ring('ik', 30, 30, 13, 1),
+  S('M30 30 L53 30', 'gh', 1.4), P('M56 30 L48 26 L48 34 Z', 'gh'),
+]);
+def('vascular_bundle', () => [                                 // xylem on the inner face, phloem on the outer, one strand
+  P('M18 16 Q30 8 42 16 Q49 30 42 45 Q30 53 18 45 Q11 30 18 16 Z', 'gh'),
+  ...[[24, 22], [36, 22], [30, 29]].map(([x, y]) => C(x, y, 3.2, 'hi')),   // phloem, out toward the skin
+  S('M13 34 L47 34', 'ik', 1.2),                                            // the cambium between them
+  ...[[24, 41], [36, 41], [30, 47]].map(([x, y]) => C(x, y, 5, 'bs')),      // xylem, in toward the centre
+]);
+def('pith', () => [                                            // the soft core, and what usually becomes of it
+  ring('bs', 30, 30, 22, 5),
+  C(30, 30, 16, 'lo'),
+  C(30, 30, 11.5, 'ground'),                                   // dried out, and simply gone
+  ...granules('gh', 6, 89, [23, 23, 37, 37]),
+]);
+
+/* history — the industrial wars, and two older ways of fighting ───────── */
+def('artillery', () => [                                       // it reaches further than anything the infantry can carry
+  S('M15 47 L45 21', 'bs', 6),                                 // the tube, up at elevation
+  P('M8 46 L26 46 L22 55 L4 55 Z', 'lo'),                      // the split trail it recoils onto
+  C(20, 46, 5.4, 'lo'), C(20, 46, 2, 'ik'),
+  S('M46 19 L51 13', 'hi', 2),
+  ...[[55, 9], [50, 5], [56, 3]].map(([x, y]) => C(x, y, 2, 'hi')),  // the round, already gone
+]);
+def('trench_warfare', () => [                                  // firepower outran mobility, and the front stopped moving
+  P('M4 29 L16 29 L16 47 L25 47 L25 29 L35 29 L35 47 L44 47 L44 29 L56 29 L56 55 L4 55 Z', 'lo'),
+  S('M4 29 L16 29 M25 29 L35 29 M44 29 L56 29', 'ik', 1.6),
+  ...[27, 33].map(x => S(`M${x} 29 L${x} 15`, 'bs', 2)),        // wire, in the strip nobody holds
+  S('M27 18 L33 24 M27 24 L33 18 M27 21 L33 21', 'gh', 1.2),
+]);
+def('tank', () => [                                            // armour and a gun on tracks, specified to cross a four-foot trench
+  P('M8 43 L8 24 Q8 15 21 15 L44 15 Q52 20 52 32 L52 43 Z', 'bs'),
+  ...[0, 1, 2, 3, 4, 5].map(i => S(`M${n(11 + i * 7)} 43 L${n(11 + i * 7)} 37`, 'ik', 1.4)),
+  P('M52 27 L58 27 L58 34 L52 34 Z', 'lo'),                    // the sponson gun
+  P('M18 49 L42 49 L42 58 L18 58 Z', 'ground'),                // and the gap it was built to ride over
+]);
+def('world_war_one', () => [                                   // fifteen to twenty-two million, soldiers and civilians together
+  ...[[12, 28], [24, 24], [36, 28], [48, 24], [18, 42], [30, 38], [42, 42]].map(([x, y]) =>
+    [S(`M${x} ${y} L${x} ${n(y + 13)}`, 'bs', 2.4),
+     S(`M${n(x - 4.5)} ${n(y + 4)} L${n(x + 4.5)} ${n(y + 4)}`, 'bs', 2.4)]).flat(),
+  horizon('gh', 57),
+]);
+def('dreadnought', () => [                                     // ten guns, every one the same calibre — which was the whole idea
+  P('M6 37 L54 37 L48 46 L12 46 Z', 'lo'),
+  ...[14, 23, 32, 41, 50].map(x => [
+    P(`M${n(x - 4)} 37 L${n(x + 4)} 37 L${n(x + 4)} 31 L${n(x - 4)} 31 Z`, 'bs'),
+    S(`M${n(x - 2)} 31 L${n(x - 2)} 24 M${n(x + 2)} 31 L${n(x + 2)} 24`, 'ik', 1.6)]).flat(),
+  wave('hi', 51, 3, 26),
+]);
+def('aircraft_carrier', () => [                                // the first ship that could take its aircraft back as well as send them
+  P('M4 33 L56 33 L51 44 L12 44 Z', 'lo'),
+  P('M3 27 L57 27 L57 33 L3 33 Z', 'bs'),                      // a flush deck, end to end
+  P('M37 27 L45 27 L45 18 L37 18 Z', 'lo'),                    // the island, shoved to one side
+  P('M9 21 L27 21 L27 24 L9 24 Z', 'hi'), S('M17 21 L21 14', 'hi', 2),   // one aircraft, coming back down
+  wave('hi', 49, 3, 26),
+]);
+def('u_boat', () => [                                          // eleven million tons of shipping, taken from underneath
+  wave('gh', 25, 3, 26),
+  P('M33 13 Q46 11 53 20 L44 24 L29 21 Z', 'lo'),              // a merchant, going down by the bow
+  S('M40 11 L40 3', 'lo', 1.6),
+  E(19, 43, 15, 6, 'bs'),
+  S('M19 37 L19 28', 'ik', 2.4), S('M19 28 L25 28', 'ik', 2),  // the periscope, just through the surface
+  ...[[35, 39], [42, 35], [49, 31]].map(([x, y]) => C(x, y, 1.6, 'hi')),
+]);
+def('blitzkrieg', () => [                                      // all of the armour at one point, and a radio holding it together
+  S('M35 3 L35 21 M35 39 L35 57', 'lo', 4),                    // the front, held everywhere but here
+  P('M5 25 L35 25 L35 18 L53 30 L35 42 L35 35 L5 35 Z', 'bs'),
+  S('M11 17 Q17 9 23 17', 'gh', 1.2), S('M8 20 Q17 4 26 20', 'gh', 1.2),
+  C(17, 22, 2, 'ik'),                                          // the set that steered it
+]);
+def('world_war_two', () => [                                   // sixty million and more, most of them not soldiers at all
+  P('M5 54 L5 25 L14 25 L14 18 L21 23 L21 54 Z', 'lo'),        // a street, broken off at the top
+  P('M23 54 L23 32 L31 27 L31 36 L37 31 L37 54 Z', 'bs'),
+  P('M39 54 L39 21 L45 26 L45 16 L54 23 L54 54 Z', 'lo'),
+  ...[[9, 36], [26, 43], [42, 34], [47, 44]].map(([x, y]) =>
+    P(`M${x} ${y} L${n(x + 5)} ${y} L${n(x + 5)} ${n(y + 6)} L${x} ${n(y + 6)} Z`, 'ground')),
+  S('M3 54 L57 54', 'ik', 2),
+]);
+def('manhattan_project', () => [                               // four fifths of two billion dollars went on the material alone
+  ...[10, 19, 28, 37].map(x => [
+    P(`M${n(x - 4)} 47 L${n(x + 4)} 47 L${n(x + 4)} 11 L${n(x - 4)} 11 Z`, 'lo'),
+    S(`M${n(x - 4)} 22 L${n(x + 4)} 22 M${n(x - 4)} 35 L${n(x + 4)} 35`, 'ik', 1.2)]).flat(),
+  S('M43 30 L48 30', 'gh', 1.4), P('M51 30 L45 27 L45 33 Z', 'gh'),
+  C(54, 30, 4, 'bs'), C(54, 30, 1.6, 'hi'),                     // and this is what came out of it
+  S('M5 51 L57 51', 'ik', 1.6),
+]);
+def('hydrogen_bomb', () => [                                   // the fission bomb is only the match
+  S('M16 5 Q47 5 47 30 Q47 55 16 55 Z', 'ik', 2),
+  C(28, 16, 7, 'bs'), C(28, 16, 3, 'hi'),
+  ...[0, 60, 120, 180, 240, 300].map(a => S(
+    `M${n(28 + 9 * Math.cos(a * Math.PI / 180))} ${n(16 + 9 * Math.sin(a * Math.PI / 180))} ` +
+    `L${n(28 + 13 * Math.cos(a * Math.PI / 180))} ${n(16 + 13 * Math.sin(a * Math.PI / 180))}`, 'hi', 1.4)),
+  P('M20 33 L39 33 L39 51 L20 51 Z', 'lo'),                    // the deuterium it is there to light
+  S('M24 38 L35 38 M24 43 L35 43 M24 48 L35 48', 'gh', 1.2),
+]);
+def('icbm', () => [                                            // twenty-five minutes, nearly all of it above the air
+  S('M2 55 Q30 45 58 55', 'lo', 2.4),                          // the curve of the earth
+  S('M9 51 Q30 1 51 51', 'gh', 1.4),                           // apogee twelve hundred kilometres out
+  P('M7 53 L14 44 L11 53 Z', 'bs'),
+  P('M51 45 L55 54 L47 51 Z', 'bs'),                           // re-entry, faster than anything can meet it
+  ...[[48, 40], [45, 35]].map(([x, y]) => C(x, y, 1.4, 'hi')),
+]);
+def('feudalism', () => [                                       // land downward, service and an oath back up
+  P('M30 6 L45 25 L15 25 Z', 'bs'),
+  P('M11 31 L49 31 L49 40 L11 40 Z', 'lo'),
+  P('M6 46 L54 46 L54 56 L6 56 Z', 'hi'),                      // the land they hold of him
+  S('M19 27 L19 42', 'ik', 1.6), P('M19 45 L15 38 L23 38 Z', 'ik'),
+  S('M41 43 L41 29', 'ik', 1.6), P('M41 26 L37 33 L45 33 Z', 'ik'),
+]);
+def('napoleonic_wars', () => [                                 // four hundred and fifty thousand went in, a hundred and twenty came out
+  P('M3 19 L51 24 L51 31 L3 33 Z', 'bs'),                      // the army going east, drawn to its own strength
+  P('M51 37 L5 41 L5 43 L51 39 Z', 'lo'),                      // and the thread that came back
+  P('M51 24 L58 27.5 L51 31 Z', 'bs'),
+  ...[[16, 51], [29, 53], [42, 51]].map(([x, y]) =>
+    S(`M${n(x - 3)} ${y} L${n(x + 3)} ${y} M${x} ${n(y - 3)} L${x} ${n(y + 3)}`, 'gh', 1.4)),
+]);
+def('sun_tzu', () => [                                         // thirteen chapters, on bamboo slips, sealed in a tomb until 1972
+  ...[11, 18.5, 26, 33.5, 41, 48.5].map(x => P(`M${n(x - 2.8)} 7 L${n(x + 2.8)} 7 L${n(x + 2.8)} 53 L${n(x - 2.8)} 53 Z`, 'bs')),
+  S('M7 17 L53 17 M7 45 L53 45', 'ik', 2),                      // the cords that bound them into one roll
+  ...[14.5, 29.5, 44.5].map(x => S(`M${x} 24 L${x} 38`, 'lo', 1.2)),
+]);
+def('flamethrower', () => [                                    // nitrogen pushes the oil, and a pilot flame lights it at the nozzle
+  P('M7 25 Q7 19 13 19 Q19 19 19 25 L19 49 Q19 55 13 55 Q7 55 7 49 Z', 'lo'),
+  S('M19 30 Q31 23 40 30', 'ik', 3),                           // the hose
+  P('M39 25 L47 25 L47 35 L39 35 Z', 'lo'),
+  P('M46 30 Q54 21 58 13 Q56 27 58 30 Q56 33 58 47 Q54 39 46 30 Z', 'bs'),
+  P('M46 30 Q52 26 56 21 Q53 30 56 39 Q52 34 46 30 Z', 'hi'),
+]);
+
+/* mineral — the Gulf and the Levant, inner Asia, and the Pacific states ── */
+def('iraq', () => [                                            // the plain between two rivers, where cities were first tried
+  S('M11 5 Q20 22 15 34 Q10 46 17 55', 'water-bs', 3),
+  S('M49 5 Q40 22 45 34 Q50 46 43 55', 'water-bs', 3),
+  P('M21 9 Q30 30 26 51 L35 51 Q40 30 43 9 Z', 'bs'),
+  stalk('hi', 27, 46, 22), stalk('hi', 34, 46, 22),
+  grain('hi', 27, 20, .8), grain('hi', 34, 20, .8),
+]);
+def('syria', () => [                                           // Damascus, lived in continuously for as long as there are records
+  ...[[47, 'lo'], [41, 'gh'], [35, 'lo'], [29, 'gh']].map(([y, r]) =>
+    P(`M5 ${y} L55 ${y} L55 ${n(y + 6)} L5 ${n(y + 6)} Z`, r)),   // layer on layer of the same city
+  P('M19 29 L19 15 Q30 4 41 15 L41 29 Z', 'bs'),                // and the arcade still standing on the top one
+  P('M25 29 L25 19 Q30 13 35 19 L35 29 Z', 'ground'),
+]);
+def('jordan', () => [                                          // a tomb front cut straight into the rock face
+  P('M3 55 L3 5 L17 5 L17 55 Z', 'lo'), P('M43 55 L43 5 L57 5 L57 55 Z', 'lo'),
+  P('M19 55 L19 25 L41 25 L41 55 Z', 'bs'),
+  ...[23, 30, 37].map(x => S(`M${x} 27 L${x} 53`, 'ground', 2.4)),
+  P('M19 25 L41 25 L30 11 Z', 'bs'),
+  C(30, 15, 4.4, 'hi'),                                         // the urn they went on shooting at for the gold in it
+]);
+def('kuwait', () => [                                          // the sixth-largest reserves, and the most valuable money there is
+  C(30, 23, 13, 'bs'), ring('hi', 30, 23, 8.5, 1.6),
+  S('M24 19 L24 27 M36 19 L36 27', 'lo', 1.4),
+  E(30, 51, 21, 5, 'lo'),
+  ...[[21, 39], [39, 41]].map(([x, y]) =>
+    P(`M${x} ${y} Q${n(x + 3)} ${n(y + 5)} ${n(x + 3)} ${n(y + 7)} A3 3 0 0 1 ${n(x - 3)} ${n(y + 7)} Q${n(x - 3)} ${n(y + 5)} ${x} ${y} Z`, 'ik')),
+]);
+def('bahrain', () => [                                         // the finest pearls anyone knew of, off thirty-three islands
+  P('M28 31 Q11 32 7 19 Q20 11 28 23 Z', 'lo'), P('M32 31 Q49 32 53 19 Q40 11 32 23 Z', 'lo'),
+  C(30, 30, 5.4, 'hi'),
+  wave('bs', 45, 3, 24),
+  ...[[13, 42], [24, 44], [36, 44], [47, 42]].map(([x, y]) => E(x, y, 3.4, 2, 'bs')),
+]);
+def('qatar', () => [                                           // a peninsula with four fifths of everybody at the top of it
+  wave('lo', 51, 3, 26),
+  P('M19 5 L41 5 L44 26 Q39 45 30 49 Q21 45 16 26 Z', 'bs'),
+  ...[[25, 12], [33, 10], [29, 16], [37, 16], [22, 18]].map(([x, y]) => C(x, y, 2.4, 'ik')),
+  S('M46 31 L52 23', 'hi', 2.4), P('M52 23 Q57 14 52 8 Q51 16 47 21 Z', 'hi'),   // the gas, flared off
+]);
+def('oman', () => [                                            // one house, ruling without a break since 1744
+  P('M13 21 Q30 12 47 21 Q40 35 30 39 Q20 35 13 21 Z', 'bs'),   // the khanjar in its curved sheath
+  S('M30 13 L30 5', 'ik', 3), P('M21 5 L39 5 L39 10 L21 10 Z', 'lo'),
+  ...[13, 24, 35, 46].map(x => C(x, 50, 3.2, 'hi')),            // one ruler after another, no gap anywhere
+  S('M13 50 L46 50', 'ik', 1.4),
+]);
+def('united_arab_emirates', () => [                            // six in December, and a seventh six weeks later
+  ...[[18, 19], [30, 15], [42, 19], [42, 33], [30, 37], [18, 33]].map(([x, y]) => C(x, y, 5, 'bs')),
+  ring('ik', 30, 26, 16, 1.4),
+  C(52, 47, 5, 'hi'), S('M45 41 L48 44', 'ik', 1.4),            // joined on afterwards, and counted the same
+]);
+def('yemen', () => [                                           // the world's only coffee, and an island of trees like nowhere else
+  P('M6 33 Q6 19 19 19 Q32 19 32 33 Q19 36 6 33 Z', 'hi'),      // the dragon's blood crown, flat as a table
+  S('M19 33 L19 51', 'lo', 4), S('M19 51 L12 56 M19 51 L26 56', 'lo', 2.4),
+  E(45, 29, 7, 10.5, 'bs'), S('M45 19 Q42 29 45 39', 'lo', 1.6),  // the bean that went out through Mocha
+]);
+def('bhutan', () => [                                          // the highest mountain nobody has ever stood on
+  P('M3 55 L20 27 L30 39 L44 7 L57 55 Z', 'bs'),
+  P('M44 7 L50 20 L38 20 Z', 'hi'),
+  ...[[36, 49], [40, 41], [42, 33]].map(([x, y]) => C(x, y, 1.6, 'gh')),   // a route that gives out well short
+  S('M25 13 L34 22 M34 13 L25 22', 'ik', 2),
+]);
+def('myanmar', () => [                                         // nine tenths of the world's rubies come out of one valley
+  P('M3 9 L24 46 L3 46 Z', 'lo'), P('M57 9 L57 46 L36 46 Z', 'lo'),
+  P('M22 46 L26 33 L34 33 L38 46 Z', 'ground'),                 // the working cut into its floor
+  ...[[26, 42], [34, 43], [30, 37]].map(([x, y]) =>
+    P(`M${n(x - 3)} ${y} L${x} ${n(y - 4)} L${n(x + 3)} ${y} L${x} ${n(y + 4)} Z`, 'bs')),
+  S('M3 50 L57 50', 'ik', 1.6),
+]);
+def('timor_leste', () => [                                     // the first new country of the century
+  P('M8 45 A22 22 0 0 1 52 45 Z', 'bs'),
+  ...[0, 1, 2, 3, 4].map(i => S(`M${n(11 + i * 9.5)} 17 L${n(11 + i * 9.5)} 8`, 'hi', 1.6)),
+  S('M13 46 L13 6', 'ik', 2.4), P('M13 8 L34 13 L13 19 Z', 'lo'),
+  S('M3 45 L57 45', 'lo', 2),
+]);
+def('kyrgyzstan', () => [                                      // every river it has ends in a basin and none of them reaches the sea
+  P('M2 30 L13 9 L23 24 L34 5 L45 26 L58 11 L58 30 Z', 'lo'),   // the Tian Shan, over four fifths of it
+  S('M17 28 Q21 38 27 43 M33 26 Q34 38 32 43 M45 30 Q41 39 36 44', 'water-bs', 2.2),
+  E(30, 48, 16, 6, 'bs'),                                       // the closed lake they all stop in
+  wave('gh', 57, 2, 22),                                        // the sea, which they never get to
+]);
+def('tajikistan', () => [                                      // nine tenths mountain, and most of it three kilometres up
+  P('M5 21 L18 12 L39 12 L55 21 L55 34 L5 34 Z', 'bs'),         // the Pamir, a raised block rather than a peak
+  S('M5 34 L55 34', 'ik', 2),
+  ...[13, 25, 37, 49].map(x => S(`M${x} 34 L${x} 51`, 'lo', 1.4)),
+  S('M4 51 L56 51', 'gh', 1.6),
+  S('M9 34 L9 51', 'gh', 1.2), S('M6 34 L12 34 M6 51 L12 51', 'gh', 1.2),
+]);
+def('turkmenistan', () => [                                    // a gas field in the Karakum, alight since the day it was drilled
+  mound('bs', 46, 25, 14),
+  P('M17 46 Q21 33 30 33 Q39 33 43 46 Z', 'ground'),
+  flame('hi', .52, 7), flame('bs', .3, 15),
+  ...granules('lo', 8, 137, [8, 47, 52, 53]),
+]);
+def('micronesia', () => [                                      // six hundred islands, and on one of them nobody sees colour at all
+  wave('lo', 53, 3, 26),
+  ...[[9, 15], [16, 22], [23, 13], [30, 20], [37, 11], [45, 18], [51, 25], [40, 30], [26, 32], [13, 33]]
+    .map(([x, y]) => C(x, y, 2.4, 'bs')),
+  C(30, 43, 6.4, 'gh'), ring('ik', 30, 43, 6.4, 1.2),
+]);
+def('palau', () => [                                           // the first constitution anywhere written to keep the weapons out
+  P('M11 11 L45 11 L45 51 L11 51 Z', 'hi'),
+  ...[0, 60, 120].map(a => ['g', a, 28, 31, [E(28, 31, 14, 5, 'lo')]]),
+  C(28, 31, 4, 'ik'),
+  S('M7 52 L49 8', 'bs', 3.6),                                  // struck out of it, and unstrikeable without a supermajority
+]);
+def('marshall_islands', () => [                                // sixty-seven tests, on reefs people had been living on
+  ...[[205, 335], [15, 125]].map(([a, b]) => S(
+    `M${n(30 + 20 * Math.cos(a * Math.PI / 180))} ${n(32 + 20 * Math.sin(a * Math.PI / 180))} ` +
+    `A20 20 0 0 1 ${n(30 + 20 * Math.cos(b * Math.PI / 180))} ${n(32 + 20 * Math.sin(b * Math.PI / 180))}`, 'bs', 5)),
+  C(30, 32, 10, 'ground'),                                      // and a crater where the reef used to be
+  S('M31 21 Q35 14 41 10', 'gh', 1.4),
+  ...[[34, 19], [40, 11], [48, 6]].map(([x, y], i) => C(x, y, n(4.4 - i * 1.2), 'hi')),  // the cloud, going downwind onto the next atoll
+]);
+def('kiribati', () => [                                        // it bent the date line sideways to reach the millennium first
+  S('M21 3 L21 19 L45 19 L45 41 L21 41 L21 57', 'ik', 2.4),
+  ...[[28, 25], [35, 32], [40, 25], [30, 36], [39, 37]].map(([x, y]) => C(x, y, 2.6, 'bs')),
+  P('M9 21 A9 9 0 0 1 9 39 Z', 'hi'),                           // and the sun gets there before anyone
+  ...[0, 1, 2].map(i => S(`M2 ${n(25 + i * 5)} L8 ${n(25 + i * 5)}`, 'gh', 1.2)),
+]);
+def('nauru', () => [                                           // twenty-one square kilometres, with the middle of it dug away
+  E(30, 33, 15, 11, 'lo'),
+  E(30, 33, 10, 6.5, 'ground'),
+  ...[[24, 34], [28, 32], [32, 35], [36, 33]].map(([x, y]) =>
+    P(`M${n(x - 2)} ${n(y + 4)} L${x} ${n(y - 4)} L${n(x + 2)} ${n(y + 4)} Z`, 'hi')),   // limestone pinnacles, all that is left
+  wave('bs', 50, 3, 24),
+]);
+def('tuvalu', () => [                                          // four and a half metres, at the highest point in the country
+  wave('lo', 39, 4, 26), wave('bs', 48, 4, 26),
+  P('M9 35 Q30 29 51 35 L51 40 L9 40 Z', 'hi'),
+  S('M55 29 L55 38', 'ik', 1.4), S('M52 29 L58 29 M52 38 L58 38', 'ik', 1.4),
+  ...[[20, 32], [39, 32]].map(([x, y]) => leaf('gh', x, y, .4)),
+]);
+def('tonga', () => [                                           // the one Pacific monarchy that was never handed to anybody
+  P('M19 14 L41 14 L45 27 L15 27 Z', 'bs'),
+  ...[22, 30, 38].map(x => C(x, 11, 2.4, 'hi')),
+  S('M30 27 L30 49', 'ik', 2.4),                                // and an unbroken line running under it
+  ...[32, 39, 46].map(y => S(`M23 ${y} L37 ${y}`, 'lo', 1.6)),
+  wave('gh', 56, 3, 24),
+]);
+def('vanuatu', () => [                                         // two powers, two legal systems, on the one set of islands
+  P('M9 45 Q9 24 30 22 Q51 24 51 45 Z', 'bs'),
+  S('M30 22 L30 47', 'ground', 2),
+  P('M13 8 L28 8 L28 18 L13 18 Z', 'lo'), P('M32 8 L47 8 L47 18 L32 18 Z', 'hi'),
+  S('M13 20 L13 8 M47 20 L47 8', 'ik', 1.4),
+  wave('gh', 53, 3, 24),
+]);
+def('solomon_islands', () => [                                 // men left up in the trees, counting what went past below
+  P('M5 46 Q5 29 19 27 Q34 29 34 46 Z', 'lo'),
+  S('M18 44 L18 27', 'bs', 2.4),
+  ...[-45, 0, 45].map(a => ['g', a, 18, 25, [leaf('bs', 18, 15, .7)]]),
+  C(18, 34, 2.4, 'ik'),
+  ...[0, 1, 2].map(i => S(`M${n(25 + i * 4)} ${n(29 - i * 4)} Q${n(35 + i * 4)} ${n(22 - i * 4)} ${n(42 + i * 4)} ${n(30 - i * 3)}`, 'gh', 1.2)),
+  ...[[43, 43], [52, 39]].map(([x, y]) =>
+    P(`M${n(x - 5)} ${y} L${n(x + 5)} ${y} L${n(x + 3)} ${n(y + 4)} L${n(x - 3)} ${n(y + 4)} Z`, 'hi')),
+  wave('water-bs', 52, 3, 24),
+]);
+
+/* living — where an animal sits, from the blastula outward ────────────── */
+def('animal', () => [                                          // every one of them begins as a hollow ball of cells
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i * Math.PI) / 6;
+    return C(n(30 + 17 * Math.cos(a)), n(30 + 17 * Math.sin(a)), 4.6, i % 2 ? 'bs' : 'lo');
+  }),
+  C(30, 30, 11.5, 'ground'),                                   // and the cavity inside it
+  C(30, 30, 3, 'gh'),
+]);
+def('chordate', () => [                                        // five things, held at least for a while — sometimes only by the larva
+  P('M9 22 Q32 17 44 24 L57 15 L55 30 L57 45 L44 36 Q32 42 9 37 Z', 'bs'),
+  S('M11 32 L46 30', 'lo', 4),                                 // the notochord, a stiff rod down the middle
+  S('M11 25 L46 23', 'ik', 2),                                 // the nerve cord above it, and hollow
+  ...[16, 22, 28].map(x => S(`M${x} 27 L${n(x + 2)} 36`, 'gh', 1.6)),   // slits through the pharynx
+  E(14, 35, 3, 2, 'hi'),                                       // the endostyle, in the floor of it
+]);
+def('vertebrate', () => [                                      // the rod replaced bone by bone, and a box built round the brain
+  P('M5 30 Q5 17 16 15 Q27 17 27 30 Q16 34 5 30 Z', 'hi'),
+  C(11, 24, 2, 'ik'),
+  ...[29, 38, 47].map(x => [
+    P(`M${x} 26 L${n(x + 7)} 26 L${n(x + 7)} 37 L${x} 37 Z`, 'bs'),
+    S(`M${n(x + 3.5)} 26 L${n(x + 3.5)} 15`, 'lo', 2)]).flat(),
+  S('M27 31.5 L56 31.5', 'gh', 1.6),
+]);
+def('invertebrate', () => [                                    // not a group: everything that was left over once the column was taken out
+  S('M13 11 A8 8 0 1 1 12 27 A4.5 4.5 0 1 1 16 19', 'lo', 2.6),   // a shell, coiled
+  ...[0, 1, 2, 3].map(i => E(n(13 + i * 8), 47, 4.4, 5.6, 'bs')),  // a worm, segment by segment
+  ...[0, 72, 144, 216, 288].map(a => P(
+    `M42 24 L${n(42 + 14 * Math.cos((a - 90) * Math.PI / 180))} ${n(24 + 14 * Math.sin((a - 90) * Math.PI / 180))} ` +
+    `L${n(42 + 6 * Math.cos((a - 54) * Math.PI / 180))} ${n(24 + 6 * Math.sin((a - 54) * Math.PI / 180))} Z`, 'hi')),
+]);
+def('mammal', () => [                                          // milk, hair, and three bones in the ear that nothing else has
+  P('M9 13 L18 17 L16 26 L7 21 Z', 'bs'),
+  P('M21 19 L31 21 L29 32 L19 29 Z', 'bs'),
+  ring('bs', 39, 29, 6.5, 3),                                  // malleus, incus, stapes
+  S('M18 21 L21 23 M31 26 L33 28', 'ik', 1.4),
+  P('M24 40 Q28 48 28 51 A4 4 0 0 1 20 51 Q20 48 24 40 Z', 'hi'),
+  ...[40, 46, 52].map(x => S(`M${x} 53 Q${n(x + 3)} 45 ${x} 38`, 'lo', 1.6)),
+]);
+
+/* ── completeness batch: the animal groups, the ranks that file them, and
+   the kitchen's own physics. Each one drawn from the one fact that makes it
+   itself, not from the word. ───────────────────────────────────────────── */
+
+def('reptile', () => [                                               // an ectothermic amniote: keeled scales, and heat that has to come from outside
+  P('M8 22 Q30 12 52 22 L52 46 Q30 52 8 46 Z', 'lo'),
+  ...[0, 1, 2].flatMap(row => [0, 1, 2, 3].map(col =>
+    S(`M${11 + col * 9 + (row % 2) * 5} ${30 + row * 7} q5 -6 10 0`, row % 2 ? 'hi' : 'bs', 1.8))),
+  ...[14, 24, 34].map(x => S(`M${x} 4 L${x + 6} 14`, 'gh', 1.6)),    // it makes none of its own warmth
+]);
+def('amphibian', () => [                                             // stopped short of the amniotic egg, so it hatches in water with gills showing
+  wave('gh', 12, 4, 24),
+  P('M14 34 Q14 24 26 24 Q36 24 38 30 L52 22 L52 46 L38 38 Q36 44 26 44 Q14 44 14 34 Z', 'bs'),
+  ...[[20, 24, 11, 11], [26, 23, 21, 6], [32, 24, 33, 8]].flatMap(([x1, y1, x2, y2]) => {
+    const mx = n((x1 + x2) / 2), my = y1 - 8;
+    return [S(`M${x1} ${y1} Q${mx} ${my - 2} ${x2} ${y2}`, 'hi', 1.8),
+            S(`M${mx} ${my} L${n(mx - 5)} ${my - 5}`, 'hi', 1.2),
+            S(`M${n(mx + 1)} ${n(my - 1)} L${n(mx + 4)} ${n(my - 7)}`, 'hi', 1.2)];
+  }),                                                                 // external gills, still feathered — nothing that hatches in a shell has these
+  C(20, 32, 1.8, 'ik'),
+]);
+def('arthropod', () => [                                             // the cuticle cannot stretch, so growing means climbing out of it
+  E(34, 30, 18, 12, 'gh'),                                            // the old one, shed and empty
+  ...[16, 24, 32, 40].map(x => P(`M${x} 24 L${x + 6} 24 L${x + 6} 40 L${x} 40 Z`, 'bs')),  // the new body, one repeated segment at a time
+  S('M22 40 L18 48 L26 52', 'ik', 2.2), S('M40 40 L44 48 L36 52', 'ik', 2.2),  // and limbs with joints in them, which is the name
+]);
+def('mollusk', () => [                                               // the shell is not the animal — the mantle underneath secretes it
+  P('M7 43 Q7 13 30 11 Q53 13 53 43 Z', 'lo'),                        // the shell
+  ...[0, 1, 2].map(i => S(`M${11 + i * 6} 43 Q${11 + i * 6} ${19 + i * 6} 30 ${17 + i * 6} ` +
+                          `Q${49 - i * 6} ${19 + i * 6} ${49 - i * 6} 43`, 'hi', 1.6)),   // and it is laid down in increments, one to a season
+  P('M7 43 Q30 51 53 43 L53 50 Q30 58 7 50 Z', 'bs'),                 // the mantle, over the back — the tissue that secretes all of it
+  C(53, 45, 2.6, 'ik'),                                               // working at the lip, which is where the shell grows
+]);
+def('crustacean', () => [                                            // two pairs of antennae, which nothing else in the arthropods has
+  ...[0, 1, 2].map(i => P(`M${42 + i * 5} ${21 + i} L${47 + i * 5} ${23 + i} L${47 + i * 5} ${37 - i} L${42 + i * 5} ${39 - i} Z`, 'lo')),  // the abdomen, plate over plate
+  P('M16 30 Q16 17 28 17 Q40 17 43 29 Q41 43 28 43 Q16 43 16 30 Z', 'bs'),
+  S('M16 25 Q6 15 2 5', 'ik', 2), S('M16 29 Q7 20 3 12', 'ik', 2),    // one pair of antennae, long
+  S('M16 33 L4 35', 'lo', 1.8), S('M16 36 L5 41', 'lo', 1.8),         // and then a second pair, which nothing else in the arthropods carries
+  C(23, 24, 1.6, 'ik'),
+]);
+def('arachnid', () => [                                              // head and thorax fused into one plate, and all eight legs stand on it
+  E(46, 30, 11, 9, 'bs'),                                             // the abdomen, carried behind
+  P('M13 30 L20 17 L33 17 L40 30 L33 43 L20 43 Z', 'lo'),
+  ...[0, 1, 2, 3].flatMap(i => [-1, 1].map(s =>
+    S(`M${21 + i * 5} ${30 + s * 7} L${14 + i * 8} ${30 + s * 17} L${6 + i * 11} ${30 + s * 13}`, 'ik', 1.6))),
+]);                                                                   // four pairs, every one of them rooted in that plate — and no antennae anywhere
+def('echinoderm', () => [                                            // five-fold as an adult, and plumbed with seawater instead of blood
+  ...[0, 1, 2, 3, 4].map(i => {
+    const a = (i * 72 - 90) * Math.PI / 180;
+    return P(`M${n(30 + 6 * Math.cos(a - .6))} ${n(32 + 6 * Math.sin(a - .6))} ` +
+             `L${n(30 + 24 * Math.cos(a))} ${n(32 + 24 * Math.sin(a))} ` +
+             `L${n(30 + 6 * Math.cos(a + .6))} ${n(32 + 6 * Math.sin(a + .6))} Z`, 'bs');
+  }),
+  ring('hi', 30, 32, 8, 2),                                           // the ring canal
+  ...[0, 1, 2, 3, 4].map(i => {
+    const a = (i * 72 - 90) * Math.PI / 180;
+    return C(n(30 + 15 * Math.cos(a)), n(32 + 15 * Math.sin(a)), 1.8, 'lo');
+  }),                                                                 // tube feet, run straight off it
+]);
+def('cnidarian', () => [                                             // two thin cell layers with jelly between them, and no brain in any of it
+  P('M8 40 Q8 12 30 12 Q52 12 52 40 Q30 46 8 40 Z', 'bs'),
+  S('M11 39 Q11 15 30 15 Q49 15 49 39', 'hi', 1.4),
+  S('M17 40 Q17 21 30 21 Q43 21 43 40', 'lo', 1.4),                   // mesoglea is everything between these two lines
+  S('M18 32 L26 28 L34 33 L42 29 M26 28 L28 36 M34 33 L32 40', 'ik', 1),  // a nerve net, and that is the whole nervous system
+  ...[14, 24, 36, 46].map(x => S(`M${x} 42 L${x} 53`, 'gh', 1.6)),
+]);
+def('annelid', () => [                                               // one segment, repeated — and a pair of bristles on nearly every one
+  rod3('bs', 30, 32, 23, 8),
+  ...[11, 19, 27, 35, 43, 51].map(x => S(`M${x} 24 L${x} 40`, 'ik', 1.4)),
+  ...[15, 23, 31, 39, 47].flatMap(x => [S(`M${x} 40 L${x - 2} 47`, 'lo', 1.2),
+                                        S(`M${x} 24 L${x - 2} 17`, 'lo', 1.2)]),
+]);
+def('insect', () => [                                                // three sections, six legs, one pair of antennae — and the legs are all on the middle one
+  P('M22 6 L38 6 L38 19 L22 19 Z', 'bs'),
+  P('M20 21 L40 21 L40 36 L20 36 Z', 'lo'),
+  P('M22 38 L38 38 L38 54 L22 54 Z', 'bs'),
+  ...[-1, 1].flatMap(s => [24, 29, 34].map(y => S(`M${30 + s * 10} ${y} L${30 + s * 24} ${y - 5}`, 'ik', 1.6))),
+  S('M25 6 Q21 1 14 1 M35 6 Q39 1 46 1', 'ik', 1.4),
+]);
+def('primate', () => [                                               // the hand closes around the branch because the thumb comes the other way
+  S('M4 18 L56 30', 'lo', 5),
+  P('M18 40 Q14 26 24 24 L40 24 Q48 26 46 36 Q44 46 32 48 Q20 48 18 40 Z', 'bs'),
+  ...[26, 32, 38, 44].map(x => S(`M${x} 27 Q${x + 2} 17 ${x - 4} 13`, 'bs', 4.6)),
+  S('M20 38 Q9 35 10 26', 'hi', 4.6),                                 // the opposable one
+]);
+def('rodent', () => [                                                // the incisors never stop growing; only gnawing keeps them to length
+  P('M7 29 Q7 13 24 12 Q40 12 45 23 L45 31 Q41 37 29 38 Q11 38 7 29 Z', 'gh'),   // the skull, in profile
+  C(34, 22, 3.4, 'ground'),                                           // the orbit
+  S('M13 29 L26 29', 'ik', 1.4),                                      // the long gap where a meat-eater keeps its canines
+  P('M45 23 Q57 29 53 43 Q49 47 46 42 Q44 32 45 23 Z', 'bs'),         // the upper incisor — a quarter of a circle, extruded for life
+  P('M43 39 Q52 44 49 54 Q45 57 42 52 Q41 45 43 39 Z', 'hi'),         // and the lower one, wearing against it
+  ...granules('lo', 5, 313, [10, 46, 32, 57]),                        // the shavings being the only thing that keeps either short
+]);
+def('shark', () => [                                                 // cartilage instead of bone, skin made of teeth, and gill slits left uncovered
+  P('M4 26 L12 34 L4 42 Q16 42 20 36 Q34 44 52 33 Q34 24 20 28 Q16 22 4 26 Z', 'bs'),
+  P('M28 27 L33 13 L37 28 Z', 'lo'),
+  ...[36, 39, 42, 45, 48].map(x => S(`M${x} 30 L${x - 1} 37`, 'ik', 1.4)),
+  ...granules('hi', 7, 419, [16, 30, 32, 38]),                        // dermal denticles, which is why it feels like sandpaper
+  C(50, 30, 1.4, 'ik'),
+]);
+def('frog', () => [                                                  // Anura, 'without tail' — the larval one is pulled inside as a bony rod
+  P('M16 40 Q12 24 30 22 Q48 24 44 40 Q30 47 16 40 Z', 'bs'),
+  C(22, 19, 5, 'bs'), C(38, 19, 5, 'bs'), C(22, 18, 2, 'ik'), C(38, 18, 2, 'ik'),
+  S('M43 34 L54 27 L46 41 L56 45', 'lo', 3.2),                        // the hind leg, folded into a Z and loaded
+  S('M56 45 L51 49', 'lo', 1.6),
+  S('M16 38 L6 44', 'lo', 2.6),
+  S('M30 40 L30 48', 'hi', 3),                                        // the urostyle
+]);
+
+/* the ranks — each has to say something the next one does not */
+def('species', () => [                                               // the test is not resemblance, it is whether the offspring can do it again
+  C(17, 18, 8, 'bs'), C(43, 18, 8, 'hi'),
+  S('M25 20 L35 20', 'ik', 2),
+  S('M21 26 L30 38 M39 26 L30 38', 'ik', 1.6),
+  C(30, 44, 7, 'bs'),
+  S('M30 51 L30 57', 'gh', 2.4),
+]);
+def('genus', () => [                                                 // the first word of the binomial, doing duty for more than one animal
+  P('M11 8 L49 8 L49 17 L11 17 Z', 'bs'),
+  S('M21 17 L21 29 M39 17 L39 29', 'ik', 1.6),
+  C(21, 38, 8, 'hi'), C(39, 38, 8, 'lo'),
+  ...[[18, 35], [24, 41]].map(([x, y]) => C(x, y, 1.6, 'ik')),
+  ...[[36, 34], [42, 39], [38, 44]].map(([x, y]) => C(x, y, 1.6, 'ik')),   // a lion and a jaguar, filed under one name
+]);
+def('phylum', () => [                                                // Animalia carries about 32 of them, Plantae 14, Fungi eight
+  S('M6 55 L54 55', 'ik', 2),
+  ...[[11, 8], [27, 5], [43, 3]].flatMap(([x, count]) =>
+    Array.from({ length: count }, (_, i) =>
+      P(`M${x} ${n(50 - i * 6)} L${x + 11} ${n(50 - i * 6)} L${x + 11} ${n(54 - i * 6)} L${x} ${n(54 - i * 6)} Z`,
+        i % 2 ? 'hi' : 'bs'))),
+]);
+def('kingdom', () => [                                               // top rank from 1735 until 1990, when a new one was slotted in above it
+  S('M11 9 L49 9 L49 18 L11 18 Z', 'gh', 1.6),
+  P('M11 24 L49 24 L49 35 L11 35 Z', 'bs'),
+  S('M18 35 L13 44 M30 35 L30 44 M42 35 L47 44', 'ik', 1.6),
+  ...[13, 30, 47].map(x => P(`M${x - 5} 44 L${x + 5} 44 L${x + 5} 53 L${x - 5} 53 Z`, 'hi')),  // and downward it divides into phyla
+]);
+def('biological_domain', () => [                                     // Woese's three: Bacteria off on its own, Archaea and Eukarya together
+  S('M30 56 L30 44', 'ik', 2.6),
+  S('M12 44 L48 44', 'ik', 2.6),
+  S('M12 44 L12 20', 'bs', 2.6),
+  S('M48 44 L48 32 M37 32 L55 32', 'ik', 2.6),
+  S('M37 32 L37 20', 'hi', 2.6), S('M55 32 L55 20', 'lo', 2.6),
+  ...[12, 37, 55].map(x => C(x, 17, 3.4, 'ik')),
+]);
+def('gene_pool', () => [                                             // not one genome — every version of every gene anyone in the population is carrying
+  P('M8 22 Q8 48 30 51 Q52 48 52 22 Z', 'gh'),
+  ...[[15, 32], [25, 28], [34, 34], [42, 30], [19, 41], [30, 44], [40, 41], [45, 35]]
+    .map(([x, y], i) => S(`M${x} ${y} L${x + 8} ${y}`, i % 3 === 0 ? 'bs' : i % 3 === 1 ? 'hi' : 'lo', 3.4)),
+]);
+def('culture_medium', () => [                                        // gelatin melted at incubation heat and got eaten; agar does neither, so colonies stay put
+  S('M8 18 L52 18 L52 25 L8 25 Z', 'gh', 1.6),
+  P('M10 33 L50 33 L50 47 L10 47 Z', 'bs'),
+  S('M8 47 L52 47', 'ik', 2.4),
+  S('M10 33 L50 33', 'lo', 1.4),
+  ...[17, 29, 41].map(x => E(x, 32, 4.4, 2.6, 'hi')),                 // each one exactly where it landed
+]);
+def('zoology', () => [                                               // one animal at a time, described and measured, since Aristotle
+  P('M8 12 L52 12 L52 51 L8 51 Z', 'gh'),
+  E(24, 25, 13, 7, 'bs'), C(39, 21, 5.4, 'bs'), P('M43 19 L49 18 L44 23 Z', 'lo'),
+  S('M16 31 L15 40 M23 31 L23 40 M31 31 L32 40', 'lo', 1.8),
+  S('M12 22 L7 19', 'lo', 1.6),
+  S('M12 46 L31 46 M12 50 L25 50', 'ik', 1.4),
+  S('M38 43 L48 43 M38 40 L38 46 M48 40 L48 46', 'ik', 1.2),          // structure, habits, distribution — described, and then measured
+]);
+def('ethology', () => [                                              // behaviour in the field: the goslings follow the first thing they saw move
+  S('M2 56 L58 56', 'gh', 1.4),
+  P('M3 37 Q3 26 12 26 Q21 26 21 37 Q12 44 3 37 Z', 'bs'),
+  C(19, 22, 4.4, 'bs'), P('M23 21 L30 20 L23 25 Z', 'lo'),            // the first thing that moved
+  ...[[30, 47], [41, 49], [51, 47]].flatMap(([x, y]) => [
+    E(x, y, 4.6, 3.6, 'hi'), C(n(x + 4.4), n(y - 4), 2.4, 'hi'),
+    P(`M${n(x + 7)} ${y - 5} L${n(x + 10)} ${n(y - 4.6)} L${n(x + 7)} ${n(y - 2.6)} Z`, 'lo'),
+  ]),                                                                 // and the whole brood behind it, for good
+]);
+def('bipedalism', () => [                                            // the whole body stacked over two feet, invented separately more than once
+  S('M30 2 L30 20', 'gh', 1.4),
+  ...[[19, 14], [41, 32]].flatMap(([x, y]) => [
+    P(`M${x - 7} ${y + 3} Q${x - 8} ${y + 16} ${x} ${y + 19} Q${x + 8} ${y + 16} ${x + 7} ${y + 3} Q${x} ${y - 1} ${x - 7} ${y + 3} Z`, 'bs'),
+    ...[-5.5, -1.8, 1.8, 5.5].map((d, i) => C(n(x + d), n(y - 3 + Math.abs(d) * .4), n(2.4 - i * .2), 'lo')),
+  ]),
+]);
+def('fermentation', () => [                                          // catabolism with the oxygen switched off: two ATP where respiration takes thirty-two
+  vessel('gh'),
+  wave('bs', 38, 4, 12),
+  ...[[25, 31], [31, 26], [36, 32], [29, 21]].map(([x, y], i) => C(x, y, n(2 + (i % 2)), 'hi')),  // the carbon that cannot be burned, walking out as gas
+  C(46, 12, 2.6, 'gh'), C(52, 12, 2.6, 'gh'), S('M43 8 L55 17', 'ik', 1.6),   // and no oxygen anywhere in it
+  S('M13 42 L13 50 M17 42 L17 50', 'lo', 2.4),                        // two ATP, and that is the entire yield
+]);
+
+/* the two hominins */
+def('homo_sapiens', () => [                                          // a globular braincase, a flat face — and a chin, which no other hominin has
+  P('M11 29 Q9 10 28 6 Q45 5 49 20 Q51 29 45 32 L43 40 Q41 45 36 45 L36 50 Q25 52 18 44 Q11 37 11 29 Z', 'bs'),
+  S('M37 18 L50 20', 'ik', 2.2),                                      // the forehead goes straight up, and the brow ridge is gone
+  C(43, 25, 3, 'ground'),
+  P('M35 43 L44 46 L41 53 L32 51 Z', 'lo'),                           // and a chin, which no other hominin ever had
+]);
+def('ardipithecus', () => [                                          // 4.4 million years old and walking, but the big toe still points sideways and grips
+  P('M21 53 Q15 40 19 26 Q23 13 30 13 Q37 13 41 26 Q45 40 39 53 Z', 'bs'),
+  P('M19 30 Q8 25 3 32 Q3 41 12 41 Q19 39 21 34 Z', 'lo'),
+  ...[25, 31, 37].map(x => C(x, 15, 2.6, 'hi')),
+  S('M8 34 Q14 37 19 35', 'ik', 1.2),
+]);
+
+/* the kitchen, drawn as mechanism ─────────────────────────────────────── */
+def('gluten', () => [                                                // glutenin and gliadin are only gluten once water and work cross-link them
+  ...[16, 28, 40].map(y => S(`M5 ${y} Q18 ${y - 8} 30 ${y} Q42 ${y + 8} 55 ${y}`, 'bs', 2.4)),
+  ...[14, 30, 46].map(x => S(`M${x} 6 Q${x + 6} 24 ${x} 40 Q${x - 6} 50 ${x} 55`, 'hi', 2)),
+  ...[[15, 14], [29, 26], [43, 38], [29, 41], [43, 16]].flatMap(([x, y]) =>
+    [C(x, y, 1.8, 'ik'), C(x + 3, y + 2, 1.8, 'ik')]),                // disulfide bridges, tying the net together
+]);
+def('maillard_reaction', () => [                                     // a reducing sugar meeting an amino acid — the protein is what makes it not caramel
+  hex('ik', 14, 17, 8, 2), C(14, 17, 2.6, 'hi'),
+  S('M40 8 L47 17 L40 26 L33 26', 'ik', 2), C(47, 17, 3, 'lo'),
+  S('M23 22 Q30 27 30 33', 'ik', 1.6), S('M39 23 Q34 28 30 33', 'ik', 1.6),
+  P('M9 40 Q30 29 51 40 L51 51 Q30 55 9 51 Z', 'bs'),                 // melanoidins, from about 140 °C
+  ...granules('lo', 7, 233, [13, 41, 47, 49]),
+]);
+def('umami', () => [                                                 // one receptor made of two halves, and two different molecules that dock in it at once
+  S('M6 42 L54 42', 'ik', 3),
+  S('M24 42 L24 29 L17 21 M36 42 L36 29 L43 21', 'ik', 2.6),
+  P('M11 19 L24 19 L17 7 Z', 'bs'),
+  P('M36 10 L49 10 L49 23 L36 23 Z', 'hi'),
+  S('M30 43 L30 55 M25 50 L30 56 L35 50', 'lo', 2.4),                 // together they read louder than the two of them added up
+]);
+def('emulsion', () => [                                              // droplets held in a liquid they cannot dissolve in, and doomed the whole time
+  ...[[17, 21, 9], [39, 24, 7], [23, 41, 8]].map(([x, y, r]) => C(x, y, r, 'hi')),
+  ...[[17, 21, 9], [39, 24, 7], [23, 41, 8]].flatMap(([x, y, r]) =>
+    [0, 60, 120, 180, 240, 300].map(a => S(
+      `M${n(x + r * Math.cos(a * Math.PI / 180))} ${n(y + r * Math.sin(a * Math.PI / 180))} ` +
+      `L${n(x + (r + 4) * Math.cos(a * Math.PI / 180))} ${n(y + (r + 4) * Math.sin(a * Math.PI / 180))}`,
+      'ik', 1.2))),                                                   // the amphiphile, standing in the interface
+  E(45, 45, 11, 6, 'bs'),                                             // and two that have already run back together
+]);
+def('caramelization', () => [                                        // sugar and heat, and no protein anywhere in it — sucrose holds out to 170 °C
+  ...[0, 1, 2, 3].map(i => P(`M${12 + i * 9} 8 l7 0 l0 7 l-7 0 Z`, 'hi')),
+  S('M16 18 L18 27 M25 18 L26 28 M34 18 L33 28 M43 18 L41 27', 'gh', 1.4),
+  P('M7 32 Q30 23 53 32 Q53 47 30 51 Q7 47 7 32 Z', 'bs'),
+  P('M14 36 Q30 32 46 36 Q46 43 30 46 Q14 43 14 36 Z', 'lo'),
+]);
+def('fat', () => [                                                   // nine kilocalories a gram, better than double either of the others
+  P('M30 5 Q45 22 30 33 Q15 22 30 5 Z', 'bs'),
+  ...[[26, 19], [34, 19], [26, 26], [34, 26]].map(([x, y]) => C(x, y, 2.4, 'hi')),  // A, D, E and K, which travel in nothing else
+  S('M7 41 L53 41', 'ik', 4),                                         // nine kilocalories a gram
+  S('M7 49 L27 49', 'gh', 4), S('M7 56 L27 56', 'gh', 4),             // against sugar and protein, at a little over four
+]);
+def('roux', () => [                                                  // flour and fat, equal weights — cook it darker for flavour and it thickens less
+  ...[0, 1, 2].map(i => P(`M${7 + i * 16} 32 L${21 + i * 16} 32 L${21 + i * 16} 50 L${7 + i * 16} 50 Z`,
+                          i === 0 ? 'hi' : i === 1 ? 'bs' : 'lo')),   // white, blond, brown — the same two things, just cooked on
+  S('M5 50 L55 50', 'ik', 1.6),
+  ...[0, 1, 2].map(i => S(`M${9 + i * 16} ${11 + i * 6} L${19 + i * 16} ${11 + i * 6}`, 'bs', 3.6)),  // and the thickening falling away as they darken
+]);
+def('sauce', () => [                                                 // Escoffier fixed five mothers, and every other sauce descends from one of them
+  ...[9, 20, 31, 42, 53].map((x, i) => C(x, 13, 5, i % 2 ? 'hi' : 'bs')),
+  ...[9, 20, 31, 42, 53].map(x => S(`M${x} 18 L${x} 29`, 'ik', 1.6)),
+  P('M5 31 Q30 25 55 31 Q55 44 30 48 Q5 44 5 31 Z', 'lo'),
+  ...[14, 26, 38, 48].map(x => S(`M${x} 48 L${x} 55`, 'gh', 1.4)),
+]);
+def('vegetable', () => [                                             // a kitchen word, not a botanical one — the court taxed the tomato as one anyway
+  S('M8 21 L52 21 L52 51 L8 51 Z', 'ik', 2.2),
+  ...[19, 30, 41].map(x => S(`M${x} 21 L${x} 51`, 'gh', 1.2)),
+  C(30, 37, 12, 'bs'),
+  ...[[26, 33], [34, 33], [26, 41], [34, 41]].map(([x, y]) => E(x, y, 3, 4, 'hi')),   // cut open it is plainly a fruit, seeds and all
+  S('M30 25 L26 18 M30 25 L34 18', 'lo', 1.6),
+]);
+def('spice', () => [                                                 // seed, fruit, bark, root or flower bud — a leaf would make it a herb instead
+  grain('bs', 13, 15, 1.5, -20),
+  C(43, 15, 7, 'lo'), S('M43 8 L43 3', 'ik', 1.4),
+  S('M11 33 Q20 29 18 41 Q16 52 25 50', 'bs', 4),
+  S('M41 30 L41 43 M41 36 L34 47 M41 38 L50 49', 'lo', 2.2),
+  P('M29 25 Q34 32 29 41 Q24 32 29 25 Z', 'hi'),
+]);
+def('seasoning', () => [                                             // salt and acid, added late — done right you taste none of it, only what it sharpened
+  S('M19 4 Q24 11 30 11 Q36 11 41 4', 'ik', 2),
+  ...granules('bs', 12, 137, [19, 15, 42, 35]),
+  ...[[23, 21], [37, 29]].map(([x, y]) =>
+    P(`M${x} ${y} Q${x + 3} ${y + 5} ${x} ${y + 8} Q${x - 3} ${y + 5} ${x} ${y} Z`, 'hi')),
+  E(30, 47, 20, 6, 'lo'), S('M9 47 L51 47', 'ik', 1.4),
+]);
+def('condiment', () => [                                             // it arrives after the cooking, so the eater sets the dose, not the cook
+  P('M24 9 L36 9 L36 18 Q42 22 42 32 L42 46 Q42 51 36 51 L24 51 Q18 51 18 46 L18 32 Q18 22 24 18 Z', 'bs'),
+  P('M21 28 L39 28 L39 43 L21 43 Z', 'hi'),
+  E(51, 46, 7, 4, 'lo'),
+  C(49, 44, 2, 'bs'), C(54, 45, 1.6, 'bs'),
+  S('M4 51 L58 51', 'ik', 1.4),
+]);
+def('nutrition', () => [                                             // the whole list a body cannot build for itself, and it is this short
+  ...Array.from({ length: 9 }, (_, i) => C(n(8 + i * 5.5), 11, 2, 'bs')),          // nine amino acids
+  ...[20, 40].map(x => S(`M${x} 21 L${x + 9} 21`, 'hi', 2.6)),                     // two fatty acids
+  ...Array.from({ length: 13 }, (_, i) => S(`M${n(8 + i * 3.6) } 29 L${n(8 + i * 3.6)} 36`, 'lo', 1.4)),   // thirteen vitamins
+  ...Array.from({ length: 14 }, (_, i) => P(`M${n(7 + i * 3.4)} 42 l2.4 0 l0 2.4 l-2.4 0 Z`, 'hi')),       // fourteen minerals
+  C(30, 53, 3, 'bs'),                                                              // and choline. The rest it makes itself
+]);
+def('leavening', () => [                                             // three ways to make the gas, and all three fail unless the dough can hold it
+  S('M8 51 L52 51', 'ik', 2),
+  S('M12 41 Q30 37 48 41', 'gh', 1.6),
+  P('M10 51 Q10 15 30 13 Q50 15 50 51 Z', 'bs'),
+  C(21, 34, 6.4, 'hi'), C(37, 27, 5.4, 'hi'), C(31, 43, 4.4, 'hi'),
+  ...[[21, 34], [37, 27], [31, 43]].map(([x, y]) => C(x - 2, y - 2, 1.6, 'lo')),
+]);
+def('gravy', () => [                                                 // it is made of what welded itself to the pan, which is why the pan matters
+  P('M8 25 L52 25 L48 47 L12 47 Z', 'lo'),
+  P('M13 33 L47 33 L45 45 L15 45 Z', 'bs'),
+  ...granules('ik', 8, 353, [16, 36, 44, 43]),
+  S('M38 42 L51 9', 'ik', 3.4),
+  S('M16 29 Q30 32 44 29', 'hi', 1.6),
+]);
+def('dairy', () => [                                                 // one liquid, from four animals, worked three different ways
+  P('M22 4 L38 4 L40 19 L20 19 Z', 'hi'),
+  S('M17 29 L17 26 L43 26 L43 29', 'ik', 1.6), S('M30 19 L30 26', 'ik', 1.6),
+  P('M7 33 L21 33 L17 49 L7 49 Z', 'bs'),
+  P('M25 33 L41 33 L41 47 L25 47 Z', 'lo'),
+  P('M45 33 Q57 33 55 48 Q49 52 45 48 Z', 'bs'),
+]);
+def('distillation', () => [                                          // no reaction at all — just a volatility gap, worked over and over
+  P('M7 30 Q7 47 20 50 Q33 47 33 30 Z', 'bs'),
+  S('M7 30 L33 30', 'ik', 1.6),
+  S('M20 30 L20 19 Q20 12 28 12 L44 12 L52 29', 'ik', 2.4),
+  ...[0, 1, 2].map(i => S(`M${41 + i * 4} ${13 + i * 5} L${49 + i * 4} ${11 + i * 5}`, 'gh', 1.4)),
+  C(52, 37, 2.6, 'hi'), C(52, 45, 2, 'hi'),
+  S('M4 6 L26 6', 'gh', 2.4),                                         // and with ethanol the gap shuts at 95.6% and you stop
+]);
+def('food_drying', () => [                                           // the oldest trick there is: take the water low enough and nothing can grow
+  S('M5 13 L55 13', 'ik', 2),
+  ...[16, 30, 44].flatMap((x, i) => [
+    S(`M${x} 13 L${x} 20`, 'ik', 1.2),
+    P(`M${x - 7} 20 Q${x - 5 + i} 34 ${x - 6} 45 Q${x} 50 ${x + 6} 45 Q${x + 5 - i} 34 ${x + 7} 20 Z`, 'bs'),
+    S(`M${x - 3} 26 Q${x} 34 ${x - 2} 42`, 'lo', 1.2),
+  ]),
+  ...[9, 23, 37, 51].map(x => S(`M${x} 55 Q${x + 3} 51 ${x} 47`, 'gh', 1.2),),
+]);
+def('curing', () => [                                                // near a fifth salt by weight, and the pink is nitric oxide on myoglobin, not blood
+  P('M10 21 L50 21 L50 44 L10 44 Z', 'bs'),
+  P('M16 27 L44 27 L44 38 L16 38 Z', 'hi'),
+  ...granules('lo', 14, 461, [11, 14, 49, 21]),
+  ...[16, 26, 36, 46].map(x => C(x, 51, 2.4, 'gh')),                  // and the water leaving, drawn out by osmosis alone
+  S('M10 44 L50 44', 'ik', 1.4),
+]);
+def('smoking_process', () => [                                       // cold smoke never cooks anything; what preserves is phenols and acid at about pH 2.5
+  P('M22 6 L55 6 L55 46 L22 46 Z', 'gh'),
+  ...[31, 40, 49].flatMap(x => [
+    S(`M${x} 8 L${x} 15`, 'ik', 1.2),
+    P(`M${x - 5} 15 Q${x} 33 ${x - 4} 39 Q${x} 43 ${x + 4} 39 Q${x} 33 ${x + 5} 15 Z`, 'bs'),
+  ]),
+  P('M2 43 Q8 37 14 43 Q10 48 2 48 Z', 'lo'),                         // the fire, kept a long way off
+  S('M8 41 Q15 29 24 25', 'hi', 2.4),
+  ...granules('ik', 5, 467, [7, 33, 19, 41]),
+]);
+def('pickling_process', () => [                                      // two routes, one number: lactic bacteria making the acid, or vinegar poured straight on
+  P('M14 17 L46 17 L46 48 Q30 52 14 48 Z', 'gh'),
+  P('M16 29 L44 29 L44 46 Q30 50 16 46 Z', 'bs'),
+  rod3('hi', 27, 38, 6, 2.6),
+  S('M51 4 Q56 15 47 21 L44 27', 'lo', 2.4),
+  S('M7 20 L7 47', 'ik', 1.6), S('M3 39 L11 39', 'bs', 2.6),          // both stop at pH 4.6 or under
+]);
+def('mouthfeel', () => [                                             // the part of flavour the mouth reports as physics: thickness, grain, the film left behind
+  P('M7 33 Q9 21 26 19 Q46 19 53 29 Q49 39 30 41 Q13 41 7 33 Z', 'gh'),
+  C(19, 48, 5, 'bs'), S('M14 45 Q20 56 31 52', 'bs', 4),
+  ...granules('lo', 7, 491, [30, 44, 49, 55]),
+  S('M34 29 Q42 25 51 29', 'hi', 1.6), E(41, 35, 8, 3, 'hi'),
+]);
+def('food_safety', () => [                                           // one band, 5 to 60 °C, and the whole programme is about staying out of it
+  P('M26 7 L34 7 L34 37 L26 37 Z', 'gh'), C(30, 44, 9, 'gh'),
+  P('M28 19 L32 19 L32 41 L28 41 Z', 'bs'), C(30, 44, 6, 'bs'),
+  ...Array.from({ length: 7 }, (_, i) => S(`M36 ${14 + i * 4} L${44 + (i % 2) * 6} ${14 + i * 4}`, 'lo', 1.6)),
+  S('M36 11 L53 11', 'ik', 2), S('M36 43 L53 43', 'ik', 2),
+]);
+def('brewing', () => [                                               // hold the mash at 60-70 °C and amylase cuts the malt's starch into maltose
+  P('M9 19 L44 19 L40 47 L13 47 Z', 'lo'),
+  ...[0, 1, 2, 3].map(i => hex('ik', 16 + i * 8, 29, 4, 1.6)),
+  S('M28 24 L34 33 M28 33 L34 24', 'bs', 1.8),
+  ...[19, 28, 37].map(x => C(x, 41, 3, 'hi')),
+  P('M48 12 Q55 19 53 28 Q48 33 44 28 Q42 19 48 12 Z', 'bs'),         // and the hops, waiting for the boil
+]);
+def('searing', () => [                                               // it has to be dry to get past 150 °C, and it never sealed a single juice in
+  S('M5 49 L55 49', 'ik', 3),
+  P('M12 29 L48 29 L48 46 L12 46 Z', 'bs'),
+  P('M12 29 L48 29 L48 34 L12 34 Z', 'ik'),
+  ...[18, 28, 38, 46].map((x, i) => C(x, n(21 - i * 2), n(2 + (i % 2)), 'gh')),
+  ...[21, 35].map(x => S(`M${x} 29 L${x - 2} 23`, 'gh', 1.2)),
+]);
+def('braising', () => [                                              // brown it dry, then keep the lid on over a little liquid until the collagen gives up
+  P('M10 23 L50 23 L46 51 L14 51 Z', 'lo'),
+  S('M5 21 L55 21', 'ik', 3), S('M30 21 L30 15', 'ik', 2.6), C(30, 12, 2.6, 'ik'),
+  S('M14 43 L46 43', 'bs', 2),
+  P('M18 29 Q30 25 42 31 Q42 44 30 46 Q18 44 18 29 Z', 'bs'),
+  ...[24, 31, 38].map(x => S(`M${x} 33 Q${x + 3} 39 ${x} 44`, 'hi', 1.4)),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
