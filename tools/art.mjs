@@ -35519,6 +35519,153 @@ def('bed_osseous_tissue', () => [
   C(51, 45, 4.6, 'lo'), ...granules('hi', 3, 83, [44, 50, 56, 57]),     // ...and one taking it back down
 ]);
 
+
+/* ── the toxicology slice ────────────────────────────────────────────────
+   The acenes are genuinely similar molecules, so each is drawn at the ring
+   count and geometry that distinguishes it — linear for the acenes, angular
+   for phenanthrene, and the bay region marked where it is the point. */
+
+def('polycyclic_aromatic_hydrocarbon', () => [
+  hex('ik', 21, 30, 9, 2), hex('ik', 36.6, 30, 9, 2), hex('ik', 28.8, 43.5, 9, 2),
+  C(45, 18, 2.2, 'gh'), C(50, 24, 1.6, 'gh'),            // the family keeps going
+]);
+def('naphthalene', () => [
+  hex('ik', 22, 30, 10, 2.4), hex('ik', 39.3, 30, 10, 2.4),
+  ...double([26, 21.3], [35.3, 21.3], 'ik'),
+]);
+def('anthracene', () => [
+  hex('ik', 14, 30, 9, 2.2), hex('ik', 29.6, 30, 9, 2.2), hex('ik', 45.2, 30, 9, 2.2),
+  ...double([21.8, 25.5], [21.8, 34.5], 'ik'),
+]);
+def('phenanthrene', () => [                                 // the same three rings, bent
+  hex('ik', 20, 24, 9, 2.2), hex('ik', 35.6, 24, 9, 2.2), hex('ik', 43.4, 37.5, 9, 2.2),
+  S('M28 34 L36 34', 'lo', 1.4),
+]);
+def('benzanthracene', () => [
+  hex('ik', 14, 26, 8, 2), hex('ik', 27.9, 26, 8, 2), hex('ik', 41.8, 26, 8, 2),
+  hex('ik', 34.8, 38, 8, 2),
+]);
+def('dibenzanthracene', () => [
+  hex('ik', 12, 24, 7.5, 1.9), hex('ik', 25, 24, 7.5, 1.9), hex('ik', 38, 24, 7.5, 1.9),
+  hex('ik', 51, 24, 7.5, 1.9), hex('ik', 31.5, 35.5, 7.5, 1.9),
+]);
+def('benzo_a_pyrene', () => [
+  hex('ik', 18, 24, 8, 2), hex('ik', 31.9, 24, 8, 2), hex('ik', 45.8, 24, 8, 2),
+  hex('ik', 24.9, 36, 8, 2), hex('ik', 38.8, 36, 8, 2),
+  S('M46 34 Q52 38 48 44', 'lo', 2),                      // the bay region, where it is activated
+]);
+def('soot', () => [                                         // agglomerated spherules, not a lump
+  ...[[20, 32, 7], [30, 26, 6], [38, 34, 6.5], [26, 41, 5.5], [44, 25, 4.5], [33, 44, 4]]
+    .map(([x, y, r]) => C(x, y, r, 'lo')),
+  ...[[20, 32, 3], [30, 26, 2.6], [38, 34, 2.8]].map(([x, y, r]) => C(x, y, r, 'ik')),
+]);
+def('tobacco_smoke', () => [
+  S('M22 50 Q18 38 26 30 Q34 22 28 12', 'gh', 3),
+  S('M34 50 Q40 38 32 30 Q26 22 34 12', 'gh', 2.4),
+  ...[[24, 22], [36, 26], [30, 16], [42, 20]].map(([x, y]) => C(x, y, 1.8, 'lo')),
+]);
+
+def('carcinogen', () => [                                   // damage that lands in a growth-control gene
+  S('M18 12 Q26 30 18 48', 'lo', 2.4), S('M30 12 Q22 30 30 48', 'lo', 2.4),
+  ...[16, 26, 36, 44].map(y => S(`M20 ${y} L28 ${y}`, 'gh', 1.4)),
+  ...[[44, 24, 7], [50, 34, 5], [40, 38, 4]].map(([x, y, r]) => C(x, y, r, 'bs')),
+  S('M33 30 L37 30', 'ik', 1.6),
+]);
+def('mutagen', () => [                                      // one base swapped, and it stays swapped
+  S('M20 12 Q28 30 20 48', 'lo', 2.4), S('M40 12 Q32 30 40 48', 'lo', 2.4),
+  ...[17, 25, 41, 47].map(y => S(`M22 ${y} L38 ${y}`, 'gh', 1.4)),
+  S('M23 33 L36 33', 'ik', 2.4), C(36, 33, 3, 'ik'),
+]);
+def('teratogen', () => [                                    // crosses, and arrives while the plan is being built
+  E(30, 34, 15, 13, 'gh'), C(30, 34, 8, 'bs'), C(27, 31, 2, 'ik'),
+  S('M8 20 L22 27', 'lo', 2.2), P('M22 27 L16 26 L19 22 Z', 'lo'),
+  S('M12 34 Q20 34 24 34', 'gh', 1.4),
+]);
+def('birth_defect', () => [
+  C(30, 22, 8, 'bs'), E(30, 40, 9, 11, 'bs'),
+  S('M22 34 L12 42', 'bs', 3.4), S('M38 34 L44 39', 'bs', 3.4),   // one limb short
+  C(45, 40, 2, 'lo'),
+]);
+def('chromosomal_aberration', () => [                       // a break, and the piece on the wrong arm
+  S('M20 10 L20 28 M20 34 L20 50', 'lo', 4),
+  S('M38 10 L38 50', 'lo', 4),
+  S('M20 31 L34 31', 'ik', 2), P('M34 28 L40 31 L34 34 Z', 'ik'),
+]);
+def('organogenesis', () => [
+  E(30, 32, 16, 15, 'gh'),
+  ...[[24, 26, 4], [36, 28, 3.4], [28, 38, 3], [37, 39, 2.6]].map(([x, y, r]) => C(x, y, r, 'bs')),
+  S('M14 46 Q30 52 46 46', 'lo', 1.6),
+]);
+def('angiosarcoma', () => [                                 // in the lining of the vessel itself
+  S('M8 34 Q22 22 32 34 Q42 46 54 34', 'lo', 5),
+  S('M8 34 Q22 22 32 34 Q42 46 54 34', 'ground', 2),
+  ...[[30, 32, 5], [36, 37, 3.4]].map(([x, y, r]) => C(x, y, r, 'bs')),
+]);
+def('free_radical', () => [
+  C(30, 30, 9, 'bs'), C(30, 30, 3, 'hi'),
+  ...[0, 60, 120, 180, 240, 300].map(a => {
+    const x = n(30 + 19 * Math.cos(a * Math.PI / 180)), y = n(30 + 19 * Math.sin(a * Math.PI / 180));
+    return S(`M${n(30 + 11 * Math.cos(a * Math.PI / 180))} ${n(30 + 11 * Math.sin(a * Math.PI / 180))} L${x} ${y}`, 'gh', 1.4);
+  }),
+  C(47, 21, 2.6, 'ik'),                                     // the unpaired electron
+]);
+def('hydroxyl_radical', () => [
+  C(24, 32, 10, CPK.O), C(40, 24, 6, CPK.H), S('M31 29 L36 26', 'ik', 2.4),
+  C(20, 22, 2.4, 'ik'),
+]);
+
+def('chlorinated_hydrocarbon', () => [
+  S('M14 38 L24 30 L34 38 L44 30', 'ik', 2.4),
+  ...[[24, 30], [44, 30]].map(([x, y]) => C(x, y - 9, 5.5, CPK.Cl)),
+  ...[[24, 30], [44, 30]].map(([x, y]) => S(`M${x} ${y} L${x} ${y - 5}`, 'ik', 1.8)),
+]);
+def('beta_propiolactone', () => [                           // a four-membered ring, strained
+  S('M22 22 L38 22 L38 38 L22 38 Z', 'ik', 2.4),
+  C(38, 22, 5, CPK.O), ...double([22, 22], [16, 16], 'ik'), C(15, 15, 4.5, CPK.O),
+]);
+def('ethyleneimine', () => [                                // three-membered, and the N is the point
+  S('M22 40 L38 40 L30 24 Z', 'ik', 2.4),
+  C(30, 22, 5.5, CPK.N), C(30, 22, 2, 'ground'),
+]);
+def('nitrosamine', () => [
+  S('M16 38 L26 32 M36 32 L46 38', 'ik', 2.2),
+  C(31, 30, 6, CPK.N), S('M31 24 L31 18', 'ik', 2), C(31, 15, 5, CPK.N),
+  ...double([31, 15], [42, 10], 'ik'), C(43, 9, 4.5, CPK.O),
+]);
+def('aflatoxin_b1', () => [                                 // the fused furan end is what activates
+  hex('ik', 38, 32, 9, 2.2),
+  S('M29 26 L18 22 L12 30 L18 38 L29 38', 'ik', 2.2),
+  S('M18 22 L18 38', 'gh', 1.4),
+  C(47, 26, 4, CPK.O), C(47, 38, 4, CPK.O),
+]);
+def('thalidomide', () => [                                  // two rings, one carbon, two hands
+  hex('ik', 19, 30, 9, 2.2),
+  S('M28 24 L40 20 L48 30 L40 40 L28 36 Z', 'ik', 2.2),
+  ...[[40, 20], [40, 40]].map(([x, y]) => C(x + 6, y, 4, CPK.O)),
+  S('M28 30 L34 30', 'lo', 1.6),
+]);
+def('methylmercury', () => [
+  C(24, 32, 11, 'lo'), C(24, 32, 4, 'hi'),                  // the mercury
+  S('M35 32 L44 26', 'ik', 2.6), C(46, 24, 5, 'ik'),
+  ...[[14, 46], [22, 48], [30, 46]].map(([x, y]) => C(x, y, 2, 'gh')),   // it moves up the chain
+]);
+def('benzoic_acid', () => [
+  hex('ik', 24, 32, 11, 2.4),
+  S('M35 32 L43 28', 'ik', 2.2), ...double([43, 28], [49, 33], 'ik'),
+  C(50, 34, 4.5, CPK.O), C(45, 21, 4.5, CPK.O),
+]);
+def('bha', () => [                                          // a methoxy on the ring, a butyl beside it
+  hex('ik', 26, 32, 11, 2.4),
+  C(26, 19, 4.5, CPK.O), S('M26 23 L26 21', 'ik', 1.6),
+  S('M37 26 L45 22 M45 22 L52 26 M45 22 L45 14', 'ik', 2),
+]);
+def('bht', () => [                                          // two butyls, one on each shoulder
+  hex('ik', 30, 34, 11, 2.4),
+  C(30, 21, 4.5, CPK.O),
+  S('M20 27 L12 22 M12 22 L6 26 M12 22 L12 14', 'ik', 1.9),
+  S('M40 27 L48 22 M48 22 L54 26 M48 22 L48 14', 'ik', 1.9),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

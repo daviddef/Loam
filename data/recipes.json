@@ -79985,5 +79985,388 @@
     "why": "Not taming, which is one animal learning to tolerate you, but a multi-generational mutualism: the domesticator builds an environment where it manages another species' survival and breeding, and that species becomes dependent on the arrangement. It needed people to stay put. After the Last Glacial Maximum a warmer Holocene and growing populations made it possible from about 11,700 years ago — cereals in the Near East 13,000 to 11,000 years ago, livestock in the Fertile Crescent 11,000 to 10,000. Early farmers were not trying to make new species; they became entangled with them.",
     "src": "https://en.wikipedia.org/wiki/Domestication",
     "verified": true
+  },
+  {
+    "in": [
+      "hydrogen_peroxide",
+      "iron"
+    ],
+    "verb": null,
+    "out": "hydroxyl_radical",
+    "why": "Fenton's reaction: iron(II) hands one electron to hydrogen peroxide and the peroxide comes apart into hydroxide and a hydroxyl radical — Fe²⁺ + H₂O₂ → Fe³⁺ + OH⁻ + •OH. Henry Fenton published it in 1894, from work on oxidising tartaric acid. The same chemistry runs inside cells wherever loose iron and peroxide meet.",
+    "src": "https://en.wikipedia.org/wiki/Fenton%27s_reagent",
+    "verified": true
+  },
+  {
+    "in": [
+      "gamma_ray",
+      "water"
+    ],
+    "verb": null,
+    "out": "hydroxyl_radical",
+    "why": "Radiolysis. A gamma photon ionises water and the wreckage includes hydroxyl radicals, hydrated electrons, hydrogen atoms and peroxide. Because a cell is mostly water, this indirect route — radicals diffusing far enough to reach DNA — is the main damage mechanism for photons in radiation therapy, rather than a photon striking the DNA itself.",
+    "src": "https://en.wikipedia.org/wiki/Radiolysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "covalent_bond",
+      "ultraviolet"
+    ],
+    "verb": null,
+    "out": "free_radical",
+    "why": "Homolysis: light of the right energy splits a shared pair down the middle instead of handing both electrons to one side, and each fragment leaves with one unpaired electron. It costs real energy — 435 kJ/mol to break H–H that way, 243 kJ/mol for Cl–Cl — which is why photodissociation, not gentle warmth, is a standard route to a radical.",
+    "src": "https://en.wikipedia.org/wiki/Radical_(chemistry)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dna",
+      "hydroxyl_radical"
+    ],
+    "verb": null,
+    "out": "mutagen",
+    "why": "The hydroxyl radical attacks guanine and leaves 8-oxoguanine, one of the commonest oxidative DNA lesions there is. The altered base pairs with adenine instead of cytosine, so the next round of copying writes G-to-T and C-to-A substitutions — a mutation rate above background, which is exactly what defines a mutagen. The glycosylase OGG1 cuts most of them back out first.",
+    "src": "https://en.wikipedia.org/wiki/8-Oxoguanine",
+    "verified": true
+  },
+  {
+    "in": [
+      "mutagen",
+      "proto_oncogene"
+    ],
+    "verb": null,
+    "out": "carcinogen",
+    "why": "A mutagen turns carcinogenic when the damage lands in the genes that govern division — a proto-oncogene pushed into an oncogene, or a tumour suppressor switched off. The sets overlap without coinciding: around 90% of known carcinogens registered as mutagenic in the early Ames screens, yet sodium azide is mutagenic and has never been shown to cause cancer, and non-genotoxic carcinogens such as some hormones promote growth without binding DNA at all.",
+    "src": "https://en.wikipedia.org/wiki/Mutagen",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "x_ray"
+    ],
+    "verb": null,
+    "out": "chromosomal_aberration",
+    "why": "Muller showed in 1927 that X-rays raise the mutation rate in fruit flies and leave visible changes to the chromosomes themselves; the 1946 Nobel followed. Agents that break chromosomes outright are called clastogens, and a break put back wrong returns as a deletion, an inversion or a translocation rather than a single swapped base.",
+    "src": "https://en.wikipedia.org/wiki/Clastogen",
+    "verified": true
+  },
+  {
+    "in": [
+      "embryo",
+      "hox_gene"
+    ],
+    "verb": null,
+    "out": "organogenesis",
+    "why": "Gastrulation ends with three germ layers and no organs. Hox genes then fix which position along the head-to-tail axis is which, and the layers build to match: ectoderm into epidermis and neurons, mesoderm into heart, kidney and red cells, endoderm into lung, thyroid, pancreas and gut. In humans that work runs from about week three to week eight after fertilisation.",
+    "src": "https://en.wikipedia.org/wiki/Organogenesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "organogenesis",
+      "placenta"
+    ],
+    "verb": null,
+    "out": "teratogen",
+    "why": "Two conditions make an agent a teratogen, and they are Wilson's fourth and second principles: it has to get across the placenta, and it has to arrive while the part it will damage is being built. Thalidomide is the whole argument in one drug — day 20 of gestation took the brain, day 21 the eyes, day 22 the ears and face, day 24 the arms, and after day 42 the same dose did nothing to the fetus.",
+    "src": "https://en.wikipedia.org/wiki/Thalidomide_scandal",
+    "verified": true
+  },
+  {
+    "in": [
+      "mutagen",
+      "organogenesis"
+    ],
+    "verb": null,
+    "out": "teratogen",
+    "why": "A mutagen that reaches an embryo while the organs are forming can act as a teratogen too, damaging the cells doing the building. The categories overlap and are not the same: thalidomide alters no base at all — it works by making the cereblon ubiquitin ligase destroy developmental transcription factors — and what it caused was never inherited, which is what non-heritable means in the definition.",
+    "src": "https://en.wikipedia.org/wiki/Thalidomide",
+    "verified": true
+  },
+  {
+    "in": [
+      "embryo",
+      "teratogen"
+    ],
+    "verb": null,
+    "out": "birth_defect",
+    "why": "Wilson's fifth principle lists the four ways development can deviate: death, malformation, growth retardation, functional defect. Which one, and where, is set by the week — rubella between weeks five and ten damages eyes and ears, a cleft palate is decided between weeks four and seven. About 3% of US newborns have a birth defect, and around 65% of those have no cause anyone can name.",
+    "src": "https://en.wikipedia.org/wiki/Birth_defect",
+    "verified": true
+  },
+  {
+    "in": [
+      "liver",
+      "vinyl_chloride"
+    ],
+    "verb": null,
+    "out": "angiosarcoma",
+    "why": "CYP2E1 in the liver oxidises vinyl chloride into chloroethylene oxide, an alkylating epoxide that binds DNA and disturbs proto-oncogene and tumour-suppressor expression — which is why the tumour turns up in the liver and not the lung that breathed the gas in. Dr John Creech found three cases of hepatic angiosarcoma among workers at B.F. Goodrich's Louisville PVC plant and reported them to NIOSH on 22 January 1974.",
+    "src": "https://www.ncbi.nlm.nih.gov/books/NBK544334/",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetylene",
+      "benzene"
+    ],
+    "verb": null,
+    "out": "polycyclic_aromatic_hydrocarbon",
+    "why": "A flame short of oxygen builds rings instead of burning them. In the hydrogen-abstraction/acetylene-addition cycle an aromatic loses a hydrogen, the radical left behind adds a molecule of acetylene, and the sequence repeats until a new ring closes onto the old one. HACA is the route that assembles naphthalene both in flames and in the envelopes of carbon-rich stars.",
+    "src": "https://pubmed.ncbi.nlm.nih.gov/29717871/",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar"
+    ],
+    "verb": "chill",
+    "out": "naphthalene",
+    "why": "Naphthalene is the most abundant single component of coal tar — typical tar is about 10% naphthalene by weight — and it melts at 80 °C, so it drops out of the distilled middle oil as pale crystals as that oil cools. Alexander Garden reported crystallising a silvery, camphor-like solid from coal-tar distillate in 1819; John Kidd named it in 1821 after the naphtha it came out of.",
+    "src": "https://en.wikipedia.org/wiki/Naphthalene",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar",
+      "distillation"
+    ],
+    "verb": null,
+    "out": "anthracene",
+    "why": "Coal tar is only about 1.5% anthracene, and it comes over late, in the heavy cut still called anthracene oil. Jean-Baptiste Dumas and Auguste Laurent crystallised it from that fraction in 1832; Laurent first took it for an isomer of naphthalene and called it paranaphthalene before renaming it from anthrax, the Greek for coal. Industry kept distilling for it because oxidising anthracene gives anthraquinone, and anthraquinone gives the red dye alizarin.",
+    "src": "https://en.wikipedia.org/wiki/Anthracene",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetylene",
+      "naphthalene"
+    ],
+    "verb": null,
+    "out": "phenanthrene",
+    "why": "The same acetylene-addition cycle that closed naphthalene's second ring can close a third onto it, and the third ring goes on at an angle far more often than in line. The proof is in the tar: phenanthrene, the bent isomer, makes up around 4–6% of coke-oven coal tar, where anthracene, the straight one with the identical formula, manages about 1.5%. Fittig with Ostermayer, and Graebe independently, both pulled it out of coal tar in 1872.",
+    "src": "https://en.wikipedia.org/wiki/Phenanthrene",
+    "verified": true
+  },
+  {
+    "in": [
+      "anthracene",
+      "benzene"
+    ],
+    "verb": null,
+    "out": "benzanthracene",
+    "why": "A fourth ring fused onto the side of anthracene's three, which is exactly what the name records. Flames grow PAHs by adding whole rings as well as by adding acetylene: a phenyl radical adds to an aromatic and then cyclises onto it, the phenyl-addition/dehydrocyclization route, which runs efficiently at high temperatures and reaches structures that acetylene addition alone finds hard to build. The fusion leaves a bay region — the crowded inner pocket that makes four-ring PAHs easy prey for the enzymes that turn them into mutagens.",
+    "src": "https://pubmed.ncbi.nlm.nih.gov/31482662/",
+    "verified": true
+  },
+  {
+    "in": [
+      "benzanthracene",
+      "benzene"
+    ],
+    "verb": null,
+    "out": "dibenzanthracene",
+    "why": "One more benzo ring fused on and the count reaches five: dibenz[a,h]anthracene, C22H14, first synthesised in 1918. It is barely volatile and barely soluble, so it travels stuck to particles in polluted air, soil and sediment, and it is genotoxic in both bacterial and mammalian cells — it slides between the base pairs of DNA and causes mutations there.",
+    "src": "https://en.wikipedia.org/wiki/Dibenz(a,h)anthracene",
+    "verified": true
+  },
+  {
+    "in": [
+      "charcoal",
+      "fat"
+    ],
+    "verb": null,
+    "out": "benzo_a_pyrene",
+    "why": "Fat dripping onto hot coals does not burn cleanly; benzo[a]pyrene is what incomplete combustion of organic matter yields between 300 and 600 °C, and the smoke carries it back up onto the meat. A 2001 National Cancer Institute study found levels far higher in food cooked well-done on a barbecue; cooked meat products have been measured at up to 4 ng/g, fried chicken at 5.5 ng/g and overcooked charcoal-barbecued beef at 62.6 ng/g.",
+    "src": "https://en.wikipedia.org/wiki/Benzo(a)pyrene",
+    "verified": true
+  },
+  {
+    "in": [
+      "polycyclic_aromatic_hydrocarbon",
+      "polycyclic_aromatic_hydrocarbon"
+    ],
+    "verb": null,
+    "out": "soot",
+    "why": "A soot particle begins when two PAH molecules collide and stay together. Dimers held by nothing but attraction come apart again; when the pair goes on to form a covalent bond it survives, and putting that step into a flame simulation raises the predicted soot concentration by four orders of magnitude, matching what laser-induced incandescence measures. Trimers account for under 3% of the nuclei formed, so a bonded pair is essentially the whole of nucleation.",
+    "src": "https://pubmed.ncbi.nlm.nih.gov/29542752/",
+    "verified": true
+  },
+  {
+    "in": [
+      "smoke"
+    ],
+    "verb": "chill",
+    "out": "soot",
+    "why": "The definition the IPCC adopted turns on cooling: soot is what forms during the \"quenching of gases at the outer edge of flames\" of organic vapours — mostly carbon, with a little oxygen and hydrogen, in an imperfect graphitic structure. What settles on a flue wall is that: clumps of 6 to 30 nm particles, mixed with mineral matter and sometimes coated in sulfuric acid. Enough of it collecting in a chimney is what makes a chimney fire possible.",
+    "src": "https://en.wikipedia.org/wiki/Soot",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "tobacco"
+    ],
+    "verb": null,
+    "out": "tobacco_smoke",
+    "why": "The burning cone reaches 700–950 °C during a puff, but hardly any of the smoke is made there. Just behind the fire sits an oxygen-starved distillation zone where the temperature falls from about 600 °C to 200 °C, and it is below roughly 350 °C, in that zone, that the majority of the toxicants are generated — which is the point heated tobacco products were designed around.",
+    "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6795920/",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "soot"
+    ],
+    "verb": null,
+    "out": "cancer",
+    "why": "In 1775 Percivall Pott traced the scrotal cancer common among London's chimney sweeps to soot lodging in the skin — the first occupational cancer anyone described, and the first time a chemical mixture was tied to cancer at all. The sweeps had been in contact with soot since early childhood; one review puts the median age at first symptoms at 37.7 years, with cases in boys as young as 8. In 1922 R. D. Passey raised malignant skin tumours in mice using an extract of soot, which showed the cause was carried in the soot itself.",
+    "src": "https://en.wikipedia.org/wiki/Chimney_sweeps%27_carcinoma",
+    "verified": true
+  },
+  {
+    "in": [
+      "benzo_a_pyrene",
+      "dna"
+    ],
+    "verb": null,
+    "out": "mutation",
+    "why": "Benzo[a]pyrene is a procarcinogen: it does nothing until the body's own cytochrome P450 1A1 and epoxide hydrolase convert it, in three steps, into the diol epoxide BPDE. That electrophile is attacked by guanine, leaving a bulky adduct that distorts the double helix. Nucleotide excision repair clears most of them; the ones it misses produce G-to-T transversions, clustered in hotspots of the tumour-suppressor gene p53.",
+    "src": "https://en.wikipedia.org/wiki/Benzo(a)pyrene",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "hydrocarbon"
+    ],
+    "verb": null,
+    "out": "chlorinated_hydrocarbon",
+    "why": "Chlorine substitutes into an alkane under ultraviolet light, or adds straight across the double bond of an alkene to give a di- or tetrachloro compound. Nothing in the chemistry stops at one chlorine, so controlling how far the reaction goes is the hard part. The largest single product is vinyl chloride — 13 million tonnes a year by 1985, nearly all of it polymerised into PVC.",
+    "src": "https://en.wikipedia.org/wiki/Organochloride",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetic_acid",
+      "formaldehyde"
+    ],
+    "verb": null,
+    "out": "beta_propiolactone",
+    "why": "Acetic acid dehydrated thermally gives ketene, and ketene attacks an aldehyde to close a four-membered beta-lactone — with formaldehyde, over an aluminium or zinc chloride catalyst, that lactone is beta-propiolactone. Ketene only does this under Lewis acid catalysis or against an electron-poor carbonyl, which formaldehyde is.",
+    "src": "https://en.wikipedia.org/wiki/Beta-Propiolactone",
+    "verified": true
+  },
+  {
+    "in": [
+      "ammonia",
+      "ethylene_oxide"
+    ],
+    "verb": null,
+    "out": "ethyleneimine",
+    "why": "Ammonia opens the strained oxygen ring of ethylene oxide to give aminoethanol, and the aminoethanol is then closed back up around nitrogen — dehydrated over an oxide catalyst in the Nippon Shokubai process, or converted to a sulfate ester and eliminated in the older Wenker synthesis. Older routes aminated 1,2-dichloroethane or cyclised 2-chloroethylamine instead.",
+    "src": "https://en.wikipedia.org/wiki/Aziridine",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrite",
+      "proline"
+    ],
+    "verb": null,
+    "out": "nitrosamine",
+    "why": "Proline's nitrogen sits inside its ring, which makes it a secondary amine, and nitrous acid from acidified nitrite nitrosates secondary amines directly. Ohshima and Bartsch turned that into a measurement in 1981: 300 mg of nitrate and 500 mg of proline by mouth, then N-nitrosoproline counted in 24 hours of urine, to see how much nitrosation is going on inside a living stomach.",
+    "src": "https://aacrjournals.org/cancerres/article/41/9_Part_1/3658/485858/Quantitative-Estimation-of-Endogenous-Nitrosation",
+    "verified": true
+  },
+  {
+    "in": [
+      "nicotine",
+      "nitrite"
+    ],
+    "verb": null,
+    "out": "nitrosamine",
+    "why": "Nitrosating nicotine and its relative nornicotine during tobacco curing produces the tobacco-specific nitrosamines NNN and NNK. IARC evaluated the pair in 2009 and placed both in Group 1, carcinogenic to humans. American dip snuff carries markedly more of them than Swedish snus.",
+    "src": "https://en.wikipedia.org/wiki/List_of_IARC_Group_1_carcinogens",
+    "verified": true
+  },
+  {
+    "in": [
+      "maize",
+      "mould"
+    ],
+    "verb": null,
+    "out": "aflatoxin_b1",
+    "why": "Aspergillus flavus and A. parasiticus are ordinary weedy moulds, and on maize held warm and damp they make aflatoxin B1 as they grow. A contaminated maize harvest in Kenya in 2004 caused an acute outbreak with 125 confirmed deaths. FDA action levels for aflatoxin in food and feed run from 20 to 300 ppb depending on what it is for.",
+    "src": "https://en.wikipedia.org/wiki/Aflatoxin",
+    "verified": true
+  },
+  {
+    "in": [
+      "glutamine",
+      "phthalic_anhydride"
+    ],
+    "verb": null,
+    "out": "thalidomide",
+    "why": "Phthalic anhydride condenses with L-glutamine, with triethylamine and acetic anhydride, at around 110 °C; the modern version of the route gives 85–93% yield at 99% purity. The molecule is a single ring system joined to a glutarimide, and that glutarimide end is the part that binds cereblon.",
+    "src": "https://en.wikipedia.org/wiki/Thalidomide",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "methanogen"
+    ],
+    "verb": null,
+    "out": "methylmercury",
+    "why": "Mercury becomes methylmercury only when a microbe methylates it, and three groups do: sulfate-reducing bacteria, iron-reducing bacteria and methanogens, all working where oxygen has run out. From there it climbs — in top aquatic predators the concentration can reach a million times the level in the surrounding water.",
+    "src": "https://en.wikipedia.org/wiki/Methylmercury",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "mercury"
+    ],
+    "verb": null,
+    "out": "methylmercury",
+    "why": "Sulfate-reducing bacteria in anoxic sediment are the main methylators of mercury in most waters, which is what turned an industrial discharge into a poisoning. Chisso's factory at Minamata used a mercury catalyst to make acetaldehyde — 210 tonnes in 1932, 45,245 at the 1960 peak — and released waste into the bay from 1951 to 1968. Sediment at the mouth of the wastewater canal measured 2 kg of mercury per tonne.",
+    "src": "https://en.wikipedia.org/wiki/Minamata_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxygen_gas",
+      "toluene"
+    ],
+    "verb": null,
+    "out": "benzoic_acid",
+    "why": "Partial oxidation of toluene with oxygen, over cobalt or manganese naphthenate catalysts, turns the methyl group into a carboxylic acid. Abundant feedstock, high yield, and it is how nearly all of it is made now. The older route was dry distillation of gum benzoin, first described in 1556.",
+    "src": "https://en.wikipedia.org/wiki/Benzoic_acid",
+    "verified": true
+  },
+  {
+    "in": [
+      "butane",
+      "hydroquinone"
+    ],
+    "verb": null,
+    "out": "bha",
+    "why": "The precursor is 4-methoxyphenol, which is hydroquinone with one of its two hydroxyls methylated. Alkylating it with isobutylene — the branched four-carbon alkene from the same refinery cut that yields butane — hangs a tert-butyl group on the ring. It lands in two positions, and BHA is sold as the mixture of 2-tert-butyl and 3-tert-butyl-4-hydroxyanisole.",
+    "src": "https://en.wikipedia.org/wiki/Butylated_hydroxyanisole",
+    "verified": true
+  },
+  {
+    "in": [
+      "butane",
+      "toluene"
+    ],
+    "verb": null,
+    "out": "bht",
+    "why": "BHT is a cresol wearing two tert-butyl groups. p-Cresol — toluene with a hydroxyl on the far corner of the ring — is alkylated with isobutylene over sulfuric acid, and the two bulky groups settle either side of that hydroxyl. Isobutylene is the branched four-carbon alkene from the same refinery cut that yields butane.",
+    "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene",
+    "verified": true
   }
 ]

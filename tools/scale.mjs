@@ -49,6 +49,7 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          'polycyclic_aromatic_hydrocarbon', 'naphthalene', 'anthracene', 'phenanthrene', 'benzanthracene', 'dibenzanthracene', 'benzo_a_pyrene', 'chlorinated_hydrocarbon', 'beta_propiolactone', 'ethyleneimine', 'nitrosamine', 'aflatoxin_b1', 'thalidomide', 'methylmercury', 'benzoic_acid', 'bha', 'bht', 'hydroxyl_radical', 'free_radical', 'carcinogen', 'mutagen', 'teratogen',
           /* unblocking-nouns wave, 2 Sep */
           'antibiotic', 'antifungal', 'antiviral', 'dna_methylation', 'genetic_code',
           /* DNA-structure fix, 2 Sep */ 'nucleoside', 'double_helix',
@@ -83,6 +84,7 @@ const SCALE = {
           // compounds, the same molecule scale as digoxin/batrachotoxin above
           'atropine', 'thc', 'cocaine', 'nicotine', 'morphine', 'mescaline', 'psilocybin'],
   '-8':  [
+          'soot',
           /* unblocking-nouns wave, 2 Sep */
           'antitoxin', 'central_dogma', 'epigenetics', 'gene_expression', 'heterozygous', 'homozygous', 'recessive_allele', 'toxin',
           /* completeness-audit wave, 2 Sep */
@@ -113,6 +115,7 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          'chromosomal_aberration',
           /* unblocking-nouns wave, 2 Sep */
           'adaptive_immunity', 'centromere', 'crossing_over', 'genome', 'innate_immunity', 'karyotype', 'opsonization', 'passive_immunity',
           'prokaryote', 'pure_culture', 'sex_chromosome',
@@ -209,6 +212,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          'organogenesis',
           'grasshopper', 'wild_silk_moth', 'isopod', 'beetle', 'pipefish',
           /* asbestos chain, 2 Sep */ 'asbestos',
           /* crops and materials wave, 2 Sep */
@@ -332,6 +336,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          'tobacco_smoke',
           'mongoose', 'junglefowl', 'mallard', 'mackerel', 'myriapod', 'scorpionfish', 'lagomorph',
           /* crops and materials wave, 2 Sep */
           'abaca', 'acorn_squash', 'bamboo_shoot', 'blood_orange', 'bok_choy', 'canaigre_dock', 'chaya', 'chayote',
@@ -522,6 +527,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          'angiosarcoma', 'birth_defect',
           'wild_boar', 'mouflon', 'bezoar_ibex', 'wild_turkey', 'greylag_goose', 'ape', 'wild_coca', 'wild_tobacco', 'spurge', 'fern', 'requiem_shark', 'crocodilian', 'perissodactyl', 'african_wild_ass', 'equus', 'wild_dromedary', 'okapi', 'wild_water_buffalo', 'theropod',
           /* asbestos chain, 2 Sep */ 'mesothelioma',
           /* crops and materials wave, 2 Sep */

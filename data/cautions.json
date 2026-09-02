@@ -2648,6 +2648,173 @@
         "mango"
       ],
       "severity": "contact"
+    },
+    "aflatoxin_b1_p53_signature": {
+      "label": "The mould toxin that leaves a signature in one gene",
+      "note": "Cytochrome P450 enzymes in the liver convert aflatoxin B1 into the 8,9-epoxide, which binds guanine in DNA. The third base of codon 249 of the p53 gene is more susceptible than the bases around it, and the G-to-T change there is a recognisable fingerprint in liver tumours. IARC lists aflatoxins in Group 1, carcinogenic to humans, and the risk compounds with chronic hepatitis B infection.",
+      "ids": [
+        "aflatoxin_b1"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "angiosarcoma_occupational": {
+      "label": "Liver angiosarcoma is the tumour that convicted vinyl chloride",
+      "note": "Three cases in one Louisville PVC plant, reported to NIOSH in January 1974, were enough to establish vinyl chloride monomer as a human carcinogen; OSHA cut the permissible exposure limit from 500 ppm to 1 ppm in 1975. 197 vinyl-chloride angiosarcomas were recorded worldwide between 1974 and 2000, at an average latency of about 20 years, and no US case is believed to have arisen from exposure beginning after the 1975 standard. Thorotrast, arsenic and therapeutic radiation are the other established causes.",
+      "ids": [
+        "angiosarcoma"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "benzo_a_pyrene_carcinogen": {
+      "label": "Benzo[a]pyrene is a Group 1 carcinogen that the body makes dangerous itself",
+      "note": "IARC moved benzo[a]pyrene up to Group 1, carcinogenic to humans, on mechanistic evidence in its 2009 evaluation. It arrives harmless and is activated by the cell's own CYP1A1 into the diol epoxide that binds guanine and induces G-to-T transversions in p53. The US National Toxicology Program's fifteenth Report on Carcinogens records tumours in 8 species, including non-human primates. The largest source in outdoor air is not industry but residential wood burning.",
+      "ids": [
+        "benzo_a_pyrene"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "benzoate_ascorbate_benzene": {
+      "label": "Benzoate and vitamin C in the same bottle can make a little benzene",
+      "note": "Benzoic acid can lose its carboxyl group in the presence of ascorbic or erythorbic acid, catalysed by trace copper and iron and accelerated by heat and light, and what is left is benzene. The soft drink industry raised it with the FDA in the early 1990s and reformulated by 1993; test results in November 2005 showed it happening again. FDA testing of 100 beverages in May 2006 found most below 5 ppb, with four over the federal limit. The WHO drinking-water guideline is 10 ppb, and California's limit is 1 ppb.",
+      "ids": [
+        "benzoic_acid"
+      ],
+      "severity": "conditional"
+    },
+    "beta_propiolactone_alkylating": {
+      "label": "What makes it sterilise is what makes it dangerous",
+      "note": "Beta-propiolactone inactivates viruses — influenza among them — by alkylating nucleic acid, and it cannot tell viral nucleic acid from anyone else's. IARC places it in Group 2B, possibly carcinogenic to humans, and OSHA counts it among its thirteen regulated occupational carcinogens. It could sterilise a great deal more than vaccine stock, and that carcinogenicity is precisely what rules the wider use out.",
+      "ids": [
+        "beta_propiolactone"
+      ],
+      "severity": "cumulative"
+    },
+    "bha_forestomach_evidence": {
+      "label": "The animal evidence is real; whether it means anything for people is disputed",
+      "note": "BHA induces benign and malignant tumours in the forestomach of rodents, which is why the US National Toxicology Program lists it as reasonably anticipated to be a human carcinogen and IARC places it in Group 2B, possibly carcinogenic. Humans have no forestomach, and the European Commission has treated the finding as of limited relevance to people. EFSA re-evaluated it in 2011 and set an acceptable daily intake of 1.0 mg per kg of body weight, from a no-effect level of 100 mg/kg in rats — higher than the 0.5 mg/kg that JECFA and the EU's Scientific Committee for Food had set in 1989.",
+      "ids": [
+        "bha"
+      ],
+      "severity": "conditional"
+    },
+    "bht_contested_evidence": {
+      "label": "Not a settled carcinogen, and the safe intake has moved in both directions",
+      "note": "A 1979 National Cancer Institute study found BHT non-carcinogenic in mice; a 1986 WHO report found limited evidence of carcinogenicity in animals, varying by species and by organ. IARC places BHT in Group 3, meaning the evidence does not support a classification either way. EFSA concluded in 2012 that it is not of concern for genotoxicity and that any carcinogenicity would have a threshold, and set an acceptable daily intake of 0.25 mg per kg of body weight — up from the 0.05 mg/kg the EU's Scientific Committee for Food had set in 1987 over thyroid, reproductive and blood effects in rats.",
+      "ids": [
+        "bht"
+      ],
+      "severity": "conditional"
+    },
+    "carcinogen_hazard_not_dose": {
+      "label": "A carcinogen classification says how sure the evidence is, not how much cancer follows",
+      "note": "The IARC groups rank the strength of the evidence that an agent can cause cancer — the hazard — and not the probability of cancer at any particular exposure. Through Volume 142, 135 agents sit in Group 1, carcinogenic to humans, out of roughly 1,060 evaluated; 98 are in Group 2A, probably, and 329 in Group 2B, possibly. Group 1 holds tobacco smoking, asbestos, benzene, formaldehyde and hepatitis B alike, which is why the group number on its own never settles how much any one exposure matters.",
+      "ids": [
+        "carcinogen"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "ethyleneimine_alkylating": {
+      "label": "An alkylating agent, which is another way of saying it reacts with DNA",
+      "note": "The ring strain that makes aziridine useful also makes it reactive toward DNA, and it is a mutagen as well as an acute poison — the oral LD50 in rats is 14 mg/kg. IARC puts it in Group 2B, possibly carcinogenic to humans, and OSHA regulates it as an occupational carcinogen. The same three-membered ring is built deliberately into several chemotherapy drugs, where damaging the DNA of a dividing cell is the intended effect.",
+      "ids": [
+        "ethyleneimine"
+      ],
+      "severity": "acute"
+    },
+    "methylmercury_placenta": {
+      "label": "The placenta concentrates it in the fetus instead of keeping it out",
+      "note": "Minamata was reported on 1 May 1956 as an epidemic of an unknown disease of the central nervous system; by March 2001, 2,265 people had been officially recognised. In November 1962 a congenital form was certified in eighteen children, two of them already dead, born after the outbreak and never fed contaminated fish — many of their mothers had shown no symptoms at all. The placenta keeps most chemicals out, but it draws methylmercury from the mother's blood and concentrates it in the fetus, and nobody knew that at the time. IARC classifies methylmercury compounds in Group 2B; the nervous system, not cancer, is the reason it is regulated.",
+      "ids": [
+        "methylmercury"
+      ],
+      "severity": "cumulative"
+    },
+    "mutagen_not_carcinogen": {
+      "label": "Mutagenic and carcinogenic are overlapping tests, not one test",
+      "note": "Around 90% of known carcinogens came up mutagenic in the early Ames screens, and about 80% of Ames-positive mutagens turn out to be carcinogens — but neither number is 100. Sodium azide is mutagenic and has not been shown to cause cancer. Going the other way, hormones and other non-genotoxic carcinogens promote tumour growth without binding DNA, so a clean mutagenicity result is not a clean bill of health.",
+      "ids": [
+        "mutagen",
+        "chromosomal_aberration"
+      ],
+      "severity": "cumulative"
+    },
+    "naphthalene_hemolysis": {
+      "label": "Naphthalene breaks down red blood cells",
+      "note": "Swallowing mothballs or deodorant blocks has given children haemolytic anaemia — fatigue, loss of appetite, pale skin, sometimes jaundice as the liver struggles. The danger is far greater for people with glucose-6-phosphate dehydrogenase deficiency, an inherited condition around 400 million people carry. IARC also records cataracts after acute exposure in humans and in several animals, and haemolytic anaemia in infants exposed through the mother during pregnancy.",
+      "ids": [
+        "naphthalene"
+      ],
+      "severity": "conditional"
+    },
+    "nitrosamine_carcinogen": {
+      "label": "Two nitrosamines are Group 1 carcinogens; the family is not evaluated as one",
+      "note": "IARC assessed the tobacco-specific nitrosamines NNN and NNK in 2009 and placed both in Group 1, carcinogenic to humans. N-nitrosodimethylamine and N-nitrosodiethylamine sit a step down in Group 2A, probably carcinogenic. None of them arrive as carcinogens: the body has to oxidise them first into an alkylating fragment, an alkyldiazonium centre, which then modifies a base in DNA and leaves a mutation behind.",
+      "ids": [
+        "nitrosamine"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "organochlorine_persistence": {
+      "label": "The carbon–chlorine bond is exactly what makes these last",
+      "note": "A chlorine atom makes a molecule greasy and hard to take apart, so organochlorines dissolve into fat and stay there, climbing the food chain instead of washing out. DDT turned up in Antarctica, where it was never used. The class is not uniform: vinyl chloride is an IARC Group 1 human carcinogen — workers were routinely exposed to 1,000 ppm of it before liver angiosarcoma was reported in 1974, against a current OSHA limit of 1 ppm — while chloroform and carbon tetrachloride sit in Group 2B, and forest fires and soil microbes make organochlorines of their own.",
+      "ids": [
+        "chlorinated_hydrocarbon"
+      ],
+      "severity": "cumulative"
+    },
+    "pah_carcinogen_grades": {
+      "label": "The PAHs are not one hazard — IARC grades them one by one",
+      "note": "Benzo[a]pyrene is Group 1, carcinogenic to humans. Dibenz[a,h]anthracene is Group 2A, probably carcinogenic. Benz[a]anthracene and naphthalene are Group 2B, possibly carcinogenic. Phenanthrene sits in Group 3, not classifiable, even though animal work hints at it. Structure decides the grade: the mutagenic ones usually carry four or more rings plus a bay region, the crowded pocket that makes a molecule easy for metabolising enzymes to convert into something that binds DNA. Lighter two- and three-ring PAHs act mostly as co-carcinogens, jamming the gap junctions cells use to hold each other's growth in check.",
+      "ids": [
+        "polycyclic_aromatic_hydrocarbon",
+        "naphthalene",
+        "anthracene",
+        "phenanthrene",
+        "benzanthracene",
+        "dibenzanthracene"
+      ],
+      "severity": "cumulative"
+    },
+    "soot_carcinogen": {
+      "label": "Soot is where occupational cancer was first identified",
+      "note": "IARC classifies soot, as found in the occupational exposure of chimney sweeps, in Group 1 — carcinogenic to humans — across Monographs 35, Supplement 7, 92 and 100F, most recently evaluated in 2009. Percivall Pott described the sweeps' scrotal cancers in 1775 and named soot as the cause. The carbon itself is not the whole story: what rides on the particles is a mixture of polycyclic aromatic hydrocarbons and, sometimes, heavy metals.",
+      "ids": [
+        "soot"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "teratogen_window": {
+      "label": "A teratogen's damage is decided by the week as much as the dose",
+      "note": "Wilson's second principle of teratology is that susceptibility varies with developmental stage, and the human embryo's most vulnerable stretch runs from roughly day 14 after implantation to day 60 after conception. Thalidomide hit the brain on day 20 and the arms on day 24, and after day 42 caused nothing. Teratogens are held responsible for 2 to 3% of developmental defects in US newborns; alcohol is the leading cause of birth defects and neurodevelopmental abnormality in the United States.",
+      "ids": [
+        "teratogen",
+        "birth_defect",
+        "organogenesis"
+      ],
+      "severity": "conditional"
+    },
+    "thalidomide_teratogen": {
+      "label": "Safe for the person swallowing it, and not for the fetus",
+      "note": "The window ran roughly from day 20 to day 36 after fertilisation, and it was narrow enough to read the date off the injury: around day 20 the central brain, day 22 the ears and face, day 24 the arms, out to about day 28 the legs. More than 10,000 children in 46 countries were born with deformities, and roughly 40% died around the time of birth. It was never marketed in the United States — the FDA reviewer holding the application refused to approve it on the evidence supplied — and the 1962 Drug Amendments followed. The drug is prescribed again today for multiple myeloma and for erythema nodosum leprosum, under pregnancy-prevention programmes.",
+      "ids": [
+        "thalidomide"
+      ],
+      "severity": "conditional"
+    },
+    "tobacco_smoke_carcinogen": {
+      "label": "Tobacco smoke is a Group 1 carcinogen for the smoker and for everyone nearby",
+      "note": "IARC classifies tobacco smoking and secondhand smoke alike as carcinogenic to humans. Smoking causes more than 8 million deaths a year worldwide, and more than 1.3 million of those are non-smokers who breathed someone else's smoke; in the United States, passive smoke is estimated to cause over 7,000 lung cancer deaths a year among non-smokers. About half of smokers die of a tobacco-related disease, losing on average 14 years of life. Filters do not lower the carcinogen load of the smoke that is inhaled.",
+      "ids": [
+        "tobacco_smoke"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
