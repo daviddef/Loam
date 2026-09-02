@@ -6633,6 +6633,20 @@ function ptHeight(px) {
 
 // ---- the aside pane's "Elements" tab: a plain list of the game's own
 // elements, found or not — deliberately NOT the periodic chart above. ----
+// Only the Shelf tab was hierarchical: grouped under headings you could fold
+// away. The other four were flat lists, which is fine at twenty items and
+// useless at six thousand. They all fold now, off one shared piece of state
+// keyed "tab:group" so two tabs can use the same group name without colliding.
+const asideShut = new Set();
+function foldHead(tab, gid, cls, name, count, live) {
+  const shut = asideShut.has(`${tab}:${gid}`);
+  return `<h2 class="${cls}${shut ? ' shut' : ''}" data-afold="${tab}:${gid}">` +
+    `<i></i>${name}<em>${count}</em>` +
+    (live ? `<b class="lv">${live}</b>` : '') +
+    `<span class="cv">${shut ? '▸' : '▾'}</span></h2>`;
+}
+const isShut = (tab, gid) => asideShut.has(`${tab}:${gid}`);
+
 let asideElQuery = '';
 let asideElTimer = 0;
 function renderAsideElements(q = asideElQuery) {
@@ -6663,12 +6677,16 @@ function renderAsideElements(q = asideElQuery) {
     ? (total > CAP
         ? `<p class="none">Showing ${CAP} of ${total} — keep typing to narrow.</p>` : '') +
       groups.map(([f, g]) => {
-        if (budget <= 0) return '';
+        // A folded group costs no chips, so it does not eat the budget either
+        // — collapsing the big families is how you get at the small ones.
+        const have = g.filter(e => found.has(e.id)).length;
+        if (isShut('elements', f.id))
+          return foldHead('elements', f.id, `fam-${f.id}`, f.name, g.length, have);
+        if (budget <= 0) return foldHead('elements', f.id, `fam-${f.id}`, f.name, g.length, have);
         const shown = g.slice(0, budget);
         budget -= shown.length;
-        const have = shown.filter(e => found.has(e.id)).length;
-        return `<h2 class="fam-${f.id}"><i></i>${f.name}<em>${g.length}</em>` +
-          (have ? `<b class="lv">${have}</b>` : '') + `</h2><div class="shelf">` +
+        return foldHead('elements', f.id, `fam-${f.id}`, f.name, g.length, have) +
+          `<div class="shelf">` +
           shown.map(e => found.has(e.id)
             ? `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${e.id}">${chipHTML(e)}</span>`
             : `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`
@@ -6735,11 +6753,25 @@ function toggleFavourite(id) {
 }
 function renderAsideFavourites() {
   const ids = [...favourites].filter(id => found.has(id) && byId[id]);
+  // Grouped by family and foldable, like every other tab. A flat list is fine
+  // for the first half-dozen stars and stops being fine well before the fiftieth.
+  const bucket = new Map();
+  for (const id of ids) {
+    const f = familyOf(byId[id]);
+    let g = bucket.get(f.id);
+    if (!g) bucket.set(f.id, g = []);
+    g.push(id);
+  }
+  const groups = FAMILIES.filter(f => bucket.has(f.id));
   const body = ids.length
-    ? `<div class="shelf">` + ids.map(id => {
-        const e = byId[id], f = familyOf(e);
-        return `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${id}">${chipHTML(e)}</span>`;
-      }).join('') + `</div>`
+    ? groups.map(f => {
+        const g = bucket.get(f.id);
+        const head = foldHead('favourites', f.id, `fam-${f.id}`, f.name, g.length, 0);
+        if (isShut('favourites', f.id)) return head;
+        return head + `<div class="shelf">` + g.map(id =>
+          `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${id}">${chipHTML(byId[id])}</span>`
+        ).join('') + `</div>`;
+      }).join('')
     : `<p class="none">Nothing favourited yet — open anything's Quick View and tap ☆ to add it here.</p>`;
   document.getElementById('asideFavourites').innerHTML = body;
 }
@@ -6795,24 +6827,91 @@ const fmt = (f) => String(f).replace(/(\d+)/g, '<sub>$1</sub>');
 // The Proteins tab: the same twenty-amino-acid grid showAtom('amino_acid')
 // already draws for its own sheet, reused here rather than reinvented, one
 // tap away instead of buried in the codex.
+// The twenty are not a list, they are four groups, and which group a residue
+// belongs to is most of what it does — a protein folds because the nonpolar
+// ones hide from water and the charged ones do not. Grouping by side chain is
+// the standard textbook division, so the tab now teaches something a flat
+// alphabetical grid could not.
+const AA_CLASS = [
+  ['nonpolar', 'Nonpolar side chain', 'They avoid water, so they end up buried in the core of a folded protein.',
+   ['glycine', 'alanine', 'valine', 'leucine', 'isoleucine', 'methionine', 'phenylalanine', 'tryptophan', 'proline']],
+  ['polar', 'Polar, uncharged', 'They hydrogen-bond with water and sit happily on the outside.',
+   ['serine', 'threonine', 'cysteine', 'tyrosine', 'asparagine', 'glutamine']],
+  ['acidic', 'Acidic — negative', 'Carboxyl side chains, deprotonated and negatively charged at cell pH.',
+   ['aspartate', 'aspartic_acid', 'glutamate', 'glutamic_acid']],
+  ['basic', 'Basic — positive', 'Nitrogen-rich side chains that pick up a proton and carry a positive charge.',
+   ['lysine', 'arginine', 'histidine']],
+];
 function renderAsideProteins() {
+  const aminos = BED.aminos ?? [];
+  const key = aa => aa.id.replace(/^bed_/, '');
+  const placed = new Set();
+  const sections = AA_CLASS.map(([gid, title, blurb, members]) => {
+    const g = aminos.filter(aa => members.includes(key(aa)));
+    g.forEach(aa => placed.add(aa.id));
+    if (!g.length) return '';
+    const head = foldHead('proteins', gid, `fam-${gid}`, title, g.length, 0);
+    if (isShut('proteins', gid)) return head;
+    return head + `<p class="none" style="text-align:left;padding:0 0 6px">${blurb}</p>` +
+      `<div class="aagrid">${g.map(aa =>
+        `<span class="aa" data-atom="${aa.id}"><b>${aa.code1}</b>` +
+        `<span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`).join('')}</div>`;
+  }).join('');
+  // Anything the table above did not claim still has to appear — a silent drop
+  // would be worse than an ugly heading.
+  const rest = aminos.filter(aa => !placed.has(aa.id));
+  const tail = rest.length
+    ? foldHead('proteins', 'other', 'fam-other', 'Not yet classified', rest.length, 0) +
+      (isShut('proteins', 'other') ? '' : `<div class="aagrid">${rest.map(aa =>
+        `<span class="aa" data-atom="${aa.id}"><b>${aa.code1}</b>` +
+        `<span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`).join('')}</div>`)
+    : '';
   document.getElementById('asideProteins').innerHTML =
-    `<p class="none" style="text-align:left;padding:0 0 6px">The twenty amino acids proteins are built from.</p>` +
-    `<div class="aagrid">${(BED.aminos ?? []).map(aa =>
-      `<span class="aa" data-atom="${aa.id}"><b>${aa.code1}</b>` +
-      `<span class="aatx"><em>${aa.name}</em><i>${fmt(aa.formula)}</i></span></span>`).join('')}</div>`;
+    `<p class="none" style="text-align:left;padding:0 0 6px">The twenty amino acids proteins are built from, grouped by side chain.</p>` +
+    sections + tail;
 }
 // The Animals tab: the animal kingdom's own phyla as an entry point — deeper
 // browsing (a phylum's own classes and members) happens in showTaxon's full
 // sheet, the same way Elements hands off to a locked chip's own hint sheet.
+let animalsFolded = false;
 function renderAsideAnimals() {
   const root = taxById['tx_animalia'];
+  // Opened flat this is the whole animal kingdom at once. Fold every group the
+  // first time the tab is drawn, so it starts as a readable list of phyla and
+  // opens where you ask it to — the Shelf does the same once it gets crowded.
+  if (!animalsFolded) {
+    for (const g of TAX.groups) asideShut.add(`animals:${g.id}`);
+    animalsFolded = true;
+  }
+  // A classification is a tree, and this tab used to render one row of it and
+  // hand the rest to a separate sheet. It expands in place now: a phylum opens
+  // into its classes and the animals sitting directly under it, and those open
+  // in turn, so you can see where a thing sits without leaving the panel.
+  const branch = (id, depth) => {
+    const kids = taxChildren(id);
+    const mine = elementsUnderTaxon(id);
+    const held = mine.filter(e => found.has(e.id));
+    const t = taxById[id];
+    const head = foldHead('animals', id, `fam-tx rank-${t.rank}`, t.name, mine.length, held.length);
+    if (isShut('animals', id)) return head;
+    // Only the elements that belong to THIS group, not to a child, so nothing
+    // is listed twice on the way down.
+    const own = mine.filter(e => e.taxon === id && found.has(e.id));
+    return head +
+      `<div style="margin-left:${Math.min(depth, 3) * 9}px">` +
+      (own.length
+        ? `<div class="shelf">` + own.map(e => {
+            const f = familyOf(e);
+            return `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${e.id}">${chipHTML(e)}</span>`;
+          }).join('') + `</div>`
+        : '') +
+      kids.filter(k => elementsUnderTaxon(k.id).length).map(k => branch(k.id, depth + 1)).join('') +
+      `</div>`;
+  };
   document.getElementById('asideAnimals').innerHTML =
     `<p class="none" style="text-align:left;padding:0 0 6px">${root.fact}</p>` +
-    `<div class="shelf" style="gap:7px">` + taxChildren('tx_animalia').map(p => {
-      const n = elementsUnderTaxon(p.id).filter(e => found.has(e.id)).length;
-      return `<span class="hex" data-taxon="${p.id}">${p.name}${n ? ` · ${n}` : ''}</span>`;
-    }).join('') + `</div>`;
+    taxChildren('tx_animalia').filter(p => elementsUnderTaxon(p.id).length)
+      .map(p => branch(p.id, 0)).join('');
 }
 function showAtom(id) {
   const a = atomById[id], c = compById[id] ?? aminoById[id];
@@ -8851,6 +8950,20 @@ document.getElementById('ptTab').addEventListener('click', () =>
 document.getElementById('asideTabs').addEventListener('click', ev => {
   const t = ev.target.closest('[data-asidetab]');
   if (t) setAsideTab(t.dataset.asidetab);
+});
+// One handler for every foldable heading outside the Shelf tab. Delegated off
+// the aside itself because each render replaces the headings wholesale.
+document.querySelector('aside').addEventListener('click', ev => {
+  const h = ev.target.closest('[data-afold]');
+  if (!h) return;
+  if (ev.target.closest('input')) return;
+  const key = h.dataset.afold;
+  asideShut.has(key) ? asideShut.delete(key) : asideShut.add(key);
+  const tab = key.slice(0, key.indexOf(':'));
+  if (tab === 'elements') renderAsideElements();
+  else if (tab === 'proteins') renderAsideProteins();
+  else if (tab === 'animals') renderAsideAnimals();
+  else if (tab === 'favourites') renderAsideFavourites();
 });
 // A single tap drops the card straight on the bench — the table is a
 // source of material, not a reference you have to drag out every time
