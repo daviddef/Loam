@@ -4767,17 +4767,20 @@ function placeMakesAll(id) {
   if (!list.length) return;
   pushUndo(`putting everything ${nameOf(byId[id])} makes on the bench`);
   // One undo for the whole batch, and one tidy at the end rather than per row —
-  // twelve separate relayouts is what made this feel like it had hung.
-  for (const r of list) placeOneRecipe(r, null);
+  // twelve separate relayouts is what made this feel like it had hung. One
+  // shared board map too: twenty-nine recipes that all take Sun should place
+  // one Sun, not twenty-nine, which matters when the bench caps at 140.
+  const already = boardAlready();
+  for (const r of list) placeOneRecipe(r, null, already);
   benchTouched = true;
   refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save();
   toast(`Added ${list.length} of the things ${nameOf(byId[id])} makes`);
 }
 // The shared half of placeRoute: put a specific recipe's inputs and output on
 // the bench. `undoLabel` is null when the caller is batching its own undo.
-function placeOneRecipe(r, undoLabel) {
+function placeOneRecipe(r, undoLabel, shared) {
   if (undoLabel) pushUndo(undoLabel);
-  const already = boardAlready();
+  const already = shared || boardAlready();
   const ensure = (iid) => {
     if (already.has(iid)) return already.get(iid);
     const el = spawn(iid);
@@ -4790,6 +4793,7 @@ function placeOneRecipe(r, undoLabel) {
     out.classList.remove('folded');
     links.push({ a: parents[0], b: parents[1] ?? null, out, fresh: true });
   } else out = materialize(r, parents);
+  if (out) already.set(r.out, out);       // the next recipe can build on it
   if (undoLabel) {
     benchTouched = true;
     refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save(); ensureVisible(out);
