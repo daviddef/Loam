@@ -538,7 +538,16 @@
   /* Everything hazardous on a thing's route, collapsed by default — it is
      reference, not an interruption, and most routes have nothing on them. */
   .upstream{margin:14px 0;border:1px solid var(--rule,rgba(0,0,0,.14));border-radius:8px;background:var(--card)}
-  .upstream>summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+  .upstream>summary{
+    cursor:pointer;padding:10px 14px;font-weight:600;list-style:none;
+    display:flex;align-items:center;gap:8px;
+  }
+  .upstream>summary .upmarks{display:flex;gap:4px;margin-left:auto;flex:none}
+  /* Smaller than the row badges: this is a preview of what is inside, not the
+     thing itself. */
+  .upstream>summary .hzm{flex:0 0 18px;height:18px;font-size:11px;border-radius:4px}
+  /* Open, every row carries its own badge, so the strip would only repeat them. */
+  .upstream[open]>summary .upmarks{display:none}
   .upstream>summary::-webkit-details-marker{display:none}
   .upstream>summary::before{content:'▸ ';opacity:.55}
   .upstream[open]>summary::before{content:'▾ '}
@@ -2070,7 +2079,7 @@
       <circle cx="70" cy="26" r="8" fill="#E0A526"/><circle cx="92" cy="34" r="8" fill="#6B8E4E"/>
       <rect x="42" y="66" width="36" height="30" rx="9" fill="#E2703A"/>
     </svg>
-    <h1 title="Build ae4b48f · 2026-09-02 22:42">Loam</h1>
+    <h1 title="Build 15813d7 · 2026-09-02 22:44">Loam</h1>
   </a>
   <button class="count" id="count" title="Open your codex"></button>
   <div class="goal" id="goal"></div>
@@ -7800,16 +7809,40 @@ function upstreamHazards(id) {
   return [...seen.values()].sort((x, y) => rank(x.c) - rank(y.c));
 }
 
+/* The badge a caution wears, as [class, glyph], so the row icons and the
+ * collapsed-header strip can never drift apart. Order matches the priority
+ * chain on the cards: radioactive, then carcinogen, then biohazard, then
+ * severity. */
+function hazardBadge(c) {
+  return c.kind === 'radioactivity' ? ['radioactive', '☢']
+    : c.carcinogen ? ['carcinogen', '<svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 10 A7 7 0 1 1 29.9 10" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 44 Q18 24 30 24 Q42 24 42 44" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.5 36 L39 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 38.47 L36.36 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 39.5 L30 45" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 38.47 L23.64 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.5 36 L21 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 33.53 L23.64 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 32.5 L30 27" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 33.53 L36.36 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="36" r="3.2" fill="var(--ik)"/></svg>']
+    : c.biohazard ? ['biohazard', '☣']
+    : [`sev-${c.severity || 'cumulative'}`, '!'];
+}
+
 function upstreamHazardHTML(id) {
   const hz = upstreamHazards(id);
   if (!hz.length) return '';
-  const mark = c => c.kind === 'radioactivity' ? '<i class="hzm radioactive">☢</i>'
-    : c.carcinogen ? '<i class="hzm carcinogen"><svg class="art" viewBox="0 0 60 60" data-cat="craft" aria-hidden="true"><path d="M30 10 A7 7 0 1 1 29.9 10" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 44 Q18 24 30 24 Q42 24 42 44" fill="none" stroke="var(--ik)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.5 36 L39 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 38.47 L36.36 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 39.5 L30 45" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 38.47 L23.64 42.36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.5 36 L21 36" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.53 33.53 L23.64 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 32.5 L30 27" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32.47 33.53 L36.36 29.64" fill="none" stroke="var(--ik)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="36" r="3.2" fill="var(--ik)"/></svg></i>'
-    : c.biohazard ? '<i class="hzm biohazard">☣</i>'
-    : `<i class="hzm sev-${c.severity || 'cumulative'}">!</i>`;
+  const mark = c => { const [cls, gl] = hazardBadge(c); return `<i class="hzm ${cls}">${gl}</i>`; };
   const n = hz.length;
+  // Collapsed, "2 things worth knowing" said there was something to see but
+  // not what kind — explosive, radioactive and merely fiddly all read the
+  // same. One icon per distinct badge, loudest first, so the shape of what is
+  // in there is legible before you open it. ("could we show the icons that are
+  // relevant ... before expanding?" — asked live.) hz is already rank-sorted,
+  // so insertion order is priority order.
+  const kinds = new Map();
+  for (const { c } of hz) {
+    const [cls, gl] = hazardBadge(c);
+    const r = kinds.get(cls) || (kinds.set(cls, { cls, gl, of: [] }), kinds.get(cls));
+    r.of.push(c.label);
+  }
+  const strip = [...kinds.values()]
+    .map(r => `<i class="hzm ${r.cls}" title="${r.of.join(' · ').replace(/"/g, '&quot;')}">${r.gl}</i>`)
+    .join('');
   return `<details class="upstream">
-      <summary>${n} thing${n === 1 ? '' : 's'} worth knowing on the way here</summary>
+      <summary><span>${n} thing${n === 1 ? '' : 's'} worth knowing on the way here</span>
+        <span class="upmarks">${strip}</span></summary>
       <p class="upnote">Following the route shown above, not every possible route.</p>
       ${hz.map(({ c, from }) => `<div class="uprow">${mark(c)}<div>
         <b>${c.label}</b>

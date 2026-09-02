@@ -469,7 +469,16 @@ __CATEGORY_CSS__
   /* Everything hazardous on a thing's route, collapsed by default — it is
      reference, not an interruption, and most routes have nothing on them. */
   .upstream{margin:14px 0;border:1px solid var(--rule,rgba(0,0,0,.14));border-radius:8px;background:var(--card)}
-  .upstream>summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+  .upstream>summary{
+    cursor:pointer;padding:10px 14px;font-weight:600;list-style:none;
+    display:flex;align-items:center;gap:8px;
+  }
+  .upstream>summary .upmarks{display:flex;gap:4px;margin-left:auto;flex:none}
+  /* Smaller than the row badges: this is a preview of what is inside, not the
+     thing itself. */
+  .upstream>summary .hzm{flex:0 0 18px;height:18px;font-size:11px;border-radius:4px}
+  /* Open, every row carries its own badge, so the strip would only repeat them. */
+  .upstream[open]>summary .upmarks{display:none}
   .upstream>summary::-webkit-details-marker{display:none}
   .upstream>summary::before{content:'▸ ';opacity:.55}
   .upstream[open]>summary::before{content:'▾ '}
@@ -7692,16 +7701,40 @@ function upstreamHazards(id) {
   return [...seen.values()].sort((x, y) => rank(x.c) - rank(y.c));
 }
 
+/* The badge a caution wears, as [class, glyph], so the row icons and the
+ * collapsed-header strip can never drift apart. Order matches the priority
+ * chain on the cards: radioactive, then carcinogen, then biohazard, then
+ * severity. */
+function hazardBadge(c) {
+  return c.kind === 'radioactivity' ? ['radioactive', '☢']
+    : c.carcinogen ? ['carcinogen', '__UI_CARCINOGEN__']
+    : c.biohazard ? ['biohazard', '☣']
+    : [`sev-${c.severity || 'cumulative'}`, '!'];
+}
+
 function upstreamHazardHTML(id) {
   const hz = upstreamHazards(id);
   if (!hz.length) return '';
-  const mark = c => c.kind === 'radioactivity' ? '<i class="hzm radioactive">☢</i>'
-    : c.carcinogen ? '<i class="hzm carcinogen">__UI_CARCINOGEN__</i>'
-    : c.biohazard ? '<i class="hzm biohazard">☣</i>'
-    : `<i class="hzm sev-${c.severity || 'cumulative'}">!</i>`;
+  const mark = c => { const [cls, gl] = hazardBadge(c); return `<i class="hzm ${cls}">${gl}</i>`; };
   const n = hz.length;
+  // Collapsed, "2 things worth knowing" said there was something to see but
+  // not what kind — explosive, radioactive and merely fiddly all read the
+  // same. One icon per distinct badge, loudest first, so the shape of what is
+  // in there is legible before you open it. ("could we show the icons that are
+  // relevant ... before expanding?" — asked live.) hz is already rank-sorted,
+  // so insertion order is priority order.
+  const kinds = new Map();
+  for (const { c } of hz) {
+    const [cls, gl] = hazardBadge(c);
+    const r = kinds.get(cls) || (kinds.set(cls, { cls, gl, of: [] }), kinds.get(cls));
+    r.of.push(c.label);
+  }
+  const strip = [...kinds.values()]
+    .map(r => `<i class="hzm ${r.cls}" title="${r.of.join(' · ').replace(/"/g, '&quot;')}">${r.gl}</i>`)
+    .join('');
   return `<details class="upstream">
-      <summary>${n} thing${n === 1 ? '' : 's'} worth knowing on the way here</summary>
+      <summary><span>${n} thing${n === 1 ? '' : 's'} worth knowing on the way here</span>
+        <span class="upmarks">${strip}</span></summary>
       <p class="upnote">Following the route shown above, not every possible route.</p>
       ${hz.map(({ c, from }) => `<div class="uprow">${mark(c)}<div>
         <b>${c.label}</b>
