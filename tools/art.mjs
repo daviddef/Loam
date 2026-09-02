@@ -33493,6 +33493,28 @@ const ship = {};
 for (const [id, v] of Object.entries(out)) ship[id] = { c: v.c, s: v.s };
 for (const [id, fn] of Object.entries(VERB)) ship['verb_' + id] = { c: 'craft', s: fn() };
 
+/* The composition tree draws from the same book. Its 205 compounds are not
+   elements, so the loop above never reached them and every one of them
+   rendered as an empty hexagon — "Bee is made of" listed Tracheal System,
+   Malpighian Tubules and Ecdysone as blank shapes. A def() keyed on a bed_ id
+   is emitted here instead, categorised by tier so the palette matches what the
+   thing actually is. Anything still undrawn keeps the hexagon, which is the
+   honest fallback rather than a wrong picture. */
+const BED_CAT = {
+  particle: 'molecule', molecule: 'molecule', monomer: 'molecule', polymer: 'molecule',
+  structure: 'living', assembly: 'living', cell: 'living', blood_cell: 'living',
+  tissue: 'living', tube: 'living', bone: 'living', fluid: 'living',
+  organ: 'living', joint: 'living', eggpart: 'living',
+};
+const BEDROCK = JSON.parse(readFileSync(join(root, 'data/bedrock.json'), 'utf8'));
+let bedDrawn = 0;
+for (const c of BEDROCK.compounds) {
+  if (!ART[c.id]) continue;
+  ship[c.id] = { c: BED_CAT[c.tier] || 'craft', s: ART[c.id]() };
+  bedDrawn++;
+}
+console.log(`  bedrock: ${bedDrawn} of ${BEDROCK.compounds.length} compounds drawn`);
+
 /* Interface marks. The gear and the stack render as full-colour emoji on some
    platforms and as text glyphs on others, which is exactly the inconsistency
    leaving emoji behind was meant to end. */

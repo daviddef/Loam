@@ -1791,6 +1791,11 @@ __CATEGORY_CSS__
   ul.tree.bed .brow .g:hover{border-color:var(--orange)}
   ul.tree.bed .brow .addroute{margin-left:auto;width:20px;height:20px;font-size:13px}
   .shelfbar{display:flex;gap:5px;align-items:center;margin:0 2px 8px}
+  /* the input takes the slack; without min-width:0 a flex item refuses to
+     shrink below its content and shoves the buttons off the panel edge. */
+  .shelfbar .search{flex:1;min-width:0}
+  .shelfbar button.on{background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line)}
+  .shelfbar button .gl{display:block;width:100%;height:100%}
   .search.sm{padding:7px 10px;font-size:12.5px;border-radius:9px}
   .shelfbar button{
     width:26px;height:26px;padding:0;border-radius:8px;font-size:14px;line-height:1;flex:none;
@@ -1980,6 +1985,8 @@ __CATEGORY_CSS__
      button not usable, hidin behind menu's"). -->
 <div id="resetMenu" role="menu" hidden>
   <button id="resetBase" role="menuitem" title="Back to Stone, Water, Sun, and Seed on the bench">Base Element Canvas</button>
+  <button id="resetWuxing" role="menuitem" title="Wood, Fire, Earth, Metal, Water — the five phases">Wuxing Canvas</button>
+  <button id="resetEarth" role="menuitem" title="The nine elements that make up almost all of the planet by mass">Whole Earth Canvas</button>
   <button id="resetClear" role="menuitem" title="A genuinely empty bench — nothing placed for you" class="danger">Clear Canvas</button>
 </div>
 
@@ -6637,8 +6644,8 @@ function renderAsideElements(q = asideElQuery) {
     `<div class="shelfbar">
        <input id="asideElQ" class="search sm" placeholder="Find…" value="${q}" autocomplete="off">
        <button id="asideElFound" class="${elFoundOnly ? 'on' : ''}"
-               title="${elFoundOnly ? 'Showing only what you have found' : 'Showing everything in the game'}"
-       >${elFoundOnly ? 'Found' : 'All'}</button>
+               title="${elFoundOnly ? 'Showing only what you have found — tap for everything' : 'Showing everything in the game — tap for only what you have found'}"
+       ><span class="gl" style="--g:15px">__UI_SHELF__</span></button>
        ${q ? '<button id="asideElX" title="Clear">×</button>' : ''}
      </div>` + readyHTML + body;
   const fb = document.getElementById('asideElFound');
@@ -8959,6 +8966,44 @@ document.addEventListener('pointerdown', ev => {
   if (ev.target === document.getElementById('reset') || resetMenu.contains(ev.target)) return;
   closeResetMenu();
 }, true);
+// Two more starting benches, both real sets rather than a pick of favourites.
+//
+// Wuxing is the Chinese five phases — wood, fire, earth, metal, water — which
+// is not a rival list of chemical elements but a model of how things turn into
+// each other, generating in one cycle and overcoming in another. Loam already
+// holds all five as ordinary elements, so this only changes what is on the
+// bench when you start.
+//
+// Whole Earth is the planet by mass, which is a different question from the
+// crust and gives a different answer: iron first, not oxygen, because most of
+// it is in the core.
+const CANVASES = {
+  wuxing: { name: 'Wuxing', ids: ['wood', 'fire', 'earth', 'metal', 'water'],
+            say: 'Start from the five phases — Wood, Fire, Earth, Metal, Water?' },
+  earth:  { name: 'Whole Earth',
+            ids: ['iron', 'oxygen', 'silicon', 'magnesium', 'sulfur', 'nickel', 'calcium', 'aluminum', 'hydrogen'],
+            say: 'Start from the whole planet by mass — iron, oxygen, silicon, magnesium, sulfur, nickel, calcium, aluminium and hydrogen?' },
+};
+function startCanvas(key) {
+  const c = CANVASES[key];
+  if (!c) return;
+  const ids = c.ids.filter(i => byId[i]);            // never place an id that is not there
+  if (!confirm(`${c.say}\n\nEverything you have found goes away. There is no undo.`)) return;
+  wiping = true;
+  clearTimeout(saveTimer); saveTimer = 0;
+  found.clear(); seen.clear(); links.length = 0; cooking.clear();
+  world.querySelectorAll('.chip.board').forEach(el => el.remove());
+  try {
+    localStorage.removeItem(REAL_KEY);
+    // An explicit bench, the same shape Clear Canvas writes, so restoreBench()
+    // does not fall back to the four starters on the way back in.
+    localStorage.setItem(KEY, JSON.stringify({
+      found: ids, seen: ids, bench: { cards: [], links: [], view: { x: 0, y: 0, k: 1 } },
+      canvas: key,
+    }));
+  } catch {}
+  location.reload();
+}
 function wipeProgress(clear) {
   const msg = clear
     ? 'Clear the canvas? Everything you have found goes away, and the bench starts genuinely empty — not even Stone, Water, Sun, and Seed. There is no undo.'
@@ -8991,6 +9036,8 @@ function wipeProgress(clear) {
   location.reload();
 }
 document.getElementById('resetBase').addEventListener('click', () => { closeResetMenu(); wipeProgress(false); });
+document.getElementById('resetWuxing').addEventListener('click', () => { closeResetMenu(); startCanvas('wuxing'); });
+document.getElementById('resetEarth').addEventListener('click', () => { closeResetMenu(); startCanvas('earth'); });
 document.getElementById('resetClear').addEventListener('click', () => { closeResetMenu(); wipeProgress(true); });
 document.getElementById('undo').addEventListener('click', undoLast);
 

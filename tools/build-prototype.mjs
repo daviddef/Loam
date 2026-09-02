@@ -88,9 +88,9 @@ for (const [token, value] of [
   ['__UI_LADDER__', uiGlyph('ui_ladder')],
   ['__UI_EYE__', uiGlyph('ui_eye')],
   ['__UI_CARCINOGEN__', uiGlyph('ui_carcinogen')],
-  // ui_shelf lost its last use when the Shelf tab folded into Elements as a
-  // filter. The drawing is kept — the tab may come back — but it is no longer
-  // required to appear, so the assertion below does not fail the build on it.
+  // ui_shelf came back: it is the All/Found toggle's mark now, which is the
+  // same idea the Shelf tab used to carry.
+  ['__UI_SHELF__', uiGlyph('ui_shelf')],
   ['__UI_ELEMENTS__', uiGlyph('ui_elements')],
   ['__UI_ANIMALS__', uiGlyph('ui_animals')],
   ['__PALETTE_CSS__', paletteCSS()],
