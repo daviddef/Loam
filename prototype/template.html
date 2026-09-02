@@ -375,7 +375,7 @@ __CATEGORY_CSS__
   /* A pill has no corner to spare; long-press covers it there. */
   body.d-pill .chip.board .info{display:none}
   aside .chip .info{
-    position:static;opacity:.42;margin-left:1px;flex:none;
+    position:static;transform:none;opacity:.42;margin-left:1px;flex:none;
     width:16px;height:16px;background:none;
   }
   aside .chip:hover .info{opacity:.8}
@@ -386,7 +386,11 @@ __CATEGORY_CSS__
      armed, at which point it (and the rest of the card, via .sprinkling on
      the parent) takes the same breathing glow. */
   .chip .sprinkle-btn{
-    position:absolute;bottom:3px;right:4px;width:15px;height:15px;
+    /* Middle of the right edge, not the bottom corner. The corner put it
+       under the card's own name plate on a board chip, which is where the
+       eye goes last and where a fat finger lands on the label instead. */
+    position:absolute;top:50%;right:4px;transform:translateY(-50%);
+    width:15px;height:15px;
     display:flex;align-items:center;justify-content:center;border-radius:50%;
     font:700 11px/1 var(--face-name);color:var(--ink-soft);
     background:rgba(var(--shade),.16);border:1px solid transparent;
@@ -5013,6 +5017,11 @@ board.addEventListener('pointerdown', ev => {
   if (ev.button === 2) return;                        // handled above, not a drag/pan
   if (ev.target.closest('#zoom, #intro')) return;
   if (touches.size > 1) return;                       // pinching, not dragging
+  // The hazard mark is a control, and a card is dragged on pointerdown — so
+  // it has to be claimed here beside data-info, not left to a click that the
+  // drag has already swallowed. Tapping it was starting a drag instead.
+  const hzd = ev.target.closest('[data-hazard]');
+  if (hzd && hzd.dataset.hazard) { ev.preventDefault(); return showHazard(hzd.dataset.hazard, hzd.dataset.hazardOf); }
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   const spr = ev.target.closest('[data-sprinkle]');
@@ -7570,14 +7579,6 @@ function openSheet(title) {
   document.getElementById('sheetTitle').textContent = title;
   document.getElementById('sheet').classList.add('on');
 }
-// The hazard badge is a control wherever it appears — board, shelf, any panel —
-// so this is captured at the document before the chip handlers see it.
-document.addEventListener('click', ev => {
-  const hz = ev.target.closest('[data-hazard]');
-  if (!hz || !hz.dataset.hazard) return;
-  ev.preventDefault(); ev.stopPropagation();
-  showHazard(hz.dataset.hazard, hz.dataset.hazardOf);
-}, true);
 document.getElementById('sheet').addEventListener('click', ev => {
   // These three "+ Chart" buttons can sit INSIDE a foldable row (a
   // composition tree node that also has children) — checked before
@@ -8860,6 +8861,11 @@ document.getElementById('aside').addEventListener('click', ev => {
   if (tx) return showTaxon(tx.dataset.taxon);
 });
 document.getElementById('aside').addEventListener('pointerdown', ev => {
+  // The hazard mark is a control, and a card is dragged on pointerdown — so
+  // it has to be claimed here beside data-info, not left to a click that the
+  // drag has already swallowed. Tapping it was starting a drag instead.
+  const hzd = ev.target.closest('[data-hazard]');
+  if (hzd && hzd.dataset.hazard) { ev.preventDefault(); return showHazard(hzd.dataset.hazard, hzd.dataset.hazardOf); }
   const nfo = ev.target.closest('[data-info]');
   if (nfo) { ev.preventDefault(); return openAbout(nfo.dataset.info); }
   const spr = ev.target.closest('[data-sprinkle]');
