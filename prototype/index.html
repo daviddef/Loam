@@ -2568,10 +2568,28 @@ const unlockedVerbs = () => new Set(
 // blind — it narrows the field without ever naming a partner.
 // How many held elements still have an undiscovered recipe in them?
 function liveCount() {
-  const ul = unlockedVerbs();
   let n = 0;
-  for (const e of elements) if (found.has(e.id) && secretsFor(e.id, ul) > 0) n++;
+  for (const v of secretsMap(unlockedVerbs()).values()) if (v > 0) n++;
   return n;
+}
+// The same question as secretsFor, asked once for everything instead of once
+// per element. Asking it per element re-walks all the recipes each time: a
+// shelf of 400 costs 400 × 8,024 checks, and renderShelf asks on every
+// keystroke in the Find box, which is where the second-per-letter came from.
+// Walking the recipes once and letting each live recipe credit its own inputs
+// gives identical counts for two orders of magnitude less work.
+//
+// r.in is deduplicated because secretsFor counts a recipe once however many
+// times an element appears in it — water + water must credit water once.
+function secretsMap(ul) {
+  const m = new Map();
+  for (const r of DATA.recipes) {
+    if (found.has(r.out)) continue;
+    if (r.verb && !ul.has(r.verb)) continue;
+    if (!r.in.every(i => found.has(i))) continue;
+    for (const i of (r.in.length > 1 ? new Set(r.in) : r.in)) m.set(i, (m.get(i) || 0) + 1);
+  }
+  return m;
 }
 function secretsFor(id, ul) {
   let n = 0;
@@ -2949,7 +2967,7 @@ function renderShelf() {
   const groups = FAMILIES.map(f => [f, elements.filter(e => found.has(e.id) && familyOf(e).id === f.id)])
     .filter(([, g]) => g.length)
     .sort((a, b) => (a[0].id === 'myth') - (b[0].id === 'myth'));   // folklore last
-  const secrets = new Map(elements.filter(e => found.has(e.id)).map(e => [e.id, secretsFor(e.id, ul)]));
+  const secrets = secretsMap(ul);
   const liveCount = [...secrets.values()].filter(n => n > 0).length;
   const q = (shelfQuery || '').toLowerCase();
   if (!shelfAutoFolded && found.size > 40) {          // tidy itself once crowded
