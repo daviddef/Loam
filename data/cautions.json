@@ -2540,6 +2540,68 @@
       ],
       "severity": "acute",
       "biohazard": true
+    },
+    "aflatoxin_in_storage": {
+      "label": "Groundnuts and maize grow the most potent liver carcinogen known if they are stored warm and damp",
+      "note": "Aspergillus flavus grows on stored groundnuts, maize, tree nuts and spices wherever moisture reaches about 7% and the temperature sits between 13 and 40°C, and it produces aflatoxin. Naturally occurring aflatoxins are an IARC Group 1 carcinogen, and somewhere between 5 and 28% of the world's liver cancer is attributed to them. The risk multiplies with hepatitis B: infected and exposed together carries up to thirty times the risk of exposure alone, which is why the burden falls on sub-Saharan Africa, Southeast Asia and China. Regulated markets test for it and cap it — the FDA limit is 20 parts per billion.",
+      "ids": [
+        "peanut",
+        "peanut_butter",
+        "maize",
+        "pistachio",
+        "brazil_nut"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "alcohol_carcinogen": {
+      "label": "Alcohol has been a Group 1 carcinogen since 1988",
+      "note": "IARC classified alcoholic beverages as carcinogenic to humans in 1988, and acetaldehyde — what the liver turns ethanol into — in 2009. It causes cancer of the mouth, pharynx, larynx, oesophagus, liver, colon, rectum and breast. About 740,000 cancer cases in 2020, 4.1% of all new cases, were attributed to alcohol, more than three-quarters of them in men. There is no drink that is exempt: the risk follows the ethanol, not the kind of drink it arrives in.",
+      "ids": [
+        "beer",
+        "wine",
+        "cider",
+        "mead",
+        "aged_wine"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "processed_meat_carcinogen": {
+      "label": "Processed meat is a Group 1 carcinogen, in the same confidence class as tobacco",
+      "note": "IARC classified processed meat — meat salted, cured, fermented or smoked to preserve it or change its flavour — as carcinogenic to humans in 2015. Every 50 grams eaten daily raises the risk of bowel cancer by about 18%, and roughly 34,000 cancer deaths a year worldwide are attributed to diets high in it. Group 1 describes how certain the evidence is, not how dangerous the thing is: tobacco sits in the same group and is estimated to kill about a million people a year.",
+      "ids": [
+        "bacon",
+        "ham",
+        "hot_dog",
+        "cured_meat",
+        "sausage"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
+    },
+    "red_meat_probable_carcinogen": {
+      "label": "Red meat is probably carcinogenic, on weaker evidence than processed meat",
+      "note": "IARC places red meat — all mammalian muscle meat, so beef, veal, pork, lamb, mutton, horse and goat — in Group 2A, probably carcinogenic to humans. The association with bowel cancer is consistent but the evidence is not strong enough to call it causal: if it is, every 100 grams a day would raise the risk by about 17%, and some 50,000 cancer deaths a year would be attributable to it.",
+      "ids": [
+        "beef",
+        "pork",
+        "lamb",
+        "mutton",
+        "veal",
+        "steak",
+        "mince"
+      ],
+      "severity": "cumulative"
+    },
+    "salted_fish_carcinogen": {
+      "label": "Chinese-style salted fish is a Group 1 carcinogen",
+      "note": "IARC classifies Chinese-style salted fish as carcinogenic to humans, linked to nasopharyngeal cancer and to stomach cancer. The salting is what does it: the fish partially ferments before it dries, and the nitrites it carries can go on to form nitrosamines. Salting as a preservation method is not the same thing as this particular preparation.",
+      "ids": [
+        "salt_fish"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

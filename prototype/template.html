@@ -6883,6 +6883,7 @@ function showHint(id) {
     <div class="phead"><span class="big">${glyph(e.id, 34)}</span><h3>${nameOf(e)}</h3>
       <div class="pnums">Not made yet</div></div>
     <div class="hintbox">${body}</div>
+    ${upstreamHazardHTML(id)}
     ${best && lvl < 2 ? `<div class="cardrow"><button class="ghost" data-more="${id}">
         ${lvl === 0 ? 'Give me a nudge' : 'Just tell me'}</button></div>` : ''}
     ${pathHTML}
