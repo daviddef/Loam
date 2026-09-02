@@ -33195,6 +33195,30 @@ def('yardlong_bean', () => [                                                    
   S('M24 13 Q35 29 30 45 Q28 53 35 59', 'bs', 4),
   ...[[19, 27], [21, 39], [32, 29], [30, 43]].map(([x, y]) => C(x, y, 1.8, 'gh')),    // a cowpea's seeds, spaced right out
 ]);
+def('serpentinite', () => [                                                          // seawater forced into mafic rock, deep under the ocean floor
+  P('M6 30 L54 26 L54 50 L6 52 Z', 'bs'),                                             // the rock body
+  ...[[10, 34], [24, 32], [38, 31], [48, 30]].map(([x, y]) =>
+    S(`M${x} ${y} q4 5 0 10 q-4 5 0 9`, 'lo', 1.3)),                                  // serpentine's mottled veining
+  S('M6 22 L54 18', 'ik', 1.4),                                                       // the sea floor above it
+  ...[[14, 20], [30, 18], [44, 17]].map(([x, y]) =>
+    S(`M${x} ${y} l0 6`, 'hi', 1.2)),                                                 // water pressed down into it
+]);
+def('asbestos', () => [                                                              // one serpentine fibre, five amphiboles — and why it is dangerous
+  P('M8 12 L20 10 L22 50 L10 52 Z', 'bs'),                                            // the serpentine group: one mineral
+  ...Array.from({ length: 7 }, (_, k) =>
+    S(`M${11 + k * 1.4} 13 q1.5 18 0 36`, 'hi', .7)),                                 // chrysotile's curled fibres
+  ...Array.from({ length: 5 }, (_, k) =>
+    S(`M${31 + k * 5} 14 L${31 + k * 5} 48`, 'lo', 2)),                               // the five amphiboles: straight, needle-like
+  S('M28 8 L28 54', 'gh', .8),                                                        // the line between the two groups
+]);
+def('mesothelioma', () => [                                                          // the lung lining, and the twenty years before it shows
+  P('M30 14 q-16 6 -14 22 q2 14 14 12 Z', 'bs'),                                      // one lung
+  S('M30 14 q-16 6 -14 22 q2 14 14 12', 'ik', 1.6),                                   // its lining, thickened
+  ...[[20, 30], [24, 38], [17, 36]].map(([x, y]) => C(x, y, 2.4, 'lo')),               // the growth in it
+  ...Array.from({ length: 5 }, (_, k) =>
+    S(`M${38 + k * 3.6} ${46 - k * 6} l0 4`, 'gh', 1.2)),                             // twenty years, counted off
+  S('M36 50 L54 50', 'gh', 1),
+]);
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

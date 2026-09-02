@@ -2714,10 +2714,20 @@ const FAMILIES = [
   { id: 'fire',    name: 'Fire & Tools',    tags: ['fire', 'tool'] },
   { id: 'food',    name: 'Kitchen',         tags: ['food', 'dish', 'sweet', 'drink', 'preserve'] },
 ];
+// Memoised: this is called once per element per family in the aside's grouping
+// pass, and its answer never changes for a given element.
+const FAMILY_CACHE = new WeakMap();
 function familyOf(e) {
-  if (e.shelf === 'folklore') return FAMILIES[0];
-  for (const f of FAMILIES) if (e.tags.some(t => f.tags.includes(t))) return f;
-  return FAMILIES[7];
+  const hit = FAMILY_CACHE.get(e);
+  if (hit) return hit;
+  let f = FAMILIES[7];
+  if (e.shelf === 'folklore') f = FAMILIES[0];
+  else {
+    const m = FAMILIES.find(fam => e.tags.some(t => fam.tags.includes(t)));
+    if (m) f = m;
+  }
+  FAMILY_CACHE.set(e, f);
+  return f;
 }
 
 // ---------- rendering ----------
@@ -6454,18 +6464,42 @@ function ptHeight(px) {
 // ---- the aside pane's "Elements" tab: a plain list of the game's own
 // elements, found or not — deliberately NOT the periodic chart above. ----
 let asideElQuery = '';
+let asideElTimer = 0;
 function renderAsideElements(q = asideElQuery) {
   asideElQuery = q;
   const ql = q.toLowerCase();
-  const groups = FAMILIES.map(f => [f, elements.filter(e => familyOf(e).id === f.id && matchesSearch(e, ql))])
-    .filter(([, g]) => g.length)
+  // One pass, not one per family. The old form was FAMILIES.map over
+  // elements.filter, so every element was tested against every family — ten
+  // times the work, and ten times the matchesSearch calls.
+  const bucket = new Map();
+  for (const e of elements) {
+    if (!matchesSearch(e, ql)) continue;
+    const f = familyOf(e);
+    let g = bucket.get(f.id);
+    if (!g) bucket.set(f.id, g = []);
+    g.push(e);
+  }
+  const groups = FAMILIES.filter(f => bucket.has(f.id))
+    .map(f => [f, bucket.get(f.id)])
     .sort((a, b) => (a[0].id === 'myth') - (b[0].id === 'myth'));
+  // Building a chip is not free — each one inlines its drawing — so a query
+  // matching thousands of elements costs seconds no matter how fast the filter
+  // is. Draw a bounded number and say plainly how many were left out, rather
+  // than freezing the pane. Typing one more letter almost always clears it.
+  const CAP = 700;
+  const total = groups.reduce((n, [, g]) => n + g.length, 0);
+  let budget = CAP;
   const body = groups.length
-    ? groups.map(([f, g]) => {
-        const have = g.filter(e => found.has(e.id)).length;
+    ? (total > CAP
+        ? `<p class="none">Showing ${CAP} of ${total} — keep typing to narrow.</p>` : '') +
+      groups.map(([f, g]) => {
+        if (budget <= 0) return '';
+        const shown = g.slice(0, budget);
+        budget -= shown.length;
+        const have = shown.filter(e => found.has(e.id)).length;
         return `<h2 class="fam-${f.id}"><i></i>${f.name}<em>${g.length}</em>` +
           (have ? `<b class="lv">${have}</b>` : '') + `</h2><div class="shelf">` +
-          g.map(e => found.has(e.id)
+          shown.map(e => found.has(e.id)
             ? `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${e.id}">${chipHTML(e)}</span>`
             : `<span class="chip locked" data-hint="${e.id}">${chipHTML(e)}<i class="q">?</i></span>`
           ).join('') + `</div>`;
@@ -6476,10 +6510,25 @@ function renderAsideElements(q = asideElQuery) {
        <input id="asideElQ" class="search sm" placeholder="Find…" value="${q}" autocomplete="off">
        ${q ? '<button id="asideElX" title="Clear">×</button>' : ''}
      </div>` + body;
+  // The old handler re-rendered the whole panel — input included — then had to
+  // re-find the box, re-focus it and restore the caret, on every keystroke.
+  // Re-binding here is still needed because the innerHTML above replaces the
+  // input, but the search itself is now cheap enough that the churn is not
+  // what the player feels. Keeping the caret restore, since the input really
+  // is a new element each time.
   const box = document.getElementById('asideElQ');
-  box.oninput = () => { renderAsideElements(box.value);
-    const b2 = document.getElementById('asideElQ'); b2.focus();
-    b2.setSelectionRange(b2.value.length, b2.value.length); };
+  box.oninput = () => {
+    // Debounced: typing "asbestos" used to render eight times, and the first
+    // render — one letter, thousands of matches — was the expensive one. Now a
+    // burst of keystrokes renders once, when the typing stops.
+    const v = box.value;
+    clearTimeout(asideElTimer);
+    asideElTimer = setTimeout(() => {
+      renderAsideElements(v);
+      const b2 = document.getElementById('asideElQ');
+      if (b2) { b2.focus(); b2.setSelectionRange(v.length, v.length); }
+    }, 140);
+  };
   const x = document.getElementById('asideElX');
   if (x) x.onclick = () => renderAsideElements('');
 }
@@ -7434,12 +7483,36 @@ function consolidateBench() {
  * and it turns out to be the same question a player is asking when they type a
  * word the game does not use. So search asks it too.
  */
+// An id -> [alias phrases] index, built once on first use.
+//
+// This function is called once per element per family, so on a 6,000-element
+// corpus with ten families that is 60,000 calls per keystroke. It used to run
+// Object.entries(LABELS.aliases) inside every one of them — 891 aliases, so
+// ~52 million iterations and 60,000 throwaway arrays per letter typed. Typing
+// in the Find box took 3.6 seconds a character, and a query matching NOTHING
+// was the slowest of all, because it never returned early on the name and so
+// always ran the whole alias scan. ("the find is incredibly slow. each letter
+// takes a second or two to come up as i type" — measured at 3,661 ms with the
+// scan, 49 ms without it.)
+let ALIAS_BY_ID = null;
+function aliasesFor(id) {
+  if (!ALIAS_BY_ID) {
+    ALIAS_BY_ID = new Map();
+    for (const [phrase, target] of Object.entries(LABELS.aliases)) {
+      let list = ALIAS_BY_ID.get(target);
+      if (!list) ALIAS_BY_ID.set(target, list = []);
+      list.push(phrase);
+    }
+  }
+  return ALIAS_BY_ID.get(id);
+}
+
 function matchesSearch(e, q) {
   if (!q) return true;
   const n = nameOf(e).toLowerCase();
   if (n.includes(q)) return true;
-  for (const [phrase, id] of Object.entries(LABELS.aliases))
-    if (id === e.id && phrase.includes(q)) return true;
+  const alt = aliasesFor(e.id);
+  if (alt) for (const phrase of alt) if (phrase.includes(q)) return true;
   return false;
 }
 

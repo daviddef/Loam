@@ -79953,5 +79953,35 @@
     "why": "Its sweet resinous foliage is a traditional insect repellent, used by campers and marketed in Scotland against the Highland midge.",
     "src": "https://en.wikipedia.org/wiki/Myrica_gale",
     "verified": true
+  },
+  {
+    "in": [
+      "peridotite",
+      "sea"
+    ],
+    "out": "serpentinite",
+    "why": "Serpentinite forms when mafic or ultramafic rock is hydrated by carbon-dioxide-deficient seawater pressed into it far below the ocean floor — at mid-ocean ridges, and in the forearc mantle above subduction zones.",
+    "src": "https://en.wikipedia.org/wiki/Serpentinite",
+    "verified": true
+  },
+  {
+    "in": [
+      "fibre",
+      "serpentinite"
+    ],
+    "out": "asbestos",
+    "why": "Chrysotile is the only asbestos mineral in the serpentine group and comes out of serpentinite rock, which is common worldwide; the other five regulated forms are amphiboles.",
+    "src": "https://en.wikipedia.org/wiki/Asbestos",
+    "verified": true
+  },
+  {
+    "in": [
+      "asbestos",
+      "lung"
+    ],
+    "out": "mesothelioma",
+    "why": "Inhaled asbestos fibres lodge in the lining of the lung. The latency from exposure to diagnosis is typically twenty years, and mesothelioma often leaves less than twelve months after that.",
+    "src": "https://en.wikipedia.org/wiki/Asbestos",
+    "verified": true
   }
 ]

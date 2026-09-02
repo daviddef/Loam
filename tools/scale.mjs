@@ -209,6 +209,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* asbestos chain, 2 Sep */ 'asbestos',
           /* crops and materials wave, 2 Sep */
           'alfalfa_sprout', 'aonla', 'boysenberry', 'chilli_pepper', 'currant', 'einkorn', 'elderberry', 'emmer',
           'fava_bean', 'feijoa', 'fiddlehead_fern', 'finger_lime', 'gooseberry', 'hop', 'huckleberry', 'jerusalem_artichoke',
@@ -519,6 +520,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* asbestos chain, 2 Sep */ 'mesothelioma',
           /* crops and materials wave, 2 Sep */
           'cattail_reed', 'coffee_crop', 'dill_crop', 'fennel_crop', 'guayule_shrub', 'hemp', 'papyrus_reed', 'sea_buckthorn',
           'sorghum_broomcorn', 'sweet_gale', 'tea_tea',
@@ -769,6 +771,7 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* asbestos chain, 2 Sep */ 'serpentinite',
           /* unblocking-nouns wave, 2 Sep */
           'bastion_fort', 'exaptation', 'fortification', 'heterozygote_advantage', 'kin_selection', 'motte_and_bailey', 'neoteny', 'permian_triassic_extinction',
           'rna_world', 'sexual_dimorphism',
