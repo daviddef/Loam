@@ -1650,7 +1650,12 @@ __CATEGORY_CSS__
      plain list of every element in the game, NOT the periodic chart),
      Proteins (the twenty amino acids) and Animals (browse by taxonomy).
      Icon-only, since a text label doesn't fit four across. */
-  #asideTabs{display:flex;gap:4px;margin:0 0 9px}
+  /* Eight tabs where there were four. A single row overflowed the pane at
+     any sensible width — measured at 258px of buttons in a 201px bar — and
+     the eighth simply sat outside it, which is the same fault the Found
+     toggle had. It wraps instead. */
+  #asideTabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 9px}
+  #asideTabs .atab{flex:1 0 auto;min-width:30px}
   #asideTabs .atab{
     flex:1;display:flex;align-items:center;justify-content:center;
     padding:7px 6px;border-radius:8px;color:var(--ink-soft);background:none;cursor:pointer;
@@ -2050,12 +2055,20 @@ __CATEGORY_CSS__
       <button class="atab on" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px">__UI_ELEMENTS__</span></button>
       <button class="atab" data-asidetab="proteins" title="Proteins — the twenty amino acids"><span class="gl" style="--g:19px">__UI_AMINO__</span></button>
       <button class="atab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px">__UI_ANIMALS__</span></button>
+      <button class="atab" data-asidetab="plants" title="Plants — everything that grows">🌱</button>
+      <button class="atab" data-asidetab="toxins" title="Toxins — hazards, carcinogens, poisons">☣</button>
+      <button class="atab" data-asidetab="microbes" title="Microbes — bacteria, viruses, parasites">🦠</button>
+      <button class="atab" data-asidetab="periodic" title="The periodic table's own elements">⚛</button>
       <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
     </div>
     <div id="asideShelf" class="apane"></div>
     <div id="asideElements" class="apane on"></div>
     <div id="asideProteins" class="apane"></div>
     <div id="asideAnimals" class="apane"></div>
+    <div id="asidePlants" class="apane"></div>
+    <div id="asideToxins" class="apane"></div>
+    <div id="asideMicrobes" class="apane"></div>
+    <div id="asidePeriodic" class="apane"></div>
     <div id="asideFavourites" class="apane"></div>
   </aside>
 </main>
@@ -6657,6 +6670,120 @@ let asideElQuery = '';
 let asideElTimer = 0;
 // Elements absorbed the Shelf, so this is the old Shelf/Elements distinction
 // reduced to a filter. Remembered, because which one you want is a habit.
+// Four more tabs, one renderer. Each is a different question asked of the same
+// corpus, so what differs between them is a grouping function, not a panel.
+//
+// Toxins is the one that pays for the others: cautions.json already knows every
+// hazard and CAUTION_BY_ID already indexes it by element, so this is a view over
+// data the overlay built rather than a new pass over the corpus.
+const ASIDE_VIEWS = {
+  plants: {
+    blurb: 'Everything that grows, by what kind of thing it is.',
+    groups: () => {
+      const of = new Map();
+      const put = (k, e) => { let g = of.get(k); if (!g) of.set(k, g = []); g.push(e); };
+      for (const e of elements) {
+        const t = new Set(e.tags || []);
+        if (!(t.has('plant') || t.has('crop'))) continue;
+        put(t.has('crop') ? 'Crops' : e.taxon ? 'Named species' : 'Plant parts and kinds', e);
+      }
+      return [...of];
+    },
+  },
+  toxins: {
+    blurb: 'Everything the game marks as able to hurt you, by how it does it.',
+    groups: () => {
+      const rank = [
+        ['Radioactive', c => c.kind === 'radioactivity'],
+        ['Carcinogens', c => c.carcinogen],
+        ['Infectious', c => c.biohazard],
+        ['Kills or maims', c => (c.severity === 'acute')],
+        ['Harms on contact', c => c.severity === 'contact'],
+        ['Harms over time', c => c.severity === 'cumulative'],
+        ['Harms some people', c => c.severity === 'conditional'],
+      ];
+      // One element, one group — the worst thing true of it, matching the
+      // badge's own order so the tab and the card never disagree.
+      const seen = new Set(), out = [];
+      for (const [name, test] of rank) {
+        const g = elements.filter(e => !seen.has(e.id) && cautionsFor(e.id).some(test));
+        g.forEach(e => seen.add(e.id));
+        if (g.length) out.push([name, g]);
+      }
+      return out;
+    },
+  },
+  microbes: {
+    blurb: 'Bacteria, viruses, parasites and fungi — and the diseases they cause.',
+    groups: () => {
+      // The `microbe` tag is much wider than microbes: it also carries dna,
+      // ribosome, mitosis and the whole molecular-biology vocabulary. So this
+      // asks what the thing IS rather than what it is tagged, and puts the
+      // rest under its own heading instead of a 644-strong "Other" that made
+      // the tab useless.
+      const txName = id => {
+        let t = byId[id] && byId[id].taxon, names = [];
+        while (t && taxById[t]) { names.push(taxById[t].name); t = taxById[t].parent; }
+        return names.join(' ');
+      };
+      const rank = [
+        ['Viruses', e => /\bvirus(es)?\b|viral|virion|phage|retrovirus/i.test(e.fact || '') || /Virus/i.test(txName(e.id))],
+        ['Bacteria', e => /\bbacteri|bacillus|coccus|streptococc|staphylococc|spirochete|mycobacteri/i.test(e.fact || '') || /Bacteria/i.test(txName(e.id))],
+        ['Parasites', e => /\bparasit|tapeworm|roundworm|hookworm|fluke|protozoa|amoeb|plasmodium|leishman|trypanosom|schistosom|nematode/i.test(e.fact || '')],
+        ['Fungi', e => /\bfungus|fungal|yeast|mould|mildew|mycelium|hypha|spore-bearing/i.test(e.fact || '') || /Fungi/i.test(txName(e.id))],
+        ['The diseases they cause', e => cautionsFor(e.id).some(c => c.biohazard)],
+      ];
+      const seen = new Set(), out = [];
+      const pool = elements.filter(e => (e.tags || []).includes('microbe'));
+      for (const [name, test] of rank) {
+        const g = pool.filter(e => !seen.has(e.id) && test(e));
+        g.forEach(e => seen.add(e.id));
+        if (g.length) out.push([name, g]);
+      }
+      // Everything the tag swept in that is not an organism. Named, not hidden.
+      const rest = pool.filter(e => !seen.has(e.id));
+      if (rest.length) out.push(['Cell and molecular biology', rest]);
+      return out;
+    },
+  },
+  periodic: {
+    blurb: 'The chemical elements themselves, and which of them you can play.',
+    groups: () => {
+      const of = new Map();
+      for (const a of (BED.atoms || [])) {
+        const gid = PLAYABLE_ATOM.get(a.id);
+        const k = gid && byId[gid] ? 'In the game' : 'Reference only';
+        let g = of.get(k); if (!g) of.set(k, g = []);
+        g.push(gid && byId[gid] ? byId[gid] : { atom: a });
+      }
+      return [...of];
+    },
+  },
+};
+function renderAsideGrouped(tab) {
+  const view = ASIDE_VIEWS[tab];
+  const pane = document.getElementById(ASIDE_PANE[tab]);
+  const groups = view.groups();
+  let budget = 700;
+  const body = groups.map(([name, list]) => {
+    const gid = name.replace(/\W+/g, '_').toLowerCase();
+    const held = list.filter(x => x.id && found.has(x.id)).length;
+    const head = foldHead(tab, gid, 'fam-tx', name, list.length, held);
+    if (isShut(tab, gid) || budget <= 0) return head;
+    const shown = list.slice(0, budget);
+    budget -= shown.length;
+    return head + `<div class="shelf">` + shown.map(x => {
+      if (x.atom) return `<span class="hex" data-atom="${x.atom.id}">${x.atom.symbol} ${x.atom.name}</span>`;
+      const f = familyOf(x);
+      return found.has(x.id)
+        ? `<span class="chip fam-${f.id}" data-fam="${f.id}" data-spawn="${x.id}">${chipHTML(x)}</span>`
+        : `<span class="chip locked" data-hint="${x.id}">${chipHTML(x)}<i class="q">?</i></span>`;
+    }).join('') + `</div>`;
+  }).join('');
+  pane.innerHTML = `<p class="none" style="text-align:left;padding:0 0 6px">${view.blurb}</p>` +
+    (body || '<p class="none">Nothing here yet.</p>');
+}
+
 let elFoundOnly = !!(prefs.foundOnly ?? 0);
 let elementsFolded = false;
 function renderAsideElements(q = asideElQuery) {
@@ -6776,6 +6903,8 @@ function renderAsideElements(q = asideElQuery) {
 let asideTab = 'elements';
 const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
                       proteins: 'asideProteins', animals: 'asideAnimals',
+                      plants: 'asidePlants', toxins: 'asideToxins',
+                      microbes: 'asideMicrobes', periodic: 'asidePeriodic',
                       favourites: 'asideFavourites' };
 function setAsideTab(tab) {
   asideTab = tab;
@@ -6786,6 +6915,10 @@ function setAsideTab(tab) {
   if (tab === 'elements') renderAsideElements();
   if (tab === 'proteins') renderAsideProteins();
   if (tab === 'animals') renderAsideAnimals();
+  if (tab === 'plants') renderAsideGrouped('plants');
+  if (tab === 'toxins') renderAsideGrouped('toxins');
+  if (tab === 'microbes') renderAsideGrouped('microbes');
+  if (tab === 'periodic') renderAsideGrouped('periodic');
   if (tab === 'favourites') renderAsideFavourites();
 }
 // "can you allow me to 'favourite' elements, adding a favourite group/tab" —
@@ -9163,6 +9296,7 @@ document.querySelector('aside').addEventListener('click', ev => {
   else if (tab === 'proteins') renderAsideProteins();
   else if (tab === 'animals') renderAsideAnimals();
   else if (tab === 'favourites') renderAsideFavourites();
+  else if (ASIDE_VIEWS[tab]) renderAsideGrouped(tab);
 });
 // A single tap drops the card straight on the bench — the table is a
 // source of material, not a reference you have to drag out every time
