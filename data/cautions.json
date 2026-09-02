@@ -210,7 +210,11 @@
         "thorium",
         "plutonium",
         "polonium",
-        "monazite"
+        "monazite",
+        "actinium",
+        "radium_fluoride",
+        "strontium_fluoride",
+        "tritium"
       ],
       "severity": "cumulative"
     },
@@ -586,7 +590,8 @@
       "label": "Raw cassava is toxic — bitter varieties badly so",
       "note": "Cassava's roots, peel and leaves carry cyanogenic glycosides — mainly linamarin — that release hydrogen cyanide once the plant's own enzyme breaks them down, which is exactly what happens when it's chewed raw. Sweet varieties carry only a little; bitter varieties can carry fifty times as much, and need soaking, grating and fermenting for days before the toxin drops to a safe level, not just cooking. Long-term exposure to poorly processed cassava causes konzo, a real, irreversible paralytic disease still seen where processing is rushed.",
       "ids": [
-        "cassava"
+        "cassava",
+        "tapioca"
       ],
       "severity": "conditional"
     },
@@ -2602,6 +2607,47 @@
       ],
       "severity": "cumulative",
       "carcinogen": true
+    },
+    "carbon_monoxide_poisoning": {
+      "label": "Carbon monoxide gives no warning at all, and binds 240 times harder than oxygen",
+      "note": "It is colourless, odourless and tasteless, so nothing about a room tells you it is filling with it. Haemoglobin holds carbon monoxide about 240 times more tightly than oxygen, so blood keeps circulating while carrying less and less of what it is for. 35 parts per million brings on headache and dizziness after six to eight hours; 1,600 ppm can kill in under two. It causes more than 400 non-fire deaths and 20,000 emergency visits a year in the United States alone. Burning charcoal indoors or in a tent is a common way people are poisoned, because a fire that looks small still produces it.",
+      "ids": [
+        "carbon_monoxide"
+      ],
+      "severity": "acute"
+    },
+    "corium_lethality": {
+      "label": "Chernobyl's Elephant's Foot delivered a coin-flip lethal dose in about three minutes",
+      "note": "Corium is what a reactor core becomes after it melts and takes the concrete, sand, steel and zirconium around it with it. The mass under Reactor 4 was measured at 8,000 to 10,000 roentgens an hour when it was found in December 1986 — enough to deliver 4.5 grays, the dose that kills about half the people who receive it, in roughly three minutes of standing near it. It was too dense to drill, so the sample taken from it was cut out with armour-piercing rounds.",
+      "ids": [
+        "corium"
+      ],
+      "severity": "acute"
+    },
+    "ethylene_glycol_poisoning": {
+      "label": "Antifreeze tastes sweet, which is most of the problem",
+      "note": "Ethylene glycol is not very toxic in itself; alcohol dehydrogenase turns it into glycolic and then oxalic acid, and the oxalate binds calcium into crystals that lodge in the kidneys. About 1.4 mL per kilogram is a lethal dose, and deaths have followed as little as 30 mL of concentrate. The sweetness is why children and animals drink it in quantity, and why more than 5,000 poisonings a year are reported in the United States. Fomepizole works by blocking the enzyme before the conversion happens.",
+      "ids": [
+        "ethylene_glycol"
+      ],
+      "severity": "acute"
+    },
+    "foxglove_cardiac_glycoside": {
+      "label": "Every part of a foxglove is poisonous, and drying does not change that",
+      "note": "Foxglove carries cardiac glycosides — digoxin and digitoxin — which inhibit the sodium-potassium pump in heart muscle and force it to contract harder. That is exactly why it became a heart drug and exactly why the plant is dangerous: the gap between a dose that helps and one that harms is very narrow. Poisoning brings vomiting, a heart that runs too fast or too slow, delirium, and the yellow-tinged vision with halos that is characteristic of it. Roots, leaves, flowers and seeds are all toxic, dried as well as fresh.",
+      "ids": [
+        "foxglove"
+      ],
+      "severity": "acute"
+    },
+    "urushiol_contact": {
+      "label": "The oil in poison ivy is also in mango skin and cashew shell",
+      "note": "Urushiol is a hapten: it soaks into skin within minutes and chemically alters the proteins it meets, so the immune system stops recognising them as yours. The rash is a type IV hypersensitivity reaction to that alteration, not a burn or a poison. It runs through the whole cashew family — poison ivy, oak and sumac, the lacquer tree, mango leaves, skin and sap, and the shell around a raw cashew, which is why cashews are never sold in their shells. Over 90% of people react to the unsaturated form.",
+      "ids": [
+        "urushiol",
+        "mango"
+      ],
+      "severity": "contact"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

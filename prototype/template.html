@@ -8991,6 +8991,36 @@ function smokeTest() {
 window.smokeTest = smokeTest;
 
 /**
+ * How far does each caution actually spread?
+ *
+ * The upstream panel walks an element's ancestry and lists every caution it
+ * meets, so a caution attached to something most of the world descends from
+ * stops being information and becomes a line on hundreds of unrelated cards.
+ * Charcoal taught this one: a carbon-monoxide caution on it is true and useful
+ * on its own terms, and it put "carbon monoxide poisoning" on actinium,
+ * because 496 elements are smelted or reduced somewhere up their chain.
+ *
+ * This has to measure the canonical route — the one distinctOf actually walks
+ * — and not every possible route. Measured across all routes nearly every id
+ * reaches 6,097 of 6,099, because the graph is densely connected; that number
+ * is true and tells you nothing, which is the same reason the panel follows
+ * one route in the first place.
+ */
+function hazardReach(limit = 20) {
+  const n = new Map();
+  for (const e of elements) {
+    for (const a of distinctOf(e.id)) {
+      if (cautionsFor(a).length) n.set(a, (n.get(a) || 0) + 1);
+    }
+  }
+  const rows = [...n].sort((a, b) => b[1] - a[1]).slice(0, limit)
+    .map(([id, count]) => ({ id, reaches: count, pct: +(100 * count / elements.length).toFixed(1) }));
+  console.table(rows);
+  return rows;
+}
+window.hazardReach = hazardReach;
+
+/**
  * Regression test.
  *
  * selfTest() and smokeTest() above check that nothing is broken in general.
