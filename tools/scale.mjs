@@ -178,6 +178,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* common words the corpus never had, 3 Sep */
+          'snowflake',
           /* computing and plants waves, 3 Sep */
           'logic_gate', 'not_gate', 'or_gate', 'and_gate', 'nand_gate', 'xor_gate', 'multiplexer', 'flip_flop', 'half_adder', 'adder', 'alu', 'register', 'cache', 'data_bus', 'clock_signal',
           /* completeness-audit wave, 2 Sep */
@@ -366,6 +368,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* common words the corpus never had, 3 Sep */
+          'kite', 'whisky', 'sushi', 'seaweed',
           /* everyday: the last of them, 3 Sep */
           'laptop', 'printer', 'monitor', 'speaker', 'headphones', 'purse', 'coat', 'jacket',
           /* everyday: tools, furniture, 3 Sep */
@@ -577,6 +581,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* common words the corpus never had, 3 Sep */
+          'otter', 'skunk', 'crocodile', 'emu', 'statue', 'robot',
           /* society and economy, 3 Sep */
           'money', 'debt', 'tax', 'contract', 'property',
           /* physics: the measured quantities, 3 Sep — conceptual rack with logic/language */
@@ -792,6 +798,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* common words the corpus never had, 3 Sep */
+          'ship', 'blue_whale', 'pyramid',
           /* everyday: the last of them, 3 Sep */
           'tram', 'van', 'motorcycle', 'office', 'library',
           /* everyday: tools, furniture, 3 Sep */
@@ -866,6 +874,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* common words the corpus never had, 3 Sep */
+          'swamp', 'oasis',
           /* society and economy, 3 Sep */
           'trade', 'government', 'democracy', 'monarchy', 'family',
           /* the abstract layer, 3 Sep — see the note on conceptual scale above */

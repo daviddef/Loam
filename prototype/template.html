@@ -8273,10 +8273,66 @@ function showHazard(kind, fromId) {
       : `<p class="hint2">Nothing else in the game descends from these.</p>`);
   openSheet('Who carries this');
 }
+// How much of the game sits downstream of each caution-carrying element.
+// Computed once, on first use, from the SHOWN routes — the same walk the panel
+// itself does — and it costs about 40ms for the whole corpus.
+//
+// This exists because "5 things worth knowing on the way here" was showing a
+// sprout food-safety warning on Croatia. ("What does Croatia and mould have in
+// common? Why are there 5 hazards seemingly unrelated to Croatia?" — asked
+// live.) Nothing was wrong with the walk: Croatia's route really does pass
+// through sprout, because 199 ancestors back everything does. sprout sits
+// upstream of 87% of the corpus and mould of 20%, so those two warnings were
+// appearing on almost every card in the game. A caution true of nearly
+// everything tells you nothing about the thing you are looking at.
+let hazardReachCache = null;
+function hazardReachOf(elId) {
+  if (!hazardReachCache) {
+    hazardReachCache = new Map();
+    const carriers = new Set();
+    for (const e of elements) if (cautionsFor(e.id).length) carriers.add(e.id);
+    for (const e of elements) for (const a of distinctOf(e.id)) {
+      if (carriers.has(a)) hazardReachCache.set(a, (hazardReachCache.get(a) ?? 0) + 1);
+    }
+  }
+  return (hazardReachCache.get(elId) ?? 0) / elements.length;
+}
+// Depth along the shown route, so a caution can earn its place by being NEAR
+// even when it is common. Lead is upstream of 16% of the game, which is far
+// too much to show on a country — and exactly what you want to be told when
+// the thing you just made has lead one step above it.
+function routeDepths(id) {
+  const d = new Map([[id, 0]]);
+  const q = [id];
+  while (q.length) {
+    const x = q.shift();
+    const r = bestRecipe.get(x);
+    if (!r) continue;
+    for (const i of r.in) if (!d.has(i)) { d.set(i, d.get(x) + 1); q.push(i); }
+  }
+  return d;
+}
+const HAZARD_UBIQUITY = 0.15;   // upstream of more than this share of the game
+const HAZARD_NEAR = 3;          // ...is only worth saying if it is this close
+
+// ONLY `conditional` cautions can ever be filtered out, and that is the whole
+// safety argument for this feature. A conditional caution already says "this
+// depends on the circumstances" — raw sprouts are a risk to some people eating
+// them, mould spores to some people breathing them — and twenty steps
+// upstream of a country the circumstances plainly do not obtain. An acute,
+// contact or cumulative caution, or anything carcinogenic or radioactive, is
+// never suppressed at any distance: lead is upstream of 16% of the game and
+// stays on every one of them, because "lead is a neurotoxin" does not stop
+// being true at four steps.
+const suppressible = c => c.severity === 'conditional' && !c.carcinogen && c.kind !== 'radioactivity';
+
 function upstreamHazards(id) {
   const seen = new Map();                     // caution key -> {c, from:Set}
+  const depth = routeDepths(id);
   for (const a of distinctOf(id)) {
+    const far = a !== id && hazardReachOf(a) > HAZARD_UBIQUITY && (depth.get(a) ?? 99) > HAZARD_NEAR;
     for (const c of cautionsFor(a)) {
+      if (far && suppressible(c)) continue;   // specific, close, or serious
       let rec = seen.get(c.kind);
       if (!rec) seen.set(c.kind, rec = { c, from: new Set() });
       rec.from.add(a);

@@ -26,18 +26,18 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology and reproduction |
-| Elements | **6,607** (6,251 workshop · 356 folklore) |
-| Recipes | **8,479** (7,554 merges · 925 verb processes) |
+| Elements | **6,623** (6,267 workshop · 356 folklore) |
+| Recipes | **8,495** (7,570 merges · 925 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **6,607 / 6,607** from the four starters |
+| Reachable | **6,623 / 6,623** from the four starters |
 | Deepest chain | 51 crafts |
-| Sourced | **8,479 / 8,479** recipes, every URL machine-verified |
+| Sourced | **8,495 / 8,495** recipes, every URL machine-verified |
 | Audited | **295** of the first 677 claims checked against primary reporting — **48 were wrong**. That 36% first-pass error rate is why nothing ships unverified. |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **0** unreviewed |
-| Routes per element | **1.28** · 5,108 still needing a second route · 1,879 sole-route by design |
+| Routes per element | **1.28** · 5,124 still needing a second route · 1,879 sole-route by design |
 | Hazards | **343**, covering 621 elements |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **6,607**, none of them emoji |
+| Drawings | **6,623**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from

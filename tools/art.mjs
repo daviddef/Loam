@@ -30429,6 +30429,90 @@ def('rodent', () => [                                                // the inci
   P('M43 39 Q52 44 49 54 Q45 57 42 52 Q41 45 43 39 Z', 'hi'),         // and the lower one, wearing against it
   ...granules('lo', 5, 313, [10, 46, 32, 57]),                        // the shavings being the only thing that keeps either short
 ]);
+/* ── common words the corpus never had ───────────────────────────────────
+   Most of these are umbrella gaps: airship and longship existed and `ship`
+   did not, nile_crocodile but no `crocodile`, sea_otter but no `otter`,
+   kite_shield but no `kite`. Each is drawn as the plain, generic thing, so
+   it reads as the parent of the specific ones already in the corpus.       */
+
+def('ship',         () => [P('M6 32 L54 32 L46 44 L14 44 Z', 'bs'),            // decked hull, to take a wave
+                           P('M28 8 L32 8 L32 32 L28 32 Z', 'lo'),
+                           P('M32 12 L46 20 L32 26 Z', 'hi'),
+                           P('M16 18 L28 24 L16 28 Z', 'hi'),
+                           S('M4 47 Q16 51 28 47 Q40 43 56 47', 'gh', 1.6)]);
+def('crocodile',    () => [P('M4 30 L34 28 L44 30 L52 27 L54 31 L44 34 L34 34 L4 34 Z', 'bs'),   // eyes on top, body under
+                           C(40, 27, 2.4, 'ik'), C(46, 28, 1.6, 'lo'),
+                           ...[10, 16, 22, 28].map(x => P(`M${x} 28 L${x + 3} 23 L${x + 5} 28 Z`, 'lo')),
+                           ...[14, 26].map(x => S(`M${x} 34 L${x - 2} 40`, 'bs', 2.2)),
+                           S('M4 32 L2 26', 'bs', 2)]);
+def('otter',        () => [E(24, 30, 15, 9, 'bs'),                              // long and low, with a rudder
+                           C(40, 24, 7, 'bs'), C(43, 21, 1.6, 'ik'),
+                           S('M9 32 Q4 40 8 48', 'bs', 4),
+                           ...[[37,19],[44,17]].map(([x,y]) => C(x, y, 2.2, 'lo')),
+                           S('M16 36 L16 40 M24 37 L24 41', 'lo', 2)]);
+def('blue_whale',   () => [P('M4 30 Q18 18 38 22 Q52 25 56 30 Q52 35 38 38 Q18 42 4 30 Z', 'bs'),
+                           P('M2 24 L10 30 L2 36 Z', 'bs'),                     // the fluke
+                           ...[14, 20, 26, 32].map(x => S(`M${x} 33 L${x} 39`, 'lo', 1.3)),   // throat pleats
+                           C(46, 27, 1.6, 'ik'), S('M40 20 L44 14', 'gh', 1.4)]);
+def('emu',          () => [E(34, 32, 13, 10, 'bs'),                             // all legs, stub of a wing
+                           S('M28 26 Q24 14 26 8', 'bs', 3.5), C(26, 7, 4, 'bs'), C(27, 6, 1.4, 'ik'),
+                           S('M30 40 L28 54 M40 40 L42 54', 'lo', 2.4),
+                           S('M26 54 L32 54 M38 54 L44 54', 'lo', 2)]);
+def('skunk',        () => [E(30, 36, 15, 8, 'bs'),                              // a four-legged body, read first
+                           C(46, 33, 6, 'bs'), C(48, 31, 1.4, 'ik'),
+                           P('M50 30 L54 28 L54 32 Z', 'lo'),                     // snout
+                           ...[20, 27, 34, 40].map(x => S(`M${x} 43 L${x} 49`, 'lo', 2.4)),  // legs
+                           S('M16 34 Q4 24 12 10', 'bs', 6),                      // tail, arcing up behind
+                           S('M16 32 Q6 24 12.5 12', 'hi', 2.6),
+                           P('M18 31 L44 31 L44 35 L18 35 Z', 'hi')]);            // the stripe, head to tail
+def('seaweed',      () => [...[20, 30, 40].map((x, i) =>
+                             S(`M${x} 50 Q${x + (i - 1) * 8} 34 ${x + (i - 1) * 4} 12`, 'bs', 3.5)),
+                           ...[[16,30],[26,20],[36,26],[44,16]].map(([x,y]) => E(x, y, 4.5, 2.4, 'hi')),
+                           P('M14 50 L46 50 L46 54 L14 54 Z', 'lo')]);           // a holdfast, not a root
+def('kite',         () => [P('M30 6 L46 26 L30 52 L14 26 Z', 'bs'),
+                           S('M30 6 L30 52 M14 26 L46 26', 'lo', 1.2),
+                           S('M30 52 Q24 56 30 58 Q36 56 30 58', 'gh', 1.4),
+                           S('M30 52 Q18 50 8 56', 'ik', 1.6)]);                 // the line is the invention
+def('whisky',       () => [P('M19 22 L41 22 L38 46 L22 46 Z', 'lo'),            // a heavy tumbler
+                           P('M21 32 L39 32 L37.5 44 L22.5 44 Z', 'bs'),          // the colour the oak gave it
+                           E(30.2, 32, 9, 2.4, 'hi'),
+                           P('M25 34 L31 34 L31 40 L25 40 Z', 'hi'),              // one cube of ice
+                           E(30, 22, 11, 3, 'lo'),
+                           P('M16 48 L44 48 L44 51 L16 51 Z', 'lo')]);
+def('swamp',        () => [P('M2 40 L58 40 L58 52 L2 52 Z', 'lo'),              // trees standing IN the water
+                           ...[14, 30, 46].map(x => [S(`M${x} 40 L${x} 18`, 'bs', 3),
+                             P(`M${x - 8} 18 Q${x} 6 ${x + 8} 18 Z`, 'hi')]).flat(),
+                           ...[10, 22, 38, 52].map(x => S(`M${x} 44 L${x} 40`, 'bs', 1.6))]);
+def('oasis',        () => [P('M2 42 L58 42 L58 52 L2 52 Z', 'lo'),
+                           E(30, 44, 16, 5, 'hi'),                               // water, and everything round it
+                           S('M22 44 L22 26', 'bs', 3), S('M38 44 L38 28', 'bs', 3),
+                           ...[[22,26],[38,28]].map(([x,y]) =>
+                             [-1,0,1].map(d => S(`M${x} ${y} Q${x + d * 10} ${y - 8} ${x + d * 13} ${y - 2}`, 'bs', 2))).flat()]);
+def('snowflake',    () => [...[0, 60, 120].map(a => ['g', a, 30, 30, [
+                             S('M30 8 L30 52', 'hi', 2),
+                             S('M30 16 L24 11 M30 16 L36 11', 'hi', 1.5),
+                             S('M30 44 L24 49 M30 44 L36 49', 'hi', 1.5)]]),
+                           C(30, 30, 2.4, 'ik')]);                               // six arms, one path through the cloud
+def('robot',        () => [P('M18 18 L42 18 L42 40 L18 40 Z', 'bs'),
+                           C(25, 26, 3, 'ik'), C(35, 26, 3, 'ik'),
+                           S('M24 34 L36 34', 'lo', 2),
+                           S('M30 18 L30 10', 'lo', 1.8), C(30, 8, 2.6, 'hi'),   // it responds; a lathe repeats
+                           P('M12 22 L18 22 L18 36 L12 36 Z', 'lo'), P('M42 22 L48 22 L48 36 L42 36 Z', 'lo'),
+                           P('M20 40 L26 40 L26 50 L20 50 Z', 'lo'), P('M34 40 L40 40 L40 50 L34 50 Z', 'lo')]);
+def('statue',       () => [P('M24 12 Q30 6 36 12 Q36 20 30 22 Q24 20 24 12 Z', 'bs'),   // the stone that remains
+                           P('M22 22 L38 22 L40 42 L20 42 Z', 'bs'),
+                           P('M14 46 L46 46 L46 54 L14 54 Z', 'lo'),
+                           S('M26 28 L26 40 M34 28 L34 40', 'lo', 1.2)]);
+def('pyramid',      () => [P('M30 8 L54 46 L6 46 Z', 'bs'),                     // nothing holds anything else up
+                           P('M30 8 L54 46 L30 46 Z', 'lo'),
+                           ...[18, 26, 34, 42].map(y => S(`M${30 - (y - 8) * 0.63} ${y} L${30 + (y - 8) * 0.63} ${y}`, 'gh', 1)),
+                           P('M4 46 L56 46 L56 50 L4 50 Z', 'lo')]);
+def('sushi',        () => [C(30, 32, 17, 'lo'),                                 // a maki roll seen end on
+                           C(30, 32, 14, 'hi'),                                   // the rice, which is what sushi means
+                           C(30, 32, 5.5, 'bs'),                                  // the filling
+                           ...granules('lo', 9, 618, [20, 22, 40, 42]),
+                           P('M6 46 L54 46 L54 50 L6 50 Z', 'lo')]);
+
 /* ── society and economy ──────────────────────────────────────────────────
    Government, democracy and monarchy are all "who decides", so each shows
    the mechanism instead of the building: a portico for administration, a
