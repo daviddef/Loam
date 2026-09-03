@@ -33,6 +33,8 @@ const SCALE = {
   // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
   // them as nuggets was a mislabel, not a drawing mistake.
   '-10': [
+          /* umbrella waves, 3 Sep */
+          'spin', 'fermion', 'boson', 'quark', 'strange_quark', 'charm_quark', 'bottom_quark', 'top_quark', 'lepton', 'muon', 'tau', 'neutrino', 'electron_neutrino', 'muon_neutrino', 'tau_neutrino', 'gluon', 'w_boson', 'z_boson', 'higgs_boson', 'hadron', 'baryon', 'meson', 'metallic_bond', 'oxide', 'antimatter', 'pauli_exclusion_principle',
           /* completeness-audit wave, 2 Sep */
           'atom', 'chemical_bond', 'chemical_reaction', 'compound', 'element', 'hydrocarbon', 'molecule', 'nuclear_fission',
           'nuclear_fusion', 'oxidation',
@@ -149,6 +151,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* umbrella waves, 3 Sep */
+          'protist', 'torsion',
           /* unblocking-nouns wave, 2 Sep */
           'macrophage', 'neutrophil',
           /* completeness-audit wave, 2 Sep */
@@ -338,6 +342,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* umbrella waves, 3 Sep */
+          'gastropod', 'cephalopod', 'bivalve', 'clam', 'squid', 'jellyfish', 'worm', 'flatworm', 'eggshell', 'carapace',
           /* additive and metals waves, 3 Sep */
           'gluten_free_bread', 'oat_milk', 'coffee_creamer', 'strawberry_yoghurt', 'cola', 'diet_soda', 'cordial', 'sweet_wine', 'yellow_mustard', 'corned_beef', 'surimi', 'shortening', 'whitfields_ointment', 'canned_heat',
           'tobacco_smoke',
@@ -531,6 +537,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* umbrella waves, 3 Sep */
+          'solid', 'liquid', 'gas', 'melting', 'freezing', 'vaporization', 'condensation', 'sublimation', 'deposition', 'ionization', 'organism', 'periodic_table', 'transition_metal', 'alkaline_earth_metal', 'lanthanide', 'actinide', 'fundamental_force', 'strong_force', 'weak_force', 'electromagnetism', 'standard_model',
           /* additive and metals waves, 3 Sep */
           'fracking_fluid', 'runway_deicer',
           'angiosarcoma', 'birth_defect',
@@ -913,6 +921,8 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+          /* umbrella waves, 3 Sep */
+          'matter', 'life',
           /* unblocking-nouns wave, 2 Sep */
           'apparent_magnitude', 'asteroid_belt', 'astronomical_unit', 'binary_star', 'coronal_mass_ejection', 'cosmic_inflation', 'escape_velocity', 'event_horizon',
           'gravitational_lensing', 'gravitational_wave', 'gravity', 'heliosphere', 'hubbles_law', 'light_year', 'magnetosphere', 'main_sequence',

@@ -2101,6 +2101,7 @@ __CATEGORY_CSS__
       <button class="atab" data-asidetab="microbes" title="Microbes — bacteria, viruses, parasites">🦠</button>
       <button class="atab" data-asidetab="periodic" title="The periodic table's own elements">⚛</button>
       <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
+      <button class="atab" data-asidetab="info" title="Info — follows whatever you last tapped">ⓘ</button>
     </div>
     <div id="asideShelf" class="apane"></div>
     <div id="asideElements" class="apane on"></div>
@@ -2111,6 +2112,7 @@ __CATEGORY_CSS__
     <div id="asideMicrobes" class="apane"></div>
     <div id="asidePeriodic" class="apane"></div>
     <div id="asideFavourites" class="apane"></div>
+    <div id="asideInfo" class="apane"></div>
   </aside>
 </main>
 
@@ -2343,12 +2345,29 @@ const save = () => {
  */
 const SAVE_VERSION = 1;
 function exportSave() {
+  // Free play is a mode, not progress. It fills `found` with every element in
+  // the game, so exporting the live set wrote all 6,212 ids into a file that is
+  // supposed to be a record of what YOU did -- and the reader is looking at a
+  // board with nine cards on it. ("why am i seeing all the elements that arent
+  // even on my board in your copy my game when my board looks nothing like
+  // this?" -- found live, with freePlay true in the export's own prefs.)
+  //
+  // setFreePlay already puts the real progress aside under REAL_KEY precisely
+  // so turning the mode on can never cost a playthrough. Export that instead,
+  // and record the mode as a flag.
+  let real = null;
+  if (prefs.freePlay) {
+    try { real = JSON.parse(localStorage.getItem(REAL_KEY) || 'null'); } catch {}
+  }
+  const outFound = real ? real.found.filter(id => byId[id]) : [...found];
+  const outSeen  = real ? real.seen.filter(id => byId[id])  : [...seen];
   return JSON.stringify({
     loam: SAVE_VERSION,
     exported: new Date().toISOString().slice(0, 10),
-    counts: { found: found.size, of: elements.length },
-    found: [...found].sort(),
-    seen: [...seen].sort(),
+    counts: { found: outFound.length, of: elements.length },
+    freePlay: !!prefs.freePlay,
+    found: outFound.sort(),
+    seen: outSeen.sort(),
     prefs,
     bench: benchState(),
   }, null, 1);
@@ -3306,8 +3325,28 @@ function toggleBranch(chip) {
   if (!real.length) {
     return expandUp(chip);
   }
+  const opening = chip.classList.contains('folded');
   chip.classList.toggle('folded');
   refreshFolds();
+  if (opening) {
+    // They were parked on top of this card while hidden (see tidy), so they
+    // need a real arrangement the moment they become visible -- above the card
+    // they came out of, disturbing nothing else.
+    const out = [];
+    const seen = new Set([chip]); const q = [chip];
+    while (q.length) {
+      const x = q.shift();
+      for (const l of links) {
+        if (l.out !== x) continue;
+        for (const p of [l.a, l.b]) {
+          if (!p || seen.has(p) || p.classList.contains('hidden')) continue;
+          seen.add(p); out.push(p); q.push(p);
+        }
+      }
+    }
+    placeAbove(chip, out);
+    drawLinks();
+  }
   sfx.pick();
   return [];
 }
@@ -4154,6 +4193,40 @@ function tidy() {
   for (const c of chips) {
     c.style.left = (ox + pos.get(c) * step) + 'px';
     c.style.top  = (oy + (bandOf.get(c) + visDepthOf.get(c)) * ROW_H) + 'px';
+  }
+  // A folded card is display:none, but it was still being given a column of
+  // its own -- so ten hidden ancestors reserved ten columns of real width, and
+  // the one visible card at the end of that chain was stranded 1,300px from
+  // everything else with nothing drawn in between. ("why does aluminium appear
+  // on the right bottom?" -- found live: its ten ancestors were all folded and
+  // all laid out in a row it could not be seen to belong to.)
+  //
+  // Park each hidden card on the visible card that hides it. Unfolding then
+  // calls placeAbove(), which lays the revealed ones out above that card and
+  // touches nothing else -- the same rule tapping a card already follows.
+  const shown = c => !c.classList.contains('hidden');
+  for (const c of chips) {
+    if (shown(c)) continue;
+    let host = null;
+    for (const l of links) {
+      if ((l.a === c || l.b === c) && l.out && shown(l.out)) { host = l.out; break; }
+    }
+    if (!host) {                       // hidden behind another hidden card
+      const seen = new Set([c]); const q = [c];
+      while (q.length && !host) {
+        const x = q.shift();
+        for (const l of links) {
+          if (l.a !== x && l.b !== x) continue;
+          const o = l.out;
+          if (!o || seen.has(o)) continue;
+          if (shown(o)) { host = o; break; }
+          seen.add(o); q.push(o);
+        }
+      }
+    }
+    if (!host) continue;
+    c.style.left = host.style.left;
+    c.style.top  = host.style.top;
   }
   drawLinks();
   fitAll({ min: 0.34, max: 1.0 });
@@ -7095,7 +7168,40 @@ const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
                       proteins: 'asideProteins', animals: 'asideAnimals',
                       plants: 'asidePlants', toxins: 'asideToxins',
                       microbes: 'asideMicrobes', periodic: 'asidePeriodic',
-                      favourites: 'asideFavourites' };
+                      favourites: 'asideFavourites', info: 'asideInfo' };
+/* ── the info tab ──────────────────────────────────────────────────────────
+ * The same body the entry sheet draws, in the pane instead of over the board,
+ * following whatever you last tapped. ("is it possible, in desktop mode to
+ * turn the i button overlay into a right pane tab? ... so there is an info tab
+ * that changes as we click on items in our canvas" — asked, attempted, broken,
+ * reverted, and then not picked up again for a day.)
+ *
+ * It renders quickViewHTML, which is exactly what the overlay's Quick view
+ * shows — including the hazard strip and the Made-From/Makes rows — so the two
+ * cannot drift apart. The mode tabs and the bench-add are deliberately NOT
+ * carried over: this pane is for reading while you work, and the sheet is
+ * still there for the rest.
+ */
+let infoId = null;
+function renderAsideInfo() {
+  const pane = document.getElementById('asideInfo');
+  if (!pane) return;
+  if (!infoId || !byId[infoId]) {
+    pane.innerHTML = `<p class="none">Tap anything — a card on the bench, a row
+      in any tab — and what it is will show up here.</p>`;
+    return;
+  }
+  const e = byId[infoId];
+  pane.innerHTML = `<div class="ahead"><b>${e.name}</b></div>` +
+                   quickViewHTML(infoId).replace('__TABS__', '');
+}
+/** Point the info tab at something. Cheap when the tab is not open. */
+function setInfo(id) {
+  if (!id || id === infoId) return;
+  infoId = id;
+  if (asideTab === 'info') renderAsideInfo();
+}
+
 function setAsideTab(tab) {
   // Same tab twice folds the pane; any tab while folded brings it back on that
   // tab. Nothing is lost by folding — the strip rides the seam, not the pane.
@@ -7113,6 +7219,7 @@ function setAsideTab(tab) {
     document.getElementById(id).classList.toggle('on', t === tab);
   document.querySelectorAll('#asideTabs .atab').forEach(b =>
     b.classList.toggle('on', b.dataset.asidetab === tab));
+  if (tab === 'info') renderAsideInfo();
   if (tab === 'elements') renderAsideElements();
   if (tab === 'proteins') renderAsideProteins();
   if (tab === 'animals') renderAsideAnimals();
@@ -7521,6 +7628,7 @@ function showHint(id) {
 // only apply to something actually owned — an unmade element has no
 // derivation to show yet, so it still gets the plain locked-entry view.
 function showEntry(id, mode) {
+  setInfo(id);                       // the info tab follows the same taps
   const owned = found.has(id);
   if (owned && mode && mode !== 'quick' && !guessed.has(id) && !onCanvas(id) && expanded(id).leaves > 3)
     return askFirst(id, () => showEntry(id, mode));
@@ -9726,8 +9834,15 @@ function selfTest(n = 80) {
   const held = new Set(found);                       // a test must not change a save
   elements.slice(0, n).forEach(e => { found.add(e.id); spawn(e.id); });
   const cards = [...world.querySelectorAll('.chip.board')];
+  // Overlap is only a fault between cards you can SEE -- the same rule fitAll()
+  // uses. tidy() now deliberately parks each folded card on the visible card
+  // that hides it, rather than giving it a column of its own, so hidden cards
+  // overlap by design and counting them made this report 105 failures on a
+  // layout with none. Checked when the change landed: 0 overlaps between
+  // visible cards, 105 involving a hidden one.
+  const seen = cards.filter(c => !c.classList.contains('hidden'));
   const [cw, ch] = cardSize();
-  const at = cards.map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
+  const at = seen.map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
   let overlaps = 0, offGrid = 0;
   for (let i = 0; i < at.length; i++) {
     if (!isFinite(at[i][0]) || !isFinite(at[i][1])) offGrid++;
@@ -9739,7 +9854,8 @@ function selfTest(n = 80) {
   found.clear(); held.forEach(id => found.add(id));
   renderShelf();
   drawLinks();
-  const result = { cards: cards.length, overlaps, offGrid, cardSize: [cw, ch], pass: !overlaps && !offGrid };
+  const result = { cards: cards.length, visible: seen.length, overlaps, offGrid,
+                   cardSize: [cw, ch], pass: !overlaps && !offGrid };
   console.log(result.pass ? '✓ layout ok' : '✗ layout broken', result);
   return result;
 }

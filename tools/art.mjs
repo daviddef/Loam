@@ -36024,6 +36024,526 @@ def('lawrencium', () => [                                  // named for the man 
   C(53, 30, 3, 'bs'),
 ]);
 
+/* umbrella waves, 3 Sep -- particles, states and forces */
+
+/* the Standard Model ──────────────────────────────────────────────────────
+   The subatomic tier already has a grammar: flat discs with a mark, a cross
+   for positive, a bar for negative, a hollow body for anything neutral or
+   anti. It is extended here on the two things that actually separate one
+   particle from the next — charge and generation — plus a mass bar, because
+   the six quarks differ by five orders of magnitude and nothing else. */
+def('spin', () => [                                                   // Stern and Gerlach, 1922: a beam through a lopsided field splits in two, not into a smear
+  S('M4 32 L26 32', 'ik', 2.4),                                       // one beam of silver atoms in
+  P('M16 18 L44 18 L44 25 L16 25 Z', 'lo'),                           // the shaped magnet, strong at one pole
+  P('M16 39 L44 39 L44 46 L16 46 Z', 'lo'),
+  S('M26 32 Q40 32 50 21', 'bs', 2.2), S('M26 32 Q40 32 50 43', 'bs', 2.2),
+  C(51, 19, 3.6, 'hi'), C(51, 45, 3.6, 'hi'),                         // two spots, and nowhere in between: the angular momentum is half, and quantised
+  S('M51 12 L51 6', 'ik', 1.8), S('M51 52 L51 58', 'ik', 1.8),
+]);
+def('fermion', () => [                                                // half-integer spin, and therefore one to a state — the reason matter takes up room
+  ...[0, 1, 2].map(i => S(`M${11 + i * 15} 24 L${11 + i * 15} 44 L${25 + i * 15} 44 L${25 + i * 15} 24`, 'ik', 2.2)),
+  ...[0, 1, 2].map(i => C(18 + i * 15, 38, 5.4, 'bs')),               // one particle to each state, never a second
+  ...[0, 1, 2].map(i => S(`M${18 + i * 15} 34 L${18 + i * 15} ${i === 1 ? 16 : 20}`, 'hi', 2)),
+  S('M6 52 L54 52', 'gh', 1.2),
+]);
+def('boson', () => [                                                  // integer spin, and no exclusion at all: as many in one state as you care to put there
+  S('M4 10 Q11 2 18 10 Q25 18 32 10 Q39 2 46 10 Q53 18 57 12', 'gh', 2.2),  // every force carrier is one of these...
+  S('M19 20 L19 52 L41 52 L41 20', 'ik', 2.4),                        // ...and here they are, all in the one state
+  ...[0, 1, 2, 3].map(i => E(30, 48 - i * 7, 8.6, 3.2, i % 2 ? 'hi' : 'bs')),
+  S('M7 52 L15 52 M45 52 L53 52', 'gh', 1.6),                         // which is what a laser is, and what cooled helium is
+]);
+def('quark', () => [                                                  // the whole flavour table: three generations across, two charges down
+  ...[0, 1, 2].flatMap(i => [C(13 + i * 17, 19, 6.4, 'hi'),
+    S(`M${8 + i * 17} 19 L${18 + i * 17} 19`, 'ik', 1.6),
+    S(`M${13 + i * 17} 14 L${13 + i * 17} 24`, 'ik', 1.6)]),          // up, charm, top: charge +2/3
+  ...[0, 1, 2].flatMap(i => [P(`M${13 + i * 17} 32 L${21 + i * 17} 46 L${5 + i * 17} 46 Z`, 'bs'),
+    S(`M${8 + i * 17} 41 L${18 + i * 17} 41`, 'ik', 1.6)]),           // down, strange, bottom: charge −1/3
+  S('M6 53 L54 53', 'gh', 1.4),                                       // and not one of the six has ever been seen on its own
+]);
+def('strange_quark', () => [                                          // second generation, charge −1/3, and the reason a kaon lives a thousand times too long
+  P('M30 22 L42 43 L18 43 Z', 'bs'),
+  S('M24 36 L36 36', 'ik', 2.6),                                      // the down-type bar, as on the down quark
+  C(24, 9, 2.4, 'ik'), C(36, 9, 2.4, 'ik'),                           // two marks: second generation
+  S('M9 53 L25 53', 'lo', 3.4),                                       // 95 MeV — twenty down quarks
+]);
+def('charm_quark', () => [                                            // second generation, charge +2/3; found in 1974 as the J/psi, by two labs in the same week
+  C(30, 30, 11, 'hi'),
+  S('M21 30 L39 30', 'ik', 2.8), S('M30 21 L30 39', 'ik', 2.8),       // the up-type cross
+  C(24, 9, 2.4, 'ik'), C(36, 9, 2.4, 'ik'),
+  S('M9 53 L33 53', 'bs', 3.4),                                       // 1.27 GeV — heavier than a proton, all by itself
+]);
+def('bottom_quark', () => [                                           // third generation, charge −1/3; it is what a B meson is built around
+  P('M30 15 L47 44 L13 44 Z', 'bs'),
+  S('M21 38 L39 38', 'ik', 3),
+  C(19, 7, 2.4, 'ik'), C(30, 7, 2.4, 'ik'), C(41, 7, 2.4, 'ik'),      // three marks: third generation
+  S('M9 55 L41 55', 'lo', 3.4),                                       // 4.18 GeV
+]);
+def('top_quark', () => [                                              // the heaviest thing in the table: 173 GeV, as much as a whole tungsten atom
+  C(30, 31, 17, 'hi'),
+  S('M17 31 L43 31', 'ik', 3.4), S('M30 18 L30 44', 'ik', 3.4),
+  C(19, 7, 2.4, 'ik'), C(30, 7, 2.4, 'ik'), C(41, 7, 2.4, 'ik'),
+  S('M6 55 L56 55', 'bs', 3.4),                                       // it decays in 5x10^-25 s — too fast to ever bind into a hadron
+]);
+def('lepton', () => [                                                 // the other half of matter: the same particle three times over, each heavier, none of them ever bound
+  C(12, 41, 5, 'hi'), C(29, 36, 8, 'bs'), C(47, 29, 11, 'lo'),        // electron, muon, tau
+  S('M8 41 L16 41', 'ik', 1.8), S('M24 36 L34 36', 'ik', 2.2), S('M41 29 L53 29', 'ik', 2.6),
+  S('M6 53 L54 53', 'gh', 1.4),                                       // and not one of them feels the strong force
+]);
+def('muon', () => [                                                   // 207 electron masses; 2.2 microseconds; and it always goes the same three ways
+  C(17, 22, 9, 'bs'), S('M11 22 L23 22', 'ik', 2.6),
+  S('M25 29 L34 38', 'ik', 2.2),
+  S('M34 38 L52 30', 'gh', 1.6), S('M34 38 L53 44', 'gh', 1.6), S('M34 38 L44 54', 'gh', 1.6),
+  C(52, 29, 3, 'ik'), S('M48 29 L56 29', 'hi', 1.6),                  // an electron
+  ring('gh', 53, 45, 3, 1.4), ring('gh', 44, 54, 3, 1.4),             // and two neutrinos, to keep both flavours balanced
+]);
+def('tau', () => [                                                    // 3477 electron masses — the only lepton heavy enough to decay into hadrons
+  C(19, 20, 13, 'bs'), S('M10 20 L28 20', 'ik', 3),
+  S('M30 30 L37 39', 'ik', 2.2),
+  S('M37 39 L50 24', 'gh', 1.6), ring('gh', 51, 22, 3, 1.4),          // its own neutrino, which took until 2000 to see
+  ring('gh', 44, 46, 10, 1.4),                                        // and, more often than not, a pion: a bound quark pair
+  C(40, 46, 3.6, 'bs'), C(48, 46, 3.6, 'hi'),
+]);
+def('neutrino', () => [                                               // no charge, almost no mass, and a light-year of lead would stop only half of them
+  P('M21 8 L39 8 L39 52 L21 52 Z', 'lo'),                             // a slab of lead, plate on plate
+  ...[0, 1, 2, 3, 4, 5].map(i => S(`M21 ${13 + i * 7} L39 ${13 + i * 7}`, 'ik', 1.4)),
+  S('M3 46 L57 14', 'hi', 2.2),                                       // and it goes straight through, touching none of it
+  C(57, 14, 2.4, 'ik'),
+  S('M7 55 L53 55', 'gh', 1.2),
+]);
+/* The three flavours differ by one thing only: which charged lepton comes
+   out of the weak vertex. So all three are drawn as that vertex, and the
+   outgoing lepton is drawn at its own mass. */
+def('electron_neutrino', () => [                                      // the one the Sun makes, and the one Cowan and Reines caught in 1956
+  S('M3 48 L25 35', 'gh', 2.2),
+  C(25, 35, 3.4, 'ik'),                                               // the weak vertex — the only place a neutrino ever shows
+  S('M25 35 L46 27', 'bs', 2.2), C(50, 26, 5, 'hi'), S('M45 26 L55 26', 'ik', 1.8),
+  C(13, 11, 2.4, 'ik'),                                               // first generation: an electron comes out, so that is its name
+]);
+def('muon_neutrino', () => [                                          // proved distinct from the electron's in 1962: it makes muons and only muons
+  S('M3 39 L23 39', 'gh', 2.2),
+  C(23, 39, 3.4, 'ik'),
+  S('M23 39 L38 28', 'bs', 2.2), C(44, 24, 8, 'hi'), S('M37 24 L51 24', 'ik', 2.2),
+  C(9, 11, 2.4, 'ik'), C(20, 11, 2.4, 'ik'),                          // second generation
+]);
+def('tau_neutrino', () => [                                           // the last particle of the table to be seen at all — DONUT, 2000
+  S('M3 27 L21 32', 'gh', 2.2),
+  C(21, 32, 3.4, 'ik'),
+  S('M21 32 L32 40', 'bs', 2.2), C(41, 44, 12, 'hi'), S('M31 44 L51 44', 'ik', 2.6),
+  C(8, 10, 2.4, 'ik'), C(19, 10, 2.4, 'ik'), C(30, 10, 2.4, 'ik'),    // third generation, marked where the other two are
+]);
+def('gluon', () => [                                                  // the coil is how Feynman drew it, and it is massless — but it carries the charge it acts on
+  ...coilOf('bs', 5, 11, 27, 4),
+  C(8, 27, 4.6, 'hi'), C(53, 27, 4.6, 'lo'),                          // a colour at one end, an anticolour at the other
+  ['g', 55, 31, 33, [...coilOf('gh', 3, 31, 33, 4)]],                 // so gluons pull on gluons. Nothing else in physics does that
+  C(46, 51, 3.4, 'bs'),
+]);
+def('w_boson', () => [                                                // the only thing that changes one flavour into another — and it weighs 85 protons
+  S('M9 25 Q15 15 21 25 Q27 35 33 25 Q39 15 45 25', 'bs', 3.4),
+  C(27, 25, 9, 'lo'),                                                 // all that mass, sitting on the propagator
+  S('M22 25 L32 25', 'hi', 2.4), S('M27 20 L27 30', 'hi', 2.4),       // it comes charged, W+ and W−; there is no neutral W
+  S('M7 45 L53 45', 'gh', 1.4),
+  S('M7 45 L13 45', 'ik', 4),                                         // and that mass is why its reach stops at 10^-18 m, a thousandth of a proton
+]);
+def('z_boson', () => [                                                // the neutral current, 1973: the collision where nothing changes identity and something still happens
+  S('M7 22 L53 22', 'ik', 2.2), S('M7 29 L53 29', 'ik', 2.2),         // a straight double line, not the W's wave
+  C(30, 25, 9, 'lo'), ring('hi', 30, 25, 4.4, 2),                     // 91 GeV, and no charge at all — drawn hollow, as the neutron is
+  C(13, 47, 4, 'bs'), C(47, 47, 4, 'bs'),
+  S('M17 45 L25 38 M43 45 L35 38', 'gh', 1.6),                        // what goes in comes out, only poorer
+]);
+def('higgs_boson', () => [                                            // the potential is the point: zero field is a hilltop, so the field cannot sit there
+  S('M6 14 Q17 55 30 27 Q43 55 54 14', 'ik', 2.6),
+  ring('gh', 30, 22, 4, 1.4),                                         // the symmetric state, which is unstable
+  C(42, 33, 5.4, 'bs'),                                               // it rolls into the brim instead — and everything that touches it there gains mass
+  S('M35 43 L49 43', 'hi', 2.2),
+]);
+def('hadron', () => [                                                 // what confinement makes: a bag you cannot open, mostly full of things that are not the quarks
+  P('M30 7 Q51 11 53 30 Q51 49 30 53 Q9 49 7 30 Q9 11 30 7 Z', 'gh'),
+  ...granules('lo', 24, 907, [11, 11, 49, 49]),                       // a sea of gluons and quark pairs, boiling
+  C(21, 25, 6.4, 'bs'), C(39, 23, 6.4, 'hi'),                         // and a couple of valence quarks that decide what it is called
+]);
+def('baryon', () => [                                                 // three quarks on a Y of flux tubes: the proton and the neutron are both this
+  S('M30 21 L30 34 M18 45 L30 34 M42 45 L30 34', 'ik', 4.4),
+  C(30, 17, 9, 'bs'), C(17, 45, 9, 'hi'), C(43, 45, 9, 'lo'),         // one of each colour, summing to none
+  S('M26 17 L34 17', 'ik', 2),
+]);
+def('meson', () => [                                                  // a quark and an antiquark on one tube, and nothing else — no meson is stable
+  C(15, 31, 10, 'bs'), S('M11 31 L19 31', 'ik', 2.2),
+  ring('hi', 45, 31, 10, 3),                                          // the antiquark, hollow, as the antimatter twins are drawn
+  S('M40 31 L50 31 M45 26 L45 36', 'ik', 2.2),
+  S('M26 31 L34 31', 'ik', 6.4),                                      // the one flux tube between them
+  S('M8 50 L52 50', 'gh', 1.4),
+]);
+def('metallic_bond', () => [                                          // positive cores in a fixed lattice, and the outer electrons belonging to none of them
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => C(16 + c * 14, 17 + r * 14, 5.4, 'bs'))),
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c =>
+    S(`M${13 + c * 14} ${17 + r * 14} L${19 + c * 14} ${17 + r * 14} M${16 + c * 14} ${14 + r * 14} L${16 + c * 14} ${20 + r * 14}`, 'ik', 1.4))),
+  ...granules('hi', 20, 331, [8, 8, 52, 52]),                         // which is why a metal conducts, and why it bends instead of shattering
+]);
+def('oxide', () => [                                                  // rock salt packing: nearly half the crust by mass is metal cations around O2−
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => (r + c) % 2
+    ? C(15 + c * 15, 15 + r * 15, 8, 'lo')                            // the oxide ion — big, and doubly negative
+    : C(15 + c * 15, 15 + r * 15, 4.4, 'bs'))),                       // the metal — small, and positive
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].filter(c => (r + c) % 2).map(c =>
+    S(`M${11 + c * 15} ${15 + r * 15} L${19 + c * 15} ${15 + r * 15}`, 'ik', 1.8))),
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].filter(c => (r + c) % 2 === 0).map(c =>
+    S(`M${12 + c * 15} ${15 + r * 15} L${18 + c * 15} ${15 + r * 15} M${15 + c * 15} ${12 + r * 15} L${15 + c * 15} ${18 + r * 15}`, 'ik', 1.2))),
+]);
+def('antimatter', () => [                                             // same mass, opposite charge; and when the two meet neither of them is left
+  C(13, 30, 8, 'bs'), S('M9 30 L17 30 M13 26 L13 34', 'ik', 2),
+  ring('hi', 47, 30, 8, 2.6), S('M43 30 L51 30', 'ik', 2),            // the twin, hollow, as the positron and antiproton already are
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * Math.PI) / 4;
+    return S(`M${n(30 + 5 * Math.cos(a))} ${n(30 + 5 * Math.sin(a))} L${n(30 + 11 * Math.cos(a))} ${n(30 + 11 * Math.sin(a))}`, 'lo', 1.6);
+  }),
+  S('M30 45 Q34 50 30 55', 'hi', 2), S('M30 15 Q26 10 30 5', 'hi', 2), // two gamma rays leave, back to back, and that is all
+]);
+def('pauli_exclusion_principle', () => [                              // two to a level, spins opposed, and never a third — the rule that gives the periodic table its shape
+  S('M8 46 L42 46', 'ik', 2.2), S('M8 30 L42 30', 'ik', 2.2), S('M8 14 L42 14', 'ik', 2.2),
+  ...[46, 30].flatMap(y => [
+    S(`M19 ${y - 2} L19 ${y - 13}`, 'bs', 2), P(`M19 ${y - 16} L23 ${y - 10} L15 ${y - 10} Z`, 'bs'),
+    S(`M31 ${y - 16} L31 ${y - 5}`, 'hi', 2), P(`M31 ${y - 2} L27 ${y - 8} L35 ${y - 8} Z`, 'hi'),
+  ]),
+  C(52, 40, 5, 'lo'),                                                 // a third electron, turned away — there is no state left for it
+  S('M47 35 L57 45 M57 35 L47 45', 'ik', 2.4),
+]);
+
+/* the four forces ─────────────────────────────────────────────────────── */
+def('fundamental_force', () => [                                      // four of them, and their strengths span forty orders of magnitude
+  ...[0, 1, 2, 3].map(i => S(`M11 ${13 + i * 12} L${[53, 44, 33, 19][i]} ${13 + i * 12}`, i ? 'hi' : 'bs', 5)),
+  ...[0, 1, 2, 3].map(i => C(11, 13 + i * 12, 3.4, 'ik')),            // strong, electromagnetic, weak, gravity
+  ...[0, 1, 2, 3].map(i => C([53, 44, 33, 19][i] + 4, 13 + i * 12, 2.4, 'lo')),  // each with its own carrier at the far end
+  S('M11 6 L11 55', 'ik', 1.6),                                       // and gravity, at 10^-39, is off the bottom of this scale entirely
+]);
+def('strong_force', () => [                                           // it does not weaken with distance — which is the whole reason quarks are never alone
+  C(12, 17, 7, 'bs'), C(48, 17, 7, 'hi'), S('M12 17 L48 17', 'ik', 6.4),
+  C(10, 43, 7, 'bs'), C(50, 43, 7, 'hi'),
+  S('M10 43 L25 43 M35 43 L50 43', 'ik', 6.4),                        // pull the two apart and the tube does not stretch thin, it snaps...
+  C(27, 43, 3.6, 'lo'), ring('lo', 34, 43, 3.6, 1.8),                 // ...into a new quark and antiquark, so you are back where you began
+  S('M8 55 L52 55', 'gh', 1.4),
+]);
+def('weak_force', () => [                                             // the only force that changes what a particle is; a free neutron takes 15 minutes to do it
+  C(15, 21, 11, 'lo'), C(15, 21, 5, 'gh'),                            // a neutron, uncharged...
+  S('M27 21 L38 21', 'ik', 2.6),
+  C(48, 21, 9, 'bs'), S('M43 21 L53 21 M48 16 L48 26', 'hi', 2.4),    // ...becomes a proton, one charge heavier
+  S('M19 32 Q25 39 31 32 Q37 25 43 32', 'gh', 2),                     // so a W has to leave, and it turns into
+  C(23, 48, 4.6, 'ik'), S('M18 48 L28 48', 'hi', 1.8),                // an electron
+  ring('gh', 43, 48, 4.6, 1.8),                                       // and an antineutrino, which nothing notices
+  S('M31 36 L24 43 M31 36 L41 43', 'gh', 1.4),
+]);
+def('electromagnetism', () => [                                       // one field, not two: the electric part and the magnetic part at right angles, moving together
+  S('M4 30 L56 30', 'gh', 1.4),
+  S('M4 30 Q13 6 22 30 Q31 54 40 30 Q49 6 56 26', 'bs', 2.8),         // the electric field, standing tall
+  S('M4 30 Q13 21 22 30 Q31 39 40 30 Q49 21 56 28', 'hi', 2.2),       // the magnetic field, foreshortened — it is edge-on to us
+  C(4, 30, 3, 'ik'),
+]);
+
+/* states of matter, and the six ways between them ──────────────────────────
+   Each state has one glyph and keeps it: the solid is a lattice, the liquid
+   is a level surface over close-packed molecules, the gas is a few dots and
+   their tracks. Every transition is those glyphs twice, an arrow, and which
+   way the heat goes — never a state standing still. */
+def('solid', () => [                                                  // definite shape and definite volume, and it needs no container for either
+  ...[0, 1, 2, 3].flatMap(r => [0, 1, 2, 3].map(c => C(13 + c * 10 + r * 3, 13 + r * 10, 4, 'bs'))),
+  ...[0, 1, 2, 3].map(r => S(`M${13 + r * 3} ${13 + r * 10} L${43 + r * 3} ${13 + r * 10}`, 'gh', 1.4)),
+  ...[0, 1, 2, 3].map(c => S(`M${13 + c * 10} 13 L${22 + c * 10} 43`, 'gh', 1.4)),
+  S('M6 54 L54 54', 'ik', 1.8),                                       // the atoms vibrate, but not one of them changes neighbours
+]);
+def('liquid', () => [                                                 // it takes the container's shape and keeps its own volume — and the surface finds a level
+  S('M7 14 L7 51 L53 51 L53 14', 'ik', 2.6),
+  S('M9 27 L51 27', 'hi', 2.6),                                       // a free surface, flat however you tip the vessel
+  ...[[14, 34], [23, 32], [32, 35], [41, 33], [49, 36], [18, 42], [28, 43], [37, 41],
+      [46, 44], [14, 48], [24, 49], [34, 48], [44, 49]].map(([x, y]) => C(x, y, 4, 'bs')),
+  S('M20 37 L26 37 M38 46 L44 46', 'gh', 1.6),                        // still touching, as in the solid — but not one of them keeps its place
+]);
+def('gas', () => [                                                    // no shape, no volume: it goes to every corner it is given
+  S('M7 9 L53 9 L53 51 L7 51 Z', 'ik', 2.2),
+  ...[[16, 19], [38, 15], [26, 33], [46, 37], [17, 44], [34, 47]].map(([x, y]) => C(x, y, 3.4, 'bs')),
+  ...[[16, 19], [38, 15], [26, 33], [46, 37], [17, 44], [34, 47]].map(([x, y]) => S(`M${x + 5} ${y - 4} L${x + 10} ${y - 8}`, 'gh', 1.4)),
+  // a thousand times further apart than in the liquid, and nothing between them but the walls
+]);
+def('melting', () => [                                                // lattice to liquid; and the temperature will not move until every last bond has gone
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => C(9 + c * 7, 13 + r * 7, 3, 'lo'))),
+  S('M30 24 L43 24', 'ik', 2.4), P('M50 24 L41 20 L41 28 Z', 'ik'),   // the order gives way...
+  S('M32 36 L55 36', 'hi', 2.2),
+  ...granules('bs', 12, 137, [34, 39, 54, 50]),                       // ...to something that still holds together and no longer holds station
+  ...[13, 21].map(x => S(`M${x} 50 Q${x + 3} 45 ${x} 40`, 'gh', 1.8)),
+  P('M17 34 L13 40 L21 40 Z', 'gh'),                                  // heat going in — all of it into the bonds, none into the thermometer
+]);
+def('freezing', () => [                                               // liquid to lattice, and the heat that melting swallowed comes straight back out
+  S('M5 17 L27 17', 'hi', 2.4),
+  ...granules('bs', 12, 233, [7, 20, 26, 32]),
+  S('M31 26 L44 26', 'ik', 2.4), P('M51 26 L42 22 L42 30 Z', 'ik'),
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => C(35 + c * 8, 36 + r * 8, 3, 'lo'))),  // and it locks into a pattern set by the molecule's own shape
+  ...[13, 21].map(x => S(`M${x} 39 Q${x + 3} 44 ${x} 49`, 'gh', 1.8)),
+  P('M17 55 L13 49 L21 49 Z', 'gh'),                                  // heat coming out, the same amount, to the exact joule
+]);
+def('vaporization', () => [                                           // liquid to gas, and at the boiling point it starts from inside, not just off the top
+  S('M4 33 L27 33', 'hi', 2.4),
+  ...granules('bs', 10, 419, [6, 36, 26, 50]),
+  ring('gh', 12, 43, 4, 1.6), ring('gh', 21, 47, 3, 1.6),             // bubbles — vapour forming in the body of the liquid
+  S('M28 28 Q39 10 47 11', 'ik', 2.4), P('M54 12 L45 7 L46 16 Z', 'ik'),  // the arrow climbs: they leave
+  ...[[37, 30], [49, 34], [42, 43], [53, 24]].map(([x, y]) => C(x, y, 3, 'lo')),
+  ...[12, 21].map(x => S(`M${x} 57 L${x} 52`, 'ik', 2)),              // and it takes seven times the heat that melting took
+]);
+def('condensation', () => [                                           // gas to liquid, on the first thing colder than the vapour
+  ...[[11, 9], [25, 7], [19, 19], [36, 13], [47, 9]].map(([x, y]) => C(x, y, 3, 'bs')),
+  S('M33 22 Q35 31 31 38', 'ik', 2.4), P('M30 45 L25 37 L35 36 Z', 'ik'),  // the arrow falls
+  S('M5 50 L55 50', 'ik', 3.4),                                       // the cold surface
+  P('M14 50 Q9 43 14 37 Q19 43 14 50 Z', 'hi'),                       // and a drop stands where the vapour touched it
+  P('M45 50 Q41 44 45 39 Q49 44 45 50 Z', 'hi'),
+  C(30, 47, 3.4, 'hi'),
+]);
+def('sublimation', () => [                                            // solid straight to vapour, over the top: dry ice never leaves a puddle
+  ...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => C(8 + c * 7, 34 + r * 7, 3, 'lo'))),
+  S('M14 30 Q30 4 44 15', 'ik', 2.4), P('M50 20 L42 20 L47 11 Z', 'ik'),
+  ...[[50, 32], [43, 40], [54, 45]].map(([x, y]) => C(x, y, 3, 'bs')),
+  S('M23 55 L41 55', 'gh', 2.2), ...granules('gh', 4, 977, [25, 49, 39, 54]),
+  S('M27 46 L37 57 M37 46 L27 57', 'ik', 2.4),                        // the liquid stage, struck out: at low enough pressure there is no liquid to have
+]);
+def('deposition', () => [                                             // vapour straight to solid, the other way over: this is window frost, and it was never dew
+  ...[[7, 9], [19, 6], [10, 20], [23, 17]].map(([x, y]) => C(x, y, 3, 'bs')),
+  S('M29 13 Q45 13 47 27', 'ik', 2.4), P('M46 34 L41 25 L51 25 Z', 'ik'),
+  hex('hi', 45, 42, 9, 2.2), ...spikes(45, 42, 9, 12, 6, 'hi', 'hi', 1.4, 30),  // and it comes out patterned, straight from the gas
+  S('M5 44 L21 44', 'gh', 2.2),
+  S('M7 37 L19 51 M19 37 L7 51', 'ik', 2.4),                          // with no liquid in between
+]);
+def('ionization', () => [                                             // not merely excited — the electron leaves altogether, and does not come back
+  S('M3 11 Q8 3 13 11 Q18 19 23 11', 'hi', 2.4),                      // a photon arrives with more energy than the last electron is held by
+  ring('gh', 31, 37, 17, 1.6),
+  C(31, 37, 6, 'bs'), S('M27 37 L35 37 M31 33 L31 41', 'ik', 2.2),    // and what is left is one charge positive
+  S('M27 27 Q38 13 49 8', 'lo', 1.8),
+  C(52, 7, 3.4, 'ik'), S('M48 7 L56 7', 'hi', 1.8),
+  ...granules('gh', 5, 53, [19, 45, 45, 53]),
+]);
+
+// Matter: the ordinary half of the pair antimatter is drawn against, and only
+// about 5% of the universe by mass-energy. Three filled particles clustered
+// into a lump, solid where antimatter's twin is hollow, on a ground line so it
+// reads as stuff that sits somewhere rather than a diagram of a state.
+def('matter', () => [
+  C(21, 34, 8.5, 'bs'), C(38, 30, 7, 'lo'), C(30, 44, 6, 'hi'),
+  S('M17 34 L25 34 M21 30 L21 38', 'ik', 2),                          // a proton's charge, filled in, unlike antimatter's ring
+  C(45, 42, 3.2, 'gh'), C(14, 22, 2.6, 'gh'),
+  S('M6 53 L54 53', 'gh', 1.4),
+]);
+
+/* umbrella waves, 3 Sep -- mollusc umbrellas and the periodic blocks */
+/* the mollusc classes, the worm shapes, and the blocks of one chart ────────
+ * Each umbrella is drawn from the thing every member shares, and deliberately
+ * not from the member already on the shelf: the gastropod is its foot and its
+ * forward-facing vent rather than a second snail, the bivalve is the hinge
+ * gaping rather than a second oyster, the squid lies along the field where the
+ * giant squid hangs down it. The six chemistry entries are charts, not objects,
+ * and they are separated by where their block sits and how wide it is. */
+
+def('gastropod', () => [                                              // one shell, one foot, and a gut that was turned to face the wrong way
+  P('M6 48 Q6 40 18 39 Q34 38 46 41 Q52 43 51 48 Q30 53 6 48 Z', 'bs'),   // the sole: the whole class glides on one muscle
+  ...[14, 22, 30, 38].map(x => S(`M${x} 47 Q${x + 3} 42 ${x + 6} 46`, 'lo', 1.4)),  // and it moves in waves that run along it
+  S('M40 31 Q50 31 50 22 Q50 13 40 14 Q32 15 33 22 Q34 28 40 27', 'ik', 2.6),  // one coiled shell — never a pair of valves
+  S('M18 38 Q15 23 26 21 Q37 20 35 33', 'lo', 2),                     // the gut, hauled forward until the vent opens over the head
+  C(35, 33, 2.4, 'hi'),
+  C(10, 43, 1.8, 'ik'),                                               // the mouth, with the toothed ribbon just behind it
+  ...[0, 1, 2].map(i => S(`M${n(7 + i * 2.4)} ${n(46 + i * .8)} L${n(6 + i * 2.4)} ${n(48 + i * .8)}`, 'gh', 1)),
+]);
+def('torsion', () => [                                                // the larva rotates its own body 180 degrees, and no other class does anything like it
+  P('M20 44 Q20 30 30 30 Q40 30 40 44 Q30 50 20 44 Z', 'bs'),         // the veliger, before it starts
+  S('M14 22 A16 16 0 1 1 46 22', 'ik', 2.2),                          // half a turn, and in some species it takes three minutes
+  P('M47 23 L41 15 L52 15 Z', 'ik'),
+  S('M39 39 Q35 22 31 19', 'lo', 2.2),                                // the gut and the mantle cavity, dragged round with it
+  C(30, 47, 2.2, 'hi'),                                               // the mouth stays where it was...
+  C(30, 17, 3.2, 'ik'),                                               // ...and the vent ends up directly above it
+  S('M24 27 L36 27', 'gh', 1.2),
+]);
+def('cephalopod', () => [                                             // drawn head-on, because the class is a ring of arms with a mouth in the middle of it
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * 45) * Math.PI / 180;
+    return S(`M${n(28 + 7 * Math.cos(a))} ${n(32 + 7 * Math.sin(a))} ` +
+             `Q${n(28 + 17 * Math.cos(a + .5))} ${n(32 + 17 * Math.sin(a + .5))} ` +
+             `${n(28 + 24 * Math.cos(a))} ${n(32 + 24 * Math.sin(a))}`, 'lo', 3);
+  }),
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * 45) * Math.PI / 180;
+    return C(n(28 + 16 * Math.cos(a + .28)), n(32 + 16 * Math.sin(a + .28)), 1.2, 'hi');
+  }),                                                                 // suckers down every one of them                                                                 // the mollusc foot, split into arms and wrapped round the head
+  C(28, 32, 8, 'bs'),
+  P('M23 29 L33 29 L28 37 Z', 'ik'),                                  // a parrot beak at the centre of the ring
+  C(46, 13, 7, 'hi'), C(46, 13, 3, 'ik'),                             // and the largest eye anything without a backbone has ever grown
+]);
+def('bivalve', () => [                                                // two valves on one hinge: the ligament springs them apart, and muscle is the only thing that shuts them
+  P('M28 15 Q10 22 8 38 Q13 47 22 46 Q26 31 28 15 Z', 'bs'),
+  P('M32 15 Q50 22 52 38 Q47 47 38 46 Q34 31 32 15 Z', 'hi'),         // mirror images of each other, left and right — never top and bottom
+  S('M23 12 L37 12', 'ik', 3),                                        // the hinge, with the ligament lying along it
+  ...[0, 1, 2].map(i => S(`M${26 - i} ${42 - i * 8} Q${17 - i * 2} ${39 - i * 7} ${12 + i * 3} ${34 - i * 5}`, 'lo', 1.2)),
+  ...[0, 1, 2].map(i => S(`M${34 + i} ${42 - i * 8} Q${43 + i * 2} ${39 - i * 7} ${48 - i * 3} ${34 - i * 5}`, 'gh', 1.2)),   // growth lines, a ridge to a season
+  S('M25 33 L35 33', 'ik', 2.4),                                      // the adductor, drawn across the gape it has to pull shut
+  C(25, 33, 2.2, 'lo'), C(35, 33, 2.2, 'lo'),
+]);
+def('clam', () => [                                                   // a bivalve that gave up the surface: it lives under the sand and keeps two pipes up through it
+  S('M2 20 L58 20', 'lo', 1.8),                                       // the sediment surface
+  ...granules('gh', 9, 71, [4, 22, 56, 30]),
+  P('M30 26 Q14 30 13 42 Q22 52 30 51 Q38 52 47 42 Q46 30 30 26 Z', 'bs'),   // the shell, buried
+  S('M26 31 L26 6', 'hi', 3.4), S('M34 31 L34 10', 'hi', 3.4),        // one siphon draws water down, the other pushes it back out
+  C(26, 5, 2, 'ik'), C(34, 9, 2, 'ik'),
+  P('M29 51 L23 58 L36 58 Z', 'lo'),                                  // and the hatchet foot, digging further down
+]);
+def('squid', () => [                                                  // the mantle is a jet: it fills, then squeezes, and the animal leaves tail-first
+  P('M16 22 Q36 22 55 29 Q36 37 16 37 Z', 'bs'),                      // one long tapering tube of muscle
+  P('M43 29 L57 19 L57 40 Z', 'lo'),                                  // fins at the pointed end, not around the head
+  C(17, 26, 3.4, 'ik'),
+  ...[-8, -4, 0, 4, 8].map(dy => S(`M15 ${n(30 + dy * .5)} L5 ${30 + dy}`, 'lo', 1.8)),   // eight arms, short...
+  S('M15 27 Q7 19 4 13', 'hi', 2), C(4, 13, 2.4, 'bs'),
+  S('M15 33 Q7 42 4 49', 'hi', 2), C(4, 49, 2.4, 'bs'),               // ...and two feeding tentacles, clubbed — ten in all, which no octopus has
+]);
+def('worm', () => [                                                   // not a clade but a shape, and at least eight phyla arrived at it separately
+  P('M4 30 Q9 21 20 21 L44 21 Q54 24 54 30 Q54 36 44 39 L20 39 Q9 39 4 30 Z', 'bs'),
+  S('M9 30 L52 30', 'hi', 2.4),                                       // a gut running straight through, with an opening at each end
+  C(9, 30, 2.4, 'ik'), ring('lo', 52, 30, 2.6, 1.4),
+  ...[16, 22, 28, 34, 40, 46].map(x => S(`M${x} 22 Q${n(x - 1.5)} 30 ${x} 38`, 'ik', 1.2)),   // one unit repeated, in the ones that are segmented
+  S('M20 26 Q26 24 32 26', 'gh', 1),
+  S('M20 34 Q26 36 32 34', 'gh', 1),                                  // and no limb anywhere along it, in any of the eight phyla the word covers
+]);
+def('flatworm', () => [                                               // drawn across, not along: it is flat because it has no cavity and no blood, so oxygen has to walk in
+  P('M4 32 L14 24 Q30 20 46 25 Q56 29 56 32 Q56 36 46 40 Q30 45 14 40 Z', 'bs'),
+  ...granules('lo', 14, 409, [12, 26, 50, 38]),                       // packed solid with tissue the whole way through
+  P('M3 32 L17 25 L17 39 Z', 'hi'),                                   // the arrow head, and the whole animal is that thin
+  C(12, 29, 1.6, 'ik'), C(12, 35, 1.6, 'ik'),
+  S('M19 32 L33 32 M33 32 L48 26 M33 32 L48 38', 'ik', 2.4),          // one branched gut with one opening, doing a circulation's work
+]);
+def('jellyfish', () => [                                              // the medusa: a bell that swims by pulling its own rim shut, and is 95% water while it does
+  P('M6 34 Q6 10 30 10 Q54 10 54 34 Q48 39 42 35 Q36 39 30 35 Q24 39 18 35 Q12 39 6 34 Z', 'bs'),
+  S('M10 33 Q11 15 30 14', 'hi', 1.6),
+  ...[[20, 25], [40, 25], [30, 19], [30, 31]].map(([x, y]) => ring('lo', x, y, 4.6, 1.8)),  // four gonads, showing straight through the jelly
+  P('M27 36 L33 36 L34 48 Q30 52 26 48 Z', 'hi'),                     // the manubrium, hung from the middle of the underside
+  ...[-1, 1].map(s => S(`M${30 + s * 5} 44 Q${30 + s * 14} 50 ${30 + s * 10} 58`, 'lo', 2)),   // oral arms, frilled
+  ...[8, 16, 44, 52].map(x => S(`M${x} 36 L${x} 52`, 'gh', 1.2)),
+]);
+def('protist', () => [                                                // a bracket, not a branch: whatever was left once the animals, plants and fungi had been taken out
+  S('M3 8 L3 54', 'gh', 1.6), S('M57 8 L57 54', 'gh', 1.6),
+  E(16, 19, 9, 6, 'bs'), S('M7 19 Q1 14 3 7', 'ik', 1.4),             // one that swims with a whip...
+  C(44, 18, 8, 'hi'),
+  ...Array.from({ length: 10 }, (_, i) => {
+    const a = i * 36 * Math.PI / 180;
+    return S(`M${n(44 + 8 * Math.cos(a))} ${n(18 + 8 * Math.sin(a))} L${n(44 + 11.5 * Math.cos(a))} ${n(18 + 11.5 * Math.sin(a))}`, 'gh', 1);
+  }),                                                                 // ...one that rows with several thousand hairs...
+  P('M11 45 Q8 35 18 34 Q26 32 27 40 Q35 42 30 48 Q20 54 14 50 Q9 49 11 45 Z', 'lo'),   // ...one that just pours itself where it is going...
+  C(45, 43, 8, 'bs'), C(44, 41, 4.2, 'plant-hi'),                     // ...and one that photosynthesises, which is why the group never held together
+]);
+def('organism', () => [                                               // one individual: the hard part of the word is not what it is made of but where it stops
+  P('M12 30 Q12 12 30 12 Q48 12 48 30 Q48 48 30 48 Q12 48 12 30 Z', 'bs'),
+  ring('ik', 30, 30, 17, 1.6),                                        // that boundary, and it is the whole definition
+  C(23, 24, 5, 'lo'), E(38, 34, 7, 4, 'hi'), rod3('lo', 29, 43, 6, 2.4),   // unlike parts, not one of which is an organism on its own
+  S('M2 22 L10 25', 'hi', 2), P('M13 26 L7 22 L7 29 Z', 'hi'),        // it takes in...
+  S('M50 38 L57 41', 'hi', 2), P('M59 42 L53 38 L53 45 Z', 'hi'),     // ...and it puts out, and it stays one thing the whole time it does
+]);
+def('life', () => [                                                   // order held against the drift, and paid for: energy in at one corner, disorder out at the other
+  P('M8 14 Q30 8 52 14 Q56 30 52 46 Q30 52 8 46 Q4 30 8 14 Z', 'lo'),
+  ...[0, 1, 2].flatMap(r0 => [0, 1, 2].map(c0 =>
+    P(`M${16 + c0 * 10} ${20 + r0 * 10} L${23 + c0 * 10} ${20 + r0 * 10} ` +
+      `L${23 + c0 * 10} ${27 + r0 * 10} L${16 + c0 * 10} ${27 + r0 * 10} Z`, (r0 + c0) % 2 ? 'bs' : 'hi'))),
+  // inside the boundary everything is arranged; nothing anywhere else in the world does this to itself
+  S('M2 4 L11 11', 'hi', 2.4), P('M13 13 L7 12 L11 6 Z', 'hi'),
+  ...granules('gh', 8, 577, [46, 46, 58, 58]),                        // and the bill comes due as heat, every time
+]);
+def('eggshell', () => [                                               // 6 g of calcite, a third of a millimetre thick, and it breaks from the inside
+  P('M28 6 Q41 15 40 26 L36 30 L32 25 L27 30 L23 25 L18 29 L16 25 Q15 14 28 6 Z', 'hi'),
+  P('M17 34 L21 29 L26 34 L31 29 L36 34 L40 30 Q46 42 38 50 Q28 55 20 49 Q13 42 17 34 Z', 'lo'),   // the two halves, and the crack between them is a zigzag, never a line
+  S('M16 25 Q15 14 28 6 Q41 15 40 26', 'ik', 1.4),
+  ...[22, 28, 34].map(x => S(`M${x} 11 L${x} 15`, 'gh', 1)),          // seven thousand pores through it, because the chick has to breathe out
+  S('M20 40 Q30 36 39 41', 'gh', 1.2),                                // the membrane, peeled back on the inside
+]);
+def('carapace', () => [                                               // a box of bone: eight ribs fused flat, with the shoulder girdle inside the ribs, which nothing else manages
+  P('M8 30 Q8 8 30 8 Q52 8 52 30 Q52 52 30 52 Q8 52 8 30 Z', 'lo'),
+  ...[0, 1, 2, 3, 4].map(i => P(`M25 ${11 + i * 8} L35 ${11 + i * 8} L35 ${18 + i * 8} L25 ${18 + i * 8} Z`, 'hi')),
+  ...[-1, 1].flatMap(s => [0, 1, 2, 3].map(i =>
+    P(`M${30 + s * 6} ${13 + i * 8} L${30 + s * 16} ${15 + i * 8} ` +
+      `L${30 + s * 16} ${22 + i * 8} L${30 + s * 6} ${20 + i * 8} Z`, 'bs'))),
+  ...[0, 1, 2, 3, 4].map(i => S(`M14 ${12 + i * 8} L46 ${12 + i * 8}`, 'ik', 1)),
+  S('M24 10 L24 51 M36 10 L36 51', 'ik', 1),
+  // five vertebral scutes down the midline, four costals either side — and the seams never line up with the bone beneath them
+  ring('ik', 30, 30, 22, 1.4),
+]);
+
+/* the chart itself, and four blocks of it ─────────────────────────────────
+ * Told apart by where the block sits and how many columns it takes: two at
+ * the left edge, ten across the middle, and the two fourteen-wide rows that
+ * had to be cut out and set down below. */
+def('periodic_table', () => {
+  const cw = 3.05, xc = c => n(2.4 + (c - 1) * cw), rh = 4.4, yr = r0 => n(6 + (r0 - 1) * 4.9);
+  const cell = (c1, c2, r0, ro) =>
+    P(`M${xc(c1)} ${yr(r0)} L${n(xc(c2) + cw - .5)} ${yr(r0)} ` +
+      `L${n(xc(c2) + cw - .5)} ${n(yr(r0) + rh)} L${xc(c1)} ${n(yr(r0) + rh)} Z`, ro);
+  return [
+    cell(1, 1, 1, 'bs'), cell(18, 18, 1, 'hi'),                       // period one: one element at each end and a hole between them
+    cell(1, 2, 2, 'bs'), cell(13, 18, 2, 'hi'),
+    cell(1, 2, 3, 'bs'), cell(13, 18, 3, 'hi'),                       // the notch is where the d block has not started yet
+    ...[4, 5, 6, 7].map(r0 => cell(1, 18, r0, 'lo')),
+    ...[45, 51].map((yy, i) => P(`M${xc(3)} ${yy} L${n(xc(16) + cw - .5)} ${yy} ` +
+      `L${n(xc(16) + cw - .5)} ${yy + 4} L${xc(3)} ${yy + 4} Z`, i ? 'hi' : 'bs')),
+    ...Array.from({ length: 13 }, (_, i) =>
+      S(`M${n(xc(i + 4) - .25)} 45 L${n(xc(i + 4) - .25)} 55`, 'gh', .6)),
+    // and the f block, cut out and set below, or the chart would be 32 columns wide
+    ...Array.from({ length: 17 }, (_, i) =>
+      S(`M${n(xc(i + 2) - .25)} ${yr(4)} L${n(xc(i + 2) - .25)} ${n(yr(7) + rh)}`, 'gh', .6)),
+    ...[5, 6, 7].map(r0 => S(`M${xc(1)} ${n(yr(r0) - .25)} L${n(xc(18) + cw - .5)} ${n(yr(r0) - .25)}`, 'gh', .6)),
+  ];
+});
+def('transition_metal', () => [                                       // ten columns wide and right through the middle, because that is where the d shell is filling
+  ...Array.from({ length: 10 }, (_, i) =>
+    P(`M${n(4 + i * 5.2)} 34 L${n(8.6 + i * 5.2)} 34 L${n(8.6 + i * 5.2)} 45 L${n(4 + i * 5.2)} 45 Z`, i % 2 ? 'bs' : 'lo')),
+  S('M2 31 L57 31', 'gh', 1.2),
+  ...[45, 135, 225, 315].map(a =>
+    leaf('hi', n(30 + 10 * Math.cos(a * Math.PI / 180)), n(18 - 10 * Math.sin(a * Math.PI / 180)), .6, a)),
+  // one d orbital, four lobes: half-filling it is what gives the colours, and what lets one metal carry six different charges
+  C(30, 18, 2.4, 'ik'),
+]);
+def('alkaline_earth_metal', () => [                                   // one group, one column, and it is the second one in from the left edge
+  ...Array.from({ length: 6 }, (_, i) =>
+    P(`M4 ${n(8 + i * 8)} L11 ${n(8 + i * 8)} L11 ${n(14 + i * 8)} L4 ${n(14 + i * 8)} Z`, 'gh')),
+  ...Array.from({ length: 6 }, (_, i) =>
+    P(`M13 ${n(8 + i * 8)} L20 ${n(8 + i * 8)} L20 ${n(14 + i * 8)} L13 ${n(14 + i * 8)} Z`, i % 2 ? 'bs' : 'lo')),
+  // group one is the edge; this is the one beside it, running top to bottom
+  C(35, 28, 9, 'hi'),
+  S('M31 28 L39 28 M35 24 L35 32', 'ik', 1.8),                        // and it goes to +2 or it does no chemistry at all
+  C(26, 14, 2.8, 'bs'), S('M23 14 L29 14', 'ik', 1.4),
+  C(46, 16, 2.8, 'bs'), S('M43 16 L49 16', 'ik', 1.4),                // both outer electrons leave, every time — there is no +1 anywhere in the group
+  S('M31 22 Q29 18 28 17', 'gh', 1.2), S('M40 23 Q43 20 44 19', 'gh', 1.2),
+]);
+def('lanthanide', () => [                                             // fourteen elements pulled out of one gap in period six, and they shrink steadily across it
+  S('M6 9 L26 9 L26 16 L6 16 Z', 'gh', 1.2),
+  S('M33 9 L54 9 L54 16 L33 16 Z', 'gh', 1.2),
+  S('M26 16 L23 23 M33 16 L37 23', 'gh', 1.2),                        // the gap, and the tether down to where they were put instead
+  ...Array.from({ length: 14 }, (_, i) =>
+    C(n(5 + i * 3.7), 36, n(4.6 - i * .19), i % 2 ? 'bs' : 'lo')),
+  // the contraction: each new f electron shields the nucleus badly, so every atom along the row is smaller than the last
+  S('M4 48 L54 48', 'ik', 1.4), P('M57 48 L50 45 L50 51 Z', 'ik'),
+  S('M5 45 L5 51', 'gh', 1), S('M54 45 L54 51', 'gh', 1),
+]);
+def('actinide', () => [                                               // the lower of the two rows set out below the chart, and only the first four of them can be dug up
+  S('M2 20 L57 20', 'gh', 1), S('M2 44 L57 44', 'gh', 1),
+  ...Array.from({ length: 4 }, (_, i) =>
+    P(`M${n(3 + i * 3.9)} 23 L${n(7.4 + i * 3.9)} 23 L${n(7.4 + i * 3.9)} 41 L${n(3 + i * 3.9)} 41 Z`, i % 2 ? 'bs' : 'lo')),
+  ...Array.from({ length: 10 }, (_, i) =>
+    S(`M${n(19 + i * 3.9)} 26 L${n(22.4 + i * 3.9)} 26 L${n(22.4 + i * 3.9)} 38 L${n(19 + i * 3.9)} 38 Z`, 'gh', 1)),
+  // actinium, thorium, protactinium and uranium — and then ten that had to be built, some of them an atom at a time
+  ...[90, 210, 330].map(a => {
+    const p = (rad, deg) => `${n(30 + rad * Math.cos(deg * Math.PI / 180))} ${n(50 + rad * Math.sin(deg * Math.PI / 180))}`;
+    return P(`M${p(3.5, a - 22)} L${p(7.5, a - 22)} L${p(7.5, a + 22)} L${p(3.5, a + 22)} Z`, 'ik');
+  }),
+  C(30, 50, 1.8, 'ik'),                                               // every one of the fourteen radioactive, without a single exception
+]);
+def('standard_model', () => [                                         // seventeen boxes, and everything that has ever been measured is made of what is in them
+  ...[0, 1, 2].flatMap(c0 => [0, 1].map(r0 =>
+    P(`M${3 + c0 * 11} ${6 + r0 * 11} L${12 + c0 * 11} ${6 + r0 * 11} ` +
+      `L${12 + c0 * 11} ${15 + r0 * 11} L${3 + c0 * 11} ${15 + r0 * 11} Z`, 'bs'))),
+  ...[0, 1, 2].flatMap(c0 => [0, 1].map(r0 =>
+    P(`M${3 + c0 * 11} ${32 + r0 * 11} L${12 + c0 * 11} ${32 + r0 * 11} ` +
+      `L${12 + c0 * 11} ${41 + r0 * 11} L${3 + c0 * 11} ${41 + r0 * 11} Z`, 'lo'))),
+  // six quarks over six leptons, in three generations that differ in almost nothing except mass
+  ...[0, 1, 2, 3].map(i => C(41, n(11 + i * 11), 4.4, 'hi')),         // four force carriers, in a column of their own
+  C(53, 27.5, 5, 'ik'), ring('gh', 53, 27.5, 5, 1),                   // and the one that gives the rest their mass, missing until 2012
+  S('M37 3 L37 55', 'gh', 1), S('M47 3 L47 55', 'gh', 1),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

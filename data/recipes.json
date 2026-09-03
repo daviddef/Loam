@@ -8444,16 +8444,6 @@
   },
   {
     "in": [
-      "archaea",
-      "bacteria"
-    ],
-    "out": "cell",
-    "why": "One cell swallowed another and did not digest it. Every plant, animal and fungus alive descends from that merger, and carries the swallowed thing still.",
-    "src": "https://en.wikipedia.org/wiki/Archaea",
-    "verified": true
-  },
-  {
-    "in": [
       "cell"
     ],
     "verb": "crush",
@@ -16429,32 +16419,12 @@
   },
   {
     "in": [
-      "human",
-      "mud"
-    ],
-    "out": "bull_shark",
-    "why": "One of the few sharks that can thrive in fresh water — tracked 4,000 km up the Amazon and resident in Lake Nicaragua. Territorial in the shallow, murky coastal waters it shares with people, it is one of three species most often implicated in bites.",
-    "src": "https://en.wikipedia.org/wiki/Bull_shark",
-    "verified": true
-  },
-  {
-    "in": [
       "ice",
       "whale"
     ],
     "out": "orca",
     "why": "The largest member of the dolphin family, not a whale at all. An apex predator with no natural predators of its own, it hunts fish, seals, sharks and even other whales, most densely in cold, high-latitude waters.",
     "src": "https://en.wikipedia.org/wiki/Orca",
-    "verified": true
-  },
-  {
-    "in": [
-      "coral",
-      "reef"
-    ],
-    "out": "nautilus",
-    "why": "The last living member of a subclass otherwise gone for hundreds of millions of years. It lives on the deep slopes of coral reefs, regulating buoyancy in its chambered shell and reaching out with 50 to 90 tentacles.",
-    "src": "https://en.wikipedia.org/wiki/Nautilus",
     "verified": true
   },
   {
@@ -16559,16 +16529,6 @@
   },
   {
     "in": [
-      "calcium",
-      "coral"
-    ],
-    "out": "crown_of_thorns",
-    "why": "Like every echinoderm it builds a skeleton of calcium-carbonate plates just under the skin rather than a shell around it — and it wears that skeleton onto a reef, grazing living coral polyps down to bare rock.",
-    "src": "https://en.wikipedia.org/wiki/Crown-of-thorns_starfish",
-    "verified": true
-  },
-  {
-    "in": [
       "coral",
       "egg"
     ],
@@ -16595,16 +16555,6 @@
     "out": "anglerfish",
     "why": "In the total darkness of the deep sea, it dangles a modified fin ray — the illicium, tipped with a light-producing lure called the esca — to draw curious fish close enough to strike.",
     "src": "https://en.wikipedia.org/wiki/Anglerfish",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "reef"
-    ],
-    "out": "psychedelic_frogfish",
-    "why": "First photographed alive by recreational divers exploring reefs near Ambon Island, Indonesia, in January 2008 — a species new to science, described the following year.",
-    "src": "https://en.wikipedia.org/wiki/Psychedelic_frogfish",
     "verified": true
   },
   {
@@ -18185,16 +18135,6 @@
     "out": "trophic_cascade",
     "why": "Suppressing a whole trophic level ripples down every level beneath it — Yellowstone's wolves are the textbook case, though the ecosystem as a whole never fully reverted to how it was before they were wiped out.",
     "src": "https://en.wikipedia.org/wiki/Trophic_cascade",
-    "verified": true
-  },
-  {
-    "in": [
-      "kelp",
-      "sea"
-    ],
-    "out": "sea_urchin",
-    "why": "Feeds mainly on algae and can chew straight through a kelp plant's holdfast; enough sea urchins grazing unchecked will strip a kelp forest down to a landscape of bare, denuded rock.",
-    "src": "https://en.wikipedia.org/wiki/Kelp_forest",
     "verified": true
   },
   {
@@ -27167,16 +27107,6 @@
   },
   {
     "in": [
-      "mussel",
-      "water"
-    ],
-    "out": "sea_star",
-    "why": "A sea star's hundreds of tube feet run on a water-filled hydraulic system, not muscle alone; it uses that grip to slowly pull a mussel's two shells apart and push its own stomach inside to digest it.",
-    "src": "https://en.wikipedia.org/wiki/Starfish",
-    "supported": true
-  },
-  {
-    "in": [
       "air",
       "kelp"
     ],
@@ -30114,26 +30044,6 @@
     "out": "milky_way",
     "why": "The Sun sits about 27,000 light-years from the center of the Milky Way, one of 100 to 400 billion stars completing an orbit of the galaxy roughly every 240 million years.",
     "src": "https://en.wikipedia.org/wiki/Milky_Way",
-    "verified": true
-  },
-  {
-    "in": [
-      "galaxy",
-      "telescope"
-    ],
-    "out": "andromeda_galaxy",
-    "why": "In 1925 Edwin Hubble identified Cepheid variable stars in Andromeda on telescope photographs, proving it lay far beyond the Milky Way and settling the debate over whether it was a separate galaxy.",
-    "src": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
-    "verified": true
-  },
-  {
-    "in": [
-      "galaxy",
-      "milky_way"
-    ],
-    "out": "spiral_galaxy",
-    "why": "Spiral galaxies are flat rotating discs of stars, gas and dust with a central bulge, their arms bright with young star formation — about 60% of galaxies today, the Milky Way included.",
-    "src": "https://en.wikipedia.org/wiki/Spiral_galaxy",
     "verified": true
   },
   {
@@ -46040,16 +45950,6 @@
   },
   {
     "in": [
-      "t_tauri_star"
-    ],
-    "verb": "heat",
-    "out": "star",
-    "why": "A T Tauri star keeps contracting and heating for roughly another hundred million years until core hydrogen fusion finally ignites, at which point it settles onto the main sequence as an ordinary star.",
-    "src": "https://en.wikipedia.org/wiki/T_Tauri_star",
-    "verified": true
-  },
-  {
-    "in": [
       "protostar",
       "accretion_disc"
     ],
@@ -51325,16 +51225,6 @@
   },
   {
     "in": [
-      "pinniped",
-      "water"
-    ],
-    "out": "seal",
-    "why": "A true seal has no external ear flap and can't rotate its hind flippers forward, so on land it must \"galumph,\" but in the water it swims more efficiently than an eared sea lion.",
-    "src": "https://en.wikipedia.org/wiki/Earless_seal",
-    "verified": true
-  },
-  {
-    "in": [
       "snail",
       "sea_anemone"
     ],
@@ -51741,16 +51631,6 @@
     "out": "porpoise",
     "why": "Porpoises are usually told apart from dolphins by their teeth — flattened and spade-shaped rather than conical — and by lacking a dolphin's pronounced beak. Despite the resemblance, porpoises are actually closer kin to narwhals and belugas.",
     "src": "https://en.wikipedia.org/wiki/Porpoise",
-    "verified": true
-  },
-  {
-    "in": [
-      "fish",
-      "iceberg"
-    ],
-    "out": "seal",
-    "why": "True seals (phocids) lack external ear flaps and cannot rotate their hind flippers forward, so on land they can only flop and wriggle. In water they swim by sweeping hind flippers and lower body side to side, unlike eared seals and sea lions.",
-    "src": "https://en.wikipedia.org/wiki/Pinniped",
     "verified": true
   },
   {
@@ -52401,16 +52281,6 @@
     "out": "endothermy",
     "why": "Endotherms burn oxygen in mitochondria-dense tissue to generate metabolic heat directly, then use blood flow to distribute it and hold body temperature steady regardless of surroundings — unlike ectotherms, which depend on outside heat.",
     "src": "https://en.wikipedia.org/wiki/Endothermy",
-    "verified": true
-  },
-  {
-    "in": [
-      "wing",
-      "ear"
-    ],
-    "out": "bat",
-    "why": "A bat's wing is a patagium of skin stretched over four long, thin finger bones, making it the only mammal capable of sustained flight rather than gliding. Its oversized ears feed the laryngeal calls it uses to hunt in total darkness.",
-    "src": "https://en.wikipedia.org/wiki/Bat",
     "verified": true
   },
   {
@@ -56911,16 +56781,6 @@
     "out": "polaris",
     "why": "Polaris lies nearly in line with Earth's rotational axis, so it stands almost motionless while the rest of the sky wheels around it — a fixed point that has guided celestial navigation for centuries. It is also the closest Cepheid variable star to Earth.",
     "src": "https://en.wikipedia.org/wiki/Polaris",
-    "verified": true
-  },
-  {
-    "in": [
-      "milky_way",
-      "telescope"
-    ],
-    "out": "alpha_centauri",
-    "why": "Alpha Centauri, the nearest star system to the Sun at about 4.34 light-years, is a triple system within the Milky Way -- Sun-like Alpha Centauri A and orange Alpha Centauri B orbiting closely, with red dwarf Proxima Centauri looping far around them both.",
-    "src": "https://en.wikipedia.org/wiki/Alpha_Centauri",
     "verified": true
   },
   {
@@ -64477,16 +64337,6 @@
   },
   {
     "in": [
-      "tissue",
-      "heart"
-    ],
-    "out": "organ",
-    "why": "An organ is a collection of tissues joined in a structural unit to serve a common function; the heart is the textbook case, and there are roughly 79 in a human body.",
-    "src": "https://en.wikipedia.org/wiki/Organ_(biology)",
-    "verified": true
-  },
-  {
-    "in": [
       "epithelial_tissue",
       "muscle_tissue"
     ],
@@ -67177,26 +67027,6 @@
   },
   {
     "in": [
-      "hydrochloric_acid",
-      "proton"
-    ],
-    "out": "acid",
-    "why": "A Brønsted–Lowry acid is defined by donating a proton, and hydrochloric acid gives its H+ up completely in water.",
-    "src": "https://en.wikipedia.org/wiki/Acid",
-    "verified": true
-  },
-  {
-    "in": [
-      "ammonia",
-      "proton"
-    ],
-    "out": "base",
-    "why": "A base accepts the proton an acid donates — ammonia takes an H+ and becomes ammonium, with no hydroxide involved at all.",
-    "src": "https://en.wikipedia.org/wiki/Base_(chemistry)",
-    "verified": true
-  },
-  {
-    "in": [
       "acid",
       "base"
     ],
@@ -67323,16 +67153,6 @@
     "out": "noble_gas",
     "why": "Full valence shells leave group 18 with nothing to gain or lose; argon is 0.94% of the air, and helium boils at 4.4 K, the lowest of any known substance.",
     "src": "https://en.wikipedia.org/wiki/Noble_gas",
-    "verified": true
-  },
-  {
-    "in": [
-      "chlorine",
-      "salt"
-    ],
-    "out": "halogen",
-    "why": "Berzelius coined 'halogen' — salt-former — in 1826, because each of these seven-valence-electron elements makes a sea-salt-like compound with an alkali metal.",
-    "src": "https://en.wikipedia.org/wiki/Halogen",
     "verified": true
   },
   {
@@ -68727,16 +68547,6 @@
   },
   {
     "in": [
-      "animal",
-      "sponge"
-    ],
-    "out": "invertebrate",
-    "why": "The sponge has no vertebral column and no bones at all — invertebrate is simply every animal that lacks a backbone, by one estimate 97% of animal species.",
-    "src": "https://en.wikipedia.org/wiki/Invertebrate",
-    "verified": true
-  },
-  {
-    "in": [
       "vertebrate",
       "milk"
     ],
@@ -68813,26 +68623,6 @@
     "out": "crustacean",
     "why": "Krill, crabs, shrimp, copepods, barnacles and woodlice are all crustaceans: mandibulate arthropods, mostly aquatic, carrying two pairs of antennae on the head.",
     "src": "https://en.wikipedia.org/wiki/Crustacean",
-    "verified": true
-  },
-  {
-    "in": [
-      "sea_star",
-      "sea_urchin"
-    ],
-    "out": "echinoderm",
-    "why": "Both are echinoderms: five-fold radial symmetry as adults, and a water vascular system of fluid-filled canals driving hundreds of tube feet.",
-    "src": "https://en.wikipedia.org/wiki/Echinoderm",
-    "verified": true
-  },
-  {
-    "in": [
-      "brittle_star",
-      "sea_cucumber"
-    ],
-    "out": "echinoderm",
-    "why": "A whip-armed brittle star and a soft sea cucumber belong to the same phylum of about 7,600 species — the largest marine-only phylum, and all of it on the sea bed.",
-    "src": "https://en.wikipedia.org/wiki/Echinoderm",
     "verified": true
   },
   {
@@ -71368,16 +71158,6 @@
   },
   {
     "in": [
-      "crab_nebula",
-      "pulsar"
-    ],
-    "out": "neutron_star",
-    "why": "The Crab Pulsar sits at the nebula's centre, flashing every 33 milliseconds. Finding a pulsar inside a known supernova remnant in late 1968 was the evidence that settled it: pulsars are rapidly spinning neutron stars left behind by supernovae.",
-    "src": "https://en.wikipedia.org/wiki/Crab_Pulsar",
-    "verified": true
-  },
-  {
-    "in": [
       "enceladus",
       "geyser"
     ],
@@ -71498,16 +71278,6 @@
   },
   {
     "in": [
-      "ganymede",
-      "hubble_space_telescope"
-    ],
-    "out": "ocean",
-    "why": "In March 2015 Hubble measured how Ganymede's aurorae rock back and forth. A conducting saltwater ocean under the ice damps that motion, and the damping is what confirmed the ocean is there.",
-    "src": "https://en.wikipedia.org/wiki/Ganymede_(moon)",
-    "verified": true
-  },
-  {
-    "in": [
       "mimas",
       "saturn_rings"
     ],
@@ -71614,16 +71384,6 @@
     "out": "supercluster",
     "why": "The Virgo Supercluster is defined by the Virgo Cluster it is centred on, with our own Local Group sitting out near one edge of it, on a filament running toward Fornax.",
     "src": "https://en.wikipedia.org/wiki/Virgo_Supercluster",
-    "verified": true
-  },
-  {
-    "in": [
-      "telescope",
-      "whirlpool_galaxy"
-    ],
-    "out": "spiral_galaxy",
-    "why": "William Parsons pointed his 72-inch reflector at M51 from Birr Castle and in 1845 sketched arms winding out of it — the first nebula anyone knew to have spiral structure.",
-    "src": "https://en.wikipedia.org/wiki/Whirlpool_Galaxy",
     "verified": true
   },
   {
@@ -76958,16 +76718,6 @@
   },
   {
     "in": [
-      "annelid",
-      "europe"
-    ],
-    "out": "earthworm",
-    "why": "Earthworms are the largest members of the Oligochaeta within the segmented worms. Lumbricus terrestris, the common one, is thought to be native to Western Europe and has since been carried around the world; it counts as invasive in the north central United States, where it thins the native herbaceous growth and tree regrowth of forests that had no earthworms at all.",
-    "src": "https://en.wikipedia.org/wiki/Lumbricus_terrestris",
-    "verified": true
-  },
-  {
-    "in": [
       "larva",
       "ocean_current"
     ],
@@ -80827,6 +80577,836 @@
     "out": "metal",
     "why": "Metal in the ground is an oxide or a sulfide — its atoms have already handed their outer electrons to oxygen or sulfur. Carbon monoxide off burning coke takes those away again, and the freed atoms pool their electrons into the sea that makes a metal.",
     "src": "https://en.wikipedia.org/wiki/Smelting",
+    "verified": true
+  },
+  {
+    "in": [
+      "larva",
+      "shell"
+    ],
+    "out": "torsion",
+    "why": "Every gastropod does this as a larva: the visceral mass, mantle and shell rotate 180° anti-clockwise against the head and foot, carrying the mantle cavity and the anus forward over the head. The first 90° can take minutes.",
+    "src": "https://en.wikipedia.org/wiki/Torsion_(gastropod)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mollusk",
+      "torsion"
+    ],
+    "out": "gastropod",
+    "why": "Torsion is the gastropod synapomorphy: it happens in all of them during larval development and in no other mollusk. Snail, slug, limpet, whelk and nudibranch are one class of 65,000-plus species, second only to the insects.",
+    "src": "https://en.wikipedia.org/wiki/Gastropoda",
+    "verified": true
+  },
+  {
+    "in": [
+      "circulatory_system",
+      "mollusk"
+    ],
+    "out": "cephalopod",
+    "why": "Cephalopods are the only molluscs with a closed circulatory system: blood stays inside vessels the whole way round, driven by two branchial hearts at the gills plus one systemic heart for the rest of the body.",
+    "src": "https://en.wikipedia.org/wiki/Cephalopod",
+    "verified": true
+  },
+  {
+    "in": [
+      "ligament",
+      "mollusk"
+    ],
+    "out": "bivalve",
+    "why": "One shell split into left and right valves, joined by an organic ligament that works against the adductor muscles: the muscles pull the shell shut, the ligament springs it open. The head and the radula are gone entirely.",
+    "src": "https://en.wikipedia.org/wiki/Bivalvia",
+    "verified": true
+  },
+  {
+    "in": [
+      "bivalve",
+      "sand"
+    ],
+    "out": "clam",
+    "why": "Clam is not a taxon but a way of living: the bivalves that spend life half-buried in the sand of a sea floor or riverbed, digging with a powerful foot and attached to nothing — unlike an oyster or a mussel.",
+    "src": "https://en.wikipedia.org/wiki/Clam",
+    "verified": true
+  },
+  {
+    "in": [
+      "cephalopod",
+      "chitin"
+    ],
+    "out": "squid",
+    "why": "The squid did not so much lose the ancestral mollusc shell as swallow it. What is left is the gladius, or pen: a feather-shaped chitinous blade in the functionally dorsal mantle, stiffening the body and anchoring muscle.",
+    "src": "https://en.wikipedia.org/wiki/Squid",
+    "verified": true
+  },
+  {
+    "in": [
+      "cnidarian",
+      "polyp"
+    ],
+    "out": "jellyfish",
+    "why": "A jellyfish is a life stage, not a species. In strobilation the sessile polyp reabsorbs its tentacles and narrows into a stack of discs; each ephyra detaches, swims off, and grows into the bell-shaped medusa.",
+    "src": "https://en.wikipedia.org/wiki/Jellyfish",
+    "verified": true
+  },
+  {
+    "in": [
+      "invertebrate",
+      "muscle"
+    ],
+    "out": "worm",
+    "why": "Worm names a shape, not a clade — the old taxon Vermes is paraphyletic and abandoned. Flatworms, roundworms and annelids are separate phyla; what they share is a long limbless tube of muscle, usually with no eyes.",
+    "src": "https://en.wikipedia.org/wiki/Worm",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "worm"
+    ],
+    "out": "flatworm",
+    "why": "Acoelomate, with no circulatory or respiratory organs, so oxygen has to diffuse in through the body surface and out again the same way. That only works if no cell is far from the skin — hence flat, ribbon-like, or microscopic.",
+    "src": "https://en.wikipedia.org/wiki/Flatworm",
+    "verified": true
+  },
+  {
+    "in": [
+      "eukaryote",
+      "kingdom"
+    ],
+    "out": "protist",
+    "why": "Once Animalia, Plantae and Fungi had been carved out of the eukaryotes, everything left over was filed as Protista. It is a definition by exclusion: a paraphyletic group with no unique trait that unites all of them.",
+    "src": "https://en.wikipedia.org/wiki/Protist",
+    "verified": true
+  },
+  {
+    "in": [
+      "evolution",
+      "metabolism"
+    ],
+    "out": "life",
+    "why": "Carl Sagan's formulation, adopted as NASA's working definition: a self-sustaining chemical system capable of undergoing Darwinian evolution. Metabolism is the self-sustaining half, and heredity supplies the rest.",
+    "src": "https://en.wikipedia.org/wiki/Life",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "life"
+    ],
+    "out": "organism",
+    "why": "Life is a property; an organism is one packet of it — any living thing that functions as an individual, built of a single cell or of many. Where one individual stops is still genuinely argued over.",
+    "src": "https://en.wikipedia.org/wiki/Organism",
+    "verified": true
+  },
+  {
+    "in": [
+      "gastropod",
+      "shell"
+    ],
+    "out": "snail",
+    "why": "The gastropods that kept a coiled calcium-carbonate shell big enough to withdraw into. Slugs are the ones that lost it, or reduced it to an internal remnant, in several separate lineages.",
+    "src": "https://en.wikipedia.org/wiki/Gastropoda",
+    "verified": true
+  },
+  {
+    "in": [
+      "bivalve",
+      "reef"
+    ],
+    "out": "oyster",
+    "why": "An oyster reef builds itself out of oysters. Larvae need hard substrate, so spat settle and cement onto the shells of older and dead oysters, and each generation adds its shells to the structure under it.",
+    "src": "https://en.wikipedia.org/wiki/Oyster_reef",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "egg"
+    ],
+    "out": "eggshell",
+    "why": "A hen deposits gram amounts of calcium carbonate in about 20 hours: 95 to 97% of the finished shell, stabilised by a protein matrix without which the calcite would be too brittle to keep its form.",
+    "src": "https://en.wikipedia.org/wiki/Eggshell",
+    "verified": true
+  },
+  {
+    "in": [
+      "bone",
+      "keratin"
+    ],
+    "out": "carapace",
+    "why": "A turtle's spine and expanded ribs fuse by ossification to dermal plates under the skin, making one bony box, and scutes of keratin much like horn or nail overlay it. The ribs are in the shell, so it cannot be left behind.",
+    "src": "https://en.wikipedia.org/wiki/Turtle_shell",
+    "verified": true
+  },
+  {
+    "in": [
+      "states_of_matter"
+    ],
+    "verb": "chill",
+    "out": "solid",
+    "why": "Take enough heat out of anything and its particles stop sliding and lock into fixed positions. A solid keeps both its shape and its volume, and the atoms can do nothing but vibrate where they stand.",
+    "src": "https://en.wikipedia.org/wiki/Solid",
+    "verified": true
+  },
+  {
+    "in": [
+      "states_of_matter"
+    ],
+    "verb": "heat",
+    "out": "gas",
+    "why": "Put enough heat in and the pull between particles stops mattering. A gas keeps neither shape nor volume: it spreads until the container runs out, and it is the only common state you can squeeze.",
+    "src": "https://en.wikipedia.org/wiki/Gas",
+    "verified": true
+  },
+  {
+    "in": [
+      "melting",
+      "solid"
+    ],
+    "out": "liquid",
+    "why": "A solid taken past its melting point is a liquid: the lattice is gone but the particles still touch. It keeps its volume and gives up its shape, and it is nearly impossible to compress.",
+    "src": "https://en.wikipedia.org/wiki/Liquid",
+    "verified": true
+  },
+  {
+    "in": [
+      "condensation",
+      "gas"
+    ],
+    "out": "liquid",
+    "why": "The other way in. Cool a gas to its saturation point and it condenses to the middle state. Liquids need a narrow band of temperature and pressure, which makes them the rarest of the four in the universe.",
+    "src": "https://en.wikipedia.org/wiki/Liquid",
+    "verified": true
+  },
+  {
+    "in": [
+      "solid"
+    ],
+    "verb": "heat",
+    "out": "melting",
+    "why": "Solid to liquid. At the melting point the ordered arrangement breaks down, and the temperature stops climbing while the latent heat of fusion goes entirely into taking the lattice apart.",
+    "src": "https://en.wikipedia.org/wiki/Melting",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquid"
+    ],
+    "verb": "chill",
+    "out": "freezing",
+    "why": "Liquid to solid, and exothermic: the latent heat has to come back out. Without something to nucleate on, pure water will supercool to −40°C and still refuse to start.",
+    "src": "https://en.wikipedia.org/wiki/Freezing",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquid"
+    ],
+    "verb": "heat",
+    "out": "vaporization",
+    "why": "Liquid to gas, by two different routes. Below the boiling point it happens only at the surface and is called evaporation; once the vapour pressure beats the air, bubbles form inside and it is boiling.",
+    "src": "https://en.wikipedia.org/wiki/Vaporization",
+    "verified": true
+  },
+  {
+    "in": [
+      "gas"
+    ],
+    "verb": "chill",
+    "out": "condensation",
+    "why": "Gas back to liquid, the reverse of vaporisation. It starts when a vapour is cooled to its saturation limit — the dew point — which is every cloud, every fogged window and half of the water cycle.",
+    "src": "https://en.wikipedia.org/wiki/Condensation",
+    "verified": true
+  },
+  {
+    "in": [
+      "solid"
+    ],
+    "verb": "wait",
+    "out": "sublimation",
+    "why": "Some solids never bother with the liquid step. Leave dry ice out and it goes straight to gas at −78.5°C; leave naphthalene mothballs out and they simply shrink away, never wetting the shelf.",
+    "src": "https://en.wikipedia.org/wiki/Sublimation_(phase_transition)",
+    "verified": true
+  },
+  {
+    "in": [
+      "sublimation"
+    ],
+    "verb": "chill",
+    "out": "deposition",
+    "why": "Sublimation run backwards: vapour to solid with no liquid in between, giving out heat where sublimation takes it in. Frost on a cold window is deposition, and so is soot laid down on a chimney wall.",
+    "src": "https://en.wikipedia.org/wiki/Deposition_(phase_transition)",
+    "verified": true
+  },
+  {
+    "in": [
+      "gas"
+    ],
+    "verb": "heat",
+    "out": "ionization",
+    "why": "Heat a gas far enough and collisions start knocking electrons clean off the atoms. What is left is charged and mobile: it conducts electricity and bends to magnetic fields as a neutral gas never does.",
+    "src": "https://en.wikipedia.org/wiki/Ionization",
+    "verified": true
+  },
+  {
+    "in": [
+      "gas",
+      "ionization"
+    ],
+    "out": "plasma",
+    "why": "Ionise a gas and you have the fourth state. The classical four run solid, liquid, gas, plasma, and the transition between the last two is exactly this one.",
+    "src": "https://en.wikipedia.org/wiki/State_of_matter",
+    "verified": true
+  },
+  {
+    "in": [
+      "universe"
+    ],
+    "verb": "cut",
+    "out": "matter",
+    "why": "Cut the universe into what it actually contains. Under 5% of it is matter — anything with mass that takes up space. The other 95% is dark matter and dark energy, and nobody can pick either up.",
+    "src": "https://en.wikipedia.org/wiki/Matter",
+    "verified": true
+  },
+  {
+    "in": [
+      "gamma_ray",
+      "matter"
+    ],
+    "out": "antimatter",
+    "why": "Every particle has a twin of the same mass and opposite charge. Dirac's equation demanded them in 1928, and they only ever appear in pairs: a gamma ray above 1.022 MeV can become one particle and one anti.",
+    "src": "https://en.wikipedia.org/wiki/Antimatter",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "magnetic_field"
+    ],
+    "out": "spin",
+    "why": "Send silver atoms through an uneven magnetic field and the beam splits in two rather than smearing out. That is Stern and Gerlach in 1922: angular momentum that is intrinsic, and quantised in halves of ħ.",
+    "src": "https://en.wikipedia.org/wiki/Spin_(physics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "matter",
+      "spin"
+    ],
+    "out": "fermion",
+    "why": "Half-integer spin makes a fermion, and fermions are what matter is built from. The Standard Model has twenty-four: six quarks, six leptons, and an antiparticle for each one.",
+    "src": "https://en.wikipedia.org/wiki/Fermion",
+    "verified": true
+  },
+  {
+    "in": [
+      "fermion"
+    ],
+    "verb": "crush",
+    "out": "pauli_exclusion_principle",
+    "why": "Push two identical fermions into the same quantum state and they refuse. Pauli wrote the rule in 1925; it fills electron shells in order, gives the periodic table its shape, and holds up a white dwarf.",
+    "src": "https://en.wikipedia.org/wiki/Pauli_exclusion_principle",
+    "verified": true
+  },
+  {
+    "in": [
+      "fermion",
+      "spin"
+    ],
+    "out": "boson",
+    "why": "Spin sorts every particle into two camps. Half-integer and you are a fermion, one to a state. Whole-integer and you are a boson, and any number can pile into the same state — which is what a laser is.",
+    "src": "https://en.wikipedia.org/wiki/Boson",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "matter"
+    ],
+    "out": "fundamental_force",
+    "why": "Every force is a boson passed between matter particles: the photon for electromagnetism, gluons for the strong force, W and Z for the weak. Gravity is the fourth, and the one this scheme still cannot fit.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_interaction",
+    "verified": true
+  },
+  {
+    "in": [
+      "fundamental_force",
+      "gluon"
+    ],
+    "out": "strong_force",
+    "why": "The force gluons carry. At a femtometre it is about 100 times electromagnetism and 10^38 times gravity, and unlike either it does not weaken with distance — which is why no quark ever gets out.",
+    "src": "https://en.wikipedia.org/wiki/Strong_interaction",
+    "verified": true
+  },
+  {
+    "in": [
+      "fundamental_force",
+      "w_boson"
+    ],
+    "out": "weak_force",
+    "why": "The force the W and Z carry, and the only one that can change a quark's flavour — so it is the force behind beta decay and behind hydrogen fusing at all. It also violates parity, which no other force does.",
+    "src": "https://en.wikipedia.org/wiki/Weak_interaction",
+    "verified": true
+  },
+  {
+    "in": [
+      "fundamental_force",
+      "photon"
+    ],
+    "out": "electromagnetism",
+    "why": "The force the photon carries: second strongest of the four and unlimited in range, though its two signs of charge cancel out at large scales. Every chemical bond and every push on a solid object is this.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetism",
+    "verified": true
+  },
+  {
+    "in": [
+      "proton"
+    ],
+    "verb": "cut",
+    "out": "gluon",
+    "why": "Cut into a proton and it is not three quarks sitting quietly. Most of what is in there is the field between them: eight kinds of massless gluon, which carry colour charge themselves and so pull on each other.",
+    "src": "https://en.wikipedia.org/wiki/Gluon",
+    "verified": true
+  },
+  {
+    "in": [
+      "fermion",
+      "gluon"
+    ],
+    "out": "quark",
+    "why": "The half of matter that feels the strong force, so gluons never let one go: colour confinement means no quark has ever been seen alone. They are also the only particles whose charge is not a whole multiple of e.",
+    "src": "https://en.wikipedia.org/wiki/Quark",
+    "verified": true
+  },
+  {
+    "in": [
+      "fermion",
+      "quark"
+    ],
+    "out": "lepton",
+    "why": "The other half of matter: the fermions that do not feel the strong force, so they travel alone instead of being locked inside a hadron. Six of them — electron, muon, tau, and a neutrino for each.",
+    "src": "https://en.wikipedia.org/wiki/Lepton",
+    "verified": true
+  },
+  {
+    "in": [
+      "quark",
+      "strong_force"
+    ],
+    "out": "hadron",
+    "why": "Quarks bound by the strong force, and always colourless: three quarks, or a quark with an antiquark. The free proton is the only stable hadron; a free neutron half-lives in about 611 seconds.",
+    "src": "https://en.wikipedia.org/wiki/Hadron",
+    "verified": true
+  },
+  {
+    "in": [
+      "fermion",
+      "hadron"
+    ],
+    "out": "baryon",
+    "why": "Three quarks means an odd number of half-spins, so every baryon is a fermion. Protons and neutrons are baryons, and they are very nearly all of the mass of everything you can pick up.",
+    "src": "https://en.wikipedia.org/wiki/Baryon",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "hadron"
+    ],
+    "out": "meson",
+    "why": "A quark with an antiquark means an even number of half-spins, so a meson is a boson. Yukawa predicted them in 1935 as the glue between nucleons; every one is unstable, the best lasting a fraction of a nanosecond.",
+    "src": "https://en.wikipedia.org/wiki/Meson",
+    "verified": true
+  },
+  {
+    "in": [
+      "down_quark",
+      "hadron_collider"
+    ],
+    "out": "strange_quark",
+    "why": "The second-generation copy of the down quark: same −1/3 charge, about twenty times the mass. It got its name from the oddly long-lived 'strange particles' spotted in cosmic rays in 1947.",
+    "src": "https://en.wikipedia.org/wiki/Strange_quark",
+    "verified": true
+  },
+  {
+    "in": [
+      "hadron_collider",
+      "up_quark"
+    ],
+    "out": "charm_quark",
+    "why": "The second-generation copy of the up quark: same +2/3 charge, 1.27 GeV instead of a few MeV. Brookhaven and SLAC announced the J/psi on the same day in November 1974, and it is a charm-anticharm pair.",
+    "src": "https://en.wikipedia.org/wiki/Charm_quark",
+    "verified": true
+  },
+  {
+    "in": [
+      "hadron_collider",
+      "strange_quark"
+    ],
+    "out": "bottom_quark",
+    "why": "One generation further up the same −1/3 column: 4.18 GeV. Lederman's group found it at Fermilab in 1977 inside the upsilon. It decays reluctantly, which is what lets detectors tag b-jets today.",
+    "src": "https://en.wikipedia.org/wiki/Bottom_quark",
+    "verified": true
+  },
+  {
+    "in": [
+      "charm_quark",
+      "hadron_collider"
+    ],
+    "out": "top_quark",
+    "why": "One generation further up the +2/3 column, and a staggering jump: about 173 GeV, heavier than an atom of gold. CDF and DØ found it at Fermilab in 1995. It decays too fast to form a hadron at all.",
+    "src": "https://en.wikipedia.org/wiki/Top_quark",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "proton"
+    ],
+    "out": "muon",
+    "why": "A cosmic-ray proton hits a nucleus high in the air, makes pions, and the pions decay to muons. Around 10,000 land on every square metre of ground a minute — only time dilation gets them down.",
+    "src": "https://en.wikipedia.org/wiki/Muon",
+    "verified": true
+  },
+  {
+    "in": [
+      "hadron_collider",
+      "lepton"
+    ],
+    "out": "tau",
+    "why": "Perl's group found it at SLAC's SPEAR ring between 1974 and 1977, as events that made no sense any other way. At 1777 MeV it outweighs a proton, and it is the only lepton heavy enough to decay into hadrons.",
+    "src": "https://en.wikipedia.org/wiki/Tau_(particle)",
+    "verified": true
+  },
+  {
+    "in": [
+      "lepton",
+      "neutron"
+    ],
+    "out": "neutrino",
+    "why": "Pauli invented it in 1930 to save the books: when a neutron becomes a proton and an electron, the energy does not add up unless something neutral leaves too. It took until 1956 to catch one.",
+    "src": "https://en.wikipedia.org/wiki/Neutrino",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "neutrino"
+    ],
+    "out": "electron_neutrino",
+    "why": "The first-generation neutrino, paired with the electron. Cowan and Reines caught it beside a reactor in 1956. About 65 billion of them from the Sun cross every square centimetre of you each second.",
+    "src": "https://en.wikipedia.org/wiki/Electron_neutrino",
+    "verified": true
+  },
+  {
+    "in": [
+      "muon",
+      "neutrino"
+    ],
+    "out": "muon_neutrino",
+    "why": "Lederman, Schwartz and Steinberger aimed a neutrino beam at a detector at Brookhaven in 1962 and got only muons, never electrons. That proved neutrinos come in more than one kind. Nobel Prize, 1988.",
+    "src": "https://en.wikipedia.org/wiki/Muon_neutrino",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutrino",
+      "tau"
+    ],
+    "out": "tau_neutrino",
+    "why": "The third-generation neutrino, and the last Standard Model fermion to be seen directly: DONUT at Fermilab announced it in July 2000, a quarter of a century after the tau itself turned up.",
+    "src": "https://en.wikipedia.org/wiki/Tau_neutrino",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "neutron"
+    ],
+    "out": "w_boson",
+    "why": "A neutron decays because one of its down quarks emits a W− and turns into an up quark. That is beta decay, and the W is the thing that does it. At 80.4 GeV it is heavier than a whole silver atom.",
+    "src": "https://en.wikipedia.org/wiki/W_and_Z_bosons",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "neutrino"
+    ],
+    "out": "z_boson",
+    "why": "The neutral weak carrier, 91.19 GeV. The proof came in 1973, when a neutrino was seen bouncing off matter and staying a neutrino — a neutral current. CERN made real W and Z in 1983 with UA1 and UA2.",
+    "src": "https://en.wikipedia.org/wiki/W_and_Z_bosons",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "hadron_collider"
+    ],
+    "out": "higgs_boson",
+    "why": "ATLAS and CMS announced it on 4 July 2012 at about 125 GeV, after a forty-year search. It has zero spin — the first elementary scalar ever found — and its field is what gives the W, the Z and the fermions mass.",
+    "src": "https://en.wikipedia.org/wiki/Higgs_boson",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "fermion"
+    ],
+    "out": "standard_model",
+    "why": "Twelve matter fermions, five bosons, and three of the four forces. Settled in the mid-1970s, it has survived every test since — and still says nothing about gravity, dark matter, or the matter-antimatter imbalance.",
+    "src": "https://en.wikipedia.org/wiki/Standard_Model",
+    "verified": true
+  },
+  {
+    "in": [
+      "muon"
+    ],
+    "verb": "wait",
+    "out": "electron",
+    "why": "A muon lasts 2.2 microseconds and then always ends the same way: an electron, a muon neutrino and an electron antineutrino. There is nothing lighter and charged for it to become.",
+    "src": "https://en.wikipedia.org/wiki/Muon",
+    "verified": true
+  },
+  {
+    "in": [
+      "down_quark",
+      "w_boson"
+    ],
+    "out": "up_quark",
+    "why": "Beta decay, drawn properly. A down quark of charge −1/3 emits a virtual W− and is left an up quark of +2/3; the W then becomes an electron and an antineutrino. Only the weak force can change a flavour like this.",
+    "src": "https://en.wikipedia.org/wiki/Beta_decay",
+    "verified": true
+  },
+  {
+    "in": [
+      "molecule",
+      "oxygen"
+    ],
+    "out": "oxide",
+    "why": "Any compound with oxygen bonded to another element, oxygen sitting at oxidation state −2. Most of the Earth's crust is oxides, and even a sheet of aluminium foil is wearing a skin of Al2O3.",
+    "src": "https://en.wikipedia.org/wiki/Oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "metal"
+    ],
+    "verb": "heat",
+    "out": "oxide",
+    "why": "Heat a metal in air and its surface turns. Zinc powder burns outright: 2 Zn + O2 makes 2 ZnO. Gold and platinum are prized precisely because they refuse to do it.",
+    "src": "https://en.wikipedia.org/wiki/Oxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "element",
+      "proton"
+    ],
+    "out": "periodic_table",
+    "why": "Mendeleev laid the elements out by weight in 1869 and left gaps for what he could not find. Moseley showed in 1913 that the real order is the proton count. 118 now, of which 94 occur on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Periodic_table",
+    "verified": true
+  },
+  {
+    "in": [
+      "chemical_bond",
+      "electron"
+    ],
+    "out": "metallic_bond",
+    "why": "Not shared between two atoms and not handed over, but pooled: positive ions sitting in a sea of electrons that belongs to all of them at once. That sea is the conduction, the lustre, and the bend.",
+    "src": "https://en.wikipedia.org/wiki/Metallic_bonding",
+    "verified": true
+  },
+  {
+    "in": [
+      "catalyst",
+      "metal"
+    ],
+    "out": "transition_metal",
+    "why": "IUPAC's test is an atom with a partly filled d sub-shell — groups 3 to 12. That half-empty shell gives several oxidation states a step apart, which is why their salts are coloured and why so many catalysts are these.",
+    "src": "https://en.wikipedia.org/wiki/Transition_metal",
+    "verified": true
+  },
+  {
+    "in": [
+      "metal",
+      "quicklime"
+    ],
+    "out": "alkaline_earth_metal",
+    "why": "Group 2, with two electrons filling the outer s orbital. They are named for their oxides: quicklime, magnesia and baryta were 'earths' — fireproof and water-insoluble — and they turn water alkaline.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal",
+    "verified": true
+  },
+  {
+    "in": [
+      "periodic_table",
+      "rare_earth"
+    ],
+    "out": "lanthanide",
+    "why": "The fifteen from lanthanum to lutetium, filling the 4f shell. Because 4f hides beneath the outer electrons they behave almost identically, so the table floats them out below and separating them needs solvent extraction.",
+    "src": "https://en.wikipedia.org/wiki/Lanthanide",
+    "verified": true
+  },
+  {
+    "in": [
+      "lanthanide",
+      "radium"
+    ],
+    "out": "actinide",
+    "why": "The second floated row: actinium to lawrencium, filling 5f as the lanthanides fill 4f. Seaborg proposed the family in 1944. Every single one is radioactive, and only thorium and uranium are left on Earth in quantity.",
+    "src": "https://en.wikipedia.org/wiki/Actinide",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon_dioxide",
+      "rain"
+    ],
+    "out": "acid",
+    "why": "Every raindrop is an acid before it lands. Carbon dioxide dissolves into it and becomes carbonic acid, which is why clean rain sits above pH 5 and below 7 instead of neutral. No acid went in; one came out.",
+    "src": "https://en.wikipedia.org/wiki/Acid_rain",
+    "verified": true
+  },
+  {
+    "in": [
+      "quicklime",
+      "steam"
+    ],
+    "out": "base",
+    "why": "Quicklime is an oxide, not a base: no hydroxide in it. Slake it and CaO plus water becomes calcium hydroxide, and a saturated solution of that sits at pH 12.4, caustic enough to burn skin.",
+    "src": "https://en.wikipedia.org/wiki/Calcium_hydroxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "salt"
+    ],
+    "out": "halogen",
+    "why": "Berzelius called them salt-formers, and a salt is where you get one back. Drive a current through sodium chloride and chloride ions surrender an electron at the anode: 2Cl- becomes Cl2, chlorine gas, 97 million tonnes of it a year.",
+    "src": "https://en.wikipedia.org/wiki/Chloralkali_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "orbit"
+    ],
+    "out": "spiral_galaxy",
+    "why": "A spiral is a galaxy whose gas settled into one flat disc where everything orbits the same way. The disc turns at different speeds by radius, so the arms cannot be fixed strings of stars: they are density waves that material drifts into and out of.",
+    "src": "https://en.wikipedia.org/wiki/Spiral_galaxy",
+    "verified": true
+  },
+  {
+    "in": [
+      "andromeda",
+      "spiral_galaxy"
+    ],
+    "out": "andromeda_galaxy",
+    "why": "The nearest large barred spiral to us, 2.54 million light-years off, named for the patch of sky it sits in: the constellation Andromeda, itself named for the princess chained to the sea cliff.",
+    "src": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+    "verified": true
+  },
+  {
+    "in": [
+      "binary_star",
+      "red_dwarf"
+    ],
+    "out": "alpha_centauri",
+    "why": "Two suns circling a common centre every 79.8 years, swinging from 11.2 AU apart to 35.6, with a red dwarf bound to the pair 13,000 AU further out. That third star, Proxima, is the closest star to the Sun and still too faint to see.",
+    "src": "https://en.wikipedia.org/wiki/Alpha_Centauri",
+    "verified": true
+  },
+  {
+    "in": [
+      "osmoregulation",
+      "requiem_shark"
+    ],
+    "out": "bull_shark",
+    "why": "A requiem shark that rewires its own salt balance. Entering fresh water it throttles the rectal gland back to hold on to sodium and chloride, the gills take ions up from the river, and the kidneys pour out dilute urine while reabsorbing solutes.",
+    "src": "https://en.wikipedia.org/wiki/Bull_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "anglerfish",
+      "camouflage"
+    ],
+    "out": "psychedelic_frogfish",
+    "why": "An antennariid frogfish, so an anglerfish. Its pink and white fingerprint stripes echo the hermatypic corals it lives among, and when it leaves the bottom it balls up until it reads as a piece of debris bouncing along rather than a fish.",
+    "src": "https://en.wikipedia.org/wiki/Histiophryne_psychedelica",
+    "verified": true
+  },
+  {
+    "in": [
+      "echinoderm",
+      "tooth"
+    ],
+    "out": "sea_urchin",
+    "why": "The echinoderm that grew a jaw. Five calcium-carbonate teeth hang in a muscular frame Aristotle compared to a lantern, and they grasp, scrape, pull and tear well enough to cut a kelp holdfast or bore into rock.",
+    "src": "https://en.wikipedia.org/wiki/Sea_urchin",
+    "verified": true
+  },
+  {
+    "in": [
+      "echinoderm",
+      "stomach"
+    ],
+    "out": "sea_star",
+    "why": "The echinoderm that eats outside itself. It pulls a shell apart until the gap is a fraction of a millimetre, pushes its cardiac stomach through, digests the animal inside its own shell, then hauls the stomach back on ligaments in the arms.",
+    "src": "https://en.wikipedia.org/wiki/Starfish",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcite",
+      "invertebrate"
+    ],
+    "out": "echinoderm",
+    "why": "An invertebrate built out of calcite. Its skeleton sits in the dermis as plates called ossicles, each a porous mesh named stereom, laced together by collagen fibres. Nothing outside this phylum makes a skeleton that way.",
+    "src": "https://en.wikipedia.org/wiki/Echinoderm",
+    "verified": true
+  },
+  {
+    "in": [
+      "annelid",
+      "soil"
+    ],
+    "out": "earthworm",
+    "why": "The annelid that eats the ground. Soil goes into a muscular gizzard where grit grinds it, and comes out as casts. Darwin put 53,000 of them in an acre of arable land and doubted many animals had done more to the surface of the world.",
+    "src": "https://en.wikipedia.org/wiki/Earthworm",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea_star",
+      "venom"
+    ],
+    "out": "crown_of_thorns",
+    "why": "A sea star under a coat of thorn-like spines that drive saponin-bearing tissue into whatever presses on them, causing a sharp stinging pain. It eats what almost nothing else will: living hard coral, up to 6 square metres of reef a year.",
+    "src": "https://en.wikipedia.org/wiki/Crown-of-thorns_starfish",
+    "verified": true
+  },
+  {
+    "in": [
+      "finger",
+      "mammal"
+    ],
+    "out": "bat",
+    "why": "Chiroptera means hand-wing. Five elongated digits radiate from the wrist and frame the patagium, a skin membrane running from arm and fingers to the flank and hind limbs — the only mammal capable of true sustained flight.",
+    "src": "https://en.wikipedia.org/wiki/Bat",
+    "verified": true
+  },
+  {
+    "in": [
+      "blubber",
+      "pinniped"
+    ],
+    "out": "seal",
+    "why": "The pinniped that went without the eared seal's kit: ear holes rather than flaps, hind flippers that will not rotate forward, so on land it galumphs on its belly. It regulates heat by diverting blood into a smooth layer of blubber under the skin.",
+    "src": "https://en.wikipedia.org/wiki/Earless_seal",
     "verified": true
   }
 ]

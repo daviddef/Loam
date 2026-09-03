@@ -13571,7 +13571,7 @@
       "water"
     ],
     "fact": "A living fossil, little changed in hundreds of millions of years, with up to 90 tentacles.",
-    "taxon": "tx_cephalopoda"
+    "taxon": "tx_nautilida"
   },
   {
     "id": "blacktip_shark",
@@ -15657,7 +15657,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Its ancestor is the African wildcat. Grain stores drew in rodents, and rodents drew in the cat."
+    "fact": "Its ancestor is the African wildcat. Grain stores drew in rodents, and rodents drew in the cat.",
+    "taxon": "tx_felis"
   },
   {
     "id": "snail",
@@ -15668,7 +15669,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A shelled gastropod. Some freshwater species are, indirectly, among the deadliest animals to people."
+    "fact": "A shelled gastropod. Some freshwater species are, indirectly, among the deadliest animals to people.",
+    "taxon": "tx_gastropoda"
   },
   {
     "id": "plasmodium",
@@ -15740,7 +15742,8 @@
       "animal"
     ],
     "fact": "Up to a billion people carry it. A single female can lay 200,000 eggs a day.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_nematoda"
   },
   {
     "id": "hookworm",
@@ -15751,7 +15754,8 @@
       "animal"
     ],
     "fact": "Doesn't wait to be swallowed — its larvae simply burrow straight through bare skin.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_nematoda"
   },
   {
     "id": "enterobius_vermicularis",
@@ -15762,7 +15766,8 @@
       "animal"
     ],
     "fact": "Its entire life cycle happens inside one human gut — humans are its only known host.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_nematoda"
   },
   {
     "id": "trichinella_spiralis",
@@ -15772,7 +15777,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The smallest nematode known to parasitize humans, yet one female can produce 1,500 larvae."
+    "fact": "The smallest nematode known to parasitize humans, yet one female can produce 1,500 larvae.",
+    "taxon": "tx_nematoda"
   },
   {
     "id": "wuchereria_bancrofti",
@@ -15782,7 +15788,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Its larvae peak in the blood between 10 pm and 4 am, timed to when the night-biting mosquito feeds."
+    "fact": "Its larvae peak in the blood between 10 pm and 4 am, timed to when the night-biting mosquito feeds.",
+    "taxon": "tx_nematoda"
   },
   {
     "id": "taenia_solium",
@@ -15793,7 +15800,8 @@
       "animal"
     ],
     "fact": "The pork tapeworm can grow past 8 metres long from a single scolex barely a millimetre wide.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "taenia_saginata",
@@ -15804,7 +15812,8 @@
       "animal"
     ],
     "fact": "The beef tapeworm can top 22 metres and live in a human gut for 25 years.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "schistosoma",
@@ -15814,7 +15823,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A blood fluke that needs a freshwater snail as a stepping stone before it can reach a person at all."
+    "fact": "A blood fluke that needs a freshwater snail as a stepping stone before it can reach a person at all.",
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "clonorchis_sinensis",
@@ -15825,7 +15835,8 @@
       "animal"
     ],
     "fact": "The Chinese liver fluke can live 30 years in one host, passing through a snail and a fish to get there.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "head_louse",
@@ -15863,7 +15874,8 @@
       "wild"
     ],
     "fact": "A burrowing female lays two or three eggs a day in a skin tunnel until her four-week life ends there.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_arachnida"
   },
   {
     "id": "bed_bug",
@@ -15875,7 +15887,8 @@
       "wild"
     ],
     "fact": "Never lives on its host — it hides in dark seams nearby, like a mattress, between blood meals.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_hemiptera"
   },
   {
     "id": "malaria",
@@ -16503,7 +16516,8 @@
       "animal",
       "water"
     ],
-    "fact": "Grazes algae and kelp holdfasts with its teeth; enough of them can strip a seafloor bare."
+    "fact": "Grazes algae and kelp holdfasts with its teeth; enough of them can strip a seafloor bare.",
+    "taxon": "tx_echinodermata"
   },
   {
     "id": "sea_otter",
@@ -16514,7 +16528,8 @@
       "animal",
       "water"
     ],
-    "fact": "Bites through a sea urchin's spines from underneath and licks out the soft contents inside."
+    "fact": "Bites through a sea urchin's spines from underneath and licks out the soft contents inside.",
+    "taxon": "tx_carnivora"
   },
   {
     "id": "kelp_forest",
@@ -16988,7 +17003,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Hunts open country from cliffside nests, diving at up to 320 km/h to take prey."
+    "fact": "Hunts open country from cliffside nests, diving at up to 320 km/h to take prey.",
+    "taxon": "tx_accipitridae"
   },
   {
     "id": "jaguar",
@@ -16999,7 +17015,8 @@
       "animal",
       "wild"
     ],
-    "fact": "The only big cat that regularly cracks turtle shells, killing with a bite to the skull."
+    "fact": "The only big cat that regularly cracks turtle shells, killing with a bite to the skull.",
+    "taxon": "tx_panthera"
   },
   {
     "id": "turquoise",
@@ -21090,7 +21107,8 @@
       "animal",
       "wild"
     ],
-    "fact": "One of the heaviest birds still capable of flight, favoring slow rivers and larger lakes."
+    "fact": "One of the heaviest birds still capable of flight, favoring slow rivers and larger lakes.",
+    "taxon": "tx_anseriformes"
   },
   {
     "id": "veena",
@@ -21132,7 +21150,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A small rodent that thrives in fields and farmland as readily as in houses, alongside people."
+    "fact": "A small rodent that thrives in fields and farmland as readily as in houses, alongside people.",
+    "taxon": "tx_rodentia"
   },
   {
     "id": "monkey",
@@ -21143,7 +21162,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Old and New World monkeys together number well over 200 species, most of them tree-dwelling."
+    "fact": "Old and New World monkeys together number well over 200 species, most of them tree-dwelling.",
+    "taxon": "tx_primates"
   },
   {
     "id": "brahma",
@@ -21812,7 +21832,8 @@
     "discovered": {
       "year": 2015,
       "note": "Genetic testing shows it's a distinct species, more closely related to the grey wolf than to the golden jackal."
-    }
+    },
+    "taxon": "tx_canidae"
   },
   {
     "id": "ibis",
@@ -22112,7 +22133,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A kleptoparasite of wolves -- it trails packs to steal from their kills, and has led wolves to prey."
+    "fact": "A kleptoparasite of wolves -- it trails packs to steal from their kills, and has led wolves to prey.",
+    "taxon": "tx_aves"
   },
   {
     "id": "spear",
@@ -22729,7 +22751,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Most widely distributed member of the dog family, found across the entire Northern Hemisphere."
+    "fact": "Most widely distributed member of the dog family, found across the entire Northern Hemisphere.",
+    "taxon": "tx_vulpes"
   },
   {
     "id": "bow",
@@ -23264,7 +23287,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Comb-like serrations on its flight feathers muffle the wingbeat, letting it hunt almost silently."
+    "fact": "Comb-like serrations on its flight feathers muffle the wingbeat, letting it hunt almost silently.",
+    "taxon": "tx_strigiformes"
   },
   {
     "id": "helmet",
@@ -24194,7 +24218,8 @@
       "animal",
       "water"
     ],
-    "fact": "A crustacean, not a mollusk. It cements its head to rock and kicks food in with feathery legs."
+    "fact": "A crustacean, not a mollusk. It cements its head to rock and kicks food in with feathery legs.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "mussel",
@@ -24453,7 +24478,8 @@
       "wild"
     ],
     "fact": "Limbless and burrowing, built so much like an earthworm most people miss that it's a vertebrate.",
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_amphibia"
   },
   {
     "id": "japanese_giant_salamander",
@@ -24504,7 +24530,8 @@
     ],
     "fact": "Blind and pale from a lifetime in cave rivers, larval for life — its tissues ignore thyroxine.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_caudata"
   },
   {
     "id": "siren",
@@ -24517,7 +24544,8 @@
     ],
     "fact": "Keeps functioning lungs and external gills side by side for life, unlike any other salamander.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_caudata"
   },
   {
     "id": "gallium",
@@ -24562,7 +24590,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Rattus norvegicus. Its incisors never stop growing — about 12 cm a year — so it gnaws constantly."
+    "fact": "Rattus norvegicus. Its incisors never stop growing — about 12 cm a year — so it gnaws constantly.",
+    "taxon": "tx_rodentia"
   },
   {
     "id": "feral_pigeon",
@@ -24586,7 +24615,8 @@
       "wild"
     ],
     "fact": "Cornu aspersum. Hermaphrodite — a mating pair each fire a calcite 'love dart' before mating.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_gastropoda"
   },
   {
     "id": "common_toad",
@@ -27921,7 +27951,8 @@
       "wild",
       "water"
     ],
-    "fact": "A keystone engineer: its dams reshape rivers into wetlands, and its four incisors never stop growing."
+    "fact": "A keystone engineer: its dams reshape rivers into wetlands, and its four incisors never stop growing.",
+    "taxon": "tx_rodentia"
   },
   {
     "id": "naked_mole_rat",
@@ -27932,7 +27963,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A eusocial mammal with one breeding queen per colony, near cold-blooded, and immune to acid-triggered pain."
+    "fact": "A eusocial mammal with one breeding queen per colony, near cold-blooded, and immune to acid-triggered pain.",
+    "taxon": "tx_rodentia"
   },
   {
     "id": "pronghorn",
@@ -27981,7 +28013,8 @@
       "wild"
     ],
     "fact": "Taps wood eight times a second, listens for the echo of a hollow tunnel, then fishes out the grub inside.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_primates"
   },
   {
     "id": "star_nosed_mole",
@@ -28074,7 +28107,8 @@
       "water"
     ],
     "fact": "Its claw strikes at 23 m/s, fast enough to flash-boil a bubble that hits prey with a second, separate blow.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "pistol_shrimp",
@@ -28087,7 +28121,8 @@
       "water"
     ],
     "fact": "Snaps a claw shut fast enough to flash-heat a bubble past the Sun's surface temperature, at 218 decibels.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "bombardier_beetle",
@@ -28112,7 +28147,8 @@
       "wild"
     ],
     "fact": "Dries itself into a glass-like 'tun' to survive years without water, -272°C to 149°C, and the vacuum of space.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_animalia"
   },
   {
     "id": "coconut_crab",
@@ -28125,7 +28161,8 @@
     ],
     "fact": "The largest land arthropod alive; adults give up the borrowed shell of their hermit-crab kin entirely.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_malacostraca"
   },
   {
     "id": "neith",
@@ -28265,7 +28302,8 @@
       "water",
       "wild"
     ],
-    "fact": "No true tissues, nerves or organs — just specialised cells filtering food from water pumped through its own pores."
+    "fact": "No true tissues, nerves or organs — just specialised cells filtering food from water pumped through its own pores.",
+    "taxon": "tx_porifera"
   },
   {
     "id": "comb_jelly",
@@ -28277,7 +28315,8 @@
       "water",
       "wild"
     ],
-    "fact": "Not a jellyfish — its own animal phylum, swum by eight rows of beating cilia that split light into rainbow bands."
+    "fact": "Not a jellyfish — its own animal phylum, swum by eight rows of beating cilia that split light into rainbow bands.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "hydra",
@@ -28289,7 +28328,8 @@
       "water",
       "wild"
     ],
-    "fact": "A freshwater cnidarian that clones a new body off its own side by budding, and barely seems to age."
+    "fact": "A freshwater cnidarian that clones a new body off its own side by budding, and barely seems to age.",
+    "taxon": "tx_hydrozoa"
   },
   {
     "id": "planarian",
@@ -28301,7 +28341,8 @@
       "water",
       "wild"
     ],
-    "fact": "Cut it into pieces and each piece can regrow a whole worm — brain included — within a couple of weeks."
+    "fact": "Cut it into pieces and each piece can regrow a whole worm — brain included — within a couple of weeks.",
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "leech",
@@ -28313,7 +28354,8 @@
       "water",
       "wild"
     ],
-    "fact": "A segmented worm related to the earthworm — its bite injects an anticoagulant still used in modern surgery."
+    "fact": "A segmented worm related to the earthworm — its bite injects an anticoagulant still used in modern surgery.",
+    "taxon": "tx_annelida"
   },
   {
     "id": "ribbon_worm",
@@ -28325,7 +28367,8 @@
       "water",
       "wild"
     ],
-    "fact": "Fires an eversible, sometimes venom-barbed proboscis at prey — possibly Earth's longest animal."
+    "fact": "Fires an eversible, sometimes venom-barbed proboscis at prey — possibly Earth's longest animal.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "bryozoan",
@@ -28337,7 +28380,8 @@
       "water",
       "wild"
     ],
-    "fact": "A colony of thousands of near-identical animals under a millimetre long, sharing one skeleton — long mistaken for moss."
+    "fact": "A colony of thousands of near-identical animals under a millimetre long, sharing one skeleton — long mistaken for moss.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "lampshell",
@@ -28349,7 +28393,8 @@
       "water",
       "wild"
     ],
-    "fact": "Looks like a two-shelled clam, but a brachiopod's valves sit top and bottom, not left and right."
+    "fact": "Looks like a two-shelled clam, but a brachiopod's valves sit top and bottom, not left and right.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "velvet_worm",
@@ -28360,7 +28405,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Ambushes prey by firing two crossing jets of sticky slime from glands beside its jaws."
+    "fact": "Ambushes prey by firing two crossing jets of sticky slime from glands beside its jaws.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "horseshoe_crab",
@@ -28372,7 +28418,8 @@
       "water",
       "wild"
     ],
-    "fact": "Its blue, copper-based blood clots on contact with bacterial toxins and still tests every batch of injectable medicine."
+    "fact": "Its blue, copper-based blood clots on contact with bacterial toxins and still tests every batch of injectable medicine.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "sea_spider",
@@ -28384,7 +28431,8 @@
       "water",
       "wild"
     ],
-    "fact": "Not a true spider — its body is so reduced that its own gut and gonads run out into its legs."
+    "fact": "Not a true spider — its body is so reduced that its own gut and gonads run out into its legs.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "tusk_shell",
@@ -28396,7 +28444,8 @@
       "water",
       "wild"
     ],
-    "fact": "A tusk-shaped shell open at both ends, buried head-down in sand, catching prey with thread-like tentacles."
+    "fact": "A tusk-shaped shell open at both ends, buried head-down in sand, catching prey with thread-like tentacles.",
+    "taxon": "tx_mollusca"
   },
   {
     "id": "sea_cucumber",
@@ -28408,7 +28457,8 @@
       "water",
       "wild"
     ],
-    "fact": "When threatened, some species eject sticky internal organs through the anus to entangle a predator, then regrow them."
+    "fact": "When threatened, some species eject sticky internal organs through the anus to entangle a predator, then regrow them.",
+    "taxon": "tx_echinodermata"
   },
   {
     "id": "feather_star",
@@ -28420,7 +28470,8 @@
       "water",
       "wild"
     ],
-    "fact": "A sea-star relative filtering plankton with feathery arms, gripping the reef with claws instead of tube feet."
+    "fact": "A sea-star relative filtering plankton with feathery arms, gripping the reef with claws instead of tube feet.",
+    "taxon": "tx_echinodermata"
   },
   {
     "id": "slug",
@@ -28431,7 +28482,8 @@
       "animal",
       "wild"
     ],
-    "fact": "A land snail that lost its shell, or reduced it to an internal remnant, in several separate lineages."
+    "fact": "A land snail that lost its shell, or reduced it to an internal remnant, in several separate lineages.",
+    "taxon": "tx_gastropoda"
   },
   {
     "id": "cuttlefish",
@@ -28443,7 +28495,8 @@
       "water",
       "wild"
     ],
-    "fact": "Its porous internal cuttlebone works like a submarine's ballast tank, and its pupils are shaped like a W."
+    "fact": "Its porous internal cuttlebone works like a submarine's ballast tank, and its pupils are shaped like a W.",
+    "taxon": "tx_cephalopoda"
   },
   {
     "id": "foraminifera",
@@ -33980,7 +34033,8 @@
       "animal",
       "wild"
     ],
-    "fact": "Feathers and a toothless, horn-covered beak, on every one of the roughly 11,000 living species."
+    "fact": "Feathers and a toothless, horn-covered beak, on every one of the roughly 11,000 living species.",
+    "taxon": "tx_aves"
   },
   {
     "id": "blanket",
@@ -36166,7 +36220,8 @@
       "wild"
     ],
     "fact": "A scatter-hoarder that buries several thousand acorns, seeds and nuts a season, and mostly finds them again.",
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_rodentia"
   },
   {
     "id": "stairs",
@@ -48877,7 +48932,8 @@
       "animal",
       "water"
     ],
-    "fact": "A sea squirt's tadpole-like larva has a notochord and nerve cord like any other chordate's, but after it settles and undergoes metamorphosis it loses them all, becoming a sessile filter feeder wrapped in a tough \"tunic.\""
+    "fact": "A sea squirt's tadpole-like larva has a notochord and nerve cord like any other chordate's, but after it settles and undergoes metamorphosis it loses them all, becoming a sessile filter feeder wrapped in a tough \"tunic.\"",
+    "taxon": "tx_chordata"
   },
   {
     "id": "epipelagic_zone",
@@ -49187,7 +49243,8 @@
       "water"
     ],
     "fact": "Barely 1-2 mm long with a single median red eye — possibly the largest animal biomass on Earth.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "crayfish",
@@ -49932,7 +49989,6 @@
       "animal"
     ],
     "fact": "Vascularized fat under the skin, up to half a marine mammal's weight, that insulates even under pressure.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -50877,7 +50933,8 @@
     ],
     "fact": "One of two living jawless vertebrate lineages, feeding through a toothed sucking disc, not a jaw.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_vertebrata"
   },
   {
     "id": "neoceratodus",
@@ -51010,7 +51067,8 @@
       "wild"
     ],
     "fact": "First found for sale as meat in a Laotian market in 1996 and described as a new species in 2005 — until a 2006 study placed it in Diatomyidae, a rodent family known only from fossils and presumed extinct for 11 million years. It looks like a cross between a rat and a squirrel, with a limp, furred tail.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_rodentia"
   },
   {
     "id": "indri",
@@ -51022,7 +51080,8 @@
       "wild"
     ],
     "fact": "The largest living lemur, with only a rudimentary stub of a tail, unlike every other lemur. Unusually for a lemur it's active by day, and family groups sing loud, coordinated duets that can last over three minutes and carry for kilometers through Madagascar's forest.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_primates"
   },
   {
     "id": "mountain_pygmy_possum",
@@ -51046,7 +51105,8 @@
       "wild"
     ],
     "fact": "Not closely related to the giant panda at all — its nearest kin are raccoons, weasels, and skunks, and it's the sole living member of its own family, Ailuridae. It grips bamboo stalks with a 'false thumb' formed from an enlarged wrist bone, an adaptation the giant panda evolved separately.",
-    "terminal": true
+    "terminal": true,
+    "taxon": "tx_carnivora"
   },
   {
     "id": "pygmy_hippopotamus",
@@ -58207,7 +58267,8 @@
     ],
     "fact": "Roundworms may be the most numerous animals on Earth; one species mapped its every single neuron.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_nematoda"
   },
   {
     "id": "tapeworm",
@@ -58218,7 +58279,8 @@
       "animal"
     ],
     "fact": "Has no gut of its own — it just soaks up the host's pre-digested food through its entire skin.",
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "trematode",
@@ -58230,7 +58292,8 @@
     ],
     "fact": "A flatworm with two suckers that needs a snail, then a vertebrate, in sequence, to complete its life.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_platyhelminthes"
   },
   {
     "id": "proto_oncogene",
@@ -65111,7 +65174,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A multicellular eukaryote with muscle cells that grows from a hollow ball of cells, the blastula — over 1.5 million living species described, about 1.05 million of them insects."
+    "fact": "A multicellular eukaryote with muscle cells that grows from a hollow ball of cells, the blastula — over 1.5 million living species described, about 1.05 million of them insects.",
+    "taxon": "tx_animalia"
   },
   {
     "id": "chordate",
@@ -65121,7 +65185,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Defined by five traits held at some stage of life — notochord, hollow dorsal nerve cord, endostyle, pharyngeal slits, post-anal tail — even if only by the larva."
+    "fact": "Defined by five traits held at some stage of life — notochord, hollow dorsal nerve cord, endostyle, pharyngeal slits, post-anal tail — even if only by the larva.",
+    "taxon": "tx_chordata"
   },
   {
     "id": "vertebrate",
@@ -65131,7 +65196,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The chordates that grew a vertebral column around the nerve cord and a cranium around the brain — roughly 65,000 species out of 1.5 million animals."
+    "fact": "The chordates that grew a vertebral column around the nerve cord and a cranium around the brain — roughly 65,000 species out of 1.5 million animals.",
+    "taxon": "tx_vertebrata"
   },
   {
     "id": "invertebrate",
@@ -65151,7 +65217,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Milk from mammary glands, hair, and three bones in the middle ear — around 6,640 living species sorted into 27 orders."
+    "fact": "Milk from mammary glands, hair, and three bones in the middle ear — around 6,640 living species sorted into 27 orders.",
+    "taxon": "tx_mammalia"
   },
   {
     "id": "reptile",
@@ -65161,7 +65228,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Ectothermic amniotes in four surviving orders — turtles, crocodilians, squamates, and the single lonely tuatara — about 12,000 species listed."
+    "fact": "Ectothermic amniotes in four surviving orders — turtles, crocodilians, squamates, and the single lonely tuatara — about 12,000 species listed.",
+    "taxon": "tx_reptilia"
   },
   {
     "id": "amphibian",
@@ -65171,7 +65239,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The four-limbed vertebrates that stopped short of the amniotic egg: frogs, salamanders and caecilians, most hatching as gilled aquatic larvae."
+    "fact": "The four-limbed vertebrates that stopped short of the amniotic egg: frogs, salamanders and caecilians, most hatching as gilled aquatic larvae.",
+    "taxon": "tx_amphibia"
   },
   {
     "id": "arthropod",
@@ -65181,7 +65250,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "A chitin cuticle that has to be shed to grow, a segmented body, and paired jointed limbs — up to ten million species."
+    "fact": "A chitin cuticle that has to be shed to grow, a segmented body, and paired jointed limbs — up to ten million species.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "mollusk",
@@ -65192,7 +65262,8 @@
       "animal",
       "water"
     ],
-    "fact": "86,600 living species, second only to the arthropods — and in every one, the mantle over the back is what secretes the shell."
+    "fact": "86,600 living species, second only to the arthropods — and in every one, the mantle over the back is what secretes the shell.",
+    "taxon": "tx_mollusca"
   },
   {
     "id": "crustacean",
@@ -65203,7 +65274,8 @@
       "animal",
       "water"
     ],
-    "fact": "Mandibulate arthropods carrying two pairs of antennae — crabs, krill, copepods, barnacles, and the woodlouse that made it onto land."
+    "fact": "Mandibulate arthropods carrying two pairs of antennae — crabs, krill, copepods, barnacles, and the woodlouse that made it onto land.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "arachnid",
@@ -65213,7 +65285,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Eight legs on a cephalothorax, and never antennae or wings — over 110,000 named species, 51,000 of them spiders."
+    "fact": "Eight legs on a cephalothorax, and never antennae or wings — over 110,000 named species, 51,000 of them spiders.",
+    "taxon": "tx_arachnida"
   },
   {
     "id": "echinoderm",
@@ -65224,7 +65297,8 @@
       "animal",
       "water"
     ],
-    "fact": "Bilateral as a larva, then five-fold radial as an adult, walking on tube feet run by a water vascular system — about 7,600 species, every one marine."
+    "fact": "Bilateral as a larva, then five-fold radial as an adult, walking on tube feet run by a water vascular system — about 7,600 species, every one marine.",
+    "taxon": "tx_echinodermata"
   },
   {
     "id": "cnidarian",
@@ -65235,7 +65309,8 @@
       "animal",
       "water"
     ],
-    "fact": "Over 11,000 species built of jelly mesoglea between two thin cell layers, with no brain at all — just a nerve net and stinging cnidocytes."
+    "fact": "Over 11,000 species built of jelly mesoglea between two thin cell layers, with no brain at all — just a nerve net and stinging cnidocytes.",
+    "taxon": "tx_cnidaria"
   },
   {
     "id": "annelid",
@@ -65245,7 +65320,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The segmented worms: over 22,000 species, from earthworms and leeches to ragworms living at hydrothermal vents."
+    "fact": "The segmented worms: over 22,000 species, from earthworms and leeches to ragworms living at hydrothermal vents.",
+    "taxon": "tx_annelida"
   },
   {
     "id": "insect",
@@ -65255,7 +65331,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "Three body sections, six jointed legs, one pair of antennae — over a million described species, more than half of all animal species known."
+    "fact": "Three body sections, six jointed legs, one pair of antennae — over a million described species, more than half of all animal species known.",
+    "taxon": "tx_insecta"
   },
   {
     "id": "primate",
@@ -65265,7 +65342,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "An order that arose 74 to 63 million years ago in tropical forests — big brains, forward-facing eyes, grasping hands — with 376 to 524 living species."
+    "fact": "An order that arose 74 to 63 million years ago in tropical forests — big brains, forward-facing eyes, grasping hands — with 376 to 524 living species.",
+    "taxon": "tx_primates"
   },
   {
     "id": "rodent",
@@ -65275,7 +65353,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "One pair of ever-growing incisors top and bottom, kept in check only by gnawing — about 40% of all mammal species."
+    "fact": "One pair of ever-growing incisors top and bottom, kept in check only by gnawing — about 40% of all mammal species.",
+    "taxon": "tx_rodentia"
   },
   {
     "id": "shark",
@@ -65286,7 +65365,8 @@
       "animal",
       "water"
     ],
-    "fact": "Cartilage instead of bone, skin made of tooth-like dermal denticles, five to seven gill slits a side — more than 500 species across thirteen orders."
+    "fact": "Cartilage instead of bone, skin made of tooth-like dermal denticles, five to seven gill slits a side — more than 500 species across thirteen orders.",
+    "taxon": "tx_chondrichthyes"
   },
   {
     "id": "frog",
@@ -65296,7 +65376,8 @@
     "tags": [
       "animal"
     ],
-    "fact": "The order Anura, Greek for 'without tail' — over 7,700 species, about 87% of all amphibians, the larval tail pulled inward into a bony urostyle."
+    "fact": "The order Anura, Greek for 'without tail' — over 7,700 species, about 87% of all amphibians, the larval tail pulled inward into a bony urostyle.",
+    "taxon": "tx_anura"
   },
   {
     "id": "species",
@@ -66882,7 +66963,8 @@
       "extinct",
       "animal"
     ],
-    "fact": "Over 22,000 described species across 270 million years — and every lens in their eyes was a single crystal of calcite, up to 15,000 of them under one cornea."
+    "fact": "Over 22,000 described species across 270 million years — and every lens in their eyes was a single crystal of calcite, up to 15,000 of them under one cornea.",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "permian_triassic_extinction",
@@ -68802,7 +68884,8 @@
       "wild"
     ],
     "fact": "Herpestidae: 34 living species in 14 genera, across southern Europe, Africa and Asia. They are one of at least four mammal groups carrying a mutation in the nicotinic acetylcholine receptor that blocks snake venom — and the only one that does it by glycosylation.",
-    "src": "https://en.wikipedia.org/wiki/Mongoose"
+    "src": "https://en.wikipedia.org/wiki/Mongoose",
+    "taxon": "tx_herpestidae"
   },
   {
     "id": "myriapod",
@@ -68813,7 +68896,8 @@
       "animal"
     ],
     "fact": "Four living classes — centipedes, millipedes, symphylans and pauropods — about 13,000 species, every one of them terrestrial. Their oldest body fossils are about 427 million years old.",
-    "src": "https://en.wikipedia.org/wiki/Myriapoda"
+    "src": "https://en.wikipedia.org/wiki/Myriapoda",
+    "taxon": "tx_arthropoda"
   },
   {
     "id": "sauropod",
@@ -69031,7 +69115,8 @@
       "wild"
     ],
     "fact": "About 11,000 species of chewing herbivore in the suborder Caelifera, a lineage reaching back to the early Triassic 250 million years ago.",
-    "src": "https://en.wikipedia.org/wiki/Grasshopper"
+    "src": "https://en.wikipedia.org/wiki/Grasshopper",
+    "taxon": "tx_orthoptera"
   },
   {
     "id": "ape",
@@ -69042,7 +69127,8 @@
       "animal"
     ],
     "fact": "The family Hominidae: eight living species in four genera, the orangutans, the gorillas, the chimpanzee and bonobo, and ourselves.",
-    "src": "https://en.wikipedia.org/wiki/Hominidae"
+    "src": "https://en.wikipedia.org/wiki/Hominidae",
+    "taxon": "tx_hominidae"
   },
   {
     "id": "beetle",
@@ -69053,7 +69139,8 @@
       "animal"
     ],
     "fact": "About 400,000 described species, a quarter of all known animals, each with its front wings hardened into cases over the flying pair.",
-    "src": "https://en.wikipedia.org/wiki/Beetle"
+    "src": "https://en.wikipedia.org/wiki/Beetle",
+    "taxon": "tx_coleoptera"
   },
   {
     "id": "crocodilian",
@@ -69110,7 +69197,8 @@
       "animal"
     ],
     "fact": "Crustaceans with seven pairs of thoracic legs and five pairs of branching abdominal appendages used for breathing; the female broods her young in a pouch called a marsupium.",
-    "src": "https://en.wikipedia.org/wiki/Isopoda"
+    "src": "https://en.wikipedia.org/wiki/Isopoda",
+    "taxon": "tx_isopoda"
   },
   {
     "id": "spurge",
@@ -70177,5 +70265,695 @@
       "note": "Boron ions fired at three milligrams of mixed californium isotopes at Berkeley, 14 February."
     },
     "terminal": true
+  },
+  {
+    "id": "torsion",
+    "name": "Torsion",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The 180° twist every gastropod larva makes, swinging its mantle cavity and anus round over its head.",
+    "src": "https://en.wikipedia.org/wiki/Torsion_(gastropod)"
+  },
+  {
+    "id": "gastropod",
+    "name": "Gastropod",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Snails and slugs: 65,000 to 80,000 species, the second-largest animal class, and every one twists.",
+    "src": "https://en.wikipedia.org/wiki/Gastropoda",
+    "taxon": "tx_gastropoda"
+  },
+  {
+    "id": "cephalopod",
+    "name": "Cephalopod",
+    "emoji": "🦑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "About 800 living species, and the only mollusks that closed the circulatory system — a squid has 3 hearts.",
+    "src": "https://en.wikipedia.org/wiki/Cephalopod",
+    "taxon": "tx_cephalopoda"
+  },
+  {
+    "id": "bivalve",
+    "name": "Bivalve",
+    "emoji": "🦪",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Two hinged valves, no head and no radula — about 9,200 species that feed and breathe on the same gills.",
+    "src": "https://en.wikipedia.org/wiki/Bivalvia",
+    "taxon": "tx_bivalvia"
+  },
+  {
+    "id": "clam",
+    "name": "Clam",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Not a taxon but a habit: a bivalve with two equal valves that burrows on a powerful muscular foot.",
+    "src": "https://en.wikipedia.org/wiki/Clam",
+    "taxon": "tx_bivalvia"
+  },
+  {
+    "id": "squid",
+    "name": "Squid",
+    "emoji": "🦑",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Eight arms, two tentacles, and the ancestral shell reduced to a chitin blade buried in its own back.",
+    "src": "https://en.wikipedia.org/wiki/Squid",
+    "taxon": "tx_cephalopoda"
+  },
+  {
+    "id": "jellyfish",
+    "name": "Jellyfish",
+    "emoji": "🪼",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "Not a species but a life stage — the free-swimming medusa phase of certain members of Medusozoa.",
+    "src": "https://en.wikipedia.org/wiki/Jellyfish",
+    "taxon": "tx_medusozoa"
+  },
+  {
+    "id": "worm",
+    "name": "Worm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A shape, not a lineage — flatworms, roundworms and annelids are no closer kin than a fish is to a fly.",
+    "src": "https://en.wikipedia.org/wiki/Worm"
+  },
+  {
+    "id": "flatworm",
+    "name": "Flatworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "About 18,600 species with no body cavity and no blood — oxygen has to reach every cell by diffusion.",
+    "src": "https://en.wikipedia.org/wiki/Flatworm",
+    "taxon": "tx_platyhelminthes"
+  },
+  {
+    "id": "protist",
+    "name": "Protist",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "water"
+    ],
+    "fact": "Defined by exclusion: a eukaryote that is not an animal, plant or fungus. No one trait unites them.",
+    "src": "https://en.wikipedia.org/wiki/Protist"
+  },
+  {
+    "id": "organism",
+    "name": "Organism",
+    "emoji": "🧫",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Any living thing that functions as one individual — and biology still argues where one individual ends.",
+    "src": "https://en.wikipedia.org/wiki/Organism"
+  },
+  {
+    "id": "life",
+    "name": "Life",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Carl Sagan's working definition, adopted by NASA: a self-sustaining chemical system capable of evolving.",
+    "src": "https://en.wikipedia.org/wiki/Life"
+  },
+  {
+    "id": "eggshell",
+    "name": "Eggshell",
+    "emoji": "🥚",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "95 to 97% calcium carbonate in a protein matrix; without the protein it would be too brittle to hold.",
+    "src": "https://en.wikipedia.org/wiki/Eggshell"
+  },
+  {
+    "id": "carapace",
+    "name": "Carapace",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A turtle's ribs and spine ossified into one bony box under keratin scutes — it can never leave it.",
+    "src": "https://en.wikipedia.org/wiki/Turtle_shell"
+  },
+  {
+    "id": "solid",
+    "name": "Solid",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Definite shape and definite volume: atoms packed so tightly they can only vibrate in place.",
+    "src": "https://en.wikipedia.org/wiki/Solid"
+  },
+  {
+    "id": "liquid",
+    "name": "Liquid",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Keeps its volume, not its shape. Only two elements are liquid at room temperature: mercury and bromine.",
+    "src": "https://en.wikipedia.org/wiki/Liquid"
+  },
+  {
+    "id": "gas",
+    "name": "Gas",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "gas"
+    ],
+    "fact": "Neither shape nor volume of its own. It keeps expanding until the container runs out.",
+    "src": "https://en.wikipedia.org/wiki/Gas"
+  },
+  {
+    "id": "melting",
+    "name": "Melting",
+    "emoji": "🫠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Solid to liquid. The temperature stops rising while the lattice comes apart — that is latent heat.",
+    "src": "https://en.wikipedia.org/wiki/Melting"
+  },
+  {
+    "id": "freezing",
+    "name": "Freezing",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Liquid to solid, giving heat back as it goes. Pure water can supercool to −40°C before it yields.",
+    "src": "https://en.wikipedia.org/wiki/Freezing"
+  },
+  {
+    "id": "vaporization",
+    "name": "Vaporization",
+    "emoji": "♨️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Liquid to gas. At the surface it is evaporation; once bubbles form inside, it is boiling.",
+    "src": "https://en.wikipedia.org/wiki/Vaporization"
+  },
+  {
+    "id": "condensation",
+    "name": "Condensation",
+    "emoji": "💦",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Gas back to liquid at the dew point. Every cloud and every fogged window is this.",
+    "src": "https://en.wikipedia.org/wiki/Condensation"
+  },
+  {
+    "id": "sublimation",
+    "name": "Sublimation",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Solid straight to gas, skipping the liquid. Dry ice does it at −78.5°C; mothballs do it on a shelf.",
+    "src": "https://en.wikipedia.org/wiki/Sublimation_(phase_transition)"
+  },
+  {
+    "id": "deposition",
+    "name": "Deposition",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Gas straight to solid, no liquid between. Frost grows this way, and so do snow crystals.",
+    "src": "https://en.wikipedia.org/wiki/Deposition_(phase_transition)"
+  },
+  {
+    "id": "ionization",
+    "name": "Ionization",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Knock electrons off atoms and the gas becomes a plasma that conducts and answers to magnets.",
+    "src": "https://en.wikipedia.org/wiki/Ionization"
+  },
+  {
+    "id": "matter",
+    "name": "Matter",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Anything with mass that takes up space — and under 5% of the universe. The rest is dark.",
+    "src": "https://en.wikipedia.org/wiki/Matter"
+  },
+  {
+    "id": "antimatter",
+    "name": "Antimatter",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Same mass, opposite charge. Only ever made in pairs, and nobody knows why so little survived.",
+    "src": "https://en.wikipedia.org/wiki/Antimatter"
+  },
+  {
+    "id": "spin",
+    "name": "Spin",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "Intrinsic angular momentum, quantised in halves of ħ. Nothing is actually spinning.",
+    "src": "https://en.wikipedia.org/wiki/Spin_(physics)"
+  },
+  {
+    "id": "fermion",
+    "name": "Fermion",
+    "emoji": "🔒",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Half-integer spin, one to a quantum state. The twenty-four of them are what matter is made of.",
+    "src": "https://en.wikipedia.org/wiki/Fermion"
+  },
+  {
+    "id": "boson",
+    "name": "Boson",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Whole-integer spin, and any number can share one state. Five are elementary; they carry the forces.",
+    "src": "https://en.wikipedia.org/wiki/Boson"
+  },
+  {
+    "id": "pauli_exclusion_principle",
+    "name": "Pauli Exclusion Principle",
+    "emoji": "🚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "No two identical fermions in one state. It is why atoms have shells and why matter is rigid.",
+    "src": "https://en.wikipedia.org/wiki/Pauli_exclusion_principle"
+  },
+  {
+    "id": "fundamental_force",
+    "name": "Fundamental Force",
+    "emoji": "💪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Four interactions that reduce to nothing simpler. Gravity is the weakest by an absurd margin.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_interaction"
+  },
+  {
+    "id": "strong_force",
+    "name": "Strong Force",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "About 100 times electromagnetism at a femtometre, and it does not fade with distance.",
+    "src": "https://en.wikipedia.org/wiki/Strong_interaction"
+  },
+  {
+    "id": "weak_force",
+    "name": "Weak Force",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The only force that changes a quark's flavour, and the only one that tells left from right.",
+    "src": "https://en.wikipedia.org/wiki/Weak_interaction"
+  },
+  {
+    "id": "electromagnetism",
+    "name": "Electromagnetism",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Infinite range, carried by the photon, and the force behind all of chemistry and every push.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetism"
+  },
+  {
+    "id": "hadron",
+    "name": "Hadron",
+    "emoji": "🎱",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Quarks bound by the strong force. Of all of them, only the free proton is stable.",
+    "src": "https://en.wikipedia.org/wiki/Hadron"
+  },
+  {
+    "id": "baryon",
+    "name": "Baryon",
+    "emoji": "⚾",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Three quarks, so half-integer spin: a fermion. Protons and neutrons are almost all the mass you touch.",
+    "src": "https://en.wikipedia.org/wiki/Baryon"
+  },
+  {
+    "id": "meson",
+    "name": "Meson",
+    "emoji": "🏓",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A quark and an antiquark, so whole spin: a boson. The longest-lived last tenths of a nanosecond.",
+    "src": "https://en.wikipedia.org/wiki/Meson"
+  },
+  {
+    "id": "quark",
+    "name": "Quark",
+    "emoji": "🎲",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Charge in thirds, and never seen alone. Six flavours, every one held captive by gluons.",
+    "src": "https://en.wikipedia.org/wiki/Quark"
+  },
+  {
+    "id": "strange_quark",
+    "name": "Strange Quark",
+    "emoji": "❓",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Charge −1/3, about 95 MeV. Named for the oddly long-lived particles found in cosmic rays in 1947.",
+    "src": "https://en.wikipedia.org/wiki/Strange_quark"
+  },
+  {
+    "id": "charm_quark",
+    "name": "Charm Quark",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Charge +2/3, 1.27 GeV. Two labs published its signature on the same day in November 1974.",
+    "src": "https://en.wikipedia.org/wiki/Charm_quark"
+  },
+  {
+    "id": "bottom_quark",
+    "name": "Bottom Quark",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Charge −1/3, about 4.18 GeV. It decays reluctantly, which is what makes b-tagging possible.",
+    "src": "https://en.wikipedia.org/wiki/Bottom_quark"
+  },
+  {
+    "id": "top_quark",
+    "name": "Top Quark",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "About 173 GeV — the heaviest particle known, and the only quark that dies before it can hadronise.",
+    "src": "https://en.wikipedia.org/wiki/Top_quark"
+  },
+  {
+    "id": "lepton",
+    "name": "Lepton",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A fermion that ignores the strong force, so it travels alone. Six of them, in three generations.",
+    "src": "https://en.wikipedia.org/wiki/Lepton"
+  },
+  {
+    "id": "muon",
+    "name": "Muon",
+    "emoji": "🌠",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An electron 207 times over, living 2.2 microseconds. Around 10,000 hit each square metre a minute.",
+    "src": "https://en.wikipedia.org/wiki/Muon"
+  },
+  {
+    "id": "tau",
+    "name": "Tau",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "1777 MeV, heavier than a proton — the only lepton massive enough to decay into hadrons.",
+    "src": "https://en.wikipedia.org/wiki/Tau_(particle)"
+  },
+  {
+    "id": "neutrino",
+    "name": "Neutrino",
+    "emoji": "👻",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "No charge, almost no mass, and it barely notices matter. Three flavours, and it swaps between them.",
+    "src": "https://en.wikipedia.org/wiki/Neutrino"
+  },
+  {
+    "id": "electron_neutrino",
+    "name": "Electron Neutrino",
+    "emoji": "🫥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "First generation. About 65 billion from the Sun cross every square centimetre of you each second.",
+    "src": "https://en.wikipedia.org/wiki/Electron_neutrino"
+  },
+  {
+    "id": "muon_neutrino",
+    "name": "Muon Neutrino",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Second generation. A 1962 beam of them made only muons — proof neutrinos come in more than one kind.",
+    "src": "https://en.wikipedia.org/wiki/Muon_neutrino"
+  },
+  {
+    "id": "tau_neutrino",
+    "name": "Tau Neutrino",
+    "emoji": "🕵️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Third generation, and the last Standard Model fermion to be seen directly, in July 2000.",
+    "src": "https://en.wikipedia.org/wiki/Tau_neutrino"
+  },
+  {
+    "id": "gluon",
+    "name": "Gluon",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "Massless, eight kinds, and it carries the colour charge it acts on — so gluons pull on each other.",
+    "src": "https://en.wikipedia.org/wiki/Gluon"
+  },
+  {
+    "id": "w_boson",
+    "name": "W Boson",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "80.4 GeV of carrier for the weak force — heavy enough that the force barely crosses a proton.",
+    "src": "https://en.wikipedia.org/wiki/W_and_Z_bosons"
+  },
+  {
+    "id": "z_boson",
+    "name": "Z Boson",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "91.19 GeV and no charge. It lets a neutrino bounce off matter and stay a neutrino.",
+    "src": "https://en.wikipedia.org/wiki/W_and_Z_bosons"
+  },
+  {
+    "id": "higgs_boson",
+    "name": "Higgs Boson",
+    "emoji": "🎩",
+    "shelf": "workshop",
+    "tags": [
+      "fire"
+    ],
+    "fact": "125 GeV, zero spin — the first elementary scalar particle ever found, on 4 July 2012.",
+    "src": "https://en.wikipedia.org/wiki/Higgs_boson"
+  },
+  {
+    "id": "standard_model",
+    "name": "Standard Model",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Twelve fermions, five bosons, three forces. Fifty years unbeaten, and it still has no gravity.",
+    "src": "https://en.wikipedia.org/wiki/Standard_Model"
+  },
+  {
+    "id": "oxide",
+    "name": "Oxide",
+    "emoji": "🟥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Oxygen bonded to another element at oxidation state −2. Most of the Earth's crust is oxides.",
+    "src": "https://en.wikipedia.org/wiki/Oxide"
+  },
+  {
+    "id": "periodic_table",
+    "name": "Periodic Table",
+    "emoji": "📋",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "118 elements in proton order. Columns share their outer electrons, so they share their chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Periodic_table"
+  },
+  {
+    "id": "metallic_bond",
+    "name": "Metallic Bond",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Electrons pooled by every atom at once. That shared sea is the shine, the wire and the bend.",
+    "src": "https://en.wikipedia.org/wiki/Metallic_bonding"
+  },
+  {
+    "id": "transition_metal",
+    "name": "Transition Metal",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Groups 3 to 12, with a part-filled d shell: many oxidation states, coloured salts, and catalysis.",
+    "src": "https://en.wikipedia.org/wiki/Transition_metal"
+  },
+  {
+    "id": "alkaline_earth_metal",
+    "name": "Alkaline Earth Metal",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Group 2, two outer s electrons. Named for their oxides — fireproof 'earths' that turn water alkaline.",
+    "src": "https://en.wikipedia.org/wiki/Alkaline_earth_metal"
+  },
+  {
+    "id": "lanthanide",
+    "name": "Lanthanide",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Fifteen metals filling the 4f shell, so alike that telling them apart needs solvent extraction.",
+    "src": "https://en.wikipedia.org/wiki/Lanthanide"
+  },
+  {
+    "id": "actinide",
+    "name": "Actinide",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Fifteen elements filling 5f, every one radioactive. Only thorium and uranium remain in quantity.",
+    "src": "https://en.wikipedia.org/wiki/Actinide"
   }
 ]
