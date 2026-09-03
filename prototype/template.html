@@ -4543,6 +4543,9 @@ board.addEventListener('pointerdown', ev => {
   }
 }, true);
 board.addEventListener('pointermove', ev => {
+  if (sprinkleAim && ev.pointerId === sprinkleAim.id) {
+    sprinkleAim.x = ev.clientX; sprinkleAim.y = ev.clientY;
+  }
   if (ev.pointerType !== 'touch' || !touches.has(ev.pointerId)) return;
   touches.set(ev.pointerId, ev);
   if (touches.size !== 2 || !pinch) return;
@@ -4563,6 +4566,10 @@ board.addEventListener('pointermove', ev => {
 for (const e of ['pointerup', 'pointercancel']) addEventListener(e, ev => {
   touches.delete(ev.pointerId);
   if (touches.size < 2) pinch = null;
+  // Keep the last aim rather than discarding it: a sprinkler goes on pouring
+  // where you left it, which is far more predictable than jumping back to
+  // scattering across the whole board the instant a finger lifts.
+  if (sprinkleAim && ev.pointerId === sprinkleAim.id) sprinkleAim = { id: null, x: sprinkleAim.x, y: sprinkleAim.y };
 }, true);
 // The same gap, for the drag itself rather than just the touch/pinch
 // bookkeeping above: a drag that starts on #board can end somewhere else
@@ -5555,7 +5562,11 @@ board.addEventListener('pointerdown', ev => {
     // sprinkle could not be aimed at all and the canvas appeared to be stuck
     // dragging. While pouring, the finger aims; a mouse still pans normally,
     // and both fingers of a pinch still zoom (touches.size > 1 returned above).
-    if (sprinkle && ev.pointerType === 'touch') return;
+    if (sprinkle && ev.pointerType === 'touch') {
+      try { board.setPointerCapture(ev.pointerId); } catch {}
+      sprinkleAim = { id: ev.pointerId, x: ev.clientX, y: ev.clientY };
+      return;
+    }
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
     board.classList.add('panning');
     return;
@@ -6147,6 +6158,16 @@ for (const e of ['pointerup', 'pointercancel']) addEventListener(e, ev => {
 let lastPointer = null;
 let lastPointerType = 'mouse';
 let touchDown = false;
+// The finger currently aiming a sprinkle, tracked explicitly rather than
+// inferred from a global touchDown flag. The flag was not enough on a real
+// iPhone: with the pan suppressed nothing captures the pointer, and Safari
+// fires pointercancel as soon as the touch moves, which cleared the flag and
+// dropped every grain back to the random fallback. ("the sprinkle is randomly
+// throwing sprinkles on page. not where my finger is" — found live, on the
+// second attempt at this.) Pointer capture keeps the stream alive; holding the
+// position here means a finger that presses and does NOT move still aims,
+// which a pointermove-only scheme never handled either.
+let sprinkleAim = null;                 // { id, x, y }
 function spawnGrain(id, wx, wy) {
   const el = document.createElement('div');
   el.className = `grain spawning fam-${familyOf(byId[id]).id}`;
@@ -6278,10 +6299,13 @@ function sprinkleTick(id) {
   // Live means "the pointer is where the person is looking now": a mouse
   // always is, a finger only while it is touching. A stale touch point is
   // worse than no point at all, because every grain lands on it.
-  const aiming = lastPointer && (lastPointerType !== 'touch' || touchDown);
-  if (aiming) {
-    px = lastPointer.x + (Math.random() - 0.5) * jitter * 2;
-    py = lastPointer.y + (Math.random() - 0.5) * jitter * 2;
+  // A touch aim wins outright when there is one; otherwise a live mouse
+  // cursor; otherwise scatter. Scattering is now only for the case where the
+  // board has never been pointed at at all.
+  const aim = sprinkleAim || (lastPointer && lastPointerType !== 'touch' ? lastPointer : null);
+  if (aim) {
+    px = aim.x + (Math.random() - 0.5) * jitter * 2;
+    py = aim.y + (Math.random() - 0.5) * jitter * 2;
   } else {
     px = b.left + 16 + Math.random() * Math.max(1, b.width - 32);
     py = b.top + 16 + Math.random() * Math.max(1, b.height - 32);
@@ -6354,6 +6378,7 @@ function ambientGrainSweep(n) {
 function toggleSprinkle(id) {
   if (sprinkle && sprinkle.id === id) return stopSprinkle();
   stopSprinkle(true);
+  sprinkleAim = null;                   // a new pour starts unaimed, not where the last one ended
   sprinkle = { id, timer: setInterval(() => sprinkleTick(id), SPRINKLE_MS) };
   document.querySelectorAll(sprinklingSelector(id)).forEach(c => c.classList.add('sprinkling'));
   toast(`Sprinkling ${nameOf(byId[id])} — tap ⁘ again to stop`);
