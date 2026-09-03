@@ -4365,7 +4365,19 @@ function circleTidy() {
   const [cw, ch] = cardSize();
   const rings = [];   // {parent, children, r} — one per qualifying hub
   for (const [parent, children] of bySingleParent) {
-    if (children.length < 2) continue;
+    // Three, not two. Two spokes is not a ring: the angles work out to
+    // straight above and straight below the parent, so it lifts two cards
+    // off the row tidy() had just placed them in and gains nothing that
+    // reads as a circle. Measured on a 140-card bench of ordinary chains
+    // (aluminium, bronze, rubber, glass, cheese, paper, soap, ink, candle):
+    // 31 hubs had one spoke, 11 had exactly two, and NOT ONE had three or
+    // more — so every ring drawn was a two-card ring, and drawing them took
+    // the median link from 156px to 185px and the links over 800px from 6
+    // to 10. ("if i were to click 'ring tidy' this is what i would expect"
+    // — with a picture of clusters, against a board that had none.)
+    // Below three this now falls through to tidy()'s own placement, which
+    // is what those two cards wanted anyway.
+    if (children.length < 3) continue;
     const n = children.length;
     const spacing = Math.max(cw, ch) + 14;
     const r = Math.max(cw * 1.1, (n * spacing) / (2 * Math.PI));
@@ -5145,7 +5157,9 @@ function placeOneRecipe(r, undoLabel, shared) {
   if (out) already.set(r.out, out);       // the next recipe can build on it
   if (undoLabel) {
     benchTouched = true;
-    refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save(); ensureVisible(out);
+    refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save();
+    if (out) ensureVisible(out);
+    else toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
   }
   return out;
 }
@@ -5173,6 +5187,13 @@ function placeRoute(id, idx) {
   runTidy();
   sfx.pick();
   save();
+  // materialize() returns null when the bench is full — it says so itself —
+  // and the line below used to dereference that null, so a tap on a recipe
+  // with a full bench threw a TypeError out of the handler and the player was
+  // told nothing at all. Every other path that hits the cap already toasts
+  // this exact sentence; this one now does too. It is also what stopped
+  // regressionTest() from running: its own scratch bench fills the board.
+  if (!out) { toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`); return; }
   ensureVisible(out);
   toast(`${nameOf(byId[id])} added — ${r.in.map(i => nameOf(byId[i])).join(r.verb ? '' : ' + ')}`);
 }
@@ -5379,6 +5400,7 @@ const nameOfProduct = (p) => (p.product_name || 'that product').replace(/[<>]/g,
  * out from under the player's hand.
  */
 function ensureVisible(el) {
+  if (!el) return;             // a full bench yields no chip to scroll to
   const b = boardBox(), r = el.getBoundingClientRect();
   const m = 16;
   let dx = 0, dy = 0;
@@ -5527,6 +5549,13 @@ board.addEventListener('pointerdown', ev => {
   if (ghost) ev.preventDefault();                      // a hub's <img> shouldn't start its own native drag
   const chip = ghost || ev.target.closest('.chip.board:not(.cooking)');
   if (!chip) {                                       // empty space: pan the world
+    // ...unless sprinkle is armed and this is a finger. A touchscreen has no
+    // hover, so the only way to aim a sprinkle is to touch the board — and
+    // that is the same gesture as a pan. Panning wins the race, so on a phone
+    // sprinkle could not be aimed at all and the canvas appeared to be stuck
+    // dragging. While pouring, the finger aims; a mouse still pans normally,
+    // and both fingers of a pinch still zoom (touches.size > 1 returned above).
+    if (sprinkle && ev.pointerType === 'touch') return;
     pan = { sx: ev.clientX, sy: ev.clientY, vx: view.x, vy: view.y };
     board.classList.add('panning');
     return;
@@ -6090,8 +6119,34 @@ const GRAIN_SIZE = 26;                  // world px — a card is roughly 3-4x t
 const GRAIN_CAP = 800;                  // no event listeners, no layout chrome: room for far more than a real chip
 let sprinkle = null;                    // { id, timer }
 let grains = [];                        // [{el, id, wx, wy}], oldest first
-addEventListener('pointermove', ev => { lastPointer = { x: ev.clientX, y: ev.clientY }; }, { passive: true });
+// A mouse hovers; a finger does not. `pointermove` fires continuously for a
+// mouse whether or not a button is down, so on a desktop lastPointer is always
+// live and sprinkle falls under the cursor. On a touchscreen pointermove ONLY
+// fires while a finger is down — and a finger down on the canvas is the pan
+// gesture — so on a phone the two were the same action: aiming the sprinkle
+// and dragging the board. ("when i try sprinkle on an iPhone the canvas keeps
+// getting stuck/moving. it doesn't let me sprinkle at all" — found live on
+// daviddef.github.io.)
+//
+// Two consequences, both fixed here and one in the pan handler. Without a
+// finger down, lastPointer is whatever was last touched — so every grain piled
+// onto that one stale point forever, which reads as "it isn't sprinkling".
+// With a finger down, the board panned instead of aiming.
+addEventListener('pointermove', ev => {
+  lastPointer = { x: ev.clientX, y: ev.clientY };
+  lastPointerType = ev.pointerType;
+}, { passive: true });
+addEventListener('pointerdown', ev => {
+  lastPointer = { x: ev.clientX, y: ev.clientY };
+  lastPointerType = ev.pointerType;
+  if (ev.pointerType === 'touch') touchDown = true;
+}, { passive: true, capture: true });
+for (const e of ['pointerup', 'pointercancel']) addEventListener(e, ev => {
+  if (ev.pointerType === 'touch') touchDown = false;
+}, { passive: true, capture: true });
 let lastPointer = null;
+let lastPointerType = 'mouse';
+let touchDown = false;
 function spawnGrain(id, wx, wy) {
   const el = document.createElement('div');
   el.className = `grain spawning fam-${familyOf(byId[id]).id}`;
@@ -6220,7 +6275,11 @@ function sprinkleTick(id) {
   // session).
   const jitter = 10;
   let px, py;
-  if (lastPointer) {
+  // Live means "the pointer is where the person is looking now": a mouse
+  // always is, a finger only while it is touching. A stale touch point is
+  // worse than no point at all, because every grain lands on it.
+  const aiming = lastPointer && (lastPointerType !== 'touch' || touchDown);
+  if (aiming) {
     px = lastPointer.x + (Math.random() - 0.5) * jitter * 2;
     py = lastPointer.y + (Math.random() - 0.5) * jitter * 2;
   } else {
@@ -10289,16 +10348,32 @@ function regressionTest() {
   check('decay: removing dna breaks the whole zygote->fetus chain',
     ['zygote', 'embryo', 'fetus'].every(x => dna.broken.has(x)));
 
-  // Real redundancy must be honoured: acacia is only ONE of giraffe's two
-  // true routes in (the other is meadow+tree), so removing it should
-  // starve giraffe, never break it outright. Getting this wrong would mean
-  // the mechanic can't tell a genuine bottleneck from ordinary redundancy —
-  // the entire point of doing a diff instead of a flood-fill.
+  // Real redundancy must be honoured: cream is only ONE of butter's two
+  // true routes in (the other is milk|crush — you can churn the milk
+  // straight), so removing it should starve butter, never break it
+  // outright. Getting this wrong would mean the mechanic can't tell a
+  // genuine bottleneck from ordinary redundancy — the entire point of
+  // doing a diff instead of a flood-fill.
+  //
+  // This check used to run on acacia and giraffe. It stopped being true on
+  // 3 Sep, and correctly: acacia|wait -> giraffe was deleted because a
+  // giraffe is not made of the tree it eats, so acacia no longer reaches
+  // giraffe by any route and removing it does nothing to it. Butter is a
+  // better subject anyway — a food step is not going to be rewritten by
+  // the next pass over animal descent.
+  const cream = decayImpact('cream');
+  check('decay: removing cream starves butter (real redundancy survives)',
+    cream.starved.has('butter') && !cream.broken.has('butter'));
+  check('decay: removing cream does not touch an unrelated starter',
+    !cream.broken.has('water') && !cream.starved.has('water'));
+
+  // And the deletion itself, asserted so it cannot quietly come back: the
+  // whole association-not-derivation programme is a content fix, and
+  // content fixes are exactly the kind that get undone by a later batch
+  // that means well.
   const acacia = decayImpact('acacia');
-  check('decay: removing acacia starves giraffe (real redundancy survives)',
-    acacia.starved.has('giraffe') && !acacia.broken.has('giraffe'));
-  check('decay: removing acacia does not touch an unrelated starter',
-    !acacia.broken.has('water') && !acacia.starved.has('water'));
+  check('content: acacia no longer reaches giraffe (food is not descent)',
+    !acacia.broken.has('giraffe') && !acacia.starved.has('giraffe'));
 
   // tidy()'s satellite-shift collision fix: this exact graph shape (a short,
   // deep chain reaching an existing card that already anchors a separate,
@@ -10316,12 +10391,51 @@ function regressionTest() {
   tidy();
   const cards = [...world.querySelectorAll('.chip.board')].filter(c => !before.has(c.dataset.id));
   const [cw, ch] = cardSize();
-  const at = cards.map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
+  // VISIBLE cards only. Since 3 Sep tidy() deliberately parks every folded
+  // card on top of the visible card that hides it — that is the fix for
+  // "why does aluminium appear on the right bottom?", where ten folded
+  // ancestors each reserved a column of real width. A folded card is
+  // display:none and shares its host's coordinates on purpose, so counting
+  // it as an overlap measures the fix and calls it a bug: this bench is 99
+  // cards, 92 of them hidden, and scoring all of them gives 1497 overlaps
+  // against 0 for the seven you can actually see.
+  //
+  // It went unnoticed because the only benches it ran on were full ones,
+  // where the cap stopped the ancestors being created at all and the count
+  // came out zero for the wrong reason.
+  const at = cards.filter(c => !c.classList.contains('hidden'))
+    .map(c => [parseFloat(c.style.left), parseFloat(c.style.top)]);
   let overlaps = 0;
   for (let i = 0; i < at.length; i++)
     for (let j = i + 1; j < at.length; j++)
       if (Math.abs(at[i][0] - at[j][0]) < cw && Math.abs(at[i][1] - at[j][1]) < ch) overlaps++;
   check('tidy(): the giraffe/acacia satellite case lays out with zero overlaps', overlaps === 0);
+
+  // circleTidy() must be a NO-OP on a bench with no real hub. It used to ring
+  // any parent with two single-parent children, and two spokes come out at
+  // straight above and straight below — so on an ordinary bench of chains it
+  // lifted pairs of cards off the rows tidy() had just put them in and made
+  // the layout measurably worse. The giraffe bench standing here has no
+  // three-spoke hub, so the two passes must agree card for card.
+  // Compared as a SHAPE, not as coordinates: circleTidy() ends by re-centring
+  // the bench, so even a run that draws no ring at all shifts every card by
+  // the same vector (measured here: 19.49, -962.54 for all seven). That is a
+  // translation, not a relayout, and an absolute comparison calls it a
+  // difference. Normalising to the top-left of the bounding box asks the
+  // question actually worth asking — did any card move RELATIVE to the others.
+  const shapeOf = () => {
+    const cs = [...world.querySelectorAll('.chip.board:not(.hidden)')];
+    if (!cs.length) return '';
+    const xs = cs.map(c => parseFloat(c.style.left) || 0);
+    const ys = cs.map(c => parseFloat(c.style.top) || 0);
+    const ox = Math.min(...xs), oy = Math.min(...ys);
+    return cs.map((c, i) => c.dataset.uid + '@' +
+      Math.round(xs[i] - ox) + ',' + Math.round(ys[i] - oy)).sort().join('|');
+  };
+  tidy();          const afterTidy = shapeOf();
+  circleTidy();    const afterCircle = shapeOf();
+  check('circleTidy(): leaves a bench with no 3-spoke hub in tidy()\'s own shape',
+    afterTidy === afterCircle);
 
   cards.forEach(c => c.remove());
   prefs.consolidate = consolidate0;

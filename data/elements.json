@@ -2138,7 +2138,7 @@
       "animal"
     ],
     "fact": "Domesticated from wild bezoars; browses scrub and rock where cattle starve.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_bovidae"
   },
   {
     "id": "carbon",
@@ -2949,7 +2949,7 @@
       "animal"
     ],
     "fact": "Domesticated twice over, independently: near the Tigris, and separately in China.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_suidae"
   },
   {
     "id": "lard",
@@ -2970,7 +2970,7 @@
       "animal"
     ],
     "fact": "Grazes grass flat where a goat would rather climb and browse the scrub instead.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_bovidae"
   },
   {
     "id": "wool",
@@ -2991,7 +2991,7 @@
       "animal"
     ],
     "fact": "Its teeth never stop erupting, worn down by a lifetime of grazing.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "duck",
@@ -3073,7 +3073,7 @@
       "wild"
     ],
     "fact": "Eats almost nothing but eucalyptus — and out of 600-plus species on offer, sticks to about 30.",
-    "taxon": "tx_diprotodontia",
+    "taxon": "tx_phascolarctidae",
     "terminal": true
   },
   {
@@ -3135,7 +3135,7 @@
       "wild"
     ],
     "fact": "Those stripes are there to stop flies landing, not to help it hide or keep cool.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "giraffe",
@@ -3147,7 +3147,7 @@
       "wild"
     ],
     "fact": "A heart that runs at roughly twice human blood pressure, just to get blood up to the brain.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_giraffidae"
   },
   {
     "id": "camel",
@@ -3158,7 +3158,7 @@
       "animal"
     ],
     "fact": "The hump is fat, not water — up to 36 kg of it, burned for energy when food runs short.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_camelidae"
   },
   {
     "id": "chromatin",
@@ -3340,7 +3340,7 @@
       "animal"
     ],
     "fact": "Full term runs 39 to 40 weeks. Then labour ends the pregnancy and a newborn leaves the body it grew inside.",
-    "taxon": "tx_primates"
+    "taxon": "tx_homo"
   },
   {
     "id": "cotton",
@@ -7759,7 +7759,7 @@
       "wild",
       "water"
     ],
-    "fact": "A mammal that went back to the sea. It breathes air and feeds its calf milk the thickness of paste.",
+    "fact": "A mammal that went back to the sea. It breathes air and feeds its calf milk the thickness of paste. Its closest living relatives are the hippopotamuses — the two branched from a shared semi-aquatic even-toed ungulate about 60 million years ago.",
     "taxon": "tx_cetacea"
   },
   {
@@ -8155,7 +8155,8 @@
       "animal",
       "food"
     ],
-    "fact": "A sheep in its first year, and its meat. One English word does both jobs."
+    "fact": "A sheep in its first year, and its meat. One English word does both jobs.",
+    "taxon": "tx_bovidae"
   },
   {
     "id": "venison",
@@ -8481,7 +8482,8 @@
       "food",
       "plant"
     ],
-    "fact": "E160b. Achiote seed. The colour sits in a waxy coat on the outside of the seed, not inside it."
+    "fact": "E160b. Achiote seed. The colour sits in a waxy coat on the outside of the seed, not inside it.",
+    "taxon": "tx_bixaceae"
   },
   {
     "id": "turmeric",
@@ -12442,7 +12444,7 @@
       "animal"
     ],
     "fact": "A fish that runs warmer than the water around it — one of only three that can.",
-    "taxon": "tx_actinopterygii"
+    "taxon": "tx_scombriformes"
   },
   {
     "id": "guacamole",
@@ -13189,7 +13191,7 @@
       "animal"
     ],
     "fact": "An intact male sheep, occasionally called a tup. Kept mostly for breeding.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_bovidae"
   },
   {
     "id": "ewe",
@@ -13200,7 +13202,7 @@
       "animal"
     ],
     "fact": "An adult female sheep. Pronounced 'yoo' — nothing like it looks spelled.",
-    "taxon": "tx_artiodactyla",
+    "taxon": "tx_bovidae",
     "terminal": true
   },
   {
@@ -13212,7 +13214,7 @@
       "animal"
     ],
     "fact": "A castrated male sheep. Most male lambs not kept for breeding become one.",
-    "taxon": "tx_artiodactyla",
+    "taxon": "tx_bovidae",
     "terminal": true
   },
   {
@@ -13224,7 +13226,7 @@
       "animal"
     ],
     "fact": "A juvenile goat. The word comes from Old Norse kið, carried in by Scandinavian settlers.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_bovidae"
   },
   {
     "id": "buck",
@@ -13235,7 +13237,7 @@
       "animal"
     ],
     "fact": "An intact adult male goat. Acquires a strong, distinctive odour during the autumn rut.",
-    "taxon": "tx_artiodactyla",
+    "taxon": "tx_bovidae",
     "terminal": true
   },
   {
@@ -13247,7 +13249,7 @@
       "animal"
     ],
     "fact": "An adult female goat. Many breeders wait until she reaches 70% of adult weight before breeding.",
-    "taxon": "tx_artiodactyla",
+    "taxon": "tx_bovidae",
     "terminal": true
   },
   {
@@ -13259,7 +13261,7 @@
       "animal"
     ],
     "fact": "Newborn into a litter that was once yearly — by the 19th century, twice a year in Europe.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_suidae"
   },
   {
     "id": "boar",
@@ -13270,7 +13272,7 @@
       "animal"
     ],
     "fact": "A male pig of breeding age, kept intact rather than castrated.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_suidae"
   },
   {
     "id": "gilt",
@@ -13281,7 +13283,7 @@
       "animal"
     ],
     "fact": "A young female pig, not yet mated or not yet farrowed — the exact line shifts by local usage.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_suidae"
   },
   {
     "id": "barrow",
@@ -13292,7 +13294,7 @@
       "animal"
     ],
     "fact": "A male pig castrated before puberty — a stag is the same operation done after.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_suidae"
   },
   {
     "id": "sow",
@@ -13303,7 +13305,7 @@
       "animal"
     ],
     "fact": "A breeding female pig, or one after her first or second litter.",
-    "taxon": "tx_artiodactyla",
+    "taxon": "tx_suidae",
     "terminal": true
   },
   {
@@ -13315,7 +13317,7 @@
       "animal"
     ],
     "fact": "An equine up to one year old. A mare 'in foal' is pregnant; to 'foal' is to give birth.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "colt",
@@ -13326,7 +13328,7 @@
       "animal"
     ],
     "fact": "A male foal — the term holds until the horse turns three or four.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "filly",
@@ -13337,7 +13339,7 @@
       "animal"
     ],
     "fact": "A female foal — the term holds until the horse turns three or four.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "stallion",
@@ -13348,7 +13350,7 @@
       "animal"
     ],
     "fact": "An intact adult male horse — a colt becomes one at three, or four in racing.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "mare",
@@ -13359,7 +13361,7 @@
       "animal"
     ],
     "fact": "An adult female horse — a filly becomes one at three, or four in racing.",
-    "taxon": "tx_perissodactyla"
+    "taxon": "tx_equus"
   },
   {
     "id": "gelding",
@@ -13370,7 +13372,7 @@
       "animal"
     ],
     "fact": "A castrated male horse, of any age — the one horse term untouched by puberty.",
-    "taxon": "tx_perissodactyla",
+    "taxon": "tx_equus",
     "terminal": true
   },
   {
@@ -13382,7 +13384,7 @@
       "animal"
     ],
     "fact": "Swamp-type buffaloes wallow on purpose, digging mudholes with their own horns.",
-    "taxon": "tx_artiodactyla"
+    "taxon": "tx_bovidae"
   },
   {
     "id": "carabeef",
@@ -13421,7 +13423,7 @@
       "animal"
     ],
     "fact": "Descended from the African wild ass, at home in true desert rather than open grassland.",
-    "taxon": "tx_perissodactyla",
+    "taxon": "tx_equus",
     "terminal": true
   },
   {
@@ -15566,7 +15568,7 @@
       "food",
       "microbe"
     ],
-    "taxon": "tx_agaricaceae",
+    "taxon": "tx_lycoperdon",
     "fact": "A single raindrop can trigger it to eject over a million spores at around a metre a second.",
     "terminal": true
   },
@@ -16055,8 +16057,7 @@
       "wild"
     ],
     "fact": "Cannot jump or fly at all — it only spreads by direct head-to-head contact.",
-    "taxon": "tx_psocodea",
-    "terminal": true
+    "taxon": "tx_psocodea"
   },
   {
     "id": "body_louse",
@@ -17894,7 +17895,7 @@
       "animal",
       "wild"
     ],
-    "fact": "The most toxic vertebrate known by weight — one wild frog carries enough poison for 10-20 people.",
+    "fact": "The most toxic vertebrate known by weight — one wild frog carries enough poison for 10-20 people. It makes none of it itself: the batrachotoxin is sequestered from small arthropods in its diet, and frogs raised in captivity on other food lose their toxicity entirely.",
     "taxon": "tx_phyllobates"
   },
   {
@@ -24453,7 +24454,7 @@
       "water"
     ],
     "fact": "A crustacean, not a mollusk. It cements its head to rock and kicks food in with feathery legs.",
-    "taxon": "tx_arthropoda"
+    "taxon": "tx_thecostraca"
   },
   {
     "id": "mussel",
@@ -28674,7 +28675,7 @@
       "wild"
     ],
     "fact": "Ambushes prey by firing two crossing jets of sticky slime from glands beside its jaws.",
-    "taxon": "tx_animalia"
+    "taxon": "tx_onychophora"
   },
   {
     "id": "horseshoe_crab",
@@ -28687,7 +28688,7 @@
       "wild"
     ],
     "fact": "Its blue, copper-based blood clots on contact with bacterial toxins and still tests every batch of injectable medicine.",
-    "taxon": "tx_arthropoda"
+    "taxon": "tx_xiphosura"
   },
   {
     "id": "sea_spider",
@@ -28700,7 +28701,7 @@
       "wild"
     ],
     "fact": "Not a true spider — its body is so reduced that its own gut and gonads run out into its legs.",
-    "taxon": "tx_arthropoda"
+    "taxon": "tx_pycnogonida"
   },
   {
     "id": "tusk_shell",
@@ -32590,7 +32591,6 @@
       "tool"
     ],
     "fact": "Gideon Sundback's interlocking brass teeth, patented 1917, finally made the fastener reliable.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -33227,7 +33227,6 @@
     ],
     "taxon": "tx_insecta",
     "fact": "A true bug (Hemiptera) skips the pupa stage — its nymph hatches already looking like a wingless adult.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -33251,7 +33250,6 @@
       "tool"
     ],
     "fact": "Buttons were sewn on as ornaments for centuries before the buttonhole gave them a job to do.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -36588,7 +36586,6 @@
       "build"
     ],
     "fact": "Cut straight into rock at Egypt's Red Pyramid around 2575 BC — the steps were the material itself, nothing added.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -36634,7 +36631,6 @@
       "tool"
     ],
     "fact": "The Penny Black, the first adhesive postage stamp, went on sale 1 May 1840 — paper gummed with starch paste.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -49175,8 +49171,7 @@
       "animal",
       "water"
     ],
-    "fact": "Anything that drifts with the current rather than swimming against it, split between the photosynthesizing phytoplankton and the zooplankton that eat them.",
-    "terminal": true
+    "fact": "Anything that drifts with the current rather than swimming against it, split between the photosynthesizing phytoplankton and the zooplankton that eat them."
   },
   {
     "id": "krill",
@@ -49709,7 +49704,7 @@
       "wild",
       "water"
     ],
-    "taxon": "tx_malacostraca",
+    "taxon": "tx_isopoda",
     "fact": "A deep-sea scavenger in a rigid, segmented shell; one captive specimen went five years without eating.",
     "terminal": true
   },
@@ -50330,7 +50325,6 @@
       "animal"
     ],
     "fact": "Making body heat from metabolism rather than sunlight — the trait that makes mammals and birds warm-blooded.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -50973,7 +50967,7 @@
       "extinct"
     ],
     "fact": "A small South African ornithischian, barely over a metre long, with three distinct tooth types in one jaw — cone-shaped incisors, enlarged canine-like tusks, and chisel-like cheek teeth for cutting vegetation.",
-    "taxon": "tx_ornithischia",
+    "taxon": "tx_heterodontosauridae",
     "discovered": {
       "year": 1962,
       "note": "Its holotype skull is found at Tyinindini in South Africa's Transkei."
@@ -51409,7 +51403,7 @@
       "extinct"
     ],
     "fact": "A shrew-sized mammaliaform from around 205 million years ago, still carrying the old reptile-style jaw joint alongside the new mammal one. Its teeth show it grew a first set as a juvenile and replaced them once, the same pattern every mammal alive uses today.",
-    "taxon": "tx_vertebrata"
+    "taxon": "tx_cynodontia"
   },
   {
     "id": "monotreme",
@@ -51525,7 +51519,7 @@
     ],
     "fact": "The largest living lemur, with only a rudimentary stub of a tail, unlike every other lemur. Unusually for a lemur it's active by day, and family groups sing loud, coordinated duets that can last over three minutes and carry for kilometers through Madagascar's forest.",
     "terminal": true,
-    "taxon": "tx_primates"
+    "taxon": "tx_indriidae"
   },
   {
     "id": "mountain_pygmy_possum",
@@ -65772,7 +65766,7 @@
       "water"
     ],
     "fact": "Mandibulate arthropods carrying two pairs of antennae — crabs, krill, copepods, barnacles, and the woodlouse that made it onto land.",
-    "taxon": "tx_arthropoda"
+    "taxon": "tx_crustacea"
   },
   {
     "id": "arachnid",
@@ -65863,7 +65857,7 @@
       "water"
     ],
     "fact": "Cartilage instead of bone, skin made of tooth-like dermal denticles, five to seven gill slits a side — more than 500 species across thirteen orders.",
-    "taxon": "tx_chondrichthyes"
+    "taxon": "tx_selachii"
   },
   {
     "id": "frog",
@@ -69540,7 +69534,7 @@
     ],
     "fact": "Four living classes — centipedes, millipedes, symphylans and pauropods — about 13,000 species, every one of them terrestrial. Their oldest body fossils are about 427 million years old.",
     "src": "https://en.wikipedia.org/wiki/Myriapoda",
-    "taxon": "tx_arthropoda"
+    "taxon": "tx_myriapoda"
   },
   {
     "id": "sauropod",
@@ -74264,5 +74258,1155 @@
     ],
     "fact": "The South Slav kingdom of 1918, renamed Yugoslavia in 1929 and broken up between 1991 and 2006.",
     "src": "https://en.wikipedia.org/wiki/Kingdom_of_Yugoslavia"
+  },
+  {
+    "id": "basidium",
+    "name": "Basidium",
+    "emoji": "🔱",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A club-shaped cell that buds four spores on horns, then flicks each one off at about 10,000 g.",
+    "src": "https://en.wikipedia.org/wiki/Basidium"
+  },
+  {
+    "id": "elasmobranch",
+    "name": "Elasmobranch",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "taxon": "tx_elasmobranchii",
+    "tags": [
+      "life",
+      "sea"
+    ],
+    "fact": "Sharks, rays and skates together. Their skeletons stay cartilage for life rather than turning to bone, they have five to seven gill slits opening straight to the outside instead of under a bony cover, and their teeth sit in rows that move forward as the front ones are shed."
+  },
+  {
+    "id": "ray",
+    "name": "Ray",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "taxon": "tx_batoidea",
+    "tags": [
+      "life",
+      "sea"
+    ],
+    "fact": "A flattened elasmobranch whose pectoral fins are fused to the sides of the head, forming the disc it swims with. Its gill slits open on the underside rather than the flank, which is the quickest way to tell a ray from a shark."
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A flat length of timber sawn from a log. Almost everything wooden that is not carved starts as one."
+  },
+  {
+    "id": "blade",
+    "name": "Blade",
+    "emoji": "🔪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The working part of any cutting tool: a piece of hard metal with one edge ground thin enough to part what it is pushed through."
+  },
+  {
+    "id": "handle",
+    "name": "Handle",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part shaped to be held. It sets how much force reaches the tool and keeps the hand away from the working end."
+  },
+  {
+    "id": "pole",
+    "name": "Pole",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A long round shaft stood upright. Most street furniture is something bolted to the top of one."
+  },
+  {
+    "id": "pigment",
+    "name": "Pigment",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A coloured solid ground fine enough to stay suspended rather than dissolve. It colours by being there, which is why a pigment can outlast the thing it is painted on."
+  },
+  {
+    "id": "paint",
+    "name": "Paint",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "build"
+    ],
+    "fact": "Pigment carried in something that dries. The carrier spreads the colour thin and then hardens, locking it to the surface."
+  },
+  {
+    "id": "cable",
+    "name": "Cable",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Wire wrapped in something that does not conduct, so the current stays inside it and the outside is safe to touch."
+  },
+  {
+    "id": "sheet_metal",
+    "name": "Sheet Metal",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "Metal worked flat and thin. Thin enough to cut and bend cold, stiff enough to hold a shape once folded."
+  },
+  {
+    "id": "mesh",
+    "name": "Mesh",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An open grid of wire. It holds things back while letting air, water and light through."
+  },
+  {
+    "id": "drain",
+    "name": "Drain",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The opening at the edge of a road that takes rainwater off it and into a pipe below."
+  },
+  {
+    "id": "pavement",
+    "name": "Pavement",
+    "emoji": "🚸",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The raised, made-up strip beside a road for walking on."
+  },
+  {
+    "id": "kerb",
+    "name": "Kerb",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The stone edge between pavement and road. It holds the pavement in and steers water along the gutter to the drain."
+  },
+  {
+    "id": "traffic_light",
+    "name": "Traffic Light",
+    "emoji": "🚦",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "Three coloured lamps on a pole that take it in turns to give right of way."
+  },
+  {
+    "id": "streetlight",
+    "name": "Streetlight",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "A lamp on a pole, lighting the road rather than any building."
+  },
+  {
+    "id": "bollard",
+    "name": "Bollard",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A short post set in the ground to stop vehicles going somewhere, while letting people walk past."
+  },
+  {
+    "id": "pedestrian_crossing",
+    "name": "Pedestrian Crossing",
+    "emoji": "🦓",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A marked strip of road where people on foot have priority over traffic."
+  },
+  {
+    "id": "road_sign",
+    "name": "Road Sign",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "idea"
+    ],
+    "fact": "A painted metal plate carrying an instruction, in a shape and colour meant to be read before it can be spelled out."
+  },
+  {
+    "id": "manhole",
+    "name": "Manhole",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A covered shaft giving access to the pipes and cables under a street."
+  },
+  {
+    "id": "litter_bin",
+    "name": "Litter Bin",
+    "emoji": "🗑️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "An open container fixed in a public place for rubbish."
+  },
+  {
+    "id": "postbox",
+    "name": "Postbox",
+    "emoji": "📮",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "A cast-iron box in the street that takes prepaid letters for collection."
+  },
+  {
+    "id": "saucepan",
+    "name": "Saucepan",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A straight-sided pan with one long handle, for cooking liquid on a hob."
+  },
+  {
+    "id": "colander",
+    "name": "Colander",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A bowl punched full of holes, for draining what has been boiled."
+  },
+  {
+    "id": "sieve",
+    "name": "Sieve",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A mesh stretched on a rim. What passes through is decided by the size of the holes and nothing else."
+  },
+  {
+    "id": "whisk",
+    "name": "Whisk",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Loops of wire on a handle, for beating air into something."
+  },
+  {
+    "id": "grater",
+    "name": "Grater",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A metal sheet worked so that every hole in it is a small blade."
+  },
+  {
+    "id": "peeler",
+    "name": "Peeler",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A blade with a slot in it, set so it can rock, for taking the skin off a vegetable and little else."
+  },
+  {
+    "id": "chopping_board",
+    "name": "Chopping Board",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A slab of wood to cut on, so the knife meets something softer than itself."
+  },
+  {
+    "id": "corkscrew",
+    "name": "Corkscrew",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A helix of steel on a handle, for pulling a cork out whole."
+  },
+  {
+    "id": "ladle",
+    "name": "Ladle",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A deep bowl on a long handle, for lifting liquid out of a deeper pot."
+  },
+  {
+    "id": "spatula",
+    "name": "Spatula",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A flat flexible blade for lifting, turning and scraping."
+  },
+  {
+    "id": "rolling_pin",
+    "name": "Rolling Pin",
+    "emoji": "🥖",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A heavy wooden cylinder for pressing dough out flat and even."
+  },
+  {
+    "id": "clock",
+    "name": "Clock",
+    "emoji": "🕰️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A machine that counts something regular and shows the total. Every clock is that: an oscillator, a way of counting its swings, and a face."
+  },
+  {
+    "id": "cardboard",
+    "name": "Cardboard",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "Paper made thick and stiff. Corrugated board is a fluted sheet glued between two flat ones, which is why an empty box holds its shape."
+  },
+  {
+    "id": "ruler",
+    "name": "Ruler",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A straight edge with a scale marked along it, for drawing a line or measuring one."
+  },
+  {
+    "id": "stapler",
+    "name": "Stapler",
+    "emoji": "📎",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device that drives a wire staple through a stack of paper and folds its legs over on the far side."
+  },
+  {
+    "id": "paperclip",
+    "name": "Paperclip",
+    "emoji": "📎",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A single piece of wire bent back on itself twice, holding paper by springing against it."
+  },
+  {
+    "id": "notebook",
+    "name": "Notebook",
+    "emoji": "📓",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Paper bound along one edge so it stays in order and opens where you left it."
+  },
+  {
+    "id": "rubber_stamp",
+    "name": "Rubber Stamp",
+    "emoji": "🖃",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "A raised rubber relief that prints the same mark every time it is pressed."
+  },
+  {
+    "id": "highlighter",
+    "name": "Highlighter",
+    "emoji": "🖍️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A pen whose ink is transparent, so it marks a line of text without hiding it."
+  },
+  {
+    "id": "folder",
+    "name": "Folder",
+    "emoji": "📁",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A sheet of card folded once, to keep loose papers together and the right way up."
+  },
+  {
+    "id": "binder",
+    "name": "Binder",
+    "emoji": "🗂️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A stiff cover with rings through it, so pages can be added and taken out without unbinding anything."
+  },
+  {
+    "id": "pliers",
+    "name": "Pliers",
+    "emoji": "🔧",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two levers crossed on a pivot, with jaws at the short end and handles at the long one."
+  },
+  {
+    "id": "sandpaper",
+    "name": "Sandpaper",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Hard grains glued to a backing, so that a sheet of paper can cut."
+  },
+  {
+    "id": "spirit_level",
+    "name": "Spirit Level",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A sealed glass vial, almost full of liquid, with one bubble left in it."
+  },
+  {
+    "id": "clamp",
+    "name": "Clamp",
+    "emoji": "🗜️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A screw that pulls two jaws together and holds them there without a hand."
+  },
+  {
+    "id": "vice",
+    "name": "Vice",
+    "emoji": "🗜️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A clamp bolted to a bench, so the work is held and both hands are free."
+  },
+  {
+    "id": "crowbar",
+    "name": "Crowbar",
+    "emoji": "🪛",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A steel bar with one end flattened into a wedge and bent, for levering things apart."
+  },
+  {
+    "id": "drawer",
+    "name": "Drawer",
+    "emoji": "🗄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A box that slides out of the thing it lives in, so what is at the back can be reached without unpacking the front."
+  },
+  {
+    "id": "desk",
+    "name": "Desk",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A table meant for working at, with the things needed for the work kept in it."
+  },
+  {
+    "id": "wardrobe",
+    "name": "Wardrobe",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A cupboard tall enough to hang clothes at full length instead of folding them."
+  },
+  {
+    "id": "mattress",
+    "name": "Mattress",
+    "emoji": "🛏️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A padded layer to lie on, thick enough that the body's weight is spread rather than borne at the hips and shoulders."
+  },
+  {
+    "id": "pillow",
+    "name": "Pillow",
+    "emoji": "🛏️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A soft bag for the head, filling the gap between the shoulder and the mattress."
+  },
+  {
+    "id": "mop",
+    "name": "Mop",
+    "emoji": "🧹",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Absorbent strands on the end of a pole, for washing a floor while standing up."
+  },
+  {
+    "id": "tower",
+    "name": "Tower",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A building far taller than it is wide, built for the height itself rather than for the floor space."
+  },
+  {
+    "id": "laptop",
+    "name": "Laptop",
+    "emoji": "💻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A computer with its screen, keyboard and power supply folded into one case you can carry."
+  },
+  {
+    "id": "printer",
+    "name": "Printer",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A machine that puts what is on a screen onto paper."
+  },
+  {
+    "id": "monitor",
+    "name": "Monitor",
+    "emoji": "🖥️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A screen for looking at what a computer is doing."
+  },
+  {
+    "id": "speaker",
+    "name": "Speaker",
+    "emoji": "🔊",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device that turns a changing electric current into sound."
+  },
+  {
+    "id": "headphones",
+    "name": "Headphones",
+    "emoji": "🎧",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two small speakers held at the ears."
+  },
+  {
+    "id": "charger",
+    "name": "Charger",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device that pushes energy back into a battery."
+  },
+  {
+    "id": "tram",
+    "name": "Tram",
+    "emoji": "🚋",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A passenger vehicle running on rails laid in the surface of a street."
+  },
+  {
+    "id": "van",
+    "name": "Van",
+    "emoji": "🚐",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A road vehicle built around its cargo space rather than its passengers."
+  },
+  {
+    "id": "motorcycle",
+    "name": "Motorcycle",
+    "emoji": "🏍️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A bicycle with an engine, and everything that had to change once it had one."
+  },
+  {
+    "id": "scooter",
+    "name": "Scooter",
+    "emoji": "🛴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A board with small wheels and an upright handle, pushed along by foot."
+  },
+  {
+    "id": "office",
+    "name": "Office",
+    "emoji": "🏢",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A building, or part of one, given over to work done sitting down."
+  },
+  {
+    "id": "library",
+    "name": "Library",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "idea"
+    ],
+    "fact": "A building holding books arranged so that a stranger can find one."
+  },
+  {
+    "id": "crate",
+    "name": "Crate",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "An open box of nailed boards, for moving heavy things."
+  },
+  {
+    "id": "purse",
+    "name": "Purse",
+    "emoji": "👛",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "A small closed pouch for carrying money."
+  },
+  {
+    "id": "coat",
+    "name": "Coat",
+    "emoji": "🧥",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An outer garment worn over everything else, mainly for warmth."
+  },
+  {
+    "id": "jacket",
+    "name": "Jacket",
+    "emoji": "🧥",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A short coat, ending at the hip rather than the knee."
+  },
+  {
+    "id": "day",
+    "name": "Day",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One turn of the Earth, measured against the Sun. Everything alive keeps time to it."
+  },
+  {
+    "id": "month",
+    "name": "Month",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One cycle of the Moon's phases, and the reason nearly every calendar has a middle unit between the day and the year."
+  },
+  {
+    "id": "year",
+    "name": "Year",
+    "emoji": "📅",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One circuit of the Sun. Twelve lunar months come to 354 days and a solar year to 365, and every calendar in history is an attempt to reconcile the two."
+  },
+  {
+    "id": "calendar",
+    "name": "Calendar",
+    "emoji": "📆",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An agreed scheme for naming days ahead of time, so that people who are not together can arrange to be."
+  },
+  {
+    "id": "counting",
+    "name": "Counting",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Matching things one-to-one against something else, so a quantity can be held without holding the things."
+  },
+  {
+    "id": "writing",
+    "name": "Writing",
+    "emoji": "✍️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Marks that record language itself, so that speech outlives the moment and the speaker."
+  },
+  {
+    "id": "number",
+    "name": "Number",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A count separated from the things counted, and written down as a thing in its own right."
+  },
+  {
+    "id": "zero",
+    "name": "Zero",
+    "emoji": "0️⃣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A number for none, and a mark that holds an empty place so that 105 is not 15."
+  },
+  {
+    "id": "geometry",
+    "name": "Geometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mathematics of shape, distance and space."
+  },
+  {
+    "id": "agriculture",
+    "name": "Agriculture",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "crop"
+    ],
+    "fact": "Growing food on purpose instead of finding it. Everything else people built rests on it."
+  },
+  {
+    "id": "city",
+    "name": "City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "idea"
+    ],
+    "fact": "A settlement too large to feed itself, living on food grown elsewhere."
+  },
+  {
+    "id": "law",
+    "name": "Law",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Rules a society will enforce, set down so that they are the same for the person applying them as for the person they are applied to."
+  },
+  {
+    "id": "memory",
+    "name": "Memory",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Holding something after it has gone, and being able to bring it back."
+  },
+  {
+    "id": "history",
+    "name": "History",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The recorded past, as distinct from the past itself."
+  },
+  {
+    "id": "light",
+    "name": "Light",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electromagnetic radiation in the narrow band the eye can see, roughly 380 to 700 nanometres."
+  },
+  {
+    "id": "mass",
+    "name": "Mass",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How much matter something is, measured two entirely different ways that always agree."
+  },
+  {
+    "id": "energy",
+    "name": "Energy",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The capacity to do work, and the one thing in physics that is never created or destroyed, only moved and changed in form."
+  },
+  {
+    "id": "time",
+    "name": "Time",
+    "emoji": "⏳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "What clocks measure, and the dimension along which cause reaches effect."
+  },
+  {
+    "id": "distance",
+    "name": "Distance",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How far apart two things are."
+  },
+  {
+    "id": "speed",
+    "name": "Speed",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Distance covered divided by the time it took."
+  },
+  {
+    "id": "acceleration",
+    "name": "Acceleration",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rate at which speed changes."
+  },
+  {
+    "id": "force",
+    "name": "Force",
+    "emoji": "💪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A push or a pull, measured by the acceleration it gives a given mass."
+  },
+  {
+    "id": "momentum",
+    "name": "Momentum",
+    "emoji": "🎳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mass times speed — how hard something is to stop."
+  },
+  {
+    "id": "work",
+    "name": "Work",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Force applied along the distance something actually moves."
+  },
+  {
+    "id": "power",
+    "name": "Power",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Work divided by the time taken to do it. Not how much, but how fast."
+  },
+  {
+    "id": "temperature",
+    "name": "Temperature",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How fast, on average, the particles in something are moving."
+  },
+  {
+    "id": "entropy",
+    "name": "Entropy",
+    "emoji": "🎲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A measure of how many ways the parts of something could be arranged and still look the same."
+  },
+  {
+    "id": "trade",
+    "name": "Trade",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Giving what you have too much of for what you have none of."
+  },
+  {
+    "id": "money",
+    "name": "Money",
+    "emoji": "🪙",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A thing everyone will accept, so that trade no longer needs both sides to want what the other has."
+  },
+  {
+    "id": "debt",
+    "name": "Debt",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A payment moved into the future, and the claim on it that exists meanwhile."
+  },
+  {
+    "id": "tax",
+    "name": "Tax",
+    "emoji": "🧾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A payment the state requires rather than requests."
+  },
+  {
+    "id": "government",
+    "name": "Government",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Whoever gets to make and enforce the rules, and the machinery they do it with."
+  },
+  {
+    "id": "democracy",
+    "name": "Democracy",
+    "emoji": "🗳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Government in which the decisions belong to the governed."
+  },
+  {
+    "id": "monarchy",
+    "name": "Monarchy",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Government by one person, usually for life, usually inherited."
+  },
+  {
+    "id": "contract",
+    "name": "Contract",
+    "emoji": "✍️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A promise the law will enforce."
+  },
+  {
+    "id": "family",
+    "name": "Family",
+    "emoji": "👨‍👩‍👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The people you are raised by and raised with."
+  },
+  {
+    "id": "society",
+    "name": "Society",
+    "emoji": "👥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "People who depend on each other while mostly not knowing each other."
+  },
+  {
+    "id": "nation",
+    "name": "Nation",
+    "emoji": "🏳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A people who consider themselves one, and usually want a state to match."
+  },
+  {
+    "id": "property",
+    "name": "Property",
+    "emoji": "🔑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The right to exclude other people from a thing."
   }
 ]

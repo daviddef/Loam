@@ -15463,16 +15463,6 @@
   },
   {
     "in": [
-      "earthworm",
-      "chicken"
-    ],
-    "out": "ascaridia_galli",
-    "why": "Ascaridia galli is a parasitic roundworm, and transport hosts such as earthworms are thought to play a role in its spread. Free-range birds carry a higher risk of infection than caged ones for exactly this reason — there's an earthworm to eat.",
-    "src": "https://en.wikipedia.org/wiki/Ascaridia_galli",
-    "verified": true
-  },
-  {
-    "in": [
       "ascaridia_galli",
       "chicken"
     ],
@@ -16243,82 +16233,12 @@
   },
   {
     "in": [
-      "current",
-      "human"
-    ],
-    "out": "mako_shark",
-    "why": "The fastest shark known, reaching bursts of 74 km/h (46 mph) through open ocean currents. Prized as a game fish for its habit of leaping high into the air once hooked by anglers.",
-    "src": "https://en.wikipedia.org/wiki/Shortfin_mako_shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "ice",
-      "salmon"
-    ],
-    "out": "salmon_shark",
-    "why": "Named for its favourite prey — it turns up in large numbers during Alaskan salmon runs. Vascular heat exchangers let it hold its stomach 16-19°C above the near-freezing sub-Arctic Pacific around it.",
-    "src": "https://en.wikipedia.org/wiki/Salmon_shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "coral",
-      "current"
-    ],
-    "out": "manta_ray",
-    "why": "The largest ray alive, with a wingspan up to 7 metres and the largest brain of any fish. It filter-feeds on zooplankton carried past coral-reef cleaning stations by the current, though most of its diet comes from deeper water.",
-    "src": "https://en.wikipedia.org/wiki/Giant_oceanic_manta_ray",
-    "verified": true
-  },
-  {
-    "in": [
-      "current",
-      "turtle"
-    ],
-    "out": "tiger_shark",
-    "why": "Nicknamed the 'garbage can of the sea' for the widest diet of any shark. Sea turtles are a genuine preference, not an accident — they turn up in as much as 20.8% of stomachs studied.",
-    "src": "https://en.wikipedia.org/wiki/Tiger_shark",
-    "verified": true
-  },
-  {
-    "in": [
       "ice",
       "whale"
     ],
     "out": "orca",
     "why": "The largest member of the dolphin family, not a whale at all. An apex predator with no natural predators of its own, it hunts fish, seals, sharks and even other whales, most densely in cold, high-latitude waters.",
     "src": "https://en.wikipedia.org/wiki/Orca",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "storm"
-    ],
-    "out": "oceanic_whitetip_shark",
-    "why": "A wide-ranging open-ocean shark, historically blamed for attacks on shipwreck survivors — including sailors of the USS Indianapolis in 1945 — that earned it the name 'shipwreck shark'. Now critically endangered, down some 98% from overfishing.",
-    "src": "https://en.wikipedia.org/wiki/Oceanic_whitetip_shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "current",
-      "tuna"
-    ],
-    "out": "silky_shark",
-    "why": "Named for the smooth feel of its densely packed skin denticles. It shadows schools of tuna so reliably that, off Ghana, 'almost every tuna school has silky sharks trailing behind'.",
-    "src": "https://en.wikipedia.org/wiki/Silky_shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "coral",
-      "fish"
-    ],
-    "out": "whitetip_reef_shark",
-    "why": "Unlike most requiem sharks, which must keep swimming to breathe, this reef-dweller can pump water over its gills and rest still in a coral cave by day. By night it hunts fish and octopus through reef crevices in packs.",
-    "src": "https://en.wikipedia.org/wiki/Whitetip_reef_shark",
     "verified": true
   },
   {
@@ -16339,16 +16259,6 @@
     "out": "blue_ringed_octopus",
     "why": "The tetrodotoxin loaded into its bite is not made by the octopus itself — it comes from bacteria living inside its own salivary glands, the same broad family of toxin pufferfish also carry.",
     "src": "https://en.wikipedia.org/wiki/Blue-ringed_octopus",
-    "verified": true
-  },
-  {
-    "in": [
-      "octopus",
-      "detritus"
-    ],
-    "out": "vampire_squid",
-    "why": "Every other cephalopod hunts. This one is a sedentary scavenger: it collects sinking detritus and dead plankton with a pair of retractile filaments instead of feeding tentacles.",
-    "src": "https://en.wikipedia.org/wiki/Vampire_squid",
     "verified": true
   },
   {
@@ -16393,52 +16303,12 @@
   },
   {
     "in": [
-      "coral",
-      "egg"
-    ],
-    "out": "whale_shark",
-    "why": "The largest fish alive, and one of the few sharks that feeds directly on clouds of eggs released during mass coral and fish spawning — a reliable enough food source that whale sharks gather predictably at reef sites like Ningaloo Reef to eat it.",
-    "src": "https://en.wikipedia.org/wiki/Whale_shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "sand",
-      "fish"
-    ],
-    "out": "nurse_shark",
-    "why": "A nocturnal bottom-dweller of muddy and sandy coastal flats, motionless enough by day that it forms sedentary daytime groups. It is an obligate suction feeder, generating some of the strongest suction forces measured in any fish to pull prey from the seafloor.",
-    "src": "https://en.wikipedia.org/wiki/Nurse_shark",
-    "verified": true
-  },
-  {
-    "in": [
       "fish",
       "spark"
     ],
     "out": "anglerfish",
     "why": "In the total darkness of the deep sea, it dangles a modified fin ray — the illicium, tipped with a light-producing lure called the esca — to draw curious fish close enough to strike.",
     "src": "https://en.wikipedia.org/wiki/Anglerfish",
-    "verified": true
-  },
-  {
-    "in": [
-      "reef",
-      "turtle"
-    ],
-    "out": "giant_grouper",
-    "why": "An ambush predator that lurks in reef caves and wrecks before lunging at whatever passes — fish, crustaceans, small sharks and rays, and juvenile sea turtles, all swallowed whole.",
-    "src": "https://en.wikipedia.org/wiki/Giant_grouper",
-    "verified": true
-  },
-  {
-    "in": [
-      "coral",
-      "human"
-    ],
-    "out": "common_lionfish",
-    "why": "Native to the Red Sea and the Indian Ocean's coral reefs, it was first recorded in the Mediterranean off Israel in 1991 after entering through the human-built Suez Canal, armed with 13 long, venomous dorsal spines that have caused human deaths.",
-    "src": "https://en.wikipedia.org/wiki/Pterois_miles",
     "verified": true
   },
   {
@@ -16489,16 +16359,6 @@
     "out": "javan_tiger",
     "why": "Not an ancestor of the modern tiger, but a subspecies of it: tigers colonised the Sunda Islands over a land bridge during the last glacial period, and rising seas then isolated Java's population from the mainland's. Since a 2017 revision it's classified as the same subspecies as the Sumatran and Bali tigers, P. t. sondaica. The last confirmed sighting was in 1976; it was declared extinct in 2008.",
     "src": "https://en.wikipedia.org/wiki/Javan_tiger",
-    "verified": true
-  },
-  {
-    "in": [
-      "wolf",
-      "river"
-    ],
-    "out": "pakicetus",
-    "why": "Pakicetus was a wolf-like mammal that foraged along Pakistan's rivers about 50 million years ago, wading in for fish. It's the earliest recognized cetacean, identified not by its legs but by a dense, air-filled inner-ear bone every whale still has.",
-    "src": "https://en.wikipedia.org/wiki/Pakicetus",
     "verified": true
   },
   {
@@ -16773,16 +16633,6 @@
   },
   {
     "in": [
-      "mud",
-      "crab"
-    ],
-    "out": "common_carp",
-    "why": "A hardy bottom-feeding fish tolerant of water too muddy and low in oxygen for most other fish, foraging through the mud for insect larvae, small crustaceans and other invertebrates; Roman fish-farmers were already raising it in ponds two thousand years ago.",
-    "src": "https://en.wikipedia.org/wiki/Common_carp",
-    "verified": true
-  },
-  {
-    "in": [
       "common_carp",
       "pot"
     ],
@@ -16803,52 +16653,12 @@
   },
   {
     "in": [
-      "mud",
-      "earthworm"
-    ],
-    "out": "wels_catfish",
-    "why": "Europe's largest native freshwater fish, scaleless and covered in slime, it lies along the muddy riverbed using six barbels to smell and feel for annelid worms, snails, insects and other fish.",
-    "src": "https://en.wikipedia.org/wiki/Wels_catfish",
-    "verified": true
-  },
-  {
-    "in": [
       "fish",
       "ice"
     ],
     "out": "swordfish",
     "why": "Loses every tooth and scale by adulthood, hunting instead with a flattened bill; special organs beside its eyes and brain burn energy purely to keep its vision 10 to 15°C warmer than the cold water hundreds of metres down where it hunts.",
     "src": "https://en.wikipedia.org/wiki/Swordfish",
-    "verified": true
-  },
-  {
-    "in": [
-      "reef",
-      "sea_anemone"
-    ],
-    "out": "clownfish",
-    "why": "Lives nestled in the stinging tentacles of a sea anemone on the reef, protected by a mucus coating that mimics the anemone's own chemistry so it isn't stung — in return it drives off anemone-eating fish and fans in oxygenated water.",
-    "src": "https://en.wikipedia.org/wiki/Amphiprioninae",
-    "verified": true
-  },
-  {
-    "in": [
-      "river",
-      "human"
-    ],
-    "out": "piranha",
-    "why": "A freshwater fish of South American rivers whose pack-hunter reputation is a myth — most species are omnivores that school mainly for protection. The bite is genuinely strong: crowded Brazilian swimming spots have seen dozens bitten on the feet at once.",
-    "src": "https://en.wikipedia.org/wiki/Piranha",
-    "verified": true
-  },
-  {
-    "in": [
-      "river",
-      "shrimp"
-    ],
-    "out": "nile_perch",
-    "why": "Introduced to Lake Victoria in the 1950s, this apex predator ate through the lake's native cichlids so completely that it now survives mainly on shrimp and minnows — one of history's most damaging invasive species, blamed for several hundred fish extinctions.",
-    "src": "https://en.wikipedia.org/wiki/Nile_perch",
     "verified": true
   },
   {
@@ -16863,32 +16673,12 @@
   },
   {
     "in": [
-      "wolf"
-    ],
-    "out": "flea",
-    "why": "Fleas live as external parasites of mammals and birds, feeding entirely on the host's blood — wild carnivores like wolves, not just cats and dogs, carry their own flea species.",
-    "src": "https://en.wikipedia.org/wiki/Flea",
-    "verb": "cut",
-    "verified": true
-  },
-  {
-    "in": [
       "bone"
     ],
     "out": "deinonychus",
     "verb": "cut",
     "why": "Its namesake 'terrible claw' — an oversized, curved sickle talon on the second toe, likely used to pin prey down rather than slash it. Deinonychus teeth turn up scattered around the bones of a single Tenontosaurus skeleton at more than one site, hinting several individuals fed on prey too large for one alone to bring down.",
     "src": "https://en.wikipedia.org/wiki/Deinonychus",
-    "verified": true
-  },
-  {
-    "in": [
-      "lizard",
-      "plant"
-    ],
-    "out": "iguanodon",
-    "why": "Gideon Mantell named this plant-eater in 1825 after noticing its fossil teeth were shaped like an iguana's, just far larger — 'Iguanodon' literally means 'iguana tooth'.",
-    "src": "https://en.wikipedia.org/wiki/Iguanodon",
     "verified": true
   },
   {
@@ -17353,26 +17143,6 @@
   },
   {
     "in": [
-      "dust",
-      "human"
-    ],
-    "out": "enterobius_vermicularis",
-    "why": "Pinworm eggs are light enough to go airborne; inhaling and then swallowing them is a real, if secondary, route into the only host this parasite has ever been found in — a human.",
-    "src": "https://en.wikipedia.org/wiki/Enterobius_vermicularis",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "mosquito"
-    ],
-    "out": "wuchereria_bancrofti",
-    "why": "Wuchereria's microfilariae pass from person to person through mosquito species like Culex and Anopheles, which pick the larvae up in one blood meal and deliver them in the next.",
-    "src": "https://en.wikipedia.org/wiki/Wuchereria_bancrofti",
-    "verified": true
-  },
-  {
-    "in": [
       "human",
       "trichinella_spiralis"
     ],
@@ -17409,46 +17179,6 @@
     "out": "schistosomiasis",
     "why": "People catch schistosomiasis when Schistosoma cercariae in contaminated water penetrate their skin on contact — while bathing, wading, or just walking through it.",
     "src": "https://en.wikipedia.org/wiki/Schistosomiasis",
-    "verified": true
-  },
-  {
-    "in": [
-      "human"
-    ],
-    "verb": "cut",
-    "out": "head_louse",
-    "why": "A head louse bites into the skin four to five times a day to feed on blood, and spreads only by direct head-to-head contact — it cannot jump or fly to reach a new host at all.",
-    "src": "https://en.wikipedia.org/wiki/Head_louse",
-    "verified": true
-  },
-  {
-    "in": [
-      "clothing",
-      "human"
-    ],
-    "out": "body_louse",
-    "why": "Body lice lay the majority of their eggs directly on clothing rather than on the scalp hair a head louse prefers — the clothing itself is where an infestation actually lives.",
-    "src": "https://en.wikipedia.org/wiki/Body_louse",
-    "verified": true
-  },
-  {
-    "in": [
-      "human"
-    ],
-    "verb": "wait",
-    "out": "scabies_mite",
-    "why": "An impregnated female Sarcoptes scabiei burrows into a person's skin and lays two or three eggs a day for the rest of her life — about three to four weeks, and no longer.",
-    "src": "https://en.wikipedia.org/wiki/Sarcoptes_scabiei",
-    "verified": true
-  },
-  {
-    "in": [
-      "cloth",
-      "human"
-    ],
-    "out": "bed_bug",
-    "why": "A bed bug feeds exclusively on human blood but never lives on the body — it spends its time hidden in dark seams nearby, classically a mattress, between meals.",
-    "src": "https://en.wikipedia.org/wiki/Cimex_lectularius",
     "verified": true
   },
   {
@@ -17933,16 +17663,6 @@
   },
   {
     "in": [
-      "sea",
-      "sea_urchin"
-    ],
-    "out": "sea_otter",
-    "why": "Bites through an urchin's spines from the soft underside and licks out the contents — sea otters keep populations of benthic herbivores, particularly sea urchins, in check by eating them.",
-    "src": "https://en.wikipedia.org/wiki/Sea_otter",
-    "verified": true
-  },
-  {
-    "in": [
       "kelp",
       "sea_otter"
     ],
@@ -17989,16 +17709,6 @@
     "out": "parasitism",
     "why": "One organism feeds off another and gives nothing back: a flea is an ectoparasite living on the host's surface, hematophagic and feeding on its blood — real, one-sided harm, not an exchange.",
     "src": "https://en.wikipedia.org/wiki/Parasitism",
-    "verified": true
-  },
-  {
-    "in": [
-      "current",
-      "whale"
-    ],
-    "out": "whale_barnacle",
-    "why": "Deeply embedded in the whale's skin for stability, a barnacle filters plankton and detritus out of the water with feathery cirri while the current made by the swimming whale carries food past it.",
-    "src": "https://en.wikipedia.org/wiki/Whale_barnacle",
     "verified": true
   },
   {
@@ -19123,42 +18833,12 @@
   },
   {
     "in": [
-      "tree",
-      "giraffe"
-    ],
-    "out": "leopard",
-    "why": "A leopard's jaw is strong enough to drag carcasses heavier than itself up into trees, safe from scavengers — once a nearly 125 kg giraffe calf was hauled 5.7 m up a trunk.",
-    "src": "https://en.wikipedia.org/wiki/Leopard",
-    "verified": true
-  },
-  {
-    "in": [
-      "snow",
-      "sheep"
-    ],
-    "out": "snow_leopard",
-    "why": "Snow leopards live among rock and permanent snow above 3,000 m in Central Asia's high mountains, where their main prey is the Himalayan blue sheep.",
-    "src": "https://en.wikipedia.org/wiki/Snow_leopard",
-    "verified": true
-  },
-  {
-    "in": [
       "grass",
       "rabbit"
     ],
     "out": "cheetah",
     "why": "Cheetahs hunt by daylight across open grassland, using explosive speed to run down fast, small prey — hares among them, killed with a single bite once run down.",
     "src": "https://en.wikipedia.org/wiki/Cheetah",
-    "verified": true
-  },
-  {
-    "in": [
-      "snow",
-      "deer"
-    ],
-    "out": "cougar",
-    "why": "Cougars are solitary ambush hunters whose staple prey is deer; in northern winters they stalk mule deer and elk directly through deep snow to make the kill.",
-    "src": "https://en.wikipedia.org/wiki/Cougar",
     "verified": true
   },
   {
@@ -19193,92 +18873,12 @@
   },
   {
     "in": [
-      "honey",
-      "termite"
-    ],
-    "out": "sun_bear",
-    "why": "Nicknamed the 'honey bear,' it uses an exceptionally long tongue to lick honey from torn-open hives, and to lick or suck the contents out of broken termite mounds.",
-    "src": "https://en.wikipedia.org/wiki/Sun_bear",
-    "verified": true
-  },
-  {
-    "in": [
-      "termite",
-      "tree"
-    ],
-    "out": "chimpanzee",
-    "why": "A Gombe chimp was the first nonhuman animal ever recorded modifying a tool — stripping a twig from a tree to fish termites from their mound, a technique seen across wild populations since.",
-    "src": "https://en.wikipedia.org/wiki/Chimpanzee",
-    "verified": true
-  },
-  {
-    "in": [
-      "fish",
-      "tree"
-    ],
-    "out": "bald_eagle",
-    "why": "Bald eagles settle near large bodies of open water with abundant fish and old-growth trees for nesting — the same two things every one of their nests needs.",
-    "src": "https://en.wikipedia.org/wiki/Bald_eagle",
-    "verified": true
-  },
-  {
-    "in": [
-      "snow",
-      "rabbit"
-    ],
-    "out": "snowy_owl",
-    "why": "Snowy owls hunt across open Arctic tundra, taking mammal prey that includes rabbits and hares alongside their more famous staple, the lemming.",
-    "src": "https://en.wikipedia.org/wiki/Snowy_owl",
-    "verified": true
-  },
-  {
-    "in": [
       "snake",
       "lizard"
     ],
     "out": "king_cobra",
     "why": "An ophiophagous apex predator: its diet 'consists primarily of other snakes and lizards,' including venomous species and monitor lizards.",
     "src": "https://en.wikipedia.org/wiki/King_cobra",
-    "verified": true
-  },
-  {
-    "in": [
-      "deer",
-      "buffalo"
-    ],
-    "out": "komodo_dragon",
-    "why": "Large Komodo dragons are apex predators that prefer big ungulate prey, such as Javan rusa deer and water buffalo, run down or ambushed on their home islands.",
-    "src": "https://en.wikipedia.org/wiki/Komodo_dragon",
-    "verified": true
-  },
-  {
-    "in": [
-      "egg",
-      "rabbit"
-    ],
-    "out": "gila_monster",
-    "why": "Gila monsters raid nests and burrows for food, eating the eggs of birds, lizards and snakes alongside young rabbits, hares and other small mammals.",
-    "src": "https://en.wikipedia.org/wiki/Gila_monster",
-    "verified": true
-  },
-  {
-    "in": [
-      "river",
-      "zebra"
-    ],
-    "out": "nile_crocodile",
-    "why": "As ambush predators, Nile crocodiles lurk in rivers for hours or days, then attack land animals like zebra when they come down to cross or drink.",
-    "src": "https://en.wikipedia.org/wiki/Nile_crocodile",
-    "verified": true
-  },
-  {
-    "in": [
-      "fish",
-      "shell"
-    ],
-    "out": "axolotl",
-    "why": "Axolotls are aquatic carnivores that never leave the water, hunting small fish and mollusks with enough suction force to pull prey straight into their stomachs.",
-    "src": "https://en.wikipedia.org/wiki/Axolotl",
     "verified": true
   },
   {
@@ -19438,26 +19038,6 @@
     "why": "As a seed sprouts, its embryonic seed-leaf — the cotyledon — is often the first green tissue to unfurl, still carrying the food reserve that fed germination.",
     "supported": true,
     "src": "https://en.wikipedia.org/wiki/Cotyledon"
-  },
-  {
-    "in": [
-      "cotyledon",
-      "grass"
-    ],
-    "out": "monocot",
-    "why": "Grasses germinate with a single cotyledon — the one-seed-leaf trait that defines the monocots, a group that also includes lilies, orchids and palms.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Monocotyledon"
-  },
-  {
-    "in": [
-      "cotyledon",
-      "legume"
-    ],
-    "out": "dicot",
-    "why": "Legumes split open to show two fat cotyledons packed with stored food — the two-seed-leaf trait that defines the dicots, historically over half of flowering-plant species.",
-    "supported": true,
-    "src": "https://en.wikipedia.org/wiki/Dicotyledon"
   },
   {
     "in": [
@@ -19777,36 +19357,6 @@
     "out": "giganotosaurus",
     "why": "Its lower jaws were built for slicing, not crushing — compressed, serrated teeth that cut through flesh and hide and manipulated prey with the front of the mouth, unlike a tyrannosaur's bone-breaking bite.",
     "src": "https://en.wikipedia.org/wiki/Giganotosaurus",
-    "verified": true
-  },
-  {
-    "in": [
-      "fish",
-      "clay"
-    ],
-    "out": "baryonyx",
-    "why": "Acid-etched fish scales found in its stomach region are direct evidence of piscivory; it likely crouched near or in water, gripping fish in a crocodile-like snout notch before swallowing them headfirst.",
-    "src": "https://en.wikipedia.org/wiki/Baryonyx",
-    "verified": true
-  },
-  {
-    "in": [
-      "egg",
-      "snake"
-    ],
-    "out": "oviraptor",
-    "why": "First named 'egg thief' from a skull found near a nest of eggs; decades later, oviraptorid specimens preserved brooding atop their own nests proved the eggs were its own, not stolen prey.",
-    "src": "https://en.wikipedia.org/wiki/Oviraptor",
-    "verified": true
-  },
-  {
-    "in": [
-      "feather",
-      "fish"
-    ],
-    "out": "microraptor",
-    "why": "True flight feathers grew on both its arms and legs, giving it four wings; different fossils preserve fish scales, a bird's bones, and a mammal's foot in the gut — an opportunistic hunter.",
-    "src": "https://en.wikipedia.org/wiki/Microraptor",
     "verified": true
   },
   {
@@ -23671,16 +23221,6 @@
   },
   {
     "in": [
-      "desert",
-      "wolf"
-    ],
-    "out": "jackal",
-    "why": "Long classified as an African variant of the golden jackal, genetic testing in 2015 showed it is a distinct species more closely related to the grey wolf, ranging Egypt's desert margins.",
-    "src": "https://en.wikipedia.org/wiki/African_golden_wolf",
-    "verified": true
-  },
-  {
-    "in": [
       "river",
       "desert"
     ],
@@ -26421,26 +25961,6 @@
   },
   {
     "in": [
-      "grass",
-      "termite"
-    ],
-    "out": "armadillo",
-    "why": "Three-banded armadillos are restricted to open and semi-open grassland and scrub across South America, where they feed on ants and termites.",
-    "src": "https://en.wikipedia.org/wiki/Three-banded_armadillo",
-    "verified": true
-  },
-  {
-    "in": [
-      "desert",
-      "termite"
-    ],
-    "out": "meerkat",
-    "why": "Meerkats forage the arid Kalahari for beetles and other invertebrates — the name traces to an Afrikaans folk etymology of 'ant cat', for its preying on ants and termites.",
-    "src": "https://en.wikipedia.org/wiki/Meerkat",
-    "verified": true
-  },
-  {
-    "in": [
       "cecum",
       "colon"
     ],
@@ -26653,15 +26173,6 @@
     "out": "woodpecker",
     "why": "A woodpecker's long hyoid bone winds around outside the skull and cushions the brain; modelling shows 99.7% of a peck's impact energy is stored as strain elsewhere in the body, hardly any reaching the brain as the beak drills into wood.",
     "src": "https://en.wikipedia.org/wiki/Woodpecker"
-  },
-  {
-    "in": [
-      "pouch",
-      "fish"
-    ],
-    "out": "pelican",
-    "why": "A pelican's gular pouch is a basket for scooping up fish, formed from the flexible floor of the lower bill. Food is not stored there, contrary to popular folklore — the pouch simply drains water from the catch before it's swallowed.",
-    "src": "https://en.wikipedia.org/wiki/Pelican"
   },
   {
     "in": [
@@ -26921,16 +26432,6 @@
   },
   {
     "in": [
-      "sea_star",
-      "stone"
-    ],
-    "out": "brittle_star",
-    "why": "A brittle star hides under shore rocks by day and moves by throwing its long, thin arms into snake-like curves; unlike a sea star's, those arms snap off easily under threat and simply regrow.",
-    "src": "https://en.wikipedia.org/wiki/Brittle_star",
-    "supported": true
-  },
-  {
-    "in": [
       "hermit_crab",
       "kelp"
     ],
@@ -27064,15 +26565,6 @@
     "out": "lateral_line",
     "why": "The lateral line is a system of sensory organs found in fish that detects movement, vibration, and pressure gradients in the surrounding water — the same system aquatic amphibian larvae keep.",
     "src": "https://en.wikipedia.org/wiki/Lateral_line"
-  },
-  {
-    "in": [
-      "earthworm",
-      "soil"
-    ],
-    "out": "caecilian",
-    "why": "Caecilians are limbless, worm-shaped amphibians that live hidden in soil, burrowing with trunk muscle built to push through the ground and sensing their way with a pair of tentacles found in no other vertebrate.",
-    "src": "https://en.wikipedia.org/wiki/Caecilian"
   },
   {
     "in": [
@@ -30182,16 +29674,6 @@
   },
   {
     "in": [
-      "ant",
-      "termite"
-    ],
-    "out": "naked_mole_rat",
-    "why": "Naked mole rat colonies run on insect-style eusociality: a single breeding queen and one to three males reproduce, while 75 to 300-plus workers -- sorted by size into diggers and nest-tenders -- do the rest.",
-    "src": "https://en.wikipedia.org/wiki/Naked_mole-rat",
-    "verified": true
-  },
-  {
-    "in": [
       "nerve",
       "soil"
     ],
@@ -30780,16 +30262,6 @@
   },
   {
     "in": [
-      "sea",
-      "spider"
-    ],
-    "out": "sea_spider",
-    "why": "A sea spider (Pycnogonida) is not an arachnid but its own arthropod lineage. Its trunk is so small that branches of the gut and gonads extend into the legs themselves, and most species breathe by simple diffusion, with no dedicated gills or heart at all.",
-    "src": "https://en.wikipedia.org/wiki/Sea_spider",
-    "verified": true
-  },
-  {
-    "in": [
       "foraminifera",
       "sand"
     ],
@@ -30800,42 +30272,12 @@
   },
   {
     "in": [
-      "mud",
-      "sea_star"
-    ],
-    "out": "sea_cucumber",
-    "why": "A sea cucumber shares the sea star's water-vascular tube feet, but some reef species defend themselves by expelling sticky Cuvierian tubules through the anus to snare a predator; the discharge can also carry a soap-like toxin, and lost tubules regrow within weeks.",
-    "src": "https://en.wikipedia.org/wiki/Sea_cucumber",
-    "verified": true
-  },
-  {
-    "in": [
-      "reef",
-      "sea_star"
-    ],
-    "out": "feather_star",
-    "why": "Crinoids are the most ancient living echinoderm class, dating back some 480 million years. A feather star extends branched, mucus-covered arms into the current to trap plankton, then grips a reef with claw-like cirri rather than crawling on tube feet.",
-    "src": "https://en.wikipedia.org/wiki/Crinoid",
-    "verified": true
-  },
-  {
-    "in": [
       "snail",
       "soil"
     ],
     "out": "slug",
     "why": "A slug is a gastropod, the same broad group as the snail, but its external shell has been lost or reduced to an internal plate used mainly for calcium storage — independently, in multiple lineages, making \"slug\" a body plan rather than one evolutionary group.",
     "src": "https://en.wikipedia.org/wiki/Slug",
-    "verified": true
-  },
-  {
-    "in": [
-      "octopus",
-      "sea"
-    ],
-    "out": "cuttlefish",
-    "why": "A cuttlefish is a cephalopod cousin of the octopus with an internal, aragonite cuttlebone; adjusting the gas-to-liquid ratio inside its chambers fine-tunes buoyancy at almost any depth. Its pupils form a smooth W-shape, widening its view of polarised light.",
-    "src": "https://en.wikipedia.org/wiki/Cuttlefish",
     "verified": true
   },
   {
@@ -30940,16 +30382,6 @@
   },
   {
     "in": [
-      "moss",
-      "spore"
-    ],
-    "out": "clubmoss",
-    "why": "Despite the name, a clubmoss belongs to Lycopodiopsida, a vascular, spore-dispersing land-plant lineage that split off before ferns even existed, with fossils reaching the Silurian. Its dried, oil-rich spores burn in a bright flash with little heat, once used for Victorian stage fire effects.",
-    "src": "https://en.wikipedia.org/wiki/Lycopodiopsida",
-    "verified": true
-  },
-  {
-    "in": [
       "mangrove",
       "river"
     ],
@@ -30976,16 +30408,6 @@
     "out": "hyrax",
     "why": "Despite its size, the hyrax belongs to Afrotheria, the same mammalian branch as elephants and sirenians. It has poor internal temperature control, so it basks on sun-warmed rock outcrops; its communal dung middens fossilise into hyraceum, used historically in perfumery.",
     "src": "https://en.wikipedia.org/wiki/Hyrax",
-    "verified": true
-  },
-  {
-    "in": [
-      "grass",
-      "spider"
-    ],
-    "out": "sengi",
-    "why": "Sengis (elephant shrews) look and forage like shrews, hunting insects and spiders, but genetics places them in Afrotheria with elephants and aardvarks, not true shrews. Several species patrol cleared trail networks daily, and some run as fast as 28.8km/h.",
-    "src": "https://en.wikipedia.org/wiki/Sengi",
     "verified": true
   },
   {
@@ -31020,26 +30442,6 @@
   },
   {
     "in": [
-      "ant",
-      "egg"
-    ],
-    "out": "echidna",
-    "why": "Like the platypus, the echidna is a monotreme, one of the only egg-laying mammals. A female lays a single soft-shelled egg, about 1.4cm long, into a temporary pouch; the hatchling laps milk oozing from bare skin patches, since echidnas have no nipples.",
-    "src": "https://en.wikipedia.org/wiki/Echidna",
-    "verified": true
-  },
-  {
-    "in": [
-      "keratin",
-      "termite"
-    ],
-    "out": "pangolin",
-    "why": "A pangolin's overlapping scales are keratin, the same protein as human fingernails, not bone or reptile scale. Entirely toothless, it rips open termite nests with strong foreclaws, sweeps up prey with a long tongue anchored deep in its chest, and grinds its meal with swallowed stones.",
-    "src": "https://en.wikipedia.org/wiki/Pangolin",
-    "verified": true
-  },
-  {
-    "in": [
       "rainforest",
       "river"
     ],
@@ -31061,16 +30463,6 @@
   {
     "in": [
       "pouch",
-      "snake"
-    ],
-    "out": "opossum",
-    "why": "The Virginia opossum's \"playing dead\" (thanatosis) is an involuntary catatonic collapse from extreme stress, not a choice — heart rate halves until the threat passes. It also carries unusual natural resistance to pit-viper venom, from blood peptides now studied for antivenom.",
-    "src": "https://en.wikipedia.org/wiki/Virginia_opossum",
-    "verified": true
-  },
-  {
-    "in": [
-      "pouch",
       "soil"
     ],
     "out": "wombat",
@@ -31086,16 +30478,6 @@
     "out": "mesite",
     "why": "All three living mesite species are found only in Madagascar, gleaning insects and seeds from the forest floor. Despite having wings, they are weak, reluctant fliers, using short escape flutters rather than sustained flight — common among birds that evolved without mammalian predators.",
     "src": "https://en.wikipedia.org/wiki/Mesitornithiformes",
-    "verified": true
-  },
-  {
-    "in": [
-      "earthworm",
-      "island"
-    ],
-    "out": "kagu",
-    "why": "The kagu survives only in New Caledonia's mountain forests and lacks the flight muscles for sustained flight. It probes leaf litter for earthworms and snails using nasal corns, flap-like structures over its nostrils that keep out soil and debris — found on no other living bird.",
-    "src": "https://en.wikipedia.org/wiki/Kagu",
     "verified": true
   },
   {
@@ -31166,16 +30548,6 @@
     "out": "amphisbaenian",
     "why": "Most amphisbaenians (\"worm lizards\") have lost all four limbs and burrow forward or backward with near-equal ease, bunching ring-like skin against the tunnel wall to push. A blunt tail that vaguely mimics the head gave rise to old folk beliefs in a two-headed serpent.",
     "src": "https://en.wikipedia.org/wiki/Amphisbaenia",
-    "verified": true
-  },
-  {
-    "in": [
-      "ant",
-      "tissue"
-    ],
-    "out": "golden_poison_frog",
-    "why": "A golden poison frog doesn't make its own batrachotoxin — it sequesters the toxin from small arthropods in its diet, likely a beetle; frogs raised in captivity on other food lose their toxicity entirely.",
-    "src": "https://en.wikipedia.org/wiki/Golden_poison_frog",
     "verified": true
   },
   {
@@ -32551,36 +31923,6 @@
     "out": "cone",
     "why": "Coast redwoods, like their giant sequoia relatives, are conifers that reproduce with small woody seed cones instead of flowers.",
     "src": "https://en.wikipedia.org/wiki/Conifer_cone",
-    "supported": true
-  },
-  {
-    "in": [
-      "pine",
-      "cone"
-    ],
-    "out": "conifer",
-    "why": "Conifers are defined by their cones: pines, firs, cedars and cypresses all reproduce with male and female cones instead of flowers.",
-    "src": "https://en.wikipedia.org/wiki/Conifer",
-    "supported": true
-  },
-  {
-    "in": [
-      "conifer",
-      "cycad"
-    ],
-    "out": "gymnosperm",
-    "why": "Conifers and cycads are both gymnosperms — seed plants whose seeds sit exposed on a scale or leaf rather than enclosed inside a fruit.",
-    "src": "https://en.wikipedia.org/wiki/Gymnosperm",
-    "supported": true
-  },
-  {
-    "in": [
-      "conifer",
-      "ginkgo"
-    ],
-    "out": "gymnosperm",
-    "why": "Ginkgo is a gymnosperm too, right alongside the conifers — one of a handful of ancient lineages whose seeds were never enclosed in a fruit.",
-    "src": "https://en.wikipedia.org/wiki/Gymnosperm",
     "supported": true
   },
   {
@@ -40254,16 +39596,6 @@
   },
   {
     "in": [
-      "root",
-      "moss"
-    ],
-    "out": "elecampane",
-    "why": "Inula helenium is Asteraceae, the daisy family, with rayed yellow flowers like a small sunflower, but it favours damp ditches and wet fields — and it is the thick, mucilaginous root that is dug and dried for use.",
-    "src": "https://en.wikipedia.org/wiki/Elecampane",
-    "supported": true
-  },
-  {
-    "in": [
       "legume",
       "frost"
     ],
@@ -40290,16 +39622,6 @@
     "out": "myrtle",
     "why": "Myrtus communis is an evergreen Myrtaceae shrub of the Mediterranean, growing to 5 metres, with white-pink flowers giving way to blue-black berries — the same berries steeped in alcohol to make the Sardinian liqueur Mirto.",
     "src": "https://en.wikipedia.org/wiki/Myrtus_communis",
-    "supported": true
-  },
-  {
-    "in": [
-      "aconite",
-      "seed"
-    ],
-    "out": "nigella",
-    "why": "Nigella sativa shares the buttercup family, Ranunculaceae, with poisonous monkshood — but its own black seeds, held in an inflated three-to-seven-part capsule, are a food-safe spice used from Turkey and Egypt to India.",
-    "src": "https://en.wikipedia.org/wiki/Nigella_sativa",
     "supported": true
   },
   {
@@ -51399,16 +50721,6 @@
   },
   {
     "in": [
-      "fish",
-      "sun"
-    ],
-    "out": "sea_lion",
-    "why": "Sea lions are eared pinnipeds (otariids): unlike true seals, they have visible external ears and can turn their hind flippers forward under the body to walk on land, and they swim mainly by rowing with wing-like front flippers.",
-    "src": "https://en.wikipedia.org/wiki/Pinniped",
-    "verified": true
-  },
-  {
-    "in": [
       "shrimp",
       "glacier"
     ],
@@ -51985,27 +51297,8 @@
     "out": "synapsid",
     "why": "Synapsids are amniotes with a single temporal opening low in the skull behind each eye socket, giving room for larger jaw muscles — the lineage that includes every living mammal.",
     "src": "https://en.wikipedia.org/wiki/Synapsid",
-    "supported": true
-  },
-  {
-    "in": [
-      "amniote",
-      "human"
-    ],
-    "out": "synapsid",
-    "why": "Humans, like every other mammal, are synapsids — descendants of the amniote branch that grew a single temporal skull opening for jaw muscle rather than the reptile-and-bird branch's paired openings.",
-    "src": "https://en.wikipedia.org/wiki/Synapsid",
-    "supported": true
-  },
-  {
-    "in": [
-      "amniote",
-      "lizard"
-    ],
-    "out": "sauropsid",
-    "why": "Sauropsida is the amniote branch containing every reptile, including lizards, and every bird — sister to the synapsid line that led to mammals, and distinguished by excreting waste as uric acid rather than urea.",
-    "src": "https://en.wikipedia.org/wiki/Sauropsida",
-    "supported": true
+    "supported": true,
+    "canonical": true
   },
   {
     "in": [
@@ -52499,16 +51792,6 @@
   },
   {
     "in": [
-      "claw",
-      "fish"
-    ],
-    "out": "deinocheirus",
-    "why": "Known for decades only from 2.4-metre arms found in 1965, complete skeletons finally described in 2014 revealed a sail-backed giant ornithomimosaur — and over 1,400 gizzard stones mixed with fish vertebrae showed it ate both plants and fish.",
-    "src": "https://en.wikipedia.org/wiki/Deinocheirus",
-    "verified": true
-  },
-  {
-    "in": [
       "iridium",
       "meteorite"
     ],
@@ -52929,16 +52212,6 @@
   },
   {
     "in": [
-      "termite",
-      "tongue"
-    ],
-    "out": "numbat",
-    "why": "A termite specialist that laps up to 20,000 termites a day with a long, sticky tongue coated in saliva from oversized submandibular glands — its up to 50 teeth are too small and blunt to bother chewing them. It's also the only marsupial that's active exclusively in daylight.",
-    "src": "https://en.wikipedia.org/wiki/Numbat",
-    "verified": true
-  },
-  {
-    "in": [
       "nucleus",
       "mitochondrion"
     ],
@@ -53166,16 +52439,6 @@
     "why": "Every microplastic is either primary, manufactured small from the start, or secondary, fragmented from something larger -- the twofold classification the field uses for plastic particles under 5 millimetres.",
     "src": "https://en.wikipedia.org/wiki/Microplastics",
     "supported": true
-  },
-  {
-    "in": [
-      "mud",
-      "spider"
-    ],
-    "out": "wasp",
-    "why": "Mud dauber wasps build nest cells entirely out of mud, then stock each cell with spiders paralyzed by their sting as food for the larva that hatches inside.",
-    "src": "https://en.wikipedia.org/wiki/Mud_dauber",
-    "verified": true
   },
   {
     "in": [
@@ -60751,16 +60014,6 @@
   },
   {
     "in": [
-      "fungus",
-      "mushroom"
-    ],
-    "out": "basidiomycete",
-    "why": "Basidiomycota, the club fungi, reproduce by forming basidia — club-shaped cells that bear external basidiospores; the group includes every mushroom as well as crop-damaging rusts and smuts.",
-    "src": "https://en.wikipedia.org/wiki/Basidiomycota",
-    "verified": true
-  },
-  {
-    "in": [
       "cell",
       "plasmodium"
     ],
@@ -60817,16 +60070,6 @@
     "out": "nematode",
     "why": "Nematodes may be the most numerous animals on Earth by individual count, thriving in soil and compost; the roundworm C. elegans was the first animal with its whole genome sequenced and every neuron mapped.",
     "src": "https://en.wikipedia.org/wiki/Nematode",
-    "verified": true
-  },
-  {
-    "in": [
-      "blood",
-      "snail"
-    ],
-    "out": "trematode",
-    "why": "Trematodes are flatworms with two suckers and a life cycle needing a snail intermediate host for asexual stages, then a vertebrate for sexual reproduction; Schistosoma mansoni is a blood fluke example.",
-    "src": "https://en.wikipedia.org/wiki/Trematoda",
     "verified": true
   },
   {
@@ -62981,26 +62224,6 @@
   },
   {
     "in": [
-      "flag_finland",
-      "russia"
-    ],
-    "out": "finland",
-    "why": "Finland was the autonomous Grand Duchy of Finland inside the Russian Empire from 1809 until it declared independence on 6 December 1917.",
-    "src": "https://en.wikipedia.org/wiki/Finland",
-    "verified": true
-  },
-  {
-    "in": [
-      "germany",
-      "peninsula"
-    ],
-    "out": "denmark",
-    "why": "Denmark's only land border is the short frontier with Germany at the base of the Jutland peninsula; everything beyond it is an archipelago of 406 islands.",
-    "src": "https://en.wikipedia.org/wiki/Denmark",
-    "verified": true
-  },
-  {
-    "in": [
       "limestone",
       "mediterranean_sea"
     ],
@@ -63031,82 +62254,12 @@
   },
   {
     "in": [
-      "georgia",
-      "mountain"
-    ],
-    "out": "armenia",
-    "why": "Armenia borders Georgia to the north and lies in the mountainous Armenian highlands of the Caucasus region.",
-    "src": "https://en.wikipedia.org/wiki/Armenia",
-    "verified": true
-  },
-  {
-    "in": [
-      "georgia",
-      "oil"
-    ],
-    "out": "azerbaijan",
-    "why": "Azerbaijan borders Georgia to the northwest, and Baku's petroleum supplied about 80% of the Soviet Union's oil on the Eastern Front during the Second World War.",
-    "src": "https://en.wikipedia.org/wiki/Azerbaijan",
-    "verified": true
-  },
-  {
-    "in": [
       "kush",
       "nile"
     ],
     "out": "sudan",
     "why": "The Kingdom of Kush ruled the Nile valley of what is now Sudan, leaving the pyramids of Meroë, and the Blue and White Niles converge at Sudan's capital Khartoum.",
     "src": "https://en.wikipedia.org/wiki/Sudan",
-    "verified": true
-  },
-  {
-    "in": [
-      "nile",
-      "sudan"
-    ],
-    "out": "south_sudan",
-    "why": "South Sudan separated from Sudan on 9 July 2011, and the Nile system is the defining physical feature of the new country, spreading out into the vast Sudd wetland.",
-    "src": "https://en.wikipedia.org/wiki/South_Sudan",
-    "verified": true
-  },
-  {
-    "in": [
-      "ethiopia",
-      "sea"
-    ],
-    "out": "eritrea",
-    "why": "Eritrea seceded from Ethiopia in 1993, taking with it the extensive Red Sea coastline that had been Ethiopia's access to the sea.",
-    "src": "https://en.wikipedia.org/wiki/Eritrea",
-    "verified": true
-  },
-  {
-    "in": [
-      "eritrea",
-      "strait"
-    ],
-    "out": "djibouti",
-    "why": "Djibouti borders Eritrea to the north and commands the Bab-el-Mandeb strait, the passage between the Red Sea and the Gulf of Aden.",
-    "src": "https://en.wikipedia.org/wiki/Djibouti",
-    "verified": true
-  },
-  {
-    "in": [
-      "djibouti",
-      "ocean"
-    ],
-    "out": "somalia",
-    "why": "Somalia borders Djibouti to the northwest and wraps around the Horn of Africa with the longest coastline on the African mainland, facing the Gulf of Aden and the Indian Ocean.",
-    "src": "https://en.wikipedia.org/wiki/Somalia",
-    "verified": true
-  },
-  {
-    "in": [
-      "kenya",
-      "nile"
-    ],
-    "out": "uganda",
-    "why": "Uganda shares Lake Victoria with Kenya and Tanzania, and the Victoria Nile drains that lake northward through Lake Kyoga to Lake Albert.",
-    "src": "https://en.wikipedia.org/wiki/Uganda",
     "verified": true
   },
   {
@@ -63121,72 +62274,12 @@
   },
   {
     "in": [
-      "rift_valley",
-      "rwanda"
-    ],
-    "out": "burundi",
-    "why": "Burundi borders Rwanda to the north and lies in the Great Rift Valley, with Lake Tanganyika along its south-western edge.",
-    "src": "https://en.wikipedia.org/wiki/Burundi",
-    "verified": true
-  },
-  {
-    "in": [
-      "rift_valley",
-      "tanzania"
-    ],
-    "out": "malawi",
-    "why": "The Great Rift Valley runs the length of Malawi, and Lake Malawi inside it makes up over three-quarters of the country's eastern boundary with Tanzania and Mozambique.",
-    "src": "https://en.wikipedia.org/wiki/Malawi",
-    "verified": true
-  },
-  {
-    "in": [
       "copper",
       "democratic_republic_of_the_congo"
     ],
     "out": "zambia",
     "why": "Zambia borders the DR Congo to the north, and its population and mining industry are concentrated in the Copperbelt Province along that border.",
     "src": "https://en.wikipedia.org/wiki/Zambia",
-    "verified": true
-  },
-  {
-    "in": [
-      "waterfall",
-      "zambia"
-    ],
-    "out": "zimbabwe",
-    "why": "The Zambezi forms Zimbabwe's northern boundary with Zambia, and Victoria Falls, first described by David Livingstone in 1855, sits on that shared river.",
-    "src": "https://en.wikipedia.org/wiki/Zimbabwe",
-    "verified": true
-  },
-  {
-    "in": [
-      "ocean",
-      "zimbabwe"
-    ],
-    "out": "mozambique",
-    "why": "Mozambique borders landlocked Zimbabwe to the west and carries the Zambezi onward to the Indian Ocean along its eastern coast.",
-    "src": "https://en.wikipedia.org/wiki/Mozambique",
-    "verified": true
-  },
-  {
-    "in": [
-      "mozambique",
-      "south_africa"
-    ],
-    "out": "eswatini",
-    "why": "Eswatini is bordered by South Africa on every side except the east, where it meets Mozambique.",
-    "src": "https://en.wikipedia.org/wiki/Eswatini",
-    "verified": true
-  },
-  {
-    "in": [
-      "mountain",
-      "south_africa"
-    ],
-    "out": "lesotho",
-    "why": "Lesotho is an enclave entirely surrounded by South Africa, sitting in the Maloti Mountains with over 80% of its land above 1,800 m.",
-    "src": "https://en.wikipedia.org/wiki/Lesotho",
     "verified": true
   },
   {
@@ -63217,16 +62310,6 @@
     "out": "angola",
     "why": "Angola's oil-producing province of Cabinda is an exclave cut off from the rest of the country by DR Congo territory.",
     "src": "https://en.wikipedia.org/wiki/Angola",
-    "verified": true
-  },
-  {
-    "in": [
-      "madagascar",
-      "volcano"
-    ],
-    "out": "comoros",
-    "why": "The Comoros are volcanic islands in the Mozambique Channel between mainland Africa and Madagascar, topped by the highly active Mount Karthala.",
-    "src": "https://en.wikipedia.org/wiki/Comoros",
     "verified": true
   },
   {
@@ -63291,112 +62374,12 @@
   },
   {
     "in": [
-      "gabon",
-      "island"
-    ],
-    "out": "equatorial_guinea",
-    "why": "Equatorial Guinea is split between mainland Río Muni, bordered by Gabon to the south and east, and the islands of Bioko and Annobón.",
-    "src": "https://en.wikipedia.org/wiki/Equatorial_Guinea",
-    "verified": true
-  },
-  {
-    "in": [
-      "nigeria",
-      "volcano"
-    ],
-    "out": "cameroon",
-    "why": "Cameroon borders Nigeria to the west and north, and Mount Cameroon, about 4,100 m high, anchors the Cameroon volcanic line.",
-    "src": "https://en.wikipedia.org/wiki/Cameroon",
-    "verified": true
-  },
-  {
-    "in": [
-      "cameroon",
-      "savanna"
-    ],
-    "out": "central_african_republic",
-    "why": "The Central African Republic borders Cameroon to the west and consists mainly of Sudano-Guinean savanna, with Sahel in the north and equatorial forest in the south.",
-    "src": "https://en.wikipedia.org/wiki/Central_African_Republic",
-    "verified": true
-  },
-  {
-    "in": [
-      "central_african_republic",
-      "sahara"
-    ],
-    "out": "chad",
-    "why": "Chad borders the Central African Republic to the south while the Sahara occupies its northern third, rising to the dormant volcano Emi Koussi at 3,414 m in the Tibesti.",
-    "src": "https://en.wikipedia.org/wiki/Chad",
-    "verified": true
-  },
-  {
-    "in": [
-      "chad",
-      "uranium"
-    ],
-    "out": "niger",
-    "why": "Niger borders Chad to the east, meets it at Lake Chad, and mines uranium at Arlit in the Agadez Region.",
-    "src": "https://en.wikipedia.org/wiki/Niger",
-    "verified": true
-  },
-  {
-    "in": [
-      "niger",
-      "river"
-    ],
-    "out": "burkina_faso",
-    "why": "Burkina Faso borders Niger to the northeast and was named Upper Volta for its position on the upper courses of the Volta River and its Black, Red and White tributaries.",
-    "src": "https://en.wikipedia.org/wiki/Burkina_Faso",
-    "verified": true
-  },
-  {
-    "in": [
-      "ghana",
-      "phosphate"
-    ],
-    "out": "togo",
-    "why": "Togo is bordered by Ghana to the west along a strip less than 115 km wide, and holds the fourth-largest phosphate deposits in the world.",
-    "src": "https://en.wikipedia.org/wiki/Togo",
-    "verified": true
-  },
-  {
-    "in": [
-      "nigeria",
-      "togo"
-    ],
-    "out": "benin",
-    "why": "Benin lies directly between Togo to the west and Nigeria to the east on the Bight of Benin, the stretch of the Gulf of Guinea it was renamed after in 1975.",
-    "src": "https://en.wikipedia.org/wiki/Benin",
-    "verified": true
-  },
-  {
-    "in": [
       "mali_empire",
       "sahara"
     ],
     "out": "mali",
     "why": "Mali takes its name from the medieval Mali Empire that grew rich on trans-Saharan trade, and its northern borders reach deep into the Sahara.",
     "src": "https://en.wikipedia.org/wiki/Mali",
-    "verified": true
-  },
-  {
-    "in": [
-      "mali",
-      "sahara"
-    ],
-    "out": "mauritania",
-    "why": "Mauritania borders Mali to the east and southeast, and about 90% of its territory lies within the Sahara.",
-    "src": "https://en.wikipedia.org/wiki/Mauritania",
-    "verified": true
-  },
-  {
-    "in": [
-      "river",
-      "senegal"
-    ],
-    "out": "gambia",
-    "why": "The Gambia is a narrow country following both banks of the lower Gambia River, surrounded by Senegal on three sides with only the river mouth reaching the Atlantic.",
-    "src": "https://en.wikipedia.org/wiki/The_Gambia",
     "verified": true
   },
   {
@@ -63411,52 +62394,12 @@
   },
   {
     "in": [
-      "guinea",
-      "mangrove"
-    ],
-    "out": "guinea_bissau",
-    "why": "Guinea-Bissau borders Guinea to the southeast, and its low coast is dominated by Guinean mangrove swamps fronting the Bijagós Archipelago.",
-    "src": "https://en.wikipedia.org/wiki/Guinea-Bissau",
-    "verified": true
-  },
-  {
-    "in": [
-      "guinea",
-      "lion"
-    ],
-    "out": "sierra_leone",
-    "why": "Sierra Leone borders Guinea to the north and takes its name from the Lion Mountains near Freetown, so named by the Portuguese navigator Pedro de Sintra in 1462.",
-    "src": "https://en.wikipedia.org/wiki/Sierra_Leone",
-    "verified": true
-  },
-  {
-    "in": [
-      "rubber",
-      "sierra_leone"
-    ],
-    "out": "liberia",
-    "why": "Liberia borders Sierra Leone to the northwest, and its economy was reshaped in the early 20th century by Firestone's 99-year rubber plantation concession.",
-    "src": "https://en.wikipedia.org/wiki/Liberia",
-    "verified": true
-  },
-  {
-    "in": [
       "carthage",
       "mediterranean_sea"
     ],
     "out": "tunisia",
     "why": "The ruins of Carthage, the Mediterranean power Rome destroyed in 146 BC, stand beside modern Tunis on Tunisia's northeastern Mediterranean coast.",
     "src": "https://en.wikipedia.org/wiki/Tunisia",
-    "verified": true
-  },
-  {
-    "in": [
-      "sahara",
-      "tunisia"
-    ],
-    "out": "libya",
-    "why": "Libya borders Tunisia to the northwest and stretches south across the northern Sahara, making it Africa's fourth-largest country.",
-    "src": "https://en.wikipedia.org/wiki/Libya",
     "verified": true
   },
   {
@@ -63477,16 +62420,6 @@
     "out": "bahamas",
     "why": "The Bahamian archipelago of some 700 islands and 2,500 cays supports a queen conch fishery that employs over 9,000 Bahamian fishers.",
     "src": "https://en.wikipedia.org/wiki/The_Bahamas",
-    "verified": true
-  },
-  {
-    "in": [
-      "brazil",
-      "sugarcane"
-    ],
-    "out": "barbados",
-    "why": "Sugarcane was brought to Barbados from Dutch Brazil in 1640, remaking the island's economy and society around one of the world's largest sugar industries.",
-    "src": "https://en.wikipedia.org/wiki/Barbados",
     "verified": true
   },
   {
@@ -63667,26 +62600,6 @@
     "out": "suriname",
     "why": "Suriname was Dutch until independence on 25 November 1975, and at 90.2 percent forest cover it is the most forested nation in the world.",
     "src": "https://en.wikipedia.org/wiki/Suriname",
-    "verified": true
-  },
-  {
-    "in": [
-      "petroleum",
-      "venezuela"
-    ],
-    "out": "trinidad_and_tobago",
-    "why": "Trinidad sits 11 km off northeastern Venezuela on the South American continental shelf, and unlike its tourism-based neighbours its economy runs on large oil and gas reserves.",
-    "src": "https://en.wikipedia.org/wiki/Trinidad",
-    "verified": true
-  },
-  {
-    "in": [
-      "flag_united_states",
-      "united_kingdom"
-    ],
-    "out": "united_states",
-    "why": "The flag's 13 stripes stand for the thirteen British colonies that declared independence on 4 July 1776, and its 50 stars for the states of the union today.",
-    "src": "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
     "verified": true
   },
   {
@@ -67101,16 +66014,6 @@
   },
   {
     "in": [
-      "monocot",
-      "dicot"
-    ],
-    "out": "angiosperm",
-    "why": "Monocots (about 70,000 species) and eudicots (about 175,000) are the two great halves of the flowering plants — one seed leaf or two, between them 98% of the group.",
-    "src": "https://en.wikipedia.org/wiki/Flowering_plant",
-    "verified": true
-  },
-  {
-    "in": [
       "spore",
       "meiosis"
     ],
@@ -67701,52 +66604,12 @@
   },
   {
     "in": [
-      "umayyad_caliphate",
-      "lebanon"
-    ],
-    "out": "syria",
-    "why": "Damascus, Syria's capital, was the capital of the Umayyad Caliphate, and Syria borders Lebanon to its southwest.",
-    "src": "https://en.wikipedia.org/wiki/Syria",
-    "verified": true
-  },
-  {
-    "in": [
-      "syria",
-      "saudi_arabia"
-    ],
-    "out": "jordan",
-    "why": "Jordan is bordered by Syria to the north and Saudi Arabia to the south.",
-    "src": "https://en.wikipedia.org/wiki/Jordan",
-    "verified": true
-  },
-  {
-    "in": [
-      "iraq",
-      "oil"
-    ],
-    "out": "kuwait",
-    "why": "In August 1990 Iraqi forces invaded and annexed Kuwait after a dispute over Kuwaiti oil extraction and a 40% rise in Iraqi oil production.",
-    "src": "https://en.wikipedia.org/wiki/Kuwait",
-    "verified": true
-  },
-  {
-    "in": [
       "pearl",
       "archipelago"
     ],
     "out": "bahrain",
     "why": "Bahrain is an archipelago of 33 natural islands famed since antiquity for pearl fisheries considered the best in the world into the 19th century.",
     "src": "https://en.wikipedia.org/wiki/Bahrain",
-    "verified": true
-  },
-  {
-    "in": [
-      "peninsula",
-      "saudi_arabia"
-    ],
-    "out": "qatar",
-    "why": "Qatar occupies the Qatar Peninsula and shares its sole land border with Saudi Arabia to the south.",
-    "src": "https://en.wikipedia.org/wiki/Qatar",
     "verified": true
   },
   {
@@ -67761,26 +66624,6 @@
   },
   {
     "in": [
-      "oman",
-      "skyscraper"
-    ],
-    "out": "united_arab_emirates",
-    "why": "Dubai in the United Arab Emirates holds the Burj Khalifa, the world's tallest structure at 828 m, and the country's eastern land border is with Oman.",
-    "src": "https://en.wikipedia.org/wiki/Burj_Khalifa",
-    "verified": true
-  },
-  {
-    "in": [
-      "coffee",
-      "oman"
-    ],
-    "out": "yemen",
-    "why": "Yemen borders Oman to the northeast, and its port of Mocha shipped the coffee it once produced for the entire world.",
-    "src": "https://en.wikipedia.org/wiki/Yemen",
-    "verified": true
-  },
-  {
-    "in": [
       "bow",
       "buddha"
     ],
@@ -67791,42 +66634,12 @@
   },
   {
     "in": [
-      "ruby",
-      "thailand"
-    ],
-    "out": "myanmar",
-    "why": "Myanmar's Mogok mines account for perhaps 90% of world ruby production, and Thailand, which borders it to the southeast, buys most of its exported gems.",
-    "src": "https://en.wikipedia.org/wiki/Mogok",
-    "verified": true
-  },
-  {
-    "in": [
       "mountain",
       "silk_road"
     ],
     "out": "kyrgyzstan",
     "why": "The Tian Shan mountains cover over 80% of Kyrgyzstan, and its Lake Issyk-Kul was a stopover on the Silk Road between the Far East and Europe.",
     "src": "https://en.wikipedia.org/wiki/Kyrgyzstan",
-    "verified": true
-  },
-  {
-    "in": [
-      "afghanistan",
-      "glacier"
-    ],
-    "out": "tajikistan",
-    "why": "Tajikistan borders Afghanistan to the south, and its Pamir range holds the Fedchenko Glacier, the longest glacier outside the polar regions.",
-    "src": "https://en.wikipedia.org/wiki/Fedchenko_Glacier",
-    "verified": true
-  },
-  {
-    "in": [
-      "desert",
-      "uzbekistan"
-    ],
-    "out": "turkmenistan",
-    "why": "Over 80% of Turkmenistan is covered by the Karakum Desert, and the country borders Uzbekistan to the north.",
-    "src": "https://en.wikipedia.org/wiki/Turkmenistan",
     "verified": true
   },
   {
@@ -67931,16 +66744,6 @@
   },
   {
     "in": [
-      "fish",
-      "sponge"
-    ],
-    "out": "animal",
-    "why": "A sponge has no true tissues and lacks nerve cells entirely; a fish has both. They are still one clade, descended from a single common ancestor.",
-    "src": "https://en.wikipedia.org/wiki/Animal",
-    "verified": true
-  },
-  {
-    "in": [
       "spinal_cord",
       "tunicate"
     ],
@@ -68011,32 +66814,12 @@
   },
   {
     "in": [
-      "crab",
-      "spider"
-    ],
-    "out": "arthropod",
-    "why": "A crab and a spider share the phylum's whole recipe — jointed limbs, segmented body, chitin cuticle — across a group of up to ten million species.",
-    "src": "https://en.wikipedia.org/wiki/Arthropod",
-    "verified": true
-  },
-  {
-    "in": [
       "invertebrate",
       "shell"
     ],
     "out": "mollusk",
     "why": "In every mollusk the dorsal body wall forms a mantle, and it is the mantle that secretes the calcareous plates or shell.",
     "src": "https://en.wikipedia.org/wiki/Mollusca",
-    "verified": true
-  },
-  {
-    "in": [
-      "arthropod",
-      "krill"
-    ],
-    "out": "crustacean",
-    "why": "Krill, crabs, shrimp, copepods, barnacles and woodlice are all crustaceans: mandibulate arthropods, mostly aquatic, carrying two pairs of antennae on the head.",
-    "src": "https://en.wikipedia.org/wiki/Crustacean",
     "verified": true
   },
   {
@@ -68051,31 +66834,11 @@
   },
   {
     "in": [
-      "box_jellyfish",
-      "coral"
-    ],
-    "out": "cnidarian",
-    "why": "Coral and jellyfish are one phylum of over 11,000 species: jelly mesoglea between two thin cell layers, a decentralised nerve net, and stinging cells.",
-    "src": "https://en.wikipedia.org/wiki/Cnidaria",
-    "verified": true
-  },
-  {
-    "in": [
       "arthropod",
       "compound_eye"
     ],
     "out": "insect",
     "why": "Insects are the largest group within the arthropods, marked by a three-part body, three pairs of jointed legs, one pair of antennae and compound eyes.",
-    "src": "https://en.wikipedia.org/wiki/Insect",
-    "verified": true
-  },
-  {
-    "in": [
-      "ant",
-      "butterfly"
-    ],
-    "out": "insect",
-    "why": "Ants and butterflies are both class Insecta — over a million described species, more than half of all animal species known.",
     "src": "https://en.wikipedia.org/wiki/Insect",
     "verified": true
   },
@@ -68107,26 +66870,6 @@
     "out": "rodent",
     "why": "A beaver and a house mouse are both Rodentia, gnawing with the same pair of ever-growing incisors — the order is native to every major landmass except Antarctica.",
     "src": "https://en.wikipedia.org/wiki/Rodent",
-    "verified": true
-  },
-  {
-    "in": [
-      "great_white_shark",
-      "whale_shark"
-    ],
-    "out": "shark",
-    "why": "One sprints after seals, the other filters plankton, but both are sharks: a ribless cartilage skeleton, dermal denticles for skin, and five to seven gill slits a side.",
-    "src": "https://en.wikipedia.org/wiki/Shark",
-    "verified": true
-  },
-  {
-    "in": [
-      "ampullae_of_lorenzini",
-      "cartilage"
-    ],
-    "out": "shark",
-    "why": "Sharks are elasmobranch cartilaginous fishes, and the jelly-filled ampullae of Lorenzini across the snout read the faint electric fields of prey.",
-    "src": "https://en.wikipedia.org/wiki/Shark",
     "verified": true
   },
   {
@@ -74172,16 +72915,6 @@
   },
   {
     "in": [
-      "cannabis",
-      "vine"
-    ],
-    "out": "hop",
-    "why": "Humulus lupulus sits in the Cannabaceae with cannabis: a climbing bine trained up strings, of which only female plants are grown commercially.",
-    "src": "https://en.wikipedia.org/wiki/Hops",
-    "verified": true
-  },
-  {
-    "in": [
       "flower",
       "wort"
     ],
@@ -75142,16 +73875,6 @@
   },
   {
     "in": [
-      "bracken_fern",
-      "leaf"
-    ],
-    "out": "fiddlehead_fern",
-    "why": "Every fern frond emerges tightly coiled in circinate vernation and is cut close to the ground before it unrolls; bracken's own fiddleheads contain ptaquiloside, which is why ostrich fern is the one usually eaten.",
-    "src": "https://en.wikipedia.org/wiki/Fiddlehead_fern",
-    "verified": true
-  },
-  {
-    "in": [
       "kale",
       "sea"
     ],
@@ -75642,16 +74365,6 @@
   },
   {
     "in": [
-      "wattle",
-      "wood"
-    ],
-    "out": "hazelnut_tree",
-    "why": "Hazel was traditionally grown as coppice, its poles cut for wattle-and-daub building and agricultural fencing across lowland England.",
-    "src": "https://en.wikipedia.org/wiki/Corylus_avellana",
-    "verified": true
-  },
-  {
-    "in": [
       "root_nodule",
       "tree"
     ],
@@ -75717,16 +74430,6 @@
     ],
     "out": "spanish_moss",
     "why": "Tillandsia usneoides is a bromeliad, in the pineapple family, growing as an epiphyte that absorbs water and nutrients through its own leaves rather than roots.",
-    "src": "https://en.wikipedia.org/wiki/Spanish_moss",
-    "verified": true
-  },
-  {
-    "in": [
-      "cypress_tree",
-      "epiphyte"
-    ],
-    "out": "spanish_moss",
-    "why": "It hangs chiefly from southern live oak and bald cypress, whose high rates of foliar mineral leaching supply it with calcium, magnesium, potassium and phosphorus.",
     "src": "https://en.wikipedia.org/wiki/Spanish_moss",
     "verified": true
   },
@@ -76482,16 +75185,6 @@
   },
   {
     "in": [
-      "majungasaurus",
-      "north_america"
-    ],
-    "out": "ceratosaurus",
-    "why": "The farmer Marshall Parker Felch dug an articulated skeleton out of the Morrison Formation at Garden Park, north of Cañon City, Colorado, across 1883 and 1884, and Marsh named Ceratosaurus nasicornis from it in 1884. It sits low in Ceratosauria, the theropod branch that split early from the line leading to birds and later produced the abelisaurids such as Majungasaurus.",
-    "src": "https://en.wikipedia.org/wiki/Ceratosaurus",
-    "verified": true
-  },
-  {
-    "in": [
       "conifer",
       "polyploidy"
     ],
@@ -76792,16 +75485,6 @@
   },
   {
     "in": [
-      "common_ancestor",
-      "hippopotamus"
-    ],
-    "out": "whale",
-    "why": "Whales are artiodactyls that went back to the water, and their closest living relatives are the hippopotamuses: the two share a semi-aquatic ancestor that branched off from other even-toed ungulates some 60 million years ago, with the chevrotain-like Indohyus splitting away about 48 million years ago. The stages are in the rock — Ambulocetus at 49 million years, Protocetus with tail flukes at 43, Basilosaurus with forelimbs turned into flippers at 35.",
-    "src": "https://en.wikipedia.org/wiki/Whale",
-    "verified": true
-  },
-  {
-    "in": [
       "speciation",
       "whale_shark"
     ],
@@ -77082,16 +75765,6 @@
   },
   {
     "in": [
-      "evolution",
-      "triceratops"
-    ],
-    "out": "pachycephalosaurus",
-    "why": "Pachycephalosaurus and Triceratops are the two branches of Marginocephalia, a clade named for the bony shelf at the back of the skull that both of them carry, and defined formally as the smallest group containing Pachycephalosaurus wyomingensis and Triceratops horridus. The dome-heads and the horned ceratopsians ran from 161 to 66 million years ago, first evolving in the Jurassic and becoming common in the Cretaceous.",
-    "src": "https://en.wikipedia.org/wiki/Marginocephalia",
-    "verified": true
-  },
-  {
-    "in": [
       "anglerfish",
       "speciation"
     ],
@@ -77162,16 +75835,6 @@
   },
   {
     "in": [
-      "ankylosaurus",
-      "evolution"
-    ],
-    "out": "stegosaurus",
-    "why": "Stegosaurs and ankylosaurs are the two branches of Thyreophora, and both built their armour from the same starting material: like the spikes and shields of ankylosaurs, the bony plates and spines of stegosaurians evolved from the low-keeled osteoderms of basal thyreophorans. Stegosaurus itself came out of the Morrison Formation north of Morrison, Colorado, and Othniel Charles Marsh described the holotype in 1877.",
-    "src": "https://en.wikipedia.org/wiki/Stegosaurus",
-    "verified": true
-  },
-  {
-    "in": [
       "adaptation",
       "flower"
     ],
@@ -77218,16 +75881,6 @@
     "out": "whelk",
     "why": "The dog whelk is a predatory sea snail that bores through barnacles and mussels with a modified radula, helped by an organ on the foot secreting a shell-softening chemical; a small prey animal is eaten in about a day, a mussel can take a week to digest. Its own shell records where it grew — the overall shape varies widely with how exposed to wave action the shore is.",
     "src": "https://en.wikipedia.org/wiki/Nucella_lapillus",
-    "verified": true
-  },
-  {
-    "in": [
-      "clubmoss",
-      "evolution"
-    ],
-    "out": "fern",
-    "why": "Clubmosses branch off at the very base of the vascular plants, carrying microphyll leaves — that is what separates them from the euphyllophytes and their megaphylls. Ferns sit on the other branch: fern-like taxa such as Wattieza first appear in the fossil record in the middle Devonian, about 390 million years ago, and the fern crown group is estimated to have originated around 423 million years ago, still reproducing by spores with neither seeds nor flowers.",
-    "src": "https://en.wikipedia.org/wiki/Fern",
     "verified": true
   },
   {
@@ -77488,16 +76141,6 @@
     "out": "marlin",
     "why": "Marlins are the family Istiophoridae, between 9 and 11 species depending on the authority, and their closest relative is the swordfish, the only member of Xiphiidae; the two families together make up the billfish superfamily Xiphioidea. The Atlantic blue marlin reaches 5 metres and 820 kg, the black marlin over 5 metres and 670 kg.",
     "src": "https://en.wikipedia.org/wiki/Marlin",
-    "verified": true
-  },
-  {
-    "in": [
-      "centipede",
-      "speciation"
-    ],
-    "out": "millipede",
-    "why": "Millipedes and centipedes are the two large classes of Myriapoda — Diplopoda and Chilopoda — whose most recent common ancestor lived around 450 to 475 million years ago. The split shows in the legs: two pairs a segment against one, 34 to 400 legs in common species, and 1,306 in Eumillipes persephone, described in 2021, more than any other animal on Earth.",
-    "src": "https://en.wikipedia.org/wiki/Millipede",
     "verified": true
   },
   {
@@ -79002,16 +77645,6 @@
   },
   {
     "in": [
-      "india",
-      "island"
-    ],
-    "out": "madagascar",
-    "why": "Madagascar and India were one landmass inside Gondwana and separated around 70 million years ago, close enough to the Cretaceous-Paleogene extinction to sit alongside it. The isolation since is why so much of what lives there lives nowhere else.",
-    "src": "https://en.wikipedia.org/wiki/Gondwana",
-    "verified": true
-  },
-  {
-    "in": [
       "evolution",
       "larva"
     ],
@@ -79048,7 +77681,8 @@
     "out": "sauropsid",
     "why": "The branch of the amniotes that leads to reptiles and birds rather than to mammals — Huxley's 1864 division, with Synapsida on the other side. They excrete nitrogen as uric acid, which needs almost no water and goes out with the faeces, and their skin carries no glands of the kind mammals inherited from amphibians. That combination is what let the group hold arid ground.",
     "src": "https://en.wikipedia.org/wiki/Sauropsida",
-    "verified": true
+    "verified": true,
+    "canonical": true
   },
   {
     "in": [
@@ -83861,6 +82495,2166 @@
     "out": "timor_leste",
     "why": "A Portuguese colony until 1975 and then under Indonesian rule. In a UN-run popular consultation on 30 August 1999, 78.5% chose independence on a 98.9% turnout; sovereignty was restored on 20 May 2002.",
     "src": "https://en.wikipedia.org/wiki/1999_East_Timorese_independence_referendum",
+    "verified": true
+  },
+  {
+    "in": [
+      "angiosperm",
+      "cotyledon"
+    ],
+    "out": "monocot",
+    "why": "A monocot germinates with a single seed leaf. Parallel veins, vascular bundles scattered through the stem rather than set in a ring, flower parts in threes — over 70,000 species, some 25,000 of them orchids.",
+    "src": "https://en.wikipedia.org/wiki/Monocotyledon",
+    "verified": true
+  },
+  {
+    "in": [
+      "angiosperm",
+      "pollen"
+    ],
+    "out": "dicot",
+    "why": "The eudicots were called tricolpates first, for pollen grains with three furrows where every other seed plant has one. Two seed leaves, netted veins, and over 70% of all flowering-plant species.",
+    "src": "https://en.wikipedia.org/wiki/Eudicots",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "seed"
+    ],
+    "out": "gymnosperm",
+    "why": "The first plants to wrap an embryo in a seed instead of casting a spore. The ovule sits naked on a scale or a leaf with no ovary around it — over 1,000 living species, nearly all of them conifers and cycads.",
+    "src": "https://en.wikipedia.org/wiki/Gymnosperm",
+    "verified": true
+  },
+  {
+    "in": [
+      "basidium",
+      "fungus"
+    ],
+    "out": "basidiomycete",
+    "why": "Club fungi are named for the basidium, which buds its spores on the outside rather than shutting them in a sac — 31,515 described species: mushrooms, boletes, puffballs, brackets, and the rusts and smuts.",
+    "src": "https://en.wikipedia.org/wiki/Basidiomycota",
+    "verified": true
+  },
+  {
+    "in": [
+      "echinoderm",
+      "stone"
+    ],
+    "out": "brittle_star",
+    "why": "Ophiuroidea, not a sea star: the disc is sharply cut off from the arms and no organ reaches into them. It hides under rocks, rows along on snake-like arms, and sheds one to a predator rather than be held.",
+    "src": "https://en.wikipedia.org/wiki/Brittle_star",
+    "verified": true
+  },
+  {
+    "in": [
+      "echinoderm",
+      "mud"
+    ],
+    "out": "sea_cucumber",
+    "why": "Holothuroidea: an echinoderm gone long and leathery, grubbing through seabed mud on tube feet. Some reef species fire sticky Cuvierian tubules out of the anus to snare a predator, and regrow them within weeks.",
+    "src": "https://en.wikipedia.org/wiki/Sea_cucumber",
+    "verified": true
+  },
+  {
+    "in": [
+      "echinoderm",
+      "reef"
+    ],
+    "out": "feather_star",
+    "why": "Crinoidea is the oldest echinoderm class, back about 480 million years, and only some 700 species survive. A feather star grips the reef with claw-like cirri and strains plankton from the current with feathered arms.",
+    "src": "https://en.wikipedia.org/wiki/Crinoid",
+    "verified": true
+  },
+  {
+    "in": [
+      "arthropod",
+      "sea"
+    ],
+    "out": "sea_spider",
+    "why": "Pycnogonida is not a spider and not even an arachnid — its own chelicerate class, over 1,300 species. The trunk is too small to hold the animal, so gut and gonads branch into the legs, which absorb oxygen straight through the cuticle.",
+    "src": "https://en.wikipedia.org/wiki/Sea_spider",
+    "verified": true
+  },
+  {
+    "in": [
+      "cephalopod",
+      "sea"
+    ],
+    "out": "cuttlefish",
+    "why": "One of about 116 species of Sepiida, cousin to octopus and squid. It trims the gas-to-liquid ratio inside the chambered cuttlebone to hold almost any depth, and its W-shaped pupil reads polarised light rather than colour.",
+    "src": "https://en.wikipedia.org/wiki/Cuttlefish",
+    "verified": true
+  },
+  {
+    "in": [
+      "fern",
+      "leaf"
+    ],
+    "out": "fiddlehead_fern",
+    "why": "Every fern frond comes up tightly coiled — circinate vernation — and is cut at that stage or not at all. Ostrich fern is the one usually eaten; bracken fiddleheads carry ptaquiloside, a carcinogen.",
+    "src": "https://en.wikipedia.org/wiki/Fiddlehead_fern",
+    "verified": true
+  },
+  {
+    "in": [
+      "horn",
+      "theropod"
+    ],
+    "out": "ceratosaurus",
+    "why": "Ceratosaurus is 'horn lizard': a blade of fused nasal bone about 13 cm long, sheathed in keratin and grooved for blood vessels. Marsh named it in 1884 from a Morrison Formation skeleton dug at Garden Park, Colorado.",
+    "src": "https://en.wikipedia.org/wiki/Ceratosaurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "mushroom",
+      "spore"
+    ],
+    "out": "basidium",
+    "why": "Peel a mushroom gill and its whole surface is basidia — club-shaped cells, each budding four spores on slender horns called sterigmata and flicking them away with a bead of fluid.",
+    "src": "https://en.wikipedia.org/wiki/Basidium",
+    "verified": true
+  },
+  {
+    "in": [
+      "elasmobranch",
+      "tooth"
+    ],
+    "out": "shark",
+    "why": "The sharks are the elasmobranchs that stayed torpedo-shaped with gill slits on the flank, and they carry the group's teeth to its extreme — rows of replacements lying flat behind the working row, rotating forward as teeth are lost, for thousands over a lifetime.",
+    "src": "https://en.wikipedia.org/wiki/Shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "endothermy",
+      "shark"
+    ],
+    "out": "mako_shark",
+    "why": "The shortfin mako is a lamnid, one of the few sharks that keeps its swimming muscle warmer than the sea using a rete mirabile — a countercurrent mesh of blood vessels that traps muscle heat instead of losing it at the gills. Warm muscle contracts faster, and the mako is the fastest shark measured.",
+    "src": "https://en.wikipedia.org/wiki/Shortfin_mako_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "shark"
+    ],
+    "out": "salmon_shark",
+    "why": "A lamnid shark of the subarctic North Pacific that holds its core 8 to 11 degrees Celsius above the water around it — the widest gap of any shark — which is what lets it hunt in seas near freezing.",
+    "src": "https://en.wikipedia.org/wiki/Salmon_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "camouflage",
+      "shark"
+    ],
+    "out": "tiger_shark",
+    "why": "Named for the dark vertical bars along its flanks, strongest in young animals and fading with age, which break up its outline against dappled water.",
+    "src": "https://en.wikipedia.org/wiki/Tiger_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "shark"
+    ],
+    "out": "oceanic_whitetip_shark",
+    "why": "A shark of the open ocean rather than the coast, ranging the warm surface layer far from land on very long, rounded, white-tipped pectoral fins that let it glide slowly over huge distances between meals.",
+    "src": "https://en.wikipedia.org/wiki/Oceanic_whitetip_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "scale",
+      "shark"
+    ],
+    "out": "silky_shark",
+    "why": "Named for its skin. Shark scales are dermal denticles, tooth-like and normally rough enough to abrade; the silky shark's are unusually small, flat and tightly packed, so the hide feels smooth to the hand.",
+    "src": "https://en.wikipedia.org/wiki/Silky_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef",
+      "shark"
+    ],
+    "out": "whitetip_reef_shark",
+    "why": "A slender reef shark that spends the day resting in caves and under coral ledges — unusual among sharks, most of which must keep moving to pass water over the gills — and hunts through the reef at night.",
+    "src": "https://en.wikipedia.org/wiki/Whitetip_reef_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "shark",
+      "whisker"
+    ],
+    "out": "nurse_shark",
+    "why": "A bottom-dwelling shark with a pair of fleshy barbels hanging beside the nostrils, used to taste and feel for prey buried in sand, which it then draws out by expanding its throat into a suction pump.",
+    "src": "https://en.wikipedia.org/wiki/Nurse_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "plankton",
+      "shark"
+    ],
+    "out": "whale_shark",
+    "why": "The largest fish alive, and a filter feeder. It swims with its mouth open or pumps water through it, straining plankton and small fish on twenty pads of fine mesh across the throat.",
+    "src": "https://en.wikipedia.org/wiki/Whale_shark",
+    "verified": true
+  },
+  {
+    "in": [
+      "plankton",
+      "ray"
+    ],
+    "out": "manta_ray",
+    "why": "A ray that left the sea floor for open water, flying on its disc rather than resting on it, and feeds by funnelling plankton into its mouth with two unrolled head fins and straining it through mesh plates in the gills.",
+    "src": "https://en.wikipedia.org/wiki/Manta_ray",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "reef"
+    ],
+    "out": "giant_grouper",
+    "why": "The largest bony fish on coral reefs, reaching about 2.7 metres. It hunts by opening its very large mouth fast enough that the drop in pressure pulls prey in whole.",
+    "src": "https://en.wikipedia.org/wiki/Giant_grouper",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef",
+      "scorpionfish"
+    ],
+    "out": "common_lionfish",
+    "why": "A lionfish is a scorpionfish, and carries the family's grooved venomous spines — thirteen dorsal, three anal, two pelvic. What sets it apart from its relatives is that it does not lie camouflaged on the bottom: it hovers in the open over the reef, fins spread, and herds small fish with them.",
+    "src": "https://en.wikipedia.org/wiki/Pterois",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "tooth"
+    ],
+    "out": "piranha",
+    "why": "A South American river fish with a single row of triangular blade-like teeth that interlock when the jaw closes, so the bite shears rather than grips.",
+    "src": "https://en.wikipedia.org/wiki/Piranha",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "whisker"
+    ],
+    "out": "common_carp",
+    "why": "A bottom-feeding freshwater fish with two pairs of barbels at the mouth, the longer pair at the corners, which it uses to find food by touch and taste in water too silty to see through.",
+    "src": "https://en.wikipedia.org/wiki/Common_carp",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "mucus"
+    ],
+    "out": "wels_catfish",
+    "why": "Europe's largest freshwater fish, and scaleless — the skin is bare and heavily coated in mucus, which is where the slipperiness of a catfish comes from.",
+    "src": "https://en.wikipedia.org/wiki/Wels_catfish",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "nile"
+    ],
+    "out": "nile_perch",
+    "why": "A large predatory fish of the Nile and the rivers and lakes of tropical Africa, reaching about two metres. Introduced to Lake Victoria in the 1950s, where it drove much of the lake's cichlid fauna to extinction.",
+    "src": "https://en.wikipedia.org/wiki/Nile_perch",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "symbiosis"
+    ],
+    "out": "clownfish",
+    "why": "It lives among the stinging tentacles of a sea anemone, which kill other small fish. A mucus coat lets it move through them unstung; it gets shelter, and the anemone gets a defender and its waste as fertiliser.",
+    "src": "https://en.wikipedia.org/wiki/Amphiprioninae",
+    "verified": true
+  },
+  {
+    "in": [
+      "cephalopod",
+      "detritus"
+    ],
+    "out": "vampire_squid",
+    "why": "The only known cephalopod that does not hunt living prey. It lives in the oxygen minimum zone and streams out a long sticky filament to gather marine snow — sinking flakes of dead plankton and faecal matter — which it wipes off and eats.",
+    "src": "https://en.wikipedia.org/wiki/Vampire_squid",
+    "verified": true
+  },
+  {
+    "in": [
+      "mammal",
+      "river"
+    ],
+    "out": "pakicetus",
+    "why": "A wolf-sized four-legged mammal from Eocene Pakistan that lived beside fresh water and is counted the earliest known whale — not from its shape but from its ear, whose thickened involucrum bone is found in whales and in nothing else.",
+    "src": "https://en.wikipedia.org/wiki/Pakicetus",
+    "verified": true
+  },
+  {
+    "in": [
+      "beak",
+      "dinosaur"
+    ],
+    "out": "iguanodon",
+    "why": "A large plant-eating dinosaur that cropped with a horny beak at the front of the jaw and ground with packed rows of cheek teeth behind it. It also carried a conical spike in place of a thumb, which Mantell's first reconstruction put on the nose as a horn.",
+    "src": "https://en.wikipedia.org/wiki/Iguanodon",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "mammal"
+    ],
+    "out": "flea",
+    "why": "A wingless insect flattened side to side so it can run between the hairs of a mammal, with hind legs that store energy in a pad of resilin and release it to jump many times its own length, and mouthparts that pierce skin to drink blood.",
+    "src": "https://en.wikipedia.org/wiki/Flea",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartilage",
+      "vertebrate"
+    ],
+    "out": "elasmobranch",
+    "why": "Sharks, rays and skates are the vertebrates whose skeleton never turns to bone. It stays cartilage for life, stiffened at the jaws and spine with a crust of mineral prisms rather than replaced, which is lighter than bone and helps hold a body heavier than water off the bottom.",
+    "src": "https://en.wikipedia.org/wiki/Elasmobranchii",
+    "verified": true
+  },
+  {
+    "in": [
+      "elasmobranch",
+      "sand"
+    ],
+    "out": "ray",
+    "why": "The rays are the elasmobranchs that went flat to live on the bottom: the body is pressed dorsoventrally, the pectoral fins have grown forward and fused to the head into a disc, and the gill slits have moved to the underside.",
+    "src": "https://en.wikipedia.org/wiki/Batoidea",
+    "verified": true
+  },
+  {
+    "in": [
+      "dinosaur",
+      "plate"
+    ],
+    "out": "stegosaurus",
+    "why": "A thyreophoran dinosaur carrying two staggered rows of tall bony plates down its back. They were not armour — thin, and threaded with blood vessels — so they are read as display or heat exchange, with the defence left to four tail spikes.",
+    "src": "https://en.wikipedia.org/wiki/Stegosaurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "dinosaur",
+      "skull"
+    ],
+    "out": "pachycephalosaurus",
+    "why": "A dinosaur whose skull roof thickened into a dome of solid bone up to 25 centimetres deep, ringed with knobs and short spikes, over a body otherwise built like any other two-legged plant-eater.",
+    "src": "https://en.wikipedia.org/wiki/Pachycephalosaurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "detritus",
+      "myriapod"
+    ],
+    "out": "millipede",
+    "why": "The myriapods that gave up hunting for leaf litter. Their trunk segments are fused in pairs, so each apparent segment carries two pairs of legs rather than one — many short legs pushing a body built to burrow rather than to chase.",
+    "src": "https://en.wikipedia.org/wiki/Millipede",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "spore"
+    ],
+    "out": "fern",
+    "why": "A vascular plant that never evolved seeds. It scatters spores from the underside of its fronds, and those grow into a separate tiny plant that makes the egg and sperm, so the fern alternates between two independent generations.",
+    "src": "https://en.wikipedia.org/wiki/Fern",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "xylem"
+    ],
+    "out": "clubmoss",
+    "why": "The oldest surviving lineage of vascular plants. Despite the name it is not a moss: it has xylem to carry water up a stem, true roots, and small single-veined leaves, all of which the mosses lack.",
+    "src": "https://en.wikipedia.org/wiki/Lycopodiopsida",
+    "verified": true
+  },
+  {
+    "in": [
+      "chicken",
+      "nematode"
+    ],
+    "out": "ascaridia_galli",
+    "why": "The largest nematode of poultry, reaching about 12 centimetres in the small intestine of a chicken. Birds pick it up by swallowing eggs that have matured in the litter.",
+    "src": "https://en.wikipedia.org/wiki/Ascaridia_galli",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "nematode"
+    ],
+    "out": "enterobius_vermicularis",
+    "why": "The pinworm, and the commonest human worm in temperate countries. Humans are its only host. The female leaves the gut at night to lay her eggs on the skin around the anus, which is what makes the infection itch and how it spreads.",
+    "src": "https://en.wikipedia.org/wiki/Enterobius_vermicularis",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "nematode"
+    ],
+    "out": "wuchereria_bancrofti",
+    "why": "A thread-thin nematode whose adults live in the lymphatic vessels. Its larvae circulate in the blood mostly at night, timed to when the mosquito that carries them between people is biting.",
+    "src": "https://en.wikipedia.org/wiki/Wuchereria_bancrofti",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "insect"
+    ],
+    "out": "head_louse",
+    "why": "A wingless insect found on no animal but us, with claws curved to exactly the diameter of a human hair so it can grip the shaft, and mouthparts that pierce the scalp to drink blood.",
+    "src": "https://en.wikipedia.org/wiki/Head_louse",
+    "verified": true
+  },
+  {
+    "in": [
+      "clothing",
+      "head_louse"
+    ],
+    "out": "body_louse",
+    "why": "The same species as the head louse, living in the seams of clothing and moving onto the skin only to feed. Because it cannot exist without clothes, dating the split between the two gives an estimate of when people began wearing them.",
+    "src": "https://en.wikipedia.org/wiki/Body_louse",
+    "verified": true
+  },
+  {
+    "in": [
+      "arachnid",
+      "skin"
+    ],
+    "out": "scabies_mite",
+    "why": "A mite under half a millimetre long. The female tunnels into the outer layer of the skin and lays her eggs along the burrow; the itch is an allergic reaction to the mite and its waste, and takes weeks to begin.",
+    "src": "https://en.wikipedia.org/wiki/Sarcoptes_scabiei",
+    "verified": true
+  },
+  {
+    "in": [
+      "bug",
+      "cloth"
+    ],
+    "out": "bed_bug",
+    "why": "A true bug, flattened side to side and about the size of an apple pip, which spends the day in seams and crevices near where people sleep and feeds on blood at night.",
+    "src": "https://en.wikipedia.org/wiki/Bed_bug",
+    "verified": true
+  },
+  {
+    "in": [
+      "barnacle",
+      "whale"
+    ],
+    "out": "whale_barnacle",
+    "why": "A barnacle that settles on nothing but whale skin, growing its plates down into it so it cannot be shed. It never has to search for food: the whale swims, and the water brings it.",
+    "src": "https://en.wikipedia.org/wiki/Whale_barnacle",
+    "verified": true
+  },
+  {
+    "in": [
+      "flatworm",
+      "snail"
+    ],
+    "out": "trematode",
+    "why": "The parasitic flukes. Almost every one of them passes through a snail first, where a single larva multiplies into many before moving on to its next host.",
+    "src": "https://en.wikipedia.org/wiki/Trematoda",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "mammal"
+    ],
+    "out": "sea_otter",
+    "why": "A marine mammal with no blubber at all. It stays warm on fur alone, the densest of any animal at up to a million hairs per square inch, which traps a layer of air against the skin.",
+    "src": "https://en.wikipedia.org/wiki/Sea_otter",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "theropod"
+    ],
+    "out": "baryonyx",
+    "why": "A theropod with a long narrow crocodile-like snout and conical unserrated teeth, unlike the blades of other big predators. The first skeleton found had scales of the fish Scheenstia in its gut.",
+    "src": "https://en.wikipedia.org/wiki/Baryonyx",
+    "verified": true
+  },
+  {
+    "in": [
+      "claw",
+      "theropod"
+    ],
+    "out": "deinocheirus",
+    "why": "Known for fifty years from nothing but a pair of arms 2.4 metres long, which is how it got its name, the horrible hand. Skeletons described in 2014 showed a large humped ornithomimosaur with a duck-like bill.",
+    "src": "https://en.wikipedia.org/wiki/Deinocheirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "theropod"
+    ],
+    "out": "oviraptor",
+    "why": "Named the egg seizer from a skeleton found lying on a nest, assumed to have been raiding it. An embryo found inside the same kind of egg in the 1990s showed the eggs were its own and it had been sitting on them.",
+    "src": "https://en.wikipedia.org/wiki/Oviraptor",
+    "verified": true
+  },
+  {
+    "in": [
+      "feather",
+      "theropod"
+    ],
+    "out": "microraptor",
+    "why": "A small feathered dinosaur with long asymmetric flight feathers on its hind limbs as well as its arms, giving it four wing surfaces rather than two.",
+    "src": "https://en.wikipedia.org/wiki/Microraptor",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "pouch"
+    ],
+    "out": "pelican",
+    "why": "A bird that fishes with a throat pouch of bare skin slung under a long bill, using it as a net; it drains the water out at the surface before swallowing.",
+    "src": "https://en.wikipedia.org/wiki/Pelican",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "island"
+    ],
+    "out": "kagu",
+    "why": "An ash-grey bird found wild only in the forests of New Caledonia. It has wings large enough to display but not to fly, and nasal flaps covering its nostrils that no other bird has.",
+    "src": "https://en.wikipedia.org/wiki/Kagu",
+    "verified": true
+  },
+  {
+    "in": [
+      "amphibian",
+      "soil"
+    ],
+    "out": "caecilian",
+    "why": "An amphibian that gave up its legs for burrowing. It drives a bone-reinforced skull through soil, its eyes are covered by skin or bone, and it finds its way with a chemical-sensing tentacle between eye and nostril.",
+    "src": "https://en.wikipedia.org/wiki/Caecilian",
+    "verified": true
+  },
+  {
+    "in": [
+      "keratin",
+      "monotreme"
+    ],
+    "out": "echidna",
+    "why": "One of the few mammals that lays eggs, and covered in spines that are not a separate structure at all but single hairs thickened with keratin.",
+    "src": "https://en.wikipedia.org/wiki/Echidna",
+    "verified": true
+  },
+  {
+    "in": [
+      "keratin",
+      "mammal"
+    ],
+    "out": "pangolin",
+    "why": "The only mammal with true scales: overlapping plates of keratin, the same material as a fingernail, covering everything but the belly. It rolls into a ball that a lion cannot open.",
+    "src": "https://en.wikipedia.org/wiki/Pangolin",
+    "verified": true
+  },
+  {
+    "in": [
+      "marsupial",
+      "venom"
+    ],
+    "out": "opossum",
+    "why": "An American marsupial whose blood carries a protein that neutralises snake venom, letting it survive bites that would kill an animal its size. It is also the animal that plays dead, an involuntary collapse rather than a decision.",
+    "src": "https://en.wikipedia.org/wiki/Opossum",
+    "verified": true
+  },
+  {
+    "in": [
+      "marsupial",
+      "tongue"
+    ],
+    "out": "numbat",
+    "why": "A marsupial that eats nothing but termites, up to twenty thousand a day, gathered on a tongue longer than its own head. Unusually for an Australian marsupial it is active only by day, because that is when termites are near the surface.",
+    "src": "https://en.wikipedia.org/wiki/Numbat",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "venom"
+    ],
+    "out": "wasp",
+    "why": "An insect with a waist so narrow the abdomen hangs from a stalk, and a sting that is a modified egg-laying tube — which is why only females have one.",
+    "src": "https://en.wikipedia.org/wiki/Wasp",
+    "verified": true
+  },
+  {
+    "in": [
+      "mammal",
+      "nose"
+    ],
+    "out": "sengi",
+    "why": "A small African mammal with a long flexible snout it swings to sniff out insects. Despite looking like a shrew it belongs with elephants and aardvarks, and it keeps a network of cleared trails it can sprint along.",
+    "src": "https://en.wikipedia.org/wiki/Elephant_shrew",
+    "verified": true
+  },
+  {
+    "in": [
+      "dicot",
+      "root"
+    ],
+    "out": "elecampane",
+    "why": "A tall yellow-flowered daisy grown for its thick root, which stores its carbohydrate as inulin rather than starch — the substance was first isolated from this plant, and is named after it.",
+    "src": "https://en.wikipedia.org/wiki/Inula_helenium",
+    "verified": true
+  },
+  {
+    "in": [
+      "independence",
+      "russia"
+    ],
+    "out": "finland",
+    "why": "A Swedish province for six centuries, then an autonomous Grand Duchy under the Russian tsar from 1809. It declared independence in December 1917, weeks after the Russian empire it belonged to collapsed.",
+    "src": "https://en.wikipedia.org/wiki/Finland",
+    "verified": true
+  },
+  {
+    "in": [
+      "kingdom",
+      "viking"
+    ],
+    "out": "denmark",
+    "why": "One of Europe's oldest kingdoms, drawn together on the Jutland peninsula and the islands east of it during the Viking age. The Jelling stone raised by Harald Bluetooth about 965 is the first thing to call the place Denmark.",
+    "src": "https://en.wikipedia.org/wiki/Denmark",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "soviet_union"
+    ],
+    "out": "armenia",
+    "why": "The first state in the world to adopt Christianity, in 301. Absorbed by the Russian empire and then the Soviet Union, and independent again in 1991. Ararat, the mountain on its coat of arms, has stood over the border in Turkey since 1921.",
+    "src": "https://en.wikipedia.org/wiki/Armenia",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "soviet_union"
+    ],
+    "out": "azerbaijan",
+    "why": "Baku was pumping about half the world's oil by 1900, which is why the Soviet Union held the region so tightly and why the German army drove for it in 1942. Independent in 1991.",
+    "src": "https://en.wikipedia.org/wiki/Azerbaijan",
+    "verified": true
+  },
+  {
+    "in": [
+      "referendum",
+      "sudan"
+    ],
+    "out": "south_sudan",
+    "why": "The newest country in the world. After two long civil wars, a 2011 referendum in the south of Sudan returned 98.8 per cent for separation, and it became independent that July.",
+    "src": "https://en.wikipedia.org/wiki/South_Sudan",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethiopia",
+      "referendum"
+    ],
+    "out": "eritrea",
+    "why": "An Italian colony, then federated to Ethiopia and annexed by it. Thirty years of war ended in a 1993 referendum in which almost everyone voted to leave, taking Ethiopia's entire coastline with them.",
+    "src": "https://en.wikipedia.org/wiki/Eritrea",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "strait"
+    ],
+    "out": "djibouti",
+    "why": "French Somaliland until 1977, held for its position on the Bab-el-Mandeb, the strait every ship between the Mediterranean and the Indian Ocean must pass through.",
+    "src": "https://en.wikipedia.org/wiki/Djibouti",
+    "verified": true
+  },
+  {
+    "in": [
+      "independence",
+      "italy"
+    ],
+    "out": "somalia",
+    "why": "Made in 1960 by joining two colonies that became independent five days apart: British Somaliland in the north and Italian Somaliland, which Italy had continued to administer under a UN trusteeship.",
+    "src": "https://en.wikipedia.org/wiki/Somalia",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "nile"
+    ],
+    "out": "uganda",
+    "why": "A British protectorate from 1894 to 1962, assembled around the kingdom of Buganda and around Lake Victoria, where the White Nile begins.",
+    "src": "https://en.wikipedia.org/wiki/Uganda",
+    "verified": true
+  },
+  {
+    "in": [
+      "belgium",
+      "rift_valley"
+    ],
+    "out": "burundi",
+    "why": "Half of Ruanda-Urundi, a German colony taken by Belgium after the First World War and split in two at independence in 1962. It sits on the western branch of the Great Rift Valley.",
+    "src": "https://en.wikipedia.org/wiki/Burundi",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "rift_valley"
+    ],
+    "out": "malawi",
+    "why": "The British protectorate of Nyasaland until 1964, named for the lake that fills the southern end of the rift and takes up a fifth of the country.",
+    "src": "https://en.wikipedia.org/wiki/Malawi",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "waterfall"
+    ],
+    "out": "zimbabwe",
+    "why": "Southern Rhodesia, run from London and then by a white settler government that declared its own independence in 1965; majority rule came in 1980. It takes its name from Great Zimbabwe, a dry-stone city built without mortar.",
+    "src": "https://en.wikipedia.org/wiki/Zimbabwe",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "portugal"
+    ],
+    "out": "mozambique",
+    "why": "Portuguese East Africa for nearly five centuries, a base on the sea route to India, until a ten-year war and the 1974 revolution in Lisbon ended the empire.",
+    "src": "https://en.wikipedia.org/wiki/Mozambique",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "kingdom"
+    ],
+    "out": "eswatini",
+    "why": "A kingdom that survived colonisation as a British protectorate and came out of it in 1968 still a monarchy. It changed its name from Swaziland in 2018.",
+    "src": "https://en.wikipedia.org/wiki/Eswatini",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "mountain"
+    ],
+    "out": "lesotho",
+    "why": "Basutoland, which asked for British protection in 1868 to avoid being swallowed by its neighbour, and is now the only country lying entirely above 1,000 metres.",
+    "src": "https://en.wikipedia.org/wiki/Lesotho",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "volcano"
+    ],
+    "out": "comoros",
+    "why": "A French colony until 1975, and a chain of volcanic islands; Karthala on the largest is one of the most active volcanoes in the world.",
+    "src": "https://en.wikipedia.org/wiki/Comoros",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "spain"
+    ],
+    "out": "equatorial_guinea",
+    "why": "Spanish Guinea until 1968, and the only sovereign African state where Spanish is official. Its capital stands not on the mainland but on a volcanic island 200 kilometres offshore.",
+    "src": "https://en.wikipedia.org/wiki/Equatorial_Guinea",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "mountain"
+    ],
+    "out": "cameroon",
+    "why": "German Kamerun, divided between France and Britain after the First World War and reunited at independence in 1960. Mount Cameroon, an active volcano, is the highest point in West Africa.",
+    "src": "https://en.wikipedia.org/wiki/Cameroon",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "savanna"
+    ],
+    "out": "central_african_republic",
+    "why": "Ubangi-Shari, a French territory of savanna between the Sahel and the rainforest, independent in 1960.",
+    "src": "https://en.wikipedia.org/wiki/Central_African_Republic",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "sahara"
+    ],
+    "out": "chad",
+    "why": "A French territory until 1960, stretching from the deep Sahara in the north to the lake in the south that gives it its name — a lake that has lost most of its area since the 1960s.",
+    "src": "https://en.wikipedia.org/wiki/Chad",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "uranium"
+    ],
+    "out": "niger",
+    "why": "French until 1960, named for the river that clips its south-western corner. Uranium found at Arlit in the 1960s became most of what it sells abroad.",
+    "src": "https://en.wikipedia.org/wiki/Niger",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "river"
+    ],
+    "out": "burkina_faso",
+    "why": "Upper Volta under France, named for the three rivers that rise in it, until it renamed itself in 1984 Burkina Faso — the land of upright people.",
+    "src": "https://en.wikipedia.org/wiki/Burkina_Faso",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "phosphate"
+    ],
+    "out": "togo",
+    "why": "German Togoland, split between Britain and France after the First World War; the French part became Togo in 1960. Phosphate rock is its main export.",
+    "src": "https://en.wikipedia.org/wiki/Togo",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "kingdom"
+    ],
+    "out": "benin",
+    "why": "Dahomey under France, and before that a kingdom powerful enough to field a regiment of women soldiers. It took the name Benin in 1975 from the bight it faces.",
+    "src": "https://en.wikipedia.org/wiki/Benin",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "iron"
+    ],
+    "out": "mauritania",
+    "why": "French until 1960, and named for the Mauri, the Berber people of the Roman province of Mauretania. Its iron ore leaves on a train more than two kilometres long.",
+    "src": "https://en.wikipedia.org/wiki/Mauritania",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "river"
+    ],
+    "out": "gambia",
+    "why": "A British colony until 1965, and barely a country at all in shape: a strip of land following the Gambia river inland, nowhere much wider than the valley itself.",
+    "src": "https://en.wikipedia.org/wiki/The_Gambia",
+    "verified": true
+  },
+  {
+    "in": [
+      "mangrove",
+      "portugal"
+    ],
+    "out": "guinea_bissau",
+    "why": "Portuguese Guinea, which won its independence in 1974 after a war that helped bring down the government in Lisbon. Its coast is a maze of mangrove and tidal creeks.",
+    "src": "https://en.wikipedia.org/wiki/Guinea-Bissau",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "lion"
+    ],
+    "out": "sierra_leone",
+    "why": "A British colony from 1808, founded as a settlement for freed slaves. The name is Portuguese, Serra Leoa, the lion mountains — for the hills behind Freetown, or the thunder over them.",
+    "src": "https://en.wikipedia.org/wiki/Sierra_Leone",
+    "verified": true
+  },
+  {
+    "in": [
+      "republic",
+      "united_states"
+    ],
+    "out": "liberia",
+    "why": "Settled from 1822 by free-born and formerly enslaved Black Americans, and a republic from 1847 — the only country in Africa never brought under European colonial rule.",
+    "src": "https://en.wikipedia.org/wiki/Liberia",
+    "verified": true
+  },
+  {
+    "in": [
+      "italy",
+      "sahara"
+    ],
+    "out": "libya",
+    "why": "An Italian colony from 1911, then under British and French administration, and in 1951 the first country to become independent through the United Nations. Nine-tenths of it is desert.",
+    "src": "https://en.wikipedia.org/wiki/Libya",
+    "verified": true
+  },
+  {
+    "in": [
+      "sugarcane",
+      "united_kingdom"
+    ],
+    "out": "barbados",
+    "why": "English from 1627 and British until 1966, and the island where the plantation and its slave code were worked out before being carried across the Caribbean.",
+    "src": "https://en.wikipedia.org/wiki/Barbados",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum",
+      "united_kingdom"
+    ],
+    "out": "trinidad_and_tobago",
+    "why": "Spanish, then British from 1797, and independent in 1962. Its Pitch Lake is the largest natural asphalt deposit on earth, and oil and gas still pay for the country.",
+    "src": "https://en.wikipedia.org/wiki/Trinidad_and_Tobago",
+    "verified": true
+  },
+  {
+    "in": [
+      "revolution",
+      "united_kingdom"
+    ],
+    "out": "united_states",
+    "why": "Thirteen British colonies that declared independence in 1776 and won it by 1783.",
+    "src": "https://en.wikipedia.org/wiki/United_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "independence"
+    ],
+    "out": "syria",
+    "why": "Under Ottoman rule for four centuries, then a French mandate from 1920, and independent in 1946. Damascus had been the capital of the Umayyad caliphate, which ruled from Spain to the Indus.",
+    "src": "https://en.wikipedia.org/wiki/Syria",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "desert"
+    ],
+    "out": "jordan",
+    "why": "Transjordan, carved out of the British mandate east of the river in 1921 and independent in 1946. Four-fifths of it is desert.",
+    "src": "https://en.wikipedia.org/wiki/Jordan",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "oil"
+    ],
+    "out": "kuwait",
+    "why": "A British protectorate from 1899 to 1961, and one of the first Gulf states where oil was found in commercial quantity, at Burgan in 1938.",
+    "src": "https://en.wikipedia.org/wiki/Kuwait",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "peninsula"
+    ],
+    "out": "qatar",
+    "why": "A peninsula under British protection until 1971, and the holder of a third of the world's proven natural gas after the North Field was found offshore in 1971.",
+    "src": "https://en.wikipedia.org/wiki/Qatar",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "treaty"
+    ],
+    "out": "united_arab_emirates",
+    "why": "Seven emirates known as the Trucial States, for the truces they signed with Britain in the nineteenth century to end raiding at sea. They federated as one country in 1971 when Britain withdrew.",
+    "src": "https://en.wikipedia.org/wiki/United_Arab_Emirates",
+    "verified": true
+  },
+  {
+    "in": [
+      "coffee",
+      "ottoman_empire"
+    ],
+    "out": "yemen",
+    "why": "Contested by the Ottomans for centuries, and the country that first cultivated coffee for export — the drink is named for Mocha, the Yemeni port it shipped from.",
+    "src": "https://en.wikipedia.org/wiki/Yemen",
+    "verified": true
+  },
+  {
+    "in": [
+      "british_empire",
+      "ruby"
+    ],
+    "out": "myanmar",
+    "why": "Burma, annexed to British India in three wars and independent in 1948, renamed Myanmar in 1989. The Mogok valley has produced most of the world's finest rubies.",
+    "src": "https://en.wikipedia.org/wiki/Myanmar",
+    "verified": true
+  },
+  {
+    "in": [
+      "glacier",
+      "soviet_union"
+    ],
+    "out": "tajikistan",
+    "why": "A Soviet republic until 1991, and the most mountainous country in central Asia; the Fedchenko glacier in the Pamirs is the longest outside the polar regions.",
+    "src": "https://en.wikipedia.org/wiki/Tajikistan",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "soviet_union"
+    ],
+    "out": "turkmenistan",
+    "why": "A Soviet republic until 1991. The Karakum desert covers about four-fifths of it, and a gas crater at Darvaza has been alight since Soviet geologists set it burning.",
+    "src": "https://en.wikipedia.org/wiki/Turkmenistan",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "island"
+    ],
+    "out": "madagascar",
+    "why": "A French colony from 1897 to 1960. It broke from Africa about 88 million years ago and its wildlife evolved alone: most of what lives there lives nowhere else.",
+    "src": "https://en.wikipedia.org/wiki/Madagascar",
+    "verified": true
+  },
+  {
+    "in": [
+      "saw",
+      "tree"
+    ],
+    "out": "plank",
+    "why": "Sawing a log lengthways rather than splitting it along the grain is what gives a flat board of even thickness, and it is the step that turns a tree into a building material.",
+    "src": "https://en.wikipedia.org/wiki/Plank_(wood)",
+    "verified": true
+  },
+  {
+    "in": [
+      "file",
+      "steel"
+    ],
+    "out": "blade",
+    "why": "A blade is not cast to shape. Steel is worked flat and then ground away on one or both sides until the edge is a few thousandths of a millimetre thick, which is what lets it wedge material apart.",
+    "src": "https://en.wikipedia.org/wiki/Blade",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank"
+    ],
+    "out": "handle",
+    "why": "Cut and shaped from a plank so the grain runs the length of it — across the grain and it snaps at the first hard pull, which is why an axe handle is split along the wood rather than sawn across it.",
+    "src": "https://en.wikipedia.org/wiki/Handle",
+    "verified": true,
+    "verb": "cut"
+  },
+  {
+    "in": [
+      "pipe",
+      "steel"
+    ],
+    "out": "pole",
+    "why": "A modern pole is steel tube rather than solid bar: a hollow section resists bending almost as well as a solid one of the same outside width while using a fraction of the metal, and it is galvanised so the inside does not rust out of sight.",
+    "src": "https://en.wikipedia.org/wiki/Utility_pole",
+    "verified": true
+  },
+  {
+    "in": [
+      "mineral"
+    ],
+    "out": "pigment",
+    "why": "Ground from coloured rock and earth — ochre, malachite, cinnabar. A pigment is insoluble, so unlike a dye it sits in the film rather than staining the fibre, and the grinding is what makes the particles small enough to hold an even colour.",
+    "src": "https://en.wikipedia.org/wiki/Pigment",
+    "verified": true,
+    "verb": "crush"
+  },
+  {
+    "in": [
+      "oil",
+      "pigment"
+    ],
+    "out": "paint",
+    "why": "Pigment alone is a powder that brushes off. Suspended in a drying oil it can be spread thin, and the oil then hardens by taking up oxygen from the air rather than by evaporating, leaving the colour bound in a tough film.",
+    "src": "https://en.wikipedia.org/wiki/Paint",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber",
+      "wire"
+    ],
+    "out": "cable",
+    "why": "Bare wire can only be strung through air on insulators. Sheathing it in rubber lets conductors run side by side, be buried, and be handled — which is the difference between a telegraph line and wiring a building.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_cable",
+    "verified": true
+  },
+  {
+    "in": [
+      "forge",
+      "metal"
+    ],
+    "out": "sheet_metal",
+    "why": "Metal squeezed between rollers or beaten flat comes out far thinner than it can be cast, and the working hardens it as it goes. A folded edge then makes it far stiffer than the flat sheet — which is why almost everything made from it has a lip.",
+    "src": "https://en.wikipedia.org/wiki/Sheet_metal",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "wire"
+    ],
+    "out": "mesh",
+    "why": "Wire mesh is genuinely woven, on a loom built for metal rather than thread — warp wires held under tension while weft wires are driven across them.",
+    "src": "https://en.wikipedia.org/wiki/Mesh",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "road"
+    ],
+    "out": "drain",
+    "why": "A road sheds water sideways because it is built with a camber, and the drain is where that water leaves. Below it sits a trap holding a plug of water, so the sewer's air cannot come back up.",
+    "src": "https://en.wikipedia.org/wiki/Storm_drain",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "road"
+    ],
+    "out": "pavement",
+    "why": "A pavement is the road's surface repeated at a different level: the same made ground, laid in slabs or poured, but held above the carriageway so that water, and traffic, run past rather than across it.",
+    "src": "https://en.wikipedia.org/wiki/Sidewalk",
+    "verified": true
+  },
+  {
+    "in": [
+      "pavement",
+      "stone"
+    ],
+    "out": "kerb",
+    "why": "A kerb is a retaining wall a hand's width tall. It stops the made-up pavement spreading sideways under load, and its face forms one side of the channel that carries surface water to the nearest drain.",
+    "src": "https://en.wikipedia.org/wiki/Kerb",
+    "verified": true
+  },
+  {
+    "in": [
+      "lamp",
+      "pole"
+    ],
+    "out": "traffic_light",
+    "why": "The first was set outside the Palace of Westminster in 1868, gas-lit and worked by a policeman with a lever; it exploded within a month. The colours were taken from railway signalling, which had already settled on red for stop.",
+    "src": "https://en.wikipedia.org/wiki/Traffic_light",
+    "verified": true
+  },
+  {
+    "in": [
+      "bulb",
+      "pole"
+    ],
+    "out": "streetlight",
+    "why": "Lighting the street rather than the doorway is what a pole buys: raising the lamp spreads its light over a long stretch of road instead of a pool at the foot of a wall, so far fewer are needed to light a whole street.",
+    "src": "https://en.wikipedia.org/wiki/Street_light",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "pole"
+    ],
+    "out": "bollard",
+    "why": "It works by being immovable rather than by being seen: most of a bollard is below ground, set in a concrete foundation deep enough that a vehicle striking it stops rather than pushes it over.",
+    "src": "https://en.wikipedia.org/wiki/Bollard",
+    "verified": true
+  },
+  {
+    "in": [
+      "paint",
+      "road"
+    ],
+    "out": "pedestrian_crossing",
+    "why": "The stripes are the whole mechanism: nothing is built, only painted, and the pattern reads at a distance and at a glance from a moving vehicle. Britain's striped version was trialled in 1949 and named the zebra.",
+    "src": "https://en.wikipedia.org/wiki/Pedestrian_crossing",
+    "verified": true
+  },
+  {
+    "in": [
+      "paint",
+      "sheet_metal"
+    ],
+    "out": "road_sign",
+    "why": "Shape carries meaning before the words do — a triangle warns, a circle orders, a rectangle informs — so a sign can be understood at speed, in a language the driver may not read. The 1968 Vienna Convention settled much of it internationally.",
+    "src": "https://en.wikipedia.org/wiki/Traffic_sign",
+    "verified": true
+  },
+  {
+    "in": [
+      "drain",
+      "iron"
+    ],
+    "out": "manhole",
+    "why": "The cover is cast iron and heavy on purpose: weight alone holds it down under traffic without a fastening, so it can still be lifted by one person with a bar. Round is the shape that cannot fall through its own hole.",
+    "src": "https://en.wikipedia.org/wiki/Manhole",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesh",
+      "pole"
+    ],
+    "out": "litter_bin",
+    "why": "Public bins are often open mesh rather than solid, so that what is inside can be seen at a glance — a precaution against concealment adopted widely after bombings in British and Irish cities.",
+    "src": "https://en.wikipedia.org/wiki/Waste_container",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "postage_stamp"
+    ],
+    "out": "postbox",
+    "why": "It only works once postage is paid by the sender. Before the stamp, letters were paid for on delivery and had to be handed to someone; a box that anyone can post into unattended is what the prepaid stamp made possible, in Britain from 1852.",
+    "src": "https://en.wikipedia.org/wiki/Post_box",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "sheet_metal"
+    ],
+    "out": "saucepan",
+    "why": "The body is pressed from a single disc of sheet metal so there is no seam to fail, and the handle is set out on a thin stalk — the narrower the bridge, the less heat crosses it, which is why a pan handle can be held while the pan is boiling.",
+    "src": "https://en.wikipedia.org/wiki/Cookware_and_bakeware",
+    "verified": true
+  },
+  {
+    "in": [
+      "bowl",
+      "sheet_metal"
+    ],
+    "out": "colander",
+    "why": "The holes are punched rather than drilled, so each one leaves a slightly raised rim on the outside; that is also why a colander stands on a foot, keeping the holes clear of whatever has just drained through them.",
+    "src": "https://en.wikipedia.org/wiki/Colander",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "mesh"
+    ],
+    "out": "sieve",
+    "why": "A sieve sorts purely by size, which is why the same tool sifts flour, strains stock and grades sand. Mesh is counted in wires per inch, so a higher number means a finer sieve.",
+    "src": "https://en.wikipedia.org/wiki/Sieve",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "wire"
+    ],
+    "out": "whisk",
+    "why": "The wires do not mix so much as tear the liquid apart and drag air in behind them. More loops means more edges doing that at once, which is why a balloon whisk beats egg white faster than a fork.",
+    "src": "https://en.wikipedia.org/wiki/Whisk",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "sheet_metal"
+    ],
+    "out": "grater",
+    "why": "Each hole is punched and its lip left standing proud, so the sheet carries hundreds of tiny raised cutting edges. The sharpest modern kind came from a woodworking rasp: a photo-etched blade a cook borrowed from a hardware shop.",
+    "src": "https://en.wikipedia.org/wiki/Grater",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "handle"
+    ],
+    "out": "peeler",
+    "why": "The slot is what makes it a peeler rather than a knife: the blade floats and follows the surface, so the cut stays the same thin depth over a curve instead of digging in.",
+    "src": "https://en.wikipedia.org/wiki/Peeler",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "plank"
+    ],
+    "out": "chopping_board",
+    "why": "Wood closes back around a cut, which both spares the edge and gives bacteria less to sit in than a scored plastic surface. It is oiled rather than varnished so it takes up oil instead of water.",
+    "src": "https://en.wikipedia.org/wiki/Cutting_board",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "screw"
+    ],
+    "out": "corkscrew",
+    "why": "The helix does not bite into the cork so much as thread through it, spreading the pull along its whole length so the cork comes out in one piece. Samuel Henshall patented the first improvement in 1795, a disc that stops the worm going too deep.",
+    "src": "https://en.wikipedia.org/wiki/Corkscrew",
+    "verified": true
+  },
+  {
+    "in": [
+      "bowl",
+      "handle"
+    ],
+    "out": "ladle",
+    "why": "The bowl is set at an angle to the handle so it stays level as the arm swings, and the handle is long enough to reach the bottom of a stockpot without putting a hand over the steam.",
+    "src": "https://en.wikipedia.org/wiki/Ladle_(spoon)",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "plastic"
+    ],
+    "out": "spatula",
+    "why": "Flexibility is the whole point: the blade bends to the shape of the pan or bowl so it can get under something without breaking it, or clear the sides of a bowl in one pass.",
+    "src": "https://en.wikipedia.org/wiki/Spatula",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "wood"
+    ],
+    "out": "rolling_pin",
+    "why": "Weight does the work rather than force, which is why it is solid wood. The French kind has no handles at all: rolling with the palms on the pin itself gives more feel for where the dough is still thick.",
+    "src": "https://en.wikipedia.org/wiki/Rolling_pin",
+    "verified": true
+  },
+  {
+    "in": [
+      "gear",
+      "spring"
+    ],
+    "out": "clock",
+    "why": "A mainspring stores the energy and a train of gears steps it down, but neither keeps time. The escapement does: it lets the train advance by exactly one tooth per swing of the oscillator, which is also what makes the ticking.",
+    "src": "https://en.wikipedia.org/wiki/Clock",
+    "verified": true
+  },
+  {
+    "in": [
+      "glue",
+      "pulp"
+    ],
+    "out": "cardboard",
+    "why": "The flutes are the whole trick. Standing on edge between two liners they act as a row of tiny arches, so the board resists a load far out of proportion to its weight — and collapses at once if the flutes are crushed.",
+    "src": "https://en.wikipedia.org/wiki/Cardboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "scale"
+    ],
+    "out": "ruler",
+    "why": "It does two unrelated jobs at once: the edge guides a pen, and the graduations measure. Only the first needs it to be straight, which is why a bent ruler still measures correctly and still draws badly.",
+    "src": "https://en.wikipedia.org/wiki/Ruler",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "spring"
+    ],
+    "out": "stapler",
+    "why": "The fold is what fastens it, not the puncture. A small anvil under the paper turns the legs inward as they come through, so the staple closes on itself; turn the anvil round and it clinches outward instead, for a staple meant to be pulled out again.",
+    "src": "https://en.wikipedia.org/wiki/Stapler",
+    "verified": true
+  },
+  {
+    "in": [
+      "spring",
+      "wire"
+    ],
+    "out": "paperclip",
+    "why": "Nothing is fastened and nothing is pierced: the wire is sprung slightly open by the paper and the grip is it trying to close again. The familiar double-oval shape is the Gem pattern, made in Britain from the 1890s.",
+    "src": "https://en.wikipedia.org/wiki/Paper_clip",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "thread"
+    ],
+    "out": "notebook",
+    "why": "Sheets are folded into sections and sewn through the fold, section to section. A sewn book opens flat because nothing crosses the spine but thread — which is exactly what a glued one cannot do.",
+    "src": "https://en.wikipedia.org/wiki/Notebook",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "rubber"
+    ],
+    "out": "rubber_stamp",
+    "why": "It is relief printing at hand scale: only the raised parts take ink, so the design must be cut in reverse. Rubber rather than metal because it gives slightly, and so prints evenly onto a surface that is not quite flat.",
+    "src": "https://en.wikipedia.org/wiki/Rubber_stamp",
+    "verified": true
+  },
+  {
+    "in": [
+      "ink",
+      "plastic"
+    ],
+    "out": "highlighter",
+    "why": "Ordinary ink covers. Highlighter ink is a fluorescent dye in a see-through carrier, so the words read straight through it, and the dye throws back more visible light than falls on it — which is why the colour looks brighter than the paper.",
+    "src": "https://en.wikipedia.org/wiki/Highlighter",
+    "verified": true
+  },
+  {
+    "in": [
+      "cardboard"
+    ],
+    "out": "folder",
+    "why": "The simplest possible container: one fold, no fastening. It works because paper slides out of a stack but not out of a crease, and because the folded edge tells you which way up the contents go.",
+    "src": "https://en.wikipedia.org/wiki/File_folder",
+    "verified": true,
+    "verb": "cut"
+  },
+  {
+    "in": [
+      "cardboard",
+      "wire"
+    ],
+    "out": "binder",
+    "why": "Punched holes and openable rings make the order of the pages a thing you can change afterwards, which a sewn or glued book cannot do. Friedrich Soennecken patented both the ring binder and the hole punch for it, in 1886.",
+    "src": "https://en.wikipedia.org/wiki/Ring_binder",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "rivet"
+    ],
+    "out": "pliers",
+    "why": "The rivet is the whole machine. Because the handles are several times longer than the jaws, the hand's grip arrives at the jaws multiplied by that ratio — which is why a small pair can hold what fingers cannot.",
+    "src": "https://en.wikipedia.org/wiki/Pliers",
+    "verified": true
+  },
+  {
+    "in": [
+      "glue",
+      "sand"
+    ],
+    "out": "sandpaper",
+    "why": "Every grain is a tiny cutting edge presented at a random angle, and the grit number is the mesh that graded them — a count of wires per inch of the sieve the grains just fit through, which is why a higher number means finer.",
+    "src": "https://en.wikipedia.org/wiki/Sandpaper",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol",
+      "glass"
+    ],
+    "out": "spirit_level",
+    "why": "The spirit it is named for is ethanol: thin enough to let the bubble move quickly and not liable to freeze. The vial is very slightly curved, so the bubble — being the lightest thing in there — always sits at the highest point of the curve, and reads centre only when the tool is level.",
+    "src": "https://en.wikipedia.org/wiki/Spirit_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "screw",
+      "wood"
+    ],
+    "out": "clamp",
+    "why": "It exists because glue needs pressure and time at once. The screw converts a turn into a squeeze and, being a screw, does not undo itself when let go — so the joint can be left overnight.",
+    "src": "https://en.wikipedia.org/wiki/Clamp_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bench",
+      "screw"
+    ],
+    "out": "vice",
+    "why": "Fixing it to the bench is the difference: a clamp holds two things to each other, a vice holds one thing to the world. That is what lets you file, saw or hammer against it without the work moving.",
+    "src": "https://en.wikipedia.org/wiki/Vise",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "iron"
+    ],
+    "out": "crowbar",
+    "why": "The bend is the point of it. It puts a fulcrum right beside the wedge, so the long bar swings on the short end and the force arriving at the joint is many times what the arm applied.",
+    "src": "https://en.wikipedia.org/wiki/Crowbar_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "box",
+      "handle"
+    ],
+    "out": "drawer",
+    "why": "A shelf is only usable at its front edge. Pulling the box out instead turns the whole depth into the front, which is the entire reason for a drawer and why the handle is the only part of it you ever touch.",
+    "src": "https://en.wikipedia.org/wiki/Drawer_(furniture)",
+    "verified": true
+  },
+  {
+    "in": [
+      "drawer",
+      "table"
+    ],
+    "out": "desk",
+    "why": "A table becomes a desk when the storage arrives at the sitter rather than the room: drawers under the top put paper, pens and ink within reach of a seated arm.",
+    "src": "https://en.wikipedia.org/wiki/Desk",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "cupboard"
+    ],
+    "out": "wardrobe",
+    "why": "Hanging rather than folding is what the height buys. A folded coat creases along the fold and takes the shape of the pile; hung from the shoulders it keeps the shape it was cut to.",
+    "src": "https://en.wikipedia.org/wiki/Wardrobe",
+    "verified": true
+  },
+  {
+    "in": [
+      "spring",
+      "wool"
+    ],
+    "out": "mattress",
+    "why": "Springs under a soft layer do what neither does alone: the springs push back in proportion to how far each is pressed, so a heavy part of the body sinks further and a light part less, and the whole line of the spine stays supported.",
+    "src": "https://en.wikipedia.org/wiki/Mattress",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "feather"
+    ],
+    "out": "pillow",
+    "why": "Lying on one side leaves the head unsupported by the width of a shoulder. The pillow fills exactly that gap, which is why a side sleeper wants a thicker one than someone lying on their back.",
+    "src": "https://en.wikipedia.org/wiki/Pillow",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "pole"
+    ],
+    "out": "mop",
+    "why": "The pole is the whole invention: it puts the cloth on the floor and the hands at waist height. Strands rather than a sheet because loose ends reach into corners and hold far more water for their weight.",
+    "src": "https://en.wikipedia.org/wiki/Mop",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "stairs"
+    ],
+    "out": "tower",
+    "why": "A tower is not a tall house. It is built to see from, be seen from, or drop something down, and the stairs are what make the height usable — which is why the stair is often the whole interior.",
+    "src": "https://en.wikipedia.org/wiki/Tower",
+    "verified": true
+  },
+  {
+    "in": [
+      "battery",
+      "computer"
+    ],
+    "out": "laptop",
+    "why": "The battery is what makes it a laptop rather than a small desktop: it cuts the last cable, so the machine can be used anywhere rather than merely moved between places with sockets.",
+    "src": "https://en.wikipedia.org/wiki/Laptop",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "ink"
+    ],
+    "out": "printer",
+    "why": "It turns a grid of numbers back into a physical mark. An inkjet does it by firing droplets a few picolitres at a time, steered to a spot far smaller than the eye resolves, which is why the page looks continuous rather than dotted.",
+    "src": "https://en.wikipedia.org/wiki/Printer_(computing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "pixel"
+    ],
+    "out": "monitor",
+    "why": "The whole image is a grid of pixels, each one three subpixels of red, green and blue lit to different amounts. There is no yellow in the screen: yellow is red and green next to each other, too close for the eye to separate.",
+    "src": "https://en.wikipedia.org/wiki/Computer_monitor",
+    "verified": true
+  },
+  {
+    "in": [
+      "cone",
+      "magnet"
+    ],
+    "out": "speaker",
+    "why": "A coil of wire sits in the field of a permanent magnet and is glued to a paper cone. Current through the coil pushes it along the magnet, the cone moves with it, and the air in front is pressed and released — which is what sound is.",
+    "src": "https://en.wikipedia.org/wiki/Loudspeaker",
+    "verified": true
+  },
+  {
+    "in": [
+      "cable",
+      "speaker"
+    ],
+    "out": "headphones",
+    "why": "Being at the ear rather than across a room changes what is needed: microwatts instead of watts, and each ear hears only its own channel, with none of the crossover that makes a room's stereo image collapse when you move.",
+    "src": "https://en.wikipedia.org/wiki/Headphones",
+    "verified": true
+  },
+  {
+    "in": [
+      "battery",
+      "electricity"
+    ],
+    "out": "charger",
+    "why": "It is not simply a supply. It must force current backwards through the cell against its own voltage, then taper off as the cell fills — charge too fast at the end and lithium plates out as metal on the anode, which is what ruins a battery.",
+    "src": "https://en.wikipedia.org/wiki/Battery_charger",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "rail"
+    ],
+    "out": "tram",
+    "why": "Rails in the road are what separate it from a bus: steel on steel has a fraction of the rolling resistance of rubber on asphalt, so far less power moves the same load, and the vehicle cannot wander from its line.",
+    "src": "https://en.wikipedia.org/wiki/Tram",
+    "verified": true
+  },
+  {
+    "in": [
+      "automobile",
+      "box"
+    ],
+    "out": "van",
+    "why": "Everything follows from putting a box where the back seats were: a flat floor, a high roof, doors at the side and rear, and windows only where the driver needs them.",
+    "src": "https://en.wikipedia.org/wiki/Van",
+    "verified": true
+  },
+  {
+    "in": [
+      "bicycle",
+      "internal_combustion_engine"
+    ],
+    "out": "motorcycle",
+    "why": "It began as exactly that — Daimler's 1885 Reitwagen was a wooden bicycle with a petrol engine — but power meant heavier frames, real brakes and wider tyres, because a machine that can reach speed must also be able to stop and to hold the road.",
+    "src": "https://en.wikipedia.org/wiki/Motorcycle",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "wheel"
+    ],
+    "out": "scooter",
+    "why": "Standing rather than sitting is the whole design: one foot stays on the board and the other pushes, so the rider can step off at any moment, which is why it needs no gears, no chain and no seat.",
+    "src": "https://en.wikipedia.org/wiki/Kick_scooter",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "desk"
+    ],
+    "out": "office",
+    "why": "It exists because some work has no material to be near. Once the product is paper or numbers rather than cloth or steel, the workplace can be anywhere, and what it is built around is the desk.",
+    "src": "https://en.wikipedia.org/wiki/Office",
+    "verified": true
+  },
+  {
+    "in": [
+      "book",
+      "brick"
+    ],
+    "out": "library",
+    "why": "The building is the easy part. What makes a library is the ordering: without an agreed scheme, a million books and no book are the same thing, which is why every library is really a catalogue with shelves attached.",
+    "src": "https://en.wikipedia.org/wiki/Library",
+    "verified": true
+  },
+  {
+    "in": [
+      "nail",
+      "plank"
+    ],
+    "out": "crate",
+    "why": "Gaps between the boards are deliberate. They save weight and wood, let the contents be seen and let air through, and the strength comes from the corners rather than the faces.",
+    "src": "https://en.wikipedia.org/wiki/Crate",
+    "verified": true
+  },
+  {
+    "in": [
+      "button",
+      "leather"
+    ],
+    "out": "purse",
+    "why": "It has to shut. A pocket holds what is put in it only while you are upright; a purse has a fastening, which is what makes it safe to carry loose coins at all.",
+    "src": "https://en.wikipedia.org/wiki/Coin_purse",
+    "verified": true
+  },
+  {
+    "in": [
+      "button",
+      "cloth"
+    ],
+    "out": "coat",
+    "why": "The buttons are what make it outerwear. A coat has to be put on and taken off over other clothes and closed against wind, so it opens all the way down the front — unlike anything worn next to the skin.",
+    "src": "https://en.wikipedia.org/wiki/Coat_(clothing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "zipper"
+    ],
+    "out": "jacket",
+    "why": "Stopping at the hip is what it is for: the leg swings freely, so it can be worn to work in rather than only to travel in, and the zip closes it in one movement with one hand.",
+    "src": "https://en.wikipedia.org/wiki/Jacket",
+    "verified": true
+  },
+  {
+    "in": [
+      "clock",
+      "sun"
+    ],
+    "out": "day",
+    "why": "A day is one rotation of the Earth relative to the Sun — which is about four minutes longer than one rotation relative to the stars, because the Earth has also moved along its orbit and must turn a little further to face the Sun again.",
+    "src": "https://en.wikipedia.org/wiki/Day",
+    "verified": true
+  },
+  {
+    "in": [
+      "moon",
+      "orbit"
+    ],
+    "out": "month",
+    "why": "The Moon takes 27.3 days to go round the Earth, but 29.5 days to return to the same phase — because the Earth has moved along its own orbit meanwhile, so the Moon must travel further to line up with the Sun again.",
+    "src": "https://en.wikipedia.org/wiki/Month",
+    "verified": true
+  },
+  {
+    "in": [
+      "month",
+      "sun"
+    ],
+    "out": "year",
+    "why": "The mismatch is the whole problem. Twelve months fall eleven days short, so lunar calendars drift through the seasons and lunisolar ones insert a whole extra month every few years to catch up.",
+    "src": "https://en.wikipedia.org/wiki/Year",
+    "verified": true
+  },
+  {
+    "in": [
+      "month",
+      "year"
+    ],
+    "out": "calendar",
+    "why": "It is a reconciliation, not a measurement. The Julian year overshot by 11 minutes, which by the 1500s had moved the equinox ten days; the Gregorian reform of 1582 dropped those ten days and changed the leap rule for century years.",
+    "src": "https://en.wikipedia.org/wiki/Calendar",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay",
+      "sumer"
+    ],
+    "out": "counting",
+    "why": "The oldest known accounting is Mesopotamian clay tokens — one small shape per sheep or per measure of grain, sealed inside a clay envelope. Counting begins as a record of goods owed, not as mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Token_(Mesopotamia)",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay",
+      "language"
+    ],
+    "out": "writing",
+    "why": "It was invented for accounts before literature. The pressed marks on Sumerian clay begin as pictures of the goods being counted and become, over centuries, signs for the sounds of words instead of the things.",
+    "src": "https://en.wikipedia.org/wiki/History_of_writing",
+    "verified": true
+  },
+  {
+    "in": [
+      "counting",
+      "writing"
+    ],
+    "out": "number",
+    "why": "The step is abstraction: once the mark for five sheep can be split into a mark for five and a mark for sheep, five can be added to anything. That separation is what makes arithmetic possible at all.",
+    "src": "https://en.wikipedia.org/wiki/Number",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "number"
+    ],
+    "out": "zero",
+    "why": "Used as a placeholder in several places, but treated as a number in its own right — one you can add, subtract and calculate with — by Brahmagupta in India in 628, who also set down the rules for negative numbers.",
+    "src": "https://en.wikipedia.org/wiki/0",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "field"
+    ],
+    "out": "geometry",
+    "why": "The name means earth-measuring, and Herodotus says that is literally what it was: the Nile flood erased field boundaries every year, and Egyptian surveyors had to re-establish who owned what, which meant measuring land.",
+    "src": "https://en.wikipedia.org/wiki/Geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "harvest",
+      "plough"
+    ],
+    "out": "agriculture",
+    "why": "It is not simply farming but the surplus farming makes: one family growing more than one family eats is what allows anyone at all to do something other than get food, which is where every other trade comes from.",
+    "src": "https://en.wikipedia.org/wiki/Agriculture",
+    "verified": true
+  },
+  {
+    "in": [
+      "agriculture",
+      "wall"
+    ],
+    "out": "city",
+    "why": "That is the definition and the consequence together: once people are fed by others, they can specialise, and the density that follows makes trade, writing, law and disease all far more likely than they were in a village.",
+    "src": "https://en.wikipedia.org/wiki/City",
+    "verified": true
+  },
+  {
+    "in": [
+      "city",
+      "writing"
+    ],
+    "out": "law",
+    "why": "Writing is what changes a custom into a law. Hammurabi's code was cut into a stone pillar and set in public around 1750 BC — the point of which is not the rules but that everyone can see them and they cannot quietly change.",
+    "src": "https://en.wikipedia.org/wiki/Law",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "synapse"
+    ],
+    "out": "memory",
+    "why": "It is stored as change rather than as a copy: synapses that fire together strengthen, so a memory is a pattern of connections made easier to re-run. The hippocampus builds new ones; damage it and old memories survive while new ones stop forming.",
+    "src": "https://en.wikipedia.org/wiki/Memory",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "writing"
+    ],
+    "out": "history",
+    "why": "The line between history and prehistory is writing, and it is drawn there because it is the point where the past can say something about itself rather than being inferred from what it left. Everything before is archaeology.",
+    "src": "https://en.wikipedia.org/wiki/History",
+    "verified": true
+  },
+  {
+    "in": [
+      "photon",
+      "wave"
+    ],
+    "out": "light",
+    "why": "It is both at once, and neither description alone works. It arrives as countable photons and it interferes with itself like a wave, and which one you see depends only on what you set up to catch it.",
+    "src": "https://en.wikipedia.org/wiki/Light",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "matter"
+    ],
+    "out": "mass",
+    "why": "Mass is what resists being accelerated, and mass is also what produces and responds to gravity. There is no obvious reason those should be the same number — they are, to about one part in a thousand trillion, and general relativity says that is because they are the same thing.",
+    "src": "https://en.wikipedia.org/wiki/Mass",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "mass"
+    ],
+    "out": "energy",
+    "why": "Mass and energy are the same quantity in different units, and c squared is the exchange rate between them. Because c is so large, a very small amount of mass corresponds to an enormous amount of energy — which is the whole of nuclear power and the whole of why the Sun shines.",
+    "src": "https://en.wikipedia.org/wiki/Mass–energy_equivalence",
+    "verified": true
+  },
+  {
+    "in": [
+      "atom",
+      "clock"
+    ],
+    "out": "time",
+    "why": "Since 1967 the second has not been a fraction of a day. It is defined as 9,192,631,770 oscillations of the radiation from a caesium-133 atom — because atoms are identical everywhere and the Earth's rotation is not even constant.",
+    "src": "https://en.wikipedia.org/wiki/Time",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "time"
+    ],
+    "out": "distance",
+    "why": "Since 1983 the metre has been defined as the distance light travels in 1/299,792,458 of a second. That means the speed of light is no longer measured at all: it is fixed by definition, and measuring it now measures the metre.",
+    "src": "https://en.wikipedia.org/wiki/Metre",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "time"
+    ],
+    "out": "speed",
+    "why": "It is always relative to something. There is no experiment that reveals absolute speed — which is why nothing feels different in a smoothly flying aircraft, and why the speed of light being the same for every observer forced everything else to bend instead.",
+    "src": "https://en.wikipedia.org/wiki/Speed",
+    "verified": true
+  },
+  {
+    "in": [
+      "speed",
+      "time"
+    ],
+    "out": "acceleration",
+    "why": "It is what you actually feel. Constant speed feels like standing still; only a change in it presses you into the seat, which is why acceleration and gravity are indistinguishable from inside a closed box.",
+    "src": "https://en.wikipedia.org/wiki/Acceleration",
+    "verified": true
+  },
+  {
+    "in": [
+      "acceleration",
+      "mass"
+    ],
+    "out": "force",
+    "why": "Newton's second law: force equals mass times acceleration. It is a definition as much as a discovery — it says what we mean by force, and the content is that the same force always gives twice the mass half the acceleration.",
+    "src": "https://en.wikipedia.org/wiki/Force",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "speed"
+    ],
+    "out": "momentum",
+    "why": "Its importance is that it is conserved. Add up the momentum of everything before a collision and after, and the totals match exactly, whatever happened in between — which is what lets you work out the result of a crash without knowing anything about the crash.",
+    "src": "https://en.wikipedia.org/wiki/Momentum",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "force"
+    ],
+    "out": "work",
+    "why": "Nothing moves, no work is done, however hard you push — a person holding a heavy box still does no work on it in this sense. It is the bridge between force and energy: work done is energy transferred.",
+    "src": "https://en.wikipedia.org/wiki/Work_(physics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "time",
+      "work"
+    ],
+    "out": "power",
+    "why": "A person and an engine can do the same work; the engine does it in a second. That is the entire difference power measures, and it is why the horsepower was defined by comparing an engine to the animal it replaced.",
+    "src": "https://en.wikipedia.org/wiki/Power_(physics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "atom",
+      "energy"
+    ],
+    "out": "temperature",
+    "why": "It is an average, not a total, which is why a spark at 1500 degrees will not burn you and a bath at 50 will: the spark has a high temperature and almost no energy in it. Temperature says how hot, never how much.",
+    "src": "https://en.wikipedia.org/wiki/Temperature",
+    "verified": true
+  },
+  {
+    "in": [
+      "energy",
+      "temperature"
+    ],
+    "out": "entropy",
+    "why": "There are vastly more disordered arrangements than ordered ones, so a system left alone drifts into disorder for the same reason a shuffled deck comes out unsorted — not a law of force but of counting. It is also the only physical quantity that picks a direction for time.",
+    "src": "https://en.wikipedia.org/wiki/Entropy",
+    "verified": true
+  },
+  {
+    "in": [
+      "agriculture",
+      "distance"
+    ],
+    "out": "trade",
+    "why": "It needs a surplus in one place and a want in another, with distance between them — which is why it begins as soon as farming produces more than a household eats, and why obsidian from a single volcano turns up hundreds of miles away in the Stone Age.",
+    "src": "https://en.wikipedia.org/wiki/Trade",
+    "verified": true
+  },
+  {
+    "in": [
+      "metal",
+      "trade"
+    ],
+    "out": "money",
+    "why": "Barter requires a coincidence of wants. Money removes it by being wanted by definition. The first coins were struck in Lydia around 600 BC from electrum, a natural gold-silver alloy, stamped to certify weight and purity so it need not be weighed again.",
+    "src": "https://en.wikipedia.org/wiki/Money",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "time"
+    ],
+    "out": "debt",
+    "why": "It is older than coinage, not younger: Mesopotamian tablets record interest-bearing loans of grain and silver centuries before anyone struck a coin. What money added was a way to settle a debt with a stranger.",
+    "src": "https://en.wikipedia.org/wiki/Debt",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "money"
+    ],
+    "out": "tax",
+    "why": "It is what separates a government from anyone else who wants your money, and the reason the earliest writing is accounts: someone had to record who had paid.",
+    "src": "https://en.wikipedia.org/wiki/Tax",
+    "verified": true
+  },
+  {
+    "in": [
+      "city",
+      "law"
+    ],
+    "out": "government",
+    "why": "A city cannot run on custom the way a village can — too many people, too many strangers, too much stored grain to defend and divide. Government is what appears when the rules must be administered rather than simply known.",
+    "src": "https://en.wikipedia.org/wiki/Government",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "greece"
+    ],
+    "out": "democracy",
+    "why": "Athens from about 508 BC decided by assembly, and filled most offices by lot rather than election, on the reasoning that election favours the well known and the rich. Its citizenship excluded women, slaves and foreigners — most of the people there.",
+    "src": "https://en.wikipedia.org/wiki/Athenian_democracy",
+    "verified": true
+  },
+  {
+    "in": [
+      "crown",
+      "government"
+    ],
+    "out": "monarchy",
+    "why": "Inheritance is the point of it, not the crown: it settles the succession in advance, which is the problem that has destroyed more states than any other. What it buys in continuity it pays for in whoever happens to be born next.",
+    "src": "https://en.wikipedia.org/wiki/Monarchy",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "writing"
+    ],
+    "out": "contract",
+    "why": "Writing is what makes it one. A spoken promise depends on memory and on both parties agreeing what was said; a written one can be produced years later in front of someone who was not there.",
+    "src": "https://en.wikipedia.org/wiki/Contract",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "house"
+    ],
+    "out": "family",
+    "why": "It is the one unit every society has, and almost the only thing they organise differently: who counts as family, who lives with whom, and what is owed to whom vary enormously, while the raising of children in a small group does not.",
+    "src": "https://en.wikipedia.org/wiki/Family",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "trade"
+    ],
+    "out": "society",
+    "why": "That is the difference from a family or a band: beyond about a hundred and fifty people you cannot know everyone, so cooperation has to run on rules, reputation and exchange instead of on personal knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Society",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "language"
+    ],
+    "out": "nation",
+    "why": "It is a claim rather than a fact of geography. Shared language, story and printed books did most of the work of making people who had never met feel like one thing — which is why nations and printing arrive so close together.",
+    "src": "https://en.wikipedia.org/wiki/Nation",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "law"
+    ],
+    "out": "property",
+    "why": "It is a relation between people, not between a person and an object: what you own is everyone else's obligation not to use it, which is why property only means anything where there is law to enforce it.",
+    "src": "https://en.wikipedia.org/wiki/Property",
     "verified": true
   }
 ]

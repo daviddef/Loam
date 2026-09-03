@@ -44,7 +44,7 @@
     {
       "id": "tx_mammalia",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_synapsida",
       "name": "Mammalia",
       "fact": "Warm-blooded, has hair or fur at some life stage, and the females produce milk from mammary glands — the trait that gives the class its name.",
       "srcTitle": "Mammal",
@@ -53,7 +53,7 @@
     {
       "id": "tx_aves",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_coelurosauria",
       "name": "Aves",
       "fact": "The only living animals with feathers. Warm-blooded, lays hard-shelled eggs, and its forelimbs are modified into wings even in flightless species.",
       "srcTitle": "Bird",
@@ -62,7 +62,7 @@
     {
       "id": "tx_reptilia",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_sauropsida",
       "name": "Reptilia",
       "fact": "Cold-blooded, breathes with lungs, and covered in dry, scaly skin rather than the moist skin of an amphibian. Most lay leathery or hard-shelled eggs on land.",
       "srcTitle": "Reptile",
@@ -71,7 +71,7 @@
     {
       "id": "tx_amphibia",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_tetrapoda",
       "name": "Amphibia",
       "fact": "Cold-blooded with smooth, permeable skin used for extra gas exchange — most start life in water breathing through gills and move onto land as lungs develop.",
       "srcTitle": "Amphibian",
@@ -80,7 +80,7 @@
     {
       "id": "tx_actinopterygii",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_osteichthyes",
       "name": "Ray-finned fish",
       "fact": "Fins supported by bony spines (rays) rather than the fleshy lobes of a lungfish or the cartilage of a shark — about 96% of all living fish species belong here.",
       "srcTitle": "Actinopterygii",
@@ -206,7 +206,7 @@
     {
       "id": "tx_arachnida",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_chelicerata",
       "name": "Arachnida",
       "fact": "Eight legs and no antennae, unlike an insect's six legs and two antennae. Spiders, scorpions, ticks and mites all belong here.",
       "srcTitle": "Arachnid",
@@ -215,7 +215,7 @@
     {
       "id": "tx_malacostraca",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_crustacea",
       "name": "Malacostraca",
       "fact": "The largest class of crustaceans — crabs, lobsters, shrimp and woodlice — typically with a body in a head, thorax and abdomen, and paired appendages on most segments.",
       "srcTitle": "Malacostraca",
@@ -458,7 +458,7 @@
     {
       "id": "tx_lamniformes",
       "rank": "order",
-      "parent": "tx_chondrichthyes",
+      "parent": "tx_selachii",
       "name": "Lamniformes",
       "fact": "Mackerel sharks — just 15 living species in 8 families, but among them the great white, the makos, the threshers, the basking shark and the goblin shark. Two of those families keep parts of their body warmer than the surrounding sea.",
       "srcTitle": "Lamniformes",
@@ -467,7 +467,7 @@
     {
       "id": "tx_carcharhiniformes",
       "rank": "order",
-      "parent": "tx_chondrichthyes",
+      "parent": "tx_selachii",
       "name": "Carcharhiniformes",
       "fact": "Ground sharks — over 270 species, the largest shark order by far, spanning catsharks, requiem sharks and hammerheads. Nearly every member carries a nictitating membrane that draws over the eye to protect it during an attack.",
       "srcTitle": "Carcharhiniformes",
@@ -476,7 +476,7 @@
     {
       "id": "tx_myliobatiformes",
       "rank": "order",
-      "parent": "tx_chondrichthyes",
+      "parent": "tx_batoidea",
       "name": "Myliobatiformes",
       "fact": "Stingrays and their relatives — eagle rays, cownose rays and manta rays among them. Most carry one or more venomous barbed spines at the base of the tail; the mantas are the exception, having lost the spine entirely.",
       "srcTitle": "Myliobatiformes",
@@ -602,7 +602,7 @@
     {
       "id": "tx_orectolobiformes",
       "rank": "order",
-      "parent": "tx_chondrichthyes",
+      "parent": "tx_selachii",
       "name": "Orectolobiformes",
       "fact": "Carpet sharks — around 43 species in 7 families, with a small mouth that never extends past the eyes and, in most species, a pair of sensory barbels beside the nostrils. Bottom-dwelling nurse and wobbegong sharks belong here, and so does the whale shark, the largest fish alive.",
       "srcTitle": "Orectolobiformes",
@@ -872,7 +872,7 @@
     {
       "id": "tx_chilopoda",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_myriapoda",
       "name": "Chilopoda",
       "fact": "Centipedes — fast, venomous predators with exactly one pair of legs per body segment, injected through forcipules, a modified front pair of legs rather than fangs.",
       "srcTitle": "Centipede",
@@ -881,7 +881,7 @@
     {
       "id": "tx_diplopoda",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_myriapoda",
       "name": "Diplopoda",
       "fact": "Millipedes — slow-moving detritivores with two pairs of legs per body segment, twice a centipede's count, and no species with anywhere near 1,000 legs.",
       "srcTitle": "Millipede",
@@ -970,7 +970,7 @@
     },
     {
       "id": "tx_coelurosauria",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_theropoda",
       "name": "Coelurosauria",
       "fact": "Every theropod closer to birds than to Allosaurus — tyrannosaurs, ostrich-mimics, raptors and birds all belong here, and fossil skin impressions show even its earliest members were feathered.",
@@ -997,7 +997,7 @@
     },
     {
       "id": "tx_paraves",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_coelurosauria",
       "name": "Paraves",
       "fact": "Every theropod closer to living birds than to the oviraptorosaurs — split between the sickle-clawed Deinonychosauria and Avialae, the birds themselves. It is the clade where the line between 'dinosaur' and 'bird' gets genuinely hard to draw.",
@@ -1006,7 +1006,7 @@
     },
     {
       "id": "tx_deinonychosauria",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_paraves",
       "name": "Deinonychosauria",
       "fact": "The 'raptors' — dromaeosaurids and troodontids — small to mid-sized feathered theropods best known for an enlarged, sickle-shaped claw on the second toe of each foot.",
@@ -2383,7 +2383,7 @@
     },
     {
       "id": "tx_therizinosauria",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_coelurosauria",
       "name": "Therizinosauria",
       "fact": "Herbivorous coelurosaurs with the longest claws of any known animal, a long neck, and hips that convergently resemble an ornithischian's.",
@@ -2392,7 +2392,7 @@
     },
     {
       "id": "tx_oviraptorosauria",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_coelurosauria",
       "name": "Oviraptorosauria",
       "fact": "Feathered, beaked, mostly toothless maniraptorans, some crested like a cassowary — among the theropods closest to birds.",
@@ -2401,7 +2401,7 @@
     },
     {
       "id": "tx_ornithomimosauria",
-      "rank": "infraorder",
+      "rank": "clade",
       "parent": "tx_coelurosauria",
       "name": "Ornithomimosauria",
       "fact": "Ostrich-mimic coelurosaurs — long-legged, small-headed and fast, ranging in diet from omnivorous to herbivorous.",
@@ -3769,7 +3769,7 @@
     },
     {
       "id": "tx_lycopodiophyta",
-      "rank": "phylum",
+      "rank": "class",
       "parent": "tx_tracheophyta",
       "name": "Lycopodiophyta",
       "fact": "Clubmosses and their kin: the oldest surviving lineage of vascular plants, with small single-veined leaves called microphylls.",
@@ -4597,8 +4597,8 @@
     },
     {
       "id": "tx_tetrapoda",
-      "rank": "superorder",
-      "parent": "tx_vertebrata",
+      "rank": "clade",
+      "parent": "tx_sarcopterygii",
       "name": "Tetrapoda",
       "fact": "Vertebrates descended from lobe-finned fish with four limbs built on the same one-bone, two-bone, digits plan — a group that still includes limbless snakes and caecilians.",
       "srcTitle": "Tetrapod",
@@ -4606,7 +4606,7 @@
     },
     {
       "id": "tx_amniota",
-      "rank": "superorder",
+      "rank": "clade",
       "parent": "tx_tetrapoda",
       "name": "Amniota",
       "fact": "Tetrapods whose embryo develops inside its own fluid-filled amnion, so the egg no longer has to be laid in water.",
@@ -4615,7 +4615,7 @@
     },
     {
       "id": "tx_synapsida",
-      "rank": "superorder",
+      "rank": "clade",
       "parent": "tx_amniota",
       "name": "Synapsida",
       "fact": "Amniotes with a single temporal opening behind each eye socket for the jaw muscle — the branch that leads to every mammal.",
@@ -4642,7 +4642,7 @@
     },
     {
       "id": "tx_sauropsida",
-      "rank": "superorder",
+      "rank": "clade",
       "parent": "tx_amniota",
       "name": "Sauropsida",
       "fact": "The amniote branch holding every reptile and bird; it excretes nitrogen as insoluble uric acid rather than urea.",
@@ -5362,7 +5362,7 @@
     },
     {
       "id": "tx_acanthodii",
-      "rank": "class",
+      "rank": "clade",
       "parent": "tx_chondrichthyes",
       "name": "Acanthodii",
       "fact": "The 'spiny sharks': extinct fish with a stout spine in front of nearly every fin, now understood as a stem group of the cartilaginous fish.",
@@ -5372,7 +5372,7 @@
     {
       "id": "tx_sarcopterygii",
       "rank": "class",
-      "parent": "tx_vertebrata",
+      "parent": "tx_osteichthyes",
       "name": "Sarcopterygii",
       "fact": "Lobe-finned fish: paired fins borne on a fleshy stalk with internal limb bones, the lineage from which every tetrapod descends.",
       "srcTitle": "Sarcopterygii",
@@ -5435,11 +5435,122 @@
     {
       "id": "tx_thecostraca",
       "rank": "class",
-      "parent": "tx_arthropoda",
+      "parent": "tx_crustacea",
       "name": "Thecostraca",
       "fact": "Crustaceans including the barnacles: they settle head-first, cement themselves down and filter with feathery modified legs.",
       "srcTitle": "Thecostraca",
       "src": "https://en.wikipedia.org/wiki/Thecostraca"
+    },
+    {
+      "id": "tx_indriidae",
+      "rank": "family",
+      "parent": "tx_primates",
+      "name": "Indriidae",
+      "fact": "The largest living lemurs — indri, sifakas and woolly lemurs — all of them leapers that hold the trunk upright.",
+      "srcTitle": "Indriidae",
+      "src": "https://en.wikipedia.org/wiki/Indriidae"
+    },
+    {
+      "id": "tx_phascolarctidae",
+      "rank": "family",
+      "parent": "tx_diprotodontia",
+      "name": "Phascolarctidae",
+      "fact": "The koala and its fossil relatives; the wombats are the other surviving branch of the same suborder.",
+      "srcTitle": "Phascolarctidae",
+      "src": "https://en.wikipedia.org/wiki/Phascolarctidae"
+    },
+    {
+      "id": "tx_onychophora",
+      "rank": "phylum",
+      "parent": "tx_animalia",
+      "name": "Onychophora",
+      "fact": "Velvet worms: a phylum of their own, sister to the arthropods, walking on stubby unjointed legs and firing glue at prey.",
+      "srcTitle": "Onychophora",
+      "src": "https://en.wikipedia.org/wiki/Onychophora"
+    },
+    {
+      "id": "tx_heterodontosauridae",
+      "rank": "family",
+      "parent": "tx_ornithischia",
+      "name": "Heterodontosauridae",
+      "fact": "Small early ornithischians with three kinds of tooth in one jaw, which is what the name says.",
+      "srcTitle": "Heterodontosauridae",
+      "src": "https://en.wikipedia.org/wiki/Heterodontosauridae"
+    },
+    {
+      "id": "tx_lycoperdon",
+      "rank": "genus",
+      "parent": "tx_agaricaceae",
+      "name": "Lycoperdon",
+      "fact": "The puffballs — same family as the button mushroom, but they ripen into a dry sac and puff their spores out through a pore.",
+      "srcTitle": "Lycoperdon",
+      "src": "https://en.wikipedia.org/wiki/Lycoperdon"
+    },
+    {
+      "id": "tx_osteichthyes",
+      "name": "Osteichthyes",
+      "rank": "clade",
+      "parent": "tx_vertebrata"
+    },
+    {
+      "id": "tx_elasmobranchii",
+      "name": "Elasmobranchii",
+      "rank": "clade",
+      "parent": "tx_chondrichthyes"
+    },
+    {
+      "id": "tx_selachii",
+      "name": "Selachii",
+      "rank": "clade",
+      "parent": "tx_elasmobranchii"
+    },
+    {
+      "id": "tx_batoidea",
+      "name": "Batoidea",
+      "rank": "clade",
+      "parent": "tx_elasmobranchii"
+    },
+    {
+      "id": "tx_myriapoda",
+      "name": "Myriapoda",
+      "rank": "subphylum",
+      "parent": "tx_arthropoda"
+    },
+    {
+      "id": "tx_chelicerata",
+      "rank": "subphylum",
+      "parent": "tx_arthropoda",
+      "name": "Chelicerata",
+      "fact": "Arthropods whose first pair of appendages are chelicerae — pincers or fangs in front of the mouth — and which have no antennae at all.",
+      "srcTitle": "Chelicerata",
+      "src": "https://en.wikipedia.org/wiki/Chelicerata"
+    },
+    {
+      "id": "tx_crustacea",
+      "rank": "subphylum",
+      "parent": "tx_arthropoda",
+      "name": "Crustacea",
+      "fact": "Arthropods with two pairs of antennae, a hardened exoskeleton usually stiffened with calcium carbonate, and limbs that branch in two.",
+      "srcTitle": "Crustacean",
+      "src": "https://en.wikipedia.org/wiki/Crustacean"
+    },
+    {
+      "id": "tx_pycnogonida",
+      "rank": "class",
+      "parent": "tx_chelicerata",
+      "name": "Pycnogonida",
+      "fact": "Sea spiders: chelicerates with a body so reduced that most of the gut and the gonads run out into the legs.",
+      "srcTitle": "Sea spider",
+      "src": "https://en.wikipedia.org/wiki/Sea_spider"
+    },
+    {
+      "id": "tx_xiphosura",
+      "rank": "class",
+      "parent": "tx_chelicerata",
+      "name": "Xiphosura",
+      "fact": "Horseshoe crabs, chelicerates rather than crabs, with a hinged horseshoe carapace and a spike-like tail used to right themselves.",
+      "srcTitle": "Horseshoe crab",
+      "src": "https://en.wikipedia.org/wiki/Horseshoe_crab"
     }
   ]
 }

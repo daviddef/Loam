@@ -119,6 +119,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* inversion fixes, 3 Sep */
+          'basidium',
           /* parasites wave, 3 Sep */
           'apical_complex', 'kinetoplast', 'axostyle', 'undulating_membrane', 'hemozoin', 'flagellate', 'sucking_disc', 'polar_plug', 'nurse_cell', 'oncosphere', 'miracidium', 'cercaria', 'metacercaria', 'microfilaria', 'balantidium_coli', 'trypanosoma_brucei', 'trypanosoma_cruzi',
           'chromosomal_aberration',
@@ -226,6 +228,12 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* everyday: the last of them, 3 Sep */
+          'charger',
+          /* everyday: the desk, 3 Sep */
+          'paperclip',
+          /* everyday objects: parts and the street, 3 Sep */
+          'pigment', 'paint',
           /* computing and plants waves, 3 Sep */
           'switch', 'relay', 'random_access_memory', 'read_only_memory', 'cpu', 'modem', 'carbon_black', 'isoprene', 'polyisoprene', 'resin', 'thorn', 'berry', 'aerenchyma',
           /* parasites wave, 3 Sep */
@@ -358,6 +366,16 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* everyday: the last of them, 3 Sep */
+          'laptop', 'printer', 'monitor', 'speaker', 'headphones', 'purse', 'coat', 'jacket',
+          /* everyday: tools, furniture, 3 Sep */
+          'pliers', 'sandpaper', 'spirit_level', 'clamp', 'crowbar', 'pillow',
+          /* everyday: the desk, 3 Sep */
+          'clock', 'cardboard', 'ruler', 'stapler', 'notebook', 'rubber_stamp', 'highlighter', 'folder', 'binder',
+          /* everyday: kitchen tools, 3 Sep */
+          'saucepan', 'colander', 'sieve', 'whisk', 'grater', 'peeler', 'chopping_board', 'corkscrew', 'ladle', 'spatula', 'rolling_pin',
+          /* everyday objects: parts and the street, 3 Sep */
+          'blade', 'handle', 'drain', 'kerb', 'manhole',
           /* computing and plants waves, 3 Sep */
           'keyboard', 'punched_card', 'compiler', 'web_browser', 'server', 'ethernet', 'synthetic_rubber', 'tire',
           /* parasites wave, 3 Sep */
@@ -559,6 +577,18 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* society and economy, 3 Sep */
+          'money', 'debt', 'tax', 'contract', 'property',
+          /* physics: the measured quantities, 3 Sep — conceptual rack with logic/language */
+          'light', 'mass', 'energy', 'time', 'distance', 'speed', 'acceleration', 'force', 'momentum', 'work', 'power', 'temperature', 'entropy',
+          /* the abstract layer, 3 Sep — see the note on conceptual scale above */
+          'counting', 'writing', 'number', 'zero', 'geometry', 'law', 'memory', 'history', 'agriculture', 'calendar',
+          /* everyday: the last of them, 3 Sep */
+          'crate', 'scooter',
+          /* everyday: tools, furniture, 3 Sep */
+          'vice', 'drawer', 'desk', 'wardrobe', 'mattress', 'mop',
+          /* everyday objects: parts and the street, 3 Sep */
+          'plank', 'pole', 'cable', 'sheet_metal', 'mesh', 'traffic_light', 'bollard', 'road_sign', 'litter_bin', 'postbox',
           /* geography wave, 3 Sep */
           'empire', 'treaty', 'sovereignty', 'independence', 'revolution', 'constitution', 'republic', 'referendum', 'colonialism', 'decolonisation', 'partition', 'unification',
           /* computing and plants waves, 3 Sep */
@@ -603,7 +633,8 @@ const SCALE = {
           'pitch', 'placebo_effect', 'polish', 'pope', 'portuguese', 'prayer', 'predator', 'prey',
           'priest', 'primate', 'prophet', 'psychology', 'puberty', 'punjabi', 'ramadan', 'religion',
           'reproductive_system', 'respiratory_system', 'rhythm', 'richter_scale', 'russian', 'sabbath', 'sacrament', 'sanskrit',
-          'scavenger', 'shark', 'sign_language', 'sin', 'sino_tibetan', 'skeletal_system', 'spanish', 'species',
+          'scavenger', 'elasmobranch', 'ray',
+          'shark', 'sign_language', 'sin', 'sino_tibetan', 'skeletal_system', 'spanish', 'species',
           'states_of_matter', 'structuralism_psychology', 'sun_tzu', 'superego', 'swahili', 'symphony', 'tagalog', 'tamil',
           'tank', 'telugu', 'tempo', 'thai', 'thermoregulation', 'trench_warfare', 'trickster', 'troll',
           'turkic', 'turkish', 'umami', 'unicorn', 'urdu', 'urinary_system', 'vietnamese', 'werewolf',
@@ -761,6 +792,12 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* everyday: the last of them, 3 Sep */
+          'tram', 'van', 'motorcycle', 'office', 'library',
+          /* everyday: tools, furniture, 3 Sep */
+          'tower',
+          /* everyday objects: parts and the street, 3 Sep */
+          'pavement', 'streetlight', 'pedestrian_crossing',
           /* computing and plants waves, 3 Sep */
           'jacquard_loom', 'tabulating_machine', 'turing_machine',
           /* everyday objects, 3 Sep */
@@ -829,6 +866,10 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* society and economy, 3 Sep */
+          'trade', 'government', 'democracy', 'monarchy', 'family',
+          /* the abstract layer, 3 Sep — see the note on conceptual scale above */
+          'day', 'month', 'year',
           /* everyday objects, 3 Sep */
           'school', 'hospital', 'market', 'street',
           /* asbestos chain, 2 Sep */ 'serpentinite',
@@ -879,6 +920,10 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* society and economy, 3 Sep */
+          'society', 'nation',
+          /* the abstract layer, 3 Sep — see the note on conceptual scale above */
+          'city',
           /* everyday objects, 3 Sep */
           'town',
           /* unblocking-nouns wave, 2 Sep */
