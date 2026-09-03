@@ -19,8 +19,10 @@
  *     archipelago+serbia-> croatia          has islands, borders Serbia
  *     meadow            -> bee              where you find it
  *
- * The test used here is descent, and it is deliberately narrow: for the 400
- * elements carrying a `taxon`, at least one input must be a taxonomic ancestor.
+ * The test used here is descent, and it is deliberately narrow: for every
+ * element carrying a `taxon`, at least one input must be a taxonomic ancestor
+ * BELOW kingdom rank. Sharing only a kingdom is what any two animals have in
+ * common and is not evidence of anything.
  * That is checkable rather than a matter of taste, and it is why this tool
  * reports only organisms — the same fault in geography and artefacts is real
  * and needs a different test, so it is not guessed at here.
@@ -49,13 +51,25 @@ function lineage(id) {
 const organisms = elements.filter(e => e.taxon).map(e => e.id);
 const isOrganism = new Set(organisms);
 
+// "Shares an ancestor" is only evidence of descent if the shared ancestor is
+// specific. Every animal shares Animalia with every other animal, so a test
+// that accepted any shared node accepted `bee + giraffe -> giraffe` — the two
+// share exactly one thing, the kingdom, which says nothing at all. Verified
+// against the live data: bee and giraffe share only tx_animalia; cat and dog
+// share Carnivora, which is a real relationship and still passes.
+//
+// So the shared node has to be below the top. A kingdom in common is what
+// every organism has; anything narrower was inherited from somewhere.
+const TOP_RANKS = new Set(['kingdom', 'domain', 'superkingdom']);
+const tooBroad = t => TOP_RANKS.has(groups[t]?.rank);
+
 const derived = [], associated = [];
 for (const r of recipes) {
   if (!isOrganism.has(r.out)) continue;
   const own = lineage(r.out);
   const hasAncestor = r.in.some(i => {
     if (!isOrganism.has(i)) return false;
-    for (const t of lineage(i)) if (own.has(t)) return true;
+    for (const t of lineage(i)) if (own.has(t) && !tooBroad(t)) return true;
     return false;
   });
   (hasAncestor ? derived : associated).push(r);

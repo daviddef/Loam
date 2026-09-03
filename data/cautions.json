@@ -367,7 +367,8 @@
       "note": "Most stings produce a local reaction. An estimated 5–10% of people have a generalised systemic response instead, and in the United States about 40 people a year die of anaphylaxis from stinging-insect allergy. The mechanism is the same IgE pathway as a food allergy — a venom protein where a seed protein would be — which is why an insect sting and a peanut appear in the same part of a medical textbook.",
       "severity": "conditional",
       "ids": [
-        "bee"
+        "bee",
+        "wasp"
       ]
     },
     "thujone_toxicity": {
@@ -600,7 +601,8 @@
       "note": "Cassia cinnamon — the common supermarket kind — runs well over 1mg of coumarin per gram, sometimes far more; true Ceylon cinnamon carries only trace amounts. High coumarin intake over time risks liver and kidney harm.",
       "ids": [
         "cinnamon",
-        "coumarin"
+        "coumarin",
+        "cassia"
       ],
       "severity": "cumulative"
     },
@@ -681,7 +683,8 @@
       "severity": "acute",
       "ids": [
         "stonefish",
-        "common_lionfish"
+        "common_lionfish",
+        "scorpionfish"
       ]
     },
     "piranha_bite": {
@@ -1364,7 +1367,8 @@
       "label": "Soluble barium salts are toxic if swallowed",
       "note": "Barium nitrate and other soluble barium compounds block the potassium channels muscle and nerve cells depend on, driving potassium out of the blood and, in severe cases, causing paralysis or fatal cardiac arrhythmia. Insoluble barium sulfate is harmless by comparison — solubility is what makes a barium compound dangerous.",
       "ids": [
-        "barium_nitrate"
+        "barium_nitrate",
+        "barium_carbonate"
       ],
       "severity": "acute"
     },
@@ -1739,7 +1743,8 @@
       "label": "Only the flower is eaten raw",
       "note": "Elderflower itself — what cordial and pressé are made from — needs no cooking. Every other part of the elder plant is different: the raw berries, leaves, bark and stems carry cyanogenic glycosides and cause nausea, vomiting and diarrhoea if eaten without cooking first.",
       "ids": [
-        "elderflower"
+        "elderflower",
+        "elderberry"
       ],
       "severity": "acute"
     },
@@ -1809,7 +1814,8 @@
       "label": "Rabies is nearly always fatal once symptoms start",
       "note": "Rabies virus travels from a bite along nerves to the brain over days to months, and once neurological symptoms appear the disease is almost always fatal; the only real protection is prompt post-exposure vaccination before that happens. It still kills an estimated 55,000 people a year worldwide.",
       "ids": [
-        "rabies_virus"
+        "rabies_virus",
+        "mongoose"
       ],
       "severity": "acute",
       "biohazard": true
@@ -2960,6 +2966,241 @@
       ],
       "severity": "conditional",
       "biohazard": true
+    },
+    "taro_raphides": {
+      "label": "Cooked, it feeds half a billion people; raw, it stings the mouth",
+      "note": "Taro is the fifth most important root crop in the world and is eaten by an estimated half a billion people, almost none of whom ever meet the problem, because almost nobody eats it raw. The corm's cells are packed with calcium oxalate raphides — needle-shaped crystals — carrying proteins on their surface, and raw or undercooked taro produces acridity: swelling of the lips, mouth and throat, itching and pain. Heat destroys it, and so does a protease, which is why the crystals can be left intact and the acridity still gone. The staple is not the hazard; the shortcut is.",
+      "ids": [
+        "taro"
+      ],
+      "severity": "conditional",
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9440338/"
+    },
+    "hydrogen_sulfide_asphyxiant": {
+      "label": "It destroys the warning before it destroys you",
+      "note": "Hydrogen sulfide smells of rotten eggs from 0.01 ppm, which sounds like a reliable alarm and is not one. NIOSH states plainly that the sense of smell becomes rapidly fatigued and cannot be relied upon to warn of its continuous presence: at 100–150 ppm smell is gone within 2 to 15 minutes, and 100 ppm is the level considered immediately dangerous to life and health. At 500–700 ppm a person collapses in five minutes; above 1,000 ppm, in one or two breaths. It collects in sewers, tanks and manure pits, and the deaths come in pairs — of four Minnesota farm workers killed in two manure-pit incidents in August 1992, two were the men who climbed in after them.",
+      "ids": [
+        "hydrogen_sulfide"
+      ],
+      "severity": "acute",
+      "src": "https://www.cdc.gov/niosh/npg/npgd0337.html"
+    },
+    "horse_chestnut_saponin": {
+      "label": "The conker is not the chestnut it looks like",
+      "note": "Sweet chestnut and horse chestnut are unrelated trees that drop similar-looking nuts in the same month, and the roasted one is food while the other is not. NIH's NCCIH states that the raw seeds, bark, flowers and leaves are all unsafe taken orally, and that the standardised extract sold as medicine has had the harmful component removed. A published case of someone who ate a single seed mistaken for an edible chestnut records epigastric pain, nausea and sweating from 30 minutes, then atrial fibrillation at 132 beats a minute and raised liver and pancreatic enzymes, all of which resolved on their own within a day. Adverse effects from aescin preparations are reported at 0.5% to 3%, mostly gastrointestinal.",
+      "ids": [
+        "horse_chestnut"
+      ],
+      "severity": "conditional",
+      "src": "https://www.ceemjournal.org/journal/view.php?viewtype=pubreader&number=359"
+    },
+    "macadamia_dog_toxicity": {
+      "label": "Macadamias are a dog problem, not a person problem",
+      "note": "Macadamia poisoning is recognised only in dogs, and the toxic component in the nut is still unknown. A dog that has eaten them starts with vomiting, fever and lethargy, then loses coordination — reluctance to use the back legs, stiffness, tremor — and it takes only a few nuts. It is one of the milder entries on the list of things dogs must not eat: with veterinary care a full recovery is expected within 24 to 48 hours. For the person eating them the nut is simply a nut. This is a hazard to the animal under the table.",
+      "ids": [
+        "macadamia"
+      ],
+      "severity": "conditional",
+      "src": "https://vcahospitals.com/know-your-pet/macadamia-nut-poisoning"
+    },
+    "nematocyst_sting": {
+      "label": "A cnidarian stings with a cell, not a fang",
+      "note": "Every jellyfish, anemone and siphonophore fires the same organelle: a pressurised capsule whose coiled thread turns itself inside out and drives barbs and venom through skin. It is among the fastest movements in biology — the capsule discharges in as little as 700 nanoseconds, at accelerations reported up to 5.4 million g — and it is mechanical, so a tentacle detached, beached or dead still fires. Something like 150 million stings happen worldwide each year and the overwhelming majority are pain and a weal. The species that do worse than that are few, and they are named separately.",
+      "ids": [
+        "nematocyst",
+        "jellyfish",
+        "sea_anemone",
+        "man_o_war"
+      ],
+      "severity": "contact",
+      "src": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9205923/"
+    },
+    "centipede_forcipules": {
+      "label": "Real venom, real pain, and an excellent prognosis",
+      "note": "The forcipules are a modified first pair of legs holding venom glands, and the venom is a mixture of around fifty components — proteases, peptides, histamine, serotonin — tuned to insect ion channels. In a person it produces immediate burning pain, redness and swelling lasting from 30 minutes to three days. Fewer than 15 of roughly 3,500 centipede species are clinically significant, and StatPearls records six US deaths from centipede bites between 1979 and 2001 against 1,060 from bees, wasps and hornets in the same period. Anaphylaxis, not the venom itself, is the acutely dangerous outcome.",
+      "ids": [
+        "centipede"
+      ],
+      "severity": "contact",
+      "src": "https://www.ncbi.nlm.nih.gov/books/NBK542312/"
+    },
+    "egyptian_cobra_venom": {
+      "label": "One species, two different venoms depending on where it lives",
+      "note": "Naja haje is among the most medically important cobras in Africa. Its venom is dominated by three-finger neurotoxins and phospholipase A2 cytotoxins, producing local swelling and tissue death, vomiting, drooping eyelids, slurred speech and, at worst, respiratory paralysis. Composition varies geographically enough to matter clinically — Moroccan populations are neurotoxic without systemic bleeding, Egyptian ones cause haemorrhage — which is why an antivenom raised against one population may neutralise another poorly. WHO listed snakebite as a priority neglected tropical disease in 2017 for exactly this reason.",
+      "ids": [
+        "egyptian_cobra"
+      ],
+      "severity": "acute",
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301189/"
+    },
+    "crown_of_thorns_spines": {
+      "label": "The spines are venomous, and they break off",
+      "note": "Acanthaster planci defends itself with long spines carrying saponins and plancitoxin proteins. A puncture gives immediate severe pain and swelling that can last days, and spine fragments left in the wound drive infection. Systemic effects — numbness, nausea, vomiting, joint aches, headache — usually settle within 30 minutes to 3 hours, but liver enzyme elevation and anaphylaxis have both been documented after single stings. This is a hazard of handling or standing on one, not of being near a reef.",
+      "ids": [
+        "crown_of_thorns"
+      ],
+      "severity": "contact",
+      "src": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3852018/"
+    },
+    "solenodon_venom": {
+      "label": "A venomous mammal that almost never bites anyone",
+      "note": "Venom runs from modified salivary glands down grooves in the second lower incisors — a delivery system that evolved independently of the platypus spur and of snake fangs. The venom is a set of kallikrein-1 serine proteases that drop blood pressure, which is what subdues the small vertebrates it evolved against. Genome work on Solenodon paradoxus notes that bites inflicted on humans do not tend to produce extensive pain, and that inflammation and secondary infection account for most of what follows. The species is critically endangered; the realistic encounter rate is close to zero.",
+      "ids": [
+        "solenodon"
+      ],
+      "severity": "contact",
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6926037/"
+    },
+    "holly_saponin": {
+      "label": "The berries are decoration, not fruit",
+      "note": "Children reach for holly berries because they are bright and it is December. The plant carries saponins, polyphenols, alkaloids such as ilicin, cyanogens and methylxanthines including theobromine, and the US National Capital Poison Center describes what follows as nausea, vomiting, diarrhoea and abdominal pain — generally mild, with dehydration the thing worth watching rather than the toxin. Leaves and roots are not the safe part: the same compounds are there, and the spines can lacerate the mouth and the gut on the way down.",
+      "ids": [
+        "holly"
+      ],
+      "severity": "conditional",
+      "src": "https://www.poison.org/articles/holly-leaves-and-roots"
+    },
+    "eucalyptus_oil_ingestion": {
+      "label": "The leaf is a koala's problem; the bottled oil is a child's",
+      "note": "Eucalyptus oil is 65% to 84% 1,8-cineole in the commonly distilled species, and cineole is what causes the seizures. Reported effects scale with volume swallowed: 2 to 3 mL produces drowsiness, dizziness and unsteadiness, and 5 mL or more can produce coma, with respiratory depression the thing that actually kills. Children have reacted to as little as four drops, roughly 0.24 mL. In one series of 109 children who swallowed it, 59% had symptoms and 4% reached deep coma. The tree in the ground is not the hazard here; the concentrate in the cupboard is.",
+      "ids": [
+        "eucalyptus"
+      ],
+      "severity": "acute",
+      "src": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8075753/"
+    },
+    "chloroform_toxicity": {
+      "label": "It was abandoned as an anaesthetic because the margin was too thin",
+      "note": "Chloroform sensitises heart muscle to adrenaline, and Levy showed in 1911 that this is what produced the sudden deaths under light anaesthesia that had puzzled surgeons for sixty years. Historical comparisons put the risk of a fatal complication under chloroform at roughly 1 in 3,000 to 1 in 6,000 against 1 in 14,000 to 1 in 28,000 under ether — the dose that anaesthetised and the dose that killed were too close together. Repeated exposure damages liver and kidney. IARC places it in Group 2B, possibly carcinogenic to humans, on sufficient evidence in animals and inadequate evidence in people — which is a statement about the strength of the evidence, not about how much cancer follows.",
+      "ids": [
+        "chloroform"
+      ],
+      "severity": "acute",
+      "src": "https://www.ncbi.nlm.nih.gov/books/NBK533635/"
+    },
+    "nitrobenzene_methemoglobinemia": {
+      "label": "It smells of almonds and goes straight through skin",
+      "note": "Nitrobenzene oxidises the iron in haemoglobin so it can no longer carry oxygen — methaemoglobinaemia — and ATSDR reports this by every route of exposure. Skin is a real route, not a minor one: absorption has been measured at about 2 mg per square centimetre per hour, and vapour is taken up through skin and lungs together. Above roughly 10% methaemoglobin the skin turns slate blue, with fatigue, breathlessness, headache and dizziness following. IARC places nitrobenzene in Group 2B, possibly carcinogenic to humans. Its industrial role is almost entirely as a step on the way to aniline.",
+      "ids": [
+        "nitrobenzene"
+      ],
+      "severity": "acute",
+      "src": "https://www.ncbi.nlm.nih.gov/books/NBK600859/"
+    },
+    "chloroquine_cardiotoxicity": {
+      "label": "A malaria drug with very little room between working and harming",
+      "note": "Chloroquine at treatment doses has saved an enormous number of lives, and in overdose it is one of the more lethal drugs in a household. Doses above about 5 g in an adult produce QRS widening, heart block, ventricular arrhythmia, weak contraction, low blood pressure and severe potassium loss within one to three hours; the lethal range is given as roughly 30–50 mg/kg of chloroquine base. Reviews of the mid-20th-century literature found mortality of about a third across reported acute poisonings. The gap between a therapeutic course and a dangerous one is narrower than for almost anything else on a pharmacy shelf.",
+      "ids": [
+        "chloroquine"
+      ],
+      "severity": "acute",
+      "src": "https://elifesciences.org/articles/58631"
+    },
+    "envenomation_burden": {
+      "label": "Venomous is a description, not a threat level",
+      "note": "Venom evolved independently over a hundred times because it is a cheap way to subdue prey, and the overwhelming majority of venomous animals cannot hurt a person at all. The burden that exists is concentrated almost entirely in snakebite: WHO estimates 5.4 million bites a year, 1.8 to 2.7 million envenomings, 81,410 to 137,880 deaths, and around three times that many amputations and permanent disabilities. WHO also warns the supply is failing — manufacturers have left the market, prices have risen sharply, and availability has declined or vanished in parts of Africa and Asia. The venom is rarely the scarce thing; the antivenom is.",
+      "ids": [
+        "venom"
+      ],
+      "severity": "acute",
+      "src": "https://www.who.int/news-room/fact-sheets/detail/snakebite-envenoming"
+    },
+    "parsley_apiol": {
+      "label": "The seed oil, not the leaf",
+      "note": "Parsley leaf in any quantity a kitchen uses is not what this is about. Apiol is concentrated in the seed and in the oil pressed from it, and it was sold for decades as an abortifacient — a use in which the dose taken for effect and the dose that damaged organs were not far apart. The medical literature records deaths: fatal haemolytic anaemia, thrombocytopenic purpura, nephrosis and hepatitis after ingesting apiol preparations, with further fatal cases reported through the 1950s and 60s. Nothing on a plate of parsley carries that.",
+      "ids": [
+        "parsley"
+      ],
+      "severity": "conditional",
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1829842/"
+    },
+    "solanine_greening": {
+      "label": "Green is chlorophyll; the poison just travels with it",
+      "note": "Potatoes make α-solanine and α-chaconine as a defence, and light, warmth, sprouting and bruising all raise the level. The green itself is harmless chlorophyll — it is only a visible marker that the plant has been exposed to light and has been making glycoalkaloids too. They sit overwhelmingly in the peel and the sprouts: Hong Kong's Centre for Food Safety measured 26–88 mg/kg in ordinary potato flesh against 3,500 and 4,100 mg/kg in sprouts. EFSA's reference point for acute effects is 1 mg total glycoalkaloid per kg of body weight, with 3 to 6 mg/kg considered potentially lethal; symptoms run from nausea and vomiting up to confusion, weak pulse and low blood pressure. Cooking does not decompose them, which is why the peel and sprouts are what get removed.",
+      "ids": [
+        "potato"
+      ],
+      "severity": "conditional",
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7417869/"
+    },
+    "raw_flour_pathogens": {
+      "label": "Flour is a raw agricultural product",
+      "note": "Wheat goes from a field to a mill without a step that kills bacteria, so flour arrives in the bag as raw as the grain was — which is why raw dough and batter, not undercooked baking, are what show up in outbreak investigations. A 2016 US outbreak of Shiga toxin-producing E. coli O121 and O26 traced to one mill infected 63 people across 24 states; a 2019 O26 outbreak infected 17 across 8 states with 3 hospitalised. STEC illness means cramps and bloody diarrhoea, and in a minority of cases kidney failure. Baking is the step that handles it.",
+      "ids": [
+        "flour",
+        "dough"
+      ],
+      "severity": "conditional",
+      "biohazard": true,
+      "src": "https://archive.cdc.gov/www_cdc_gov/media/releases/2019/s0524-ecoli-outbreak-flour.html"
+    },
+    "bamboo_shoot_cyanogen": {
+      "label": "The same chemistry as cassava, in a shoot that gives it up easily",
+      "note": "Bamboo shoots carry taxiphyllin, a cyanogenic glycoside that releases hydrogen cyanide when the tissue is broken. Concentration is wildly uneven within a single shoot: Hong Kong's Centre for Food Safety measured 120 mg/kg of cyanide at the tip against 12 mg/kg in the middle and 1.1 mg/kg at the base. Taxiphyllin is unusual among cyanogenic glycosides in that it breaks down readily in boiling water — slicing and boiling for 15 minutes cut cyanide content by 91% in their tests — which is why canned and packaged shoots test at almost nothing and why nobody eats them raw.",
+      "ids": [
+        "bamboo_shoot"
+      ],
+      "severity": "conditional",
+      "src": "https://www.cfs.gov.hk/english/programme/programme_rafs/programme_rafs_fc_01_17_report.html"
+    },
+    "lupin_alkaloid_debittering": {
+      "label": "The bitterness is the toxin, and debittering is the whole point",
+      "note": "Lupin seed carries quinolizidine alkaloids — lupanine, lupinine, sparteine — which are what make a bitter lupin bitter. In enough quantity they produce an anticholinergic picture: dry mouth, blurred vision, confusion, racing heart, and changes in cardiac conduction. Traditional debittering by soaking, boiling and days of running water takes alkaloid content from around 13,000 mg/kg down to about 500. EFSA's 2019 opinion found that margins of exposure may indicate a risk where lupin seeds are eaten without a debittering step or where debittered seed is still high in alkaloids. Sweet cultivars bred low in alkaloid are a different thing again. Lupin is also a declared allergen in the EU, with heat-stable proteins that cross-react in some people with peanut.",
+      "ids": [
+        "lupin"
+      ],
+      "severity": "conditional",
+      "src": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7008800/"
+    },
+    "raw_sprout_pathogens": {
+      "label": "What a seed needs to sprout is what a pathogen needs to multiply",
+      "note": "Sprouting means holding seed warm, wet and nutrient-rich for days, and a Salmonella or E. coli cell that arrived on or inside the seed gets exactly the same conditions. FDA counted 52 sprout-associated outbreaks in the United States between 1996 and 2020 — at least 2,700 illnesses, 200 hospitalisations and three deaths — with contaminated seed the most likely source in most of them. Cooking sprouts resolves it. Raw, the risk falls hardest on children, older people, pregnant women and anyone immunocompromised, which is the group most food-safety advice singles out.",
+      "ids": [
+        "sprout",
+        "alfalfa_sprout"
+      ],
+      "severity": "conditional",
+      "biohazard": true,
+      "src": "https://www.fda.gov/food/hfp-constituent-updates/fda-concludes-major-sampling-study-sprouts"
+    },
+    "shellfish_biotoxin": {
+      "label": "Filter feeders concentrate what the algae made, and cooking does not undo it",
+      "note": "Bivalves accumulate toxins from the plankton they filter, and CDC states these marine toxins cannot be destroyed by gastric acid or by canning, cooking, freezing, pickling, salting or smoking. Paralytic shellfish poisoning, from saxitoxins, starts 30 to 60 minutes after eating with numbness and tingling of face, lips and limbs, and in bad cases progresses to difficulty swallowing, flaccid paralysis and respiratory failure. Amnesic shellfish poisoning, from domoic acid, adds headache, confusion and permanent short-term memory loss to the gastrointestinal phase. Both toxins come from the plankton, not from spoilage, so freshness is no guide at all — which is why harvest areas are closed by monitoring rather than by judgement.",
+      "ids": [
+        "mussel",
+        "oyster",
+        "clam"
+      ],
+      "severity": "acute",
+      "src": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/food-poisoning-from-marine-toxins.html"
+    },
+    "ginkgo_seed_ginkgotoxin": {
+      "label": "The seed is a food and a seizure risk in the same bowl",
+      "note": "Ginkgo seeds — ginnan, roasted and eaten across East Asia — contain ginkgotoxin, 4'-O-methylpyridoxine, which is close enough to vitamin B6 to interfere with it. Vitamin B6 is required to make GABA from glutamate, so blocking it lowers the brain's main inhibitory signal and raises its main excitatory one, and the result is convulsions. Japan has recorded roughly 70 poisoning episodes since 1930; about 74% of patients were children, most under six, and reported mortality in that series was around 27%. Adults eating a normal portion are not the ones in the case reports.",
+      "ids": [
+        "ginkgo"
+      ],
+      "severity": "conditional",
+      "src": "https://publications.aap.org/pediatrics/article/109/2/325/64007/Ginkgo-Seed-Poisoning"
+    },
+    "grapefruit_cyp3a4": {
+      "label": "Grapefruit does not interact with you; it interacts with your medication",
+      "note": "Furanocoumarins in grapefruit are broken down by intestinal CYP3A4 into intermediates that bond to the enzyme and destroy it. The gut then stops removing its share of a swallowed drug on the way in, so more of the dose reaches the blood than the dose was calculated for. The effect is documented or predicted for more than 85 drugs — statins, some blood-pressure and antiarrhythmic drugs, transplant anti-rejection drugs, some sedatives — and because the enzyme has to be rebuilt rather than released, it lasts up to 24 hours, so spacing the fruit away from the pill does not help. For anyone on none of those drugs, grapefruit is a grapefruit.",
+      "ids": [
+        "grapefruit"
+      ],
+      "severity": "conditional",
+      "src": "https://www.cmaj.ca/content/185/4/309"
+    },
+    "infant_botulism_honey": {
+      "label": "Honey is safe for everyone except the people who cannot eat it yet",
+      "note": "Honey below 18% water supports no bacterial growth, but Clostridium botulinum spores survive in it inert. An adult gut is competitive enough to see them off; an infant's, in the first year, is not, and the spores can germinate there and produce toxin inside the child. CDC's guidance is flat: do not feed honey to a child younger than 1 year old. Infant botulism is the most common form of botulism in the United States — 162 of 242 reported cases in 2018. Pasteurising or baking the honey does not settle it, because spores are what survive heat.",
+      "ids": [
+        "honey"
+      ],
+      "severity": "conditional",
+      "biohazard": true,
+      "src": "https://www.cdc.gov/botulism/prevention/index.html"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

@@ -32,6 +32,12 @@
  * peeled lid was invisible because it was drawn in `gh`. Render the batch and
  * look at it, at shelf size as well as large, before calling it done.
  *
+ * Two palette facts that have cost several authors an afternoon each:
+ * `ik` is the BRIGHTEST role in the dark theme, not black, and it is the same
+ * hex as `craft-hi` (#D8C8B1) -- so an `ik` outline on a `hi` fill is
+ * invisible. `mineral-lo` is the exact panel colour, so anything drawn in it
+ * disappears too. Outline on `bs` or `lo`, never on `hi`.
+ *
  * Usage:  node tools/art.mjs            write data/art.json
  *         node tools/art.mjs check      report coverage, write nothing
  */
@@ -37604,10 +37610,10 @@ def('trichomoniasis', () => [                                      // the common
 /* logic and formalism ──────────────────────────────────────────────────── */
 
 def('logic', () => [                                               // an Euler diagram: the dot is in the small circle, so it is in the big one — that containment is the whole of a syllogism
-  ring('gh', 30, 30, 22, 2),                                       // all men are mortal
-  C(26, 33, 11, 'bs'),                                             // all Greeks are men
-  C(26, 33, 3.2, 'ik'),                                            // Socrates
-  C(50, 12, 3, 'gh'),                                              // and one thing outside both, which the rule says nothing about
+  ring('gh', 30, 30, 22, 2.2),                                     // all men are mortal
+  ring('bs', 25, 34, 13, 2.6),                                     // all Greeks are men
+  P('M22 31 L28 31 L28 37 L22 37 Z', 'ik'),                        // Socrates, who is therefore inside both, whether anyone checks or not
+  S('M46 10 L54 10 L54 18 L46 18 Z', 'gh', 1.8),                   // and something outside, about which the rule says nothing at all
 ]);
 def('algebra', () => [                                             // al-jabr, "restoring": whatever you do to one pan you do to the other, and the unknown is just another weight
   S('M8 18 L52 18', 'ik', 3),                                      // the beam
@@ -37639,13 +37645,12 @@ def('truth_table', () => [                                         // the real o
     })),
 ]);
 def('information_theory', () => [                                  // Shannon's channel: a message goes in one end, noise gets added in the middle, and the question is how much still arrives
-  P('M2 24 L14 24 L14 40 L2 40 Z', 'lo'),                          // source
-  P('M22 22 L38 22 L38 42 L22 42 Z', 'bs'),                        // the channel
-  P('M46 24 L58 24 L58 40 L46 40 Z', 'lo'),                        // receiver
-  S('M14 32 L22 32', 'ik', 2.2), S('M38 32 L46 32', 'ik', 2.2),
-  S('M30 6 L30 14 L26 16 L34 20 L30 22', 'hi', 2),                 // noise, coming in from outside
+  P('M2 24 L14 24 L14 40 L2 40 Z', 'lo'),                          // a source
+  P('M46 24 L58 24 L58 40 L46 40 Z', 'lo'),                        // and someone who wants to know what it said
+  S('M14 32 L21 32', 'ik', 2.2), S('M39 32 L46 32', 'ik', 2.2),    // the channel, which is all there is between them
+  S('M21 32 Q25 25 29 32 Q33 39 39 32', 'bs', 2.2),                // the signal on it
+  S('M30 4 L30 10 L26 13 L34 17 L30 20', 'hi', 2),                 // noise, adding itself from outside
   P('M26 20 L34 20 L30 26 Z', 'hi'),
-  ...[26, 30, 34].map(x => C(x, 36, 1.6, 'hi')),                   // and what is left of the message
 ]);
 def('moores_law', () => [                                          // a count doubling on a fixed clock is a straight line only because the axis is logarithmic — that is the whole observation
   S('M10 50 L10 8', 'ik', 2), S('M10 50 L54 50', 'ik', 2),
@@ -37655,11 +37660,11 @@ def('moores_law', () => [                                          // a count do
 ]);
 def('prime_number', () => [                                        // twelve makes a rectangle three ways; seven makes only a line, and that is what prime means
   ...[0, 1, 2].flatMap(r => [0, 1, 2, 3].map(c =>
-    P(`M${8 + c * 7} ${6 + r * 7} L${14 + c * 7} ${6 + r * 7} L${14 + c * 7} ${12 + r * 7} L${8 + c * 7} ${12 + r * 7} Z`, 'gh'))),
-  S('M8 33 L52 33', 'gh', 1.2),
+    P(`M${13 + c * 8} ${6 + r * 8} L${20 + c * 8} ${6 + r * 8} L${20 + c * 8} ${13 + r * 8} L${13 + c * 8} ${13 + r * 8} Z`, 'gh'))),
+  ...[20.5, 28.5, 36.5].map(x => S(`M${x} 6 L${x} 29`, 'ik', 1.4)),   // twelve, and it comes apart cleanly
   ...[0, 1, 2, 3, 4, 5, 6].map(c =>
-    P(`M${8 + c * 7} 38 L${14 + c * 7} 38 L${14 + c * 7} 44 L${8 + c * 7} 44 Z`, 'bs')),
-  S('M8 49 L8 52 L56 52 L56 49', 'ik', 1.8),                       // one group, and no other way to cut it
+    P(`M${2 + c * 8} 36 L${9 + c * 8} 36 L${9 + c * 8} 45 L${2 + c * 8} 45 Z`, 'bs')),
+  S('M2 49 L2 53 L57 53 L57 49', 'ik', 2),                         // seven, and there is nowhere to put a cut
 ]);
 
 /* gates and circuits ───────────────────────────────────────────────────── */
@@ -37669,15 +37674,16 @@ def('switch', () => [                                              // a knife sw
   C(12, 42, 3.2, 'ik'), C(48, 42, 3.2, 'ik'),
   S('M12 42 L44 24', 'bs', 3.6),                                   // the blade, up
   S('M40 18 L46 22', 'gh', 1.6),                                   // and the short travel that closes it
+  S('M12 45 L12 51', 'ik', 2.2), S('M48 45 L48 51', 'ik', 2.2),
+  S('M6 53 L54 53', 'lo', 2.6),                                    // mounted on something, because a switch is a thing you push
 ]);
 def('relay', () => [                                               // a switch worked by a magnet instead of a finger: current in the coil drags the armature down and closes a circuit it is not part of
-  ...coilOf('bs', 3, 12, 48, 5),
-  S('M12 52 L42 52', 'lo', 4),                                     // the core
-  S('M4 48 L12 48', 'ik', 2),
-  C(10, 26, 2.8, 'ik'),
-  S('M10 26 L44 32', 'ik', 3.4),                                   // the armature, pivoted at the left
-  S('M27 22 L27 12', 'gh', 1.6), P('M24 22 L30 22 L27 27 Z', 'gh'),   // pulled down when the coil pulls
-  C(48, 22, 3, 'hi'), S('M48 22 L56 16', 'ik', 2),                 // the contact it closes, on a separate circuit
+  S('M12 48 L48 48', 'lo', 7),                                     // the core
+  ...coilOf('bs', 4, 14, 48, 5),                                   // wound, so that current makes a magnet of it
+  S('M6 48 L12 48', 'ik', 2.2),
+  C(9, 24, 2.8, 'ik'), S('M9 24 L44 30', 'ik', 3.4),               // the armature, pivoted at one end
+  S('M27 14 L27 22', 'gh', 1.6), P('M23 21 L31 21 L27 27 Z', 'gh'),   // dragged down when the coil pulls
+  C(50, 20, 3, 'hi'), S('M44 30 L50 20', 'gh', 1.6),               // onto a contact in a circuit of its own
 ]);
 def('logic_gate', () => [                                          // the IEC rectangle: the general symbol, used when the function is not yet named. Two things in, one out, and the ellipsis says the rule inside is still open
   P('M20 12 L44 12 L44 48 L20 48 Z', 'bs'),
@@ -37734,35 +37740,30 @@ def('flip_flop', () => [                                           // two gates 
   C(48, 15, 2.6, 'hi'), ring('hi', 48, 45, 2.6, 1.6),
 ]);
 def('half_adder', () => [                                          // one plus one in binary, worked as a column sum: the answer needs two digits, and the left-hand one is the carry
-  P('M31 8 L39 8 L39 16 L31 16 Z', 'bs'),
-  S('M17 26 L27 26', 'ik', 2.4), S('M22 21 L22 31', 'ik', 2.4),    // the plus
-  P('M31 20 L39 20 L39 28 L31 28 Z', 'bs'),
-  S('M12 33 L46 33', 'ik', 2.4),
-  P('M20 38 L28 38 L28 46 L20 46 Z', 'hi'),                        // the carry
-  ring('lo', 35, 42, 4.4, 2.4),                                    // the sum
-  S('M31 51 L24 51', 'gh', 1.6), P('M26 48 L26 54 L21 51 Z', 'gh'),  // the carry moving one place left
+  P('M32 8 L42 8 L42 18 L32 18 Z', 'bs'),
+  S('M14 27 L26 27', 'ik', 3), S('M20 21 L20 33', 'ik', 3),        // the plus
+  P('M32 22 L42 22 L42 32 L32 32 Z', 'bs'),
+  S('M12 37 L48 37', 'ik', 2.6),
+  P('M18 42 L28 42 L28 52 L18 52 Z', 'hi'),                        // one, carried
+  ring('lo', 37, 47, 5, 2.6),                                      // and nothing in the column you started in
 ]);
 def('adder', () => [                                               // four one-bit adders in a row, each handing its carry to the next: the ripple that makes addition of any width out of one part repeated
-  ...[0, 1, 2, 3].flatMap(i => {
-    const x = 5 + i * 13;
-    return [
-      P(`M${x} 22 L${x + 10} 22 L${x + 10} 38 L${x} 38 Z`, 'bs'),
-      S(`M${x + 3} 22 L${x + 3} 12`, 'ik', 1.8),
-      S(`M${x + 7} 22 L${x + 7} 12`, 'ik', 1.8),
-      S(`M${x + 5} 38 L${x + 5} 50`, 'ik', 1.8),
-      C(x + 5, 52, 2.2, 'hi'),
-    ];
-  }),
-  ...[0, 1, 2].map(i => S(`M${18 + i * 13} 30 L${44 - (2 - i) * 13} 30`, 'ik', 2)),
-  ...[0, 1, 2].map(i => P(`M${15 + i * 13} 27 L${15 + i * 13} 33 L${11 + i * 13} 30 Z`, 'ik')),  // carries, travelling right to left
+  ...[2, 17, 32, 47].flatMap(x => [
+    P(`M${x} 20 L${x + 11} 20 L${x + 11} 36 L${x} 36 Z`, 'bs'),
+    S(`M${x + 3} 20 L${x + 3} 10`, 'ik', 1.8),
+    S(`M${x + 8} 20 L${x + 8} 10`, 'ik', 1.8),
+    S(`M${x + 5.5} 36 L${x + 5.5} 48`, 'ik', 1.8),
+    C(x + 5.5, 50, 2.2, 'hi'),
+  ]),
+  ...[17, 32, 47].map(x => P(`M${x} 26 L${x} 34 L${x - 4} 30 Z`, 'ik')),   // the carry, handed leftwards from each one to the next
 ]);
 def('alu', () => [                                                 // the notched wedge every architecture diagram uses: two operands into the notch at the top, an opcode from the side, one result out of the bottom
   P('M6 10 L24 10 L30 20 L36 10 L54 10 L42 44 L18 44 Z', 'bs'),
   S('M14 4 L14 10', 'ik', 2.2), S('M46 4 L46 10', 'ik', 2.2),      // the two operands
   S('M2 26 L11 26', 'ik', 2.2), C(6, 26, 2.4, 'hi'),               // the opcode: which operation
   S('M30 44 L30 56', 'ik', 2.6), P('M26 50 L34 50 L30 57 Z', 'ik'),   // the result
-  ...[24, 30, 36].map(x => C(x, 38, 1.6, 'hi')),
-  C(50, 30, 2.4, 'lo'),                                            // and one status flag falling out the side
+  S('M25 34 L35 34', 'hi', 2.6), S('M30 29 L30 39', 'hi', 2.6),    // whichever operation was asked for
+  C(50, 30, 2.4, 'lo'),                                          // and one status flag falling out the side
 ]);
 
 /* units and representation ─────────────────────────────────────────────── */
@@ -37770,8 +37771,7 @@ def('alu', () => [                                                 // the notche
 def('bit', () => [                                                 // the smallest possible distinction: two states, one of them taken. Nothing below this divides
   P('M8 20 L26 20 L26 40 L8 40 Z', 'bs'),
   S('M34 20 L52 20 L52 40 L34 40 Z', 'gh', 2.2),
-  C(17, 30, 4.4, 'hi'),                                            // this one
-  S('M13 48 L21 48', 'ik', 2.4),                                   // and the choice between them, marked
+  C(17, 30, 4.4, 'hi'),                                            // this one, and not the other
   ring('gh', 43, 30, 4.4, 2.2),
 ]);
 def('byte', () => [                                                // eight of them, taken together, which is enough for every letter on a keyboard. The gap marks the two nibbles
@@ -37813,6 +37813,7 @@ def('pixel', () => [                                               // one cell o
   P('M20 20 L26.7 20 L26.7 40 L20 40 Z', 'lo'),
   P('M26.7 20 L33.3 20 L33.3 40 L26.7 40 Z', 'bs'),
   P('M33.3 20 L40 20 L40 40 L33.3 40 Z', 'hi'),
+  S('M26.7 20 L26.7 40', 'ik', 1.2), S('M33.3 20 L33.3 40', 'ik', 1.2),
   S('M20 20 L40 20 L40 40 L20 40 Z', 'ik', 2.4),
 ]);
 def('bitmap', () => [                                              // a curve stored on a grid: the staircase is not a fault in the drawing, it is what storing a picture as cells actually costs
@@ -37839,15 +37840,15 @@ def('jpeg', () => [                                                // the pictur
   S('M15 15 L25 15 L15 25 L15 35 L25 25 L35 15 L45 15 L35 25 L25 35 L15 45 L25 45 L35 35 L45 25 L45 35 L35 45 L45 45', 'ik', 1.8),
 ]);
 def('floating_point', () => [                                      // the point is not fixed in the number, it is stored beside it: the same digits mean different sizes depending on the exponent
-  ...[8, 16, 24, 32, 40].map((x, i) =>
+  ...[6, 14, 22, 32, 40].map((x, i) =>
     [1, 0, 1, 1, 0][i]
       ? P(`M${x} 26 L${x + 7} 26 L${x + 7} 38 L${x} 38 Z`, 'bs')
       : S(`M${x} 26 L${x + 7} 26 L${x + 7} 38 L${x} 38 Z`, 'gh', 1.4)),
-  C(23, 37, 2.4, 'ik'),                                            // the point, sitting between two digits
-  S('M12 20 Q26 11 40 20', 'hi', 2),
-  P('M9 17 L16 17 L12 22 Z', 'hi'), P('M36 17 L43 17 L40 22 Z', 'hi'),   // and free to move either way
-  S('M48 30 L52 34', 'ik', 1.6), S('M52 30 L48 34', 'ik', 1.6),
-  P('M50 12 L58 12 L58 22 L50 22 Z', 'lo'),                        // the exponent, raised and stored separately
+  C(30, 36, 2.4, 'ik'),                                            // the point, standing between two digits
+  S('M11 20 Q26 12 41 20', 'hi', 2),
+  P('M7 17 L14 17 L10 23 Z', 'hi'), P('M38 17 L45 17 L41 23 Z', 'hi'),   // and free to move either way
+  P('M50 14 L58 14 L58 24 L50 24 Z', 'lo'),                        // because the exponent is stored beside it
+  S('M52 29 L56 29', 'lo', 2),
 ]);
 def('checksum', () => [                                            // add everything up, keep the total, and send it along: if the total does not match on arrival, something was lost on the way
   ...[6, 18, 30, 42].map(x => P(`M${x} 8 L${x + 10} 8 L${x + 10} 18 L${x} 18 Z`, 'bs')),
@@ -37955,9 +37956,9 @@ def('assembly_language', () => [                                   // one line o
         : S(`M${x} ${y - 3} L${x + 2.6} ${y - 3} L${x + 2.6} ${y + 3} L${x} ${y + 3} Z`, 'gh', 1))),
 ]);
 def('compiler', () => [                                            // a few lines in, a great many machine words out. The expansion is the point: one statement is not one instruction
-  ...[18, 26, 34].map(y => S(`M4 ${y} L18 ${y}`, 'ik', 2.8)),
-  P('M22 14 L34 4 L34 56 L22 46 Z', 'bs'),
-  ...[8, 14, 20, 26, 32, 38, 44, 50].map(y => S(`M38 ${y} L56 ${y}`, 'lo', 2.2)),
+  ...[8, 16, 24].map(y => S(`M8 ${y} L52 ${y}`, 'ik', 2.8)),        // a few lines somebody could read
+  P('M21 30 L39 30 L30 41 Z', 'bs'),                               // put through the translation once, before it ever runs
+  ...[46, 52].flatMap(y => [S(`M6 ${y} L28 ${y}`, 'lo', 2.4), S(`M32 ${y} L54 ${y}`, 'lo', 2.4)]),
 ]);
 def('programming_language', () => [                                // what a language gives you that machine code does not: a block, held together by a bracket, with the nesting doing the thinking
   S('M24 6 L18 6 Q14 6 14 12 L14 24 Q14 30 8 30 Q14 30 14 36 L14 48 Q14 54 18 54 L24 54', 'ik', 3),
@@ -38064,7 +38065,7 @@ def('network_protocol', () => [                                    // two stacks
 def('ip_address', () => [                                          // one number, written as four because that is how the bytes fall, and the dots are the only reason anyone can read it aloud
   ...[2, 16, 30, 44].map(x => P(`M${x} 22 L${x + 11} 22 L${x + 11} 38 L${x} 38 Z`, 'bs')),
   ...[2, 16, 30, 44].flatMap(x => [S(`M${x + 2} 27 L${x + 9} 27`, 'hi', 2), S(`M${x + 2} 33 L${x + 6} 33`, 'hi', 2)]),
-  ...[13.5, 27.5, 41.5].map(x => C(x, 36, 2.2, 'ik')),
+  ...[14.5, 28.5, 42.5].map(x => C(x, 36, 2.6, 'ik')),
 ]);
 def('tcp', () => [                                                 // the three-way handshake, which is what a connection is: I can hear you; I can hear you hearing me; I can hear that. Only then does any data move
   P('M4 4 L16 4 L16 12 L4 12 Z', 'lo'), P('M44 4 L56 4 L56 12 L44 12 Z', 'bs'),
@@ -38073,7 +38074,7 @@ def('tcp', () => [                                                 // the three-
   S('M50 32 L14 40', 'ik', 2), P('M18 36 L10 40 L19 43 Z', 'ik'),
   S('M10 46 L46 54', 'ik', 2), P('M42 50 L50 54 L41 57 Z', 'ik'),
 ]);
-def('domain_name_system', () => [                                 // a name resolved by asking down a tree: one root, a handful of top levels under it, and everything else hanging off those
+def('domain_name_system', () => [                                  // a name resolved by asking down a tree: one root, a handful of top levels under it, and everything else hanging off those
   C(30, 8, 3.4, 'ik'),                                             // the root zone, which is one dot
   ...[[30, 11, 12, 22], [30, 11, 30, 22], [30, 11, 48, 22]].map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'ik', 1.6)),
   ...[12, 30, 48].map(x => P(`M${x - 6} 22 L${x + 6} 22 L${x + 6} 30 L${x - 6} 30 Z`, 'bs')),
@@ -38185,11 +38186,8 @@ def('digital_signature', () => [                                   // the digest
       ? P(`M${x} 8 L${x + 5} 8 L${x + 5} 16 L${x} 16 Z`, 'bs')
       : S(`M${x} 8 L${x + 5} 8 L${x + 5} 16 L${x} 16 Z`, 'gh', 1.2)),
   S('M26 18 L34 26', 'ik', 1.8), P('M30 27 L30 21 L36 25 Z', 'ik'),
-  ...Array.from({ length: 12 }, (_, i) => {
-    const a = (i * Math.PI) / 6;
-    return C(n(38 + 12 * Math.cos(a)), n(40 + 12 * Math.sin(a)), 3, 'lo');
-  }),
-  C(38, 40, 12, 'lo'), ring('hi', 38, 40, 5.5, 2.2),               // the seal
+  P('M31 46 L28 59 L37 53 Z', 'lo'), P('M45 46 L48 59 L39 53 Z', 'lo'),   // ribbons
+  C(38, 40, 12, 'lo'), ring('hi', 38, 40, 5.5, 2.2),               // and the seal, which only one person could have pressed
   S('M4 40 L10 48 L20 30', 'ik', 3),                               // and the check that either passes or does not
 ]);
 
@@ -38274,30 +38272,184 @@ def('polyisoprene', () => [                                   // the same unit, 
 ]);
 
 def('synthetic_rubber', () => [                               // a slab off a cracker, not a bucket off a tree
+  P('M10 40 Q30 46 50 40 L50 45 Q30 51 10 45 Z', 'lo'),       // a slab with real thickness, not a sheet
   P('M10 20 Q30 25 50 20 L50 40 Q30 46 10 40 Z', 'bs'),       // soft enough to sag under its own weight
   S('M12 22 Q30 27 48 22', 'hi', 1.6),
   S('M14 30 L22 26 L30 30 L38 26 L46 30', 'ik', 2.2),         // the chain it was built out of, not tapped from anything
   S('M30 30 L33 35', 'ik', 1.8), hex('ik', 37, 38, 4.5, 1.6), // and a styrene ring on it — SBR, straight out of petroleum
 ]);
 
-def('carbon_black', () => [                                   // a furnace product measured in tonnes, not a lump you pick up
-  S('M12 8 L26 20 L34 20 L48 8', 'hi', 2.2),                  // the chute, drawn open so the stream is the mass and not the hopper
-  P('M27 20 L33 20 L36 40 L24 40 Z', 'ik'),                   // what comes out of it, and does not stop
-  P('M4 52 Q10 43 20 40 L40 40 Q50 43 56 52 Z', 'ik'),        // a heap gone flat-topped under its own weight
-  ...[[22, 46, 2.2], [31, 47, 2], [40, 48, 1.8], [13, 50, 1.6]].map(([x, y, r]) => C(x, y, r, 'bs')),
-  C(12, 34, 2, 'gh'), C(49, 36, 2.4, 'gh'), C(51, 28, 1.4, 'gh'),  // pelletised, because loose it would go everywhere — and some does anyway
+def('carbon_black', () => [                                   // drawn down like the pigment it is, because a lump is what it never forms
+  P('M11 8 L49 8 L49 21 L11 21 Z', 'ik'),                     // the bulk, unbroken — soot and charcoal come in pieces; this comes in tonnes
+  P('M13 21 L47 21 L41 40 Q35 51 28 53 Q20 50 18 40 Z', 'ik'),  // pulled down in one stroke, the way a pigment is proofed
+  S('M26 52 Q25 57 22 59', 'bs', 2.2), S('M31 51 Q33 56 32 59', 'bs', 1.8),  // where the stroke ran out
+  ...granules('gh', 11, 41, [12, 44, 48, 57]),                // and the fraction of it that is already on everything you own
 ]);
 
 def('tire', () => [                                           // a wheel is rigid; this is the part that gives
   S('M4 54 L56 54', 'ik', 2),                                 // the road
   S('M20.5 46.5 A19 19 0 1 1 39.5 46.5', 'bs', 11),           // the carcass, open where it meets it
-  S('M21 48 L39 48', 'bs', 11),                               // and flattened there, which no wheel does
+  S('M23 48 L37 48', 'bs', 11),                               // and flattened there, which no wheel does
   S('M20.5 46.5 A19 19 0 1 1 39.5 46.5', 'lo', 2.2),          // the groove running round the crown
   ...[-70, -40, -10, 20, 50].map(t => {
     const a = (t - 9) * Math.PI / 180, b = (t + 9) * Math.PI / 180;
     return S(`M${n(30 + 14 * Math.sin(a))} ${n(30 - 14 * Math.cos(a))} ` +
              `L${n(30 + 24 * Math.sin(b))} ${n(30 - 24 * Math.cos(b))}`, 'lo', 3.2);
   }),                                                         // tread, cut on the slant so it is not a set of spokes
+]);
+
+/* 3 Sep -- geography: political concepts, forms of state, dissolved polities */
+/* polities, and the arrangements that hold them together or take them apart.
+ * Twelve of these could each have been a sheet of paper with a seal, so none of
+ * them is: each gets the one thing about it that is actually drawable. */
+def('empire', () => {                                           // a bright centre, and provinces held at unequal remove from it
+  const seg = [[-96, -18], [-8, 62], [72, 148], [158, 214], [224, 264]];
+  const th = [7, 5.5, 8, 5, 6.5];
+  const rOut = [22, 19, 21, 18, 20.5];
+  const p = (t, rad) => [n(30 + rad * Math.cos(t * Math.PI / 180)), n(30 + rad * Math.sin(t * Math.PI / 180))];
+  return [
+    ...seg.map(([a0, a1], i) => {                               // five peripheries, no two the same length or the same distance out
+      const R = rOut[i], r = rOut[i] - th[i];
+      const [ox0, oy0] = p(a0, R), [ox1, oy1] = p(a1, R);
+      const [ix1, iy1] = p(a1, r), [ix0, iy0] = p(a0, r);
+      return P(`M${ix0} ${iy0} L${ox0} ${oy0} A${R} ${R} 0 0 1 ${ox1} ${oy1} L${ix1} ${iy1} A${r} ${r} 0 0 0 ${ix0} ${iy0} Z`,
+               i % 2 ? 'lo' : 'bs');
+    }),
+    C(30, 30, 10, 'hi'),                                        // and the one centre they are all ruled from
+  ];
+});
+def('treaty', () => [                                           // two copies, one kept by each side — of the Egyptian–Hittite peace both texts survive
+  P('M8 50 L8 20 Q8 12 17.5 12 Q27 12 27 20 L27 50 Z', 'bs'),
+  P('M33 50 L33 20 Q33 12 42.5 12 Q52 12 52 20 L52 50 Z', 'hi'),
+  ...[22, 28, 34, 40].map(y => S(`M12 ${y} L23 ${y}`, 'ik', 1.4)),
+  ...[22, 28, 34, 40].map(y => S(`M37 ${y} L48 ${y}`, 'lo', 1.4)),  // the same four lines on both, because it is the same agreement
+  P('M25 27 L35 27 L35 37 L25 37 Z', 'ik'), S('M30 27 L30 37', 'lo', 1.4),
+]);
+def('sovereignty', () => [                                      // supreme inside the line, and answerable to nothing outside it
+  P('M13 11 L47 11 L47 29 Q47 44 30 53 Q13 44 13 29 Z', 'bs'),
+  S('M13 11 L47 11 L47 29 Q47 44 30 53 Q13 44 13 29 Z', 'ik', 2.6),
+  C(30, 28, 5, 'hi'),                                           // its own seat, and no seat above it
+  S('M58 4 L48 14', 'gh', 2.2), S('M48 15 L57 19', 'gh', 1.8),  // a higher authority, glancing off the rim
+]);
+def('independence', () => [                                     // one flag coming down its pole as another goes up — the ceremony is the whole event
+  S('M6 53 L54 53', 'ik', 2),
+  S('M17 53 L17 12', 'lo', 2.2), P('M17 38 L31 41 L17 45 Z', 'gh'),
+  S('M10 26 L10 36', 'gh', 1.4), P('M10 40 L6.5 33 L13.5 33 Z', 'gh'),
+  S('M42 53 L42 10', 'ik', 2.2), P('M42 12 L56 15 L42 19 Z', 'hi'),
+  S('M50 42 L50 32', 'hi', 1.4), P('M50 28 L46.5 35 L53.5 35 Z', 'hi'),
+]);
+def('revolution', () => [                                       // the word means a full turn, and what was on top finishes underneath
+  S('M36.16 13.09 A18 18 0 0 1 33.13 47.73 A18 18 0 0 1 18.43 16.21', 'bs', 3),
+  P('M22.26 12.99 L21 19.27 L15.86 13.15 Z', 'bs'),
+  P('M21 24 L39 24 L30 41 Z', 'hi'),                            // the pyramid of rank, inverted
+]);
+def('constitution', () => [                                     // not one more law under the crown — a bracket the crown has to sit inside
+  S('M18 10 L12 10 L12 50 L18 50', 'ik', 3),
+  S('M42 10 L48 10 L48 50 L42 50', 'ik', 3),
+  P('M20 44 L40 44 L40 22 L34 31 L30 20 L26 31 L20 22 Z', 'bs'),
+  C(30, 38, 2, 'lo'), C(24, 38, 1.6, 'lo'), C(36, 38, 1.6, 'lo'),
+]);
+def('republic', () => {                                         // benches of a chamber, all equal, around a floor nobody is born onto
+  const pt = (a, r) => [n(30 + r * Math.cos(a * Math.PI / 180)), n(48 + r * Math.sin(a * Math.PI / 180))];
+  return [
+    ...Array.from({ length: 5 }, (_, i) => {
+      const a0 = 180 + i * 36 + 1.8, a1 = 180 + (i + 1) * 36 - 1.8;
+      const [ox0, oy0] = pt(a0, 22), [ox1, oy1] = pt(a1, 22);
+      const [ix0, iy0] = pt(a0, 9), [ix1, iy1] = pt(a1, 9);
+      return P(`M${ix0} ${iy0} L${ox0} ${oy0} A22 22 0 0 1 ${ox1} ${oy1} L${ix1} ${iy1} A9 9 0 0 0 ${ix0} ${iy0} Z`,
+               i % 2 ? 'hi' : 'bs');
+    }),
+    S('M6 48 L54 48', 'ik', 1.8),                               // and the centre of it left empty on purpose
+  ];
+});
+def('referendum', () => [                                       // one mark in one box, then counted against a threshold
+  P('M20 8 L40 8 L40 26 L20 26 Z', 'lo'),
+  S('M20 8 L40 8 L40 26 L20 26 Z', 'ik', 1.8),
+  S('M24 17 L28 22 L37 11', 'hi', 3.2),
+  P('M8 38 L52 38 L52 46 L8 46 Z', 'lo'),
+  P('M8 38 L38 38 L38 46 L8 46 Z', 'bs'),
+  S('M33 34 L33 50', 'ik', 2),                                  // Montenegro in 2006 cleared a 55% bar by half a point
+]);
+def('colonialism', () => [                                      // rule running out across an ocean, the far territory drawn as the lesser
+  P('M4 5 Q20 1 34 5 Q40 11 32 15 Q16 19 4 14 Z', 'hi'),
+  wave('water-bs', 27, 6, 28), wave('water-lo', 33, 5, 28),
+  P('M20 44 Q34 40 48 45 Q52 53 38 56 Q24 57 20 50 Z', 'bs'),
+  S('M26 18 L31 37', 'ik', 2.2), P('M32 43 L26 38 L34 35 Z', 'ik'),
+]);
+def('decolonisation', () => [                                   // the same ocean and the same two ends, with the tie between them cut
+  S('M4 5 Q20 1 34 5 Q40 11 32 15 Q16 19 4 14 Z', 'gh', 1.8),   // the centre, now only an outline
+  wave('water-bs', 27, 6, 28), wave('water-lo', 33, 5, 28),
+  S('M26 18 L28 23', 'ik', 2.2), S('M31 37 L33 42', 'ik', 2.2), // the line that was the arrow, broken in the middle
+  P('M2 43 Q14 37 24 45 Q26 55 13 58 Q1 54 2 43 Z', 'hi'),
+  P('M30 46 Q38 42 43 48 Q43 55 34 57 Q28 53 30 46 Z', 'bs'),
+  P('M48 43 Q56 42 57 48 Q56 54 49 54 Q45 48 48 43 Z', 'hi'),   // and where there was one colony, several states
+]);
+def('partition', () => [                                        // one territory cut, and the two edges still fitting each other
+  P('M10 30 Q10 14 24 12 L28 20 L23 28 L28 36 L24 44 L27 50 Q10 48 10 30 Z', 'bs'),
+  P('M31 12 L35 20 L30 28 L35 36 L31 44 L34 50 Q50 48 50 30 Q50 14 31 12 Z', 'hi'),
+]);
+def('unification', () => [                                      // one boundary now — the old ones survive only as seams meeting at the new capital
+  P('M6 30 Q8 16 22 13 Q34 9 44 15 Q56 20 54 32 Q52 48 34 50 Q16 52 8 42 Q4 37 6 30 Z', 'bs'),
+  S('M30 30 L23 14', 'gh', 1.6), S('M30 30 L52 26', 'gh', 1.6), S('M30 30 L26 50', 'gh', 1.6),
+  S('M6 30 Q8 16 22 13 Q34 9 44 15 Q56 20 54 32 Q52 48 34 50 Q16 52 8 42 Q4 37 6 30 Z', 'ik', 2.4),
+  P('M26 26 L34 26 L34 34 L26 34 Z', 'ik'),
+]);
+def('city_state', () => [                                       // the wall is the frontier — there is no country outside it
+  S('M2 53 L58 53', 'gh', 1.2),
+  ring('ik', 30, 30, 19, 2.6),
+  ...[0, 60, 120, 180, 240, 300].map(a => C(n(30 + 19 * Math.cos(a * Math.PI / 180)),
+                                            n(30 + 19 * Math.sin(a * Math.PI / 180)), 3.4, 'bs')),
+  P('M18 38 L18 30 L24 25 L30 30 L30 38 Z', 'hi'),
+  P('M32 38 L32 27 L38 22 L44 27 L44 38 Z', 'bs'),
+  S('M14 40 L46 40', 'lo', 1.8),
+]);
+def('co_principality', () => [                                  // two heads of state at once, and not of the same kind: a crozier and a cockade, one country
+  P('M10 44 Q30 38 50 44 Q53 53 32 56 Q13 56 10 51 Z', 'bs'), C(30, 49, 2.4, 'lo'),
+  S('M18 47 L18 18', 'ik', 2.2), S('M18 18 Q18 9 25 10 Q30 12 27 18', 'ik', 2.2), // the Bishop of Urgell
+  S('M42 47 L42 19', 'ik', 2.2),
+  ring('ik', 42, 13, 6, 2.2), C(42, 13, 2.6, 'bs'),             // and, since 1607, whoever governs France
+]);
+def('austria_hungary', () => [                                  // two states, two parliaments, three shared ministries, one crown across the gap
+  P('M5 28 Q14 23 26 27 L26 50 Q14 55 5 49 Z', 'bs'), C(15, 38, 2.4, 'lo'),
+  P('M34 27 Q46 23 55 28 L55 49 Q46 55 34 50 Z', 'hi'), C(45, 38, 2.4, 'lo'),
+  S('M26 32 L34 32 M26 38 L34 38 M26 44 L34 44', 'ik', 2),      // war, foreign affairs, finance — the only three held in common
+  S('M20 19 L16 26', 'ik', 1.6), S('M40 19 L44 26', 'ik', 1.6),
+  P('M18 20 L42 20 L42 6 L36 13 L30 4 L24 13 L18 6 Z', 'ik'),
+]);
+def('czechoslovakia', () => [                                   // long west to east, the industry in the west, and the seam it was wound up along in 1993
+  P('M4 24 L10 17 L22 16 L30 21 L38 24 L48 22 L57 25 L55 30 L46 30 L37 31 L31 29 L26 37 L14 38 L6 33 Z', 'bs'),
+  P('M14 4 L20 4 L21 18 L13 18 Z', 'ik'),
+  S('M17 2 Q21 0 17 1', 'gh', 1.4),
+  ...[21, 26, 31].map(y => S(`M33.5 ${y} L33.5 ${n(y + 2.6)}`, 'ik', 1.8)),  // dashed, because that end was agreed rather than fought
+]);
+def('yugoslavia', () => {                                       // the republics apart, and the one shape they were cut from still legible between them
+  const cx = 30, cy = 31;
+  const cuts = [-90, -26, 24, 86, 152, 210];
+  const push = [3, 4.4, 2.2, 4, 2.6, 3.6];                      // pulled clear by different amounts, over fifteen years
+  const rad = [20, 18, 21, 19, 20.5, 18.5];
+  const tone = ['bs', 'hi', 'bs', 'lo', 'hi', 'bs'];
+  return cuts.map((a0, i) => {
+    const a1 = i === 5 ? 270 : cuts[i + 1];
+    const mid = ((a0 + a1) / 2) * Math.PI / 180;
+    const dx = push[i] * Math.cos(mid), dy = push[i] * Math.sin(mid);
+    const R = rad[i];
+    const p = t => [n(cx + dx + R * Math.cos(t * Math.PI / 180)), n(cy + dy + R * Math.sin(t * Math.PI / 180))];
+    const [x0, y0] = p(a0), [x1, y1] = p(a1);
+    const [mx, my] = p((a0 + a1) / 2);
+    return P(`M${n(cx + dx)} ${n(cy + dy)} L${x0} ${y0} L${mx} ${my} L${x1} ${y1} Z`, tone[i]);
+  });
+});
+def('british_empire', () => [                                   // holdings that never touched each other, and the sea lanes that were the only join
+  C(30, 30, 21, 'water-lo'),
+  S('M9 30 L51 30', 'gh', 1.2),
+  S('M30 9 A11 21 0 1 0 30 51 A11 21 0 1 0 30 9', 'gh', 1.2),
+  P('M13 20 L20 14 L26 17 L24 24 L16 25 Z', 'bs'),
+  P('M33 13 L42 11 L46 17 L39 20 L33 18 Z', 'hi'),
+  P('M37 33 L45 31 L48 38 L42 44 L36 40 Z', 'bs'),
+  P('M15 35 L23 34 L26 40 L20 45 L14 41 Z', 'hi'),              // a quarter of the land, and none of it contiguous
+  S('M33 30 L36 33 M38 35 L41 37', 'ik', 1.6),
+  P('M25 26 L33 26 L31 29 L27 29 Z', 'ik'), S('M29 26 L29 19', 'ik', 1.4),
+  P('M29 19 L34 24 L29 24 Z', 'ik'),
 ]);
 
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */

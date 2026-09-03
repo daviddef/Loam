@@ -559,6 +559,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* geography wave, 3 Sep */
+          'empire', 'treaty', 'sovereignty', 'independence', 'revolution', 'constitution', 'republic', 'referendum', 'colonialism', 'decolonisation', 'partition', 'unification',
           /* computing and plants waves, 3 Sep */
           'logic', 'algebra', 'boolean_algebra', 'truth_table', 'information_theory', 'moores_law', 'machine_code', 'assembly_language', 'programming_language', 'operating_system', 'file', 'filesystem', 'database', 'network_protocol', 'tcp', 'http', 'html', 'url', 'ip_address', 'domain_name_system', 'cipher', 'encryption', 'public_key', 'hash_function', 'digital_signature', 'prime_number', 'checksum', 'hamming_code', 'floating_point', 'ascii', 'unicode', 'instruction', 'computer_network', 'packet', 'jpeg', 'bitmap', 'font',
           /* parasites wave, 3 Sep */
@@ -914,6 +916,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* geography wave, 3 Sep */
+          'city_state', 'co_principality',
           /* unblocking-nouns wave, 2 Sep */
           'meteor', 'prague',
           /* completeness-audit wave, 2 Sep */
@@ -927,6 +931,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* geography wave, 3 Sep */
+          'british_empire', 'austria_hungary', 'czechoslovakia', 'yugoslavia',
           'africa', 'asia', 'europe', 'north_america', 'south_america',
           /* unblocking-nouns wave, 2 Sep */
           'atmosphere', 'aurora', 'great_oxidation_event', 'snowball_earth',
