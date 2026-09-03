@@ -78360,5 +78360,615 @@
       "build"
     ],
     "fact": "A shaft sunk to the water table, and the reason a settlement can be where it is."
+  },
+  {
+    "id": "quay",
+    "name": "Quay",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "A solid stone-faced edge to the water, built so a ship can lie against it and be worked straight onto land."
+  },
+  {
+    "id": "jetty",
+    "name": "Jetty",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "A structure run out from the shore into the water, so that deep water can be reached without dredging the whole bank."
+  },
+  {
+    "id": "dock",
+    "name": "Dock",
+    "emoji": "🛥️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "An enclosed basin whose gates hold the water in, so ships inside stay afloat whatever the tide outside is doing."
+  },
+  {
+    "id": "breakwater",
+    "name": "Breakwater",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A wall built out into open water for no other reason than to have the waves break on it instead of on what lies behind."
+  },
+  {
+    "id": "abutment",
+    "name": "Abutment",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The structure at each end of a bridge that takes both its weight and its outward push, and hands them to the ground."
+  },
+  {
+    "id": "span",
+    "name": "Span",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The clear distance carried between two supports, and the thing every bridge is really measured by."
+  },
+  {
+    "id": "weir",
+    "name": "Weir",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "water"
+    ],
+    "fact": "A low wall across a river that the water runs over rather than through, holding the level up behind it."
+  },
+  {
+    "id": "channel",
+    "name": "Channel",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "water"
+    ],
+    "fact": "A cut made to carry water where it is wanted rather than where it would go."
+  },
+  {
+    "id": "millrace",
+    "name": "Millrace",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The channel that takes water from behind the weir to the wheel, and the tailrace that takes it away again."
+  },
+  {
+    "id": "battlement",
+    "name": "Battlement",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "war"
+    ],
+    "fact": "A parapet cut into alternating solid blocks and gaps, so a defender can shelter and shoot from the same place."
+  },
+  {
+    "id": "arrow_slit",
+    "name": "Arrow Slit",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "war"
+    ],
+    "fact": "A narrow vertical opening in a wall, wide enough to shoot out of and hard to shoot into."
+  },
+  {
+    "id": "courtyard",
+    "name": "Courtyard",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The open ground enclosed between the curtain wall and the buildings inside it."
+  },
+  {
+    "id": "crypt",
+    "name": "Crypt",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "belief"
+    ],
+    "fact": "A vaulted chamber under the floor of a church, usually holding a burial."
+  },
+  {
+    "id": "nave",
+    "name": "Nave",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "belief"
+    ],
+    "fact": "The long central body of a church, between the rows of columns and open to the congregation."
+  },
+  {
+    "id": "sail",
+    "name": "Sail",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth",
+      "trade"
+    ],
+    "fact": "A sheet of canvas roped at its edges, set to take the wind's push and hand it to whatever it is fastened to."
+  },
+  {
+    "id": "hopper",
+    "name": "Hopper",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "kitchen"
+    ],
+    "fact": "A bin with sloping sides narrowing to a hole, so what is put in feeds itself out at a steady rate."
+  },
+  {
+    "id": "tail_vane",
+    "name": "Tail Vane",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A small wind wheel set crossways to the main sails and geared to the cap, turning the mill to face the wind and then stopping."
+  },
+  {
+    "id": "anvil",
+    "name": "Anvil",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "A heavy block that gives the hammer back to the work instead of swallowing the blow."
+  },
+  {
+    "id": "tongs",
+    "name": "Tongs",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "metal"
+    ],
+    "fact": "Two levers crossed on a pivot, so a squeeze at the long end becomes a grip at the short."
+  },
+  {
+    "id": "vat",
+    "name": "Vat",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A large open vessel of staves drawn tight by bands, made to hold a liquid for a long time."
+  },
+  {
+    "id": "condenser",
+    "name": "Condenser",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "The finned pipe on the back of a fridge, where squeezed gas gives up its heat and turns back into liquid."
+  },
+  {
+    "id": "evaporator",
+    "name": "Evaporator",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "The pipe inside the cold cabinet, where the liquid is let go to a low pressure and boils."
+  },
+  {
+    "id": "piano_action",
+    "name": "Piano Action",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "music",
+      "tool"
+    ],
+    "fact": "The linkage between a key and its hammer, which throws the hammer at the string and lets it fall back free."
+  },
+  {
+    "id": "cast_iron",
+    "name": "Cast Iron",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Iron carrying two to four per cent carbon: too brittle to forge, and so fluid when molten that it takes any mould."
+  },
+  {
+    "id": "damper",
+    "name": "Damper",
+    "emoji": "🎹",
+    "shelf": "workshop",
+    "tags": [
+      "music"
+    ],
+    "fact": "A felt pad resting on the string, lifted while the key is held and dropped the moment it is released."
+  },
+  {
+    "id": "lid",
+    "name": "Lid",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A cover hinged along one edge, so it can be opened without being put down anywhere."
+  },
+  {
+    "id": "horsehair",
+    "name": "Horsehair",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "cloth",
+      "animal"
+    ],
+    "fact": "Hair from the tail or mane, long, strong, and covered in microscopic scales."
+  },
+  {
+    "id": "rosin",
+    "name": "Rosin",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "music",
+      "craft"
+    ],
+    "fact": "The brittle amber solid left behind when the turpentine is boiled out of pine resin."
+  },
+  {
+    "id": "fingerboard",
+    "name": "Fingerboard",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "music"
+    ],
+    "fact": "A hard board glued along the neck, which the string is pressed against rather than onto the neck itself."
+  },
+  {
+    "id": "tripod",
+    "name": "Tripod",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Three legs meeting at a head — the fewest that stand, and the most that stand without rocking."
+  },
+  {
+    "id": "grinding",
+    "name": "Grinding",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Two discs of glass rubbed face to face with wet abrasive between them until each takes a true curve."
+  },
+  {
+    "id": "silvering",
+    "name": "Silvering",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Silver brought out of solution onto clean glass as a film a few hundred atoms thick."
+  },
+  {
+    "id": "kneading",
+    "name": "Kneading",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen"
+    ],
+    "fact": "Working dough until it stops tearing and starts stretching."
+  },
+  {
+    "id": "peel",
+    "name": "Peel",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "tool"
+    ],
+    "fact": "A thin flat board on a long handle, for putting bread into an oven and taking it out."
+  },
+  {
+    "id": "easel",
+    "name": "Easel",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "A standing frame that holds the work upright at the height of the eye."
+  },
+  {
+    "id": "palette",
+    "name": "Palette",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "A thin sealed hardwood board with a hole for the thumb, where the colours are laid out and mixed."
+  },
+  {
+    "id": "costume",
+    "name": "Costume",
+    "emoji": "🎭",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "story"
+    ],
+    "fact": "Cloth cut and made up to say who someone is before they have said anything."
+  },
+  {
+    "id": "rehearsal",
+    "name": "Rehearsal",
+    "emoji": "🎭",
+    "shelf": "workshop",
+    "tags": [
+      "story"
+    ],
+    "fact": "The play run through without an audience, until it can be done without thought."
+  },
+  {
+    "id": "platen",
+    "name": "Platen",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "The flat plate that comes down on the paper and presses every letter at once."
+  },
+  {
+    "id": "wafer",
+    "name": "Wafer",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "A thin disc sawn from a single silicon crystal grown as one unbroken lattice from end to end."
+  },
+  {
+    "id": "doping",
+    "name": "Doping",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "Driving foreign atoms into chosen regions of a finished wafer — one for every ten million or so of its own."
+  },
+  {
+    "id": "lithography",
+    "name": "Lithography",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "The pattern is printed onto the wafer rather than drawn on it, all of it in one exposure."
+  },
+  {
+    "id": "grid",
+    "name": "Grid",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Two families of lines crossing at right angles, so that any point on the world has exactly one pair of numbers."
+  },
+  {
+    "id": "legend",
+    "name": "Legend",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "The panel that says what each mark on the map stands for."
+  },
+  {
+    "id": "journalist",
+    "name": "Journalist",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "people",
+      "ideas"
+    ],
+    "fact": "Someone whose whole occupation is finding out what happened and writing it down in time."
+  },
+  {
+    "id": "editor",
+    "name": "Editor",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "people",
+      "ideas"
+    ],
+    "fact": "Someone whose job is not to write but to decide what runs, how long it is, and where it goes."
+  },
+  {
+    "id": "headline",
+    "name": "Headline",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "The few words set large at the top, written not by the reporter but by the desk."
+  },
+  {
+    "id": "advertisement",
+    "name": "Advertisement",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Space in the paper sold to someone who wants your attention."
+  },
+  {
+    "id": "clerk",
+    "name": "Clerk",
+    "emoji": "🏦",
+    "shelf": "workshop",
+    "tags": [
+      "people",
+      "trade"
+    ],
+    "fact": "Someone kept to write the same kind of thing down, accurately, every day."
+  },
+  {
+    "id": "deposit",
+    "name": "Deposit",
+    "emoji": "🏦",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Money handed to someone else to keep, in exchange for the right to ask for it back."
+  },
+  {
+    "id": "interest",
+    "name": "Interest",
+    "emoji": "🏦",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "What is paid for the use of money, and it is priced by how long it is used for."
+  },
+  {
+    "id": "credit",
+    "name": "Credit",
+    "emoji": "🏦",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A bank does not keep the deposits in the vault. It lends most of them out."
+  },
+  {
+    "id": "conductor",
+    "name": "Conductor",
+    "emoji": "🎼",
+    "shelf": "workshop",
+    "tags": [
+      "people",
+      "music"
+    ],
+    "fact": "One person whose only instrument is everyone else."
+  },
+  {
+    "id": "type",
+    "name": "Type",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tech"
+    ],
+    "fact": "Each letter cast as a separate block, from a hand mould that makes identical copies in minutes."
+  },
+  {
+    "id": "composing_stick",
+    "name": "Composing Stick",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A small metal tray held in the left hand, into which type is set letter by letter."
+  },
+  {
+    "id": "canary",
+    "name": "Canary",
+    "emoji": "🐤",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A small seed-eating finch of the Atlantic islands, kept for four hundred years for its song."
+  },
+  {
+    "id": "modulation",
+    "name": "Modulation",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "Varying a steady high carrier wave so that it carries something that is not steady."
+  },
+  {
+    "id": "soundpost",
+    "name": "Soundpost",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "music"
+    ],
+    "fact": "A short spruce rod wedged upright between the belly and the back, just behind one foot of the bridge."
   }
 ]

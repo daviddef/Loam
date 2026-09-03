@@ -87376,5 +87376,585 @@
     "why": "It only works because groundwater sits in the pores of rock rather than in caverns, so a hole almost anywhere below the table fills. Digging one is the moment a village stops needing to be beside a river.",
     "src": "https://en.wikipedia.org/wiki/Water_well",
     "verified": true
+  },
+  {
+    "in": [
+      "harbour",
+      "stone"
+    ],
+    "out": "quay",
+    "why": "A ship anchored in a harbour still has to be unloaded into small boats and rowed ashore, which is slow and loses cargo. Facing the bank with stone deep enough to take a loaded hull alongside removes the boats from the problem entirely.",
+    "src": "https://en.wikipedia.org/wiki/Quay",
+    "verified": true
+  },
+  {
+    "in": [
+      "harbour",
+      "timber"
+    ],
+    "out": "jetty",
+    "why": "Water is shallow at the edge and deep further out. Rather than move the harbour, a jetty carries the land out on piles until it meets water that will float a hull.",
+    "src": "https://en.wikipedia.org/wiki/Jetty",
+    "verified": true
+  },
+  {
+    "in": [
+      "gate",
+      "harbour"
+    ],
+    "out": "dock",
+    "why": "In a tidal harbour a ship settles onto the mud twice a day and cannot be worked. Shutting a gate at high water keeps the level up inside, which is why dock gates exist at all.",
+    "src": "https://en.wikipedia.org/wiki/Dock_(maritime)",
+    "verified": true
+  },
+  {
+    "in": [
+      "wall",
+      "wave"
+    ],
+    "out": "breakwater",
+    "why": "A wave carries its energy until something takes it. A sloped mass of rock makes the wave break early and spend itself climbing, so the water beyond is calm enough to keep ships in.",
+    "src": "https://en.wikipedia.org/wiki/Breakwater_(structure)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bridge",
+      "foundation"
+    ],
+    "out": "abutment",
+    "why": "An arch does not press straight down; it presses outward at its feet, and will spread and fall if nothing resists that. The abutment is the mass that refuses, which is why it is built into the bank rather than standing on it.",
+    "src": "https://en.wikipedia.org/wiki/Abutment",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "pier"
+    ],
+    "out": "span",
+    "why": "Everything about a bridge follows from how far it must reach unsupported: double the span and the bending in the middle rises much faster than the length does. Adding a pier shortens the span, which is why long crossings are built as several short ones.",
+    "src": "https://en.wikipedia.org/wiki/Span_(engineering)",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "wall"
+    ],
+    "out": "weir",
+    "why": "A mill needs a head of water, and a river left alone does not provide one. A weir raises the level upstream without stopping the flow, so there is a drop to be used and the river still goes on its way.",
+    "src": "https://en.wikipedia.org/wiki/Weir",
+    "verified": true
+  },
+  {
+    "in": [
+      "river"
+    ],
+    "out": "channel",
+    "why": "Water finds the lowest line available to it. Cutting a lower line takes it somewhere else, and once cut it keeps itself open as long as the water keeps running.",
+    "src": "https://en.wikipedia.org/wiki/Channel_(geography)",
+    "verified": true,
+    "verb": "cut"
+  },
+  {
+    "in": [
+      "channel",
+      "weir"
+    ],
+    "out": "millrace",
+    "why": "The drop a weir creates is only useful where the wheel is. The race carries the head along a gentle fall to the wheel, so that almost all of the height is spent on the wheel and almost none on the journey.",
+    "src": "https://en.wikipedia.org/wiki/Mill_race",
+    "verified": true
+  },
+  {
+    "in": [
+      "wall"
+    ],
+    "out": "battlement",
+    "why": "A plain parapet either hides you or lets you shoot, not both. Cutting it into merlons and embrasures gives cover at head height and an opening beside it, and stepping sideways is faster than standing up.",
+    "src": "https://en.wikipedia.org/wiki/Battlement",
+    "verified": true,
+    "verb": "cut"
+  },
+  {
+    "in": [
+      "arrow",
+      "wall"
+    ],
+    "out": "arrow_slit",
+    "why": "The archer stands close to the inside of the slit and sweeps a wide field through it; anyone outside is far away and sees a gap a few inches across. The geometry is entirely one-sided, which is the point.",
+    "src": "https://en.wikipedia.org/wiki/Arrowslit",
+    "verified": true
+  },
+  {
+    "in": [
+      "keep",
+      "wall"
+    ],
+    "out": "courtyard",
+    "why": "A castle is not one building but a wall with things standing in it, and the space left over is where the work happened — stables, wells, mustering. It is defensible for the same reason it is open: everything overlooks it.",
+    "src": "https://en.wikipedia.org/wiki/Bailey_(castle)",
+    "verified": true
+  },
+  {
+    "in": [
+      "church",
+      "vault"
+    ],
+    "out": "crypt",
+    "why": "A stone vault can carry the floor above it, so the space beneath costs nothing structurally. Churches were built over the graves of their saints, and the vault is what let the building stand on top of one.",
+    "src": "https://en.wikipedia.org/wiki/Crypt",
+    "verified": true
+  },
+  {
+    "in": [
+      "church",
+      "column"
+    ],
+    "out": "nave",
+    "why": "Two arcades of columns carry the upper wall and split the interior lengthways: the tall middle is the nave, the lower flanks are the aisles. The columns are what make the space, not decoration in it.",
+    "src": "https://en.wikipedia.org/wiki/Nave",
+    "verified": true
+  },
+  {
+    "in": [
+      "canvas",
+      "rope"
+    ],
+    "out": "sail",
+    "why": "Canvas alone tears from the corners where all the load gathers. A rope sewn round the edge takes that load into the lines instead of the cloth, which is why every working sail is bounded by one.",
+    "src": "https://en.wikipedia.org/wiki/Sail",
+    "verified": true
+  },
+  {
+    "in": [
+      "cone",
+      "timber"
+    ],
+    "out": "hopper",
+    "why": "Grain shovelled onto millstones by hand arrives in gluts and gaps, and the flour is bad either way. Sloping the sides steeply enough that the grain cannot bridge lets gravity meter it instead of a person.",
+    "src": "https://en.wikipedia.org/wiki/Hopper_(particulate_collection_container)",
+    "verified": true
+  },
+  {
+    "in": [
+      "gear",
+      "sail"
+    ],
+    "out": "tail_vane",
+    "why": "It works because it only turns when the wind is off to one side. Head-on, the wind slides past its blades and it stands still; the mill therefore hunts the wind and settles there without anyone watching.",
+    "src": "https://en.wikipedia.org/wiki/Windmill_fantail",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "weight"
+    ],
+    "out": "anvil",
+    "why": "A blow spends itself either shaping the metal or moving what is underneath. The more mass below, the less of it moves, and the more of the blow goes where it was aimed — which is why anvils are absurdly heavy for their size.",
+    "src": "https://en.wikipedia.org/wiki/Anvil",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "lever"
+    ],
+    "out": "tongs",
+    "why": "Hot iron cannot be held and must not be dropped. Crossing two arms multiplies the hand's force at the jaws and puts a foot of steel between the fingers and the heat, both from the same arrangement.",
+    "src": "https://en.wikipedia.org/wiki/Tongs",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoop",
+      "plank"
+    ],
+    "out": "vat",
+    "why": "Tanning takes months, not hours, and the hide must stay in its liquor throughout. Staves swell when wet and press against the hoops, so the vessel seals itself tighter the longer it is full.",
+    "src": "https://en.wikipedia.org/wiki/Vat_(container)",
+    "verified": true
+  },
+  {
+    "in": [
+      "fin",
+      "pipe"
+    ],
+    "out": "condenser",
+    "why": "A gas squeezed hard gets hotter than the room, and heat only ever runs downhill in temperature — so once it is hotter than the kitchen, the kitchen will take the heat. The fins are there to hand it over faster than a bare pipe could.",
+    "src": "https://en.wikipedia.org/wiki/Condenser_(heat_transfer)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "valve"
+    ],
+    "out": "evaporator",
+    "why": "Boiling takes a great deal of heat and takes it from whatever is nearest — here, the inside of the box. Nothing is made cold; the heat is simply carried out in the gas, which is what a fridge does and all it does.",
+    "src": "https://en.wikipedia.org/wiki/Evaporator",
+    "verified": true
+  },
+  {
+    "in": [
+      "hammer",
+      "key"
+    ],
+    "out": "piano_action",
+    "why": "A hammer still touching the string damps the note it just made. The escapement releases the hammer just before it arrives, so it strikes and drops away under its own weight — which is also why a piano can be played loudly or softly at all.",
+    "src": "https://en.wikipedia.org/wiki/Action_(music)",
+    "verified": true
+  },
+  {
+    "in": [
+      "coke",
+      "iron"
+    ],
+    "out": "cast_iron",
+    "why": "Coke gives up far more carbon to the iron than charcoal ever did, and that carbon drops the melting point by hundreds of degrees and makes the melt run like water, so shapes can be poured that could never be hammered. The same carbon puts flakes of graphite through the metal, which is why it shatters rather than bends.",
+    "src": "https://en.wikipedia.org/wiki/Cast_iron",
+    "verified": true
+  },
+  {
+    "in": [
+      "felt",
+      "lever"
+    ],
+    "out": "damper",
+    "why": "A struck string rings for many seconds, so without dampers every note played would still be sounding under the next. The felt is soft enough to stop the string without a sound of its own.",
+    "src": "https://en.wikipedia.org/wiki/Damper_(flow)",
+    "verified": true
+  },
+  {
+    "in": [
+      "hinge",
+      "plank"
+    ],
+    "out": "lid",
+    "why": "A loose cover has to be set somewhere and is then in the way or lost. Fixing one edge means the cover swings clear and returns to exactly the same seat every time.",
+    "src": "https://en.wikipedia.org/wiki/Lid",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "horse"
+    ],
+    "out": "horsehair",
+    "why": "Those scales are why it works on a violin: drawn across a string they catch and release it hundreds of times a second. Any smooth fibre would simply slide.",
+    "src": "https://en.wikipedia.org/wiki/Horsehair",
+    "verified": true
+  },
+  {
+    "in": [
+      "resin"
+    ],
+    "out": "rosin",
+    "why": "Fresh resin is sticky and never sets. Driving off the volatile part leaves a solid that is hard when still and grips when warmed by friction, which is exactly what a bow needs and what raw resin cannot do.",
+    "src": "https://en.wikipedia.org/wiki/Rosin",
+    "verified": true,
+    "verb": "heat"
+  },
+  {
+    "in": [
+      "neck",
+      "plank"
+    ],
+    "out": "fingerboard",
+    "why": "Stopping a string needs a surface harder than the finger and harder than the string will wear away. The board is a separate piece precisely so it can be a much harder wood than the neck, and replaced when it finally does wear.",
+    "src": "https://en.wikipedia.org/wiki/Fingerboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "leg"
+    ],
+    "out": "tripod",
+    "why": "Three points define a plane, so a tripod cannot rock however uneven the ground is; a fourth leg has no such guarantee and will always sit on three of the four. This is why every instrument that must not move sits on three legs.",
+    "src": "https://en.wikipedia.org/wiki/Tripod",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "sand"
+    ],
+    "out": "grinding",
+    "why": "No template is needed and none would be accurate enough. The upper disc wears hollow and the lower convex, and the only pair of surfaces that stay in contact everywhere through every stroke are spheres — so the pair grinds itself spherical.",
+    "src": "https://en.wikipedia.org/wiki/Grinding_(abrasive_cutting)",
+    "verified": true
+  },
+  {
+    "in": [
+      "nitrate",
+      "silver"
+    ],
+    "out": "silvering",
+    "why": "A mirror wants its reflecting layer behind the glass, where nothing can touch it, and welded to the surface so no air gap dulls it. Growing the metal in place from a solution does both; polishing a sheet of silver does neither.",
+    "src": "https://en.wikipedia.org/wiki/Silvering",
+    "verified": true
+  },
+  {
+    "in": [
+      "dough"
+    ],
+    "out": "kneading",
+    "why": "Flour and water alone hold two proteins lying anyhow. Folding and pressing lines them up and joins them into long elastic sheets, and it is those sheets that trap the gas later — which is why unkneaded dough rises and then collapses.",
+    "src": "https://en.wikipedia.org/wiki/Kneading",
+    "verified": true,
+    "verb": "crush"
+  },
+  {
+    "in": [
+      "handle",
+      "plank"
+    ],
+    "out": "peel",
+    "why": "The floor of a hot oven is the one place a baker cannot reach. A board thin enough to slide under a loaf, on a handle long enough to keep the arm outside, solves both halves at once.",
+    "src": "https://en.wikipedia.org/wiki/Peel_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "leg",
+      "plank"
+    ],
+    "out": "easel",
+    "why": "Paint laid on a flat table runs and is seen at a slant, so the painter judges it wrongly the whole time. Standing the canvas up shows it as it will be seen, which is the only way to judge it.",
+    "src": "https://en.wikipedia.org/wiki/Easel",
+    "verified": true
+  },
+  {
+    "in": [
+      "varnish",
+      "walnut"
+    ],
+    "out": "palette",
+    "why": "Colours are judged against each other, not alone, so they must sit together in the same light as the work. The board is sealed because bare wood drinks the oil straight out of the paint and changes every colour on it within minutes.",
+    "src": "https://en.wikipedia.org/wiki/Palette_(painting)",
+    "verified": true
+  },
+  {
+    "in": [
+      "actor",
+      "cloth"
+    ],
+    "out": "costume",
+    "why": "An audience decides who a figure is in the first second of seeing them. Dressing that decision is faster than any line of dialogue, and it survives being watched from the back of the room where a face cannot be read.",
+    "src": "https://en.wikipedia.org/wiki/Costume",
+    "verified": true
+  },
+  {
+    "in": [
+      "actor",
+      "stage"
+    ],
+    "out": "rehearsal",
+    "why": "Nothing about a performance can be worked out alone, because it is made of timing between people. Repeating it on the actual stage moves the whole thing out of memory and into habit, which is what survives nerves.",
+    "src": "https://en.wikipedia.org/wiki/Rehearsal",
+    "verified": true
+  },
+  {
+    "in": [
+      "plate",
+      "press"
+    ],
+    "out": "platen",
+    "why": "Ink on type transfers only under real and even pressure. A rigid plate driven by a screw applies the same force across the whole page, so the letters at the edges print as darkly as the ones in the middle.",
+    "src": "https://en.wikipedia.org/wiki/Platen",
+    "verified": true
+  },
+  {
+    "in": [
+      "crystal",
+      "silicon"
+    ],
+    "out": "wafer",
+    "why": "A transistor depends on electrons moving predictably, and a grain boundary scatters them. Growing the whole boule as one crystal means there are no boundaries to cross, so every device on the slice behaves the same as every other.",
+    "src": "https://en.wikipedia.org/wiki/Wafer_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "phosphorus",
+      "wafer"
+    ],
+    "out": "doping",
+    "why": "A uniformly doped crystal is just a resistor. A chip needs n-type here and p-type a micrometre away, so the atoms are fired into the wafer through a patterned mask after it is grown — the pattern is the circuit, and the depth and dose set what each region does.",
+    "src": "https://en.wikipedia.org/wiki/Doping_(semiconductor)",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "mask"
+    ],
+    "out": "lithography",
+    "why": "Drawing a billion features one at a time is impossible at any speed. Shining light through a patterned mask onto a coating that hardens where it is lit puts every feature down at once, and the whole cost is the same whether the pattern has ten shapes or ten billion.",
+    "src": "https://en.wikipedia.org/wiki/Photolithography",
+    "verified": true
+  },
+  {
+    "in": [
+      "latitude",
+      "longitude"
+    ],
+    "out": "grid",
+    "why": "A description in words is only as good as the words shared with whoever reads it. Once the lines are agreed, a position is two numbers that mean the same thing to a stranger, and can be worked with arithmetically.",
+    "src": "https://en.wikipedia.org/wiki/Geographic_coordinate_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "map",
+      "writing"
+    ],
+    "out": "legend",
+    "why": "A map is only worth the space it saves, and it saves space by drawing a town as a dot. The dot means nothing on its own, so the saving only works if the key travels with the map.",
+    "src": "https://en.wikipedia.org/wiki/Map_legend",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "newspaper"
+    ],
+    "out": "journalist",
+    "why": "Papers that came out weekly could wait for news to arrive. A daily cannot, so it has to send people out to look — and paying someone to do only that, every day, is what turned reporting from an activity into a trade.",
+    "src": "https://en.wikipedia.org/wiki/Journalist",
+    "verified": true
+  },
+  {
+    "in": [
+      "journalist",
+      "newspaper"
+    ],
+    "out": "editor",
+    "why": "A paper has a fixed number of pages and always more stories than will fit. Somebody has to say no, and it cannot be the person who wrote it.",
+    "src": "https://en.wikipedia.org/wiki/Editor",
+    "verified": true
+  },
+  {
+    "in": [
+      "editor",
+      "writing"
+    ],
+    "out": "headline",
+    "why": "It has to fit an exact width in an exact size, which is a typesetting problem before it is a writing one, and it is written last — when the story's length is finally known and the space left for it is fixed.",
+    "src": "https://en.wikipedia.org/wiki/Headline",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "newspaper"
+    ],
+    "out": "advertisement",
+    "why": "A newspaper is sold for less than it costs to print, and always has been. The difference is paid by advertisers, which is why the price on the front has almost nothing to do with the cost of making it.",
+    "src": "https://en.wikipedia.org/wiki/Advertising",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "writing"
+    ],
+    "out": "clerk",
+    "why": "Any business past a certain size runs on a written record rather than on memory, and the record is only worth what its accuracy is worth. That makes careful copying a full-time occupation rather than something done between other work.",
+    "src": "https://en.wikipedia.org/wiki/Clerk",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "vault"
+    ],
+    "out": "deposit",
+    "why": "Coin at home is stolen or lost, and coin in a strong room is safe but useless. Handing it over in return for a claim on it gets both, and the claim turns out to be easier to carry and to pay with than the metal was.",
+    "src": "https://en.wikipedia.org/wiki/Deposit_account",
+    "verified": true
+  },
+  {
+    "in": [
+      "deposit",
+      "time"
+    ],
+    "out": "interest",
+    "why": "Money now and money later are not the same good — the lender gives up every other use of it in the meantime, and carries the risk of not being repaid. Interest is the price of that gap, which is why it is quoted per year and not per loan.",
+    "src": "https://en.wikipedia.org/wiki/Interest",
+    "verified": true
+  },
+  {
+    "in": [
+      "debt",
+      "deposit"
+    ],
+    "out": "credit",
+    "why": "Because depositors do not all ask for their money on the same day, only a fraction must be held. The rest is lent, and the borrower's promise to repay is itself spent and banked — so lending creates deposits, which is where most of the money in an economy comes from.",
+    "src": "https://en.wikipedia.org/wiki/Credit_(finance)",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "orchestra"
+    ],
+    "out": "conductor",
+    "why": "Sixty players cannot hear each other well enough to stay together, and the ones at the back hear the front late. A single visible beat gives them all one thing to agree with, rather than each other.",
+    "src": "https://en.wikipedia.org/wiki/Conducting",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "mould"
+    ],
+    "out": "type",
+    "why": "Carving a page of text takes months and is worth nothing once printed. Casting the letters separately means the same few hundred blocks are set, printed, broken up and set again as something else — the reuse is the whole invention, not the printing.",
+    "src": "https://en.wikipedia.org/wiki/Movable_type",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "type"
+    ],
+    "out": "composing_stick",
+    "why": "A sliding stop is set once to the exact column width, and every line built in the stick comes out that width or does not come out. Justification therefore happens in the hand, line by line, and not afterwards.",
+    "src": "https://en.wikipedia.org/wiki/Composing_stick",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "seed"
+    ],
+    "out": "canary",
+    "why": "A bird's lungs take oxygen on both the in and the out breath, and a small body burns through it fast — so a canary shows the effects of carbon monoxide long before a person feels anything. That is why one went down a coal mine, and why it had to be a small bird.",
+    "src": "https://en.wikipedia.org/wiki/Domestic_canary",
+    "verified": true
+  },
+  {
+    "in": [
+      "frequency",
+      "signal"
+    ],
+    "out": "modulation",
+    "why": "A voice will not travel as a radio wave: its frequencies are far too low to leave an aerial of any usable size. Riding it on a carrier that will travel, by nudging that carrier's height or its frequency, is the whole reason radio can carry sound at all.",
+    "src": "https://en.wikipedia.org/wiki/Modulation",
+    "verified": true
+  },
+  {
+    "in": [
+      "pine",
+      "rod"
+    ],
+    "out": "soundpost",
+    "why": "The bridge rocks rather than pumps, so one foot goes down while the other comes up. The post holds one foot nearly still, which forces the belly to move about the other — and it couples that movement through to the back, which is why the instrument goes quiet the moment it falls over.",
+    "src": "https://en.wikipedia.org/wiki/Sound_post",
+    "verified": true
   }
 ]

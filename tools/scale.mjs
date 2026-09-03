@@ -248,6 +248,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* the needs loop closed, 4 Sep — the last 58 components */
+          'rosin', 'soundpost', 'type', 'horsehair', 'fingerboard', 'palette', 'wafer', 'composing_stick', 'canary', 'tongs', 'damper', 'piano_action', 'headline', 'legend', 'deposit', 'interest', 'credit', 'doping', 'silvering',
           /* cycle N, from needs.mjs, 4 Sep */
           'tuner', 'inductor', 'coil', 'contour',
           /* cycle M, from needs.mjs, 4 Sep */
@@ -659,6 +661,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* the needs loop closed, 4 Sep — the last 58 components */
+          'lid', 'peel', 'easel', 'costume', 'anvil', 'tripod', 'vat', 'condenser', 'evaporator', 'hopper', 'tail_vane', 'sail', 'kneading', 'grinding', 'lithography', 'advertisement', 'journalist', 'editor', 'clerk', 'conductor', 'rehearsal', 'platen', 'grid', 'modulation', 'cast_iron',
           /* cycle N, from needs.mjs, 4 Sep */
           'frequency', 'projection', 'deck', 'truss', 'cart', 'gate', 'well',
           /* cycle M, from needs.mjs, 4 Sep */
@@ -910,6 +914,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* the needs loop closed, 4 Sep — the last 58 components */
+          'quay', 'jetty', 'dock', 'breakwater', 'abutment', 'span', 'weir', 'channel', 'millrace', 'battlement', 'arrow_slit', 'courtyard', 'crypt', 'nave',
           /* cycle N, from needs.mjs, 4 Sep */
           'survey', 'pier', 'tunnel',
           /* cycle M, from needs.mjs, 4 Sep */

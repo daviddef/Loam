@@ -40349,6 +40349,344 @@ def('british_empire', () => [                                   // holdings that
   P('M29 19 L34 24 L29 24 Z', 'ik'),
 ]);
 
+
+/* ── the needs loop, closed: the last 58 components ──────────────────────
+   Every one of these was named by a needs list — the parts a builder would
+   actually put on a shopping list for a port, a bridge, a mill, a cathedral,
+   a fridge, a violin, a chip, a bank, a newspaper. They are drawn as the part
+   and not as the finished thing: a span is a gap, an abutment is the mass
+   that refuses to move, and a soundpost is a stick.                        */
+
+/* the port */
+def('quay',         () => [P('M4 26 L44 26 L44 50 L4 50 Z', 'bs'),
+                           P('M4 26 L44 26 L44 31 L4 31 Z', 'hi'),          // the coping you walk on
+                           ...[0, 1, 2].map(i => wave('gh', 40 + i * 5, 3, 7)),
+                           C(50, 24, 4, 'ik'), P('M47 26 L53 26 L53 32 L47 32 Z', 'ik')]);
+def('jetty',        () => [P('M6 24 L54 24 L54 30 L6 30 Z', 'bs'),
+                           ...[12, 24, 36, 48].map(x => P(`M${x - 2} 30 L${x + 2} 30 L${x + 2} 48 L${x - 2} 48 Z`, 'lo')),
+                           ...[0, 1].map(i => wave('gh', 42 + i * 6, 3, 9))]);
+def('dock',         () => [P('M4 20 L28 20 L28 50 L4 50 Z', 'lo'),          // held high inside
+                           P('M36 34 L56 34 L56 50 L36 50 Z', 'gh'),         // low outside
+                           P('M28 12 L32 12 L32 50 L28 50 Z', 'ik'),         // the gate that makes the difference
+                           P('M32 12 L36 12 L36 50 L32 50 Z', 'bs'),
+                           ...[0, 1].map(i => wave('hi', 24 + i * 6, 2.5, 8))]);
+def('breakwater',   () => [P('M10 50 L30 22 L50 50 Z', 'bs'),
+                           ...[[18, 42], [26, 34], [34, 34], [42, 42], [30, 44]].map(([x, y]) => C(x, y, 3.4, 'lo')),
+                           S('M4 20 Q10 12 14 22', 'hi', 2.4),               // the wave, arriving and spent
+                           S('M52 46 L56 46', 'gh', 1.6)]);
+
+/* the bridge */
+def('abutment',     () => [P('M4 20 L26 20 L26 52 L4 52 Z', 'bs'),
+                           P('M4 20 L26 20 L26 25 L4 25 Z', 'hi'),
+                           S('M26 24 Q42 14 56 24', 'ik', 4),                // the arch, pushing outward
+                           S('M30 30 L20 34', 'gh', 2.2),                    // and the thrust it hands to the bank
+                           P('M18 32 L24 34 L18 37 Z', 'gh'),
+                           ...[0, 1, 2].map(i => S(`M6 ${44 + i * 3} L24 ${44 + i * 3}`, 'lo', 1.2))]);
+def('span',         () => [P('M4 12 L14 12 L14 52 L4 52 Z', 'lo'),          // two supports, and the emptiness
+                           P('M46 12 L56 12 L56 52 L46 52 Z', 'lo'),         // between them, which is the measure
+                           S('M14 18 Q30 34 46 18', 'bs', 4),
+                           S('M14 44 L46 44', 'ik', 1.6),
+                           P('M14 41 L20 44 L14 47 Z', 'ik'), P('M46 41 L40 44 L46 47 Z', 'ik'),
+                           ...[24, 30, 36].map(x => S(`M${x} 42 L${x} 46`, 'gh', 1))]);
+
+/* the mill */
+def('weir',         () => [P('M6 28 L54 28 L54 34 L6 34 Z', 'bs'),
+                           P('M6 20 L30 20 L30 28 L6 28 Z', 'hi'),           // held up behind
+                           S('M30 34 Q34 44 32 52', 'gh', 3),                // and falling over
+                           S('M38 34 Q42 44 40 52', 'gh', 2.2),
+                           ...[0, 1].map(i => wave('gh', 48 + i * 5, 2.5, 9))]);
+def('channel',      () => [P('M4 14 L20 44 L40 44 L56 14 L56 52 L4 52 Z', 'lo'),   // cut in section: a lower line
+                           P('M20 44 L40 44 L48 26 L12 26 Z', 'bs'),                 // made for the water to take
+                           ...[0, 1].map(i => wave('hi', 32 + i * 6, 2.2, 11)),
+                           S('M4 14 L12 26', 'ik', 1.4), S('M56 14 L48 26', 'ik', 1.4)]);
+def('millrace',     () => [P('M4 16 L36 16 L36 24 L4 24 Z', 'lo'),
+                           P('M4 34 L36 34 L36 42 L4 42 Z', 'lo'),
+                           P('M4 24 L36 24 L36 34 L4 34 Z', 'bs'),
+                           wave('hi', 29, 2.2, 8),
+                           C(46, 32, 12, 'lo'), ring('ik', 46, 32, 12, 2),   // arriving at the wheel
+                           ...[0, 45, 90, 135].map(a => ['g', a, 46, 32, [S('M46 20 L46 44', 'ik', 1.4)]])]);
+
+/* the castle */
+def('battlement',   () => [P('M4 30 L56 30 L56 52 L4 52 Z', 'bs'),
+                           ...[0, 1, 2, 3].map(i => P(`M${6 + i * 13} 18 L${16 + i * 13} 18 L${16 + i * 13} 30 L${6 + i * 13} 30 Z`, 'bs')),
+                           ...[0, 1, 2].map(i => P(`M${16 + i * 13} 24 L${19 + i * 13} 24 L${19 + i * 13} 30 L${16 + i * 13} 30 Z`, 'lo')),
+                           S('M6 34 L54 34', 'lo', 1.4)]);
+def('arrow_slit',   () => [P('M6 4 L54 4 L54 56 L6 56 Z', 'bs'),
+                           ...[10, 20, 30, 40, 50].map(y => S(`M6 ${y} L54 ${y}`, 'lo', 1.2)),   // coursed stone,
+                           ...[0, 1, 2].map(i => S(`M${18 + i * 12} ${i % 2 ? 10 : 20} L${18 + i * 12} ${i % 2 ? 20 : 30}`, 'lo', 1.2)),
+                           P('M14 12 L46 12 L34 30 L34 48 L26 48 L26 30 Z', 'ground'),           // the splay: wide inside,
+                           P('M28 12 L32 12 L32 48 L28 48 Z', 'ik')]);                            // a few inches outside
+def('courtyard',    () => [P('M6 6 L54 6 L54 16 L6 16 Z', 'bs'),          // ranges on all four sides,
+                           P('M6 44 L54 44 L54 54 L6 54 Z', 'bs'),
+                           P('M6 16 L16 16 L16 44 L6 44 Z', 'bs'),
+                           P('M44 16 L54 16 L54 44 L44 44 Z', 'bs'),
+                           P('M16 16 L44 16 L44 44 L16 44 Z', 'hi'),         // and the open ground they leave
+                           ...[10, 22, 34, 46].map(x => P(`M${x} 8 L${x + 4} 8 L${x + 4} 14 L${x} 14 Z`, 'lo')),
+                           C(30, 30, 5, 'lo'), ring('ik', 30, 30, 5, 1.4)]); // the well everything overlooks
+
+/* the cathedral */
+def('crypt',        () => [P('M6 30 L54 30 L54 34 L6 34 Z', 'ik'),           // the church floor overhead
+                           ...[0, 1, 2].map(i => S(`M${10 + i * 16} 50 Q${18 + i * 16} 34 ${26 + i * 16} 50`, 'bs', 3.4)),
+                           ...[10, 26, 42, 58].filter(x => x < 56).map(x => P(`M${x - 2} 44 L${x + 2} 44 L${x + 2} 54 L${x - 2} 54 Z`, 'lo')),
+                           P('M26 46 L34 46 L34 54 L26 54 Z', 'hi')]);       // and the reason it is down here
+def('nave',         () => [...[0, 1, 2].map(i => P(`M${8 + i * 5} ${20 + i * 3} L${13 + i * 5} ${20 + i * 3} L${13 + i * 5} ${48 - i * 3} L${8 + i * 5} ${48 - i * 3} Z`, i ? 'lo' : 'bs')),
+                           ...[0, 1, 2].map(i => P(`M${47 - i * 5} ${20 + i * 3} L${52 - i * 5} ${20 + i * 3} L${52 - i * 5} ${48 - i * 3} L${47 - i * 5} ${48 - i * 3} Z`, i ? 'lo' : 'bs')),
+                           S('M25 26 Q30 20 35 26', 'ik', 2),                // the long middle, going away
+                           P('M26 30 L34 30 L34 44 L26 44 Z', 'hi')]);
+
+/* the windmill */
+def('sail',         () => [P('M12 6 L16 6 L16 54 L12 54 Z', 'lo'),        // the mast it is bent to
+                           P('M16 10 Q40 18 46 26 Q34 40 16 48 Z', 'bs'),   // and the belly the wind puts in it
+                           S('M16 10 Q40 18 46 26', 'ik', 2.4),             // roped all round, because canvas
+                           S('M16 48 Q34 40 46 26', 'ik', 2.4),             // tears from the corners
+                           S('M22 20 Q30 27 24 40', 'hi', 1.4),
+                           S('M46 26 L54 30', 'ik', 1.6)]);
+def('hopper',       () => [P('M8 12 L52 12 L52 20 L8 20 Z', 'lo'),
+                           P('M8 20 L52 20 L36 44 L24 44 Z', 'bs'),          // sloped steeply enough not to bridge
+                           P('M24 44 L36 44 L36 50 L24 50 Z', 'lo'),
+                           ...[[26, 28], [34, 26], [30, 34], [24, 34], [36, 34]].map(([x, y]) => C(x, y, 2, 'hi'))]);
+def('tail_vane',    () => [P('M6 40 L54 40 L54 46 L6 46 Z', 'lo'),        // the cap it is geared to,
+                           P('M14 46 L46 46 L46 54 L14 54 Z', 'lo'),
+                           P('M34 20 L38 20 L38 42 L34 42 Z', 'ik'),        // on a shaft, set crossways
+                           ...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 36, 20, [P('M34 20 L38 20 L37.5 8 L34.5 8 Z', 'bs')]]),
+                           C(36, 20, 3, 'ik'),
+                           S('M6 14 L20 14', 'gh', 1.4), P('M18 11 L23 14 L18 17 Z', 'gh')]);  // only turns off-wind
+
+/* the smithy */
+def('anvil',        () => [P('M10 20 L50 20 L50 28 L10 28 Z', 'bs'),
+                           P('M50 20 Q58 24 50 28 Z', 'bs'),                 // the horn
+                           P('M22 28 L38 28 L34 40 L26 40 Z', 'lo'),
+                           P('M16 40 L44 40 L44 50 L16 50 Z', 'bs'),         // and the mass that will not move
+                           S('M12 22 L48 22', 'hi', 1.2)]);
+def('tongs',        () => [S('M14 14 L26 26', 'bs', 4),                   // short jaws, gripping,
+                           S('M14 38 L26 26', 'bs', 4),
+                           C(26, 26, 3.4, 'ik'),                             // one pivot,
+                           S('M26 26 L52 20', 'bs', 3.4),                    // and long handles, because the
+                           S('M26 26 L52 34', 'bs', 3.4),                    // force multiplies with the length
+                           P('M10 16 L18 20 L10 24 Z', 'hi'),
+                           P('M10 36 L18 32 L10 28 Z', 'hi'),
+                           P('M11 22 L17 22 L17 30 L11 30 Z', 'ik')]);       // the work, too hot to hold
+
+/* the tannery */
+def('vat',          () => [P('M12 16 L48 16 L44 52 L16 52 Z', 'bs'),
+                           ...[24, 38].map(y => P(`M${13 + (y - 16) * 0.11} ${y} L${47 - (y - 16) * 0.11} ${y} L${47 - (y - 16) * 0.11} ${y + 4} L${13 + (y - 16) * 0.11} ${y + 4} Z`, 'ik')),
+                           E(30, 16, 18, 4, 'lo'),
+                           E(30, 18, 14, 3, 'gh')]);                          // the liquor, and months in it
+
+/* the fridge */
+def('condenser',    () => [...[0, 1, 2, 3].map(i => S(`M10 ${16 + i * 10} L50 ${16 + i * 10}`, 'bs', 3)),
+                           ...[0, 1, 2].map(i => S(`M50 ${16 + i * 10} Q56 ${21 + i * 10} 50 ${26 + i * 10}`, 'bs', 3)),
+                           ...[0, 1, 2, 3, 4, 5].map(i => S(`M${14 + i * 6} 12 L${14 + i * 6} 50`, 'lo', 1.4))]);  // fins, to hand it over faster
+def('evaporator',   () => [P('M6 8 L54 8 L54 52 L6 52 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => S(`M14 ${16 + i * 9} L46 ${16 + i * 9}`, 'hi', 2.6)),
+                           ...[0, 1, 2].map(i => (i % 2
+                             ? S(`M14 ${16 + i * 9} Q8 ${20 + i * 9} 14 ${25 + i * 9}`, 'hi', 2.6)
+                             : S(`M46 ${16 + i * 9} Q52 ${20 + i * 9} 46 ${25 + i * 9}`, 'hi', 2.6))),
+                           ...[[20, 22], [40, 31], [26, 40]].map(([x, y]) => C(x, y, 2, 'ik'))]);
+
+/* the piano */
+def('piano_action', () => [P('M6 40 L34 40 L34 46 L6 46 Z', 'hi'),           // the key
+                           C(34, 43, 2.4, 'ik'),                              // the balance rail it rocks on
+                           S('M34 43 L44 30', 'lo', 2.4),
+                           C(46, 24, 6, 'bs'),                                // the hammer, thrown and free
+                           S('M52 24 L56 24', 'ik', 3),
+                           S('M38 46 L44 50', 'gh', 1.6)]);
+def('cast_iron',    () => [P('M10 14 L26 14 L22 26 L14 26 Z', 'lo'),          // poured, because it runs
+                           S('M18 26 Q20 34 20 40', 'hi', 3),
+                           P('M8 40 L52 40 L48 52 L12 52 Z', 'bs'),
+                           ...[[20, 45], [30, 47], [40, 45], [26, 49], [36, 49]].map(([x, y]) => S(`M${x} ${y} L${x + 4} ${y + 2}`, 'ik', 1.2))]);  // graphite flakes, and the brittleness
+def('damper',       () => [...[0, 1, 2].map(i => S(`M4 ${38 + i * 6} L56 ${38 + i * 6}`, 'ik', 1.6)),  // strings, still ringing
+                           P('M20 18 L40 18 L40 30 L20 30 Z', 'lo'),
+                           P('M18 30 L42 30 L36 39 L24 39 Z', 'hi'),          // felt, soft enough to stop them
+                           S('M30 18 L30 6', 'lo', 2.4),                       // without a sound of its own
+                           S('M20 8 L40 8', 'lo', 2.4),
+                           S('M46 20 L46 32', 'gh', 1.2), P('M43 30 L46 36 L49 30 Z', 'gh')]);
+def('lid',          () => [P('M10 34 L50 34 L50 52 L10 52 Z', 'bs'),
+                           P('M10 30 L50 30 L50 34 L10 34 Z', 'lo'),
+                           P('M12 12 L52 8 L52 14 L12 18 Z', 'hi'),           // swung clear, still attached
+                           C(12, 30, 3, 'ik')]);
+
+/* the violin */
+def('horsehair',    () => [...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i =>          // a hank: gathered at one end and
+                             S(`M12 30 Q32 ${28 + (i - 4) * 1.6} 54 ${12 + i * 4.5}`, 'bs', 1.2)),   // spreading at the other
+                           ...[0, 1, 2, 3].map(i =>
+                             S(`M12 30 Q32 ${29 + (i - 2) * 3} 54 ${18 + i * 8}`, 'hi', 1)),
+                           P('M4 24 L14 24 L14 36 L4 36 Z', 'ik'),
+                           S('M6 27 L12 27', 'lo', 1.2), S('M6 33 L12 33', 'lo', 1.2)]);           // the hank, bound at one end
+def('rosin',        () => [P('M16 18 L44 16 L48 44 L20 48 Z', 'bs'),
+                           P('M20 22 L40 21 L42 34 L23 36 Z', 'hi'),           // amber, and it fractures like glass
+                           S('M24 40 L34 30 L30 44', 'lo', 1.4)]);
+def('fingerboard',  () => [P('M22 6 L38 6 L34 52 L26 52 Z', 'ik'),             // ebony: harder than the neck under it
+                           P('M24 10 L36 10 L35 20 L25 20 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => S(`M${27 - i * 0.5} ${14 + i * 10} L${33 + i * 0.5} ${14 + i * 10}`, 'gh', 1))]);
+def('soundpost',    () => [P('M6 18 Q30 6 54 18 Q30 14 6 18 Z', 'bs'),        // the belly, arched, and the back
+                           P('M6 44 Q30 54 54 44 Q30 48 6 44 Z', 'bs'),
+                           P('M18 8 L22 8 L22 16 L18 16 Z', 'ik'),             // one foot of the bridge, above it
+                           P('M36 8 L40 8 L40 15 L36 15 Z', 'ik'),
+                           P('M35 16 L41 16 L41 45 L35 45 Z', 'hi'),           // the post, off-centre on purpose:
+                           S('M16 18 Q18 30 16 42', 'gh', 1.4)]);              // the other foot is left free to move
+
+/* the telescope */
+def('tripod',       () => [S('M30 12 L12 50', 'bs', 3.4),
+                           S('M30 12 L48 50', 'bs', 3.4),
+                           S('M30 12 L30 50', 'lo', 3.4),                       // three, and never rocking
+                           C(30, 12, 5, 'ik'),
+                           ...[[12, 50], [48, 50], [30, 50]].map(([x, y]) => P(`M${x - 3} ${y} L${x + 3} ${y} L${x + 2} ${y + 3} L${x - 2} ${y + 3} Z`, 'lo'))]);
+def('grinding',     () => [E(30, 22, 22, 7, 'bs'),                              // upper wears hollow,
+                           E(30, 38, 22, 7, 'lo'),                              // lower wears convex
+                           ...[[18, 30], [26, 31], [34, 30], [42, 31], [30, 29]].map(([x, y]) => C(x, y, 1.8, 'hi')),
+                           S('M6 22 L2 22', 'gh', 1.4), S('M54 38 L58 38', 'gh', 1.4)]);
+def('silvering',    () => [P('M10 10 L50 10 L50 44 L10 44 Z', 'gh'),
+                           P('M10 44 L50 44 L50 50 L10 50 Z', 'hi'),            // the film, behind the glass
+                           S('M16 16 L28 40', 'hi', 2.4),
+                           S('M24 14 L32 26', 'hi', 1.6),
+                           ...[[38, 20], [42, 30]].map(([x, y]) => C(x, y, 2, 'hi'))]);
+
+/* the bakery */
+def('kneading',     () => [E(30, 40, 20, 12, 'bs'),
+                           ...[0, 1, 2].map(i => S(`M${16 + i * 10} 34 Q${21 + i * 10} 44 ${16 + i * 10} 50`, 'lo', 2)),  // folded, and folded again
+                           P('M18 12 L30 20 L24 26 L14 20 Z', 'hi'),
+                           P('M42 12 L30 20 L36 26 L46 20 Z', 'hi')]);
+def('peel',         () => [P('M8 22 L34 18 L34 40 L8 36 Z', 'bs'),
+                           P('M8 24 L30 21 L30 37 L8 34 Z', 'hi'),
+                           P('M34 26 L56 27 L56 32 L34 33 Z', 'lo'),            // long enough to keep the arm out
+                           E(18, 29, 6, 5, 'lo')]);
+
+/* the painting */
+def('easel',        () => [S('M18 52 L28 8', 'bs', 3.4),
+                           S('M42 52 L32 8', 'bs', 3.4),
+                           S('M36 50 L30 10', 'lo', 3),
+                           P('M14 24 L46 24 L46 28 L14 28 Z', 'lo'),
+                           P('M16 24 L44 24 L44 44 L16 44 Z', 'hi'),            // held up at the height of the eye
+                           S('M22 14 L38 14', 'lo', 2.4)]);
+def('palette',      () => [P('M8 22 Q30 10 52 22 Q54 40 30 46 Q10 44 8 22 Z', 'bs'),
+                           C(20, 34, 4, 'ground'),                              // the hole the thumb goes through
+                           ...[[24, 20], [32, 18], [40, 20], [46, 26], [46, 34]].map(([x, y]) => C(x, y, 3, 'hi')),
+                           C(38, 32, 3, 'lo')]);
+
+/* the theatre */
+def('costume',      () => [P('M20 14 L40 14 L44 26 L38 28 L38 50 L22 50 L22 28 L16 26 Z', 'bs'),
+                           P('M26 14 L34 14 L30 22 Z', 'hi'),
+                           ...[0, 1].map(i => S(`M${24 + i * 12} 32 L${24 + i * 12} 46`, 'lo', 1.4)),
+                           C(30, 30, 2, 'ik'), C(30, 38, 2, 'ik')]);
+def('rehearsal',    () => [P('M6 42 L54 42 L54 48 L6 48 Z', 'lo'),              // the actual stage, and no one out front
+                           ...[[20, 30], [34, 28]].map(([x, y]) => [C(x, y, 4, 'bs'), P(`M${x - 4} ${y + 5} L${x + 4} ${y + 5} L${x + 3} 42 L${x - 3} 42 Z`, 'bs')]).flat(),
+                           S('M16 46 L24 46', 'ik', 1.6), S('M30 46 L38 46', 'ik', 1.6),  // the marks on the floor
+                           S('M44 20 L48 20', 'gh', 1.4)]);
+
+/* printing */
+def('type',         () => [P('M18 10 L42 10 L42 44 L18 44 Z', 'bs'),
+                           P('M18 44 L42 44 L42 50 L18 50 Z', 'lo'),
+                           P('M24 14 L36 14 L36 18 L32 18 L32 30 L28 30 L28 18 L24 18 Z', 'ik'),  // one letter, cast and reused
+                           S('M20 38 L40 38', 'gh', 1.2),
+                           P('M18 32 L21 32 L21 36 L18 36 Z', 'hi')]);          // the nick, so it goes in the right way up
+def('composing_stick', () => [P('M6 30 L54 30 L54 38 L6 38 Z', 'bs'),
+                           P('M6 14 L12 14 L12 38 L6 38 Z', 'bs'),
+                           P('M40 16 L46 16 L46 38 L40 38 Z', 'lo'),            // the stop, set once to the column
+                           ...[0, 1, 2, 3].map(i => P(`M${15 + i * 6} 18 L${20 + i * 6} 18 L${20 + i * 6} 30 L${15 + i * 6} 30 Z`, 'hi')),
+                           S('M46 12 L52 12', 'gh', 1.4)]);
+def('platen',       () => [P('M8 26 L52 26 L52 34 L8 34 Z', 'bs'),
+                           P('M12 38 L48 38 L48 44 L12 44 Z', 'hi'),            // the sheet
+                           P('M10 46 L50 46 L50 52 L10 52 Z', 'lo'),            // on the type
+                           P('M27 6 L33 6 L33 26 L27 26 Z', 'ik'),
+                           ...[0, 1, 2].map(i => S(`M26 ${10 + i * 5} L34 ${12 + i * 5}`, 'gh', 1.2))]);  // the screw that finds the pressure
+
+/* the chip */
+def('wafer',        () => [C(30, 30, 22, 'bs'),
+                           P('M14 47 L30 52 L30 47 Z', 'ground'),               // the flat that says which way the lattice runs
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 11} 10 L${14 + i * 11} 50`, 'lo', 1.2)),
+                           ...[0, 1, 2, 3].map(i => S(`M10 ${14 + i * 11} L50 ${14 + i * 11}`, 'lo', 1.2)),
+                           P('M25 25 L36 25 L36 36 L25 36 Z', 'hi')]);
+def('doping',       () => [P('M8 34 L52 34 L52 48 L8 48 Z', 'bs'),
+                           P('M8 18 L22 18 L22 24 L8 24 Z', 'lo'),              // the mask: here and not there
+                           P('M38 18 L52 18 L52 24 L38 24 Z', 'lo'),
+                           ...[26, 30, 34].map(x => [S(`M${x} 10 L${x} 32`, 'ik', 1.4), P(`M${x - 2.5} 30 L${x + 2.5} 30 L${x} 35 Z`, 'ik')]).flat(),
+                           ...[[28, 40], [32, 42], [30, 44]].map(([x, y]) => C(x, y, 1.6, 'hi'))]);
+def('lithography',  () => [...[0, 1, 2, 3, 4].map(i => S(`M${12 + i * 9} 4 L${12 + i * 9} 16`, 'hi', 1.6)),
+                           P('M6 16 L54 16 L54 22 L6 22 Z', 'lo'),
+                           ...[16, 28, 40].map(x => P(`M${x} 16 L${x + 6} 16 L${x + 6} 22 L${x} 22 Z`, 'ground')),  // the gaps are the pattern
+                           ...[16, 28, 40].map(x => S(`M${x + 3} 22 L${x + 3} 40`, 'gh', 1.4)),
+                           P('M6 40 L54 40 L54 52 L6 52 Z', 'bs'),
+                           ...[16, 28, 40].map(x => P(`M${x} 40 L${x + 6} 40 L${x + 6} 45 L${x} 45 Z`, 'ik'))]);
+
+/* the map */
+def('grid',         () => [...[0, 1, 2, 3].map(i => S(`M${12 + i * 12} 8 L${12 + i * 12} 52`, 'lo', 1.4)),
+                           ...[0, 1, 2, 3].map(i => S(`M8 ${12 + i * 12} L52 ${12 + i * 12}`, 'lo', 1.4)),
+                           S('M36 8 L36 52', 'ik', 2.4),                        // one point, and two numbers for it
+                           S('M8 36 L52 36', 'ik', 2.4),
+                           C(36, 36, 4, 'hi')]);
+def('legend',       () => [P('M6 10 L54 10 L54 50 L6 50 Z', 'lo'),
+                           P('M30 16 L50 16 L50 46 L30 46 Z', 'bs'),            // the panel that travels with it
+                           ...[0, 1, 2].map(i => C(35, 23 + i * 8, 2.4, i ? 'hi' : 'ik')),
+                           ...[0, 1, 2].map(i => S(`M40 ${23 + i * 8} L47 ${23 + i * 8}`, 'hi', 1.4)),
+                           ...[[14, 20], [20, 30], [12, 38], [22, 42]].map(([x, y]) => C(x, y, 2, 'ik'))]);
+
+/* the newspaper */
+def('journalist',   () => [C(30, 16, 7, 'bs'),
+                           P('M20 26 L40 26 L44 50 L16 50 Z', 'bs'),
+                           P('M34 30 L52 30 L52 46 L34 46 Z', 'hi'),            // the notebook, which is the job
+                           ...[0, 1, 2].map(i => S(`M37 ${34 + i * 4} L49 ${34 + i * 4}`, 'ik', 1.2)),
+                           S('M50 26 L54 22', 'ik', 2)]);
+def('editor',       () => [P('M10 8 L44 8 L44 52 L10 52 Z', 'hi'),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M15 ${16 + i * 7} L39 ${16 + i * 7}`, 'gh', 1.2)),
+                           S('M14 22 L40 34', 'ik', 3),                          // the line that says no
+                           S('M40 22 L14 34', 'ik', 3),
+                           S('M46 14 L54 6', 'bs', 3.4)]);
+def('headline',     () => [P('M8 8 L52 8 L52 52 L8 52 Z', 'hi'),
+                           P('M13 14 L47 14 L47 24 L13 24 Z', 'ik'),            // set last, to a width already fixed
+                           ...[0, 1, 2, 3].map(i => S(`M13 ${31 + i * 6} L47 ${31 + i * 6}`, 'gh', 1.4)),
+                           S('M13 28 L13 20', 'bs', 1.2), S('M47 28 L47 20', 'bs', 1.2)]);
+def('advertisement',() => [P('M8 8 L52 8 L52 52 L8 52 Z', 'hi'),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M12 ${14 + i * 5} L30 ${14 + i * 5}`, 'gh', 1.2)),
+                           P('M32 12 L48 12 L48 34 L32 34 Z', 'bs'),            // the space that pays for the rest
+                           C(40, 20, 4, 'ik'),
+                           ...[0, 1].map(i => S(`M35 ${27 + i * 4} L45 ${27 + i * 4}`, 'hi', 1.4)),
+                           ...[0, 1, 2].map(i => S(`M12 ${40 + i * 5} L48 ${40 + i * 5}`, 'gh', 1.2))]);
+
+/* the bank */
+def('clerk',        () => [C(24, 14, 6, 'bs'),
+                           P('M15 23 L33 23 L36 42 L12 42 Z', 'bs'),
+                           P('M6 42 L54 42 L54 48 L6 48 Z', 'lo'),
+                           P('M32 34 L52 34 L52 42 L32 42 Z', 'hi'),            // the same thing written down, daily
+                           ...[0, 1].map(i => S(`M35 ${37 + i * 3} L49 ${37 + i * 3}`, 'ik', 1)),
+                           S('M30 32 L36 28', 'ik', 1.6)]);
+def('deposit',      () => [P('M12 16 L48 16 L48 52 L12 52 Z', 'bs'),
+                           C(30, 36, 11, 'lo'), ring('ik', 30, 36, 11, 2),       // in, and a claim on it back out
+                           ...[0, 45, 90, 135].map(a => ['g', a, 30, 36, [S('M30 27 L30 45', 'ik', 1.2)]]),
+                           P('M22 20 L38 20 L38 24 L22 24 Z', 'ground'),
+                           C(30, 8, 5, 'hi'), S('M30 13 L30 19', 'gh', 1.4)]);
+def('interest',     () => [...[0, 1, 2, 3].map(i =>
+                             [E(16 + i * 10, 46 - i * 7, 7, 2.6, 'bs'),
+                              P(`M${9 + i * 10} ${46 - i * 7} L${23 + i * 10} ${46 - i * 7} L${23 + i * 10} ${50 - i * 7} L${9 + i * 10} ${50 - i * 7} Z`, 'bs')]).flat(),
+                           S('M8 52 L52 52', 'lo', 1.4),                          // priced per year, not per loan
+                           S('M10 14 L20 14', 'gh', 1.4), P('M18 11 L23 14 L18 17 Z', 'gh')]);
+def('credit',       () => [C(18, 20, 8, 'bs'), ring('ik', 18, 20, 8, 1.6),
+                           S('M25 24 L40 34', 'gh', 2),
+                           P('M38 31 L44 35 L37 37 Z', 'gh'),
+                           C(44, 40, 8, 'hi'), ring('ik', 44, 40, 8, 1.6),        // lent, and banked again as new money
+                           S('M14 32 L10 44', 'gh', 1.6),
+                           C(10, 48, 4, 'lo')]);
+
+/* the orchestra, the mine, the air */
+def('conductor',    () => [C(30, 12, 6, 'bs'),
+                           P('M21 21 L39 21 L42 42 L18 42 Z', 'bs'),
+                           P('M14 42 L46 42 L46 50 L14 50 Z', 'lo'),             // the podium, so the beat can be seen
+                           S('M40 24 L54 12', 'ik', 2.4),
+                           C(54, 11, 2, 'hi'),
+                           S('M20 26 L10 32', 'bs', 3)]);
+def('canary',       () => [E(30, 32, 14, 12, 'bs'),
+                           C(20, 22, 7, 'bs'),
+                           P('M13 22 L7 24 L13 26 Z', 'ik'),
+                           C(18, 20, 1.8, 'ik'),
+                           P('M34 28 Q46 30 42 40 Q36 38 32 34 Z', 'hi'),
+                           P('M42 34 L54 44 L42 42 Z', 'bs'),
+                           ...[0, 1].map(i => S(`M${26 + i * 6} 44 L${26 + i * 6} 50`, 'ik', 1.4))]);
+def('modulation',   () => [S('M4 30 Q10 14 16 30 Q22 46 28 30 Q34 16 40 30 Q46 44 52 30 Q56 22 58 30', 'gh', 1.2),
+                           S('M4 30 Q10 20 16 30 Q22 42 28 30 Q34 12 40 30 Q46 48 52 30', 'bs', 2.6),
+                           S('M4 22 Q16 10 28 22 Q40 34 52 20', 'hi', 1.6),       // the envelope: the thing being carried
+                           S('M4 38 Q16 50 28 38 Q40 26 52 40', 'hi', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

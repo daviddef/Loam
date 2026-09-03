@@ -693,7 +693,6 @@
         "vault",
         "buttress",
         "column",
-        "pillar",
         "spire",
         "bell",
         "bell_tower|tower",
@@ -807,7 +806,7 @@
         "proving|fermentation",
         "peel|paddle",
         "tin",
-        "scales|balance"
+        "scales|balance|scale"
       ]
     },
     "tannery": {
@@ -865,13 +864,12 @@
         "compressor",
         "condenser",
         "evaporator",
-        "refrigerant",
+        "refrigerant|ammonia",
         "expansion_valve|valve",
         "insulation",
         "thermostat",
         "motor|electric_motor",
         "pipe",
-        "heat",
         "door",
         "seal_gasket|rubber"
       ]
@@ -898,7 +896,7 @@
         "string",
         "hammer",
         "key",
-        "action|mechanism",
+        "action|mechanism|piano_action",
         "soundboard",
         "frame",
         "cast_iron",
