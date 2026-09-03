@@ -88,6 +88,8 @@ const SCALE = {
           // compounds, the same molecule scale as digoxin/batrachotoxin above
           'atropine', 'thc', 'cocaine', 'nicotine', 'morphine', 'mescaline', 'psilocybin'],
   '-8':  [
+          /* medicine and disease, 3 Sep */
+          'vibrio_cholerae',
           'soot',
           /* unblocking-nouns wave, 2 Sep */
           'antitoxin', 'central_dogma', 'epigenetics', 'gene_expression', 'heterozygous', 'homozygous', 'recessive_allele', 'toxin',
@@ -230,6 +232,10 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* the house, from tools/needs.mjs, 3 Sep */
+          'gravel',
+          /* medicine and disease, 3 Sep */
+          'vitamin_c',
           /* everyday: the last of them, 3 Sep */
           'charger',
           /* everyday: the desk, 3 Sep */
@@ -368,6 +374,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* the house, from tools/needs.mjs, 3 Sep */
+          'plaster', 'mortar_lime', 'insulation', 'hinge',
           /* common words the corpus never had, 3 Sep */
           'kite', 'whisky', 'sushi', 'seaweed',
           /* everyday: the last of them, 3 Sep */
@@ -581,6 +589,10 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* the house, from tools/needs.mjs, 3 Sep */
+          'timber', 'beam', 'joist', 'lintel', 'plasterboard', 'floorboard', 'gutter', 'radiator',
+          /* medicine and disease, 3 Sep */
+          'polio', 'influenza', 'rabies', 'scurvy', 'rickets', 'cholera', 'oral_rehydration_therapy',
           /* common words the corpus never had, 3 Sep */
           'otter', 'skunk', 'crocodile', 'emu', 'statue', 'robot',
           /* society and economy, 3 Sep */
@@ -798,6 +810,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* the house, from tools/needs.mjs, 3 Sep */
+          'foundation', 'ceiling', 'scaffold',
           /* common words the corpus never had, 3 Sep */
           'ship', 'blue_whale', 'pyramid',
           /* everyday: the last of them, 3 Sep */

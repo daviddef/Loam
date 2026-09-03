@@ -1,0 +1,33 @@
+{
+  "$comment": "What you would actually need to build one. NOT a recipe: recipes are the game's two-input grammar and say how a thing is derived. A needs list is the unbounded, honest answer to 'what goes into one', and exists to drive authoring — the corpus checks itself against it and the gaps fall out. Entries may use a|b alternation where two words mean the same thing. See tools/needs.mjs.",
+  "needs": {
+    "house": {
+      "src": "https://en.wikipedia.org/wiki/Building_material",
+      "note": "A builder's list, in the order the site works: ground, structure, envelope, services, finish.",
+      "needs": [
+        "foundation", "concrete", "cement", "sand", "gravel", "rebar|reinforcing_steel", "damp_proof_course",
+        "brick", "mortar", "block|concrete_block", "lintel", "cavity_wall_tie", "scaffold",
+        "timber", "joist", "rafter", "stud", "plank", "beam", "nail", "screw", "bolt",
+        "roof", "roof_tile|tile", "slate", "batten", "roofing_felt", "ridge", "flashing", "gutter", "downpipe",
+        "insulation", "plasterboard|drywall", "plaster", "render", "paint", "primer", "sealant",
+        "window", "glass", "window_frame", "sill", "door", "door_frame", "hinge", "lock", "handle",
+        "floor", "floorboard", "screed", "underlay", "stairs",
+        "pipe", "copper", "water_tank", "boiler", "radiator", "tap", "sink", "drain", "soil_pipe",
+        "cable", "wire", "socket|power_socket", "switch", "fuse_box|consumer_unit", "light_bulb",
+        "wall", "ceiling", "chimney", "fireplace"
+      ]
+    },
+    "bicycle": {
+      "src": "https://en.wikipedia.org/wiki/Bicycle",
+      "needs": [
+        "frame", "steel", "aluminum|aluminium", "wheel", "spoke", "rim", "hub", "tyre|tire", "inner_tube",
+        "chain", "gear", "sprocket", "pedal", "crank", "bearing", "handlebar", "brake", "brake_pad",
+        "saddle|seat", "fork", "bell", "reflector", "rubber", "grease"
+      ]
+    },
+    "loaf_of_bread": {
+      "src": "https://en.wikipedia.org/wiki/Bread",
+      "needs": ["flour", "water", "yeast", "salt", "sugar", "oven", "dough", "gluten", "starch", "tin|baking_tin", "heat|fire"]
+    }
+  }
+}

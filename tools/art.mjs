@@ -30429,6 +30429,121 @@ def('rodent', () => [                                                // the inci
   P('M43 39 Q52 44 49 54 Q45 57 42 52 Q41 45 43 39 Z', 'hi'),         // and the lower one, wearing against it
   ...granules('lo', 5, 313, [10, 46, 32, 57]),                        // the shavings being the only thing that keeps either short
 ]);
+/* ── the house, found by tools/needs.mjs ─────────────────────────────────
+   Timber, beam, joist and floorboard are all "a length of wood", so each is
+   drawn in the orientation it is used in: timber stacked and drying, a beam
+   spanning with its load, joists in a row on edge, floorboards tongued
+   together across them.                                                    */
+
+def('timber',       () => [...[0, 1, 2].map(i => P(`M8 ${18 + i * 10} L52 ${16 + i * 10} L52 ${23 + i * 10} L8 ${25 + i * 10} Z`, i === 1 ? 'lo' : 'bs')),
+                           ...[14, 30, 46].map(x => S(`M${x} 16 L${x} 48`, 'gh', 1)),   // stacked in stick, to season
+                           S('M8 18 L52 16', 'hi', 1.2)]);
+def('beam',         () => [P('M6 24 L54 24 L54 30 L6 30 Z', 'bs'),             // an I: metal where the bending is
+                           P('M6 30 L54 30 L54 36 L6 36 Z', 'bs'),
+                           P('M26 26 L34 26 L34 34 L26 34 Z', 'bs'),
+                           P('M12 18 L48 18 L48 24 L12 24 Z', 'lo'),
+                           ...[16, 30, 44].map(x => S(`M${x} 14 L${x} 18`, 'ik', 2))]);  // the load on top
+def('joist',        () => [...[12, 22, 32, 42].map(x => P(`M${x} 14 L${x + 6} 14 L${x + 6} 46 L${x} 46 Z`, 'bs')),
+                           P('M6 10 L54 10 L54 14 L6 14 Z', 'lo'),              // on edge: twice as deep is eight
+                           P('M6 46 L54 46 L54 50 L6 50 Z', 'lo')]);            // times as stiff
+def('floorboard',   () => [...[16, 24, 32, 40].map(y => [
+                             P(`M6 ${y} L54 ${y} L54 ${y + 6} L6 ${y + 6} Z`, 'bs'),
+                             S(`M6 ${y + 6} L54 ${y + 6}`, 'lo', 1.2)]).flat(),
+                           ...[18, 42].map(x => S(`M${x} 14 L${x} 48`, 'gh', 1.4))]);
+def('gravel',       () => [...[[14,36,5],[24,32,6],[34,37,5],[44,33,6],[19,44,4],[30,44,5],[41,44,4],[50,40,4]]
+                             .map(([x,y,r]) => C(x, y, r, 'bs')),
+                           ...[[24,32,3],[44,33,3]].map(([x,y,r]) => C(x, y, r, 'hi'))]);  // rounded: it travelled
+def('foundation',   () => [P('M14 8 L46 8 L46 26 L14 26 Z', 'gh'),             // the wall, and what spreads it
+                           P('M6 26 L54 26 L54 40 L6 40 Z', 'bs'),
+                           ...granules('lo', 10, 411, [8, 42, 52, 50]),
+                           ...[12, 24, 36, 48].map(x => S(`M${x} 40 L${x} 46`, 'ik', 1.4))]);
+def('lintel',       () => [P('M10 30 L50 30 L50 50 L10 50 Z', 'gh'),           // the opening it spans
+                           P('M10 30 L18 30 L18 50 L10 50 Z', 'bs'),
+                           P('M42 30 L50 30 L50 50 L42 50 Z', 'bs'),
+                           P('M6 20 L54 20 L54 30 L6 30 Z', 'lo'),              // the stone across it
+                           P('M8 12 L52 12 L52 20 L8 20 Z', 'bs'),              // wall carried above
+                           S('M28 30 L30 25 L32 30', 'ik', 1.6)]);              // and where it cracks
+def('plaster',      () => [P('M6 26 L54 26 L54 48 L6 48 Z', 'bs'),             // the wall
+                           P('M6 26 L40 26 L36 48 L6 48 Z', 'hi'),              // a coat, part spread
+                           S('M36 48 Q40 37 40 26', 'lo', 1.6),                  // its wet edge
+                           P('M30 8 L52 14 L50 20 L28 14 Z', 'lo'),              // the float
+                           S('M38 20 L34 26', 'lo', 2.2)]);
+def('plasterboard', () => [P('M8 16 L52 16 L52 44 L8 44 Z', 'bs'),
+                           P('M8 16 L52 16 L52 20 L8 20 Z', 'hi'),              // paper liner, top and bottom
+                           P('M8 40 L52 40 L52 44 L8 44 Z', 'hi'),
+                           ...granules('lo', 8, 733, [12, 23, 48, 37])]);
+def('mortar_lime',  () => [...[0, 1].map(r => [0, 1, 2].map(c =>
+                             P(`M${8 + c * 16 + (r ? 8 : 0)} ${20 + r * 12} L${20 + c * 16 + (r ? 8 : 0)} ${20 + r * 12} L${20 + c * 16 + (r ? 8 : 0)} ${29 + r * 12} L${8 + c * 16 + (r ? 8 : 0)} ${29 + r * 12} Z`, 'bs'))).flat(),
+                           ...[18, 30, 42].map(y => S(`M4 ${y} L56 ${y}`, 'hi', 2.4))]);   // the soft joint, on purpose
+def('insulation',   () => [P('M8 16 L52 16 L52 46 L8 46 Z', 'hi'),
+                           ...[0, 1, 2, 3, 4, 5].map(i => S(`M${10 + i * 8} 18 Q${14 + i * 8} 31 ${10 + i * 8} 44`, 'bs', 2.2)),
+                           ...granules('lo', 12, 918, [10, 18, 50, 44])]);      // small pockets, so air cannot move
+def('ceiling',      () => [P('M6 12 L54 12 L54 20 L6 20 Z', 'lo'),             // hung below, leaving a void
+                           ...[14, 26, 38].map(x => S(`M${x} 20 L${x} 28`, 'gh', 1.6)),
+                           P('M6 28 L54 28 L54 34 L6 34 Z', 'bs'),
+                           S('M18 22 Q30 26 44 22', 'gh', 1.2)]);
+def('gutter',       () => [P('M8 6 L52 20 L52 26 L8 12 Z', 'gh'),              // roof, running down to the eaves
+                           P('M4 26 L56 26 L56 30 L4 30 Z', 'lo'),              // the channel, seen along its length
+                           P('M4 30 L56 30 L54 38 L6 38 Z', 'bs'),
+                           E(30, 30, 26, 3, 'hi'),
+                           P('M44 38 L50 38 L50 54 L44 54 Z', 'lo'),             // and the downpipe it feeds
+                           ...[16, 26].map(x => S(`M${x} 20 L${x + 2} 26`, 'hi', 1.3))]);
+def('hinge',        () => [P('M12 14 L28 14 L28 46 L12 46 Z', 'bs'),           // one degree of freedom, not six
+                           P('M32 14 L48 14 L48 46 L32 46 Z', 'lo'),
+                           ...[16, 24, 32, 40].map(y => C(30, y, 3.4, 'ik')),    // the knuckle
+                           ...[[18,22],[18,38],[42,22],[42,38]].map(([x,y]) => C(x, y, 1.8, 'hi'))]);
+def('radiator',     () => [...[12, 20, 28, 36, 44].map(x => P(`M${x} 18 L${x + 5} 18 L${x + 5} 42 L${x} 42 Z`, 'bs')),
+                           P('M8 16 L52 16 L52 20 L8 20 Z', 'lo'),
+                           P('M8 40 L52 40 L52 44 L8 44 Z', 'lo'),
+                           ...[16, 30, 44].map(x => S(`M${x} 14 Q${x + 3} 8 ${x} 4`, 'gh', 1.4))]);   // convection, not radiation
+def('scaffold',     () => [...[12, 30, 48].map(x => S(`M${x} 8 L${x} 52`, 'bs', 3)),
+                           ...[18, 32, 46].map(y => S(`M8 ${y} L52 ${y}`, 'bs', 2.4)),
+                           S('M12 18 L30 32 M30 18 L48 32', 'lo', 1.8),          // the brace that makes it rigid
+                           ...[[12,18],[30,18],[48,18],[12,32],[30,32],[48,32]].map(([x,y]) => C(x, y, 2, 'ik'))]);
+
+/* ── disease and treatment ───────────────────────────────────────────────
+   Diseases are drawn as what they do to a body rather than as the pathogen,
+   so they cannot be confused with the microbe elements they come from.     */
+
+def('polio',        () => [S('M30 10 L30 44', 'bs', 4),                        // a spine, and the nerve that stopped
+                           ...[16, 22, 28, 34, 40].map(y => C(24, y, 2.6, 'lo')),
+                           S('M30 26 L44 34', 'gh', 2.4),
+                           S('M30 44 L24 56 M30 44 L38 54', 'bs', 3),
+                           C(44, 34, 3, 'ik')]);
+def('influenza',    () => [C(30, 28, 13, 'bs'),                                 // the surface proteins that drift
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+                             ['g', a, 30, 28, [S('M30 15 L30 8', 'lo', 2), C(30, 7, 2.2, 'hi')]]),
+                           C(30, 28, 5, 'lo')]);
+def('rabies',       () => [S('M8 44 Q20 44 26 34 Q32 24 44 20', 'bs', 3.5),     // up the nerve, to the brain
+                           P('M40 12 Q52 12 52 22 Q52 30 42 28 Q36 24 40 12 Z', 'lo'),
+                           ...[[16,42],[26,34],[36,26]].map(([x,y]) => C(x, y, 2.6, 'ik')),
+                           S('M44 18 Q48 22 44 25', 'hi', 1.4)]);
+def('scurvy',       () => [...[0, 60, 120].map(a => ['g', a, 30, 30, [S('M12 30 L48 30', 'lo', 2.6)]]),
+                           // collagen's triple helix, coming apart
+                           S('M12 24 L26 24', 'bs', 2.6), S('M34 36 L48 36', 'bs', 2.6),
+                           C(22, 30, 3, 'ik'), C(38, 30, 3, 'ik'),
+                           S('M28 30 L32 30', 'gh', 1.2)]);
+def('rickets',      () => [P('M22 8 Q18 24 24 34 Q28 44 22 52 L30 52 Q36 44 32 34 Q26 24 30 8 Z', 'bs'),  // a bone that bent
+                           P('M38 10 L44 10 L44 50 L38 50 Z', 'gh'),             // beside one that did not
+                           ...[14, 22, 30].map(y => S(`M8 ${y} L14 ${y - 3}`, 'lo', 1.4))]);
+def('cholera',      () => [P('M20 10 Q34 12 34 24 Q34 34 26 40 Q18 34 18 24 Q18 14 20 10 Z', 'bs'),  // a gut, emptying
+                           S('M26 40 Q26 48 22 54', 'lo', 3),
+                           ...[[38,20],[44,28],[40,38],[48,44]].map(([x,y]) => E(x, y, 3.4, 5.5, 'hi')),  // water leaving
+                           ...[[36,14],[46,20],[44,34]].map(([x,y]) => C(x, y, 1.8, 'hi')),
+                           S('M30 18 Q24 22 30 28', 'gh', 1.2)]);
+def('vibrio_cholerae', () => [P('M14 34 Q22 16 40 20 Q50 23 48 30 Q44 24 34 24 Q22 24 18 38 Z', 'bs'),  // comma-shaped
+                           S('M16 36 Q10 42 6 40', 'ik', 1.6),                   // one polar flagellum
+                           C(38, 22, 1.6, 'hi')]);
+def('oral_rehydration_therapy', () => [P('M18 18 L42 18 L38 48 L22 48 Z', 'bs'),   // a glass, and what is in it
+                           P('M20 30 L40 30 L37 46 L23 46 Z', 'hi'),
+                           ...[[26,36],[34,38],[30,42]].map(([x,y]) => C(x, y, 2, 'lo')),
+                           ...[[25,24],[33,24]].map(([x,y]) => P(`M${x} ${y} L${x + 3} ${y} L${x + 3} ${y + 3} L${x} ${y + 3} Z`, 'ik'))]);
+def('vitamin_c',    () => [C(30, 30, 15, 'hi'),                                 // a citrus section
+                           ring('bs', 30, 30, 15, 2),
+                           ...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 30, 30, [S('M30 17 L30 30', 'bs', 1.6)]]),
+                           C(30, 30, 2.6, 'lo')]);
+
 /* ── common words the corpus never had ───────────────────────────────────
    Most of these are umbrella gaps: airship and longship existed and `ship`
    did not, nile_crocodile but no `crocodile`, sea_otter but no `otter`,

@@ -84816,5 +84816,255 @@
     "why": "The name is the rice, not the fish. It began as a preservation method — fish packed in fermenting rice for months, the rice discarded — and the modern version keeps the sourness while throwing away the wait.",
     "src": "https://en.wikipedia.org/wiki/Sushi",
     "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "poliovirus"
+    ],
+    "out": "polio",
+    "why": "Most infections cause nothing worse than a stomach upset. In roughly one in two hundred the virus reaches the motor neurons of the spinal cord, and the paralysis that follows is permanent because those neurons do not regrow.",
+    "src": "https://en.wikipedia.org/wiki/Polio",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "influenza_virus"
+    ],
+    "out": "influenza",
+    "why": "Its surface proteins drift a little each year, which is why immunity fades and the vaccine is remade annually. Rarely two strains infect one animal and swap whole gene segments — a shift rather than a drift, and the reason pandemics happen.",
+    "src": "https://en.wikipedia.org/wiki/Influenza",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "rabies_virus"
+    ],
+    "out": "rabies",
+    "why": "It moves through nerve tissue rather than blood, which is slow and is the whole reason treatment works: vaccination after a bite can still outrun the virus to the brain. Untreated, once symptoms begin, survival is close to unknown.",
+    "src": "https://en.wikipedia.org/wiki/Rabies",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "ship"
+    ],
+    "out": "scurvy",
+    "why": "It killed more sailors than storms and battle together. James Lind's 1747 trial aboard HMS Salisbury gave six pairs of sick men six different remedies and is one of the first controlled clinical trials; the pair given oranges and lemons recovered.",
+    "src": "https://en.wikipedia.org/wiki/Scurvy",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "city"
+    ],
+    "out": "rickets",
+    "why": "It became a disease of industrial cities rather than of poverty alone: skin makes vitamin D from ultraviolet light, and coal smoke over a northern city takes enough of it out of the sky to matter.",
+    "src": "https://en.wikipedia.org/wiki/Rickets",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "vibrio_cholerae"
+    ],
+    "out": "cholera",
+    "why": "John Snow mapped the 1854 Broad Street cases and found them clustered on one pump — evidence that it travelled in water years before anyone had seen the bacterium, and the founding piece of work in epidemiology.",
+    "src": "https://en.wikipedia.org/wiki/Cholera",
+    "verified": true
+  },
+  {
+    "in": [
+      "salt",
+      "sugar"
+    ],
+    "out": "oral_rehydration_therapy",
+    "why": "Sugar is not there for energy. Glucose and sodium are carried across the gut wall together by the same transporter, so adding glucose lets water follow salt back into a body that is losing both — a mechanism found in the 1960s, and The Lancet called it potentially the most important medical advance of the century.",
+    "src": "https://en.wikipedia.org/wiki/Oral_rehydration_therapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "lemon"
+    ],
+    "out": "vitamin_c",
+    "why": "It is the cofactor that lets the body cross-link collagen. Without it, the connective tissue holding skin, gums, blood vessels and old scars together is built wrong and slowly comes apart — which is scurvy.",
+    "src": "https://en.wikipedia.org/wiki/Vitamin_C",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "sea"
+    ],
+    "out": "vibrio_cholerae",
+    "why": "It is a creature of estuaries first and a pathogen second — which is why cholera is seasonal in the Bay of Bengal, rising and falling with the plankton the bacteria ride on.",
+    "src": "https://en.wikipedia.org/wiki/Vibrio_cholerae",
+    "verified": true
+  },
+  {
+    "in": [
+      "sun",
+      "wood"
+    ],
+    "out": "timber",
+    "why": "Green wood is half water by weight and shrinks across the grain as it dries, so it is seasoned — air-dried under cover, or kilned — to about the moisture content of the room it will live in. Build with it wet and the joints open after the house is finished.",
+    "src": "https://en.wikipedia.org/wiki/Lumber",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "timber"
+    ],
+    "out": "beam",
+    "why": "It works by bending: the top of a loaded beam is squeezed and the bottom is stretched, with a neutral line between them doing almost nothing. That is why an I-beam puts most of its metal at the top and bottom and almost none in the middle.",
+    "src": "https://en.wikipedia.org/wiki/Beam_(structure)",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "timber"
+    ],
+    "out": "joist",
+    "why": "Depth beats width: a joist twice as deep is eight times as stiff, while one twice as wide is only twice as stiff, which is why floor joists stand on edge rather than lying flat.",
+    "src": "https://en.wikipedia.org/wiki/Joist",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "stone"
+    ],
+    "out": "gravel",
+    "why": "The rounding is the record of how it travelled. Angular fragments are crushed rock; rounded ones have been rolled along a riverbed or a beach long enough to lose their corners.",
+    "src": "https://en.wikipedia.org/wiki/Gravel",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "gravel"
+    ],
+    "out": "foundation",
+    "why": "The building is not held up by strength but by area. A footing works by making the load per square metre small enough that the ground does not move — which is why the size of a foundation is set by the soil, not by the wall.",
+    "src": "https://en.wikipedia.org/wiki/Foundation_(engineering)",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "stone"
+    ],
+    "out": "lintel",
+    "why": "It is the oldest way to cross an opening and the weakest: stone is strong in compression and poor in tension, so a stone lintel cracks from underneath. The arch was invented to avoid needing one.",
+    "src": "https://en.wikipedia.org/wiki/Lintel",
+    "verified": true
+  },
+  {
+    "in": [
+      "gypsum",
+      "water"
+    ],
+    "out": "plaster",
+    "why": "Gypsum plaster sets by taking back the water that was driven off when it was burnt, rather than by drying — so it goes off on a timetable of its own and a plasterer works to it rather than to the weather.",
+    "src": "https://en.wikipedia.org/wiki/Plaster",
+    "verified": true
+  },
+  {
+    "in": [
+      "gypsum",
+      "paper"
+    ],
+    "out": "plasterboard",
+    "why": "The paper is structural, not packaging: gypsum has almost no tensile strength, and the liners carry the tension so the board can be handled and fixed at all. It also gives a house most of its fire resistance — the water bound in the gypsum has to be boiled off before the board can burn.",
+    "src": "https://en.wikipedia.org/wiki/Drywall",
+    "verified": true
+  },
+  {
+    "in": [
+      "lime",
+      "sand"
+    ],
+    "out": "mortar_lime",
+    "why": "It is weaker than cement mortar on purpose. Soft mortar lets a wall move and cracks itself rather than the brick, and it can be raked out and replaced — which is why old buildings repointed in cement start losing their faces.",
+    "src": "https://en.wikipedia.org/wiki/Lime_mortar",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesh",
+      "wool"
+    ],
+    "out": "insulation",
+    "why": "Almost nothing insulates as well as air; the trick is stopping it moving, because moving air carries heat away. Wool, foam and fibre all work the same way — a great many small pockets too small for a convection current to form in.",
+    "src": "https://en.wikipedia.org/wiki/Building_insulation",
+    "verified": true
+  },
+  {
+    "in": [
+      "joist",
+      "plasterboard"
+    ],
+    "out": "ceiling",
+    "why": "It is rarely the underside of anything. Fixing a separate surface to the joists leaves a void for pipes, cables and insulation, and breaks the path sound would otherwise take straight through the structure.",
+    "src": "https://en.wikipedia.org/wiki/Ceiling",
+    "verified": true
+  },
+  {
+    "in": [
+      "joist",
+      "plank"
+    ],
+    "out": "floorboard",
+    "why": "Laid across the joists rather than along them, so each board is supported at several points, and tongued and grooved along its edges so the boards carry each other and a foot between joists does not simply push one down.",
+    "src": "https://en.wikipedia.org/wiki/Floor",
+    "verified": true
+  },
+  {
+    "in": [
+      "roof",
+      "sheet_metal"
+    ],
+    "out": "gutter",
+    "why": "A roof sheds a surprising amount: 25 millimetres of rain on a modest house is a couple of thousand litres, and all of it arrives at the eaves. Without somewhere to go it lands at the foot of the wall, which is where damp begins.",
+    "src": "https://en.wikipedia.org/wiki/Rain_gutter",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "rivet"
+    ],
+    "out": "hinge",
+    "why": "One degree of freedom out of six is the whole design. Everything else — lifting, sliding, twisting — is resisted by the knuckle and the pin, which is why a sagging door is almost always a screw pulling out rather than a hinge wearing.",
+    "src": "https://en.wikipedia.org/wiki/Hinge",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "pipe"
+    ],
+    "out": "radiator",
+    "why": "It heats the air at its surface, which rises and pulls cold air in underneath, so the room turns over. That is convection, not radiation — which is why a radiator is put under a window, to meet the cold draught coming down the glass.",
+    "src": "https://en.wikipedia.org/wiki/Radiator_(heating)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "plank"
+    ],
+    "out": "scaffold",
+    "why": "It is a structure whose whole purpose is to be taken down, so it is bolted and clamped rather than fixed, and every part is a standard length — which is what lets the same tubes go up around any shape of building.",
+    "src": "https://en.wikipedia.org/wiki/Scaffolding",
+    "verified": true
   }
 ]
