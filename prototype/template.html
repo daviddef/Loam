@@ -1268,6 +1268,15 @@ __CATEGORY_CSS__
        animals share living (they are animals) — but each needs its own
        token, or the shelf heading for that family renders with --fam unset. */
     --fam-metal:var(--c-mineral-hi);   --fam-wild:var(--c-living-lo);
+    /* Six families added 3 Sep. Before them, anything whose tags matched no
+       family fell through to FAMILIES[7] -- Water & Ice -- which had swallowed
+       1,008 elements, 15% of the corpus: every musical instrument, every
+       historical person, every idea and every belief. The shelf said Water &
+       Ice 1,069 and only 99 of those were water. */
+    --fam-medicine:var(--c-molecule-hi); --fam-music:var(--c-ferment-bs);
+    --fam-idea:var(--c-water-hi);        --fam-past:var(--c-dish-bs);
+    --fam-belief:var(--c-living-hi);     --fam-trade:var(--c-grain-lo);
+    --fam-other:var(--c-craft-lo);
   }
   .atom{
     display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1306,6 +1315,10 @@ __CATEGORY_CSS__
   .fam-animal{--fam:var(--fam-animal)} .fam-microbe{--fam:var(--fam-microbe)}
   .fam-food{--fam:var(--fam-food)}     .fam-myth{--fam:var(--fam-myth)}
   .fam-metal{--fam:var(--fam-metal)}   .fam-wild{--fam:var(--fam-wild)}
+  .fam-medicine{--fam:var(--fam-medicine)} .fam-music{--fam:var(--fam-music)}
+  .fam-idea{--fam:var(--fam-idea)}     .fam-past{--fam:var(--fam-past)}
+  .fam-belief{--fam:var(--fam-belief)} .fam-trade{--fam:var(--fam-trade)}
+  .fam-other{--fam:var(--fam-other)}
 
   /* settings */
   .setrow{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
@@ -2939,17 +2952,45 @@ function toast(msg) {
 // An element can carry several tags, so families are resolved in priority
 // order: the most specific identity wins (a microbe is a microbe before it is
 // an ingredient).
+// Order matters: familyOf() takes the FIRST family whose tags match, so a
+// medicine that came from a plant files under Medicine rather than Growing
+// Things. That is the whole point of the shelf — you look for aspirin under
+// medicine, not under willow.
+//
+// ("Paracetamol. No mention in our corpus. Thought we did a lot of medicine
+// research?" — found live. Paracetamol was there all along, with a sourced
+// recipe, filed under EARTH & STONE because its only tag was `earth`. Aspirin
+// and morphine sat under Growing Things, penicillin and insulin under The Very
+// Small. Everything was filed by WHERE IT CAME FROM rather than by what it is,
+// so a medicine could only be found by someone who already knew its origin.)
 const FAMILIES = [
-  { id: 'myth',    name: 'Folklore',        tags: ['myth'] },
-  { id: 'microbe', name: 'The Very Small',  tags: ['microbe', 'ferment'] },
-  { id: 'wild',    name: 'Wild Animals',    tags: ['wild'] },
-  { id: 'animal',  name: 'Animals & Dairy', tags: ['animal', 'dairy'] },
-  { id: 'plant',   name: 'Growing Things',  tags: ['plant', 'crop'] },
-  { id: 'earth',   name: 'Earth & Stone',   tags: ['earth', 'build'] },
-  { id: 'metal',   name: 'Metals',          tags: ['metal'] },
-  { id: 'water',   name: 'Water & Ice',     tags: ['water'] },
-  { id: 'fire',    name: 'Fire & Tools',    tags: ['fire', 'tool'] },
-  { id: 'food',    name: 'Kitchen',         tags: ['food', 'dish', 'sweet', 'drink', 'preserve'] },
+  { id: 'myth',     name: 'Folklore',        tags: ['myth'] },
+  { id: 'medicine', name: 'Medicine',        tags: ['medicine'] },
+  { id: 'music',    name: 'Music',           tags: ['instrument', 'aerophone', 'chordophone', 'idiophone', 'membranophone', 'electrophone'] },
+  { id: 'microbe',  name: 'The Very Small',  tags: ['microbe', 'ferment'] },
+  { id: 'wild',     name: 'Wild Animals',    tags: ['wild'] },
+  { id: 'animal',   name: 'Animals & Dairy', tags: ['animal', 'dairy'] },
+  { id: 'plant',    name: 'Growing Things',  tags: ['plant', 'crop'] },
+  { id: 'earth',    name: 'Earth & Stone',   tags: ['earth', 'build', 'building', 'civic', 'gas'] },
+  { id: 'metal',    name: 'Metals',          tags: ['metal'] },
+  { id: 'water',    name: 'Water & Ice',     tags: ['water'] },
+  { id: 'fire',     name: 'Fire & Tools',    tags: ['fire', 'tool', 'machine', 'transport', 'furniture',
+                                              'home', 'ceramic', 'electric', 'container', 'plumbing',
+                                              'textile', 'personal', 'clothing', 'navigation'] },
+  { id: 'food',     name: 'Kitchen',         tags: ['food', 'dish', 'sweet', 'drink', 'preserve', 'kitchen', 'cold'] },
+  { id: 'past',     name: 'People & Past',   tags: ['history', 'person', 'hominin'] },
+  { id: 'belief',   name: 'Belief',          tags: ['belief'] },
+  { id: 'trade',    name: 'Trade',           tags: ['trade', 'money'] },
+  // 'hazard' lands here only when it is the ONLY tag — carcinogen, mutagen,
+  // teratogen, which are concepts. Nicotine and atropine carry it as a second
+  // tag and match Growing Things long before this.
+  { id: 'idea',     name: 'Ideas',           tags: ['idea', 'writing', 'concept', 'media', 'art', 'hazard'] },
+  // The catch-all is LAST and named honestly. It used to be FAMILIES[7],
+  // Water & Ice, chosen by index -- so every unclassified element was not
+  // merely uncategorised but actively mis-filed, and the mistake was
+  // invisible because the shelf heading looked plausible. A visible "Other"
+  // makes the next tagging gap something you can see and count.
+  { id: 'other',    name: 'Other',           tags: [] },
 ];
 // Memoised: this is called once per element per family in the aside's grouping
 // pass, and its answer never changes for a given element.
@@ -2957,7 +2998,7 @@ const FAMILY_CACHE = new WeakMap();
 function familyOf(e) {
   const hit = FAMILY_CACHE.get(e);
   if (hit) return hit;
-  let f = FAMILIES[7];
+  let f = FAMILIES[FAMILIES.length - 1];          // Other, explicitly — never by index
   if (e.shelf === 'folklore') f = FAMILIES[0];
   else {
     const m = FAMILIES.find(fam => e.tags.some(t => fam.tags.includes(t)));
