@@ -595,6 +595,434 @@
         "kettle",
         "toaster"
       ]
+    },
+    "cpu": {
+      "src": "https://en.wikipedia.org/wiki/Central_processing_unit",
+      "needs": [
+        "transistor",
+        "logic_gate",
+        "nand_gate",
+        "xor_gate",
+        "half_adder",
+        "adder",
+        "alu",
+        "register",
+        "cache",
+        "clock_signal",
+        "data_bus",
+        "instruction|opcode",
+        "silicon",
+        "semiconductor",
+        "doping",
+        "lithography",
+        "wafer",
+        "microchip|integrated_circuit",
+        "heat_sink"
+      ]
+    },
+    "windmill": {
+      "src": "https://en.wikipedia.org/wiki/Windmill",
+      "needs": [
+        "sail",
+        "wind",
+        "gear",
+        "millstone",
+        "shaft",
+        "brake",
+        "tower",
+        "cap|roof",
+        "axle",
+        "grain",
+        "flour",
+        "hopper",
+        "tail_vane"
+      ]
+    },
+    "watermill": {
+      "src": "https://en.wikipedia.org/wiki/Watermill",
+      "needs": [
+        "waterwheel|wheel",
+        "river",
+        "weir",
+        "millrace|channel",
+        "gear",
+        "millstone",
+        "shaft",
+        "axle",
+        "flour"
+      ]
+    },
+    "printing_press": {
+      "src": "https://en.wikipedia.org/wiki/Printing_press",
+      "needs": [
+        "movable_type",
+        "press",
+        "ink",
+        "paper",
+        "frame",
+        "platen",
+        "lead",
+        "antimony",
+        "tin",
+        "matrix|mould",
+        "composing_stick",
+        "screw",
+        "lever"
+      ]
+    },
+    "telescope": {
+      "src": "https://en.wikipedia.org/wiki/Telescope",
+      "needs": [
+        "lens",
+        "mirror",
+        "glass",
+        "tube",
+        "eyepiece",
+        "aperture",
+        "focus_ring",
+        "tripod|mount",
+        "grinding|polishing",
+        "silvering"
+      ]
+    },
+    "cathedral": {
+      "src": "https://en.wikipedia.org/wiki/Cathedral",
+      "needs": [
+        "stone",
+        "arch",
+        "vault",
+        "buttress",
+        "column",
+        "pillar",
+        "spire",
+        "bell",
+        "bell_tower|tower",
+        "stained_glass",
+        "glass",
+        "lead",
+        "mortar",
+        "roof",
+        "crypt",
+        "nave",
+        "altar"
+      ]
+    },
+    "castle": {
+      "src": "https://en.wikipedia.org/wiki/Castle",
+      "needs": [
+        "stone",
+        "wall",
+        "tower",
+        "gate",
+        "portcullis",
+        "moat",
+        "drawbridge",
+        "keep",
+        "battlement",
+        "arrow_slit",
+        "courtyard",
+        "well",
+        "mortar"
+      ]
+    },
+    "port": {
+      "src": "https://en.wikipedia.org/wiki/Port",
+      "needs": [
+        "harbour",
+        "quay|wharf",
+        "jetty",
+        "crane",
+        "warehouse",
+        "dock",
+        "breakwater",
+        "lighthouse",
+        "anchor",
+        "rope",
+        "boat",
+        "ship",
+        "cargo"
+      ]
+    },
+    "bridge": {
+      "src": "https://en.wikipedia.org/wiki/Bridge",
+      "needs": [
+        "arch",
+        "pier",
+        "abutment",
+        "deck",
+        "cable",
+        "suspension_bridge|suspension",
+        "truss",
+        "steel",
+        "concrete",
+        "rivet",
+        "foundation",
+        "span"
+      ]
+    },
+    "mine": {
+      "src": "https://en.wikipedia.org/wiki/Mining",
+      "needs": [
+        "shaft",
+        "tunnel",
+        "pit_prop|timber",
+        "ore",
+        "pickaxe",
+        "cart",
+        "winch",
+        "rope",
+        "lamp",
+        "ventilation|air",
+        "water_pump|pump",
+        "canary"
+      ]
+    },
+    "smithy": {
+      "src": "https://en.wikipedia.org/wiki/Blacksmith",
+      "needs": [
+        "forge",
+        "anvil",
+        "hammer",
+        "tongs",
+        "bellows",
+        "charcoal",
+        "quenching",
+        "steel",
+        "iron",
+        "vice",
+        "file",
+        "punch|chisel"
+      ]
+    },
+    "bakery": {
+      "src": "https://en.wikipedia.org/wiki/Bakery",
+      "needs": [
+        "oven",
+        "flour",
+        "yeast",
+        "water",
+        "salt",
+        "dough",
+        "kneading",
+        "proving|fermentation",
+        "peel|paddle",
+        "tin",
+        "scales|balance"
+      ]
+    },
+    "tannery": {
+      "src": "https://en.wikipedia.org/wiki/Tanning_(leather)",
+      "needs": [
+        "hide|skin",
+        "lime",
+        "tannin",
+        "oak",
+        "bark",
+        "water",
+        "vat",
+        "scraper|knife",
+        "salt",
+        "oil",
+        "leather"
+      ]
+    },
+    "radio": {
+      "src": "https://en.wikipedia.org/wiki/Radio",
+      "needs": [
+        "antenna",
+        "transmitter",
+        "receiver",
+        "tuner",
+        "capacitor",
+        "inductor|coil",
+        "resistor",
+        "valve|transistor",
+        "speaker",
+        "wave",
+        "frequency",
+        "modulation",
+        "electricity"
+      ]
+    },
+    "television": {
+      "src": "https://en.wikipedia.org/wiki/Television",
+      "needs": [
+        "screen",
+        "pixel",
+        "cathode_ray_tube|screen",
+        "antenna",
+        "tuner",
+        "speaker",
+        "circuit_board",
+        "phosphor",
+        "electron",
+        "broadcast|signal"
+      ]
+    },
+    "refrigerator": {
+      "src": "https://en.wikipedia.org/wiki/Refrigerator",
+      "needs": [
+        "compressor",
+        "condenser",
+        "evaporator",
+        "refrigerant",
+        "expansion_valve|valve",
+        "insulation",
+        "thermostat",
+        "motor|electric_motor",
+        "pipe",
+        "heat",
+        "door",
+        "seal_gasket|rubber"
+      ]
+    },
+    "washing_machine": {
+      "src": "https://en.wikipedia.org/wiki/Washing_machine",
+      "needs": [
+        "drum",
+        "motor|electric_motor",
+        "pump",
+        "water",
+        "soap|detergent",
+        "valve",
+        "heater|heating_element",
+        "timer|clock",
+        "belt",
+        "bearing",
+        "door"
+      ]
+    },
+    "piano": {
+      "src": "https://en.wikipedia.org/wiki/Piano",
+      "needs": [
+        "string",
+        "hammer",
+        "key",
+        "action|mechanism",
+        "soundboard",
+        "frame",
+        "cast_iron",
+        "damper",
+        "pedal",
+        "felt",
+        "tuning_pin|tuning_peg",
+        "wire",
+        "lid"
+      ]
+    },
+    "violin": {
+      "src": "https://en.wikipedia.org/wiki/Violin",
+      "needs": [
+        "soundboard",
+        "spruce|timber",
+        "maple|timber",
+        "string",
+        "bow",
+        "horsehair",
+        "rosin",
+        "bridge",
+        "soundpost",
+        "fingerboard",
+        "peg|tuning_peg",
+        "varnish",
+        "chin_rest|frame"
+      ]
+    },
+    "orchestra": {
+      "src": "https://en.wikipedia.org/wiki/Orchestra",
+      "needs": [
+        "violin",
+        "cello|violin",
+        "flute",
+        "trumpet",
+        "drum",
+        "conductor",
+        "score|music",
+        "harmony",
+        "rhythm",
+        "tempo",
+        "concert_hall|building"
+      ]
+    },
+    "painting": {
+      "src": "https://en.wikipedia.org/wiki/Painting",
+      "needs": [
+        "pigment",
+        "binder|oil",
+        "canvas",
+        "cloth",
+        "frame",
+        "brush",
+        "easel",
+        "varnish",
+        "gesso|primer",
+        "palette",
+        "turpentine|solvent"
+      ]
+    },
+    "theatre": {
+      "src": "https://en.wikipedia.org/wiki/Theatre",
+      "needs": [
+        "stage",
+        "curtain",
+        "scenery|set",
+        "lighting|lamp",
+        "costume",
+        "script",
+        "actor",
+        "audience|seat",
+        "auditorium|building",
+        "mask",
+        "rehearsal"
+      ]
+    },
+    "newspaper": {
+      "src": "https://en.wikipedia.org/wiki/Newspaper",
+      "needs": [
+        "paper",
+        "ink",
+        "printing_press",
+        "type|movable_type",
+        "journalist|writer",
+        "editor",
+        "headline",
+        "column",
+        "photograph",
+        "distribution|trade",
+        "advertisement"
+      ]
+    },
+    "map": {
+      "src": "https://en.wikipedia.org/wiki/Map",
+      "needs": [
+        "paper",
+        "ink",
+        "survey|measurement",
+        "scale",
+        "projection",
+        "compass",
+        "latitude",
+        "longitude",
+        "contour",
+        "legend|symbol",
+        "grid"
+      ]
+    },
+    "bank": {
+      "src": "https://en.wikipedia.org/wiki/Bank",
+      "needs": [
+        "money",
+        "coin",
+        "banknote",
+        "vault",
+        "ledger|book",
+        "interest",
+        "loan|debt",
+        "deposit",
+        "clerk|person",
+        "safe|case",
+        "credit"
+      ]
     }
   }
 }

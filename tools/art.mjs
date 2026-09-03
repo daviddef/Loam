@@ -30429,6 +30429,207 @@ def('rodent', () => [                                                // the inci
   P('M43 39 Q52 44 49 54 Q45 57 42 52 Q41 45 43 39 Z', 'hi'),         // and the lower one, wearing against it
   ...granules('lo', 5, 313, [10, 46, 32, 57]),                        // the shavings being the only thing that keeps either short
 ]);
+/* ── cycle N: radio, the map, the bridge, the mine, the castle ───────────
+   Transmitter and receiver are the two halves of one thing, so one shows
+   waves leaving and the other shows one wave being picked out of many.    */
+
+def('transmitter',  () => [S('M30 52 L30 16', 'bs', 3.4),
+                           ...[16, 24, 32].map(y => S(`M20 ${y} L40 ${y}`, 'bs', 2.4)),
+                           ...[0, 1, 2].map(i => [
+                             S(`M${42 + i * 5} ${14 - i * 3} Q${47 + i * 5} 24 ${42 + i * 5} ${34 + i * 3}`, 'ik', 1.6),
+                             S(`M${18 - i * 5} ${14 - i * 3} Q${13 - i * 5} 24 ${18 - i * 5} ${34 + i * 3}`, 'ik', 1.6)]).flat(),
+                           P('M24 52 L36 52 L36 56 L24 56 Z', 'lo')]);
+def('receiver',     () => [P('M10 26 L50 26 L50 50 L10 50 Z', 'bs'),
+                           C(22, 38, 8, 'lo'), ring('hi', 22, 38, 8, 1.4),      // one picked out of all of them
+                           ...[36, 42].map(y => S(`M34 ${y} L46 ${y}`, 'lo', 1.4)),
+                           S('M40 26 L40 8', 'bs', 2.4),
+                           ...[0, 1, 2].map(i => S(`M${44 + i * 4} ${6 + i * 3} Q${48 + i * 4} 12 ${44 + i * 4} ${18 + i * 3}`, 'gh', 1.2))]);
+def('tuner',        () => [C(30, 30, 18, 'bs'), ring('lo', 30, 30, 18, 2),
+                           ...[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(a =>
+                             ['g', a, 30, 30, [S('M30 14 L30 18', 'lo', 1.2)]]),
+                           S('M30 30 L42 20', 'ik', 2.6), C(30, 30, 3, 'ik'),   // only one signal builds up
+                           ...[0, 1].map(i => S(`M${48 + i * 4} ${22 + i * 2} Q${52 + i * 4} 30 ${48 + i * 4} ${38 - i * 2}`, 'gh', 1.2))]);
+def('inductor',     () => [S('M4 30 L14 30', 'ik', 2.4), S('M46 30 L56 30', 'ik', 2.4),
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 8} 30 Q${18 + i * 8} 16 ${22 + i * 8} 30`, 'bs', 3)),
+                           S('M14 34 L46 34', 'lo', 2)]);                        // it resists a change
+def('coil',         () => [...[0, 1, 2, 3, 4, 5].map(i => E(30, 12 + i * 7, 14, 4, i % 2 ? 'lo' : 'bs')),
+                           S('M16 12 L16 54', 'gh', 1.2), S('M44 12 L44 54', 'gh', 1.2)]);   // each turn adds to the last
+def('frequency',    () => [S('M4 30 Q10 14 16 30 Q22 46 28 30 Q34 14 40 30 Q46 46 52 30', 'bs', 3),
+                           ...[16, 28, 40].map(x => S(`M${x} 30 L${x} 46`, 'gh', 1.2)),
+                           S('M16 50 L40 50', 'ik', 1.6),                        // how many, in a second
+                           P('M18 47 L18 53 L14 50 Z', 'ik'), P('M38 47 L38 53 L42 50 Z', 'ik')]);
+def('survey',       () => [...[[10,46],[50,46],[30,12]].map(([x,y]) => C(x, y, 3, 'ik')),
+                           S('M10 46 L50 46', 'bs', 3.4),                         // one measured baseline
+                           S('M10 46 L30 12', 'lo', 2), S('M50 46 L30 12', 'lo', 2),
+                           ...[[16,40],[44,40]].map(([x,y]) => S(`M${x} ${y} Q30 ${y - 4} ${60 - x} ${y}`, 'gh', 1.2))]);
+def('projection',   () => [C(18, 30, 13, 'bs'),                                  // it cannot be done without lying
+                           ...[0, 45, 90, 135].map(a => ['g', a, 18, 30, [E(18, 30, 13, 5, 'lo')]]),
+                           P('M36 14 L54 14 L54 46 L36 46 Z', 'hi'),
+                           ...[20, 30, 40].map(y => S(`M36 ${y} L54 ${y}`, 'lo', 1)),
+                           ...[42, 48].map(x => S(`M${x} 14 L${x} 46`, 'lo', 1))]);
+def('contour',      () => [...[0, 1, 2, 3].map(i =>
+                             S(`M${10 + i * 5} ${46 - i * 4} Q30 ${30 - i * 6} ${50 - i * 5} ${46 - i * 4}`, i === 3 ? 'ik' : 'bs', 2)),
+                           ...[[20,40],[40,40]].map(([x,y]) => S(`M${x} ${y} L${x} ${y - 3}`, 'lo', 1.2))]);   // close is steep
+def('pier',         () => [P('M4 42 L56 42 L56 48 L4 48 Z', 'hi'),
+                           P('M22 16 L38 16 L38 42 L22 42 Z', 'bs'),
+                           P('M18 12 L42 12 L42 18 L18 18 Z', 'lo'),
+                           P('M18 44 L42 44 L42 52 L18 52 Z', 'lo'),             // scour, not load, takes them
+                           ...[[14,46],[46,46]].map(([x,y]) => S(`M${x} ${y} Q${x + 4} ${y + 3} ${x + 8} ${y}`, 'gh', 1.2))]);
+def('deck',         () => [P('M4 26 L56 26 L56 34 L4 34 Z', 'bs'),
+                           ...[12, 24, 36, 48].map(x => S(`M${x} 34 L${x} 46`, 'lo', 2.4)),
+                           S('M6 46 L54 46', 'lo', 2.4),
+                           ...[16, 32, 44].map(x => S(`M${x} 26 L${x} 20`, 'gh', 1.2))]);
+def('truss',        () => [S('M6 42 L54 42', 'bs', 3.4), S('M12 18 L48 18', 'bs', 3.4),
+                           ...[0, 1, 2, 3].map(i => [S(`M${6 + i * 12} 42 L${12 + i * 12} 18`, 'lo', 2.4),
+                             S(`M${12 + i * 12} 18 L${18 + i * 12} 42`, 'lo', 2.4)]).flat(),
+                           ...[[6,42],[54,42],[12,18],[48,18]].map(([x,y]) => C(x, y, 2, 'ik'))]);
+def('tunnel',       () => [P('M4 12 L56 12 L56 52 L4 52 Z', 'lo'),
+                           ...[0, 1, 2].map(i =>
+                             S(`M${14 + i * 4} 50 Q30 ${20 + i * 5} ${46 - i * 4} 50`, i ? 'gh' : 'bs', i ? 2 : 4)),
+                           P('M22 40 L38 40 L38 52 L22 52 Z', 'ik')]);            // the ground wants to close it
+def('pickaxe',      () => [P('M27 14 L33 14 L33 52 L27 52 Z', 'lo'),
+                           S('M8 20 Q30 8 52 20', 'bs', 5),                       // the same swing, on a point
+                           P('M4 18 L10 16 L8 26 Z', 'ik'), P('M56 18 L50 16 L52 26 Z', 'ik'),
+                           P('M22 12 L38 12 L38 18 L22 18 Z', 'lo')]);
+def('cart',         () => [P('M8 20 L44 20 L44 38 L8 38 Z', 'bs'),
+                           C(16, 44, 6, 'lo'), ring('bs', 16, 44, 6, 1.6),
+                           C(38, 44, 6, 'lo'), ring('bs', 38, 44, 6, 1.6),
+                           S('M44 26 L56 22', 'lo', 3),                            // the free axle is the harder invention
+                           ...[16, 26, 36].map(x => S(`M${x} 20 L${x} 38`, 'gh', 1))]);
+def('winch',        () => [C(26, 30, 15, 'bs'), ring('lo', 26, 30, 15, 3),
+                           S('M26 30 L44 18', 'bs', 3.4), C(46, 16, 4, 'lo'),     // the drum diameter IS the gearing
+                           S('M11 30 Q4 40 8 52', 'ik', 2.4),
+                           ...[0, 90, 180].map(a => ['g', a, 26, 30, [P('M24 15 L28 15 L26 20 Z', 'lo')]])]);
+def('screen',       () => [P('M8 12 L52 12 L52 42 L8 42 Z', 'bs'),
+                           P('M13 17 L47 17 L47 37 L13 37 Z', 'hi'),
+                           ...[20, 25, 30, 35].map(y => S(`M13 ${y} L47 ${y}`, 'lo', 1)),   // one moving dot, line by line
+                           C(38, 25, 2.4, 'ik'), S('M13 25 L36 25', 'ik', 1.4),
+                           P('M24 42 L36 42 L36 50 L24 50 Z', 'lo')]);
+def('phosphor',     () => [C(30, 32, 14, 'bs'),
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+                             ['g', a, 30, 32, [S('M30 16 L30 8', 'hi', 2)]]),      // energy you cannot see, into light
+                           C(30, 32, 6, 'hi'),
+                           S('M4 32 L14 32', 'ik', 2.4), P('M12 29 L12 35 L18 32 Z', 'ik')]);
+def('gate',         () => [P('M6 10 L20 10 L20 52 L6 52 Z', 'bs'),              // set between towers
+                           P('M40 10 L54 10 L54 52 L40 52 Z', 'bs'),
+                           S('M20 26 Q30 12 40 26', 'bs', 4),
+                           P('M22 26 L38 26 L38 52 L22 52 Z', 'lo'),
+                           ...[30, 38, 46].map(y => S(`M22 ${y} L38 ${y}`, 'ik', 1.4))]);
+def('well',         () => [P('M18 24 L42 24 L42 52 L18 52 Z', 'bs'),
+                           E(30, 24, 12, 4, 'lo'),
+                           E(30, 26, 8, 2.6, 'hi'),                                // groundwater sits in pores
+                           S('M14 16 L46 16', 'lo', 2.4),
+                           S('M30 16 L30 24', 'ik', 1.4), P('M26 22 L34 22 L34 27 L26 27 Z', 'lo')]);
+
+/* ── cycle M: architecture, the port, the theatre ────────────────────────
+   Arch, vault and buttress are three answers to the same problem, so each
+   shows the thrust it deals with rather than just the masonry.            */
+
+def('building',     () => [P('M10 10 L50 10 L50 50 L10 50 Z', 'bs'),           // walls, and floors stacked on them
+                           ...[22, 34].map(y => S(`M10 ${y} L50 ${y}`, 'lo', 2.4)),
+                           ...[0, 1, 2].map(r => [0, 1, 2].map(c =>
+                             P(`M${16 + c * 11} ${14 + r * 12} L${23 + c * 11} ${14 + r * 12} L${23 + c * 11} ${20 + r * 12} L${16 + c * 11} ${20 + r * 12} Z`, 'hi'))).flat(),
+                           P('M6 50 L54 50 L54 54 L6 54 Z', 'lo')]);
+def('arch',         () => [...[0, 1, 2, 3, 4, 5, 6].map(i => {
+                             const a = Math.PI * (0.08 + i * 0.14);
+                             return ['g', -90 + (0.08 + i * 0.14) * 180, 30, 40, [P('M25 12 L35 12 L37 22 L23 22 Z', 'bs')]]; }),
+                           P('M8 40 L18 40 L18 54 L8 54 Z', 'bs'),
+                           P('M42 40 L52 40 L52 54 L42 54 Z', 'bs'),
+                           S('M12 42 Q30 44 48 42', 'gh', 1.4)]);                // the former it stands on until struck
+def('column',       () => [P('M22 14 L38 14 L37 44 L23 44 Z', 'bs'),           // swelled slightly, or it looks pinched
+                           P('M18 8 L42 8 L42 14 L18 14 Z', 'lo'),
+                           P('M16 44 L44 44 L44 52 L16 52 Z', 'lo'),
+                           ...[26, 30, 34].map(x => S(`M${x} 16 L${x} 42`, 'hi', 1))]);
+def('vault',        () => [// A barrel vault receding, which is unmistakable; two crossed arches
+                           // drawn flat read as a pair of wings.
+                           ...[0, 1, 2, 3].map(i => {
+                             const k = 1 - i * 0.16, cx = 30, top = 14 + i * 3;
+                             return ['g', 0, 0, 0, [
+                               S(`M${cx - 24 * k} 48 Q${cx} ${top} ${cx + 24 * k} 48`, i ? 'lo' : 'bs', i ? 2 : 4)]]; }),
+                           P('M4 48 L18 48 L18 54 L4 54 Z', 'lo'),
+                           P('M42 48 L56 48 L56 54 L42 54 Z', 'lo'),
+                           S('M30 20 L30 46', 'gh', 1.2)]);
+def('buttress',     () => [P('M40 6 L50 6 L50 50 L40 50 Z', 'bs'),             // it carries the thrust out to a pier
+                           S('M40 18 Q28 20 20 32', 'bs', 4),
+                           P('M12 32 L24 32 L24 50 L12 50 Z', 'lo'),
+                           ...[0, 1, 2].map(i => S(`M${52 + i * 2} ${16 + i * 4} L${56 + i * 2} ${14 + i * 4}`, 'gh', 1.4))]);
+def('spire',        () => [P('M30 4 L40 34 L20 34 Z', 'bs'),                    // height was the message
+                           P('M22 34 L38 34 L38 50 L22 50 Z', 'lo'),
+                           P('M14 50 L46 50 L46 54 L14 54 Z', 'lo'),
+                           C(30, 2, 2, 'ik'),
+                           ...[40, 46].map(y => S(`M24 ${y} L36 ${y}`, 'gh', 1))]);
+def('stained_glass',() => [P('M12 10 Q12 4 30 4 Q48 4 48 10 L48 50 L12 50 Z', 'bs'),
+                           ...[[18,16],[30,14],[42,16],[18,30],[30,28],[42,30],[24,42],[36,42]]
+                             .map(([x,y]) => P(`M${x - 5} ${y} L${x} ${y - 6} L${x + 5} ${y} L${x} ${y + 6} Z`, 'hi')),
+                           ...[24, 38].map(y => S(`M12 ${y} L48 ${y}`, 'ik', 2)),   // the lead became the drawing
+                           S('M30 6 L30 50', 'ik', 2)]);
+def('altar',        () => [P('M12 26 L48 26 L48 34 L12 34 Z', 'bs'),
+                           P('M18 34 L42 34 L42 50 L18 50 Z', 'lo'),
+                           ...[[24,18],[30,14],[36,18]].map(([x,y]) => P(`M${x - 3} 26 Q${x} ${y} ${x + 3} 26 Z`, 'hi')),
+                           S('M8 26 L52 26', 'ik', 1.4)]);
+def('shaft',        () => [P('M4 8 L56 8 L56 54 L4 54 Z', 'lo'),
+                           P('M20 8 L40 8 L40 54 L20 54 Z', 'bs'),              // everything comes up it
+                           ...[16, 26, 36, 46].map(y => [S(`M20 ${y} L40 ${y}`, 'lo', 2.4),
+                             P(`M18 ${y - 2} L22 ${y - 2} L22 ${y + 2} L18 ${y + 2} Z`, 'lo')]).flat(),
+                           S('M30 4 L30 10', 'ik', 2)]);
+def('millstone',    () => [C(30, 30, 21, 'bs'), ring('lo', 30, 30, 21, 2),
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+                             ['g', a, 30, 30, [S('M30 12 Q34 22 30 28', 'lo', 1.8)]]),   // the grooves ARE the design
+                           C(30, 30, 5, 'ik')]);
+def('harbour',      () => [P('M4 30 L56 30 L56 54 L4 54 Z', 'hi'),
+                           S('M8 30 Q20 22 36 26 Q48 28 54 22', 'bs', 5),       // it keeps the waves out
+                           P('M4 22 L18 22 L18 30 L4 30 Z', 'lo'),
+                           P('M14 34 L34 34 L34 42 L14 42 Z', 'bs'),
+                           S('M24 34 L24 22', 'lo', 2)]);
+def('anchor',       () => [S('M30 12 L30 44', 'bs', 4),
+                           S('M18 22 L42 22', 'bs', 3.4),
+                           S('M14 36 Q14 50 30 50 Q46 50 46 36', 'bs', 4),      // the chain pulls it horizontal
+                           C(30, 8, 4, 'bs'), C(30, 8, 1.6, 'lo'),
+                           ...[[14,36],[46,36]].map(([x,y]) => P(`M${x - 4} ${y} L${x + 4} ${y} L${x} ${y - 7} Z`, 'lo'))]);
+def('lighthouse',   () => [P('M22 18 L38 18 L42 50 L18 50 Z', 'bs'),
+                           ...[26, 34, 42].map(y => P(`M${20 + (y - 18) * 0.12} ${y} L${40 - (y - 18) * 0.12} ${y} L${40 - (y - 18) * 0.12} ${y + 4} L${20 + (y - 18) * 0.12} ${y + 4} Z`, 'lo')),
+                           P('M24 8 L36 8 L36 18 L24 18 Z', 'ik'),               // a character of its own
+                           ...[0, 1, 2].map(i => [S(`M${20 - i * 6} ${10 - i * 2} L${14 - i * 6} ${8 - i * 2}`, 'gh', 1.4),
+                             S(`M${40 + i * 6} ${10 - i * 2} L${46 + i * 6} ${8 - i * 2}`, 'gh', 1.4)]).flat()]);
+def('crane',        () => [S('M14 52 L14 10', 'bs', 4),                          // balanced about its base
+                           S('M6 14 L50 14', 'bs', 3.4),
+                           S('M14 14 L38 30', 'gh', 1.2),
+                           S('M40 14 L40 32', 'ik', 1.6),
+                           P('M34 32 L46 32 L46 40 L34 40 Z', 'lo'),
+                           P('M2 10 L12 10 L12 20 L2 20 Z', 'lo'),               // the counterweight
+                           P('M6 52 L22 52 L22 56 L6 56 Z', 'lo')]);
+def('cargo',        () => [...[0, 1].map(r => [0, 1, 2].map(c =>
+                             P(`M${10 + c * 14} ${20 + r * 14} L${22 + c * 14} ${20 + r * 14} L${22 + c * 14} ${32 + r * 14} L${10 + c * 14} ${32 + r * 14} Z`, r ? 'bs' : 'lo'))).flat(),
+                           ...[0, 1].map(r => [0, 1, 2].map(c =>
+                             S(`M${16 + c * 14} ${20 + r * 14} L${16 + c * 14} ${32 + r * 14}`, 'gh', 1))).flat()]);
+def('stage',        () => [P('M6 30 L54 30 L54 38 L6 38 Z', 'bs'),             // it agrees a line
+                           P('M10 38 L50 38 L50 50 L10 50 Z', 'lo'),
+                           P('M4 6 L56 6 L56 12 L4 12 Z', 'lo'),
+                           ...[0, 1].map(i => P(`M${6 + i * 40} 12 Q${12 + i * 40} 22 ${8 + i * 40} 30 L${14 + i * 40} 30 Q${18 + i * 40} 20 ${14 + i * 40} 12 Z`, 'hi'))]);
+def('mask',         () => [P('M16 10 Q16 4 30 4 Q44 4 44 10 L44 34 Q44 48 30 52 Q16 48 16 34 Z', 'bs'),
+                           P('M21 18 Q25 14 29 18 Q25 21 21 18 Z', 'ik'),        // legible from the back of a hillside
+                           P('M31 18 Q35 14 39 18 Q35 21 31 18 Z', 'ik'),
+                           P('M24 34 Q30 30 36 34 Q30 42 24 34 Z', 'ik'),        // and the mouth shaped to carry
+                           ...[[18,8],[42,8]].map(([x,y]) => C(x, y, 1.6, 'lo'))]);
+def('actor',        () => [C(30, 14, 8, 'bs'),
+                           P('M18 24 L42 24 L44 44 L16 44 Z', 'bs'),
+                           P('M6 44 L54 44 L54 50 L6 50 Z', 'lo'),               // one step out of the chorus
+                           ...[[12,30],[48,30]].map(([x,y]) => C(x, y, 3, 'gh')),
+                           S('M24 12 Q30 16 36 12', 'ik', 1.4)]);
+def('theatre',      () => [...[0, 1, 2, 3].map(i =>
+                             S(`M${8 - i * 2} ${44 - i * 8} Q30 ${52 - i * 8} ${52 + i * 2} ${44 - i * 8}`, 'bs', 4)),   // raked, so each row sees over
+                           P('M20 46 L40 46 L40 54 L20 54 Z', 'lo'),
+                           C(30, 50, 3, 'hi')]);
+def('eyepiece',     () => [P('M20 10 L40 10 L40 44 L20 44 Z', 'bs'),
+                           E(30, 10, 10, 3.4, 'hi'),                             // the small cheap lens that sets it
+                           E(30, 44, 10, 3.4, 'lo'),
+                           P('M16 44 L44 44 L44 52 L16 52 Z', 'lo'),
+                           ...[18, 26, 34].map(y => S(`M22 ${y} L38 ${y}`, 'gh', 1))]);
+def('tube',         () => [P('M6 22 L54 22 L54 38 L6 38 Z', 'bs'),
+                           E(6, 30, 3, 8, 'lo'), E(54, 30, 3, 8, 'hi'),
+                           E(54, 30, 1.6, 4, 'lo'),
+                           S('M12 26 L48 26', 'hi', 1.2)]);                        // metal in the centre earns nothing
+
 /* ── the mind ────────────────────────────────────────────────────────────
    `memory` is already drawn as a worn path between nodes, so `mind` takes
    the whole field rather than the path, and meditation takes one point in

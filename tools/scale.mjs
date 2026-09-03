@@ -180,6 +180,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* cycle N, from needs.mjs, 4 Sep */
+          'phosphor',
           /* cycle F, from needs.mjs, 4 Sep */
           'silica',
           /* common words the corpus never had, 3 Sep */
@@ -246,6 +248,10 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* cycle N, from needs.mjs, 4 Sep */
+          'tuner', 'inductor', 'coil', 'contour',
+          /* cycle M, from needs.mjs, 4 Sep */
+          'eyepiece', 'mask',
           /* cycle L, from needs.mjs, 4 Sep */
           'glazing_bar', 'cavity_wall_tie', 'sim_card', 'indicator',
           /* cycle K, from needs.mjs, 4 Sep */
@@ -410,6 +416,10 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* cycle N, from needs.mjs, 4 Sep */
+          'transmitter', 'receiver', 'pickaxe', 'winch', 'screen',
+          /* cycle M, from needs.mjs, 4 Sep */
+          'stained_glass', 'altar', 'millstone', 'anchor', 'tube',
           /* cycle L, from needs.mjs, 4 Sep */
           'body_panel', 'fork_garden', 'damp_proof_course', 'roofing_felt', 'socket', 'hand', 'soundboard',
           /* cycle K, from needs.mjs, 4 Sep */
@@ -649,6 +659,10 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* cycle N, from needs.mjs, 4 Sep */
+          'frequency', 'projection', 'deck', 'truss', 'cart', 'gate', 'well',
+          /* cycle M, from needs.mjs, 4 Sep */
+          'arch', 'column', 'vault', 'buttress', 'crane', 'cargo', 'stage', 'actor',
           /* the mind, 4 Sep — conceptual rack with logic and language */
           'mind', 'meditation',
           /* cycle L, from needs.mjs, 4 Sep */
@@ -896,6 +910,10 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* cycle N, from needs.mjs, 4 Sep */
+          'survey', 'pier', 'tunnel',
+          /* cycle M, from needs.mjs, 4 Sep */
+          'building', 'spire', 'shaft', 'harbour', 'lighthouse', 'theatre',
           /* cycle L, from needs.mjs, 4 Sep */
           'crop', 'cave',
           /* cycle K, from needs.mjs, 4 Sep */

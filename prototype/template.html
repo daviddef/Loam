@@ -2404,12 +2404,29 @@ function exportSave() {
   // setFreePlay already puts the real progress aside under REAL_KEY precisely
   // so turning the mode on can never cost a playthrough. Export that instead,
   // and record the mode as a flag.
+  // ...and when there is no such stash, the fallback must NOT be the live set.
+  // Reset deletes REAL_KEY, and a player who has only ever been in free play
+  // never had one, so `real` is null in both cases and the old fallback wrote
+  // all 6,853 ids into an export of an EMPTY canvas. ("i click the clear
+  // button, game clears canvas, and even on an empty canvas i copy the game
+  // and this is what it looks like" — found live, with bench.cards empty and
+  // found 6853 of 6853.)
+  //
+  // The point is that in free play the found set carries no information at
+  // all: it is every element by definition, so writing it says nothing and
+  // costs a quarter of a megabyte. The starters keep the file a valid save,
+  // and `freePlay: true` records the rest.
   let real = null;
   if (prefs.freePlay) {
     try { real = JSON.parse(localStorage.getItem(REAL_KEY) || 'null'); } catch {}
   }
-  const outFound = real ? real.found.filter(id => byId[id]) : [...found];
-  const outSeen  = real ? real.seen.filter(id => byId[id])  : [...seen];
+  const starters = elements.filter(e => e.starter).map(e => e.id);
+  const outFound = real ? real.found.filter(id => byId[id])
+                 : prefs.freePlay ? starters
+                 : [...found];
+  const outSeen  = real ? real.seen.filter(id => byId[id])
+                 : prefs.freePlay ? []
+                 : [...seen];
   return JSON.stringify({
     loam: SAVE_VERSION,
     exported: new Date().toISOString().slice(0, 10),
@@ -8001,10 +8018,19 @@ function showEntry(id, mode) {
   // Only worth offering where there is a chain to share.
   const shareBtn = orderedSteps(id).length
     ? `<button class="addroute" data-share="${id}" title="Share this chain, with its sources">↗</button>` : '';
+  // In Free Play nothing on the bench was actually built, so the ancestry that
+  // makes a card meaningful is missing from the board. Placing it used to be
+  // automatic on every drop, which for the median element meant thirty cards
+  // you did not ask for; it is now this button, which says how many first.
+  const chainLen = prefs.freePlay ? orderedSteps(id).length : 0;
+  const chainBtn = chainLen
+    ? `<button class="addroute" data-put-chain="${id}"
+         title="Build the whole chain that makes this — ${chainLen} steps">⤵</button>` : '';
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
+       ${chainBtn}
        ${favBtn}
        ${shareBtn}
        ${decayBtn}
@@ -8606,6 +8632,12 @@ document.getElementById('sheet').addEventListener('click', ev => {
     const tw = sw.querySelector('.tw.why');
     if (tw) tw.textContent = open ? '▾' : '▸';
     return;
+  }
+  const pch = ev.target.closest('[data-put-chain]');
+  if (pch) {
+    closeSheet(); benchTouched = true;
+    pushUndo(`building ${nameOf(byId[pch.dataset.putChain])}`);
+    return buildChain(pch.dataset.putChain);
   }
   const put = ev.target.closest('[data-put]');
   if (put) { closeSheet(); benchTouched = true; return placeItem(put.dataset.put); }
@@ -9767,9 +9799,21 @@ function buildChain(id, x, y) {
       if (!chipFor.has(c.dataset.id)) chipFor.set(c.dataset.id, c);
     }
   }
+  // spawn() and materialize() both return null once the bench is full, and
+  // every one of those nulls used to be stored in chipFor and fresh anyway —
+  // where it became a parent of later steps, a link to nowhere, and finally
+  // `c.style.left` on null in the translate loop below. Check the room up
+  // front rather than discovering it 140 chips in: a chain that cannot fit is
+  // not started, and you get the card you asked for instead.
+  const room = MAX_CHIPS - world.querySelectorAll('.chip.board').length;
+  if (steps.length + 2 > room) {
+    toast(`${nameOf(byId[id])} is ${steps.length} steps back — more than the bench has room for, so here it is on its own`);
+    return spawn(id, x, y);
+  }
   const ensure = (iid) => {
     if (chipFor.has(iid)) return chipFor.get(iid);
     const el = spawn(iid);
+    if (!el) return null;               // belt and braces: never store a null
     chipFor.set(iid, el);
     fresh.add(el);
     return el;
@@ -9777,11 +9821,18 @@ function buildChain(id, x, y) {
   for (const r of steps) {
     if (chipFor.has(r.out)) continue;
     const parents = r.in.map(ensure);
+    if (parents.some(p => !p)) break;   // filled mid-chain after all: stop clean
     const out = materialize(r, parents);
+    if (!out) break;
     chipFor.set(r.out, out);
     fresh.add(out);
   }
   const el = chipFor.get(id) || ensure(id);
+  if (!el) {
+    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
+    refreshFolds(); drawLinks(); save();
+    return null;
+  }
   if (x != null) {
     // Every ancestor above was spawned via bare spawn(iid) — no x, no y, no
     // anchor at all — so it landed wherever freeSpot's context-free default
@@ -9827,11 +9878,31 @@ function buildChain(id, x, y) {
   save();
   return el;
 }
-// The one entry point placement should go through: builds the real chain in
-// Free Play (where nothing has real ancestors yet), just places it otherwise.
+// The one entry point placement should go through.
+//
+// This used to build the whole ancestry in Free Play, reasoning that a card
+// handed to you has no ancestors, so "Where it came from" would have nothing
+// to show. Measured against the corpus, that reasoning does not survive: the
+// MEDIAN element's chain is 30 steps, 62% of elements are over 20, and 442 of
+// them are longer than the 140-card bench. So dropping one card usually
+// buried the bench in cards nobody asked for, and for those 442 it filled the
+// bench, hit the null that spawn() returns at the cap, threw a TypeError out
+// of the pointerup handler, and left the card you actually dropped nowhere on
+// the board at all — no toast, no links, no save.
+//
+// ("i clear the canvas, and also drop croatia onto canvas and suddently a
+// whole batch of elements arrive on canvas" — found live. Croatia is a
+// 194-step chain; all 140 that arrived were its ancestors and Croatia itself
+// was not among them.)
+//
+// The board already had this exact complaint recorded against buildChain's
+// runTidy() — "all i want is the object on my board" — and the answer is the
+// same one: a drop places what you dropped. The chain is still worth having,
+// so it is still built, by asking for it from the entry sheet where its size
+// can be stated before you commit to it.
 function placeItem(id, x, y) {
   pushUndo(`putting ${nameOf(byId[id])} on the bench`);
-  return prefs.freePlay ? buildChain(id, x, y) : spawn(id, x, y);
+  return spawn(id, x, y);
 }
 // Tapping a locked tool explains itself rather than doing nothing.
 document.getElementById('tray').addEventListener('click', ev => {
@@ -10496,6 +10567,34 @@ function regressionTest() {
   const acacia = decayImpact('acacia');
   check('content: acacia no longer reaches giraffe (food is not descent)',
     !acacia.broken.has('giraffe') && !acacia.starved.has('giraffe'));
+
+  // A drop places ONE card, in Free Play as anywhere else, and a chain far
+  // longer than the bench neither throws nor strands the thing you asked for.
+  // Croatia is 194 steps: it used to fill the bench with 140 of its ancestors,
+  // throw a TypeError on the null spawn() returns at the cap, and leave
+  // Croatia itself off the board entirely.
+  {
+    const free0 = prefs.freePlay;
+    const board0 = [...world.querySelectorAll('.chip.board')];
+    prefs.freePlay = true;
+    const n0 = board0.length;
+    let threw = null;
+    try { placeItem('croatia', 0, 0); } catch (e) { threw = e; }
+    check('free play: a drop places one card, not its whole ancestry',
+      !threw && world.querySelectorAll('.chip.board').length === n0 + 1);
+    check('free play: the card you dropped is the one that lands',
+      !!findBoardChip('croatia'));
+    // And asking for the chain outright, on something that cannot fit, says so
+    // and still hands you the card rather than half a chain and an exception.
+    let threw2 = null;
+    try { buildChain('croatia', 0, 0); } catch (e) { threw2 = e; }
+    check('free play: an oversized chain is refused, not half-built', !threw2);
+    for (const c of [...world.querySelectorAll('.chip.board')]) {
+      if (!board0.includes(c)) c.remove();
+    }
+    links.length = 0;
+    prefs.freePlay = free0;
+  }
 
   // tidy()'s satellite-shift collision fix: this exact graph shape (a short,
   // deep chain reaching an existing card that already anchors a separate,

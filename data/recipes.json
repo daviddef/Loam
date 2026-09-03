@@ -86966,5 +86966,415 @@
     "why": "Its name means the great law of the dharma wheel, and the wheel is said to turn in the abdomen of a practitioner. It grew to millions within seven years and was banned in 1999, which is when it became better known outside China than in it.",
     "src": "https://en.wikipedia.org/wiki/Falun_Gong",
     "verified": true
+  },
+  {
+    "in": [
+      "floor",
+      "wall"
+    ],
+    "out": "building",
+    "why": "A wall and a floor is the whole definition, and everything else follows: a floor has to be held up, which sets how far the walls can be apart, which is why the history of building is the history of spanning — beam, then arch, then truss, then steel. Stack the floors and you need the walls to carry them, which is the limit masonry hits and steel does not.",
+    "src": "https://en.wikipedia.org/wiki/Building",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "timber"
+    ],
+    "out": "arch",
+    "why": "Stone is strong squeezed and weak pulled, and a lintel is pulled underneath; an arch turns the whole load into squeezing, passed block to block down to the ground. It cannot stand until the last block is in, so it is built on a timber former and only becomes an arch when that is struck.",
+    "src": "https://en.wikipedia.org/wiki/Arch",
+    "verified": true
+  },
+  {
+    "in": [
+      "rod",
+      "stone"
+    ],
+    "out": "column",
+    "why": "It is the most efficient thing stone can do, so a column can be slender in a way a beam of the same stone cannot. Classical ones swell slightly in the middle — entasis — because a perfectly straight column looks pinched from below.",
+    "src": "https://en.wikipedia.org/wiki/Column",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "stone"
+    ],
+    "out": "vault",
+    "why": "Crossing two arches concentrates the whole load onto four points instead of two walls, which is what lets the space between become window rather than masonry — the entire structural argument of a Gothic cathedral in one move.",
+    "src": "https://en.wikipedia.org/wiki/Vault_(architecture)",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "wall"
+    ],
+    "out": "buttress",
+    "why": "A vault does not push straight down; it shoves outwards at the springing, and a tall thin wall cannot resist that. The flying buttress carries that thrust out over the aisle to a pier, which is why the walls could become glass.",
+    "src": "https://en.wikipedia.org/wiki/Buttress",
+    "verified": true
+  },
+  {
+    "in": [
+      "roof",
+      "tower"
+    ],
+    "out": "spire",
+    "why": "It does nothing structural and everything social: it is visible from a day's walk away, and for centuries the tallest thing anyone had ever seen. Height was the message, which is why they kept collapsing and kept being rebuilt taller.",
+    "src": "https://en.wikipedia.org/wiki/Spire",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "lead"
+    ],
+    "out": "stained_glass",
+    "why": "The colour is in the glass rather than on it — metal oxides added to the melt, cobalt for blue, copper for red — so it cannot fade. The lead came first as the only way to join small pieces, and became the drawing.",
+    "src": "https://en.wikipedia.org/wiki/Stained_glass",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "stone"
+    ],
+    "out": "altar",
+    "why": "It is the oldest built thing in most traditions: a raised flat stone where something is given up. Everything around it — nave, aisle, dome — is a way of getting a congregation to face it.",
+    "src": "https://en.wikipedia.org/wiki/Altar",
+    "verified": true
+  },
+  {
+    "in": [
+      "cave",
+      "timber"
+    ],
+    "out": "shaft",
+    "why": "It is the expensive part of a mine and the dangerous one: everything has to come up it, air has to go down it, and it floods from the bottom. Most mining history is the history of getting water back out of one.",
+    "src": "https://en.wikipedia.org/wiki/Shaft_mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "sandstone",
+      "wheel"
+    ],
+    "out": "millstone",
+    "why": "The grooves are the design. They are cut so that grain works outward from the centre while being sheared rather than crushed, and a millstone has to be re-dressed every few weeks — which is where a miller's blackened fingernails, and 'the nick of time', come from.",
+    "src": "https://en.wikipedia.org/wiki/Millstone",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "wall"
+    ],
+    "out": "harbour",
+    "why": "Almost every one is partly built, because natural shelter deep enough for a laden ship is rare. The wall is doing the real work: it is not there to hold the water in but to keep the waves out.",
+    "src": "https://en.wikipedia.org/wiki/Harbor",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "iron"
+    ],
+    "out": "anchor",
+    "why": "It does not hold by weight. The chain lies along the bottom and pulls the shank horizontally, which drives the fluke into the seabed — which is why you pay out far more chain than the water is deep, and why a straight-up pull breaks it out.",
+    "src": "https://en.wikipedia.org/wiki/Anchor",
+    "verified": true
+  },
+  {
+    "in": [
+      "lamp",
+      "tower"
+    ],
+    "out": "lighthouse",
+    "why": "The character is the information: each one flashes to a different rhythm, listed in a book, so a navigator identifies a coast by timing a light with a watch. The Fresnel lens made it visible from twenty miles with one oil flame.",
+    "src": "https://en.wikipedia.org/wiki/Lighthouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "lever",
+      "rope"
+    ],
+    "out": "crane",
+    "why": "The lifting is easy and the reach is the problem: everything a crane does has to be balanced against a moment about its base, which is why a tower crane's counterweight moves as the load goes out and why the load chart is a curve, not a number.",
+    "src": "https://en.wikipedia.org/wiki/Crane_(machine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "trade"
+    ],
+    "out": "cargo",
+    "why": "Almost everything about a ship follows from it: hull shape, hatch size, the shape of a port, and eventually the standard steel box that made a ship's contents transferable to a train without being touched.",
+    "src": "https://en.wikipedia.org/wiki/Cargo",
+    "verified": true
+  },
+  {
+    "in": [
+      "building",
+      "floor"
+    ],
+    "out": "stage",
+    "why": "The raising is the whole convention: it makes everyone visible from the back and, more importantly, it agrees a line — what happens above it is not real, and everyone in the room has consented to that.",
+    "src": "https://en.wikipedia.org/wiki/Stage_(theatre)",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "leather"
+    ],
+    "out": "mask",
+    "why": "In Greek theatre it did practical work as well as symbolic: it fixed a character legible from the back of a hillside, and its mouth was shaped to carry the voice. The word for it, persona, is where personality comes from.",
+    "src": "https://en.wikipedia.org/wiki/Mask",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "stage"
+    ],
+    "out": "actor",
+    "why": "Thespis is credited with the invention around 534 BC by the simplest possible act: stepping out of the chorus and speaking as a character rather than about one. Everything since is a variation on that step.",
+    "src": "https://en.wikipedia.org/wiki/Actor",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "tube"
+    ],
+    "out": "eyepiece",
+    "why": "A telescope's magnification is not a property of the telescope: it is the objective's focal length divided by the eyepiece's, so changing the small cheap lens changes the whole instrument, and there is a limit past which you only magnify blur.",
+    "src": "https://en.wikipedia.org/wiki/Eyepiece",
+    "verified": true
+  },
+  {
+    "in": [
+      "rod",
+      "sheet_metal"
+    ],
+    "out": "tube",
+    "why": "It is stiff for the same reason a bone is: bending stresses the outside far more than the middle, so metal in the centre earns almost nothing. That one fact explains scaffolding, bicycle frames, aircraft spars and bones.",
+    "src": "https://en.wikipedia.org/wiki/Tube_(structure)",
+    "verified": true
+  },
+  {
+    "in": [
+      "seat",
+      "stage"
+    ],
+    "out": "theatre",
+    "why": "Its whole geometry is a sightline problem solved with a hillside: raked seating so each row sees over the one in front, and a curved bank so everyone faces the same point. The Greeks got the acoustics almost right by accident of the same shape.",
+    "src": "https://en.wikipedia.org/wiki/Theatre",
+    "verified": true
+  },
+  {
+    "in": [
+      "antenna",
+      "electricity"
+    ],
+    "out": "transmitter",
+    "why": "It works by pushing charge up and down an antenna fast enough that the field cannot settle: the disturbance detaches and travels away at the speed of light. Everything else — power, aerial height, frequency — is about how far that goes.",
+    "src": "https://en.wikipedia.org/wiki/Transmitter",
+    "verified": true
+  },
+  {
+    "in": [
+      "antenna",
+      "tuner"
+    ],
+    "out": "receiver",
+    "why": "The air carries every station at once and the tuner selects one by resonating with it, the way one glass rings when its note is sung. Amplification comes after; the selection is the hard part and the reason radio needed the tuned circuit.",
+    "src": "https://en.wikipedia.org/wiki/Radio_receiver",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "inductor"
+    ],
+    "out": "tuner",
+    "why": "A coil and a capacitor pass energy back and forth at a rate set by their sizes, and only a signal arriving at that rate builds up. Turning the dial changes one of them, which is why old radios had a variable capacitor the size of a fist.",
+    "src": "https://en.wikipedia.org/wiki/LC_circuit",
+    "verified": true
+  },
+  {
+    "in": [
+      "coil",
+      "wire"
+    ],
+    "out": "inductor",
+    "why": "Current makes a magnetic field and a changing field pushes back against the change that made it, so an inductor smooths current the way a flywheel smooths rotation — the same idea in a different medium.",
+    "src": "https://en.wikipedia.org/wiki/Inductor",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "rod"
+    ],
+    "out": "coil",
+    "why": "It is the cheapest way to concentrate magnetism: a hundred turns give roughly a hundred times the field of one. Every motor, transformer, relay, speaker and electromagnet is a coil with something arranged around it.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_coil",
+    "verified": true
+  },
+  {
+    "in": [
+      "time",
+      "wave"
+    ],
+    "out": "frequency",
+    "why": "It is the reciprocal of the period, which sounds trivial and is the reason a single number can describe a note, a colour, a radio station and a processor's speed. The hertz is named for the man who first made and detected radio waves deliberately.",
+    "src": "https://en.wikipedia.org/wiki/Frequency",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "triangle"
+    ],
+    "out": "survey",
+    "why": "It works by triangles: measure one baseline carefully and every other distance follows from angles alone, which is why a triangulation network could map a whole country from a single measured line across a beach.",
+    "src": "https://en.wikipedia.org/wiki/Surveying",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "map"
+    ],
+    "out": "projection",
+    "why": "It cannot be done without lying. A sphere has no developable surface, so every projection distorts area, angle or distance and the choice is which — Mercator keeps angles, which is why it is right for navigation and wrong about Greenland.",
+    "src": "https://en.wikipedia.org/wiki/Map_projection",
+    "verified": true
+  },
+  {
+    "in": [
+      "altitude",
+      "map"
+    ],
+    "out": "contour",
+    "why": "It turns a third dimension into a pattern you can read: close together is steep, wide apart is flat, and a closed ring is a hill or a hollow depending on which way the little ticks point.",
+    "src": "https://en.wikipedia.org/wiki/Contour_line",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "foundation"
+    ],
+    "out": "pier",
+    "why": "It has to survive scour more than load: moving water digs the riverbed away from around its base, and far more bridges have fallen from the ground being taken out from under a pier than from anything crossing the top.",
+    "src": "https://en.wikipedia.org/wiki/Pier_(architecture)",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "frame"
+    ],
+    "out": "deck",
+    "why": "On a bridge everything below exists only to hold it up and flat; on a ship it is structural in its own right, tying the hull sides together so the whole thing works as a box rather than folding in the middle.",
+    "src": "https://en.wikipedia.org/wiki/Deck_(bridge)",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "triangle"
+    ],
+    "out": "truss",
+    "why": "A beam wastes metal in the middle where the stress is low. A truss puts material only where the forces run and joins it in triangles, which cannot change shape without a member changing length — the whole reason bridges and roofs look like lattices.",
+    "src": "https://en.wikipedia.org/wiki/Truss",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "mountain"
+    ],
+    "out": "tunnel",
+    "why": "The difficulty is never the digging but the holding: the ground wants to close the hole, so a tunnel is lined as it advances, and the balance between advancing fast and supporting soon is the whole craft.",
+    "src": "https://en.wikipedia.org/wiki/Tunnel",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "tine"
+    ],
+    "out": "pickaxe",
+    "why": "It works by concentration: the same swing arriving on a point rather than an edge multiplies the pressure enormously, which is why a pick beats a hammer on stone and why the point blunts and is re-drawn constantly.",
+    "src": "https://en.wikipedia.org/wiki/Pickaxe",
+    "verified": true
+  },
+  {
+    "in": [
+      "box",
+      "wheel"
+    ],
+    "out": "cart",
+    "why": "The wheel is only half of it: an axle that turns freely under load is the harder invention, which is why the wheel appears thousands of years after the sledge and only where there were already smooth roads or hard ground.",
+    "src": "https://en.wikipedia.org/wiki/Cart",
+    "verified": true
+  },
+  {
+    "in": [
+      "crank",
+      "rope"
+    ],
+    "out": "winch",
+    "why": "The drum diameter is the gearing: a small drum on a long handle multiplies force greatly and takes forever, and every winch is that trade made in metal. A ratchet stops it running back, which is what makes it safe to stop halfway.",
+    "src": "https://en.wikipedia.org/wiki/Winch",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "phosphor"
+    ],
+    "out": "screen",
+    "why": "In a cathode ray tube the picture is one moving dot, drawn line by line fast enough that persistence of vision assembles it — there is never a whole image on the screen at any instant, only the memory of one in the eye.",
+    "src": "https://en.wikipedia.org/wiki/Display_device",
+    "verified": true
+  },
+  {
+    "in": [
+      "crystal",
+      "light"
+    ],
+    "out": "phosphor",
+    "why": "It converts energy you cannot see into light you can — electrons in a tube, ultraviolet in a fluorescent lamp, blue LED light in a white one. The afterglow is deliberate and tuned: too short and the picture flickers, too long and it smears.",
+    "src": "https://en.wikipedia.org/wiki/Phosphor",
+    "verified": true
+  },
+  {
+    "in": [
+      "arch",
+      "door"
+    ],
+    "out": "gate",
+    "why": "Everything about a fortified gate answers the fact that it is the weak point: an arch strong enough to carry the wall over the opening, set between towers, approached along a wall so attackers show their flank, and doubled so a party through the first is trapped before the second.",
+    "src": "https://en.wikipedia.org/wiki/Gate",
+    "verified": true
+  },
+  {
+    "in": [
+      "shaft",
+      "water"
+    ],
+    "out": "well",
+    "why": "It only works because groundwater sits in the pores of rock rather than in caverns, so a hole almost anywhere below the table fills. Digging one is the moment a village stops needing to be beside a river.",
+    "src": "https://en.wikipedia.org/wiki/Water_well",
+    "verified": true
   }
 ]
