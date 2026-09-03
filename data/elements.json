@@ -27570,7 +27570,7 @@
     "tags": [
       "history"
     ],
-    "fact": "Neo-Babylonian king (605-562 BC) who rebuilt Babylon's walls, palaces, and temples almost entirely in brick.",
+    "fact": "King of Babylon for forty-three years, who built the Ishtar Gate and destroyed the First Temple.",
     "soleRoute": true
   },
   {
@@ -31617,7 +31617,7 @@
     "tags": [
       "person"
     ],
-    "fact": "British philosopher who showed some sentences perform an action rather than describe the world.",
+    "fact": "J. L. Austin, 1911-1960, who noticed that some sentences do not describe anything — they do something.",
     "terminal": true,
     "soleRoute": true
   },
@@ -38995,7 +38995,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "An execution device in the Roman Empire that became Christianity's principal symbol.",
+    "fact": "Two beams at right angles, and the central symbol of Christianity.",
     "soleRoute": true
   },
   {
@@ -39218,8 +39218,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "Islam's mystical tradition, seeking union with God through practices like dhikr and ecstatic whirling dance.",
-    "terminal": true
+    "fact": "Islam's mystical tradition, seeking union with God through practices like dhikr and ecstatic whirling dance."
   },
   {
     "id": "ahmadiyya",
@@ -39438,7 +39437,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "ISKCON, founded in New York, 1966, by Prabhupada; devotees chant the Hare Krishna mantra in saffron robes.",
+    "fact": "A devotional movement built around chanting the names of Krishna.",
     "terminal": true,
     "soleRoute": true
   },
@@ -39450,7 +39449,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "Chinese spiritual practice founded 1992 by Li Hongzhi, blending qigong with moral teaching; banned since 1999.",
+    "fact": "A qigong movement founded in China in 1992, combining slow exercises with a moral teaching.",
     "terminal": true,
     "soleRoute": true
   },
@@ -39730,7 +39729,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "Major Hindu tradition centered on Shiva as supreme deity, marked by sacred ash and the lingam symbol.",
+    "fact": "The tradition that takes Shiva as the supreme reality rather than one god among many.",
     "soleRoute": true
   },
   {
@@ -41988,7 +41987,7 @@
     "tags": [
       "person"
     ],
-    "fact": "Persian Sufi poet, 1207–1273, who taught that the soul rises through mineral, plant, animal, and human forms toward the divine.",
+    "fact": "Jalal al-Din Rumi, 1207-1273, the Persian poet whose work is the most read poetry in the world outside its own language.",
     "terminal": true,
     "soleRoute": true
   },
@@ -42045,7 +42044,7 @@
     "tags": [
       "person"
     ],
-    "fact": "English philosopher, 1588–1679, who argued man is purely physical, matter in motion, with no incorporeal soul — 'man is a machine.'",
+    "fact": "Thomas Hobbes, 1588-1679, who argued the state is a bargain people make against each other.",
     "terminal": true
   },
   {
@@ -42559,7 +42558,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "Inuit sea goddess -- her father cut off her fingers as she clung to his kayak, and they became the seals.",
+    "fact": "The Inuit sea goddess, who holds the animals people hunt and withholds them when wronged.",
     "terminal": true
   },
   {
@@ -49311,8 +49310,7 @@
       "water"
     ],
     "taxon": "tx_carnivora",
-    "fact": "A true seal has no external ear flap and can't rotate its hind flippers forward, so on land it must \"galumph\" on its belly — but in the water it swims more efficiently than an eared sea lion.",
-    "terminal": true
+    "fact": "A true seal has no external ear flap and can't rotate its hind flippers forward, so on land it must \"galumph\" on its belly — but in the water it swims more efficiently than an eared sea lion."
   },
   {
     "id": "nudibranch",
@@ -77923,5 +77921,26 @@
       "instrument"
     ],
     "fact": "The thin top plate of a stringed instrument, and the part that actually makes the sound."
+  },
+  {
+    "id": "mind",
+    "name": "Mind",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Everything the brain is doing that can be described without mentioning the brain — thinking, wanting, noticing, remembering."
+  },
+  {
+    "id": "meditation",
+    "name": "Meditation",
+    "emoji": "🧘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "belief"
+    ],
+    "fact": "Training attention deliberately, usually by holding it on one thing and noticing when it has wandered."
   }
 ]

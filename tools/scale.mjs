@@ -649,6 +649,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* the mind, 4 Sep — conceptual rack with logic and language */
+          'mind', 'meditation',
           /* cycle L, from needs.mjs, 4 Sep */
           'worktop', 'track_gauge',
           /* cycle K, from needs.mjs, 4 Sep */

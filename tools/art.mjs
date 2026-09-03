@@ -30429,6 +30429,22 @@ def('rodent', () => [                                                // the inci
   P('M43 39 Q52 44 49 54 Q45 57 42 52 Q41 45 43 39 Z', 'hi'),         // and the lower one, wearing against it
   ...granules('lo', 5, 313, [10, 46, 32, 57]),                        // the shavings being the only thing that keeps either short
 ]);
+/* ── the mind ────────────────────────────────────────────────────────────
+   `memory` is already drawn as a worn path between nodes, so `mind` takes
+   the whole field rather than the path, and meditation takes one point in
+   it with everything else quietened.                                      */
+
+def('mind',         () => [P('M14 22 Q14 10 26 8 Q40 6 46 16 Q54 24 48 34 Q46 46 32 48 Q18 48 14 36 Q10 28 14 22 Z', 'bs'),
+                           ...[[22,20],[34,16],[42,26],[26,32],[38,38],[20,34]].map(([x,y]) => C(x, y, 3, 'lo')),
+                           ...[[22,20,34,16],[34,16,42,26],[42,26,38,38],[26,32,38,38],[22,20,26,32],[20,34,26,32]]
+                             .map(([a,b,c,d]) => S(`M${a} ${b} L${c} ${d}`, 'ik', 1.4)),
+                           ...[[30,4],[48,10]].map(([x,y]) => C(x, y, 1.4, 'gh'))]);
+def('meditation',   () => [C(30, 30, 20, 'gh'),                                 // everything else quietened
+                           ...[[16,18],[44,18],[14,42],[46,42]].map(([x,y]) => C(x, y, 2.2, 'gh')),
+                           C(30, 30, 7, 'bs'), ring('ik', 30, 30, 12, 1.6),
+                           C(30, 30, 2.6, 'ik'),
+                           ...[0, 90, 180, 270].map(a => ['g', a, 30, 30, [S('M30 14 L30 18', 'lo', 1.4)]])]);
+
 /* ── cycle L: the last of the 459 ────────────────────────────────────────*/
 
 def('body_panel',   () => [P('M6 18 Q30 12 54 18 L54 42 Q30 48 6 42 Z', 'bs'),   // the curves are structural

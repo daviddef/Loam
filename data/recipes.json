@@ -442,16 +442,6 @@
   },
   {
     "in": [
-      "vine",
-      "flower"
-    ],
-    "out": "tomato",
-    "why": "Botanically a berry, and unusually rich in glutamate — which is what the umami receptors respond to. That is why a tomato reads as savoury rather than merely sweet or sour.",
-    "src": "https://en.wikipedia.org/wiki/Umami",
-    "verified": true
-  },
-  {
-    "in": [
       "tree",
       "fruit"
     ],
@@ -1151,16 +1141,6 @@
     "out": "feast",
     "why": "Eating together is not a nutritional requirement. Every known human society does it anyway.",
     "src": "https://en.wikipedia.org/wiki/Communal_meal"
-  },
-  {
-    "in": [
-      "stone",
-      "fire"
-    ],
-    "out": "philosopher_stone",
-    "shelf": "folklore",
-    "why": "Alchemists hunted this for centuries and never found it. Along the way they invented distillation, the mineral acids, and eventually chemistry itself.",
-    "src": "https://en.wikipedia.org/wiki/Philosopher's_stone"
   },
   {
     "in": [
@@ -18344,16 +18324,6 @@
   {
     "in": [
       "bone",
-      "feather"
-    ],
-    "out": "mictlantecuhtli",
-    "why": "Shown as a blood-spattered skeleton wearing a headdress of owl feathers, he rules Mictlan from a windowless house with his consort Mictecacihuatl.",
-    "src": "https://en.wikipedia.org/wiki/Mictlantecuhtli",
-    "supported": true
-  },
-  {
-    "in": [
-      "bone",
       "human"
     ],
     "out": "mictlantecuhtli",
@@ -18428,16 +18398,6 @@
     ],
     "out": "kukulkan",
     "why": "Twice a year, sunlight and the shadow of El Castillo's stepped edges combine to crawl a serpent of light down the pyramid at Chichen Itza to meet its carved stone head.",
-    "src": "https://en.wikipedia.org/wiki/Kukulkan",
-    "supported": true
-  },
-  {
-    "in": [
-      "feather",
-      "stone"
-    ],
-    "out": "kukulkan",
-    "why": "The Yucatec Maya name for the feathered serpent, carved into temples at Chichen Itza, Uxmal and Mayapan.",
     "src": "https://en.wikipedia.org/wiki/Kukulkan",
     "supported": true
   },
@@ -22541,16 +22501,6 @@
   },
   {
     "in": [
-      "fire",
-      "bone"
-    ],
-    "out": "kali",
-    "why": "Goddess of time and death, she was originally pictured in a cremation ground, her iconography built from bone and skull.",
-    "src": "https://en.wikipedia.org/wiki/Kali",
-    "supported": true
-  },
-  {
-    "in": [
       "elephant",
       "mouse"
     ],
@@ -23591,16 +23541,6 @@
   },
   {
     "in": [
-      "clay",
-      "wheel"
-    ],
-    "out": "khnum",
-    "why": "Ram-headed Khnum fashioned human bodies, and the life force called the ka, out of Nile clay on a potter's wheel, then placed them in their mothers' wombs.",
-    "src": "https://en.wikipedia.org/wiki/Khnum",
-    "supported": true
-  },
-  {
-    "in": [
       "ram",
       "river"
     ],
@@ -23871,16 +23811,6 @@
   },
   {
     "in": [
-      "hammer",
-      "iron"
-    ],
-    "out": "thor",
-    "why": "Mjolnir is one of his three great possessions, alongside the belt Megingjord and the iron gloves Jarngreipr -- he must wear the gloves to wield the hammer at all.",
-    "src": "https://en.wikipedia.org/wiki/Mj%C3%B6lnir",
-    "supported": true
-  },
-  {
-    "in": [
       "goat",
       "hammer"
     ],
@@ -23981,16 +23911,6 @@
   },
   {
     "in": [
-      "gold",
-      "sea"
-    ],
-    "out": "heimdall",
-    "why": "Nicknamed Gullintanni, 'gold teeth,' and born of nine sisters usually read as the Nine Daughters of Aegir and Ran, personifications of the sea's waves.",
-    "src": "https://en.wikipedia.org/wiki/Heimdall",
-    "supported": true
-  },
-  {
-    "in": [
       "wolf",
       "rope"
     ],
@@ -24007,16 +23927,6 @@
     "out": "tyr",
     "why": "When Fenrir realized he had been tricked, he bit off Tyr's hand at what is still called 'the wolf-joint' -- the wrist.",
     "src": "https://en.wikipedia.org/wiki/T%C3%BDr",
-    "supported": true
-  },
-  {
-    "in": [
-      "sea",
-      "wind"
-    ],
-    "out": "njord",
-    "why": "God of the sea, navigation, fishing and wind; sailors prayed to him for a safe voyage, and storms were believed to rise when he was angered.",
-    "src": "https://en.wikipedia.org/wiki/Nj%C3%B6r%C3%B0r",
     "supported": true
   },
   {
@@ -24911,16 +24821,6 @@
   },
   {
     "in": [
-      "cloth",
-      "wind"
-    ],
-    "out": "fujin",
-    "why": "Shown carrying a huge bag of winds, Kazebuko, on his shoulders -- the winds inside it are his signature and his weapon both.",
-    "src": "https://en.wikipedia.org/wiki/F%C5%ABjin",
-    "supported": true
-  },
-  {
-    "in": [
       "mist",
       "sun"
     ],
@@ -25687,16 +25587,6 @@
     "out": "hephaestus",
     "why": "His workshop lay beneath Mount Etna -- his epithet Aitnaios means 'of Etna' -- where twenty bellows worked at his command.",
     "src": "https://en.wikipedia.org/wiki/Hephaestus",
-    "supported": true
-  },
-  {
-    "in": [
-      "clay",
-      "fire"
-    ],
-    "out": "hephaestus",
-    "why": "At Zeus's order he molded Pandora, humanity's first woman, out of earth.",
-    "src": "https://en.wikipedia.org/wiki/Pandora",
     "supported": true
   },
   {
@@ -28994,11 +28884,11 @@
   },
   {
     "in": [
-      "brick",
-      "fire"
+      "ishtar_gate",
+      "monarchy"
     ],
     "out": "nebuchadnezzar",
-    "why": "Babylonia had next to no stone or timber of its own, so Nebuchadnezzar's walls, palaces, and Marduk's great temple Esagila went up almost entirely in fired brick.",
+    "why": "Nebuchadnezzar II ruled Babylon for forty-three years and built most of what people picture when they picture it: the Ishtar Gate faced in glazed blue brick, the processional way, the walls, and the gardens later called hanging. He also took Jerusalem in 587 BC and carried its people into exile, which is why he is remembered in two traditions for two different reasons.",
     "src": "https://en.wikipedia.org/wiki/Nebuchadnezzar_II",
     "verified": true
   },
@@ -30117,16 +30007,6 @@
     ],
     "out": "sokar",
     "why": "Sokar ruled the Memphis necropolis as a mummified falcon, and his fusion with Osiris as Ptah-Sokar-Osiris made him patron of the resurrected dead.",
-    "src": "https://en.wikipedia.org/wiki/Sokar",
-    "supported": true
-  },
-  {
-    "in": [
-      "boat",
-      "silver"
-    ],
-    "out": "sokar",
-    "why": "At his own Henu-barque festival, Sokar's image sailed in an oryx-prowed boat, and the Book of the Dead says he fashioned bowls of silver.",
     "src": "https://en.wikipedia.org/wiki/Sokar",
     "supported": true
   },
@@ -32577,16 +32457,6 @@
   },
   {
     "in": [
-      "brick",
-      "hammer"
-    ],
-    "out": "aristotle",
-    "why": "Aristotle said everything has four causes: what it's made of, its design, how it was made, and its purpose — a house is its bricks, its plan, its builders, and a home to live in.",
-    "src": "https://en.wikipedia.org/wiki/Four_causes",
-    "verified": true
-  },
-  {
-    "in": [
       "compass",
       "paper"
     ],
@@ -32743,16 +32613,6 @@
     "out": "avicenna",
     "why": "Avicenna's Canon of Medicine was translated into Latin in the 12th century and used as a standard medical textbook in European universities into the 18th century.",
     "src": "https://en.wikipedia.org/wiki/The_Canon_of_Medicine",
-    "verified": true
-  },
-  {
-    "in": [
-      "boat",
-      "wood"
-    ],
-    "out": "plutarch",
-    "why": "Plutarch's Life of Theseus asks whether a ship whose rotting planks were replaced one by one over years remained the same ship — the Ship of Theseus paradox.",
-    "src": "https://en.wikipedia.org/wiki/Ship_of_Theseus",
     "verified": true
   },
   {
@@ -33103,16 +32963,6 @@
     "out": "gilbert_ryle",
     "why": "Ryle's The Concept of Mind (1949) mocked Cartesian mind-body dualism as belief in 'the ghost in the machine' — the myth of a separate, non-physical mind piloting the physical brain and body like an operator at a machine.",
     "src": "https://en.wikipedia.org/wiki/Ghost_in_the_machine",
-    "verified": true
-  },
-  {
-    "in": [
-      "boat",
-      "glass"
-    ],
-    "out": "j_l_austin",
-    "why": "Austin's How to Do Things with Words identifies 'performative utterances' — sentences that perform an act rather than describe one, like 'I name this ship the Queen Elizabeth' spoken at a christening.",
-    "src": "https://en.wikipedia.org/wiki/How_to_Do_Things_with_Words",
     "verified": true
   },
   {
@@ -40116,16 +39966,6 @@
   },
   {
     "in": [
-      "wood",
-      "gold"
-    ],
-    "out": "cross",
-    "why": "Originally a Roman instrument of execution, the cross saw extensive adoption as a Christian symbol from the 4th century onward, rendered in materials from plain wood to gold and jewels for church treasuries.",
-    "src": "https://en.wikipedia.org/wiki/Christian_cross",
-    "supported": true
-  },
-  {
-    "in": [
       "legume",
       "leaf"
     ],
@@ -40536,26 +40376,6 @@
   },
   {
     "in": [
-      "cloth",
-      "fire"
-    ],
-    "out": "hare_krishna",
-    "why": "ISKCON's devotees wear saffron-colored robes, the fire-orange hue adopted from the Shankarite monastic tradition when A. C. Bhaktivedanta Swami Prabhupada founded the movement in New York in 1966.",
-    "src": "https://en.wikipedia.org/wiki/International_Society_for_Krishna_Consciousness",
-    "verified": true
-  },
-  {
-    "in": [
-      "wheel",
-      "wind"
-    ],
-    "out": "falun_dafa",
-    "why": "Falun Dafa takes its name from the falun, or 'law wheel,' which founder Li Hongzhi taught rotates in the lower abdomen, channeling qi -- the vital energy Chinese thought likens to a flow of wind or breath.",
-    "src": "https://en.wikipedia.org/wiki/Falun_Gong",
-    "supported": true
-  },
-  {
-    "in": [
       "broom",
       "human"
     ],
@@ -40782,16 +40602,6 @@
     "out": "vaishnavism",
     "why": "The Heliodorus pillar, a stone column erected around 110 BCE by an Indo-Greek envoy who inscribed himself as a devotee of the 'God of gods' Vasudeva, is among the earliest archaeological evidence of organized Vaishnava worship of Vishnu.",
     "src": "https://en.wikipedia.org/wiki/Vaishnavism",
-    "verified": true
-  },
-  {
-    "in": [
-      "stone",
-      "ash"
-    ],
-    "out": "shaivism",
-    "why": "Shaivism's oldest known devotional image, the Gudimallam lingam in Andhra Pradesh, is carved from stone and dates to between the 3rd and 1st century BCE; sacred ash, or vibhuti, remains a defining mark of Shaivite devotion today.",
-    "src": "https://en.wikipedia.org/wiki/Shaivism",
     "verified": true
   },
   {
@@ -42996,16 +42806,6 @@
   },
   {
     "in": [
-      "hammer",
-      "stone"
-    ],
-    "out": "democritus",
-    "why": "Democritus reasoned that dividing matter into ever-smaller pieces cannot go on forever: eventually a fragment is reached too small to be cut any further — an atom.",
-    "src": "https://en.wikipedia.org/wiki/Democritus",
-    "verified": true
-  },
-  {
-    "in": [
       "peach",
       "plum"
     ],
@@ -43106,16 +42906,6 @@
   },
   {
     "in": [
-      "cloth",
-      "wheel"
-    ],
-    "out": "rumi",
-    "why": "Rumi wrote of dying to one form only to rise into the next — mineral into plant, plant into animal, animal into man — a teaching on continual transformation embodied by his order's spinning, whirling dance.",
-    "src": "https://en.wikipedia.org/wiki/Rumi",
-    "verified": true
-  },
-  {
-    "in": [
       "book",
       "hat"
     ],
@@ -43173,16 +42963,6 @@
     "why": "According to a story recorded by his friend John Aubrey, Bacon caught his final, fatal chill on a snowy road while personally testing whether stuffing a chicken with snow would preserve the meat — dying, if the tale is true, in the course of an experiment.",
     "src": "https://en.wikipedia.org/wiki/Francis_Bacon",
     "supported": true
-  },
-  {
-    "in": [
-      "spring",
-      "wheel"
-    ],
-    "out": "hobbes",
-    "why": "Hobbes held that there are no incorporeal substances: everything in the universe, including human thought, is corporeal, matter in motion — so a person, for Hobbes, is simply a very intricate machine.",
-    "src": "https://en.wikipedia.org/wiki/Thomas_Hobbes",
-    "verified": true
   },
   {
     "in": [
@@ -43762,16 +43542,6 @@
     "out": "raven_spirit",
     "why": "The Haida credit this shapeshifting trickster with finding the first humans hiding inside a clam shell, and bringing them berries and salmon to eat.",
     "src": "https://en.wikipedia.org/wiki/Ravens_in_Native_American_mythology",
-    "supported": true
-  },
-  {
-    "in": [
-      "boat",
-      "sea"
-    ],
-    "out": "sedna",
-    "why": "Thrown from her father's kayak into the sea, Sedna's fingers were cut away as she clung to its side -- they became the seals, walruses and whales the Inuit hunt, and she sank to rule the deep.",
-    "src": "https://en.wikipedia.org/wiki/Sedna_(mythology)",
     "supported": true
   },
   {
@@ -87095,6 +86865,106 @@
     "out": "soundboard",
     "why": "A string moving alone shifts almost no air and is nearly silent. The bridge passes its vibration into a large thin plate that can push air, so the soundboard is an impedance match between a wire and a room — and it is braced underneath just enough to survive the string tension without being stiffened into silence.",
     "src": "https://en.wikipedia.org/wiki/Sound_board_(music)",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "memory"
+    ],
+    "out": "mind",
+    "why": "The corpus already held theory_of_mind and unconscious_mind and no `mind`, which is the shape of the whole problem: the specialised term arrives with a source, the general one belongs to no source. Whether mind is a separate thing from brain or only another way of describing it is the oldest live question in philosophy.",
+    "src": "https://en.wikipedia.org/wiki/Mind",
+    "verified": true
+  },
+  {
+    "in": [
+      "dharma",
+      "mind"
+    ],
+    "out": "meditation",
+    "why": "The noticing is the practice, not the holding. Attention wanders continually, and bringing it back is the repetition being performed — in the way a lift is the repetition in a weights session rather than the failure.",
+    "src": "https://en.wikipedia.org/wiki/Meditation",
+    "verified": true
+  },
+  {
+    "in": [
+      "jesus",
+      "wood"
+    ],
+    "out": "cross",
+    "why": "It is an execution device before it is anything else — Rome used it for slaves and rebels, chosen for how long it took and how public it was. Christianity taking it as its emblem is the reversal, not the inheritance.",
+    "src": "https://en.wikipedia.org/wiki/Christian_cross",
+    "verified": true
+  },
+  {
+    "in": [
+      "contract",
+      "war"
+    ],
+    "out": "hobbes",
+    "why": "Leviathan, 1651, written through the English civil war. Without a common power, he said, life is 'solitary, poore, nasty, brutish, and short' — and the way out is everyone surrendering the right of violence to one sovereign at once. The social contract begins as an argument from fear.",
+    "src": "https://en.wikipedia.org/wiki/Thomas_Hobbes",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "law"
+    ],
+    "out": "j_l_austin",
+    "why": "'I promise', 'I name this ship', 'I do' — none of these is true or false, they are acts performed by being said, and they fail by being void rather than by being wrong. It is why the law cares so much about the exact words of a vow or a verdict.",
+    "src": "https://en.wikipedia.org/wiki/J._L._Austin",
+    "verified": true
+  },
+  {
+    "in": [
+      "flute",
+      "sufism"
+    ],
+    "out": "rumi",
+    "why": "The Masnavi opens with a reed flute complaining of being cut from the reed bed, which is his whole subject: the separation is the music. The whirling of the dervishes his followers founded is a turning toward that, not a dance.",
+    "src": "https://en.wikipedia.org/wiki/Rumi",
+    "verified": true
+  },
+  {
+    "in": [
+      "finger",
+      "seal"
+    ],
+    "out": "sedna",
+    "why": "In the telling, her father throws her from the boat and cuts her fingers away as she clings to the side; the fingers become the seals, the walrus and the whales. She keeps them at the bottom, and a shaman must comb her hair to have them released.",
+    "src": "https://en.wikipedia.org/wiki/Sedna_(mythology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "shiva"
+    ],
+    "out": "shaivism",
+    "why": "The ash is the point of it: smeared on the body it is what remains when everything burnable is gone, so it stands for what is left when the impermanent has been taken away. Shiva is the ascetic on the cremation ground and the dancer who ends the world.",
+    "src": "https://en.wikipedia.org/wiki/Shaivism",
+    "verified": true
+  },
+  {
+    "in": [
+      "krishna",
+      "mantra"
+    ],
+    "out": "hare_krishna",
+    "why": "The practice is the sixteen-word mantra repeated aloud, and the argument for it is that in a degraded age the simplest method is the effective one — which is why the movement is visible in the street rather than in a temple.",
+    "src": "https://en.wikipedia.org/wiki/Hare_Krishna_(mantra)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dharma",
+      "meditation"
+    ],
+    "out": "falun_dafa",
+    "why": "Its name means the great law of the dharma wheel, and the wheel is said to turn in the abdomen of a practitioner. It grew to millions within seven years and was banned in 1999, which is when it became better known outside China than in it.",
+    "src": "https://en.wikipedia.org/wiki/Falun_Gong",
     "verified": true
   }
 ]
