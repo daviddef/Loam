@@ -37023,6 +37023,573 @@ def('carpet', () => [
   S('M12 39 L10 42 M18 42 L16 45 M24 45 L22 48 M36 45 L38 48 M42 42 L44 45 M48 39 L50 42', 'gh', 1.4),
 ]);
 
+/* parasites wave, 3 Sep -- anatomy, life-cycle stages, species and vectors */
+/* helminth & protozoan anatomy, life-cycle stages, species and vectors ───
+ * The species in this batch are all long thin things, and the corpus already
+ * holds ten of those. Each one is separated on the morphology that actually
+ * names it: a whipworm is drawn with the caliber change that makes it a whip,
+ * a guinea worm is drawn on the stick it is wound out on, a broad tapeworm is
+ * drawn with slits instead of suckers. The stages are all "a blob in a cyst"
+ * unless each gets its own tell — six hooks, one inverted scolex, daughter
+ * cysts, a forked tail — so each got one.
+ */
+
+/* worm and fluke anatomy — the parts that now define the species ───────── */
+def('scolex', () => [
+  P('M40 22 L56 24 L56 36 L40 38 Z', 'lo'),                             // the neck, and the chain of segments that grows off it
+  C(26, 30, 16, 'bs'),                                                   // the holdfast: not a head, since there is nothing in it
+  ...[[26, 17], [26, 43], [13, 30], [38, 30]].map(([x, y]) => ring('ik', x, y, 5.2, 2.2)),  // four muscular suckers, one to a quarter
+  C(26, 30, 3.4, 'hi'),                                                  // and a bare apex between them, on the species that carries no hooks
+]);
+def('rostellum', () => {
+  const hook = (a, r0, r1) => {
+    const ux = Math.cos(a), uy = Math.sin(a), tx = -Math.sin(a), ty = Math.cos(a);
+    return S(`M${n(30 + r0 * ux)} ${n(32 + r0 * uy)} ` +
+             `Q${n(30 + r1 * ux + 2.6 * tx)} ${n(32 + r1 * uy + 2.6 * ty)} ` +
+             `${n(30 + (r1 - 1.5) * ux + 6 * tx)} ${n(32 + (r1 - 1.5) * uy + 6 * ty)}`, 'ik', 1.6);
+  };
+  return [
+    C(30, 32, 12, 'bs'),                                                 // the muscular pad the crown sits on
+    C(30, 32, 6, 'hi'),                                                  // the rostellum itself, pushed out and ready
+    ...Array.from({ length: 11 }, (_, i) => hook((i * 2 * Math.PI) / 11, 12, 20)),
+    ...Array.from({ length: 11 }, (_, i) => hook(((i + .5) * 2 * Math.PI) / 11, 6, 12)),  // two rows of hooks, long and short — count them and you have the species
+  ];
+});
+def('acetabulum', () => [
+  P('M2 46 L58 46 L58 55 L2 55 Z', 'gh'),                                // the gut wall it clamps onto
+  P('M12 14 Q10 40 22 46 L38 46 Q50 40 48 14 Z', 'bs'),                  // the cup, rim pressed flat against it
+  P('M18 20 Q16 38 26 43 L34 43 Q44 38 42 20 Z', 'lo'),                  // and the hollow held under suction inside
+  ...[-9, -4.5, 0, 4.5, 9].map(x => S(`M${n(30 + x)} 18 L${n(30 + x * 1.4)} 41`, 'hi', 1.2)),  // radial muscle, all of it pulling the floor up
+]);
+def('proglottid', () => [
+  P('M14 10 Q10 10 10 14 L10 46 Q10 50 14 50 L46 50 Q50 50 50 46 L50 14 Q50 10 46 10 Z', 'bs'),  // one segment, off the chain and on its own
+  S('M30 13 L30 47', 'ik', 2.4),                                         // the uterine stem running its length
+  ...[18, 25, 32, 39].flatMap(y => [
+    S(`M30 ${y} Q22 ${y} 16 ${n(y - 4)}`, 'ik', 1.6),
+    S(`M30 ${n(y + 3)} Q38 ${n(y + 3)} 44 ${n(y - 1)}`, 'ik', 1.6)]),    // and the branches off it — counting those is how two tapeworms are told apart
+  C(50, 30, 2.6, 'hi'),                                                  // the genital pore, on one margin and never both
+]);
+def('tegument', () => [
+  ...Array.from({ length: 25 }, (_, i) => S(`M${n(5 + i * 2.1)} 16 L${n(5 + i * 2.1)} 9`, 'ik', 1.2)),  // microtriches: the whole outer surface is a brush that eats
+  P('M4 16 L56 16 L56 25 L4 25 Z', 'hi'),                                // one living layer, syncytial — no cell boundaries anywhere in it
+  P('M4 25 L56 25 L56 30 L4 30 Z', 'lo'),
+  ...[34, 39].map(y => S(`M4 ${y} L56 ${y}`, 'bs', 2.4)),                 // two sheets of muscle slung under it
+  P('M4 43 L56 43 L56 55 L4 55 Z', 'gh'),
+  ...granules('lo', 7, 71, [9, 45, 51, 53]),                             // and solid tissue below, with no gut in it — the food comes through the wall or not at all
+]);
+def('cuticle', () => [
+  P('M6 16 L54 16 L54 36 L6 36 Z', 'bs'),                                // the wall itself: collagen laid down in sheets, not a living skin
+  ...Array.from({ length: 7 }, (_, i) => S(`M${n(8 + i * 6.5)} 17 L${n(14 + i * 6.5)} 35`, 'lo', 1.4)),
+  ...Array.from({ length: 7 }, (_, i) => S(`M${n(8 + i * 6.5)} 35 L${n(14 + i * 6.5)} 17`, 'lo', 1.4)),  // fibres crossing in two opposed helices — it bends, and it never stretches
+  ...Array.from({ length: 13 }, (_, i) => S(`M${n(6 + i * 4)} 16 L${n(6 + i * 4)} 11`, 'ik', 1.4)),      // the annulations you can see from outside, ring after ring
+  S('M6 40 L54 40', 'hi', 2.4),                                          // the hypodermis under it, alive and very thin
+  S('M6 47 L54 47', 'gh', 3),
+]);
+def('buccal_capsule', () => [
+  P('M34 22 L56 26 L56 34 L34 38 Z', 'bs'),                              // the body behind it, plain and narrow
+  P('M6 10 Q34 16 34 30 Q34 44 6 50 Z', 'bs'),                           // the chamber, flared wide open at the front
+  P('M11 18 Q27 22 27 30 Q27 38 11 42 Z', 'lo'),                         // its lumen, with a plug of gut lining pulled up into it
+  P('M11 18 L18 20 L11 25 Z', 'ik'), P('M11 42 L18 40 L11 35 Z', 'ik'),  // and the cutting plates, in pairs — this is a mouth built to open a vein
+  P('M11 24 L16 26 L11 29 Z', 'ik'), P('M11 36 L16 34 L11 31 Z', 'ik'),
+]);
+def('gynecophoral_canal', () => [
+  P('M16.4 14.4 A22 22 0 1 1 16.4 45.6 L24.2 37.8 A11 11 0 1 0 24.2 22.2 Z', 'bs'),  // the male, cut across: his own flanks rolled right round into a tube
+  ...granules('lo', 9, 811, [26, 16, 48, 44]),                           // solid muscle through his whole wall — this groove is held shut, not merely folded
+  E(31, 30, 6.5, 10.5, 'hi'),                                            // and the female inside it, longer and far thinner than he is
+  S('M31 21 L31 39', 'lo', 1.6),
+  C(16.4, 14.4, 2.4, 'lo'), C(16.4, 45.6, 2.4, 'lo'),                    // the lips of the groove, which never quite close over her again
+]);
+
+/* life-cycle stages — each needs its own tell, or they are all one blob ── */
+def('oncosphere', () => {
+  /* Each hook is a blade with a barb turned back on itself, and all six point
+     the same way, because they all pull in the same direction at once. */
+  const hook = (x, tilt) => ['g', tilt, x, 33, [
+    P(`M${n(x - 1.8)} 33 L${n(x + 1.8)} 33 L${n(x + 0.6)} 47 Z`, 'ik'),
+    S(`M${n(x + 0.6)} 47 Q${n(x + 5)} 45.5 ${n(x + 5)} 41`, 'ik', 1.7)]];
+  return [
+    ring('gh', 30, 26, 22, 2.6),                                         // the shell it is still sitting inside
+    C(30, 26, 16, 'bs'),                                                 // the embryo: no gut, no suckers, one job to get done
+    ...[[15, -44], [21, -26], [26, -9], [34, 9], [39, 26], [45, 44]].map(([x, t]) => hook(x, t)),  // six hooks, in three pairs, and that is the entire animal
+    C(30, 22, 4.4, 'hi'),
+  ];
+});
+def('cysticercus', () => [
+  E(28, 33, 24, 20, 'bs'),                                               // one bladder of clear fluid, about the size of a pea
+  E(28, 33, 21, 17, 'lo'),
+  P('M37 14 L48 18 Q43 28 42 36 L33 34 Q34 24 37 14 Z', 'bs'),           // the neck, turned outside-in and drawn down inside like a finger in a glove
+  C(38, 40, 7.5, 'hi'),                                                  // and at the end of it exactly one scolex — one, inverted, waiting to turn back out
+  ...[[35, 37], [35, 43], [41, 37], [41, 43]].map(([x, y]) => C(x, y, 1.8, 'ik')),
+]);
+def('hydatid_cyst', () => [
+  C(30, 30, 24, 'lo'),                                                   // litres of fluid, put on over fifteen quiet years
+  ring('bs', 30, 30, 23, 3),                                             // the laminated wall — layer on acellular layer, and it must not be spilled
+  ring('hi', 30, 30, 19, 1.6),                                           // the germinal lining inside that
+  ...[[22, 22, 6], [38, 24, 5], [35, 38, 6.5], [22, 37, 4.5]].map(([x, y, r]) => ring('bs', x, y, r, 2)),  // daughter cysts, budded off inward — every one of them a cyst in its own right
+  ...granules('ik', 8, 617, [23, 42, 39, 47]),                           // and hydatid sand: loose scoleces, settled on the floor
+]);
+def('miracidium', () => [
+  P('M30 8 L38 17 Q42 34 36 50 Q30 55 24 50 Q18 34 22 17 Z', 'bs'),      // a cone, and it swims point-first with about a day to find its snail
+  P('M30 3 L34.5 15 L25.5 15 Z', 'hi'),                                  // the apical papilla it drills in with
+  ...Array.from({ length: 8 }, (_, i) => {
+    const y = 17 + i * 4.4, w = 7 + i * 0.5;
+    return [S(`M${n(30 - w)} ${n(y)} L${n(24 - w)} ${n(y + 4)}`, 'ik', 1.2),
+            S(`M${n(30 + w)} ${n(y)} L${n(36 + w)} ${n(y + 4)}`, 'ik', 1.2)];
+  }).flat(),                                                             // cilia the whole way round, all of them raked backward
+  C(28, 30, 3, 'lo'), C(33, 40, 2.6, 'lo'),                              // the germ cells it will spend itself making copies from
+]);
+def('cercaria', () => [
+  E(23, 17, 11, 8, 'bs'),                                                // the body, with the suckers it will not use for weeks yet
+  ring('lo', 15, 15, 3, 1.4), ring('lo', 26, 20, 3.4, 1.6),
+  S('M31 22 L35 38', 'bs', 4),                                           // the tail stem
+  S('M35 38 L25 54', 'bs', 3), S('M35 38 L48 51', 'bs', 3),              // and the fork it is named for — two branches, beating together
+]);
+def('metacercaria', () => [
+  S('M10 57 Q20 32 30 6', 'plant-bs', 4.5),                              // a blade of water plant — this is where it waits, in the salad
+  ring('bs', 35, 35, 13, 3),                                             // the cyst it built round itself, tough enough to be chewed and swallowed
+  ring('hi', 35, 35, 9, 1.6),
+  S('M31 41 Q43 39 41 31 Q39 25 33 28 Q29 31 33 33', 'lo', 2.6),         // the young fluke folded up inside, the tail already shed
+  C(24, 46, 2, 'gh'),
+]);
+def('microfilaria', () => [
+  ...[[12, 16], [46, 19], [17, 47], [45, 44]].map(([x, y]) => C(x, y, 8.5, 'gh')),  // loose in the blood, and only at the hour the mosquito bites
+  S('M4 40 Q18 14 32 34 Q44 50 56 22', 'lo', 7),                         // the sheath: the egg membrane, kept and stretched longer than the animal in it
+  S('M6 39 Q19 16 32 34 Q43 48 54 24', 'bs', 3),                         // and the larva itself, sliding about loose inside that
+  C(6, 39, 2, 'ik'),
+]);
+def('polar_plug', () => [
+  P('M30 5 Q46 15 46 30 Q46 45 30 55 Q14 45 14 30 Q14 15 30 5 Z', 'bs'), // the egg, a lemon drawn to a point at each end
+  P('M30 10 Q42 18 42 30 Q42 42 30 50 Q18 42 18 30 Q18 18 30 10 Z', 'lo'),  // and a shell thick enough to keep it viable in soil for years
+  C(30, 30, 7, 'bs'),                                                    // the single cell riding inside
+  P('M26 8 L34 8 L33 2 L27 2 Z', 'hi'), P('M26 52 L34 52 L33 58 L27 58 Z', 'hi'),  // a clear plug at each pole — at both, always, and that alone names the worm
+  S('M27 5 L33 5', 'ik', 1.3), S('M27 55 L33 55', 'ik', 1.3),
+]);
+def('nurse_cell', () => [
+  P('M4 22 Q4 10 22 12 Q44 14 52 24 Q58 34 48 42 Q30 50 14 44 Q4 38 4 22 Z', 'bs'),  // one muscle cell, taken apart and rebuilt as a nursery
+  S('M50 20 Q58 27 53 36 Q48 45 39 48', 'lo', 2.2),                      // new capillaries, grown to order around the end that needs feeding
+  S('M52 25 Q57 33 46 42', 'lo', 1.6),
+  ...[9, 16, 23, 30].map(x => E(x, 18, 3.4, 1.8, 'ik')),                 // its nuclei, swollen and shoved into a row along one wall
+  S('M42 34 Q47 24 38 20 Q27 17 24 26 Q21 36 31 39 Q39 41 40 33 Q40 27 34 27', 'hi', 2.6),  // and the larva coiled tight in the middle, alive in there for decades
+]);
+
+/* protozoan structures ─────────────────────────────────────────────────── */
+def('flagellate', () => [
+  S('M28 42 Q10 34 16 22 Q22 10 34 14 Q48 18 46 5', 'ik', 2.2),          // one whip, longer than the cell that swings it, and driven in a running wave
+  P('M30 38 Q42 42 40 50 Q37 57 30 56 Q23 57 21 50 Q19 42 30 38 Z', 'bs'),  // the cell, a teardrop pointed into its own wake
+  C(28, 41, 2.4, 'hi'),                                                  // the basal body it is anchored in
+  C(30, 50, 3.4, 'lo'),
+]);
+def('sucking_disc', () => [
+  E(30, 32, 23, 20, 'bs'),                                               // seen from below: the whole underside of the cell is one clamp
+  E(30, 32, 19, 16, 'lo'),                                               // the concavity it holds a vacuum in
+  S('M30 18 Q44 20 44 32 Q44 45 30 45 Q18 45 18 33 Q18 24 28 24 Q36 24 36 32', 'hi', 2.4),  // microtubules wound in one flat spiral, which is what makes it rigid
+  S('M13 45 Q30 55 47 45', 'ik', 2),                                     // and the flange that seals the rim down onto the gut wall
+]);
+def('undulating_membrane', () => [
+  P('M8 51 Q11 26 20 43 Q24 51 32 26 Q35 16 44 30 Q47 37 54 14 L56 18 L9 54 Z', 'bs'),  // a sheet of the cell's own skin, held out in a running wave — the membrane itself
+  P('M5 52 Q30 45 53 28 Q57 30 53 33 Q30 51 7 57 Z', 'lo'),              // the cell body it stays attached along the whole length of
+  S('M8 51 Q11 26 20 43 Q24 51 32 26 Q35 16 44 30 Q47 37 54 14', 'ik', 2),  // the flagellum bound down along the fin's free edge — this is the thing doing the pulling
+  S('M54 14 Q57 8 59 10', 'ik', 2),                                      // and running on free past the front, out ahead of the cell
+  C(12, 50, 2.4, 'hi'),
+]);
+def('axostyle', () => [
+  P('M30 7 Q45 13 43 29 Q41 43 33 47 L27 47 Q19 43 17 29 Q15 13 30 7 Z', 'bs'),  // the cell has no wall, and would hold no shape at all without this
+  C(23, 21, 3.4, 'lo'),
+  S('M30 12 L30 56', 'ik', 4.5),                                         // one rod of microtubules, stiff end to end and out through the back
+  S('M30 16 L30 45', 'hi', 1.2),                                         // rolled up from a sheet — it is a tube, not a wire
+  ...[[16, 6], [12, 11], [13, 17]].map(([x, y]) => S(`M26 14 Q${n(x + 4)} ${y} ${x} ${y}`, 'ik', 1.4)),  // and a tuft of flagella, all of them off the one shoulder
+]);
+def('kinetoplast', () => {
+  const mesh = [];
+  for (let row = 0; row < 4; row++)
+    for (let col = 0; col < 7; col++)
+      mesh.push(ring('hi', n(14 + col * 5.4 + (row % 2 ? 2.7 : 0)), 22 + row * 5, 3.4, 1.2));
+  return [
+    P('M10 18 L50 18 L50 44 L10 44 Z', 'lo'),                            // one disc, holding a whole mitochondrion's DNA in one place
+    ...mesh,                                                             // thousands of little circles, catenated into chain mail
+    S('M30 44 L30 56', 'ik', 3),                                         // and it sits against the flagellum's base, every time
+    C(30, 51, 3, 'bs'),
+  ];
+});
+def('apical_complex', () => [
+  P('M30 4 L46 30 Q46 52 30 56 Q14 52 14 30 Z', 'bs'),                   // the pointed front end — the whole tip is a machine for getting inside a cell
+  ...[[7, 4.5], [11, 6.5], [15, 8.5]].map(([y, w]) => S(`M${n(30 - w)} ${y} L${n(30 + w)} ${y}`, 'ik', 1.8)),  // the conoid: rings of tubulin, screwed out to open the hole
+  P('M29 8 L28.4 22 Q21 26 21 38 Q21 45 25 45 Q29 45 29 38 Q29 24 30.6 9 Z', 'hi'),  // two rhoptries — clubs of protein, each with a duct running right to the tip
+  P('M31 8 L31.6 22 Q39 26 39 38 Q39 45 35 45 Q31 45 31 38 Q31 24 29.4 9 Z', 'hi'),  // it fires them into the host cell before it goes in itself
+  ...granules('lo', 6, 313, [25, 46, 37, 52]),                           // micronemes packed in behind them
+]);
+def('hemozoin', () => [
+  C(30, 32, 22, 'lo'),                                                   // the food vacuole, where it takes haemoglobin apart
+  ring('bs', 30, 32, 22, 2),
+  ...[[21, 24, -34, 6], [31, 20, 22, 7], [39, 26, 74, 5], [24, 33, 12, 8], [35, 35, -52, 6],
+      [20, 41, 40, 5], [30, 45, -18, 7], [40, 41, 62, 5], [27, 28, 84, 4], [36, 48, 8, 4]].map(([x, y, a, L]) =>
+    ['g', a, x, y, [P(`M${n(x - L)} ${n(y - 1.2)} L${n(x + L)} ${n(y - 1.2)} ` +
+                      `L${n(x + L)} ${n(y + 1.2)} L${n(x - L)} ${n(y + 1.2)} Z`, 'ik')]]),  // needles of the crystal it locks leftover haem into — the one waste it cannot digest
+]);
+
+/* species — long thin things, separated on the shape that names each ──── */
+def('trichuris_trichiura', () => [
+  P('M2 2 L58 2 L58 13 Q30 19 2 13 Z', 'gh'),                            // the gut lining, which the thin end stitches itself through
+  S('M8 6 Q24 10 18 20 Q12 30 26 33 Q38 36 36 44', 'bs', 2),             // three-fifths of the animal is that thread, and no thicker anywhere
+  S('M36 44 Q38 53 46 53 Q55 52 52 42 Q49 33 40 34', 'bs', 9),           // then, abruptly, the stout back end — the handle the whip hangs off
+  C(8, 6, 1.6, 'ik'),
+]);
+def('strongyloides_stercoralis', () => [
+  P('M2 3 L58 3 L58 12 L2 12 Z', 'gh'),                                  // skin: this one lets itself in, with no bite involved
+  S('M10 8 Q26 20 30 34 Q33 44 44 49', 'bs', 5),
+  S('M12 10 Q24 19 28 28', 'hi', 1.6),                                   // an oesophagus running nearly half its length — the tell against a hookworm larva
+  S('M44 49 L56 46', 'bs', 3.4), S('M44 49 L53 56', 'bs', 3.4),          // and a notched tail, which a hookworm's has not got
+  C(10, 8, 1.4, 'ik'),
+]);
+def('dracunculus_medinensis', () => [
+  P('M2 47 L58 47 L58 58 L2 58 Z', 'gh'),                                // the ankle it picked to come out of
+  S('M30 4 L30 45', 'craft-lo', 4),                                      // a stick — still, three thousand years on, the entire treatment
+  ...Array.from({ length: 9 }, (_, i) => {
+    const y = 10 + i * 3.4;
+    return S(`M22 ${n(y + 1.6)} Q30 ${n(y - 2.4)} 38 ${n(y + 1.6)} Q30 ${n(y + 4.4)} 22 ${n(y + 1.6)}`, 'bs', 1.6);
+  }),                                                                    // a full metre of it, turned out a few centimetres a day
+  S('M30 43 Q25 48 30 51', 'bs', 1.8),                                   // the rest still inside, and it will take weeks
+  C(30, 52, 4, 'lo'),                                                    // out of the blister it burned through the skin to make
+]);
+def('onchocerca_volvulus', () => [
+  P('M11 31 Q7 15 23 10 Q41 5 50 18 Q57 32 45 44 Q29 54 16 46 Q10 40 11 31 Z', 'lo'),  // a nodule under the skin, and it will sit there fifteen years
+  ...Array.from({ length: 16 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 16;
+    return S(`M${n(30 + 16 * Math.cos(a))} ${n(28 + 14 * Math.sin(a))} ` +
+             `L${n(30 + 22 * Math.cos(a))} ${n(28 + 20 * Math.sin(a))}`, 'gh', 1.4);
+  }),                                                                    // fibrous the whole way round — the body walls it off and gives up
+  S('M20 36 Q11 24 24 19 Q39 14 42 27 Q45 39 31 42 Q19 44 20 33', 'hi', 2.6),  // the female, coiled round and round on herself in there
+  S('M26 24 Q35 22 37 31 Q38 38 30 37', 'ik', 1.8),                      // with the male knotted in beside her
+  S('M45 41 Q53 47 51 57', 'hi', 1.4), S('M37 46 Q42 53 38 58', 'hi', 1.4),  // and the young leaving by the million, for the skin and then the eye
+]);
+def('echinococcus_granulosus', () => [
+  C(8, 30, 5, 'bs'),                                                     // the adult is five millimetres long, start to finish —
+  ...[0, 72, 144, 216, 288].map(a => S(
+    `M${n(8 + 4 * Math.cos((a * Math.PI) / 180))} ${n(30 + 4 * Math.sin((a * Math.PI) / 180))} ` +
+    `L${n(8 + 8.5 * Math.cos((a * Math.PI) / 180))} ${n(30 + 8.5 * Math.sin((a * Math.PI) / 180))}`, 'ik', 1.2)),
+  P('M14 26 L21 26 L21 34 L14 34 Z', 'hi'),                              // and it has three segments, not a thousand
+  P('M21 23 L29 23 L29 37 L21 37 Z', 'lo'),
+  P('M29 16 Q54 16 54 30 Q54 44 29 44 Z', 'bs'),                         // the last one gravid and vast — the danger here was never the worm, it is the egg
+  ...granules('ik', 7, 233, [34, 22, 50, 38]),
+]);
+def('diphyllobothrium_latum', () => [
+  P('M4 30 Q6 15 11 15 Q16 15 16 30 Q16 45 11 45 Q6 45 4 30 Z', 'bs'),   // an almond of a scolex, with no suckers on it at all
+  S('M8 20 L8 40', 'ik', 2.4), S('M12 20 L12 40', 'ik', 2.4),            // two long slits instead, pinching a fold of gut wall between them
+  ...[0, 1, 2, 3, 4].map(i => P(`M${18 + i * 8} 16 L${25 + i * 8} 16 L${25 + i * 8} 44 L${18 + i * 8} 44 Z`, i % 2 ? 'hi' : 'lo')),  // segments far wider across than they are long — hence "broad"
+  ...[0, 1, 2, 3, 4].map(i => ring('ik', 21.5 + i * 8, 30, 3.4, 1.6)),   // each with its uterus coiled into a rosette dead centre
+]);
+def('fasciola_hepatica', () => [
+  P('M30 4 L34 15 Q48 19 48 34 Q48 50 30 56 Q12 50 12 34 Q12 19 26 15 Z', 'bs'),  // leaf-shaped, but with a cone for a head and shoulders under it
+  ring('lo', 30, 10, 3, 1.6),                                            // the oral sucker, right at the tip of that cone
+  ring('lo', 30, 21, 3.6, 1.8),                                          // the ventral sucker, just behind the shoulders
+  S('M30 25 L30 50', 'ik', 2),                                           // and a gut that branches, and branches again, all the way down
+  ...[29, 35, 41, 47].flatMap(y => [
+    S(`M30 ${y} Q22 ${n(y + 1)} 17 ${n(y - 3)}`, 'ik', 1.4),
+    S(`M30 ${y} Q38 ${n(y + 1)} 43 ${n(y - 3)}`, 'ik', 1.4)]),
+]);
+def('paragonimus_westermani', () => {
+  const spiny = (cx, cy) => Array.from({ length: 20 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 20;
+    return S(`M${n(cx + 10.4 * Math.cos(a))} ${n(cy + 8.5 * Math.sin(a))} ` +
+             `L${n(cx + 11.8 * Math.cos(a))} ${n(cy + 9.7 * Math.sin(a))}`, 'ik', 1.2);
+  });
+  return [
+    ring('gh', 30, 31, 25, 3.4),                                         // the capsule a lung builds round it, which is what shows on the X-ray
+    S('M13 13 L5 5', 'gh', 3.4),                                         // and the airway it broke into, so that the eggs leave in a cough
+    E(23, 26, 11, 9, 'bs'), E(37, 38, 11, 9, 'bs'),                      // two of them, and it takes two — plump as coffee beans, never flat like a leaf
+    ...spiny(23, 26), ...spiny(37, 38),                                  // a tegument bristled all over with short spines
+    S('M16 25 Q24 21 31 25 M16 25 Q24 31 31 27', 'lo', 1.6),             // the gut forked into two blind arms, the way every fluke's is
+    S('M30 37 Q38 33 45 37 M30 37 Q38 43 45 39', 'lo', 1.6),
+    ring('lo', 15, 25, 2.6, 1.4), ring('lo', 22, 27, 2.8, 1.4),          // oral sucker in front, ventral sucker behind it — a fluke after all
+    ring('lo', 29, 37, 2.6, 1.4), ring('lo', 36, 39, 2.8, 1.4),
+  ];
+});
+def('balantidium_coli', () => [
+  E(30, 32, 19, 22, 'bs'),                                               // enormous next to the rest of this page, and the only ciliate that bothers us
+  ...Array.from({ length: 22 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 22;
+    return S(`M${n(30 + 19 * Math.cos(a))} ${n(32 + 22 * Math.sin(a))} ` +
+             `L${n(30 + 22.5 * Math.cos(a))} ${n(32 + 25.5 * Math.sin(a))}`, 'ik', 1.1);
+  }),                                                                    // cilia in rows over the whole surface, beating together
+  P('M22 12 L38 12 Q34 22 30 22 Q26 22 22 12 Z', 'lo'),                  // a cytostome — an actual mouth, funnelling starch and gut wall in
+  P('M22 36 Q22 27 31 27 Q41 27 41 37 Q41 47 33 47 Q37 41 35 37 Q33 33 22 36 Z', 'ik'),  // and a macronucleus shaped like a kidney bean, which nothing else here has
+  C(24, 45, 3, 'hi'), C(39, 21, 2.6, 'hi'),
+]);
+def('trypanosoma_brucei', () => [
+  ...[[11, 13], [49, 45], [14, 47]].map(([x, y]) => C(x, y, 9, 'gh')),   // it stays out in the open blood and never once hides inside a cell
+  P('M6 52 Q22 40 34 28 Q42 20 46 13 Q50 15 46 21 Q38 31 24 42 Q14 50 9 55 Z', 'bs'),  // slender, and very long for its width
+  S('M6 52 Q20 38 32 26 Q40 18 46 12', 'ik', 1.4),                       // the undulating membrane gathered along one edge
+  S('M46 12 Q52 7 57 8', 'ik', 2),                                       // and a long free flagellum running on past the front end
+  C(8, 52, 1.8, 'ik'),                                                   // the kinetoplast: a speck, and right at the back tip
+  C(26, 36, 3, 'lo'),
+]);
+def('trypanosoma_cruzi', () => [
+  P('M4 10 L54 6 Q58 22 54 38 L4 34 Z', 'gh'),                           // inside a heart-muscle cell — which is the entire difference from its cousin
+  ...[[13, 14], [22, 12], [31, 14], [40, 13], [48, 15], [16, 22], [25, 21], [34, 22], [43, 21],
+      [14, 29], [23, 29], [32, 29], [41, 29]].map(([x, y]) => C(x, y, 3.6, 'bs')),  // a nest of amastigotes: round, flagellum tucked away, dividing and dividing
+  ...[[13, 14], [31, 14], [16, 22], [34, 22], [23, 29], [41, 29]].map(([x, y]) => C(x, y, 1.4, 'ik')),
+  P('M8 57 Q10 44 24 44 Q40 44 48 54 L44 57 Q36 48 24 48 Q14 48 12 58 Z', 'bs'),  // and out in the blood, the C it curls into
+  C(11, 52, 3.6, 'ik'),                                                  // with a kinetoplast big enough to see — that is how the two are told apart
+]);
+
+/* vectors — four biting flies, none of them the mosquito ──────────────── */
+def('tsetse_fly', () => [
+  P('M20 22 L52 24 L56 30 L22 29 Z', 'hi'),                              // the wings folded flat, one crossed over the other and both reaching past
+  P('M20 26 L50 30 L54 34 L22 32 Z', 'gh'),                              // the tip of the abdomen — closed like scissors, which no housefly does
+  E(36, 36, 13, 9, 'bs'),                                                // a stout body, and here both sexes take blood
+  E(24, 31, 9, 7, 'bs'),
+  C(14, 30, 6.5, 'bs'),                                                  // a big blunt head, most of it eye
+  C(13, 28, 3, 'ik'),
+  S('M13 22 L9 15 M17 23 L15 15', 'ik', 1.2),                            // antennae
+  S('M10 35 L4 38', 'ik', 3.4),                                          // and a rigid proboscis carried out in front — it points where the fly points
+  ...[[26, 38], [32, 41], [38, 42]].map(([x, y]) => S(`M${x} ${y} L${n(x - 5)} ${n(y + 13)}`, 'ik', 1.3)),
+]);
+def('sandfly', () => [
+  P('M28 33 Q18 20 11 5 Q22 11 30 30 Z', 'hi'),                          // wings held up in a stiff V, at rest and never flat
+  P('M32 33 Q42 20 49 5 Q38 11 32 30 Z', 'hi'),                          // you can name one across a room by that alone
+  E(30, 40, 7, 10, 'bs'),                                                // a body two millimetres long, and furred all over
+  C(30, 27, 4, 'bs'),
+  ...Array.from({ length: 9 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 9;
+    return S(`M${n(30 + 7 * Math.cos(a))} ${n(40 + 10 * Math.sin(a))} ` +
+             `L${n(30 + 10.5 * Math.cos(a))} ${n(40 + 14 * Math.sin(a))}`, 'ik', 1);
+  }),
+  S('M28 25 L24 17 M32 25 L36 17', 'ik', 1.2),
+  ...[[24, 46], [30, 48], [36, 46]].map(([x, y]) => S(`M${x} ${y} L${n(x - 9)} 58`, 'ik', 1)),  // and long stilt legs, because it hops rather than flies
+]);
+def('black_fly', () => [
+  P('M27 21 Q49 24 56 35 Q42 39 29 33 Z', 'gh'),                         // wings short and broad, folded back over the body, all the veining crowded forward
+  S('M29 23 Q48 26 54 34', 'ik', 1.4),
+  E(41, 41, 11, 8, 'lo'),                                                // the abdomen, behind and below
+  P('M14 45 Q10 18 30 18 Q45 20 44 33 Q42 43 32 46 Z', 'bs'),            // and the thorax humped right up over the head — the name is a plain description
+  C(14, 44, 6.5, 'bs'),                                                  // the head, set low and forward under that hump
+  C(12, 43, 2, 'ik'),
+  S('M10 48 L6 55', 'ik', 2.6),                                          // short mouthparts, which cut a pool of blood rather than pierce a vein
+  S('M11 38 L4 33', 'ik', 1.2),
+  ...[[22, 46], [30, 47], [38, 47]].map(([x, y]) => S(`M${x} ${y} L${n(x - 4)} 57`, 'ik', 1.6)),  // stout legs: the larva clings to fast water, and the adult keeps the build
+]);
+def('triatomine_bug', () => [
+  P('M12 26 Q10 44 30 56 Q50 44 48 26 Z', 'bs'),                         // the abdomen, its flat margin standing out past the folded wings
+  ...Array.from({ length: 5 }, (_, i) => {
+    const y0 = 28 + i * 5.4, r = i % 2 ? 'hi' : 'ik';
+    return [P(`M${n(11.5 + i * 1.8)} ${n(y0)} L${n(16 + i * 1.8)} ${n(y0)} ` +
+               `L${n(16.6 + i * 2.1)} ${n(y0 + 5)} L${n(12.2 + i * 2.4)} ${n(y0 + 5)} Z`, r),
+            P(`M${n(48.5 - i * 1.8)} ${n(y0)} L${n(44 - i * 1.8)} ${n(y0)} ` +
+               `L${n(43.4 - i * 2.1)} ${n(y0 + 5)} L${n(47.8 - i * 2.4)} ${n(y0 + 5)} Z`, r)];
+  }).flat(),                                                             // banded light and dark, segment for segment — the mark of the whole family
+  P('M17 26 L43 26 Q44 42 30 52 Q16 42 17 26 Z', 'lo'),                  // the wings laid flat over the top of it
+  P('M20 16 L40 16 L44 26 L16 26 Z', 'bs'),
+  P('M30 2 L35 16 L25 16 Z', 'bs'),                                      // the long cone of a head that gets it called the cone-nose
+  S('M30 8 Q25 14 27 22', 'ik', 1.6),                                    // with the rostrum folded back underneath until it is wanted
+  S('M27 8 L14 3 M33 8 L46 3', 'ik', 1.2),
+]);
+
+/* parasites wave, 3 Sep -- the drugs and the diseases */
+/* ── the antiparasitic drugs ──────────────────────────────────────────────
+ * Ten molecules drawn as ten skeletal formulas would be ten of the same
+ * picture, so these are drawn the way the later antibiotics already are:
+ * as the thing the drug does to the parasite. The target IS the difference
+ * between them — tubulin, a chloride channel, a mitochondrion, an enzyme's
+ * iron-sulfur cluster. Only quinine keeps the formula, because quinine is
+ * the plant alkaloid the whole class descends from and its structure is the
+ * historical fact about it.
+ */
+
+def('praziquantel', () => [                                        // throws the fluke's tegument open to calcium; it knots up in one spasm and loses its grip on the gut wall
+  S('M10 48 Q4 28 20 26 Q36 24 30 12 Q26 4 40 6 Q54 8 50 24 Q46 40 32 40 Q20 40 22 52', 'bs', 5),  // one worm, contracted into a knot it cannot release
+  ...[[14, 34], [30, 18], [46, 42]].map(([x, y]) => C(x, y, 2.8, CPK.Ca)),  // calcium, pouring in through a skin it can no longer keep shut
+]);
+def('albendazole', () => [                                         // binds the worm's own tubulin, so the microtubule it is trying to build simply stops growing
+  ...[0, 1, 2, 3].map(i => C(22, 52 - i * 7, 3.4, 'bs')),           // one protofilament, as far as it got
+  ...[0, 1, 2, 3].map(i => C(33, 52 - i * 7, 3.4, 'bs')),
+  C(27, 21, 4, 'lo'),                                              // the drug, capping the growing end
+  ...[[12, 12], [19, 9], [30, 6], [37, 9], [44, 15], [51, 12]].map(([x, y]) => C(x, y, 3.2, 'gh')),  // and the tubulin dimers that will never be added, drifting off in pairs
+]);
+def('mebendazole', () => [                                         // hardly absorbed at all, which is the point: it stays in the gut with the worm, which starves there, unable to take up any sugar
+  S('M8 46 Q22 30 30 42 Q38 54 52 38', 'bs', 6),                   // the roundworm, still in the lumen
+  ...[[16, 14], [30, 12], [44, 15]].map(([x, y]) => hex('hi', x, y, 6, 1.8)),  // glucose, an inch away and out of reach
+  S('M8 28 L52 28', 'lo', 2.4),                                    // uptake shut off across the whole body wall
+]);
+def('ivermectin', () => [                                          // jams open a chloride channel that only invertebrates have — the nerve goes quiet and stays quiet, and the host has no such channel to jam
+  P('M16 10 L24 10 L24 50 L16 50 Z', 'bs'), P('M36 10 L44 10 L44 50 L36 50 Z', 'bs'),  // the channel, wedged open
+  ...[14, 24, 34, 44].map(y => C(30, y, 3, CPK.Cl)),               // chloride, pouring through unchecked
+  S('M6 30 L14 30 M46 30 L54 30', 'gh', 1.6),                      // the membrane it sits in
+]);
+def('metronidazole', () => [                                       // inert until something with no oxygen at all reduces its nitro group; the radical that makes then shreds that cell's own DNA
+  S('M8 18 L52 18 M8 32 L52 32', 'lo', 2.6),                       // one anaerobe's DNA
+  ...[14, 20, 26, 40, 46].map(x => S(`M${x} 18 L${x} 32`, 'gh', 1.6)),
+  S('M34 12 L29 24 L35 26 L30 38', 'ik', 2.4),                     // snapped clean through the middle
+  C(14, 48, 5, 'bs'), C(14, 48, 2.4, CPK.N),                       // the drug, and the nitro group that is its fuse
+  S('M19 45 L28 38', 'ik', 1.4),                                   // lit only where there is no oxygen at all to put it out
+]);
+def('niclosamide', () => [                                         // uncouples the tapeworm's mitochondria: the gradient it charges up leaks straight back out, and no ATP is ever made
+  E(26, 34, 18, 13, 'lo'),                                         // the mitochondrion, whole
+  S('M12 34 L18 26 L24 40 L30 26 L36 40 L42 30', 'hi', 2),         // the inner membrane it pumps against
+  ...[[20, 15], [32, 11], [43, 17]].map(([x, y]) => C(x, y, 2.6, 'bs')),  // protons, leaking back through it
+  ring('gh', 47, 47, 7, 1.6),                                      // and the ATP that is therefore never made
+]);
+def('diethylcarbamazine', () => [                                  // does not kill the microfilariae itself: it strips their surface until the host's own cells finally recognise them and clear the blood
+  ...[0, 1, 2].map(i => S(`M8 ${14 + i * 9} Q20 ${8 + i * 9} 28 ${16 + i * 9} Q36 ${24 + i * 9} 48 ${14 + i * 9}`, 'bs', 1.8)),  // microfilariae, drifting where they always have
+  S('M40 35 A9 9 0 1 1 40 53', 'hi', 5),                           // a phagocyte, closing round one at last
+  S('M30 40 Q36 44 32 49', 'lo', 2.2),                             // the one it has hold of
+]);
+def('pyrantel_pamoate', () => [                                    // holds the worm's neuromuscular junction switched permanently on — a rigid, spastic paralysis, and it is passed out still contracted
+  E(30, 12, 12, 8, 'gh'),                                          // the nerve ending
+  ...[22, 30, 38].map(x => C(x, 27, 3.4, 'lo')),                   // its receptors, opened and never resetting
+  ...[22, 30, 38].map(x => S(`M${x} 22 L${x} 20`, 'ik', 1.6)),
+  P('M12 44 Q30 30 48 44 Q30 56 12 44 Z', 'bs'),                   // the muscle, pulled short and thick
+  ...[24, 29, 34, 39].map(x => S(`M${x} 38 L${x} 50`, 'hi', 1.6)), // its bands bunched up together, and staying that way
+]);
+def('nitazoxanide', () => [                                        // blocks PFOR, the iron-sulfur enzyme anaerobes like Giardia run their whole energy budget through — and which we do not have
+  P('M14 18 Q14 8 26 8 L40 8 Q50 8 50 20 L50 38 Q50 50 38 50 L24 50 Q14 50 14 40 Z', 'gh'),  // the enzyme
+  C(28, 24, 3.4, CPK.Fe), C(36, 24, 3.4, CPK.S),
+  C(28, 32, 3.4, CPK.S), C(36, 32, 3.4, CPK.Fe),                   // its iron-sulfur cluster — the working part
+  P('M14 26 L22 22 L22 34 L14 30 Z', 'bs'),                        // the drug, wedged in the doorway
+  C(6, 28, 3.4, 'lo'),                                             // pyruvate, arriving and going nowhere
+]);
+def('quinine', () => [                                             // the bark alkaloid the whole class came from: a methoxy-quinoline, hinged by one carbinol to a bridged quinuclidine cage
+  hex('ik', 20, 22, 8.5, 2), hex('ik', 34.7, 22, 8.5, 2),          // the quinoline — two rings fused along one edge
+  S('M12.6 17.8 L7 14', 'ik', 1.8), C(6, 13, 3, CPK.O),            // the methoxy that separates it from every other cinchona alkaloid
+  C(34.7, 30.5, 2.8, CPK.N),                                       // the ring nitrogen
+  S('M42.1 26.3 L44 36', 'ik', 2), S('M44 36 L48 34', 'ik', 1.6), C(50, 33, 2.8, CPK.O),  // the carbinol, the hinge between the two halves
+  hex('ik', 32, 46, 8, 2), S('M25.1 42 L38.9 50', 'ik', 1.8),      // the quinuclidine, bridged straight across the ring
+  S('M44 36 L38.9 42', 'ik', 2), C(38.9, 50, 2.8, CPK.N),
+]);
+
+/* ── the worm and protozoan diseases ──────────────────────────────────────
+ * Twenty of these could be twenty sick blobs. They are separated the way
+ * the corpus already separates malaria from schistosomiasis: by the organ
+ * the damage lands in and the mechanism that puts it there. Half of them
+ * are gut diseases, so those are separated a second time, by the one thing
+ * each worm does that none of the others does — a switchback, a bolus, a
+ * whip, a bite, a night crossing, a loop that never leaves.
+ */
+
+def('taeniasis', () => [                                           // metres of adult tapeworm, folded back on itself inside a gut a few inches across, quietly eating what its host ate
+  S('M8 12 L52 12 M8 48 L52 48', 'gh', 2),                         // the gut, above and below
+  S('M12 20 L46 20 Q52 20 52 26 Q52 30 46 30 L14 30 Q8 30 8 36 Q8 40 14 40 L48 40', 'bs', 4),  // the worm, switchbacked to fit
+  C(11, 20, 3.4, 'lo'),                                            // the scolex, hooked to the wall at the one end that matters
+  ...[20, 28, 36, 44].map(x => S(`M${x} 37 L${x} 43`, 'lo', 1.2)), // proglottid after proglottid, each packed with eggs
+]);
+def('cysticercosis', () => [                                       // swallow the eggs instead of the meat and the larva never reaches a gut: it stops in the muscle as a fluid bladder with one head folded inside it
+  C(30, 30, 19, 'gh'), ring('ik', 30, 30, 19, 1.4),                // the bladder, a centimetre across and full of clear fluid
+  S('M30 12 L30 22', 'ik', 2.4),                                   // the neck, turned outside in and pulled back through itself
+  C(30, 29, 8, 'bs'),                                              // the head, folded in and waiting for a gut it will never reach
+  ...[[26, 26], [34, 26], [26, 32], [34, 32]].map(([x, y]) => C(x, y, 2, 'hi')),  // four suckers
+  ...[-40, 0, 40].map(a => { const t = (90 + a) * Math.PI / 180;
+    return S(`M${n(30 + 8 * Math.cos(t))} ${n(29 + 8 * Math.sin(t))} L${n(30 + 12 * Math.cos(t))} ${n(29 + 12 * Math.sin(t))}`, 'ik', 1.2); }),  // and the crown of hooks under them
+]);
+def('neurocysticercosis', () => [                                  // the same larva stopped in the brain instead — and the commonest cause of adult epilepsy on earth
+  C(30, 24, 19, 'gh'),                                             // the head, in the axial slice this is always found on
+  P('M24 16 Q30 22 36 16 Q38 26 30 30 Q22 26 24 16 Z', 'hi'),      // the ventricles, that butterfly across the middle
+  C(18, 30, 5, 'bs'), C(18, 30, 1.8, 'ik'),                        // a live cyst, with the scolex dot inside it that nothing else makes
+  C(41, 17, 3.4, 'lo'),                                            // an older one, gone hard and bright with calcium
+  S('M6 50 L16 50 L18 44 L21 56 L24 50 L34 50 L36 44 L39 56 L42 50 L54 50', 'ik', 1.8),  // and the seizure that brought the patient in
+]);
+def('ascariasis', () => [                                          // worms as thick as pencils, and in a child enough of them together to plug the bowel outright
+  S('M16 6 Q8 30 16 54', 'gh', 3), S('M44 6 Q52 30 44 54', 'gh', 3),  // a loop of small bowel, stretched round them
+  ...[26, 36, 46].map(y => S(`M14 ${y} Q30 ${y - 8} 46 ${y}`, 'bs', 4)),  // coil on coil of them, a bolus
+  S('M14 16 Q30 8 46 16 Q52 20 50 10', 'bs', 4),                   // one free end nosing out of the tangle
+  S('M20 44 Q30 37 42 44', 'lo', 4),                               // packed until nothing can pass
+]);
+def('hookworm_disease', () => [                                    // it bites the gut wall and drinks; the cost is not the worm but the iron, lost a drop at a time for years
+  S('M6 16 L54 16', 'gh', 5),                                      // the gut wall
+  S('M14 20 Q10 32 20 34 Q28 35 24 26 Q21 20 14 22', 'bs', 4),     // the hookworm, hooked on and feeding
+  ...[[34, 28], [40, 38], [36, 48]].map(([x, y]) => C(x, y, 2.6, 'lo')),  // blood, going a drop at a time
+  ring('gh', 46, 44, 8, 2),                                        // and the cell left behind: pale, and empty in the middle
+]);
+def('trichuriasis', () => [                                        // the whipworm is a whip — the hair-thin end stitched into the lining, the thick handle trailing free in the lumen
+  P('M6 8 L18 8 L18 52 L6 52 Z', 'gh'),                            // the gut lining, in section
+  S('M8 44 Q16 40 12 32 Q8 24 16 18', 'bs', 1.6),                  // threaded through the tissue like a stitch
+  S('M16 18 Q30 16 38 26', 'bs', 3),
+  S('M38 26 Q48 34 44 48', 'bs', 6),                               // and thickening to the handle end, which never enters at all
+]);
+def('enterobiasis', () => [                                        // the pinworm leaves the gut at night to lay on the skin outside, which is why the diagnosis is a strip of tape, pressed on before the child is up
+  P('M50 6 A12 12 0 1 0 50 30 A14 14 0 1 1 50 6 Z', 'gh'),         // night — the only time she comes out
+  P('M8 30 L44 26 L46 44 L10 48 Z', 'hi'),                         // the tape, lifted off again
+  ...[[18, 37], [27, 36], [36, 35]].map(([x, y]) => E(x, y, 4, 2.6, 'bs')),  // her eggs, flat on one side, stuck to it
+]);
+def('strongyloidiasis', () => [                                    // alone among them it finishes the whole cycle inside one host, so an infection picked up once can still be there fifty years later
+  S('M8 6 L8 54', 'gh', 5),                                        // the gut wall — the one boundary it never has to cross to the outside
+  S('M12 44 A18 18 0 1 0 12 16', 'bs', 3.4),                       // the larva, hatched and already turning back
+  P('M6 16 L16 11 L16 21 Z', 'bs'),                                // straight through the wall it came out of
+  S('M4 28 Q10 34 4 40', 'lo', 2.4),                               // and round again, without ever leaving
+]);
+def('onchocerciasis', () => [                                      // river blindness: the fly breeds only in fast water, and it is the worm's dying young, not the worm, that clouds the eye from inside
+  P('M6 26 Q30 8 54 26 Q30 42 6 26 Z', 'hi'),                      // the eye
+  C(30, 26, 10, 'gh'), C(30, 26, 5, 'lo'),                         // a cornea gone milky over a pupil nothing reaches
+  ...[[19, 21], [37, 30], [25, 33]].map(([x, y]) => S(`M${x} ${y} Q${x + 4} ${y - 3} ${x + 7} ${y + 1}`, 'bs', 1.2)),  // microfilariae, adrift in the chamber
+  wave('gh', 52, 4, 22),                                           // the fast water the blackfly will not breed away from
+]);
+def('dracunculiasis', () => [                                      // the guinea worm is wound out on a stick, an inch a day for weeks — the oldest picture in medicine, and still the treatment
+  S('M30 4 L30 56', 'lo', 4.5),                                    // the stick
+  S('M30 12 Q42 16 30 22 Q18 28 30 34 Q42 40 30 40', 'bs', 3),     // a metre of worm, turned out one winding at a time
+  C(30, 48, 4, 'lo'), ring('ik', 30, 48, 7, 1.4),                  // the blister on the ankle it comes out of
+]);
+def('echinococcosis', () => [                                      // one cyst, growing unnoticed for a decade until it fills the liver — and full of smaller copies of itself
+  P('M4 22 L54 14 L50 44 L10 46 Z', 'gh'),                         // the liver, mostly taken up by the one thing
+  C(32, 30, 14, 'bs'), ring('ik', 32, 30, 14, 1.6),                // the hydatid cyst, thick-walled and years in the making
+  ...[[27, 26], [37, 28], [30, 36], [39, 37]].map(([x, y]) => C(x, y, 4, 'hi')),  // daughter cysts — it breeds copies inside itself
+]);
+def('fascioliasis', () => [                                        // swallowed off wet greens, the big fluke does not wait for a duct: it chews its way through the whole liver first, and the tunnel is the disease
+  P('M4 18 Q22 8 50 14 Q58 30 44 42 Q24 50 10 40 Q0 30 4 18 Z', 'gh'),  // the liver
+  S('M8 40 Q16 24 28 30 Q38 36 40 22', 'lo', 6),                   // the tunnel it eats on the way in, weeks of it
+  P('M40 10 Q49 17 40 28 Q31 17 40 10 Z', 'bs'),                   // and the fluke at the head of it, as long as a thumbnail
+  ring('ik', 40, 13, 2.4, 1.2),                                    // its oral sucker, which is the end doing the chewing
+]);
+def('clonorchiasis', () => [                                       // hundreds of small flukes crowd the bile ducts and stay for decades; what finally kills is a cancer of the duct itself
+  S('M6 44 Q26 38 52 12', 'gh', 3), S('M12 52 Q32 46 56 22', 'gh', 3),  // one bile duct, walls and all
+  ...[[16, 45], [26, 40], [35, 33]].map(([x, y]) => E(x, y, 4.4, 2.4, 'bs')),  // flukes, packed along it end to end, and there for thirty years
+  E(46, 23, 7, 6, 'lo'),                                           // and the duct wall itself, thickened past any repair — which is what finally kills
+]);
+def('paragonimiasis', () => [                                      // a pair of flukes in a cavity in the lung, coughing blood — and treated as tuberculosis for years at a time
+  S('M30 6 L30 20 M30 20 L16 30 M30 20 L44 30 M16 30 L10 42 M16 30 L22 42 M44 30 L38 42 M44 30 L50 42', 'gh', 3),  // the airways
+  ring('ik', 22, 42, 10, 1.6),                                     // a cavity — the same shadow on the film TB makes
+  E(19, 41, 4, 2.6, 'bs'), E(26, 45, 4, 2.6, 'bs'),                // the pair inside it: these arrive two by two
+  ...[[45, 47], [49, 53]].map(([x, y]) => C(x, y, 2.4, 'lo')),     // blood in the sputum
+]);
+def('diphyllobothriasis', () => [                                  // the broad fish tapeworm takes the B12 out of the gut before its host can, and the blood cells made without it come out oversized and useless
+  P('M6 8 L38 8 L38 20 L6 20 Z', 'lo'),                            // ten metres of it, the longest tapeworm we carry
+  ...[14, 22, 30].map(x => S(`M${x} 8 L${x} 20`, 'gh', 1.4)),      // in segments broader than they are long, which is the name
+  hex('bs', 14, 34, 8, 2.4), C(14, 34, 3, 'lo'),                   // the B12 it strips first: a ring built around one cobalt atom
+  C(42, 38, 12, 'hi'),                                             // and the cell made without it, too big to be any use
+  C(42, 38, 5, 'gh'),                                              // its nucleus still there, which a red cell should long since have shed
+]);
+def('leishmaniasis', () => [                                       // one sandfly bite that will not close: a crater with the rim rolled up around it, months of it, and a scar for life
+  P('M4 28 L18 28 Q22 18 26 30 Q30 46 34 30 Q38 18 42 28 L56 28 L56 52 L4 52 Z', 'lo'),  // skin in section, punched through
+  S('M4 28 L18 28 Q22 18 26 30 Q30 46 34 30 Q38 18 42 28 L56 28', 'ik', 1.6),  // the edge, and it stays like that
+  C(30, 42, 5, 'gh'), ...granules('bs', 4, 37, [27, 39, 34, 45]),  // the parasites, living inside the very cells sent to kill them
+  E(14, 12, 5, 3, 'bs'), S('M12 9 L8 4 M16 9 L20 4', 'ik', 1.2),   // the sandfly that put them there
+]);
+def('sleeping_sickness', () => [                                   // the trypanosome reaches the brain and takes the clock apart: asleep through the day, awake all night, and then not waking
+  ring('gh', 30, 26, 16, 2),                                       // one turn of twenty-four hours
+  P('M30 26 L30 10 A16 16 0 0 1 30 42 Z', 'lo'),                   // night, where sleep is meant to fall
+  P('M30 26 L14 26 A16 16 0 0 1 30 10 Z', 'bs'),                   // and where it lands instead: the middle of the afternoon
+  S('M6 52 L54 52', 'gh', 3),                                      // the barrier around the brain
+  S('M10 50 Q20 42 30 50 Q40 58 50 48', 'ik', 2),                  // crossed, which is when the sleep goes wrong
+]);
+def('chagas_disease', () => [                                      // twenty years after the bite the heart is enlarged and thin-walled and bulges at the tip — a sign that is Chagas and nothing else
+  S('M30 50 Q12 34 12 21 Q12 9 21 9 Q28 9 30 18 Q32 9 39 9 Q48 9 48 21 Q48 34 30 50', 'bs', 2.6),  // the heart, stretched until the wall is a line
+  P('M23 44 Q19 57 30 57 Q39 55 36 44 Z', 'lo'),                   // and bulging at the tip, which is Chagas and nothing else
+  ...[[22, 24], [37, 27]].map(([x, y]) => E(x, y, 4, 2.6, 'gh')),  // muscle replaced by scar, patch by patch, over twenty years
+  E(52, 8, 4, 2.6, 'ik'), P('M48 8 L43 6 L43 10 Z', 'ik'),         // the bug that bit, at night, out of the wall of the house
+]);
+def('balantidiasis', () => [                                       // the only ciliate that infects us and the largest protozoan that does: it bores a flask-shaped ulcer in the colon, narrow at the neck, wide at the base
+  P('M4 10 L26 10 Q24 20 16 28 Q12 38 30 40 Q48 38 44 28 Q36 20 34 10 L56 10 L56 50 L4 50 Z', 'lo'),  // the colon wall, with the flask bored clean through it
+  E(30, 30, 9, 6, 'bs'),                                           // the organism, sitting in the hole it made
+  ...Array.from({ length: 10 }, (_, i) => { const t = (i * 36) * Math.PI / 180;
+    return S(`M${n(30 + 9 * Math.cos(t))} ${n(30 + 6 * Math.sin(t))} L${n(30 + 12 * Math.cos(t))} ${n(30 + 8.5 * Math.sin(t))}`, 'ik', 1); }),  // and the only cilia in the whole of human parasitology
+  C(26, 28, 2.6, 'hi'),                                            // its macronucleus, kidney-shaped and enormous
+]);
+def('trichomoniasis', () => [                                      // the commonest curable infection there is: a swimmer that goes flat and amoeboid the instant it touches the lining, and then strips it cell by cell
+  ...[7, 18, 41, 52].map(x => E(x, 50, 6, 5.5, 'gh')),             // the lining it settles on, cell by cell
+  E(30, 53, 6, 2.6, 'lo'),                                         // and the stretch of it already stripped bare
+  P('M12 24 Q20 14 30 20 Q40 12 46 22 Q50 32 38 36 Q24 40 14 34 Q8 30 12 24 Z', 'bs'),  // the parasite, gone flat and amoeboid the instant it touched a cell
+  C(24, 27, 3, 'lo'),                                              // its nucleus
+  ...[[8, 12], [16, 8], [25, 8]].map(([x, y]) => S(`M14 22 L${x} ${y}`, 'ik', 1.2)),  // the flagella, up front
+  S('M46 30 L55 36', 'lo', 2.4),                                   // and the axostyle, one stiff rod straight out the back
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

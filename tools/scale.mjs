@@ -51,6 +51,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* parasites wave, 3 Sep */
+          'praziquantel', 'albendazole', 'mebendazole', 'ivermectin', 'metronidazole', 'niclosamide', 'diethylcarbamazine', 'pyrantel_pamoate', 'nitazoxanide', 'quinine',
           'polycyclic_aromatic_hydrocarbon', 'naphthalene', 'anthracene', 'phenanthrene', 'benzanthracene', 'dibenzanthracene', 'benzo_a_pyrene', 'chlorinated_hydrocarbon', 'beta_propiolactone', 'ethyleneimine', 'nitrosamine', 'aflatoxin_b1', 'thalidomide', 'methylmercury', 'benzoic_acid', 'bha', 'bht', 'hydroxyl_radical', 'free_radical', 'carcinogen', 'mutagen', 'teratogen',
           /* unblocking-nouns wave, 2 Sep */
           'antibiotic', 'antifungal', 'antiviral', 'dna_methylation', 'genetic_code',
@@ -117,6 +119,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* parasites wave, 3 Sep */
+          'apical_complex', 'kinetoplast', 'axostyle', 'undulating_membrane', 'hemozoin', 'flagellate', 'sucking_disc', 'polar_plug', 'nurse_cell', 'oncosphere', 'miracidium', 'cercaria', 'metacercaria', 'microfilaria', 'balantidium_coli', 'trypanosoma_brucei', 'trypanosoma_cruzi',
           'chromosomal_aberration',
           /* unblocking-nouns wave, 2 Sep */
           'adaptive_immunity', 'centromere', 'crossing_over', 'genome', 'innate_immunity', 'karyotype', 'opsonization', 'passive_immunity',
@@ -190,6 +194,8 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* parasites wave, 3 Sep */
+          'scolex', 'rostellum', 'acetabulum', 'proglottid', 'tegument', 'cuticle', 'buccal_capsule', 'gynecophoral_canal',
           /* crops and materials wave, 2 Sep */
           'amaranth', 'canola', 'chia', 'fonio', 'juniper_berry', 'mung_bean', 'poppy_seed', 'spelt',
           'teff', 'triticale', 'wild_rice',
@@ -216,6 +222,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* parasites wave, 3 Sep */
+          'cysticercus', 'hydatid_cyst', 'trichuris_trichiura', 'strongyloides_stercoralis', 'fasciola_hepatica', 'paragonimus_westermani', 'echinococcus_granulosus', 'tsetse_fly', 'sandfly', 'black_fly', 'triatomine_bug',
           /* everyday objects, 3 Sep */
           'screw', 'pen', 'pencil', 'eraser', 'banknote', 'wallet', 'razor', 'tin_can', 'jar', 'mug', 'gear',
           /* additive and metals waves, 3 Sep */
@@ -344,6 +352,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* parasites wave, 3 Sep */
+          'dracunculus_medinensis', 'onchocerca_volvulus', 'diphyllobothrium_latum',
           /* everyday objects, 3 Sep */
           'screwdriver', 'wrench', 'saw', 'axe', 'shovel', 'drill', 'tape_measure', 'scissors', 'plate', 'kettle', 'toaster', 'blender', 'basket', 'tap', 'lock', 'map', 'newspaper', 'shirt', 'trousers', 'carpet',
           /* umbrella waves, 3 Sep */
@@ -541,6 +551,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* parasites wave, 3 Sep */
+          'taeniasis', 'cysticercosis', 'neurocysticercosis', 'ascariasis', 'hookworm_disease', 'trichuriasis', 'enterobiasis', 'strongyloidiasis', 'onchocerciasis', 'dracunculiasis', 'echinococcosis', 'fascioliasis', 'clonorchiasis', 'paragonimiasis', 'diphyllobothriasis', 'leishmaniasis', 'sleeping_sickness', 'chagas_disease', 'balantidiasis', 'trichomoniasis',
           /* everyday objects, 3 Sep */
           'oven', 'kiln', 'freezer', 'sink', 'shelf', 'cupboard', 'workbench', 'ladder', 'bicycle', 'drone', 'wall', 'roof', 'floor', 'room', 'chimney',
           /* umbrella waves, 3 Sep */

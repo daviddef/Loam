@@ -54,6 +54,7 @@ const PUBLIC = [
   'prototype/vendor/tess/eng.traineddata.gz',
   'tools/build-prototype.mjs',
   'tools/validate.mjs',
+  'tools/refresh-docs.mjs',
   'tools/sources.mjs',
   'tools/discover.mjs',
   'tools/graph.mjs',

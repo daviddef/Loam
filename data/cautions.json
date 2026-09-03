@@ -832,7 +832,8 @@
       "label": "A common sexually transmitted infection",
       "note": "Trichomonas vaginalis causes an estimated 160 million infections a year worldwide. Most people who carry it, roughly 85% of women and 77% of men, have no symptoms at all, but it still spreads person to person through sexual contact.",
       "ids": [
-        "trichomonas_vaginalis"
+        "trichomonas_vaginalis",
+        "trichomoniasis"
       ],
       "severity": "conditional",
       "biohazard": true
@@ -853,7 +854,14 @@
       "ids": [
         "ascaris_lumbricoides",
         "hookworm",
-        "enterobius_vermicularis"
+        "enterobius_vermicularis",
+        "trichuris_trichiura",
+        "strongyloides_stercoralis",
+        "ascariasis",
+        "hookworm_disease",
+        "trichuriasis",
+        "enterobiasis",
+        "strongyloidiasis"
       ],
       "severity": "conditional"
     },
@@ -882,7 +890,9 @@
       "note": "Taenia solium and Taenia saginata are among the largest parasites that infect humans — the beef tapeworm can exceed 22 metres and live in a person for 25 years. Most infections cause mild or no symptoms, detected only when a segment passes.",
       "ids": [
         "taenia_solium",
-        "taenia_saginata"
+        "taenia_saginata",
+        "tapeworm",
+        "taeniasis"
       ],
       "severity": "conditional"
     },
@@ -900,7 +910,12 @@
       "label": "A parasite that can live in one host for decades",
       "note": "Clonorchis sinensis, the Chinese liver fluke, can survive around 30 years in a single human host after being eaten in raw or undercooked freshwater fish. Long-term infection is linked to chronic liver and bile-duct disease.",
       "ids": [
-        "clonorchis_sinensis"
+        "clonorchis_sinensis",
+        "clonorchiasis",
+        "fasciola_hepatica",
+        "fascioliasis",
+        "paragonimus_westermani",
+        "paragonimiasis"
       ],
       "severity": "conditional"
     },
@@ -2310,7 +2325,9 @@
       "label": "Untreated visceral leishmaniasis is fatal in more than 95% of cases",
       "note": "Leishmania parasites are transmitted by the bite of infected female phlebotomine sandflies. The visceral form runs to 50,000 to 90,000 new cases a year worldwide and kills over 95% of those left untreated; the cutaneous form, at 600,000 to 1 million new cases a year, leaves ulcers and permanent scarring instead. WHO describes the disease as tracking malnutrition, displacement and poor housing rather than geography alone.",
       "ids": [
-        "leishmania"
+        "leishmania",
+        "leishmaniasis",
+        "sandfly"
       ],
       "severity": "acute",
       "biohazard": true
@@ -2503,7 +2520,13 @@
       "label": "Two parasites on two continents, both fatal if nothing is done",
       "note": "Trypanosoma brucei is injected by tsetse flies and causes human African trypanosomiasis, generally fatal untreated; sustained control has held reported cases under 1,000 a year since 2018, though about 55 million people still live where transmission is possible. Trypanosoma cruzi, carried by triatomine bugs and also passed in pregnancy, transfusion and contaminated food, infects an estimated 8 million people and causes more than 10,000 deaths a year. Up to a third of chronic Chagas infections eventually damage the heart.",
       "ids": [
-        "trypanosoma"
+        "trypanosoma",
+        "trypanosoma_brucei",
+        "trypanosoma_cruzi",
+        "sleeping_sickness",
+        "chagas_disease",
+        "tsetse_fly",
+        "triatomine_bug"
       ],
       "severity": "acute",
       "biohazard": true
@@ -2875,6 +2898,68 @@
         "xylitol"
       ],
       "severity": "conditional"
+    },
+    "neurocysticercosis_epilepsy": {
+      "label": "Tapeworm eggs, not tapeworm meat, are the dangerous half",
+      "note": "Cysticercosis comes from swallowing Taenia solium eggs rather than larvae in pork, which puts a person in the pig's place as intermediate host. About 60% of cases have larvae in the brain. Neurocysticercosis is the leading cause of adult-onset epilepsy in much of the world and is a common cause of seizures in developing countries; it has been called the great imitator because it mimics so many other neurological disorders.",
+      "ids": [
+        "cysticercosis",
+        "cysticercus",
+        "neurocysticercosis"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "hydatid_cyst_rupture": {
+      "label": "A cyst that can be silent for years, and dangerous when it opens",
+      "note": "Echinococcus granulosus grows in a person as a slowly enlarging hydatid cyst, most often in the liver or the lung, and can stay symptomless for years. If the cyst ruptures — through injury or during surgery — the released fluid can cause anaphylactic shock, which is why diagnostic puncture of a suspected hydatid cyst is avoided.",
+      "ids": [
+        "echinococcosis",
+        "echinococcus_granulosus",
+        "hydatid_cyst"
+      ],
+      "severity": "acute",
+      "biohazard": true
+    },
+    "onchocerciasis_blindness": {
+      "label": "The second most common infectious cause of blindness",
+      "note": "Onchocerciasis, river blindness, is caused by Onchocerca volvulus and spread by the bites of Simulium black flies, usually over many bites rather than one. It ranks second only to trachoma among infectious causes of blindness. The damage is done by microfilariae migrating through the skin and every structure of the eye, and by the host's allergic reaction to them, rather than by the adult worms in their nodules.",
+      "ids": [
+        "black_fly",
+        "onchocerca_volvulus",
+        "onchocerciasis"
+      ],
+      "severity": "cumulative",
+      "biohazard": true
+    },
+    "mazzotti_reaction": {
+      "label": "Where the reaction to the dying parasite is the danger",
+      "note": "Diethylcarbamazine does not kill adult filariae; it exposes microfilariae to the immune system. In a person who also has onchocerciasis, the mass death of skin and eye microfilariae can provoke a severe systemic allergic response, the Mazzotti reaction, and the drug is contraindicated on that basis. It is a documented reason ivermectin replaced it for river blindness.",
+      "ids": [
+        "diethylcarbamazine"
+      ],
+      "severity": "conditional"
+    },
+    "diphyllobothriasis_b12": {
+      "label": "A worm that competes for one vitamin in particular",
+      "note": "Diphyllobothrium latum can reach twenty metres in a human intestine and takes up dietary vitamin B12 directly. In roughly 1% of infections, most often reported in people of Scandinavian descent, that competition is enough to cause a macrocytic anaemia and, if prolonged, nervous system effects. The route in is raw or undercooked freshwater fish.",
+      "ids": [
+        "diphyllobothriasis",
+        "diphyllobothrium_latum"
+      ],
+      "severity": "conditional",
+      "biohazard": true
+    },
+    "guinea_worm_eradication": {
+      "label": "Almost gone, and there was never a drug for it",
+      "note": "Dracunculiasis is contracted by drinking water containing copepods carrying Guinea worm larvae. There is no vaccine and no drug that kills the adult; the worm is still removed by slow withdrawal over days or weeks, and there is no immunity to reinfection. Filtering drinking water breaks the cycle, and reported cases fell from around 3.5 million in 1986 to fewer than 18,000 by 2010 and to a handful since.",
+      "ids": [
+        "copepod",
+        "dracunculiasis",
+        "dracunculus_medinensis"
+      ],
+      "severity": "conditional",
+      "biohazard": true
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

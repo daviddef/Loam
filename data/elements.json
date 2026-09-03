@@ -6392,8 +6392,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "Vitamin B12: a corrin ring around a cobalt ion. Only archaea and bacteria can build one.",
-    "terminal": true
+    "fact": "Vitamin B12: a corrin ring around a cobalt ion. Only archaea and bacteria can build one."
   },
   {
     "id": "photosystem_ii",
@@ -11500,8 +11499,7 @@
     "tags": [
       "crop"
     ],
-    "fact": "An aquatic mustard relative with hollow floating stems — grows straight in flowing streams.",
-    "terminal": true
+    "fact": "An aquatic mustard relative with hollow floating stems — grows straight in flowing streams."
   },
   {
     "id": "orange",
@@ -15699,7 +15697,8 @@
     "tags": [
       "microbe"
     ],
-    "fact": "A tough cyst form can stay infectious in cold water for up to three months, waiting to be swallowed."
+    "fact": "A tough cyst form can stay infectious in cold water for up to three months, waiting to be swallowed.",
+    "soleRoute": true
   },
   {
     "id": "entamoeba_histolytica",
@@ -15719,8 +15718,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "A flagellated protozoan spread by direct sexual contact — no other route reliably passes it on.",
-    "terminal": true
+    "fact": "A flagellated protozoan spread by direct sexual contact — no other route reliably passes it on."
   },
   {
     "id": "cryptosporidium",
@@ -15741,8 +15739,8 @@
       "animal"
     ],
     "fact": "Up to a billion people carry it. A single female can lay 200,000 eggs a day.",
-    "terminal": true,
-    "taxon": "tx_nematoda"
+    "taxon": "tx_nematoda",
+    "soleRoute": true
   },
   {
     "id": "hookworm",
@@ -15753,8 +15751,8 @@
       "animal"
     ],
     "fact": "Doesn't wait to be swallowed — its larvae simply burrow straight through bare skin.",
-    "terminal": true,
-    "taxon": "tx_nematoda"
+    "taxon": "tx_nematoda",
+    "soleRoute": true
   },
   {
     "id": "enterobius_vermicularis",
@@ -15765,7 +15763,6 @@
       "animal"
     ],
     "fact": "Its entire life cycle happens inside one human gut — humans are its only known host.",
-    "terminal": true,
     "taxon": "tx_nematoda"
   },
   {
@@ -15777,7 +15774,8 @@
       "animal"
     ],
     "fact": "The smallest nematode known to parasitize humans, yet one female can produce 1,500 larvae.",
-    "taxon": "tx_nematoda"
+    "taxon": "tx_nematoda",
+    "soleRoute": true
   },
   {
     "id": "wuchereria_bancrofti",
@@ -15799,8 +15797,8 @@
       "animal"
     ],
     "fact": "The pork tapeworm can grow past 8 metres long from a single scolex barely a millimetre wide.",
-    "terminal": true,
-    "taxon": "tx_platyhelminthes"
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
   },
   {
     "id": "taenia_saginata",
@@ -15811,8 +15809,8 @@
       "animal"
     ],
     "fact": "The beef tapeworm can top 22 metres and live in a human gut for 25 years.",
-    "terminal": true,
-    "taxon": "tx_platyhelminthes"
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
   },
   {
     "id": "schistosoma",
@@ -15834,7 +15832,6 @@
       "animal"
     ],
     "fact": "The Chinese liver fluke can live 30 years in one host, passing through a snail and a fish to get there.",
-    "terminal": true,
     "taxon": "tx_platyhelminthes"
   },
   {
@@ -49240,7 +49237,6 @@
       "water"
     ],
     "fact": "Barely 1-2 mm long with a single median red eye — possibly the largest animal biomass on Earth.",
-    "terminal": true,
     "taxon": "tx_arthropoda"
   },
   {
@@ -58204,7 +58200,6 @@
       "microbe"
     ],
     "fact": "Nearly every species is a parasite, armed with an apical complex built to drill into a host cell.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -58239,7 +58234,6 @@
       "microbe"
     ],
     "fact": "Rides in a sandfly's gut as a whip-tailed cell, then hides inside human immune cells once bitten in.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -58263,7 +58257,6 @@
       "animal"
     ],
     "fact": "Roundworms may be the most numerous animals on Earth; one species mapped its every single neuron.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_nematoda"
   },
@@ -58288,7 +58281,6 @@
       "animal"
     ],
     "fact": "A flatworm with two suckers that needs a snail, then a vertebrate, in sequence, to complete its life.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_platyhelminthes"
   },
@@ -71588,5 +71580,891 @@
     ],
     "fact": "Two rotors turn clockwise and two anticlockwise, so the torques cancel and it does not spin.",
     "src": "https://en.wikipedia.org/wiki/Quadcopter"
+  },
+  {
+    "id": "acetabulum",
+    "name": "Acetabulum",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The muscular sucking cup of a fluke or a tapeworm. A fluke has two; a tapeworm's head has four.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "soleRoute": true
+  },
+  {
+    "id": "scolex",
+    "name": "Scolex",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A tapeworm's holdfast, under 2 mm long, on a body that can run to 20 metres behind it.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "soleRoute": true
+  },
+  {
+    "id": "rostellum",
+    "name": "Rostellum",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A fleshy, retractable knob on some tapeworm heads, ringed with hooks. Taenia saginata has none.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_solium",
+    "soleRoute": true
+  },
+  {
+    "id": "proglottid",
+    "name": "Proglottid",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One segment of a tapeworm, and a whole reproductive animal in itself: both sexes, in every one.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "soleRoute": true
+  },
+  {
+    "id": "tegument",
+    "name": "Tegument",
+    "emoji": "🧽",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The body surface of a fluke or tapeworm: it absorbs the food and passes out the waste.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "soleRoute": true
+  },
+  {
+    "id": "oncosphere",
+    "name": "Oncosphere",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The first tapeworm larva: six tiny hooklets and almost nothing else, built to cut through a gut wall.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "soleRoute": true
+  },
+  {
+    "id": "cysticercus",
+    "name": "Cysticercus",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A fluid-filled bladder in muscle with a tapeworm's head folded inside it, waiting to be eaten.",
+    "src": "https://en.wikipedia.org/wiki/Cysticercus",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "hydatid_cyst",
+    "name": "Hydatid Cyst",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One Echinococcus larva, grown for years into a fluid cyst budding thousands of tapeworm heads inside.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcosis",
+    "soleRoute": true
+  },
+  {
+    "id": "gynecophoral_canal",
+    "name": "Gynecophoral Canal",
+    "emoji": "🫂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A groove down a male blood fluke's belly. The female lies in it for the rest of both their lives.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma",
+    "soleRoute": true
+  },
+  {
+    "id": "miracidium",
+    "name": "Miracidium",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "The first fluke larva, rowed along by cilia, with hours to find the one snail species it can enter.",
+    "src": "https://en.wikipedia.org/wiki/Miracidium",
+    "soleRoute": true
+  },
+  {
+    "id": "cercaria",
+    "name": "Cercaria",
+    "emoji": "🏊",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "The fluke larva that leaves the snail, tail-first. Hundreds come out of every one that went in.",
+    "src": "https://en.wikipedia.org/wiki/Cercaria",
+    "soleRoute": true
+  },
+  {
+    "id": "metacercaria",
+    "name": "Metacercaria",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "water"
+    ],
+    "fact": "A cercaria that dropped its tail and walled itself up, waiting on a leaf or inside a fish to be eaten.",
+    "src": "https://en.wikipedia.org/wiki/Metacercaria",
+    "soleRoute": true
+  },
+  {
+    "id": "cuticle",
+    "name": "Cuticle",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A roundworm's tough outer coat, resistant to digestion — and shed four times as the larva grows.",
+    "src": "https://en.wikipedia.org/wiki/Cuticle",
+    "soleRoute": true
+  },
+  {
+    "id": "buccal_capsule",
+    "name": "Buccal Capsule",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The hard-lined mouth cavity of a roundworm — a hookworm's is armed with cutting plates or teeth.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm",
+    "soleRoute": true
+  },
+  {
+    "id": "polar_plug",
+    "name": "Polar Plug",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A clear knob at each end of a whipworm egg. Nothing else in a stool sample is shaped like that.",
+    "src": "https://en.wikipedia.org/wiki/Trichuris_trichiura",
+    "soleRoute": true
+  },
+  {
+    "id": "nurse_cell",
+    "name": "Nurse Cell",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A muscle cell a Trichinella larva has rebuilt into a walled room, and then moved into.",
+    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
+    "soleRoute": true
+  },
+  {
+    "id": "microfilaria",
+    "name": "Microfilaria",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The live embryo a filarial worm releases into the blood; some surface only between 10pm and 4am.",
+    "src": "https://en.wikipedia.org/wiki/Microfilaria",
+    "soleRoute": true
+  },
+  {
+    "id": "flagellate",
+    "name": "Flagellate",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "water"
+    ],
+    "fact": "A protozoan that swims by whipping one or more flagella. Giardia has four pairs of them.",
+    "src": "https://en.wikipedia.org/wiki/Flagellate",
+    "soleRoute": true
+  },
+  {
+    "id": "sucking_disc",
+    "name": "Sucking Disc",
+    "emoji": "🥏",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Giardia's dished underside. It clamps the cell to the gut lining and will not let go.",
+    "src": "https://en.wikipedia.org/wiki/Giardia_duodenalis",
+    "soleRoute": true
+  },
+  {
+    "id": "undulating_membrane",
+    "name": "Undulating Membrane",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A flagellum bound down along a cell's flank, so its beat ripples the whole side of the body.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "soleRoute": true
+  },
+  {
+    "id": "axostyle",
+    "name": "Axostyle",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A stiff rod of microtubules down the middle of a trichomonad, projecting out through the tail end.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "soleRoute": true
+  },
+  {
+    "id": "kinetoplast",
+    "name": "Kinetoplast",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Thousands of DNA circles catenated into one disc, packed inside a single giant mitochondrion.",
+    "src": "https://en.wikipedia.org/wiki/Kinetoplast",
+    "soleRoute": true
+  },
+  {
+    "id": "apical_complex",
+    "name": "Apical Complex",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A drill at one end of a cell: polar rings, microtubules, and glands that open on the way in.",
+    "src": "https://en.wikipedia.org/wiki/Apicomplexa",
+    "soleRoute": true,
+    "terminal": true
+  },
+  {
+    "id": "hemozoin",
+    "name": "Hemozoin",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Malaria pigment: heme crystallised into an inert, iron-rich grain the parasite cannot be poisoned by.",
+    "src": "https://en.wikipedia.org/wiki/Hemozoin",
+    "soleRoute": true
+  },
+  {
+    "id": "trichuris_trichiura",
+    "name": "Whipworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Threaded head-first into the gut lining and feeding on tissue fluid, not blood. Around 35 to 50 mm.",
+    "src": "https://en.wikipedia.org/wiki/Trichuris_trichiura",
+    "taxon": "tx_nematoda",
+    "soleRoute": true
+  },
+  {
+    "id": "strongyloides_stercoralis",
+    "name": "Strongyloides stercoralis",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The only intestinal roundworm that passes larvae, not eggs — and it can reinfect you without leaving.",
+    "src": "https://en.wikipedia.org/wiki/Strongyloides_stercoralis",
+    "taxon": "tx_nematoda",
+    "soleRoute": true
+  },
+  {
+    "id": "dracunculus_medinensis",
+    "name": "Guinea Worm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The largest roundworm to parasitise people: a female close to a metre long, leaving through a blister.",
+    "src": "https://en.wikipedia.org/wiki/Dracunculus_medinensis",
+    "taxon": "tx_nematoda",
+    "soleRoute": true
+  },
+  {
+    "id": "onchocerca_volvulus",
+    "name": "Onchocerca volvulus",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Adults sit coiled in fibrous nodules under the skin. It is the wandering young that cause the blindness.",
+    "src": "https://en.wikipedia.org/wiki/Onchocerca_volvulus",
+    "taxon": "tx_nematoda",
+    "soleRoute": true
+  },
+  {
+    "id": "echinococcus_granulosus",
+    "name": "Hydatid Tapeworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An adult only 3 to 6 mm long with three segments. Almost all its bulk is the cyst, in another animal.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcus_granulosus",
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
+  },
+  {
+    "id": "diphyllobothrium_latum",
+    "name": "Broad Fish Tapeworm",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Can reach 20 metres in one gut, and take up to all the vitamin B12 in the meals passing it.",
+    "src": "https://en.wikipedia.org/wiki/Diphyllobothrium",
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
+  },
+  {
+    "id": "fasciola_hepatica",
+    "name": "Sheep Liver Fluke",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A leaf-shaped fluke that ends up in the bile ducts of a sheep — or of whoever ate the same salad.",
+    "src": "https://en.wikipedia.org/wiki/Fasciola_hepatica",
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
+  },
+  {
+    "id": "paragonimus_westermani",
+    "name": "Oriental Lung Fluke",
+    "emoji": "🪱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Lives encysted in pairs inside the lungs, and the cough it causes is regularly mistaken for TB.",
+    "src": "https://en.wikipedia.org/wiki/Paragonimus_westermani",
+    "taxon": "tx_platyhelminthes",
+    "soleRoute": true
+  },
+  {
+    "id": "balantidium_coli",
+    "name": "Balantidium coli",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The only ciliate known to make people ill, and the largest protozoan that infects them.",
+    "src": "https://en.wikipedia.org/wiki/Balantidium_coli",
+    "soleRoute": true
+  },
+  {
+    "id": "trypanosoma_brucei",
+    "name": "Trypanosoma brucei",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "It lives outside cells, in the blood, and stays there by changing its coat faster than antibodies form.",
+    "src": "https://en.wikipedia.org/wiki/Trypanosoma_brucei",
+    "soleRoute": true
+  },
+  {
+    "id": "trypanosoma_cruzi",
+    "name": "Trypanosoma cruzi",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "C-shaped in a blood smear, then hidden in heart muscle for decades before the damage shows.",
+    "src": "https://en.wikipedia.org/wiki/Trypanosoma_cruzi",
+    "soleRoute": true
+  },
+  {
+    "id": "tsetse_fly",
+    "name": "Tsetse Fly",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Both sexes live on blood, and can drink a meal weighing as much as they do.",
+    "src": "https://en.wikipedia.org/wiki/Tsetse_fly",
+    "taxon": "tx_diptera",
+    "soleRoute": true
+  },
+  {
+    "id": "sandfly",
+    "name": "Sandfly",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "About 3 mm long and covered in hair, which is part of why the bite is often not noticed.",
+    "src": "https://en.wikipedia.org/wiki/Phlebotominae",
+    "taxon": "tx_diptera",
+    "soleRoute": true
+  },
+  {
+    "id": "black_fly",
+    "name": "Black Fly",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Its larvae need fast running water, which is why the blindness it spreads follows the rivers.",
+    "src": "https://en.wikipedia.org/wiki/Simuliidae",
+    "taxon": "tx_diptera",
+    "soleRoute": true
+  },
+  {
+    "id": "triatomine_bug",
+    "name": "Kissing Bug",
+    "emoji": "🪳",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "It does not inject the parasite. It defecates while feeding, and the bite gets rubbed into the wound.",
+    "src": "https://en.wikipedia.org/wiki/Triatominae",
+    "taxon": "tx_hemiptera",
+    "soleRoute": true
+  },
+  {
+    "id": "praziquantel",
+    "name": "Praziquantel",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Floods a fluke or tapeworm with calcium until its muscles lock, and strips its skin at the same time.",
+    "src": "https://en.wikipedia.org/wiki/Praziquantel",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "albendazole",
+    "name": "Albendazole",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Blocks the worm from building microtubules, so it cannot take up glucose and starves on its reserves.",
+    "src": "https://en.wikipedia.org/wiki/Albendazole",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "mebendazole",
+    "name": "Mebendazole",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Same target as albendazole, on the colchicine site of the worm's own beta-tubulin.",
+    "src": "https://en.wikipedia.org/wiki/Mebendazole",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "ivermectin",
+    "name": "Ivermectin",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "From a Streptomyces found in Japanese soil; it opens chloride channels invertebrates have and we do not.",
+    "src": "https://en.wikipedia.org/wiki/Ivermectin",
+    "terminal": true,
+    "soleRoute": true,
+    "discovered": {
+      "year": 1975,
+      "note": "Satoshi Omura's soil Streptomyces avermitilis yields the avermectins and William Campbell shows they kill nematodes; the two share the 2015 Nobel Prize in Physiology or Medicine. Approved for human use in 1987."
+    }
+  },
+  {
+    "id": "metronidazole",
+    "name": "Metronidazole",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Harmless until something with no oxygen in its metabolism reduces it. Then it is not harmless at all.",
+    "src": "https://en.wikipedia.org/wiki/Metronidazole",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "niclosamide",
+    "name": "Niclosamide",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Works on tapeworms and nothing else — not flukes, not roundworms — because it is never absorbed.",
+    "src": "https://en.wikipedia.org/wiki/Niclosamide",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "diethylcarbamazine",
+    "name": "Diethylcarbamazine",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "It does not kill the adult worm. It makes the young ones visible to an immune system that was ignoring them.",
+    "src": "https://en.wikipedia.org/wiki/Diethylcarbamazine",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "pyrantel_pamoate",
+    "name": "Pyrantel Pamoate",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Contracts a worm so hard it cannot hold on, and it is carried out of the gut still alive.",
+    "src": "https://en.wikipedia.org/wiki/Pyrantel_pamoate",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "nitazoxanide",
+    "name": "Nitazoxanide",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The one drug licensed for cryptosporidiosis, aimed at an enzyme of oxygen-free metabolism we lack.",
+    "src": "https://en.wikipedia.org/wiki/Nitazoxanide",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "quinine",
+    "name": "Quinine",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Isolated from cinchona bark in 1820, after three centuries of the bark itself being the only treatment.",
+    "src": "https://en.wikipedia.org/wiki/Quinine",
+    "terminal": true,
+    "soleRoute": true,
+    "discovered": {
+      "year": 1820,
+      "note": "Pierre Joseph Pelletier and Joseph Bienaime Caventou isolate quinine from the bark of the cinchona tree, native to Peru."
+    }
+  },
+  {
+    "id": "taeniasis",
+    "name": "Taeniasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Usually silent. Often the first sign is a segment of the worm leaving on its own.",
+    "src": "https://en.wikipedia.org/wiki/Taeniasis",
+    "terminal": true
+  },
+  {
+    "id": "cysticercosis",
+    "name": "Cysticercosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Caught from the eggs, not the meat — so the person, not the pig, becomes the intermediate host.",
+    "src": "https://en.wikipedia.org/wiki/Cysticercosis",
+    "soleRoute": true
+  },
+  {
+    "id": "neurocysticercosis",
+    "name": "Neurocysticercosis",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Tapeworm larvae in the brain. In much of the world it is the commonest cause of adult-onset epilepsy.",
+    "src": "https://en.wikipedia.org/wiki/Neurocysticercosis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "ascariasis",
+    "name": "Ascariasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The larvae take a detour through the liver and lungs, get coughed up, and are swallowed a second time.",
+    "src": "https://en.wikipedia.org/wiki/Ascariasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "hookworm_disease",
+    "name": "Hookworm Disease",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "It does not have to be swallowed. The larvae come up through the skin of a bare foot.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm_infection",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "trichuriasis",
+    "name": "Trichuriasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Heavy infections in children can pull the rectum inside out. Light ones show nothing at all.",
+    "src": "https://en.wikipedia.org/wiki/Trichuriasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "enterobiasis",
+    "name": "Enterobiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The commonest worm infection in Western Europe and the United States, and it spreads on fingers.",
+    "src": "https://en.wikipedia.org/wiki/Pinworm_infection",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "strongyloidiasis",
+    "name": "Strongyloidiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Because it can reinfect its host without leaving, it has been found still running after decades.",
+    "src": "https://en.wikipedia.org/wiki/Strongyloidiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "onchocerciasis",
+    "name": "River Blindness",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Second only to trachoma as an infectious cause of blindness. The adult worm is not what blinds you.",
+    "src": "https://en.wikipedia.org/wiki/Onchocerciasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "dracunculiasis",
+    "name": "Dracunculiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Caught by drinking water with an infected water flea in it. Cases fell from 3.5 million to a handful.",
+    "src": "https://en.wikipedia.org/wiki/Dracunculiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "echinococcosis",
+    "name": "Echinococcosis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A dog's tapeworm eggs, in the wrong host. The cyst can grow silently for years before anything shows.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcosis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "fascioliasis",
+    "name": "Fascioliasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A sheep's disease that people catch from the plant, not the animal. Called liver rot in livestock.",
+    "src": "https://en.wikipedia.org/wiki/Fasciolosis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "clonorchiasis",
+    "name": "Clonorchiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Thirty years in one set of bile ducts, and a recognised risk factor for bile-duct cancer.",
+    "src": "https://en.wikipedia.org/wiki/Clonorchiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "paragonimiasis",
+    "name": "Paragonimiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "A bloody cough from a fluke in the lung, treated as tuberculosis more often than anyone would like.",
+    "src": "https://en.wikipedia.org/wiki/Paragonimiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "diphyllobothriasis",
+    "name": "Diphyllobothriasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "From raw freshwater fish. Rarely, the worm takes enough B12 to cause anaemia on its own.",
+    "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "leishmaniasis",
+    "name": "Leishmaniasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Three diseases from one genus: a self-healing sore, a disfiguring ulcer, or an infection of the organs.",
+    "src": "https://en.wikipedia.org/wiki/Leishmaniasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "sleeping_sickness",
+    "name": "Sleeping Sickness",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Named for the last stage, once the parasite has crossed into the brain and wrecked the sleep cycle.",
+    "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "chagas_disease",
+    "name": "Chagas Disease",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Silent for twenty or thirty years, then up to a third of infections damage the heart.",
+    "src": "https://en.wikipedia.org/wiki/Chagas_disease",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "balantidiasis",
+    "name": "Balantidiasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The only human disease caused by a ciliate, and it tracks living closely with pigs.",
+    "src": "https://en.wikipedia.org/wiki/Balantidiasis",
+    "terminal": true,
+    "soleRoute": true
+  },
+  {
+    "id": "trichomoniasis",
+    "name": "Trichomoniasis",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The commonest non-viral sexually transmitted infection, and men usually carry it without symptoms.",
+    "src": "https://en.wikipedia.org/wiki/Trichomoniasis",
+    "terminal": true,
+    "soleRoute": true
   }
 ]

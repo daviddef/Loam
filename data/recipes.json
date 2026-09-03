@@ -17421,16 +17421,6 @@
   {
     "in": [
       "protozoan",
-      "water"
-    ],
-    "out": "giardia",
-    "why": "Giardia's cyst form is the infectious stage, and it survives readily in water — cold water keeps a cyst infectious for up to three months, and swallowing just a few is enough to start an infection.",
-    "src": "https://en.wikipedia.org/wiki/Giardiasis",
-    "verified": true
-  },
-  {
-    "in": [
-      "protozoan",
       "soil"
     ],
     "out": "entamoeba_histolytica",
@@ -17500,42 +17490,12 @@
   },
   {
     "in": [
-      "human",
-      "water"
-    ],
-    "out": "ascaris_lumbricoides",
-    "why": "Ascaris infects a person via the fecal-oral route, specifically by swallowing water contaminated with eggs that have already matured in soil for weeks.",
-    "src": "https://en.wikipedia.org/wiki/Ascaris_lumbricoides",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "soil"
-    ],
-    "out": "hookworm",
-    "why": "Hookworm doesn't need to be swallowed at all — its larvae hatch in warm, moist soil and penetrate straight through the skin of anyone walking barefoot over them.",
-    "src": "https://en.wikipedia.org/wiki/Hookworm",
-    "verified": true
-  },
-  {
-    "in": [
       "dust",
       "human"
     ],
     "out": "enterobius_vermicularis",
     "why": "Pinworm eggs are light enough to go airborne; inhaling and then swallowing them is a real, if secondary, route into the only host this parasite has ever been found in — a human.",
     "src": "https://en.wikipedia.org/wiki/Enterobius_vermicularis",
-    "verified": true
-  },
-  {
-    "in": [
-      "muscle",
-      "pork"
-    ],
-    "out": "trichinella_spiralis",
-    "why": "Trichinella larvae bore out of the gut, travel the bloodstream, and encyst specifically in striated muscle — exactly the tissue a person eats when the pork carrying them goes undercooked.",
-    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
     "verified": true
   },
   {
@@ -17566,36 +17526,6 @@
     "out": "lymphatic_filariasis",
     "why": "Adult Wuchereria worms live in a person's own lymphatic vessels and physically obstruct them; the resulting chronic lymphedema is lymphatic filariasis, elephantiasis in its most severe form.",
     "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "pork"
-    ],
-    "out": "taenia_solium",
-    "why": "A person becomes Taenia solium's definitive host by eating undercooked pork carrying its cysticerci — the larva everts inside the small intestine and attaches with its own hooks and suckers.",
-    "src": "https://en.wikipedia.org/wiki/Taenia_solium",
-    "verified": true
-  },
-  {
-    "in": [
-      "beef",
-      "human"
-    ],
-    "out": "taenia_saginata",
-    "why": "Humans contract Taenia saginata's infective cysticerci by eating raw or undercooked beef; the larva matures into an adult worm in the human gut five to twelve weeks later.",
-    "src": "https://en.wikipedia.org/wiki/Taenia_saginata",
-    "verified": true
-  },
-  {
-    "in": [
-      "human",
-      "snail"
-    ],
-    "out": "schistosoma",
-    "why": "Schistosoma's larvae must first pass through a freshwater snail before the stage that can infect a person emerges — cercariae that penetrate human skin directly on contact with contaminated water.",
-    "src": "https://en.wikipedia.org/wiki/Schistosoma",
     "verified": true
   },
   {
@@ -61128,16 +61058,6 @@
   },
   {
     "in": [
-      "meat",
-      "pig"
-    ],
-    "out": "tapeworm",
-    "why": "Tapeworms have no mouth or gut of their own; instead they absorb the host's already-digested nutrients through their whole body surface. Undercooked pork can carry the larvae of Taenia solium.",
-    "src": "https://en.wikipedia.org/wiki/Tapeworm",
-    "verified": true
-  },
-  {
-    "in": [
       "blood",
       "snail"
     ],
@@ -81978,6 +81898,936 @@
     "out": "drone",
     "why": "Four fixed propellers cannot be flown by hand — control comes only from varying each rotor's speed, thousands of times a second. Cheap lightweight flight controllers and accelerometers arrived around 2005-2010, and the quadcopter arrived with them.",
     "src": "https://en.wikipedia.org/wiki/Quadcopter",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "parasitism"
+    ],
+    "out": "acetabulum",
+    "why": "Every adult fluke carries two cup-shaped muscular suckers, an oral and a ventral one, and a tapeworm's scolex carries four. A parasite with no legs still has to hold on.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetabulum",
+      "flatworm"
+    ],
+    "out": "scolex",
+    "why": "The anterior end of a tapeworm is a knob under 2 mm across carrying four radially arranged acetabula, and in armed species a hooked rostellum between them. It is not a head: it has no mouth.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 39",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "scolex"
+    ],
+    "out": "rostellum",
+    "why": "The rostellum is a fleshy protuberance in the middle of the four suckers, retractable in some species and armed in others. Taenia solium's carries two rows of 22 to 32 spiny hooks.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_solium",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 38",
+    "verified": true
+  },
+  {
+    "in": [
+      "tapeworm"
+    ],
+    "out": "proglottid",
+    "why": "Segments bud from germinal tissue behind the scolex and are pushed backwards as newer ones form. Each is hermaphroditic; the gravid ones at the far end break off and leave in the feces.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "verb": "cut",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 39",
+    "verified": true
+  },
+  {
+    "in": [
+      "flatworm",
+      "skin"
+    ],
+    "out": "tegument",
+    "why": "An adult tapeworm has no mouth, no digestive tract and no blood vessels. Its outer surface is metabolically active, releasing enzymes from microtriches and taking everything in through the skin.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 38",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "proglottid"
+    ],
+    "out": "oncosphere",
+    "why": "A gravid proglottid is a uterus packed with eggs, and inside each egg sits a hexacanth embryo — an oncosphere carrying six hooklets it uses to bore through the intermediate host's intestinal wall.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 38",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "oncosphere"
+    ],
+    "out": "cysticercus",
+    "why": "Once through the gut wall the oncosphere settles in tissue and becomes a cysticercus: a small fluid-filled bladder with the scolex inverted inside it. The bladder worm is the stage that infects the next host.",
+    "src": "https://en.wikipedia.org/wiki/Cysticercus",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 38",
+    "verified": true
+  },
+  {
+    "in": [
+      "liver",
+      "oncosphere"
+    ],
+    "out": "hydatid_cyst",
+    "why": "An Echinococcus oncosphere that reaches the liver grows slowly into a hydatid cyst, its brood capsules budding scolices into the fluid. Rupture spills that fluid, and can cause anaphylactic shock.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 38",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "trematode"
+    ],
+    "out": "gynecophoral_canal",
+    "why": "Flukes are hermaphrodites with one exception: the blood flukes have separate sexes. The male's body curls up at its edges into a long channel, and the larger female lies inside it for their whole adult lives.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "cilia",
+      "egg"
+    ],
+    "out": "miracidium",
+    "why": "A fluke egg hatches in fresh water into a ciliated, free-swimming miracidium. It must penetrate the right species of snail to go any further, and it is specific to that one species.",
+    "src": "https://en.wikipedia.org/wiki/Miracidium",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "miracidium",
+      "snail"
+    ],
+    "out": "cercaria",
+    "why": "Inside the snail the miracidium multiplies asexually through sporocysts and rediae, so hundreds of cercariae leave for every one larva that entered. Each has a swimming tail; the blood flukes' is forked.",
+    "src": "https://en.wikipedia.org/wiki/Cercaria",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "cercaria"
+    ],
+    "out": "metacercaria",
+    "why": "The cercariae of the gut, liver and lung flukes never pierce skin. They shed the tail, secrete a thick wall and encyst on water plants or inside a fish or a crab, and wait there to be swallowed.",
+    "src": "https://en.wikipedia.org/wiki/Metacercaria",
+    "verb": "wait",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "collagen",
+      "nematode"
+    ],
+    "out": "cuticle",
+    "why": "The exterior surface of a roundworm is a collagen-rich cuticle tough enough to resist a host's digestive enzymes. Because it cannot stretch far, the growing larva has to moult out of it four times over.",
+    "src": "https://en.wikipedia.org/wiki/Cuticle",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 10",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuticle",
+      "tooth"
+    ],
+    "out": "buccal_capsule",
+    "why": "The anterior end of a roundworm may carry hooks, teeth or cutting plates inside a hardened mouth cavity, used to grip. Ancylostoma's holds two pairs of teeth; Necator's holds a pair of cutting plates instead.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 10",
+    "verified": true
+  },
+  {
+    "in": [
+      "egg",
+      "nematode"
+    ],
+    "out": "polar_plug",
+    "why": "Trichuris eggs are barrel-shaped and brown with a transparent protuberance at each pole. The two plugs are the whole identification, and the egg needs two to three weeks in soil before it can infect anyone.",
+    "src": "https://en.wikipedia.org/wiki/Trichuris_trichiura",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "larva",
+      "muscle_cell"
+    ],
+    "out": "nurse_cell",
+    "why": "A Trichinella larva enters a striated muscle cell and reprograms it: the cell stops being muscle and becomes a collagen-walled capsule around the worm. Stomach acid is what releases the larva in the next host.",
+    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "nematode"
+    ],
+    "out": "microfilaria",
+    "why": "Adult filariae in the tissues do not lay eggs; they release live embryos, microfilariae, into blood or skin. Wuchereria's peak in peripheral blood at night, matched to when the mosquito that carries them feeds.",
+    "src": "https://en.wikipedia.org/wiki/Microfilaria",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 27",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagella",
+      "protist"
+    ],
+    "out": "flagellate",
+    "why": "The Mastigophora are the protists that move by lashing flagella rather than by pseudopodia or by cilia — the group that holds Giardia, Trichomonas, the trypanosomes and Leishmania.",
+    "src": "https://en.wikipedia.org/wiki/Flagellate",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 82",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagellate",
+      "microtubule"
+    ],
+    "out": "sucking_disc",
+    "why": "The ventral surface of Giardia is dished into a rigid concavity built on a spiral of microtubules. It grips the intestinal epithelium, which is why the parasite is shed into the stool only intermittently.",
+    "src": "https://en.wikipedia.org/wiki/Giardia_duodenalis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 83",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagella",
+      "membrane"
+    ],
+    "out": "undulating_membrane",
+    "why": "In Trichomonas and in the trypanosomes a flagellum runs backwards attached to the body wall instead of trailing free, and its beat sends a visible ripple down the membrane it is fastened to.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 82",
+    "verified": true
+  },
+  {
+    "in": [
+      "microtubule",
+      "undulating_membrane"
+    ],
+    "out": "axostyle",
+    "why": "Trichomonas has four flagella at the front and a fifth behind, all joined to an undulating membrane, and a barb-like rod of microtubules projecting opposite them. The axostyle is thought to anchor the cell and to do some of the tissue damage.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 82",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagellate",
+      "mitochondrial_dna"
+    ],
+    "out": "kinetoplast",
+    "why": "A network of interlocked circular DNA packed inside a single mitochondrion, holding many copies of the mitochondrial genome. Only one class of flagellates carries one, and it is named after it: the Kinetoplastida.",
+    "src": "https://en.wikipedia.org/wiki/Kinetoplast",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 82",
+    "verified": true
+  },
+  {
+    "in": [
+      "microtubule",
+      "parasitism"
+    ],
+    "out": "apical_complex",
+    "why": "Nearly every apicomplexan is a parasite, and this is the machine that makes it one: a polar ring of microtubules with secretory rhoptries and micronemes behind it, used to force entry into a host cell.",
+    "src": "https://en.wikipedia.org/wiki/Apicomplexa",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 70",
+    "verified": true
+  },
+  {
+    "in": [
+      "crystal",
+      "heme"
+    ],
+    "out": "hemozoin",
+    "why": "A blood-feeding parasite that digests haemoglobin releases free heme, which would kill it. Plasmodium crystallises the heme instead into hemozoin — inert, iron-rich, and dark enough to see down a microscope.",
+    "src": "https://en.wikipedia.org/wiki/Hemozoin",
+    "verified": true
+  },
+  {
+    "in": [
+      "nematode",
+      "polar_plug"
+    ],
+    "out": "trichuris_trichiura",
+    "why": "A roundworm named for its shape: a slender anterior three-fifths threaded into the mucosa of the large intestine, with a thicker handle behind. It feeds on tissue secretions rather than on blood.",
+    "src": "https://en.wikipedia.org/wiki/Trichuris_trichiura",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "nematode",
+      "parthenogenesis"
+    ],
+    "out": "strongyloides_stercoralis",
+    "why": "The parasitic females reproduce parthenogenetically, with no male anywhere in the cycle. Their eggs hatch inside the gut wall, so it is larvae that appear in the stool, and those larvae can reinfect the same host.",
+    "src": "https://en.wikipedia.org/wiki/Strongyloides_stercoralis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "larva",
+      "nematode"
+    ],
+    "out": "dracunculus_medinensis",
+    "why": "The gravid female is close to a metre long and almost entirely uterus — a bag of larvae. About a year after infection she raises a burning blister in a limb, and cold water on it makes her expel them in a milky cloud.",
+    "src": "https://en.wikipedia.org/wiki/Dracunculus_medinensis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 26",
+    "verified": true
+  },
+  {
+    "in": [
+      "microfilaria",
+      "nematode"
+    ],
+    "out": "onchocerca_volvulus",
+    "why": "Adult pairs live for years coiled in fibrous nodules the host builds around them, called onchocercomas. Those adults do little harm; it is the microfilariae they release, wandering the skin and the eye, that blind people.",
+    "src": "https://en.wikipedia.org/wiki/Onchocerca_volvulus",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 27",
+    "verified": true
+  },
+  {
+    "in": [
+      "hydatid_cyst",
+      "tapeworm"
+    ],
+    "out": "echinococcus_granulosus",
+    "why": "The adult is tiny — 3 to 6 mm, three or four proglottids — and lives in a dog's intestine. Nearly all the animal's mass is on the other side of its cycle, in a hydatid cyst growing for years in a sheep or a person.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcus_granulosus",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 46",
+    "verified": true
+  },
+  {
+    "in": [
+      "cobalamin",
+      "tapeworm"
+    ],
+    "out": "diphyllobothrium_latum",
+    "why": "A pseudophyllid tapeworm whose scolex grips with two slit-like grooves rather than four suckers. It competes for dietary vitamin B12 directly, and in about 1% of infections that causes a macrocytic anaemia.",
+    "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 45",
+    "verified": true
+  },
+  {
+    "in": [
+      "metacercaria",
+      "trematode"
+    ],
+    "out": "fasciola_hepatica",
+    "why": "Its cercariae never touch skin. They encyst as metacercariae on raw water vegetation such as watercress, and whatever grazes or eats that plant swallows them; the young flukes then bore to the bile ducts.",
+    "src": "https://en.wikipedia.org/wiki/Fasciola_hepatica",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "tegument",
+      "trematode"
+    ],
+    "out": "paragonimus_westermani",
+    "why": "A thick, spined-tegument fluke that settles in pairs inside cysts in the lung and lays eggs that leave in sputum. The chronic bloody cough it produces is routinely mistaken for tuberculosis.",
+    "src": "https://en.wikipedia.org/wiki/Paragonimus_westermani",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "cilia",
+      "protozoan"
+    ],
+    "out": "balantidium_coli",
+    "why": "A ciliate alveolate rowed along by a full coat of cilia — the only member of the phylum Ciliophora known to be pathogenic to humans. Its main reservoir is domestic and wild pigs, not people.",
+    "src": "https://en.wikipedia.org/wiki/Balantidium_coli",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 96",
+    "verified": true
+  },
+  {
+    "in": [
+      "trypanosoma",
+      "undulating_membrane"
+    ],
+    "out": "trypanosoma_brucei",
+    "why": "Unlike most protozoan parasites it never enters a cell; it swims free in blood and lymph, driven by a flagellum bound along its side into an undulating membrane, and swaps its surface coat to stay ahead of the immune system.",
+    "src": "https://en.wikipedia.org/wiki/Trypanosoma_brucei",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 110",
+    "verified": true
+  },
+  {
+    "in": [
+      "kinetoplast",
+      "trypanosoma"
+    ],
+    "out": "trypanosoma_cruzi",
+    "why": "A kinetoplastid: its single mitochondrion holds a disc of interlocked DNA circles so large it is visible under a light microscope. In a blood smear the parasite takes a characteristic C shape.",
+    "src": "https://en.wikipedia.org/wiki/Trypanosoma_cruzi",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 111",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "housefly"
+    ],
+    "out": "tsetse_fly",
+    "why": "Glossina is a true fly like the housefly, but an obligate parasite: both sexes feed only on vertebrate blood, and the crop stretches enough to take a meal equal to the fly's own weight.",
+    "src": "https://en.wikipedia.org/wiki/Tsetse_fly",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "insect"
+    ],
+    "out": "sandfly",
+    "why": "Phlebotomine sandflies are small — a body around 3 mm — and densely hairy, which helps them escape notice. Only the female takes blood, and she is the vector of every form of leishmaniasis.",
+    "src": "https://en.wikipedia.org/wiki/Phlebotominae",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "river"
+    ],
+    "out": "black_fly",
+    "why": "Simulium lays its eggs in running water and the larvae hold onto submerged rocks with hooks. That is the whole reason river blindness is called river blindness: the vector cannot breed away from a fast stream.",
+    "src": "https://en.wikipedia.org/wiki/Simuliidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "insect"
+    ],
+    "out": "triatomine_bug",
+    "why": "A blood-feeding bug that bites at night, usually on the face. The parasite passes in the insect's feces, not its saliva — unusual among bloodsucking vectors — and enters when the bite is scratched.",
+    "src": "https://en.wikipedia.org/wiki/Triatominae",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "tegument"
+    ],
+    "out": "praziquantel",
+    "why": "It makes the worm's membranes permeable to calcium ions; the influx locks the muscles in contraction. It also disrupts the tegument, exposing the parasite's own antigens to the host's immune system.",
+    "src": "https://en.wikipedia.org/wiki/Praziquantel",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 172",
+    "verified": true
+  },
+  {
+    "in": [
+      "glucose",
+      "microtubule"
+    ],
+    "out": "albendazole",
+    "why": "It binds the worm's beta-tubulin so microtubules cannot assemble, and glucose uptake fails with them. The parasite is forced onto its glycogen stores and dies when the ATP runs out.",
+    "src": "https://en.wikipedia.org/wiki/Albendazole",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 172",
+    "verified": true
+  },
+  {
+    "in": [
+      "glycogen",
+      "microtubule"
+    ],
+    "out": "mebendazole",
+    "why": "It binds the colchicine site of beta-tubulin, blocking tubulin from polymerising in the parasite's intestinal cells. The worm is immobilised gradually rather than killed outright, and passes out.",
+    "src": "https://en.wikipedia.org/wiki/Mebendazole",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 176",
+    "verified": true
+  },
+  {
+    "in": [
+      "nematode",
+      "streptomyces"
+    ],
+    "out": "ivermectin",
+    "why": "Omura's soil Streptomyces yielded the avermectins, and Campbell's screen showed they paralysed nematodes. The drug binds glutamate-gated chloride channels found in invertebrate nerve and muscle, and not in ours.",
+    "src": "https://en.wikipedia.org/wiki/Ivermectin",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 178",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagellate",
+      "nitrogen"
+    ],
+    "out": "metronidazole",
+    "why": "A nitroimidazole that only becomes toxic once its nitro group is reduced, which happens in anaerobic metabolism. One drug therefore covers Giardia, Trichomonas, Entamoeba and the anaerobic bacteria, and spares aerobes.",
+    "src": "https://en.wikipedia.org/wiki/Metronidazole",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 173",
+    "verified": true
+  },
+  {
+    "in": [
+      "mitochondrion",
+      "tapeworm"
+    ],
+    "out": "niclosamide",
+    "why": "It uncouples the worm's oxidative phosphorylation and blocks its glucose uptake, so the scolex loses its grip and is digested. It is not taken up from the gut, which is why it reaches worms in the lumen and nothing else.",
+    "src": "https://en.wikipedia.org/wiki/Niclosamide",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 176",
+    "verified": true
+  },
+  {
+    "in": [
+      "microfilaria",
+      "white_blood_cell"
+    ],
+    "out": "diethylcarbamazine",
+    "why": "It inhibits arachidonic acid metabolism in microfilariae, which leaves them open to innate immune attack rather than killing them directly. The adult worms in the tissues survive it.",
+    "src": "https://en.wikipedia.org/wiki/Diethylcarbamazine",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 173",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "nematode"
+    ],
+    "out": "pyrantel_pamoate",
+    "why": "A depolarising neuromuscular blocker: the roundworm contracts suddenly and is then paralysed, so it loses its grip on the intestinal wall and is passed out rather than killed in place.",
+    "src": "https://en.wikipedia.org/wiki/Pyrantel_pamoate",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 176",
+    "verified": true
+  },
+  {
+    "in": [
+      "cryptosporidium",
+      "fermentation"
+    ],
+    "out": "nitazoxanide",
+    "why": "It interferes with pyruvate:ferredoxin oxidoreductase, an electron-transfer enzyme essential to anaerobic energy metabolism and absent from us. It is first-line for Cryptosporidium and for Giardia.",
+    "src": "https://en.wikipedia.org/wiki/Nitazoxanide",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 176",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "cinchona_tree"
+    ],
+    "out": "quinine",
+    "why": "Powdered cinchona bark was the only thing that worked against malaria for three centuries. Pelletier and Caventou pulled the alkaloid out of the bark in 1820, and quinine is still the fallback where chloroquine has failed.",
+    "src": "https://en.wikipedia.org/wiki/Quinine",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 178",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "taenia_solium"
+    ],
+    "out": "taeniasis",
+    "why": "A person becomes the definitive host by eating undercooked pork carrying cysticerci. The bladder everts in the small intestine, the scolex hooks into the wall, and the worm buds segments behind it for years.",
+    "src": "https://en.wikipedia.org/wiki/Taeniasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 39",
+    "verified": true
+  },
+  {
+    "in": [
+      "beef",
+      "taenia_saginata"
+    ],
+    "out": "taeniasis",
+    "why": "The same disease from the other animal: Cysticercus bovis in raw or undercooked beef. Humans are the only known definitive host of either species, and usually carry just the one worm.",
+    "src": "https://en.wikipedia.org/wiki/Taeniasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 43",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "taenia_solium"
+    ],
+    "out": "cysticercosis",
+    "why": "Swallowing Taenia solium eggs, rather than larvae in pork, puts a person in the pig's place: the oncospheres hatch, cross the gut wall and form cysticerci in muscle, skin, eye or brain. Contaminated vegetables are a main source.",
+    "src": "https://en.wikipedia.org/wiki/Cysticercosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 43",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "cysticercosis"
+    ],
+    "out": "neurocysticercosis",
+    "why": "Around 60% of people with cysticercosis have larvae in the brain. Seizures are the commonest symptom, and in developing countries this is one of the leading causes of them; the disease is called the great imitator.",
+    "src": "https://en.wikipedia.org/wiki/Neurocysticercosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 43",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascaris_lumbricoides",
+      "soil"
+    ],
+    "out": "ascariasis",
+    "why": "Eggs pass out in feces and need two to three weeks in warm, moist soil before they can infect anyone; then they persist there for ten years or more. Swallowed, they hatch, and the larvae set off through liver and lungs.",
+    "src": "https://en.wikipedia.org/wiki/Ascariasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "hookworm",
+      "soil"
+    ],
+    "out": "hookworm_disease",
+    "why": "Eggs in feces hatch in warm damp soil and the filariform larvae penetrate skin directly — walking barefoot is the risk factor. Chronic blood loss from the attached adults makes it a leading cause of anaemia.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm_infection",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "trichuris_trichiura"
+    ],
+    "out": "trichuriasis",
+    "why": "Whipworm eggs pass in feces, embryonate in soil for two to three weeks, and are swallowed on unwashed vegetables or from hands. Heavy loads cause bloody diarrhoea, growth faltering and rectal prolapse.",
+    "src": "https://en.wikipedia.org/wiki/Trichuriasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "enterobius_vermicularis",
+      "human"
+    ],
+    "out": "enterobiasis",
+    "why": "The gravid female crawls out at night and lays on the perianal skin; the eggs are infective within hours. Scratching moves them to the mouth, and they are light enough to go airborne in bedding and house dust.",
+    "src": "https://en.wikipedia.org/wiki/Pinworm_infection",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "strongyloides_stercoralis"
+    ],
+    "out": "strongyloidiasis",
+    "why": "Larvae penetrate skin from soil, but the disease is unusual because larvae in the gut can become infective before they leave. That autoinfective cycle has kept infections alive in people for decades.",
+    "src": "https://en.wikipedia.org/wiki/Strongyloidiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_fly",
+      "onchocerca_volvulus"
+    ],
+    "out": "onchocerciasis",
+    "why": "Simulium black flies pass the larvae on, usually over many bites. The damage comes from the microfilariae the adults release, wandering the skin and every structure of the eye, and from the allergy to them.",
+    "src": "https://en.wikipedia.org/wiki/Onchocerciasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 29",
+    "verified": true
+  },
+  {
+    "in": [
+      "copepod",
+      "dracunculus_medinensis"
+    ],
+    "out": "dracunculiasis",
+    "why": "The larvae travel inside copepods in drinking water; stomach acid digests the copepod and frees the worm. Filtering water through cloth breaks the cycle, which is why the disease has almost been eradicated.",
+    "src": "https://en.wikipedia.org/wiki/Dracunculiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 26",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "echinococcus_granulosus"
+    ],
+    "out": "echinococcosis",
+    "why": "The adult worm lives in dogs and other canines; sheep are the usual intermediate host. A person who swallows eggs from close contact with an infected dog takes the sheep's place, and grows a hydatid cyst instead.",
+    "src": "https://en.wikipedia.org/wiki/Echinococcosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 40",
+    "verified": true
+  },
+  {
+    "in": [
+      "fasciola_hepatica",
+      "watercress"
+    ],
+    "out": "fascioliasis",
+    "why": "A plant-borne trematode zoonosis: metacercariae encysted on raw watercress and other water vegetation are swallowed whole. The young flukes bore out of the gut to the liver and settle in the bile ducts.",
+    "src": "https://en.wikipedia.org/wiki/Fasciolosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "clonorchis_sinensis",
+      "fish"
+    ],
+    "out": "clonorchiasis",
+    "why": "The metacercariae sit in the flesh of freshwater fish, so raw or undercooked fish is the route in. The adults live in the bile ducts for up to thirty years, and long infection is a risk factor for cholangiocarcinoma.",
+    "src": "https://en.wikipedia.org/wiki/Clonorchiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "crab",
+      "paragonimus_westermani"
+    ],
+    "out": "paragonimiasis",
+    "why": "The metacercariae are in raw or undercooked freshwater crabs and crayfish. The young flukes cross the diaphragm into the lungs, and the chronic fibrotic cough that follows is easily mistaken for tuberculosis.",
+    "src": "https://en.wikipedia.org/wiki/Paragonimiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "diphyllobothrium_latum",
+      "salmon"
+    ],
+    "out": "diphyllobothriasis",
+    "why": "The plerocercoid larva waits in the flesh of freshwater fish, salmon and pike among them, so sashimi and ceviche have carried it well outside its old range. Vitamin B12 deficiency follows in about 1% of cases.",
+    "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 45",
+    "verified": true
+  },
+  {
+    "in": [
+      "leishmania",
+      "sandfly"
+    ],
+    "out": "leishmaniasis",
+    "why": "Female phlebotomine sandflies inject metacyclic promastigotes while feeding. Where the parasite settles decides the disease: skin for the cutaneous form, mucous membranes for the mucocutaneous, spleen and liver for the visceral.",
+    "src": "https://en.wikipedia.org/wiki/Leishmaniasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 94",
+    "verified": true
+  },
+  {
+    "in": [
+      "trypanosoma_brucei",
+      "tsetse_fly"
+    ],
+    "out": "sleeping_sickness",
+    "why": "An infected tsetse fly injects the parasite while feeding. It multiplies in blood and lymph first, then crosses into the central nervous system, and untreated it is generally fatal.",
+    "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 110",
+    "verified": true
+  },
+  {
+    "in": [
+      "triatomine_bug",
+      "trypanosoma_cruzi"
+    ],
+    "out": "chagas_disease",
+    "why": "The kissing bug defecates as it feeds and the parasite enters through the scratched bite, not the bite itself. Decades later, chronic infection damages the heart in up to a third of cases, and can enlarge the gut.",
+    "src": "https://en.wikipedia.org/wiki/Chagas_disease",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 111",
+    "verified": true
+  },
+  {
+    "in": [
+      "balantidium_coli",
+      "pig"
+    ],
+    "out": "balantidiasis",
+    "why": "Pigs are the main reservoir, and human infection is commonest where people and pigs live close together. Cysts pass in feces and are swallowed in contaminated food or water; fewer than 1% of people carry it.",
+    "src": "https://en.wikipedia.org/wiki/Balantidiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 111",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "trichomonas_vaginalis"
+    ],
+    "out": "trichomoniasis",
+    "why": "Spread by direct sexual contact — the parasite forms no cyst and cannot survive a trip through the environment. Women get the symptoms; men are usually asymptomatic carriers, which is how it keeps circulating.",
+    "src": "https://en.wikipedia.org/wiki/Trichomoniasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 86",
+    "verified": true
+  },
+  {
+    "in": [
+      "pork",
+      "trichinella_spiralis"
+    ],
+    "out": "trichinosis",
+    "why": "Undercooked pork and wild game are how the encysted larvae get in; stomach acid frees them from their nurse cells. Migration into muscle a week later brings the muscle pain and the swollen face.",
+    "src": "https://en.wikipedia.org/wiki/Trichinosis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "schistosoma",
+      "snail"
+    ],
+    "out": "schistosomiasis",
+    "why": "The vehicle is fresh water, but the engine is the snail: one miracidium multiplies inside it into hundreds of cercariae, and those are what pierce the skin of anyone wading. No snail, no transmission.",
+    "src": "https://en.wikipedia.org/wiki/Schistosomiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "giardia",
+      "water"
+    ],
+    "out": "giardiasis",
+    "why": "Cysts shed in feces contaminate water and survive nearly three months in cold water. Swallowing a handful is enough, which is why the disease turns up in hikers, in nurseries and in whole water supplies at once.",
+    "src": "https://en.wikipedia.org/wiki/Giardiasis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 83",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetabulum",
+      "trematode"
+    ],
+    "out": "clonorchis_sinensis",
+    "why": "A hermaphroditic fluke holding on with an oral sucker and a ventral one, living in the common bile duct and the gall bladder and feeding on bile. It can survive thirty years in one host.",
+    "src": "https://en.wikipedia.org/wiki/Clonorchis_sinensis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 54",
+    "verified": true
+  },
+  {
+    "in": [
+      "axostyle",
+      "flagellate"
+    ],
+    "out": "trichomonas_vaginalis",
+    "why": "Four anterior flagella, a fifth at the back, all joined to an undulating membrane, and a barb-like axostyle projecting opposite them. It never makes a cyst, which is why only direct contact passes it on.",
+    "src": "https://en.wikipedia.org/wiki/Trichomonas_vaginalis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 82",
+    "verified": true
+  },
+  {
+    "in": [
+      "cercaria",
+      "trematode"
+    ],
+    "out": "schistosoma",
+    "why": "The blood flukes are the ones whose cercariae pierce skin instead of encysting: a fork-tailed larva leaves the snail, burrows into a foot or a leg on contact with fresh water, and sheds its tail to become a schistosomule.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "apicomplexan",
+      "hemozoin"
+    ],
+    "out": "plasmodium",
+    "why": "The apicomplexan genus that does its growing inside red blood cells: it digests their haemoglobin and dumps the leftover heme as hemozoin, the dark malaria pigment pathologists find in the tissues afterwards.",
+    "src": "https://en.wikipedia.org/wiki/Plasmodium",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 100",
+    "verified": true
+  },
+  {
+    "in": [
+      "flatworm",
+      "scolex"
+    ],
+    "out": "tapeworm",
+    "why": "A tapeworm is a flatworm of the class Cestoda, and the scolex is what makes it one: a holdfast under 2 mm long with four suckers, gripping the gut wall while the segmented body streams behind it.",
+    "src": "https://en.wikipedia.org/wiki/Cestoda",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 39",
+    "verified": true
+  },
+  {
+    "in": [
+      "rostellum",
+      "tapeworm"
+    ],
+    "out": "taenia_solium",
+    "why": "The armed tapeworm. Its scolex carries a rostellum between the four suckers, ringed with two rows of 22 to 32 spiny hooks, and that crown is exactly what separates it from the beef tapeworm.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_solium",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 43",
+    "verified": true
+  },
+  {
+    "in": [
+      "acetabulum",
+      "tapeworm"
+    ],
+    "out": "taenia_saginata",
+    "why": "The unarmed tapeworm: four suckers on the scolex and no hooks and no rostellum at all. That absence is the identifying feature against the other Taenia, and it can still exceed twenty metres.",
+    "src": "https://en.wikipedia.org/wiki/Taenia_saginata",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 43",
+    "verified": true
+  },
+  {
+    "in": [
+      "buccal_capsule",
+      "nematode"
+    ],
+    "out": "hookworm",
+    "why": "A roundworm whose head bends back into a hook, holding the gut wall with a hardened mouth cavity — two pairs of teeth in the Old World species, a pair of cutting plates in the New World one. Feeding that way is what makes it a cause of anaemia.",
+    "src": "https://en.wikipedia.org/wiki/Hookworm",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 10",
+    "verified": true
+  },
+  {
+    "in": [
+      "gynecophoral_canal",
+      "trematode"
+    ],
+    "out": "schistosoma",
+    "why": "Alone among the flukes the blood flukes have separate sexes, and the male's body curls into a long channel that holds the larger female for the whole of their adult lives, in the veins of the gut or bladder.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 52",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuticle",
+      "nematode"
+    ],
+    "out": "ascaris_lumbricoides",
+    "why": "The large intestinal roundworm: a female runs 22 to 35 cm and lays as many as 200,000 eggs a day. A thick, digestion-resistant cuticle is what lets an animal that size sit in a small intestine undigested.",
+    "src": "https://en.wikipedia.org/wiki/Ascaris_lumbricoides",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "nematode",
+      "nurse_cell"
+    ],
+    "out": "trichinella_spiralis",
+    "why": "It does not simply hide in muscle: the larva enters a striated muscle cell and reprograms it into a collagen-walled nurse cell, then lives inside the thing it made. Nothing else among the roundworms does this.",
+    "src": "https://en.wikipedia.org/wiki/Trichinella_spiralis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 13",
+    "verified": true
+  },
+  {
+    "in": [
+      "flagellate",
+      "sucking_disc"
+    ],
+    "out": "giardia",
+    "why": "A flagellate with four pairs of flagella and a rigid dished underside built on microtubules. That ventral disc clamps it to the lining of the small intestine, and it never invades any further than that.",
+    "src": "https://en.wikipedia.org/wiki/Giardia_duodenalis",
+    "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 83",
     "verified": true
   }
 ]
