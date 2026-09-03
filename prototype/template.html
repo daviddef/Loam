@@ -189,6 +189,10 @@ __CATEGORY_CSS__
     border-radius:99px;min-width:14px;height:14px;line-height:14px;text-align:center;
     display:inline-block;margin-left:5px;
   }
+  /* Erase mode is destructive and modal, so the board has to look different
+     while it is on -- the same reason the decay toggle lights up. */
+  body.erasing #board{cursor:crosshair}
+  body.erasing #eraseBtn{background:var(--brick);color:var(--cream);border-color:var(--brick)}
   .spacer{flex:1}
   /* Every header pill reads the same way: a number, then what the number
      counts. The three used to be styled apart — only #count had the flex row,
@@ -2056,6 +2060,7 @@ __CATEGORY_CSS__
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
       <button data-z="motes" id="motesBtn" title="Dots along the lines"><span class="gl" style="--g:15px">__UI_MOTES__</span></button>
       <button data-z="consolidate" id="consolidateBtn" title="One card per thing"><span class="gl" style="--g:15px">__UI_CONSOLIDATE__</span></button>
+      <button data-z="erase" id="eraseBtn" title="Erase mode — right-drag wipes what the pointer touches">🧽</button>
       <button data-z="decay" id="decayBtn" title="Decay mode — tap anything to see what removing it would break">🥀</button>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
@@ -4393,6 +4398,7 @@ document.getElementById('zoom').addEventListener('click', ev => {
   }
   else if (z === 'consolidate') toggleConsolidate();
   else if (z === 'decay') toggleDecayPick();
+  else if (z === 'erase') toggleErasePick();
 });
 syncMotesBtn();
 syncConsolidateBtn();
@@ -5344,6 +5350,25 @@ let holdT = 0;
 // snapshots the WHOLE bench, so a single call at the start of the drag
 // already restores everything the drag went on to remove.
 board.addEventListener('contextmenu', ev => ev.preventDefault());
+// Right-drag used to erase, unconditionally. That was the only spare gesture
+// on the board, and the info tab needs one: tapping a card to read about it
+// also expands or folds it, so there was no way to inspect a card without
+// changing the board. ("tapping expands or removes the object ancestry on
+// board. i think we need to make the i button change right click, instead of
+// delete, and maybe have a delete icon in the floating toolbar we can toggle
+// on and off" — asked live.)
+//
+// So right-click now points the info tab at whatever is under it, and erasing
+// moved behind a toggle in the board rail. Destructive-by-default on a gesture
+// with no undo prompt was the wrong way round anyway.
+let erasePick = false;
+function toggleErasePick() {
+  erasePick = !erasePick;
+  document.getElementById('eraseBtn').classList.toggle('on', erasePick);
+  document.body.classList.toggle('erasing', erasePick);
+  toast(erasePick ? 'Erase mode — right-drag wipes what you touch'
+                  : 'Erase mode off — right-click reads a card instead');
+}
 let eraseDrag = false;
 function eraseAt(x, y) {
   const chip = hit(x, y);
@@ -5361,6 +5386,16 @@ function eraseAt(x, y) {
 board.addEventListener('pointerdown', ev => {
   if (ev.button !== 2) return;
   ev.preventDefault();
+  if (!erasePick) {                                   // read, do not destroy
+    const chip = hit(ev.clientX, ev.clientY);
+    if (chip && chip.matches('.chip.board') && chip.dataset.id) {
+      setInfo(chip.dataset.id);
+      if (asideTab !== 'info') setAsideTab('info');
+      chip.classList.add('pop');
+      setTimeout(() => chip.classList.remove('pop'), 330);
+    }
+    return;
+  }
   eraseDrag = true;
   pushUndo('erasing what the pointer touched');
   eraseAt(ev.clientX, ev.clientY);

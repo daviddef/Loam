@@ -22,6 +22,16 @@
  * use the Jmol/RasMol CPK convention because that is what a chemist expects to
  * see; every other colour in the game comes from the Munsell table.
  *
+ * THE SAMENESS CHECK IS NECESSARY AND NOT SUFFICIENT. It fingerprints
+ * geometry and ignores role entirely, so it catches two drawings that are the
+ * same shape and cannot catch a drawing that is the wrong shape. On 3 Sep it
+ * passed a wrench that read as a key, an axe that read as a hand mirror, a
+ * banknote that read as a wall plaque and a razor that read as a ceiling lamp
+ * -- four items, all scoring clean, all wrong. Another batch shipped a sink
+ * that read as a table until a basin hollow was added, and a tin can whose
+ * peeled lid was invisible because it was drawn in `gh`. Render the batch and
+ * look at it, at shelf size as well as large, before calling it done.
+ *
  * Usage:  node tools/art.mjs            write data/art.json
  *         node tools/art.mjs check      report coverage, write nothing
  */
