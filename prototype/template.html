@@ -6440,7 +6440,18 @@ const bestRecipe = new Map();
       const set = new Set([i]);
       for (const x of parts) for (const c of cost.get(x)) set.add(c);
       const cur = cost.get(r.out);
-      if (!cur || set.size < cur.size) { cost.set(r.out, set); bestRecipe.set(r.out, r); changed = true; }
+      // Cheapest-from-the-starters is a good default and a bad answer when the
+      // cheapest route is not the usual one. Sweet cream came out of `cream +
+      // honey` because honey's own chain is shorter than sugar's -- true, and
+      // not what anyone means by sweet cream. ("cream + honey makes sweet
+      // cream? that may be true, but shouldnt cream+sugar be the default?" --
+      // asked live.) A recipe may now say `canonical: true`, and that wins
+      // outright; everything unmarked falls back to the old measure, so this
+      // costs nothing until someone makes a call.
+      const curR = bestRecipe.get(r.out);
+      const beats = r.canonical ? !curR?.canonical
+                                : !curR?.canonical && (!cur || set.size < cur.size);
+      if (!cur || beats) { cost.set(r.out, set); bestRecipe.set(r.out, r); changed = true; }
     });
     if (!changed) break;
   }

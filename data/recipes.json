@@ -1516,7 +1516,8 @@
     "out": "sweet_cream",
     "supported": true,
     "why": "Sugar does more than sweeten — dissolved in the water it lowers the freezing point, which is why ice cream stays soft enough to scoop.",
-    "src": "https://en.wikipedia.org/wiki/Ice_cream"
+    "src": "https://en.wikipedia.org/wiki/Ice_cream",
+    "canonical": true
   },
   {
     "in": [
@@ -81407,6 +81408,576 @@
     "out": "seal",
     "why": "The pinniped that went without the eared seal's kit: ear holes rather than flaps, hind flippers that will not rotate forward, so on land it galumphs on its belly. It regulates heat by diverting blood into a smooth layer of blubber under the skin.",
     "src": "https://en.wikipedia.org/wiki/Earless_seal",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "charcoal"
+    ],
+    "out": "kiln",
+    "why": "Build a chamber round the fire instead of standing the ware in it. A kiln is a thermally insulated chamber — a type of oven — and charcoal inside one reaches temperatures an open wood fire never will.",
+    "src": "https://en.wikipedia.org/wiki/Kiln",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "kiln"
+    ],
+    "out": "oven",
+    "why": "The masonry oven is a kiln you bake in: a chamber of fireproof brick, fired with wood, then swept of ash so the bread meets the heat the brick has stored. Same chamber, lower temperature.",
+    "src": "https://en.wikipedia.org/wiki/Masonry_oven",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "stove"
+    ],
+    "out": "oven",
+    "why": "Cast iron replaced masonry and the range shrank to fit a kitchen. A modern stove has an oven in it — an enclosed box beside the fire, for baking rather than direct heat.",
+    "src": "https://en.wikipedia.org/wiki/Kitchen_stove",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "stove"
+    ],
+    "out": "kettle",
+    "why": "A stovetop kettle is a metal pot built for one job, taking its heat from the hob below. Lid, spout and handle; stainless steel now, copper and cast iron in the 1800s.",
+    "src": "https://en.wikipedia.org/wiki/Kettle",
+    "verified": true
+  },
+  {
+    "in": [
+      "heating_element",
+      "pot"
+    ],
+    "out": "kettle",
+    "why": "The electric kettle moved the element off the hob and put it inside the water. Nothing heats but the water itself, which is why it beats a pan on a stove.",
+    "src": "https://en.wikipedia.org/wiki/Kettle",
+    "verified": true
+  },
+  {
+    "in": [
+      "bread",
+      "heating_element"
+    ],
+    "out": "toaster",
+    "why": "A toaster is heating elements with slots between them. It waited on nichrome, patented by Albert Marsh in 1906 — the oldest resistance heating alloy, and the first wire that would sit at red heat in open air day after day.",
+    "src": "https://en.wikipedia.org/wiki/Nichrome",
+    "verified": true
+  },
+  {
+    "in": [
+      "refrigerator"
+    ],
+    "verb": "chill",
+    "out": "freezer",
+    "why": "A freezer is a specialised refrigerator: the same vapour-compression loop pushed below the freezing point of water, about -18 °C. Home freezer compartments arrived in 1940.",
+    "src": "https://en.wikipedia.org/wiki/Freezer",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_motor",
+      "knife"
+    ],
+    "out": "blender",
+    "why": "A stationary blender is a container with a rotating blade at the bottom, powered by an electric motor in the base. The jar is only there to keep the food against the blade.",
+    "src": "https://en.wikipedia.org/wiki/Blender_(appliance)",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "tin"
+    ],
+    "out": "jar",
+    "why": "The tinsmith John Landis Mason patented the pattern in 1858: a glass jar with a thread moulded into its neck, and a metal band that screws down to press a flat lid against the rim.",
+    "src": "https://en.wikipedia.org/wiki/Mason_jar",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "tin"
+    ],
+    "out": "tin_can",
+    "why": "A tin can is not tin. It is a steel can with a thin tin coating, and the coating is the whole point — it stops the contents rusting the steel they sit against.",
+    "src": "https://en.wikipedia.org/wiki/Tin_can",
+    "verified": true
+  },
+  {
+    "in": [
+      "willow",
+      "willow"
+    ],
+    "out": "basket",
+    "why": "Withies crossed over and under each other until they hold their own shape. Willow was the material of choice for its flexibility and for how easily it can be grown and cut.",
+    "src": "https://en.wikipedia.org/wiki/Basket_weaving",
+    "verified": true
+  },
+  {
+    "in": [
+      "bowl",
+      "pipe"
+    ],
+    "out": "sink",
+    "why": "A sink is a bowl-shaped plumbing fixture. The basin is the old part; what makes it a sink is the pipework — water arriving under pressure and a drain taking it away.",
+    "src": "https://en.wikipedia.org/wiki/Sink",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "screw"
+    ],
+    "out": "tap",
+    "why": "A tap is a screw with a washer on the end of it, wound down onto a seat to shut off the flow. The first screw-down mechanism was patented by the Rotherham brass founders Guest and Chrimes in 1845.",
+    "src": "https://en.wikipedia.org/wiki/Tap_(valve)",
+    "verified": true
+  },
+  {
+    "in": [
+      "stoneware",
+      "wheel"
+    ],
+    "out": "plate",
+    "why": "A broad, mainly flat vessel with a lip, thrown on the potter's wheel and fired hard enough for daily use. Give it a rounder, deeper profile and you have made a bowl instead.",
+    "src": "https://en.wikipedia.org/wiki/Plate_(dishware)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cup",
+      "stoneware"
+    ],
+    "out": "mug",
+    "why": "A mug is a type of cup: one with a handle, straight-sided, holding 250 to 350 ml. Thick stoneware walls are what let you hold it while the drink inside stays hot.",
+    "src": "https://en.wikipedia.org/wiki/Mug",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "mortar"
+    ],
+    "out": "wall",
+    "why": "Brickwork is masonry made of bricks and mortar. The mortar is not glue so much as bedding: a uniform 10 mm joint that lets units that are never quite identical stack true.",
+    "src": "https://en.wikipedia.org/wiki/Brickwork",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "straw"
+    ],
+    "out": "roof",
+    "why": "Thatching lays bundles of straw so each course sheds water onto the one below, fixed down with horizontal sways and hairpin spars of twisted hazel. The packed straw traps air and insulates as well.",
+    "src": "https://en.wikipedia.org/wiki/Thatching",
+    "verified": true
+  },
+  {
+    "in": [
+      "saw",
+      "wood"
+    ],
+    "out": "floor",
+    "why": "Solid floors are planks milled from single pieces of timber and laid at right angles across the joists. They were structural first — the floor was the thing holding you up, not a surface.",
+    "src": "https://en.wikipedia.org/wiki/Wood_flooring",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "wall"
+    ],
+    "out": "room",
+    "why": "A room is any enclosed space in a structure, bounded by walls, which you can enter only through a door or similar dividing structure. Without the door it is not a room, only a cavity.",
+    "src": "https://en.wikipedia.org/wiki/Room",
+    "verified": true
+  },
+  {
+    "in": [
+      "roof",
+      "wall"
+    ],
+    "out": "house",
+    "why": "Walls and a roofing system to keep the rain out of the dwelling space — everything else a house has is added to that. The social unit living inside it is called a household.",
+    "src": "https://en.wikipedia.org/wiki/House",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "wall"
+    ],
+    "out": "chimney",
+    "why": "Masonry built to carry the smoke of a fire out past the living space, kept as near vertical as possible so the gases draw themselves up. Domestic chimneys appear in northern Europe in the 12th century; England's oldest survivor is at Conisbrough, 1185.",
+    "src": "https://en.wikipedia.org/wiki/Chimney",
+    "verified": true
+  },
+  {
+    "in": [
+      "key",
+      "wood"
+    ],
+    "out": "lock",
+    "why": "Locks have been in use over 6,000 years. The Egyptian wooden pin lock was a bolt, a door fixture and a key that lifted the pins clear — and the modern Yale is a developed version of exactly that.",
+    "src": "https://en.wikipedia.org/wiki/Lock_and_key",
+    "verified": true
+  },
+  {
+    "in": [
+      "wall",
+      "wood"
+    ],
+    "out": "shelf",
+    "why": "A shelf is a flat horizontal plane fixed to a wall or other vertical surface. The board is nothing on its own; the wall is what turns it into storage.",
+    "src": "https://en.wikipedia.org/wiki/Shelf_(storage)",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "shelf"
+    ],
+    "out": "cupboard",
+    "why": "It was a cup board: open shelved tiers for displaying plates, cups and saucers. Put doors on the front and the display becomes storage, which is what the word now means.",
+    "src": "https://en.wikipedia.org/wiki/Cupboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "wool"
+    ],
+    "out": "carpet",
+    "why": "A woven carpet comes off a loom much like woven cloth; a knotted pile carpet adds a supplementary weft that rises at right angles from the weave. Rug meant a coarse coverlet until about 1808.",
+    "src": "https://en.wikipedia.org/wiki/Carpet",
+    "verified": true
+  },
+  {
+    "in": [
+      "chisel",
+      "steel"
+    ],
+    "out": "saw",
+    "why": "Teeth cut into the edge of a steel strip, then bent alternately left and right. That set is the whole trick: the cut ends up wider than the blade, so the blade never binds in its own kerf.",
+    "src": "https://en.wikipedia.org/wiki/Saw",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_motor",
+      "gear"
+    ],
+    "out": "drill",
+    "why": "A hand drill's crank was replaced by an electric motor geared down for torque — patented in Melbourne in 1889 by Arnot and Brain, and made portable by the Fein brothers of Stuttgart in 1895.",
+    "src": "https://en.wikipedia.org/wiki/Drill",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron"
+    ],
+    "verb": "cut",
+    "out": "screw",
+    "why": "A helical thread cut round a shank, so a twist becomes a pull. Every wood screw was filed by hand until Job and William Wyatt patented a screw machine in 1760; by the 1780s the works made 16,000 a day with 30 people.",
+    "src": "https://en.wikipedia.org/wiki/Screw",
+    "verified": true
+  },
+  {
+    "in": [
+      "screw",
+      "steel"
+    ],
+    "out": "screwdriver",
+    "why": "The tool exists only because the fastener does. A screwdriver is classified entirely by its tip, because the tip has to match the driving surfaces cut into the screw head.",
+    "src": "https://en.wikipedia.org/wiki/Screwdriver",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "screw"
+    ],
+    "out": "wrench",
+    "why": "The other way to turn a threaded fastener: grip its flats from outside instead of a slot in its head. A wrench gives grip and mechanical advantage in applying torque to nuts and bolts.",
+    "src": "https://en.wikipedia.org/wiki/Wrench",
+    "verified": true
+  },
+  {
+    "in": [
+      "basalt",
+      "rope"
+    ],
+    "out": "axe",
+    "why": "A stone head lashed to a wooden haft — birch tar and rawhide held the blade on. Hafted axes date back at least 46,000 years in northern Australia; the unhafted hand axe is a million years older still.",
+    "src": "https://en.wikipedia.org/wiki/Axe",
+    "verified": true
+  },
+  {
+    "in": [
+      "oak",
+      "steel"
+    ],
+    "out": "shovel",
+    "why": "A broad blade of sheet steel, its back folded into a socket, on a hardwood handle chosen for a wood that will not snap. The blade digs; the handle is the lever.",
+    "src": "https://en.wikipedia.org/wiki/Shovel",
+    "verified": true
+  },
+  {
+    "in": [
+      "chisel",
+      "oak"
+    ],
+    "out": "ladder",
+    "why": "Two long stiles with rungs let into them. Rigid ladders were wood until aluminium took over in the 20th century — and one is painted on a wall of the Spider Caves in Valencia at least 10,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Ladder",
+    "verified": true
+  },
+  {
+    "in": [
+      "carpenter",
+      "table"
+    ],
+    "out": "workbench",
+    "why": "A table becomes a workbench when it gains a way to fix the workpiece to the surface, so the work can be attacked with both hands. Roubo drew the standard pattern in 1769.",
+    "src": "https://en.wikipedia.org/wiki/Workbench",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "spring"
+    ],
+    "out": "tape_measure",
+    "why": "Tailors used unmarked cloth tapes, notched by hand. James Chesterman's 1821 retractable design was a spring-loaded cloth strip with markings, in a compact case; he later repurposed surplus pannier-dress wire for the first steel tape.",
+    "src": "https://en.wikipedia.org/wiki/Tape_measure",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel"
+    ],
+    "verb": "cut",
+    "out": "gear",
+    "why": "A gear is a toothed wheel, and nothing more: cut teeth into the rim and its rotation can be handed to another wheel instead of slipping against it. Two meshed gears are a gear train.",
+    "src": "https://en.wikipedia.org/wiki/Gear",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "needle"
+    ],
+    "out": "shirt",
+    "why": "Woven cloth cut to the shape of a body and sewn. The world's oldest preserved garment is a linen shirt from a First Dynasty tomb at Tarkhan in Egypt, and it is already sophisticatedly cut.",
+    "src": "https://en.wikipedia.org/wiki/Shirt",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "horse"
+    ],
+    "out": "trousers",
+    "why": "Trousers came from riding. The oldest known pair, from the Yanghai cemetery at Turpan and dated between the 13th and 10th centuries BC, is wool with straight legs and a wide crotch, and was likely made for horseback.",
+    "src": "https://en.wikipedia.org/wiki/Trousers",
+    "verified": true
+  },
+  {
+    "in": [
+      "banknote",
+      "leather"
+    ],
+    "out": "wallet",
+    "why": "Wallets were developed after paper currency reached the West in the 1600s. Before that people carried drawstring leather coin purses — a pouch, not a flat folded case sized to a note.",
+    "src": "https://en.wikipedia.org/wiki/Wallet",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper"
+    ],
+    "verb": "cut",
+    "out": "razor",
+    "why": "Sheet metal cut and worked to one thin edge, kept only for hair. Excavations in Egypt have turned up solid gold and copper razors in tombs from the 4th millennium BC.",
+    "src": "https://en.wikipedia.org/wiki/Razor",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "printing_press"
+    ],
+    "out": "banknote",
+    "why": "A printed promise standing in for metal. Banknotes were first issued by commercial banks, legally required to redeem them for coin on demand at the chief cashier's counter.",
+    "src": "https://en.wikipedia.org/wiki/Banknote",
+    "verified": true
+  },
+  {
+    "in": [
+      "feather",
+      "ink"
+    ],
+    "out": "pen",
+    "why": "The quill pen is a flight feather cut to a nib, holding a bead of ink in its hollow shaft. It replaced the reed pen from about the 7th century, because it wrote finer on skin.",
+    "src": "https://en.wikipedia.org/wiki/Pen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cedar",
+      "graphite"
+    ],
+    "out": "pencil",
+    "why": "A graphite core in a wooden case that stops it snapping and keeps it off your hand. Red cedar was the favoured timber because it is aromatic and does not splinter when sharpened.",
+    "src": "https://en.wikipedia.org/wiki/Pencil",
+    "verified": true
+  },
+  {
+    "in": [
+      "pencil",
+      "rubber"
+    ],
+    "out": "eraser",
+    "why": "The eraser exists because the pencil does — and the material is named after the job. Edward Nairne sold natural rubber cubes for lifting pencil marks off paper from 1770, at three shillings a half inch.",
+    "src": "https://en.wikipedia.org/wiki/Eraser",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "rivet"
+    ],
+    "out": "scissors",
+    "why": "Two blades joined at a pivot so their sharpened edges slide past each other. Roman pivoted shears survive from the 2nd century AD, but they were not made in numbers until Hinchliffe of Sheffield, 1761.",
+    "src": "https://en.wikipedia.org/wiki/Scissors",
+    "verified": true
+  },
+  {
+    "in": [
+      "printing_press",
+      "telegraph"
+    ],
+    "out": "newspaper",
+    "why": "Printing gives you copies; the wire gives you news worth printing today. Few papers could afford foreign bureaus, so they bought telegraphed copy from agencies — Havas from 1835, the Associated Press from 1846.",
+    "src": "https://en.wikipedia.org/wiki/News_agency",
+    "verified": true
+  },
+  {
+    "in": [
+      "compass",
+      "ink"
+    ],
+    "out": "map",
+    "why": "A portolan chart is drawn from compass observations: a web of windrose lines showing constant bearings, coastlines, and place names written perpendicular to the shore. No latitude, no longitude at all.",
+    "src": "https://en.wikipedia.org/wiki/Portolan_chart",
+    "verified": true
+  },
+  {
+    "in": [
+      "bitumen",
+      "stone"
+    ],
+    "out": "road",
+    "why": "A road is a prepared surface. Asphalt concrete is mineral aggregate bound with bitumen, laid in layers and compacted — the stone carries the load and the bitumen keeps it from scattering.",
+    "src": "https://en.wikipedia.org/wiki/Asphalt_concrete",
+    "verified": true
+  },
+  {
+    "in": [
+      "house",
+      "road"
+    ],
+    "out": "street",
+    "why": "A street is a public thoroughfare lined with buildings on one or both sides. A road's job is transport; a street's job is the people beside it — which is why the buildings are what make one.",
+    "src": "https://en.wikipedia.org/wiki/Street",
+    "verified": true
+  },
+  {
+    "in": [
+      "coin",
+      "street"
+    ],
+    "out": "market",
+    "why": "A market is a place people gather regularly to buy and sell — a souk, a bazaar, a mercado, a tianguis, a palengke. It needs somewhere public to stand and a coin everyone will take.",
+    "src": "https://en.wikipedia.org/wiki/Marketplace",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "market"
+    ],
+    "out": "shop",
+    "why": "A shop is a market stall that stopped packing up. Retail shops grew over centuries from little more than rude booths into permanent premises, selling to the person who will use the goods.",
+    "src": "https://en.wikipedia.org/wiki/Retail",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "street"
+    ],
+    "out": "town",
+    "why": "What makes a town rather than a village is the market: it supplies goods and services to the countryside around it. Domesday listed 50 markets in England in 1086, and some 2,000 more were founded between 1200 and 1349.",
+    "src": "https://en.wikipedia.org/wiki/Market_town",
+    "verified": true
+  },
+  {
+    "in": [
+      "room",
+      "teacher"
+    ],
+    "out": "school",
+    "why": "A school is the institution and, for in-person learning, the building: a place designed to hold learners under a teacher's direction. Many early public schools were literally one room and one teacher taking seven grades.",
+    "src": "https://en.wikipedia.org/wiki/School",
+    "verified": true
+  },
+  {
+    "in": [
+      "bed",
+      "church"
+    ],
+    "out": "hospital",
+    "why": "The word means a place of hospitality, and that is what these were first: somewhere to lie down. Historically hospitals were founded and funded by Christian religious orders, and staffed by their members rather than physicians.",
+    "src": "https://en.wikipedia.org/wiki/Hospital",
+    "verified": true
+  },
+  {
+    "in": [
+      "chain",
+      "wheel"
+    ],
+    "out": "bicycle",
+    "why": "The chain is what made the bicycle safe. Running it from frame-mounted cranks to the rear wheel let both wheels shrink to the same size and the seat drop — the safety bicycle, about 1885, barely changed since.",
+    "src": "https://en.wikipedia.org/wiki/Bicycle",
+    "verified": true
+  },
+  {
+    "in": [
+      "freight_wagon",
+      "internal_combustion_engine"
+    ],
+    "out": "truck",
+    "why": "A goods wagon that stopped needing to be pulled. Gottlieb Daimler built the Motor-Lastwagen in 1896; trucks still use body-on-frame construction, with the cab independent of the load behind it.",
+    "src": "https://en.wikipedia.org/wiki/Truck",
+    "verified": true
+  },
+  {
+    "in": [
+      "accelerometer",
+      "propeller"
+    ],
+    "out": "drone",
+    "why": "Four fixed propellers cannot be flown by hand — control comes only from varying each rotor's speed, thousands of times a second. Cheap lightweight flight controllers and accelerometers arrived around 2005-2010, and the quadcopter arrived with them.",
+    "src": "https://en.wikipedia.org/wiki/Quadcopter",
     "verified": true
   }
 ]

@@ -216,6 +216,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* everyday objects, 3 Sep */
+          'screw', 'pen', 'pencil', 'eraser', 'banknote', 'wallet', 'razor', 'tin_can', 'jar', 'mug', 'gear',
           /* additive and metals waves, 3 Sep */
           'indium', 'thallium', 'nihonium', 'flerovium', 'moscovium', 'livermorium', 'praseodymium', 'terbium', 'dysprosium', 'holmium', 'erbium', 'thulium', 'ytterbium', 'lutetium', 'francium', 'einsteinium', 'fermium', 'mendelevium', 'nobelium', 'lawrencium', 'cream_cheese', 'processed_cheese', 'soft_serve', 'carrageen_moss_pudding', 'jelly', 'spherified_pearl', 'dried_apricot', 'instant_mashed_potato', 'sugar_free_gum', 'tabletop_sweetener',
           'organogenesis',
@@ -342,6 +344,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* everyday objects, 3 Sep */
+          'screwdriver', 'wrench', 'saw', 'axe', 'shovel', 'drill', 'tape_measure', 'scissors', 'plate', 'kettle', 'toaster', 'blender', 'basket', 'tap', 'lock', 'map', 'newspaper', 'shirt', 'trousers', 'carpet',
           /* umbrella waves, 3 Sep */
           'gastropod', 'cephalopod', 'bivalve', 'clam', 'squid', 'jellyfish', 'worm', 'flatworm', 'eggshell', 'carapace',
           /* additive and metals waves, 3 Sep */
@@ -537,6 +541,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* everyday objects, 3 Sep */
+          'oven', 'kiln', 'freezer', 'sink', 'shelf', 'cupboard', 'workbench', 'ladder', 'bicycle', 'drone', 'wall', 'roof', 'floor', 'room', 'chimney',
           /* umbrella waves, 3 Sep */
           'solid', 'liquid', 'gas', 'melting', 'freezing', 'vaporization', 'condensation', 'sublimation', 'deposition', 'ionization', 'organism', 'periodic_table', 'transition_metal', 'alkaline_earth_metal', 'lanthanide', 'actinide', 'fundamental_force', 'strong_force', 'weak_force', 'electromagnetism', 'standard_model',
           /* additive and metals waves, 3 Sep */
@@ -731,6 +737,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* everyday objects, 3 Sep */
+          'truck', 'house', 'shop', 'road',
           'areca_palm', 'sauropod', 'pterosaur',
           /* crops and materials wave, 2 Sep */
           'agarwood_tree', 'alder_tree', 'almond_tree', 'argan_tree', 'ash_tree', 'camphor_tree', 'cashew_tree', 'cherry_wood_tree',
@@ -795,6 +803,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* everyday objects, 3 Sep */
+          'school', 'hospital', 'market', 'street',
           /* asbestos chain, 2 Sep */ 'serpentinite',
           /* unblocking-nouns wave, 2 Sep */
           'bastion_fort', 'exaptation', 'fortification', 'heterozygote_advantage', 'kin_selection', 'motte_and_bailey', 'neoteny', 'permian_triassic_extinction',
@@ -843,6 +853,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* everyday objects, 3 Sep */
+          'town',
           /* unblocking-nouns wave, 2 Sep */
           'city_wall', 'eruption', 'lunar_eclipse', 'mont_blanc', 'solar_eclipse',
           /* completeness-audit wave, 2 Sep */

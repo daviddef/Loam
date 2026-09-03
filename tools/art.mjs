@@ -36544,6 +36544,475 @@ def('standard_model', () => [                                         // sevente
   S('M37 3 L37 55', 'gh', 1), S('M47 3 L47 55', 'gh', 1),
 ]);
 
+/* everyday objects, 3 Sep -- tools, writing, civic and machines */
+/* tools, personal, writing, civic, machines ─────────────────────────────── */
+/*
+ * Thirty-two items that all land in `craft`, which means they are all measured
+ * against each other and against the chisel, the knife, the book and the bus.
+ * The separation is done on silhouette, because that is what the fingerprint
+ * buckets: a spanner is a diagonal bar with an open jaw at one end and a ring
+ * at the other, a screwdriver is fat at the top and thin at the bottom, a razor
+ * is a T. None of them is "a handle with a blade on it", which is the shape five
+ * of these would have collapsed into.
+ *
+ * Every one was rendered and looked at, not just measured. The fingerprint was
+ * happy with a wrench that read as a key and an axe that read as a flag; only
+ * the picture caught those.
+ */
+
+def('saw', () => [                                                 // the cut is made by the teeth, so the teeth are the drawing
+  P('M21 15 L54 20 L54 29 L21 31 Z', 'bs'),                        // the plate, tapering away to the toe
+  S('M21 31 L25 37 L29 31 L33 37 L37 31 L41 37 L45 30 L49 36 L53 30', 'ik', 2),  // set teeth, raked one way
+  P('M6 11 Q1 24 6 37 L22 37 L22 11 Z', 'lo'),                     // a closed handle, to pull against
+  E(12, 24, 4.5, 7, 'hi'),                                         // with a hole for four fingers
+]);
+def('drill', () => [                                               // a pistol grip: an L, which no other tool here is
+  P('M8 18 L30 18 L30 32 L22 32 L19 52 L8 52 Z', 'lo'),            // body and grip in one outline
+  P('M30 21 L37 21 L37 31 L30 31 Z', 'bs'),                        // the chuck
+  S('M37 26 L54 26', 'ik', 3.4),                                   // and the bit
+  S('M40 22 L44 30 M46 22 L50 30', 'hi', 1.6),                     // whose flutes carry the swarf out
+  S('M20 34 L26 34', 'hi', 1.6),                                   // the trigger
+]);
+def('screw', () => [                                               // holds by thread, not by friction — that is the whole point
+  P('M21 10 L39 10 L39 18 L21 18 Z', 'lo'),                        // a flat pan head
+  S('M25 14 L35 14', 'ik', 2.2),                                   // driven from a slot, not hit
+  P('M25 18 L35 18 L32 46 L30 53 L28 46 Z', 'bs'),                 // the shank, tapering to a lead point
+  ...[22, 27, 32, 37, 42].map(y => S(`M25 ${y} L35 ${n(y - 3)}`, 'ik', 1.4)),  // one continuous thread, seen edge on
+]);
+def('screwdriver', () => [                                         // fat at the top, thin at the bottom: torque, not cutting
+  P('M23 5 Q30 3 37 5 L36 25 L24 25 Z', 'bs'),                     // a handle nearly half the length
+  S('M26 8 L25 23 M34 8 L35 23', 'lo', 1.6),                       // just enough shape for a hand to turn it
+  P('M24 25 L36 25 L36 30 L24 30 Z', 'lo'),                        // the ferrule
+  S('M30 30 L30 45', 'ik', 3),                                     // a plain round shank
+  P('M26 45 L34 45 L33 55 L27 55 Z', 'hi'),                        // flared back out to a flat tip
+]);
+def('wrench', () => [['g', -38, 30, 30, [                          // laid on the diagonal, so it is never a key
+  P('M14 27 L44 27 L44 33 L14 33 Z', 'bs'),                        // the shank
+  P('M17 17 L3 17 L3 26 L12 27 L12 33 L3 34 L3 43 L17 43 Z', 'lo'), // the jaw, open, sized to two flats
+  ring('lo', 47, 30, 8, 3.5),                                      // and a ring end that cannot slip off the nut
+  ring('hi', 47, 30, 4, 1.4),
+]]]);
+def('axe', () => [                                                 // the mass hangs off the top of a long diagonal haft
+  P('M40 9 Q22 10 14 19 Q10 26 20 34 Q31 30 46 21 Z', 'bs'),       // the bit, flaring from the eye out to the edge
+  S('M14 19 Q10 26 20 34', 'hi', 2.4),                             // the edge itself, curved and bearded
+  S('M39 13 L23 53', 'ik', 4.4),                                   // the haft, ending flush inside the eye
+]);
+def('shovel', () => [                                              // a D at the top, a spade at the bottom, nothing between
+  P('M22 5 Q30 0 38 5 L38 16 L22 16 Z', 'lo'),                     // the D-grip
+  P('M27 9 Q30 6 33 9 L33 16 L27 16 Z', 'hi'),                     // hollowed out, for the hand
+  S('M30 14 L30 33', 'ik', 4),                                     // the shaft
+  P('M17 33 L43 33 L41 45 Q30 57 19 45 Z', 'bs'),                  // a blade rounded to a digging edge
+  S('M30 35 L30 51', 'hi', 1.6),                                   // with a rib pressed down its middle
+]);
+def('ladder', () => [                                              // two rails, splayed, and nothing but rungs between
+  S('M13 53 L21 7', 'bs', 3.4), S('M47 53 L39 7', 'bs', 3.4),
+  ...[13, 24, 35, 46].map(y => {
+    const dx = n(((y - 7) / 46) * 8);
+    return S(`M${n(21 - dx)} ${y} L${n(39 + dx)} ${y}`, 'lo', 2.4);
+  }),
+]);
+def('workbench', () => [                                           // a top thick enough to hit things on, and a vice
+  P('M5 22 L55 22 L55 31 L5 31 Z', 'bs'),
+  P('M10 31 L17 31 L17 53 L10 53 Z', 'lo'), P('M43 31 L50 31 L50 53 L43 53 Z', 'lo'),
+  S('M17 41 L43 41', 'lo', 2.4),                                   // the stretcher that keeps it from racking
+  P('M3 31 L15 31 L15 40 L3 40 Z', 'hi'),                          // the vice, hung off one end
+  S('M9 40 L9 48', 'ik', 2.2),
+]);
+def('tape_measure', () => [                                        // a case with a coil in it and steel drawn out
+  P('M11 24 Q11 18 17 18 L39 18 Q45 18 45 24 L45 42 Q45 48 39 48 L17 48 Q11 48 11 42 Z', 'bs'),
+  ring('lo', 27, 33, 9, 3),                                        // the blade wound inside
+  P('M45 24 L58 20 L58 27 L45 31 Z', 'hi'),                        // and the length of it pulled off
+  ...[48, 52, 56].map(x => S(`M${x} 22 L${x} 27`, 'ik', 1.2)),     // graduations
+]);
+def('gear', () => [                                                // teeth that mesh, which is what makes it not a wheel
+  ...Array.from({ length: 8 }, (_, i) => {
+    const a = (i * Math.PI) / 4;
+    const p = (rad, off) => `${n(30 + rad * Math.cos(a + off))} ${n(30 + rad * Math.sin(a + off))}`;
+    return P(`M${p(14, -0.19)} L${p(22, -0.13)} L${p(22, 0.13)} L${p(14, 0.19)} Z`, 'lo');
+  }),
+  C(30, 30, 15, 'bs'),
+  C(30, 30, 5, 'ik'),                                              // the bore it turns on
+]);
+
+/* personal ───────────────────────────────────────────────────────────────── */
+def('shirt', () => [                                               // two sleeves out to the sides is the whole silhouette
+  P('M22 11 L38 11 L53 19 L47 30 L43 26 L43 51 L17 51 L17 26 L13 30 L7 19 Z', 'bs'),
+  P('M22 11 L30 23 L38 11 L34 9 L30 15 L26 9 Z', 'lo'),            // the open collar
+  ...[31, 38, 45].map(y => C(30, y, 1.4, 'hi')),                   // the button placket
+]);
+def('trousers', () => [                                            // one waist, two legs, and the notch between them
+  P('M16 9 L44 9 L42 53 L33 53 L30 27 L27 53 L18 53 Z', 'bs'),
+  P('M16 9 L44 9 L44 16 L16 16 Z', 'lo'),                          // the waistband
+  S('M30 16 L30 25', 'ik', 1.6),                                   // the fly
+]);
+def('wallet', () => [                                              // folded, and something sticking out of the top of it
+  P('M8 21 L52 21 L52 45 L8 45 Z', 'lo'),                          // the outside, closed
+  P('M15 14 L45 14 L45 23 L15 23 Z', 'hi'),                        // a card standing proud of the fold
+  S('M8 33 L52 33', 'ik', 1.6),                                    // where it folds
+  P('M33 27 L48 27 L48 40 L33 40 Z', 'bs'),                        // and the pocket the notes go in
+]);
+def('razor', () => [                                               // a T: the head is set square across, and far wider
+  P('M14 11 L46 11 L46 18 L14 18 Z', 'bs'),                        // the head, holding the blade
+  ...[20, 26, 32, 38, 44].map(x => S(`M${x} 11 L${x} 17`, 'hi', 1.4)),  // the comb that limits the cut
+  S('M14 11 L46 11', 'ik', 2.4),                                   // one guarded edge, and only one
+  P('M18 18 L42 18 L38 25 L22 25 Z', 'lo'),                        // the shoulder
+  S('M30 25 L30 50', 'lo', 4),                                     // a long thin handle
+  ...[32, 38, 44].map(y => S(`M26 ${y} L34 ${y}`, 'ik', 1.4)),     // knurled, for a wet hand
+  C(30, 52, 3, 'hi'),
+]);
+def('banknote', () => [                                            // the widest flat thing on the shelf, with a face on it
+  P('M5 20 L55 20 L55 42 L5 42 Z', 'hi'),
+  S('M9 24 L51 24 L51 38 L9 38 Z', 'lo', 1.2),                     // the printed border
+  E(17, 31, 6.5, 8.5, 'gh'),                                       // the portrait panel
+  C(17, 28, 3, 'lo'), P('M11 38 Q17 31 23 38 Z', 'lo'),            // head and shoulders inside it
+  ring('lo', 45, 31, 5.5, 1.6), C(45, 31, 2.4, 'bs'),              // the denomination, roundelled
+  ...[28, 32, 36].map(y => S(`M28 ${y} L38 ${y}`, 'gh', 1.2)),     // and the promise, set very small
+]);
+
+/* writing ────────────────────────────────────────────────────────────────── */
+def('pen', () => [                                                 // held on the slant, and it ends in a nib, not a point
+  P('M16 42 L20 46 L9 53 Z', 'ik'),                                // the nib
+  S('M12 50 L18 44', 'hi', 1),                                     // split down the middle so it holds ink
+  P('M16 42 L40 18 L44 22 L20 46 Z', 'bs'),                        // the barrel
+  P('M40 18 L48 10 L52 14 L44 22 Z', 'lo'),                        // the cap
+  S('M46 12 L50 16', 'hi', 2.4),                                   // and its clip
+]);
+def('pencil', () => [                                              // hexagonal, sharpened to a cone, rubber on the other end
+  P('M23 22 L37 22 L30 4 Z', 'lo'),                                // the whittled cone
+  P('M27 13 L33 13 L30 4 Z', 'ik'),                                // bared graphite
+  P('M23 22 L37 22 L37 44 L23 44 Z', 'bs'),
+  S('M27 22 L27 44 M33 22 L33 44', 'hi', 1.2),                     // two facet edges give the hexagon away
+  P('M23 44 L37 44 L37 49 L23 49 Z', 'ik'),                        // the ferrule
+  P('M23 49 L37 49 L37 55 L23 55 Z', 'hi'),                        // and the rubber crimped into it
+]);
+def('eraser', () => [                                              // a solid block seen from a corner, and the crumbs it sheds
+  P('M11 27 L37 19 L52 25 L26 33 Z', 'hi'),                        // the top face
+  P('M11 27 L26 33 L26 46 L11 40 Z', 'bs'),                        // the near end
+  P('M26 33 L52 25 L52 38 L26 46 Z', 'lo'),                        // and the long side
+  P('M26 33 L38 29 L38 42 L26 46 Z', 'bs'),                        // half of it the harder end, for ink
+  ...granules('gh', 4, 811, [14, 49, 46, 55]),
+]);
+def('scissors', () => [                                            // an X above two rings — nothing else here has that
+  S('M13 7 L44 45', 'bs', 4), S('M47 7 L16 45', 'bs', 4),          // two blades that pass each other
+  ring('lo', 47, 49, 7, 3), ring('lo', 13, 49, 7, 3),              // the bows
+  C(30, 27, 2.6, 'ik'),                                            // the pivot they turn on
+]);
+def('newspaper', () => [                                           // set in columns under a masthead, which nothing else is
+  P('M7 11 L53 11 L53 51 L7 51 Z', 'hi'),
+  P('M10 14 L50 14 L50 21 L10 21 Z', 'ik'),                        // the masthead
+  S('M30 23 L30 49', 'lo', 1.2),                                   // the column rule
+  ...[26, 30, 34, 38, 42, 46].map(y => S(`M11 ${y} L28 ${y}`, 'gh', 1.2)),
+  ...[26, 30, 34].map(y => S(`M32 ${y} L49 ${y}`, 'gh', 1.2)),
+  P('M32 38 L49 38 L49 49 L32 49 Z', 'bs'),                        // and one halftone photograph
+]);
+def('map', () => [                                                 // folded into panels, so even the edges wave
+  P('M5 15 L22 20 L38 15 L55 20 L55 45 L38 40 L22 45 L5 40 Z', 'bs'),
+  S('M22 20 L22 45 M38 15 L38 40', 'lo', 1.4),                     // the creases it is stored along
+  S('M11 38 Q22 27 32 34 Q42 41 48 25', 'ik', 1.8),                // a route
+  C(48, 25, 3, 'hi'),                                              // and where it gets you
+]);
+
+/* civic ──────────────────────────────────────────────────────────────────── */
+def('road', () => [                                                // surface and centre line only — no buildings at all
+  P('M3 53 L22 13 L38 13 L57 53 Z', 'lo'),                         // the carriageway, running to a vanishing point
+  S('M22 13 L3 53', 'gh', 1.4), S('M38 13 L57 53', 'gh', 1.4),     // its verges
+  P('M29 15 L31 15 L31 21 L29 21 Z', 'hi'),
+  P('M28 26 L32 26 L32 34 L28 34 Z', 'hi'),
+  P('M27 40 L33 40 L33 51 L27 51 Z', 'hi'),                        // dashes, foreshortened by the distance
+]);
+def('street', () => [                                              // the same surface, but with a frontage on both sides
+  P('M3 13 L19 13 L19 53 L3 53 Z', 'lo'),                          // a terrace on one side
+  P('M41 9 L57 9 L57 53 L41 53 Z', 'lo'),                          // and one on the other
+  ...[19, 27, 35, 43].map(y => S(`M7 ${y} L15 ${y}`, 'gh', 1.4)),
+  ...[15, 23, 31, 39].map(y => S(`M45 ${y} L53 ${y}`, 'gh', 1.4)),
+  P('M22 19 L38 19 L38 53 L22 53 Z', 'bs'),                        // the roadway they face onto
+  S('M30 24 L30 50', 'hi', 1.6),
+]);
+def('town', () => [                                                // far enough back that the buildings are small and many
+  S('M3 51 L57 51', 'ik', 2),
+  P('M7 51 L7 37 L15 31 L23 37 L23 51 Z', 'lo'),
+  P('M25 51 L25 33 L34 33 L34 51 Z', 'bs'),
+  P('M36 51 L36 39 L45 32 L54 39 L54 51 Z', 'lo'),
+  P('M17 51 L17 21 L21 21 L21 51 Z', 'hi'), P('M17 21 L19 9 L21 21 Z', 'hi'),  // one spire, to steer by
+  ...[[11, 43], [29, 41], [45, 44], [50, 44]].map(([x, y]) => C(x, y, 1.8, 'gh')),
+]);
+def('market', () => [                                              // stalls, not a building: posts, awnings, goods on the ground
+  ...[10, 32].map(x => S(`M${x} 26 L${x} 47 M${n(x + 18)} 26 L${n(x + 18)} 47`, 'lo', 2)),
+  ...[10, 32].map(x => P(
+    `M${n(x - 3)} 19 L${n(x + 21)} 19 L${n(x + 21)} 26 Q${n(x + 15)} 30 ${n(x + 9)} 26 ` +
+    `Q${n(x + 3)} 30 ${n(x - 3)} 26 Z`, 'bs')),                    // scalloped awnings, one per stall
+  ...[13, 25, 35, 47].map(x => P(`M${n(x - 5)} 39 L${n(x + 5)} 39 L${n(x + 5)} 49 L${n(x - 5)} 49 Z`, 'hi')),
+]);
+def('shop', () => [                                                // one frontage, one awning, one door you go in by
+  P('M8 11 L52 11 L52 51 L8 51 Z', 'lo'),
+  P('M5 19 L55 19 L51 30 L9 30 Z', 'bs'),                          // the awning, out over the pavement
+  ...[13, 21, 29, 37, 45].map(x => S(`M${x} 19 L${n(x - 2)} 30`, 'hi', 1.4)),  // its stripes
+  P('M12 33 L32 33 L32 51 L12 51 Z', 'hi'),                        // the display window
+  P('M38 35 L48 35 L48 51 L38 51 Z', 'ik'),                        // and the door
+]);
+def('school', () => [                                              // the bell on the roof is the thing that marks it out
+  P('M8 51 L8 28 L52 28 L52 51 Z', 'lo'),
+  P('M5 28 L30 15 L55 28 Z', 'bs'),                                // the roof
+  P('M26 15 L34 15 L34 7 L26 7 Z', 'hi'),                          // a belfry standing on the ridge
+  P('M27 13 Q27 8 30 8 Q33 8 33 13 Z', 'ik'), C(30, 14, 1.4, 'ik'),
+  ...[13, 24, 35, 46].map(x => P(`M${x} 34 L${n(x + 6)} 34 L${n(x + 6)} 43 L${x} 43 Z`, 'hi')),  // identical windows, one per room
+]);
+def('hospital', () => [                                            // a block taller than it is wide, and the cross that names it
+  P('M12 51 L12 7 L48 7 L48 51 Z', 'lo'),
+  P('M26 13 L34 13 L34 20 L41 20 L41 28 L34 28 L34 35 L26 35 L26 28 L19 28 L19 20 L26 20 Z', 'hi'),
+  ...[17, 25, 33, 41].map(x => C(x, 41, 2.4, 'bs')),               // lit windows, all night
+  ...[17, 25, 33, 41].map(x => C(x, 47, 2.4, 'bs')),
+  P('M5 51 L55 51 L55 56 L5 56 Z', 'ik'),                          // the bay the ambulance backs into
+]);
+
+/* machines ───────────────────────────────────────────────────────────────── */
+def('bicycle', () => [                                             // two large thin wheels and a triangle: no engine anywhere
+  ring('bs', 15, 38, 13, 2.4), ring('bs', 45, 38, 13, 2.4),
+  S('M15 38 L26 21 L40 21 L45 38 M26 21 L30 38 L45 38', 'lo', 2.4),  // the diamond frame
+  P('M21 19 L32 19 L29 24 L23 24 Z', 'hi'),                        // the saddle
+  S('M40 21 L43 14 M38 14 L48 14', 'ik', 2),                       // the bars
+  C(30, 38, 2.4, 'ik'),                                            // and the crank between them
+]);
+def('truck', () => [                                               // the load is a separate box, and it is taller than the cab
+  P('M5 25 L20 25 L24 34 L24 45 L5 45 Z', 'bs'),                   // a cab out in front
+  P('M8 28 L19 28 L22 34 L8 34 Z', 'hi'),
+  P('M27 12 L55 12 L55 45 L27 45 Z', 'lo'),                        // the body it pulls
+  S('M27 19 L55 19', 'ik', 1.6),
+  C(14, 47, 6, 'ik'), C(39, 47, 6, 'ik'), C(50, 47, 6, 'ik'),      // twin axles at the back, one at the front
+]);
+def('drone', () => [                                               // four rotors on four arms — the shape only this has
+  ...[[14, 15], [46, 15], [14, 45], [46, 45]].map(([x, y]) => S(`M30 30 L${x} ${y}`, 'lo', 3)),
+  ...[[14, 15], [46, 15], [14, 45], [46, 45]].map(([x, y]) => E(x, y, 11, 3, 'gh')),  // the discs they sweep
+  ...[[14, 15], [46, 15], [14, 45], [46, 45]].map(([x, y]) => C(x, y, 2.6, 'ik')),
+  P('M22 24 L38 24 L40 34 L20 34 Z', 'bs'),                        // the body
+  C(30, 38, 4, 'hi'),                                              // and the camera slung under it, which is the point
+]);
+
+/* everyday objects, 3 Sep -- kitchen and home */
+/* home & kitchen: the boxes that cook, the things that keep, and the planes a
+   room is actually made of. Five box-with-a-door items and five architectural
+   ones live here, so each is separated on silhouette first — proportion, what
+   is inside it, what leaves the top — because at shelf size that is all that
+   survives of a drawing. */
+
+/* kiln — a beehive updraught kiln: a corbelled brick dome, not a cabinet, with
+   the stoke arch at its foot and the vent at its crown. The only one in the
+   group that is built on site rather than delivered. */
+def('kiln', () => [
+  P('M12 52 Q12 14 30 14 Q48 14 48 52 Z', 'lo'),                      // the dome, laid course on course until it closes
+  S('M14 42 L46 42 M16 32 L44 32 M21 23 L39 23', 'gh', 1.4),          // courses shortening as the dome draws in
+  P('M22 52 L22 44 Q30 35 38 44 L38 52 Z', 'ik'),                     // the stoke arch, where the wood goes in
+  P('M26 52 L26 45 Q30 40 34 45 L34 52 Z', 'bs'),                     // the fire, seen down the throat
+  C(30, 18, 2.4, 'ik'),                                               // the crown vent that pulls the heat up through the ware
+  S('M30 14 Q25 8 31 3', 'gh', 2),
+]);
+/* oven — a cabinet whose whole front is a glazed door with racks behind it,
+   under a control fascia. The stove above it is a solid box with a firebox;
+   this one you look into. */
+def('oven', () => [
+  P('M10 12 L50 12 L50 52 L10 52 Z', 'lo'),
+  P('M10 12 L50 12 L50 21 L10 21 Z', 'bs'),                           // the fascia, where the thermostat lives
+  ...[17, 25, 33].map(x => C(x, 16.5, 2.2, 'hi')),                    // the knobs — heat you can set, which is the whole invention
+  S('M12 25 L48 25', 'ik', 2.6),                                      // the door's full-width bar handle
+  P('M14 30 L46 30 L46 48 L14 48 Z', 'gh'),                           // the glass
+  S('M18 36 L42 36 M18 42 L42 42', 'ik', 1.6),                        // two racks, seen through it
+]);
+/* kettle — a broad flat-bottomed body to catch the ring's heat, an up-angled
+   spout, and a bail arching over the top. The teapot's handle sits at its
+   side; this one has to be lifted off a flame. */
+def('kettle', () => [
+  P('M14 34 Q14 52 30 52 Q46 52 46 34 Z', 'bs'),
+  E(30, 34, 16, 4.5, 'lo'),                                           // the shoulder the lid seats into
+  P('M14 33 L4 22 L9 18 L18 30 Z', 'bs'),                             // the spout, angled up so it does not dribble
+  S('M17 30 Q30 8 43 30', 'ik', 2.6),                                 // the bail, swung clear of the steam
+  E(30, 32, 8, 2.8, 'hi'),
+  C(30, 29, 2, 'hi'),
+]);
+/* toaster — a rounded chrome shell, slots cut in the top, and a slice already
+   up. Nothing else in the kitchen has something sticking out of it. */
+def('toaster', () => [
+  P('M12 26 Q12 22 16 22 L44 22 Q48 22 48 26 L48 46 Q48 50 44 50 L16 50 Q12 50 12 46 Z', 'bs'),
+  P('M18 20 L27 20 L27 23 L18 23 Z', 'ik'), P('M33 20 L42 20 L42 23 L33 23 Z', 'ik'),  // the two slots
+  P('M18 21 L29 21 L29 7 Q23.5 3 18 7 Z', 'hi'),                      // the slice, popped by the bimetallic strip
+  S('M48 32 L54 32', 'lo', 2.6), C(54, 32, 2.4, 'lo'),                // the lever that drops it
+  C(40, 40, 3.4, 'lo'), S('M40 40 L40 37', 'hi', 1.2),                // the browning dial
+]);
+/* freezer — the chest kind: low and wide with a lid that lifts, so the cold
+   air stays in the box when you open it. The refrigerator is the tall one. */
+def('freezer', () => [
+  P('M8 28 L52 28 L52 50 L8 50 Z', 'lo'),
+  P('M6 20 L54 20 L54 28 L6 28 Z', 'bs'),                             // the lid, overhanging on every side
+  S('M40 24 L50 24', 'ik', 2.6),
+  ...[0, 60, 120].map(a => ['g', a, 24, 39, [S('M24 33 L24 45', 'hi', 1.4)]]),  // frost, growing on six axes
+  ...granules('gh', 5, 53, [34, 32, 48, 46]),
+]);
+/* blender — a tall tapered jug on a motor base, blades crossed at the bottom.
+   The jug is glass and the base is not, which is the whole machine. */
+def('blender', () => [
+  P('M20 8 L40 8 L36 36 L24 36 Z', 'gh'),                             // the jug
+  P('M17 4 L43 4 L43 9 L17 9 Z', 'lo'),                               // the lid, with its filler cap
+  S('M40 12 Q50 20 40 28', 'lo', 3),                                  // the handle
+  S('M24 32 L36 32 M27 28 L33 36', 'ik', 2),                          // the blades, crossed on one shaft
+  P('M16 36 L44 36 L44 50 L16 50 Z', 'bs'),                           // the motor base, heavy enough to stay put
+  C(38, 44, 2.6, 'hi'),
+]);
+/* jar — straight sides and a mouth as wide as the body, so a hand fits in.
+   The screw band overhangs the shoulders; the bottle's neck narrows instead. */
+def('jar', () => [
+  P('M18 18 L42 18 L42 46 Q42 52 36 52 L24 52 Q18 52 18 46 Z', 'gh'),
+  P('M18 30 L42 30 L42 46 Q42 52 36 52 L24 52 Q18 52 18 46 Z', 'bs'), // the fill, with headspace left above it
+  C(26, 38, 3.4, 'hi'), C(35, 44, 3, 'hi'),                           // what is being kept, suspended in the brine
+  P('M16 10 L44 10 L44 18 L16 18 Z', 'lo'),                           // the band, screwed down over the seal
+  S('M20 11 L20 17 M25 11 L25 17 M30 11 L30 17 M35 11 L35 17 M40 11 L40 17', 'bs', 1.2),  // knurling, for thumbs
+]);
+/* tin_can — squat, rolled seam at the top, paper label round the middle, and
+   the lid cut out and curled back on itself. Opened is the only way to tell a
+   can from every other cylinder. */
+def('tin_can', () => [
+  P('M15 21 L45 21 L45 49 L15 49 Z', 'lo'),
+  E(30, 21, 15, 5, 'bs'),                                             // the rolled top seam
+  E(30, 21, 9, 2.6, 'ik'),                                            // the opening, cut inside the seam
+  P('M15 28 L45 28 L45 40 L15 40 Z', 'hi'),                           // the label — the only part that says what is inside
+  S('M21 35 L39 35', 'ik', 1.4),
+  P('M43 18 Q55 14 51 4 L45 6 Q48 13 41 15 Z', 'hi'),                 // the lid, curled back in one piece
+]);
+/* basket — stakes standing up from the base, weavers going round them, and a
+   bound rim. Woven, not staved: the bucket is a tapered wall with a bail. */
+def('basket', () => [
+  P('M12 26 Q14 50 30 50 Q46 50 48 26 Z', 'bs'),
+  P('M9 22 L51 22 L51 27 L9 27 Z', 'lo'),                             // the rim, bound over the cut stake ends
+  S('M18 27 L19 48 M24 27 L24 49 M30 27 L30 50 M36 27 L36 49 M42 27 L41 48', 'lo', 1.4),  // the stakes
+  S('M13 34 Q30 38 47 34 M15 42 Q30 46 45 42', 'hi', 1.6),            // the weavers, in front of one stake and behind the next
+]);
+/* sink — a basin seen from slightly above, and the trap under it. The bend is
+   the point: it holds a plug of water so the drain cannot breathe back. */
+def('sink', () => [
+  P('M8 22 L52 22 L47 44 L13 44 Z', 'bs'),
+  E(30, 22, 22, 5, 'hi'),                                             // the rim
+  E(30, 23, 17, 3.8, 'lo'),                                           // and the hollow inside it
+  E(30, 40, 8, 3, 'lo'),
+  C(30, 40, 2.4, 'ik'),                                               // the outlet
+  S('M30 44 L30 48 Q30 54 24 54 Q18 54 18 47', 'ik', 3),              // the P-trap
+]);
+/* tap — a bib tap coming out of the wall: supply, a turned-down outlet, and a
+   cross handle on the stem. Drawn running, since a tap that is not is a pipe. */
+def('tap', () => [
+  S('M6 22 L30 22 Q34 22 34 26 L34 42', 'bs', 6),                     // the body, turning the flow downward
+  P('M29 42 L39 42 L37 47 L31 47 Z', 'lo'),                           // the outlet
+  S('M18 22 L18 12', 'lo', 3),                                        // the stem up to the handle
+  S('M10 12 L26 12', 'lo', 3.4),                                      // the cross head — a washer screwed onto a seat
+  C(18, 12, 2.4, 'hi'),
+  P('M34 51 Q37 55 34 57 Q31 55 34 51 Z', 'gh'),                      // the drop leaving it
+]);
+/* plate — all rim and no depth, seen at a low angle: the well is a dish in the
+   face, not a cavity. The bowl beside it is a wall you cannot see over. */
+def('plate', () => [
+  E(30, 34, 22, 7, 'lo'),                                             // the underside, in shade
+  E(30, 31, 22, 7, 'bs'),
+  E(30, 31, 12, 4, 'hi'),                                             // the well
+  S('M13 31 A17 5.5 0 1 1 47 31 A17 5.5 0 1 1 13 31', 'gh', 1.2),     // the glaze line round the rim
+  E(30, 42, 8, 2.4, 'lo'),                                            // the foot ring it stands on
+]);
+/* mug — straight sided top to bottom and thick walled, with a D handle big
+   enough for four fingers. The cup tapers and takes two. */
+def('mug', () => [
+  P('M18 16 L38 16 L38 50 L18 50 Z', 'bs'),
+  E(28, 16, 10, 3.4, 'hi'),
+  P('M38 22 Q52 22 52 33 Q52 44 38 44 L38 39 Q47 39 47 33 Q47 27 38 27 Z', 'lo'),  // the handle, pulled not cast
+  S('M18 24 L38 24', 'gh', 1.4),                                      // where the glaze stops
+]);
+
+/* the house itself, and its parts drawn as parts — a wall, a floor and a roof
+   are each one plane, so they are told apart by which way the plane faces and
+   what it is made of, never by colour. */
+
+/* house — walls under a pitched roof whose eaves throw the rain clear. Door
+   and windows, because a house is a shelter with a way in. */
+def('house', () => [
+  P('M12 52 L12 30 L48 30 L48 52 Z', 'bs'),
+  P('M6 30 L30 12 L54 30 Z', 'lo'),                                   // the roof, eaves out past the wall face
+  P('M16 34 L23 34 L23 41 L16 41 Z', 'hi'), P('M37 34 L44 34 L44 41 L37 41 Z', 'hi'),
+  P('M25 52 L25 39 Q30 35 35 39 L35 52 Z', 'ik'),                     // the door
+]);
+/* wall — one vertical plane, full bleed, in stretcher bond: every perpend sits
+   over the middle of the brick below, which is what stops it splitting. */
+def('wall', () => [
+  P('M8 10 L52 10 L52 50 L8 50 Z', 'bs'),
+  P('M23 27 L35 27 L35 33 L23 33 Z', 'hi'),                           // one brick lighter than the rest, to give the course a size
+  S('M8 18 L52 18 M8 26 L52 26 M8 34 L52 34 M8 42 L52 42', 'lo', 1.6),  // the bed joints
+  S('M22 10 L22 18 M36 10 L36 18 M15 18 L15 26 M29 18 L29 26 M43 18 L43 26 ' +
+    'M22 26 L22 34 M36 26 L36 34 M15 34 L15 42 M29 34 L29 42 M43 34 L43 42 ' +
+    'M22 42 L22 50 M36 42 L36 50', 'lo', 1.6),                        // the perpends, staggered half a brick each course
+]);
+/* roof — one sloping plane seen from below, splaying as it comes toward you,
+   hung with courses of tiles that each lap the one under it. */
+def('roof', () => [
+  P('M10 14 L50 14 L56 50 L4 50 Z', 'lo'),
+  S('M10 14 L50 14', 'ik', 3),                                        // the ridge
+  ...[24, 34, 44].flatMap((y, r) => Array.from({ length: 4 }, (_, i) =>
+    S(`M${n(9 + i * 11 - r * 1.5)} ${y} A5.5 4 0 0 1 ${n(20 + i * 11 - r * 1.5)} ${y}`,
+      r % 2 ? 'bs' : 'hi', 1.6))),                                    // pantiles, each course lapping the last
+]);
+/* floor — one horizontal plane running away from you: boards converging, and
+   the butt joints where their ends meet over a joist. */
+def('floor', () => [
+  P('M4 50 L56 50 L44 20 L16 20 Z', 'bs'),
+  P('M28 20 L34 20 L37 50 L26 50 Z', 'hi'),                           // one board taking the light from the window
+  S('M16 20 L4 50 M22 20 L15 50 M28 20 L26 50 M34 20 L37 50 M40 20 L48 50', 'lo', 1.6),
+  S('M17 28 L43 28 M12 39 L48 39', 'gh', 1.2),                        // the butt joints, staggered off each other
+]);
+/* room — the volume, not a surface: a box drawn from inside it, with the four
+   corners running back to a far wall and a doorway through. */
+def('room', () => [
+  P('M6 8 L54 8 L54 52 L6 52 Z', 'lo'),                               // the near walls, cut away to look in
+  P('M20 40 L40 40 L54 52 L6 52 Z', 'gh'),                            // the floor
+  P('M20 20 L40 20 L40 40 L20 40 Z', 'bs'),                           // the far wall
+  S('M6 8 L20 20 M54 8 L40 20 M6 52 L20 40 M54 52 L40 40', 'ik', 1.6),  // the corners, receding
+  P('M27 40 L27 27 Q30 25 33 27 L33 40 Z', 'ik'),                     // the way out
+]);
+/* chimney — a stack standing clear of everything, corbelled out at the cap so
+   rain runs off the flue. Drawn drawing: smoke is what it is for. */
+def('chimney', () => [
+  P('M22 54 L22 18 L38 18 L38 54 Z', 'bs'),
+  P('M18 12 L42 12 L42 18 L18 18 Z', 'lo'),                           // the cap, oversailing the shaft
+  S('M22 26 L38 26 M22 34 L38 34 M22 42 L38 42 M22 50 L38 50', 'lo', 1.4),
+  ...puff('gh', 32, 7, .45),                                          // the draught leaving the top
+]);
+/* lock — a warded padlock: a shackle through the hasp, and a keyhole shaped so
+   only a key cut to match can turn past the wards. */
+def('lock', () => [
+  S('M20 28 L20 18 Q20 8 30 8 Q40 8 40 18 L40 28', 'ik', 3.4),        // the shackle
+  P('M14 26 L46 26 L46 50 L14 50 Z', 'bs'),
+  ...[18, 42].map(x => C(x, 30, 1.4, 'hi')),                          // the rivets holding the case plates
+  C(30, 35, 4, 'ik'), P('M27 35 L33 35 L32 45 L28 45 Z', 'ik'),       // the keyhole
+]);
+/* shelf — open on every side: two uprights and boards, with what is on them
+   visible. The cupboard next to it is the same idea behind doors. */
+def('shelf', () => [
+  S('M14 10 L14 52 M46 10 L46 52', 'lo', 3),                          // the uprights
+  ...[20, 32, 44].map(y => P(`M11 ${y} L49 ${y} L49 ${y + 3} L11 ${y + 3} Z`, 'bs')),
+  ...[18, 22.5, 27, 31.5].map((x, i) => P(`M${x} ${11 + (i % 2) * 2} L${n(x + 3.4)} ${11 + (i % 2) * 2} ` +
+    `L${n(x + 3.4)} 20 L${x} 20 Z`, i % 2 ? 'hi' : 'lo')),            // books, leaning on each other
+  E(36, 29, 6, 3, 'hi'),                                              // and a bowl on the middle board
+]);
+/* cupboard — a closed carcass with two leaves meeting at a centre stile. The
+   split runs up and down; the dresser's drawers run across. */
+def('cupboard', () => [
+  P('M12 10 L48 10 L48 52 L12 52 Z', 'bs'),
+  P('M16 15 L28 15 L28 47 L16 47 Z', 'lo'), P('M32 15 L44 15 L44 47 L32 47 Z', 'lo'),  // the two door panels
+  S('M30 12 L30 50', 'ik', 1.6),                                      // the gap where they meet
+  C(28.5, 31, 1.8, 'hi'), C(31.5, 31, 1.8, 'hi'),                     // the knobs
+  S('M12 18 L15 18 M12 44 L15 44 M45 18 L48 18 M45 44 L48 44', 'gh', 1.6),  // the hinges, four of them
+]);
+/* carpet — laid flat and seen across, so it is a lozenge rather than a rect:
+   border, medallion, and the warp ends knotted off as fringe. */
+def('carpet', () => [
+  P('M6 36 L30 22 L54 36 L30 50 Z', 'bs'),
+  P('M16 36 L30 27.5 L44 36 L30 44.5 Z', 'lo'),                       // the border, woven in as part of the same cloth
+  P('M24 36 L30 32.5 L36 36 L30 39.5 Z', 'hi'),                       // the medallion
+  S('M12 39 L10 42 M18 42 L16 45 M24 45 L22 48 M36 45 L38 48 M42 42 L44 45 M48 39 L50 42', 'gh', 1.4),
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -6131,8 +6131,7 @@
       "tool",
       "fire"
     ],
-    "fact": "A resistor whose whole job is to waste power. Heat goes as current squared times resistance.",
-    "terminal": true
+    "fact": "A resistor whose whole job is to waste power. Heat goes as current squared times resistance."
   },
   {
     "id": "filament",
@@ -34011,8 +34010,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Medieval mattresses were wool, feathers or hair stuffed onto a wood frame, off the drafty floor.",
-    "terminal": true
+    "fact": "Medieval mattresses were wool, feathers or hair stuffed onto a wood frame, off the drafty floor."
   },
   {
     "id": "belt",
@@ -36267,7 +36265,6 @@
       "tool"
     ],
     "fact": "The first cast-iron stove was built in 1642 at Lynn, Massachusetts — an iron box, with no grates yet.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -70955,5 +70952,641 @@
     ],
     "fact": "Fifteen elements filling 5f, every one radioactive. Only thorium and uranium remain in quantity.",
     "src": "https://en.wikipedia.org/wiki/Actinide"
+  },
+  {
+    "id": "kiln",
+    "name": "Kiln",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "fire"
+    ],
+    "fact": "A thermally insulated chamber — a kind of oven — reaching temperatures an open fire never will.",
+    "src": "https://en.wikipedia.org/wiki/Kiln"
+  },
+  {
+    "id": "oven",
+    "name": "Oven",
+    "emoji": "♨️",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "fire"
+    ],
+    "fact": "A hollow chamber and a controlled way of heating it. In use since antiquity, for far more than food.",
+    "src": "https://en.wikipedia.org/wiki/Oven"
+  },
+  {
+    "id": "kettle",
+    "name": "Kettle",
+    "emoji": "🫖",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen"
+    ],
+    "fact": "A vessel specialised for exactly one job: boiling water. Lid, spout, handle.",
+    "src": "https://en.wikipedia.org/wiki/Kettle"
+  },
+  {
+    "id": "toaster",
+    "name": "Toaster",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "electric"
+    ],
+    "fact": "Radiant heat from nichrome ribbon. The browning is the Maillard reaction.",
+    "src": "https://en.wikipedia.org/wiki/Toaster"
+  },
+  {
+    "id": "freezer",
+    "name": "Freezer",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "cold"
+    ],
+    "fact": "A refrigerator held below the freezing point of water — around -18 °C.",
+    "src": "https://en.wikipedia.org/wiki/Freezer"
+  },
+  {
+    "id": "blender",
+    "name": "Blender",
+    "emoji": "🥤",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "electric"
+    ],
+    "fact": "A container with a blade at the bottom and a motor in the base.",
+    "src": "https://en.wikipedia.org/wiki/Blender_(appliance)"
+  },
+  {
+    "id": "jar",
+    "name": "Jar",
+    "emoji": "🫙",
+    "shelf": "workshop",
+    "tags": [
+      "container",
+      "kitchen"
+    ],
+    "fact": "Glass body, threaded band, separate flat lid pressed onto the rim. Patented 1858.",
+    "src": "https://en.wikipedia.org/wiki/Mason_jar"
+  },
+  {
+    "id": "tin_can",
+    "name": "Tin Can",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "container",
+      "kitchen"
+    ],
+    "fact": "Steel that would rust, wearing a coat of tin that will not.",
+    "src": "https://en.wikipedia.org/wiki/Tin_can"
+  },
+  {
+    "id": "basket",
+    "name": "Basket",
+    "emoji": "🧺",
+    "shelf": "workshop",
+    "tags": [
+      "container",
+      "craft"
+    ],
+    "fact": "Pliable stems woven into a rigid shape, with no frame, no thread and no glue.",
+    "src": "https://en.wikipedia.org/wiki/Basket_weaving"
+  },
+  {
+    "id": "sink",
+    "name": "Sink",
+    "emoji": "🛁",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "plumbing"
+    ],
+    "fact": "A bowl-shaped plumbing fixture: a basin with water coming in and a drain taking it out.",
+    "src": "https://en.wikipedia.org/wiki/Sink"
+  },
+  {
+    "id": "tap",
+    "name": "Tap",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "plumbing"
+    ],
+    "fact": "A washer screwed down onto a seat to stop the flow. Patented in Rotherham in 1845.",
+    "src": "https://en.wikipedia.org/wiki/Tap_(valve)"
+  },
+  {
+    "id": "plate",
+    "name": "Plate",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "ceramic"
+    ],
+    "fact": "A broad, mainly flat vessel with a lip. Rounder and deeper, and it is a bowl instead.",
+    "src": "https://en.wikipedia.org/wiki/Plate_(dishware)"
+  },
+  {
+    "id": "mug",
+    "name": "Mug",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "ceramic"
+    ],
+    "fact": "A cup with a handle, holding 250 to 350 ml — more than a teacup, less than a tankard.",
+    "src": "https://en.wikipedia.org/wiki/Mug"
+  },
+  {
+    "id": "house",
+    "name": "House",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "building",
+      "home"
+    ],
+    "fact": "A dwelling, from a rudimentary hut upward. The social unit inside it is a household.",
+    "src": "https://en.wikipedia.org/wiki/House"
+  },
+  {
+    "id": "wall",
+    "name": "Wall",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "building"
+    ],
+    "fact": "Masonry, concrete, adobe or rammed earth, stood up to divide one space from another.",
+    "src": "https://en.wikipedia.org/wiki/Wall"
+  },
+  {
+    "id": "roof",
+    "name": "Roof",
+    "emoji": "🛖",
+    "shelf": "workshop",
+    "tags": [
+      "building"
+    ],
+    "fact": "Layered so it sheds water outward. Densely packed thatch traps air and insulates too.",
+    "src": "https://en.wikipedia.org/wiki/Thatching"
+  },
+  {
+    "id": "floor",
+    "name": "Floor",
+    "emoji": "🟫",
+    "shelf": "workshop",
+    "tags": [
+      "building"
+    ],
+    "fact": "Boards laid across the joists at right angles — originally structural, not decorative.",
+    "src": "https://en.wikipedia.org/wiki/Wood_flooring"
+  },
+  {
+    "id": "room",
+    "name": "Room",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "building",
+      "home"
+    ],
+    "fact": "Any enclosed space in a structure, bounded by walls, entered only through a door.",
+    "src": "https://en.wikipedia.org/wiki/Room"
+  },
+  {
+    "id": "chimney",
+    "name": "Chimney",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "building",
+      "fire"
+    ],
+    "fact": "Vertical so the gases draw themselves up. That pull is called the stack effect.",
+    "src": "https://en.wikipedia.org/wiki/Chimney"
+  },
+  {
+    "id": "lock",
+    "name": "Lock",
+    "emoji": "🔒",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "home"
+    ],
+    "fact": "In use for over 6,000 years. The Yale pin tumbler is a developed Egyptian wooden lock.",
+    "src": "https://en.wikipedia.org/wiki/Lock_and_key"
+  },
+  {
+    "id": "shelf",
+    "name": "Shelf",
+    "emoji": "🗄️",
+    "shelf": "workshop",
+    "tags": [
+      "furniture",
+      "home"
+    ],
+    "fact": "A flat horizontal plane for storing things on. From Old English scylfe.",
+    "src": "https://en.wikipedia.org/wiki/Shelf_(storage)"
+  },
+  {
+    "id": "cupboard",
+    "name": "Cupboard",
+    "emoji": "🗃️",
+    "shelf": "workshop",
+    "tags": [
+      "furniture",
+      "home"
+    ],
+    "fact": "It began literally as a cup board: open tiers for displaying plates, cups and saucers.",
+    "src": "https://en.wikipedia.org/wiki/Cupboard"
+  },
+  {
+    "id": "carpet",
+    "name": "Carpet",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "textile"
+    ],
+    "fact": "Rug once meant a coarse coverlet; it only came to mean a floor mat around 1808.",
+    "src": "https://en.wikipedia.org/wiki/Carpet"
+  },
+  {
+    "id": "saw",
+    "name": "Saw",
+    "emoji": "🪚",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Teeth bent alternately left and right, so the cut is wider than the blade and it never binds.",
+    "src": "https://en.wikipedia.org/wiki/Saw"
+  },
+  {
+    "id": "drill",
+    "name": "Drill",
+    "emoji": "🛠️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Makes round holes or drives fasteners. Patented as an electric tool in Melbourne in 1889.",
+    "src": "https://en.wikipedia.org/wiki/Drill"
+  },
+  {
+    "id": "screw",
+    "name": "Screw",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fastener"
+    ],
+    "fact": "An externally helical threaded fastener, and one of the six classical simple machines.",
+    "src": "https://en.wikipedia.org/wiki/Screw"
+  },
+  {
+    "id": "screwdriver",
+    "name": "Screwdriver",
+    "emoji": "🪛",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Classified entirely by its tip, because the tip has to match the screw head.",
+    "src": "https://en.wikipedia.org/wiki/Screwdriver"
+  },
+  {
+    "id": "wrench",
+    "name": "Wrench",
+    "emoji": "🔧",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Called a spanner in the UK, Ireland, Australia and New Zealand.",
+    "src": "https://en.wikipedia.org/wiki/Wrench"
+  },
+  {
+    "id": "axe",
+    "name": "Axe",
+    "emoji": "🪓",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Hafted axes go back at least 46,000 years, in northern Australia.",
+    "src": "https://en.wikipedia.org/wiki/Axe"
+  },
+  {
+    "id": "shovel",
+    "name": "Shovel",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A broad blade for digging and lifting. The seam at its back is folded into a socket.",
+    "src": "https://en.wikipedia.org/wiki/Shovel"
+  },
+  {
+    "id": "ladder",
+    "name": "Ladder",
+    "emoji": "🪜",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One is painted on a Mesolithic wall in the Spider Caves, Valencia, 10,000 years ago.",
+    "src": "https://en.wikipedia.org/wiki/Ladder"
+  },
+  {
+    "id": "workbench",
+    "name": "Workbench",
+    "emoji": "🧰",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A table that holds the work still, so both of your hands are free to work it.",
+    "src": "https://en.wikipedia.org/wiki/Workbench"
+  },
+  {
+    "id": "tape_measure",
+    "name": "Tape Measure",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A ribbon stiff enough to stand out straight, springy enough to roll itself back up.",
+    "src": "https://en.wikipedia.org/wiki/Tape_measure"
+  },
+  {
+    "id": "gear",
+    "name": "Gear",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "machine"
+    ],
+    "fact": "A toothed wheel. Its teeth engage another's, and two meshed gears are a gear train.",
+    "src": "https://en.wikipedia.org/wiki/Gear"
+  },
+  {
+    "id": "shirt",
+    "name": "Shirt",
+    "emoji": "👕",
+    "shelf": "workshop",
+    "tags": [
+      "clothing"
+    ],
+    "fact": "The world's oldest preserved garment is a linen shirt from a tomb at Tarkhan, Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Shirt"
+  },
+  {
+    "id": "trousers",
+    "name": "Trousers",
+    "emoji": "👖",
+    "shelf": "workshop",
+    "tags": [
+      "clothing"
+    ],
+    "fact": "The oldest known pair, from Turpan, is wool with straight legs and a wide crotch.",
+    "src": "https://en.wikipedia.org/wiki/Trousers"
+  },
+  {
+    "id": "wallet",
+    "name": "Wallet",
+    "emoji": "👛",
+    "shelf": "workshop",
+    "tags": [
+      "personal"
+    ],
+    "fact": "The word first meant a knapsack. It only came to mean a flat case in the 1600s.",
+    "src": "https://en.wikipedia.org/wiki/Wallet"
+  },
+  {
+    "id": "razor",
+    "name": "Razor",
+    "emoji": "🪒",
+    "shelf": "workshop",
+    "tags": [
+      "personal",
+      "tool"
+    ],
+    "fact": "The oldest razor-like object found is 20,000 years older than the Bronze Age.",
+    "src": "https://en.wikipedia.org/wiki/Razor"
+  },
+  {
+    "id": "banknote",
+    "name": "Banknote",
+    "emoji": "💵",
+    "shelf": "workshop",
+    "tags": [
+      "money"
+    ],
+    "fact": "A promise, not a thing: the issuing bank was legally bound to redeem it in coin.",
+    "src": "https://en.wikipedia.org/wiki/Banknote"
+  },
+  {
+    "id": "pen",
+    "name": "Pen",
+    "emoji": "✒️",
+    "shelf": "workshop",
+    "tags": [
+      "writing"
+    ],
+    "fact": "Early pens held only a bead of ink in a nib, and had to be dipped again every few words.",
+    "src": "https://en.wikipedia.org/wiki/Pen"
+  },
+  {
+    "id": "pencil",
+    "name": "Pencil",
+    "emoji": "📝",
+    "shelf": "workshop",
+    "tags": [
+      "writing"
+    ],
+    "fact": "The core is graphite powder held together by clay. More clay, harder and paler the line.",
+    "src": "https://en.wikipedia.org/wiki/Pencil"
+  },
+  {
+    "id": "eraser",
+    "name": "Eraser",
+    "emoji": "🧽",
+    "shelf": "workshop",
+    "tags": [
+      "writing"
+    ],
+    "fact": "Before rubber, you rubbed pencil off paper with tablets of wax — or with breadcrumbs.",
+    "src": "https://en.wikipedia.org/wiki/Eraser"
+  },
+  {
+    "id": "scissors",
+    "name": "Scissors",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two blades whose edges slide past each other. It cuts and shears at the same time.",
+    "src": "https://en.wikipedia.org/wiki/Scissors"
+  },
+  {
+    "id": "newspaper",
+    "name": "Newspaper",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "writing",
+      "media"
+    ],
+    "fact": "A book is finished. A newspaper is only ever the latest one, and is obsolete by morning.",
+    "src": "https://en.wikipedia.org/wiki/Newspaper"
+  },
+  {
+    "id": "map",
+    "name": "Map",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "writing",
+      "navigation"
+    ],
+    "fact": "A portolan chart has no latitude or longitude at all — only coastlines and bearings.",
+    "src": "https://en.wikipedia.org/wiki/Portolan_chart"
+  },
+  {
+    "id": "road",
+    "name": "Road",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "civic",
+      "building"
+    ],
+    "fact": "A prepared surface whose job is transport. A street's job is the people beside it.",
+    "src": "https://en.wikipedia.org/wiki/Road"
+  },
+  {
+    "id": "street",
+    "name": "Street",
+    "emoji": "🏘️",
+    "shelf": "workshop",
+    "tags": [
+      "civic"
+    ],
+    "fact": "A public thoroughfare lined with buildings — one of the few easements everyone shares.",
+    "src": "https://en.wikipedia.org/wiki/Street"
+  },
+  {
+    "id": "town",
+    "name": "Town",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "civic"
+    ],
+    "fact": "Domesday listed 50 markets in England in 1086. Some 2,000 more opened by 1349.",
+    "src": "https://en.wikipedia.org/wiki/Market_town"
+  },
+  {
+    "id": "market",
+    "name": "Market",
+    "emoji": "🛒",
+    "shelf": "workshop",
+    "tags": [
+      "civic",
+      "trade"
+    ],
+    "fact": "A souk, a bazaar, a mercado, a tianguis, a palengke. Everywhere, the same idea.",
+    "src": "https://en.wikipedia.org/wiki/Marketplace"
+  },
+  {
+    "id": "shop",
+    "name": "Shop",
+    "emoji": "🏪",
+    "shelf": "workshop",
+    "tags": [
+      "civic",
+      "trade"
+    ],
+    "fact": "Retail sells to the person who will use the thing. Wholesale sells to whoever resells it.",
+    "src": "https://en.wikipedia.org/wiki/Retail"
+  },
+  {
+    "id": "school",
+    "name": "School",
+    "emoji": "🏫",
+    "shelf": "workshop",
+    "tags": [
+      "civic"
+    ],
+    "fact": "Early public schools were one room, where a single teacher took seven grades at once.",
+    "src": "https://en.wikipedia.org/wiki/School"
+  },
+  {
+    "id": "hospital",
+    "name": "Hospital",
+    "emoji": "🏥",
+    "shelf": "workshop",
+    "tags": [
+      "civic",
+      "medicine"
+    ],
+    "fact": "The word means a place of hospitality, and that is what these were long before medicine.",
+    "src": "https://en.wikipedia.org/wiki/Hospital"
+  },
+  {
+    "id": "bicycle",
+    "name": "Bicycle",
+    "emoji": "🚲",
+    "shelf": "workshop",
+    "tags": [
+      "machine",
+      "transport"
+    ],
+    "fact": "The shape has barely changed since the first chain-driven safety bicycle of about 1885.",
+    "src": "https://en.wikipedia.org/wiki/Bicycle"
+  },
+  {
+    "id": "truck",
+    "name": "Truck",
+    "emoji": "🚚",
+    "shelf": "workshop",
+    "tags": [
+      "machine",
+      "transport"
+    ],
+    "fact": "Body-on-frame, with the cab built separate from whatever it is carrying behind.",
+    "src": "https://en.wikipedia.org/wiki/Truck"
+  },
+  {
+    "id": "drone",
+    "name": "Drone",
+    "emoji": "🚁",
+    "shelf": "workshop",
+    "tags": [
+      "machine",
+      "transport"
+    ],
+    "fact": "Two rotors turn clockwise and two anticlockwise, so the torques cancel and it does not spin.",
+    "src": "https://en.wikipedia.org/wiki/Quadcopter"
   }
 ]
