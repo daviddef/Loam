@@ -18455,7 +18455,6 @@
       "year": 1846,
       "note": "Morton publicly demonstrates it as an anesthetic."
     },
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -32581,7 +32580,6 @@
       "tool"
     ],
     "fact": "Small triangular nails called glazier's points pin the pane into its frame before the putty seals it.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -34249,8 +34247,7 @@
     "tags": [
       "animal"
     ],
-    "fact": "Humerus above the elbow, radius and ulna below, muscle wrapped around all three.",
-    "terminal": true
+    "fact": "Humerus above the elbow, radius and ulna below, muscle wrapped around all three."
   },
   {
     "id": "baby",
@@ -34323,8 +34320,7 @@
     "tags": [
       "build"
     ],
-    "fact": "Old English for 'barley house'. The job never changed: keep the harvest dry.",
-    "terminal": true
+    "fact": "Old English for 'barley house'. The job never changed: keep the harvest dry."
   },
   {
     "id": "baseball_bat",
@@ -34461,8 +34457,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Soap cuts water's surface tension enough for a puff of air to stretch it a micrometre thin.",
-    "terminal": true
+    "fact": "Soap cuts water's surface tension enough for a puff of air to stretch it a micrometre thin."
   },
   {
     "id": "bucket",
@@ -36472,8 +36467,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Naismith nailed up a peach basket in 1891; by 1906 an open metal rim let the ball just pass through.",
-    "terminal": true
+    "fact": "Naismith nailed up a peach basket in 1891; by 1906 an open metal rim let the ball just pass through."
   },
   {
     "id": "hose",
@@ -75857,5 +75851,2077 @@
       "tool"
     ],
     "fact": "A temporary frame that puts a working platform beside a building."
+  },
+  {
+    "id": "cylinder",
+    "name": "Cylinder",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The bore a piston runs in, and the sealed volume the working stroke happens inside."
+  },
+  {
+    "id": "engine",
+    "name": "Engine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A machine that turns fuel into rotation."
+  },
+  {
+    "id": "crank",
+    "name": "Crank",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The bend in a shaft that turns a push along a line into a turn around a centre."
+  },
+  {
+    "id": "lever",
+    "name": "Lever",
+    "emoji": "🔧",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A rigid bar turning about a fixed point, trading distance for force."
+  },
+  {
+    "id": "fulcrum",
+    "name": "Fulcrum",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The fixed point a lever turns about."
+  },
+  {
+    "id": "rod",
+    "name": "Rod",
+    "emoji": "➖",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A long straight bar of solid metal, the stock most other parts start as."
+  },
+  {
+    "id": "flywheel",
+    "name": "Flywheel",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A heavy wheel that stores rotation and gives it back, smoothing an intermittent push into steady turning."
+  },
+  {
+    "id": "boiler",
+    "name": "Boiler",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A closed vessel where fire turns water into steam under pressure."
+  },
+  {
+    "id": "valve",
+    "name": "Valve",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A part that opens and closes a passage, letting flow go one way or none."
+  },
+  {
+    "id": "pump",
+    "name": "Pump",
+    "emoji": "⛽",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A machine that moves fluid from where it is to where it is not."
+  },
+  {
+    "id": "bearing",
+    "name": "Bearing",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "What a shaft turns in, arranged so the surfaces roll rather than rub."
+  },
+  {
+    "id": "brake",
+    "name": "Brake",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device that turns motion into heat in order to stop something."
+  },
+  {
+    "id": "friction",
+    "name": "Friction",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The force resisting one surface sliding over another."
+  },
+  {
+    "id": "surface",
+    "name": "Surface",
+    "emoji": "▭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The boundary where a thing stops and everything else begins."
+  },
+  {
+    "id": "area",
+    "name": "Area",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How much surface something has, in units of length squared."
+  },
+  {
+    "id": "petrol",
+    "name": "Petrol",
+    "emoji": "⛽",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "The fraction of crude oil that boils between about 40 and 200 degrees, light enough to vaporise in an engine."
+  },
+  {
+    "id": "gearbox",
+    "name": "Gearbox",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A set of gear ratios between engine and wheels, so one engine speed can serve many road speeds."
+  },
+  {
+    "id": "clutch",
+    "name": "Clutch",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The joint that lets a running engine be connected to and disconnected from the wheels."
+  },
+  {
+    "id": "driveshaft",
+    "name": "Driveshaft",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The turning shaft carrying power from the gearbox to the wheels."
+  },
+  {
+    "id": "differential",
+    "name": "Differential",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The gearset that lets driven wheels turn at different speeds while both still pull."
+  },
+  {
+    "id": "spark_plug",
+    "name": "Spark Plug",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part that fires the mixture, and the reason a petrol engine is called spark-ignition."
+  },
+  {
+    "id": "alternator",
+    "name": "Alternator",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The engine-driven generator that keeps a car's battery charged."
+  },
+  {
+    "id": "exhaust",
+    "name": "Exhaust",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The pipe carrying burnt gas away from the engine, and everything fitted along it."
+  },
+  {
+    "id": "catalytic_converter",
+    "name": "Catalytic Converter",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A honeycomb coated in precious metal that finishes the reactions the engine did not."
+  },
+  {
+    "id": "steering_wheel",
+    "name": "Steering Wheel",
+    "emoji": "🎡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The wheel the driver turns, and the linkage that turns the road wheels less than it does."
+  },
+  {
+    "id": "dashboard",
+    "name": "Dashboard",
+    "emoji": "📊",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The panel of instruments in front of the driver."
+  },
+  {
+    "id": "dial",
+    "name": "Dial",
+    "emoji": "🕐",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A face with a scale and a pointer, showing a quantity as a position."
+  },
+  {
+    "id": "speedometer",
+    "name": "Speedometer",
+    "emoji": "⏱️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The instrument showing how fast a vehicle is going."
+  },
+  {
+    "id": "headlight",
+    "name": "Headlight",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A lamp with a mirror behind it, throwing light forward along the road rather than everywhere."
+  },
+  {
+    "id": "seat",
+    "name": "Seat",
+    "emoji": "💺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Something shaped to hold a body at rest, taking its weight through the hips rather than the spine."
+  },
+  {
+    "id": "foam",
+    "name": "Foam",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "tool"
+    ],
+    "fact": "A solid or liquid full of gas bubbles, which is how it becomes light and soft at once."
+  },
+  {
+    "id": "syringe",
+    "name": "Syringe",
+    "emoji": "💉",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "A barrel, a plunger and a hollow needle, for putting a measured dose under the skin or drawing one out."
+  },
+  {
+    "id": "suture",
+    "name": "Suture",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "A stitch closing a wound so the edges heal to each other rather than filling in from the bottom."
+  },
+  {
+    "id": "bandage",
+    "name": "Bandage",
+    "emoji": "🩹",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "A covering held over a wound, to keep it clean, keep it together and take up what comes out of it."
+  },
+  {
+    "id": "wound",
+    "name": "Wound",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A break in the skin, and the body's most practised emergency."
+  },
+  {
+    "id": "forceps",
+    "name": "Forceps",
+    "emoji": "🔧",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "Hinged tongs for gripping what fingers cannot reach or should not touch."
+  },
+  {
+    "id": "anaesthetic",
+    "name": "Anaesthetic",
+    "emoji": "😴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "A drug that removes the sensation of pain, and usually consciousness with it."
+  },
+  {
+    "id": "surgery",
+    "name": "Surgery",
+    "emoji": "🔪",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Treatment by opening the body and working inside it."
+  },
+  {
+    "id": "nurse",
+    "name": "Nurse",
+    "emoji": "👩‍⚕️",
+    "shelf": "workshop",
+    "tags": [
+      "person",
+      "medicine"
+    ],
+    "fact": "The person who watches a patient over hours and days, which is most of what care actually is."
+  },
+  {
+    "id": "doctor",
+    "name": "Doctor",
+    "emoji": "👨‍⚕️",
+    "shelf": "workshop",
+    "tags": [
+      "person",
+      "medicine"
+    ],
+    "fact": "The person who decides what is wrong and what to do about it."
+  },
+  {
+    "id": "diagnosis",
+    "name": "Diagnosis",
+    "emoji": "🔍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "medicine"
+    ],
+    "fact": "Working out which disease is producing what you can see."
+  },
+  {
+    "id": "symptom",
+    "name": "Symptom",
+    "emoji": "🤒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "medicine"
+    ],
+    "fact": "What the patient notices, as distinct from what the examiner finds."
+  },
+  {
+    "id": "ambulance",
+    "name": "Ambulance",
+    "emoji": "🚑",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "A vehicle that brings treatment to the patient and the patient to the hospital."
+  },
+  {
+    "id": "escapement",
+    "name": "Escapement",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part of a clock that lets the gear train advance one step per swing, and pushes the swing along as it goes."
+  },
+  {
+    "id": "pendulum",
+    "name": "Pendulum",
+    "emoji": "🕰️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A weight on a rod, swinging at a period set by its length and almost nothing else."
+  },
+  {
+    "id": "hilt",
+    "name": "Hilt",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Everything on a sword that is not the blade: the guard, the grip and the pommel."
+  },
+  {
+    "id": "scabbard",
+    "name": "Scabbard",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The sheath a blade lives in."
+  },
+  {
+    "id": "aperture",
+    "name": "Aperture",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The adjustable hole a lens looks through, setting how much light gets in and how much is in focus."
+  },
+  {
+    "id": "shutter",
+    "name": "Shutter",
+    "emoji": "📸",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The gate that decides for how long light is allowed to fall."
+  },
+  {
+    "id": "wax",
+    "name": "Wax",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A soft solid that melts at low heat and repels water, made by bees and later from petroleum."
+  },
+  {
+    "id": "wick",
+    "name": "Wick",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A twist of fibre that carries liquid fuel up to a flame by capillary action."
+  },
+  {
+    "id": "sole",
+    "name": "Sole",
+    "emoji": "👞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part of a shoe between the foot and the ground, and the part that wears out."
+  },
+  {
+    "id": "heel",
+    "name": "Heel",
+    "emoji": "👠",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The raised block under the back of a shoe."
+  },
+  {
+    "id": "lace",
+    "name": "Lace",
+    "emoji": "👟",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A cord threaded through holes, pulling a shoe tight around the foot."
+  },
+  {
+    "id": "eyelet",
+    "name": "Eyelet",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A reinforced hole, so a cord can pull hard on fabric without tearing it."
+  },
+  {
+    "id": "cord",
+    "name": "Cord",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Several strands twisted together, which is far stronger than the same fibre laid straight."
+  },
+  {
+    "id": "twist",
+    "name": "Twist",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Turning strands about each other so that friction holds them together."
+  },
+  {
+    "id": "fret",
+    "name": "Fret",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A raised bar across a fingerboard, fixing exactly where a string is stopped."
+  },
+  {
+    "id": "neck",
+    "name": "Neck",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The long arm of a stringed instrument, carrying the fingerboard and taking the pull of the strings."
+  },
+  {
+    "id": "varnish",
+    "name": "Varnish",
+    "emoji": "🖌️",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A clear finish that hardens on a surface, protecting it while leaving it visible."
+  },
+  {
+    "id": "furnace",
+    "name": "Furnace",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "An enclosure built to hold fire hot enough to change what is put in it."
+  },
+  {
+    "id": "soda_ash",
+    "name": "Soda Ash",
+    "emoji": "🧂",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Sodium carbonate, the flux that lets glass be made at a workable temperature."
+  },
+  {
+    "id": "putty",
+    "name": "Putty",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "build"
+    ],
+    "fact": "A soft paste that sets slowly, used to bed glass into a frame."
+  },
+  {
+    "id": "frame",
+    "name": "Frame",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "A skeleton of members carrying load, with nothing filling the spaces between them."
+  },
+  {
+    "id": "spoke",
+    "name": "Spoke",
+    "emoji": "🎡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One of the wires between the hub and the rim of a wheel."
+  },
+  {
+    "id": "rim",
+    "name": "Rim",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The outer hoop of a wheel, holding the tyre and taking the pull of every spoke."
+  },
+  {
+    "id": "hub",
+    "name": "Hub",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The centre of a wheel, holding the bearings the whole thing turns on."
+  },
+  {
+    "id": "tyre",
+    "name": "Tyre",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The compliant ring between a wheel and the road."
+  },
+  {
+    "id": "inner_tube",
+    "name": "Inner Tube",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An airtight ring inside a tyre, holding the pressure the tyre only shapes."
+  },
+  {
+    "id": "sprocket",
+    "name": "Sprocket",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A toothed wheel made to engage a chain rather than another gear."
+  },
+  {
+    "id": "pedal",
+    "name": "Pedal",
+    "emoji": "🚲",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The platform a foot pushes, on a bearing so it stays level as the crank goes round."
+  },
+  {
+    "id": "handlebar",
+    "name": "Handlebar",
+    "emoji": "🚲",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The bar the rider steers and leans on."
+  },
+  {
+    "id": "spade",
+    "name": "Spade",
+    "emoji": "🪏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A flat blade on a shaft, for cutting into ground and lifting it."
+  },
+  {
+    "id": "rake",
+    "name": "Rake",
+    "emoji": "🧹",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A row of teeth on a handle, for gathering loose material without lifting the ground with it."
+  },
+  {
+    "id": "tine",
+    "name": "Tine",
+    "emoji": "🍴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One prong of a fork, rake or harrow."
+  },
+  {
+    "id": "trowel",
+    "name": "Trowel",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A small flat blade for lifting and spreading mortar or soil."
+  },
+  {
+    "id": "blowpipe",
+    "name": "Blowpipe",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A hollow iron tube for gathering molten glass and inflating it."
+  },
+  {
+    "id": "film",
+    "name": "Film",
+    "emoji": "🎞️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A flexible strip carrying a light-sensitive layer."
+  },
+  {
+    "id": "binding",
+    "name": "Binding",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "Whatever holds the pages of a book together and to its cover."
+  },
+  {
+    "id": "rebar",
+    "name": "Rebar",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Steel bars cast into concrete to carry the loads concrete cannot."
+  },
+  {
+    "id": "rafter",
+    "name": "Rafter",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "One of the sloping members carrying a roof from ridge to wall."
+  },
+  {
+    "id": "ridge",
+    "name": "Ridge",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The horizontal line where two roof slopes meet at the top."
+  },
+  {
+    "id": "batten",
+    "name": "Batten",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A thin strip nailed across rafters, giving tiles something to hook on to."
+  },
+  {
+    "id": "roof_tile",
+    "name": "Roof Tile",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A fired clay plate, overlapped in courses so water runs off and never in."
+  },
+  {
+    "id": "flashing",
+    "name": "Flashing",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Sheet metal worked into the joint where a roof meets something else."
+  },
+  {
+    "id": "downpipe",
+    "name": "Downpipe",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The vertical pipe taking water from the gutter to the ground or the drain."
+  },
+  {
+    "id": "render",
+    "name": "Render",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "A coat of mortar spread over masonry, for weather and for looks."
+  },
+  {
+    "id": "primer",
+    "name": "Primer",
+    "emoji": "🖌️",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "The first coat, which is for sticking rather than for colour."
+  },
+  {
+    "id": "sealant",
+    "name": "Sealant",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "build"
+    ],
+    "fact": "A flexible filler for the joints between things that move at different rates."
+  },
+  {
+    "id": "screed",
+    "name": "Screed",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A thin levelling layer poured over a structural floor."
+  },
+  {
+    "id": "underlay",
+    "name": "Underlay",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A soft layer between a floor and its covering."
+  },
+  {
+    "id": "block",
+    "name": "Block",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A cast concrete unit, larger than a brick and laid the same way."
+  },
+  {
+    "id": "sill",
+    "name": "Sill",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The ledge under a window, throwing rainwater clear of the wall below."
+  },
+  {
+    "id": "pane",
+    "name": "Pane",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A single sheet of glass in a frame."
+  },
+  {
+    "id": "latch",
+    "name": "Latch",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A catch that holds a door shut without locking it."
+  },
+  {
+    "id": "silica",
+    "name": "Silica",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Silicon dioxide — the mineral that most sand, most rock and all ordinary glass is made of."
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A threaded rod with a head, clamping through a hole rather than gripping the material."
+  },
+  {
+    "id": "tang",
+    "name": "Tang",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The unsharpened part of a blade that runs back into the handle."
+  },
+  {
+    "id": "guard",
+    "name": "Guard",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The crosspiece between grip and blade."
+  },
+  {
+    "id": "grip",
+    "name": "Grip",
+    "emoji": "✋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part actually held, wrapped so the hand does not slip on it."
+  },
+  {
+    "id": "pommel",
+    "name": "Pommel",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The weight at the end of a hilt."
+  },
+  {
+    "id": "whetstone",
+    "name": "Whetstone",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A fine abrasive block for putting an edge back on a blade."
+  },
+  {
+    "id": "quenching",
+    "name": "Quenching",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Cooling hot steel fast enough to trap it in a hard, brittle state."
+  },
+  {
+    "id": "glaze",
+    "name": "Glaze",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A layer of glass fused onto pottery, making a porous body watertight."
+  },
+  {
+    "id": "slip",
+    "name": "Slip",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Clay thinned to a cream, for casting, joining and decorating."
+  },
+  {
+    "id": "firing",
+    "name": "Firing",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Heating clay until it changes irreversibly into ceramic."
+  },
+  {
+    "id": "harrow",
+    "name": "Harrow",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A frame of tines dragged over ploughed ground to break the clods."
+  },
+  {
+    "id": "irrigation",
+    "name": "Irrigation",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "crop"
+    ],
+    "fact": "Bringing water to a crop rather than waiting for it to fall."
+  },
+  {
+    "id": "fertiliser",
+    "name": "Fertiliser",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "trade"
+    ],
+    "fact": "Anything added to soil to replace what a crop takes out of it."
+  },
+  {
+    "id": "silo",
+    "name": "Silo",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "crop"
+    ],
+    "fact": "A tall sealed store keeping grain or fodder without it spoiling."
+  },
+  {
+    "id": "livestock",
+    "name": "Livestock",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "crop"
+    ],
+    "fact": "Animals kept for what they produce or become."
+  },
+  {
+    "id": "stud",
+    "name": "Stud",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "One of the upright timbers in a framed wall."
+  },
+  {
+    "id": "door_frame",
+    "name": "Door Frame",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The lining fixed in the opening, that a door is hung from."
+  },
+  {
+    "id": "window_frame",
+    "name": "Window Frame",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The surround holding glass in a wall."
+  },
+  {
+    "id": "water_tank",
+    "name": "Water Tank",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A stored volume of water, high enough that gravity does the delivering."
+  },
+  {
+    "id": "fan",
+    "name": "Fan",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Angled blades spun to push air along."
+  },
+  {
+    "id": "press",
+    "name": "Press",
+    "emoji": "🗜️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A machine that applies steady, very large force over a small distance."
+  },
+  {
+    "id": "circuit_board",
+    "name": "Circuit Board",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A rigid sheet with copper tracks etched on it, replacing wiring with printing."
+  },
+  {
+    "id": "resistor",
+    "name": "Resistor",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A component that deliberately makes it harder for current to flow."
+  },
+  {
+    "id": "heat_sink",
+    "name": "Heat Sink",
+    "emoji": "♨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A finned block of metal carrying heat away from something that must stay cool."
+  },
+  {
+    "id": "fin",
+    "name": "Fin",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A thin projecting plate, put on something to multiply its surface."
+  },
+  {
+    "id": "case",
+    "name": "Case",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A rigid container shaped to what it protects."
+  },
+  {
+    "id": "weight",
+    "name": "Weight",
+    "emoji": "🏋️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The force gravity exerts on a mass."
+  },
+  {
+    "id": "mainspring",
+    "name": "Mainspring",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The coiled ribbon of steel that stores the energy a clock runs on."
+  },
+  {
+    "id": "balance_wheel",
+    "name": "Balance Wheel",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A weighted wheel oscillating against a spring, keeping time in anything that has to be carried."
+  },
+  {
+    "id": "hoe",
+    "name": "Hoe",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A blade set across a handle, for cutting weeds off at the root without turning the soil."
+  },
+  {
+    "id": "watering_can",
+    "name": "Watering Can",
+    "emoji": "🚿",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A vessel with a spout and a perforated head, delivering rain rather than a stream."
+  },
+  {
+    "id": "mulch",
+    "name": "Mulch",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A layer spread on soil rather than dug into it."
+  },
+  {
+    "id": "hops",
+    "name": "Hops",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "crop",
+      "plant"
+    ],
+    "fact": "The flower that makes beer bitter and keeps it."
+  },
+  {
+    "id": "mash",
+    "name": "Mash",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "Crushed malt steeped in hot water, where starch becomes sugar."
+  },
+  {
+    "id": "cask",
+    "name": "Cask",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "A wooden barrel for storing and moving liquid."
+  },
+  {
+    "id": "antenna",
+    "name": "Antenna",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A conductor shaped so that a passing radio wave makes a current in it, or the reverse."
+  },
+  {
+    "id": "microphone",
+    "name": "Microphone",
+    "emoji": "🎤",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device turning sound into a matching electrical signal."
+  },
+  {
+    "id": "fuel_tank",
+    "name": "Fuel Tank",
+    "emoji": "⛽",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The vessel a vehicle carries its own fuel in."
+  },
+  {
+    "id": "camshaft",
+    "name": "Camshaft",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The shaft of lobes that opens each valve at exactly the right moment."
+  },
+  {
+    "id": "carburettor",
+    "name": "Carburettor",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part that mixed fuel into the air before injection replaced it."
+  },
+  {
+    "id": "starter_motor",
+    "name": "Starter Motor",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The electric motor that turns an engine over until it can run itself."
+  },
+  {
+    "id": "brake_disc",
+    "name": "Brake Disc",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The disc a brake grips, turning motion into heat."
+  },
+  {
+    "id": "suspension",
+    "name": "Suspension",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "What lets a wheel move up and down without the body doing the same."
+  },
+  {
+    "id": "shock_absorber",
+    "name": "Shock Absorber",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The damper that stops a spring bouncing."
+  },
+  {
+    "id": "chassis",
+    "name": "Chassis",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The structural frame everything else on a vehicle is attached to."
+  },
+  {
+    "id": "windscreen",
+    "name": "Windscreen",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The front window of a vehicle, and a structural part of it."
+  },
+  {
+    "id": "wiper",
+    "name": "Wiper",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A rubber blade sweeping water off glass."
+  },
+  {
+    "id": "seatbelt",
+    "name": "Seatbelt",
+    "emoji": "🔒",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A woven strap that spreads a sudden stop across the strongest parts of the body."
+  },
+  {
+    "id": "muffler",
+    "name": "Muffler",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The chamber that quietens an exhaust."
+  },
+  {
+    "id": "fretboard",
+    "name": "Fretboard",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "instrument"
+    ],
+    "fact": "The surface a string is pressed against, carrying the frets."
+  },
+  {
+    "id": "tuning_peg",
+    "name": "Tuning Peg",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "instrument"
+    ],
+    "fact": "The geared post a string is wound on and tensioned by."
+  },
+  {
+    "id": "motherboard",
+    "name": "Motherboard",
+    "emoji": "🟩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The main board everything in a computer plugs into."
+  },
+  {
+    "id": "hard_drive",
+    "name": "Hard Drive",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Spinning platters storing bits as magnetised patches."
+  },
+  {
+    "id": "power_supply",
+    "name": "Power Supply",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The unit turning mains electricity into the steady low voltages a machine needs."
+  },
+  {
+    "id": "computer_mouse",
+    "name": "Computer Mouse",
+    "emoji": "🖱️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A device that turns hand movement on a surface into movement on a screen."
+  },
+  {
+    "id": "dye",
+    "name": "Dye",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A colour that dissolves and bonds to a fibre, rather than sitting on it."
+  },
+  {
+    "id": "viewfinder",
+    "name": "Viewfinder",
+    "emoji": "📷",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The window showing what the lens is about to record."
+  },
+  {
+    "id": "focus_ring",
+    "name": "Focus Ring",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The collar that moves a lens to bring one distance sharp."
+  },
+  {
+    "id": "leg",
+    "name": "Leg",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "An upright support holding something at a working height."
+  },
+  {
+    "id": "backrest",
+    "name": "Backrest",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part of a seat supporting the spine."
+  },
+  {
+    "id": "upholstery",
+    "name": "Upholstery",
+    "emoji": "🛋️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The padding and covering over a seat frame."
+  },
+  {
+    "id": "cover",
+    "name": "Cover",
+    "emoji": "📕",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "The stiff outside of a book, protecting the pages and naming them."
+  },
+  {
+    "id": "page",
+    "name": "Page",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "One leaf of a book, printed on both sides."
+  },
+  {
+    "id": "spine",
+    "name": "Spine",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "The bound edge of a book, and the only part visible on a shelf."
+  },
+  {
+    "id": "firebox",
+    "name": "Firebox",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The chamber in a locomotive where the fire actually burns."
+  },
+  {
+    "id": "carriage",
+    "name": "Carriage",
+    "emoji": "🚃",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A wheeled vehicle body, drawn or hauled rather than driven."
+  },
+  {
+    "id": "signal",
+    "name": "Signal",
+    "emoji": "🚦",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "A fixed indication telling a driver whether the line ahead is clear."
+  },
+  {
+    "id": "saponification",
+    "name": "Saponification",
+    "emoji": "🧼",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "The reaction that splits fat with alkali and makes soap."
+  },
+  {
+    "id": "perfume",
+    "name": "Perfume",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Scent carried in something that evaporates and takes it with it."
+  },
+  {
+    "id": "rag",
+    "name": "Rag",
+    "emoji": "🧻",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "Worn-out cloth, and for centuries the raw material of paper."
+  },
+  {
+    "id": "annealing",
+    "name": "Annealing",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Cooling glass or metal slowly enough that it does not tear itself apart."
+  },
+  {
+    "id": "flux",
+    "name": "Flux",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Something added to lower the temperature at which another thing melts."
+  },
+  {
+    "id": "ward",
+    "name": "Ward",
+    "emoji": "🏥",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "medicine"
+    ],
+    "fact": "A hospital room of several beds, watched as one."
+  },
+  {
+    "id": "flap",
+    "name": "Flap",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A hinged section of wing, lowered to make it lift more at low speed."
+  },
+  {
+    "id": "cockpit",
+    "name": "Cockpit",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The compartment the aircraft is flown from."
+  },
+  {
+    "id": "cabin",
+    "name": "Cabin",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The enclosed, pressurised space people travel in."
+  },
+  {
+    "id": "altimeter",
+    "name": "Altimeter",
+    "emoji": "🎚️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An instrument reading height from air pressure."
+  },
+  {
+    "id": "altitude",
+    "name": "Altitude",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Height above a reference, which has to be chosen and stated."
+  },
+  {
+    "id": "insole",
+    "name": "Insole",
+    "emoji": "👟",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The layer inside a shoe, between the foot and the sole."
+  },
+  {
+    "id": "last",
+    "name": "Last",
+    "emoji": "👞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The foot-shaped form a shoe is built around."
+  },
+  {
+    "id": "soundhole",
+    "name": "Soundhole",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "instrument"
+    ],
+    "fact": "The opening in the body of a stringed instrument."
+  },
+  {
+    "id": "fragrance",
+    "name": "Fragrance",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "A volatile compound made to be smelled."
+  },
+  {
+    "id": "pruning_shears",
+    "name": "Pruning Shears",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two blades on a pivot with a spring, for cutting a living stem cleanly."
+  },
+  {
+    "id": "brake_pad",
+    "name": "Brake Pad",
+    "emoji": "🛑",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The friction material pressed against a disc."
+  },
+  {
+    "id": "reflector",
+    "name": "Reflector",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A surface returning light straight back toward whatever lit it."
+  },
+  {
+    "id": "grease",
+    "name": "Grease",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "trade"
+    ],
+    "fact": "Oil held in a soap thickener so it stays where it is put."
+  },
+  {
+    "id": "operating_theatre",
+    "name": "Operating Theatre",
+    "emoji": "🏥",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "medicine"
+    ],
+    "fact": "The room surgery is done in, built for cleanliness and light above all."
+  },
+  {
+    "id": "touchscreen",
+    "name": "Touchscreen",
+    "emoji": "📱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A display that senses where it is touched."
+  },
+  {
+    "id": "fuse_box",
+    "name": "Fuse Box",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "Where a building's circuits are divided and protected."
+  },
+  {
+    "id": "soil_pipe",
+    "name": "Soil Pipe",
+    "emoji": "🚽",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The large vertical pipe carrying waste from a building to the sewer."
+  },
+  {
+    "id": "fireplace",
+    "name": "Fireplace",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A hearth built into a wall, with a flue above it."
+  },
+  {
+    "id": "body_panel",
+    "name": "Body Panel",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A pressed steel skin over a vehicle's structure."
+  },
+  {
+    "id": "glazing_bar",
+    "name": "Glazing Bar",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The slim timber divider between panes in a window."
+  },
+  {
+    "id": "crop",
+    "name": "Crop",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "crop"
+    ],
+    "fact": "A plant grown deliberately, in quantity, for use."
+  },
+  {
+    "id": "fork_garden",
+    "name": "Garden Fork",
+    "emoji": "🍴",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Several stout tines on a handle, for lifting and breaking soil rather than cutting it."
+  },
+  {
+    "id": "worktop",
+    "name": "Worktop",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The working surface of a kitchen, at a height set by the person and not the room."
+  },
+  {
+    "id": "damp_proof_course",
+    "name": "Damp Proof Course",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A waterproof layer built into a wall near the ground."
+  },
+  {
+    "id": "cavity_wall_tie",
+    "name": "Cavity Wall Tie",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A metal tie holding the two leaves of a cavity wall together across the gap."
+  },
+  {
+    "id": "roofing_felt",
+    "name": "Roofing Felt",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A bitumen-soaked sheet laid under tiles as a second line of defence."
+  },
+  {
+    "id": "socket",
+    "name": "Socket",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "The fixed outlet a plug is pushed into."
+  },
+  {
+    "id": "track_gauge",
+    "name": "Track Gauge",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "The distance between the inner faces of the rails."
+  },
+  {
+    "id": "indicator",
+    "name": "Indicator",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The flashing lamp that tells other people what a driver intends."
+  },
+  {
+    "id": "sim_card",
+    "name": "SIM Card",
+    "emoji": "📱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The small card holding the identity a phone uses on a network."
+  },
+  {
+    "id": "hand",
+    "name": "Hand",
+    "emoji": "✋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The end of the arm, and the reason so much of the brain is given over to touch."
+  },
+  {
+    "id": "cave",
+    "name": "Cave",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A natural space underground, large enough to enter."
+  },
+  {
+    "id": "size",
+    "name": "Size",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "build"
+    ],
+    "fact": "A sealing coat applied before another, so the next layer sits on the surface instead of soaking in."
+  },
+  {
+    "id": "soundboard",
+    "name": "Soundboard",
+    "emoji": "🎸",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "instrument"
+    ],
+    "fact": "The thin top plate of a stringed instrument, and the part that actually makes the sound."
   }
 ]

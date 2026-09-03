@@ -53,19 +53,42 @@ const covered = c => c.split('|').some(has);
 const args = process.argv.slice(2);
 const one = args.find(a => !a.startsWith('--'));
 
-/* --next: which elements look like assemblies and have no list yet?
- * An assembly is a thing other things are made OF. The signal used here is
- * that the corpus already treats it as a material or component — it appears
- * as a recipe INPUT often — while having no needs list of its own. */
+/* --next: which elements are ASSEMBLIES and have no list yet?
+ *
+ * The first version ranked by how often an element is used as a recipe input,
+ * and returned water, sun and stone — the primitives, which are exactly the
+ * things that have no bill of materials. Frequency measures how fundamental
+ * something is, which is the opposite of what is wanted.
+ *
+ * An assembly is something MADE: it has a maker's tag, it is deep in the
+ * graph rather than near the starters, and other things are built from it.
+ * Ranked by depth first, because depth is the honest measure of "how much had
+ * to happen before this existed".
+ */
 if (args.includes('--next')) {
+  const MADE = new Set(['tool', 'build', 'dish', 'trade', 'instrument', 'medicine', 'transport', 'machine']);
+  const byId = new Map(elements.map(e => [e.id, e]));
+  const best = new Map();
+  for (const r of recipes) if (!best.has(r.out)) best.set(r.out, r);
+  const depthCache = new Map();
+  const depthOf = (id, seen = new Set()) => {
+    if (depthCache.has(id)) return depthCache.get(id);
+    if (seen.has(id)) return 0;
+    const r = best.get(id);
+    if (!r) return 0;
+    const d = 1 + Math.max(...r.in.map(i => depthOf(i, new Set([...seen, id]))));
+    depthCache.set(id, d);
+    return d;
+  };
   const asInput = new Map();
   for (const r of recipes) for (const i of r.in) asInput.set(i, (asInput.get(i) ?? 0) + 1);
-  const rows = [...asInput]
-    .filter(([id]) => !NEEDS[id] && ids.has(id))
-    .sort((a, b) => b[1] - a[1])
+  const rows = elements
+    .filter(e => !NEEDS[e.id] && (e.tags || []).some(t => MADE.has(t)))
+    .map(e => ({ id: e.id, d: depthOf(e.id), used: asInput.get(e.id) ?? 0 }))
+    .sort((a, b) => (b.d - a.d) || (b.used - a.used))
     .slice(0, 40);
-  console.log(`\nUSED AS AN INPUT OFTEN, AND HAS NO NEEDS LIST — top ${rows.length}\n`);
-  for (const [id, n] of rows) console.log(`  ${id.padEnd(24)} used by ${n} recipes`);
+  console.log(`\nMADE THINGS WITH NO NEEDS LIST — deepest first, top ${rows.length}\n`);
+  for (const r of rows) console.log(`  ${r.id.padEnd(26)} depth ${String(r.d).padStart(2)}   used by ${r.used} recipes`);
   console.log(`\n  ${Object.keys(NEEDS).length} lists written so far.\n`);
   process.exit(0);
 }

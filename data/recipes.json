@@ -85066,5 +85066,2035 @@
     "why": "It is a structure whose whole purpose is to be taken down, so it is bolted and clamped rather than fixed, and every part is a standard length — which is what lets the same tubes go up around any shape of building.",
     "src": "https://en.wikipedia.org/wiki/Scaffolding",
     "verified": true
+  },
+  {
+    "in": [
+      "forge",
+      "pipe"
+    ],
+    "out": "cylinder",
+    "why": "Everything depends on how round it is. A piston seals against the wall by its rings, so the bore is honed to a few thousandths of a millimetre and given a fine cross-hatch of scratches on purpose, to hold a film of oil.",
+    "src": "https://en.wikipedia.org/wiki/Cylinder_(engine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cylinder",
+      "piston"
+    ],
+    "out": "engine",
+    "why": "The cylinder and piston only give a push. Turning that into rotation needs a crank, and turning an intermittent push into steady rotation needs stored inertia — which is why every engine has a heavy wheel somewhere on the shaft.",
+    "src": "https://en.wikipedia.org/wiki/Engine",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "lever"
+    ],
+    "out": "crank",
+    "why": "It is the piece that makes engines possible, and it is far older than engines: the same geometry turns a grindstone, a hand drill and a bicycle. Force applied at the throw becomes torque about the axis, and the length of the throw is the leverage.",
+    "src": "https://en.wikipedia.org/wiki/Crank_(mechanism)",
+    "verified": true
+  },
+  {
+    "in": [
+      "fulcrum",
+      "rod"
+    ],
+    "out": "lever",
+    "why": "One of the six classical simple machines, and the one the others are explained with. Force times distance from the fulcrum is the same on both sides, so a bar ten times longer on your side lifts ten times the weight through a tenth of the distance.",
+    "src": "https://en.wikipedia.org/wiki/Lever",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "stone"
+    ],
+    "out": "fulcrum",
+    "why": "Where it sits decides everything the lever does. Close to the load it multiplies force; close to the hand it multiplies speed and distance instead — the same bar, two different machines.",
+    "src": "https://en.wikipedia.org/wiki/Lever",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "mould"
+    ],
+    "out": "rod",
+    "why": "Cast to a rough bar in a mould and then drawn: metal pulled through a die comes out at a diameter set by the hole, work-hardened by the pull, and straighter than anything poured can be.",
+    "src": "https://en.wikipedia.org/wiki/Rod_(metalworking)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "wheel"
+    ],
+    "out": "flywheel",
+    "why": "It stores energy in motion rather than in a spring or a fuel, and how much depends on where the mass sits: doubling the radius stores four times as much, which is why a flywheel is heavy at the rim and light at the centre.",
+    "src": "https://en.wikipedia.org/wiki/Flywheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "steam"
+    ],
+    "out": "boiler",
+    "why": "Water expands about 1,700 times when it boils, and holding that expansion in is where the power comes from and where the danger is. The whole history of the boiler is the history of containing it: staying, riveting, testing, and the safety valve that admits defeat on purpose.",
+    "src": "https://en.wikipedia.org/wiki/Boiler",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "spring"
+    ],
+    "out": "valve",
+    "why": "A one-way valve needs no operator at all: pressure from the wrong side pushes it shut. That is the heart, the pump and the engine using the same idea, and it is why a valve is the first thing added to any pipe that matters.",
+    "src": "https://en.wikipedia.org/wiki/Valve",
+    "verified": true
+  },
+  {
+    "in": [
+      "piston",
+      "valve"
+    ],
+    "out": "pump",
+    "why": "A piston pump does not suck. It lowers the pressure above the water and the atmosphere pushes it up — which is why no such pump can lift water more than about ten metres, however hard it is worked.",
+    "src": "https://en.wikipedia.org/wiki/Pump",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "steel"
+    ],
+    "out": "bearing",
+    "why": "Rolling friction is a small fraction of sliding friction, so putting hardened balls between two races turns a rubbing joint into a rolling one. It is the reason a wheel spins for minutes rather than seconds.",
+    "src": "https://en.wikipedia.org/wiki/Ball_bearing",
+    "verified": true
+  },
+  {
+    "in": [
+      "friction",
+      "wheel"
+    ],
+    "out": "brake",
+    "why": "It does not destroy the energy, it moves it: everything the vehicle had as speed comes out as heat in the pads and discs. That is why brakes fade — hot enough, they stop being able to accept any more.",
+    "src": "https://en.wikipedia.org/wiki/Brake",
+    "verified": true
+  },
+  {
+    "in": [
+      "force",
+      "surface"
+    ],
+    "out": "friction",
+    "why": "It does not depend on how large the contact area is, which is deeply counter-intuitive: pressing twice as hard doubles it, spreading the same load over twice the area does not change it at all. Amontons worked that out in 1699.",
+    "src": "https://en.wikipedia.org/wiki/Friction",
+    "verified": true
+  },
+  {
+    "in": [
+      "area",
+      "matter"
+    ],
+    "out": "surface",
+    "why": "Almost everything interesting happens there rather than inside: friction, corrosion, catalysis, wetting, adhesion. It is also never as flat as it looks — polished steel under a microscope is a landscape of peaks touching at a few points.",
+    "src": "https://en.wikipedia.org/wiki/Surface",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "geometry"
+    ],
+    "out": "area",
+    "why": "It grows as the square of size while volume grows as the cube, which is the single most useful fact in biology and engineering: double a thing and its skin quadruples while its bulk goes up eightfold, so large animals overheat and small ones starve.",
+    "src": "https://en.wikipedia.org/wiki/Area",
+    "verified": true
+  },
+  {
+    "in": [
+      "distillation",
+      "petroleum"
+    ],
+    "out": "petrol",
+    "why": "Crude oil is a mixture of thousands of hydrocarbons and useless as it comes. A refinery separates them by boiling point in a fractionating column — petrol comes off high up where it is cool, diesel lower down, bitumen never leaves the bottom.",
+    "src": "https://en.wikipedia.org/wiki/Gasoline",
+    "verified": true
+  },
+  {
+    "in": [
+      "engine",
+      "gear"
+    ],
+    "out": "gearbox",
+    "why": "An engine makes useful power over a narrow band of speed and a car has to move from nothing to motorway pace. The gearbox trades turns for torque: a low gear turns the wheels slowly and pushes hard, a high gear the reverse.",
+    "src": "https://en.wikipedia.org/wiki/Transmission_(mechanics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "friction",
+      "gearbox"
+    ],
+    "out": "clutch",
+    "why": "It works by slipping on purpose. Two plates pressed together transmit only as much torque as friction between them allows, so a clutch can take up drive gradually instead of stalling the engine or snatching the car forward.",
+    "src": "https://en.wikipedia.org/wiki/Clutch",
+    "verified": true
+  },
+  {
+    "in": [
+      "gearbox",
+      "rod"
+    ],
+    "out": "driveshaft",
+    "why": "It has to twist and not break: a shaft transmits torque by being wound up slightly along its length, and because only the outside is highly stressed, it is usually a tube rather than a bar.",
+    "src": "https://en.wikipedia.org/wiki/Drive_shaft",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "gearbox"
+    ],
+    "out": "differential",
+    "why": "Going round a corner the outer wheel travels further than the inner one. Locked together they must scrub; disconnected, only one drives. The differential splits torque evenly while allowing any difference in speed, which is a genuinely clever piece of geometry.",
+    "src": "https://en.wikipedia.org/wiki/Differential_(mechanical_device)",
+    "verified": true
+  },
+  {
+    "in": [
+      "ceramic",
+      "spark"
+    ],
+    "out": "spark_plug",
+    "why": "It has to carry tens of thousands of volts to a gap inside a combustion chamber, so its body is an insulator — a ceramic strong enough to survive the pressure and hot enough not to foul, which is why the ribbed white porcelain is the whole design.",
+    "src": "https://en.wikipedia.org/wiki/Spark_plug",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "magnet"
+    ],
+    "out": "alternator",
+    "why": "Spinning a magnet inside coils of wire makes current whichever way the field moves, so the output alternates and has to be rectified back to direct current for the battery — which is why an alternator has diodes and a dynamo did not.",
+    "src": "https://en.wikipedia.org/wiki/Alternator",
+    "verified": true
+  },
+  {
+    "in": [
+      "engine",
+      "pipe"
+    ],
+    "out": "exhaust",
+    "why": "Getting gas out matters almost as much as getting mixture in: a cylinder still full of its last burn cannot take a full fresh charge, so exhaust design is about the pressure wave leaving, not just the hole it leaves through.",
+    "src": "https://en.wikipedia.org/wiki/Exhaust_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "exhaust",
+      "platinum"
+    ],
+    "out": "catalytic_converter",
+    "why": "It converts carbon monoxide and unburnt fuel to carbon dioxide and water and splits nitrogen oxides back apart, using platinum, palladium and rhodium as catalysts. Leaded petrol poisons it permanently, which is why lead had to go before it could be fitted.",
+    "src": "https://en.wikipedia.org/wiki/Catalytic_converter",
+    "verified": true
+  },
+  {
+    "in": [
+      "rod",
+      "wheel"
+    ],
+    "out": "steering_wheel",
+    "why": "The reduction is the point: several turns lock to lock means a small force at the rim becomes a large one at the tyre, and a bump at the tyre arrives back at the hands much reduced.",
+    "src": "https://en.wikipedia.org/wiki/Steering_wheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "dial",
+      "plastic"
+    ],
+    "out": "dashboard",
+    "why": "The name is older than cars: a dashboard was the board on a carriage that stopped mud dashed up by the horse's hooves from reaching the driver. The instruments arrived on it later and kept the name.",
+    "src": "https://en.wikipedia.org/wiki/Dashboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "needle",
+      "number"
+    ],
+    "out": "dial",
+    "why": "A pointer is read faster than a number because the eye takes in an angle at a glance and has to decode a digit. That is why the instruments that matter in a hurry are dials and the ones you study are numbers.",
+    "src": "https://en.wikipedia.org/wiki/Gauge_(instrument)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dial",
+      "wheel"
+    ],
+    "out": "speedometer",
+    "why": "The classic mechanical kind measures nothing directly: a magnet spun by the wheels drags a metal cup around against a hairspring, and how far it drags is proportional to speed. There is no gearing to the needle at all, only eddy currents.",
+    "src": "https://en.wikipedia.org/wiki/Speedometer",
+    "verified": true
+  },
+  {
+    "in": [
+      "bulb",
+      "mirror"
+    ],
+    "out": "headlight",
+    "why": "The reflector does most of the work. A bulb alone lights the whole sphere; a parabolic mirror with the filament at its focus turns almost all of that into a beam, and the dipped pattern is made by deliberately putting part of the filament off-focus.",
+    "src": "https://en.wikipedia.org/wiki/Headlamp",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "foam"
+    ],
+    "out": "seat",
+    "why": "A seat is a compromise between support and pressure: too soft and the pelvis rolls back and the lower spine takes the load, too hard and the weight arrives on two small bones. Foam over a sprung base is an attempt at both.",
+    "src": "https://en.wikipedia.org/wiki/Chair",
+    "verified": true
+  },
+  {
+    "in": [
+      "bubble",
+      "polymer"
+    ],
+    "out": "foam",
+    "why": "Almost all of it is air, so its properties come from the walls between bubbles rather than the material itself. Open cells let air through and squash easily; closed cells trap it and push back — the same plastic, two different materials.",
+    "src": "https://en.wikipedia.org/wiki/Foam",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "needle"
+    ],
+    "out": "syringe",
+    "why": "The hollow needle is the hard part and the late one: Alexander Wood and Charles Pravaz arrived at it independently around 1853, and it is what turned a drug into a dose that could bypass the gut entirely.",
+    "src": "https://en.wikipedia.org/wiki/Syringe",
+    "verified": true
+  },
+  {
+    "in": [
+      "needle",
+      "thread"
+    ],
+    "out": "suture",
+    "why": "Holding the edges together is the whole treatment: skin knits edge to edge in days and across a gap in weeks, with a scar in proportion. Catgut, which is sheep intestine and never cat, dissolves so internal stitches need not be removed.",
+    "src": "https://en.wikipedia.org/wiki/Surgical_suture",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "wound"
+    ],
+    "out": "bandage",
+    "why": "A wound heals faster kept slightly moist than dried to a scab, which reverses what everyone was taught: the scab is not a repair but an obstacle the new skin has to grow underneath.",
+    "src": "https://en.wikipedia.org/wiki/Bandage",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "skin"
+    ],
+    "out": "wound",
+    "why": "Repair runs in a fixed order whatever caused it: bleeding stops, the site inflames and is cleaned by white cells, new tissue and vessels are built, and then the patch is remodelled and shrunk for months afterwards.",
+    "src": "https://en.wikipedia.org/wiki/Wound_healing",
+    "verified": true
+  },
+  {
+    "in": [
+      "lever",
+      "steel"
+    ],
+    "out": "forceps",
+    "why": "It is a lever pair, so the grip at the tip is set by where the hinge sits — and surgical patterns are shaped for one job each, which is why there are hundreds of named kinds and a surgeon asks for one by name.",
+    "src": "https://en.wikipedia.org/wiki/Forceps",
+    "verified": true
+  },
+  {
+    "in": [
+      "ether",
+      "surgery"
+    ],
+    "out": "anaesthetic",
+    "why": "Before it, surgery was measured in seconds and limited to what a held-down patient could survive. Its public demonstration in Boston in 1846 changed what could be attempted more than any instrument ever has, and how the general kind works is still not fully settled.",
+    "src": "https://en.wikipedia.org/wiki/Anesthesia",
+    "verified": true
+  },
+  {
+    "in": [
+      "scalpel",
+      "wound"
+    ],
+    "out": "surgery",
+    "why": "It waited on three things and none of them is a technique: anaesthesia so the patient could be still, antisepsis so the wound would not kill them afterwards, and haemostasis so they did not bleed to death first. All three arrived within fifty years.",
+    "src": "https://en.wikipedia.org/wiki/Surgery",
+    "verified": true
+  },
+  {
+    "in": [
+      "bandage",
+      "hospital"
+    ],
+    "out": "nurse",
+    "why": "Nightingale's contribution was statistical as much as practical: her records at Scutari showed most deaths were from infection rather than wounds, and her polar-area diagrams made the case to people who would not read a table.",
+    "src": "https://en.wikipedia.org/wiki/Nursing",
+    "verified": true
+  },
+  {
+    "in": [
+      "diagnosis",
+      "hospital"
+    ],
+    "out": "doctor",
+    "why": "The diagnosis is the harder half. Treatment follows from it, and for most of history the treatments were useless or worse while the diagnosis was still worth having — knowing what is coming is a different service from changing it.",
+    "src": "https://en.wikipedia.org/wiki/Physician",
+    "verified": true
+  },
+  {
+    "in": [
+      "disease",
+      "symptom"
+    ],
+    "out": "diagnosis",
+    "why": "It is reasoning under uncertainty, not lookup: the same symptom belongs to many diseases and any disease shows only some of its symptoms in any one person. Tests move the probability rather than settling it.",
+    "src": "https://en.wikipedia.org/wiki/Medical_diagnosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "disease",
+      "human"
+    ],
+    "out": "symptom",
+    "why": "Some are the illness doing damage and some are the body's answer to it: fever, inflammation and coughing are all defences, which is why suppressing them is sometimes exactly wrong.",
+    "src": "https://en.wikipedia.org/wiki/Symptom",
+    "verified": true
+  },
+  {
+    "in": [
+      "automobile",
+      "hospital"
+    ],
+    "out": "ambulance",
+    "why": "Larrey's flying ambulances in the 1790s were the first, and the idea behind them is still the whole point: survival after major injury falls sharply with time, so the hour after it happens is worth more than anything done later.",
+    "src": "https://en.wikipedia.org/wiki/Ambulance",
+    "verified": true
+  },
+  {
+    "in": [
+      "gear",
+      "lever"
+    ],
+    "out": "escapement",
+    "why": "It is what makes a clock a clock rather than a weight falling. It does two jobs at once — counting the oscillation and keeping it going — and every tick is the sound of one tooth being released.",
+    "src": "https://en.wikipedia.org/wiki/Escapement",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "rod"
+    ],
+    "out": "pendulum",
+    "why": "Galileo noticed that the period barely changes with how far it swings, which is what makes it a timekeeper. It depends on length and gravity, so the same clock runs slow at the equator and on a mountain.",
+    "src": "https://en.wikipedia.org/wiki/Pendulum",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "leather"
+    ],
+    "out": "hilt",
+    "why": "It is a counterweight as much as a handle. The pommel behind the hand moves the balance point back toward it, and a sword balanced near the hand feels light and turns quickly whatever it actually weighs.",
+    "src": "https://en.wikipedia.org/wiki/Hilt",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "sword"
+    ],
+    "out": "scabbard",
+    "why": "It protects the person from the edge and the edge from the weather, and it has to do the second without holding damp against steel — which is why a scabbard is lined with something that breathes and oiled fleece was used for centuries.",
+    "src": "https://en.wikipedia.org/wiki/Scabbard",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "light"
+    ],
+    "out": "aperture",
+    "why": "It does two things at once and they fight: a small hole is dimmer but brings a deeper slice of the world into focus, a wide one is bright with only a thin plane sharp. Every photograph is a decision about that trade.",
+    "src": "https://en.wikipedia.org/wiki/Aperture",
+    "verified": true
+  },
+  {
+    "in": [
+      "spring",
+      "time"
+    ],
+    "out": "shutter",
+    "why": "Together with the aperture it fixes the exposure, and separately it fixes the motion: a thousandth of a second freezes a bird, a second turns moving water into a smear. The same brightness, two entirely different pictures.",
+    "src": "https://en.wikipedia.org/wiki/Shutter_(photography)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "comb"
+    ],
+    "out": "wax",
+    "why": "It is what a candle actually burns, though not as a solid: the flame melts wax, the wick draws the liquid up, and the heat vaporises it at the top. A candle is a small oil lamp that carries its own fuel in solid form.",
+    "src": "https://en.wikipedia.org/wiki/Wax",
+    "verified": true
+  },
+  {
+    "in": [
+      "cotton",
+      "twist"
+    ],
+    "out": "wick",
+    "why": "It is a pump with no moving parts. A modern candle wick is braided so it curls into the hot edge of the flame and burns itself away at the same rate the wax goes down, which is why it needs no trimming and older ones did.",
+    "src": "https://en.wikipedia.org/wiki/Candle_wick",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "rubber"
+    ],
+    "out": "sole",
+    "why": "It has to be stiff enough not to fold under the arch and flexible enough to let the foot roll from heel to toe, which is why almost every sole is layered rather than a single slab.",
+    "src": "https://en.wikipedia.org/wiki/Shoe",
+    "verified": true
+  },
+  {
+    "in": [
+      "sole",
+      "wood"
+    ],
+    "out": "heel",
+    "why": "It started as a riding aid — a heel stops the foot sliding through a stirrup — and became fashion afterwards. Raising it tips the body forward and shifts load onto the front of the foot, which is the whole ergonomic argument about it.",
+    "src": "https://en.wikipedia.org/wiki/High-heeled_shoe",
+    "verified": true
+  },
+  {
+    "in": [
+      "cord",
+      "eyelet"
+    ],
+    "out": "lace",
+    "why": "Threading is what distributes the pull: each crossing shares the tension, so a single cord closes the whole opening evenly rather than pinching wherever it happens to be tied.",
+    "src": "https://en.wikipedia.org/wiki/Shoelaces",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "rivet"
+    ],
+    "out": "eyelet",
+    "why": "The metal ring spreads the load around the whole circumference. Without it the cord bears on a few threads and the hole becomes a tear, which is the reason a grommet exists at all.",
+    "src": "https://en.wikipedia.org/wiki/Grommet",
+    "verified": true
+  },
+  {
+    "in": [
+      "thread",
+      "twist"
+    ],
+    "out": "cord",
+    "why": "The twist is what makes it work: it presses the fibres against each other so friction stops them sliding apart, and the load is shared instead of falling on whichever strand is shortest.",
+    "src": "https://en.wikipedia.org/wiki/Rope",
+    "verified": true
+  },
+  {
+    "in": [
+      "spinning_wheel",
+      "thread"
+    ],
+    "out": "twist",
+    "why": "It is the whole basis of spinning and of rope. Twisted one way the strands grip; twisted the same way again at the next level up they would unwind, which is why rope is laid in alternating directions at each stage.",
+    "src": "https://en.wikipedia.org/wiki/Twist_(cloth)",
+    "verified": true
+  },
+  {
+    "in": [
+      "brass",
+      "neck"
+    ],
+    "out": "fret",
+    "why": "It turns a continuous instrument into a stepped one. Spacing follows a fixed ratio — each fret is about 5.95 per cent of the remaining length from the last — so the twelfth lands at the halfway point and sounds the octave.",
+    "src": "https://en.wikipedia.org/wiki/Fret",
+    "verified": true
+  },
+  {
+    "in": [
+      "timber",
+      "wood"
+    ],
+    "out": "neck",
+    "why": "A set of steel strings pulls with something like 80 kilograms of force, all of it trying to fold the neck forward, which is why a modern one has a steel rod buried along its length to pull back.",
+    "src": "https://en.wikipedia.org/wiki/Neck_(music)",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "resin"
+    ],
+    "out": "varnish",
+    "why": "Resin gives the film its hardness and oil its flexibility, and the ratio decides everything: too hard and it cracks as the wood moves, too soft and it never stops being sticky. On an instrument it also changes how the wood vibrates.",
+    "src": "https://en.wikipedia.org/wiki/Varnish",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "forge"
+    ],
+    "out": "furnace",
+    "why": "The enclosure is the technology, not the fire: brick keeps the heat in and a draught forces it hotter, and the difference between a hearth that warms a room and a furnace that melts iron is entirely how well it does both.",
+    "src": "https://en.wikipedia.org/wiki/Furnace",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "lime"
+    ],
+    "out": "soda_ash",
+    "why": "Pure silica melts near 1,700 degrees, which was out of reach for most of history. Adding soda drops it by hundreds of degrees — and because that also makes the glass water-soluble, lime has to go in as well to make it durable.",
+    "src": "https://en.wikipedia.org/wiki/Sodium_carbonate",
+    "verified": true
+  },
+  {
+    "in": [
+      "chalk",
+      "oil"
+    ],
+    "out": "putty",
+    "why": "It has to stay slightly flexible for years. Glass and timber move at different rates with heat and damp, so anything rigid between them cracks the pane — putty works by never quite finishing setting.",
+    "src": "https://en.wikipedia.org/wiki/Putty",
+    "verified": true
+  },
+  {
+    "in": [
+      "joint",
+      "rod"
+    ],
+    "out": "frame",
+    "why": "It is the idea that a structure can be lines rather than surfaces. A triangulated frame cannot change shape without a member changing length, which is why bridges, bicycles and roofs are all made of triangles and why a rectangle needs a brace.",
+    "src": "https://en.wikipedia.org/wiki/Frame_(structure)",
+    "verified": true
+  },
+  {
+    "in": [
+      "rod",
+      "wire"
+    ],
+    "out": "spoke",
+    "why": "A wire wheel does not stand on its spokes, it hangs from them: the hub is suspended from the upper spokes while the lower ones slacken. That is why they are tensioned in a set, and why one loose spoke puts a wheel out of true.",
+    "src": "https://en.wikipedia.org/wiki/Spoke",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoop",
+      "steel"
+    ],
+    "out": "rim",
+    "why": "It is squeezed, not stretched: every spoke pulls inward, so the rim is a ring in compression trying to buckle, and its depth is what stops it. Take the tension off and a wheel can be reshaped by hand.",
+    "src": "https://en.wikipedia.org/wiki/Rim_(wheel)",
+    "verified": true
+  },
+  {
+    "in": [
+      "axle",
+      "bearing"
+    ],
+    "out": "hub",
+    "why": "Everything about a wheel is decided here: the bearings set how freely it spins, and the flange spacing sets how wide the spokes splay, which is what makes a wheel stiff sideways rather than just round.",
+    "src": "https://en.wikipedia.org/wiki/Wheel_hub_assembly",
+    "verified": true
+  },
+  {
+    "in": [
+      "rim",
+      "rubber"
+    ],
+    "out": "tyre",
+    "why": "It carries the load on air rather than on rubber: the casing is a pressure vessel and the contact patch is only as large as the load divided by the pressure. Grip comes from the rubber deforming into the road's texture, which is why a hot tyre grips better and a worn one does not.",
+    "src": "https://en.wikipedia.org/wiki/Tire",
+    "verified": true
+  },
+  {
+    "in": [
+      "rubber",
+      "valve"
+    ],
+    "out": "inner_tube",
+    "why": "Separating the two jobs is what made the pneumatic tyre practical: a thin tube can be made airtight cheaply, and a thick casing can be made tough, and neither has to be both.",
+    "src": "https://en.wikipedia.org/wiki/Bicycle_tire",
+    "verified": true
+  },
+  {
+    "in": [
+      "chain",
+      "gear"
+    ],
+    "out": "sprocket",
+    "why": "The teeth do not mesh, they seat: each one sits inside a link, so the chain and the sprocket must share exactly the same pitch. Wear stretches a chain and it then rides high on the teeth, which is how a worn chain destroys a good sprocket.",
+    "src": "https://en.wikipedia.org/wiki/Sprocket",
+    "verified": true
+  },
+  {
+    "in": [
+      "bearing",
+      "lever"
+    ],
+    "out": "pedal",
+    "why": "Force is only useful over part of the circle — near the top and bottom the foot is pushing along the crank and achieving nothing — which is why pedalling well is about spreading effort round the stroke rather than stamping.",
+    "src": "https://en.wikipedia.org/wiki/Bicycle_pedal",
+    "verified": true
+  },
+  {
+    "in": [
+      "rod",
+      "steel"
+    ],
+    "out": "handlebar",
+    "why": "It is a lever on the steering axis, so its width sets how much leverage there is over the front wheel: wide bars turn easily and slowly, narrow ones are quick and twitchy, and neither is better in general.",
+    "src": "https://en.wikipedia.org/wiki/Bicycle_handlebar",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "timber"
+    ],
+    "out": "spade",
+    "why": "The cut is the point, which is why the blade is flat and sharpened rather than curved: a spade slices a clean edge and a shovel scoops what is already loose, and using either for the other's job is hard work.",
+    "src": "https://en.wikipedia.org/wiki/Spade",
+    "verified": true
+  },
+  {
+    "in": [
+      "timber",
+      "tine"
+    ],
+    "out": "rake",
+    "why": "The gaps do the work. Teeth spaced wider than soil crumbs and narrower than leaves sort one from the other as they pass, which is the whole design.",
+    "src": "https://en.wikipedia.org/wiki/Rake_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "rod"
+    ],
+    "out": "tine",
+    "why": "Several thin points enter ground far more easily than one broad edge, because each concentrates the same push onto a much smaller area — the reason a garden fork beats a spade in heavy clay.",
+    "src": "https://en.wikipedia.org/wiki/Tine_(structural)",
+    "verified": true
+  },
+  {
+    "in": [
+      "handle",
+      "steel"
+    ],
+    "out": "trowel",
+    "why": "The bricklayer's and the gardener's are different tools with one name: one is a flat plate for spreading a bed, the other a scoop for making a hole. Both are shaped for one hand and one motion.",
+    "src": "https://en.wikipedia.org/wiki/Trowel",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "pipe"
+    ],
+    "out": "blowpipe",
+    "why": "Its invention around the first century BC is what made glass an everyday material rather than a luxury: before it, vessels were ground or cast one at a time, and after it a gather could be blown into a bottle in a minute.",
+    "src": "https://en.wikipedia.org/wiki/Glassblowing",
+    "verified": true
+  },
+  {
+    "in": [
+      "gelatin",
+      "silver"
+    ],
+    "out": "film",
+    "why": "Silver halide crystals in gelatin darken where light strikes them, and the image is latent until developed — a few atoms of silver per grain, invisible, waiting for a chemical that will amplify them a billionfold.",
+    "src": "https://en.wikipedia.org/wiki/Photographic_film",
+    "verified": true
+  },
+  {
+    "in": [
+      "glue",
+      "thread"
+    ],
+    "out": "binding",
+    "why": "It decides how the book behaves more than the paper does: sewn sections open flat and survive a century, glued spines are cheap and crack, and the difference shows the first time anyone tries to photocopy one.",
+    "src": "https://en.wikipedia.org/wiki/Bookbinding",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "rod"
+    ],
+    "out": "rebar",
+    "why": "Concrete is strong squeezed and weak pulled — about a tenth as strong — so it is put where the squeezing happens and steel where the stretching does. The pairing only works because the two expand at almost exactly the same rate with heat.",
+    "src": "https://en.wikipedia.org/wiki/Rebar",
+    "verified": true
+  },
+  {
+    "in": [
+      "roof",
+      "timber"
+    ],
+    "out": "rafter",
+    "why": "A pair of rafters leaning together push outward at the feet as well as down, which is what spreads walls apart. The tie across the bottom is not optional: it turns two struts into a triangle and cancels the thrust.",
+    "src": "https://en.wikipedia.org/wiki/Rafter",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "roof"
+    ],
+    "out": "ridge",
+    "why": "It is where the rafters lean on each other, and where the roof is most exposed and least able to shed water sideways — which is why the ridge tile is the one bedded in mortar and the one that fails first.",
+    "src": "https://en.wikipedia.org/wiki/Roof",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "roof"
+    ],
+    "out": "batten",
+    "why": "It is what makes a tiled roof possible without nailing every tile: each one hangs by a nib over a batten, held down by its own weight and the tile above, so any single tile can be lifted out and replaced.",
+    "src": "https://en.wikipedia.org/wiki/Batten",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay",
+      "kiln"
+    ],
+    "out": "roof_tile",
+    "why": "It does not seal, it sheds. Each course overlaps the two below so there is no straight path through, and the whole roof relies on gravity and slope rather than on any joint being watertight.",
+    "src": "https://en.wikipedia.org/wiki/Roof_tiles",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "roof"
+    ],
+    "out": "flashing",
+    "why": "Every leak is at a junction, never in the middle of a slope, so flashing exists only for those places — and it is traditionally lead because lead can be dressed by hand into any shape and moves with the building instead of cracking.",
+    "src": "https://en.wikipedia.org/wiki/Flashing_(weatherproofing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "gutter",
+      "pipe"
+    ],
+    "out": "downpipe",
+    "why": "One of them handles a surprising flow, so it is sized by roof area rather than by looks, and it must discharge somewhere that leads away — a downpipe emptying at the foot of a wall is worse than no gutter at all.",
+    "src": "https://en.wikipedia.org/wiki/Downpipe",
+    "verified": true
+  },
+  {
+    "in": [
+      "cement",
+      "wall"
+    ],
+    "out": "render",
+    "why": "It has to be softer than what it covers or it cracks and traps water behind itself, which is why cement render over soft old brick does more damage than the weather it was meant to stop.",
+    "src": "https://en.wikipedia.org/wiki/Stucco",
+    "verified": true
+  },
+  {
+    "in": [
+      "paint",
+      "resin"
+    ],
+    "out": "primer",
+    "why": "It does two jobs paint cannot: it grips a surface paint would slide off, and it seals a porous one that would otherwise drink the topcoat unevenly. That is why a primed wall takes fewer coats, not more.",
+    "src": "https://en.wikipedia.org/wiki/Primer_(paint)",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "rubber"
+    ],
+    "out": "sealant",
+    "why": "It works by never setting hard. Glass, timber and masonry all expand differently with heat and damp, and anything rigid in the gap between them either cracks or pushes them apart.",
+    "src": "https://en.wikipedia.org/wiki/Sealant",
+    "verified": true
+  },
+  {
+    "in": [
+      "cement",
+      "floor"
+    ],
+    "out": "screed",
+    "why": "The slab below is strong and rarely flat; the screed is flat and not strong. Separating those two jobs is why it exists, and why it is laid to a level rather than to a thickness.",
+    "src": "https://en.wikipedia.org/wiki/Screed",
+    "verified": true
+  },
+  {
+    "in": [
+      "felt",
+      "floor"
+    ],
+    "out": "underlay",
+    "why": "It does three jobs at once: evens out the small irregularities left in the screed, deadens the sound of footsteps into the room below, and takes the wear that would otherwise reach the covering itself.",
+    "src": "https://en.wikipedia.org/wiki/Underlay",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "mould"
+    ],
+    "out": "block",
+    "why": "One block replaces about six bricks, so a wall goes up faster with fewer joints — and because it is cast rather than fired, it can be made light and full of air, which is how a wall becomes insulation as well as structure.",
+    "src": "https://en.wikipedia.org/wiki/Concrete_masonry_unit",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "window"
+    ],
+    "out": "sill",
+    "why": "The groove on its underside is the whole point: water running back along the soffit stops at the drip and falls, instead of tracking back to the wall and soaking it. A sill without one is decoration.",
+    "src": "https://en.wikipedia.org/wiki/Window_sill",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "putty"
+    ],
+    "out": "pane",
+    "why": "For centuries it was small because glass could only be made small — blown into a cylinder, split and flattened — and the Georgian window of many small panes is that limit made visible rather than a style.",
+    "src": "https://en.wikipedia.org/wiki/Sheet_glass",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "spring"
+    ],
+    "out": "latch",
+    "why": "The sprung bevel is what makes it work one-handed: the sloping face is pushed aside by the striker as the door closes and springs back behind it, so a door latches by being pushed and needs a handle only to open.",
+    "src": "https://en.wikipedia.org/wiki/Latch",
+    "verified": true
+  },
+  {
+    "in": [
+      "quartz",
+      "sand"
+    ],
+    "out": "silica",
+    "why": "It is the second most abundant compound in the Earth's crust and the reason glass is cheap. Molten it does not crystallise readily on cooling, so it sets as a disordered solid, which is what glass is.",
+    "src": "https://en.wikipedia.org/wiki/Silicon_dioxide",
+    "verified": true
+  },
+  {
+    "in": [
+      "nut",
+      "rod"
+    ],
+    "out": "bolt",
+    "why": "Unlike a screw it does not hold in the work at all — the nut does the holding, and the bolt is stretched between them like a very stiff spring. That tension is what stops the joint moving, not friction on the threads.",
+    "src": "https://en.wikipedia.org/wiki/Bolt_(fastener)",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "steel"
+    ],
+    "out": "tang",
+    "why": "A blade breaks at the handle or nowhere. A full tang running the whole length and width of the grip is why a good knife outlives its handle, and a short stub tang is why a cheap one snaps at the bolster.",
+    "src": "https://en.wikipedia.org/wiki/Tang_(tools)",
+    "verified": true
+  },
+  {
+    "in": [
+      "hilt",
+      "steel"
+    ],
+    "out": "guard",
+    "why": "It is not mainly for catching another blade. Its first job is stopping the hand sliding forward onto the edge when a thrust hits something solid, which is why even knives that never fenced have one.",
+    "src": "https://en.wikipedia.org/wiki/Crossguard",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "tang"
+    ],
+    "out": "grip",
+    "why": "Wrapping is functional twice over: it gives the hand something to key into when wet, and it lets the shape be adjusted with the sword in hand rather than fixed when it was made.",
+    "src": "https://en.wikipedia.org/wiki/Hilt",
+    "verified": true
+  },
+  {
+    "in": [
+      "grip",
+      "steel"
+    ],
+    "out": "pommel",
+    "why": "It is a counterweight, and it is why a heavy sword can feel light: mass behind the hand moves the balance point back toward it, and a blade balanced near the hand turns quickly whatever it actually weighs.",
+    "src": "https://en.wikipedia.org/wiki/Pommel",
+    "verified": true
+  },
+  {
+    "in": [
+      "sandstone",
+      "steel"
+    ],
+    "out": "whetstone",
+    "why": "It does not sharpen so much as remove: an edge is blunted by rolling over, and the stone cuts steel away on both sides until the two surfaces meet again at a line. Which is why a knife gets smaller over its life.",
+    "src": "https://en.wikipedia.org/wiki/Sharpening_stone",
+    "verified": true
+  },
+  {
+    "in": [
+      "forge",
+      "water"
+    ],
+    "out": "quenching",
+    "why": "Slow-cooled steel is soft; cooled in seconds the carbon has no time to move and the crystal locks into martensite, which is hard and would shatter. Tempering afterwards gives some of the hardness back for toughness — a blade is always a compromise between the two.",
+    "src": "https://en.wikipedia.org/wiki/Quenching",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "silica"
+    ],
+    "out": "glaze",
+    "why": "Fired clay is full of pores and drinks whatever is put in it. The glaze is a glass melted onto the surface, and it has to shrink at the same rate as the body on cooling or it crazes into a net of fine cracks.",
+    "src": "https://en.wikipedia.org/wiki/Ceramic_glaze",
+    "verified": true
+  },
+  {
+    "in": [
+      "clay",
+      "pot"
+    ],
+    "out": "slip",
+    "why": "Two pieces of leather-hard clay will not stick, because there is nothing wet to knit them. Slip painted into a scored joint is the glue, and it works because it is the same material and shrinks identically in the kiln.",
+    "src": "https://en.wikipedia.org/wiki/Slip_(ceramics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "ceramic",
+      "kiln"
+    ],
+    "out": "firing",
+    "why": "It is not drying. Above about 600 degrees the chemically bound water leaves the clay lattice and it can never be softened with water again — the pot stops being clay, which is why a shard survives ten thousand years.",
+    "src": "https://en.wikipedia.org/wiki/Pottery",
+    "verified": true
+  },
+  {
+    "in": [
+      "iron",
+      "plough"
+    ],
+    "out": "harrow",
+    "why": "The plough turns the soil over in slabs and the harrow makes a seedbed of it. Seed needs contact with fine soil to take up water, so the harrow is the difference between a furrow and a crop.",
+    "src": "https://en.wikipedia.org/wiki/Harrow_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "water"
+    ],
+    "out": "irrigation",
+    "why": "It is the oldest large-scale engineering there is, and it makes its own problem: water carries dissolved salt, and evaporating year after year it leaves the salt behind. Fields salted this way are why some of the earliest farmed land is now desert.",
+    "src": "https://en.wikipedia.org/wiki/Irrigation",
+    "verified": true
+  },
+  {
+    "in": [
+      "manure",
+      "soil"
+    ],
+    "out": "fertiliser",
+    "why": "A harvest is an export of nitrogen, phosphorus and potassium off the field. Everything before the Haber process — manure, guano, marl, clover — was a way of moving those back, and the whole history of yields is the history of that accounting.",
+    "src": "https://en.wikipedia.org/wiki/Fertilizer",
+    "verified": true
+  },
+  {
+    "in": [
+      "barn",
+      "grain"
+    ],
+    "out": "silo",
+    "why": "Sealing is the mechanism: cut fodder respires, uses up the oxygen, and then ferments instead of rotting, preserving itself in its own acid. Grain keeps for the opposite reason — kept dry and cool it simply never starts.",
+    "src": "https://en.wikipedia.org/wiki/Silo",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "mammal"
+    ],
+    "out": "livestock",
+    "why": "They are also how a farm eats land it cannot otherwise use: grass is indigestible to us and grows where crops will not, and a ruminant converts it into milk and meat. That is the argument for grazing and the whole argument against grain-fed.",
+    "src": "https://en.wikipedia.org/wiki/Livestock",
+    "verified": true
+  },
+  {
+    "in": [
+      "timber",
+      "wall"
+    ],
+    "out": "stud",
+    "why": "The wall is the frame, not the surface: studs carry the load down and the boards on either side only stop it racking. Spacing is set by the width of the sheet material, which is why 400 and 600 millimetres recur everywhere.",
+    "src": "https://en.wikipedia.org/wiki/Wall_stud",
+    "verified": true
+  },
+  {
+    "in": [
+      "door",
+      "timber"
+    ],
+    "out": "door_frame",
+    "why": "It is what makes a door possible in a wall that moves: the frame is fixed square and packed to the masonry, so the door can be hung to the frame rather than to the building, which is never quite square.",
+    "src": "https://en.wikipedia.org/wiki/Door_frame",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "timber"
+    ],
+    "out": "window_frame",
+    "why": "It has to hold the pane without gripping it. Glass and timber move at different rates, so the pane sits on setting blocks with a gap all round, bedded in something flexible — clamped tight it cracks in the first hot spell.",
+    "src": "https://en.wikipedia.org/wiki/Window",
+    "verified": true
+  },
+  {
+    "in": [
+      "tank",
+      "water"
+    ],
+    "out": "water_tank",
+    "why": "Height is the pressure: about a tenth of a bar per metre, so a tank in the roof gives a shower on the floor below a usable push with no pump at all. It also buffers demand, which is why the supply pipe can be far smaller than the taps.",
+    "src": "https://en.wikipedia.org/wiki/Water_tank",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "electric_motor"
+    ],
+    "out": "fan",
+    "why": "Each blade is a small wing: it does not scoop air so much as fly through it, throwing air off the back edge. That is why blade pitch matters more than blade area, and why a fan blows far better than it sucks.",
+    "src": "https://en.wikipedia.org/wiki/Fan_(machine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "lever",
+      "screw"
+    ],
+    "out": "press",
+    "why": "Screw and lever both trade distance for force, and a press is either one taken to its limit. The same machine crushes olives, prints a page and stamps a car panel, which is why the printing press was named after the wine press it was built from.",
+    "src": "https://en.wikipedia.org/wiki/Machine_press",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "resin"
+    ],
+    "out": "circuit_board",
+    "why": "It made electronics reproducible. Before it, every unit was hand-wired and no two were quite alike; etching the connections means the thousandth board is identical to the first, and a fault in one is a fault in all of them.",
+    "src": "https://en.wikipedia.org/wiki/Printed_circuit_board",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon",
+      "wire"
+    ],
+    "out": "resistor",
+    "why": "Wasting energy is the point: it converts electrical energy to heat in a controlled amount, which is how a voltage is divided or a current limited. Its value is printed as coloured bands because it is too small to write a number on.",
+    "src": "https://en.wikipedia.org/wiki/Resistor",
+    "verified": true
+  },
+  {
+    "in": [
+      "aluminum",
+      "fin"
+    ],
+    "out": "heat_sink",
+    "why": "It works by area, not by mass. Fins multiply the surface touching the air many times over, and a chip that would destroy itself in seconds survives indefinitely with a block of aluminium bolted to it and a fan above.",
+    "src": "https://en.wikipedia.org/wiki/Heat_sink",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "surface"
+    ],
+    "out": "fin",
+    "why": "It is the standard answer whenever heat has to move between a solid and a fluid: doubling the surface roughly doubles the transfer, and a fin adds a great deal of surface for very little material.",
+    "src": "https://en.wikipedia.org/wiki/Fin_(extended_surface)",
+    "verified": true
+  },
+  {
+    "in": [
+      "box",
+      "hinge"
+    ],
+    "out": "case",
+    "why": "Fitted rather than merely enclosing: a case that holds the object still is doing the real work, because most damage in transit is the contents moving inside the container rather than the container being struck.",
+    "src": "https://en.wikipedia.org/wiki/Case_(goods)",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "mass"
+    ],
+    "out": "weight",
+    "why": "It is not the same as mass, and the difference is not pedantry: the same object has the same mass everywhere and weighs a sixth as much on the Moon and nothing at all in free fall. A balance measures mass; a spring scale measures weight.",
+    "src": "https://en.wikipedia.org/wiki/Weight",
+    "verified": true
+  },
+  {
+    "in": [
+      "clock",
+      "spring"
+    ],
+    "out": "mainspring",
+    "why": "A spring gives less force as it unwinds, and a clock needs constant force, so the mainspring was paired with a fusee — a cone-shaped pulley that lengthens the lever exactly as the spring weakens.",
+    "src": "https://en.wikipedia.org/wiki/Mainspring",
+    "verified": true
+  },
+  {
+    "in": [
+      "escapement",
+      "wheel"
+    ],
+    "out": "balance_wheel",
+    "why": "It replaces the pendulum, which cannot be moved or tilted. The wheel's swing depends on its inertia and the spring's stiffness rather than on gravity, which is what let clocks go to sea and become watches.",
+    "src": "https://en.wikipedia.org/wiki/Balance_wheel",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "rod"
+    ],
+    "out": "hoe",
+    "why": "Working shallow is the whole skill: deeper cultivation brings buried weed seed up into the light where it germinates, so a sharp hoe skimming the surface does less work and less harm than a spade.",
+    "src": "https://en.wikipedia.org/wiki/Hoe_(tool)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesh",
+      "tin_can"
+    ],
+    "out": "watering_can",
+    "why": "The rose is the point: a jet washes soil away from roots and compacts what is left, while many fine streams land softly enough to soak in. Turning the rose upward makes them fall more gently still.",
+    "src": "https://en.wikipedia.org/wiki/Watering_can",
+    "verified": true
+  },
+  {
+    "in": [
+      "compost",
+      "leaf"
+    ],
+    "out": "mulch",
+    "why": "It works by covering: it keeps light off weed seed, slows evaporation from the surface, and evens out temperature swings. Whatever it eventually rots into is a secondary benefit, not the reason for it.",
+    "src": "https://en.wikipedia.org/wiki/Mulch",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "resin"
+    ],
+    "out": "hops",
+    "why": "Hop resins are mildly antibacterial and suppress exactly the organisms that spoil beer while leaving yeast alone, which is why hopped beer travelled and unhopped ale did not. The bitterness is the same resins tasted.",
+    "src": "https://en.wikipedia.org/wiki/Hops",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "malt"
+    ],
+    "out": "mash",
+    "why": "The enzymes are already in the grain, made during malting; the mash gives them an hour at the right temperature to cut starch into sugars yeast can eat. A few degrees decides how much is fermentable, and so how dry the beer ends up.",
+    "src": "https://en.wikipedia.org/wiki/Mashing",
+    "verified": true
+  },
+  {
+    "in": [
+      "barrel",
+      "oak"
+    ],
+    "out": "cask",
+    "why": "Its shape is structural: the bulge lets a full cask be turned and rolled on the spot by one person, and the staves are held by nothing but the hoops squeezing them together, so it can be knocked apart and rebuilt.",
+    "src": "https://en.wikipedia.org/wiki/Barrel",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "radio"
+    ],
+    "out": "antenna",
+    "why": "Length is everything: it resonates when it is a simple fraction of the wavelength, which is why long-wave aerials are strung between masts and a phone's is a few centimetres of trace inside the case.",
+    "src": "https://en.wikipedia.org/wiki/Antenna_(radio)",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "membrane"
+    ],
+    "out": "microphone",
+    "why": "It is a loudspeaker run backwards: sound moves a diaphragm, the diaphragm moves a coil in a magnetic field, and the motion induces a current. The same object can do either job, which is why an intercom can use one part for both.",
+    "src": "https://en.wikipedia.org/wiki/Microphone",
+    "verified": true
+  },
+  {
+    "in": [
+      "petrol",
+      "tank"
+    ],
+    "out": "fuel_tank",
+    "why": "It is never quite full of liquid: a vapour space has to be left for expansion, and it is vented so the pump is not fighting a vacuum as the level drops. Baffles inside stop the fuel surging and unbalancing the vehicle.",
+    "src": "https://en.wikipedia.org/wiki/Fuel_tank",
+    "verified": true
+  },
+  {
+    "in": [
+      "engine",
+      "rod"
+    ],
+    "out": "camshaft",
+    "why": "The lobe shape is the whole timing: how far it lifts, how long it holds open and how sharply it closes are all cut into the metal, so an engine's character is decided by a curve nobody ever sees.",
+    "src": "https://en.wikipedia.org/wiki/Camshaft",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "petrol"
+    ],
+    "out": "carburettor",
+    "why": "It works on a narrowing in the pipe: air speeding up through the throat drops in pressure and draws fuel out of a jet by suction alone, with no pump and no electronics — which is why it needed no power and why it was so hard to make accurate.",
+    "src": "https://en.wikipedia.org/wiki/Carburetor",
+    "verified": true
+  },
+  {
+    "in": [
+      "battery",
+      "electric_motor"
+    ],
+    "out": "starter_motor",
+    "why": "An engine makes no power until it is already moving, so something has to spin it first. It draws a very large current for a few seconds, which is why a car battery is built for a huge brief output rather than long endurance.",
+    "src": "https://en.wikipedia.org/wiki/Starter_(engine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "brake",
+      "steel"
+    ],
+    "out": "brake_disc",
+    "why": "It is drilled or vented to shed that heat, because the whole energy of the vehicle arrives here as temperature. A disc glowing red still works; a disc that has boiled the fluid behind the pads does not.",
+    "src": "https://en.wikipedia.org/wiki/Disc_brake",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "spring"
+    ],
+    "out": "suspension",
+    "why": "It has two jobs that pull against each other: keeping the tyre pressed to the road over bumps, and keeping the body level. Soft is comfortable and vague, stiff is precise and harsh, and every car is a chosen point between them.",
+    "src": "https://en.wikipedia.org/wiki/Car_suspension",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "suspension"
+    ],
+    "out": "shock_absorber",
+    "why": "A spring alone stores energy and gives it straight back, so a car on springs would keep oscillating. The damper turns that energy into heat by forcing oil through a small hole, and the size of the hole is the whole tuning.",
+    "src": "https://en.wikipedia.org/wiki/Shock_absorber",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "steel"
+    ],
+    "out": "chassis",
+    "why": "It has to be stiff in torsion above all: a body that twists between its wheels makes the suspension useless, because a spring cannot control a corner if the frame it pushes against is flexing more than the spring is.",
+    "src": "https://en.wikipedia.org/wiki/Chassis",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "resin"
+    ],
+    "out": "windscreen",
+    "why": "Laminated glass is two sheets bonded to a plastic film: struck, it cracks but holds together in one piece rather than filling the cabin. It also carries roof load in a rollover, which is why a cracked one is a structural fault.",
+    "src": "https://en.wikipedia.org/wiki/Windshield",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "rubber"
+    ],
+    "out": "wiper",
+    "why": "It works by scraping a thin film cleanly rather than pushing water aside, so the edge has to be sharp and flexible at once. Sunlight hardens rubber, which is why wipers fail in summer and are noticed in winter.",
+    "src": "https://en.wikipedia.org/wiki/Windscreen_wiper",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "seat"
+    ],
+    "out": "seatbelt",
+    "why": "The webbing stretches slightly on purpose, lengthening the stop by a few thousandths of a second, and the inertia reel locks only under sharp deceleration — which is why it pays out gently and jams if you snatch it.",
+    "src": "https://en.wikipedia.org/wiki/Seat_belt",
+    "verified": true
+  },
+  {
+    "in": [
+      "exhaust",
+      "mesh"
+    ],
+    "out": "muffler",
+    "why": "Sound is pressure waves, so it is silenced by making them cancel: the gas is routed through chambers of chosen lengths so a wave meets its own reflection out of phase. It costs a little power, which is why a straight pipe is louder and faster.",
+    "src": "https://en.wikipedia.org/wiki/Muffler",
+    "verified": true
+  },
+  {
+    "in": [
+      "fret",
+      "timber"
+    ],
+    "out": "fretboard",
+    "why": "It is usually a hard, dense timber glued to a softer neck, because the wood under a string takes constant wear at the same few points and anything soft would groove within a season.",
+    "src": "https://en.wikipedia.org/wiki/Fingerboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "gear",
+      "neck"
+    ],
+    "out": "tuning_peg",
+    "why": "The gearing is what makes fine tuning possible: without it a peg turns pitch too fast to place, and the friction that holds a plain wooden peg is also what makes a violin so much harder to tune than a guitar.",
+    "src": "https://en.wikipedia.org/wiki/Machine_head",
+    "verified": true
+  },
+  {
+    "in": [
+      "circuit_board",
+      "cpu"
+    ],
+    "out": "motherboard",
+    "why": "It is mostly a set of agreements rather than a set of parts: sockets, buses and voltages defined so that components made by strangers years apart will work together. That standardisation is why a PC can be upgraded and a phone cannot.",
+    "src": "https://en.wikipedia.org/wiki/Motherboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "memory"
+    ],
+    "out": "hard_drive",
+    "why": "The head flies a few nanometres above the surface on the air the platter drags with it — closer than a smoke particle is wide, which is why a knock while running can crash it into the disk and why they were sealed.",
+    "src": "https://en.wikipedia.org/wiki/Hard_disk_drive",
+    "verified": true
+  },
+  {
+    "in": [
+      "battery",
+      "transformer"
+    ],
+    "out": "power_supply",
+    "why": "It steps down, rectifies alternating current to direct, and then smooths what is left, because logic will not tolerate the ripple. Almost all of it is about getting rid of variation the mains has and the chips cannot survive.",
+    "src": "https://en.wikipedia.org/wiki/Power_supply",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "plastic"
+    ],
+    "out": "computer_mouse",
+    "why": "Engelbart's 1964 prototype was a wooden box on two wheels at right angles, one counting each axis. Everything since — ball, then optical — is a different way of measuring the same two numbers.",
+    "src": "https://en.wikipedia.org/wiki/Computer_mouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "pigment",
+      "water"
+    ],
+    "out": "dye",
+    "why": "That is the whole difference from a pigment: a dye enters the fibre and attaches chemically, so the cloth is coloured through and does not rub off. Most need a mordant — usually a metal salt — to make the bond at all.",
+    "src": "https://en.wikipedia.org/wiki/Dye",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "mirror"
+    ],
+    "out": "viewfinder",
+    "why": "The reflex kind shows the lens's own view by bouncing it off a mirror and through a prism, so what you see is what the film gets. Anything simpler shows a slightly different view, and the mismatch is why close-up snapshots used to cut off heads.",
+    "src": "https://en.wikipedia.org/wiki/Viewfinder",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "screw"
+    ],
+    "out": "focus_ring",
+    "why": "It is a screw thread: turning converts rotation into a very small, precise movement along the axis. Only one plane is ever truly sharp, and everything called depth of field is about how quickly it stops mattering.",
+    "src": "https://en.wikipedia.org/wiki/Focus_(optics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "plank",
+      "rod"
+    ],
+    "out": "leg",
+    "why": "Three legs never rock and four can, because three points always define a plane and a fourth has to be exactly level with them. Every wobbling table is that geometry, not bad workmanship.",
+    "src": "https://en.wikipedia.org/wiki/Table_(furniture)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "frame"
+    ],
+    "out": "backrest",
+    "why": "The lower back is where it matters: unsupported, the pelvis rolls back and the lumbar curve flattens, which is what makes a long sit uncomfortable. A backrest that only touches the shoulders does almost nothing.",
+    "src": "https://en.wikipedia.org/wiki/Chair",
+    "verified": true
+  },
+  {
+    "in": [
+      "foam",
+      "leather"
+    ],
+    "out": "upholstery",
+    "why": "It spreads load over as much of the body as possible, which is the whole comfort argument: pressure, not softness, is what hurts, and a thin firm pad over a large area beats a deep soft one that bottoms out.",
+    "src": "https://en.wikipedia.org/wiki/Upholstery",
+    "verified": true
+  },
+  {
+    "in": [
+      "binding",
+      "leather"
+    ],
+    "out": "cover",
+    "why": "Boards came before cloth and leather over boards came before paper: the point was always to keep a stack of pages flat, because paper left loose cockles with damp and a book that will not close is a book that will not survive.",
+    "src": "https://en.wikipedia.org/wiki/Book_cover",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "plank"
+    ],
+    "out": "page",
+    "why": "The sheet is folded, not cut: a printed sheet folded three times gives eight leaves and sixteen pages, which is why old books come in gatherings and why page counts are so often multiples of sixteen.",
+    "src": "https://en.wikipedia.org/wiki/Page_(paper)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cover",
+      "glue"
+    ],
+    "out": "spine",
+    "why": "It has to bend thousands of times and hold. That is why a sewn book opens flat and a glued one cracks, and why the title runs along it at all — shelving books upright is a late idea, and before it they lay flat with the fore-edge outward.",
+    "src": "https://en.wikipedia.org/wiki/Bookbinding",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "furnace"
+    ],
+    "out": "firebox",
+    "why": "It sits inside the boiler surrounded by water, so almost all its heat goes into steam rather than out of the sides, and the tubes carry the hot gas forward through the water on its way to the chimney.",
+    "src": "https://en.wikipedia.org/wiki/Firebox_(steam_engine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "wheel"
+    ],
+    "out": "carriage",
+    "why": "Its springs mattered more than its wheels: the difference between a cart and a carriage is suspension, and it is why the word came to mean the comfortable kind and why railway coaches inherited the name.",
+    "src": "https://en.wikipedia.org/wiki/Carriage",
+    "verified": true
+  },
+  {
+    "in": [
+      "lamp",
+      "rail"
+    ],
+    "out": "signal",
+    "why": "The whole safety of a railway is that a train cannot stop within sight of what it can see, so it must be told about track ahead. Block working divides the line into sections and allows only one train in each; the signal is that rule made visible.",
+    "src": "https://en.wikipedia.org/wiki/Railway_signal",
+    "verified": true
+  },
+  {
+    "in": [
+      "fat",
+      "lye"
+    ],
+    "out": "saponification",
+    "why": "Each fat molecule is three fatty acids on a glycerol backbone; the alkali cuts them off and makes a salt of each. Those salts have a water-loving end and an oil-loving end, which is the entire mechanism of washing.",
+    "src": "https://en.wikipedia.org/wiki/Saponification",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol",
+      "flower"
+    ],
+    "out": "perfume",
+    "why": "It is built in three parts that leave at different rates: the top notes go in minutes, the heart over an hour, and the base clings for a day. What a perfume smells like is therefore a function of time, not one smell.",
+    "src": "https://en.wikipedia.org/wiki/Perfume",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "dust"
+    ],
+    "out": "rag",
+    "why": "Paper was made from rags before wood, and the supply of old linen genuinely limited how many books could exist. The switch to wood pulp in the 1840s made paper cheap and made it acidic, which is why Victorian books crumble and older ones do not.",
+    "src": "https://en.wikipedia.org/wiki/Rag_paper",
+    "verified": true
+  },
+  {
+    "in": [
+      "glass",
+      "kiln"
+    ],
+    "out": "annealing",
+    "why": "Cooled fast, the outside sets while the inside is still shrinking and the piece is left full of locked-in stress — it will crack days later for no visible reason. Annealing holds it just soft enough, for hours, to let that even out.",
+    "src": "https://en.wikipedia.org/wiki/Annealing_(glass)",
+    "verified": true
+  },
+  {
+    "in": [
+      "lime",
+      "silica"
+    ],
+    "out": "flux",
+    "why": "It is the reason most furnace work is possible at all: silica melts near 1,700 degrees and soda takes it to 1,000, and every glass, solder and smelt depends on getting a mixture to run at a heat that can actually be reached.",
+    "src": "https://en.wikipedia.org/wiki/Flux_(metallurgy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bed",
+      "room"
+    ],
+    "out": "ward",
+    "why": "The open ward is a staffing argument, not an architectural one: one nurse can watch twenty patients at a glance in a Nightingale ward and cannot in twenty rooms. Everything since has traded that visibility against infection and privacy.",
+    "src": "https://en.wikipedia.org/wiki/Hospital_ward",
+    "verified": true
+  },
+  {
+    "in": [
+      "hinge",
+      "wing"
+    ],
+    "out": "flap",
+    "why": "It changes the wing's shape rather than its angle, increasing camber and often area, which lets an aircraft fly slowly enough to land on a runway of finite length. It also adds drag, which on approach is wanted.",
+    "src": "https://en.wikipedia.org/wiki/Flap_(aeronautics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabin",
+      "glass"
+    ],
+    "out": "cockpit",
+    "why": "Everything in it is arranged by how often it is needed and how badly: the six primary instruments sit in the same T on almost every aircraft ever built, so a pilot moving between types still finds attitude where it should be.",
+    "src": "https://en.wikipedia.org/wiki/Cockpit",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "window"
+    ],
+    "out": "cabin",
+    "why": "It is a pressure vessel with windows in it, and the windows are round for that reason: a corner concentrates stress, and the square windows of the early Comets cracked from the corners until three aircraft were lost.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft_cabin",
+    "verified": true
+  },
+  {
+    "in": [
+      "altitude",
+      "dial"
+    ],
+    "out": "altimeter",
+    "why": "It is a barometer with a different scale, so it measures pressure and infers height — which means it must be reset as the weather changes, and two aircraft with different settings can believe they are separated when they are not.",
+    "src": "https://en.wikipedia.org/wiki/Altimeter",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "sky"
+    ],
+    "out": "altitude",
+    "why": "Above sea level, above the ground, or above a pressure datum are three different numbers for the same aircraft, and mixing them up is the reason terrain warnings exist.",
+    "src": "https://en.wikipedia.org/wiki/Altitude",
+    "verified": true
+  },
+  {
+    "in": [
+      "foam",
+      "sole"
+    ],
+    "out": "insole",
+    "why": "It is what actually shapes to a foot: the sole is built for the ground and the insole for the person, which is why it is the part that is removable, replaceable and prescribed.",
+    "src": "https://en.wikipedia.org/wiki/Insole",
+    "verified": true
+  },
+  {
+    "in": [
+      "foot",
+      "timber"
+    ],
+    "out": "last",
+    "why": "It is not a copy of a foot. It is deliberately narrower and differently curved, because leather stretches and a shoe has to end up the shape of a foot after wearing rather than before — which is why the last outlives every shoe made on it.",
+    "src": "https://en.wikipedia.org/wiki/Last",
+    "verified": true
+  },
+  {
+    "in": [
+      "neck",
+      "sound"
+    ],
+    "out": "soundhole",
+    "why": "The sound does not come out of it so much as the box breathes through it: the air inside the body resonates like a bottle blown across, and the hole tunes that resonance, which is why moving or resizing it changes the bass and not the treble.",
+    "src": "https://en.wikipedia.org/wiki/Sound_hole",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethanol",
+      "resin"
+    ],
+    "out": "fragrance",
+    "why": "Smell is the only sense wired straight to memory and emotion without passing through the thalamus first, which is why a scent recalls a place more sharply than a photograph of it does.",
+    "src": "https://en.wikipedia.org/wiki/Aroma_compound",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "spring"
+    ],
+    "out": "pruning_shears",
+    "why": "A clean cut matters more than a fast one: crushed tissue dies back and lets rot in, so a bypass pair that slices past itself is used on live wood and an anvil pair that crushes against a plate only on dead.",
+    "src": "https://en.wikipedia.org/wiki/Pruning_shears",
+    "verified": true
+  },
+  {
+    "in": [
+      "brake",
+      "cloth"
+    ],
+    "out": "brake_pad",
+    "why": "It is meant to wear out. The pad is deliberately softer than the disc so that the cheap, replaceable part is the one consumed — and it must keep its friction hot, because a pad that fades has not failed mechanically at all.",
+    "src": "https://en.wikipedia.org/wiki/Brake_pad",
+    "verified": true
+  },
+  {
+    "in": [
+      "mirror",
+      "plastic"
+    ],
+    "out": "reflector",
+    "why": "A corner of three mirrors at right angles sends any ray back the way it came, whatever the angle. That is why a cyclist's reflector works from a car's own headlights and needs no power at all.",
+    "src": "https://en.wikipedia.org/wiki/Retroreflector",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "soap"
+    ],
+    "out": "grease",
+    "why": "It is oil that cannot run away. The soap makes a sponge that releases oil under pressure and takes it back when the load comes off, which is why a bearing packed once can run for years without a feed.",
+    "src": "https://en.wikipedia.org/wiki/Grease",
+    "verified": true
+  },
+  {
+    "in": [
+      "room",
+      "surgery"
+    ],
+    "out": "operating_theatre",
+    "why": "The name is literal: they were theatres, with tiered seats for students to watch. The galleries went when it was understood that spectators carry infection, and everything about the modern room — the air pressure, the surfaces, the lamp — follows from that.",
+    "src": "https://en.wikipedia.org/wiki/Operating_theater",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "glass"
+    ],
+    "out": "touchscreen",
+    "why": "The capacitive kind works because a finger is conductive: it distorts a grid of tiny electric fields under the glass, so the screen is not detecting pressure at all — which is why it ignores a gloved hand and a fingernail.",
+    "src": "https://en.wikipedia.org/wiki/Touchscreen",
+    "verified": true
+  },
+  {
+    "in": [
+      "cable",
+      "wire"
+    ],
+    "out": "fuse_box",
+    "why": "Every circuit is protected by something designed to fail first. A fuse is a deliberate weak point, sized so it melts before the cable behind the wall gets hot enough to matter, and its rating protects the wiring rather than the appliance.",
+    "src": "https://en.wikipedia.org/wiki/Distribution_board",
+    "verified": true
+  },
+  {
+    "in": [
+      "drain",
+      "pipe"
+    ],
+    "out": "soil_pipe",
+    "why": "It is open at the top on purpose. Water rushing down would otherwise siphon the traps dry and let sewer gas into the rooms, so the stack is vented above the roof — which is what the pipe you can see on the outside of old houses is for.",
+    "src": "https://en.wikipedia.org/wiki/Soil_stack_pipe",
+    "verified": true
+  },
+  {
+    "in": [
+      "brick",
+      "chimney"
+    ],
+    "out": "fireplace",
+    "why": "The chimney is the machine: hot gas is less dense than cold, so a tall column of it rises and pulls air in behind, and the draught it makes is what lets a fire burn indoors at all. Height matters more than width.",
+    "src": "https://en.wikipedia.org/wiki/Fireplace",
+    "verified": true
+  },
+  {
+    "in": [
+      "chassis",
+      "sheet_metal"
+    ],
+    "out": "body_panel",
+    "why": "The curves are structural, not styling: a flat sheet oil-cans and drums, and every crease and swage in a panel is there to stiffen it so it can be thin enough to be light.",
+    "src": "https://en.wikipedia.org/wiki/Automobile_body",
+    "verified": true
+  },
+  {
+    "in": [
+      "pane",
+      "timber"
+    ],
+    "out": "glazing_bar",
+    "why": "It existed because glass could not be made large, and survived because it fails gracefully: a broken pane in a divided window is one small piece to replace rather than the whole opening.",
+    "src": "https://en.wikipedia.org/wiki/Muntin",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "harvest"
+    ],
+    "out": "crop",
+    "why": "Domestication changed the plants as much as the fields: crops were selected for seeds that stay on the stalk rather than scattering, which is exactly what a wild plant must not do — a wheat field cannot reseed itself without us.",
+    "src": "https://en.wikipedia.org/wiki/Crop",
+    "verified": true
+  },
+  {
+    "in": [
+      "fork",
+      "tine"
+    ],
+    "out": "fork_garden",
+    "why": "Where a spade slices and compacts the wall of the trench, tines enter between the crumbs and lever them apart, which is why a fork beats a spade in clay and why it is used to lift root crops without slicing them.",
+    "src": "https://en.wikipedia.org/wiki/Garden_fork",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "timber"
+    ],
+    "out": "worktop",
+    "why": "About 90 centimetres is standard because it puts the hands a little below the elbow, which is where you can push down with body weight instead of arm strength — the reason kneading on a low counter is easier.",
+    "src": "https://en.wikipedia.org/wiki/Countertop",
+    "verified": true
+  },
+  {
+    "in": [
+      "bitumen",
+      "brick"
+    ],
+    "out": "damp_proof_course",
+    "why": "Brick and mortar wick water upward by capillary action, and it will climb a metre or more. The course is a deliberate break in that path, which is why it must never be bridged by soil, render or a raised path outside.",
+    "src": "https://en.wikipedia.org/wiki/Damp_proof_course",
+    "verified": true
+  },
+  {
+    "in": [
+      "block",
+      "wire"
+    ],
+    "out": "cavity_wall_tie",
+    "why": "The gap is the insulation and the tie is the compromise: it has to carry load across without carrying water, which is why it is twisted or kinked in the middle so any drop runs to the low point and falls.",
+    "src": "https://en.wikipedia.org/wiki/Wall_tie",
+    "verified": true
+  },
+  {
+    "in": [
+      "bitumen",
+      "cloth"
+    ],
+    "out": "roofing_felt",
+    "why": "Tiles are not watertight and were never meant to be — wind drives rain and snow up under them. The felt catches what gets through and runs it back out at the eaves, which is why it must lap over the gutter and not behind it.",
+    "src": "https://en.wikipedia.org/wiki/Roofing_felt",
+    "verified": true
+  },
+  {
+    "in": [
+      "cable",
+      "plastic"
+    ],
+    "out": "socket",
+    "why": "Its shape is a safety argument: the earth pin is longer so it connects first and disconnects last, and on British sockets it also opens the shutters over the live holes, so a child with a single object cannot reach them.",
+    "src": "https://en.wikipedia.org/wiki/AC_power_plugs_and_sockets",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "rail"
+    ],
+    "out": "track_gauge",
+    "why": "Standard gauge is 1,435 millimetres, which is roughly the wheel spacing of a horse-drawn wagon, and it spread because Stephenson used it and because a break of gauge means unloading every wagon at the border. Several countries still pay for choosing differently.",
+    "src": "https://en.wikipedia.org/wiki/Track_gauge",
+    "verified": true
+  },
+  {
+    "in": [
+      "bulb",
+      "lamp"
+    ],
+    "out": "indicator",
+    "why": "It signals intention rather than state, which makes it the only light on a car about the future. The flash came from a thermal bimetallic strip heating and cooling, which is why a failed bulb made the others flash faster.",
+    "src": "https://en.wikipedia.org/wiki/Automotive_lighting",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "plastic"
+    ],
+    "out": "sim_card",
+    "why": "It separates who you are from what you are holding: the number belongs to the card, not the handset, which is what made phones interchangeable and stolen ones far less useful than they would otherwise be.",
+    "src": "https://en.wikipedia.org/wiki/SIM_card",
+    "verified": true
+  },
+  {
+    "in": [
+      "arm",
+      "finger"
+    ],
+    "out": "hand",
+    "why": "The opposable thumb is the famous part and the least of it. What matters is the precision grip between thumb and fingertip, the number of sensory endings in the skin, and the amount of cortex spent on both — a hand is a sense organ as much as a tool.",
+    "src": "https://en.wikipedia.org/wiki/Hand",
+    "verified": true
+  },
+  {
+    "in": [
+      "limestone",
+      "stone"
+    ],
+    "out": "cave",
+    "why": "Most are made by water rather than by force: rain takes up carbon dioxide, becomes weakly acidic, and dissolves limestone along its joints over hundreds of thousands of years. The cave is the shape of where the water went.",
+    "src": "https://en.wikipedia.org/wiki/Cave",
+    "verified": true
+  },
+  {
+    "in": [
+      "gelatin",
+      "pulp"
+    ],
+    "out": "size",
+    "why": "Unsized paper drinks ink and it feathers into the fibres; unsized plaster drinks paint unevenly. Sizing is the step that makes a porous surface behave like a smooth one, and it is why the word means both the coat and the act.",
+    "src": "https://en.wikipedia.org/wiki/Sizing",
+    "verified": true
+  },
+  {
+    "in": [
+      "neck",
+      "timber"
+    ],
+    "out": "soundboard",
+    "why": "A string moving alone shifts almost no air and is nearly silent. The bridge passes its vibration into a large thin plate that can push air, so the soundboard is an impedance match between a wire and a room — and it is braced underneath just enough to survive the string tension without being stiffened into silence.",
+    "src": "https://en.wikipedia.org/wiki/Sound_board_(music)",
+    "verified": true
   }
 ]

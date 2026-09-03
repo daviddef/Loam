@@ -180,6 +180,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* cycle F, from needs.mjs, 4 Sep */
+          'silica',
           /* common words the corpus never had, 3 Sep */
           'snowflake',
           /* computing and plants waves, 3 Sep */
@@ -204,6 +206,18 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* cycle L, from needs.mjs, 4 Sep */
+          'size',
+          /* cycle J, from needs.mjs, 4 Sep */
+          'dye', 'flux',
+          /* cycle H, from needs.mjs, 4 Sep */
+          'resistor',
+          /* cycle E, from needs.mjs, 3 Sep */
+          'film',
+          /* cycle D, from needs.mjs, 3 Sep */
+          'twist',
+          /* medicine, clock and sword, from needs.mjs, 3 Sep */
+          'symptom',
           /* parasites wave, 3 Sep */
           'scolex', 'rostellum', 'acetabulum', 'proglottid', 'tegument', 'cuticle', 'buccal_capsule', 'gynecophoral_canal',
           /* crops and materials wave, 2 Sep */
@@ -232,6 +246,28 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* cycle L, from needs.mjs, 4 Sep */
+          'glazing_bar', 'cavity_wall_tie', 'sim_card', 'indicator',
+          /* cycle K, from needs.mjs, 4 Sep */
+          'insole', 'soundhole', 'fragrance', 'brake_pad', 'reflector', 'grease', 'touchscreen',
+          /* cycle J, from needs.mjs, 4 Sep */
+          'viewfinder', 'focus_ring', 'spine', 'saponification', 'perfume', 'annealing',
+          /* cycle I, from needs.mjs, 4 Sep */
+          'camshaft', 'wiper', 'fretboard', 'tuning_peg', 'computer_mouse',
+          /* cycle H, from needs.mjs, 4 Sep */
+          'circuit_board', 'fin', 'mainspring', 'balance_wheel', 'antenna', 'microphone', 'hops',
+          /* cycle G, from needs.mjs, 4 Sep */
+          'tang', 'guard', 'grip', 'pommel', 'glaze', 'slip',
+          /* cycle F, from needs.mjs, 4 Sep */
+          'primer', 'sealant', 'latch', 'bolt',
+          /* cycle E, from needs.mjs, 3 Sep */
+          'spoke', 'tine', 'binding',
+          /* cycle D, from needs.mjs, 3 Sep */
+          'aperture', 'shutter', 'wick', 'eyelet', 'fret', 'putty',
+          /* the vehicle layer, from needs.mjs, 3 Sep */
+          'spark_plug', 'foam',
+          /* the mechanical layer, from needs.mjs, 3 Sep */
+          'bearing',
           /* the house, from tools/needs.mjs, 3 Sep */
           'gravel',
           /* medicine and disease, 3 Sep */
@@ -374,6 +410,30 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* cycle L, from needs.mjs, 4 Sep */
+          'body_panel', 'fork_garden', 'damp_proof_course', 'roofing_felt', 'socket', 'hand', 'soundboard',
+          /* cycle K, from needs.mjs, 4 Sep */
+          'altimeter', 'last', 'pruning_shears', 'fuse_box',
+          /* cycle J, from needs.mjs, 4 Sep */
+          'leg', 'backrest', 'upholstery', 'cover', 'page', 'rag',
+          /* cycle I, from needs.mjs, 4 Sep */
+          'carburettor', 'starter_motor', 'brake_disc', 'shock_absorber', 'windscreen', 'seatbelt', 'muffler', 'motherboard', 'hard_drive', 'power_supply',
+          /* cycle H, from needs.mjs, 4 Sep */
+          'fan', 'case', 'heat_sink', 'hoe', 'watering_can', 'mash',
+          /* cycle G, from needs.mjs, 4 Sep */
+          'whetstone', 'quenching', 'firing', 'stud', 'door_frame', 'window_frame',
+          /* cycle F, from needs.mjs, 4 Sep */
+          'roof_tile', 'flashing', 'render', 'screed', 'underlay', 'block', 'sill', 'pane',
+          /* cycle E, from needs.mjs, 3 Sep */
+          'rim', 'hub', 'inner_tube', 'sprocket', 'pedal', 'handlebar', 'trowel', 'blowpipe',
+          /* cycle D, from needs.mjs, 3 Sep */
+          'wax', 'sole', 'heel', 'lace', 'cord', 'varnish', 'soda_ash',
+          /* medicine, clock and sword, from needs.mjs, 3 Sep */
+          'syringe', 'suture', 'bandage', 'wound', 'forceps', 'anaesthetic', 'escapement', 'hilt', 'scabbard', 'diagnosis',
+          /* the vehicle layer, from needs.mjs, 3 Sep */
+          'petrol', 'dial', 'speedometer', 'headlight',
+          /* the mechanical layer, from needs.mjs, 3 Sep */
+          'cylinder', 'crank', 'fulcrum', 'rod', 'valve', 'brake',
           /* the house, from tools/needs.mjs, 3 Sep */
           'plaster', 'mortar_lime', 'insulation', 'hinge',
           /* common words the corpus never had, 3 Sep */
@@ -589,6 +649,30 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* cycle L, from needs.mjs, 4 Sep */
+          'worktop', 'track_gauge',
+          /* cycle K, from needs.mjs, 4 Sep */
+          'flap', 'cockpit', 'fireplace', 'soil_pipe',
+          /* cycle J, from needs.mjs, 4 Sep */
+          'firebox', 'carriage', 'signal',
+          /* cycle I, from needs.mjs, 4 Sep */
+          'fuel_tank', 'suspension', 'chassis',
+          /* cycle H, from needs.mjs, 4 Sep */
+          'press', 'cask', 'weight', 'mulch',
+          /* cycle G, from needs.mjs, 4 Sep */
+          'harrow', 'silo', 'water_tank',
+          /* cycle F, from needs.mjs, 4 Sep */
+          'rebar', 'rafter', 'ridge', 'batten', 'downpipe',
+          /* cycle E, from needs.mjs, 3 Sep */
+          'frame', 'tyre', 'spade', 'rake',
+          /* cycle D, from needs.mjs, 3 Sep */
+          'neck', 'furnace',
+          /* medicine, clock and sword, from needs.mjs, 3 Sep */
+          'surgery', 'nurse', 'doctor', 'pendulum',
+          /* the vehicle layer, from needs.mjs, 3 Sep */
+          'gearbox', 'clutch', 'driveshaft', 'differential', 'alternator', 'exhaust', 'catalytic_converter', 'steering_wheel', 'dashboard', 'seat',
+          /* the mechanical layer, from needs.mjs, 3 Sep */
+          'engine', 'lever', 'flywheel', 'boiler', 'pump', 'friction', 'surface', 'area',
           /* the house, from tools/needs.mjs, 3 Sep */
           'timber', 'beam', 'joist', 'lintel', 'plasterboard', 'floorboard', 'gutter', 'radiator',
           /* medicine and disease, 3 Sep */
@@ -810,6 +894,16 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* cycle L, from needs.mjs, 4 Sep */
+          'crop', 'cave',
+          /* cycle K, from needs.mjs, 4 Sep */
+          'cabin', 'operating_theatre', 'altitude',
+          /* cycle J, from needs.mjs, 4 Sep */
+          'ward',
+          /* cycle G, from needs.mjs, 4 Sep */
+          'irrigation', 'fertiliser', 'livestock',
+          /* medicine, clock and sword, from needs.mjs, 3 Sep */
+          'ambulance',
           /* the house, from tools/needs.mjs, 3 Sep */
           'foundation', 'ceiling', 'scaffold',
           /* common words the corpus never had, 3 Sep */
