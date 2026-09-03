@@ -2168,7 +2168,10 @@
     "tags": [
       "earth"
     ],
-    "fact": "Yellow, volcanic, and the reason two amino acids can staple themselves together."
+    "fact": "Yellow, volcanic, and the reason two amino acids can staple themselves together.",
+    "aliases": {
+      "en-GB": "Sulphur"
+    }
   },
   {
     "id": "phosphorus",
@@ -2192,7 +2195,8 @@
     "tags": [
       "crop"
     ],
-    "fact": "A plant that hosts bacteria in its roots and pays them in sugar."
+    "fact": "A plant that hosts bacteria in its roots and pays them in sugar.",
+    "taxon": "tx_fabaceae"
   },
   {
     "id": "bone",
@@ -2792,7 +2796,10 @@
     "tags": [
       "tool"
     ],
-    "fact": "What is left of a flax stalk after the soft inner parts have rotted away."
+    "fact": "What is left of a flax stalk after the soft inner parts have rotted away.",
+    "aliases": {
+      "en-US": "Fiber"
+    }
   },
   {
     "id": "thread",
@@ -3332,7 +3339,10 @@
     "tags": [
       "crop"
     ],
-    "fact": "Cannot sow itself. The kernels stay stuck to the cob, so without someone to plant it, it ends."
+    "fact": "Cannot sow itself. The kernels stay stuck to the cob, so without someone to plant it, it ends.",
+    "aliases": {
+      "en-US": "Corn"
+    }
   },
   {
     "id": "popcorn",
@@ -3434,7 +3444,10 @@
     "tags": [
       "crop"
     ],
-    "fact": "The red pigment goes straight through some people. Pink urine, harmless, and it has a name: beeturia."
+    "fact": "The red pigment goes straight through some people. Pink urine, harmless, and it has a name: beeturia.",
+    "aliases": {
+      "en-GB": "Beetroot"
+    }
   },
   {
     "id": "lemon",
@@ -7213,7 +7226,8 @@
       "plant",
       "wild"
     ],
-    "fact": "Evergreen and resinous. Over 90% of a conifer's timber is one cell type: the tracheid."
+    "fact": "Evergreen and resinous. Over 90% of a conifer's timber is one cell type: the tracheid.",
+    "taxon": "tx_pinales"
   },
   {
     "id": "hardwood",
@@ -7313,7 +7327,8 @@
       "plant",
       "crop"
     ],
-    "fact": "Amazonian, and barely grown there: a leaf blight keeps plantations out of its own homeland."
+    "fact": "Amazonian, and barely grown there: a leaf blight keeps plantations out of its own homeland.",
+    "taxon": "tx_euphorbiaceae"
   },
   {
     "id": "mulberry",
@@ -9056,7 +9071,10 @@
       "food",
       "plant"
     ],
-    "fact": "A gene variant, OR6A2, makes some people taste soap instead of citrus in the leaf."
+    "fact": "A gene variant, OR6A2, makes some people taste soap instead of citrus in the leaf.",
+    "aliases": {
+      "en-US": "Cilantro"
+    }
   },
   {
     "id": "chives",
@@ -11362,7 +11380,10 @@
     "tags": [
       "crop"
     ],
-    "fact": "A squash, picked immature — the seeds and rind are still soft enough to eat."
+    "fact": "A squash, picked immature — the seeds and rind are still soft enough to eat.",
+    "aliases": {
+      "en-GB": "Courgette"
+    }
   },
   {
     "id": "eggplant",
@@ -11373,7 +11394,10 @@
       "crop"
     ],
     "fact": "A nightshade, like chilli and tomato — a berry, botanically, that follows the flower.",
-    "terminal": true
+    "terminal": true,
+    "aliases": {
+      "en-GB": "Aubergine"
+    }
   },
   {
     "id": "asparagus",
@@ -11489,7 +11513,10 @@
       "crop"
     ],
     "fact": "A mustard-family salad leaf, ready in 40 to 50 days of full sun and moist soil.",
-    "terminal": true
+    "terminal": true,
+    "aliases": {
+      "en-GB": "Rocket"
+    }
   },
   {
     "id": "watercress",
@@ -17869,7 +17896,8 @@
     "tags": [
       "plant"
     ],
-    "fact": "A flowering plant that sprouts with one cotyledon — grasses, lilies, palms, orchids."
+    "fact": "A flowering plant that sprouts with one cotyledon — grasses, lilies, palms, orchids.",
+    "taxon": "tx_monocots"
   },
   {
     "id": "dicot",
@@ -17879,7 +17907,8 @@
     "tags": [
       "plant"
     ],
-    "fact": "A flowering plant that sprouts with two cotyledons — historically over half of species."
+    "fact": "A flowering plant that sprouts with two cotyledons — historically over half of species.",
+    "taxon": "tx_eudicots"
   },
   {
     "id": "kapok",
@@ -30141,7 +30170,8 @@
     "tags": [
       "plant"
     ],
-    "fact": "Cone-bearing, needle- or scale-leaved, and mostly evergreen — pines, firs, cedars and cypresses among them."
+    "fact": "Cone-bearing, needle- or scale-leaved, and mostly evergreen — pines, firs, cedars and cypresses among them.",
+    "taxon": "tx_pinophyta"
   },
   {
     "id": "gymnosperm",
@@ -33003,7 +33033,10 @@
     ],
     "fact": "Ruth Wakefield's 1930s Toll House recipe expected chopped chocolate to melt into the dough. It held its shape.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "aliases": {
+      "en-GB": "Biscuit"
+    }
   },
   {
     "id": "cracker",
@@ -33085,7 +33118,10 @@
     ],
     "fact": "The word named a woven diamond-pattern cloth for three centuries before it ever meant a baby garment.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "aliases": {
+      "en-GB": "Nappy"
+    }
   },
   {
     "id": "dinosaur",
@@ -34736,7 +34772,10 @@
     ],
     "fact": "An onion pulled before its bulb ever forms — the same plant, kept for its hollow green stem instead.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "aliases": {
+      "en-GB": "Spring Onion"
+    }
   },
   {
     "id": "garlic_chives",
@@ -35974,7 +36013,10 @@
       "tool"
     ],
     "fact": "David Misell's 1899 patent: dry-cell batteries in a paper tube, with a bulb and brass reflector at the end.",
-    "terminal": true
+    "terminal": true,
+    "aliases": {
+      "en-GB": "Torch"
+    }
   },
   {
     "id": "fork",
@@ -36333,7 +36375,10 @@
     ],
     "fact": "The word dates only to 1882, first a woolen vest worn rowing — unscoured wool keeps lanolin and sheds water.",
     "terminal": true,
-    "soleRoute": true
+    "soleRoute": true,
+    "aliases": {
+      "en-GB": "Jumper"
+    }
   },
   {
     "id": "swimsuit",
@@ -36753,7 +36798,8 @@
       "plant"
     ],
     "fact": "A genus native to the arid Americas. Blue agave takes seven to fourteen years to mature.",
-    "soleRoute": true
+    "soleRoute": true,
+    "taxon": "tx_asparagaceae"
   },
   {
     "id": "pulque",
@@ -68139,7 +68185,10 @@
       "crop",
       "food"
     ],
-    "fact": "An accidental hybrid that doubled its chromosomes to 2n=38, first recorded by Gaspard Bauhin in 1620 growing wild in Sweden — hence 'swede'."
+    "fact": "An accidental hybrid that doubled its chromosomes to 2n=38, first recorded by Gaspard Bauhin in 1620 growing wild in Sweden — hence 'swede'.",
+    "aliases": {
+      "en-GB": "Swede"
+    }
   },
   {
     "id": "daikon_radish",
@@ -71567,7 +71616,10 @@
       "transport"
     ],
     "fact": "Body-on-frame, with the cab built separate from whatever it is carrying behind.",
-    "src": "https://en.wikipedia.org/wiki/Truck"
+    "src": "https://en.wikipedia.org/wiki/Truck",
+    "aliases": {
+      "en-GB": "Lorry"
+    }
   },
   {
     "id": "drone",
@@ -72466,5 +72518,908 @@
     "src": "https://en.wikipedia.org/wiki/Trichomoniasis",
     "terminal": true,
     "soleRoute": true
+  },
+  {
+    "id": "switch",
+    "name": "Switch",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A gap in a circuit you can open and close. Contacts touching or not — there is no third state.",
+    "src": "https://en.wikipedia.org/wiki/Switch"
+  },
+  {
+    "id": "relay",
+    "name": "Relay",
+    "emoji": "🔁",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "An electrically operated switch: a coil pulls the contacts shut, so one circuit works another.",
+    "src": "https://en.wikipedia.org/wiki/Relay"
+  },
+  {
+    "id": "logic",
+    "name": "Logic",
+    "emoji": "🤔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "The study of which conclusions follow from which premises, judged by the shape of the argument alone.",
+    "src": "https://en.wikipedia.org/wiki/Term_logic"
+  },
+  {
+    "id": "algebra",
+    "name": "Algebra",
+    "emoji": "✖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "Arithmetic with letters standing in for numbers, so one statement covers every case at once.",
+    "src": "https://en.wikipedia.org/wiki/Algebra"
+  },
+  {
+    "id": "boolean_algebra",
+    "name": "Boolean Algebra",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "Algebra whose variables take only true and false, with the operations and, or and not.",
+    "src": "https://en.wikipedia.org/wiki/The_Laws_of_Thought"
+  },
+  {
+    "id": "truth_table",
+    "name": "Truth Table",
+    "emoji": "📋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One row per combination of true and false for the inputs. Two inputs need four rows.",
+    "src": "https://en.wikipedia.org/wiki/Truth_table"
+  },
+  {
+    "id": "logic_gate",
+    "name": "Logic Gate",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A circuit performing one Boolean operation on binary inputs, giving a single binary output.",
+    "src": "https://en.wikipedia.org/wiki/A_Symbolic_Analysis_of_Relay_and_Switching_Circuits"
+  },
+  {
+    "id": "not_gate",
+    "name": "NOT Gate",
+    "emoji": "🚫",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The inverter. Its output is always the opposite of its input.",
+    "src": "https://en.wikipedia.org/wiki/Diode_logic"
+  },
+  {
+    "id": "or_gate",
+    "name": "OR Gate",
+    "emoji": "🔱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "True when either input is true. Two diodes into one shared resistor will do it.",
+    "src": "https://en.wikipedia.org/wiki/Diode_logic"
+  },
+  {
+    "id": "and_gate",
+    "name": "AND Gate",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "True only when both inputs are true — logical conjunction, built as a circuit.",
+    "src": "https://en.wikipedia.org/wiki/De_Morgan%27s_laws"
+  },
+  {
+    "id": "nand_gate",
+    "name": "NAND Gate",
+    "emoji": "⛔",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "AND with the answer inverted. Every other gate can be built from these alone.",
+    "src": "https://en.wikipedia.org/wiki/Sheffer_stroke"
+  },
+  {
+    "id": "xor_gate",
+    "name": "XOR Gate",
+    "emoji": "⚔️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "True when the inputs differ. It is the sum of two bits, ignoring the carry.",
+    "src": "https://en.wikipedia.org/wiki/XOR_gate"
+  },
+  {
+    "id": "multiplexer",
+    "name": "Multiplexer",
+    "emoji": "🎛️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A data selector: select lines choose one of several inputs and pass it to the single output.",
+    "src": "https://en.wikipedia.org/wiki/Multiplexer"
+  },
+  {
+    "id": "flip_flop",
+    "name": "Flip-Flop",
+    "emoji": "🎏",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two stable states, so it holds one bit after you stop pushing. The basic element of sequential logic.",
+    "src": "https://en.wikipedia.org/wiki/Flip-flop_(electronics)"
+  },
+  {
+    "id": "half_adder",
+    "name": "Half Adder",
+    "emoji": "➕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Adds two bits: XOR gives the sum digit, AND gives the carry.",
+    "src": "https://en.wikipedia.org/wiki/Adder_(electronics)"
+  },
+  {
+    "id": "adder",
+    "name": "Adder",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A circuit that adds binary numbers, carrying from each column into the next.",
+    "src": "https://en.wikipedia.org/wiki/Adder_(electronics)"
+  },
+  {
+    "id": "alu",
+    "name": "Arithmetic Logic Unit",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One circuit doing arithmetic or bitwise operations on binary integers, picked by an opcode.",
+    "src": "https://en.wikipedia.org/wiki/Arithmetic_logic_unit"
+  },
+  {
+    "id": "bit",
+    "name": "Bit",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The basic unit of information: one of two values. A contraction of 'binary digit'.",
+    "src": "https://en.wikipedia.org/wiki/Bit"
+  },
+  {
+    "id": "byte",
+    "name": "Byte",
+    "emoji": "🔡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Eight bits — historically the number needed to encode one character of text.",
+    "src": "https://en.wikipedia.org/wiki/Byte"
+  },
+  {
+    "id": "hexadecimal",
+    "name": "Hexadecimal",
+    "emoji": "🔠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Base 16, written 0-9 then A-F. One digit per four bits, so a byte is exactly two of them.",
+    "src": "https://en.wikipedia.org/wiki/Hexadecimal"
+  },
+  {
+    "id": "ascii",
+    "name": "ASCII",
+    "emoji": "🔤",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "128 code points — 95 printable, 33 control — each stored as a seven-bit number.",
+    "src": "https://en.wikipedia.org/wiki/ASCII"
+  },
+  {
+    "id": "unicode",
+    "name": "Unicode",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One number per character for every writing system that can be digitised.",
+    "src": "https://en.wikipedia.org/wiki/Unicode"
+  },
+  {
+    "id": "register",
+    "name": "Register",
+    "emoji": "📥",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A handful of bits the processor reaches instantly — the fastest storage a machine has.",
+    "src": "https://en.wikipedia.org/wiki/Processor_register"
+  },
+  {
+    "id": "random_access_memory",
+    "name": "Random-Access Memory",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One transistor and one capacitor per bit. The charge drains away, so every cell must be refreshed.",
+    "src": "https://en.wikipedia.org/wiki/Dynamic_random-access_memory"
+  },
+  {
+    "id": "read_only_memory",
+    "name": "Read-Only Memory",
+    "emoji": "📀",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A pattern fixed when the chip is made. It cannot be rewritten and survives the power going off.",
+    "src": "https://en.wikipedia.org/wiki/Read-only_memory"
+  },
+  {
+    "id": "cache",
+    "name": "Cache",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A small fast memory beside the core holding copies of whatever was used lately.",
+    "src": "https://en.wikipedia.org/wiki/CPU_cache"
+  },
+  {
+    "id": "clock_signal",
+    "name": "Clock Signal",
+    "emoji": "⏱️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A square wave at a constant frequency, used like a metronome so the whole circuit steps together.",
+    "src": "https://en.wikipedia.org/wiki/Crystal_oscillator"
+  },
+  {
+    "id": "data_bus",
+    "name": "Data Bus",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A shared bundle of wires that components take turns driving, instead of a wire between every pair.",
+    "src": "https://en.wikipedia.org/wiki/Bus_(computing)"
+  },
+  {
+    "id": "instruction",
+    "name": "Instruction",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A number that names an operation. Read it, do that one thing, move on.",
+    "src": "https://en.wikipedia.org/wiki/Instruction_set_architecture"
+  },
+  {
+    "id": "machine_code",
+    "name": "Machine Code",
+    "emoji": "🧾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Instructions as bare numbers — the only language a processor reads directly.",
+    "src": "https://en.wikipedia.org/wiki/Machine_code"
+  },
+  {
+    "id": "cpu",
+    "name": "Central Processing Unit",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Fetch an instruction, do what it says, fetch the next. Arithmetic, logic and control in one unit.",
+    "src": "https://en.wikipedia.org/wiki/Central_processing_unit"
+  },
+  {
+    "id": "assembly_language",
+    "name": "Assembly Language",
+    "emoji": "📝",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One line per machine instruction, but with names instead of numbers. ADD, not 00000101.",
+    "src": "https://en.wikipedia.org/wiki/Assembly_language"
+  },
+  {
+    "id": "compiler",
+    "name": "Compiler",
+    "emoji": "🏭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Software that translates a high-level language into the low-level code a processor executes.",
+    "src": "https://en.wikipedia.org/wiki/Compiler"
+  },
+  {
+    "id": "programming_language",
+    "name": "Programming Language",
+    "emoji": "📗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An engineered language for writing programs people can read and machines can run.",
+    "src": "https://en.wikipedia.org/wiki/Programming_language"
+  },
+  {
+    "id": "operating_system",
+    "name": "Operating System",
+    "emoji": "🧰",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The program that manages the hardware and runs the others.",
+    "src": "https://en.wikipedia.org/wiki/GM-NAA_I/O"
+  },
+  {
+    "id": "file",
+    "name": "Computer File",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A named collection of bytes treated as one unit — asked for by name, not by position.",
+    "src": "https://en.wikipedia.org/wiki/Computer_file"
+  },
+  {
+    "id": "filesystem",
+    "name": "File System",
+    "emoji": "🗂️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The directory of names against blocks, so files can be found without tracking the medium.",
+    "src": "https://en.wikipedia.org/wiki/File_system"
+  },
+  {
+    "id": "database",
+    "name": "Database",
+    "emoji": "🗄️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Data held as relations — tables of rows — with a language for asking questions of them.",
+    "src": "https://en.wikipedia.org/wiki/Relational_model"
+  },
+  {
+    "id": "punched_card",
+    "name": "Punched Card",
+    "emoji": "🃏",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "history"
+    ],
+    "fact": "Stiff paper storing information as the presence or absence of a hole at a fixed position.",
+    "src": "https://en.wikipedia.org/wiki/Punched_card"
+  },
+  {
+    "id": "jacquard_loom",
+    "name": "Jacquard Loom",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "history"
+    ],
+    "fact": "A loom driven by a laced chain of punched cards, one card per row of the design.",
+    "src": "https://en.wikipedia.org/wiki/Jacquard_machine"
+  },
+  {
+    "id": "tabulating_machine",
+    "name": "Tabulating Machine",
+    "emoji": "🗳️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "history"
+    ],
+    "fact": "Hollerith's electromechanical counter for punched cards, built for the 1890 US census.",
+    "src": "https://en.wikipedia.org/wiki/Tabulating_machine"
+  },
+  {
+    "id": "turing_machine",
+    "name": "Turing Machine",
+    "emoji": "♾️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "An endless tape of symbols, a head that reads and writes one at a time, and a table of rules.",
+    "src": "https://en.wikipedia.org/wiki/Turing_machine"
+  },
+  {
+    "id": "moores_law",
+    "name": "Moore's Law",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transistors per chip have doubled roughly every two years. An observation, not a law of nature.",
+    "src": "https://en.wikipedia.org/wiki/Moore%27s_law"
+  },
+  {
+    "id": "pixel",
+    "name": "Pixel",
+    "emoji": "🟪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The smallest addressable element of a raster image. The word was first published in 1965.",
+    "src": "https://en.wikipedia.org/wiki/Pixel"
+  },
+  {
+    "id": "bitmap",
+    "name": "Bitmap",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A grid of pixels held in memory. A framebuffer is exactly this, scanned out to a display.",
+    "src": "https://en.wikipedia.org/wiki/Framebuffer"
+  },
+  {
+    "id": "font",
+    "name": "Computer Font",
+    "emoji": "🅰️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A file of glyphs, taking over the job of a case of metal type.",
+    "src": "https://en.wikipedia.org/wiki/Computer_font"
+  },
+  {
+    "id": "jpeg",
+    "name": "JPEG",
+    "emoji": "📷",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Lossy image compression, about 10:1, by discarding detail the eye is least likely to miss.",
+    "src": "https://en.wikipedia.org/wiki/JPEG"
+  },
+  {
+    "id": "floating_point",
+    "name": "Floating Point",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A number as a significand times a power of the base, so the point moves with the exponent.",
+    "src": "https://en.wikipedia.org/wiki/Floating-point_arithmetic"
+  },
+  {
+    "id": "checksum",
+    "name": "Checksum",
+    "emoji": "✅",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A short value computed from a block of data and sent with it, to detect damage.",
+    "src": "https://en.wikipedia.org/wiki/Checksum"
+  },
+  {
+    "id": "hamming_code",
+    "name": "Hamming Code",
+    "emoji": "🩹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Check bits arranged so a single wrong bit is not just detected but located.",
+    "src": "https://en.wikipedia.org/wiki/Hamming_code"
+  },
+  {
+    "id": "computer_network",
+    "name": "Computer Network",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Computers exchanging data over links by agreed protocols, each found by its network address.",
+    "src": "https://en.wikipedia.org/wiki/Computer_network"
+  },
+  {
+    "id": "packet",
+    "name": "Packet",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A short formatted unit of data with a header saying where it is going.",
+    "src": "https://en.wikipedia.org/wiki/Packet_switching"
+  },
+  {
+    "id": "network_protocol",
+    "name": "Network Protocol",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The agreed rules of format, meaning, timing and error recovery that let two machines talk.",
+    "src": "https://en.wikipedia.org/wiki/Communication_protocol"
+  },
+  {
+    "id": "ip_address",
+    "name": "IP Address",
+    "emoji": "📮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The number identifying a machine on the network and saying where it is. IPv4 uses 32 bits.",
+    "src": "https://en.wikipedia.org/wiki/IP_address"
+  },
+  {
+    "id": "tcp",
+    "name": "TCP",
+    "emoji": "🧷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Numbers, checks and re-requests every byte, turning unreliable packets into an ordered stream.",
+    "src": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol"
+  },
+  {
+    "id": "domain_name_system",
+    "name": "Domain Name System",
+    "emoji": "📇",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A distributed directory turning memorable names into the numeric addresses the network uses.",
+    "src": "https://en.wikipedia.org/wiki/Domain_Name_System"
+  },
+  {
+    "id": "url",
+    "name": "URL",
+    "emoji": "⛓️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One line naming a protocol, a machine and a path — an address for a single resource.",
+    "src": "https://en.wikipedia.org/wiki/URL"
+  },
+  {
+    "id": "http",
+    "name": "HTTP",
+    "emoji": "📨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Request and response: a client asks for a resource by URL, a server answers.",
+    "src": "https://en.wikipedia.org/wiki/HTTP"
+  },
+  {
+    "id": "html",
+    "name": "HTML",
+    "emoji": "📰",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Tags inside plain text marking what is a heading, a paragraph, or a link.",
+    "src": "https://en.wikipedia.org/wiki/HTML"
+  },
+  {
+    "id": "web_browser",
+    "name": "Web Browser",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Fetches a page's files from a server and renders them on screen.",
+    "src": "https://en.wikipedia.org/wiki/Web_browser"
+  },
+  {
+    "id": "server",
+    "name": "Server",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A computer whose job is answering other computers' requests — the far half of client-server.",
+    "src": "https://en.wikipedia.org/wiki/Server_(computing)"
+  },
+  {
+    "id": "ethernet",
+    "name": "Ethernet",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The wired local-network standard, commercially introduced in 1980 and standardised in 1983.",
+    "src": "https://en.wikipedia.org/wiki/Ethernet"
+  },
+  {
+    "id": "modem",
+    "name": "Modem",
+    "emoji": "📞",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Turns bits into tones a phone line will carry, and back again.",
+    "src": "https://en.wikipedia.org/wiki/Modem"
+  },
+  {
+    "id": "cipher",
+    "name": "Cipher",
+    "emoji": "🔐",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "A defined procedure for turning a message unreadable and back, controlled by a key.",
+    "src": "https://en.wikipedia.org/wiki/Cipher"
+  },
+  {
+    "id": "encryption",
+    "name": "Encryption",
+    "emoji": "🔒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Plaintext turned into ciphertext, so only a holder of the key can read it.",
+    "src": "https://en.wikipedia.org/wiki/One-time_pad"
+  },
+  {
+    "id": "prime_number",
+    "name": "Prime Number",
+    "emoji": "7️⃣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A whole number above 1 with no smaller factors. Every other number is a product of these.",
+    "src": "https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"
+  },
+  {
+    "id": "public_key",
+    "name": "Public-Key Cryptography",
+    "emoji": "🗝️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A pair of related keys: publish one, keep the other. What one locks, only the other opens.",
+    "src": "https://en.wikipedia.org/wiki/Public-key_cryptography"
+  },
+  {
+    "id": "hash_function",
+    "name": "Cryptographic Hash",
+    "emoji": "🔏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any input mapped to a fixed-size fingerprint: quick forwards, infeasible backwards.",
+    "src": "https://en.wikipedia.org/wiki/Cryptographic_hash_function"
+  },
+  {
+    "id": "digital_signature",
+    "name": "Digital Signature",
+    "emoji": "✍️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Proof that a message came from one holder of a private key and was not altered after.",
+    "src": "https://en.wikipedia.org/wiki/Digital_signature"
+  },
+  {
+    "id": "keyboard",
+    "name": "Keyboard",
+    "emoji": "⌨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The typewriter's layout with a switch under every key, so a keystroke becomes a number.",
+    "src": "https://en.wikipedia.org/wiki/Computer_keyboard"
+  },
+  {
+    "id": "information_theory",
+    "name": "Information Theory",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "history"
+    ],
+    "fact": "The mathematics of measuring, storing and sending information. Shannon, in the 1940s.",
+    "src": "https://en.wikipedia.org/wiki/Information_theory"
+  },
+  {
+    "id": "resin",
+    "name": "Resin",
+    "emoji": "🟠",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A terpene secretion a conifer pushes into its own wounds. Not sap, not latex — and it sets hard.",
+    "src": "https://en.wikipedia.org/wiki/Resin",
+    "soleRoute": true
+  },
+  {
+    "id": "thorn",
+    "name": "Thorn",
+    "emoji": "📌",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A modified shoot, lignified to a point. A spine is a modified leaf; a prickle is only skin.",
+    "src": "https://en.wikipedia.org/wiki/Thorns,_spines,_and_prickles",
+    "soleRoute": true
+  },
+  {
+    "id": "berry",
+    "name": "Berry",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "crop"
+    ],
+    "fact": "One flower, one ovary, seeds loose in the flesh. A stone in there would make it a drupe instead.",
+    "src": "https://en.wikipedia.org/wiki/Berry_(botany)"
+  },
+  {
+    "id": "aerenchyma",
+    "name": "Aerenchyma",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Parenchyma that kills off its own cells to leave air channels — a snorkel from shoot to drowned root.",
+    "src": "https://en.wikipedia.org/wiki/Aerenchyma"
+  },
+  {
+    "id": "isoprene",
+    "name": "Isoprene",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "plant"
+    ],
+    "fact": "C5H8, 2-methyl-1,3-butadiene. Vegetation breathes out about 600 million tonnes of it a year.",
+    "src": "https://en.wikipedia.org/wiki/Isoprene"
+  },
+  {
+    "id": "polyisoprene",
+    "name": "Polyisoprene",
+    "emoji": "⛓️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "tool"
+    ],
+    "fact": "Isoprene chained up. In the cis-1,4 arrangement it is natural rubber — 99.9% of what a tapped tree gives.",
+    "src": "https://en.wikipedia.org/wiki/Polyisoprene"
+  },
+  {
+    "id": "synthetic_rubber",
+    "name": "Synthetic Rubber",
+    "emoji": "⚗️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "earth"
+    ],
+    "fact": "Elastomer polymerised from petroleum instead of tapped from a tree. Two thirds of US rubber.",
+    "src": "https://en.wikipedia.org/wiki/Synthetic_rubber",
+    "soleRoute": true
+  },
+  {
+    "id": "carbon_black",
+    "name": "Carbon Black",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "fire"
+    ],
+    "fact": "Petroleum burned in too little air, on purpose. 70% of it goes into tires, and it is why they are black.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_black"
+  },
+  {
+    "id": "tire",
+    "name": "Tire",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "Vulcanised rubber packed with carbon black and forced onto a wheel rim. Over 2 billion made a year.",
+    "src": "https://en.wikipedia.org/wiki/Tire",
+    "terminal": true,
+    "aliases": {
+      "en-GB": "Tyre"
+    }
   }
 ]

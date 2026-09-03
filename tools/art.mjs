@@ -37590,6 +37590,716 @@ def('trichomoniasis', () => [                                      // the common
   S('M46 30 L55 36', 'lo', 2.4),                                   // and the axostyle, one stiff rod straight out the back
 ]);
 
+/* 3 Sep -- computing -- gates, units, the machine, networks */
+/* computing ──────────────────────────────────────────────────────────────
+   Seventy-one items that all wanted to be the same grey box, so none of them
+   is one. Where a standard symbol exists it is used and not reinvented: the
+   D for AND, the shield for OR, the triangle and bubble for NOT, the trapezoid
+   for a multiplexer, the notched wedge for an ALU, the diode matrix for ROM,
+   the one-transistor-one-capacitor cell for RAM. Where the item is an idea
+   rather than a part, it is drawn as the one picture that idea actually has:
+   a truth table is a table, a URL is its slashes, HTML is its angle brackets,
+   TCP is the three-way handshake, Hamming is three overlapping circles. */
+
+/* logic and formalism ──────────────────────────────────────────────────── */
+
+def('logic', () => [                                               // an Euler diagram: the dot is in the small circle, so it is in the big one — that containment is the whole of a syllogism
+  ring('gh', 30, 30, 22, 2),                                       // all men are mortal
+  C(26, 33, 11, 'bs'),                                             // all Greeks are men
+  C(26, 33, 3.2, 'ik'),                                            // Socrates
+  C(50, 12, 3, 'gh'),                                              // and one thing outside both, which the rule says nothing about
+]);
+def('algebra', () => [                                             // al-jabr, "restoring": whatever you do to one pan you do to the other, and the unknown is just another weight
+  S('M8 18 L52 18', 'ik', 3),                                      // the beam
+  P('M30 20 L23 44 L37 44 Z', 'lo'),                               // the fulcrum
+  S('M14 44 L46 44', 'ik', 2.6),
+  S('M12 18 L12 28', 'ik', 1.4), S('M48 18 L48 28', 'ik', 1.4),
+  S('M4 28 Q12 36 20 28', 'bs', 2.4), S('M40 28 Q48 36 56 28', 'bs', 2.4),
+  C(12, 24, 4.4, 'hi'),                                            // x, on one pan
+  P('M41 20 L46 20 L46 26 L41 26 Z', 'hi'),
+  P('M49 20 L54 20 L54 26 L49 26 Z', 'hi'),                        // and the knowns that balance it
+]);
+def('boolean_algebra', () => [                                     // two sets and their intersection: Boole's move was to write AND as multiplication and let algebra run on true and false
+  ring('bs', 23, 30, 15, 2.2), ring('bs', 37, 30, 15, 2.2),
+  P('M30 16.73 A15 15 0 0 1 30 43.27 A15 15 0 0 1 30 16.73 Z', 'hi'),   // A AND B, the only part in both
+  C(30, 54, 2.4, 'ik'),                                            // the product dot that names it
+]);
+def('truth_table', () => [                                         // the real object: two input columns, one output column, four rows because two bits have four states
+  S('M12 10 L48 10 L48 50 L12 50 Z', 'ik', 1.8),
+  S('M12 18 L48 18', 'ik', 2.2),                                   // the header rule
+  S('M36 10 L36 50', 'ik', 2.2),                                   // inputs on the left of it, the answer on the right
+  S('M24 10 L24 50', 'gh', 1.2),
+  S('M12 26 L48 26', 'gh', 1), S('M12 34 L48 34', 'gh', 1), S('M12 42 L48 42', 'gh', 1),
+  S('M15 14 L21 14', 'ik', 2), S('M27 14 L33 14', 'ik', 2), S('M39 14 L45 14', 'ik', 2),
+  ...[[0, 0, 0], [0, 1, 0], [1, 0, 0], [1, 1, 1]].flatMap((row, r) =>
+    row.map((v, c) => {
+      const x = 18 + c * 12, y = 22 + r * 8;
+      return v ? P(`M${x - 1.6} ${y - 4} L${x + 1.6} ${y - 4} L${x + 1.6} ${y + 4} L${x - 1.6} ${y + 4} Z`, 'bs')
+               : ring('gh', x, y, 3, 1.6);
+    })),
+]);
+def('information_theory', () => [                                  // Shannon's channel: a message goes in one end, noise gets added in the middle, and the question is how much still arrives
+  P('M2 24 L14 24 L14 40 L2 40 Z', 'lo'),                          // source
+  P('M22 22 L38 22 L38 42 L22 42 Z', 'bs'),                        // the channel
+  P('M46 24 L58 24 L58 40 L46 40 Z', 'lo'),                        // receiver
+  S('M14 32 L22 32', 'ik', 2.2), S('M38 32 L46 32', 'ik', 2.2),
+  S('M30 6 L30 14 L26 16 L34 20 L30 22', 'hi', 2),                 // noise, coming in from outside
+  P('M26 20 L34 20 L30 26 Z', 'hi'),
+  ...[26, 30, 34].map(x => C(x, 36, 1.6, 'hi')),                   // and what is left of the message
+]);
+def('moores_law', () => [                                          // a count doubling on a fixed clock is a straight line only because the axis is logarithmic — that is the whole observation
+  S('M10 50 L10 8', 'ik', 2), S('M10 50 L54 50', 'ik', 2),
+  ...[14, 22, 30, 38, 46].map(y => S(`M6 ${y} L10 ${y}`, 'gh', 1.4)),   // each tick twice the one below it
+  S('M12 47 L52 12', 'bs', 2.8),
+  ...[[15, 44.4], [24, 36.5], [33, 28.6], [42, 20.7], [50, 13.7]].map(([x, y]) => C(x, y, 2.4, 'hi')),
+]);
+def('prime_number', () => [                                        // twelve makes a rectangle three ways; seven makes only a line, and that is what prime means
+  ...[0, 1, 2].flatMap(r => [0, 1, 2, 3].map(c =>
+    P(`M${8 + c * 7} ${6 + r * 7} L${14 + c * 7} ${6 + r * 7} L${14 + c * 7} ${12 + r * 7} L${8 + c * 7} ${12 + r * 7} Z`, 'gh'))),
+  S('M8 33 L52 33', 'gh', 1.2),
+  ...[0, 1, 2, 3, 4, 5, 6].map(c =>
+    P(`M${8 + c * 7} 38 L${14 + c * 7} 38 L${14 + c * 7} 44 L${8 + c * 7} 44 Z`, 'bs')),
+  S('M8 49 L8 52 L56 52 L56 49', 'ik', 1.8),                       // one group, and no other way to cut it
+]);
+
+/* gates and circuits ───────────────────────────────────────────────────── */
+
+def('switch', () => [                                              // a knife switch, drawn open: two terminals and a blade lifted clear of one of them
+  S('M2 42 L12 42', 'ik', 2.4), S('M48 42 L58 42', 'ik', 2.4),
+  C(12, 42, 3.2, 'ik'), C(48, 42, 3.2, 'ik'),
+  S('M12 42 L44 24', 'bs', 3.6),                                   // the blade, up
+  S('M40 18 L46 22', 'gh', 1.6),                                   // and the short travel that closes it
+]);
+def('relay', () => [                                               // a switch worked by a magnet instead of a finger: current in the coil drags the armature down and closes a circuit it is not part of
+  ...coilOf('bs', 3, 12, 48, 5),
+  S('M12 52 L42 52', 'lo', 4),                                     // the core
+  S('M4 48 L12 48', 'ik', 2),
+  C(10, 26, 2.8, 'ik'),
+  S('M10 26 L44 32', 'ik', 3.4),                                   // the armature, pivoted at the left
+  S('M27 22 L27 12', 'gh', 1.6), P('M24 22 L30 22 L27 27 Z', 'gh'),   // pulled down when the coil pulls
+  C(48, 22, 3, 'hi'), S('M48 22 L56 16', 'ik', 2),                 // the contact it closes, on a separate circuit
+]);
+def('logic_gate', () => [                                          // the IEC rectangle: the general symbol, used when the function is not yet named. Two things in, one out, and the ellipsis says the rule inside is still open
+  P('M20 12 L44 12 L44 48 L20 48 Z', 'bs'),
+  P('M20 12 L44 12 L44 20 L20 20 Z', 'lo'),                        // the qualifier band
+  S('M6 26 L20 26', 'ik', 2.2), S('M6 38 L20 38', 'ik', 2.2),
+  S('M44 32 L58 32', 'ik', 2.2),
+  ...[27, 32, 37].map(x => C(x, 34, 1.8, 'hi')),
+]);
+def('not_gate', () => [                                            // triangle and bubble: the bubble is the inversion, and it is the only mark that distinguishes it from a plain buffer
+  P('M18 12 L18 48 L42 30 Z', 'bs'),
+  C(46, 30, 3.6, 'ik'),
+  S('M4 30 L18 30', 'ik', 2.4), S('M50 30 L58 30', 'ik', 2.4),
+  C(11, 30, 2.4, 'hi'), ring('hi', 55, 30, 2.4, 1.6),              // 1 goes in, 0 comes out
+]);
+def('and_gate', () => [                                            // the D: flat back, round nose. Output only when both inputs are true, so both input marks are filled and so is the output
+  P('M18 16 L30 16 A14 14 0 0 1 30 44 L18 44 Z', 'bs'),
+  S('M4 23 L18 23', 'ik', 2.2), S('M4 37 L18 37', 'ik', 2.2),
+  S('M44 30 L58 30', 'ik', 2.2),
+  C(9, 23, 2.2, 'hi'), C(9, 37, 2.2, 'hi'), C(54, 30, 2.4, 'hi'),
+]);
+def('or_gate', () => [                                             // the shield: concave back, two curved flanks meeting at a point. Either input will do
+  P('M12 16 Q22 30 12 44 Q30 44 44 30 Q30 16 12 16 Z', 'bs'),
+  S('M2 22 L18 22', 'ik', 2.2), S('M2 38 L18 38', 'ik', 2.2),
+  S('M44 30 L58 30', 'ik', 2.2),
+  C(6, 22, 2.2, 'hi'), ring('hi', 6, 38, 2.2, 1.4), C(54, 30, 2.4, 'hi'),
+]);
+def('nand_gate', () => [                                           // the universal gate: every other gate can be built from copies of it. Two of them in series, the second wired as an inverter, make an AND
+  P('M7 22 L15 22 A8 8 0 0 1 15 38 L7 38 Z', 'bs'), C(25.5, 30, 2.6, 'ik'),
+  S('M1 26 L7 26', 'ik', 2), S('M1 34 L7 34', 'ik', 2),
+  S('M28 30 L33 30', 'ik', 2), S('M33 26 L33 34', 'ik', 2),        // the tie that turns the second one into a NOT
+  P('M33 22 L41 22 A8 8 0 0 1 41 38 L33 38 Z', 'bs'), C(51.5, 30, 2.6, 'ik'),
+  S('M54 30 L58 30', 'ik', 2),
+]);
+def('xor_gate', () => [                                            // the shield again, with the doubled back curve. One or the other, but not both — so two true inputs give a false output
+  S('M14 16 Q24 30 14 44', 'ik', 2.2),                             // the second curve, which is the whole difference
+  P('M20 16 Q30 30 20 44 Q38 44 50 30 Q38 16 20 16 Z', 'bs'),
+  S('M4 22 L17 22', 'ik', 2.2), S('M4 38 L17 38', 'ik', 2.2),
+  S('M50 30 L58 30', 'ik', 2.2),
+  C(8, 22, 2.2, 'hi'), C(8, 38, 2.2, 'hi'), ring('hi', 55, 30, 2.4, 1.6),
+]);
+def('multiplexer', () => [                                         // the trapezoid: many lines in on the tall side, one out of the short side, and a select line from below that says which one got through
+  P('M18 8 L42 20 L42 40 L18 52 Z', 'bs'),
+  ...[14, 24, 34, 44].map(y => S(`M4 ${y} L18 ${y}`, 'ik', 2)),
+  S('M42 30 L58 30', 'ik', 2.2),
+  S('M30 56 L30 46', 'ik', 2), P('M27 47 L33 47 L30 42 Z', 'ik'),  // the select
+  C(9, 24, 2.4, 'hi'), C(53, 30, 2.4, 'hi'),                       // the one that was chosen, and what came out
+]);
+def('flip_flop', () => [                                           // two gates each feeding the other's input: the output holds itself up, which is how a circuit made of no moving parts remembers one bit
+  P('M16 8 L24 8 A7 7 0 0 1 24 22 L16 22 Z', 'bs'),
+  P('M16 38 L24 38 A7 7 0 0 1 24 52 L16 52 Z', 'bs'),
+  S('M4 12 L16 12', 'ik', 2), S('M4 48 L16 48', 'ik', 2),
+  S('M31 15 L52 15', 'ik', 2), S('M31 45 L52 45', 'ik', 2),        // Q and not-Q
+  S('M40 22 L20 38', 'ik', 1.8), S('M20 22 L40 38', 'ik', 1.8),    // the cross-coupling
+  C(48, 15, 2.6, 'hi'), ring('hi', 48, 45, 2.6, 1.6),
+]);
+def('half_adder', () => [                                          // one plus one in binary, worked as a column sum: the answer needs two digits, and the left-hand one is the carry
+  P('M31 8 L39 8 L39 16 L31 16 Z', 'bs'),
+  S('M17 26 L27 26', 'ik', 2.4), S('M22 21 L22 31', 'ik', 2.4),    // the plus
+  P('M31 20 L39 20 L39 28 L31 28 Z', 'bs'),
+  S('M12 33 L46 33', 'ik', 2.4),
+  P('M20 38 L28 38 L28 46 L20 46 Z', 'hi'),                        // the carry
+  ring('lo', 35, 42, 4.4, 2.4),                                    // the sum
+  S('M31 51 L24 51', 'gh', 1.6), P('M26 48 L26 54 L21 51 Z', 'gh'),  // the carry moving one place left
+]);
+def('adder', () => [                                               // four one-bit adders in a row, each handing its carry to the next: the ripple that makes addition of any width out of one part repeated
+  ...[0, 1, 2, 3].flatMap(i => {
+    const x = 5 + i * 13;
+    return [
+      P(`M${x} 22 L${x + 10} 22 L${x + 10} 38 L${x} 38 Z`, 'bs'),
+      S(`M${x + 3} 22 L${x + 3} 12`, 'ik', 1.8),
+      S(`M${x + 7} 22 L${x + 7} 12`, 'ik', 1.8),
+      S(`M${x + 5} 38 L${x + 5} 50`, 'ik', 1.8),
+      C(x + 5, 52, 2.2, 'hi'),
+    ];
+  }),
+  ...[0, 1, 2].map(i => S(`M${18 + i * 13} 30 L${44 - (2 - i) * 13} 30`, 'ik', 2)),
+  ...[0, 1, 2].map(i => P(`M${15 + i * 13} 27 L${15 + i * 13} 33 L${11 + i * 13} 30 Z`, 'ik')),  // carries, travelling right to left
+]);
+def('alu', () => [                                                 // the notched wedge every architecture diagram uses: two operands into the notch at the top, an opcode from the side, one result out of the bottom
+  P('M6 10 L24 10 L30 20 L36 10 L54 10 L42 44 L18 44 Z', 'bs'),
+  S('M14 4 L14 10', 'ik', 2.2), S('M46 4 L46 10', 'ik', 2.2),      // the two operands
+  S('M2 26 L11 26', 'ik', 2.2), C(6, 26, 2.4, 'hi'),               // the opcode: which operation
+  S('M30 44 L30 56', 'ik', 2.6), P('M26 50 L34 50 L30 57 Z', 'ik'),   // the result
+  ...[24, 30, 36].map(x => C(x, 38, 1.6, 'hi')),
+  C(50, 30, 2.4, 'lo'),                                            // and one status flag falling out the side
+]);
+
+/* units and representation ─────────────────────────────────────────────── */
+
+def('bit', () => [                                                 // the smallest possible distinction: two states, one of them taken. Nothing below this divides
+  P('M8 20 L26 20 L26 40 L8 40 Z', 'bs'),
+  S('M34 20 L52 20 L52 40 L34 40 Z', 'gh', 2.2),
+  C(17, 30, 4.4, 'hi'),                                            // this one
+  S('M13 48 L21 48', 'ik', 2.4),                                   // and the choice between them, marked
+  ring('gh', 43, 30, 4.4, 2.2),
+]);
+def('byte', () => [                                                // eight of them, taken together, which is enough for every letter on a keyboard. The gap marks the two nibbles
+  ...[5, 11.4, 17.8, 24.2, 32.6, 39, 45.4, 51.8].map((x, i) =>
+    [0, 1, 0, 0, 1, 0, 1, 1][i]
+      ? P(`M${x} 22 L${x + 5.2} 22 L${x + 5.2} 38 L${x} 38 Z`, 'bs')
+      : S(`M${x} 22 L${x + 5.2} 22 L${x + 5.2} 38 L${x} 38 Z`, 'gh', 1.6)),
+  S('M5 43 L30.2 43', 'hi', 1.8), S('M32.6 43 L57 43', 'hi', 1.8),
+]);
+def('hexadecimal', () => [                                         // four bits have sixteen states, so four bits are written as one symbol and a byte fits in two characters instead of eight
+  ...[4, 10, 16, 22].map((x, i) =>
+    [1, 0, 1, 1][i]
+      ? P(`M${x} 25 L${x + 5} 25 L${x + 5} 35 L${x} 35 Z`, 'bs')
+      : S(`M${x} 25 L${x + 5} 25 L${x + 5} 35 L${x} 35 Z`, 'gh', 1.4)),
+  S('M31 30 L38 30', 'ik', 2), P('M36 27 L36 33 L41 30 Z', 'ik'),
+  hex('bs', 49, 30, 9, 2.6),                                       // one symbol, sixteen ways to fill it
+  C(49, 30, 3.4, 'hi'),
+]);
+def('ascii', () => [                                               // a code chart: seven bits, one hundred and twenty-eight rows, and an agreement about which pattern is which letter
+  ...[8, 13.5, 19, 24.5, 30, 35.5, 41, 46.5, 52].map(x => S(`M${x} 14 L${x} 46`, 'gh', 1)),
+  ...[14, 20.4, 26.8, 33.2, 39.6, 46].map(y => S(`M8 ${y} L52 ${y}`, 'gh', 1)),
+  S('M8 20.4 L52 20.4', 'ik', 1.8),                                // the header
+  S('M13.5 14 L13.5 46', 'ik', 1.8),                               // and the column of row numbers
+  P('M24.5 26.8 L30 26.8 L30 33.2 L24.5 33.2 Z', 'bs'),            // one character, at one address
+  ...[18, 22, 26, 30, 34, 38, 42].map((x, i) =>
+    [1, 0, 0, 0, 0, 0, 1][i]
+      ? P(`M${x} 50 L${x + 2.6} 50 L${x + 2.6} 55 L${x} 55 Z`, 'hi')
+      : S(`M${x} 50 L${x + 2.6} 50 L${x + 2.6} 55 L${x} 55 Z`, 'gh', 1.2)),
+]);
+def('unicode', () => [                                             // one table wide enough for every script anyone writes in, which ASCII's seven bits never were
+  S('M6 12 L54 12 L54 48 L6 48 Z', 'gh', 2),
+  S('M12 40 L17.5 20 L23 40', 'ik', 2.4), S('M14 33 L21 33', 'ik', 2.4),
+  S('M27 22 L40 22 L40 38 L27 38 Z', 'bs', 2.2),
+  S('M27 30 L40 30', 'bs', 2.2), S('M33.5 22 L33.5 38', 'bs', 2.2),
+  S('M45 24 Q53 29 46 37 Q42 41 50 41', 'ik', 2.4), C(46, 19, 1.8, 'ik'),
+]);
+def('pixel', () => [                                               // one cell of the grid, magnified: it is not a dot of colour but three stripes of light that the eye adds together
+  ...[10, 20, 30, 40, 50].flatMap(v => [S(`M${v} 6 L${v} 54`, 'gh', 0.8), S(`M6 ${v} L54 ${v}`, 'gh', 0.8)]),
+  P('M20 20 L26.7 20 L26.7 40 L20 40 Z', 'lo'),
+  P('M26.7 20 L33.3 20 L33.3 40 L26.7 40 Z', 'bs'),
+  P('M33.3 20 L40 20 L40 40 L33.3 40 Z', 'hi'),
+  S('M20 20 L40 20 L40 40 L20 40 Z', 'ik', 2.4),
+]);
+def('bitmap', () => [                                              // a curve stored on a grid: the staircase is not a fault in the drawing, it is what storing a picture as cells actually costs
+  ...[0, 1, 2, 3, 4, 5].flatMap(c => [0, 1, 2, 3, 4, 5].map(r =>
+    S(`M${6 + c * 8.4} ${6 + r * 8.4} L${14.4 + c * 8.4} ${6 + r * 8.4} L${14.4 + c * 8.4} ${14.4 + r * 8.4} L${6 + c * 8.4} ${14.4 + r * 8.4} Z`, 'gh', 0.8))),
+  ...[[0, 4], [1, 3], [2, 3], [3, 2], [4, 1], [5, 0]].map(([c, r]) =>
+    P(`M${6 + c * 8.4} ${6 + r * 8.4} L${14.4 + c * 8.4} ${6 + r * 8.4} L${14.4 + c * 8.4} ${14.4 + r * 8.4} L${6 + c * 8.4} ${14.4 + r * 8.4} Z`, 'bs')),
+  S('M6 46 Q26 44 34 26 Q42 8 54 6', 'ik', 2),                     // the curve it is standing in for
+]);
+def('font', () => [                                                // a computer font is not a picture of a letter, it is the outline of one: two curves and the handles that steer them, scalable to any size
+  S('M30 12 Q45 12 45 30 Q45 48 30 48 Q15 48 15 30 Q15 12 30 12 Z', 'bs', 2.6),
+  S('M30 21 Q37 21 37 30 Q37 39 30 39 Q23 39 23 30 Q23 21 30 21 Z', 'bs', 2.2),
+  ...[[45, 12], [45, 48], [15, 48], [15, 12]].flatMap(([x, y]) => [
+    S(`M30 ${y} L${x} ${y}`, 'gh', 1),
+    P(`M${x - 2.2} ${y - 2.2} L${x + 2.2} ${y - 2.2} L${x + 2.2} ${y + 2.2} L${x - 2.2} ${y + 2.2} Z`, 'ik'),
+  ]),
+  ...[[30, 12], [45, 30], [30, 48], [15, 30]].map(([x, y]) => C(x, y, 2.2, 'hi')),
+  S('M6 54 L54 54', 'gh', 1.6),                                    // the baseline it sits on
+]);
+def('jpeg', () => [                                                // the picture is cut into blocks, each block turned into frequencies, and the frequencies read out in a zig-zag so the ones that matter come first
+  ...[0, 1, 2, 3].flatMap(r => [0, 1, 2, 3].map(c =>
+    P(`M${10 + c * 10} ${10 + r * 10} L${20 + c * 10} ${10 + r * 10} L${20 + c * 10} ${20 + r * 10} L${10 + c * 10} ${20 + r * 10} Z`,
+      ['bs', 'hi', 'lo', 'gh', 'hi', 'bs', 'gh', 'lo', 'lo', 'gh', 'bs', 'hi', 'gh', 'lo', 'hi', 'bs'][r * 4 + c]))),
+  S('M15 15 L25 15 L15 25 L15 35 L25 25 L35 15 L45 15 L35 25 L25 35 L15 45 L25 45 L35 35 L45 25 L45 35 L35 45 L45 45', 'ik', 1.8),
+]);
+def('floating_point', () => [                                      // the point is not fixed in the number, it is stored beside it: the same digits mean different sizes depending on the exponent
+  ...[8, 16, 24, 32, 40].map((x, i) =>
+    [1, 0, 1, 1, 0][i]
+      ? P(`M${x} 26 L${x + 7} 26 L${x + 7} 38 L${x} 38 Z`, 'bs')
+      : S(`M${x} 26 L${x + 7} 26 L${x + 7} 38 L${x} 38 Z`, 'gh', 1.4)),
+  C(23, 37, 2.4, 'ik'),                                            // the point, sitting between two digits
+  S('M12 20 Q26 11 40 20', 'hi', 2),
+  P('M9 17 L16 17 L12 22 Z', 'hi'), P('M36 17 L43 17 L40 22 Z', 'hi'),   // and free to move either way
+  S('M48 30 L52 34', 'ik', 1.6), S('M52 30 L48 34', 'ik', 1.6),
+  P('M50 12 L58 12 L58 22 L50 22 Z', 'lo'),                        // the exponent, raised and stored separately
+]);
+def('checksum', () => [                                            // add everything up, keep the total, and send it along: if the total does not match on arrival, something was lost on the way
+  ...[6, 18, 30, 42].map(x => P(`M${x} 8 L${x + 10} 8 L${x + 10} 18 L${x} 18 Z`, 'bs')),
+  ...[11, 23, 35, 47].map(x => S(`M${x} 18 L30 30`, 'ik', 1.4)),
+  P('M22 30 L38 30 L38 42 L22 42 Z', 'hi'),                        // one small total standing for all of it
+  S('M40 42 L46 50 L56 32', 'ik', 3),                              // and the comparison that either passes or does not
+]);
+def('hamming_code', () => [                                        // three overlapping circles, each holding a parity bit: any one flipped bit lands in a unique combination of circles, so the code says which one it was
+  ring('gh', 23, 25, 15, 1.8), ring('bs', 37, 25, 15, 1.8), ring('hi', 30, 38, 15, 1.8),
+  ...[[30, 29], [30, 18], [23, 34], [37, 34]].map(([x, y]) =>
+    P(`M${x - 2.4} ${y - 2.4} L${x + 2.4} ${y - 2.4} L${x + 2.4} ${y + 2.4} L${x - 2.4} ${y + 2.4} Z`, 'ik')),   // four data bits
+  ...[[14, 18], [46, 18], [30, 48]].map(([x, y]) => ring('ik', x, y, 2.8, 1.6)),   // and three parity bits, one per circle
+]);
+
+/* the machine ──────────────────────────────────────────────────────────── */
+
+def('register', () => [                                            // a row of flip-flops sharing one clock line: on the edge they all take a new value at once, which is what makes it one number and not four
+  ...[6, 19.5, 33, 46.5].flatMap((x, i) => [
+    P(`M${x} 16 L${x + 11} 16 L${x + 11} 38 L${x} 38 Z`, 'lo'),
+    [1, 0, 1, 1][i]
+      ? P(`M${x + 3} 20 L${x + 8} 20 L${x + 8} 27 L${x + 3} 27 Z`, 'bs')
+      : ring('gh', x + 5.5, 23.5, 3, 1.6),
+    P(`M${x + 1.5} 38 L${x + 9.5} 38 L${x + 5.5} 32 Z`, 'hi'),     // the clock triangle every one of them carries
+    S(`M${x + 5.5} 44 L${x + 5.5} 38`, 'ik', 1.4),
+  ]),
+  S('M4 44 L58 44', 'ik', 2.4),                                    // one clock, four cells
+]);
+def('random_access_memory', () => [                                // one cell: a transistor and a capacitor. The charge leaks away in milliseconds, which is why this kind has to be read and rewritten continuously
+  S('M4 12 L56 12', 'ik', 2.4),                                    // word line
+  S('M14 4 L14 30', 'ik', 2.4),                                    // bit line
+  S('M14 26 L34 26', 'ik', 2),
+  S('M28 12 L28 20', 'ik', 2), S('M28 20 L28 32', 'bs', 3.4),      // the gate
+  S('M34 26 L34 35', 'ik', 2),
+  S('M25 36 L43 36', 'bs', 3.4), S('M25 43 L43 43', 'bs', 3.4),    // the capacitor, two plates
+  ...[30, 34, 38].map(x => C(x, 39.5, 1.4, 'hi')),                 // the charge that is the stored bit
+  S('M34 43 L34 49', 'ik', 2), S('M28 49 L40 49', 'ik', 2), S('M31 53 L37 53', 'ik', 1.6),
+]);
+def('read_only_memory', () => [                                    // a diode matrix: the pattern is where the diodes were put, so the contents are the wiring and nothing can rewrite them
+  ...[16, 30, 44].map(y => S(`M6 ${y} L54 ${y}`, 'ik', 1.8)),
+  ...[16, 30, 44].map(x => S(`M${x} 6 L${x} 54`, 'gh', 1.8)),
+  ...[[16, 16], [44, 16], [30, 30], [16, 44]].flatMap(([x, y]) => [
+    P(`M${x - 4.5} ${y - 4} L${x + 4.5} ${y - 4} L${x} ${y + 2} Z`, 'bs'),
+    S(`M${x - 4.5} ${y + 3} L${x + 4.5} ${y + 3}`, 'ik', 1.6),
+  ]),
+]);
+def('cache', () => [                                               // a small store close by holding copies from a big store further off: the same line appears twice, and the near copy is the one that gets read
+  P('M32 8 L56 8 L56 52 L32 52 Z', 'gh'),
+  ...[13, 20, 34, 41, 48].map(y => S(`M36 ${y} L52 ${y}`, 'lo', 2)),
+  P('M36 25 L52 25 L52 31 L36 31 Z', 'hi'),                        // the line, where it lives
+  P('M6 20 L24 20 L24 40 L6 40 Z', 'bs'),
+  P('M9 25 L21 25 L21 31 L9 31 Z', 'hi'),                          // and the copy of it, near
+  S('M9 35 L21 35', 'lo', 2),
+  S('M24 30 L32 30', 'ik', 2.2),
+  S('M1 30 L6 30', 'ik', 2.4),
+]);
+def('clock_signal', () => [                                        // a square wave, and nothing else: everything in the machine moves on its edges, so the speed of the whole thing is the speed of this
+  S('M4 42 L4 20 L14 20 L14 42 L24 42 L24 20 L34 20 L34 42 L44 42 L44 20 L54 20 L54 42', 'bs', 3.2),
+  ...[4, 24, 44].map(x => P(`M${x - 3} 50 L${x + 3} 50 L${x} 45 Z`, 'ik')),   // the rising edges, which are the moments that count
+  S('M4 55 L24 55', 'gh', 1.6),                                    // one period
+]);
+def('data_bus', () => [                                            // one set of wires that everything hangs off: eight bits wide, shared, and only one device allowed to talk on it at a time
+  ...[22, 25.2, 28.4, 31.6, 34.8, 38].map(y => S(`M4 ${y} L56 ${y}`, 'bs', 1.8)),
+  S('M27 18 L33 42', 'ik', 2.2),                                   // the slash that says how wide it is
+  P('M12 4 L26 4 L26 16 L12 16 Z', 'lo'),
+  ...[15, 19, 23].map(x => S(`M${x} 16 L${x} 22`, 'ik', 1.4)),
+  P('M34 44 L48 44 L48 56 L34 56 Z', 'lo'),
+  ...[37, 41, 45].map(x => S(`M${x} 38 L${x} 44`, 'ik', 1.4)),
+]);
+def('instruction', () => [                                         // one word, in two parts: what to do, and what to do it to. The arrow is the program counter, pointing at this one and no other
+  S('M8 26 L52 26 L52 40 L8 40 Z', 'ik', 1.8),
+  P('M8 26 L24 26 L24 40 L8 40 Z', 'bs'),                          // the opcode
+  ...[28, 34, 40, 46].map(x => S(`M${x} 30 L${x} 36`, 'hi', 2.2)),   // the operand
+  S('M30 6 L30 20', 'ik', 2.2), P('M26 19 L34 19 L30 25 Z', 'ik'),
+  S('M46 40 L46 46', 'ik', 1.8),
+  P('M38 46 L54 46 L54 56 L38 56 Z', 'lo'),                        // and the thing it reaches
+]);
+def('machine_code', () => [                                        // what is actually in memory: an address on the left, a word of bits on the right, and no words anywhere. The arrow is where execution has got to
+  ...[10, 20, 30, 40].map(y => S(`M6 ${y + 3} L14 ${y + 3}`, 'gh', 2.4)),
+  ...[10, 20, 30, 40].flatMap((y, r) =>
+    [18, 22.5, 27, 31.5, 36, 40.5, 45, 49.5].map((x, c) =>
+      [[1, 0, 1, 1, 0, 0, 1, 0], [0, 1, 1, 0, 1, 0, 0, 1], [1, 1, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 1, 1, 0, 1]][r][c]
+        ? P(`M${x} ${y} L${x + 3.6} ${y} L${x + 3.6} ${y + 6} L${x} ${y + 6} Z`, 'bs')
+        : S(`M${x} ${y} L${x + 3.6} ${y} L${x + 3.6} ${y + 6} L${x} ${y + 6} Z`, 'gh', 1))),
+  P('M1 30 L1 36 L5 33 Z', 'ik'),
+]);
+def('cpu', () => [                                                 // fetch, decode, execute, and round again: the loop is the machine, and it does not stop while the power is on
+  ring('bs', 30, 30, 18, 3),
+  C(30, 12, 5.5, 'lo'), C(45.6, 39, 5.5, 'lo'), C(14.4, 39, 5.5, 'lo'),
+  S('M45 26 L48 34 L51 26', 'ik', 2),
+  S('M23 50.2 L17.5 43.6 L26 45', 'ik', 2),
+  S('M16 13.8 L24.5 12.4 L19 19', 'ik', 2),
+  C(30, 30, 3, 'ik'),
+]);
+def('assembly_language', () => [                                   // one line of mnemonic, one machine word — the mapping is one to one, which is the whole of what assembly is and where it stops
+  ...[14, 30, 46].flatMap(y => [
+    S(`M4 ${y} L16 ${y}`, 'ik', 2.8),
+    S(`M19 ${y} L26 ${y}`, 'lo', 2.8),
+    S(`M28 ${y} L34 ${y}`, 'gh', 1.4),
+    P(`M32 ${y - 2.4} L32 ${y + 2.4} L36 ${y} Z`, 'gh'),
+  ]),
+  ...[14, 30, 46].flatMap((y, r) =>
+    [38, 41.4, 44.8, 48.2, 51.6, 55].map((x, c) =>
+      [[1, 0, 1, 1, 0, 1], [0, 1, 1, 0, 0, 1], [1, 1, 0, 1, 0, 0]][r][c]
+        ? P(`M${x} ${y - 3} L${x + 2.6} ${y - 3} L${x + 2.6} ${y + 3} L${x} ${y + 3} Z`, 'bs')
+        : S(`M${x} ${y - 3} L${x + 2.6} ${y - 3} L${x + 2.6} ${y + 3} L${x} ${y + 3} Z`, 'gh', 1))),
+]);
+def('compiler', () => [                                            // a few lines in, a great many machine words out. The expansion is the point: one statement is not one instruction
+  ...[18, 26, 34].map(y => S(`M4 ${y} L18 ${y}`, 'ik', 2.8)),
+  P('M22 14 L34 4 L34 56 L22 46 Z', 'bs'),
+  ...[8, 14, 20, 26, 32, 38, 44, 50].map(y => S(`M38 ${y} L56 ${y}`, 'lo', 2.2)),
+]);
+def('programming_language', () => [                                // what a language gives you that machine code does not: a block, held together by a bracket, with the nesting doing the thinking
+  S('M24 6 L18 6 Q14 6 14 12 L14 24 Q14 30 8 30 Q14 30 14 36 L14 48 Q14 54 18 54 L24 54', 'ik', 3),
+  S('M22 14 L48 14', 'bs', 2.8),
+  S('M28 23 L52 23', 'lo', 2.6),
+  S('M28 31 L44 31', 'lo', 2.6),
+  S('M34 39 L52 39', 'hi', 2.6),
+  S('M22 47 L42 47', 'bs', 2.8),
+]);
+def('operating_system', () => [                                    // the layer nothing runs without: programs sit on it, hardware sits under it, and every request from one to the other goes through it
+  P('M8 10 L20 10 L20 26 L8 26 Z', 'hi'),
+  P('M24 10 L36 10 L36 26 L24 26 Z', 'hi'),
+  P('M40 10 L52 10 L52 26 L40 26 Z', 'hi'),
+  ...[14, 30, 46].map(x => S(`M${x} 26 L${x} 30`, 'ik', 1.8)),     // the calls down
+  P('M6 30 L54 30 L54 42 L6 42 Z', 'bs'),
+  P('M6 46 L54 46 L54 56 L6 56 Z', 'lo'),                          // and the hardware it is standing on
+]);
+
+/* storage and files ────────────────────────────────────────────────────── */
+
+def('file', () => [                                                // a run of bytes with a name and an end, drawn the way every system has drawn it since: a sheet with the corner turned
+  P('M14 6 L38 6 L46 14 L46 54 L14 54 Z', 'bs'),
+  P('M38 6 L38 14 L46 14 Z', 'lo'),
+  ...[26, 34, 42].map((y, i) => S(`M20 ${y} L${[40, 40, 34][i]} ${y}`, 'hi', 2.4)),
+]);
+def('filesystem', () => [                                          // names arranged in a tree, so that a name is a path and not just a label: one folder holding folders holding files
+  P('M6 8 L12 8 L14 11 L20 11 L20 20 L6 20 Z', 'bs'),              // the root
+  S('M11 20 L11 50', 'ik', 1.6),
+  ...[27, 38, 50].map(y => S(`M11 ${y} L20 ${y}`, 'ik', 1.6)),
+  P('M20 21 L26 21 L28 24 L34 24 L34 32 L20 32 Z', 'lo'),          // a folder inside it
+  S('M27 32 L27 40 L34 40', 'ik', 1.4),
+  P('M36 33 L44 33 L48 37 L48 46 L36 46 Z', 'hi'),                 // and a file inside that
+  P('M20 33 L26 33 L30 37 L30 44 L20 44 Z', 'hi'),
+  P('M20 45 L26 45 L30 49 L30 56 L20 56 Z', 'hi'),
+]);
+def('database', () => [                                            // the cylinder everyone draws: rows stacked in order, addressed by what is in them rather than by where they sit
+  P('M10 14 L10 46 A20 7 0 0 0 50 46 L50 14 Z', 'bs'),
+  E(30, 14, 20, 7, 'hi'),
+  S('M10 25 A20 7 0 0 0 50 25', 'lo', 1.8),
+  S('M10 36 A20 7 0 0 0 50 36', 'lo', 1.8),
+  ...[20, 31].map(y => S(`M18 ${y} L30 ${y}`, 'lo', 1.6)),
+]);
+
+/* history ──────────────────────────────────────────────────────────────── */
+
+def('punched_card', () => [                                        // the hole is the data. The clipped corner is not decoration: it is how you tell at a glance that a card in the deck is the wrong way round
+  P('M6 14 L13 8 L54 8 L54 46 L6 46 Z', 'bs'),
+  ...[16, 26, 36].flatMap((y, r) =>
+    [10, 15.5, 21, 26.5, 32, 37.5, 43, 48.5].map((x, c) =>
+      [[0, 1, 0, 0, 1, 0, 1, 0], [1, 0, 0, 1, 0, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0, 0]][r][c]
+        ? P(`M${x} ${y} L${x + 3.6} ${y} L${x + 3.6} ${y + 6} L${x} ${y + 6} Z`, 'ik')
+        : C(x + 1.8, y + 3, 0.9, 'lo'))),
+]);
+def('jacquard_loom', () => [                                       // a chain of cards on the left deciding which warp threads lift on the right: the pattern left the weaver's hands and became a program
+  ...[6, 18, 30].map((y, i) => P(`M${4 + i} ${y} L${20 + i} ${y} L${20 + i} ${y + 9} L${4 + i} ${y + 9} Z`, 'lo')),
+  ...[6, 18, 30].flatMap((y, i) => [C(9 + i, y + 4.5, 1.4, 'ik'), C(15 + i, y + 4.5, 1.4, 'ik')]),
+  ...[36, 40, 44].map(y => S(`M22 ${y - 2} L30 ${y - 2}`, 'ik', 1.2)),   // the hooks
+  ...[30, 35, 40, 45, 50, 55].map(x => S(`M${x} 4 L${x} 56`, 'gh', 1.6)),   // the warp
+  ...[[30, 10], [40, 10], [50, 10], [35, 20], [45, 20], [30, 30], [50, 30], [40, 40], [35, 50], [45, 50]]
+    .map(([x, y]) => P(`M${x - 2} ${y} L${x + 2} ${y} L${x + 2} ${y + 6} L${x - 2} ${y + 6} Z`, 'bs')),
+]);
+def('tabulating_machine', () => [                                  // pins drop through the holes in a card, close a circuit, and a dial advances. The 1890 census was counted in one year instead of eight
+  ring('ik', 16, 12, 8, 2.2), S('M16 12 L20 6', 'bs', 2),
+  ring('ik', 38, 12, 8, 2.2), S('M38 12 L36 5', 'bs', 2),          // the counters
+  P('M6 24 L54 24 L54 30 L6 30 Z', 'bs'),
+  ...[14, 22, 30, 38, 46].map(x => S(`M${x} 30 L${x} 35`, 'ik', 1.4)),   // the pins
+  P('M10 36 L46 36 L46 45 L10 45 Z', 'hi'),
+  ...[16, 24, 32, 40].map(x => C(x, 40.5, 1.6, 'ik')),             // the card, and its holes
+  S('M6 50 L54 50', 'ik', 2.6),
+]);
+def('turing_machine', () => [                                      // a tape with no end and a head that can read one square, write one square and move one square. That is the whole of it, and it is enough
+  ...[2, 10, 18, 26, 34, 42, 50].map(x => S(`M${x} 34 L${x + 8} 34 L${x + 8} 46 L${x} 46 Z`, 'ik', 1.6)),
+  ...[[2, 1], [18, 1], [26, 1], [42, 1]].map(([x]) =>
+    P(`M${x + 2.4} 36.4 L${x + 5.6} 36.4 L${x + 5.6} 43.6 L${x + 2.4} 43.6 Z`, 'bs')),
+  P('M23 12 L39 12 L39 28 L23 28 Z', 'lo'),
+  P('M27 16 L35 16 L35 22 L27 22 Z', 'hi'),                        // the head, over one square
+  S('M31 28 L31 34', 'ik', 2.4),
+  C(1, 40, 1, 'gh'), C(59, 40, 1, 'gh'),                           // and tape going on past both edges
+]);
+
+/* networks ─────────────────────────────────────────────────────────────── */
+
+def('computer_network', () => [                                    // machines joined so that any of them can reach any other, by more than one route: it is the links that are the thing, not the boxes
+  ...[[30, 10, 12, 26], [30, 10, 48, 26], [12, 26, 20, 48], [48, 26, 42, 48], [20, 48, 42, 48], [12, 26, 48, 26]]
+    .map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'ik', 1.6)),
+  ...[[30, 10], [12, 26], [48, 26], [20, 48], [42, 48]].map(([x, y]) => C(x, y, 6, 'bs')),
+  ...[[30, 10], [12, 26], [48, 26], [20, 48], [42, 48]].map(([x, y]) => C(x, y, 2.4, 'hi')),
+]);
+def('packet', () => [                                              // the message chopped into pieces, each with the address written on its own front, each finding its own way there
+  ...[26, 31, 36].map((y, i) => S(`M${[4, 2, 4][i]} ${y} L12 ${y}`, 'gh', 1.8)),
+  P('M14 20 L50 20 L50 42 L14 42 Z', 'bs'),
+  P('M14 20 L50 20 L50 28 L14 28 Z', 'lo'),                        // the header, carrying where it is going
+  ...[[18, 24], [28, 34], [38, 48]].map(([a, b]) => S(`M${a} 24 L${b} 24`, 'hi', 1.8)),
+  ...[32, 37].flatMap(y => [18, 26, 34, 42].map(x => S(`M${x} ${y} L${x + 5} ${y}`, 'hi', 1.6))),
+  P('M42 44 L50 44 L50 50 L42 50 Z', 'hi'),                        // and its number in the sequence, for putting back in order
+]);
+def('network_protocol', () => [                                    // two stacks that were never introduced, agreeing layer by layer: each level talks only to the same level at the other end
+  ...[10, 22, 34, 46].flatMap((y, i) => [
+    P(`M6 ${y} L24 ${y} L24 ${y + 10} L6 ${y + 10} Z`, i % 2 ? 'lo' : 'bs'),
+    P(`M36 ${y} L54 ${y} L54 ${y + 10} L36 ${y + 10} Z`, i % 2 ? 'lo' : 'bs'),
+  ]),
+  ...[15, 27, 39, 51].flatMap(y => [S(`M25 ${y} L29 ${y}`, 'gh', 1.6), S(`M31 ${y} L35 ${y}`, 'gh', 1.6)]),
+]);
+def('ip_address', () => [                                          // one number, written as four because that is how the bytes fall, and the dots are the only reason anyone can read it aloud
+  ...[2, 16, 30, 44].map(x => P(`M${x} 22 L${x + 11} 22 L${x + 11} 38 L${x} 38 Z`, 'bs')),
+  ...[2, 16, 30, 44].flatMap(x => [S(`M${x + 2} 27 L${x + 9} 27`, 'hi', 2), S(`M${x + 2} 33 L${x + 6} 33`, 'hi', 2)]),
+  ...[13.5, 27.5, 41.5].map(x => C(x, 36, 2.2, 'ik')),
+]);
+def('tcp', () => [                                                 // the three-way handshake, which is what a connection is: I can hear you; I can hear you hearing me; I can hear that. Only then does any data move
+  P('M4 4 L16 4 L16 12 L4 12 Z', 'lo'), P('M44 4 L56 4 L56 12 L44 12 Z', 'bs'),
+  S('M10 12 L10 56', 'gh', 2), S('M50 12 L50 56', 'gh', 2),        // the two ends, and time running down the page
+  S('M10 18 L46 26', 'ik', 2), P('M42 22 L50 26 L41 29 Z', 'ik'),
+  S('M50 32 L14 40', 'ik', 2), P('M18 36 L10 40 L19 43 Z', 'ik'),
+  S('M10 46 L46 54', 'ik', 2), P('M42 50 L50 54 L41 57 Z', 'ik'),
+]);
+def('domain_name_system', () => [                                 // a name resolved by asking down a tree: one root, a handful of top levels under it, and everything else hanging off those
+  C(30, 8, 3.4, 'ik'),                                             // the root zone, which is one dot
+  ...[[30, 11, 12, 22], [30, 11, 30, 22], [30, 11, 48, 22]].map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'ik', 1.6)),
+  ...[12, 30, 48].map(x => P(`M${x - 6} 22 L${x + 6} 22 L${x + 6} 30 L${x - 6} 30 Z`, 'bs')),
+  ...[[12, 30, 5, 44], [12, 30, 19, 44], [30, 30, 30, 44], [48, 30, 41, 44], [48, 30, 55, 44]]
+    .map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'gh', 1.4)),
+  ...[5, 19, 30, 41, 55].map(x => P(`M${x - 3.5} 44 L${x + 3.5} 44 L${x + 3.5} 51 L${x - 3.5} 51 Z`, 'hi')),
+]);
+def('url', () => [                                                 // how to reach a thing, in three parts and read left to right: which protocol, which host, which path — and the slashes that divide them
+  P('M2 24 L14 24 L14 38 L2 38 Z', 'lo'),                          // the scheme
+  S('M17 39 L21 23', 'ik', 2.4), S('M23 39 L27 23', 'ik', 2.4),    // the two slashes, which mean the host follows
+  P('M30 24 L42 24 L42 38 L30 38 Z', 'bs'),                        // the host
+  S('M45 39 L49 23', 'ik', 2.4),
+  P('M51 24 L58 24 L58 38 L51 38 Z', 'hi'),                        // the path
+  C(8, 44, 1.6, 'gh'), C(36, 44, 1.6, 'gh'),
+]);
+def('http', () => [                                                // a short question and a long answer: the client asks for one thing by name, the server sends back a document and forgets the exchange happened
+  P('M2 20 L16 20 L16 42 L2 42 Z', 'lo'),
+  P('M44 10 L58 10 L58 50 L58 50 L44 50 Z', 'bs'),
+  S('M20 21 L30 21', 'hi', 2.2),                                   // the request, which is a line of text
+  S('M18 27 L40 27', 'ik', 1.8), P('M37 24 L37 30 L43 27 Z', 'ik'),
+  S('M42 37 L21 37', 'ik', 1.8), P('M24 34 L24 40 L18 37 Z', 'ik'),
+  P('M22 41 L40 41 L40 50 L22 50 Z', 'hi'),                        // and the page that comes back
+]);
+def('html', () => [                                                // the angle brackets, and the slash that closes a tag: everything else about a page is what got put between them
+  S('M24 12 L8 30 L24 48', 'ik', 4),
+  S('M36 12 L52 30 L36 48', 'ik', 4),
+  S('M35 14 L25 46', 'bs', 3.4),
+]);
+def('web_browser', () => [                                         // a window whose whole job is to fetch a document by its address and lay it out: the address bar is the part that makes it a browser
+  P('M8 4 L28 4 L28 14 L8 14 Z', 'bs'),
+  P('M4 14 L56 14 L56 52 L4 52 Z', 'lo'),
+  P('M4 14 L56 14 L56 25 L4 25 Z', 'bs'),
+  P('M17 17 L49 17 Q52 17 52 20 Q52 23 49 23 L17 23 Q14 23 14 20 Q14 17 17 17 Z', 'gh'),
+  S('M11 18 L8 20 L11 22', 'gh', 1.6),
+  ...[32, 40, 48].map((y, i) => S(`M10 ${y} L${[38, 46, 30][i]} ${y}`, 'hi', 2.4)),
+  P('M42 30 L52 30 L52 44 L42 44 Z', 'hi'),
+]);
+def('server', () => [                                              // a machine built to be one of many in a rack: no screen, no keyboard, front-panel lights and a fan, and it is never switched off
+  P('M14 4 L46 4 L46 56 L14 56 Z', 'lo'),
+  ...[8, 18, 28, 38, 48].flatMap(y => [
+    P(`M17 ${y} L43 ${y} L43 ${y + 8} L17 ${y + 8} Z`, 'bs'),
+    C(20, y + 4, 1.6, 'hi'),
+    S(`M26 ${y + 4} L40 ${y + 4}`, 'lo', 1.4),
+  ]),
+]);
+def('ethernet', () => [                                            // the plug: eight contacts and a latch that clicks. The latch is the shape everyone recognises before they read the word
+  P('M25 8 L25 18 L35 18 L35 8 Q35 6 33 6 L27 6 Q25 6 25 8 Z', 'bs'),
+  P('M14 18 L46 18 L46 50 L14 50 Z', 'bs'),
+  ...[17, 20.5, 24, 27.5, 31, 34.5, 38, 41.5].map(x =>
+    P(`M${x} 20 L${x + 2.4} 20 L${x + 2.4} 30 L${x} 30 Z`, 'hi')),
+  P('M22 50 L38 50 L38 58 L22 58 Z', 'lo'),
+]);
+def('modem', () => [                                               // bits going out as a sound a telephone line will carry, and the same thing backwards coming in: modulate, demodulate
+  S('M4 34 L4 22 L10 22 L10 34 L16 34 L16 22 L22 22 L22 34 L27 34', 'bs', 2.6),
+  C(30, 28, 2.4, 'ik'),
+  S('M33 28 Q37 16 41 28 Q45 40 49 28 Q53 16 57 28', 'hi', 2.6),
+  P('M44 44 L56 44 L56 52 L44 52 Z', 'lo'),
+  S('M47 52 L47 57', 'ik', 1.6), S('M53 52 L53 57', 'ik', 1.6),    // and the phone socket it all went through
+]);
+
+/* security ─────────────────────────────────────────────────────────────── */
+
+def('cipher', () => [                                              // Alberti's disc: two alphabets on two rings, and the secret is only how far one has been turned against the other
+  ring('bs', 30, 30, 22, 2.6),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i * Math.PI) / 6;
+    return S(`M${n(30 + 18 * Math.cos(a))} ${n(30 + 18 * Math.sin(a))} L${n(30 + 22 * Math.cos(a))} ${n(30 + 22 * Math.sin(a))}`, 'bs', 1.6);
+  }),
+  ring('hi', 30, 30, 13, 2.4),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = ((i + 0.5) * Math.PI) / 6;
+    return S(`M${n(30 + 9 * Math.cos(a))} ${n(30 + 9 * Math.sin(a))} L${n(30 + 13 * Math.cos(a))} ${n(30 + 13 * Math.sin(a))}`, 'hi', 1.6);
+  }),
+  C(30, 30, 2.6, 'ik'),
+  P('M27 3 L33 3 L30 9 Z', 'ik'),                                  // the index mark you set the offset against
+]);
+def('encryption', () => [                                          // orderly text goes in one side and comes out the other with the order destroyed, and only the key decides how
+  ...[18, 26, 34, 42].map((y, i) => S(`M3 ${y} L${[19, 17, 20, 15][i]} ${y}`, 'ik', 2.4)),
+  P('M24 16 L36 16 L36 44 L24 44 Z', 'bs'),
+  C(30, 25, 3.2, 'ik'), P('M28.6 25 L31.4 25 L31.4 34 L28.6 34 Z', 'ik'),
+  ...[[40, 14, 46, 20], [51, 17, 45, 23], [40, 30, 48, 28], [42, 38, 46, 44], [50, 34, 55, 42], [41, 46, 53, 46]]
+    .map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'lo', 2)),
+]);
+def('public_key', () => [                                          // two keys, not one: the shape that locks is published to anybody, and the shape that unlocks never leaves the room
+  ring('bs', 10, 20, 5, 2.6), S('M15 20 L38 20', 'bs', 3.2),
+  S('M30 20 L30 27', 'bs', 3.2), S('M35 20 L35 25', 'bs', 3.2),
+  ...[[2, 12, 6, 15], [1, 20, 5, 20], [2, 28, 6, 25]].map(([x1, y1, x2, y2]) => S(`M${x1} ${y1} L${x2} ${y2}`, 'gh', 1.6)),
+  ring('lo', 10, 44, 5, 2.6), S('M15 44 L38 44', 'lo', 3.2),
+  S('M26 44 L26 51', 'lo', 3.2), S('M32 44 L32 49', 'lo', 3.2), S('M37 44 L37 51', 'lo', 3.2),
+  P('M43 36 L55 36 L55 52 L43 52 Z', 'ik'), C(49, 44, 2.2, 'hi'),  // one of them kept shut away
+]);
+def('hash_function', () => [                                       // change one bit of the input and every bit of the output changes: two inputs that are almost the same give two digests that are not
+  ...[8, 18].flatMap((y, r) =>
+    [6, 12.4, 18.8, 25.2, 31.6, 38, 44.4, 50.8].map((x, c) =>
+      [[1, 0, 1, 1, 0, 0, 1, 0], [1, 0, 1, 1, 0, 1, 1, 0]][r][c]
+        ? P(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + 8} L${x} ${y + 8} Z`, 'lo')
+        : S(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + 8} L${x} ${y + 8} Z`, 'gh', 1))),
+  ring('ik', 40.5, 22, 5, 1.8),                                    // the one bit that differs
+  P('M22 30 L38 30 L30 38 Z', 'bs'),
+  ...[42, 50].flatMap((y, r) =>
+    [6, 12.4, 18.8, 25.2, 31.6, 38, 44.4, 50.8].map((x, c) =>
+      [[0, 1, 1, 0, 1, 0, 0, 1], [1, 1, 0, 1, 0, 0, 1, 1]][r][c]
+        ? P(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + 6} L${x} ${y + 6} Z`, 'bs')
+        : S(`M${x} ${y} L${x + 5} ${y} L${x + 5} ${y + 6} L${x} ${y + 6} Z`, 'gh', 1))),
+]);
+def('digital_signature', () => [                                   // the digest of the document, sealed with the key only one person has: anyone can check it, nobody else can make it
+  ...[6, 12.4, 18.8, 25.2, 31.6, 38].map((x, i) =>
+    [1, 0, 1, 1, 0, 1][i]
+      ? P(`M${x} 8 L${x + 5} 8 L${x + 5} 16 L${x} 16 Z`, 'bs')
+      : S(`M${x} 8 L${x + 5} 8 L${x + 5} 16 L${x} 16 Z`, 'gh', 1.2)),
+  S('M26 18 L34 26', 'ik', 1.8), P('M30 27 L30 21 L36 25 Z', 'ik'),
+  ...Array.from({ length: 12 }, (_, i) => {
+    const a = (i * Math.PI) / 6;
+    return C(n(38 + 12 * Math.cos(a)), n(40 + 12 * Math.sin(a)), 3, 'lo');
+  }),
+  C(38, 40, 12, 'lo'), ring('hi', 38, 40, 5.5, 2.2),               // the seal
+  S('M4 40 L10 48 L20 30', 'ik', 3),                               // and the check that either passes or does not
+]);
+
+/* input ────────────────────────────────────────────────────────────────── */
+
+def('keyboard', () => [                                            // the slab as it sits on a desk, seen from in front: rows narrowing away from you, and one long bar at the near edge
+  P('M4 20 L56 20 L52 50 L8 50 Z', 'lo'),
+  ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
+    P(`M${7 + i * 4.8} 24 L${10.8 + i * 4.8} 24 L${10.8 + i * 4.8} 29 L${7 + i * 4.8} 29 Z`, 'bs')),
+  ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i =>
+    P(`M${9 + i * 4.8} 31 L${12.8 + i * 4.8} 31 L${12.8 + i * 4.8} 36 L${9 + i * 4.8} 36 Z`, 'bs')),
+  ...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+    P(`M${11 + i * 4.8} 38 L${14.8 + i * 4.8} 38 L${14.8 + i * 4.8} 43 L${11 + i * 4.8} 43 Z`, 'gh')),
+  P('M20 45 L42 45 L41 49 L21 49 Z', 'hi'),                        // the space bar, which is the only key you can find without looking
+]);
+
+/* 3 Sep -- plant structures and the rubber vocabulary */
+/* resin, and what the rubber tree's milk becomes ────────────────────────
+   Four plant parts the corpus named around but never named, and the five
+   steps from a C5 monomer to the thing most of the world's rubber ends up
+   as. Each is drawn on the fact that separates it from its nearest
+   neighbour: resin is a congealed mass where sap is a drop, a berry is cut
+   open on its many seeds where a drupe is closed on its one stone, and a
+   tire is the wheel that flattens where it meets the road. */
+
+def('resin', () => [                                          // congealed on the trunk, not running like sap and not milky like latex
+  P('M8 6 L26 6 L26 54 L8 54 Z', 'lo'),                       // the conifer's trunk, at the edge of the field
+  ...[14, 24, 34, 44].map(y => S(`M10 ${y} Q18 ${y - 3} 24 ${y}`, 'ik', 1.6)),  // its bark
+  S('M24 15 L26 24', 'ik', 2.6),                              // the wound
+  P('M26 14 Q40 16 42 24 Q46 30 42 36 Q46 44 38 48 Q30 52 26 46 Z', 'hi'),      // the mass, welling out and setting where it stands
+  S('M28 22 Q38 24 41 28', 'lo', 1.6),                        // run after run, each one setting on the last
+  S('M28 34 Q38 36 41 40', 'lo', 1.6),
+  S('M32 28 L41 33', 'ik', 1.4),                              // a needle, caught and held
+  C(35, 43, 2, 'gh'),                                         // and a bubble
+]);
+
+def('thorn', () => [                                          // a modified shoot: the stem's own wood runs all the way into it
+  S('M20 56 L20 6', 'bs', 7),                                 // the stem
+  P('M20 22 L52 10 L23 38 Z', 'bs'),                          // the thorn, stout and tapering — not a skin outgrowth
+  S('M20 40 L20 26 Q21 23 27 20 L45 13', 'ik', 2),            // the vascular strand, leaving the stem and going out to the point
+  P('M20 44 L4 51 L20 50 Z', 'lo'),                           // a second, further down the shoot
+  leaf('hi', 29, 45, .42, 45),                                // and the axillary bud it grew beside
+]);
+
+def('berry', () => [                                          // one ovary, many seeds, no stone at all — the drupe's opposite
+  P('M11 26 L49 26 A19 19 0 0 1 11 26 Z', 'bs'),              // cut across, because the seeds are the whole argument
+  P('M16 27 L44 27 A14 14 0 0 1 16 27 Z', 'hi'),              // pulp, inside the pericarp
+  S('M30 27 L20 36', 'lo', 1.4),                              // septa: locules, not a pit
+  S('M30 27 L40 36', 'lo', 1.4),
+  S('M30 27 L30 40', 'lo', 1.4),
+  ...[[24, 33, -30], [36, 33, 30], [28, 38, -12], [35, 37, 12],
+      [30, 32, 0], [21, 31, -50], [39, 31, 50]].map(([x, y, r]) => grain('ik', x, y, .45, r)),
+  P('M27 45 L33 45 L30 50 Z', 'lo'),                          // the persistent style, at the blossom end
+]);
+
+def('aerenchyma', () => [                                     // a rice root in flooded paddy, breathing through its own holes
+  C(30, 30, 21, 'bs'),                                        // the cortex, in cross-section
+  ...[0, 60, 120, 180, 240, 300].map(a =>
+    ['g', a, 30, 30, [P('M24 12 L36 12 L33 23 L27 23 Z', 'lo')]]),  // six gas lacunae, huge, radial — voids, so they go dark
+  ring('ik', 30, 30, 21, 2.4),                                // the epidermis, holding it all in
+  C(30, 30, 6, 'hi'), C(30, 30, 2, 'ik'),                     // the stele, still solid in the middle
+  C(11, 13, 2.4, 'gh'), C(17, 7, 1.6, 'gh'),                  // air going out the way the water came in
+]);
+
+def('isoprene', () => [                                       // C5H8 — butadiene, plus the methyl that makes it rubber's unit
+  S('M10 44 L24 38 L38 44 L52 38', 'ik', 2.2),                // the four-carbon chain
+  S('M24 38 L24 22', 'ik', 2.2),                              // and the fifth, branching straight off C2
+  ...double([10, 44], [24, 38], 'hi'),
+  ...double([38, 44], [52, 38], 'hi'),
+  C(24, 22, 5, 'hi'),                                         // the branch is the whole difference from butadiene
+  C(10, 44, 3.6, 'hi'), C(52, 38, 3.6, 'hi'),
+]);
+
+def('polyisoprene', () => [                                   // the same unit, thousands of times: one chain, folded, still running off the edge
+  S('M4 22 L14 16 L22 22 L30 16 L38 22 L46 16 Q56 20 50 30 L42 36 L34 30 L26 36 L18 30 L10 36 L4 32',
+    'ik', 2.2),
+  ...double([22, 22], [30, 16], 'hi'),                        // cis, both of them — which is why it springs back
+  ...double([34, 30], [26, 36], 'hi'),
+  ...[[14, 16, 8], [46, 16, 8], [42, 36, 44], [10, 36, 44]].map(([x, y, ty]) =>
+    S(`M${x} ${y} L${x} ${ty}`, 'hi', 2)),                    // a methyl off every unit — the comb no other chain here has
+  ...[[14, 8], [46, 8], [42, 44], [10, 44]].map(([x, y]) => C(x, y, 3, 'hi')),
+]);
+
+def('synthetic_rubber', () => [                               // a slab off a cracker, not a bucket off a tree
+  P('M10 20 Q30 25 50 20 L50 40 Q30 46 10 40 Z', 'bs'),       // soft enough to sag under its own weight
+  S('M12 22 Q30 27 48 22', 'hi', 1.6),
+  S('M14 30 L22 26 L30 30 L38 26 L46 30', 'ik', 2.2),         // the chain it was built out of, not tapped from anything
+  S('M30 30 L33 35', 'ik', 1.8), hex('ik', 37, 38, 4.5, 1.6), // and a styrene ring on it — SBR, straight out of petroleum
+]);
+
+def('carbon_black', () => [                                   // a furnace product measured in tonnes, not a lump you pick up
+  S('M12 8 L26 20 L34 20 L48 8', 'hi', 2.2),                  // the chute, drawn open so the stream is the mass and not the hopper
+  P('M27 20 L33 20 L36 40 L24 40 Z', 'ik'),                   // what comes out of it, and does not stop
+  P('M4 52 Q10 43 20 40 L40 40 Q50 43 56 52 Z', 'ik'),        // a heap gone flat-topped under its own weight
+  ...[[22, 46, 2.2], [31, 47, 2], [40, 48, 1.8], [13, 50, 1.6]].map(([x, y, r]) => C(x, y, r, 'bs')),
+  C(12, 34, 2, 'gh'), C(49, 36, 2.4, 'gh'), C(51, 28, 1.4, 'gh'),  // pelletised, because loose it would go everywhere — and some does anyway
+]);
+
+def('tire', () => [                                           // a wheel is rigid; this is the part that gives
+  S('M4 54 L56 54', 'ik', 2),                                 // the road
+  S('M20.5 46.5 A19 19 0 1 1 39.5 46.5', 'bs', 11),           // the carcass, open where it meets it
+  S('M21 48 L39 48', 'bs', 11),                               // and flattened there, which no wheel does
+  S('M20.5 46.5 A19 19 0 1 1 39.5 46.5', 'lo', 2.2),          // the groove running round the crown
+  ...[-70, -40, -10, 20, 50].map(t => {
+    const a = (t - 9) * Math.PI / 180, b = (t + 9) * Math.PI / 180;
+    return S(`M${n(30 + 14 * Math.sin(a))} ${n(30 - 14 * Math.cos(a))} ` +
+             `L${n(30 + 24 * Math.sin(b))} ${n(30 - 24 * Math.cos(b))}`, 'lo', 3.2);
+  }),                                                         // tread, cut on the slant so it is not a set of spokes
+]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -193,6 +193,33 @@ __CATEGORY_CSS__
      while it is on -- the same reason the decay toggle lights up. */
   body.erasing #board{cursor:crosshair}
   body.erasing #eraseBtn{background:var(--brick);color:var(--cream);border-color:var(--brick)}
+  /* the timeline */
+  .timeline{margin-top:6px}
+  .era{
+    display:flex;align-items:baseline;gap:8px;margin:18px 0 6px;
+    border-bottom:1px solid var(--line);padding-bottom:4px;
+  }
+  .eralab{font:700 11px var(--face-name);letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft)}
+  .eracount{font:700 11px var(--face-data);color:var(--ink-soft);opacity:.7;margin-left:auto}
+  .tl{display:flex;gap:10px;align-items:flex-start;padding:7px 4px;cursor:pointer;border-radius:5px}
+  .tl:hover{background:color-mix(in srgb,var(--avocado) 10%,transparent)}
+  .tlyear{
+    font:700 12px var(--face-data);color:var(--brick);min-width:52px;text-align:right;
+    font-variant-numeric:tabular-nums;flex:none;padding-top:2px;
+  }
+  .tlart{flex:none;width:22px}
+  .tl b{font:700 13px var(--face-name)}
+  .tl p{margin:1px 0 0;font-size:12px;line-height:1.4;color:var(--ink-soft)}
+  /* Announced, not shown. */
+  .visually-hidden{
+    position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;border:0;
+  }
+  /* There were no focus styles at all, so tabbing was invisible even where it
+     worked. Two rings: the ordinary one, and a thicker one for the card you
+     have picked up to combine. */
+  :focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+  .chip.board.kbheld{outline:3px dashed var(--brick);outline-offset:3px}
   .spacer{flex:1}
   /* Every header pill reads the same way: a number, then what the number
      counts. The three used to be styled apart — only #count had the flex row,
@@ -2066,7 +2093,11 @@ __CATEGORY_CSS__
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you
          make something. -->
-    <div id="intro" aria-live="polite">
+    <!-- Everything that happens on the bench happens visually: a card appears,
+       a line is drawn, a toast fades. None of it reaches a screen reader. This
+       is the one place that says out loud what just happened. -->
+  <div id="say" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+  <div id="intro" aria-live="polite">
       <svg id="introArc" aria-hidden="true"><path/></svg>
       <p id="introSay"></p>
     </div>
@@ -2406,6 +2437,63 @@ function importSave(text) {
   if (!world.querySelector('.chip.board')) STARTERS.forEach(id => spawn(id));
   renderShelf(); drawLinks(); save();
   return { ok: true, n: known.length, dropped };
+}
+
+/* ── sharing a provenance card ─────────────────────────────────────────────
+ * The roadmap names exactly two things worth measuring — do people finish a
+ * chain, and do they share a provenance card — and there was no way to share
+ * anything. The only export was the whole save file as JSON.
+ *
+ * What makes this project's artefact unlike any other crafting game is that
+ * every step carries a source. So the shared thing is not a screenshot of a
+ * tree: it is the chain in words, each step with the URL behind it, ending in
+ * what it bottoms out in. That is the part nobody else can copy.
+ *
+ * navigator.share where it exists (a phone), clipboard everywhere else. Both
+ * are behind an explicit tap, so nothing leaves the machine on its own.
+ */
+function provenanceText(id) {
+  const e = byId[id];
+  const steps = orderedSteps(id);
+  const t = leafTally(id);
+  const lines = [];
+  lines.push(`How to make ${e.name}`);
+  lines.push('');
+  for (const r of steps) {
+    const how = r.verb ? `${nameOf(byId[r.in[0]])} — ${r.verb}` : r.in.map(i => nameOf(byId[i])).join(' + ');
+    lines.push(`${how} → ${nameOf(byId[r.out])}`);
+    lines.push(`   ${r.why}`);
+    if (r.src) lines.push(`   ${r.src}`);
+    lines.push('');
+  }
+  const bottom = [...t].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${byId[k].name} ×${n}`).join(', ');
+  if (bottom) lines.push(`Bottoms out in ${bottom}.`);
+  lines.push(`${steps.length} step${steps.length === 1 ? '' : 's'}, every one with a source.`);
+  lines.push('');
+  lines.push('— Loam');
+  return lines.join('\n');
+}
+async function shareProvenance(id) {
+  const text = provenanceText(id);
+  const title = `How to make ${byId[id].name}`;
+  try {
+    if (navigator.share) { await navigator.share({ title, text }); announce('Shared.'); return; }
+  } catch (err) {
+    if (err && err.name === 'AbortError') return;          // they changed their mind
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('Copied — the whole chain, with its sources');
+    announce('The chain and its sources are on your clipboard.');
+  } catch {
+    // No clipboard permission (or a file:// page). Show it instead of failing.
+    document.getElementById('sheetBody').innerHTML =
+      `<p class="hint2" style="margin-top:0">Your browser would not let the page reach the
+        clipboard. Here it is to copy by hand.</p>
+       <textarea class="xfer" rows="18" readonly>${text.replace(/[&<>]/g, c =>
+         ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))}</textarea>`;
+    openSheet(title);
+  }
 }
 
 function showTransfer() {
@@ -3219,6 +3307,7 @@ function refreshFolds() {
   // Folding hides cards by class, not by removing them, so the world observer
   // never fires -- this is the other half of keeping the header honest.
   renderCount();
+  makeReachable();
 }
 
 /**
@@ -5879,6 +5968,97 @@ function burstAt(el) {
   setTimeout(() => el.classList.remove('justmade'), 950);
 }
 
+/* ── playing with a keyboard ───────────────────────────────────────────────
+ * Before this, 0 of 94 board cards and 0 shelf chips were focusable. The
+ * whole game — pick a thing up, put it down, put two together — was pointer
+ * only, and the 31 focusable elements were all chrome. An educational tool
+ * that a person cannot operate without a mouse is not finished.
+ *
+ * The model is deliberately not "drag with the arrow keys". Dragging is a
+ * pointer idiom; the keyboard idiom is select-then-act:
+ *
+ *   Tab / Shift-Tab   move between cards and shelf rows, as normal
+ *   Enter or Space    on a shelf row, put it on the bench
+ *                     on a bench card, pick it up — press again on a second
+ *                     card to combine the two
+ *   i                 open the entry for whatever is focused
+ *   Escape            put down the card you were holding
+ *
+ * Everything routes through applyMerge()/spawn(), the same functions the
+ * pointer path uses, so there is no second set of rules to keep in step.
+ */
+let kbHeld = null;
+function announce(msg) {
+  // Clear first, then set, so a screen reader re-reads a message identical to
+  // the last one -- "The bench is full" twice running has to be heard twice.
+  //
+  // Deliberately setTimeout and not requestAnimationFrame: rAF does not fire
+  // in a hidden or backgrounded tab, so every announcement was being swallowed
+  // whenever the window was not in front. Caught by testing in a hidden pane
+  // and finding the live region empty after a successful combine.
+  const el = document.getElementById('say');
+  if (!el) return;
+  el.textContent = '';
+  setTimeout(() => { el.textContent = msg; }, 30);
+}
+function kbRelease() {
+  if (kbHeld) kbHeld.classList.remove('kbheld');
+  kbHeld = null;
+}
+/** Cards and shelf rows become tab stops. Called wherever either is redrawn. */
+function makeReachable() {
+  for (const c of world.querySelectorAll('.chip.board:not(.hidden)')) {
+    if (c.tabIndex === 0) continue;
+    c.tabIndex = 0;
+    c.setAttribute('role', 'button');
+    const n = byId[c.dataset.id]?.name || c.dataset.id;
+    c.setAttribute('aria-label', `${n}, on the bench`);
+  }
+  for (const c of document.querySelectorAll('aside .chip[data-entry], aside .chip[data-id]')) {
+    if (c.tabIndex === 0) continue;
+    c.tabIndex = 0;
+    c.setAttribute('role', 'button');
+  }
+}
+addEventListener('keydown', ev => {
+  if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  const t = document.activeElement;
+  if (!t || t.matches('input, textarea, select')) return;      // never eat typing
+  const card = t.closest?.('.chip.board');
+  const row  = t.closest?.('aside .chip');
+  if (ev.key === 'Escape' && kbHeld) { kbRelease(); announce('Put down.'); ev.preventDefault(); return; }
+  if (ev.key === 'i' && (card || row)) {
+    const id = card?.dataset.id || row?.dataset.entry || row?.dataset.id;
+    if (id && byId[id]) { showEntry(id); ev.preventDefault(); }
+    return;
+  }
+  if (ev.key !== 'Enter' && ev.key !== ' ') return;
+  if (row && !card) {
+    const id = row.dataset.entry || row.dataset.id;
+    if (!id || !byId[id]) return;
+    ev.preventDefault();
+    const el = spawn(id);
+    announce(el ? `${nameOf(byId[id])} put on the bench.` : 'The bench is full.');
+    makeReachable();
+    return;
+  }
+  if (!card) return;
+  ev.preventDefault();
+  if (!kbHeld) {
+    kbHeld = card; card.classList.add('kbheld');
+    announce(`${nameOf(byId[card.dataset.id])} picked up. Move to another card and press Enter to put them together.`);
+    return;
+  }
+  if (kbHeld === card) { kbRelease(); announce('Put down.'); return; }
+  const a = kbHeld, b = card;
+  const r = merges.get([a.dataset.id, b.dataset.id].sort().join('+'));
+  kbRelease();
+  if (!r) { announce(`${nameOf(byId[a.dataset.id])} and ${nameOf(byId[b.dataset.id])} do not go together.`); return; }
+  applyMerge(a, b);
+  announce(`${nameOf(byId[a.dataset.id])} and ${nameOf(byId[b.dataset.id])} make ${nameOf(byId[r.out])}.`);
+  makeReachable();
+});
+
 function applyMerge(a, b) {
   const r = merges.get([a.dataset.id, b.dataset.id].sort().join('+'));
   if (r) pushUndo(`making ${nameOf(byId[r.out])}`);
@@ -7693,11 +7873,15 @@ function showEntry(id, mode) {
     ? `<button class="addroute decay" data-decay="${id}" title="Decay this — see what it breaks">🥀</button>` : '';
   const favOn = favourites.has(id);
   const favBtn = `<button class="addroute fav${favOn ? ' on' : ''}" data-fav="${id}" title="${favOn ? 'Remove from' : 'Add to'} Favourites">${favOn ? '★' : '☆'}</button>`;
+  // Only worth offering where there is a chain to share.
+  const shareBtn = orderedSteps(id).length
+    ? `<button class="addroute" data-share="${id}" title="Share this chain, with its sources">↗</button>` : '';
   const tabs = owned ? `<div class="modes">
        <button class="${entryMode === 'quick' ? 'on' : ''}" data-mode="quick" data-for="${id}">Quick view</button>
        <button class="${entryMode === 'cards' ? 'on' : ''}" data-mode="cards" data-for="${id}">The story</button>
        <button class="addroute" style="margin-left:auto" data-put="${id}" title="Put on the bench">+</button>
        ${favBtn}
+       ${shareBtn}
        ${decayBtn}
      </div>` : '';
   document.getElementById('sheetBody').innerHTML =
@@ -8082,6 +8266,7 @@ function showCodex(q = '') {
     `<button class="ghost" id="ptBtn">Periodic table</button>` +
     `<button class="ghost icon" id="aaBtn" title="Amino acids"><span class="gl" style="--g:16px">__UI_AMINO__</span></button>` +
     `<button class="ghost icon" id="ladderBtn" title="The ladder"><span class="gl" style="--g:16px">__UI_LADDER__</span></button>` +
+    `<button class="ghost icon" id="timeBtn" title="When things arrived">🕐</button>` +
     `<button class="ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button>` +
     // The eye and the padlock look adjacent and are not: the eye only SHOWS you
     // what you have not found, free play actually hands it to you. The titles
@@ -8105,6 +8290,7 @@ function showCodex(q = '') {
   };
   document.getElementById('aaBtn').onclick = () => showAtom('amino_acid');
   document.getElementById('ladderBtn').onclick = showLadder;
+  document.getElementById('timeBtn').onclick = showTimeline;
   const box = document.getElementById('q');
   box.oninput = () => { document.getElementById('codexList').innerHTML = codexResults(box.value); };
   if (q) box.focus();
@@ -8196,6 +8382,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   // composition tree node that also has children) — checked before
   // data-fold below so a tap on the button adds it instead of just
   // toggling the fold it happens to be nested in.
+  const sh = ev.target.closest('[data-share]');
+  if (sh) { shareProvenance(sh.dataset.share); return; }
   const pm = ev.target.closest('[data-put-makes]');
   if (pm) { const [rid, idx] = pm.dataset.putMakes.split('::'); closeSheet(); return placeMakes(rid, Number(idx)); }
   const pma = ev.target.closest('[data-put-makes-all]');
@@ -8278,6 +8466,72 @@ document.getElementById('goal').addEventListener('click', () => {
 });
 document.getElementById('score').addEventListener('click', () => showLadderOfGoals());
 /** What you have made, what is next, and what a point is. */
+/* ── the timeline ─────────────────────────────────────────────────────────
+ * The ladder answers "how big is everything". This answers "when did
+ * everything arrive", and it is built from data that has been shipping for
+ * days without a view: 448 elements carry a structured `discovered:
+ * {year, note}`, each with its own sourced sentence. The card already used it
+ * for a single "around the same time" line -- deliberately v1, per
+ * docs/DESIGN-timeline-view.md, which specced the view before the field
+ * existed. The field got populated and the view never got built.
+ *
+ * Bands widen as they go back, because the record genuinely does: 22 things
+ * from this century, 100 from the second half of the last, 32 from before
+ * 500 BCE. A flat century grid would draw that as empty space and call it
+ * nothing, when it is the most interesting shape on the page.
+ */
+const ERAS = [
+  [2000,  9999, 'This century'],
+  [1950,  2000, 'Living memory'],
+  [1900,  1950, 'The first half of the last century'],
+  [1850,  1900, 'The late 1800s'],
+  [1800,  1850, 'The early 1800s'],
+  [1700,  1800, 'The 1700s'],
+  [1500,  1700, 'The 1500s and 1600s'],
+  [1000,  1500, 'The medieval centuries'],
+  [0,     1000, 'The first millennium'],
+  [-1000,    0, 'The last thousand years BCE'],
+  [-99999, -1000, 'Before 1000 BCE'],
+];
+const yearLabel = y => y < 0 ? `${-y} BCE` : String(y);
+
+function showTimeline() {
+  const dated = elements.filter(e => e.discovered && found.has(e.id))
+                        .sort((a, b) => b.discovered.year - a.discovered.year);
+  if (!dated.length) {
+    document.getElementById('sheetBody').innerHTML =
+      `<p class="none">Nothing you have found carries a date yet. Around 450 things
+        in the game do — mostly the made ones: tools, ideas, machines, treaties.</p>`;
+    openSheet('When things arrived');
+    return;
+  }
+  const rows = [];
+  let shown = 0;
+  for (const [lo, hi, label] of ERAS) {
+    const list = dated.filter(e => e.discovered.year >= lo && e.discovered.year < hi);
+    if (!list.length) continue;
+    shown += list.length;
+    rows.push(
+      `<div class="era"><span class="eralab">${label}</span>` +
+      `<span class="eracount">${list.length}</span></div>` +
+      list.map(e =>
+        `<div class="tl" data-entry="${e.id}">` +
+          `<span class="tlyear">${yearLabel(e.discovered.year)}</span>` +
+          `<span class="tlart">${glyph(e.id, 20)}</span>` +
+          `<div><b>${e.name}</b><p>${e.discovered.note}</p></div>` +
+        `</div>`).join(''));
+  }
+  const first = dated[dated.length - 1], last = dated[0];
+  const span = last.discovered.year - first.discovered.year;
+  document.getElementById('sheetBody').innerHTML =
+    `<p class="ladderlede">${shown} of the things you have found carry a date, and they
+      cover ${span.toLocaleString()} years — from ${first.name}
+      (${yearLabel(first.discovered.year)}) to ${last.name}
+      (${yearLabel(last.discovered.year)}). Every note below has a source behind it.</p>` +
+    `<div class="timeline">${rows.join('')}</div>`;
+  openSheet('When things arrived');
+}
+
 function showLadderOfGoals() {
   const rows = GOALS.filter(id => byId[id]).map(id => {
     const made = found.has(id), n = goalCost(id);
@@ -9860,7 +10114,26 @@ new ResizeObserver(() => {
   // four get laid out, and only until something is moved.
   cardSizeCache = null;                  // the card is a different size on a phone
   if (!benchTouched && !restoredBench) { layOutBench(); drawIntro(); return; }
+  // The comment above promised this and the code never did it: a bench saved
+  // on a 1440px window and reopened on a phone put all 80 of its cards off the
+  // right edge, with an empty board and no hint that anything was there. The
+  // view is stored in world coordinates, so a narrower window simply looks
+  // somewhere else.
+  //
+  // Refit ONLY when nothing at all is in sight. A player's own arrangement is
+  // theirs, and re-fitting on every resize would fight them for the sake of a
+  // window drag -- but there is no argument for leaving them staring at
+  // nothing. ("you restructure my board ... if i want to tidy it up i will
+  // click the button" is the rule; this is the one case it does not cover.)
   const b = board.getBoundingClientRect();
+  const seen = [...world.querySelectorAll('.chip.board:not(.hidden)')];
+  if (seen.length) {
+    const anyInView = seen.some(c => {
+      const r = c.getBoundingClientRect();
+      return r.right > b.left && r.left < b.right && r.bottom > b.top && r.top < b.bottom;
+    });
+    if (!anyInView) { fitAll({ min: 0.2, max: 1.0 }); return; }
+  }
   drawLinks();
 }).observe(board);
 
@@ -10147,7 +10420,7 @@ renderShelf();
 new MutationObserver(() => {
   if (countQueued) return;
   countQueued = true;
-  requestAnimationFrame(() => { countQueued = false; renderCount(); });
+  requestAnimationFrame(() => { countQueued = false; renderCount(); makeReachable(); });
 }).observe(world, { childList: true });
 
 /**

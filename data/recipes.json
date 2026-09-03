@@ -356,16 +356,6 @@
   },
   {
     "in": [
-      "meadow"
-    ],
-    "verb": "wait",
-    "out": "bee",
-    "why": "Bees find meadows on their own. A honeybee colony forages up to 5 km out and reports good ground to the hive by dancing.",
-    "src": "https://en.wikipedia.org/wiki/Western_honey_bee",
-    "verified": true
-  },
-  {
-    "in": [
       "flower"
     ],
     "verb": "wait",
@@ -471,15 +461,6 @@
   },
   {
     "in": [
-      "tree",
-      "sun"
-    ],
-    "out": "olive",
-    "why": "Olive trees fruit on poor, dry, stony ground where little else will. A raw olive is inedibly bitter until cured in brine or lye.",
-    "src": "https://en.wikipedia.org/wiki/Olive"
-  },
-  {
-    "in": [
       "grass",
       "seed"
     ],
@@ -487,24 +468,6 @@
     "why": "Wheat is a grass humans selected for 10,000 years — above all for seed heads that do not shatter, so the grain waits on the stalk to be taken.",
     "src": "https://en.wikipedia.org/wiki/Wheat",
     "verified": true
-  },
-  {
-    "in": [
-      "grass",
-      "water"
-    ],
-    "out": "rice",
-    "why": "Rice tolerates standing water. Flooding a paddy drowns the weeds and not the crop — a herbicide made of water.",
-    "src": "https://en.wikipedia.org/wiki/Paddy_field"
-  },
-  {
-    "in": [
-      "grass",
-      "sun"
-    ],
-    "out": "sugarcane",
-    "why": "Sugarcane is a giant grass that stores its sugar in the stalk instead of the seed, which is why you can taste it by chewing.",
-    "src": "https://en.wikipedia.org/wiki/Sugarcane"
   },
   {
     "in": [
@@ -1942,16 +1905,6 @@
   },
   {
     "in": [
-      "nectar"
-    ],
-    "verb": "wait",
-    "out": "bee",
-    "supported": true,
-    "why": "You do not need to fetch pollinators. Put out enough sugar and they find it — bees locate new forage within hours.",
-    "src": "https://en.wikipedia.org/wiki/Western_honey_bee"
-  },
-  {
-    "in": [
       "aurochs",
       "pasture"
     ],
@@ -2099,16 +2052,6 @@
     "supported": true,
     "why": "Flint alone will not spark. Strike it against iron pyrite or steel and it shaves off metal fine enough to burn in air.",
     "src": "https://en.wikipedia.org/wiki/Fire_making"
-  },
-  {
-    "in": [
-      "vine",
-      "sun"
-    ],
-    "out": "grape",
-    "supported": true,
-    "why": "Sugar in a grape is accumulated sunlight, and how much of it there is decides everything the wine will become.",
-    "src": "https://en.wikipedia.org/wiki/Brix"
   },
   {
     "in": [
@@ -5043,16 +4986,6 @@
     "why": "Shearing lifts the whole fleece off in one piece. Hair has little scale and no crimp; wool has both, which is exactly why it felts and spins into yarn.",
     "src": "https://en.wikipedia.org/wiki/Wool",
     "verb": "cut",
-    "verified": true
-  },
-  {
-    "in": [
-      "acacia"
-    ],
-    "verb": "wait",
-    "out": "giraffe",
-    "why": "Giraffes preferentially browse acacia for its calcium and protein, reaching twigs a kudu never could — and get past the thorns with a flexible, hairy upper lip and an 18-inch black tongue.",
-    "src": "https://en.wikipedia.org/wiki/Giraffe",
     "verified": true
   },
   {
@@ -10505,16 +10438,6 @@
   },
   {
     "in": [
-      "snow",
-      "tree"
-    ],
-    "out": "pine",
-    "why": "An evergreen keeps working whenever the weather lets it, and pays for that with needles: small, waxed, losing little water while the ground is frozen. Resin canals in the wood flood a wound and trap what caused it.",
-    "src": "https://en.wikipedia.org/wiki/Pinophyta",
-    "verified": true
-  },
-  {
-    "in": [
       "oak"
     ],
     "verb": "cut",
@@ -10565,16 +10488,6 @@
   },
   {
     "in": [
-      "sea",
-      "tree"
-    ],
-    "out": "mangrove",
-    "why": "Roots so heavily suberised they act as an ultrafilter, keeping sodium out; whatever salt does get in is concentrated into old leaves and shed. Some species push breathing tubes up out of the airless mud.",
-    "src": "https://en.wikipedia.org/wiki/Mangrove",
-    "verified": true
-  },
-  {
-    "in": [
       "flax",
       "phloem"
     ],
@@ -10605,16 +10518,6 @@
   },
   {
     "in": [
-      "rain",
-      "tree"
-    ],
-    "out": "rubber_tree",
-    "why": "Hevea brasiliensis is Amazonian and is barely grown in the Amazon. South American leaf blight, the fungus Pseudocercospora ulei, ended plantations in its own homeland — the world's rubber grows in Asia instead.",
-    "src": "https://en.wikipedia.org/wiki/Hevea_brasiliensis",
-    "verified": true
-  },
-  {
-    "in": [
       "rubber_tree"
     ],
     "verb": "cut",
@@ -10631,16 +10534,6 @@
     "out": "mulberry",
     "why": "Same family as the fig, Moraceae, and the same trick: what looks like one fruit is many. A mulberry is a multiple fruit two to three centimetres long, built from a whole cluster of separate flowers.",
     "src": "https://en.wikipedia.org/wiki/Morus_(plant)",
-    "verified": true
-  },
-  {
-    "in": [
-      "river",
-      "tree"
-    ],
-    "out": "willow",
-    "why": "Willows live on wet ground and barely bother with seed. Almost any cutting will root, and so will a broken branch that simply falls and lies there. The bark sap is rich in salicin.",
-    "src": "https://en.wikipedia.org/wiki/Salix",
     "verified": true
   },
   {
@@ -14830,16 +14723,6 @@
   },
   {
     "in": [
-      "vine",
-      "wind"
-    ],
-    "out": "kiwi",
-    "why": "The edible berry of a dioecious woody vine — each plant is strictly male or female, and a female vine needs a male one nearby to bear fruit at all.",
-    "src": "https://en.wikipedia.org/wiki/Kiwifruit",
-    "supported": true
-  },
-  {
-    "in": [
       "drupe"
     ],
     "verb": "wait",
@@ -14887,16 +14770,6 @@
     "why": "The date palm's fruit is a drupe with a single stone, naturally wind-pollinated — though oasis and commercial growers hand-pollinate instead for a reliable yield.",
     "src": "https://en.wikipedia.org/wiki/Date_palm",
     "verified": true
-  },
-  {
-    "in": [
-      "tree",
-      "field"
-    ],
-    "out": "persimmon",
-    "why": "Diospyros kaki, a tree the shape of an apple tree, grown mostly in Chinese, Japanese and Korean orchards — its fruit ripens only after the tree has already dropped its leaves.",
-    "src": "https://en.wikipedia.org/wiki/Diospyros_kaki",
-    "supported": true
   },
   {
     "in": [
@@ -15116,16 +14989,6 @@
     "out": "allspice",
     "why": "The dried unripe berry of Pimenta dioica, picked green and traditionally dried in the sun until brown, resembling a large smooth peppercorn.",
     "src": "https://en.wikipedia.org/wiki/Allspice",
-    "supported": true
-  },
-  {
-    "in": [
-      "tree",
-      "wind"
-    ],
-    "out": "star_anise",
-    "why": "The star-shaped fruit of an evergreen tree native to South China and Vietnam, picked just before it ripens — six to eight seed-bearing follicles arranged in a single whorl.",
-    "src": "https://en.wikipedia.org/wiki/Illicium_verum",
     "supported": true
   },
   {
@@ -32872,16 +32735,6 @@
   },
   {
     "in": [
-      "desert",
-      "tree"
-    ],
-    "out": "baobab",
-    "why": "A baobab's swollen trunk can store up to 120,000 litres of water, an adaptation for surviving long droughts in dry African savanna.",
-    "src": "https://en.wikipedia.org/wiki/Adansonia",
-    "supported": true
-  },
-  {
-    "in": [
       "fig",
       "rainforest"
     ],
@@ -38590,16 +38443,6 @@
   },
   {
     "in": [
-      "tree",
-      "soil"
-    ],
-    "out": "durian",
-    "why": "Durio zibethinus, native to Southeast Asia, its name straight from duri — Malay for thorn — for the spiked rind around the fruit. The tree wants deep, well-drained tropical soil.",
-    "src": "https://en.wikipedia.org/wiki/Durian",
-    "supported": true
-  },
-  {
-    "in": [
       "herb",
       "bee"
     ],
@@ -39046,16 +38889,6 @@
     "out": "celeriac",
     "why": "Celeriac is the same species as celery, Apium graveolens, bred toward a swollen root instead of the stalk.",
     "src": "https://en.wikipedia.org/wiki/Celeriac",
-    "verified": true
-  },
-  {
-    "in": [
-      "plant",
-      "desert"
-    ],
-    "out": "agave",
-    "why": "Agave is a genus native to the arid Americas, adapted to survive on very little water.",
-    "src": "https://en.wikipedia.org/wiki/Agave",
     "verified": true
   },
   {
@@ -82828,6 +82661,1026 @@
     "why": "A flagellate with four pairs of flagella and a rigid dished underside built on microtubules. That ventral disc clamps it to the lining of the small intestine, and it never invades any further than that.",
     "src": "https://en.wikipedia.org/wiki/Giardia_duodenalis",
     "srcBook": "Leventhal R & Cheadle RF, Medical Parasitology: A Self-Instructional Text, 6th ed. (F. A. Davis, 2012), p. 83",
+    "verified": true
+  },
+  {
+    "in": [
+      "current",
+      "wire"
+    ],
+    "out": "switch",
+    "why": "Break the wire and the current stops; close it again and it flows. A switch is a deliberate, repeatable gap, and it has exactly two states. Every digital machine in this chain rests on that fact.",
+    "src": "https://en.wikipedia.org/wiki/Switch",
+    "verified": true
+  },
+  {
+    "in": [
+      "electromagnet",
+      "switch"
+    ],
+    "out": "relay",
+    "why": "Put the switch's contacts next to an electromagnet instead of a finger. A small current through the coil pulls them closed, switching a much larger circuit. One circuit can now command another.",
+    "src": "https://en.wikipedia.org/wiki/Relay",
+    "verified": true
+  },
+  {
+    "in": [
+      "aristotle",
+      "grammar"
+    ],
+    "out": "logic",
+    "why": "Aristotle pulled the form of an argument away from its content. All A are B, all B are C, so all A are C — that holds whatever A, B and C stand for. Validity became a property of structure, like grammar.",
+    "src": "https://en.wikipedia.org/wiki/Term_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "alphabet"
+    ],
+    "out": "algebra",
+    "why": "Al-Khwarizmi, at Baghdad's House of Wisdom around 820, wrote out rules for restoring and balancing equations. Let letters stand for the unknown quantities and a single line states a method, not one sum.",
+    "src": "https://en.wikipedia.org/wiki/Algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "logic"
+    ],
+    "out": "boolean_algebra",
+    "why": "Boole's Laws of Thought, 1854, gave logic the form of an algebra: the variables hold true and false instead of numbers, and the operations are and, or and not. Reasoning turned into calculation.",
+    "src": "https://en.wikipedia.org/wiki/The_Laws_of_Thought",
+    "verified": true
+  },
+  {
+    "in": [
+      "boolean_algebra",
+      "paper"
+    ],
+    "out": "truth_table",
+    "why": "A Boolean operation has finitely many cases, so you can simply list them: write every combination the inputs can take, one per row, and fill in the output. The table is the complete definition.",
+    "src": "https://en.wikipedia.org/wiki/Truth_table",
+    "verified": true
+  },
+  {
+    "in": [
+      "boolean_algebra",
+      "relay"
+    ],
+    "out": "logic_gate",
+    "why": "Shannon's 1937 master's thesis proved Boolean algebra describes relay arrangements exactly: contacts in series behave as and, in parallel as or. An equation and a circuit became the same object.",
+    "src": "https://en.wikipedia.org/wiki/A_Symbolic_Analysis_of_Relay_and_Switching_Circuits",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic_gate",
+      "transistor"
+    ],
+    "out": "not_gate",
+    "why": "Diodes pass a signal but cannot reverse one, so diode logic alone is incomplete. A transistor can: wire it to pull the output low whenever the input is high and you have negation in a circuit.",
+    "src": "https://en.wikipedia.org/wiki/Diode_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "diode",
+      "logic_gate"
+    ],
+    "out": "or_gate",
+    "why": "Point two diodes into a shared resistor. Current arriving at either input reaches the output, and neither input can push back through the other diode into its neighbour. That is disjunction, in parts.",
+    "src": "https://en.wikipedia.org/wiki/Diode_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "not_gate",
+      "or_gate"
+    ],
+    "out": "and_gate",
+    "why": "De Morgan's law: A and B is exactly not(not A or not B). Invert both inputs, OR them, invert the result — conjunction assembled from the two gates already on the bench, with no new part.",
+    "src": "https://en.wikipedia.org/wiki/De_Morgan%27s_laws",
+    "verified": true
+  },
+  {
+    "in": [
+      "and_gate",
+      "not_gate"
+    ],
+    "out": "nand_gate",
+    "why": "Put an inverter after an AND: the output is false only when both inputs are true. This is Sheffer's stroke, and it is functionally complete — every Boolean function whatsoever can be written with it.",
+    "src": "https://en.wikipedia.org/wiki/Sheffer_stroke",
+    "verified": true
+  },
+  {
+    "in": [
+      "and_gate",
+      "or_gate"
+    ],
+    "out": "xor_gate",
+    "why": "OR is true when either input is true, including both. Subtract the both case — OR and not AND — and what is left is true only when the inputs disagree: exclusive or.",
+    "src": "https://en.wikipedia.org/wiki/XOR_gate",
+    "verified": true
+  },
+  {
+    "in": [
+      "nand_gate",
+      "not_gate"
+    ],
+    "out": "multiplexer",
+    "why": "Invert the select line so exactly one branch is enabled, gate each input against its own branch, and merge the two. A handful of NANDs and an inverter let a control signal choose which input gets through.",
+    "src": "https://en.wikipedia.org/wiki/Multiplexer",
+    "verified": true
+  },
+  {
+    "in": [
+      "nand_gate",
+      "nand_gate"
+    ],
+    "out": "flip_flop",
+    "why": "Cross-couple two NAND gates so each feeds the other's input. The pair has two stable states and sits in whichever one you last pushed it to. Gates could only react; this one remembers.",
+    "src": "https://en.wikipedia.org/wiki/Flip-flop_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "and_gate",
+      "xor_gate"
+    ],
+    "out": "half_adder",
+    "why": "Add two bits and there are two answers to produce. XOR gives the sum digit (1+1 is 0), AND gives the carry into the next column. Two gates, and arithmetic has come out of pure logic.",
+    "src": "https://en.wikipedia.org/wiki/Adder_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "half_adder",
+      "or_gate"
+    ],
+    "out": "adder",
+    "why": "A half adder ignores the carry coming in from the column below. Chain two of them and OR the two carries out, and you have a stage that can be stacked as wide as the numbers you want to add.",
+    "src": "https://en.wikipedia.org/wiki/Adder_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "adder",
+      "multiplexer"
+    ],
+    "out": "alu",
+    "why": "Run the adder and the bitwise AND, OR and NOT circuits all at once on the same operands, then let a multiplexer choose which result leaves. The code that steers the multiplexer is the opcode.",
+    "src": "https://en.wikipedia.org/wiki/Arithmetic_logic_unit",
+    "verified": true
+  },
+  {
+    "in": [
+      "binary_code",
+      "switch"
+    ],
+    "out": "bit",
+    "why": "A switch has exactly two states, so knowing which one it is in answers exactly one yes-or-no question. That answer is the unit of information — Tukey contracted 'binary digit' to bit, Shannon made it a measure.",
+    "src": "https://en.wikipedia.org/wiki/Bit",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "bit"
+    ],
+    "out": "byte",
+    "why": "One bit cannot hold a letter. Group as many as it takes to encode a single character and you have a byte: eight, once IBM settled the matter, and the smallest piece of memory with its own address.",
+    "src": "https://en.wikipedia.org/wiki/Byte",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte"
+    ],
+    "verb": "cut",
+    "out": "hexadecimal",
+    "why": "Split a byte down the middle. Four bits have sixteen possible values, so give each one symbol: 0 to 9, then A to F. Now any byte is two characters instead of eight, and the grouping is exact.",
+    "src": "https://en.wikipedia.org/wiki/Hexadecimal",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "telegraph"
+    ],
+    "out": "ascii",
+    "why": "Telegraph and teleprinter codes had numbered the alphabet for decades. ASCII fixed 128 of those code points in seven bits, so any machine receiving the number 65 produces the same letter A.",
+    "src": "https://en.wikipedia.org/wiki/ASCII",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "ascii"
+    ],
+    "out": "unicode",
+    "why": "128 slots hold English and almost nothing else. Unicode set out to give every script on Earth one number per character; version 17 defines 159,801 characters across 172 scripts, ASCII first among them.",
+    "src": "https://en.wikipedia.org/wiki/Unicode",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "flip_flop"
+    ],
+    "out": "register",
+    "why": "Stand eight flip-flops side by side and wire them to one control line: they load or hold a whole byte together. Nothing is closer to the arithmetic, so nothing is quicker to read.",
+    "src": "https://en.wikipedia.org/wiki/Processor_register",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "transistor"
+    ],
+    "out": "random_access_memory",
+    "why": "Charge on a microscopic capacitor is the 1; a transistor beside it gates access. Two parts per bit packs densely — but the charge drains in milliseconds, so every cell is read and written back over and over. That is what 'dynamic' means.",
+    "src": "https://en.wikipedia.org/wiki/Dynamic_random-access_memory",
+    "verified": true
+  },
+  {
+    "in": [
+      "diode",
+      "integrated_circuit"
+    ],
+    "out": "read_only_memory",
+    "why": "Lay out a grid and put a diode at every crossing that should read 1, leaving the rest empty. The diode matrix is decided at manufacture, so the contents cannot be altered — and cannot be forgotten.",
+    "src": "https://en.wikipedia.org/wiki/Read-only_memory",
+    "verified": true
+  },
+  {
+    "in": [
+      "random_access_memory",
+      "register"
+    ],
+    "out": "cache",
+    "why": "Registers are instant but tiny; main memory is vast but tens to hundreds of times slower. Put a small fast memory between them holding copies of recently used locations and most requests never travel.",
+    "src": "https://en.wikipedia.org/wiki/CPU_cache",
+    "verified": true
+  },
+  {
+    "in": [
+      "integrated_circuit",
+      "quartz"
+    ],
+    "out": "clock_signal",
+    "why": "A quartz crystal is piezoelectric and flexes at one precise frequency. Build an oscillator around it and the chip gets a steady beat, so every flip-flop in the machine changes state at the same instant.",
+    "src": "https://en.wikipedia.org/wiki/Crystal_oscillator",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper_wire",
+      "register"
+    ],
+    "out": "data_bus",
+    "why": "A private wire between every pair of registers grows as the square of their number. Run one shared bundle of traces instead and arbitrate who may drive it, and any component can send to any other.",
+    "src": "https://en.wikipedia.org/wiki/Bus_(computing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "alu",
+      "byte"
+    ],
+    "out": "instruction",
+    "why": "The ALU already takes an opcode saying which operation to perform. Store that code as a number in memory and it stops being a setting on a wire and becomes a command the machine can be handed.",
+    "src": "https://en.wikipedia.org/wiki/Instruction_set_architecture",
+    "verified": true
+  },
+  {
+    "in": [
+      "binary_code",
+      "instruction"
+    ],
+    "out": "machine_code",
+    "why": "Write the whole program as those numbers, one after another: load a word into a register, run an ALU operation, jump elsewhere. No translation happens; the processor's own wiring decodes it.",
+    "src": "https://en.wikipedia.org/wiki/Machine_code",
+    "verified": true
+  },
+  {
+    "in": [
+      "alu",
+      "instruction"
+    ],
+    "out": "cpu",
+    "why": "Add a control unit that fetches the next instruction, points the ALU at the right operands, files the result and moves on. Fetch and execute, over and over — that loop is the whole processor.",
+    "src": "https://en.wikipedia.org/wiki/Central_processing_unit",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "machine_code"
+    ],
+    "out": "assembly_language",
+    "why": "Nobody can write raw opcodes all day. Give each instruction a short mnemonic and each address a label, then let a program do the substitution. Kathleen Booth co-wrote the first one in the late 1940s.",
+    "src": "https://en.wikipedia.org/wiki/Assembly_language",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "assembly_language"
+    ],
+    "out": "compiler",
+    "why": "Assembly still names the machine's own instructions, one for one. Write the method in a language of its own and have a program translate it down instead — so the algorithm outlives the machine it ran on.",
+    "src": "https://en.wikipedia.org/wiki/Compiler",
+    "verified": true
+  },
+  {
+    "in": [
+      "compiler",
+      "grammar"
+    ],
+    "out": "programming_language",
+    "why": "A compiler can only translate what it can parse, so the language needs a formal grammar — every legal program spelled out by rules. Fix the grammar and people write readably while the machine still gets its numbers.",
+    "src": "https://en.wikipedia.org/wiki/Programming_language",
+    "verified": true
+  },
+  {
+    "in": [
+      "compiler",
+      "magnetic_tape"
+    ],
+    "out": "operating_system",
+    "why": "When every job needs loading, compiling and running by hand, the operator is the slowest part. GM-NAA I/O, built for the IBM 704 in 1956, read the next job in and ran it itself — software minding the machine.",
+    "src": "https://en.wikipedia.org/wiki/GM-NAA_I/O",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "magnetic_tape"
+    ],
+    "out": "file",
+    "why": "A reel of tape is just bytes in a row, found by counting. Give a run of them a name and a length and it becomes a thing you can ask for, without knowing where on the reel it actually sits.",
+    "src": "https://en.wikipedia.org/wiki/Computer_file",
+    "verified": true
+  },
+  {
+    "in": [
+      "file",
+      "operating_system"
+    ],
+    "out": "filesystem",
+    "why": "One name is easy to keep track of; ten thousand are not. The operating system keeps a table of names against the blocks holding them, and hands out files while nobody else thinks about the disk.",
+    "src": "https://en.wikipedia.org/wiki/File_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "filesystem"
+    ],
+    "out": "database",
+    "why": "Files hold bytes; they answer no questions. Codd's relational model holds data as relations and defines an algebra of operations over them, so you state what you want and the system works out how to fetch it.",
+    "src": "https://en.wikipedia.org/wiki/Relational_model",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "paper"
+    ],
+    "out": "punched_card",
+    "why": "Bouchon in 1725 and Falcon in 1728 drove a loom from punched paper: a hole or no hole at each fixed position, read by a row of pins. Information became a physical pattern you could hand to a machine.",
+    "src": "https://en.wikipedia.org/wiki/Punched_card",
+    "verified": true
+  },
+  {
+    "in": [
+      "loom",
+      "punched_card"
+    ],
+    "out": "jacquard_loom",
+    "why": "Jacquard's 1804 machine laced the cards into a continuous chain, one complete card per row of the pattern. The design now lived on the cards, so new cloth meant new cards, not a new loom.",
+    "src": "https://en.wikipedia.org/wiki/Jacquard_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "punched_card",
+      "relay"
+    ],
+    "out": "tabulating_machine",
+    "why": "Hollerith punched facts about people onto cards instead of patterns for cloth. A pin dropping through a hole closes a circuit and steps a counter, so a whole census could be summed electrically.",
+    "src": "https://en.wikipedia.org/wiki/Tabulating_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "paper"
+    ],
+    "out": "turing_machine",
+    "why": "Turing stripped an algorithm down to the least a machine could possibly need: a strip of tape, one symbol under the head, and a finite table of rules. Anything computable at all is computable on it.",
+    "src": "https://en.wikipedia.org/wiki/Turing_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "integrated_circuit"
+    ],
+    "verb": "wait",
+    "out": "moores_law",
+    "why": "Simply wait. Gordon Moore noticed in 1965 that components per integrated circuit kept doubling, and later revised the interval to about two years. It describes an industry's learning curve, not physics.",
+    "src": "https://en.wikipedia.org/wiki/Moore%27s_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "photosite"
+    ],
+    "out": "pixel",
+    "why": "A photosite's charge becomes a number, and that number is one sample of light at one point. Arrange the samples in a grid and the picture is addressable: any point can be named and changed.",
+    "src": "https://en.wikipedia.org/wiki/Pixel",
+    "verified": true
+  },
+  {
+    "in": [
+      "pixel",
+      "random_access_memory"
+    ],
+    "out": "bitmap",
+    "why": "Set aside a block of memory with one number per pixel and wire it to be read out continuously to a screen. Whatever is written there appears: the picture and the memory become the same object.",
+    "src": "https://en.wikipedia.org/wiki/Framebuffer",
+    "verified": true
+  },
+  {
+    "in": [
+      "bitmap",
+      "movable_type"
+    ],
+    "out": "font",
+    "why": "Movable type held each letter as a shape cast on a slug of metal. A digital font holds the same glyphs as data — a grid of pixels, or outlines to fill — so one file replaces a whole case of sorts.",
+    "src": "https://en.wikipedia.org/wiki/Computer_font",
+    "verified": true
+  },
+  {
+    "in": [
+      "bitmap"
+    ],
+    "verb": "crush",
+    "out": "jpeg",
+    "why": "Cut the image into 8x8 blocks and express each as cosine frequencies (Ahmed's 1972 transform). Keep the coarse ones, throw away the fine, and the file shrinks about tenfold. Standardised in 1992.",
+    "src": "https://en.wikipedia.org/wiki/JPEG",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "register"
+    ],
+    "out": "floating_point",
+    "why": "Divide a register's bits into three fields: sign, exponent and significand. The point floats with the exponent, so the same 32 bits reach the enormous and the minute. IEEE 754 fixed the layout in 1985.",
+    "src": "https://en.wikipedia.org/wiki/Floating-point_arithmetic",
+    "verified": true
+  },
+  {
+    "in": [
+      "adder",
+      "byte"
+    ],
+    "out": "checksum",
+    "why": "Add the bytes of a block together and send the total alongside them. Recompute it at the far end: if the two disagree, something was corrupted in transit or in storage, and the block is not to be trusted.",
+    "src": "https://en.wikipedia.org/wiki/Checksum",
+    "verified": true
+  },
+  {
+    "in": [
+      "bit",
+      "checksum"
+    ],
+    "out": "hamming_code",
+    "why": "A checksum only says that something broke. Hamming, in 1950, spread check bits over overlapping subsets of the message, so the pattern of failing checks spells out the number of the wrong bit — flip it back.",
+    "src": "https://en.wikipedia.org/wiki/Hamming_code",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "telephone"
+    ],
+    "out": "computer_network",
+    "why": "Lease telephone lines between computers, give each machine an address, and data can move without a person carrying it. ARPANET, built this way, was the first wide-area packet-switched network.",
+    "src": "https://en.wikipedia.org/wiki/Computer_network",
+    "verified": true
+  },
+  {
+    "in": [
+      "file"
+    ],
+    "verb": "cut",
+    "out": "packet",
+    "why": "Do not hold a line open for a whole file. Cut it into short pieces, each with a header giving source and destination, and let them find their own way independently — Baran at RAND and Davies at the NPL, in the 1960s.",
+    "src": "https://en.wikipedia.org/wiki/Packet_switching",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer_network",
+      "packet"
+    ],
+    "out": "network_protocol",
+    "why": "Packets are useless unless both ends agree where the address sits, what each field means, when to speak and what to do when one goes missing. That whole agreement, written down, is the protocol.",
+    "src": "https://en.wikipedia.org/wiki/Communication_protocol",
+    "verified": true
+  },
+  {
+    "in": [
+      "byte",
+      "network_protocol"
+    ],
+    "out": "ip_address",
+    "why": "A packet needs somewhere to go. Give every network interface a number: IPv4 uses 32 bits, which is four bytes — which is why they are written as four numbers separated by dots.",
+    "src": "https://en.wikipedia.org/wiki/IP_address",
+    "verified": true
+  },
+  {
+    "in": [
+      "checksum",
+      "ip_address"
+    ],
+    "out": "tcp",
+    "why": "IP delivers a packet to an address and promises nothing else. TCP numbers the bytes, checksums them, and asks again for whatever never arrived — so the application sees one reliable ordered stream.",
+    "src": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "ip_address"
+    ],
+    "out": "domain_name_system",
+    "why": "Nobody remembers a four-number address. DNS lets machines be named in words instead, and a hierarchy of servers — one level per dot — translates the name into the address before the packet leaves.",
+    "src": "https://en.wikipedia.org/wiki/Domain_Name_System",
+    "verified": true
+  },
+  {
+    "in": [
+      "domain_name_system",
+      "file"
+    ],
+    "out": "url",
+    "why": "Combine three things in one string: which protocol to speak, which machine to ask for by name, and the path to the file on it. Now any document anywhere can be pointed at from anywhere else.",
+    "src": "https://en.wikipedia.org/wiki/URL",
+    "verified": true
+  },
+  {
+    "in": [
+      "network_protocol",
+      "url"
+    ],
+    "out": "http",
+    "why": "A URL says what you want; HTTP is the protocol for asking. The client opens a connection, sends a request naming the resource, and the server returns one response. Simple enough that anything can serve.",
+    "src": "https://en.wikipedia.org/wiki/HTTP",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascii",
+      "hypertext"
+    ],
+    "out": "html",
+    "why": "Keep the document as plain characters and put the structure in the same stream: mark this a heading, that a paragraph, this other a link to another document. Text and its wiring travel as one file.",
+    "src": "https://en.wikipedia.org/wiki/HTML",
+    "verified": true
+  },
+  {
+    "in": [
+      "html",
+      "http"
+    ],
+    "out": "web_browser",
+    "why": "One program that speaks HTTP to fetch whatever a URL names, parses the HTML for its structure, and draws the result. Every document on every server, through a single window.",
+    "src": "https://en.wikipedia.org/wiki/Web_browser",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "computer_network"
+    ],
+    "out": "server",
+    "why": "Put a computer on the network whose only work is answering requests from others for data, resources or computation. The machines that ask become clients, and one server can serve many of them.",
+    "src": "https://en.wikipedia.org/wiki/Server_(computing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer_network",
+      "copper_wire"
+    ],
+    "out": "ethernet",
+    "why": "Give every station one shared cable rather than a link to each neighbour. A station listens first, transmits, and if it hears a collision it stops and retries after a random wait. Standardised as IEEE 802.3.",
+    "src": "https://en.wikipedia.org/wiki/Ethernet",
+    "verified": true
+  },
+  {
+    "in": [
+      "bit",
+      "telephone"
+    ],
+    "out": "modem",
+    "why": "A telephone line carries sound, not bits. Modulate the bits onto audio tones to send and demodulate them at the far end — AT&T's Bell 103, 1963, managed 300 bits per second over an ordinary line.",
+    "src": "https://en.wikipedia.org/wiki/Modem",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "key"
+    ],
+    "out": "cipher",
+    "why": "Fix a rule for replacing each letter, and a key that decides which replacement. The rule can be published; only the key needs guarding — which is what makes a cipher different from a secret alphabet.",
+    "src": "https://en.wikipedia.org/wiki/Cipher",
+    "verified": true
+  },
+  {
+    "in": [
+      "bit",
+      "cipher"
+    ],
+    "out": "encryption",
+    "why": "Once the message is bits, enciphering becomes arithmetic: combine each bit with a bit of key. Vernam did exactly this in 1917, and with a truly random key as long as the message it cannot be broken.",
+    "src": "https://en.wikipedia.org/wiki/One-time_pad",
+    "verified": true
+  },
+  {
+    "in": [
+      "abacus",
+      "algorithm"
+    ],
+    "out": "prime_number",
+    "why": "Write out the counting numbers, then strike out every multiple of two, of three, of five, and so on. What survives has no smaller factors. Eratosthenes' sieve is among the oldest algorithms there is.",
+    "src": "https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes",
+    "verified": true
+  },
+  {
+    "in": [
+      "encryption",
+      "prime_number"
+    ],
+    "out": "public_key",
+    "why": "Multiplying two large primes is easy; recovering them from the product is not. That one-way gap lets you hand out a key for locking while keeping the key that unlocks. Diffie and Hellman 1976, RSA 1977.",
+    "src": "https://en.wikipedia.org/wiki/Public-key_cryptography",
+    "verified": true
+  },
+  {
+    "in": [
+      "checksum",
+      "encryption"
+    ],
+    "out": "hash_function",
+    "why": "A checksum catches accidents but not liars. Harden the same idea so that reversing it, or finding two inputs that agree, is infeasible, and a short fingerprint becomes evidence about the data behind it.",
+    "src": "https://en.wikipedia.org/wiki/Cryptographic_hash_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "hash_function",
+      "public_key"
+    ],
+    "out": "digital_signature",
+    "why": "Hash the document, then encrypt the hash with your private key. Anyone can decrypt it with your public key and hash the document themselves: matching hashes prove both the author and that nothing changed.",
+    "src": "https://en.wikipedia.org/wiki/Digital_signature",
+    "verified": true
+  },
+  {
+    "in": [
+      "qwerty",
+      "switch"
+    ],
+    "out": "keyboard",
+    "why": "Keep the typewriter's key arrangement but put an electrical switch under each key instead of a lever and a typebar. Which switch closed becomes a number, and the number is the character.",
+    "src": "https://en.wikipedia.org/wiki/Computer_keyboard",
+    "verified": true
+  },
+  {
+    "in": [
+      "bit",
+      "telegraph"
+    ],
+    "out": "information_theory",
+    "why": "How much can a noisy line carry? Nyquist and Hartley asked it of telegraphy in the 1920s; Shannon answered in the 1940s, in bits per second, and proved every channel has a hard capacity you cannot exceed.",
+    "src": "https://en.wikipedia.org/wiki/Information_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "plant",
+      "salt"
+    ],
+    "out": "halophyte",
+    "why": "A halophyte is defined by tolerance, not by address: a plant that can grow in soil or water of high salinity. Only about 2% of plant species manage it — everything else is a glycophyte and dies there.",
+    "src": "https://en.wikipedia.org/wiki/Halophyte",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer"
+    ],
+    "verb": "cut",
+    "out": "resin",
+    "why": "Resin is a stem secretion, mostly terpenes, that a conifer pushes into a wound. Cut the bark and it bleeds. Sap and latex are different fluids doing different jobs; only resin sets hard.",
+    "src": "https://en.wikipedia.org/wiki/Resin",
+    "verified": true
+  },
+  {
+    "in": [
+      "lignin",
+      "stem"
+    ],
+    "out": "thorn",
+    "why": "A thorn is a whole shoot that gave up on being a branch: it arises from a bud, keeps vascular tissue inside, and lignifies to a point. A spine is a modified leaf; a prickle is only epidermis.",
+    "src": "https://en.wikipedia.org/wiki/Thorns,_spines,_and_prickles",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "parenchyma"
+    ],
+    "out": "berry",
+    "why": "In a berry the whole fruit wall ripens into fleshy parenchyma with the seeds embedded in it. The endocarp is what separates it from a drupe: a drupe hardens that inner layer into a stone.",
+    "src": "https://en.wikipedia.org/wiki/Berry_(botany)",
+    "verified": true
+  },
+  {
+    "in": [
+      "flower",
+      "parenchyma"
+    ],
+    "out": "berry",
+    "why": "A berry comes from a single flower with one ovary, whose wall becomes flesh rather than stone. Grapes, tomatoes, bananas, kiwifruit and persimmons all qualify; strawberries and raspberries do not.",
+    "src": "https://en.wikipedia.org/wiki/Berry_(botany)",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "parenchyma"
+    ],
+    "out": "aerenchyma",
+    "why": "Aerenchyma is parenchyma turned to sponge: gas-filled channels that give oxygen a low-resistance path from shoot to submerged root. Some of it leaks out of the root pores into the mud around them.",
+    "src": "https://en.wikipedia.org/wiki/Aerenchyma",
+    "verified": true
+  },
+  {
+    "in": [
+      "parenchyma"
+    ],
+    "verb": "smother",
+    "out": "aerenchyma",
+    "why": "Take the oxygen away and the plant builds its own airway. Low oxygen makes it produce ethylene, and cortical parenchyma cells then die and lyse on purpose, leaving lysigenous cavities behind.",
+    "src": "https://en.wikipedia.org/wiki/Aerenchyma",
+    "verified": true
+  },
+  {
+    "in": [
+      "oak",
+      "sun"
+    ],
+    "out": "isoprene",
+    "why": "Isoprene comes off a sunlit leaf, and emission climbs steeply with leaf temperature to a peak near 40 °C. Oaks and poplars are the great emitters: in a deciduous forest isoprene is about 80% of the hydrocarbons in the air.",
+    "src": "https://en.wikipedia.org/wiki/Isoprene",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum",
+      "steam"
+    ],
+    "out": "isoprene",
+    "why": "Industrially it is a byproduct of thermally cracking petroleum naphtha — about 800,000 tonnes recovered a year, and 95% of that goes straight back into making cis-1,4-polyisoprene.",
+    "src": "https://en.wikipedia.org/wiki/Isoprene",
+    "verified": true
+  },
+  {
+    "in": [
+      "isoprene"
+    ],
+    "verb": "crush",
+    "out": "polyisoprene",
+    "why": "Polyisoprene is what isoprene becomes when it is polymerised — anionically with n-butyllithium, or by coordination over a Ziegler–Natta catalyst.",
+    "src": "https://en.wikipedia.org/wiki/Polyisoprene",
+    "verified": true
+  },
+  {
+    "in": [
+      "isoprene",
+      "isoprene"
+    ],
+    "out": "polyisoprene",
+    "why": "The monomer chains to itself, thousands of units long. Natural rubber is that same chain in the cis-1,4 arrangement, and it is about 99.99% of what comes out of the tree.",
+    "src": "https://en.wikipedia.org/wiki/Polyisoprene",
+    "verified": true
+  },
+  {
+    "in": [
+      "polyisoprene",
+      "sulfur"
+    ],
+    "out": "vulcanised_rubber",
+    "why": "Rubber is the polymer cis-1,4-polyisoprene, whether a tree made it or a reactor did, and sulfur cross-links the chains the same way either way — around 10% by weight at the optimum.",
+    "src": "https://en.wikipedia.org/wiki/Natural_rubber",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum",
+      "rubber"
+    ],
+    "out": "synthetic_rubber",
+    "why": "The category, not any one member: an artificial elastomer polymerised from petroleum monomers rather than tapped from a tree. Fritz Hofmann made the first in 1909; two thirds of US rubber is now synthetic.",
+    "src": "https://en.wikipedia.org/wiki/Synthetic_rubber",
+    "verified": true
+  },
+  {
+    "in": [
+      "petroleum"
+    ],
+    "verb": "smother",
+    "out": "carbon_black",
+    "why": "Carbon black is made on purpose: petroleum feedstock — fuel oil, cracking tar — burned in a deliberately limited supply of air. Unlike soot it has a huge surface area and negligible polycyclic aromatics.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_black",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal_tar"
+    ],
+    "verb": "smother",
+    "out": "carbon_black",
+    "why": "Coal tar is the other classic feedstock. Burn it in too little air and what you collect is near-pure carbon: world consumption was 13.2 million tonnes in 2015.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_black",
+    "verified": true
+  },
+  {
+    "in": [
+      "carbon_black",
+      "vulcanised_rubber"
+    ],
+    "out": "tire",
+    "why": "Carbon black is the reinforcing filler in tire rubber, and 70% of all carbon black made goes into tires. It is also the reason every tire is black.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_black",
+    "verified": true
+  },
+  {
+    "in": [
+      "synthetic_rubber",
+      "wheel"
+    ],
+    "out": "tire",
+    "why": "The tire is forced onto the wheel, bead into the channel between the rims. Most of the rubber is synthetic — styrene-butadiene copolymer alone is about half of it — alongside natural rubber, fabric and wire.",
+    "src": "https://en.wikipedia.org/wiki/Tire",
+    "verified": true
+  },
+  {
+    "in": [
+      "dicot",
+      "latex"
+    ],
+    "out": "rubber_tree",
+    "why": "Hevea brasiliensis, a eudicot of the spurge family. Its latex vessels spiral up the bark in a right-handed helix; harvesters cut across them just deep enough to bleed the tree without harming it.",
+    "src": "https://en.wikipedia.org/wiki/Hevea_brasiliensis",
+    "verified": true
+  },
+  {
+    "in": [
+      "halophyte",
+      "tree"
+    ],
+    "out": "mangrove",
+    "why": "Mangrove is not a taxon but a habit: salt-tolerant trees that convergent evolution produced separately in several unrelated families — 35 true species in 5 families. The salt tolerance is the definition, not the shore.",
+    "src": "https://en.wikipedia.org/wiki/Mangrove",
+    "verified": true
+  },
+  {
+    "in": [
+      "succulent",
+      "tree"
+    ],
+    "out": "baobab",
+    "why": "Adansonia is a stem succulent the size of a tree: the swollen trunk is water-storing tissue holding up to 120,000 litres, which is how it crosses a drought that would kill an ordinary tree.",
+    "src": "https://en.wikipedia.org/wiki/Adansonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "conifer",
+      "resin"
+    ],
+    "out": "pine",
+    "why": "Pinus is the conifer the world taps: turpentine and rosin are both got from its resin. Its needles grow bundled in fascicles, one to seven per sheath and usually two to five.",
+    "src": "https://en.wikipedia.org/wiki/Pine",
+    "verified": true
+  },
+  {
+    "in": [
+      "catkin",
+      "cutting"
+    ],
+    "out": "willow",
+    "why": "Salix, twice over: it flowers as catkins, male and female on separate trees, and it roots so readily that almost any cutting — or a broken branch left lying on wet ground — becomes a new tree.",
+    "src": "https://en.wikipedia.org/wiki/Willow",
+    "verified": true
+  },
+  {
+    "in": [
+      "anethole",
+      "tree"
+    ],
+    "out": "star_anise",
+    "why": "Illicium verum is the anethole tree. Aniseed and fennel are herbs that converged on the same molecule from unrelated families; only this one is an evergreen tree, and the spice is its whorl of six to eight boat-shaped follicles.",
+    "src": "https://en.wikipedia.org/wiki/Illicium_verum",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "thorn"
+    ],
+    "out": "durian",
+    "why": "Durio is named for its armour — Malay duri, thorn, plus -an — and the rind carries thorns sharp enough to draw blood on a fruit 30 cm long and up to 3 kg. The smell is separate chemistry: diethyl disulfide and relatives.",
+    "src": "https://en.wikipedia.org/wiki/Durian",
+    "verified": true
+  },
+  {
+    "in": [
+      "berry",
+      "tannin"
+    ],
+    "out": "persimmon",
+    "why": "Diospyros kaki is botanically a berry — one fleshy fruit from the ovary of a single flower — and its defining property is soluble tannin: astringent enough to pucker the mouth until ripening turns that tannin insoluble.",
+    "src": "https://en.wikipedia.org/wiki/Persimmon",
+    "verified": true
+  },
+  {
+    "in": [
+      "pollen",
+      "vine"
+    ],
+    "out": "kiwi",
+    "why": "Actinidia is dioecious: a vine is male or female and never both, so no female sets fruit unless pollen is carried in from a male. Orchards plant one male for every three to eight females.",
+    "src": "https://en.wikipedia.org/wiki/Kiwifruit",
+    "verified": true
+  },
+  {
+    "in": [
+      "drupe",
+      "oil"
+    ],
+    "out": "olive",
+    "why": "Olea europaea's drupe stores oil in its flesh where other fruit store sugar, which is why it is pressed rather than eaten — and why it is inedibly bitter with oleuropein until it is cured.",
+    "src": "https://en.wikipedia.org/wiki/Olive",
+    "verified": true
+  },
+  {
+    "in": [
+      "berry",
+      "vine"
+    ],
+    "out": "grape",
+    "why": "Vitis: botanically a berry, borne in clusters on a deciduous woody vine. Wine grapes are picked at about 24% sugar by weight, against roughly 15% for the table grapes juice is pressed from.",
+    "src": "https://en.wikipedia.org/wiki/Grape",
+    "verified": true
+  },
+  {
+    "in": [
+      "aerenchyma",
+      "grass"
+    ],
+    "out": "rice",
+    "why": "Oryza sativa survives flooding on plumbing, not luck: lysigenous aerenchyma forms in its roots even in air and increases when oxygen runs short, piping oxygen from shoot down to a drowned root tip.",
+    "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7284992/",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "sucrose"
+    ],
+    "out": "sugarcane",
+    "why": "Saccharum is a tall perennial grass that banks its sugar in the stalk instead of the seed: 12–16% of a mature cane stalk is soluble sugars, stored in the internodes, on C4 photosynthesis.",
+    "src": "https://en.wikipedia.org/wiki/Sugarcane",
+    "verified": true
+  },
+  {
+    "in": [
+      "monocot",
+      "xerophyte"
+    ],
+    "out": "agave",
+    "why": "Agave is a monocot built for drought rather than merely found in it: large succulent, xerophytic rosettes of fibre-packed leaves, each rosette flowering once and then dying.",
+    "src": "https://en.wikipedia.org/wiki/Agave",
     "verified": true
   }
 ]

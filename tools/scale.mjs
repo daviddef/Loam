@@ -155,6 +155,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* computing and plants waves, 3 Sep */
+          'bit', 'byte', 'hexadecimal', 'pixel',
           /* umbrella waves, 3 Sep */
           'protist', 'torsion',
           /* unblocking-nouns wave, 2 Sep */
@@ -174,6 +176,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* computing and plants waves, 3 Sep */
+          'logic_gate', 'not_gate', 'or_gate', 'and_gate', 'nand_gate', 'xor_gate', 'multiplexer', 'flip_flop', 'half_adder', 'adder', 'alu', 'register', 'cache', 'data_bus', 'clock_signal',
           /* completeness-audit wave, 2 Sep */
           'alveolus', 'seasoning',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
@@ -222,6 +226,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* computing and plants waves, 3 Sep */
+          'switch', 'relay', 'random_access_memory', 'read_only_memory', 'cpu', 'modem', 'carbon_black', 'isoprene', 'polyisoprene', 'resin', 'thorn', 'berry', 'aerenchyma',
           /* parasites wave, 3 Sep */
           'cysticercus', 'hydatid_cyst', 'trichuris_trichiura', 'strongyloides_stercoralis', 'fasciola_hepatica', 'paragonimus_westermani', 'echinococcus_granulosus', 'tsetse_fly', 'sandfly', 'black_fly', 'triatomine_bug',
           /* everyday objects, 3 Sep */
@@ -352,6 +358,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* computing and plants waves, 3 Sep */
+          'keyboard', 'punched_card', 'compiler', 'web_browser', 'server', 'ethernet', 'synthetic_rubber', 'tire',
           /* parasites wave, 3 Sep */
           'dracunculus_medinensis', 'onchocerca_volvulus', 'diphyllobothrium_latum',
           /* everyday objects, 3 Sep */
@@ -551,6 +559,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* computing and plants waves, 3 Sep */
+          'logic', 'algebra', 'boolean_algebra', 'truth_table', 'information_theory', 'moores_law', 'machine_code', 'assembly_language', 'programming_language', 'operating_system', 'file', 'filesystem', 'database', 'network_protocol', 'tcp', 'http', 'html', 'url', 'ip_address', 'domain_name_system', 'cipher', 'encryption', 'public_key', 'hash_function', 'digital_signature', 'prime_number', 'checksum', 'hamming_code', 'floating_point', 'ascii', 'unicode', 'instruction', 'computer_network', 'packet', 'jpeg', 'bitmap', 'font',
           /* parasites wave, 3 Sep */
           'taeniasis', 'cysticercosis', 'neurocysticercosis', 'ascariasis', 'hookworm_disease', 'trichuriasis', 'enterobiasis', 'strongyloidiasis', 'onchocerciasis', 'dracunculiasis', 'echinococcosis', 'fascioliasis', 'clonorchiasis', 'paragonimiasis', 'diphyllobothriasis', 'leishmaniasis', 'sleeping_sickness', 'chagas_disease', 'balantidiasis', 'trichomoniasis',
           /* everyday objects, 3 Sep */
@@ -749,6 +759,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* computing and plants waves, 3 Sep */
+          'jacquard_loom', 'tabulating_machine', 'turing_machine',
           /* everyday objects, 3 Sep */
           'truck', 'house', 'shop', 'road',
           'areca_palm', 'sauropod', 'pterosaur',
