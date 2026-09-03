@@ -30444,11 +30444,13 @@ def('receiver',     () => [P('M10 26 L50 26 L50 50 L10 50 Z', 'bs'),
                            ...[36, 42].map(y => S(`M34 ${y} L46 ${y}`, 'lo', 1.4)),
                            S('M40 26 L40 8', 'bs', 2.4),
                            ...[0, 1, 2].map(i => S(`M${44 + i * 4} ${6 + i * 3} Q${48 + i * 4} 12 ${44 + i * 4} ${18 + i * 3}`, 'gh', 1.2))]);
-def('tuner',        () => [C(30, 30, 18, 'bs'), ring('lo', 30, 30, 18, 2),
-                           ...[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(a =>
-                             ['g', a, 30, 30, [S('M30 14 L30 18', 'lo', 1.2)]]),
-                           S('M30 30 L42 20', 'ik', 2.6), C(30, 30, 3, 'ik'),   // only one signal builds up
-                           ...[0, 1].map(i => S(`M${48 + i * 4} ${22 + i * 2} Q${52 + i * 4} 30 ${48 + i * 4} ${38 - i * 2}`, 'gh', 1.2))]);
+def('tuner',        () => [P('M4 14 L56 14 L56 38 L4 38 Z', 'bs'),               // the lit dial window
+                           S('M8 33 L52 33', 'lo', 1.6),                          // the band, and the scale along it
+                           ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i =>
+                             S(`M${8 + i * 5.5} 33 L${8 + i * 5.5} ${i % 2 ? 28 : 24}`, 'lo', 1.2)),
+                           S('M35 16 L35 36', 'ik', 2.6),                         // one station, picked out of it
+                           C(30, 49, 8, 'lo'), ring('ik', 30, 49, 8, 1.6),
+                           S('M30 44 L30 49', 'ik', 1.6)]);                        // and the knob that moves it
 def('inductor',     () => [S('M4 30 L14 30', 'ik', 2.4), S('M46 30 L56 30', 'ik', 2.4),
                            ...[0, 1, 2, 3].map(i => S(`M${14 + i * 8} 30 Q${18 + i * 8} 16 ${22 + i * 8} 30`, 'bs', 3)),
                            S('M14 34 L46 34', 'lo', 2)]);                        // it resists a change
@@ -30475,14 +30477,20 @@ def('pier',         () => [P('M4 42 L56 42 L56 48 L4 48 Z', 'hi'),
                            P('M18 12 L42 12 L42 18 L18 18 Z', 'lo'),
                            P('M18 44 L42 44 L42 52 L18 52 Z', 'lo'),             // scour, not load, takes them
                            ...[[14,46],[46,46]].map(([x,y]) => S(`M${x} ${y} Q${x + 4} ${y + 3} ${x + 8} ${y}`, 'gh', 1.2))]);
-def('deck',         () => [P('M4 26 L56 26 L56 34 L4 34 Z', 'bs'),
-                           ...[12, 24, 36, 48].map(x => S(`M${x} 34 L${x} 46`, 'lo', 2.4)),
-                           S('M6 46 L54 46', 'lo', 2.4),
-                           ...[16, 32, 44].map(x => S(`M${x} 26 L${x} 20`, 'gh', 1.2))]);
-def('truss',        () => [S('M6 42 L54 42', 'bs', 3.4), S('M12 18 L48 18', 'bs', 3.4),
-                           ...[0, 1, 2, 3].map(i => [S(`M${6 + i * 12} 42 L${12 + i * 12} 18`, 'lo', 2.4),
-                             S(`M${12 + i * 12} 18 L${18 + i * 12} 42`, 'lo', 2.4)]).flat(),
-                           ...[[6,42],[54,42],[12,18],[48,18]].map(([x,y]) => C(x, y, 2, 'ik'))]);
+def('deck',         () => [P('M4 24 L56 24 L56 34 L4 34 Z', 'bs'),               // the roadway itself,
+                           P('M14 34 L22 34 L22 54 L14 54 Z', 'lo'),             // carried clear of the ground
+                           P('M38 34 L46 34 L46 54 L38 54 Z', 'lo'),             // on two piers, with the span
+                           //                                                       between them left as air: three
+                           //                                                       close-packed piers merged into
+                           //                                                       the slab and read as notches
+                           S('M8 16 L52 16', 'lo', 2.4),                          // and the rail along the edge
+                           ...[14, 30, 46].map(x => S(`M${x} 24 L${x} 16`, 'lo', 2.4))]);
+def('truss',        () => [P('M6 12 L54 12 L54 18 L6 18 Z', 'ik'),               // the two chords,
+                           P('M6 42 L54 42 L54 48 L6 48 Z', 'ik'),               // and the web that is the point
+                           ...[0, 1, 2, 3].map(i =>
+                             P(`M${6 + i * 12} 18 L${18 + i * 12} 18 L${12 + i * 12} 42 Z`, 'bs')),
+                           ...[0, 1, 2].map(i =>
+                             P(`M${12 + i * 12} 42 L${24 + i * 12} 42 L${18 + i * 12} 18 Z`, 'lo'))]);
 def('tunnel',       () => [P('M4 12 L56 12 L56 52 L4 52 Z', 'lo'),
                            ...[0, 1, 2].map(i =>
                              S(`M${14 + i * 4} 50 Q30 ${20 + i * 5} ${46 - i * 4} 50`, i ? 'gh' : 'bs', i ? 2 : 4)),
@@ -30515,11 +30523,14 @@ def('gate',         () => [P('M6 10 L20 10 L20 52 L6 52 Z', 'bs'),              
                            S('M20 26 Q30 12 40 26', 'bs', 4),
                            P('M22 26 L38 26 L38 52 L22 52 Z', 'lo'),
                            ...[30, 38, 46].map(y => S(`M22 ${y} L38 ${y}`, 'ik', 1.4))]);
-def('well',         () => [P('M18 24 L42 24 L42 52 L18 52 Z', 'bs'),
-                           E(30, 24, 12, 4, 'lo'),
-                           E(30, 26, 8, 2.6, 'hi'),                                // groundwater sits in pores
-                           S('M14 16 L46 16', 'lo', 2.4),
-                           S('M30 16 L30 24', 'ik', 1.4), P('M26 22 L34 22 L34 27 L26 27 Z', 'lo')]);
+def('well',         () => [P('M8 6 L52 6 L52 12 L8 12 Z', 'ik'),                 // the headframe, given enough
+                           P('M10 10 L15 10 L15 30 L10 30 Z', 'lo'),              // mass to survive the shelf —
+                           P('M45 10 L50 10 L50 30 L45 30 Z', 'lo'),              // a shaft and an ellipse alone
+                           S('M30 12 L30 16', 'ik', 1.4),                          // read as a barrel
+                           P('M25 16 L35 16 L34 24 L26 24 Z', 'ik'),
+                           P('M18 30 L42 30 L42 54 L18 54 Z', 'bs'),
+                           E(30, 30, 12, 4, 'lo'),
+                           E(30, 32, 8, 2.6, 'hi')]);                              // groundwater sits in pores
 
 /* ── cycle M: architecture, the port, the theatre ────────────────────────
    Arch, vault and buttress are three answers to the same problem, so each
@@ -40429,6 +40440,41 @@ if (malformed.length) {
 
 const drawn = elements.length - missing.length;
 console.log(`  ${drawn}/${elements.length} items drawn by hand, ${missing.length} on the family fallback`);
+
+/* A shape painted in the card's own colour is a hole, not a shape, and nothing
+ * looking at the drawing can tell — it simply is not there. mineral's `lo` was
+ * derived two Munsell value steps below its base, which for the workhorse soil
+ * chip landed exactly on the card: 735 drawings had at least one shape they
+ * never showed, and hadron lost 24 of its 27. palette.mjs now refuses to hand
+ * out a tint equal to the card, so this counts what got through anyway — a
+ * hard-coded hex, or a new surface that collides with an existing role. */
+{
+  const palette = JSON.parse(readFileSync(join(root, 'data/palette.json'), 'utf8'));
+  const card = palette.surfaces.panel.hex.toUpperCase();
+  const role = {};
+  for (const [k, v] of Object.entries(palette.categories)) {
+    role[k] = { bs: v.hex.toUpperCase(), hi: v.hi.hex.toUpperCase(), lo: v.lo.hex.toUpperCase() };
+  }
+  const paints = (sh, acc) => {
+    if (sh[0] === 'g') sh[4].forEach(x => paints(x, acc));
+    else acc.push(sh[0] === 'c' ? sh[4] : sh[0] === 'e' ? sh[5] : sh[2]);
+    return acc;
+  };
+  const blind = [];
+  for (const [id, d] of Object.entries({ ...out, ...bedOut })) {
+    const n = paints(['g', 0, 0, 0, d.s], []).filter(r =>
+      typeof r === 'string' &&
+      (r.toUpperCase() === card || (role[d.c] && role[d.c][r] === card))).length;
+    if (n) blind.push([id, n]);
+  }
+  if (blind.length) {
+    blind.sort((a, b) => b[1] - a[1]);
+    console.log(`\n  ${blind.length} drawing(s) paint a shape in the card colour and cannot show it:`);
+    for (const [id, n] of blind.slice(0, 12)) console.log(`    ${id} — ${n} shape(s)`);
+  } else {
+    console.log('  no shape is painted in the card colour');
+  }
+}
 
 const byCat = {};
 for (const [id, v] of Object.entries(out)) {

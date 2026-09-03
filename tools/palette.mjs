@@ -160,9 +160,10 @@ function build() {
    * chroma stays put where the book has that chip and steps down where it does
    * not — which is exactly what you do with the physical book in your hand.
    */
-  const tint = (key, notation, dV) => {
+  const tint = (key, notation, dV, forbid) => {
     const [hue, vc] = notation.split(' ');
     const [V, C] = vc.split('/').map(Number);
+    let collided = null;
     for (const [v, c] of [[V + dV, C], [V + dV, C - 2], [V + dV, C - 4],
                           [V + Math.sign(dV), C], [V + Math.sign(dV), C - 2]]) {
       if (v < 1 || v > 9 || c < 2) continue;
@@ -171,7 +172,16 @@ function build() {
       if (!e) continue;
       const col = munsellToSrgb(e);
       if (col.clipped) continue;
-      return { notation: n, hex: col.hex };
+      // A chip that comes out the same colour as the card is not a dark tint,
+      // it is a hole. mineral sits at 10YR 4/2 and the card is 10YR 2/2, so
+      // the ordinary two-step drop landed exactly on the background: 735
+      // drawings had at least one shape painted in it and could not be seen,
+      // and hadron lost 24 of its 27. Take the next chip on the ladder and
+      // record which one, rather than shipping an invisible role.
+      if (forbid && col.hex.toUpperCase() === forbid) { collided = n; continue; }
+      return collided
+        ? { notation: n, hex: col.hex, steppedFrom: collided, why: 'the usual chip is the card colour' }
+        : { notation: n, hex: col.hex };
     }
     warnings.push(`${key}: no ${dV > 0 ? 'lighter' : 'darker'} chip available on the ${hue} page`);
     return null;
@@ -189,14 +199,21 @@ function build() {
     surfaces: {},
   };
 
+  // Surfaces first, because a category tint that lands on the card colour is
+  // invisible on every card that carries it, and tint() cannot avoid the card
+  // without knowing what it is.
+  for (const [k, v] of Object.entries(SURFACES))   { const r = resolve(k, v); if (r) out.surfaces[k]   = r; }
+  const card = out.surfaces.panel?.hex.toUpperCase() ?? null;
+
   for (const [k, v] of Object.entries(CATEGORIES)) {
     const r = resolve(k, v);
     if (!r) continue;
-    r.hi = tint(k, v.notation, +2);
-    r.lo = tint(k, v.notation, -2);
+    r.hi = tint(k, v.notation, +2, card);
+    r.lo = tint(k, v.notation, -2, card);
+    if (r.lo?.steppedFrom) warnings.push(`${k}: lo moved off ${r.lo.steppedFrom} to ${r.lo.notation} — ${r.lo.why}`);
+    if (r.hi?.steppedFrom) warnings.push(`${k}: hi moved off ${r.hi.steppedFrom} to ${r.hi.notation} — ${r.hi.why}`);
     out.categories[k] = r;
   }
-  for (const [k, v] of Object.entries(SURFACES))   { const r = resolve(k, v); if (r) out.surfaces[k]   = r; }
 
   return { out, warnings };
 }
