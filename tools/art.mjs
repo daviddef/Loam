@@ -44182,6 +44182,40 @@ def('ayutthaya',    () => [S('M4 44 Q16 16 30 22 Q44 28 56 8', 'bs', 3),        
                           ...[26, 34, 42].map(x => P(`M${x - 4} 44 L${x - 3} 30 L${x} 20 L${x + 3} 30 L${x + 4} 44 Z`, 'bs')),
                           S('M4 52 L56 52', 'ik', 1.2)]);
 
+/* Places, batch 16 — 5 Sep. Baalbek is drawn as the block still in the quarry,
+   because that is the fact; the Aral Sea as two rivers turned away, because
+   nothing was done to the lake.                                             */
+def('baalbek',      () => [...[16, 26, 36].map(x => [P(`M${x - 3} 40 L${x - 3} 12 L${x + 3} 12 L${x + 3} 40 Z`, 'lo'),
+                                                     E(x, 12, 4.5, 2, 'bs')]).flat(),
+                          S('M10 10 L42 10', 'bs', 2.4),
+                          P('M4 44 L56 44 L56 56 L4 56 Z', 'gh'),
+                          P('M24 46 L54 46 L54 54 L24 54 Z', 'ik'),           // the one still lying in the quarry
+                          S('M24 50 L54 50', 'gh', 0.9)]);
+def('aral_sea',     () => [S('M6 34 Q26 26 30 20 Q34 26 54 34', 'gh', 2.4),   // the two rivers, turned away
+                          S('M18 30 L10 46', 'bs', 2.4), S('M42 30 L50 46', 'bs', 2.4),
+                          P('M20 36 Q30 32 40 36 Q44 44 30 48 Q16 44 20 36 Z', 'ik'),   // the outline it had
+                          P('M22 38 Q26 36 29 38 Q30 42 26 44 Q21 42 22 38 Z', 'lo'),   // and what is left
+                          ...granules('bs', 12, 44, [30, 40, 42, 48])]);
+def('sagrada_familia',()=>[...[14, 24, 36, 46].map((x, i) => P(`M${x - 4} 56 L${x - 2} ${26 - (i % 2) * 8} L${x} ${14 - (i % 2) * 8} L${x + 2} ${26 - (i % 2) * 8} L${x + 4} 56 Z`, 'lo')),
+                          S('M8 20 Q14 34 20 20', 'gh', 1.4),                 // the hanging chain, and its inversion
+                          S('M8 20 Q14 6 20 20', 'ik', 1.8),
+                          ...[0, 1, 2].map(i => C(30 + i * 8, 8, 1.4, 'hi'))]);
+def('hwaseong',     () => [P('M2 42 L58 42 L58 56 L2 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => P(`M${4 + i * 7} 42 L${4 + i * 7} 38 L${8 + i * 7} 38 L${8 + i * 7} 42 Z`, 'lo')),
+                          ...[0, 1, 2].map(i => S(`M4 ${46 + i * 4} L56 ${46 + i * 4}`, 'gh', 0.8)),   // brick courses
+                          C(30, 12, 5, 'bs'), S('M30 17 L30 30', 'ik', 1.4),  // the pulley that lifted them
+                          P('M26 30 L34 30 L34 36 L26 36 Z', 'hi'),
+                          S('M25 12 L35 12', 'ik', 1.6)]);
+def('sundarbans',   () => [P('M2 40 L58 40 L58 56 L2 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => S(`M${5 + i * 6.5} 40 L${5 + i * 6.5} ${32 + (i % 3) * 3}`, 'ik', 1.6)),  // the snorkels
+                          ...[12, 30, 48].map(x => [S(`M${x} 40 L${x} 20`, 'bs', 2.4), C(x, 14, 8, 'gh')]).flat(),
+                          wave('bs', 52, 1.6, 56)]);
+def('cueva_de_las_manos',()=>[P('M2 8 L58 8 L58 56 L2 56 Z', 'lo'),
+                          ...[[12, 22], [26, 18], [40, 24], [50, 20], [18, 40], [34, 42], [48, 40]].map(([x, y]) =>
+                            P(`M${x - 5} ${y + 8} L${x - 5} ${y} L${x - 3} ${y - 4} L${x - 1} ${y} L${x + 1} ${y - 5} ` +
+                              `L${x + 3} ${y} L${x + 5} ${y - 3} L${x + 5} ${y + 8} Z`, 'gh')),
+                          S('M4 30 L14 34', 'ik', 1.4)]);                     // the pipe it was blown through
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

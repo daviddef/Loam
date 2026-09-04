@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 16, 5 Sep. columns and towers, and a painted panel of hands */
+    'baalbek', 'sagrada_familia', 'cueva_de_las_manos',
     /* places batch 15, 5 Sep. a mosque 8 m square, a caravanserai of 31 rooms, a painted panel */
     'larabanga_mosque', 'tash_rabat', 'kakadu_rock_art',
     /* places batch 14, 5 Sep. spires 157 m, a nave, a granite rotunda */
@@ -1387,6 +1389,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 16, 5 Sep. 5.74 km of wall */
+    'hwaseong',
     /* places batch 14, 5 Sep. falls 2.7 km wide and 979 m tall */
     'iguazu_falls', 'angel_falls',
     /* places batch 11, 5 Sep. 3,403 m of volcano, and changing */
@@ -1579,6 +1583,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 16, 5 Sep. a lake of 68,000 km2 and a forest of 10,277 */
+    'aral_sea', 'sundarbans',
           /* places batch 10, 4 Sep. 117 km coast to coast */
           'hadrians_wall',
           /* places batch 1 — the Senj worked example, 4 Sep. a 145 km range */
