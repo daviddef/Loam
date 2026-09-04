@@ -761,6 +761,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* places batch 6, 5 Sep. two runestones, one of them about 2.5 m */
+    'jelling_stones',
     /* homonyms batch 2, 5 Sep. a shape, drawn at the size of one you would hold */
     'cone_solid',
     /* the wave homonym, 5 Sep. an idea; drawn at the scale of a wave you can point at */
@@ -1080,6 +1082,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 6, 5 Sep. temple spires and cave faces, tens of metres */
+    'longmen_grottoes', 'ellora_caves', 'prambanan',
     /* places batch 5, 5 Sep. pyramids 6-30 m; a ziggurat 64 m by 45 m at the base */
     'meroe_pyramids', 'ziggurat_of_ur',
           /* places batch 31, 4 Sep */
@@ -1349,6 +1353,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 6, 5 Sep. a city on the altiplano; earthworks measured in thousands of km */
+    'tiwanaku', 'benin_walls',
     /* places batch 5, 5 Sep. terraces climbing a whole valley side */
     'banaue_terraces',
           /* places batch 34, 5 Sep */

@@ -43806,6 +43806,41 @@ def('cone_solid',   () => [P('M30 10 L48 44 L12 44 Z', 'lo'),
                           ...[0, 1, 2, 3].map(i => S(`M30 10 L${16 + i * 9} ${44 + (i === 1 || i === 2 ? 4 : 0)}`, 'gh', 0.9)),
                           S('M30 10 L30 44', 'ik', 1)]);                      // ruled by straight lines
 
+/* Places, batch 6 — 5 Sep. Benin is drawn as a section through ditch and bank
+   rather than as a wall, because that is what it is; Ellora is drawn as a
+   temple standing in a pit, because nothing was added to make it.           */
+def('benin_walls',  () => [P('M4 30 L18 30 L26 50 L34 50 L42 30 L56 30 L56 54 L4 54 Z', 'lo'),
+                          P('M14 30 L18 14 L24 30 Z', 'hi'),                  // the spoil, banked behind
+                          P('M36 30 L42 14 L46 30 Z', 'hi'),
+                          S('M26 50 L34 50', 'ik', 1.6),
+                          S('M4 30 L14 30', 'gh', 1), S('M46 30 L56 30', 'gh', 1)]);
+def('tiwanaku',     () => [...[[10, 40], [24, 40], [38, 40]].map(([x, y]) => P(`M${x} ${y} L${x + 12} ${y} L${x + 12} ${y + 12} L${x} ${y + 12} Z`, 'lo')),
+                          ...[[17, 28], [31, 28]].map(([x, y]) => P(`M${x} ${y} L${x + 12} ${y} L${x + 12} ${y + 12} L${x} ${y + 12} Z`, 'lo')),
+                          P('M22 10 L38 10 L38 26 L22 26 Z', 'bs'),           // the gateway, cut from one block
+                          P('M27 16 L33 16 L33 26 L27 26 Z', 'gh'),
+                          S('M4 52 L56 52', 'ik', 1.4)]);
+def('longmen_grottoes',()=>[P('M4 6 L26 6 L26 54 L4 54 Z', 'lo'),             // the cliff, both sides of the river
+                          P('M38 6 L60 6 L60 54 L38 54 Z', 'lo'),
+                          ...[[16, 18], [16, 34], [48, 22], [48, 40]].map(([x, y]) => C(x, y, 4.2, 'gh')),
+                          P('M28 14 Q32 6 36 14 L36 44 Q32 50 28 44 Z', 'hi'),  // the one that is 17 m
+                          C(32, 16, 3, 'bs'),
+                          wave('ik', 56, 2, 30)]);
+def('ellora_caves', () => [P('M4 8 L56 8 L56 54 L4 54 Z', 'lo'),              // the rock
+                          P('M12 16 L48 16 L48 52 L12 52 Z', 'gh'),           // the pit cut into it
+                          P('M22 52 L22 26 L30 18 L38 26 L38 52 Z', 'hi'),    // what was left standing
+                          S('M30 18 L30 52', 'ik', 1),
+                          S('M12 16 L48 16', 'bs', 1.6)]);
+def('prambanan',    () => [P('M24 54 L24 26 L30 8 L36 26 L36 54 Z', 'lo'),
+                          P('M8 54 L8 34 L13 22 L18 34 L18 54 Z', 'bs'),
+                          P('M42 54 L42 34 L47 22 L52 34 L52 54 Z', 'bs'),
+                          ...[0, 1, 2, 3].map(i => S(`M24 ${30 + i * 6} L36 ${30 + i * 6}`, 'gh', 0.9)),  // the interlocking courses
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+def('jelling_stones',()=>[P('M16 54 L14 24 Q30 8 46 24 L44 54 Z', 'lo'),
+                          S('M22 22 Q30 30 38 22', 'hi', 1.6),                // the serpent
+                          S('M38 22 Q42 32 34 36 Q26 40 30 48', 'hi', 1.6),
+                          S('M30 16 L30 30', 'ik', 1.8), S('M25 21 L35 21', 'ik', 1.8),  // and the cross
+                          ...[0, 1, 2].map(i => S(`M20 ${40 + i * 4} L40 ${40 + i * 4}`, 'gh', 0.9))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
