@@ -37482,7 +37482,7 @@
     ],
     "out": "string",
     "why": "String, more precisely 'twine', is built the same way as thread or rope, just one step further: strands are twisted, then plied together in the opposite direction from their own twist — exactly what stops it unravelling.",
-    "src": "https://en.wikipedia.org/wiki/Twine"
+    "src": "https://en.wikipedia.org/wiki/Rope"
   },
   {
     "in": [
@@ -94642,5 +94642,35 @@
     "why": "A sound that stands for a thing is not language yet. Language is that plus a rule for combining them, so a finite vocabulary makes an unlimited number of sentences — including ones nobody has ever said before, which is the part animals do not do.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Language"
+  },
+  {
+    "in": [
+      "phosphate",
+      "bone"
+    ],
+    "out": "hydroxyapatite",
+    "why": "Two thirds of bone by weight is this one mineral, grown as plates a few nanometres thick between the collagen fibres. Mineral alone shatters and collagen alone bends; together they do neither, which is the whole trick of bone.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hydroxyapatite"
+  },
+  {
+    "in": [
+      "reptile",
+      "desert"
+    ],
+    "out": "lizard",
+    "why": "A scaly skin that loses almost no water, and a metabolism that costs about a tenth of a mammal's. Both are what let a lizard live where there is very little to eat and nothing to drink.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lizard"
+  },
+  {
+    "in": [
+      "venom",
+      "gland"
+    ],
+    "out": "snake",
+    "why": "Snake venom is modified saliva, made in a gland that is a modified salivary gland, and delivered through a tooth with a groove or a tube in it. Every part of the apparatus is an ordinary mouth part doing something else.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Snake_venom"
   }
 ]
