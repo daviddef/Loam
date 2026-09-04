@@ -132,6 +132,20 @@ const SURFACES = {
   inkQuiet: { notation: '10YR 6/2', note: 'secondary text' },
   paper:    { notation: '10YR 9/2', note: 'the light theme ground' },
   paperInk: { notation: '10YR 2/2', note: 'ink on paper — the light theme text' },
+  /* The light theme's raised surface, hairline and secondary text. These were
+   * hand-picked hexes in the guide's stylesheet until a contrast measurement
+   * put its 12px type at 3.75:1 — under AA — which is exactly what happens when
+   * a colour is eyeballed instead of measured. All four are the same 10YR page
+   * as the paper they sit on, stepped by value, so they read as one family. */
+  paperPanel:  { notation: '10YR 8/2', note: 'raised surface on paper' },
+  paperRule:   { notation: '10YR 7/2', note: 'hairlines and dividers on paper' },
+  paperQuiet:  { notation: '10YR 4/2', note: 'secondary text on paper' },
+  /* The accent is 5YR 6/6, which is a value-6 chip: it carries an interface
+   * state beautifully on the dark ground and falls to 2.37:1 as text on paper.
+   * Two steps down the same hue page gives a chip that reads as the same colour
+   * and clears AA on the light ground. */
+  accentInk:   { notation: '5YR 4/6', note: 'the accent as text on paper — same hue page, two values down' },
+  paperQuiet2: { notation: '10YR 3/2', note: 'secondary text on the raised surface — one step darker, because the panel is one step darker' },
   // The interface accent: hover, focus, selection, the current thing. Warm, but
   // several steps down in chroma from `discovery`, so the two never compete.
   accent:   { notation: '5YR 6/6',  note: 'interface accent — hover, focus, selection' },

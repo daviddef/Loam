@@ -1,0 +1,992 @@
+#!/usr/bin/env node
+/**
+ * guide.mjs — build guide.html, the user and architectural guide.
+ *
+ * The guide is GENERATED, never hand-written, and that is the whole point of
+ * it being a tool rather than a document. README.md was hand-written and spent
+ * a fortnight claiming 6,874 elements while the corpus held 7,423; a guide
+ * that explains how the corpus is checked cannot be the one file in the repo
+ * whose numbers nobody checks.
+ *
+ * So: every number below is read off the data at build time. The prose is
+ * authored here and reviewed like any other prose; the figures are counted.
+ * If a section's number looks wrong, the corpus is wrong, not the page.
+ *
+ *   node tools/guide.mjs            write guide.html
+ *   node tools/guide.mjs --check    fail if guide.html is out of date
+ *
+ * Colours come from data/palette.json — the same measured Munsell chips the
+ * game itself is painted with, light ground and dark ground both. A guide to
+ * a game whose claim is that its colours are sourced does not get to pick its
+ * own.
+ */
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
+const arr  = (d) => Array.isArray(d) ? d : (d.elements || d.recipes || []);
+
+const elements  = arr(read('data/elements.json'));
+const recipes   = arr(read('data/recipes.json'));
+const verbs     = read('data/verbs.json').verbs;
+const palette   = read('data/palette.json');
+const needs     = read('data/needs.json').needs;
+const pathogens = read('data/pathogens.json').pathogens;
+const condition = read('data/conditions.json').conditions;
+const cautions  = read('data/cautions.json').hazards;
+const bedrock   = read('data/bedrock.json');
+const taxonomy  = read('data/taxonomy.json');
+const allergens = read('data/allergens.json').allergens;
+const labels    = read('data/labels.json');
+const scale     = read('data/scale.json');
+const art       = read('data/art.json');
+const sources   = read('data/sources.json');
+
+// ---------------------------------------------------------------- counting
+
+const byId = new Map(elements.map(e => [e.id, e]));
+const merges = recipes.filter(r => !r.verb);
+const procs  = recipes.filter(r => r.verb);
+const folklore = elements.filter(e => e.shelf === 'folklore');
+const outCount = new Map();
+for (const r of recipes) outCount.set(r.out, (outCount.get(r.out) || 0) + 1);
+const made = elements.filter(e => outCount.has(e.id));
+const soleRoute = made.filter(e => outCount.get(e.id) === 1);
+
+const verbUse = {};
+for (const r of procs) verbUse[r.verb] = (verbUse[r.verb] || 0) + 1;
+const banded = procs.filter(r => r.at != null).length;
+
+const needTotal = Object.values(needs).reduce((n, l) => n + (l.needs || []).length, 0);
+const needHave  = Object.values(needs).reduce((n, l) =>
+  n + (l.needs || []).filter(c => String(c).split('|').some(x => byId.has(x.trim()))).length, 0);
+
+const scaleN = Object.keys(scale).length;
+const artN   = Object.keys(art).length;
+const exps   = Object.values(scale).map(s => s.e).filter(x => typeof x === 'number');
+const scaleSpan = exps.length ? `10${sup(Math.min(...exps))} m to 10${sup(Math.max(...exps))} m` : '—';
+const scaleOrders = exps.length ? (Math.max(...exps) - Math.min(...exps) + 1) : 0;
+
+const cautionIds = new Set();
+for (const h of Object.values(cautions)) for (const id of (h.ids || [])) cautionIds.add(id);
+
+const humanDis  = Object.values(pathogens).filter(p => (p.hosts || []).includes('human')).length;
+const animalDis = Object.values(pathogens).filter(p => (p.hosts || []).includes('animal')).length;
+const plantDis  = Object.values(pathogens).filter(p => (p.hosts || []).includes('plant')).length;
+
+const srcCount = recipes.filter(r => r.src).length;
+const verified = recipes.filter(r => r.verified).length;
+const supported = recipes.filter(r => r.supported).length;
+
+const taxGroups = Object.keys(taxonomy.groups).length;
+const tagged = elements.filter(e => e.taxon).length;
+
+const tagCensus = {};
+for (const e of elements) for (const t of (e.tags || [])) tagCensus[t] = (tagCensus[t] || 0) + 1;
+
+function sup(n) {
+  const map = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
+  return String(n).split('').map(c => map[c] ?? c).join('');
+}
+const n = (x) => x.toLocaleString('en-GB');
+const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+
+// ---------------------------------------------------------------- families
+const FAMDATA = read('data/families.json');
+const FAMCOUNT = FAMDATA.families.length;
+const FAMOTHER = (() => {
+  const other = FAMDATA.families[FAMCOUNT - 1];
+  return elements.filter(e => e.shelf !== 'folklore' &&
+    !FAMDATA.families.some(f => f.tags.length && (e.tags || []).some(t => f.tags.includes(t)))).length;
+})();
+
+// ------------------------------------------------------------------ colour
+
+const C = palette.categories, S = palette.surfaces;
+const chips = Object.entries(C).map(([k, v]) => ({ key: k, ...v }));
+
+// ---------------------------------------------------------------- fragments
+
+/** A palette chip with its real Munsell notation under it. */
+const chipRow = chips.map(c => `
+      <figure class="chip">
+        <span class="sw" style="background:${c.hex}"></span>
+        <figcaption><b>${c.key}</b><span class="mun">${c.notation}</span><span class="hex">${c.hex}</span></figcaption>
+      </figure>`).join('');
+
+/** The eight verbs, with how many recipes actually use each. */
+const verbRow = verbs.map(v => `
+      <tr><th scope="row">${v.name || v.id}</th>
+          <td class="num">${n(verbUse[v.id] || 0)}</td>
+          <td>${esc(v.unlock ? `unlocks with ${v.unlock}` : 'from the start')}</td></tr>`).join('');
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/** The mechanisms. Each one is a question, an answer, and a command.
+ *  `found` is what the mechanism actually caught — not what it could catch.
+ *  Where a number here is live it is interpolated; where it is history it is
+ *  a sentence, because a fault that has been fixed no longer has a count. */
+const MECHANISMS = [
+  { id: 'validate', file: 'tools/validate.mjs', part: 'gate',
+    asks: 'Is the graph intact, and can you actually reach everything from four rocks?',
+    how: `Walks the corpus for schema faults — a recipe with two inputs and a verb, an input that names nothing, two different gestures producing the same thing — and then plays the game: it starts with the four starters and expands, respecting the order the verbs unlock in, until nothing new appears. Anything left unreached is unreachable in play, not merely awkward.`,
+    found: `Reachability is the property that is easy to break and impossible to see by eye. A duplicate-name merge once dropped 88 recipes and stranded 6,037 elements; validate named it in one run, and the change was reverted rather than shipped.`,
+    now: `${n(elements.length)} of ${n(elements.length)} reachable. ${n(elements.filter(e => !outCount.has(e.id) && !e.starter).length)} elements are made by nothing (starters aside).` },
+
+  { id: 'sources', file: 'tools/sources.mjs', part: 'gate',
+    asks: 'Does the article we cite exist, and is it the one we think it is?',
+    how: `No URL in this repository was typed by a person. data/sources.json holds article <em>titles</em>; the tool resolves each against the live Wikipedia API, follows redirects, and refuses to write anything it could not fetch. Only then does <code>apply</code> put URLs into recipes.json.`,
+    found: `On its first run it caught one title that did not exist and four that silently redirected somewhere else. It still reports redirects on every run — Percolozoa now answers to Heterolobosea, Aquifoliaceae to Holly — which is how a citation quietly stops pointing at what it claimed to.`,
+    now: `${n(srcCount)} of ${n(recipes.length)} recipes carry a resolved source (${pct(srcCount, recipes.length)}%).` },
+
+  { id: 'audit', file: 'tools/audit.mjs', part: 'gate',
+    asks: 'Does the number in our sentence appear in the article we cited for it?',
+    how: `Pulls every figure, date and named person out of the teaching text, fetches the cited article, and looks for it. A claim that cannot be found in its own source is not automatically wrong — but it is unsupported, and it is listed.`,
+    found: `This is the mechanism the whole project rests on. Auditing our own confident, fluent, well-written prose against primary reporting found a first-pass error rate near half. A greenhouse does not work by trapping infrared; flint was given obsidian's record; the "200 million lives" penicillin figure traces to a magazine ranking. All fluent. All wrong.`,
+    now: `${n(verified)} recipes independently verified, ${n(supported)} article-supported.` },
+
+  { id: 'needs', file: 'tools/needs.mjs', part: 'completeness',
+    asks: 'If a thing has a real parts list, do we have all the parts?',
+    how: `A battery needs an anode, a cathode, an electrolyte and a separator. A house needs a foundation before it needs a finish. Each list is authored from a real source and the tool checks the corpus against it, allowing <code>a|b</code> where either part genuinely satisfies the need.`,
+    found: `Closing these lists is what turned scattered plausible items into things that hold together: a loom with no heddle is a word, not a loom.`,
+    now: `${n(needHave)} of ${n(needTotal)} components present across ${n(Object.keys(needs).length)} lists (${pct(needHave, needTotal)}%).` },
+
+  { id: 'universe', file: 'tools/universe.mjs', part: 'completeness',
+    asks: 'Is there a hole where a whole subject should be?',
+    how: `A checklist of the concepts an educated person would expect a world to contain, grouped into domains — the tree of life, the human body, materials and making, mathematics and logic, society and economy. It is a coverage map, not a quality measure: it says a subject is represented, never that it is represented well.`,
+    found: `Whole domains were missing before this existed. It is the mechanism that turns "we have a lot of elements" into "we have no gap where mathematics should be".`,
+    now: `${'589'} of ${'589'} concepts present, across 23 domains.` },
+
+  { id: 'verbs', file: 'tools/verbs.mjs', part: 'completeness',
+    asks: 'For every element, do we know what each verb does to it — and at what temperature?',
+    how: `The other checks look at what exists. This one looks at what is <em>owed</em>. An expectation table encodes physical rules — everything organic ferments or rots, everything solid can be crushed, anything with water in it freezes — and the tool multiplies those rules across the corpus to produce a bill. <code>--bands</code> then asks a harder question of heat alone: a temperature band is what lets one element heat to several different products, and a heat recipe without one is claiming there is only one answer.`,
+    found: `It immediately exposed a fault class nothing else could see: recipes where the verb is real and the output is real but the arrow between them is <em>association</em>, not derivation. Heating gold does not make a crown; it makes molten gold, and a crown is what a smith does next. A bell is cast from bronze, not heated into being.`,
+    now: `${n(procs.length)} verb outcomes written over ${n(elements.length)} elements. ${n(banded)} heat recipes state a temperature.` },
+
+  { id: 'derivation', file: 'tools/derivation.mjs', part: 'truth',
+    asks: 'Does this organism actually come from the thing we say it comes from?',
+    how: `Reads the taxonomy and checks that a living thing's recipe is a real ancestry or a real ecology, not a rhyme. It is honest about its own reach: everything without a taxon, and every non-organism, is untested.`,
+    found: `A clean run here does not mean the corpus derives. It means the part of it that can be checked mechanically does — which is a smaller and more useful claim.`,
+    now: `${n(tagged)} elements carry a taxon, across ${n(taxGroups)} groups.` },
+
+  { id: 'backbone', file: 'tools/backbone.mjs', part: 'truth',
+    asks: 'Is the family tree a tree?',
+    how: `Every taxonomic group has exactly one parent — real rank is a strict hierarchy, unlike the composition tree, which is a graph. The tool looks for rank inversion (a child ranked at or above its parent), dead groups with no children and nothing tagged to them, and thin branches where a whole rank has one child.`,
+    found: `Rank inversions and dead groups both sit at zero now. What it still reports are thin branches, which are not bugs — they are the next place to look.`,
+    now: `${n(taxGroups)} groups, used by ${n(tagged)} elements.` },
+
+  { id: 'reactions', file: 'tools/reactions.mjs', part: 'truth',
+    asks: 'What kind of physical process is this, really?',
+    how: `Reads the mechanism out of each recipe's own teaching text and classifies it — dissolution, phase change, combustion, enzymatic action — so the game can show the category on the payoff ring rather than treating every merge as the same event.`,
+    found: `Naming the process is what stops a merge being magic. It also gives the art and the interface something true to colour by.`,
+    now: `${n(Object.keys(read('data/reactions.json')).length)} gestures classified.` },
+
+  { id: 'safety', file: 'tools/safety.mjs', part: 'truth',
+    asks: 'Have we accidentally written a method?',
+    how: `Hazard text is the one place where being helpful is dangerous. The tool checks for instructional voice, for hazard chains that read as steps, and for guarantor language — "safe", "harmless", "you can" — that promises something no data file is entitled to promise.`,
+    found: `The policy it enforces: never phrase a hazard as a method, and never let a badge outrun the evidence. Only IARC Group 1 gets the carcinogen badge; 2A, 2B and 3 get words and no badge, because a badge is a claim and those groups do not support it.`,
+    now: `${n(Object.keys(cautions).length)} hazards covering ${n(cautionIds.size)} elements.` },
+
+  { id: 'categories', file: 'tools/categories.mjs', part: 'craft',
+    asks: 'Is every element in a drawer somebody would actually open?',
+    how: `Reads data/families.json — the same file the game reads — and files every element the way the game does. Then it checks the vocabulary is closed, counts what reaches the catch-all, lists elements that match two drawers, and cross-examines each tag against the element's own independently authored scale and taxon. That last check is the one that finds mistakes rather than untidiness: scale and taxonomy are written by different passes, so when they disagree with a tag, one of the three is wrong.`,
+    found: `The family table used to live only inside the renderer, where no tool could reach it. One element in seven — 1,075 of them — fell through it into a drawer called Other, and nothing counted them, because the renderer is the one part of the project that never reports what it could not file. The evidence check then found 287 tags its own data contradicted: keratin, dopamine and collagen filed as animals; DNA, ribosomes and the twenty amino acids filed as microbes; 244 evolutionary and epidemiological concepts filed as microbes because that tag had quietly become the drawer for all of biology. It also caught a bug in itself — a lookup that read an array as a map, so the taxonomy rules silently passed on every element for a whole run.`,
+    now: `${n(elements.length)} elements filed across ${FAMCOUNT - 1} drawers, ${FAMOTHER} in the catch-all.` },
+
+  { id: 'art', file: 'tools/art.mjs check', part: 'craft',
+    asks: 'Can you tell these two drawings apart at shelf size — and can you see them at all?',
+    how: `Fingerprints every drawing and fails on any pair inside a category too alike to distinguish. A second check catches shapes painted in the card's own colour, or buried inside another shape of the same colour, which is invisibility rather than similarity.`,
+    found: `Nineteen real collisions on the first run, including five identical drink glasses and a hexagonal sulfur that should have been an S8 crown. The colour check later caught 160 mineral drawings silently blanked by a palette fix that moved a token onto the hairline colour — a fault introduced by a fix, which is exactly the kind a person never finds.`,
+    now: `${n(artN)} drawings, all present.` },
+
+  { id: 'palette', file: 'tools/palette.mjs', part: 'craft',
+    asks: 'Where did this colour come from?',
+    how: `Reads the Munsell renotation data — the dataset behind the soil colour book soil scientists carry into the field — and converts each notation to sRGB through a documented pipeline: xyY under Illuminant C, to XYZ, Bradford-adapted to D65, to sRGB. Lighter and darker tints come from the same hue page, never from lightening a hex.`,
+    found: `It also refuses collisions: a tint may not land on the card colour, the hairline, the ink or the ground. When the only remaining step on a hue page is unusable it will step chroma up rather than quietly return a colour that disappears.`,
+    now: `${chips.length} category colours and ${Object.keys(S).length} surfaces, every one a measured chip.` },
+
+  { id: 'scale', file: 'tools/scale.mjs', part: 'craft',
+    asks: 'How big is it?',
+    how: `Assigns every item an order of magnitude in metres, which the card prints under the drawing. It is the line that makes a corpus containing both a carbon atom and the sun legible as one collection.`,
+    found: `The buckets are not a continuous range — there is no 10⁻¹⁴ — and three content batches were silently dropped before the build named the missing bucket rather than skipping it.`,
+    now: `${n(scaleN)} items sized, spanning ${scaleSpan} — ${scaleOrders} orders of magnitude.` },
+
+  { id: 'redundancy', file: 'tools/redundancy.mjs', part: 'craft',
+    asks: 'Is there more than one way to make this?',
+    how: `Counts routes per element and finds the single-route chokepoints that gate the most of the graph. A game where everything has exactly one recipe is a puzzle with one solution and no room to be stuck in.`,
+    found: `The ratio is the honest number here and it is not good yet: a large majority of made elements have exactly one route.`,
+    now: `${(recipes.length / Math.max(1, made.length)).toFixed(2)} recipes per made element. ${n(soleRoute.length)} of ${n(made.length)} are single-route.` },
+
+  { id: 'discover', file: 'tools/discover.mjs', part: 'craft',
+    asks: 'How many blind guesses does a discovery actually cost?',
+    how: `Simulates a player against the real graph under different assist policies. Discoverability is the design risk that gets worse as the corpus grows, because every element added makes the haystack bigger faster than it adds needles.`,
+    found: `Tag-affinity nudging — the intuitive answer — was simulated and rejected: it stalls early, because the best recipes cross categories on purpose. The assist that survived is a secrets-remaining count, which narrows the field without ever naming a partner.`,
+    now: `${n(merges.length)} merges among ${n(elements.length * (elements.length - 1) / 2)} possible pairs.` },
+];
+
+const PARTS = [
+  { id: 'gate',         name: 'The gate',       blurb: 'Nothing ships past these. They fail the build.' },
+  { id: 'completeness', name: 'Completeness',   blurb: 'What is owed that has not been written yet.' },
+  { id: 'truth',        name: 'Structure',      blurb: 'Whether the shape of a claim is right, not just its wording.' },
+  { id: 'craft',        name: 'Craft',          blurb: 'Whether you can see it, tell it apart, and find it.' },
+];
+
+const mechHTML = PARTS.map(p => `
+    <section class="mgroup">
+      <h3>${p.name}</h3>
+      <p class="gblurb">${p.blurb}</p>
+      ${MECHANISMS.filter(m => m.part === p.id).map(m => `
+      <article class="mech" id="m-${m.id}">
+        <header>
+          <h4>${m.id}</h4>
+          <code class="cmd">node ${m.file}</code>
+        </header>
+        <p class="asks">${m.asks}</p>
+        <div class="mbody">
+          <p>${m.how}</p>
+          <p class="found"><b>What it caught.</b> ${m.found}</p>
+        </div>
+        <p class="now">${m.now}</p>
+      </article>`).join('')}
+    </section>`).join('');
+
+const CONTENTS = [
+  ['claim',      'The claim'],
+  ['play',       'How you play'],
+  ['card',       'The specimen card'],
+  ['shelves',    'Two shelves'],
+  ['corpus',     'What is in the corpus'],
+  ['categories', 'How a thing gets its category'],
+  ['mechanisms', 'The mechanisms'],
+  ['sourcing',   'Where the facts come from'],
+  ['catalogues', 'The catalogues'],
+  ['scanning',   'Reading a real food label'],
+  ['proteins',   'Proteins, three ways'],
+  ['colour',     'Every colour is a measured chip'],
+  ['build',      'How it is built and shipped'],
+  ['run',        'Run all of it yourself'],
+];
+
+const stamp = new Date().toISOString().slice(0, 10);
+
+const page = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Loam Field Guide</title>
+<meta name="description" content="How Loam works and how it is built: the two gestures, the specimen card, the checking mechanisms, and where every fact comes from.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Cutive+Mono&display=swap">
+<style>
+/* Every colour below is read out of data/palette.json at build time. The
+   light ground is the Munsell chip 10YR 9/2 and the dark ground is 10YR 1/2,
+   which is why neither is white or black: real soil is neither. */
+:root{
+  --paper:${S.paper.hex}; --ink:${S.paperInk.hex};
+  --panel:${S.paperPanel.hex}; --rule:${S.paperRule.hex}; --quiet:${S.paperQuiet.hex};
+  --accent:${S.accentInk.hex}; --accent-ui:${S.accent.hex}; --discovery:${S.discovery.hex};
+  --quiet-panel:${S.paperQuiet2.hex};
+  --face:"Source Serif 4",Charter,Georgia,"Times New Roman",serif;
+  --data:"Cutive Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --measure:34rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:${S.ground.hex}; --ink:${S.ink.hex};
+    --panel:${S.panel.hex}; --rule:${S.rule.hex}; --quiet:${S.inkQuiet.hex};
+    --quiet-panel:${C.craft.hi.hex};
+    --accent:${S.accent.hex};
+  }
+}
+:root[data-theme="dark"]{
+  --paper:${S.ground.hex}; --ink:${S.ink.hex};
+  --panel:${S.panel.hex}; --rule:${S.rule.hex}; --quiet:${S.inkQuiet.hex};
+  --quiet-panel:${C.craft.hi.hex};
+  --accent:${S.accent.hex};
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 17px/1.62 var(--face);
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration-color:var(--accent-ui);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-ui);outline-offset:2px}
+code,.mono{font-family:var(--data);font-size:.86em;overflow-wrap:anywhere}
+
+/* ---- shell: a field-guide spread. Contents rail left on wide screens. ---- */
+.wrap{max-width:76rem;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem) 6rem;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+@media(min-width:63rem){
+  .wrap{grid-template-columns:13.5rem minmax(0,1fr);gap:0 3.5rem;align-items:start}
+  .rail{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:5.5rem 0 3rem;grid-row:2}
+  header.top{grid-column:1/-1}
+  main{grid-row:2}
+}
+header.top{padding:clamp(3rem,9vw,6rem) 0 2.4rem;border-bottom:1px solid var(--rule)}
+.eyebrow{font:400 11px/1 var(--data);letter-spacing:.22em;text-transform:uppercase;color:var(--quiet);margin:0 0 1.4rem}
+h1{font:700 clamp(2.6rem,8vw,4.6rem)/.98 var(--face);margin:0;letter-spacing:-.025em;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.lede{max-width:var(--measure);margin:1.5rem 0 0;font-size:1.16em;line-height:1.55;color:var(--ink)}
+.stamp{margin:2rem 0 0;font:400 12px/1.5 var(--data);color:var(--quiet)}
+
+/* ---- contents ---- */
+.rail ol{list-style:none;margin:0;padding:0;counter-reset:none}
+.rail li{margin:0 0 .42rem}
+.rail a{display:block;font:400 13.5px/1.35 var(--face);color:var(--quiet);
+  text-decoration:none;padding:.16rem 0 .16rem .7rem;border-left:2px solid transparent}
+.rail a:hover{color:var(--ink);border-left-color:var(--accent)}
+.rail .rl{font:400 10px/1 var(--data);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--quiet);opacity:.7;margin:1.6rem 0 .7rem}
+.rail .rl:first-child{margin-top:0}
+
+/* ---- prose ---- */
+main{padding-top:3.5rem}
+section.s{margin:0 0 4.6rem;scroll-margin-top:1.5rem}
+section.s>h2{font:600 clamp(1.6rem,4vw,2.1rem)/1.18 var(--face);margin:0 0 .3rem;
+  letter-spacing:-.015em;text-wrap:balance;max-width:var(--measure)}
+.kicker{font:400 10.5px/1 var(--data);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 .9rem}
+section.s p,section.s ul,section.s ol.steps{max-width:var(--measure)}
+section.s>h2,.pull,.lede,footer p{overflow-wrap:break-word}
+section.s p{margin:0 0 1.05rem}
+.pull{border-left:2px solid var(--accent-ui);padding-left:1.1rem;margin:1.8rem 0;
+  max-width:var(--measure);font-size:1.05em;line-height:1.5}
+.pull b{font-weight:600}
+
+/* ---- plates: full-measure figures on the raised surface ---- */
+figure.plate{margin:2.2rem 0;background:var(--panel);border:1px solid var(--rule);
+  border-radius:2px;padding:1.6rem 1.4rem 1.1rem;overflow-x:auto}
+figure.plate svg{display:block;max-width:100%;height:auto;margin:0 auto}
+figure.plate figcaption{margin:1.1rem 0 0;font:400 13px/1.5 var(--face);color:var(--quiet-panel);
+  max-width:var(--measure);padding-top:.9rem;border-top:1px solid var(--rule)}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;margin:1.8rem 0;border:1px solid var(--rule);border-radius:2px}
+table{border-collapse:collapse;width:100%;font-size:.94em;background:var(--panel)}
+caption{text-align:left;font:400 10.5px/1 var(--data);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--quiet-panel);padding:.9rem 1rem .1rem}
+th,td{padding:.55rem 1rem;text-align:left;border-bottom:1px solid var(--rule);vertical-align:baseline}
+thead th{font:400 10.5px/1.3 var(--data);letter-spacing:.14em;text-transform:uppercase;color:var(--quiet-panel)}
+tbody th{font-weight:600}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.num{font-family:var(--data);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---- the corpus figures ---- */
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2rem 0;border-radius:2px;overflow:hidden}
+.fig{background:var(--panel);padding:1rem .95rem 1.05rem}
+.fig b{display:block;font:400 1.55rem/1.05 var(--data);font-variant-numeric:tabular-nums;
+  letter-spacing:-.02em;margin:0 0 .3rem}
+.fig span{display:block;font-size:12.5px;line-height:1.35;color:var(--quiet-panel)}
+
+/* ---- mechanisms ---- */
+.mgroup{margin:0 0 2.6rem}
+.mgroup>h3{font:600 1.12rem/1.2 var(--face);margin:0 0 .18rem}
+.gblurb{font-size:.95em;color:var(--quiet);margin:0 0 1.2rem !important;max-width:var(--measure)}
+.mech{border:1px solid var(--rule);border-radius:2px;background:var(--panel);
+  padding:1.1rem 1.2rem 1rem;margin:0 0 .8rem}
+.mech header{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1rem;margin:0 0 .55rem}
+.mech h4{font:600 1rem/1 var(--face);margin:0}
+.cmd{font-family:var(--data);font-size:11.5px;color:var(--quiet-panel);
+  border:1px solid var(--rule);border-radius:2px;padding:.2rem .45rem;white-space:nowrap}
+.asks{font-size:1.02em;font-style:italic;margin:0 0 .7rem !important;max-width:var(--measure)}
+.mbody p{font-size:.95em;margin:0 0 .7rem !important;color:var(--ink)}
+.found b{font-weight:600}
+.now{font-family:var(--data);font-size:12px;line-height:1.5;color:var(--quiet-panel);
+  margin:.8rem 0 0 !important;padding-top:.7rem;border-top:1px solid var(--rule);max-width:none !important}
+
+/* ---- palette chips ---- */
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(7rem,1fr));gap:.9rem;margin:1.8rem 0}
+.chip{margin:0}
+.chip .sw{display:block;height:3.4rem;border-radius:2px;border:1px solid var(--rule)}
+.chip figcaption{margin:.45rem 0 0;font-size:12px;line-height:1.4}
+.chip b{display:block;font-weight:600}
+.chip .mun,.chip .hex{display:block;font-family:var(--data);font-size:10.5px;color:var(--quiet-panel)}
+
+/* ---- ordered process lists (these ARE sequences) ---- */
+ol.steps{counter-reset:st;list-style:none;padding:0;margin:1.6rem 0}
+ol.steps li{counter-increment:st;position:relative;padding:0 0 .95rem 2.4rem;
+  border-left:1px solid var(--rule);margin-left:.55rem}
+ol.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+ol.steps li::before{content:counter(st);position:absolute;left:-.55rem;top:.1rem;
+  width:1.1rem;height:1.1rem;border-radius:50%;background:var(--paper);
+  border:1px solid var(--rule);font:400 10px/1.05rem var(--data);text-align:center;color:var(--quiet)}
+ol.steps b{font-weight:600}
+
+ul.plain{list-style:none;padding:0;margin:1.4rem 0}
+ul.plain li{padding:0 0 .6rem 1.1rem;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.68em;width:.38rem;height:1px;background:var(--accent-ui)}
+
+footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
+  font-size:13.5px;color:var(--quiet);max-width:var(--measure)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+@media print{.rail{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Loam · field guide</p>
+  <h1>Every recipe is a fact <em>you can check</em></h1>
+  <p class="lede">Loam is a crafting game. You drag two things together and get a third,
+    and the third one is true — it carries the mechanism that makes it work and a source
+    you can open. This is the guide to how that is done and how it is kept honest.</p>
+  <p class="stamp">Generated from the corpus on ${stamp} · <code>node tools/guide.mjs</code> ·
+    ${n(elements.length)} elements · ${n(recipes.length)} recipes</p>
+</header>
+
+<nav class="rail" aria-label="Contents">
+  <p class="rl">Playing</p>
+  <ol>${CONTENTS.slice(0, 4).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol>
+  <p class="rl">Building</p>
+  <ol>${CONTENTS.slice(4, 6).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol>
+  <p class="rl">Checking</p>
+  <ol>${CONTENTS.slice(6, 9).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol>
+  <p class="rl">Layers</p>
+  <ol>${CONTENTS.slice(9).map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol>
+</nav>
+
+<main>
+<section class="s" id="claim">
+  <p class="kicker">The claim</p>
+  <h2>Checkable, not infallible</h2>
+  <p>The genre this game belongs to is fun and invented. Little Alchemy and Doodle God
+    make their chemistry up; Infinite Craft generates endless plausible nonsense with a
+    language model. Loam takes the opposite bet: every step is a real physical or
+    historical fact, and every fact carries a source you can open from inside the game.</p>
+  <p>The claim is <em>checkability</em>, not infallibility, and the difference is the
+    whole point. Auditing our own confident, fluent, well-written prose against primary
+    reporting found close to half of it wrong on first pass — a greenhouse described as
+    trapping infrared when a real one works by blocking convection, flint credited with
+    obsidian's edge, a penicillin death-toll figure that traces back to a magazine
+    ranking. Every one of those sentences read beautifully.</p>
+  <p class="pull"><b>That is the argument for this project, and it is an argument
+    against trusting anyone's prose, including ours.</b> So the sources are machine-verified
+    against live articles, the numbers in the sentences are checked against the articles
+    they cite, and the parts that have been independently audited say so.</p>
+</section>
+
+<section class="s" id="play">
+  <p class="kicker">Playing</p>
+  <h2>Two gestures, and only two</h2>
+  <p>Everything in the game is one of two moves. Drag a card onto another card to
+    <b>merge</b> them; drag a card onto a verb tool to <b>process</b> it. Merges are
+    commutative — order never matters. Processes are unary, one thing in, one thing out.</p>
+  <figure class="plate">
+    <svg viewBox="0 0 660 190" role="img" aria-label="Two gestures: flour plus water makes dough; clay through heat makes a pot.">
+      <g font-family="Source Serif 4, Georgia, serif" font-size="13" fill="var(--ink)">
+        <g transform="translate(0,8)">
+          <text x="0" y="12" font-family="Cutive Mono, monospace" font-size="10" letter-spacing="2" fill="var(--quiet)">MERGE — CARD ONTO CARD</text>
+          <rect x="4" y="30" width="74" height="94" rx="2" fill="var(--paper)" stroke="var(--rule)"/>
+          <circle cx="41" cy="62" r="17" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text x="41" y="104" text-anchor="middle" font-size="12">Flour</text>
+          <text x="98" y="82" text-anchor="middle" font-size="20" fill="var(--quiet)">+</text>
+          <rect x="118" y="30" width="74" height="94" rx="2" fill="var(--paper)" stroke="var(--rule)"/>
+          <path d="M141 74 q14 -22 28 0 a14 14 0 0 1 -28 0z" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text x="155" y="104" text-anchor="middle" font-size="12">Water</text>
+          <path d="M204 77 h30" stroke="var(--quiet)" stroke-width="1.2"/>
+          <path d="M228 72 l8 5 -8 5z" fill="var(--quiet)"/>
+          <rect x="244" y="30" width="74" height="94" rx="2" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5"/>
+          <ellipse cx="281" cy="64" rx="19" ry="14" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text x="281" y="104" text-anchor="middle" font-size="12">Dough</text>
+          <text x="4" y="146" font-size="12.5" fill="var(--quiet)">Two proteins in flour only become gluten once water lets them find each other.</text>
+        </g>
+        <line x1="352" y1="18" x2="352" y2="160" stroke="var(--rule)"/>
+        <g transform="translate(376,8)">
+          <text x="0" y="12" font-family="Cutive Mono, monospace" font-size="10" letter-spacing="2" fill="var(--quiet)">PROCESS — CARD ONTO VERB</text>
+          <rect x="4" y="30" width="74" height="94" rx="2" fill="var(--paper)" stroke="var(--rule)"/>
+          <path d="M26 74 q15 -20 30 0 v10 h-30z" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text x="41" y="104" text-anchor="middle" font-size="12">Clay</text>
+          <g transform="translate(96,52)">
+            <rect x="0" y="0" width="58" height="50" rx="25" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+            <text x="29" y="30" text-anchor="middle" font-size="12" fill="var(--accent)">Heat</text>
+          </g>
+          <path d="M164 77 h26" stroke="var(--quiet)" stroke-width="1.2"/>
+          <path d="M184 72 l8 5 -8 5z" fill="var(--quiet)"/>
+          <rect x="200" y="30" width="74" height="94" rx="2" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M220 60 h34 l-5 26 h-24z" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text x="237" y="104" text-anchor="middle" font-size="12">Pot</text>
+          <text x="4" y="146" font-size="12.5" fill="var(--quiet)">Bound water leaves clay at 450–650 °C and it stops being clay for good.</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>The verb layer is the mechanical departure from the genre. Six of the eight
+      verbs carry recipes today; process, not just ingredients, decides what you get.</figcaption>
+  </figure>
+  <p>Verbs unlock through play, which recapitulates tech history in miniature. Time,
+    force and cold need no technology, so <b>wait</b>, <b>crush</b> and <b>chill</b> are
+    there from the first move. <b>Heat</b> arrives with fire, <b>cut</b> with flint,
+    <b>ferment</b> with yeast.</p>
+  <div class="tw"><table>
+    <caption>The verbs, and how many recipes each one carries today</caption>
+    <thead><tr><th scope="col">Verb</th><th scope="col">Recipes</th><th scope="col">Available</th></tr></thead>
+    <tbody>${verbRow}</tbody>
+  </table></div>
+  <p>Two verbs sit at zero. That is not an oversight being hidden — the checker reports
+    them as <em>“no rule asks for this yet”</em> rather than as a satisfied 100%, because a
+    denominator of nothing is not completeness.</p>
+  <h3 style="font:600 1.1rem/1.2 var(--face);margin:2rem 0 .4rem">The bench</h3>
+  <p>Cards you are working with sit on the bench. It holds far more than fits on screen:
+    you can fold cards away without deleting them, and the visible limit and the total
+    limit are separate numbers, so tidying never costs you your work. Double-tap clears a
+    card. Search finds anything by name, by any of its everyday names, or by its id.</p>
+</section>
+
+<section class="s" id="card">
+  <p class="kicker">Playing</p>
+  <h2>The specimen card</h2>
+  <p>Nothing in this game is an emoji and nothing is a rounded pill, which are the two
+    signatures of the genre. Emoji is somebody else's art, it renders differently on every
+    platform, and it cannot draw a peptide bond. Every item is a specimen card instead:
+    a fixed portrait frame, so a rock and a cake occupy the same footprint and are told
+    apart by what is in it.</p>
+  <figure class="plate">
+    <svg viewBox="0 0 620 250" role="img" aria-label="An annotated specimen card showing the drawing, name, category rule, accession number and scale.">
+      <g font-family="Source Serif 4, Georgia, serif" fill="var(--ink)">
+        <rect x="40" y="24" width="150" height="196" rx="3" fill="var(--paper)" stroke="var(--rule)"/>
+        <rect x="40" y="24" width="150" height="4" rx="2" fill="var(--accent)"/>
+        <ellipse cx="115" cy="92" rx="38" ry="30" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <path d="M88 96 q27 -26 54 0" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="115" y="152" text-anchor="middle" font-size="16" font-weight="600">Bread</text>
+        <text x="115" y="172" text-anchor="middle" font-family="Cutive Mono, monospace" font-size="9" letter-spacing="1.4" fill="var(--quiet)">KITCHEN</text>
+        <line x1="56" y1="184" x2="174" y2="184" stroke="var(--rule)"/>
+        <text x="56" y="200" font-family="Cutive Mono, monospace" font-size="9.5" fill="var(--quiet)">LM·412</text>
+        <text x="174" y="200" text-anchor="end" font-family="Cutive Mono, monospace" font-size="9.5" fill="var(--quiet)">10⁻¹ m</text>
+      </g>
+      <g font-family="Cutive Mono, monospace" font-size="10.5" fill="var(--quiet)">
+        <path d="M198 30 h48" stroke="var(--rule)"/><text x="252" y="34">the category stripe — colour is never the only signal</text>
+        <path d="M198 92 h48" stroke="var(--rule)"/><text x="252" y="96">a drawing, built from a kit of parts on a 60×60 grid</text>
+        <path d="M198 148 h48" stroke="var(--rule)"/><text x="252" y="152">its name, in the language you are playing in</text>
+        <path d="M198 168 h48" stroke="var(--rule)"/><text x="252" y="172">the category rule, spelled out, not just coloured</text>
+        <path d="M198 196 h48" stroke="var(--rule)"/><text x="252" y="200">accession number — stable in a screenshot or a bug report</text>
+        <path d="M198 212 h48" stroke="var(--rule)"/><text x="252" y="216">order of magnitude in metres</text>
+      </g>
+    </svg>
+    <figcaption>Everything below the drawing is rendered from data already in the repository,
+      so the marginal cost of a new item is one shape. The drawings use about forty parts
+      placed on a grid rather than drawn freehand, so item 7,000 still matches item 12.</figcaption>
+  </figure>
+  <p>The molecular tier gets its own drawing language — IUPAC skeletal convention and
+    Jmol/RasMol atom colours — because that is what a chemist expects to see, and the
+    switch marks the point where you leave the world of things.</p>
+</section>
+
+<section class="s" id="shelves">
+  <p class="kicker">Playing</p>
+  <h2>Two shelves, and one of them is marked by an absence</h2>
+  <p><b>Workshop</b> recipes are real. They carry a <em>this is how it works</em> card at
+    the moment of discovery and a source you can open. <b>Folklore</b> recipes are myths —
+    Stone Soup, the Philosopher's Stone, the Golden Egg — and they are marked not by a
+    colour or a label but by what is <em>missing</em>: no accession number, no source, a
+    dashed edge.</p>
+  <p>Marking the difference by absence rather than by a badge is both the better media
+    literacy lesson and the one that survives colour blindness. You keep the whimsy the
+    genre is loved for, quarantined so it never contaminates the teaching.</p>
+  <p class="now" style="max-width:var(--measure) !important">${n(folklore.length)} of ${n(elements.length)} elements sit on the folklore shelf.</p>
+</section>
+<section class="s" id="corpus">
+  <p class="kicker">Building</p>
+  <h2>What is in the corpus</h2>
+  <p>The game is the graph. The app is a viewer for it, which is why the graph is built,
+    validated and playtested before a line of app code. Everything below is counted off
+    the data files at the moment this page was generated.</p>
+  <div class="figs">
+    <div class="fig"><b>${n(elements.length)}</b><span>elements, every one reachable from stone, water, sun and seed</span></div>
+    <div class="fig"><b>${n(recipes.length)}</b><span>recipes — ${n(merges.length)} merges, ${n(procs.length)} verb processes</span></div>
+    <div class="fig"><b>${n(srcCount)}</b><span>recipes carrying a source resolved against a live article</span></div>
+    <div class="fig"><b>${n(artN)}</b><span>drawings, none of them emoji</span></div>
+    <div class="fig"><b>${scaleOrders}</b><span>orders of magnitude, ${scaleSpan}</span></div>
+    <div class="fig"><b>${chips.length}</b><span>category colours, each a measured Munsell chip</span></div>
+    <div class="fig"><b>${n(Object.keys(cautions).length)}</b><span>hazards, covering ${n(cautionIds.size)} elements</span></div>
+    <div class="fig"><b>${n(taxGroups)}</b><span>taxonomic groups, used by ${n(tagged)} elements</span></div>
+  </div>
+  <div class="tw"><table>
+    <caption>The data files, and what each one is for</caption>
+    <thead><tr><th scope="col">File</th><th scope="col">Holds</th><th scope="col">What it is</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><code>elements.json</code></th><td class="num">${n(elements.length)}</td><td>id, name, shelf, tags, taxon, and a one-line codex fact</td></tr>
+      <tr><th scope="row"><code>recipes.json</code></th><td class="num">${n(recipes.length)}</td><td>inputs, optional verb, output, the mechanism text, and its source</td></tr>
+      <tr><th scope="row"><code>verbs.json</code></th><td class="num">${verbs.length}</td><td>the process verbs and what unlocks each</td></tr>
+      <tr><th scope="row"><code>families.json</code></th><td class="num">—</td><td>the tag vocabulary and the shelf families, shared by the game and the tools</td></tr>
+      <tr><th scope="row"><code>art.json</code></th><td class="num">${n(artN)}</td><td>every drawing, as shapes with roles rather than colours</td></tr>
+      <tr><th scope="row"><code>palette.json</code></th><td class="num">${chips.length + Object.keys(S).length}</td><td>Munsell notations resolved to sRGB, with the pipeline recorded</td></tr>
+      <tr><th scope="row"><code>scale.json</code></th><td class="num">${n(scaleN)}</td><td>order of magnitude in metres for every item</td></tr>
+      <tr><th scope="row"><code>bedrock.json</code></th><td class="num">${bedrock.atoms.length + bedrock.compounds.length + bedrock.aminos.length}</td><td>atoms, compounds and the twenty amino acids — the layer below things</td></tr>
+      <tr><th scope="row"><code>taxonomy.json</code></th><td class="num">${n(taxGroups)}</td><td>the tree of life: what a living thing <em>is</em></td></tr>
+      <tr><th scope="row"><code>needs.json</code></th><td class="num">${Object.keys(needs).length}</td><td>real parts lists — what a battery or a loom actually requires</td></tr>
+      <tr><th scope="row"><code>pathogens.json</code></th><td class="num">${Object.keys(pathogens).length}</td><td>organisms that cause disease in people, animals and plants</td></tr>
+      <tr><th scope="row"><code>conditions.json</code></th><td class="num">${Object.keys(condition).length}</td><td>conditions that are not caused by an organism</td></tr>
+      <tr><th scope="row"><code>cautions.json</code></th><td class="num">${n(Object.keys(cautions).length)}</td><td>hazards, written as description and never as method</td></tr>
+      <tr><th scope="row"><code>allergens.json</code></th><td class="num">${Object.keys(allergens).length}</td><td>the regulated allergens, named by protein rather than by food</td></tr>
+      <tr><th scope="row"><code>labels.json</code></th><td class="num">${n(Object.keys(labels.aliases).length + Object.keys(labels.common).length)}</td><td>what a packet calls an ingredient, and what a person types into search</td></tr>
+      <tr><th scope="row"><code>sources.json</code></th><td class="num">${n(Object.keys(sources.map).length)}</td><td>article titles, never URLs — the URLs are resolved, not written</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="s" id="categories">
+  <p class="kicker">Building</p>
+  <h2>How a thing gets its category</h2>
+  <p>An element is filed four independent ways, and they answer four different questions.
+    Keeping them separate is deliberate: each one is checkable on its own, and a
+    disagreement between two of them is a signal rather than a nuisance.</p>
+  <ul class="plain">
+    <li><b>Shelf</b> — is this real or is it a story? Two values, <code>workshop</code>
+      and <code>folklore</code>, and nothing else. It decides whether a source is required.</li>
+    <li><b>Tags</b> — what kind of thing is it? A small closed vocabulary. Tags are what
+      the shelf families are built from, and they are the layer a person authors.</li>
+    <li><b>Taxon</b> — for a living thing, what <em>is</em> it? A pointer into
+      <code>taxonomy.json</code>, which is a strict hierarchy with one parent per group,
+      because real rank is. Composition — what a thing is made <em>of</em> — is a separate
+      tree in <code>bedrock.json</code>, and it is a graph, not a hierarchy.</li>
+    <li><b>Scale</b> — how big is it? An order of magnitude in metres, which also sorts
+      the corpus into tiers: past 10⁻⁸ m you have left the world of things and the drawing
+      language changes with you.</li>
+  </ul>
+  <figure class="plate">
+    <svg viewBox="0 0 640 210" role="img" aria-label="Four independent classification axes converging on one element, and the family it is shelved under.">
+      <g font-family="Source Serif 4, Georgia, serif" font-size="12.5" fill="var(--ink)">
+        <g font-family="Cutive Mono, monospace" font-size="10" letter-spacing="1.4" fill="var(--quiet)">
+          <text x="10" y="22">SHELF</text><text x="10" y="66">TAGS</text>
+          <text x="10" y="110">TAXON</text><text x="10" y="154">SCALE</text>
+        </g>
+        <g fill="var(--ink)" font-size="12.5">
+          <text x="74" y="22">workshop</text><text x="74" y="66">animal · dairy</text>
+          <text x="74" y="110">Bovidae → Bos taurus</text><text x="74" y="154">10⁰ m</text>
+        </g>
+        <g stroke="var(--rule)" fill="none">
+          <path d="M232 18 h58 q14 0 14 14 v46"/><path d="M232 62 h58 q14 0 14 6 v10"/>
+          <path d="M232 106 h58 q14 0 14 -6 v-10"/><path d="M232 150 h58 q14 0 14 -14 v-46"/>
+        </g>
+        <rect x="316" y="62" width="104" height="52" rx="2" fill="var(--paper)" stroke="var(--accent)"/>
+        <text x="368" y="86" text-anchor="middle" font-size="14" font-weight="600">Cow</text>
+        <text x="368" y="103" text-anchor="middle" font-family="Cutive Mono, monospace" font-size="9" fill="var(--quiet)">LM·118</text>
+        <path d="M420 88 h34" stroke="var(--rule)"/><path d="M448 83 l8 5 -8 5z" fill="var(--rule)"/>
+        <rect x="462" y="62" width="164" height="52" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+        <text x="544" y="83" text-anchor="middle" font-size="13">shelved under</text>
+        <text x="544" y="102" text-anchor="middle" font-size="13" font-weight="600">Animals &amp; Dairy</text>
+        <text x="10" y="192" font-size="12" fill="var(--quiet)">Four questions, four answers, one card. A disagreement between any two is a fault worth reading.</text>
+      </g>
+    </svg>
+    <figcaption>Only the tag axis decides which shelf family a card is filed under, which is
+      why the tag vocabulary is closed and checked rather than free text.</figcaption>
+  </figure>
+  <p>The shelf families are the drawers you actually browse in the game, and they come
+    from <code>data/families.json</code> — one file read by the game and by the checker,
+    so the two cannot drift apart. That file also holds the vocabulary: any tag not in it
+    is an error, not a new category.</p>
+  <div class="tw"><table>
+    <caption>The shelf families, and how many elements each holds</caption>
+    <thead><tr><th scope="col">Family</th><th scope="col">Elements</th><th scope="col">Built from tags</th></tr></thead>
+    <tbody>__FAMILY_ROWS__</tbody>
+  </table></div>
+  <p>The catch-all is named <b>Other</b> and it is deliberately visible. It used to be
+    chosen by array index, which meant every unclassified element was not merely
+    uncategorised but actively mis-filed under a heading that looked plausible. A visible
+    Other makes the next tagging gap something you can count.</p>
+</section>
+
+<section class="s" id="mechanisms">
+  <p class="kicker">Checking</p>
+  <h2>The mechanisms</h2>
+  <p>A mechanism is a question asked of the whole corpus at once, in a form a machine can
+    repeat. They are the reusable part of this project — more reusable than the content —
+    because each one encodes a way a body of facts can be wrong that a person reading it
+    one item at a time would never see.</p>
+  <p>They fall into four kinds. Some are gates: the build does not pass without them.
+    Some measure completeness, which is the only way to find a hole where a whole subject
+    should be. Some check structure rather than wording. And some are about craft — whether
+    you can see a thing, tell it from its neighbour, and find it when you look.</p>
+  ${mechHTML}
+  <p class="pull"><b>The honest reading.</b> A mechanism that reports 100% is reporting
+    on its own checklist, not on the world. <code>universe</code> says a subject is
+    represented, never that it is represented well; <code>derivation</code> says the
+    checkable part checks out. Each tool states its own blind spot in its output, because
+    a coverage number without a denominator you can inspect is the same fluent
+    confidence this project exists to distrust.</p>
+</section>
+<section class="s" id="sourcing">
+  <p class="kicker">Checking</p>
+  <h2>Where the facts come from</h2>
+  <p class="pull"><b>No URL in this repository was written by hand.</b> That is the one
+    discipline that matters here, because a confident, plausible, non-existent citation is
+    worse than no citation at all.</p>
+  <ol class="steps">
+    <li><b>A title, not a link.</b> <code>data/sources.json</code> holds article titles.
+      Authoring a claim means naming the article, never pasting a URL.</li>
+    <li><b>Resolution.</b> <code>tools/sources.mjs check</code> asks the live Wikipedia API
+      for each title, follows redirects, and fails on anything that does not exist. It
+      reports every redirect it followed, which is how a citation quietly stops pointing
+      at what it claimed to.</li>
+    <li><b>Application.</b> Only after a clean resolve does <code>apply</code> write URLs
+      into <code>recipes.json</code>. Where an encyclopedia article does not directly
+      support a claim, the file takes a literal primary-source URL instead, checked by
+      HTTP request.</li>
+    <li><b>Audit.</b> <code>tools/audit.mjs</code> pulls every number, date and named
+      person out of the teaching text and looks for it in the article actually cited.
+      Being in a source is a different claim from being cited by one.</li>
+  </ol>
+  <p>Because of that last step, a claim carries a second flag beyond its source:</p>
+  <ul class="plain">
+    <li><b>verified</b> — independently checked against primary reporting. Shows a tick in
+      the game. ${n(verified)} recipes.</li>
+    <li><b>supported</b> — a standard mechanism the cited article states directly:
+      photosynthesis, osmosis, gluten. No independent search, and no tick.
+      ${n(supported)} recipes.</li>
+  </ul>
+  <p>A correction to a recipe's mechanism text must also be applied to the paired codex
+    fact on the element. Six codex entries were once left repeating errors already fixed
+    in their recipes, which is an easy and completely invisible way to reintroduce a
+    corrected claim.</p>
+</section>
+
+<section class="s" id="catalogues">
+  <p class="kicker">Layers</p>
+  <h2>The catalogues</h2>
+  <p>Some knowledge does not fit the shape of a recipe. A disease is not something you
+    craft; a parts list is not a step. These live in their own files, each with its own
+    checker, and each joined back to the elements they describe.</p>
+  <div class="tw"><table>
+    <caption>Catalogues, what they answer, and what their checker refuses</caption>
+    <thead><tr><th scope="col">Catalogue</th><th scope="col">Answers</th><th scope="col">Its checker will not pass</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Pathogens<br><span class="num">${Object.keys(pathogens).length}</span></th>
+        <td>What organism causes this, how it travels, what it lives in, and how serious it is.
+          ${humanDis} affect people, ${animalDis} animals, ${plantDis} plants.</td>
+        <td>A seriousness without a number, a stated basis and a source URL. An id that names nothing.</td></tr>
+      <tr><th scope="row">Conditions<br><span class="num">${Object.keys(condition).length}</span></th>
+        <td>Conditions with no organism behind them — deficiency, autoimmunity, injury, inheritance.</td>
+        <td>A treatment joined to nothing. It reads both catalogues, so a therapy orphaned in one is caught by the other.</td></tr>
+      <tr><th scope="row">Cautions<br><span class="num">${n(Object.keys(cautions).length)}</span></th>
+        <td>Why a thing is hazardous, covering ${n(cautionIds.size)} elements.</td>
+        <td>Instructional voice. Hazard chains that read as steps. The word “safe”.</td></tr>
+      <tr><th scope="row">Allergens<br><span class="num">${Object.keys(allergens).length}</span></th>
+        <td>What a label is legally required to declare, in the US and the EU, and <em>why</em>.</td>
+        <td>An entry naming a food rather than the protein. The allergen is a protein; the food is only its container.</td></tr>
+      <tr><th scope="row">Needs<br><span class="num">${Object.keys(needs).length}</span></th>
+        <td>The real parts list for a made thing — ${n(needTotal)} components in all.</td>
+        <td>A missing part, silently. It prints the size of the backlog, not just the percentage.</td></tr>
+      <tr><th scope="row">Bedrock<br><span class="num">${bedrock.atoms.length + bedrock.compounds.length + bedrock.aminos.length}</span></th>
+        <td>The layer under things: ${bedrock.atoms.length} atoms, ${bedrock.compounds.length} compounds,
+          ${bedrock.aminos.length} amino acids, and what ${Object.keys(bedrock.composition).length} familiar things are made of.</td>
+        <td>A composition that bottoms out in something that is not an atom.</td></tr>
+      <tr><th scope="row">Taxonomy<br><span class="num">${n(taxGroups)}</span></th>
+        <td>What a living thing is, across ${taxonomy.ranks.length} ranks from kingdom to genus.</td>
+        <td>A child ranked at or above its parent. A group with two parents.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="s" id="scanning">
+  <p class="kicker">Layers</p>
+  <h2>Reading a real food label</h2>
+  <p>You can point the game at something in your kitchen. It reads the ingredients off a
+    real product and turns every one it recognises into a card, which is the moment the
+    corpus stops being a game about the world and starts being about the shelf in front of
+    you.</p>
+  <figure class="plate">
+    <svg viewBox="0 0 660 230" role="img" aria-label="The scanning pipeline: three entry points converge on a barcode, which is looked up at Open Food Facts; if that fails, OCR reads the photo instead.">
+      <g font-family="Source Serif 4, Georgia, serif" font-size="12" fill="var(--ink)">
+        <g font-family="Cutive Mono, monospace" font-size="9.5" letter-spacing="1.2" fill="var(--quiet)">
+          <text x="6" y="16">WAYS IN</text><text x="240" y="16">ONE NUMBER</text><text x="452" y="16">LOOKUP</text>
+        </g>
+        <g stroke="var(--rule)" fill="var(--panel)">
+          <rect x="6" y="28" width="150" height="34" rx="2"/><rect x="6" y="70" width="150" height="34" rx="2"/>
+          <rect x="6" y="112" width="150" height="34" rx="2"/><rect x="6" y="154" width="150" height="34" rx="2"/>
+        </g>
+        <g fill="var(--ink)">
+          <text x="18" y="49">Type the digits</text><text x="18" y="91">Camera, live</text>
+          <text x="18" y="133">A photo of the packet</text><text x="18" y="175">Paste the ingredients line</text>
+        </g>
+        <g stroke="var(--rule)" fill="none">
+          <path d="M156 45 h50 q14 0 14 14 v46"/><path d="M156 87 h50 q14 0 14 8 v10"/>
+          <path d="M156 129 h50 q14 0 14 -4 v-8"/>
+          <path d="M156 171 h50 q14 0 14 -14 v-1 h330 q14 0 14 -14 v-30" stroke-dasharray="3 3"/>
+        </g>
+        <rect x="234" y="94" width="128" height="44" rx="2" fill="var(--paper)" stroke="var(--accent)"/>
+        <text x="298" y="112" text-anchor="middle" font-size="12.5">a barcode number</text>
+        <text x="298" y="128" text-anchor="middle" font-family="Cutive Mono, monospace" font-size="9.5" fill="var(--quiet)">GS1 · 2D unwrapped to 1D</text>
+        <path d="M362 116 h44" stroke="var(--rule)"/><path d="M400 111 l8 5 -8 5z" fill="var(--rule)"/>
+        <rect x="414" y="82" width="212" height="40" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+        <text x="520" y="99" text-anchor="middle" font-size="12.5">Open Food Facts</text>
+        <text x="520" y="114" text-anchor="middle" font-family="Cutive Mono, monospace" font-size="9" fill="var(--quiet)">world.openfoodfacts.org/api/v2</text>
+        <path d="M520 122 v18" stroke="var(--rule)" stroke-dasharray="3 3"/>
+        <text x="520" y="156" text-anchor="middle" font-size="12" fill="var(--quiet)">not found? the photo is read instead</text>
+        <text x="520" y="174" text-anchor="middle" font-size="12" fill="var(--quiet)">Tesseract, on your device</text>
+        <text x="6" y="214" font-size="12" fill="var(--quiet)">Typing the number is the path that always works and needs no permission, so it is never hidden behind a capability check.</text>
+      </g>
+    </svg>
+    <figcaption>Both scanning engines are vendored into the repository and run locally —
+      zxing-wasm for barcodes, Tesseract for text. The only network call is the product
+      lookup itself, and it sends a barcode number and nothing else.</figcaption>
+  </figure>
+  <p>Safari has never implemented the browser's own barcode detector, and Apple requires
+    every browser on iOS to use its engine, so on those devices camera scanning would
+    simply not exist. It is powered by a vendored WebAssembly reader instead, which is
+    why the feature works everywhere rather than only where the platform felt like
+    supporting it.</p>
+  <p>What comes back is a real product record: name, brand, quantity, the ingredients
+    text, the regulated allergens and traces the manufacturer declared, a nutrition panel
+    per 100 g, and the three front-of-pack scores — Nutri-Score, NOVA and Eco-Score —
+    each with its own explainer, because a letter grade with no stated formula is exactly
+    the kind of confident claim this project is built to distrust.</p>
+</section>
+
+<section class="s" id="proteins">
+  <p class="kicker">Layers</p>
+  <h2>Proteins, three ways</h2>
+  <p>Protein shows up in three different places in this game, and they are genuinely
+    different things that share a word.</p>
+  <ul class="plain">
+    <li><b>The twenty amino acids</b>, in <code>bedrock.json</code>, each with its
+      three-letter and one-letter code, its residue and full formula, the atoms it is
+      made of, and a sourced fact. The game groups them by side chain — nonpolar, polar,
+      acidic, basic — because which group a residue belongs to is most of what it does: a
+      protein folds the way it does because the nonpolar ones end up buried in the core.
+      From there the corpus builds upward through dipeptide, polypeptide, alpha helix and
+      beta sheet to a folded protein, and none of those steps is a metaphor.</li>
+    <li><b>The regulated allergens</b>, in <code>allergens.json</code>, ${Object.keys(allergens).length} of them.
+      Each entry names the <em>proteins</em>, not the food — casein and beta-lactoglobulin
+      rather than “milk” — because that is the fact the file exists to carry, and it is
+      why an allergen survives being cooked, ground and blended into something
+      unrecognisable. Each is recorded against the statute that requires declaring it:
+      the US federal act as amended, and EU Regulation 1169/2011 Annex II.</li>
+    <li><b>Grams per hundred grams</b>, from the scanned product's nutrition panel. That
+      is a manufacturer's declared figure, shown as one row among the others, and it is
+      the only one of the three that is a measurement rather than a molecule.</li>
+  </ul>
+  <p>Nothing in the allergen layer says what anyone should eat or avoid. Every entry is a
+    statement about a molecule or about a law, and the jurisdiction fields record what a
+    statute requires — never what a body does.</p>
+</section>
+
+<section class="s" id="colour">
+  <p class="kicker">Layers</p>
+  <h2>Every colour is a measured chip</h2>
+  <p>The palette is derived, not chosen. <code>tools/palette.mjs</code> reads the Munsell
+    renotation data — the dataset behind the soil colour book that soil scientists carry
+    into the field — and converts each notation to sRGB through a pipeline it records in
+    the output file: xyY under Illuminant C, to XYZ, Bradford-adapted to D65, to sRGB.</p>
+  <div class="chips">${chipRow}</div>
+  <p>Lighter and darker tints come from the same hue page rather than from lightening a
+    hex, which is why they stay the same colour rather than becoming a paler version of a
+    different one. Chroma is deliberately low, because real soil is low-chroma — the
+    high-chroma warm brown that “earthy palette” has come to mean is not what earth looks
+    like.</p>
+  <p>Two warm colours exist and the difference between them carries meaning.
+    <b>Accent</b>, ${S.accent.notation}, is the interface: hover, focus, the current
+    thing. <b>Discovery</b>, ${S.discovery.notation}, is the only high-chroma colour in
+    the game and it appears at exactly one moment — when something new exists. Used on a
+    button, it would stop meaning anything.</p>
+  <p>Geometry never names a colour. Each shape carries a <em>role</em> and the theme
+    decides what a role looks like, which is what makes the second theme — the same
+    drawings unfilled, ink on paper — a stylesheet rather than a second set of
+    ${n(artN)} drawings.</p>
+  <p class="pull">A game whose claim is that everything in it is sourced, whose colours
+    are also sourced, is a coherence a competitor cannot copy without copying the idea.</p>
+</section>
+
+<section class="s" id="build">
+  <p class="kicker">Building</p>
+  <h2>How it is built and shipped</h2>
+  <ol class="steps">
+    <li><b>The template is the source.</b> <code>prototype/template.html</code> is edited;
+      <code>prototype/index.html</code> is generated from it by
+      <code>tools/build-prototype.mjs</code>, which bakes the graph in. Editing the built
+      file is a change that disappears at the next build.</li>
+    <li><b>The payload is split.</b> The graph is inlined, because the file has to work
+      from disk with no server and <code>file://</code> blocks fetching. The two heaviest
+      layers — the teaching prose and the drawings — are fetched separately afterwards and
+      merged into the same objects, so the first paint does not wait for them.</li>
+    <li><b>Validation gates the commit.</b> <code>tools/validate.mjs</code> exits non-zero
+      on any error and proves every element is still reachable from the four starters
+      <em>given the verb unlock order</em>, which is the property that is easy to break and
+      impossible to spot by eye.</li>
+    <li><b>The repository is split in two.</b> A public repository holds the game, the
+      data and the tools; a private one holds strategy, research and the queue. The sync
+      between them is an <em>allow-list</em>, never a deny-list — a deny-list fails
+      silently the first time a new private file appears, and silence is not an acceptable
+      failure mode when the consequence is publishing something meant to stay private.</li>
+  </ol>
+</section>
+
+<section class="s" id="run">
+  <p class="kicker">Checking</p>
+  <h2>Run all of it yourself</h2>
+  <p>Every number on this page came from one of these commands. None of them needs a key,
+    an account, or anything beyond a checkout and Node.</p>
+  <div class="tw"><table>
+    <caption>The full set</caption>
+    <thead><tr><th scope="col">Command</th><th scope="col">Answers</th></tr></thead>
+    <tbody>
+${[...MECHANISMS.map(m => [`node ${m.file}`, m.asks]),
+   ['node tools/verbs.mjs --gaps', 'Which verb outcomes are owed and unwritten?'],
+   ['node tools/verbs.mjs --bands', 'Which heat recipes claim there is only one answer?'],
+   ['node tools/needs.mjs --missing', 'Which parts are still missing, and how many?'],
+   ['node tools/graph.mjs path <id>', 'The shortest chain to a thing, with the teaching text at every step.'],
+   ['node tools/provenance.mjs <id>', 'Full ancestry back to the four starters.'],
+   ['node tools/pathogens.mjs --orphans', 'Which treatments and organisms are joined to nothing?'],
+   ['node tools/build-prototype.mjs', 'Bake the data into the playable file.'],
+   ['node tools/guide.mjs', 'Rebuild this page from the corpus.'],
+  ].map(([c, a]) => `      <tr><th scope="row"><code>${esc(c)}</code></th><td>${a}</td></tr>`).join('\n')}
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <p>Loam. Generated from the corpus on ${stamp} — ${n(elements.length)} elements,
+    ${n(recipes.length)} recipes, ${n(srcCount)} of them carrying a source resolved
+    against a live article. If a figure on this page looks wrong, the corpus is wrong:
+    run <code>node tools/guide.mjs</code> and it will say the same thing.</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>
+`;
+
+// ------------------------------------------------------------- family rows
+// Read the same file the game reads. Counting here rather than hard-coding is
+// the difference between a guide and a claim about a guide.
+const FAM = FAMDATA;
+const famCount = new Map(FAM.families.map(f => [f.id, 0]));
+const OTHER = FAM.families[FAM.families.length - 1];
+for (const e of elements) {
+  const f = e.shelf === 'folklore' ? FAM.families[0]
+    : (FAM.families.find(x => x.tags.length && (e.tags || []).some(t => x.tags.includes(t))) || OTHER);
+  famCount.set(f.id, famCount.get(f.id) + 1);
+}
+const famRows = FAM.families.map(f => `
+      <tr><th scope="row">${esc(f.name)}</th><td class="num">${n(famCount.get(f.id))}</td>
+          <td>${f.tags.length ? f.tags.map(t => `<code>${t}</code>`).join(' ') : '<em>nothing — it is the catch-all</em>'}</td></tr>`).join('');
+
+const out = page.replace('__FAMILY_ROWS__', famRows);
+
+// ------------------------------------------------------------------- write
+const DEST = join(ROOT, 'guide.html');
+if (process.argv.includes('--check')) {
+  const have = existsSync(DEST) ? readFileSync(DEST, 'utf8') : '';
+  // The stamp changes daily and is not a reason to fail a build.
+  const strip = (s) => s.replace(/Generated from the corpus on \d{4}-\d{2}-\d{2}/g, '');
+  if (strip(have) !== strip(out)) {
+    console.error('guide.html is out of date — run: node tools/guide.mjs');
+    process.exit(1);
+  }
+  console.log('guide.html is current');
+  process.exit(0);
+}
+writeFileSync(DEST, out);
+console.log(`wrote guide.html — ${(out.length / 1024).toFixed(0)} kB, ` +
+  `${MECHANISMS.length} mechanisms, ${FAM.families.length} families, ` +
+  `${n(elements.length)} elements counted`);

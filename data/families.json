@@ -1,0 +1,222 @@
+{
+  "$comment": "The tag vocabulary and the shelf families, in ONE place. Before this file existed the family table lived only inside prototype/template.html, which meant no tool could check it and the game was the only thing that knew which tags were real. 1,075 elements — one in seven — fell through that table into a catch-all called Other, and nothing counted them. A vocabulary that only the renderer knows is not a vocabulary; it is a habit.",
+  "$rules": [
+    "families is ORDERED and first match wins. An element matching two families is filed under the earlier one, and tools/categories.mjs reports every such element, because an ambiguous filing is a tagging question that has not been answered.",
+    "Every tag on every element must appear in exactly one family's tags list. A tag that appears nowhere is an error, not a new category.",
+    "deprecated maps a tag that should no longer be authored onto the one that replaces it. These are not aliases the renderer resolves — they are work to be done, and the checker counts them down.",
+    "The folklore shelf overrides all of this: a folklore element is filed under myth whatever it is tagged."
+  ],
+  "families": [
+    {
+      "id": "myth",
+      "name": "Folklore",
+      "tags": [
+        "myth"
+      ],
+      "note": "Everything on the folklore shelf, plus anything tagged as a story. Marked by an absence of source, never by a colour."
+    },
+    {
+      "id": "medicine",
+      "name": "Medicine",
+      "tags": [
+        "medicine"
+      ],
+      "note": "Second in the order, and deliberately. Everything used to be filed by where it came from, so paracetamol sat under Earth & Stone, aspirin and morphine under Growing Things, penicillin and insulin under the microbes. A medicine could only be found by someone who already knew its origin, which is the opposite of what a drawer is for. You look for aspirin under medicine, not under willow."
+    },
+    {
+      "id": "molecule",
+      "name": "Molecules & Cells",
+      "tags": [
+        "molecule",
+        "body"
+      ],
+      "note": "Below the world of things. Past 10⁻⁸ m the drawing language changes to skeletal convention, and this is the drawer that change belongs to."
+    },
+    {
+      "id": "microbe",
+      "name": "Microbes & Fungi",
+      "tags": [
+        "microbe",
+        "ferment"
+      ],
+      "note": "Organisms too small to see, and the fungi that are not. Fermentation lives here because the agent is the organism."
+    },
+    {
+      "id": "music",
+      "name": "Music",
+      "tags": [
+        "instrument",
+        "music",
+        "aerophone",
+        "chordophone",
+        "idiophone",
+        "membranophone",
+        "electrophone"
+      ],
+      "note": "The Hornbostel-Sachs classes are kept as tags because how an instrument makes its sound is the real distinction between them — a piano is a chordophone you strike, and that is a fact about physics, not about repertoire."
+    },
+    {
+      "id": "wild",
+      "name": "Wild Animals",
+      "tags": [
+        "wild",
+        "extinct"
+      ],
+      "note": "Animals nobody keeps. Extinct ones are wild by definition — there is no husbanded mammoth."
+    },
+    {
+      "id": "animal",
+      "name": "Animals & Dairy",
+      "tags": [
+        "animal",
+        "dairy"
+      ],
+      "note": "Kept animals and what comes off them."
+    },
+    {
+      "id": "plant",
+      "name": "Growing Things",
+      "tags": [
+        "plant",
+        "crop",
+        "grain"
+      ],
+      "note": "Plants wild and sown, and the grains that are the oldest crops there are."
+    },
+    {
+      "id": "earth",
+      "name": "Earth & Sky",
+      "tags": [
+        "earth",
+        "gas",
+        "sea",
+        "space"
+      ],
+      "note": "Rock, soil, ocean, air and everything above the air. It was Earth & Stone while it held the sun and the sea."
+    },
+    {
+      "id": "metal",
+      "name": "Metals",
+      "tags": [
+        "metal"
+      ],
+      "note": "Its own drawer because metallurgy is its own chain — ore, smelt, alloy, work."
+    },
+    {
+      "id": "water",
+      "name": "Water & Ice",
+      "tags": [
+        "water"
+      ],
+      "note": "Fresh water and its phases."
+    },
+    {
+      "id": "build",
+      "name": "Building",
+      "tags": [
+        "build",
+        "building",
+        "civic"
+      ],
+      "note": "Materials and structures that hold something up, and the civic buildings that are what a settlement is for."
+    },
+    {
+      "id": "fire",
+      "name": "Tools & Made Things",
+      "tags": [
+        "fire",
+        "tool",
+        "machine",
+        "transport",
+        "furniture",
+        "home",
+        "ceramic",
+        "electric",
+        "container",
+        "plumbing",
+        "textile",
+        "cloth",
+        "clothing",
+        "personal",
+        "navigation",
+        "craft",
+        "fastener",
+        "tech"
+      ],
+      "note": "The largest drawer, and honestly named: anything a person made that is not a building, a meal, an instrument or a medicine. It was called Fire & Tools while it held furniture, plumbing and clothing — a label that had stopped describing its contents."
+    },
+    {
+      "id": "food",
+      "name": "Kitchen",
+      "tags": [
+        "food",
+        "dish",
+        "sweet",
+        "drink",
+        "preserve",
+        "kitchen",
+        "cold"
+      ],
+      "note": "Ingredients, dishes, drinks and the methods that keep them."
+    },
+    {
+      "id": "past",
+      "name": "People & Past",
+      "tags": [
+        "history",
+        "person",
+        "people",
+        "hominin",
+        "war"
+      ],
+      "note": "Named people, periods, events, and the hominins that came before us."
+    },
+    {
+      "id": "belief",
+      "name": "Belief",
+      "tags": [
+        "belief"
+      ],
+      "note": "What people have held to be true. Distinct from myth: a belief is real as a belief."
+    },
+    {
+      "id": "trade",
+      "name": "Trade & Society",
+      "tags": [
+        "trade",
+        "money",
+        "society"
+      ],
+      "note": "Exchange, money, and the institutions built on them."
+    },
+    {
+      "id": "idea",
+      "name": "Ideas",
+      "tags": [
+        "idea",
+        "ideas",
+        "writing",
+        "concept",
+        "media",
+        "art",
+        "hazard"
+      ],
+      "note": "Abstractions. hazard lands here only when it is the only tag — carcinogen, mutagen, teratogen, which are concepts. Nicotine carries it as a second tag and matches Growing Things long before this."
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "tags": [],
+      "note": "The catch-all, LAST and named honestly. It used to be chosen by array index, so every unclassified element was not merely uncategorised but actively mis-filed under a heading that looked plausible. A visible Other makes the next tagging gap something you can count."
+    }
+  ],
+  "deprecated": {
+    "ideas": "idea",
+    "people": "person",
+    "clothing": "cloth",
+    "textile": "cloth",
+    "building": "build",
+    "story": "art"
+  },
+  "$deprecatedNote": "Each of these is a near-twin of a tag that already existed, authored because nothing stopped it. They still shelve correctly — both members of each pair sit in the same family — so nothing is broken today. They are listed because a vocabulary with two words for one thing gets a third, and because the first tool to disagree about which one is canonical will file the same element two ways."
+}

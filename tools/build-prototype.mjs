@@ -20,6 +20,7 @@ const pathogens = J('../data/pathogens.json');
 const conditions = J('../data/conditions.json');
 const allergens = J('../data/allergens.json');
 const reactions = J('../data/reactions.json');
+const families  = J('../data/families.json');
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
 
 /**
@@ -119,7 +120,8 @@ try {
     .replace('__PATHOGEN_DATA__', '{pathogens:{}}')
     .replace('__CONDITION_DATA__', '{conditions:{}}')
     .replace('__ALLERGEN_DATA__', '{}')
-    .replace('__REACTION_DATA__', '{}'));
+    .replace('__REACTION_DATA__', '{}')
+    .replace('__FAMILY_DATA__', '{families:[{id:"other",name:"Other",tags:[]}]}'));
 } catch (e) {
   console.error(`prototype script does not parse: ${e.message}`);
   process.exit(1);
@@ -183,7 +185,8 @@ html = html.replace('__GAME_DATA__', JSON.stringify(data))
            .replace('__PATHOGEN_DATA__', JSON.stringify(pathogens))
            .replace('__CONDITION_DATA__', JSON.stringify(conditions))
            .replace('__ALLERGEN_DATA__', JSON.stringify(allergens))
-           .replace('__REACTION_DATA__', JSON.stringify(reactions));
+           .replace('__REACTION_DATA__', JSON.stringify(reactions))
+           .replace('__FAMILY_DATA__', JSON.stringify({ families: families.families.map(f => ({ id: f.id, name: f.name, tags: f.tags })) }));
 
 // Every item must have a drawing. A missing one renders as an empty square,
 // which is the kind of thing that ships unnoticed.

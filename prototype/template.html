@@ -3072,35 +3072,14 @@ function toast(msg) {
 // and morphine sat under Growing Things, penicillin and insulin under The Very
 // Small. Everything was filed by WHERE IT CAME FROM rather than by what it is,
 // so a medicine could only be found by someone who already knew its origin.)
-const FAMILIES = [
-  { id: 'myth',     name: 'Folklore',        tags: ['myth'] },
-  { id: 'medicine', name: 'Medicine',        tags: ['medicine'] },
-  { id: 'music',    name: 'Music',           tags: ['instrument', 'aerophone', 'chordophone', 'idiophone', 'membranophone', 'electrophone'] },
-  { id: 'microbe',  name: 'The Very Small',  tags: ['microbe', 'ferment'] },
-  { id: 'wild',     name: 'Wild Animals',    tags: ['wild'] },
-  { id: 'animal',   name: 'Animals & Dairy', tags: ['animal', 'dairy'] },
-  { id: 'plant',    name: 'Growing Things',  tags: ['plant', 'crop'] },
-  { id: 'earth',    name: 'Earth & Stone',   tags: ['earth', 'build', 'building', 'civic', 'gas'] },
-  { id: 'metal',    name: 'Metals',          tags: ['metal'] },
-  { id: 'water',    name: 'Water & Ice',     tags: ['water'] },
-  { id: 'fire',     name: 'Fire & Tools',    tags: ['fire', 'tool', 'machine', 'transport', 'furniture',
-                                              'home', 'ceramic', 'electric', 'container', 'plumbing',
-                                              'textile', 'personal', 'clothing', 'navigation'] },
-  { id: 'food',     name: 'Kitchen',         tags: ['food', 'dish', 'sweet', 'drink', 'preserve', 'kitchen', 'cold'] },
-  { id: 'past',     name: 'People & Past',   tags: ['history', 'person', 'hominin'] },
-  { id: 'belief',   name: 'Belief',          tags: ['belief'] },
-  { id: 'trade',    name: 'Trade',           tags: ['trade', 'money'] },
-  // 'hazard' lands here only when it is the ONLY tag — carcinogen, mutagen,
-  // teratogen, which are concepts. Nicotine and atropine carry it as a second
-  // tag and match Growing Things long before this.
-  { id: 'idea',     name: 'Ideas',           tags: ['idea', 'writing', 'concept', 'media', 'art', 'hazard'] },
-  // The catch-all is LAST and named honestly. It used to be FAMILIES[7],
-  // Water & Ice, chosen by index -- so every unclassified element was not
-  // merely uncategorised but actively mis-filed, and the mistake was
-  // invisible because the shelf heading looked plausible. A visible "Other"
-  // makes the next tagging gap something you can see and count.
-  { id: 'other',    name: 'Other',           tags: [] },
-];
+/* The shelf families now live in data/families.json, read by the game AND by
+ * tools/categories.mjs. While this table was only here, no tool could check it:
+ * 1,075 elements — one in seven — fell through it into Other and nothing
+ * counted them, because the renderer is the one place in the project that
+ * never reports what it could not file. The ordering rule it encodes is
+ * unchanged and still the point: an element is filed by what it IS, so you
+ * find aspirin under Medicine rather than under willow. */
+const FAMILIES = __FAMILY_DATA__.families;
 // Memoised: this is called once per element per family in the aside's grouping
 // pass, and its answer never changes for a given element.
 const FAMILY_CACHE = new WeakMap();

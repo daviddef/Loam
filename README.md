@@ -26,22 +26,34 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology and reproduction |
-| Elements | **6,874** (6,518 workshop · 356 folklore) |
-| Recipes | **8,731** (7,806 merges · 925 verb processes) |
+| Elements | **7,423** (7,067 workshop · 356 folklore) |
+| Recipes | **9,278** (8,349 merges · 929 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **6,874 / 6,874** from the four starters |
+| Reachable | **7,423 / 7,423** from the four starters |
 | Deepest chain | 51 crafts |
-| Sourced | **8,731 / 8,731** recipes, every URL machine-verified |
+| Sourced | **9,278 / 9,278** recipes, every URL machine-verified |
 | Audited | **295** of the first 677 claims checked against primary reporting — **48 were wrong**. That 36% first-pass error rate is why nothing ships unverified. |
 | Every claim machine-checked against its own source | numbers **0** unsupported · names **0** unreviewed |
-| Routes per element | **1.27** · 5,389 still needing a second route · 1,879 sole-route by design |
+| Routes per element | **1.25** · 5,938 still needing a second route · 1,878 sole-route by design |
 | Hazards | **343**, covering 621 elements |
 | Scale span | **19 orders of magnitude**, from a carbon atom to the sun |
-| Drawings | **6,874**, none of them emoji |
+| Drawings | **7,423**, none of them emoji |
 | Colours | **28**, every one a measured Munsell chip |
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
 four rocks to antibiotics, every one of them true.
+
+## The guide
+
+**[guide.html](guide.html)** is the user and architectural guide — how the game
+is played, how a thing gets its category, what every checking mechanism asks and
+what it caught, where the facts come from, how a real food label is read, and
+why every colour is a measured Munsell chip.
+
+It is *generated*, not written: `node tools/guide.mjs` counts the corpus and
+emits the page. This file spent a fortnight claiming 6,874 elements while the
+corpus held 7,423, which is precisely the argument for not hand-maintaining a
+second one. `node tools/guide.mjs --check` fails if it has drifted.
 
 ## Design model
 

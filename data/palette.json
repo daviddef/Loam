@@ -401,6 +401,86 @@
       },
       "clipped": false
     },
+    "paperPanel": {
+      "notation": "10YR 8/2",
+      "note": "raised surface on paper",
+      "hex": "#D8C8B1",
+      "rgb": [
+        216,
+        200,
+        177
+      ],
+      "xyY": {
+        "x": 0.3407,
+        "y": 0.3434,
+        "Y": 59.1
+      },
+      "clipped": false
+    },
+    "paperRule": {
+      "notation": "10YR 7/2",
+      "note": "hairlines and dividers on paper",
+      "hex": "#BEAD98",
+      "rgb": [
+        190,
+        173,
+        152
+      ],
+      "xyY": {
+        "x": 0.3443,
+        "y": 0.3454,
+        "Y": 43.06
+      },
+      "clipped": false
+    },
+    "paperQuiet": {
+      "notation": "10YR 4/2",
+      "note": "secondary text on paper",
+      "hex": "#6F5F4C",
+      "rgb": [
+        111,
+        95,
+        76
+      ],
+      "xyY": {
+        "x": 0.366,
+        "y": 0.359,
+        "Y": 12
+      },
+      "clipped": false
+    },
+    "accentInk": {
+      "notation": "5YR 4/6",
+      "note": "the accent as text on paper — same hue page, two values down",
+      "hex": "#8A542F",
+      "rgb": [
+        138,
+        84,
+        47
+      ],
+      "xyY": {
+        "x": 0.4651,
+        "y": 0.3859,
+        "Y": 12
+      },
+      "clipped": false
+    },
+    "paperQuiet2": {
+      "notation": "10YR 3/2",
+      "note": "secondary text on the raised surface — one step darker, because the panel is one step darker",
+      "hex": "#554636",
+      "rgb": [
+        85,
+        70,
+        54
+      ],
+      "xyY": {
+        "x": 0.3747,
+        "y": 0.363,
+        "Y": 6.555
+      },
+      "clipped": false
+    },
     "accent": {
       "notation": "5YR 6/6",
       "note": "interface accent — hover, focus, selection",
