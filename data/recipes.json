@@ -93772,5 +93772,65 @@
     "why": "An oasis on the road across the Karakum, where the caravans had to stop. Each dynasty built its own walled city on empty ground beside the last rather than over it, which is why the site is four cities in a row and each one is legible.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Merv"
+  },
+  {
+    "in": [
+      "clay"
+    ],
+    "verb": "crush",
+    "out": "grog",
+    "why": "Fired clay has already lost its water and done all the shrinking it will ever do. Ground up and mixed back into wet clay it acts as a skeleton, so the pot shrinks less on drying and is far less likely to crack. Almost every ancient pottery has it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Grog_(clay)"
+  },
+  {
+    "in": [
+      "obsidian"
+    ],
+    "verb": "crush",
+    "out": "conchoidal_flake",
+    "why": "Obsidian is a glass with no crystal grain, so a blow does not follow any plane — the fracture spreads as a cone and leaves a curved shell-shaped scar. The edge that results is a few molecules thick, sharper than a modern scalpel.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Conchoidal_fracture"
+  },
+  {
+    "in": [
+      "quartz"
+    ],
+    "verb": "crush",
+    "out": "silica_sand",
+    "why": "Quartz has no cleavage plane to split along, so it does not break down into flakes the way feldspar and mica do; it just wears rounder. Everything else in the granite becomes clay and washes away, and the quartz is what is left on the beach.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  {
+    "in": [
+      "ice"
+    ],
+    "verb": "crush",
+    "out": "crushed_ice",
+    "why": "Breaking the same mass into smaller pieces multiplies the surface touching the drink, so heat moves out faster — and so does meltwater in. A cocktail on crushed ice is colder sooner and weaker sooner, and the two are the same fact.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ice"
+  },
+  {
+    "in": [
+      "barley"
+    ],
+    "verb": "ferment",
+    "out": "beer",
+    "why": "Barley starch is not fermentable until malting wakes the grain's own amylase and cuts it into sugar. Yeast can then take it, which is why beer needs a malting floor and wine needs only a bucket.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Beer"
+  },
+  {
+    "in": [
+      "wine"
+    ],
+    "verb": "wait",
+    "out": "vinegar",
+    "why": "Acetobacter is airborne and everywhere, and it oxidises ethanol to acetic acid as long as it can reach oxygen. An open bottle turns; a sealed one does not. Vinegar is not spoiled wine so much as the next step wine takes if you let it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Vinegar"
   }
 ]

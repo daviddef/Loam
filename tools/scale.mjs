@@ -276,6 +276,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* verb outcomes batch 2, 4 Sep. a temper grain, a sand grain, a chip of ice */
+          'grog', 'silica_sand', 'crushed_ice',
           /* places batch 14, 4 Sep. a bar section */
           'wrought_iron',
           /* places batch 4 — Europe, 4 Sep. a hand sample, like the other rocks */
@@ -467,6 +469,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* verb outcomes batch 2, 4 Sep. a struck flake, centimetres */
+          'conchoidal_flake',
           /* verb outcomes batch 1, 4 Sep. a jar */
           'crystallised_honey',
           /* verb outcomes batch 1, 4 Sep. a pod and a crumb */

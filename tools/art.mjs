@@ -43420,6 +43420,22 @@ def('merv',        () => [...[0, 1, 2, 3].map(i =>
                           C(30, 12, 2, 'hi'),
                           ...[0, 1, 2].map(i => C(50 + i * 2, 46 + i, 1.4, 'gh'))]);
 
+/* Verb outcomes, batch 2. The conchoidal flake is drawn with its shell-shaped
+   scar and its bulb of percussion, because that curve is what tells a struck
+   flake from a broken pebble.                                               */
+def('grog',        () => [mound('lo', 48, 22, 20),
+                          ...granules('bs', 14, 411, [12, 30, 48, 46]),
+                          ...[[22, 36], [38, 40]].map(([x, y]) => P(`M${x} ${y} L${x + 6} ${y - 3} L${x + 5} ${y + 4} Z`, 'hi'))]);
+def('conchoidal_flake',()=>[P('M12 46 L20 12 L46 24 L40 50 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${18 + i * 4} ${18 + i * 3} Q${30 + i * 3} ${28 + i * 4} ${22 + i * 4} ${44 - i * 2}`, 'gh', 1.1)),
+                          E(21, 18, 5, 4, 'hi'),                             // the bulb of percussion
+                          S('M46 24 L40 50', 'hi', 2.6)]);                   // the edge
+def('silica_sand', () => [mound('lo', 48, 23, 20),
+                          ...granules('hi', 18, 626, [12, 32, 48, 46])]);
+def('crushed_ice', () => [...[[20, 34], [34, 30], [26, 44], [40, 42], [30, 22]].map(([x, y]) =>
+                            P(`M${x} ${y} L${x + 9} ${y - 3} L${x + 7} ${y + 7} L${x - 2} ${y + 6} Z`, 'lo')),
+                          ...[[22, 36], [36, 32], [28, 46]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y + 3}`, 'hi', 1.2))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -360,7 +360,11 @@
     "surveying": "Surveying",
     "potala": "Potala Palace",
     "benin_moat": "Walls of Benin",
-    "merv": "Merv"
+    "merv": "Merv",
+    "grog": "Grog (clay)",
+    "conchoidal_flake": "Conchoidal fracture",
+    "silica_sand": "Quartz",
+    "crushed_ice": "Ice"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -848,6 +852,12 @@
     "aqueduct+surveying": "Pont du Gard",
     "buddhism+copper": "Potala Palace",
     "earthwork+moat": "Walls of Benin",
-    "oasis+silk_road": "Merv"
+    "oasis+silk_road": "Merv",
+    "clay|crush": "Grog (clay)",
+    "obsidian|crush": "Conchoidal fracture",
+    "quartz|crush": "Quartz",
+    "ice|crush": "Ice",
+    "barley|ferment": "Beer",
+    "wine|wait": "Vinegar"
   }
 }
