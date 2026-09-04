@@ -1092,6 +1092,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 28, 5 Sep. a Buddha 71 m tall */
+    'leshan_buddha',
     /* places batch 26, 5 Sep. a hypostyle hall, a statue 46 m of copper */
     'karnak', 'statue_of_liberty',
     /* places batch 25, 5 Sep. colossi 20 m high, a pueblo five storeys, a pyramid */
@@ -1267,6 +1269,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 28, 5 Sep. a walled city of 37.5 ha */
+    'itchan_kala',
     /* places batch 27, 5 Sep. a tomb valley, a sacred grove of 75 ha, a pyramid 45 m, a span 1,280 m */
     'valley_of_the_kings', 'osun_osogbo', 'calakmul', 'golden_gate_bridge',
     /* places batch 26, 5 Sep. an Andean city on its own walls */
@@ -1518,6 +1522,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 28, 5 Sep. a massif, a valley 7.5 miles long, 132 km2 of karst, 4,187 ha of ruins */
+    'simien', 'yosemite_valley', 'vinales', 'hampi',
     /* places batch 27, 5 Sep. a desert lake, a park of 181,414 ha */
     'lake_turkana', 'torres_del_paine',
     /* places batch 26, 5 Sep. 150 km of cliff, 7,800 km2 of park, a delta of 15,000 */

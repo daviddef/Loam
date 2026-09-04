@@ -44633,6 +44633,39 @@ def('torres_del_paine',()=>[P('M2 56 L58 56 L58 46 L2 46 Z', 'gh'),
                           S('M30 34 Q44 30 58 34', 'gh', 2),
                           P('M2 46 L14 46 L10 56 L2 56 Z', 'hi')]);            // and the ice that took the rest
 
+/* Places, batch 28 — 5 Sep. Yosemite is drawn as the U with a hanging side
+   valley, because the hanging valley is why the falls are there; Leshan with
+   the gutters showing, because the plumbing is why it survives.             */
+def('simien',       () => [...[0, 1, 2, 3, 4].map(i => S(`M2 ${20 + i * 8} L58 ${20 + i * 8}`, 'gh', 1)),   // stacked flows
+                          P('M2 56 L10 20 L16 34 L24 12 L32 30 L40 16 L48 32 L58 56 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${12 + i * 12} ${34 + i % 2 * 6} L${16 + i * 12} ${44 + i % 2 * 4}`, 'ik', 1)),
+                          P('M22 10 L26 6 L30 12 Z', 'hi')]);                  // and snow on top of it
+def('yosemite_valley',()=>[P('M2 4 L18 4 L18 34 Q22 44 30 44 Q38 44 42 34 L42 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M18 34 Q22 44 30 44 Q38 44 42 34 L42 56 L18 56 Z', 'gh'),
+                          P('M42 4 L48 4 L48 22 L42 22 Z', 'bs'),              // the hanging valley
+                          S('M45 22 L45 44', 'hi', 2.4),                       // and the fall out of it
+                          E(45, 46, 4, 2, 'hi')]);
+def('vinales',      () => [P('M2 44 L58 44 L58 56 L2 56 Z', 'gh'),
+                          ...[12, 30, 48].map((x, i) => P(`M${x - 8} 44 Q${x - 7} ${18 + i % 2 * 8} ${x} ${14 + i % 2 * 8} Q${x + 7} ${18 + i % 2 * 8} ${x + 8} 44 Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i => S(`M4 ${47 + i * 3} L56 ${47 + i * 3}`, 'ik', 1)),   // the rows
+                          ...[20, 40].map(x => P(`M${x} 48 L${x + 4} 44 L${x + 6} 48 Z`, 'bs'))]);
+def('itchan_kala',  () => [P('M2 30 L58 30 L58 52 L2 52 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => P(`M${3 + i * 7} 30 L${3 + i * 7} 24 L${8 + i * 7} 24 L${8 + i * 7} 30 Z`, 'lo')),
+                          P('M24 52 L24 12 L36 12 L36 52 Z', 'bs'),            // the minaret, wide and short
+                          E(30, 12, 6.5, 3, 'hi'),
+                          ...[0, 1, 2, 3].map(i => S(`M24 ${18 + i * 8} L36 ${18 + i * 8}`, 'gh', 1)),
+                          S('M2 52 L58 52', 'ik', 1.2)]);
+def('leshan_buddha',()=>[P('M18 56 L18 22 Q18 8 30 8 Q42 8 42 22 L42 56 Z', 'lo'),
+                          C(30, 18, 8, 'lo'), C(26, 17, 1.2, 'ik'), C(34, 17, 1.2, 'ik'),
+                          ...[0, 1, 2].map(i => S(`M${22 + i * 8} 12 Q${21 + i * 8} 26 ${23 + i * 8} 40`, 'hi', 1)),   // the gutters
+                          S('M24 24 Q30 26 36 24', 'ik', 1.2),
+                          wave('bs', 54, 2, 56)]);
+def('hampi',        () => [...[[10, 44], [22, 48], [46, 44], [52, 50]].map(([x, y]) => E(x, y, 9, 7, 'lo')),
+                          P('M28 52 L30 26 L38 26 L40 52 Z', 'bs'),
+                          P('M29 26 L34 14 L39 26 Z', 'bs'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${30 + i * 2} 30 L${30 + i * 2} 50`, 'gh', 0.9)),   // beams that ring
+                          C(14, 20, 8, 'lo'), C(50, 22, 7, 'lo')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
