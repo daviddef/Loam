@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 40, 5 Sep. a dome 18.2 m, towers 65 m */
+    'yasawi_mausoleum', 'shahrisabz',
     /* places batch 39, 5 Sep. a temple veranda, a pagoda, a house */
     'kiyomizu_dera', 'nikko_toshogu', 'vigan',
     /* places batch 38, 5 Sep. a stela 10.6 m, a tower 45 m */
@@ -1285,6 +1287,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 40, 5 Sep. a fortress of 77.9 ha, ten miles of wall */
+    'nisa', 'kano_walls',
     /* places batch 39, 5 Sep. a walled capital */
     'karakorum',
     /* places batch 38, 5 Sep. a hilltop city of 707 ha, a harbour town of 86 ha */
@@ -1617,6 +1621,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+    /* places batch 40, 5 Sep. 2,820 km of triangulation */
+    'struve_arc',
     /* places batch 13, 5 Sep. 1,776 km of canal and about 40,000 km of road */
     'grand_canal', 'qhapaq_nan',
           /* places batch 3 — Oceania, 4 Sep. 2,300 km of coral */

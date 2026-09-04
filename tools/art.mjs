@@ -45068,6 +45068,37 @@ def('komodo',       () => [P('M2 40 Q16 26 30 32 Q44 38 58 28 L58 56 L2 56 Z', '
                           S('M50 42 L56 40', 'ik', 2), C(54, 40, 1, 'gh'),
                           ...[16, 26, 38].map(x => S(`M${x} 47 L${x - 2} 53`, 'ik', 1.6))]);
 
+/* Places, batch 40 — 5 Sep. Yasawi is drawn with the scaffolding still in the
+   facade; Shahrisabz as two towers and the gap where the palace was; the
+   Struve arc as the chain of triangles, which is the whole method.          */
+def('yasawi_mausoleum',()=>[P('M8 54 L8 26 L52 26 L52 54 Z', 'lo'),
+                          P('M16 26 A14 14 0 0 1 44 26 Z', 'bs'),
+                          P('M20 54 L20 32 L40 32 L40 54 Z', 'gh'),
+                          ...[0, 1, 2, 3].map(i => S(`M6 ${34 + i * 6} L20 ${34 + i * 6}`, 'ik', 1.4)),   // scaffolding, still there
+                          ...[0, 1].map(i => S(`M${10 + i * 6} 26 L${10 + i * 6} 54`, 'ik', 1.4))]);
+def('shahrisabz',   () => [P('M4 56 L4 8 L18 8 L18 56 Z', 'lo'),
+                          P('M42 56 L42 8 L56 8 L56 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => [S(`M6 ${16 + i * 8} L16 ${16 + i * 8}`, 'gh', 1),
+                                                       S(`M44 ${16 + i * 8} L54 ${16 + i * 8}`, 'gh', 1)]).flat(),
+                          S('M18 12 Q30 2 42 12', 'bs', 2),                    // where the arch was
+                          S('M18 14 Q30 4 42 14', 'gh', 1)]);                  // and nothing behind it
+def('nisa',         () => [P('M4 32 L56 32 L56 52 L4 52 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${8 + i * 14} 32 L${14 + i * 14} 22`, 'gh', 1.4)),   // walls, thrown down
+                          ...granules('gh', 16, 77, [4, 20, 56, 34]),
+                          P('M22 44 L38 44 L34 56 L26 56 Z', 'hi'),            // the rhyton
+                          S('M22 44 L38 44', 'ik', 1.4), C(30, 56, 2, 'hi')]);
+def('kano_walls',   () => [P('M2 26 L58 26 L58 34 L2 34 Z', 'lo'),
+                          P('M2 34 Q30 40 58 34 L58 44 Q30 50 2 44 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => P(`M${6 + i * 9} 26 L${8 + i * 9} 20 L${11 + i * 9} 26 Z`, 'lo')),
+                          P('M26 34 L34 34 L34 46 L26 46 Z', 'gh'),            // a gate
+                          ...granules('gh', 12, 10, [4, 27, 56, 45])]);
+def('struve_arc',   () => [...[0, 1, 2, 3, 4, 5].map(i =>
+                            [S(`M${6 + i * 9} ${i % 2 ? 44 : 14} L${15 + i * 9} ${i % 2 ? 14 : 44}`, 'lo', 1.2),
+                             S(`M${6 + i * 9} ${i % 2 ? 44 : 14} L${15 + i * 9} ${i % 2 ? 44 : 14}`, 'lo', 1.2)]).flat(),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => C(6 + i * 9, i % 2 ? 44 : 14, 2, 'ik')),
+                          S('M4 52 L56 52', 'bs', 2.4),                        // the one measured baseline
+                          S('M4 50 L4 54', 'ik', 1.4), S('M56 50 L56 54', 'ik', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
