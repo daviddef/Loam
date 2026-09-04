@@ -45209,6 +45209,43 @@ def('sintra',       () => [...[0, 1, 2].map(i => S(`M2 ${8 + i * 5} Q30 ${5 + i 
                           P('M28 34 L40 34 L40 22 L28 22 Z', 'hi'),
                           ...[30, 36].map(x => P(`M${x - 2} 22 L${x - 2} 14 L${x + 2} 14 L${x + 2} 22 Z`, 'hi'))]);
 
+/* Places, batch 44 — 5 Sep. Novgorod is drawn as a bark strip with writing on
+   it, below ground; Bucovina as a church with the painting on the outside.  */
+def('novgorod',     () => [P('M2 22 L58 22 L58 56 L2 56 Z', 'lo'),
+                          P('M8 34 L52 30 L53 42 L9 46 Z', 'bs'),               // the bark, under the ground
+                          ...[0, 1, 2].map(i => S(`M12 ${37 + i * 3.4} L48 ${34 + i * 3.4}`, 'ik', 0.9)),
+                          S('M2 22 L58 22', 'ik', 1.6),
+                          ...[16, 34].map(x => [P(`M${x - 6} 22 L${x - 6} 8 L${x + 6} 8 L${x + 6} 22 Z`, 'gh'),
+                                                E(x, 8, 6, 4, 'gh')]).flat()]);
+def('danube_delta', () => [S('M2 30 Q14 30 22 32', 'bs', 4),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M22 32 Q${34 + i * 2} ${20 + i * 6} ${52 + i} ${16 + i * 8}`, 'bs', 2)),
+                          ...granules('lo', 22, 40, [24, 12, 58, 52]),          // the new ground
+                          ...[[36, 24], [46, 38], [30, 44]].map(([x, y]) =>
+                            [E(x, y, 4, 2.4, 'hi'), S(`M${x + 3} ${y - 1} L${x + 7} ${y - 4}`, 'hi', 1.4)]).flat()]);
+def('bucovina_churches',()=>[P('M14 54 L14 26 L46 26 L46 54 Z', 'lo'),
+                          P('M12 26 L30 12 L48 26 Z', 'bs'),
+                          P('M26 12 L34 12 L34 4 L26 4 Z', 'bs'),
+                          ...[0, 1, 2, 3].map(i => [0, 1, 2].map(j =>
+                            P(`M${17 + j * 10} ${30 + i * 6} L${24 + j * 10} ${30 + i * 6} L${24 + j * 10} ${34 + i * 6} L${17 + j * 10} ${34 + i * 6} Z`, i % 2 ? 'hi' : 'gh'))).flat()]);   // painted outside
+def('orheiul_vechi',()=>[S('M2 12 Q22 26 30 44 Q34 54 40 56', 'bs', 3.4),
+                          P('M8 22 L26 22 L34 56 L8 56 Z', 'lo'),               // the cliff inside the bend
+                          ...[[14, 34], [20, 42]].map(([x, y]) =>
+                            [P(`M${x - 4} ${y + 8} L${x - 4} ${y} Q${x} ${y - 5} ${x + 4} ${y} L${x + 4} ${y + 8} Z`, 'gh'),
+                             S(`M${x} ${y + 2} L${x} ${y + 6}`, 'ik', 1), S(`M${x - 2} ${y + 4} L${x + 2} ${y + 4}`, 'ik', 1)]).flat(),
+                          P('M40 20 L48 20 L48 30 L40 30 Z', 'bs')]);
+def('schonbrunn',   () => [P('M4 44 L36 44 L36 56 L4 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => P(`M${6 + i * 5} 46 L${10 + i * 5} 46 L${10 + i * 5} 54 L${6 + i * 5} 54 Z`, 'gh')),
+                          P('M2 40 L38 40 L38 44 L2 44 Z', 'bs'),
+                          P('M40 30 Q50 20 58 30 L58 34 L40 34 Z', 'lo'),       // the hill
+                          ...[44, 50, 56].map(x => S(`M${x} 30 L${x} 22`, 'bs', 2)),   // and the Gloriette on it
+                          S('M42 22 L58 22', 'bs', 2), S('M36 44 L44 34', 'gh', 1.2)]);
+def('buda_castle',  () => [P('M2 56 Q16 30 30 28 Q44 30 58 56 Z', 'lo'),
+                          P('M16 44 L44 44 L44 26 L16 26 Z', 'bs'),
+                          P('M26 26 A8 8 0 0 1 42 26 Z', 'bs'),
+                          ...[0, 1, 2].map(i => S(`M18 ${32 + i * 5} L42 ${32 + i * 5}`, 'gh', 0.9)),
+                          S('M8 22 L14 28', 'ik', 2), S('M52 22 L46 28', 'ik', 2),   // twice destroyed
+                          wave('gh', 58, 1.4, 56)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 44, 5 Sep. churches, a cave monastery */
+    'bucovina_churches', 'orheiul_vechi',
     /* places batch 43, 5 Sep. a citadel mound 50 m, tower houses, a wall 5-10 m */
     'aleppo_citadel', 'sanaa_old_city', 'visby_wall',
     /* places batch 42, 5 Sep. temples, a cave temple, a theatre */
@@ -1293,6 +1295,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 44, 5 Sep. a medieval city, a palace of 1,441 rooms, a castle of 4.73 km2 */
+    'novgorod', 'schonbrunn', 'buda_castle',
     /* places batch 43, 5 Sep. an old town on a ridge, a forum 130 by 50 m, 946 ha of landscape */
     'edinburgh_old_town', 'roman_forum', 'sintra',
     /* places batch 42, 5 Sep. a basin 215 m long, a cave chamber 600 m */
@@ -1719,6 +1723,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 44, 5 Sep. a delta of 5,165 km2 */
+    'danube_delta',
     /* places batch 38, 5 Sep. 36,000 km2 of rainforest */
     'salonga',
     /* places batch 37, 5 Sep. 60,000 km2 of plateau, a lake, 160,000 ha of desert */
