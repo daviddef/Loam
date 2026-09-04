@@ -44558,6 +44558,45 @@ def('chan_chan',    () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'lo'),
                           S('M4 20 L56 20', 'ik', 2),
                           C(50, 12, 3, 'bs'), S('M50 15 L50 20', 'bs', 1.2)]);    // the well
 
+/* Places, batch 26 — 5 Sep. Karnak is drawn as the clerestory step, because
+   raising the middle rows is the whole reason for the column count; the
+   Okavango as a river running into sand and stopping.                       */
+def('karnak',       () => [...[8, 16, 44, 52].map(x => [P(`M${x - 4} 50 L${x - 3} 26 L${x + 3} 26 L${x + 4} 50 Z`, 'lo'),
+                                                        P(`M${x - 5} 26 L${x + 5} 26 L${x + 5} 22 L${x - 5} 22 Z`, 'bs')]).flat(),
+                          ...[26, 34].map(x => [P(`M${x - 4} 50 L${x - 3} 14 L${x + 3} 14 L${x + 4} 50 Z`, 'lo'),
+                                                P(`M${x - 5} 14 L${x + 5} 14 L${x + 5} 10 L${x - 5} 10 Z`, 'bs')]).flat(),
+                          S('M20 20 L20 14', 'hi', 1.4), S('M40 20 L40 14', 'hi', 1.4),   // the light that gets in
+                          S('M4 50 L56 50', 'ik', 1.4)]);
+def('bandiagara',   () => [P('M2 6 L34 6 L34 44 L2 44 Z', 'lo'),
+                          P('M2 44 L58 44 L58 56 L2 56 Z', 'gh'),
+                          ...[[16, 16], [24, 26], [12, 30]].map(([x, y]) =>
+                            [P(`M${x - 4} ${y + 7} L${x - 4} ${y} L${x + 4} ${y} L${x + 4} ${y + 7} Z`, 'bs'),
+                             P(`M${x - 5} ${y} L${x} ${y - 5} L${x + 5} ${y} Z`, 'lo')]).flat(),
+                          wave('bs', 52, 1.4, 56)]);                          // and the flood below them
+def('virunga',      () => [P('M2 56 L18 22 L30 40 L42 16 L58 56 Z', 'lo'),
+                          ...[18, 42].map(x => [P(`M${x - 3} ${x === 18 ? 24 : 18} L${x + 3} ${x === 18 ? 24 : 18} L${x + 1} ${x === 18 ? 20 : 14} L${x - 1} ${x === 18 ? 20 : 14} Z`, 'bs')]).flat(),
+                          C(30, 46, 7, 'bs'), C(26, 43, 1.6, 'ik'), C(34, 43, 1.6, 'ik'),
+                          P('M26 50 Q30 54 34 50 Z', 'ik'),
+                          ...[0, 1].map(i => S(`M${16 + i * 24} 12 Q${14 + i * 24} 6 ${18 + i * 24} 2`, 'gh', 1.2))]);
+def('okavango_delta',()=>[S('M2 8 Q10 18 16 26', 'bs', 3.4),                  // the river, arriving
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M16 26 Q${24 + i * 4} ${28 + i * 4} ${34 + i * 4} ${32 + i * 4}`, 'gh', 1.6)),
+                          ...[0, 1, 2, 3].map(i => S(`M16 26 Q${20 + i * 3} ${24 - i * 3} ${28 + i * 5} ${22 - i * 4}`, 'gh', 1.6)),
+                          ...granules('lo', 22, 11, [24, 12, 58, 54]),        // and the sand it stops in
+                          ...[[36, 30], [44, 40], [30, 44]].map(([x, y]) => E(x, y, 4, 2.4, 'hi'))]);
+def('statue_of_liberty',()=>[P('M22 56 L22 44 L38 44 L38 56 Z', 'lo'),
+                          P('M26 44 L26 22 Q30 16 34 22 L34 44 Z', 'lo'),
+                          C(30, 16, 5, 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => S(`M30 16 L${30 + 9 * Math.cos(Math.PI * (0.15 + i * 0.117))} ${16 - 9 * Math.sin(Math.PI * (0.15 + i * 0.117))}`, 'lo', 1.4)),
+                          S('M40 26 L44 8', 'ik', 2), P('M42 8 L48 8 L45 2 Z', 'hi'),
+                          ...[0, 1, 2].map(i => S(`M26 ${30 + i * 5} L34 ${30 + i * 5}`, 'ik', 0.8))]);   // the frame inside
+def('cusco',        () => [P('M4 30 L56 30 L56 56 L4 56 Z', 'lo'),
+                          ...[[6, 32, 14], [22, 32, 12], [36, 32, 18], [6, 42, 20], [28, 42, 12], [42, 42, 12]]
+                            .map(([x, y, w]) => P(`M${x} ${y} L${x + w} ${y} L${x + w} ${y + 9} L${x} ${y + 9} Z`, 'lo')),
+                          ...[[6, 32, 14], [22, 32, 12], [36, 32, 18], [6, 42, 20], [28, 42, 12], [42, 42, 12]]
+                            .map(([x, y, w]) => S(`M${x} ${y} L${x + w} ${y}`, 'ik', 1)),   // joints that fit
+                          P('M12 30 L20 30 L20 16 L12 16 Z', 'gh'), P('M34 30 L46 30 L46 12 L34 12 Z', 'gh'),
+                          S('M10 14 L24 14', 'bs', 2), S('M32 10 L48 10', 'bs', 2)]);       // and what was built on them
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
