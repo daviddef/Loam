@@ -383,7 +383,10 @@
     "caisson": "Caisson (engineering)",
     "great_house": "Great house (pueblo)",
     "chaco_canyon": "Chaco Culture National Historical Park",
-    "brooklyn_bridge": "Brooklyn Bridge"
+    "brooklyn_bridge": "Brooklyn Bridge",
+    "log_building": "Log house",
+    "shingle": "Wood shingle",
+    "kizhi_pogost": "Kizhi Pogost"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -896,6 +899,9 @@
     "air+water": "Caisson (engineering)",
     "road+timber": "Great house (pueblo)",
     "great_house+sandstone": "Chaco Culture National Historical Park",
-    "caisson+suspension_bridge": "Brooklyn Bridge"
+    "caisson+suspension_bridge": "Brooklyn Bridge",
+    "axe+timber": "Log house",
+    "timber+wedge": "Wood shingle",
+    "log_building+shingle": "Kizhi Pogost"
   }
 }

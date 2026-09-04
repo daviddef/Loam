@@ -43556,6 +43556,23 @@ def('brooklyn_bridge',()=>[...[0, 1].map(i => P(`M${13 + i * 30} 46 L${20 + i * 
                           P('M2 42 L58 42 L58 46 L2 46 Z', 'hi'),
                           wave('bs', 52, 3, 27)]);
 
+/* Places, batch 22 — Eastern Europe. Kizhi is drawn with its shingled domes
+   distinct from its log walls, because that is where the famous claim about
+   it stops being true.                                                      */
+def('log_building',()=> [...[0, 1, 2, 3, 4].map(i => [
+                            P(`M10 ${20 + i * 7} L50 ${20 + i * 7} L50 ${26 + i * 7} L10 ${26 + i * 7} Z`, i % 2 ? 'lo' : 'bs'),
+                            C(12, 23 + i * 7, 2.6, 'gh'), C(48, 23 + i * 7, 2.6, 'gh')]).flat(),
+                          ...[0, 1, 2].map(i => S(`M6 ${24 + i * 14} L10 ${24 + i * 14}`, 'lo', 2.4))]);
+def('shingle',     () => [...[0, 1, 2].map(i => [0, 1, 2].map(j =>
+                            P(`M${10 + j * 14 + (i % 2) * 7} ${18 + i * 11} L${22 + j * 14 + (i % 2) * 7} ${18 + i * 11} L${22 + j * 14 + (i % 2) * 7} ${30 + i * 11} L${10 + j * 14 + (i % 2) * 7} ${30 + i * 11} Z`,
+                              (i + j) % 2 ? 'lo' : 'bs'))).flat(),
+                          ...[0, 1, 2].map(i => S(`M8 ${29 + i * 11} L54 ${29 + i * 11}`, 'gh', 1))]);
+def('kizhi_pogost',()=> [...[0, 1, 2].map(i =>
+                            P(`M${14 + i * 3} ${52 - i * 8} L${46 - i * 3} ${52 - i * 8} L${46 - i * 3} ${44 - i * 8} L${14 + i * 3} ${44 - i * 8} Z`, i % 2 ? 'lo' : 'bs')),
+                          ...[[16, 30], [30, 22], [44, 30], [23, 16], [37, 16], [30, 8]].map(([x, y]) => [
+                            P(`M${x - 5} ${y + 6} Q${x - 6} ${y - 4} ${x} ${y - 6} Q${x + 6} ${y - 4} ${x + 5} ${y + 6} Z`, 'hi'),
+                            S(`M${x} ${y - 6} L${x} ${y - 10}`, 'bs', 1.2)]).flat()]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

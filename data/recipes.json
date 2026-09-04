@@ -94022,5 +94022,35 @@
     "why": "A 486 m span with diagonal stays as well as vertical hangers, so it is stiffer than a pure suspension bridge. Its contractor substituted bad wire in the cables; Washington Roebling could not have it removed, so he added 150 wires per cable to cover the shortfall.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
+  },
+  {
+    "in": [
+      "timber",
+      "axe"
+    ],
+    "out": "log_building",
+    "why": "Notch each log near its ends and lay it across the last, and the weight of the wall above locks every joint. No saw, no nail and no mortar are needed, which is why the method appears independently across the whole northern forest.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Log_house"
+  },
+  {
+    "in": [
+      "timber",
+      "wedge"
+    ],
+    "out": "shingle",
+    "why": "Split a block along the grain rather than sawing across it and the fibres stay whole from end to end, so water runs off along them instead of wicking into cut ends. A split shingle outlasts a sawn one by decades.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wood_shingle"
+  },
+  {
+    "in": [
+      "log_building",
+      "shingle"
+    ],
+    "out": "kizhi_pogost",
+    "why": "The Transfiguration Church is notched pine, 37 m to the top of twenty-two domes, with no nails anywhere in the log structure. The domes and roof are another matter: about 180,000 nails hold 60,000 aspen shingles. 'Built without a single nail' is a good story and the roof is where it stops being true.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kizhi_Pogost"
   }
 ]
