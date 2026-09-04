@@ -5490,31 +5490,36 @@
       "id": "tx_osteichthyes",
       "name": "Osteichthyes",
       "rank": "clade",
-      "parent": "tx_vertebrata"
+      "parent": "tx_vertebrata",
+      "srcTitle": "Osteichthyes"
     },
     {
       "id": "tx_elasmobranchii",
       "name": "Elasmobranchii",
       "rank": "clade",
-      "parent": "tx_chondrichthyes"
+      "parent": "tx_chondrichthyes",
+      "srcTitle": "Elasmobranchii"
     },
     {
       "id": "tx_selachii",
       "name": "Selachii",
       "rank": "clade",
-      "parent": "tx_elasmobranchii"
+      "parent": "tx_elasmobranchii",
+      "srcTitle": "Selachimorpha"
     },
     {
       "id": "tx_batoidea",
       "name": "Batoidea",
       "rank": "clade",
-      "parent": "tx_elasmobranchii"
+      "parent": "tx_elasmobranchii",
+      "srcTitle": "Batoidea"
     },
     {
       "id": "tx_myriapoda",
       "name": "Myriapoda",
       "rank": "subphylum",
-      "parent": "tx_arthropoda"
+      "parent": "tx_arthropoda",
+      "srcTitle": "Myriapoda"
     },
     {
       "id": "tx_chelicerata",

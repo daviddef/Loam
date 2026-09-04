@@ -1,0 +1,638 @@
+{
+  "$comment": "Landmarks, wonders, structures and sites — the places a person can stand in. A landmark is the one kind of element where being generically true is a failure: 'a castle in Croatia' is a category with a name stuck on it. What makes Nehaj Nehaj is that it was finished in 1558 by Ivan Lenkovic out of the stone of the churches and monasteries demolished outside Senj's walls, so a besieging Ottoman force could not shelter in them. That single fact explains its date, its material, its silhouette and its politics at once. This file exists to hold that depth, and to measure where the corpus has it and where it only has a name.",
+  "$rules": [
+    "Every key is an element id. A place entry for an element that does not exist is an error, and so is a landmark element with no entry.",
+    "when / who / of / site are the four facts that make a place specific rather than generic. A place carrying none of them is a category wearing a proper noun.",
+    "of is what it is MADE of, and it should name elements this corpus already has, so a landmark joins the graph rather than hanging off it. For a natural wonder, of is the rock and the process.",
+    "site answers 'why here' — the fact about the ground that explains the building. A fortress on a bare hill in cannon range of its harbour is not the same claim as a fortress somewhere in Croatia.",
+    "wanted is the global checklist and it is the whole point of the file. Coverage measured against what we happen to have is not coverage; it is a total. Measured against a world list, a corpus of European castles reports itself as one.",
+    "Regions are the UN M49 subregions, unchanged, so the denominator is somebody else's and cannot be quietly redrawn to flatter the numerator."
+  ],
+  "$src": {
+    "regions": "https://unstats.un.org/unsd/methodology/m49/",
+    "note": "Individual places carry their own srcTitle, resolved by tools/sources.mjs like every other citation in this repository."
+  },
+  "regions": [
+    {
+      "id": "north_africa",
+      "name": "Northern Africa"
+    },
+    {
+      "id": "west_africa",
+      "name": "Western Africa"
+    },
+    {
+      "id": "middle_africa",
+      "name": "Middle Africa"
+    },
+    {
+      "id": "east_africa",
+      "name": "Eastern Africa"
+    },
+    {
+      "id": "south_africa_r",
+      "name": "Southern Africa"
+    },
+    {
+      "id": "north_america",
+      "name": "Northern America"
+    },
+    {
+      "id": "central_america",
+      "name": "Central America"
+    },
+    {
+      "id": "caribbean",
+      "name": "Caribbean"
+    },
+    {
+      "id": "south_america",
+      "name": "South America"
+    },
+    {
+      "id": "central_asia",
+      "name": "Central Asia"
+    },
+    {
+      "id": "east_asia",
+      "name": "Eastern Asia"
+    },
+    {
+      "id": "southeast_asia",
+      "name": "South-eastern Asia"
+    },
+    {
+      "id": "south_asia",
+      "name": "Southern Asia"
+    },
+    {
+      "id": "west_asia",
+      "name": "Western Asia"
+    },
+    {
+      "id": "north_europe",
+      "name": "Northern Europe"
+    },
+    {
+      "id": "south_europe",
+      "name": "Southern Europe"
+    },
+    {
+      "id": "east_europe",
+      "name": "Eastern Europe"
+    },
+    {
+      "id": "west_europe",
+      "name": "Western Europe"
+    },
+    {
+      "id": "anz",
+      "name": "Australia and New Zealand"
+    },
+    {
+      "id": "melanesia",
+      "name": "Melanesia"
+    },
+    {
+      "id": "micronesia",
+      "name": "Micronesia"
+    },
+    {
+      "id": "polynesia",
+      "name": "Polynesia"
+    }
+  ],
+  "kinds": [
+    {
+      "id": "fortification",
+      "name": "Fortification",
+      "note": "Walls, castles, forts. Built against somebody, which is why they carry the clearest politics of any structure."
+    },
+    {
+      "id": "worship",
+      "name": "Place of worship",
+      "note": "Temples, churches, mosques, stupas, shrines."
+    },
+    {
+      "id": "tomb",
+      "name": "Tomb or burial",
+      "note": "Pyramids, mausolea, barrows, necropolises."
+    },
+    {
+      "id": "palace",
+      "name": "Palace or seat",
+      "note": "Where power sat, as distinct from where it defended itself."
+    },
+    {
+      "id": "monument",
+      "name": "Monument or statue",
+      "note": "Built to be looked at rather than used."
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering work",
+      "note": "Bridges, aqueducts, canals, roads, dams — the structures whose purpose is entirely function."
+    },
+    {
+      "id": "settlement",
+      "name": "Settlement or site",
+      "note": "Cities, archaeological sites, whole places rather than single buildings."
+    },
+    {
+      "id": "industry",
+      "name": "Industrial site",
+      "note": "Mines, mills, furnaces, yards. The heritage that is usually listed last and demolished first."
+    },
+    {
+      "id": "natural",
+      "name": "Natural wonder",
+      "note": "Not built. Derives from rock, water and time — and sometimes from living things, which is what makes Plitvice a different claim from a canyon."
+    },
+    {
+      "id": "rock_art",
+      "name": "Rock art or early mark",
+      "note": "The oldest deliberate marks people left on places, and the only kind of site that is global at every date."
+    }
+  ],
+  "places": {
+    "nehaj": {
+      "region": "south_europe",
+      "country": "croatia",
+      "kind": "fortification",
+      "when": "finished 1558",
+      "who": "Ivan Lenkovic, Croatian general and captain of the Uskoks",
+      "of": [
+        "limestone",
+        "stone",
+        "mortar"
+      ],
+      "site": "a bare hill directly above Senj, in cannon range of the harbour, with nothing left standing around it to shelter a besieging force — the churches, monasteries and houses outside the walls were demolished and their stone went into the fortress",
+      "size": "18 m tall, 23 m wide, walls 2-3 m thick, five towers, eleven cannon openings",
+      "srcTitle": "Nehaj Fortress"
+    },
+    "senj": {
+      "region": "south_europe",
+      "country": "croatia",
+      "kind": "settlement",
+      "when": "inhabited over 3,000 years; a Roman municipality from 35 BC",
+      "who": "Iapodes, then Rome, then the Habsburg frontier",
+      "of": [
+        "harbour",
+        "velebit"
+      ],
+      "site": "the seaward end of the Vratnik pass, where the only easy crossing of the Velebit reaches the Adriatic",
+      "srcTitle": "Senj"
+    },
+    "plitvice": {
+      "region": "south_europe",
+      "country": "croatia",
+      "kind": "natural",
+      "when": "still forming — the barriers grow up to 13 mm a year; national park 1949, UNESCO 1979",
+      "who": "moss and algae, which is the whole point: the dams are built by living things",
+      "of": [
+        "travertine",
+        "moss",
+        "limestone",
+        "dolomite",
+        "water"
+      ],
+      "site": "a karst valley where groundwater arrives saturated with calcium hydrogencarbonate; sixteen lakes drop 133 m from the first to the last",
+      "srcTitle": "Plitvice Lakes National Park"
+    },
+    "velebit": {
+      "region": "south_europe",
+      "country": "croatia",
+      "kind": "natural",
+      "when": "Mesozoic limestone, uplifted with the Dinarides",
+      "who": "—",
+      "of": [
+        "karst",
+        "limestone"
+      ],
+      "site": "145 km from Senj to the source of the Zrmanja, the seaward wall of the Dinaric karst; highest point Vaganski vrh, 1,758 m",
+      "srcTitle": "Velebit"
+    },
+    "great_pyramid": {
+      "region": "north_africa",
+      "country": "egypt",
+      "kind": "tomb",
+      "who": "built for Khufu",
+      "of": [
+        "limestone",
+        "granite"
+      ],
+      "srcTitle": "Great Pyramid of Giza"
+    },
+    "colosseum": {
+      "region": "south_europe",
+      "country": "italy",
+      "kind": "monument",
+      "when": "finished 80 CE",
+      "of": [
+        "travertine",
+        "stone"
+      ],
+      "srcTitle": "Colosseum",
+      "who": "begun under Vespasian, finished under Titus",
+      "site": "the drained lake of Nero’s Golden House, given back to the city as a public building on the site of a private palace"
+    },
+    "great_wall": {
+      "region": "east_asia",
+      "country": "china",
+      "kind": "fortification",
+      "who": "Ming builders",
+      "of": [
+        "brick",
+        "sticky_rice_mortar",
+        "stone"
+      ],
+      "srcTitle": "Great Wall of China"
+    },
+    "forbidden_city": {
+      "region": "east_asia",
+      "country": "china",
+      "kind": "palace",
+      "who": "the Ming dynasty",
+      "of": [
+        "wood"
+      ],
+      "srcTitle": "Forbidden City"
+    },
+    "terracotta_army": {
+      "region": "east_asia",
+      "country": "china",
+      "kind": "tomb",
+      "who": "Qin Shi Huang",
+      "of": [
+        "clay"
+      ],
+      "srcTitle": "Terracotta Army"
+    },
+    "angkor_wat": {
+      "region": "southeast_asia",
+      "country": "cambodia",
+      "kind": "worship",
+      "who": "the Khmer Empire",
+      "srcTitle": "Angkor Wat"
+    },
+    "machu_picchu": {
+      "region": "south_america",
+      "country": "peru",
+      "kind": "settlement",
+      "when": "around 1450",
+      "who": "built for Pachacuti",
+      "of": [
+        "stone"
+      ],
+      "site": "a ridge between two peaks above the Urubamba",
+      "srcTitle": "Machu Picchu"
+    },
+    "ishtar_gate": {
+      "region": "west_asia",
+      "country": "iraq",
+      "kind": "monument",
+      "who": "Nebuchadnezzar II",
+      "of": [
+        "clay",
+        "glass"
+      ],
+      "srcTitle": "Ishtar Gate",
+      "when": "about 575 BCE"
+    },
+    "lighthouse_of_alexandria": {
+      "region": "north_africa",
+      "country": "egypt",
+      "kind": "engineering",
+      "who": "Sostratus of Cnidus",
+      "of": [
+        "limestone"
+      ],
+      "srcTitle": "Lighthouse of Alexandria"
+    },
+    "mausoleum_halicarnassus": {
+      "region": "west_asia",
+      "country": "turkiye",
+      "kind": "tomb",
+      "who": "Artemisia II, for Mausolus",
+      "of": [
+        "marble"
+      ],
+      "srcTitle": "Mausoleum at Halicarnassus",
+      "when": "about 350 BCE"
+    },
+    "colossus_of_rhodes": {
+      "region": "south_europe",
+      "country": "greece",
+      "kind": "monument",
+      "who": "Chares of Lindos",
+      "of": [
+        "bronze"
+      ],
+      "srcTitle": "Colossus of Rhodes"
+    },
+    "temple_of_artemis": {
+      "region": "west_asia",
+      "country": "turkiye",
+      "kind": "worship",
+      "who": "funded by Croesus",
+      "of": [
+        "marble"
+      ],
+      "srcTitle": "Temple of Artemis"
+    },
+    "statue_of_zeus": {
+      "region": "south_europe",
+      "country": "greece",
+      "kind": "monument",
+      "who": "Pheidias",
+      "of": [
+        "chryselephantine"
+      ],
+      "srcTitle": "Statue of Zeus at Olympia"
+    },
+    "hanging_gardens": {
+      "region": "west_asia",
+      "country": "iraq",
+      "kind": "monument",
+      "who": "attributed to Nebuchadnezzar II — and never securely located",
+      "srcTitle": "Hanging Gardens of Babylon"
+    },
+    "lanse_aux_meadows": {
+      "region": "north_america",
+      "country": "canada",
+      "kind": "settlement",
+      "who": "Norse",
+      "site": "a landing at the northern tip of Newfoundland",
+      "srcTitle": "L'Anse aux Meadows"
+    },
+    "nabta_playa": {
+      "region": "north_africa",
+      "country": "egypt",
+      "kind": "settlement",
+      "site": "a seasonal lakebed in the Nubian Desert",
+      "srcTitle": "Nabta Playa",
+      "when": "occupied from about 9000 BCE; the stone circle around 4800 BCE",
+      "who": "cattle-herding people of the Nubian Desert",
+      "of": [
+        "stone"
+      ]
+    }
+  },
+  "wanted": {
+    "north_africa": [
+      "Leptis Magna — settlement",
+      "Carthage — settlement",
+      "Volubilis — settlement",
+      "Siwa Oasis temple — worship",
+      "Tassili n'Ajjer rock art — rock_art",
+      "Aswan unfinished obelisk — industry",
+      "Meroe pyramids — tomb",
+      "Djemila — settlement",
+      "Great Pyramid of Giza — tomb",
+      "Lighthouse of Alexandria — engineering",
+      "Nabta Playa — settlement"
+    ],
+    "west_africa": [
+      "Great Mosque of Djenne — worship",
+      "Benin Walls — fortification",
+      "Sungbo's Eredo — fortification",
+      "Nok terracottas — monument",
+      "Cape Coast Castle — fortification",
+      "Larabanga Mosque — worship",
+      "Kumasi Manhyia — palace",
+      "Igbo-Ukwu bronzes — monument"
+    ],
+    "middle_africa": [
+      "Kongo capital Mbanza-Kongo — settlement",
+      "Sangha Trinational — natural",
+      "Lope-Okanda rock engravings — rock_art",
+      "Dzanga-Sangha — natural",
+      "Loango slave route sites — settlement"
+    ],
+    "east_africa": [
+      "Lalibela rock-hewn churches — worship",
+      "Aksum stelae — monument",
+      "Great Zimbabwe — fortification",
+      "Fasil Ghebbi — palace",
+      "Lamu Old Town — settlement",
+      "Kilwa Kisiwani — settlement",
+      "Olduvai Gorge — settlement",
+      "Ngorongoro Crater — natural",
+      "Mount Kilimanjaro — natural"
+    ],
+    "south_africa_r": [
+      "Mapungubwe — settlement",
+      "Drakensberg rock art — rock_art",
+      "Sterkfontein Caves — settlement",
+      "Table Mountain — natural",
+      "Robben Island — fortification",
+      "Tsodilo Hills — rock_art",
+      "Twyfelfontein — rock_art"
+    ],
+    "north_america": [
+      "Cahokia Mounds — settlement",
+      "Mesa Verde cliff dwellings — settlement",
+      "Chaco Canyon — settlement",
+      "Grand Canyon — natural",
+      "Yellowstone — natural",
+      "Brooklyn Bridge — engineering",
+      "Hoover Dam — engineering",
+      "Head-Smashed-In Buffalo Jump — settlement",
+      "Old Quebec — settlement",
+      "Niagara Falls — natural",
+      "L'Anse aux Meadows — settlement"
+    ],
+    "central_america": [
+      "Chichen Itza — worship",
+      "Tikal — settlement",
+      "Teotihuacan — settlement",
+      "Palenque — settlement",
+      "Copan — settlement",
+      "Monte Alban — settlement",
+      "Panama Canal — engineering",
+      "Joya de Ceren — settlement"
+    ],
+    "caribbean": [
+      "Citadelle Laferriere — fortification",
+      "Brimstone Hill Fortress — fortification",
+      "Old Havana — settlement",
+      "Morne Trois Pitons — natural",
+      "El Morro San Juan — fortification",
+      "Taino rock art of Cueva de las Maravillas — rock_art"
+    ],
+    "south_america": [
+      "Machu Picchu — settlement",
+      "Nazca Lines — rock_art",
+      "Sacsayhuaman — fortification",
+      "Tiwanaku — settlement",
+      "Caral — settlement",
+      "Angel Falls — natural",
+      "Iguazu Falls — natural",
+      "Salar de Uyuni — natural",
+      "Cueva de las Manos — rock_art",
+      "Qhapaq Nan road — engineering",
+      "Rapa Nui moai — monument"
+    ],
+    "central_asia": [
+      "Registan Samarkand — worship",
+      "Merv — settlement",
+      "Bukhara old city — settlement",
+      "Gur-e-Amir — tomb",
+      "Tash Rabat caravanserai — engineering",
+      "Otrar — settlement",
+      "Aral Sea — natural"
+    ],
+    "east_asia": [
+      "Great Wall — fortification",
+      "Forbidden City — palace",
+      "Terracotta Army — tomb",
+      "Longmen Grottoes — worship",
+      "Mogao Caves — worship",
+      "Potala Palace — palace",
+      "Himeji Castle — fortification",
+      "Horyu-ji — worship",
+      "Todai-ji — worship",
+      "Mount Fuji — natural",
+      "Seokguram Grotto — worship",
+      "Hwaseong Fortress — fortification",
+      "Erdene Zuu — worship",
+      "Grand Canal — engineering"
+    ],
+    "southeast_asia": [
+      "Angkor Wat — worship",
+      "Borobudur — worship",
+      "Prambanan — worship",
+      "Bagan — worship",
+      "Ayutthaya — settlement",
+      "Banaue rice terraces — engineering",
+      "Ha Long Bay — natural",
+      "Hue Citadel — fortification",
+      "My Son — worship",
+      "Sukhothai — settlement"
+    ],
+    "south_asia": [
+      "Taj Mahal — tomb",
+      "Ajanta Caves — worship",
+      "Ellora Caves — worship",
+      "Konark Sun Temple — worship",
+      "Mohenjo-daro — settlement",
+      "Harappa — settlement",
+      "Red Fort — fortification",
+      "Sanchi Stupa — worship",
+      "Sigiriya — fortification",
+      "Anuradhapura — settlement",
+      "Lalitpur Durbar Square — palace",
+      "Sundarbans — natural"
+    ],
+    "west_asia": [
+      "Petra — settlement",
+      "Gobekli Tepe — worship",
+      "Persepolis — palace",
+      "Hagia Sophia — worship",
+      "Dome of the Rock — worship",
+      "Palmyra — settlement",
+      "Baalbek — worship",
+      "Krak des Chevaliers — fortification",
+      "Ur ziggurat — worship",
+      "Catalhoyuk — settlement",
+      "Ishtar Gate — monument",
+      "Masada — fortification",
+      "Dead Sea — natural",
+      "Cappadocia rock churches — worship",
+      "Temple of Artemis — worship",
+      "Mausoleum at Halicarnassus — tomb",
+      "Hanging Gardens of Babylon — monument"
+    ],
+    "north_europe": [
+      "Stonehenge — monument",
+      "Newgrange — tomb",
+      "Skara Brae — settlement",
+      "Jelling stones — monument",
+      "Urnes stave church — worship",
+      "Kronborg — fortification",
+      "Giant's Causeway — natural",
+      "Iron Bridge — engineering",
+      "Hadrian's Wall — fortification",
+      "Suomenlinna — fortification",
+      "Vigelandsparken — monument",
+      "Geirangerfjord — natural"
+    ],
+    "south_europe": [
+      "Colosseum — monument",
+      "Pantheon — worship",
+      "Parthenon — worship",
+      "Pont du Gard — engineering",
+      "Alhambra — palace",
+      "Nehaj Fortress — fortification",
+      "Diocletian's Palace — palace",
+      "Dubrovnik walls — fortification",
+      "Plitvice Lakes — natural",
+      "Pula Arena — monument",
+      "Aqueduct of Segovia — engineering",
+      "Sagrada Familia — worship",
+      "Knossos — palace",
+      "Pompeii — settlement",
+      "Mount Etna — natural",
+      "Meteora — worship",
+      "Trogir — settlement",
+      "Euphrasian Basilica — worship",
+      "Colossus of Rhodes — monument",
+      "Statue of Zeus at Olympia — monument",
+      "Velebit — natural"
+    ],
+    "east_europe": [
+      "Saint Basil's Cathedral — worship",
+      "Moscow Kremlin — fortification",
+      "Wieliczka salt mine — industry",
+      "Malbork Castle — fortification",
+      "Prague Castle — fortification",
+      "Auschwitz-Birkenau — settlement",
+      "Kizhi Pogost — worship",
+      "Bialowieza Forest — natural",
+      "Rila Monastery — worship",
+      "Sighisoara — settlement"
+    ],
+    "west_europe": [
+      "Notre-Dame de Paris — worship",
+      "Mont-Saint-Michel — worship",
+      "Chartres Cathedral — worship",
+      "Eiffel Tower — monument",
+      "Cologne Cathedral — worship",
+      "Neuschwanstein — palace",
+      "Carcassonne — fortification",
+      "Lascaux — rock_art",
+      "Zollverein Coal Mine — industry",
+      "Amsterdam canal ring — engineering",
+      "Aachen Cathedral — worship",
+      "Palace of Versailles — palace"
+    ],
+    "anz": [
+      "Uluru — natural",
+      "Sydney Opera House — monument",
+      "Great Barrier Reef — natural",
+      "Budj Bim eel traps — engineering",
+      "Port Arthur — fortification",
+      "Te Wahipounamu — natural",
+      "Waitangi Treaty Grounds — settlement",
+      "Kakadu rock art — rock_art"
+    ],
+    "melanesia": [
+      "Chief Roi Mata's Domain — settlement",
+      "Kuk Early Agricultural Site — settlement",
+      "Levuka — settlement",
+      "Rennell — natural"
+    ],
+    "micronesia": [
+      "Nan Madol — settlement",
+      "Latte Stones of Guam — monument",
+      "Bikini Atoll — settlement"
+    ],
+    "polynesia": [
+      "Rapa Nui moai — monument",
+      "Taputapuatea marae — worship",
+      "Puuhonua o Honaunau — worship",
+      "Mauna Kea — natural",
+      "Tongan Haamonga a Maui — monument"
+    ]
+  }
+}

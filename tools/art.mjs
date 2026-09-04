@@ -42940,6 +42940,47 @@ def('molten_bronze',() => [vessel('lo'),
                            ...[0, 1].map(i => C(52 + i, 48 + i * 3, 2.4, 'hi')),
                            ...[0, 1, 2].map(i => S(`M${20 + i * 10} 22 Q${23 + i * 10} 16 ${20 + i * 10} 10`, 'gh', 1.4))]);
 
+/* Places, batch 1 — the Senj worked example for tools/places.mjs. A landmark
+   is drawn as the thing itself, not as an icon of its category: Nehaj is a
+   squat block with five towers and a band of cannon openings because that is
+   what it is, and a generic castle silhouette would make it interchangeable
+   with every other castle, which is the exact fault the places mechanism
+   exists to catch.                                                          */
+def('travertine',  () => [facet('lo', .95),
+                          // banded, because it is deposited in layers you can count
+                          ...[0, 1, 2].map(i => S(`M10 ${26 + i * 8} Q30 ${22 + i * 8} 50 ${26 + i * 8}`, 'hi', 1.6)),
+                          ...granules('gh', 7, 909, [16, 20, 44, 44])]);
+def('velebit',     () => [P('M4 50 L20 22 L28 32 L40 12 L56 50 Z', 'lo'),
+                          P('M40 12 L47 24 L33 24 Z', 'hi'),          // bare limestone above the treeline
+                          S('M8 44 Q30 38 52 44', 'gh', 1.4),
+                          S('M14 50 Q30 46 46 50', 'gh', 1.4)]);
+def('senj',        () => [wave('lo', 50, 5, 26), wave('bs', 44, 4, 24),
+                          P('M12 44 L12 28 L20 22 L28 28 L28 44 Z', 'hi'),   // the town
+                          P('M32 44 L32 32 L40 26 L48 32 L48 44 Z', 'hi'),
+                          S('M20 22 L20 14', 'bs', 1.6),
+                          S('M40 26 L40 16', 'bs', 1.6)]);
+def('uskok',       () => [P('M22 52 L22 30 Q30 22 38 30 L38 52 Z', 'lo'),     // a figure
+                          C(30, 20, 7, 'lo'),
+                          S('M44 46 L52 14', 'hi', 2.6),                      // the sabre
+                          P('M50 12 L54 16 L52 20 L48 16 Z', 'hi')]);
+def('nehaj',       () => [P('M10 52 L10 22 L50 22 L50 52 Z', 'lo'),           // 23 wide, 18 tall
+                          ...[12, 22, 32, 42].map(x => P(`M${x} 22 L${x} 14 L${x + 6} 14 L${x + 6} 22 Z`, 'lo')),
+                          ...[0, 1, 2, 3, 4].map(i => C(15 + i * 7.5, 34, 1.9, 'gh')),  // cannon openings
+                          S('M10 44 Q30 42 50 44', 'gh', 1.3),
+                          P('M4 52 L56 52 L52 56 L8 56 Z', 'bs')]);           // the bare hill
+def('plitvice',    () => [wave('bs', 20, 4, 22),                              // the staircase, seen side-on
+                          P('M8 22 L52 22 L52 26 L8 26 Z', 'lo'),
+                          wave('bs', 34, 4, 20),
+                          P('M12 36 L48 36 L48 40 L12 40 Z', 'lo'),
+                          wave('bs', 48, 4, 18),
+                          ...[0, 1].map(i => S(`M${20 + i * 20} 26 L${20 + i * 20} 34`, 'hi', 2.2)),
+                          S('M30 40 L30 48', 'hi', 2.2)]);
+
+def('sticky_rice_mortar', () => [vessel('bs', 20, 48),
+                          P('M15 30 L45 30 L44 46 Q30 50 16 46 Z', 'lo'),
+                          ...[[24, 36], [33, 34], [28, 41], [37, 40]].map(([x, y]) => grain('hi', x, y, .7)),
+                          S('M20 26 Q30 22 40 26', 'gh', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

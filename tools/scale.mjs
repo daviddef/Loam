@@ -270,6 +270,10 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* places batch 1, 4 Sep — a mortar joint, on the same rack as mortar */
+          'sticky_rice_mortar',
+          /* places batch 1 — the Senj worked example, 4 Sep. a hand sample of banded freshwater limestone, like limestone itself */
+          'travertine',
           /* the universe closed, 4 Sep */
           'hormone', 'sediment', 'silt', 'vitamin',
           /* head nouns, 4 Sep — R2, the umbrella pass */
@@ -706,6 +710,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 1 — the Senj worked example, 4 Sep. a person, on the same rack as the other peoples and polities */
+          'uskok',
           /* the head-noun tail, 4 Sep — R2 finished */
           'disorder', 'syndrome', 'therapy', 'treatment', 'patient', 'effect', 'cause', 'factor', 'variable', 'powder', 'paste', 'mix', 'cluster', 'group', 'disc', 'dynasty', 'sector', 'economy', 'wars', 'conflict', 'guidance', 'feedback', 'output', 'result', 'stand',
           'beauty',
@@ -985,6 +991,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 1 — the Senj worked example, 4 Sep. eighteen metres tall and twenty-three wide */
+          'nehaj',
           /* the universe closed, 4 Sep */
           'igneous_rock', 'sedimentary_rock', 'metamorphic_rock', 'aqueduct', 'sewer', 'village', 'farm', 'railway', 'rocket',
           /* the pathogen catalogue, 4 Sep — organisms at their own size,
@@ -1144,6 +1152,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 1 — the Senj worked example, 4 Sep. a town, on the same rack as town and city */
+          'senj',
           /* the universe closed, 4 Sep */
           'plain', 'forest', 'grassland', 'wetland', 'coast', 'prairie', 'lake', 'groundwater', 'drought',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
@@ -1189,6 +1199,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* places batch 1 — the Senj worked example, 4 Sep. sixteen lakes in an eight-kilometre staircase */
+          'plitvice',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
           'erosion', 'sunset',
           /* geography wave, 3 Sep */
@@ -1281,7 +1293,9 @@ const SCALE = {
           // is the Sun's own plasma in motion, same tier as plasma/sun; tidal_locking isn't a size
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
-  '5':   [// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
+  '5':   [
+          /* places batch 1 — the Senj worked example, 4 Sep. a 145 km range */
+          'velebit',// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           /* completeness-audit wave, 2 Sep */
           'albania', 'armenia', 'azerbaijan', 'bahamas', 'belgium', 'belize', 'bhutan', 'bosnia_and_herzegovina',
           'burundi', 'cabo_verde', 'comoros', 'costa_rica', 'croatia', 'cyprus', 'czechia', 'denmark',

@@ -28,6 +28,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
 const arr  = (d) => Array.isArray(d) ? d : (d.elements || d.recipes || []);
 
+let PLACES_HAVE = 0;
 const elements  = arr(read('data/elements.json'));
 const recipes   = arr(read('data/recipes.json'));
 const verbs     = read('data/verbs.json').verbs;
@@ -92,6 +93,24 @@ function sup(n) {
 }
 const n = (x) => x.toLocaleString('en-GB');
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+
+// ------------------------------------------------------------------ places
+const PL = read('data/places.json');
+const PLACES_REGIONS = PL.regions.length;
+const PLACES_WANTED = Object.values(PL.wanted).flat().length;
+const plNorm = (x) => x.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+const plIndex = new Set(elements.flatMap(e => [e.id, plNorm(e.name)]));
+PLACES_HAVE = Object.values(PL.wanted).flat().filter(line => {
+  const slug = plNorm(line.split(/\s+\u2014\s+/)[0]);
+  if (plIndex.has(slug)) return true;
+  const w = slug.split('_').filter(x => !['the', 'of', 'de', 'a'].includes(x));
+  return [w.join('_'), w.slice(-2).join('_'), w.slice(0, 2).join('_')].some(k => plIndex.has(k));
+}).length;
+const PLACES_JOINED = Object.keys(PL.places).filter(id => byId.has(id)).length;
+const PLACES_DEEP = Object.entries(PL.places).filter(([id, e]) => byId.has(id) &&
+  ['when', 'who', 'of', 'site'].every(f =>
+    (e.kind === 'natural' && f === 'who') ||
+    (e[f] != null && (Array.isArray(e[f]) ? e[f].length : String(e[f]).trim() && String(e[f]).trim() !== '\u2014')))).length;
 
 // ---------------------------------------------------------------- families
 const FAMDATA = read('data/families.json');
@@ -166,6 +185,12 @@ const MECHANISMS = [
     how: `The other checks look at what exists. This one looks at what is <em>owed</em>. An expectation table encodes physical rules — everything organic ferments or rots, everything solid can be crushed, anything with water in it freezes — and the tool multiplies those rules across the corpus to produce a bill. <code>--bands</code> then asks a harder question of heat alone: a temperature band is what lets one element heat to several different products, and a heat recipe without one is claiming there is only one answer.`,
     found: `It immediately exposed a fault class nothing else could see: recipes where the verb is real and the output is real but the arrow between them is <em>association</em>, not derivation. Heating gold does not make a crown; it makes molten gold, and a crown is what a smith does next. A bell is cast from bronze, not heated into being.`,
     now: `${n(procs.length)} verb outcomes written over ${n(elements.length)} elements. ${n(banded)} heat recipes state a temperature.` },
+
+  { id: 'places', file: 'tools/places.mjs', part: 'completeness',
+    asks: 'Is this a place, or a category with a proper noun stuck on it — and is the corpus of places actually global?',
+    how: `A landmark is the one kind of element where being generically true is a failure, and it passes every other check here: the sentence is true, the source resolves, the drawing is distinct, the scale is right. So this asks two things nothing else can. <b>Deep</b> — does each place carry the four facts that make it <em>that</em> place: when, who, what of, and why there? <b>Global</b> — measured against a world checklist of ${PLACES_WANTED} sites across the 22 UN M49 subregions, because coverage measured against what you happen to have is not coverage, it is a total, and it will report a corpus of European castles as complete.`,
+    found: `Landmarks fail the same way heat recipes did. The Colosseum came from <code>stone + lion</code> — a lion is a thing that was in it, not a thing it is made of; it is faced in travertine carted twenty miles from Tibur and pinned with iron cramps, and one side is missing because the cramps were robbed out for their metal. The Great Wall came from <code>china + mongolia</code>. The Ishtar Gate came from clay and glass with nobody to build it. Five association faults in twenty places, in a set nothing else had ever flagged.`,
+    now: `${PLACES_HAVE} of ${PLACES_WANTED} checklist places exist (${Math.round(PLACES_HAVE / PLACES_WANTED * 100)}%), across ${PLACES_REGIONS} regions. ${PLACES_DEEP} of ${PLACES_JOINED} carry all four facts.` },
 
   { id: 'derivation', file: 'tools/derivation.mjs', part: 'truth',
     asks: 'Does this organism actually come from the thing we say it comes from?',
@@ -930,6 +955,8 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     <thead><tr><th scope="col">Command</th><th scope="col">Answers</th></tr></thead>
     <tbody>
 ${[...MECHANISMS.map(m => [`node ${m.file}`, m.asks]),
+   ['node tools/places.mjs --missing', 'Which landmarks on the world checklist nobody has written yet.'],
+   ['node tools/places.mjs --deep', 'Which places are still only a name.'],
    ['node tools/verbs.mjs --gaps', 'Which verb outcomes are owed and unwritten?'],
    ['node tools/verbs.mjs --bands', 'Which heat recipes claim there is only one answer?'],
    ['node tools/needs.mjs --missing', 'Which parts are still missing, and how many?'],

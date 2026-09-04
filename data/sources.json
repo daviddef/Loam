@@ -239,7 +239,7 @@
     "occipital_lobe": "Optic radiation",
     "meninges": "Meninges",
     "cerebrospinal_fluid": "Cerebrospinal fluid",
-    "blood_brain_barrier": "Blood\u2013brain barrier",
+    "blood_brain_barrier": "Blood–brain barrier",
     "cranial_nerve": "Cranial nerves",
     "spinal_nerve": "Spinal nerve",
     "peripheral_nervous_system": "Peripheral nervous system",
@@ -251,7 +251,14 @@
     "short_term_memory": "Prefrontal cortex",
     "long_term_memory": "Memory consolidation",
     "neuroplasticity": "Neuroplasticity",
-    "neurogenesis": "Adult neurogenesis"
+    "neurogenesis": "Adult neurogenesis",
+    "travertine": "Travertine",
+    "velebit": "Velebit",
+    "senj": "Senj",
+    "uskok": "Uskoks",
+    "nehaj": "Nehaj Fortress",
+    "plitvice": "Plitvice Lakes National Park",
+    "sticky_rice_mortar": "Sticky rice mortar"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -382,7 +389,7 @@
     "ore|heat": "Lead",
     "ore+pot": "Zinc",
     "cinnabar|heat": "Mercury (element)",
-    "ore+spark": "Hall\u2013H\u00e9roult process",
+    "ore+spark": "Hall–Héroult process",
     "copper+ore": "Nickel",
     "aluminum+ore": "Chromium",
     "gold+river": "Platinum",
@@ -576,7 +583,7 @@
     "enriched_uranium+rare_earth": "Promethium",
     "noble_mix|heat": "Xenon",
     "noble_mix|chill": "Xenon",
-    "calcium+lead": "Betterton\u2013Kroll process",
+    "calcium+lead": "Betterton–Kroll process",
     "harvest|blow": "Winnowing",
     "feldspar|wait": "Feldspar",
     "basalt|wait": "Basalt",
@@ -602,6 +609,17 @@
     "veal+water": "Stock (food)",
     "pork+salt": "Bacon",
     "msg+ribonucleotides": "Monosodium glutamate",
-    "meat+nitrite": "Sodium nitrite"
+    "meat+nitrite": "Sodium nitrite",
+    "karst+water": "Travertine",
+    "karst+mountain": "Velebit",
+    "harbour+velebit": "Senj",
+    "ottoman_empire+senj": "Uskoks",
+    "limestone+uskok": "Nehaj Fortress",
+    "moss+travertine": "Plitvice Lakes National Park",
+    "mortar+rice": "Sticky rice mortar",
+    "roman_republic+travertine": "Colosseum",
+    "brick+ming_dynasty": "Great Wall of China",
+    "clay+nebuchadnezzar": "Ishtar Gate",
+    "artemisia_ii+marble": "Mausoleum at Halicarnassus"
   }
 }
