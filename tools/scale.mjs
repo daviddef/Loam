@@ -1090,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 22, 5 Sep. a monastery wall, a trilithon 5.2 m high, a treaty house */
+    'erdene_zuu', 'haamonga_a_maui', 'waitangi',
     /* places batch 21, 5 Sep. a stupa, a castle, a palace */
     'anuradhapura', 'kronborg', 'neuschwanstein',
     /* places batch 20, 5 Sep. a stairway 21 m long, a coral-rag house, painted panels */
@@ -1255,6 +1257,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 22, 5 Sep. a castle of 70,000 m2, a city and its ponds */
+    'prague_castle', 'sukhothai',
     /* places batch 21, 5 Sep. a fort of 2.41 km circuit */
     'red_fort',
     /* places batch 20, 5 Sep. a walled town of 1.42 km2, a trading port */
@@ -1411,6 +1415,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 22, 5 Sep. a citadel nearly 10 km round */
+    'hue_citadel',
     /* places batch 18, 5 Sep. a free-standing mountain of 5,895 m */
     'kilimanjaro',
     /* places batch 17, 5 Sep. a shield volcano 4,207 m above the sea */

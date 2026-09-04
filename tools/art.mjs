@@ -44393,6 +44393,44 @@ def('dead_sea',     () => [P('M2 4 L14 4 L18 30 L42 30 L46 4 L58 4 L58 56 L2 56 
                           ...granules('hi', 12, 342, [18, 44, 42, 52]),          // and the salt that stays
                           ...[8, 50].map(x => C(x, 48, 3, 'bs'))]);              // the sinkholes
 
+/* Places, batch 22 — 5 Sep. Erdene Zuu is drawn as a wall of stupas, because
+   the wall is what survived; Waitangi as a marquee on a lawn, because the
+   treaty has no building of its own.                                        */
+def('erdene_zuu',   () => [S('M4 40 L56 40', 'ik', 2.4),
+                          ...[10, 20, 30, 40, 50].map(x => [E(x, 34, 4, 3, 'lo'),
+                                                            P(`M${x - 2} 26 L${x + 2} 26 L${x + 1} 31 L${x - 1} 31 Z`, 'bs'),
+                                                            S(`M${x} 22 L${x} 26`, 'ik', 1.2)]).flat(),
+                          P('M22 54 L22 44 L38 44 L38 54 Z', 'gh'),
+                          ...granules('gh', 8, 108, [4, 46, 20, 54])]);       // stones out of Karakorum
+def('hue_citadel',  () => [P('M30 4 L46 12 L54 30 L46 48 L30 56 L14 48 L6 30 L14 12 Z', 'gh'),   // the moat
+                          P('M30 10 L42 16 L48 30 L42 44 L30 50 L18 44 L12 30 L18 16 Z', 'lo'),  // and the bastions
+                          P('M30 18 L40 24 L40 36 L30 42 L20 36 L20 24 Z', 'bs'),
+                          P('M26 26 L34 26 L34 34 L26 34 Z', 'hi'),           // three enclosures
+                          ...[[30, 10], [42, 16], [48, 30], [42, 44], [30, 50], [18, 44], [12, 30], [18, 16]].map(([x, y]) => C(x, y, 1.6, 'ik'))]);
+def('sukhothai',    () => [P('M2 34 L58 34 L58 56 L2 56 Z', 'lo'),
+                          ...[12, 30, 48].map(x => E(x, 46, 8, 5, 'gh')),      // the traphang
+                          ...[12, 30, 48].map(x => [P(`M${x - 5} 34 L${x - 3} 22 L${x + 3} 22 L${x + 5} 34 Z`, 'bs'),
+                                                    P(`M${x - 2} 22 L${x} 14 L${x + 2} 22 Z`, 'bs')]).flat(),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${8 + i * 10} 8 L${13 + i * 10} 8`, 'ik', 1.4))]);   // and the letters
+def('prague_castle',()=>[P('M2 40 L58 40 L58 56 L2 56 Z', 'lo'),
+                          ...[8, 18, 46, 54].map(x => P(`M${x - 4} 40 L${x - 4} 30 L${x + 4} 30 L${x + 4} 40 Z`, 'lo')),
+                          P('M26 40 L26 18 L38 18 L38 40 Z', 'bs'),
+                          ...[28, 36].map(x => [P(`M${x - 3} 18 L${x - 2} 6 L${x + 2} 6 L${x + 3} 18 Z`, 'bs'),
+                                                S(`M${x} 6 L${x} 2`, 'ik', 1.2)]).flat(),
+                          ...[0, 1, 2].map(i => S(`M28 ${24 + i * 5} L36 ${24 + i * 5}`, 'gh', 0.8))]);
+def('waitangi',     () => [S('M2 50 L58 50', 'ik', 2),
+                          P('M12 50 L24 30 L36 50 Z', 'gh'),                   // the marquee
+                          S('M24 30 L24 24', 'ik', 1.2), C(24, 22, 1.6, 'bs'),
+                          P('M40 50 L40 34 L54 34 L54 50 Z', 'lo'),            // the whare, facing it
+                          P('M38 34 L47 24 L56 34 Z', 'bs'),
+                          S('M43 40 Q47 44 51 40', 'hi', 1.4), C(47, 30, 1.8, 'hi')]);
+def('haamonga_a_maui',()=>[P('M10 54 L10 16 L20 16 L20 54 Z', 'lo'),
+                          P('M40 54 L40 16 L50 16 L50 54 Z', 'lo'),
+                          P('M6 16 L54 16 L54 6 L6 6 Z', 'bs'),                // the lintel
+                          P('M28 6 L30 10 L32 6 Z', 'ik'),                     // and the V cut in it
+                          ...granules('gh', 10, 40, [10, 20, 50, 50]),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
