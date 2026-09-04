@@ -44897,6 +44897,43 @@ def('langi_lapaha',()=>[...[0, 1, 2].map(i =>
                           ...[0, 1, 2].map(i => S(`M${10 + i * 5} ${48 - i * 8} L${50 - i * 5} ${48 - i * 8}`, 'ik', 0.8)),   // the sea's own layers
                           wave('bs', 56, 1.4, 56)]);
 
+/* Places, batch 35 — 5 Sep. The Galápagos are drawn as the age gradient, not
+   as a tortoise; the Namib with fog coming in off the sea, because the fog is
+   what the desert lives on.                                                 */
+def('galapagos',    () => [wave('bs', 44, 2, 56),
+                          ...[[10, 36, 10], [22, 38, 8], [32, 40, 6.5], [42, 41, 5], [52, 42, 4]].map(([x, y, r]) =>
+                            P(`M${x - r} ${y + 6} Q${x} ${y - r} ${x + r} ${y + 6} Z`, 'lo')),
+                          ...[0, 1, 2, 3, 4].map(i => C(10 + i * 10.5, 22 - i * 1.5, 2 + i * 0.4, 'hi')),   // the same bird, five times
+                          S('M2 52 L58 52', 'ik', 1)]);
+def('potosi',       () => [P('M4 56 Q30 6 56 56 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${18 + i * 6} ${50 - i * 4} L${34 + i * 4} ${44 - i * 6}`, 'ik', 1.2)),   // the shafts
+                          ...[0, 1, 2, 3].map(i => C(20 + i * 6, 48 - i * 4, 1.4, 'gh')),
+                          ...[0, 1, 2].map(i => P(`M${16 + i * 12} 56 L${20 + i * 12} 56 L${20 + i * 12} 52 L${16 + i * 12} 52 Z`, 'hi')),   // and the silver leaving
+                          C(30, 12, 2.4, 'bs')]);
+def('cradle_of_humankind',()=>[P('M2 16 L58 16 L58 56 L2 56 Z', 'lo'),
+                          P('M18 16 L26 16 L26 22 L18 22 Z', 'bs'),             // the opening
+                          P('M10 22 Q30 26 46 34 Q40 48 20 46 Q8 38 10 22 Z', 'gh'),
+                          ...granules('ik', 12, 23, [14, 30, 42, 44]),          // breccia
+                          C(26, 38, 4, 'hi'), C(24, 37, 1, 'ik'), C(28, 37, 1, 'ik'),
+                          S('M2 16 L58 16', 'ik', 1.4)]);
+def('namib_sand_sea',()=>[...[0, 1, 2].map(i => S(`M2 ${14 + i * 5} Q16 ${11 + i * 5} 30 ${14 + i * 5}`, 'gh', 3)),   // the fog, coming in
+                          P('M2 56 Q14 30 24 34 Q34 38 40 22 Q48 26 58 56 Z', 'lo'),
+                          S('M24 34 Q34 38 40 22', 'hi', 1.6),                  // the slip face
+                          wave('bs', 54, 1.4, 14),
+                          ...[0, 1, 2].map(i => S(`M${30 + i * 6} 46 L${30 + i * 6} 42`, 'ik', 1.2))]);   // and what drinks it
+def('tulum',        () => [P('M2 34 L34 34 L34 56 L2 56 Z', 'lo'),
+                          P('M34 34 L34 56 L58 56 L58 44 Z', 'gh'),             // the cliff and the sea
+                          P('M10 34 L26 34 L26 20 L10 20 Z', 'lo'),
+                          P('M14 20 L22 20 L22 12 L14 12 Z', 'bs'), C(18, 9, 2.4, 'hi'),   // the beacon
+                          S('M2 30 L34 30', 'ik', 2.4),                          // the wall
+                          S('M40 44 L46 44', 'bs', 2.4), S('M52 44 L58 44', 'bs', 2.4)]);   // the gap in the reef
+def('suzhou_gardens',()=>[P('M2 4 L58 4 L58 56 L2 56 Z', 'gh'),
+                          S('M2 4 L58 4', 'ik', 2), S('M2 56 L58 56', 'ik', 2),
+                          E(30, 40, 20, 10, 'bs'),                              // the water
+                          P('M14 34 Q16 20 22 24 Q26 14 30 24 Q36 18 36 34 Z', 'lo'),   // the rock, standing for a range
+                          ...[0, 1, 2].map(i => C(20 + i * 5, 28 - i * 2, 1.2, 'ik')),
+                          P('M42 34 L52 34 L52 26 L42 26 Z', 'lo'), P('M40 26 L47 20 L54 26 Z', 'hi')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

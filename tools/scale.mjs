@@ -1279,6 +1279,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 35, 5 Sep. a walled port, a garden of 11.9 ha, a cave system */
+    'tulum', 'suzhou_gardens', 'cradle_of_humankind',
     /* places batch 32, 5 Sep. an abandoned capital and a palace on a hillside */
     'fatehpur_sikri', 'changdeokgung',
     /* places batch 31, 5 Sep. an effigy 411 m long, a terraced city, a walled town, a peninsula, a dockyard */
@@ -1455,6 +1457,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 35, 5 Sep. a mountain of ore at 4,824 m */
+    'potosi',
     /* places batch 34, 5 Sep. a cave system of 300 ha */
     'naracoorte',
     /* places batch 24, 5 Sep. 171 hectares of camp; a national park of 68.57 km2 */
@@ -1675,6 +1679,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 35, 5 Sep. an archipelago and 3 million ha of sand sea */
+    'galapagos', 'namib_sand_sea',
     /* places batch 34, 5 Sep. 2,400 km2 of lakes and 1.5 million km2 of ocean */
     'willandra', 'papahanaumokuakea',
     /* places batch 33, 5 Sep. 260 km of reef, 2.2 million ha of bay, 1,500 km of barrier */
