@@ -44465,6 +44465,43 @@ def('te_wahipounamu',()=>[P('M2 56 L14 20 L24 34 L34 12 L44 30 L58 56 Z', 'lo'),
                           wave('bs', 52, 2, 56),
                           ...[[12, 48], [26, 50], [44, 48]].map(([x, y]) => P(`M${x - 3} ${y} L${x} ${y - 4} L${x + 3} ${y} L${x} ${y + 4} Z`, 'gh'))]);   // and what it brings down
 
+/* Places, batch 24 — 5 Sep, the last six on the checklist. Auschwitz-Birkenau
+   is drawn as the rail line running in and stopping: no gate, no watchtower,
+   no silhouette to admire. The line is the fact and it is where it ends.    */
+def('auschwitz_birkenau',()=>[S('M2 34 L44 34', 'ik', 2.2), S('M2 40 L44 40', 'ik', 2.2),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => S(`M${4 + i * 6} 34 L${4 + i * 6} 40`, 'gh', 1)),
+                          S('M44 30 L44 44', 'ik', 3),                        // and it stops
+                          ...[0, 1, 2].map(i => S(`M2 ${12 + i * 5} L40 ${12 + i * 5}`, 'gh', 0.8)),
+                          ...[0, 1, 2].map(i => S(`M2 ${48 + i * 4} L40 ${48 + i * 4}`, 'gh', 0.8))]);
+def('vigelandsparken',()=>[P('M24 56 L24 12 L36 12 L36 56 Z', 'lo'),          // the Monolith, one block
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i =>
+                            [C(28, 16 + i * 6, 2, 'bs'), C(33, 19 + i * 6, 2, 'hi')]).flat(),
+                          P('M26 8 L34 8 L36 12 L24 12 Z', 'bs'),
+                          ...[10, 48].map(x => [C(x, 44, 3, 'gh'), S(`M${x} 47 L${x} 54`, 'gh', 1.6)]).flat(),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('east_rennell', () => [E(30, 34, 26, 18, 'lo'),                            // reef that came up
+                          E(30, 34, 17, 11, 'gh'),                             // and the lagoon that became a lake
+                          S('M4 48 L56 48', 'ik', 1.6),
+                          wave('bs', 54, 1.6, 56),
+                          ...[[18, 30], [40, 36], [30, 26]].map(([x, y]) => C(x, y, 1.8, 'hi'))]);
+def('puuhonua_o_honaunau',()=>[S('M2 24 L44 24 L44 56', 'ik', 4),              // the wall, and the line it draws
+                          P('M46 24 L58 24 L58 56 L46 56 Z', 'gh'),
+                          P('M12 34 L12 24 L24 24 L24 34 Z', 'lo'),
+                          P('M10 34 L18 44 L26 34 Z', 'bs'),                   // the Hale o Keawe, inside
+                          ...[32, 38].map(x => S(`M${x} 40 L${x} 52`, 'lo', 2)),
+                          wave('bs', 54, 1.6, 20)]);
+def('morne_trois_pitons',()=>[P('M2 56 L12 30 L20 40 L30 18 L40 38 L48 28 L58 56 Z', 'lo'),
+                          E(30, 48, 14, 6, 'gh'),                              // the lake in the fumarole
+                          ...[24, 30, 36].map(x => [C(x, 44, 1.6, 'hi'),
+                                                    S(`M${x} 42 Q${x - 2} 36 ${x + 1} 32`, 'hi', 1.2)]).flat(),
+                          ...[10, 50].map(x => [C(x, 50, 2, 'bs'), S(`M${x} 48 Q${x + 2} 42 ${x - 1} 38`, 'gh', 1.2)]).flat()]);
+def('cueva_maravillas',()=>[P('M2 4 L58 4 L58 26 L2 26 Z', 'lo'),
+                          P('M6 26 Q16 44 30 42 Q46 40 54 26 Z', 'bs'),        // the passage, 25 m down
+                          ...[[18, 34], [28, 37], [40, 34]].map(([x, y]) =>
+                            [S(`M${x} ${y} L${x} ${y + 5}`, 'hi', 1.2), C(x, y - 2, 1.4, 'hi'),
+                             S(`M${x - 2.5} ${y + 2} L${x + 2.5} ${y + 1}`, 'hi', 1)]).flat(),
+                          ...[0, 1, 2, 3].map(i => S(`M${10 + i * 12} 26 L${12 + i * 12} 32`, 'gh', 1))]);   // and the karst above it
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

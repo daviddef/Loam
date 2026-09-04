@@ -1090,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 24, 5 Sep. a monolith 14.12 m, a wall, a painted cave passage */
+    'vigelandsparken', 'puuhonua_o_honaunau', 'cueva_maravillas',
     /* places batch 23, 5 Sep. a basilica, a temple square, a clock tower 64 m */
     'euphrasian_basilica', 'patan_durbar', 'sighisoara',
     /* places batch 22, 5 Sep. a monastery wall, a trilithon 5.2 m high, a treaty house */
@@ -1419,6 +1421,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 24, 5 Sep. 171 hectares of camp; a national park of 68.57 km2 */
+    'auschwitz_birkenau', 'morne_trois_pitons',
     /* places batch 22, 5 Sep. a citadel nearly 10 km round */
     'hue_citadel',
     /* places batch 18, 5 Sep. a free-standing mountain of 5,895 m */
@@ -1502,6 +1506,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 24, 5 Sep. 37,000 hectares of raised atoll */
+    'east_rennell',
     /* places batch 21, 5 Sep. a fjord 15 km long, a lake 605 km2 */
     'geirangerfjord', 'dead_sea',
     /* places batch 14, 5 Sep. a caldera 72 by 45 km */
