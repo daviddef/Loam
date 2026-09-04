@@ -45363,6 +45363,47 @@ def('insect_wing', () => [P('M10 34 Q26 14 52 20 Q56 28 48 38 Q28 44 10 34 Z', '
                             S(`M${20 + i * 8} ${29 - i} L${22 + i * 8} ${37 - i * 0.5}`, 'hi', 0.7)),
                           C(11, 34, 1.6, 'ik')]);                         // the hinge at the body wall
 
+/* The gaps a reader found, 5 Sep: a corpus with ivory, earrings and Mesopotamia
+   in it had no bead and no necklace, and the fact under `tooth` named enamel
+   and dentine, neither of which existed. Drawn as a set so the two tooth
+   tissues read as layers of one thing and the two ornaments as one idea at
+   two scales.                                                              */
+def('enamel', () => [P('M16 44 Q16 18 32 16 Q48 18 48 44 L42 44 Q42 24 32 22 Q22 24 22 44 Z', 'lo'),
+                     S('M22 44 L42 44', 'hi', 0.9),
+                     ...[0, 1, 2, 3, 4, 5].map(i => S(`M${18 + i * 5} ${42 - (i % 2) * 2} L${19 + i * 5} 24`, 'hi', 0.7))]);
+
+def('dentine', () => [P('M20 46 Q20 20 32 18 Q44 20 44 46 Z', 'lo'),
+                      ...[0, 1, 2, 3, 4].map(i => S(`M32 42 L${22 + i * 5} ${26 + Math.abs(2 - i) * 3}`, 'ik', 0.8)),
+                      C(32, 43, 2.2, 'ik')]);
+
+def('tusk', () => [P('M12 48 Q14 28 28 18 Q44 8 52 12 Q44 20 34 30 Q22 40 18 50 Z', 'lo'),
+                   S('M15 47 Q18 30 30 20 Q42 11 50 12', 'hi', 1.0),
+                   C(14, 49, 1.8, 'ik')]);
+
+def('bead', () => [C(32, 32, 12, 'lo'),
+                   C(32, 32, 3.4, 'ik'),
+                   S('M20 32 L44 32', 'hi', 0.8)]);
+
+def('necklace', () => [S('M14 20 Q32 52 50 20', 'ik', 1.4),
+                       ...[0, 1, 2, 3, 4, 5, 6].map(i => {
+                         const t = i / 6;
+                         return C(14 + 36 * t, 20 + 32 * (1 - (2 * t - 1) ** 2), i === 3 ? 4.2 : 2.6, 'lo');
+                       })]);
+
+def('dividers', () => [S('M32 12 L18 50', 'ik', 2.2),
+                       S('M32 12 L46 50', 'ik', 2.2),
+                       C(32, 12, 2.6, 'lo'),
+                       S('M22 38 Q32 44 42 38', 'hi', 1.0),
+                       C(18, 50, 1.4, 'ik'), C(46, 50, 1.4, 'ik')]);
+
+def('kaolin', () => [P('M12 46 Q20 34 30 40 Q40 30 52 44 L52 50 L12 50 Z', 'lo'),
+                     ...[0, 1, 2, 3].map(i => C(18 + i * 9, 38 - (i % 2) * 5, 2.2, 'hi'))]);
+
+def('porcelain', () => [P('M22 20 Q20 40 26 48 L38 48 Q44 40 42 20 Z', 'lo'),
+                        S('M22 20 Q32 25 42 20', 'ik', 1.2),
+                        S('M27 26 L27 44', 'hi', 0.9),
+                        C(32, 34, 3.0, 'hi')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

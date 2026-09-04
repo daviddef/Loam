@@ -17307,7 +17307,7 @@
   },
   {
     "in": [
-      "sap",
+      "resin",
       "wood"
     ],
     "out": "violin",
@@ -32465,7 +32465,7 @@
   },
   {
     "in": [
-      "compass",
+      "dividers",
       "paper"
     ],
     "out": "descartes",
@@ -33005,7 +33005,7 @@
   },
   {
     "in": [
-      "compass",
+      "dividers",
       "star"
     ],
     "out": "hypatia",
@@ -34415,7 +34415,7 @@
   },
   {
     "in": [
-      "compass",
+      "dividers",
       "stone"
     ],
     "out": "circle",
@@ -37207,12 +37207,13 @@
   },
   {
     "in": [
-      "bone",
-      "skin"
+      "joint",
+      "sinew"
     ],
     "out": "finger",
-    "why": "Each finger is built on phalanx bones — three of them, except the thumb's two — wrapped in skin all the way to the fingertip.",
-    "src": "https://en.wikipedia.org/wiki/Phalanx_bone"
+    "why": "There is no muscle in a finger. Three phalanx bones — two in the thumb — hinged at synovial joints and pulled by tendons running all the way back to muscles in the palm and forearm, which is why you feel your forearm work when you close your hand, and why a tendon cut at the wrist stops a fingertip moving.",
+    "src": "https://en.wikipedia.org/wiki/Finger",
+    "verified": true
   },
   {
     "in": [
@@ -42739,7 +42740,7 @@
   },
   {
     "in": [
-      "compass",
+      "dividers",
       "triangle"
     ],
     "out": "pythagoras",
@@ -42900,7 +42901,7 @@
   {
     "in": [
       "book",
-      "compass"
+      "logic"
     ],
     "out": "averroes",
     "why": "Averroes argued that philosophy and Islamic revelation cannot truly contradict, since both are methods of reaching the same truth; where reasoned conclusions and a literal reading of scripture appear to clash, he held that the text must be read allegorically.",
@@ -43219,8 +43220,8 @@
   },
   {
     "in": [
-      "compass",
-      "human"
+      "human",
+      "logic"
     ],
     "out": "peirce",
     "why": "Peirce's pragmatic maxim holds that the whole of our conception of an object lies in conceiving its practical, conceivable effects -- an idea's meaning is what it would do, not some hidden essence.",
@@ -54485,8 +54486,8 @@
   },
   {
     "in": [
-      "compass",
-      "circle"
+      "circle",
+      "dividers"
     ],
     "out": "astrolabe",
     "why": "The astrolabe reduces the armillary sphere's rings to a single flat disc by stereographic projection, a technique credited to Hipparchus. Theon of Alexandria, Hypatia's father, wrote the earliest surviving treatise on building one, around 390 CE.",
@@ -56855,7 +56856,7 @@
   },
   {
     "in": [
-      "orange",
+      "independence",
       "sea"
     ],
     "out": "netherlands",
@@ -67409,7 +67410,7 @@
   {
     "in": [
       "bow",
-      "sap"
+      "resin"
     ],
     "out": "violin",
     "why": "The hunting bow is the bowed instrument's ancestor — the military bow 'could easily have served the inventor as a temporary way to hold horsehair at high tension' — and the hair only grips once tree resin is on it: 'Rosin... a hard, sticky substance made from resin... is regularly applied to the bow hair to increase friction.'",
@@ -82892,7 +82893,7 @@
   },
   {
     "in": [
-      "kingdom",
+      "monarchy",
       "viking"
     ],
     "out": "denmark",
@@ -83013,7 +83014,7 @@
   {
     "in": [
       "british_empire",
-      "kingdom"
+      "monarchy"
     ],
     "out": "eswatini",
     "why": "A kingdom that survived colonisation as a British protectorate and came out of it in 1968 still a monarchy. It changed its name from Swaziland in 2018.",
@@ -83113,7 +83114,7 @@
   {
     "in": [
       "france",
-      "kingdom"
+      "monarchy"
     ],
     "out": "benin",
     "why": "Dahomey under France, and before that a kingdom powerful enough to field a regiment of women soldiers. It took the name Benin in 1975 from the bight it faces.",
@@ -93303,7 +93304,7 @@
   },
   {
     "in": [
-      "kingdom",
+      "monarchy",
       "mountain"
     ],
     "out": "mbanza_kongo",
@@ -97532,5 +97533,105 @@
     "why": "An insect wing is not a modified limb. It grows out of the body wall as a double sheet of chitin held apart by hollow veins that carry haemolymph and tracheae, which is why an insect can have six legs and four wings at the same time and a vertebrate cannot have arms and wings both.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Insect_wing"
+  },
+  {
+    "in": [
+      "enamel",
+      "dentine"
+    ],
+    "out": "tooth",
+    "why": "A tooth is two tissues at once: dentine making up the bulk of it, threaded with tubules running in to the pulp and the nerve, capped by enamel at 96% mineral. The enamel is the hardest thing a body builds and the only tissue with no cells left living in it, which is why a chipped tooth stays chipped and a broken bone does not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tooth_enamel"
+  },
+  {
+    "in": [
+      "hydroxyapatite",
+      "keratin"
+    ],
+    "out": "enamel",
+    "why": "Ameloblasts lay enamel down as long hydroxyapatite crystals packed into rods, on a protein scaffold that is then almost entirely withdrawn — which is what gets it to 96% mineral, and why the cells that made it die as the tooth erupts and it can never be replaced.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tooth_enamel"
+  },
+  {
+    "in": [
+      "capillary",
+      "hydroxyapatite"
+    ],
+    "out": "dentine",
+    "why": "Nearly the same two ingredients as bone — about 70% mineral on a collagen matrix — built differently. Dentine is shot through with microscopic tubules running outward from the pulp, so it carries sensation and blood supply where bone carries load, which is why a drill hurts before it reaches the nerve.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dentin"
+  },
+  {
+    "in": [
+      "elephant",
+      "tusk"
+    ],
+    "out": "ivory",
+    "why": "Ivory is dentine from a tooth with no enamel cap and no end to its growth. The crosshatch in it — Schreger lines, meeting at an angle wide enough to tell elephant from mammoth — comes from the way the tubules spiral, and nothing else makes that pattern.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ivory"
+  },
+  {
+    "in": [
+      "incisor",
+      "keratin"
+    ],
+    "out": "tusk",
+    "why": "An elephant's tusks are its second incisors, growing about 17 cm a year for life because the pulp never closes. A walrus's are canines, and a narwhal's single tusk is a left canine driven straight out through the lip in a left-hand spiral.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tusk"
+  },
+  {
+    "in": [
+      "drill",
+      "shell"
+    ],
+    "out": "bead",
+    "why": "The invention is the hole, and the hole needs a drill. Pierced Nassarius shells from Skhul and Oued Djebbana are around 100,000 years old — ornament comes before farming, writing and metal, and a bead only means anything because it can be strung beside another one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bead"
+  },
+  {
+    "in": [
+      "bead",
+      "cord"
+    ],
+    "out": "necklace",
+    "why": "Beads on a cord. The oldest wearable statement there is, and it works because the order is readable: which shells, how many, whose — something other people can see across a distance and know something from.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Necklace"
+  },
+  {
+    "in": [
+      "hinge",
+      "iron"
+    ],
+    "out": "dividers",
+    "why": "Two iron legs joined at a pivot tight enough to hold a setting against the hand. That single constraint — a fixed distance you can carry from one place on the work to another — is what turns a drawing into a construction, and it is why Euclid's propositions need only this and a straightedge.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Compass_(drawing_tool)"
+  },
+  {
+    "in": [
+      "clay",
+      "granite"
+    ],
+    "out": "kaolin",
+    "why": "Granite left in warm wet ground long enough loses its feldspar to kaolinite, and what is left is a white clay with almost no iron in it. The iron is the whole point: iron is what makes ordinary clay fire red or brown, and kaolin has none to give.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  {
+    "in": [
+      "feldspar",
+      "kaolin"
+    ],
+    "out": "porcelain",
+    "why": "Kaolin holds the shape and feldspar melts into glass between its particles at around 1,300 °C, so the body vitrifies without slumping. That is why porcelain rings when struck, passes light where it is thin, and absorbs no water — and why it took Europe until 1708 to work out that the second ingredient was the missing one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Porcelain"
   }
 ]
