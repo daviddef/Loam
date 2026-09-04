@@ -1743,8 +1743,9 @@
   "verb": "heat",
   "out": "cement",
   "verified": true,
-  "why": "Above 600 °C the limestone gives up its carbon dioxide; near 1,450 °C the mix fuses into clinker. Making cement is about a tenth of all human CO₂ emissions.",
-  "src": "https://en.wikipedia.org/wiki/Portland_cement"
+  "why": "There are two temperatures and they do different jobs. Between 900 and 1050 °C the limestone gives up its carbon dioxide and becomes lime; then a peak of 1,400 to 1,450 °C is needed to form alite, the mineral that makes Portland cement set. A modern kiln puts the meal through that in as little as ten minutes, on about 0.10 tonnes of coal per tonne of clinker.",
+  "src": "https://en.wikipedia.org/wiki/Cement_kiln",
+  "at": 1450
  },
  {
   "in": [
@@ -26551,9 +26552,10 @@
   ],
   "verb": "heat",
   "out": "carbon_dioxide",
-  "why": "Warmed dry ice skips liquid entirely and sublimates straight back to carbon dioxide gas — the visible fog around it is ordinary water vapour condensing in the cold, not the invisible carbon dioxide itself.",
+  "why": "It does not melt because at ordinary pressure it cannot: carbon dioxide's triple point is at 5.13 atmospheres, so below that there is no liquid phase to pass through and the solid goes straight to gas at −78.5 °C. That is also why it is useful — it cools without wetting anything, and leaves nothing behind.",
   "src": "https://en.wikipedia.org/wiki/Dry_ice",
-  "verified": true
+  "verified": true,
+  "at": -78
  },
  {
   "in": [
@@ -34714,9 +34716,10 @@
   ],
   "verb": "heat",
   "out": "sodium_carbonate",
-  "why": "Heat baking soda hard enough and it drives off water and carbon dioxide, leaving the stronger base behind: 2NaHCO3 -> Na2CO3 + H2O + CO2 — washing soda, made from its own milder cousin.",
-  "src": "https://en.wikipedia.org/wiki/Sodium_carbonate",
-  "verified": true
+  "why": "It starts coming apart from about 80 °C and goes quickly at 200: two sodium bicarbonate give one sodium carbonate, one water and one carbon dioxide. That gas is the whole reason it is in the cake — the batter is raised by a chemical decomposition rather than by anything alive — and the same three products are part of why it smothers a fire.",
+  "src": "https://en.wikipedia.org/wiki/Sodium_bicarbonate",
+  "verified": true,
+  "at": 80
  },
  {
   "in": [
