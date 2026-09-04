@@ -43449,6 +43449,24 @@ def('ha_long_bay', () => [...[[10, 22], [26, 14], [42, 26], [54, 20]].map(([x, y
                           ...[10, 26, 42, 54].map(x => S(`M${x - 8} 40 L${x + 8} 40`, 'gh', 2)),
                           wave('bs', 46, 3, 27), wave('bs', 52, 3, 26)]);
 
+/* Places, batch 18 — Central America and South-eastern Asia. Tikal is drawn
+   with its reservoir, because a city on a plateau with no river is a water
+   problem before it is an architectural one.                                */
+def('reservoir',   () => [P('M6 30 L54 30 L50 52 L10 52 Z', 'lo'),
+                          P('M12 34 L48 34 L45 48 L15 48 Z', 'bs'),
+                          wave('hi', 42, 3, 15),
+                          ...[0, 1].map(i => S(`M${10 + i * 40} 30 L${10 + i * 40} 24`, 'lo', 2))]);
+def('tikal',       () => [...[0, 1, 2, 3, 4].map(i =>
+                            P(`M${18 - i * 2} ${44 - i * 7} L${42 + i * 2} ${44 - i * 7} L${42 + i * 2} ${37 - i * 7} L${18 - i * 2} ${37 - i * 7} Z`, i % 2 ? 'lo' : 'bs')),
+                          P('M25 16 L35 16 L35 6 L25 6 Z', 'lo'),
+                          ...[27, 30, 33].map(x => S(`M${x} 6 L${x} 2`, 'hi', 1.2)),
+                          P('M4 46 L20 46 L18 54 L6 54 Z', 'bs'),
+                          wave('hi', 51, 2, 6)]);
+def('bagan',       () => [...[[10, 30], [24, 22], [40, 28], [52, 34]].map(([x, y], i) => [
+                            P(`M${x - 8} 52 L${x + 8} 52 L${x + 6} ${y + 10} L${x - 6} ${y + 10} Z`, i % 2 ? 'lo' : 'bs'),
+                            P(`M${x - 6} ${y + 10} Q${x} ${y - 4} ${x + 6} ${y + 10} Z`, i % 2 ? 'lo' : 'bs'),
+                            S(`M${x} ${y - 2} L${x} ${y - 7}`, 'hi', 1.2)]).flat()]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

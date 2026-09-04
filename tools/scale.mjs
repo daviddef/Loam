@@ -1036,6 +1036,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 18, 4 Sep */
+          'reservoir',
           /* places batch 13, 4 Sep. a span and a corner, metres */
           'dome', 'pendentive',
           /* places batch 12, 4 Sep. a sinkhole, tens of metres across */
@@ -1157,6 +1159,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 18, 4 Sep */
+          'tikal',
           /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */
           'tower_karst',
           /* places batch 15, 4 Sep. a 274 m bridge and a 400 m palace */
@@ -1261,6 +1265,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 18, 4 Sep */
+          'bagan',
           /* places batch 16, 4 Sep. a 12 km circuit and a city cluster */
           'benin_moat', 'merv',
           /* places batch 8, 4 Sep. a capital and its hinterland */

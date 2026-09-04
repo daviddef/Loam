@@ -366,7 +366,10 @@
     "silica_sand": "Quartz",
     "crushed_ice": "Ice",
     "tower_karst": "Karst",
-    "ha_long_bay": "Ha Long Bay"
+    "ha_long_bay": "Ha Long Bay",
+    "reservoir": "Reservoir",
+    "tikal": "Tikal",
+    "bagan": "Bagan"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -862,6 +865,9 @@
     "barley|ferment": "Beer",
     "wine|wait": "Vinegar",
     "karst+monsoon": "Karst",
-    "sea+tower_karst": "Ha Long Bay"
+    "sea+tower_karst": "Ha Long Bay",
+    "cistern+drought": "Reservoir",
+    "maya_civilization+reservoir": "Tikal",
+    "brick+buddhism": "Bagan"
   }
 }
