@@ -1090,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 19, 5 Sep. a temple on a rock, a palace, painted panels */
+    'siwa_oracle', 'manhyia_palace', 'drakensberg_art',
     /* places batch 18, 5 Sep. an obelisk of 41.75 m, brick towers, a fall of 57 m */
     'unfinished_obelisk', 'my_son', 'niagara_falls',
     /* places batch 17, 5 Sep. an octagon 14.46 m across, a colonnade */
@@ -1249,6 +1251,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 19, 5 Sep. a Roman town on a ridge, a castle on a shore */
+    'djemila', 'cape_coast_castle',
     /* places batch 17, 5 Sep. a site of 2.5 km2, a colonnade 1.1 km, a wall of 2,235 m, a palace of 63,154 m2 */
     'palenque', 'palmyra', 'moscow_kremlin', 'versailles',
     /* places batch 15, 5 Sep. a town of 42 hectares, an island city, a penal settlement */
@@ -1597,6 +1601,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 19, 5 Sep. 7.2 million hectares of plateau */
+    'tassili',
     /* places batch 16, 5 Sep. a lake of 68,000 km2 and a forest of 10,277 */
     'aral_sea', 'sundarbans',
           /* places batch 10, 4 Sep. 117 km coast to coast */

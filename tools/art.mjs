@@ -44283,6 +44283,44 @@ def('my_son',       () => [...[16, 30, 44].map(x => [P(`M${x - 7} 54 L${x - 7} 3
                           ...[0, 1, 2, 3].map(i => S(`M4 ${34 + i * 5} L56 ${34 + i * 5}`, 'gh', 0.7)),   // brick courses, no mortar line
                           C(30, 44, 3, 'hi')]);
 
+/* Places, batch 19 — 5 Sep. Four rock-art and fortification sites in Africa
+   that must not share a drawing with the four already here: Tassili gets its
+   cattle, the Drakensberg gets the basalt cap over the sandstone.           */
+def('tassili',      () => [P('M2 6 L58 6 L58 22 L46 28 L14 28 L2 22 Z', 'lo'),
+                          P('M2 28 L58 28 L58 56 L2 56 Z', 'bs'),
+                          ...[14, 30, 46].map(x => [E(x, 40, 7, 4.5, 'hi'),
+                                                    S(`M${x - 5} 44 L${x - 5} 48`, 'hi', 1.2),
+                                                    S(`M${x + 5} 44 L${x + 5} 48`, 'hi', 1.2),
+                                                    S(`M${x - 7} 37 L${x - 11} 33`, 'hi', 1.2)]).flat(),
+                          ...[0, 1, 2].map(i => S(`M${8 + i * 18} 52 L${18 + i * 18} 52`, 'gh', 0.9))]);
+def('siwa_oracle',  () => [P('M4 54 L4 34 L56 34 L56 54 Z', 'lo'),
+                          P('M10 34 L10 18 L50 18 L50 34 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M8 ${40 + i * 4} L52 ${40 + i * 4}`, 'ik', 1.4)),   // the palm logs
+                          E(30, 26, 7, 5, 'bs'), S('M24 24 Q20 20 24 17', 'bs', 2), S('M36 24 Q40 20 36 17', 'bs', 2),  // the ram
+                          ...granules('gh', 10, 200, [10, 36, 50, 52])]);   // and the salt in the brick
+def('djemila',      () => [P('M4 54 L30 12 L56 54 Z', 'lo'),                // the triangular plateau
+                          S('M16 34 L44 34', 'ik', 2.4), S('M30 16 L30 54', 'ik', 2.4),   // cardo and decumanus
+                          P('M24 30 L36 30 L36 40 L24 40 Z', 'gh'),         // the forum
+                          P('M2 46 A9 9 0 0 1 20 46 Z', 'bs'),              // and the theatre, outside the walls
+                          S('M4 54 L56 54', 'gh', 1)]);
+def('cape_coast_castle',()=>[P('M4 22 L56 22 L56 38 L4 38 Z', 'lo'),
+                          ...[10, 24, 38, 50].map(x => P(`M${x - 4} 22 L${x - 4} 14 L${x + 4} 14 L${x + 4} 22 Z`, 'lo')),
+                          P('M4 38 L56 38 L56 50 L4 50 Z', 'ik'),           // the dungeons, under the parade ground
+                          ...[0, 1, 2].map(i => S(`M${12 + i * 16} 38 L${12 + i * 16} 50`, 'gh', 1)),
+                          P('M52 40 L56 40 L56 48 L52 48 Z', 'hi'),         // and the door out of them
+                          wave('bs', 54, 2, 56)]);
+def('manhyia_palace',()=>[P('M8 54 L8 28 L52 28 L52 54 Z', 'lo'),
+                          P('M4 28 L30 14 L56 28 Z', 'bs'),
+                          ...[16, 30, 44].map(x => P(`M${x - 4} 54 L${x - 4} 40 L${x + 4} 40 L${x + 4} 54 Z`, 'gh')),
+                          P('M22 20 L38 20 L38 24 L22 24 Z', 'hi'),         // the stool it is all about
+                          S('M25 24 L25 27', 'hi', 1.6), S('M35 24 L35 27', 'hi', 1.6)]);
+def('drakensberg_art',()=>[P('M2 4 L58 4 L58 18 L2 18 Z', 'ik'),            // the basalt cap
+                          P('M2 18 L58 18 L58 30 L44 34 L16 34 L2 30 Z', 'lo'),   // sandstone, weathering back
+                          P('M2 34 L58 34 L58 56 L2 56 Z', 'bs'),
+                          ...[[14, 44], [26, 42], [38, 46], [48, 42]].map(([x, y]) =>
+                            [S(`M${x} ${y} L${x} ${y + 7}`, 'hi', 1.4), C(x, y - 2, 1.6, 'hi'),
+                             S(`M${x - 3} ${y + 3} L${x + 3} ${y + 2}`, 'hi', 1.2)]).flat()]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
