@@ -131,6 +131,7 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          'culture_biology', 'stain',
           /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
           'variola', 'sars_cov_2', 'coronavirus', 'ebola_virus', 'marburg_virus', 'lassa_virus', 'nipah_virus', 'hantavirus', 'dengue_virus', 'zika_virus', 'chikungunya_virus', 'hepatitis_b', 'hepatitis_c', 'herpes_simplex', 'varicella_zoster', 'rotavirus', 'mycobacterium_leprae', 'borrelia_burgdorferi', 'shigella', 'candida_albicans', 'aspergillus_fumigatus', 'cryptococcus_neoformans', 'canine_distemper_virus', 'feline_leukaemia_virus',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
@@ -452,6 +453,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          'microscope', 'missile',
           /* words that came back with nothing, 4 Sep */
           'molasses', 'rum', 'cologne', 'currency', 'banknote_pound', 'dollar',
           /* assembly components, 4 Sep — 24 new needs lists asked for these */
@@ -703,6 +705,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* the head-noun tail, 4 Sep — R2 finished */
+          'disorder', 'syndrome', 'therapy', 'treatment', 'patient', 'effect', 'cause', 'factor', 'variable', 'powder', 'paste', 'mix', 'cluster', 'group', 'disc', 'dynasty', 'sector', 'economy', 'wars', 'conflict', 'guidance', 'feedback', 'output', 'result', 'stand',
           'beauty',
           /* vehicles and marques, 4 Sep — "i cant find car" */
           'sedan', 'hatchback', 'suv', 'pickup', 'coupe', 'convertible', 'estate_car', 'limousine', 'jeep', 'taxi', 'bulldozer', 'fire_engine', 'race', 'toyota', 'ford', 'volkswagen', 'ferrari', 'tesla', 'mercedes', 'bmw', 'honda',

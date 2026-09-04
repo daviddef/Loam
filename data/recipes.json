@@ -92336,5 +92336,295 @@
     "why": "Symmetry, and faces near the population average, are rated attractive everywhere anyone has looked — including by infants too young to have learned it. Almost everything else about taste is learned and varies completely, which is why the argument about whether beauty is objective has two sets of facts behind it and both are real.",
     "src": "https://en.wikipedia.org/wiki/Beauty",
     "verified": true
+  },
+  {
+    "in": [
+      "mental_illness",
+      "pattern"
+    ],
+    "out": "disorder",
+    "why": "Psychiatric categories are lists of symptoms agreed by committee and revised every decade or two. That is not evasion; it is what a field looks like before it has the biology, and medicine spent most of its history there for everything else too.",
+    "src": "https://en.wikipedia.org/wiki/Mental_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "disorder",
+      "symptom"
+    ],
+    "out": "syndrome",
+    "why": "The word is a placeholder that keeps its usefulness: naming the cluster lets it be studied before the cause is found, and many syndromes have since become named diseases. Down syndrome was a syndrome for ninety years before the extra chromosome was seen.",
+    "src": "https://en.wikipedia.org/wiki/Syndrome",
+    "verified": true
+  },
+  {
+    "in": [
+      "patient",
+      "treatment"
+    ],
+    "out": "therapy",
+    "why": "Alliance, expectation and a coherent explanation account for more of the outcome than the specific technique, which is why rival therapies keep testing as roughly equal. That finding is 80 years old and still uncomfortable.",
+    "src": "https://en.wikipedia.org/wiki/Psychotherapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "diagnosis",
+      "medicine"
+    ],
+    "out": "treatment",
+    "why": "Most conditions have a natural history that ends in recovery, so an uncontrolled treatment will look effective. The control group is not a formality — it is the only thing separating medicine from everything that came before it.",
+    "src": "https://en.wikipedia.org/wiki/Therapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "symptom"
+    ],
+    "out": "patient",
+    "why": "For most of medical history the patient's own account was the entire evidence, since there was nothing to measure. Instruments shifted authority from what the person said to what the doctor could read, which is a gain and a loss at once.",
+    "src": "https://en.wikipedia.org/wiki/Patient",
+    "verified": true
+  },
+  {
+    "in": [
+      "cause",
+      "change"
+    ],
+    "out": "effect",
+    "why": "Correlation is symmetric and causation is not, so no amount of watching settles direction on its own. The randomised experiment exists precisely to break the symmetry, by making one thing vary for no reason connected to anything else.",
+    "src": "https://en.wikipedia.org/wiki/Causality",
+    "verified": true
+  },
+  {
+    "in": [
+      "change",
+      "event"
+    ],
+    "out": "cause",
+    "why": "A fire needs fuel, oxygen and a spark, and only the spark is reported as the cause because the other two are always there. What counts as the cause is a judgement about what was different, not a fact about the world.",
+    "src": "https://en.wikipedia.org/wiki/Causality",
+    "verified": true
+  },
+  {
+    "in": [
+      "cause",
+      "variable"
+    ],
+    "out": "factor",
+    "why": "Liebig's law: growth is set by the scarcest requirement, not the total. Adding more of anything else does nothing until the shortest stave is lengthened, which is why fertiliser has an N-P-K ratio rather than an amount.",
+    "src": "https://en.wikipedia.org/wiki/Limiting_factor",
+    "verified": true
+  },
+  {
+    "in": [
+      "change",
+      "measurement"
+    ],
+    "out": "variable",
+    "why": "A quantity that never changes carries no information about anything. All of statistics is the study of what varies together, so the first question about any measurement is what would have made it come out differently.",
+    "src": "https://en.wikipedia.org/wiki/Variable_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "agar",
+      "microbe"
+    ],
+    "out": "culture_biology",
+    "why": "The great plate count anomaly: what grows on a dish is a tiny and unrepresentative fraction of what is in a sample. Nearly everything known about bacteria before DNA sequencing came from the few per cent that happened to like laboratory conditions.",
+    "src": "https://en.wikipedia.org/wiki/Microbiological_culture",
+    "verified": true
+  },
+  {
+    "in": [
+      "grinding",
+      "solid"
+    ],
+    "out": "powder",
+    "why": "The same mass ground finer dissolves faster, burns faster and tastes stronger, because reaction happens at the boundary and grinding multiplies it. It is also why fine dusts of flour and sugar explode and lumps do not.",
+    "src": "https://en.wikipedia.org/wiki/Powder",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquid",
+      "powder"
+    ],
+    "out": "paste",
+    "why": "It behaves as a solid until pushed hard enough, then flows — non-Newtonian, like toothpaste and cornflour. That threshold is exactly what makes a paste useful for spreading and hopeless for pouring.",
+    "src": "https://en.wikipedia.org/wiki/Paste_(rheology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "matter",
+      "part"
+    ],
+    "out": "mix",
+    "why": "Salt water is still salt and still water, separable by evaporation. Sodium chloride is neither sodium nor chlorine and cannot be separated by any physical means. That difference is the whole of the boundary between physics and chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Mixture",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "group"
+    ],
+    "out": "cluster",
+    "why": "Without knowing what random would look like, any set of points appears clustered — humans see grouping in noise reliably. Every real cluster finding is a comparison against a null, never an observation on its own.",
+    "src": "https://en.wikipedia.org/wiki/Cluster",
+    "verified": true
+  },
+  {
+    "in": [
+      "boundary",
+      "part"
+    ],
+    "out": "group",
+    "why": "What makes a group is not similarity but agreement on who is in it. Minimal-group experiments show people favour their own side within minutes of a division made by coin toss, with nothing else in common at all.",
+    "src": "https://en.wikipedia.org/wiki/Social_group",
+    "verified": true
+  },
+  {
+    "in": [
+      "circle",
+      "rotation"
+    ],
+    "out": "disc",
+    "why": "Motion perpendicular to the axis is preserved and motion along it is cancelled by collisions. That is why galaxies, solar systems, accretion discs and Saturn's rings are all flat, having begun as clouds.",
+    "src": "https://en.wikipedia.org/wiki/Accretion_disk",
+    "verified": true
+  },
+  {
+    "in": [
+      "dye",
+      "microscope"
+    ],
+    "out": "stain",
+    "why": "Gram's stain in 1884 divides bacteria by what their wall does with crystal violet, and that split still guides antibiotic choice 140 years later. The dye came from the textile industry, which is where most early biological stains came from.",
+    "src": "https://en.wikipedia.org/wiki/Staining",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "stand"
+    ],
+    "out": "microscope",
+    "why": "Nothing smaller than about half a wavelength — roughly 200 nanometres — can be resolved however good the optics. Abbe worked that out in 1873, and every technique for going below it works by not using ordinary light.",
+    "src": "https://en.wikipedia.org/wiki/Microscope",
+    "verified": true
+  },
+  {
+    "in": [
+      "frame",
+      "weight"
+    ],
+    "out": "stand",
+    "why": "In an instrument that is not a minor role: an optical bench, a tripod and a microscope stand all exist because vibration at the scale being observed is enormous, and mass is the cheapest way to remove it.",
+    "src": "https://en.wikipedia.org/wiki/Stand",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "government"
+    ],
+    "out": "dynasty",
+    "why": "Almost every dynasty's crises cluster at the handover, because the rules for who follows are contested exactly when the person who could enforce them has died. That is why so many of them wrote the succession down and so few of them followed it.",
+    "src": "https://en.wikipedia.org/wiki/Dynasty",
+    "verified": true
+  },
+  {
+    "in": [
+      "economy",
+      "part"
+    ],
+    "out": "sector",
+    "why": "The share of employment shifts from the first to the third as a country develops, reliably enough to be used as a measure of it. What changes is not what people want but how much labour each stage needs.",
+    "src": "https://en.wikipedia.org/wiki/Three-sector_model",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "trade"
+    ],
+    "out": "economy",
+    "why": "Scarcity is the whole premise: with unlimited everything there are no choices and no economics. That is why the subject is about trade-offs rather than about money, and why it applies to time and attention as readily as to goods.",
+    "src": "https://en.wikipedia.org/wiki/Economy",
+    "verified": true
+  },
+  {
+    "in": [
+      "conflict",
+      "war"
+    ],
+    "out": "wars",
+    "why": "The Punic, Napoleonic and World Wars are each counted as one conflict interrupted by treaties that resolved nothing. What makes them plural is that the settlement failed and the same parties returned to the same question.",
+    "src": "https://en.wikipedia.org/wiki/War",
+    "verified": true
+  },
+  {
+    "in": [
+      "difference",
+      "goal"
+    ],
+    "out": "conflict",
+    "why": "Most conflict is over an incompatibility rather than an animosity, and the animosity usually arrives afterwards to justify it. That ordering is why mediation works at all — the incompatibility can sometimes be dissolved.",
+    "src": "https://en.wikipedia.org/wiki/Conflict",
+    "verified": true
+  },
+  {
+    "in": [
+      "guidance",
+      "rocket"
+    ],
+    "out": "missile",
+    "why": "An unguided rocket is aimed and released; a missile measures its own error continuously and steers. That feedback loop is the entire distinction, and it is why the guidance is more of the cost than the airframe.",
+    "src": "https://en.wikipedia.org/wiki/Missile",
+    "verified": true
+  },
+  {
+    "in": [
+      "feedback",
+      "goal"
+    ],
+    "out": "guidance",
+    "why": "A thermostat, an autopilot, a missile and a hand reaching for a cup all run the same loop. Wiener named it cybernetics in 1948, arguing the mathematics is identical whether the thing steering is mechanical or alive.",
+    "src": "https://en.wikipedia.org/wiki/Guidance_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "output",
+      "signal"
+    ],
+    "out": "feedback",
+    "why": "Negative feedback stabilises — it is why an amplifier is faithful and a body holds its temperature. Positive feedback runs away, which is childbirth, a microphone squeal and an ice age. Same loop, opposite sign.",
+    "src": "https://en.wikipedia.org/wiki/Feedback",
+    "verified": true
+  },
+  {
+    "in": [
+      "process",
+      "result"
+    ],
+    "out": "output",
+    "why": "A factory's output is cars; the same factory also outputs heat, noise and waste, which are not counted because the boundary was drawn to exclude them. Almost every argument about efficiency is an argument about that line.",
+    "src": "https://en.wikipedia.org/wiki/Output",
+    "verified": true
+  },
+  {
+    "in": [
+      "event",
+      "outcome"
+    ],
+    "out": "result",
+    "why": "One result is a single draw from a distribution, which is why a single trial persuades nobody and why anecdote and evidence differ in kind rather than in degree. The result is real; what it tells you is a separate question.",
+    "src": "https://en.wikipedia.org/wiki/Result",
+    "verified": true
   }
 ]
