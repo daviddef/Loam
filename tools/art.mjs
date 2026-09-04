@@ -45099,6 +45099,45 @@ def('struve_arc',   () => [...[0, 1, 2, 3, 4, 5].map(i =>
                           S('M4 52 L56 52', 'bs', 2.4),                        // the one measured baseline
                           S('M4 50 L4 54', 'ik', 1.4), S('M56 50 L56 54', 'ik', 1.4)]);
 
+/* Places, batch 41 — 5 Sep. The Florence dome is drawn as its two shells with
+   the herringbone between them; the Mezquita as one column carrying two tiers
+   of arch, because the stacking is the answer to a short column.            */
+def('florence_dome',()=>[P('M10 44 L18 12 L42 12 L50 44 Z', 'lo'),
+                          P('M16 44 L22 18 L38 18 L44 44 Z', 'gh'),             // the inner shell
+                          ...[0, 1, 2, 3].map(i => [S(`M${19 + i * 1.5} ${38 - i * 6} L${25 + i * 1.5} ${34 - i * 6}`, 'ik', 0.9),
+                                                    S(`M${35 - i * 1.5} ${38 - i * 6} L${29 - i * 1.5} ${34 - i * 6}`, 'ik', 0.9)]).flat(),
+                          P('M25 12 L35 12 L35 4 L25 4 Z', 'bs'), S('M30 4 L30 0', 'ik', 1.2),
+                          S('M6 44 L54 44', 'ik', 1.4)]);
+def('venice',       () => [P('M6 26 L54 26 L54 40 L6 40 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => [P(`M${8 + i * 10} 26 L${8 + i * 10} 14 L${16 + i * 10} 14 L${16 + i * 10} 26 Z`, 'lo'),
+                                                       P(`M${7 + i * 10} 14 L${12 + i * 10} 8 L${17 + i * 10} 14 Z`, 'bs')]).flat(),
+                          S('M4 40 L56 40', 'ik', 1.6),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => S(`M${6 + i * 6} 40 L${6 + i * 6} 54`, 'ik', 2)),   // the alder, in the mud
+                          ...granules('gh', 14, 126, [4, 42, 56, 56])]);
+def('mezquita',     () => [...[0, 1, 2].map(i => [S(`M${10 + i * 18} 54 L${10 + i * 18} 34`, 'lo', 4),
+                                                  P(`M${2 + i * 18} 34 A8 8 0 0 1 ${18 + i * 18} 34 Z`, 'bs'),          // horseshoe below
+                                                  P(`M${2 + i * 18} 22 A8 8 0 0 1 ${18 + i * 18} 22 Z`, 'lo'),          // semicircle above
+                                                  S(`M${10 + i * 18} 34 L${10 + i * 18} 22`, 'lo', 3)]).flat(),
+                          S('M2 12 L58 12', 'ik', 1.6),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('akrotiri',     () => [...granules('bs', 22, 1620, [2, 2, 58, 24]),
+                          S('M2 26 Q30 22 58 26', 'ik', 2),
+                          ...[0, 1, 2].map(i => P(`M${10 + i * 16} 54 L${10 + i * 16} ${30 + i * 3} L${22 + i * 16} ${30 + i * 3} L${22 + i * 16} 54 Z`, 'lo')),
+                          P('M12 36 L20 36 L20 46 L12 46 Z', 'hi'),             // the fresco on the plaster
+                          S('M14 40 Q16 37 18 40', 'ik', 1), C(16, 42, 1.2, 'ik'),
+                          C(46, 50, 1.6, 'hi')]);                               // and the one gold thing
+def('bryggen',      () => [...[0, 1, 2, 3, 4].map(i =>
+                            [P(`M${4 + i * 11} 54 L${4 + i * 11} 30 L${13 + i * 11} 30 L${13 + i * 11} 54 Z`, 'lo'),
+                             P(`M${3 + i * 11} 30 L${8.5 + i * 11} 18 L${14 + i * 11} 30 Z`, i === 2 ? 'hi' : 'bs')]).flat(),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${4 + i * 11} 50 L${13 + i * 11} 50`, 'ik', 1.4)),   // the same foundations
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 3} 16 Q${22 + i * 3} 8 ${26 + i * 3} 2`, 'hi', 1.4)),
+                          wave('gh', 56, 1.4, 56)]);
+def('tower_of_london',()=>[S('M30 30 m -26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0', 'gh', 3),   // the moat
+                          S('M30 30 m -20 0 a20 20 0 1 0 40 0 a20 20 0 1 0 -40 0', 'lo', 3),
+                          S('M30 30 m -14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0', 'lo', 3),
+                          P('M22 38 L38 38 L38 22 L22 22 Z', 'bs'),             // the keep, first and still there
+                          ...[[22, 22], [38, 22], [22, 38], [38, 38]].map(([x, y]) => C(x, y, 2.4, 'lo'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
