@@ -1090,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 23, 5 Sep. a basilica, a temple square, a clock tower 64 m */
+    'euphrasian_basilica', 'patan_durbar', 'sighisoara',
     /* places batch 22, 5 Sep. a monastery wall, a trilithon 5.2 m high, a treaty house */
     'erdene_zuu', 'haamonga_a_maui', 'waitangi',
     /* places batch 21, 5 Sep. a stupa, a castle, a palace */
@@ -1257,6 +1259,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 23, 5 Sep. an island town, a ruined caravan city */
+    'trogir', 'otrar',
     /* places batch 22, 5 Sep. a castle of 70,000 m2, a city and its ponds */
     'prague_castle', 'sukhothai',
     /* places batch 21, 5 Sep. a fort of 2.41 km circuit */
@@ -1617,6 +1621,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 23, 5 Sep. 2.6 million hectares along 450 km of coast */
+    'te_wahipounamu',
     /* places batch 20, 5 Sep. 6,865 km2 of reserve */
     'dzanga_sangha',
     /* places batch 19, 5 Sep. 7.2 million hectares of plateau */

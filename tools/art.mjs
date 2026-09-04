@@ -44431,6 +44431,40 @@ def('haamonga_a_maui',()=>[P('M10 54 L10 16 L20 16 L20 54 Z', 'lo'),
                           ...granules('gh', 10, 40, [10, 20, 50, 50]),
                           S('M2 56 L58 56', 'ik', 1.2)]);
 
+/* Places, batch 23 — 5 Sep. Sighișoara is drawn as a wall divided into towers,
+   because the wall was divided among the guilds; the Euphrasian Basilica in
+   section, because the interest is what is underneath it.                   */
+def('otrar',        () => [P('M4 40 L56 40 L56 54 L4 54 Z', 'lo'),
+                          ...[10, 22, 34, 46].map(x => P(`M${x} 40 L${x + 1} ${28 + (x % 7)} L${x + 7} ${28 + (x % 7)} L${x + 8} 40 Z`, 'lo')),
+                          ...granules('gh', 14, 450, [4, 30, 56, 40]),
+                          ...[0, 1, 2].map(i => [E(12 + i * 16, 20, 5, 3, 'bs'), S(`M${12 + i * 16} 23 L${12 + i * 16} 28`, 'ik', 1.2)]).flat(),
+                          S('M4 54 L56 54', 'ik', 1.2)]);
+def('patan_durbar', () => [...[0, 1, 2, 3].map(i =>
+                            P(`M${16 + i * 2} ${54 - i * 10} L${44 - i * 2} ${54 - i * 10} L${42 - i * 2} ${46 - i * 10} L${18 + i * 2} ${46 - i * 10} Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i => S(`M${12 + i * 2} ${46 - i * 10} L${48 - i * 2} ${46 - i * 10}`, 'bs', 2.4)),
+                          S('M30 16 L30 8', 'ik', 1.6), C(30, 6, 2, 'hi'),
+                          S('M6 30 L2 24', 'gh', 2), S('M54 34 L58 28', 'gh', 2)]);   // the ground moving
+def('trogir',       () => [P('M8 12 L52 12 L52 48 L8 48 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M8 ${21 + i * 9} L52 ${21 + i * 9}`, 'gh', 1.6)),   // the Greek grid, still there
+                          ...[0, 1, 2].map(i => S(`M${19 + i * 11} 12 L${19 + i * 11} 48`, 'gh', 1.6)),
+                          P('M24 12 L24 4 L32 4 L32 12 Z', 'bs'),
+                          wave('bs', 54, 2, 56), wave('bs', 6, 2, 56)]);
+def('euphrasian_basilica',()=>[P('M8 30 L52 30 L52 50 L8 50 Z', 'lo'),
+                          P('M4 30 L30 14 L56 30 Z', 'bs'),
+                          P('M44 32 A8 8 0 0 1 44 48 Z', 'hi'), C(48, 40, 2.4, 'ik'),   // the apse, and its mosaic
+                          S('M8 50 L52 50', 'ik', 1.6),
+                          P('M8 50 L52 50 L52 56 L8 56 Z', 'gh'),                       // the floor of the one before
+                          ...[16, 28, 40].map(x => E(x, 53, 3.4, 1.6, 'bs'))]);         // and the fish in it
+def('sighisoara',   () => [S('M2 44 L58 44', 'ik', 2.4),
+                          ...[8, 20, 32, 44, 54].map((x, i) => P(`M${x - 5} 44 L${x - 5} ${34 - (i % 2) * 6} L${x + 5} ${34 - (i % 2) * 6} L${x + 5} 44 Z`, 'lo')),
+                          ...[8, 20, 32, 44, 54].map((x, i) => P(`M${x - 6} ${34 - (i % 2) * 6} L${x} ${26 - (i % 2) * 6} L${x + 6} ${34 - (i % 2) * 6} Z`, 'bs')),
+                          C(32, 20, 4, 'hi'), S('M32 20 L32 17', 'ik', 1), S('M32 20 L35 21', 'ik', 1),  // the clock
+                          P('M4 44 L56 44 L56 56 L4 56 Z', 'gh')]);
+def('te_wahipounamu',()=>[P('M2 56 L14 20 L24 34 L34 12 L44 30 L58 56 Z', 'lo'),
+                          P('M14 20 L20 28 L24 34 L28 24 L34 12 L30 34 L20 40 Z', 'hi'),   // the ice
+                          wave('bs', 52, 2, 56),
+                          ...[[12, 48], [26, 50], [44, 48]].map(([x, y]) => P(`M${x - 3} ${y} L${x} ${y - 4} L${x + 3} ${y} L${x} ${y + 4} Z`, 'gh'))]);   // and what it brings down
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
