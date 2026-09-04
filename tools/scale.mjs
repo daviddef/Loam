@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 45, 5 Sep. a minaret 60 m, an abbey, a mound 65 by 60 m, a cemetery */
+    'konye_urgench', 'vezelay', 'pulemelei', 'teouma',
     /* places batch 44, 5 Sep. churches, a cave monastery */
     'bucovina_churches', 'orheiul_vechi',
     /* places batch 43, 5 Sep. a citadel mound 50 m, tower houses, a wall 5-10 m */
@@ -1295,6 +1297,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* the last checklist place, 5 Sep. a walled town of 27 hectares */
+    'lelu',
     /* places batch 44, 5 Sep. a medieval city, a palace of 1,441 rooms, a castle of 4.73 km2 */
     'novgorod', 'schonbrunn', 'buda_castle',
     /* places batch 43, 5 Sep. an old town on a ridge, a forum 130 by 50 m, 946 ha of landscape */
@@ -1491,6 +1495,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 45, 5 Sep. 650 ha of dunes */
+    'sigatoka_dunes',
     /* places batch 35, 5 Sep. a mountain of ore at 4,824 m */
     'potosi',
     /* places batch 34, 5 Sep. a cave system of 300 ha */
@@ -1580,6 +1586,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 45, 5 Sep. 82,388 ha of ice and rock */
+    'jungfrau_aletsch',
     /* places batch 41, 5 Sep. 70,176 ha of city and lagoon */
     'venice',
     /* places batch 39, 5 Sep. 72,000 ha of valley, 1,733 km2 of islands */

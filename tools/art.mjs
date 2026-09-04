@@ -45246,6 +45246,50 @@ def('buda_castle',  () => [P('M2 56 Q16 30 30 28 Q44 30 58 56 Z', 'lo'),
                           S('M8 22 L14 28', 'ik', 2), S('M52 22 L46 28', 'ik', 2),   // twice destroyed
                           wave('gh', 58, 1.4, 56)]);
 
+/* Places, batch 45 — 5 Sep, the last of the lengthened checklist. Teouma is
+   drawn as a burial with the skull moved onto the chest, because that is the
+   fact the site is known for.                                              */
+def('konye_urgench',()=>[P('M24 56 L26 14 L36 14 L38 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${26.4 + i * 0.4} ${22 + i * 8} L${35.6 - i * 0.4} ${22 + i * 8}`, 'gh', 1)),
+                          P('M22 14 L40 14 L38 6 L24 6 Z', 'bs'),
+                          E(10, 42, 8, 6, 'bs'), E(10, 42, 5, 3.4, 'gh'),        // the dome that survived
+                          ...granules('gh', 12, 1221, [42, 34, 58, 52]),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('jungfrau_aletsch',()=>[P('M2 56 L12 18 L20 30 L30 8 L40 26 L48 16 L58 56 Z', 'lo'),
+                          P('M20 30 Q28 34 34 32 Q40 30 44 34 L40 56 L22 56 Z', 'hi'),   // the ice, coming down
+                          ...[0, 1, 2].map(i => S(`M${26 + i * 4} 38 Q${28 + i * 4} 46 ${25 + i * 4} 54`, 'gh', 1)),
+                          S('M46 40 L58 34', 'ik', 1.6), C(48, 39, 1.6, 'ik')]);  // the railway
+def('vezelay',      () => [P('M2 56 Q20 40 30 38 Q42 40 58 56 Z', 'lo'),
+                          P('M20 38 L40 38 L40 18 L20 18 Z', 'bs'),
+                          P('M18 18 L30 8 L42 18 Z', 'bs'),
+                          E(30, 24, 5, 4, 'hi'),                                 // the tympanum
+                          ...[0, 1, 2, 3, 4].map(i => C(8 + i * 3, 50 - i * 1.5, 1.4, 'gh'))]);   // the road up
+def('sigatoka_dunes',()=>[P('M2 56 Q14 26 26 32 Q38 38 46 22 Q52 14 58 24 L58 56 Z', 'lo'),
+                          ...granules('gh', 20, 650, [4, 20, 58, 54]),
+                          P('M12 48 Q16 44 20 48 L19 54 L13 54 Z', 'bs'),         // a pot, coming back up
+                          S('M13 50 L19 50', 'ik', 0.9),
+                          C(38, 46, 2.4, 'hi'), C(41, 47, 1.4, 'hi')]);
+def('teouma',       () => [P('M2 24 L58 24 L58 56 L2 56 Z', 'lo'),
+                          S('M2 24 L58 24', 'ik', 1.4),
+                          ...[0, 1, 2, 3].map(i => S(`M${14 + i * 10} 36 L${14 + i * 10} 50`, 'gh', 2.4)),
+                          ...[0, 1, 2, 3].map(i => C(14 + i * 10, 40, 3, 'bs')),  // the skull, on the chest
+                          ...[0, 1, 2, 3].map(i => C(14 + i * 10, 32, 2, 'hi'))]); // and the shell ring where it was
+def('pulemelei',    () => [...[0, 1, 2, 3].map(i =>
+                            P(`M${6 + i * 4} ${52 - i * 8} L${54 - i * 4} ${52 - i * 8} L${54 - i * 4} ${44 - i * 8} L${6 + i * 4} ${44 - i * 8} Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i =>
+                            [0, 1, 2, 3, 4].map(j => S(`M${9 + i * 4 + j * 9} ${52 - i * 8} L${9 + i * 4 + j * 9} ${44 - i * 8}`, 'gh', 0.8))).flat(),
+                          ...[0, 1, 2, 3, 4].map(i => C(22 + i * 4, 21, 1.6, 'hi'))]);   // the paved top
+
+/* The last one on the checklist, 5 Sep. Lelu is drawn like Nan Madol's cousin
+   but not like Nan Madol: stacked columns, but a walled town rather than a
+   grid of islets, because that is the actual difference between them.       */
+def('lelu',         () => [P('M6 26 L54 26 L54 34 L6 34 Z', 'lo'),
+                          P('M6 34 L54 34 L54 42 L6 42 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => S(`M${8 + i * 6} 26 L${8 + i * 6} 42`, 'gh', 1)),
+                          ...[16, 30, 44].map(x => [P(`M${x - 6} 26 L${x - 3} 16 L${x + 3} 16 L${x + 6} 26 Z`, 'bs'),
+                                                    P(`M${x - 3} 16 L${x} 10 L${x + 3} 16 Z`, 'bs')]).flat(),
+                          wave('bs', 50, 1.6, 56)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
