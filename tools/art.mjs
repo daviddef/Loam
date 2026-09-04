@@ -44791,6 +44791,41 @@ def('shaft_rotating',()=>[S('M4 30 L56 30', 'lo', 7),
                           C(30, 30, 6, 'hi'),                                 // and one thing keyed to it
                           S('M30 24 L30 36', 'ik', 1.2)]);
 
+/* Places, batch 32 — 5 Sep. Fatehpur Sikri is drawn with a dry well under it,
+   because that is why nobody is there; the Plain of Jars with the quarry
+   eight kilometres off, because moving them is the whole claim.            */
+def('fatehpur_sikri',()=>[P('M4 30 L56 30 L56 48 L4 48 Z', 'lo'),
+                          P('M22 30 L22 10 L38 10 L38 30 Z', 'lo'),
+                          P('M20 10 L30 2 L40 10 Z', 'bs'),
+                          ...[10, 16, 44, 50].map(x => S(`M${x} 30 L${x} 48`, 'gh', 1.4)),
+                          C(30, 54, 5, 'gh'), S('M26 54 L34 54', 'ik', 1.4),   // the well, empty
+                          ...granules('bs', 6, 71, [26, 51, 34, 56])]);
+def('qutb_minar',   () => [P('M20 56 L24 12 L36 12 L40 56 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => P(`M${21.5 + i * 0.9} ${46 - i * 10} L${38.5 - i * 0.9} ${46 - i * 10} L${38.5 - i * 0.9} ${43 - i * 10} L${21.5 + i * 0.9} ${43 - i * 10} Z`, 'bs')),
+                          P('M24.4 22 L35.6 22 L35.4 13 L24.6 13 Z', 'hi'),    // the marble storey
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${23 + i * 3.5} 56 L${25.5 + i * 3} 12`, 'gh', 0.8)),   // the fluting
+                          S('M18 56 L42 56', 'ik', 1.4)]);
+def('mahabodhi',    () => [P('M20 56 L22 22 L30 6 L38 22 L40 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${22.5 + i * 0.4} ${48 - i * 9} L${37.5 - i * 0.4} ${48 - i * 9}`, 'gh', 1)),
+                          S('M50 56 L50 34', 'ik', 2.4), C(50, 24, 9, 'bs'),   // the tree
+                          ...[0, 1, 2].map(i => S(`M${44 + i * 5} 30 L${46 + i * 5} 34`, 'gh', 1))]);
+def('changdeokgung',()=>[P('M2 56 Q16 40 30 44 Q44 48 58 34 L58 56 Z', 'lo'),  // the hill, not flattened
+                          ...[[14, 40], [32, 42], [48, 34]].map(([x, y]) =>
+                            [P(`M${x - 8} ${y} L${x + 8} ${y} L${x + 8} ${y - 8} L${x - 8} ${y - 8} Z`, 'gh'),
+                             P(`M${x - 11} ${y - 8} L${x} ${y - 14} L${x + 11} ${y - 8} Z`, 'bs')]).flat(),
+                          ...[8, 24, 42, 56].map(x => [S(`M${x} 52 L${x} 44`, 'ik', 1.6), C(x, 38, 5, 'lo')]).flat()]);
+def('plain_of_jars',()=>[P('M2 46 L58 46 L58 56 L2 56 Z', 'gh'),
+                          ...[[12, 36], [26, 40], [40, 34], [52, 42]].map(([x, y]) =>
+                            P(`M${x - 5} ${y} L${x - 4} ${y + 10} L${x + 4} ${y + 10} L${x + 5} ${y} Z`, 'lo')),
+                          ...[[12, 36], [26, 40], [40, 34], [52, 42]].map(([x, y]) => E(x, y, 5, 2, 'bs')),
+                          P('M2 8 L14 8 L14 20 L2 20 Z', 'ik'),                // the quarry, 8 km off
+                          S('M14 14 L40 30', 'gh', 1.2)]);
+def('wat_phra_kaew',()=>[P('M14 56 L14 30 L46 30 L46 56 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${10 + i * 2} ${30 - i * 7} L${50 - i * 2} ${30 - i * 7} L${46 - i * 2} ${23 - i * 7} L${14 + i * 2} ${23 - i * 7} Z`, 'bs')),
+                          S('M30 9 L30 2', 'ik', 1.6),
+                          E(30, 44, 7, 5, 'hi'), P('M25 44 L35 44 L33 52 L27 52 Z', 'hi'),   // the image, dressed
+                          ...[0, 1, 2].map(i => S(`M${26 + i * 4} 40 L${26 + i * 4} 36`, 'gh', 1))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

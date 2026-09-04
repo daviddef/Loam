@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 32, 5 Sep. a minaret 72.5 m, a tower 55 m, a temple, jars up to 3 m */
+    'qutb_minar', 'mahabodhi', 'wat_phra_kaew', 'plain_of_jars',
     /* places batch 30, 5 Sep. a tumulus 49 m, two cathedrals, panels of rock art */
     'nemrut_dag', 'roskilde_cathedral', 'speyer_cathedral', 'alta_rock_art',
     /* places batch 28, 5 Sep. a Buddha 71 m tall */
@@ -1275,6 +1277,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 32, 5 Sep. an abandoned capital and a palace on a hillside */
+    'fatehpur_sikri', 'changdeokgung',
     /* places batch 31, 5 Sep. an effigy 411 m long, a terraced city, a walled town, a peninsula, a dockyard */
     'serpent_mound', 'ciudad_perdida', 'pingyao', 'luang_prabang', 'nelsons_dockyard',
     /* places batch 30, 5 Sep. a walled capital and a Roman port */
