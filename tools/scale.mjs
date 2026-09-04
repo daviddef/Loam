@@ -1271,6 +1271,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 31, 5 Sep. an effigy 411 m long, a terraced city, a walled town, a peninsula, a dockyard */
+    'serpent_mound', 'ciudad_perdida', 'pingyao', 'luang_prabang', 'nelsons_dockyard',
     /* places batch 30, 5 Sep. a walled capital and a Roman port */
     'hattusa', 'ephesus',
     /* places batch 29, 5 Sep. a sanctuary, a citadel of 32 ha, a cave town, an old town, a belfry, nineteen mills */

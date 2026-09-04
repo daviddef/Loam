@@ -44747,6 +44747,34 @@ def('speyer_cathedral',()=>[P('M10 40 L50 40 L50 54 L10 54 Z', 'lo'),
                           P('M20 12 L30 4 L40 12 Z', 'bs'),
                           ...[0, 1, 2, 3].map(i => C(16 + i * 9, 50, 1.4, 'bs'))]);   // and the emperors under it
 
+/* Places, batch 31 — 5 Sep. Serpent Mound is drawn from above, which is the
+   only place it reads from and the one nobody who built it could stand.     */
+def('serpent_mound',()=>[S('M4 44 Q14 40 16 30 Q18 20 28 20 Q38 20 40 30 Q42 40 34 44 Q26 48 26 40 Q26 34 32 34', 'lo', 4),
+                          S('M40 30 Q46 22 52 20', 'lo', 4),
+                          E(54, 18, 5, 3.4, 'lo'),                             // the oval at the head
+                          S('M56 12 L58 6', 'hi', 1.4), S('M6 48 L2 54', 'hi', 1.4),   // the two solstices
+                          S('M2 56 L58 56', 'ik', 1)]);
+def('ciudad_perdida',()=>[P('M2 56 L20 12 L38 22 L58 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${10 + i * 3} ${50 - i * 6} L${34 - i * 2} ${50 - i * 6}`, 'ik', 1.6)),
+                          ...[0, 1, 2, 3, 4].map(i => E(20 + (i % 2) * 6, 47 - i * 6, 4, 2, 'gh')),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${44 + i * 0.5} ${52 - i * 5} L${48 + i * 0.5} ${52 - i * 5}`, 'hi', 1.2))]);   // the 1,200 steps
+def('pingyao',      () => [P('M4 18 L56 18 L56 52 L4 52 Z', 'gh'),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => P(`M${5 + i * 7.4} 18 L${5 + i * 7.4} 12 L${10 + i * 7.4} 12 L${10 + i * 7.4} 18 Z`, 'lo')),
+                          S('M4 18 L56 18', 'lo', 3), S('M4 52 L56 52', 'lo', 3),
+                          S('M4 18 L4 52', 'lo', 3), S('M56 18 L56 52', 'lo', 3),
+                          P('M20 26 L40 26 L40 44 L20 44 Z', 'bs'),            // the bank inside
+                          ...[0, 1, 2].map(i => S(`M24 ${31 + i * 5} L36 ${31 + i * 5}`, 'hi', 1.2))]);   // paper, not metal
+def('luang_prabang',()=>[S('M2 12 Q22 26 30 54', 'bs', 3.4), S('M58 12 Q38 26 30 54', 'bs', 3.4),
+                          ...[[22, 24], [30, 34], [38, 26], [26, 44]].map(([x, y]) =>
+                            [P(`M${x - 5} ${y + 8} L${x - 5} ${y} L${x + 5} ${y} L${x + 5} ${y + 8} Z`, 'lo'),
+                             P(`M${x - 7} ${y} L${x} ${y - 7} L${x + 7} ${y} Z`, 'gh')]).flat(),
+                          ...[0, 1, 2].map(i => C(12 + i * 4, 16, 1.6, 'hi'))]);   // the alms line
+def('nelsons_dockyard',()=>[P('M2 4 L20 4 L20 34 L40 34 L40 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M20 4 L40 4 L40 34 L20 34 Z', 'gh'),              // the harbour, closed in
+                          P('M26 12 L34 12 L34 26 L26 26 Z', 'bs'), S('M30 12 L30 4', 'ik', 1.6),
+                          C(12, 44, 4, 'bs'), ...[0, 1, 2, 3].map(i => S(`M12 44 L${12 + 6 * Math.cos(i * Math.PI / 4)} ${44 + 6 * Math.sin(i * Math.PI / 4)}`, 'ik', 1.2)),
+                          S('M44 40 Q50 46 44 52', 'gh', 2)]);                  // the storm outside
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
