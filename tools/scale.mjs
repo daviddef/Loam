@@ -745,6 +745,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 27, 4 Sep */
+          'fynbos',
           /* needs closure, 4 Sep */
           'drying',
           /* places batch 15, 4 Sep. a levelling bench */
@@ -1303,6 +1305,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 27, 4 Sep */
+          'table_mountain',
           /* places batch 26, 4 Sep */
           'old_havana',
           /* places batch 18, 4 Sep */

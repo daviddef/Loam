@@ -191,6 +191,10 @@ function namesIn(text) {
        * which is how Salk's, Kolbe's, Garfield's, Kocher's, Tyndall's and
        * Yellowstone's all came to be reported as unsupported attributions. */
       clean = clean.replace(/['\u2019]s$/u, '');
+      /* And trim any apostrophe left at either end. Quoted text leaves marks
+       * attached to the word — Peru\u2019, Lord', God' — which then fail to match
+       * an article containing Peru, Lord and God. */
+      clean = clean.replace(/^['\u2019-]+|['\u2019-]+$/gu, '');
       if (clean.length < 3) continue;
       if (!/^\p{Lu}\p{Ll}/u.test(clean)) continue;
       out.add(clean);
@@ -331,8 +335,15 @@ for (const r of subject) {
   const missing = nums.filter(x => !articleHas(text, x));
   const lower = text.toLowerCase();
   const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
+  /* Fold every dash to a plain hyphen on both sides before comparing. The RNA
+   * vaccine article writes Pfizer\u2013BioNTech with an en dash and our sentence
+   * used a hyphen, so the tool reported the manufacturer as a name the source
+   * never mentions. Typographic dashes are a difference in typesetting, not in
+   * who did the thing. */
+  const dashes = (x) => x.replace(/[\u2010-\u2015\u2212]/g, '-');
+  const lowerFolded = dashes(lower);
   const strayNames = NAME_CLEARED[gestureOf(r)] ? []
-    : namesIn(r.why).filter(nm => !lower.includes(nm.toLowerCase()));
+    : namesIn(r.why).filter(nm => !lowerFolded.includes(dashes(nm.toLowerCase())));
 
   // An absolute in our sentence, with nothing of that strength anywhere in the
   // source, means the certainty is ours rather than the article's.

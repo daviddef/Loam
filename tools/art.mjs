@@ -43630,6 +43630,16 @@ def('old_havana',  () => [wave('bs', 48, 3, 27),
                           ...[0, 1, 2].map(i => P(`M${20 + i * 7} 44 L${26 + i * 7} 44 L${26 + i * 7} ${34 + i * 2} L${20 + i * 7} ${34 + i * 2} Z`, 'bs')),
                           S('M18 48 L42 48', 'gh', 2)]);
 
+def('fynbos',      () => [...[12, 24, 36, 48].map((x, i) => [
+                            S(`M${x} 52 Q${x - 2} ${36 - i % 2 * 4} ${x + 1} ${26 - i % 2 * 4}`, 'lo', 2),
+                            ...[0, 1, 2].map(j => leaf('hi', x + (j - 1) * 4, 30 - i % 2 * 4 + j * 3, .35, (j - 1) * 40))]).flat(),
+                          S('M6 54 L54 54', 'bs', 1.6)]);
+def('table_mountain',()=>[P('M4 52 L10 26 L50 26 L56 52 Z', 'lo'),
+                          P('M10 26 L50 26 L50 22 L10 22 Z', 'hi'),          // the flat quartzite cap
+                          ...[0, 1, 2, 3].map(i => S(`M${14 + i * 10} 26 L${14 + i * 10} 50`, 'gh', 1)),
+                          E(30, 18, 22, 5, 'bs'),                            // the tablecloth
+                          S('M4 52 L56 52', 'bs', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
