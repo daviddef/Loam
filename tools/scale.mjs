@@ -212,6 +212,7 @@ const SCALE = {
     'volcanic_ash',
     /* the scale homonym, 5 Sep. a wing scale is tens to hundreds of microns long */
     'wing_scale',
+    'insect_wing',
           /* verb outcomes batch 3, 4 Sep */
           'patina',
           /* places batch 2 — sub-Saharan Africa, 4 Sep. a coating a few micrometres thick */
@@ -1305,7 +1306,7 @@ const SCALE = {
           // tech breakthroughs batch 1 — a satellite bus with solar panels extended, tens of metres like an airplane
           'communications_satellite', 'gps_satellite',
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
-          'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
+          'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
     /* verb outcomes, 5 Sep. a slab across a slope */
     'wind_slab',

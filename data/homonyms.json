@@ -9,58 +9,158 @@
   ],
   "watch": [
     {
-      "id": "scale",
-      "sense": "the weighing balance",
+      "id": "ash",
+      "sense": "the mineral residue of burning — the minerals a tree pulled from the soil, handed back",
       "not": [
-        "reptile",
-        "lepidopter",
-        "denticle",
-        "keratin",
-        "shed its skin",
-        "scale-wing",
-        "octave",
-        "semitone",
-        "map scale"
+        "fraxinus",
+        "ash tree",
+        "ash dieback",
+        "ash leaf",
+        "volcanic ash",
+        "tephra",
+        "pyroclastic",
+        "ashfall",
+        "eruption"
       ],
       "also": [
-        "animal_scale",
-        "wing_scale",
-        "dermal_denticle"
+        "volcanic_ash",
+        "tuff"
       ],
-      "found": "amniote+scale→sauropsid, insect+scale→moth, scale+shark→silky_shark, plank+scale→ruler"
+      "found": "nothing, but Joya de Cerén was one recipe away — it is buried in the other kind"
     },
     {
-      "id": "spring",
-      "sense": "the coiled steel one, hardened and tempered",
+      "id": "bark",
+      "sense": "the tree's, everything outside the vascular cambium",
       "not": [
-        "groundwater",
-        "aquifer",
-        "spring water",
-        "the season",
-        "equinox",
-        "snowmelt"
+        "barking",
+        "dog bark",
+        "sailing barque"
       ],
-      "also": [
-        "groundwater",
-        "wave_physics"
-      ],
-      "found": "desert+spring→oasis"
+      "also": [],
+      "found": "nothing"
     },
     {
-      "id": "set",
-      "sense": "the Egyptian god of chaos, storms and the desert",
+      "id": "bat",
+      "sense": "the animal",
       "not": [
-        "ordered pair",
-        "set theory",
-        "subset",
-        "axiom",
-        "cardinality",
-        "russell"
+        "cricket bat",
+        "baseball bat",
+        "at bat",
+        "batsman"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "beam",
+      "sense": "the structural one, carrying a load across a gap",
+      "not": [
+        "beam of light",
+        "laser beam",
+        "balance beam of the eye",
+        "warp beam roller"
       ],
       "also": [
-        "set_math"
+        "light",
+        "laser"
       ],
-      "found": "equation+set→function"
+      "found": "nothing; the loom's warp beam is a roller rather than a load-carrier and is borderline"
+    },
+    {
+      "id": "belt",
+      "sense": "the leather one, worn or driven",
+      "not": [
+        "orion",
+        "asterism",
+        "alnitak",
+        "alnilam",
+        "mintaka",
+        "asteroid belt",
+        "kuiper"
+      ],
+      "also": [
+        "orions_belt"
+      ],
+      "found": "supergiant+belt→betelgeuse, betelgeuse+belt→orion, belt+sirius→canis_major"
+    },
+    {
+      "id": "benin",
+      "sense": "the modern Republic of Benin, capital Porto-Novo, known as Dahomey until 1975",
+      "not": [
+        "benin city",
+        "edo state",
+        "kingdom of benin",
+        "oba of benin",
+        "benin bronze",
+        "walls of benin"
+      ],
+      "also": [
+        "nigeria",
+        "benin_moat"
+      ],
+      "found": "nothing, but the Walls of Benin are in Nigeria and the trap was one recipe away — and a duplicate element for that monument was found and merged on 5 Sep"
+    },
+    {
+      "id": "bit",
+      "sense": "the unit of information",
+      "not": [
+        "drill bit",
+        "horse bit",
+        "bridle"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "bow",
+      "sense": "the weapon",
+      "not": [
+        "bow of the ship",
+        "bowing",
+        "violin bow",
+        "ribbon"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "bow",
+      "sense": "the weapon — a flexed stave storing energy in its limbs",
+      "not": [
+        "bow of a ship",
+        "bowing",
+        "take a bow",
+        "bow tie",
+        "rainbow"
+      ],
+      "also": [
+        "violin",
+        "crossbow",
+        "longbow"
+      ],
+      "allow": [
+        {
+          "out": "violin",
+          "why": "bow + sap. The instrument's bow is not the weapon, but the recipe's why is about exactly that descent and quotes a source for it — the military bow 'could easily have served the inventor as a temporary way to hold horsehair at high tension'. The crossing is the content, so it is allowed rather than split."
+        }
+      ],
+      "found": "nothing wrong. Watched because the ship's bow and the instrument's bow are both live in a corpus that has longships and violins, and the one crossing present is deliberate and sourced."
+    },
+    {
+      "id": "buffalo",
+      "sense": "the Asian water buffalo, the swamp-type that wallows",
+      "not": [
+        "bison",
+        "great plains",
+        "prairie",
+        "tatanka",
+        "buffalo jump",
+        "blackfoot"
+      ],
+      "also": [
+        "bison"
+      ],
+      "found": "nothing yet — but the American 'buffalo' is a bison, and the jump was one recipe away"
     },
     {
       "id": "bulb",
@@ -79,35 +179,244 @@
       "found": "bulb+pole→streetlight, bulb+mirror→headlight, bulb+lamp→indicator"
     },
     {
-      "id": "wave",
-      "sense": "the water one, raised by wind dragging across the surface",
+      "id": "cell",
+      "sense": "the biological one, the smallest thing unambiguously alive",
       "not": [
-        "photon",
-        "wavelength",
-        "electromagnetic",
-        "interfere",
-        "reciprocal of the period",
-        "amplitude"
+        "voltaic",
+        "galvanic",
+        "electrolyte",
+        "prison cell",
+        "spreadsheet"
       ],
       "also": [
-        "wave_physics",
-        "sound_wave"
+        "battery"
       ],
-      "found": "photon+wave→light, time+wave→frequency"
+      "found": "nothing"
     },
     {
-      "id": "nail",
-      "sense": "the fastener, forged singly by hand until about 1800",
+      "id": "cell",
+      "sense": "the biological one — the smallest thing unambiguously alive",
       "not": [
-        "fingernail",
-        "keratin",
-        "cuticle",
-        "nail bed"
+        "prison",
+        "panopticon",
+        "gaol",
+        "jail",
+        "monastic cell",
+        "battery cell",
+        "photovoltaic cell",
+        "spreadsheet",
+        "honeycomb cell"
       ],
       "also": [
-        "keratin"
+        "prison",
+        "battery",
+        "solar_cell"
       ],
-      "found": "skin+nail→integumentary_system"
+      "found": "cell+human→foucault, which is Discipline and Punish and the Panopticon — a prison cell, in an element defined as the smallest thing that is unambiguously alive."
+    },
+    {
+      "id": "coin",
+      "sense": "the struck money",
+      "not": [
+        "coined the term",
+        "coined a word",
+        "coinage of a phrase"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "cone",
+      "sense": "the conifer's seed case",
+      "not": [
+        "loudspeaker",
+        "diaphragm",
+        "apex",
+        "frustum",
+        "taper",
+        "nozzle"
+      ],
+      "also": [
+        "cone_solid"
+      ],
+      "found": "cone+magnet→speaker, cone+timber→hopper, cone+pipe→nozzle"
+    },
+    {
+      "id": "current",
+      "sense": "the electrical one, a flow of charge",
+      "not": [
+        "gulf stream",
+        "ocean current",
+        "rip current",
+        "upwelling"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "current",
+      "sense": "the electrical one — a flow of charge",
+      "not": [
+        "against the current",
+        "water current",
+        "ocean current",
+        "damming",
+        "upstream",
+        "tidal",
+        "the stream",
+        "surface layer",
+        "drift of water"
+      ],
+      "also": [
+        "ocean_current",
+        "tide",
+        "upwelling",
+        "thermohaline_circulation",
+        "river"
+      ],
+      "found": "fish+current→salmon (swimming upstream), current+wood→beaver (damming a stream), current+shark→oceanic_whitetip_shark (open-ocean drift), fossil+current→sacabambaspis. Four water currents inside an element defined as a flow of charge in a copper wire."
+    },
+    {
+      "id": "date",
+      "sense": "the palm's fruit",
+      "not": [
+        "calendar",
+        "dated to",
+        "radiocarbon date",
+        "dating"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "field",
+      "sense": "the farmed one",
+      "not": [
+        "magnetic field",
+        "electric field",
+        "field lines",
+        "field of study"
+      ],
+      "also": [
+        "magnetic_field"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "file",
+      "sense": "the computer file — a named collection of bytes",
+      "not": [
+        "ground away",
+        "rasp",
+        "filed to shape",
+        "teeth of the file",
+        "needle file"
+      ],
+      "also": [
+        "whetstone"
+      ],
+      "found": "file+steel→blade"
+    },
+    {
+      "id": "foot",
+      "sense": "Philippa Foot, the philosopher — this corpus has no body-part foot",
+      "not": [
+        "ankle",
+        "toes",
+        "sole of the",
+        "metatarsal",
+        "plantar"
+      ],
+      "also": [],
+      "found": "nothing; recorded because the id is a trap for the body part, which is not in the corpus"
+    },
+    {
+      "id": "grain",
+      "sense": "the edible seed",
+      "not": [
+        "wood grain",
+        "against the grain",
+        "grain of the leather",
+        "grain size"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "handle",
+      "sense": "the part shaped to be held",
+      "not": [
+        "handle it",
+        "user handle",
+        "handle the situation"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "hide",
+      "sense": "the untanned skin off the animal",
+      "not": [
+        "hide from",
+        "hiding place",
+        "concealed"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "jar",
+      "sense": "the glass one, threaded band and flat lid, patented 1858",
+      "not": [
+        "stone jar",
+        "megalithic",
+        "sandstone jar",
+        "xiangkhoang",
+        "burial jar",
+        "amphora"
+      ],
+      "also": [
+        "megalith",
+        "plain_of_jars"
+      ],
+      "found": "nothing yet; the Plain of Jars was one recipe away"
+    },
+    {
+      "id": "joint",
+      "sense": "the anatomical one — fibrous, cartilaginous or synovial",
+      "not": [
+        "triangulated",
+        "pin joint",
+        "welded joint",
+        "mortise",
+        "butt joint"
+      ],
+      "also": [
+        "log_building",
+        "welding",
+        "solder"
+      ],
+      "found": "joint+rod→frame"
+    },
+    {
+      "id": "joint",
+      "sense": "the anatomical one — where two bones meet",
+      "not": [
+        "mortise",
+        "tenon",
+        "dovetail",
+        "joinery",
+        "butt joint",
+        "soldered joint",
+        "expansion joint",
+        "joint of meat"
+      ],
+      "also": [
+        "log_building",
+        "welding",
+        "solder"
+      ],
+      "found": "nothing wrong — five recipes, all anatomical. Watched because this corpus builds in timber and the carpenter's joint is the same word."
     },
     {
       "id": "key",
@@ -131,24 +440,73 @@
       "found": "hammer+key→piano_action, and three psychology entries using it as filler"
     },
     {
-      "id": "ash",
-      "sense": "the mineral residue of burning — the minerals a tree pulled from the soil, handed back",
+      "id": "lead",
+      "sense": "the metal",
       "not": [
-        "fraxinus",
-        "ash tree",
-        "ash dieback",
-        "ash leaf",
-        "volcanic ash",
-        "tephra",
-        "pyroclastic",
-        "ashfall",
-        "eruption"
+        "pencil lead",
+        "take the lead",
+        "lead singer",
+        "leading edge"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "lock",
+      "sense": "the door lock — a pin tumbler and its key",
+      "not": [
+        "canal lock",
+        "lock chamber",
+        "lift a boat",
+        "gatun",
+        "pound lock",
+        "lock gate",
+        "lock of hair"
       ],
       "also": [
-        "volcanic_ash",
-        "tuff"
+        "canal_lock"
       ],
-      "found": "nothing, but Joya de Cerén was one recipe away — it is buried in the other kind"
+      "found": "nothing yet — but the Panama Canal was one recipe away from being made out of a Yale cylinder"
+    },
+    {
+      "id": "lye",
+      "sense": "ash water, caustic",
+      "not": [
+        "lie down",
+        "untruth"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "mint",
+      "sense": "the plant",
+      "not": [
+        "coinage",
+        "struck coin",
+        "royal mint"
+      ],
+      "also": [
+        "coin"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "mint",
+      "sense": "the plant — a sterile hybrid of watermint and spearmint",
+      "not": [
+        "struck coins",
+        "coinage",
+        "the mint at",
+        "minted",
+        "bullion",
+        "die and hammer"
+      ],
+      "also": [
+        "coin",
+        "money"
+      ],
+      "found": "nothing wrong — four recipes, all culinary. Watched because a corpus holding coin, money and croesus can produce a coining mint at any time."
     },
     {
       "id": "mould",
@@ -164,13 +522,82 @@
       "found": "nothing"
     },
     {
-      "id": "current",
-      "sense": "the electrical one, a flow of charge",
+      "id": "nail",
+      "sense": "the fastener, forged singly by hand until about 1800",
       "not": [
-        "gulf stream",
-        "ocean current",
-        "rip current",
-        "upwelling"
+        "fingernail",
+        "keratin",
+        "cuticle",
+        "nail bed"
+      ],
+      "also": [
+        "keratin"
+      ],
+      "found": "skin+nail→integumentary_system"
+    },
+    {
+      "id": "neck",
+      "sense": "the instrument's — the long arm carrying the fingerboard",
+      "not": [
+        "thyroid",
+        "cervical",
+        "in the neck",
+        "throat",
+        "nape"
+      ],
+      "also": [
+        "gland",
+        "trachea"
+      ],
+      "found": "iodine+neck→thyroid"
+    },
+    {
+      "id": "nut",
+      "sense": "Nut, the Egyptian sky goddess arched over Geb",
+      "not": [
+        "shell of the nut",
+        "kernel",
+        "bur",
+        "spiny",
+        "threaded",
+        "bolt",
+        "hardware"
+      ],
+      "also": [
+        "seed",
+        "nut_fastener"
+      ],
+      "found": "nut+rainforest→brazil_nut, nut|wait→chestnut, nut+rod→bolt"
+    },
+    {
+      "id": "ore",
+      "sense": "rock worth digging up for its mineral",
+      "not": [
+        "oar",
+        "or else"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "organ",
+      "sense": "the body's",
+      "not": [
+        "pipe organ",
+        "organist",
+        "stops and manuals"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "pipe",
+      "sense": "the plumbing one",
+      "not": [
+        "smoking pipe",
+        "tobacco",
+        "pipe organ",
+        "bagpipe"
       ],
       "also": [],
       "found": "nothing"
@@ -186,9 +613,30 @@
         "roof pitch"
       ],
       "also": [
-        "bitumen"
+        "bitumen",
+        "resin"
       ],
       "found": "nothing"
+    },
+    {
+      "id": "pitch",
+      "sense": "the musical one — the ear ordering sounds high to low",
+      "not": [
+        "pitch pine",
+        "caulk",
+        "caulking",
+        "tar",
+        "bitumen",
+        "seal the hull",
+        "pitch black",
+        "sales pitch",
+        "pitched roof"
+      ],
+      "also": [
+        "bitumen",
+        "resin"
+      ],
+      "found": "nothing wrong — two recipes, melody and octave, both musical. Watched because tar-pitch is the older sense of the word and this corpus has longships, bitumen and caulking in it."
     },
     {
       "id": "plant",
@@ -198,67 +646,6 @@
         "processing plant",
         "factory floor",
         "plant hire"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "cell",
-      "sense": "the biological one, the smallest thing unambiguously alive",
-      "not": [
-        "voltaic",
-        "galvanic",
-        "electrolyte",
-        "prison cell",
-        "spreadsheet"
-      ],
-      "also": [
-        "battery"
-      ],
-      "found": "nothing"
-    },
-    {
-      "id": "bark",
-      "sense": "the tree's, everything outside the vascular cambium",
-      "not": [
-        "barking",
-        "dog bark",
-        "sailing barque"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "star",
-      "sense": "the astronomical one",
-      "not": [
-        "film star",
-        "star rating",
-        "asterisk"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "bat",
-      "sense": "the animal",
-      "not": [
-        "cricket bat",
-        "baseball bat",
-        "at bat",
-        "batsman"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "bow",
-      "sense": "the weapon",
-      "not": [
-        "bow of the ship",
-        "bowing",
-        "violin bow",
-        "ribbon"
       ],
       "also": [],
       "found": "nothing"
@@ -280,20 +667,16 @@
       "found": "dinosaur+plate→stegosaurus"
     },
     {
-      "id": "cone",
-      "sense": "the conifer's seed case",
+      "id": "pole",
+      "sense": "the long round shaft stood upright",
       "not": [
-        "loudspeaker",
-        "diaphragm",
-        "apex",
-        "frustum",
-        "taper",
-        "nozzle"
+        "magnetic pole",
+        "north pole",
+        "polar",
+        "pole of the earth"
       ],
-      "also": [
-        "cone_solid"
-      ],
-      "found": "cone+magnet→speaker, cone+timber→hopper, cone+pipe→nozzle"
+      "also": [],
+      "found": "nothing"
     },
     {
       "id": "port",
@@ -310,392 +693,6 @@
         "interrupt"
       ],
       "found": "kernel+port→device_driver"
-    },
-    {
-      "id": "tank",
-      "sense": "the armoured vehicle on continuous tracks",
-      "not": [
-        "vapour space",
-        "cistern",
-        "header tank",
-        "litres of water",
-        "stored water"
-      ],
-      "also": [
-        "cistern",
-        "reservoir"
-      ],
-      "found": "lead+tank→cistern, tank+water→water_tank, petrol+tank→fuel_tank"
-    },
-    {
-      "id": "organ",
-      "sense": "the body's",
-      "not": [
-        "pipe organ",
-        "organist",
-        "stops and manuals"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "mint",
-      "sense": "the plant",
-      "not": [
-        "coinage",
-        "struck coin",
-        "royal mint"
-      ],
-      "also": [
-        "coin"
-      ],
-      "found": "nothing"
-    },
-    {
-      "id": "root",
-      "sense": "the plant's",
-      "not": [
-        "square root",
-        "word root",
-        "root of the equation"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "bit",
-      "sense": "the unit of information",
-      "not": [
-        "drill bit",
-        "horse bit",
-        "bridle"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "field",
-      "sense": "the farmed one",
-      "not": [
-        "magnetic field",
-        "electric field",
-        "field lines",
-        "field of study"
-      ],
-      "also": [
-        "magnetic_field"
-      ],
-      "found": "nothing"
-    },
-    {
-      "id": "tissue",
-      "sense": "the biological one",
-      "not": [
-        "paper tissue",
-        "kleenex",
-        "blow your nose"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "pipe",
-      "sense": "the plumbing one",
-      "not": [
-        "smoking pipe",
-        "tobacco",
-        "pipe organ",
-        "bagpipe"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "sole",
-      "sense": "the underside of a shoe",
-      "not": [
-        "flatfish",
-        "dover sole",
-        "pleuronect"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "shell",
-      "sense": "the mollusc's, laid down by the mantle",
-      "not": [
-        "artillery",
-        "shell casing",
-        "command shell",
-        "shell script"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "rock",
-      "sense": "the geological aggregate of minerals",
-      "not": [
-        "rock and roll",
-        "rocking",
-        "rock music"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "temple",
-      "sense": "the building",
-      "not": [
-        "side of the head",
-        "temporal bone",
-        "spectacle arm"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "saw",
-      "sense": "the toothed blade",
-      "not": [
-        "saw him",
-        "past tense",
-        "proverb"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "benin",
-      "sense": "the modern Republic of Benin, capital Porto-Novo, known as Dahomey until 1975",
-      "not": [
-        "benin city",
-        "edo state",
-        "kingdom of benin",
-        "oba of benin",
-        "benin bronze",
-        "walls of benin"
-      ],
-      "also": [
-        "nigeria",
-        "benin_moat"
-      ],
-      "found": "nothing, but the Walls of Benin are in Nigeria and the trap was one recipe away — and a duplicate element for that monument was found and merged on 5 Sep"
-    },
-    {
-      "id": "buffalo",
-      "sense": "the Asian water buffalo, the swamp-type that wallows",
-      "not": [
-        "bison",
-        "great plains",
-        "prairie",
-        "tatanka",
-        "buffalo jump",
-        "blackfoot"
-      ],
-      "also": [
-        "bison"
-      ],
-      "found": "nothing yet — but the American 'buffalo' is a bison, and the jump was one recipe away"
-    },
-    {
-      "id": "lock",
-      "sense": "the door lock — a pin tumbler and its key",
-      "not": [
-        "canal lock",
-        "lock chamber",
-        "lift a boat",
-        "gatun",
-        "pound lock",
-        "lock gate",
-        "lock of hair"
-      ],
-      "also": [
-        "canal_lock"
-      ],
-      "found": "nothing yet — but the Panama Canal was one recipe away from being made out of a Yale cylinder"
-    },
-    {
-      "id": "ridge",
-      "sense": "the roof one — where two slopes meet at the top",
-      "not": [
-        "mid-ocean",
-        "ridge top",
-        "levelled ridge",
-        "mountain ridge",
-        "escarpment"
-      ],
-      "also": [
-        "mountain",
-        "mid_ocean_ridge"
-      ],
-      "found": "nothing yet; Monte Albán sits on the other kind and was one recipe away"
-    },
-    {
-      "id": "spark",
-      "sense": "the fragment of stone, briefly glowing — the start of a fire",
-      "not": [
-        "electrolysis",
-        "current through",
-        "chloralkali",
-        "chlor-alkali",
-        "hall-héroult",
-        "electrode",
-        "centrifuge"
-      ],
-      "also": [
-        "electrolysis",
-        "electricity",
-        "current"
-      ],
-      "found": "ore+spark→aluminum, bauxite+spark→aluminum, salt+spark→sodium, lye+spark→potassium, brine+spark→chlorine, fluorite+spark→fluorine, spark+uranium→enriched_uranium"
-    },
-    {
-      "id": "file",
-      "sense": "the computer file — a named collection of bytes",
-      "not": [
-        "ground away",
-        "rasp",
-        "filed to shape",
-        "teeth of the file",
-        "needle file"
-      ],
-      "also": [
-        "whetstone"
-      ],
-      "found": "file+steel→blade"
-    },
-    {
-      "id": "vault",
-      "sense": "the roof — an arch run along, or two crossed",
-      "not": [
-        "strong room",
-        "strongroom",
-        "bank vault",
-        "safe deposit",
-        "pole vault"
-      ],
-      "also": [],
-      "found": "coin+vault→deposit"
-    },
-    {
-      "id": "joint",
-      "sense": "the anatomical one — fibrous, cartilaginous or synovial",
-      "not": [
-        "triangulated",
-        "pin joint",
-        "welded joint",
-        "mortise",
-        "butt joint"
-      ],
-      "also": [
-        "rivet"
-      ],
-      "found": "joint+rod→frame"
-    },
-    {
-      "id": "foot",
-      "sense": "Philippa Foot, the philosopher — this corpus has no body-part foot",
-      "not": [
-        "ankle",
-        "toes",
-        "sole of the",
-        "metatarsal",
-        "plantar"
-      ],
-      "also": [],
-      "found": "nothing; recorded because the id is a trap for the body part, which is not in the corpus"
-    },
-    {
-      "id": "coin",
-      "sense": "the struck money",
-      "not": [
-        "coined the term",
-        "coined a word",
-        "coinage of a phrase"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "lead",
-      "sense": "the metal",
-      "not": [
-        "pencil lead",
-        "take the lead",
-        "lead singer",
-        "leading edge"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "stem",
-      "sense": "the plant's upright main axis",
-      "not": [
-        "stem cell",
-        "word stem",
-        "stem of the glass"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "pole",
-      "sense": "the long round shaft stood upright",
-      "not": [
-        "magnetic pole",
-        "north pole",
-        "polar",
-        "pole of the earth"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "tick",
-      "sense": "the animal",
-      "not": [
-        "tick of the clock",
-        "checkbox",
-        "ticked off"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "hide",
-      "sense": "the untanned skin off the animal",
-      "not": [
-        "hide from",
-        "hiding place",
-        "concealed"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "date",
-      "sense": "the palm's fruit",
-      "not": [
-        "calendar",
-        "dated to",
-        "radiocarbon date",
-        "dating"
-      ],
-      "also": [],
-      "found": "nothing"
-    },
-    {
-      "id": "sage",
-      "sense": "the herb, Salvia",
-      "not": [
-        "wise man",
-        "the sage advised"
-      ],
-      "also": [],
-      "found": "nothing"
     },
     {
       "id": "press",
@@ -723,31 +720,164 @@
       "found": "nothing"
     },
     {
-      "id": "ore",
-      "sense": "rock worth digging up for its mineral",
+      "id": "reed",
+      "sense": "the musical one — a blade shaved from cane, clamped by a ligature",
       "not": [
-        "oar",
-        "or else"
+        "reed bed",
+        "phragmites",
+        "marsh reed",
+        "thatching reed",
+        "reeds growing"
+      ],
+      "also": [],
+      "found": "nothing yet; the Danube Delta wanted the plant and was one recipe away"
+    },
+    {
+      "id": "ridge",
+      "sense": "the roof one — where two slopes meet at the top",
+      "not": [
+        "mid-ocean",
+        "ridge top",
+        "levelled ridge",
+        "mountain ridge",
+        "escarpment"
+      ],
+      "also": [
+        "mountain",
+        "mid_ocean_ridge"
+      ],
+      "found": "nothing yet; Monte Albán sits on the other kind and was one recipe away"
+    },
+    {
+      "id": "rock",
+      "sense": "the geological aggregate of minerals",
+      "not": [
+        "rock and roll",
+        "rocking",
+        "rock music"
       ],
       "also": [],
       "found": "nothing"
     },
     {
-      "id": "lye",
-      "sense": "ash water, caustic",
+      "id": "root",
+      "sense": "the plant's",
       "not": [
-        "lie down",
-        "untruth"
+        "square root",
+        "word root",
+        "root of the equation"
       ],
       "also": [],
       "found": "nothing"
     },
     {
-      "id": "vine",
-      "sense": "the climbing plant",
+      "id": "rotor",
+      "sense": "the helicopter's — airfoils spun around a hub",
       "not": [
-        "vinyl",
-        "the vine app"
+        "armature",
+        "stator",
+        "rotating part of the machine",
+        "brake rotor"
+      ],
+      "also": [
+        "shaft_rotating",
+        "armature"
+      ],
+      "found": "rotor+transformer→ac_induction_motor, which is the electrical rotor and not the helicopter one"
+    },
+    {
+      "id": "sage",
+      "sense": "the herb, Salvia",
+      "not": [
+        "wise man",
+        "the sage advised"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "saw",
+      "sense": "the toothed blade",
+      "not": [
+        "saw him",
+        "past tense",
+        "proverb"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "scale",
+      "sense": "the weighing balance",
+      "not": [
+        "reptile",
+        "lepidopter",
+        "denticle",
+        "keratin",
+        "shed its skin",
+        "scale-wing",
+        "octave",
+        "semitone",
+        "map scale"
+      ],
+      "also": [
+        "animal_scale",
+        "wing_scale",
+        "dermal_denticle"
+      ],
+      "found": "amniote+scale→sauropsid, insect+scale→moth, scale+shark→silky_shark, plank+scale→ruler"
+    },
+    {
+      "id": "set",
+      "sense": "the Egyptian god of chaos, storms and the desert",
+      "not": [
+        "ordered pair",
+        "set theory",
+        "subset",
+        "axiom",
+        "cardinality",
+        "russell"
+      ],
+      "also": [
+        "set_math"
+      ],
+      "found": "equation+set→function"
+    },
+    {
+      "id": "shaft",
+      "sense": "the vertical hole sunk to reach something below",
+      "not": [
+        "turns in bearings",
+        "rotating shaft",
+        "drive shaft",
+        "keyed to",
+        "crankshaft",
+        "camshaft"
+      ],
+      "also": [
+        "shaft_rotating"
+      ],
+      "found": "coil+shaft→armature, shaft+wheel→cam, flyweight+shaft→governor"
+    },
+    {
+      "id": "shell",
+      "sense": "the mollusc's, laid down by the mantle",
+      "not": [
+        "artillery",
+        "shell casing",
+        "command shell",
+        "shell script"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "shoe",
+      "sense": "the thing worn on a foot",
+      "not": [
+        "brake shoe",
+        "horseshoe",
+        "shoe of the plough"
       ],
       "also": [],
       "found": "nothing"
@@ -770,55 +900,89 @@
       "found": "nothing yet; Lake Turkana is a soda lake and was one recipe away"
     },
     {
-      "id": "belt",
-      "sense": "the leather one, worn or driven",
+      "id": "sole",
+      "sense": "the underside of a shoe",
       "not": [
-        "orion",
-        "asterism",
-        "alnitak",
-        "alnilam",
-        "mintaka",
-        "asteroid belt",
-        "kuiper"
+        "flatfish",
+        "dover sole",
+        "pleuronect"
       ],
-      "also": [
-        "orions_belt"
-      ],
-      "found": "supergiant+belt→betelgeuse, betelgeuse+belt→orion, belt+sirius→canis_major"
+      "also": [],
+      "found": "nothing"
     },
     {
-      "id": "nut",
-      "sense": "Nut, the Egyptian sky goddess arched over Geb",
+      "id": "spark",
+      "sense": "the fragment of stone, briefly glowing — the start of a fire",
       "not": [
-        "shell of the nut",
-        "kernel",
-        "bur",
-        "spiny",
-        "threaded",
-        "bolt",
-        "hardware"
+        "electrolysis",
+        "current through",
+        "chloralkali",
+        "chlor-alkali",
+        "hall-héroult",
+        "electrode",
+        "centrifuge"
       ],
       "also": [
-        "seed",
-        "nut_fastener"
+        "electrolysis",
+        "electricity",
+        "current"
       ],
-      "found": "nut+rainforest→brazil_nut, nut|wait→chestnut, nut+rod→bolt"
+      "found": "ore+spark→aluminum, bauxite+spark→aluminum, salt+spark→sodium, lye+spark→potassium, brine+spark→chlorine, fluorite+spark→fluorine, spark+uranium→enriched_uranium"
     },
     {
-      "id": "shaft",
-      "sense": "the vertical hole sunk to reach something below",
+      "id": "spring",
+      "sense": "the coiled steel one, hardened and tempered",
       "not": [
-        "turns in bearings",
-        "rotating shaft",
-        "drive shaft",
-        "keyed to",
-        "crankshaft",
-        "camshaft"
+        "groundwater",
+        "aquifer",
+        "spring water",
+        "the season",
+        "equinox",
+        "snowmelt"
       ],
       "also": [
-        "shaft_rotating"
+        "groundwater",
+        "wave_physics"
       ],
-      "found": "coil+shaft→armature, shaft+wheel→cam, flyweight+shaft→governor"
+      "found": "desert+spring→oasis"
+    },
+    {
+      "id": "star",
+      "sense": "the astronomical one",
+      "not": [
+        "film star",
+        "star rating",
+        "asterisk"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "stem",
+      "sense": "the plant's upright main axis",
+      "not": [
+        "stem cell",
+        "word stem",
+        "stem of the glass"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "tank",
+      "sense": "the armoured vehicle on continuous tracks",
+      "not": [
+        "vapour space",
+        "cistern",
+        "header tank",
+        "litres of water",
+        "stored water"
+      ],
+      "also": [
+        "cistern",
+        "reservoir"
+      ],
+      "found": "lead+tank→cistern, tank+water→water_tank, petrol+tank→fuel_tank"
     },
     {
       "id": "tap",
@@ -832,6 +996,17 @@
       ],
       "also": [],
       "found": "nothing yet; a threading tap is a different tool and nut_fastener nearly took one"
+    },
+    {
+      "id": "temple",
+      "sense": "the building",
+      "not": [
+        "side of the head",
+        "temporal bone",
+        "spectacle arm"
+      ],
+      "also": [],
+      "found": "nothing"
     },
     {
       "id": "thread",
@@ -849,80 +1024,26 @@
       "found": "nothing yet"
     },
     {
-      "id": "rotor",
-      "sense": "the helicopter's — airfoils spun around a hub",
+      "id": "tick",
+      "sense": "the animal",
       "not": [
-        "armature",
-        "stator",
-        "rotating part of the machine",
-        "brake rotor"
-      ],
-      "also": [
-        "shaft_rotating",
-        "armature"
-      ],
-      "found": "rotor+transformer→ac_induction_motor, which is the electrical rotor and not the helicopter one"
-    },
-    {
-      "id": "jar",
-      "sense": "the glass one, threaded band and flat lid, patented 1858",
-      "not": [
-        "stone jar",
-        "megalithic",
-        "sandstone jar",
-        "xiangkhoang",
-        "burial jar",
-        "amphora"
-      ],
-      "also": [
-        "megalith",
-        "plain_of_jars"
-      ],
-      "found": "nothing yet; the Plain of Jars was one recipe away"
-    },
-    {
-      "id": "reed",
-      "sense": "the musical one — a blade shaved from cane, clamped by a ligature",
-      "not": [
-        "reed bed",
-        "phragmites",
-        "marsh reed",
-        "thatching reed",
-        "reeds growing"
+        "tick of the clock",
+        "checkbox",
+        "ticked off"
       ],
       "also": [],
-      "found": "nothing yet; the Danube Delta wanted the plant and was one recipe away"
+      "found": "nothing"
     },
     {
-      "id": "neck",
-      "sense": "the instrument's — the long arm carrying the fingerboard",
+      "id": "tissue",
+      "sense": "the biological one",
       "not": [
-        "thyroid",
-        "cervical",
-        "in the neck",
-        "throat",
-        "nape"
+        "paper tissue",
+        "kleenex",
+        "blow your nose"
       ],
-      "also": [
-        "gland",
-        "trachea"
-      ],
-      "found": "iodine+neck→thyroid"
-    },
-    {
-      "id": "beam",
-      "sense": "the structural one, carrying a load across a gap",
-      "not": [
-        "beam of light",
-        "laser beam",
-        "balance beam of the eye",
-        "warp beam roller"
-      ],
-      "also": [
-        "light",
-        "laser"
-      ],
-      "found": "nothing; the loom's warp beam is a roller rather than a load-carrier and is borderline"
+      "also": [],
+      "found": "nothing"
     },
     {
       "id": "tongue",
@@ -942,48 +1063,92 @@
       ]
     },
     {
-      "id": "shoe",
-      "sense": "the thing worn on a foot",
+      "id": "vault",
+      "sense": "the roof — an arch run along, or two crossed",
       "not": [
-        "brake shoe",
-        "horseshoe",
-        "shoe of the plough"
+        "strong room",
+        "strongroom",
+        "bank vault",
+        "safe deposit",
+        "pole vault"
+      ],
+      "also": [],
+      "found": "coin+vault→deposit"
+    },
+    {
+      "id": "vine",
+      "sense": "the climbing plant",
+      "not": [
+        "vinyl",
+        "the vine app"
       ],
       "also": [],
       "found": "nothing"
     },
     {
-      "id": "grain",
-      "sense": "the edible seed",
+      "id": "wave",
+      "sense": "the water one, raised by wind dragging across the surface",
       "not": [
-        "wood grain",
-        "against the grain",
-        "grain of the leather",
-        "grain size"
+        "photon",
+        "wavelength",
+        "electromagnetic",
+        "interfere",
+        "reciprocal of the period",
+        "amplitude"
       ],
-      "also": [],
-      "found": "nothing"
+      "also": [
+        "wave_physics",
+        "sound_wave"
+      ],
+      "found": "photon+wave→light, time+wave→frequency"
     },
     {
-      "id": "handle",
-      "sense": "the part shaped to be held",
+      "id": "wing",
+      "sense": "the built aerofoil — a cambered lifting surface with a spar in it",
       "not": [
-        "handle it",
-        "user handle",
-        "handle the situation"
+        "bird's wing",
+        "birds' wings",
+        "feathered",
+        "winged god",
+        "winged goddess",
+        "winged angel",
+        "winged figure",
+        "winged horse",
+        "winged sandals",
+        "seabird",
+        "flight feather",
+        "elytra",
+        "insect's wing",
+        "forewing",
+        "hindwing",
+        "wing membrane"
       ],
-      "also": [],
-      "found": "nothing"
+      "also": [
+        "bird_wing",
+        "insect_wing",
+        "wing_scale",
+        "elliptical_wing"
+      ],
+      "allow": [
+        {
+          "out": "samara",
+          "why": "seed + wing. A samara's blade is grown, not built, so it is neither of the animal senses and not strictly a cambered aerofoil either — but it is a lifting surface that autorotates, and the recipe's why is about exactly that. Splitting a third wing element for one recipe would be worse than saying here that this crossing was looked at."
+        }
+      ],
+      "found": "31 of 36 recipes taking `wing` meant a bird's, an insect's or a god's — wing+moon→owl, wing+zeus→hypnos, insect+wing→beetle, chitin+wing→wing_scale, keratin+wing→flight_feather — while the element itself is an aircraft wing made from wing_spar + canvas. The largest single sense fault found so far."
     }
   ],
   "cleared": [
     "adobe",
     "air",
     "alphabet",
+    "aluminum",
+    "ammonia",
     "andesite",
     "aquifer",
     "arch",
     "atoll",
+    "automobile",
     "axle",
     "bacteria",
     "barrel",
@@ -993,6 +1158,7 @@
     "bitumen",
     "blade",
     "blood",
+    "boat",
     "bone",
     "book",
     "box",
@@ -1000,12 +1166,16 @@
     "bread",
     "brick",
     "brine",
+    "bronze",
+    "buddhism",
     "buttress",
+    "calcium",
     "caldera",
     "candle",
     "canvas",
     "canyon",
     "carbon",
+    "castle",
     "cauldron",
     "chain",
     "channel",
@@ -1023,6 +1193,7 @@
     "copper",
     "coral",
     "cotton",
+    "country",
     "courtyard",
     "crane",
     "crown",
@@ -1032,6 +1203,9 @@
     "desert",
     "diagnosis",
     "dial",
+    "dinosaur",
+    "dna",
+    "dog",
     "dome",
     "dough",
     "drum",
@@ -1042,21 +1216,27 @@
     "enzyme",
     "epidermis",
     "escapement",
-    "escarpment",
+    "evolution",
+    "feather",
     "fibre",
     "filament",
     "fire",
     "fish",
     "flour",
     "flower",
+    "fluorine",
     "fluorite",
+    "fossil",
     "frame",
     "fruit",
+    "fungus",
     "gear",
+    "gene",
     "geyser",
     "gill",
     "glass",
     "glaze",
+    "glucose",
     "glue",
     "gold",
     "granite",
@@ -1066,14 +1246,18 @@
     "gypsum",
     "hammer",
     "harbour",
+    "harvest",
+    "herb",
     "herbivore",
     "honey",
     "hopper",
     "horn",
     "horse",
     "human",
+    "hydrogen",
     "ice",
     "interrupt",
+    "iodine",
     "iron",
     "irrigation",
     "island",
@@ -1085,16 +1269,21 @@
     "language",
     "laterite",
     "leaf",
+    "leather",
+    "legume",
     "lens",
     "lever",
     "light",
     "lime",
     "limestone",
+    "magnesium",
     "magnet",
+    "mammal",
     "mangrove",
     "marble",
     "mass",
     "meander",
+    "meat",
     "megalith",
     "membrane",
     "milk",
@@ -1105,14 +1294,18 @@
     "mountain",
     "mud",
     "muscle",
+    "mutation",
     "navigation",
     "needle",
+    "nerve",
+    "nitrogen",
     "nose",
     "nozzle",
     "obsidian",
     "ochre",
     "oil",
     "olive_oil",
+    "oxygen",
     "paper",
     "part",
     "peninsula",
@@ -1128,6 +1321,7 @@
     "pumice",
     "pump",
     "quartzite",
+    "rain",
     "rainforest",
     "reservoir",
     "river",
@@ -1140,17 +1334,24 @@
     "schist",
     "screw",
     "sea",
+    "seal",
     "seed",
     "silk",
     "silk_road",
+    "silver",
+    "skin",
     "snake",
     "soap",
+    "sodium",
     "soil",
+    "solution",
     "sound",
     "speaker",
+    "speciation",
     "steam",
     "steel",
     "stone",
+    "storm",
     "straw",
     "string",
     "stupa",
@@ -1160,6 +1361,7 @@
     "switch",
     "syenite",
     "tiger",
+    "timber",
     "tin",
     "tooth",
     "travertine",
@@ -1171,14 +1373,19 @@
     "valley",
     "valve",
     "vat",
+    "virus",
+    "volcano",
     "water",
     "waterfall",
     "wax",
     "wedge",
+    "wheat",
     "wheel",
     "whetstone",
     "wind",
+    "wine",
     "wire",
+    "wolf",
     "wood",
     "wool",
     "yeast"

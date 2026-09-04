@@ -45342,6 +45342,27 @@ def('chocolate_bloom',()=>[P('M10 20 L50 20 L50 46 L10 46 Z', 'lo'),
                           ...[0, 1, 2].map(i => S(`M${23 + i * 13} 20 L${23 + i * 13} 46`, 'ik', 1)),
                           ...granules('hi', 22, 6, [12, 21, 48, 45])]);   // the film that came up to the surface
 
+/* The wing homonym, 5 Sep. The element `wing` is an aircraft wing built from a
+   spar and canvas, and 31 of the 36 recipes taking it meant a bird's or an
+   insect's. Both new drawings have to read as NOT-aerofoil at shelf size, so
+   the bird one leads with the arm bones under the feathers and the insect one
+   with the vein tracery, which is the actual difference between them.        */
+def('bird_wing', () => [P('M10 42 Q22 20 40 18 Q52 17 56 24 L50 34 Q34 36 22 46 Z', 'lo'),  // the feathered outline
+                        S('M12 40 L26 28', 'ik', 2.6),                    // humerus
+                        S('M26 28 L40 24', 'ik', 2.2),                    // radius and ulna
+                        S('M40 24 L50 23', 'ik', 1.6),                    // the fused hand
+                        C(26, 28, 1.7, 'ik'), C(40, 24, 1.5, 'ik'),       // the two joints
+                        ...[0, 1, 2, 3, 4].map(i =>
+                          S(`M${20 + i * 7} ${44 - i * 3} L${26 + i * 7} ${33 - i * 3}`, 'hi', 0.9))]);
+
+def('insect_wing', () => [P('M10 34 Q26 14 52 20 Q56 28 48 38 Q28 44 10 34 Z', 'lo'),
+                          S('M12 33 L50 25', 'ik', 1.6),                  // the costal vein, thickened
+                          S('M13 35 L46 33', 'ik', 1.0),
+                          S('M14 37 L42 38', 'ik', 1.0),
+                          ...[0, 1, 2, 3].map(i =>
+                            S(`M${20 + i * 8} ${29 - i} L${22 + i * 8} ${37 - i * 0.5}`, 'hi', 0.7)),
+                          C(11, 34, 1.6, 'ik')]);                         // the hinge at the body wall
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
