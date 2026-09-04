@@ -351,7 +351,11 @@
     "dome": "Dome",
     "pendentive": "Pendentive",
     "hagia_sophia": "Hagia Sophia",
-    "sacsayhuaman": "Sacsayhuamán"
+    "sacsayhuaman": "Sacsayhuamán",
+    "wrought_iron": "Wrought iron",
+    "eiffel_tower": "Eiffel Tower",
+    "maze": "Maze",
+    "himeji": "Himeji Castle"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -830,6 +834,10 @@
     "arch+circle": "Dome",
     "dome+vault": "Pendentive",
     "byzantine_empire+pendentive": "Hagia Sophia",
-    "inca_empire+limestone": "Sacsayhuamán"
+    "inca_empire+limestone": "Sacsayhuamán",
+    "hammer+iron": "Wrought iron",
+    "rivet+wrought_iron": "Eiffel Tower",
+    "gate+wall": "Maze",
+    "castle+plaster": "Himeji Castle"
   }
 }

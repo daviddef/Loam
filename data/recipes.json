@@ -93682,5 +93682,45 @@
     "why": "Blocks up to about 200 tonnes, hauled some 35 km, dressed by pounding rather than cutting and set without mortar so closely that paper will not pass between them. Irregular joints interlock, which is also why the walls survive the earthquakes that flatten mortared ones.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n"
+  },
+  {
+    "in": [
+      "iron",
+      "hammer"
+    ],
+    "out": "wrought_iron",
+    "why": "Bloomery iron comes out full of slag, and working it hot squeezes most of that out and draws the rest into threads along the grain. The stringers are why it tears along its length and bends across it, and why a wrought iron chain gives warning before it fails.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wrought_iron"
+  },
+  {
+    "in": [
+      "wrought_iron",
+      "rivet"
+    ],
+    "out": "eiffel_tower",
+    "why": "Eiffel designed for wind before anything else, and solved the shape graphically rather than by formula: at every height the leg leans exactly enough that wind load and weight balance. The top sways 9 cm in a gale and moves 18 cm away from the sun as one side warms.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+  },
+  {
+    "in": [
+      "wall",
+      "gate"
+    ],
+    "out": "maze",
+    "why": "A defensive maze does not stop anyone; it costs them time under fire from above. Himeji's keep is 130 m from the gate in a straight line and 325 m along the only path there, all of it overlooked.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Maze"
+  },
+  {
+    "in": [
+      "castle",
+      "plaster"
+    ],
+    "out": "himeji",
+    "why": "Every exposed timber surface is coated in lime plaster, which is what makes it white and what makes it hard to burn. Eighty-three buildings survived the 1945 firebombing of the city around them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Himeji_Castle"
   }
 ]

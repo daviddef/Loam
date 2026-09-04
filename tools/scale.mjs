@@ -276,6 +276,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* places batch 14, 4 Sep. a bar section */
+          'wrought_iron',
           /* places batch 4 — Europe, 4 Sep. a hand sample, like the other rocks */
           'rock_salt',
           /* places batch 1, 4 Sep — a mortar joint, on the same rack as mortar */
@@ -1149,6 +1151,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 14, 4 Sep. a 330 m tower, a castle complex, a plan */
+          'eiffel_tower', 'himeji', 'maze',
           /* places batch 13, 4 Sep. a basilica and a 400 m terrace wall */
           'hagia_sophia', 'sacsayhuaman',
           /* places batch 12, 4 Sep. a plug hundreds of metres high */

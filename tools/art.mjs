@@ -43360,6 +43360,28 @@ def('sacsayhuaman',()=> [// irregular polygonal blocks, no course lines, no mort
                           P('M4 40 L18 34 L34 30 L48 34 L56 40 L56 34 L34 24 L14 30 L4 34 Z', 'lo'),
                           ...[0, 1, 2].map(i => S(`M${12 + i * 16} 30 L${14 + i * 16} 24`, 'gh', 1))]);
 
+/* Places, batch 14 — Western Europe and Eastern Asia. The Eiffel Tower is drawn
+   with the curve of its legs, because the curve is the engineering: at every
+   height the leg leans exactly enough to balance the wind.                  */
+def('wrought_iron',()=> [P('M10 26 L50 26 L50 34 L10 34 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M12 ${28 + i * 1.6} L48 ${28 + i * 1.6}`, 'gh', 0.9)),  // slag stringers
+                          S('M50 30 Q56 24 52 16', 'lo', 3.4)]);            // and it bends
+def('eiffel_tower',()=> [S('M10 52 Q22 34 28 8', 'lo', 3),
+                          S('M50 52 Q38 34 32 8', 'lo', 3),
+                          S('M18 52 Q26 34 29 10', 'bs', 1.6),
+                          S('M42 52 Q34 34 31 10', 'bs', 1.6),
+                          P('M12 38 L48 38 L48 41 L12 41 Z', 'hi'),
+                          P('M20 24 L40 24 L40 27 L20 27 Z', 'hi'),
+                          P('M27 8 L33 8 L33 4 L27 4 Z', 'bs')]);
+def('maze',        () => [P('M6 6 L54 6 L54 54 L6 54 Z', 'bs'),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 6} ${12 + i * 6} L${48 - i * 6} ${12 + i * 6} L${48 - i * 6} ${48 - i * 6} L${12 + i * 6} ${48 - i * 6} Z`, 'lo')),
+                          C(30, 30, 3, 'hi')]);
+def('himeji',      () => [P('M6 52 L54 52 L54 44 L6 44 Z', 'lo'),           // the stone base
+                          ...[0, 1, 2, 3].map(i =>
+                            P(`M${20 - i * 2} ${44 - i * 9} L${40 + i * 2} ${44 - i * 9} L${44 + i * 2} ${48 - i * 9} L${16 - i * 2} ${48 - i * 9} Z`, i % 2 ? 'hi' : 'lo')),
+                          P('M24 17 L36 17 L36 8 L24 8 Z', 'hi'),
+                          ...[0, 1].map(i => S(`M${26 + i * 8} 8 L${26 + i * 8} 4`, 'bs', 1.4))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
