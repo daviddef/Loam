@@ -761,6 +761,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* places batch 7, 5 Sep. an American bison stands about 1.8 m at the shoulder */
+    'bison',
     /* places batch 6, 5 Sep. two runestones, one of them about 2.5 m */
     'jelling_stones',
     /* homonyms batch 2, 5 Sep. a shape, drawn at the size of one you would hold */
@@ -1082,6 +1084,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 7, 5 Sep. a latte stone 4.6 m, a fortress 43 m, a dome 15 m across */
+    'latte_stone', 'el_morro', 'gur_e_amir',
     /* places batch 6, 5 Sep. temple spires and cave faces, tens of metres */
     'longmen_grottoes', 'ellora_caves', 'prambanan',
     /* places batch 5, 5 Sep. pyramids 6-30 m; a ziggurat 64 m by 45 m at the base */
@@ -1221,6 +1225,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 7, 5 Sep. a marae court 44 by 60 m; a cliff 300 m long */
+    'taputapuatea', 'head_smashed_in',
     /* places batch 5, 5 Sep. a mound thirteen hectares across; an arcade some 700 m long */
     'catalhoyuk', 'segovia_aqueduct',
           /* places batch 33, 5 Sep */

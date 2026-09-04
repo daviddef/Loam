@@ -43841,6 +43841,38 @@ def('jelling_stones',()=>[P('M16 54 L14 24 Q30 8 46 24 L44 54 Z', 'lo'),
                           S('M30 16 L30 30', 'ik', 1.8), S('M25 21 L35 21', 'ik', 1.8),  // and the cross
                           ...[0, 1, 2].map(i => S(`M20 ${40 + i * 4} L40 ${40 + i * 4}`, 'gh', 0.9))]);
 
+/* Places, batch 7 — 5 Sep. Oceania, the Caribbean, the plains and Samarkand.
+   Head-Smashed-In is drawn as the drive lanes and the bone, not as a cliff:
+   the cliff is the least of it.                                             */
+def('bison',        () => [P('M12 40 Q10 26 20 24 L40 24 Q50 26 48 40 L44 40 L44 50 L40 50 L40 42 L20 42 L20 50 L16 50 L16 40 Z', 'lo'),
+                          P('M14 30 Q8 22 14 18 Q22 14 26 22 L26 30 Z', 'bs'),   // the hump and the head
+                          S('M12 20 Q6 16 8 12', 'ik', 1.8), S('M22 16 Q26 10 30 12', 'ik', 1.8),
+                          C(15, 24, 1.4, 'hi')]);
+def('taputapuatea', () => [P('M6 44 L54 44 L54 52 L6 52 Z', 'lo'),               // the paved court
+                          P('M34 26 L54 26 L54 44 L34 44 Z', 'bs'),              // the ahu, at the east end
+                          ...[10, 18, 26].map(x => P(`M${x} 30 L${x + 5} 30 L${x + 5} 44 L${x} 44 Z`, 'hi')),
+                          C(44, 34, 3, 'gh'),                                    // the stone that was carried away
+                          S('M6 52 L54 52', 'ik', 1.4)]);
+def('latte_stone',  () => [...[14, 30, 46].map(x => P(`M${x - 4} 50 L${x - 3} 30 L${x + 3} 30 L${x + 4} 50 Z`, 'lo')),
+                          ...[14, 30, 46].map(x => E(x, 28, 7, 5, 'bs')),        // the tasa, cap side up
+                          S('M4 20 L56 20', 'gh', 1.6),                          // the floor it carries
+                          S('M4 52 L56 52', 'ik', 1.4)]);
+def('el_morro',     () => [P('M4 52 L4 30 L56 30 L56 52 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M6 ${36 + i * 6} L54 ${36 + i * 6}`, 'gh', 1)),  // six levels
+                          P('M44 30 L44 18 Q50 12 56 18 L56 30 Z', 'bs'),        // a garita
+                          S('M48 16 L52 16', 'hi', 1.2),
+                          wave('ik', 56, 3, 26)]);
+def('head_smashed_in',()=>[P('M4 26 L34 26 L34 34 L4 34 Z', 'lo'),               // the plateau
+                          P('M34 26 L34 52 L56 52 L56 46 Z', 'bs'),              // and the drop
+                          ...[0, 1, 2, 3, 4].map(i => C(6 + i * 6, 22 - (i % 2) * 4, 1.6, 'ik')),   // the cairns
+                          ...[0, 1, 2, 3, 4].map(i => C(6 + i * 6, 38 + (i % 2) * 4, 1.6, 'ik')),
+                          ...[0, 1, 2].map(i => S(`M38 ${44 - i * 3} L54 ${44 - i * 3}`, 'hi', 1.2))]);  // the bone, 12 m of it
+def('gur_e_amir',   () => [P('M14 54 L14 32 L46 32 L46 54 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${20 + i * 5} 32 Q${20 + i * 5} 14 30 8`, 'bs', 2.2)),  // the ribbed fluting
+                          S('M30 8 L30 4', 'ik', 1.6),
+                          P('M26 44 L34 44 L34 54 L26 54 Z', 'gh'),
+                          S('M14 32 L46 32', 'ik', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
