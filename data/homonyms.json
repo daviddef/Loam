@@ -137,10 +137,18 @@
         "fraxinus",
         "ash tree",
         "ash dieback",
-        "ash leaf"
+        "ash leaf",
+        "volcanic ash",
+        "tephra",
+        "pyroclastic",
+        "ashfall",
+        "eruption"
       ],
-      "also": [],
-      "found": "nothing; the tree is not in the corpus under this name"
+      "also": [
+        "volcanic_ash",
+        "tuff"
+      ],
+      "found": "nothing, but Joya de Cerén was one recipe away — it is buried in the other kind"
     },
     {
       "id": "mould",
@@ -507,6 +515,22 @@
         "canal_lock"
       ],
       "found": "nothing yet — but the Panama Canal was one recipe away from being made out of a Yale cylinder"
+    },
+    {
+      "id": "ridge",
+      "sense": "the roof one — where two slopes meet at the top",
+      "not": [
+        "mid-ocean",
+        "ridge top",
+        "levelled ridge",
+        "mountain ridge",
+        "escarpment"
+      ],
+      "also": [
+        "mountain",
+        "mid_ocean_ridge"
+      ],
+      "found": "nothing yet; Monte Albán sits on the other kind and was one recipe away"
     }
   ],
   "cleared": [

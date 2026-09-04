@@ -17716,8 +17716,7 @@
    "wild"
   ],
   "fact": "Western lowland gorillas eat far more fruit than mountain gorillas, who barely touch it.",
-  "taxon": "tx_gorilla",
-  "terminal": true
+  "taxon": "tx_gorilla"
  },
  {
   "id": "chimpanzee",
@@ -54666,7 +54665,6 @@
    "earth"
   ],
   "fact": "Capital Suva. Taveuni's Rainbow Reef has earned Fiji's waters the name 'soft coral capital of the world.'",
-  "terminal": true,
   "soleRoute": true
  },
  {
@@ -85848,5 +85846,81 @@
    "history"
   ],
   "fact": "More than 160 km of ditch and bank in laterite, ringing a kingdom, with 20 m from ditch floor to bank rim."
+ },
+ {
+  "id": "volcanic_ash",
+  "name": "Volcanic Ash",
+  "emoji": "🌋",
+  "shelf": "workshop",
+  "tags": [
+   "earth"
+  ],
+  "fact": "Not smoke — rock. Magma torn into fragments under 2 mm across, which is why it settles as a blanket and stays where it lands."
+ },
+ {
+  "id": "joya_de_ceren",
+  "name": "Joya de Cerén",
+  "emoji": "🌾",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history"
+  ],
+  "fact": "A Maya farming village under ten metres of ash, with the crops still in the ground and nobody in the houses. They had time to leave."
+ },
+ {
+  "id": "monte_alban",
+  "name": "Monte Albán",
+  "emoji": "⛰️",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history"
+  ],
+  "fact": "A mountain top flattened by hand, 400 m above the valley and 500 years before Christ, then built on for a millennium."
+ },
+ {
+  "id": "fasil_ghebbi",
+  "name": "Fasil Ghebbi",
+  "emoji": "🏰",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history"
+  ],
+  "fact": "Brown basalt trimmed in wine-coloured tuff — Portuguese, Indian and Arab building put together by Ethiopian emperors behind one wall."
+ },
+ {
+  "id": "bikini_atoll",
+  "name": "Bikini Atoll",
+  "emoji": "☢️",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history"
+  ],
+  "fact": "Twenty-three devices, about 77 megatons, and a fleet on the lagoon floor. Listed by UNESCO for exactly that."
+ },
+ {
+  "id": "levuka",
+  "name": "Levuka",
+  "emoji": "🏘️",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history"
+  ],
+  "fact": "Fiji’s first colonial capital, kept as it was because the hills behind it left no room to grow and the government left instead."
+ },
+ {
+  "id": "sangha_trinational",
+  "name": "Sangha Trinational",
+  "emoji": "🌳",
+  "shelf": "workshop",
+  "tags": [
+   "wild",
+   "earth"
+  ],
+  "fact": "One forest, three countries, and the clearings in it — the bais — are where the elephants can be counted at all."
  }
 ]

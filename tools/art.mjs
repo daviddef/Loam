@@ -43951,6 +43951,45 @@ def('sungbo_eredo', () => [S('M30 30 m -24 0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 
                           P('M18 54 L22 46 L30 46 L30 54 Z', 'bs'),
                           S('M4 46 L30 46', 'ik', 1)]);
 
+/* Places, batch 10 — 5 Sep. Joya de Cerén is drawn as a house with the ash
+   above it and the crop still in the ground; Monte Albán as a flat top on a
+   mountain, because the flatness is the work.                              */
+def('volcanic_ash', () => [...granules('lo', 26, 909, [8, 10, 52, 40]),
+                          ...granules('bs', 14, 313, [12, 16, 48, 44]),
+                          S('M6 48 Q30 42 54 48', 'ik', 2),                    // it lands and it stays
+                          S('M6 54 Q30 48 54 54', 'gh', 1.4)]);
+def('joya_de_ceren',()=>[...granules('bs', 22, 77, [6, 6, 54, 26]),
+                          S('M4 28 Q30 24 56 28', 'ik', 2.2),                  // the ash line
+                          P('M14 52 L14 38 L24 30 L34 38 L34 52 Z', 'lo'),     // the house, sealed not burned
+                          P('M20 52 L20 44 L28 44 L28 52 Z', 'gh'),
+                          ...[42, 48, 54].map(x => [S(`M${x} 52 L${x} 40`, 'hi', 1.2),
+                                                    C(x, 54, 2.2, 'hi')]).flat()]);  // and the manioc still in the ground
+def('monte_alban',  () => [P('M2 54 L18 22 L44 22 L58 54 Z', 'lo'),
+                          S('M18 22 L44 22', 'ik', 2.4),                       // levelled by hand
+                          ...[[22, 14], [30, 16], [38, 14]].map(([x, y]) => P(`M${x} 22 L${x} ${y} L${x + 6} ${y} L${x + 6} 22 Z`, 'bs')),
+                          P('M46 22 L52 16 L56 22 Z', 'hi'),                   // Building J, askew to it all
+                          C(54, 8, 2, 'hi')]);                                 // Capella
+def('fasil_ghebbi', () => [P('M4 50 L4 26 L56 26 L56 50 Z', 'lo'),
+                          ...[12, 30, 48].map(x => [P(`M${x - 7} 26 L${x - 7} 12 L${x + 7} 12 L${x + 7} 26 Z`, 'lo'),
+                                                    P(`M${x - 8} 12 L${x - 6} 6 L${x + 6} 6 L${x + 8} 12 Z`, 'hi')]).flat(),
+                          ...[0, 1, 2, 3].map(i => S(`M6 ${32 + i * 5} L54 ${32 + i * 5}`, 'gh', 0.9)),
+                          S('M4 50 L56 50', 'ik', 1.4)]);
+def('bikini_atoll', () => [S('M30 34 m -22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0', 'lo', 3),   // the ring
+                          C(30, 34, 17, 'gh'),
+                          C(18, 20, 5.5, 'ik'),                                // the Bravo crater
+                          C(38, 42, 2.4, 'bs'), C(28, 44, 2, 'bs'), C(42, 30, 1.8, 'bs'),  // the fleet, on the floor
+                          S('M8 12 L52 56', 'hi', 0.9)]);
+def('levuka',       () => [P('M4 54 L4 40 L56 40 L56 54 Z', 'lo'),             // the strip
+                          ...[10, 22, 34, 46].map(x => [P(`M${x} 40 L${x} 32 L${x + 7} 32 L${x + 7} 40 Z`, 'bs'),
+                                                        P(`M${x - 1} 32 L${x + 3.5} 26 L${x + 8} 32 Z`, 'hi')]).flat(),
+                          P('M4 30 L14 12 L30 8 L46 12 L56 30 Z', 'gh'),       // and the hills that stopped it
+                          wave('ik', 56, 2, 56)]);
+def('sangha_trinational',()=>[...[10, 22, 46].map(x => [S(`M${x} 54 L${x} 34`, 'ik', 2),
+                                                        C(x, 26, 8, 'lo')]).flat(),
+                          E(33, 46, 12, 7, 'gh'),                              // the bai
+                          E(33, 44, 5, 3.4, 'bs'), S('M29 42 Q27 38 30 37', 'bs', 1.6),  // and what stands in it
+                          S('M4 56 L56 56', 'ik', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

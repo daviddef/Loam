@@ -204,6 +204,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+    /* places batch 10, 5 Sep. ash is defined as fragments under 2 mm; the fine fraction is microns */
+    'volcanic_ash',
     /* the scale homonym, 5 Sep. a wing scale is tens to hundreds of microns long */
     'wing_scale',
           /* verb outcomes batch 3, 4 Sep */
@@ -1229,6 +1231,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 10, 5 Sep. a village under ash, a levelled mountain top, a palace compound, a port town */
+    'joya_de_ceren', 'monte_alban', 'fasil_ghebbi', 'levuka',
     /* places batch 9, 5 Sep. 8,800 m2 of monastery */
     'rila_monastery',
     /* places batch 8, 5 Sep. a burial site, and a canal ring measured across a city */
@@ -1438,6 +1442,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 10, 5 Sep. an atoll, and 7,463 km2 of forest across three countries */
+    'bikini_atoll', 'sangha_trinational',
     /* places batch 9, 5 Sep. 82 km of canal; 160 km of rampart */
     'panama_canal', 'sungbo_eredo',
           /* places batch 21, 4 Sep */
