@@ -1185,6 +1185,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 28, 4 Sep */
+          'prison', 'robben_island',
           /* places batch 25, 4 Sep */
           'sterkfontein',
           /* places batch 24, 4 Sep */
@@ -1305,6 +1307,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 28, 4 Sep */
+          'apartheid',
           /* places batch 27, 4 Sep */
           'table_mountain',
           /* places batch 26, 4 Sep */

@@ -51,7 +51,15 @@ async function articleText(title) {
   if (cache.has(title)) return cache.get(title);
   const disk = readDisk(title);
   if (disk) { cache.set(title, disk); return disk; }
-  const url = `${API}?action=query&prop=extracts&explaintext=1&redirects=1&format=json` +
+  /* extracts with explaintext drops the infobox, and the infobox is where a
+   * great many of the facts we cite actually live: melting points, dimensions,
+   * dates of construction, populations. Gold's melting point is not in the
+   * prose of the Gold article at all, so a correct claim was reported as
+   * unsupported. Pulling the wikitext alongside the prose puts the infobox
+   * back in scope. It is noisier, and that only ever costs the check a catch —
+   * never a false alarm, which is the direction that matters. */
+  const url = `${API}?action=query&prop=extracts|revisions&explaintext=1&redirects=1&format=json` +
+              `&rvprop=content&rvslots=main&formatversion=2` +
               `&titles=${encodeURIComponent(title)}`;
   for (let attempt = 0; attempt < 3; attempt++) {
     if (attempt) await sleep(2500 * attempt);
@@ -61,7 +69,8 @@ async function articleText(title) {
       if (!res.ok) break;
       const j = await res.json();
       const page = Object.values(j?.query?.pages || {})[0];
-      const text = page && page.extract ? page.extract : null;
+      const wiki = page?.revisions?.[0]?.slots?.main?.content || '';
+      const text = page && page.extract ? page.extract + '\n\n' + wiki : null;
       cache.set(title, text);
       if (text) writeDisk(title, text);
       await sleep(700);
@@ -94,6 +103,12 @@ function numbersIn(text) {
      * number. A digit run followed by a hyphen and a letter is a name. */
     const after = text.slice(m.index + m[0].length);
     if (/^-\p{L}/u.test(after) || /^-?\d*,\d+-\p{L}/u.test(text.slice(m.index))) continue;
+    /* Shorthand halves of a span are not numbers the source has to contain.
+     * "1915-16" means 1915 to 1916 and yields a bare 16; "the 1960s-70s" means
+     * the 1960s and 1970s and yields a bare 70. Neither 16 nor 70 appears in
+     * any article, because neither was ever asserted. */
+    const before = text.slice(Math.max(0, m.index - 7), m.index);
+    if (m[1].length <= 2 && /\d{4}s?[-\u2013\u2014]$/.test(before)) continue;
     const raw = m[1].replace(/,/g, '');
     const n = parseFloat(raw);
     if (!isFinite(n)) continue;
@@ -123,7 +138,14 @@ function articleHas(text, num) {
      * alarms are how a check gets ignored. Reject a comma or point only when a
      * digit follows it. */
     const esc = f.replace('.', '\\.');
-    if (new RegExp(`(?<!\\d)(?<!\\d,)(?<!\\d\\.)${esc}(?!\\d)(?!,\\d)(?!\\.\\d)`).test(text)) return true;
+    /* An INTEGER claim is supported by a more precise source figure. Gold melts
+     * at 1064.18 C and the article says so; our sentence says 1064, which is
+     * claiming LESS than the source, not more. The check exists to catch
+     * sentences going beyond their source, so rounding down is not what it is
+     * looking for. The reverse still flags: 1064.18 where the source says 1064
+     * is precision we invented. */
+    const ahead = n % 1 === 0 ? `(?!\\d)(?!,\\d)` : `(?!\\d)(?!,\\d)(?!\\.\\d)`;
+    if (new RegExp(`(?<!\\d)(?<!\\d,)(?<!\\d\\.)${esc}${ahead}`).test(text)) return true;
   }
   return false;
 }

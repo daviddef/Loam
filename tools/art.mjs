@@ -43640,6 +43640,20 @@ def('table_mountain',()=>[P('M4 52 L10 26 L50 26 L56 52 Z', 'lo'),
                           E(30, 18, 22, 5, 'bs'),                            // the tablecloth
                           S('M4 52 L56 52', 'bs', 1.6)]);
 
+def('prison',      () => [P('M8 14 L52 14 L52 52 L8 52 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => P(`M${14 + i * 8} 20 L${18 + i * 8} 20 L${18 + i * 8} 46 L${14 + i * 8} 46 Z`, 'bs')),
+                          S('M8 20 L52 20', 'bs', 2), S('M8 46 L52 46', 'bs', 2)]);
+def('apartheid',   () => [P('M4 12 L28 12 L28 52 L4 52 Z', 'lo'),
+                          P('M32 12 L56 12 L56 52 L32 52 Z', 'bs'),
+                          P('M28 8 L32 8 L32 56 L28 56 Z', 'hi'),             // the line, written down
+                          ...[0, 1, 2].map(i => C(14, 22 + i * 10, 3, 'gh')),
+                          ...[0, 1, 2].map(i => C(46, 22 + i * 10, 3, 'gh'))]);
+def('robben_island',()=>[wave('bs', 46, 3, 27),
+                          P('M14 46 Q14 32 30 30 Q46 32 46 46 Z', 'lo'),
+                          P('M22 42 L38 42 L38 30 L22 30 Z', 'bs'),
+                          ...[0, 1, 2].map(i => S(`M${26 + i * 4} 30 L${26 + i * 4} 42`, 'gh', 1.2)),
+                          wave('bs', 52, 3, 26)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
