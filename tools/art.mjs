@@ -41543,6 +41543,71 @@ def('exchange',     () => [C(30, 30, 8, 'bs'), ring('ik', 30, 30, 8, 1.6),
                              ['g', a, 30, 30, [S('M30 22 L30 8', 'lo', 1.8), C(30, 6, 3, 'lo')]]),
                            C(30, 30, 3, 'hi')]);                                                  // one wire each,
 
+
+/* ── eleven things on gestures the gods were sitting on ──────────────────
+   mountain+river was a deity, mountain+snow was another, fire+stone was an
+   altar. They are landscape now, drawn as the SHAPE each process leaves —
+   a V and a U are different valleys, scree always settles at 35 degrees.  */
+def('valley',       () => [P('M4 8 L24 50 L36 50 L56 8 L56 54 L4 54 Z', 'bs'),
+                           P('M24 50 L36 50 L34 54 L26 54 Z', 'lo'),          // the river that cut it,
+                           ...[0, 1].map(i => wave('hi', 51 + i * 2, 1.6, 5)),// still in the bottom
+                           S('M4 8 L24 50', 'ik', 1.4), S('M56 8 L36 50', 'ik', 1.4)]);
+def('gorge',        () => [P('M4 6 L22 6 L22 54 L4 54 Z', 'bs'),              // cut faster than the walls
+                           P('M38 6 L56 6 L56 54 L38 54 Z', 'bs'),            // can fall in, so they stay
+                           ...[0, 1, 2, 3].map(i => S(`M22 ${12 + i * 12} L26 ${14 + i * 12}`, 'lo', 1.4)),
+                           ...[0, 1, 2, 3].map(i => S(`M38 ${16 + i * 12} L34 ${18 + i * 12}`, 'lo', 1.4)),
+                           P('M24 46 L36 46 L36 54 L24 54 Z', 'hi'),
+                           ...[0, 1, 2].map(i => S(`M${26 + i * 4} 2 L${28 + i * 4} 8`, 'gh', 1.2))]);
+def('cliff',        () => [P('M4 4 L34 4 L34 44 L4 44 Z', 'bs'),
+                           P('M4 34 L34 34 L34 44 L4 44 Z', 'lo'),            // the notch cut at the base,
+                           P('M4 44 L56 44 L56 54 L4 54 Z', 'gh'),
+                           ...[0, 1].map(i => wave('hi', 47 + i * 4, 2.2, 10)),
+                           ...[[38, 40], [44, 42], [48, 38]].map(([x, y]) => C(x, y, 3, 'lo'))]);  // and what fell
+def('scree',        () => [P('M6 6 L30 6 L30 20 L6 20 Z', 'lo'),
+                           P('M8 20 L52 50 L8 50 Z', 'bs'),                    // always about 35 degrees,
+                           ...[[16, 44], [26, 46], [34, 48], [20, 38], [30, 40], [40, 48]]
+                             .map(([x, y]) => C(x, y, 3, 'lo')),
+                           S('M8 50 L52 50', 'ik', 1.6),
+                           S('M12 46 L26 36', 'gh', 1.2)]);                    // whatever the rock is
+def('snowline',     () => [P('M4 54 L30 10 L56 54 Z', 'bs'),
+                           P('M18 32 L30 10 L42 32 Z', 'hi'),                  // above it, the snow lasts
+                           S('M4 32 L56 32', 'ik', 2.4),                        // the summer
+                           ...[0, 1, 2].map(i => S(`M${8 + i * 18} 28 L${14 + i * 18} 28`, 'gh', 1.2))]);
+def('treeline',     () => [P('M4 54 L30 8 L56 54 Z', 'lo'),
+                           S('M4 36 L56 36', 'ik', 2.4),
+                           ...[0, 1, 2, 3].map(i => [                           // trees below it,
+                             P(`M${12 + i * 11} 50 L${16 + i * 11} 38 L${20 + i * 11} 50 Z`, 'bs'),
+                             S(`M${16 + i * 11} 50 L${16 + i * 11} 53`, 'ik', 1.2)]).flat(),
+                           ...[[26, 32], [34, 30]].map(([x, y]) => C(x, y, 2, 'gh'))]);  // and scrub above
+def('erosion',      () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'lo'),
+                           P('M4 20 L14 20 L18 30 L28 26 L36 34 L46 28 L56 22 L56 20 Z', 'bs'),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M${10 + i * 10} 4 L${14 + i * 10} 16`, 'gh', 1.4)),
+                           ...[[20, 40], [34, 44], [46, 38]].map(([x, y]) => C(x, y, 2, 'hi')),
+                           S('M4 52 L56 52', 'ik', 1.6)]);                      // all of it going to the sea
+def('crater',       () => [C(30, 34, 22, 'lo'),
+                           C(30, 34, 15, 'ground'),
+                           ring('bs', 30, 34, 19, 5),                            // round whatever the angle,
+                           C(30, 34, 5, 'bs'),                                   // because it is an explosion
+                           ...[0, 1, 2].map(i => S(`M${44 + i * 4} ${8 - i * 2} L${38 + i * 4} ${18 - i * 2}`, 'gh', 1.4))]);
+def('hot_spring',   () => [P('M8 34 Q30 26 52 34 Q52 50 30 52 Q8 50 8 34 Z', 'bs'),
+                           E(30, 36, 16, 6, 'hi'),
+                           ...[0, 1, 2].map(i =>                                 // rain that fell decades ago,
+                             S(`M${20 + i * 10} 28 Q${24 + i * 10} 18 ${20 + i * 10} 8`, 'gh', 2)),
+                           ...[0, 1].map(i => P(`M6 ${44 + i * 5} L54 ${44 + i * 5} L54 ${47 + i * 5} L6 ${47 + i * 5} Z`, 'lo'))]);
+def('sunset',       () => [C(30, 40, 16, 'bs'),
+                           P('M4 40 L56 40 L56 54 L4 54 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => P(`M4 ${18 - i * 4} L56 ${18 - i * 4} L56 ${21 - i * 4} L4 ${21 - i * 4} Z`,
+                             i < 2 ? 'hi' : 'gh')),                              // the blue scattered out,
+                           ...[0, 1].map(i => wave('gh', 46 + i * 5, 2, 10))]);   // only the red left
+def('hearth',       () => [P('M4 14 L14 14 L14 50 L4 50 Z', 'lo'),               // stone on three sides,
+                           P('M46 14 L56 14 L56 50 L46 50 Z', 'lo'),              // which is the whole element:
+                           P('M4 44 L56 44 L56 54 L4 54 Z', 'lo'),                // a fire in the open is fire
+                           ...[0, 1, 2].map(i => S(`M${8 + i * 2} ${18 + i * 12} L${11 + i * 2} ${18 + i * 12}`, 'ik', 1)),
+                           ...[0, 1, 2].map(i => S(`M${49 + i * 2} ${22 + i * 12} L${52 + i * 2} ${22 + i * 12}`, 'ik', 1)),
+                           P('M22 44 Q18 32 24 26 Q26 34 30 30 Q34 22 34 30 Q40 34 36 44 Z', 'bs'),
+                           P('M26 44 Q24 36 29 32 Q33 38 31 44 Z', 'hi'),
+                           ...[0, 1, 2].map(i => C(16 + i * 14, 49, 2, 'ik'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

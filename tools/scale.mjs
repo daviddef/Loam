@@ -689,6 +689,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* landscape, 4 Sep — on the gestures the gods were sitting on */
+          'hearth',
           /* software abstractions sit where instruction and algorithm sit — with
              the person using them, not at a nanometre */
           'kernel', 'scheduler', 'device_driver', 'interrupt', 'process', 'morse_code', 'exchange',
@@ -1048,6 +1050,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* landscape, 4 Sep — on the gestures the gods were sitting on */
+          'cliff', 'scree', 'hot_spring',
           /* common words the corpus never had, 3 Sep */
           'swamp', 'oasis',
           /* society and economy, 3 Sep */
@@ -1104,6 +1108,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* landscape, 4 Sep — on the gestures the gods were sitting on */
+          'valley', 'gorge', 'snowline', 'treeline', 'crater',
           /* society and economy, 3 Sep */
           'society', 'nation',
           /* the abstract layer, 3 Sep — see the note on conceptual scale above */
@@ -1145,6 +1151,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* landscape, 4 Sep — on the gestures the gods were sitting on */
+          'erosion', 'sunset',
           /* geography wave, 3 Sep */
           'city_state', 'co_principality',
           /* unblocking-nouns wave, 2 Sep */
