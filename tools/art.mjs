@@ -41608,6 +41608,83 @@ def('hearth',       () => [P('M4 14 L14 14 L14 50 L4 50 Z', 'lo'),              
                            P('M26 44 Q24 36 29 32 Q33 38 31 44 Z', 'hi'),
                            ...[0, 1, 2].map(i => C(16 + i * 14, 49, 2, 'ik'))]);
 
+
+/* ── the words that came back with nothing ───────────────────────────────
+   Every one of these was typed into the search during a session and found
+   no answer. Ranking fixed most of the complaints; these were the ones
+   that were genuinely not in the corpus at all.                          */
+def('molasses',     () => [vessel('lo'), P('M14 30 L46 30 L44 48 L16 48 Z', 'ik'),
+                           E(30, 30, 16, 4, 'bs'),
+                           S('M30 4 Q34 14 30 26', 'ik', 4),               // the third boiling, and what is
+                           ...[[24, 38], [36, 40]].map(([x, y]) => C(x, y, 2, 'lo'))]);  // left is the mineral half
+def('rum',          () => [P('M18 16 L42 16 L40 52 L20 52 Z', 'lo'),
+                           P('M20 30 L40 30 L39 50 L21 50 Z', 'ik'),
+                           P('M22 6 L38 6 L38 16 L22 16 Z', 'bs'),          // dark, from the barrel and from
+                           E(30, 30, 10, 2.6, 'bs'),                        // the molasses it started as
+                           ...[0, 1].map(i => S(`M${24 + i * 12} 22 L${24 + i * 12} 26`, 'gh', 1.2))]);
+def('cologne',      () => [P('M22 14 L38 14 L40 50 L20 50 Z', 'hi'),
+                           P('M25 4 L35 4 L35 14 L25 14 Z', 'lo'),
+                           E(30, 30, 7, 9, 'bs'),                            // weak on purpose: two to five
+                           ...[0, 1, 2].map(i => S(`M${44 + i * 4} ${16 + i * 5} Q${48 + i * 4} ${22 + i * 5} ${44 + i * 4} ${28 + i * 5}`, 'gh', 1.2)),
+                           C(30, 9, 3, 'ik')]);                              // per cent, where perfume is twenty
+def('currency',     () => [P('M8 18 L52 18 L52 42 L8 42 Z', 'hi'),
+                           ring('lo', 30, 30, 8, 2),
+                           ...[[14, 24], [46, 24], [14, 36], [46, 36]].map(([x, y]) => C(x, y, 2, 'lo')),
+                           S('M26 27 L34 27', 'lo', 1.8), S('M26 33 L34 33', 'lo', 1.8),
+                           S('M30 22 L30 38', 'lo', 1.8)]);                  // a promise, printed
+def('banknote_pound',() => [P('M6 20 L54 20 L54 44 L6 44 Z', 'hi'),
+                           S('M21 31 L35 31', 'lo', 2.6),                     // the crossbar that makes it a
+                           S('M30 22 Q22 24 23 32 Q24 39 20 41', 'lo', 3),    // pound and not an L
+                           S('M20 41 L38 41', 'lo', 3),
+                           ...[[12, 24], [48, 40]].map(([x, y]) => C(x, y, 2, 'lo'))]);
+def('dollar',       () => [P('M6 18 L54 18 L54 42 L6 42 Z', 'hi'),
+                           S('M30 16 L30 44', 'lo', 2),
+                           S('M37 25 Q30 20 24 25 Q21 30 30 30 Q39 31 36 36 Q30 41 23 35', 'lo', 3),
+                           ...[[12, 24], [48, 36]].map(([x, y]) => C(x, y, 2, 'lo'))]);
+def('poodle',       () => [E(24, 34, 14, 11, 'bs'),
+                           C(42, 22, 9, 'bs'),
+                           P('M46 14 Q54 12 52 22 Q48 26 45 20 Z', 'lo'),      // the clip: fur left over the
+                           ...[[16, 46], [26, 48]].map(([x, y]) => C(x, y, 5, 'bs')),  // joints, shaved between
+                           ...[[20, 44], [30, 46]].map(([x, y]) => C(x, y, 2.4, 'lo')),
+                           C(10, 34, 6, 'bs'), C(39, 20, 1.8, 'ik')]);
+def('labradoodle',  () => [E(26, 34, 15, 11, 'bs'),
+                           C(44, 22, 9, 'bs'),
+                           P('M48 16 Q56 16 53 26 Q48 28 46 21 Z', 'lo'),
+                           ...[0, 1, 2, 3, 4].map(i => C(14 + i * 7, 26 + (i % 2) * 5, 4, 'hi')),  // the coat that
+                           ...[0, 1].map(i => S(`M${20 + i * 12} 45 L${20 + i * 12} 52`, 'bs', 3)),// was the point
+                           C(41, 20, 1.8, 'ik')]);
+def('cassowary',    () => [E(28, 34, 15, 16, 'bs'),
+                           C(38, 14, 7, 'lo'),
+                           P('M36 6 L46 6 L42 14 L34 12 Z', 'ik'),              // the casque,
+                           P('M45 14 L54 17 L45 20 Z', 'lo'),
+                           S('M22 48 L22 56', 'ik', 2.4), S('M32 48 L32 56', 'ik', 2.4),
+                           P('M18 54 L26 54 L20 60 Z', 'ik'),                   // and the inner-toe dagger
+                           C(36, 13, 1.6, 'ik')]);
+def('ratite',       () => [E(28, 36, 14, 14, 'bs'),
+                           S('M36 24 Q42 12 40 6', 'bs', 5),
+                           C(40, 6, 5, 'bs'),
+                           P('M16 30 L26 34 L16 38 Z', 'lo'),                   // no keel: the flat sternum
+                           S('M20 50 L20 58', 'ik', 2.4), S('M30 50 L30 58', 'ik', 2.4),
+                           S('M10 26 L20 26', 'gh', 1.6)]);                     // with nothing to attach to
+def('mustelid',     () => [P('M6 34 Q20 24 34 30 Q46 34 54 28', 'bs'),
+                           S('M6 34 Q20 24 34 30 Q46 34 54 28', 'bs', 11),
+                           C(54, 26, 7, 'bs'),
+                           ...[0, 1, 2, 3].map(i => S(`M${16 + i * 11} 38 L${16 + i * 11} 46`, 'lo', 2.6)),
+                           C(57, 24, 1.6, 'ik'),
+                           ...[[10, 42]].map(([x, y]) => C(x, y, 3, 'lo'))]);    // long body, short legs
+def('weasel',       () => [S('M4 40 Q18 30 32 36 Q44 40 52 30', 'bs', 8),
+                           C(53, 28, 5.5, 'bs'),
+                           ...[0, 1, 2, 3].map(i => S(`M${12 + i * 10} 42 L${12 + i * 10} 48`, 'lo', 2)),
+                           P('M6 12 L54 12 L54 22 L6 22 Z', 'lo'),               // small enough to follow a
+                           P('M22 22 L34 22 L34 30 L22 30 Z', 'ground'),          // vole down its own tunnel
+                           C(56, 26, 1.4, 'ik')]);
+def('badger',       () => [E(28, 34, 20, 13, 'bs'),
+                           C(48, 28, 9, 'hi'),
+                           ...[0, 1].map(i => S(`M${45 + i * 6} 20 L${45 + i * 6} 36`, 'ik', 3.4)),  // the face stripes,
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 10} 46 L${14 + i * 10} 52`, 'lo', 3)),
+                           ...[0, 1, 2].map(i => P(`M${8 - i * 2} ${50 + i} L${14 - i * 2} ${48 + i} L${12 - i * 2} ${54 + i} Z`, 'lo')),
+                           C(52, 26, 1.6, 'ik')]);                                // and the digging claws
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
@@ -41732,6 +41809,62 @@ console.log(`  ${drawn}/${elements.length} items drawn by hand, ${missing.length
     for (const [id, n] of blind.slice(0, 12)) console.log(`    ${id} — ${n} shape(s)`);
   } else {
     console.log('  no shape is painted in the card colour');
+  }
+
+  /* The card colour is not the only thing a shape can vanish into. `ik` is
+   * #D8C8B1 and so is craft's `hi`, so a symbol drawn in ik on top of a hi
+   * panel is painted in the panel's own colour — which is how a pound sign
+   * and a dollar sign both shipped as blank notes.
+   *
+   * Two roles merely SHARING a hex is not the fault and flagging that gives
+   * 1,149 hits, nearly all of them harmless: gh over here and lo over there
+   * never meet. The fault is one shape drawn ON TOP of another in the same
+   * colour, so the test is containment — a later shape whose box sits inside
+   * an earlier same-coloured one — which is the case that actually vanishes.
+   */
+  const SURF = { ik: palette.surfaces.ink.hex.toUpperCase(),
+                 gh: palette.surfaces.rule.hex.toUpperCase(),
+                 ground: palette.surfaces.ground.hex.toUpperCase() };
+  const box = (sh) => {
+    const nums = [];
+    const eat = (v) => { if (typeof v === 'number') nums.push(v);
+      else if (typeof v === 'string') for (const m of v.matchAll(/-?\d+(?:\.\d+)?/g)) nums.push(+m[0]); };
+    if (sh[0] === 'p' || sh[0] === 's') eat(sh[1]);
+    else if (sh[0] === 'c') { const [, cx, cy, r] = sh; return [cx - r, cy - r, cx + r, cy + r]; }
+    else if (sh[0] === 'e') { const [, cx, cy, rx, ry] = sh; return [cx - rx, cy - ry, cx + rx, cy + ry]; }
+    if (!nums.length) return null;
+    const xs = nums.filter((_, i) => i % 2 === 0), ys = nums.filter((_, i) => i % 2 === 1);
+    if (!xs.length || !ys.length) return null;
+    return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+  };
+  const inside = (a, b) => a && b && a[0] >= b[0] - 1 && a[1] >= b[1] - 1 && a[2] <= b[2] + 1 && a[3] <= b[3] + 1;
+  const area = (b) => b ? (b[2] - b[0]) * (b[3] - b[1]) : 0;
+  const flat = (list, acc) => { for (const sh of list) sh[0] === 'g' ? flat(sh[4], acc) : acc.push(sh); return acc; };
+  const roleOf = (sh) => sh[0] === 'c' ? sh[4] : sh[0] === 'e' ? sh[5] : sh[2];
+  const buried = [];
+  for (const [id, d] of Object.entries({ ...out, ...bedOut })) {
+    const shapes = flat(d.s, []);
+    const hex = (r) => SURF[r] ?? (role[d.c] && role[d.c][r]);
+    for (let i = 0; i < shapes.length; i++) {
+      const under = shapes[i];
+      if (under[0] !== 'p' && under[0] !== 'c' && under[0] !== 'e') continue;  // fills only
+      const ub = box(under), uh = hex(roleOf(under));
+      if (!uh || area(ub) < 60) continue;
+      for (let j = i + 1; j < shapes.length; j++) {
+        const over = shapes[j];
+        if (hex(roleOf(over)) !== uh) continue;
+        if (roleOf(over) === roleOf(under)) continue;   // same role is deliberate
+        if (inside(box(over), ub)) { buried.push(`${id}: ${roleOf(over)} on ${roleOf(under)}, both ${uh}`); break; }
+      }
+    }
+  }
+  const uniq = [...new Set(buried)];
+  if (uniq.length) {
+    console.log(`\n  ${uniq.length} drawing(s) paint a shape on top of another in the same colour:`);
+    for (const c of uniq.slice(0, 12)) console.log(`    ${c}`);
+    if (uniq.length > 12) console.log(`    ... and ${uniq.length - 12} more`);
+  } else {
+    console.log('  no shape is buried in another of its own colour');
   }
 }
 

@@ -14498,8 +14498,7 @@
       "animal"
     ],
     "fact": "The most-registered dog breed across the UK, US, Canada and New Zealand for decades running; a 'soft mouth' lets it carry downed game without leaving a mark.",
-    "taxon": "tx_canis_lupus",
-    "terminal": true
+    "taxon": "tx_canis_lupus"
   },
   {
     "id": "golden_retriever",
@@ -24147,7 +24146,6 @@
       "wild"
     ],
     "fact": "Only two toes per foot, not four — no other living bird is reduced that far.",
-    "terminal": true,
     "taxon": "tx_struthioniformes"
   },
   {
@@ -80819,5 +80817,136 @@
       "build"
     ],
     "fact": "A fire given a permanent place, and that is the moment a shelter becomes a house."
+  },
+  {
+    "id": "molasses",
+    "name": "Molasses",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen"
+    ],
+    "fact": "What is left after the sugar has been crystallised out, and it holds most of what was not sugar."
+  },
+  {
+    "id": "rum",
+    "name": "Rum",
+    "emoji": "🥃",
+    "shelf": "workshop",
+    "tags": [
+      "ferment",
+      "kitchen"
+    ],
+    "fact": "Distilled from the waste of sugar making, which is why it belongs to the Caribbean and not to a grain country."
+  },
+  {
+    "id": "cologne",
+    "name": "Cologne",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Named after the city, and it is defined by being weak — two to five per cent oil, where perfume is twenty."
+  },
+  {
+    "id": "currency",
+    "name": "Currency",
+    "emoji": "💱",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "Money that a particular authority says is money, and its value rests on that saying."
+  },
+  {
+    "id": "banknote_pound",
+    "name": "Pound Sterling",
+    "emoji": "💷",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "The oldest currency still in use, and the name was once literally a pound of silver."
+  },
+  {
+    "id": "dollar",
+    "name": "Dollar",
+    "emoji": "💵",
+    "shelf": "workshop",
+    "tags": [
+      "trade"
+    ],
+    "fact": "The name comes from a Bohemian valley, and it is now the currency of about twenty countries."
+  },
+  {
+    "id": "poodle",
+    "name": "Poodle",
+    "emoji": "🐩",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A working water dog, and the haircut everyone laughs at was cut for a reason."
+  },
+  {
+    "id": "labradoodle",
+    "name": "Labradoodle",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bred in Australia in 1989 to be a guide dog someone with an allergy could keep."
+  },
+  {
+    "id": "cassowary",
+    "name": "Cassowary",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The most dangerous bird alive, and the claw that does it is on the inner toe."
+  },
+  {
+    "id": "ratite",
+    "name": "Ratite",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Flightless birds with no keel on the breastbone, and they did not lose flight once."
+  },
+  {
+    "id": "mustelid",
+    "name": "Mustelid",
+    "emoji": "🦡",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Long body, short legs, and a scent gland that is the family signature."
+  },
+  {
+    "id": "weasel",
+    "name": "Weasel",
+    "emoji": "🦡",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The smallest carnivore there is, and small enough to follow a vole underground."
+  },
+  {
+    "id": "badger",
+    "name": "Badger",
+    "emoji": "🦡",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A mustelid that went the other way: heavy, powerful, and built to dig rather than to follow."
   }
 ]

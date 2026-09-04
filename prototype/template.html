@@ -3182,7 +3182,7 @@ function renderShelf() {
         }).join('') + `</div>`;
     })() +
     groups.map(([f, g]) => {
-      const hits = q ? g.filter(e => matchesSearch(e, q)) : g;
+      const hits = q ? rankHits(g.filter(e => matchesSearch(e, q)), q) : g;
       if (!hits.length) return '';
       const shut = !q && shelfShut.has(f.id);
       const live = hits.filter(e => (secrets.get(e.id) ?? 0) > 0).length;
@@ -3200,7 +3200,9 @@ function renderShelf() {
     // how-to — which lists what that needs, and so on down.
     (() => {
       if (!q) return '';
-      const unmade = elements.filter(e => !found.has(e.id) && matchesSearch(e, q));
+      // Ranked BEFORE the slice, which is the whole point: this list is cut to
+      // thirty, and it used to be cut in corpus order.
+      const unmade = rankHits(elements.filter(e => !found.has(e.id) && matchesSearch(e, q)), q);
       if (!unmade.length) return '';
       return `<h2 class="locked"><i></i>Not yet made<em>${unmade.length}</em></h2><div class="shelf">` +
         unmade.slice(0, 30).map(e =>
@@ -9089,12 +9091,49 @@ function pathogenHTML(id) {
 }
 
 function matchesSearch(e, q) {
-  if (!q) return true;
+  return !q || searchScore(e, q) > 0;
+}
+
+/* ── how well, not merely whether ─────────────────────────────────────────
+ * There was no scoring at all: hits came back in corpus order, and the
+ * "Not yet made" list was then cut to the first 30 of them. So a search
+ * could match the right thing and still not show it, because two hundred
+ * incidental substring hits happened to sit earlier in the file. That is a
+ * good part of why "I search for 'ship', nothing?" was reported, and why
+ * "lyme" answered with DNA Polymerase — "lyme" is inside "polymerase", and
+ * Borrelia was somewhere below.
+ *
+ * Whole-word and prefix matches beat matches buried inside a longer word,
+ * and a name beats an alias, because someone typing a whole word usually
+ * means that word.
+ */
+function searchScore(e, q) {
+  if (!q) return 1;
   const n = nameOf(e).toLowerCase();
-  if (n.includes(q)) return true;
-  const alt = aliasesFor(e.id);
-  if (alt) for (const phrase of alt) if (phrase.includes(q)) return true;
-  return false;
+  const words = n.split(/[^a-z0-9]+/).filter(Boolean);
+  let best = 0;
+  const bid = (v) => { if (v > best) best = v; };
+  if (n === q) bid(100);
+  if (e.id === q || e.id.replace(/_/g, ' ') === q) bid(100);
+  if (n.startsWith(q)) bid(80);
+  if (words.includes(q)) bid(75);
+  if (words.some(w => w.startsWith(q))) bid(60);
+  if (n.includes(q)) bid(30);
+  for (const phrase of aliasesFor(e.id) ?? []) {
+    if (phrase === q) bid(90);
+    else if (phrase.startsWith(q)) bid(70);
+    else if (phrase.split(/[^a-z0-9]+/).some(w => w === q)) bid(65);
+    else if (phrase.includes(q)) bid(25);
+  }
+  return best;
+}
+// Ranked, and stable within a rank so the order does not shuffle as you type.
+function rankHits(list, q) {
+  if (!q) return list;
+  return list
+    .map((e, i) => [searchScore(e, q), i, e])
+    .sort((a, b) => (b[0] - a[0]) || (a[1] - b[1]))
+    .map(x => x[2]);
 }
 
 function splitLabel(text) {

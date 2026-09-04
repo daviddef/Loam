@@ -160,12 +160,30 @@ function build() {
    * chroma stays put where the book has that chip and steps down where it does
    * not — which is exactly what you do with the physical book in your hand.
    */
+  // forbid is a LIST, not one colour. Forbidding only the card was half the
+  // job: mineral's lo was moved off the card colour and landed on `rule`
+  // instead, and `rule` is `gh` — a role drawings paint with. 160 mineral
+  // drawings then had a shape buried in another of its own colour, which the
+  // art check caught. A tint may not equal ANY surface a drawing can be
+  // painted with or against.
   const tint = (key, notation, dV, forbid) => {
     const [hue, vc] = notation.split(' ');
     const [V, C] = vc.split('/').map(Number);
     let collided = null;
+    // The ladder only ever stepped chroma DOWN, which is right when the book
+    // has no chip at the wanted purity. It is not enough here: mineral sits at
+    // chroma 2, so with 2/2 and 3/2 both ruled out there was nowhere left to
+    // go and it came back with no `lo` at all — worse than the collision it
+    // was avoiding, since every drawing using that role would lose its colour.
+    // Adding more chroma at the same value is the other honest move with the
+    // book in your hand, and it is tried only after the neutral chips fail.
     for (const [v, c] of [[V + dV, C], [V + dV, C - 2], [V + dV, C - 4],
-                          [V + Math.sign(dV), C], [V + Math.sign(dV), C - 2]]) {
+                          [V + Math.sign(dV), C], [V + Math.sign(dV), C - 2],
+                          // one-step first among these: the value that collided is
+                          // the one being avoided, so moving further from it is worth
+                          // more than holding the nominal two-step distance
+                          [V + Math.sign(dV), C + 2], [V + dV, C + 2],
+                          [V + Math.sign(dV), C + 4], [V + dV, C + 4]]) {
       if (v < 1 || v > 9 || c < 2) continue;
       const n = `${hue} ${v}/${c}`;
       const e = table.get(n);
@@ -178,9 +196,9 @@ function build() {
       // drawings had at least one shape painted in it and could not be seen,
       // and hadron lost 24 of its 27. Take the next chip on the ladder and
       // record which one, rather than shipping an invisible role.
-      if (forbid && col.hex.toUpperCase() === forbid) { collided = n; continue; }
+      if (forbid.includes(col.hex.toUpperCase())) { collided = n; continue; }
       return collided
-        ? { notation: n, hex: col.hex, steppedFrom: collided, why: 'the usual chip is the card colour' }
+        ? { notation: n, hex: col.hex, steppedFrom: collided, why: 'the usual chip is a surface colour' }
         : { notation: n, hex: col.hex };
     }
     warnings.push(`${key}: no ${dV > 0 ? 'lighter' : 'darker'} chip available on the ${hue} page`);
@@ -203,13 +221,14 @@ function build() {
   // invisible on every card that carries it, and tint() cannot avoid the card
   // without knowing what it is.
   for (const [k, v] of Object.entries(SURFACES))   { const r = resolve(k, v); if (r) out.surfaces[k]   = r; }
-  const card = out.surfaces.panel?.hex.toUpperCase() ?? null;
+  const forbidden = ['panel', 'rule', 'ink', 'ground']
+    .map(k => out.surfaces[k]?.hex.toUpperCase()).filter(Boolean);
 
   for (const [k, v] of Object.entries(CATEGORIES)) {
     const r = resolve(k, v);
     if (!r) continue;
-    r.hi = tint(k, v.notation, +2, card);
-    r.lo = tint(k, v.notation, -2, card);
+    r.hi = tint(k, v.notation, +2, forbidden);
+    r.lo = tint(k, v.notation, -2, forbidden);
     if (r.lo?.steppedFrom) warnings.push(`${k}: lo moved off ${r.lo.steppedFrom} to ${r.lo.notation} — ${r.lo.why}`);
     if (r.hi?.steppedFrom) warnings.push(`${k}: hi moved off ${r.hi.steppedFrom} to ${r.hi.notation} — ${r.hi.why}`);
     out.categories[k] = r;

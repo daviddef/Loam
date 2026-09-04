@@ -440,6 +440,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* words that came back with nothing, 4 Sep */
+          'molasses', 'rum', 'cologne', 'currency', 'banknote_pound', 'dollar',
           /* assembly components, 4 Sep — 24 new needs lists asked for these */
           'electrolyte', 'casing', 'armature', 'insulator', 'loudspeaker', 'shuttle', 'gimbal', 'filter', 'governor',
           /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
@@ -689,6 +691,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* words that came back with nothing, 4 Sep */
+          'poodle', 'labradoodle', 'cassowary', 'ratite', 'mustelid', 'weasel', 'badger',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
           'hearth',
           /* software abstractions sit where instruction and algorithm sit — with
