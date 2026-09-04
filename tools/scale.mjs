@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 17, 5 Sep. an octagon 14.46 m across, a colonnade */
+    'aachen_cathedral',
     /* places batch 16, 5 Sep. columns and towers, and a painted panel of hands */
     'baalbek', 'sagrada_familia', 'cueva_de_las_manos',
     /* places batch 15, 5 Sep. a mosque 8 m square, a caravanserai of 31 rooms, a painted panel */
@@ -1241,6 +1243,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 17, 5 Sep. a site of 2.5 km2, a colonnade 1.1 km, a wall of 2,235 m, a palace of 63,154 m2 */
+    'palenque', 'palmyra', 'moscow_kremlin', 'versailles',
     /* places batch 15, 5 Sep. a town of 42 hectares, an island city, a penal settlement */
     'volubilis', 'ayutthaya', 'port_arthur',
     /* places batch 13, 5 Sep. a 150-hectare city, a dam 221 m high, a fortress on eight islands, a hall 57 m long */
@@ -1389,6 +1393,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 17, 5 Sep. a shield volcano 4,207 m above the sea */
+    'mauna_kea',
     /* places batch 16, 5 Sep. 5.74 km of wall */
     'hwaseong',
     /* places batch 14, 5 Sep. falls 2.7 km wide and 979 m tall */

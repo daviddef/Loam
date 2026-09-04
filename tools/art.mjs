@@ -44216,6 +44216,39 @@ def('cueva_de_las_manos',()=>[P('M2 8 L58 8 L58 56 L2 56 Z', 'lo'),
                               `L${x + 3} ${y} L${x + 5} ${y - 3} L${x + 5} ${y + 8} Z`, 'gh')),
                           S('M4 30 L14 34', 'ik', 1.4)]);                     // the pipe it was blown through
 
+/* Places, batch 17 — 5 Sep. Palenque is drawn as the conduit under the plaza,
+   because a city with mains water is the fact; Mauna Kea as a shield with the
+   cloud layer below the summit, because that is why the telescopes are there. */
+def('palenque',     () => [P('M4 24 L56 24 L56 32 L4 32 Z', 'lo'),               // the plaza
+                          ...[14, 30, 46].map(x => [P(`M${x - 8} 24 L${x - 8} 14 L${x + 8} 14 L${x + 8} 24 Z`, 'lo'),
+                                                    P(`M${x - 9} 14 L${x} 6 L${x + 9} 14 Z`, 'bs')]).flat(),
+                          P('M4 38 L56 38 L56 52 L4 52 Z', 'gh'),
+                          P('M8 40 L18 40 L24 46 L52 46 L52 50 L8 50 Z', 'ik'),  // and the stream, put underneath it
+                          S('M4 34 L56 34', 'bs', 1.2)]);
+def('palmyra',      () => [...[10, 18, 26, 34, 42, 50].map(x => [P(`M${x - 2.5} 44 L${x - 2} 16 L${x + 2} 16 L${x + 2.5} 44 Z`, 'lo'),
+                                                                 E(x, 16, 3.4, 1.6, 'bs')]).flat(),
+                          S('M6 12 L54 12', 'bs', 2),                            // the colonnade, 1.1 km of it
+                          C(30, 52, 4, 'gh'),                                    // and the spring it is all standing on
+                          S('M4 48 L56 48', 'ik', 1.4)]);
+def('aachen_cathedral',()=>[P('M30 8 L46 20 L46 42 L30 54 L14 42 L14 20 Z', 'lo'),   // the octagon, in plan
+                          P('M30 18 L38 24 L38 38 L30 44 L22 38 L22 24 Z', 'gh'),
+                          ...[[22, 24], [38, 24], [22, 38], [38, 38]].map(([x, y]) => C(x, y, 2.2, 'ik')),  // the columns from Rome
+                          C(30, 31, 4, 'hi')]);
+def('moscow_kremlin',()=>[P('M4 54 L4 26 L56 26 L56 54 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => P(`M${4 + i * 6} 26 L${4 + i * 6} 22 L${8 + i * 6} 22 L${8 + i * 6} 26 Z`, 'lo')),
+                          ...[14, 30, 46].map(x => [P(`M${x - 5} 26 L${x - 5} 12 L${x + 5} 12 L${x + 5} 26 Z`, 'bs'),
+                                                    P(`M${x - 6} 12 L${x} 2 L${x + 6} 12 Z`, 'bs')]).flat(),
+                          ...[0, 1, 2].map(i => S(`M6 ${34 + i * 6} L54 ${34 + i * 6}`, 'gh', 0.8))]);   // brick courses
+def('mauna_kea',    () => [P('M2 54 Q30 20 58 54 Z', 'lo'),
+                          S('M2 42 Q16 40 26 40', 'gh', 3), S('M34 40 Q44 40 58 42', 'gh', 3),  // the inversion layer, below
+                          ...[24, 30, 36].flatMap(x => [S(`M${x} 30 L${x} 24`, 'ik', 1.4), C(x, 22, 2.4, 'bs')]),
+                          ...[0, 1, 2, 3].map(i => C(10 + i * 14, 10 - (i % 2) * 4, 1.2, 'hi'))]);
+def('versailles',   () => [P('M4 30 L56 30 L56 44 L4 44 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => P(`M${6 + i * 6.4} 32 L${10 + i * 6.4} 32 L${10 + i * 6.4} 42 L${6 + i * 6.4} 42 Z`, 'gh')),
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => S(`M${8 + i * 6.4} 32 L${8 + i * 6.4} 42`, 'hi', 0.8)),  // 2,143 of them
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 16} 46 L${26 + i * 16} 46 L${26 + i * 16} 54 L${14 + i * 16} 54 Z`, 'bs')),
+                          S('M4 30 L56 30', 'ik', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
