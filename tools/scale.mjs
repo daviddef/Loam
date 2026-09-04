@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 34, 5 Sep. a dome 68 m, terraced tombs */
+    'royal_exhibition_building', 'langi_lapaha',
     /* places batch 32, 5 Sep. a minaret 72.5 m, a tower 55 m, a temple, jars up to 3 m */
     'qutb_minar', 'mahabodhi', 'wat_phra_kaew', 'plain_of_jars',
     /* places batch 30, 5 Sep. a tumulus 49 m, two cathedrals, panels of rock art */
@@ -1453,6 +1455,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 34, 5 Sep. a cave system of 300 ha */
+    'naracoorte',
     /* places batch 24, 5 Sep. 171 hectares of camp; a national park of 68.57 km2 */
     'auschwitz_birkenau', 'morne_trois_pitons',
     /* places batch 22, 5 Sep. a citadel nearly 10 km round */
@@ -1671,6 +1675,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 34, 5 Sep. 2,400 km2 of lakes and 1.5 million km2 of ocean */
+    'willandra', 'papahanaumokuakea',
     /* places batch 33, 5 Sep. 260 km of reef, 2.2 million ha of bay, 1,500 km of barrier */
     'ningaloo', 'shark_bay', 'new_caledonia_lagoons',
     /* places batch 23, 5 Sep. 2.6 million hectares along 450 km of coast */

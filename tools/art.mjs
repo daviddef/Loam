@@ -44863,6 +44863,40 @@ def('new_caledonia_lagoons',()=>[P('M2 40 L58 40 L58 56 L2 56 Z', 'lo'),
                           E(26, 33, 6, 3.4, 'hi'), S('M20 33 L15 30', 'hi', 2),
                           ...[0, 1, 2].map(i => E(40 + i * 6, 31 + i * 2, 2.4, 1.6, 'lo'))]);
 
+/* Places, batch 34 — 5 Sep. Naracoorte is drawn as the pitfall, because a hole
+   with no rim is the whole mechanism; Papahānaumokuākea as the chain getting
+   older and lower to one side, because that is one process at every stage.  */
+def('willandra',    () => [P('M2 34 L58 34 L58 56 L2 56 Z', 'gh'),
+                          P('M2 34 Q16 22 30 26 Q44 30 58 20 L58 34 Z', 'lo'),  // the lunette on the east shore
+                          ...granules('bs', 14, 40, [4, 22, 56, 34]),
+                          ...[0, 1, 2].map(i => S(`M4 ${40 + i * 5} L56 ${40 + i * 5}`, 'ik', 0.9)),   // the layers
+                          C(38, 45, 2.4, 'hi')]);
+def('naracoorte',   () => [P('M2 22 L58 22 L58 56 L2 56 Z', 'lo'),
+                          P('M22 22 L38 22 L44 38 Q30 48 16 38 Z', 'gh'),        // the cave under it
+                          P('M26 20 L34 20 L34 24 L26 24 Z', 'bs'),              // the hole, with no rim
+                          E(30, 42, 12, 4, 'bs'),
+                          ...[[24, 41], [30, 43], [36, 41]].map(([x, y]) => [C(x, y, 1.8, 'hi'), S(`M${x} ${y + 2} L${x + 2} ${y + 5}`, 'hi', 1)]).flat(),
+                          S('M2 22 L58 22', 'ik', 1.4)]);
+def('royal_exhibition_building',()=>[P('M6 54 L6 34 L54 34 L54 54 Z', 'lo'),
+                          P('M22 34 L38 34 L38 26 L22 26 Z', 'bs'),
+                          P('M20 26 A11 11 0 0 1 40 26 Z', 'lo'),
+                          S('M30 15 L30 6', 'ik', 1.6), C(30, 4, 2, 'hi'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${22 + i * 4} 26 L${30 - (2 - i) * 0.5} 16`, 'gh', 0.8)),   // the iron frame
+                          ...[12, 18, 42, 48].map(x => S(`M${x} 54 L${x} 34`, 'gh', 1.2))]);
+def('papahanaumokuakea',()=>[wave('bs', 30, 2, 56),
+                          P('M4 20 L14 20 L12 30 L6 30 Z', 'lo'),               // island
+                          E(24, 30, 8, 3, 'lo'), E(24, 30, 4, 1.6, 'gh'),        // atoll
+                          P('M38 32 Q42 38 46 32 Z', 'lo'),                      // and seamount
+                          P('M52 36 Q55 40 58 36 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => C(10 + i * 14, 44 + i * 2, 2, 'hi')),
+                          S('M2 30 L58 30', 'gh', 0.9)]);
+def('langi_lapaha',()=>[...[0, 1, 2].map(i =>
+                            P(`M${10 + i * 5} ${52 - i * 8} L${50 - i * 5} ${52 - i * 8} L${50 - i * 5} ${44 - i * 8} L${10 + i * 5} ${44 - i * 8} Z`, 'lo')),
+                          ...[0, 1, 2].map(i =>
+                            [0, 1, 2, 3].map(j => S(`M${13 + i * 5 + j * 9} ${52 - i * 8} L${13 + i * 5 + j * 9} ${44 - i * 8}`, 'gh', 0.9))).flat(),
+                          ...[0, 1, 2].map(i => S(`M${10 + i * 5} ${48 - i * 8} L${50 - i * 5} ${48 - i * 8}`, 'ik', 0.8)),   // the sea's own layers
+                          wave('bs', 56, 1.4, 56)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
