@@ -44524,6 +44524,40 @@ def('creosote',     () => [vessel('bs', 22, 50),
                           ...[0, 1, 2].map(i => S(`M${22 + i * 8} 24 Q${20 + i * 8} 16 ${24 + i * 8} 10`, 'gh', 1.2)),
                           C(30, 40, 2.4, 'hi')]);
 
+/* Places, batch 25 — 5 Sep, from the lengthened checklist. Abu Simbel gets the
+   sun reaching the back wall, which is the fact and the reason for the cliff;
+   Uxmal gets the hut its stonework is quoting.                              */
+def('abu_simbel',   () => [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          ...[12, 24, 36, 48].map(x => [P(`M${x - 5} 50 L${x - 4} 22 L${x + 4} 22 L${x + 5} 50 Z`, 'bs'),
+                                                        C(x, 17, 5, 'bs')]).flat(),
+                          P('M28 50 L34 50 L34 34 L28 34 Z', 'gh'),              // the doorway
+                          S('M31 34 L31 8', 'hi', 1.6), C(31, 6, 2.4, 'hi')]);   // and the line the sun takes
+def('timbuktu',     () => [P('M6 54 L6 26 L40 26 L40 54 Z', 'lo'),
+                          P('M40 54 L40 14 L52 14 L52 54 Z', 'lo'),
+                          ...[0, 1, 2].map(i => [S(`M4 ${32 + i * 8} L54 ${32 + i * 8}`, 'ik', 1.2),
+                                                 ...[12, 24, 34, 46].map(x => C(x, 32 + i * 8, 1.2, 'ik'))]).flat(),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 9} 22 L${20 + i * 9} 22 L${20 + i * 9} 26 L${12 + i * 9} 26 Z`, 'hi'))]);  // the books
+def('stone_town',   () => [P('M6 54 L6 20 L28 20 L28 54 Z', 'lo'), P('M34 54 L34 26 L54 26 L54 54 Z', 'lo'),
+                          ...granules('gh', 16, 79, [6, 20, 54, 44]),
+                          P('M14 54 L14 34 Q17 30 20 34 L20 54 Z', 'bs'),         // the door
+                          ...[0, 1, 2].map(i => [C(15, 38 + i * 5, 1, 'hi'), C(19, 38 + i * 5, 1, 'hi')]).flat(),
+                          P('M40 26 L44 18 L48 26 Z', 'ik'), S('M44 22 L44 12', 'ik', 1.4), S('M41 15 L47 15', 'ik', 1.4)]);
+def('taos_pueblo',  () => [...[0, 1, 2, 3, 4].map(i =>
+                            P(`M${4 + i * 4} ${54 - i * 9} L${52 - i * 4} ${54 - i * 9} L${52 - i * 4} ${45 - i * 9} L${4 + i * 4} ${45 - i * 9} Z`, 'lo')),
+                          ...[0, 1, 2, 3, 4].map(i =>
+                            [0, 1, 2].map(j => S(`M${10 + i * 4 + j * 12} ${45 - i * 9} L${16 + i * 4 + j * 12} ${45 - i * 9}`, 'ik', 1.6))).flat(),
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 14} 54 L${14 + i * 14} 48 L${19 + i * 14} 48 L${19 + i * 14} 54 Z`, 'bs'))]);
+def('uxmal',        () => [P('M8 54 L14 30 L46 30 L52 54 Z', 'lo'),
+                          E(30, 30, 16, 6, 'lo'), E(30, 20, 11, 5, 'lo'), E(30, 12, 7, 4, 'bs'),   // oval, not rectangular
+                          P('M4 46 L56 46 L56 40 L4 40 Z', 'gh'),                 // the frieze
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${8 + i * 9} 40 L${8 + i * 9} 46`, 'ik', 1.4)),   // reeds, in stone
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 16} 40 L${18 + i * 16} 34 L${22 + i * 16} 40 Z`, 'hi'))]);   // and the thatch
+def('chan_chan',    () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${8 + i * 17} 24 L${20 + i * 17} 24 L${20 + i * 17} 50 L${8 + i * 17} 50 Z`, 'gh')),
+                          ...[0, 1, 2, 3].map(i => S(`M6 ${26 + i * 7} Q30 ${23 + i * 7} 54 ${26 + i * 7}`, 'hi', 1.2)),  // waves, carved in the wall
+                          S('M4 20 L56 20', 'ik', 2),
+                          C(50, 12, 3, 'bs'), S('M50 15 L50 20', 'bs', 1.2)]);    // the well
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

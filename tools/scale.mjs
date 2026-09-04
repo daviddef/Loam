@@ -1092,6 +1092,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 25, 5 Sep. colossi 20 m high, a pueblo five storeys, a pyramid */
+    'abu_simbel', 'taos_pueblo', 'uxmal',
     /* places batch 24, 5 Sep. a monolith 14.12 m, a wall, a painted cave passage */
     'vigelandsparken', 'puuhonua_o_honaunau', 'cueva_maravillas',
     /* places batch 23, 5 Sep. a basilica, a temple square, a clock tower 64 m */
@@ -1263,6 +1265,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 25, 5 Sep. a caravan city and a coral town */
+    'timbuktu', 'stone_town',
     /* places batch 23, 5 Sep. an island town, a ruined caravan city */
     'trogir', 'otrar',
     /* places batch 22, 5 Sep. a castle of 70,000 m2, a city and its ponds */
@@ -1508,6 +1512,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 25, 5 Sep. 20 km2 of adobe */
+    'chan_chan',
     /* places batch 24, 5 Sep. 37,000 hectares of raised atoll */
     'east_rennell',
     /* places batch 21, 5 Sep. a fjord 15 km long, a lake 605 km2 */
