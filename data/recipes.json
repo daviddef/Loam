@@ -1025,9 +1025,9 @@
     ],
     "verb": "heat",
     "out": "cooked_rice",
-    "why": "Starch granules absorb water and burst open — gelatinisation — and raw starch is nearly indigestible to us where cooked starch is not. It needs water at the boil to do it: the grain has to be held wet at 100 °C long enough for the heat to reach the middle of every one.",
+    "why": "Starch granules absorb water and burst open — gelatinisation — and raw starch is nearly indigestible to us where cooked starch is not. Different starches start swelling at different points, some from about 55 °C and others not until 85 °C, and the grain has to be held wet and hot long enough for that to reach the middle of every one.",
     "src": "https://en.wikipedia.org/wiki/Starch_gelatinization",
-    "at": 100
+    "at": 85
   },
   {
     "in": [
@@ -7724,8 +7724,8 @@
     "verb": "heat",
     "at": 400,
     "out": "phyllite",
-    "why": "By about 400 °C the mica has grown from microscopic to merely small. Still too fine to pick out one flake, but together they give the cleavage surface a silky, sometimes golden sheen.",
-    "src": "https://en.wikipedia.org/wiki/Phyllite",
+    "why": "Greenschist-facies metamorphism runs at roughly 400 to 500 °C, and at the bottom of that range the mica in slate has grown from microscopic to merely small. Still too fine to pick out one flake, but together they give the cleavage surface a silky, sometimes golden sheen.",
+    "src": "https://en.wikipedia.org/wiki/Greenschist",
     "supported": true
   },
   {
@@ -7735,8 +7735,8 @@
     "verb": "heat",
     "at": 500,
     "out": "schist",
-    "why": "Past 500 °C the mica flakes grow big enough to see with a hand lens, all oriented the same way. The rock now splits into holdable plates rather than bendable sheets.",
-    "src": "https://en.wikipedia.org/wiki/Schist",
+    "why": "At the top of the greenschist range — approximately 400 to 500 °C, at depths of 8 to 50 km — the mica flakes grow big enough to see with a hand lens, all oriented the same way. The rock now splits into holdable plates rather than bendable sheets.",
+    "src": "https://en.wikipedia.org/wiki/Greenschist",
     "supported": true
   },
   {
@@ -10802,9 +10802,8 @@
       "whey"
     ],
     "verb": "heat",
-    "at": 85,
     "out": "ricotta",
-    "why": "Rennet never clotted the whey proteins, so they are still dissolved in what drained away. Heat close to boiling denatures them and they flocculate into a fine curd. Ricotta means recooked, and that is exactly what it is.",
+    "why": "Rennet never coagulated the whey proteins, so they are still dissolved in what drained away from the curd. Heat close to boiling denatures them and they flocculate into a fine soft curd. Ricotta means recooked, and that is exactly what it is.",
     "src": "https://en.wikipedia.org/wiki/Ricotta",
     "supported": true
   },
@@ -38111,9 +38110,8 @@
       "pulque"
     ],
     "verb": "heat",
-    "at": 78,
     "out": "tequila",
-    "why": "Ethanol boils out of fermented agave wort at 78°C, before the water does; Mexican law requires two distillations to produce tequila.",
+    "why": "Ethanol boils before water does, so the first vapour off fermented agave wort is richer in alcohol than the liquid it left. Mexican law requires two distillations to produce tequila.",
     "src": "https://en.wikipedia.org/wiki/Tequila",
     "supported": true
   },
@@ -90355,7 +90353,7 @@
   {
     "in": [
       "distance",
-      "goal"
+      "objective"
     ],
     "out": "problem",
     "why": "If the route is known it is a task, not a problem. Defining it that way is what let problem-solving be studied at all — the difficulty is in the search, and the search is what can be watched, modelled and taught.",
@@ -90365,7 +90363,7 @@
   {
     "in": [
       "dopamine",
-      "goal"
+      "objective"
     ],
     "out": "want",
     "why": "Rats with their dopamine removed still show pleasure at sweetness and will starve beside food, because nothing makes them pursue it. Wanting is the engine and liking is the report, and separating them explains a great deal about addiction.",
@@ -90855,7 +90853,7 @@
   {
     "in": [
       "event",
-      "goal"
+      "objective"
     ],
     "out": "outcome",
     "why": "Almost every probability error is an error in the list rather than the arithmetic. Two children can be boy-boy, boy-girl, girl-boy or girl-girl, and treating the middle two as one is where the classic paradoxes come from.",
@@ -92555,7 +92553,7 @@
   {
     "in": [
       "difference",
-      "goal"
+      "objective"
     ],
     "out": "conflict",
     "why": "Most conflict is over an incompatibility rather than an animosity, and the animosity usually arrives afterwards to justify it. That ordering is why mediation works at all — the incompatibility can sometimes be dissolved.",
@@ -92575,7 +92573,7 @@
   {
     "in": [
       "feedback",
-      "goal"
+      "objective"
     ],
     "out": "guidance",
     "why": "A thermostat, an autopilot, a missile and a hand reaching for a cup all run the same loop. Wiener named it cybernetics in 1948, arguing the mathematics is identical whether the thing steering is mechanical or alive.",
@@ -97633,5 +97631,15 @@
     "why": "Kaolin holds the shape and feldspar melts into glass between its particles at around 1,300 °C, so the body vitrifies without slumping. That is why porcelain rings when struck, passes light where it is thin, and absorbs no water — and why it took Europe until 1708 to work out that the second ingredient was the missing one.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Porcelain"
+  },
+  {
+    "in": [
+      "future",
+      "mind"
+    ],
+    "out": "objective",
+    "why": "An objective is a future state represented now, and holding it is what makes steering possible: the difference between where you are and where the representation says you should be is a quantity you can act on. A thermostat holds one, and so does a hand reaching for a cup.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Goal"
   }
 ]

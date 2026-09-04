@@ -85,6 +85,22 @@ async function articleText(title) {
  * Fetching wikitext for every article made a full run three times slower for a
  * payload almost none of it needed, so it is a SECOND CHANCE — pulled only when
  * the prose alone does not support a claim. */
+
+/* The rendered page, tags stripped — the only way to see a transcluded infobox. */
+async function renderedText(title) {
+  const url = `${API}?action=parse&prop=text&formatversion=2&format=json&page=${encodeURIComponent(title)}`;
+  try {
+    const res = await fetch(url, { headers: { 'User-Agent': 'Loam/1.0 (source audit; contact via repo)' } });
+    if (!res.ok) return '';
+    const j = await res.json();
+    const html = j?.parse?.text || '';
+    return html.replace(/<style[\s\S]*?<\/style>/gi, ' ')
+               .replace(/<[^>]+>/g, ' ')
+               .replace(/&[a-z]+;|&#\d+;/gi, ' ')
+               .replace(/\s+/g, ' ');
+  } catch { return ''; }
+}
+
 const wikiCache = new Map();
 async function articleWikitext(title) {
   if (wikiCache.has(title)) return wikiCache.get(title);
@@ -92,15 +108,36 @@ async function articleWikitext(title) {
   if (disk) { wikiCache.set(title, disk); return disk; }
   const url = `${API}?action=query&prop=revisions&rvprop=content&rvslots=main` +
               `&redirects=1&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
-  try {
-    const j = await getJSON(url);
-    const page = (j?.query?.pages || [])[0];
-    const wiki = page?.revisions?.[0]?.slots?.main?.content || '';
-    wikiCache.set(title, wiki);
-    if (wiki) writeDisk('wiki:' + title, wiki);
-    await sleep(400);
-    return wiki;
-  } catch { wikiCache.set(title, ''); return ''; }
+  /* This block used to call getJSON(), which does not exist anywhere in this
+   * file. The bare catch below swallowed the ReferenceError and returned '',
+   * so the infobox stage reported "no infobox" on every article it was ever
+   * asked about — silently, for as long as it has been here. Gold's melting
+   * point, butane's boiling point in kelvin and every other figure that lives
+   * only in an infobox were reported as unsupported claims. A catch that hides
+   * a missing function is worse than no catch: the stage looked like it ran. */
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) await sleep(2500 * attempt);
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'Loam/1.0 (source audit; contact via repo)' } });
+      if (res.status === 429 || res.status >= 500) continue;
+      if (!res.ok) break;
+      const j = await res.json();
+      const page = (j?.query?.pages || [])[0];
+      let wiki = page?.revisions?.[0]?.slots?.main?.content || '';
+      /* Element infoboxes are transcluded, not written inline: the Gold article's
+       * own source contains no melting point at all, because it says
+       * {{Infobox gold}} and the number lives in that template. Raw wikitext
+       * therefore misses exactly the class of fact this stage exists to catch,
+       * so the rendered page is pulled alongside it and flattened to text. */
+      wiki += '\n' + await renderedText(title);
+      wikiCache.set(title, wiki);
+      if (wiki) writeDisk('wiki:' + title, wiki);
+      await sleep(400);
+      return wiki;
+    } catch { /* retry */ }
+  }
+  wikiCache.set(title, '');
+  return '';
 }
 
 const titleOf = src => {
@@ -137,6 +174,60 @@ function numbersIn(text) {
     out.push({ n, unit: (m[2] || '').replace(/\s+/g, ''), shown: m[0].trim() });
   }
   return out;
+}
+
+
+/* TEMPERATURES ARE NOT ALWAYS WRITTEN IN THE UNIT WE USED
+ *
+ * Butane's infobox does not say 0 °C anywhere. It says `BoilingPtK = 272 to
+ * 274`, which is −1 to +1 °C, and no amount of string matching on "0" will
+ * ever find it. The same is true of propane (231 K), octane (399 K) and gold
+ * (1337 K): every one of those claims is supported by the article and every
+ * one was being reported unsupported, because the article states the number in
+ * kelvin and we state it in Celsius.
+ *
+ * That is the same class of fault as the comma after a year — a true sentence
+ * reported as unsourced because of how the source happened to write it. Half
+ * the numeric flags in the 5 Sep run were this. A check that is more than half
+ * noise is a check nobody finishes, so the fix belongs here and not in the
+ * corpus.
+ *
+ * Collect every temperature the article states, in K, °C or °F, convert them
+ * all to °C, and let a °C claim match any of them within a degree and a half —
+ * enough to absorb rounding and the 273.15 offset, not enough to let a wrong
+ * figure through. Ranges count: an article saying 272 to 274 K supports a
+ * claim anywhere inside it. */
+function celsiusFigures(text) {
+  const out = [];
+  const add = (v) => { if (isFinite(v)) out.push(v); };
+  const spans = (re, conv) => {
+    let m;
+    while ((m = re.exec(text))) {
+      const lo = parseFloat(m[1].replace(/,/g, ''));
+      const hi = m[2] == null ? lo : parseFloat(m[2].replace(/,/g, ''));
+      add(conv(lo)); add(conv(hi));
+      if (hi !== lo) { const a = conv(lo), b = conv(hi); out.push({ lo: Math.min(a, b), hi: Math.max(a, b) }); }
+    }
+  };
+  const R = '(-?\\d[\\d,]*(?:\\.\\d+)?)';
+  const SEP = '(?:\\s*(?:to|-|\u2013|\u2212)\\s*' + R + ')?';
+  spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[K]\\s*=\\s*${R}${SEP}`, 'gi'), k => k - 273.15);
+  spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[C]?\\s*=\\s*${R}${SEP}`, 'gi'), c => c);
+  spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[F]\\s*=\\s*${R}${SEP}`, 'gi'), f => (f - 32) * 5 / 9);
+  spans(new RegExp(`${R}${SEP}\\s*K\\b`, 'g'), k => k - 273.15);
+  spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*C\\b`, 'g'), c => c);
+  spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*F\\b`, 'g'), f => (f - 32) * 5 / 9);
+  return out;
+}
+
+/** Does the article state this temperature, in any unit it might have used? */
+function articleHasTemperature(text, n) {
+  const TOL = 1.5;
+  for (const f of celsiusFigures(text)) {
+    if (typeof f === 'number') { if (Math.abs(f - n) <= TOL) return true; }
+    else if (n >= f.lo - TOL && n <= f.hi + TOL) return true;
+  }
+  return false;
 }
 
 /** Does this number appear in the article, in any of its usual spellings? */
@@ -415,7 +506,8 @@ for (const r of subject) {
     const wiki = await articleWikitext(title);
     if (wiki) {
       const wl = dashes(wiki.toLowerCase());
-      missing2 = missing.filter(x => !articleHas(wiki, x));
+      missing2 = missing.filter(x => !articleHas(wiki, x)
+        && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))));
       strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
     }
   }

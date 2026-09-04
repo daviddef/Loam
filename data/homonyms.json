@@ -52,6 +52,22 @@
       "found": "nothing"
     },
     {
+      "id": "battery",
+      "sense": "the electrical one — a zinc can and a manganese dioxide paste",
+      "not": [
+        "battery of guns",
+        "artillery battery",
+        "gun battery",
+        "battery of tests",
+        "assault and battery"
+      ],
+      "also": [
+        "artillery",
+        "cannon"
+      ],
+      "found": "nothing wrong — all nine uses are the cell. Watched because this corpus has cannon, artillery and an artillery branch in it, and the gunnery sense is one recipe away."
+    },
+    {
       "id": "beam",
       "sense": "the structural one, carrying a load across a gap",
       "not": [
@@ -380,6 +396,23 @@
       ],
       "also": [],
       "found": "nothing; recorded because the id is a trap for the body part, which is not in the corpus"
+    },
+    {
+      "id": "goal",
+      "sense": "the football one — a frame with a net, so a score cannot be argued over",
+      "not": [
+        "set point",
+        "objective",
+        "aim",
+        "the thing pursued",
+        "target state",
+        "purpose",
+        "end in view"
+      ],
+      "also": [
+        "objective"
+      ],
+      "found": "Every use of it was the abstract sense. distance+goal→problem, dopamine+goal→want, event+goal→outcome, difference+goal→conflict, feedback+goal→guidance — cybernetics and psychology, all five of them, hanging off an element whose own fact is that football had no goal net until 1889. Split `objective` out and rewired all five."
     },
     {
       "id": "grain",
@@ -1051,6 +1084,23 @@
       "found": "ore+spark→aluminum, bauxite+spark→aluminum, salt+spark→sodium, lye+spark→potassium, brine+spark→chlorine, fluorite+spark→fluorine, spark+uranium→enriched_uranium"
     },
     {
+      "id": "spindle",
+      "sense": "the spinning one — a weighted rod that twists fibre into thread",
+      "not": [
+        "mitotic spindle",
+        "spindle fibre",
+        "microtubule",
+        "kinetochore",
+        "spindle apparatus"
+      ],
+      "also": [
+        "mitosis",
+        "meiosis",
+        "centromere"
+      ],
+      "found": "nothing wrong — bobbin, factory and the Moirai, all textile. Watched because mitosis, meiosis and the centromere are all in the corpus and the cell-division spindle is the same word."
+    },
+    {
       "id": "spring",
       "sense": "the coiled steel one, hardened and tempered",
       "not": [
@@ -1088,6 +1138,22 @@
       ],
       "also": [],
       "found": "nothing"
+    },
+    {
+      "id": "table",
+      "sense": "the furniture",
+      "not": [
+        "periodic table",
+        "table of",
+        "tabulated",
+        "water table",
+        "table of contents",
+        "tabular"
+      ],
+      "also": [
+        "periodic_table"
+      ],
+      "found": "nothing wrong — desk, workbench, mahogany. Watched because the periodic table is in this corpus and shares the word exactly."
     },
     {
       "id": "tank",

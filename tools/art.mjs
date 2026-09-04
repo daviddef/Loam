@@ -45404,6 +45404,16 @@ def('porcelain', () => [P('M22 20 Q20 40 26 48 L38 48 Q44 40 42 20 Z', 'lo'),
                         S('M27 26 L27 44', 'hi', 0.9),
                         C(32, 34, 3.0, 'hi')]);
 
+/* `goal` in this corpus is the football net Brodie invented in 1889, and all
+   five recipes using it meant the abstract sense — a set point to steer by. So
+   `objective` is drawn as the thing a controller actually holds: a mark, and
+   the gap between where you are and it.                                     */
+def('objective', () => [C(40, 24, 11, 'lo'),
+                        C(40, 24, 6, 'ik'),
+                        C(40, 24, 2.2, 'lo'),
+                        C(16, 46, 2.6, 'ik'),
+                        S('M16 46 L31 31', 'hi', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
