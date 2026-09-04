@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 12, 5 Sep. an octagon 60 m across, a stave church of one room */
+    'dome_of_the_rock', 'urnes_stave_church',
     /* places batch 11, 5 Sep. a dome 43.3 m across, a temple 70 m long, pillars over 20 m */
     'pantheon', 'parthenon', 'meteora',
     /* places batch 9, 5 Sep. a lock chamber, a stupa 36 m across, a minaret 45.6 m, a wall circuit */
@@ -1233,6 +1235,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 12, 5 Sep. a plateau 550 by 270 m */
+    'masada',
     /* places batch 11, 5 Sep. a palace of 14,000 m2 and a buried town */
     'knossos', 'pompeii',
     /* places batch 10, 5 Sep. a village under ash, a levelled mountain top, a palace compound, a port town */
@@ -1448,6 +1452,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 12, 5 Sep. a canyon 446 km long, a salt flat of 10,582 km2, a rock landscape */
+    'grand_canyon', 'salar_de_uyuni', 'cappadocia',
     /* places batch 10, 5 Sep. an atoll, and 7,463 km2 of forest across three countries */
     'bikini_atoll', 'sangha_trinational',
     /* places batch 9, 5 Sep. 82 km of canal; 160 km of rampart */

@@ -44033,6 +44033,45 @@ def('etna',         () => [P('M2 54 L22 18 L26 14 L34 14 L38 18 L58 54 Z', 'lo')
                           P('M30 16 L38 34 L30 40 L24 30 Z', 'hi'),             // a flow, down one side
                           ...[10, 46].map(x => [S(`M${x} 50 L${x} 44`, 'bs', 1.4), C(x, 42, 2.4, 'bs')]).flat()]);  // and the vineyards on it
 
+/* Places, batch 12 — 5 Sep. Western Asia, and the natural wonders that had
+   been left as names. Each is drawn for its mechanism: Masada as cisterns
+   under a plateau, Cappadocia as a hard cap over soft rock, the Salar as one
+   flat line, because the flatness is the whole fact.                        */
+def('dome_of_the_rock',()=>[P('M10 54 L10 30 L50 30 L50 54 Z', 'lo'),
+                          P('M16 30 A14 14 0 0 1 44 30 Z', 'bs'),              // the wooden dome
+                          S('M30 16 L30 8', 'ik', 1.6),
+                          ...[0, 1, 2, 3].map(i => S(`M${16 + i * 9.4} 30 L${16 + i * 9.4} 54`, 'gh', 1)),
+                          P('M26 44 L34 44 L34 54 L26 54 Z', 'gh'),
+                          E(30, 40, 7, 4, 'hi')]);                             // and the rock inside it
+def('masada',       () => [P('M4 54 L14 24 L46 24 L56 54 Z', 'lo'),
+                          S('M14 24 L46 24', 'ik', 2),
+                          ...[20, 30, 40].map(x => P(`M${x - 4} 24 L${x - 4} 16 L${x + 4} 16 L${x + 4} 24 Z`, 'bs')),
+                          ...[[20, 34], [32, 40], [44, 34]].map(([x, y]) => [E(x, y, 5, 4, 'gh'),
+                                                                            S(`M${x - 4} ${y + 1} Q${x} ${y + 3} ${x + 4} ${y + 1}`, 'hi', 1.4)]).flat(),
+                          S('M56 54 L46 24', 'hi', 2.4)]);                     // the ramp, 114 m of it
+def('cappadocia',   () => [...[[14, 20], [30, 12], [46, 24]].map(([x, top]) =>
+                            P(`M${x - 6} 56 Q${x - 3} ${top + 10} ${x - 3.5} ${top + 4} L${x + 3.5} ${top + 4} Q${x + 3} ${top + 10} ${x + 6} 56 Z`, 'lo')),
+                          ...[[14, 20], [30, 12], [46, 24]].map(([x, top]) =>
+                            E(x, top + 2, 7, 4, 'ik')),                        // the hard cap that saved each one
+                          ...[[14, 34], [30, 28], [46, 38]].map(([x, y]) => P(`M${x - 2.5} 56 L${x - 2.5} ${y} Q${x} ${y - 4} ${x + 2.5} ${y} L${x + 2.5} 56 Z`, 'gh'))]);
+def('grand_canyon', () => [P('M2 8 L58 8 L58 20 L2 20 Z', 'hi'),               // Kaibab, 270 Ma
+                          P('M2 20 L58 20 L58 34 L2 34 Z', 'lo'),
+                          P('M2 34 L58 34 L58 44 L2 44 Z', 'bs'),
+                          P('M2 44 L58 44 L58 56 L2 56 Z', 'ik'),              // Vishnu Schist, 2 Ga
+                          P('M22 8 L26 48 L34 48 L38 8 Z', 'gh'),              // and the cut
+                          wave('bs', 50, 1.6, 12)]);
+def('salar_de_uyuni',()=>[P('M2 34 L58 34 L58 56 L2 56 Z', 'lo'),
+                          S('M2 34 L58 34', 'ik', 2.4),                        // one line, because it is one line
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${6 + i * 12} 38 L${14 + i * 12} 38`, 'gh', 1)),
+                          ...[0, 1, 2, 3].map(i => S(`M${10 + i * 12} 46 L${18 + i * 12} 46`, 'gh', 1)),
+                          C(20, 20, 4, 'hi'), S('M20 24 L20 34', 'gh', 0.9)]); // the sky in it
+def('urnes_stave_church',()=>[P('M18 56 L18 30 L42 30 L42 56 Z', 'lo'),
+                          P('M14 30 L30 16 L46 30 Z', 'bs'),
+                          P('M24 22 L30 8 L36 22 Z', 'bs'),
+                          ...[22, 30, 38].map(x => S(`M${x} 56 L${x} 30`, 'ik', 1.6)),   // the staves themselves
+                          S('M26 38 Q34 42 28 48 Q22 52 30 54', 'hi', 1.4),    // the north portal
+                          S('M34 38 Q26 44 32 50', 'hi', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
