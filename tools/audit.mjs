@@ -80,6 +80,29 @@ async function articleText(title) {
   return null;
 }
 
+/* The infobox lives in the wikitext, not in the plain-text extract, and a great
+ * many cited facts live there: melting points, dimensions, dates, populations.
+ * Fetching wikitext for every article made a full run three times slower for a
+ * payload almost none of it needed, so it is a SECOND CHANCE — pulled only when
+ * the prose alone does not support a claim. */
+const wikiCache = new Map();
+async function articleWikitext(title) {
+  if (wikiCache.has(title)) return wikiCache.get(title);
+  const disk = readDisk('wiki:' + title);
+  if (disk) { wikiCache.set(title, disk); return disk; }
+  const url = `${API}?action=query&prop=revisions&rvprop=content&rvslots=main` +
+              `&redirects=1&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
+  try {
+    const j = await getJSON(url);
+    const page = (j?.query?.pages || [])[0];
+    const wiki = page?.revisions?.[0]?.slots?.main?.content || '';
+    wikiCache.set(title, wiki);
+    if (wiki) writeDisk('wiki:' + title, wiki);
+    await sleep(400);
+    return wiki;
+  } catch { wikiCache.set(title, ''); return ''; }
+}
+
 const titleOf = src => {
   const m = /en\.wikipedia\.org\/wiki\/([^#?]+)/.exec(src || '');
   return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
@@ -345,8 +368,8 @@ const includeVerified = process.argv.includes('--all');
 // --terms widens the net from "claims with a number" to every unverified claim.
 const termsMode = process.argv.includes('--terms');
 let subject = recipes.filter(r =>
-  (termsMode || /\d/.test(r.why)) && (includeVerified || !r.verified));
-if (only) subject = recipes.filter(r => r.out === only && /\d/.test(r.why));
+  (termsMode || /\d/.test(r.why) || r.at != null) && (includeVerified || !r.verified));
+if (only) subject = recipes.filter(r => r.out === only && (/\d/.test(r.why) || r.at != null));
 
 console.log(`  checking ${subject.length} numeric claim(s) against their cited articles\n`);
 
@@ -356,7 +379,12 @@ for (const r of subject) {
   if (!title) { noSource.push({ r, why: 'source is not a Wikipedia article' }); continue; }
   const text = await articleText(title);
   if (!text) { noSource.push({ r, why: `could not fetch "${title}"` }); continue; }
+  /* A banded recipe states its temperature in `at`, and that number was never
+   * checked — only the prose was. A band is more load-bearing than a sentence:
+   * a wrong one makes the recipe wrong rather than merely unsupported, because
+   * the gesture signature and the card both depend on it. */
   const nums = numbersIn(r.why);
+  if (r.at != null) nums.push({ n: Number(r.at), unit: '\u00b0C', shown: `${r.at} \u00b0C (the band)` });
   if (!nums.length && !termsMode) continue;
   const missing = nums.filter(x => !articleHas(text, x));
   const lower = text.toLowerCase();
