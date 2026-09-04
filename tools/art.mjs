@@ -43591,6 +43591,13 @@ def('brimstone_hill',()=>[P('M2 52 L12 26 L48 26 L58 52 Z', 'bs'),          // t
                           ...[0, 1, 2, 3].map(i => C(18 + i * 8, 20, 1.8, 'gh')),
                           wave('bs', 56, 3, 27)]);
 
+def('sterkfontein',()=>[P('M4 8 L56 8 L56 54 L4 54 Z', 'lo'),
+                          P('M22 8 L34 8 L38 24 Q30 34 22 30 Q14 24 22 8 Z', 'bs'),   // the shaft down
+                          E(28, 28, 6, 5, 'hi'),                              // a skull in the fill
+                          C(26, 27, 1.4, 'bs'), C(31, 27, 1.4, 'bs'),
+                          ...granules('gh', 8, 979, [16, 32, 44, 48]),
+                          ...[0, 1, 2].map(i => S(`M6 ${34 + i * 7} L54 ${34 + i * 7}`, 'gh', 1))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
