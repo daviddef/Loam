@@ -286,6 +286,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    /* verb outcomes, 5 Sep. a leaf, a bean, a dried plum */
+    'black_tea', 'fermented_cocoa', 'prune',
     /* the fastener homonym, 5 Sep. a nut is centimetres across */
     'nut_fastener',
           /* verb outcomes batch 5, 5 Sep */

@@ -45290,6 +45290,22 @@ def('lelu',         () => [P('M6 26 L54 26 L54 34 L6 34 Z', 'lo'),
                                                     P(`M${x - 3} 16 L${x} 10 L${x + 3} 16 Z`, 'bs')]).flat(),
                           wave('bs', 50, 1.6, 56)]);
 
+/* Verb outcomes, 5 Sep. Black tea is drawn as a leaf half-darkened, because
+   the whole variable is how far the oxidation is allowed to go.            */
+def('black_tea',    () => [P('M30 8 Q46 20 30 52 Q14 20 30 8 Z', 'lo'),
+                          P('M30 8 Q46 20 30 52 L30 8 Z', 'ik'),               // one half taken further
+                          S('M30 8 L30 52', 'gh', 1),
+                          ...[0, 1, 2, 3].map(i => [S(`M30 ${18 + i * 8} L${22 - i} ${14 + i * 8}`, 'gh', 0.9),
+                                                    S(`M30 ${18 + i * 8} L${38 + i} ${14 + i * 8}`, 'bs', 0.9)]).flat()]);
+def('fermented_cocoa',()=>[E(30, 40, 22, 14, 'gh'),                            // the heap of pulp
+                          ...[[20, 38], [30, 34], [40, 40], [26, 46], [37, 46]].map(([x, y], i) =>
+                            E(x, y, 6, 4, i < 2 ? 'bs' : 'lo')),
+                          ...[0, 1, 2].map(i => S(`M${22 + i * 8} 24 Q${20 + i * 8} 16 ${24 + i * 8} 10`, 'hi', 1.2))]);   // the heat coming off it
+def('prune',        () => [P('M20 44 Q12 34 18 24 Q24 14 30 16 Q36 14 42 24 Q48 34 40 44 Q30 50 20 44 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${20 + i * 5} 22 Q${22 + i * 5} 34 ${19 + i * 5} 44`, 'ik', 1.2)),   // wrinkled, not fermented
+                          S('M30 16 L31 8', 'gh', 1.4),
+                          C(30, 32, 3, 'bs')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
