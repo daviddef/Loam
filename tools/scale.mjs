@@ -485,6 +485,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    /* places batch 18, 5 Sep. a cast vessel and its beads, decimetres */
+    'igbo_ukwu_bronze',
     /* homonyms batch 2, 5 Sep. a Stegosaurus plate is decimetres; the biggest are near a metre */
     'osteoderm',
           /* verb outcomes batch 5, 5 Sep */
@@ -763,6 +765,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* places batch 18, 5 Sep. a near life-size terracotta head */
+    'nok_terracotta',
     /* places batch 7, 5 Sep. an American bison stands about 1.8 m at the shoulder */
     'bison',
     /* places batch 6, 5 Sep. two runestones, one of them about 2.5 m */
@@ -1086,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 18, 5 Sep. an obelisk of 41.75 m, brick towers, a fall of 57 m */
+    'unfinished_obelisk', 'my_son', 'niagara_falls',
     /* places batch 17, 5 Sep. an octagon 14.46 m across, a colonnade */
     'aachen_cathedral',
     /* places batch 16, 5 Sep. columns and towers, and a painted panel of hands */
@@ -1393,6 +1399,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 18, 5 Sep. a free-standing mountain of 5,895 m */
+    'kilimanjaro',
     /* places batch 17, 5 Sep. a shield volcano 4,207 m above the sea */
     'mauna_kea',
     /* places batch 16, 5 Sep. 5.74 km of wall */

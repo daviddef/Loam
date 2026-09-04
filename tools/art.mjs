@@ -44249,6 +44249,40 @@ def('versailles',   () => [P('M4 30 L56 30 L56 44 L4 44 Z', 'lo'),
                           ...[0, 1, 2].map(i => P(`M${14 + i * 16} 46 L${26 + i * 16} 46 L${26 + i * 16} 54 L${14 + i * 16} 54 Z`, 'bs')),
                           S('M4 30 L56 30', 'ik', 1.4)]);
 
+/* Places, batch 18 — 5 Sep. The unfinished obelisk is drawn lying in its
+   trench with the crack across it, because the crack is why it is famous;
+   Niagara as caprock over shale with the overhang, because that is the falls. */
+def('unfinished_obelisk',()=>[P('M2 8 L58 8 L58 56 L2 56 Z', 'lo'),
+                          P('M8 16 L52 16 L52 46 L8 46 Z', 'gh'),                 // the trench cut round it
+                          P('M12 20 L48 20 L48 42 L12 42 Z', 'bs'),               // and the thing still attached
+                          S('M20 20 L28 42', 'ik', 2.4),                          // the crack
+                          ...granules('hi', 10, 141, [12, 20, 48, 42])]);         // dolerite pounder marks
+def('nok_terracotta',()=>[P('M20 54 L20 34 Q20 16 30 12 Q40 16 40 34 L40 54 Z', 'lo'),
+                          E(25, 30, 3.4, 2.2, 'bs'), E(35, 30, 3.4, 2.2, 'bs'),   // the pierced eyes
+                          C(25, 30, 1.1, 'ik'), C(35, 30, 1.1, 'ik'),
+                          S('M27 40 L33 40', 'ik', 1.4),
+                          ...[0, 1, 2, 3].map(i => S(`M${22 + i * 4} 18 Q${24 + i * 4} 10 ${26 + i * 4} 16`, 'hi', 1.2))]);
+def('igbo_ukwu_bronze',()=>[P('M18 54 Q12 40 16 28 L44 28 Q48 40 42 54 Z', 'lo'),
+                          E(30, 28, 14, 4, 'bs'),
+                          ...[0, 1, 2, 3].map(i => S(`M${19 + i * 2} 34 Q30 ${38 + i * 4} ${41 - i * 2} 34`, 'hi', 1)),   // the lost-wax surface
+                          ...[0, 1, 2, 3, 4, 5].map(i => C(8 + i * 9, 14, 2.2, 'gh')),   // and the beads that came with it
+                          S('M4 14 L56 14', 'ik', 0.8)]);
+def('kilimanjaro',  () => [P('M2 56 Q18 26 30 22 Q42 26 58 56 Z', 'lo'),
+                          P('M20 28 Q30 22 40 28 Q30 32 20 28 Z', 'hi'),          // what is left of the cap
+                          S('M14 34 Q30 28 46 34', 'gh', 1.4),                    // and where it reached in 1912
+                          ...[10, 46].map(x => [S(`M${x} 54 L${x} 46`, 'ik', 1.4), E(x, 42, 6, 4, 'bs')]).flat()]);
+def('niagara_falls',()=>[P('M2 20 L34 20 L34 28 L2 28 Z', 'ik'),                  // the caprock
+                          P('M2 28 L30 28 L30 48 L2 48 Z', 'gh'),                 // the shale, undercut
+                          P('M34 20 L38 20 L36 50 L30 50 Z', 'hi'),
+                          S('M30 30 L36 30', 'bs', 1.4), S('M28 36 L34 36', 'bs', 1.4),
+                          P('M36 50 L58 50 L58 56 L2 56 L2 48 L30 48 Z', 'lo'),
+                          S('M34 16 L54 16', 'gh', 1.2)]);                        // and where it used to be
+def('my_son',       () => [...[16, 30, 44].map(x => [P(`M${x - 7} 54 L${x - 7} 30 L${x + 7} 30 L${x + 7} 54 Z`, 'lo'),
+                                                     P(`M${x - 6} 30 L${x - 4} 20 L${x + 4} 20 L${x + 6} 30 Z`, 'lo'),
+                                                     P(`M${x - 3} 20 L${x} 14 L${x + 3} 20 Z`, 'bs')]).flat(),
+                          ...[0, 1, 2, 3].map(i => S(`M4 ${34 + i * 5} L56 ${34 + i * 5}`, 'gh', 0.7)),   // brick courses, no mortar line
+                          C(30, 44, 3, 'hi')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
