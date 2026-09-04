@@ -2403,9 +2403,10 @@
   ],
   "verb": "heat",
   "out": "malt",
-  "why": "Kilning stops germination at the moment the starch has turned to sugar but before the seedling eats it. Timing is the whole craft.",
+  "why": "Kilning stops germination at the moment the starch has turned to sugar but before the seedling eats it, and the temperature decides what kind of malt it is. Base malt is dried at around 50 °C precisely because that is low enough to leave the enzymes alive — they are the whole point of it. Take it hotter and you get colour and flavour instead, through crystal and amber to chocolate and black, and no enzymes at all.",
   "supported": true,
-  "src": "https://en.wikipedia.org/wiki/Malting"
+  "src": "https://en.wikipedia.org/wiki/Malt",
+  "at": 50
  },
  {
   "in": [
@@ -28110,10 +28111,11 @@
    "pig_iron"
   ],
   "verb": "heat",
-  "out": "iron",
-  "why": "Pig iron fresh from the blast furnace is brittle and full of carbon. Remelted with scrap and its composition adjusted, it becomes cast iron — poured into a mould rather than forged like wrought iron or steel.",
-  "src": "https://en.wikipedia.org/wiki/Pig_iron",
-  "supported": true
+  "out": "wrought_iron",
+  "why": "Puddling burns the carbon out of molten pig iron by stirring it in an oxidising furnace — and as the carbon goes the melting point climbs from 1,150 to 1,540 °C, because dissolved carbon was lowering it the way road salt lowers the melting point of ice. So the iron stiffens while the furnace gets no cooler: it \"comes to nature\" as a pasty mass the puddler can gather into a ball, and that is how he knows it is done.",
+  "src": "https://en.wikipedia.org/wiki/Puddling_(metallurgy)",
+  "supported": true,
+  "at": 1150
  },
  {
   "in": [
