@@ -44666,6 +44666,46 @@ def('hampi',        () => [...[[10, 44], [22, 48], [46, 44], [52, 50]].map(([x, 
                           ...[0, 1, 2, 3, 4].map(i => S(`M${30 + i * 2} 30 L${30 + i * 2} 50`, 'gh', 0.9)),   // beams that ring
                           C(14, 20, 8, 'lo'), C(50, 22, 7, 'lo')]);
 
+/* Places, batch 29 — 5 Sep. Kinderdijk is drawn as the lift in stages, because
+   one mill cannot do it; Kraków as the ring the wall left behind.           */
+def('delphi',       () => [P('M2 56 L14 20 L26 34 L38 12 L58 56 Z', 'lo'),
+                          P('M22 56 L22 40 L40 40 L40 56 Z', 'gh'),
+                          ...[24, 30, 36].map(x => S(`M${x} 40 L${x} 56`, 'ik', 1.6)),
+                          S('M31 40 L31 30', 'bs', 3),                         // the chasm, and what came up it
+                          ...[0, 1, 2].map(i => S(`M${28 + i * 3} 28 Q${26 + i * 3} 22 ${30 + i * 3} 18`, 'gh', 1)),
+                          ...[8, 48].map(x => P(`M${x - 4} 52 L${x - 4} 44 L${x + 4} 44 L${x + 4} 52 Z`, 'bs'))]);   // the treasuries
+def('mycenae',      () => [P('M4 54 L4 26 L56 26 L56 54 Z', 'lo'),
+                          ...[[6, 28, 16], [24, 28, 14], [40, 28, 14], [6, 40, 12], [20, 40, 18], [40, 40, 14]]
+                            .map(([x, y, w]) => S(`M${x} ${y} L${x + w} ${y}`, 'ik', 1.2)),
+                          P('M22 54 L22 34 L38 34 L38 54 Z', 'gh'),            // the gate
+                          P('M20 34 L40 34 L40 30 L20 30 Z', 'bs'),            // its lintel
+                          P('M20 30 L30 20 L40 30 Z', 'gh'),                   // and the relieving triangle
+                          S('M30 22 L30 30', 'ik', 1.4)]);
+def('matera',       () => [P('M2 12 L58 12 L58 56 L2 56 Z', 'lo'),
+                          ...[[10, 22], [26, 30], [42, 22], [18, 40], [38, 42]].map(([x, y]) =>
+                            [P(`M${x - 6} ${y + 10} L${x - 6} ${y + 2} Q${x} ${y - 4} ${x + 6} ${y + 2} L${x + 6} ${y + 10} Z`, 'gh'),
+                             C(x, y + 7, 2.2, 'bs')]).flat(),
+                          ...[[10, 22], [42, 22]].map(([x, y]) => S(`M${x - 7} ${y - 2} L${x + 7} ${y - 2}`, 'ik', 1.6)),  // the street on the roof
+                          ...[[26, 30], [18, 40]].map(([x, y]) => E(x, y + 12, 4, 2, 'hi'))]);   // and the cistern under it
+def('krakow_old_town',()=>[S('M30 30 m -25 0 a25 25 0 1 0 50 0 a25 25 0 1 0 -50 0', 'gh', 4),   // the ring, now planted
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => C(30 + 25 * Math.cos(i * Math.PI / 4), 30 + 25 * Math.sin(i * Math.PI / 4), 2.2, 'lo')),
+                          P('M16 20 L44 20 L44 40 L16 40 Z', 'lo'),
+                          P('M22 24 L38 24 L38 36 L22 36 Z', 'bs'),            // the cloth hall in the square
+                          P('M18 20 L18 8 L24 8 L24 20 Z', 'lo'), S('M21 8 L21 4', 'ik', 1.2)]);
+def('bruges',       () => [P('M4 30 L26 30 L26 54 L4 54 Z', 'lo'),
+                          P('M30 54 L30 16 L42 16 L42 54 Z', 'lo'),            // the belfry
+                          P('M29 16 L36 6 L43 16 Z', 'bs'),
+                          S('M2 24 Q20 20 40 24 Q52 26 58 34', 'gh', 3.4),     // the channel
+                          ...granules('bs', 14, 1500, [36, 22, 58, 38]),       // silting up
+                          ...[0, 1, 2].map(i => S(`M6 ${36 + i * 6} L24 ${36 + i * 6}`, 'gh', 0.9))]);
+def('kinderdijk',   () => [P('M2 44 L20 44 L20 56 L2 56 Z', 'gh'),             // the polder, low
+                          P('M20 36 L40 36 L40 56 L20 56 Z', 'gh'),            // the reservoir, halfway
+                          P('M40 24 L58 24 L58 56 L40 56 Z', 'gh'),            // the river, high
+                          ...[14, 32].map((x, i) => [P(`M${x - 5} ${44 - i * 8} L${x - 3} ${28 - i * 8} L${x + 3} ${28 - i * 8} L${x + 5} ${44 - i * 8} Z`, 'lo'),
+                                                     S(`M${x - 7} ${34 - i * 8} L${x + 7} ${22 - i * 8}`, 'ik', 1.6),
+                                                     S(`M${x - 7} ${22 - i * 8} L${x + 7} ${34 - i * 8}`, 'ik', 1.6)]).flat(),
+                          S('M2 44 L20 44', 'ik', 1.2), S('M20 36 L40 36', 'ik', 1.2), S('M40 24 L58 24', 'ik', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -1269,6 +1269,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 29, 5 Sep. a sanctuary, a citadel of 32 ha, a cave town, an old town, a belfry, nineteen mills */
+    'delphi', 'mycenae', 'matera', 'krakow_old_town', 'bruges', 'kinderdijk',
     /* places batch 28, 5 Sep. a walled city of 37.5 ha */
     'itchan_kala',
     /* places batch 27, 5 Sep. a tomb valley, a sacred grove of 75 ha, a pyramid 45 m, a span 1,280 m */
