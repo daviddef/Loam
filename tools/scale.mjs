@@ -1255,6 +1255,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 16, 4 Sep. a 12 km circuit and a city cluster */
+          'benin_moat', 'merv',
           /* places batch 8, 4 Sep. a capital and its hinterland */
           'mbanza_kongo',
           /* places batch 7, 4 Sep. 116 hectares of drained wetland */

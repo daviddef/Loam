@@ -43406,6 +43406,20 @@ def('potala',      () => [P('M8 52 L14 20 L46 20 L52 52 Z', 'lo'),          // b
                           P('M22 8 L38 8 L38 5 L22 5 Z', 'hi'),
                           S('M8 52 L52 52', 'bs', 2)]);
 
+/* Places, batch 16 — Western Africa and Central Asia. Benin is drawn as the
+   section, because the ditch and the bank are one act of digging.           */
+def('benin_moat',  () => [P('M4 40 L20 40 L30 52 L40 40 L56 40 L56 54 L4 54 Z', 'bs'),
+                          P('M14 40 L22 22 L30 40 Z', 'lo'),                 // the rampart, from the spoil
+                          P('M30 40 L38 22 L46 40 Z', 'lo'),
+                          S('M20 40 L30 52 L40 40', 'hi', 2),
+                          ...[0, 1, 2].map(i => S(`M${8 + i * 18} 48 L${14 + i * 18} 48`, 'gh', 1))]);
+def('merv',        () => [...[0, 1, 2, 3].map(i =>
+                            P(`M${4 + i * 13} ${44 - i * 3} L${15 + i * 13} ${44 - i * 3} L${15 + i * 13} 52 L${4 + i * 13} 52 Z`, i % 2 ? 'lo' : 'bs')),
+                          E(30, 22, 11, 9, 'lo'),                            // Sanjar's dome
+                          P('M20 30 L40 30 L40 22 L20 22 Z', 'lo'),
+                          C(30, 12, 2, 'hi'),
+                          ...[0, 1, 2].map(i => C(50 + i * 2, 46 + i, 1.4, 'gh'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
