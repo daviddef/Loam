@@ -1043,8 +1043,9 @@
     ],
     "verb": "heat",
     "out": "baked_potato",
-    "why": "Baking dries the starch grains as they swell, giving a floury interior. Boiling the same potato keeps them wet and waxy.",
-    "src": "https://en.wikipedia.org/wiki/Baked_potato"
+    "why": "At 200 °C the skin dries into a crust while the inside stays at boiling point and the starch granules swell and burst. Lower and it steams; higher and the outside burns before the middle is done.",
+    "src": "https://en.wikipedia.org/wiki/Baked_potato",
+    "at": 200
   },
   {
     "in": [
@@ -4615,9 +4616,10 @@
     ],
     "verb": "heat",
     "out": "silver",
-    "why": "Cupellation: heat lead that carries a little silver in a strong draft of air, and the lead oxidises away as litharge, leaving the silver behind. Slag from doing exactly this has turned up in the Aegean, dating to the 4th millennium BC.",
+    "why": "Cupellation: hold lead that carries a little silver at about 950 °C in a strong draft, and the lead oxidises away into the bone-ash hearth as litharge. Silver does not oxidise, so it is simply what is left. This is assaying, and it is how silver was won for three thousand years.",
     "src": "https://en.wikipedia.org/wiki/Cupellation",
-    "verified": true
+    "verified": true,
+    "at": 950
   },
   {
     "in": [
@@ -5506,10 +5508,11 @@
       "cocoa_bean"
     ],
     "out": "chocolate",
-    "why": "Roasted, cracked and deshelled into nibs, then ground to a paste. Conching takes the particles under about 20 μm — smaller than the tongue can detect — which is what \"smooth\" actually means. Four hundred beans to the pound.",
+    "why": "Roasting near 130 °C runs the Maillard reaction between the beans' own sugars and amino acids, and drives off the acetic acid left by fermentation. The chocolate flavour does not exist in the bean before this.",
     "src": "https://en.wikipedia.org/wiki/Chocolate",
     "verified": true,
-    "verb": "heat"
+    "verb": "heat",
+    "at": 130
   },
   {
     "in": [
@@ -7120,9 +7123,10 @@
     ],
     "verb": "heat",
     "out": "rubber",
-    "why": "Drive the water off and the suspended particles are forced together into a solid. What is left is cis-1,4-polyisoprene, a single molecule between 100,000 and 1,000,000 daltons — one long chain, over and over.",
+    "why": "Vulcanisation: at about 150 °C sulfur bridges the rubber chains to each other. Untreated latex goes sticky in heat and brittle in cold; cross-linked, it goes back to its shape and stays there.",
     "src": "https://en.wikipedia.org/wiki/Natural_rubber",
-    "verified": true
+    "verified": true,
+    "at": 150
   },
   {
     "in": [
@@ -12149,9 +12153,10 @@
     ],
     "verb": "heat",
     "out": "raisin",
-    "why": "The traditional raisin is sun-dried and left to weather. The commercial one is dried in a machine at a held temperature and humidity, because the fruit is worth more when nothing about the drying is left to the sky.",
+    "why": "Held near 65 °C in a tunnel dryer, water leaves faster than the sugars can caramelise. The traditional sun-dried raisin takes weeks and darkens; the machine-dried one takes hours and does not.",
     "src": "https://en.wikipedia.org/wiki/Raisin",
-    "verified": true
+    "verified": true,
+    "at": 65
   },
   {
     "in": [
@@ -22629,9 +22634,10 @@
     ],
     "verb": "heat",
     "out": "copper",
-    "why": "Copper cathodes are already 99.99% pure copper; melting and casting them into wire rod, billets, and ingots is the last step turning the traded commodity into the copper of commerce.",
+    "why": "Cathode copper is already 99.99% pure. Melting it at copper's 1085 °C and casting it into rod, billet and ingot is the step that turns a traded commodity into something a factory can use.",
     "src": "https://en.wikipedia.org/wiki/Copper_extraction",
-    "verified": true
+    "verified": true,
+    "at": 1085
   },
   {
     "in": [
@@ -35711,9 +35717,10 @@
     ],
     "verb": "heat",
     "out": "falafel",
-    "why": "Ground raw, then fried — cooking the chickpeas first makes them fall apart in the oil, so unlike hummus, falafel skips that step entirely.",
+    "why": "Frying at 180 °C sets the outside of the ball before the inside can absorb oil. Below about 160 the falafel drinks the fryer; above 190 the crust colours before the middle cooks.",
     "src": "https://en.wikipedia.org/wiki/Falafel",
-    "verified": true
+    "verified": true,
+    "at": 180
   },
   {
     "in": [
@@ -35731,9 +35738,10 @@
     ],
     "verb": "heat",
     "out": "dal",
-    "why": "Dal names both the raw split pulse and the dish it becomes — lentils cooked down into a thick, soft stew, a staple across the Indian subcontinent.",
+    "why": "Held at boiling, lentil starch gelatinises and the cell walls give way, so the pulse breaks down into the sauce rather than sitting in it. Lentils need no soaking because the seed coat is thin enough for water to get in at once.",
     "src": "https://en.wikipedia.org/wiki/Dal",
-    "verified": true
+    "verified": true,
+    "at": 100
   },
   {
     "in": [
@@ -38165,9 +38173,10 @@
     ],
     "verb": "heat",
     "out": "garlic_powder",
-    "why": "Garlic powder starts with drying and dehydrating the cloves under heat, then grinding the dried result into a fine powder.",
+    "why": "Dried at about 60 °C, low enough to leave the alliinase enzyme working. Take it hotter and the enzyme denatures, so the powder has no allicin and no smell when it meets water.",
     "src": "https://en.wikipedia.org/wiki/Garlic_powder",
-    "verified": true
+    "verified": true,
+    "at": 60
   },
   {
     "in": [
@@ -87627,10 +87636,11 @@
       "resin"
     ],
     "out": "rosin",
-    "why": "Fresh resin is sticky and never sets. Driving off the volatile part leaves a solid that is hard when still and grips when warmed by friction, which is exactly what a bow needs and what raw resin cannot do.",
+    "why": "Steam distillation near 160 °C carries the turpentine off as vapour and leaves the rosin behind in the still. The two products are the same tree resin separated by boiling point, and nothing is added.",
     "src": "https://en.wikipedia.org/wiki/Rosin",
     "verified": true,
-    "verb": "heat"
+    "verb": "heat",
+    "at": 160
   },
   {
     "in": [
