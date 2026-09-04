@@ -43795,6 +43795,17 @@ def('wave_physics', () => [S('M4 32 Q12 16 20 32 Q28 48 36 32 Q44 16 52 32', 'lo
                           C(20, 32, 3, 'hi'),
                           S('M20 20 L20 14', 'ik', 1.6), S('M20 44 L20 50', 'ik', 1.6)]);
 
+/* Homonyms, batch 2 — 5 Sep. `plate` was the dinner plate and it was growing on
+   a Stegosaurus; `cone` was the conifer's and it was in a loudspeaker.       */
+def('osteoderm',    () => [S('M6 46 Q30 40 54 46', 'ik', 1.6),                 // the skin it grows inside
+                          P('M18 46 Q18 24 30 18 Q42 24 42 46 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} 44 Q${24 + i * 6} 30 30 ${24 + i * 2}`, 'hi', 1.1)),
+                          C(30, 50, 2, 'gh')]);                               // no joint to a skeleton
+def('cone_solid',   () => [P('M30 10 L48 44 L12 44 Z', 'lo'),
+                          E(30, 44, 18, 6, 'bs'),
+                          ...[0, 1, 2, 3].map(i => S(`M30 10 L${16 + i * 9} ${44 + (i === 1 || i === 2 ? 4 : 0)}`, 'gh', 0.9)),
+                          S('M30 10 L30 44', 'ik', 1)]);                      // ruled by straight lines
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

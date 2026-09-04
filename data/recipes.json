@@ -82594,7 +82594,7 @@
  {
   "in": [
    "dinosaur",
-   "plate"
+   "osteoderm"
   ],
   "out": "stegosaurus",
   "why": "A thyreophoran dinosaur carrying two staggered rows of tall bony plates down its back. They were not armour — thin, and threaded with blood vessels — so they are read as display or heat exchange, with the defence left to four tail spikes.",
@@ -83883,7 +83883,7 @@
  },
  {
   "in": [
-   "cone",
+   "cone_solid",
    "magnet"
   ],
   "out": "speaker",
@@ -85953,8 +85953,8 @@
  },
  {
   "in": [
-   "tank",
-   "water"
+   "cistern",
+   "roof"
   ],
   "out": "water_tank",
   "why": "Height is the pressure: about a tenth of a bar per metre, so a tank in the roof gives a shower on the floor below a usable push with no pump at all. It also buffers demand, which is why the supply pipe can be far smaller than the taps.",
@@ -86144,7 +86144,7 @@
  {
   "in": [
    "petrol",
-   "tank"
+   "sheet_metal"
   ],
   "out": "fuel_tank",
   "why": "It is never quite full of liquid: a vapour space has to be left for expansion, and it is vented so the pump is not fighting a vacuum as the level drops. Baffles inside stop the fuel surging and unbalancing the vehicle.",
@@ -87503,7 +87503,7 @@
  },
  {
   "in": [
-   "cone",
+   "cone_solid",
    "timber"
   ],
   "out": "hopper",
@@ -89415,10 +89415,10 @@
  {
   "in": [
    "lead",
-   "tank"
+   "rain"
   ],
   "out": "cistern",
-  "why": "It decouples the rate water arrives from the rate it is used, which is the same trick as a battery or a millpond. Roman houses had them, and they are why a tap runs evenly from a system fed by a slow spring.",
+  "why": "Lead sheet was what made a watertight tank possible before welded steel, and the tank is what decouples the rate water arrives at from the rate it is used — the same trick as a battery on a supply, and the reason a roof can feed a house from rain that fell days ago.",
   "src": "https://en.wikipedia.org/wiki/Cistern",
   "verified": true
  },
@@ -89454,7 +89454,7 @@
  },
  {
   "in": [
-   "cone",
+   "cone_solid",
    "pipe"
   ],
   "out": "nozzle",
@@ -89525,10 +89525,10 @@
  {
   "in": [
    "kernel",
-   "port"
+   "interrupt"
   ],
   "out": "device_driver",
-  "why": "It exists so the rest of the system can say 'write this file' without knowing whether it is spinning rust or flash. That indirection is also why drivers are the commonest cause of crashes: they run with the kernel's privileges and are written by whoever made the device.",
+  "why": "The kernel code that owns one device: it fields the interrupts that device raises and hides everything below them, so the rest of the system can say \"write this file\" without knowing whether it is spinning rust, flash or a network share.",
   "src": "https://en.wikipedia.org/wiki/Device_driver",
   "verified": true
  },
@@ -94863,5 +94863,25 @@
   "why": "A mass on a spring oscillates because the spring pulls back harder the further it is pushed. Line the oscillators up so each one pulls on the next, and the disturbance travels while the oscillators themselves stay put. That is the whole definition, and it is the same statement for a string, the sea and the air.",
   "verified": true,
   "src": "https://en.wikipedia.org/wiki/Wave"
+ },
+ {
+  "in": [
+   "bone",
+   "dermis"
+  ],
+  "out": "osteoderm",
+  "why": "Dermal bone: it ossifies within the skin itself rather than growing out of the skeleton, which is how scutes on a crocodile, a shell on an armadillo and plates on a Stegosaurus can all be the same structure in animals that are not close relatives.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Osteoderm"
+ },
+ {
+  "in": [
+   "circle",
+   "triangle"
+  ],
+  "out": "cone_solid",
+  "why": "Spin a right triangle about one of its legs and it sweeps a cone: a circle for a base, an apex over its centre, and a straight line from every point of the rim to that apex. Being ruled by straight lines is the useful part — a cone can be cut and rolled from flat sheet, and a sphere cannot.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Cone"
  }
 ]

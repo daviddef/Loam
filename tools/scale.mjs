@@ -483,6 +483,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    /* homonyms batch 2, 5 Sep. a Stegosaurus plate is decimetres; the biggest are near a metre */
+    'osteoderm',
           /* verb outcomes batch 5, 5 Sep */
           'clotted_cream',
           /* verb outcomes batch 4, 5 Sep */
@@ -759,6 +761,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* homonyms batch 2, 5 Sep. a shape, drawn at the size of one you would hold */
+    'cone_solid',
     /* the wave homonym, 5 Sep. an idea; drawn at the scale of a wave you can point at */
     'wave_physics',
     /* the set homonym, 5 Sep. an idea, at the scale of the page it is written on */

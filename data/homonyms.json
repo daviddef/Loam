@@ -254,13 +254,221 @@
       ],
       "also": [],
       "found": "nothing"
+    },
+    {
+      "id": "plate",
+      "sense": "the dinnerware — a broad, mainly flat vessel with a lip",
+      "not": [
+        "osteoderm",
+        "thyreophoran",
+        "dermal",
+        "tectonic",
+        "subduct",
+        "armour plate"
+      ],
+      "also": [
+        "osteoderm"
+      ],
+      "found": "dinosaur+plate→stegosaurus"
+    },
+    {
+      "id": "cone",
+      "sense": "the conifer's seed case",
+      "not": [
+        "loudspeaker",
+        "diaphragm",
+        "apex",
+        "frustum",
+        "taper",
+        "nozzle"
+      ],
+      "also": [
+        "cone_solid"
+      ],
+      "found": "cone+magnet→speaker, cone+timber→hopper, cone+pipe→nozzle"
+    },
+    {
+      "id": "port",
+      "sense": "the seaport, where cargo changes mode",
+      "not": [
+        "kernel",
+        "device",
+        "serial port",
+        "usb",
+        "socket number",
+        "fortified wine"
+      ],
+      "also": [
+        "interrupt"
+      ],
+      "found": "kernel+port→device_driver"
+    },
+    {
+      "id": "tank",
+      "sense": "the armoured vehicle on continuous tracks",
+      "not": [
+        "vapour space",
+        "cistern",
+        "header tank",
+        "litres of water",
+        "stored water"
+      ],
+      "also": [
+        "cistern",
+        "reservoir"
+      ],
+      "found": "lead+tank→cistern, tank+water→water_tank, petrol+tank→fuel_tank"
+    },
+    {
+      "id": "organ",
+      "sense": "the body's",
+      "not": [
+        "pipe organ",
+        "organist",
+        "stops and manuals"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "mint",
+      "sense": "the plant",
+      "not": [
+        "coinage",
+        "struck coin",
+        "royal mint"
+      ],
+      "also": [
+        "coin"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "root",
+      "sense": "the plant's",
+      "not": [
+        "square root",
+        "word root",
+        "root of the equation"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "bit",
+      "sense": "the unit of information",
+      "not": [
+        "drill bit",
+        "horse bit",
+        "bridle"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "field",
+      "sense": "the farmed one",
+      "not": [
+        "magnetic field",
+        "electric field",
+        "field lines",
+        "field of study"
+      ],
+      "also": [
+        "magnetic_field"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "tissue",
+      "sense": "the biological one",
+      "not": [
+        "paper tissue",
+        "kleenex",
+        "blow your nose"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "pipe",
+      "sense": "the plumbing one",
+      "not": [
+        "smoking pipe",
+        "tobacco",
+        "pipe organ",
+        "bagpipe"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "sole",
+      "sense": "the underside of a shoe",
+      "not": [
+        "flatfish",
+        "dover sole",
+        "pleuronect"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "shell",
+      "sense": "the mollusc's, laid down by the mantle",
+      "not": [
+        "artillery",
+        "shell casing",
+        "command shell",
+        "shell script"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "rock",
+      "sense": "the geological aggregate of minerals",
+      "not": [
+        "rock and roll",
+        "rocking",
+        "rock music"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "temple",
+      "sense": "the building",
+      "not": [
+        "side of the head",
+        "temporal bone",
+        "spectacle arm"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "saw",
+      "sense": "the toothed blade",
+      "not": [
+        "saw him",
+        "past tense",
+        "proverb"
+      ],
+      "also": [],
+      "found": "nothing"
     }
   ],
   "cleared": [
+    "adobe",
     "air",
     "alphabet",
+    "aquifer",
     "arch",
     "axle",
+    "barrel",
+    "basalt",
+    "bitumen",
     "blade",
     "bone",
     "book",
@@ -270,39 +478,72 @@
     "candle",
     "canvas",
     "carbon",
+    "cauldron",
     "chain",
+    "channel",
     "charcoal",
     "cheese",
+    "chitin",
+    "circle",
     "clay",
     "cloth",
     "copper",
     "cotton",
+    "cylinder",
+    "dermis",
+    "desert",
+    "diagnosis",
     "dough",
     "egg",
+    "epidermis",
+    "escapement",
+    "filament",
     "fire",
     "flour",
+    "gear",
     "glass",
     "glue",
     "gold",
+    "granite",
+    "gravity",
+    "groundwater",
     "hammer",
     "honey",
+    "hopper",
     "ice",
+    "interrupt",
     "iron",
+    "irrigation",
+    "keratin",
+    "kernel",
     "lens",
+    "lever",
     "lime",
+    "limestone",
+    "magnet",
+    "mass",
     "milk",
     "mirror",
     "mortar",
+    "mountain",
     "needle",
+    "nozzle",
+    "obsidian",
     "oil",
     "paper",
+    "photon",
     "pot",
+    "rainforest",
+    "reservoir",
+    "river",
     "rope",
     "salt",
     "sand",
+    "sandstone",
     "silk",
     "soap",
     "soil",
+    "speaker",
     "steam",
     "steel",
     "stone",
@@ -310,8 +551,14 @@
     "string",
     "sugar",
     "sulfur",
+    "switch",
+    "syenite",
     "thread",
     "tin",
+    "travertine",
+    "triangle",
+    "valley",
+    "vat",
     "water",
     "wax",
     "wheel",
