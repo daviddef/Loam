@@ -44,6 +44,9 @@ const PUBLIC = [
   'prototype/template.html',
   'prototype/art-render.js',
   'prototype/index.html',
+  // The payload split: index.html carries the graph, these two arrive after.
+  'prototype/prose.json',
+  'prototype/art.json',
   'prototype/manifest.json',
   'prototype/icon-180.png',
   'prototype/icon-192.png',

@@ -31,9 +31,22 @@ function artShape(s) {
 
 function artSVG(id, cls) {
   const rec = ART[id];
-  if (!rec) return `<svg class="art${cls ? ' ' + cls : ''}" viewBox="0 0 60 60" aria-hidden="true"></svg>`;
+  // Not yet arrived, rather than not existing. Draw the family's own colour in
+  // a soft shape and mark the node so it can be replaced in place when the
+  // real drawing lands — a blank card reads as broken, a coloured one as slow.
+  if (!rec) {
+    const c = (typeof ARTCAT !== 'undefined' && ARTCAT[id]) || 'craft';
+    return `<svg class="art${cls ? ' ' + cls : ''}" viewBox="0 0 60 60" data-cat="${c}" ` +
+           `data-pending="${id}" aria-hidden="true">` +
+           `<ellipse cx="30" cy="32" rx="19" ry="16" fill="var(--bs)" opacity=".55"/>` +
+           `<ellipse cx="30" cy="27" rx="11" ry="8" fill="var(--hi)" opacity=".45"/></svg>`;
+  }
   return `<svg class="art${cls ? ' ' + cls : ''}" viewBox="0 0 60 60" data-cat="${rec.c}" aria-hidden="true">` +
          rec.s.map(artShape).join('') + '</svg>';
 }
 
-function artCat(id) { return (ART[id] || { c: 'craft' }).c; }
+function artCat(id) {
+  return (ART[id] && ART[id].c)
+      || (typeof ARTCAT !== 'undefined' && ARTCAT[id])
+      || 'craft';
+}

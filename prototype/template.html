@@ -2179,9 +2179,65 @@ __CATEGORY_CSS__
 const DATA = __GAME_DATA__;
 const {elements, recipes, verbs} = DATA;
 
+/* ── the prose arrives after the graph ────────────────────────────────────
+ * 88% of what used to ship was words and drawings that nothing needs in order
+ * to make the first move. The facts, the whys and the sources now come down
+ * separately and are merged into these very objects when they land, so every
+ * place that reads `.fact` or `.why` is unchanged and simply sees nothing for
+ * the first moment. The four starters keep their prose inline, because they
+ * are on screen immediately.
+ *
+ * If the fetch fails the game still plays. That is the whole reason for
+ * merging rather than replacing: a missing fetch costs the words, never the
+ * graph.
+ */
+let PROSE = 'loading';
+const proseWaiters = [];
+const whenProse = (fn) => PROSE === 'ready' ? fn() : proseWaiters.push(fn);
+fetch('prose.json')
+  .then(r => r.ok ? r.json() : Promise.reject(new Error(r.status)))
+  .then(p => {
+    for (const e of elements) {
+      if (p.facts[e.id]) e.fact = p.facts[e.id];
+      if (p.esrc[e.id])  e.src  = p.esrc[e.id];
+    }
+    recipes.forEach((r, i) => {
+      const row = p.r[i];
+      if (!row) return;
+      if (row.w) r.why = row.w;
+      if (row.s) r.src = row.s;
+      if (row.b) r.srcBook = row.b;
+    });
+    PROSE = 'ready';
+    while (proseWaiters.length) proseWaiters.shift()();
+  })
+  .catch(() => { PROSE = 'failed'; while (proseWaiters.length) proseWaiters.shift()(); });
+
 /* Every drawing in the game, keyed by item id. Shapes only — no colour: see
    prototype/art-render.js for how a role becomes a paint. */
 const ART = __ART_DATA__;
+/* Every drawing's category, inline, so a card that has not got its shapes yet
+   can still be the right colour and the right shape of blank. See the note in
+   build-prototype.mjs about why this half stays and the other half goes. */
+const ARTCAT = __ARTCAT_DATA__;
+let ARTLATE = 'loading';
+fetch('art.json')
+  .then(r => r.ok ? r.json() : Promise.reject(new Error(r.status)))
+  .then(more => {
+    Object.assign(ART, more);
+    ARTLATE = 'ready';
+    // Anything already on screen was drawn as a placeholder. Replace those,
+    // and only those — re-rendering the whole board would undo a drag.
+    for (const svg of document.querySelectorAll('svg.art[data-pending]')) {
+      const id = svg.getAttribute('data-pending');
+      if (!ART[id]) continue;
+      const holder = document.createElement('div');
+      holder.innerHTML = artSVG(id, svg.classList.contains('big') ? 'big' : '');
+      const fresh = holder.firstElementChild;
+      if (fresh) { fresh.className = svg.className; svg.replaceWith(fresh); }
+    }
+  })
+  .catch(() => { ARTLATE = 'failed'; });
 /* Characteristic size of each item, to the nearest power of ten. */
 const SCALE = __SCALE_DATA__;
 
@@ -8050,6 +8106,12 @@ function showHint(id) {
 // derivation to show yet, so it still gets the plain locked-entry view.
 function showEntry(id, mode) {
   setInfo(id);                       // the info tab follows the same taps
+  // Opened before the prose landed, this card would be a name and a blank.
+  // Ask to be shown again the moment the words exist, and the reader sees the
+  // card fill in rather than sees it wrong.
+  if (PROSE === 'loading') whenProse(() => {
+    if (document.getElementById('sheet').classList.contains('on')) showEntry(id, entryMode);
+  });
   const owned = found.has(id);
   if (owned && mode && mode !== 'quick' && !guessed.has(id) && !onCanvas(id) && expanded(id).leaves > 3)
     return askFirst(id, () => showEntry(id, mode));
@@ -10765,8 +10827,13 @@ function regressionTest() {
       const c = spawn(ids[i], (i % 20) * 90, Math.floor(i / 20) * 90, null, null, true);
       if (c && i >= 20) c.classList.add('folded');
     }
+    // Count only what THIS check put there. benchCount() is absolute, so the
+    // assertion failed whenever the suite was run on a board someone was
+    // already using — a test that depends on what you were doing is a bad test.
+    const visibleHere = [...world.querySelectorAll('.chip.board:not(.folded):not(.hidden)')]
+      .filter(c => !board0.includes(c)).length;
     check('folded cards do not use up the bench',
-      benchCount() <= 25 && !!spawn(ids[150], 0, 0, null, null, true));
+      visibleHere <= 25 && !!spawn(ids[150], 0, 0, null, null, true));
     check('and the bench itself still stops at MAX_VISIBLE in view',
       benchCount() <= MAX_VISIBLE && chipCount() <= MAX_CHIPS);
     for (const x of [...world.querySelectorAll('.chip.board')]) if (!board0.includes(x)) x.remove();

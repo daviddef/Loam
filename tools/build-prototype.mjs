@@ -112,6 +112,7 @@ try {
   new Function(script[1]
     .replace('__GAME_DATA__', '{elements:[],recipes:[],verbs:[],bedrock:{atoms:[],compounds:[],composition:{}},taxonomy:{ranks:[],groups:[]}}')
     .replace('__ART_DATA__', '{}')
+    .replace('__ARTCAT_DATA__', '{}')
     .replace('__SCALE_DATA__', '{}')
     .replace('__CAUTION_DATA__', '{}')
     .replace('__LABEL_DATA__', '{aliases:{},vague:{}}')
@@ -124,8 +125,58 @@ try {
   process.exit(1);
 }
 
+/* ── the payload split ─────────────────────────────────────────────────────
+ * Measured on this build: 8,073 kB shipped, and the graph a player needs to
+ * make the first move is 972 kB of it. The rest is prose and drawings, none of
+ * which is needed until a card is opened or drawn.
+ *
+ *   why   1,784 kB      art   2,057 kB
+ *   fact    759 kB      src     390 kB
+ *
+ * The prose comes out into prose.json and is merged back into the very same
+ * objects once it arrives, so all thirty-six call sites that read `.fact`,
+ * `.why` and `.src` keep working untouched — they simply see nothing for the
+ * first moment. The starters keep their prose inline, because those four cards
+ * are on screen before anything has had time to load and an empty card at the
+ * first glance is worse than a slower one.
+ */
+const KEEP_INLINE = new Set(data.elements.filter(e => e.starter).map(e => e.id));
+const prose = { facts: {}, esrc: {}, r: {} };
+for (const e of data.elements) {
+  if (KEEP_INLINE.has(e.id)) continue;
+  if (e.fact) { prose.facts[e.id] = e.fact; delete e.fact; }
+  if (e.src)  { prose.esrc[e.id]  = e.src;  delete e.src;  }
+}
+data.recipes.forEach((r, i) => {
+  const keep = KEEP_INLINE.has(r.out);
+  const row = {};
+  if (r.why && !keep)     { row.w = r.why;     delete r.why; }
+  if (r.src && !keep)     { row.s = r.src;     delete r.src; }
+  if (r.srcBook && !keep) { row.b = r.srcBook; delete r.srcBook; }
+  if (Object.keys(row).length) prose.r[i] = row;
+});
+writeFileSync(u('../prototype/prose.json'), JSON.stringify(prose));
+const proseKb = (JSON.stringify(prose).length / 1024).toFixed(1);
+
+/* The drawings go the same way, with one difference: a missing fact is a blank
+ * line and a missing drawing is a blank card, and a shelf of seven hundred
+ * blank cards looks broken rather than slow. So the CATEGORY of every drawing
+ * stays inline — 159 kB against 2,057 — and a card with no shapes yet draws a
+ * soft shape in its family's colour instead of nothing. The starters keep
+ * their real drawings, because those four are on screen at once. */
+const artCat = {};
+const artLate = {};
+for (const [id, rec] of Object.entries(art)) {
+  artCat[id] = rec.c;
+  if (!KEEP_INLINE.has(id)) artLate[id] = rec;
+}
+const artEarly = Object.fromEntries(Object.entries(art).filter(([id]) => KEEP_INLINE.has(id)));
+writeFileSync(u('../prototype/art.json'), JSON.stringify(artLate));
+const artKb = (JSON.stringify(artLate).length / 1024).toFixed(1);
+
 html = html.replace('__GAME_DATA__', JSON.stringify(data))
-           .replace('__ART_DATA__', JSON.stringify(art))
+           .replace('__ART_DATA__', JSON.stringify(artEarly))
+           .replace('__ARTCAT_DATA__', JSON.stringify(artCat))
            .replace('__SCALE_DATA__', JSON.stringify(scale))
            .replace('__CAUTION_DATA__', JSON.stringify(cautions))
            .replace('__LABEL_DATA__', JSON.stringify(labels))
