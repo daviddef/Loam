@@ -386,7 +386,9 @@
     "brooklyn_bridge": "Brooklyn Bridge",
     "log_building": "Log house",
     "shingle": "Wood shingle",
-    "kizhi_pogost": "Kizhi Pogost"
+    "kizhi_pogost": "Kizhi Pogost",
+    "onion_dome": "Onion dome",
+    "saint_basils": "Saint Basil's Cathedral"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -902,6 +904,8 @@
     "caisson+suspension_bridge": "Brooklyn Bridge",
     "axe+timber": "Log house",
     "timber+wedge": "Wood shingle",
-    "log_building+shingle": "Kizhi Pogost"
+    "log_building+shingle": "Kizhi Pogost",
+    "dome+tilework": "Onion dome",
+    "church+onion_dome": "Saint Basil's Cathedral"
   }
 }

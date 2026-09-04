@@ -43573,6 +43573,18 @@ def('kizhi_pogost',()=> [...[0, 1, 2].map(i =>
                             P(`M${x - 5} ${y + 6} Q${x - 6} ${y - 4} ${x} ${y - 6} Q${x + 6} ${y - 4} ${x + 5} ${y + 6} Z`, 'hi'),
                             S(`M${x} ${y - 6} L${x} ${y - 10}`, 'bs', 1.2)]).flat()]);
 
+/* Places, batch 23 — Eastern Europe. The onion dome is drawn wider than its
+   drum and drawn to a point, which is the whole difference from a dome.     */
+def('onion_dome',  () => [P('M20 34 L40 34 L40 50 L20 50 Z', 'lo'),          // the drum
+                          P('M16 34 Q12 20 30 6 Q48 20 44 34 Z', 'hi'),      // wider than the drum, to a point
+                          S('M30 6 L30 2', 'bs', 1.6),
+                          ...[0, 1, 2].map(i => S(`M${22 + i * 8} 34 Q${24 + i * 8} 22 30 12`, 'gh', 1))]);
+def('saint_basils',()=> [P('M8 52 L52 52 L52 40 L8 40 Z', 'lo'),
+                          ...[[14, 30], [30, 20], [46, 30], [22, 34], [38, 34]].map(([x, y], i) => [
+                            P(`M${x - 5} ${y + 10} L${x + 5} ${y + 10} L${x + 5} ${y + 2} L${x - 5} ${y + 2} Z`, 'lo'),
+                            P(`M${x - 6} ${y + 2} Q${x - 8} ${y - 6} ${x} ${y - 12} Q${x + 8} ${y - 6} ${x + 6} ${y + 2} Z`, i % 2 ? 'hi' : 'bs'),
+                            S(`M${x} ${y - 12} L${x} ${y - 15}`, 'lo', 1.2)]).flat()]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
