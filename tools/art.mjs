@@ -44146,6 +44146,42 @@ def('seokguram',    () => [P('M8 54 L8 34 A22 22 0 0 1 52 34 L52 54 Z', 'lo'),
                           }),
                           E(30, 46, 9, 4, 'bs'), C(30, 36, 6, 'hi')]);         // the Buddha, 3.5 m on a lotus
 
+/* Places, batch 15 — 5 Sep. The thin regions: Australia, Central Asia, West
+   and North Africa, South-eastern Asia. Port Arthur is drawn as the neck and
+   the water, because the geography is the prison.                           */
+def('port_arthur',  () => [wave('bs', 20, 2, 56), wave('bs', 46, 2, 56),
+                          P('M2 22 L24 22 L24 30 L36 30 L36 22 L58 22 L58 44 L36 44 L36 36 L24 36 L24 44 L2 44 Z', 'lo'),
+                          S('M24 30 L24 36', 'ik', 2.4), S('M36 30 L36 36', 'ik', 2.4),   // the 30 m neck
+                          ...[26, 30, 34].map(x => C(x, 33, 1.2, 'hi')),                  // and the dogs on it
+                          P('M42 28 L52 28 L52 38 L42 38 Z', 'gh'), S('M47 28 L47 38', 'bs', 1)]);
+def('kakadu_rock_art',()=>[P('M2 4 L58 4 L58 20 L46 26 L14 26 L2 20 Z', 'lo'),            // the overhang
+                          P('M2 26 L58 26 L58 56 L2 56 Z', 'bs'),
+                          S('M14 34 L14 48 M14 38 L10 44 M14 38 L18 44 M14 34 L14 30', 'hi', 1.6),
+                          C(14, 30, 2.2, 'hi'),
+                          S('M28 36 Q36 32 44 38 Q36 46 28 42 Z', 'hi', 1.6),             // a fish, seen through
+                          S('M32 38 L40 38', 'lo', 1.2), S('M36 35 L36 41', 'lo', 1.2)]);
+def('tash_rabat',   () => [P('M4 54 L4 30 L56 30 L56 54 Z', 'lo'),
+                          ...[12, 24, 36, 48].map(x => [P(`M${x - 7} 30 A7 7 0 0 1 ${x + 7} 30 Z`, 'bs'),
+                                                        C(x, 26, 1.6, 'hi')]).flat(),     // a hole at the top of each
+                          ...[18, 30, 42].map(x => S(`M${x} 30 L${x} 54`, 'gh', 1)),
+                          P('M26 42 L34 42 L34 54 L26 54 Z', 'gh')]);
+def('larabanga_mosque',()=>[P('M12 54 L12 26 L48 26 L48 54 Z', 'lo'),
+                          ...[16, 24, 32, 40].map(x => P(`M${x - 3} 54 L${x - 1.5} 26 L${x + 1.5} 26 L${x + 3} 54 Z`, 'bs')),
+                          ...[0, 1, 2].map(i => [S(`M10 ${34 + i * 7} L50 ${34 + i * 7}`, 'ik', 1.2),
+                                                 ...[14, 26, 38, 46].map(x => C(x, 34 + i * 7, 1.3, 'ik'))]).flat(),  // the timbers, through the wall
+                          P('M14 26 L20 12 L26 26 Z', 'lo'), P('M40 26 L45 14 L50 26 Z', 'lo')]);
+def('volubilis',    () => [...[10, 24].map(x => [P(`M${x - 2} 44 L${x - 2} 14 L${x + 2} 14 L${x + 2} 44 Z`, 'lo'),
+                                                 P(`M${x - 4} 14 L${x + 4} 14 L${x + 4} 10 L${x - 4} 10 Z`, 'bs')]).flat(),
+                          S('M4 10 L30 10', 'bs', 2),
+                          C(44, 30, 10, 'lo'), C(44, 30, 4, 'bs'), S('M44 20 L44 40', 'ik', 2),   // the press
+                          E(44, 46, 8, 4, 'hi'),                                          // and the basin under it
+                          S('M4 52 L56 52', 'ik', 1.4)]);
+def('ayutthaya',    () => [S('M4 44 Q16 16 30 22 Q44 28 56 8', 'bs', 3),                  // the meander
+                          S('M18 20 L18 48', 'gh', 2.4),                                  // and the cut that closes it
+                          P('M20 26 L20 44 L44 44 L44 26 Z', 'lo'),
+                          ...[26, 34, 42].map(x => P(`M${x - 4} 44 L${x - 3} 30 L${x} 20 L${x + 3} 30 L${x + 4} 44 Z`, 'bs')),
+                          S('M4 52 L56 52', 'ik', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

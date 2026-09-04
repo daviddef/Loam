@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 15, 5 Sep. a mosque 8 m square, a caravanserai of 31 rooms, a painted panel */
+    'larabanga_mosque', 'tash_rabat', 'kakadu_rock_art',
     /* places batch 14, 5 Sep. spires 157 m, a nave, a granite rotunda */
     'cologne_cathedral', 'notre_dame', 'seokguram',
     /* places batch 12, 5 Sep. an octagon 60 m across, a stave church of one room */
@@ -1237,6 +1239,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 15, 5 Sep. a town of 42 hectares, an island city, a penal settlement */
+    'volubilis', 'ayutthaya', 'port_arthur',
     /* places batch 13, 5 Sep. a 150-hectare city, a dam 221 m high, a fortress on eight islands, a hall 57 m long */
     'harappa', 'hoover_dam', 'suomenlinna', 'todai_ji',
     /* places batch 12, 5 Sep. a plateau 550 by 270 m */
