@@ -167,7 +167,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     and the third one is true — it carries the mechanism that makes it work and a source
     you can open. This is the guide to how that is done and how it is kept honest.</p>
   <p class="stamp">Generated from the corpus on 2026-09-04 · <code>node tools/guide.mjs</code> ·
-    7,564 elements · 9,434 recipes</p>
+    7,564 elements · 9,435 recipes</p>
 </header>
 
 <nav class="rail" aria-label="Contents">
@@ -351,8 +351,8 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     the data files at the moment this page was generated.</p>
   <div class="figs">
     <div class="fig"><b>7,564</b><span>elements, every one reachable from stone, water, sun and seed</span></div>
-    <div class="fig"><b>9,434</b><span>recipes — 8,487 merges, 947 verb processes</span></div>
-    <div class="fig"><b>9,434</b><span>recipes carrying a source resolved against a live article</span></div>
+    <div class="fig"><b>9,435</b><span>recipes — 8,488 merges, 947 verb processes</span></div>
+    <div class="fig"><b>9,435</b><span>recipes carrying a source resolved against a live article</span></div>
     <div class="fig"><b>7,798</b><span>drawings, none of them emoji</span></div>
     <div class="fig"><b>20</b><span>orders of magnitude, 10⁻¹⁰ m to 10⁹ m</span></div>
     <div class="fig"><b>10</b><span>category colours, each a measured Munsell chip</span></div>
@@ -364,7 +364,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     <thead><tr><th scope="col">File</th><th scope="col">Holds</th><th scope="col">What it is</th></tr></thead>
     <tbody>
       <tr><th scope="row"><code>elements.json</code></th><td class="num">7,564</td><td>id, name, shelf, tags, taxon, and a one-line codex fact</td></tr>
-      <tr><th scope="row"><code>recipes.json</code></th><td class="num">9,434</td><td>inputs, optional verb, output, the mechanism text, and its source</td></tr>
+      <tr><th scope="row"><code>recipes.json</code></th><td class="num">9,435</td><td>inputs, optional verb, output, the mechanism text, and its source</td></tr>
       <tr><th scope="row"><code>verbs.json</code></th><td class="num">8</td><td>the process verbs and what unlocks each</td></tr>
       <tr><th scope="row"><code>families.json</code></th><td class="num">—</td><td>the tag vocabulary and the shelf families, shared by the game and the tools</td></tr>
       <tr><th scope="row"><code>art.json</code></th><td class="num">7,798</td><td>every drawing, as shapes with roles rather than colours</td></tr>
@@ -378,7 +378,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
       <tr><th scope="row"><code>cautions.json</code></th><td class="num">343</td><td>hazards, written as description and never as method</td></tr>
       <tr><th scope="row"><code>allergens.json</code></th><td class="num">14</td><td>the regulated allergens, named by protein rather than by food</td></tr>
       <tr><th scope="row"><code>labels.json</code></th><td class="num">1,060</td><td>what a packet calls an ingredient, and what a person types into search</td></tr>
-      <tr><th scope="row"><code>sources.json</code></th><td class="num">403</td><td>article titles, never URLs — the URLs are resolved, not written</td></tr>
+      <tr><th scope="row"><code>sources.json</code></th><td class="num">404</td><td>article titles, never URLs — the URLs are resolved, not written</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -521,7 +521,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>No URL in this repository was typed by a person. data/sources.json holds article <em>titles</em>; the tool resolves each against the live Wikipedia API, follows redirects, and refuses to write anything it could not fetch. Only then does <code>apply</code> put URLs into recipes.json.</p>
           <p class="found"><b>What it caught.</b> On its first run it caught one title that did not exist and four that silently redirected somewhere else. It still reports redirects on every run — Percolozoa now answers to Heterolobosea, Aquifoliaceae to Holly — which is how a citation quietly stops pointing at what it claimed to. Resolutions are cached for thirty days: re-asking about every title on every run had grown to twenty minutes of backoff against rate limits, and a check that expensive is a check a content batch quietly skips.</p>
         </div>
-        <p class="now">9,434 of 9,434 recipes carry a resolved source (100%).</p>
+        <p class="now">9,435 of 9,435 recipes carry a resolved source (100%).</p>
       </article>
       <article class="mech" id="m-audit">
         <header>
@@ -533,7 +533,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Pulls every figure, date and named person out of the teaching text, fetches the cited article, and looks for it. A claim that cannot be found in its own source is not automatically wrong — but it is unsupported, and it is listed.</p>
           <p class="found"><b>What it caught.</b> This is the mechanism the whole project rests on. Auditing our own confident, fluent, well-written prose against primary reporting found a first-pass error rate near half. A greenhouse does not work by trapping infrared; flint was given obsidian's record; the "200 million lives" penicillin figure traces to a magazine ranking. All fluent. All wrong.</p>
         </div>
-        <p class="now">7,353 recipes independently verified, 1,685 article-supported.</p>
+        <p class="now">7,354 recipes independently verified, 1,685 article-supported.</p>
       </article>
     </section>
     <section class="mgroup">
@@ -586,7 +586,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>A landmark is the one kind of element where being generically true is a failure, and it passes every other check here: the sentence is true, the source resolves, the drawing is distinct, the scale is right. So this asks two things nothing else can. <b>Deep</b> — does each place carry the four facts that make it <em>that</em> place: when, who, what of, and why there? <b>Global</b> — measured against a world checklist of 214 sites across the 22 UN M49 subregions, because coverage measured against what you happen to have is not coverage, it is a total, and it will report a corpus of European castles as complete.</p>
           <p class="found"><b>What it caught.</b> Landmarks fail the same way heat recipes did. The Colosseum came from <code>stone + lion</code> — a lion is a thing that was in it, not a thing it is made of; it is faced in travertine carted twenty miles from Tibur and pinned with iron cramps, and one side is missing because the cramps were robbed out for their metal. The Great Wall came from <code>china + mongolia</code>. The Ishtar Gate came from clay and glass with nobody to build it. Five association faults in twenty places, in a set nothing else had ever flagged.</p>
         </div>
-        <p class="now">84 of 214 checklist places exist (39%), across 22 regions. 88 of 88 carry all four facts.</p>
+        <p class="now">84 of 214 checklist places exist (39%), across 22 regions. 89 of 89 carry all four facts.</p>
       </article>
     </section>
     <section class="mgroup">
@@ -704,7 +704,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Counts routes per element and finds the single-route chokepoints that gate the most of the graph. A game where everything has exactly one recipe is a puzzle with one solution and no room to be stuck in.</p>
           <p class="found"><b>What it caught.</b> The ratio is the honest number here and it is not good yet: a large majority of made elements have exactly one route.</p>
         </div>
-        <p class="now">1.25 recipes per made element. 6,074 of 7,563 are single-route.</p>
+        <p class="now">1.25 recipes per made element. 6,073 of 7,563 are single-route.</p>
       </article>
       <article class="mech" id="m-discover">
         <header>
@@ -716,7 +716,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Simulates a player against the real graph under different assist policies. Discoverability is the design risk that gets worse as the corpus grows, because every element added makes the haystack bigger faster than it adds needles.</p>
           <p class="found"><b>What it caught.</b> Tag-affinity nudging — the intuitive answer — was simulated and rejected: it stalls early, because the best recipes cross categories on purpose. The assist that survived is a secrets-remaining count, which narrows the field without ever naming a partner.</p>
         </div>
-        <p class="now">8,487 merges among 28,603,266 possible pairs.</p>
+        <p class="now">8,488 merges among 28,603,266 possible pairs.</p>
       </article>
     </section>
   <p class="pull"><b>Recording that nothing happens.</b> A broad expectation rule
@@ -760,7 +760,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
   <p>Because of that last step, a claim carries a second flag beyond its source:</p>
   <ul class="plain">
     <li><b>verified</b> — independently checked against primary reporting. Shows a tick in
-      the game. 7,353 recipes.</li>
+      the game. 7,354 recipes.</li>
     <li><b>supported</b> — a standard mechanism the cited article states directly:
       photosynthesis, osmosis, gluten. No independent search, and no tick.
       1,685 recipes.</li>
@@ -1023,7 +1023,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
 
 <footer>
   <p>Loam. Generated from the corpus on 2026-09-04 — 7,564 elements,
-    9,434 recipes, 9,434 of them carrying a source resolved
+    9,435 recipes, 9,435 of them carrying a source resolved
     against a live article. If a figure on this page looks wrong, the corpus is wrong:
     run <code>node tools/guide.mjs</code> and it will say the same thing.</p>
 </footer>
