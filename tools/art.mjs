@@ -45329,6 +45329,19 @@ def('anemophily',   () => [S('M30 56 L30 26', 'lo', 3),
                           ...granules('hi', 26, 60, [30, 4, 58, 34]),               // all of it, going nowhere
                           ...[0, 1, 2].map(i => S(`M32 ${8 + i * 6} Q44 ${6 + i * 6} 56 ${10 + i * 6}`, 'gh', 1.4))]);
 
+/* Verb outcomes, 5 Sep — the chill verb. Two of these and the stale bread from
+   earlier tonight are one mechanism: a dissolved thing coming back out of
+   solution as a crystal, once it is cold enough to be allowed to.          */
+def('resistant_starch',()=>[E(30, 36, 18, 14, 'lo'),
+                          ...[[24, 32], [34, 30], [28, 40], [38, 38]].map(([x, y]) =>
+                            [S(`M${x - 5} ${y} L${x + 5} ${y}`, 'hi', 1.4), S(`M${x - 5} ${y + 2.5} L${x + 5} ${y + 2.5}`, 'hi', 1.4)]).flat(),
+                          ...granules('gh', 8, 28, [16, 26, 44, 46]),
+                          S('M12 16 L20 12', 'ik', 1.4), C(22, 11, 1.6, 'ik')]);
+def('chocolate_bloom',()=>[P('M10 20 L50 20 L50 46 L10 46 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M10 ${26 + i * 7} L50 ${26 + i * 7}`, 'ik', 1)),
+                          ...[0, 1, 2].map(i => S(`M${23 + i * 13} 20 L${23 + i * 13} 46`, 'ik', 1)),
+                          ...granules('hi', 22, 6, [12, 21, 48, 45])]);   // the film that came up to the surface
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

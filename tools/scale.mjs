@@ -290,6 +290,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    /* verb outcomes, 5 Sep. a cooled potato and a bar of chocolate */
+    'resistant_starch', 'chocolate_bloom',
     /* verb outcomes, 5 Sep. an emptied eggshell */
     'blown_egg',
     /* verb outcomes, 5 Sep. a leaf, a bean, a dried plum */
