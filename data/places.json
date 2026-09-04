@@ -1063,12 +1063,15 @@
    "region": "west_africa",
    "country": "nigeria",
    "kind": "fortification",
-   "when": "the Inner City Iya about 1460; moat building possibly from as early as 800",
-   "who": "the Edo of the Kingdom of Benin",
+   "checklist": "Benin Moat",
+   "when": "from as early as 800 AD into the modern era; the Inner City Iya about 1460",
+   "who": "the Edo, ward by ward and village by village, later under the Ogiso kings and Obas such as Oguola and Ewuare",
    "of": [
-    "soil"
+    "soil",
+    "earthwork"
    ],
-   "site": "around Benin City — the inner moat about 12 km, and up to 17 m from ditch floor to rampart top. Estimates of 16,000 km for the wider Edo earthworks are a sum of many separate structures of different dates, not one wall",
+   "site": "the flat forest country around Benin City, where there is no stone to build with and no hill to build on — so the defence is dug rather than raised, and the material is the ground itself",
+   "size": "the Inner City Iya about 12 km; the combined earthworks of Edo State estimated at some 16,000 km over about 6,500 km², with drops of up to 17 m from rampart top to ditch floor",
    "srcTitle": "Walls of Benin"
   },
   "merv": {
@@ -1444,21 +1447,6 @@
    "site": "the flat alluvial plain of southern Mesopotamia, where there is no stone and no hill — so a temple that wants height has to be built out of the mud it stands on",
    "size": "about 64 m by 45 m at the base; the height is an estimate, since only the foundations survive from the Sumerian period",
    "srcTitle": "Ziggurat of Ur"
-  },
-  "benin_walls": {
-   "region": "west_africa",
-   "country": "nigeria",
-   "kind": "fortification",
-   "checklist": "Benin Walls",
-   "when": "from as early as 800 AD into the modern era; the Inner City Iya about 1460",
-   "who": "the Edo, ward by ward and village by village, later under the Ogiso kings and Obas such as Oguola and Ewuare",
-   "of": [
-    "soil",
-    "earthwork"
-   ],
-   "site": "the flat forest country around Benin City, where there is no stone to build with and no hill to build on — so the defence is dug rather than raised, and the material is the ground itself",
-   "size": "the Inner City Iya about 12 km; the combined earthworks of Edo State estimated at some 16,000 km over about 6,500 km², with drops of up to 17 m from rampart top to ditch floor",
-   "srcTitle": "Walls of Benin"
   },
   "tiwanaku": {
    "region": "south_america",
@@ -3221,25 +3209,39 @@
    "Djemila — settlement",
    "Great Pyramid of Giza — tomb",
    "Lighthouse of Alexandria — engineering",
-   "Nabta Playa — settlement"
+   "Nabta Playa — settlement",
+   "Abu Simbel — worship",
+   "Karnak — worship",
+   "Valley of the Kings — tomb",
+   "Timgad — settlement",
+   "Fes el Bali — settlement"
   ],
   "west_africa": [
    "Great Mosque of Djenne — worship",
-   "Benin Walls — fortification",
    "Sungbo's Eredo — fortification",
    "Nok terracottas — monument",
    "Cape Coast Castle — fortification",
    "Larabanga Mosque — worship",
    "Kumasi Manhyia — palace",
    "Igbo-Ukwu bronzes — monument",
-   "Benin Moat — fortification"
+   "Benin Moat — fortification",
+   "Timbuktu — settlement",
+   "Kano city walls — fortification",
+   "Osun-Osogbo Sacred Grove — worship",
+   "Bandiagara Escarpment — settlement",
+   "Elmina Castle — fortification",
+   "Ruins of Loropeni — fortification"
   ],
   "middle_africa": [
    "Kongo capital Mbanza-Kongo — settlement",
    "Sangha Trinational — natural",
    "Lope-Okanda rock engravings — rock_art",
    "Dzanga-Sangha — natural",
-   "Loango slave route sites — settlement"
+   "Loango slave route sites — settlement",
+   "Ennedi Massif — natural",
+   "Virunga National Park — natural",
+   "Lake Chad — natural",
+   "Salonga National Park — natural"
   ],
   "east_africa": [
    "Lalibela rock-hewn churches — worship",
@@ -3251,7 +3253,11 @@
    "Olduvai Gorge — settlement",
    "Ngorongoro Crater — natural",
    "Mount Kilimanjaro — natural",
-   "Obelisk of Axum — monument"
+   "Zanzibar Stone Town — settlement",
+   "Gedi ruins — settlement",
+   "Lake Turkana — natural",
+   "Simien Mountains — natural",
+   "Songo Mnara — settlement"
   ],
   "south_africa_r": [
    "Mapungubwe — settlement",
@@ -3260,7 +3266,12 @@
    "Table Mountain — natural",
    "Robben Island — fortification",
    "Tsodilo Hills — rock_art",
-   "Twyfelfontein — rock_art"
+   "Twyfelfontein — rock_art",
+   "Cradle of Humankind — settlement",
+   "Okavango Delta — natural",
+   "Namib Sand Sea — natural",
+   "Richtersveld — natural",
+   "Blyde River Canyon — natural"
   ],
   "north_america": [
    "Cahokia Mounds — settlement",
@@ -3273,7 +3284,13 @@
    "Head-Smashed-In Buffalo Jump — settlement",
    "Old Quebec — settlement",
    "Niagara Falls — natural",
-   "L'Anse aux Meadows — settlement"
+   "L'Anse aux Meadows — settlement",
+   "Statue of Liberty — monument",
+   "Golden Gate Bridge — engineering",
+   "Taos Pueblo — settlement",
+   "Serpent Mound — monument",
+   "Yosemite Valley — natural",
+   "Redwood forests — natural"
   ],
   "central_america": [
    "Chichen Itza — worship",
@@ -3283,7 +3300,12 @@
    "Copan — settlement",
    "Monte Alban — settlement",
    "Panama Canal — engineering",
-   "Joya de Ceren — settlement"
+   "Joya de Ceren — settlement",
+   "Uxmal — settlement",
+   "Calakmul — settlement",
+   "Quirigua — settlement",
+   "Tulum — settlement",
+   "Xochicalco — settlement"
   ],
   "caribbean": [
    "Citadelle Laferriere — fortification",
@@ -3291,7 +3313,12 @@
    "Old Havana — settlement",
    "Morne Trois Pitons — natural",
    "El Morro San Juan — fortification",
-   "Taino rock art of Cueva de las Maravillas — rock_art"
+   "Taino rock art of Cueva de las Maravillas — rock_art",
+   "Vinales Valley — natural",
+   "Blue and John Crow Mountains — natural",
+   "Historic Willemstad — settlement",
+   "Nelson's Dockyard — engineering",
+   "Trinidad de Cuba — settlement"
   ],
   "south_america": [
    "Machu Picchu — settlement",
@@ -3304,7 +3331,13 @@
    "Salar de Uyuni — natural",
    "Cueva de las Manos — rock_art",
    "Qhapaq Nan road — engineering",
-   "Rapa Nui moai — monument"
+   "Rapa Nui moai — monument",
+   "Cusco — settlement",
+   "Chan Chan — settlement",
+   "Ciudad Perdida — settlement",
+   "Torres del Paine — natural",
+   "Galapagos Islands — natural",
+   "Potosi silver mines — industry"
   ],
   "central_asia": [
    "Registan Samarkand — worship",
@@ -3313,7 +3346,12 @@
    "Gur-e-Amir — tomb",
    "Tash Rabat caravanserai — engineering",
    "Otrar — settlement",
-   "Aral Sea — natural"
+   "Aral Sea — natural",
+   "Itchan Kala Khiva — settlement",
+   "Mausoleum of Khoja Ahmed Yasawi — tomb",
+   "Shakhrisyabz — settlement",
+   "Nisa — settlement",
+   "Konye-Urgench — settlement"
   ],
   "east_asia": [
    "Great Wall — fortification",
@@ -3329,7 +3367,15 @@
    "Seokguram Grotto — worship",
    "Hwaseong Fortress — fortification",
    "Erdene Zuu — worship",
-   "Grand Canal — engineering"
+   "Grand Canal — engineering",
+   "Kiyomizu-dera — worship",
+   "Nikko Toshogu — worship",
+   "Leshan Giant Buddha — monument",
+   "Pingyao ancient city — settlement",
+   "Classical Gardens of Suzhou — palace",
+   "Changdeokgung — palace",
+   "Karakorum — settlement",
+   "Jiuzhaigou — natural"
   ],
   "southeast_asia": [
    "Angkor Wat — worship",
@@ -3341,7 +3387,13 @@
    "Ha Long Bay — natural",
    "Hue Citadel — fortification",
    "My Son — worship",
-   "Sukhothai — settlement"
+   "Sukhothai — settlement",
+   "Wat Phra Kaew — worship",
+   "Plain of Jars — monument",
+   "Historic Vigan — settlement",
+   "Komodo National Park — natural",
+   "Gunung Mulu caves — natural",
+   "Luang Prabang — settlement"
   ],
   "south_asia": [
    "Taj Mahal — tomb",
@@ -3355,7 +3407,15 @@
    "Sigiriya — fortification",
    "Anuradhapura — settlement",
    "Lalitpur Durbar Square — palace",
-   "Sundarbans — natural"
+   "Sundarbans — natural",
+   "Khajuraho — worship",
+   "Hampi — settlement",
+   "Fatehpur Sikri — palace",
+   "Qutb Minar — monument",
+   "Mahabodhi Temple — worship",
+   "Lothal — settlement",
+   "Dambulla cave temple — worship",
+   "Pashupatinath — worship"
   ],
   "west_asia": [
    "Petra — settlement",
@@ -3374,7 +3434,13 @@
    "Cappadocia rock churches — worship",
    "Temple of Artemis — worship",
    "Mausoleum at Halicarnassus — tomb",
-   "Hanging Gardens of Babylon — monument"
+   "Hanging Gardens of Babylon — monument",
+   "Nemrut Dag — tomb",
+   "Bosra — settlement",
+   "Citadel of Aleppo — fortification",
+   "Old City of Sanaa — settlement",
+   "Ephesus — settlement",
+   "Hattusa — settlement"
   ],
   "north_europe": [
    "Stonehenge — monument",
@@ -3388,7 +3454,14 @@
    "Hadrian's Wall — fortification",
    "Suomenlinna — fortification",
    "Vigelandsparken — monument",
-   "Geirangerfjord — natural"
+   "Geirangerfjord — natural",
+   "Bryggen — settlement",
+   "Visby town wall — fortification",
+   "Tower of London — fortification",
+   "Edinburgh Old Town — settlement",
+   "Roskilde Cathedral — worship",
+   "Rock art of Alta — rock_art",
+   "Struve Geodetic Arc — engineering"
   ],
   "south_europe": [
    "Colosseum — monument",
@@ -3412,7 +3485,16 @@
    "Statue of Zeus at Olympia — monument",
    "Velebit — natural",
    "Walls of Dubrovnik — fortification",
-   "Senj — settlement"
+   "Senj — settlement",
+   "Florence Cathedral dome — worship",
+   "Venice and its lagoon — settlement",
+   "Roman Forum — settlement",
+   "Mezquita of Cordoba — worship",
+   "Delphi — worship",
+   "Mycenae — fortification",
+   "Akrotiri Santorini — settlement",
+   "Sassi di Matera — settlement",
+   "Sintra — palace"
   ],
   "east_europe": [
    "Saint Basil's Cathedral — worship",
@@ -3424,7 +3506,13 @@
    "Kizhi Pogost — worship",
    "Bialowieza Forest — natural",
    "Rila Monastery — worship",
-   "Sighisoara — settlement"
+   "Sighisoara — settlement",
+   "Veliky Novgorod — settlement",
+   "Krakow Old Town — settlement",
+   "Buda Castle — palace",
+   "Danube Delta — natural",
+   "Painted churches of Bucovina — worship",
+   "Orheiul Vechi — settlement"
   ],
   "west_europe": [
    "Notre-Dame de Paris — worship",
@@ -3438,7 +3526,13 @@
    "Zollverein Coal Mine — industry",
    "Amsterdam canal ring — engineering",
    "Aachen Cathedral — worship",
-   "Palace of Versailles — palace"
+   "Palace of Versailles — palace",
+   "Historic Bruges — settlement",
+   "Schonbrunn Palace — palace",
+   "Jungfrau-Aletsch — natural",
+   "Kinderdijk windmills — engineering",
+   "Speyer Cathedral — worship",
+   "Vezelay Abbey — worship"
   ],
   "anz": [
    "Uluru — natural",
@@ -3448,25 +3542,39 @@
    "Port Arthur — fortification",
    "Te Wahipounamu — natural",
    "Waitangi Treaty Grounds — settlement",
-   "Kakadu rock art — rock_art"
+   "Kakadu rock art — rock_art",
+   "Ningaloo Coast — natural",
+   "Tongariro National Park — natural",
+   "Royal Exhibition Building — monument",
+   "Shark Bay — natural",
+   "Willandra Lakes — settlement",
+   "Naracoorte caves — natural"
   ],
   "melanesia": [
    "Chief Roi Mata's Domain — settlement",
    "Kuk Early Agricultural Site — settlement",
    "Levuka — settlement",
-   "Rennell — natural"
+   "Rennell — natural",
+   "Lagoons of New Caledonia — natural",
+   "Sigatoka Sand Dunes — settlement",
+   "Teouma Lapita cemetery — tomb"
   ],
   "micronesia": [
    "Nan Madol — settlement",
    "Latte Stones of Guam — monument",
-   "Bikini Atoll — settlement"
+   "Bikini Atoll — settlement",
+   "Rock Islands of Palau — natural",
+   "Lelu ruins — settlement"
   ],
   "polynesia": [
-   "Rapa Nui moai — monument",
    "Taputapuatea marae — worship",
    "Puuhonua o Honaunau — worship",
    "Mauna Kea — natural",
-   "Tongan Haamonga a Maui — monument"
+   "Tongan Haamonga a Maui — monument",
+   "Pulemelei mound — monument",
+   "Langi tombs of Lapaha — tomb",
+   "Kilauea — natural",
+   "Papahanaumokuakea — natural"
   ]
  }
 }

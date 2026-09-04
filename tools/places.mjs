@@ -131,6 +131,22 @@ for (const w of wanted) {
   seen.set(key, 1); seen.set(alt, 1);
 }
 
+/* The string check above only catches lines that LOOK alike. It missed three
+ * pairs that did not: "Aksum stelae" and "Obelisk of Axum" were one element
+ * counted twice, "Rapa Nui moai" was on two regions' lists at once, and
+ * "Benin Walls" and "Benin Moat" were two elements written for one monument
+ * six months apart. The reliable test is not what the lines say but what
+ * satisfies them: one element must not close two lines. That is a fact about
+ * the corpus rather than about spelling, and it is the check that holds. */
+const bySatisfier = new Map();
+const doubleCounted = [];
+for (const w of wanted) {
+  if (!w.el) continue;
+  if (bySatisfier.has(w.el.id)) {
+    doubleCounted.push({ id: w.el.id, a: bySatisfier.get(w.el.id), b: w });
+  } else bySatisfier.set(w.el.id, w);
+}
+
 // ---------------------------------------------------------------- depth
 
 const depthOf = (entry) => DEPTH.filter(([f]) => {
@@ -279,6 +295,16 @@ for (const [f, c] of fieldMiss) if (c) console.log(`     ${String(c).padStart(3)
 
 const bad = joined.filter(([id, e]) => !derivation(id, e.kind).ok);
 let fatal = 0;
+if (doubleCounted.length) {
+  fatal += doubleCounted.length;
+  console.log(`\n  \u2717 ${doubleCounted.length} element(s) closing two checklist lines at once:`);
+  for (const d of doubleCounted) {
+    console.log(`      ${d.id} satisfies "${d.a.name}" (${d.a.region}) and "${d.b.name}" (${d.b.region})`);
+  }
+  console.log(`      One monument, one line. A double count inflates numerator and`);
+  console.log(`      denominator together, so the percentage never shows it.`);
+}
+
 if (dupes.length) {
   fatal += dupes.length;
   console.log(`\n  \u2717 ${dupes.length} checklist place(s) listed twice in the same region:`);

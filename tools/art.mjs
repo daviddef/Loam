@@ -43809,11 +43809,10 @@ def('cone_solid',   () => [P('M30 10 L48 44 L12 44 Z', 'lo'),
 /* Places, batch 6 — 5 Sep. Benin is drawn as a section through ditch and bank
    rather than as a wall, because that is what it is; Ellora is drawn as a
    temple standing in a pit, because nothing was added to make it.           */
-def('benin_walls',  () => [P('M4 30 L18 30 L26 50 L34 50 L42 30 L56 30 L56 54 L4 54 Z', 'lo'),
-                          P('M14 30 L18 14 L24 30 Z', 'hi'),                  // the spoil, banked behind
-                          P('M36 30 L42 14 L46 30 Z', 'hi'),
-                          S('M26 50 L34 50', 'ik', 1.6),
-                          S('M4 30 L14 30', 'gh', 1), S('M46 30 L56 30', 'gh', 1)]);
+/* benin_walls was drawn here, and benin_moat had been drawn six months earlier
+   for the same monument. The two drawings were nearly the same picture, which
+   is what a duplicate element looks like from the art side. Merged; the older
+   drawing stands. */
 def('tiwanaku',     () => [...[[10, 40], [24, 40], [38, 40]].map(([x, y]) => P(`M${x} ${y} L${x + 12} ${y} L${x + 12} ${y + 12} L${x} ${y + 12} Z`, 'lo')),
                           ...[[17, 28], [31, 28]].map(([x, y]) => P(`M${x} ${y} L${x + 12} ${y} L${x + 12} ${y + 12} L${x} ${y + 12} Z`, 'lo')),
                           P('M22 10 L38 10 L38 26 L22 26 Z', 'bs'),           // the gateway, cut from one block
@@ -44591,6 +44590,16 @@ if (malformed.length) {
 
 
 
+// Bedrock drawings live in the same table under a bed_ prefix and answer to
+// compound ids rather than element ids, so they are not orphans.
+const elementIds = new Set(elements.map(e => e.id));
+const orphanDefs = Object.keys(ART).filter(id => !id.startsWith('bed_') && !elementIds.has(id));
+if (orphanDefs.length) {
+  // A drawing for an id nothing answers to is dead code, and it is usually the
+  // trace of a rename or a merge — benin_walls left one behind on 5 Sep and
+  // only scale.mjs noticed. Cheap to check, and it points at real edits.
+  console.log(`\n  ${orphanDefs.length} drawing(s) for ids that are not elements: ${orphanDefs.join(', ')}`);
+}
 const drawn = elements.length - missing.length;
 console.log(`  ${drawn}/${elements.length} items drawn by hand, ${missing.length} on the family fallback`);
 

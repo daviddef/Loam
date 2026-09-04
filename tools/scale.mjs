@@ -1438,7 +1438,7 @@ const SCALE = {
     /* places batch 8, 5 Sep. a forest-savanna mosaic, a primeval forest, 100 km of canal */
     'lope_okanda', 'bialowieza', 'amsterdam_canals',
     /* places batch 6, 5 Sep. a city on the altiplano; earthworks measured in thousands of km */
-    'tiwanaku', 'benin_walls',
+    'tiwanaku',
     /* places batch 5, 5 Sep. terraces climbing a whole valley side */
     'banaue_terraces',
           /* places batch 34, 5 Sep */
