@@ -44964,6 +44964,41 @@ def('blyde_river_canyon',()=>[P('M2 4 L24 4 L24 30 L36 30 L36 4 L58 4 L58 56 L2 
                           S('M44 4 L44 34', 'hi', 3),                                       // and the falls that build
                           ...[0, 1, 2].map(i => E(44, 36 + i * 5, 6 - i, 2, 'hi'))]);
 
+/* Places, batch 37 — 5 Sep. Lake Chad is drawn as a shallow dish over a deep
+   aquifer, because the depth ratio is the fact; the redwoods with the fog in
+   the crown rather than rain on the ground.                                 */
+def('ennedi',       () => [P('M2 40 L58 40 L58 56 L2 56 Z', 'lo'),
+                          P('M8 40 L8 18 L18 18 L18 40 Z', 'lo'),
+                          P('M18 18 Q26 8 34 18 L34 24 Q26 16 18 24 Z', 'lo'),   // the arch
+                          P('M34 40 L34 18 L44 18 L44 40 Z', 'lo'),
+                          E(28, 48, 12, 4, 'gh'),
+                          E(26, 47, 5, 1.6, 'bs'), C(21, 47, 1, 'ik'), S('M31 47 L36 49', 'bs', 1.6)]);   // the crocodile
+def('lake_chad',    () => [P('M6 34 Q30 30 54 34 Q52 40 30 41 Q8 40 6 34 Z', 'gh'),
+                          S('M4 34 L56 34', 'ik', 1),
+                          P('M2 44 L58 44 L58 56 L2 56 Z', 'lo'),                 // the aquifer, much bigger
+                          ...granules('gh', 22, 500, [4, 45, 56, 55]),
+                          S('M8 30 L14 30', 'bs', 1.2), S('M46 30 L52 30', 'bs', 1.2)]);   // where the shore used to be
+def('songo_mnara',  () => [...[[10, 30], [26, 28], [44, 32], [16, 46], [38, 46]].map(([x, y]) =>
+                            P(`M${x - 7} ${y + 8} L${x - 7} ${y} L${x + 7} ${y} L${x + 7} ${y + 8} Z`, 'lo')),
+                          ...[[26, 28], [38, 46]].map(([x, y]) => E(x, y, 7, 3.4, 'bs')),   // the mosques
+                          ...granules('gh', 14, 14, [4, 24, 56, 54]),
+                          P('M4 12 L20 12 L20 20 L4 20 Z', 'gh'),                 // an open space, deliberate
+                          wave('bs', 56, 1.4, 56)]);
+def('richtersveld', () => [...[0, 1, 2].map(i => S(`M2 ${10 + i * 5} Q18 ${7 + i * 5} 34 ${10 + i * 5}`, 'gh', 2.6)),
+                          P('M2 56 Q16 40 28 44 Q40 48 58 38 L58 56 Z', 'lo'),
+                          ...[[14, 44], [30, 46], [46, 42]].map(([x, y]) =>
+                            [S(`M${x} ${y + 10} L${x} ${y}`, 'lo', 3), C(x - 3, y - 2, 3, 'bs'), C(x + 3, y - 3, 3, 'bs'), C(x, y - 6, 3.4, 'bs')]).flat(),
+                          P('M6 52 Q12 44 18 52 Z', 'hi')]);                      // the mat house
+def('redwood_forests',()=>[...[0, 1, 2].map(i => S(`M2 ${10 + i * 6} Q30 ${6 + i * 6} 58 ${10 + i * 6}`, 'gh', 3)),   // the fog, in the crown
+                          ...[14, 30, 46].map((x, i) => [S(`M${x} 56 L${x} ${16 + i * 3}`, 'lo', 5),
+                                                         ...[0, 1, 2, 3].map(j => S(`M${x} ${24 + j * 8 + i * 3} L${x + (j % 2 ? 9 : -9)} ${20 + j * 8 + i * 3}`, 'lo', 2))]).flat(),
+                          S('M2 56 L58 56', 'ik', 1.4)]);
+def('loropeni',     () => [P('M6 12 L54 12 L54 50 L6 50 Z', 'lo'),
+                          P('M14 20 L46 20 L46 42 L14 42 Z', 'gh'),
+                          ...[0, 1, 2].map(i => S(`M6 ${20 + i * 10} L14 ${20 + i * 10}`, 'ik', 1)),
+                          ...granules('bs', 10, 6, [7, 13, 53, 49]),
+                          ...[0, 1, 2].map(i => C(24 + i * 6, 31, 2, 'hi'))]);    // the gold that paid for it
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

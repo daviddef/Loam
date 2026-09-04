@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 37, 5 Sep. a redwood 120 m tall, a wall 6 m high */
+    'redwood_forests', 'loropeni',
     /* places batch 34, 5 Sep. a dome 68 m, terraced tombs */
     'royal_exhibition_building', 'langi_lapaha',
     /* places batch 32, 5 Sep. a minaret 72.5 m, a tower 55 m, a temple, jars up to 3 m */
@@ -1279,6 +1281,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 37, 5 Sep. a stone town */
+    'songo_mnara',
     /* places batch 36, 5 Sep. a castle, a Roman colony, a medina of 300 ha, a coral town */
     'elmina_castle', 'timgad', 'fes_el_bali', 'gedi',
     /* places batch 35, 5 Sep. a walled port, a garden of 11.9 ha, a cave system */
@@ -1683,6 +1687,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 37, 5 Sep. 60,000 km2 of plateau, a lake, 160,000 ha of desert */
+    'ennedi', 'lake_chad', 'richtersveld',
     /* places batch 35, 5 Sep. an archipelago and 3 million ha of sand sea */
     'galapagos', 'namib_sand_sea',
     /* places batch 34, 5 Sep. 2,400 km2 of lakes and 1.5 million km2 of ocean */
