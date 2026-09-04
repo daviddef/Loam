@@ -892,6 +892,88 @@
       ],
       "also": [],
       "found": "nothing yet; the Danube Delta wanted the plant and was one recipe away"
+    },
+    {
+      "id": "neck",
+      "sense": "the instrument's — the long arm carrying the fingerboard",
+      "not": [
+        "thyroid",
+        "cervical",
+        "in the neck",
+        "throat",
+        "nape"
+      ],
+      "also": [
+        "gland",
+        "trachea"
+      ],
+      "found": "iodine+neck→thyroid"
+    },
+    {
+      "id": "beam",
+      "sense": "the structural one, carrying a load across a gap",
+      "not": [
+        "beam of light",
+        "laser beam",
+        "balance beam of the eye",
+        "warp beam roller"
+      ],
+      "also": [
+        "light",
+        "laser"
+      ],
+      "found": "nothing; the loom's warp beam is a roller rather than a load-carrier and is borderline"
+    },
+    {
+      "id": "tongue",
+      "sense": "the muscular hydrostat in the mouth",
+      "not": [
+        "tongue of the shoe",
+        "tongue and groove",
+        "tongues of fire"
+      ],
+      "also": [],
+      "found": "nothing; the one crossing is fire+tongue→pentecostalism, allowed with a reason",
+      "allow": [
+        {
+          "out": "pentecostalism",
+          "why": "The tongues of fire at Pentecost are the image the recipe is about, and the why names them. The crossing is deliberate: this is the metaphor, not a confusion of senses."
+        }
+      ]
+    },
+    {
+      "id": "shoe",
+      "sense": "the thing worn on a foot",
+      "not": [
+        "brake shoe",
+        "horseshoe",
+        "shoe of the plough"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "grain",
+      "sense": "the edible seed",
+      "not": [
+        "wood grain",
+        "against the grain",
+        "grain of the leather",
+        "grain size"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "handle",
+      "sense": "the part shaped to be held",
+      "not": [
+        "handle it",
+        "user handle",
+        "handle the situation"
+      ],
+      "also": [],
+      "found": "nothing"
     }
   ],
   "cleared": [
