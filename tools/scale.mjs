@@ -1193,6 +1193,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 33, 5 Sep */
+          'mogao_caves',
           /* places batch 32, 4 Sep */
           'leptis_magna',
           /* places batch 31, 4 Sep */

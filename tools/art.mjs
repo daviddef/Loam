@@ -43692,6 +43692,13 @@ def('blast',       () => [P('M4 22 L22 22 L22 38 L4 38 Z', 'lo'),            // 
                           ...[0, 1, 2].map(i => S(`M${36 + i * 5} ${26 + i * 2} L${48 + i * 3} ${24 + i * 4}`, 'hi', 2)),
                           flame('hi', .55, 18)]);
 
+def('mogao_caves', () => [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          ...[[10, 20], [24, 16], [38, 20], [50, 24]].map(([x, y], i) =>
+                            P(`M${x - 6} 52 L${x - 6} ${y + 6} Q${x} ${y - 2} ${x + 6} ${y + 6} L${x + 6} 52 Z`, i === 1 ? 'bs' : 'gh')),
+                          // the sealed one, and the scrolls in it
+                          ...[0, 1, 2].map(i => P(`M${20 + i * 3} ${28 + i * 5} L${28 + i * 3} ${28 + i * 5} L${28 + i * 3} ${31 + i * 5} L${20 + i * 3} ${31 + i * 5} Z`, 'hi')),
+                          S('M4 10 L56 8', 'bs', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
