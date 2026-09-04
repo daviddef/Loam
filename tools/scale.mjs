@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 11, 5 Sep. a dome 43.3 m across, a temple 70 m long, pillars over 20 m */
+    'pantheon', 'parthenon', 'meteora',
     /* places batch 9, 5 Sep. a lock chamber, a stupa 36 m across, a minaret 45.6 m, a wall circuit */
     'canal_lock', 'sanchi_stupa', 'kalyan_minaret', 'carcassonne',
     /* places batch 8, 5 Sep. a temple chariot with 3 m wheels; a winding tower */
@@ -1231,6 +1233,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 11, 5 Sep. a palace of 14,000 m2 and a buried town */
+    'knossos', 'pompeii',
     /* places batch 10, 5 Sep. a village under ash, a levelled mountain top, a palace compound, a port town */
     'joya_de_ceren', 'monte_alban', 'fasil_ghebbi', 'levuka',
     /* places batch 9, 5 Sep. 8,800 m2 of monastery */
@@ -1371,6 +1375,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 11, 5 Sep. 3,403 m of volcano, and changing */
+    'etna',
     /* places batch 8, 5 Sep. a forest-savanna mosaic, a primeval forest, 100 km of canal */
     'lope_okanda', 'bialowieza', 'amsterdam_canals',
     /* places batch 6, 5 Sep. a city on the altiplano; earthworks measured in thousands of km */

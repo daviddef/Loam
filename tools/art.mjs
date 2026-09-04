@@ -43990,6 +43990,49 @@ def('sangha_trinational',()=>[...[10, 22, 46].map(x => [S(`M${x} 54 L${x} 34`, '
                           E(33, 44, 5, 3.4, 'bs'), S('M29 42 Q27 38 30 37', 'bs', 1.6),  // and what stands in it
                           S('M4 56 L56 56', 'ik', 1.2)]);
 
+/* Places, batch 11 — 5 Sep. Southern Europe, which had the largest absolute
+   gap on the checklist. The Pantheon is drawn in section so the shell can be
+   seen thinning; the Parthenon with its refinements exaggerated, because a
+   drawing of it that is actually straight is a drawing of the wrong building. */
+def('pantheon',     () => [P('M8 40 A22 22 0 0 1 52 40 Z', 'lo'),
+                          P('M14 40 A16 16 0 0 1 46 40 Z', 'gh'),               // the shell, thinning upward
+                          P('M26 18 L34 18 L34 24 L26 24 Z', 'bs'),             // the oculus
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 2} ${38 - i * 6} L${44 - i * 2} ${38 - i * 6}`, 'gh', 0.8)),
+                          P('M8 40 L8 54 L14 54 L14 40 Z', 'lo'), P('M46 40 L46 54 L52 54 L52 40 Z', 'lo'),
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+def('parthenon',    () => [S('M6 48 Q30 44 54 48', 'ik', 2.4),                  // the stylobate, bulging
+                          ...[0, 1, 2, 3, 4, 5].map(i => {
+                            const x = 10 + i * 8, lean = (x - 30) * 0.06;
+                            return S(`M${x} 46 L${x - lean} 22`, 'lo', 3);
+                          }),
+                          P('M4 22 L56 22 L56 16 L4 16 Z', 'bs'),
+                          P('M4 16 L30 4 L56 16 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${14 + i * 10} 18 L${14 + i * 10} 20`, 'gh', 1))]);
+def('knossos',      () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'lo'),
+                          P('M20 26 L40 26 L40 48 L20 48 Z', 'gh'),             // the central court
+                          P('M8 24 L14 24 L14 54 L8 54 Z', 'bs'),               // a light well, and the light in it
+                          ...[0, 1, 2].map(i => S(`M11 ${8 + i * 4} L11 ${12 + i * 4}`, 'hi', 1.4)),
+                          P('M46 24 L52 24 L52 54 L46 54 Z', 'bs'),
+                          ...[0, 1, 2].map(i => S(`M49 ${8 + i * 4} L49 ${12 + i * 4}`, 'hi', 1.4)),
+                          ...[0, 1, 2, 3].map(i => S(`M20 ${30 + i * 5} L40 ${30 + i * 5}`, 'gh', 0.8))]);
+def('meteora',      () => [...[[14, 22], [32, 14], [50, 26]].map(([x, top]) =>
+                            P(`M${x - 7} 56 L${x - 5} ${top + 4} L${x + 5} ${top + 4} L${x + 7} 56 Z`, 'lo')),
+                          ...[[14, 22], [32, 14], [50, 26]].map(([x, top]) =>
+                            P(`M${x - 6} ${top + 4} L${x - 6} ${top - 4} L${x + 6} ${top - 4} L${x + 6} ${top + 4} Z`, 'bs')),
+                          S('M32 10 L22 10', 'ik', 1.2), S('M22 10 L22 34', 'ik', 1.2),   // the rope
+                          E(22, 36, 4, 3, 'hi')]);                              // and the basket on it
+def('pompeii',      () => [...granules('gh', 24, 55, [4, 4, 56, 26]),
+                          S('M4 28 Q30 24 56 28', 'ik', 2),
+                          P('M8 54 L8 34 L20 34 L20 54 Z', 'lo'),               // the town, under it
+                          P('M40 54 L40 34 L52 34 L52 54 Z', 'lo'),
+                          P('M26 54 Q24 42 30 38 Q36 42 34 54 Z', 'hi'),        // and the hole a person left
+                          C(30, 34, 3, 'hi')]);
+def('etna',         () => [P('M2 54 L22 18 L26 14 L34 14 L38 18 L58 54 Z', 'lo'),
+                          P('M26 14 L34 14 L33 8 L27 8 Z', 'bs'),
+                          ...[0, 1, 2].map(i => S(`M${28 + i * 2} 6 Q${26 + i * 3} 0 ${30 + i * 2} -2`, 'gh', 1.4)),
+                          P('M30 16 L38 34 L30 40 L24 30 Z', 'hi'),             // a flow, down one side
+                          ...[10, 46].map(x => [S(`M${x} 50 L${x} 44`, 'bs', 1.4), C(x, 42, 2.4, 'bs')]).flat()]);  // and the vineyards on it
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
