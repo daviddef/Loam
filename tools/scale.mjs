@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* verb outcomes batch 3, 4 Sep */
+          'lachrymatory_factor',
           /* verb outcomes batch 1, 4 Sep. a short starch chain */
           'dextrin',
           /* the universe closed, 4 Sep */
@@ -202,6 +204,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* verb outcomes batch 3, 4 Sep */
+          'patina',
           /* places batch 2 — sub-Saharan Africa, 4 Sep. a coating a few micrometres thick */
           'desert_varnish',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
@@ -276,6 +280,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* verb outcomes batch 3, 4 Sep */
+          'linseed_oil', 'verdigris',
           /* verb outcomes batch 2, 4 Sep. a temper grain, a sand grain, a chip of ice */
           'grog', 'silica_sand', 'crushed_ice',
           /* places batch 14, 4 Sep. a bar section */

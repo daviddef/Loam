@@ -43598,6 +43598,26 @@ def('sterkfontein',()=>[P('M4 8 L56 8 L56 54 L4 54 Z', 'lo'),
                           ...granules('gh', 8, 979, [16, 32, 44, 48]),
                           ...[0, 1, 2].map(i => S(`M6 ${34 + i * 7} L54 ${34 + i * 7}`, 'gh', 1))]);
 
+/* Verb outcomes, batch 3. Patina is drawn as a skin ON the metal rather than
+   as a separate material, because that adherence is the whole difference
+   between it and rust.                                                      */
+def('patina',      () => [facet('bs', .95),
+                          P('M12 24 Q30 18 48 26 Q46 42 30 46 Q14 42 12 24 Z', 'hi'),
+                          ...granules('lo', 7, 232, [18, 26, 42, 42])]);
+def('linseed_oil', () => [vessel('bs', 22, 48),
+                          P('M16 32 L44 32 L43 46 Q30 50 17 46 Z', 'lo'),
+                          E(30, 32, 14, 3, 'hi'),
+                          ...[0, 1].map(i => grain('gh', 22 + i * 16, 16, .8, 20))]);
+def('lachrymatory_factor',()=>{
+  const { pts, shape } = backbone('ik', 3, 30, 32);
+  return [shape, C(pts[0][0], pts[0][1], 3.6, 'lo'),
+          C(pts.at(-1)[0], pts.at(-1)[1], 3.6, 'hi'),
+          ...[0, 1, 2].map(i => S(`M${44 + i * 3} ${20 + i * 8} Q${48 + i * 3} ${24 + i * 8} ${44 + i * 3} ${28 + i * 8}`, 'gh', 1.1))];
+});
+def('verdigris',   () => [mound('hi', 46, 20, 18),
+                          ...granules('lo', 10, 545, [16, 30, 44, 44]),
+                          P('M20 20 L40 20 L40 26 L20 26 Z', 'bs')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
