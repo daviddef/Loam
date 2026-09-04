@@ -1538,6 +1538,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 33, 5 Sep. islands 42 km2, a caldera, a park of volcanoes */
+    'rock_islands_palau', 'kilauea', 'tongariro',
     /* places batch 28, 5 Sep. a massif, a valley 7.5 miles long, 132 km2 of karst, 4,187 ha of ruins */
     'simien', 'yosemite_valley', 'vinales', 'hampi',
     /* places batch 27, 5 Sep. a desert lake, a park of 181,414 ha */
@@ -1669,6 +1671,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 33, 5 Sep. 260 km of reef, 2.2 million ha of bay, 1,500 km of barrier */
+    'ningaloo', 'shark_bay', 'new_caledonia_lagoons',
     /* places batch 23, 5 Sep. 2.6 million hectares along 450 km of coast */
     'te_wahipounamu',
     /* places batch 20, 5 Sep. 6,865 km2 of reserve */

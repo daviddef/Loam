@@ -44826,6 +44826,43 @@ def('wat_phra_kaew',()=>[P('M14 56 L14 30 L46 30 L46 56 Z', 'lo'),
                           E(30, 44, 7, 5, 'hi'), P('M25 44 L35 44 L33 52 L27 52 Z', 'hi'),   // the image, dressed
                           ...[0, 1, 2].map(i => S(`M${26 + i * 4} 40 L${26 + i * 4} 36`, 'gh', 1))]);
 
+/* Places, batch 33 — 5 Sep. Ningaloo is drawn with the reef against the beach
+   rather than out past a lagoon, because that is the whole difference; Palau
+   with the notch at the waterline, because grazing is what cuts it.        */
+def('ningaloo',     () => [P('M2 4 L58 4 L58 26 L2 26 Z', 'lo'),
+                          P('M2 26 L58 26 L58 32 L2 32 Z', 'bs'),              // reef, right up against it
+                          P('M2 32 L58 32 L58 56 L2 56 Z', 'gh'),
+                          ...[10, 22, 34, 46].map(x => S(`M${x} 26 L${x + 2} 32`, 'ik', 1)),
+                          E(34, 44, 14, 5, 'lo'), S('M20 44 L26 40', 'lo', 2.4), C(46, 42, 1.4, 'ik'),   // the whale shark
+                          ...granules('hi', 8, 260, [22, 40, 46, 48])]);
+def('tongariro',    () => [P('M2 56 Q14 26 22 24 Q30 22 34 34 Q40 14 46 18 Q52 22 58 56 Z', 'lo'),
+                          ...[22, 46].map((x, i) => [P(`M${x - 3} ${24 + i * -6} L${x + 3} ${24 + i * -6} L${x + 1} ${18 + i * -6} L${x - 1} ${18 + i * -6} Z`, 'bs'),
+                                                     S(`M${x} ${16 + i * -6} Q${x - 3} ${10 + i * -6} ${x + 1} ${4 + i * -6}`, 'gh', 1.4)]).flat(),
+                          C(34, 32, 3, 'bs'),
+                          ...[10, 50].map(x => S(`M${x} 52 L${x} 44`, 'ik', 1.6))]);
+def('shark_bay',    () => [P('M2 22 L58 22 L58 56 L2 56 Z', 'gh'),
+                          ...granules('hi', 26, 15, [4, 24, 56, 54]),          // the salt
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${8 + i * 11} 56 Q${10 + i * 11} 44 ${7 + i * 11} 36`, 'lo', 2)),   // the seagrass
+                          ...[[20, 32], [34, 30], [46, 34]].map(([x, y]) =>
+                            [E(x, y, 6, 3, 'bs'), E(x, y - 3, 5, 2.4, 'bs'), E(x, y - 6, 4, 2, 'bs')])
+                            .flat()]);                                        // stromatolites, layer on layer
+def('rock_islands_palau',()=>[P('M2 34 L58 34 L58 56 L2 56 Z', 'gh'),
+                          ...[[12, 34], [30, 34], [48, 34]].map(([x, y], i) =>
+                            [P(`M${x - 4} ${y} L${x - 11 - i} ${y - 10 - i * 3} Q${x} ${y - 22 - i * 3} ${x + 11 + i} ${y - 10 - i * 3} L${x + 4} ${y} Z`, 'lo'),
+                             S(`M${x - 5} ${y - 1} L${x + 5} ${y - 1}`, 'ik', 1.6)]).flat(),   // the notch
+                          ...[0, 1, 2, 3].map(i => E(10 + i * 13, 46, 2.6, 1.6, 'hi'))]);      // and what cut it
+def('kilauea',      () => [P('M2 56 Q20 40 30 38 Q40 40 58 56 Z', 'lo'),
+                          E(30, 38, 12, 5, 'ik'),                              // Halemaʻumaʻu, drained
+                          E(30, 40, 7, 2.6, 'bs'),
+                          P('M34 40 Q42 46 50 56 L38 56 Q34 48 32 42 Z', 'hi'),   // and the flow
+                          ...[0, 1, 2].map(i => S(`M${26 + i * 4} 34 Q${24 + i * 4} 26 ${28 + i * 4} 20`, 'gh', 1.2))]);
+def('new_caledonia_lagoons',()=>[P('M2 40 L58 40 L58 56 L2 56 Z', 'lo'),
+                          P('M2 20 L58 20 L58 26 L2 26 Z', 'bs'),              // the barrier, standing off
+                          P('M2 26 L58 26 L58 40 L2 40 Z', 'gh'),              // the lagoon behind it
+                          ...[8, 20, 32, 44, 54].map(x => S(`M${x} 20 L${x} 26`, 'ik', 1)),
+                          E(26, 33, 6, 3.4, 'hi'), S('M20 33 L15 30', 'hi', 2),
+                          ...[0, 1, 2].map(i => E(40 + i * 6, 31 + i * 2, 2.4, 1.6, 'lo'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
