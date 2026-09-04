@@ -89,7 +89,18 @@ if (args.includes('--next')) {
     .slice(0, 40);
   console.log(`\nMADE THINGS WITH NO NEEDS LIST — deepest first, top ${rows.length}\n`);
   for (const r of rows) console.log(`  ${r.id.padEnd(26)} depth ${String(r.d).padStart(2)}   used by ${r.used} recipes`);
-  console.log(`\n  ${Object.keys(NEEDS).length} lists written so far.\n`);
+  // The top 40 without the total reads as a short queue, and it is not one.
+  // Asked directly whether the mechanism had been run across the corpus, this
+  // was the number that answered it and the tool did not print it.
+  const allMade = elements.filter(e => (e.tags ?? []).some(t => MADE.has(t)));
+  const done = allMade.filter(e => NEEDS[e.id]).length;
+  console.log(`\n  ${done} of ${allMade.length} things with a maker's tag have a list — ` +
+              `${allMade.length - done} do not.`);
+  console.log(`  ${Object.keys(NEEDS).length} lists written in all.\n`);
+  console.log('  Not every made thing wants one: a hammer is a head and a handle and its');
+  console.log('  recipe already says so. A list earns its place on an ASSEMBLY — something');
+  console.log('  with parts a builder would have to source separately — which is what the');
+  console.log('  depth and used-by ranking above is for.\n');
   process.exit(0);
 }
 

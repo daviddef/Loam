@@ -17,6 +17,7 @@ const scale = J('../data/scale.json');
 const cautions = J('../data/cautions.json').hazards;
 const labels = J('../data/labels.json');
 const pathogens = J('../data/pathogens.json');
+const conditions = J('../data/conditions.json');
 const allergens = J('../data/allergens.json');
 const reactions = J('../data/reactions.json');
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
@@ -115,6 +116,7 @@ try {
     .replace('__CAUTION_DATA__', '{}')
     .replace('__LABEL_DATA__', '{aliases:{},vague:{}}')
     .replace('__PATHOGEN_DATA__', '{pathogens:{}}')
+    .replace('__CONDITION_DATA__', '{conditions:{}}')
     .replace('__ALLERGEN_DATA__', '{}')
     .replace('__REACTION_DATA__', '{}'));
 } catch (e) {
@@ -128,6 +130,7 @@ html = html.replace('__GAME_DATA__', JSON.stringify(data))
            .replace('__CAUTION_DATA__', JSON.stringify(cautions))
            .replace('__LABEL_DATA__', JSON.stringify(labels))
            .replace('__PATHOGEN_DATA__', JSON.stringify(pathogens))
+           .replace('__CONDITION_DATA__', JSON.stringify(conditions))
            .replace('__ALLERGEN_DATA__', JSON.stringify(allergens))
            .replace('__REACTION_DATA__', JSON.stringify(reactions));
 

@@ -1,0 +1,912 @@
+{
+  "$comment": "What goes wrong that nothing caught, and what answers it. The companion to pathogens.json and deliberately a separate file: a pathogen has a genome, a reservoir and a route of transmission, and a condition has none of those, so one schema would leave half of every row empty and the empty half would stop meaning anything. The two rules carry over unchanged and are enforced the same way. Seriousness is a SOURCED NUMBER with its basis stated beside it, because untreated and treated type 1 diabetes are the same disease and different numbers. And nothing here is a method: this says what goes wrong and what is known to help, and is not a dose, a protocol or advice. `care` lists the medical DOMAIN entries that are not therapies at all — a ward is not a treatment joined to nothing, it is a building. See tools/conditions.mjs.",
+  "conditions": {
+    "scurvy": {
+      "kind": "deficiency",
+      "affects": [
+        "collagen"
+      ],
+      "mechanism": "Vitamin C is the cofactor that lets collagen be cross-linked. Without it the body keeps making collagen and cannot stabilise it, so old wounds reopen and blood vessels leak — the disease is not a lack of building material but of the step that sets it.",
+      "symptoms": [
+        "bleeding gums",
+        "old scars reopening",
+        "bruising",
+        "exhaustion"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated scurvy at sea over months; it killed more sailors than combat and shipwreck combined",
+        "src": "https://en.wikipedia.org/wiki/Scurvy"
+      },
+      "treated_by": [
+        "vitamin_c"
+      ],
+      "prevented_by": [
+        "vitamin_c"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Scurvy"
+    },
+    "rickets": {
+      "kind": "deficiency",
+      "affects": [
+        "bone",
+        "vitamin_d"
+      ],
+      "mechanism": "Vitamin D is what allows calcium to be absorbed from the gut. Short of it the growing bone is laid down without being mineralised, so it bends under the child's own weight — which is why the sign is bowed legs and not fractures.",
+      "symptoms": [
+        "bowed legs",
+        "delayed growth",
+        "soft skull in infants"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal; it deforms the skeleton permanently once growth has finished around it",
+        "src": "https://en.wikipedia.org/wiki/Rickets"
+      },
+      "treated_by": [
+        "vitamin_d"
+      ],
+      "prevented_by": [
+        "vitamin_d"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rickets"
+    },
+    "pellagra": {
+      "kind": "deficiency",
+      "affects": [
+        "niacin",
+        "maize"
+      ],
+      "mechanism": "Maize holds niacin in a bound form the gut cannot take up. Soaking the grain in lime releases it, which Mesoamerican cooking always did — so the disease followed maize wherever it travelled without the method that made it safe.",
+      "symptoms": [
+        "dermatitis on sun-exposed skin",
+        "diarrhoea",
+        "dementia"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated pellagra; some 100,000 died in the American South between 1900 and 1940 before the cause was accepted",
+        "src": "https://en.wikipedia.org/wiki/Pellagra"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pellagra"
+    },
+    "beriberi": {
+      "kind": "deficiency",
+      "affects": [
+        "rice",
+        "vitamin_b1"
+      ],
+      "mechanism": "Thiamine sits in the bran, and milling removes the bran. Eijkman found it by feeding chickens the polishings — the first demonstration that a disease could be caused by something absent rather than something present.",
+      "symptoms": [
+        "numb feet",
+        "weakness",
+        "heart failure in the wet form"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated wet beriberi; it is one of the few deficiencies that can kill within days once the heart is involved",
+        "src": "https://en.wikipedia.org/wiki/Beriberi"
+      },
+      "treated_by": [
+        "vitamin_b1"
+      ],
+      "prevented_by": [
+        "vitamin_b1"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Beriberi"
+    },
+    "night_blindness": {
+      "kind": "deficiency",
+      "affects": [
+        "eye",
+        "vitamin_a"
+      ],
+      "mechanism": "Rhodopsin is rebuilt from vitamin A every time light bleaches it. With none spare the rods stop recovering, so dim-light vision fails first — the earliest visible sign of a deficiency that goes on to blind permanently.",
+      "symptoms": [
+        "cannot see at dusk",
+        "dry eyes"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal in itself, but vitamin A deficiency remains a leading cause of preventable childhood blindness",
+        "src": "https://en.wikipedia.org/wiki/Nyctalopia"
+      },
+      "treated_by": [
+        "vitamin_a"
+      ],
+      "prevented_by": [
+        "vitamin_a"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Nyctalopia"
+    },
+    "kwashiorkor": {
+      "kind": "deficiency",
+      "affects": [
+        "protein",
+        "child"
+      ],
+      "mechanism": "Enough calories and too little protein means too little albumin holding fluid inside the blood vessels, so it leaks into the tissues. The child looks fed and is starving, which is the trap the name records.",
+      "symptoms": [
+        "swollen belly and limbs",
+        "pale hair",
+        "apathy"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "case fatality of severe acute malnutrition even with treatment; higher without",
+        "src": "https://en.wikipedia.org/wiki/Kwashiorkor"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Kwashiorkor"
+    },
+    "anaemia": {
+      "kind": "deficiency",
+      "affects": [
+        "blood",
+        "iron"
+      ],
+      "mechanism": "Each haemoglobin molecule needs four iron atoms, and the body cannot excrete iron deliberately — so it hoards it, and shortage nearly always means bleeding rather than diet. That is why anaemia in an adult is a symptom to explain, not a diagnosis.",
+      "symptoms": [
+        "tiredness",
+        "pallor",
+        "breathlessness on exertion"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely the cause of death itself; it is the commonest blood disorder in the world, affecting about a quarter of all people",
+        "src": "https://en.wikipedia.org/wiki/Anemia"
+      },
+      "treated_by": [
+        "iron"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Anemia"
+    },
+    "goitre": {
+      "kind": "deficiency",
+      "affects": [
+        "iodine",
+        "thyroid"
+      ],
+      "mechanism": "Low iodine means low hormone, low hormone means the pituitary signals harder, and the gland grows in response to the signalling. The swelling is the response to the shortage, which is why it reverses once iodine is supplied.",
+      "symptoms": [
+        "swelling at the front of the neck",
+        "sometimes nothing else at all"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; iodising salt has taken it from endemic across whole continents to rare, and remains the cheapest public health measure there is",
+        "src": "https://en.wikipedia.org/wiki/Goitre"
+      },
+      "treated_by": [
+        "iodine"
+      ],
+      "prevented_by": [
+        "iodine",
+        "salt"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Goitre"
+    },
+    "diabetes": {
+      "kind": "metabolic",
+      "affects": [
+        "insulin",
+        "pancreas",
+        "glucose"
+      ],
+      "mechanism": "Either the pancreas stops making insulin or the body stops responding to it. Both end with glucose in the blood that cannot get into the cells, so the body is starving in the middle of plenty and burns fat instead, which acidifies it.",
+      "symptoms": [
+        "thirst",
+        "passing water constantly",
+        "weight loss",
+        "and in type 1, ketoacidosis"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "untreated type 1 diabetes, which was uniformly fatal within about two years before insulin was isolated in 1921",
+        "src": "https://en.wikipedia.org/wiki/Diabetes"
+      },
+      "treated_by": [
+        "insulin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Diabetes"
+    },
+    "haemophilia": {
+      "kind": "genetic",
+      "affects": [
+        "blood",
+        "gene"
+      ],
+      "mechanism": "One clotting factor is missing, and the gene sits on the X chromosome — which is the whole inheritance pattern: mothers carry it silently, sons have a one-in-two chance.",
+      "symptoms": [
+        "bleeding into joints",
+        "bruising",
+        "bleeding that will not stop"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "life expectancy was under 20 years before factor replacement and is now near normal — one of the largest single gains from a purified protein",
+        "src": "https://en.wikipedia.org/wiki/Haemophilia"
+      },
+      "treated_by": [
+        "monoclonal_antibody"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Haemophilia"
+    },
+    "cystic_fibrosis": {
+      "kind": "genetic",
+      "affects": [
+        "lung",
+        "mucus"
+      ],
+      "mechanism": "A single chloride channel is faulty, so secretions everywhere lose water and thicken. Lungs clog and become infected, and the pancreatic duct blocks — one broken protein producing two apparently unrelated diseases.",
+      "symptoms": [
+        "persistent cough",
+        "repeated chest infections",
+        "poor weight gain",
+        "salty sweat"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "median survival was under a year in 1938 and is now past 50; it remains the commonest fatal inherited disease in people of European descent",
+        "src": "https://en.wikipedia.org/wiki/Cystic_fibrosis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cystic_fibrosis"
+    },
+    "sickle_cell_anemia": {
+      "kind": "genetic",
+      "affects": [
+        "blood",
+        "red_blood_cell"
+      ],
+      "mechanism": "One amino acid substitution makes haemoglobin polymerise when it gives up its oxygen, and the cell deforms into a crescent that jams in small vessels. Carrying one copy protects against malaria, which is why the gene persists where malaria does.",
+      "symptoms": [
+        "episodes of severe pain",
+        "anaemia",
+        "organ damage over years"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated childhood mortality in parts of sub-Saharan Africa; the same allele that causes it protects heterozygotes against falciparum malaria",
+        "src": "https://en.wikipedia.org/wiki/Sickle_cell_disease"
+      },
+      "treated_by": [
+        "morphine"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Sickle_cell_disease"
+    },
+    "gout": {
+      "kind": "metabolic",
+      "affects": [
+        "crystal",
+        "joint"
+      ],
+      "mechanism": "Uric acid is less soluble when cold, and the far end of the foot is the coolest part of the body — so it crystallises there first. Most mammals break uric acid down further and never get it; humans lost that enzyme.",
+      "symptoms": [
+        "a sudden, extremely painful joint, usually the big toe",
+        "redness",
+        "heat"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; the pain of an acute attack is reckoned among the most severe in medicine",
+        "src": "https://en.wikipedia.org/wiki/Gout"
+      },
+      "treated_by": [
+        "salicylic_acid"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Gout"
+    },
+    "heart_attack": {
+      "kind": "circulatory",
+      "affects": [
+        "artery",
+        "heart",
+        "cholesterol"
+      ],
+      "mechanism": "The heart pumps blood through itself but cannot use the blood in its own chambers — it is fed by arteries on the outside. Block one and the muscle downstream dies within hours, and heart muscle does not grow back.",
+      "symptoms": [
+        "crushing central chest pain",
+        "sweating",
+        "breathlessness",
+        "and sometimes nothing at all"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "in-hospital mortality with modern treatment; it was around 0.3 before coronary care units, and time to treatment is most of the difference",
+        "src": "https://en.wikipedia.org/wiki/Myocardial_infarction"
+      },
+      "treated_by": [
+        "aspirin"
+      ],
+      "prevented_by": [
+        "aspirin"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Myocardial_infarction"
+    },
+    "heart_failure": {
+      "kind": "circulatory",
+      "affects": [
+        "heart",
+        "pump"
+      ],
+      "mechanism": "Not the heart stopping but the heart no longer keeping up. It compensates by enlarging and beating faster, and those compensations work for years before they stop — which is why it is slow with sudden crises.",
+      "symptoms": [
+        "breathlessness lying flat",
+        "swollen ankles",
+        "exhaustion"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "five-year mortality after diagnosis, which is worse than many cancers",
+        "src": "https://en.wikipedia.org/wiki/Heart_failure"
+      },
+      "treated_by": [
+        "digoxin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Heart_failure"
+    },
+    "stroke": {
+      "kind": "circulatory",
+      "affects": [
+        "blood",
+        "brain"
+      ],
+      "mechanism": "Two opposite causes present almost identically: a clot stopping flow, or a vessel bleeding into the brain. The treatments are opposite too — one wants the clot dissolved and the other would be killed by that — so the scan comes first, and that ordering is the whole of modern stroke care.",
+      "symptoms": [
+        "sudden weakness on one side",
+        "face drooping",
+        "speech lost"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "30-day mortality; it is the second leading cause of death worldwide and the leading cause of acquired disability",
+        "src": "https://en.wikipedia.org/wiki/Stroke"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "aspirin"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Stroke"
+    },
+    "asthma": {
+      "kind": "inflammatory",
+      "affects": [
+        "allergy",
+        "lung"
+      ],
+      "mechanism": "Airway muscle tightens, the lining swells and mucus fills what is left. All three are things the body is doing rather than damage done to it, so all three can be undone — and that reversibility is what the diagnosis actually rests on.",
+      "symptoms": [
+        "wheeze",
+        "cough at night",
+        "tight chest",
+        "breathlessness"
+      ],
+      "seriousness": {
+        "value": 0.001,
+        "measure": "case fatality; it affects some 260 million people and the deaths are overwhelmingly among those without access to inhaled treatment",
+        "src": "https://en.wikipedia.org/wiki/Asthma"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Asthma"
+    },
+    "arthritis": {
+      "kind": "inflammatory",
+      "affects": [
+        "inflammation",
+        "joint"
+      ],
+      "mechanism": "Two different diseases share the name. Osteoarthritis is cartilage worn by use and worsens through the day; rheumatoid is the immune system attacking the joint lining and is worst on waking, symmetrically. One wants replacement, the other wants immunity suppressed.",
+      "symptoms": [
+        "joint pain",
+        "stiffness",
+        "swelling"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it is the leading cause of disability in older adults",
+        "src": "https://en.wikipedia.org/wiki/Arthritis"
+      },
+      "treated_by": [
+        "aspirin",
+        "monoclonal_antibody"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Arthritis"
+    },
+    "osteoporosis": {
+      "kind": "degenerative",
+      "affects": [
+        "bone",
+        "calcium"
+      ],
+      "mechanism": "The skeleton is torn down and rebuilt about every ten years. After roughly thirty the tearing outpaces the building, and the loss shows in no symptom at all until a bone breaks under a load it should have carried.",
+      "symptoms": [
+        "no symptoms until a fracture",
+        "loss of height",
+        "a stooped back"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "one-year mortality after a hip fracture in the elderly, which is the outcome that matters rather than the bone density itself",
+        "src": "https://en.wikipedia.org/wiki/Osteoporosis"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "calcium",
+        "vitamin_d"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Osteoporosis"
+    },
+    "cataract": {
+      "kind": "degenerative",
+      "affects": [
+        "lens",
+        "protein"
+      ],
+      "mechanism": "Lens proteins are laid down before birth and never replaced — among the oldest molecules in the body. Decades of ultraviolet and sugar cross-link them until they scatter light instead of passing it. Nothing dissolves them, so the lens comes out.",
+      "symptoms": [
+        "clouded vision",
+        "glare at night",
+        "colours fading"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it is the leading cause of blindness worldwide, and the operation to fix it is among the commonest performed anywhere",
+        "src": "https://en.wikipedia.org/wiki/Cataract"
+      },
+      "treated_by": [
+        "surgery"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cataract"
+    },
+    "alzheimers_disease": {
+      "kind": "degenerative",
+      "affects": [
+        "brain",
+        "protein"
+      ],
+      "mechanism": "Two proteins misfold and accumulate — amyloid outside the neurons and tau inside them — and the neurons die. Which of the two is the cause and which the wreckage has been argued over for thirty years, which is why treatments aimed at one keep disappointing.",
+      "symptoms": [
+        "memory loss for recent events first",
+        "confusion",
+        "loss of language",
+        "then of everything"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "invariably fatal; median survival is about 4 to 8 years after diagnosis",
+        "src": "https://en.wikipedia.org/wiki/Alzheimer's_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Alzheimer's_disease"
+    },
+    "parkinsons_disease": {
+      "kind": "degenerative",
+      "affects": [
+        "brain",
+        "nerve"
+      ],
+      "mechanism": "Dopamine-making cells in one small area die, and the symptoms only appear once about 60% of them are gone — so the disease is long established by the time anyone notices it.",
+      "symptoms": [
+        "tremor at rest",
+        "slowness",
+        "rigidity",
+        "a shuffling walk"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not directly fatal; it shortens life mainly through falls and pneumonia, and levodopa treats the symptoms without slowing the loss",
+        "src": "https://en.wikipedia.org/wiki/Parkinson's_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Parkinson's_disease"
+    },
+    "cancer": {
+      "kind": "neoplastic",
+      "affects": [
+        "cell",
+        "mutation"
+      ],
+      "mechanism": "Not one disease but the same failure in many tissues: a cell accumulating mutations until it ignores the signals to stop dividing and to die. Everything else — spread, resistance, recurrence — follows from that one loss of restraint.",
+      "symptoms": [
+        "depends entirely on the tissue",
+        "a lump",
+        "weight loss",
+        "bleeding"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "five-year mortality across all cancers combined, which conceals enormous variation — testicular cancer is over 95% survivable and pancreatic under 10%",
+        "src": "https://en.wikipedia.org/wiki/Cancer"
+      },
+      "treated_by": [
+        "surgery",
+        "monoclonal_antibody"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cancer"
+    },
+    "epilepsy": {
+      "kind": "neoplastic",
+      "affects": [
+        "brain",
+        "nerve"
+      ],
+      "mechanism": "Normal brain activity depends on excitation and inhibition staying balanced. A seizure is that balance lost, and neurons firing together instead of independently — which is why the symptoms depend entirely on which part of the brain is doing it.",
+      "symptoms": [
+        "seizures",
+        "brief absences",
+        "aura beforehand"
+      ],
+      "seriousness": {
+        "value": 0.01,
+        "measure": "annual mortality; the commonest single preventable cause worldwide is neurocysticercosis, from a tapeworm",
+        "src": "https://en.wikipedia.org/wiki/Epilepsy"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Epilepsy"
+    },
+    "lead_poisoning": {
+      "kind": "toxic",
+      "affects": [
+        "lead",
+        "nerve"
+      ],
+      "mechanism": "Lead has no biological role at all, and the body mistakes it for calcium — taking it wherever calcium is wanted, into bone where it stays for decades and into the nervous system where it disrupts signalling. There is no level at which it does nothing.",
+      "symptoms": [
+        "abdominal pain",
+        "irritability",
+        "and in children, a permanent loss of cognitive development"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal at the levels now seen; the harm is a permanent shift in childhood cognition, which is why the answer has always been removal rather than treatment",
+        "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
+      },
+      "treated_by": [
+        "monoclonal_antibody"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
+    },
+    "carbon_monoxide_poisoning": {
+      "kind": "toxic",
+      "affects": [
+        "blood",
+        "carbon_monoxide"
+      ],
+      "mechanism": "It binds the same site on haemoglobin as oxygen, about two hundred times more tightly, and will not let go. The blood stays bright red and looks healthy while carrying nothing useful — and the gas has no smell.",
+      "symptoms": [
+        "headache",
+        "confusion",
+        "collapse",
+        "and often no warning at all"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "case fatality of severe poisoning; no warning and no visible sign is why it kills people in their sleep",
+        "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
+      },
+      "treated_by": [
+        "oxygen"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
+    },
+    "dehydration": {
+      "kind": "environmental",
+      "affects": [
+        "salt",
+        "blood"
+      ],
+      "mechanism": "Replacing water alone dilutes the blood and can be worse than nothing. Glucose and sodium are absorbed together in the gut, so a solution of both is taken up when plain water is not — which is what makes oral rehydration work.",
+      "symptoms": [
+        "thirst",
+        "dark urine",
+        "dizziness",
+        "collapse"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated severe dehydration from cholera; oral rehydration takes it below 0.01 and is reckoned to have saved tens of millions of lives",
+        "src": "https://en.wikipedia.org/wiki/Dehydration"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Dehydration"
+    },
+    "hypothermia": {
+      "kind": "environmental",
+      "affects": [
+        "ice",
+        "blood"
+      ],
+      "mechanism": "Shivering is the last active defence and it stops when the fuel runs out, so someone who has stopped shivering is worse rather than better. Water takes heat about twenty-five times faster than air, which is why immersion is the dangerous case.",
+      "symptoms": [
+        "shivering, then not shivering",
+        "confusion",
+        "slurred speech",
+        "paradoxical undressing"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "mortality of severe hypothermia; nobody is dead until they are warm and dead, because the cold that caused it also protects the brain",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Hypothermia"
+    },
+    "altitude_sickness": {
+      "kind": "environmental",
+      "affects": [
+        "altitude",
+        "oxygen"
+      ],
+      "mechanism": "The air is the same mixture all the way up — oxygen is 21% at sea level and at 8,000 metres. What falls is the pressure driving it into the blood, which is why acclimatisation works and why the only reliable treatment is to descend.",
+      "symptoms": [
+        "headache",
+        "nausea",
+        "breathlessness",
+        "and in the severe forms, fluid in the lungs or brain"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "mortality of untreated high-altitude cerebral oedema; simple altitude sickness is uncomfortable and self-limiting",
+        "src": "https://en.wikipedia.org/wiki/Altitude_sickness"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Altitude_sickness"
+    },
+    "pain": {
+      "kind": "physiological",
+      "affects": [
+        "nerve",
+        "wound"
+      ],
+      "mechanism": "A signal rather than a substance, and the brain decides what to do with the traffic. That deciding is why the same injury hurts differently in different circumstances, and why a drug can act on the signal, the nerve, or the decision — three separate ways to stop it.",
+      "symptoms": [
+        "it is itself the symptom"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal, and the only symptom entirely private to the person having it; untreated pain is nonetheless among the largest causes of suffering there is",
+        "src": "https://en.wikipedia.org/wiki/Pain"
+      },
+      "treated_by": [
+        "morphine",
+        "paracetamol",
+        "aspirin",
+        "anaesthetic",
+        "ether",
+        "cocaine"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pain"
+    },
+    "fever": {
+      "kind": "physiological",
+      "affects": [
+        "immune_system",
+        "inflammation"
+      ],
+      "mechanism": "The body raising its own thermostat, not failing to hold it. Most pathogens replicate best at 37 degrees and immune cells work faster above it, so the fever is a defence — which is why suppressing it makes the patient comfortable rather than better.",
+      "symptoms": [
+        "raised temperature",
+        "shivering as it rises",
+        "sweating as it falls"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "a sign rather than a disease; it is dangerous mainly in the very young and at extremes",
+        "src": "https://en.wikipedia.org/wiki/Fever"
+      },
+      "treated_by": [
+        "paracetamol",
+        "aspirin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Fever"
+    },
+    "childbirth": {
+      "kind": "physiological",
+      "affects": [
+        "labour",
+        "uterus"
+      ],
+      "mechanism": "Human birth is hard because a wide pelvis is bad for walking upright and a big head is good for everything else. The fit is tight and the baby must turn as it descends — almost every complication traces back to that one compromise.",
+      "symptoms": [
+        "contractions",
+        "descent",
+        "and two patients in one body"
+      ],
+      "seriousness": {
+        "value": 0.002,
+        "measure": "maternal mortality worldwide per birth; it was on the order of 0.01 in Europe before antisepsis, and remains around 0.005 in the poorest regions",
+        "src": "https://en.wikipedia.org/wiki/Childbirth"
+      },
+      "treated_by": [
+        "oxytocin",
+        "forceps",
+        "surgery",
+        "chloroform"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Childbirth"
+    },
+    "labour": {
+      "kind": "physiological",
+      "affects": [
+        "oxytocin",
+        "uterus"
+      ],
+      "mechanism": "Stretching the cervix triggers oxytocin, oxytocin drives contraction, contraction stretches the cervix further. It is one of very few positive feedback loops in the body, and it exists because the process has to finish rather than settle.",
+      "symptoms": [
+        "contractions building in strength and frequency"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not a disease; it is here because oxytocin, forceps and anaesthesia answer it and nothing else",
+        "src": "https://en.wikipedia.org/wiki/Childbirth"
+      },
+      "treated_by": [
+        "oxytocin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Childbirth"
+    },
+    "inflammation": {
+      "kind": "physiological",
+      "affects": [
+        "immune_system",
+        "blood"
+      ],
+      "mechanism": "Redness, heat, swelling and pain, described by Celsus in the first century and unimproved on since. All four follow from one thing: vessels dilating and leaking so that cells and proteins can reach the tissue.",
+      "symptoms": [
+        "redness",
+        "heat",
+        "swelling",
+        "pain"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "a response rather than a disease; chronic low-grade inflammation is implicated in most of the degenerative conditions above",
+        "src": "https://en.wikipedia.org/wiki/Inflammation"
+      },
+      "treated_by": [
+        "aspirin",
+        "salicylic_acid"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Inflammation"
+    },
+    "hypothyroidism": {
+      "kind": "metabolic",
+      "affects": [
+        "thyroid"
+      ],
+      "mechanism": "Thyroid hormone sets the metabolic rate of nearly every tissue, so a shortage presents as cold, weight gain, slow thought and slow bowels together — a list unspecific enough that it was routinely missed until the hormone could be measured.",
+      "symptoms": [
+        "cold intolerance",
+        "weight gain",
+        "tiredness",
+        "slow thought"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal once treated, and untreated congenital hypothyroidism causes permanent intellectual disability — which is why newborns are screened for it everywhere",
+        "src": "https://en.wikipedia.org/wiki/Hypothyroidism"
+      },
+      "treated_by": [
+        "thyroxine"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Hypothyroidism"
+    },
+    "bradycardia": {
+      "kind": "circulatory",
+      "affects": [
+        "heart"
+      ],
+      "mechanism": "The vagus nerve continuously brakes the heart. Atropine works by blocking that brake rather than by stimulating the heart, which is why it acts within seconds.",
+      "symptoms": [
+        "dizziness",
+        "fainting",
+        "breathlessness",
+        "or nothing at all in an athlete"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "a resting rate of 40 is normal in a trained athlete and needs nothing; the number alone never decides it",
+        "src": "https://en.wikipedia.org/wiki/Bradycardia"
+      },
+      "treated_by": [
+        "atropine"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Bradycardia"
+    },
+    "ulcer": {
+      "kind": "inflammatory",
+      "affects": [
+        "stomach",
+        "acid"
+      ],
+      "mechanism": "For a century the cause was thought to be stress and diet. Barry Marshall drank a culture of Helicobacter pylori in 1984, gave himself gastritis and cured it with antibiotics — and ulcers went from a condition managed for life to one cured in a fortnight.",
+      "symptoms": [
+        "burning upper abdominal pain",
+        "worse or better with food depending on site",
+        "bleeding"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "mortality of a perforated or bleeding ulcer; the ulcer itself is not dangerous until it does one of those",
+        "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease"
+    }
+  },
+  "care": [
+    "hospital",
+    "ward",
+    "nurse",
+    "doctor",
+    "ambulance",
+    "operating_theatre",
+    "syringe",
+    "suture",
+    "bandage",
+    "forceps",
+    "diagnosis",
+    "symptom",
+    "antiseptic"
+  ],
+  "wanted": [
+    "hypertension",
+    "migraine",
+    "obesity",
+    "coeliac_disease",
+    "lactose_intolerance",
+    "glaucoma",
+    "deafness",
+    "depression",
+    "schizophrenia",
+    "multiple_sclerosis",
+    "emphysema",
+    "kidney_failure",
+    "cirrhosis",
+    "thrombosis",
+    "aneurysm",
+    "burn",
+    "fracture",
+    "concussion",
+    "allergy",
+    "anaphylaxis",
+    "menopause"
+  ]
+}

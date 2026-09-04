@@ -2192,6 +2192,7 @@ const CAUTIONS = __CAUTION_DATA__;
 /* Food-label vocabulary → element ids. See data/labels.json. */
 const LABELS = __LABEL_DATA__;
 const PATHOGENS = __PATHOGEN_DATA__.pathogens || {};
+const CONDITIONS = __CONDITION_DATA__.conditions || {};
 /* Regulated allergens, and which of this world's elements each protein turns
    up in. See data/allergens.json. */
 const ALLERGENS = __ALLERGEN_DATA__;
@@ -3137,7 +3138,8 @@ function renderCount() {
                  (folded ? ` <b class="fw">· ${folded} folded</b>` : '') +
                  ` · ${tail}</span>`;
   el.title = folded
-    ? `${onCanvas} cards in view, ${folded} folded away behind them — ${all} of ${MAX_CHIPS} the bench holds`
+    ? `${onCanvas} of ${MAX_VISIBLE} in view, and ${folded} folded away behind them ` +
+      `(${all} of ${MAX_CHIPS} altogether). Folded cards do not use up the bench.`
     : 'Open your codex';
 }
 
@@ -3644,17 +3646,32 @@ function expandUp(chip) {
     freshlyAdded.push(el);
     return el;
   };
-  for (const r of steps) {
-    if (r.out === id) {
-      const parents = r.in.map(ensure);
+  // This used to walk the WHOLE of orderedSteps() and materialise every one of
+  // them, so tapping a card did not show what made it — it built the entire
+  // ancestry. Croatia is 194 steps: one tap took the board from 1 card to the
+  // 140-card cap, 135 of them folded, spread from x=-2485 to x=+3219, which is
+  // the long link running off the edge to nothing in the recording.
+  // ("something is not right with placements" — found live.)
+  //
+  // The same over-reach as the drop, in a second builder, and the answer is
+  // the same one the affordance's own name already gives: a tap shows the
+  // PARENTS. Tapping a parent shows its parents. That is the behaviour the
+  // code's own note asks for — "they show me their parents" — it is
+  // self-limiting at two new cards per tap, and it needs no cap at all,
+  // because there is nothing left to run away with.
+  const step = steps.find(r => r.out === id);
+  if (step) {
+    const parents = step.in.map(ensure);
+    if (parents.every(Boolean)) {
       links.push({ a: parents[0], b: parents[1] ?? null, out: chip, fresh: true });
-      continue;
+    } else {
+      // spawn() returns null at the cap. Take back the half-made row rather
+      // than leaving a link to nothing, and say why.
+      for (const el of parents) if (el) el.remove();
+      freshlyAdded.length = 0;
+      toast(fullWhy());
+      return [];
     }
-    if (chipFor.has(r.out)) continue;
-    const parents = r.in.map(ensure);
-    const el = materialize(r, parents);
-    chipFor.set(r.out, el);
-    freshlyAdded.push(el);
   }
   benchTouched = true;
   if (world.querySelectorAll('.chip.board').length > freshlyAdded.filter(Boolean).length) {
@@ -4814,7 +4831,40 @@ function freeSpot(w, h, near) {
           (vy0 + vy1) / 2 - h / 2 + (Math.random() - .5) * 40];
 }
 
-const MAX_CHIPS = 140;
+/* ── two limits, because they protect two different things ────────────────
+ * One number used to cover both, and it counted folded cards against the
+ * bench. Folded cards are display:none, parked on the card that hides them:
+ * they take no room on the canvas and the player did not ask to keep them —
+ * they arrived as somebody's ancestry. So a board showing twenty cards could
+ * refuse a twenty-first because a hundred and twenty invisible ancestors had
+ * eaten the budget. ("why are we so worried about folded? surely its about
+ * elements on the board, not whats folded, otherwise ill never be able to
+ * build a canvas as i feel i need to" — found live, and right.)
+ *
+ * MAX_VISIBLE is the bench: what is on the canvas, what has to be laid out
+ * without overlapping, what a person can actually hold in their head.
+ *
+ * MAX_CHIPS is the ceiling, and it exists for one measured reason. tidy()
+ * lays out every card including the folded ones — deliberately, so that
+ * unfolding one puts it in the right row rather than wherever it was standing
+ * when the fold swallowed it. That costs real time, measured on this build:
+ *
+ *     140 cards   31 ms        800 cards   616 ms
+ *     400 cards  202 ms       1500 cards  1403 ms
+ *
+ * 420 keeps a tidy under about 200ms, which is a hitch rather than a hang,
+ * and gives ancestry three times the room it had while leaving the bench
+ * itself exactly as big as it was.
+ */
+const MAX_VISIBLE = 140;
+const MAX_CHIPS = 420;
+const benchCount = () =>
+  world.querySelectorAll('.chip.board:not(.folded):not(.hidden)').length;
+const chipCount = () => world.querySelectorAll('.chip.board').length;
+const benchFull = () => benchCount() >= MAX_VISIBLE || chipCount() >= MAX_CHIPS;
+const fullWhy = () => chipCount() >= MAX_CHIPS
+  ? `The canvas is full at ${MAX_CHIPS} cards counting folded ones — tidy it, or double-tap a few to clear space`
+  : `The bench is full at ${MAX_VISIBLE} cards in view — fold some, tidy it, or double-tap a few to clear space`;
 function spawn(id, x, y, near, above, forceNew) {
   // One card per thing, if you asked for that. A bench built by hand ends up
   // with four Waters and three Suns, because every recipe that needs one takes
@@ -4843,7 +4893,7 @@ function spawn(id, x, y, near, above, forceNew) {
     }
   }
   // Whatever else happens, the bench must not be able to grow without limit.
-  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
+  if (benchFull()) {
     // But "full" is the wrong answer when the thing asked for is already
     // standing there. The consolidate branch above catches that only when the
     // preference is on; with it off, spawn never looks, so a full bench
@@ -4878,7 +4928,7 @@ function spawn(id, x, y, near, above, forceNew) {
     // then repositioned. That is why an exported bench came back with the
     // whole board duplicated and a links array of [0,0,0] — every index
     // pointing at element zero. Refusing means returning nothing.
-    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
+    toast(fullWhy());
     return null;
   }
   const e = byId[id];
@@ -4964,8 +5014,8 @@ function hubHTML(product) {
 function spawnHub(scanRecord) {
   // Hubs and placeholders are real .chip.board elements and were the only two
   // ways past the cap — which is how a bench got to 145 in the first place.
-  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
-    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it first`);
+  if (benchFull()) {
+    toast(fullWhy());
     return null;
   }
   const el = document.createElement('div');
@@ -5000,8 +5050,8 @@ function placeholderHTML(text) {
 function spawnPlaceholder(text) {
   // Hubs and placeholders are real .chip.board elements and were the only two
   // ways past the cap — which is how a bench got to 145 in the first place.
-  if (world.querySelectorAll('.chip.board').length >= MAX_CHIPS) {
-    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it first`);
+  if (benchFull()) {
+    toast(fullWhy());
     return null;
   }
   const el = document.createElement('div');
@@ -5225,7 +5275,7 @@ function placeOneRecipe(r, undoLabel, shared) {
     benchTouched = true;
     refreshFolds(); drawLinks(); runTidy(); sfx.pick(); save();
     if (out) ensureVisible(out);
-    else toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
+    else toast(fullWhy());
   }
   return out;
 }
@@ -5259,7 +5309,7 @@ function placeRoute(id, idx) {
   // told nothing at all. Every other path that hits the cap already toasts
   // this exact sentence; this one now does too. It is also what stopped
   // regressionTest() from running: its own scratch bench fills the board.
-  if (!out) { toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`); return; }
+  if (!out) { toast(fullWhy()); return; }
   ensureVisible(out);
   toast(`${nameOf(byId[id])} added — ${r.in.map(i => nameOf(byId[i])).join(r.verb ? '' : ' + ')}`);
 }
@@ -8084,6 +8134,7 @@ function quickViewHTML(id) {
     ${cautionHTML(id)}
     ${upstreamHazardHTML(id)}
     ${pathogenHTML(id)}
+    ${conditionHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
       ${!owned ? `<button class="ghost" data-hint="${id}">How do I make it?</button>` : ''}
@@ -8988,6 +9039,28 @@ function aliasesFor(id) {
  * organism has several true numbers: untreated bubonic plague is 0.6 and
  * untreated pneumonic approaches 1.0.
  */
+function conditionHTML(id) {
+  const c = CONDITIONS[id];
+  if (!c) return '';
+  const link = x => byId[x] ? `<button class="chip mini" data-trace="${x}">${nameOf(byId[x])}</button>` : '';
+  const row = (k, v) => v ? `<p class="pfrom"><b>${k}</b> · ${v}</p>` : '';
+  const pct = n => n >= 0.01 ? `${Math.round(n * 100)}%` : n > 0 ? `${(n * 100).toFixed(2)}%` : 'not fatal';
+  const treats = (c.treated_by || []).map(link).filter(Boolean).join(' ');
+  const prevents = (c.prevented_by || []).map(link).filter(Boolean).join(' ');
+  const affects = (c.affects || []).map(link).filter(Boolean).join(' ');
+  return `<h2>What goes wrong</h2>
+    <p class="pfrom"><b>${c.kind}</b></p>
+    ${affects ? `<p class="pfrom"><b>affects</b> ${affects}</p>` : ''}
+    ${row('mechanism', c.mechanism)}
+    ${row('signs', (c.symptoms || []).join(', '))}
+    <p class="pfrom"><b>seriousness</b> · ${pct(c.seriousness.value)} — ${c.seriousness.measure}</p>
+    ${treats ? `<p class="pfrom"><b>treated by</b> ${treats}</p>`
+             : `<p class="hint2">Nothing in this world treats it.</p>`}
+    ${prevents ? `<p class="pfrom"><b>prevented by</b> ${prevents}</p>` : ''}
+    <p class="hint2"><a href="${c.src}" target="_blank" rel="noopener">source</a> ·
+       <a href="${c.seriousness.src}" target="_blank" rel="noopener">the number</a></p>`;
+}
+
 function pathogenHTML(id) {
   const p = PATHOGENS[id];
   if (!p) return '';
@@ -9852,7 +9925,7 @@ function buildChain(id, x, y) {
   // `c.style.left` on null in the translate loop below. Check the room up
   // front rather than discovering it 140 chips in: a chain that cannot fit is
   // not started, and you get the card you asked for instead.
-  const room = MAX_CHIPS - world.querySelectorAll('.chip.board').length;
+  const room = Math.min(MAX_CHIPS - chipCount(), MAX_VISIBLE - benchCount());
   if (steps.length + 2 > room) {
     toast(`${nameOf(byId[id])} is ${steps.length} steps back — more than the bench has room for, so here it is on its own`);
     return spawn(id, x, y);
@@ -9876,7 +9949,7 @@ function buildChain(id, x, y) {
   }
   const el = chipFor.get(id) || ensure(id);
   if (!el) {
-    toast(`The bench is full at ${MAX_CHIPS} cards — tidy it, or double-tap a few to clear space`);
+    toast(fullWhy());
     refreshFolds(); drawLinks(); save();
     return null;
   }
@@ -10638,6 +10711,45 @@ function regressionTest() {
     check('free play: an oversized chain is refused, not half-built', !threw2);
     for (const c of [...world.querySelectorAll('.chip.board')]) {
       if (!board0.includes(c)) c.remove();
+    }
+    links.length = 0;
+    prefs.freePlay = free0;
+  }
+
+  // Folded cards must not use up the bench. A board showing twenty cards and
+  // hiding a hundred and ten ancestors has plenty of room, and used to refuse.
+  {
+    const board0 = [...world.querySelectorAll('.chip.board')];
+    const free0 = prefs.freePlay; prefs.freePlay = true;
+    const ids = elements.slice(0, 160).map(e => e.id);
+    for (let i = 0; i < 130; i++) {
+      const c = spawn(ids[i], (i % 20) * 90, Math.floor(i / 20) * 90, null, null, true);
+      if (c && i >= 20) c.classList.add('folded');
+    }
+    check('folded cards do not use up the bench',
+      benchCount() <= 25 && !!spawn(ids[150], 0, 0, null, null, true));
+    check('and the bench itself still stops at MAX_VISIBLE in view',
+      benchCount() <= MAX_VISIBLE && chipCount() <= MAX_CHIPS);
+    for (const x of [...world.querySelectorAll('.chip.board')]) if (!board0.includes(x)) x.remove();
+    links.length = 0; prefs.freePlay = free0;
+  }
+
+  // A tap on a card shows what made it — its PARENTS, and not its whole
+  // ancestry. Croatia is 194 steps back, and tapping it took the board from
+  // one card to the 140-card cap spread over 5,700 pixels. The drop had the
+  // same fault and was fixed; this was a second builder nobody had looked at.
+  {
+    const free0 = prefs.freePlay;
+    const board0 = [...world.querySelectorAll('.chip.board')];
+    prefs.freePlay = true;
+    const c = spawn('croatia', 0, 0);
+    let threw = null, n = 0;
+    try { toggleBranch(c); } catch (e) { threw = e; }
+    n = world.querySelectorAll('.chip.board').length - board0.length;
+    check('a tap shows the parents, not the ancestry', !threw && n <= 3);
+    check('and the card tapped is still the one it was', !!findBoardChip('croatia'));
+    for (const x of [...world.querySelectorAll('.chip.board')]) {
+      if (!board0.includes(x)) x.remove();
     }
     links.length = 0;
     prefs.freePlay = free0;

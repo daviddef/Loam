@@ -1021,6 +1021,392 @@
         "safe|case",
         "credit"
       ]
+    },
+    "steam_engine": {
+      "src": "https://en.wikipedia.org/wiki/Steam_engine",
+      "note": "In the order the steam travels: raise it, admit it, use it, condense it, and turn the push into a turn.",
+      "needs": [
+        "boiler",
+        "firebox",
+        "furnace|fire",
+        "water",
+        "steam",
+        "pressure_vessel|boiler",
+        "safety_valve|valve",
+        "piston",
+        "cylinder",
+        "connecting_rod|rod",
+        "crank",
+        "flywheel",
+        "governor",
+        "condenser",
+        "coal"
+      ]
+    },
+    "generator": {
+      "src": "https://en.wikipedia.org/wiki/Electric_generator",
+      "note": "Faraday's law made into hardware: a magnetic field, a conductor, and relative motion between them.",
+      "needs": [
+        "magnet",
+        "coil",
+        "armature|rotor",
+        "stator",
+        "commutator|slip_ring",
+        "copper",
+        "wire",
+        "insulation",
+        "bearing",
+        "shaft",
+        "turbine|steam_engine",
+        "iron"
+      ]
+    },
+    "transformer": {
+      "src": "https://en.wikipedia.org/wiki/Transformer",
+      "note": "Two coils sharing one iron path, and the ratio between their turns is the whole device.",
+      "needs": [
+        "coil",
+        "iron",
+        "laminated_core|iron",
+        "copper",
+        "wire",
+        "insulation",
+        "oil",
+        "tank|vessel",
+        "bushing|insulator"
+      ]
+    },
+    "battery": {
+      "src": "https://en.wikipedia.org/wiki/Electric_battery",
+      "note": "Two different metals and something that will carry ions between them.",
+      "needs": [
+        "anode",
+        "cathode",
+        "electrolyte",
+        "separator|membrane",
+        "zinc",
+        "copper",
+        "acid",
+        "terminal|electrode",
+        "casing|container"
+      ]
+    },
+    "telephone": {
+      "src": "https://en.wikipedia.org/wiki/Telephone",
+      "note": "Sound to current and back again, with a way to say who you are calling.",
+      "needs": [
+        "microphone",
+        "loudspeaker|earpiece",
+        "diaphragm",
+        "carbon|carbon_granule",
+        "magnet",
+        "coil",
+        "wire",
+        "dial|keypad",
+        "bell|ringer",
+        "exchange|switchboard",
+        "copper"
+      ]
+    },
+    "telegraph": {
+      "src": "https://en.wikipedia.org/wiki/Electrical_telegraph",
+      "note": "The first electric network, and it needed almost nothing: a key, a wire, and a code.",
+      "needs": [
+        "key|telegraph_key",
+        "battery",
+        "wire",
+        "electromagnet|coil",
+        "armature|lever",
+        "sounder|bell",
+        "insulator",
+        "pole|mast",
+        "morse_code|code",
+        "relay"
+      ]
+    },
+    "loom": {
+      "src": "https://en.wikipedia.org/wiki/Loom",
+      "note": "Every loom does the same four things in the same order, and everything else is speed.",
+      "needs": [
+        "frame",
+        "warp",
+        "weft",
+        "heddle",
+        "shed|shedding",
+        "shuttle",
+        "reed|comb",
+        "beam|roller",
+        "treadle|pedal",
+        "thread",
+        "cloth"
+      ]
+    },
+    "sewing_machine": {
+      "src": "https://en.wikipedia.org/wiki/Sewing_machine",
+      "note": "The lockstitch needs two threads that never pass through each other, which is why the needle has its eye at the point.",
+      "needs": [
+        "needle",
+        "thread",
+        "bobbin",
+        "shuttle|hook",
+        "presser_foot|foot",
+        "feed_dog|feed",
+        "tension_disc|tension",
+        "treadle|pedal",
+        "flywheel",
+        "cam",
+        "spring"
+      ]
+    },
+    "plough": {
+      "src": "https://en.wikipedia.org/wiki/Plough",
+      "note": "Cut it, lift it, turn it over. Three jobs, three parts, and the mouldboard is the one that changed farming.",
+      "needs": [
+        "coulter|blade",
+        "share|ploughshare",
+        "mouldboard",
+        "frame",
+        "beam",
+        "handle",
+        "iron",
+        "steel",
+        "ox|horse|tractor"
+      ]
+    },
+    "pump": {
+      "src": "https://en.wikipedia.org/wiki/Pump",
+      "note": "A chamber that changes volume and two valves that only let water go one way.",
+      "needs": [
+        "cylinder",
+        "piston",
+        "valve",
+        "plunger|piston",
+        "seal_gasket|leather",
+        "handle|lever",
+        "pipe",
+        "water"
+      ]
+    },
+    "turbine": {
+      "src": "https://en.wikipedia.org/wiki/Turbine",
+      "note": "Blades on a shaft, and the only question is what is pushing them.",
+      "needs": [
+        "blade",
+        "rotor",
+        "stator",
+        "shaft",
+        "bearing",
+        "casing|housing",
+        "nozzle",
+        "steam|water|wind",
+        "balance|balancing"
+      ]
+    },
+    "kiln": {
+      "src": "https://en.wikipedia.org/wiki/Kiln",
+      "note": "A box that gets hot enough and cools slowly enough, and the second half is what breaks the pot.",
+      "needs": [
+        "firebrick|brick",
+        "clay",
+        "chimney|flue",
+        "firebox|fire",
+        "fuel|wood|coal",
+        "damper",
+        "draught|air",
+        "shelf|kiln_shelf",
+        "cone|pyrometer|thermometer",
+        "insulation"
+      ]
+    },
+    "forge": {
+      "src": "https://en.wikipedia.org/wiki/Forge",
+      "note": "Fire, air, and a way to hold what you are heating.",
+      "needs": [
+        "hearth|fireplace",
+        "charcoal|coal",
+        "bellows",
+        "tuyere|pipe",
+        "anvil",
+        "tongs",
+        "hammer",
+        "quenching_trough|trough",
+        "water"
+      ]
+    },
+    "clock": {
+      "src": "https://en.wikipedia.org/wiki/Clock",
+      "note": "A source of power, something that counts, and something that stops the counting from running away.",
+      "needs": [
+        "weight|spring",
+        "mainspring|spring",
+        "escapement",
+        "pendulum|balance_wheel",
+        "gear",
+        "pinion|gear",
+        "hand|clock_hand",
+        "dial|face",
+        "frame|plate",
+        "bearing|jewel",
+        "winding_key|key"
+      ]
+    },
+    "compass": {
+      "src": "https://en.wikipedia.org/wiki/Compass",
+      "note": "A magnet free to turn, and everything else is keeping it free.",
+      "needs": [
+        "magnet",
+        "needle",
+        "pivot",
+        "jewel|bearing",
+        "card|dial",
+        "housing|casing",
+        "glass",
+        "gimbal",
+        "lubber_line|mark"
+      ]
+    },
+    "sextant": {
+      "src": "https://en.wikipedia.org/wiki/Sextant",
+      "note": "It measures the angle between two things, which is why it works on a moving deck when nothing else does.",
+      "needs": [
+        "mirror",
+        "half_silvered_mirror|mirror",
+        "index_arm|arm",
+        "arc|scale",
+        "vernier|scale",
+        "telescope|eyepiece",
+        "filter|shade",
+        "frame",
+        "horizon"
+      ]
+    },
+    "barometer": {
+      "src": "https://en.wikipedia.org/wiki/Barometer",
+      "note": "A column of mercury the atmosphere is holding up, or a sealed box it is squeezing.",
+      "needs": [
+        "mercury|aneroid_cell",
+        "tube|vessel",
+        "vacuum",
+        "scale",
+        "cistern|reservoir",
+        "glass",
+        "pointer|hand",
+        "spring"
+      ]
+    },
+    "microscope": {
+      "src": "https://en.wikipedia.org/wiki/Microscope",
+      "note": "Two lenses in series, and a great deal of trouble getting light through the specimen.",
+      "needs": [
+        "objective_lens|lens",
+        "eyepiece",
+        "tube",
+        "stage",
+        "mirror|lamp",
+        "condenser|lens",
+        "diaphragm",
+        "focus_knob|screw",
+        "slide|glass",
+        "stand|frame"
+      ]
+    },
+    "book": {
+      "src": "https://en.wikipedia.org/wiki/Book",
+      "note": "A codex is folded sheets sewn in gatherings, which is why it opens flat and a scroll does not.",
+      "needs": [
+        "paper",
+        "ink",
+        "type",
+        "press|printing_press",
+        "folding|fold",
+        "gathering|signature",
+        "thread",
+        "glue",
+        "spine",
+        "board|cardboard",
+        "leather|cloth",
+        "endpaper|paper"
+      ]
+    },
+    "paper": {
+      "src": "https://en.wikipedia.org/wiki/Paper",
+      "note": "Fibre, water, a screen to catch it on, and pressure to take the water out.",
+      "needs": [
+        "cellulose|pulp",
+        "rag|wood",
+        "water",
+        "vat",
+        "mould|screen",
+        "deckle|frame",
+        "felt",
+        "press",
+        "size|glue",
+        "drying|dry"
+      ]
+    },
+    "soap": {
+      "src": "https://en.wikipedia.org/wiki/Soap",
+      "note": "One reaction, known for four thousand years: fat and a strong alkali.",
+      "needs": [
+        "fat|tallow|oil",
+        "lye|sodium_hydroxide",
+        "water",
+        "salt",
+        "saponification|reaction",
+        "mould|frame",
+        "curing|wait",
+        "glycerol"
+      ]
+    },
+    "cheese": {
+      "src": "https://en.wikipedia.org/wiki/Cheese",
+      "note": "Separate the curd from the whey, then decide how long you can wait.",
+      "needs": [
+        "milk",
+        "rennet|acid",
+        "culture|bacteria",
+        "curd",
+        "whey",
+        "salt",
+        "press",
+        "mould|frame",
+        "cave|cellar",
+        "rind"
+      ]
+    },
+    "motherboard": {
+      "src": "https://en.wikipedia.org/wiki/Motherboard",
+      "note": "A board whose job is entirely connection: everything on it is there to let the other things talk.",
+      "needs": [
+        "printed_circuit_board|circuit_board",
+        "copper",
+        "solder",
+        "cpu",
+        "socket|connector",
+        "chipset|integrated_circuit",
+        "data_bus",
+        "memory|ram",
+        "capacitor",
+        "resistor",
+        "crystal|oscillator",
+        "power_supply|transformer"
+      ]
+    },
+    "operating_system": {
+      "src": "https://en.wikipedia.org/wiki/Operating_system",
+      "note": "Everything between the metal and the program, and almost all of it is about sharing.",
+      "needs": [
+        "kernel",
+        "scheduler|scheduling",
+        "memory_management|memory",
+        "filesystem",
+        "device_driver|driver",
+        "interrupt",
+        "process|task",
+        "system_call|instruction",
+        "shell|command_line",
+        "bootloader|boot"
+      ]
     }
   }
 }

@@ -88886,5 +88886,735 @@
     "why": "Most of the harm is not the virus doing something but where it puts itself: integrating beside a growth-control gene switches that gene on permanently, and the cell becomes a tumour. The same mechanism made these viruses the tool that identified the first oncogenes.",
     "src": "https://en.wikipedia.org/wiki/Feline_leukemia_virus",
     "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "wound"
+    ],
+    "out": "pain",
+    "why": "Specialised nerve endings fire when tissue is damaged, and the brain decides what to do with that traffic. The deciding is why the same injury hurts differently in different circumstances, and why a drug can act on the signal, on the nerve, or on the decision — three quite separate ways to stop it.",
+    "src": "https://en.wikipedia.org/wiki/Pain",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "iron"
+    ],
+    "out": "anaemia",
+    "why": "Each haemoglobin molecule needs four iron atoms, and the body has no way to excrete iron deliberately — so it hoards it, and shortage comes almost always from bleeding rather than from diet alone. This is why anaemia in an adult is a symptom to be explained, not a diagnosis on its own.",
+    "src": "https://en.wikipedia.org/wiki/Anemia",
+    "verified": true
+  },
+  {
+    "in": [
+      "iodine",
+      "neck"
+    ],
+    "out": "thyroid",
+    "why": "Its hormone is one of the very few uses the body has for iodine, and there is no other source than diet. That single dependence is why a trace element that is scarce in soil far from the sea can set the pace of a person's metabolism, and why iodised salt exists at all.",
+    "src": "https://en.wikipedia.org/wiki/Thyroid",
+    "verified": true
+  },
+  {
+    "in": [
+      "iodine",
+      "thyroid"
+    ],
+    "out": "goitre",
+    "why": "Low iodine means low hormone, low hormone means the pituitary shouts louder, and the gland grows in response to the shouting. The swelling is the response to the shortage, not the shortage itself — which is why it shrinks again once iodine is supplied.",
+    "src": "https://en.wikipedia.org/wiki/Goitre",
+    "verified": true
+  },
+  {
+    "in": [
+      "artery",
+      "cholesterol"
+    ],
+    "out": "heart_attack",
+    "why": "The heart pumps blood through itself but cannot use the blood inside its chambers — it is fed by its own arteries on the outside. Block one and the muscle downstream dies within hours, and heart muscle does not grow back. That is why the time to treatment is the whole prognosis.",
+    "src": "https://en.wikipedia.org/wiki/Myocardial_infarction",
+    "verified": true
+  },
+  {
+    "in": [
+      "heart",
+      "pump"
+    ],
+    "out": "heart_failure",
+    "why": "The name misleads almost everyone. A failing heart compensates by enlarging and beating faster, and those compensations work for years before they stop working — which is why it is a slow condition punctuated by sudden crises rather than a single event.",
+    "src": "https://en.wikipedia.org/wiki/Heart_failure",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "brain"
+    ],
+    "out": "stroke",
+    "why": "Two opposite causes with nearly the same presentation: a clot blocking flow, or a bleed. The treatments are opposite too — one wants the clot dissolved, the other would be killed by that — so the scan comes before anything else, and that ordering is the whole of modern stroke care.",
+    "src": "https://en.wikipedia.org/wiki/Stroke",
+    "verified": true
+  },
+  {
+    "in": [
+      "allergy",
+      "lung"
+    ],
+    "out": "asthma",
+    "why": "Muscle in the airway wall tightens, the lining swells, and mucus fills what is left. All three are things the body is doing rather than damage being done to it — so it can be undone, and the reversibility is what the diagnosis actually rests on.",
+    "src": "https://en.wikipedia.org/wiki/Asthma",
+    "verified": true
+  },
+  {
+    "in": [
+      "inflammation",
+      "joint"
+    ],
+    "out": "arthritis",
+    "why": "Osteoarthritis is cartilage worn away by use and gets worse through the day. Rheumatoid is the immune system attacking the joint lining and is worst on waking, in a symmetrical pattern. One wants rest and replacement, the other wants the immune system suppressed.",
+    "src": "https://en.wikipedia.org/wiki/Arthritis",
+    "verified": true
+  },
+  {
+    "in": [
+      "calcium",
+      "skeletal_system"
+    ],
+    "out": "osteoporosis",
+    "why": "The skeleton is rebuilt about every ten years, torn down by one cell type and rebuilt by another. After roughly age thirty the tearing outpaces the building, and the loss shows in no symptom at all until a bone breaks under a load it should have carried.",
+    "src": "https://en.wikipedia.org/wiki/Osteoporosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "protein"
+    ],
+    "out": "cataract",
+    "why": "Lens proteins are laid down before birth and never renewed — they are among the oldest molecules in the body. Decades of ultraviolet light and sugar slowly cross-link them until they scatter light instead of passing it. Nothing dissolves them, which is why the answer is to take the lens out.",
+    "src": "https://en.wikipedia.org/wiki/Cataract",
+    "verified": true
+  },
+  {
+    "in": [
+      "acid",
+      "stomach"
+    ],
+    "out": "ulcer",
+    "why": "Barry Marshall drank a culture of Helicobacter pylori in 1984 to prove it, gave himself gastritis, and cured it with antibiotics. Ulcers went from a chronic condition managed for life to something cured in a fortnight, and it took a Nobel Prize before most clinicians believed it.",
+    "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "gene"
+    ],
+    "out": "haemophilia",
+    "why": "That location is the whole inheritance pattern: a mother carries it silently and her sons have a one-in-two chance. It ran through the royal houses of Europe from Victoria, which is how a single molecular defect became a piece of political history.",
+    "src": "https://en.wikipedia.org/wiki/Haemophilia",
+    "verified": true
+  },
+  {
+    "in": [
+      "crystal",
+      "joint"
+    ],
+    "out": "gout",
+    "why": "Uric acid is less soluble at lower temperature, and the far end of the foot is the coolest part of the body. Most mammals break uric acid down further and never get it; humans lost that enzyme, which is why the disease is essentially ours.",
+    "src": "https://en.wikipedia.org/wiki/Gout",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "nerve"
+    ],
+    "out": "lead_poisoning",
+    "why": "That mistake is the whole mechanism: it is taken up wherever calcium is wanted, into bone where it stays for decades, and into the nervous system where it interferes with signalling. There is no level at which it does nothing, which is why the answer has always been removal rather than treatment.",
+    "src": "https://en.wikipedia.org/wiki/Lead_poisoning",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "carbon_monoxide"
+    ],
+    "out": "carbon_monoxide_poisoning",
+    "why": "Haemoglobin cannot tell the difference and will not let go, so the blood stays red and looks perfectly healthy while carrying nothing useful. Both facts — no warning, and no visible sign — are why it kills people asleep and why detectors exist.",
+    "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "salt"
+    ],
+    "out": "dehydration",
+    "why": "Replacing water alone dilutes the blood and can be worse than nothing. The discovery that glucose and sodium are absorbed together in the gut — so a solution of both is taken up when plain water is not — is what made oral rehydration work, and it has saved more lives than almost any other single measure.",
+    "src": "https://en.wikipedia.org/wiki/Dehydration",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "ice"
+    ],
+    "out": "hypothermia",
+    "why": "Shivering is the last active defence, and it stops when the fuel runs out — so a person who has stopped shivering is worse, not better. Cold water takes heat about twenty-five times faster than air, which is why immersion is the dangerous case rather than cold air.",
+    "src": "https://en.wikipedia.org/wiki/Hypothermia",
+    "verified": true
+  },
+  {
+    "in": [
+      "altitude",
+      "oxygen"
+    ],
+    "out": "altitude_sickness",
+    "why": "Oxygen is 21% of the atmosphere at sea level and at 8,000 metres alike; what falls is the pressure driving it into the blood. That is why acclimatisation works — the body makes more red cells and breathes deeper — and why the only reliable treatment is to go down.",
+    "src": "https://en.wikipedia.org/wiki/Altitude_sickness",
+    "verified": true
+  },
+  {
+    "in": [
+      "maize",
+      "niacin"
+    ],
+    "out": "pellagra",
+    "why": "Maize contains niacin, but chemically bound in a form the gut cannot take up. Soaking the grain in lime, as Mesoamerican cooking always had, releases it. Pellagra therefore followed maize wherever it travelled without the cooking method that made it safe.",
+    "src": "https://en.wikipedia.org/wiki/Pellagra",
+    "verified": true
+  },
+  {
+    "in": [
+      "rice",
+      "vitamin_b1"
+    ],
+    "out": "beriberi",
+    "why": "Thiamine is in the bran, and milling removes the bran. Navies and prisons fed on polished white rice developed it in numbers, and Eijkman found the cause by feeding chickens the leftovers — the first demonstration that a disease could be caused by something missing rather than something present.",
+    "src": "https://en.wikipedia.org/wiki/Beriberi",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhodopsin",
+      "vitamin_a"
+    ],
+    "out": "night_blindness",
+    "why": "Rhodopsin, the pigment the rod cells use to see in dim light, is rebuilt from vitamin A every time it is bleached by light. With none spare, night vision goes first — and it is the earliest visible sign of a deficiency that goes on to cause irreversible blindness.",
+    "src": "https://en.wikipedia.org/wiki/Nyctalopia",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "protein"
+    ],
+    "out": "kwashiorkor",
+    "why": "Enough calories but too little protein means too little albumin in the blood, and without it fluid leaks out of the vessels into the tissues. The child looks fed and is not, which is exactly the trap the name records — it means the sickness of the child displaced from the breast by the next baby.",
+    "src": "https://en.wikipedia.org/wiki/Kwashiorkor",
+    "verified": true
+  },
+  {
+    "in": [
+      "labour",
+      "uterus"
+    ],
+    "out": "childbirth",
+    "why": "Human birth is unusually hard because a wide pelvis is bad for walking upright and a big head is good for everything else, so the fit is tight and the baby must turn as it descends. Almost every complication and every intervention traces back to that one compromise.",
+    "src": "https://en.wikipedia.org/wiki/Childbirth",
+    "verified": true
+  },
+  {
+    "in": [
+      "oxytocin",
+      "uterus"
+    ],
+    "out": "labour",
+    "why": "Stretching the cervix triggers oxytocin, oxytocin drives contraction, contraction stretches the cervix further. It is one of the very few positive feedback loops in the body, and it exists because the process has to finish rather than settle at an equilibrium.",
+    "src": "https://en.wikipedia.org/wiki/Childbirth",
+    "verified": true
+  },
+  {
+    "in": [
+      "bran",
+      "enzyme"
+    ],
+    "out": "vitamin_b1",
+    "why": "Casimir Funk isolated it in 1912 and coined 'vitamine' — a vital amine — for the class. The amine part turned out to be wrong for most of the others and the e was quietly dropped, but the idea it named, that trace organic compounds are essential, was right and new.",
+    "src": "https://en.wikipedia.org/wiki/Thiamine",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "millstone"
+    ],
+    "out": "bran",
+    "why": "Bran holds the fibre, most of the B vitamins and most of the minerals; the white endosperm left behind is mostly starch. Removing it makes flour that keeps for months instead of weeks, because the oil in the germ is what goes rancid — so the trade was shelf life against nutrition.",
+    "src": "https://en.wikipedia.org/wiki/Bran",
+    "verified": true
+  },
+  {
+    "in": [
+      "thyroid",
+      "thyroxine"
+    ],
+    "out": "hypothyroidism",
+    "why": "Thyroid hormone sets the metabolic rate of essentially every tissue, so a shortage shows up as cold, weight gain, slow thought and slow bowels all at once — a list so unspecific that it was routinely missed until the hormone could be measured. It is also one of the few conditions where replacing a single molecule restores normal life completely.",
+    "src": "https://en.wikipedia.org/wiki/Hypothyroidism",
+    "verified": true
+  },
+  {
+    "in": [
+      "atropine",
+      "heart"
+    ],
+    "out": "bradycardia",
+    "why": "The vagus nerve continuously brakes the heart; atropine works by blocking that brake rather than by stimulating the heart, which is why it acts within seconds. An athlete's resting rate of 40 is normal and needs nothing — the number alone never decides it.",
+    "src": "https://en.wikipedia.org/wiki/Bradycardia",
+    "verified": true
+  },
+  {
+    "in": [
+      "coil",
+      "frame"
+    ],
+    "out": "stator",
+    "why": "Whether the coils spin inside a fixed magnet or a magnet spins inside fixed coils is a choice about what has to slide. Keeping the coils still means the heavy current never has to cross a moving contact, which is why almost every large machine is built that way round.",
+    "src": "https://en.wikipedia.org/wiki/Stator",
+    "verified": true
+  },
+  {
+    "in": [
+      "electrode",
+      "zinc"
+    ],
+    "out": "anode",
+    "why": "In a battery being used it is the negative terminal; in the same battery being charged it is the positive one. The name follows the reaction rather than the sign, which is why it appears to swap and has confused students for a century and a half.",
+    "src": "https://en.wikipedia.org/wiki/Anode",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "electrode"
+    ],
+    "out": "cathode",
+    "why": "That deposition is the whole of electroplating and of electrolytic refining: pass the current and the pure metal grows on the cathode while everything else stays in solution. Copper for wiring is refined this way to about 99.99%.",
+    "src": "https://en.wikipedia.org/wiki/Cathode",
+    "verified": true
+  },
+  {
+    "in": [
+      "conductor",
+      "electrolyte"
+    ],
+    "out": "electrode",
+    "why": "Everything difficult about a battery happens in the few nanometres either side of this boundary, because the current has to change from electrons moving in metal to ions moving in liquid. Nearly all of a cell's losses and nearly all of its ageing happen right there.",
+    "src": "https://en.wikipedia.org/wiki/Electrode",
+    "verified": true
+  },
+  {
+    "in": [
+      "acid",
+      "salt"
+    ],
+    "out": "electrolyte",
+    "why": "If it carried electrons too it would short the cell out internally and the battery would flatten on the shelf. Conducting one kind of charge and blocking the other is the whole requirement, and it is why the separator matters as much as the chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Electrolyte",
+    "verified": true
+  },
+  {
+    "in": [
+      "copper",
+      "screw"
+    ],
+    "out": "terminal",
+    "why": "A joint that is merely touching has resistance, resistance makes heat, heat makes the joint worse, and that runs away. Almost every connector design is about maintaining contact pressure over years of heating and cooling rather than about conducting at all.",
+    "src": "https://en.wikipedia.org/wiki/Terminal_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "shell",
+      "steel"
+    ],
+    "out": "casing",
+    "why": "It keeps dirt and water out, keeps moving parts and voltage in, and carries the mounting loads so the working parts do not. Those are three unrelated jobs, which is why it is usually the heaviest part of a light machine.",
+    "src": "https://en.wikipedia.org/wiki/Casing",
+    "verified": true
+  },
+  {
+    "in": [
+      "brush",
+      "copper"
+    ],
+    "out": "commutator",
+    "why": "Without it a direct-current motor would push one way for half a turn and back the other way for the next half, and sit there vibrating. The segments and the brushes exist only to flip the current at exactly the moment the coil passes the pole.",
+    "src": "https://en.wikipedia.org/wiki/Commutator_(electric)",
+    "verified": true
+  },
+  {
+    "in": [
+      "coil",
+      "shaft"
+    ],
+    "out": "armature",
+    "why": "It is defined by its role rather than its position: whichever part carries the current being generated is the armature, and in most large alternators that is the stationary part. The word describes the job, not the geometry.",
+    "src": "https://en.wikipedia.org/wiki/Armature_(electrical)",
+    "verified": true
+  },
+  {
+    "in": [
+      "ceramic",
+      "electricity"
+    ],
+    "out": "insulator",
+    "why": "A high-voltage insulator's ribs are there to lengthen the path that rain and dirt can bridge, not for strength. The failure mode is always a wet conducting film across the surface rather than the material itself giving way.",
+    "src": "https://en.wikipedia.org/wiki/Insulator_(electricity)",
+    "verified": true
+  },
+  {
+    "in": [
+      "insulator",
+      "terminal"
+    ],
+    "out": "bushing",
+    "why": "Every transformer has this problem: enormous voltage inside, an earthed steel tank around it, and the current has to come out. The bushing spreads the electrical stress over a long, carefully graded path so no single point reaches breakdown.",
+    "src": "https://en.wikipedia.org/wiki/Bushing_(electrical)",
+    "verified": true
+  },
+  {
+    "in": [
+      "diaphragm",
+      "magnet"
+    ],
+    "out": "loudspeaker",
+    "why": "The same device works in both directions — push the cone and it generates a current, pass a current and it moves. Field telephones used one earpiece as both, and intercoms still do.",
+    "src": "https://en.wikipedia.org/wiki/Loudspeaker",
+    "verified": true
+  },
+  {
+    "in": [
+      "beam",
+      "thread"
+    ],
+    "out": "warp",
+    "why": "They take all the strain, so they are spun harder and sized with starch to survive the rubbing. That is why warp and weft are usually different yarns even in a cloth that looks uniform.",
+    "src": "https://en.wikipedia.org/wiki/Warp_and_weft",
+    "verified": true
+  },
+  {
+    "in": [
+      "shuttle",
+      "thread"
+    ],
+    "out": "weft",
+    "why": "Everything mechanical about weaving is about getting the weft across faster: shuttle, then flying shuttle, then rapier, then a jet of air or water. The warp has barely changed in four thousand years.",
+    "src": "https://en.wikipedia.org/wiki/Warp_and_weft",
+    "verified": true
+  },
+  {
+    "in": [
+      "warp",
+      "wire"
+    ],
+    "out": "heddle",
+    "why": "The pattern of which heddles lift together IS the weave — plain, twill, satin are all the same machine with a different lifting order. Everything decorative in woven cloth is decided here.",
+    "src": "https://en.wikipedia.org/wiki/Heddle",
+    "verified": true
+  },
+  {
+    "in": [
+      "heddle",
+      "warp"
+    ],
+    "out": "shed",
+    "why": "The whole loom is built to open it, throw something through it, and close it again, hundreds of times a minute. It is the only part of weaving that is not a thing but an opening.",
+    "src": "https://en.wikipedia.org/wiki/Shed_(weaving)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bobbin",
+      "wood"
+    ],
+    "out": "shuttle",
+    "why": "Kay's flying shuttle in 1733 let one weaver do what two had done, and it did it by throwing rather than passing — which is also why it could be automated, and why spinning became the bottleneck and had to be mechanised next.",
+    "src": "https://en.wikipedia.org/wiki/Shuttle_(weaving)",
+    "verified": true
+  },
+  {
+    "in": [
+      "spindle",
+      "wood"
+    ],
+    "out": "bobbin",
+    "why": "In a sewing machine it holds the second thread, the one that never passes through the fabric — the needle thread loops around it below the plate. Two threads that never cross is what makes a lockstitch hold when you cut it.",
+    "src": "https://en.wikipedia.org/wiki/Bobbin",
+    "verified": true
+  },
+  {
+    "in": [
+      "shaft",
+      "wheel"
+    ],
+    "out": "cam",
+    "why": "It is a program made of metal: the shape is the instruction, and changing the motion means changing the part. Every automatic machine before electronics ran on a shaft of these, and the whole sequence was legible by looking at it.",
+    "src": "https://en.wikipedia.org/wiki/Cam",
+    "verified": true
+  },
+  {
+    "in": [
+      "cam",
+      "cloth"
+    ],
+    "out": "feed_dog",
+    "why": "It rises, moves back, drops and returns — a small closed loop, driven off the same shaft as the needle so the cloth only ever moves while the needle is out of it. Get that timing wrong and the needle breaks.",
+    "src": "https://en.wikipedia.org/wiki/Feed_dogs",
+    "verified": true
+  },
+  {
+    "in": [
+      "spring",
+      "thread"
+    ],
+    "out": "tension_disc",
+    "why": "Almost every bad stitch is this being wrong. Too tight and the top thread pulls the lower one up through the cloth; too loose and it loops underneath — so the fault always appears on the opposite side to the thread that caused it.",
+    "src": "https://en.wikipedia.org/wiki/Sewing_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "jewel",
+      "steel"
+    ],
+    "out": "pivot",
+    "why": "A compass needle rests on a point a few hundredths of a millimetre across, sitting in a hard jewelled cup, because any friction at all would leave it pointing where it was left rather than where north is.",
+    "src": "https://en.wikipedia.org/wiki/Pivot",
+    "verified": true
+  },
+  {
+    "in": [
+      "bearing",
+      "corundum"
+    ],
+    "out": "jewel",
+    "why": "A watch runs for years at 18,000 beats an hour; steel on steel would wear an oval hole in a season. Corundum is hard enough that the steel pivot polishes rather than cuts it, and the count of them is still stamped on the movement.",
+    "src": "https://en.wikipedia.org/wiki/Jewel_bearing",
+    "verified": true
+  },
+  {
+    "in": [
+      "pivot",
+      "ring"
+    ],
+    "out": "gimbal",
+    "why": "Two rings hold an attitude in two axes and three hold it in all of them — with the flaw that when two axes line up the third is lost, which is the gimbal lock that nearly ended an Apollo alignment.",
+    "src": "https://en.wikipedia.org/wiki/Gimbal",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoop",
+      "metal"
+    ],
+    "out": "ring",
+    "why": "There is no end for a load to concentrate at, so a ring under even tension has the same stress everywhere. That is why barrels are hooped, why pipes are round, and why a chain is made of them.",
+    "src": "https://en.wikipedia.org/wiki/Ring_(jewellery)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mercury",
+      "pump"
+    ],
+    "out": "vacuum",
+    "why": "Torricelli's tube in 1643 was the first sustained one anybody made, and the space above the mercury settled a two-thousand-year argument about whether emptiness could exist. The column's height turned out to measure the air pressing on the dish.",
+    "src": "https://en.wikipedia.org/wiki/Vacuum",
+    "verified": true
+  },
+  {
+    "in": [
+      "lead",
+      "tank"
+    ],
+    "out": "cistern",
+    "why": "It decouples the rate water arrives from the rate it is used, which is the same trick as a battery or a millpond. Roman houses had them, and they are why a tap runs evenly from a system fed by a slow spring.",
+    "src": "https://en.wikipedia.org/wiki/Cistern",
+    "verified": true
+  },
+  {
+    "in": [
+      "cast_iron",
+      "plough"
+    ],
+    "out": "mouldboard",
+    "why": "A coulter and a share only cut. Turning the furrow slice buries weeds and brings fresh soil up, and getting the curve right — so the slice inverts without the plough dragging — is what Jethro Tull's contemporaries argued about and what let heavy northern soils be farmed.",
+    "src": "https://en.wikipedia.org/wiki/Plough",
+    "verified": true
+  },
+  {
+    "in": [
+      "steel",
+      "wedge"
+    ],
+    "out": "share",
+    "why": "It meets unbroken soil edge-on all day, so it is made to be replaced — bolted on, not forged in. The phrase about beating swords into ploughshares is about the same steel doing the opposite job.",
+    "src": "https://en.wikipedia.org/wiki/Plowshare",
+    "verified": true
+  },
+  {
+    "in": [
+      "blade",
+      "stone"
+    ],
+    "out": "wedge",
+    "why": "It converts a force along its length into a much larger force sideways, in the ratio of its length to its thickness. Every axe, chisel, knife, nail and ploughshare is one, and so is a doorstop.",
+    "src": "https://en.wikipedia.org/wiki/Wedge_(mechanical_device)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cone",
+      "pipe"
+    ],
+    "out": "nozzle",
+    "why": "Below the speed of sound squeezing makes the flow faster. Above it, the opposite is true and it must open out — which is why a rocket nozzle is a waist and then a bell, and why the shape is the engine's efficiency.",
+    "src": "https://en.wikipedia.org/wiki/Nozzle",
+    "verified": true
+  },
+  {
+    "in": [
+      "flyweight",
+      "shaft"
+    ],
+    "out": "governor",
+    "why": "It is the first widely used feedback device and the one Maxwell wrote the mathematics of in 1868 — the paper that started control theory. The engine measures itself and corrects itself, with nobody watching.",
+    "src": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "spin"
+    ],
+    "out": "flyweight",
+    "why": "Nothing measures the speed and reports it — the physics does both at once, because the outward force rises with the square of the rate. That directness is why the mechanism worked reliably in a workshop with no instruments.",
+    "src": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+    "verified": true
+  },
+  {
+    "in": [
+      "brine",
+      "cheese"
+    ],
+    "out": "rind",
+    "why": "It forms where the surface dries, salts and meets the air, and what lands on it decides everything: a bloomy rind is a deliberate mould, a washed rind is a bacterium fed by brining, a hard rind is simply dehydration. The inside ripens from the rind inward.",
+    "src": "https://en.wikipedia.org/wiki/Cheese",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesh",
+      "sieve"
+    ],
+    "out": "filter",
+    "why": "Which side is the product changes with the job — the coffee is the liquid and the gold is the solid — so the same device is a strainer or a collector depending on what you came for.",
+    "src": "https://en.wikipedia.org/wiki/Filtration",
+    "verified": true
+  },
+  {
+    "in": [
+      "instruction",
+      "memory"
+    ],
+    "out": "kernel",
+    "why": "Everything else asks it. That boundary exists so a faulty program can crash itself without taking the machine down, and it is enforced by the processor rather than by good manners — which is the whole reason a modern computer survives its own software.",
+    "src": "https://en.wikipedia.org/wiki/Kernel_(operating_system)",
+    "verified": true
+  },
+  {
+    "in": [
+      "kernel",
+      "time"
+    ],
+    "out": "scheduler",
+    "why": "One processor running one thing at a time, switched fast enough, is indistinguishable from several running at once — and the illusion is entirely the scheduler's doing. Every argument about responsiveness versus throughput is an argument about its policy.",
+    "src": "https://en.wikipedia.org/wiki/Scheduling_(computing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "kernel",
+      "port"
+    ],
+    "out": "device_driver",
+    "why": "It exists so the rest of the system can say 'write this file' without knowing whether it is spinning rust or flash. That indirection is also why drivers are the commonest cause of crashes: they run with the kernel's privileges and are written by whoever made the device.",
+    "src": "https://en.wikipedia.org/wiki/Device_driver",
+    "verified": true
+  },
+  {
+    "in": [
+      "kernel",
+      "signal"
+    ],
+    "out": "interrupt",
+    "why": "The alternative is asking every device repeatedly whether anything has happened, which wastes nearly all of the machine's time. Letting the device raise its hand is why a computer can wait for a keystroke without burning a processor doing it.",
+    "src": "https://en.wikipedia.org/wiki/Interrupt",
+    "verified": true
+  },
+  {
+    "in": [
+      "instruction",
+      "scheduler"
+    ],
+    "out": "process",
+    "why": "The program on disk is inert and identical for everyone; the process is one running copy with its own memory, its own open files and its own idea of where it is. Two people running the same program have one program and two processes, and neither can see the other's.",
+    "src": "https://en.wikipedia.org/wiki/Process_(computing)",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "press"
+    ],
+    "out": "signature",
+    "why": "Folding one sheet twice makes eight pages that must be printed in a scrambled order to come out sequential — which is a real arithmetic problem the printer solves before setting a word. Sewing through the fold is what lets a book open flat.",
+    "src": "https://en.wikipedia.org/wiki/Section_(bookbinding)",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "sea"
+    ],
+    "out": "horizon",
+    "why": "It is about five kilometres away at eye level and grows with the square root of height, which is why the crow's nest was worth climbing and why a lighthouse is tall. A sextant measures against it because it is the one horizontal a moving ship can trust.",
+    "src": "https://en.wikipedia.org/wiki/Horizon",
+    "verified": true
+  },
+  {
+    "in": [
+      "alphabet",
+      "telegraph"
+    ],
+    "out": "morse_code",
+    "why": "Morse and Vail counted the type in a printer's case to find the letter frequencies, and assigned lengths accordingly — a hand-made version of the compression every codec now does automatically, and a century before anyone had the theory for it.",
+    "src": "https://en.wikipedia.org/wiki/Morse_code",
+    "verified": true
+  },
+  {
+    "in": [
+      "operator",
+      "relay"
+    ],
+    "out": "exchange",
+    "why": "A hundred phones directly connected would take 4,950 lines; through an exchange it is a hundred. That difference is why the telephone became a network rather than a private link between two houses, and it is the same argument as a hub in any network since.",
+    "src": "https://en.wikipedia.org/wiki/Telephone_exchange",
+    "verified": true
   }
 ]

@@ -51,6 +51,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* conditions, 4 Sep — scaled to the part that goes wrong */
+          'vitamin_b1',
           /* parasites wave, 3 Sep */
           'praziquantel', 'albendazole', 'mebendazole', 'ivermectin', 'metronidazole', 'niclosamide', 'diethylcarbamazine', 'pyrantel_pamoate', 'nitazoxanide', 'quinine',
           'polycyclic_aromatic_hydrocarbon', 'naphthalene', 'anthracene', 'phenanthrene', 'benzanthracene', 'dibenzanthracene', 'benzo_a_pyrene', 'chlorinated_hydrocarbon', 'beta_propiolactone', 'ethyleneimine', 'nitrosamine', 'aflatoxin_b1', 'thalidomide', 'methylmercury', 'benzoic_acid', 'bha', 'bht', 'hydroxyl_radical', 'free_radical', 'carcinogen', 'mutagen', 'teratogen',
@@ -259,6 +261,10 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* assembly components, 4 Sep — 24 new needs lists asked for these */
+          'anode', 'cathode', 'electrode', 'terminal', 'commutator', 'bushing', 'heddle', 'bobbin', 'cam', 'feed_dog', 'tension_disc', 'pivot', 'jewel', 'ring', 'share', 'wedge', 'nozzle', 'flyweight', 'rind', 'signature',
+          /* conditions, 4 Sep — scaled to the part that goes wrong */
+          'thyroid', 'goitre', 'heart_attack', 'cataract', 'ulcer', 'gout', 'bran',
           /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
           'necator_americanus',
           /* the pathogen catalogue, 4 Sep — organisms at their own size,
@@ -434,6 +440,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* assembly components, 4 Sep — 24 new needs lists asked for these */
+          'electrolyte', 'casing', 'armature', 'insulator', 'loudspeaker', 'shuttle', 'gimbal', 'filter', 'governor',
           /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
           'schistosoma_mansoni',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
@@ -681,6 +689,13 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* software abstractions sit where instruction and algorithm sit — with
+             the person using them, not at a nanometre */
+          'kernel', 'scheduler', 'device_driver', 'interrupt', 'process', 'morse_code', 'exchange',
+          /* assembly components, 4 Sep — 24 new needs lists asked for these */
+          'stator', 'warp', 'weft', 'shed', 'vacuum', 'cistern', 'mouldboard', 'horizon',
+          /* conditions, 4 Sep — scaled to the part that goes wrong */
+          'pain', 'anaemia', 'asthma', 'arthritis', 'osteoporosis', 'haemophilia', 'stroke', 'heart_failure', 'dehydration', 'hypothermia', 'altitude_sickness', 'pellagra', 'beriberi', 'kwashiorkor', 'childbirth', 'labour', 'hypothyroidism', 'bradycardia', 'lead_poisoning', 'carbon_monoxide_poisoning', 'night_blindness',
           /* human disease, 4 Sep — scaled to the person, as measles and cholera are */
           'chickenpox',
           /* the needs loop closed, 4 Sep — the last 58 components */

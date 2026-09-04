@@ -26559,7 +26559,6 @@
       "medicine"
     ],
     "fact": "A tropane alkaloid that blocks the nervous system's rest-and-digest signal, which is why it dilates pupils and speeds a stopped heart.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -34445,8 +34444,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Fibres tied to a handle — split palm leaf in ancient Egypt, plant fibre or animal hair ever since.",
-    "terminal": true
+    "fact": "Fibres tied to a handle — split palm leaf in ancient Egypt, plant fibre or animal hair ever since."
   },
   {
     "id": "bubble",
@@ -47409,7 +47407,6 @@
       "medicine"
     ],
     "fact": "A hormone synthesized in the hypothalamus and released from the posterior pituitary to drive labor, milk letdown, and bonding.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -79965,5 +79962,752 @@
       "animal"
     ],
     "fact": "A retrovirus that inserts itself into the cat's own chromosomes, and sometimes lands in the wrong place."
+  },
+  {
+    "id": "pain",
+    "name": "Pain",
+    "emoji": "🩹",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "A signal, not a substance — and the only symptom that is entirely private to the person having it."
+  },
+  {
+    "id": "anaemia",
+    "name": "Anaemia",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Not too little blood, but too little of the thing in it that carries oxygen."
+  },
+  {
+    "id": "thyroid",
+    "name": "Thyroid",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "medicine",
+      "body"
+    ],
+    "fact": "A butterfly-shaped gland that sets the speed at which the whole body runs."
+  },
+  {
+    "id": "goitre",
+    "name": "Goitre",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The gland swelling because it is being told to work harder and lacks the one ingredient it needs."
+  },
+  {
+    "id": "heart_attack",
+    "name": "Heart Attack",
+    "emoji": "💔",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The heart muscle starving because one of the vessels feeding it has closed."
+  },
+  {
+    "id": "heart_failure",
+    "name": "Heart Failure",
+    "emoji": "🫀",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Not the heart stopping, but the heart no longer keeping up with what is asked of it."
+  },
+  {
+    "id": "stroke",
+    "name": "Stroke",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Brain tissue dying because its blood supply stopped, or because a vessel burst into it."
+  },
+  {
+    "id": "asthma",
+    "name": "Asthma",
+    "emoji": "🫁",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The airway narrowing from the inside, and it is reversible, which is what separates it from everything else."
+  },
+  {
+    "id": "arthritis",
+    "name": "Arthritis",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Two quite different diseases share the name, and telling them apart decides everything."
+  },
+  {
+    "id": "osteoporosis",
+    "name": "Osteoporosis",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Bone is being replaced all your life, and this is what happens when the replacing falls behind."
+  },
+  {
+    "id": "cataract",
+    "name": "Cataract",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The lens clouding because its proteins, which are never replaced, have clumped."
+  },
+  {
+    "id": "ulcer",
+    "name": "Ulcer",
+    "emoji": "🩹",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "For a century the cause was thought to be stress and spice. It is mostly a bacterium."
+  },
+  {
+    "id": "haemophilia",
+    "name": "Haemophilia",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "One missing clotting protein, and the gene for it sits on the X chromosome."
+  },
+  {
+    "id": "gout",
+    "name": "Gout",
+    "emoji": "🦶",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Uric acid crystallising in a joint, and it picks the coldest one — usually the big toe."
+  },
+  {
+    "id": "lead_poisoning",
+    "name": "Lead Poisoning",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Lead has no biological role at all, and the body mistakes it for calcium."
+  },
+  {
+    "id": "carbon_monoxide_poisoning",
+    "name": "Carbon Monoxide Poisoning",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "It binds the same site as oxygen, about two hundred times more tightly, and it has no smell."
+  },
+  {
+    "id": "dehydration",
+    "name": "Dehydration",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Losing water is survivable for a while. Losing water and salt together is what kills."
+  },
+  {
+    "id": "hypothermia",
+    "name": "Hypothermia",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The body has a very narrow range it works in, and two degrees below it the shivering stops."
+  },
+  {
+    "id": "altitude_sickness",
+    "name": "Altitude Sickness",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The air is the same mixture all the way up. There is simply less of it pressing down."
+  },
+  {
+    "id": "pellagra",
+    "name": "Pellagra",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The four Ds — dermatitis, diarrhoea, dementia, death — from a diet built on maize."
+  },
+  {
+    "id": "beriberi",
+    "name": "Beriberi",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "It arrived with the machine that polished rice, and nobody connected the two for decades."
+  },
+  {
+    "id": "night_blindness",
+    "name": "Night Blindness",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The first thing to fail when vitamin A runs short, because the eye spends it fastest."
+  },
+  {
+    "id": "kwashiorkor",
+    "name": "Kwashiorkor",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "A swollen belly on a starving child, and the swelling is why it was misread for so long."
+  },
+  {
+    "id": "childbirth",
+    "name": "Childbirth",
+    "emoji": "👶",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The only routine event in medicine where two patients share one body and their interests can differ."
+  },
+  {
+    "id": "labour",
+    "name": "Labour",
+    "emoji": "👶",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Contractions that build on themselves, because the thing that causes them is released by them."
+  },
+  {
+    "id": "vitamin_b1",
+    "name": "Vitamin B1",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "medicine",
+      "body"
+    ],
+    "fact": "Thiamine: the first vitamin to be identified, and the reason the word exists at all."
+  },
+  {
+    "id": "bran",
+    "name": "Bran",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "grain"
+    ],
+    "fact": "The outer layer milled off to make white flour, and it carries most of what was worth eating."
+  },
+  {
+    "id": "hypothyroidism",
+    "name": "Hypothyroidism",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The gland running slow, and everything downstream of it running slow too."
+  },
+  {
+    "id": "bradycardia",
+    "name": "Bradycardia",
+    "emoji": "🫀",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "A heart beating too slowly to keep the brain supplied."
+  },
+  {
+    "id": "stator",
+    "name": "Stator",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "The half that stays still, and in a generator it is usually where the useful current is made."
+  },
+  {
+    "id": "anode",
+    "name": "Anode",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The electrode where oxidation happens — and which end that is depends on which way the current is going."
+  },
+  {
+    "id": "cathode",
+    "name": "Cathode",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The electrode where reduction happens, and the one metal is deposited onto."
+  },
+  {
+    "id": "electrode",
+    "name": "Electrode",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The point where a circuit stops being wire and starts being chemistry."
+  },
+  {
+    "id": "electrolyte",
+    "name": "Electrolyte",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A liquid that carries ions but not electrons, which is exactly what a battery needs between its plates."
+  },
+  {
+    "id": "terminal",
+    "name": "Terminal",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Where the device stops and your wiring starts, and most electrical faults are here."
+  },
+  {
+    "id": "casing",
+    "name": "Casing",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The part whose whole job is that nothing inside it is your problem."
+  },
+  {
+    "id": "commutator",
+    "name": "Commutator",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "A rotary switch that reverses the connection twice per turn, so the torque never changes sign."
+  },
+  {
+    "id": "armature",
+    "name": "Armature",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "The winding that moves through the field — or the field that moves past the winding."
+  },
+  {
+    "id": "insulator",
+    "name": "Insulator",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Not the absence of conduction but the deliberate maintenance of it, over decades, in weather."
+  },
+  {
+    "id": "bushing",
+    "name": "Bushing",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The way a live conductor gets through an earthed metal wall without arcing to it."
+  },
+  {
+    "id": "loudspeaker",
+    "name": "Loudspeaker",
+    "emoji": "🔊",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "music"
+    ],
+    "fact": "A coil in a magnetic field, glued to a cone, and it is a microphone run backwards."
+  },
+  {
+    "id": "warp",
+    "name": "Warp",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth"
+    ],
+    "fact": "The threads that run the length of the cloth, held under tension for the whole weaving."
+  },
+  {
+    "id": "weft",
+    "name": "Weft",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth"
+    ],
+    "fact": "The thread that crosses, and the only one that actually has to travel."
+  },
+  {
+    "id": "heddle",
+    "name": "Heddle",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth",
+      "tool"
+    ],
+    "fact": "A loop that one warp thread passes through, so that lifting it lifts that thread and no other."
+  },
+  {
+    "id": "shed",
+    "name": "Shed",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth"
+    ],
+    "fact": "The triangular gap opened between raised and lowered warp threads, and it exists for about a second."
+  },
+  {
+    "id": "shuttle",
+    "name": "Shuttle",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth",
+      "tool"
+    ],
+    "fact": "A boat-shaped case carrying the weft, thrown from one side to the other."
+  },
+  {
+    "id": "bobbin",
+    "name": "Bobbin",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "cloth",
+      "tool"
+    ],
+    "fact": "A spool sized to fit inside whatever has to carry it."
+  },
+  {
+    "id": "cam",
+    "name": "Cam",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "A shaped disc that turns rotation into a pushing that follows whatever profile you cut."
+  },
+  {
+    "id": "feed_dog",
+    "name": "Feed Dog",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "cloth"
+    ],
+    "fact": "The toothed bar under the needle plate that moves the cloth along, a stitch at a time."
+  },
+  {
+    "id": "tension_disc",
+    "name": "Tension Disc",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "cloth"
+    ],
+    "fact": "Two plates squeezed by a spring, with the thread running between them."
+  },
+  {
+    "id": "pivot",
+    "name": "Pivot",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The point a thing turns on, and in an instrument it is sharpened almost to nothing."
+  },
+  {
+    "id": "jewel",
+    "name": "Jewel",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A synthetic sapphire with a hole in it, used as a bearing because it will not wear."
+  },
+  {
+    "id": "gimbal",
+    "name": "Gimbal",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Rings pivoted at right angles, so that whatever they carry stays level while the ship rolls."
+  },
+  {
+    "id": "ring",
+    "name": "Ring",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A closed curve of material, and the shape that carries a pull evenly all the way round."
+  },
+  {
+    "id": "vacuum",
+    "name": "Vacuum",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Not nothing — just less than there was, and the difference is what does the work."
+  },
+  {
+    "id": "cistern",
+    "name": "Cistern",
+    "emoji": "🪣",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A reservoir that holds a head of water so the supply is steady rather than intermittent."
+  },
+  {
+    "id": "mouldboard",
+    "name": "Mouldboard",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The curved plate that lifts the cut slice and turns it over, and the curve is the whole invention."
+  },
+  {
+    "id": "share",
+    "name": "Ploughshare",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The wedge that cuts the furrow horizontally, and the part that wears out first."
+  },
+  {
+    "id": "wedge",
+    "name": "Wedge",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "One of the six simple machines, and the only one you hit."
+  },
+  {
+    "id": "nozzle",
+    "name": "Nozzle",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A narrowing that trades pressure for speed, and past a certain point it must widen again."
+  },
+  {
+    "id": "governor",
+    "name": "Governor",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "Two weights that fly outward as the engine speeds up, and close the steam as they do."
+  },
+  {
+    "id": "flyweight",
+    "name": "Flyweight",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A weight on an arm, thrown outward by rotation, and its position reports the speed."
+  },
+  {
+    "id": "rind",
+    "name": "Rind",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "kitchen",
+      "ferment"
+    ],
+    "fact": "The skin a cheese grows, and it is not a wrapper — it is the outside of the cheese behaving differently."
+  },
+  {
+    "id": "filter",
+    "name": "Filter",
+    "emoji": "🫗",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A barrier chosen so that what you want goes through and what you do not stays behind."
+  },
+  {
+    "id": "kernel",
+    "name": "Kernel",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "The part of an operating system that is always resident, and the only part allowed to touch the hardware."
+  },
+  {
+    "id": "scheduler",
+    "name": "Scheduler",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "Decides which program runs next, and it does this thousands of times a second."
+  },
+  {
+    "id": "device_driver",
+    "name": "Device Driver",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "The translation between what the operating system asks for and what one particular piece of hardware wants."
+  },
+  {
+    "id": "interrupt",
+    "name": "Interrupt",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "A device saying 'now' loudly enough that the processor stops what it was doing."
+  },
+  {
+    "id": "process",
+    "name": "Process",
+    "emoji": "💾",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "A running program, together with everything it thinks is its own."
+  },
+  {
+    "id": "signature",
+    "name": "Signature",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "A single sheet folded down to make several leaves, and books are built from these rather than from pages."
+  },
+  {
+    "id": "horizon",
+    "name": "Horizon",
+    "emoji": "🌅",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "The line where you stop being able to see, and its distance tells you how high you are."
+  },
+  {
+    "id": "morse_code",
+    "name": "Morse Code",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "tech"
+    ],
+    "fact": "The commonest letters get the shortest signals, which is why E is one dot."
+  },
+  {
+    "id": "exchange",
+    "name": "Exchange",
+    "emoji": "☎️",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "trade"
+    ],
+    "fact": "Wiring every telephone to every other needs a wire for each pair. An exchange needs one wire each."
   }
 ]

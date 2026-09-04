@@ -119,6 +119,15 @@ if (arg === '--rank') {
 
 /* ── what is joined to nothing ─────────────────────────────────────────── */
 if (arg === '--orphans') {
+  // This counted only THIS catalogue's treatments and took the whole `medicine`
+  // tag as therapies, so it reported wards as unjoined treatments and Ebola as
+  // a treatment. conditions.mjs owns the question now, because answering it
+  // needs both catalogues; running half of it was worse than not running it.
+  console.log('\n  Both catalogues answer this, so it lives in one place:\n');
+  console.log('    node tools/conditions.mjs --orphans\n');
+  process.exit(0);
+}
+if (arg === '--orphans-old') {
   const treats = new Set(Object.values(P).flatMap(p => [...(p.treated_by ?? []), ...(p.prevented_by ?? [])]));
   const meds = elements.filter(e => (e.tags ?? []).includes('medicine')).map(e => e.id);
   const unusedMeds = meds.filter(m => !treats.has(m));
