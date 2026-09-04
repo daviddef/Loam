@@ -43675,6 +43675,12 @@ def('ajanta_caves',()=> [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
                           ...[0, 1, 2].map(i => E(14 + i * 17, 40, 3.4, 4.4, 'hi')),
                           S('M4 12 L56 10', 'gh', 1.4)]);
 
+def('leptis_magna',()=> [...[0, 1, 2, 3].map(i => P(`M${10 + i * 12} 44 L${16 + i * 12} 44 L${16 + i * 12} 16 L${10 + i * 12} 16 Z`, 'lo')),
+                          P('M6 16 L56 16 L56 12 L6 12 Z', 'lo'),
+                          // the dune that buried it, and preserved it
+                          P('M2 44 Q18 30 34 40 Q48 48 58 42 L58 56 L2 56 Z', 'bs'),
+                          ...granules('gh', 7, 313, [8, 46, 52, 54])]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
