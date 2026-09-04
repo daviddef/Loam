@@ -1,0 +1,322 @@
+{
+  "$comment": "One English word, two things. `scale` in this corpus is the weighing balance — pivoted beam, pan at each end — and three recipes were using it to make a moth's wing, a reptile's skin and a shark's hide. Every one of those `why` texts was about the right thing; only the gesture underneath was about a set of kitchen scales. That is the project's own fault class, sitting in the middle of the corpus behind prose good enough to hide it, and nothing could see it, because an element id carries no sense. This file gives each ambiguous word its declared sense and the words that betray a different one, so the check is precise and the corpus cannot drift back.",
+  "$rules": [
+    "sense is the meaning THIS corpus uses for that element. It should be recognisable in the element's own fact; if it is not, the fact is the thing to fix.",
+    "not lists lowercase markers for the OTHER senses. A recipe using the element whose why contains one of them is an error, because the prose and the gesture are then talking about different things.",
+    "also names the elements that carry the other senses, so the fix for a flagged recipe is already in the file. An `also` id that does not exist is an error — it means a sense was split out and then lost.",
+    "allow names outputs where the crossing is deliberate and understood, with a reason. It must be used sparingly: an allow entry is a claim that a human looked at that specific recipe.",
+    "cleared is the other half of the denominator: single-word element names reviewed and found to carry one sense only. Coverage is watched + cleared out of every single-word name used in two or more recipes — measured against the whole vocabulary, not against the words that happened to be interesting."
+  ],
+  "watch": [
+    {
+      "id": "scale",
+      "sense": "the weighing balance",
+      "not": [
+        "reptile",
+        "lepidopter",
+        "denticle",
+        "keratin",
+        "shed its skin",
+        "scale-wing",
+        "octave",
+        "semitone",
+        "map scale"
+      ],
+      "also": [
+        "animal_scale",
+        "wing_scale",
+        "dermal_denticle"
+      ],
+      "found": "amniote+scale→sauropsid, insect+scale→moth, scale+shark→silky_shark, plank+scale→ruler"
+    },
+    {
+      "id": "spring",
+      "sense": "the coiled steel one, hardened and tempered",
+      "not": [
+        "groundwater",
+        "aquifer",
+        "spring water",
+        "the season",
+        "equinox",
+        "snowmelt"
+      ],
+      "also": [
+        "groundwater",
+        "wave_physics"
+      ],
+      "found": "desert+spring→oasis"
+    },
+    {
+      "id": "set",
+      "sense": "the Egyptian god of chaos, storms and the desert",
+      "not": [
+        "ordered pair",
+        "set theory",
+        "subset",
+        "axiom",
+        "cardinality",
+        "russell"
+      ],
+      "also": [
+        "set_math"
+      ],
+      "found": "equation+set→function"
+    },
+    {
+      "id": "bulb",
+      "sense": "the plant's, a whole next-season plant packed in fat leaves",
+      "not": [
+        "filament",
+        "tungsten",
+        "incandescent",
+        "lumen",
+        "wattage",
+        "headlamp"
+      ],
+      "also": [
+        "light_bulb"
+      ],
+      "found": "bulb+pole→streetlight, bulb+mirror→headlight, bulb+lamp→indicator"
+    },
+    {
+      "id": "wave",
+      "sense": "the water one, raised by wind dragging across the surface",
+      "not": [
+        "photon",
+        "wavelength",
+        "electromagnetic",
+        "interfere",
+        "reciprocal of the period",
+        "amplitude"
+      ],
+      "also": [
+        "wave_physics",
+        "sound_wave"
+      ],
+      "found": "photon+wave→light, time+wave→frequency"
+    },
+    {
+      "id": "nail",
+      "sense": "the fastener, forged singly by hand until about 1800",
+      "not": [
+        "fingernail",
+        "keratin",
+        "cuticle",
+        "nail bed"
+      ],
+      "also": [
+        "keratin"
+      ],
+      "found": "skin+nail→integumentary_system"
+    },
+    {
+      "id": "key",
+      "sense": "the metal one, cut to match a lock's wards",
+      "not": [
+        "piano key",
+        "keyboard",
+        "escapement",
+        "black key",
+        "white key"
+      ],
+      "also": [
+        "escapement"
+      ],
+      "allow": [
+        {
+          "out": "cipher",
+          "why": "A cryptographic key is named after this one and the why is explicitly about that naming: the rule can be published and only the key needs guarding. The crossing is the point of the recipe."
+        }
+      ],
+      "found": "hammer+key→piano_action, and three psychology entries using it as filler"
+    },
+    {
+      "id": "ash",
+      "sense": "the mineral residue of burning — the minerals a tree pulled from the soil, handed back",
+      "not": [
+        "fraxinus",
+        "ash tree",
+        "ash dieback",
+        "ash leaf"
+      ],
+      "also": [],
+      "found": "nothing; the tree is not in the corpus under this name"
+    },
+    {
+      "id": "mould",
+      "sense": "the fungus",
+      "not": [
+        "cast into",
+        "casting mould",
+        "sand mould",
+        "injection",
+        "mould line"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "current",
+      "sense": "the electrical one, a flow of charge",
+      "not": [
+        "gulf stream",
+        "ocean current",
+        "rip current",
+        "upwelling"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "pitch",
+      "sense": "the musical one, the ear ordering sounds high to low",
+      "not": [
+        "tar",
+        "bitumen",
+        "caulk",
+        "pitch drop",
+        "roof pitch"
+      ],
+      "also": [
+        "bitumen"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "plant",
+      "sense": "the organism",
+      "not": [
+        "power plant",
+        "processing plant",
+        "factory floor",
+        "plant hire"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "cell",
+      "sense": "the biological one, the smallest thing unambiguously alive",
+      "not": [
+        "voltaic",
+        "galvanic",
+        "electrolyte",
+        "prison cell",
+        "spreadsheet"
+      ],
+      "also": [
+        "battery"
+      ],
+      "found": "nothing"
+    },
+    {
+      "id": "bark",
+      "sense": "the tree's, everything outside the vascular cambium",
+      "not": [
+        "barking",
+        "dog bark",
+        "sailing barque"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "star",
+      "sense": "the astronomical one",
+      "not": [
+        "film star",
+        "star rating",
+        "asterisk"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "bat",
+      "sense": "the animal",
+      "not": [
+        "cricket bat",
+        "baseball bat",
+        "at bat",
+        "batsman"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "bow",
+      "sense": "the weapon",
+      "not": [
+        "bow of the ship",
+        "bowing",
+        "violin bow",
+        "ribbon"
+      ],
+      "also": [],
+      "found": "nothing"
+    }
+  ],
+  "cleared": [
+    "air",
+    "alphabet",
+    "arch",
+    "axle",
+    "blade",
+    "bone",
+    "book",
+    "brain",
+    "bread",
+    "brick",
+    "candle",
+    "canvas",
+    "carbon",
+    "chain",
+    "charcoal",
+    "cheese",
+    "clay",
+    "cloth",
+    "copper",
+    "cotton",
+    "dough",
+    "egg",
+    "fire",
+    "flour",
+    "glass",
+    "glue",
+    "gold",
+    "hammer",
+    "honey",
+    "ice",
+    "iron",
+    "lens",
+    "lime",
+    "milk",
+    "mirror",
+    "mortar",
+    "needle",
+    "oil",
+    "paper",
+    "pot",
+    "rope",
+    "salt",
+    "sand",
+    "silk",
+    "soap",
+    "soil",
+    "steam",
+    "steel",
+    "stone",
+    "straw",
+    "string",
+    "sugar",
+    "sulfur",
+    "thread",
+    "tin",
+    "water",
+    "wax",
+    "wheel",
+    "wood",
+    "wool",
+    "yeast"
+  ]
+}

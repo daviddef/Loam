@@ -95,6 +95,14 @@ function sup(n) {
 const n = (x) => x.toLocaleString('en-GB');
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 
+// --------------------------------------------------------------- homonyms
+const HOM = read('data/homonyms.json');
+const HOM_WATCH = HOM.watch.length;
+const HOM_FOUND = HOM.watch.filter(w => w.found && !w.found.startsWith('nothing')).length;
+const HOM_REVIEWED = HOM_WATCH + HOM.cleared.length;
+const HOM_SINGLE = elements.filter(e => /^[A-Za-z]+$/.test(e.name) &&
+  recipes.filter(r => r.in.includes(e.id)).length >= 2).length;
+
 // ------------------------------------------------------------------ places
 const PL = read('data/places.json');
 const PLACES_REGIONS = PL.regions.length;
@@ -216,6 +224,12 @@ const MECHANISMS = [
     how: `Hazard text is the one place where being helpful is dangerous. The tool checks for instructional voice, for hazard chains that read as steps, and for guarantor language — "safe", "harmless", "you can" — that promises something no data file is entitled to promise.`,
     found: `The policy it enforces: never phrase a hazard as a method, and never let a badge outrun the evidence. Only IARC Group 1 gets the carcinogen badge; 2A, 2B and 3 get words and no badge, because a badge is a claim and those groups do not support it.`,
     now: `${n(Object.keys(cautions).length)} hazards covering ${n(cautionIds.size)} elements.` },
+
+  { id: 'homonyms', file: 'tools/homonyms.mjs', part: 'truth',
+    asks: 'Does this word mean here what the sentence beside it thinks it means?',
+    how: `An element id carries no sense. So <code>data/homonyms.json</code> gives each ambiguous word the meaning this corpus uses for it, and the words that would betray a different one; a recipe using that element whose <em>why</em> contains one of them is failing, because the prose and the gesture are then talking about different things. A heuristic was tried first — flag inputs whose outputs scatter across families — and it returned 684 candidates of which about two were real, so the file is curated rather than inferred, and the coverage number counts what a person has actually looked at.`,
+    found: `<code>scale</code> in this corpus is the weighing balance: pivoted beam, a pan at each end, Egyptian weighing stones from about 2600 BCE. Four recipes used it anyway — to make a moth's wing, a reptile's back, a shark's hide and the graduations on a ruler. <code>bulb</code> is the plant's, and three recipes lit a street with it. <code>wave</code> is the water one, and light was being made from a photon and a ripple. <code>set</code> is the Egyptian god of chaos, on the folklore shelf, and a mathematical function was being derived from him. Every one of those <em>why</em> texts was about the right thing. Only the gesture underneath was about something else — which is this project's own fault class, sitting in the middle of the corpus behind prose good enough to hide it.`,
+    now: `${n(HOM_WATCH)} words watched, ${n(HOM_FOUND)} of which were actually wrong when the list was written. ${n(HOM_REVIEWED)} of ${n(HOM_SINGLE)} single-word names reviewed (${pct(HOM_REVIEWED, HOM_SINGLE)}%).` },
 
   { id: 'categories', file: 'tools/categories.mjs', part: 'craft',
     asks: 'Is every element in a drawer somebody would actually open?',
@@ -967,6 +981,8 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     <tbody>
 ${[...MECHANISMS.map(m => [`node ${m.file}`, m.asks]),
    ['node tools/places.mjs --missing', 'Which landmarks on the world checklist nobody has written yet.'],
+   ['node tools/homonyms.mjs --review', 'Single-word element names nobody has checked for a second meaning.'],
+   ['node tools/homonyms.mjs <word>', 'Every recipe one word touches, with its declared sense.'],
    ['node tools/places.mjs --deep', 'Which places are still only a name.'],
    ['node tools/verbs.mjs --gaps', 'Which verb outcomes are owed and unwritten?'],
    ['node tools/verbs.mjs --bands', 'Which heat recipes claim there is only one answer?'],

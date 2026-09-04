@@ -43780,6 +43780,21 @@ def('wing_scale',   () => [P('M20 46 L20 20 Q30 10 40 20 L40 46 Z', 'lo'),   // 
                           ...[0, 1, 2, 3].map(i => S(`M${23 + i * 5} 20 L${23 + i * 5} 44`, 'hi', 0.9)),
                           C(30, 54, 2, 'ik')]);                              // the socket
 
+/* The set homonym, 5 Sep. Drawn as a brace with members inside it, and one
+   member outside — the whole difficulty is which collections are allowed.  */
+def('set_math',     () => [S('M22 14 Q14 14 14 22 L14 28 Q14 32 10 32 Q14 32 14 36 L14 42 Q14 50 22 50', 'ik', 2),
+                          S('M38 14 Q46 14 46 22 L46 28 Q46 32 50 32 Q46 32 46 36 L46 42 Q46 50 38 50', 'ik', 2),
+                          C(24, 26, 3.4, 'lo'), C(34, 26, 3.4, 'bs'), C(29, 38, 3.4, 'hi'),
+                          C(56, 20, 3.4, 'gh')]);                            // the one that is not a member
+
+/* The wave homonym, 5 Sep. Drawn with a marker riding the crest and staying on
+   its own vertical: the medium does not travel, which is the entire point.  */
+def('wave_physics', () => [S('M4 32 Q12 16 20 32 Q28 48 36 32 Q44 16 52 32', 'lo', 2.4),
+                          S('M4 40 Q12 24 20 40 Q28 56 36 40 Q44 24 52 40', 'gh', 1.4),
+                          S('M20 12 L20 52', 'gh', 0.9),
+                          C(20, 32, 3, 'hi'),
+                          S('M20 20 L20 14', 'ik', 1.6), S('M20 44 L20 50', 'ik', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -47870,8 +47870,8 @@
  },
  {
   "in": [
-   "human",
-   "key"
+   "clinical_psychology",
+   "borderline_personality_disorder"
   ],
   "out": "marsha_linehan",
   "why": "Marsha Linehan was hospitalized at Connecticut's Institute of Living as a teenager; as a psychologist she later published Cognitive-Behavioral Treatment of Borderline Personality Disorder (1993), introducing dialectical behavior therapy.",
@@ -47900,8 +47900,8 @@
  },
  {
   "in": [
-   "brain",
-   "key"
+   "human",
+   "aaron_beck"
   ],
   "out": "jeffrey_young",
   "why": "Jeffrey Young trained in postdoctoral work under Aaron Beck before founding the Schema Therapy Institute; his 2003 book with Klosko and Weishaar laid out schema therapy's model of early maladaptive schemas formed in childhood.",
@@ -49236,7 +49236,7 @@
  {
   "in": [
    "book",
-   "key"
+   "diagnosis"
   ],
   "out": "kraepelin",
   "why": "Kraepelin's Compendium der Psychiatrie, rewritten across nine editions, split what had been one diagnosis into dementia praecox (later schizophrenia) and manic-depressive insanity -- a division still basic to psychiatric classification.",
@@ -62639,7 +62639,7 @@
  {
   "in": [
    "skin",
-   "nail"
+   "hair"
   ],
   "out": "integumentary_system",
   "why": "Skin, hair, nails, scales and claws are one system — in humans 1.5 to 2 m² of covering weighing 12 to 15% of the body.",
@@ -83443,7 +83443,7 @@
  },
  {
   "in": [
-   "bulb",
+   "light_bulb",
    "pole"
   ],
   "out": "streetlight",
@@ -84154,7 +84154,7 @@
  {
   "in": [
    "photon",
-   "wave"
+   "wave_physics"
   ],
   "out": "light",
   "why": "It is both at once, and neither description alone works. It arrives as countable photons and it interferes with itself like a wave, and which one you see depends only on what you set up to catch it.",
@@ -84504,7 +84504,7 @@
  {
   "in": [
    "desert",
-   "spring"
+   "groundwater"
   ],
   "out": "oasis",
   "why": "The water is not local rain but rain that fell somewhere else, often long ago, travelling underground until the rock or the land surface brings it up — which is why an oasis can sit in a place that gets no rain at all.",
@@ -85093,7 +85093,7 @@
  },
  {
   "in": [
-   "bulb",
+   "light_bulb",
    "mirror"
   ],
   "out": "headlight",
@@ -86783,8 +86783,8 @@
  },
  {
   "in": [
-   "bulb",
-   "lamp"
+   "light_bulb",
+   "switch"
   ],
   "out": "indicator",
   "why": "It signals intention rather than state, which makes it the only light on a car about the future. The flash came from a thermal bimetallic strip heating and cooling, which is why a failed bulb made the others flash faster.",
@@ -87204,7 +87204,7 @@
  {
   "in": [
    "time",
-   "wave"
+   "wave_physics"
   ],
   "out": "frequency",
   "why": "It is the reciprocal of the period, which sounds trivial and is the reason a single number can describe a note, a colour, a radio station and a processor's speed. The hertz is named for the man who first made and detected radio waves deliberately.",
@@ -87574,7 +87574,7 @@
  {
   "in": [
    "hammer",
-   "key"
+   "escapement"
   ],
   "out": "piano_action",
   "why": "A hammer still touching the string damps the note it just made. The escapement releases the hammer just before it arrives, so it strikes and drops away under its own weight — which is also why a piano can be played loudly or softly at all.",
@@ -90834,11 +90834,11 @@
  },
  {
   "in": [
-   "equation",
-   "set"
+   "set_math",
+   "set_math"
   ],
   "out": "function",
-  "why": "It says nothing about formulas — a function can be a table, a curve or a machine. Pinning it to the pairing rather than to the expression is what let mathematics handle things that have no formula at all.",
+  "why": "A function is a set of ordered pairs drawn from two sets, one pair for each member of the first. It says nothing about formulas — a function can be a table, a curve or a machine — and pinning it to the pairing rather than to the expression is what lets the same idea cover all three.",
   "src": "https://en.wikipedia.org/wiki/Function_(mathematics)",
   "verified": true
  },
@@ -94843,5 +94843,25 @@
   "why": "Each scale is a modified seta — a bristle flattened into a blade and left on its stalk — and they overlap over the wing membrane like roof tiles. Their surface is ridged finely enough to make colour by interference as well as by pigment, which is why a blue morpho has no blue pigment in it.",
   "verified": true,
   "src": "https://en.wikipedia.org/wiki/Lepidoptera"
+ },
+ {
+  "in": [
+   "axiom",
+   "infinity"
+  ],
+  "out": "set_math",
+  "why": "Naive set theory let any describable collection be a set, and Russell broke it in a line: the set of all sets that are not members of themselves both is and is not a member of itself. Modern set theory replaces the description with a list of axioms saying which sets exist — and one of them, the axiom of infinity, has to assert an infinite set outright, because nothing else on the list produces one.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Set_theory"
+ },
+ {
+  "in": [
+   "spring",
+   "mass"
+  ],
+  "out": "wave_physics",
+  "why": "A mass on a spring oscillates because the spring pulls back harder the further it is pushed. Line the oscillators up so each one pulls on the next, and the disturbance travels while the oscillators themselves stay put. That is the whole definition, and it is the same statement for a string, the sea and the air.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Wave"
  }
 ]

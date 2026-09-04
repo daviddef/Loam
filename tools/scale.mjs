@@ -759,6 +759,10 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* the wave homonym, 5 Sep. an idea; drawn at the scale of a wave you can point at */
+    'wave_physics',
+    /* the set homonym, 5 Sep. an idea, at the scale of the page it is written on */
+    'set_math',
     /* places batch 5, 5 Sep. a hand specimen of alkaline lava */
     'phonolite',
           /* blow and smother batch 1, 5 Sep */
