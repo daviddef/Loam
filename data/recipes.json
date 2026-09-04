@@ -94672,5 +94672,45 @@
     "why": "Snake venom is modified saliva, made in a gland that is a modified salivary gland, and delivered through a tooth with a groove or a tube in it. Every part of the apparatus is an ordinary mouth part doing something else.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Snake_venom"
+  },
+  {
+    "in": [
+      "quartz",
+      "carbon"
+    ],
+    "out": "silicon",
+    "why": "Quartz is silicon already bonded to oxygen, and carbon wants the oxygen more at high enough temperature. Heat them together in an arc furnace and the carbon leaves as carbon monoxide, taking the oxygen and leaving the silicon behind.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Silicon"
+  },
+  {
+    "in": [
+      "gear",
+      "escapement"
+    ],
+    "out": "clock",
+    "why": "A weight falling turns a gear train, and left alone it accelerates until the weight hits the floor. The escapement lets the train advance one tooth at a time against a swinging control, which is what turns falling into counting.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Escapement"
+  },
+  {
+    "in": [
+      "collagen",
+      "joint"
+    ],
+    "out": "cartilage",
+    "why": "Collagen fibres holding a mesh of water in place. It is that trapped water that carries the load, which is why cartilage is slippery under pressure and why it does not repair — there are almost no blood vessels in it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cartilage"
+  },
+  {
+    "in": [
+      "wind",
+      "sea"
+    ],
+    "out": "wave",
+    "why": "Wind drags on the surface and the drag grows with the roughness it has already made, so a small chop builds a bigger one. How big it gets depends on wind speed, how long it blows, and how much open water it blows across.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wind_wave"
   }
 ]
