@@ -1025,8 +1025,9 @@
   ],
   "verb": "heat",
   "out": "cooked_rice",
-  "why": "Starch grains absorb water and burst open — gelatinisation. Raw starch is nearly indigestible to us; cooked, it is the world's main source of calories.",
-  "src": "https://en.wikipedia.org/wiki/Starch_gelatinization"
+  "why": "Starch granules absorb water and burst open — gelatinisation — and raw starch is nearly indigestible to us where cooked starch is not. It needs water at the boil to do it: the grain has to be held wet at 100 °C long enough for the heat to reach the middle of every one.",
+  "src": "https://en.wikipedia.org/wiki/Starch_gelatinization",
+  "at": 100
  },
  {
   "in": [
@@ -6033,9 +6034,10 @@
   ],
   "verb": "heat",
   "out": "cadmium",
-  "why": "Cadmium sits as a minor component in nearly every zinc ore, and it is never mined for its own sake. Heat the smelted zinc under vacuum and the cadmium — the lower-boiling of the two — distils off first.",
+  "why": "Cadmium is a common impurity in zinc ore, up to 1.4% in some concentrates, and it comes out by simply being more volatile: it boils at 767 °C, well below zinc, so vacuum distillation of smelted zinc leaves the cadmium in the condensate. In the 1970s that was 2.9 kg of cadmium per tonne of zinc.",
   "src": "https://en.wikipedia.org/wiki/Cadmium",
-  "verified": true
+  "verified": true,
+  "at": 767
  },
  {
   "in": [
@@ -15134,9 +15136,10 @@
   ],
   "verb": "heat",
   "out": "maple_syrup",
-  "why": "Maple sap, boiled down over an open fire until 20 to 50 volumes of it reduce to just one volume of finished syrup.",
+  "why": "Sap is 2 to 5% sugar and syrup is 66, so almost all of it is water that has to leave: 25 units of 3.5% sap for one of syrup, or 57 units at 1.5%. The finishing point is not a clock but a thermometer — 4.1 °C above the boiling point of water, because a boiling solution reads its own concentration back as temperature.",
   "src": "https://en.wikipedia.org/wiki/Maple_syrup",
-  "verified": true
+  "verified": true,
+  "at": 104
  },
  {
   "in": [
