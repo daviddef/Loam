@@ -469,6 +469,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* places batch 19, 4 Sep */
+          'shicra',
           /* verb outcomes batch 2, 4 Sep. a struck flake, centimetres */
           'conchoidal_flake',
           /* verb outcomes batch 1, 4 Sep. a jar */
@@ -1159,6 +1161,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 19, 4 Sep */
+          'caral', 'concentric_castle', 'krak_des_chevaliers',
           /* places batch 18, 4 Sep */
           'tikal',
           /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */

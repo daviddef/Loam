@@ -43467,6 +43467,27 @@ def('bagan',       () => [...[[10, 30], [24, 22], [40, 28], [52, 34]].map(([x, y
                             P(`M${x - 6} ${y + 10} Q${x} ${y - 4} ${x + 6} ${y + 10} Z`, i % 2 ? 'lo' : 'bs'),
                             S(`M${x} ${y - 2} L${x} ${y - 7}`, 'hi', 1.2)]).flat()]);
 
+/* Places, batch 19 — South America and Western Asia. The concentric castle is
+   drawn as two rings with the inner one taller, because that height
+   difference is the entire invention.                                       */
+def('shicra',      () => [P('M14 50 Q10 34 20 28 Q30 24 40 28 Q50 34 46 50 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${16 + i} ${34 + i * 5} Q30 ${30 + i * 5} ${44 - i} ${34 + i * 5}`, 'gh', 1)),
+                          ...granules('bs', 6, 818, [20, 32, 40, 46]),
+                          S('M20 28 Q30 20 40 28', 'hi', 1.8)]);
+def('caral',       () => [...[0, 1, 2, 3].map(i =>
+                            P(`M${14 - i * 2} ${46 - i * 8} L${46 + i * 2} ${46 - i * 8} L${46 + i * 2} ${38 - i * 8} L${14 - i * 2} ${38 - i * 8} Z`, i % 2 ? 'lo' : 'bs')),
+                          ...[0, 1, 2].map(i => S(`M${18 + i * 12} 46 Q${22 + i * 12} 42 ${26 + i * 12} 46`, 'gh', 1)),
+                          P('M26 14 L34 14 L34 8 L26 8 Z', 'lo')]);
+def('concentric_castle',()=>[ring('bs', 30, 32, 23, 4),
+                          ring('lo', 30, 32, 14, 5),
+                          ...[0, 1, 2, 3].map(i => C(30 + 23 * Math.cos(i * Math.PI / 2), 32 + 23 * Math.sin(i * Math.PI / 2), 3, 'bs')),
+                          ...[0, 1, 2, 3].map(i => C(30 + 14 * Math.cos(i * Math.PI / 2 + 0.8), 32 + 14 * Math.sin(i * Math.PI / 2 + 0.8), 3.4, 'hi'))]);
+def('krak_des_chevaliers',()=>[P('M6 52 L14 30 L46 30 L54 52 Z', 'lo'),      // the glacis, sloping
+                          P('M16 30 L44 30 L44 16 L16 16 Z', 'bs'),
+                          ...[0, 1, 2].map(i => P(`M${18 + i * 12} 16 L${24 + i * 12} 16 L${24 + i * 12} 8 L${18 + i * 12} 8 Z`, 'lo')),
+                          ...[0, 1, 2].map(i => C(21 + i * 12, 6, 2, 'hi')),
+                          S('M6 52 L54 52', 'gh', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

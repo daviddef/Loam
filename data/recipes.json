@@ -93882,5 +93882,45 @@
     "why": "Building a temple earned merit, so a rich century meant thousands of them going up on one plain — more than 10,000 in about two hundred years. The brickwork is good enough that most of what the 1975 earthquake left standing is still standing.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Bagan"
+  },
+  {
+    "in": [
+      "reed",
+      "basket"
+    ],
+    "out": "shicra",
+    "why": "Fill a loose-woven bag with rubble and stack the bags. The platform settles and flexes in a quake instead of cracking, and every bag is woven from a plant that grew in a known year — so the building dates itself.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caral"
+  },
+  {
+    "in": [
+      "shicra",
+      "pyramid"
+    ],
+    "out": "caral",
+    "why": "Six pyramid complexes built of stacked shicra bags, the largest 150 m by 110 and 28 high, and not a weapon or a battlement anywhere on the site. It is a city 1,500 years before the Olmec, and it had no pottery.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caral"
+  },
+  {
+    "in": [
+      "castle",
+      "siege"
+    ],
+    "out": "concentric_castle",
+    "why": "One wall means the fight is decided at one line. Put a second ring inside the first and build it taller, and both walls shoot together — so an attacker who takes the outer one has walked into a corridor overlooked from above on every side.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Concentric_castle"
+  },
+  {
+    "in": [
+      "concentric_castle",
+      "knight"
+    ],
+    "out": "krak_des_chevaliers",
+    "why": "The Hospitallers built it out to a full concentric plan with a steeply sloping glacis that defeats a battering ram and stiffens the wall against earthquakes. It was never taken by force: Baibars sent in a forged letter from the Grand Master telling the garrison to give up, and they did.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Krak_des_Chevaliers"
   }
 ]

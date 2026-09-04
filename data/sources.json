@@ -369,7 +369,11 @@
     "ha_long_bay": "Ha Long Bay",
     "reservoir": "Reservoir",
     "tikal": "Tikal",
-    "bagan": "Bagan"
+    "bagan": "Bagan",
+    "shicra": "Caral",
+    "caral": "Caral",
+    "concentric_castle": "Concentric castle",
+    "krak_des_chevaliers": "Krak des Chevaliers"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -868,6 +872,10 @@
     "sea+tower_karst": "Ha Long Bay",
     "cistern+drought": "Reservoir",
     "maya_civilization+reservoir": "Tikal",
-    "brick+buddhism": "Bagan"
+    "brick+buddhism": "Bagan",
+    "basket+reed": "Caral",
+    "pyramid+shicra": "Caral",
+    "castle+siege": "Concentric castle",
+    "concentric_castle+knight": "Krak des Chevaliers"
   }
 }
