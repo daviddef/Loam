@@ -4665,7 +4665,7 @@
  {
   "in": [
    "ore",
-   "spark"
+   "electrolysis"
   ],
   "out": "aluminum",
   "why": "Aluminium is too reactive to smelt like iron or copper — it takes electricity instead. Hall and Héroult worked this out independently in 1886, and that invention made it cheap.",
@@ -4765,7 +4765,7 @@
  {
   "in": [
    "salt",
-   "spark"
+   "electrolysis"
   ],
   "out": "sodium",
   "why": "Sodium is produced commercially by electrolysis of molten sodium chloride — ordinary salt, melted and split by current, in a process patented in 1924.",
@@ -4775,7 +4775,7 @@
  {
   "in": [
    "lye",
-   "spark"
+   "electrolysis"
   ],
   "out": "potassium",
   "why": "Humphry Davy first isolated potassium in 1807 by electrolysis of molten caustic potash — exactly the lye you get from wood ash, split apart by current.",
@@ -4914,11 +4914,11 @@
  },
  {
   "in": [
-   "spark",
+   "isotope",
    "uranium"
   ],
   "out": "enriched_uranium",
-  "why": "Natural uranium is 99.27% U-238 and well under 1% of the U-235 that actually fissions. Separating the two is the whole difficulty — weapons grade means 85% or more U-235.",
+  "why": "Natural uranium is 99.27% U-238 and well under 1% of the U-235 that actually fissions, and the two are the same element — identical chemistry, so nothing chemical will separate them. Only the mass differs, by about 1%, which is why enrichment means centrifuges or diffusion and why it is the hard part of a bomb.",
   "src": "https://en.wikipedia.org/wiki/Enriched_uranium",
   "verified": true
  },
@@ -5820,7 +5820,7 @@
  {
   "in": [
    "brine",
-   "spark"
+   "electricity"
   ],
   "out": "chlorine",
   "why": "The chloralkali process: run a current through concentrated brine and it splits into three useful things at once — chlorine at one electrode, hydrogen at the other, sodium hydroxide left in the cell. 2NaCl + 2H2O → Cl2 + H2 + 2NaOH.",
@@ -5830,7 +5830,7 @@
  {
   "in": [
    "fluorite",
-   "spark"
+   "electrolysis"
   ],
   "out": "fluorine",
   "why": "Fluorite is the main source of fluoride and so of fluorine, but getting the element out takes low-temperature electrolysis and nobody managed it until Henri Moissan in 1886. He got the Nobel for it in 1906, two months before he died.",
@@ -5889,11 +5889,11 @@
  },
  {
   "in": [
-   "copper",
-   "spark"
+   "anode",
+   "electrolysis"
   ],
   "out": "selenium",
-  "why": "Copper is refined by electrolysis, and whatever will not dissolve drops to the bottom of the cell as anode mud. Nearly all the world's selenium is picked out of that mud. Berzelius found it in 1817, in the sludge of a sulfuric acid plant.",
+  "why": "Copper is refined by electrolysis, and whatever will not dissolve stays where the anode was, dropping to the bottom of the cell as anode mud. Nearly all the world's selenium is picked out of that mud — it is a by-product of wanting something else, which is why its supply does not follow its own demand.",
   "src": "https://en.wikipedia.org/wiki/Selenium",
   "verified": true
  },
@@ -6320,7 +6320,7 @@
  {
   "in": [
    "rare_earth",
-   "spark"
+   "electrolysis"
   ],
   "out": "neodymium",
   "why": "Neodymium spent 44 years inside an element that didn't exist: 'didymium', the twin, which Auer von Welsbach finally split in two in 1885. The metal itself comes out of molten halide salts by electrolysis.",
@@ -18712,7 +18712,7 @@
  {
   "in": [
    "bauxite",
-   "spark"
+   "electrolysis"
   ],
   "out": "aluminum",
   "why": "Bauxite is virtually the only ore aluminium comes from, and it's split apart the same way any aluminium ore is — in a Hall–Héroult electrolysis cell, the 1886 process that finally made the metal cheap enough for everyday use.",
@@ -33859,7 +33859,7 @@
  {
   "in": [
    "sodium_chlorate",
-   "spark"
+   "electrolysis"
   ],
   "out": "sodium_perchlorate",
   "why": "An electric current at a platinum electrode oxidises chlorate straight to perchlorate — anodic oxidation, the same electrochemical idea that splits brine into chlorine and lye.",
@@ -83313,8 +83313,8 @@
  },
  {
   "in": [
-   "file",
-   "steel"
+   "steel",
+   "whetstone"
   ],
   "out": "blade",
   "why": "A blade is not cast to shape. Steel is worked flat and then ground away on one or both sides until the edge is a few thousandths of a millimetre thick, which is what lets it wedge material apart.",
@@ -85433,7 +85433,7 @@
  },
  {
   "in": [
-   "joint",
+   "rivet",
    "rod"
   ],
   "out": "frame",
@@ -87835,7 +87835,7 @@
  {
   "in": [
    "coin",
-   "vault"
+   "trust"
   ],
   "out": "deposit",
   "why": "Coin at home is stolen or lost, and coin in a strong room is safe but useless. Handing it over in return for a claim on it gets both, and the claim turns out to be easier to carry and to pay with than the metal was.",

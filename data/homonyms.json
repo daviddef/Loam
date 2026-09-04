@@ -531,17 +531,240 @@
         "mid_ocean_ridge"
       ],
       "found": "nothing yet; Monte Albán sits on the other kind and was one recipe away"
+    },
+    {
+      "id": "spark",
+      "sense": "the fragment of stone, briefly glowing — the start of a fire",
+      "not": [
+        "electrolysis",
+        "current through",
+        "chloralkali",
+        "chlor-alkali",
+        "hall-héroult",
+        "electrode",
+        "centrifuge"
+      ],
+      "also": [
+        "electrolysis",
+        "electricity",
+        "current"
+      ],
+      "found": "ore+spark→aluminum, bauxite+spark→aluminum, salt+spark→sodium, lye+spark→potassium, brine+spark→chlorine, fluorite+spark→fluorine, spark+uranium→enriched_uranium"
+    },
+    {
+      "id": "file",
+      "sense": "the computer file — a named collection of bytes",
+      "not": [
+        "ground away",
+        "rasp",
+        "filed to shape",
+        "teeth of the file",
+        "needle file"
+      ],
+      "also": [
+        "whetstone"
+      ],
+      "found": "file+steel→blade"
+    },
+    {
+      "id": "vault",
+      "sense": "the roof — an arch run along, or two crossed",
+      "not": [
+        "strong room",
+        "strongroom",
+        "bank vault",
+        "safe deposit",
+        "pole vault"
+      ],
+      "also": [],
+      "found": "coin+vault→deposit"
+    },
+    {
+      "id": "joint",
+      "sense": "the anatomical one — fibrous, cartilaginous or synovial",
+      "not": [
+        "triangulated",
+        "pin joint",
+        "welded joint",
+        "mortise",
+        "butt joint"
+      ],
+      "also": [
+        "rivet"
+      ],
+      "found": "joint+rod→frame"
+    },
+    {
+      "id": "foot",
+      "sense": "Philippa Foot, the philosopher — this corpus has no body-part foot",
+      "not": [
+        "ankle",
+        "toes",
+        "sole of the",
+        "metatarsal",
+        "plantar"
+      ],
+      "also": [],
+      "found": "nothing; recorded because the id is a trap for the body part, which is not in the corpus"
+    },
+    {
+      "id": "coin",
+      "sense": "the struck money",
+      "not": [
+        "coined the term",
+        "coined a word",
+        "coinage of a phrase"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "lead",
+      "sense": "the metal",
+      "not": [
+        "pencil lead",
+        "take the lead",
+        "lead singer",
+        "leading edge"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "stem",
+      "sense": "the plant's upright main axis",
+      "not": [
+        "stem cell",
+        "word stem",
+        "stem of the glass"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "pole",
+      "sense": "the long round shaft stood upright",
+      "not": [
+        "magnetic pole",
+        "north pole",
+        "polar",
+        "pole of the earth"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "tick",
+      "sense": "the animal",
+      "not": [
+        "tick of the clock",
+        "checkbox",
+        "ticked off"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "hide",
+      "sense": "the untanned skin off the animal",
+      "not": [
+        "hide from",
+        "hiding place",
+        "concealed"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "date",
+      "sense": "the palm's fruit",
+      "not": [
+        "calendar",
+        "dated to",
+        "radiocarbon date",
+        "dating"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "sage",
+      "sense": "the herb, Salvia",
+      "not": [
+        "wise man",
+        "the sage advised"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "press",
+      "sense": "the machine that applies force",
+      "not": [
+        "the press reported",
+        "freedom of the press",
+        "journalist",
+        "press conference",
+        "press release"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "rail",
+      "sense": "the steel one, I-beam in section",
+      "not": [
+        "rail bird",
+        "handrail",
+        "railing",
+        "rail against"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "ore",
+      "sense": "rock worth digging up for its mineral",
+      "not": [
+        "oar",
+        "or else"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "lye",
+      "sense": "ash water, caustic",
+      "not": [
+        "lie down",
+        "untruth"
+      ],
+      "also": [],
+      "found": "nothing"
+    },
+    {
+      "id": "vine",
+      "sense": "the climbing plant",
+      "not": [
+        "vinyl",
+        "the vine app"
+      ],
+      "also": [],
+      "found": "nothing"
     }
   ],
   "cleared": [
     "adobe",
     "air",
     "alphabet",
+    "andesite",
     "aquifer",
     "arch",
+    "atoll",
     "axle",
     "barrel",
     "basalt",
+    "bauxite",
     "bitumen",
     "blade",
     "bone",
@@ -549,8 +772,12 @@
     "brain",
     "bread",
     "brick",
+    "brine",
+    "buttress",
+    "caldera",
     "candle",
     "canvas",
+    "canyon",
     "carbon",
     "cauldron",
     "chain",
@@ -559,62 +786,104 @@
     "cheese",
     "chitin",
     "circle",
+    "cistern",
     "clay",
     "cloth",
+    "column",
+    "concrete",
+    "conglomerate",
     "copper",
+    "coral",
     "cotton",
+    "courtyard",
+    "crane",
     "cylinder",
+    "delta",
     "dermis",
     "desert",
     "diagnosis",
+    "dome",
     "dough",
+    "earthwork",
     "egg",
+    "electrolysis",
     "epidermis",
     "escapement",
+    "escarpment",
     "filament",
     "fire",
     "flour",
+    "fluorite",
     "gear",
+    "geyser",
     "glass",
+    "glaze",
     "glue",
     "gold",
     "granite",
     "gravity",
     "groundwater",
+    "gypsum",
     "hammer",
+    "harbour",
+    "herbivore",
     "honey",
     "hopper",
     "ice",
     "interrupt",
     "iron",
     "irrigation",
+    "isotope",
     "keratin",
     "kernel",
+    "lagoon",
+    "laterite",
     "lens",
     "lever",
     "lime",
     "limestone",
     "magnet",
+    "mangrove",
+    "marble",
     "mass",
+    "meander",
+    "megalith",
     "milk",
     "mirror",
+    "moat",
     "mortar",
     "mountain",
+    "navigation",
     "needle",
     "nozzle",
     "obsidian",
+    "ochre",
     "oil",
+    "olive_oil",
     "paper",
+    "peninsula",
     "photon",
+    "pigment",
+    "plateau",
+    "pneumatophore",
     "pot",
+    "prairie",
+    "prison",
+    "pulley",
+    "pumice",
+    "quartzite",
     "rainforest",
     "reservoir",
     "river",
+    "rivet",
+    "rod",
     "rope",
     "salt",
     "sand",
     "sandstone",
+    "schist",
     "silk",
+    "silk_road",
     "soap",
     "soil",
     "speaker",
@@ -623,19 +892,26 @@
     "stone",
     "straw",
     "string",
+    "stupa",
     "sugar",
     "sulfur",
     "switch",
     "syenite",
     "thread",
+    "tiger",
     "tin",
     "travertine",
     "triangle",
+    "trust",
+    "tuff",
+    "uranium",
     "valley",
     "vat",
     "water",
+    "waterfall",
     "wax",
     "wheel",
+    "whetstone",
     "wood",
     "wool",
     "yeast"
