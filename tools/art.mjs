@@ -43766,6 +43766,20 @@ def('ziggurat_of_ur',()=>[P('M6 50 L10 40 L50 40 L54 50 Z', 'lo'),
                           S('M12 46 L48 46', 'gh', 0.9), S('M15 36 L45 36', 'gh', 0.9),
                           S('M21 26 L39 26', 'gh', 0.9)]);
 
+/* The scale homonym, 5 Sep. Three biology recipes were deriving their subject
+   from a weighing balance, so the two real scales get drawn as what they are:
+   overlapping keratin folds, and a bristle flattened onto a stalk.          */
+def('animal_scale', () => [...[0, 1, 2].flatMap(row =>
+                            [0, 1, 2].map(col => P(
+                              `M${12 + col * 14 + (row % 2) * 7} ${18 + row * 12} ` +
+                              `q6 0 6 6 q0 6 -6 6 q-6 0 -6 -6 q0 -6 6 -6 Z`,
+                              (row + col) % 2 ? 'lo' : 'bs'))),
+                          S('M6 18 L54 18', 'gh', 1)]);
+def('wing_scale',   () => [P('M20 46 L20 20 Q30 10 40 20 L40 46 Z', 'lo'),   // the blade
+                          S('M30 46 L30 54', 'ik', 1.8),                     // the stalk it stands on
+                          ...[0, 1, 2, 3].map(i => S(`M${23 + i * 5} 20 L${23 + i * 5} 44`, 'hi', 0.9)),
+                          C(30, 54, 2, 'ik')]);                              // the socket
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

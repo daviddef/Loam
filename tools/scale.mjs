@@ -204,6 +204,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+    /* the scale homonym, 5 Sep. a wing scale is tens to hundreds of microns long */
+    'wing_scale',
           /* verb outcomes batch 3, 4 Sep */
           'patina',
           /* places batch 2 — sub-Saharan Africa, 4 Sep. a coating a few micrometres thick */
@@ -238,6 +240,8 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+    /* the scale homonym, 5 Sep. a reptile scale is millimetres; a lepidopteran scale is a tenth of one */
+    'animal_scale',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
           'varroa_mite', 'midge',
           /* cycle L, from needs.mjs, 4 Sep */

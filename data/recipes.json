@@ -77420,7 +77420,7 @@
  {
   "in": [
    "amniote",
-   "scale"
+   "animal_scale"
   ],
   "out": "sauropsid",
   "why": "The branch of the amniotes that leads to reptiles and birds rather than to mammals — Huxley's 1864 division, with Synapsida on the other side. They excrete nitrogen as uric acid, which needs almost no water and goes out with the faeces, and their skin carries no glands of the kind mammals inherited from amphibians. That combination is what let the group hold arid ground.",
@@ -77431,7 +77431,7 @@
  {
   "in": [
    "insect",
-   "scale"
+   "wing_scale"
   ],
   "out": "moth",
   "why": "Lepidoptera means scale-wing, from lepis and pteron, and the scales are the order: blade-like lamellae each on a stalk, their surface structured finely enough to make colour from interference as well as pigment. About 180,000 species have been described, 8.6% of all known living things, and all but roughly 18,000 of them are moths.",
@@ -82413,7 +82413,7 @@
  },
  {
   "in": [
-   "scale",
+   "dermal_denticle",
    "shark"
   ],
   "out": "silky_shark",
@@ -83644,10 +83644,10 @@
  {
   "in": [
    "plank",
-   "scale"
+   "measurement"
   ],
   "out": "ruler",
-  "why": "It does two unrelated jobs at once: the edge guides a pen, and the graduations measure. Only the first needs it to be straight, which is why a bent ruler still measures correctly and still draws badly.",
+  "why": "It does two unrelated jobs at once: the straight edge guides a pen, and the graduations measure. Only the first needs it to be straight, which is why a bent ruler still measures correctly and still draws badly.",
   "src": "https://en.wikipedia.org/wiki/Ruler",
   "verified": true
  },
@@ -94823,5 +94823,25 @@
   "why": "Ur-Nammu began it around 2040 BC on a plain with no stone and no hill: a three-layered solid mass of mud brick faced with burnt bricks set in bitumen. The bulk is cheap mud, and the waterproof skin is the only reason four thousand years of rain has not returned it to the plain.",
   "verified": true,
   "src": "https://en.wikipedia.org/wiki/Ziggurat_of_Ur"
+ },
+ {
+  "in": [
+   "keratin",
+   "epidermis"
+  ],
+  "out": "animal_scale",
+  "why": "Reptile scales are outgrowths of the epidermis with a hard beta-keratin layer over a softer alpha-keratin one, joined by flexible hinges. Because the covering is one continuous sheet rather than separate plates, a snake sheds it entire and inside out.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Scale_(anatomy)"
+ },
+ {
+  "in": [
+   "chitin",
+   "wing"
+  ],
+  "out": "wing_scale",
+  "why": "Each scale is a modified seta — a bristle flattened into a blade and left on its stalk — and they overlap over the wing membrane like roof tiles. Their surface is ridged finely enough to make colour by interference as well as by pigment, which is why a blue morpho has no blue pigment in it.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Lepidoptera"
  }
 ]
