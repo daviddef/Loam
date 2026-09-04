@@ -244,7 +244,7 @@ const SCALE = {
           'lithium_fluoride', 'lithium_chloride', 'lithium_iodide', 'lithium_nitride', 'lithium_hydride', 'sodium_bromide', 'sodium_iodide', 'potassium_fluoride', 'caesium_chloride', 'iron_chloride', 'silver_chloride', 'xenon_tetrafluoride', 'lithium_oxide', 'sodium_peroxide', 'potassium_superoxide', 'titanium_dioxide', 'chromium_oxide', 'nickel_oxide', 'manganese_dioxide', 'tin_dioxide', 'silver_bromide', 'germanium_dioxide', 'rubidium_superoxide', 'strontium_chloride', 'luminous_paint', 'red_phosphor', 'signal_paint',
           'beryllium_oxide', 'strontium_oxide', 'barium_oxide', 'caesium_superoxide', 'calcium_hydride', 'magnesium_hydride', 'strontium_hydride', 'barium_hydride', 'sodium_hydride', 'potassium_hydride', 'rubidium_hydride', 'caesium_hydride', 'beryllium_nitride', 'calcium_nitride', 'strontium_nitride', 'barium_nitride', 'radium_nitride',
           'phosphorus_sesquisulfide', 'aluminum_chloride', 'aluminum_sulfide', 'copper_chloride', 'magnesium_chloride', 'magnesium_sulfide', 'calcium_chloride', 'sodium_sulfide', 'potassium_sulfide', 'tin_chloride', 'lead_chloride', 'gold_chloride', 'copper_fluoride', 'lithium_bromide', 'potassium_bromide', 'rubidium_fluoride', 'rubidium_chloride', 'rubidium_bromide', 'rubidium_iodide', 'caesium_fluoride', 'caesium_bromide', 'caesium_iodide', 'krypton_difluoride', 'cobalt_chloride', 'chromium_chloride', 'lanthanum_oxide', 'cerium_oxide', 'neodymium_oxide', 'europium_fluoride', 'europium_chloride', 'gadolinium_oxide', 'cosmic_dust', 'dust', 'ovum', 'zygote', 'morula', 'blastocyst', 'gastrula', 'flour', 'sugar', 'salt', 'tapioca', 'cement', 'cement_meal', 'breadcrumb', 'sand',
-          'clay', 'kaolin', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
+          'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
     /* the scale homonym, 5 Sep. a reptile scale is millimetres; a lepidopteran scale is a tenth of one */
@@ -395,7 +395,7 @@ const SCALE = {
           /* microbio wave, 2 Sep */
           'acid_fast_stain', 'endospore_stain', 'gram_stain', 'negative_stain', 'nematode', 'plant_cuticle', 'plant_epidermis', 'trematode',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
-          'para_dichlorobenzene', 'anhydrite', 'toes', 'watch', 'whistle', 'yoyo', 'bug', 'button', 'cookie', 'cracker', 'cupcake', 'doughnut', 'ear', 'greasepaint', 'sodium_potassium_tartrate', 'hexamine', 'ankle', 'building_block', 'bubble', 'lima_bean', 'black_eyed_pea', 'navy_bean', 'brazil_nut', 'tempeh', 'edamame', 'green_bean', 'falafel', 'zirconia', 'shallot', 'chestnut', 'magnesium_carbonate', 'ligament', 'earring', 'bead', 'fingernail', 'hair', 'spring', 'slinky', 'sticker', 'postage_stamp', 'tape', 'nose', 'elderflower', 'oyster_leaf', 'paracress', 'yuzu', 'fines_herbes', 'incense', 'tomatillo', 'physalis', 'calamansi', 'key', 'liquorice', 'rose_petal', 'barberry', 'lemon_myrtle', 'dried_lime', 'stirrup', 'cornea', 'lens', 'iris', 'tympanic_membrane', 'olfactory_epithelium', 'bulldog_clamp', 'suture_needle', 'umbilical_cord_clamp', 'krill', 'nudibranch', 'tunicate', 'ampullae_of_lorenzini', 'spiracle', 'gill_raker', 'radula', 'operculum', 'byssus', 'prawn', 'fiddler_crab', 'fossil_mold', 'fossil_cast', 'index_fossil', 'sclerochronology', 'amniotic_egg', 'canine_tooth', 'molar', 'incisor', 'opposable_thumb', 'coprolite', 'peppered_moth', 'ventifact', 'phototropism',
+          'para_dichlorobenzene', 'anhydrite', 'toes', 'watch', 'whistle', 'yoyo', 'bug', 'button', 'cookie', 'cracker', 'cupcake', 'doughnut', 'ear', 'greasepaint', 'sodium_potassium_tartrate', 'hexamine', 'ankle', 'building_block', 'bubble', 'lima_bean', 'black_eyed_pea', 'navy_bean', 'brazil_nut', 'tempeh', 'edamame', 'green_bean', 'falafel', 'zirconia', 'shallot', 'chestnut', 'magnesium_carbonate', 'ligament', 'earring', 'bead', 'nock', 'fletching', 'bung', 'blank', 'tumbler', 'fingernail', 'hair', 'spring', 'slinky', 'sticker', 'postage_stamp', 'tape', 'nose', 'elderflower', 'oyster_leaf', 'paracress', 'yuzu', 'fines_herbes', 'incense', 'tomatillo', 'physalis', 'calamansi', 'key', 'liquorice', 'rose_petal', 'barberry', 'lemon_myrtle', 'dried_lime', 'stirrup', 'cornea', 'lens', 'iris', 'tympanic_membrane', 'olfactory_epithelium', 'bulldog_clamp', 'suture_needle', 'umbilical_cord_clamp', 'krill', 'nudibranch', 'tunicate', 'ampullae_of_lorenzini', 'spiracle', 'gill_raker', 'radula', 'operculum', 'byssus', 'prawn', 'fiddler_crab', 'fossil_mold', 'fossil_cast', 'index_fossil', 'sclerochronology', 'amniotic_egg', 'canine_tooth', 'molar', 'incisor', 'opposable_thumb', 'coprolite', 'peppered_moth', 'ventifact', 'phototropism',
           // mining comprehensive batch — broken/loose rock and small cast metal, hand-sample scale
           // alongside ore/stone/ballast/diamond/coin
           'run_of_mine', 'waste_rock', 'assay', 'dore',
@@ -574,7 +574,7 @@ const SCALE = {
           /* everyday: tools, furniture, 3 Sep */
           'pliers', 'sandpaper', 'spirit_level', 'clamp', 'crowbar', 'pillow',
           /* everyday: the desk, 3 Sep */
-          'clock', 'cardboard', 'necklace', 'dividers', 'ruler', 'stapler', 'notebook', 'rubber_stamp', 'highlighter', 'folder', 'binder',
+          'clock', 'cardboard', 'necklace', 'dividers', 'yarn', 'strand', 'stave', 'oar', 'die', 'croze', 'drumhead', 'sash', 'lead_came', 'caulk', 'oakum', 'lacquer', 'ruler', 'stapler', 'notebook', 'rubber_stamp', 'highlighter', 'folder', 'binder',
           /* everyday: kitchen tools, 3 Sep */
           'saucepan', 'colander', 'sieve', 'whisk', 'grater', 'peeler', 'chopping_board', 'corkscrew', 'ladle', 'spatula', 'rolling_pin',
           /* everyday objects: parts and the street, 3 Sep */
@@ -710,7 +710,7 @@ const SCALE = {
           'grilled_fish', 'smoked_fish', 'battered_fish', 'fried_fish',
           'fish_and_chips', 'chicken', 'dinner', 'breakfast', 'choucroute',
           'cheeseboard', 'stone_soup', 'ambrosia', 'cornucopia', 'clean_hands',
-          'pot', 'stoneware', 'porcelain', 'sickle', 'barrel', 'plant', 'vine', 'feast',
+          'pot', 'stoneware', 'porcelain', 'hull', 'mast', 'formwork', 'cooper', 'sickle', 'barrel', 'plant', 'vine', 'feast',
           'catshark', 'nautilus',
           'octopus', 'blue_ringed_octopus', 'vampire_squid', 'box_jellyfish', 'sea_anemone', 'crown_of_thorns', 'man_o_war',
           'anglerfish', 'pink_frogmouth', 'psychedelic_frogfish', 'stonefish', 'common_lionfish',

@@ -85,6 +85,7 @@ const PUBLIC = [
   'tools/places.mjs',
   'tools/homonyms.mjs',
   'tools/roles.mjs',
+  'tools/coverage.mjs',
   'tools/guide.mjs',
   'tools/needs.mjs',
   'tools/verbs.mjs',

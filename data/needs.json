@@ -1407,6 +1407,333 @@
         "shell|command_line",
         "bootloader|boot"
       ]
+    },
+    "glass": {
+      "src": "https://en.wikipedia.org/wiki/Glass",
+      "note": "The soda-lime batch that is 90% of all glass made, plus what it takes to melt and shape it.",
+      "needs": [
+        "silica_sand|sand",
+        "soda_ash|sodium_carbonate",
+        "limestone",
+        "cullet",
+        "dolomite",
+        "feldspar",
+        "furnace",
+        "crucible",
+        "blowpipe",
+        "annealing",
+        "mould",
+        "float_glass|flat_glass",
+        "tin"
+      ]
+    },
+    "concrete": {
+      "src": "https://en.wikipedia.org/wiki/Concrete",
+      "note": "Cement is the glue, aggregate is the bulk, water is the reaction; steel is what stops it failing in tension.",
+      "needs": [
+        "cement",
+        "clinker",
+        "gypsum",
+        "sand",
+        "gravel|aggregate",
+        "water",
+        "rebar|reinforcing_steel",
+        "formwork",
+        "admixture",
+        "curing"
+      ]
+    },
+    "brick": {
+      "src": "https://en.wikipedia.org/wiki/Brick",
+      "note": "Clay, water, a shape, and enough heat to make the change permanent.",
+      "needs": [
+        "clay",
+        "sand",
+        "water",
+        "mould",
+        "kiln",
+        "firing",
+        "frog",
+        "mortar",
+        "quoin"
+      ]
+    },
+    "rope": {
+      "src": "https://en.wikipedia.org/wiki/Rope",
+      "note": "Fibre into yarn, yarn into strand, strand into rope — each layer twisted against the one below so it cannot unlay.",
+      "needs": [
+        "fibre",
+        "hemp|flax",
+        "sisal",
+        "yarn",
+        "strand",
+        "twist",
+        "whipping",
+        "splice"
+      ]
+    },
+    "cloth": {
+      "src": "https://en.wikipedia.org/wiki/Textile",
+      "note": "Fibre, spun, then crossed at right angles under tension.",
+      "needs": [
+        "fibre",
+        "cotton|wool|flax|silk",
+        "yarn",
+        "spindle",
+        "warp",
+        "weft",
+        "loom",
+        "shuttle",
+        "heddle",
+        "selvage",
+        "dye",
+        "fulling"
+      ]
+    },
+    "ink": {
+      "src": "https://en.wikipedia.org/wiki/Ink",
+      "note": "A colourant, something to carry it, and something to make it stay.",
+      "needs": [
+        "pigment|dye",
+        "binder",
+        "solvent",
+        "gum_arabic",
+        "oak_gall",
+        "iron",
+        "vitriol|iron_sulfate",
+        "carbon_black",
+        "varnish",
+        "drier"
+      ]
+    },
+    "paint": {
+      "src": "https://en.wikipedia.org/wiki/Paint",
+      "note": "Pigment carried in a binder, thinned to spread and left to harden.",
+      "needs": [
+        "pigment",
+        "binder",
+        "linseed_oil|oil",
+        "solvent",
+        "turpentine",
+        "primer",
+        "filler",
+        "drier",
+        "brush",
+        "varnish"
+      ]
+    },
+    "mirror": {
+      "src": "https://en.wikipedia.org/wiki/Mirror",
+      "note": "A flat, clean sheet and a metal film behind it.",
+      "needs": [
+        "glass",
+        "silver|tin",
+        "mercury",
+        "silvering",
+        "backing",
+        "copper",
+        "lacquer",
+        "frame"
+      ]
+    },
+    "wheel": {
+      "src": "https://en.wikipedia.org/wiki/Wheel",
+      "note": "A rim held off its centre by spokes, and something for it to turn on.",
+      "needs": [
+        "hub|nave",
+        "spoke",
+        "rim|felloe",
+        "axle",
+        "bearing",
+        "tyre|iron_tyre",
+        "dish",
+        "lathe",
+        "hoop"
+      ]
+    },
+    "boat": {
+      "src": "https://en.wikipedia.org/wiki/Boat_building",
+      "note": "A shell that keeps water out, stiffened inside, with something to drive and steer it.",
+      "needs": [
+        "keel",
+        "hull",
+        "plank",
+        "rib|frame",
+        "stem",
+        "transom",
+        "caulk|oakum",
+        "pitch|tar",
+        "rivet|treenail",
+        "rudder",
+        "oar",
+        "mast",
+        "sail",
+        "rope",
+        "ballast"
+      ]
+    },
+    "pot": {
+      "src": "https://en.wikipedia.org/wiki/Pottery",
+      "note": "Clay, a way to make it round, and fire.",
+      "needs": [
+        "clay",
+        "water",
+        "potters_wheel|wheel",
+        "kiln",
+        "firing",
+        "glaze",
+        "slip",
+        "burnishing",
+        "grog"
+      ]
+    },
+    "coin": {
+      "src": "https://en.wikipedia.org/wiki/Coin",
+      "note": "A weighed blank and two dies struck together.",
+      "needs": [
+        "metal",
+        "alloy",
+        "silver|copper|gold",
+        "blank|flan",
+        "die",
+        "hammer|press",
+        "mint",
+        "milling|reeding"
+      ]
+    },
+    "leather": {
+      "src": "https://en.wikipedia.org/wiki/Leather",
+      "note": "A hide stopped from rotting, then made soft again.",
+      "needs": [
+        "hide|skin",
+        "lime",
+        "tannin",
+        "oak_bark|bark",
+        "tanning",
+        "currying",
+        "fat|oil",
+        "dye",
+        "fleshing",
+        "drying"
+      ]
+    },
+    "window": {
+      "src": "https://en.wikipedia.org/wiki/Window",
+      "note": "A hole made weathertight without being made opaque.",
+      "needs": [
+        "glass",
+        "frame",
+        "sash",
+        "glazing",
+        "putty",
+        "lead_came",
+        "sill",
+        "lintel",
+        "hinge",
+        "catch",
+        "shutter"
+      ]
+    },
+    "door": {
+      "src": "https://en.wikipedia.org/wiki/Door",
+      "note": "A panel, a way to hang it, and a way to hold it shut.",
+      "needs": [
+        "plank|timber",
+        "door_frame",
+        "hinge",
+        "latch",
+        "lock",
+        "handle",
+        "threshold",
+        "panel",
+        "stile",
+        "rail"
+      ]
+    },
+    "bow": {
+      "src": "https://en.wikipedia.org/wiki/Bow_and_arrow",
+      "note": "A stave that stores energy, and a string that releases it.",
+      "needs": [
+        "stave",
+        "yew|wood",
+        "sinew",
+        "horn",
+        "glue",
+        "bowstring|string",
+        "nock",
+        "tiller",
+        "arrow",
+        "fletching"
+      ]
+    },
+    "drum": {
+      "src": "https://en.wikipedia.org/wiki/Drum",
+      "note": "A membrane held under tension over an opening.",
+      "needs": [
+        "shell",
+        "hide|skin",
+        "drumhead",
+        "hoop",
+        "tension_rod|rope",
+        "snare",
+        "beater|drumstick"
+      ]
+    },
+    "lock": {
+      "src": "https://en.wikipedia.org/wiki/Lock_and_key",
+      "note": "Something that will not move until the right shape moves it.",
+      "needs": [
+        "housing|case",
+        "bolt",
+        "tumbler|pin",
+        "spring",
+        "key",
+        "keyway",
+        "ward",
+        "escutcheon",
+        "strike_plate"
+      ]
+    },
+    "barrel": {
+      "src": "https://en.wikipedia.org/wiki/Barrel",
+      "note": "Curved staves squeezed into a shape that holds itself together.",
+      "needs": [
+        "stave",
+        "oak",
+        "hoop",
+        "iron",
+        "head",
+        "croze",
+        "chime",
+        "bung",
+        "cooper"
+      ]
+    },
+    "basket": {
+      "src": "https://en.wikipedia.org/wiki/Basket_weaving",
+      "note": "Rods for the frame, weavers for the skin.",
+      "needs": [
+        "willow|withy",
+        "cane|rattan",
+        "stake",
+        "weaver",
+        "base",
+        "border",
+        "handle"
+      ]
+    },
+    "candle": {
+      "src": "https://en.wikipedia.org/wiki/Candle",
+      "note": "A fuel that melts before it burns, and a wick that draws it up.",
+      "needs": [
+        "tallow|beeswax|paraffin_wax",
+        "wick",
+        "cotton",
+        "mould|dipping",
+        "stearin",
+        "dye",
+        "fragrance"
+      ]
     }
   }
 }
