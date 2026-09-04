@@ -180,7 +180,17 @@ function namesIn(text) {
        * that carry marks (Lenković, Hōryū-ji, Utzon, Sacsayhuamán) and every
        * one of them was generating a false alarm. \p{L} keeps the letter and
        * drops the punctuation, which is what was wanted all along. */
-      const clean = w.replace(/[^\p{L}'-]/gu, '');
+      /* A chemical formula is not a name. Stripping digits out of Na2CrO4 and
+       * Ca2(Mg,Fe)5Si8O22(OH)2 left "NaCrO" and "CaMgFeSiOOH", which were then
+       * reported as people the article never mentions. Anything that arrived
+       * with a digit in it is formula or model number, not somebody's surname. */
+      if (/\d/.test(w)) continue;
+      let clean = w.replace(/[^\p{L}'\u2019-]/gu, '');
+      /* And the possessive belongs to the sentence, not to the name. Searching
+       * an article for "Macintosh's" fails on an article that says Macintosh,
+       * which is how Salk's, Kolbe's, Garfield's, Kocher's, Tyndall's and
+       * Yellowstone's all came to be reported as unsupported attributions. */
+      clean = clean.replace(/['\u2019]s$/u, '');
       if (clean.length < 3) continue;
       if (!/^\p{Lu}\p{Ll}/u.test(clean)) continue;
       out.add(clean);
