@@ -43666,6 +43666,15 @@ def('alhambra',    () => [P('M6 52 L54 52 L54 28 L6 28 Z', 'lo'),
                           P('M22 26 L38 26 L38 20 L22 20 Z', 'hi'),
                           S('M6 56 L54 56', 'hi', 2.4)]);                     // the water channel
 
+def('rock_cut_architecture',()=>[P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M14 56 L14 20 Q30 12 46 20 L46 56 Z', 'bs'),     // the void, cut out
+                          ...[0, 1].map(i => P(`M${20 + i * 16} 56 L${20 + i * 16} 26 L${26 + i * 16} 26 L${26 + i * 16} 56 Z`, 'lo')),
+                          S('M8 50 L14 46', 'hi', 2.2), C(7, 51, 2, 'hi')]);  // the chisel
+def('ajanta_caves',()=> [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${8 + i * 17} 56 L${8 + i * 17} ${30 - i % 2 * 4} Q${14 + i * 17} ${22 - i % 2 * 4} ${20 + i * 17} ${30 - i % 2 * 4} L${20 + i * 17} 56 Z`, 'bs')),
+                          ...[0, 1, 2].map(i => E(14 + i * 17, 40, 3.4, 4.4, 'hi')),
+                          S('M4 12 L56 10', 'gh', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -94232,5 +94232,25 @@
     "why": "A hall whose roof rests on rows of very tall slender columns, which only works if the beams are long and light — cedar, brought a very long way. The reliefs on the stairs show delegations from across the empire arriving with gifts, which is what the building was for.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Persepolis"
+  },
+  {
+    "in": [
+      "basalt",
+      "chisel"
+    ],
+    "out": "rock_cut_architecture",
+    "why": "You are not assembling a building, you are removing everything that is not one. There is no foundation to settle and no joint to fail, and equally no way to put back a column you cut too thin. Everything has to be right the first time, from the top down.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rock-cut_architecture"
+  },
+  {
+    "in": [
+      "rock_cut_architecture",
+      "buddhism"
+    ],
+    "out": "ajanta_caves",
+    "why": "Thirty monasteries and halls cut into a basalt cliff over two widely separated periods, the second of them possibly as short as 460 to 480. The paintings inside are dry fresco rather than true fresco, which is why so much of them survived at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ajanta_Caves"
   }
 ]

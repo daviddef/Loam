@@ -1054,6 +1054,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 31, 4 Sep */
+          'rock_cut_architecture',
           /* places batch 29, 4 Sep */
           'muqarnas',
           /* places batch 26, 4 Sep */
@@ -1187,6 +1189,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 31, 4 Sep */
+          'ajanta_caves',
           /* places batch 29, 4 Sep */
           'alhambra',
           /* places batch 28, 4 Sep */
