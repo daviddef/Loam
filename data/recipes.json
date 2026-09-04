@@ -94712,5 +94712,56 @@
     "why": "Wind drags on the surface and the drag grows with the roughness it has already made, so a small chop builds a bigger one. How big it gets depends on wind speed, how long it blows, and how much open water it blows across.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Wind_wave"
+  },
+  {
+    "in": [
+      "snow"
+    ],
+    "verb": "crush",
+    "out": "firn",
+    "why": "Each year's snow is buried by the next and the crystals weld at their contact points, squeezing the air out slowly. Firn is the halfway stage: denser than snow, still breathable, and one more year from becoming glacier ice.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Firn"
+  },
+  {
+    "in": [
+      "sugar"
+    ],
+    "verb": "chill",
+    "out": "rock_candy",
+    "why": "Hot water holds far more sugar than cold. Cool a saturated syrup and it holds more than it can, so any seed — a string, a speck — starts the sugar coming out of solution in an orderly repeating stack, which is what a crystal is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rock_candy"
+  },
+  {
+    "in": [
+      "cream"
+    ],
+    "verb": "heat",
+    "out": "clotted_cream",
+    "at": 80,
+    "why": "Held near 80 °C for hours, the fat globules rise and the proteins at the surface denature into a crust. Take it much hotter and it curdles; much cooler and it never sets. Nothing is added at any point.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clotted_cream"
+  },
+  {
+    "in": [
+      "shell"
+    ],
+    "verb": "crush",
+    "out": "quicklime",
+    "why": "Shell is calcium carbonate, the same as limestone, and the coast has it where the ground does not. Crushed and burned it gives the same quicklime, which is why shell middens turn up beside old lime kilns.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  {
+    "in": [
+      "glass"
+    ],
+    "verb": "cut",
+    "out": "cullet",
+    "why": "Glass is not cut so much as scored and snapped: the scratch concentrates stress along one line and the break follows it. The offcuts go back into the furnace, where they melt at a lower temperature than raw batch and save fuel.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Glass_recycling"
   }
 ]

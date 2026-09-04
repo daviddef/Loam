@@ -280,6 +280,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* verb outcomes batch 5, 5 Sep */
+          'firn', 'rock_candy',
           /* verb outcomes batch 4, 5 Sep */
           'rolled_oats',
           /* verb outcomes batch 3, 4 Sep */
@@ -477,6 +479,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* verb outcomes batch 5, 5 Sep */
+          'clotted_cream',
           /* verb outcomes batch 4, 5 Sep */
           'natto',
           /* blow and smother batch 1, 5 Sep */
