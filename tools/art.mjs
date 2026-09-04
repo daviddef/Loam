@@ -43521,6 +43521,41 @@ def('taj_mahal',   () => [P('M12 50 L48 50 L48 34 L12 34 Z', 'lo'),
                           ...[0, 1].map(i => P(`M${20 + i * 14} 50 L${20 + i * 14} 40 Q${24 + i * 14} 36 ${28 + i * 14} 40 L${28 + i * 14} 50 Z`, 'bs')),
                           P('M6 52 L54 52 L54 55 L6 55 Z', 'gh')]);
 
+/* Places, batch 21 — Northern America. The Brooklyn Bridge is drawn with the
+   diagonal stays as well as the vertical hangers, because the hybrid is what
+   makes it stiffer than a pure suspension bridge.                           */
+def('suspension_bridge',()=>[...[0, 1].map(i => P(`M${14 + i * 28} 44 L${20 + i * 28} 44 L${20 + i * 28} 12 L${14 + i * 28} 12 Z`, 'lo')),
+                          S('M4 30 Q17 18 17 14', 'bs', 2), S('M56 30 Q43 18 43 14', 'bs', 2),
+                          S('M17 14 Q30 40 43 14', 'lo', 2.4),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${20 + i * 5} ${22 + Math.abs(i - 2) * 5} L${20 + i * 5} 42`, 'gh', 1)),
+                          P('M2 42 L58 42 L58 46 L2 46 Z', 'hi'),
+                          wave('bs', 52, 3, 27)]);
+def('caisson',     () => [wave('bs', 14, 3, 27),
+                          P('M12 18 L48 18 L48 46 L12 46 Z', 'lo'),
+                          P('M16 24 L44 24 L44 46 L16 46 Z', 'gh'),           // the dry chamber
+                          S('M30 18 L30 4', 'hi', 2.4),                       // the air shaft
+                          ...[[22, 40], [34, 42]].map(([x, y]) => C(x, y, 2.4, 'bs')),
+                          S('M12 46 L48 46', 'bs', 2)]);
+def('great_house', () => [P('M6 52 L54 52 L54 26 L6 26 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${10 + i * 16} 26 L${22 + i * 16} 26 L${22 + i * 16} ${18 - i * 2} L${10 + i * 16} ${18 - i * 2} Z`, 'bs')),
+                          ...[0, 1, 2, 3, 4, 5].map(i => C(10 + i * 8, 36, 2, 'gh')),   // beam ends
+                          ...[0, 1, 2, 3, 4, 5].map(i => C(10 + i * 8, 46, 2, 'gh'))]);
+def('chaco_canyon',()=> [P('M4 6 L56 6 L56 54 L4 54 Z', 'bs'),
+                          S('M4 30 L56 26', 'hi', 3),                         // the road, straight regardless
+                          P('M12 40 L34 40 L34 50 L12 50 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 7} 40 L${19 + i * 7} 40 L${19 + i * 7} 34 L${14 + i * 7} 34 Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i => C(14 + i * 6, 45, 1.4, 'gh')),
+                          S('M40 12 L48 20', 'gh', 1.4)]);
+def('brooklyn_bridge',()=>[...[0, 1].map(i => P(`M${13 + i * 30} 46 L${20 + i * 30} 46 L${20 + i * 30} 8 L${13 + i * 30} 8 Z`, 'lo')),
+                          ...[0, 1].map(i => [
+                            P(`M${14 + i * 30} 20 L${19 + i * 30} 20 L${19 + i * 30} 26 L${14 + i * 30} 26 Z`, 'gh'),
+                            P(`M${14 + i * 30} 32 L${19 + i * 30} 32 L${19 + i * 30} 38 L${14 + i * 30} 38 Z`, 'gh')]).flat(),
+                          S('M16 12 Q30 38 47 12', 'bs', 2.2),
+                          ...[0, 1, 2, 3].map(i => S(`M${23 + i * 5} ${24 + Math.abs(i - 1.5) * 4} L${23 + i * 5} 42`, 'gh', 1)),
+                          ...[0, 1].map(i => S(`M${17 + i * 30} 14 L${27 + i * 10} 42`, 'gh', 1)),   // the diagonal stays
+                          P('M2 42 L58 42 L58 46 L2 46 Z', 'hi'),
+                          wave('bs', 52, 3, 27)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

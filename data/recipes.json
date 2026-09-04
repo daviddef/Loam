@@ -93972,5 +93972,55 @@
     "why": "White marble from Makrana and red sandstone from Fatehpur Sikri, inlaid with twenty-eight kinds of stone brought from as far as China and Afghanistan. The minarets are set leaning very slightly outward, so a collapse would drop them away from the tomb rather than onto it.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Taj_Mahal"
+  },
+  {
+    "in": [
+      "bridge",
+      "wire"
+    ],
+    "out": "suspension_bridge",
+    "why": "Hang the deck from a cable and the span works in tension, where steel is strongest, instead of in bending, where it is not. The towers only have to hold the cable up, so the water underneath can be as deep as it likes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Suspension_bridge"
+  },
+  {
+    "in": [
+      "air",
+      "water"
+    ],
+    "out": "caisson",
+    "why": "Sink an upturned box and pump air in until the pressure holds the water out, and men can dig the riverbed dry inside it. The cost is the pressure itself: nitrogen dissolves into the blood down there and comes out as bubbles if you rise too fast.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caisson_(engineering)"
+  },
+  {
+    "in": [
+      "road",
+      "timber"
+    ],
+    "out": "great_house",
+    "why": "Two hundred thousand conifer beams carried in on foot from as far as 110 km, along roads nine metres wide and straight through whatever was in the way. Chetro Ketl alone is estimated at 29,135 man-hours, and most of its rooms show no sign of anyone living in them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Great_house_(pueblo)"
+  },
+  {
+    "in": [
+      "great_house",
+      "sandstone"
+    ],
+    "out": "chaco_canyon",
+    "why": "Pueblo Bonito covers nearly two acres and has at least 650 rooms, and it stands on a line with Chetro Ketl that runs precisely east to west — the axis the equinox sun crosses. All of it built with no wheel and no draught animal.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chaco_Culture_National_Historical_Park"
+  },
+  {
+    "in": [
+      "suspension_bridge",
+      "caisson"
+    ],
+    "out": "brooklyn_bridge",
+    "why": "A 486 m span with diagonal stays as well as vertical hangers, so it is stiffer than a pure suspension bridge. Its contractor substituted bad wire in the cables; Washington Roebling could not have it removed, so he added 150 wires per cable to cover the shortfall.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
   }
 ]

@@ -378,7 +378,12 @@
     "quenching_trough": "Quenching",
     "drying": "Papermaking",
     "pietra_dura": "Pietra dura",
-    "taj_mahal": "Taj Mahal"
+    "taj_mahal": "Taj Mahal",
+    "suspension_bridge": "Suspension bridge",
+    "caisson": "Caisson (engineering)",
+    "great_house": "Great house (pueblo)",
+    "chaco_canyon": "Chaco Culture National Historical Park",
+    "brooklyn_bridge": "Brooklyn Bridge"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -886,6 +891,11 @@
     "anvil+water": "Quenching",
     "felt+sun": "Papermaking",
     "lapis_lazuli+marble": "Pietra dura",
-    "mughal_empire+pietra_dura": "Taj Mahal"
+    "mughal_empire+pietra_dura": "Taj Mahal",
+    "bridge+wire": "Suspension bridge",
+    "air+water": "Caisson (engineering)",
+    "road+timber": "Great house (pueblo)",
+    "great_house+sandstone": "Chaco Culture National Historical Park",
+    "caisson+suspension_bridge": "Brooklyn Bridge"
   }
 }

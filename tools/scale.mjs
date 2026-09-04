@@ -1044,6 +1044,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 21, 4 Sep */
+          'caisson',
           /* places batch 18, 4 Sep */
           'reservoir',
           /* places batch 13, 4 Sep. a span and a corner, metres */
@@ -1167,6 +1169,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 21, 4 Sep */
+          'suspension_bridge', 'great_house', 'brooklyn_bridge',
           /* places batch 20, 4 Sep */
           'taj_mahal',
           /* places batch 19, 4 Sep */
@@ -1334,6 +1338,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* places batch 21, 4 Sep */
+          'chaco_canyon',
           /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */
           'ha_long_bay',
           /* places batch 5, 4 Sep. 1,300 km of line over 50 square kilometres */
