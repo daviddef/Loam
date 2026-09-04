@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+    /* verb outcomes, 5 Sep. one HMF molecule */
+    'hydroxymethylfurfural',
           /* verb outcomes batch 3, 4 Sep */
           'lachrymatory_factor',
           /* verb outcomes batch 1, 4 Sep. a short starch chain */
@@ -183,6 +185,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+    /* verb outcomes, 5 Sep. a pollen grain is 20 to 60 micrometres */
+    'anemophily',
           /* computing and plants waves, 3 Sep */
           'bit', 'byte', 'hexadecimal', 'pixel',
           /* umbrella waves, 3 Sep */
@@ -286,6 +290,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    /* verb outcomes, 5 Sep. an emptied eggshell */
+    'blown_egg',
     /* verb outcomes, 5 Sep. a leaf, a bean, a dried plum */
     'black_tea', 'fermented_cocoa', 'prune',
     /* the fastener homonym, 5 Sep. a nut is centimetres across */
@@ -1299,6 +1305,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* verb outcomes, 5 Sep. a slab across a slope */
+    'wind_slab',
     /* the last checklist place, 5 Sep. a walled town of 27 hectares */
     'lelu',
     /* places batch 44, 5 Sep. a medieval city, a palace of 1,441 rooms, a castle of 4.73 km2 */

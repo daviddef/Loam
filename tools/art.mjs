@@ -45306,6 +45306,29 @@ def('prune',        () => [P('M20 44 Q12 34 18 24 Q24 14 30 16 Q36 14 42 24 Q48 
                           S('M30 16 L31 8', 'gh', 1.4),
                           C(30, 32, 3, 'bs')]);
 
+/* Verb outcomes, 5 Sep — the blow verb. The wind slab is drawn as the ridge
+   with the load on the sheltered side and the weak layer underneath.       */
+def('wind_slab',    () => [P('M2 56 L24 22 L34 22 L58 56 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M2 ${10 + i * 5} Q14 ${8 + i * 5} 24 ${14 + i * 5}`, 'gh', 2)),   // the wind
+                          P('M34 22 Q46 26 52 40 L44 44 Q38 30 32 28 Z', 'hi'),   // the slab, on the lee side
+                          S('M33 29 Q39 32 45 45', 'ik', 1.4),                     // the weak layer under it
+                          C(8, 46, 1.6, 'bs')]);
+def('hydroxymethylfurfural',()=>[vessel('bs', 26, 50),
+                          P('M20 34 L44 34 L43 48 Q30 51 21 48 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} 26 Q${22 + i * 6} 18 ${26 + i * 6} 12`, 'gh', 1.2)),
+                          ...granules('hi', 8, 15, [22, 36, 42, 46]),
+                          S('M48 34 L48 48', 'ik', 1.4),                           // the scale it reads on
+                          ...[0, 1, 2].map(i => S(`M46 ${37 + i * 5} L50 ${37 + i * 5}`, 'ik', 1))]);
+def('blown_egg',    () => [E(30, 32, 15, 20, 'lo'),
+                          C(30, 12, 1.4, 'ik'), C(30, 52, 1.4, 'ik'),               // two pinholes
+                          E(30, 32, 11, 16, 'gh'),
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} 8 Q${22 + i * 6} 2 ${26 + i * 6} -2`, 'gh', 1))]);
+def('anemophily',   () => [S('M30 56 L30 26', 'lo', 3),
+                          ...[0, 1, 2, 3].map(i => S(`M30 ${34 + i * 6} L${24 - i * 2} ${30 + i * 6}`, 'lo', 1.6)),
+                          E(30, 22, 4, 7, 'bs'),
+                          ...granules('hi', 26, 60, [30, 4, 58, 34]),               // all of it, going nowhere
+                          ...[0, 1, 2].map(i => S(`M32 ${8 + i * 6} Q44 ${6 + i * 6} 56 ${10 + i * 6}`, 'gh', 1.4))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
