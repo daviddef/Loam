@@ -2191,6 +2191,7 @@ const SCALE = __SCALE_DATA__;
 const CAUTIONS = __CAUTION_DATA__;
 /* Food-label vocabulary → element ids. See data/labels.json. */
 const LABELS = __LABEL_DATA__;
+const PATHOGENS = __PATHOGEN_DATA__.pathogens || {};
 /* Regulated allergens, and which of this world's elements each protein turns
    up in. See data/allergens.json. */
 const ALLERGENS = __ALLERGEN_DATA__;
@@ -8082,6 +8083,7 @@ function quickViewHTML(id) {
     ${e.discovered ? `<p class="pfrom">🕐 <b>${e.discovered.year}</b> · ${e.discovered.note}</p>${nearestInTimeHTML(id)}` : ''}
     ${cautionHTML(id)}
     ${upstreamHazardHTML(id)}
+    ${pathogenHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
       ${!owned ? `<button class="ghost" data-hint="${id}">How do I make it?</button>` : ''}
@@ -8972,6 +8974,45 @@ function aliasesFor(id) {
     }
   }
   return ALIAS_BY_ID.get(id);
+}
+
+/* ── what an organism does, and what answers it ───────────────────────────
+ * The catalogue exists so that quinine and malaria know about each other.
+ * That is worth nothing if it stays in the data file, so the card shows it:
+ * what the organism is, how it travels, what it lives in between hosts, how
+ * bad it is with the basis stated, and — the part the whole thing was built
+ * for — what treats it and what prevents it, as cards you can open.
+ *
+ * The seriousness line always carries its basis. A bare "0.6" invites the
+ * reader to compare it with a number measured a different way, and the same
+ * organism has several true numbers: untreated bubonic plague is 0.6 and
+ * untreated pneumonic approaches 1.0.
+ */
+function pathogenHTML(id) {
+  const p = PATHOGENS[id];
+  if (!p) return '';
+  const link = x => byId[x]
+    ? `<button class="chip mini" data-trace="${x}">${nameOf(byId[x])}</button>` : '';
+  const row = (k, v) => v ? `<p class="pfrom"><b>${k}</b> · ${v}</p>` : '';
+  const pct = n => n >= 0.01 ? `${Math.round(n * 100)}%` : n > 0 ? `${(n * 100).toFixed(2)}%` : 'not fatal';
+  const treats = (p.treated_by || []).map(link).filter(Boolean).join(' ');
+  const prevents = (p.prevented_by || []).map(link).filter(Boolean).join(' ');
+  const causes = (p.causes || []).map(link).filter(Boolean).join(' ');
+  return `<h2>What it does</h2>
+    <p class="pfrom"><b>${p.kind}</b> · infects ${p.hosts.join(', ')}</p>
+    ${causes ? `<p class="pfrom"><b>causes</b> ${causes}</p>` : ''}
+    ${row('spreads by', p.transmission)}
+    ${row('lives in', p.reservoir)}
+    ${row('made of', p.makeup)}
+    ${row('lasts', p.durability)}
+    ${row('signs', (p.symptoms || []).join(', '))}
+    <p class="pfrom"><b>seriousness</b> · ${pct(p.seriousness.value)} —
+       ${p.seriousness.measure}</p>
+    ${treats ? `<p class="pfrom"><b>treated by</b> ${treats}</p>`
+             : `<p class="hint2">Nothing in this world treats it.</p>`}
+    ${prevents ? `<p class="pfrom"><b>prevented by</b> ${prevents}</p>` : ''}
+    <p class="hint2"><a href="${p.src}" target="_blank" rel="noopener">source</a> ·
+       <a href="${p.seriousness.src}" target="_blank" rel="noopener">the number</a></p>`;
 }
 
 function matchesSearch(e, q) {
@@ -10600,6 +10641,24 @@ function regressionTest() {
     }
     links.length = 0;
     prefs.freePlay = free0;
+  }
+
+  // The catalogue's whole reason for existing is that quinine and malaria
+  // should know about each other, and that is worth nothing while it sits in
+  // a data file. So: the card renders it, the treatment is a real link, and
+  // the seriousness number never appears without the basis it was measured on.
+  {
+    const h = pathogenHTML('plasmodium');
+    check('catalogue: the card shows what treats it, as links',
+      h.includes('data-trace="quinine"') && h.includes('data-trace="artemisinin"'));
+    check('catalogue: seriousness never appears without its basis',
+      h.includes('untreated falciparum malaria in a non-immune adult'));
+    check('catalogue: an element not in it renders nothing at all',
+      pathogenHTML('stone') === '');
+    // And the search vocabulary, which is the other half of it being findable.
+    check('catalogue: a binomial answers to the name people type',
+      matchesSearch(byId['dirofilaria_immitis'], 'heartworm')
+      && matchesSearch(byId['yersinia_pestis'], 'black death'));
   }
 
   // tidy()'s satellite-shift collision fix: this exact graph shape (a short,
