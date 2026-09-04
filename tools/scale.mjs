@@ -1323,6 +1323,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 34, 5 Sep */
+          'mount_fuji',
           /* places batch 28, 4 Sep */
           'apartheid',
           /* places batch 27, 4 Sep */

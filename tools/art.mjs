@@ -43699,6 +43699,13 @@ def('mogao_caves', () => [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
                           ...[0, 1, 2].map(i => P(`M${20 + i * 3} ${28 + i * 5} L${28 + i * 3} ${28 + i * 5} L${28 + i * 3} ${31 + i * 5} L${20 + i * 3} ${31 + i * 5} Z`, 'hi')),
                           S('M4 10 L56 8', 'bs', 1.6)]);
 
+def('mount_fuji',  () => [P('M2 52 L24 14 L36 14 L58 52 Z', 'lo'),
+                          P('M24 14 L36 14 L41 22 L19 22 Z', 'hi'),           // the snow cap
+                          // the older cones inside it, which is the real fact
+                          ...[0, 1].map(i => S(`M${14 + i * 6} 52 L${27 + i * 2} ${26 + i * 6}`, 'gh', 1)),
+                          ...[0, 1].map(i => S(`M${46 - i * 6} 52 L${33 - i * 2} ${26 + i * 6}`, 'gh', 1)),
+                          S('M2 52 L58 52', 'bs', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
