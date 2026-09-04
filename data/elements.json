@@ -80948,5 +80948,363 @@
       "animal"
     ],
     "fact": "A mustelid that went the other way: heavy, powerful, and built to dig rather than to follow."
+  },
+  {
+    "id": "system",
+    "name": "System",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Parts whose behaviour together is not in any of them separately."
+  },
+  {
+    "id": "cycle",
+    "name": "Cycle",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "A process whose end is its own beginning, which is why it can run forever on nothing but energy passing through."
+  },
+  {
+    "id": "theory",
+    "name": "Theory",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "In science it is the strongest thing there is, and in ordinary speech it means a guess. That gap causes most public arguments about science."
+  },
+  {
+    "id": "evidence",
+    "name": "Evidence",
+    "emoji": "🔎",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "An observation only becomes evidence in relation to a claim — the same fact can support one and refute another."
+  },
+  {
+    "id": "observation",
+    "name": "Observation",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Looking at something without changing it, which is harder than it sounds and sometimes impossible."
+  },
+  {
+    "id": "measurement",
+    "name": "Measurement",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Comparing a thing to an agreed unit, and the agreement is the hard part."
+  },
+  {
+    "id": "standard",
+    "name": "Standard",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "trade"
+    ],
+    "fact": "Something everyone agrees to do the same way, and its whole value is that nobody defects."
+  },
+  {
+    "id": "agreement",
+    "name": "Agreement",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "trade"
+    ],
+    "fact": "Two parties choosing to be predictable to each other, which is what makes anything past barter possible."
+  },
+  {
+    "id": "trust",
+    "name": "Trust",
+    "emoji": "🤲",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Acting on an expectation you cannot verify, and it is cheaper than verifying."
+  },
+  {
+    "id": "selection",
+    "name": "Selection",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "microbe"
+    ],
+    "fact": "Not a force and not a chooser. Just the arithmetic of what leaves more descendants."
+  },
+  {
+    "id": "variation",
+    "name": "Variation",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "The differences within a species, and without it nothing can evolve at all."
+  },
+  {
+    "id": "population",
+    "name": "Population",
+    "emoji": "👥",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "The unit evolution actually acts on. An individual cannot evolve."
+  },
+  {
+    "id": "bond",
+    "name": "Bond",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Atoms sharing or handing over electrons, and everything chemistry does is this."
+  },
+  {
+    "id": "gland",
+    "name": "Gland",
+    "emoji": "🫀",
+    "shelf": "workshop",
+    "tags": [
+      "body"
+    ],
+    "fact": "An organ whose whole job is to make something and release it."
+  },
+  {
+    "id": "lobe",
+    "name": "Lobe",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "body"
+    ],
+    "fact": "A part of an organ marked off by a groove, and in the brain the grooves came before the names."
+  },
+  {
+    "id": "fissure",
+    "name": "Fissure",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "body"
+    ],
+    "fact": "A deep groove, and in a brain it is what lets a large sheet fit in a small box."
+  },
+  {
+    "id": "fold",
+    "name": "Fold",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Doubling something over, which multiplies its area in a given space and its stiffness along the crease."
+  },
+  {
+    "id": "structure",
+    "name": "Structure",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "ideas"
+    ],
+    "fact": "The arrangement that decides what a thing can carry, and it usually matters more than what it is made of."
+  },
+  {
+    "id": "form",
+    "name": "Form",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "What a thing is, as distinct from what it is made of — the oldest distinction in philosophy and still the useful one."
+  },
+  {
+    "id": "load",
+    "name": "Load",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "What a structure has to carry, and the temporary ones usually decide the design."
+  },
+  {
+    "id": "code",
+    "name": "Code",
+    "emoji": "🔣",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "tech"
+    ],
+    "fact": "An agreed mapping between symbols and meanings, and it does not have to be secret."
+  },
+  {
+    "id": "symbol",
+    "name": "Symbol",
+    "emoji": "🔤",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "A mark that stands for something by agreement rather than by resemblance."
+  },
+  {
+    "id": "meaning",
+    "name": "Meaning",
+    "emoji": "💭",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "What a sign points to, and it lives in the reader rather than in the mark."
+  },
+  {
+    "id": "mark",
+    "name": "Mark",
+    "emoji": "✏️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "craft"
+    ],
+    "fact": "The oldest technology for making something outlast the moment it was made in."
+  },
+  {
+    "id": "machine",
+    "name": "Machine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Something that changes a force's size or direction, and there are only six of them underneath."
+  },
+  {
+    "id": "motor",
+    "name": "Motor",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "machine"
+    ],
+    "fact": "A generator run backwards, and the same machine will do either."
+  },
+  {
+    "id": "giant",
+    "name": "Giant",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "space"
+    ],
+    "fact": "What a star becomes when it runs out of hydrogen in its core, and it gets bigger by cooling."
+  },
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "space"
+    ],
+    "fact": "What is left when a star has nothing to burn and nothing holding it up but the electrons themselves."
+  },
+  {
+    "id": "helix",
+    "name": "Helix",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "ideas",
+      "microbe"
+    ],
+    "fact": "A circle that is also travelling, and the shape a chain takes when every link turns by the same angle."
+  },
+  {
+    "id": "axis",
+    "name": "Axis",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "The line a thing turns about, and it is the one part that does not move."
+  },
+  {
+    "id": "rotation",
+    "name": "Rotation",
+    "emoji": "🔃",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Turning about a line rather than moving along one, and it conserves its own quantity."
+  },
+  {
+    "id": "zone",
+    "name": "Zone",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "A band where conditions are similar enough that the same things live or happen throughout it."
+  },
+  {
+    "id": "region",
+    "name": "Region",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "An area treated as one thing, and what makes it one is a decision."
+  },
+  {
+    "id": "boundary",
+    "name": "Boundary",
+    "emoji": "🚧",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Where one thing stops being itself, and it is nearly always a gradient someone has drawn a line across."
+  },
+  {
+    "id": "edge",
+    "name": "Edge",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "ideas"
+    ],
+    "fact": "Where a surface ends, and in ecology it is where most of the life is."
   }
 ]

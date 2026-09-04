@@ -41685,6 +41685,173 @@ def('badger',       () => [E(28, 34, 20, 13, 'bs'),
                            ...[0, 1, 2].map(i => P(`M${8 - i * 2} ${50 + i} L${14 - i * 2} ${48 + i} L${12 - i * 2} ${54 + i} Z`, 'lo')),
                            C(52, 26, 1.6, 'ik')]);                                // and the digging claws
 
+
+/* ── the head nouns ──────────────────────────────────────────────────────
+   General words that a whole family of specific ones hangs off. They have
+   no natural picture, so each is drawn as the RELATION it names — a system
+   is parts constraining each other, a boundary is a gradient with a line
+   across it, a cycle closes and a helix does not.                        */
+def('system',       () => [...[[18, 18], [42, 18], [30, 34], [18, 46], [42, 46]].map(([x, y]) => C(x, y, 6, 'bs')),
+                           ...[[18, 18, 42, 18], [18, 18, 30, 34], [42, 18, 30, 34],
+                               [30, 34, 18, 46], [30, 34, 42, 46], [18, 46, 42, 46]]
+                             .map(([a, b, c, d]) => S(`M${a} ${b} L${c} ${d}`, 'lo', 1.8))]);
+def('cycle',        () => [ring('bs', 30, 30, 19, 5),
+                           P('M42 12 L52 18 L40 24 Z', 'bs'),                  // closed, and driven from outside
+                           ...[0, 1, 2].map(i => S(`M${6 + i * 3} ${8 + i * 3} L${12 + i * 3} ${12 + i * 3}`, 'gh', 1.4)),
+                           C(30, 30, 5, 'lo')]);
+def('theory',       () => [P('M8 40 L52 40 L52 48 L8 48 Z', 'bs'),             // many facts, tied into one
+                           ...[0, 1, 2, 3, 4].map(i => C(12 + i * 9, 14 + (i % 2) * 8, 4, 'lo')),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M${12 + i * 9} ${18 + (i % 2) * 8} L${30} 38`, 'gh', 1.2)),
+                           C(30, 40, 5, 'hi')]);
+def('evidence',     () => [P('M6 12 L26 12 L26 48 L6 48 Z', 'lo'),
+                           P('M34 12 L54 12 L54 48 L34 48 Z', 'lo'),           // the same fact, two claims,
+                           ...[0, 1, 2].map(i => S(`M10 ${20 + i * 9} L22 ${20 + i * 9}`, 'bs', 2)),
+                           ...[0, 1, 2].map(i => S(`M38 ${20 + i * 9} L50 ${20 + i * 9}`, 'gh', 2)),
+                           C(30, 30, 5, 'hi'), C(30, 30, 2, 'ik')]);            // and it supports only one
+def('observation',  () => [E(30, 30, 20, 13, 'bs'), C(30, 30, 8, 'ground'), C(30, 30, 4, 'ik'),
+                           ...[0, 1, 2].map(i => S(`M${8 - i * 2} ${16 - i * 3} L${16 - i * 2} ${21 - i * 3}`, 'gh', 1.2)),
+                           S('M10 46 L50 46', 'gh', 1.2)]);
+def('measurement',  () => [P('M4 24 L56 24 L56 36 L4 36 Z', 'bs'),
+                           ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
+                             S(`M${6 + i * 5.5} 24 L${6 + i * 5.5} ${i % 5 === 0 ? 33 : 29}`, 'lo', 1.4)),
+                           P('M28 14 L32 14 L32 24 L28 24 Z', 'ik'),
+                           P('M26 10 L34 10 L30 16 Z', 'ik')]);                 // against an agreed unit
+def('standard',     () => [...[0, 1, 2, 3].map(i =>
+                             P(`M${8 + (i % 2) * 26} ${10 + Math.floor(i / 2) * 26} L${28 + (i % 2) * 26} ${10 + Math.floor(i / 2) * 26} ` +
+                               `L${28 + (i % 2) * 26} ${30 + Math.floor(i / 2) * 26} L${8 + (i % 2) * 26} ${30 + Math.floor(i / 2) * 26} Z`, 'bs')),
+                           ...[0, 1, 2, 3].map(i =>                              // all the same, which is the
+                             C(18 + (i % 2) * 26, 20 + Math.floor(i / 2) * 26, 5, 'lo'))]);  // whole of its value
+def('agreement',    () => [P('M4 26 L26 26 L26 34 L4 34 Z', 'bs'),
+                           P('M34 26 L56 26 L56 34 L34 34 Z', 'bs'),
+                           P('M22 20 L38 20 L38 40 L22 40 Z', 'hi'),             // two, choosing to be
+                           S('M26 30 L34 30', 'ik', 2.4),                        // predictable to each other
+                           ...[[12, 22], [48, 38]].map(([x, y]) => C(x, y, 2.4, 'lo'))]);
+def('trust',        () => [P('M8 34 Q18 24 30 30 Q42 36 52 26', 'gh'),
+                           S('M8 34 Q18 24 30 30 Q42 36 52 26', 'gh', 2),
+                           C(12, 34, 8, 'bs'), C(48, 26, 8, 'bs'),
+                           S('M22 32 L38 30', 'lo', 3),                           // acting without checking,
+                           ...[0, 1, 2].map(i => S(`M${26 + i * 4} 42 L${26 + i * 4} 46`, 'gh', 1.2))]);  // which is cheaper
+def('selection',    () => [...[0, 1, 2, 3, 4, 5].map(i => C(10 + i * 8, 16, 4, i % 2 ? 'lo' : 'bs')),
+                           ...[0, 1, 2].map(i => C(18 + i * 12, 44, 5, 'bs')),    // variation above, and what
+                           ...[0, 1, 2].map(i => S(`M${18 + i * 16} 22 L${18 + i * 12} 38`, 'gh', 1.4)),
+                           S('M6 32 L54 32', 'ik', 1.6)]);                        // was left below
+def('population',   () => [...[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i =>
+                             [C(12 + (i % 3) * 18, 14 + Math.floor(i / 3) * 16, 5, i === 4 ? 'hi' : 'bs'),
+                              P(`M${8 + (i % 3) * 18} ${21 + Math.floor(i / 3) * 16} L${16 + (i % 3) * 18} ${21 + Math.floor(i / 3) * 16} ` +
+                                `L${15 + (i % 3) * 18} ${28 + Math.floor(i / 3) * 16} L${9 + (i % 3) * 18} ${28 + Math.floor(i / 3) * 16} Z`,
+                                i === 4 ? 'hi' : 'bs')]).flat()]);
+def('bond',         () => [C(18, 30, 11, 'bs'), C(42, 30, 11, 'bs'),
+                           C(30, 30, 5, 'hi'),                                     // the shared pair, which is
+                           C(27, 30, 2, 'ik'), C(33, 30, 2, 'ik'),                 // the bond itself
+                           ...[0, 1].map(i => ring('lo', 18 + i * 24, 30, 11, 1.4))]);
+def('gland',        () => [E(24, 28, 14, 12, 'bs'),
+                           ...[0, 1, 2, 3].map(i => C(18 + (i % 2) * 10, 24 + Math.floor(i / 2) * 8, 3, 'lo')),
+                           S('M36 32 Q46 36 50 46', 'lo', 4),                      // with a duct, or without —
+                           ...[0, 1, 2].map(i => C(50 + (i % 2) * 3, 48 + i * 3, 2, 'hi'))]);  // which decides everything
+def('lobe',         () => [P('M8 20 Q8 8 22 8 Q30 8 30 18 Q30 8 40 8 Q54 8 54 22 Q56 34 46 40 Q46 52 30 52 Q14 52 12 38 Q6 30 8 20 Z', 'bs'),
+                           S('M30 8 L30 52', 'ik', 2.6),                            // grooves first, and the
+                           S('M12 30 Q30 26 50 32', 'ik', 2.2),                     // names came off the skull
+                           ...[[18, 20], [42, 20], [20, 42], [42, 42]].map(([x, y]) => C(x, y, 2.4, 'lo'))]);
+def('fissure',      () => [P('M6 14 L54 14 L54 46 L6 46 Z', 'bs'),
+                           ...[0, 1, 2, 3].map(i =>
+                             S(`M${12 + i * 12} 14 Q${16 + i * 12} 30 ${12 + i * 12} 46`, 'ground', 5)),
+                           ...[0, 1, 2, 3].map(i =>
+                             S(`M${12 + i * 12} 20 Q${15 + i * 12} 30 ${12 + i * 12} 40`, 'lo', 1.4))]);
+def('fold',         () => [P('M4 34 L30 12 L30 44 L4 52 Z', 'bs'),
+                           P('M30 12 L56 34 L56 52 L30 44 Z', 'lo'),                 // nothing added, and both
+                           S('M30 12 L30 44', 'ik', 2),                               // the strength and the
+                           ...[0, 1, 2].map(i => S(`M${10 + i * 3} ${44 - i} L${16 + i * 3} ${40 - i}`, 'gh', 1.2))]);  // packing come from it
+def('structure',    () => [P('M6 46 L54 46 L54 52 L6 52 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => S(`M${10 + i * 13} 46 L${16 + i * 13} 20`, 'bs', 3)),
+                           ...[0, 1, 2, 3].map(i => S(`M${16 + i * 13} 20 L${23 + i * 13} 46`, 'bs', 3)),
+                           P('M8 14 L52 14 L52 20 L8 20 Z', 'ik'),
+                           ...[0, 1, 2].map(i => S(`M${20 + i * 10} 8 L${20 + i * 10} 13`, 'gh', 1.4))]);
+def('form',         () => [P('M8 44 Q8 20 30 20 Q52 20 52 44 Z', 'bs'),
+                           P('M14 44 Q14 26 30 26 Q46 26 46 44 Z', 'lo'),
+                           ...[0, 1, 2, 3, 4].map(i => C(12 + i * 9, 50, 3, 'gh')),   // the same matter, and the
+                           S('M6 46 L54 46', 'ik', 1.6)]);                             // shape that is not it
+def('load',         () => [P('M6 26 L54 26 L54 32 L6 32 Z', 'bs'),
+                           ...[0, 1, 2].map(i => P(`M${14 + i * 14} 8 L${24 + i * 14} 8 L${24 + i * 14} 26 L${14 + i * 14} 26 Z`, 'lo')),
+                           ...[0, 1].map(i => P(`M${12 + i * 30} 32 L${18 + i * 30} 32 L${18 + i * 30} 52 L${12 + i * 30} 52 Z`, 'bs')),
+                           ...[0, 1, 2].map(i => S(`M${19 + i * 14} 4 L${19 + i * 14} 8`, 'gh', 1.6))]);
+def('code',         () => [...[[10, 18, 6], [20, 18, 12], [36, 18, 4], [44, 18, 10]].map(([x, y, w]) =>
+                             P(`M${x} ${y} L${x + w} ${y} L${x + w} ${y + 6} L${x} ${y + 6} Z`, 'bs')),
+                           S('M8 32 L52 32', 'gh', 1.4),
+                           ...[0, 1, 2, 3].map(i => C(14 + i * 11, 42, 4, 'lo')),      // marks above, meanings
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 11} 30 L${14 + i * 11} 36`, 'gh', 1.2))]);  // below, by agreement
+def('symbol',       () => [P('M10 10 L28 10 L28 28 L10 28 Z', 'lo'),
+                           P('M15 15 Q22 12 24 20 Q22 26 16 23 Z', 'bs'),              // a picture can only mean
+                           S('M30 19 L38 19', 'gh', 2), P('M36 16 L42 19 L36 22 Z', 'gh'),
+                           P('M44 10 L56 10 L56 28 L44 28 Z', 'hi'),                   // one thing; a symbol can
+                           S('M47 14 L53 14', 'ik', 2), S('M47 19 L53 19', 'ik', 2), S('M47 24 L51 24', 'ik', 2),
+                           ...[0, 1, 2].map(i => S(`M${14 + i * 14} 38 L${22 + i * 14} 38`, 'lo', 2))]);  // mean anything
+def('meaning',      () => [P('M6 16 L22 16 L22 28 L6 28 Z', 'bs'),
+                           ...[0, 1, 2].map(i => S(`M${28 + i * 4} ${20 + i * 2} L${34 + i * 4} ${22 + i * 2}`, 'gh', 1.4)),
+                           C(46, 28, 11, 'lo'),                                         // it lives in the reader,
+                           ...[0, 1, 2].map(i => C(42 + (i % 2) * 8, 24 + i * 5, 2.4, 'hi')),
+                           S('M8 42 L28 42', 'gh', 1.2)]);                              // not in the mark
+def('mark',         () => [P('M6 34 L54 34 L54 52 L6 52 Z', 'lo'),
+                           S('M12 44 Q22 36 32 44 Q42 50 50 42', 'ik', 3.4),
+                           ...[0, 1, 2].map(i => S(`M${14 + i * 8} ${20 - i * 3} L${20 + i * 8} ${24 - i * 3}`, 'gh', 1.4)),
+                           C(50, 40, 2.6, 'bs')]);                                       // it outlasts the moment
+def('machine',      () => [C(20, 34, 13, 'bs'), ring('lo', 20, 34, 13, 3),
+                           ...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 20, 34, [P('M17 21 L23 21 L22 15 L18 15 Z', 'bs')]]),
+                           S('M34 34 L52 22', 'ik', 3.4),                                // six of them underneath,
+                           C(34, 34, 3, 'ik'),                                           // and none makes energy
+                           P('M48 18 L56 18 L56 26 L48 26 Z', 'lo')]);
+def('motor',        () => [C(30, 30, 16, 'bs'), ring('lo', 30, 30, 16, 3),
+                           ...[0, 90, 180, 270].map(a =>
+                             ['g', a, 30, 30, [P('M26 18 L34 18 L34 26 L26 26 Z', 'lo')]]),
+                           C(30, 30, 6, 'ik'),
+                           S('M4 30 L14 30', 'ik', 2.4), S('M46 30 L56 30', 'ik', 2.4),
+                           ...[0, 1].map(i => S(`M${8 + i * 44} ${24 + i * 12} L${12 + i * 44} ${24 + i * 12}`, 'gh', 1.2))]);
+def('giant',        () => [C(30, 32, 22, 'bs'), ring('hi', 30, 32, 22, 3),
+                           C(30, 32, 6, 'lo'),                                            // bigger by cooling: the
+                           ...[0, 1, 2].map(i => ring('gh', 30, 32, 8 + i * 5, 1)),       // core shrank and the
+                           C(52, 10, 3, 'gh')]);                                          // shell was pushed out
+def('dwarf',        () => [C(30, 32, 8, 'hi'), ring('ik', 30, 32, 8, 2),
+                           ...[0, 1, 2, 3].map(i => ring('gh', 30, 32, 14 + i * 6, 1)),
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>              // held up by nothing but
+                             ['g', a, 30, 32, [S('M30 20 L30 16', 'lo', 1.6)]])]);        // the electrons themselves
+def('helix',        () => [...[0, 1, 2, 3].map(i =>
+                             S(`M14 ${8 + i * 14} Q30 ${16 + i * 14} 46 ${8 + i * 14}`, 'bs', 3)),
+                           ...[0, 1, 2].map(i =>
+                             S(`M46 ${8 + i * 14} Q30 ${20 + i * 14} 14 ${22 + i * 14}`, 'lo', 3)),
+                           S('M30 4 L30 56', 'gh', 1.2)]);                                // a circle that travels
+def('axis',         () => [S('M30 4 L30 56', 'ik', 3),
+                           E(30, 30, 20, 8, 'bs'),
+                           ...[0, 1].map(i => P(`M${26 + i * 8} ${8 + i * 40} L${34 - i * 8} ${8 + i * 40} L30 ${2 + i * 52} Z`, 'lo')),
+                           ...[0, 1, 2].map(i => S(`M${44 + i * 3} ${20 - i * 3} L${50 + i * 3} ${24 - i * 3}`, 'gh', 1.2))]);
+def('rotation',     () => [ring('bs', 30, 30, 18, 4),
+                           P('M44 16 L54 20 L44 26 Z', 'bs'),
+                           C(30, 30, 3, 'ik'),
+                           ...[0, 1, 2].map(i => S(`M30 30 L${30 + Math.round(14 * Math.cos(i * 2.1))} ${30 + Math.round(14 * Math.sin(i * 2.1))}`, 'gh', 1.2))]);
+def('zone',         () => [...[0, 1, 2, 3].map(i =>
+                             P(`M4 ${8 + i * 12} L56 ${8 + i * 12} L56 ${20 + i * 12} L4 ${20 + i * 12} Z`,
+                               ['bs', 'lo', 'bs', 'lo'][i])),
+                           ...[0, 1, 2].map(i => S(`M4 ${20 + i * 12} L56 ${20 + i * 12}`, 'gh', 1.4)),
+                           ...[0, 1, 2].map(i => C(14 + i * 16, 26 + i * 6, 2.6, 'hi'))]);  // stacked along a gradient
+def('region',       () => [P('M8 12 Q26 6 34 16 Q50 14 52 28 Q54 44 38 48 Q20 52 12 40 Q4 26 8 12 Z', 'bs'),
+                           S('M8 12 Q26 6 34 16 Q50 14 52 28 Q54 44 38 48 Q20 52 12 40 Q4 26 8 12 Z', 'ik', 2),
+                           S('M20 10 L26 50', 'gh', 1.6),                                   // one ground, three ways
+                           S('M6 30 L52 34', 'gh', 1.6)]);                                  // of cutting it
+def('boundary',     () => [...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+                             P(`M${4 + i * 6.5} 12 L${10.5 + i * 6.5} 12 L${10.5 + i * 6.5} 48 L${4 + i * 6.5} 48 Z`,
+                               i < 4 ? 'bs' : 'lo')),
+                           S('M30 6 L30 54', 'ik', 3)]);                                    // a gradient, with a
+def('edge',         () => [P('M4 8 L34 8 L34 52 L4 52 Z', 'bs'),                            // line drawn across it
+                           P('M34 8 L56 8 L56 52 L34 52 Z', 'lo'),
+                           S('M34 8 L34 52', 'ik', 2.4),
+                           ...[[30, 18], [38, 24], [32, 34], [37, 42], [34, 28]]
+                             .map(([x, y]) => C(x, y, 2.6, 'hi'))]);                        // and most life is on it
+
+def('variation',    () => [...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+                             E(10 + (i % 4) * 13, 18 + Math.floor(i / 4) * 20,
+                               5 + (i % 3) * 2, 6 + ((i + 1) % 3) * 2,
+                               ['bs', 'lo', 'hi', 'bs'][i % 4])),
+                           S('M4 42 L56 42', 'gh', 1.2)]);   // selection can only sort what is already here
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

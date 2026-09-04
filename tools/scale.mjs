@@ -51,6 +51,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* head nouns, 4 Sep — R2, the umbrella pass */
+          'bond',
           /* conditions, 4 Sep — scaled to the part that goes wrong */
           'vitamin_b1',
           /* parasites wave, 3 Sep */
@@ -261,6 +263,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* head nouns, 4 Sep — R2, the umbrella pass */
+          'gland', 'lobe', 'fissure', 'fold', 'helix',
           /* assembly components, 4 Sep — 24 new needs lists asked for these */
           'anode', 'cathode', 'electrode', 'terminal', 'commutator', 'bushing', 'heddle', 'bobbin', 'cam', 'feed_dog', 'tension_disc', 'pivot', 'jewel', 'ring', 'share', 'wedge', 'nozzle', 'flyweight', 'rind', 'signature',
           /* conditions, 4 Sep — scaled to the part that goes wrong */
@@ -691,6 +695,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* head nouns, 4 Sep — R2, the umbrella pass */
+          'system', 'cycle', 'theory', 'evidence', 'observation', 'measurement', 'standard', 'agreement', 'trust', 'selection', 'variation', 'population', 'structure', 'form', 'load', 'code', 'symbol', 'meaning', 'mark', 'machine', 'motor', 'zone', 'region', 'boundary', 'edge', 'rotation', 'axis',
           /* words that came back with nothing, 4 Sep */
           'poodle', 'labradoodle', 'cassowary', 'ratite', 'mustelid', 'weasel', 'badger',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
@@ -1204,6 +1210,8 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+          /* head nouns, 4 Sep — R2, the umbrella pass */
+          'giant', 'dwarf',
           /* umbrella waves, 3 Sep */
           'matter', 'life',
           /* unblocking-nouns wave, 2 Sep */
