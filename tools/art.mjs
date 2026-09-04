@@ -43585,6 +43585,12 @@ def('saint_basils',()=> [P('M8 52 L52 52 L52 40 L8 40 Z', 'lo'),
                             P(`M${x - 6} ${y + 2} Q${x - 8} ${y - 6} ${x} ${y - 12} Q${x + 8} ${y - 6} ${x + 6} ${y + 2} Z`, i % 2 ? 'hi' : 'bs'),
                             S(`M${x} ${y - 12} L${x} ${y - 15}`, 'lo', 1.2)]).flat()]);
 
+def('brimstone_hill',()=>[P('M2 52 L12 26 L48 26 L58 52 Z', 'bs'),          // the hill
+                          P('M14 26 L46 26 L46 14 L14 14 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${16 + i * 12} 14 L${24 + i * 12} 14 L${24 + i * 12} 9 L${16 + i * 12} 9 Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i => C(18 + i * 8, 20, 1.8, 'gh')),
+                          wave('bs', 56, 3, 27)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
