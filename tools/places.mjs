@@ -159,56 +159,62 @@ const depthOf = (entry) => DEPTH.filter(([f]) => {
 
 // ----------------------------------------------------------- derivation
 
-/* A place is derived, not associated, when at least one input is a maker — a
- * person, a people, a polity or an era — and at least one is a material or a
- * place. Anything else is the Colosseum coming from a lion. */
-const MAKER = new Set(['person', 'history', 'hominin', 'belief', 'trade', 'society']);
-const STUFF = new Set(['earth', 'metal', 'build', 'water', 'plant', 'molecule', 'tool', 'craft', 'sea', 'gas', 'microbe', 'civic']);
-const tagsOf = (id) => byId.get(id)?.tags || [];
+/* WHAT A NOUN IS TO A MAKING
+ *
+ * The first version of this check read tags. Tags say what an element belongs
+ * to, never what part it plays when something is made from it. Marble and
+ * Mausolus are both inputs to the Mausoleum; one is the stuff and one is the
+ * man it was built for, and no tag tells them apart. That is why the tag rule
+ * flagged 65 places at 334 and, read through by hand on 5 Sep, found no fault
+ * in any of them: it was measuring tag vocabulary, not derivation.
+ *
+ * data/roles.json writes the missing fact down — one curated role per element,
+ * for every input a place recipe uses. Five roles contribute to a making
+ * (material, technique, process, tool, maker) and five do not (site, form,
+ * occupant, subject, evidence). The check is now a lookup, not a guess.
+ *
+ *   built things   need a contributing input that a person could supply:
+ *                  material, technique, tool or maker. A technique implies a
+ *                  maker without naming one, so a Roman aqueduct from
+ *                  arch + concrete passes and no founder is invented for it.
+ *   natural things need material or process, and nothing else. A maker for a
+ *                  landform is a finding, not a pass.
+ *   settlements    need only ground. A harbour at the end of a pass is exactly
+ *                  why a town is where it is.
+ *
+ * An input with no role recorded cannot be judged. It is reported as unroled
+ * and never counted as a fault — a partial file is honest as long as the tool
+ * reading it only asks about ids it covers. */
+const ROLES = JSON.parse(readFileSync(new URL('../data/roles.json', import.meta.url), 'utf8'));
+const CONTRIBUTES = new Set(ROLES.$contributes);
+const BUILDABLE = new Set(['material', 'technique', 'tool', 'maker']);
+const NATURAL = new Set(['material', 'process']);
+const roleOf = (id) => ROLES.roles[id] || null;
 
-/* What counts as a real derivation depends on what kind of place it is, and
- * pretending otherwise was the first version of this check calling the Velebit
- * a fault for having no builder.
- *
- *   built things   need a MAKER and a MATERIAL. A cathedral does not happen.
- *   natural things need MATERIAL or PROCESS and no maker at all. Where they
- *                  have one it is a living thing, and that is a finding.
- *   settlements    need only ground: a harbour at the end of a pass is exactly
- *                  why a town is where it is, and demanding a founder for a
- *                  place inhabited for 3,000 years would invent one.
- *
- * READ THE NUMBER THIS PRODUCES AS A REVIEW QUEUE, NOT AS A FAULT COUNT.
- * It caught three real faults when the corpus held twenty places — the
- * Colosseum from stone + lion, the Great Wall from china + mongolia, the
- * Ishtar Gate from clay + glass. At 334 places it flags 65, and going through
- * them on 5 Sep found no fault at all: arch + column, brick + dome,
- * concrete + pumice, cistern + plateau are all material-and-technique, and a
- * technique implies a maker without naming one. Demanding a named builder for
- * a Roman aqueduct would invent one exactly as demanding a builder for the
- * Velebit did.
- *
- * A material-plus-agency rule was written and tested as a replacement. It
- * flagged a different 63 and let clay + glass through, because `glass` is
- * tagged `tool`. The tag vocabulary cannot carry the distinction this check
- * wants — "did this input contribute to the making" is not a property of
- * tags — so the honest thing is to keep the list, say what it is worth, and
- * not let a number that is mostly noise be read as a defect count.
- */
 const BUILT = new Set(['fortification', 'worship', 'tomb', 'palace', 'monument', 'engineering', 'industry']);
+const unroled = new Set();
 function derivation(id, kind) {
   const rs = madeBy.get(id) || [];
   if (!rs.length) return { ok: false, why: 'nothing makes it' };
+  const want = BUILT.has(kind) ? BUILDABLE : (kind === 'settlement' ? null : NATURAL);
   for (const r of rs) {
     if (r.verb) continue;
     const [a, b] = r.in;
     if (!b) continue;
-    const t = [...tagsOf(a), ...tagsOf(b)];
-    const maker = t.some(x => MAKER.has(x));
-    const stuff = t.some(x => STUFF.has(x));
-    if (BUILT.has(kind) ? (maker && stuff) : stuff) return { ok: true, via: `${a} + ${b}` };
+    const roles = r.in.map(roleOf);
+    for (let i = 0; i < r.in.length; i++) if (!roles[i]) unroled.add(r.in[i]);
+    if (roles.some(x => !x)) continue;          // cannot judge; not a fault
+    const ok = want === null
+      ? roles.some(x => CONTRIBUTES.has(x) || x === 'site')
+      : roles.some(x => want.has(x));
+    if (ok) return { ok: true, via: `${a} + ${b}` };
   }
-  const need = BUILT.has(kind) ? 'no maker and material among them' : 'nothing physical among them';
-  return { ok: false, why: rs.map(r => r.in.join(' + ')).join(' | ') + ' — ' + need };
+  const need = BUILT.has(kind)
+    ? 'nothing among them is a material, technique, tool or maker'
+    : kind === 'settlement' ? 'nothing among them is ground or a contribution'
+    : 'nothing among them is a material or a process';
+  const shown = rs.map(r => r.in.map(x => `${x}(${roleOf(x) || '?'})`).join(' + ')).join(' | ');
+  return { ok: false, why: shown + ' — ' + need };
 }
 
 /* `of` is supposed to name elements this corpus already has, so a landmark
@@ -342,12 +348,18 @@ if (ghosts.length) {
   for (const [id] of ghosts.slice(0, 8)) console.log(`      ${id}`);
 }
 if (bad.length) {
-  console.log(`\n  ${bad.length} place(s) to READ, not to fix: no maker-and-material pair among their inputs.`);
-  console.log(`      Most are material-and-technique and are fine. The rule caught three real`);
-  console.log(`      faults at twenty places and none at 334 — see the note above tools/places.mjs`);
-  console.log(`      derivation(). Treat this as a reading list, not a defect count.`);
-  for (const [id, e] of bad.slice(0, 8)) console.log(`      ${id.padEnd(24)} ${derivation(id, e.kind).why}`);
-  if (bad.length > 8) console.log(`      ... and ${bad.length - 8} more`);
+  console.log(`\n  ${bad.length} place(s) whose recipe says something true but not how it was made.`);
+  console.log(`      Each input is shown with its role from data/roles.json. A recipe built`);
+  console.log(`      only from site, form, occupant, subject or evidence is an association:`);
+  console.log(`      it names the thing and where it stands without saying how it came to be.`);
+  console.log(`      These are faults to fix, not a queue to read past.`);
+  for (const [id, e] of bad) console.log(`      ${id.padEnd(24)} ${derivation(id, e.kind).why}`);
+}
+if (unroled.size) {
+  console.log(`\n  ${unroled.size} input(s) to a place recipe have no role in data/roles.json, so the`);
+  console.log(`      derivation check could not judge the recipes they appear in. This is not a`);
+  console.log(`      fault in the recipe — it is a fact nobody has written down yet.`);
+  console.log(`      ${[...unroled].sort().join(' ')}`);
 }
 if (danglingOf.length) {
   console.log(`\n  ${danglingOf.length} material(s) named in an "of" that no element answers to:`);
@@ -357,4 +369,4 @@ if (shallowest.length) {
   console.log(`\n  ${shallowest.length} place(s) are little more than a name — node tools/places.mjs --deep`);
 }
 console.log(`\n  node tools/places.mjs --missing   the ${n(wanted.length - have)} checklist places nobody has written yet\n`);
-process.exit(fatal ? 1 : 0);
+process.exit(fatal || bad.length ? 1 : 0);

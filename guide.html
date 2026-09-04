@@ -167,7 +167,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     and the third one is true — it carries the mechanism that makes it work and a source
     you can open. This is the guide to how that is done and how it is kept honest.</p>
   <p class="stamp">Generated from the corpus on 2026-09-04 · <code>node tools/guide.mjs</code> ·
-    7,842 elements · 9,758 recipes</p>
+    7,842 elements · 9,762 recipes</p>
 </header>
 
 <nav class="rail" aria-label="Contents">
@@ -351,8 +351,8 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     the data files at the moment this page was generated.</p>
   <div class="figs">
     <div class="fig"><b>7,842</b><span>elements, every one reachable from stone, water, sun and seed</span></div>
-    <div class="fig"><b>9,758</b><span>recipes — 8,779 merges, 979 verb processes</span></div>
-    <div class="fig"><b>9,758</b><span>recipes carrying a source resolved against a live article</span></div>
+    <div class="fig"><b>9,762</b><span>recipes — 8,783 merges, 979 verb processes</span></div>
+    <div class="fig"><b>9,762</b><span>recipes carrying a source resolved against a live article</span></div>
     <div class="fig"><b>8,076</b><span>drawings, none of them emoji</span></div>
     <div class="fig"><b>20</b><span>orders of magnitude, 10⁻¹⁰ m to 10⁹ m</span></div>
     <div class="fig"><b>10</b><span>category colours, each a measured Munsell chip</span></div>
@@ -364,7 +364,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     <thead><tr><th scope="col">File</th><th scope="col">Holds</th><th scope="col">What it is</th></tr></thead>
     <tbody>
       <tr><th scope="row"><code>elements.json</code></th><td class="num">7,842</td><td>id, name, shelf, tags, taxon, and a one-line codex fact</td></tr>
-      <tr><th scope="row"><code>recipes.json</code></th><td class="num">9,758</td><td>inputs, optional verb, output, the mechanism text, and its source</td></tr>
+      <tr><th scope="row"><code>recipes.json</code></th><td class="num">9,762</td><td>inputs, optional verb, output, the mechanism text, and its source</td></tr>
       <tr><th scope="row"><code>verbs.json</code></th><td class="num">8</td><td>the process verbs and what unlocks each</td></tr>
       <tr><th scope="row"><code>families.json</code></th><td class="num">—</td><td>the tag vocabulary and the shelf families, shared by the game and the tools</td></tr>
       <tr><th scope="row"><code>art.json</code></th><td class="num">8,076</td><td>every drawing, as shapes with roles rather than colours</td></tr>
@@ -521,7 +521,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>No URL in this repository was typed by a person. data/sources.json holds article <em>titles</em>; the tool resolves each against the live Wikipedia API, follows redirects, and refuses to write anything it could not fetch. Only then does <code>apply</code> put URLs into recipes.json.</p>
           <p class="found"><b>What it caught.</b> On its first run it caught one title that did not exist and four that silently redirected somewhere else. It still reports redirects on every run — Percolozoa now answers to Heterolobosea, Aquifoliaceae to Holly — which is how a citation quietly stops pointing at what it claimed to. Resolutions are cached for thirty days: re-asking about every title on every run had grown to twenty minutes of backoff against rate limits, and a check that expensive is a check a content batch quietly skips.</p>
         </div>
-        <p class="now">9,758 of 9,758 recipes carry a resolved source (100%).</p>
+        <p class="now">9,762 of 9,762 recipes carry a resolved source (100%).</p>
       </article>
       <article class="mech" id="m-audit">
         <header>
@@ -533,7 +533,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Pulls every figure, date and named person out of the teaching text — and out of a recipe's temperature band, which is a numeric claim like any other — fetches the cited article, and looks for them. A claim that cannot be found in its own source is not automatically wrong, but it is unsupported, and it is listed. Where the prose does not carry a fact the article's infobox is pulled as a second chance, because melting points and dimensions and dates live there rather than in the text.</p>
           <p class="found"><b>What it caught.</b> This is the mechanism the whole project rests on. Auditing our own confident, fluent, well-written prose against primary reporting found a first-pass error rate near half. A greenhouse does not work by trapping infrared; flint was given obsidian's record; film does not work by persistence of vision; Darwin coined "living fossil" about the platypus, not the coelacanth. All fluent. All wrong. <b>And the check itself was wrong six ways</b> — a comma after a year, a diacritic, a possessive, a chemical formula, an en dash, a stray quote mark — each of which made it report correct content as unsupported. Clearing those took the attribution count from 50 to 0 and made the remaining backlog worth reading. A check that is more than half noise is a check nobody finishes.</p>
         </div>
-        <p class="now">7,677 recipes independently verified, 1,685 article-supported.</p>
+        <p class="now">7,681 recipes independently verified, 1,685 article-supported.</p>
       </article>
     </section>
     <section class="mgroup">
@@ -651,7 +651,19 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>An element id carries no sense. So <code>data/homonyms.json</code> gives each ambiguous word the meaning this corpus uses for it, and the words that would betray a different one; a recipe using that element whose <em>why</em> contains one of them is failing, because the prose and the gesture are then talking about different things. A heuristic was tried first — flag inputs whose outputs scatter across families — and it returned 684 candidates of which about two were real, so the file is curated rather than inferred, and the coverage number counts what a person has actually looked at.</p>
           <p class="found"><b>What it caught.</b> <code>scale</code> in this corpus is the weighing balance: pivoted beam, a pan at each end, Egyptian weighing stones from about 2600 BCE. Four recipes used it anyway — to make a moth's wing, a reptile's back, a shark's hide and the graduations on a ruler. <code>bulb</code> is the plant's, and three recipes lit a street with it. <code>wave</code> is the water one, and light was being made from a photon and a ripple. <code>set</code> is the Egyptian god of chaos, on the folklore shelf, and a mathematical function was being derived from him. Every one of those <em>why</em> texts was about the right thing. Only the gesture underneath was about something else — which is this project's own fault class, sitting in the middle of the corpus behind prose good enough to hide it.</p>
         </div>
-        <p class="now">70 words watched, 20 of which were actually wrong when the list was written. 275 of 1,644 single-word names reviewed (17%).</p>
+        <p class="now">70 words watched, 20 of which were actually wrong when the list was written. 275 of 1,637 single-word names reviewed (17%).</p>
+      </article>
+      <article class="mech" id="m-roles">
+        <header>
+          <h4>roles</h4>
+          <code class="cmd">node tools/roles.mjs</code>
+        </header>
+        <p class="asks">What is this noun to the thing being made — the stuff, the method, or the reason?</p>
+        <div class="mbody">
+          <p>An element's tags say what it belongs to. They never say what part it plays when something is made from it. So <code>data/roles.json</code> gives each element one curated role: five that contribute to a making — material, technique, process, tool, maker — and five that do not — site, form, occupant, subject, evidence. With that field written down, "does this recipe say how the thing was made?" stops being a guess about tag vocabulary and becomes a lookup. An input with no role recorded is reported as unjudgeable rather than as a fault, because a partial file is only honest if the tools reading it say where it runs out.</p>
+          <p class="found"><b>What it caught.</b> Marble and Mausolus are both inputs to the Mausoleum at Halicarnassus. One is the stone it is built of; the other is the man it was built for, and Artemisia II is the one who built it. No tag in this corpus tells those three apart, which is why the tag-based version of this check flagged 65 of 334 places and, read through by hand, found nothing wrong with any of them. The role field found 62 — all of them real. Mount Fuji was made from <code>stratovolcano + japan</code> while its own prose said it "builds itself out of its own ash and lava"; Hōryū-ji came from <code>pagoda + dendrochronology</code>, which dated the temple rather than building it; Chartres from <code>cathedral + fire</code>; Nazca from <code>geoglyph + peru</code>. In almost every case the sentence was already right and the gesture underneath it named something else — the same fault class as the homonym list, one level up.</p>
+        </div>
+        <p class="now">369 elements carry a role, covering every input to a place recipe.</p>
       </article>
     </section>
     <section class="mgroup">
@@ -716,7 +728,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Counts routes per element and finds the single-route chokepoints that gate the most of the graph. A game where everything has exactly one recipe is a puzzle with one solution and no room to be stuck in.</p>
           <p class="found"><b>What it caught.</b> The ratio is the honest number here and it is not good yet: a large majority of made elements have exactly one route.</p>
         </div>
-        <p class="now">1.24 recipes per made element. 6,310 of 7,841 are single-route.</p>
+        <p class="now">1.24 recipes per made element. 6,306 of 7,841 are single-route.</p>
       </article>
       <article class="mech" id="m-discover">
         <header>
@@ -728,7 +740,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
           <p>Simulates a player against the real graph under different assist policies. Discoverability is the design risk that gets worse as the corpus grows, because every element added makes the haystack bigger faster than it adds needles.</p>
           <p class="found"><b>What it caught.</b> Tag-affinity nudging — the intuitive answer — was simulated and rejected: it stalls early, because the best recipes cross categories on purpose. The assist that survived is a secrets-remaining count, which narrows the field without ever naming a partner.</p>
         </div>
-        <p class="now">8,779 merges among 30,744,561 possible pairs.</p>
+        <p class="now">8,783 merges among 30,744,561 possible pairs.</p>
       </article>
     </section>
   <p class="pull"><b>Recording that nothing happens.</b> A broad expectation rule
@@ -772,7 +784,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
   <p>Because of that last step, a claim carries a second flag beyond its source:</p>
   <ul class="plain">
     <li><b>verified</b> — independently checked against primary reporting. Shows a tick in
-      the game. 7,677 recipes.</li>
+      the game. 7,681 recipes.</li>
     <li><b>supported</b> — a standard mechanism the cited article states directly:
       photosynthesis, osmosis, gluten. No independent search, and no tick.
       1,685 recipes.</li>
@@ -1014,6 +1026,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
       <tr><th scope="row"><code>node tools/reactions.mjs</code></th><td>What kind of physical process is this, really?</td></tr>
       <tr><th scope="row"><code>node tools/safety.mjs</code></th><td>Have we accidentally written a method?</td></tr>
       <tr><th scope="row"><code>node tools/homonyms.mjs</code></th><td>Does this word mean here what the sentence beside it thinks it means?</td></tr>
+      <tr><th scope="row"><code>node tools/roles.mjs</code></th><td>What is this noun to the thing being made — the stuff, the method, or the reason?</td></tr>
       <tr><th scope="row"><code>node tools/categories.mjs</code></th><td>Is every element in a drawer somebody would actually open?</td></tr>
       <tr><th scope="row"><code>node tools/art.mjs check</code></th><td>Can you tell these two drawings apart at shelf size — and can you see them at all?</td></tr>
       <tr><th scope="row"><code>node tools/palette.mjs</code></th><td>Where did this colour come from?</td></tr>
@@ -1038,7 +1051,7 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
 
 <footer>
   <p>Loam. Generated from the corpus on 2026-09-04 — 7,842 elements,
-    9,758 recipes, 9,758 of them carrying a source resolved
+    9,762 recipes, 9,762 of them carrying a source resolved
     against a live article. If a figure on this page looks wrong, the corpus is wrong:
     run <code>node tools/guide.mjs</code> and it will say the same thing.</p>
 </footer>
