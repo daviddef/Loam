@@ -1086,6 +1086,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 14, 5 Sep. spires 157 m, a nave, a granite rotunda */
+    'cologne_cathedral', 'notre_dame', 'seokguram',
     /* places batch 12, 5 Sep. an octagon 60 m across, a stave church of one room */
     'dome_of_the_rock', 'urnes_stave_church',
     /* places batch 11, 5 Sep. a dome 43.3 m across, a temple 70 m long, pillars over 20 m */
@@ -1381,6 +1383,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 14, 5 Sep. falls 2.7 km wide and 979 m tall */
+    'iguazu_falls', 'angel_falls',
     /* places batch 11, 5 Sep. 3,403 m of volcano, and changing */
     'etna',
     /* places batch 8, 5 Sep. a forest-savanna mosaic, a primeval forest, 100 km of canal */
@@ -1454,6 +1458,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 14, 5 Sep. a caldera 72 by 45 km */
+    'yellowstone',
     /* places batch 12, 5 Sep. a canyon 446 km long, a salt flat of 10,582 km2, a rock landscape */
     'grand_canyon', 'salar_de_uyuni', 'cappadocia',
     /* places batch 10, 5 Sep. an atoll, and 7,463 km2 of forest across three countries */

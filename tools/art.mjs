@@ -44106,6 +44106,46 @@ def('qhapaq_nan',   () => [P('M2 56 L14 30 L26 40 L34 22 L46 34 L58 56 Z', 'lo')
                           S('M26 40 Q34 50 46 34', 'hi', 2),                                    // and the fibre cable across the gorge
                           S('M26 40 L46 34', 'gh', 1)]);
 
+/* Places, batch 14 — 5 Sep. Two cathedrals that must not be one drawing:
+   Cologne is drawn as twin spires with the 282-year seam in the masonry,
+   Notre-Dame as the buttresses doing the work and the roof gone.           */
+def('cologne_cathedral',()=>[...[20, 40].map(x => [P(`M${x - 6} 54 L${x - 5} 26 L${x + 5} 26 L${x + 6} 54 Z`, 'lo'),
+                                                   P(`M${x - 5} 26 L${x} 4 L${x + 5} 26 Z`, 'lo')]).flat(),
+                          P('M14 54 L14 34 L46 34 L46 54 Z', 'bs'),
+                          S('M4 34 L56 34', 'ik', 2),                          // the seam: 1560 below, 1842 above
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 2} ${20 - i * 4} L${44 - i * 2} ${20 - i * 4}`, 'gh', 0.8)),
+                          P('M26 44 L34 44 L34 54 L26 54 Z', 'gh')]);
+def('notre_dame',   () => [P('M20 54 L20 24 L40 24 L40 54 Z', 'lo'),
+                          ...[14, 46].map(x => P(`M${x - 6} 54 L${x - 6} 18 L${x + 6} 18 L${x + 6} 54 Z`, 'lo')),
+                          S('M20 30 Q12 34 8 46', 'bs', 2.6), S('M40 30 Q48 34 52 46', 'bs', 2.6),   // the weight, taken outside
+                          P('M6 46 L12 46 L12 54 L6 54 Z', 'gh'), P('M48 46 L54 46 L54 54 L48 54 Z', 'gh'),
+                          C(30, 34, 5, 'hi'),
+                          S('M20 24 L40 24', 'ik', 1.4)]);                     // and no roof above it
+def('yellowstone',  () => [P('M2 34 L58 34 L58 56 L2 56 Z', 'lo'),
+                          P('M10 34 Q30 46 50 34 L50 56 L10 56 Z', 'ik'),      // the chamber, shallow
+                          ...[16, 30, 44].map(x => [S(`M${x} 34 L${x} 24`, 'gh', 1.2),
+                                                    P(`M${x - 4} 24 Q${x} 6 ${x + 4} 24 Z`, 'hi')]).flat(),
+                          S('M2 34 L58 34', 'bs', 1.6)]);
+def('iguazu_falls', () => [P('M2 14 L26 14 L26 30 L2 30 Z', 'lo'),             // step one
+                          P('M2 30 L44 30 L44 46 L2 46 Z', 'lo'),              // step two
+                          P('M2 46 L58 46 L58 56 L2 56 Z', 'gh'),
+                          ...[0, 1, 2, 3].map(i => S(`M${6 + i * 5} 14 L${6 + i * 5} 30`, 'hi', 2)),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${6 + i * 6} 30 L${6 + i * 6} 46`, 'hi', 2)),
+                          P('M44 30 L58 30 L58 46 L44 46 Z', 'bs')]);          // the Devil's Throat
+def('angel_falls',  () => [P('M8 20 L52 20 L52 56 L8 56 Z', 'lo'),
+                          S('M8 20 L52 20', 'ik', 2.4),                        // a table mountain ends in an edge
+                          S('M30 20 L30 44', 'hi', 3),
+                          ...granules('hi', 16, 811, [22, 40, 38, 54]),        // and the water is mist before it lands
+                          S('M14 16 Q22 12 30 16', 'gh', 1.4)]);
+def('seokguram',    () => [P('M8 54 L8 34 A22 22 0 0 1 52 34 L52 54 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${12 + i * 9} 34 L${12 + i * 9} 54`, 'gh', 0.9)),
+                          ...[1, 2, 3].map(i => {
+                            const a = Math.PI - i * Math.PI / 4;
+                            return S(`M${(30 + 14 * Math.cos(a)).toFixed(1)} ${(34 - 14 * Math.sin(a)).toFixed(1)} ` +
+                                     `L${(30 + 22 * Math.cos(a)).toFixed(1)} ${(34 - 22 * Math.sin(a)).toFixed(1)}`, 'gh', 0.9);
+                          }),
+                          E(30, 46, 9, 4, 'bs'), C(30, 36, 6, 'hi')]);         // the Buddha, 3.5 m on a lotus
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
