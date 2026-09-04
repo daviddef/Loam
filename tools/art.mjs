@@ -43334,6 +43334,32 @@ def('sigiriya',    () => [P('M14 52 Q12 20 30 14 Q48 20 46 52 Z', 'lo'),
                           ...[0, 1].map(i => S(`M${20 + i * 20} 46 L${20 + i * 20} 52`, 'bs', 2)),
                           ...[0, 1, 2].map(i => wave('gh', 56, 2, 24 - i * 6))]);
 
+/* Places, batch 13 — Western Asia and South America, with the two pieces of
+   structure they turn on. The pendentive is drawn as the corner triangles,
+   because that is the whole invention.                                      */
+def('dome',        () => [P('M10 46 A20 20 0 0 1 50 46 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${18 + i * 12} 46 A20 20 0 0 1 ${18 + i * 12} 46`, 'gh', 1)),
+                          ...[-1, 0, 1].map(i => S(`M${30 + i * 13} ${46 - Math.abs(i) * 4} L${30 + i * 6} 27`, 'gh', 1.1)),
+                          P('M8 46 L52 46 L52 52 L8 52 Z', 'bs'),
+                          C(30, 24, 2.4, 'hi')]);
+def('pendentive',  () => [P('M8 52 L52 52 L52 30 L8 30 Z', 'bs'),            // the square room
+                          P('M10 30 A20 20 0 0 1 50 30 Z', 'lo'),            // the round dome above
+                          ...[0, 1].map(i => P(`M${8 + i * 30} 30 L${8 + i * 30} 18 Q${18 + i * 10} 30 ${22 + i * 30 - i * 8} 30 Z`, 'hi')),
+                          S('M8 30 L52 30', 'gh', 1.4)]);
+def('hagia_sophia',()=> [P('M6 52 L54 52 L54 34 L6 34 Z', 'lo'),
+                          P('M12 34 A18 18 0 0 1 48 34 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${30 + (i - 1.5) * 11} 34 L30 17`, 'gh', 1.1)),  // the ribs
+                          ...[0, 1].map(i => P(`M${4 + i * 48} 52 L${8 + i * 48} 52 L${8 + i * 48} 18 L${4 + i * 48} 18 Z`, 'bs')),
+                          ...[0, 1].map(i => P(`M${4 + i * 48} 18 L${6 + i * 48} 12 L${8 + i * 48} 18 Z`, 'bs')),
+                          C(30, 15, 2, 'hi')]);
+def('sacsayhuaman',()=> [// irregular polygonal blocks, no course lines, no mortar gap
+                          P('M4 52 L4 40 L16 36 L14 52 Z', 'lo'),
+                          P('M16 36 L34 32 L32 52 L14 52 Z', 'bs'),
+                          P('M34 32 L48 36 L46 52 L32 52 Z', 'lo'),
+                          P('M48 36 L56 40 L56 52 L46 52 Z', 'bs'),
+                          P('M4 40 L18 34 L34 30 L48 34 L56 40 L56 34 L34 24 L14 30 L4 34 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${12 + i * 16} 30 L${14 + i * 16} 24`, 'gh', 1))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

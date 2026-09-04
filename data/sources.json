@@ -347,7 +347,11 @@
     "chichen_itza": "Chichen Itza",
     "inselberg": "Inselberg",
     "sigiriya": "Sigiriya",
-    "palace": "Palace"
+    "palace": "Palace",
+    "dome": "Dome",
+    "pendentive": "Pendentive",
+    "hagia_sophia": "Hagia Sophia",
+    "sacsayhuaman": "Sacsayhuamán"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -822,6 +826,10 @@
     "cenote+maya_civilization": "Chichen Itza",
     "erosion+granite": "Inselberg",
     "inselberg+palace": "Sigiriya",
-    "house+monarchy": "Palace"
+    "house+monarchy": "Palace",
+    "arch+circle": "Dome",
+    "dome+vault": "Pendentive",
+    "byzantine_empire+pendentive": "Hagia Sophia",
+    "inca_empire+limestone": "Sacsayhuamán"
   }
 }

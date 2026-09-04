@@ -93642,5 +93642,45 @@
     "why": "Kashyapa put his palace on top of a 180 m granite plug reached by one stair through a gateway built as a lion's mouth. The water gardens at the foot run on gravity alone and some of the fountains still work in the rains.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Sigiriya"
+  },
+  {
+    "in": [
+      "arch",
+      "circle"
+    ],
+    "out": "dome",
+    "why": "Spin an arch about its vertical axis and every section through it is still an arch, so the whole surface works in compression. Nothing is in tension, which means it can be built of stone or brick and span far more than any beam of the same material.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dome"
+  },
+  {
+    "in": [
+      "dome",
+      "vault"
+    ],
+    "out": "pendentive",
+    "why": "A dome wants a circular wall beneath it and a room is square. The pendentive is the curved triangle that fills each corner and gathers the dome's ring down onto four piers, so the weight lands where the walls are and the corners can be opened up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pendentive"
+  },
+  {
+    "in": [
+      "pendentive",
+      "byzantine_empire"
+    ],
+    "out": "hagia_sophia",
+    "why": "Anthemius and Isidore raised it in five years and ten months. Their first dome was too shallow and came down in 558 after two earthquakes; the ribbed replacement sits 6.25 m higher, which steepens the thrust and is why it is still up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hagia_Sophia"
+  },
+  {
+    "in": [
+      "inca_empire",
+      "limestone"
+    ],
+    "out": "sacsayhuaman",
+    "why": "Blocks up to about 200 tonnes, hauled some 35 km, dressed by pounding rather than cutting and set without mortar so closely that paper will not pass between them. Irregular joints interlock, which is also why the walls survive the earthquakes that flatten mortared ones.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n"
   }
 ]
