@@ -44706,6 +44706,47 @@ def('kinderdijk',   () => [P('M2 44 L20 44 L20 56 L2 56 Z', 'gh'),             /
                                                      S(`M${x - 7} ${22 - i * 8} L${x + 7} ${34 - i * 8}`, 'ik', 1.6)]).flat(),
                           S('M2 44 L20 44', 'ik', 1.2), S('M20 36 L40 36', 'ik', 1.2), S('M40 24 L58 24', 'ik', 1.2)]);
 
+/* Places, batch 30 — 5 Sep. Nemrut is drawn as the heap with the heads at the
+   foot of it, because both facts are the same fact; Alta as three panels at
+   three heights, because height is the clock.                               */
+def('nemrut_dag',   () => [P('M6 50 Q30 6 54 50 Z', 'lo'),
+                          ...granules('gh', 30, 49, [8, 20, 52, 48]),
+                          ...[10, 18, 44, 52].map((x, i) => [C(x, 52, 3.4, 'bs'),
+                                                             C(x - 1, 51, 0.8, 'ik'), C(x + 1, 51, 0.8, 'ik')]).flat(),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('hattusa',      () => [P('M2 20 L58 20 L58 26 L2 26 Z', 'lo'),
+                          P('M2 30 L58 30 L58 36 L2 36 Z', 'lo'),              // two skins, a gap between
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${8 + i * 11} 26 L${8 + i * 11} 30`, 'gh', 1)),
+                          ...[0, 1, 2].map(i => [0, 1, 2].map(j =>
+                            P(`M${14 + j * 12} ${42 + i * 5} L${22 + j * 12} ${42 + i * 5} L${22 + j * 12} ${46 + i * 5} L${14 + j * 12} ${46 + i * 5} Z`, 'bs'))).flat(),
+                          ...[0, 1, 2].map(i => [0, 1, 2].map(j =>
+                            S(`M${16 + j * 12} ${44 + i * 5} L${20 + j * 12} ${44 + i * 5}`, 'ik', 0.8))).flat()]);   // the tablets
+def('ephesus',      () => [P('M6 52 L6 22 L30 22 L30 52 Z', 'lo'),
+                          ...[10, 18, 26].map(x => S(`M${x} 52 L${x} 26`, 'gh', 2)),
+                          P('M4 22 L32 22 L32 16 L4 16 Z', 'bs'),
+                          P('M36 52 A12 12 0 0 1 60 52 Z', 'lo'),              // the theatre
+                          ...granules('bs', 16, 34, [34, 30, 58, 46]),         // and the silt that ended it
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('alta_rock_art',()=>[P('M2 56 L58 56 L58 48 L2 48 Z', 'gh'),               // the sea, now
+                          ...[[12, 40], [30, 28], [48, 16]].map(([x, y]) =>
+                            [P(`M${x - 9} ${y + 6} L${x - 9} ${y - 6} L${x + 9} ${y - 6} L${x + 9} ${y + 6} Z`, 'lo'),
+                             S(`M${x - 3} ${y + 3} L${x - 3} ${y - 1} L${x + 3} ${y - 1} L${x + 3} ${y + 3}`, 'hi', 1.4),
+                             S(`M${x - 3} ${y - 1} L${x - 5} ${y - 5}`, 'hi', 1.2),
+                             S(`M${x + 3} ${y - 1} L${x + 5} ${y - 5}`, 'hi', 1.2)]).flat(),
+                          ...[0, 1, 2].map(i => S(`M2 ${46 - i * 12} L6 ${46 - i * 12}`, 'ik', 1))]);   // old shorelines
+def('roskilde_cathedral',()=>[P('M16 54 L16 20 L44 20 L44 54 Z', 'lo'),
+                          ...[22, 38].map(x => [P(`M${x - 4} 20 L${x - 3} 8 L${x + 3} 8 L${x + 4} 20 Z`, 'lo'),
+                                                S(`M${x} 8 L${x} 2`, 'ik', 1.2)]).flat(),
+                          ...[8, 48].map(x => P(`M${x - 6} 54 L${x - 6} 34 L${x + 6} 34 L${x + 6} 54 Z`, 'bs')),   // chapel after chapel
+                          ...[0, 1, 2].map(i => S(`M18 ${28 + i * 8} L42 ${28 + i * 8}`, 'gh', 0.9))]);
+def('speyer_cathedral',()=>[P('M10 40 L50 40 L50 54 L10 54 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 13} 40 A6.5 6.5 0 0 1 ${25 + i * 13} 40 Z`, 'gh')),  // the groin bays
+                          ...[0, 1, 2].map(i => [S(`M${12 + i * 13} 40 L${25 + i * 13} 34`, 'ik', 0.9),
+                                                 S(`M${25 + i * 13} 40 L${12 + i * 13} 34`, 'ik', 0.9)]).flat(),
+                          P('M22 34 L38 34 L38 12 L22 12 Z', 'lo'),
+                          P('M20 12 L30 4 L40 12 Z', 'bs'),
+                          ...[0, 1, 2, 3].map(i => C(16 + i * 9, 50, 1.4, 'bs'))]);   // and the emperors under it
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
