@@ -1235,6 +1235,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 13, 5 Sep. a 150-hectare city, a dam 221 m high, a fortress on eight islands, a hall 57 m long */
+    'harappa', 'hoover_dam', 'suomenlinna', 'todai_ji',
     /* places batch 12, 5 Sep. a plateau 550 by 270 m */
     'masada',
     /* places batch 11, 5 Sep. a palace of 14,000 m2 and a buried town */
@@ -1487,6 +1489,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+    /* places batch 13, 5 Sep. 1,776 km of canal and about 40,000 km of road */
+    'grand_canal', 'qhapaq_nan',
           /* places batch 3 — Oceania, 4 Sep. 2,300 km of coral */
           'great_barrier_reef',
           /* the universe closed, 4 Sep */

@@ -44072,6 +44072,40 @@ def('urnes_stave_church',()=>[P('M18 56 L18 30 L42 30 L42 56 Z', 'lo'),
                           S('M26 38 Q34 42 28 48 Q22 52 30 54', 'hi', 1.4),    // the north portal
                           S('M34 38 Q26 44 32 50', 'hi', 1.4)]);
 
+/* Places, batch 13 — 5 Sep. Hoover is drawn from above so the arch reads as an
+   arch pushing into the walls; the Grand Canal is drawn as a summit with a
+   lock on each side, because the climb is the whole engineering problem.    */
+def('harappa',      () => [...[0, 1, 2].flatMap(r => [0, 1, 2].map(c =>
+                            P(`M${8 + c * 16} ${16 + r * 12} L${20 + c * 16} ${16 + r * 12} L${20 + c * 16} ${25 + r * 12} L${8 + c * 16} ${25 + r * 12} Z`, 'lo'))),
+                          ...[0, 1].map(i => S(`M4 ${27 + i * 12} L56 ${27 + i * 12}`, 'gh', 2.4)),   // the streets
+                          ...[0, 1].map(i => S(`M${22 + i * 16} 8 L${22 + i * 16} 54`, 'gh', 2.4)),
+                          ...[0, 1].map(i => S(`M4 ${29 + i * 12} L56 ${29 + i * 12}`, 'ik', 0.9))]); // and the drains under them
+def('hoover_dam',   () => [P('M4 4 L20 4 L20 56 L4 56 Z', 'lo'), P('M40 4 L56 4 L56 56 L40 56 Z', 'lo'),  // the canyon walls
+                          P('M20 18 Q30 34 40 18 L40 26 Q30 40 20 26 Z', 'bs'),                 // the arch, pushing into them
+                          P('M20 26 L40 26 L40 56 L20 56 Z', 'gh'),                             // still water above
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} 4 L${24 + i * 6} 18`, 'hi', 1)),
+                          ...[0, 1].map(i => S(`M22 ${34 + i * 8} L38 ${34 + i * 8}`, 'ik', 0.9))]);   // the cooling pipe
+def('grand_canal',  () => [P('M2 30 L20 30 L20 56 L2 56 Z', 'gh'), P('M40 30 L58 30 L58 56 L40 56 Z', 'gh'),
+                          P('M20 20 L40 20 L40 56 L20 56 Z', 'lo'),                             // the summit pound, 42 m up
+                          S('M20 20 L20 56', 'ik', 3), S('M40 20 L40 56', 'ik', 3),             // a lock at each end
+                          P('M26 12 L34 12 L34 20 L26 20 Z', 'bs'),
+                          S('M4 26 L18 26', 'hi', 1.2), S('M42 26 L56 26', 'hi', 1.2)]);
+def('suomenlinna',  () => [...[[14, 22], [40, 18], [26, 42], [48, 44]].map(([x, y]) =>
+                            P(`M${x} ${y - 9} L${x + 8} ${y - 5} L${x + 8} ${y + 5} L${x} ${y + 9} L${x - 8} ${y + 5} L${x - 8} ${y - 5} Z`, 'lo')),
+                          ...[[14, 22], [40, 18], [26, 42], [48, 44]].map(([x, y]) => C(x, y, 3, 'gh')),
+                          S('M14 22 L40 18', 'ik', 1), S('M14 22 L26 42', 'ik', 1), S('M26 42 L48 44', 'ik', 1),
+                          wave('bs', 54, 2, 56)]);
+def('todai_ji',     () => [P('M6 54 L6 34 L54 34 L54 54 Z', 'lo'),
+                          P('M2 34 L30 16 L58 34 Z', 'bs'),
+                          P('M8 22 L30 8 L52 22 Z', 'bs'),                                      // the roof it needed
+                          E(30, 40, 8, 6, 'hi'), C(30, 32, 5, 'hi'),                            // the 500 tonnes inside it
+                          ...[14, 22, 38, 46].map(x => S(`M${x} 54 L${x} 34`, 'gh', 1.2))]);
+def('qhapaq_nan',   () => [P('M2 56 L14 30 L26 40 L34 22 L46 34 L58 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${6 + i * 3} ${52 - i * 4} L${11 + i * 3} ${52 - i * 4}`, 'ik', 1.4)),  // stairs, not a gradient
+                          ...[0, 1, 2, 3].map(i => S(`M${40 + i * 3} ${40 - i * 4} L${45 + i * 3} ${40 - i * 4}`, 'ik', 1.4)),
+                          S('M26 40 Q34 50 46 34', 'hi', 2),                                    // and the fibre cable across the gorge
+                          S('M26 40 L46 34', 'gh', 1)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
