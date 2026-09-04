@@ -88,6 +88,12 @@ function numbersIn(text) {
   const re = /(\d[\d,]*(?:\.\d+)?)\s*(%|°\s*C|°\s*F|degrees|million|billion|thousand|times|years?|000)?/gi;
   let m;
   while ((m = re.exec(text))) {
+    /* A locant is part of a chemical's NAME, not a quantity in the sentence.
+     * 1,2-dichloroethane yielded "1,2" -> 12, 1,3-butadiene yielded 13, and
+     * 2,6-nonadienal yielded 26, none of which any article contains as a
+     * number. A digit run followed by a hyphen and a letter is a name. */
+    const after = text.slice(m.index + m[0].length);
+    if (/^-\p{L}/u.test(after) || /^-?\d*,\d+-\p{L}/u.test(text.slice(m.index))) continue;
     const raw = m[1].replace(/,/g, '');
     const n = parseFloat(raw);
     if (!isFinite(n)) continue;
