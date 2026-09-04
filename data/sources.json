@@ -321,7 +321,12 @@
     "chartres": "Chartres Cathedral",
     "mont_saint_michel": "Mont-Saint-Michel",
     "mbanza_kongo": "M'banza-Kongo",
-    "monk": "Monk"
+    "monk": "Monk",
+    "emperor": "Roman emperor",
+    "amphitheatre": "Amphitheatre",
+    "diocletians_palace": "Diocletian's Palace",
+    "dubrovnik_walls": "Walls of Dubrovnik",
+    "pula_arena": "Pula Arena"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -763,6 +768,11 @@
     "granite+tide": "Mont-Saint-Michel",
     "granite+monk": "Mont-Saint-Michel",
     "kingdom+mountain": "M'banza-Kongo",
-    "belief+desert": "Monk"
+    "belief+desert": "Monk",
+    "crown+roman_republic": "Roman emperor",
+    "circle+theatre": "Amphitheatre",
+    "emperor+limestone": "Diocletian's Palace",
+    "city_wall+republic": "Walls of Dubrovnik",
+    "amphitheatre+limestone": "Pula Arena"
   }
 }

@@ -43249,6 +43249,31 @@ def('monk',        () => [P('M20 52 L20 30 Q30 18 40 30 L40 52 Z', 'lo'),
                           C(30, 26, 4.4, 'gh'),
                           S('M30 38 L30 46', 'hi', 1.6), S('M26 41 L34 41', 'hi', 1.6)]);
 
+/* Places, batch 9 — the rest of Croatia. Pula is drawn as a complete ring
+   because that is what makes it Pula: it is the only Roman amphitheatre whose
+   outer wall survives all the way round.                                    */
+def('emperor',     () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 24, 7, 'lo'),
+                          P('M22 16 L26 10 L30 15 L34 10 L38 16 Z', 'hi'),   // the crown
+                          S('M22 16 L38 16', 'hi', 1.8)]);
+def('amphitheatre',()=> [ring('lo', 30, 32, 22, 4),
+                          ring('bs', 30, 32, 15, 3),
+                          E(30, 32, 9, 6, 'hi'),
+                          ...[0, 1, 2, 3, 4, 5].map(i =>
+                            S(`M${30 + 15 * Math.cos(i * Math.PI / 3)} ${32 + 15 * Math.sin(i * Math.PI / 3)} L${30 + 22 * Math.cos(i * Math.PI / 3)} ${32 + 22 * Math.sin(i * Math.PI / 3)}`, 'gh', 1.1))]);
+def('diocletians_palace',()=>[P('M6 52 L54 52 L54 20 L6 20 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => P(`M${10 + i * 12} 20 L${16 + i * 12} 20 L${16 + i * 12} 12 L${10 + i * 12} 12 Z`, 'lo')),
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 15} 52 L${14 + i * 15} 34 Q${18 + i * 15} 28 ${22 + i * 15} 34 L${22 + i * 15} 52 Z`, 'bs')),
+                          S('M6 26 L54 26', 'gh', 1.3)]);
+def('dubrovnik_walls',()=>[S('M8 44 Q8 16 30 14 Q52 16 52 44', 'lo', 5),     // the circuit, thick landward
+                          S('M8 44 Q30 50 52 44', 'lo', 2.2),                // thin on the sea
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 18} ${20 - (i === 1 ? 6 : 0)} L${20 + i * 18} ${20 - (i === 1 ? 6 : 0)} L${20 + i * 18} ${10 - (i === 1 ? 6 : 0)} L${12 + i * 18} ${10 - (i === 1 ? 6 : 0)} Z`, 'hi')),
+                          wave('bs', 52, 3, 26)]);
+def('pula_arena',  () => [ring('lo', 30, 30, 23, 5),                          // the whole outer ring, intact
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+                            C(30 + 18 * Math.cos(i * Math.PI / 4), 30 + 18 * Math.sin(i * Math.PI / 4), 2.4, 'bs')),
+                          E(30, 30, 11, 8, 'hi'),
+                          ...[0, 1, 2, 3].map(i => P(`M${28 + 21 * Math.cos(i * Math.PI / 2)} ${26 + 21 * Math.sin(i * Math.PI / 2)} L${32 + 21 * Math.cos(i * Math.PI / 2)} ${26 + 21 * Math.sin(i * Math.PI / 2)} L${32 + 21 * Math.cos(i * Math.PI / 2)} ${34 + 21 * Math.sin(i * Math.PI / 2)} L${28 + 21 * Math.cos(i * Math.PI / 2)} ${34 + 21 * Math.sin(i * Math.PI / 2)} Z`, 'gh'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

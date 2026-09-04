@@ -718,6 +718,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 9, 4 Sep. a person */
+          'emperor',
           /* places batch 8b, 4 Sep — a person */
           'monk',
           /* places batch 7b, 4 Sep — a person */
@@ -1128,6 +1130,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 9, 4 Sep. buildings and circuits, over a hundred metres */
+          'amphitheatre', 'diocletians_palace', 'dubrovnik_walls', 'pula_arena',
           /* places batch 8, 4 Sep. buildings, tens to a hundred metres */
           'gothic', 'cathedral', 'chartres', 'mont_saint_michel',
           /* places batch 7, 4 Sep. a city of mounds, and a mound */

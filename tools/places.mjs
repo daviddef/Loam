@@ -104,6 +104,20 @@ for (const w of wanted) {
   w.entry = w.el ? P.places[w.el.id] : null;
 }
 
+/* A checklist with the same place on it twice inflates the numerator and the
+ * denominator together, so the percentage barely moves and nothing looks
+ * wrong. "Dubrovnik walls" and "Walls of Dubrovnik" sat side by side in
+ * Southern Europe for exactly one run. A coverage number is only worth having
+ * if its denominator is checked as carefully as its numerator. */
+const seen = new Map();
+const dupes = [];
+for (const w of wanted) {
+  const key = `${w.region}/${w.slug}`;
+  const alt = `${w.region}/${w.slug.split('_').filter(x => !['the', 'of', 'de', 'a'].includes(x)).sort().join('_')}`;
+  if (seen.has(key) || seen.has(alt)) dupes.push(w.name);
+  seen.set(key, 1); seen.set(alt, 1);
+}
+
 // ---------------------------------------------------------------- depth
 
 const depthOf = (entry) => DEPTH.filter(([f]) => {
@@ -252,6 +266,11 @@ for (const [f, c] of fieldMiss) if (c) console.log(`     ${String(c).padStart(3)
 
 const bad = joined.filter(([id, e]) => !derivation(id, e.kind).ok);
 let fatal = 0;
+if (dupes.length) {
+  fatal += dupes.length;
+  console.log(`\n  \u2717 ${dupes.length} checklist place(s) listed twice in the same region:`);
+  for (const d of dupes) console.log(`      ${d}`);
+}
 if (ghosts.length) {
   fatal += ghosts.length;
   console.log(`\n  ✗ ${ghosts.length} place entr(y/ies) name an element that does not exist:`);
