@@ -84,7 +84,7 @@ solid liquid gas melting boiling evaporation condensation sublimation`,
 
 'earth — materials and structure': `
 rock mineral igneous_rock sedimentary_rock metamorphic_rock magma lava
-soil sand clay silt gravel ore crust mantle core plate_tectonics
+soil sand clay silt gravel ore crust mantle core|earth_core plate_tectonics
 earthquake volcano fossil erosion weathering sediment glacier`,
 
 'earth — water and air': `
@@ -102,7 +102,7 @@ canyon delta dune reef prairie taiga`,
 life cell bacteria archaea virus fungus plant animal protist
 eukaryote prokaryote vertebrate invertebrate mammal bird reptile
 amphibian fish insect arachnid crustacean mollusk worm
-algae moss fern conifer flower grass tree`,
+algae|alga moss fern conifer flower grass tree`,
 
 'life — how it works': `
 dna rna gene chromosome protein enzyme amino_acid mutation evolution

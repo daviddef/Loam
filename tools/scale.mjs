@@ -33,6 +33,8 @@ const SCALE = {
   // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
   // them as nuggets was a mislabel, not a drawing mistake.
   '-10': [
+          /* the universe closed, 4 Sep */
+          'quantum_mechanics', 'uncertainty_principle', 'radioactivity', 'fusion', 'superconductivity',
           /* subatomic, 4 Sep */
           'fission',
           /* umbrella waves, 3 Sep */
@@ -53,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* the universe closed, 4 Sep */
+          'valence', 'isomer',
           /* head nouns, 4 Sep — R2, the umbrella pass */
           'bond',
           /* conditions, 4 Sep — scaled to the part that goes wrong */
@@ -265,6 +269,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* the universe closed, 4 Sep */
+          'hormone', 'sediment', 'silt', 'vitamin',
           /* head nouns, 4 Sep — R2, the umbrella pass */
           'gland', 'lobe', 'fissure', 'fold', 'helix',
           /* assembly components, 4 Sep — 24 new needs lists asked for these */
@@ -697,6 +703,11 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          'beauty',
+          /* vehicles and marques, 4 Sep — "i cant find car" */
+          'sedan', 'hatchback', 'suv', 'pickup', 'coupe', 'convertible', 'estate_car', 'limousine', 'jeep', 'taxi', 'bulldozer', 'fire_engine', 'race', 'toyota', 'ford', 'volkswagen', 'ferrari', 'tesla', 'mercedes', 'bmw', 'honda',
+          /* the universe closed, 4 Sep */
+          'tribe', 'justice', 'slavery', 'class', 'peace', 'skeleton', 'intestine', 'circulation', 'breathing', 'birth', 'death', 'ageing', 'genetics', 'respiration', 'reproduction', 'predation', 'decomposition', 'velocity', 'pressure', 'heat', 'thermodynamics', 'relativity', 'reduction', 'solvent', 'boiling', 'smelting', 'casting', 'forging', 'welding', 'weaving', 'dyeing', 'tanning', 'food', 'cooking', 'baking', 'roasting', 'preservation', 'famine', 'canoe', 'raft', 'navigation', 'tool', 'pulley', 'mechanism', 'program', 'network', 'artificial_intelligence', 'topology', 'medicine', 'drug', 'dose', 'hygiene', 'malnutrition', 'mental_illness', 'rock', 'weathering', 'organic_chemistry',
           /* mathematics, time and power, 4 Sep — R3 continued */
           'ratio', 'division', 'part', 'whole', 'fraction', 'limit', 'change', 'difference', 'calculus', 'axiom', 'proof', 'theorem', 'contradiction', 'paradox', 'equation', 'function', 'event', 'outcome', 'chance', 'probability', 'sample', 'statistics', 'average', 'symmetry', 'pi', 'fuel', 'waste', 'recycling',
           /* mind and culture, 4 Sep — R3, the abstract domains */
@@ -969,6 +980,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* the universe closed, 4 Sep */
+          'igneous_rock', 'sedimentary_rock', 'metamorphic_rock', 'aqueduct', 'sewer', 'village', 'farm', 'railway', 'rocket',
           /* the pathogen catalogue, 4 Sep — organisms at their own size,
              diseases at the size of the part the symptom appears on */
           'dutch_elm_disease', 'chestnut_blight', 'ash_dieback', 'panama_disease',
@@ -1126,6 +1139,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* the universe closed, 4 Sep */
+          'plain', 'forest', 'grassland', 'wetland', 'coast', 'prairie', 'lake', 'groundwater', 'drought',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
           'valley', 'gorge', 'snowline', 'treeline', 'crater',
           /* society and economy, 3 Sep */
@@ -1186,6 +1201,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* the universe closed, 4 Sep */
+          'weather', 'climate', 'greenhouse_effect',
           /* geography wave, 3 Sep */
           'british_empire', 'austria_hungary', 'czechoslovakia', 'yugoslavia',
           'africa', 'asia', 'europe', 'north_america', 'south_america',
@@ -1218,6 +1235,8 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+          /* the universe closed, 4 Sep */
+          'space', 'spacetime',
           /* mathematics, time and power, 4 Sep — R3 continued */
           'sunlight',
           /* head nouns, 4 Sep — R2, the umbrella pass */

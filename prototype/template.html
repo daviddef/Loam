@@ -9175,8 +9175,12 @@ function searchScore(e, q) {
   const words = n.split(/[^a-z0-9]+/).filter(Boolean);
   let best = 0;
   const bid = (v) => { if (v > best) best = v; };
+  // An exact id beats an exact display name, because the id is the canonical
+  // identity and the name is per-locale. Searching "rocket" in en-GB matched
+  // both the vehicle and the salad — arugula's British name is Rocket — and
+  // the tie went to whichever sat earlier in the file, which was the salad.
+  if (e.id === q || e.id.replace(/_/g, ' ') === q) bid(105);
   if (n === q) bid(100);
-  if (e.id === q || e.id.replace(/_/g, ' ') === q) bid(100);
   if (n.startsWith(q)) bid(80);
   if (words.includes(q)) bid(75);
   if (words.some(w => w.startsWith(q))) bid(60);
