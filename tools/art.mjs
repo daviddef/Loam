@@ -44999,6 +44999,40 @@ def('loropeni',     () => [P('M6 12 L54 12 L54 50 L6 50 Z', 'lo'),
                           ...granules('bs', 10, 6, [7, 13, 53, 49]),
                           ...[0, 1, 2].map(i => C(24 + i * 6, 31, 2, 'hi'))]);    // the gold that paid for it
 
+/* Places, batch 38 — 5 Sep. Xochicalco is drawn as the shaft and the spot of
+   sun on the cave floor, because the cave is an instrument.                 */
+def('salonga',      () => [...[0, 1, 2, 3, 4, 5, 6].map(i => [S(`M${5 + i * 8} 56 L${5 + i * 8} ${34 + (i % 3) * 3}`, 'ik', 2),
+                                                              C(5 + i * 8, 26 + (i % 3) * 3, 7, 'lo')]).flat(),
+                          S('M2 46 Q18 52 34 44 Q48 38 58 46', 'bs', 3.4),      // the only way in
+                          E(30, 47, 4, 1.6, 'gh')]);
+def('quirigua',     () => [P('M24 56 L24 8 L36 8 L36 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M26 ${14 + i * 8} L34 ${14 + i * 8}`, 'gh', 1)),
+                          P('M4 56 L4 26 L14 26 L14 56 Z', 'bs'), P('M46 56 L46 32 L54 32 L54 56 Z', 'bs'),
+                          C(30, 12, 3.4, 'hi'),
+                          S('M2 56 L58 56', 'ik', 1.2)]);
+def('xochicalco',   () => [P('M2 30 L58 30 L58 56 L2 56 Z', 'lo'),
+                          P('M14 30 Q30 24 46 30 L46 20 L14 20 Z', 'bs'),        // the levelled top
+                          P('M26 20 L34 20 L34 12 L26 12 Z', 'bs'),
+                          S('M31 12 L28 30', 'gh', 2),                           // the shaft
+                          P('M12 40 Q30 34 48 40 Q44 50 30 50 Q16 50 12 40 Z', 'gh'),   // the cave
+                          C(27, 44, 3.4, 'hi'), S('M28 30 L27 41', 'hi', 1.6)]);  // and the sun on its floor
+def('willemstad',   () => [...[0, 1, 2, 3, 4].map(i =>
+                            [P(`M${4 + i * 11} 54 L${4 + i * 11} 24 L${13 + i * 11} 24 L${13 + i * 11} 54 Z`, i % 2 ? 'lo' : 'bs'),
+                             P(`M${3 + i * 11} 24 L${8.5 + i * 11} 14 L${14 + i * 11} 24 Z`, i % 2 ? 'bs' : 'lo'),
+                             ...[0, 1].map(j => P(`M${6.5 + i * 11 + j * 4} 34 L${9.5 + i * 11 + j * 4} 34 L${9.5 + i * 11 + j * 4} 42 L${6.5 + i * 11 + j * 4} 42 Z`, 'gh'))]).flat(),
+                          wave('ik', 56, 1.6, 56)]);
+def('trinidad_cuba',()=>[P('M42 56 L42 14 L52 14 L52 56 Z', 'lo'),               // the tower that watched
+                          ...[0, 1, 2, 3, 4].map(i => S(`M42 ${20 + i * 8} L52 ${20 + i * 8}`, 'gh', 0.9)),
+                          ...[0, 1, 2].map(i => [P(`M${4 + i * 12} 54 L${4 + i * 12} 38 L${14 + i * 12} 38 L${14 + i * 12} 54 Z`, 'bs'),
+                                                 P(`M${3 + i * 12} 38 L${9 + i * 12} 32 L${15 + i * 12} 38 Z`, 'lo')]).flat(),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => C(4 + i * 6, 57, 1.6, 'gh'))]);   // the cobbles
+def('blue_john_crow',()=>[P('M2 56 L14 22 L24 34 L34 14 L46 30 L58 56 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M2 ${12 + i * 6} Q30 ${9 + i * 6} 58 ${12 + i * 6}`, 'gh', 2)),
+                          ...[[16, 44], [40, 46]].map(([x, y]) =>
+                            [P(`M${x} ${y} Q${x - 8} ${y - 6} ${x - 5} ${y + 2} Z`, 'hi'),
+                             P(`M${x} ${y} Q${x + 8} ${y - 6} ${x + 5} ${y + 2} Z`, 'hi'),
+                             S(`M${x} ${y - 2} L${x} ${y + 4}`, 'ik', 1)]).flat()]);   // the swallowtail
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

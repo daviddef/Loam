@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 38, 5 Sep. a stela 10.6 m, a tower 45 m */
+    'quirigua', 'trinidad_cuba',
     /* places batch 37, 5 Sep. a redwood 120 m tall, a wall 6 m high */
     'redwood_forests', 'loropeni',
     /* places batch 34, 5 Sep. a dome 68 m, terraced tombs */
@@ -1281,6 +1283,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 38, 5 Sep. a hilltop city of 707 ha, a harbour town of 86 ha */
+    'xochicalco', 'willemstad',
     /* places batch 37, 5 Sep. a stone town */
     'songo_mnara',
     /* places batch 36, 5 Sep. a castle, a Roman colony, a medina of 300 ha, a coral town */
@@ -1552,6 +1556,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 38, 5 Sep. 495 km2 of mountains */
+    'blue_john_crow',
     /* places batch 36, 5 Sep. 26 km of canyon */
     'blyde_river_canyon',
     /* places batch 33, 5 Sep. islands 42 km2, a caldera, a park of volcanoes */
@@ -1687,6 +1693,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+    /* places batch 38, 5 Sep. 36,000 km2 of rainforest */
+    'salonga',
     /* places batch 37, 5 Sep. 60,000 km2 of plateau, a lake, 160,000 ha of desert */
     'ennedi', 'lake_chad', 'richtersveld',
     /* places batch 35, 5 Sep. an archipelago and 3 million ha of sand sea */
