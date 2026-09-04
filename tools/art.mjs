@@ -43910,6 +43910,47 @@ def('amsterdam_canals',()=>[...[10, 17, 24].map(r => S(`M${30 - r} 54 A${r} ${r}
                           ...[0, 1, 2].map(i => S(`M${18 + i * 12} 54 L${18 + i * 12} 30`, 'bs', 1)),  // the radials
                           S('M4 54 L56 54', 'ik', 1.4)]);
 
+/* Places, batch 9 — 5 Sep. Panama is drawn as a staircase, not a channel: the
+   whole point is that it climbs. Sungbo's Eredo and the Walls of Benin are
+   drawn differently from each other so two earthworks are not one drawing.  */
+def('canal_lock',   () => [P('M10 26 L50 26 L50 46 L10 46 Z', 'gh'),
+                          S('M16 26 L16 46', 'ik', 3), S('M44 26 L44 46', 'ik', 3),   // a gate at each end
+                          P('M16 34 L44 34 L44 46 L16 46 Z', 'lo'),                   // the water in between
+                          P('M26 28 L34 28 L34 34 L26 34 Z', 'bs'),                   // the boat, riding it up
+                          S('M22 30 L22 40', 'hi', 1.2), S('M38 40 L38 44', 'hi', 1.2)]);
+def('panama_canal', () => [...[0, 1, 2].map(i => P(`M${6 + i * 8} 54 L${6 + i * 8} ${44 - i * 6} L${14 + i * 8} ${44 - i * 6} L${14 + i * 8} 54 Z`, 'gh')),
+                          P('M30 26 L42 26 L42 54 L30 54 Z', 'lo'),                   // the lake at the top
+                          ...[0, 1, 2].map(i => P(`M${42 + i * 5} 54 L${42 + i * 5} ${26 + i * 6} L${47 + i * 5} ${26 + i * 6} L${47 + i * 5} 54 Z`, 'gh')),
+                          P('M32 20 L40 20 L40 26 L32 26 Z', 'bs'),
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+def('sanchi_stupa', () => [E(30, 40, 22, 18, 'lo'),
+                          P('M26 20 L34 20 L34 26 L26 26 Z', 'bs'),                   // the harmika
+                          S('M30 12 L30 20', 'ik', 1.6),
+                          ...[0, 1, 2].map(i => S(`M${25 - i * 2} ${14 + i * 3} L${35 + i * 2} ${14 + i * 3}`, 'ik', 1.4)),
+                          P('M6 44 L10 44 L10 56 L6 56 Z', 'hi'), P('M50 44 L54 44 L54 56 L50 56 Z', 'hi'),
+                          S('M4 46 L56 46', 'gh', 1.2)]);                             // the torana, two centuries later
+def('kalyan_minaret',()=>[P('M22 54 L24 18 L36 18 L38 54 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${23.5 - i * 0.1} ${24 + i * 5} L${36.5 + i * 0.1} ${24 + i * 5}`, 'gh', 1)),
+                          P('M20 18 L40 18 L38 8 L22 8 Z', 'bs'),                     // the lantern
+                          ...[0, 1, 2].map(i => S(`M${25 + i * 5} 10 L${25 + i * 5} 18`, 'gh', 0.9)),
+                          S('M18 54 L42 54', 'ik', 1.6)]);
+def('carcassonne',  () => [P('M4 54 L4 34 L56 34 L56 54 Z', 'gh'),                    // the outer wall
+                          P('M12 54 L12 24 L48 24 L48 54 Z', 'lo'),                   // and the inner, out of reach
+                          ...[8, 30, 52].map(x => [P(`M${x - 4} 34 L${x - 4} 26 L${x + 4} 26 L${x + 4} 34 Z`, 'gh'),
+                                                   P(`M${x - 5} 26 L${x} 18 L${x + 5} 26 Z`, 'bs')]).flat(),
+                          ...[18, 42].map(x => [P(`M${x - 4} 24 L${x - 4} 14 L${x + 4} 14 L${x + 4} 24 Z`, 'lo'),
+                                                P(`M${x - 5} 14 L${x} 6 L${x + 5} 14 Z`, 'bs')]).flat()]);
+def('rila_monastery',()=>[P('M4 22 L56 22 L56 54 L4 54 Z', 'lo'),
+                          P('M16 30 L44 30 L44 54 L16 54 Z', 'gh'),                   // the courtyard
+                          ...[0, 1, 2, 3, 4].map(i => P(`M${17 + i * 5.5} 54 Q${19.5 + i * 5.5} 44 ${22 + i * 5.5} 54 Z`, i % 2 ? 'hi' : 'bs')),
+                          P('M46 22 L46 6 L54 6 L54 22 Z', 'bs'),                     // Hrelja's tower, all that survived
+                          S('M4 22 L56 22', 'ik', 1.4)]);
+def('sungbo_eredo', () => [S('M30 30 m -24 0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0', 'lo', 3),  // a ring around a kingdom
+                          S('M30 30 m -19 0 a19 19 0 1 0 38 0 a19 19 0 1 0 -38 0', 'gh', 2),
+                          P('M4 46 L14 46 L18 54 L4 54 Z', 'hi'),                     // and the section through it
+                          P('M18 54 L22 46 L30 46 L30 54 Z', 'bs'),
+                          S('M4 46 L30 46', 'ik', 1)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -95063,5 +95063,75 @@
   "why": "Three canals dug as one plan in the 17th century, west to east across the whole layout — Herengracht, Keizersgracht and Prinsengracht in order outward from the old town, the north-west sector begun in 1613 and finished around 1625. Over 100 km of canals, about 90 islands and 1,500 bridges, and the street plan is still the plan.",
   "verified": true,
   "src": "https://en.wikipedia.org/wiki/Canals_of_Amsterdam"
+ },
+ {
+  "in": [
+   "channel",
+   "gate"
+  ],
+  "out": "canal_lock",
+  "why": "A chamber with a gate at each end, and nothing else. Close both, let water in and the boat floats up with it; let water out and it settles down. The lift costs no power at all — every metre a boat rises is paid for by water running downhill somewhere above.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Lock_(water_navigation)"
+ },
+ {
+  "in": [
+   "isthmus",
+   "canal_lock"
+  ],
+  "out": "panama_canal",
+  "why": "The continental divide is too high to cut through, so the canal goes over it: three locks up to Gatun Lake at 26 m, 82 km across, and three down the other side. The lake is both the summit and the reservoir, and each transit spends about 200 million litres of fresh water on the lift.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Panama_Canal"
+ },
+ {
+  "in": [
+   "ashoka",
+   "stupa"
+  ],
+  "out": "sanchi_stupa",
+  "why": "Ashoka commissioned it in the 3rd century BCE as a hemispherical brick structure over relics of the Buddha. The Shungas then roughly doubled its diameter and cased the brick in stone, and the four carved toranas came later still, in the 1st century BCE — so the building is three claims from three dynasties standing on top of each other.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Sanchi"
+ },
+ {
+  "in": [
+   "brick",
+   "gypsum"
+  ],
+  "out": "kalyan_minaret",
+  "why": "High-fired bricks 27 by 27 by 5 cm laid in gypsum mortar, tapering from 9 m at the base to 6 m at the top over 45.6 m. Gypsum sets fast and does not need to dry out, which is what lets a tower that slender be built course upon course without waiting a season between lifts.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Kalyan_minaret"
+ },
+ {
+  "in": [
+   "curtain_wall",
+   "france"
+  ],
+  "out": "carcassonne",
+  "why": "Two concentric walls with 52 towers and barbicans, set far enough apart that a siege engine cannot reach the inner one — one stretch still Roman, in red brick courses under shallow terracotta. Viollet-le-Duc restored it from 1853 and roofed the towers in slate, which is northern practice and not local: there is no slate to quarry anywhere near.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Carcassonne"
+ },
+ {
+  "in": [
+   "arch",
+   "bulgaria"
+  ],
+  "out": "rila_monastery",
+  "why": "It burned in 1833 and was rebuilt between 1834 and 1862 by subscription from across the country, which is why it looks like one building rather than eight centuries of them: striped arcades running the full height of the courtyard, 300 chambers, and frescoes finished in 1846. Only Hrelja's tower of 1334–35 came through the fire.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Rila_Monastery"
+ },
+ {
+  "in": [
+   "earthwork",
+   "laterite"
+  ],
+  "out": "sungbo_eredo",
+  "why": "Laterite — tropical soil left as iron and aluminium oxides once the silica has leached out — hardens on exposure, so a bank cut from it stands where loose earth would slump. More than 160 km of it rings the old Ijebu kingdom, with up to 20 m from ditch floor to the rim of the inner bank.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Sungbo%27s_Eredo"
  }
 ]

@@ -1084,6 +1084,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 9, 5 Sep. a lock chamber, a stupa 36 m across, a minaret 45.6 m, a wall circuit */
+    'canal_lock', 'sanchi_stupa', 'kalyan_minaret', 'carcassonne',
     /* places batch 8, 5 Sep. a temple chariot with 3 m wheels; a winding tower */
     'konark', 'zollverein',
     /* places batch 7, 5 Sep. a latte stone 4.6 m, a fortress 43 m, a dome 15 m across */
@@ -1227,6 +1229,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 9, 5 Sep. 8,800 m2 of monastery */
+    'rila_monastery',
     /* places batch 8, 5 Sep. a burial site, and a canal ring measured across a city */
     'roi_mata_domain',
     /* places batch 7, 5 Sep. a marae court 44 by 60 m; a cliff 300 m long */
@@ -1434,6 +1438,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 9, 5 Sep. 82 km of canal; 160 km of rampart */
+    'panama_canal', 'sungbo_eredo',
           /* places batch 21, 4 Sep */
           'chaco_canyon',
           /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */
