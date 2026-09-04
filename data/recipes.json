@@ -154,7 +154,8 @@
     "verb": "heat",
     "out": "charcoal",
     "why": "Heat wood without air and the water and tar bake off, leaving almost pure carbon. Charcoal burns far hotter than the wood it came from.",
-    "src": "https://en.wikipedia.org/wiki/Charcoal"
+    "src": "https://en.wikipedia.org/wiki/Charcoal",
+    "at": 400
   },
   {
     "in": [
@@ -2161,7 +2162,8 @@
     "out": "glass",
     "why": "No flux, so it takes a heat no early furnace could reach. Lightning reaches it — a strike fuses sand into a hollow glass tube called a fulgurite, in an instant.",
     "src": "https://en.wikipedia.org/wiki/Fulgurite",
-    "verified": true
+    "verified": true,
+    "at": 1700
   },
   {
     "in": [
@@ -17206,10 +17208,11 @@
       "bronze"
     ],
     "verb": "heat",
-    "out": "bell",
-    "why": "A bell is cast mouth-down from molten bell metal — bronze around 23% tin — poured into a buried two-part mould and left to cool slowly.",
-    "src": "https://en.wikipedia.org/wiki/Bell_(instrument)",
-    "verified": true
+    "out": "molten_bronze",
+    "why": "Bronze melts around 950°C, well below either of its metals — copper alone needs 1085. An alloy melting lower than its ingredients is what made casting possible with charcoal, and it is the whole reason the Bronze Age preceded the Iron Age.",
+    "src": "https://en.wikipedia.org/wiki/Melting_point",
+    "verified": true,
+    "at": 950
   },
   {
     "in": [
@@ -19664,10 +19667,11 @@
       "iron"
     ],
     "verb": "heat",
-    "out": "rail",
-    "why": "Early rails were wrought iron, not steel — hot-worked the same way but weaker under load. Steel only took over the rails once quality control caught up, decades after it had replaced iron elsewhere.",
-    "src": "https://en.wikipedia.org/wiki/Rail_profile",
-    "verified": true
+    "out": "pig_iron",
+    "why": "A bloomery never melts the iron: at about 1200°C the ore is reduced to a spongy mass and the slag runs out, leaving metal that has to be hammered. Actually melting iron needs 1538°C, which is why cast iron waited for the blast furnace.",
+    "src": "https://en.wikipedia.org/wiki/Melting_point",
+    "verified": true,
+    "at": 1200
   },
   {
     "in": [
@@ -34454,9 +34458,10 @@
       "gold"
     ],
     "verb": "heat",
-    "out": "crown",
-    "why": "Gold anneals soft with gentle heat and hammers into shape without cracking, which is exactly why gold and precious jewels are common in crowns from both Western and Eastern traditions alike.",
-    "src": "https://en.wikipedia.org/wiki/Crown_(headgear)"
+    "out": "molten_gold",
+    "why": "Gold melts at 1064°C and does not oxidise on the way, which is why it can be melted, cast, remelted and cast again indefinitely without loss. Almost all the gold ever mined is still in circulation for that reason.",
+    "src": "https://en.wikipedia.org/wiki/Melting_point",
+    "at": 1064
   },
   {
     "in": [
@@ -92625,6 +92630,26 @@
     "out": "result",
     "why": "One result is a single draw from a distribution, which is why a single trial persuades nobody and why anecdote and evidence differ in kind rather than in degree. The result is real; what it tells you is a separate question.",
     "src": "https://en.wikipedia.org/wiki/Result",
+    "verified": true
+  },
+  {
+    "in": [
+      "molten_bronze",
+      "mould"
+    ],
+    "out": "bell",
+    "why": "A bell is cast, not beaten, and its note is decided by the thickness profile rather than the size alone. Founders tune one by turning metal off the inside afterwards, because the casting is never exactly right and the pitch cannot be adjusted any other way.",
+    "src": "https://en.wikipedia.org/wiki/Bell_casting",
+    "verified": true
+  },
+  {
+    "in": [
+      "gold",
+      "jewel"
+    ],
+    "out": "crown",
+    "why": "Gold is chosen for a crown because it never tarnishes — a silver one would blacken in a season and an iron one would rust. The metal is picked for what it does not do over centuries rather than for what it looks like on the day.",
+    "src": "https://en.wikipedia.org/wiki/Crown_(headgear)",
     "verified": true
   }
 ]

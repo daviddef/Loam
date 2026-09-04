@@ -259,16 +259,48 @@ __CATEGORY_CSS__
     stroke-dasharray:var(--len,400);animation:draw .45s cubic-bezier(.3,.8,.4,1) forwards;
     stroke:var(--discovery);stroke-width:3;opacity:.85;
   }
-  #zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
-        transition:bottom .18s}
-  /* Same cluster, same reasoning, mirrored to the left — scanning is
-     something you do TO the bench, same standing as zoom/tidy/the table. */
-  #scanTools{position:absolute;left:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6;
-        transition:bottom .18s}
-  /* The dock is opaque and sits on the bottom of the board, so the zoom
-     cluster has to climb on top of it rather than hide behind it. */
-  body.pt-on #zoom{bottom:calc(var(--pth,370px) + 12px)}
-  body.pt-on #scanTools{bottom:calc(var(--pth,370px) + 12px)}
+  /* ── one column on the left, one strip on the right ─────────────────────
+     These were both on the right edge: #asideTabs anchored to the TOP of the
+     seam and growing down, #zoom anchored to the BOTTOM and growing up. Nine
+     buttons each, so on any window shorter than about 750px they met in the
+     middle and overlapped. ("desktop doing this now. perhaps icons need to
+     move to left side of canvas?" — found live, with a screenshot of the two
+     rails crossing.)
+
+     Splitting them by SIDE would have stopped the collision and left the
+     arrangement arbitrary. They are split by what they act on, which is a
+     rule a person can learn once:
+
+       left    things you do TO the canvas — zoom, tidy, the modes, scanning
+       right   which pane you are looking AT
+
+     The right strip stays where it is because those tabs are attached to the
+     pane they open — that adjacency is the affordance, and moving them would
+     cost more than the collision did. Everything else moves left and becomes
+     one column, bottom-anchored, so it grows away from the header rather than
+     toward the other rail. */
+  #leftRail{
+    position:absolute;left:12px;bottom:12px;z-index:6;
+    display:flex;flex-direction:column-reverse;gap:14px;
+    align-items:flex-start;transition:bottom .18s;
+    /* Never taller than the board it sits on. If the window is short enough
+       that twelve buttons will not fit, the column scrolls rather than
+       running under the header — which is what the old layout did silently. */
+    max-height:calc(100% - 96px);overflow-y:auto;overflow-x:hidden;
+    scrollbar-width:none;
+  }
+  #leftRail::-webkit-scrollbar{display:none}
+  /* Both the rail and the zoom group run column-reverse, so the DOM order
+     survives a short window in the right direction: what a person reaches for
+     constantly sits at the bottom where it is always visible, and what they
+     touch once a session scrolls off the top first. Zoom in is the lowest
+     button on the screen; the camera is the highest. The first attempt had
+     this backwards and scrolled the zoom controls away while keeping scan. */
+  #zoom{display:flex;flex-direction:column-reverse;gap:5px}
+  #scanTools{display:flex;flex-direction:column;gap:5px}
+  /* The dock is opaque and sits on the bottom of the board, so the column has
+     to climb on top of it rather than hide behind it. */
+  body.pt-on #leftRail{bottom:calc(var(--pth,370px) + 12px);max-height:calc(100% - var(--pth,370px) - 96px)}
   #zoom button, #scanTools button{
     width:32px;height:32px;padding:0;font:700 15px var(--face-name);border-radius:10px;
     background:color-mix(in srgb,var(--surface) 94%,transparent);
@@ -2089,12 +2121,8 @@ __CATEGORY_CSS__
     <div id="world">
       <svg id="links"></svg>
     </div>
-    <div id="scanTools">
-      <button data-scan="snap" title="Take a photo"><span class="gl" style="--g:15px">__UI_SHUTTER__</span></button>
-      <button data-scan="photo" title="Choose photos"><span class="gl" style="--g:15px">__UI_GALLERY__</span></button>
-      <button data-scan="type" title="Type the barcode number"><span class="gl" style="--g:15px">__UI_DIGITS__</span></button>
-    </div>
-    <div id="zoom">
+    <div id="leftRail">
+<div id="zoom">
       <button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button>
       <button data-z="fit" title="Fit everything">⤢</button><button data-z="tidy" title="Tidy the bench"><span class="gl" style="--g:15px">__UI_TIDY__</span></button>
       <button data-z="circle" title="Tidy, but spread each thing's results in a ring around it"><span class="gl" style="--g:15px">__UI_CIRCLE__</span></button>
@@ -2102,6 +2130,12 @@ __CATEGORY_CSS__
       <button data-z="consolidate" id="consolidateBtn" title="One card per thing"><span class="gl" style="--g:15px">__UI_CONSOLIDATE__</span></button>
       <button data-z="erase" id="eraseBtn" title="Erase mode — right-drag wipes what the pointer touches">🧽</button>
       <button data-z="decay" id="decayBtn" title="Decay mode — tap anything to see what removing it would break">🥀</button>
+    </div>
+<div id="scanTools">
+      <button data-scan="snap" title="Take a photo"><span class="gl" style="--g:15px">__UI_SHUTTER__</span></button>
+      <button data-scan="photo" title="Choose photos"><span class="gl" style="--g:15px">__UI_GALLERY__</span></button>
+      <button data-scan="type" title="Type the barcode number"><span class="gl" style="--g:15px">__UI_DIGITS__</span></button>
+    </div>
     </div>
     <!-- Not a modal. A curator's pencil note on the tray: it points at two real
          cards, it never covers anything, and it rubs itself out the moment you

@@ -76,6 +76,7 @@ const PUBLIC = [
   'tools/backbone.mjs',
   'tools/universe.mjs',
   'tools/needs.mjs',
+  'tools/verbs.mjs',
   'tools/pathogens.mjs',
   'tools/conditions.mjs',
   'tools/audit.mjs',

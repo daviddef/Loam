@@ -42925,6 +42925,21 @@ def('result',       () => [...[0,1,2,3,4].map(i => C(12+i*9, 18, 4, i===2 ? 'hi'
                            S('M30 26 L30 36', 'lo', 2),
                            P('M18 38 L42 38 L42 50 L18 50 Z', 'bs')]);
 
+/* Two products the verb mechanism's --bands report turned up. Heating gold
+   does not make a crown and heating bronze does not make a bell — those are
+   cast from the metal afterwards. What heat itself makes is the melt.        */
+def('molten_gold',  () => [vessel('lo'),
+                           E(30, 30, 17, 5, 'hi'),
+                           P('M14 30 L46 30 L42 48 L18 48 Z', 'hi'),
+                           ...[[24, 36], [36, 40]].map(([x, y]) => C(x, y, 2.4, 'bs')),
+                           ...[0, 1, 2].map(i => S(`M${20 + i * 10} 22 Q${23 + i * 10} 16 ${20 + i * 10} 10`, 'gh', 1.4))]);
+def('molten_bronze',() => [vessel('lo'),
+                           E(30, 30, 17, 5, 'bs'),
+                           P('M14 30 L46 30 L42 48 L18 48 Z', 'bs'),
+                           S('M46 32 Q54 36 52 46', 'bs', 3.4),               // and it pours, lower than either
+                           ...[0, 1].map(i => C(52 + i, 48 + i * 3, 2.4, 'hi')),
+                           ...[0, 1, 2].map(i => S(`M${20 + i * 10} 22 Q${23 + i * 10} 16 ${20 + i * 10} 10`, 'gh', 1.4))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

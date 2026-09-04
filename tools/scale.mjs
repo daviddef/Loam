@@ -453,6 +453,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          'molten_gold', 'molten_bronze',
           'microscope', 'missile',
           /* words that came back with nothing, 4 Sep */
           'molasses', 'rum', 'cologne', 'currency', 'banknote_pound', 'dollar',
