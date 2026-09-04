@@ -93482,5 +93482,65 @@
     "why": "Ale yeast stops below about 10 °C. The lager strain is a hybrid, carrying a cold-tolerant genome from a wild Patagonian species, so it keeps working slowly in the cold and settles out at the bottom rather than rising.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Saccharomyces_pastorianus"
+  },
+  {
+    "in": [
+      "stupa",
+      "timber"
+    ],
+    "out": "pagoda",
+    "why": "The stupa's stacked discs become stacked roofs when the material is wood. The floors sit loose around a central pillar rather than being fixed to it, so the storeys slide out of phase in a quake and damp each other instead of resonating.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pagoda"
+  },
+  {
+    "in": [
+      "tree",
+      "time"
+    ],
+    "out": "dendrochronology",
+    "why": "A wet year makes a wide ring and a dry one a narrow ring, and every tree in a region records the same weather. Overlap enough sequences and you get an unbroken calendar thousands of years long, against which a single beam can be dated to the year.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dendrochronology"
+  },
+  {
+    "in": [
+      "pagoda",
+      "dendrochronology"
+    ],
+    "out": "horyuji",
+    "why": "Ring-counting dates the felling of the five-storey pagoda's central pillar to 594. That is a date taken off the wood rather than out of a chronicle, which is why these are securely the oldest wooden buildings anywhere.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/H%C5%8Dry%C5%AB-ji"
+  },
+  {
+    "in": [
+      "columnar_basalt",
+      "sea"
+    ],
+    "out": "giants_causeway",
+    "why": "A Paleocene lava flow cooled and contracted, and the cracks worked downward from the surface into about 40,000 columns. The sea then cut the coast back through them, which is the only reason the inside of a lava flow is standing in the open.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Giant's_Causeway"
+  },
+  {
+    "in": [
+      "megalith",
+      "circle"
+    ],
+    "out": "stonehenge",
+    "why": "The lintels are held on with mortise and tenon, and joined end to end with tongue and groove — carpenters' joints, cut into sarsen by people with no metal. The uprights taper upward so they do not look top-heavy from below.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stonehenge"
+  },
+  {
+    "in": [
+      "legion",
+      "turf"
+    ],
+    "out": "hadrians_wall",
+    "why": "Three legions, about 15,000 men, built it in roughly six years from AD 122 — the eastern two thirds in stone and the western third in stacked turf, later rebuilt. The wall is the least of it: a ditch in front, the Vallum behind, a milecastle every Roman mile and a turret every third. A monitored frontier rather than a barrier.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hadrian's_Wall"
   }
 ]

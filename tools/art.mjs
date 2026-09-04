@@ -43300,6 +43300,38 @@ def('crystallised_honey',()=>[vessel('bs', 20, 48),
 def('crumb',       () => [...granules('lo', 14, 808, [12, 24, 48, 46]),
                           ...[[22, 30], [38, 38], [30, 44]].map(([x, y]) => E(x, y, 5, 4, 'hi'))]);
 
+/* Places, batch 10 — Eastern Asia and Northern Europe. Stonehenge is drawn
+   with its lintels sitting proud on tenons, because the joint is the point.  */
+def('pagoda',      () => [...[0, 1, 2, 3].map(i =>
+                            P(`M${26 - i * 5} ${44 - i * 9} L${34 + i * 5} ${44 - i * 9} L${38 + i * 5} ${48 - i * 9} L${22 - i * 5} ${48 - i * 9} Z`, i % 2 ? 'lo' : 'bs')),
+                          P('M27 48 L33 48 L33 12 L27 12 Z', 'hi'),           // the loose central pillar
+                          S('M30 12 L30 4', 'hi', 1.8),
+                          P('M24 48 L36 48 L36 52 L24 52 Z', 'lo')]);
+def('dendrochronology',()=>[E(30, 32, 22, 20, 'bs'),
+                          ...[0, 1, 2, 3, 4].map(i => ring('lo', 30, 32, 19 - i * 4, i % 2 ? 2.6 : 1.2)),
+                          C(30, 32, 2, 'hi'),
+                          S('M8 54 L52 54', 'gh', 1.4)]);
+def('horyuji',     () => [...[0, 1, 2].map(i =>
+                            P(`M${24 - i * 6} ${42 - i * 11} L${36 + i * 6} ${42 - i * 11} L${40 + i * 6} ${46 - i * 11} L${20 - i * 6} ${46 - i * 11} Z`, i % 2 ? 'lo' : 'bs')),
+                          P('M28 46 L32 46 L32 10 L28 10 Z', 'hi'),
+                          S('M30 10 L30 3', 'hi', 1.6),
+                          ...[0, 1].map(i => S(`M${22 + i * 16} 46 L${22 + i * 16} 52`, 'lo', 2.4))]);
+def('giants_causeway',()=>[...[0, 1, 2, 3, 4, 5].map(i =>
+                            P(`M${6 + i * 9} ${52 - (i < 3 ? i * 6 : (5 - i) * 6)} L${13 + i * 9} ${52 - (i < 3 ? i * 6 : (5 - i) * 6)} L${13 + i * 9} 54 L${6 + i * 9} 54 Z`, i % 2 ? 'lo' : 'bs')),
+                          ...[0, 1, 2, 3, 4, 5].map(i =>
+                            P(`M${6 + i * 9} ${52 - (i < 3 ? i * 6 : (5 - i) * 6)} L${9.5 + i * 9} ${49 - (i < 3 ? i * 6 : (5 - i) * 6)} L${13 + i * 9} ${52 - (i < 3 ? i * 6 : (5 - i) * 6)} Z`, 'hi')),
+                          wave('gh', 16, 3, 26)]);
+def('stonehenge',  () => [...[0, 1, 2].map(i => [
+                            P(`M${8 + i * 18} 52 L${16 + i * 18} 52 L${16 + i * 18} 22 L${8 + i * 18} 22 Z`, 'lo'),
+                            C(12 + i * 18, 20, 1.8, 'hi')]).flat(),           // the tenons, proud
+                          ...[0, 1].map(i => P(`M${8 + i * 18} 22 L${34 + i * 18} 22 L${34 + i * 18} 16 L${8 + i * 18} 16 Z`, 'bs')),
+                          S('M4 54 L56 54', 'gh', 1.4)]);
+def('hadrians_wall',()=> [P('M4 52 L56 52 L56 34 L4 34 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => P(`M${6 + i * 9} 34 L${11 + i * 9} 34 L${11 + i * 9} 28 L${6 + i * 9} 28 Z`, 'lo')),
+                          P('M24 34 L36 34 L36 14 L24 14 Z', 'hi'),           // a milecastle
+                          P('M4 56 L56 56 L52 60 L8 60 Z', 'bs'),
+                          S('M4 26 Q30 22 56 26', 'gh', 1.4)]);               // the ditch in front
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

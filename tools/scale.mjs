@@ -1027,6 +1027,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 10, 4 Sep. a five-storey timber tower */
+          'pagoda',
           /* places batch 8, 4 Sep. a single flyer, metres */
           'flying_buttress',
           /* places batch 7, 4 Sep. a tank twelve metres long, and a wall panel */
@@ -1140,6 +1142,10 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 10, 4 Sep. a method, on the conceptual rack */
+          'dendrochronology',
+          /* places batch 10, 4 Sep. a temple precinct, a circle, a headland */
+          'horyuji', 'stonehenge', 'giants_causeway',
           /* places batch 9, 4 Sep. buildings and circuits, over a hundred metres */
           'amphitheatre', 'diocletians_palace', 'dubrovnik_walls', 'pula_arena',
           /* places batch 8, 4 Sep. buildings, tens to a hundred metres */
@@ -1380,6 +1386,8 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
   '5':   [
+          /* places batch 10, 4 Sep. 117 km coast to coast */
+          'hadrians_wall',
           /* places batch 1 — the Senj worked example, 4 Sep. a 145 km range */
           'velebit',// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           /* completeness-audit wave, 2 Sep */

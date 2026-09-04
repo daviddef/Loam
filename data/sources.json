@@ -332,7 +332,13 @@
     "dried_chilli": "Chili pepper",
     "crystallised_honey": "Honey",
     "crumb": "Bread",
-    "lager_yeast": "Saccharomyces pastorianus"
+    "lager_yeast": "Saccharomyces pastorianus",
+    "pagoda": "Pagoda",
+    "horyuji": "Hōryū-ji",
+    "giants_causeway": "Giant's Causeway",
+    "stonehenge": "Stonehenge",
+    "hadrians_wall": "Hadrian's Wall",
+    "dendrochronology": "Dendrochronology"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -788,6 +794,12 @@
     "chilli|wait": "Chili pepper",
     "hay|ferment": "Silage",
     "grass|cut": "Meadow",
-    "yeast|chill": "Saccharomyces pastorianus"
+    "yeast|chill": "Saccharomyces pastorianus",
+    "stupa+timber": "Pagoda",
+    "time+tree": "Dendrochronology",
+    "dendrochronology+pagoda": "Hōryū-ji",
+    "columnar_basalt+sea": "Giant's Causeway",
+    "circle+megalith": "Stonehenge",
+    "legion+turf": "Hadrian's Wall"
   }
 }
