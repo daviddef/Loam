@@ -176,6 +176,23 @@ const tagsOf = (id) => byId.get(id)?.tags || [];
  *   settlements    need only ground: a harbour at the end of a pass is exactly
  *                  why a town is where it is, and demanding a founder for a
  *                  place inhabited for 3,000 years would invent one.
+ *
+ * READ THE NUMBER THIS PRODUCES AS A REVIEW QUEUE, NOT AS A FAULT COUNT.
+ * It caught three real faults when the corpus held twenty places — the
+ * Colosseum from stone + lion, the Great Wall from china + mongolia, the
+ * Ishtar Gate from clay + glass. At 334 places it flags 65, and going through
+ * them on 5 Sep found no fault at all: arch + column, brick + dome,
+ * concrete + pumice, cistern + plateau are all material-and-technique, and a
+ * technique implies a maker without naming one. Demanding a named builder for
+ * a Roman aqueduct would invent one exactly as demanding a builder for the
+ * Velebit did.
+ *
+ * A material-plus-agency rule was written and tested as a replacement. It
+ * flagged a different 63 and let clay + glass through, because `glass` is
+ * tagged `tool`. The tag vocabulary cannot carry the distinction this check
+ * wants — "did this input contribute to the making" is not a property of
+ * tags — so the honest thing is to keep the list, say what it is worth, and
+ * not let a number that is mostly noise be read as a defect count.
  */
 const BUILT = new Set(['fortification', 'worship', 'tomb', 'palace', 'monument', 'engineering', 'industry']);
 function derivation(id, kind) {
@@ -325,8 +342,12 @@ if (ghosts.length) {
   for (const [id] of ghosts.slice(0, 8)) console.log(`      ${id}`);
 }
 if (bad.length) {
-  console.log(`\n  ${bad.length} place(s) derive from association rather than a maker and a material:`);
+  console.log(`\n  ${bad.length} place(s) to READ, not to fix: no maker-and-material pair among their inputs.`);
+  console.log(`      Most are material-and-technique and are fine. The rule caught three real`);
+  console.log(`      faults at twenty places and none at 334 — see the note above tools/places.mjs`);
+  console.log(`      derivation(). Treat this as a reading list, not a defect count.`);
   for (const [id, e] of bad.slice(0, 8)) console.log(`      ${id.padEnd(24)} ${derivation(id, e.kind).why}`);
+  if (bad.length > 8) console.log(`      ... and ${bad.length - 8} more`);
 }
 if (danglingOf.length) {
   console.log(`\n  ${danglingOf.length} material(s) named in an "of" that no element answers to:`);
