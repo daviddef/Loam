@@ -13219,11 +13219,6 @@ def('benthic_zone', () => [                                          // the floo
 def('pelagic_zone', () => [                                          // open water itself, no shore, no floor in sight
   wave('hi', 14, 3, 20), wave('bs', 26, 4, 22), wave('bs', 38, 4, 22), wave('lo', 50, 3, 20),
 ]);
-def('ocean_trench', () => [                                          // a gash where one plate dives under another
-  wave('lo', 12, 3, 22),
-  P('M8 18 L52 18 L36 28 Q30 50 24 28 Z', 'bs'),
-  S('M8 18 L24 28 M52 18 L36 28', 'ik', 1.4),
-]);
 def('continental_slope', () => [                                     // the steep drop-off beyond the shelf
   P('M6 20 L24 20 L52 50 L6 50 Z', 'bs'),
   S('M6 20 L24 20 L52 50', 'hi', 1.8),
@@ -13309,10 +13304,6 @@ def('sea_ice', () => [
 def('salt_marsh', () => [
   wave('lo', 48, 3, 24),
   ...[16, 24, 32, 40, 48].map(x => S(`M${x} 50 Q${x - 1} 38 ${x + 1} 26`, 'bs', 2)),  // grass, trapping sediment
-]);
-def('ocean_gyre', () => [
-  ring('bs', 30, 30, 20, 2.4), ring('hi', 30, 30, 13, 1.8),
-  C(30, 30, 3, 'lo'),                                                // the slack, still center, where plastic pools
 ]);
 def('marine_debris', () => [
   wave('bs', 40, 5, 24),
@@ -15979,11 +15970,6 @@ def('eeg', () => [                                                    // scalp e
   ...[[16, 18], [26, 12], [36, 12], [45, 20], [46, 32]].map(([x, y]) => S(`M${x} ${y} L52 50`, 'lo', 0.8)), // wires, converging
   C(54, 52, 3, 'hi'),
 ]);
-def('electroencephalogram', () => [                                   // the readout — summed activity of firing cortical populations, live
-  S('M4 16 Q10 8 16 16 Q22 24 28 16 Q34 8 40 16 Q46 24 52 16 Q56 12 58 16', 'bs', 1.6),
-  S('M4 32 Q12 24 20 32 Q28 40 36 32 Q44 24 52 32 Q56 36 58 32', 'hi', 1.6),
-  S('M4 48 Q8 44 14 48 Q22 54 30 46 Q38 40 46 48 Q52 52 58 46', 'lo', 1.6),
-]);
 def('alpha_wave', () => [                                              // an 8-to-13Hz rhythm, relaxed and regular
   S('M4 30 Q10 16 16 30 Q22 44 28 30 Q34 16 40 30 Q46 44 52 30 Q56 22 58 30', 'bs', 2.6),
   C(30, 30, 2, 'gh'),                                                   // the thalamic pacemaker behind it
@@ -16996,11 +16982,6 @@ def('muhammad', () => [                                                     // a
   P('M18 34 Q26 20 34 34 Z', 'lo'),                                         // the hump
   P('M14 36 L20 36 L20 44 L14 44 Z', 'bs'), P('M32 36 L38 36 L38 44 L32 44 Z', 'bs'), // laden saddlebags
   ...[-9, -3, 5, 10].map(dx => S(`M${26 + dx} 45 L${26 + dx} 54`, 'lo', 2.2)),
-]);
-def('buddha', () => [                                                       // beneath the fig tree, until enlightenment came
-  S('M30 40 L30 24', 'lo', 3),
-  leaf('hi', 20, 18, .8, -30), leaf('hi', 40, 18, .8, 30), leaf('hi', 30, 10, .8, 0), // the heart-leaved fig
-  P('M22 50 Q22 40 30 40 Q38 40 38 50 Z', 'bs'), C(30, 36, 4, 'bs'),        // seated, cross-legged, beneath it
 ]);
 def('guru_nanak', () => [                                                   // three days in the river, and a return with a single teaching
   wave('lo', 44, 5, 24), wave('bs', 36, 4, 22),
@@ -19927,15 +19908,6 @@ def('dalai_lama', () => [                                            // the Gelu
   P('M14 34 Q14 44 30 44 Q46 44 46 34 Q40 30 30 34 Q20 30 14 34 Z', 'bs'),
   P('M18 34 Q22 14 30 12 Q30 22 26 34 Z', 'hi'), P('M42 34 Q38 14 30 12 Q30 22 34 34 Z', 'hi'), // the two crests, rising
 ]);
-def('asoka', () => [                                                 // a rock edict, promoting nonviolence in the emperor's own words
-  E(30, 32, 22, 16, 'lo'),
-  E(30, 32, 18, 13, 'bs'),
-  ring('hi', 30, 32, 7, 1.6),                                        // the dharma wheel, carved at its center
-  ...Array.from({ length: 8 }, (_, i) => {
-    const a = i * Math.PI / 4;
-    return S(`M${n(30 + 7 * Math.cos(a))} ${n(32 + 7 * Math.sin(a))} L${n(30 + 3 * Math.cos(a))} ${n(32 + 3 * Math.sin(a))}`, 'hi', 1);
-  }),
-]);
 def('ten_commandments', () => [                                      // the covenant at Sinai, given in stone
   P('M12 50 L12 22 Q12 12 22 12 Q26 12 26 22 L26 50 Z', 'lo'),
   P('M34 50 L34 22 Q34 12 44 12 Q48 12 48 22 L48 50 Z', 'bs'),
@@ -20124,11 +20096,6 @@ def('trebuchet', () => [                                         // a pivoting s
 def('chainmail', () => [                                         // interlocking iron rings, first woven by the Celts around the 3rd century BC
   ...[0, 1, 2, 3].flatMap(row => [0, 1, 2, 3].map(col =>
     ring(row % 2 === col % 2 ? 'bs' : 'lo', 14 + col * 11, 14 + row * 11, 5, 1.6))),
-]);
-def('warhammer', () => [                                         // a flat face and a curved beak — blunt force for armor a sword couldn't cut
-  S('M30 52 L30 22', 'lo', 3.6),
-  P('M18 14 L30 10 L30 26 L18 22 Z', 'bs'),
-  P('M30 10 Q44 10 42 20 Q38 22 30 26 Z', 'hi'),
 ]);
 def('rapier', () => [                                            // a slender civilian thrusting sword, born in Spain and Italy for the duel
   S('M30 6 L30 40', 'bs', 1.8),
@@ -24411,12 +24378,6 @@ def('kierkegaard', () => [                                           // father o
   C(30, 12, 5.6, 'bs'),
   E(42, 20, 4, 5, 'lo'), E(48, 26, 4, 5, 'hi'),                      // masks, worn by names that were never his own
   S('M42 18 L42 22 M48 24 L48 28', 'ik', 1),
-]);
-def('marx', () => [                                                  // with Engels: all history is the history of class struggle
-  P('M20 19 L40 19 L44 48 L16 48 Z', 'bs'),
-  C(30, 11, 6, 'bs'),
-  S('M20 17 Q30 22 40 17', 'lo', 2.2),                               // a heavy beard
-  S('M44 40 L52 32 M44 40 L52 48', 'ik', 2.4),                       // two forces, pulling in opposite directions
 ]);
 def('thoreau', () => [                                               // lived alone at Walden Pond, and argued for civil disobedience
   P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
@@ -42854,9 +42815,6 @@ def('paste',        () => [P('M12 30 Q30 22 48 30 Q50 44 30 48 Q10 44 12 30 Z', 
                            S('M18 34 Q30 30 42 34', 'lo', 2),
                            P('M24 8 L36 8 L36 26 L24 26 Z', 'lo'),
                            S('M30 26 Q32 30 30 32', 'hi', 3)]);
-def('mix',          () => [...[0,1,2,3,4,5,6,7].map(i => C(12+(i%4)*12, 20+Math.floor(i/4)*16, 5, i%2 ? 'bs' : 'hi')),
-                           ring('gh', 30, 28, 24, 1.4),
-                           S('M8 48 L52 48', 'gh', 1.2)]);
 def('cluster',      () => [...[[20,20],[26,26],[16,28],[24,34]].map(([x,y]) => C(x, y, 4, 'bs')),
                            ...[[44,16],[50,40],[40,46],[52,26]].map(([x,y]) => C(x, y, 3, 'gh')),
                            ring('ik', 21, 27, 13, 1.8)]);
@@ -42894,9 +42852,6 @@ def('economy',      () => [ring('bs', 30, 30, 19, 4),
                            ...[0,90,180,270].map(a => ['g', a, 30, 30, [C(30, 11, 5, 'lo')]]),
                            P('M40 14 L50 20 L38 26 Z', 'bs'),
                            C(30, 30, 5, 'hi')]);
-def('wars',         () => [...[0,1,2].map(i => [S(`M${10+i*17} 46 L${18+i*17} 18`, 'bs', 3),
-                                                P(`M${14+i*17} 12 L${22+i*17} 20 L${16+i*17} 22 Z`, 'ik')]).flat(),
-                           P('M4 46 L56 46 L56 52 L4 52 Z', 'lo')]);
 def('conflict',     () => [S('M6 20 L30 30', 'bs', 4), S('M6 40 L30 30', 'lo', 4),
                            S('M54 20 L30 30', 'bs', 4), S('M54 40 L30 30', 'lo', 4),
                            C(30, 30, 6, 'ik'),
@@ -43297,9 +43252,6 @@ def('dried_chilli',()=> [P('M28 10 Q22 24 24 38 Q26 50 32 50 Q40 46 38 32 Q36 18
 def('crystallised_honey',()=>[vessel('bs', 20, 48),
                           P('M15 28 L45 28 L44 46 Q30 50 16 46 Z', 'lo'),
                           ...granules('hi', 12, 313, [18, 30, 42, 44])]);
-def('crumb',       () => [...granules('lo', 14, 808, [12, 24, 48, 46]),
-                          ...[[22, 30], [38, 38], [30, 44]].map(([x, y]) => E(x, y, 5, 4, 'hi'))]);
-
 /* Places, batch 10 — Eastern Asia and Northern Europe. Stonehenge is drawn
    with its lintels sitting proud on tenons, because the joint is the point.  */
 def('pagoda',      () => [...[0, 1, 2, 3].map(i =>

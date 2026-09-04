@@ -231,6 +231,23 @@ for (const v of verbs) {
   if (!unlocked.has(v.id)) err(`verb "${v.id}" can never unlock — "${v.unlockedBy}" is unreachable`);
 }
 
+/* Two elements sharing a display name are indistinguishable on a card and in
+ * search, and the pile only ever grows: fifteen had accumulated before anyone
+ * counted. Some are genuine collisions in English — Mercury the metal and
+ * Mercury the planet — and those need distinct names rather than a merge. The
+ * rest are the same thing entered twice. Either way it is worth knowing. */
+{
+  const byName = new Map();
+  for (const e of elements) {
+    const k = (e.name || '').toLowerCase().trim();
+    if (!byName.has(k)) byName.set(k, []);
+    byName.get(k).push(e.id);
+  }
+  for (const [name, ids] of byName) {
+    if (ids.length > 1) warn(`"${name}" is the display name of ${ids.length} elements: ${ids.join(', ')}`, 'dupname');
+  }
+}
+
 // ---- orphans & dead ends (informational) ---------------------------------
 const produced = new Set(recipes.map((r) => r.out));
 const consumed = new Set(recipes.flatMap((r) => r.in));
@@ -294,6 +311,10 @@ if (warns.length) {
     longwhy: ['teaching text longer than a card holds',
            'The payoff card shows the why at the moment of discovery. Over about'
            + ' 260 characters the end of the sentence is not read.'],
+    dupname: ['display name shared by more than one element',
+           'Indistinguishable on a card and in search. Some are real collisions'
+           + ' in English and need distinct names; the rest are the same thing'
+           + ' entered twice and need merging.'],
     thin: ['only one route in',
            'A single route is a hard block downstream: get stuck and there is no other way'
            + ' round. Worth reducing, and worth watching as a ratio rather than a list.'],

@@ -2634,7 +2634,7 @@
  },
  {
   "id": "mercury",
-  "name": "Mercury",
+  "name": "Quicksilver",
   "emoji": "💧",
   "shelf": "workshop",
   "tags": [
@@ -23732,7 +23732,7 @@
  },
  {
   "id": "uranus",
-  "name": "Uranus",
+  "name": "Ouranos",
   "emoji": "🌌",
   "shelf": "folklore",
   "tags": [
@@ -38248,16 +38248,6 @@
   "fact": "Before his first revelation, Muhammad worked as a merchant leading camel caravans on the trade route to Syria for the wealthy widow Khadija, whom he later married."
  },
  {
-  "id": "buddha",
-  "name": "Buddha",
-  "emoji": "🧘",
-  "shelf": "workshop",
-  "tags": [
-   "person"
-  ],
-  "fact": "Prince Siddhartha Gautama renounced his crown and sat beneath a fig tree, meditating until he reached enlightenment and became known as the Buddha, 'the Enlightened One.'"
- },
- {
   "id": "guru_nanak",
   "name": "Guru Nanak",
   "emoji": "🌊",
@@ -40211,16 +40201,6 @@
   "terminal": true
  },
  {
-  "id": "asoka",
-  "name": "Ashoka",
-  "emoji": "👑",
-  "shelf": "workshop",
-  "tags": [
-   "person"
-  ],
-  "fact": "Mauryan emperor whose stone-carved edicts promoted Buddhist nonviolence across ancient India."
- },
- {
   "id": "ten_commandments",
   "name": "Ten Commandments",
   "emoji": "🔟",
@@ -40596,7 +40576,7 @@
  },
  {
   "id": "echo_nymph",
-  "name": "Echo",
+  "name": "Ekho",
   "emoji": "🗣️",
   "fact": "Nymph cursed by Hera to only repeat others' last words, punishment for distracting the goddess while Zeus roamed unseen.",
   "shelf": "folklore",
@@ -42197,16 +42177,6 @@
   ],
   "fact": "Danish philosopher, father of existentialism, who wrote most major works under pseudonyms.",
   "terminal": true
- },
- {
-  "id": "marx",
-  "name": "Karl Marx",
-  "emoji": "🔨",
-  "shelf": "workshop",
-  "tags": [
-   "person"
-  ],
-  "fact": "German philosopher who, with Engels, argued all history is the history of class struggle."
  },
  {
   "id": "thoreau",
@@ -44835,8 +44805,7 @@
   "tags": [
    "tool"
   ],
-  "fact": "A blunt hammer face balanced by a spike on the reverse -- stun with one side, then punch with the other.",
-  "soleRoute": true
+  "fact": "A blunt hammer face balanced by a spike on the reverse -- stun with one side, then punch with the other."
  },
  {
   "id": "poleaxe",
@@ -45537,19 +45506,6 @@
    "history"
   ],
   "fact": "Interlocking iron rings woven into mesh armor, first made by the Celts around the 3rd century BC.",
-  "soleRoute": true
- },
- {
-  "id": "warhammer",
-  "name": "War Hammer",
-  "emoji": "🔨",
-  "shelf": "workshop",
-  "tags": [
-   "tool",
-   "history"
-  ],
-  "fact": "A hammer head paired with a spike or beak -- blunt force for armor that swords could no longer cut.",
-  "terminal": true,
   "soleRoute": true
  },
  {
@@ -47334,18 +47290,6 @@
    "animal"
   ],
   "fact": "Lost sense of smell: a skull-base blow shearing the olfactory nerve, viral damage to receptor neurons, or nasal blockage.",
-  "terminal": true,
-  "soleRoute": true
- },
- {
-  "id": "electroencephalogram",
-  "name": "Electroencephalogram",
-  "emoji": "📈",
-  "shelf": "workshop",
-  "tags": [
-   "animal"
-  ],
-  "fact": "Scalp electrodes reading the summed electrical activity of populations of cortical neurons firing together, live.",
   "terminal": true,
   "soleRoute": true
  },
@@ -49350,17 +49294,6 @@
   "fact": "From about 4,000 m to the seafloor — crushing pressure and near-total absence of life."
  },
  {
-  "id": "ocean_trench",
-  "name": "Ocean Trench",
-  "emoji": "🕳️",
-  "shelf": "workshop",
-  "tags": [
-   "water",
-   "earth"
-  ],
-  "fact": "A long, narrow gash in the seafloor where one tectonic plate dives beneath another."
- },
- {
   "id": "hadal_zone",
   "name": "Hadal Zone",
   "emoji": "🔻",
@@ -50464,9 +50397,7 @@
    "earth",
    "water"
   ],
-  "fact": "A basin-wide loop of surface current, curved by the Coriolis effect into a slow rotating wheel.",
-  "terminal": true,
-  "soleRoute": true
+  "fact": "A basin-wide loop of surface current, curved by the Coriolis effect into a slow rotating wheel."
  },
  {
   "id": "el_nino",
@@ -52625,17 +52556,6 @@
    "hazard"
   ],
   "fact": "Manufactured waste adrift at sea; about four-fifths of it starts on land, carried out mostly by rivers.",
-  "soleRoute": true
- },
- {
-  "id": "ocean_gyre",
-  "name": "Ocean Gyre",
-  "emoji": "🌀",
-  "shelf": "workshop",
-  "tags": [
-   "water"
-  ],
-  "fact": "A wind-driven current loop bent circular by Earth's spin, pooling floating plastic at its slack center.",
   "soleRoute": true
  },
  {
@@ -58463,7 +58383,7 @@
  },
  {
   "id": "chlamydia_bacterium",
-  "name": "Chlamydia",
+  "name": "Chlamydia Bacterium",
   "emoji": "👁️",
   "shelf": "workshop",
   "tags": [
@@ -68093,7 +68013,7 @@
  },
  {
   "id": "star_anise_crop",
-  "name": "Star Anise",
+  "name": "Star Anise Tree",
   "emoji": "⭐",
   "shelf": "workshop",
   "tags": [
@@ -83589,17 +83509,6 @@
   "fact": "Enough liquid to move and not enough to flow, which is a narrow band."
  },
  {
-  "id": "mix",
-  "name": "Mixture",
-  "emoji": "🥄",
-  "shelf": "workshop",
-  "tags": [
-   "kitchen",
-   "molecule"
-  ],
-  "fact": "The parts keep their own properties, which is what separates it from a compound."
- },
- {
   "id": "cluster",
   "name": "Cluster",
   "emoji": "✨",
@@ -83693,16 +83602,6 @@
    "trade"
   ],
   "fact": "The study of what people do when they cannot have everything, which is always."
- },
- {
-  "id": "wars",
-  "name": "War",
-  "emoji": "⚔️",
-  "shelf": "workshop",
-  "tags": [
-   "society"
-  ],
-  "fact": "Named in the plural when a single quarrel took several goes to settle."
  },
  {
   "id": "conflict",
@@ -84646,17 +84545,6 @@
    "sweet"
   ],
   "fact": "Honey is supersaturated glucose, so it wants to crystallise. Set honey is not spoiled honey; it is honey doing what the chemistry says it should."
- },
- {
-  "id": "crumb",
-  "name": "Breadcrumb",
-  "emoji": "🍞",
-  "shelf": "workshop",
-  "tags": [
-   "food",
-   "kitchen"
-  ],
-  "fact": "The gluten network cut open. Every crumb is a piece of a foam that was once one connected structure of gas bubbles."
  },
  {
   "id": "pagoda",
