@@ -43214,6 +43214,41 @@ def('farmer',      () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 
                           E(30, 14, 11, 3.4, 'bs'),                          // the hat
                           S('M46 10 L46 52', 'hi', 2.2), S('M40 14 L52 14', 'hi', 2)]);  // the hoe
 
+/* Places, batch 8 — Middle Africa off zero, and the Gothic chain that Western
+   Europe needed before any of its cathedrals could derive from anything.    */
+def('flying_buttress',()=>[P('M8 52 L18 52 L18 20 L8 20 Z', 'lo'),           // the wall
+                          P('M44 52 L54 52 L54 34 L44 34 Z', 'lo'),          // the pier
+                          S('M18 24 Q34 24 46 36', 'hi', 3.4),               // the flyer
+                          S('M18 32 Q34 34 46 42', 'bs', 2)]);
+def('gothic',      () => [P('M14 52 L14 26 Q30 8 46 26 L46 52 Z', 'lo'),
+                          P('M20 52 L20 30 Q30 18 40 30 L40 52 Z', 'bs'),    // the pointed window
+                          ...[0, 1].map(i => S(`M${26 + i * 8} 30 L${26 + i * 8} 52`, 'gh', 1.2)),
+                          S('M14 34 Q6 36 4 46', 'hi', 2.4)]);
+def('cathedral',   () => [P('M10 52 L10 30 L50 30 L50 52 Z', 'lo'),
+                          P('M22 30 L22 12 L30 6 L38 12 L38 30 Z', 'lo'),    // the tower
+                          S('M30 6 L30 0', 'hi', 1.8),
+                          P('M26 40 L34 40 L34 52 L26 52 Z', 'bs'),
+                          ...[16, 44].map(x => P(`M${x - 3} 34 L${x + 3} 34 L${x + 3} 44 L${x - 3} 44 Z`, 'gh'))]);
+def('chartres',    () => [P('M8 52 L8 28 L52 28 L52 52 Z', 'lo'),
+                          ...[0, 1].map(i => P(`M${14 + i * 26} 28 L${14 + i * 26} ${10 + i * 4} L${20 + i * 26} ${4 + i * 4} L${26 + i * 26} ${10 + i * 4} L${26 + i * 26} 28 Z`, 'lo')),
+                          C(30, 38, 8, 'bs'),                                // the rose, in the blue
+                          ...[0, 1, 2, 3].map(i => S(`M30 38 L${30 + 8 * Math.cos(i * Math.PI / 4)} ${38 + 8 * Math.sin(i * Math.PI / 4)}`, 'hi', 1.1))]);
+def('mont_saint_michel',()=>[wave('bs', 52, 4, 27),
+                          P('M12 50 Q18 30 30 24 Q42 30 48 50 Z', 'lo'),     // the rock
+                          P('M24 26 L36 26 L36 14 L30 8 L24 14 Z', 'hi'),    // the abbey
+                          S('M30 8 L30 2', 'hi', 1.6),
+                          ...[0, 1].map(i => S(`M${16 + i * 24} 46 Q30 ${42 + i * 2} ${44 - i * 24} 46`, 'gh', 1.2))]);
+def('mbanza_kongo',()=> [P('M4 52 L16 30 L44 30 L56 52 Z', 'bs'),            // the mountain
+                          P('M18 30 L42 30 L42 16 L18 16 Z', 'lo'),
+                          P('M26 16 L34 16 L34 6 L26 6 Z', 'lo'),
+                          S('M30 6 L30 1', 'hi', 1.6), S('M27 3 L33 3', 'hi', 1.6),
+                          ...[0, 1].map(i => S(`M${10 + i * 36} 50 L${20 + i * 20} 40`, 'gh', 1.4))]);
+
+def('monk',        () => [P('M20 52 L20 30 Q30 18 40 30 L40 52 Z', 'lo'),
+                          P('M22 30 Q30 20 38 30 L38 22 Q30 12 22 22 Z', 'bs'),   // the cowl
+                          C(30, 26, 4.4, 'gh'),
+                          S('M30 38 L30 46', 'hi', 1.6), S('M26 41 L34 41', 'hi', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

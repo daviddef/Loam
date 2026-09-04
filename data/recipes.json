@@ -93261,5 +93261,85 @@
     "why": "A field has to be come back to, so somebody has to stay. Everything else about a settled society follows from that one constraint — stores, ownership, inheritance and the year measured in seasons rather than in journeys.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Farmer"
+  },
+  {
+    "in": [
+      "buttress",
+      "arch"
+    ],
+    "out": "flying_buttress",
+    "why": "A rib vault pushes outward as well as down. Put a half-arch outside the wall to catch that push and walk it out to a pier, and the wall itself no longer has to be thick — which is the whole reason a Gothic wall can be window.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Flying_buttress"
+  },
+  {
+    "in": [
+      "flying_buttress",
+      "stained_glass"
+    ],
+    "out": "gothic",
+    "why": "Pointed arch, rib vault and flying buttress are each ordinary on their own. Together they take the load off the wall entirely, and a builder who no longer needs the wall spends it on glass.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gothic_architecture"
+  },
+  {
+    "in": [
+      "gothic",
+      "church"
+    ],
+    "out": "cathedral",
+    "why": "A cathedral is defined by holding a bishop's chair, not by its size — but a bishop's church is the one with the money and the reason to be the tallest thing for fifty miles, so the definition and the ambition arrive together.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cathedral"
+  },
+  {
+    "in": [
+      "cathedral",
+      "fire"
+    ],
+    "out": "chartres",
+    "why": "The 1194 fire left only the crypt, the towers and the west front. The rest went up in about twenty-five years — fast enough that the whole building is one design, which is why its 167 windows agree with each other.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chartres_Cathedral"
+  },
+  {
+    "in": [
+      "granite",
+      "tide"
+    ],
+    "out": "mont_saint_michel",
+    "why": "A leucogranite plug that resisted what eroded around it, standing 92 m out of a bay whose tide runs 14 m. That makes it defensible for free twice a day, which is why an abbey and then a fortress ended up on top of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
+  },
+  {
+    "in": [
+      "kingdom",
+      "mountain"
+    ],
+    "out": "mbanza_kongo",
+    "why": "A capital sited on a mountain where trade routes met, so it could tax what passed and see anyone coming. Its stone palace and churches went up under Afonso, and the kingdom outlasted four centuries of Portuguese contact before it was abolished in 1915.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/M'banza-Kongo"
+  },
+  {
+    "in": [
+      "belief",
+      "desert"
+    ],
+    "out": "monk",
+    "why": "The first Christian monks went into the Egyptian desert alone. Withdrawal was the point, but withdrawing together turned out to be more durable than withdrawing alone — a rule, a timetable and a shared roof are what let the practice outlive the practitioner.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Monk"
+  },
+  {
+    "in": [
+      "monk",
+      "granite"
+    ],
+    "out": "mont_saint_michel",
+    "why": "Benedictines built up the rock in stages from the eighth century, each new church raised on the crypts of the last because there is no flat ground. The abbey is stacked rather than laid out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
   }
 ]

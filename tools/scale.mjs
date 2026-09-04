@@ -718,6 +718,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 8b, 4 Sep — a person */
+          'monk',
           /* places batch 7b, 4 Sep — a person */
           'farmer',
           /* places batch 6b, 4 Sep. a person */
@@ -1013,6 +1015,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 8, 4 Sep. a single flyer, metres */
+          'flying_buttress',
           /* places batch 7, 4 Sep. a tank twelve metres long, and a wall panel */
           'great_bath', 'talud_tablero',
           /* places batch 4 — Europe, 4 Sep. a standing stone and a chamber roof, metres */
@@ -1124,6 +1128,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 8, 4 Sep. buildings, tens to a hundred metres */
+          'gothic', 'cathedral', 'chartres', 'mont_saint_michel',
           /* places batch 7, 4 Sep. a city of mounds, and a mound */
           'cahokia', 'earthwork',
           /* places batch 6b, 4 Sep. an institution, on the conceptual rack with the other societies */
@@ -1204,6 +1210,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 8, 4 Sep. a capital and its hinterland */
+          'mbanza_kongo',
           /* places batch 7, 4 Sep. 116 hectares of drained wetland */
           'kuk_swamp',
           /* places batch 4 — Europe, 4 Sep. 327 m deep with 287 km of galleries */

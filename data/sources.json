@@ -314,7 +314,14 @@
     "teotihuacan": "Teotihuacan",
     "earthwork": "Earthworks (archaeology)",
     "talud_tablero": "Talud-tablero",
-    "farmer": "Farmer"
+    "farmer": "Farmer",
+    "flying_buttress": "Flying buttress",
+    "gothic": "Gothic architecture",
+    "cathedral": "Cathedral",
+    "chartres": "Chartres Cathedral",
+    "mont_saint_michel": "Mont-Saint-Michel",
+    "mbanza_kongo": "M'banza-Kongo",
+    "monk": "Monk"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -748,6 +755,14 @@
     "pyramid+talud_tablero": "Teotihuacan",
     "plaster+stone": "Talud-tablero",
     "farmer+swamp": "Kuk Swamp",
-    "agriculture+village": "Farmer"
+    "agriculture+village": "Farmer",
+    "arch+buttress": "Flying buttress",
+    "flying_buttress+stained_glass": "Gothic architecture",
+    "church+gothic": "Cathedral",
+    "cathedral+fire": "Chartres Cathedral",
+    "granite+tide": "Mont-Saint-Michel",
+    "granite+monk": "Mont-Saint-Michel",
+    "kingdom+mountain": "M'banza-Kongo",
+    "belief+desert": "Monk"
   }
 }
