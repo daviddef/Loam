@@ -79,6 +79,15 @@ const EXPECT = [
   { when: e => tag(e, 'animal') && !tag(e, 'microbe'),
     verbs: ['wait', 'cut'],
     why: 'it decays, and it is butchered' },
+  /* blow and smother had no rule at all, so two of the eight verbs were
+   * unmeasured — 44 recipes existed and nothing was asking for any of them.
+   * The rule that is actually true of both is about air: a fire wants it and
+   * dies without it, and that is the same fact stated twice. Deliberately
+   * narrow. Inventing a broad rule to make the bill look thorough would be the
+   * opposite of what this table is for. */
+  { when: e => tag(e, 'fire'),
+    verbs: ['blow', 'smother'],
+    why: 'combustion is a supply of air — more of it burns hotter, none of it goes out' },
   { when: e => tag(e, 'cloth', 'craft') && !tag(e, 'ideas'),
     verbs: ['cut'],
     why: 'worked material is cut to size' },

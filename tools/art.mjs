@@ -43681,6 +43681,17 @@ def('leptis_magna',()=> [...[0, 1, 2, 3].map(i => P(`M${10 + i * 12} 44 L${16 + 
                           P('M2 44 Q18 30 34 40 Q48 48 58 42 L58 56 L2 56 Z', 'bs'),
                           ...granules('gh', 7, 313, [8, 46, 52, 54])]);
 
+/* blow and smother, batch 1 — the two verbs that had no expectation rule until
+   tonight. The ember is drawn glowing rather than flaming, because losing the
+   flame is exactly what makes it hotter.                                     */
+def('ember',       () => [...granules('lo', 9, 717, [14, 34, 46, 48]),
+                          ...[[22, 38], [32, 42], [40, 36]].map(([x, y]) => E(x, y, 6, 4.4, 'hi')),
+                          ...[0, 1, 2].map(i => S(`M${20 + i * 10} 30 Q${22 + i * 10} 24 ${20 + i * 10} 18`, 'gh', 1.1))]);
+def('blast',       () => [P('M4 22 L22 22 L22 38 L4 38 Z', 'lo'),            // the bellows
+                          P('M22 26 L34 28 L34 32 L22 34 Z', 'bs'),           // the nozzle
+                          ...[0, 1, 2].map(i => S(`M${36 + i * 5} ${26 + i * 2} L${48 + i * 3} ${24 + i * 4}`, 'hi', 2)),
+                          flame('hi', .55, 18)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

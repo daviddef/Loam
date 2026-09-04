@@ -475,6 +475,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* blow and smother batch 1, 5 Sep */
+          'ember',
           /* places batch 22, 4 Sep */
           'shingle',
           /* places batch 20, 4 Sep */
@@ -745,6 +747,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* blow and smother batch 1, 5 Sep */
+          'blast',
           /* places batch 27, 4 Sep */
           'fynbos',
           /* needs closure, 4 Sep */

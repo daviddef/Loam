@@ -407,7 +407,9 @@
     "persepolis": "Persepolis",
     "rock_cut_architecture": "Rock-cut architecture",
     "ajanta_caves": "Ajanta Caves",
-    "leptis_magna": "Leptis Magna"
+    "leptis_magna": "Leptis Magna",
+    "ember": "Ember",
+    "blast": "Blast furnace"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -954,6 +956,11 @@
     "achaemenid_empire+column": "Persepolis",
     "basalt+chisel": "Rock-cut architecture",
     "buddhism+rock_cut_architecture": "Ajanta Caves",
-    "emperor+harbour": "Leptis Magna"
+    "emperor+harbour": "Leptis Magna",
+    "fire|blow": "Ember",
+    "forge|blow": "Blast furnace",
+    "spark|blow": "Fire making",
+    "candle|smother": "Candle",
+    "kiln|blow": "Glass"
   }
 }
