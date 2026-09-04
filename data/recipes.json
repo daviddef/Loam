@@ -93722,5 +93722,35 @@
     "why": "Every exposed timber surface is coated in lime plaster, which is what makes it white and what makes it hard to burn. Eighty-three buildings survived the 1945 firebombing of the city around them.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Himeji_Castle"
+  },
+  {
+    "in": [
+      "geometry",
+      "water"
+    ],
+    "out": "surveying",
+    "why": "Water finds its own level, so a trough of it is a straight horizontal you can sight along. The Roman chorobates was exactly that: a bench with a water channel cut in the top. You cannot see a slope of one in three thousand, so it has to be measured.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Surveying"
+  },
+  {
+    "in": [
+      "aqueduct",
+      "surveying"
+    ],
+    "out": "pont_du_gard",
+    "why": "The whole 50 km aqueduct falls one metre in three thousand, and across this bridge it drops 2.5 cm in 456 m. Getting that wrong by a hand's breadth over that distance means the water stops. The blocks are laid dry and held by friction, and the stones left sticking out are the scaffold supports nobody bothered to trim.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pont_du_Gard"
+  },
+  {
+    "in": [
+      "buddhism",
+      "copper"
+    ],
+    "out": "potala",
+    "why": "At 3,700 m on a fault, walls three metres thick and five at the base are battered inward so their own weight resists the shake, and copper was poured into the foundations to tie them. The outside took three years; the inside took forty-five.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Potala_Palace"
   }
 ]

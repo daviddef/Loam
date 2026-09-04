@@ -43382,6 +43382,30 @@ def('himeji',      () => [P('M6 52 L54 52 L54 44 L6 44 Z', 'lo'),           // t
                           P('M24 17 L36 17 L36 8 L24 8 Z', 'hi'),
                           ...[0, 1].map(i => S(`M${26 + i * 8} 8 L${26 + i * 8} 4`, 'bs', 1.4))]);
 
+/* Places, batch 15 — an aqueduct and a palace, and the survey that made the
+   aqueduct possible. The Pont du Gard keeps its projecting scaffold stones,
+   which nobody ever trimmed off.                                            */
+def('surveying',   () => [P('M8 30 L52 30 L52 36 L8 36 Z', 'lo'),           // the chorobates bench
+                          P('M20 30 L40 30 L40 33 L20 33 Z', 'bs'),          // the water channel
+                          wave('hi', 32, 1.5, 9),
+                          ...[0, 1].map(i => S(`M${12 + i * 36} 36 L${12 + i * 36} 50`, 'lo', 2.2)),
+                          S('M52 33 L58 26', 'gh', 1.4)]);                   // the sight line
+def('pont_du_gard',()=> [...[0, 1, 2].map(i => {
+                            const y = [44, 30, 20][i], h = [12, 9, 6][i], n = [3, 5, 11][i];
+                            return [...Array(n)].map((_, j) => {
+                              const w = 52 / n, x = 4 + j * w;
+                              return S(`M${x + 1} ${y} A${w / 2 - 1} ${h / 2} 0 0 1 ${x + w - 1} ${y}`, i ? 'bs' : 'lo', i === 2 ? 1.4 : 2.2);
+                            });
+                          }).flat(),
+                          ...[0, 1, 2].map(i => P(`M4 ${[44, 30, 20][i]} L56 ${[44, 30, 20][i]} L56 ${[47, 33, 23][i]} L4 ${[47, 33, 23][i]} Z`, 'lo')),
+                          ...[[10, 38], [26, 38], [42, 38], [18, 26], [38, 26]].map(([x, y]) => P(`M${x} ${y} L${x + 4} ${y} L${x + 4} ${y + 2} L${x} ${y + 2} Z`, 'hi')),  // scaffold stones
+                          P('M4 50 L56 50 L56 54 L4 54 Z', 'gh')]);
+def('potala',      () => [P('M8 52 L14 20 L46 20 L52 52 Z', 'lo'),          // battered walls
+                          P('M20 20 L40 20 L38 8 L22 8 Z', 'bs'),
+                          ...[0, 1, 2, 3].map(i => P(`M${16 + i * 8} 30 L${21 + i * 8} 30 L${21 + i * 8} 40 L${16 + i * 8} 40 Z`, 'gh')),
+                          P('M22 8 L38 8 L38 5 L22 5 Z', 'hi'),
+                          S('M8 52 L52 52', 'bs', 2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

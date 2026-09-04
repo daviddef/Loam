@@ -727,6 +727,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 15, 4 Sep. a levelling bench */
+          'surveying',
           /* places batch 11, 4 Sep. a person */
           'ancestral_puebloan',
           /* verb outcomes batch 1, 4 Sep. a clamp */
@@ -1151,6 +1153,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 15, 4 Sep. a 274 m bridge and a 400 m palace */
+          'pont_du_gard', 'potala',
           /* places batch 14, 4 Sep. a 330 m tower, a castle complex, a plan */
           'eiffel_tower', 'himeji', 'maze',
           /* places batch 13, 4 Sep. a basilica and a 400 m terrace wall */

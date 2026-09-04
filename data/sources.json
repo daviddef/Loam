@@ -355,7 +355,10 @@
     "wrought_iron": "Wrought iron",
     "eiffel_tower": "Eiffel Tower",
     "maze": "Maze",
-    "himeji": "Himeji Castle"
+    "himeji": "Himeji Castle",
+    "pont_du_gard": "Pont du Gard",
+    "surveying": "Surveying",
+    "potala": "Potala Palace"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -838,6 +841,9 @@
     "hammer+iron": "Wrought iron",
     "rivet+wrought_iron": "Eiffel Tower",
     "gate+wall": "Maze",
-    "castle+plaster": "Himeji Castle"
+    "castle+plaster": "Himeji Castle",
+    "geometry+water": "Surveying",
+    "aqueduct+surveying": "Pont du Gard",
+    "buddhism+copper": "Potala Palace"
   }
 }
