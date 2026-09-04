@@ -45033,6 +45033,41 @@ def('blue_john_crow',()=>[P('M2 56 L14 22 L24 34 L34 14 L46 30 L58 56 Z', 'lo'),
                              P(`M${x} ${y} Q${x + 8} ${y - 6} ${x + 5} ${y + 2} Z`, 'hi'),
                              S(`M${x} ${y - 2} L${x} ${y + 4}`, 'ik', 1)]).flat()]);   // the swallowtail
 
+/* Places, batch 39 — 5 Sep. Kiyomizu-dera is drawn as the pillars under a
+   level floor on an unaltered slope; Nikkō as the pagoda with its pillar
+   hanging clear of the ground.                                             */
+def('kiyomizu_dera',()=>[P('M2 20 L20 20 L58 56 L2 56 Z', 'lo'),               // the hill, left alone
+                          P('M18 26 L54 26 L54 34 L18 34 Z', 'bs'),
+                          P('M16 26 L36 14 L56 26 Z', 'lo'),
+                          ...[24, 32, 40, 48].map(x => S(`M${x} 34 L${x} ${40 + (x - 18) * 0.44}`, 'ik', 2)),
+                          ...[0, 1, 2].map(i => S(`M8 ${40 + i * 4} L12 ${44 + i * 4}`, 'hi', 1.4))]);   // Otowa
+def('nikko_toshogu',()=>[...[0, 1, 2, 3, 4].map(i =>
+                            [P(`M${20 + i} ${50 - i * 9} L${40 - i} ${50 - i * 9} L${40 - i} ${44 - i * 9} L${20 + i} ${44 - i * 9} Z`, 'lo'),
+                             S(`M${17 + i} ${44 - i * 9} L${43 - i} ${44 - i * 9}`, 'bs', 2)]).flat(),
+                          S('M30 4 L30 46', 'ik', 2.4),                        // the pillar
+                          S('M28 4 L32 4', 'ik', 1.6),
+                          C(30, 50, 2, 'gh'),                                  // hanging clear of the floor
+                          S('M4 56 L56 56', 'ik', 1.2)]);
+def('karakorum',    () => [P('M4 40 L56 40 L56 54 L4 54 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => P(`M${8 + i * 13} 40 L${8 + i * 13} 34 L${16 + i * 13} 34 L${16 + i * 13} 40 Z`, 'lo')),
+                          S('M30 40 L30 20', 'ik', 3),                          // the silver tree
+                          ...[0, 1, 2, 3].map(i => S(`M30 22 Q${22 + i * 5} ${14 + (i % 2) * 4} ${18 + i * 8} ${20 + (i % 2) * 3}`, 'hi', 1.6)),
+                          ...[0, 1, 2, 3].map(i => S(`M${18 + i * 8} ${20 + (i % 2) * 3} L${18 + i * 8} ${26 + (i % 2) * 3}`, 'gh', 1.2))]);
+def('jiuzhaigou',   () => [...[0, 1, 2, 3].map(i =>
+                            [P(`M${4 + i * 2} ${50 - i * 11} L${56 - i * 2} ${50 - i * 11} L${56 - i * 2} ${42 - i * 11} L${4 + i * 2} ${42 - i * 11} Z`, i % 2 ? 'gh' : 'bs'),
+                             S(`M${4 + i * 2} ${42 - i * 11} L${56 - i * 2} ${42 - i * 11}`, 'lo', 3)]).flat(),
+                          ...[0, 1, 2].map(i => [16, 30, 44].map(x => S(`M${x} ${42 - i * 11} L${x} ${50 - i * 11}`, 'hi', 1))).flat()]);
+def('vigan',        () => [...[0, 1, 2].map(i =>
+                            [P(`M${5 + i * 18} 54 L${5 + i * 18} 38 L${19 + i * 18} 38 L${19 + i * 18} 54 Z`, 'lo'),
+                             P(`M${5 + i * 18} 38 L${5 + i * 18} 22 L${19 + i * 18} 22 L${19 + i * 18} 38 Z`, 'bs'),
+                             P(`M${3 + i * 18} 22 L${12 + i * 18} 12 L${21 + i * 18} 22 Z`, 'lo'),
+                             ...[0, 1].map(j => P(`M${7.5 + i * 18 + j * 6} 26 L${12 + i * 18 + j * 6} 26 L${12 + i * 18 + j * 6} 34 L${7.5 + i * 18 + j * 6} 34 Z`, 'hi'))]).flat()]);
+def('komodo',       () => [P('M2 40 Q16 26 30 32 Q44 38 58 28 L58 56 L2 56 Z', 'lo'),
+                          wave('bs', 54, 1.6, 56),
+                          P('M8 48 Q18 42 30 44 Q42 46 50 42 L52 46 Q42 50 30 48 Q18 46 10 52 Z', 'ik'),   // the lizard
+                          S('M50 42 L56 40', 'ik', 2), C(54, 40, 1, 'gh'),
+                          ...[16, 26, 38].map(x => S(`M${x} 47 L${x - 2} 53`, 'ik', 1.6))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

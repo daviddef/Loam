@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 39, 5 Sep. a temple veranda, a pagoda, a house */
+    'kiyomizu_dera', 'nikko_toshogu', 'vigan',
     /* places batch 38, 5 Sep. a stela 10.6 m, a tower 45 m */
     'quirigua', 'trinidad_cuba',
     /* places batch 37, 5 Sep. a redwood 120 m tall, a wall 6 m high */
@@ -1283,6 +1285,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 39, 5 Sep. a walled capital */
+    'karakorum',
     /* places batch 38, 5 Sep. a hilltop city of 707 ha, a harbour town of 86 ha */
     'xochicalco', 'willemstad',
     /* places batch 37, 5 Sep. a stone town */
@@ -1556,6 +1560,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 39, 5 Sep. 72,000 ha of valley, 1,733 km2 of islands */
+    'jiuzhaigou', 'komodo',
     /* places batch 38, 5 Sep. 495 km2 of mountains */
     'blue_john_crow',
     /* places batch 36, 5 Sep. 26 km of canyon */
