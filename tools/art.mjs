@@ -43187,6 +43187,33 @@ def('turf',        () => [P('M8 26 L52 26 L52 48 L8 48 Z', 'lo'),
                           ...[0, 1, 2, 3, 4].map(i => stalk('hi', 12 + i * 9, 26, 16)),
                           ...granules('bs', 6, 606, [12, 34, 48, 46])]);
 
+/* Places, batch 7 — Melanesia, Southern Asia and the Americas. Kuk is drawn as
+   ditches rather than as a field, because the ditches are the invention.     */
+def('kuk_swamp',   () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'bs'),
+                          ...[0, 1, 2].map(i => P(`M${10 + i * 16} 20 L${14 + i * 16} 20 L${14 + i * 16} 54 L${10 + i * 16} 54 Z`, 'lo')),
+                          S('M4 30 L56 30', 'lo', 3),
+                          ...[0, 1, 2].map(i => leaf('hi', 20 + i * 16, 42, .7))]);
+def('great_bath',  () => [P('M8 22 L52 22 L52 50 L8 50 Z', 'lo'),
+                          P('M14 28 L46 28 L46 46 L14 46 Z', 'bs'),
+                          wave('hi', 40, 3, 15),
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 2} ${30 + i * 3} L${44 - i * 2} ${30 + i * 3}`, 'gh', 1.1))]);
+def('cahokia',     () => [P('M6 52 L18 26 L42 26 L54 52 Z', 'lo'),           // Monks Mound, flat-topped
+                          P('M18 26 L42 26 L42 22 L18 22 Z', 'hi'),
+                          ...[0, 1].map(i => P(`M${4 + i * 44} 52 L${10 + i * 44} 42 L${16 + i * 44} 52 Z`, 'bs')),
+                          S('M6 54 L54 54', 'gh', 1.4)]);
+def('earthwork',   () => [mound('lo', 50, 24, 20),
+                          S('M10 44 Q30 38 50 44', 'gh', 1.3),
+                          S('M14 36 Q30 32 46 36', 'gh', 1.3),
+                          P('M20 20 L28 20 L28 28 L20 28 Z', 'bs')]);        // the basket
+def('talud_tablero',()=> [P('M10 52 L50 52 L44 38 L16 38 Z', 'lo'),          // the talud, sloping
+                          P('M14 38 L46 38 L46 22 L14 22 Z', 'bs'),          // the tablero, framed flat
+                          P('M18 26 L42 26 L42 34 L18 34 Z', 'hi'),
+                          S('M14 22 L46 22', 'lo', 2)]);
+
+def('farmer',      () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 20, 7, 'lo'),
+                          E(30, 14, 11, 3.4, 'bs'),                          // the hat
+                          S('M46 10 L46 52', 'hi', 2.2), S('M40 14 L52 14', 'hi', 2)]);  // the hoe
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

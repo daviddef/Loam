@@ -93181,5 +93181,85 @@
     "why": "Grass roots bind the top few centimetres of soil into a mat you can cut and stack. A turf wall a metre thick holds heat better than stone, which is why Iceland and Newfoundland built in it and Rome did not.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Sod_house"
+  },
+  {
+    "in": [
+      "farmer",
+      "swamp"
+    ],
+    "out": "kuk_swamp",
+    "why": "Taro wants wet ground but drowns in standing water, so it has to be drained rather than irrigated. Three grades of ditch — field, feeder and disposal — turned a highland swamp into fields about nine thousand years ago, by people who had worked farming out for themselves with no contact with anyone else who had.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kuk_Swamp"
+  },
+  {
+    "in": [
+      "brick",
+      "sewer"
+    ],
+    "out": "mohenjo_daro",
+    "why": "Standard fired brick, laid on a grid, with drains along the streets and a well for every three houses. It is a plumbing city before it is anything else, and the plumbing is the same in every quarter — which suggests somebody was enforcing a standard.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mohenjo-daro"
+  },
+  {
+    "in": [
+      "bitumen",
+      "mohenjo_daro"
+    ],
+    "out": "great_bath",
+    "why": "A brick tank waterproofed with bitumen, twelve metres by seven, with steps down at both ends. It holds water, which brick alone does not, and that is the entire technical claim; what it was for is guesswork.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Great_Bath"
+  },
+  {
+    "in": [
+      "soil",
+      "basket"
+    ],
+    "out": "earthwork",
+    "why": "No quarry, no kiln, no metal. Fifty-five million cubic feet of earth moved at Cahokia in baskets on people's backs, which makes the scale a measure of how many people agreed to do it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Earthworks_(archaeology)"
+  },
+  {
+    "in": [
+      "earthwork",
+      "maize"
+    ],
+    "out": "cahokia",
+    "why": "Maize arrived on the Mississippi floodplain and the population went from under 3,000 to over 10,000 in fifty years. Monks Mound went up in that window: 622,000 cubic metres of earth, and the city was empty again by 1400.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cahokia"
+  },
+  {
+    "in": [
+      "pyramid",
+      "talud_tablero"
+    ],
+    "out": "teotihuacan",
+    "why": "Two kilometres of avenue, a pyramid of over a million cubic metres, and apartment compounds for a hundred thousand people. Around 550 CE the palaces along the avenue were burned and the ordinary houses were not, which points inward rather than at an invader.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Teotihuacan"
+  },
+  {
+    "in": [
+      "stone",
+      "plaster"
+    ],
+    "out": "talud_tablero",
+    "why": "A sloping batter carries the load and a framed panel above it carries the decoration, so the wall is structurally sound and flat where it needs to be painted. Finding it outside Teotihuacan is how influence gets traced.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Talud-tablero"
+  },
+  {
+    "in": [
+      "agriculture",
+      "village"
+    ],
+    "out": "farmer",
+    "why": "A field has to be come back to, so somebody has to stay. Everything else about a settled society follows from that one constraint — stores, ownership, inheritance and the year measured in seasons rather than in journeys.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Farmer"
   }
 ]

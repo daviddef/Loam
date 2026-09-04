@@ -306,7 +306,15 @@
     "tilework": "Zellij",
     "mason": "Stonemasonry",
     "guild": "Guild",
-    "turf": "Sod house"
+    "turf": "Sod house",
+    "kuk_swamp": "Kuk Swamp",
+    "mohenjo_daro": "Mohenjo-daro",
+    "great_bath": "Great Bath, Mohenjo-daro",
+    "cahokia": "Cahokia",
+    "teotihuacan": "Teotihuacan",
+    "earthwork": "Earthworks (archaeology)",
+    "talud_tablero": "Talud-tablero",
+    "farmer": "Farmer"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -732,6 +740,14 @@
     "adaptation+wasp": "Bee",
     "domestication+junglefowl": "Red junglefowl",
     "chordate+evolution": "Vertebrate",
-    "berry+vine": "Grape"
+    "berry+vine": "Grape",
+    "brick+sewer": "Mohenjo-daro",
+    "bitumen+mohenjo_daro": "Great Bath, Mohenjo-daro",
+    "basket+soil": "Earthworks (archaeology)",
+    "earthwork+maize": "Cahokia",
+    "pyramid+talud_tablero": "Teotihuacan",
+    "plaster+stone": "Talud-tablero",
+    "farmer+swamp": "Kuk Swamp",
+    "agriculture+village": "Farmer"
   }
 }
