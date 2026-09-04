@@ -94432,5 +94432,45 @@
     "why": "The cortex is grey because it is where the cell bodies and their dendrites are, and dendrites are where a neuron does its adding up. Folding it is how a large sheet of that fits inside a skull.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Cerebral_cortex"
+  },
+  {
+    "in": [
+      "spine",
+      "nerve"
+    ],
+    "out": "spinal_cord",
+    "why": "The cord runs inside the vertebral column, which is armour that also has to bend. Each vertebra lets a pair of nerves out through a gap at its own level, so the segmenting of the backbone and the segmenting of the body are the same fact.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spinal_cord"
+  },
+  {
+    "in": [
+      "neuron",
+      "membrane"
+    ],
+    "out": "axon",
+    "why": "An axon is one process of the cell drawn out very long, and everything about it is membrane: the signal is a wave of ions crossing that membrane, regenerated at every point, which is why it arrives at the far end as strong as it left.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Axon"
+  },
+  {
+    "in": [
+      "cytoskeleton",
+      "protein"
+    ],
+    "out": "microtubule",
+    "why": "Tubulin dimers stack into a hollow tube that grows at one end and shrinks at the other. That instability is the function, not a flaw — it is how a cell searches space, and how a chromosome gets found and pulled.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Microtubule"
+  },
+  {
+    "in": [
+      "bladder_wrack",
+      "sea"
+    ],
+    "out": "kelp",
+    "why": "Both are brown algae holding themselves up with gas floats rather than with wood, because water carries the weight. Kelp does it at a scale that makes a forest, and grows toward the light at up to half a metre a day.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kelp"
   }
 ]
