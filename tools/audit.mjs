@@ -174,9 +174,15 @@ function namesIn(text) {
   for (const sentence of text.split(/(?<=[.!?])\s+/)) {
     const words = sentence.split(/\s+/).slice(1);
     for (const w of words) {
-      const clean = w.replace(/[^A-Za-z'-]/g, '');
+      /* Keep letters with diacritics. Stripping to [A-Za-z] turned Köhler into
+       * "Khler" and then reported it as a name the article never mentions —
+       * while the article says Köhler throughout. The corpus is full of names
+       * that carry marks (Lenković, Hōryū-ji, Utzon, Sacsayhuamán) and every
+       * one of them was generating a false alarm. \p{L} keeps the letter and
+       * drops the punctuation, which is what was wanted all along. */
+      const clean = w.replace(/[^\p{L}'-]/gu, '');
       if (clean.length < 3) continue;
-      if (!/^[A-Z][a-z]/.test(clean)) continue;
+      if (!/^\p{Lu}\p{Ll}/u.test(clean)) continue;
       out.add(clean);
     }
   }
