@@ -1052,6 +1052,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 26, 4 Sep */
+          'galleon',
           /* places batch 23, 4 Sep */
           'onion_dome',
           /* places batch 22, 4 Sep */
@@ -1301,6 +1303,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 26, 4 Sep */
+          'old_havana',
           /* places batch 18, 4 Sep */
           'bagan',
           /* places batch 16, 4 Sep. a 12 km circuit and a city cluster */
