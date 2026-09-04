@@ -469,6 +469,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* places batch 20, 4 Sep */
+          'pietra_dura',
           /* needs closure, 4 Sep */
           'balance', 'quenching_trough',
           /* places batch 19, 4 Sep */
@@ -1165,6 +1167,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 20, 4 Sep */
+          'taj_mahal',
           /* places batch 19, 4 Sep */
           'caral', 'concentric_castle', 'krak_des_chevaliers',
           /* places batch 18, 4 Sep */

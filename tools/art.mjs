@@ -43505,6 +43505,22 @@ def('drying',      () => [P('M8 30 L52 30 L52 36 L8 36 Z', 'lo'),
                           C(46, 14, 7, 'hi'),
                           ...[0, 1, 2].map(i => S(`M${40 + i * 5} ${6 + i} L${42 + i * 5} ${10 + i}`, 'gh', 1.1))]);
 
+/* Places, batch 20 — Southern Asia. The Taj is drawn with its minarets leaning
+   out, at the angle the builders gave them, because that lean is the fact.  */
+def('pietra_dura', () => [P('M8 14 L52 14 L52 50 L8 50 Z', 'lo'),
+                          ...[[22, 26], [38, 26], [30, 38]].map(([x, y]) =>
+                            P(`M${x} ${y - 6} Q${x + 6} ${y} ${x} ${y + 6} Q${x - 6} ${y} ${x} ${y - 6} Z`, 'hi')),
+                          S('M30 32 L30 46', 'bs', 1.4),
+                          ...[[22, 26], [38, 26]].map(([x, y]) => S(`M${x} ${y + 5} Q30 ${y + 10} 30 ${y + 14}`, 'bs', 1.1))]);
+def('taj_mahal',   () => [P('M12 50 L48 50 L48 34 L12 34 Z', 'lo'),
+                          P('M18 34 A12 12 0 0 1 42 34 Z', 'lo'),
+                          S('M30 20 L30 14', 'hi', 1.6),
+                          // the minarets lean outward, which is the whole point
+                          S('M8 50 L11 20', 'bs', 2.6), S('M52 50 L49 20', 'bs', 2.6),
+                          ...[[11, 20], [49, 20]].map(([x, y]) => C(x, y - 2, 2, 'hi')),
+                          ...[0, 1].map(i => P(`M${20 + i * 14} 50 L${20 + i * 14} 40 Q${24 + i * 14} 36 ${28 + i * 14} 40 L${28 + i * 14} 50 Z`, 'bs')),
+                          P('M6 52 L54 52 L54 55 L6 55 Z', 'gh')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

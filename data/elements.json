@@ -25454,7 +25454,6 @@
    "earth"
   ],
   "fact": "Not one mineral but a rock: sodalite-group lazurite for the blue, pyrite for the gold flecks.",
-  "terminal": true,
   "soleRoute": true
  },
  {
@@ -41107,7 +41106,6 @@
    "year": 1526,
    "note": "Babur defeats the Lodi sultan at the First Battle of Panipat, founding the Mughal Empire."
   },
-  "terminal": true,
   "soleRoute": true
  },
  {
@@ -85038,5 +85036,28 @@
    "craft"
   ],
   "fact": "Taking water out slowly enough that what is left does not warp. It is the longest step in papermaking, in timber, in brick and in pasta, and the one that is always rushed."
+ },
+ {
+  "id": "pietra_dura",
+  "name": "Pietra Dura",
+  "emoji": "💠",
+  "shelf": "workshop",
+  "tags": [
+   "craft",
+   "art"
+  ],
+  "fact": "Stone cut to a drawn shape and set flush into stone, so the picture is level with the surface and has no paint in it. It cannot fade, because nothing about it is a pigment."
+ },
+ {
+  "id": "taj_mahal",
+  "name": "Taj Mahal",
+  "emoji": "🕌",
+  "shelf": "workshop",
+  "tags": [
+   "build",
+   "history",
+   "belief"
+  ],
+  "fact": "Its four minarets lean very slightly outward, so that if one ever falls it falls away from the tomb. Twenty-eight kinds of stone are inlaid into the marble, from Afghanistan, Tibet, Sri Lanka and China."
  }
 ]
