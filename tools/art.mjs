@@ -45138,6 +45138,41 @@ def('tower_of_london',()=>[S('M30 30 m -26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 
                           P('M22 38 L38 38 L38 22 L22 22 Z', 'bs'),             // the keep, first and still there
                           ...[[22, 22], [38, 22], [22, 38], [38, 38]].map(([x, y]) => C(x, y, 2.4, 'lo'))]);
 
+/* Places, batch 42 — 5 Sep. Dambulla is drawn as the overhang with the drip
+   ledge cut into it, because that groove is why the paintings survive.      */
+def('khajuraho',    () => [P('M18 56 L20 30 L26 12 L30 6 L34 12 L40 30 L42 56 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${19 + i * 0.6} ${50 - i * 8} L${41 - i * 0.6} ${50 - i * 8}`, 'ik', 1)),   // block courses, no mortar
+                          ...[0, 1, 2, 3].map(i => [C(24, 46 - i * 8, 1.6, 'hi'), C(36, 46 - i * 8, 1.6, 'hi')]).flat(),
+                          P('M6 56 L8 40 L12 30 L16 40 L18 56 Z', 'bs'),
+                          P('M42 56 L44 40 L48 30 L52 40 L54 56 Z', 'bs')]);
+def('lothal',       () => [P('M6 16 L54 16 L54 48 L6 48 Z', 'gh'),
+                          S('M6 16 L54 16', 'lo', 3), S('M6 48 L54 48', 'lo', 3),
+                          S('M6 16 L6 48', 'lo', 3), S('M54 16 L54 48', 'lo', 3),
+                          P('M26 48 L34 48 L34 54 L26 54 Z', 'ik'),               // the sluice
+                          P('M20 4 L40 4 L40 14 L20 14 Z', 'bs'),
+                          ...[0, 1, 2, 3].map(i => [0, 1].map(j => S(`M${23 + i * 4} ${6 + j * 4} L${25 + i * 4} ${6 + j * 4}`, 'gh', 0.9))).flat()]);   // the warehouse blocks
+def('dambulla',     () => [P('M2 2 L58 2 L58 22 Q34 30 12 26 L2 24 Z', 'lo'),
+                          S('M14 25 Q34 29 56 21', 'ik', 1.6),                    // the drip ledge
+                          ...[0, 1, 2].map(i => S(`M${20 + i * 12} 30 L${19 + i * 12} 36`, 'gh', 1)),
+                          P('M8 56 L8 30 L52 30 L52 56 Z', 'gh'),
+                          ...[16, 30, 44].map(x => [E(x, 44, 5, 7, 'bs'), C(x, 36, 3.4, 'bs')]).flat(),
+                          ...granules('hi', 8, 2100, [10, 31, 50, 36])]);         // the painting on the ceiling
+def('pashupatinath',()=>[P('M20 54 L20 34 L40 34 L40 54 Z', 'lo'),
+                          P('M14 34 L30 24 L46 34 Z', 'hi'), P('M18 24 L30 14 L42 24 Z', 'hi'),
+                          S('M30 14 L30 8', 'ik', 1.6),
+                          ...[0, 1, 2, 3, 4, 5].map(i => P(`M${4 + i * 9} 54 L${4 + i * 9} 46 L${10 + i * 9} 46 L${10 + i * 9} 54 Z`, 'gh')),
+                          wave('bs', 58, 1.6, 56)]);
+def('gunung_mulu',  () => [P('M2 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M8 20 Q30 12 52 20 Q54 42 30 46 Q6 42 8 20 Z', 'gh'),   // the chamber
+                          ...granules('ik', 20, 3, [12, 16, 50, 26]),               // three million of them
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 12} 20 Q${20 + i * 12} 10 ${26 + i * 12} 6`, 'bs', 1.2)),
+                          S('M8 46 L52 46', 'ik', 1.2)]);
+def('bosra',        () => [P('M4 50 A26 26 0 0 1 56 50 Z', 'ik'),                   // the fortress round it
+                          P('M10 50 A20 20 0 0 1 50 50 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${14 + i * 2} 50 A${16 - i * 2} ${16 - i * 2} 0 0 1 ${46 - i * 2} 50`, 'gh', 1.2)),
+                          ...[6, 18, 30, 42, 54].map(x => P(`M${x - 3} 50 L${x - 3} 42 L${x + 3} 42 L${x + 3} 50 Z`, 'ik')),   // the eight towers
+                          S('M4 50 L56 50', 'bs', 1.6)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
