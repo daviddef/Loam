@@ -13,7 +13,17 @@ const labels   = load('labels.json');
 const errors = [];
 const warns  = [];
 const err  = (m) => errors.push(m);
-const warn = (m) => warns.push(m);
+/* A warning with a `kind` can be summarised rather than enumerated. The dead-end
+ * line was printing 1,542 individual warnings, which is not a report — it is a
+ * place real warnings go to hide. The rule now is: under the threshold, list
+ * them; over it, say how many and how to see them.
+ *
+ * Marking them all `terminal: true` would have been the other way to quiet this
+ * line, and it would have been a lie. A leaf is not an intended endpoint; it is
+ * an element nothing has been built from YET, and 20% leaves in a graph this
+ * size is ordinary. The number is worth watching, not silencing. */
+const warn = (m, kind) => warns.push(kind ? { kind, m } : { m });
+const SUMMARISE_OVER = 25;
 
 // ---- label and search vocabulary ------------------------------------------
 // labels.json has claimed since it was written that "an entry whose target id
@@ -34,7 +44,7 @@ for (const e of elements) {
   if (!e.emoji) err(`${e.id}: missing emoji`);
   if (!e.fact)  err(`${e.id}: missing fact`);
   if (!['workshop', 'folklore'].includes(e.shelf)) err(`${e.id}: bad shelf "${e.shelf}"`);
-  if (e.fact && e.fact.length > 110) warn(`${e.id}: fact is ${e.fact.length} chars (aim <110 for one card line)`);
+  if (e.fact && e.fact.length > 110) warn(`${e.id}: fact is ${e.fact.length} chars (aim <110 for one card line)`, 'longfact');
   // Aliases are display-only. If one ever becomes an id, a sourced recipe would
   // silently change meaning in that locale.
   for (const [loc, label] of Object.entries(e.aliases ?? {})) {
@@ -82,7 +92,7 @@ for (const [i, r] of recipes.entries()) {
   // The proposition is that the claims are checkable. No source, no ship.
   if (!r.src) err(`${at}: missing src — every claim must be checkable`);
   else if (!/^https:\/\//.test(r.src)) err(`${at}: src must be an https URL`);
-  if (r.why && r.why.length > 260) warn(`${at}: why is ${r.why.length} chars (aim <260 to fit a card)`);
+  if (r.why && r.why.length > 260) warn(`${at}: why is ${r.why.length} chars (aim <260 to fit a card)`, 'longwhy');
   if (!byId.has(r.out)) err(`${at}: output "${r.out}" has no element entry`);
   for (const i2 of r.in) if (!byId.has(i2)) err(`${at}: input "${i2}" has no element entry`);
 
@@ -230,12 +240,12 @@ const routeCount = new Map();
 for (const r of recipes) routeCount.set(r.out, (routeCount.get(r.out) ?? 0) + 1);
 for (const e of elements) {
   if (!e.starter && (routeCount.get(e.id) ?? 0) < 2 && !e.soleRoute)
-    warn(`${e.id}: only one route in — add a second true mechanism, or mark soleRoute:true if it genuinely has one`);
+    warn(`${e.id}: only one route in — add a second true mechanism, or mark soleRoute:true if it genuinely has one`, 'thin');
 }
 
 for (const e of elements) {
   if (!produced.has(e.id) && !e.starter) warn(`${e.id}: never produced by any recipe`);
-  if (!consumed.has(e.id) && !e.terminal) warn(`${e.id}: accidental dead end — used in nothing and not marked terminal`);
+  if (!consumed.has(e.id) && !e.terminal) warn(`${e.id}: used in nothing and not marked terminal`, 'leaf');
   // A flag that was true when it was written and quietly stopped being true.
   // Any batch that adds recipes can falsify someone else's `terminal` or
   // `soleRoute` without touching their entry, and nobody notices, because the
@@ -266,8 +276,39 @@ console.log(`routes    ${(recipes.length / elements.length).toFixed(2)} per elem
 console.log(`gestures  ${sigs.size} distinct   merges ${recipes.filter((r) => !r.verb).length}  processes ${recipes.filter((r) => r.verb).length}`);
 
 if (warns.length) {
+  const byKind = new Map();
+  const loose = [];
+  for (const w of warns) {
+    if (w.kind) { if (!byKind.has(w.kind)) byKind.set(w.kind, []); byKind.get(w.kind).push(w.m); }
+    else loose.push(w.m);
+  }
   console.log(`\n${warns.length} warning(s):`);
-  for (const w of warns) console.log(`  · ${w}`);
+  const SAYS = {
+    leaf: ['nothing is made from it, and it is not marked terminal',
+           'A leaf is not a fault. It is something nothing has been built from yet, and'
+           + ' 20% leaves in a graph this size is ordinary. Marking them all terminal would'
+           + ' quiet the line by lying: terminal means an INTENDED endpoint.'],
+    longfact: ['codex fact longer than one card line',
+           'The card has one line for it. Over about 110 characters it wraps or'
+           + ' clips, which is a layout fact rather than a content one.'],
+    longwhy: ['teaching text longer than a card holds',
+           'The payoff card shows the why at the moment of discovery. Over about'
+           + ' 260 characters the end of the sentence is not read.'],
+    thin: ['only one route in',
+           'A single route is a hard block downstream: get stuck and there is no other way'
+           + ' round. Worth reducing, and worth watching as a ratio rather than a list.'],
+  };
+  for (const [kind, list] of byKind) {
+    if (list.length > SUMMARISE_OVER && !process.argv.includes(`--${kind}`)) {
+      const [what, why] = SAYS[kind] ?? [kind, ''];
+      console.log(`  · ${list.length} \u00d7 ${what}`);
+      if (why) for (const line of why.match(/.{1,74}(\s|$)/g)) console.log(`      ${line.trim()}`);
+      console.log(`      node tools/validate.mjs --${kind}   to list them`);
+    } else {
+      for (const m of list) console.log(`  · ${m}`);
+    }
+  }
+  for (const m of loose) console.log(`  · ${m}`);
 }
 if (errors.length) {
   console.log(`\n${errors.length} ERROR(S):`);
