@@ -364,7 +364,9 @@
     "grog": "Grog (clay)",
     "conchoidal_flake": "Conchoidal fracture",
     "silica_sand": "Quartz",
-    "crushed_ice": "Ice"
+    "crushed_ice": "Ice",
+    "tower_karst": "Karst",
+    "ha_long_bay": "Ha Long Bay"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -858,6 +860,8 @@
     "quartz|crush": "Quartz",
     "ice|crush": "Ice",
     "barley|ferment": "Beer",
-    "wine|wait": "Vinegar"
+    "wine|wait": "Vinegar",
+    "karst+monsoon": "Karst",
+    "sea+tower_karst": "Ha Long Bay"
   }
 }

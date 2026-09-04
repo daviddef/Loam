@@ -1157,6 +1157,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */
+          'tower_karst',
           /* places batch 15, 4 Sep. a 274 m bridge and a 400 m palace */
           'pont_du_gard', 'potala',
           /* places batch 14, 4 Sep. a 330 m tower, a castle complex, a plan */
@@ -1314,6 +1316,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* places batch 17, 4 Sep — a karst tower, and a bay of 1,600 of them */
+          'ha_long_bay',
           /* places batch 5, 4 Sep. 1,300 km of line over 50 square kilometres */
           'nazca_lines',
           /* places batch 3 — Oceania, 4 Sep. an aquaculture system spread over a lava flow */

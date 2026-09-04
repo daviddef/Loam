@@ -93832,5 +93832,25 @@
     "why": "Acetobacter is airborne and everywhere, and it oxidises ethanol to acetic acid as long as it can reach oxygen. An open bottle turns; a sealed one does not. Vinegar is not spoiled wine so much as the next step wine takes if you let it.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Vinegar"
+  },
+  {
+    "in": [
+      "karst",
+      "monsoon"
+    ],
+    "out": "tower_karst",
+    "why": "Rain that is warm and relentless dissolves limestone downward far faster than it wears it sideways, so the valleys deepen and the ridges between them are left standing as separate towers. Cooler climates get caves and sinkholes; the tropics get towers.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Karst"
+  },
+  {
+    "in": [
+      "tower_karst",
+      "sea"
+    ],
+    "out": "ha_long_bay",
+    "why": "The towers formed on land over about twenty million years and the sea rose into them. It then cut a notch into every tower at exactly its own working level, so the whole bay is undercut at one height — which is how you read a drowned landscape.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay"
   }
 ]

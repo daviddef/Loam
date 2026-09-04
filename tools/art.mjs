@@ -43436,6 +43436,19 @@ def('crushed_ice', () => [...[[20, 34], [34, 30], [26, 44], [40, 42], [30, 22]].
                             P(`M${x} ${y} L${x + 9} ${y - 3} L${x + 7} ${y + 7} L${x - 2} ${y + 6} Z`, 'lo')),
                           ...[[22, 36], [36, 32], [28, 46]].map(([x, y]) => S(`M${x} ${y} L${x + 5} ${y + 3}`, 'hi', 1.2))]);
 
+/* Places, batch 17 — South-eastern Asia. Ha Long is drawn with the sea notch
+   cut at one level across every tower, because that single line is the
+   evidence that the landscape was drowned rather than built in the sea.     */
+def('tower_karst', () => [...[[12, 20], [30, 12], [46, 24]].map(([x, y]) =>
+                            P(`M${x - 7} 52 Q${x - 5} ${y + 6} ${x} ${y} Q${x + 5} ${y + 6} ${x + 7} 52 Z`, 'lo')),
+                          ...[[12, 20], [46, 24]].map(([x, y]) => S(`M${x - 4} ${y + 16} Q${x} ${y + 12} ${x + 4} ${y + 16}`, 'gh', 1.1)),
+                          S('M4 52 L56 52', 'bs', 1.6)]);
+def('ha_long_bay', () => [...[[10, 22], [26, 14], [42, 26], [54, 20]].map(([x, y]) =>
+                            P(`M${x - 7} 44 Q${x - 5} ${y + 6} ${x} ${y} Q${x + 5} ${y + 6} ${x + 7} 44 Z`, 'lo')),
+                          // the notch, at one level across every tower
+                          ...[10, 26, 42, 54].map(x => S(`M${x - 8} 40 L${x + 8} 40`, 'gh', 2)),
+                          wave('bs', 46, 3, 27), wave('bs', 52, 3, 26)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
