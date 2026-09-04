@@ -6,7 +6,8 @@
     "of is what it is MADE of, and it should name elements this corpus already has, so a landmark joins the graph rather than hanging off it. For a natural wonder, of is the rock and the process.",
     "site answers 'why here' — the fact about the ground that explains the building. A fortress on a bare hill in cannon range of its harbour is not the same claim as a fortress somewhere in Croatia.",
     "wanted is the global checklist and it is the whole point of the file. Coverage measured against what we happen to have is not coverage; it is a total. Measured against a world list, a corpus of European castles reports itself as one.",
-    "Regions are the UN M49 subregions, unchanged, so the denominator is somebody else's and cannot be quietly redrawn to flatter the numerator."
+    "Regions are the UN M49 subregions, unchanged, so the denominator is somebody else's and cannot be quietly redrawn to flatter the numerator.",
+    "A place whose element name differs from its checklist line names that line in `checklist`. The claim is explicit because a matcher loose enough to pair 'Kuk Swamp' with 'Kuk Early Agricultural Site' would also pair things that are not the same place, and a coverage number is only worth having if it never counts wrongly."
   ],
   "$src": {
     "regions": "https://unstats.un.org/unsd/methodology/m49/",
@@ -421,7 +422,8 @@
         "basalt"
       ],
       "site": "a highland plateau of scoriaceous basalt soft enough to cut and sound enough to stand once the trenches are open",
-      "srcTitle": "Rock-Hewn Churches, Lalibela"
+      "srcTitle": "Rock-Hewn Churches, Lalibela",
+      "checklist": "Lalibela rock-hewn churches"
     },
     "great_zimbabwe": {
       "region": "east_africa",
@@ -573,7 +575,8 @@
         "basalt"
       ],
       "site": "Rano Raraku, one quarry of compressed volcanic ash that supplied all but 53 of more than 900 figures; 394 are still there unfinished",
-      "srcTitle": "Moai"
+      "srcTitle": "Moai",
+      "checklist": "Rapa Nui moai"
     },
     "nan_madol": {
       "region": "micronesia",
@@ -710,7 +713,8 @@
         "plaster"
       ],
       "site": "a platform 3 m above the marketplace, which is what keeps the Bani flood out of a building made of earth",
-      "srcTitle": "Great Mosque of Djenné"
+      "srcTitle": "Great Mosque of Djenné",
+      "checklist": "Great Mosque of Djenne"
     },
     "citadelle_laferriere": {
       "region": "caribbean",
@@ -736,7 +740,8 @@
         "brick"
       ],
       "site": "the square at the centre of Samarkand, where proclamations were read and executions held, on the Silk Road",
-      "srcTitle": "Registan"
+      "srcTitle": "Registan",
+      "checklist": "Registan Samarkand"
     },
     "kuk_swamp": {
       "region": "melanesia",
@@ -750,7 +755,8 @@
         "taro"
       ],
       "site": "a highland wetland at the edge of taro's range, drained by three grades of ditch; 116 hectares protected, UNESCO 2008",
-      "srcTitle": "Kuk Swamp"
+      "srcTitle": "Kuk Swamp",
+      "checklist": "Kuk Early Agricultural Site"
     },
     "mohenjo_daro": {
       "region": "south_asia",
@@ -776,7 +782,8 @@
         "timber"
       ],
       "site": "the Mississippi floodplain where maize would grow; about 120 earthworks, Monks Mound 30 m high and 622,000 cubic metres",
-      "srcTitle": "Cahokia"
+      "srcTitle": "Cahokia",
+      "checklist": "Cahokia Mounds"
     },
     "teotihuacan": {
       "region": "central_america",
@@ -878,7 +885,8 @@
         "timber"
       ],
       "site": "the Nara basin; over 180 national treasures on one temple site, and the oldest standing wooden buildings in the world",
-      "srcTitle": "Hōryū-ji"
+      "srcTitle": "Hōryū-ji",
+      "checklist": "Horyu-ji"
     },
     "giants_causeway": {
       "region": "north_europe",
@@ -1339,7 +1347,8 @@
       "Colossus of Rhodes — monument",
       "Statue of Zeus at Olympia — monument",
       "Velebit — natural",
-      "Walls of Dubrovnik — fortification"
+      "Walls of Dubrovnik — fortification",
+      "Senj — settlement"
     ],
     "east_europe": [
       "Saint Basil's Cathedral — worship",

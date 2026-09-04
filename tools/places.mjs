@@ -85,13 +85,26 @@ const wanted = Object.entries(P.wanted).flatMap(([reg, list]) =>
  * display name matches it, OR when a places entry claims it by name. Matching
  * on the display name as well as the id is what stops a rename from silently
  * re-opening a gap that was closed months ago. */
+const norm2 = norm;   // used by the claim map above, kept for clarity
 const nameIndex = new Map();
 for (const e of elements) {
   nameIndex.set(e.id, e);
   const k = norm(e.name);
   if (!nameIndex.has(k)) nameIndex.set(k, e);
 }
+/* A place entry may name the checklist line it satisfies. Kuk Swamp and "Kuk
+ * Early Agricultural Site" are the same place under two names, and no amount
+ * of fuzzy matching should be trusted to know that — a matcher loose enough to
+ * pair them would also pair things that are not the same place, and a coverage
+ * number is only worth having if it never counts something twice or wrongly.
+ * So the claim is explicit, and it must name a line that actually exists. */
+const claims = new Map();
+for (const [id, e] of entries) if (e.checklist) claims.set(norm(e.checklist), id);
+const unclaimedClaims = [];
+
 for (const w of wanted) {
+  const claimed = claims.get(w.slug);
+  if (claimed) { w.el = byId.get(claimed) || null; w.entry = P.places[claimed]; continue; }
   w.el = nameIndex.get(w.slug) || null;
   if (!w.el) {
     // "Great Mosque of Djenne" also answers to "djenne_mosque" and the like:
@@ -270,6 +283,15 @@ if (dupes.length) {
   fatal += dupes.length;
   console.log(`\n  \u2717 ${dupes.length} checklist place(s) listed twice in the same region:`);
   for (const d of dupes) console.log(`      ${d}`);
+}
+{
+  const lines = new Set(wanted.map(w => w.slug));
+  for (const [id, e] of entries) if (e.checklist && !lines.has(norm(e.checklist))) unclaimedClaims.push({ id, c: e.checklist });
+}
+if (unclaimedClaims.length) {
+  fatal += unclaimedClaims.length;
+  console.log(`\n  \u2717 ${unclaimedClaims.length} place(s) claim a checklist line that is not on the list:`);
+  for (const u of unclaimedClaims) console.log(`      ${u.id.padEnd(24)} claims "${u.c}"`);
 }
 if (ghosts.length) {
   fatal += ghosts.length;
