@@ -43654,6 +43654,18 @@ def('robben_island',()=>[wave('bs', 46, 3, 27),
                           ...[0, 1, 2].map(i => S(`M${26 + i * 4} 30 L${26 + i * 4} 42`, 'gh', 1.2)),
                           wave('bs', 52, 3, 26)]);
 
+def('muqarnas',    () => [P('M6 10 L54 10 L54 16 L6 16 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(row =>
+                            [...Array(5 - row)].map((_, i) => {
+                              const w = 10, x = 8 + row * 5 + i * w, y = 16 + row * 9;
+                              return P(`M${x} ${y} Q${x + w / 2} ${y + 9} ${x + w} ${y} Z`, (row + i) % 2 ? 'hi' : 'bs');
+                            })).flat()]);
+def('alhambra',    () => [P('M6 52 L54 52 L54 28 L6 28 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 15} 52 L${12 + i * 15} 38 Q${16 + i * 15} 32 ${20 + i * 15} 38 L${20 + i * 15} 52 Z`, 'bs')),
+                          ...[0, 1].map(i => P(`M${8 + i * 40} 28 L${16 + i * 40} 28 L${16 + i * 40} 14 L${8 + i * 40} 14 Z`, 'lo')),
+                          P('M22 26 L38 26 L38 20 L22 20 Z', 'hi'),
+                          S('M6 56 L54 56', 'hi', 2.4)]);                     // the water channel
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
