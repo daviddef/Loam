@@ -44,6 +44,7 @@ const labels    = read('data/labels.json');
 const scale     = read('data/scale.json');
 const art       = read('data/art.json');
 const sources   = read('data/sources.json');
+const INERT_N   = Object.keys(read('data/inert.json').inert).length;
 
 // ---------------------------------------------------------------- counting
 
@@ -184,7 +185,7 @@ const MECHANISMS = [
     asks: 'For every element, do we know what each verb does to it — and at what temperature?',
     how: `The other checks look at what exists. This one looks at what is <em>owed</em>. An expectation table encodes physical rules — everything organic ferments or rots, everything solid can be crushed, anything with water in it freezes — and the tool multiplies those rules across the corpus to produce a bill. <code>--bands</code> then asks a harder question of heat alone: a temperature band is what lets one element heat to several different products, and a heat recipe without one is claiming there is only one answer.`,
     found: `It immediately exposed a fault class nothing else could see: recipes where the verb is real and the output is real but the arrow between them is <em>association</em>, not derivation. Heating gold does not make a crown; it makes molten gold, and a crown is what a smith does next. A bell is cast from bronze, not heated into being.`,
-    now: `${n(procs.length)} verb outcomes written over ${n(elements.length)} elements. ${n(banded)} heat recipes state a temperature.` },
+    now: `${n(procs.length)} verb outcomes written over ${n(elements.length)} elements. ${n(banded)} heat recipes state a temperature. ${INERT_N} gestures are established as doing nothing, with the reason recorded.` },
 
   { id: 'places', file: 'tools/places.mjs', part: 'completeness',
     asks: 'Is this a place, or a category with a proper noun stuck on it — and is the corpus of places actually global?',
@@ -733,6 +734,16 @@ footer{border-top:1px solid var(--rule);margin-top:3rem;padding:2rem 0 0;
     should be. Some check structure rather than wording. And some are about craft — whether
     you can see a thing, tell it from its neighbour, and find it when you look.</p>
   ${mechHTML}
+  <p class="pull"><b>Recording that nothing happens.</b> A broad expectation rule
+    bills for cutting hay, and cutting hay gives you shorter hay. Until that was
+    written down it was indistinguishable from unwritten work, which made the
+    backlog dishonest in the one direction that matters — it looked like there
+    was more to do than there is. <code>data/inert.json</code> records where a
+    verb genuinely does nothing and why, and the checker fails on any gesture
+    listed there that also has a recipe. On its first run it caught five, and
+    every one of the five recipes was right: churning is exactly crushing milk,
+    and rain really does hydrolyse the feldspar out of granite.</p>
+
   <p class="pull"><b>The honest reading.</b> A mechanism that reports 100% is reporting
     on its own checklist, not on the world. <code>universe</code> says a subject is
     represented, never that it is represented well; <code>derivation</code> says the

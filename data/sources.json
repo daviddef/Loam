@@ -326,7 +326,13 @@
     "amphitheatre": "Amphitheatre",
     "diocletians_palace": "Diocletian's Palace",
     "dubrovnik_walls": "Walls of Dubrovnik",
-    "pula_arena": "Pula Arena"
+    "pula_arena": "Pula Arena",
+    "dextrin": "Dextrin",
+    "silage": "Silage",
+    "dried_chilli": "Chili pepper",
+    "crystallised_honey": "Honey",
+    "crumb": "Bread",
+    "lager_yeast": "Saccharomyces pastorianus"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -773,6 +779,15 @@
     "circle+theatre": "Amphitheatre",
     "emperor+limestone": "Diocletian's Palace",
     "city_wall+republic": "Walls of Dubrovnik",
-    "amphitheatre+limestone": "Pula Arena"
+    "amphitheatre+limestone": "Pula Arena",
+    "flour|heat@160": "Dextrin",
+    "meadow|cut": "Hay",
+    "cucumber|ferment": "Pickled cucumber",
+    "honey|wait": "Honey",
+    "bread|cut": "Bread",
+    "chilli|wait": "Chili pepper",
+    "hay|ferment": "Silage",
+    "grass|cut": "Meadow",
+    "yeast|chill": "Saccharomyces pastorianus"
   }
 }

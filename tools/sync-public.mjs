@@ -29,6 +29,7 @@ const PUBLIC = [
   'data/verbs.json',
   'data/families.json',
   'data/places.json',
+  'data/inert.json',
   'data/bedrock.json',
   'data/taxonomy.json',
   'data/needs.json',

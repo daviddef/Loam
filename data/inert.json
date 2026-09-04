@@ -1,0 +1,42 @@
+{
+  "$comment": "Where a verb genuinely does nothing to an element, and why. The expectation table in tools/verbs.mjs is deliberately broad — a plant can be cut, a liquid freezes — and broad rules generate a bill that includes things like cutting hay, which gives you shorter hay. Those are not gaps. They are facts, and until they were written down they were indistinguishable from unwritten work, which made the backlog number dishonest in the one direction that matters: it looked like there was more to do than there is.",
+  "$rules": [
+    "A key is verb|element_id. The value is why nothing happens, in one sentence, stated as a physical fact rather than as an excuse.",
+    "An entry here and a recipe for the same gesture is a contradiction and tools/verbs.mjs fails on it. Something either changes or it does not.",
+    "'Nothing interesting happens' is not a reason. 'The material is already at that state' or 'the change is quantitative, not qualitative' are.",
+    "This file makes the backlog smaller by establishing facts, never by lowering the bar. If a gesture is merely unresearched it does not belong here."
+  ],
+  "inert": {
+    "cut|hay": "Hay is already cut grass. Cutting it again makes it shorter, which is a difference of degree.",
+    "cut|straw": "Straw is the cut stalk left after threshing. Cutting it gives chaff, which is the same material in smaller pieces.",
+    "chill|ice": "Ice is already the frozen phase. Taking it colder changes its temperature and not what it is.",
+    "chill|snow": "Snow is water that has already frozen; further cooling is a temperature change, not a phase change.",
+    "heat|steam": "Steam is already water past its boiling point. More heat superheats it, which raises the temperature without changing the phase.",
+    "heat|fire": "Fire is the reaction, not a material that can be put into one.",
+    "heat|lava": "Lava is rock already above its melting point.",
+    "crush|flour": "Flour is ground grain. Milling it again gives finer flour, which is a grade.",
+    "crush|dust": "Dust is the terminal grain size in this corpus; below it the drawing language changes to molecules.",
+    "crush|ash": "Ash is what is left after combustion has already broken the structure down.",
+    "crush|water": "A liquid cannot be crushed. Pressure changes its volume by a fraction of a per cent and nothing else.",
+    "crush|oil": "A liquid cannot be crushed.",
+    "cut|water": "A liquid cannot be cut; it closes behind the blade.",
+    "cut|smoke": "A gas cannot be cut.",
+    "cut|steam": "A gas cannot be cut.",
+    "ferment|salt": "Salt is what stops fermentation. Nothing in it is food for a microbe.",
+    "ferment|sand": "There is no carbohydrate in quartz for anything to eat.",
+    "ferment|stone": "There is nothing organic in it.",
+    "ferment|glass": "There is nothing organic in it.",
+    "ferment|ash": "Combustion has already consumed everything a microbe could use.",
+    "wait|gold": "Gold is unreactive: it is the metal that does not tarnish, which is most of why it was valued.",
+    "wait|platinum": "Even more unreactive than gold, and for the same reason.",
+    "wait|diamond": "Diamond is metastable but the conversion to graphite takes longer than the age of the universe at room temperature."
+  },
+  "$corrections": {
+    "$note": "Five entries were removed on the first run of the contradiction check, because the recipes they contradicted were right and the inert claims were wrong. Recording what they were, because each is a way of being confidently wrong about matter and the next author will be tempted by the same ones.",
+    "chill|permafrost": "chilling frozen ground drives frost heave — ice lenses grow at the freezing front",
+    "heat|plasma": "plasma fuses, and at high enough temperature nucleons come apart; both are real recipes",
+    "crush|sand": "grinding sand past its size class gives silt, which behaves differently enough to be its own material",
+    "crush|milk": "milk is a colloid, and churning is exactly crushing it — that is how butter is made",
+    "wait|granite": "rain hydrolyses feldspar out of granite and leaves the quartz behind as sand"
+  }
+}

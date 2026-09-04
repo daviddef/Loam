@@ -41,6 +41,10 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const J = f => JSON.parse(readFileSync(join(root, 'data', f), 'utf8'));
 const elements = J('elements.json');
 const recipes = J('recipes.json');
+/* Where a verb genuinely does nothing, recorded as a fact rather than left
+ * looking like unwritten work. See data/inert.json — the expectation table
+ * below is broad on purpose, and a broad rule bills for cutting hay. */
+const INERT = J('inert.json').inert;
 const byId = Object.fromEntries(elements.map(e => [e.id, e]));
 const VERBS = ['wait', 'crush', 'chill', 'heat', 'cut', 'ferment', 'blow', 'smother'];
 
@@ -94,15 +98,36 @@ for (const r of recipes) {
 }
 
 const wanted = [];               // {id, verb, why}
+const inert = [];                // established as doing nothing, with a reason
+
+/* An entry in inert.json for a gesture that also has a recipe is a flat
+ * contradiction: something either changes or it does not. Fail on it rather
+ * than silently preferring one. */
+const contradictions = Object.keys(INERT).filter(k => {
+  const [v, id] = k.split('|');
+  return done.has(`${v}\0${id}`);
+});
+const unknownInert = Object.keys(INERT).filter(k => !byId[k.split('|')[1]]);
+/* An inert fact for a gesture the table never bills for is true but idle: it
+ * shrinks nothing and still has to be maintained. Worth knowing about, not
+ * worth failing over — the table may widen later and pick it up. */
+let unusedInert = [];
 for (const e of elements) {
   if (e.starter) continue;
   const want = new Set();
   for (const rule of EXPECT) if (rule.when(e)) for (const v of rule.verbs) want.add(`${v}\0${rule.why}`);
   for (const w of want) {
     const [v, why] = w.split('\0');
+    const key = `${v}|${e.id}`;
+    if (INERT[key]) { inert.push({ id: e.id, verb: v, reason: INERT[key] }); continue; }
     if (!done.has(`${v}\0${e.id}`)) wanted.push({ id: e.id, verb: v, why });
   }
 }
+
+unusedInert = Object.keys(INERT).filter(k => {
+  const [v, id] = k.split('|');
+  return byId[id] && !done.has(`${v}\0${id}`) && !inert.some(x => x.verb === v && x.id === id);
+});
 
 const arg = process.argv[2];
 const bar = (n, of, w = 20) => '#'.repeat(Math.round(w * n / (of || 1))).padEnd(w, '·');
@@ -182,6 +207,17 @@ const haveAny = new Set([...done].map(k => k.split('\0')[1]));
 console.log(`\n  ${done.size} verb outcomes written, over ${elements.length} elements`);
 console.log(`  ${haveAny.size} elements have at least one; ${elements.length - haveAny.size} have none`);
 console.log(`  ${wanted.length} outcomes are DUE by the expectation table above`);
+console.log(`  ${inert.length} established as inert — the verb does nothing, and data/inert.json says why`);
+if (unusedInert.length)
+  console.log(`  ${unusedInert.length} inert fact(s) nothing was asking for — the expectation table never billed them`);
+if (contradictions.length) {
+  console.log(`\n  \u2717 ${contradictions.length} gesture(s) recorded as inert that also have a recipe:`);
+  for (const k of contradictions.slice(0, 8)) console.log(`      ${k}`);
+}
+if (unknownInert.length) {
+  console.log(`\n  \u2717 ${unknownInert.length} inert fact(s) naming an element that does not exist:`);
+  for (const k of unknownInert.slice(0, 8)) console.log(`      ${k}`);
+}
 console.log(`  ${bandsBy.size} elements heat to something at a stated temperature; ${heatNoBand.size} without one`);
 console.log(`\n  node tools/verbs.mjs --gaps    what to author next`);
 console.log(`  node tools/verbs.mjs --bands   where heat is pretending to have one answer\n`);

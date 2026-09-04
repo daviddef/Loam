@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* verb outcomes batch 1, 4 Sep. a short starch chain */
+          'dextrin',
           /* the universe closed, 4 Sep */
           'valence', 'isomer',
           /* head nouns, 4 Sep — R2, the umbrella pass */
@@ -131,6 +133,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* verb outcomes batch 1, 4 Sep. a yeast cell, like the other yeasts */
+          'lager_yeast',
           'culture_biology', 'stain',
           /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
           'variola', 'sars_cov_2', 'coronavirus', 'ebola_virus', 'marburg_virus', 'lassa_virus', 'nipah_virus', 'hantavirus', 'dengue_virus', 'zika_virus', 'chikungunya_virus', 'hepatitis_b', 'hepatitis_c', 'herpes_simplex', 'varicella_zoster', 'rotavirus', 'mycobacterium_leprae', 'borrelia_burgdorferi', 'shigella', 'candida_albicans', 'aspergillus_fumigatus', 'cryptococcus_neoformans', 'canine_distemper_virus', 'feline_leukaemia_virus',
@@ -461,6 +465,10 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* verb outcomes batch 1, 4 Sep. a jar */
+          'crystallised_honey',
+          /* verb outcomes batch 1, 4 Sep. a pod and a crumb */
+          'dried_chilli', 'crumb',
           /* places batch 6c, 4 Sep — a cut block of sod */
           'turf',
           /* places batch 6, 4 Sep. a tile */
@@ -718,6 +726,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* verb outcomes batch 1, 4 Sep. a clamp */
+          'silage',
           /* places batch 9, 4 Sep. a person */
           'emperor',
           /* places batch 8b, 4 Sep — a person */

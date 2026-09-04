@@ -43274,6 +43274,32 @@ def('pula_arena',  () => [ring('lo', 30, 30, 23, 5),                          //
                           E(30, 30, 11, 8, 'hi'),
                           ...[0, 1, 2, 3].map(i => P(`M${28 + 21 * Math.cos(i * Math.PI / 2)} ${26 + 21 * Math.sin(i * Math.PI / 2)} L${32 + 21 * Math.cos(i * Math.PI / 2)} ${26 + 21 * Math.sin(i * Math.PI / 2)} L${32 + 21 * Math.cos(i * Math.PI / 2)} ${34 + 21 * Math.sin(i * Math.PI / 2)} L${28 + 21 * Math.cos(i * Math.PI / 2)} ${34 + 21 * Math.sin(i * Math.PI / 2)} Z`, 'gh'))]);
 
+/* Verb outcomes, batch 1 — the first real dent in the 8,046 the verb matrix
+   says are owed. Each is drawn as what the verb LEFT, not as what went in.  */
+def('dextrin',     () => {
+  // A starch chain cut short: the backbone helper returns { pts, shape }, and
+  // the ends are drawn open because that is what the break leaves behind.
+  const { pts, shape } = backbone('ik', 4, 30, 34);
+  return [shape,
+          ...pts.filter((_, i) => i % 2 === 0).map(([x, y]) => C(x, y, 3.4, 'lo')),
+          S(`M${pts[0][0] - 7} ${pts[0][1] + 4} L${pts[0][0]} ${pts[0][1]}`, 'gh', 1.6),
+          S(`M${pts.at(-1)[0]} ${pts.at(-1)[1]} L${pts.at(-1)[0] + 7} ${pts.at(-1)[1] + 4}`, 'gh', 1.6)];
+});
+def('lager_yeast', () => [...[[22, 26], [36, 30], [28, 40]].map(([x, y]) => E(x, y, 8, 6, 'lo')),
+                          ...[[22, 26], [36, 30], [28, 40]].map(([x, y]) => C(x + 3, y - 2, 2.4, 'hi')),
+                          S('M10 50 L50 50', 'bs', 2)]);                     // and it settles
+def('silage',      () => [P('M8 50 Q8 24 30 20 Q52 24 52 50 Z', 'bs'),       // the sealed clamp
+                          ...[0, 1, 2, 3].map(i => stalk('lo', 16 + i * 9, 48, 30)),
+                          S('M6 22 Q30 14 54 22', 'hi', 2.6)]);
+def('dried_chilli',()=> [P('M28 10 Q22 24 24 38 Q26 50 32 50 Q40 46 38 32 Q36 18 32 10 Z', 'lo'),
+                          S('M30 10 L30 4', 'bs', 2.2),
+                          ...[0, 1, 2].map(i => S(`M${26 + i * 2} ${20 + i * 9} Q${32 + i * 2} ${22 + i * 9} ${34 + i * 2} ${18 + i * 9}`, 'gh', 1.2))]);
+def('crystallised_honey',()=>[vessel('bs', 20, 48),
+                          P('M15 28 L45 28 L44 46 Q30 50 16 46 Z', 'lo'),
+                          ...granules('hi', 12, 313, [18, 30, 42, 44])]);
+def('crumb',       () => [...granules('lo', 14, 808, [12, 24, 48, 46]),
+                          ...[[22, 30], [38, 38], [30, 44]].map(([x, y]) => E(x, y, 5, 4, 'hi'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
