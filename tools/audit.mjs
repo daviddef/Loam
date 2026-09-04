@@ -58,8 +58,7 @@ async function articleText(title) {
    * unsupported. Pulling the wikitext alongside the prose puts the infobox
    * back in scope. It is noisier, and that only ever costs the check a catch —
    * never a false alarm, which is the direction that matters. */
-  const url = `${API}?action=query&prop=extracts|revisions&explaintext=1&redirects=1&format=json` +
-              `&rvprop=content&rvslots=main&formatversion=2` +
+  const url = `${API}?action=query&prop=extracts&explaintext=1&redirects=1&format=json` +
               `&titles=${encodeURIComponent(title)}`;
   for (let attempt = 0; attempt < 3; attempt++) {
     if (attempt) await sleep(2500 * attempt);
@@ -69,8 +68,7 @@ async function articleText(title) {
       if (!res.ok) break;
       const j = await res.json();
       const page = Object.values(j?.query?.pages || {})[0];
-      const wiki = page?.revisions?.[0]?.slots?.main?.content || '';
-      const text = page && page.extract ? page.extract + '\n\n' + wiki : null;
+      const text = page && page.extract ? page.extract : null;
       cache.set(title, text);
       if (text) writeDisk(title, text);
       await sleep(700);
@@ -383,9 +381,20 @@ for (const r of subject) {
     }
   }
 
+  /* Anything still unsupported gets one more look, in the infobox. */
+  let missing2 = missing, strayNames2 = strayNames;
+  if (missing.length || strayNames.length) {
+    const wiki = await articleWikitext(title);
+    if (wiki) {
+      const wl = dashes(wiki.toLowerCase());
+      missing2 = missing.filter(x => !articleHas(wiki, x));
+      strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
+    }
+  }
+
   checked.push(r);
-  if (missing.length || strayTerms.length || strayNames.length || strayAbsolute) {
-    unsupported.push({ r, title, missing, strayTerms, strayNames, strayAbsolute, total: nums.length });
+  if (missing2.length || strayTerms.length || strayNames2.length || strayAbsolute) {
+    unsupported.push({ r, title, missing: missing2, strayTerms, strayNames: strayNames2, strayAbsolute, total: nums.length });
   }
 }
 
