@@ -93922,5 +93922,35 @@
     "why": "The Hospitallers built it out to a full concentric plan with a steeply sloping glacis that defeats a battering ram and stiffens the wall against earthquakes. It was never taken by force: Baibars sent in a forged letter from the Grand Master telling the garrison to give up, and they did.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Krak_des_Chevaliers"
+  },
+  {
+    "in": [
+      "beam",
+      "weight"
+    ],
+    "out": "balance",
+    "why": "A beam on a pivot with a known mass on one side does not measure weight at all — it compares two of them. Gravity cancels out of both arms, so the reading is the same wherever you take it, which is why trade ran on balances for four thousand years.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Weighing_scale"
+  },
+  {
+    "in": [
+      "anvil",
+      "water"
+    ],
+    "out": "quenching_trough",
+    "why": "Steel cooled slowly gives its carbon time to move and comes out soft. Dropped into water it cannot, and the structure locks mid-transformation as martensite: hard, and brittle enough to shatter until heat is put back in to temper it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Quenching"
+  },
+  {
+    "in": [
+      "felt",
+      "sun"
+    ],
+    "out": "drying",
+    "why": "A wet sheet pressed against felt gives up most of its water to the felt and the rest to the air. Do it too fast and the sheet cockles as the edges shrink before the middle, which is why drying is the step that takes the time.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Papermaking"
   }
 ]

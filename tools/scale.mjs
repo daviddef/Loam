@@ -469,6 +469,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* needs closure, 4 Sep */
+          'balance', 'quenching_trough',
           /* places batch 19, 4 Sep */
           'shicra',
           /* verb outcomes batch 2, 4 Sep. a struck flake, centimetres */
@@ -733,6 +735,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* needs closure, 4 Sep */
+          'drying',
           /* places batch 15, 4 Sep. a levelling bench */
           'surveying',
           /* places batch 11, 4 Sep. a person */

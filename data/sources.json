@@ -373,7 +373,10 @@
     "shicra": "Caral",
     "caral": "Caral",
     "concentric_castle": "Concentric castle",
-    "krak_des_chevaliers": "Krak des Chevaliers"
+    "krak_des_chevaliers": "Krak des Chevaliers",
+    "balance": "Weighing scale",
+    "quenching_trough": "Quenching",
+    "drying": "Papermaking"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -876,6 +879,9 @@
     "basket+reed": "Caral",
     "pyramid+shicra": "Caral",
     "castle+siege": "Concentric castle",
-    "concentric_castle+knight": "Krak des Chevaliers"
+    "concentric_castle+knight": "Krak des Chevaliers",
+    "beam+weight": "Weighing scale",
+    "anvil+water": "Quenching",
+    "felt+sun": "Papermaking"
   }
 }

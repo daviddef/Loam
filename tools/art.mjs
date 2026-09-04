@@ -43488,6 +43488,23 @@ def('krak_des_chevaliers',()=>[P('M6 52 L14 30 L46 30 L54 52 Z', 'lo'),      // 
                           ...[0, 1, 2].map(i => C(21 + i * 12, 6, 2, 'hi')),
                           S('M6 52 L54 52', 'gh', 1.6)]);
 
+/* The last three components any needs list was still missing. */
+def('balance',     () => [S('M30 12 L30 24', 'lo', 2.2),
+                          S('M10 24 L50 24', 'lo', 2.6),
+                          ...[0, 1].map(i => S(`M${10 + i * 40} 24 L${10 + i * 40} 34`, 'gh', 1.2)),
+                          ...[0, 1].map(i => P(`M${2 + i * 40} 34 L${18 + i * 40} 34 L${15 + i * 40} 42 L${5 + i * 40} 42 Z`, i ? 'bs' : 'lo')),
+                          P('M24 12 L36 12 L36 8 L24 8 Z', 'hi'),
+                          C(10, 38, 2.4, 'hi')]);
+def('quenching_trough',()=>[P('M8 32 L52 32 L48 50 L12 50 Z', 'lo'),
+                          wave('bs', 40, 3, 17),
+                          P('M26 8 L34 8 L34 34 L26 34 Z', 'hi'),            // the hot bar going in
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} ${34 + i} Q${26 + i * 6} ${28 + i} ${24 + i * 6} ${22 + i}`, 'gh', 1.2))]);
+def('drying',      () => [P('M8 30 L52 30 L52 36 L8 36 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 15} 36 Q${16 + i * 15} 50 ${20 + i * 15} 36 Z`, 'bs')),
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 15} 44 L${16 + i * 15} 52`, 'gh', 1)),
+                          C(46, 14, 7, 'hi'),
+                          ...[0, 1, 2].map(i => S(`M${40 + i * 5} ${6 + i} L${42 + i * 5} ${10 + i}`, 'gh', 1.1))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
