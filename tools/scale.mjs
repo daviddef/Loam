@@ -1267,6 +1267,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 27, 5 Sep. a tomb valley, a sacred grove of 75 ha, a pyramid 45 m, a span 1,280 m */
+    'valley_of_the_kings', 'osun_osogbo', 'calakmul', 'golden_gate_bridge',
     /* places batch 26, 5 Sep. an Andean city on its own walls */
     'cusco',
     /* places batch 25, 5 Sep. a caravan city and a coral town */
@@ -1516,6 +1518,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 27, 5 Sep. a desert lake, a park of 181,414 ha */
+    'lake_turkana', 'torres_del_paine',
     /* places batch 26, 5 Sep. 150 km of cliff, 7,800 km2 of park, a delta of 15,000 */
     'bandiagara', 'virunga', 'okavango_delta',
     /* places batch 25, 5 Sep. 20 km2 of adobe */

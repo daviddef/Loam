@@ -44597,6 +44597,42 @@ def('cusco',        () => [P('M4 30 L56 30 L56 56 L4 56 Z', 'lo'),
                           P('M12 30 L20 30 L20 16 L12 16 Z', 'gh'), P('M34 30 L46 30 L46 12 L34 12 Z', 'gh'),
                           S('M10 14 L24 14', 'bs', 2), S('M32 10 L48 10', 'bs', 2)]);       // and what was built on them
 
+/* Places, batch 27 — 5 Sep. The Valley of the Kings is drawn as tombs cut down
+   under a natural pyramid, because hidden-under-a-pyramid-shaped-peak is the
+   whole idea; Torres del Paine as an intrusion with its cover taken off.    */
+def('valley_of_the_kings',()=>[P('M2 56 L20 18 L38 56 Z', 'lo'),               // Al-Qurn, pyramid-shaped
+                          P('M2 34 L58 34 L58 56 L2 56 Z', 'gh'),
+                          ...[[10, 40], [26, 44], [44, 40], [50, 48]].map(([x, y]) =>
+                            [S(`M${x} 34 L${x} ${y}`, 'ik', 1.4),
+                             P(`M${x - 4} ${y} L${x + 4} ${y} L${x + 4} ${y + 5} L${x - 4} ${y + 5} Z`, 'bs')]).flat(),
+                          ...[0, 1, 2].map(i => S(`M${6 + i * 20} 30 L${16 + i * 20} 30`, 'hi', 1))]);   // the shale, swelling
+def('osun_osogbo',  () => [...[10, 26, 46].map(x => [S(`M${x} 56 L${x} 30`, 'ik', 2.4), C(x, 22, 9, 'lo')]).flat(),
+                          P('M20 56 L20 38 Q26 30 32 38 L32 56 Z', 'bs'),      // a shrine, rebuilt as sculpture
+                          C(26, 34, 3, 'hi'), S('M22 44 L30 44', 'hi', 1.4),
+                          wave('gh', 54, 1.6, 56)]);
+def('lake_turkana', () => [P('M14 4 Q24 20 20 36 Q16 52 26 56 L38 56 Q30 48 34 34 Q38 18 30 4 Z', 'gh'),
+                          ...granules('lo', 20, 244, [2, 6, 58, 54]),
+                          P('M6 44 Q10 40 14 44 L13 50 L7 50 Z', 'hi'),        // the skull in the sediment
+                          C(9, 43, 1.2, 'ik'), C(12, 43, 1.2, 'ik'),
+                          ...[0, 1, 2].map(i => S(`M44 ${28 + i * 8} L54 ${28 + i * 8}`, 'ik', 1))]);
+def('golden_gate_bridge',()=>[...[16, 44].map(x => [S(`M${x} 54 L${x} 8`, 'lo', 3),
+                                                    S(`M${x - 5} 16 L${x + 5} 16`, 'lo', 2),
+                                                    S(`M${x - 5} 26 L${x + 5} 26`, 'lo', 2)]).flat(),
+                          S('M2 22 Q16 8 16 8 Q30 34 44 8 Q44 8 58 22', 'lo', 2.4),
+                          S('M2 34 L58 34', 'lo', 2.4),
+                          ...[0, 1, 2, 3, 4, 5, 6].map(i => S(`M${20 + i * 4} 34 L${20 + i * 4} ${18 + Math.abs(i - 3) * 4}`, 'gh', 0.8)),
+                          ...[0, 1, 2].map(i => S(`M2 ${42 + i * 5} Q30 ${39 + i * 5} 58 ${42 + i * 5}`, 'gh', 1.6))]);   // the fog
+def('calakmul',     () => [...[0, 1, 2, 3, 4].map(i =>
+                            P(`M${18 + i * 2} ${52 - i * 7} L${42 - i * 2} ${52 - i * 7} L${42 - i * 2} ${45 - i * 7} L${18 + i * 2} ${45 - i * 7} Z`, 'lo')),
+                          ...[6, 12, 48, 54].map(x => [S(`M${x} 56 L${x} 30`, 'ik', 2), C(x, 22, 8, 'gh')]).flat(),
+                          S('M26 24 Q30 20 34 24 Q30 28 26 24 Z', 'hi', 1.4),  // the snake
+                          S('M4 56 L56 56', 'ik', 1)]);
+def('torres_del_paine',()=>[P('M2 56 L58 56 L58 46 L2 46 Z', 'gh'),
+                          ...[16, 30, 44].map((x, i) => P(`M${x - 6} 46 L${x - 4} ${20 - i % 2 * 6} L${x} ${12 - i % 2 * 6} L${x + 4} ${20 - i % 2 * 6} L${x + 6} 46 Z`, 'lo')),
+                          S('M2 34 Q16 38 30 34', 'gh', 2),                    // where the cover used to be
+                          S('M30 34 Q44 30 58 34', 'gh', 2),
+                          P('M2 46 L14 46 L10 56 L2 56 Z', 'hi')]);            // and the ice that took the rest
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
