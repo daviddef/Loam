@@ -159,7 +159,7 @@ const MECHANISMS = [
   { id: 'sources', file: 'tools/sources.mjs', part: 'gate',
     asks: 'Does the article we cite exist, and is it the one we think it is?',
     how: `No URL in this repository was typed by a person. data/sources.json holds article <em>titles</em>; the tool resolves each against the live Wikipedia API, follows redirects, and refuses to write anything it could not fetch. Only then does <code>apply</code> put URLs into recipes.json.`,
-    found: `On its first run it caught one title that did not exist and four that silently redirected somewhere else. It still reports redirects on every run — Percolozoa now answers to Heterolobosea, Aquifoliaceae to Holly — which is how a citation quietly stops pointing at what it claimed to.`,
+    found: `On its first run it caught one title that did not exist and four that silently redirected somewhere else. It still reports redirects on every run — Percolozoa now answers to Heterolobosea, Aquifoliaceae to Holly — which is how a citation quietly stops pointing at what it claimed to. Resolutions are cached for thirty days: re-asking about every title on every run had grown to twenty minutes of backoff against rate limits, and a check that expensive is a check a content batch quietly skips.`,
     now: `${n(srcCount)} of ${n(recipes.length)} recipes carry a resolved source (${pct(srcCount, recipes.length)}%).` },
 
   { id: 'audit', file: 'tools/audit.mjs', part: 'gate',

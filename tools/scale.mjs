@@ -198,6 +198,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. a coating a few micrometres thick */
+          'desert_varnish',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
           'sarcoptes_scabiei', 'mite',
           /* cycle N, from needs.mjs, 4 Sep */
@@ -270,6 +272,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* places batch 4 — Europe, 4 Sep. a hand sample, like the other rocks */
+          'rock_salt',
           /* places batch 1, 4 Sep — a mortar joint, on the same rack as mortar */
           'sticky_rice_mortar',
           /* places batch 1 — the Senj worked example, 4 Sep. a hand sample of banded freshwater limestone, like limestone itself */
@@ -457,6 +461,10 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* places batch 6c, 4 Sep — a cut block of sod */
+          'turf',
+          /* places batch 6, 4 Sep. a tile */
+          'tilework',
           'molten_gold', 'molten_bronze',
           'microscope', 'missile',
           /* words that came back with nothing, 4 Sep */
@@ -710,6 +718,18 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 6b, 4 Sep. a person */
+          'mason',
+          /* places batch 6, 4 Sep. a bundle of sticks projecting 60 cm */
+          'toron',
+          /* places batch 5, 4 Sep. people */
+          'nabataean', 'hunter_gatherer',
+          /* places batch 4b — the makers, 4 Sep. people */
+          'abraham_darby', 'jorn_utzon',
+          /* places batch 3 — Oceania, 4 Sep. people */
+          'anangu', 'gunditjmara', 'rapa_nui_people',
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. a person, like the other peoples */
+          'shona',
           /* places batch 1 — the Senj worked example, 4 Sep. a person, on the same rack as the other peoples and polities */
           'uskok',
           /* the head-noun tail, 4 Sep — R2 finished */
@@ -991,6 +1011,14 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 4 — Europe, 4 Sep. a standing stone and a chamber roof, metres */
+          'megalith', 'corbel_vault',
+          /* places batch 3 — Oceania, 4 Sep. a colonnade, metres tall */
+          'columnar_basalt',
+          /* places batch 3 — Oceania, 4 Sep. four metres on average, ten at the largest raised */
+          'moai',
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. twenty-four metres of standing stone */
+          'aksum_obelisk',
           /* places batch 1 — the Senj worked example, 4 Sep. eighteen metres tall and twenty-three wide */
           'nehaj',
           /* the universe closed, 4 Sep */
@@ -1092,6 +1120,24 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 6b, 4 Sep. an institution, on the conceptual rack with the other societies */
+          'guild',
+          /* places batch 6, 4 Sep. buildings and squares, tens to hundreds of metres */
+          'djenne_mosque', 'citadelle_laferriere', 'registan', 'madrasah',
+          /* places batch 5, 4 Sep. a figure tens to hundreds of metres across */
+          'geoglyph',
+          /* places batch 5, 4 Sep. enclosures and monuments, tens to hundreds of metres */
+          'gobekli_tepe', 'petra', 'borobudur', 'stupa',
+          /* places batch 4b — the makers, 4 Sep. an age, on the same conceptual rack as the other periods */
+          'neolithic',
+          /* places batch 4 — Europe, 4 Sep. a village, a mound 85 m across, a cave system, a 30 m span */
+          'skara_brae', 'newgrange', 'lascaux', 'iron_bridge',
+          /* places batch 3 — Oceania, 4 Sep. a monolith 348 m high, a reef complex 1.5 km across, a building */
+          'uluru', 'nan_madol', 'sydney_opera_house',
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. a rock-art site spread over a hillside */
+          'twyfelfontein',
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. a church complex, a walled enclosure, a town — hundreds of metres */
+          'lalibela', 'great_zimbabwe', 'kilwa_kisiwani', 'mapungubwe',
           /* mathematics, time and power, 4 Sep — R3 continued */
           'archaeology', 'refinery', 'solar_power', 'wind_power', 'dam', 'hydroelectricity', 'nuclear_power', 'industry', 'mining', 'pollution', 'natural_gas',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
@@ -1152,6 +1198,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* places batch 4 — Europe, 4 Sep. 327 m deep with 287 km of galleries */
+          'wieliczka',
           /* places batch 1 — the Senj worked example, 4 Sep. a town, on the same rack as town and city */
           'senj',
           /* the universe closed, 4 Sep */
@@ -1199,6 +1247,12 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* places batch 5, 4 Sep. 1,300 km of line over 50 square kilometres */
+          'nazca_lines',
+          /* places batch 3 — Oceania, 4 Sep. an aquaculture system spread over a lava flow */
+          'budj_bim',
+          /* places batch 2 — sub-Saharan Africa, 4 Sep. a 48 km gorge and a caldera 20 km across */
+          'olduvai_gorge', 'ngorongoro',
           /* places batch 1 — the Senj worked example, 4 Sep. sixteen lakes in an eight-kilometre staircase */
           'plitvice',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
@@ -1218,6 +1272,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* places batch 3 — Oceania, 4 Sep. 2,300 km of coral */
+          'great_barrier_reef',
           /* the universe closed, 4 Sep */
           'weather', 'climate', 'greenhouse_effect',
           /* geography wave, 3 Sep */

@@ -117,6 +117,10 @@ const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md
                // gitignored; listed here too so sync-public refuses loudly
                // rather than silently skipping them if that ever changes.
                /^foodb_.*\//, /^openfoodfacts\//,
+               // A local cache of Wikipedia title resolutions, rebuilt on
+               // demand and expiring after thirty days. Derived, churns on
+               // every run, and stale the moment it is committed.
+               /^data\/sources-cache\.json$/,
                // The user's own kitchen photos, used to hand-verify the
                // barcode scanner against real products — personal, not code.
                /^test barcode images\//];

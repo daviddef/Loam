@@ -42981,6 +42981,212 @@ def('sticky_rice_mortar', () => [vessel('bs', 20, 48),
                           ...[[24, 36], [33, 34], [28, 41], [37, 40]].map(([x, y]) => grain('hi', x, y, .7)),
                           S('M20 26 Q30 22 40 26', 'gh', 1.4)]);
 
+/* Places, batch 2 — sub-Saharan Africa, filling the first of the hard zeros
+   tools/places.mjs reported. Each is drawn as its own structure: a church cut
+   DOWN into rock is a hole with a cross in it, not a church silhouette.      */
+def('shona',       () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'),
+                          C(30, 22, 7, 'lo'),
+                          S('M16 40 Q30 34 44 40', 'hi', 1.8)]);
+def('lalibela',    () => [P('M6 14 L54 14 L54 54 L6 54 Z', 'lo'),        // the trench, cut down
+                          P('M16 22 L44 22 L44 50 L16 50 Z', 'gh'),      // the void around the church
+                          P('M26 26 L34 26 L34 34 L42 34 L42 42 L34 42 L34 50 L26 50 L26 42 L18 42 L18 34 L26 34 Z', 'hi'),
+                          S('M6 14 L54 14', 'bs', 2)]);
+def('great_zimbabwe',()=>[P('M8 52 Q8 24 30 20 Q52 24 52 52 Z', 'lo'),   // the curved enclosure wall
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${11 + i} ${28 + i * 5} Q30 ${24 + i * 5} ${49 - i} ${28 + i * 5}`, 'gh', 1.2)),
+                          P('M26 40 L34 40 L34 52 L26 52 Z', 'bs')]);    // the gap in it
+def('olduvai_gorge',()=> [P('M4 20 L56 20 L56 52 L4 52 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M4 ${26 + i * 7} L56 ${26 + i * 7}`, 'hi', 1.6)),
+                          P('M22 20 L30 52 L38 20 Z', 'bs'),             // the cut
+                          C(26, 34, 2, 'gh'), C(35, 43, 2, 'gh')]);
+def('aksum_obelisk',()=> [P('M24 8 L36 8 L36 52 L24 52 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M25 ${16 + i * 6} L35 ${16 + i * 6}`, 'gh', 1.1)),
+                          P('M26 42 L34 42 L34 52 L26 52 Z', 'hi'),      // the false door
+                          P('M24 8 Q30 2 36 8 Z', 'lo')]);
+def('twyfelfontein',()=>[P('M6 16 L54 16 L52 52 L8 52 Z', 'lo'),         // the varnished slab
+                          S('M16 42 L22 34 L28 40 L34 30 L42 38', 'hi', 2),  // a chiselled animal line
+                          C(42, 30, 2.6, 'hi'), S('M44 32 L48 40', 'hi', 1.8),
+                          ...granules('gh', 5, 44, [12, 20, 48, 30])]);
+def('kilwa_kisiwani',()=>[P('M8 52 L8 30 L52 30 L52 52 Z', 'lo'),
+                          E(30, 30, 12, 9, 'hi'),                        // the dome
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 14} 52 L${14 + i * 14} 40 Q${20 + i * 14} 34 ${26 + i * 14} 40 L${26 + i * 14} 52 Z`, 'gh')),
+                          wave('bs', 56, 3, 26)]);
+def('mapungubwe',  () => [mound('lo', 50, 22, 18),
+                          P('M20 40 Q24 30 32 32 L40 30 L44 34 L40 38 L34 38 Q28 44 20 40 Z', 'hi'),  // the gold rhino
+                          S('M40 30 L46 24', 'hi', 2.2),
+                          ...granules('bs', 4, 77, [16, 44, 44, 50])]);
+def('ngorongoro',  () => [P('M2 50 L16 26 L24 32 L36 32 L44 26 L58 50 Z', 'lo'),
+                          P('M16 26 L24 32 L36 32 L44 26 Z', 'gh'),      // the floor, seen into
+                          E(30, 40, 10, 4, 'bs'),
+                          ...[24, 30, 36].map(x => C(x, 44, 1.6, 'hi'))]);
+def('desert_varnish',()=>[facet('bs', .95),
+                          P('M14 22 L44 20 L46 40 L16 42 Z', 'lo'),
+                          S('M20 32 L28 26 L34 32 L42 28', 'hi', 2.2)]);
+
+/* Places, batch 3 — Oceania, which tools/places.mjs reported as four regions
+   at zero. Uluru is drawn with its bedding running vertical because that is
+   the fact about it; a red dome would be any rock.                          */
+def('anangu',      () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          ...[0, 1, 2].map(i => S(`M${24 + i * 6} 38 L${24 + i * 6} 46`, 'hi', 1.2))]);
+def('gunditjmara', () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          S('M10 46 Q30 40 50 46', 'bs', 2.4)]);
+def('rapa_nui_people',()=>[P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          S('M8 50 Q30 44 52 50', 'bs', 2)]);
+def('uluru',       () => [P('M4 50 Q6 30 16 26 L46 24 Q54 30 56 50 Z', 'lo'),
+                          // the bedding is near-vertical, which is the whole fact about it
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${12 + i * 7} ${28 + i % 2} L${13 + i * 7} 50`, 'gh', 1.2)),
+                          P('M4 50 L56 50 L58 54 L2 54 Z', 'bs')]);
+def('columnar_basalt',()=>[...[0, 1, 2, 3].map(i =>
+                            P(`M${10 + i * 11} ${20 + (i % 2) * 5} L${20 + i * 11} ${20 + (i % 2) * 5} L${20 + i * 11} 52 L${10 + i * 11} 52 Z`, i % 2 ? 'lo' : 'bs')),
+                          ...[0, 1, 2, 3].map(i =>
+                            P(`M${10 + i * 11} ${20 + (i % 2) * 5} L${15 + i * 11} ${17 + (i % 2) * 5} L${20 + i * 11} ${20 + (i % 2) * 5} Z`, 'hi'))]);
+def('budj_bim',    () => [wave('bs', 46, 4, 26), wave('bs', 34, 4, 22),
+                          ...[0, 1, 2].map(i => P(`M${12 + i * 16} 24 L${20 + i * 16} 24 L${20 + i * 16} 50 L${12 + i * 16} 50 Z`, 'lo')),
+                          S('M8 30 Q30 26 52 30', 'hi', 2),
+                          S('M14 40 Q22 44 30 40 Q38 36 46 40', 'gh', 1.8)]);   // the eel
+def('moai',        () => [P('M20 52 L20 26 Q20 12 30 12 Q40 12 40 26 L40 52 Z', 'lo'),
+                          P('M20 22 L40 22 L40 30 L20 30 Z', 'bs'),           // the heavy brow
+                          ...[25, 35].map(x => E(x, 27, 2.4, 1.4, 'gh')),
+                          P('M27 34 L33 34 L32 42 L28 42 Z', 'gh'),
+                          S('M22 46 L38 46', 'hi', 1.6)]);
+def('nan_madol',   () => [wave('bs', 52, 4, 27),
+                          ...[0, 1, 2, 3, 4].map(i => P(`M10 ${22 + i * 6} L50 ${22 + i * 6} L50 ${25 + i * 6} L10 ${25 + i * 6} Z`, i % 2 ? 'lo' : 'hi')),
+                          ...[0, 1].map(i => P(`M${16 + i * 24} 18 L${20 + i * 24} 18 L${20 + i * 24} 46 L${16 + i * 24} 46 Z`, 'bs'))]);
+def('sydney_opera_house',()=>[P('M4 50 L56 50 L56 54 L4 54 Z', 'bs'),
+                          ...[0, 1, 2].map(i =>
+                            P(`M${8 + i * 13} 50 Q${8 + i * 13} ${30 - i * 5} ${26 + i * 13} 50 Z`, i === 1 ? 'hi' : 'lo')),
+                          wave('bs', 58, 3, 26)]);
+def('great_barrier_reef',()=>[wave('bs', 16, 4, 26),
+                          ...[0, 1, 2].map(i => P(`M${10 + i * 15} 50 Q${14 + i * 15} 30 ${18 + i * 15} 50 Z`, 'lo')),
+                          ...[0, 1].map(i => S(`M${20 + i * 16} 46 Q${26 + i * 16} 38 ${32 + i * 16} 46`, 'hi', 2)),
+                          ...granules('gh', 6, 313, [12, 22, 48, 40])]);
+
+/* Places, batch 4 — Northern, Western and Eastern Europe, the last three
+   regions tools/places.mjs was reporting at zero across a whole continent.  */
+def('megalith',    () => [P('M20 52 L18 20 L26 14 L36 16 L38 52 Z', 'lo'),
+                          S('M8 50 L20 44', 'bs', 2.2),                       // the lever
+                          C(10, 51, 2.4, 'bs'),
+                          ...[44, 50].map(x => C(x, 50, 2.6, 'gh'))]);        // rollers
+def('corbel_vault',()=> [...[0, 1, 2, 3, 4].map(i => [
+                            P(`M${8 + i * 3} ${48 - i * 7} L${18 + i * 3} ${48 - i * 7} L${18 + i * 3} ${52 - i * 7} L${8 + i * 3} ${52 - i * 7} Z`, i % 2 ? 'lo' : 'bs'),
+                            P(`M${42 - i * 3} ${48 - i * 7} L${52 - i * 3} ${48 - i * 7} L${52 - i * 3} ${52 - i * 7} L${42 - i * 3} ${52 - i * 7} Z`, i % 2 ? 'lo' : 'bs')]).flat(),
+                          P('M24 14 L36 14 L36 18 L24 18 Z', 'hi')]);
+def('skara_brae',  () => [P('M8 52 Q8 30 30 28 Q52 30 52 52 Z', 'lo'),
+                          C(30, 42, 4, 'bs'),                                 // the hearth
+                          ...[[16, 38], [44, 38]].map(([x, y]) => P(`M${x - 5} ${y} L${x + 5} ${y} L${x + 5} ${y + 8} L${x - 5} ${y + 8} Z`, 'hi')),
+                          P('M24 30 L36 30 L36 36 L24 36 Z', 'hi'),
+                          S('M6 52 Q30 46 54 52', 'gh', 1.4)]);
+def('newgrange',   () => [P('M4 52 Q4 22 30 20 Q56 22 56 52 Z', 'lo'),
+                          P('M26 52 L26 34 L34 34 L34 52 Z', 'bs'),           // the passage mouth
+                          P('M26 28 L34 28 L34 32 L26 32 Z', 'hi'),           // the roof-box, above the door
+                          S('M30 8 L30 26', 'hi', 1.6),                       // the solstice beam
+                          ...[0, 1].map(i => S(`M${24 - i * 4} ${10 + i * 3} L30 26`, 'gh', 1.1))]);
+def('lascaux',     () => [P('M4 14 L56 12 L54 54 L6 52 Z', 'bs'),
+                          // a bull, in outline: the wall is the ground, the pigment only the line
+                          P('M14 38 Q20 28 30 30 L42 28 Q48 30 48 36 L44 40 L42 48 L38 42 L24 44 L20 48 L18 42 Z', 'lo'),
+                          S('M42 28 L48 20', 'hi', 2), S('M44 28 L52 24', 'hi', 2),
+                          C(45, 33, 1.6, 'gh')]);
+def('iron_bridge', () => [S('M6 46 Q30 16 54 46', 'lo', 3.4),                 // the single cast rib
+                          S('M6 46 Q30 24 54 46', 'bs', 2),
+                          P('M4 44 L56 44 L56 48 L4 48 Z', 'hi'),             // the deck
+                          ...[0, 1, 2, 3].map(i => S(`M${14 + i * 11} 44 L${14 + i * 11} ${34 + Math.abs(i - 1.5) * 4}`, 'bs', 1.6)),
+                          wave('gh', 56, 3, 26)]);
+def('rock_salt',   () => [facet('hi', .9),
+                          ...[0, 1, 2].map(i => S(`M${14 + i * 4} ${22 + i * 8} L${46 - i * 4} ${22 + i * 8}`, 'gh', 1.2)),
+                          ...granules('lo', 5, 515, [18, 24, 42, 40])]);
+def('wieliczka',   () => [P('M4 12 L56 12 L56 54 L4 54 Z', 'bs'),
+                          ...[0, 1, 2].map(i => P(`M${8 + i * 17} ${20 + i * 8} L${22 + i * 17} ${20 + i * 8} L${22 + i * 17} ${28 + i * 8} L${8 + i * 17} ${28 + i * 8} Z`, 'lo')),
+                          S('M30 12 L30 22', 'hi', 2),                        // the shaft
+                          P('M26 34 L34 34 L34 46 L26 46 Z', 'hi'),           // the chapel, cut in salt
+                          S('M30 30 L30 36', 'gh', 1.6), S('M27 33 L33 33', 'gh', 1.6)]);
+
+/* The three makers tools/places.mjs asked for: it flagged Newgrange, the Iron
+   Bridge and the Opera House as association because the corpus had no element
+   for the people who made them. That is a real gap, not a rule to relax.    */
+def('neolithic',   () => [P('M14 46 L22 26 L30 30 L38 24 L46 46 Z', 'lo'),
+                          S('M20 40 L40 40', 'gh', 1.4),
+                          ...[0, 1, 2].map(i => stalk('hi', 18 + i * 12, 52, 30)),
+                          ...[0, 1, 2].map(i => grain('hi', 18 + i * 12, 28, .8))]);
+def('abraham_darby',()=> [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          S('M8 44 Q30 20 52 44', 'hi', 2.6)]);              // the rib he cast
+def('jorn_utzon',  () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          S('M8 48 Q14 30 26 44', 'hi', 2.2),
+                          ring('gh', 30, 34, 22, 1.1)]);                     // the sphere the shells came off
+
+/* Places, batch 5 — Western Asia, South-eastern Asia and South America. The
+   Nazca lines are drawn as a line the ground already had, not as a bird on a
+   background, because that is the whole technique.                          */
+def('nabataean',   () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          E(46, 44, 8, 5, 'bs'), S('M46 40 L46 34', 'bs', 1.8)]);   // the water jar
+def('hunter_gatherer',()=>[P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          S('M44 12 L48 52', 'hi', 2.2),                       // the spear
+                          ...[[12, 34], [16, 40]].map(([x, y]) => C(x, y, 2.6, 'bs'))]);
+def('gobekli_tepe',()=> [...[0, 1, 2].map(i =>
+                            P(`M${12 + i * 16} 52 L${12 + i * 16} 22 L${8 + i * 16} 22 L${8 + i * 16} 16 L${22 + i * 16} 16 L${22 + i * 16} 22 L${18 + i * 16} 22 L${18 + i * 16} 52 Z`, i === 1 ? 'hi' : 'lo')),
+                          S('M6 54 Q30 50 54 54', 'gh', 1.6)]);              // the T-pillars
+def('petra',       () => [P('M4 8 L26 8 L26 54 L4 54 Z', 'bs'),              // the cliff, closing in
+                          P('M40 8 L58 8 L58 54 L40 54 Z', 'bs'),
+                          P('M28 54 L28 26 L30 20 L34 20 L36 26 L36 54 Z', 'lo'),   // the facade in the cleft
+                          ...[30, 34].map(x => S(`M${x} 30 L${x} 48`, 'gh', 1.4)),
+                          P('M29 22 L35 22 L35 26 L29 26 Z', 'hi')]);
+def('stupa',       () => [P('M12 52 L52 52 L52 46 L12 46 Z', 'lo'),
+                          P('M16 46 A18 18 0 0 1 48 46 Z', 'lo'),
+                          P('M28 22 L36 22 L36 28 L28 28 Z', 'hi'),
+                          S('M32 8 L32 22', 'hi', 2),
+                          ...[0, 1, 2].map(i => S(`M${26 - i * 2} ${12 + i * 4} L${38 + i * 2} ${12 + i * 4}`, 'gh', 1.2))]);
+def('borobudur',   () => [...[0, 1, 2].map(i =>
+                            P(`M${8 + i * 6} ${52 - i * 7} L${52 - i * 6} ${52 - i * 7} L${52 - i * 6} ${45 - i * 7} L${8 + i * 6} ${45 - i * 7} Z`, i % 2 ? 'lo' : 'bs')),
+                          ...[0, 1].map(i => E(30, 30 - i * 6, 16 - i * 5, 4, 'lo')),
+                          P('M22 20 A8 8 0 0 1 38 20 Z', 'hi'),
+                          ...[24, 30, 36].map(x => C(x, 26, 1.5, 'gh'))]);
+def('geoglyph',    () => [P('M4 14 L56 14 L56 54 L4 54 Z', 'bs'),
+                          ...granules('lo', 26, 707, [6, 16, 54, 52]),
+                          S('M12 44 L26 26 L44 30', 'hi', 3.2)]);            // the line is the pale ground
+def('nazca_lines', () => [P('M4 12 L56 12 L56 54 L4 54 Z', 'bs'),
+                          ...granules('lo', 22, 191, [6, 14, 54, 52]),
+                          // the hummingbird, as a single lifted line
+                          S('M10 40 L24 34 L26 22 L30 34 L44 30 L52 36 L44 40 L30 40 L28 50 L24 40 Z', 'hi', 2.6),
+                          S('M52 36 L58 34', 'hi', 2)]);
+
+/* Places, batch 6 — Western Africa, the Caribbean and Central Asia, three more
+   of the regions the coverage check was reporting at zero.                  */
+def('toron',       () => [P('M14 20 L46 20 L46 54 L14 54 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M46 ${26 + i * 10} L58 ${24 + i * 10}`, 'bs', 2.4)),
+                          ...[0, 1, 2].map(i => S(`M14 ${30 + i * 10} L2 ${28 + i * 10}`, 'bs', 2.4))]);
+def('djenne_mosque',()=> [P('M6 54 L54 54 L54 46 L6 46 Z', 'bs'),            // the platform
+                          P('M10 46 L50 46 L50 24 L10 24 Z', 'lo'),
+                          ...[0, 1, 2].map(i => P(`M${14 + i * 15} 24 L${22 + i * 15} 24 L${22 + i * 15} 10 Q${18 + i * 15} 6 ${14 + i * 15} 10 Z`, 'lo')),
+                          ...[0, 1, 2].map(i => C(18 + i * 15, 8, 1.6, 'hi')),
+                          ...[0, 1, 2, 3].map(i => S(`M50 ${28 + i * 6} L57 ${27 + i * 6}`, 'bs', 1.8)),
+                          ...[0, 1, 2, 3].map(i => S(`M10 ${28 + i * 6} L3 ${27 + i * 6}`, 'bs', 1.8))]);
+def('citadelle_laferriere',()=>[P('M2 54 L14 30 L46 30 L58 54 Z', 'bs'),     // the mountain
+                          P('M16 30 L44 30 L48 12 L12 12 Z', 'lo'),          // the prow of the fort
+                          ...[0, 1, 2, 3].map(i => C(18 + i * 8, 20, 2, 'gh')),
+                          S('M12 12 L48 12', 'hi', 2)]);
+def('tilework',    () => [...[0, 1, 2].map(i => [0, 1, 2].map(j =>
+                            P(`M${14 + i * 12} ${20 + j * 12} L${20 + i * 12} ${14 + j * 12} L${26 + i * 12} ${20 + j * 12} L${20 + i * 12} ${26 + j * 12} Z`,
+                              (i + j) % 2 ? 'hi' : 'lo'))).flat()]);
+def('madrasah',    () => [P('M8 54 L52 54 L52 20 L8 20 Z', 'lo'),
+                          P('M22 54 L22 26 Q30 18 38 26 L38 54 Z', 'bs'),    // the iwan
+                          ...[0, 1].map(i => P(`M${10 + i * 40} 20 L${16 + i * 40} 20 L${16 + i * 40} 8 L${10 + i * 40} 8 Z`, 'lo')),
+                          ...[0, 1].map(i => C(13 + i * 40, 6, 2.4, 'hi'))]);
+def('registan',    () => [...[0, 1, 2].map(i =>
+                            P(`M${4 + i * 18} 52 L${18 + i * 18} 52 L${18 + i * 18} ${26 + (i === 1 ? -6 : 0)} L${4 + i * 18} ${26 + (i === 1 ? -6 : 0)} Z`, i === 1 ? 'hi' : 'lo')),
+                          ...[0, 1, 2].map(i =>
+                            P(`M${8 + i * 18} 52 L${8 + i * 18} ${34 + (i === 1 ? -6 : 0)} Q${11 + i * 18} ${28 + (i === 1 ? -6 : 0)} ${14 + i * 18} ${34 + (i === 1 ? -6 : 0)} L${14 + i * 18} 52 Z`, 'bs')),
+                          E(29, 18, 8, 6, 'lo')]);
+
+def('mason',       () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          P('M42 34 L54 34 L54 40 L42 40 Z', 'hi'),          // the block
+                          S('M8 46 L18 38', 'bs', 2.4), C(7, 47, 2.2, 'bs')]);  // the trowel
+def('guild',       () => [...[0, 1, 2].map(i => [P(`M${14 + i * 14} 52 L${14 + i * 14} 38 Q${18 + i * 14} 32 ${22 + i * 14} 38 L${22 + i * 14} 52 Z`, i === 1 ? 'hi' : 'lo'),
+                                                 C(18 + i * 14, 28, 4.4, i === 1 ? 'hi' : 'lo')]).flat(),
+                          S('M10 20 L50 20', 'bs', 2)]);
+
+def('turf',        () => [P('M8 26 L52 26 L52 48 L8 48 Z', 'lo'),
+                          P('M8 26 L52 26 L52 32 L8 32 Z', 'hi'),
+                          ...[0, 1, 2, 3, 4].map(i => stalk('hi', 12 + i * 9, 26, 16)),
+                          ...granules('bs', 6, 606, [12, 34, 48, 46])]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

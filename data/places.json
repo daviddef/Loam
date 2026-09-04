@@ -221,7 +221,9 @@
         "limestone",
         "granite"
       ],
-      "srcTitle": "Great Pyramid of Giza"
+      "srcTitle": "Great Pyramid of Giza",
+      "when": "about 2560 BC, Fourth Dynasty",
+      "site": "the Giza plateau, a limestone shelf firm enough to carry six million tonnes, west of the Nile so the river could carry the casing stone to it"
     },
     "colosseum": {
       "region": "south_europe",
@@ -246,7 +248,9 @@
         "sticky_rice_mortar",
         "stone"
       ],
-      "srcTitle": "Great Wall of China"
+      "srcTitle": "Great Wall of China",
+      "when": "walls from the 7th century BC; the brick-faced wall that survives is Ming, 14th to 17th century",
+      "site": "the line where farmland gives out and steppe begins, which is why the wall follows a rainfall boundary rather than a border"
     },
     "forbidden_city": {
       "region": "east_asia",
@@ -256,7 +260,9 @@
       "of": [
         "wood"
       ],
-      "srcTitle": "Forbidden City"
+      "srcTitle": "Forbidden City",
+      "when": "built 1406-1420 under the Yongle Emperor",
+      "site": "the centre of Beijing on the north-south axis, walled and moated, with every hall facing south"
     },
     "terracotta_army": {
       "region": "east_asia",
@@ -266,14 +272,22 @@
       "of": [
         "clay"
       ],
-      "srcTitle": "Terracotta Army"
+      "srcTitle": "Terracotta Army",
+      "when": "buried about 210-209 BC",
+      "site": "a pit complex about 1.5 km east of Qin Shi Huang's tomb mound, facing the direction his conquered enemies lay"
     },
     "angkor_wat": {
       "region": "southeast_asia",
       "country": "cambodia",
       "kind": "worship",
-      "who": "the Khmer Empire",
-      "srcTitle": "Angkor Wat"
+      "who": "Suryavarman II",
+      "srcTitle": "Angkor Wat",
+      "when": "begun 1122, finished 1150, under Suryavarman II",
+      "of": [
+        "sandstone",
+        "laterite"
+      ],
+      "site": "the Angkor plain, with five to ten million sandstone blocks brought about 40 km from Mount Kulen; a moat 190 m wide and over 5 km around, and — unusually for a Khmer temple — facing west"
     },
     "machu_picchu": {
       "region": "south_america",
@@ -297,7 +311,8 @@
         "glass"
       ],
       "srcTitle": "Ishtar Gate",
-      "when": "about 575 BCE"
+      "when": "about 575 BCE",
+      "site": "the eighth gate of Babylon's inner wall, opening onto the processional way, so it was the first thing a visitor saw"
     },
     "lighthouse_of_alexandria": {
       "region": "north_africa",
@@ -307,7 +322,9 @@
       "of": [
         "limestone"
       ],
-      "srcTitle": "Lighthouse of Alexandria"
+      "srcTitle": "Lighthouse of Alexandria",
+      "when": "built about 280-247 BC; brought down by earthquakes between 956 and 1323",
+      "site": "the island of Pharos at the harbour mouth, on a coast so flat that a ship had no landmark to steer by without it"
     },
     "mausoleum_halicarnassus": {
       "region": "west_asia",
@@ -318,7 +335,8 @@
         "marble"
       ],
       "srcTitle": "Mausoleum at Halicarnassus",
-      "when": "about 350 BCE"
+      "when": "about 350 BCE",
+      "site": "a hillside above the harbour of Halicarnassus, visible from the sea it was meant to be admired from"
     },
     "colossus_of_rhodes": {
       "region": "south_europe",
@@ -328,7 +346,9 @@
       "of": [
         "bronze"
       ],
-      "srcTitle": "Colossus of Rhodes"
+      "srcTitle": "Colossus of Rhodes",
+      "when": "built 292-280 BC; fell in an earthquake about 226 BC, after 54 years",
+      "site": "the harbour of Rhodes, paid for by selling the siege equipment an unsuccessful besieger left behind"
     },
     "temple_of_artemis": {
       "region": "west_asia",
@@ -338,7 +358,9 @@
       "of": [
         "marble"
       ],
-      "srcTitle": "Temple of Artemis"
+      "srcTitle": "Temple of Artemis",
+      "when": "the marble temple about 550 BC, burned 356 BC, rebuilt, destroyed 262 AD",
+      "site": "a marshy site near Ephesus chosen deliberately — soft ground was thought to cushion earthquakes"
     },
     "statue_of_zeus": {
       "region": "south_europe",
@@ -348,14 +370,21 @@
       "of": [
         "chryselephantine"
       ],
-      "srcTitle": "Statue of Zeus at Olympia"
+      "srcTitle": "Statue of Zeus at Olympia",
+      "when": "about 435 BC",
+      "site": "inside the temple at Olympia, built so large for the space that Zeus would have taken the roof off if he stood up"
     },
     "hanging_gardens": {
       "region": "west_asia",
       "country": "iraq",
       "kind": "monument",
       "who": "attributed to Nebuchadnezzar II — and never securely located",
-      "srcTitle": "Hanging Gardens of Babylon"
+      "srcTitle": "Hanging Gardens of Babylon",
+      "when": "described in Greek sources from the 3rd century BC onward",
+      "of": [
+        "brick"
+      ],
+      "site": "never securely located — no Babylonian text mentions them, and one reading puts them at Nineveh instead"
     },
     "lanse_aux_meadows": {
       "region": "north_america",
@@ -363,7 +392,12 @@
       "kind": "settlement",
       "who": "Norse",
       "site": "a landing at the northern tip of Newfoundland",
-      "srcTitle": "L'Anse aux Meadows"
+      "srcTitle": "L'Anse aux Meadows",
+      "when": "about 1021 AD, dated by a solar storm recorded in the wood",
+      "of": [
+        "turf",
+        "wood"
+      ]
     },
     "nabta_playa": {
       "region": "north_africa",
@@ -376,6 +410,333 @@
       "of": [
         "stone"
       ]
+    },
+    "lalibela": {
+      "region": "east_africa",
+      "country": "ethiopia",
+      "kind": "worship",
+      "when": "late 12th to early 13th century, under Gebre Meskel Lalibela of the Zagwe",
+      "who": "Zagwe masons, cutting downward",
+      "of": [
+        "basalt"
+      ],
+      "site": "a highland plateau of scoriaceous basalt soft enough to cut and sound enough to stand once the trenches are open",
+      "srcTitle": "Rock-Hewn Churches, Lalibela"
+    },
+    "great_zimbabwe": {
+      "region": "east_africa",
+      "country": "zimbabwe",
+      "kind": "settlement",
+      "when": "built from the 11th century, the Great Enclosure 13th-15th, abandoned in the 16th or 17th",
+      "who": "ancestors of the Shona",
+      "of": [
+        "granite"
+      ],
+      "site": "granite hills that exfoliate in flat sheets under daily heating and cooling, so the building stone arrives already the right shape and needs no mortar",
+      "srcTitle": "Great Zimbabwe"
+    },
+    "olduvai_gorge": {
+      "region": "east_africa",
+      "country": "tanzania",
+      "kind": "settlement",
+      "when": "beds spanning 1.85 million to 600,000 years ago; Zinjanthropus found July 1959, Homo habilis May 1960",
+      "who": "Homo habilis and Homo erectus, then Louis and Mary Leakey",
+      "of": [
+        "ash",
+        "stone"
+      ],
+      "site": "48 km of gorge eroded up to 90 m into Pleistocene lake beds, so the sequence stands exposed in order",
+      "srcTitle": "Olduvai Gorge"
+    },
+    "aksum_obelisk": {
+      "region": "east_africa",
+      "country": "ethiopia",
+      "kind": "monument",
+      "when": "4th century CE; removed to Rome 1937, returned 2005, re-erected 2008",
+      "who": "Aksumite quarrymen",
+      "of": [
+        "granite"
+      ],
+      "site": "the stelae field at Aksum, on the trade road between the Red Sea and the highlands",
+      "srcTitle": "Obelisk of Axum"
+    },
+    "kilwa_kisiwani": {
+      "region": "east_africa",
+      "country": "tanzania",
+      "kind": "settlement",
+      "when": "Great Mosque begun 1131-1170; the city's peak 13th to 15th centuries",
+      "who": "Swahili merchants; Husuni Kubwa built for Sultan al-Hasan ibn Sulaiman",
+      "of": [
+        "coral",
+        "limestone"
+      ],
+      "site": "an island with no building stone and a harbour commanding the route to the Sofala gold",
+      "srcTitle": "Kilwa Kisiwani"
+    },
+    "mapungubwe": {
+      "region": "south_africa_r",
+      "country": "south_africa",
+      "kind": "settlement",
+      "when": "about 1220-1300; UNESCO 2003",
+      "who": "a kingdom of 5,000 by 1250",
+      "of": [
+        "gold",
+        "ivory",
+        "glass"
+      ],
+      "site": "the confluence of the Limpopo and the Shashe, on the inland end of the Indian Ocean gold route",
+      "srcTitle": "Mapungubwe"
+    },
+    "twyfelfontein": {
+      "region": "south_africa_r",
+      "country": "namibia",
+      "kind": "rock_art",
+      "when": "engravings roughly 6,000 to 1,000 years old; UNESCO 2007",
+      "who": "hunter-gatherers, later herders",
+      "of": [
+        "sandstone",
+        "desert_varnish"
+      ],
+      "site": "sandstone slabs around a spring in the Damaraland desert — the Damara name means jumping waterhole",
+      "srcTitle": "Twyfelfontein"
+    },
+    "ngorongoro": {
+      "region": "east_africa",
+      "country": "tanzania",
+      "kind": "natural",
+      "when": "the volcano active 2.45 to 2 million years ago, then collapsed",
+      "of": [
+        "basalt",
+        "ash"
+      ],
+      "site": "a caldera 610 m deep with a 260 km2 floor, whose rim holds grazing and water together so about 25,000 large animals stay put",
+      "srcTitle": "Ngorongoro Crater"
+    },
+    "uluru": {
+      "region": "anz",
+      "country": "australia",
+      "kind": "natural",
+      "when": "the Mutitjulu Arkose laid down 550-530 million years ago",
+      "who": "—",
+      "of": [
+        "arkose",
+        "feldspar"
+      ],
+      "site": "a bed of coarse arkose tipped almost vertical and left standing when the softer rock around it eroded away; 348 m above the plain, 9.4 km around, most of it still underground",
+      "srcTitle": "Uluru"
+    },
+    "budj_bim": {
+      "region": "anz",
+      "country": "australia",
+      "kind": "engineering",
+      "when": "one trap carbon-dated to 6,600 years; the wider system estimated up to 8,000",
+      "who": "the Gunditjmara",
+      "of": [
+        "basalt"
+      ],
+      "site": "the Tyrendarra lava flow, which blocked the old drainage and made the wetlands the system steers",
+      "srcTitle": "Budj Bim heritage areas"
+    },
+    "sydney_opera_house": {
+      "region": "anz",
+      "country": "australia",
+      "kind": "monument",
+      "when": "competition 1957, opened 1973",
+      "who": "Jørn Utzon",
+      "of": [
+        "concrete"
+      ],
+      "site": "Bennelong Point, a peninsula seen from three sides, which is why the roof had to work as a fifth elevation",
+      "srcTitle": "Sydney Opera House"
+    },
+    "great_barrier_reef": {
+      "region": "anz",
+      "country": "australia",
+      "kind": "natural",
+      "when": "the present reef about 500,000 years old, the living veneer around 8,000",
+      "who": "coral polyps — the largest structure any living thing has built",
+      "of": [
+        "coral",
+        "limestone"
+      ],
+      "site": "a shallow continental shelf in warm clear water, which is the only place reef-building coral can work",
+      "srcTitle": "Great Barrier Reef"
+    },
+    "moai": {
+      "region": "polynesia",
+      "country": "chile",
+      "kind": "monument",
+      "when": "carved between about 1250 and 1500",
+      "who": "the Rapa Nui",
+      "of": [
+        "tuff",
+        "basalt"
+      ],
+      "site": "Rano Raraku, one quarry of compressed volcanic ash that supplied all but 53 of more than 900 figures; 394 are still there unfinished",
+      "srcTitle": "Moai"
+    },
+    "nan_madol": {
+      "region": "micronesia",
+      "country": "micronesia",
+      "kind": "settlement",
+      "when": "settled around AD 1; megalithic building from about 1180",
+      "who": "the Saudeleur dynasty",
+      "of": [
+        "columnar_basalt",
+        "coral"
+      ],
+      "site": "a coral reef flat off Temwen Island, cut by tidal canals into 92 artificial islets over 1.5 by 0.5 km",
+      "srcTitle": "Nan Madol"
+    },
+    "skara_brae": {
+      "region": "north_europe",
+      "country": "united_kingdom",
+      "kind": "settlement",
+      "when": "occupied about 3180 to 2500 BC; uncovered by a storm in 1850",
+      "who": "Neolithic Orcadians",
+      "of": [
+        "stone"
+      ],
+      "site": "a treeless island where the only building material is flagstone, so even the beds and dressers are stone; buried in a dune until a storm took it off",
+      "srcTitle": "Skara Brae"
+    },
+    "newgrange": {
+      "region": "north_europe",
+      "country": "ireland",
+      "kind": "tomb",
+      "when": "about 3100 BC; the solstice alignment first re-observed 21 December 1967",
+      "who": "Neolithic builders of the Boyne valley",
+      "of": [
+        "stone",
+        "corbel_vault"
+      ],
+      "site": "a ridge above the Boyne, oriented so the roof-box admits the midwinter sunrise down a 19 m passage; the mound is 85 m across and 12 m high",
+      "srcTitle": "Newgrange"
+    },
+    "lascaux": {
+      "region": "west_europe",
+      "country": "france",
+      "kind": "rock_art",
+      "when": "17,000 to 22,000 years old; found 12 September 1940, closed to the public 1963",
+      "who": "Magdalenian painters",
+      "of": [
+        "ochre",
+        "hematite"
+      ],
+      "site": "a sealed limestone cave in the Dordogne whose stable air preserved the pigment — and whose stability is exactly what visitors destroyed",
+      "srcTitle": "Lascaux"
+    },
+    "iron_bridge": {
+      "region": "north_europe",
+      "country": "united_kingdom",
+      "kind": "engineering",
+      "when": "opened 1 January 1781",
+      "who": "designed by Thomas Farnolls Pritchard, cast by Abraham Darby III",
+      "of": [
+        "cast_iron"
+      ],
+      "site": "the Severn gorge at Coalbrookdale, where the river had to be crossed and the foundry that could cast the ribs was already on the bank",
+      "srcTitle": "The Iron Bridge"
+    },
+    "wieliczka": {
+      "region": "east_europe",
+      "country": "poland",
+      "kind": "industry",
+      "when": "documented from 1044, shaft-mined from the 13th century, sold salt until 1996",
+      "who": "generations of miners, who carved the chapels themselves",
+      "of": [
+        "rock_salt"
+      ],
+      "site": "a salt bed near Krakow, 327 m deep with 287 km of galleries",
+      "srcTitle": "Wieliczka Salt Mine"
+    },
+    "gobekli_tepe": {
+      "region": "west_asia",
+      "country": "turkiye",
+      "kind": "worship",
+      "when": "about 9500 to at least 8000 BCE",
+      "who": "hunter-gatherers, before farming",
+      "of": [
+        "limestone"
+      ],
+      "site": "a limestone ridge above the Harran plain; four enclosures excavated of about twenty, 10 to 30 m across",
+      "srcTitle": "Göbekli Tepe"
+    },
+    "petra": {
+      "region": "west_asia",
+      "country": "jordan",
+      "kind": "settlement",
+      "when": "Nabataean capital from the 2nd century BC, at its height in the 1st century AD with about 20,000 people",
+      "who": "the Nabataeans",
+      "of": [
+        "sandstone"
+      ],
+      "site": "a sandstone basin entered through the Siq, a natural cleft 3-4 m wide, watered entirely by dams, conduits and cisterns the Nabataeans built",
+      "srcTitle": "Petra"
+    },
+    "borobudur": {
+      "region": "southeast_asia",
+      "country": "indonesia",
+      "kind": "worship",
+      "when": "begun about 780 CE, finished about 833, under the Sailendra",
+      "who": "the Sailendra dynasty",
+      "of": [
+        "andesite"
+      ],
+      "site": "a hill on the Kedu Plain between volcanoes, with the Progo riverbed supplying 55,000 cubic metres of andesite; 118 m to a side, 35 m high",
+      "srcTitle": "Borobudur"
+    },
+    "nazca_lines": {
+      "region": "south_america",
+      "country": "peru",
+      "kind": "rock_art",
+      "when": "between 500 BC and 500 AD",
+      "who": "the Paracas and then the Nazca",
+      "of": [
+        "desert_pavement"
+      ],
+      "site": "a rainless windless plateau whose limey subsoil hardens into a crust — the only reason 1,300 km of shallow line has lasted two thousand years",
+      "srcTitle": "Nazca Lines"
+    },
+    "djenne_mosque": {
+      "region": "west_africa",
+      "country": "mali",
+      "kind": "worship",
+      "when": "the present building completed 1907; the first mosque here 13th-14th century",
+      "who": "the masons' guild of Djenné, and the whole town every year",
+      "of": [
+        "adobe",
+        "toron",
+        "plaster"
+      ],
+      "site": "a platform 3 m above the marketplace, which is what keeps the Bani flood out of a building made of earth",
+      "srcTitle": "Great Mosque of Djenné"
+    },
+    "citadelle_laferriere": {
+      "region": "caribbean",
+      "country": "haiti",
+      "kind": "fortification",
+      "when": "commissioned 1805, completed 1820",
+      "who": "Henri Christophe — at a cost of up to 20,000 lives",
+      "of": [
+        "stone",
+        "cannon"
+      ],
+      "site": "the 900 m summit of Bonnet à l'Évêque, several kilometres inland, so any French landing would have to climb to it; 365 cannon and stores for 5,000 men for a year",
+      "srcTitle": "Citadelle Laferrière"
+    },
+    "registan": {
+      "region": "central_asia",
+      "country": "uzbekistan",
+      "kind": "worship",
+      "when": "Ulugh Beg madrasa 1417-1420, Sher-Dor 1619-1636, Tilya-Kori 1646-1660",
+      "who": "Ulugh Beg, then Yalangtoʻsh Bakhodir",
+      "of": [
+        "tilework",
+        "brick"
+      ],
+      "site": "the square at the centre of Samarkand, where proclamations were read and executions held, on the Silk Road",
+      "srcTitle": "Registan"
     }
   },
   "wanted": {
@@ -418,7 +779,8 @@
       "Kilwa Kisiwani — settlement",
       "Olduvai Gorge — settlement",
       "Ngorongoro Crater — natural",
-      "Mount Kilimanjaro — natural"
+      "Mount Kilimanjaro — natural",
+      "Obelisk of Axum — monument"
     ],
     "south_africa_r": [
       "Mapungubwe — settlement",

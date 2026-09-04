@@ -47,8 +47,42 @@ async function getJSON(url, tries = 6) {
   }
 }
 
+/* The resolution cache.
+ *
+ * Every run re-asked Wikipedia about all 1,400 titles, which by September was
+ * costing twenty minutes of exponential backoff against 429s — and a check
+ * that expensive is a check a content batch quietly skips, which is the one
+ * outcome this file exists to prevent.
+ *
+ * So a resolved title is remembered with the date it was resolved, and reused
+ * until it is older than MAX_AGE_DAYS. The window matters: a citation stops
+ * pointing at what it claimed to when an article is renamed or redirected, and
+ * a cache with no expiry would hide exactly that. Thirty days is short enough
+ * to catch a rename before it matters and long enough that authoring a batch
+ * costs one request per new title.
+ *
+ *   --fresh   ignore the cache entirely and re-resolve everything
+ */
+const CACHE = u('sources-cache.json');
+const MAX_AGE_DAYS = 30;
+const FRESH = process.argv.includes('--fresh');
+let cache = {};
+try { cache = JSON.parse(readFileSync(CACHE, 'utf8')); } catch { cache = {}; }
+const today = new Date().toISOString().slice(0, 10);
+const ageDays = (iso) => (Date.now() - Date.parse(iso)) / 86400000;
+const cached = (t) => {
+  if (FRESH) return null;
+  const c = cache[t];
+  if (!c || !c.at || ageDays(c.at) > MAX_AGE_DAYS) return null;
+  return { exists: c.exists, final: c.final, redirected: c.final !== t, fromCache: true };
+};
+
 async function resolve(titles) {
   const out = new Map();
+  const ask = [];
+  for (const t of titles) { const c = cached(t); if (c) out.set(t, c); else ask.push(t); }
+  if (out.size) console.log(`  ${out.size} title(s) from cache, ${ask.length} to resolve`);
+  titles = ask;
   for (let i = 0; i < titles.length; i += 50) {
     if (i) await sleep(250);            // pace the batches rather than sprint
     const batch = titles.slice(i, i + 50);
@@ -66,13 +100,18 @@ async function resolve(titles) {
     const pages = Object.values(q.pages ?? {});
     for (const [req, final] of step) {
       const page = pages.find((p) => p.title === final);
-      out.set(req, {
+      const rec = {
         exists: !!page && !('missing' in page),
         final: page?.title ?? final,
         redirected: final !== req,
-      });
+      };
+      out.set(req, rec);
+      // Only a title that actually resolved is worth remembering. Caching a
+      // miss would make a typo permanent until somebody passed --fresh.
+      if (rec.exists) cache[req] = { final: rec.final, exists: true, at: today };
     }
   }
+  if (titles.length) writeFileSync(CACHE, JSON.stringify(cache, null, 0) + '\n');
   return out;
 }
 

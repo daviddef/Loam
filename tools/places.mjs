@@ -151,6 +151,16 @@ function derivation(id, kind) {
   return { ok: false, why: rs.map(r => r.in.join(' + ')).join(' | ') + ' — ' + need };
 }
 
+/* `of` is supposed to name elements this corpus already has, so a landmark
+ * joins the graph rather than hanging off it as a string. Nothing enforced
+ * that, so "turf" and "chryselephantine" could sit in the field looking like
+ * links while pointing at nothing. A material that names no element is a
+ * material the player cannot get to. */
+const danglingOf = [];
+for (const [id, e] of entries) {
+  for (const m of (e.of || [])) if (!byId.has(m)) danglingOf.push({ id, m });
+}
+
 // ------------------------------------------------------------------ modes
 
 const mode = process.argv[2];
@@ -250,6 +260,10 @@ if (ghosts.length) {
 if (bad.length) {
   console.log(`\n  ${bad.length} place(s) derive from association rather than a maker and a material:`);
   for (const [id, e] of bad.slice(0, 8)) console.log(`      ${id.padEnd(24)} ${derivation(id, e.kind).why}`);
+}
+if (danglingOf.length) {
+  console.log(`\n  ${danglingOf.length} material(s) named in an "of" that no element answers to:`);
+  for (const d of danglingOf.slice(0, 10)) console.log(`      ${d.id.padEnd(24)} of: ${d.m}`);
 }
 if (shallowest.length) {
   console.log(`\n  ${shallowest.length} place(s) are little more than a name — node tools/places.mjs --deep`);
