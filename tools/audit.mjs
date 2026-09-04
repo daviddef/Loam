@@ -109,8 +109,15 @@ function articleHas(text, num) {
   if (n >= 1e6 && n % 1e6 === 0) forms.add(`${n / 1e6} million`);
   if (n >= 1e9 && n % 1e9 === 0) forms.add(`${n / 1e9} billion`);
   for (const f of forms) {
-    // Word-boundary match so 50 does not match inside 1950.
-    if (new RegExp(`(?<![\\d,.])${f.replace('.', '\\.')}(?![\\d,])`).test(text)) return true;
+    /* The boundary has to reject a thousands separator without rejecting a
+     * sentence comma. The old lookahead was a bare (?![\d,]), so "Finished in
+     * 1558, it was built..." read as NOT containing 1558 — the comma after the
+     * year failed the test. Any claim whose number is followed by a comma in
+     * the source was reported unsupported, which is a false alarm, and false
+     * alarms are how a check gets ignored. Reject a comma or point only when a
+     * digit follows it. */
+    const esc = f.replace('.', '\\.');
+    if (new RegExp(`(?<!\\d)(?<!\\d,)(?<!\\d\\.)${esc}(?!\\d)(?!,\\d)(?!\\.\\d)`).test(text)) return true;
   }
   return false;
 }
