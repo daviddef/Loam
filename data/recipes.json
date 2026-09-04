@@ -90186,5 +90186,495 @@
     "why": "Hedgerow, shoreline, forest margin: the boundary between two habitats holds species from both plus some that live nowhere else. Cut a wood in half and you lose interior and gain edge, which changes what lives there entirely.",
     "src": "https://en.wikipedia.org/wiki/Edge_effects",
     "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "nerve"
+    ],
+    "out": "perception",
+    "why": "The retina sends far less than the picture you see: the blind spot is filled in, the colour at the edges is invented, and the image is stabilised across saccades you never notice. Every illusion works by making the guess wrong in a way you can catch.",
+    "src": "https://en.wikipedia.org/wiki/Perception",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "perception"
+    ],
+    "out": "consciousness",
+    "why": "You know your own by having it and everyone else's by inference from behaviour. That asymmetry is the hard problem, and it is why the question resists the methods that settled every other question about the brain.",
+    "src": "https://en.wikipedia.org/wiki/Consciousness",
+    "verified": true
+  },
+  {
+    "in": [
+      "perception",
+      "selection"
+    ],
+    "out": "attention",
+    "why": "The senses deliver far more than can be processed, so almost all of it is discarded before it is noticed. That discarding is the mechanism, which is why someone counting passes in a video does not see a person in a gorilla suit walk through it.",
+    "src": "https://en.wikipedia.org/wiki/Attention",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "heart"
+    ],
+    "out": "emotion",
+    "why": "James proposed in 1884 that we do not tremble because we are afraid but are afraid because we tremble. A century of argument later the compromise stands: the body's state is real input, and the label is applied to it by the brain using context.",
+    "src": "https://en.wikipedia.org/wiki/Emotion",
+    "verified": true
+  },
+  {
+    "in": [
+      "amygdala",
+      "emotion"
+    ],
+    "out": "fear",
+    "why": "One path runs straight from the thalamus to the amygdala in about twelve milliseconds and starts the response; the slower path through the cortex arrives later and works out whether it was a snake or a stick. You have already jumped by then, which is the point.",
+    "src": "https://en.wikipedia.org/wiki/Fear",
+    "verified": true
+  },
+  {
+    "in": [
+      "cortisol",
+      "emotion"
+    ],
+    "out": "anger",
+    "why": "Fear, sadness and disgust all pull away from the thing; anger pushes toward it, and shows up in the same left-frontal activity as positive approach states. That is why it can feel energising and why it is so easily mistaken for resolve.",
+    "src": "https://en.wikipedia.org/wiki/Anger",
+    "verified": true
+  },
+  {
+    "in": [
+      "dopamine",
+      "emotion"
+    ],
+    "out": "happiness",
+    "why": "Dopamine drives the pursuit, and a separate and much smaller opioid system produces the enjoying. That is why it is possible to want something intensely and get no pleasure from having it, and why addiction can outlive any enjoyment at all.",
+    "src": "https://en.wikipedia.org/wiki/Happiness",
+    "verified": true
+  },
+  {
+    "in": [
+      "attachment",
+      "oxytocin"
+    ],
+    "out": "love",
+    "why": "Lust, romantic attraction and long-term attachment run on different chemistry — testosterone, dopamine, and oxytocin with vasopressin. They usually coincide and are under no obligation to, which is most of what literature is about.",
+    "src": "https://en.wikipedia.org/wiki/Love",
+    "verified": true
+  },
+  {
+    "in": [
+      "baby",
+      "trust"
+    ],
+    "out": "attachment",
+    "why": "Bowlby and Ainsworth showed it is not about who feeds the child: Harlow's monkeys chose a cloth mother with no milk over a wire one with milk. What forms the bond is comfort and reliable response, not nourishment.",
+    "src": "https://en.wikipedia.org/wiki/Attachment_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "extinction",
+      "love"
+    ],
+    "out": "grief",
+    "why": "It is not a sequence of stages — Kübler-Ross described dying patients, not the bereaved, and the five stages were never found in the mourning they are now used to explain. What is found instead is oscillation: engaging the loss and setting it aside, in turn, for a long time.",
+    "src": "https://en.wikipedia.org/wiki/Grief",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "sleep"
+    ],
+    "out": "dream",
+    "why": "During REM sleep the motor neurons are actively inhibited, so the movements the dream contains are commanded and never executed. When that inhibition fails, people act their dreams out — which is how the mechanism was found.",
+    "src": "https://en.wikipedia.org/wiki/Dream",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "rhythm"
+    ],
+    "out": "sleep",
+    "why": "An animal asleep is not eating, not mating and not watching for predators, and evolution has never removed it. The best-evidenced payment is memory: the day's traces are replayed and consolidated overnight, and the brain's waste is cleared at a rate it never reaches while awake.",
+    "src": "https://en.wikipedia.org/wiki/Sleep",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "symbol"
+    ],
+    "out": "thought",
+    "why": "People blind from birth reason spatially without ever having seen; deaf people who grew up without language still solve problems. Language shapes thought and does not constitute it — the search for the word is the evidence that the thought was already there.",
+    "src": "https://en.wikipedia.org/wiki/Thought",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic",
+      "thought"
+    ],
+    "out": "reason",
+    "why": "The evidence is that people are much better at finding flaws in arguments they disagree with than in their own. One account is that reasoning evolved for persuading and evaluating others rather than for private truth-seeking, which would explain the asymmetry rather than treat it as a defect.",
+    "src": "https://en.wikipedia.org/wiki/Reason",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "repetition"
+    ],
+    "out": "learning",
+    "why": "Cells that fire together strengthen the connection between them; cells that do not, weaken it. That one rule, proposed by Hebb in 1949 and since measured directly, is enough to account for association, habit and skill without anything being stored anywhere as a copy.",
+    "src": "https://en.wikipedia.org/wiki/Learning",
+    "verified": true
+  },
+  {
+    "in": [
+      "cycle",
+      "memory"
+    ],
+    "out": "repetition",
+    "why": "Ebbinghaus measured his own forgetting curve on nonsense syllables and found that the same total time produces far more retention when spread across days. Every study technique that works is a rediscovery of it, and cramming remains what almost everyone does.",
+    "src": "https://en.wikipedia.org/wiki/Spacing_effect",
+    "verified": true
+  },
+  {
+    "in": [
+      "problem",
+      "reason"
+    ],
+    "out": "intelligence",
+    "why": "Scores on unrelated mental tasks correlate, which is a real finding and the reason g was proposed. What that correlation IS remains open, and the tests have been used to justify conclusions the correlation cannot support for over a century.",
+    "src": "https://en.wikipedia.org/wiki/Human_intelligence",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "goal"
+    ],
+    "out": "problem",
+    "why": "If the route is known it is a task, not a problem. Defining it that way is what let problem-solving be studied at all — the difficulty is in the search, and the search is what can be watched, modelled and taught.",
+    "src": "https://en.wikipedia.org/wiki/Problem_solving",
+    "verified": true
+  },
+  {
+    "in": [
+      "dopamine",
+      "goal"
+    ],
+    "out": "want",
+    "why": "Rats with their dopamine removed still show pleasure at sweetness and will starve beside food, because nothing makes them pursue it. Wanting is the engine and liking is the report, and separating them explains a great deal about addiction.",
+    "src": "https://en.wikipedia.org/wiki/Motivation",
+    "verified": true
+  },
+  {
+    "in": [
+      "organism",
+      "water"
+    ],
+    "out": "need",
+    "why": "The distinction matters because they are satisfied differently: needs saturate — enough water is enough — and wants do not. Almost every account of human motivation is an argument about where the line between the two falls.",
+    "src": "https://en.wikipedia.org/wiki/Need",
+    "verified": true
+  },
+  {
+    "in": [
+      "evidence",
+      "mind"
+    ],
+    "out": "belief",
+    "why": "Beliefs are inferred from behaviour, which is why stated and revealed belief so often differ. The test is not what a person will assert but what they will bet on, and the two come apart most where the assertion is socially costly.",
+    "src": "https://en.wikipedia.org/wiki/Belief",
+    "verified": true
+  },
+  {
+    "in": [
+      "belief",
+      "evidence"
+    ],
+    "out": "knowledge",
+    "why": "You can have a belief that is true and justified and still, by luck, not know: the justification and the truth come apart. Sixty years of philosophy have not settled a replacement, which is unusual for a problem stated that briefly.",
+    "src": "https://en.wikipedia.org/wiki/Epistemology",
+    "verified": true
+  },
+  {
+    "in": [
+      "question",
+      "reason"
+    ],
+    "out": "philosophy",
+    "why": "Physics, psychology, logic and linguistics were all philosophy until they found methods that settled their questions and left. What remains is the set of questions no method has yet been found for, which is why it looks like it never progresses.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "problem"
+    ],
+    "out": "question",
+    "why": "Every human language has a way of forming them, and none is known that lacks one. That universality suggests it is not a convention of speech but a feature of how minds coordinate — you cannot ask another person for what they know without it.",
+    "src": "https://en.wikipedia.org/wiki/Question",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "philosophy"
+    ],
+    "out": "ethics",
+    "why": "Hume noticed that arguments slide from statements about how things are to statements about how they ought to be without ever justifying the step. Every ethical system since is in some sense a response to that gap, and none has closed it.",
+    "src": "https://en.wikipedia.org/wiki/Ethics",
+    "verified": true
+  },
+  {
+    "in": [
+      "mark",
+      "pigment"
+    ],
+    "out": "art",
+    "why": "Every proposed criterion — beauty, skill, representation, emotion — admits things nobody counts and excludes things everyone does. What survives is institutional: art is what is treated as art, which is unsatisfying and has so far outlasted every alternative.",
+    "src": "https://en.wikipedia.org/wiki/Art",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "light"
+    ],
+    "out": "colour",
+    "why": "Objects reflect wavelengths; colour happens in a nervous system with exactly three cone types, which is why two entirely different spectra can look identical. Change the number of cone types — a mantis shrimp has twelve — and the question of what a colour 'is' stops having one answer.",
+    "src": "https://en.wikipedia.org/wiki/Color",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "memory"
+    ],
+    "out": "story",
+    "why": "A chronicle lists; a story explains. The difference is causation, and it is added by the teller. That addition is why stories are remembered far better than lists, and also why they are such a reliable way of being wrong.",
+    "src": "https://en.wikipedia.org/wiki/Narrative",
+    "verified": true
+  },
+  {
+    "in": [
+      "belief",
+      "story"
+    ],
+    "out": "myth",
+    "why": "The test is not whether it is believed literally but what it is used for: myths are told to account for the world's arrangement — why there is death, why the river floods — and they keep that job whether or not anyone thinks them factual.",
+    "src": "https://en.wikipedia.org/wiki/Myth",
+    "verified": true
+  },
+  {
+    "in": [
+      "belief",
+      "repetition"
+    ],
+    "out": "ritual",
+    "why": "The stability is the point: a ritual that changes to be more efficient stops doing its job, which is to be the same thing your predecessors did. That is why they are conservative in a way nothing practical is allowed to be.",
+    "src": "https://en.wikipedia.org/wiki/Ritual",
+    "verified": true
+  },
+  {
+    "in": [
+      "harvest",
+      "ritual"
+    ],
+    "out": "festival",
+    "why": "Harvest, midwinter, the return of the light, the first lambs. The religious meanings were laid over an agricultural calendar that was there first, which is why festivals across unrelated traditions keep landing in the same few weeks.",
+    "src": "https://en.wikipedia.org/wiki/Festival",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "rhythm"
+    ],
+    "out": "dance",
+    "why": "Moving in time with other people raises pain thresholds and makes them likelier to cooperate afterwards — measurably, in strangers. It is one of the few things humans do in large groups in exact unison, and it appears in every society there is.",
+    "src": "https://en.wikipedia.org/wiki/Dance",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "music"
+    ],
+    "out": "song",
+    "why": "A melody constrains which words can come next, so it corrects errors that plain recitation would let through. Every long oral tradition — Homer, the Vedas, the ballads — is sung or metrical for that reason, not for beauty.",
+    "src": "https://en.wikipedia.org/wiki/Song",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "rhythm"
+    ],
+    "out": "poetry",
+    "why": "Metre and rhyme narrow what can be said next, and the narrowing forces choices a writer would not otherwise make. That is why formal verse survived the invention of writing: the difficulty is the instrument, not an obstacle to it.",
+    "src": "https://en.wikipedia.org/wiki/Poetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "resonator"
+    ],
+    "out": "instrument",
+    "why": "A vibrating string moves almost no air on its own. Every instrument is a way of coupling a small fast vibration to a large surface that can push air — the body of a violin, the soundboard of a piano, the bell of a horn. That coupling is the instrument.",
+    "src": "https://en.wikipedia.org/wiki/Musical_instrument",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "wood"
+    ],
+    "out": "resonator",
+    "why": "Everything has a frequency it prefers. Drive it there and small pushes accumulate into a large motion; drive it anywhere else and they cancel. That selectivity is what makes an instrument a note rather than a noise, and it is also why bridges have been shaken apart by wind.",
+    "src": "https://en.wikipedia.org/wiki/Resonance",
+    "verified": true
+  },
+  {
+    "in": [
+      "canvas",
+      "paint"
+    ],
+    "out": "painting",
+    "why": "Egg tempera dries in minutes and cannot be blended; oil stays workable for days and can. The whole shift in European painting toward soft edges, deep shadow and slow correction followed a change of binder, not a change of idea.",
+    "src": "https://en.wikipedia.org/wiki/Painting",
+    "verified": true
+  },
+  {
+    "in": [
+      "marble",
+      "stone"
+    ],
+    "out": "sculpture",
+    "why": "Modelling adds and forgives; carving removes and does not. The two produce different work from the same hand, and the marble ones we have were nearly all preceded by a clay version that no longer exists.",
+    "src": "https://en.wikipedia.org/wiki/Sculpture",
+    "verified": true
+  },
+  {
+    "in": [
+      "building",
+      "geometry"
+    ],
+    "out": "architecture",
+    "why": "Gothic cathedrals were built by masons working from rules of thumb and models, centuries before anyone could calculate a thrust line. The structures worked, and the theory that explains why arrived afterwards to describe what was already standing.",
+    "src": "https://en.wikipedia.org/wiki/Architecture",
+    "verified": true
+  },
+  {
+    "in": [
+      "generation",
+      "repetition"
+    ],
+    "out": "tradition",
+    "why": "A gene takes a generation to spread and a practice can cross a population in a season. That difference in speed is why human groups diverge culturally so much faster than they diverge biologically, and why almost all the variety between them is learned.",
+    "src": "https://en.wikipedia.org/wiki/Tradition",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "time"
+    ],
+    "out": "generation",
+    "why": "About 25 to 30 years in humans. Everything that passes down — genes, land, language, debt — moves at that speed, which is why social change that looks slow within a life looks abrupt across three of them.",
+    "src": "https://en.wikipedia.org/wiki/Generation",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "game"
+    ],
+    "out": "play",
+    "why": "It is costly and risky and every intelligent animal does it, so it must pay. What it appears to buy is the ability to handle the unexpected — animals deprived of play cope badly with novelty later, though they are otherwise normal.",
+    "src": "https://en.wikipedia.org/wiki/Play_(activity)",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "rule"
+    ],
+    "out": "sport",
+    "why": "Removing the rules would make it more efficient and destroy it, because the interest is in what can be done within them. That is why every sport's history is a history of rule arguments rather than of technique.",
+    "src": "https://en.wikipedia.org/wiki/Sport",
+    "verified": true
+  },
+  {
+    "in": [
+      "agreement",
+      "law"
+    ],
+    "out": "rule",
+    "why": "Anything can be achieved if anything is permitted, and then achieving it says nothing. Rules manufacture difficulty on purpose so that meeting it is informative — in games, in science, and in law.",
+    "src": "https://en.wikipedia.org/wiki/Rule",
+    "verified": true
+  },
+  {
+    "in": [
+      "expectation",
+      "surprise"
+    ],
+    "out": "humour",
+    "why": "Nearly every account requires two things: an incongruity, and a signal that it is not dangerous. That is why timing matters so much, why explaining a joke destroys it, and why the same event is funny at a distance and not up close.",
+    "src": "https://en.wikipedia.org/wiki/Humour",
+    "verified": true
+  },
+  {
+    "in": [
+      "expectation",
+      "perception"
+    ],
+    "out": "surprise",
+    "why": "Prediction error is now taken to be much of what the brain computes: it largely ignores what it expected and spends its effort on the difference. Surprise is that difference becoming conscious, which is why it is so strongly tied to learning.",
+    "src": "https://en.wikipedia.org/wiki/Surprise_(emotion)",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "pattern"
+    ],
+    "out": "expectation",
+    "why": "Signals take tens of milliseconds to arrive, so a purely reactive animal would always be late. Predicting and then correcting is faster, and it is why you can catch a ball and why an unexpected step at the bottom of the stairs is so violent.",
+    "src": "https://en.wikipedia.org/wiki/Predictive_coding",
+    "verified": true
+  },
+  {
+    "in": [
+      "repetition",
+      "structure"
+    ],
+    "out": "pattern",
+    "why": "The value is entirely predictive: a pattern with no continuation is a coincidence. Humans find them far too readily, seeing faces in rocks and trends in noise, because missing a real one has usually cost more than inventing a false one.",
+    "src": "https://en.wikipedia.org/wiki/Pattern",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "tradition"
+    ],
+    "out": "fashion",
+    "why": "What is signalled is being current, which requires that it keep moving — anything universally adopted stops working and must be abandoned. That is why the cycle cannot stop and why it accelerates whenever copying gets cheaper.",
+    "src": "https://en.wikipedia.org/wiki/Fashion",
+    "verified": true
   }
 ]

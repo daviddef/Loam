@@ -695,6 +695,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* mind and culture, 4 Sep — R3, the abstract domains */
+          'perception', 'consciousness', 'attention', 'emotion', 'fear', 'anger', 'happiness', 'love', 'attachment', 'grief', 'dream', 'sleep', 'thought', 'reason', 'learning', 'repetition', 'intelligence', 'problem', 'want', 'need', 'belief', 'knowledge', 'philosophy', 'question', 'ethics', 'art', 'colour', 'story', 'myth', 'ritual', 'festival', 'dance', 'song', 'poetry', 'instrument', 'resonator', 'painting', 'sculpture', 'architecture', 'tradition', 'generation', 'play', 'sport', 'rule', 'humour', 'surprise', 'expectation', 'pattern', 'fashion',
           /* head nouns, 4 Sep — R2, the umbrella pass */
           'system', 'cycle', 'theory', 'evidence', 'observation', 'measurement', 'standard', 'agreement', 'trust', 'selection', 'variation', 'population', 'structure', 'form', 'load', 'code', 'symbol', 'meaning', 'mark', 'machine', 'motor', 'zone', 'region', 'boundary', 'edge', 'rotation', 'axis',
           /* words that came back with nothing, 4 Sep */
