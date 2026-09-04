@@ -43873,6 +43873,43 @@ def('gur_e_amir',   () => [P('M14 54 L14 32 L46 32 L46 54 Z', 'lo'),
                           P('M26 44 L34 44 L34 54 L26 54 Z', 'gh'),
                           S('M14 32 L46 32', 'ik', 1.4)]);
 
+/* Places, batch 8 — 5 Sep. The weakest four regions on the board: Middle
+   Africa, Melanesia, Eastern and Western Europe, and Southern Asia.        */
+def('lope_okanda',  () => [P('M4 34 L30 34 L30 54 L4 54 Z', 'bs'),               // savanna on one side
+                          P('M30 34 L56 34 L56 54 L30 54 Z', 'lo'),              // forest on the other
+                          ...[8, 16, 24].map(x => S(`M${x} 34 L${x} 26`, 'gh', 1)),
+                          ...[36, 44, 52].map(x => [C(x, 24, 4.5, 'lo'), S(`M${x} 28 L${x} 34`, 'gh', 1)]).flat(),
+                          S('M10 44 L18 40 L26 46', 'hi', 1.8),                  // one of the 1,600
+                          C(22, 42, 1.6, 'hi'), S('M30 26 L30 54', 'ik', 1)]);
+def('roi_mata_domain',()=>[P('M6 30 L54 30 L54 54 L6 54 Z', 'lo'),               // the ground, read as depth
+                          E(30, 40, 7, 5, 'hi'),                                 // the chief
+                          ...[[14, 38], [20, 46], [40, 38], [46, 46], [30, 50]].map(([x, y]) => E(x, y, 4, 3, 'gh')),
+                          S('M6 30 L54 30', 'ik', 1.6),
+                          S('M30 4 L30 26', 'bs', 1.4), C(30, 8, 2.4, 'bs')]);   // and the story, pointing down
+def('zollverein',   () => [P('M18 54 L18 20 L26 20 L26 54 Z', 'lo'),             // the Doppelbock
+                          P('M34 54 L34 20 L42 20 L42 54 Z', 'lo'),
+                          P('M14 20 L46 20 L46 12 L14 12 Z', 'bs'),
+                          C(22, 16, 3.4, 'hi'), C(38, 16, 3.4, 'hi'),            // the two sheave wheels
+                          S('M18 26 L42 26', 'gh', 1.2), S('M18 34 L42 34', 'gh', 1.2),
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+def('konark',       () => [C(20, 36, 13, 'lo'), C(20, 36, 3, 'bs'),              // the wheel, 3 m across
+                          ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => {
+                            const a = i * Math.PI / 4;
+                            return S(`M${(20 + 3 * Math.cos(a)).toFixed(1)} ${(36 + 3 * Math.sin(a)).toFixed(1)} ` +
+                                     `L${(20 + 12 * Math.cos(a)).toFixed(1)} ${(36 + 12 * Math.sin(a)).toFixed(1)}`, 'gh', 1.2);
+                          }),
+                          P('M38 52 L38 24 L46 12 L54 24 L54 52 Z', 'bs'),       // the tower that fell
+                          S('M38 24 L54 24', 'ik', 1.2)]);
+def('bialowieza',   () => [...[12, 26, 40].map(x => [P(`M${x - 3} 52 L${x - 2} 20 L${x + 2} 20 L${x + 3} 52 Z`, 'lo'),
+                                                     P(`M${x - 9} 22 L${x} 6 L${x + 9} 22 Z`, 'bs')]).flat(),
+                          P('M44 52 L54 44 L56 48 L48 54 Z', 'hi'),              // the half that is dead
+                          S('M46 50 L54 46', 'gh', 1),
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+def('amsterdam_canals',()=>[...[10, 17, 24].map(r => S(`M${30 - r} 54 A${r} ${r} 0 0 1 ${30 + r} 54`, 'lo', 2.4)),
+                          ...[30 - 24, 30 - 17, 30 - 10, 30 + 10, 30 + 17, 30 + 24].map(x => C(x, 54, 1.6, 'gh')),
+                          ...[0, 1, 2].map(i => S(`M${18 + i * 12} 54 L${18 + i * 12} 30`, 'bs', 1)),  // the radials
+                          S('M4 54 L56 54', 'ik', 1.4)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

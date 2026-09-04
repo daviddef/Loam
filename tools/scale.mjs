@@ -1084,6 +1084,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 8, 5 Sep. a temple chariot with 3 m wheels; a winding tower */
+    'konark', 'zollverein',
     /* places batch 7, 5 Sep. a latte stone 4.6 m, a fortress 43 m, a dome 15 m across */
     'latte_stone', 'el_morro', 'gur_e_amir',
     /* places batch 6, 5 Sep. temple spires and cave faces, tens of metres */
@@ -1225,6 +1227,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 8, 5 Sep. a burial site, and a canal ring measured across a city */
+    'roi_mata_domain',
     /* places batch 7, 5 Sep. a marae court 44 by 60 m; a cliff 300 m long */
     'taputapuatea', 'head_smashed_in',
     /* places batch 5, 5 Sep. a mound thirteen hectares across; an arcade some 700 m long */
@@ -1359,6 +1363,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 8, 5 Sep. a forest-savanna mosaic, a primeval forest, 100 km of canal */
+    'lope_okanda', 'bialowieza', 'amsterdam_canals',
     /* places batch 6, 5 Sep. a city on the altiplano; earthworks measured in thousands of km */
     'tiwanaku', 'benin_walls',
     /* places batch 5, 5 Sep. terraces climbing a whole valley side */
