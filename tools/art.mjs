@@ -44775,6 +44775,22 @@ def('nelsons_dockyard',()=>[P('M2 4 L20 4 L20 34 L40 34 L40 4 L58 4 L58 56 L2 56
                           C(12, 44, 4, 'bs'), ...[0, 1, 2, 3].map(i => S(`M12 44 L${12 + 6 * Math.cos(i * Math.PI / 4)} ${44 + 6 * Math.sin(i * Math.PI / 4)}`, 'ik', 1.2)),
                           S('M44 40 Q50 46 44 52', 'gh', 2)]);                  // the storm outside
 
+/* The belt, nut and shaft homonyms, 5 Sep. Orion's Belt is drawn as three
+   stars at three depths, because the line is a coincidence of viewpoint.   */
+def('orions_belt',  () => [C(16, 38, 4.5, 'hi'), C(30, 32, 3.4, 'hi'), C(44, 26, 5, 'hi'),
+                          S('M16 38 L44 26', 'gh', 1),
+                          ...granules('bs', 14, 3, [4, 6, 56, 52]),
+                          S('M2 50 L58 44', 'ik', 0.8)]);                     // the line only from here
+def('nut_fastener', () => [P('M30 12 L46 21 L46 39 L30 48 L14 39 L14 21 Z', 'lo'),
+                          C(30, 30, 9, 'bs'),
+                          ...[0, 1, 2, 3].map(i => S(`M21 ${25 + i * 3.5} L39 ${23 + i * 3.5}`, 'gh', 1)),   // the helix, inside
+                          S('M14 21 L46 21', 'ik', 0.9), S('M14 39 L46 39', 'ik', 0.9)]);
+def('shaft_rotating',()=>[S('M4 30 L56 30', 'lo', 7),
+                          ...[16, 44].map(x => [P(`M${x - 7} 20 L${x + 7} 20 L${x + 7} 40 L${x - 7} 40 Z`, 'bs'),
+                                                ...[0, 1, 2, 3].map(i => C(x + 5 * Math.cos(i * Math.PI / 2), 30 + 5 * Math.sin(i * Math.PI / 2), 1.6, 'gh'))]).flat(),
+                          C(30, 30, 6, 'hi'),                                 // and one thing keyed to it
+                          S('M30 24 L30 36', 'ik', 1.2)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

@@ -768,6 +768,100 @@
         "sodium_hydroxide"
       ],
       "found": "nothing yet; Lake Turkana is a soda lake and was one recipe away"
+    },
+    {
+      "id": "belt",
+      "sense": "the leather one, worn or driven",
+      "not": [
+        "orion",
+        "asterism",
+        "alnitak",
+        "alnilam",
+        "mintaka",
+        "asteroid belt",
+        "kuiper"
+      ],
+      "also": [
+        "orions_belt"
+      ],
+      "found": "supergiant+belt→betelgeuse, betelgeuse+belt→orion, belt+sirius→canis_major"
+    },
+    {
+      "id": "nut",
+      "sense": "Nut, the Egyptian sky goddess arched over Geb",
+      "not": [
+        "shell of the nut",
+        "kernel",
+        "bur",
+        "spiny",
+        "threaded",
+        "bolt",
+        "hardware"
+      ],
+      "also": [
+        "seed",
+        "nut_fastener"
+      ],
+      "found": "nut+rainforest→brazil_nut, nut|wait→chestnut, nut+rod→bolt"
+    },
+    {
+      "id": "shaft",
+      "sense": "the vertical hole sunk to reach something below",
+      "not": [
+        "turns in bearings",
+        "rotating shaft",
+        "drive shaft",
+        "keyed to",
+        "crankshaft",
+        "camshaft"
+      ],
+      "also": [
+        "shaft_rotating"
+      ],
+      "found": "coil+shaft→armature, shaft+wheel→cam, flyweight+shaft→governor"
+    },
+    {
+      "id": "tap",
+      "sense": "the plumbing one — a washer screwed onto a seat",
+      "not": [
+        "cutting an internal thread",
+        "tapping a hole",
+        "tap and die",
+        "tapping a tree",
+        "maple sap"
+      ],
+      "also": [],
+      "found": "nothing yet; a threading tap is a different tool and nut_fastener nearly took one"
+    },
+    {
+      "id": "thread",
+      "sense": "the twisted fibre",
+      "not": [
+        "screw thread",
+        "threaded hole",
+        "pitch of the thread",
+        "execution thread"
+      ],
+      "also": [
+        "screw",
+        "nut_fastener"
+      ],
+      "found": "nothing yet"
+    },
+    {
+      "id": "rotor",
+      "sense": "the helicopter's — airfoils spun around a hub",
+      "not": [
+        "armature",
+        "stator",
+        "rotating part of the machine",
+        "brake rotor"
+      ],
+      "also": [
+        "shaft_rotating",
+        "armature"
+      ],
+      "found": "rotor+transformer→ac_induction_motor, which is the electrical rotor and not the helicopter one"
     }
   ],
   "cleared": [
@@ -914,7 +1008,6 @@
     "sulfur",
     "switch",
     "syenite",
-    "thread",
     "tiger",
     "tin",
     "travertine",

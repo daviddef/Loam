@@ -31537,11 +31537,11 @@
  },
  {
   "in": [
-   "rotor",
+   "armature",
    "transformer"
   ],
   "out": "ac_induction_motor",
-  "why": "Alternating current fed through stator coils creates a magnetic field that rotates in step with the AC oscillations, and that turning field drags an unpowered rotor around behind it — no brushes needed. Tesla demonstrated the motor in 1887, patented in 1888.",
+  "why": "An induction motor is a transformer whose secondary is free to turn. Alternating current in the stator coils makes a field that rotates in step with the oscillation, that field induces current in a rotor no wire reaches, and the rotor is dragged around behind it — no brushes anywhere. Tesla demonstrated it in 1888.",
   "src": "https://en.wikipedia.org/wiki/Induction_motor",
   "supported": true
  },
@@ -36167,7 +36167,7 @@
  },
  {
   "in": [
-   "nut",
+   "seed",
    "rainforest"
   ],
   "out": "brazil_nut",
@@ -36177,9 +36177,9 @@
  },
  {
   "in": [
-   "nut"
+   "tree",
+   "seed"
   ],
-  "verb": "wait",
   "out": "chestnut",
   "why": "Its spiny bur splits open on its own once the fruit is ripe. The unrelated horse chestnut looks similar and is named for it, but is mildly poisonous.",
   "src": "https://en.wikipedia.org/wiki/Chestnut",
@@ -53986,8 +53986,8 @@
  },
  {
   "in": [
-   "supergiant",
-   "belt"
+   "orions_belt",
+   "supergiant"
   ],
   "out": "betelgeuse",
   "why": "Betelgeuse marks Orion's right shoulder beside the three-star belt — a red supergiant so vast it would reach past Mars if it replaced the Sun.",
@@ -54167,7 +54167,7 @@
  {
   "in": [
    "betelgeuse",
-   "belt"
+   "orions_belt"
   ],
   "out": "orion",
   "why": "Orion's three-star Belt — Alnitak, Alnilam, Mintaka — beside his shoulder star Betelgeuse makes the hunter the easiest constellation to find and to star-hop from.",
@@ -54176,7 +54176,7 @@
  },
  {
   "in": [
-   "belt",
+   "orions_belt",
    "sirius"
   ],
   "out": "canis_major",
@@ -85763,7 +85763,7 @@
  },
  {
   "in": [
-   "nut",
+   "nut_fastener",
    "rod"
   ],
   "out": "bolt",
@@ -89225,7 +89225,7 @@
  {
   "in": [
    "coil",
-   "shaft"
+   "shaft_rotating"
   ],
   "out": "armature",
   "why": "It is defined by its role rather than its position: whichever part carries the current being generated is the armature, and in most large alternators that is the stationary part. The word describes the job, not the geometry.",
@@ -89324,7 +89324,7 @@
  },
  {
   "in": [
-   "shaft",
+   "shaft_rotating",
    "wheel"
   ],
   "out": "cam",
@@ -89455,7 +89455,7 @@
  {
   "in": [
    "flyweight",
-   "shaft"
+   "shaft_rotating"
   ],
   "out": "governor",
   "why": "It is the first widely used feedback device and the one Maxwell wrote the mathematics of in 1868 — the paper that started control theory. The engine measures itself and corrects itself, with nobody watching.",
@@ -96503,5 +96503,35 @@
   "why": "It is sited on a storm. In September 1723 a hurricane damaged 35 ships in other Antiguan anchorages and left the ones inside English Harbour untouched, and the Royal Navy built there from 1725 — a capstan house for careening, a stone storehouse, and later a sail loft. Nelson was stationed there from 1784 to 1787; the Navy left in 1889 and it is the only Georgian dockyard still working.",
   "verified": true,
   "src": "https://en.wikipedia.org/wiki/Nelson%27s_Dockyard"
+ },
+ {
+  "in": [
+   "supergiant",
+   "supergiant"
+  ],
+  "out": "orions_belt",
+  "why": "Alnitak, Alnilam and Mintaka are three supergiants at quite different distances that happen to fall on one line as seen from here. That is what an asterism is — a coincidence of viewpoint rather than a group of stars — and it is why the belt would be nothing in particular from anywhere else.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Orion%27s_Belt"
+ },
+ {
+  "in": [
+   "screw"
+  ],
+  "verb": "cut",
+  "out": "nut_fastener",
+  "why": "Cut the helix into the wall of a hole instead of onto the outside of a bar and you have the other half of the pair. A screw bites into the work and holds by that; a nut holds against a bolt that touches nothing, so the joint is a clamp rather than a bite.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Nut_(hardware)"
+ },
+ {
+  "in": [
+   "rod",
+   "bearing"
+  ],
+  "out": "shaft_rotating",
+  "why": "A bar becomes a shaft when something holds it so that turning is the only thing it can do: the bearings define the axis and take everything that is not rotation. After that, everything keyed to the bar turns at exactly one speed — which is the constraint gears, belts and clutches all exist to get around.",
+  "verified": true,
+  "src": "https://en.wikipedia.org/wiki/Drive_shaft"
  }
 ]

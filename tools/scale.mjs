@@ -286,6 +286,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    /* the fastener homonym, 5 Sep. a nut is centimetres across */
+    'nut_fastener',
           /* verb outcomes batch 5, 5 Sep */
           'firn', 'rock_candy',
           /* verb outcomes batch 4, 5 Sep */
@@ -767,6 +769,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* the shaft homonym, 5 Sep. a shaft in its bearings, a metre or so */
+    'shaft_rotating',
     /* places batch 18, 5 Sep. a near life-size terracotta head */
     'nok_terracotta',
     /* places batch 7, 5 Sep. an American bison stands about 1.8 m at the shoulder */
@@ -1617,6 +1621,8 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+    /* the belt homonym, 5 Sep. an asterism spans hundreds of light years */
+    'orions_belt',
           /* the universe closed, 4 Sep */
           'space', 'spacetime',
           /* mathematics, time and power, 4 Sep — R3 continued */
