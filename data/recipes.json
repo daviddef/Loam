@@ -90676,5 +90676,535 @@
     "why": "What is signalled is being current, which requires that it keep moving — anything universally adopted stops working and must be abandoned. That is why the cycle cannot stop and why it accelerates whenever copying gets cheaper.",
     "src": "https://en.wikipedia.org/wiki/Fashion",
     "verified": true
+  },
+  {
+    "in": [
+      "measurement",
+      "number"
+    ],
+    "out": "ratio",
+    "why": "Three metres to one metre is the same relation as three feet to one foot. Losing the unit is exactly what makes it portable, and it is why almost every law of physics is written as a ratio rather than as a quantity.",
+    "src": "https://en.wikipedia.org/wiki/Ratio",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "part"
+    ],
+    "out": "division",
+    "why": "Dividing by zero is not merely undefined by convention: no number multiplied by zero gives anything but zero, so the answer would have to be every number at once. That is why the rule is absolute rather than cautious.",
+    "src": "https://en.wikipedia.org/wiki/Division_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "boundary",
+      "whole"
+    ],
+    "out": "part",
+    "why": "Where a part stops is rarely given by the object: an arm ends somewhere, a mountain range ends somewhere, and both boundaries are chosen. Almost every counting dispute — how many species, how many countries — is a dispute about where parts end.",
+    "src": "https://en.wikipedia.org/wiki/Mereology",
+    "verified": true
+  },
+  {
+    "in": [
+      "structure",
+      "system"
+    ],
+    "out": "whole",
+    "why": "Water is wet and neither hydrogen nor oxygen is. A traffic jam moves backwards while every car in it moves forwards. Those are not mysteries; they are what it means for an arrangement to matter as much as the ingredients.",
+    "src": "https://en.wikipedia.org/wiki/Holism",
+    "verified": true
+  },
+  {
+    "in": [
+      "division",
+      "ratio"
+    ],
+    "out": "fraction",
+    "why": "The Pythagoreans are said to have been undone by finding that a square's diagonal cannot be written as a ratio of whole numbers. There are far more numbers that cannot be written that way than can, which was not accepted for another two thousand years.",
+    "src": "https://en.wikipedia.org/wiki/Fraction",
+    "verified": true
+  },
+  {
+    "in": [
+      "distance",
+      "number"
+    ],
+    "out": "limit",
+    "why": "It is what makes calculus rigorous: a tangent is not the slope over an infinitely small distance, it is the value the slope approaches. That reformulation, two centuries after Newton, finally answered Berkeley's objection about the ghosts of departed quantities.",
+    "src": "https://en.wikipedia.org/wiki/Limit_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "limit",
+      "number"
+    ],
+    "out": "infinity",
+    "why": "The whole numbers pair off one-to-one with the even numbers, so those two infinities are the same size. They cannot be paired with the points on a line, so that one is larger. The proof is short, was violently rejected, and is now standard.",
+    "src": "https://en.wikipedia.org/wiki/Infinity",
+    "verified": true
+  },
+  {
+    "in": [
+      "difference",
+      "time"
+    ],
+    "out": "change",
+    "why": "Everything else needs a reference — position, temperature, value. Change needs only the same thing at two times, which is why rates turn out to be the more fundamental description and why physics is written in derivatives.",
+    "src": "https://en.wikipedia.org/wiki/Change",
+    "verified": true
+  },
+  {
+    "in": [
+      "boundary",
+      "number"
+    ],
+    "out": "difference",
+    "why": "Voltage, height, temperature and pressure are all differences: there is no absolute value of any of them, only a gap between two points. Where zero sits is a convention, and much confusion comes from forgetting that it was one.",
+    "src": "https://en.wikipedia.org/wiki/Difference",
+    "verified": true
+  },
+  {
+    "in": [
+      "change",
+      "limit"
+    ],
+    "out": "calculus",
+    "why": "Newton and Leibniz reached it independently in the 1660s and 1670s, and the priority quarrel cut English mathematics off from the continent for a hundred years. Leibniz's notation won because it was better, which is why the integral sign is his.",
+    "src": "https://en.wikipedia.org/wiki/Calculus",
+    "verified": true
+  },
+  {
+    "in": [
+      "agreement",
+      "logic"
+    ],
+    "out": "axiom",
+    "why": "Every proof rests on earlier ones and the regress has to stop. Euclid's fifth — that parallel lines never meet — was suspected for two thousand years of being provable from the others. It is not, and dropping it gives geometries that fit the actual universe better than his.",
+    "src": "https://en.wikipedia.org/wiki/Axiom",
+    "verified": true
+  },
+  {
+    "in": [
+      "axiom",
+      "logic"
+    ],
+    "out": "proof",
+    "why": "The point is not persuasion but transferability: anyone can verify it without trusting the author and without repeating the discovery. That is what makes mathematics cumulative in a way almost nothing else is.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_proof",
+    "verified": true
+  },
+  {
+    "in": [
+      "axiom",
+      "proof"
+    ],
+    "out": "theorem",
+    "why": "Nothing in mathematics is overturned by new evidence, because there is no evidence in it. Pythagoras' theorem is as true now as it was, which is a property almost nothing else in human knowledge has.",
+    "src": "https://en.wikipedia.org/wiki/Theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic",
+      "proof"
+    ],
+    "out": "contradiction",
+    "why": "From a contradiction any conclusion at all can be derived — the principle of explosion. That is why consistency is not one virtue among others: without it a system proves everything, which is the same as proving nothing.",
+    "src": "https://en.wikipedia.org/wiki/Contradiction",
+    "verified": true
+  },
+  {
+    "in": [
+      "contradiction",
+      "logic"
+    ],
+    "out": "paradox",
+    "why": "It is a tool rather than a curiosity: Russell's paradox destroyed naive set theory and forced the axioms that replaced it. A paradox proves that something you believed has to go, without saying which thing.",
+    "src": "https://en.wikipedia.org/wiki/Paradox",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "number"
+    ],
+    "out": "equation",
+    "why": "The equals sign arrived only in 1557, when Robert Recorde tired of writing 'is equalle to' and chose two parallel lines because no two things can be more equal. Everything before that was written out in sentences.",
+    "src": "https://en.wikipedia.org/wiki/Equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "set"
+    ],
+    "out": "function",
+    "why": "It says nothing about formulas — a function can be a table, a curve or a machine. Pinning it to the pairing rather than to the expression is what let mathematics handle things that have no formula at all.",
+    "src": "https://en.wikipedia.org/wiki/Function_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "change",
+      "time"
+    ],
+    "out": "event",
+    "why": "In relativity it is the fundamental object: not a thing and not a moment but a point in spacetime. Two observers can disagree about whether two events were simultaneous and both be right, which is where the trouble starts.",
+    "src": "https://en.wikipedia.org/wiki/Event_(relativity)",
+    "verified": true
+  },
+  {
+    "in": [
+      "event",
+      "goal"
+    ],
+    "out": "outcome",
+    "why": "Almost every probability error is an error in the list rather than the arithmetic. Two children can be boy-boy, boy-girl, girl-boy or girl-girl, and treating the middle two as one is where the classic paradoxes come from.",
+    "src": "https://en.wikipedia.org/wiki/Outcome_(probability)",
+    "verified": true
+  },
+  {
+    "in": [
+      "outcome",
+      "pattern"
+    ],
+    "out": "chance",
+    "why": "A tossed coin is nearly deterministic and completely unpredictable in practice, because the result depends on the starting conditions more finely than anyone can control. Whether the randomness is in the world or in us rarely changes what to do.",
+    "src": "https://en.wikipedia.org/wiki/Randomness",
+    "verified": true
+  },
+  {
+    "in": [
+      "chance",
+      "ratio"
+    ],
+    "out": "probability",
+    "why": "Pascal and Fermat worked it out in a correspondence of 1654 about how to divide the pot fairly when play stops early. The answer required reasoning about games that had not been played, and that was the new idea.",
+    "src": "https://en.wikipedia.org/wiki/Probability",
+    "verified": true
+  },
+  {
+    "in": [
+      "part",
+      "population"
+    ],
+    "out": "sample",
+    "why": "The 1936 Literary Digest poll asked 2.4 million people and got the election wrong; Gallup asked 50,000 and got it right. The large sample was drawn from car and telephone owners in a depression, which is a bias no size can fix.",
+    "src": "https://en.wikipedia.org/wiki/Sampling_(statistics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "sample"
+    ],
+    "out": "statistics",
+    "why": "Probability runs from a known population to expected samples; statistics runs the other way, from an observed sample to an unknown population — and that direction is not guaranteed. Every argument about statistics is an argument about whether the sample was like the whole.",
+    "src": "https://en.wikipedia.org/wiki/Statistics",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "sample"
+    ],
+    "out": "average",
+    "why": "Almost everyone has more than the average number of legs. The mean is pulled by extremes and the median is not, and choosing between them is a choice about what you want to be true rather than a technical detail.",
+    "src": "https://en.wikipedia.org/wiki/Average",
+    "verified": true
+  },
+  {
+    "in": [
+      "pattern",
+      "rotation"
+    ],
+    "out": "symmetry",
+    "why": "Noether proved in 1918 that each continuous symmetry corresponds to a conserved quantity: the laws being the same tomorrow gives conservation of energy, the same everywhere gives momentum, the same in every direction gives angular momentum. The deepest result in physics is a theorem about symmetry.",
+    "src": "https://en.wikipedia.org/wiki/Symmetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "circle",
+      "ratio"
+    ],
+    "out": "pi",
+    "why": "It cannot be written as a fraction, and Lindemann showed in 1882 that it is not the root of any polynomial with whole-number coefficients — which finally proved squaring the circle with compass and straightedge impossible, closing a question open since antiquity.",
+    "src": "https://en.wikipedia.org/wiki/Pi",
+    "verified": true
+  },
+  {
+    "in": [
+      "axis",
+      "orbit"
+    ],
+    "out": "season",
+    "why": "The axis leans about 23.4 degrees, so each hemisphere is angled toward the Sun for half the orbit and away for the other half. Light arriving at a steeper angle is spread over less ground and lasts longer in the day, and that is the whole mechanism.",
+    "src": "https://en.wikipedia.org/wiki/Season",
+    "verified": true
+  },
+  {
+    "in": [
+      "generation",
+      "time"
+    ],
+    "out": "era",
+    "why": "Nobody living in one knows it. The boundaries are drawn later around whatever turned out to matter, which is why they keep moving and why two historians will put the same year in different eras.",
+    "src": "https://en.wikipedia.org/wiki/Era",
+    "verified": true
+  },
+  {
+    "in": [
+      "memory",
+      "time"
+    ],
+    "out": "past",
+    "why": "What survives is not a sample of what happened: stone outlasts wood, the literate outlast the rest, and winners keep records. Every account of the past is shaped by that filter before any historian touches it.",
+    "src": "https://en.wikipedia.org/wiki/History",
+    "verified": true
+  },
+  {
+    "in": [
+      "expectation",
+      "time"
+    ],
+    "out": "future",
+    "why": "Physics has no arrow of its own — the equations run equally well backwards. The direction comes from entropy: there are vastly more disordered arrangements than ordered ones, so things run toward the many. That statistical fact is the whole of why the past is different from the future.",
+    "src": "https://en.wikipedia.org/wiki/Future",
+    "verified": true
+  },
+  {
+    "in": [
+      "past",
+      "writing"
+    ],
+    "out": "prehistory",
+    "why": "The line is not about how people lived but about what can be read, so it falls at a different date in every region — 3200 BC in Mesopotamia, the nineteenth century AD elsewhere. It is a fact about evidence, not about the people.",
+    "src": "https://en.wikipedia.org/wiki/Prehistory",
+    "verified": true
+  },
+  {
+    "in": [
+      "bronze",
+      "era"
+    ],
+    "out": "bronze_age",
+    "why": "Copper is common and tin is rare and concentrated in a few regions, so bronze required long-distance trade before it required metallurgy. The age is really the first evidence of networks reaching across a continent.",
+    "src": "https://en.wikipedia.org/wiki/Bronze_Age",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "iron"
+    ],
+    "out": "iron_age",
+    "why": "Bronze is easier to cast and holds an edge well; iron needs much higher temperatures and carburising to beat it. What iron had was ubiquity — ore almost everywhere — so once the technique spread, metal stopped depending on trade routes.",
+    "src": "https://en.wikipedia.org/wiki/Iron_Age",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "writing"
+    ],
+    "out": "antiquity",
+    "why": "Much of what survived did so through a narrow channel of copying — monastic and Islamic scriptoria — and what was not copied in those centuries is simply gone. The gaps in what we have are gaps in transmission, not in what was written.",
+    "src": "https://en.wikipedia.org/wiki/Classical_antiquity",
+    "verified": true
+  },
+  {
+    "in": [
+      "antiquity",
+      "era"
+    ],
+    "out": "middle_ages",
+    "why": "The term was coined by Renaissance scholars to describe the space between themselves and antiquity. It has stuck for a thousand years of European history that had no idea it was an interval, and the name still shapes what is expected of it.",
+    "src": "https://en.wikipedia.org/wiki/Middle_Ages",
+    "verified": true
+  },
+  {
+    "in": [
+      "antiquity",
+      "printing_press"
+    ],
+    "out": "renaissance",
+    "why": "There had been revivals of classical learning before — Carolingian, twelfth-century — and each stayed local because copying was slow. Printing made a recovered text unlosable, which is the difference between a revival and a change of period.",
+    "src": "https://en.wikipedia.org/wiki/Renaissance",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "industry"
+    ],
+    "out": "modernity",
+    "why": "Earlier ages measured themselves against the past and generally found the present wanting. Treating the new as better by default is recent, and it is the attitude that the word actually names rather than any particular date.",
+    "src": "https://en.wikipedia.org/wiki/Modernity",
+    "verified": true
+  },
+  {
+    "in": [
+      "past",
+      "soil"
+    ],
+    "out": "archaeology",
+    "why": "Layers accumulate in order, so lower is older — the one principle everything rests on. It is also why digging destroys: a site can only be excavated once, and anything not recorded as it comes out is gone permanently.",
+    "src": "https://en.wikipedia.org/wiki/Archaeology",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "machine"
+    ],
+    "out": "industry",
+    "why": "Water mills had driven machinery for centuries but had to be where the water was. A coal-fired engine could be put anywhere, so production moved to where the labour and the markets were, and the factory town followed the engine rather than the river.",
+    "src": "https://en.wikipedia.org/wiki/Industrial_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "energy",
+      "matter"
+    ],
+    "out": "fuel",
+    "why": "What makes a good one is energy per kilogram and the ease of starting and stopping the release. Wood, coal, oil and hydrogen sit on the same scale, and almost the whole history of technology is a climb up it.",
+    "src": "https://en.wikipedia.org/wiki/Fuel",
+    "verified": true
+  },
+  {
+    "in": [
+      "fuel",
+      "methane"
+    ],
+    "out": "natural_gas",
+    "why": "It was worthless without a pipeline, because unlike oil it cannot be carried in barrels. Only once long-distance pipes and liquefaction existed did the same substance become a fuel rather than waste — the value was in the transport, not the gas.",
+    "src": "https://en.wikipedia.org/wiki/Natural_gas",
+    "verified": true
+  },
+  {
+    "in": [
+      "distillation",
+      "oil"
+    ],
+    "out": "refinery",
+    "why": "Crude is a mixture of hydrocarbons of different lengths, and longer chains boil higher. A tall column with a temperature gradient lets each draw off at its own height, which is why a refinery is shaped the way it is.",
+    "src": "https://en.wikipedia.org/wiki/Oil_refinery",
+    "verified": true
+  },
+  {
+    "in": [
+      "ore",
+      "tunnel"
+    ],
+    "out": "mining",
+    "why": "A good copper ore is under one per cent copper, so more than ninety-nine per cent of what is moved is waste. Almost every environmental problem mining has is a problem of that other ninety-nine per cent rather than of the metal.",
+    "src": "https://en.wikipedia.org/wiki/Mining",
+    "verified": true
+  },
+  {
+    "in": [
+      "silicon",
+      "sunlight"
+    ],
+    "out": "solar_power",
+    "why": "There are no moving parts and nothing is consumed, which is why panels degrade at well under a per cent a year. The whole device is one carefully spoiled crystal, doped so that the two halves pull the freed electron in one direction.",
+    "src": "https://en.wikipedia.org/wiki/Solar_power",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "sun"
+    ],
+    "out": "sunlight",
+    "why": "A photon made by fusion is absorbed and re-emitted so many times on the way out that it takes on the order of a hundred thousand years to cross the Sun, and eight minutes to cross the space beyond it. Nearly all of the journey is the first half-million kilometres.",
+    "src": "https://en.wikipedia.org/wiki/Sunlight",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "wind_turbine"
+    ],
+    "out": "wind_power",
+    "why": "If it took all of it the air would stop dead behind the blades and nothing more could come through. Betz worked out the best possible compromise in 1919, and modern machines reach about three quarters of that limit.",
+    "src": "https://en.wikipedia.org/wiki/Wind_power",
+    "verified": true
+  },
+  {
+    "in": [
+      "dam",
+      "turbine"
+    ],
+    "out": "hydroelectricity",
+    "why": "Pumped storage sends water back uphill when power is cheap and lets it down when it is dear, at about 80% efficiency. Every other storage technology is small by comparison, which is why a century-old idea is still the answer.",
+    "src": "https://en.wikipedia.org/wiki/Hydroelectricity",
+    "verified": true
+  },
+  {
+    "in": [
+      "concrete",
+      "river"
+    ],
+    "out": "dam",
+    "why": "A deep narrow reservoir pushes harder than a broad shallow one holding far more water. That is why dam walls thicken toward the base, and why the shape of the valley decides the design more than the size of the lake.",
+    "src": "https://en.wikipedia.org/wiki/Dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "fission",
+      "uranium"
+    ],
+    "out": "nuclear_power",
+    "why": "A fissioning uranium nucleus ends up about a fifth of a per cent lighter than it began, and that missing mass is the heat. It is why a fuel pellet the size of a fingertip holds as much energy as a tonne of coal.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_power",
+    "verified": true
+  },
+  {
+    "in": [
+      "neutron",
+      "nucleus"
+    ],
+    "out": "fission",
+    "why": "Each split releases two or three neutrons, so whether it continues depends on how many find another nucleus rather than escaping. That single ratio is the difference between a reactor, a lump of metal, and nothing at all.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_fission",
+    "verified": true
+  },
+  {
+    "in": [
+      "industry",
+      "matter"
+    ],
+    "out": "waste",
+    "why": "Almost everything called waste is a resource in the wrong place, wrong mixture or wrong quantity. Mixing is what usually destroys the value, which is why separating at the source works and sorting afterwards mostly does not.",
+    "src": "https://en.wikipedia.org/wiki/Waste",
+    "verified": true
+  },
+  {
+    "in": [
+      "furnace",
+      "waste"
+    ],
+    "out": "recycling",
+    "why": "Aluminium and glass can be remelted indefinitely at a fraction of the original energy. Paper fibres shorten each time and plastics degrade, so those are downcycled into lesser products and eventually leave the loop.",
+    "src": "https://en.wikipedia.org/wiki/Recycling",
+    "verified": true
+  },
+  {
+    "in": [
+      "smoke",
+      "waste"
+    ],
+    "out": "pollution",
+    "why": "Nitrogen is fertiliser on a field and an algal bloom in a river. Carbon dioxide is what plants breathe and what warms the planet. Almost nothing on the list is intrinsically harmful, which is why the arguments are always about thresholds.",
+    "src": "https://en.wikipedia.org/wiki/Pollution",
+    "verified": true
   }
 ]

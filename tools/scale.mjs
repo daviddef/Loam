@@ -33,6 +33,8 @@ const SCALE = {
   // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
   // them as nuggets was a mislabel, not a drawing mistake.
   '-10': [
+          /* subatomic, 4 Sep */
+          'fission',
           /* umbrella waves, 3 Sep */
           'spin', 'fermion', 'boson', 'quark', 'strange_quark', 'charm_quark', 'bottom_quark', 'top_quark', 'lepton', 'muon', 'tau', 'neutrino', 'electron_neutrino', 'muon_neutrino', 'tau_neutrino', 'gluon', 'w_boson', 'z_boson', 'higgs_boson', 'hadron', 'baryon', 'meson', 'metallic_bond', 'oxide', 'antimatter', 'pauli_exclusion_principle',
           /* completeness-audit wave, 2 Sep */
@@ -695,6 +697,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* mathematics, time and power, 4 Sep — R3 continued */
+          'ratio', 'division', 'part', 'whole', 'fraction', 'limit', 'change', 'difference', 'calculus', 'axiom', 'proof', 'theorem', 'contradiction', 'paradox', 'equation', 'function', 'event', 'outcome', 'chance', 'probability', 'sample', 'statistics', 'average', 'symmetry', 'pi', 'fuel', 'waste', 'recycling',
           /* mind and culture, 4 Sep — R3, the abstract domains */
           'perception', 'consciousness', 'attention', 'emotion', 'fear', 'anger', 'happiness', 'love', 'attachment', 'grief', 'dream', 'sleep', 'thought', 'reason', 'learning', 'repetition', 'intelligence', 'problem', 'want', 'need', 'belief', 'knowledge', 'philosophy', 'question', 'ethics', 'art', 'colour', 'story', 'myth', 'ritual', 'festival', 'dance', 'song', 'poetry', 'instrument', 'resonator', 'painting', 'sculpture', 'architecture', 'tradition', 'generation', 'play', 'sport', 'rule', 'humour', 'surprise', 'expectation', 'pattern', 'fashion',
           /* head nouns, 4 Sep — R2, the umbrella pass */
@@ -1062,6 +1066,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* mathematics, time and power, 4 Sep — R3 continued */
+          'archaeology', 'refinery', 'solar_power', 'wind_power', 'dam', 'hydroelectricity', 'nuclear_power', 'industry', 'mining', 'pollution', 'natural_gas',
           /* landscape, 4 Sep — on the gestures the gods were sitting on */
           'cliff', 'scree', 'hot_spring',
           /* common words the corpus never had, 3 Sep */
@@ -1212,6 +1218,8 @@ const SCALE = {
           // differential that drives them, same scale as the storm system it forms over
           'wind_shear', 'tornado', 'tsunami'],
   '9':   [
+          /* mathematics, time and power, 4 Sep — R3 continued */
+          'sunlight',
           /* head nouns, 4 Sep — R2, the umbrella pass */
           'giant', 'dwarf',
           /* umbrella waves, 3 Sep */
@@ -1261,7 +1269,9 @@ const SCALE = {
           'tuvalu', 'united_arab_emirates', 'vanuatu',
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
-  '7':   [// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
+  '7':   [
+          /* time as a period, 4 Sep — a span of history, not an object */
+          'season', 'era', 'past', 'future', 'prehistory', 'bronze_age', 'iron_age', 'antiquity', 'middle_ages', 'renaissance', 'modernity', 'infinity',// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           /* unblocking-nouns wave, 2 Sep */
           'soviet_union',
           'russia',
