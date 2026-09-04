@@ -30293,7 +30293,6 @@
       "microbe"
     ],
     "fact": "Mycobacterium leprae divides so slowly that symptoms can take five years or more to appear.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -58634,7 +58633,6 @@
       "microbe"
     ],
     "fact": "The only fungus with a swimming spore — one species has driven whole frog populations extinct.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_chytridiomycota"
   },
@@ -58660,7 +58658,6 @@
       "microbe"
     ],
     "fact": "Sac fungi, over 64,000 species strong — includes the mold that gave the world penicillin.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_ascomycota"
   },
@@ -58697,7 +58694,6 @@
       "microbe"
     ],
     "fact": "Looks like a fungus, isn't one — its cellulose walls helped trigger the Irish Potato Famine.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_oomycota"
   },
@@ -78970,5 +78966,1004 @@
       "music"
     ],
     "fact": "A short spruce rod wedged upright between the belly and the back, just behind one foot of the bridge."
+  },
+  {
+    "id": "gangrene",
+    "name": "Gangrene",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Tissue dying because its blood supply has failed, and then being fermented by what got into it."
+  },
+  {
+    "id": "dysentery",
+    "name": "Dysentery",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Diarrhoea with blood in it, which is a different thing from ordinary diarrhoea and means the gut wall itself is being destroyed."
+  },
+  {
+    "id": "phytophthora_infestans",
+    "name": "Phytophthora Infestans",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Not a fungus, despite everything about it. An oomycete — closer to brown algae than to a mushroom."
+  },
+  {
+    "id": "puccinia_graminis",
+    "name": "Puccinia Graminis",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Wheat stem rust, and it needs two unrelated host plants to complete its life cycle."
+  },
+  {
+    "id": "hemileia_vastatrix",
+    "name": "Hemileia Vastatrix",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Coffee leaf rust, which ended coffee growing in Ceylon within twenty years and is why Britain drinks tea."
+  },
+  {
+    "id": "magnaporthe_oryzae",
+    "name": "Magnaporthe Oryzae",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Rice blast, and it gets in by generating a pressure no other cell is known to reach."
+  },
+  {
+    "id": "fusarium_oxysporum",
+    "name": "Fusarium Oxysporum",
+    "emoji": "🍌",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Panama disease. It killed the Gros Michel banana commercially, and its next race is now working through the one that replaced it."
+  },
+  {
+    "id": "botrytis_cinerea",
+    "name": "Botrytis Cinerea",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Grey mould, which ruins a crop — except when it does the opposite and makes the best sweet wines there are."
+  },
+  {
+    "id": "erysiphe",
+    "name": "Erysiphe",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Powdery mildew — the white dust on a leaf, and it is the fungus itself, not a deposit."
+  },
+  {
+    "id": "plasmopara_viticola",
+    "name": "Plasmopara Viticola",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Downy mildew of the grape, brought to Europe from America in the 1870s on vines imported to resist something else."
+  },
+  {
+    "id": "claviceps_purpurea",
+    "name": "Claviceps Purpurea",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Ergot: the fungus replaces the grain with a hard black body of its own, full of alkaloids."
+  },
+  {
+    "id": "ustilago_maydis",
+    "name": "Ustilago Maydis",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Corn smut, which is a disease in Iowa and a delicacy in Mexico."
+  },
+  {
+    "id": "venturia_inaequalis",
+    "name": "Venturia Inaequalis",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Apple scab, which overwinters in the fallen leaves rather than on the tree."
+  },
+  {
+    "id": "ophiostoma_ulmi",
+    "name": "Ophiostoma Ulmi",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Dutch elm disease — a fungus that cannot travel and a beetle that can."
+  },
+  {
+    "id": "cryphonectria_parasitica",
+    "name": "Cryphonectria Parasitica",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Chestnut blight, which removed roughly four billion trees from the eastern American forest in fifty years."
+  },
+  {
+    "id": "hymenoscyphus_fraxineus",
+    "name": "Hymenoscyphus Fraxineus",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Ash dieback, harmless on its Asian host and lethal on the European one."
+  },
+  {
+    "id": "xylella_fastidiosa",
+    "name": "Xylella Fastidiosa",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "A bacterium that lives only in the xylem, and blocks it."
+  },
+  {
+    "id": "erwinia_amylovora",
+    "name": "Erwinia Amylovora",
+    "emoji": "🍐",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Fireblight — the first plant disease ever shown to be caused by a bacterium."
+  },
+  {
+    "id": "agrobacterium_tumefaciens",
+    "name": "Agrobacterium Tumefaciens",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "A bacterium that inserts its own DNA into a plant's chromosomes and makes the plant build it a home."
+  },
+  {
+    "id": "plasmodiophora_brassicae",
+    "name": "Plasmodiophora Brassicae",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Clubroot: neither fungus nor bacterium, but a soil-dwelling protist."
+  },
+  {
+    "id": "rhizoctonia_solani",
+    "name": "Rhizoctonia Solani",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "Damping off: the seedling germinates, emerges, and then falls over at soil level."
+  },
+  {
+    "id": "verticillium_dahliae",
+    "name": "Verticillium Dahliae",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "A wilt that often takes one side of the plant and leaves the other alone."
+  },
+  {
+    "id": "pseudomonas_syringae",
+    "name": "Pseudomonas Syringae",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "A plant bacterium carrying a protein that makes water freeze at a temperature it otherwise would not."
+  },
+  {
+    "id": "potato_virus_y",
+    "name": "Potato Virus Y",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "The most damaging virus of the potato, and it is carried on the aphid's mouthparts rather than inside it."
+  },
+  {
+    "id": "barley_yellow_dwarf_virus",
+    "name": "Barley Yellow Dwarf Virus",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "The most widespread virus of cereals anywhere, and it never leaves the phloem."
+  },
+  {
+    "id": "candidatus_liberibacter",
+    "name": "Candidatus Liberibacter",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "plant"
+    ],
+    "fact": "A bacterium nobody has ever grown in a dish, which is what the Candidatus in its name means."
+  },
+  {
+    "id": "potato_blight",
+    "name": "Potato Blight",
+    "emoji": "🥔",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "medicine"
+    ],
+    "fact": "The leaves go black in days and the tubers rot in the ground and in the store."
+  },
+  {
+    "id": "stem_rust",
+    "name": "Stem Rust",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Reddish pustules that break through the stem and steal what the grain was going to be."
+  },
+  {
+    "id": "coffee_rust",
+    "name": "Coffee Rust",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Orange powder on the underside of the leaf, and the leaf falls."
+  },
+  {
+    "id": "rice_blast",
+    "name": "Rice Blast",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Diamond-shaped lesions on the leaf, and a neck rot that empties the panicle."
+  },
+  {
+    "id": "panama_disease",
+    "name": "Panama Disease",
+    "emoji": "🍌",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The banana wilts with its roots in wet soil, because the plumbing is blocked rather than the water absent."
+  },
+  {
+    "id": "grey_mould",
+    "name": "Grey Mould",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A dusty grey felt over soft fruit, and the whole crop goes in a few damp days."
+  },
+  {
+    "id": "noble_rot",
+    "name": "Noble Rot",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "ferment"
+    ],
+    "fact": "The same fungus as grey mould, in different weather, making Sauternes and Tokaji."
+  },
+  {
+    "id": "powdery_mildew",
+    "name": "Powdery Mildew",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "White dust on the upper leaf, and it will not rub off because it is alive."
+  },
+  {
+    "id": "downy_mildew",
+    "name": "Downy Mildew",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Oily yellow patches on top of the leaf and a white down underneath, following rain."
+  },
+  {
+    "id": "ergotism",
+    "name": "Ergotism",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "St Anthony's Fire: burning limbs, gangrene, convulsions and hallucinations, from bread."
+  },
+  {
+    "id": "corn_smut",
+    "name": "Corn Smut",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "plant",
+      "kitchen"
+    ],
+    "fact": "The kernel swells into a grey gall full of black spores. In Mexico it is picked and sold."
+  },
+  {
+    "id": "apple_scab",
+    "name": "Apple Scab",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Olive-brown blotches on leaf and fruit, and the fruit cracks as it grows under them."
+  },
+  {
+    "id": "dutch_elm_disease",
+    "name": "Dutch Elm Disease",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Britain lost something like twenty-five million elms, and the landscape they made does not exist any more."
+  },
+  {
+    "id": "chestnut_blight",
+    "name": "Chestnut Blight",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Roughly four billion American chestnuts, a quarter of the eastern forest canopy, gone in fifty years."
+  },
+  {
+    "id": "ash_dieback",
+    "name": "Ash Dieback",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Black lesions where leaf meets twig, and the crown thins from the top down."
+  },
+  {
+    "id": "citrus_greening",
+    "name": "Citrus Greening",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Fruit that stays green at the bottom, tastes bitter, and drops before it ripens."
+  },
+  {
+    "id": "fireblight",
+    "name": "Fireblight",
+    "emoji": "🍐",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Shoots blacken and hook over at the tip, so the tree looks as though it has been scorched."
+  },
+  {
+    "id": "crown_gall",
+    "name": "Crown Gall",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "A tumour at the base of the stem, built by the plant, to the bacterium's instructions."
+  },
+  {
+    "id": "clubroot",
+    "name": "Clubroot",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The roots swell into useless clubs and the plant wilts in full sun with wet soil underneath."
+  },
+  {
+    "id": "damping_off",
+    "name": "Damping Off",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "The seedling comes up healthy and then falls over, pinched through at soil level."
+  },
+  {
+    "id": "verticillium_wilt",
+    "name": "Verticillium Wilt",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "plant"
+    ],
+    "fact": "Half the leaf yellow and half still green, and often one whole side of the plant."
+  },
+  {
+    "id": "foot_and_mouth_virus",
+    "name": "Foot-and-Mouth Virus",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "One of the most contagious animal viruses there is, and it rarely kills an adult beast."
+  },
+  {
+    "id": "rinderpest_virus",
+    "name": "Rinderpest Virus",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "The second disease ever driven to extinction, after smallpox, and the only animal one."
+  },
+  {
+    "id": "african_swine_fever_virus",
+    "name": "African Swine Fever Virus",
+    "emoji": "🐖",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "No vaccine that works, no treatment, and near-total mortality in domestic pigs."
+  },
+  {
+    "id": "avian_influenza",
+    "name": "Avian Influenza",
+    "emoji": "🦆",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "The reservoir of every influenza pandemic, sitting harmlessly in wild ducks."
+  },
+  {
+    "id": "newcastle_disease_virus",
+    "name": "Newcastle Disease Virus",
+    "emoji": "🐔",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A poultry virus that kills whole flocks, and is in trials against tumours in people."
+  },
+  {
+    "id": "bluetongue_virus",
+    "name": "Bluetongue Virus",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "Carried by a biting midge, which is why its range is set by climate rather than by trade."
+  },
+  {
+    "id": "canine_parvovirus",
+    "name": "Canine Parvovirus",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A virus that did not exist before about 1976 and was worldwide within two years."
+  },
+  {
+    "id": "myxoma_virus",
+    "name": "Myxoma Virus",
+    "emoji": "🐇",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "Released deliberately in Australia in 1950, and the best-documented case of a pathogen and its host evolving against each other."
+  },
+  {
+    "id": "batrachochytrium",
+    "name": "Batrachochytrium",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A fungus that has driven more vertebrate species to extinction than any other single pathogen known."
+  },
+  {
+    "id": "white_nose_fungus",
+    "name": "White-Nose Fungus",
+    "emoji": "🦇",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A cold-loving fungus that grows on hibernating bats at temperatures where nothing can fight it."
+  },
+  {
+    "id": "varroa_mite",
+    "name": "Varroa Mite",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "microbe"
+    ],
+    "fact": "A mite the size of a dinner plate on a person, feeding on the bee's fat body and carrying viruses in."
+  },
+  {
+    "id": "paenibacillus_larvae",
+    "name": "Paenibacillus Larvae",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "American foulbrood: the reason beekeepers burn hives rather than treat them."
+  },
+  {
+    "id": "nosema",
+    "name": "Nosema",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A microsporidian — a fungus that has thrown away its own mitochondria and steals ATP from its host."
+  },
+  {
+    "id": "dirofilaria_immitis",
+    "name": "Dirofilaria Immitis",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "Heartworm: a nematode up to thirty centimetres long living in the pulmonary artery."
+  },
+  {
+    "id": "sarcoptes_scabiei",
+    "name": "Sarcoptes Scabiei",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "microbe"
+    ],
+    "fact": "A mite that tunnels in the skin, and the same species causes scabies in people and mange in animals."
+  },
+  {
+    "id": "theileria",
+    "name": "Theileria",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "The only eukaryotic parasite known to transform a host cell into something like a cancer."
+  },
+  {
+    "id": "babesia",
+    "name": "Babesia",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A tick-borne parasite of red blood cells, and the cause of Texas cattle fever."
+  },
+  {
+    "id": "mite",
+    "name": "Mite",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Eight legs, usually under a millimetre, and there are more of them in a handful of soil than almost anything else."
+  },
+  {
+    "id": "midge",
+    "name": "Midge",
+    "emoji": "🦟",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A biting fly small enough to pass through mosquito netting, and it carries bluetongue."
+  },
+  {
+    "id": "variola",
+    "name": "Variola",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Smallpox: the only human disease ever eradicated, and it had no animal reservoir to hide in."
+  },
+  {
+    "id": "sars_cov_2",
+    "name": "SARS-CoV-2",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A coronavirus that spreads before people feel ill, which is what made it uncontainable."
+  },
+  {
+    "id": "coronavirus",
+    "name": "Coronavirus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe"
+    ],
+    "fact": "Named for the crown of spikes around it, and it carries the largest genome of any RNA virus."
+  },
+  {
+    "id": "ebola_virus",
+    "name": "Ebola Virus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A filovirus that spreads only by contact with the very ill or the newly dead."
+  },
+  {
+    "id": "marburg_virus",
+    "name": "Marburg Virus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "The first filovirus ever identified, and it was found in a European laboratory in 1967."
+  },
+  {
+    "id": "lassa_virus",
+    "name": "Lassa Virus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Carried by one species of rat that lives in houses across West Africa, and shed in its urine."
+  },
+  {
+    "id": "nipah_virus",
+    "name": "Nipah Virus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "It reached people through pigs the first time, and through date palm sap the second."
+  },
+  {
+    "id": "hantavirus",
+    "name": "Hantavirus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Breathed in from dried rodent urine and droppings, and person-to-person spread is essentially absent."
+  },
+  {
+    "id": "dengue_virus",
+    "name": "Dengue Virus",
+    "emoji": "🦟",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Four types, and surviving one makes the next one worse rather than better."
+  },
+  {
+    "id": "zika_virus",
+    "name": "Zika Virus",
+    "emoji": "🦟",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Known since 1947 and considered trivial until 2015, when it was found to cross the placenta."
+  },
+  {
+    "id": "chikungunya_virus",
+    "name": "Chikungunya Virus",
+    "emoji": "🦟",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "The name means 'that which bends up', for the posture of someone with the joint pain."
+  },
+  {
+    "id": "hepatitis_b",
+    "name": "Hepatitis B",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A DNA virus that copies itself through an RNA intermediate, like a retrovirus running backwards."
+  },
+  {
+    "id": "hepatitis_c",
+    "name": "Hepatitis C",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Found in 1989 by cloning the genome of something nobody had ever seen, and curable since 2014."
+  },
+  {
+    "id": "herpes_simplex",
+    "name": "Herpes Simplex",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "It retreats into a nerve cell body and waits there for the rest of your life."
+  },
+  {
+    "id": "varicella_zoster",
+    "name": "Varicella Zoster",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "One virus, two diseases, decades apart — and the second one is the first one coming back."
+  },
+  {
+    "id": "chickenpox",
+    "name": "Chickenpox",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Not related to smallpox at all, despite two centuries of the two being confused."
+  },
+  {
+    "id": "rotavirus",
+    "name": "Rotavirus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Before the vaccine it killed around half a million children a year, and it infects essentially everyone."
+  },
+  {
+    "id": "mycobacterium_leprae",
+    "name": "Mycobacterium Leprae",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "It has lost about a third of its own genes and cannot be grown in any culture medium."
+  },
+  {
+    "id": "borrelia_burgdorferi",
+    "name": "Borrelia Burgdorferi",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Lyme disease, and its genome is split across a chromosome and more than twenty plasmids."
+  },
+  {
+    "id": "shigella",
+    "name": "Shigella",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Genetically it is Escherichia coli, and it is kept as a separate genus for historical reasons only."
+  },
+  {
+    "id": "candida_albicans",
+    "name": "Candida Albicans",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A yeast most people carry harmlessly, which turns invasive by changing its shape."
+  },
+  {
+    "id": "aspergillus_fumigatus",
+    "name": "Aspergillus Fumigatus",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Everyone breathes in hundreds of its spores a day, and almost nobody is harmed."
+  },
+  {
+    "id": "cryptococcus_neoformans",
+    "name": "Cryptococcus Neoformans",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A yeast with a thick sugar capsule, found in pigeon droppings and in old tree hollows."
+  },
+  {
+    "id": "schistosoma_mansoni",
+    "name": "Schistosoma Mansoni",
+    "emoji": "🐌",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "A fluke whose male and female live permanently paired, the female held in a groove along his body."
+  },
+  {
+    "id": "necator_americanus",
+    "name": "Necator Americanus",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "medicine"
+    ],
+    "fact": "Hookworm: it enters through the sole of a bare foot and ends up in the small intestine."
+  },
+  {
+    "id": "canine_distemper_virus",
+    "name": "Canine Distemper Virus",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A close relative of measles and rinderpest, and it does not stay in dogs."
+  },
+  {
+    "id": "feline_leukaemia_virus",
+    "name": "Feline Leukaemia Virus",
+    "emoji": "🐈",
+    "shelf": "workshop",
+    "tags": [
+      "microbe",
+      "animal"
+    ],
+    "fact": "A retrovirus that inserts itself into the cat's own chromosomes, and sometimes lands in the wrong place."
   }
 ]

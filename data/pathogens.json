@@ -1,0 +1,3687 @@
+{
+  "$comment": "What causes disease, what it does, how bad it is, and what answers it. NOT a recipe: recipes are the game's two-input grammar and say how a thing is derived. This is the unbounded honest answer about an organism, the way needs.json is the unbounded honest answer to 'what goes into one'. Two rules it exists to enforce. First, seriousness is a SOURCED NUMBER and never an adjective, because 'serious' would rank the catalogue by how frightening a thing sounded when it was written up; the same organism has several true numbers — untreated and treated, bubonic and pneumonic — so the basis is stated with the value. Second, nothing here is a method: the game explains how these things work and never how to obtain, culture or spread them, which is the line cautions.json draws too. `wanted` drives authoring the same way a needs list does. See tools/pathogens.mjs.",
+  "pathogens": {
+    "rabies_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "rabies",
+        "rabies_encephalitis"
+      ],
+      "transmission": "the saliva of a biting mammal",
+      "reservoir": "bats, and dogs where dogs are not vaccinated",
+      "makeup": "single negative-strand RNA, about 12 kb, in a bullet-shaped envelope",
+      "durability": "minutes outside a host — it does not survive drying",
+      "symptoms": [
+        "hydrophobia",
+        "agitation",
+        "paralysis",
+        "coma"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "case fatality once symptoms begin; fewer than twenty survivors are recorded",
+        "src": "https://en.wikipedia.org/wiki/Rabies"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rabies"
+    },
+    "hiv": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "acute_retroviral_syndrome",
+        "hiv_wasting_syndrome"
+      ],
+      "transmission": "blood, sex, and mother to child",
+      "reservoir": "humans; it entered from primates in the early 20th century",
+      "makeup": "two copies of single positive-strand RNA, 9.7 kb, with reverse transcriptase carried inside the capsid",
+      "durability": "does not survive outside the body in any practical sense",
+      "symptoms": [
+        "fever",
+        "weight loss",
+        "opportunistic infection"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "untreated, progression to AIDS and death is near-universal; median about eleven years",
+        "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
+      },
+      "treated_by": [
+        "zidovudine"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
+    },
+    "measles_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "measles"
+      ],
+      "transmission": "air, and it is among the most transmissible things known — R0 of 12 to 18",
+      "reservoir": "humans only",
+      "makeup": "single negative-strand RNA, about 16 kb, enveloped",
+      "durability": "up to two hours in the air of a room after the infected person has left",
+      "symptoms": [
+        "fever",
+        "rash",
+        "cough",
+        "conjunctivitis"
+      ],
+      "seriousness": {
+        "value": 0.002,
+        "measure": "case fatality in well-nourished populations; ten to fifty times that where malnutrition is common",
+        "src": "https://en.wikipedia.org/wiki/Measles"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Measles"
+    },
+    "poliovirus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "polio",
+        "poliomyelitis"
+      ],
+      "transmission": "the faecal-oral route, through water",
+      "reservoir": "humans only",
+      "makeup": "single positive-strand RNA, 7.5 kb, in a bare protein capsid with no envelope",
+      "durability": "weeks in water and sewage — the bare capsid is why",
+      "symptoms": [
+        "fever",
+        "stiff neck",
+        "asymmetric paralysis"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "paralytic cases; about one infection in two hundred becomes paralytic at all",
+        "src": "https://en.wikipedia.org/wiki/Poliomyelitis"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Poliomyelitis"
+    },
+    "influenza_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "influenza"
+      ],
+      "transmission": "droplets and air",
+      "reservoir": "wild waterfowl, and pigs, which is where the reassortment happens",
+      "makeup": "eight separate segments of negative-strand RNA — the segmentation is what lets two strains swap whole genes",
+      "durability": "hours on hard surfaces, longer in cold dry air",
+      "symptoms": [
+        "fever",
+        "aches",
+        "cough"
+      ],
+      "seriousness": {
+        "value": 0.001,
+        "measure": "seasonal influenza, symptomatic case fatality; the 1918 strain was about 0.025",
+        "src": "https://en.wikipedia.org/wiki/Influenza"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Influenza"
+    },
+    "yellow_fever": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "yellow_fever"
+      ],
+      "transmission": "Aedes mosquitoes",
+      "reservoir": "monkeys, in a forest cycle the human one spills out of",
+      "makeup": "single positive-strand RNA, about 11 kb, enveloped — a flavivirus",
+      "durability": "needs the mosquito; it does not persist in the environment",
+      "symptoms": [
+        "fever",
+        "jaundice",
+        "bleeding"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "the toxic phase, which about one case in seven reaches",
+        "src": "https://en.wikipedia.org/wiki/Yellow_fever"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Yellow_fever"
+    },
+    "west_nile_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "encephalitis"
+      ],
+      "transmission": "Culex mosquitoes",
+      "reservoir": "birds",
+      "makeup": "single positive-strand RNA flavivirus, about 11 kb, enveloped",
+      "durability": "requires the mosquito",
+      "symptoms": [
+        "fever",
+        "confusion",
+        "weakness"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "neuroinvasive cases; under one per cent of infections become neuroinvasive at all",
+        "src": "https://en.wikipedia.org/wiki/West_Nile_fever"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/West_Nile_fever"
+    },
+    "norovirus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "norovirus_gastroenteritis"
+      ],
+      "transmission": "faecal-oral, and vomit aerosols — as few as eighteen particles will do it",
+      "reservoir": "humans",
+      "makeup": "single positive-strand RNA, 7.5 kb, bare capsid",
+      "durability": "weeks on surfaces, and it survives most alcohol hand gels",
+      "symptoms": [
+        "vomiting",
+        "diarrhoea",
+        "cramps"
+      ],
+      "seriousness": {
+        "value": 0.0001,
+        "measure": "case fatality, almost all of it in the very old",
+        "src": "https://en.wikipedia.org/wiki/Norovirus"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Norovirus"
+    },
+    "rhinovirus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "common_cold"
+      ],
+      "transmission": "hands and surfaces more than air",
+      "reservoir": "humans",
+      "makeup": "single positive-strand RNA picornavirus, bare capsid; over 160 serotypes, which is why immunity never accumulates",
+      "durability": "hours on skin and surfaces",
+      "symptoms": [
+        "runny nose",
+        "sore throat"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not a cause of death in healthy hosts",
+        "src": "https://en.wikipedia.org/wiki/Rhinovirus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Rhinovirus"
+    },
+    "adenovirus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "infectious_bronchitis"
+      ],
+      "transmission": "droplets, surfaces, and swimming water",
+      "reservoir": "humans",
+      "makeup": "double-stranded DNA, 36 kb, bare icosahedral capsid with fibres at the vertices",
+      "durability": "weeks on surfaces, and resistant to lipid disinfectants because it has no envelope",
+      "symptoms": [
+        "sore throat",
+        "conjunctivitis",
+        "fever"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "negligible in healthy hosts; serious in the immunosuppressed",
+        "src": "https://en.wikipedia.org/wiki/Adenoviridae"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Adenoviridae"
+    },
+    "cytomegalovirus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "cmv_retinitis"
+      ],
+      "transmission": "saliva, urine, and across the placenta",
+      "reservoir": "humans; most adults carry it for life",
+      "makeup": "double-stranded DNA, 235 kb — one of the largest genomes of any human virus",
+      "durability": "latent in the host's own cells indefinitely",
+      "symptoms": [
+        "usually none",
+        "retinitis and colitis where immunity is absent"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "immunocompetent hosts; the harm falls on transplant patients and the unborn",
+        "src": "https://en.wikipedia.org/wiki/Cytomegalovirus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cytomegalovirus"
+    },
+    "human_papillomavirus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "skin and mucosal contact",
+      "reservoir": "humans",
+      "makeup": "double-stranded circular DNA, 8 kb, bare capsid",
+      "durability": "persists in the epithelium for years",
+      "symptoms": [
+        "warts",
+        "usually nothing at all"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "acute infection; the harm is cervical cancer decades later, and types 16 and 18 cause most of it",
+        "src": "https://en.wikipedia.org/wiki/Human_papillomavirus_infection"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Human_papillomavirus_infection"
+    },
+    "rubella": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "droplets",
+      "reservoir": "humans",
+      "makeup": "single positive-strand RNA togavirus, 10 kb, enveloped",
+      "durability": "poor survival outside a host",
+      "symptoms": [
+        "mild rash",
+        "fever"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "the disease itself is trivial; caught in the first trimester it deafens or blinds the child",
+        "src": "https://en.wikipedia.org/wiki/Rubella"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rubella"
+    },
+    "mumps": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "saliva and droplets",
+      "reservoir": "humans",
+      "makeup": "single negative-strand RNA paramyxovirus, 15 kb, enveloped",
+      "durability": "hours on surfaces",
+      "symptoms": [
+        "swollen parotid glands",
+        "fever",
+        "orchitis"
+      ],
+      "seriousness": {
+        "value": 0.0001,
+        "measure": "case fatality; the common harm is deafness and, after puberty, sterility",
+        "src": "https://en.wikipedia.org/wiki/Mumps"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Mumps"
+    },
+    "hepatitis_a": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "faecal-oral, usually through food or water",
+      "reservoir": "humans",
+      "makeup": "single positive-strand RNA picornavirus, bare capsid",
+      "durability": "months in water; it survives drying and mild heat",
+      "symptoms": [
+        "jaundice",
+        "nausea",
+        "dark urine"
+      ],
+      "seriousness": {
+        "value": 0.003,
+        "measure": "case fatality, rising sharply over fifty",
+        "src": "https://en.wikipedia.org/wiki/Hepatitis_A"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Hepatitis_A"
+    },
+    "cowpox": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "contact with an infected animal",
+      "reservoir": "voles and wood mice, despite the name",
+      "makeup": "double-stranded DNA poxvirus, about 224 kb, brick-shaped and enveloped",
+      "durability": "very durable — poxvirus particles survive years in dried scab material",
+      "symptoms": [
+        "local pustule",
+        "fever"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "a local lesion in a healthy host; its importance is that surviving it protects against smallpox",
+        "src": "https://en.wikipedia.org/wiki/Cowpox"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cowpox"
+    },
+    "tobacco_mosaic_virus": {
+      "kind": "virus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [],
+      "transmission": "contact — hands, tools, and the plants rubbing together",
+      "reservoir": "tobacco, tomato and 150 other species",
+      "makeup": "single positive-strand RNA, 6.4 kb, in a rigid rod of 2,130 identical protein subunits",
+      "durability": "decades in dried leaf, and it survives boiling — which is why it was the first virus ever isolated",
+      "symptoms": [
+        "mottled light and dark leaf",
+        "stunting"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "it rarely kills the plant; the loss is in yield and leaf quality",
+        "src": "https://en.wikipedia.org/wiki/Tobacco_mosaic_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Tobacco_mosaic_virus"
+    },
+    "yersinia_pestis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "plague"
+      ],
+      "transmission": "the bite of a flea that has fed on an infected rodent",
+      "reservoir": "rodents, permanently, in several continents",
+      "makeup": "Gram-negative rod, 4.65 Mb, with three plasmids the harmless soil ancestor did not have",
+      "durability": "days in a flea, longer in a cool burrow",
+      "symptoms": [
+        "fever",
+        "a swollen painful lymph node",
+        "blackened extremities"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "untreated bubonic plague; the pneumonic form untreated approaches 1.0",
+        "src": "https://en.wikipedia.org/wiki/Plague_(disease)"
+      },
+      "treated_by": [
+        "streptomycin",
+        "tetracycline"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Plague_(disease)"
+    },
+    "bacillus_anthracis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "contact with infected animals or their hides and wool",
+      "reservoir": "grazing animals, and soil, where the spore waits",
+      "makeup": "Gram-positive rod, 5.2 Mb, with a protein capsule and two toxin plasmids",
+      "durability": "spores remain viable in soil for decades, which is the whole epidemiology",
+      "symptoms": [
+        "a black painless eschar",
+        "fever",
+        "breathlessness"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "untreated inhalational anthrax; the cutaneous form untreated is about 0.2",
+        "src": "https://en.wikipedia.org/wiki/Anthrax"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Anthrax"
+    },
+    "mycobacterium_tuberculosis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "tuberculosis"
+      ],
+      "transmission": "air, from someone with an open lung cavity",
+      "reservoir": "humans, a quarter of whom carry it latently",
+      "makeup": "a rod with a waxy mycolic-acid wall that takes neither Gram stain properly; 4.4 Mb",
+      "durability": "months in dried sputum away from sunlight",
+      "symptoms": [
+        "cough",
+        "night sweats",
+        "weight loss",
+        "blood in sputum"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated pulmonary tuberculosis, over about ten years",
+        "src": "https://en.wikipedia.org/wiki/Tuberculosis"
+      },
+      "treated_by": [
+        "streptomycin",
+        "antibiotic"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Tuberculosis"
+    },
+    "clostridium_tetani": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "tetanus"
+      ],
+      "transmission": "a wound that closes over dirt",
+      "reservoir": "soil and animal gut, everywhere",
+      "makeup": "Gram-positive anaerobic rod that makes a terminal spore, giving it a drumstick shape",
+      "durability": "spores persist in soil indefinitely",
+      "symptoms": [
+        "locked jaw",
+        "rigid back",
+        "spasms at the slightest noise"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated generalised tetanus",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
+      },
+      "treated_by": [
+        "antitoxin"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Tetanus"
+    },
+    "clostridium_botulinum": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "botulism"
+      ],
+      "transmission": "food preserved without enough salt, acid or heat",
+      "reservoir": "soil and marine sediment",
+      "makeup": "Gram-positive anaerobic rod; its toxin is the most acutely poisonous protein known",
+      "durability": "spores survive boiling — only pressure canning reaches them",
+      "symptoms": [
+        "drooping eyelids",
+        "double vision",
+        "descending paralysis"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "treated foodborne botulism; before antitoxin it was about 0.6",
+        "src": "https://en.wikipedia.org/wiki/Botulism"
+      },
+      "treated_by": [
+        "antitoxin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Botulism"
+    },
+    "corynebacterium_diphtheriae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "diphtheria"
+      ],
+      "transmission": "droplets and skin contact",
+      "reservoir": "humans",
+      "makeup": "Gram-positive club-shaped rod; the toxin gene is carried in by a bacteriophage, so untouched strains are harmless",
+      "durability": "weeks in dust and on fomites",
+      "symptoms": [
+        "a grey membrane across the throat",
+        "a bull neck",
+        "heart failure"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "untreated respiratory diphtheria",
+        "src": "https://en.wikipedia.org/wiki/Diphtheria"
+      },
+      "treated_by": [
+        "antitoxin"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Diphtheria"
+    },
+    "bordetella_pertussis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "droplets, and it is highly transmissible",
+      "reservoir": "humans",
+      "makeup": "small Gram-negative coccobacillus, 4.1 Mb",
+      "durability": "poor survival outside the host",
+      "symptoms": [
+        "paroxysmal cough",
+        "the whoop on breathing in",
+        "vomiting after coughing"
+      ],
+      "seriousness": {
+        "value": 0.01,
+        "measure": "infants under one year, untreated",
+        "src": "https://en.wikipedia.org/wiki/Whooping_cough"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Whooping_cough"
+    },
+    "treponema_pallidum": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "syphilis"
+      ],
+      "transmission": "sexual contact, and across the placenta",
+      "reservoir": "humans only",
+      "makeup": "a spirochaete so thin it cannot be seen by ordinary light microscopy; 1.1 Mb, one of the smallest of any free-living bacterium",
+      "durability": "dies within hours outside the body — it cannot even be grown routinely in culture",
+      "symptoms": [
+        "a painless ulcer",
+        "a rash on palms and soles",
+        "years of nothing",
+        "then the heart and brain"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "untreated, over several decades",
+        "src": "https://en.wikipedia.org/wiki/Syphilis"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Syphilis"
+    },
+    "salmonella": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "typhoid_fever",
+        "colibacillosis"
+      ],
+      "transmission": "food and water contaminated with faeces",
+      "reservoir": "poultry, reptiles, and human carriers for typhoid",
+      "makeup": "Gram-negative rod with peritrichous flagella, about 4.8 Mb",
+      "durability": "weeks in water, months in dried faeces, and it survives freezing",
+      "symptoms": [
+        "fever climbing stepwise",
+        "abdominal pain",
+        "rose spots"
+      ],
+      "seriousness": {
+        "value": 0.15,
+        "measure": "untreated typhoid fever",
+        "src": "https://en.wikipedia.org/wiki/Typhoid_fever"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Typhoid_fever"
+    },
+    "e_coli": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "colibacillosis"
+      ],
+      "transmission": "food and water, and it is normally a harmless gut resident",
+      "reservoir": "the intestine of every warm-blooded animal",
+      "makeup": "Gram-negative rod, 4.6 Mb; the dangerous strains carry a Shiga toxin brought in by a phage",
+      "durability": "days to weeks in water and on produce",
+      "symptoms": [
+        "bloody diarrhoea",
+        "cramps",
+        "kidney failure in the young"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "haemolytic uraemic syndrome following Shiga-toxin strains",
+        "src": "https://en.wikipedia.org/wiki/Escherichia_coli"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Escherichia_coli"
+    },
+    "listeria_monocytogenes": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "chilled ready-to-eat food — soft cheese, pâté, smoked fish",
+      "reservoir": "soil, water and silage",
+      "makeup": "Gram-positive rod that moves inside host cells by polymerising their own actin behind it",
+      "durability": "it grows at refrigerator temperature, which is what makes it a food-safety problem at all",
+      "symptoms": [
+        "fever",
+        "meningitis",
+        "stillbirth"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "invasive listeriosis",
+        "src": "https://en.wikipedia.org/wiki/Listeriosis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Listeriosis"
+    },
+    "legionella": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "aerosols from cooling towers, showers and spa pools — never person to person",
+      "reservoir": "warm freshwater, living inside amoebae",
+      "makeup": "Gram-negative rod that survives inside amoebae, which is the training that lets it survive inside human macrophages",
+      "durability": "indefinitely in a biofilm at 25 to 45 degrees",
+      "symptoms": [
+        "pneumonia",
+        "confusion",
+        "diarrhoea"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "treated Legionnaires' disease",
+        "src": "https://en.wikipedia.org/wiki/Legionnaires'_disease"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Legionnaires'_disease"
+    },
+    "staphylococcus_aureus": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "staphylococcal_scalded_skin_syndrome",
+        "toxic_shock_syndrome",
+        "folliculitis"
+      ],
+      "transmission": "skin contact and hands",
+      "reservoir": "the nose of about a third of healthy people",
+      "makeup": "Gram-positive cocci in grape-like clusters, 2.8 Mb; the resistant strains carry an extra penicillin-binding protein",
+      "durability": "months on dry surfaces, and it tolerates salt and drying better than most",
+      "symptoms": [
+        "boils",
+        "wound infection",
+        "fever"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "bacteraemia",
+        "src": "https://en.wikipedia.org/wiki/Staphylococcus_aureus"
+      },
+      "treated_by": [
+        "vancomycin",
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Staphylococcus_aureus"
+    },
+    "streptococcus_pyogenes": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "folliculitis"
+      ],
+      "transmission": "droplets and skin",
+      "reservoir": "humans",
+      "makeup": "Gram-positive cocci in chains, 1.9 Mb, with an M protein that resists being eaten by white cells",
+      "durability": "poor survival on dry surfaces",
+      "symptoms": [
+        "sore throat",
+        "scarlet rash",
+        "and rarely a rapidly spreading soft-tissue infection"
+      ],
+      "seriousness": {
+        "value": 0.25,
+        "measure": "invasive group A streptococcal disease",
+        "src": "https://en.wikipedia.org/wiki/Streptococcus_pyogenes"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Streptococcus_pyogenes"
+    },
+    "streptococcus_pneumoniae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "meningitis"
+      ],
+      "transmission": "droplets",
+      "reservoir": "the human nose and throat, carried harmlessly by many children",
+      "makeup": "Gram-positive diplococci with a polysaccharide capsule; the capsule is the vaccine target and there are over ninety types of it",
+      "durability": "poor survival outside the host",
+      "symptoms": [
+        "pneumonia",
+        "earache",
+        "meningitis"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "pneumococcal pneumonia, treated",
+        "src": "https://en.wikipedia.org/wiki/Streptococcus_pneumoniae"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Streptococcus_pneumoniae"
+    },
+    "helicobacter_pylori": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "probably faecal-oral in childhood, within families",
+      "reservoir": "the human stomach, in about half of all people",
+      "makeup": "a curved rod with a sheathed flagellum; it makes urease to raise the pH immediately around itself",
+      "durability": "it lives in stomach acid, which nothing else does",
+      "symptoms": [
+        "often nothing",
+        "burning upper abdominal pain"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "the ulcer itself; the long tail is gastric cancer, and it is the only bacterium classed as a definite human carcinogen",
+        "src": "https://en.wikipedia.org/wiki/Helicobacter_pylori"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Helicobacter_pylori"
+    },
+    "leptospira_interrogans": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "leptospirosis"
+      ],
+      "transmission": "water carrying the urine of infected animals, through broken skin",
+      "reservoir": "rats, cattle and dogs",
+      "makeup": "a tightly coiled spirochaete with hooked ends",
+      "durability": "weeks in warm fresh water, which is why it follows floods",
+      "symptoms": [
+        "fever",
+        "red eyes",
+        "jaundice",
+        "kidney failure"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "Weil's disease, the severe form",
+        "src": "https://en.wikipedia.org/wiki/Leptospirosis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Leptospirosis"
+    },
+    "francisella_tularensis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "tularemia"
+      ],
+      "transmission": "handling infected hares, tick bites, and contaminated water",
+      "reservoir": "hares, rabbits and rodents",
+      "makeup": "a very small Gram-negative coccobacillus; as few as ten organisms cause disease",
+      "durability": "weeks in water, mud and carcasses",
+      "symptoms": [
+        "fever",
+        "an ulcer at the bite",
+        "swollen nodes"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "untreated tularaemia",
+        "src": "https://en.wikipedia.org/wiki/Tularemia"
+      },
+      "treated_by": [
+        "streptomycin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Tularemia"
+    },
+    "rickettsia_rickettsii": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "rocky_mountain_spotted_fever"
+      ],
+      "transmission": "the bite of an infected tick",
+      "reservoir": "ticks themselves, which pass it to their own eggs",
+      "makeup": "an obligate intracellular Gram-negative bacterium that cannot make its own ATP",
+      "durability": "cannot survive outside a cell",
+      "symptoms": [
+        "fever",
+        "headache",
+        "a rash that starts at wrists and ankles"
+      ],
+      "seriousness": {
+        "value": 0.25,
+        "measure": "untreated Rocky Mountain spotted fever",
+        "src": "https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever"
+      },
+      "treated_by": [
+        "tetracycline"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever"
+    },
+    "brucella": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "brucellosis"
+      ],
+      "transmission": "unpasteurised milk, and handling birth material from infected animals",
+      "reservoir": "cattle, goats, sheep and pigs",
+      "makeup": "a small Gram-negative coccobacillus that survives inside macrophages",
+      "durability": "months in soil, dust and cheese",
+      "symptoms": [
+        "undulating fever",
+        "sweats",
+        "joint pain"
+      ],
+      "seriousness": {
+        "value": 0.02,
+        "measure": "untreated brucellosis",
+        "src": "https://en.wikipedia.org/wiki/Brucellosis"
+      },
+      "treated_by": [
+        "tetracycline"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Brucellosis"
+    },
+    "clostridioides_difficile": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "spores on hands and hospital surfaces, after antibiotics have cleared the competition",
+      "reservoir": "the human gut, and hospital environments",
+      "makeup": "Gram-positive anaerobic spore-former making two large toxins",
+      "durability": "spores survive months on surfaces and are unaffected by alcohol gel",
+      "symptoms": [
+        "watery diarrhoea",
+        "fever",
+        "a distended colon"
+      ],
+      "seriousness": {
+        "value": 0.06,
+        "measure": "case fatality within thirty days",
+        "src": "https://en.wikipedia.org/wiki/Clostridioides_difficile_infection"
+      },
+      "treated_by": [
+        "vancomycin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Clostridioides_difficile_infection"
+    },
+    "pseudomonas_aeruginosa": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal",
+        "plant"
+      ],
+      "causes": [],
+      "transmission": "water, and hospital equipment",
+      "reservoir": "soil and water almost everywhere",
+      "makeup": "Gram-negative rod, 6.3 Mb — a large genome, which is why it can eat almost anything and resist almost everything",
+      "durability": "it grows in distilled water, disinfectant and fuel",
+      "symptoms": [
+        "green pus",
+        "pneumonia in cystic fibrosis",
+        "burn wound infection"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "hospital-acquired bacteraemia",
+        "src": "https://en.wikipedia.org/wiki/Pseudomonas_aeruginosa"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pseudomonas_aeruginosa"
+    },
+    "clostridium_perfringens": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "gangrene"
+      ],
+      "transmission": "wounds contaminated with soil, and food held warm too long",
+      "reservoir": "soil and gut",
+      "makeup": "a Gram-positive anaerobic rod that ferments tissue and produces gas in it",
+      "durability": "spores survive cooking; the classic outbreak is meat cooled slowly",
+      "symptoms": [
+        "gas in the tissue",
+        "crackling under the skin",
+        "rapid spread"
+      ],
+      "seriousness": {
+        "value": 0.25,
+        "measure": "gas gangrene, treated",
+        "src": "https://en.wikipedia.org/wiki/Clostridium_perfringens"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Clostridium_perfringens"
+    },
+    "neisseria_gonorrhoeae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "sexual contact",
+      "reservoir": "humans only",
+      "makeup": "Gram-negative diplococci that take up loose DNA readily, which is how resistance spreads through the species",
+      "durability": "dies within minutes on a dry surface",
+      "symptoms": [
+        "discharge",
+        "pain passing water",
+        "often nothing in women"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal; the harm is infertility and, in newborns, blindness",
+        "src": "https://en.wikipedia.org/wiki/Gonorrhea"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Gonorrhea"
+    },
+    "chlamydia_trachomatis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "sexual contact, and in trachoma by flies and fingers to the eye",
+      "reservoir": "humans only",
+      "makeup": "an obligate intracellular bacterium with two forms — one tough and infectious, one that grows only inside a cell",
+      "durability": "the infectious form survives briefly outside a cell",
+      "symptoms": [
+        "usually nothing",
+        "scarred eyelids that turn the lashes inward"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it is the world's leading infectious cause of blindness",
+        "src": "https://en.wikipedia.org/wiki/Chlamydia_trachomatis"
+      },
+      "treated_by": [
+        "tetracycline"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Chlamydia_trachomatis"
+    },
+    "actinomyces_israelii": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "actinomycosis"
+      ],
+      "transmission": "not transmitted — it is a mouth resident that gets into tissue through injury",
+      "reservoir": "the human mouth and gut",
+      "makeup": "a Gram-positive branching filamentous anaerobe that looks like a fungus and is not",
+      "durability": "does not survive in air",
+      "symptoms": [
+        "a slowly enlarging jaw mass",
+        "sinuses discharging yellow granules"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal, but it burrows through tissue planes for months",
+        "src": "https://en.wikipedia.org/wiki/Actinomycosis"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Actinomycosis"
+    },
+    "bartonella_henselae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "cat_scratch_disease"
+      ],
+      "transmission": "a cat scratch, the cat having been infected by its fleas",
+      "reservoir": "cats, especially kittens",
+      "makeup": "a small Gram-negative rod that invades red blood cells",
+      "durability": "survives in flea faeces for days",
+      "symptoms": [
+        "a papule at the scratch",
+        "a large tender node",
+        "fever"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "self-limiting in healthy hosts",
+        "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
+    },
+    "streptobacillus_moniliformis": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "rat_bite_fever"
+      ],
+      "transmission": "a rat bite, or milk contaminated by rats",
+      "reservoir": "rats, in whose nose and throat it lives harmlessly",
+      "makeup": "a Gram-negative rod that grows in beaded chains",
+      "durability": "poor survival outside the host",
+      "symptoms": [
+        "fever",
+        "rash on palms and soles",
+        "joint pain"
+      ],
+      "seriousness": {
+        "value": 0.1,
+        "measure": "untreated rat-bite fever",
+        "src": "https://en.wikipedia.org/wiki/Rat-bite_fever"
+      },
+      "treated_by": [
+        "penicillin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Rat-bite_fever"
+    },
+    "plasmodium": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "malaria"
+      ],
+      "transmission": "the bite of a female Anopheles mosquito",
+      "reservoir": "humans, and the mosquito, which is properly the definitive host",
+      "makeup": "an apicomplexan with a relict chloroplast, the apicoplast, left from a photosynthetic ancestor — and a target because of it",
+      "durability": "requires a host or a mosquito at every stage",
+      "symptoms": [
+        "fever in a regular cycle",
+        "chills",
+        "anaemia",
+        "coma"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "untreated falciparum malaria in a non-immune adult",
+        "src": "https://en.wikipedia.org/wiki/Malaria"
+      },
+      "treated_by": [
+        "quinine",
+        "artemisinin"
+      ],
+      "prevented_by": [
+        "quinine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Malaria"
+    },
+    "trypanosoma": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "chagas_disease"
+      ],
+      "transmission": "the tsetse fly in Africa; the faeces of a kissing bug in the Americas",
+      "reservoir": "cattle and wild game in Africa; opossums and armadillos in the Americas",
+      "makeup": "a flagellate that changes its entire surface coat faster than antibodies can be made against it",
+      "durability": "requires the insect",
+      "symptoms": [
+        "fever",
+        "swollen nodes",
+        "and finally sleep reversed and coma"
+      ],
+      "seriousness": {
+        "value": 0.99,
+        "measure": "untreated African sleeping sickness",
+        "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis"
+    },
+    "leishmania": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "the bite of a sandfly",
+      "reservoir": "dogs and rodents",
+      "makeup": "a flagellate that lives inside the very macrophages sent to destroy it",
+      "durability": "requires the sandfly",
+      "symptoms": [
+        "a slow ulcer at the bite",
+        "or fever, wasting and a huge spleen"
+      ],
+      "seriousness": {
+        "value": 0.95,
+        "measure": "untreated visceral leishmaniasis",
+        "src": "https://en.wikipedia.org/wiki/Leishmaniasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Leishmaniasis"
+    },
+    "entamoeba_histolytica": {
+      "kind": "protozoan",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "dysentery"
+      ],
+      "transmission": "faecal-oral, through water and food",
+      "reservoir": "humans",
+      "makeup": "an amoeba with no mitochondria, which makes its ATP by fermentation",
+      "durability": "cysts survive weeks in water and are not killed by chlorination at normal doses",
+      "symptoms": [
+        "bloody diarrhoea",
+        "liver abscess"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "invasive amoebiasis",
+        "src": "https://en.wikipedia.org/wiki/Amoebiasis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Amoebiasis"
+    },
+    "naegleria_fowleri": {
+      "kind": "protozoan",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "meningitis"
+      ],
+      "transmission": "warm fresh water forced up the nose",
+      "reservoir": "warm lakes and poorly chlorinated pools",
+      "makeup": "a free-living amoeba that is not a parasite at all and does not benefit from what it does",
+      "durability": "thrives up to 45 degrees; it is a heat-loving organism",
+      "symptoms": [
+        "headache",
+        "fever",
+        "rapid loss of consciousness"
+      ],
+      "seriousness": {
+        "value": 0.97,
+        "measure": "primary amoebic meningoencephalitis",
+        "src": "https://en.wikipedia.org/wiki/Naegleria_fowleri"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Naegleria_fowleri"
+    },
+    "toxoplasma_gondii": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "toxoplasmosis",
+        "toxoplasmic_encephalitis"
+      ],
+      "transmission": "cat faeces, undercooked meat, and across the placenta",
+      "reservoir": "cats, the only host it can complete its sexual cycle in",
+      "makeup": "an apicomplexan that forms lifelong cysts in muscle and brain",
+      "durability": "oocysts survive over a year in moist soil",
+      "symptoms": [
+        "usually nothing",
+        "and in the unborn, hydrocephalus and blindness"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "immunocompetent hosts; it kills only where immunity has failed",
+        "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
+    },
+    "giardia": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "faecal-oral, through untreated surface water",
+      "reservoir": "beavers, dogs and humans",
+      "makeup": "a flagellate with two nuclei and no mitochondria",
+      "durability": "cysts survive months in cold water and resist chlorine",
+      "symptoms": [
+        "greasy floating stools",
+        "bloating",
+        "weight loss"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal, but it can last months and cause lasting lactose intolerance",
+        "src": "https://en.wikipedia.org/wiki/Giardiasis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Giardiasis"
+    },
+    "cryptosporidium": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "cryptosporidiosis"
+      ],
+      "transmission": "water — it caused the largest waterborne outbreak on record",
+      "reservoir": "cattle and humans",
+      "makeup": "an apicomplexan whose oocysts are four micrometres across and pass most water filters",
+      "durability": "oocysts resist chlorine at any dose used in drinking water",
+      "symptoms": [
+        "watery diarrhoea",
+        "cramps"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "self-limiting in healthy hosts; in advanced HIV it is a wasting illness that does not stop",
+        "src": "https://en.wikipedia.org/wiki/Cryptosporidiosis"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cryptosporidiosis"
+    },
+    "balantidium_coli": {
+      "kind": "protozoan",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "faecal-oral, usually from pigs",
+      "reservoir": "pigs",
+      "makeup": "the only ciliate that causes human disease, and the largest protozoan that does",
+      "durability": "cysts survive weeks in moist conditions",
+      "symptoms": [
+        "diarrhoea",
+        "colon ulcers"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rare and usually mild; it perforates the colon only in the debilitated",
+        "src": "https://en.wikipedia.org/wiki/Balantidiasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Balantidiasis"
+    },
+    "trichomonas_vaginalis": {
+      "kind": "protozoan",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "sexual contact",
+      "reservoir": "humans only",
+      "makeup": "a flagellate with no cyst stage at all, which is why it cannot survive drying",
+      "durability": "hours at most outside the host",
+      "symptoms": [
+        "frothy discharge",
+        "itching",
+        "often nothing in men"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it raises the risk of acquiring HIV",
+        "src": "https://en.wikipedia.org/wiki/Trichomoniasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Trichomoniasis"
+    },
+    "cyclospora_cayetanensis": {
+      "kind": "protozoan",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "fresh produce washed in contaminated water",
+      "reservoir": "humans only",
+      "makeup": "an apicomplexan whose oocysts need days outside a host to become infectious — so it never passes directly person to person",
+      "durability": "oocysts need one to two weeks to mature, then persist",
+      "symptoms": [
+        "watery diarrhoea that relapses",
+        "profound tiredness"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal in healthy hosts",
+        "src": "https://en.wikipedia.org/wiki/Cyclosporiasis"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cyclosporiasis"
+    },
+    "pneumocystis_jirovecii": {
+      "kind": "fungus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "air, and almost everyone is exposed in childhood",
+      "reservoir": "humans",
+      "makeup": "a fungus with no ergosterol in its membrane, which is why the usual antifungals do nothing to it",
+      "durability": "poorly understood outside the host",
+      "symptoms": [
+        "breathlessness on exertion",
+        "dry cough",
+        "low oxygen"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "untreated pneumocystis pneumonia in advanced HIV",
+        "src": "https://en.wikipedia.org/wiki/Pneumocystis_pneumonia"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pneumocystis_pneumonia"
+    },
+    "dermatophyte": {
+      "kind": "fungus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "ringworm"
+      ],
+      "transmission": "skin contact, floors, and shared towels",
+      "reservoir": "humans, animals and soil, depending on species",
+      "makeup": "moulds that digest keratin and grow only in dead skin, hair and nail",
+      "durability": "spores survive months on floors and in shoes",
+      "symptoms": [
+        "an itchy expanding ring",
+        "broken hair",
+        "thickened nail"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "never fatal; the point is that it is the commonest fungal infection there is",
+        "src": "https://en.wikipedia.org/wiki/Dermatophytosis"
+      },
+      "treated_by": [
+        "antiseptic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Dermatophytosis"
+    },
+    "prion": {
+      "kind": "prion",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "eating infected nervous tissue, and surgical instruments",
+      "reservoir": "cattle for BSE; sheep for scrapie; and it arises spontaneously too",
+      "makeup": "no genome at all — a normal host protein refolded, which then converts its neighbours",
+      "durability": "survives autoclaving, formalin and years in soil; standard sterilisation does not touch it",
+      "symptoms": [
+        "memory loss",
+        "jerking movements",
+        "loss of coordination"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "invariably fatal; there has never been a survivor of any prion disease",
+        "src": "https://en.wikipedia.org/wiki/Prion"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Prion"
+    },
+    "phytophthora_infestans": {
+      "kind": "oomycete",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "potato_blight"
+      ],
+      "transmission": "wind-blown sporangia, and infected seed tubers",
+      "reservoir": "potato and tomato; it overwinters in tubers left in the ground",
+      "makeup": "an oomycete with cellulose walls and diploid nuclei — nothing like a fungus; 240 Mb, an unusually large genome padded with repeats that let its attack genes evolve fast",
+      "durability": "sporangia last hours in sunlight and days in cool damp; the mycelium overwinters in a tuber",
+      "symptoms": [
+        "blackened leaf patches with a pale halo",
+        "white down on the underside",
+        "tubers rotting in store"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "an untreated susceptible crop in a wet season is a total loss, which is what happened in Ireland from 1845",
+        "src": "https://en.wikipedia.org/wiki/Great_Famine_(Ireland)"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Phytophthora_infestans"
+    },
+    "puccinia_graminis": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "stem_rust"
+      ],
+      "transmission": "wind, over hundreds of kilometres",
+      "reservoir": "wheat, and barberry for the sexual stage",
+      "makeup": "a basidiomycete with five spore stages across two unrelated hosts",
+      "durability": "urediniospores survive days to weeks in the air; the overwintering stage needs barberry or a green bridge",
+      "symptoms": [
+        "red-brown pustules bursting through the stem",
+        "shrivelled grain",
+        "lodging"
+      ],
+      "seriousness": {
+        "value": 0.7,
+        "measure": "yield loss in a susceptible variety under a severe epidemic",
+        "src": "https://en.wikipedia.org/wiki/Stem_rust"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Stem_rust"
+    },
+    "hemileia_vastatrix": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "coffee_rust"
+      ],
+      "transmission": "wind and rain splash",
+      "reservoir": "coffee only",
+      "makeup": "a basidiomycete whose spores are borne on the leaf underside and germinate only through the stomata there",
+      "durability": "spores survive about six weeks off the plant",
+      "symptoms": [
+        "orange powder under the leaf",
+        "defoliation",
+        "dieback"
+      ],
+      "seriousness": {
+        "value": 0.8,
+        "measure": "yield loss in an unsprayed susceptible plantation; Ceylon's industry fell from third in the world to nothing in twenty years",
+        "src": "https://en.wikipedia.org/wiki/Coffee_leaf_rust"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Coffee_leaf_rust"
+    },
+    "magnaporthe_oryzae": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "rice_blast"
+      ],
+      "transmission": "wind-blown conidia and infected seed",
+      "reservoir": "rice, and many other grasses",
+      "makeup": "an ascomycete that builds an appressorium and raises its internal pressure to about 8 MPa to punch through the intact leaf",
+      "durability": "conidia survive weeks; the fungus overwinters in straw and seed",
+      "symptoms": [
+        "diamond-shaped grey lesions",
+        "a rotted panicle neck",
+        "empty grain"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "yield loss in a severe epidemic; global losses are enough rice for tens of millions of people a year",
+        "src": "https://en.wikipedia.org/wiki/Magnaporthe_grisea"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Magnaporthe_grisea"
+    },
+    "fusarium_oxysporum": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "panama_disease"
+      ],
+      "transmission": "soil, water, and machinery carrying infected earth",
+      "reservoir": "the soil itself, for decades",
+      "makeup": "an ascomycete whose chlamydospores are thick-walled resting cells",
+      "durability": "chlamydospores stay viable in soil for thirty years and more",
+      "symptoms": [
+        "yellowing lower leaves",
+        "a split pseudostem",
+        "wilt with wet roots"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "an infected plant does not recover, and an infected field cannot grow the crop again within a working lifetime",
+        "src": "https://en.wikipedia.org/wiki/Panama_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Panama_disease"
+    },
+    "botrytis_cinerea": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "grey_mould",
+        "noble_rot"
+      ],
+      "transmission": "airborne conidia landing on damaged or senescing tissue",
+      "reservoir": "almost any soft plant tissue; over 200 hosts",
+      "makeup": "an ascomycete that kills tissue ahead of itself with oxalic acid and reactive oxygen, then eats what it killed",
+      "durability": "sclerotia overwinter in debris; conidia are everywhere in the air",
+      "symptoms": [
+        "grey felt over fruit",
+        "water-soaked spots",
+        "in dry conditions instead, shrivelled concentrated grapes"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "post-harvest and field loss in soft fruit; the same organism is deliberately encouraged for Sauternes",
+        "src": "https://en.wikipedia.org/wiki/Botrytis_cinerea"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Botrytis_cinerea"
+    },
+    "erysiphe": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "powdery_mildew"
+      ],
+      "transmission": "wind, and it does not need the leaf to be wet",
+      "reservoir": "a very wide host range, each species narrow",
+      "makeup": "an ascomycete that stays on the leaf surface and feeds through haustoria pushed into the epidermal cells only",
+      "durability": "chasmothecia overwinter in debris and on buds",
+      "symptoms": [
+        "white powder on the upper leaf",
+        "distorted new growth"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "yield loss; it disfigures far more often than it kills",
+        "src": "https://en.wikipedia.org/wiki/Powdery_mildew"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Powdery_mildew"
+    },
+    "plasmopara_viticola": {
+      "kind": "oomycete",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "downy_mildew"
+      ],
+      "transmission": "rain splash and free water on the leaf",
+      "reservoir": "grapevine; it overwinters as oospores in fallen leaves",
+      "makeup": "an oomycete releasing motile zoospores that swim to the stomata",
+      "durability": "oospores survive winter in leaf litter and several years in soil",
+      "symptoms": [
+        "oily yellow patches above",
+        "white down beneath",
+        "shrivelled berries"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "crop loss in a wet season without treatment; it nearly ended European viticulture in the 1880s",
+        "src": "https://en.wikipedia.org/wiki/Plasmopara_viticola"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Plasmopara_viticola"
+    },
+    "claviceps_purpurea": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "ergotism"
+      ],
+      "transmission": "wind-blown spores infecting the open flower, and insects drawn to the honeydew",
+      "reservoir": "rye above all, and other grasses",
+      "makeup": "an ascomycete that replaces the ovary with a sclerotium loaded with ergoline alkaloids",
+      "durability": "sclerotia survive a year in soil and remain toxic in stored grain",
+      "symptoms": [
+        "a hard black spur where the grain should be"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "case fatality in historical ergotism outbreaks; the 944 AD outbreak in France is said to have killed some 40,000 people",
+        "src": "https://en.wikipedia.org/wiki/Ergotism"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Claviceps_purpurea"
+    },
+    "ustilago_maydis": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "corn_smut"
+      ],
+      "transmission": "wind-blown teliospores entering through wounds and silks",
+      "reservoir": "maize; teliospores persist in soil",
+      "makeup": "a basidiomycete that is a harmless yeast until two compatible cells fuse — only the fused form can infect",
+      "durability": "teliospores stay viable in soil and manure for years",
+      "symptoms": [
+        "grey galls on cob, tassel or stem, bursting into black spores"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "yield loss where it is a disease; in Mexico the gall sells for more than the maize",
+        "src": "https://en.wikipedia.org/wiki/Corn_smut"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Corn_smut"
+    },
+    "venturia_inaequalis": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "apple_scab"
+      ],
+      "transmission": "ascospores fired upward from fallen leaves in spring rain",
+      "reservoir": "the previous year's leaf litter",
+      "makeup": "an ascomycete that grows between the cuticle and the epidermis rather than inside the cells",
+      "durability": "overwinters entirely in dead leaves on the ground",
+      "symptoms": [
+        "olive-brown velvety blotches",
+        "cracked fruit",
+        "early leaf fall"
+      ],
+      "seriousness": {
+        "value": 0.7,
+        "measure": "loss of marketable fruit in an unmanaged susceptible orchard",
+        "src": "https://en.wikipedia.org/wiki/Apple_scab"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Apple_scab"
+    },
+    "ophiostoma_ulmi": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "dutch_elm_disease"
+      ],
+      "transmission": "elm bark beetles feeding in twig crotches, and root grafts between neighbouring trees",
+      "reservoir": "dead and dying elms, where the beetles breed",
+      "makeup": "an ascomycete that grows as yeast-like spores carried in the sap stream",
+      "durability": "survives in dead bark as long as the beetles breed there",
+      "symptoms": [
+        "yellowing and wilting on one branch first",
+        "brown streaks under the bark",
+        "death in one or two seasons"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality of mature susceptible elms; Britain lost about 25 million trees",
+        "src": "https://en.wikipedia.org/wiki/Dutch_elm_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Dutch_elm_disease"
+    },
+    "cryphonectria_parasitica": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "chestnut_blight"
+      ],
+      "transmission": "wind and rain-splashed spores entering through bark wounds",
+      "reservoir": "oaks and Asian chestnuts, which tolerate it",
+      "makeup": "an ascomycete that can itself be infected by a virus, and a virus-infected strain is much less aggressive",
+      "durability": "survives in bark cankers indefinitely",
+      "symptoms": [
+        "sunken orange cankers",
+        "a girdled trunk",
+        "sprouts from a living stump"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "mortality of the aboveground American chestnut; about four billion trees",
+        "src": "https://en.wikipedia.org/wiki/Chestnut_blight"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Chestnut_blight"
+    },
+    "hymenoscyphus_fraxineus": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "ash_dieback"
+      ],
+      "transmission": "wind-blown ascospores from fruiting bodies on last year's leaf stalks",
+      "reservoir": "the leaf litter under the trees",
+      "makeup": "an ascomycete native to east Asia, where it is a harmless leaf endophyte of Manchurian ash",
+      "durability": "fruits on the previous year's leaf stalks in the litter",
+      "symptoms": [
+        "black lesions at leaf and twig junctions",
+        "diamond lesions on the stem",
+        "a thinning crown"
+      ],
+      "seriousness": {
+        "value": 0.7,
+        "measure": "mortality of European ash; a small proportion show heritable tolerance, which is the only hope for the species",
+        "src": "https://en.wikipedia.org/wiki/Ash_dieback"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Ash_dieback"
+    },
+    "xylella_fastidiosa": {
+      "kind": "bacterium",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "citrus_greening"
+      ],
+      "transmission": "xylem-feeding insects — spittlebugs and sharpshooters",
+      "reservoir": "a very wide range of plants, many symptomless",
+      "makeup": "a Gram-negative bacterium restricted to the xylem, with a small 2.7 Mb genome and no flagella",
+      "durability": "survives only inside a host or its insect vector",
+      "symptoms": [
+        "scorched leaf margins",
+        "dieback",
+        "in olives, whole crowns dying"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality of infected olive trees in the Puglia outbreak, some of them centuries old",
+        "src": "https://en.wikipedia.org/wiki/Xylella_fastidiosa"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Xylella_fastidiosa"
+    },
+    "candidatus_liberibacter": {
+      "kind": "bacterium",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "citrus_greening"
+      ],
+      "transmission": "the Asian citrus psyllid",
+      "reservoir": "citrus, and the psyllid itself",
+      "makeup": "a phloem-limited bacterium that has never been grown in culture — which is what Candidatus means",
+      "durability": "cannot survive outside a host or vector",
+      "symptoms": [
+        "blotchy mottled leaves",
+        "lopsided fruit that stays green at the base",
+        "bitter juice"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "an infected tree does not recover; Florida's orange production has fallen about 90% since it arrived",
+        "src": "https://en.wikipedia.org/wiki/Citrus_greening_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Citrus_greening_disease"
+    },
+    "erwinia_amylovora": {
+      "kind": "bacterium",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "fireblight"
+      ],
+      "transmission": "bees and rain moving bacteria into open flowers",
+      "reservoir": "cankers on the tree, which ooze in spring",
+      "makeup": "a Gram-negative rod producing amylovoran, an exopolysaccharide that blocks the vessels",
+      "durability": "overwinters in bark cankers; ooze is infectious for days",
+      "symptoms": [
+        "blackened shoots hooked at the tip",
+        "oozing cankers",
+        "a scorched-looking tree"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "loss of infected apple and pear trees in a severe outbreak; the first plant disease proved to be bacterial, in 1878",
+        "src": "https://en.wikipedia.org/wiki/Fire_blight"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Fire_blight"
+    },
+    "agrobacterium_tumefaciens": {
+      "kind": "bacterium",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "crown_gall"
+      ],
+      "transmission": "soil entering wounds, especially at grafting and transplanting",
+      "reservoir": "soil",
+      "makeup": "a Gram-negative rod carrying a tumour-inducing plasmid whose T-DNA integrates into the plant's own chromosomes",
+      "durability": "survives in soil and in galls for years",
+      "symptoms": [
+        "a rough tumour at the crown",
+        "stunting",
+        "rarely, death of a young plant"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "loss in nursery stock; its importance is not as a disease but as the standard means of putting genes into plants",
+        "src": "https://en.wikipedia.org/wiki/Agrobacterium_tumefaciens"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Agrobacterium_tumefaciens"
+    },
+    "plasmodiophora_brassicae": {
+      "kind": "protozoan",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "clubroot"
+      ],
+      "transmission": "soil, water and boots; motile zoospores swim to the root hairs",
+      "reservoir": "the soil, for up to twenty years",
+      "makeup": "not a fungus but a protist — a plasmodium with no cell wall living inside the root cells",
+      "durability": "resting spores stay viable in soil for up to twenty years",
+      "symptoms": [
+        "swollen distorted roots",
+        "wilting in sun despite wet soil",
+        "stunting"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "yield loss in infested land; the spore longevity puts it outside any normal rotation",
+        "src": "https://en.wikipedia.org/wiki/Clubroot"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Clubroot"
+    },
+    "rhizoctonia_solani": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "damping_off"
+      ],
+      "transmission": "soil and infected seed",
+      "reservoir": "soil, on organic debris, indefinitely",
+      "makeup": "a basidiomycete that usually never makes spores at all and spreads entirely as mycelium",
+      "durability": "sclerotia and mycelium persist in soil for years",
+      "symptoms": [
+        "seedlings pinched through at soil level",
+        "bare patches in a seed tray",
+        "root and stem canker"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "seedling loss in an infested seedbed",
+        "src": "https://en.wikipedia.org/wiki/Rhizoctonia_solani"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Rhizoctonia_solani"
+    },
+    "verticillium_dahliae": {
+      "kind": "fungus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [
+        "verticillium_wilt"
+      ],
+      "transmission": "soil, and infected planting material",
+      "reservoir": "soil, and over 300 plant species",
+      "makeup": "an ascomycete forming microsclerotia — tiny black resting bodies rather than spores",
+      "durability": "microsclerotia survive in soil for ten to fifteen years",
+      "symptoms": [
+        "one-sided yellowing",
+        "wilting in the afternoon and recovering overnight",
+        "brown vascular streaks"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "yield loss; it is chronic rather than sudden and rarely kills outright",
+        "src": "https://en.wikipedia.org/wiki/Verticillium_wilt"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Verticillium_wilt"
+    },
+    "pseudomonas_syringae": {
+      "kind": "bacterium",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [],
+      "transmission": "rain, wind and irrigation water",
+      "reservoir": "leaf surfaces almost everywhere, and clouds",
+      "makeup": "a Gram-negative rod carrying an ice-nucleation protein that templates a crystal at about minus two degrees",
+      "durability": "survives on leaf surfaces, in water and in the atmosphere",
+      "symptoms": [
+        "angular water-soaked leaf spots",
+        "frost injury it caused itself",
+        "cankers"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "yield loss across many crops; the same protein it damages plants with is what snow machines use",
+        "src": "https://en.wikipedia.org/wiki/Pseudomonas_syringae"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pseudomonas_syringae"
+    },
+    "potato_virus_y": {
+      "kind": "virus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [],
+      "transmission": "aphids, on the mouthparts, in seconds of probing",
+      "reservoir": "potato, and infected seed tubers",
+      "makeup": "single positive-strand RNA potyvirus, about 9.7 kb, in a flexuous rod",
+      "durability": "survives only in living plant tissue and tubers",
+      "symptoms": [
+        "mosaic mottling",
+        "leaf drop",
+        "necrotic rings in the tuber"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "yield loss in a susceptible variety; insecticide barely helps because the aphid transmits before it dies",
+        "src": "https://en.wikipedia.org/wiki/Potato_virus_Y"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Potato_virus_Y"
+    },
+    "barley_yellow_dwarf_virus": {
+      "kind": "virus",
+      "hosts": [
+        "plant"
+      ],
+      "causes": [],
+      "transmission": "aphids only, and only by feeding deeply enough to reach the phloem",
+      "reservoir": "cereals and wild grasses",
+      "makeup": "single positive-strand RNA luteovirus confined to the phloem; it cannot be transmitted by sap or contact",
+      "durability": "persists in the aphid for the insect's life, and in living plants",
+      "symptoms": [
+        "yellow or red leaf tips",
+        "severe stunting",
+        "fewer heads"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "yield loss; it is the most widespread viral disease of cereals in the world",
+        "src": "https://en.wikipedia.org/wiki/Barley_yellow_dwarf_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Barley_yellow_dwarf_virus"
+    },
+    "foot_and_mouth_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "breath, saliva, milk, and on boots and vehicles",
+      "reservoir": "cloven-hoofed animals; carriers persist in cattle for months",
+      "makeup": "single positive-strand RNA picornavirus, 8.5 kb, bare capsid, with seven serotypes that give no cross-immunity",
+      "durability": "a month on straw and in soil in cool damp weather; it survives in bone marrow and lymph nodes of chilled carcasses",
+      "symptoms": [
+        "blisters on tongue, feet and teats",
+        "lameness",
+        "drooling",
+        "lost milk and condition"
+      ],
+      "seriousness": {
+        "value": 0.05,
+        "measure": "mortality in adult cattle, which is low — the 2001 British cull of over six million animals was a trade measure, not a medical one",
+        "src": "https://en.wikipedia.org/wiki/Foot-and-mouth_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Foot-and-mouth_disease"
+    },
+    "rinderpest_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "close contact and shared water",
+      "reservoir": "cattle and buffalo only, which is why eradication was possible",
+      "makeup": "single negative-strand RNA morbillivirus, closest relative of measles",
+      "durability": "poor survival outside the host — it needs a continuous chain of animals",
+      "symptoms": [
+        "fever",
+        "erosions in the mouth",
+        "diarrhoea",
+        "death within a fortnight"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in naive cattle; its 1890s arrival in Africa killed about 90% of the cattle in the east",
+        "src": "https://en.wikipedia.org/wiki/Rinderpest"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rinderpest"
+    },
+    "african_swine_fever_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "direct contact, ticks, and pork products carried by people",
+      "reservoir": "warthogs and soft ticks, in which it is harmless",
+      "makeup": "a very large double-stranded DNA virus, 170-190 kb, and the only member of its own family — which is much of why no vaccine has worked",
+      "durability": "months in frozen and cured pork, and weeks in blood at room temperature",
+      "symptoms": [
+        "high fever",
+        "reddened skin",
+        "haemorrhage",
+        "sudden death"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "mortality in domestic pigs from the virulent genotypes",
+        "src": "https://en.wikipedia.org/wiki/African_swine_fever"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/African_swine_fever"
+    },
+    "avian_influenza": {
+      "kind": "virus",
+      "hosts": [
+        "animal",
+        "human"
+      ],
+      "causes": [
+        "influenza"
+      ],
+      "transmission": "faeces and water in wild birds; air and dust in poultry houses",
+      "reservoir": "wild waterfowl, in which it is a symptomless gut infection",
+      "makeup": "eight segments of negative-strand RNA; the segments are what let two strains reassort into something new",
+      "durability": "weeks in cold water — which is how it persists between migrations",
+      "symptoms": [
+        "in poultry, sudden death and swollen heads",
+        "in waterfowl, nothing"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in poultry from highly pathogenic strains; H5N1 in humans is around 0.5 but has never transmitted person to person",
+        "src": "https://en.wikipedia.org/wiki/Avian_influenza"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Avian_influenza"
+    },
+    "newcastle_disease_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "faeces, air, and contaminated equipment",
+      "reservoir": "poultry and wild birds",
+      "makeup": "single negative-strand RNA paramyxovirus; its virulence turns on a single cleavage site in the fusion protein",
+      "durability": "weeks in faeces and on eggshells",
+      "symptoms": [
+        "gasping",
+        "twisted neck",
+        "paralysis",
+        "a flock dead in days"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in unvaccinated poultry from velogenic strains",
+        "src": "https://en.wikipedia.org/wiki/Virulent_Newcastle_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Virulent_Newcastle_disease"
+    },
+    "bluetongue_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "the bite of a Culicoides midge, and nothing else",
+      "reservoir": "cattle, which show little sign of it, and wild ruminants",
+      "makeup": "ten segments of double-stranded RNA in a bare capsid",
+      "durability": "requires the midge; it does not persist in the environment",
+      "symptoms": [
+        "swollen head",
+        "a blue tongue in the worst cases",
+        "lameness",
+        "abortion"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "mortality in naive sheep; cattle carry it almost without signs",
+        "src": "https://en.wikipedia.org/wiki/Bluetongue_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Bluetongue_disease"
+    },
+    "canine_parvovirus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "faeces, and it is on every surface a dog has walked over",
+      "reservoir": "dogs, and the environment, for a long time",
+      "makeup": "single-stranded DNA, only 5 kb — one of the smallest viruses there is, and it needs a dividing cell to copy itself",
+      "durability": "over a year in soil, and it resists most household disinfectants",
+      "symptoms": [
+        "bloody diarrhoea",
+        "vomiting",
+        "collapse from dehydration"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in untreated puppies; with fluids and care it falls below 0.1",
+        "src": "https://en.wikipedia.org/wiki/Canine_parvovirus"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Canine_parvovirus"
+    },
+    "myxoma_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "mosquitoes and fleas, mechanically on the mouthparts",
+      "reservoir": "South American cottontails, in which it causes a harmless skin lump",
+      "makeup": "a large double-stranded DNA poxvirus",
+      "durability": "survives in the vector and in dried material for weeks",
+      "symptoms": [
+        "swollen eyelids and genitals",
+        "blindness",
+        "death in about twelve days"
+      ],
+      "seriousness": {
+        "value": 0.995,
+        "measure": "mortality of European rabbits in the first Australian year; within a decade the virus had become milder and the rabbits more resistant, and it settled far short of extermination",
+        "src": "https://en.wikipedia.org/wiki/Myxomatosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Myxomatosis"
+    },
+    "batrachochytrium": {
+      "kind": "fungus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "water, and on the boots and equipment of people moving between ponds",
+      "reservoir": "amphibians, and some tolerant carrier species",
+      "makeup": "a chytrid — a fungus with a swimming, flagellated spore, which almost no other fungus has",
+      "durability": "zoospores survive weeks in water and on damp equipment",
+      "symptoms": [
+        "thickened skin",
+        "lethargy",
+        "death from cardiac arrest brought on by lost electrolytes"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in susceptible species during an outbreak; implicated in the decline of about 500 amphibian species and the extinction of roughly 90 — more than any other single pathogen on record",
+        "src": "https://en.wikipedia.org/wiki/Chytridiomycosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Chytridiomycosis"
+    },
+    "white_nose_fungus": {
+      "kind": "fungus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "bat to bat, and on caving gear",
+      "reservoir": "European bats, which tolerate it, and cave sediment",
+      "makeup": "a cold-loving ascomycete that grows between 4 and 15 degrees and dies above 20",
+      "durability": "persists in cave sediment between winters",
+      "symptoms": [
+        "white fuzz on muzzle and wings",
+        "waking repeatedly in winter",
+        "starvation before spring"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in affected North American hibernacula; some species have declined over 90% since 2006",
+        "src": "https://en.wikipedia.org/wiki/White-nose_syndrome"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/White-nose_syndrome"
+    },
+    "varroa_mite": {
+      "kind": "helminth",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "bee to bee, and between colonies on drifting and robbing bees",
+      "reservoir": "the Asian honey bee, which grooms it off and seals infested brood",
+      "makeup": "an eight-legged mite that feeds on the bee's fat body — not, as long thought, on its blood",
+      "durability": "cannot live long off a bee; it reproduces only in sealed brood",
+      "symptoms": [
+        "deformed wings",
+        "shortened life",
+        "and the collapse of the colony over a season or two"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "colony loss within two to three years if untreated; most losses blamed on other causes trace back to this mite and the viruses it delivers",
+        "src": "https://en.wikipedia.org/wiki/Varroa_destructor"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Varroa_destructor"
+    },
+    "paenibacillus_larvae": {
+      "kind": "bacterium",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "spores in honey and on comb, fed to larvae by nurse bees",
+      "reservoir": "old comb and equipment",
+      "makeup": "a Gram-positive spore-forming rod; a single spore is enough to kill a young larva",
+      "durability": "spores stay viable in comb and equipment for over fifty years and survive anything short of fire",
+      "symptoms": [
+        "sunken perforated brood cappings",
+        "a ropy brown mass in the cell",
+        "a foul smell"
+      ],
+      "seriousness": {
+        "value": 1.0,
+        "measure": "an infected colony does not recover; burning the bees and the boxes is still the standard answer in most of the world",
+        "src": "https://en.wikipedia.org/wiki/American_foulbrood"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/American_foulbrood"
+    },
+    "nosema": {
+      "kind": "fungus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "spores in faeces, picked up while cleaning the comb",
+      "reservoir": "honey bees",
+      "makeup": "a microsporidian — a fungus that has discarded its own mitochondria and takes finished ATP from the host cell",
+      "durability": "spores survive a year in comb and resist drying",
+      "symptoms": [
+        "dysentery in the hive",
+        "shortened life",
+        "a colony that dwindles without obvious cause"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "colony loss where it is heavy; more often it shortens lives and reduces the crop without killing outright",
+        "src": "https://en.wikipedia.org/wiki/Nosema_apis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Nosema_apis"
+    },
+    "dirofilaria_immitis": {
+      "kind": "helminth",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "mosquitoes; the larvae must spend about two weeks in one and cannot develop otherwise",
+      "reservoir": "dogs, and wild canids",
+      "makeup": "a nematode up to 30 cm long, living in the pulmonary artery and right heart",
+      "durability": "cannot survive outside a host or vector",
+      "symptoms": [
+        "cough",
+        "exercise intolerance",
+        "heart failure"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "mortality in untreated advanced infection; killing the adult worms too fast is itself dangerous, because the dead worms lodge in the lung",
+        "src": "https://en.wikipedia.org/wiki/Dirofilaria_immitis"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [
+        "ivermectin"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Dirofilaria_immitis"
+    },
+    "sarcoptes_scabiei": {
+      "kind": "helminth",
+      "hosts": [
+        "animal",
+        "human"
+      ],
+      "causes": [],
+      "transmission": "prolonged skin contact",
+      "reservoir": "humans and many mammals, as host-adapted strains of one species",
+      "makeup": "a mite about 0.3 mm across that tunnels in the outer skin and lays eggs behind it",
+      "durability": "two to three days off a host",
+      "symptoms": [
+        "intense itch, worse at night",
+        "burrows between the fingers",
+        "in animals, hair loss and crusting"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal in itself; crusted scabies in the immunosuppressed is dangerous through secondary infection",
+        "src": "https://en.wikipedia.org/wiki/Scabies"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Scabies"
+    },
+    "theileria": {
+      "kind": "protozoan",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "the bite of an infected tick",
+      "reservoir": "cattle and buffalo",
+      "makeup": "an apicomplexan that infects white blood cells and makes them divide like a cancer, dividing with them so every daughter cell is infected",
+      "durability": "requires the tick",
+      "symptoms": [
+        "high fever",
+        "swollen nodes",
+        "breathlessness"
+      ],
+      "seriousness": {
+        "value": 0.9,
+        "measure": "mortality in naive cattle from East Coast fever; it is the only eukaryotic parasite known to transform a host cell this way, and killing it lets the cells behave normally again",
+        "src": "https://en.wikipedia.org/wiki/Theileria"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Theileria"
+    },
+    "babesia": {
+      "kind": "protozoan",
+      "hosts": [
+        "animal",
+        "human"
+      ],
+      "causes": [],
+      "transmission": "the bite of an infected tick",
+      "reservoir": "cattle, rodents and deer",
+      "makeup": "an apicomplexan that lives inside red blood cells and bursts them",
+      "durability": "requires the tick, which passes it to its own eggs",
+      "symptoms": [
+        "fever",
+        "red urine from broken red cells",
+        "jaundice",
+        "anaemia"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "mortality in naive cattle with Texas cattle fever; proving a tick carried it in 1893 was the first demonstration that any arthropod transmits any disease",
+        "src": "https://en.wikipedia.org/wiki/Babesiosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Babesiosis"
+    },
+    "vibrio_cholerae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "cholera"
+      ],
+      "transmission": "water and food contaminated with faeces",
+      "reservoir": "brackish water and plankton, where it lives quite happily without people",
+      "makeup": "a comma-shaped Gram-negative rod with a single polar flagellum; the toxin gene is carried by a bacteriophage",
+      "durability": "weeks in water, and it attaches to the chitin of copepods",
+      "symptoms": [
+        "painless torrential watery diarrhoea",
+        "cramps",
+        "collapse within hours"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "untreated severe cholera; with rehydration alone it falls below 0.01, which is one of the largest gaps between treated and untreated in all of medicine",
+        "src": "https://en.wikipedia.org/wiki/Cholera"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Cholera"
+    },
+    "ascaris_lumbricoides": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "eggs swallowed from soil contaminated with human faeces",
+      "reservoir": "humans and the soil around them",
+      "makeup": "a nematode up to 35 cm long; a female lays around 200,000 eggs a day",
+      "durability": "eggs stay infective in soil for up to ten years and resist most disinfectants",
+      "symptoms": [
+        "often nothing",
+        "a cough as the larvae cross the lung",
+        "obstruction where the worms are many"
+      ],
+      "seriousness": {
+        "value": 0.005,
+        "measure": "case fatality, almost all from bowel obstruction in children; it infects on the order of 800 million people",
+        "src": "https://en.wikipedia.org/wiki/Ascariasis"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Ascariasis"
+    },
+    "enterobius_vermicularis": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "eggs on fingers, bedding and dust — swallowed, not entered through skin",
+      "reservoir": "humans only",
+      "makeup": "a small nematode, the female about a centimetre, which crawls out at night to lay on the skin",
+      "durability": "eggs survive two to three weeks on surfaces and become infective in hours",
+      "symptoms": [
+        "itching at night",
+        "broken sleep",
+        "nothing else at all"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "never fatal; it is simply the commonest worm infection in temperate countries",
+        "src": "https://en.wikipedia.org/wiki/Pinworm_infection"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Pinworm_infection"
+    },
+    "taenia_solium": {
+      "kind": "helminth",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "cysticercosis",
+        "neurocysticercosis"
+      ],
+      "transmission": "undercooked pork for the tapeworm; swallowed eggs for the dangerous form",
+      "reservoir": "pigs, and humans",
+      "makeup": "a tapeworm several metres long with a head of hooks and suckers, and no gut of its own",
+      "durability": "eggs survive months in the environment",
+      "symptoms": [
+        "often nothing from the worm itself",
+        "seizures where the larvae lodge in the brain"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "case fatality of untreated neurocysticercosis; it is the single commonest preventable cause of epilepsy worldwide",
+        "src": "https://en.wikipedia.org/wiki/Taeniasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Taeniasis"
+    },
+    "echinococcus_granulosus": {
+      "kind": "helminth",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "echinococcosis"
+      ],
+      "transmission": "eggs from dog faeces, swallowed",
+      "reservoir": "dogs, with sheep as the intermediate host",
+      "makeup": "a tapeworm only a few millimetres long in the dog; in the wrong host it forms a fluid-filled cyst instead",
+      "durability": "eggs survive a year in cool damp conditions",
+      "symptoms": [
+        "a slowly growing cyst in liver or lung",
+        "pain",
+        "and shock if the cyst bursts"
+      ],
+      "seriousness": {
+        "value": 0.03,
+        "measure": "case fatality with treatment; over 0.5 if a cyst is left and ruptures",
+        "src": "https://en.wikipedia.org/wiki/Echinococcosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Echinococcosis"
+    },
+    "trichinella_spiralis": {
+      "kind": "helminth",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "trichinosis"
+      ],
+      "transmission": "undercooked pork and game",
+      "reservoir": "pigs, rats and wild carnivores",
+      "makeup": "a nematode whose larvae coil inside a muscle cell they have reprogrammed into a nurse cell that feeds them",
+      "durability": "larvae survive in muscle for years, and in a frozen carcass for weeks",
+      "symptoms": [
+        "diarrhoea first",
+        "then fever, muscle pain and swelling around the eyes"
+      ],
+      "seriousness": {
+        "value": 0.002,
+        "measure": "case fatality; the heavy infections that killed were a feature of the era before meat inspection",
+        "src": "https://en.wikipedia.org/wiki/Trichinosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Trichinosis"
+    },
+    "wuchereria_bancrofti": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "mosquitoes",
+      "reservoir": "humans only, which is why elimination is possible",
+      "makeup": "a filarial nematode living in the lymphatic vessels; its microfilariae circulate at night, timed to the mosquito",
+      "durability": "requires a host or vector",
+      "symptoms": [
+        "fever",
+        "swollen limbs",
+        "and in time the gross thickening called elephantiasis"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it is one of the leading causes of permanent disability in the world",
+        "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis"
+    },
+    "onchocerca_volvulus": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "blackflies breeding in fast rivers, which is why it is called river blindness",
+      "reservoir": "humans, and the blackfly",
+      "makeup": "a filarial nematode carrying Wolbachia bacteria inside it, without which it cannot reproduce",
+      "durability": "requires the fly",
+      "symptoms": [
+        "intense itching",
+        "nodules under the skin",
+        "and blindness from the inflammation around dying larvae"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; it blinded whole riverside villages before ivermectin, and the drug is donated free for it",
+        "src": "https://en.wikipedia.org/wiki/Onchocerciasis"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [
+        "ivermectin"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Onchocerciasis"
+    },
+    "strongyloides_stercoralis": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "larvae entering through the skin from contaminated soil",
+      "reservoir": "humans, and it can complete its whole cycle inside one",
+      "makeup": "a nematode that reproduces inside the host, so an infection acquired once can persist for a lifetime",
+      "durability": "free-living generations survive in warm moist soil",
+      "symptoms": [
+        "often nothing for decades",
+        "a creeping rash",
+        "and in the immunosuppressed, overwhelming spread"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "case fatality of hyperinfection, which is what happens when someone carrying it silently is given steroids",
+        "src": "https://en.wikipedia.org/wiki/Strongyloidiasis"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Strongyloidiasis"
+    },
+    "dracunculus_medinensis": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "drinking water containing the copepods that carry its larvae",
+      "reservoir": "humans, and the water fleas",
+      "makeup": "a nematode up to a metre long, which emerges slowly through a blister in the skin",
+      "durability": "larvae survive weeks in water inside a copepod",
+      "symptoms": [
+        "a burning blister, usually on the leg",
+        "and a worm that takes weeks to come out"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "never fatal; it is on the edge of eradication, from 3.5 million cases in 1986 to a handful a year, achieved with cloth filters and behaviour change and no drug or vaccine at all",
+        "src": "https://en.wikipedia.org/wiki/Dracunculiasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Dracunculiasis"
+    },
+    "epstein_barr_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "infectious_mononucleosis"
+      ],
+      "transmission": "saliva",
+      "reservoir": "humans; over 90% of adults carry it for life",
+      "makeup": "double-stranded DNA herpesvirus, 172 kb, which settles permanently in B cells",
+      "durability": "latent in the host's own cells for life",
+      "symptoms": [
+        "often nothing in childhood",
+        "fever, sore throat and exhaustion if caught later"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "the acute illness is rarely fatal; the weight of it is Burkitt lymphoma, nasopharyngeal carcinoma, and the strongest known trigger for multiple sclerosis",
+        "src": "https://en.wikipedia.org/wiki/Epstein–Barr_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Epstein–Barr_virus"
+    },
+    "eimeria": {
+      "kind": "protozoan",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [
+        "coccidiosis"
+      ],
+      "transmission": "oocysts in litter and faeces, swallowed while feeding",
+      "reservoir": "poultry and livestock, and the ground they stand on",
+      "makeup": "an apicomplexan, each species locked to one host and usually one part of one gut",
+      "durability": "oocysts survive months in litter and resist most disinfectants",
+      "symptoms": [
+        "bloody droppings",
+        "poor growth",
+        "dehydration"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "mortality in an untreated outbreak in young poultry; it is reckoned the most economically damaging disease in the poultry industry",
+        "src": "https://en.wikipedia.org/wiki/Coccidiosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Coccidiosis"
+    },
+    "variola": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "air and direct contact",
+      "reservoir": "humans only — and that is why it could be eradicated",
+      "makeup": "double-stranded DNA poxvirus, about 186 kb, brick-shaped",
+      "durability": "very durable; it survives years in dried scab material",
+      "symptoms": [
+        "fever",
+        "a rash whose lesions all advance together",
+        "deep scarring"
+      ],
+      "seriousness": {
+        "value": 0.3,
+        "measure": "variola major in the unvaccinated; declared eradicated in 1980, the only human disease ever ended",
+        "src": "https://en.wikipedia.org/wiki/Smallpox"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Smallpox"
+    },
+    "sars_cov_2": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "air, especially indoors",
+      "reservoir": "bats, with an intermediate host still argued over",
+      "makeup": "single positive-strand RNA, about 30 kb — the largest genome of any RNA virus, held together by a proofreading enzyme",
+      "durability": "hours in air as fine aerosol; days on some surfaces, though surface spread proved minor",
+      "symptoms": [
+        "fever",
+        "cough",
+        "loss of smell",
+        "breathlessness"
+      ],
+      "seriousness": {
+        "value": 0.007,
+        "measure": "infection fatality rate before vaccines, rising steeply with age; it spreads before symptoms, which is why the SARS containment strategy failed on it",
+        "src": "https://en.wikipedia.org/wiki/COVID-19"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/COVID-19"
+    },
+    "coronavirus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "air and droplets",
+      "reservoir": "bats above all, and many mammals",
+      "makeup": "single positive-strand RNA with a crown of spike proteins; the only RNA viruses with proofreading",
+      "durability": "hours to days depending on the strain and surface",
+      "symptoms": [
+        "fever",
+        "cough"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "most coronaviruses cause common colds; the family's importance is that three of them have crossed into humans and been lethal",
+        "src": "https://en.wikipedia.org/wiki/Coronavirus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Coronavirus"
+    },
+    "ebola_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "contact with blood and body fluids of the very ill or the newly dead",
+      "reservoir": "fruit bats, probably",
+      "makeup": "single negative-strand RNA filovirus, a long filament about 19 kb",
+      "durability": "days in body fluids; it is not airborne",
+      "symptoms": [
+        "fever",
+        "vomiting",
+        "bleeding",
+        "organ failure"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "average case fatality across outbreaks, ranging 0.25 to 0.9; it is stopped by contact tracing and burial practice rather than by medicine",
+        "src": "https://en.wikipedia.org/wiki/Ebola"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Ebola"
+    },
+    "marburg_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "contact with body fluids, and with infected bats in mines",
+      "reservoir": "Egyptian fruit bats",
+      "makeup": "a filovirus, the first ever identified — in Marburg in 1967, from imported monkey tissue",
+      "durability": "days in body fluids",
+      "symptoms": [
+        "fever",
+        "bleeding",
+        "shock"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "average case fatality across outbreaks",
+        "src": "https://en.wikipedia.org/wiki/Marburg_virus_disease"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Marburg_virus_disease"
+    },
+    "lassa_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "dust and food contaminated with the urine of the multimammate rat",
+      "reservoir": "one species of rat that lives inside houses across West Africa",
+      "makeup": "an arenavirus with two RNA segments, which picks up host ribosomes into its own particle",
+      "durability": "survives in dried excreta",
+      "symptoms": [
+        "fever",
+        "sore throat",
+        "and in survivors, deafness"
+      ],
+      "seriousness": {
+        "value": 0.01,
+        "measure": "case fatality overall, about 0.15 among those admitted to hospital; the commonest lasting harm is deafness, not death",
+        "src": "https://en.wikipedia.org/wiki/Lassa_fever"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Lassa_fever"
+    },
+    "nipah_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "pigs in the first outbreak; raw date palm sap in the later ones",
+      "reservoir": "fruit bats",
+      "makeup": "a henipavirus, single negative-strand RNA",
+      "durability": "days in date palm sap; it is inactivated by heat",
+      "symptoms": [
+        "fever",
+        "encephalitis",
+        "coma"
+      ],
+      "seriousness": {
+        "value": 0.7,
+        "measure": "case fatality in the Bangladesh outbreaks",
+        "src": "https://en.wikipedia.org/wiki/Nipah_virus_infection"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Nipah_virus_infection"
+    },
+    "hantavirus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "breathing dust from dried rodent urine and droppings — almost never person to person",
+      "reservoir": "rodents, each virus with its own species",
+      "makeup": "a bunyavirus with three RNA segments",
+      "durability": "survives in dried excreta for days",
+      "symptoms": [
+        "fever",
+        "muscle pain",
+        "then either kidney failure or sudden lung oedema"
+      ],
+      "seriousness": {
+        "value": 0.35,
+        "measure": "case fatality of hantavirus pulmonary syndrome in the Americas; the Eurasian kidney form is under 0.01",
+        "src": "https://en.wikipedia.org/wiki/Orthohantavirus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Orthohantavirus"
+    },
+    "dengue_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "Aedes aegypti, a mosquito that bites by day and lives in cities",
+      "reservoir": "humans and mosquitoes, in an urban cycle needing no animal at all",
+      "makeup": "single positive-strand RNA flavivirus, four serotypes that do not cross-protect",
+      "durability": "requires the mosquito",
+      "symptoms": [
+        "fever",
+        "severe joint and bone pain",
+        "rash",
+        "and in the severe form, plasma leak"
+      ],
+      "seriousness": {
+        "value": 0.02,
+        "measure": "severe dengue with care, and around 0.2 without; severe cases are usually a SECOND infection, because antibody to one serotype helps another into the cell",
+        "src": "https://en.wikipedia.org/wiki/Dengue_fever"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Dengue_fever"
+    },
+    "zika_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "Aedes mosquitoes, sex, and across the placenta",
+      "reservoir": "humans and monkeys",
+      "makeup": "single positive-strand RNA flavivirus",
+      "durability": "requires the vector",
+      "symptoms": [
+        "mild fever and rash, or nothing",
+        "and in the unborn, a small brain"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "the infection itself is trivial; the harm is congenital, and it took an epidemic in a large non-immune population before an effect that rare became visible at all",
+        "src": "https://en.wikipedia.org/wiki/Zika_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Zika_virus"
+    },
+    "chikungunya_virus": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "Aedes mosquitoes",
+      "reservoir": "humans, and primates in a forest cycle",
+      "makeup": "single positive-strand RNA alphavirus",
+      "durability": "requires the vector",
+      "symptoms": [
+        "abrupt fever",
+        "joint pain severe enough to bend the sufferer up",
+        "and arthritis lasting months or years"
+      ],
+      "seriousness": {
+        "value": 0.001,
+        "measure": "case fatality; the burden is chronic arthritis rather than death, and one envelope mutation in 2005 gave it the tiger mosquito and most of the tropics",
+        "src": "https://en.wikipedia.org/wiki/Chikungunya"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Chikungunya"
+    },
+    "hepatitis_b": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "blood, sex, and mother to child at birth",
+      "reservoir": "humans; around 250 million carry it chronically",
+      "makeup": "a partly double-stranded DNA virus that copies itself through an RNA intermediate, as a retrovirus does",
+      "durability": "at least a week in dried blood, and it is roughly a hundred times more infectious than HIV by the same exposure",
+      "symptoms": [
+        "often nothing for decades",
+        "jaundice",
+        "cirrhosis",
+        "liver cancer"
+      ],
+      "seriousness": {
+        "value": 0.25,
+        "measure": "lifetime risk of death from cirrhosis or liver cancer among chronic carriers; whether it becomes chronic depends almost entirely on the age at infection",
+        "src": "https://en.wikipedia.org/wiki/Hepatitis_B"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Hepatitis_B"
+    },
+    "hepatitis_c": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "blood, overwhelmingly through shared needles and unscreened transfusion",
+      "reservoir": "humans",
+      "makeup": "single positive-strand RNA flavivirus that mutates fast enough to stay ahead of antibody",
+      "durability": "up to three weeks on surfaces in dried blood",
+      "symptoms": [
+        "nothing at all for years",
+        "then fatigue",
+        "cirrhosis",
+        "liver cancer"
+      ],
+      "seriousness": {
+        "value": 0.2,
+        "measure": "lifetime risk of cirrhosis in untreated chronic infection — but direct-acting antivirals now cure over 95% in weeks, so this is one of the few chronic viral infections that can simply be ended",
+        "src": "https://en.wikipedia.org/wiki/Hepatitis_C"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Hepatitis_C"
+    },
+    "herpes_simplex": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "direct contact with skin or mucosa, often from someone with no symptoms",
+      "reservoir": "humans; most of the world carries HSV-1",
+      "makeup": "double-stranded DNA herpesvirus, 152 kb, which hides in the cell bodies of sensory nerves",
+      "durability": "latent for life in a place the immune system does not police, because killing neurons is worse than tolerating passengers",
+      "symptoms": [
+        "cold sores or genital ulcers, recurring in the same place"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "trivial in a healthy adult; neonatal herpes, caught at birth, has an untreated case fatality around 0.6",
+        "src": "https://en.wikipedia.org/wiki/Herpes_simplex"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Herpes_simplex"
+    },
+    "varicella_zoster": {
+      "kind": "virus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "chickenpox"
+      ],
+      "transmission": "air, and contact with the fluid in the blisters",
+      "reservoir": "humans only",
+      "makeup": "double-stranded DNA herpesvirus that retreats to the dorsal root ganglia",
+      "durability": "latent for life; the airborne form survives only briefly",
+      "symptoms": [
+        "chickenpox once",
+        "then decades of nothing",
+        "then shingles down one nerve"
+      ],
+      "seriousness": {
+        "value": 0.0001,
+        "measure": "case fatality of chickenpox in healthy children; shingles is rarely fatal but the nerve pain after it can last years",
+        "src": "https://en.wikipedia.org/wiki/Varicella_zoster_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Varicella_zoster_virus"
+    },
+    "rotavirus": {
+      "kind": "virus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "faecal-oral, and hygiene barely reduces it",
+      "reservoir": "humans, and it infects essentially every child by five",
+      "makeup": "eleven segments of double-stranded RNA in a triple-layered bare capsid",
+      "durability": "weeks on surfaces and hands",
+      "symptoms": [
+        "vomiting",
+        "watery diarrhoea",
+        "dehydration"
+      ],
+      "seriousness": {
+        "value": 0.02,
+        "measure": "case fatality where rehydration is unavailable; before the vaccine it killed around half a million children a year, and the same proportion caught it in countries with clean water as without",
+        "src": "https://en.wikipedia.org/wiki/Rotavirus"
+      },
+      "treated_by": [
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rotavirus"
+    },
+    "mycobacterium_leprae": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "leprosy"
+      ],
+      "transmission": "prolonged close contact, and most people exposed never develop it",
+      "reservoir": "humans, and armadillos",
+      "makeup": "a mycobacterium that has lost about a third of its genes to decay and cannot be grown in any culture medium",
+      "durability": "divides once every fortnight — the slowest of any known bacterium, which is why the disease takes years to appear",
+      "symptoms": [
+        "pale patches with no feeling",
+        "thickened nerves",
+        "and injury to numb hands and feet"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "not fatal; the disability comes from unnoticed injury to anaesthetic limbs, and it is curable with multidrug therapy",
+        "src": "https://en.wikipedia.org/wiki/Leprosy"
+      },
+      "treated_by": [
+        "antibiotic"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Leprosy"
+    },
+    "borrelia_burgdorferi": {
+      "kind": "bacterium",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "the bite of an Ixodes tick, usually attached over a day",
+      "reservoir": "mice and deer, with the tick as the link",
+      "makeup": "a spirochaete whose genome is split across a chromosome and over twenty plasmids — no other bacterium is organised like that",
+      "durability": "cannot survive outside a host or tick",
+      "symptoms": [
+        "an expanding ring-shaped rash",
+        "joint pain",
+        "facial palsy",
+        "and later, nerve and heart involvement"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal; untreated it becomes a chronic arthritis and neuropathy, and it swaps its surface coat between tick and mammal",
+        "src": "https://en.wikipedia.org/wiki/Lyme_disease"
+      },
+      "treated_by": [
+        "antibiotic",
+        "tetracycline"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Lyme_disease"
+    },
+    "shigella": {
+      "kind": "bacterium",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "dysentery"
+      ],
+      "transmission": "person to person, food and water — and ten organisms are enough",
+      "reservoir": "humans and other primates only",
+      "makeup": "genetically Escherichia coli, kept as a separate genus for historical reasons; it invades the colon lining rather than sitting on it",
+      "durability": "days on hands and surfaces; weeks in water",
+      "symptoms": [
+        "bloody diarrhoea",
+        "fever",
+        "cramps"
+      ],
+      "seriousness": {
+        "value": 0.01,
+        "measure": "case fatality with treatment, up to 0.15 in epidemics of S. dysenteriae without it",
+        "src": "https://en.wikipedia.org/wiki/Shigellosis"
+      },
+      "treated_by": [
+        "antibiotic",
+        "oral_rehydration_therapy"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Shigellosis"
+    },
+    "candida_albicans": {
+      "kind": "fungus",
+      "hosts": [
+        "human"
+      ],
+      "causes": [],
+      "transmission": "not really transmitted — most people already carry it",
+      "reservoir": "the human mouth, gut and skin",
+      "makeup": "a yeast that switches to a filamentous hyphal form to penetrate tissue, triggered by body temperature, neutral pH and serum",
+      "durability": "survives on skin and surfaces for days",
+      "symptoms": [
+        "white patches in the mouth",
+        "thrush",
+        "and in the bloodstream, sepsis"
+      ],
+      "seriousness": {
+        "value": 0.4,
+        "measure": "case fatality of invasive candidaemia; it is the clearest case of an organism that is a pathogen only in relation to a host whose defences are down",
+        "src": "https://en.wikipedia.org/wiki/Candidiasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Candidiasis"
+    },
+    "aspergillus_fumigatus": {
+      "kind": "fungus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "breathing in spores, of which everyone inhales hundreds a day",
+      "reservoir": "compost, dust and decaying vegetation everywhere",
+      "makeup": "a mould whose spores are 2 to 3 micrometres — exactly the size that reaches the deepest airway",
+      "durability": "spores survive indefinitely in dust and compost",
+      "symptoms": [
+        "nothing at all in a healthy person",
+        "and in the immunosuppressed, an invasive pneumonia"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "case fatality of invasive aspergillosis; almost nobody with working lungs is harmed by it at all",
+        "src": "https://en.wikipedia.org/wiki/Aspergillosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Aspergillosis"
+    },
+    "cryptococcus_neoformans": {
+      "kind": "fungus",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [
+        "meningitis"
+      ],
+      "transmission": "breathing in spores from pigeon droppings and tree hollows",
+      "reservoir": "birds, which carry it without being infected",
+      "makeup": "a yeast with a thick polysaccharide capsule too slippery for a white cell to grip",
+      "durability": "survives for years in dried pigeon droppings",
+      "symptoms": [
+        "headache building over weeks",
+        "fever",
+        "confusion"
+      ],
+      "seriousness": {
+        "value": 0.6,
+        "measure": "case fatality of cryptococcal meningitis in low-resource settings; it remains one of the commonest causes of death in advanced HIV",
+        "src": "https://en.wikipedia.org/wiki/Cryptococcosis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Cryptococcosis"
+    },
+    "schistosoma_mansoni": {
+      "kind": "helminth",
+      "hosts": [
+        "human",
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "larvae penetrating skin in fresh water",
+      "reservoir": "humans, and freshwater snails as the intermediate host",
+      "makeup": "a fluke whose male and female live permanently paired, the female held in a groove along the male's body",
+      "durability": "cercariae survive about 48 hours in water",
+      "symptoms": [
+        "itch where they entered",
+        "fever",
+        "and years later, liver fibrosis from eggs lodged in tissue"
+      ],
+      "seriousness": {
+        "value": 0.002,
+        "measure": "case fatality; the damage is done by the eggs rather than the worms, and irrigation and dams spread it by spreading the snail",
+        "src": "https://en.wikipedia.org/wiki/Schistosomiasis"
+      },
+      "treated_by": [],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Schistosomiasis"
+    },
+    "necator_americanus": {
+      "kind": "helminth",
+      "hosts": [
+        "human"
+      ],
+      "causes": [
+        "hookworm_disease"
+      ],
+      "transmission": "larvae penetrating the skin of a bare foot from contaminated soil",
+      "reservoir": "humans and the soil around them",
+      "makeup": "a nematode about a centimetre long that cuts into the gut wall and feeds on the blood",
+      "durability": "larvae survive weeks in warm moist shaded soil",
+      "symptoms": [
+        "an itchy rash at the entry point",
+        "cough as they cross the lung",
+        "and then anaemia"
+      ],
+      "seriousness": {
+        "value": 0.0,
+        "measure": "rarely fatal; the harm is chronic iron loss, and in children a lasting deficit in growth and schooling",
+        "src": "https://en.wikipedia.org/wiki/Hookworm_infection"
+      },
+      "treated_by": [
+        "ivermectin"
+      ],
+      "prevented_by": [],
+      "src": "https://en.wikipedia.org/wiki/Hookworm_infection"
+    },
+    "canine_distemper_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "air and shared bowls, between dogs and out into wild carnivores",
+      "reservoir": "domestic dogs, and wild carnivores once it is out",
+      "makeup": "single negative-strand RNA morbillivirus — a close relative of measles and rinderpest",
+      "durability": "poor survival outside a host; it needs a continuous chain",
+      "symptoms": [
+        "fever",
+        "discharge from eyes and nose",
+        "hardened footpads",
+        "seizures"
+      ],
+      "seriousness": {
+        "value": 0.5,
+        "measure": "mortality in unvaccinated dogs; it killed about a third of the Serengeti lions in 1994, having come from village dogs, so vaccinating dogs is a wildlife measure",
+        "src": "https://en.wikipedia.org/wiki/Canine_distemper"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Canine_distemper"
+    },
+    "feline_leukaemia_virus": {
+      "kind": "virus",
+      "hosts": [
+        "animal"
+      ],
+      "causes": [],
+      "transmission": "saliva — grooming, shared bowls and bites",
+      "reservoir": "cats",
+      "makeup": "a retrovirus that writes a DNA copy of itself into the cat's own chromosomes",
+      "durability": "minutes outside the host; it is fragile",
+      "symptoms": [
+        "anaemia",
+        "immune suppression",
+        "lymphoma"
+      ],
+      "seriousness": {
+        "value": 0.85,
+        "measure": "three-year mortality in persistently infected cats; most of the harm is where the virus inserts itself rather than anything it makes, and that mechanism is how the first oncogenes were found",
+        "src": "https://en.wikipedia.org/wiki/Feline_leukemia_virus"
+      },
+      "treated_by": [],
+      "prevented_by": [
+        "vaccine"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Feline_leukemia_virus"
+    }
+  },
+  "wanted": {
+    "human": [],
+    "animal": [],
+    "plant": []
+  }
+}

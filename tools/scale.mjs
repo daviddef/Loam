@@ -121,6 +121,13 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
+          'variola', 'sars_cov_2', 'coronavirus', 'ebola_virus', 'marburg_virus', 'lassa_virus', 'nipah_virus', 'hantavirus', 'dengue_virus', 'zika_virus', 'chikungunya_virus', 'hepatitis_b', 'hepatitis_c', 'herpes_simplex', 'varicella_zoster', 'rotavirus', 'mycobacterium_leprae', 'borrelia_burgdorferi', 'shigella', 'candida_albicans', 'aspergillus_fumigatus', 'cryptococcus_neoformans', 'canine_distemper_virus', 'feline_leukaemia_virus',
+          /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
+          'foot_and_mouth_virus', 'rinderpest_virus', 'african_swine_fever_virus', 'avian_influenza', 'newcastle_disease_virus', 'bluetongue_virus', 'canine_parvovirus', 'myxoma_virus', 'batrachochytrium', 'white_nose_fungus', 'paenibacillus_larvae', 'nosema', 'theileria', 'babesia',
+          /* the pathogen catalogue, 4 Sep — organisms at their own size,
+             diseases at the size of the part the symptom appears on */
+          'xylella_fastidiosa', 'erwinia_amylovora', 'agrobacterium_tumefaciens', 'pseudomonas_syringae', 'candidatus_liberibacter', 'potato_virus_y', 'barley_yellow_dwarf_virus', 'puccinia_graminis', 'hemileia_vastatrix', 'magnaporthe_oryzae', 'fusarium_oxysporum', 'botrytis_cinerea', 'erysiphe', 'claviceps_purpurea', 'ustilago_maydis', 'venturia_inaequalis', 'ophiostoma_ulmi', 'cryphonectria_parasitica', 'hymenoscyphus_fraxineus', 'rhizoctonia_solani', 'verticillium_dahliae', 'phytophthora_infestans', 'plasmopara_viticola', 'plasmodiophora_brassicae',
           /* inversion fixes, 3 Sep */
           'basidium',
           /* parasites wave, 3 Sep */
@@ -180,6 +187,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
+          'sarcoptes_scabiei', 'mite',
           /* cycle N, from needs.mjs, 4 Sep */
           'phosphor',
           /* cycle F, from needs.mjs, 4 Sep */
@@ -208,6 +217,8 @@ const SCALE = {
           'clay', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
+          'varroa_mite', 'midge',
           /* cycle L, from needs.mjs, 4 Sep */
           'size',
           /* cycle J, from needs.mjs, 4 Sep */
@@ -248,6 +259,11 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
+          'necator_americanus',
+          /* the pathogen catalogue, 4 Sep — organisms at their own size,
+             diseases at the size of the part the symptom appears on */
+          'potato_blight', 'stem_rust', 'coffee_rust', 'rice_blast', 'grey_mould', 'noble_rot', 'powdery_mildew', 'downy_mildew', 'ergotism', 'corn_smut', 'apple_scab', 'citrus_greening', 'fireblight', 'crown_gall', 'clubroot', 'damping_off', 'verticillium_wilt', 'gangrene', 'dysentery',
           /* the needs loop closed, 4 Sep — the last 58 components */
           'rosin', 'soundpost', 'type', 'horsehair', 'fingerboard', 'palette', 'wafer', 'composing_stick', 'canary', 'tongs', 'damper', 'piano_action', 'headline', 'legend', 'deposit', 'interest', 'credit', 'doping', 'silvering',
           /* cycle N, from needs.mjs, 4 Sep */
@@ -418,6 +434,10 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* human disease, 4 Sep — the pathogen catalogue's third kingdom */
+          'schistosoma_mansoni',
+          /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
+          'dirofilaria_immitis',
           /* cycle N, from needs.mjs, 4 Sep */
           'transmitter', 'receiver', 'pickaxe', 'winch', 'screen',
           /* cycle M, from needs.mjs, 4 Sep */
@@ -661,6 +681,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* human disease, 4 Sep — scaled to the person, as measles and cholera are */
+          'chickenpox',
           /* the needs loop closed, 4 Sep — the last 58 components */
           'lid', 'peel', 'easel', 'costume', 'anvil', 'tripod', 'vat', 'condenser', 'evaporator', 'hopper', 'tail_vane', 'sail', 'kneading', 'grinding', 'lithography', 'advertisement', 'journalist', 'editor', 'clerk', 'conductor', 'rehearsal', 'platen', 'grid', 'modulation', 'cast_iron',
           /* cycle N, from needs.mjs, 4 Sep */
@@ -914,6 +936,9 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* the pathogen catalogue, 4 Sep — organisms at their own size,
+             diseases at the size of the part the symptom appears on */
+          'dutch_elm_disease', 'chestnut_blight', 'ash_dieback', 'panama_disease',
           /* the needs loop closed, 4 Sep — the last 58 components */
           'quay', 'jetty', 'dock', 'breakwater', 'abutment', 'span', 'weir', 'channel', 'millrace', 'battlement', 'arrow_slit', 'courtyard', 'crypt', 'nave',
           /* cycle N, from needs.mjs, 4 Sep */

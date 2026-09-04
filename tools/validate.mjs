@@ -8,11 +8,22 @@ const elements = load('elements.json');
 const recipes  = load('recipes.json');
 const { verbs } = load('verbs.json');
 const bedrock  = load('bedrock.json');
+const labels   = load('labels.json');
 
 const errors = [];
 const warns  = [];
 const err  = (m) => errors.push(m);
 const warn = (m) => warns.push(m);
+
+// ---- label and search vocabulary ------------------------------------------
+// labels.json has claimed since it was written that "an entry whose target id
+// does not exist is an error, and tools/validate.mjs says so". It did not say
+// so: this file never opened labels.json at all, and the promised check did
+// not exist. Both tables get it now — `aliases`, which translates the words on
+// an ingredients panel, and `common`, which translates the words in someone's
+// head. A phrase pointing at nothing is worse than a missing phrase, because
+// the search silently returns nothing and looks like an absent element.
+const labelTables = [['aliases', labels.aliases], ['common', labels.common ?? {}]];
 
 // ---- elements -------------------------------------------------------------
 const byId = new Map();
@@ -40,6 +51,25 @@ if (starters.length !== 4) err(`expected 4 starters, found ${starters.length}: $
 const verbIds = new Set(verbs.map((v) => v.id));
 for (const v of verbs) {
   if (v.unlockedBy && !byId.has(v.unlockedBy)) err(`verb ${v.id}: unlockedBy "${v.unlockedBy}" is not an element`);
+}
+
+for (const [name, table] of labelTables) {
+  for (const [phrase, target] of Object.entries(table)) {
+    if (!byId.has(target)) err(`labels.${name}: "${phrase}" points at ${target}, which is not an element`);
+    if (phrase !== phrase.toLowerCase()) err(`labels.${name}: "${phrase}" is not lowercase, so search will never match it`);
+  }
+}
+// A phrase that is already an element's own name is dead weight in the index,
+// and a phrase in both tables pointing two different ways is a silent conflict.
+{
+  const seen = new Map();
+  for (const [name, table] of labelTables) {
+    for (const [phrase, target] of Object.entries(table)) {
+      const prev = seen.get(phrase);
+      if (prev && prev[1] !== target) err(`labels: "${phrase}" means ${prev[1]} in ${prev[0]} and ${target} in ${name}`);
+      seen.set(phrase, [name, target]);
+    }
+  }
 }
 
 // ---- recipes --------------------------------------------------------------

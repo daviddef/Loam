@@ -87956,5 +87956,935 @@
     "why": "The bridge rocks rather than pumps, so one foot goes down while the other comes up. The post holds one foot nearly still, which forces the belly to move about the other — and it couples that movement through to the back, which is why the instrument goes quiet the moment it falls over.",
     "src": "https://en.wikipedia.org/wiki/Sound_post",
     "verified": true
+  },
+  {
+    "in": [
+      "clostridium_perfringens",
+      "wound"
+    ],
+    "out": "gangrene",
+    "why": "Clostridium perfringens is an anaerobe, so it can only grow where the oxygen has already gone — which is exactly what a crushed or closed wound provides. It ferments the muscle itself, and the gas that bubbles through the tissue is the by-product of that fermentation.",
+    "src": "https://en.wikipedia.org/wiki/Gas_gangrene",
+    "verified": true
+  },
+  {
+    "in": [
+      "colon",
+      "entamoeba_histolytica"
+    ],
+    "out": "dysentery",
+    "why": "Watery diarrhoea is the gut secreting; dysentery is the gut being eaten. Entamoeba histolytica kills the cells it touches and burrows a flask-shaped ulcer under the lining, so the blood comes from the wall rather than from anything passing through it.",
+    "src": "https://en.wikipedia.org/wiki/Dysentery",
+    "verified": true
+  },
+  {
+    "in": [
+      "oomycete",
+      "potato"
+    ],
+    "out": "phytophthora_infestans",
+    "why": "It swims: its spores release motile zoospores that need a film of water on the leaf, which is why the disease follows wet summers and why the 1845 blight was a weather event as much as a biological one. Being an oomycete and not a fungus is also why fungicides developed against fungi so often do nothing to it.",
+    "src": "https://en.wikipedia.org/wiki/Phytophthora_infestans",
+    "verified": true
+  },
+  {
+    "in": [
+      "basidiomycete",
+      "wheat"
+    ],
+    "out": "puccinia_graminis",
+    "why": "Part of the cycle runs on wheat and part on barberry, and it cannot do the sexual stage without both. That is why grubbing out barberry hedges — done in France from 1660 and in the United States from 1918 — actually worked: the fungus was cut off from the recombination that lets it break new resistant varieties.",
+    "src": "https://en.wikipedia.org/wiki/Puccinia_graminis",
+    "verified": true
+  },
+  {
+    "in": [
+      "basidiomycete",
+      "coffee"
+    ],
+    "out": "hemileia_vastatrix",
+    "why": "It infects only the leaf, never the bean, and it kills by defoliation — the plant starves rather than being eaten. Because the spores travel on the wind between continents and coffee is grown as a clone of a handful of parent plants, one race that overcomes resistance can move across a whole growing region.",
+    "src": "https://en.wikipedia.org/wiki/Coffee_leaf_rust",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "rice"
+    ],
+    "out": "magnaporthe_oryzae",
+    "why": "It builds a dome, an appressorium, and drives the internal pressure to around 8 megapascals — some eighty atmospheres — using glycerol to pull water in. Then it punches straight through the intact leaf surface. It does not need a wound or a stoma, which is why nothing keeps it out.",
+    "src": "https://en.wikipedia.org/wiki/Magnaporthe_grisea",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "banana"
+    ],
+    "out": "fusarium_oxysporum",
+    "why": "It blocks the xylem, so the plant wilts with its roots in wet soil. Its resting spores survive in the ground for thirty years and more, which means an infected field cannot be replanted with the same crop within any useful time — the only answer has ever been a different banana.",
+    "src": "https://en.wikipedia.org/wiki/Panama_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "grape"
+    ],
+    "out": "botrytis_cinerea",
+    "why": "The difference is weather. Wet conditions give grey rot and the fruit is lost; misty mornings with dry afternoons give noble rot, where the fungus perforates the skin and lets water evaporate without letting bacteria in, concentrating the sugar. Same organism, opposite outcome, decided by humidity.",
+    "src": "https://en.wikipedia.org/wiki/Botrytis_cinerea",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "leaf"
+    ],
+    "out": "erysiphe",
+    "why": "Unlike almost every other fungal disease it does not need free water to germinate, so it thrives in dry weather when everything else is quiet. It never enters the leaf properly either: it stays on the surface and pushes feeding structures into the outer cells only.",
+    "src": "https://en.wikipedia.org/wiki/Powdery_mildew",
+    "verified": true
+  },
+  {
+    "in": [
+      "oomycete",
+      "vine"
+    ],
+    "out": "plasmopara_viticola",
+    "why": "The attempt to solve phylloxera by importing American rootstock brought this with it, and it nearly finished European viticulture a second time. The answer, Bordeaux mixture, was found by accident: growers painted vines near roads with copper sulphate and lime to stop passers-by stealing grapes, and those vines stayed clean.",
+    "src": "https://en.wikipedia.org/wiki/Plasmopara_viticola",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "rye"
+    ],
+    "out": "claviceps_purpurea",
+    "why": "Those alkaloids constrict blood vessels, and in a bad year enough of them get milled into the bread to cause gangrene of the fingers and toes, and hallucinations — St Anthony's Fire. It is also the source of the drugs used to stop bleeding after childbirth, so the same chemistry runs both ways.",
+    "src": "https://en.wikipedia.org/wiki/Claviceps_purpurea",
+    "verified": true
+  },
+  {
+    "in": [
+      "basidiomycete",
+      "maize"
+    ],
+    "out": "ustilago_maydis",
+    "why": "It makes the kernel swell into a grey gall full of spores. Sold as huitlacoche it is worth more than the corn would have been, and it is genuinely more nutritious — the fungus raises the lysine the grain is short of. Whether it is a loss depends entirely on who is buying.",
+    "src": "https://en.wikipedia.org/wiki/Ustilago_maydis",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple",
+      "ascomycete"
+    ],
+    "out": "venturia_inaequalis",
+    "why": "The sexual stage happens in dead leaves on the orchard floor over winter, and the spores are fired upward in spring rain to land on new growth. That is why raking and shredding leaf litter is a real control measure and not just tidiness.",
+    "src": "https://en.wikipedia.org/wiki/Venturia_inaequalis",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "elm"
+    ],
+    "out": "ophiostoma_ulmi",
+    "why": "The bark beetle carries spores from a dead tree to the twig crotches of a healthy one. The tree's response is what kills it: it plugs its own xylem with gums and tyloses to wall the fungus off, and in doing so cuts off its own water. Elms also graft roots to their neighbours, so it moves along a whole avenue underground.",
+    "src": "https://en.wikipedia.org/wiki/Dutch_elm_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "chestnut"
+    ],
+    "out": "cryphonectria_parasitica",
+    "why": "It girdles the trunk but does not kill the root, so the stumps keep sending up shoots that die again before they can seed. The species is not extinct and has not recovered either — it exists as a shrub layer under a forest it used to be.",
+    "src": "https://en.wikipedia.org/wiki/Chestnut_blight",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "ash_tree"
+    ],
+    "out": "hymenoscyphus_fraxineus",
+    "why": "Fraxinus mandshurica evolved alongside it and tolerates it; Fraxinus excelsior never met it and does not. This is the ordinary shape of an introduced disease — the organism is not more aggressive abroad, the host is simply naive.",
+    "src": "https://en.wikipedia.org/wiki/Hymenoscyphus_fraxineus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "xylem"
+    ],
+    "out": "xylella_fastidiosa",
+    "why": "The xylem is nearly sterile and nutritionally almost empty, which is why very few organisms live there and why this one grows so slowly it was hard to culture at all. Sap-feeding insects carry it between plants. It has killed millions of olive trees in Puglia, some of them centuries old.",
+    "src": "https://en.wikipedia.org/wiki/Xylella_fastidiosa",
+    "verified": true
+  },
+  {
+    "in": [
+      "apple",
+      "bacteria"
+    ],
+    "out": "erwinia_amylovora",
+    "why": "It enters through the flower, which is why an orchard is at risk for the few days it is in bloom and why bees spread it. Infected shoots blacken and hook over at the tip, so the tree looks scorched. Burrill proved the bacterial cause in 1878, before Koch's postulates were published.",
+    "src": "https://en.wikipedia.org/wiki/Fire_blight",
+    "verified": true
+  },
+  {
+    "in": [
+      "horizontal_gene_transfer",
+      "plant"
+    ],
+    "out": "agrobacterium_tumefaciens",
+    "why": "The transferred genes make the cells divide into a gall and manufacture opines, which are compounds only this bacterium can eat. It is natural genetic engineering, discovered as a disease, and it is now the standard tool for putting genes into plants — the tumour genes are simply swapped out for whatever is wanted.",
+    "src": "https://en.wikipedia.org/wiki/Agrobacterium_tumefaciens",
+    "verified": true
+  },
+  {
+    "in": [
+      "cabbage",
+      "protozoan"
+    ],
+    "out": "plasmodiophora_brassicae",
+    "why": "It makes the root swell into useless clubs that cannot take up water. Its resting spores stay viable in soil for up to twenty years, so once a field has it, brassicas are finished there for a generation — it is one of the few plant diseases where crop rotation on any normal cycle simply does not work.",
+    "src": "https://en.wikipedia.org/wiki/Plasmodiophora_brassicae",
+    "verified": true
+  },
+  {
+    "in": [
+      "basidiomycete",
+      "seedling"
+    ],
+    "out": "rhizoctonia_solani",
+    "why": "The stem is attacked exactly at the surface, where the fungus has both moisture and air. The seed was fine and the germination was fine, which is what makes it so confusing to a grower — the failure comes after the part that looked like success.",
+    "src": "https://en.wikipedia.org/wiki/Rhizoctonia_solani",
+    "verified": true
+  },
+  {
+    "in": [
+      "ascomycete",
+      "xylem"
+    ],
+    "out": "verticillium_dahliae",
+    "why": "It enters through the roots and grows up inside the vessels, and because xylem strands run in discrete lines up the stem, only the leaves fed by the blocked strands wilt. Half a leaf yellow and half green is the signature, and it is anatomy rather than anything the fungus is doing deliberately.",
+    "src": "https://en.wikipedia.org/wiki/Verticillium_dahliae",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "frost"
+    ],
+    "out": "pseudomonas_syringae",
+    "why": "Pure water can supercool to around minus forty; this protein arranges water molecules into a template that starts a crystal at about minus two. The bacterium benefits because frost injury opens the leaf and lets it in. The same protein is what snow machines use, and it is found in clouds and rain, so it may seed ice in the atmosphere too.",
+    "src": "https://en.wikipedia.org/wiki/Pseudomonas_syringae",
+    "verified": true
+  },
+  {
+    "in": [
+      "aphid",
+      "virus"
+    ],
+    "out": "potato_virus_y",
+    "why": "The aphid picks it up in seconds while probing a leaf to taste it, and delivers it just as quickly to the next — so it is transmitted by aphids that never settle and never feed. Insecticide is nearly useless against it for that reason: the aphid has moved on before the poison can act.",
+    "src": "https://en.wikipedia.org/wiki/Potato_virus_Y",
+    "verified": true
+  },
+  {
+    "in": [
+      "aphid",
+      "barley"
+    ],
+    "out": "barley_yellow_dwarf_virus",
+    "why": "It is confined to the phloem and cannot be transmitted by sap or by touch — only by an aphid feeding deeply enough to reach that tissue. Once inside the aphid it persists for the insect's life. Infected plants are stunted and yellow-tipped, and a patch in a field is usually the shape of where the aphids landed.",
+    "src": "https://en.wikipedia.org/wiki/Barley_yellow_dwarf_virus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "phloem"
+    ],
+    "out": "candidatus_liberibacter",
+    "why": "It lives only in the phloem and only inside a living host, and it has lost so many of its own biosynthesis genes that no culture medium yet devised will keep it alive. Every conclusion about it has had to be drawn from DNA and from infected trees, which is why the disease it causes was described long before its cause was named.",
+    "src": "https://en.wikipedia.org/wiki/Candidatus_Liberibacter",
+    "verified": true
+  },
+  {
+    "in": [
+      "phytophthora_infestans",
+      "tuber"
+    ],
+    "out": "potato_blight",
+    "why": "A potato crop is a clone, so every plant in a field has the same susceptibility and there is no variation for the disease to run into. Ireland in 1845 had one variety over almost the whole country and a third of the population eating almost nothing else, which is why a leaf disease became a famine.",
+    "src": "https://en.wikipedia.org/wiki/Phytophthora_infestans",
+    "verified": true
+  },
+  {
+    "in": [
+      "puccinia_graminis",
+      "stem"
+    ],
+    "out": "stem_rust",
+    "why": "It does not kill the plant outright; it diverts the sugars that were heading for the ear and weakens the stem until the crop falls over. Ug99, found in Uganda in 1998, defeated the resistance gene most of the world's wheat was relying on, and breeding has been chasing it since.",
+    "src": "https://en.wikipedia.org/wiki/Stem_rust",
+    "verified": true
+  },
+  {
+    "in": [
+      "hemileia_vastatrix",
+      "leaf"
+    ],
+    "out": "coffee_rust",
+    "why": "Ceylon was the third-largest coffee producer in the world in 1870 and had no coffee industry left by 1890. The plantations were replanted with tea, and Britain became a tea-drinking country because of a fungus rather than a preference.",
+    "src": "https://en.wikipedia.org/wiki/Coffee_leaf_rust",
+    "verified": true
+  },
+  {
+    "in": [
+      "leaf",
+      "magnaporthe_oryzae"
+    ],
+    "out": "rice_blast",
+    "why": "It destroys enough rice each year to feed on the order of sixty million people. The worst damage is not on the leaf but at the neck of the panicle, where a single lesion cuts off the grain's supply after all the plant's investment has already been made.",
+    "src": "https://en.wikipedia.org/wiki/Magnaporthe_grisea",
+    "verified": true
+  },
+  {
+    "in": [
+      "fusarium_oxysporum",
+      "root"
+    ],
+    "out": "panama_disease",
+    "why": "The commercial banana is a sterile clone propagated from cuttings, so a plantation is one plant repeated. Gros Michel was wiped out commercially by the 1950s and replaced by Cavendish, which resisted that race and does not resist the one now spreading.",
+    "src": "https://en.wikipedia.org/wiki/Panama_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "botrytis_cinerea",
+      "fruit"
+    ],
+    "out": "grey_mould",
+    "why": "It is the commonest reason fruit rots after picking as well as before it. The spores are already on the skin at harvest and wait for the sugar and the damage; chilling slows it and does not stop it, which is why soft fruit has the shelf life it has.",
+    "src": "https://en.wikipedia.org/wiki/Botrytis_cinerea",
+    "verified": true
+  },
+  {
+    "in": [
+      "botrytis_cinerea",
+      "grape"
+    ],
+    "out": "noble_rot",
+    "why": "Misty mornings let it infect and dry afternoons stop it spreading. It perforates the skin so water evaporates while the sugar stays, shrivelling the grape to a concentrated syrup, and it adds glycerol and its own compounds on the way. Wet afternoons instead, and the same fungus destroys the crop.",
+    "src": "https://en.wikipedia.org/wiki/Noble_rot",
+    "verified": true
+  },
+  {
+    "in": [
+      "erysiphe",
+      "leaf"
+    ],
+    "out": "powdery_mildew",
+    "why": "Almost every fungal disease needs the leaf to be wet; this one does not, so it appears in the dry spells when a grower is least expecting disease. It stays on the surface and feeds through pegs pushed into the outer cells only, which is why the leaf underneath can stay green for a long time.",
+    "src": "https://en.wikipedia.org/wiki/Powdery_mildew",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasmopara_viticola",
+      "vine"
+    ],
+    "out": "downy_mildew",
+    "why": "The two mildews are named alike and are not related: this one is an oomycete and needs free water, the powdery one is a fungus and does not. They want opposite weather, so a vineyard rarely has both at once and the treatments differ.",
+    "src": "https://en.wikipedia.org/wiki/Plasmopara_viticola",
+    "verified": true
+  },
+  {
+    "in": [
+      "bread",
+      "claviceps_purpurea"
+    ],
+    "out": "ergotism",
+    "why": "The alkaloids constrict blood vessels so hard that the extremities die and drop off, and act on the brain at the same time. It struck whole villages at once because they shared a mill, and it favoured rye — which is why it belonged to the wet north of Europe and not the wheat-growing south.",
+    "src": "https://en.wikipedia.org/wiki/Ergotism",
+    "verified": true
+  },
+  {
+    "in": [
+      "grain",
+      "ustilago_maydis"
+    ],
+    "out": "corn_smut",
+    "why": "Huitlacoche fetches more than the maize it displaced and contains more lysine, the amino acid maize is short of. Whether this entry belongs under disease or under food is a question about markets, not about biology.",
+    "src": "https://en.wikipedia.org/wiki/Corn_smut",
+    "verified": true
+  },
+  {
+    "in": [
+      "fruit",
+      "venturia_inaequalis"
+    ],
+    "out": "apple_scab",
+    "why": "The fungus spends the winter in the fallen leaves, not on the tree, and fires spores upward in spring rain. Clearing leaf litter is therefore a genuine control, and an orchard that is swept has less scab the following year for a reason that has nothing to do with tidiness.",
+    "src": "https://en.wikipedia.org/wiki/Apple_scab",
+    "verified": true
+  },
+  {
+    "in": [
+      "beetle",
+      "ophiostoma_ulmi"
+    ],
+    "out": "dutch_elm_disease",
+    "why": "The fungus cannot move; the bark beetle carries it. The tree then kills itself trying to wall the fungus off, plugging its own water vessels. Elms graft roots to their neighbours, so it also runs along a hedgerow underground where no beetle has flown.",
+    "src": "https://en.wikipedia.org/wiki/Dutch_elm_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "bark",
+      "cryphonectria_parasitica"
+    ],
+    "out": "chestnut_blight",
+    "why": "The fungus girdles the trunk but not the root, so the stumps keep sprouting and the sprouts keep dying before they can seed. The species is neither extinct nor recovering: it survives as a shrub under a forest it used to be.",
+    "src": "https://en.wikipedia.org/wiki/Chestnut_blight",
+    "verified": true
+  },
+  {
+    "in": [
+      "hymenoscyphus_fraxineus",
+      "tree"
+    ],
+    "out": "ash_dieback",
+    "why": "It is harmless on the Asian ash it evolved with and lethal on the European one that never met it. That is the ordinary shape of an introduced disease — the organism is not more aggressive here, the host is simply naive, and there has been no time for anything else.",
+    "src": "https://en.wikipedia.org/wiki/Ash_dieback",
+    "verified": true
+  },
+  {
+    "in": [
+      "candidatus_liberibacter",
+      "orange"
+    ],
+    "out": "citrus_greening",
+    "why": "The bacterium lives in the phloem and cannot be cultured, so it was hard even to prove what caused it. There is no cure for an infected tree; control means removing it and controlling the psyllid that carried it. Florida's orange production has fallen by about ninety per cent since it arrived.",
+    "src": "https://en.wikipedia.org/wiki/Citrus_greening_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "erwinia_amylovora",
+      "flower"
+    ],
+    "out": "fireblight",
+    "why": "It gets in through the flower, so the orchard's whole year of risk is compressed into the few days of bloom — and the bees doing the pollinating are also doing the spreading. It was the first plant disease anyone proved a bacterium caused, in 1878.",
+    "src": "https://en.wikipedia.org/wiki/Fire_blight",
+    "verified": true
+  },
+  {
+    "in": [
+      "agrobacterium_tumefaciens",
+      "stem"
+    ],
+    "out": "crown_gall",
+    "why": "The bacterium transfers a piece of its own plasmid into the plant's chromosomes, and those genes tell the cell to divide and to make compounds only this bacterium can eat. It is a disease that turned out to be a delivery system, and is now how most transgenic plants are made.",
+    "src": "https://en.wikipedia.org/wiki/Crown_gall",
+    "verified": true
+  },
+  {
+    "in": [
+      "plasmodiophora_brassicae",
+      "root"
+    ],
+    "out": "clubroot",
+    "why": "The resting spores last up to twenty years in the ground, which puts it outside any normal rotation — a field that gets it is finished for brassicas for a generation. It also prefers acid soil, so liming is one of the few things that helps at all.",
+    "src": "https://en.wikipedia.org/wiki/Clubroot",
+    "verified": true
+  },
+  {
+    "in": [
+      "rhizoctonia_solani",
+      "soil"
+    ],
+    "out": "damping_off",
+    "why": "The attack is precisely at the surface, where the fungus has both the moisture below and the air above. Everything before that point looked like success, which is what makes it the most demoralising failure in a seed tray.",
+    "src": "https://en.wikipedia.org/wiki/Damping_off",
+    "verified": true
+  },
+  {
+    "in": [
+      "stem",
+      "verticillium_dahliae"
+    ],
+    "out": "verticillium_wilt",
+    "why": "Xylem strands run up the stem in discrete lines, each feeding particular leaves, so blocking some of them starves only those. The one-sided pattern is anatomy rather than anything the fungus is choosing to do.",
+    "src": "https://en.wikipedia.org/wiki/Verticillium_wilt",
+    "verified": true
+  },
+  {
+    "in": [
+      "hoof",
+      "virus"
+    ],
+    "out": "foot_and_mouth_virus",
+    "why": "Almost nothing about the response is medical. Infected animals mostly recover, but they lose condition and milk, and a country with the disease cannot export — so the culling is a trade measure. Britain destroyed over six million animals in 2001 for a virus most of them would have survived.",
+    "src": "https://en.wikipedia.org/wiki/Foot-and-mouth_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "measles_virus"
+    ],
+    "out": "rinderpest_virus",
+    "why": "It is a close relative of measles — measles is thought to have crossed into humans from it when cattle were first herded in numbers. Its 1890s introduction to Africa killed perhaps 90 per cent of the cattle in the east and caused famines that reshaped the continent. It was declared eradicated in 2011.",
+    "src": "https://en.wikipedia.org/wiki/Rinderpest",
+    "verified": true
+  },
+  {
+    "in": [
+      "pig",
+      "tick"
+    ],
+    "out": "african_swine_fever_virus",
+    "why": "It is a huge DNA virus with no close relatives — the only member of its family — which is exactly why decades of vaccine work have failed. It survives months in frozen and cured pork, so it travels in a sandwich as readily as in a pig.",
+    "src": "https://en.wikipedia.org/wiki/African_swine_fever",
+    "verified": true
+  },
+  {
+    "in": [
+      "duck",
+      "influenza_virus"
+    ],
+    "out": "avian_influenza",
+    "why": "In waterfowl it is a gut infection causing nothing at all, which is why it persists. Passed into dense poultry it evolves toward severity, and passed through pigs — which have receptors for both bird and human strains — it can pick up the genes to move between people.",
+    "src": "https://en.wikipedia.org/wiki/Avian_influenza",
+    "verified": true
+  },
+  {
+    "in": [
+      "poultry",
+      "tumor"
+    ],
+    "out": "newcastle_disease_virus",
+    "why": "It replicates far better in cells with a broken interferon response, which is what many cancer cells have and normal cells do not. So a virus lethal to chickens spreads through a tumour and stops at healthy tissue — the selectivity is the tumour's own defect, not anything engineered.",
+    "src": "https://en.wikipedia.org/wiki/Virulent_Newcastle_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "midge",
+      "sheep"
+    ],
+    "out": "bluetongue_virus",
+    "why": "The midge cannot survive hard winters, so the disease historically stopped at a latitude. It has moved several hundred kilometres north in Europe since the 1990s as those winters softened — one of the clearest cases of a warming climate redrawing a disease map.",
+    "src": "https://en.wikipedia.org/wiki/Bluetongue_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "cat",
+      "dog"
+    ],
+    "out": "canine_parvovirus",
+    "why": "It arose from the cat panleukopenia virus by a handful of mutations in the capsid that let it bind the canine transferrin receptor. A new host, a new pandemic, and a complete sweep of the world's dogs — from a change of a few amino acids.",
+    "src": "https://en.wikipedia.org/wiki/Canine_parvovirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "rabbit"
+    ],
+    "out": "myxoma_virus",
+    "why": "It killed over 99 per cent of infected rabbits in the first year. Within a decade the virus had become less lethal — a dead rabbit cannot be bitten by the mosquito that spreads it — and the rabbits more resistant. Both moved, and the outcome settled well short of extermination.",
+    "src": "https://en.wikipedia.org/wiki/Myxomatosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "chytrid",
+      "frog"
+    ],
+    "out": "batrachochytrium",
+    "why": "It infects only keratinised skin, which sounds trivial until you remember that an amphibian breathes and balances its salts through that skin. The animal dies of cardiac arrest brought on by electrolyte loss. It is implicated in the decline of some 500 species and the extinction of about 90.",
+    "src": "https://en.wikipedia.org/wiki/Batrachochytrium_dendrobatidis",
+    "verified": true
+  },
+  {
+    "in": [
+      "bat",
+      "fungus"
+    ],
+    "out": "white_nose_fungus",
+    "why": "It thrives between 4 and 15 degrees — the temperature of a hibernaculum, and the temperature at which a hibernating bat's immune system is switched off. It wakes them repeatedly, and they burn the fat reserve that has to last the winter. Millions of bats have died in North America since 2006.",
+    "src": "https://en.wikipedia.org/wiki/White-nose_syndrome",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "parasite"
+    ],
+    "out": "varroa_mite",
+    "why": "It was a parasite of the Asian honey bee, which grooms it off and seals infested brood. The European honey bee met it in the twentieth century and has none of those behaviours. Most colony losses attributed to other causes trace back to this mite and the deformed wing virus it delivers.",
+    "src": "https://en.wikipedia.org/wiki/Varroa_destructor",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "larva"
+    ],
+    "out": "paenibacillus_larvae",
+    "why": "Its spores stay viable in old comb and equipment for over fifty years and survive anything short of fire. A single spore will kill a young larva. Antibiotics suppress the symptoms and leave the spores, which is why burning the colony and the boxes is still the standard answer in most of the world.",
+    "src": "https://en.wikipedia.org/wiki/American_foulbrood",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "spore"
+    ],
+    "out": "nosema",
+    "why": "It has one of the smallest eukaryotic genomes known because it has discarded nearly every metabolic pathway, relying on the host cell for finished energy. It infects the bee's gut lining, shortens its life, and spreads through the colony in faeces.",
+    "src": "https://en.wikipedia.org/wiki/Nosema_apis",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "mosquito"
+    ],
+    "out": "dirofilaria_immitis",
+    "why": "The mosquito is essential — the larvae must spend two weeks in it and cannot develop otherwise, so the disease has exactly the range its mosquitoes do. Killing adult worms too quickly is itself dangerous, because the dead worms lodge in the lung.",
+    "src": "https://en.wikipedia.org/wiki/Dirofilaria_immitis",
+    "verified": true
+  },
+  {
+    "in": [
+      "mite",
+      "skin"
+    ],
+    "out": "sarcoptes_scabiei",
+    "why": "The itch is an allergic response to the mite's faeces, not to the burrowing, which is why it takes weeks to start on a first infestation and hours on a second. It is one organism with host-adapted strains rather than a family of related species.",
+    "src": "https://en.wikipedia.org/wiki/Sarcoptes_scabiei",
+    "verified": true
+  },
+  {
+    "in": [
+      "apicomplexan",
+      "tick"
+    ],
+    "out": "theileria",
+    "why": "It infects the cow's white blood cells and makes them divide uncontrollably and spread through the body, and it divides along with them so every daughter cell is infected. Kill the parasite with a drug and the cells stop dividing and behave normally again — the transformation is entirely maintained by the parasite.",
+    "src": "https://en.wikipedia.org/wiki/Theileria",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_blood_cell",
+      "tick"
+    ],
+    "out": "babesia",
+    "why": "Working it out in 1893 was the first proof that an arthropod could transmit any disease at all. Smith and Kilborne showed the tick carried it, and everything afterwards — malaria and mosquitoes, yellow fever, plague and fleas — followed from that demonstration.",
+    "src": "https://en.wikipedia.org/wiki/Babesia",
+    "verified": true
+  },
+  {
+    "in": [
+      "arachnid",
+      "soil"
+    ],
+    "out": "mite",
+    "why": "Mites are arachnids that went small and stayed there, and the group has been described as the most species-rich among terrestrial arthropods after the insects. Most are free-living decomposers; the parasitic ones are a small and conspicuous minority.",
+    "src": "https://en.wikipedia.org/wiki/Mite",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "mud"
+    ],
+    "out": "midge",
+    "why": "Culicoides species are one to three millimetres across, which is why netting rated for mosquitoes does not stop them. Their breeding needs damp organic mud, so their range follows wet ground and mild winters, and it has been moving north.",
+    "src": "https://en.wikipedia.org/wiki/Culicoides",
+    "verified": true
+  },
+  {
+    "in": [
+      "cowpox",
+      "human"
+    ],
+    "out": "variola",
+    "why": "That is exactly why it could be eradicated. A virus with only one host has nowhere to wait out a vaccination campaign, and its rash was unmistakable, so every case could be found and ringed. Measles is as eradicable in principle and malaria is not, for the same structural reason.",
+    "src": "https://en.wikipedia.org/wiki/Smallpox",
+    "verified": true
+  },
+  {
+    "in": [
+      "bat",
+      "coronavirus"
+    ],
+    "out": "sars_cov_2",
+    "why": "SARS in 2003 made people sick before they were very infectious, so isolating the sick worked and it was stopped in months. This one peaks in the throat around the day symptoms begin, so a large share of transmission happens from people who do not yet know. The same containment strategy failed on that one difference.",
+    "src": "https://en.wikipedia.org/wiki/SARS-CoV-2",
+    "verified": true
+  },
+  {
+    "in": [
+      "envelope",
+      "rna"
+    ],
+    "out": "coronavirus",
+    "why": "At about 30 kb it is roughly three times the size of influenza's, and RNA copying is normally too error-prone to hold that much together. Coronaviruses are the only RNA viruses with a proofreading enzyme, and that proofreading is what lets the genome be so large.",
+    "src": "https://en.wikipedia.org/wiki/Coronavirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bat",
+      "blood"
+    ],
+    "out": "ebola_virus",
+    "why": "It is not airborne and people are not infectious before symptoms, which means outbreaks are stopped by tracing contacts and changing burial practice rather than by anything medical. Its lethality also limits it: a virus that puts people to bed in a week does not travel far on its own.",
+    "src": "https://en.wikipedia.org/wiki/Ebola",
+    "verified": true
+  },
+  {
+    "in": [
+      "bat",
+      "microbe"
+    ],
+    "out": "marburg_virus",
+    "why": "Thirty-one people in Marburg and Frankfurt fell ill after handling tissue from African green monkeys imported for polio vaccine work. It is a reminder that the exposure route for a new virus is often a supply chain rather than a jungle.",
+    "src": "https://en.wikipedia.org/wiki/Marburg_virus_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "rat",
+      "rodent"
+    ],
+    "out": "lassa_virus",
+    "why": "Because the reservoir is a household animal rather than a wild one, exposure is continuous rather than episodic — there are on the order of 300,000 infections a year and most are mild. Deafness in survivors is the commonest lasting harm, not death.",
+    "src": "https://en.wikipedia.org/wiki/Lassa_fever",
+    "verified": true
+  },
+  {
+    "in": [
+      "bat",
+      "pig"
+    ],
+    "out": "nipah_virus",
+    "why": "Fruit bats fed in orchards over Malaysian pig farms in 1998. In Bangladesh the route is different: bats lick the sap collecting in pots tapped from date palms overnight, and people drink it raw in the morning. Same virus, two entirely different pieces of agriculture.",
+    "src": "https://en.wikipedia.org/wiki/Nipah_virus_infection",
+    "verified": true
+  },
+  {
+    "in": [
+      "microbe",
+      "mouse"
+    ],
+    "out": "hantavirus",
+    "why": "That single fact shapes everything about it: there are no chains of transmission to break, so control means keeping rodents out of buildings. Cases follow rodent population booms, which follow good seed years, which follow wet winters.",
+    "src": "https://en.wikipedia.org/wiki/Orthohantavirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "antibody",
+      "arbovirus"
+    ],
+    "out": "dengue_virus",
+    "why": "Antibodies to one serotype bind a different serotype without neutralising it, and then help it into the very cells that should destroy it. This is antibody-dependent enhancement, and it is why severe dengue is usually a second infection and why a vaccine here is so much harder than usual.",
+    "src": "https://en.wikipedia.org/wiki/Dengue_fever",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "nerve"
+    ],
+    "out": "zika_virus",
+    "why": "It had circulated for decades causing a mild rash. What changed was not the virus much but the scale: once it reached a large non-immune population, an effect rare enough to be invisible in small outbreaks — damage to the developing brain — became visible all at once.",
+    "src": "https://en.wikipedia.org/wiki/Zika_virus",
+    "verified": true
+  },
+  {
+    "in": [
+      "joint",
+      "mosquito"
+    ],
+    "out": "chikungunya_virus",
+    "why": "It rarely kills and the arthritis can last months or years, which is an unusual shape for an arbovirus. A single mutation in its envelope protein in 2005 let it use the tiger mosquito efficiently, and that one change gave it most of the tropics and parts of Europe.",
+    "src": "https://en.wikipedia.org/wiki/Chikungunya",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "liver"
+    ],
+    "out": "hepatitis_b",
+    "why": "It is about a hundred times more infectious than HIV by the same exposure, and it can survive a week in dried blood. Caught in infancy it becomes lifelong in nine cases out of ten; caught as an adult, in fewer than one in twenty — the outcome depends on the age of the immune system that met it.",
+    "src": "https://en.wikipedia.org/wiki/Hepatitis_B",
+    "verified": true
+  },
+  {
+    "in": [
+      "liver",
+      "needle"
+    ],
+    "out": "hepatitis_c",
+    "why": "It was identified without ever being grown or observed — the first virus discovered by molecular methods alone. Direct-acting antivirals now clear it in over 95 per cent of people in a few weeks, which makes it one of the few chronic viral infections that can simply be cured.",
+    "src": "https://en.wikipedia.org/wiki/Hepatitis_C",
+    "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "virus"
+    ],
+    "out": "herpes_simplex",
+    "why": "Nerve cell bodies are among the few places the immune system does not police aggressively, because killing neurons is worse than tolerating passengers. The virus travels up the axon to the ganglion, goes quiet, and comes back down the same nerve — which is why cold sores recur in the same place.",
+    "src": "https://en.wikipedia.org/wiki/Herpes_simplex",
+    "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "vesicle"
+    ],
+    "out": "varicella_zoster",
+    "why": "Chickenpox as a child, then latency in the dorsal root ganglia, then shingles when immunity wanes with age. The rash follows a single dermatome because the virus travels back down one nerve, which is why it stops dead at the midline.",
+    "src": "https://en.wikipedia.org/wiki/Varicella_zoster_virus",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "varicella_zoster"
+    ],
+    "out": "chickenpox",
+    "why": "The rash is the giveaway: chickenpox comes in crops, so spots at every stage sit side by side, while smallpox lesions all advanced together. That difference is what let vaccinators tell them apart in the field, and it decided many an eradication-campaign diagnosis.",
+    "src": "https://en.wikipedia.org/wiki/Chickenpox",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "virus"
+    ],
+    "out": "rotavirus",
+    "why": "Hygiene barely dents it: the same proportion of children get it in countries with clean water as without. What differs is whether they survive the dehydration. So it is one of the clearest cases where the answer is a vaccine and rehydration rather than sanitation.",
+    "src": "https://en.wikipedia.org/wiki/Rotavirus",
+    "verified": true
+  },
+  {
+    "in": [
+      "leprosy",
+      "microbe"
+    ],
+    "out": "mycobacterium_leprae",
+    "why": "Its genome is full of pseudogenes — the wreckage of pathways it discarded once it settled inside host cells. It divides once every two weeks, the slowest of any known bacterium, which is why the disease takes years to appear. Armadillos are the only convenient way to grow it.",
+    "src": "https://en.wikipedia.org/wiki/Mycobacterium_leprae",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "spirochete"
+    ],
+    "out": "borrelia_burgdorferi",
+    "why": "No other bacterium is organised like that. The plasmids carry the surface proteins it swaps as it moves from tick to mammal, and it changes coat as it goes — one set for the tick gut, another for blood. Losing a plasmid in culture makes it harmless, which is how the trick was worked out.",
+    "src": "https://en.wikipedia.org/wiki/Borrelia_burgdorferi",
+    "verified": true
+  },
+  {
+    "in": [
+      "dysentery",
+      "e_coli"
+    ],
+    "out": "shigella",
+    "why": "Ten organisms are enough to cause disease — one of the lowest infectious doses known — because it invades the colon lining rather than merely sitting on it. That is also why it spreads person to person where E. coli generally needs food or water.",
+    "src": "https://en.wikipedia.org/wiki/Shigella",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "yeast"
+    ],
+    "out": "candida_albicans",
+    "why": "It switches between a rounded yeast and a filamentous hyphal form, and the hyphal form is what penetrates tissue. The switch is triggered by conditions that mean the host's defences are down — body temperature, neutral pH, serum. It is an opportunist in the strict sense.",
+    "src": "https://en.wikipedia.org/wiki/Candida_albicans",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "mould"
+    ],
+    "out": "aspergillus_fumigatus",
+    "why": "Its spores are 2 to 3 micrometres — exactly the size that reaches the deepest airway — and they are everywhere in compost and dust. Healthy lungs clear them without noticing. It is one of the clearest illustrations that a pathogen is a relationship rather than a property of an organism.",
+    "src": "https://en.wikipedia.org/wiki/Aspergillus_fumigatus",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "fungus"
+    ],
+    "out": "cryptococcus_neoformans",
+    "why": "The capsule is the whole of its defence: it is too slippery to be gripped by a white cell, and it soaks up the molecules that would otherwise call for help. It causes meningitis, and remains one of the commonest causes of death in advanced HIV.",
+    "src": "https://en.wikipedia.org/wiki/Cryptococcus_neoformans",
+    "verified": true
+  },
+  {
+    "in": [
+      "snail",
+      "water"
+    ],
+    "out": "schistosoma_mansoni",
+    "why": "Almost no other parasite does this. It needs a freshwater snail as an intermediate host, so the disease follows irrigation and dams — building the Aswan dam expanded it enormously. The damage is done by the eggs lodging in tissue, not by the worms themselves.",
+    "src": "https://en.wikipedia.org/wiki/Schistosoma_mansoni",
+    "verified": true
+  },
+  {
+    "in": [
+      "hookworm",
+      "skin"
+    ],
+    "out": "necator_americanus",
+    "why": "The larvae penetrate skin, ride the blood to the lungs, are coughed up and swallowed. Each adult takes a fraction of a millilitre of blood a day and there may be hundreds, which is why the disease is anaemia and, in children, a lasting deficit in growth and schooling.",
+    "src": "https://en.wikipedia.org/wiki/Necator_americanus",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "rinderpest_virus"
+    ],
+    "out": "canine_distemper_virus",
+    "why": "The morbilliviruses cross between carnivores readily. This one killed a third of the lions in the Serengeti in 1994, having come from domestic dogs in the villages around the park, and it has hit seals, ferrets and big cats the same way. Vaccinating village dogs is a wildlife measure.",
+    "src": "https://en.wikipedia.org/wiki/Canine_distemper",
+    "verified": true
+  },
+  {
+    "in": [
+      "cat",
+      "retrovirus"
+    ],
+    "out": "feline_leukaemia_virus",
+    "why": "Most of the harm is not the virus doing something but where it puts itself: integrating beside a growth-control gene switches that gene on permanently, and the cell becomes a tumour. The same mechanism made these viruses the tool that identified the first oncogenes.",
+    "src": "https://en.wikipedia.org/wiki/Feline_leukemia_virus",
+    "verified": true
   }
 ]

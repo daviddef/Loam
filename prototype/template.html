@@ -8959,10 +8959,16 @@ let ALIAS_BY_ID = null;
 function aliasesFor(id) {
   if (!ALIAS_BY_ID) {
     ALIAS_BY_ID = new Map();
-    for (const [phrase, target] of Object.entries(LABELS.aliases)) {
-      let list = ALIAS_BY_ID.get(target);
-      if (!list) ALIAS_BY_ID.set(target, list = []);
-      list.push(phrase);
+    // Two vocabularies, one index. `aliases` is what an ingredients panel says;
+    // `common` is what a person types. A binomial is unfindable by anyone who
+    // does not already know it, so Dirofilaria immitis has to answer to
+    // heartworm, and Yersinia pestis to black death.
+    for (const table of [LABELS.aliases, LABELS.common ?? {}]) {
+      for (const [phrase, target] of Object.entries(table)) {
+        let list = ALIAS_BY_ID.get(target);
+        if (!list) ALIAS_BY_ID.set(target, list = []);
+        list.push(phrase);
+      }
     }
   }
   return ALIAS_BY_ID.get(id);

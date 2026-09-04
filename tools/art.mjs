@@ -40687,6 +40687,506 @@ def('modulation',   () => [S('M4 30 Q10 14 16 30 Q22 46 28 30 Q34 16 40 30 Q46 4
                            S('M4 22 Q16 10 28 22 Q40 34 52 20', 'hi', 1.6),       // the envelope: the thing being carried
                            S('M4 38 Q16 50 28 38 Q40 26 52 40', 'hi', 1.6)]);
 
+
+/* ── the pathogen catalogue: 24 plant pathogens and what they do ─────────
+   Drawn by morphology rather than by category, because two dozen microbes
+   all rendered as a speckled blob would be two dozen identical cards. An
+   oomycete gets a branched sporangiophore, a rust gets pustules bursting
+   through a surface, an ascomycete gets a flask, a bacterium gets a rod.
+   The diseases are drawn as the symptom on the part it appears on.        */
+
+/* the organisms */
+def('phytophthora_infestans', () => [S('M30 52 L30 26', 'bs', 2.4),        // a branched sporangiophore,
+                           S('M30 30 L18 20', 'bs', 1.8), S('M30 34 L42 24', 'bs', 1.8),
+                           S('M30 26 L24 14', 'bs', 1.8),
+                           ...[[18, 18], [42, 22], [24, 12], [31, 22]].map(([x, y]) => E(x, y, 5, 7, 'hi')),
+                           ...[[18, 18], [42, 22]].map(([x, y]) => C(x, y + 5, 1.6, 'ik'))]);  // and swimming spores
+def('puccinia_graminis', () => [P('M8 34 L52 34 L52 42 L8 42 Z', 'lo'),     // pustules breaking through
+                           ...[[16, 30], [28, 28], [40, 30], [48, 31]].map(([x, y]) => [
+                             E(x, y, 6, 5, 'bs'), ...[0, 1, 2].map(i => C(x - 3 + i * 3, y - 2, 1.4, 'hi'))]).flat(),
+                           ...[14, 26, 38].map(x => S(`M${x} 34 L${x + 2} 26`, 'gh', 1))]);
+def('hemileia_vastatrix', () => [P('M4 40 L56 40 L56 50 L4 50 Z', 'lo'),  // the leaf underside, and one
+                           P('M22 40 L38 40 L36 34 L24 34 Z', 'lo'),         // pustule out through a stoma —
+                           ...[[24, 26], [30, 20], [36, 26], [27, 14], [34, 13], [30, 30]]   // it germinates only there
+                             .map(([x, y]) => C(x, y, 5, 'bs')),
+                           ...[[24, 26], [30, 20], [36, 26]].map(([x, y]) => C(x, y, 2, 'hi')),
+                           S('M14 45 L26 45', 'gh', 1.2)]);
+def('magnaporthe_oryzae', () => [P('M6 40 L54 40 L54 46 L6 46 Z', 'lo'),    // the appressorium, and 8 MPa
+                           E(30, 34, 11, 8, 'bs'),
+                           S('M30 26 L30 14', 'bs', 2.4), C(30, 12, 4, 'hi'),
+                           P('M28 42 L32 42 L31 52 L29 52 Z', 'ik'),        // punched straight through
+                           ...[0, 1, 2].map(i => S(`M${22 - i * 3} ${30 - i * 3} L${25 - i * 3} ${33 - i * 3}`, 'gh', 1.2))]);
+def('fusarium_oxysporum', () => [...[0, 1, 2].map(i =>
+                             S(`M${12 + i * 16} 46 Q${20 + i * 16} 30 ${14 + i * 16} 14`, 'bs', 2.2)),
+                           ...[[16, 24], [32, 20], [46, 26], [22, 36]].map(([x, y]) =>
+                             P(`M${x - 7} ${y} Q${x} ${y - 5} ${x + 7} ${y} Q${x} ${y + 3} ${x - 7} ${y} Z`, 'hi')),  // banana-shaped spores
+                           ...[[20, 44], [38, 46]].map(([x, y]) => C(x, y, 3, 'ik'))]);
+def('botrytis_cinerea', () => [S('M30 54 L30 30', 'bs', 2.4),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M30 30 L${14 + i * 8} ${18 - Math.abs(i - 2) * 2}`, 'bs', 1.4)),
+                           ...[0, 1, 2, 3, 4].map(i => C(14 + i * 8, 16 - Math.abs(i - 2) * 2, 4, 'hi')),
+                           ...[[20, 26], [40, 24], [30, 20]].map(([x, y]) => C(x, y, 1.6, 'ik'))]);  // a grey botrys, a bunch of grapes
+def('erysiphe',     () => [P('M4 32 L56 32 L56 40 L4 40 Z', 'lo'),         // the leaf, in section,
+                           ...[0, 1, 2, 3, 4, 5, 6].map(i => C(8 + i * 7.5, 28, 5, 'hi')),   // with the fungus lying
+                           ...[0, 1, 2, 3, 4, 5].map(i => C(12 + i * 7.5, 23, 4, 'hi')),     // entirely on top of it
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 10} 32 L${14 + i * 10} 37`, 'ik', 1.2)),  // fed by pegs
+                           S('M6 48 L18 48', 'gh', 1.2)]);                  // into the outer cells only                  // on the surface, never inside
+def('plasmopara_viticola', () => [leaf('lo', 30, 26, 1.4, 0),
+                           ...[[22, 24], [36, 22], [29, 30]].map(([x, y]) => C(x, y, 5, 'bs')),
+                           ...[0, 1, 2, 3, 4].map(i => S(`M${18 + i * 6} 40 L${18 + i * 6} 50`, 'hi', 1.6)),
+                           ...[0, 1, 2, 3, 4].map(i => C(18 + i * 6, 51, 1.8, 'hi'))]);   // the down, underneath
+def('claviceps_purpurea', () => [S('M30 54 L30 20', 'lo', 2.4),
+                           ...[0, 1, 2].map(i => [E(24, 26 + i * 8, 4, 3, 'bs'), E(36, 26 + i * 8, 4, 3, 'bs')]).flat(),
+                           P('M27 22 Q22 10 27 4 Q33 6 33 16 Q33 20 30 22 Z', 'ik'),   // the spur, where a grain should be
+                           ...[0, 1].map(i => S(`M${26 + i * 8} ${30 + i * 6} L${22 + i * 8} ${26 + i * 6}`, 'gh', 1))]);
+def('ustilago_maydis', () => [P('M22 8 L38 8 L36 50 L24 50 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => [C(27, 14 + i * 9, 2.6, 'hi'), C(33, 14 + i * 9, 2.6, 'hi')]).flat(),
+                           E(40, 26, 12, 11, 'bs'),                          // the gall, worth more than the cob
+                           ...[[36, 22], [44, 24], [40, 31], [46, 30]].map(([x, y]) => C(x, y, 2, 'ik'))]);
+def('venturia_inaequalis', () => [C(30, 30, 20, 'lo'),
+                           ...[[24, 22], [38, 26], [28, 38], [40, 38]].map(([x, y]) => [
+                             E(x, y, 6, 5, 'ik'), E(x, y, 3, 2.4, 'bs')]).flat(),
+                           S('M30 10 L30 4', 'bs', 2),
+                           S('M20 44 Q30 50 40 44', 'gh', 1.2)]);            // and it cracks as the fruit grows
+def('ophiostoma_ulmi', () => [P('M6 6 L54 6 L54 54 L6 54 Z', 'bs'),        // under the bark: the gallery the
+                           S('M30 10 L30 50', 'ik', 3.4),                     // beetle cut, and the larvae
+                           ...[0, 1, 2, 3, 4, 5].map(i =>                     // fanning out from it — this is
+                             S(`M30 ${14 + i * 6} Q${16 - (i % 2) * 4} ${16 + i * 6} 10 ${22 + i * 7}`, 'ik', 1.4)),
+                           ...[0, 1, 2, 3, 4, 5].map(i =>                     // the shape that identifies it
+                             S(`M30 ${16 + i * 6} Q${44 + (i % 2) * 4} ${18 + i * 6} 50 ${24 + i * 7}`, 'ik', 1.4)),
+                           E(30, 8, 3, 2, 'lo')]);  // beetle galleries
+def('cryphonectria_parasitica', () => [P('M22 4 L38 4 L38 54 L22 54 Z', 'bs'),
+                           P('M22 20 Q34 26 22 40 Z', 'ik'),                 // a sunken canker,
+                           P('M38 24 Q28 30 38 44 Z', 'ik'),                 // girdling
+                           ...[[26, 48], [34, 50]].map(([x, y]) => S(`M${x} ${y} L${x - 4} ${y + 4}`, 'hi', 2))]);  // and a sprout from the stump
+def('hymenoscyphus_fraxineus', () => [P('M28 54 L32 54 L32 26 L28 26 Z', 'lo'),
+                           ...[0, 1, 2].map(i => S(`M30 ${30 + i * 8} L${14 + i * 4} ${24 + i * 8}`, i ? 'lo' : 'gh', 2)),
+                           ...[0, 1, 2].map(i => S(`M30 ${28 + i * 8} L${46 - i * 4} ${22 + i * 8}`, i ? 'lo' : 'gh', 2)),
+                           P('M27 14 Q23 6 30 4 Q37 8 33 16 Z', 'ik'),       // a lesion where leaf meets twig
+                           C(30, 20, 3, 'ik')]);
+def('xylella_fastidiosa', () => [P('M10 12 L20 12 L20 52 L10 52 Z', 'lo'),   // the xylem, nearly sterile
+                           P('M40 12 L50 12 L50 52 L40 52 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => P(`M22 ${16 + i * 10} L38 ${16 + i * 10} L38 ${22 + i * 10} L22 ${22 + i * 10} Z`, 'bs')),
+                           ...[[26, 19], [33, 29], [28, 39], [34, 49]].map(([x, y]) => rod3('ik', x, y, 4, 1.8))]);
+def('erwinia_amylovora', () => [...[0, 1, 2, 3, 4].map(i =>
+                             ['g', i * 72, 30, 22, [P('M30 22 Q24 12 30 6 Q36 12 30 22 Z', 'hi')]]),
+                           C(30, 22, 4, 'bs'),                               // in through the flower
+                           S('M30 26 Q32 40 26 52', 'ik', 3),                // and the shoot hooks over
+                           P('M23 50 Q20 55 26 54 Z', 'ik')]);
+def('agrobacterium_tumefaciens', () => [C(20, 30, 9, 'bs'),
+                           C(20, 30, 4.5, 'ik'), ring('hi', 20, 30, 4.5, 1.4),  // the plasmid it hands over
+                           S('M29 30 L40 30', 'gh', 2), P('M38 27 L44 30 L38 33 Z', 'gh'),
+                           C(48, 30, 8, 'lo'),
+                           S('M44 27 Q48 30 52 27', 'ik', 1.4),
+                           S('M44 33 Q48 30 52 33', 'ik', 1.4)]);            // into the plant's own chromosome
+def('plasmodiophora_brassicae', () => [S('M30 6 L30 26', 'bs', 2.4),
+                           ...[0, 1, 2].map(i => E(20 + i * 10, 36 + (i % 2) * 8, 8, 11, 'lo')),
+                           ...[[20, 36], [30, 44], [40, 36]].map(([x, y]) => granules('hi', 4, x + y, [x - 5, y - 6, x + 5, y + 6])).flat(),
+                           S('M30 26 L20 32', 'lo', 2), S('M30 26 L40 32', 'lo', 2)]);
+def('rhizoctonia_solani', () => [P('M6 40 L54 40 L54 46 L6 46 Z', 'lo'),
+                           S('M30 40 Q31 34 30 30', 'bs', 2.4),
+                           S('M30 30 Q34 22 46 18', 'bs', 2.4),              // pinched exactly at the surface
+                           leaf('hi', 48, 14, .8, 40), leaf('hi', 44, 20, .8, 100),
+                           C(30, 38, 3.4, 'ik'),
+                           ...[[16, 43], [44, 43]].map(([x, y]) => C(x, y, 2, 'ik'))]);
+def('verticillium_dahliae', () => [S('M30 54 L30 12', 'lo', 2.4),
+                           ...[0, 1, 2].map(i => S(`M30 ${20 + i * 10} L${12 + i * 2} ${14 + i * 10}`, 'gh', 2)),
+                           ...[0, 1, 2].map(i => S(`M30 ${20 + i * 10} L${48 - i * 2} ${14 + i * 10}`, 'bs', 2)),
+                           ...[0, 1, 2].map(i => C(48 - i * 2, 14 + i * 10, 3, 'ik'))]);   // microsclerotia, ten years in soil
+def('pseudomonas_syringae', () => [rod3('bs', 20, 22, 9, 4),
+                           ...[0, 60, 120].map(a => ['g', a, 42, 36, [S('M42 24 L42 48', 'hi', 2)]]),   // an ice crystal,
+                           ...[0, 60, 120].map(a => ['g', a, 42, 36, [S('M42 28 L38 32 M42 28 L46 32', 'hi', 1.4)]]),
+                           C(42, 36, 2.4, 'ik'),
+                           S('M14 40 L28 40', 'gh', 1.2)]);                   // templated at minus two
+def('potato_virus_y',  () => [...[0, 1, 2].map(i =>
+                             S(`M${10 + i * 4} ${46 - i * 2} Q${26 + i * 4} ${30 - i * 2} ${20 + i * 4} ${12 - i * 2}`, 'bs', 3.4)),
+                           E(44, 24, 10, 8, 'lo'),                            // carried on the mouthparts,
+                           S('M40 30 L34 36', 'ik', 1.6),                      // in seconds of probing
+                           ...[[41, 21], [47, 22]].map(([x, y]) => C(x, y, 1.4, 'ik')),
+                           ...[[46, 32], [50, 30]].map(([x, y]) => S(`M${x} ${y} L${x + 3} ${y + 5}`, 'gh', 1))]);
+def('barley_yellow_dwarf_virus', () => [P('M12 8 L18 8 L18 52 L12 52 Z', 'lo'),
+                           P('M22 8 L28 8 L28 52 L22 52 Z', 'bs'),            // the phloem, and nowhere else
+                           P('M12 8 L18 8 L18 20 L12 20 Z', 'hi'),
+                           ...[0, 1, 2, 3].map(i => S(`M23 ${14 + i * 10} L27 ${14 + i * 10}`, 'ik', 1.6)),
+                           E(42, 30, 11, 9, 'lo'), S('M38 37 L31 44', 'ik', 1.8),
+                           C(39, 27, 1.4, 'ik')]);
+def('candidatus_liberibacter', () => [P('M10 10 L50 10 L50 50 L10 50 Z', 'lo'),
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 11} 14 L${14 + i * 11} 46`, 'gh', 1)),
+                           rod3('bs', 30, 30, 8, 3.4),
+                           S('M18 18 L42 42', 'ik', 3),                        // never grown in a dish
+                           S('M42 18 L18 42', 'ik', 3)]);
+
+/* what they do */
+def('potato_blight', () => [leaf('hi', 30, 28, 1.6, 0),
+                           ...[[24, 22], [36, 26], [28, 36]].map(([x, y]) => [
+                             E(x, y, 7, 6, 'ik'), ring('bs', x, y, 8, 1.4)]).flat(),   // black, with a pale halo
+                           E(30, 48, 14, 7, 'lo'),
+                           ...[[26, 47], [34, 49]].map(([x, y]) => C(x, y, 3, 'ik'))]);
+def('stem_rust',    () => [P('M26 4 L34 4 L34 54 L26 54 Z', 'lo'),
+                           ...[[26, 16], [34, 24], [26, 32], [34, 40], [26, 46]].map(([x, y]) =>
+                             [E(x, y, 7, 4, 'bs'), C(x, y, 2, 'hi')]).flat(),
+                           S('M34 10 Q44 12 46 20', 'gh', 1.6)]);
+def('coffee_rust',  () => [leaf('lo', 30, 30, 1.7, 0),
+                           ...[[22, 24], [36, 22], [26, 36], [38, 34], [30, 29]].map(([x, y]) =>
+                             [C(x, y, 5, 'bs'), C(x, y, 2.4, 'hi')]).flat(),
+                           S('M30 46 Q28 52 22 54', 'gh', 1.6)]);              // and the leaf falls
+def('rice_blast',   () => [...[0, 1, 2].map(i => S(`M${16 + i * 14} 54 L${20 + i * 14} 8`, 'lo', 3)),
+                           ...[[20, 30], [34, 24], [48, 34]].map(([x, y]) =>
+                             P(`M${x - 7} ${y} L${x} ${y - 5} L${x + 7} ${y} L${x} ${y + 5} Z`, 'ik')),  // diamonds
+                           ...[[20, 30], [34, 24]].map(([x, y]) => P(`M${x - 3} ${y} L${x} ${y - 2} L${x + 3} ${y} L${x} ${y + 2} Z`, 'hi'))]);
+def('panama_disease', () => [P('M28 54 L32 54 L32 20 L28 20 Z', 'lo'),
+                           ...[0, 1, 2].map(i => S(`M30 ${24 + i * 8} Q${16 - i * 2} ${28 + i * 8} ${10 - i * 2} ${38 + i * 8}`, i ? 'gh' : 'bs', 3)),
+                           ...[0, 1, 2].map(i => S(`M30 ${24 + i * 8} Q${44 + i * 2} ${28 + i * 8} ${50 + i * 2} ${38 + i * 8}`, i ? 'gh' : 'bs', 3)),
+                           S('M22 52 L38 52', 'ik', 2.4)]);                    // wilting with wet roots
+def('grey_mould',   () => [C(28, 34, 16, 'lo'),
+                           ...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+                             ['g', i * 45, 28, 34, [S('M28 18 L28 8', 'hi', 1.6), C(28, 7, 2.4, 'hi')]]),
+                           ...[[24, 30], [33, 36]].map(([x, y]) => C(x, y, 3, 'ik'))]);
+def('noble_rot',    () => [P('M18 20 Q30 10 42 20 Q46 34 34 46 Q22 48 16 34 Z', 'bs'),
+                           ...[0, 1, 2, 3].map(i => S(`M${20 + i * 6} ${24 + (i % 2) * 3} Q${23 + i * 6} ${34} ${20 + i * 6} ${42 - (i % 2) * 3}`, 'lo', 1.6)),
+                           ...[[26, 26], [36, 30], [30, 40]].map(([x, y]) => C(x, y, 1.4, 'ik')),   // perforated, and shrivelled
+                           S('M30 20 L30 12', 'lo', 2)]);
+def('powdery_mildew', () => [leaf('lo', 30, 32, 1.7, 0),
+                           ...[[20, 26], [30, 22], [40, 28], [24, 36], [36, 38], [30, 31], [44, 34]]
+                             .map(([x, y]) => C(x, y, 5.5, 'hi')),
+                           S('M12 46 L20 44', 'gh', 1.2)]);                     // and it does not need wet
+def('downy_mildew', () => [leaf('lo', 30, 24, 1.5, 0),
+                           ...[[24, 20], [36, 22]].map(([x, y]) => P(`M${x - 6} ${y - 5} L${x + 6} ${y - 5} L${x + 6} ${y + 5} L${x - 6} ${y + 5} Z`, 'bs')),
+                           ...[0, 1, 2, 3, 4, 5].map(i => S(`M${16 + i * 6} 40 L${16 + i * 6} 50`, 'hi', 1.8)),
+                           ...[0, 1, 2, 3, 4, 5].map(i => C(16 + i * 6, 51, 1.6, 'hi'))]);
+def('ergotism',     () => [S('M30 54 L30 22', 'lo', 2.4),
+                           ...[0, 1, 2].map(i => [E(24, 28 + i * 8, 4, 3, 'hi'), E(36, 28 + i * 8, 4, 3, 'hi')]).flat(),
+                           P('M27 24 Q21 10 28 4 Q35 8 33 18 Q33 22 30 24 Z', 'ik'),
+                           S('M8 14 Q14 8 18 16', 'ik', 2),                     // St Anthony's Fire
+                           S('M12 20 Q16 14 20 22', 'ik', 1.6)]);
+def('corn_smut',    () => [P('M20 6 L34 6 L32 54 L22 54 Z', 'lo'),
+                           ...[0, 1, 2, 3, 4].map(i => [C(24, 12 + i * 8, 2.4, 'hi'), C(30, 12 + i * 8, 2.4, 'hi')]).flat(),
+                           E(42, 20, 11, 10, 'bs'), E(46, 36, 8, 8, 'bs'),      // galls, sold by weight
+                           ...[[38, 17], [46, 19], [42, 25], [45, 34], [49, 38]].map(([x, y]) => C(x, y, 2, 'ik'))]);
+def('apple_scab',   () => [C(30, 32, 19, 'bs'),
+                           ...[[23, 24], [38, 28], [27, 40], [40, 40]].map(([x, y]) =>
+                             [E(x, y, 6, 5, 'lo'), E(x, y, 3, 2.4, 'ik')]).flat(),
+                           S('M30 13 L30 5', 'lo', 2), leaf('lo', 38, 8, .7, 40),
+                           S('M22 44 Q26 48 24 52', 'ik', 1.6)]);               // and it cracks
+def('dutch_elm_disease', () => [P('M26 54 L34 54 L34 22 L26 22 Z', 'lo'),   // half the crown still in leaf,
+                           P('M32 26 Q46 20 52 8 Q54 24 44 32 Q36 32 32 26 Z', 'bs'),
+                           S('M32 30 Q42 26 50 16', 'lo', 2.4),
+                           S('M28 24 Q18 16 10 6', 'lo', 3),                   // and half of it bare — it starts
+                           S('M18 15 Q12 12 8 16', 'lo', 2),                   // on one branch, never all at once
+                           S('M22 20 Q18 24 12 24', 'lo', 2),
+                           P('M14 50 L46 50 L46 54 L14 54 Z', 'ik'),
+                           ...[0, 1].map(i => S(`M${20 + i * 20} 54 L${16 + i * 28} 58`, 'ik', 1.6))]);
+def('chestnut_blight', () => [P('M20 4 L40 4 L40 44 L20 44 Z', 'bs'),
+                           P('M20 16 Q34 24 20 34 Z', 'ik'),
+                           P('M40 20 Q28 28 40 40 Z', 'ik'),
+                           P('M14 44 L46 44 L46 50 L14 50 Z', 'lo'),
+                           ...[[18, 44], [44, 44]].map(([x, y]) => S(`M${x} ${y} L${x < 30 ? x - 6 : x + 6} ${y - 10}`, 'hi', 2.4))]);
+def('ash_dieback',  () => [P('M28 54 L32 54 L32 24 L28 24 Z', 'lo'),
+                           ...[0, 1].map(i => S(`M30 ${28 + i * 10} L${14 + i * 4} ${22 + i * 10}`, 'gh', 2)),
+                           ...[0, 1].map(i => S(`M30 ${26 + i * 10} L${46 - i * 4} ${20 + i * 10}`, 'gh', 2)),
+                           S('M30 44 L18 48', 'lo', 2), S('M30 44 L42 48', 'lo', 2),
+                           leaf('bs', 16, 50, .8, 200), leaf('bs', 44, 50, .8, 160),   // green only at the bottom
+                           C(30, 20, 4, 'ik')]);
+def('citrus_greening', () => [C(30, 32, 18, 'hi'),
+                           P('M12 32 A18 18 0 0 0 48 32 Z', 'bs'),               // green at the base
+                           S('M30 14 L30 6', 'lo', 2), leaf('lo', 38, 8, .7, 40),
+                           S('M20 24 Q30 20 40 26', 'gh', 1.4)]);                 // and lopsided
+def('fireblight',   () => [P('M26 54 L32 54 L34 22 L28 22 Z', 'lo'),
+                           S('M30 24 Q36 12 26 6', 'ik', 4),                      // the shepherd's crook
+                           P('M22 4 Q18 10 26 9 Z', 'ik'),
+                           ...[0, 1, 2].map(i => S(`M${30 + i} ${32 + i * 8} L${44 - i * 2} ${28 + i * 8}`, 'ik', 2)),
+                           ...[0, 1].map(i => C(44 - i * 2, 28 + i * 8, 2, 'bs'))]);
+def('crown_gall',   () => [P('M28 4 L32 4 L32 34 L28 34 Z', 'lo'),
+                           E(30, 40, 15, 11, 'bs'),                               // a tumour the plant built
+                           ...[[22, 38], [36, 36], [30, 45], [40, 43]].map(([x, y]) => C(x, y, 4, 'lo')),
+                           ...[0, 1, 2].map(i => S(`M${24 + i * 6} 50 L${22 + i * 6} 56`, 'ik', 1.6))]);
+def('clubroot',     () => [S('M30 4 L30 22', 'lo', 2.4),
+                           leaf('bs', 22, 10, .8, 220), leaf('bs', 38, 10, .8, 140),
+                           E(22, 34, 8, 11, 'ik'), E(38, 36, 7, 10, 'ik'),        // roots swollen useless
+                           E(30, 48, 6, 8, 'ik'),
+                           S('M30 22 L22 26', 'lo', 2), S('M30 22 L38 28', 'lo', 2)]);
+def('damping_off',  () => [P('M6 38 L54 38 L54 46 L6 46 Z', 'lo'),
+                           S('M30 38 Q32 32 34 28', 'bs', 2.4),
+                           S('M34 28 Q40 20 50 16', 'bs', 2.4),                   // up, then over
+                           leaf('hi', 52, 12, .8, 40), leaf('hi', 46, 20, .8, 100),
+                           C(30, 36, 3.4, 'ik'),                                   // pinched at the line
+                           S('M30 46 L30 54', 'gh', 1.6)]);
+def('verticillium_wilt', () => [S('M30 54 L30 10', 'lo', 2.4),
+                           ...[0, 1, 2].map(i => S(`M30 ${18 + i * 12} L${16 - i} ${12 + i * 12}`, 'lo', 2)),
+                           ...[0, 1, 2].map(i => leaf('bs', 14 - i, 10 + i * 12, .9, 220)),
+                           ...[0, 1, 2].map(i => S(`M30 ${24 + i * 12} L${46 + i} ${18 + i * 12}`, 'lo', 2)),
+                           ...[0, 1, 2].map(i => leaf('hi', 48 + i, 16 + i * 12, .9, 140))]);   // one side, and not the other
+
+/* and the two the catalogue's own check found missing */
+def('gangrene',     () => [P('M18 10 Q34 8 40 22 Q44 36 36 48 Q24 52 18 40 Z', 'bs'),
+                           P('M22 34 Q34 32 38 42 Q34 50 24 48 Q19 42 22 34 Z', 'ik'),   // the tissue that has gone
+                           ...[0, 1, 2].map(i => C(26 + i * 5, 42 + (i % 2) * 4, 2, 'lo')),  // and gas in it
+                           S('M20 26 L38 24', 'lo', 1.4)]);
+def('dysentery',    () => [P('M8 18 L52 18 L52 26 L8 26 Z', 'bs'),
+                           P('M8 40 L52 40 L52 48 L8 48 Z', 'bs'),
+                           ...[[20, 26], [34, 26], [44, 26]].map(([x, y]) =>
+                             P(`M${x - 5} ${y} Q${x - 3} ${y + 8} ${x} ${y + 9} Q${x + 3} ${y + 8} ${x + 5} ${y} Z`, 'ik')),  // flask-shaped ulcers
+                           ...[[20, 32], [34, 33], [44, 32]].map(([x, y]) => C(x, y, 1.6, 'lo'))]);
+
+
+/* ── animal disease: the 19 the census said were missing ────────────────
+   Drawn by what identifies each one — a cloven hoof with blisters, a mite
+   with eight legs and no waist, a nematode coiled in a heart — rather than
+   by the family they belong to, for the same reason the plant batch was.  */
+def('foot_and_mouth_virus', () => [P('M18 8 Q30 6 30 26 L18 26 Z', 'lo'),   // the cloven hoof, and the blisters
+                           P('M42 8 Q30 6 30 26 L42 26 Z', 'lo'),
+                           P('M14 26 L46 26 L44 44 L16 44 Z', 'bs'),
+                           ...[[22, 32], [32, 30], [38, 36], [26, 40]].map(([x, y]) =>
+                             [C(x, y, 4.5, 'hi'), C(x, y, 2, 'ik')]).flat()]);
+def('rinderpest_virus', () => [E(30, 26, 22, 18, 'bs'),                    // a loose pleomorphic envelope,
+                           S('M14 20 Q30 14 46 20 Q30 26 14 32 Q30 38 46 32', 'ik', 2.4),  // round a coiled
+                           ...[0, 1, 2, 3, 4, 5].map(i =>                     // helical nucleocapsid — the
+                             S(`M${14 + i * 6} 10 L${14 + i * 6} 6`, 'lo', 1.4)),  // paramyxovirus shape, and
+                           S('M6 50 L54 50', 'ik', 3),                         // the line drawn under it in 2011:
+                           S('M16 55 L44 55', 'ik', 1.6)]);                    // the second disease ever ended
+def('african_swine_fever_virus', () => [...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 30, 30, [P('M30 8 L38 13 L38 23 L30 28 L22 23 L22 13 Z', 'lo')]]),
+                           C(30, 30, 13, 'bs'), hex('ik', 30, 30, 13, 2),     // a very large DNA virus,
+                           C(30, 30, 5, 'hi')]);                             // and the only one of its family
+def('avian_influenza', () => [C(30, 32, 16, 'bs'),
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+                             ['g', a, 30, 32, [S('M30 16 L30 8', 'ik', 2), E(30, 7, 3, 2, 'ik')]]),
+                           ...[0, 1, 2, 3, 4, 5, 6, 7].map(i =>
+                             S(`M${24 + (i % 4) * 4} ${26 + Math.floor(i / 4) * 8} L${24 + (i % 4) * 4} ${32 + Math.floor(i / 4) * 8}`, 'hi', 1.8))]);  // eight segments
+def('newcastle_disease_virus', () => [E(30, 30, 20, 16, 'lo'),
+                           ...[[24, 24], [36, 26], [30, 36], [40, 34]].map(([x, y]) => C(x, y, 5, 'bs')),
+                           ...[[24, 24], [36, 26]].map(([x, y]) => C(x, y, 2, 'ik')),
+                           S('M10 12 L20 20', 'ik', 2), P('M18 17 L23 22 L16 22 Z', 'ik'),
+                           S('M46 46 L52 52', 'gh', 1.4)]);                  // it spreads where interferon is broken
+def('bluetongue_virus', () => [C(30, 28, 14, 'bs'), ring('ik', 30, 28, 14, 2),
+                           ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
+                             ['g', i * 36, 30, 28, [S('M30 20 L30 14', 'hi', 1.6)]]),   // ten segments
+                           E(30, 48, 11, 6, 'ik'),                            // and the sign it is named for
+                           S('M22 48 L38 48', 'lo', 1.2)]);
+def('canine_parvovirus', () => [P('M30 18 L40 24 L40 36 L30 42 L20 36 L20 24 Z', 'bs'),   // bare: no envelope,
+                           S('M30 18 L30 42', 'ik', 1.2),                      // no spikes, 5 kb — one of the
+                           S('M20 24 L40 36', 'ik', 1.2),                      // smallest viruses there is
+                           S('M40 24 L20 36', 'ik', 1.2),
+                           S('M8 50 L52 50', 'gh', 1.4),                       // drawn against a scale bar,
+                           S('M8 47 L8 53', 'gh', 1.4), S('M52 47 L52 53', 'gh', 1.4),
+                           S('M26 50 L34 50', 'ik', 3)]);                      // because the size is the point
+def('myxoma_virus', () => [E(26, 34, 15, 13, 'bs'),
+                           C(18, 22, 6, 'bs'),
+                           P('M13 18 Q9 6 15 6 Q19 12 18 18 Z', 'lo'),        // the ears, and the swollen eye
+                           P('M23 18 Q27 6 21 6 Q17 12 18 18 Z', 'lo'),
+                           C(15, 22, 3.4, 'ik'), ring('hi', 15, 22, 3.4, 1.2),
+                           ...[[34, 30], [40, 38]].map(([x, y]) => C(x, y, 3, 'hi')),
+                           S('M46 12 L52 18', 'gh', 1.4)]);                   // and the mosquito that carries it
+def('batrachochytrium', () => [C(24, 28, 12, 'bs'),
+                           ...[0, 1, 2, 3, 4].map(i => C(20 + i * 3, 24 + (i % 2) * 6, 2.6, 'ik')),
+                           S('M36 30 Q46 34 52 44', 'hi', 2),                 // the swimming spore: almost no
+                           C(36, 30, 4, 'hi'),                                 // other fungus has a flagellum
+                           S('M6 46 L54 46', 'gh', 1.2)]);
+def('white_nose_fungus', () => [C(30, 32, 14, 'lo'),
+                           P('M20 22 Q14 10 22 12 Q26 18 25 24 Z', 'lo'),
+                           P('M40 22 Q46 10 38 12 Q34 18 35 24 Z', 'lo'),      // a bat, upside down, and the
+                           ...[[30, 42], [24, 40], [36, 40], [30, 46]].map(([x, y]) => C(x, y, 4, 'hi')),  // fuzz on its muzzle
+                           ...[[24, 30], [36, 30]].map(([x, y]) => C(x, y, 1.6, 'ik')),
+                           S('M8 8 L52 8', 'ik', 2)]);
+def('varroa_mite',  () => [E(34, 32, 15, 11, 'bs'),                            // wider than long, which is the
+                           ...[0, 1, 2, 3].map(i => [                          // shape that identifies it
+                             S(`M22 ${26 + i * 4} L10 ${22 + i * 5}`, 'ik', 1.8),
+                             S(`M46 ${26 + i * 4} L58 ${22 + i * 5}`, 'ik', 1.8)]).flat(),
+                           E(34, 32, 9, 6, 'lo'),
+                           S('M30 12 Q34 18 34 22', 'gh', 1.6)]);
+def('paenibacillus_larvae', () => [P('M8 20 L52 20 L52 30 L8 30 Z', 'lo'),     // brood comb, and a cell
+                           ...[0, 1, 2, 3].map(i => P(`M${11 + i * 11} 20 L${19 + i * 11} 20 L${19 + i * 11} 30 L${11 + i * 11} 30 Z`, 'bs')),
+                           P('M22 30 Q30 44 38 30 Z', 'ik'),                   // sunken and perforated
+                           ...[0, 1, 2].map(i => C(26 + i * 4, 33 + i, 1.4, 'lo')),
+                           ...[[16, 44], [30, 48], [44, 44]].map(([x, y]) => rod3('hi', x, y, 5, 2))]);  // spores, viable fifty years
+def('nosema',       () => [E(30, 30, 18, 12, 'bs'),
+                           ...[0, 1, 2, 3].map(i => E(18 + i * 8, 30, 4, 7, 'lo')),
+                           S('M12 30 Q30 20 48 30', 'ik', 1.6),                // the polar filament, which is how
+                           C(46, 30, 3, 'ik'),                                  // a microsporidian gets inside
+                           S('M46 30 Q52 34 56 42', 'ik', 1.4)]);
+def('dirofilaria_immitis', () => [P('M10 26 Q10 12 22 12 Q30 12 30 22 Q30 12 38 12 Q50 12 50 26 Q50 40 30 52 Q10 40 10 26 Z', 'bs'),
+                           P('M24 40 L36 40 L34 54 L26 54 Z', 'lo'),           // the pulmonary artery, and one
+                           S('M30 20 Q42 24 34 32 Q22 36 30 44 Q38 50 30 54', 'ik', 2.6),  // worm, 30 cm of it,
+                           C(30, 20, 2.4, 'ik')]);                              // living in the current
+def('sarcoptes_scabiei', () => [P('M6 34 L54 34 L54 44 L6 44 Z', 'lo'),         // the skin, and the tunnel
+                           S('M12 40 Q22 32 32 38 Q40 42 46 36', 'ik', 2),
+                           E(46, 34, 6, 5, 'bs'),
+                           ...[0, 1, 2].map(i => [S(`M42 ${32 + i * 2} L36 ${28 + i * 3}`, 'ik', 1.2),
+                             S(`M50 ${32 + i * 2} L56 ${28 + i * 3}`, 'ik', 1.2)]).flat(),
+                           ...[[18, 39], [26, 36], [34, 39]].map(([x, y]) => C(x, y, 1.6, 'hi'))]);  // eggs left behind
+def('theileria',    () => [C(20, 24, 11, 'lo'), C(20, 24, 4, 'ik'),
+                           S('M30 26 L38 30', 'gh', 2), P('M36 27 L42 30 L36 33 Z', 'gh'),
+                           C(40, 20, 8, 'bs'), C(40, 20, 3, 'ik'),              // one white cell, made to divide
+                           C(42, 38, 8, 'bs'), C(42, 38, 3, 'ik'),              // and every daughter infected
+                           C(52, 30, 6, 'bs'), C(52, 30, 2.4, 'ik')]);
+def('babesia',      () => [E(24, 30, 16, 13, 'bs'),
+                           E(24, 30, 8, 6, 'lo'),
+                           ...[[20, 27], [28, 32]].map(([x, y]) =>              // the pear-shaped pair inside
+                             P(`M${x} ${y - 4} Q${x + 4} ${y} ${x} ${y + 4} Q${x - 4} ${y} ${x} ${y - 4} Z`, 'ik')),
+                           ...[[46, 20], [50, 34], [44, 44]].map(([x, y]) => E(x, y, 6, 5, 'lo')),
+                           S('M40 30 L34 30', 'gh', 1.4)]);
+def('mite',         () => [E(30, 32, 16, 14, 'bs'),                             // no waist: one fused body,
+                           ...[0, 1, 2, 3].map(i => [                            // which is what makes it a mite
+                             S(`M18 ${24 + i * 5} L6 ${20 + i * 6}`, 'ik', 1.8),
+                             S(`M42 ${24 + i * 5} L54 ${20 + i * 6}`, 'ik', 1.8)]).flat(),
+                           P('M26 18 L34 18 L32 12 L28 12 Z', 'lo'),
+                           ...[[26, 30], [34, 32]].map(([x, y]) => C(x, y, 2, 'lo'))]);
+def('midge',        () => [E(30, 34, 7, 12, 'bs'),
+                           C(30, 18, 5, 'bs'),
+                           P('M32 24 Q46 18 50 28 Q40 32 32 30 Z', 'hi'),       // one to three millimetres —
+                           P('M28 24 Q14 18 10 28 Q20 32 28 30 Z', 'hi'),       // small enough to pass through
+                           S('M30 14 L26 6', 'ik', 1.2), S('M30 14 L34 6', 'ik', 1.2),
+                           S('M30 20 L30 24', 'ik', 1.6),
+                           ...[0, 1, 2].map(i => S(`M6 ${44 + i * 4} L54 ${44 + i * 4}`, 'gh', 0.8))]);  // mosquito netting
+
+
+/* ── human disease: the last 27 the catalogue was short of ───────────────
+   A dozen viruses in one batch is a dozen chances to draw the same spiked
+   ball, so each is drawn from what actually distinguishes it: a filovirus
+   is a filament, a coronavirus is a crown, a flavivirus rides a mosquito,
+   and a poxvirus is a brick. Where the virus has no distinctive shape, the
+   thing it is known for is drawn instead.                                */
+def('variola',      () => [P('M14 16 L46 16 L46 44 L14 44 Z', 'bs'),        // a brick, which is what a poxvirus
+                           P('M20 22 L40 22 L40 38 L20 38 Z', 'lo'),        // looks like, and the line under it
+                           ...[[26, 27], [34, 27], [26, 34], [34, 34]].map(([x, y]) => C(x, y, 2.4, 'hi')),
+                           S('M6 52 L54 52', 'ik', 3),                       // for the one human disease ended
+                           S('M16 57 L44 57', 'ik', 1.6)]);
+def('sars_cov_2',   () => [C(30, 30, 14, 'bs'),
+                           ...[0, 45, 90, 135, 180, 225, 270, 315].map(a =>
+                             ['g', a, 30, 30, [S('M30 16 L30 9', 'lo', 1.8), C(30, 7, 3.4, 'lo')]]),
+                           C(30, 30, 7, 'hi'),
+                           S('M6 50 Q18 42 30 50 Q42 58 54 50', 'gh', 1.6)]);  // and the curve everyone learned
+def('coronavirus',  () => [C(30, 32, 15, 'bs'),
+                           ...[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(a =>
+                             ['g', a, 30, 32, [S('M30 17 L30 10', 'ik', 1.6), C(30, 8, 2.8, 'ik')]]),
+                           S('M20 32 Q30 26 40 32', 'hi', 1.6),               // the crown it is named for
+                           S('M20 38 Q30 32 40 38', 'hi', 1.6)]);
+def('ebola_virus',  () => [S('M12 50 Q10 30 24 24 Q40 18 38 8', 'bs', 5),     // a filament, and the crook at
+                           S('M46 52 Q50 36 42 30', 'lo', 4),                 // the end that names the family
+                           ...[0, 1, 2, 3].map(i => S(`M${14 + i * 2} ${44 - i * 6} L${20 + i * 2} ${42 - i * 6}`, 'hi', 1.2))]);
+def('marburg_virus', () => [S('M16 52 Q14 28 30 20 Q44 14 40 6', 'bs', 5),
+                           C(48, 20, 7, 'lo'),                                // found in a laboratory in 1967,
+                           S('M48 27 L48 40', 'lo', 2.4),                     // from imported monkey tissue
+                           S('M44 32 L52 32', 'lo', 2),
+                           ...[0, 1, 2].map(i => S(`M${20 + i * 2} ${44 - i * 8} L${26 + i * 2} ${42 - i * 8}`, 'hi', 1.2))]);
+def('lassa_virus',  () => [E(24, 34, 15, 11, 'bs'),                           // the rat that lives in the house,
+                           C(12, 28, 6, 'bs'), C(8, 24, 3, 'lo'),
+                           S('M6 30 L2 30', 'ik', 1.2),
+                           S('M38 38 Q50 40 54 30', 'ik', 2),
+                           ...[[22, 40], [30, 42]].map(([x, y]) => S(`M${x} ${y} L${x} ${y + 6}`, 'ik', 1.6)),
+                           P('M6 50 L54 50 L54 54 L6 54 Z', 'lo')]);          // and the floor it lives on
+def('nipah_virus',  () => [P('M4 6 L56 6 L56 10 L4 10 Z', 'lo'),           // hanging from the branch,
+                           S('M26 10 L26 16', 'ik', 1.6), S('M34 10 L34 16', 'ik', 1.6),
+                           P('M12 20 Q26 14 30 24 Q34 14 48 20 Q40 30 30 30 Q20 30 12 20 Z', 'bs'),
+                           C(30, 24, 5, 'bs'),                                 // with a head, so it reads as a bat
+                           P('M26 20 L28 15 L30 20 Z', 'bs'), P('M30 20 L32 15 L34 20 Z', 'bs'),
+                           ...[[28, 23], [32, 23]].map(([x, y]) => C(x, y, 1.2, 'ik')),
+                           ...[0, 1, 2].map(i => S(`M${26 + i * 4} 32 L${26 + i * 4} 42`, 'hi', 1.4)),
+                           P('M22 42 L38 42 L35 54 L25 54 Z', 'lo'),           // into the pot tapped overnight
+                           E(30, 43, 7, 2, 'hi')]);
+def('hantavirus',   () => [P('M20 26 Q30 20 40 26 Q44 40 36 50 L24 50 Q16 40 20 26 Z', 'bs'),  // a lung, because
+                           S('M30 22 L30 34', 'lo', 2.4),                      // it is breathed and not caught:
+                           ...[0, 1, 2, 3, 4, 5].map(i =>                      // there are no chains to break
+                             C(12 + (i % 3) * 7, 8 + Math.floor(i / 3) * 7, 2.4, 'hi')),
+                           ...[0, 1, 2].map(i => S(`M${16 + i * 6} 20 L${22 + i * 6} 26`, 'gh', 1)),
+                           S('M46 40 L54 40', 'ik', 2.4), S('M50 36 L50 44', 'ik', 2.4)]);
+def('dengue_virus', () => [C(24, 26, 11, 'bs'), ring('ik', 24, 26, 11, 1.6),
+                           ...[0, 1, 2, 3].map(i =>                           // antibody that binds and does not
+                             ['g', i * 90, 24, 26, [P('M24 15 L28 9 L20 9 Z', 'hi')]]),   // neutralise, and helps
+                           C(44, 40, 8, 'lo'),                                 // the next serotype straight in
+                           S('M32 32 L38 37', 'gh', 2), P('M36 34 L42 38 L35 40 Z', 'gh')]);
+def('zika_virus',   () => [C(20, 22, 10, 'bs'),
+                           ...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 20, 22, [S('M20 12 L20 7', 'ik', 1.4)]]),
+                           P('M34 34 Q52 30 52 46 Q40 54 34 46 Z', 'lo'),      // and across the placenta, into
+                           C(42, 42, 6, 'hi'),                                 // a brain that stays small
+                           S('M30 30 L36 36', 'gh', 1.6)]);
+def('chikungunya_virus', () => [C(22, 20, 9, 'bs'),
+                           ...[0, 60, 120, 180, 240, 300].map(a =>
+                             ['g', a, 22, 20, [S('M22 11 L22 6', 'ik', 1.4)]]),
+                           S('M34 36 Q44 34 46 42', 'ik', 4),                  // the posture the name describes:
+                           S('M46 42 Q48 50 42 54', 'ik', 4),                  // that which bends up
+                           C(40, 34, 4, 'lo')]);
+def('hepatitis_b',  () => [P('M10 22 Q24 14 34 22 Q44 30 40 42 Q24 48 12 40 Z', 'bs'),   // the liver,
+                           S('M22 24 Q26 34 22 44', 'lo', 1.6),
+                           C(46, 18, 8, 'lo'), ring('ik', 46, 18, 8, 1.6),
+                           S('M42 18 Q46 14 50 18', 'ik', 1.4),                // a DNA virus that copies itself
+                           S('M42 22 Q46 18 50 22', 'ik', 1.4)]);              // through RNA, backwards
+def('hepatitis_c',  () => [P('M12 24 Q26 16 36 24 Q46 32 42 44 Q26 50 14 42 Z', 'lo'),
+                           P('M44 6 L50 6 L50 26 L44 26 Z', 'ik'),             // the needle it travels on,
+                           P('M45 26 L49 26 L47 34 Z', 'ik'),
+                           S('M20 30 Q24 38 20 44', 'gh', 1.4),
+                           S('M8 12 L18 22', 'hi', 2.4), S('M18 12 L8 22', 'hi', 2.4)]);  // and now, a cure
+def('herpes_simplex', () => [P('M6 30 L34 30 L34 36 L6 36 Z', 'lo'),           // the axon, and the cell body
+                           E(44, 33, 12, 11, 'bs'),                            // it retreats into and waits in
+                           C(44, 33, 5, 'ik'),
+                           ...[0, 1, 2].map(i => S(`M${52 + i} ${26 - i * 2} L${56 + i} ${20 - i * 3}`, 'lo', 1.4)),
+                           ...[[12, 24], [22, 24]].map(([x, y]) => C(x, y, 3.4, 'hi'))]);  // and comes back down to
+def('varicella_zoster', () => [P('M6 20 L54 20 L54 26 L6 26 Z', 'lo'),          // one nerve, one band of skin,
+                           E(12, 23, 7, 6, 'bs'), C(12, 23, 3, 'ik'),
+                           ...[0, 1, 2, 3, 4].map(i => C(24 + i * 7, 36, 4, 'hi')),
+                           ...[0, 1, 2, 3, 4].map(i => C(24 + i * 7, 36, 1.8, 'ik')),
+                           S('M20 30 L20 50', 'gh', 1.4),                       // and it stops dead at the midline
+                           S('M56 30 L56 50', 'gh', 1.4)]);
+def('chickenpox',   () => [E(30, 32, 20, 22, 'lo'),
+                           ...[[22, 18], [38, 20], [18, 32], [42, 34], [26, 44], [38, 46], [30, 28]]
+                             .map(([x, y], i) => C(x, y, [5, 4, 3][i % 3], 'hi')),
+                           ...[[22, 18], [18, 32], [26, 44]].map(([x, y]) => C(x, y, 1.8, 'ik'))]);  // crops: every
+                                                                                // stage at once, unlike smallpox
+def('rotavirus',    () => [C(30, 30, 16, 'lo'), ring('ik', 30, 30, 16, 2),
+                           C(30, 30, 10, 'bs'), ring('ik', 30, 30, 10, 1.6),
+                           C(30, 30, 4, 'hi'),                                  // three layers, and eleven
+                           ...[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].filter((_, i) => i < 11)
+                             .map(a => ['g', a, 30, 30, [S('M30 20 L30 16', 'ik', 1.2)]])]);
+def('mycobacterium_leprae', () => [...[[16, 20], [26, 26], [36, 20], [22, 38], [34, 40], [44, 32]]
+                             .map(([x, y]) => rod3('bs', x, y, 7, 3)),
+                           ...[[16, 20], [36, 20], [34, 40]].map(([x, y]) => S(`M${x - 5} ${y} L${x + 5} ${y}`, 'ik', 1)),
+                           S('M8 50 L52 50', 'gh', 1.4),                        // it divides once a fortnight,
+                           ...[0, 1].map(i => S(`M${14 + i * 30} 47 L${14 + i * 30} 53`, 'gh', 1.4))]);  // the slowest known
+def('borrelia_burgdorferi', () => [S('M6 30 Q12 16 18 30 Q24 44 30 30 Q36 16 42 30 Q48 44 54 30', 'bs', 3.4),
+                           ...[0, 1, 2, 3, 4].map(i => C(12 + i * 9, 46, 3.4, 'lo')),   // a spirochaete, and its
+                           ...[0, 1, 2].map(i => C(16 + i * 12, 52, 2.4, 'lo')),         // genome scattered across
+                           S('M6 40 L54 40', 'gh', 1)]);                                // twenty-odd plasmids
+def('shigella',     () => [rod3('bs', 20, 22, 9, 4),
+                           P('M8 40 L52 40 L52 48 L8 48 Z', 'lo'),                       // it invades the lining
+                           rod3('hi', 30, 44, 7, 3),                                     // rather than sitting on it
+                           S('M30 30 L30 38', 'gh', 1.6), P('M27 36 L33 36 L30 41 Z', 'gh'),
+                           ...[0, 1].map(i => C(14 + i * 34, 44, 2, 'ik'))]);
+def('candida_albicans', () => [...[0, 1, 2].map(i => C(14 + i * 7, 20, 6, 'bs')),        // a yeast that switches
+                           S('M32 22 Q42 26 44 36 Q46 46 54 50', 'lo', 4),                // to a filament, and the
+                           ...[0, 1, 2].map(i => C(38 + i * 6, 30 + i * 8, 2.4, 'ik')),   // filament is what gets in
+                           S('M8 44 L28 44', 'gh', 1.2)]);
+def('aspergillus_fumigatus', () => [S('M30 54 L30 30', 'bs', 2.6),
+                           C(30, 24, 8, 'bs'),                                            // the swollen head, and
+                           ...[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(a =>
+                             ['g', a, 30, 24, [S('M30 16 L30 11', 'lo', 1.4), C(30, 9, 2.4, 'lo')]]),
+                           ...[[10, 44], [16, 50], [48, 46]].map(([x, y]) => C(x, y, 2, 'hi'))]);  // spores, everywhere
+def('cryptococcus_neoformans', () => [C(26, 30, 10, 'bs'),
+                           ring('hi', 26, 30, 15, 5),                                     // the capsule, and nothing
+                           C(26, 30, 4, 'ik'),                                            // can get a grip on it
+                           P('M46 18 Q54 22 50 30 Q42 30 44 22 Z', 'lo'),
+                           ...[0, 1, 2].map(i => S(`M${44 + i * 3} ${36 + i * 3} L${48 + i * 3} ${40 + i * 3}`, 'gh', 1.2))]);
+def('schistosoma_mansoni', () => [S('M8 26 Q26 18 46 26 Q52 30 50 36', 'bs', 7),          // the male, and the
+                           S('M10 28 Q28 22 44 28', 'hi', 2.6),                            // groove he carries her in
+                           C(6, 26, 4, 'bs'),
+                           ...[0, 1, 2].map(i => C(16 + i * 12, 42, 3, 'lo')),              // and the snail it needs
+                           S('M6 48 L54 48', 'gh', 1.2)]);
+def('necator_americanus', () => [P('M6 14 L54 14 L54 22 L6 22 Z', 'lo'),                   // the gut wall, and the
+                           ...[0, 1, 2].map(i =>                                            // hook it hangs by
+                             S(`M${16 + i * 14} 22 Q${20 + i * 14} 34 ${14 + i * 14} 40`, 'bs', 3.4)),
+                           ...[0, 1, 2].map(i => C(14 + i * 14, 41, 2.4, 'ik')),
+                           ...[[24, 48], [38, 50], [30, 52]].map(([x, y]) => C(x, y, 2.6, 'hi'))]);   // blood, a little at a time
+def('canine_distemper_virus', () => [E(30, 28, 20, 16, 'bs'),
+                           S('M14 22 Q30 16 46 22 Q30 28 14 34 Q30 40 46 34', 'ik', 2.4),   // a morbillivirus,
+                           P('M18 44 L26 44 L26 52 L18 52 Z', 'lo'),                        // and the hardened
+                           P('M34 44 L42 44 L42 52 L34 52 Z', 'lo'),                        // footpads it is named for
+                           ...[0, 1].map(i => S(`M${20 + i * 16} 46 L${24 + i * 16} 46`, 'ik', 1.2))]);
+def('feline_leukaemia_virus', () => [S('M6 40 L54 40', 'lo', 3.4),                          // the cat's own
+                           S('M6 46 L54 46', 'lo', 3.4),                                    // chromosome, and the
+                           P('M24 34 L36 34 L36 52 L24 52 Z', 'bs'),                        // virus written into it
+                           C(30, 18, 9, 'bs'), ring('ik', 30, 18, 9, 1.6),
+                           S('M30 27 L30 33', 'gh', 2), P('M27 31 L33 31 L30 36 Z', 'gh'),
+                           C(46, 43, 3.4, 'ik')]);                                          // beside a growth gene
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
