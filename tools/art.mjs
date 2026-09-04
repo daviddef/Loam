@@ -44501,6 +44501,29 @@ def('cueva_maravillas',()=>[P('M2 4 L58 4 L58 26 L2 26 Z', 'lo'),
                              S(`M${x - 2.5} ${y + 2} L${x + 2.5} ${y + 1}`, 'hi', 1)]).flat(),
                           ...[0, 1, 2, 3].map(i => S(`M${10 + i * 12} 26 L${12 + i * 12} 32`, 'gh', 1))]);   // and the karst above it
 
+/* Verb outcomes, 5 Sep. Stale bread is drawn as the crystal it actually is,
+   not as a dry crust; puff pastry as layers with the gap between them.      */
+def('stale_bread',  () => [P('M10 46 Q10 24 20 20 Q30 14 40 20 Q50 24 50 46 Z', 'lo'),
+                          S('M10 46 L50 46', 'ik', 1.4),
+                          ...[[20, 30], [30, 26], [40, 32], [25, 38], [36, 40]].map(([x, y]) =>
+                            P(`M${x - 4} ${y} L${x} ${y - 4} L${x + 4} ${y} L${x} ${y + 4} Z`, 'hi')),
+                          ...granules('gh', 6, 60, [14, 24, 46, 42])]);
+def('table_olive',  () => [E(24, 34, 11, 14, 'lo'), E(40, 40, 8, 10, 'lo'),
+                          E(20, 28, 3.4, 4, 'hi'),
+                          S('M24 20 Q26 14 30 12', 'ik', 1.6),
+                          ...[0, 1, 2].map(i => S(`M8 ${48 + i * 3} Q30 ${45 + i * 3} 52 ${48 + i * 3}`, 'gh', 1)),
+                          ...granules('bs', 5, 82, [10, 46, 50, 54])]);      // the brine, and what works in it
+def('puff_pastry',  () => [...[0, 1, 2, 3, 4, 5].map(i =>
+                            P(`M${8 + i} ${46 - i * 6} L${52 - i} ${46 - i * 6} L${52 - i} ${43 - i * 6} L${8 + i} ${43 - i * 6} Z`, 'lo')),
+                          ...[0, 1, 2, 3, 4].map(i =>
+                            [12, 24, 36, 48].map(x => S(`M${x} ${43 - i * 6} L${x} ${40 - i * 6}`, 'gh', 0.9))).flat(),
+                          S('M6 50 L54 50', 'ik', 1.4)]);
+def('creosote',     () => [vessel('bs', 22, 50),
+                          P('M18 34 L44 34 L43 48 Q30 51 19 48 Z', 'lo'),
+                          S('M18 32 Q30 28 44 32', 'hi', 1.6),
+                          ...[0, 1, 2].map(i => S(`M${22 + i * 8} 24 Q${20 + i * 8} 16 ${24 + i * 8} 10`, 'gh', 1.2)),
+                          C(30, 40, 2.4, 'hi')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

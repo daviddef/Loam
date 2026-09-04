@@ -485,6 +485,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    /* verb outcomes, 5 Sep. a loaf, a pastry, an olive, a bottle of it */
+    'stale_bread', 'puff_pastry', 'table_olive', 'creosote',
     /* places batch 18, 5 Sep. a cast vessel and its beads, decimetres */
     'igbo_ukwu_bronze',
     /* homonyms batch 2, 5 Sep. a Stegosaurus plate is decimetres; the biggest are near a metre */
