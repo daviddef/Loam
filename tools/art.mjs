@@ -44321,6 +44321,41 @@ def('drakensberg_art',()=>[P('M2 4 L58 4 L58 18 L2 18 Z', 'ik'),            // t
                             [S(`M${x} ${y} L${x} ${y + 7}`, 'hi', 1.4), C(x, y - 2, 1.6, 'hi'),
                              S(`M${x - 3} ${y + 3} L${x + 3} ${y + 2}`, 'hi', 1.2)]).flat()]);
 
+/* Places, batch 20 — 5 Sep. Copán is drawn as the stairway, because the text
+   IS the stairway; Dzanga-Sangha as one hole in a closed canopy, because that
+   is the only place the animals are visible.                                */
+def('lamu',         () => [P('M6 54 L6 24 L26 24 L26 54 Z', 'lo'), P('M34 54 L34 20 L54 20 L54 54 Z', 'lo'),
+                          ...granules('gh', 18, 137, [6, 24, 54, 40]),        // coral rag
+                          ...[0, 1, 2].map(i => S(`M6 ${30 + i * 8} L26 ${30 + i * 8}`, 'ik', 1.6)),   // mangrove poles, one room wide
+                          ...[0, 1, 2].map(i => S(`M34 ${28 + i * 8} L54 ${28 + i * 8}`, 'ik', 1.6)),
+                          P('M28 54 L28 34 Q30 30 32 34 L32 54 Z', 'bs')]);   // the door
+def('dzanga_sangha',()=>[...[8, 20, 44, 54].map(x => [S(`M${x} 56 L${x} 34`, 'ik', 2.2), C(x, 26, 9, 'lo')]).flat(),
+                          E(32, 46, 13, 8, 'gh'),                             // the bai
+                          E(30, 44, 6, 4, 'bs'), S('M25 44 Q22 40 25 37', 'bs', 2), S('M25 47 L21 50', 'ik', 1.6),
+                          ...granules('hi', 6, 66, [24, 48, 40, 52])]);       // the mineral soil they come for
+def('loango',       () => [wave('bs', 44, 2.4, 56),
+                          P('M6 44 L26 44 L26 30 L6 30 Z', 'lo'),
+                          S('M16 30 L16 10', 'ik', 2), S('M8 16 L24 16', 'ik', 1.6),
+                          P('M16 16 L26 20 L16 24 Z', 'hi'),                  // the ship
+                          ...[36, 44, 52].map(x => [C(x, 34, 3, 'gh'), S(`M${x} 37 L${x} 44`, 'gh', 1.2)]).flat()]);
+def('tsodilo',      () => [P('M2 56 Q10 30 18 56 Z', 'lo'), P('M16 56 Q28 18 40 56 Z', 'lo'),
+                          P('M38 56 Q46 32 54 56 Z', 'lo'),
+                          S('M2 56 L58 56', 'ik', 1.4),
+                          S('M24 40 L24 30 M24 34 L20 32 M24 34 L28 33 M24 30 L22 26 M24 30 L27 27', 'hi', 1.4),
+                          C(24, 24, 1.8, 'hi'),                               // one of the 4,500
+                          S('M30 44 Q34 40 32 36', 'hi', 1.4)]);
+def('old_quebec',   () => [P('M2 24 L30 24 L30 56 L2 56 Z', 'lo'),            // Upper Town, on the cliff
+                          P('M30 24 L34 40 L58 40 L58 56 L30 56 Z', 'bs'),    // and Lower, at the bottom of it
+                          ...[6, 14, 22].map(x => P(`M${x} 24 L${x} 18 L${x + 5} 18 L${x + 5} 24 Z`, 'lo')),
+                          S('M2 18 L28 18', 'ik', 2),                         // the wall
+                          S('M31 26 L35 40', 'hi', 1.6),                      // the funicular
+                          ...[38, 46, 54].map(x => P(`M${x - 3} 40 L${x - 3} 32 L${x + 3} 32 L${x + 3} 40 Z`, 'gh'))]);
+def('copan',        () => [...[0, 1, 2, 3, 4, 5, 6].map(i =>
+                            P(`M${10 + i * 2} ${54 - i * 6} L${50 - i * 2} ${54 - i * 6} L${50 - i * 2} ${48 - i * 6} L${10 + i * 2} ${48 - i * 6} Z`, 'lo')),
+                          ...[0, 1, 2, 3, 4, 5].map(i =>
+                            [0, 1, 2, 3].map(j => C(16 + j * 9 + i * 1.5, 51 - i * 6, 1.5, 'gh'))).flat(),   // 2,200 of them
+                          E(30, 10, 5, 4, 'bs')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
