@@ -726,6 +726,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* places batch 11, 4 Sep. a person */
+          'ancestral_puebloan',
           /* verb outcomes batch 1, 4 Sep. a clamp */
           'silage',
           /* places batch 9, 4 Sep. a person */
@@ -1027,6 +1029,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 11, 4 Sep. an overhang, metres deep */
+          'alcove',
           /* places batch 10, 4 Sep. a five-storey timber tower */
           'pagoda',
           /* places batch 8, 4 Sep. a single flyer, metres */
@@ -1142,6 +1146,10 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 11, 4 Sep. an order, on the conceptual rack with the other institutions */
+          'teutonic_order',
+          /* places batch 11, 4 Sep. a cliff-dwelling complex and a 21-hectare castle */
+          'mesa_verde', 'malbork',
           /* places batch 10, 4 Sep. a method, on the conceptual rack */
           'dendrochronology',
           /* places batch 10, 4 Sep. a temple precinct, a circle, a headland */

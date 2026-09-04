@@ -43332,6 +43332,30 @@ def('hadrians_wall',()=> [P('M4 52 L56 52 L56 34 L4 34 Z', 'lo'),
                           P('M4 56 L56 56 L52 60 L8 60 Z', 'bs'),
                           S('M4 26 Q30 22 56 26', 'gh', 1.4)]);               // the ditch in front
 
+/* Places, batch 11 — Northern America and Eastern Europe. Mesa Verde is drawn
+   inside its overhang, because the overhang is why it is still standing.    */
+def('alcove',      () => [P('M4 6 L56 6 L56 54 L4 54 Z', 'lo'),
+                          P('M14 54 Q14 22 30 20 Q46 22 46 54 Z', 'bs'),      // the undercut
+                          S('M4 24 L14 24', 'hi', 2.4),                       // the shale band
+                          S('M46 24 L56 24', 'hi', 2.4),
+                          ...[0, 1, 2].map(i => C(20 + i * 10, 26 + i % 2 * 3, 1.4, 'gh'))]);
+def('ancestral_puebloan',()=>[P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
+                          E(46, 40, 7, 9, 'bs'),                              // the olla
+                          ...[0, 1, 2].map(i => grain('hi', 12, 34 + i * 6, .7))]);
+def('mesa_verde',  () => [P('M4 6 L56 6 L56 54 L4 54 Z', 'bs'),
+                          P('M12 54 Q12 20 30 18 Q48 20 48 54 Z', 'gh'),      // the alcove, dark
+                          ...[0, 1, 2].map(i => P(`M${18 + i * 10} 52 L${26 + i * 10} 52 L${26 + i * 10} ${36 - i * 4} L${18 + i * 10} ${36 - i * 4} Z`, 'lo')),
+                          ...[0, 1, 2].map(i => P(`M${20 + i * 10} ${42 - i * 4} L${24 + i * 10} ${42 - i * 4} L${24 + i * 10} ${46 - i * 4} L${20 + i * 10} ${46 - i * 4} Z`, 'hi')),
+                          P('M14 52 L20 52 L20 44 L14 44 Z', 'hi')]);
+def('teutonic_order',()=>[P('M22 52 L22 30 Q30 22 38 30 L38 52 Z', 'lo'), C(30, 20, 7, 'lo'),
+                          P('M26 32 L34 32 L34 40 L42 40 L42 46 L34 46 L34 52 L26 52 L26 46 L18 46 L18 40 L26 40 Z', 'hi'),
+                          S('M46 12 L46 40', 'bs', 2.2)]);
+def('malbork',     () => [P('M6 52 L54 52 L54 24 L6 24 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => P(`M${8 + i * 13} 24 L${16 + i * 13} 24 L${16 + i * 13} ${12 + (i % 2) * 4} L${8 + i * 13} ${12 + (i % 2) * 4} Z`, 'lo')),
+                          ...[0, 1, 2, 3].map(i => P(`M${8 + i * 13} ${12 + (i % 2) * 4} L${12 + i * 13} ${7 + (i % 2) * 4} L${16 + i * 13} ${12 + (i % 2) * 4} Z`, 'bs')),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M8 ${30 + i * 5} L52 ${30 + i * 5}`, 'gh', 1)),  // brick courses
+                          P('M26 52 L34 52 L34 38 Q30 34 26 38 Z', 'bs')]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
