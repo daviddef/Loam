@@ -1096,6 +1096,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 43, 5 Sep. a citadel mound 50 m, tower houses, a wall 5-10 m */
+    'aleppo_citadel', 'sanaa_old_city', 'visby_wall',
     /* places batch 42, 5 Sep. temples, a cave temple, a theatre */
     'khajuraho', 'dambulla', 'pashupatinath', 'bosra',
     /* places batch 41, 5 Sep. a dome 44 m, a keep 27 m, a hypostyle hall, a wharf */
@@ -1291,6 +1293,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 43, 5 Sep. an old town on a ridge, a forum 130 by 50 m, 946 ha of landscape */
+    'edinburgh_old_town', 'roman_forum', 'sintra',
     /* places batch 42, 5 Sep. a basin 215 m long, a cave chamber 600 m */
     'lothal', 'gunung_mulu',
     /* places batch 41, 5 Sep. a buried town */

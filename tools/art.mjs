@@ -45173,6 +45173,42 @@ def('bosra',        () => [P('M4 50 A26 26 0 0 1 56 50 Z', 'ik'),               
                           ...[6, 18, 30, 42, 54].map(x => P(`M${x - 3} 50 L${x - 3} 42 L${x + 3} 42 L${x + 3} 50 Z`, 'ik')),   // the eight towers
                           S('M4 50 L56 50', 'bs', 1.6)]);
 
+/* Places, batch 43 — 5 Sep. Edinburgh is drawn as the crag and its tail, which
+   is the street plan; the Forum as a drained hollow with the ground rising.  */
+def('aleppo_citadel',()=>[P('M2 54 L14 24 L46 24 L58 54 Z', 'lo'),
+                          ...[0, 1, 2, 3, 4].map(i => S(`M${10 - i * 2} ${44 - i * 4} L${50 + i * 2} ${44 - i * 4}`, 'gh', 1)),   // the faced glacis
+                          P('M18 24 L42 24 L42 12 L18 12 Z', 'bs'),
+                          ...[22, 30, 38].map(x => P(`M${x - 3} 12 L${x - 3} 6 L${x + 3} 6 L${x + 3} 12 Z`, 'bs')),
+                          P('M2 54 L58 54 L58 58 L2 58 Z', 'ik'),               // the moat
+                          S('M26 54 L34 58', 'hi', 2.4)]);                      // and the bridge over it
+def('sanaa_old_city',()=>[S('M2 48 L58 48', 'ik', 3),
+                          ...[0, 1, 2, 3, 4].map(i =>
+                            [P(`M${5 + i * 11} 48 L${6 + i * 11} ${14 + (i % 3) * 6} L${13 + i * 11} ${14 + (i % 3) * 6} L${14 + i * 11} 48 Z`, 'lo'),
+                             ...[0, 1, 2, 3].map(j => C(9.5 + i * 11, 20 + (i % 3) * 6 + j * 6, 1.4, 'hi')),
+                             S(`M${5 + i * 11} ${16 + (i % 3) * 6} L${14 + i * 11} ${16 + (i % 3) * 6}`, 'hi', 1.6)]).flat()]);
+def('visby_wall',   () => [S('M2 34 L58 34', 'lo', 5),
+                          ...[8, 20, 32, 44, 54].map(x => [P(`M${x - 4} 34 L${x - 4} 18 L${x + 4} 18 L${x + 4} 34 Z`, 'lo'),
+                                                           P(`M${x - 5} 18 L${x} 10 L${x + 5} 18 Z`, 'bs')]).flat(),
+                          S('M2 30 L58 30', 'gh', 1.2),                         // the later raising
+                          P('M2 40 L58 40 L58 56 L2 56 Z', 'gh'),               // the town, on its slope
+                          wave('bs', 58, 1.2, 56)]);
+def('edinburgh_old_town',()=>[P('M6 40 L6 20 Q12 12 18 20 L18 40 Z', 'lo'),     // the crag
+                          P('M18 40 Q34 34 56 42 L56 48 Q34 42 18 46 Z', 'lo'), // and its tail
+                          S('M18 26 L56 40', 'ik', 2.4),                        // the street along it
+                          ...[0, 1, 2, 3, 4].map(i => [S(`M${24 + i * 7} ${28 + i * 2.6} L${26 + i * 7} ${20 + i * 2.6}`, 'gh', 1.2),
+                                                       S(`M${24 + i * 7} ${28 + i * 2.6} L${22 + i * 7} ${38 + i * 2.6}`, 'gh', 1.2)]).flat(),
+                          wave('bs', 14, 1.2, 56)]);                            // the Nor Loch
+def('roman_forum',  () => [P('M2 20 L14 20 L18 34 L42 34 L46 20 L58 20 L58 56 L2 56 Z', 'lo'),
+                          ...[0, 1, 2].map(i => S(`M18 ${34 + i * 5} L42 ${34 + i * 5}`, 'gh', 1)),   // the level, rising
+                          ...[22, 30, 38].map(x => [S(`M${x} 34 L${x} 22`, 'bs', 3), E(x, 21, 3, 1.4, 'bs')]).flat(),
+                          S('M18 46 L42 46', 'ik', 2),
+                          S('M28 46 L28 56', 'ik', 2)]);                        // the Cloaca under it
+def('sintra',       () => [...[0, 1, 2].map(i => S(`M2 ${8 + i * 5} Q30 ${5 + i * 5} 58 ${8 + i * 5}`, 'gh', 2.4)),
+                          P('M2 56 Q18 30 30 34 Q42 38 58 24 L58 56 Z', 'lo'),
+                          ...[10, 22, 44, 54].map((x, i) => [S(`M${x} 52 L${x} ${42 - i}`, 'ik', 1.6), C(x, 36 - i, 6, 'bs')]).flat(),
+                          P('M28 34 L40 34 L40 22 L28 22 Z', 'hi'),
+                          ...[30, 36].map(x => P(`M${x - 2} 22 L${x - 2} 14 L${x + 2} 14 L${x + 2} 22 Z`, 'hi'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
