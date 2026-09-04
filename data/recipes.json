@@ -94372,5 +94372,65 @@
     "why": "Meiosis is mitosis run twice with one round of copying, and with the homologous pairs swapping stretches first. That swap is the point: it is where the shuffling happens, and it is why no two gametes from one person are the same.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Meiosis"
+  },
+  {
+    "in": [
+      "magma",
+      "vein"
+    ],
+    "out": "ore",
+    "why": "Cooling magma sweats out water carrying whatever metals would not fit into the crystals forming around it. That fluid travels along cracks and drops its load where pressure or temperature changes, which is why ore is in veins rather than spread evenly through the rock.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ore"
+  },
+  {
+    "in": [
+      "bone",
+      "acid"
+    ],
+    "out": "phosphate",
+    "why": "Bone is mostly calcium phosphate, and acid pulls the phosphate straight back out of it. That is how the first phosphate fertiliser was made — ground bones and sulfuric acid — and it is why bone meal works at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bone_meal"
+  },
+  {
+    "in": [
+      "axon",
+      "glia"
+    ],
+    "out": "myelin_sheath",
+    "why": "A glial cell wraps its own membrane round an axon dozens of times, and membrane is mostly fat, which does not conduct. The insulated stretches force the signal to jump between the gaps instead of creeping along, which is about fifty times faster.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Myelin"
+  },
+  {
+    "in": [
+      "copper",
+      "wire"
+    ],
+    "out": "copper_wire",
+    "why": "Copper is drawn rather than rolled: pulled through a hole slightly smaller than itself, again and again. It stays ductile the whole way because it work-hardens slowly, which is precisely why it and not iron became the metal electricity travels through.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Copper_conductor"
+  },
+  {
+    "in": [
+      "neuron",
+      "neurotransmitter"
+    ],
+    "out": "synapse",
+    "why": "The two cells never touch. A gap of about twenty nanometres is crossed chemically — the arriving signal empties vesicles of transmitter into it, and the next cell reads the concentration. That gap is what makes a nervous system programmable rather than merely wired.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chemical_synapse"
+  },
+  {
+    "in": [
+      "gray_matter",
+      "dendrite"
+    ],
+    "out": "cerebral_cortex",
+    "why": "The cortex is grey because it is where the cell bodies and their dendrites are, and dendrites are where a neuron does its adding up. Folding it is how a large sheet of that fits inside a skull.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cerebral_cortex"
   }
 ]
