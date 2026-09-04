@@ -44356,6 +44356,43 @@ def('copan',        () => [...[0, 1, 2, 3, 4, 5, 6].map(i =>
                             [0, 1, 2, 3].map(j => C(16 + j * 9 + i * 1.5, 51 - i * 6, 1.5, 'gh'))).flat(),   // 2,200 of them
                           E(30, 10, 5, 4, 'bs')]);
 
+/* Places, batch 21 — 5 Sep. Kronborg is drawn as a narrow strait with a gun on
+   one side of it; Neuschwanstein with the pipework showing, because the
+   plumbing is the only honest thing about the building.                     */
+def('red_fort',     () => [P('M4 50 L4 22 L56 22 L56 50 Z', 'lo'),
+                          ...[10, 22, 34, 46].map(x => P(`M${x} 22 L${x} 14 L${x + 6} 14 L${x + 6} 22 Z`, 'lo')),
+                          S('M4 34 L56 34', 'gh', 3.4),                        // the Nahr-i-Bihisht, through it
+                          ...[16, 30, 44].map(x => E(x, 34, 4, 2.4, 'hi')),     // and the pools it feeds
+                          S('M4 50 L56 50', 'ik', 1.4)]);
+def('anuradhapura', () => [E(30, 40, 20, 16, 'lo'),
+                          P('M26 22 L34 22 L34 28 L26 28 Z', 'bs'), S('M30 12 L30 22', 'ik', 1.6),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${11 + i * 0.5} ${34 + i * 4} L${49 - i * 0.5} ${34 + i * 4}`, 'gh', 0.7)),  // brick courses
+                          S('M4 56 L56 56', 'ik', 1.2),
+                          S('M8 20 Q14 12 10 6', 'hi', 1.8), C(11, 6, 3, 'hi')]);   // the fig tree
+def('kronborg',     () => [P('M2 12 L20 12 L20 56 L2 56 Z', 'lo'), P('M46 12 L58 12 L58 56 L46 56 Z', 'lo'),
+                          wave('bs', 30, 2, 26), wave('bs', 42, 2, 26),          // 4 km of Sound
+                          P('M6 26 L18 26 L18 12 L6 12 Z', 'bs'),
+                          ...[8, 14].map(x => [P(`M${x} 12 L${x} 4 L${x + 4} 4 L${x + 4} 12 Z`, 'bs'),
+                                               P(`M${x - 1} 4 L${x + 2} 0 L${x + 5} 4 Z`, 'lo')]).flat(),
+                          S('M18 20 L30 20', 'ik', 2)]);                         // the gun that collects the toll
+def('geirangerfjord',()=>[P('M2 4 L14 4 L22 40 L22 56 L2 56 Z', 'lo'),
+                          P('M58 4 L46 4 L38 40 L38 56 L58 56 Z', 'lo'),
+                          P('M22 40 L38 40 L38 56 L22 56 Z', 'bs'),              // U-shaped, and flooded
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 1.5} 10 Q${17 + i * 1.5} 26 ${20 + i * 1.5} 40`, 'hi', 1.4)),
+                          P('M42 22 L48 22 L48 28 L42 28 Z', 'gh'),              // a farm on a ledge
+                          S('M48 25 L54 20', 'ik', 1)]);
+def('neuschwanstein',()=>[P('M14 56 L14 24 L46 24 L46 56 Z', 'lo'),
+                          ...[18, 30, 42].map(x => [P(`M${x - 5} 24 L${x - 5} 10 L${x + 5} 10 L${x + 5} 24 Z`, 'lo'),
+                                                    P(`M${x - 6} 10 L${x} 0 L${x + 6} 10 Z`, 'bs')]).flat(),
+                          ...[0, 1, 2].map(i => S(`M16 ${32 + i * 7} L44 ${32 + i * 7}`, 'ik', 1.4)),   // the pipework
+                          ...[0, 1, 2].map(i => C(20 + i * 10, 32, 1.4, 'hi'))]);
+def('dead_sea',     () => [P('M2 4 L14 4 L18 30 L42 30 L46 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M18 30 L42 30 L42 44 L18 44 Z', 'gh'),
+                          S('M18 30 L42 30', 'ik', 2),
+                          ...[0, 1, 2].map(i => S(`M${22 + i * 8} 24 L${22 + i * 8} 30`, 'hi', 1.2)),   // leaving as vapour
+                          ...granules('hi', 12, 342, [18, 44, 42, 52]),          // and the salt that stays
+                          ...[8, 50].map(x => C(x, 48, 3, 'bs'))]);              // the sinkholes
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

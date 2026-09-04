@@ -1090,6 +1090,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 21, 5 Sep. a stupa, a castle, a palace */
+    'anuradhapura', 'kronborg', 'neuschwanstein',
     /* places batch 20, 5 Sep. a stairway 21 m long, a coral-rag house, painted panels */
     'copan', 'lamu', 'tsodilo',
     /* places batch 19, 5 Sep. a temple on a rock, a palace, painted panels */
@@ -1253,6 +1255,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 21, 5 Sep. a fort of 2.41 km circuit */
+    'red_fort',
     /* places batch 20, 5 Sep. a walled town of 1.42 km2, a trading port */
     'old_quebec', 'loango',
     /* places batch 19, 5 Sep. a Roman town on a ridge, a castle on a shore */
@@ -1488,6 +1492,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 21, 5 Sep. a fjord 15 km long, a lake 605 km2 */
+    'geirangerfjord', 'dead_sea',
     /* places batch 14, 5 Sep. a caldera 72 by 45 km */
     'yellowstone',
     /* places batch 12, 5 Sep. a canyon 446 km long, a salt flat of 10,582 km2, a rock landscape */
