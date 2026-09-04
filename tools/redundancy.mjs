@@ -25,23 +25,59 @@ function downstream(id, seen = new Set()) {
   return seen;
 }
 
+/* How much would actually be LOST if this element could not be made?
+ *
+ * `downstream` counts everything reachable through an element, and in a graph
+ * this dense almost anything early reaches almost everything — so the top ten
+ * blockers all read 7,569, the size of the whole corpus, and the metric could
+ * not rank. A number that is the same for every entry is not a measurement.
+ *
+ * The real question is articulation: take the element away, walk the graph
+ * from the four starters again, and count what can no longer be reached. An
+ * element with one route whose removal strands nothing is not a chokepoint at
+ * all, however much sits downstream of it. */
+const outOf = new Map();
+for (const r of recipes) {
+  if (!outOf.has(r.out)) outOf.set(r.out, []);
+  outOf.get(r.out).push(r.in);
+}
+const startIds = starters.map((e) => e.id);
+function reachableWithout(blocked) {
+  const have = new Set(startIds);
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const [out, ways] of outOf) {
+      if (have.has(out) || out === blocked) continue;
+      for (const ins of ways) {
+        if (ins.every((i) => have.has(i))) { have.add(out); grew = true; break; }
+      }
+    }
+  }
+  return have;
+}
+const reachableAll = reachableWithout(null).size;
+const stranded = (id) => reachableAll - reachableWithout(id).size;
+
 const ratio = recipes.length / elements.length;
 console.log(`\nrecipes/element  ${ratio.toFixed(2)}   (target ≥2.00 · Little Alchemy 2 ≈ 4.7)`);
 console.log(`single-route     ${single.length} of ${made.length} made elements`);
 console.log(`recipes needed for 2.00: ${Math.max(0, Math.ceil(elements.length * 2 - recipes.length))}\n`);
 
 if (process.argv[2] === 'list') {
-  const rows = single.map((e) => ({ e, n: downstream(e.id).size }))
+  const rows = single.map((e) => ({ e, n: stranded(e.id) }))
+    .filter((x) => x.n > 1)
     .sort((a, b) => b.n - a.n);
-  console.log('single-route elements, worst blockers first:\n');
+  console.log(`single-route elements whose loss would strand something, worst first:\n`);
   for (const { e, n } of rows) {
     const r = recipes.find((x) => x.out === e.id);
     const via = r ? (r.verb ? `${r.in[0]} ⟶ ${r.verb}` : r.in.join(' + ')) : '—';
     console.log(`  gates ${String(n).padStart(3)}  ${e.name.padEnd(22)} ${via}`);
   }
 } else {
-  const rows = single.map((e) => downstream(e.id).size).sort((a, b) => b - a);
-  console.log(`worst single-route blocker gates ${rows[0]} elements`);
-  console.log(`top 10 gate: ${rows.slice(0, 10).join(', ')}`);
+  const rows = single.map((e) => stranded(e.id)).sort((a, b) => b - a);
+  const real = rows.filter((n) => n > 1);
+  console.log(`${real.length} single-route element(s) would strand something if lost`);
+  console.log(`worst strands ${rows[0]} others; top 10: ${rows.slice(0, 10).join(', ')}`);
   console.log(`\n  node tools/redundancy.mjs list   for the full list\n`);
 }

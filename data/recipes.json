@@ -94332,5 +94332,45 @@
     "why": "Its evenness is the giveaway: a stratovolcano builds itself out of its own ash and lava in alternating layers, and one that has not been disturbed grows into a cone. There are four of them stacked here, and the visible one is the youngest by about 90,000 years.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Mount_Fuji"
+  },
+  {
+    "in": [
+      "nucleosome",
+      "dna"
+    ],
+    "out": "chromatin",
+    "why": "A nucleosome is 146 base pairs wound on eight histones. Thread the linker DNA between them and you have chromatin — beads on a string, which is the form the genome actually spends most of its life in.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chromatin"
+  },
+  {
+    "in": [
+      "chromatin",
+      "telomere"
+    ],
+    "out": "chromosome",
+    "why": "Chromatin becomes a chromosome when it has ends and a middle: telomeres to stop the ends being read as breakage, and a centromere for the spindle to pull on. Without those it is just a very long thread.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chromosome"
+  },
+  {
+    "in": [
+      "meiosis",
+      "cell"
+    ],
+    "out": "ovum",
+    "why": "Meiosis in a female germ line divides the cytoplasm unequally on purpose: one cell keeps almost all of it and becomes the egg, and the others are discarded as polar bodies. The egg is the largest human cell and that is why.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Egg_cell"
+  },
+  {
+    "in": [
+      "mitosis",
+      "crossing_over"
+    ],
+    "out": "meiosis",
+    "why": "Meiosis is mitosis run twice with one round of copying, and with the homologous pairs swapping stretches first. That swap is the point: it is where the shuffling happens, and it is why no two gametes from one person are the same.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Meiosis"
   }
 ]
