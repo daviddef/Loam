@@ -1279,6 +1279,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 36, 5 Sep. a castle, a Roman colony, a medina of 300 ha, a coral town */
+    'elmina_castle', 'timgad', 'fes_el_bali', 'gedi',
     /* places batch 35, 5 Sep. a walled port, a garden of 11.9 ha, a cave system */
     'tulum', 'suzhou_gardens', 'cradle_of_humankind',
     /* places batch 32, 5 Sep. an abandoned capital and a palace on a hillside */
@@ -1546,6 +1548,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+    /* places batch 36, 5 Sep. 26 km of canyon */
+    'blyde_river_canyon',
     /* places batch 33, 5 Sep. islands 42 km2, a caldera, a park of volcanoes */
     'rock_islands_palau', 'kilauea', 'tongariro',
     /* places batch 28, 5 Sep. a massif, a valley 7.5 miles long, 132 km2 of karst, 4,187 ha of ruins */

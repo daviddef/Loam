@@ -44934,6 +44934,36 @@ def('suzhou_gardens',()=>[P('M2 4 L58 4 L58 56 L2 56 Z', 'gh'),
                           ...[0, 1, 2].map(i => C(20 + i * 5, 28 - i * 2, 1.2, 'ik')),
                           P('M42 34 L52 34 L52 26 L42 26 Z', 'lo'), P('M40 26 L47 20 L54 26 Z', 'hi')]);
 
+/* Places, batch 36 — 5 Sep. Timgad is drawn as a perfect grid with the sprawl
+   spilling off it, because the argument between the two is the site.        */
+def('elmina_castle',()=>[P('M6 24 L54 24 L54 46 L6 46 Z', 'lo'),
+                          ...[12, 26, 40, 50].map(x => P(`M${x - 5} 24 L${x - 5} 16 L${x + 5} 16 L${x + 5} 24 Z`, 'lo')),
+                          P('M6 46 L54 46 L54 52 L6 52 Z', 'ik'),
+                          ...[0, 1, 2].map(i => S(`M${16 + i * 14} 46 L${16 + i * 14} 52`, 'gh', 1)),
+                          P('M50 47 L54 47 L54 51 L50 51 Z', 'hi'),
+                          wave('bs', 56, 1.6, 56)]);
+def('timgad',       () => [...[0, 1, 2, 3, 4].map(i => S(`M14 ${16 + i * 6} L46 ${16 + i * 6}`, 'lo', 1.4)),
+                          ...[0, 1, 2, 3, 4, 5].map(i => S(`M${14 + i * 6.4} 16 L${14 + i * 6.4} 40`, 'lo', 1.4)),
+                          S('M14 28 L46 28', 'ik', 2.4), S('M30 16 L30 40', 'ik', 2.4),
+                          ...[[6, 46], [18, 48], [36, 46], [50, 44], [10, 10], [44, 8]].map(([x, y]) =>
+                            P(`M${x} ${y} L${x + 7} ${y - 1} L${x + 6} ${y + 5} L${x - 1} ${y + 6} Z`, 'gh')),   // the sprawl
+                          P('M20 20 L28 20 L28 26 L20 26 Z', 'bs')]);                                            // the library
+def('fes_el_bali',  () => [...[0, 1, 2, 3, 4].map(i =>
+                            [0, 1, 2, 3].map(j => P(`M${5 + j * 14 + (i % 2) * 3} ${6 + i * 10} L${16 + j * 14 + (i % 2) * 3} ${6 + i * 10} L${16 + j * 14 + (i % 2) * 3} ${14 + i * 10} L${5 + j * 14 + (i % 2) * 3} ${14 + i * 10} Z`, 'lo'))).flat(),
+                          S('M2 30 Q14 24 24 32 Q34 40 46 34 Q54 30 58 34', 'gh', 2.6),   // the one lane through it
+                          E(26, 34, 4, 2.6, 'bs'), S('M22 34 L18 32', 'ik', 1.4)]);       // and the donkey in it
+def('gedi',         () => [...[[10, 30], [26, 26], [44, 32], [18, 46], [40, 46]].map(([x, y]) =>
+                            P(`M${x - 7} ${y + 8} L${x - 7} ${y} L${x + 7} ${y} L${x + 7} ${y + 8} Z`, 'lo')),
+                          ...granules('gh', 16, 1041, [4, 22, 56, 54]),
+                          C(52, 16, 4, 'bs'), S('M52 20 L52 28', 'ik', 1.6),               // the well, deepened
+                          S('M48 12 L56 12', 'ik', 1.2),
+                          ...[10, 26, 44].map(x => S(`M${x} 38 L${x + 4} 42`, 'ik', 0.9))]);   // the drains
+def('blyde_river_canyon',()=>[P('M2 4 L24 4 L24 30 L36 30 L36 4 L58 4 L58 56 L2 56 Z', 'lo'),
+                          P('M24 30 L36 30 L36 56 L24 56 Z', 'gh'),
+                          ...[0, 1, 2].map(i => C(8 + i * 6, 14 + i * 3, 5, 'bs')),         // the rondavels
+                          S('M44 4 L44 34', 'hi', 3),                                       // and the falls that build
+                          ...[0, 1, 2].map(i => E(44, 36 + i * 5, 6 - i, 2, 'hi'))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 
