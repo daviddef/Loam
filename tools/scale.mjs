@@ -755,6 +755,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    /* places batch 5, 5 Sep. a hand specimen of alkaline lava */
+    'phonolite',
           /* blow and smother batch 1, 5 Sep */
           'blast',
           /* places batch 27, 4 Sep */
@@ -1066,6 +1068,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    /* places batch 5, 5 Sep. pyramids 6-30 m; a ziggurat 64 m by 45 m at the base */
+    'meroe_pyramids', 'ziggurat_of_ur',
           /* places batch 31, 4 Sep */
           'rock_cut_architecture',
           /* places batch 29, 4 Sep */
@@ -1201,6 +1205,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    /* places batch 5, 5 Sep. a mound thirteen hectares across; an arcade some 700 m long */
+    'catalhoyuk', 'segovia_aqueduct',
           /* places batch 33, 5 Sep */
           'mogao_caves',
           /* places batch 32, 4 Sep */
@@ -1331,6 +1337,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    /* places batch 5, 5 Sep. terraces climbing a whole valley side */
+    'banaue_terraces',
           /* places batch 34, 5 Sep */
           'mount_fuji',
           /* places batch 28, 4 Sep */

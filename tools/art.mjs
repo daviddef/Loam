@@ -43725,6 +43725,47 @@ def('clotted_cream',()=>[vessel('bs', 24, 48),
                           P('M16 30 Q30 26 44 30 L44 34 Q30 32 16 34 Z', 'hi'),
                           ...granules('gh', 5, 404, [20, 30, 40, 34])]);
 
+/* Places, batch 5 — six checklist places, each drawn for the fact that makes
+   it that place rather than a generic one of its kind. Meroë is drawn steep
+   and narrow because that is the whole difference from Giza; Çatalhöyük is
+   drawn as roofs with holes and a ladder, because it had no streets.        */
+def('phonolite',   () => [P('M8 34 L20 18 L44 16 L52 30 L40 46 L14 44 Z', 'lo'),
+                          S('M14 30 L46 26', 'hi', 1.4), S('M15 37 L45 33', 'hi', 1.4),
+                          // it rings when struck, which is where the name comes from
+                          S('M46 12 Q52 16 50 22', 'gh', 1.2),
+                          S('M50 8 Q59 15 55 25', 'gh', 1),
+                          C(24, 30, 1.5, 'gh'), C(33, 36, 1.3, 'gh'), C(38, 25, 1.2, 'gh')]);
+def('meroe_pyramids',()=>[P('M14 50 L22 14 L30 50 Z', 'lo'),              // ~70°, not 45
+                          P('M30 50 L37 22 L44 50 Z', 'lo'),
+                          P('M44 50 L49 30 L54 50 Z', 'lo'),
+                          P('M20 50 L20 42 L24 42 L24 50 Z', 'hi'),       // the offering chapel
+                          S('M6 50 L56 50', 'ik', 1.6),
+                          S('M22 14 L22 50', 'gh', 0.8), S('M37 22 L37 50', 'gh', 0.8)]);
+def('catalhoyuk',  () => [P('M8 30 L26 30 L26 50 L8 50 Z', 'lo'),         // packed wall to wall
+                          P('M26 24 L44 24 L44 50 L26 50 Z', 'lo'),
+                          P('M44 32 L56 32 L56 50 L44 50 Z', 'lo'),
+                          C(17, 30, 2.2, 'ik'), C(35, 24, 2.2, 'ik'), C(50, 32, 1.8, 'ik'),  // the roof holes
+                          S('M14 18 L20 30', 'hi', 1.4), S('M20 18 L26 30', 'hi', 1.4),      // the front door
+                          S('M15 21 L23 21', 'hi', 1), S('M17 25 L25 25', 'hi', 1),
+                          S('M8 50 L56 50', 'ik', 1.4)]);
+def('segovia_aqueduct',()=>[S('M6 16 L54 16', 'lo', 3), S('M6 32 L54 32', 'lo', 3),
+                          ...[10, 26, 42].map(x => P(`M${x} 32 Q${x} 22 ${x + 6} 22 Q${x + 12} 22 ${x + 12} 32 Z`, 'gh')),
+                          ...[10, 26, 42].map(x => P(`M${x} 50 Q${x} 38 ${x + 6} 38 Q${x + 12} 38 ${x + 12} 50 Z`, 'gh')),
+                          S('M6 10 L54 10', 'hi', 1.6),                   // the channel it all exists to carry
+                          S('M6 50 L54 50', 'ik', 1.4)]);
+def('banaue_terraces',()=>[...[[6, 46, 54], [9, 38, 51], [13, 30, 47], [18, 22, 42], [24, 15, 36]]
+                            .map(([a, y, b]) => S(`M${a} ${y} Q30 ${y - 6} ${b} ${y}`, 'lo', 2.6)),
+                          S('M30 12 L30 48', 'ik', 1),                    // the water, coming down
+                          C(18, 43, 1.3, 'hi'), C(26, 35, 1.3, 'hi'),
+                          C(36, 35, 1.3, 'hi'), C(40, 43, 1.3, 'hi')]);
+def('ziggurat_of_ur',()=>[P('M6 50 L10 40 L50 40 L54 50 Z', 'lo'),
+                          P('M13 40 L16 30 L44 30 L47 40 Z', 'lo'),
+                          P('M20 30 L22 21 L38 21 L40 30 Z', 'lo'),
+                          P('M27 21 L27 14 L33 14 L33 21 Z', 'hi'),
+                          S('M30 50 L30 21', 'ik', 2.2),                  // the monumental stair
+                          S('M12 46 L48 46', 'gh', 0.9), S('M15 36 L45 36', 'gh', 0.9),
+                          S('M21 26 L39 26', 'gh', 0.9)]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

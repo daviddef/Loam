@@ -1,1628 +1,1709 @@
 {
-  "$comment": "Landmarks, wonders, structures and sites — the places a person can stand in. A landmark is the one kind of element where being generically true is a failure: 'a castle in Croatia' is a category with a name stuck on it. What makes Nehaj Nehaj is that it was finished in 1558 by Ivan Lenkovic out of the stone of the churches and monasteries demolished outside Senj's walls, so a besieging Ottoman force could not shelter in them. That single fact explains its date, its material, its silhouette and its politics at once. This file exists to hold that depth, and to measure where the corpus has it and where it only has a name.",
-  "$rules": [
-    "Every key is an element id. A place entry for an element that does not exist is an error, and so is a landmark element with no entry.",
-    "when / who / of / site are the four facts that make a place specific rather than generic. A place carrying none of them is a category wearing a proper noun.",
-    "of is what it is MADE of, and it should name elements this corpus already has, so a landmark joins the graph rather than hanging off it. For a natural wonder, of is the rock and the process.",
-    "site answers 'why here' — the fact about the ground that explains the building. A fortress on a bare hill in cannon range of its harbour is not the same claim as a fortress somewhere in Croatia.",
-    "wanted is the global checklist and it is the whole point of the file. Coverage measured against what we happen to have is not coverage; it is a total. Measured against a world list, a corpus of European castles reports itself as one.",
-    "Regions are the UN M49 subregions, unchanged, so the denominator is somebody else's and cannot be quietly redrawn to flatter the numerator.",
-    "A place whose element name differs from its checklist line names that line in `checklist`. The claim is explicit because a matcher loose enough to pair 'Kuk Swamp' with 'Kuk Early Agricultural Site' would also pair things that are not the same place, and a coverage number is only worth having if it never counts wrongly."
-  ],
-  "$src": {
-    "regions": "https://unstats.un.org/unsd/methodology/m49/",
-    "note": "Individual places carry their own srcTitle, resolved by tools/sources.mjs like every other citation in this repository."
+ "$comment": "Landmarks, wonders, structures and sites — the places a person can stand in. A landmark is the one kind of element where being generically true is a failure: 'a castle in Croatia' is a category with a name stuck on it. What makes Nehaj Nehaj is that it was finished in 1558 by Ivan Lenkovic out of the stone of the churches and monasteries demolished outside Senj's walls, so a besieging Ottoman force could not shelter in them. That single fact explains its date, its material, its silhouette and its politics at once. This file exists to hold that depth, and to measure where the corpus has it and where it only has a name.",
+ "$rules": [
+  "Every key is an element id. A place entry for an element that does not exist is an error, and so is a landmark element with no entry.",
+  "when / who / of / site are the four facts that make a place specific rather than generic. A place carrying none of them is a category wearing a proper noun.",
+  "of is what it is MADE of, and it should name elements this corpus already has, so a landmark joins the graph rather than hanging off it. For a natural wonder, of is the rock and the process.",
+  "site answers 'why here' — the fact about the ground that explains the building. A fortress on a bare hill in cannon range of its harbour is not the same claim as a fortress somewhere in Croatia.",
+  "wanted is the global checklist and it is the whole point of the file. Coverage measured against what we happen to have is not coverage; it is a total. Measured against a world list, a corpus of European castles reports itself as one.",
+  "Regions are the UN M49 subregions, unchanged, so the denominator is somebody else's and cannot be quietly redrawn to flatter the numerator.",
+  "A place whose element name differs from its checklist line names that line in `checklist`. The claim is explicit because a matcher loose enough to pair 'Kuk Swamp' with 'Kuk Early Agricultural Site' would also pair things that are not the same place, and a coverage number is only worth having if it never counts wrongly."
+ ],
+ "$src": {
+  "regions": "https://unstats.un.org/unsd/methodology/m49/",
+  "note": "Individual places carry their own srcTitle, resolved by tools/sources.mjs like every other citation in this repository."
+ },
+ "regions": [
+  {
+   "id": "north_africa",
+   "name": "Northern Africa"
   },
-  "regions": [
-    {
-      "id": "north_africa",
-      "name": "Northern Africa"
-    },
-    {
-      "id": "west_africa",
-      "name": "Western Africa"
-    },
-    {
-      "id": "middle_africa",
-      "name": "Middle Africa"
-    },
-    {
-      "id": "east_africa",
-      "name": "Eastern Africa"
-    },
-    {
-      "id": "south_africa_r",
-      "name": "Southern Africa"
-    },
-    {
-      "id": "north_america",
-      "name": "Northern America"
-    },
-    {
-      "id": "central_america",
-      "name": "Central America"
-    },
-    {
-      "id": "caribbean",
-      "name": "Caribbean"
-    },
-    {
-      "id": "south_america",
-      "name": "South America"
-    },
-    {
-      "id": "central_asia",
-      "name": "Central Asia"
-    },
-    {
-      "id": "east_asia",
-      "name": "Eastern Asia"
-    },
-    {
-      "id": "southeast_asia",
-      "name": "South-eastern Asia"
-    },
-    {
-      "id": "south_asia",
-      "name": "Southern Asia"
-    },
-    {
-      "id": "west_asia",
-      "name": "Western Asia"
-    },
-    {
-      "id": "north_europe",
-      "name": "Northern Europe"
-    },
-    {
-      "id": "south_europe",
-      "name": "Southern Europe"
-    },
-    {
-      "id": "east_europe",
-      "name": "Eastern Europe"
-    },
-    {
-      "id": "west_europe",
-      "name": "Western Europe"
-    },
-    {
-      "id": "anz",
-      "name": "Australia and New Zealand"
-    },
-    {
-      "id": "melanesia",
-      "name": "Melanesia"
-    },
-    {
-      "id": "micronesia",
-      "name": "Micronesia"
-    },
-    {
-      "id": "polynesia",
-      "name": "Polynesia"
-    }
-  ],
-  "kinds": [
-    {
-      "id": "fortification",
-      "name": "Fortification",
-      "note": "Walls, castles, forts. Built against somebody, which is why they carry the clearest politics of any structure."
-    },
-    {
-      "id": "worship",
-      "name": "Place of worship",
-      "note": "Temples, churches, mosques, stupas, shrines."
-    },
-    {
-      "id": "tomb",
-      "name": "Tomb or burial",
-      "note": "Pyramids, mausolea, barrows, necropolises."
-    },
-    {
-      "id": "palace",
-      "name": "Palace or seat",
-      "note": "Where power sat, as distinct from where it defended itself."
-    },
-    {
-      "id": "monument",
-      "name": "Monument or statue",
-      "note": "Built to be looked at rather than used."
-    },
-    {
-      "id": "engineering",
-      "name": "Engineering work",
-      "note": "Bridges, aqueducts, canals, roads, dams — the structures whose purpose is entirely function."
-    },
-    {
-      "id": "settlement",
-      "name": "Settlement or site",
-      "note": "Cities, archaeological sites, whole places rather than single buildings."
-    },
-    {
-      "id": "industry",
-      "name": "Industrial site",
-      "note": "Mines, mills, furnaces, yards. The heritage that is usually listed last and demolished first."
-    },
-    {
-      "id": "natural",
-      "name": "Natural wonder",
-      "note": "Not built. Derives from rock, water and time — and sometimes from living things, which is what makes Plitvice a different claim from a canyon."
-    },
-    {
-      "id": "rock_art",
-      "name": "Rock art or early mark",
-      "note": "The oldest deliberate marks people left on places, and the only kind of site that is global at every date."
-    }
-  ],
-  "places": {
-    "nehaj": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "fortification",
-      "when": "finished 1558",
-      "who": "Ivan Lenković, Croatian general and captain of the Uskoks",
-      "of": [
-        "limestone",
-        "stone",
-        "mortar"
-      ],
-      "site": "a bare hill directly above Senj, in cannon range of the harbour, with nothing left standing around it to shelter a besieging force — the churches, monasteries and houses outside the walls were demolished and their stone went into the fortress",
-      "size": "18 m tall, 23 m wide, walls 2-3 m thick, five towers, eleven cannon openings",
-      "srcTitle": "Nehaj Fortress"
-    },
-    "senj": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "settlement",
-      "when": "inhabited over 3,000 years; a Roman municipality from 35 BC",
-      "who": "Iapodes, then Rome, then the Habsburg frontier",
-      "of": [
-        "harbour",
-        "velebit"
-      ],
-      "site": "the seaward end of the Vratnik pass, where the only easy crossing of the Velebit reaches the Adriatic",
-      "srcTitle": "Senj"
-    },
-    "plitvice": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "natural",
-      "when": "still forming — the barriers grow up to 13 mm a year; national park 1949, UNESCO 1979",
-      "who": "moss and algae, which is the whole point: the dams are built by living things",
-      "of": [
-        "travertine",
-        "moss",
-        "limestone",
-        "dolomite",
-        "water"
-      ],
-      "site": "a karst valley where groundwater arrives saturated with calcium hydrogencarbonate; sixteen lakes drop 133 m from the first to the last",
-      "srcTitle": "Plitvice Lakes National Park"
-    },
-    "velebit": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "natural",
-      "when": "Mesozoic limestone, uplifted with the Dinarides",
-      "who": "—",
-      "of": [
-        "karst",
-        "limestone"
-      ],
-      "site": "145 km from Senj to the source of the Zrmanja, the seaward wall of the Dinaric karst; highest point Vaganski vrh, 1,758 m",
-      "srcTitle": "Velebit"
-    },
-    "great_pyramid": {
-      "region": "north_africa",
-      "country": "egypt",
-      "kind": "tomb",
-      "who": "built for Khufu",
-      "of": [
-        "limestone",
-        "granite"
-      ],
-      "srcTitle": "Great Pyramid of Giza",
-      "when": "about 2560 BC, Fourth Dynasty",
-      "site": "the Giza plateau, a limestone shelf firm enough to carry six million tonnes, west of the Nile so the river could carry the casing stone to it"
-    },
-    "colosseum": {
-      "region": "south_europe",
-      "country": "italy",
-      "kind": "monument",
-      "when": "finished 80 CE",
-      "of": [
-        "travertine",
-        "stone"
-      ],
-      "srcTitle": "Colosseum",
-      "who": "begun under Vespasian, finished under Titus",
-      "site": "the drained lake of Nero’s Golden House, given back to the city as a public building on the site of a private palace"
-    },
-    "great_wall": {
-      "region": "east_asia",
-      "country": "china",
-      "kind": "fortification",
-      "who": "Ming builders",
-      "of": [
-        "brick",
-        "sticky_rice_mortar",
-        "stone"
-      ],
-      "srcTitle": "Great Wall of China",
-      "when": "walls from the 7th century BC; the brick-faced wall that survives is Ming, 14th to 17th century",
-      "site": "the line where farmland gives out and steppe begins, which is why the wall follows a rainfall boundary rather than a border"
-    },
-    "forbidden_city": {
-      "region": "east_asia",
-      "country": "china",
-      "kind": "palace",
-      "who": "the Ming dynasty",
-      "of": [
-        "wood"
-      ],
-      "srcTitle": "Forbidden City",
-      "when": "built 1406-1420 under the Yongle Emperor",
-      "site": "the centre of Beijing on the north-south axis, walled and moated, with every hall facing south"
-    },
-    "terracotta_army": {
-      "region": "east_asia",
-      "country": "china",
-      "kind": "tomb",
-      "who": "Qin Shi Huang",
-      "of": [
-        "clay"
-      ],
-      "srcTitle": "Terracotta Army",
-      "when": "buried about 210-209 BC",
-      "site": "a pit complex about 1.5 km east of Qin Shi Huang's tomb mound, facing the direction his conquered enemies lay"
-    },
-    "angkor_wat": {
-      "region": "southeast_asia",
-      "country": "cambodia",
-      "kind": "worship",
-      "who": "Suryavarman II",
-      "srcTitle": "Angkor Wat",
-      "when": "begun 1122, finished 1150, under Suryavarman II",
-      "of": [
-        "sandstone",
-        "laterite"
-      ],
-      "site": "the Angkor plain, with five to ten million sandstone blocks brought about 40 km from Mount Kulen; a moat 190 m wide and over 5 km around, and — unusually for a Khmer temple — facing west"
-    },
-    "machu_picchu": {
-      "region": "south_america",
-      "country": "peru",
-      "kind": "settlement",
-      "when": "around 1450",
-      "who": "built for Pachacuti",
-      "of": [
-        "stone"
-      ],
-      "site": "a ridge between two peaks above the Urubamba",
-      "srcTitle": "Machu Picchu"
-    },
-    "ishtar_gate": {
-      "region": "west_asia",
-      "country": "iraq",
-      "kind": "monument",
-      "who": "Nebuchadnezzar II",
-      "of": [
-        "clay",
-        "glass"
-      ],
-      "srcTitle": "Ishtar Gate",
-      "when": "about 575 BCE",
-      "site": "the eighth gate of Babylon's inner wall, opening onto the processional way, so it was the first thing a visitor saw"
-    },
-    "lighthouse_of_alexandria": {
-      "region": "north_africa",
-      "country": "egypt",
-      "kind": "engineering",
-      "who": "Sostratus of Cnidus",
-      "of": [
-        "limestone"
-      ],
-      "srcTitle": "Lighthouse of Alexandria",
-      "when": "built about 280-247 BC; brought down by earthquakes between 956 and 1323",
-      "site": "the island of Pharos at the harbour mouth, on a coast so flat that a ship had no landmark to steer by without it"
-    },
-    "mausoleum_halicarnassus": {
-      "region": "west_asia",
-      "country": "turkiye",
-      "kind": "tomb",
-      "who": "Artemisia II, for Mausolus",
-      "of": [
-        "marble"
-      ],
-      "srcTitle": "Mausoleum at Halicarnassus",
-      "when": "about 350 BCE",
-      "site": "a hillside above the harbour of Halicarnassus, visible from the sea it was meant to be admired from"
-    },
-    "colossus_of_rhodes": {
-      "region": "south_europe",
-      "country": "greece",
-      "kind": "monument",
-      "who": "Chares of Lindos",
-      "of": [
-        "bronze"
-      ],
-      "srcTitle": "Colossus of Rhodes",
-      "when": "built 292-280 BC; fell in an earthquake about 226 BC, after 54 years",
-      "site": "the harbour of Rhodes, paid for by selling the siege equipment an unsuccessful besieger left behind"
-    },
-    "temple_of_artemis": {
-      "region": "west_asia",
-      "country": "turkiye",
-      "kind": "worship",
-      "who": "funded by Croesus",
-      "of": [
-        "marble"
-      ],
-      "srcTitle": "Temple of Artemis",
-      "when": "the marble temple about 550 BC, burned 356 BC, rebuilt, destroyed 262 AD",
-      "site": "a marshy site near Ephesus chosen deliberately — soft ground was thought to cushion earthquakes"
-    },
-    "statue_of_zeus": {
-      "region": "south_europe",
-      "country": "greece",
-      "kind": "monument",
-      "who": "Pheidias",
-      "of": [
-        "chryselephantine"
-      ],
-      "srcTitle": "Statue of Zeus at Olympia",
-      "when": "about 435 BC",
-      "site": "inside the temple at Olympia, built so large for the space that Zeus would have taken the roof off if he stood up"
-    },
-    "hanging_gardens": {
-      "region": "west_asia",
-      "country": "iraq",
-      "kind": "monument",
-      "who": "attributed to Nebuchadnezzar II — and never securely located",
-      "srcTitle": "Hanging Gardens of Babylon",
-      "when": "described in Greek sources from the 3rd century BC onward",
-      "of": [
-        "brick"
-      ],
-      "site": "never securely located — no Babylonian text mentions them, and one reading puts them at Nineveh instead"
-    },
-    "lanse_aux_meadows": {
-      "region": "north_america",
-      "country": "canada",
-      "kind": "settlement",
-      "who": "Norse",
-      "site": "a landing at the northern tip of Newfoundland",
-      "srcTitle": "L'Anse aux Meadows",
-      "when": "about 1021 AD, dated by a solar storm recorded in the wood",
-      "of": [
-        "turf",
-        "wood"
-      ]
-    },
-    "nabta_playa": {
-      "region": "north_africa",
-      "country": "egypt",
-      "kind": "settlement",
-      "site": "a seasonal lakebed in the Nubian Desert",
-      "srcTitle": "Nabta Playa",
-      "when": "occupied from about 9000 BCE; the stone circle around 4800 BCE",
-      "who": "cattle-herding people of the Nubian Desert",
-      "of": [
-        "stone"
-      ]
-    },
-    "lalibela": {
-      "region": "east_africa",
-      "country": "ethiopia",
-      "kind": "worship",
-      "when": "late 12th to early 13th century, under Gebre Meskel Lalibela of the Zagwe",
-      "who": "Zagwe masons, cutting downward",
-      "of": [
-        "basalt"
-      ],
-      "site": "a highland plateau of scoriaceous basalt soft enough to cut and sound enough to stand once the trenches are open",
-      "srcTitle": "Rock-Hewn Churches, Lalibela",
-      "checklist": "Lalibela rock-hewn churches"
-    },
-    "great_zimbabwe": {
-      "region": "east_africa",
-      "country": "zimbabwe",
-      "kind": "settlement",
-      "when": "built from the 11th century, the Great Enclosure 13th-15th, abandoned in the 16th or 17th",
-      "who": "ancestors of the Shona",
-      "of": [
-        "granite"
-      ],
-      "site": "granite hills that exfoliate in flat sheets under daily heating and cooling, so the building stone arrives already the right shape and needs no mortar",
-      "srcTitle": "Great Zimbabwe"
-    },
-    "olduvai_gorge": {
-      "region": "east_africa",
-      "country": "tanzania",
-      "kind": "settlement",
-      "when": "beds spanning 1.85 million to 600,000 years ago; Zinjanthropus found July 1959, Homo habilis May 1960",
-      "who": "Homo habilis and Homo erectus, then Louis and Mary Leakey",
-      "of": [
-        "ash",
-        "stone"
-      ],
-      "site": "48 km of gorge eroded up to 90 m into Pleistocene lake beds, so the sequence stands exposed in order",
-      "srcTitle": "Olduvai Gorge"
-    },
-    "aksum_obelisk": {
-      "region": "east_africa",
-      "country": "ethiopia",
-      "kind": "monument",
-      "when": "4th century CE; removed to Rome 1937, returned 2005, re-erected 2008",
-      "who": "Aksumite quarrymen",
-      "of": [
-        "granite"
-      ],
-      "site": "the stelae field at Aksum, on the trade road between the Red Sea and the highlands",
-      "srcTitle": "Obelisk of Axum"
-    },
-    "kilwa_kisiwani": {
-      "region": "east_africa",
-      "country": "tanzania",
-      "kind": "settlement",
-      "when": "Great Mosque begun 1131-1170; the city's peak 13th to 15th centuries",
-      "who": "Swahili merchants; Husuni Kubwa built for Sultan al-Hasan ibn Sulaiman",
-      "of": [
-        "coral",
-        "limestone"
-      ],
-      "site": "an island with no building stone and a harbour commanding the route to the Sofala gold",
-      "srcTitle": "Kilwa Kisiwani"
-    },
-    "mapungubwe": {
-      "region": "south_africa_r",
-      "country": "south_africa",
-      "kind": "settlement",
-      "when": "about 1220-1300; UNESCO 2003",
-      "who": "a kingdom of 5,000 by 1250",
-      "of": [
-        "gold",
-        "ivory",
-        "glass"
-      ],
-      "site": "the confluence of the Limpopo and the Shashe, on the inland end of the Indian Ocean gold route",
-      "srcTitle": "Mapungubwe"
-    },
-    "twyfelfontein": {
-      "region": "south_africa_r",
-      "country": "namibia",
-      "kind": "rock_art",
-      "when": "engravings roughly 6,000 to 1,000 years old; UNESCO 2007",
-      "who": "hunter-gatherers, later herders",
-      "of": [
-        "sandstone",
-        "desert_varnish"
-      ],
-      "site": "sandstone slabs around a spring in the Damaraland desert — the Damara name means jumping waterhole",
-      "srcTitle": "Twyfelfontein"
-    },
-    "ngorongoro": {
-      "region": "east_africa",
-      "country": "tanzania",
-      "kind": "natural",
-      "when": "the volcano active 2.45 to 2 million years ago, then collapsed",
-      "of": [
-        "basalt",
-        "ash"
-      ],
-      "site": "a caldera 610 m deep with a 260 km2 floor, whose rim holds grazing and water together so about 25,000 large animals stay put",
-      "srcTitle": "Ngorongoro Crater"
-    },
-    "uluru": {
-      "region": "anz",
-      "country": "australia",
-      "kind": "natural",
-      "when": "the Mutitjulu Arkose laid down 550-530 million years ago",
-      "who": "—",
-      "of": [
-        "arkose",
-        "feldspar"
-      ],
-      "site": "a bed of coarse arkose tipped almost vertical and left standing when the softer rock around it eroded away; 348 m above the plain, 9.4 km around, most of it still underground",
-      "srcTitle": "Uluru"
-    },
-    "budj_bim": {
-      "region": "anz",
-      "country": "australia",
-      "kind": "engineering",
-      "when": "one trap carbon-dated to 6,600 years; the wider system estimated up to 8,000",
-      "who": "the Gunditjmara",
-      "of": [
-        "basalt"
-      ],
-      "site": "the Tyrendarra lava flow, which blocked the old drainage and made the wetlands the system steers",
-      "srcTitle": "Budj Bim heritage areas"
-    },
-    "sydney_opera_house": {
-      "region": "anz",
-      "country": "australia",
-      "kind": "monument",
-      "when": "competition 1957, opened 1973",
-      "who": "Jørn Utzon",
-      "of": [
-        "concrete"
-      ],
-      "site": "Bennelong Point, a peninsula seen from three sides, which is why the roof had to work as a fifth elevation",
-      "srcTitle": "Sydney Opera House"
-    },
-    "great_barrier_reef": {
-      "region": "anz",
-      "country": "australia",
-      "kind": "natural",
-      "when": "the present reef about 500,000 years old, the living veneer around 8,000",
-      "who": "coral polyps — the largest structure any living thing has built",
-      "of": [
-        "coral",
-        "limestone"
-      ],
-      "site": "a shallow continental shelf in warm clear water, which is the only place reef-building coral can work",
-      "srcTitle": "Great Barrier Reef"
-    },
-    "moai": {
-      "region": "polynesia",
-      "country": "chile",
-      "kind": "monument",
-      "when": "carved between about 1250 and 1500",
-      "who": "the Rapa Nui",
-      "of": [
-        "tuff",
-        "basalt"
-      ],
-      "site": "Rano Raraku, one quarry of compressed volcanic ash that supplied all but 53 of more than 900 figures; 394 are still there unfinished",
-      "srcTitle": "Moai",
-      "checklist": "Rapa Nui moai"
-    },
-    "nan_madol": {
-      "region": "micronesia",
-      "country": "micronesia",
-      "kind": "settlement",
-      "when": "settled around AD 1; megalithic building from about 1180",
-      "who": "the Saudeleur dynasty",
-      "of": [
-        "columnar_basalt",
-        "coral"
-      ],
-      "site": "a coral reef flat off Temwen Island, cut by tidal canals into 92 artificial islets over 1.5 by 0.5 km",
-      "srcTitle": "Nan Madol"
-    },
-    "skara_brae": {
-      "region": "north_europe",
-      "country": "united_kingdom",
-      "kind": "settlement",
-      "when": "occupied about 3180 to 2500 BC; uncovered by a storm in 1850",
-      "who": "Neolithic Orcadians",
-      "of": [
-        "stone"
-      ],
-      "site": "a treeless island where the only building material is flagstone, so even the beds and dressers are stone; buried in a dune until a storm took it off",
-      "srcTitle": "Skara Brae"
-    },
-    "newgrange": {
-      "region": "north_europe",
-      "country": "ireland",
-      "kind": "tomb",
-      "when": "about 3100 BC; the solstice alignment first re-observed 21 December 1967",
-      "who": "Neolithic builders of the Boyne valley",
-      "of": [
-        "stone",
-        "corbel_vault"
-      ],
-      "site": "a ridge above the Boyne, oriented so the roof-box admits the midwinter sunrise down a 19 m passage; the mound is 85 m across and 12 m high",
-      "srcTitle": "Newgrange"
-    },
-    "lascaux": {
-      "region": "west_europe",
-      "country": "france",
-      "kind": "rock_art",
-      "when": "17,000 to 22,000 years old; found 12 September 1940, closed to the public 1963",
-      "who": "Magdalenian painters",
-      "of": [
-        "ochre",
-        "hematite"
-      ],
-      "site": "a sealed limestone cave in the Dordogne whose stable air preserved the pigment — and whose stability is exactly what visitors destroyed",
-      "srcTitle": "Lascaux"
-    },
-    "iron_bridge": {
-      "region": "north_europe",
-      "country": "united_kingdom",
-      "kind": "engineering",
-      "when": "opened 1 January 1781",
-      "who": "designed by Thomas Farnolls Pritchard, cast by Abraham Darby III",
-      "of": [
-        "cast_iron"
-      ],
-      "site": "the Severn gorge at Coalbrookdale, where the river had to be crossed and the foundry that could cast the ribs was already on the bank",
-      "srcTitle": "The Iron Bridge"
-    },
-    "wieliczka": {
-      "region": "east_europe",
-      "country": "poland",
-      "kind": "industry",
-      "when": "documented from 1044, shaft-mined from the 13th century, sold salt until 1996",
-      "who": "generations of miners, who carved the chapels themselves",
-      "of": [
-        "rock_salt"
-      ],
-      "site": "a salt bed near Krakow, 327 m deep with 287 km of galleries",
-      "srcTitle": "Wieliczka Salt Mine"
-    },
-    "gobekli_tepe": {
-      "region": "west_asia",
-      "country": "turkiye",
-      "kind": "worship",
-      "when": "about 9500 to at least 8000 BCE",
-      "who": "hunter-gatherers, before farming",
-      "of": [
-        "limestone"
-      ],
-      "site": "a limestone ridge above the Harran plain; four enclosures excavated of about twenty, 10 to 30 m across",
-      "srcTitle": "Göbekli Tepe"
-    },
-    "petra": {
-      "region": "west_asia",
-      "country": "jordan",
-      "kind": "settlement",
-      "when": "Nabataean capital from the 2nd century BC, at its height in the 1st century AD with about 20,000 people",
-      "who": "the Nabataeans",
-      "of": [
-        "sandstone"
-      ],
-      "site": "a sandstone basin entered through the Siq, a natural cleft 3-4 m wide, watered entirely by dams, conduits and cisterns the Nabataeans built",
-      "srcTitle": "Petra"
-    },
-    "borobudur": {
-      "region": "southeast_asia",
-      "country": "indonesia",
-      "kind": "worship",
-      "when": "begun about 780 CE, finished about 833, under the Sailendra",
-      "who": "the Sailendra dynasty",
-      "of": [
-        "andesite"
-      ],
-      "site": "a hill on the Kedu Plain between volcanoes, with the Progo riverbed supplying 55,000 cubic metres of andesite; 118 m to a side, 35 m high",
-      "srcTitle": "Borobudur"
-    },
-    "nazca_lines": {
-      "region": "south_america",
-      "country": "peru",
-      "kind": "rock_art",
-      "when": "between 500 BC and 500 AD",
-      "who": "the Paracas and then the Nazca",
-      "of": [
-        "desert_pavement"
-      ],
-      "site": "a rainless windless plateau whose limey subsoil hardens into a crust — the only reason 1,300 km of shallow line has lasted two thousand years",
-      "srcTitle": "Nazca Lines"
-    },
-    "djenne_mosque": {
-      "region": "west_africa",
-      "country": "mali",
-      "kind": "worship",
-      "when": "the present building completed 1907; the first mosque here 13th-14th century",
-      "who": "the masons' guild of Djenné, and the whole town every year",
-      "of": [
-        "adobe",
-        "toron",
-        "plaster"
-      ],
-      "site": "a platform 3 m above the marketplace, which is what keeps the Bani flood out of a building made of earth",
-      "srcTitle": "Great Mosque of Djenné",
-      "checklist": "Great Mosque of Djenne"
-    },
-    "citadelle_laferriere": {
-      "region": "caribbean",
-      "country": "haiti",
-      "kind": "fortification",
-      "when": "commissioned 1805, completed 1820",
-      "who": "Henri Christophe — at a cost of up to 20,000 lives",
-      "of": [
-        "stone",
-        "cannon"
-      ],
-      "site": "the 900 m summit of Bonnet à l'Évêque, several kilometres inland, so any French landing would have to climb to it; 365 cannon and stores for 5,000 men for a year",
-      "srcTitle": "Citadelle Laferrière"
-    },
-    "registan": {
-      "region": "central_asia",
-      "country": "uzbekistan",
-      "kind": "worship",
-      "when": "Ulugh Beg madrasa 1417-1420, Sher-Dor 1619-1636, Tilya-Kori 1646-1660",
-      "who": "Ulugh Beg, then Yalangtoʻsh Bakhodir",
-      "of": [
-        "tilework",
-        "brick"
-      ],
-      "site": "the square at the centre of Samarkand, where proclamations were read and executions held, on the Silk Road",
-      "srcTitle": "Registan",
-      "checklist": "Registan Samarkand"
-    },
-    "kuk_swamp": {
-      "region": "melanesia",
-      "country": "papua_new_guinea",
-      "kind": "engineering",
-      "when": "drainage from about 9,000 years ago; bananas and sugar cane by 6,900 to 6,400",
-      "who": "highland New Guinea farmers",
-      "of": [
-        "soil",
-        "stick",
-        "taro"
-      ],
-      "site": "a highland wetland at the edge of taro's range, drained by three grades of ditch; 116 hectares protected, UNESCO 2008",
-      "srcTitle": "Kuk Swamp",
-      "checklist": "Kuk Early Agricultural Site"
-    },
-    "mohenjo_daro": {
-      "region": "south_asia",
-      "country": "pakistan",
-      "kind": "settlement",
-      "when": "built about 2500 BCE, abandoned about 1700 BCE; rediscovered in the 1920s",
-      "who": "the Indus Valley civilisation",
-      "of": [
-        "brick",
-        "bitumen"
-      ],
-      "site": "the Indus floodplain — over 700 wells, one per three houses, and drains along a rectilinear grid",
-      "srcTitle": "Mohenjo-daro"
-    },
-    "cahokia": {
-      "region": "north_america",
-      "country": "united_states",
-      "kind": "settlement",
-      "when": "population rose from under 3,000 to over 10,000 between 1050 and 1100; abandoned by 1400",
-      "who": "Mississippian builders",
-      "of": [
-        "soil",
-        "timber"
-      ],
-      "site": "the Mississippi floodplain where maize would grow; about 120 earthworks, Monks Mound 30 m high and 622,000 cubic metres",
-      "srcTitle": "Cahokia",
-      "checklist": "Cahokia Mounds"
-    },
-    "teotihuacan": {
-      "region": "central_america",
-      "country": "mexico",
-      "kind": "settlement",
-      "when": "founded about 100 BCE, peak 350-650 CE, palaces burned about 550 CE",
-      "who": "unknown — the founders' origin and language are both undetermined",
-      "of": [
-        "stone",
-        "plaster"
-      ],
-      "site": "a valley with obsidian nearby; an avenue 2 km long and 45 m wide, and a pyramid of over a million cubic metres",
-      "srcTitle": "Teotihuacan"
-    },
-    "chartres": {
-      "region": "west_europe",
-      "country": "france",
-      "kind": "worship",
-      "when": "rebuilt 1194-1220 after a fire, re-consecrated October 1260",
-      "who": "unknown masons — no architect is named",
-      "of": [
-        "stone",
-        "stained_glass",
-        "flying_buttress"
-      ],
-      "site": "a hill above the Eure, on a crypt and towers that survived the fire and were built into the new church",
-      "srcTitle": "Chartres Cathedral"
-    },
-    "mont_saint_michel": {
-      "region": "west_europe",
-      "country": "france",
-      "kind": "worship",
-      "when": "the first church from 708; the abbey built up from the 8th century onward",
-      "who": "Benedictine monks, after Aubert of Avranches",
-      "of": [
-        "granite"
-      ],
-      "site": "a leucogranite outcrop 92 m high and 960 m around, in a bay with a 14 m tidal range — an island twice a day, and free defence the rest of the time",
-      "srcTitle": "Mont-Saint-Michel"
-    },
-    "mbanza_kongo": {
-      "region": "middle_africa",
-      "country": "angola",
-      "kind": "settlement",
-      "when": "founded about 1390, capital until the kingdom was abolished in 1915; UNESCO 2017",
-      "who": "Lukeni lua Nimi, then the kings of Kongo",
-      "of": [
-        "stone"
-      ],
-      "site": "a mountain top at a junction of major trade routes; about 130,000 people in the city and its hinterland by the 1620s",
-      "srcTitle": "M'banza-Kongo"
-    },
-    "diocletians_palace": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "palace",
-      "when": "begun about 295, finished by 305 when Diocletian abdicated",
-      "who": "Diocletian",
-      "of": [
-        "limestone",
-        "marble",
-        "brick"
-      ],
-      "site": "the Adriatic coast near the Brač quarries that supplied it; when Salona fell in the 7th century its refugees moved inside the walls, and about 3,000 people still live there",
-      "srcTitle": "Diocletian's Palace"
-    },
-    "dubrovnik_walls": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "fortification",
-      "when": "mainly 13th-17th centuries, the peak from the early 15th to the late 16th",
-      "who": "the Republic of Ragusa",
-      "of": [
-        "limestone",
-        "stone"
-      ],
-      "site": "a rock promontory with the sea on three sides, so the landward wall runs 4 to 6 m thick and the seaward as little as 1.5; 1,940 m around, up to 25 m high",
-      "srcTitle": "Walls of Dubrovnik"
-    },
-    "pula_arena": {
-      "region": "south_europe",
-      "country": "croatia",
-      "kind": "monument",
-      "when": "27 BC to AD 68, expanded under Vespasian and finished under Titus in 81",
-      "who": "Roman builders under Vespasian",
-      "of": [
-        "limestone"
-      ],
-      "site": "a slope outside the town walls, which carries part of the seating; 132.5 by 105.1 m, about 23,000 seats, and the only Roman amphitheatre with its whole outer ring still standing",
-      "srcTitle": "Pula Arena"
-    },
-    "horyuji": {
-      "region": "east_asia",
-      "country": "japan",
-      "kind": "worship",
-      "when": "the pagoda's central pillar felled in 594; Japan's first UNESCO site, 1993",
-      "who": "Asuka-period carpenters",
-      "of": [
-        "timber"
-      ],
-      "site": "the Nara basin; over 180 national treasures on one temple site, and the oldest standing wooden buildings in the world",
-      "srcTitle": "Hōryū-ji",
-      "checklist": "Horyu-ji"
-    },
-    "giants_causeway": {
-      "region": "north_europe",
-      "country": "united_kingdom",
-      "kind": "natural",
-      "when": "the lava erupted 50 to 60 million years ago, in the Paleocene",
-      "who": "—",
-      "of": [
-        "basalt",
-        "columnar_basalt"
-      ],
-      "site": "a coast cut back by the sea through the inside of a lava flow — about 40,000 columns, mostly hexagonal, the tallest around 12 m",
-      "srcTitle": "Giant's Causeway"
-    },
-    "stonehenge": {
-      "region": "north_europe",
-      "country": "united_kingdom",
-      "kind": "monument",
-      "when": "built in stages from about 3000 BC, the sarsen circle about 2500 BC",
-      "who": "Neolithic and Early Bronze Age builders",
-      "of": [
-        "stone",
-        "megalith"
-      ],
-      "site": "Salisbury Plain, with sarsens hauled about 25 km from the Marlborough Downs and bluestones some 250 km from the Preseli hills",
-      "srcTitle": "Stonehenge"
-    },
-    "hadrians_wall": {
-      "region": "north_europe",
-      "country": "united_kingdom",
-      "kind": "fortification",
-      "when": "begun AD 122, most of it built in about six years",
-      "who": "Legio II Augusta, VI Victrix and XX Valeria Victrix — about 15,000 men",
-      "of": [
-        "stone",
-        "turf"
-      ],
-      "site": "the narrowest part of Britain, 117 km coast to coast; a ditch in front, the Vallum behind, a milecastle every Roman mile and a turret every third",
-      "srcTitle": "Hadrian's Wall"
-    },
-    "mesa_verde": {
-      "region": "north_america",
-      "country": "united_states",
-      "kind": "settlement",
-      "when": "cliff dwellings mainly 1150-1300; abandoned about 1285 after the drought of 1276-1299",
-      "who": "Ancestral Puebloans",
-      "of": [
-        "sandstone",
-        "adobe"
-      ],
-      "site": "alcoves undercut where seeping water meets a shale band inside the Cliff House Sandstone — dry, shaded in summer, sunlit in winter, and out of the rain",
-      "srcTitle": "Mesa Verde National Park"
-    },
-    "malbork": {
-      "region": "east_europe",
-      "country": "poland",
-      "kind": "fortification",
-      "when": "built over 132 years, 1274-1406; over half destroyed in 1945, restored since 1962",
-      "who": "the Teutonic Order",
-      "of": [
-        "brick"
-      ],
-      "site": "the Nogat river on a plain with no building stone, so the order fired its own — 21 hectares inside the outer walls",
-      "srcTitle": "Malbork Castle"
-    },
-    "chichen_itza": {
-      "region": "central_america",
-      "country": "mexico",
-      "kind": "worship",
-      "when": "the city from about 600 CE; El Castillo in its present form 11th-13th century",
-      "who": "the Maya of the northern Yucatán",
-      "of": [
-        "limestone"
-      ],
-      "site": "four cenotes in one place, on a peninsula whose limestone drains every river underground — the water is the reason the city is here",
-      "srcTitle": "Chichen Itza"
-    },
-    "sigiriya": {
-      "region": "south_asia",
-      "country": "sri_lanka",
-      "kind": "palace",
-      "when": "built 477-495 CE under Kashyapa",
-      "who": "King Kashyapa",
-      "of": [
-        "granite",
-        "plaster"
-      ],
-      "site": "a granite inselberg 180 m above the plain, with one stair up through a gateway built as a lion, and water gardens at the foot that run on gravity",
-      "srcTitle": "Sigiriya"
-    },
-    "hagia_sophia": {
-      "region": "west_asia",
-      "country": "turkiye",
-      "kind": "worship",
-      "when": "built 532-537; the dome rebuilt after collapse in 558. Church to 1453, mosque to 1935, museum to 2020, mosque since",
-      "who": "Anthemius of Tralles and Isidore of Miletus",
-      "of": [
-        "brick",
-        "stone",
-        "pendentive"
-      ],
-      "site": "the first hill of Constantinople above the Bosphorus, on an active fault — which is why the first dome came down and the second was built steeper",
-      "srcTitle": "Hagia Sophia"
-    },
-    "sacsayhuaman": {
-      "region": "south_america",
-      "country": "peru",
-      "kind": "fortification",
-      "when": "built in the 15th century under the Inca",
-      "who": "Inca masons — Cieza de León reports 20,000 men",
-      "of": [
-        "limestone"
-      ],
-      "site": "the ridge above Cusco, with the stone hauled about 35 km from Rumicolca; three terrace walls, the longest about 400 m and 6 m high",
-      "srcTitle": "Sacsayhuamán"
-    },
-    "eiffel_tower": {
-      "region": "west_europe",
-      "country": "france",
-      "kind": "monument",
-      "when": "built 28 January 1887 to 31 March 1889, opened 15 May 1889",
-      "who": "Gustave Eiffel's company",
-      "of": [
-        "wrought_iron",
-        "rivet"
-      ],
-      "site": "the Champ de Mars for the 1889 exposition; 330 m tall on a 125 m square base, and it moves 9 cm in wind and 18 cm away from the sun",
-      "srcTitle": "Eiffel Tower"
-    },
-    "himeji": {
-      "region": "east_asia",
-      "country": "japan",
-      "kind": "fortification",
-      "when": "a fort from 1333, the present castle 1601-1609; restored 2010-2015",
-      "who": "Ikeda Terumasa",
-      "of": [
-        "timber",
-        "plaster",
-        "stone"
-      ],
-      "site": "a hill over the road west from the capital; 83 buildings, and a path to the keep 325 m long where the straight line is 130",
-      "srcTitle": "Himeji Castle"
-    },
-    "pont_du_gard": {
-      "region": "west_europe",
-      "country": "france",
-      "kind": "engineering",
-      "when": "about 40-60 AD, roughly fifteen years to build",
-      "who": "Roman engineers of Nemausus",
-      "of": [
-        "limestone"
-      ],
-      "site": "the narrowest crossing of the Gardon on a 50 km line that had to fall one metre in three thousand the whole way",
-      "srcTitle": "Pont du Gard"
-    },
-    "potala": {
-      "region": "east_asia",
-      "country": "china",
-      "kind": "palace",
-      "when": "begun 1645; the shell in three years, the interior in forty-five",
-      "who": "the 5th Dalai Lama",
-      "of": [
-        "stone",
-        "copper",
-        "timber"
-      ],
-      "site": "Marpo Ri hill at about 3,700 m on a seismic fault — 400 m east to west, 119 m high, walls battered inward and tied with copper in the foundations",
-      "srcTitle": "Potala Palace"
-    },
-    "benin_moat": {
-      "region": "west_africa",
-      "country": "nigeria",
-      "kind": "fortification",
-      "when": "the Inner City Iya about 1460; moat building possibly from as early as 800",
-      "who": "the Edo of the Kingdom of Benin",
-      "of": [
-        "soil"
-      ],
-      "site": "around Benin City — the inner moat about 12 km, and up to 17 m from ditch floor to rampart top. Estimates of 16,000 km for the wider Edo earthworks are a sum of many separate structures of different dates, not one wall",
-      "srcTitle": "Walls of Benin"
-    },
-    "merv": {
-      "region": "central_asia",
-      "country": "turkmenistan",
-      "kind": "settlement",
-      "when": "Achaemenid through Timurid; possibly the world's largest city by 1150; sacked by the Mongols in 1221",
-      "who": "four dynasties, each building beside the last rather than over it",
-      "of": [
-        "brick",
-        "soil"
-      ],
-      "site": "an oasis on the road across the Karakum where caravans had to stop; Sultan Sanjar's mausoleum is 27 m to a side and its turquoise dome was said to be visible a day's march away",
-      "srcTitle": "Merv"
-    },
-    "ha_long_bay": {
-      "region": "southeast_asia",
-      "country": "vietnam",
-      "kind": "natural",
-      "when": "karst developing since the Miocene, about 20 million years",
-      "who": "—",
-      "of": [
-        "limestone",
-        "tower_karst"
-      ],
-      "site": "a drowned tower-karst landscape: some 1,600 islands of Carboniferous and Permian limestone, most towers 50 to 100 m high and about six times taller than wide, each notched by the sea at the same level",
-      "srcTitle": "Ha Long Bay"
-    },
-    "tikal": {
-      "region": "central_america",
-      "country": "guatemala",
-      "kind": "settlement",
-      "when": "monumental building from the 4th century BC, at its height about 200-900, abandoned by the end of the 10th century",
-      "who": "the Maya of the Petén",
-      "of": [
-        "limestone",
-        "plaster"
-      ],
-      "site": "a plateau in the Petén with no river, lake or cenote — the city ran on rain caught off plastered plazas and held in reservoirs",
-      "srcTitle": "Tikal"
-    },
-    "bagan": {
-      "region": "southeast_asia",
-      "country": "myanmar",
-      "kind": "worship",
-      "when": "11th to 13th centuries; the 1975 earthquake damaged many and 2016 damaged nearly 400 more",
-      "who": "the Pagan Empire — merit-making by whoever could afford a temple",
-      "of": [
-        "brick"
-      ],
-      "site": "a dry plain in the bend of the Irrawaddy, where more than 10,000 temples went up in two centuries and about 2,200 survive",
-      "srcTitle": "Bagan"
-    },
-    "caral": {
-      "region": "south_america",
-      "country": "peru",
-      "kind": "settlement",
-      "when": "about 2600 to 2000 BC — 1,500 years before the Olmec",
-      "who": "the Norte Chico, about 3,000 people here",
-      "of": [
-        "shicra",
-        "stone"
-      ],
-      "site": "the Supe valley, one of nineteen related sites; the main pyramid 150 by 110 m and 28 m high, with no battlements, no weapons and no pottery anywhere",
-      "srcTitle": "Caral"
-    },
-    "krak_des_chevaliers": {
-      "region": "west_asia",
-      "country": "syria",
-      "kind": "fortification",
-      "when": "built out by the Hospitallers 1142-1170 and again in the 13th century; surrendered 8 April 1271",
-      "who": "the Knights Hospitaller",
-      "of": [
-        "stone"
-      ],
-      "site": "the Homs Gap, the one easy route from the Syrian interior to the coast — which is why a garrison of 2,000 sat there",
-      "srcTitle": "Krak des Chevaliers"
-    },
-    "taj_mahal": {
-      "region": "south_asia",
-      "country": "india",
-      "kind": "tomb",
-      "when": "commissioned 1631, mausoleum finished 1648, complex complete 1653",
-      "who": "Shah Jahan, for Mumtaz Mahal",
-      "of": [
-        "marble",
-        "sandstone",
-        "pietra_dura"
-      ],
-      "site": "a bend of the Yamuna at Agra, laid out on a north-south axis in bilateral symmetry, with the minarets leaning outward so a fall would take them away from the tomb",
-      "srcTitle": "Taj Mahal"
-    },
-    "chaco_canyon": {
-      "region": "north_america",
-      "country": "united_states",
-      "kind": "settlement",
-      "when": "the major period 900 to 1150; most construction beams cut 1033-1092",
-      "who": "the Chacoans",
-      "of": [
-        "sandstone",
-        "timber"
-      ],
-      "site": "a dry canyon with no timber at all, fed by six road systems up to 97 km long and 9 m wide, dead straight regardless of terrain, in a culture with no wheel and no draught animal",
-      "checklist": "Chaco Canyon",
-      "srcTitle": "Chaco Culture National Historical Park"
-    },
-    "brooklyn_bridge": {
-      "region": "north_america",
-      "country": "united_states",
-      "kind": "engineering",
-      "when": "opened 24 May 1883",
-      "who": "John A. Roebling, then Washington Roebling, then Emily Warren Roebling",
-      "of": [
-        "steel",
-        "wire",
-        "stone"
-      ],
-      "site": "the East River, too deep and too busy for piers in the channel; 486 m of main span, and 110 cases of decompression sickness in the caissons in four months of 1872",
-      "srcTitle": "Brooklyn Bridge"
-    },
-    "kizhi_pogost": {
-      "region": "east_europe",
-      "country": "russia",
-      "kind": "worship",
-      "when": "the Transfiguration Church's altar laid 6 June 1714; the Intercession rebuilt 1764; dismantled and reassembled 1999-2014",
-      "who": "Karelian carpenters",
-      "of": [
-        "timber",
-        "shingle"
-      ],
-      "site": "an island in Lake Onega, built from Scots pine logs about 30 cm thick and 3 to 5 m long — the restoration numbered and photographed every beam before taking it apart",
-      "srcTitle": "Kizhi Pogost"
-    },
-    "saint_basils": {
-      "region": "east_europe",
-      "country": "russia",
-      "kind": "worship",
-      "when": "built 1555-1561; a tenth chapel added 1588; the colours applied between the 1680s and 1848",
-      "who": "ordered by Ivan IV; the architect is not securely known",
-      "of": [
-        "brick",
-        "onion_dome"
-      ],
-      "site": "the edge of Red Square, built to mark the taking of Kazan — nine chapels on one foundation rather than one church with aisles",
-      "checklist": "Saint Basil's Cathedral",
-      "srcTitle": "Saint Basil's Cathedral"
-    },
-    "brimstone_hill": {
-      "region": "caribbean",
-      "country": "saint_kitts_and_nevis",
-      "kind": "fortification",
-      "when": "guns first mounted 1689; 49 by 1736; besieged and surrendered 1782; UNESCO 1999",
-      "who": "designed by British military engineers, built and maintained by enslaved Africans",
-      "of": [
-        "stone",
-        "cannon"
-      ],
-      "site": "a steeply sloping hill 972 feet above the sea, commanding the approaches to St Kitts",
-      "checklist": "Brimstone Hill Fortress",
-      "srcTitle": "Brimstone Hill Fortress National Park"
-    },
-    "sterkfontein": {
-      "region": "south_africa_r",
-      "country": "south_africa",
-      "kind": "settlement",
-      "when": "the fossils 2.0 to 3.4 million years old; Mrs Ples found 1947, Little Foot 1997",
-      "who": "Australopithecus, then Robert Broom and Ronald Clarke",
-      "of": [
-        "breccia",
-        "dolomite"
-      ],
-      "site": "dolomite caves that opened as shafts, so anything that fell in stayed and was cemented into breccia",
-      "checklist": "Sterkfontein Caves",
-      "srcTitle": "Sterkfontein"
-    },
-    "old_havana": {
-      "region": "caribbean",
-      "country": "cuba",
-      "kind": "settlement",
-      "when": "founded 16 November 1519; burned by a corsair 1555; first fortress begun 1558; UNESCO 1982",
-      "who": "Spanish settlers, then generations of military engineers",
-      "of": [
-        "stone",
-        "limestone"
-      ],
-      "site": "a bay with a narrow mouth and deep water inside, where the treasure fleets gathered before the Atlantic crossing",
-      "checklist": "Old Havana",
-      "srcTitle": "Old Havana"
-    },
-    "table_mountain": {
-      "region": "south_africa_r",
-      "country": "south_africa",
-      "kind": "natural",
-      "when": "the sandstone 450 to 510 million years old, Ordovician",
-      "who": "—",
-      "of": [
-        "quartzite",
-        "sandstone"
-      ],
-      "site": "a syncline over Cape Town, flat because it is a valley floor left standing; 1,084.6 m at Maclear's Beacon, and about 2,285 plant species on it",
-      "srcTitle": "Table Mountain"
-    },
-    "robben_island": {
-      "region": "south_africa_r",
-      "country": "south_africa",
-      "kind": "fortification",
-      "when": "a prison from the late seventeenth century until 1996; political prisoners from 1961; UNESCO 1999",
-      "who": "the Dutch, then the British, then the apartheid state",
-      "of": [
-        "limestone",
-        "stone"
-      ],
-      "site": "a flat island in Table Bay, far enough offshore to need fewer guards than a mainland prison would",
-      "checklist": "Robben Island",
-      "srcTitle": "Robben Island"
-    },
-    "alhambra": {
-      "region": "south_europe",
-      "country": "spain",
-      "kind": "palace",
-      "when": "begun 1238 under Muhammad I; the great campaigns under Yusuf I and Muhammad V in the 14th century; surrendered January 1492",
-      "who": "the Nasrid dynasty",
-      "of": [
-        "plaster",
-        "muqarnas",
-        "tilework"
-      ],
-      "site": "a plateau above Granada, made habitable as a palace by the Sultan's Canal — two long channels and lifting devices bringing mountain water up to it",
-      "srcTitle": "Alhambra"
-    },
-    "persepolis": {
-      "region": "west_asia",
-      "country": "iran",
-      "kind": "palace",
-      "when": "earliest remains 515 BC, under Darius I, continued by Xerxes I and Artaxerxes I; burned 330 BC",
-      "who": "Darius I and his successors",
-      "of": [
-        "limestone",
-        "cedar"
-      ],
-      "site": "a terrace of 125,000 m², partly built up and partly cut out of the mountain it backs onto",
-      "srcTitle": "Persepolis"
-    },
-    "ajanta_caves": {
-      "region": "south_asia",
-      "country": "india",
-      "kind": "worship",
-      "when": "first phase from the 2nd century BCE; second phase possibly only 460-480 CE; rediscovered 28 April 1819",
-      "who": "Buddhist communities, under Harishena in the second phase",
-      "of": [
-        "basalt"
-      ],
-      "site": "a horseshoe cliff of Deccan flood basalt above the Waghora river, cut into rather than built on",
-      "checklist": "Ajanta Caves",
-      "srcTitle": "Ajanta Caves"
-    },
-    "leptis_magna": {
-      "region": "north_africa",
-      "country": "libya",
-      "kind": "settlement",
-      "when": "founded in the second half of the 7th century BC; rebuilt under Septimius Severus from AD 193; UNESCO 1982",
-      "who": "Punic settlers, then Septimius Severus",
-      "of": [
-        "marble",
-        "stone"
-      ],
-      "site": "a harbour on the Tripolitanian coast; abandoned and buried under dunes, which preserved it because nothing could be quarried away that nobody could see",
-      "srcTitle": "Leptis Magna"
-    },
-    "mogao_caves": {
-      "region": "east_asia",
-      "country": "china",
-      "kind": "worship",
-      "when": "from 366 AD to the 14th century; Cave 17 sealed early in the 11th century, opened 25 June 1900",
-      "who": "Buddhist communities, beginning with the monk Le Zun",
-      "of": [
-        "conglomerate",
-        "pigment"
-      ],
-      "site": "a cliff above an oasis 25 km from Dunhuang, where the Silk Road split to pass the Taklamakan — 46,000 m² of painted wall in nearly 500 caves",
-      "checklist": "Mogao Caves",
-      "srcTitle": "Mogao Caves"
-    },
-    "mount_fuji": {
-      "region": "east_asia",
-      "country": "japan",
-      "kind": "natural",
-      "when": "New Fuji from about 10,000 years ago; last erupted 16 December 1707 to about 1 January 1708; UNESCO 2013",
-      "who": "—",
-      "of": [
-        "basalt",
-        "andesite",
-        "ash"
-      ],
-      "site": "where three tectonic plates meet south-west of Tokyo, with four volcanoes built one on top of another; 3,776 m",
-      "checklist": "Mount Fuji",
-      "srcTitle": "Mount Fuji"
-    }
+  {
+   "id": "west_africa",
+   "name": "Western Africa"
   },
-  "wanted": {
-    "north_africa": [
-      "Leptis Magna — settlement",
-      "Carthage — settlement",
-      "Volubilis — settlement",
-      "Siwa Oasis temple — worship",
-      "Tassili n'Ajjer rock art — rock_art",
-      "Aswan unfinished obelisk — industry",
-      "Meroe pyramids — tomb",
-      "Djemila — settlement",
-      "Great Pyramid of Giza — tomb",
-      "Lighthouse of Alexandria — engineering",
-      "Nabta Playa — settlement"
-    ],
-    "west_africa": [
-      "Great Mosque of Djenne — worship",
-      "Benin Walls — fortification",
-      "Sungbo's Eredo — fortification",
-      "Nok terracottas — monument",
-      "Cape Coast Castle — fortification",
-      "Larabanga Mosque — worship",
-      "Kumasi Manhyia — palace",
-      "Igbo-Ukwu bronzes — monument",
-      "Benin Moat — fortification"
-    ],
-    "middle_africa": [
-      "Kongo capital Mbanza-Kongo — settlement",
-      "Sangha Trinational — natural",
-      "Lope-Okanda rock engravings — rock_art",
-      "Dzanga-Sangha — natural",
-      "Loango slave route sites — settlement"
-    ],
-    "east_africa": [
-      "Lalibela rock-hewn churches — worship",
-      "Aksum stelae — monument",
-      "Great Zimbabwe — fortification",
-      "Fasil Ghebbi — palace",
-      "Lamu Old Town — settlement",
-      "Kilwa Kisiwani — settlement",
-      "Olduvai Gorge — settlement",
-      "Ngorongoro Crater — natural",
-      "Mount Kilimanjaro — natural",
-      "Obelisk of Axum — monument"
-    ],
-    "south_africa_r": [
-      "Mapungubwe — settlement",
-      "Drakensberg rock art — rock_art",
-      "Sterkfontein Caves — settlement",
-      "Table Mountain — natural",
-      "Robben Island — fortification",
-      "Tsodilo Hills — rock_art",
-      "Twyfelfontein — rock_art"
-    ],
-    "north_america": [
-      "Cahokia Mounds — settlement",
-      "Mesa Verde cliff dwellings — settlement",
-      "Chaco Canyon — settlement",
-      "Grand Canyon — natural",
-      "Yellowstone — natural",
-      "Brooklyn Bridge — engineering",
-      "Hoover Dam — engineering",
-      "Head-Smashed-In Buffalo Jump — settlement",
-      "Old Quebec — settlement",
-      "Niagara Falls — natural",
-      "L'Anse aux Meadows — settlement"
-    ],
-    "central_america": [
-      "Chichen Itza — worship",
-      "Tikal — settlement",
-      "Teotihuacan — settlement",
-      "Palenque — settlement",
-      "Copan — settlement",
-      "Monte Alban — settlement",
-      "Panama Canal — engineering",
-      "Joya de Ceren — settlement"
-    ],
-    "caribbean": [
-      "Citadelle Laferriere — fortification",
-      "Brimstone Hill Fortress — fortification",
-      "Old Havana — settlement",
-      "Morne Trois Pitons — natural",
-      "El Morro San Juan — fortification",
-      "Taino rock art of Cueva de las Maravillas — rock_art"
-    ],
-    "south_america": [
-      "Machu Picchu — settlement",
-      "Nazca Lines — rock_art",
-      "Sacsayhuaman — fortification",
-      "Tiwanaku — settlement",
-      "Caral — settlement",
-      "Angel Falls — natural",
-      "Iguazu Falls — natural",
-      "Salar de Uyuni — natural",
-      "Cueva de las Manos — rock_art",
-      "Qhapaq Nan road — engineering",
-      "Rapa Nui moai — monument"
-    ],
-    "central_asia": [
-      "Registan Samarkand — worship",
-      "Merv — settlement",
-      "Bukhara old city — settlement",
-      "Gur-e-Amir — tomb",
-      "Tash Rabat caravanserai — engineering",
-      "Otrar — settlement",
-      "Aral Sea — natural"
-    ],
-    "east_asia": [
-      "Great Wall — fortification",
-      "Forbidden City — palace",
-      "Terracotta Army — tomb",
-      "Longmen Grottoes — worship",
-      "Mogao Caves — worship",
-      "Potala Palace — palace",
-      "Himeji Castle — fortification",
-      "Horyu-ji — worship",
-      "Todai-ji — worship",
-      "Mount Fuji — natural",
-      "Seokguram Grotto — worship",
-      "Hwaseong Fortress — fortification",
-      "Erdene Zuu — worship",
-      "Grand Canal — engineering"
-    ],
-    "southeast_asia": [
-      "Angkor Wat — worship",
-      "Borobudur — worship",
-      "Prambanan — worship",
-      "Bagan — worship",
-      "Ayutthaya — settlement",
-      "Banaue rice terraces — engineering",
-      "Ha Long Bay — natural",
-      "Hue Citadel — fortification",
-      "My Son — worship",
-      "Sukhothai — settlement"
-    ],
-    "south_asia": [
-      "Taj Mahal — tomb",
-      "Ajanta Caves — worship",
-      "Ellora Caves — worship",
-      "Konark Sun Temple — worship",
-      "Mohenjo-daro — settlement",
-      "Harappa — settlement",
-      "Red Fort — fortification",
-      "Sanchi Stupa — worship",
-      "Sigiriya — fortification",
-      "Anuradhapura — settlement",
-      "Lalitpur Durbar Square — palace",
-      "Sundarbans — natural"
-    ],
-    "west_asia": [
-      "Petra — settlement",
-      "Gobekli Tepe — worship",
-      "Persepolis — palace",
-      "Hagia Sophia — worship",
-      "Dome of the Rock — worship",
-      "Palmyra — settlement",
-      "Baalbek — worship",
-      "Krak des Chevaliers — fortification",
-      "Ur ziggurat — worship",
-      "Catalhoyuk — settlement",
-      "Ishtar Gate — monument",
-      "Masada — fortification",
-      "Dead Sea — natural",
-      "Cappadocia rock churches — worship",
-      "Temple of Artemis — worship",
-      "Mausoleum at Halicarnassus — tomb",
-      "Hanging Gardens of Babylon — monument"
-    ],
-    "north_europe": [
-      "Stonehenge — monument",
-      "Newgrange — tomb",
-      "Skara Brae — settlement",
-      "Jelling stones — monument",
-      "Urnes stave church — worship",
-      "Kronborg — fortification",
-      "Giant's Causeway — natural",
-      "Iron Bridge — engineering",
-      "Hadrian's Wall — fortification",
-      "Suomenlinna — fortification",
-      "Vigelandsparken — monument",
-      "Geirangerfjord — natural"
-    ],
-    "south_europe": [
-      "Colosseum — monument",
-      "Pantheon — worship",
-      "Parthenon — worship",
-      "Pont du Gard — engineering",
-      "Alhambra — palace",
-      "Nehaj Fortress — fortification",
-      "Diocletian's Palace — palace",
-      "Plitvice Lakes — natural",
-      "Pula Arena — monument",
-      "Aqueduct of Segovia — engineering",
-      "Sagrada Familia — worship",
-      "Knossos — palace",
-      "Pompeii — settlement",
-      "Mount Etna — natural",
-      "Meteora — worship",
-      "Trogir — settlement",
-      "Euphrasian Basilica — worship",
-      "Colossus of Rhodes — monument",
-      "Statue of Zeus at Olympia — monument",
-      "Velebit — natural",
-      "Walls of Dubrovnik — fortification",
-      "Senj — settlement"
-    ],
-    "east_europe": [
-      "Saint Basil's Cathedral — worship",
-      "Moscow Kremlin — fortification",
-      "Wieliczka salt mine — industry",
-      "Malbork Castle — fortification",
-      "Prague Castle — fortification",
-      "Auschwitz-Birkenau — settlement",
-      "Kizhi Pogost — worship",
-      "Bialowieza Forest — natural",
-      "Rila Monastery — worship",
-      "Sighisoara — settlement"
-    ],
-    "west_europe": [
-      "Notre-Dame de Paris — worship",
-      "Mont-Saint-Michel — worship",
-      "Chartres Cathedral — worship",
-      "Eiffel Tower — monument",
-      "Cologne Cathedral — worship",
-      "Neuschwanstein — palace",
-      "Carcassonne — fortification",
-      "Lascaux — rock_art",
-      "Zollverein Coal Mine — industry",
-      "Amsterdam canal ring — engineering",
-      "Aachen Cathedral — worship",
-      "Palace of Versailles — palace"
-    ],
-    "anz": [
-      "Uluru — natural",
-      "Sydney Opera House — monument",
-      "Great Barrier Reef — natural",
-      "Budj Bim eel traps — engineering",
-      "Port Arthur — fortification",
-      "Te Wahipounamu — natural",
-      "Waitangi Treaty Grounds — settlement",
-      "Kakadu rock art — rock_art"
-    ],
-    "melanesia": [
-      "Chief Roi Mata's Domain — settlement",
-      "Kuk Early Agricultural Site — settlement",
-      "Levuka — settlement",
-      "Rennell — natural"
-    ],
-    "micronesia": [
-      "Nan Madol — settlement",
-      "Latte Stones of Guam — monument",
-      "Bikini Atoll — settlement"
-    ],
-    "polynesia": [
-      "Rapa Nui moai — monument",
-      "Taputapuatea marae — worship",
-      "Puuhonua o Honaunau — worship",
-      "Mauna Kea — natural",
-      "Tongan Haamonga a Maui — monument"
-    ]
+  {
+   "id": "middle_africa",
+   "name": "Middle Africa"
+  },
+  {
+   "id": "east_africa",
+   "name": "Eastern Africa"
+  },
+  {
+   "id": "south_africa_r",
+   "name": "Southern Africa"
+  },
+  {
+   "id": "north_america",
+   "name": "Northern America"
+  },
+  {
+   "id": "central_america",
+   "name": "Central America"
+  },
+  {
+   "id": "caribbean",
+   "name": "Caribbean"
+  },
+  {
+   "id": "south_america",
+   "name": "South America"
+  },
+  {
+   "id": "central_asia",
+   "name": "Central Asia"
+  },
+  {
+   "id": "east_asia",
+   "name": "Eastern Asia"
+  },
+  {
+   "id": "southeast_asia",
+   "name": "South-eastern Asia"
+  },
+  {
+   "id": "south_asia",
+   "name": "Southern Asia"
+  },
+  {
+   "id": "west_asia",
+   "name": "Western Asia"
+  },
+  {
+   "id": "north_europe",
+   "name": "Northern Europe"
+  },
+  {
+   "id": "south_europe",
+   "name": "Southern Europe"
+  },
+  {
+   "id": "east_europe",
+   "name": "Eastern Europe"
+  },
+  {
+   "id": "west_europe",
+   "name": "Western Europe"
+  },
+  {
+   "id": "anz",
+   "name": "Australia and New Zealand"
+  },
+  {
+   "id": "melanesia",
+   "name": "Melanesia"
+  },
+  {
+   "id": "micronesia",
+   "name": "Micronesia"
+  },
+  {
+   "id": "polynesia",
+   "name": "Polynesia"
   }
+ ],
+ "kinds": [
+  {
+   "id": "fortification",
+   "name": "Fortification",
+   "note": "Walls, castles, forts. Built against somebody, which is why they carry the clearest politics of any structure."
+  },
+  {
+   "id": "worship",
+   "name": "Place of worship",
+   "note": "Temples, churches, mosques, stupas, shrines."
+  },
+  {
+   "id": "tomb",
+   "name": "Tomb or burial",
+   "note": "Pyramids, mausolea, barrows, necropolises."
+  },
+  {
+   "id": "palace",
+   "name": "Palace or seat",
+   "note": "Where power sat, as distinct from where it defended itself."
+  },
+  {
+   "id": "monument",
+   "name": "Monument or statue",
+   "note": "Built to be looked at rather than used."
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering work",
+   "note": "Bridges, aqueducts, canals, roads, dams — the structures whose purpose is entirely function."
+  },
+  {
+   "id": "settlement",
+   "name": "Settlement or site",
+   "note": "Cities, archaeological sites, whole places rather than single buildings."
+  },
+  {
+   "id": "industry",
+   "name": "Industrial site",
+   "note": "Mines, mills, furnaces, yards. The heritage that is usually listed last and demolished first."
+  },
+  {
+   "id": "natural",
+   "name": "Natural wonder",
+   "note": "Not built. Derives from rock, water and time — and sometimes from living things, which is what makes Plitvice a different claim from a canyon."
+  },
+  {
+   "id": "rock_art",
+   "name": "Rock art or early mark",
+   "note": "The oldest deliberate marks people left on places, and the only kind of site that is global at every date."
+  }
+ ],
+ "places": {
+  "nehaj": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "fortification",
+   "when": "finished 1558",
+   "who": "Ivan Lenković, Croatian general and captain of the Uskoks",
+   "of": [
+    "limestone",
+    "stone",
+    "mortar"
+   ],
+   "site": "a bare hill directly above Senj, in cannon range of the harbour, with nothing left standing around it to shelter a besieging force — the churches, monasteries and houses outside the walls were demolished and their stone went into the fortress",
+   "size": "18 m tall, 23 m wide, walls 2-3 m thick, five towers, eleven cannon openings",
+   "srcTitle": "Nehaj Fortress"
+  },
+  "senj": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "settlement",
+   "when": "inhabited over 3,000 years; a Roman municipality from 35 BC",
+   "who": "Iapodes, then Rome, then the Habsburg frontier",
+   "of": [
+    "harbour",
+    "velebit"
+   ],
+   "site": "the seaward end of the Vratnik pass, where the only easy crossing of the Velebit reaches the Adriatic",
+   "srcTitle": "Senj"
+  },
+  "plitvice": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "natural",
+   "when": "still forming — the barriers grow up to 13 mm a year; national park 1949, UNESCO 1979",
+   "who": "moss and algae, which is the whole point: the dams are built by living things",
+   "of": [
+    "travertine",
+    "moss",
+    "limestone",
+    "dolomite",
+    "water"
+   ],
+   "site": "a karst valley where groundwater arrives saturated with calcium hydrogencarbonate; sixteen lakes drop 133 m from the first to the last",
+   "srcTitle": "Plitvice Lakes National Park"
+  },
+  "velebit": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "natural",
+   "when": "Mesozoic limestone, uplifted with the Dinarides",
+   "who": "—",
+   "of": [
+    "karst",
+    "limestone"
+   ],
+   "site": "145 km from Senj to the source of the Zrmanja, the seaward wall of the Dinaric karst; highest point Vaganski vrh, 1,758 m",
+   "srcTitle": "Velebit"
+  },
+  "great_pyramid": {
+   "region": "north_africa",
+   "country": "egypt",
+   "kind": "tomb",
+   "who": "built for Khufu",
+   "of": [
+    "limestone",
+    "granite"
+   ],
+   "srcTitle": "Great Pyramid of Giza",
+   "when": "about 2560 BC, Fourth Dynasty",
+   "site": "the Giza plateau, a limestone shelf firm enough to carry six million tonnes, west of the Nile so the river could carry the casing stone to it"
+  },
+  "colosseum": {
+   "region": "south_europe",
+   "country": "italy",
+   "kind": "monument",
+   "when": "finished 80 CE",
+   "of": [
+    "travertine",
+    "stone"
+   ],
+   "srcTitle": "Colosseum",
+   "who": "begun under Vespasian, finished under Titus",
+   "site": "the drained lake of Nero’s Golden House, given back to the city as a public building on the site of a private palace"
+  },
+  "great_wall": {
+   "region": "east_asia",
+   "country": "china",
+   "kind": "fortification",
+   "who": "Ming builders",
+   "of": [
+    "brick",
+    "sticky_rice_mortar",
+    "stone"
+   ],
+   "srcTitle": "Great Wall of China",
+   "when": "walls from the 7th century BC; the brick-faced wall that survives is Ming, 14th to 17th century",
+   "site": "the line where farmland gives out and steppe begins, which is why the wall follows a rainfall boundary rather than a border"
+  },
+  "forbidden_city": {
+   "region": "east_asia",
+   "country": "china",
+   "kind": "palace",
+   "who": "the Ming dynasty",
+   "of": [
+    "wood"
+   ],
+   "srcTitle": "Forbidden City",
+   "when": "built 1406-1420 under the Yongle Emperor",
+   "site": "the centre of Beijing on the north-south axis, walled and moated, with every hall facing south"
+  },
+  "terracotta_army": {
+   "region": "east_asia",
+   "country": "china",
+   "kind": "tomb",
+   "who": "Qin Shi Huang",
+   "of": [
+    "clay"
+   ],
+   "srcTitle": "Terracotta Army",
+   "when": "buried about 210-209 BC",
+   "site": "a pit complex about 1.5 km east of Qin Shi Huang's tomb mound, facing the direction his conquered enemies lay"
+  },
+  "angkor_wat": {
+   "region": "southeast_asia",
+   "country": "cambodia",
+   "kind": "worship",
+   "who": "Suryavarman II",
+   "srcTitle": "Angkor Wat",
+   "when": "begun 1122, finished 1150, under Suryavarman II",
+   "of": [
+    "sandstone",
+    "laterite"
+   ],
+   "site": "the Angkor plain, with five to ten million sandstone blocks brought about 40 km from Mount Kulen; a moat 190 m wide and over 5 km around, and — unusually for a Khmer temple — facing west"
+  },
+  "machu_picchu": {
+   "region": "south_america",
+   "country": "peru",
+   "kind": "settlement",
+   "when": "around 1450",
+   "who": "built for Pachacuti",
+   "of": [
+    "stone"
+   ],
+   "site": "a ridge between two peaks above the Urubamba",
+   "srcTitle": "Machu Picchu"
+  },
+  "ishtar_gate": {
+   "region": "west_asia",
+   "country": "iraq",
+   "kind": "monument",
+   "who": "Nebuchadnezzar II",
+   "of": [
+    "clay",
+    "glass"
+   ],
+   "srcTitle": "Ishtar Gate",
+   "when": "about 575 BCE",
+   "site": "the eighth gate of Babylon's inner wall, opening onto the processional way, so it was the first thing a visitor saw"
+  },
+  "lighthouse_of_alexandria": {
+   "region": "north_africa",
+   "country": "egypt",
+   "kind": "engineering",
+   "who": "Sostratus of Cnidus",
+   "of": [
+    "limestone"
+   ],
+   "srcTitle": "Lighthouse of Alexandria",
+   "when": "built about 280-247 BC; brought down by earthquakes between 956 and 1323",
+   "site": "the island of Pharos at the harbour mouth, on a coast so flat that a ship had no landmark to steer by without it"
+  },
+  "mausoleum_halicarnassus": {
+   "region": "west_asia",
+   "country": "turkiye",
+   "kind": "tomb",
+   "who": "Artemisia II, for Mausolus",
+   "of": [
+    "marble"
+   ],
+   "srcTitle": "Mausoleum at Halicarnassus",
+   "when": "about 350 BCE",
+   "site": "a hillside above the harbour of Halicarnassus, visible from the sea it was meant to be admired from"
+  },
+  "colossus_of_rhodes": {
+   "region": "south_europe",
+   "country": "greece",
+   "kind": "monument",
+   "who": "Chares of Lindos",
+   "of": [
+    "bronze"
+   ],
+   "srcTitle": "Colossus of Rhodes",
+   "when": "built 292-280 BC; fell in an earthquake about 226 BC, after 54 years",
+   "site": "the harbour of Rhodes, paid for by selling the siege equipment an unsuccessful besieger left behind"
+  },
+  "temple_of_artemis": {
+   "region": "west_asia",
+   "country": "turkiye",
+   "kind": "worship",
+   "who": "funded by Croesus",
+   "of": [
+    "marble"
+   ],
+   "srcTitle": "Temple of Artemis",
+   "when": "the marble temple about 550 BC, burned 356 BC, rebuilt, destroyed 262 AD",
+   "site": "a marshy site near Ephesus chosen deliberately — soft ground was thought to cushion earthquakes"
+  },
+  "statue_of_zeus": {
+   "region": "south_europe",
+   "country": "greece",
+   "kind": "monument",
+   "who": "Pheidias",
+   "of": [
+    "chryselephantine"
+   ],
+   "srcTitle": "Statue of Zeus at Olympia",
+   "when": "about 435 BC",
+   "site": "inside the temple at Olympia, built so large for the space that Zeus would have taken the roof off if he stood up"
+  },
+  "hanging_gardens": {
+   "region": "west_asia",
+   "country": "iraq",
+   "kind": "monument",
+   "who": "attributed to Nebuchadnezzar II — and never securely located",
+   "srcTitle": "Hanging Gardens of Babylon",
+   "when": "described in Greek sources from the 3rd century BC onward",
+   "of": [
+    "brick"
+   ],
+   "site": "never securely located — no Babylonian text mentions them, and one reading puts them at Nineveh instead"
+  },
+  "lanse_aux_meadows": {
+   "region": "north_america",
+   "country": "canada",
+   "kind": "settlement",
+   "who": "Norse",
+   "site": "a landing at the northern tip of Newfoundland",
+   "srcTitle": "L'Anse aux Meadows",
+   "when": "about 1021 AD, dated by a solar storm recorded in the wood",
+   "of": [
+    "turf",
+    "wood"
+   ]
+  },
+  "nabta_playa": {
+   "region": "north_africa",
+   "country": "egypt",
+   "kind": "settlement",
+   "site": "a seasonal lakebed in the Nubian Desert",
+   "srcTitle": "Nabta Playa",
+   "when": "occupied from about 9000 BCE; the stone circle around 4800 BCE",
+   "who": "cattle-herding people of the Nubian Desert",
+   "of": [
+    "stone"
+   ]
+  },
+  "lalibela": {
+   "region": "east_africa",
+   "country": "ethiopia",
+   "kind": "worship",
+   "when": "late 12th to early 13th century, under Gebre Meskel Lalibela of the Zagwe",
+   "who": "Zagwe masons, cutting downward",
+   "of": [
+    "basalt"
+   ],
+   "site": "a highland plateau of scoriaceous basalt soft enough to cut and sound enough to stand once the trenches are open",
+   "srcTitle": "Rock-Hewn Churches, Lalibela",
+   "checklist": "Lalibela rock-hewn churches"
+  },
+  "great_zimbabwe": {
+   "region": "east_africa",
+   "country": "zimbabwe",
+   "kind": "settlement",
+   "when": "built from the 11th century, the Great Enclosure 13th-15th, abandoned in the 16th or 17th",
+   "who": "ancestors of the Shona",
+   "of": [
+    "granite"
+   ],
+   "site": "granite hills that exfoliate in flat sheets under daily heating and cooling, so the building stone arrives already the right shape and needs no mortar",
+   "srcTitle": "Great Zimbabwe"
+  },
+  "olduvai_gorge": {
+   "region": "east_africa",
+   "country": "tanzania",
+   "kind": "settlement",
+   "when": "beds spanning 1.85 million to 600,000 years ago; Zinjanthropus found July 1959, Homo habilis May 1960",
+   "who": "Homo habilis and Homo erectus, then Louis and Mary Leakey",
+   "of": [
+    "ash",
+    "stone"
+   ],
+   "site": "48 km of gorge eroded up to 90 m into Pleistocene lake beds, so the sequence stands exposed in order",
+   "srcTitle": "Olduvai Gorge"
+  },
+  "aksum_obelisk": {
+   "region": "east_africa",
+   "country": "ethiopia",
+   "kind": "monument",
+   "checklist": "Aksum stelae",
+   "when": "probably carved and erected in the 4th century CE; taken by Italy in 1937, returned in three pieces in April 2005, re-erected and unveiled 4 September 2008",
+   "who": "the Kingdom of Aksum; the return cost Italy $7.7 million",
+   "of": [
+    "phonolite",
+    "stone"
+   ],
+   "site": "a stele field marking underground burial chambers — the large stelae stood over royal tombs and were carved with false windows and false doors, so the marker imitates the building the dead person no longer lives in",
+   "size": "24 m standing, 160 tonnes, one solid block; the Great Stele beside it was 33 m and probably fell as soon as it was raised",
+   "srcTitle": "Obelisk of Axum"
+  },
+  "kilwa_kisiwani": {
+   "region": "east_africa",
+   "country": "tanzania",
+   "kind": "settlement",
+   "when": "Great Mosque begun 1131-1170; the city's peak 13th to 15th centuries",
+   "who": "Swahili merchants; Husuni Kubwa built for Sultan al-Hasan ibn Sulaiman",
+   "of": [
+    "coral",
+    "limestone"
+   ],
+   "site": "an island with no building stone and a harbour commanding the route to the Sofala gold",
+   "srcTitle": "Kilwa Kisiwani"
+  },
+  "mapungubwe": {
+   "region": "south_africa_r",
+   "country": "south_africa",
+   "kind": "settlement",
+   "when": "about 1220-1300; UNESCO 2003",
+   "who": "a kingdom of 5,000 by 1250",
+   "of": [
+    "gold",
+    "ivory",
+    "glass"
+   ],
+   "site": "the confluence of the Limpopo and the Shashe, on the inland end of the Indian Ocean gold route",
+   "srcTitle": "Mapungubwe"
+  },
+  "twyfelfontein": {
+   "region": "south_africa_r",
+   "country": "namibia",
+   "kind": "rock_art",
+   "when": "engravings roughly 6,000 to 1,000 years old; UNESCO 2007",
+   "who": "hunter-gatherers, later herders",
+   "of": [
+    "sandstone",
+    "desert_varnish"
+   ],
+   "site": "sandstone slabs around a spring in the Damaraland desert — the Damara name means jumping waterhole",
+   "srcTitle": "Twyfelfontein"
+  },
+  "ngorongoro": {
+   "region": "east_africa",
+   "country": "tanzania",
+   "kind": "natural",
+   "when": "the volcano active 2.45 to 2 million years ago, then collapsed",
+   "of": [
+    "basalt",
+    "ash"
+   ],
+   "site": "a caldera 610 m deep with a 260 km2 floor, whose rim holds grazing and water together so about 25,000 large animals stay put",
+   "srcTitle": "Ngorongoro Crater"
+  },
+  "uluru": {
+   "region": "anz",
+   "country": "australia",
+   "kind": "natural",
+   "when": "the Mutitjulu Arkose laid down 550-530 million years ago",
+   "who": "—",
+   "of": [
+    "arkose",
+    "feldspar"
+   ],
+   "site": "a bed of coarse arkose tipped almost vertical and left standing when the softer rock around it eroded away; 348 m above the plain, 9.4 km around, most of it still underground",
+   "srcTitle": "Uluru"
+  },
+  "budj_bim": {
+   "region": "anz",
+   "country": "australia",
+   "kind": "engineering",
+   "when": "one trap carbon-dated to 6,600 years; the wider system estimated up to 8,000",
+   "who": "the Gunditjmara",
+   "of": [
+    "basalt"
+   ],
+   "site": "the Tyrendarra lava flow, which blocked the old drainage and made the wetlands the system steers",
+   "srcTitle": "Budj Bim heritage areas"
+  },
+  "sydney_opera_house": {
+   "region": "anz",
+   "country": "australia",
+   "kind": "monument",
+   "when": "competition 1957, opened 1973",
+   "who": "Jørn Utzon",
+   "of": [
+    "concrete"
+   ],
+   "site": "Bennelong Point, a peninsula seen from three sides, which is why the roof had to work as a fifth elevation",
+   "srcTitle": "Sydney Opera House"
+  },
+  "great_barrier_reef": {
+   "region": "anz",
+   "country": "australia",
+   "kind": "natural",
+   "when": "the present reef about 500,000 years old, the living veneer around 8,000",
+   "who": "coral polyps — the largest structure any living thing has built",
+   "of": [
+    "coral",
+    "limestone"
+   ],
+   "site": "a shallow continental shelf in warm clear water, which is the only place reef-building coral can work",
+   "srcTitle": "Great Barrier Reef"
+  },
+  "moai": {
+   "region": "polynesia",
+   "country": "chile",
+   "kind": "monument",
+   "when": "carved between about 1250 and 1500",
+   "who": "the Rapa Nui",
+   "of": [
+    "tuff",
+    "basalt"
+   ],
+   "site": "Rano Raraku, one quarry of compressed volcanic ash that supplied all but 53 of more than 900 figures; 394 are still there unfinished",
+   "srcTitle": "Moai",
+   "checklist": "Rapa Nui moai"
+  },
+  "nan_madol": {
+   "region": "micronesia",
+   "country": "micronesia",
+   "kind": "settlement",
+   "when": "settled around AD 1; megalithic building from about 1180",
+   "who": "the Saudeleur dynasty",
+   "of": [
+    "columnar_basalt",
+    "coral"
+   ],
+   "site": "a coral reef flat off Temwen Island, cut by tidal canals into 92 artificial islets over 1.5 by 0.5 km",
+   "srcTitle": "Nan Madol"
+  },
+  "skara_brae": {
+   "region": "north_europe",
+   "country": "united_kingdom",
+   "kind": "settlement",
+   "when": "occupied about 3180 to 2500 BC; uncovered by a storm in 1850",
+   "who": "Neolithic Orcadians",
+   "of": [
+    "stone"
+   ],
+   "site": "a treeless island where the only building material is flagstone, so even the beds and dressers are stone; buried in a dune until a storm took it off",
+   "srcTitle": "Skara Brae"
+  },
+  "newgrange": {
+   "region": "north_europe",
+   "country": "ireland",
+   "kind": "tomb",
+   "when": "about 3100 BC; the solstice alignment first re-observed 21 December 1967",
+   "who": "Neolithic builders of the Boyne valley",
+   "of": [
+    "stone",
+    "corbel_vault"
+   ],
+   "site": "a ridge above the Boyne, oriented so the roof-box admits the midwinter sunrise down a 19 m passage; the mound is 85 m across and 12 m high",
+   "srcTitle": "Newgrange"
+  },
+  "lascaux": {
+   "region": "west_europe",
+   "country": "france",
+   "kind": "rock_art",
+   "when": "17,000 to 22,000 years old; found 12 September 1940, closed to the public 1963",
+   "who": "Magdalenian painters",
+   "of": [
+    "ochre",
+    "hematite"
+   ],
+   "site": "a sealed limestone cave in the Dordogne whose stable air preserved the pigment — and whose stability is exactly what visitors destroyed",
+   "srcTitle": "Lascaux"
+  },
+  "iron_bridge": {
+   "region": "north_europe",
+   "country": "united_kingdom",
+   "kind": "engineering",
+   "when": "opened 1 January 1781",
+   "who": "designed by Thomas Farnolls Pritchard, cast by Abraham Darby III",
+   "of": [
+    "cast_iron"
+   ],
+   "site": "the Severn gorge at Coalbrookdale, where the river had to be crossed and the foundry that could cast the ribs was already on the bank",
+   "srcTitle": "The Iron Bridge"
+  },
+  "wieliczka": {
+   "region": "east_europe",
+   "country": "poland",
+   "kind": "industry",
+   "when": "documented from 1044, shaft-mined from the 13th century, sold salt until 1996",
+   "who": "generations of miners, who carved the chapels themselves",
+   "of": [
+    "rock_salt"
+   ],
+   "site": "a salt bed near Krakow, 327 m deep with 287 km of galleries",
+   "srcTitle": "Wieliczka Salt Mine"
+  },
+  "gobekli_tepe": {
+   "region": "west_asia",
+   "country": "turkiye",
+   "kind": "worship",
+   "when": "about 9500 to at least 8000 BCE",
+   "who": "hunter-gatherers, before farming",
+   "of": [
+    "limestone"
+   ],
+   "site": "a limestone ridge above the Harran plain; four enclosures excavated of about twenty, 10 to 30 m across",
+   "srcTitle": "Göbekli Tepe"
+  },
+  "petra": {
+   "region": "west_asia",
+   "country": "jordan",
+   "kind": "settlement",
+   "when": "Nabataean capital from the 2nd century BC, at its height in the 1st century AD with about 20,000 people",
+   "who": "the Nabataeans",
+   "of": [
+    "sandstone"
+   ],
+   "site": "a sandstone basin entered through the Siq, a natural cleft 3-4 m wide, watered entirely by dams, conduits and cisterns the Nabataeans built",
+   "srcTitle": "Petra"
+  },
+  "borobudur": {
+   "region": "southeast_asia",
+   "country": "indonesia",
+   "kind": "worship",
+   "when": "begun about 780 CE, finished about 833, under the Sailendra",
+   "who": "the Sailendra dynasty",
+   "of": [
+    "andesite"
+   ],
+   "site": "a hill on the Kedu Plain between volcanoes, with the Progo riverbed supplying 55,000 cubic metres of andesite; 118 m to a side, 35 m high",
+   "srcTitle": "Borobudur"
+  },
+  "nazca_lines": {
+   "region": "south_america",
+   "country": "peru",
+   "kind": "rock_art",
+   "when": "between 500 BC and 500 AD",
+   "who": "the Paracas and then the Nazca",
+   "of": [
+    "desert_pavement"
+   ],
+   "site": "a rainless windless plateau whose limey subsoil hardens into a crust — the only reason 1,300 km of shallow line has lasted two thousand years",
+   "srcTitle": "Nazca Lines"
+  },
+  "djenne_mosque": {
+   "region": "west_africa",
+   "country": "mali",
+   "kind": "worship",
+   "when": "the present building completed 1907; the first mosque here 13th-14th century",
+   "who": "the masons' guild of Djenné, and the whole town every year",
+   "of": [
+    "adobe",
+    "toron",
+    "plaster"
+   ],
+   "site": "a platform 3 m above the marketplace, which is what keeps the Bani flood out of a building made of earth",
+   "srcTitle": "Great Mosque of Djenné",
+   "checklist": "Great Mosque of Djenne"
+  },
+  "citadelle_laferriere": {
+   "region": "caribbean",
+   "country": "haiti",
+   "kind": "fortification",
+   "when": "commissioned 1805, completed 1820",
+   "who": "Henri Christophe — at a cost of up to 20,000 lives",
+   "of": [
+    "stone",
+    "cannon"
+   ],
+   "site": "the 900 m summit of Bonnet à l'Évêque, several kilometres inland, so any French landing would have to climb to it; 365 cannon and stores for 5,000 men for a year",
+   "srcTitle": "Citadelle Laferrière"
+  },
+  "registan": {
+   "region": "central_asia",
+   "country": "uzbekistan",
+   "kind": "worship",
+   "when": "Ulugh Beg madrasa 1417-1420, Sher-Dor 1619-1636, Tilya-Kori 1646-1660",
+   "who": "Ulugh Beg, then Yalangtoʻsh Bakhodir",
+   "of": [
+    "tilework",
+    "brick"
+   ],
+   "site": "the square at the centre of Samarkand, where proclamations were read and executions held, on the Silk Road",
+   "srcTitle": "Registan",
+   "checklist": "Registan Samarkand"
+  },
+  "kuk_swamp": {
+   "region": "melanesia",
+   "country": "papua_new_guinea",
+   "kind": "engineering",
+   "when": "drainage from about 9,000 years ago; bananas and sugar cane by 6,900 to 6,400",
+   "who": "highland New Guinea farmers",
+   "of": [
+    "soil",
+    "stick",
+    "taro"
+   ],
+   "site": "a highland wetland at the edge of taro's range, drained by three grades of ditch; 116 hectares protected, UNESCO 2008",
+   "srcTitle": "Kuk Swamp",
+   "checklist": "Kuk Early Agricultural Site"
+  },
+  "mohenjo_daro": {
+   "region": "south_asia",
+   "country": "pakistan",
+   "kind": "settlement",
+   "when": "built about 2500 BCE, abandoned about 1700 BCE; rediscovered in the 1920s",
+   "who": "the Indus Valley civilisation",
+   "of": [
+    "brick",
+    "bitumen"
+   ],
+   "site": "the Indus floodplain — over 700 wells, one per three houses, and drains along a rectilinear grid",
+   "srcTitle": "Mohenjo-daro"
+  },
+  "cahokia": {
+   "region": "north_america",
+   "country": "united_states",
+   "kind": "settlement",
+   "when": "population rose from under 3,000 to over 10,000 between 1050 and 1100; abandoned by 1400",
+   "who": "Mississippian builders",
+   "of": [
+    "soil",
+    "timber"
+   ],
+   "site": "the Mississippi floodplain where maize would grow; about 120 earthworks, Monks Mound 30 m high and 622,000 cubic metres",
+   "srcTitle": "Cahokia",
+   "checklist": "Cahokia Mounds"
+  },
+  "teotihuacan": {
+   "region": "central_america",
+   "country": "mexico",
+   "kind": "settlement",
+   "when": "founded about 100 BCE, peak 350-650 CE, palaces burned about 550 CE",
+   "who": "unknown — the founders' origin and language are both undetermined",
+   "of": [
+    "stone",
+    "plaster"
+   ],
+   "site": "a valley with obsidian nearby; an avenue 2 km long and 45 m wide, and a pyramid of over a million cubic metres",
+   "srcTitle": "Teotihuacan"
+  },
+  "chartres": {
+   "region": "west_europe",
+   "country": "france",
+   "kind": "worship",
+   "when": "rebuilt 1194-1220 after a fire, re-consecrated October 1260",
+   "who": "unknown masons — no architect is named",
+   "of": [
+    "stone",
+    "stained_glass",
+    "flying_buttress"
+   ],
+   "site": "a hill above the Eure, on a crypt and towers that survived the fire and were built into the new church",
+   "srcTitle": "Chartres Cathedral"
+  },
+  "mont_saint_michel": {
+   "region": "west_europe",
+   "country": "france",
+   "kind": "worship",
+   "when": "the first church from 708; the abbey built up from the 8th century onward",
+   "who": "Benedictine monks, after Aubert of Avranches",
+   "of": [
+    "granite"
+   ],
+   "site": "a leucogranite outcrop 92 m high and 960 m around, in a bay with a 14 m tidal range — an island twice a day, and free defence the rest of the time",
+   "srcTitle": "Mont-Saint-Michel"
+  },
+  "mbanza_kongo": {
+   "region": "middle_africa",
+   "country": "angola",
+   "kind": "settlement",
+   "when": "founded about 1390, capital until the kingdom was abolished in 1915; UNESCO 2017",
+   "who": "Lukeni lua Nimi, then the kings of Kongo",
+   "of": [
+    "stone"
+   ],
+   "site": "a mountain top at a junction of major trade routes; about 130,000 people in the city and its hinterland by the 1620s",
+   "srcTitle": "M'banza-Kongo"
+  },
+  "diocletians_palace": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "palace",
+   "when": "begun about 295, finished by 305 when Diocletian abdicated",
+   "who": "Diocletian",
+   "of": [
+    "limestone",
+    "marble",
+    "brick"
+   ],
+   "site": "the Adriatic coast near the Brač quarries that supplied it; when Salona fell in the 7th century its refugees moved inside the walls, and about 3,000 people still live there",
+   "srcTitle": "Diocletian's Palace"
+  },
+  "dubrovnik_walls": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "fortification",
+   "when": "mainly 13th-17th centuries, the peak from the early 15th to the late 16th",
+   "who": "the Republic of Ragusa",
+   "of": [
+    "limestone",
+    "stone"
+   ],
+   "site": "a rock promontory with the sea on three sides, so the landward wall runs 4 to 6 m thick and the seaward as little as 1.5; 1,940 m around, up to 25 m high",
+   "srcTitle": "Walls of Dubrovnik"
+  },
+  "pula_arena": {
+   "region": "south_europe",
+   "country": "croatia",
+   "kind": "monument",
+   "when": "27 BC to AD 68, expanded under Vespasian and finished under Titus in 81",
+   "who": "Roman builders under Vespasian",
+   "of": [
+    "limestone"
+   ],
+   "site": "a slope outside the town walls, which carries part of the seating; 132.5 by 105.1 m, about 23,000 seats, and the only Roman amphitheatre with its whole outer ring still standing",
+   "srcTitle": "Pula Arena"
+  },
+  "horyuji": {
+   "region": "east_asia",
+   "country": "japan",
+   "kind": "worship",
+   "when": "the pagoda's central pillar felled in 594; Japan's first UNESCO site, 1993",
+   "who": "Asuka-period carpenters",
+   "of": [
+    "timber"
+   ],
+   "site": "the Nara basin; over 180 national treasures on one temple site, and the oldest standing wooden buildings in the world",
+   "srcTitle": "Hōryū-ji",
+   "checklist": "Horyu-ji"
+  },
+  "giants_causeway": {
+   "region": "north_europe",
+   "country": "united_kingdom",
+   "kind": "natural",
+   "when": "the lava erupted 50 to 60 million years ago, in the Paleocene",
+   "who": "—",
+   "of": [
+    "basalt",
+    "columnar_basalt"
+   ],
+   "site": "a coast cut back by the sea through the inside of a lava flow — about 40,000 columns, mostly hexagonal, the tallest around 12 m",
+   "srcTitle": "Giant's Causeway"
+  },
+  "stonehenge": {
+   "region": "north_europe",
+   "country": "united_kingdom",
+   "kind": "monument",
+   "when": "built in stages from about 3000 BC, the sarsen circle about 2500 BC",
+   "who": "Neolithic and Early Bronze Age builders",
+   "of": [
+    "stone",
+    "megalith"
+   ],
+   "site": "Salisbury Plain, with sarsens hauled about 25 km from the Marlborough Downs and bluestones some 250 km from the Preseli hills",
+   "srcTitle": "Stonehenge"
+  },
+  "hadrians_wall": {
+   "region": "north_europe",
+   "country": "united_kingdom",
+   "kind": "fortification",
+   "when": "begun AD 122, most of it built in about six years",
+   "who": "Legio II Augusta, VI Victrix and XX Valeria Victrix — about 15,000 men",
+   "of": [
+    "stone",
+    "turf"
+   ],
+   "site": "the narrowest part of Britain, 117 km coast to coast; a ditch in front, the Vallum behind, a milecastle every Roman mile and a turret every third",
+   "srcTitle": "Hadrian's Wall"
+  },
+  "mesa_verde": {
+   "region": "north_america",
+   "country": "united_states",
+   "kind": "settlement",
+   "when": "cliff dwellings mainly 1150-1300; abandoned about 1285 after the drought of 1276-1299",
+   "who": "Ancestral Puebloans",
+   "of": [
+    "sandstone",
+    "adobe"
+   ],
+   "site": "alcoves undercut where seeping water meets a shale band inside the Cliff House Sandstone — dry, shaded in summer, sunlit in winter, and out of the rain",
+   "srcTitle": "Mesa Verde National Park"
+  },
+  "malbork": {
+   "region": "east_europe",
+   "country": "poland",
+   "kind": "fortification",
+   "when": "built over 132 years, 1274-1406; over half destroyed in 1945, restored since 1962",
+   "who": "the Teutonic Order",
+   "of": [
+    "brick"
+   ],
+   "site": "the Nogat river on a plain with no building stone, so the order fired its own — 21 hectares inside the outer walls",
+   "srcTitle": "Malbork Castle"
+  },
+  "chichen_itza": {
+   "region": "central_america",
+   "country": "mexico",
+   "kind": "worship",
+   "when": "the city from about 600 CE; El Castillo in its present form 11th-13th century",
+   "who": "the Maya of the northern Yucatán",
+   "of": [
+    "limestone"
+   ],
+   "site": "four cenotes in one place, on a peninsula whose limestone drains every river underground — the water is the reason the city is here",
+   "srcTitle": "Chichen Itza"
+  },
+  "sigiriya": {
+   "region": "south_asia",
+   "country": "sri_lanka",
+   "kind": "palace",
+   "when": "built 477-495 CE under Kashyapa",
+   "who": "King Kashyapa",
+   "of": [
+    "granite",
+    "plaster"
+   ],
+   "site": "a granite inselberg 180 m above the plain, with one stair up through a gateway built as a lion, and water gardens at the foot that run on gravity",
+   "srcTitle": "Sigiriya"
+  },
+  "hagia_sophia": {
+   "region": "west_asia",
+   "country": "turkiye",
+   "kind": "worship",
+   "when": "built 532-537; the dome rebuilt after collapse in 558. Church to 1453, mosque to 1935, museum to 2020, mosque since",
+   "who": "Anthemius of Tralles and Isidore of Miletus",
+   "of": [
+    "brick",
+    "stone",
+    "pendentive"
+   ],
+   "site": "the first hill of Constantinople above the Bosphorus, on an active fault — which is why the first dome came down and the second was built steeper",
+   "srcTitle": "Hagia Sophia"
+  },
+  "sacsayhuaman": {
+   "region": "south_america",
+   "country": "peru",
+   "kind": "fortification",
+   "when": "built in the 15th century under the Inca",
+   "who": "Inca masons — Cieza de León reports 20,000 men",
+   "of": [
+    "limestone"
+   ],
+   "site": "the ridge above Cusco, with the stone hauled about 35 km from Rumicolca; three terrace walls, the longest about 400 m and 6 m high",
+   "srcTitle": "Sacsayhuamán"
+  },
+  "eiffel_tower": {
+   "region": "west_europe",
+   "country": "france",
+   "kind": "monument",
+   "when": "built 28 January 1887 to 31 March 1889, opened 15 May 1889",
+   "who": "Gustave Eiffel's company",
+   "of": [
+    "wrought_iron",
+    "rivet"
+   ],
+   "site": "the Champ de Mars for the 1889 exposition; 330 m tall on a 125 m square base, and it moves 9 cm in wind and 18 cm away from the sun",
+   "srcTitle": "Eiffel Tower"
+  },
+  "himeji": {
+   "region": "east_asia",
+   "country": "japan",
+   "kind": "fortification",
+   "when": "a fort from 1333, the present castle 1601-1609; restored 2010-2015",
+   "who": "Ikeda Terumasa",
+   "of": [
+    "timber",
+    "plaster",
+    "stone"
+   ],
+   "site": "a hill over the road west from the capital; 83 buildings, and a path to the keep 325 m long where the straight line is 130",
+   "srcTitle": "Himeji Castle"
+  },
+  "pont_du_gard": {
+   "region": "west_europe",
+   "country": "france",
+   "kind": "engineering",
+   "when": "about 40-60 AD, roughly fifteen years to build",
+   "who": "Roman engineers of Nemausus",
+   "of": [
+    "limestone"
+   ],
+   "site": "the narrowest crossing of the Gardon on a 50 km line that had to fall one metre in three thousand the whole way",
+   "srcTitle": "Pont du Gard"
+  },
+  "potala": {
+   "region": "east_asia",
+   "country": "china",
+   "kind": "palace",
+   "when": "begun 1645; the shell in three years, the interior in forty-five",
+   "who": "the 5th Dalai Lama",
+   "of": [
+    "stone",
+    "copper",
+    "timber"
+   ],
+   "site": "Marpo Ri hill at about 3,700 m on a seismic fault — 400 m east to west, 119 m high, walls battered inward and tied with copper in the foundations",
+   "srcTitle": "Potala Palace"
+  },
+  "benin_moat": {
+   "region": "west_africa",
+   "country": "nigeria",
+   "kind": "fortification",
+   "when": "the Inner City Iya about 1460; moat building possibly from as early as 800",
+   "who": "the Edo of the Kingdom of Benin",
+   "of": [
+    "soil"
+   ],
+   "site": "around Benin City — the inner moat about 12 km, and up to 17 m from ditch floor to rampart top. Estimates of 16,000 km for the wider Edo earthworks are a sum of many separate structures of different dates, not one wall",
+   "srcTitle": "Walls of Benin"
+  },
+  "merv": {
+   "region": "central_asia",
+   "country": "turkmenistan",
+   "kind": "settlement",
+   "when": "Achaemenid through Timurid; possibly the world's largest city by 1150; sacked by the Mongols in 1221",
+   "who": "four dynasties, each building beside the last rather than over it",
+   "of": [
+    "brick",
+    "soil"
+   ],
+   "site": "an oasis on the road across the Karakum where caravans had to stop; Sultan Sanjar's mausoleum is 27 m to a side and its turquoise dome was said to be visible a day's march away",
+   "srcTitle": "Merv"
+  },
+  "ha_long_bay": {
+   "region": "southeast_asia",
+   "country": "vietnam",
+   "kind": "natural",
+   "when": "karst developing since the Miocene, about 20 million years",
+   "who": "—",
+   "of": [
+    "limestone",
+    "tower_karst"
+   ],
+   "site": "a drowned tower-karst landscape: some 1,600 islands of Carboniferous and Permian limestone, most towers 50 to 100 m high and about six times taller than wide, each notched by the sea at the same level",
+   "srcTitle": "Ha Long Bay"
+  },
+  "tikal": {
+   "region": "central_america",
+   "country": "guatemala",
+   "kind": "settlement",
+   "when": "monumental building from the 4th century BC, at its height about 200-900, abandoned by the end of the 10th century",
+   "who": "the Maya of the Petén",
+   "of": [
+    "limestone",
+    "plaster"
+   ],
+   "site": "a plateau in the Petén with no river, lake or cenote — the city ran on rain caught off plastered plazas and held in reservoirs",
+   "srcTitle": "Tikal"
+  },
+  "bagan": {
+   "region": "southeast_asia",
+   "country": "myanmar",
+   "kind": "worship",
+   "when": "11th to 13th centuries; the 1975 earthquake damaged many and 2016 damaged nearly 400 more",
+   "who": "the Pagan Empire — merit-making by whoever could afford a temple",
+   "of": [
+    "brick"
+   ],
+   "site": "a dry plain in the bend of the Irrawaddy, where more than 10,000 temples went up in two centuries and about 2,200 survive",
+   "srcTitle": "Bagan"
+  },
+  "caral": {
+   "region": "south_america",
+   "country": "peru",
+   "kind": "settlement",
+   "when": "about 2600 to 2000 BC — 1,500 years before the Olmec",
+   "who": "the Norte Chico, about 3,000 people here",
+   "of": [
+    "shicra",
+    "stone"
+   ],
+   "site": "the Supe valley, one of nineteen related sites; the main pyramid 150 by 110 m and 28 m high, with no battlements, no weapons and no pottery anywhere",
+   "srcTitle": "Caral"
+  },
+  "krak_des_chevaliers": {
+   "region": "west_asia",
+   "country": "syria",
+   "kind": "fortification",
+   "when": "built out by the Hospitallers 1142-1170 and again in the 13th century; surrendered 8 April 1271",
+   "who": "the Knights Hospitaller",
+   "of": [
+    "stone"
+   ],
+   "site": "the Homs Gap, the one easy route from the Syrian interior to the coast — which is why a garrison of 2,000 sat there",
+   "srcTitle": "Krak des Chevaliers"
+  },
+  "taj_mahal": {
+   "region": "south_asia",
+   "country": "india",
+   "kind": "tomb",
+   "when": "commissioned 1631, mausoleum finished 1648, complex complete 1653",
+   "who": "Shah Jahan, for Mumtaz Mahal",
+   "of": [
+    "marble",
+    "sandstone",
+    "pietra_dura"
+   ],
+   "site": "a bend of the Yamuna at Agra, laid out on a north-south axis in bilateral symmetry, with the minarets leaning outward so a fall would take them away from the tomb",
+   "srcTitle": "Taj Mahal"
+  },
+  "chaco_canyon": {
+   "region": "north_america",
+   "country": "united_states",
+   "kind": "settlement",
+   "when": "the major period 900 to 1150; most construction beams cut 1033-1092",
+   "who": "the Chacoans",
+   "of": [
+    "sandstone",
+    "timber"
+   ],
+   "site": "a dry canyon with no timber at all, fed by six road systems up to 97 km long and 9 m wide, dead straight regardless of terrain, in a culture with no wheel and no draught animal",
+   "checklist": "Chaco Canyon",
+   "srcTitle": "Chaco Culture National Historical Park"
+  },
+  "brooklyn_bridge": {
+   "region": "north_america",
+   "country": "united_states",
+   "kind": "engineering",
+   "when": "opened 24 May 1883",
+   "who": "John A. Roebling, then Washington Roebling, then Emily Warren Roebling",
+   "of": [
+    "steel",
+    "wire",
+    "stone"
+   ],
+   "site": "the East River, too deep and too busy for piers in the channel; 486 m of main span, and 110 cases of decompression sickness in the caissons in four months of 1872",
+   "srcTitle": "Brooklyn Bridge"
+  },
+  "kizhi_pogost": {
+   "region": "east_europe",
+   "country": "russia",
+   "kind": "worship",
+   "when": "the Transfiguration Church's altar laid 6 June 1714; the Intercession rebuilt 1764; dismantled and reassembled 1999-2014",
+   "who": "Karelian carpenters",
+   "of": [
+    "timber",
+    "shingle"
+   ],
+   "site": "an island in Lake Onega, built from Scots pine logs about 30 cm thick and 3 to 5 m long — the restoration numbered and photographed every beam before taking it apart",
+   "srcTitle": "Kizhi Pogost"
+  },
+  "saint_basils": {
+   "region": "east_europe",
+   "country": "russia",
+   "kind": "worship",
+   "when": "built 1555-1561; a tenth chapel added 1588; the colours applied between the 1680s and 1848",
+   "who": "ordered by Ivan IV; the architect is not securely known",
+   "of": [
+    "brick",
+    "onion_dome"
+   ],
+   "site": "the edge of Red Square, built to mark the taking of Kazan — nine chapels on one foundation rather than one church with aisles",
+   "checklist": "Saint Basil's Cathedral",
+   "srcTitle": "Saint Basil's Cathedral"
+  },
+  "brimstone_hill": {
+   "region": "caribbean",
+   "country": "saint_kitts_and_nevis",
+   "kind": "fortification",
+   "when": "guns first mounted 1689; 49 by 1736; besieged and surrendered 1782; UNESCO 1999",
+   "who": "designed by British military engineers, built and maintained by enslaved Africans",
+   "of": [
+    "stone",
+    "cannon"
+   ],
+   "site": "a steeply sloping hill 972 feet above the sea, commanding the approaches to St Kitts",
+   "checklist": "Brimstone Hill Fortress",
+   "srcTitle": "Brimstone Hill Fortress National Park"
+  },
+  "sterkfontein": {
+   "region": "south_africa_r",
+   "country": "south_africa",
+   "kind": "settlement",
+   "when": "the fossils 2.0 to 3.4 million years old; Mrs Ples found 1947, Little Foot 1997",
+   "who": "Australopithecus, then Robert Broom and Ronald Clarke",
+   "of": [
+    "breccia",
+    "dolomite"
+   ],
+   "site": "dolomite caves that opened as shafts, so anything that fell in stayed and was cemented into breccia",
+   "checklist": "Sterkfontein Caves",
+   "srcTitle": "Sterkfontein"
+  },
+  "old_havana": {
+   "region": "caribbean",
+   "country": "cuba",
+   "kind": "settlement",
+   "when": "founded 16 November 1519; burned by a corsair 1555; first fortress begun 1558; UNESCO 1982",
+   "who": "Spanish settlers, then generations of military engineers",
+   "of": [
+    "stone",
+    "limestone"
+   ],
+   "site": "a bay with a narrow mouth and deep water inside, where the treasure fleets gathered before the Atlantic crossing",
+   "checklist": "Old Havana",
+   "srcTitle": "Old Havana"
+  },
+  "table_mountain": {
+   "region": "south_africa_r",
+   "country": "south_africa",
+   "kind": "natural",
+   "when": "the sandstone 450 to 510 million years old, Ordovician",
+   "who": "—",
+   "of": [
+    "quartzite",
+    "sandstone"
+   ],
+   "site": "a syncline over Cape Town, flat because it is a valley floor left standing; 1,084.6 m at Maclear's Beacon, and about 2,285 plant species on it",
+   "srcTitle": "Table Mountain"
+  },
+  "robben_island": {
+   "region": "south_africa_r",
+   "country": "south_africa",
+   "kind": "fortification",
+   "when": "a prison from the late seventeenth century until 1996; political prisoners from 1961; UNESCO 1999",
+   "who": "the Dutch, then the British, then the apartheid state",
+   "of": [
+    "limestone",
+    "stone"
+   ],
+   "site": "a flat island in Table Bay, far enough offshore to need fewer guards than a mainland prison would",
+   "checklist": "Robben Island",
+   "srcTitle": "Robben Island"
+  },
+  "alhambra": {
+   "region": "south_europe",
+   "country": "spain",
+   "kind": "palace",
+   "when": "begun 1238 under Muhammad I; the great campaigns under Yusuf I and Muhammad V in the 14th century; surrendered January 1492",
+   "who": "the Nasrid dynasty",
+   "of": [
+    "plaster",
+    "muqarnas",
+    "tilework"
+   ],
+   "site": "a plateau above Granada, made habitable as a palace by the Sultan's Canal — two long channels and lifting devices bringing mountain water up to it",
+   "srcTitle": "Alhambra"
+  },
+  "persepolis": {
+   "region": "west_asia",
+   "country": "iran",
+   "kind": "palace",
+   "when": "earliest remains 515 BC, under Darius I, continued by Xerxes I and Artaxerxes I; burned 330 BC",
+   "who": "Darius I and his successors",
+   "of": [
+    "limestone",
+    "cedar"
+   ],
+   "site": "a terrace of 125,000 m², partly built up and partly cut out of the mountain it backs onto",
+   "srcTitle": "Persepolis"
+  },
+  "ajanta_caves": {
+   "region": "south_asia",
+   "country": "india",
+   "kind": "worship",
+   "when": "first phase from the 2nd century BCE; second phase possibly only 460-480 CE; rediscovered 28 April 1819",
+   "who": "Buddhist communities, under Harishena in the second phase",
+   "of": [
+    "basalt"
+   ],
+   "site": "a horseshoe cliff of Deccan flood basalt above the Waghora river, cut into rather than built on",
+   "checklist": "Ajanta Caves",
+   "srcTitle": "Ajanta Caves"
+  },
+  "leptis_magna": {
+   "region": "north_africa",
+   "country": "libya",
+   "kind": "settlement",
+   "when": "founded in the second half of the 7th century BC; rebuilt under Septimius Severus from AD 193; UNESCO 1982",
+   "who": "Punic settlers, then Septimius Severus",
+   "of": [
+    "marble",
+    "stone"
+   ],
+   "site": "a harbour on the Tripolitanian coast; abandoned and buried under dunes, which preserved it because nothing could be quarried away that nobody could see",
+   "srcTitle": "Leptis Magna"
+  },
+  "mogao_caves": {
+   "region": "east_asia",
+   "country": "china",
+   "kind": "worship",
+   "when": "from 366 AD to the 14th century; Cave 17 sealed early in the 11th century, opened 25 June 1900",
+   "who": "Buddhist communities, beginning with the monk Le Zun",
+   "of": [
+    "conglomerate",
+    "pigment"
+   ],
+   "site": "a cliff above an oasis 25 km from Dunhuang, where the Silk Road split to pass the Taklamakan — 46,000 m² of painted wall in nearly 500 caves",
+   "checklist": "Mogao Caves",
+   "srcTitle": "Mogao Caves"
+  },
+  "mount_fuji": {
+   "region": "east_asia",
+   "country": "japan",
+   "kind": "natural",
+   "when": "New Fuji from about 10,000 years ago; last erupted 16 December 1707 to about 1 January 1708; UNESCO 2013",
+   "who": "—",
+   "of": [
+    "basalt",
+    "andesite",
+    "ash"
+   ],
+   "site": "where three tectonic plates meet south-west of Tokyo, with four volcanoes built one on top of another; 3,776 m",
+   "checklist": "Mount Fuji",
+   "srcTitle": "Mount Fuji"
+  },
+  "meroe_pyramids": {
+   "region": "north_africa",
+   "country": "sudan",
+   "kind": "tomb",
+   "checklist": "Meroe pyramids",
+   "when": "from about 270 BC, and building went on for over 700 years",
+   "who": "the Kingdom of Kush; the largest, 30 m, is thought to have been built for the Nubian queen Amanishakheto",
+   "of": [
+    "sandstone",
+    "granite"
+   ],
+   "site": "clusters on the desert ridges east of the Nile at Meroë, closely arranged rather than spread out, so a royal cemetery reads as a field of spires",
+   "size": "6 to 30 m tall, inclined at about 70°; over 40 of them were destroyed by Giuseppe Ferlini in the 1830s looking for treasure",
+   "srcTitle": "Nubian pyramids"
+  },
+  "catalhoyuk": {
+   "region": "west_asia",
+   "country": "turkey",
+   "kind": "settlement",
+   "checklist": "Catalhoyuk",
+   "when": "about 7500 BC to 5600 BC, at its height around 7000 BC",
+   "who": "between 600 and 800 people in an average year of the middle phase; excavated by James Mellaart 1961–65 and by Ian Hodder from 1993 to 2018",
+   "of": [
+    "adobe",
+    "plaster",
+    "clay"
+   ],
+   "site": "the Konya plain, on land good enough that people stayed two thousand years without ever laying out a street — houses were rebuilt on top of each other until the settlement stood on its own remains",
+   "size": "600–800 people, houses entered through holes in the ceiling, interiors plastered smooth, the dead buried in pits beneath the floors and hearths",
+   "srcTitle": "Çatalhöyük"
+  },
+  "segovia_aqueduct": {
+   "region": "south_europe",
+   "country": "spain",
+   "kind": "engineering",
+   "checklist": "Aqueduct of Segovia",
+   "when": "Roman, around the first century AD; 2016 archaeological evidence argues for after 112 AD, under Trajan or early Hadrian, rather than the older attribution to Domitian",
+   "who": "Rome",
+   "of": [
+    "granite"
+   ],
+   "site": "the valley cutting across the line from the Río Frío to the city — the arches exist only because the ground drops away, and they are tallest, 28.5 m, exactly where it drops furthest",
+   "size": "167 arches, 28.5 m maximum height including nearly 6 m of foundation, water brought from a source 17 km away",
+   "srcTitle": "Aqueduct of Segovia"
+  },
+  "banaue_terraces": {
+   "region": "southeast_asia",
+   "country": "philippines",
+   "kind": "engineering",
+   "checklist": "Banaue rice terraces",
+   "when": "disputed — Otley Beyer put them at over 2,000 years old, and several researchers contend they were built much later",
+   "who": "the ancestors of the Igorot people, working largely by hand with minimal equipment",
+   "of": [
+    "stone",
+    "soil",
+    "water",
+    "rice"
+   ],
+   "site": "a mountainside about 1,500 m above sea level, under rainforest — the forest above holds the water and the terraces below are irrigated from it, so clearing the trees would drain the fields",
+   "size": "terraces climbing a whole valley side, retained by walls of stone and rammed earth fed from a main canal above each cluster",
+   "srcTitle": "Banaue Rice Terraces"
+  },
+  "ziggurat_of_ur": {
+   "region": "west_asia",
+   "country": "iraq",
+   "kind": "worship",
+   "checklist": "Ur ziggurat",
+   "when": "begun about 2040 BC under Ur-Nammu and completed about 2000 BC; restored by Nabonidus in the 6th century BC and again in the 1980s",
+   "who": "Ur-Nammu of the Third Dynasty of Ur",
+   "of": [
+    "brick",
+    "bitumen",
+    "adobe"
+   ],
+   "site": "the flat alluvial plain of southern Mesopotamia, where there is no stone and no hill — so a temple that wants height has to be built out of the mud it stands on",
+   "size": "about 64 m by 45 m at the base; the height is an estimate, since only the foundations survive from the Sumerian period",
+   "srcTitle": "Ziggurat of Ur"
+  }
+ },
+ "wanted": {
+  "north_africa": [
+   "Leptis Magna — settlement",
+   "Carthage — settlement",
+   "Volubilis — settlement",
+   "Siwa Oasis temple — worship",
+   "Tassili n'Ajjer rock art — rock_art",
+   "Aswan unfinished obelisk — industry",
+   "Meroe pyramids — tomb",
+   "Djemila — settlement",
+   "Great Pyramid of Giza — tomb",
+   "Lighthouse of Alexandria — engineering",
+   "Nabta Playa — settlement"
+  ],
+  "west_africa": [
+   "Great Mosque of Djenne — worship",
+   "Benin Walls — fortification",
+   "Sungbo's Eredo — fortification",
+   "Nok terracottas — monument",
+   "Cape Coast Castle — fortification",
+   "Larabanga Mosque — worship",
+   "Kumasi Manhyia — palace",
+   "Igbo-Ukwu bronzes — monument",
+   "Benin Moat — fortification"
+  ],
+  "middle_africa": [
+   "Kongo capital Mbanza-Kongo — settlement",
+   "Sangha Trinational — natural",
+   "Lope-Okanda rock engravings — rock_art",
+   "Dzanga-Sangha — natural",
+   "Loango slave route sites — settlement"
+  ],
+  "east_africa": [
+   "Lalibela rock-hewn churches — worship",
+   "Aksum stelae — monument",
+   "Great Zimbabwe — fortification",
+   "Fasil Ghebbi — palace",
+   "Lamu Old Town — settlement",
+   "Kilwa Kisiwani — settlement",
+   "Olduvai Gorge — settlement",
+   "Ngorongoro Crater — natural",
+   "Mount Kilimanjaro — natural",
+   "Obelisk of Axum — monument"
+  ],
+  "south_africa_r": [
+   "Mapungubwe — settlement",
+   "Drakensberg rock art — rock_art",
+   "Sterkfontein Caves — settlement",
+   "Table Mountain — natural",
+   "Robben Island — fortification",
+   "Tsodilo Hills — rock_art",
+   "Twyfelfontein — rock_art"
+  ],
+  "north_america": [
+   "Cahokia Mounds — settlement",
+   "Mesa Verde cliff dwellings — settlement",
+   "Chaco Canyon — settlement",
+   "Grand Canyon — natural",
+   "Yellowstone — natural",
+   "Brooklyn Bridge — engineering",
+   "Hoover Dam — engineering",
+   "Head-Smashed-In Buffalo Jump — settlement",
+   "Old Quebec — settlement",
+   "Niagara Falls — natural",
+   "L'Anse aux Meadows — settlement"
+  ],
+  "central_america": [
+   "Chichen Itza — worship",
+   "Tikal — settlement",
+   "Teotihuacan — settlement",
+   "Palenque — settlement",
+   "Copan — settlement",
+   "Monte Alban — settlement",
+   "Panama Canal — engineering",
+   "Joya de Ceren — settlement"
+  ],
+  "caribbean": [
+   "Citadelle Laferriere — fortification",
+   "Brimstone Hill Fortress — fortification",
+   "Old Havana — settlement",
+   "Morne Trois Pitons — natural",
+   "El Morro San Juan — fortification",
+   "Taino rock art of Cueva de las Maravillas — rock_art"
+  ],
+  "south_america": [
+   "Machu Picchu — settlement",
+   "Nazca Lines — rock_art",
+   "Sacsayhuaman — fortification",
+   "Tiwanaku — settlement",
+   "Caral — settlement",
+   "Angel Falls — natural",
+   "Iguazu Falls — natural",
+   "Salar de Uyuni — natural",
+   "Cueva de las Manos — rock_art",
+   "Qhapaq Nan road — engineering",
+   "Rapa Nui moai — monument"
+  ],
+  "central_asia": [
+   "Registan Samarkand — worship",
+   "Merv — settlement",
+   "Bukhara old city — settlement",
+   "Gur-e-Amir — tomb",
+   "Tash Rabat caravanserai — engineering",
+   "Otrar — settlement",
+   "Aral Sea — natural"
+  ],
+  "east_asia": [
+   "Great Wall — fortification",
+   "Forbidden City — palace",
+   "Terracotta Army — tomb",
+   "Longmen Grottoes — worship",
+   "Mogao Caves — worship",
+   "Potala Palace — palace",
+   "Himeji Castle — fortification",
+   "Horyu-ji — worship",
+   "Todai-ji — worship",
+   "Mount Fuji — natural",
+   "Seokguram Grotto — worship",
+   "Hwaseong Fortress — fortification",
+   "Erdene Zuu — worship",
+   "Grand Canal — engineering"
+  ],
+  "southeast_asia": [
+   "Angkor Wat — worship",
+   "Borobudur — worship",
+   "Prambanan — worship",
+   "Bagan — worship",
+   "Ayutthaya — settlement",
+   "Banaue rice terraces — engineering",
+   "Ha Long Bay — natural",
+   "Hue Citadel — fortification",
+   "My Son — worship",
+   "Sukhothai — settlement"
+  ],
+  "south_asia": [
+   "Taj Mahal — tomb",
+   "Ajanta Caves — worship",
+   "Ellora Caves — worship",
+   "Konark Sun Temple — worship",
+   "Mohenjo-daro — settlement",
+   "Harappa — settlement",
+   "Red Fort — fortification",
+   "Sanchi Stupa — worship",
+   "Sigiriya — fortification",
+   "Anuradhapura — settlement",
+   "Lalitpur Durbar Square — palace",
+   "Sundarbans — natural"
+  ],
+  "west_asia": [
+   "Petra — settlement",
+   "Gobekli Tepe — worship",
+   "Persepolis — palace",
+   "Hagia Sophia — worship",
+   "Dome of the Rock — worship",
+   "Palmyra — settlement",
+   "Baalbek — worship",
+   "Krak des Chevaliers — fortification",
+   "Ur ziggurat — worship",
+   "Catalhoyuk — settlement",
+   "Ishtar Gate — monument",
+   "Masada — fortification",
+   "Dead Sea — natural",
+   "Cappadocia rock churches — worship",
+   "Temple of Artemis — worship",
+   "Mausoleum at Halicarnassus — tomb",
+   "Hanging Gardens of Babylon — monument"
+  ],
+  "north_europe": [
+   "Stonehenge — monument",
+   "Newgrange — tomb",
+   "Skara Brae — settlement",
+   "Jelling stones — monument",
+   "Urnes stave church — worship",
+   "Kronborg — fortification",
+   "Giant's Causeway — natural",
+   "Iron Bridge — engineering",
+   "Hadrian's Wall — fortification",
+   "Suomenlinna — fortification",
+   "Vigelandsparken — monument",
+   "Geirangerfjord — natural"
+  ],
+  "south_europe": [
+   "Colosseum — monument",
+   "Pantheon — worship",
+   "Parthenon — worship",
+   "Pont du Gard — engineering",
+   "Alhambra — palace",
+   "Nehaj Fortress — fortification",
+   "Diocletian's Palace — palace",
+   "Plitvice Lakes — natural",
+   "Pula Arena — monument",
+   "Aqueduct of Segovia — engineering",
+   "Sagrada Familia — worship",
+   "Knossos — palace",
+   "Pompeii — settlement",
+   "Mount Etna — natural",
+   "Meteora — worship",
+   "Trogir — settlement",
+   "Euphrasian Basilica — worship",
+   "Colossus of Rhodes — monument",
+   "Statue of Zeus at Olympia — monument",
+   "Velebit — natural",
+   "Walls of Dubrovnik — fortification",
+   "Senj — settlement"
+  ],
+  "east_europe": [
+   "Saint Basil's Cathedral — worship",
+   "Moscow Kremlin — fortification",
+   "Wieliczka salt mine — industry",
+   "Malbork Castle — fortification",
+   "Prague Castle — fortification",
+   "Auschwitz-Birkenau — settlement",
+   "Kizhi Pogost — worship",
+   "Bialowieza Forest — natural",
+   "Rila Monastery — worship",
+   "Sighisoara — settlement"
+  ],
+  "west_europe": [
+   "Notre-Dame de Paris — worship",
+   "Mont-Saint-Michel — worship",
+   "Chartres Cathedral — worship",
+   "Eiffel Tower — monument",
+   "Cologne Cathedral — worship",
+   "Neuschwanstein — palace",
+   "Carcassonne — fortification",
+   "Lascaux — rock_art",
+   "Zollverein Coal Mine — industry",
+   "Amsterdam canal ring — engineering",
+   "Aachen Cathedral — worship",
+   "Palace of Versailles — palace"
+  ],
+  "anz": [
+   "Uluru — natural",
+   "Sydney Opera House — monument",
+   "Great Barrier Reef — natural",
+   "Budj Bim eel traps — engineering",
+   "Port Arthur — fortification",
+   "Te Wahipounamu — natural",
+   "Waitangi Treaty Grounds — settlement",
+   "Kakadu rock art — rock_art"
+  ],
+  "melanesia": [
+   "Chief Roi Mata's Domain — settlement",
+   "Kuk Early Agricultural Site — settlement",
+   "Levuka — settlement",
+   "Rennell — natural"
+  ],
+  "micronesia": [
+   "Nan Madol — settlement",
+   "Latte Stones of Guam — monument",
+   "Bikini Atoll — settlement"
+  ],
+  "polynesia": [
+   "Rapa Nui moai — monument",
+   "Taputapuatea marae — worship",
+   "Puuhonua o Honaunau — worship",
+   "Mauna Kea — natural",
+   "Tongan Haamonga a Maui — monument"
+  ]
+ }
 }
