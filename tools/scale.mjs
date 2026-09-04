@@ -1029,6 +1029,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* places batch 12, 4 Sep. a sinkhole, tens of metres across */
+          'cenote',
           /* places batch 11, 4 Sep. an overhang, metres deep */
           'alcove',
           /* places batch 10, 4 Sep. a five-storey timber tower */
@@ -1146,6 +1148,10 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* places batch 12, 4 Sep. a plug hundreds of metres high */
+          'inselberg',
+          /* places batch 12, 4 Sep. buildings and precincts */
+          'palace', 'chichen_itza', 'sigiriya',
           /* places batch 11, 4 Sep. an order, on the conceptual rack with the other institutions */
           'teutonic_order',
           /* places batch 11, 4 Sep. a cliff-dwelling complex and a 21-hectare castle */

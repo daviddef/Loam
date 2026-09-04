@@ -343,7 +343,12 @@
     "ancestral_puebloan": "Ancestral Puebloans",
     "mesa_verde": "Mesa Verde National Park",
     "teutonic_order": "Teutonic Order",
-    "malbork": "Malbork Castle"
+    "malbork": "Malbork Castle",
+    "cenote": "Cenote",
+    "chichen_itza": "Chichen Itza",
+    "inselberg": "Inselberg",
+    "sigiriya": "Sigiriya",
+    "palace": "Palace"
   },
   "$comment2": "Primary-source overrides for claims a general encyclopedia entry does not directly support. These are literal URLs and are checked by HTTP request, not by title lookup.",
   "urls": {
@@ -813,6 +818,11 @@
     "cliff+maize": "Ancestral Puebloans",
     "alcove+ancestral_puebloan": "Mesa Verde National Park",
     "belief+knight": "Teutonic Order",
-    "brick+teutonic_order": "Malbork Castle"
+    "brick+teutonic_order": "Malbork Castle",
+    "karst+sinkhole": "Cenote",
+    "cenote+maya_civilization": "Chichen Itza",
+    "erosion+granite": "Inselberg",
+    "inselberg+palace": "Sigiriya",
+    "house+monarchy": "Palace"
   }
 }

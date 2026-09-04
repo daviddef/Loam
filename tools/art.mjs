@@ -43356,6 +43356,32 @@ def('malbork',     () => [P('M6 52 L54 52 L54 24 L6 24 Z', 'lo'),
                           ...[0, 1, 2, 3, 4].map(i => S(`M8 ${30 + i * 5} L52 ${30 + i * 5}`, 'gh', 1)),  // brick courses
                           P('M26 52 L34 52 L34 38 Q30 34 26 38 Z', 'bs')]);
 
+/* Places, batch 12 — Central America and Southern Asia, and the two landforms
+   they sit on. A cenote is drawn as a hole with water at the bottom, because
+   on the Yucatan that is the entire hydrology.                              */
+def('cenote',      () => [P('M4 18 L56 18 L56 54 L4 54 Z', 'lo'),
+                          P('M18 18 Q14 40 22 50 L38 50 Q46 40 42 18 Z', 'bs'),
+                          wave('hi', 46, 3, 9),
+                          ...[0, 1, 2].map(i => S(`M4 ${26 + i * 8} L${17 - i} ${26 + i * 8}`, 'gh', 1.1))]);
+def('palace',      () => [P('M8 52 L52 52 L52 24 L8 24 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => P(`M${12 + i * 11} 52 L${12 + i * 11} 34 Q${15.5 + i * 11} 28 ${19 + i * 11} 34 L${19 + i * 11} 52 Z`, 'bs')),
+                          P('M6 24 L54 24 L50 16 L10 16 Z', 'lo'),
+                          ...[16, 30, 44].map(x => C(x, 20, 1.6, 'hi'))]);
+def('chichen_itza',()=> [...[0, 1, 2, 3].map(i =>
+                            P(`M${8 + i * 5} ${50 - i * 8} L${52 - i * 5} ${50 - i * 8} L${52 - i * 5} ${42 - i * 8} L${8 + i * 5} ${42 - i * 8} Z`, i % 2 ? 'lo' : 'bs')),
+                          P('M24 18 L36 18 L36 8 L24 8 Z', 'lo'),
+                          P('M27 50 L33 50 L33 18 L27 18 Z', 'hi'),          // the stair
+                          P('M8 50 L27 18 L27 50 Z', 'gh')]);                // the equinox shadow
+def('inselberg',   () => [P('M4 52 L56 52 L56 54 L4 54 Z', 'gh'),
+                          P('M16 52 Q14 22 30 16 Q46 22 44 52 Z', 'lo'),
+                          ...[0, 1, 2, 3].map(i => S(`M${20 + i * 3} ${24 + i * 2} L${20 + i * 3} 50`, 'gh', 1.1)),
+                          S('M4 52 Q30 48 56 52', 'bs', 1.6)]);
+def('sigiriya',    () => [P('M14 52 Q12 20 30 14 Q48 20 46 52 Z', 'lo'),
+                          P('M22 26 L38 26 L38 14 L22 14 Z', 'hi'),          // the palace on top
+                          P('M22 44 L28 38 L32 44 L38 38 L38 46 L22 46 Z', 'bs'),  // the lion gate paws
+                          ...[0, 1].map(i => S(`M${20 + i * 20} 46 L${20 + i * 20} 52`, 'bs', 2)),
+                          ...[0, 1, 2].map(i => wave('gh', 56, 2, 24 - i * 6))]);
+
 /* ART BATCH INSERTION POINT — new def() calls append here, above this line. */
 
 

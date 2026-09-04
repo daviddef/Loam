@@ -93602,5 +93602,55 @@
     "why": "There is no building stone on the north German plain, so the order fired its own. 21 hectares of brick inside the outer walls, built in phases over 132 years — the largest brick complex in Europe because brick was the only option.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Malbork_Castle"
+  },
+  {
+    "in": [
+      "monarchy",
+      "house"
+    ],
+    "out": "palace",
+    "why": "A ruler's house has to hold a court, a treasury, an audience and a garrison, so it grows into a building type of its own. Its plan is about who may get how close, which is why the last room is always the smallest.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Palace"
+  },
+  {
+    "in": [
+      "sinkhole",
+      "karst"
+    ],
+    "out": "cenote",
+    "why": "Limestone dissolves in slightly acid rainwater until a cave roof gives way. On the Yucatán this is the entire hydrology: no surface river anywhere, and every settlement sited on a hole in the ground.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cenote"
+  },
+  {
+    "in": [
+      "cenote",
+      "maya_civilization"
+    ],
+    "out": "chichen_itza",
+    "why": "Four cenotes in one place means water all year, and that is why a city is there rather than somewhere else. El Castillo's 91 steps on each of four faces plus the top step come to 365, and around the equinoxes the corner casts a serpent of shadow down the balustrade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chichen_Itza"
+  },
+  {
+    "in": [
+      "granite",
+      "erosion"
+    ],
+    "out": "inselberg",
+    "why": "A magma plug cools underground harder than the rock it pushed into. Strip the softer rock off over tens of millions of years and the plug is left standing alone on a plain, with no foothills, because there was never a mountain around it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Inselberg"
+  },
+  {
+    "in": [
+      "inselberg",
+      "palace"
+    ],
+    "out": "sigiriya",
+    "why": "Kashyapa put his palace on top of a 180 m granite plug reached by one stair through a gateway built as a lion's mouth. The water gardens at the foot run on gravity alone and some of the fountains still work in the rains.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sigiriya"
   }
 ]
