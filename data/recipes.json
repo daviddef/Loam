@@ -94512,5 +94512,45 @@
     "why": "Multicellular, and living by eating rather than by making its own food. That single constraint explains the rest of the body plan: a gut, a way to move to the food, and a nervous system to decide which way.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Animal"
+  },
+  {
+    "in": [
+      "sponge",
+      "cell"
+    ],
+    "out": "multicellularity",
+    "why": "A sponge has no organs and no nerves, and if you push it through a sieve the separated cells crawl back together and rebuild it. That is multicellularity at its most minimal: cells that stay stuck together and divide the work.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Multicellular_organism"
+  },
+  {
+    "in": [
+      "collagen",
+      "cell"
+    ],
+    "out": "animal",
+    "why": "Collagen is the animal kingdom's signature: a triple helix that makes a sheet cells can sit on, and no plant or fungus makes it. Everything with a body plan is built on that scaffold.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Collagen"
+  },
+  {
+    "in": [
+      "gill",
+      "swim_bladder"
+    ],
+    "out": "lung",
+    "why": "The swim bladder and the lung are the same organ, and in the lobe-finned lineage it went the other way — an outpouching of the gut used for buoyancy became one used for air. Fish that gulp air do it with the organ that became ours.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Swim_bladder"
+  },
+  {
+    "in": [
+      "flax",
+      "thread"
+    ],
+    "out": "string",
+    "why": "Twist short fibres one way and twist the resulting strands the other, and the two twists fight each other so the thing cannot unwind. That is the whole invention, and it is at least thirty thousand years old.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rope"
   }
 ]
