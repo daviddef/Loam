@@ -103051,5 +103051,263 @@
     "why": "Defined by what it does at the point of contact: destruction through the full thickness of skin. It is a property of the substance and its concentration together, which is why the same chemical carries a hazard label at one strength and sits in food at another.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Corrosive_substance"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "arthropod"
+    ],
+    "out": "segment",
+    "why": "An arthropod is a segmented animal in a jointed shell: the cuticle is divided into sclerites and membranes, and it is the membranes between segments that let it bend at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Segmentation_(biology)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 1"
+  },
+  {
+    "in": [
+      "leg",
+      "segment"
+    ],
+    "out": "thorax",
+    "why": "A thorax of three clearly defined segments, one pair of legs on each, is the single most important thing that makes a hexapod a hexapod — everything to do with locomotion is concentrated in this one region.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thorax",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 29"
+  },
+  {
+    "in": [
+      "muscle",
+      "segment"
+    ],
+    "out": "abdomen",
+    "why": "Behind the thorax the segments carry no walking legs. What they carry instead is the gut, most of the spiracles, and the genital apparatus at the far end.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Abdomen",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 59"
+  },
+  {
+    "in": [
+      "chitin",
+      "head"
+    ],
+    "out": "mandible",
+    "why": "The paired appendages of the fourth head segment, and unlike every other mouthpart they are compact, undivided and strongly sclerotized — one solid piece, made for the mechanical work of breaking food up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mandible_(insect_mouthpart)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 20"
+  },
+  {
+    "in": [
+      "leg",
+      "thorax"
+    ],
+    "out": "coxa",
+    "why": "The proximal element of the leg, short and voluminous, connected ventrolaterally to its thoracic segment and holding the attachment areas for most of the muscles that move the whole limb.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_leg",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 39"
+  },
+  {
+    "in": [
+      "joint",
+      "coxa"
+    ],
+    "out": "trochanter",
+    "why": "Its joint with the coxa is always dicondylous — two pivots, front and back — while its connection to the femur is not a real articulation at all and barely moves.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_leg",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 39"
+  },
+  {
+    "in": [
+      "femur",
+      "joint"
+    ],
+    "out": "tibia",
+    "why": "The femur is the largest element of a hexapod leg and meets the tibia directly. There is no patella between the two — its absence is one of the things that marks a hexapod out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_leg",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 40"
+  },
+  {
+    "in": [
+      "claw",
+      "tibia"
+    ],
+    "out": "tarsus",
+    "why": "Beyond the tibia the leg divides into a few short tarsomeres and a pretarsus, and that last piece carries the claws and the adhesive pad between them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_leg",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 38"
+  },
+  {
+    "in": [
+      "arachnid",
+      "mandible"
+    ],
+    "out": "chelicera",
+    "why": "Spiders and scorpions have no mandibles at all. The first pair of appendages is a chelicera instead, and in a spider it carries the venom duct.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chelicerae"
+  },
+  {
+    "in": [
+      "arachnid",
+      "segment"
+    ],
+    "out": "pedipalp",
+    "why": "The same appendage on the same segment, doing entirely different work in different orders — sensory in spiders, a grasping pincer in scorpions, and a sperm-transfer organ in a male spider.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pedipalp"
+  },
+  {
+    "in": [
+      "compound_eye",
+      "lens"
+    ],
+    "out": "ommatidium",
+    "why": "A compound eye is thousands of these packed together, each looking in a slightly different direction. Resolution comes from having many, not from focusing, which is why an insect eye cannot be made sharper without being made enormous.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ommatidium"
+  },
+  {
+    "in": [
+      "beetle",
+      "insect_wing"
+    ],
+    "out": "elytron",
+    "why": "Beetles fly on the hind pair only. The forewings hardened into cases over them, which is why a beetle can go under bark and into soil where a fly cannot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Elytron"
+  },
+  {
+    "in": [
+      "butterfly",
+      "tube"
+    ],
+    "out": "proboscis",
+    "why": "Two elongated halves zip together down their length to make a single tube. A butterfly that cannot join them cannot drink at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Proboscis"
+  },
+  {
+    "in": [
+      "abdomen",
+      "egg"
+    ],
+    "out": "ovipositor",
+    "why": "Built from appendages of the eighth and ninth abdominal segments, and shaped by where the eggs have to go — a drill in a wasp that lays into wood, a blade in a cricket that lays into soil.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ovipositor"
+  },
+  {
+    "in": [
+      "ovipositor",
+      "venom"
+    ],
+    "out": "sting",
+    "why": "In the aculeate wasps the egg tube stopped laying eggs and became a weapon with a venom gland behind it. That is why no male bee or wasp can sting: it never had an ovipositor to convert.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stinger"
+  },
+  {
+    "in": [
+      "larva",
+      "molt"
+    ],
+    "out": "pupa",
+    "why": "Complete metamorphosis needs a stage that does nothing else. Inside, most larval tissue is broken down and the adult is grown from imaginal discs that were carried, unused, the whole time.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pupa"
+  },
+  {
+    "in": [
+      "pupa",
+      "butterfly"
+    ],
+    "out": "chrysalis",
+    "why": "The distinction people miss: a cocoon is spun from silk and a chrysalis is the pupa's own skin. Moths mostly make the first; butterflies make the second.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pupa"
+  },
+  {
+    "in": [
+      "larva",
+      "metamorphosis"
+    ],
+    "out": "instar",
+    "why": "A hard cuticle cannot stretch, so size can only change when it is shed. Everything between one moult and the next is a single instar, and the number of them is often fixed for the species.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Instar"
+  },
+  {
+    "in": [
+      "ant",
+      "antenna"
+    ],
+    "out": "pheromone",
+    "why": "An ant lays a trail on the way back from food and each ant that follows it lays more, so the shortest route is reinforced fastest. Nothing decides this; the chemistry evaporates at a rate that does the deciding.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pheromone"
+  },
+  {
+    "in": [
+      "ant",
+      "pheromone"
+    ],
+    "out": "colony",
+    "why": "The puzzle Darwin called a special difficulty: a sterile worker cannot pass on its own traits. The answer is that it passes on its mother's, and in the haplodiploid Hymenoptera sisters can share more of their genes with each other than with their own offspring.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Eusociality"
+  },
+  {
+    "in": [
+      "bee",
+      "colony"
+    ],
+    "out": "hive",
+    "why": "A swarm chooses one by consensus: scouts dance for competing sites, and the dancing for the poorer options dies away until only one is left. Nothing votes; the recruitment simply stops.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Beehive"
+  },
+  {
+    "in": [
+      "hive",
+      "wax"
+    ],
+    "out": "honeycomb",
+    "why": "Bees build cylinders and heat does the rest — the wax flows to the shape with the least surface, which is the hexagon. The efficiency is a physical result, not a plan.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Honeycomb"
+  },
+  {
+    "in": [
+      "bee",
+      "resin"
+    ],
+    "out": "propolis",
+    "why": "It varnishes the inside of the nest and entombs anything too large to carry out — a dead mouse is sealed in it rather than removed, and does not rot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Propolis"
+  },
+  {
+    "in": [
+      "larva",
+      "royal_jelly"
+    ],
+    "out": "queen_bee",
+    "why": "Any female larva can become one. What decides it is being fed royal jelly throughout rather than for three days — the same genome, a different diet, and a different animal.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Queen_bee"
+  },
+  {
+    "in": [
+      "hive",
+      "larva"
+    ],
+    "out": "worker_bee",
+    "why": "She cleans cells first, then feeds larvae, then builds comb, then guards, and only in her last weeks does she forage. The order follows her glands developing and shutting down again, not a decision.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Worker_bee"
   }
 ]

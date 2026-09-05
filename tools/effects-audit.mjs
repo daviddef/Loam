@@ -60,6 +60,32 @@ const ROUTE_WORDS = {
   thermal:    ['heat', 'burn', 'temperature', 'cold', 'thermal', 'scald', 'freez', 'hypotherm'],
 };
 
+/* Loam's own outcome vocabulary. These are categories rather than diagnoses —
+ * an article about mercury poisoning describes neurotoxicity for pages without
+ * ever writing "neurotoxin" — so they are checked against the words the
+ * subject is actually written in. This is not a loosening: a source that
+ * mentions none of these is still saying nothing about the claim. */
+const CATEGORY = {
+  irritant:     ['irritat', 'inflamm', 'burning', 'stinging', 'redness', 'rash'],
+  poisoning:    ['poison', 'toxic', 'intoxicat', 'overdose'],
+  neurotoxin:   ['neurotox', 'nervous system', 'neurolog', 'brain', 'nerve'],
+  sensitiser:   ['sensitis', 'sensitiz', 'allerg', 'hypersensitiv', 'dermatitis'],
+  hepatotoxin:  ['liver', 'hepat'],
+  nephrotoxin:  ['kidney', 'renal', 'nephro'],
+  corrosive:    ['corrosive', 'caustic', 'burn', 'destroys tissue'],
+  carcinogen:   ['carcinogen', 'cancer', 'tumour', 'tumor'],
+  mutagen:      ['mutagen', 'mutation', 'dna damage'],
+  teratogen:    ['teratogen', 'birth defect', 'congenital'],
+  infection:    ['infect', 'pathogen', 'bacteri', 'virus', 'parasit'],
+  blunt_trauma: ['injur', 'trauma', 'impact', 'struck', 'crush', 'fatal', 'killed'],
+  laceration:   ['cut', 'lacerat', 'wound', 'sharp', 'bleed'],
+  thermal_burn: ['burn', 'scald', 'heat'],
+  electrocution:['electric', 'current', 'shock', 'cardiac arrest'],
+  drowning:     ['drown', 'swept', 'water'],
+  asphyxia:     ['asphyx', 'suffocat', 'oxygen', 'breath'],
+  allergic_reaction: ['allerg', 'hypersensitiv', 'anaphyla'],
+};
+
 /** Distinctive words of an element's name, minus the ones that carry no weight. */
 const STOP = new Set(['the', 'of', 'a', 'and', 'in', 'disease', 'syndrome', 'reaction', 'injury']);
 function nameTerms(id) {
@@ -111,14 +137,14 @@ console.log(`\nDOES THE SOURCE ACTUALLY SAY THIS?\n`);
 console.log(`  ${n(rows.length)} row(s) to check. A term missing from the cited article is the`);
 console.log(`  signal; a term present is only weak evidence that the row is right.\n`);
 
-const problems = [];
+const problems = [], unreached = [];
 let checked = 0, unfetchable = 0;
 
 for (const { where, id, f } of rows) {
   const title = titleOf(f.src);
-  if (!title) { unfetchable++; problems.push([where, 'src is not a Wikipedia article — cannot be checked by this tool']); continue; }
+  if (!title) { unfetchable++; unreached.push([where, 'src is not a Wikipedia article — cannot be checked by this tool']); continue; }
   let text = await articleText(title);
-  if (!text) { unfetchable++; problems.push([where, `could not fetch "${title}"`]); continue; }
+  if (!text) { unfetchable++; unreached.push([where, `could not fetch "${title}"`]); continue; }
   let lower = text.toLowerCase();
   checked++;
 
@@ -127,7 +153,7 @@ for (const { where, id, f } of rows) {
   // 1. the outcome. The single most useful check: a row whose source never
   //    mentions its own outcome is either mis-sourced or wrong.
   if (f.outcome) {
-    const terms = nameTerms(f.outcome);
+    const terms = CATEGORY[f.outcome] || nameTerms(f.outcome);
     if (!terms.some(t => lower.includes(t))) misses.push(`outcome "${f.outcome}" is not mentioned`);
   }
   // 2. the route
@@ -172,10 +198,11 @@ for (const { where, id, f } of rows) {
   if (misses.length) problems.push([where, misses.join('; ')]);
 }
 
-const clean = checked - problems.filter(([w]) => rows.some(r => r.where === w)).length;
 console.log(`  checked      ${String(checked).padStart(4)}   article fetched and read`);
-console.log(`  unfetchable  ${String(unfetchable).padStart(4)}   no article, or the fetch failed`);
 console.log(`  flagged      ${String(problems.length).padStart(4)}   the article does not carry something the row asserts`);
+console.log(`  NOT CHECKED  ${String(unfetchable).padStart(4)}   no article, or the fetch failed — this is not a pass`);
+if (unfetchable > checked / 4)
+  console.log(`\n  ⚠ more than a quarter of the rows were never reached. Wikipedia throttles\n    this address; run again and the disk cache will carry the ones already got.`);
 console.log(`  fetched ${stats.fetched} article(s) this run, ${stats.fromCache} from cache, ${stats.failures} failure(s).`);
 
 if (problems.length) {
@@ -189,6 +216,7 @@ if (problems.length) {
 writeFileSync(join(ROOT, 'data/effects-audit.json'), JSON.stringify({
   $comment: 'Written by tools/effects-audit.mjs. Which effect rows are carried by the article they cite. A flag means the article does not mention something the row asserts; it is a place to look, not a verdict.',
   checked, unfetchable, flagged: problems.length,
+  unreached: unreached.map(([where, why]) => ({ where, why })),
   when: new Date().toISOString().slice(0, 10),
   problems: problems.map(([where, why]) => ({ where, why })),
 }, null, 2) + '\n');

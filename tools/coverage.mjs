@@ -177,6 +177,19 @@ if (has('effects.json') && has('cautions.json')) {
     add('effects-common', top.filter(answers).length, top.length,
         'the 200 most-used elements — whether a player gets any answer at all');
   }
+  // Not coverage but confidence, and it belongs on the same page: how many
+  // effect rows have had their cited article read and found to carry what the
+  // row asserts. Written by tools/effects-audit.mjs.
+  if (has('effects-audit.json')) {
+    const a = read('effects-audit.json');
+    // The denominator is every row in the file, not every row the last audit
+    // happened to reach. A partial run left behind reads as 100% otherwise,
+    // and a confidence number that flatters itself is worse than none.
+    const total = [...Object.values(eff), ...Object.values(E2.hazards || {}),
+                   ...Object.values(E2.verbs || {})].flat().length;
+    add('effects-sourced', Math.max(0, a.checked - a.flagged), total,
+        `rows whose cited article carries what they claim (audited ${a.when})`);
+  }
   add('nutrients', supplied.size, Object.keys(nut).length,
       'what a body cannot make and must be given — the benefit half');
 }

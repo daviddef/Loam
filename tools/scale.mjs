@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'pheromone',
     /* verb outcomes, 5 Sep. one HMF molecule */
     'hydroxymethylfurfural',
           /* verb outcomes batch 3, 4 Sep */
@@ -186,6 +188,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'ommatidium',
     /* verb outcomes, 5 Sep. a pollen grain is 20 to 60 micrometres */
     'anemophily',
           /* computing and plants waves, 3 Sep */
@@ -209,6 +213,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'mandible', 'coxa', 'trochanter', 'tarsus', 'chelicera',
     /* places batch 10, 5 Sep. ash is defined as fragments under 2 mm; the fine fraction is microns */
     'volcanic_ash',
     /* the scale homonym, 5 Sep. a wing scale is tens to hundreds of microns long */
@@ -248,6 +254,8 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'segment', 'thorax', 'abdomen', 'tibia', 'pedipalp', 'elytron', 'ovipositor', 'sting',
     'thermocouple', 'needle_plate', 'driver_pin', 'key_pin', 'escape_wheel', 'hairspring', 'sheave', 'presser_foot',   // mechanism parts
     'photoresist', 'emitter', 'collector', 'laminations',   // needs-sweep 5 Sep
     /* the scale homonym, 5 Sep. a reptile scale is millimetres; a lepidopteran scale is a tenth of one */
@@ -294,6 +302,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'proboscis', 'pupa', 'chrysalis', 'instar', 'honeycomb', 'propolis', 'queen_bee', 'worker_bee',
     'o_ring', 'microcontroller', 'host_plant',   // missing-list components
     'venturi', 'needle_valve', 'choke', 'guidance_computer', 'float_chamber',   // spaceflight + engine parts
     'fastener', 'additive', 'initiator', 'adhesive', 'gasket', 'bush', 'pawl', 'substrate', 'coating', 'surfactant', 'blowing_agent', 'pellet',   // components
@@ -508,6 +518,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W2 arachnids and insects, 5 Sep */
+          'hive',
     'prism', 'spectrometer',
     'bridge_instrument', 'welt', 'upper', 'turnout_coat', 'breathing_apparatus', 'friction_disc', 'pressure_plate', 'diaphragm_spring', 'release_bearing',   // mechanism parts
     'yoke', 'nipple', 'bob', 'clapper', 'injector', 'expansion_valve', 'impeller', 'secondary_mirror', 'essential_oil', 'fixative', 'universal_joint', 'spline',   // components
@@ -800,6 +812,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* W2 arachnids and insects, 5 Sep */
+          'colony',
     'hypoxia', 'asphyxia', 'exsanguination', 'laceration', 'blunt_trauma', 'crush_syndrome', 'fracture', 'thermal_burn', 'chemical_burn', 'frostbite', 'heat_stroke', 'drowning', 'electrocution', 'poisoning', 'allergic_reaction', 'silicosis', 'asbestosis', 'narcosis', 'methaemoglobinaemia', 'radiation_sickness', 'irritant', 'sensitiser', 'neurotoxin', 'hepatotoxin', 'nephrotoxin', 'route_of_exposure', 'latency', 'corrosive',   // ragdoll outcomes
     'anti_roll_bar', 'control_arm', 'brake_lever', 'thermometer', 'reflux', 'mihrab', 'thruster', 'magnetometer', 'defibrillator', 'gear_train', 'connecting_rod',   // missing-list components
     'heat_shield', 'airbag', 'air_filter', 'spacesuit',   // spaceflight + engine parts

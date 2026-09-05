@@ -473,7 +473,8 @@
         "src": "https://en.wikipedia.org/wiki/Ultraviolet",
         "carcinogen": true,
         "iarc": 1,
-        "latency": "decades"
+        "latency": "decades",
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "water": [
@@ -668,44 +669,47 @@
         "iarc": 1,
         "latency": "decades",
         "dial": {
-          "unit": "time in strong summer sun",
+          "unit": "UV index",
           "suffix": "",
           "from": 0,
-          "to": 240,
-          "note": "Minutes, for untanned fair skin at a high UV index. The number is different for every skin and every latitude; the order of the stages is not.",
-          "src": "https://en.wikipedia.org/wiki/Sunburn"
+          "to": 11,
+          "note": "the international standard measure of sunburn-producing UV, and an open-ended scale — the bands are the published ones",
+          "src": "https://en.wikipedia.org/wiki/Ultraviolet_index"
         },
         "stages": [
           {
             "at": 0,
-            "label": "A nice day",
-            "what": "Warmth, and a hormone being built. Ten to thirty minutes on forearms and face is the usual figure for making a day's vitamin D at temperate latitudes in summer.",
+            "label": "Low",
+            "what": "Nothing to protect against, and still enough to work with: ten to thirty minutes on forearms and face builds a day's vitamin D at temperate latitudes in summer.",
             "outcome": "vitamin_d",
             "valence": "benefit"
           },
           {
-            "at": 20,
-            "label": "Tanning",
+            "at": 3,
+            "label": "Moderate",
             "what": "Melanin is moved up over the nuclei of skin cells like a parasol. A tan is a record of damage already done, not protection banked in advance.",
             "valence": "harm"
           },
           {
-            "at": 60,
-            "label": "Erythema",
-            "what": "The redness is not the burn arriving, it is the response: blood vessels dilate hours later as damaged cells signal. Which is why you cannot feel a sunburn while you are getting one.",
-            "outcome": "irritant"
+            "at": 6,
+            "label": "High",
+            "what": "Sunburn can start in under fifteen minutes at this strength. The redness is not the burn arriving — it is the response, hours later, as damaged cells signal, which is why you cannot feel a sunburn while you are getting one.",
+            "outcome": "irritant",
+            "valence": "harm"
           },
           {
-            "at": 120,
-            "label": "Blistering sunburn",
-            "what": "Enough damage that the epidermis separates. Cells that cannot be repaired kill themselves rather than divide, and the peeling is that decision, made in bulk.",
-            "outcome": "thermal_burn"
+            "at": 8,
+            "label": "Very high",
+            "what": "Enough that the epidermis separates. Cells too damaged to repair kill themselves rather than divide, and the peeling is that decision made in bulk.",
+            "outcome": "thermal_burn",
+            "valence": "harm"
           },
           {
-            "at": 240,
-            "label": "The dose that counts",
+            "at": 11,
+            "label": "Extreme",
             "what": "Nothing more happens today. What has been added is to a lifetime total, and melanoma risk answers that total rather than any one afternoon.",
-            "outcome": "melanoma"
+            "outcome": "melanoma",
+            "valence": "harm"
           }
         ]
       }
@@ -2226,7 +2230,8 @@
         "mechanism": "Alpha emitters do nothing through skin and everything once inside, because the whole of that energy is deposited in a few cell diameters. Radium is treated by the body as calcium and goes to bone, which is why the dial painters' jaws were the first thing to fail.",
         "src": "https://en.wikipedia.org/wiki/Radium_girls",
         "carcinogen": true,
-        "iarc": 1
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "strong_oxidizer_acid": [
@@ -2321,7 +2326,8 @@
         "mechanism": "Chromium(VI) crosses the cell membrane through the sulphate channel, which chromium(III) cannot, and is then reduced inside the cell — generating reactive intermediates against the DNA rather than outside it.",
         "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)",
         "carcinogen": true,
-        "iarc": 1
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "alcohol_carcinogen": [
@@ -2709,7 +2715,8 @@
         "mechanism": "Arsenate imitates phosphate closely enough to be substituted into ATP, which then falls apart instead of storing energy. Chronic exposure is usually groundwater rather than an event.",
         "src": "https://en.wikipedia.org/wiki/Arsenic_poisoning",
         "carcinogen": true,
-        "iarc": 1
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "volcanic_activity": [
