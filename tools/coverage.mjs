@@ -120,8 +120,12 @@ add('  verified flag', recipes.filter(r => r.verified).length, recipes.length,
 if (has('places.json')) {
   const P = read('places.json');
   const wanted = Object.values(P.wanted).flat().length;
+  /* This row read 334/334 for weeks and was worth nothing, because the list it
+   * measured against was written by the same hand that answered it. 111 lines
+   * now come from the Chronicarum catalogue instead — externally owned, like
+   * the UN M49 regions above them — so the denominator can disagree with us. */
   add('places checklist', Object.keys(P.places).length, wanted,
-      'the checklist is AUTHORED — a closed one measures nothing', true);
+      'part authored, part external (Chronicarum) — a denominator that can disagree');
 }
 if (has('cautions.json')) {
   const c = read('cautions.json').hazards || {};
