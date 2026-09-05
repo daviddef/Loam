@@ -14766,7 +14766,7 @@
       "wild"
     ],
     "fact": "A colony functions almost as a single superorganism: one or more queens do all the reproducing, and thousands of sterile female workers do everything else.",
-    "taxon": "tx_hymenoptera"
+    "taxon": "tx_formicidae"
   },
   {
     "id": "ladybird",
@@ -94275,5 +94275,350 @@
       "medicine"
     ],
     "fact": "Activity out of proportion to the setting — measurable, and much harder to attribute than it looks."
+  },
+  {
+    "id": "seta",
+    "name": "Seta",
+    "emoji": "🖌️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A hollow cuticular bristle in a flexible socket, with one sensory cell wired to its base.",
+    "soleRoute": true
+  },
+  {
+    "id": "prosoma",
+    "name": "Prosoma",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Head and thorax fused under one shield, carrying every leg, the brain and the venom glands.",
+    "soleRoute": true
+  },
+  {
+    "id": "opisthosoma",
+    "name": "Opisthosoma",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The rear half of an arachnid: heart, gut, gonads, book lungs, silk glands — and never a leg.",
+    "soleRoute": true
+  },
+  {
+    "id": "book_lung",
+    "name": "Book Lung",
+    "emoji": "🫁",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Air-filled leaves stacked like the pages of a book. Mygalomorphs have four, other spiders two.",
+    "soleRoute": true
+  },
+  {
+    "id": "fang",
+    "name": "Fang",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The chelicera's last joint, folding into a groove, with the venom duct opening near its tip.",
+    "soleRoute": true
+  },
+  {
+    "id": "silk_gland",
+    "name": "Silk Gland",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A web spider carries four to seven, and each one spins a different silk for a different job.",
+    "soleRoute": true
+  },
+  {
+    "id": "spider_silk",
+    "name": "Spider Silk",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "tool"
+    ],
+    "fact": "It leaves the spigot liquid and sets because it is pulled — drawn, not extruded.",
+    "soleRoute": true
+  },
+  {
+    "id": "dragline",
+    "name": "Dragline",
+    "emoji": "🧗",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The line a spider pays out behind it wherever it goes, tacked down at intervals.",
+    "soleRoute": true
+  },
+  {
+    "id": "orb_web",
+    "name": "Orb Web",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "build"
+    ],
+    "fact": "Dry radii the spider walks on, and a sticky spiral it takes care never to touch.",
+    "soleRoute": true
+  },
+  {
+    "id": "mygalomorph",
+    "name": "Mygalomorph",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Jaws that stab downward, so the spider rears to bite — and four book lungs instead of two.",
+    "taxon": "tx_mygalomorphae",
+    "soleRoute": true
+  },
+  {
+    "id": "tarantula",
+    "name": "Tarantula",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Kicks barbed hairs off its own abdomen at whatever comes close. Captive females reach 20 years.",
+    "taxon": "tx_theraphosidae",
+    "soleRoute": true
+  },
+  {
+    "id": "harvestman",
+    "name": "Harvestman",
+    "emoji": "🕷️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "No waist, no silk, no venom — and it eats solid food, which no spider can.",
+    "taxon": "tx_opiliones",
+    "soleRoute": true
+  },
+  {
+    "id": "pseudoscorpion",
+    "name": "Pseudoscorpion",
+    "emoji": "🦂",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A scorpion's pincers with nothing behind them: the venom is in the claw, and there is no tail.",
+    "taxon": "tx_pseudoscorpiones",
+    "soleRoute": true
+  },
+  {
+    "id": "nymph",
+    "name": "Nymph",
+    "emoji": "🦗",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The immature of an insect that has no pupa — already eyed and winged in outline, just smaller.",
+    "soleRoute": true
+  },
+  {
+    "id": "proleg",
+    "name": "Proleg",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Not a leg: an unjointed sac on the abdomen that grips with a ring of tiny hooks.",
+    "soleRoute": true
+  },
+  {
+    "id": "caterpillar",
+    "name": "Caterpillar",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Six true legs at the front, and behind them rows of prolegs that are not legs at all."
+  },
+  {
+    "id": "haltere",
+    "name": "Haltere",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A hindwing shrunk to a club — basal plate, shaft and head — beating to sense rotation.",
+    "soleRoute": true
+  },
+  {
+    "id": "fly",
+    "name": "Fly",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Two wings, not four. The hind pair are halteres, which is what the name Diptera counts.",
+    "taxon": "tx_diptera",
+    "soleRoute": true
+  },
+  {
+    "id": "maggot",
+    "name": "Maggot",
+    "emoji": "🐛",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Legless, and in the higher flies headless too — it works with a pair of black mouth hooks.",
+    "soleRoute": true
+  },
+  {
+    "id": "mesosoma",
+    "name": "Mesosoma",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "In a wasp, bee or ant, the thorax with the first abdominal segment annexed onto the back of it.",
+    "soleRoute": true
+  },
+  {
+    "id": "metasoma",
+    "name": "Metasoma",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "What is left of the abdomen once the thorax has taken segment I: everything from II back.",
+    "soleRoute": true
+  },
+  {
+    "id": "petiolus",
+    "name": "Petiolus",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The stalk between the two halves. Count its nodes and you have narrowed the ant right down.",
+    "soleRoute": true
+  },
+  {
+    "id": "gaster",
+    "name": "Gaster",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The bulb at the back of an ant — the metasoma behind the waist, not the whole abdomen.",
+    "soleRoute": true
+  },
+  {
+    "id": "metapleural_gland",
+    "name": "Metapleural Gland",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A gland no other insect family has: it coats an ant, and its nest, in antibiotic.",
+    "soleRoute": true
+  },
+  {
+    "id": "queen_ant",
+    "name": "Queen Ant",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Not a ruler — the colony's only ovary. One was held in captivity for close to 29 years.",
+    "taxon": "tx_formicidae",
+    "soleRoute": true
+  },
+  {
+    "id": "nuptial_flight",
+    "name": "Nuptial Flight",
+    "emoji": "🛫",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The one flight of a queen's life. She lands, breaks her wings off, and never flies again.",
+    "soleRoute": true
+  },
+  {
+    "id": "stridulation",
+    "name": "Stridulation",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A file of teeth drawn across a hard scraper. Each tooth is a click; enough clicks are a note.",
+    "soleRoute": true
+  },
+  {
+    "id": "tympanal_organ",
+    "name": "Tympanal Organ",
+    "emoji": "👂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An insect ear: cuticle thinned to a drum, an air sac behind it, a stretch receptor attached.",
+    "soleRoute": true
+  },
+  {
+    "id": "cricket",
+    "name": "Cricket",
+    "emoji": "🦗",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Sings by scraping one forewing across the other, and hears it with an ear on each front leg.",
+    "taxon": "tx_ensifera",
+    "soleRoute": true
+  },
+  {
+    "id": "louse",
+    "name": "Louse",
+    "emoji": "🪰",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "An insect that gave up wings entirely, with eyes down to two facets or to none at all.",
+    "taxon": "tx_phthiraptera",
+    "soleRoute": true
   }
 ]

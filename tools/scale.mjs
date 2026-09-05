@@ -213,6 +213,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* W2 continued — arachnid body plan, ant waist, 5 Sep */
+          'seta', 'fang', 'petiolus', 'metapleural_gland',
           /* W2 arachnids and insects, 5 Sep */
           'mandible', 'coxa', 'trochanter', 'tarsus', 'chelicera',
     /* places batch 10, 5 Sep. ash is defined as fragments under 2 mm; the fine fraction is microns */
@@ -254,6 +256,10 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W2 continued — arachnid body plan, ant tagmata, 5 Sep */
+          'prosoma', 'opisthosoma', 'book_lung', 'silk_gland', 'haltere', 'proleg',
+          'tympanal_organ', 'mesosoma', 'metasoma', 'gaster', 'queen_ant',
+          'pseudoscorpion', 'louse', 'fly',
           /* W2 arachnids and insects, 5 Sep */
           'segment', 'thorax', 'abdomen', 'tibia', 'pedipalp', 'elytron', 'ovipositor', 'sting',
     'thermocouple', 'needle_plate', 'driver_pin', 'key_pin', 'escape_wheel', 'hairspring', 'sheave', 'presser_foot',   // mechanism parts
@@ -302,6 +308,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W2 continued — immature stages and the arachnid orders, 5 Sep */
+          'nymph', 'caterpillar', 'maggot', 'mygalomorph', 'harvestman', 'cricket', 'stridulation',
           /* owed outcomes restored, 5 Sep */
           'diarrhoea',
           /* W2 arachnids and insects, 5 Sep */
@@ -520,6 +528,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W2 continued — spider silk and what is built from it, 5 Sep */
+          'spider_silk', 'dragline', 'orb_web', 'tarantula',
           /* owed outcomes restored, 5 Sep */
           'argyria',
           /* W2 arachnids and insects, 5 Sep */
@@ -1157,6 +1167,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* W2 continued — a mating flight happens tens of metres up, 5 Sep */
+          'nuptial_flight',
     'crumple_zone', 'still', 'iwan', 'caravanserai', 'tomb',   // missing-list components
     'rtg', 'jib', 'outrigger',   // mechanism parts
     'saturn_v', 'command_module', 'lunar_module', 'docking_port', 'airlock', 'life_support', 'robotic_arm',   // spaceflight + engine parts

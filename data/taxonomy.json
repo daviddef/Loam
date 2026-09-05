@@ -5561,6 +5561,78 @@
       "fact": "Horseshoe crabs, chelicerates rather than crabs, with a hinged horseshoe carapace and a spike-like tail used to right themselves.",
       "srcTitle": "Horseshoe crab",
       "src": "https://en.wikipedia.org/wiki/Horseshoe_crab"
+    },
+    {
+      "id": "tx_mygalomorphae",
+      "rank": "suborder",
+      "parent": "tx_araneae",
+      "name": "Mygalomorphae",
+      "fact": "Spiders whose chelicerae hang from the front of the head and strike downward, parallel to the body axis, so the animal must rear up to bite — and which keep four book lungs rather than two.",
+      "srcTitle": "Mygalomorphae",
+      "src": "https://en.wikipedia.org/wiki/Mygalomorphae"
+    },
+    {
+      "id": "tx_theraphosidae",
+      "rank": "family",
+      "parent": "tx_mygalomorphae",
+      "name": "Theraphosidae",
+      "fact": "The tarantulas — the largest spiders alive, densely covered in setae, and in the New World genera armed with barbed urticating hairs kicked off the abdomen in defence.",
+      "srcTitle": "Tarantula",
+      "src": "https://en.wikipedia.org/wiki/Tarantula"
+    },
+    {
+      "id": "tx_opiliones",
+      "rank": "order",
+      "parent": "tx_arachnida",
+      "name": "Opiliones",
+      "fact": "Harvestmen — arachnids whose two body regions are joined across their full width rather than by a waist, with no silk glands and no venom glands at all.",
+      "srcTitle": "Opiliones",
+      "src": "https://en.wikipedia.org/wiki/Opiliones"
+    },
+    {
+      "id": "tx_pseudoscorpiones",
+      "rank": "order",
+      "parent": "tx_arachnida",
+      "name": "Pseudoscorpiones",
+      "fact": "Pseudoscorpions — pincered arachnids with no tail and no sting, carrying their venom glands in the pedipalps and spinning silk from glands that open on the chelicerae.",
+      "srcTitle": "Pseudoscorpion",
+      "src": "https://en.wikipedia.org/wiki/Pseudoscorpion"
+    },
+    {
+      "id": "tx_psocodea",
+      "rank": "order",
+      "parent": "tx_insecta",
+      "name": "Psocodea",
+      "fact": "Barklice, booklice and the true lice together — a 2021 genetic study placed the parasitic lice inside this order rather than beside it, as one highly modified lineage of free-living bark feeders.",
+      "srcTitle": "Psocodea",
+      "src": "https://en.wikipedia.org/wiki/Psocodea"
+    },
+    {
+      "id": "tx_phthiraptera",
+      "rank": "infraorder",
+      "parent": "tx_psocodea",
+      "name": "Phthiraptera",
+      "fact": "True lice — nearly 5,000 species of obligate ectoparasites on birds and mammals, defined partly by losses: no wings at all, and compound eyes of two ommatidia or fewer.",
+      "srcTitle": "Louse",
+      "src": "https://en.wikipedia.org/wiki/Louse"
+    },
+    {
+      "id": "tx_ensifera",
+      "rank": "suborder",
+      "parent": "tx_orthoptera",
+      "name": "Ensifera",
+      "fact": "The long-horned orthopterans — crickets, katydids and their relatives — with antennae often longer than the body and, in most, a tympanal organ on the tibia of the front leg.",
+      "srcTitle": "Ensifera",
+      "src": "https://en.wikipedia.org/wiki/Ensifera"
+    },
+    {
+      "id": "tx_formicidae",
+      "rank": "family",
+      "parent": "tx_hymenoptera",
+      "name": "Formicidae",
+      "fact": "The ants — aculeate wasps that became eusocial, recognised by elbowed antennae, a waist of one or two nodes, and a metapleural gland no other insect family has.",
+      "srcTitle": "Ant",
+      "src": "https://en.wikipedia.org/wiki/Ant"
     }
   ]
 }

@@ -103339,5 +103339,339 @@
     "why": "The Southampton trial gave three-year-olds a mixture of synthetic dyes and found a small shift in behaviour averaged across the group, not a reaction in any individual child. Europe answered with a label rather than a ban, which is what an effect that size supports.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Hyperactivity"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "nerve"
+    ],
+    "out": "seta",
+    "why": "Not a hair in the mammal sense. The cuticle grows out into a hollow shaft set in a flexible socket with a sensory cell attached at its base, so bending the shaft fires the cell — which is how an arthropod feels touch, air movement and sound.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Seta",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 4"
+  },
+  {
+    "in": [
+      "head",
+      "thorax"
+    ],
+    "out": "prosoma",
+    "why": "An insect keeps head and thorax apart. A chelicerate fuses them into one tagma under a single carapace, so the brain, the mouthparts and all four pairs of legs sit in the same box, and the poison glands sit in there with them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cephalothorax",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 8"
+  },
+  {
+    "in": [
+      "abdomen",
+      "arachnid"
+    ],
+    "out": "opisthosoma",
+    "why": "The arachnid's abdomen. In a spider it holds the heart, the silk glands and the book lungs, shows almost no segmentation, and hangs off the front half by a stalk barely wider than a thread, through which the aorta, gut and nerve cord all have to pass.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Opisthosoma",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 8"
+  },
+  {
+    "in": [
+      "air",
+      "gill"
+    ],
+    "out": "book_lung",
+    "why": "The ancestor was aquatic and breathed through book gills — flat plates stacked in water, as a horseshoe crab still has. Sunk into a pocket of the abdomen and filled with air instead, the same stack works on land, with no pumping at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Book_lung",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), pp. 20, 26"
+  },
+  {
+    "in": [
+      "chelicera",
+      "venom"
+    ],
+    "out": "fang",
+    "why": "A spider's jaw ends in a hinged claw that folds back into a groove like a penknife. A duct from the poison gland in the prosoma runs its length and opens near the point, which is what makes the bite a delivery system rather than a wound.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chelicerae",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 8"
+  },
+  {
+    "in": [
+      "opisthosoma",
+      "protein"
+    ],
+    "out": "silk_gland",
+    "why": "Silk is a protein, fibroin, held liquid in glands in the abdomen. A web spider has four to seven of them and they are not interchangeable: viscid silk from one, frame thread from another, egg-sac silk from a third.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spider_silk",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 13"
+  },
+  {
+    "in": [
+      "silk_gland",
+      "spider"
+    ],
+    "out": "spider_silk",
+    "why": "It comes out of the spigots liquid and sets as it is drawn, polymerising because it is pulled rather than because it dries. It will stretch about a quarter of its length before breaking, and Nephila's is the strongest natural fibre known.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spider_silk",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 13"
+  },
+  {
+    "in": [
+      "spider",
+      "spider_silk"
+    ],
+    "out": "dragline",
+    "why": "Most spiders trail one everywhere and tack it down as they go, so a fall ends on a rope and the way back is already marked. It is also a signature: males of some hunting spiders find a mate by picking up a mature female's line and following it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spider_silk",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 15"
+  },
+  {
+    "in": [
+      "dragline",
+      "spider_silk"
+    ],
+    "out": "orb_web",
+    "why": "An orb is two silks doing two jobs. The frame and the radii are dry dragline the spider walks on; the capture spiral laid across them is a different, stretchy silk carrying droplets of glue, and the spider avoids standing on it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spider_web",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 15"
+  },
+  {
+    "in": [
+      "chelicera",
+      "spider"
+    ],
+    "out": "mygalomorph",
+    "why": "The oldest split among spiders is which way the jaws swing. A mygalomorph's chelicerae hang from the front of the head and stab downward parallel to the body, so it must rear to strike; in all other spiders they are slung below and close sideways.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mygalomorphae",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), pp. 20, 26"
+  },
+  {
+    "in": [
+      "mygalomorph",
+      "seta"
+    ],
+    "out": "tarantula",
+    "why": "New World theraphosids carry a patch of barbed urticating setae on the abdomen and rub them off with the hind legs at whatever approaches. Females keep moulting after maturity and have lived 20 years in captivity; males, once mature, never moult again.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tarantula",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 20"
+  },
+  {
+    "in": [
+      "opisthosoma",
+      "prosoma"
+    ],
+    "out": "harvestman",
+    "why": "In a spider you can see the join; in a harvestman the two tagmata meet across their whole width, which is why it reads as one round body on eight legs. Opiliones spin no silk and have no venom glands, and a grabbed leg simply comes off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Opiliones",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 128"
+  },
+  {
+    "in": [
+      "pedipalp",
+      "venom"
+    ],
+    "out": "pseudoscorpion",
+    "why": "Scorpions put the poison at the end of a tail. Pseudoscorpions have neither tail nor sting: the glands sit in the pincers themselves and serve only to hold small insects still. They spin silk from their jaws, and they travel by gripping a passing fly.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pseudoscorpion",
+    "srcBook": "Levi HW & Levi LR, Spiders and Their Kin (Golden Press, 1990), p. 120"
+  },
+  {
+    "in": [
+      "insect_wing",
+      "instar"
+    ],
+    "out": "nymph",
+    "why": "Hemimetabolous insects skip the pupa entirely. Compound eyes and external wing buds are present from the early instars and the wing pads twist in the later ones, so the animal converges on the adult by degrees instead of being demolished and rebuilt.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nymph_(biology)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 113"
+  },
+  {
+    "in": [
+      "abdomen",
+      "larva"
+    ],
+    "out": "proleg",
+    "why": "A true insect leg is jointed and thoracic, and there are only ever six. These are something else: soft unjointed stubs some holometabolous larvae grow along the abdomen, tipped with a ring of hooks, and gone again after the pupa.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Proleg",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 115"
+  },
+  {
+    "in": [
+      "larva",
+      "proleg"
+    ],
+    "out": "caterpillar",
+    "why": "The erucoid larva — a proper head capsule, three pairs of thoracic legs, and prolegs in a row down the abdomen. Counting them tells you what you have: a butterfly or moth caterpillar has at most five pairs, a sawfly larva six or more.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caterpillar",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 115"
+  },
+  {
+    "in": [
+      "butterfly",
+      "larva"
+    ],
+    "out": "caterpillar",
+    "why": "A butterfly is the short half of the life. Almost all of the feeding and all of the growing is done by the caterpillar, which is why the two stages eat different things in different places and compete with each other for nothing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caterpillar"
+  },
+  {
+    "in": [
+      "gyroscope",
+      "insect_wing"
+    ],
+    "out": "haltere",
+    "why": "The hindwing reduced to a drumstick that beats in antiphase with the forewing. Turn the insect and Coriolis force bends the shaft sideways; strain sensors at its base read the rate of turn. Strepsiptera evolved the same organ from the forewings instead.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Halteres",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 473"
+  },
+  {
+    "in": [
+      "haltere",
+      "insect"
+    ],
+    "out": "fly",
+    "why": "The order is named for the count: two wings. What was behind them went to the halteres, and the mouthparts are heavily rebuilt for taking liquid — sponging in a housefly, piercing in a mosquito. More than 150,000 species have been described.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fly",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 468"
+  },
+  {
+    "in": [
+      "fly",
+      "larva"
+    ],
+    "out": "maggot",
+    "why": "A dipteran larva has no thoracic legs at all, and in the Cyclorrhapha the head capsule has gone too: what is left is a pair of black mouth hooks on a retractable skeleton inside a soft tapered body. It pupates inside its own last larval skin.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Maggot",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 115, 468"
+  },
+  {
+    "in": [
+      "abdomen",
+      "thorax"
+    ],
+    "out": "mesosoma",
+    "why": "Hymenoptera moved the boundary. Abdominal tergite I is fused onto the back of the thorax as the propodeum, and the whole rigid unit is called the mesosoma — so the thorax of an ant is the thorax plus one segment that used to be abdomen.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mesosoma",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 369"
+  },
+  {
+    "in": [
+      "abdomen",
+      "mesosoma"
+    ],
+    "out": "metasoma",
+    "why": "Because segment I has been annexed in front, the part of a wasp that looks like its abdomen actually begins at segment II. That is the metasoma, and the constriction ahead of it — the wasp waist — is what lets the whole thing be aimed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Metasoma",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 369"
+  },
+  {
+    "in": [
+      "mesosoma",
+      "metasoma"
+    ],
+    "out": "petiolus",
+    "why": "A narrow stalk-like element joining the two halves, drawn out into a tube in some digger wasps and raised into one or two nodes in the ants. Whether there is one node or two is the first question an ant key asks.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Petiole_(insect_anatomy)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 369"
+  },
+  {
+    "in": [
+      "metasoma",
+      "petiolus"
+    ],
+    "out": "gaster",
+    "why": "The bulb behind an ant's waist is only the tail end of the metasoma, the segments after the petiole. It carries the crop the ant fills with food for the rest of the colony, and in the formicine ants the acid gland that sprays formic acid.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gaster_(insect_anatomy)"
+  },
+  {
+    "in": [
+      "ant",
+      "gland"
+    ],
+    "out": "metapleural_gland",
+    "why": "It opens low on each side of the mesosoma and secretes an antimicrobial mix, largely phenylacetic acid, which the ant spreads over its own cuticle and through the nest. No other insect family has one, and it is what makes a warm nest full of brood survivable.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Metapleural_gland"
+  },
+  {
+    "in": [
+      "ant",
+      "colony"
+    ],
+    "out": "queen_ant",
+    "why": "A colony is one family: nearly every ant in it is the queen's daughter, and the workers are sterile females raising sisters instead of offspring. Caste is set by how a larva is fed, and a Lasius niger queen was held in captivity for 28 years and nine months.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Queen_ant"
+  },
+  {
+    "in": [
+      "insect_wing",
+      "queen_ant"
+    ],
+    "out": "nuptial_flight",
+    "why": "Winged males and virgin queens leave many nests on the same day, mate in the air, and the males die. The queen lands, snaps her wings off at a line of weakness built into them, and digests the now useless flight muscles to feed her first brood.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nuptial_flight"
+  },
+  {
+    "in": [
+      "insect_wing",
+      "sound"
+    ],
+    "out": "stridulation",
+    "why": "One wing vein cut into a row of teeth and drawn across a hardened scraper on the other side. Each tooth strike is a click, and a few thousand a second is a tone. Crickets rub wing on wing, grasshoppers leg on wing, and beetles and ants do it too.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stridulation"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "sound"
+    ],
+    "out": "tympanal_organ",
+    "why": "A patch of the exoskeleton thinned to a membrane, backed by a tracheal air sac so it can move, with a chordotonal organ attached to read the movement. Insects have invented it many times over and hardly ever in the same place twice.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tympanal_organ"
+  },
+  {
+    "in": [
+      "stridulation",
+      "tympanal_organ"
+    ],
+    "out": "cricket",
+    "why": "Both ends of one channel, and both in odd places. The male sings by drawing a file on one leathery forewing across a scraper on the other; the ear that hears it is a pair of tympana on the tibia of each front leg — the character that marks off Ensifera.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cricket_(insect)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 251"
+  },
+  {
+    "in": [
+      "insect",
+      "parasitism"
+    ],
+    "out": "louse",
+    "why": "Losing the wings completely is one of the group's defining characters, along with antennae of three to five segments and compound eyes of two ommatidia or fewer. Each leg ends in a claw closing against a thumb on the tibia, to grip one hair or one feather.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Louse",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 305, 306"
   }
 ]
