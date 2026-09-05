@@ -133,6 +133,11 @@ if (args.includes('--narrow')) {
 }
 
 if (args.includes('--next')) {
+  /* --next proposed places and dishes that the coverage total excludes, because
+   * the two filters had drifted apart inside one file. Same scope, one place. */
+  const SKIP2 = new Set(R('needs.json').$scope_exclude_tags || []);
+  const PLACES2 = existsSync(join(root, 'data/places.json'))
+    ? new Set(Object.keys(R('places.json').places)) : new Set();
   const MADE = new Set(['tool', 'build', 'dish', 'trade', 'instrument', 'medicine', 'transport', 'machine']);
   const byId = new Map(elements.map(e => [e.id, e]));
   const best = new Map();
@@ -150,7 +155,9 @@ if (args.includes('--next')) {
   const asInput = new Map();
   for (const r of recipes) for (const i of r.in) asInput.set(i, (asInput.get(i) ?? 0) + 1);
   const rows = elements
-    .filter(e => !NEEDS[e.id] && !NOT_ASSEMBLY.has(e.id) && (e.tags || []).some(t => MADE.has(t)))
+    .filter(e => !NEEDS[e.id] && !NOT_ASSEMBLY.has(e.id) && !PLACES2.has(e.id)
+              && !(e.tags || []).some(t => SKIP2.has(t))
+              && (e.tags || []).some(t => MADE.has(t)))
     .map(e => ({ id: e.id, d: depthOf(e.id), used: asInput.get(e.id) ?? 0 }))
     .sort((a, b) => (b.d - a.d) || (b.used - a.used))
     .slice(0, 40);

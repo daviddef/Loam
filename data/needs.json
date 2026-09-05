@@ -3574,6 +3574,437 @@
         "zone_file",
         "registrar"
       ]
+    },
+    "corbel_vault": {
+      "src": "https://en.wikipedia.org/wiki/Corbel_arch",
+      "note": "Each course stepped inward until the gap closes. No wedge, no thrust, no arch.",
+      "needs": [
+        "stone",
+        "course",
+        "mortar",
+        "bedding",
+        "cantilever",
+        "capstone",
+        "formwork",
+        "batter"
+      ]
+    },
+    "nand_gate": {
+      "src": "https://en.wikipedia.org/wiki/NAND_gate",
+      "note": "The one gate you can build every other gate out of.",
+      "needs": [
+        "transistor",
+        "resistor",
+        "input",
+        "output",
+        "supply",
+        "interconnect"
+      ]
+    },
+    "xor_gate": {
+      "src": "https://en.wikipedia.org/wiki/XOR_gate",
+      "note": "On when the inputs disagree, which is exactly what addition needs.",
+      "needs": [
+        "transistor",
+        "nand_gate",
+        "input",
+        "output",
+        "interconnect"
+      ]
+    },
+    "ac_induction_motor": {
+      "src": "https://en.wikipedia.org/wiki/Induction_motor",
+      "note": "No brushes and no magnets — the rotor is dragged round by a field that is already turning.",
+      "needs": [
+        "stator",
+        "rotor",
+        "winding",
+        "copper_wire",
+        "laminations",
+        "squirrel_cage",
+        "bearing",
+        "shaft",
+        "housing",
+        "capacitor"
+      ]
+    },
+    "shock_absorber": {
+      "src": "https://en.wikipedia.org/wiki/Shock_absorber",
+      "note": "A spring stores the bump; this is what stops it giving it back.",
+      "needs": [
+        "cylinder",
+        "piston",
+        "valve",
+        "oil",
+        "gas",
+        "seal",
+        "rod",
+        "bush",
+        "mount"
+      ]
+    },
+    "balance_wheel": {
+      "src": "https://en.wikipedia.org/wiki/Balance_wheel",
+      "note": "A wheel and a hairspring, oscillating at a rate that does not care about the mainspring.",
+      "needs": [
+        "wheel",
+        "hairspring",
+        "staff",
+        "jewel",
+        "escapement",
+        "regulator",
+        "brass",
+        "steel"
+      ]
+    },
+    "tuner": {
+      "src": "https://en.wikipedia.org/wiki/Tuner_(radio)",
+      "note": "Picking one frequency out of the air by making a circuit prefer it.",
+      "needs": [
+        "capacitor",
+        "coil",
+        "variable_capacitor",
+        "antenna",
+        "resonance",
+        "filter",
+        "dial"
+      ]
+    },
+    "upholstery": {
+      "src": "https://en.wikipedia.org/wiki/Upholstery",
+      "note": "Padding held under tension over a frame, so it keeps its shape when sat on.",
+      "needs": [
+        "frame",
+        "webbing",
+        "spring",
+        "padding",
+        "foam|horsehair",
+        "cloth|leather",
+        "tack",
+        "stitching",
+        "seam"
+      ]
+    },
+    "insole": {
+      "src": "https://en.wikipedia.org/wiki/Insole",
+      "note": "The layer between the foot and everything the shoe is made of.",
+      "needs": [
+        "foam|leather",
+        "arch_support",
+        "adhesive",
+        "fabric",
+        "moulding",
+        "cushioning"
+      ]
+    },
+    "body_panel": {
+      "src": "https://en.wikipedia.org/wiki/Automotive_design",
+      "note": "Sheet steel pressed into a shape that is stiffer than the sheet.",
+      "needs": [
+        "sheet_metal",
+        "press",
+        "die",
+        "flange",
+        "seam",
+        "weld",
+        "primer",
+        "paint",
+        "filler"
+      ]
+    },
+    "cockpit": {
+      "src": "https://en.wikipedia.org/wiki/Cockpit",
+      "note": "Everything the pilot has to reach, arranged so it can be reached without looking.",
+      "needs": [
+        "seat",
+        "control_column",
+        "rudder_pedal",
+        "instrument",
+        "altimeter",
+        "throttle",
+        "canopy",
+        "harness",
+        "panel"
+      ]
+    },
+    "dashboard": {
+      "src": "https://en.wikipedia.org/wiki/Dashboard",
+      "note": "The instruments, and the structure that stops them arriving in your lap.",
+      "needs": [
+        "panel",
+        "instrument",
+        "gauge",
+        "wiring",
+        "switch",
+        "vent",
+        "airbag",
+        "crossbeam",
+        "trim"
+      ]
+    },
+    "computer_mouse": {
+      "src": "https://en.wikipedia.org/wiki/Computer_mouse",
+      "note": "Turning a hand's movement into two numbers.",
+      "needs": [
+        "housing",
+        "photodiode",
+        "led|laser",
+        "lens",
+        "microcontroller",
+        "switch",
+        "encoder",
+        "cable|wireless",
+        "spring"
+      ]
+    },
+    "spatula": {
+      "src": "https://en.wikipedia.org/wiki/Spatula",
+      "note": "A flat blade with enough spring to get under something and not through it.",
+      "needs": [
+        "steel|plastic|wood",
+        "blade",
+        "flex",
+        "handle",
+        "rivet",
+        "bevel"
+      ]
+    },
+    "highlighter": {
+      "src": "https://en.wikipedia.org/wiki/Highlighter",
+      "note": "Ink you can read through, which is the whole trick.",
+      "needs": [
+        "fluorescent_dye",
+        "solvent",
+        "binder",
+        "felt",
+        "nib",
+        "barrel",
+        "cap",
+        "reservoir"
+      ]
+    },
+    "socket": {
+      "src": "https://en.wikipedia.org/wiki/Socket_wrench",
+      "note": "A cup that grips a hexagon on six faces instead of two.",
+      "needs": [
+        "steel",
+        "broach",
+        "hex",
+        "drive_square",
+        "chamfer",
+        "hardening",
+        "chrome"
+      ]
+    },
+    "reflector": {
+      "src": "https://en.wikipedia.org/wiki/Retroreflector",
+      "note": "Sending light back exactly the way it came, whatever angle it arrived at.",
+      "needs": [
+        "glass|plastic",
+        "prism|bead",
+        "corner_cube",
+        "mould",
+        "backing",
+        "housing"
+      ]
+    },
+    "canned_heat": {
+      "src": "https://en.wikipedia.org/wiki/Chafing_fuel",
+      "note": "Fuel held in a gel so it burns where it is put.",
+      "needs": [
+        "ethanol|methanol",
+        "gel",
+        "calcium_acetate",
+        "can",
+        "wick",
+        "lid"
+      ]
+    },
+    "runway_deicer": {
+      "src": "https://en.wikipedia.org/wiki/Deicing",
+      "note": "Lowering the freezing point of water on a surface that cannot be salted.",
+      "needs": [
+        "glycol|potassium_acetate",
+        "water",
+        "surfactant",
+        "corrosion_inhibitor",
+        "sprayer",
+        "runoff"
+      ]
+    },
+    "polyurethane": {
+      "src": "https://en.wikipedia.org/wiki/Polyurethane",
+      "note": "Two liquids that become a solid the moment they meet.",
+      "needs": [
+        "isocyanate",
+        "polyol",
+        "catalyst",
+        "blowing_agent",
+        "surfactant",
+        "polymer",
+        "foam|elastomer"
+      ]
+    },
+    "pvc": {
+      "src": "https://en.wikipedia.org/wiki/Polyvinyl_chloride",
+      "note": "The polymer that is rigid or floppy depending entirely on what is added to it.",
+      "needs": [
+        "vinyl_chloride",
+        "initiator",
+        "plasticiser",
+        "stabiliser",
+        "filler",
+        "pigment",
+        "polymer"
+      ]
+    },
+    "pet": {
+      "src": "https://en.wikipedia.org/wiki/Polyethylene_terephthalate",
+      "note": "Clear, tough, and the only common plastic that is genuinely recycled at scale.",
+      "needs": [
+        "ethylene_glycol",
+        "terephthalic_acid",
+        "catalyst",
+        "polymer",
+        "pellet",
+        "preform",
+        "mould"
+      ]
+    },
+    "fkm": {
+      "src": "https://en.wikipedia.org/wiki/FKM",
+      "note": "A rubber that survives fuel and heat, which ordinary rubber does not.",
+      "needs": [
+        "fluoropolymer",
+        "curing_agent",
+        "filler",
+        "carbon_black",
+        "seal",
+        "o_ring"
+      ]
+    },
+    "pvdf": {
+      "src": "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride",
+      "note": "A fluoropolymer that is also piezoelectric, which almost nothing else is.",
+      "needs": [
+        "vinylidene_fluoride",
+        "initiator",
+        "polymer",
+        "pellet",
+        "extruder",
+        "film"
+      ]
+    },
+    "ectfe": {
+      "src": "https://en.wikipedia.org/wiki/ECTFE",
+      "note": "A copolymer chosen for chemical resistance and a surface nothing sticks to.",
+      "needs": [
+        "ethylene",
+        "chlorotrifluoroethylene",
+        "initiator",
+        "polymer",
+        "pellet",
+        "coating"
+      ]
+    },
+    "seat": {
+      "src": "https://en.wikipedia.org/wiki/Seat",
+      "note": "Somewhere to put a person, at a height and an angle that has been thought about.",
+      "needs": [
+        "frame",
+        "base",
+        "back",
+        "padding",
+        "upholstery",
+        "spring",
+        "adjuster",
+        "mount",
+        "fastener"
+      ]
+    },
+    "crypt": {
+      "src": "https://en.wikipedia.org/wiki/Crypt",
+      "note": "A vaulted room under the floor, which is also what holds the floor up.",
+      "needs": [
+        "stone",
+        "vault",
+        "pier",
+        "arch",
+        "mortar",
+        "stair",
+        "niche",
+        "drainage"
+      ]
+    },
+    "survey": {
+      "src": "https://en.wikipedia.org/wiki/Surveying",
+      "note": "Fixing where things are, precisely enough to build from.",
+      "needs": [
+        "baseline",
+        "theodolite|total_station",
+        "level",
+        "staff",
+        "chain|tape",
+        "triangulation",
+        "benchmark",
+        "datum",
+        "traverse"
+      ]
+    },
+    "machine": {
+      "src": "https://en.wikipedia.org/wiki/Machine",
+      "note": "Anything that changes a force or a motion into a different one.",
+      "needs": [
+        "frame",
+        "bearing",
+        "shaft",
+        "gear|lever|pulley",
+        "fastener",
+        "lubricant",
+        "housing",
+        "power_source",
+        "control"
+      ]
+    },
+    "mechanism": {
+      "src": "https://en.wikipedia.org/wiki/Mechanism_(engineering)",
+      "note": "The linkage — the part that decides what moves when something else does.",
+      "needs": [
+        "link",
+        "joint",
+        "pivot",
+        "cam|gear|lever",
+        "follower",
+        "spring",
+        "stop",
+        "clearance"
+      ]
+    },
+    "arena_parts": {
+      "src": "https://en.wikipedia.org/wiki/Arena",
+      "note": "The floor of the fight, sanded so it can be raked clean between events.",
+      "needs": [
+        "sand",
+        "podium",
+        "drain",
+        "hypogeum",
+        "lift",
+        "gate",
+        "barrier"
+      ]
+    },
+    "track_gauge": {
+      "src": "https://en.wikipedia.org/wiki/Track_gauge",
+      "note": "The distance between the rails, and the reason two railways cannot always meet.",
+      "needs": [
+        "rail",
+        "sleeper",
+        "fastener",
+        "ballast",
+        "gauge",
+        "tolerance",
+        "check_rail"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
