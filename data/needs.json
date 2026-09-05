@@ -4361,6 +4361,810 @@
         "kettle",
         "toaster"
       ]
+    },
+    "carburettor": {
+      "src": "https://en.wikipedia.org/wiki/Carburetor",
+      "note": "Air rushing through a narrowing drags fuel in behind it, and the ratio is geometry.",
+      "needs": [
+        "venturi",
+        "jet",
+        "float_chamber",
+        "needle_valve",
+        "throttle",
+        "choke",
+        "idle_circuit",
+        "air_filter",
+        "fuel"
+      ]
+    },
+    "fuel_tank": {
+      "src": "https://en.wikipedia.org/wiki/Fuel_tank",
+      "note": "A sealed vessel that must breathe without spilling and not slosh.",
+      "needs": [
+        "steel|plastic",
+        "baffle",
+        "filler_neck",
+        "vent",
+        "sender",
+        "pickup",
+        "seal",
+        "strap",
+        "drain"
+      ]
+    },
+    "pedal": {
+      "src": "https://en.wikipedia.org/wiki/Bicycle_pedal",
+      "note": "Where a foot meets a machine, and where the bearings live a hard life.",
+      "needs": [
+        "spindle",
+        "bearing",
+        "body",
+        "cage|clip",
+        "axle",
+        "thread",
+        "seal"
+      ]
+    },
+    "crane": {
+      "src": "https://en.wikipedia.org/wiki/Crane_(machine)",
+      "note": "Lifting is easy; not falling over is the engineering.",
+      "needs": [
+        "jib",
+        "mast",
+        "counterweight",
+        "winch",
+        "cable",
+        "hook",
+        "slew_ring",
+        "outrigger",
+        "load_moment_indicator",
+        "base"
+      ]
+    },
+    "tongs": {
+      "src": "https://en.wikipedia.org/wiki/Tongs",
+      "note": "Two levers on one pivot, so a hand can hold what a hand cannot.",
+      "needs": [
+        "steel",
+        "rivet",
+        "jaw",
+        "rein",
+        "pivot",
+        "forge",
+        "reins"
+      ]
+    },
+    "tripod": {
+      "src": "https://en.wikipedia.org/wiki/Tripod",
+      "note": "Three legs, because three points always define a plane and four wobble.",
+      "needs": [
+        "leg",
+        "hinge",
+        "head",
+        "clamp",
+        "spike|foot",
+        "column",
+        "lock"
+      ]
+    },
+    "pickaxe": {
+      "src": "https://en.wikipedia.org/wiki/Pickaxe",
+      "note": "Concentrating a swing onto a point, which is how rock is beaten rather than cut.",
+      "needs": [
+        "steel",
+        "head",
+        "point",
+        "eye",
+        "haft",
+        "wedge",
+        "hardening",
+        "tempering"
+      ]
+    },
+    "rake": {
+      "src": "https://en.wikipedia.org/wiki/Rake_(tool)",
+      "note": "Tines spaced so soil passes and stones do not.",
+      "needs": [
+        "head",
+        "tine",
+        "ferrule",
+        "haft",
+        "spacing",
+        "steel|wood"
+      ]
+    },
+    "eyepiece": {
+      "src": "https://en.wikipedia.org/wiki/Eyepiece",
+      "note": "The second lens, and the one that decides what the eye is actually shown.",
+      "needs": [
+        "lens",
+        "barrel",
+        "field_stop",
+        "eye_relief",
+        "coating",
+        "housing"
+      ]
+    },
+    "aperture": {
+      "src": "https://en.wikipedia.org/wiki/Aperture",
+      "note": "A hole you can change the size of, which controls both light and what is sharp.",
+      "needs": [
+        "blade",
+        "iris",
+        "ring",
+        "housing",
+        "f_number",
+        "depth_of_field"
+      ]
+    },
+    "deck": {
+      "src": "https://en.wikipedia.org/wiki/Deck_(ship)",
+      "note": "The horizontal that ties a hull's sides together and stops it folding.",
+      "needs": [
+        "plank|steel",
+        "beam",
+        "carling",
+        "caulk",
+        "camber",
+        "hatch",
+        "fastener",
+        "scupper"
+      ]
+    },
+    "carriage": {
+      "src": "https://en.wikipedia.org/wiki/Carriage",
+      "note": "A body slung on springs above wheels, so the road is not transmitted to the passenger.",
+      "needs": [
+        "chassis",
+        "wheel",
+        "axle",
+        "spring",
+        "shaft|pole",
+        "body",
+        "brake",
+        "harness",
+        "seat"
+      ]
+    },
+    "backrest": {
+      "src": "https://en.wikipedia.org/wiki/Chair",
+      "note": "The part that decides whether a chair can be sat in for an hour.",
+      "needs": [
+        "frame",
+        "padding",
+        "upholstery",
+        "lumbar_support",
+        "recline",
+        "fastener",
+        "angle"
+      ]
+    },
+    "stator": {
+      "src": "https://en.wikipedia.org/wiki/Stator",
+      "note": "The part that does not turn, and the part that makes the field.",
+      "needs": [
+        "laminations",
+        "winding",
+        "copper_wire",
+        "insulation",
+        "slot",
+        "housing",
+        "core"
+      ]
+    },
+    "governor": {
+      "src": "https://en.wikipedia.org/wiki/Governor_(device)",
+      "note": "A machine that measures its own speed and does something about it.",
+      "needs": [
+        "flyweight",
+        "spring",
+        "linkage",
+        "shaft",
+        "throttle|valve",
+        "sleeve",
+        "feedback"
+      ]
+    },
+    "motor": {
+      "src": "https://en.wikipedia.org/wiki/Electric_motor",
+      "note": "Anything that turns because a field is pulling it round.",
+      "needs": [
+        "stator",
+        "rotor",
+        "winding",
+        "bearing",
+        "shaft",
+        "commutator|slip_ring",
+        "housing",
+        "magnet|field_coil"
+      ]
+    },
+    "quenching_trough": {
+      "src": "https://en.wikipedia.org/wiki/Quenching",
+      "note": "A tank of the right liquid at the right temperature, beside the fire.",
+      "needs": [
+        "trough",
+        "water|oil|brine",
+        "agitation",
+        "temperature",
+        "tongs",
+        "lid"
+      ]
+    },
+    "vulcanization": {
+      "src": "https://en.wikipedia.org/wiki/Vulcanization",
+      "note": "Sulfur bridges between rubber chains, so it stops being sticky and starts being elastic.",
+      "needs": [
+        "rubber",
+        "sulfur",
+        "accelerator",
+        "heat",
+        "mould",
+        "pressure",
+        "carbon_black"
+      ]
+    },
+    "font": {
+      "src": "https://en.wikipedia.org/wiki/Typeface",
+      "note": "A set of shapes designed to be read rather than looked at.",
+      "needs": [
+        "glyph",
+        "stroke",
+        "counter",
+        "x_height",
+        "kerning",
+        "weight",
+        "serif|sans_serif",
+        "metrics"
+      ]
+    },
+    "jpeg": {
+      "src": "https://en.wikipedia.org/wiki/JPEG",
+      "note": "Throwing away what the eye does not notice, on purpose.",
+      "needs": [
+        "pixel",
+        "colour_space",
+        "discrete_cosine_transform",
+        "quantisation",
+        "huffman_coding",
+        "block",
+        "chroma_subsampling",
+        "compression"
+      ]
+    },
+    "panel": {
+      "src": "https://en.wikipedia.org/wiki/Frame_and_panel",
+      "note": "A board floating in a groove, free to move as the wood changes size.",
+      "needs": [
+        "plank",
+        "groove",
+        "stile",
+        "rail",
+        "tenon",
+        "clearance",
+        "finish"
+      ]
+    },
+    "plastic": {
+      "src": "https://en.wikipedia.org/wiki/Plastic",
+      "note": "A long molecule that can be melted, moulded, and will not go away.",
+      "needs": [
+        "monomer",
+        "polymer",
+        "catalyst",
+        "initiator",
+        "additive",
+        "plasticiser",
+        "stabiliser",
+        "pigment",
+        "pellet",
+        "mould"
+      ]
+    },
+    "litter": {
+      "src": "https://en.wikipedia.org/wiki/Litter",
+      "note": "Rubbish outside the system that was built to contain it.",
+      "needs": [
+        "rubbish",
+        "packaging",
+        "wind",
+        "water",
+        "fragment",
+        "microplastic",
+        "collection"
+      ]
+    },
+    "spinneret": {
+      "src": "https://en.wikipedia.org/wiki/Spinneret_(polymers)",
+      "note": "A plate of holes, and everything synthetic that is a fibre came out of one.",
+      "needs": [
+        "die",
+        "steel|gold",
+        "hole",
+        "polymer",
+        "pump",
+        "draw",
+        "filament"
+      ]
+    },
+    "basilica": {
+      "src": "https://en.wikipedia.org/wiki/Basilica",
+      "note": "A long hall with aisles and a clerestory, built for business and borrowed by the church.",
+      "needs": [
+        "column",
+        "arcade",
+        "clerestory",
+        "aisle",
+        "nave",
+        "apse",
+        "roof",
+        "pier",
+        "bay"
+      ]
+    },
+    "forum": {
+      "src": "https://en.wikipedia.org/wiki/Forum_(Roman)",
+      "note": "The open square everything civic faced onto.",
+      "needs": [
+        "basilica",
+        "temple",
+        "road",
+        "drain",
+        "rostrum",
+        "portico",
+        "paving",
+        "statue"
+      ]
+    },
+    "podium": {
+      "src": "https://en.wikipedia.org/wiki/Podium",
+      "note": "The wall between the crowd and whatever is on the sand.",
+      "needs": [
+        "marble",
+        "course",
+        "seat",
+        "barrier",
+        "gate",
+        "inscription"
+      ]
+    },
+    "vomitorium": {
+      "src": "https://en.wikipedia.org/wiki/Vomitorium",
+      "note": "The passage that lets a full amphitheatre empty in minutes.",
+      "needs": [
+        "vault",
+        "stair",
+        "arch",
+        "seat",
+        "gangway",
+        "exit"
+      ]
+    },
+    "formwork": {
+      "src": "https://en.wikipedia.org/wiki/Formwork",
+      "note": "The mould you build, fill, and then take away.",
+      "needs": [
+        "plank",
+        "plywood",
+        "bolt",
+        "tie",
+        "strut",
+        "release_agent",
+        "props",
+        "panel"
+      ]
+    },
+    "polyester": {
+      "src": "https://en.wikipedia.org/wiki/Polyester",
+      "note": "Two chemicals condensing into a chain, then melted and squirted into fibre.",
+      "needs": [
+        "terephthalic_acid",
+        "ethylene_glycol",
+        "catalyst",
+        "polymer",
+        "spinneret",
+        "filament",
+        "draw",
+        "crimp",
+        "dye"
+      ]
+    },
+    "nylon": {
+      "src": "https://en.wikipedia.org/wiki/Nylon",
+      "note": "A polyamide with the same hydrogen bonding that makes silk strong.",
+      "needs": [
+        "amine",
+        "acid",
+        "polymer",
+        "catalyst",
+        "spinneret",
+        "filament",
+        "draw",
+        "crimp"
+      ]
+    },
+    "acrylic_fibre": {
+      "src": "https://en.wikipedia.org/wiki/Acrylic_fiber",
+      "note": "Made to be wool, and warm for the same reason.",
+      "needs": [
+        "acrylonitrile",
+        "polymer",
+        "solvent",
+        "spinneret",
+        "filament",
+        "crimp",
+        "dye"
+      ]
+    },
+    "spandex": {
+      "src": "https://en.wikipedia.org/wiki/Spandex",
+      "note": "Rigid blocks holding coiled ones, so it stretches and goes back.",
+      "needs": [
+        "polyurethane",
+        "isocyanate",
+        "polyol",
+        "spinneret",
+        "filament",
+        "draw"
+      ]
+    },
+    "neoprene": {
+      "src": "https://en.wikipedia.org/wiki/Neoprene",
+      "note": "Synthetic rubber full of closed gas cells, which is what a wetsuit is.",
+      "needs": [
+        "polymer",
+        "blowing_agent",
+        "foam",
+        "mould",
+        "fabric",
+        "adhesive",
+        "seam"
+      ]
+    },
+    "kevlar": {
+      "src": "https://en.wikipedia.org/wiki/Kevlar",
+      "note": "Rod-like molecules aligned along the fibre, hydrogen-bonded to their neighbours.",
+      "needs": [
+        "polymer",
+        "amine",
+        "acid",
+        "solvent",
+        "spinneret",
+        "draw",
+        "weave",
+        "resin"
+      ]
+    },
+    "carbon_fibre": {
+      "src": "https://en.wikipedia.org/wiki/Carbon_fiber",
+      "note": "A polymer filament cooked until only carbon is left.",
+      "needs": [
+        "polymer",
+        "furnace",
+        "oxidation",
+        "pyrolysis",
+        "filament",
+        "sizing",
+        "resin",
+        "weave"
+      ]
+    },
+    "polyethylene": {
+      "src": "https://en.wikipedia.org/wiki/Polyethylene",
+      "note": "The simplest polymer there is, and the most of it.",
+      "needs": [
+        "ethylene",
+        "catalyst",
+        "initiator",
+        "polymer",
+        "pellet",
+        "extruder",
+        "additive",
+        "mould"
+      ]
+    },
+    "coolant": {
+      "src": "https://en.wikipedia.org/wiki/Coolant",
+      "note": "A liquid that carries heat away and does not freeze, boil or corrode on the way.",
+      "needs": [
+        "water",
+        "glycol|ethylene",
+        "corrosion_inhibitor",
+        "pump",
+        "radiator",
+        "hose",
+        "thermostat",
+        "pressure_cap"
+      ]
+    },
+    "column": {
+      "src": "https://en.wikipedia.org/wiki/Column",
+      "note": "A vertical in pure compression, and the failure mode is buckling not crushing.",
+      "needs": [
+        "stone|timber|steel",
+        "base",
+        "shaft",
+        "capital",
+        "entasis",
+        "drum",
+        "dowel",
+        "plinth"
+      ]
+    },
+    "anvil": {
+      "src": "https://en.wikipedia.org/wiki/Anvil",
+      "note": "Mass under the hammer, so the blow goes into the work and not the floor.",
+      "needs": [
+        "steel|iron",
+        "face",
+        "horn",
+        "hardy_hole",
+        "pritchel_hole",
+        "step",
+        "base",
+        "stump"
+      ]
+    },
+    "coil": {
+      "src": "https://en.wikipedia.org/wiki/Electromagnetic_coil",
+      "note": "Wire turned round enough times that a small current makes a large field.",
+      "needs": [
+        "copper_wire",
+        "insulation",
+        "bobbin",
+        "core",
+        "winding",
+        "turns",
+        "tap",
+        "lead"
+      ]
+    },
+    "bolt": {
+      "src": "https://en.wikipedia.org/wiki/Bolt_(fastener)",
+      "note": "A threaded pin that clamps by being stretched.",
+      "needs": [
+        "steel",
+        "thread",
+        "head",
+        "shank",
+        "washer",
+        "nut",
+        "torque",
+        "preload",
+        "grade"
+      ]
+    },
+    "tube": {
+      "src": "https://en.wikipedia.org/wiki/Tube_(fluid_conveyance)",
+      "note": "A hollow section, which is nearly as stiff as a solid one and a fraction of the weight.",
+      "needs": [
+        "metal|polymer",
+        "wall",
+        "bore",
+        "drawing|extrusion",
+        "weld|seamless",
+        "flare",
+        "fitting"
+      ]
+    },
+    "tine": {
+      "src": "https://en.wikipedia.org/wiki/Tine_(structural)",
+      "note": "One prong of several, spaced so what you want passes and what you do not does not.",
+      "needs": [
+        "steel",
+        "spacing",
+        "taper",
+        "point",
+        "socket",
+        "hardening"
+      ]
+    },
+    "leg": {
+      "src": "https://en.wikipedia.org/wiki/Leg",
+      "note": "A vertical member under a horizontal one, and the joint is the whole problem.",
+      "needs": [
+        "timber|metal",
+        "joint",
+        "mortise_and_tenon|weld",
+        "foot",
+        "rail",
+        "stretcher",
+        "taper"
+      ]
+    },
+    "saltire": {
+      "src": "https://en.wikipedia.org/wiki/Saltire",
+      "note": "A diagonal cross, and one of the oldest heraldic charges there is.",
+      "needs": [
+        "cloth",
+        "dye",
+        "field",
+        "charge",
+        "hoist",
+        "fly",
+        "stitching"
+      ]
+    },
+    "petrol": {
+      "src": "https://en.wikipedia.org/wiki/Gasoline",
+      "note": "A blend, not a compound — tuned so it burns when it is told to and not before.",
+      "needs": [
+        "petroleum",
+        "distillation",
+        "reformate",
+        "alkylate",
+        "octane",
+        "additive",
+        "detergent",
+        "oxygenate"
+      ]
+    },
+    "not_gate": {
+      "src": "https://en.wikipedia.org/wiki/Inverter_(logic_gate)",
+      "note": "One transistor and a resistor, and it is the whole of negation.",
+      "needs": [
+        "transistor",
+        "resistor",
+        "input",
+        "output",
+        "supply",
+        "interconnect"
+      ]
+    },
+    "or_gate": {
+      "src": "https://en.wikipedia.org/wiki/OR_gate",
+      "note": "On when either input is.",
+      "needs": [
+        "transistor",
+        "nand_gate",
+        "not_gate",
+        "input",
+        "output",
+        "interconnect"
+      ]
+    },
+    "sputnik_1": {
+      "src": "https://en.wikipedia.org/wiki/Sputnik_1",
+      "note": "A polished sphere with four aerials and a radio, and it changed everything.",
+      "needs": [
+        "aluminum",
+        "sphere",
+        "antenna",
+        "transmitter",
+        "battery",
+        "nitrogen",
+        "thermal_switch",
+        "rocket"
+      ]
+    },
+    "voyager_program": {
+      "src": "https://en.wikipedia.org/wiki/Voyager_program",
+      "note": "Two probes on a planetary alignment that comes round every 176 years.",
+      "needs": [
+        "rocket",
+        "antenna",
+        "rtg",
+        "plutonium",
+        "camera",
+        "magnetometer",
+        "computer",
+        "golden_record",
+        "gyroscope"
+      ]
+    },
+    "cassini_huygens": {
+      "src": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+      "note": "An orbiter and a lander, and the lander went to a moon with weather.",
+      "needs": [
+        "rocket",
+        "antenna",
+        "rtg",
+        "camera",
+        "spectrometer",
+        "probe",
+        "parachute",
+        "heat_shield",
+        "thruster"
+      ]
+    },
+    "icbm": {
+      "src": "https://en.wikipedia.org/wiki/Intercontinental_ballistic_missile",
+      "note": "Most of the flight is a fall, which is what ballistic means.",
+      "needs": [
+        "rocket",
+        "propellant",
+        "warhead",
+        "guidance",
+        "gyroscope",
+        "stage",
+        "separation",
+        "reentry_vehicle",
+        "silo"
+      ]
+    },
+    "heat_exchanger": {
+      "src": "https://en.wikipedia.org/wiki/Heat_exchanger",
+      "note": "Two fluids swapping heat without meeting.",
+      "needs": [
+        "tube",
+        "shell",
+        "baffle",
+        "header",
+        "coolant",
+        "gasket",
+        "flange",
+        "counterflow"
+      ]
+    },
+    "airframe": {
+      "src": "https://en.wikipedia.org/wiki/Airframe",
+      "note": "The structure, with the engines and everything else taken off.",
+      "needs": [
+        "spar",
+        "rib",
+        "skin",
+        "stringer",
+        "bulkhead",
+        "longeron",
+        "rivet",
+        "frame",
+        "fairing"
+      ]
+    },
+    "housing": {
+      "src": "https://en.wikipedia.org/wiki/Machine",
+      "note": "The case that keeps the bearings aligned and everything else out.",
+      "needs": [
+        "casting|sheet_metal",
+        "bearing_seat",
+        "seal",
+        "gasket",
+        "fastener",
+        "cover",
+        "mount",
+        "vent"
+      ]
+    },
+    "culvert": {
+      "src": "https://en.wikipedia.org/wiki/Culvert",
+      "note": "A pipe under a road, sized for the flood and not the stream.",
+      "needs": [
+        "pipe|concrete",
+        "headwall",
+        "apron",
+        "bedding",
+        "backfill",
+        "invert",
+        "grille"
+      ]
+    },
+    "caliper": {
+      "src": "https://en.wikipedia.org/wiki/Disc_brake",
+      "note": "The clamp that squeezes the pads onto the disc.",
+      "needs": [
+        "housing",
+        "piston",
+        "seal",
+        "brake_pad",
+        "brake_fluid",
+        "bleed_nipple",
+        "mount",
+        "slider"
+      ]
+    },
+    "rubbish": {
+      "src": "https://en.wikipedia.org/wiki/Waste",
+      "note": "What is left when nobody will pay to keep it in circulation.",
+      "needs": [
+        "packaging",
+        "food_waste",
+        "collection",
+        "bin",
+        "landfill|incineration",
+        "recycling",
+        "sorting",
+        "transfer_station"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
