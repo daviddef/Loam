@@ -137,6 +137,7 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+    'oxide_layer', 'junction', 'interconnect',   // needs-sweep 5 Sep
           /* verb outcomes batch 1, 4 Sep. a yeast cell, like the other yeasts */
           'lager_yeast',
           'culture_biology', 'stain',
@@ -247,6 +248,7 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+    'photoresist', 'emitter', 'collector', 'laminations',   // needs-sweep 5 Sep
     /* the scale homonym, 5 Sep. a reptile scale is millimetres; a lepidopteran scale is a tenth of one */
     'animal_scale',
           /* animal disease, 4 Sep — the pathogen catalogue's second kingdom */
@@ -291,6 +293,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'lead_frame', 'encapsulation', 'getter', 'fuse', 'gemstone', 'setting', 'serration', 'arrowhead', 'hafting_resin', 'stearin', 'vitriol', 'drier', 'filler', 'splice', 'whipping', 'dielectric', 'lead_in_wire', 'soldering', 'chasing',   // needs-sweep 5 Sep
     'buckle', 'rivet_set', 'keyway', 'escutcheon', 'strike_plate', 'linchpin', 'grommet', 'ferrule', 'shank', 'bolster', 'bevel', 'honing', 'journal', 'touchhole', 'chinstrap', 'seam', 'selvage',   // needs-sweep 5 Sep
     /* verb outcomes, 5 Sep. a cooled potato and a bar of chocolate */
     'resistant_starch', 'chocolate_bloom',
@@ -499,6 +502,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'mortise_and_tenon',   // needs-sweep 5 Sep
+    'photolithography', 'alnico', 'keeper', 'winding', 'magnetising_coil', 'circlet', 'finial', 'haft', 'bracket', 'stile', 'panel', 'threshold', 'transom', 'housing',   // needs-sweep 5 Sep
     'voussoir', 'keystone', 'springer', 'impost', 'breastplate', 'backplate', 'greave', 'visor', 'cheek_piece', 'nasal', 'brow_reinforce', 'pauldron', 'lame', 'cuisse', 'liner', 'padding', 'leather_strap', 'link', 'hook', 'shackle', 'swage', 'bar_stock', 'bore', 'trunnion', 'breech', 'muzzle', 'rammer', 'wadding', 'fleece', 'batt', 'sizing', 'crucible', 'lath', 'hawk', 'grindstone', 'web', 'flange', 'joist_hanger', 'axle_box', 'gusset', 'plain_weave', 'carding', 'tempering', 'weld', 'bucking_bar',   // needs-sweep 5 Sep
     /* verb outcomes, 5 Sep. a loaf, a pastry, an olive, a bottle of it */
     'stale_bread', 'puff_pastry', 'table_olive', 'creosote',
@@ -782,6 +787,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'coercivity',   // needs-sweep 5 Sep
     'course', 'coping', 'quoin', 'footing', 'haunch', 'extrados', 'intrados', 'rubble_core', 'lathe', 'boring_machine', 'purlin', 'eaves', 'float_glass', 'berm', 'scratch_coat', 'float_coat', 'finish_coat', 'brace', 'scarp', 'counterscarp', 'revetment', 'ditch',   // needs-sweep 5 Sep
     /* the shaft homonym, 5 Sep. a shaft in its bearings, a metre or so */
     'shaft_rotating',

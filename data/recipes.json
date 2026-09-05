@@ -98801,5 +98801,425 @@
     "why": "A narrow bevel cuts better and chips sooner; a wide one lasts and needs more force. Woodworking chisels sit near 25 degrees, axes nearer 30, and a razor under 20 — each a different answer to the same trade.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Bevel"
+  },
+  {
+    "in": [
+      "silicon",
+      "furnace"
+    ],
+    "out": "oxide_layer",
+    "why": "Heating silicon in oxygen or steam grows silicon dioxide on it — an insulator chemically bonded to the crystal beneath, not laid on top. It masks the wafer during doping and insulates the gate afterwards, and the whole planar process rests on the fact that silicon's own oxide happens to be excellent.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thermal_oxidation"
+  },
+  {
+    "in": [
+      "polymer",
+      "solvent"
+    ],
+    "out": "photoresist",
+    "why": "Photoresist is spun onto the wafer as a thin film; exposed regions either become soluble or stop being soluble, so washing it leaves a stencil. Everything about a chip's resolution is a statement about what this layer and the light can resolve.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Photoresist"
+  },
+  {
+    "in": [
+      "photoresist",
+      "mask"
+    ],
+    "out": "photolithography",
+    "why": "A mask carrying the pattern is projected onto the resist, developed, and used to protect the wafer while the exposed areas are etched or doped. It is a printing press, and it is the reason a chip's cost does not scale with the number of transistors on it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Photolithography"
+  },
+  {
+    "in": [
+      "copper",
+      "oxide_layer"
+    ],
+    "out": "interconnect",
+    "why": "Modern chips stack a dozen or more metal layers, each insulated from the next, joined by vias. Below a certain width the wires, not the switches, set the speed — which is why the industry moved from aluminium to copper in the late 1990s.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Interconnect_(integrated_circuits)"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "die"
+    ],
+    "out": "lead_frame",
+    "why": "The die is glued to the lead frame's paddle and its pads are wire-bonded out to the fingers; the frame is then moulded in and its outer ring trimmed away, leaving the legs. It carries current, carries heat away, and holds everything in place while the plastic sets.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lead_frame"
+  },
+  {
+    "in": [
+      "plastic",
+      "lead_frame"
+    ],
+    "out": "encapsulation",
+    "why": "Bare silicon is destroyed by moisture, ions and light, and its bond wires are microns thick. Epoxy moulding compound is chosen to match the silicon's expansion closely enough that heating and cooling does not tear the wires off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+  },
+  {
+    "in": [
+      "doping",
+      "silicon"
+    ],
+    "out": "junction",
+    "why": "At the boundary, electrons and holes cancel and leave a depletion region with a built-in field. Forward bias collapses it and current flows; reverse bias widens it and almost none does. Every diode, transistor and solar cell is this asymmetry.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/P–n_junction"
+  },
+  {
+    "in": [
+      "junction",
+      "n_type"
+    ],
+    "out": "emitter",
+    "why": "The emitter is doped far more heavily than the base so that injection runs overwhelmingly one way across the junction. That asymmetry is what gives a bipolar transistor its gain: a small base current controls a much larger emitter-to-collector one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bipolar_junction_transistor"
+  },
+  {
+    "in": [
+      "junction",
+      "p_type"
+    ],
+    "out": "collector",
+    "why": "The collector's junction is reverse-biased and its region is larger and more lightly doped, so it can stand the voltage and spread the power. Nearly all of a bipolar transistor's dissipation happens here, which is why the package is designed around it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bipolar_junction_transistor"
+  },
+  {
+    "in": [
+      "nickel",
+      "cobalt"
+    ],
+    "out": "alnico",
+    "why": "Alnico holds its magnetism to a very high temperature — several hundred degrees, far beyond ferrite or neodymium — which is why it survived in instruments and sensors long after it stopped being the strongest option. Its weakness is that it demagnetises easily if the circuit is opened.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Alnico"
+  },
+  {
+    "in": [
+      "magnet",
+      "resistance"
+    ],
+    "out": "coercivity",
+    "why": "Coercivity is the reverse field needed to bring magnetisation back to zero. Soft magnetic materials have almost none, which is what lets a transformer core reverse fifty times a second without loss; permanent magnets have a great deal, which is what makes them permanent.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Coercivity"
+  },
+  {
+    "in": [
+      "steel",
+      "magnet"
+    ],
+    "out": "keeper",
+    "why": "An open magnetic circuit demagnetises itself slowly: its own field opposes its magnetisation. A keeper closes the loop through soft iron, and horseshoe magnets were routinely stored with one for exactly that reason.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Magnetic_keeper"
+  },
+  {
+    "in": [
+      "copper_wire",
+      "iron"
+    ],
+    "out": "winding",
+    "why": "Field strength scales with turns times current, so a thousand turns does with a milliamp what one turn would need an amp to do. The insulation between turns is the whole difficulty: a single scratch is a short that takes out the entire coil.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_coil"
+  },
+  {
+    "in": [
+      "ceramic",
+      "insulator"
+    ],
+    "out": "dielectric",
+    "why": "A dielectric's molecules polarise in the field between the plates, which lets the capacitor hold more charge at the same voltage. Its permittivity sets the capacitance and its breakdown strength sets the voltage, and every capacitor is a compromise between the two.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dielectric"
+  },
+  {
+    "in": [
+      "phosphorus",
+      "vacuum"
+    ],
+    "out": "getter",
+    "why": "No pump reaches a perfect vacuum, and the glass and metal keep releasing gas afterwards. A getter is evaporated inside after sealing and chemically absorbs what is left — the silvery patch inside an old valve or bulb is spent getter.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Getter"
+  },
+  {
+    "in": [
+      "wire",
+      "tin"
+    ],
+    "out": "fuse",
+    "why": "A fuse is a deliberately weakest link: a conductor sized so that a current above the rated value melts it before the cable, motor or transformer downstream is damaged. Its rating is not what it passes but what it will not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fuse_(electrical)"
+  },
+  {
+    "in": [
+      "chalk",
+      "binder"
+    ],
+    "out": "filler",
+    "why": "Fillers were added first to make paint and plastic cheaper, then kept because they do real work: they control shrinkage, stiffen the film, flatten the gloss and stop cracking. Chalk in paint and glass fibre in resin are the same idea at two scales.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Filler_(materials)"
+  },
+  {
+    "in": [
+      "cobalt",
+      "linseed_oil"
+    ],
+    "out": "drier",
+    "why": "Linseed oil does not dry, it oxidises and cross-links, and left alone it takes weeks. Cobalt, manganese and lead soaps catalyse that reaction. Too much and the surface skins over a soft interior, which is one of the commoner reasons old paintings crack.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Drying_oil"
+  },
+  {
+    "in": [
+      "tallow",
+      "acid"
+    ],
+    "out": "stearin",
+    "why": "Splitting tallow and separating the saturated stearic acid gives a candle that is hard, white, nearly odourless and burns without guttering. It replaced plain tallow in the 1820s and made candles that were not, in the phrase of the time, a source of smell as much as light.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stearin"
+  },
+  {
+    "in": [
+      "plank",
+      "frame"
+    ],
+    "out": "panel",
+    "why": "Wood shrinks across the grain and not along it. A panel floating in a groove can move seasonally without splitting; a board glued rigidly into a frame cannot, and it will crack. Frame-and-panel construction is the single most important joinery answer to that fact.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Frame_and_panel"
+  },
+  {
+    "in": [
+      "mortise_and_tenon",
+      "plank"
+    ],
+    "out": "stile",
+    "why": "In frame-and-panel work the stiles run the full height and the rails are tenoned into them, so the door's weight and the hinge screws bear on continuous long grain. Reverse it and the hinges go into end grain, and the door sags.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Frame_and_panel"
+  },
+  {
+    "in": [
+      "stone",
+      "door_frame"
+    ],
+    "out": "threshold",
+    "why": "A threshold keeps the door clear of the floor, sheds water outward and takes the wear of everybody's feet, so it is made of the hardest thing available — oak or stone. Its name comes from the raised board that kept the loose threshing floor in.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Threshold_(door)"
+  },
+  {
+    "in": [
+      "steel",
+      "plate"
+    ],
+    "out": "bracket",
+    "why": "A shelf hung on the wall alone loads its fixings in withdrawal, which is the weakest way to load a screw. A bracket puts a diagonal or a foot below so the load presses into the wall instead, which is why the failure mode of a bad shelf is always the top fixing pulling out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bracket_(architecture)"
+  },
+  {
+    "in": [
+      "plank",
+      "hull"
+    ],
+    "out": "transom",
+    "why": "A transom closes the stern with a flat surface instead of running the planking to a point. It gives buoyancy aft, room for a rudder or an engine, and a place to write the name — and the same word covers the horizontal bar dividing a window from the light above it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Transom_(nautical)"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "frame"
+    ],
+    "out": "housing",
+    "why": "A housing holds bearings in relation to each other, which is most of what a machine's accuracy is, and excludes dust and water while keeping lubricant in. It is usually the largest single part and the one that decides how the whole thing is assembled.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Machine"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "insulator"
+    ],
+    "out": "laminations",
+    "why": "A solid iron core in a changing field carries eddy currents that heat it and do nothing else. Slicing the core into thin sheets, each varnished from its neighbour, breaks the loops those currents need — which is why every transformer and motor core is a stack of stampings.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lamination"
+  },
+  {
+    "in": [
+      "winding",
+      "capacitor"
+    ],
+    "out": "magnetising_coil",
+    "why": "A magnet is not made magnetic by rubbing but by being put inside a field stronger than its own coercivity — usually a capacitor bank discharged through a coil in a few milliseconds. After that pulse the domains stay where they were pushed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Magnetization"
+  },
+  {
+    "in": [
+      "nickel",
+      "copper_wire"
+    ],
+    "out": "lead_in_wire",
+    "why": "A wire sealed through glass must match the glass's coefficient of expansion almost exactly or the seal cracks on the first cooling. Dumet wire — a nickel-iron core under a copper skin — was developed for precisely this, and it is why light bulbs stopped leaking.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+  },
+  {
+    "in": [
+      "sulfate",
+      "iron"
+    ],
+    "out": "vitriol",
+    "why": "Green vitriol is iron sulfate, blue is copper sulfate, and distilling green vitriol gives oil of vitriol — sulfuric acid. It is the iron half of iron gall ink, and the fact that such ink eventually eats through the paper it was written on is the same chemistry still going.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Vitriol"
+  },
+  {
+    "in": [
+      "crystal",
+      "grindstone"
+    ],
+    "out": "gemstone",
+    "why": "A gem has to be hard enough to survive being worn, rare enough to be worth setting, and optically interesting enough to be worth looking at. Cutting is what supplies the third: facets angled so light entering the top is totally internally reflected back out of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gemstone"
+  },
+  {
+    "in": [
+      "gemstone",
+      "gold"
+    ],
+    "out": "setting",
+    "why": "A bezel wraps the girdle in metal and is the most secure and the dullest; claws hold at points and let light in from every side; pavé hides the metal entirely. The choice is always between how much of the stone you can see and how likely it is to fall out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Jewellery"
+  },
+  {
+    "in": [
+      "gold",
+      "hoop"
+    ],
+    "out": "circlet",
+    "why": "The circlet is the irreducible form: a band sized to the head, worked thin because gold is heavy and expensive. Arches, finials and a cap of maintenance are all later additions to something that started as a hoop.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Circlet"
+  },
+  {
+    "in": [
+      "metal",
+      "gemstone"
+    ],
+    "out": "finial",
+    "why": "Every spire, railing and crown reaches a point where the structure ends and the eye needs somewhere to rest. A finial is what is put there — and on a crown it usually carries the single most valuable stone, because it is the highest point.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Finial"
+  },
+  {
+    "in": [
+      "solder",
+      "heat"
+    ],
+    "out": "soldering",
+    "why": "Solder wets the surfaces and is drawn into the gap by capillary action, so the joint is made by the filler and not by melting the parts. That is exactly what distinguishes it from welding — and why it works on things that would be destroyed by welding heat.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Soldering"
+  },
+  {
+    "in": [
+      "hammer",
+      "gold"
+    ],
+    "out": "chasing",
+    "why": "Chasing and repoussé are the same operation from opposite sides: the metal is displaced, never removed, so nothing is lost and the sheet can be worked to high relief. It is the technique behind the Mask of Tutankhamun and behind almost all pre-industrial silver.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Repoussé_and_chasing"
+  },
+  {
+    "in": [
+      "timber",
+      "tang"
+    ],
+    "out": "haft",
+    "why": "A haft has to be stiff enough to transmit the blow, springy enough not to jar the hand, and shaped so the edge's orientation can be felt without looking. Ash and hickory dominate because they are the woods that do all three.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Handle"
+  },
+  {
+    "in": [
+      "resin",
+      "beeswax"
+    ],
+    "out": "hafting_resin",
+    "why": "Neanderthal birch-bark tar from Königsaue is around 40,000 years old and had to be made by heating bark without air, which is a controlled process rather than a found material. Mixed with ochre or beeswax it becomes a mastic strong enough to hold a stone point in a shaft.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Birch_tar"
+  },
+  {
+    "in": [
+      "flint",
+      "shaft"
+    ],
+    "out": "arrowhead",
+    "why": "Broadheads cut and bleed; bodkins are narrow and punch through armour; blunts stun small game without ruining it. The head is chosen for the target, and because stone and metal survive while shafts rot, it is usually the only part left.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arrowhead"
+  },
+  {
+    "in": [
+      "blade",
+      "file"
+    ],
+    "out": "serration",
+    "why": "A serrated edge concentrates force on the points and each tooth acts as a small blade drawn across the material. It cuts fibrous things far better than a plain edge and cannot be sharpened the same way, which is the trade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Serration"
+  },
+  {
+    "in": [
+      "strand",
+      "rope"
+    ],
+    "out": "splice",
+    "why": "A knot in rope loses roughly half its strength at the bend; a properly laid splice keeps most of it, because the load stays in the strands and is transferred gradually by friction along the tuck. Every permanent join in rigging is a splice.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rope_splicing"
+  },
+  {
+    "in": [
+      "thread",
+      "rope"
+    ],
+    "out": "whipping",
+    "why": "Rope is only rope because it is under twist. Cut it and the strands begin to unwind from the end, and the whole length will follow. A whipping of small line, or a splice back into itself, is what stops it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Whipping_knot"
+  },
+  {
+    "in": [
+      "chisel",
+      "timber"
+    ],
+    "out": "mortise_and_tenon",
+    "why": "A tenon shouldered on all four sides seats against the mortise's face, so the joint resists racking rather than relying on the fastening. Pegged slightly off-centre it draw-bores itself tight as the peg is driven. Neolithic well linings in Germany from about 5000 BC are already framed this way.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mortise_and_tenon"
   }
 ]

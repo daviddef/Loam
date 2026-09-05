@@ -22,7 +22,7 @@
  * — this says so, because a hand-written list that has been fully answered has
  * stopped measuring anything at all.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -45,9 +45,15 @@ const assembled = (id) => (madeBy.get(id) || []).some(r => r.in.length >= 2);
 
 /* An artefact is a made thing somebody could write a parts list for. A rock is
  * not one; a wheel is. The tag set is the corpus's own. */
-const CRAFTY = new Set(['tool', 'build', 'craft', 'trade', 'civic', 'transport',
-                        'home', 'media', 'writing', 'instrument', 'medicine', 'tech']);
-const artefacts = elements.filter(e => assembled(e.id) && (e.tags || []).some(t => CRAFTY.has(t)));
+/* Use needs.mjs's OWN definition of an assembly, not a second broader one.
+ * This row previously read a wider tag set and counted every bevel, weld and
+ * voussoir as owing a parts list, which put the backlog at 1,927 and made the
+ * sweep look endless. Two tools disagreeing about a denominator is how a
+ * coverage number stops meaning anything. */
+const MADE = new Set(['tool', 'build', 'dish', 'trade', 'instrument', 'medicine', 'transport', 'machine']);
+const NOT_ASSEMBLY = new Set(has('needs.json') ? (read('needs.json').$not_assemblies || []) : []);
+const artefacts = elements.filter(e => assembled(e.id) && !NOT_ASSEMBLY.has(e.id)
+                                    && (e.tags || []).some(t => MADE.has(t)));
 
 const rows = [];
 const add = (name, seen, total, note, authored = false) =>
@@ -81,8 +87,13 @@ add('redundancy', recipes.length, recipes.length, 'every gesture, every run');
 
 if (has('needs.json')) {
   const needs = read('needs.json').needs || {};
-  add('needs', Object.keys(needs).length, artefacts.length,
-      'artefacts that could carry a parts list');
+  /* The numerator has to be a SUBSET of the denominator or the ratio is a
+   * fiction. 33 lists sit on things outside it — house, bicycle, cheese — which
+   * are worth having and are not what this row measures. */
+  const onScope = artefacts.filter(e => needs[e.id]).length;
+  const off = Object.keys(needs).length - onScope;
+  add('needs', onScope, artefacts.length,
+      `assemblies with a parts list (+${off} lists on things outside this scope)`);
 }
 if (has('homonyms.json')) {
   const h = read('homonyms.json');
@@ -121,6 +132,48 @@ if (has('cautions.json')) {
       'elements carrying a caution — NOT a target, most should have none', true);
 }
 
+/* IS THE SWEEP CONVERGING, OR IS IT A TREADMILL?
+ *
+ * Authoring closes gaps and opens them. The 94 components authored on 5 Sep
+ * closed 94 holes in other things' parts lists and were themselves 94 new
+ * elements needing art, sense checks and — for some of them — parts lists of
+ * their own. A single percentage cannot tell you whether that is progress.
+ *
+ * So each run appends a snapshot, and the next run prints the movement. A row
+ * whose numerator climbs faster than its denominator is converging. A row where
+ * both climb together is a treadmill, and the honest response to a treadmill is
+ * to fix the denominator — which is exactly what $not_assemblies did when this
+ * row read 1,927 and counted every bevel and weld as owing a bill of materials.
+ *
+ * The log is data, not a gate. Nothing fails because a number moved. */
+const LOG = join(ROOT, 'data', 'coverage-log.json');
+let log = [];
+try { log = JSON.parse(readFileSync(LOG, 'utf8')); } catch {}
+const prev = log.length ? log[log.length - 1] : null;
+const stamp = new Date().toISOString().slice(0, 10);
+
+/* --history: the whole log, one line per snapshot per partial row. A single
+ * delta answers "did that batch help?"; the history answers the harder
+ * question, which is whether the sweep converges at all. */
+if (process.argv[2] === '--history') {
+  const names = [...new Set(log.flatMap(s => Object.keys(s.rows)))]
+    .filter(nm => log.some(s => s.rows[nm] && s.rows[nm].seen < s.rows[nm].total));
+  console.log(`\nCOVERAGE OVER TIME — ${log.length} snapshot(s)\n`);
+  for (const nm of names) {
+    console.log(`  ${nm}`);
+    let last = null;
+    for (const s of log) {
+      const r = s.rows[nm];
+      if (!r) continue;
+      const d = last ? `  ${r.seen - last.seen >= 0 ? '+' : ''}${r.seen - last.seen} done / ${r.total - last.total >= 0 ? '+' : ''}${r.total - last.total} owed` : '';
+      console.log(`     ${s.at}  ${String(r.seen).padStart(6)}/${String(r.total).padEnd(6)} ${(r.seen / r.total * 100).toFixed(1).padStart(5)}%${d}`);
+      last = r;
+    }
+  }
+  console.log(`\n  A row where "owed" grows as fast as "done" is a treadmill, and the fix for a\n  treadmill is usually the denominator, not more work.\n`);
+  process.exit(0);
+}
+
 const only = process.argv[2];
 const n = (x) => x.toLocaleString('en-US');
 const wide = Math.max(...rows.map(r => r.name.length));
@@ -134,8 +187,23 @@ for (const r of rows) {
   const bar = '#'.repeat(Math.round(pct / 5)).padEnd(20, '.');
   const full = pct >= 99.5;
   if (!full && !r.authored) partial++;
-  console.log(`  ${bar} ${pct.toFixed(0).padStart(3)}%  ${r.name.padEnd(wide)} ${n(r.seen).padStart(6)}/${n(r.total).padEnd(6)}  ${r.note}`);
+  const was = prev && prev.rows[r.name];
+  let move = '';
+  if (was && (was.seen !== r.seen || was.total !== r.total)) {
+    const ds = r.seen - was.seen, dt = r.total - was.total;
+    const sign = (x) => (x > 0 ? '+' : '') + n(x);
+    move = `   [${sign(ds)} done, ${sign(dt)} owed${ds > dt ? ' — gaining' : ds < dt ? ' — falling behind' : ''}]`;
+  }
+  console.log(`  ${bar} ${pct.toFixed(0).padStart(3)}%  ${r.name.padEnd(wide)} ${n(r.seen).padStart(6)}/${n(r.total).padEnd(6)}  ${r.note}${move}`);
 }
+if (!only) {
+  const snap = { at: stamp, rows: Object.fromEntries(rows.map(r => [r.name, { seen: r.seen, total: r.total }])) };
+  if (!prev || JSON.stringify(prev.rows) !== JSON.stringify(snap.rows)) log.push(snap);
+  if (log.length > 400) log = log.slice(-400);
+  writeFileSync(LOG, JSON.stringify(log, null, 1) + '\n');
+  if (prev) console.log(`\n  Movement shown against the previous run (${prev.at}). ${log.length} snapshot(s) kept.`);
+}
+
 console.log(`\n  ${partial} mechanism(s) have seen less than the whole of what they are for.`);
 console.log(`  A green run from any of those is a green run on a sample. The number`);
 console.log(`  beside it is how big the sample was.\n`);

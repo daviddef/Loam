@@ -89699,5 +89699,454 @@
       "tool"
     ],
     "fact": "An edge ground to an angle. The angle is the whole argument between sharp and durable."
+  },
+  {
+    "id": "oxide_layer",
+    "name": "Oxide Layer",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "A film of glass grown out of the silicon itself, and the reason the transistor could be printed."
+  },
+  {
+    "id": "photoresist",
+    "name": "Photoresist",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "A varnish that changes solubility where light hits it. The pattern is made by developing, not by cutting."
+  },
+  {
+    "id": "photolithography",
+    "name": "Photolithography",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "Printing a circuit with light — millions of features at once, in one exposure."
+  },
+  {
+    "id": "interconnect",
+    "name": "Interconnect",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "The wiring between transistors, which now takes more layers than the transistors do."
+  },
+  {
+    "id": "lead_frame",
+    "name": "Lead Frame",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "A stamped metal spider: the die sits at the middle and the legs become the pins."
+  },
+  {
+    "id": "encapsulation",
+    "name": "Encapsulation",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "craft"
+    ],
+    "fact": "The black plastic. Not decoration — the die will not survive air."
+  },
+  {
+    "id": "junction",
+    "name": "Junction",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "earth"
+    ],
+    "fact": "Where n meets p, and current will go one way and not the other."
+  },
+  {
+    "id": "emitter",
+    "name": "Emitter",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "The terminal that supplies the carriers — doped hardest, because it has to win."
+  },
+  {
+    "id": "collector",
+    "name": "Collector",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech"
+    ],
+    "fact": "The terminal that gathers what the emitter sent, and dissipates most of the heat."
+  },
+  {
+    "id": "alnico",
+    "name": "Alnico",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "metal"
+    ],
+    "fact": "Aluminium, nickel, cobalt and iron. The strongest magnet there was, until the rare earths arrived."
+  },
+  {
+    "id": "coercivity",
+    "name": "Coercivity",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "metal"
+    ],
+    "fact": "How hard it is to un-magnetise something. Low, and it is a transformer core; high, and it is a magnet."
+  },
+  {
+    "id": "keeper",
+    "name": "Keeper",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A bar of soft iron across the poles, giving the field somewhere to go while the magnet is idle."
+  },
+  {
+    "id": "winding",
+    "name": "Winding",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "Wire turned round a core enough times that a small current makes a large field."
+  },
+  {
+    "id": "dielectric",
+    "name": "Dielectric",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "earth"
+    ],
+    "fact": "An insulator that stores energy by being pulled out of shape."
+  },
+  {
+    "id": "getter",
+    "name": "Getter",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A reactive metal flashed inside the envelope, to eat the gas the pump could not."
+  },
+  {
+    "id": "fuse",
+    "name": "Fuse",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A wire chosen to fail, so that nothing more expensive does."
+  },
+  {
+    "id": "filler",
+    "name": "Filler",
+    "emoji": "🪣",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "Cheap inert powder in an expensive binder — and often what makes the mixture work."
+  },
+  {
+    "id": "drier",
+    "name": "Drier",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "trade"
+    ],
+    "fact": "A metal salt that makes oil paint harden in a day instead of a month."
+  },
+  {
+    "id": "stearin",
+    "name": "Stearin",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "food"
+    ],
+    "fact": "The hard fraction of a fat, and what turned the tallow candle into a decent one."
+  },
+  {
+    "id": "panel",
+    "name": "Panel",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "A thin board held in a grooved frame, free to move as the wood changes size."
+  },
+  {
+    "id": "stile",
+    "name": "Stile",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The vertical member of a frame, running the full height and taking the hinges."
+  },
+  {
+    "id": "threshold",
+    "name": "Threshold",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The board across the bottom of a doorway, and the oldest place in a house to leave an offering."
+  },
+  {
+    "id": "bracket",
+    "name": "Bracket",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "A right angle that turns a pulling load into a pushing one."
+  },
+  {
+    "id": "transom",
+    "name": "Transom",
+    "emoji": "🛶",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "transport"
+    ],
+    "fact": "The flat across a boat's stern — and the beam across the top of a window."
+  },
+  {
+    "id": "housing",
+    "name": "Housing",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "The case: it keeps the mechanism aligned, and everything else out."
+  },
+  {
+    "id": "laminations",
+    "name": "Laminations",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "tech",
+      "metal"
+    ],
+    "fact": "A core built from insulated sheets, so the currents that waste energy cannot circulate."
+  },
+  {
+    "id": "magnetising_coil",
+    "name": "Magnetising Coil",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "A brief, enormous current, to line the domains up once and for all."
+  },
+  {
+    "id": "lead_in_wire",
+    "name": "Lead-in Wire",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "The wire through the glass, which has to expand at exactly the rate the glass does."
+  },
+  {
+    "id": "vitriol",
+    "name": "Vitriol",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "craft"
+    ],
+    "fact": "An old name for the sulfate salts, and the source of the oldest strong acid."
+  },
+  {
+    "id": "gemstone",
+    "name": "Gemstone",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "earth"
+    ],
+    "fact": "A mineral chosen for hardness, rarity and what it does to light — in that order."
+  },
+  {
+    "id": "setting",
+    "name": "Setting",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "How the stone is held. Every way of doing it trades light against security."
+  },
+  {
+    "id": "circlet",
+    "name": "Circlet",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "A plain band for the head. Every crown is one of these with things added."
+  },
+  {
+    "id": "finial",
+    "name": "Finial",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "The ornament on top, where a structure has to stop."
+  },
+  {
+    "id": "soldering",
+    "name": "Soldering",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "metal"
+    ],
+    "fact": "Joining two metals with a third that melts lower than either."
+  },
+  {
+    "id": "chasing",
+    "name": "Chasing",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Working metal from the front with punches, pushing it rather than cutting it."
+  },
+  {
+    "id": "haft",
+    "name": "Haft",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The handle, and the part that decides whether the tool is any good to use."
+  },
+  {
+    "id": "hafting_resin",
+    "name": "Hafting Resin",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Birch tar, pitch and beeswax — the oldest adhesive there is."
+  },
+  {
+    "id": "arrowhead",
+    "name": "Arrowhead",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The business end, and the part archaeology actually finds."
+  },
+  {
+    "id": "serration",
+    "name": "Serration",
+    "emoji": "🔪",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Teeth on an edge, so it saws where a plain edge would slide."
+  },
+  {
+    "id": "splice",
+    "name": "Splice",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Joining rope by weaving the strands into each other, not by tying."
+  },
+  {
+    "id": "whipping",
+    "name": "Whipping",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Binding round the cut end so the rope cannot unlay itself."
+  },
+  {
+    "id": "mortise_and_tenon",
+    "name": "Mortise and Tenon",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "A tongue cut on one piece, a hole cut in the other. Seven thousand years old and still the joint everything else is measured against."
   }
 ]

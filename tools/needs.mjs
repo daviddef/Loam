@@ -41,6 +41,12 @@ const R = f => JSON.parse(readFileSync(join(root, 'data', f), 'utf8'));
 const elements = R('elements.json');
 const recipes = R('recipes.json');
 const NEEDS = existsSync(join(root, 'data/needs.json')) ? R('needs.json').needs : {};
+/* Some made things have no bill of materials — a bevel is an angle, a weld is a
+ * joint, a voussoir is one stone cut once. Counting them as owing a list
+ * inflates the backlog until the sweep looks endless, and the first version of
+ * this denominator did exactly that by reading tags. The exclusions are curated
+ * in data/needs.json under $not_assemblies, with the rule beside them. */
+const NOT_ASSEMBLY = new Set(existsSync(join(root, 'data/needs.json')) ? (R('needs.json').$not_assemblies || []) : []);
 
 const ids = new Set(elements.map(e => e.id));
 const names = new Set(elements.map(e => e.name.toLowerCase()));
@@ -83,7 +89,7 @@ if (args.includes('--next')) {
   const asInput = new Map();
   for (const r of recipes) for (const i of r.in) asInput.set(i, (asInput.get(i) ?? 0) + 1);
   const rows = elements
-    .filter(e => !NEEDS[e.id] && (e.tags || []).some(t => MADE.has(t)))
+    .filter(e => !NEEDS[e.id] && !NOT_ASSEMBLY.has(e.id) && (e.tags || []).some(t => MADE.has(t)))
     .map(e => ({ id: e.id, d: depthOf(e.id), used: asInput.get(e.id) ?? 0 }))
     .sort((a, b) => (b.d - a.d) || (b.used - a.used))
     .slice(0, 40);
@@ -92,7 +98,16 @@ if (args.includes('--next')) {
   // The top 40 without the total reads as a short queue, and it is not one.
   // Asked directly whether the mechanism had been run across the corpus, this
   // was the number that answered it and the tool did not print it.
-  const allMade = elements.filter(e => (e.tags ?? []).some(t => MADE.has(t)));
+  /* ONE definition of the denominator, and this is it. tools/coverage.mjs reads
+   * the same three conditions, because two tools disagreeing about what counts
+   * is how a coverage figure stops meaning anything — they reported 107 of
+   * 2,087 and 137 of 1,978 for the same question on the same corpus.
+   *   assembled   made from two or more inputs; a primitive has no parts
+   *   maker's tag it is a made thing, not a rock or an animal
+   *   not excluded see $not_assemblies: a bevel is an angle, a weld is a joint */
+  const assembled = new Set(recipes.filter(r => r.in.length >= 2).map(r => r.out));
+  const allMade = elements.filter(e => assembled.has(e.id) && !NOT_ASSEMBLY.has(e.id)
+                                    && (e.tags ?? []).some(t => MADE.has(t)));
   const done = allMade.filter(e => NEEDS[e.id]).length;
   console.log(`\n  ${done} of ${allMade.length} things with a maker's tag have a list — ` +
               `${allMade.length - done} do not.`);
