@@ -502,6 +502,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'thatch',   // a laid roof covering, not a building
     'mortise_and_tenon',   // needs-sweep 5 Sep
     'photolithography', 'alnico', 'keeper', 'winding', 'magnetising_coil', 'circlet', 'finial', 'haft', 'bracket', 'stile', 'panel', 'threshold', 'transom', 'housing',   // needs-sweep 5 Sep
     'voussoir', 'keystone', 'springer', 'impost', 'breastplate', 'backplate', 'greave', 'visor', 'cheek_piece', 'nasal', 'brow_reinforce', 'pauldron', 'lame', 'cuisse', 'liner', 'padding', 'leather_strap', 'link', 'hook', 'shackle', 'swage', 'bar_stock', 'bore', 'trunnion', 'breech', 'muzzle', 'rammer', 'wadding', 'fleece', 'batt', 'sizing', 'crucible', 'lath', 'hawk', 'grindstone', 'web', 'flange', 'joist_hanger', 'axle_box', 'gusset', 'plain_weave', 'carding', 'tempering', 'weld', 'bucking_bar',   // needs-sweep 5 Sep
@@ -1318,6 +1319,7 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+    'osu_castle', 'agra_fort', 'elephanta', 'jameh_isfahan', 'mahabalipuram', 'chola_temples', 'novodevichy',   // Chronicarum places 5 Sep
     /* verb outcomes, 5 Sep. a slab across a slope */
     'wind_slab',
     /* the last checklist place, 5 Sep. a walled town of 27 hectares */
@@ -1518,6 +1520,7 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    'goree', 'naqa', 'tiebele', 'niokolo_koba', 'dinosaur_provincial_park', 'selous', 'humberstone', 'ani', 'pergamon', 'pamukkale', 'susa', 'bhimbetka', 'macau_centre', 'altamira', 'vezere', 'bern_old_city', 'potsdam_palaces', 'orkney_neolithic', 'kotor', 'shirakawa_go', 'kii_routes',   // Chronicarum places 5 Sep
     /* places batch 45, 5 Sep. 650 ha of dunes */
     'sigatoka_dunes',
     /* places batch 35, 5 Sep. a mountain of ore at 4,824 m */
