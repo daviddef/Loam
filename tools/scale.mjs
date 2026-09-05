@@ -1890,6 +1890,20 @@ console.log(`  span: ${format(span[0])} to ${format(span[span.length - 1])} — 
 
 if (missing.length) console.log(`\n  unsized (${missing.length}):\n    ${missing.join('\n    ')}`);
 
+/* An unsized element used to leave the write mode at exit 0, and only `check`
+ * said otherwise. So a batch could add thirty elements, run the gate, read a
+ * green exit and believe it, and learn from build-prototype — which refuses to
+ * build without a size — that not one of them had one. That is the exit-code
+ * fault class this project has hit before: a gate that reports success while
+ * knowing better. An id in the table that is not an element already exited 1;
+ * an element the table does not cover is the same fault seen from the other
+ * side, and it exits the same way now.
+ *
+ * The two are not handled identically, though, because they fail differently.
+ * A duplicate or an unknown id means the TABLE is wrong, so writing it would
+ * spread the fault into data/scale.json — refuse before writing. A missing
+ * size means the table is right as far as it goes, so the write still happens
+ * and the exit code carries the gap. */
 if (process.argv[2] === 'check') process.exit(missing.length || dupes.length || unknown.length ? 1 : 0);
 if (dupes.length || unknown.length) process.exit(1);
 
@@ -1897,3 +1911,11 @@ const out = {};
 for (const e of elements) if (byId[e.id] !== undefined) out[e.id] = { e: byId[e.id], t: format(byId[e.id]) };
 writeFileSync(join(root, 'data/scale.json'), JSON.stringify(out) + '\n');
 console.log(`\n  wrote data/scale.json`);
+
+if (missing.length) {
+  console.error(`\n  ${missing.length} element(s) have no size, listed above.`);
+  console.error(`  Sizes are authored in tools/scale.mjs — data/scale.json is output, and`);
+  console.error(`  editing it is erased by the next run. Add each id to the bucket for its`);
+  console.error(`  power of ten: the size of the thing AS DRAWN AND AS USED.`);
+  process.exit(1);
+}
