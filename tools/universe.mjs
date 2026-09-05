@@ -59,6 +59,46 @@ const covered = concept => concept.split('|').some(has);
  * mind before everything people build with it.
  */
 const UNIVERSE = {
+/* ADDED 5 Sep. A player named sunscreen, polyester, picture, skirt, rubbish,
+   laminate, creek, spaghetti, risotto and static in the space of two messages,
+   and every one was absent — while this file read 589 of 589, 100%.
+   The list was not wrong about what it contained. It was silent about whole
+   categories nobody had thought to put in it: synthetic fibre, personal care,
+   prepared dishes, sanitation, and the everyday end of physics. A checklist
+   written by the same hand that answers it stops measuring the moment it is
+   finished, which is exactly what happened to the places checklist before it
+   was given an external denominator. This is a patch on that symptom; the cure
+   is an outside list, and it is queued. */
+'materials — synthetic': `
+polyester nylon acrylic_fibre viscose rayon spandex polypropylene
+polystyrene polyurethane silicone epoxy resin_composite carbon_fibre
+fibreglass laminate plywood veneer chipboard mdf vinyl neoprene kevlar`,
+
+'everyday — care of the body': `
+soap shampoo toothpaste toothbrush deodorant sunscreen moisturiser
+razor comb towel bandage plaster_cast antiseptic painkiller vitamin
+contraception spectacles hearing_aid wheelchair crutch prosthesis`,
+
+'everyday — prepared dishes': `
+bread soup stew roast pie pasta spaghetti noodle risotto paella curry
+stir_fry salad sandwich pizza dumpling pancake porridge cereal
+casserole omelette sausage cheese yoghurt jam pickle chocolate cake`,
+
+'everyday — the household': `
+rubbish litter recycling drain sewer plumbing wiring insulation
+paint wallpaper carpet curtain furniture bed table chair cupboard
+sink toilet shower bath tap kettle fridge oven washing_machine`,
+
+'physics — the everyday end': `
+static_electricity charge current voltage resistance circuit magnet
+friction lever pulley gear spring buoyancy density viscosity surface_tension
+capillary_action evaporation condensation conduction convection radiation
+reflection refraction lens echo resonance`,
+
+'earth — small water': `
+creek stream brook spring pond puddle ditch culvert watershed
+aquifer runoff floodplain meander oxbow estuary wetland`,
+
 'physics — spacetime and forces': `
 space time spacetime gravity electromagnetism strong_force weak_force
 energy momentum mass force acceleration velocity friction pressure

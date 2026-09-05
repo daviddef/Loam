@@ -293,6 +293,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'static_electricity', 'circuit', 'buoyancy', 'density', 'viscosity', 'surface_tension', 'capillary_action', 'conduction', 'convection', 'reflection', 'refraction', 'resonance', 'charge', 'voltage', 'acrylic_fibre', 'spandex', 'polypropylene', 'epoxy', 'carbon_fibre', 'vinyl', 'neoprene', 'deodorant', 'moisturiser', 'painkiller', 'spinneret', 'rayon', 'kevlar',   // universe gaps 5 Sep
     'pendant', 'clasp',   // necklace, 5 Sep
     'lead_frame', 'encapsulation', 'getter', 'fuse', 'gemstone', 'setting', 'serration', 'arrowhead', 'hafting_resin', 'stearin', 'vitriol', 'drier', 'filler', 'splice', 'whipping', 'dielectric', 'lead_in_wire', 'soldering', 'chasing',   // needs-sweep 5 Sep
     'buckle', 'rivet_set', 'keyway', 'escutcheon', 'strike_plate', 'linchpin', 'grommet', 'ferrule', 'shank', 'bolster', 'bevel', 'honing', 'journal', 'touchhole', 'chinstrap', 'seam', 'selvage',   // needs-sweep 5 Sep
@@ -791,6 +792,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'spaghetti', 'risotto', 'paella', 'curry', 'pie', 'dumpling', 'porridge', 'casserole', 'wok', 'stir_fry', 'fibreglass', 'chipboard', 'spectacles', 'wheelchair', 'crutch', 'prosthesis', 'plaster_cast', 'puddle', 'wallpaper',   // universe gaps 5 Sep
     'skirt', 'veneer', 'creek', 'plywood',   // reader-found gaps
     'caliper', 'master_cylinder', 'retort', 'grate', 'scrubber', 'heat_exchanger', 'gyroscope', 'spar', 'leaf_spring', 'steering', 'tailgate', 'podium', 'stela',   // needs sweep
     'coercivity',   // needs-sweep 5 Sep
@@ -1122,6 +1124,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'stream', 'brook', 'pond', 'culvert', 'watershed', 'runoff', 'oxbow', 'wiring', 'shower', 'bath', 'fridge', 'washing_machine', 'plumbing', 'furniture',   // universe gaps 5 Sep
     'spillway', 'embankment', 'penstock', 'flue', 'airframe', 'terrace', 'retaining_wall', 'arena', 'vomitorium', 'awning', 'basilica', 'forum',   // needs sweep
     'titans',
     'excavation', 'causeway', 'subgrade', 'sub_base', 'base_course', 'binder_course', 'surface_course', 'drainage', 'camber', 'clay_lining',   // needs-sweep 5 Sep

@@ -8252,8 +8252,7 @@
     "tags": [
       "dish"
     ],
-    "fact": "Slow, moist heat for the least tender cuts. The juiciness is collagen, not added water.",
-    "terminal": true
+    "fact": "Slow, moist heat for the least tender cuts. The juiciness is collagen, not added water."
   },
   {
     "id": "carob",
@@ -35456,7 +35455,6 @@
       "tool"
     ],
     "fact": "Polyvinyl chloride. The vinyl chloride monomer is a genuine carcinogen; the finished plastic is not.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -91856,5 +91854,664 @@
       "craft"
     ],
     "fact": "Thin layers glued with the grain crossed, so it is strong both ways and cannot split."
+  },
+  {
+    "id": "spaghetti",
+    "name": "Spaghetti",
+    "emoji": "🍝",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Extruded rather than rolled, which is why it is round and why it is a machine's shape."
+  },
+  {
+    "id": "risotto",
+    "name": "Risotto",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "A rice that gives up its starch, stirred so the starch becomes the sauce."
+  },
+  {
+    "id": "paella",
+    "name": "Paella",
+    "emoji": "🥘",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Cooked flat and never stirred, because the burnt layer at the bottom is the point."
+  },
+  {
+    "id": "curry",
+    "name": "Curry",
+    "emoji": "🍛",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "A word the British applied to several hundred unrelated dishes, and which stuck."
+  },
+  {
+    "id": "pie",
+    "name": "Pie",
+    "emoji": "🥧",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Pastry as a container first and a food second — the crust was originally the pot."
+  },
+  {
+    "id": "dumpling",
+    "name": "Dumpling",
+    "emoji": "🥟",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Dough round a filling — found independently almost everywhere people had both."
+  },
+  {
+    "id": "porridge",
+    "name": "Porridge",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Grain and water cooked until the starch bursts. Probably the oldest cooked dish there is."
+  },
+  {
+    "id": "casserole",
+    "name": "Casserole",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "One dish, in the oven, for long enough that tough things become tender."
+  },
+  {
+    "id": "static_electricity",
+    "name": "Static Electricity",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "earth"
+    ],
+    "fact": "Charge that has nowhere to go, until suddenly it does."
+  },
+  {
+    "id": "circuit",
+    "name": "Circuit",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "tool"
+    ],
+    "fact": "A loop. Break it anywhere and nothing anywhere in it works."
+  },
+  {
+    "id": "buoyancy",
+    "name": "Buoyancy",
+    "emoji": "🛟",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "idea"
+    ],
+    "fact": "The water pushes up by exactly the weight of the water that is not there any more."
+  },
+  {
+    "id": "density",
+    "name": "Density",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "earth"
+    ],
+    "fact": "How much of a thing is in the space it takes up."
+  },
+  {
+    "id": "viscosity",
+    "name": "Viscosity",
+    "emoji": "🍯",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "idea"
+    ],
+    "fact": "How much a fluid objects to being sheared."
+  },
+  {
+    "id": "surface_tension",
+    "name": "Surface Tension",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "idea"
+    ],
+    "fact": "A liquid's surface behaving like a skin, because the molecules underneath pull and the ones above do not."
+  },
+  {
+    "id": "capillary_action",
+    "name": "Capillary Action",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "water",
+      "idea"
+    ],
+    "fact": "Water climbing a narrow tube against gravity, and the reason a wick works."
+  },
+  {
+    "id": "conduction",
+    "name": "Conduction",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "idea"
+    ],
+    "fact": "Heat passing through a solid by jostling, without anything moving from one end to the other."
+  },
+  {
+    "id": "convection",
+    "name": "Convection",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "water"
+    ],
+    "fact": "Hot fluid rises because it is less dense, and something colder comes in behind it."
+  },
+  {
+    "id": "reflection",
+    "name": "Reflection",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "idea"
+    ],
+    "fact": "Light bouncing at the angle it arrived, or scattering if the surface is rough."
+  },
+  {
+    "id": "refraction",
+    "name": "Refraction",
+    "emoji": "🔍",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "idea"
+    ],
+    "fact": "Light bending because it travels slower in one thing than another."
+  },
+  {
+    "id": "resonance",
+    "name": "Resonance",
+    "emoji": "🎵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "fire"
+    ],
+    "fact": "Pushing something at the rate it already wants to move, so small pushes get large."
+  },
+  {
+    "id": "wok",
+    "name": "Wok",
+    "emoji": "🥘",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "home"
+    ],
+    "fact": "A bowl of thin steel, so the bottom is fierce and the sides are not."
+  },
+  {
+    "id": "charge",
+    "name": "Charge",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "earth"
+    ],
+    "fact": "The property that makes things pull and push without touching."
+  },
+  {
+    "id": "stir_fry",
+    "name": "Stir Fry",
+    "emoji": "🥘",
+    "shelf": "workshop",
+    "tags": [
+      "food",
+      "dish"
+    ],
+    "fact": "Very hot metal, very little time, and everything cut to cook at the same rate."
+  },
+  {
+    "id": "voltage",
+    "name": "Voltage",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "idea"
+    ],
+    "fact": "The push. Not how much charge, but how badly it wants to move."
+  },
+  {
+    "id": "acrylic_fibre",
+    "name": "Acrylic Fibre",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The synthetic that was made to be wool, and is warm for the same reason."
+  },
+  {
+    "id": "spandex",
+    "name": "Spandex",
+    "emoji": "🩱",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A fibre that stretches to five times its length and goes back."
+  },
+  {
+    "id": "polypropylene",
+    "name": "Polypropylene",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "earth"
+    ],
+    "fact": "The lightest common plastic — it floats — and the one with the living hinge."
+  },
+  {
+    "id": "epoxy",
+    "name": "Epoxy",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "Two liquids that become a solid by reacting with each other rather than by drying."
+  },
+  {
+    "id": "carbon_fibre",
+    "name": "Carbon Fibre",
+    "emoji": "🖤",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Filaments of nearly pure carbon, stiffer than steel for their weight and brittle without warning."
+  },
+  {
+    "id": "fibreglass",
+    "name": "Fibreglass",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "Glass drawn fine enough to bend without breaking."
+  },
+  {
+    "id": "chipboard",
+    "name": "Chipboard",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "Wood chips and glue pressed into a board, using what the sawmill would have burnt."
+  },
+  {
+    "id": "vinyl",
+    "name": "Vinyl",
+    "emoji": "💿",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "earth"
+    ],
+    "fact": "The plastic that was flooring, then records, then flooring again."
+  },
+  {
+    "id": "neoprene",
+    "name": "Neoprene",
+    "emoji": "🤿",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A synthetic rubber full of nitrogen bubbles, which is what makes a wetsuit work."
+  },
+  {
+    "id": "deodorant",
+    "name": "Deodorant",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine",
+      "craft"
+    ],
+    "fact": "It does not stop sweat smelling. It stops the bacteria that make the smell."
+  },
+  {
+    "id": "moisturiser",
+    "name": "Moisturiser",
+    "emoji": "🧴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine",
+      "craft"
+    ],
+    "fact": "Mostly it does not add water. It stops water leaving."
+  },
+  {
+    "id": "spectacles",
+    "name": "Spectacles",
+    "emoji": "👓",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "Two lenses at the right distance, and the frame is the hard part."
+  },
+  {
+    "id": "wheelchair",
+    "name": "Wheelchair",
+    "emoji": "🦽",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "A chair the user drives, which is a different machine from one they are pushed in."
+  },
+  {
+    "id": "crutch",
+    "name": "Crutch",
+    "emoji": "🩼",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "Moving load off a leg and into the arms and shoulders."
+  },
+  {
+    "id": "prosthesis",
+    "name": "Prosthesis",
+    "emoji": "🦿",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "medicine"
+    ],
+    "fact": "Replacing a part, and the difficult end is where it meets what is left."
+  },
+  {
+    "id": "painkiller",
+    "name": "Painkiller",
+    "emoji": "💊",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "Blocking the signal, or blocking the chemistry that makes the signal."
+  },
+  {
+    "id": "plaster_cast",
+    "name": "Plaster Cast",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "medicine",
+      "craft"
+    ],
+    "fact": "Holding two ends of a bone still for long enough that they knit."
+  },
+  {
+    "id": "spinneret",
+    "name": "Spinneret",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A plate of fine holes. Everything synthetic that is a fibre came out of one."
+  },
+  {
+    "id": "rayon",
+    "name": "Rayon",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "plant"
+    ],
+    "fact": "The first manufactured fibre, and it is made of trees."
+  },
+  {
+    "id": "kevlar",
+    "name": "Kevlar",
+    "emoji": "🦺",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Chains lined up so straight that the fibre beats steel by weight."
+  },
+  {
+    "id": "stream",
+    "name": "Stream",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Water gathered into a channel it cut itself."
+  },
+  {
+    "id": "brook",
+    "name": "Brook",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The smallest named running water, and mostly a matter of local usage."
+  },
+  {
+    "id": "pond",
+    "name": "Pond",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Still water shallow enough that light reaches the bottom everywhere."
+  },
+  {
+    "id": "puddle",
+    "name": "Puddle",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Water that cannot soak in and has nowhere to run."
+  },
+  {
+    "id": "culvert",
+    "name": "Culvert",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "water"
+    ],
+    "fact": "A pipe that lets a stream cross under a road instead of over it."
+  },
+  {
+    "id": "watershed",
+    "name": "Watershed",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The line where a raindrop's whole future is decided."
+  },
+  {
+    "id": "runoff",
+    "name": "Runoff",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The rain that does not soak in, and it carries whatever it crosses."
+  },
+  {
+    "id": "oxbow",
+    "name": "Oxbow",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A meander that got cut off, left as a lake shaped like the bend it used to be."
+  },
+  {
+    "id": "wiring",
+    "name": "Wiring",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "Conductors sized for the current they will carry and insulated for the voltage."
+  },
+  {
+    "id": "wallpaper",
+    "name": "Wallpaper",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "home"
+    ],
+    "fact": "Printed paper hung on a wall, and the first mass-produced interior decoration."
+  },
+  {
+    "id": "shower",
+    "name": "Shower",
+    "emoji": "🚿",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "tool"
+    ],
+    "fact": "Water broken into a spray so a little of it wets all of you."
+  },
+  {
+    "id": "bath",
+    "name": "Bath",
+    "emoji": "🛁",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "tool"
+    ],
+    "fact": "A vessel large enough to sit in, which is a lot of hot water."
+  },
+  {
+    "id": "fridge",
+    "name": "Fridge",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "tool"
+    ],
+    "fact": "Moving heat out of a box, which takes work, which is why the back is warm."
+  },
+  {
+    "id": "washing_machine",
+    "name": "Washing Machine",
+    "emoji": "🧺",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "tool"
+    ],
+    "fact": "Agitation, detergent, temperature and time — and you can trade any one against the others."
+  },
+  {
+    "id": "plumbing",
+    "name": "Plumbing",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "Water in under pressure, out under gravity, and the two never meeting."
+  },
+  {
+    "id": "furniture",
+    "name": "Furniture",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "craft"
+    ],
+    "fact": "The movable things that make a room usable, and the joints are the whole craft."
   }
 ]

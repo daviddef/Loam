@@ -101061,5 +101061,605 @@
     "why": "Wood is many times stronger along the grain than across it, and splits along it readily. Gluing an odd number of veneers at right angles gives a sheet nearly as strong in both directions that will not split and stays flat — properties no piece of solid timber has.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Plywood"
+  },
+  {
+    "in": [
+      "pasta",
+      "die"
+    ],
+    "out": "spaghetti",
+    "why": "Durum semolina and water pushed through a bronze die. Bronze drags on the dough and leaves a rough surface that sauce clings to; the teflon dies used for cheap pasta give a smooth one that sheds it. Same flour, same water, different tool, and the sauce behaves differently.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spaghetti"
+  },
+  {
+    "in": [
+      "rice",
+      "broth"
+    ],
+    "out": "risotto",
+    "why": "Arborio and carnaroli are high in amylopectin, the branched starch that dissolves. Adding hot stock a ladle at a time and stirring rubs that starch off the outside of each grain into the liquid, so the sauce is made of the rice — there is no thickener, and stopping the stirring stops the dish.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Risotto"
+  },
+  {
+    "in": [
+      "rice",
+      "saffron"
+    ],
+    "out": "paella",
+    "why": "A wide shallow pan gives a thin layer of rice and a lot of evaporation, and the rice is deliberately left alone so a crust — socarrat — forms against the metal. Stirring it would make risotto, which is the opposite dish made from the same two ingredients.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Paella"
+  },
+  {
+    "in": [
+      "spice",
+      "broth"
+    ],
+    "out": "curry",
+    "why": "There is no such thing in the Indian kitchens it is said to come from — there are hundreds of named dishes with their own spice combinations and techniques. Curry is a colonial collective noun, and the powder sold under the name is a British standardisation of something that was never standard.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Curry"
+  },
+  {
+    "in": [
+      "pastry",
+      "meat"
+    ],
+    "out": "pie",
+    "why": "Medieval coffins were flour-and-water shells built to hold a filling through a long bake and to be thrown away or given to the poor afterwards. Pastry made to be eaten — short, enriched with fat — is a later idea, and the shift is why old recipes say nothing about how the crust tastes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pie"
+  },
+  {
+    "in": [
+      "dough",
+      "meat"
+    ],
+    "out": "dumpling",
+    "why": "Wrapping cooked or raw filling in dough makes a small amount of expensive food feed more people, seals in juice, and can be boiled, steamed or fried. It is one of the most independently reinvented foods there is: jiaozi, pierogi, momo, gyoza, ravioli and empanada are the same idea reached separately.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dumpling"
+  },
+  {
+    "in": [
+      "oat",
+      "water"
+    ],
+    "out": "porridge",
+    "why": "Any grain, ground or whole, simmered until the starch granules absorb water and gelatinise. It needs no oven, no leavening and no equipment beyond a pot, which is why it predates bread everywhere and why it survived as the staple of poor households long after bread was possible.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Porridge"
+  },
+  {
+    "in": [
+      "stew",
+      "oven"
+    ],
+    "out": "casserole",
+    "why": "Long slow moist heat turns collagen into gelatin, which is what makes a cheap cut better than an expensive one for this and worse for a grill. The dish and the method share a name because the vessel is the technique: a heavy lidded pot holds the moisture in.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Casserole"
+  },
+  {
+    "in": [
+      "friction",
+      "insulator"
+    ],
+    "out": "static_electricity",
+    "why": "Rubbing two insulators transfers electrons from one to the other, and neither can conduct them back, so the imbalance sits there. It builds until the field is strong enough to break down the air between it and something else — which is the spark, and which is why humidity makes it stop happening.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Static_electricity"
+  },
+  {
+    "in": [
+      "current",
+      "conductor"
+    ],
+    "out": "circuit",
+    "why": "Charge does not get used up, so it must return to where it came from — which is why every circuit is a loop and why a switch anywhere in it stops everything. Series and parallel are the two ways of arranging that loop, and almost all electrical intuition is knowing which one you are looking at.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Electrical_network"
+  },
+  {
+    "in": [
+      "water",
+      "pressure"
+    ],
+    "out": "buoyancy",
+    "why": "Pressure rises with depth, so the push on the bottom of a submerged object exceeds the push on the top, and the difference is the weight of the fluid displaced. Archimedes' principle is that subtraction — and it is why a steel ship floats and a steel bar does not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Buoyancy"
+  },
+  {
+    "in": [
+      "mass",
+      "area"
+    ],
+    "out": "density",
+    "why": "Mass over volume, and the reason things sort themselves: oil on water, cream on milk, iron to the centre of a planet. It is also why it is the first measurement made on an unknown material, and why Archimedes had a use for a bath.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Density"
+  },
+  {
+    "in": [
+      "liquid",
+      "friction"
+    ],
+    "out": "viscosity",
+    "why": "Internal friction between layers of a fluid sliding past each other. It falls sharply with temperature in liquids and rises with it in gases, which is the opposite behaviour and the reason engine oil is graded for both a cold start and a hot engine.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Viscosity"
+  },
+  {
+    "in": [
+      "water",
+      "molecule"
+    ],
+    "out": "surface_tension",
+    "why": "A molecule in the bulk is pulled equally in every direction; one at the surface is pulled only inward and sideways, so the surface contracts to the smallest area it can. That is why drops are round, why a needle floats, and why soap — which weakens it — makes water wet things.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Surface_tension"
+  },
+  {
+    "in": [
+      "surface_tension",
+      "tube"
+    ],
+    "out": "capillary_action",
+    "why": "Where a liquid wets a surface, adhesion to the walls pulls it up and surface tension drags the rest of the column behind. The narrower the tube the higher it climbs — which is how a candle wick feeds a flame, how paper towels work, and how water reaches the top of a tree.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Capillary_action"
+  },
+  {
+    "in": [
+      "heat",
+      "metal"
+    ],
+    "out": "conduction",
+    "why": "Atoms vibrate harder where it is hot and knock their neighbours, so energy travels while the material stays put. Metals conduct far better than anything else because their free electrons carry heat as well as charge — which is why the same materials are good at both.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thermal_conduction"
+  },
+  {
+    "in": [
+      "heat",
+      "water"
+    ],
+    "out": "convection",
+    "why": "Heating a fluid expands it, so it is lighter than what is above it and rises; cooler fluid falls to replace it, and the loop keeps running as long as the heat does. It drives weather, ocean currents, the mantle and every hot-air balloon.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Convection"
+  },
+  {
+    "in": [
+      "light",
+      "mirror"
+    ],
+    "out": "reflection",
+    "why": "Angle in equals angle out, measured from the normal. A surface smooth compared to the wavelength gives a specular image; one rougher than that scatters in every direction, which is why almost everything is visible without being a mirror.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Reflection_(physics)"
+  },
+  {
+    "in": [
+      "light",
+      "glass"
+    ],
+    "out": "refraction",
+    "why": "The speed changes at the boundary and the wavefront pivots, so the ray bends toward the normal going into a denser medium. It is why a lens works, why a straw looks broken in a glass, and why a rainbow is 42 degrees from the antisolar point.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Refraction"
+  },
+  {
+    "in": [
+      "wave",
+      "frequency"
+    ],
+    "out": "resonance",
+    "why": "Every system has frequencies it responds to strongly, and driving it at one of them puts energy in faster than damping takes it out. It is why an instrument body amplifies a string, why a radio can pick one station, and why soldiers break step on a bridge.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Resonance"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "hammer"
+    ],
+    "out": "wok",
+    "why": "Thin carbon steel spun or hammered into a bowl concentrates the flame at the base while the flared sides stay cooler, so food can be tossed out of the heat and back in. It also seasons: polymerised oil builds a non-stick layer that a stainless pan cannot form.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wok"
+  },
+  {
+    "in": [
+      "electron",
+      "ion"
+    ],
+    "out": "charge",
+    "why": "Two kinds, conventionally positive and negative, and exactly as much of one as the other in every neutral atom. That balance is why matter is neutral, and why the electromagnetic force — enormously stronger than gravity — is not what holds you to the ground.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Electric_charge"
+  },
+  {
+    "in": [
+      "wok",
+      "oil"
+    ],
+    "out": "stir_fry",
+    "why": "A wok concentrates heat at the base and lets food be flicked up the cooler sides out of it, so the pan stays hot while the food does not overcook. Everything is cut small and prepared first because the cooking is over in two minutes — the preparation is the dish and the cooking is the last step.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stir_frying"
+  },
+  {
+    "in": [
+      "charge",
+      "field"
+    ],
+    "out": "voltage",
+    "why": "Potential difference is the work available per unit of charge moved between two points. It is why a small battery and a power line can carry the same current and do very different things, and why voltage is what kills — it is what drives enough current through a body's resistance to matter.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Voltage"
+  },
+  {
+    "in": [
+      "acrylonitrile",
+      "polymer"
+    ],
+    "out": "acrylic_fibre",
+    "why": "Polyacrylonitrile spun into a crimped filament that traps air the way a wool fibre does. It is warm, light, cheap and holds dye brilliantly — and it pills, because the fibres are short and slippery and work their way to the surface.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Acrylic_fiber"
+  },
+  {
+    "in": [
+      "polyurethane",
+      "polymer"
+    ],
+    "out": "spandex",
+    "why": "Segmented polyurethane: rigid blocks that hold the chains together and soft coiled blocks between them that straighten under load and recoil when released. A few per cent blended into a fabric is enough to change how the whole garment behaves.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spandex"
+  },
+  {
+    "in": [
+      "propylene",
+      "catalyst"
+    ],
+    "out": "polypropylene",
+    "why": "Polymerised propylene, with a density under that of water. It survives being bent at the same line thousands of times without failing, which is why the hinge on a flip-top cap is moulded as part of the lid rather than added.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Polypropylene"
+  },
+  {
+    "in": [
+      "resin",
+      "catalyst"
+    ],
+    "out": "epoxy",
+    "why": "A resin and a hardener that cross-link on mixing, so nothing evaporates and the joint does not shrink. That is why it fills gaps where a solvent adhesive cannot, and why the mix ratio matters more than the amount.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Epoxy"
+  },
+  {
+    "in": [
+      "polymer",
+      "furnace"
+    ],
+    "out": "carbon_fibre",
+    "why": "A polymer filament is oxidised and then pyrolysed until only carbon is left, aligned along the fibre. Enormously stiff and strong in tension along its length, and almost nothing across it — which is why it is always used as a composite with the fibres laid where the load is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Carbon_fiber"
+  },
+  {
+    "in": [
+      "silica_sand",
+      "furnace"
+    ],
+    "out": "fibreglass",
+    "why": "Molten glass pulled through fine holes into filaments a few microns across. At that diameter the surface flaws that make glass brittle are too small to propagate, so the fibre bends — and set in resin it makes a composite that is cheap, strong and does not rot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fiberglass"
+  },
+  {
+    "in": [
+      "glue",
+      "wood"
+    ],
+    "out": "chipboard",
+    "why": "Wood particles graded by size, sprayed with resin and hot-pressed — fine at the faces and coarse in the core, so the surface takes a finish and the middle does the bulk. It is dimensionally stable and it fails completely once wet, which is most of what there is to know about it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Particle_board"
+  },
+  {
+    "in": [
+      "pvc",
+      "filler"
+    ],
+    "out": "vinyl",
+    "why": "PVC with enough plasticiser to make it flexible. The same polymer with none is a drainpipe; the difference is entirely what is added, which is why the word covers a record, a raincoat and a window frame.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
+  },
+  {
+    "in": [
+      "polymer",
+      "foam"
+    ],
+    "out": "neoprene",
+    "why": "Polychloroprene, foamed with closed gas cells. It insulates because of the gas rather than the rubber, which is why a wetsuit loses warmth with depth as the cells compress, and why it resists oil and ozone where natural rubber perishes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Neoprene"
+  },
+  {
+    "in": [
+      "antiseptic",
+      "fragrance"
+    ],
+    "out": "deodorant",
+    "why": "Fresh sweat is nearly odourless; skin bacteria break down its lipids and amino acids into the volatile compounds that smell. A deodorant is an antibacterial with a fragrance; an antiperspirant is a different thing — an aluminium salt that plugs the duct.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Deodorant"
+  },
+  {
+    "in": [
+      "wax",
+      "water"
+    ],
+    "out": "moisturiser",
+    "why": "An emulsion of oil and water with an occlusive — a grease that slows evaporation from the skin — plus a humectant that holds water in the outer layer. The skin's own barrier is doing the work; the cream is patching it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Moisturizer"
+  },
+  {
+    "in": [
+      "lens",
+      "frame"
+    ],
+    "out": "spectacles",
+    "why": "A lens moves the focal point onto a retina that is in the wrong place — convex for the far-sighted, concave for the near. They appear in Italy around the 1280s, and reading glasses roughly doubled the working life of anyone whose trade needed close sight.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Glasses"
+  },
+  {
+    "in": [
+      "wheel",
+      "seat"
+    ],
+    "out": "wheelchair",
+    "why": "A self-propelled chair needs the large wheels behind the centre of mass, a handrim clear of the tyre, and a frame light enough to be lifted — the 1930s folding X-frame is what made one that fits in a car, and the difference between being pushed and going is the whole point.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wheelchair"
+  },
+  {
+    "in": [
+      "timber",
+      "padding"
+    ],
+    "out": "crutch",
+    "why": "A crutch transfers weight through the hands to the frame, not through the armpit — pressure there compresses the nerves and causes crutch palsy. The rubber tip is the part that fails and the part that matters.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Crutch"
+  },
+  {
+    "in": [
+      "socket",
+      "frame"
+    ],
+    "out": "prosthesis",
+    "why": "The limb is the easy part; the socket is not. Load has to be spread over tissue that was never meant to carry it, and a fit that is wrong by a couple of millimetres makes the whole thing unusable. The Cairo toe from about 950 BCE is articulated and shows wear, so it was worn.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Prosthesis"
+  },
+  {
+    "in": [
+      "drug",
+      "nerve"
+    ],
+    "out": "painkiller",
+    "why": "Two broad routes: NSAIDs stop the enzyme that makes prostaglandins, so the nerve ending is not sensitised in the first place; opioids act on receptors in the central nervous system, so the signal arrives and is not minded. Different mechanisms, different failures.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Analgesic"
+  },
+  {
+    "in": [
+      "plaster",
+      "bandage"
+    ],
+    "out": "plaster_cast",
+    "why": "Bandage impregnated with plaster of Paris, wetted and moulded, setting as gypsum rehydrates. Bone heals by growing across a stable gap; the cast contributes nothing to the healing and everything to the stability, and it has to span the joints either side to work.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Orthopedic_cast"
+  },
+  {
+    "in": [
+      "die",
+      "polymer"
+    ],
+    "out": "spinneret",
+    "why": "Molten or dissolved polymer forced through holes a few tens of microns across, drawn as it emerges to align the chains along the filament. The name is borrowed from the spider's organ, which does the same job with the same physics and better results.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spinneret_(polymers)"
+  },
+  {
+    "in": [
+      "viscose",
+      "spinneret"
+    ],
+    "out": "rayon",
+    "why": "Regenerated cellulose — wood pulp dissolved and extruded back out as filament. Neither natural nor synthetic in the usual sense: the molecule is the plant's and the fibre is the factory's, and it was the first commercial answer to the cost of silk.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rayon"
+  },
+  {
+    "in": [
+      "polymer",
+      "spinneret"
+    ],
+    "out": "kevlar",
+    "why": "An aramid whose rigid rod-like molecules align almost perfectly along the fibre as it is spun, with hydrogen bonds between neighbouring chains. Stopping a bullet means catching it in a weave and spreading the energy sideways, which is why it works and why the vest bruises.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kevlar"
+  },
+  {
+    "in": [
+      "creek",
+      "erosion"
+    ],
+    "out": "stream",
+    "why": "A channel exists because flow concentrated enough to move sediment, and once it has cut down a little more water runs into it, so the channel deepens and captures more. That feedback is why drainage networks look the same at every scale from a hillside rill to the Amazon.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stream"
+  },
+  {
+    "in": [
+      "creek",
+      "stone"
+    ],
+    "out": "brook",
+    "why": "Brook, beck, burn, gill, syke and creek all mean roughly the same size of water and the choice between them is dialect rather than hydrology — which is why the same feature changes name across a county boundary with nothing in the channel changing at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stream"
+  },
+  {
+    "in": [
+      "clay_lining",
+      "rain"
+    ],
+    "out": "pond",
+    "why": "The working distinction from a lake is that plants can root across the whole bed, because light reaches it. That single fact drives everything else: a pond is productive, warms quickly, and fills in with its own vegetation within a human lifetime unless something stops it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pond"
+  },
+  {
+    "in": [
+      "rain",
+      "clay"
+    ],
+    "out": "puddle",
+    "why": "It needs an impermeable base and a hollow, which is why puddles form on clay and on tarmac and not on sand. They are also how puddled clay got its name: working clay wet until it stops letting water through is exactly what makes a puddle last.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Puddle"
+  },
+  {
+    "in": [
+      "pipe",
+      "embankment"
+    ],
+    "out": "culvert",
+    "why": "The design problem is not the ordinary flow but the flood: an undersized culvert dams the water behind the embankment and the road washes out. Almost every rural road failure in a storm is a culvert that was sized for the stream rather than for the worst hour.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Culvert"
+  },
+  {
+    "in": [
+      "ridge",
+      "rain"
+    ],
+    "out": "watershed",
+    "why": "A divide between drainage basins — water either side ends in different rivers and often different seas. It is the most consequential invisible line in geography, and it is why upstream and downstream are political relationships and not just directions.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Drainage_divide"
+  },
+  {
+    "in": [
+      "rain",
+      "soil"
+    ],
+    "out": "runoff",
+    "why": "How much runs off depends on what it lands on: bare compacted soil sheds most of it, woodland almost none. Paving a catchment turns a slow release into a fast one, which is why urban flooding is a land-surface problem before it is a rainfall problem.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Surface_runoff"
+  },
+  {
+    "in": [
+      "meander",
+      "flood"
+    ],
+    "out": "oxbow",
+    "why": "A meander erodes on the outside of the bend and deposits on the inside, so the loop grows and its neck narrows until a flood cuts straight across. The abandoned loop silts up at both ends and becomes a lake with no river in it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Oxbow_lake"
+  },
+  {
+    "in": [
+      "copper_wire",
+      "insulator"
+    ],
+    "out": "wiring",
+    "why": "A cable too thin for its load heats until the insulation fails, so every circuit is sized to its breaker rather than to its appliance. The earth conductor carries nothing at all in normal use and exists only for the fault that has not happened yet.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Electrical_wiring"
+  },
+  {
+    "in": [
+      "paper",
+      "pigment"
+    ],
+    "out": "wallpaper",
+    "why": "Block-printed and later roller-printed paper let ordinary households have pattern that had previously meant tapestry or painted panelling. Some 19th-century greens were coloured with copper arsenite, which is why Victorian wallpaper has a reputation it has partly earned.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wallpaper"
+  },
+  {
+    "in": [
+      "pipe",
+      "nozzle"
+    ],
+    "out": "shower",
+    "why": "A shower uses a fraction of a bath's water because a spray covers skin far more efficiently than immersion. It needs pressure, a mixing valve that holds temperature when something else draws water, and a drain — and it is the pressure that arrived last historically.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shower"
+  },
+  {
+    "in": [
+      "cast_iron",
+      "glass"
+    ],
+    "out": "bath",
+    "why": "The industrial version is cast iron enamelled with fused glass — Kohler's foundry began by enamelling horse troughs. What made the bath ordinary was not the vessel but plumbed hot water, which is why it is a fixture of the late 19th century and not of any earlier wealth.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bathtub"
+  },
+  {
+    "in": [
+      "compressor",
+      "coolant"
+    ],
+    "out": "fridge",
+    "why": "A refrigerant is compressed until it condenses and gives up heat outside, then allowed to expand and evaporate inside, taking heat with it. Nothing is made cold; heat is carried from one side to the other, and the compressor is paying for the direction.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Refrigerator"
+  },
+  {
+    "in": [
+      "drum",
+      "electric_motor"
+    ],
+    "out": "washing_machine",
+    "why": "Sinner's circle: mechanical action, chemistry, heat and duration are interchangeable, so a machine that tumbles harder can wash cooler. The domestic machine's real invention was the automatic sequence, not the drum.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Washing_machine"
+  },
+  {
+    "in": [
+      "pipe",
+      "sewer"
+    ],
+    "out": "plumbing",
+    "why": "Supply is pressurised and sealed; waste runs downhill and is vented. The trap — a bend holding a plug of water — is what stops sewer gas coming back up the pipe the waste went down, and the word is from plumbum, because the pipes were lead.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plumbing"
+  },
+  {
+    "in": [
+      "panel",
+      "stile"
+    ],
+    "out": "furniture",
+    "why": "Everything in it is a response to wood moving: frame-and-panel so a door can shrink without splitting, mortise and tenon so a leg does not rack, drawers running on their own sides. A piece that ignores seasonal movement comes apart within a decade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Furniture"
   }
 ]
