@@ -291,6 +291,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'buckle', 'rivet_set', 'keyway', 'escutcheon', 'strike_plate', 'linchpin', 'grommet', 'ferrule', 'shank', 'bolster', 'bevel', 'honing', 'journal', 'touchhole', 'chinstrap', 'seam', 'selvage',   // needs-sweep 5 Sep
     /* verb outcomes, 5 Sep. a cooled potato and a bar of chocolate */
     'resistant_starch', 'chocolate_bloom',
     /* verb outcomes, 5 Sep. an emptied eggshell */
@@ -498,6 +499,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'voussoir', 'keystone', 'springer', 'impost', 'breastplate', 'backplate', 'greave', 'visor', 'cheek_piece', 'nasal', 'brow_reinforce', 'pauldron', 'lame', 'cuisse', 'liner', 'padding', 'leather_strap', 'link', 'hook', 'shackle', 'swage', 'bar_stock', 'bore', 'trunnion', 'breech', 'muzzle', 'rammer', 'wadding', 'fleece', 'batt', 'sizing', 'crucible', 'lath', 'hawk', 'grindstone', 'web', 'flange', 'joist_hanger', 'axle_box', 'gusset', 'plain_weave', 'carding', 'tempering', 'weld', 'bucking_bar',   // needs-sweep 5 Sep
     /* verb outcomes, 5 Sep. a loaf, a pastry, an olive, a bottle of it */
     'stale_bread', 'puff_pastry', 'table_olive', 'creosote',
     /* places batch 18, 5 Sep. a cast vessel and its beads, decimetres */
@@ -780,6 +782,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'course', 'coping', 'quoin', 'footing', 'haunch', 'extrados', 'intrados', 'rubble_core', 'lathe', 'boring_machine', 'purlin', 'eaves', 'float_glass', 'berm', 'scratch_coat', 'float_coat', 'finish_coat', 'brace', 'scarp', 'counterscarp', 'revetment', 'ditch',   // needs-sweep 5 Sep
     /* the shaft homonym, 5 Sep. a shaft in its bearings, a metre or so */
     'shaft_rotating',
     /* places batch 18, 5 Sep. a near life-size terracotta head */
@@ -1107,6 +1110,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'excavation', 'causeway', 'subgrade', 'sub_base', 'base_course', 'binder_course', 'surface_course', 'drainage', 'camber', 'clay_lining',   // needs-sweep 5 Sep
     /* places batch 45, 5 Sep. a minaret 60 m, an abbey, a mound 65 by 60 m, a cemetery */
     'konye_urgench', 'vezelay', 'pulemelei', 'teouma',
     /* places batch 44, 5 Sep. churches, a cave monastery */

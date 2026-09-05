@@ -97861,5 +97861,945 @@
     "why": "The bunghole is bored on a taper and the bung driven in, so internal pressure only wedges it further home. Beer and wine in cask are still stoppered this way, and a soft bung is used deliberately where a cask needs to vent rather than burst.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Bung"
+  },
+  {
+    "in": [
+      "arch",
+      "formwork"
+    ],
+    "out": "intrados",
+    "why": "The intrados is the soffit, the surface the centring is built to and the shape a visitor actually sees. A crack along it means the thrust line has strayed too near the extrados above.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Intrados"
+  },
+  {
+    "in": [
+      "gravel",
+      "mortar"
+    ],
+    "out": "rubble_core",
+    "why": "Roman and medieval walls are two skins of dressed stone with broken stone and mortar poured between. It is fast and cheap and it works — until water gets in, because the core has no bond of its own and washes out from the inside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rubble_masonry"
+  },
+  {
+    "in": [
+      "stone",
+      "render"
+    ],
+    "out": "coping",
+    "why": "A coping is shaped to shed water clear of the face, usually with a drip groove underneath so it cannot run back. Almost every failed freestanding wall failed because its coping went first.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Coping_(architecture)"
+  },
+  {
+    "in": [
+      "stone",
+      "wall"
+    ],
+    "out": "quoin",
+    "why": "A corner takes load from two directions and has no neighbour on one side, so it is built from the largest, squarest, best-cut stones available, laid alternately long and short into each wall to tie them together.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Quoin"
+  },
+  {
+    "in": [
+      "spade",
+      "soil"
+    ],
+    "out": "excavation",
+    "why": "Every trench wants to close. Below a depth that depends entirely on the soil, the sides must be battered back or shored, and the commonest fatal accident in construction is still a person standing in an unsupported trench.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Excavation_(archaeology)"
+  },
+  {
+    "in": [
+      "excavation",
+      "water"
+    ],
+    "out": "ditch",
+    "why": "A ditch is the cheapest earthwork there is: the spoil becomes a bank on one side, so one operation gives you a hole and a wall. Almost every prehistoric enclosure in Europe is a ditch and its own upcast.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ditch"
+  },
+  {
+    "in": [
+      "ditch",
+      "stone"
+    ],
+    "out": "counterscarp",
+    "why": "The counterscarp faces the attacker's own side. Keeping it clean and sloped denies cover to anyone in the ditch, and a covered way along its top is where the defenders stood to fire down the length of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Counterscarp"
+  },
+  {
+    "in": [
+      "ditch",
+      "soil"
+    ],
+    "out": "berm",
+    "why": "A berm keeps the mass of the rampart back from the edge of the cut, and catches masonry knocked off the wall so it does not fill the ditch and make a ramp for the people attacking it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Berm"
+  },
+  {
+    "in": [
+      "stone",
+      "earthwork"
+    ],
+    "out": "revetment",
+    "why": "Loose earth stands at its angle of repose and no steeper. A revetment — masonry, timber, turf or gabion — lets the face be vertical, which is the difference between a bank somebody can walk up and a wall they cannot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Revetment"
+  },
+  {
+    "in": [
+      "gravel",
+      "swamp"
+    ],
+    "out": "causeway",
+    "why": "A causeway works by floating a stiff layer on soft ground: brush, timber or stone spread wide enough that the load per unit area drops below what the bog can take. The Sweet Track across the Somerset Levels was built in 3807 BC.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Causeway"
+  },
+  {
+    "in": [
+      "soil",
+      "road"
+    ],
+    "out": "subgrade",
+    "why": "The subgrade carries the whole road and is the one layer nobody chooses. Its bearing capacity sets how thick everything above has to be, which is why the same road is built differently over clay and over gravel.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Subgrade"
+  },
+  {
+    "in": [
+      "gravel",
+      "subgrade"
+    ],
+    "out": "sub_base",
+    "why": "The sub-base does two jobs at once: it spreads wheel loads over enough subgrade that the soil is not overstressed, and it stays permeable so water leaves rather than sitting under the pavement and softening it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Subbase_(pavement)"
+  },
+  {
+    "in": [
+      "gravel",
+      "sub_base"
+    ],
+    "out": "base_course",
+    "why": "Graded crushed stone compacted until the pieces lock against each other. It carries the traffic load and passes a much reduced version of it down; a road with a sound base can be resurfaced indefinitely.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Base_course"
+  },
+  {
+    "in": [
+      "bitumen",
+      "base_course"
+    ],
+    "out": "binder_course",
+    "why": "The binder course is the transition: large aggregate for strength, enough bitumen to bond, and a level surface for the wearing course to be laid on. It takes out the unevenness the base course leaves.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Asphalt_concrete"
+  },
+  {
+    "in": [
+      "bitumen",
+      "binder_course"
+    ],
+    "out": "surface_course",
+    "why": "The wearing course carries almost no structural duty. It is specified for skid resistance, drainage and noise, and it is designed to be milled off and replaced while everything beneath it stays where it is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Asphalt_concrete"
+  },
+  {
+    "in": [
+      "ditch",
+      "gravel"
+    ],
+    "out": "drainage",
+    "why": "Water is the common cause of failure in earthworks, roads and walls: it softens subgrades, freezes in joints and washes out cores. Drainage is a set of paths that give it somewhere to go before it finds one of its own.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Drainage"
+  },
+  {
+    "in": [
+      "road",
+      "drainage"
+    ],
+    "out": "camber",
+    "why": "A crown of a few per cent across the width is enough to shed water to the edges before it can stand and soak in. The same word covers the upward curve built into a beam so that it is straight once loaded.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cant_(road/rail)"
+  },
+  {
+    "in": [
+      "stone",
+      "wedge"
+    ],
+    "out": "voussoir",
+    "why": "Every stone in an arch is a wedge, tapering toward the centre of the curve. Load presses each one against its neighbours rather than past them, so the whole ring works in compression and there is nowhere for any single stone to go.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Voussoir"
+  },
+  {
+    "in": [
+      "brick",
+      "wall"
+    ],
+    "out": "course",
+    "why": "Masonry is built in courses because a level bed spreads load evenly and a sloping one concentrates it at a point. A course out of level at the footing is still out of level at the eaves, which is why the first one takes the longest.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Course_(architecture)"
+  },
+  {
+    "in": [
+      "clay",
+      "reservoir"
+    ],
+    "out": "clay_lining",
+    "why": "Clay worked wet until its particles lie flat has almost no permeability. Puddled clay lined canal beds, moats and reservoirs long before concrete, and it fails the moment it is allowed to dry out and crack.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Puddling_(civil_engineering)"
+  },
+  {
+    "in": [
+      "voussoir",
+      "hammer"
+    ],
+    "out": "keystone",
+    "why": "The keystone is driven in last, at the crown, and its wedging locks every other voussoir against its neighbour. Until it is in, the arch is held up by its centring; once it is in, the centring can be struck and the arch carries itself.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Keystone_(architecture)"
+  },
+  {
+    "in": [
+      "voussoir",
+      "pier"
+    ],
+    "out": "springer",
+    "why": "The springing line is where an arch stops being a wall and starts being a curve. The springer straddles it — flat underneath to sit on the impost, angled on top to start the ring.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Springer_(architecture)"
+  },
+  {
+    "in": [
+      "course",
+      "pier"
+    ],
+    "out": "impost",
+    "why": "An arch delivers its thrust to a point and a wall cannot take a point load. The impost is the moulded block or course at the head of the pier that receives the arch's foot and spreads it into the masonry below.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Impost_(architecture)"
+  },
+  {
+    "in": [
+      "arch",
+      "load"
+    ],
+    "out": "extrados",
+    "why": "The extrados is the arch's back. Where the line of thrust wanders too close to it the arch opens on the inside and hinges, and keeping that line between extrados and intrados is the whole of arch design.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Extrados"
+  },
+  {
+    "in": [
+      "arch",
+      "rubble_core"
+    ],
+    "out": "haunch",
+    "why": "An unloaded arch tends to lift at the crown and spread at the haunches, so masons pack the haunches with fill: weight there pushes the thrust line back inside the ring. A great many arches stand because of what was tipped in beside them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arch"
+  },
+  {
+    "in": [
+      "concrete",
+      "excavation"
+    ],
+    "out": "footing",
+    "why": "A footing exists because soil fails in bearing long before masonry does. Widening the base spreads the same load over more ground, and the rule of thumb for centuries was a footing twice the wall's thickness, stepped out in courses.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Foundation_(engineering)"
+  },
+  {
+    "in": [
+      "ditch",
+      "revetment"
+    ],
+    "out": "scarp",
+    "why": "Scarp and counterscarp are the two faces of a military ditch. The scarp is the side toward the defender, cut as steep as the ground will stand and often revetted in masonry precisely so it cannot be scrambled up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Escarp"
+  },
+  {
+    "in": [
+      "steel",
+      "anvil"
+    ],
+    "out": "breastplate",
+    "why": "A breastplate is raised and dished so that its surface is doubly curved, which stiffens it enormously and turns a square-on strike into a glancing one. Later plates carry a central ridge for the same reason, and proof marks where a pistol was fired at them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cuirass"
+  },
+  {
+    "in": [
+      "steel",
+      "breastplate"
+    ],
+    "out": "backplate",
+    "why": "Backplates were routinely made lighter than breastplates: the threat came from the front, and every gram saved mattered to a man wearing thirty kilograms. The two halves buckle at the shoulders and hinge or strap at the waist.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cuirass"
+  },
+  {
+    "in": [
+      "bronze",
+      "hammer"
+    ],
+    "out": "greave",
+    "why": "Greaves are among the earliest plate armour known, in bronze from the Mycenaean period. A well-made one grips the calf by its own springiness and needs almost no strapping, which is why Greek greaves have so few fittings.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Greave"
+  },
+  {
+    "in": [
+      "metal",
+      "tongue"
+    ],
+    "out": "buckle",
+    "why": "The buckle's whole trick is that tension on the strap presses the tongue harder against the frame, so the harder it is pulled the less likely it is to slip. Roman military buckles are recognisably the same object as a modern belt's.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Buckle"
+  },
+  {
+    "in": [
+      "steel",
+      "hinge"
+    ],
+    "out": "visor",
+    "why": "A visor pivots on the helmet's sides and is pierced for sight and breath. Its geometry is a compromise nobody solved: every hole that lets air in also lets a point in, which is why visors were lifted the moment the fighting stopped.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Visor"
+  },
+  {
+    "in": [
+      "bronze",
+      "hinge"
+    ],
+    "out": "cheek_piece",
+    "why": "Cheek pieces hang on hinges so they can be swung clear, and they protect the jaw and the arteries of the neck without closing the face. Their shape is the quickest way to date a Roman helmet.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Galea_(helmet)"
+  },
+  {
+    "in": [
+      "wire",
+      "forge"
+    ],
+    "out": "link",
+    "why": "Each link is bent from bar or wire and closed by a weld or a rivet, then interlocked with its neighbours before closing. A chain fails at its weakest link literally and not figuratively: the load in every link is identical.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chain"
+  },
+  {
+    "in": [
+      "iron",
+      "weight"
+    ],
+    "out": "bucking_bar",
+    "why": "Riveting needs mass on both sides. The bucking bar's inertia resists the hammer long enough for the shank to swell and fill the hole; too light a bar and the rivet simply drives through without upsetting.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rivet"
+  },
+  {
+    "in": [
+      "hide",
+      "knife"
+    ],
+    "out": "leather_strap",
+    "why": "A strap is cut with the grain of the hide, along the back where the fibre lies densest — a strap cut across the belly stretches and then tears. Every articulated armour has more leather inside it than steel outside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Strap"
+  },
+  {
+    "in": [
+      "plate_armor",
+      "rivet"
+    ],
+    "out": "pauldron",
+    "why": "A shoulder rotates in every direction, so it cannot be covered by one plate. A pauldron is a stack of lames sliding on rivets and internal leathers, largest at the top, with every overlap facing downward so a point slides off rather than catching.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pauldron"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "rivet"
+    ],
+    "out": "lame",
+    "why": "A lame is a single plate in an articulated set, sliding on rivets that run in slots and held to leathers inside. Enough of them, overlapped the right way, bend as far as a limb does while presenting an unbroken surface from outside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lame_(armor)"
+  },
+  {
+    "in": [
+      "leather_strap",
+      "steel"
+    ],
+    "out": "cuisse",
+    "why": "Cuisses cover the front of the thigh and hang from a belt or are pointed to the arming doublet rather than resting on the knee, so the weight goes to the hips. The back of the thigh is usually left bare: it is against the saddle, and that is where weight is worst.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cuisse"
+  },
+  {
+    "in": [
+      "leather_strap",
+      "buckle"
+    ],
+    "out": "chinstrap",
+    "why": "A helmet that is not strapped comes off at the first blow that would have mattered. Modern straps are deliberately made to fail at a known load, so a snagged helmet does not become a noose.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Helmet"
+  },
+  {
+    "in": [
+      "cloth",
+      "helmet"
+    ],
+    "out": "liner",
+    "why": "A liner holds the shell a few centimetres clear of the skull, so a blow decelerates over that distance instead of on the bone. Without one a helmet transmits nearly everything it stops, which is why an unlined helmet is barely better than none.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Helmet"
+  },
+  {
+    "in": [
+      "cloth",
+      "cloth"
+    ],
+    "out": "padding",
+    "why": "A gambeson is many layers of linen quilted together and worn under mail or plate. It spreads impact, stops the metal chafing, and is itself surprisingly good against cuts — the padding was often the only armour an ordinary soldier had.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gambeson"
+  },
+  {
+    "in": [
+      "iron",
+      "helmet"
+    ],
+    "out": "nasal",
+    "why": "A nasal is one strip forged with the helmet band, covering the nose and the space between the eyes. It gives up most of the face to keep all of the vision, which is the trade every open helmet makes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nasal_helmet"
+  },
+  {
+    "in": [
+      "helmet",
+      "rivet"
+    ],
+    "out": "brow_reinforce",
+    "why": "Blows fall on the crown and the brow far more often than anywhere else, so a second plate is riveted across the forehead. It is the same reasoning as a crash helmet being thickest at the front.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Helmet"
+  },
+  {
+    "in": [
+      "forge",
+      "hammer"
+    ],
+    "out": "weld",
+    "why": "Forge welding brings two surfaces to near-melting, fluxes them clean and hammers them until the crystal structures grow across the join. Done right there is no joint left to find; done wrong there is a cold shut, which looks like metal and is a crack.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Forge_welding"
+  },
+  {
+    "in": [
+      "iron",
+      "sheet_metal"
+    ],
+    "out": "bar_stock",
+    "why": "Bar stock is the intermediate everything else starts from: rolled or drawn to a standard section so a smith or a machinist begins with known material rather than with an ingot. Standardising those sections is half of what made interchangeable parts possible.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bar_stock"
+  },
+  {
+    "in": [
+      "anvil",
+      "die"
+    ],
+    "out": "swage",
+    "why": "A swage is a negative of the section you want — half in the anvil, half in a top tool — and the hot bar is struck between them. It is how a smith makes twenty identical rods without measuring any of them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Swage_block"
+  },
+  {
+    "in": [
+      "bar_stock",
+      "forge"
+    ],
+    "out": "hook",
+    "why": "A hook's throat is the weak point: load tries to open it, and the deeper the throat the greater the bending moment on its back. Lifting hooks are inspected for exactly that, because a hook that has opened even slightly has been overloaded.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hook"
+  },
+  {
+    "in": [
+      "bar_stock",
+      "bolt"
+    ],
+    "out": "shackle",
+    "why": "The shackle exists because a permanent joint is often the wrong one. Its pin carries load in double shear, which is why a shackle is far stronger than its size suggests and why the pin is always the part that gets inspected.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shackle"
+  },
+  {
+    "in": [
+      "rivet",
+      "hammer"
+    ],
+    "out": "rivet_set",
+    "why": "A rivet hammered directly makes a rough spread head; a rivet set has a hemispherical cup that shapes it while the shank swells to fill the hole. The fill is what makes the joint, not the heads.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rivet"
+  },
+  {
+    "in": [
+      "drill",
+      "cannon"
+    ],
+    "out": "bore",
+    "why": "A gun is defined by its bore: everything else follows from the diameter and how true it is. Cast-and-cored barrels were never straight enough, which is why Wilkinson's 1774 boring machine — cutting the hole from solid — mattered as much to steam engines as to artillery.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bore_(engine)"
+  },
+  {
+    "in": [
+      "cannon",
+      "gunpowder"
+    ],
+    "out": "touchhole",
+    "why": "The touchhole is a narrow vent from outside into the powder chamber. It erodes with every shot — hot gas cutting the metal — and a cannon is often condemned because its vent has widened rather than because anything else has failed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Touch_hole"
+  },
+  {
+    "in": [
+      "cannon",
+      "axle"
+    ],
+    "out": "trunnion",
+    "why": "Trunnions let a barrel be elevated without being lifted, and putting them slightly below the bore's axis means recoil presses the gun down into its carriage rather than flipping it. They appear in the 15th century and change artillery from a thing that is placed to a thing that is aimed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Trunnion"
+  },
+  {
+    "in": [
+      "bore",
+      "steel"
+    ],
+    "out": "breech",
+    "why": "The breech is the thickest metal on a gun because it takes the full pressure of the charge. Breech-loading was tried early and abandoned for centuries: nobody could make a joint that sealed against that pressure and still opened afterwards.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Breech-loading_weapon"
+  },
+  {
+    "in": [
+      "bore",
+      "cannon"
+    ],
+    "out": "muzzle",
+    "why": "Whatever the muzzle does to the projectile is the last thing done to it, so muzzle wear is what kills accuracy first. It is also where the crown is cut — a slightly recessed lip so that escaping gas leaves the base of the shot evenly all round.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Muzzle_(firearms)"
+  },
+  {
+    "in": [
+      "timber",
+      "cannon"
+    ],
+    "out": "rammer",
+    "why": "Powder, wad, shot, wad — each seated firmly against the last. An unseated charge leaves an air gap, and an air gap between powder and shot is one of the reliable ways to burst a barrel.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ramrod"
+  },
+  {
+    "in": [
+      "cloth",
+      "gunpowder"
+    ],
+    "out": "wadding",
+    "why": "A wad seals the bore so the gas pushes the shot rather than escaping past it, and stops the shot rolling out if the muzzle is depressed. Burning wads thrown clear of the gun were a routine cause of fire aboard ship.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wadding"
+  },
+  {
+    "in": [
+      "wool",
+      "sheep"
+    ],
+    "out": "fleece",
+    "why": "A fleece is shorn as one connected mat and keeps the position of every part of the animal, which matters because the wool from the shoulder is finer than the wool from the britch. Skirting — throwing away the worst of it — is the first thing done to any fleece.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fleece"
+  },
+  {
+    "in": [
+      "fleece",
+      "comb"
+    ],
+    "out": "carding",
+    "why": "Two boards of fine wire hooks drawn against each other open the locks and lay the fibres roughly parallel. Without it the fibres lie in every direction and the yarn is weak and lumpy; Arkwright's carding engine is as important to mechanised spinning as the spinning frame itself.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Carding"
+  },
+  {
+    "in": [
+      "carding",
+      "wool"
+    ],
+    "out": "batt",
+    "why": "A batt comes off the carder as a loose web of parallel fibre. It is the stage before spinning, and it is also the finished product when what you want is quilt wadding or the felt-maker's starting layer.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Batt_(felt)"
+  },
+  {
+    "in": [
+      "warp",
+      "weft"
+    ],
+    "out": "plain_weave",
+    "why": "Every warp thread passes over one weft and under the next, alternating each row. It gives the most interlacings per unit area of any weave, which makes it the firmest and the least likely to snag — and the least drapey, which is why not everything is made of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plain_weave"
+  },
+  {
+    "in": [
+      "weft",
+      "cloth"
+    ],
+    "out": "selvage",
+    "why": "At each side the weft reverses, so the edge is bound by the fabric's own thread and cannot fray. A selvage is usually woven denser than the body, which is why it puckers when washed and why tailors cut it off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Selvage"
+  },
+  {
+    "in": [
+      "starch",
+      "water"
+    ],
+    "out": "sizing",
+    "why": "Warp threads rub against each other and the heddles thousands of times during weaving, so they are sized with starch or glue and desized afterwards. Paper is sized for the opposite reason: unsized paper drinks ink and every line becomes a blot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sizing"
+  },
+  {
+    "in": [
+      "metal",
+      "cloth"
+    ],
+    "out": "grommet",
+    "why": "A hole in fabric concentrates load at its edge and tears from there. A grommet spreads that load around a rigid ring and gives the rope something to bear on that is not the cloth, which is why every sail and tent has them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Grommet"
+  },
+  {
+    "in": [
+      "clay",
+      "graphite"
+    ],
+    "out": "crucible",
+    "why": "A crucible has to resist the heat, resist the melt chemically, and survive being heated and cooled repeatedly. Graphite-clay is the classic answer, and Huntsman's crucible steel of 1740 worked because he could finally make one that held molten steel without failing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Crucible"
+  },
+  {
+    "in": [
+      "glass",
+      "furnace"
+    ],
+    "out": "float_glass",
+    "why": "Pilkington's process, introduced in 1959, floats a ribbon of molten glass on a bath of molten tin: gravity and surface tension make both surfaces parallel and fire-polished with no grinding at all. Nearly every flat pane made since is made this way.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Float_glass"
+  },
+  {
+    "in": [
+      "timber",
+      "saw"
+    ],
+    "out": "lath",
+    "why": "Plaster pushed between laths squeezes through the gaps and slumps behind them, forming keys that hook the whole coat to the wall. Take the keys off and the plaster is simply resting there, which is why old ceilings come down in sheets.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lath"
+  },
+  {
+    "in": [
+      "plaster",
+      "lath"
+    ],
+    "out": "scratch_coat",
+    "why": "The first coat is pushed hard into the lath or masonry to form the keys, then combed across while green. Every coat after it is thinner and weaker than the one beneath, which is the rule that stops plaster shelling off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plasterwork"
+  },
+  {
+    "in": [
+      "plaster",
+      "scratch_coat"
+    ],
+    "out": "float_coat",
+    "why": "The browning or float coat is ruled off to a plane between screeds. All the flatness of a plastered wall is achieved here — the finish coat is only two or three millimetres thick and follows whatever it is laid on.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plasterwork"
+  },
+  {
+    "in": [
+      "plaster",
+      "float_coat"
+    ],
+    "out": "finish_coat",
+    "why": "The setting coat is nearly pure fine plaster or lime putty, and it is polished with a trowel as it goes off. It contributes nothing structurally; its entire job is the surface you look at.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plasterwork"
+  },
+  {
+    "in": [
+      "timber",
+      "joint"
+    ],
+    "out": "brace",
+    "why": "A four-sided frame with pinned corners is a mechanism, not a structure — it will rack over sideways under any lateral load. One diagonal makes it two triangles and it becomes rigid, which is why every timber frame and every scaffold is full of them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bracing_(aeronautics)"
+  },
+  {
+    "in": [
+      "plate",
+      "joint"
+    ],
+    "out": "gusset",
+    "why": "A gusset spreads the load from each member into a shared plate rather than into the fasteners of one connection. In timber trusses it is plywood and nails; in steel it is plate and bolts; in both, it is the piece that lets the members be sized for load rather than for connection.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gusset_plate"
+  },
+  {
+    "in": [
+      "beam",
+      "rafter"
+    ],
+    "out": "purlin",
+    "why": "Purlins run horizontally across the rafters and give them intermediate support, halving or thirding their effective span. That is what lets a roof be built out of small timber rather than out of one enormous piece per slope.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Purlin"
+  },
+  {
+    "in": [
+      "rafter",
+      "wall"
+    ],
+    "out": "eaves",
+    "why": "Eaves throw water clear of the face and shade the wall in summer while letting low winter sun in. Buildings that lost their overhangs to fashion promptly discovered why they had them, which is most of the story of 20th-century damp.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Eaves"
+  },
+  {
+    "in": [
+      "chisel",
+      "wheel"
+    ],
+    "out": "lathe",
+    "why": "A lathe spins the workpiece against a rigidly held tool, so the cut is a function of the machine's geometry rather than the operator's hand. It is the first machine tool that can reproduce its own parts, which is why it is usually called the mother of machine tools.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lathe"
+  },
+  {
+    "in": [
+      "lathe",
+      "cannon"
+    ],
+    "out": "boring_machine",
+    "why": "John Wilkinson's 1774 machine supported the boring bar at both ends instead of cantilevering it, so it could not wander. It made cannon accurate and in the same decade made Watt's steam cylinders possible — Watt reckoned the error no greater than the thickness of a thin shilling.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Boring_(manufacturing)"
+  },
+  {
+    "in": [
+      "cloth",
+      "sewing_machine"
+    ],
+    "out": "seam",
+    "why": "A seam is always weaker than the cloth either side of it, so its type is chosen for the load. A flat-felled seam encloses both raw edges and is what jeans and sails use, precisely because it does not depend on the thread alone.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Seam_(sewing)"
+  },
+  {
+    "in": [
+      "plank",
+      "grip"
+    ],
+    "out": "hawk",
+    "why": "The hawk carries a workable amount of material at the plasterer's free hand, close to the wall. Loading it, and getting plaster off it onto a trowel without dropping any, is the first thing an apprentice spends months failing to do.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hawk_(plasterer's_tool)"
+  },
+  {
+    "in": [
+      "rod",
+      "tool"
+    ],
+    "out": "shank",
+    "why": "On a rivet the shank is what swells to fill the hole; on a drill it is what the chuck grips; on a needle it is the stiff length that must not bend. In each case it does nothing except transmit force, which is why it is the part sized for strength rather than for shape.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shank_(footwear)"
+  },
+  {
+    "in": [
+      "blade",
+      "whetstone"
+    ],
+    "out": "honing",
+    "why": "Grinding makes the bevel; honing makes the edge. The wire edge left by a stone is folded off on a strop, and what remains is two polished planes meeting in a line — a sharp edge is only ever the absence of anything in between.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Honing_(metalworking)"
+  },
+  {
+    "in": [
+      "quenching",
+      "heat"
+    ],
+    "out": "tempering",
+    "why": "Quenched steel is as hard as it can be and will shatter. Reheating to a few hundred degrees trades a little hardness for a great deal of toughness, and smiths read the temperature off the oxide colours as they run across the metal — straw for a razor, blue for a spring.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tempering_(metallurgy)"
+  },
+  {
+    "in": [
+      "brass",
+      "handle"
+    ],
+    "out": "ferrule",
+    "why": "Driving a tang into wood wedges it apart, and a handle without a ferrule splits the first time it is struck hard. The ferrule puts the end grain in hoop compression so it cannot open, which is why chisels have them and screwdrivers do not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ferrule"
+  },
+  {
+    "in": [
+      "stone",
+      "wheel"
+    ],
+    "out": "grindstone",
+    "why": "A grindstone cuts by presenting fresh abrasive grains as its own surface wears away. Sandstone wheels were run wet, both to carry the heat off the edge and because dry grinding filled the workshop with silica dust — grinders' lung killed cutlers for centuries.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Grindstone"
+  },
+  {
+    "in": [
+      "steel",
+      "tang"
+    ],
+    "out": "bolster",
+    "why": "A bolster stiffens the blade where bending stress is highest, protects the hand from the edge, and puts weight behind the pivot so the knife balances near the finger. It is also where a forged blade is thickest and a stamped one usually has none.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bolster"
+  },
+  {
+    "in": [
+      "lock",
+      "chisel"
+    ],
+    "out": "keyway",
+    "why": "The keyway's profile rejects every key of the wrong section before the pins are even reached — it is a mechanical filter, not a security measure, and it is why lock manufacturers keep their own profiles. The same word means the slot that stops a pulley turning on its shaft.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Keyway"
+  },
+  {
+    "in": [
+      "brass",
+      "lock"
+    ],
+    "out": "escutcheon",
+    "why": "An escutcheon protects the door face from the key's scratching and covers a rough mortice. On grand doors it became the place where the money was spent, which is why the word also means a coat of arms.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Escutcheon_(architecture)"
+  },
+  {
+    "in": [
+      "metal",
+      "door_frame"
+    ],
+    "out": "strike_plate",
+    "why": "Without a strike plate the bolt bruises soft timber until the door no longer latches. With one, the load is spread into the frame — and how long its screws are is more or less the whole security of a domestic door.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Strike_plate"
+  },
+  {
+    "in": [
+      "iron",
+      "axle"
+    ],
+    "out": "linchpin",
+    "why": "The simplest wheel retention there is: a pin through a hole outboard of the hub. It is a genuinely critical part with no redundancy at all, which is exactly why the word came to mean what it means.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Linchpin"
+  },
+  {
+    "in": [
+      "shaft",
+      "bearing"
+    ],
+    "out": "journal",
+    "why": "A journal is the length of shaft inside a plain bearing, ground and polished so it rides on a film of oil rather than on the bearing itself. If the film breaks the two touch, and a journal that has been run dry is a journal that is now scrap.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Journal_bearing"
+  },
+  {
+    "in": [
+      "bearing",
+      "box"
+    ],
+    "out": "axle_box",
+    "why": "On a railway wagon the axle box carries the load onto the journal, holds the lubricant and keeps dust away. A box that ran out of oil overheated and seized — a hot box was the commonest cause of a train being stopped in the wagonload era.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Axlebox"
+  },
+  {
+    "in": [
+      "beam",
+      "steel"
+    ],
+    "out": "web",
+    "why": "In an I-beam almost all the bending is carried by the flanges top and bottom; the web's job is to hold them apart at a fixed distance and carry the shear. Being able to make it thin is the whole reason the section is efficient.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Web_(engineering)"
+  },
+  {
+    "in": [
+      "metal",
+      "rim"
+    ],
+    "out": "flange",
+    "why": "Material far from the neutral axis resists bending disproportionately, so a beam puts its metal in flanges as far apart as it dares. The same word covers the rim on a pipe end for bolting and the lip on a railway wheel that keeps it on the rail.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Flange"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "joist"
+    ],
+    "out": "joist_hanger",
+    "why": "The old way was a mortice or a tusk tenon, which removes material from the beam exactly where it is most stressed. A hanger carries the joist on the face instead, and the beam keeps its full section — it is nails in shear doing what careful joinery used to.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Joist"
+  },
+  {
+    "in": [
+      "knife",
+      "grindstone"
+    ],
+    "out": "bevel",
+    "why": "A narrow bevel cuts better and chips sooner; a wide one lasts and needs more force. Woodworking chisels sit near 25 degrees, axes nearer 30, and a razor under 20 — each a different answer to the same trade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bevel"
   }
 ]

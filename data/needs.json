@@ -1546,7 +1546,6 @@
         "axle",
         "bearing",
         "tyre|iron_tyre",
-        "dish",
         "lathe",
         "hoop"
       ]
@@ -1733,6 +1732,633 @@
         "stearin",
         "dye",
         "fragrance"
+      ]
+    },
+    "spear": {
+      "src": "https://en.wikipedia.org/wiki/Spear",
+      "note": "A point, a shaft, and the joint between them — which is the part that fails.",
+      "needs": [
+        "shaft",
+        "socket|tang",
+        "ferrule",
+        "binding|sinew",
+        "glue|pitch",
+        "butt_spike",
+        "flint|bronze|iron"
+      ]
+    },
+    "wall": {
+      "src": "https://en.wikipedia.org/wiki/Wall",
+      "note": "Something to stand on, something to stack, and something to hold the stack together.",
+      "needs": [
+        "foundation",
+        "footing",
+        "stone|brick|adobe",
+        "mortar",
+        "course",
+        "bond",
+        "quoin",
+        "coping",
+        "buttress",
+        "rubble_core",
+        "render"
+      ]
+    },
+    "pipe": {
+      "src": "https://en.wikipedia.org/wiki/Pipe_(fluid_conveyance)",
+      "note": "A tube, a way to join tubes, and a way to stop the join leaking.",
+      "needs": [
+        "clay|lead|copper|iron",
+        "bore",
+        "joint",
+        "socket|spigot",
+        "gasket|seal",
+        "solder",
+        "flange",
+        "valve",
+        "bracket"
+      ]
+    },
+    "needle": {
+      "src": "https://en.wikipedia.org/wiki/Sewing_needle",
+      "note": "A point, a shaft stiff enough not to bend, and an eye that does not weaken it.",
+      "needs": [
+        "steel|bone|bronze",
+        "eye",
+        "shank",
+        "polishing_grit",
+        "wire"
+      ]
+    },
+    "knife": {
+      "src": "https://en.wikipedia.org/wiki/Knife",
+      "note": "A hard edge on a tough spine, and a handle that will not come off.",
+      "needs": [
+        "steel",
+        "forge",
+        "tang",
+        "bevel",
+        "edge",
+        "quenching",
+        "tempering",
+        "handle|scale",
+        "rivet",
+        "grindstone",
+        "bolster"
+      ]
+    },
+    "hammer": {
+      "src": "https://en.wikipedia.org/wiki/Hammer",
+      "note": "A heavy head and a handle long enough to swing it — and an eye that keeps the two together.",
+      "needs": [
+        "head",
+        "steel|iron",
+        "eye",
+        "haft|handle",
+        "hickory|ash",
+        "wedge",
+        "peen"
+      ]
+    },
+    "magnet": {
+      "src": "https://en.wikipedia.org/wiki/Magnet",
+      "note": "Domains lined up, and something to stop them wandering back.",
+      "needs": [
+        "iron|steel",
+        "lodestone",
+        "cobalt|nickel",
+        "alnico|ferrite",
+        "coercivity",
+        "annealing",
+        "magnetising_coil",
+        "keeper"
+      ]
+    },
+    "electric_motor": {
+      "src": "https://en.wikipedia.org/wiki/Electric_motor",
+      "note": "A field, a rotor in it, and a way to keep pushing the rotor the same way round.",
+      "needs": [
+        "stator",
+        "rotor",
+        "armature",
+        "copper_wire",
+        "winding",
+        "magnet|field_coil",
+        "commutator|slip_ring",
+        "brush",
+        "bearing",
+        "shaft",
+        "laminations",
+        "housing"
+      ]
+    },
+    "chain": {
+      "src": "https://en.wikipedia.org/wiki/Chain",
+      "note": "Links, and the weld that makes a link a link.",
+      "needs": [
+        "iron|steel",
+        "link",
+        "weld",
+        "stud",
+        "bar_stock",
+        "swage",
+        "hook",
+        "shackle"
+      ]
+    },
+    "cannon": {
+      "src": "https://en.wikipedia.org/wiki/Cannon",
+      "note": "A tube strong enough to survive what happens inside it, on something that absorbs the recoil.",
+      "needs": [
+        "bronze|cast_iron",
+        "bore",
+        "boring_machine",
+        "touchhole",
+        "trunnion",
+        "breech",
+        "muzzle",
+        "carriage",
+        "wheel",
+        "gunpowder",
+        "ball|shot",
+        "rammer",
+        "wadding"
+      ]
+    },
+    "blade": {
+      "src": "https://en.wikipedia.org/wiki/Blade",
+      "note": "A wedge, and a heat treatment that makes the wedge stay a wedge.",
+      "needs": [
+        "steel",
+        "forge",
+        "bevel",
+        "edge",
+        "spine",
+        "quenching",
+        "tempering",
+        "grinding",
+        "honing"
+      ]
+    },
+    "helmet": {
+      "src": "https://en.wikipedia.org/wiki/Helmet",
+      "note": "A hard shell that does not touch the head, and a liner that keeps it that way.",
+      "needs": [
+        "steel|bronze|leather",
+        "bowl|skull",
+        "brow_reinforce",
+        "cheek_piece",
+        "nasal",
+        "liner",
+        "padding",
+        "chinstrap",
+        "rivet",
+        "visor"
+      ]
+    },
+    "lever": {
+      "src": "https://en.wikipedia.org/wiki/Lever",
+      "note": "A rigid bar, a fulcrum, and the choice of where to put it.",
+      "needs": [
+        "bar|rod",
+        "fulcrum",
+        "load",
+        "pivot"
+      ]
+    },
+    "transistor": {
+      "src": "https://en.wikipedia.org/wiki/Transistor",
+      "note": "Two junctions in one crystal, so a small current can decide what a large one does.",
+      "needs": [
+        "silicon|germanium",
+        "wafer",
+        "doping",
+        "n_type",
+        "p_type",
+        "junction",
+        "gate|base",
+        "emitter",
+        "collector",
+        "oxide_layer",
+        "photolithography",
+        "lead_frame",
+        "encapsulation"
+      ]
+    },
+    "rivet": {
+      "src": "https://en.wikipedia.org/wiki/Rivet",
+      "note": "A pin with a head, given a second head after it is through.",
+      "needs": [
+        "iron|steel",
+        "shank",
+        "head",
+        "rivet_set",
+        "bucking_bar",
+        "reaming",
+        "hot_riveting"
+      ]
+    },
+    "frame": {
+      "src": "https://en.wikipedia.org/wiki/Framing_(construction)",
+      "note": "Members that carry load, and joints that stop them folding.",
+      "needs": [
+        "timber|steel",
+        "stud",
+        "plate",
+        "joist",
+        "rafter",
+        "brace",
+        "joint",
+        "nail|bolt",
+        "gusset",
+        "sill"
+      ]
+    },
+    "dome": {
+      "src": "https://en.wikipedia.org/wiki/Dome",
+      "note": "A shell in compression, and a way to stop it spreading at the bottom.",
+      "needs": [
+        "formwork|centring",
+        "brick|stone|concrete",
+        "mortar",
+        "oculus",
+        "drum",
+        "pendentive|squinch",
+        "tension_ring|chain",
+        "lantern",
+        "herringbone_course"
+      ]
+    },
+    "axle": {
+      "src": "https://en.wikipedia.org/wiki/Axle",
+      "note": "A shaft that carries the wheel, and the surfaces it turns on.",
+      "needs": [
+        "iron|steel",
+        "shaft",
+        "journal",
+        "bearing",
+        "bushing",
+        "grease",
+        "hub",
+        "linchpin",
+        "axle_box"
+      ]
+    },
+    "chisel": {
+      "src": "https://en.wikipedia.org/wiki/Chisel",
+      "note": "A hardened wedge on a shaft you can hit.",
+      "needs": [
+        "steel",
+        "forge",
+        "bevel",
+        "edge",
+        "tang|socket",
+        "handle",
+        "ferrule",
+        "tempering",
+        "honing"
+      ]
+    },
+    "roof": {
+      "src": "https://en.wikipedia.org/wiki/Roof",
+      "note": "A frame that sheds water, and a skin that does not let it in.",
+      "needs": [
+        "rafter",
+        "purlin",
+        "ridge",
+        "batten",
+        "truss",
+        "roof_tile|slate|thatch",
+        "roofing_felt",
+        "flashing",
+        "gutter",
+        "eaves",
+        "insulation",
+        "valley"
+      ]
+    },
+    "plaster": {
+      "src": "https://en.wikipedia.org/wiki/Plaster",
+      "note": "A powder that sets when you wet it, on something for it to hold to.",
+      "needs": [
+        "gypsum|lime",
+        "water",
+        "sand",
+        "hair|fibre",
+        "lath",
+        "scratch_coat",
+        "float_coat",
+        "finish_coat",
+        "trowel",
+        "hawk"
+      ]
+    },
+    "adobe": {
+      "src": "https://en.wikipedia.org/wiki/Adobe",
+      "note": "Earth with enough clay to bind and enough straw to stop it cracking.",
+      "needs": [
+        "clay",
+        "sand",
+        "straw",
+        "water",
+        "mould",
+        "sun_drying",
+        "render",
+        "foundation_course"
+      ]
+    },
+    "canvas": {
+      "src": "https://en.wikipedia.org/wiki/Canvas",
+      "note": "A plain weave heavy enough to take tension without stretching out of shape.",
+      "needs": [
+        "hemp|flax|cotton",
+        "yarn",
+        "warp",
+        "weft",
+        "loom",
+        "plain_weave",
+        "sizing",
+        "grommet",
+        "seam"
+      ]
+    },
+    "arrow": {
+      "src": "https://en.wikipedia.org/wiki/Arrow",
+      "note": "A shaft stiff enough for the bow that shoots it, weighted at the front and steered at the back.",
+      "needs": [
+        "shaft",
+        "spine",
+        "arrowhead|point",
+        "nock",
+        "fletching",
+        "feather",
+        "glue",
+        "binding",
+        "cresting"
+      ]
+    },
+    "harbour": {
+      "src": "https://en.wikipedia.org/wiki/Harbor",
+      "note": "Somewhere the sea stops being weather.",
+      "needs": [
+        "breakwater",
+        "mole",
+        "quay|wharf",
+        "jetty",
+        "dredging",
+        "bollard",
+        "fender",
+        "mooring",
+        "lighthouse",
+        "channel_marker",
+        "slipway",
+        "crane"
+      ]
+    },
+    "capacitor": {
+      "src": "https://en.wikipedia.org/wiki/Capacitor",
+      "note": "Two plates that never touch, and something between them that will not conduct.",
+      "needs": [
+        "plate|foil",
+        "dielectric",
+        "paper|ceramic|mylar",
+        "electrolyte",
+        "anode",
+        "cathode",
+        "lead",
+        "winding",
+        "encapsulation"
+      ]
+    },
+    "light_bulb": {
+      "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+      "note": "A wire hot enough to glow, in an atmosphere that will not let it burn.",
+      "needs": [
+        "tungsten",
+        "filament",
+        "coil",
+        "glass",
+        "envelope",
+        "vacuum|argon|nitrogen",
+        "stem",
+        "lead_in_wire",
+        "base|cap",
+        "getter",
+        "fuse"
+      ]
+    },
+    "microprocessor": {
+      "src": "https://en.wikipedia.org/wiki/Microprocessor",
+      "note": "Millions of transistors printed at once, and the wiring between them.",
+      "needs": [
+        "silicon",
+        "wafer",
+        "photolithography",
+        "photoresist",
+        "mask",
+        "doping",
+        "transistor",
+        "interconnect",
+        "copper|aluminum",
+        "oxide_layer",
+        "packaging",
+        "lead_frame",
+        "die"
+      ]
+    },
+    "road": {
+      "src": "https://en.wikipedia.org/wiki/Road",
+      "note": "Layers, each one spreading the load over more of the one beneath.",
+      "needs": [
+        "subgrade",
+        "sub_base",
+        "gravel|aggregate",
+        "base_course",
+        "binder_course",
+        "bitumen|asphalt",
+        "surface_course",
+        "camber",
+        "drainage",
+        "kerb",
+        "road_sign"
+      ]
+    },
+    "beam": {
+      "src": "https://en.wikipedia.org/wiki/Beam_(structure)",
+      "note": "A member loaded across its length — deepest where the bending is worst.",
+      "needs": [
+        "timber|steel|concrete",
+        "span",
+        "flange",
+        "web",
+        "bearing",
+        "camber",
+        "joist_hanger",
+        "rebar"
+      ]
+    },
+    "sickle": {
+      "src": "https://en.wikipedia.org/wiki/Sickle",
+      "note": "A curved edge that cuts by drawing, and a handle set to keep the wrist straight.",
+      "needs": [
+        "flint|bronze|iron",
+        "blade",
+        "serration",
+        "tang",
+        "handle",
+        "haft",
+        "hafting_resin",
+        "whetstone"
+      ]
+    },
+    "granary": {
+      "src": "https://en.wikipedia.org/wiki/Granary",
+      "note": "Dry, off the ground, and shut against everything that also eats grain.",
+      "needs": [
+        "foundation",
+        "staddle_stone",
+        "floor",
+        "wall",
+        "roof",
+        "ventilation",
+        "threshold",
+        "rat_guard",
+        "bin",
+        "chute"
+      ]
+    },
+    "moat": {
+      "src": "https://en.wikipedia.org/wiki/Moat",
+      "note": "A ditch that either holds water or is not worth digging.",
+      "needs": [
+        "ditch",
+        "excavation",
+        "scarp",
+        "counterscarp",
+        "berm",
+        "revetment",
+        "water|sluice",
+        "drawbridge",
+        "causeway",
+        "clay_lining"
+      ]
+    },
+    "plate_armor": {
+      "src": "https://en.wikipedia.org/wiki/Plate_armour",
+      "note": "Shaped plates that overlap so the joints move and the gaps do not line up.",
+      "needs": [
+        "steel",
+        "plate",
+        "breastplate",
+        "backplate",
+        "pauldron",
+        "gauntlet",
+        "greave",
+        "cuisse",
+        "lame",
+        "rivet",
+        "leather_strap",
+        "buckle",
+        "padding|gambeson"
+      ]
+    },
+    "lyre": {
+      "src": "https://en.wikipedia.org/wiki/Lyre",
+      "note": "A soundbox, two arms, a crossbar, and strings you can tune.",
+      "needs": [
+        "soundbox",
+        "tortoiseshell|wood",
+        "soundboard",
+        "hide",
+        "arm",
+        "yoke|crossbar",
+        "bridge",
+        "string",
+        "gut|sinew",
+        "tuning_peg",
+        "plectrum"
+      ]
+    },
+    "silk": {
+      "src": "https://en.wikipedia.org/wiki/Silk",
+      "note": "One continuous filament, unwound rather than spun.",
+      "needs": [
+        "silkworm",
+        "mulberry_tree",
+        "cocoon",
+        "reeling",
+        "degumming",
+        "sericin",
+        "filament",
+        "throwing",
+        "warp",
+        "weft",
+        "loom",
+        "dye"
+      ]
+    },
+    "felt": {
+      "src": "https://en.wikipedia.org/wiki/Felt",
+      "note": "Wool, water, heat and pressure — no thread anywhere in it.",
+      "needs": [
+        "wool",
+        "fleece",
+        "carding",
+        "batt",
+        "soap",
+        "agitation",
+        "fulling",
+        "pressing"
+      ]
+    },
+    "parchment": {
+      "src": "https://en.wikipedia.org/wiki/Parchment",
+      "note": "Skin that was never tanned — limed, stretched, and dried under tension.",
+      "needs": [
+        "hide|skin",
+        "lime",
+        "liming",
+        "dehairing",
+        "herse|frame",
+        "stretching",
+        "scraping",
+        "lunellum",
+        "pumice",
+        "chalk",
+        "drying"
+      ]
+    },
+    "arch": {
+      "src": "https://en.wikipedia.org/wiki/Arch",
+      "note": "Wedges that cannot fall because there is nowhere for them to go.",
+      "needs": [
+        "centring|formwork",
+        "voussoir",
+        "keystone",
+        "springer",
+        "abutment",
+        "pier",
+        "impost",
+        "extrados",
+        "intrados",
+        "mortar",
+        "haunch"
+      ]
+    },
+    "crown": {
+      "src": "https://en.wikipedia.org/wiki/Crown_(headgear)",
+      "note": "Precious metal, worked thin, made to be seen from a distance.",
+      "needs": [
+        "gold|silver",
+        "circlet",
+        "arch|hoop",
+        "finial",
+        "gemstone",
+        "setting|bezel",
+        "enamel",
+        "cap_of_maintenance",
+        "chasing",
+        "soldering"
       ]
     }
   }

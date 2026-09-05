@@ -66,7 +66,14 @@ if (has('art-pending.json')) {
 
 add('validate', elements.length, elements.length, 'every element, every run');
 add('categories', elements.length, elements.length, 'every element, every run');
-add('scale', elements.length, elements.length, 'every element, every run');
+/* Counted, not assumed. This row said 100% while 94 newly authored elements had
+ * no scale entry at all, because it was reporting elements.length over itself —
+ * a hardcoded pass inside the one tool whose entire job is to refuse those. */
+{
+  const scale = has('scale.json') ? read('scale.json') : {};
+  const sized = elements.filter(e => scale[e.id] !== undefined).length;
+  add('scale', sized, elements.length, 'every element needs a size; the build refuses without one');
+}
 add('art check', elements.length, elements.length, 'every drawing, every run');
 add('graph', elements.length, elements.length, 'reachability from the four starters');
 add('verbs', recipes.length, recipes.length, 'every recipe, every run');

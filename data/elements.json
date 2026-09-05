@@ -18281,7 +18281,6 @@
       "year": 1845,
       "note": "Howe builds his eye-pointed needle sewing machine."
     },
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -88693,5 +88692,1012 @@
       "craft"
     ],
     "fact": "A tapered plug in a tapered hole. The harder the pressure pushes, the tighter it seats."
+  },
+  {
+    "id": "intrados",
+    "name": "Intrados",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "idea"
+    ],
+    "fact": "The inner curve — the one you stand under and the one that cracks first."
+  },
+  {
+    "id": "rubble_core",
+    "name": "Rubble Core",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The cheap middle between two good faces. Most of a thick wall is this."
+  },
+  {
+    "id": "coping",
+    "name": "Coping",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The hat on a wall. Without it, water gets into the top and takes the wall apart from inside."
+  },
+  {
+    "id": "quoin",
+    "name": "Quoin",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The dressed stones at a corner, doing the job the rubble beside them cannot."
+  },
+  {
+    "id": "excavation",
+    "name": "Excavation",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "Taking ground away, and dealing with what the ground does once you have."
+  },
+  {
+    "id": "ditch",
+    "name": "Ditch",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "A trench dug to move water, or to stop somebody. Usually both."
+  },
+  {
+    "id": "counterscarp",
+    "name": "Counterscarp",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "The outer face of the ditch, and the one the defenders shoot along."
+  },
+  {
+    "id": "berm",
+    "name": "Berm",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "A flat shelf between a ditch and the wall above it, so the wall does not slide into the hole."
+  },
+  {
+    "id": "revetment",
+    "name": "Revetment",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A facing that holds earth back and stops it becoming a slope."
+  },
+  {
+    "id": "causeway",
+    "name": "Causeway",
+    "emoji": "🛤️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "transport"
+    ],
+    "fact": "A raised way across ground that will not carry a road."
+  },
+  {
+    "id": "subgrade",
+    "name": "Subgrade",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "The natural ground a road is built on. Everything above it exists because of how bad it is."
+  },
+  {
+    "id": "sub_base",
+    "name": "Sub-base",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Coarse stone between the ground and the road, spreading the load and draining the water."
+  },
+  {
+    "id": "base_course",
+    "name": "Base Course",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The main structural layer of a road, and the one that fails last."
+  },
+  {
+    "id": "binder_course",
+    "name": "Binder Course",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The layer between the base and the surface, coarser than one and finer than the other."
+  },
+  {
+    "id": "surface_course",
+    "name": "Surface Course",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The layer that meets the tyre — chosen for grip and noise, not for strength."
+  },
+  {
+    "id": "drainage",
+    "name": "Drainage",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Getting water off and out. Most things that fail structurally were drowned first."
+  },
+  {
+    "id": "camber",
+    "name": "Camber",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A road built deliberately out of level so that water runs off it."
+  },
+  {
+    "id": "voussoir",
+    "name": "Voussoir",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "A wedge-shaped block. Cut the wedge right and an arch cannot fall in; cut it wrong and it cannot stand at all."
+  },
+  {
+    "id": "course",
+    "name": "Course",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "One horizontal layer. Getting the first one level decides every one above it."
+  },
+  {
+    "id": "clay_lining",
+    "name": "Clay Lining",
+    "emoji": "🪣",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "Puddled clay — how a hole in the ground is made to hold water."
+  },
+  {
+    "id": "keystone",
+    "name": "Keystone",
+    "emoji": "🗝️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The last voussoir in, and the one that stops being needed the moment it is."
+  },
+  {
+    "id": "springer",
+    "name": "Springer",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The first voussoir, sitting where the curve leaves the vertical."
+  },
+  {
+    "id": "impost",
+    "name": "Impost",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The course an arch sits down on, projecting just enough to spread the load."
+  },
+  {
+    "id": "extrados",
+    "name": "Extrados",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "idea"
+    ],
+    "fact": "The outer curve of an arch — the side the load arrives on."
+  },
+  {
+    "id": "haunch",
+    "name": "Haunch",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The shoulder of an arch, where the thrust tries hardest to escape."
+  },
+  {
+    "id": "footing",
+    "name": "Footing",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Wider than the wall on purpose, so the ground gets the load spread out."
+  },
+  {
+    "id": "scarp",
+    "name": "Scarp",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "The inner face of a defensive ditch — the one an attacker has to climb."
+  },
+  {
+    "id": "breastplate",
+    "name": "Breastplate",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A curved steel front. The curve is the armour — a flat plate of the same steel stops far less."
+  },
+  {
+    "id": "backplate",
+    "name": "Backplate",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The other half of the cuirass, thinner — because a fleeing man is a smaller problem than a facing one."
+  },
+  {
+    "id": "greave",
+    "name": "Greave",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Shin armour, and the oldest piece of plate there is."
+  },
+  {
+    "id": "buckle",
+    "name": "Buckle",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A frame, a pin and a hole. It has not changed in two thousand years because it did not need to."
+  },
+  {
+    "id": "visor",
+    "name": "Visor",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The part that has to come up, because a man who cannot breathe cannot fight."
+  },
+  {
+    "id": "cheek_piece",
+    "name": "Cheek Piece",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Hinged plates covering the jaw, and the reason a Roman helmet is recognisable at a glance."
+  },
+  {
+    "id": "link",
+    "name": "Link",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "metal"
+    ],
+    "fact": "One ring. A chain is only ever as strong as the worst of them."
+  },
+  {
+    "id": "bucking_bar",
+    "name": "Bucking Bar",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A heavy lump held against the far end, so the rivet upsets instead of just moving."
+  },
+  {
+    "id": "leather_strap",
+    "name": "Leather Strap",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "How armour, harness and almost everything else was held together before the buckle got cheap."
+  },
+  {
+    "id": "pauldron",
+    "name": "Pauldron",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Shoulder armour built from overlapping plates, so the arm still works."
+  },
+  {
+    "id": "lame",
+    "name": "Lame",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "One strip in a stack of strips. The gaps between them are the joint."
+  },
+  {
+    "id": "cuisse",
+    "name": "Cuisse",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Thigh armour — the largest area a mounted man could not afford to leave open."
+  },
+  {
+    "id": "chinstrap",
+    "name": "Chinstrap",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "What keeps the helmet on the head it is meant to be on."
+  },
+  {
+    "id": "liner",
+    "name": "Liner",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "The suspension inside a helmet. The shell does not touch your head, and that gap is the point."
+  },
+  {
+    "id": "padding",
+    "name": "Padding",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Layers of cloth, quilted. Soft armour that also stops hard armour from breaking you."
+  },
+  {
+    "id": "nasal",
+    "name": "Nasal",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A single bar down the front of the face — the cheapest useful face protection there is."
+  },
+  {
+    "id": "brow_reinforce",
+    "name": "Brow Reinforce",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "An extra band across the front, where a downward cut actually lands."
+  },
+  {
+    "id": "weld",
+    "name": "Weld",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "metal"
+    ],
+    "fact": "Two pieces of metal made into one, with no third thing holding them."
+  },
+  {
+    "id": "bar_stock",
+    "name": "Bar Stock",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "metal"
+    ],
+    "fact": "Metal in a plain useful shape, waiting to be something."
+  },
+  {
+    "id": "swage",
+    "name": "Swage",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A shaped die you hammer metal into, so every one comes out the same."
+  },
+  {
+    "id": "hook",
+    "name": "Hook",
+    "emoji": "🪝",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A curve that holds as long as the load pulls the way you expected."
+  },
+  {
+    "id": "shackle",
+    "name": "Shackle",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A U of metal with a removable pin, so two things can be joined and unjoined at will."
+  },
+  {
+    "id": "rivet_set",
+    "name": "Rivet Set",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A cupped punch that forms the second head without flattening it."
+  },
+  {
+    "id": "bore",
+    "name": "Bore",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The hole, and the only dimension of a gun that really matters."
+  },
+  {
+    "id": "touchhole",
+    "name": "Touchhole",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A small hole at the breech, and the whole reason a cannon can be fired at all."
+  },
+  {
+    "id": "trunnion",
+    "name": "Trunnion",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "Two stubs on the sides of a barrel, and the axis the whole gun turns about."
+  },
+  {
+    "id": "breech",
+    "name": "Breech",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The closed end. Everything the powder does, it does against this."
+  },
+  {
+    "id": "muzzle",
+    "name": "Muzzle",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The open end, and the last thing that touches the shot."
+  },
+  {
+    "id": "rammer",
+    "name": "Rammer",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A staff with a head, for pushing everything down the bore in the right order and to the right depth."
+  },
+  {
+    "id": "wadding",
+    "name": "Wadding",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Something soft rammed between powder and shot to hold each where it belongs."
+  },
+  {
+    "id": "fleece",
+    "name": "Fleece",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "animal"
+    ],
+    "fact": "One sheep's wool, taken off in a single piece."
+  },
+  {
+    "id": "carding",
+    "name": "Carding",
+    "emoji": "🪥",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Pulling fibres straight and parallel, which is what makes them spinnable."
+  },
+  {
+    "id": "batt",
+    "name": "Batt",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "A flat sheet of carded fibre, not yet twisted into anything."
+  },
+  {
+    "id": "plain_weave",
+    "name": "Plain Weave",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Over one, under one. The simplest interlacing there is and the strongest for its weight."
+  },
+  {
+    "id": "selvage",
+    "name": "Selvage",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "The self-finished edge of woven cloth, where the weft turns round and goes back."
+  },
+  {
+    "id": "sizing",
+    "name": "Sizing",
+    "emoji": "🪣",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "trade"
+    ],
+    "fact": "Stiffening a thread or a sheet so it survives the next process."
+  },
+  {
+    "id": "grommet",
+    "name": "Grommet",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A metal ring in a hole, so the hole stops tearing."
+  },
+  {
+    "id": "crucible",
+    "name": "Crucible",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "A pot that stays solid at the temperature that melts whatever is inside it."
+  },
+  {
+    "id": "float_glass",
+    "name": "Float Glass",
+    "emoji": "🪟",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "Glass poured onto molten tin, which is flat because liquid is."
+  },
+  {
+    "id": "lath",
+    "name": "Lath",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "Thin strips nailed with gaps, so wet plaster has something to grip."
+  },
+  {
+    "id": "scratch_coat",
+    "name": "Scratch Coat",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The first coat, deliberately scored so the second has something to bite on."
+  },
+  {
+    "id": "float_coat",
+    "name": "Float Coat",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The middle coat, which is where the wall is actually made flat."
+  },
+  {
+    "id": "finish_coat",
+    "name": "Finish Coat",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "Two or three millimetres of fine plaster, trowelled until it burnishes."
+  },
+  {
+    "id": "brace",
+    "name": "Brace",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A diagonal. A rectangle folds; a triangle does not."
+  },
+  {
+    "id": "gusset",
+    "name": "Gusset",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "A plate across a joint, so the joint is stronger than the members it joins."
+  },
+  {
+    "id": "purlin",
+    "name": "Purlin",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A beam running along the roof, so the rafters can be lighter."
+  },
+  {
+    "id": "eaves",
+    "name": "Eaves",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The overhang. It is what keeps rain off the wall you spent all that time building."
+  },
+  {
+    "id": "lathe",
+    "name": "Lathe",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "tech"
+    ],
+    "fact": "The machine that makes machines: it turns the work and holds the cutter still."
+  },
+  {
+    "id": "boring_machine",
+    "name": "Boring Machine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "tech"
+    ],
+    "fact": "A cutter held rigid while the work turns — how a hole gets straighter than the thing making it."
+  },
+  {
+    "id": "seam",
+    "name": "Seam",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "Where two pieces of cloth are joined, and where the garment will fail."
+  },
+  {
+    "id": "hawk",
+    "name": "Hawk",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A square board with a handle underneath, holding the plaster the trowel takes from."
+  },
+  {
+    "id": "shank",
+    "name": "Shank",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The plain length between the working end and the end you hold."
+  },
+  {
+    "id": "honing",
+    "name": "Honing",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "craft"
+    ],
+    "fact": "The last few microns, taken off with something finer than what shaped the edge."
+  },
+  {
+    "id": "tempering",
+    "name": "Tempering",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "fire"
+    ],
+    "fact": "Deliberately softening a quenched blade, because fully hard steel is glass."
+  },
+  {
+    "id": "ferrule",
+    "name": "Ferrule",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A ring at the end of a handle, stopping the wood from splitting when you hit it."
+  },
+  {
+    "id": "grindstone",
+    "name": "Grindstone",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "craft"
+    ],
+    "fact": "A turning wheel of stone, taking metal off faster than any file."
+  },
+  {
+    "id": "bolster",
+    "name": "Bolster",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The thickened collar between blade and handle, and the reason a knife balances."
+  },
+  {
+    "id": "keyway",
+    "name": "Keyway",
+    "emoji": "🔑",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The slot a key goes down, and the first thing that says no."
+  },
+  {
+    "id": "escutcheon",
+    "name": "Escutcheon",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The plate round a keyhole. Half protection, half showing off."
+  },
+  {
+    "id": "strike_plate",
+    "name": "Strike Plate",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The metal the bolt actually lands in, so the frame is not what takes the blow."
+  },
+  {
+    "id": "linchpin",
+    "name": "Linchpin",
+    "emoji": "📌",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "A pin through the end of the axle. Take it out and the wheel comes off."
+  },
+  {
+    "id": "journal",
+    "name": "Journal",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "The polished part of a shaft that actually runs in the bearing."
+  },
+  {
+    "id": "axle_box",
+    "name": "Axle Box",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "transport"
+    ],
+    "fact": "The housing round the journal that holds the oil in and the grit out."
+  },
+  {
+    "id": "web",
+    "name": "Web",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The thin vertical part of a beam, joining the two flanges that do the work."
+  },
+  {
+    "id": "flange",
+    "name": "Flange",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "The wide part, out where the material does the most good."
+  },
+  {
+    "id": "joist_hanger",
+    "name": "Joist Hanger",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "A pressed steel stirrup, so a joist can meet a beam without being cut into it."
+  },
+  {
+    "id": "bevel",
+    "name": "Bevel",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "tool"
+    ],
+    "fact": "An edge ground to an angle. The angle is the whole argument between sharp and durable."
   }
 ]
