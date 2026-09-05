@@ -4005,6 +4005,419 @@
         "tolerance",
         "check_rail"
       ]
+    },
+    "winch": {
+      "src": "https://en.wikipedia.org/wiki/Winch",
+      "note": "A drum, a gear reduction, and a brake — the brake being the part that matters.",
+      "needs": [
+        "drum",
+        "cable|rope",
+        "gearbox",
+        "pawl",
+        "ratchet",
+        "brake",
+        "handle|motor",
+        "frame",
+        "bearing"
+      ]
+    },
+    "escapement": {
+      "src": "https://en.wikipedia.org/wiki/Escapement",
+      "note": "Letting the gear train move one step at a time, and keeping the pendulum going while it does.",
+      "needs": [
+        "pallet",
+        "escape_wheel",
+        "pendulum|balance_wheel",
+        "impulse",
+        "lock",
+        "drop",
+        "jewel",
+        "arbor"
+      ]
+    },
+    "crank": {
+      "src": "https://en.wikipedia.org/wiki/Crank_(mechanism)",
+      "note": "Turning rotation into a push and back again, which is most of the industrial revolution.",
+      "needs": [
+        "shaft",
+        "throw",
+        "journal",
+        "connecting_rod",
+        "bearing",
+        "counterweight",
+        "flywheel"
+      ]
+    },
+    "cam": {
+      "src": "https://en.wikipedia.org/wiki/Cam",
+      "note": "A shaped disc that makes a follower move to a plan you drew.",
+      "needs": [
+        "shaft",
+        "lobe",
+        "follower",
+        "profile",
+        "spring",
+        "bearing",
+        "timing"
+      ]
+    },
+    "suspension": {
+      "src": "https://en.wikipedia.org/wiki/Car_suspension",
+      "note": "Keeping the wheels on the road while the body stays roughly still.",
+      "needs": [
+        "spring|leaf_spring",
+        "shock_absorber",
+        "control_arm",
+        "bush",
+        "anti_roll_bar",
+        "hub",
+        "damper",
+        "geometry"
+      ]
+    },
+    "chassis": {
+      "src": "https://en.wikipedia.org/wiki/Chassis",
+      "note": "The frame everything is bolted to, and what decides how the car behaves.",
+      "needs": [
+        "steel|aluminum",
+        "frame",
+        "crossmember",
+        "subframe",
+        "weld",
+        "mount",
+        "crumple_zone",
+        "torsion"
+      ]
+    },
+    "cabin": {
+      "src": "https://en.wikipedia.org/wiki/Cabin",
+      "note": "The part designed around the people rather than the machine.",
+      "needs": [
+        "frame",
+        "body_panel",
+        "seat",
+        "door",
+        "window",
+        "dashboard",
+        "upholstery",
+        "insulation",
+        "seatbelt",
+        "vent"
+      ]
+    },
+    "inductor": {
+      "src": "https://en.wikipedia.org/wiki/Inductor",
+      "note": "A coil that resists a change in current, because a changing field pushes back.",
+      "needs": [
+        "copper_wire",
+        "winding",
+        "core",
+        "ferrite|iron",
+        "insulation",
+        "bobbin",
+        "laminations"
+      ]
+    },
+    "armature": {
+      "src": "https://en.wikipedia.org/wiki/Armature_(electrical)",
+      "note": "The winding that the current does its work in.",
+      "needs": [
+        "copper_wire",
+        "winding",
+        "laminations",
+        "commutator",
+        "shaft",
+        "insulation",
+        "slot",
+        "bearing"
+      ]
+    },
+    "phosphor": {
+      "src": "https://en.wikipedia.org/wiki/Phosphor",
+      "note": "A material that takes in one colour of light and gives out another, slowly.",
+      "needs": [
+        "host_crystal",
+        "activator",
+        "rare_earth|zinc_sulfide",
+        "binder",
+        "coating",
+        "screen"
+      ]
+    },
+    "and_gate": {
+      "src": "https://en.wikipedia.org/wiki/AND_gate",
+      "note": "On only when both inputs are.",
+      "needs": [
+        "transistor",
+        "nand_gate",
+        "inverter",
+        "input",
+        "output",
+        "interconnect"
+      ]
+    },
+    "press": {
+      "src": "https://en.wikipedia.org/wiki/Machine_press",
+      "note": "Force applied slowly and exactly where it is wanted.",
+      "needs": [
+        "frame",
+        "ram",
+        "die",
+        "bed",
+        "screw|hydraulic|toggle",
+        "guide",
+        "stroke",
+        "tonnage"
+      ]
+    },
+    "platen": {
+      "src": "https://en.wikipedia.org/wiki/Platen",
+      "note": "The flat that presses the paper onto the type, evenly or not at all.",
+      "needs": [
+        "plate",
+        "frame",
+        "screw",
+        "packing",
+        "tympan",
+        "impression",
+        "adjustment"
+      ]
+    },
+    "feed_dog": {
+      "src": "https://en.wikipedia.org/wiki/Feed_dog",
+      "note": "The teeth under the needle plate that move the cloth one stitch at a time.",
+      "needs": [
+        "steel",
+        "teeth",
+        "cam",
+        "linkage",
+        "needle_plate",
+        "presser_foot",
+        "stitch_length"
+      ]
+    },
+    "piano_action": {
+      "src": "https://en.wikipedia.org/wiki/Action_(piano)",
+      "note": "Fifty-odd parts per key, so that a finger can throw a hammer and let it fall back.",
+      "needs": [
+        "key",
+        "hammer",
+        "damper",
+        "jack",
+        "whippen",
+        "backcheck",
+        "felt",
+        "spring",
+        "balance_rail",
+        "escapement"
+      ]
+    },
+    "screen": {
+      "src": "https://en.wikipedia.org/wiki/Display_device",
+      "note": "A grid of things that can be made to glow or not.",
+      "needs": [
+        "substrate",
+        "pixel",
+        "transistor",
+        "backlight|emissive",
+        "polarizer",
+        "colour_filter",
+        "driver",
+        "glass",
+        "controller"
+      ]
+    },
+    "sim_card": {
+      "src": "https://en.wikipedia.org/wiki/SIM_card",
+      "note": "A chip that proves which subscriber you are, in a card small enough to move.",
+      "needs": [
+        "substrate",
+        "microprocessor",
+        "memory",
+        "contact",
+        "encryption",
+        "identifier",
+        "plastic",
+        "gold"
+      ]
+    },
+    "foam": {
+      "src": "https://en.wikipedia.org/wiki/Foam",
+      "note": "Gas held in a solid, so a little material fills a lot of space.",
+      "needs": [
+        "polymer",
+        "blowing_agent",
+        "surfactant",
+        "cell",
+        "catalyst",
+        "mould",
+        "density"
+      ]
+    },
+    "nurdle": {
+      "src": "https://en.wikipedia.org/wiki/Nurdle",
+      "note": "The pellet everything plastic is shipped as, and the reason it is on every beach.",
+      "needs": [
+        "polymer",
+        "extruder",
+        "pellet",
+        "additive",
+        "pigment",
+        "bag",
+        "spillage"
+      ]
+    },
+    "ethylene_glycol": {
+      "src": "https://en.wikipedia.org/wiki/Ethylene_glycol",
+      "note": "An antifreeze that tastes sweet, which is the whole problem with it.",
+      "needs": [
+        "ethylene",
+        "ethylene_oxide",
+        "water",
+        "catalyst",
+        "distillation"
+      ]
+    },
+    "oxo_degradable_plastic": {
+      "src": "https://en.wikipedia.org/wiki/Oxo_degradable",
+      "note": "Plastic with a salt added so it breaks into pieces rather than breaking down.",
+      "needs": [
+        "polyethylene",
+        "manganese|cobalt",
+        "additive",
+        "oxidation",
+        "fragment",
+        "microplastic"
+      ]
+    },
+    "wood_plastic_composite": {
+      "src": "https://en.wikipedia.org/wiki/Wood-plastic_composite",
+      "note": "Sawdust in a polymer, so it looks like timber and does not rot.",
+      "needs": [
+        "wood_flour",
+        "polymer",
+        "coupling_agent",
+        "extruder",
+        "pigment",
+        "additive",
+        "pellet"
+      ]
+    },
+    "umbilical_cord_clamp": {
+      "src": "https://en.wikipedia.org/wiki/Umbilical_cord_clamp",
+      "note": "Two jaws and a ratchet, sterile, single use.",
+      "needs": [
+        "polymer",
+        "jaw",
+        "ratchet",
+        "hinge",
+        "moulding",
+        "sterilisation",
+        "packaging"
+      ]
+    },
+    "nave": {
+      "src": "https://en.wikipedia.org/wiki/Nave",
+      "note": "The long hall the congregation stands in, and the reason a basilica is shaped like that.",
+      "needs": [
+        "column",
+        "arcade",
+        "clerestory",
+        "aisle",
+        "vault|roof",
+        "pier",
+        "bay",
+        "floor"
+      ]
+    },
+    "megalith": {
+      "src": "https://en.wikipedia.org/wiki/Megalith",
+      "note": "Stones too big to lift, moved anyway.",
+      "needs": [
+        "stone",
+        "sledge|roller",
+        "lever",
+        "rope",
+        "ramp",
+        "packing_stone",
+        "socket",
+        "capstone"
+      ]
+    },
+    "church": {
+      "src": "https://en.wikipedia.org/wiki/Church_(building)",
+      "note": "A room laid out so a crowd can face one end and hear what happens there.",
+      "needs": [
+        "stone|brick|timber",
+        "nave",
+        "aisle",
+        "chancel",
+        "altar",
+        "tower",
+        "roof",
+        "window",
+        "door",
+        "font",
+        "bell"
+      ]
+    },
+    "stand": {
+      "src": "https://en.wikipedia.org/wiki/Stand",
+      "note": "Something that holds a thing at a height and does not fall over.",
+      "needs": [
+        "base",
+        "column",
+        "bracket",
+        "adjuster",
+        "foot",
+        "clamp",
+        "stability"
+      ]
+    },
+    "suv": {
+      "src": "https://en.wikipedia.org/wiki/Sport_utility_vehicle",
+      "note": "A tall body on a car platform, sold on the view.",
+      "needs": [
+        "chassis",
+        "engine",
+        "gearbox",
+        "suspension",
+        "body_panel",
+        "cabin",
+        "wheel",
+        "brake",
+        "differential"
+      ]
+    },
+    "limousine": {
+      "src": "https://en.wikipedia.org/wiki/Limousine",
+      "note": "A car cut in half and lengthened, with the join done properly.",
+      "needs": [
+        "chassis",
+        "engine",
+        "body_panel",
+        "partition",
+        "cabin",
+        "seat",
+        "suspension",
+        "brake",
+        "reinforcement"
+      ]
+    },
+    "trade_needs": {
+      "src": "https://en.wikipedia.org/wiki/Trade",
+      "note": "What has to exist before two strangers will exchange anything.",
+      "needs": [
+        "surplus",
+        "transport",
+        "route",
+        "currency",
+        "measure",
+        "contract",
+        "trust",
+        "market",
+        "ledger"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
