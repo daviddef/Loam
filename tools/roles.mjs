@@ -114,8 +114,13 @@ if (mode === '--derives') {
    * landforms whose gesture names the thing and something standing near it. */
   const byIdEl = new Map(elements.map(e => [e.id, e]));
   const NOT_DERIVABLE = new Set(R.$not_derivable || []);
+  /* `medicine` joins the list on the same grounds: a disease is CAUSED, not made
+   * of anything. human + taenia_solium -> cysticercosis is the whole and correct
+   * account of that disease, and asking it to name a material is the same
+   * category error as asking it of a country. */
   const CONVENTION = new Set(['animal', 'plant', 'microbe', 'wild', 'extinct', 'crop',
-                              'myth', 'belief', 'person', 'history', 'idea', 'society']);
+                              'myth', 'belief', 'person', 'history', 'idea', 'society',
+                              'medicine', 'hazard']);
   const judged = [], bad = [], skipped = [];
   for (const r of recipes) {
     if (r.verb || r.in.length < 2) continue;

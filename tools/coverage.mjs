@@ -105,7 +105,7 @@ if (has('homonyms.json')) {
 if (has('roles.json')) {
   const roles = read('roles.json').roles || {};
   add('roles', Object.keys(roles).length, elements.length,
-      'covers every place-recipe input; the rest is unwritten');
+      'what each noun is to a making — drives places.mjs and roles.mjs --derives');
 }
 /* The audit only ever looks at a recipe whose prose carries a number, because a
  * number is the part of a sentence a source can be checked against mechanically.
