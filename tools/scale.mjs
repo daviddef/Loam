@@ -248,6 +248,7 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+    'thermocouple', 'needle_plate', 'driver_pin', 'key_pin', 'escape_wheel', 'hairspring', 'sheave', 'presser_foot',   // mechanism parts
     'photoresist', 'emitter', 'collector', 'laminations',   // needs-sweep 5 Sep
     /* the scale homonym, 5 Sep. a reptile scale is millimetres; a lepidopteran scale is a tenth of one */
     'animal_scale',
@@ -506,6 +507,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'bridge_instrument', 'welt', 'upper', 'turnout_coat', 'breathing_apparatus', 'friction_disc', 'pressure_plate', 'diaphragm_spring', 'release_bearing',   // mechanism parts
     'yoke', 'nipple', 'bob', 'clapper', 'injector', 'expansion_valve', 'impeller', 'secondary_mirror', 'essential_oil', 'fixative', 'universal_joint', 'spline',   // components
     'mount', 'capital', 'linkage', 'webbing', 'fabric', 'vent', 'ratchet',   // components
     'paraffin_wax', 'soy_wax', 'polyester', 'nylon', 'viscose', 'sunscreen', 'shampoo', 'toothpaste', 'picture', 'cotton_plant', 'boll', 'laminate', 'rubbish', 'litter',   // reader-found gaps
@@ -1131,6 +1133,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'rtg', 'jib', 'outrigger',   // mechanism parts
     'saturn_v', 'command_module', 'lunar_module', 'docking_port', 'airlock', 'life_support', 'robotic_arm',   // spaceflight + engine parts
     'extruder', 'counterweight', 'capstone', 'harness', 'stair',   // components
     'windmill', 'mine', 'smithy', 'bakery', 'tannery', 'bank', 'garden', 'kitchen', 'watermill',   // orphan-list subjects

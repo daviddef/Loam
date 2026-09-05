@@ -66,7 +66,6 @@
         "sink",
         "drain",
         "soil_pipe",
-        "cable",
         "wire",
         "socket|power_socket",
         "switch",
@@ -81,7 +80,6 @@
     "bicycle": {
       "src": "https://en.wikipedia.org/wiki/Bicycle",
       "needs": [
-        "frame",
         "steel",
         "aluminum",
         "wheel",
@@ -178,7 +176,6 @@
         "silicon",
         "copper",
         "monitor",
-        "keyboard",
         "computer_mouse",
         "operating_system",
         "compiler",
@@ -206,7 +203,6 @@
         "accelerometer",
         "circuit_board",
         "charger",
-        "cable",
         "operating_system",
         "sim_card"
       ]
@@ -272,11 +268,8 @@
         "lace",
         "eyelet",
         "tongue",
-        "thread",
-        "glue",
         "rubber",
-        "nail",
-        "last"
+        "nail"
       ]
     },
     "chair": {
@@ -286,8 +279,6 @@
         "leg",
         "seat",
         "backrest",
-        "joint|mortise_and_tenon",
-        "glue",
         "screw",
         "varnish",
         "upholstery",
@@ -481,7 +472,6 @@
         "press",
         "ink",
         "paper",
-        "frame",
         "platen",
         "lead",
         "antimony",
@@ -571,7 +561,6 @@
         "pier",
         "abutment",
         "deck",
-        "cable",
         "suspension_bridge|suspension",
         "truss",
         "steel",
@@ -656,7 +645,6 @@
         "capacitor",
         "inductor|coil",
         "resistor",
-        "valve|transistor",
         "speaker",
         "wave",
         "frequency",
@@ -688,7 +676,6 @@
         "refrigerant|ammonia",
         "expansion_valve|valve",
         "insulation",
-        "thermostat",
         "motor|electric_motor",
         "pipe",
         "door",
@@ -698,12 +685,10 @@
     "washing_machine": {
       "src": "https://en.wikipedia.org/wiki/Washing_machine",
       "needs": [
-        "drum",
         "motor|electric_motor",
         "pump",
         "water",
         "soap|detergent",
-        "valve",
         "heater|heating_element",
         "timer|clock",
         "belt",
@@ -719,7 +704,6 @@
         "key",
         "action|mechanism|piano_action",
         "soundboard",
-        "frame",
         "cast_iron",
         "damper",
         "pedal",
@@ -754,7 +738,6 @@
         "cello|violin",
         "flute",
         "trumpet",
-        "drum",
         "conductor",
         "score|music",
         "harmony",
@@ -770,7 +753,6 @@
         "binder|oil",
         "canvas",
         "cloth",
-        "frame",
         "brush",
         "easel",
         "varnish",
@@ -870,7 +852,6 @@
         "coil",
         "armature|rotor",
         "stator",
-        "commutator|slip_ring",
         "copper",
         "wire",
         "insulation",
@@ -939,15 +920,13 @@
         "sounder|bell",
         "insulator",
         "pole|mast",
-        "morse_code|code",
-        "relay"
+        "morse_code|code"
       ]
     },
     "loom": {
       "src": "https://en.wikipedia.org/wiki/Loom",
       "note": "Every loom does the same four things in the same order, and everything else is speed.",
       "needs": [
-        "frame",
         "warp",
         "weft",
         "heddle",
@@ -956,7 +935,6 @@
         "reed|comb",
         "beam|roller",
         "treadle|pedal",
-        "thread",
         "cloth"
       ]
     },
@@ -965,7 +943,6 @@
       "note": "The lockstitch needs two threads that never pass through each other, which is why the needle has its eye at the point.",
       "needs": [
         "needle",
-        "thread",
         "bobbin",
         "shuttle|hook",
         "presser_foot|foot",
@@ -984,7 +961,6 @@
         "coulter|blade",
         "share|ploughshare",
         "mouldboard",
-        "frame",
         "beam",
         "handle",
         "iron",
@@ -998,7 +974,6 @@
       "needs": [
         "cylinder",
         "piston",
-        "valve",
         "plunger|piston",
         "seal_gasket|leather",
         "handle|lever",
@@ -1064,7 +1039,6 @@
         "pinion|gear",
         "hand|clock_hand",
         "dial|face",
-        "frame|plate",
         "bearing|jewel",
         "winding_key|key",
         "spring",
@@ -1106,8 +1080,6 @@
         "arc|scale",
         "vernier|scale",
         "telescope|eyepiece",
-        "filter|shade",
-        "frame",
         "horizon"
       ]
     },
@@ -1149,8 +1121,6 @@
         "press|printing_press",
         "folding|fold",
         "gathering|signature",
-        "thread",
-        "glue",
         "spine",
         "board|cardboard",
         "leather|cloth",
@@ -1160,8 +1130,7 @@
         "printing_press",
         "type|movable_type",
         "leather",
-        "page",
-        "binding"
+        "page"
       ]
     },
     "paper": {
@@ -1281,7 +1250,6 @@
         "water",
         "rebar|reinforcing_steel",
         "formwork",
-        "admixture",
         "curing"
       ]
     },
@@ -1321,7 +1289,6 @@
         "fibre",
         "cotton|wool|flax|silk",
         "yarn",
-        "spindle",
         "warp",
         "weft",
         "loom",
@@ -1372,8 +1339,7 @@
         "mercury",
         "silvering",
         "copper",
-        "lacquer",
-        "frame"
+        "lacquer"
       ]
     },
     "wheel": {
@@ -1457,7 +1423,6 @@
       "note": "A hole made weathertight without being made opaque.",
       "needs": [
         "glass",
-        "frame",
         "sash",
         "putty",
         "lead_came",
@@ -1498,10 +1463,8 @@
         "yew|wood",
         "sinew",
         "horn",
-        "glue",
         "bowstring|string",
         "nock",
-        "tiller",
         "arrow",
         "fletching"
       ]
@@ -1544,7 +1507,6 @@
         "iron",
         "head",
         "croze",
-        "chime",
         "bung",
         "cooper"
       ]
@@ -1573,7 +1535,6 @@
         "stearin",
         "dye",
         "fragrance",
-        "wax",
         "beeswax|paraffin_wax",
         "mould",
         "fragrance|scent"
@@ -1586,8 +1547,6 @@
         "shaft",
         "socket|tang",
         "ferrule",
-        "binding|sinew",
-        "glue|pitch",
         "butt_spike",
         "flint|bronze|iron"
       ]
@@ -1615,12 +1574,10 @@
       "needs": [
         "clay|lead|copper|iron",
         "bore",
-        "joint",
         "socket|spigot",
         "gasket|seal",
         "solder",
         "flange",
-        "valve",
         "bracket"
       ]
     },
@@ -1630,7 +1587,6 @@
       "needs": [
         "steel|bone|bronze",
         "eye",
-        "shank",
         "wire"
       ]
     },
@@ -1660,8 +1616,7 @@
         "eye",
         "haft|handle",
         "hickory|ash",
-        "wedge",
-        "peen"
+        "wedge"
       ]
     },
     "magnet": {
@@ -1688,7 +1643,6 @@
         "copper_wire",
         "winding",
         "magnet|field_coil",
-        "commutator|slip_ring",
         "brush",
         "bearing",
         "shaft",
@@ -1701,7 +1655,6 @@
       "note": "Links, and the weld that makes a link a link.",
       "needs": [
         "iron|steel",
-        "link",
         "weld",
         "stud",
         "bar_stock",
@@ -1724,7 +1677,6 @@
         "carriage",
         "wheel",
         "gunpowder",
-        "ball|shot",
         "rammer",
         "wadding"
       ]
@@ -1794,7 +1746,6 @@
       "note": "A pin with a head, given a second head after it is through.",
       "needs": [
         "iron|steel",
-        "shank",
         "head",
         "rivet_set",
         "bucking_bar"
@@ -1810,7 +1761,6 @@
         "joist",
         "rafter",
         "brace",
-        "joint",
         "nail|bolt",
         "gusset",
         "sill"
@@ -1824,7 +1774,6 @@
         "brick|stone|concrete",
         "mortar",
         "oculus",
-        "drum",
         "pendentive|squinch",
         "tension_ring|chain",
         "lantern",
@@ -1932,10 +1881,7 @@
         "arrowhead|point",
         "nock",
         "fletching",
-        "feather",
-        "glue",
-        "binding",
-        "cresting"
+        "feather"
       ]
     },
     "harbour": {
@@ -2118,7 +2064,6 @@
         "silkworm",
         "mulberry_tree",
         "cocoon",
-        "sericin",
         "filament",
         "warp",
         "weft",
@@ -2178,7 +2123,6 @@
         "gemstone",
         "setting|bezel",
         "enamel",
-        "cap_of_maintenance",
         "chasing",
         "soldering"
       ]
@@ -2194,8 +2138,7 @@
         "setting|bezel",
         "gold|silver|bronze",
         "drill",
-        "solder",
-        "thread"
+        "solder"
       ]
     },
     "brake": {
@@ -2235,8 +2178,7 @@
         "http",
         "html",
         "cache",
-        "cookie",
-        "url"
+        "cookie"
       ]
     },
     "compiler": {
@@ -2261,8 +2203,7 @@
       "note": "Turning a flat expanse of blocks into names and folders.",
       "needs": [
         "block",
-        "journal",
-        "link"
+        "journal"
       ]
     },
     "reservoir": {
@@ -2288,7 +2229,6 @@
         "brick",
         "manhole",
         "interceptor",
-        "trap",
         "gully",
         "pumping_station",
         "outfall",
@@ -2362,7 +2302,6 @@
         "beam",
         "column",
         "brace",
-        "joint",
         "load",
         "span",
         "fastener"
@@ -2871,7 +2810,6 @@
         "temperature",
         "flue",
         "scrubber",
-        "filter",
         "ash",
         "heat_exchanger"
       ]
@@ -2944,8 +2882,7 @@
         "fibre",
         "filler",
         "binder",
-        "rivet|adhesive",
-        "wear_indicator"
+        "rivet|adhesive"
       ]
     },
     "multiplexer": {
@@ -2988,9 +2925,7 @@
         "capacitor",
         "coil",
         "diode",
-        "amplifier",
         "transistor",
-        "filter",
         "speaker",
         "power_supply"
       ]
@@ -3112,7 +3047,6 @@
         "brick",
         "roof_tile",
         "marble",
-        "bracket_set",
         "column",
         "courtyard",
         "moat",
@@ -3145,7 +3079,6 @@
         "quartz",
         "corbel_vault",
         "kerbstone",
-        "passage",
         "roof_box",
         "earthwork",
         "turf"
@@ -3181,7 +3114,6 @@
       "note": "Disease moving from one person to the next, and what has to be true for it to.",
       "needs": [
         "pathogen",
-        "droplet",
         "vector",
         "incubation_period",
         "basic_reproduction_number",
@@ -3257,7 +3189,6 @@
         "stone",
         "course",
         "mortar",
-        "cantilever",
         "capstone",
         "formwork",
         "batter"
@@ -3305,7 +3236,6 @@
       "needs": [
         "cylinder",
         "piston",
-        "valve",
         "oil",
         "gas",
         "seal",
@@ -3335,7 +3265,6 @@
         "variable_capacitor",
         "antenna",
         "resonance",
-        "filter",
         "dial"
       ]
     },
@@ -3343,13 +3272,11 @@
       "src": "https://en.wikipedia.org/wiki/Upholstery",
       "note": "Padding held under tension over a frame, so it keeps its shape when sat on.",
       "needs": [
-        "frame",
         "webbing",
         "spring",
         "padding",
         "foam|horsehair",
         "cloth|leather",
-        "tack",
         "seam"
       ]
     },
@@ -3396,7 +3323,6 @@
       "needs": [
         "panel",
         "instrument",
-        "wiring",
         "switch",
         "vent",
         "airbag",
@@ -3413,8 +3339,6 @@
         "lens",
         "microcontroller",
         "switch",
-        "encoder",
-        "cable|wireless",
         "spring"
       ]
     },
@@ -3455,7 +3379,6 @@
       "needs": [
         "glass|plastic",
         "prism|bead",
-        "corner_cube",
         "mould",
         "housing"
       ]
@@ -3513,7 +3436,6 @@
         "catalyst",
         "polymer",
         "pellet",
-        "preform",
         "mould"
       ]
     },
@@ -3556,7 +3478,6 @@
       "src": "https://en.wikipedia.org/wiki/Seat",
       "note": "Somewhere to put a person, at a height and an angle that has been thought about.",
       "needs": [
-        "frame",
         "base",
         "padding",
         "upholstery",
@@ -3589,7 +3510,6 @@
       "src": "https://en.wikipedia.org/wiki/Machine",
       "note": "Anything that changes a force or a motion into a different one.",
       "needs": [
-        "frame",
         "bearing",
         "shaft",
         "gear|lever|pulley",
@@ -3601,8 +3521,6 @@
       "src": "https://en.wikipedia.org/wiki/Mechanism_(engineering)",
       "note": "The linkage — the part that decides what moves when something else does.",
       "needs": [
-        "link",
-        "joint",
         "pivot",
         "cam|gear|lever",
         "spring"
@@ -3615,22 +3533,18 @@
         "rail",
         "sleeper",
         "fastener",
-        "ballast",
-        "check_rail"
+        "ballast"
       ]
     },
     "winch": {
       "src": "https://en.wikipedia.org/wiki/Winch",
       "note": "A drum, a gear reduction, and a brake — the brake being the part that matters.",
       "needs": [
-        "drum",
-        "cable|rope",
         "gearbox",
         "pawl",
         "ratchet",
         "brake",
         "handle|motor",
-        "frame",
         "bearing"
       ]
     },
@@ -3650,7 +3564,6 @@
       "note": "Turning rotation into a push and back again, which is most of the industrial revolution.",
       "needs": [
         "shaft",
-        "throw",
         "journal",
         "connecting_rod",
         "bearing",
@@ -3687,7 +3600,6 @@
       "note": "The frame everything is bolted to, and what decides how the car behaves.",
       "needs": [
         "steel|aluminum",
-        "frame",
         "crossmember",
         "subframe",
         "weld",
@@ -3700,7 +3612,6 @@
       "src": "https://en.wikipedia.org/wiki/Cabin",
       "note": "The part designed around the people rather than the machine.",
       "needs": [
-        "frame",
         "body_panel",
         "seat",
         "door",
@@ -3731,7 +3642,6 @@
         "copper_wire",
         "winding",
         "laminations",
-        "commutator",
         "shaft",
         "insulation",
         "bearing"
@@ -3762,7 +3672,6 @@
       "src": "https://en.wikipedia.org/wiki/Machine_press",
       "note": "Force applied slowly and exactly where it is wanted.",
       "needs": [
-        "frame",
         "ram",
         "die",
         "bed",
@@ -3775,10 +3684,8 @@
       "note": "The flat that presses the paper onto the type, evenly or not at all.",
       "needs": [
         "plate",
-        "frame",
         "screw",
-        "tympan",
-        "impression"
+        "tympan"
       ]
     },
     "feed_dog": {
@@ -3786,9 +3693,7 @@
       "note": "The teeth under the needle plate that move the cloth one stitch at a time.",
       "needs": [
         "steel",
-        "teeth",
         "cam",
-        "linkage",
         "needle_plate",
         "presser_foot"
       ]
@@ -3886,7 +3791,6 @@
       "needs": [
         "wood_flour",
         "polymer",
-        "coupling_agent",
         "extruder",
         "pigment",
         "additive",
@@ -3946,8 +3850,7 @@
         "base",
         "column",
         "bracket",
-        "foot",
-        "clamp"
+        "foot"
       ]
     },
     "suv": {
@@ -3976,8 +3879,7 @@
         "cabin",
         "seat",
         "suspension",
-        "brake",
-        "reinforcement"
+        "brake"
       ]
     },
     "bread": {
@@ -4010,7 +3912,6 @@
         "soundhole",
         "neck",
         "soundboard|body",
-        "glue",
         "varnish|lacquer"
       ]
     },
@@ -4038,7 +3939,6 @@
         "marble",
         "theatre",
         "aqueduct",
-        "nymphaeum",
         "column",
         "arch",
         "road",
@@ -4157,7 +4057,6 @@
         "sender",
         "pickup",
         "seal",
-        "strap",
         "drain"
       ]
     },
@@ -4165,10 +4064,8 @@
       "src": "https://en.wikipedia.org/wiki/Bicycle_pedal",
       "note": "Where a foot meets a machine, and where the bearings live a hard life.",
       "needs": [
-        "spindle",
         "bearing",
         "axle",
-        "thread",
         "seal"
       ]
     },
@@ -4180,7 +4077,6 @@
         "mast",
         "counterweight",
         "winch",
-        "cable",
         "hook",
         "slew_ring",
         "outrigger",
@@ -4206,7 +4102,6 @@
         "leg",
         "hinge",
         "head",
-        "clamp",
         "spike|foot",
         "column",
         "lock"
@@ -4263,12 +4158,9 @@
       "needs": [
         "plank|steel",
         "beam",
-        "carling",
         "caulk",
         "camber",
-        "hatch",
-        "fastener",
-        "scupper"
+        "fastener"
       ]
     },
     "carriage": {
@@ -4289,7 +4181,6 @@
       "src": "https://en.wikipedia.org/wiki/Chair",
       "note": "The part that decides whether a chair can be sat in for an hour.",
       "needs": [
-        "frame",
         "padding",
         "upholstery",
         "fastener"
@@ -4312,7 +4203,6 @@
       "needs": [
         "flyweight",
         "spring",
-        "linkage",
         "shaft",
         "feedback"
       ]
@@ -4326,7 +4216,6 @@
         "winding",
         "bearing",
         "shaft",
-        "commutator|slip_ring",
         "housing",
         "magnet|field_coil"
       ]
@@ -4335,7 +4224,6 @@
       "src": "https://en.wikipedia.org/wiki/Quenching",
       "note": "A tank of the right liquid at the right temperature, beside the fire.",
       "needs": [
-        "trough",
         "water|oil|brine",
         "temperature",
         "tongs",
@@ -4348,7 +4236,6 @@
       "needs": [
         "rubber",
         "sulfur",
-        "accelerator",
         "heat",
         "mould",
         "pressure",
@@ -4377,15 +4264,13 @@
       "needs": [
         "plank",
         "stile",
-        "rail",
-        "tenon"
+        "rail"
       ]
     },
     "plastic": {
       "src": "https://en.wikipedia.org/wiki/Plastic",
       "note": "A long molecule that can be melted, moulded, and will not go away.",
       "needs": [
-        "monomer",
         "polymer",
         "catalyst",
         "initiator",
@@ -4444,8 +4329,7 @@
         "marble",
         "course",
         "seat",
-        "gate",
-        "inscription"
+        "gate"
       ]
     },
     "vomitorium": {
@@ -4575,7 +4459,6 @@
         "pump",
         "radiator",
         "hose",
-        "thermostat",
         "pressure_cap"
       ]
     },
@@ -4586,10 +4469,7 @@
         "stone|timber|steel",
         "base",
         "shaft",
-        "capital",
-        "drum",
-        "dowel",
-        "plinth"
+        "capital"
       ]
     },
     "anvil": {
@@ -4618,10 +4498,7 @@
       "note": "A threaded pin that clamps by being stretched.",
       "needs": [
         "steel",
-        "thread",
         "head",
-        "shank",
-        "washer",
         "nut_fastener"
       ]
     },
@@ -4632,8 +4509,7 @@
         "metal|polymer",
         "wall",
         "bore",
-        "weld|seamless",
-        "fitting"
+        "weld|seamless"
       ]
     },
     "tine": {
@@ -4649,7 +4525,6 @@
       "note": "A vertical member under a horizontal one, and the joint is the whole problem.",
       "needs": [
         "timber|metal",
-        "joint",
         "mortise_and_tenon|weld",
         "foot",
         "rail"
@@ -4763,8 +4638,7 @@
         "baffle",
         "coolant",
         "gasket",
-        "flange",
-        "counterflow"
+        "flange"
       ]
     },
     "airframe": {
@@ -4777,8 +4651,7 @@
         "stringer",
         "bulkhead",
         "longeron",
-        "rivet",
-        "frame"
+        "rivet"
       ]
     },
     "housing": {
@@ -4786,7 +4659,6 @@
       "note": "The case that keeps the bearings aligned and everything else out.",
       "needs": [
         "casting|sheet_metal",
-        "bearing_seat",
         "seal",
         "gasket",
         "fastener",
@@ -4855,7 +4727,6 @@
         "universal_joint",
         "spline",
         "yoke",
-        "balance_weight",
         "bearing",
         "flange",
         "seal"
@@ -4903,7 +4774,6 @@
         "tube",
         "stem",
         "grip",
-        "clamp",
         "brake_lever",
         "bar_tape"
       ]
@@ -4927,7 +4797,6 @@
         "steel",
         "socket|tang",
         "haft",
-        "angle",
         "edge"
       ]
     },
@@ -4940,8 +4809,7 @@
         "lobe",
         "journal",
         "bearing",
-        "timing_belt|chain",
-        "follower"
+        "timing_belt|chain"
       ]
     },
     "cavity_wall_tie": {
@@ -4981,9 +4849,7 @@
       "needs": [
         "bronze",
         "mould",
-        "cope",
         "clapper",
-        "headstock",
         "crown",
         "yoke"
       ]
@@ -4994,9 +4860,7 @@
       "needs": [
         "transistor",
         "resistor",
-        "input",
         "output",
-        "supply",
         "interconnect",
         "threshold"
       ]
@@ -5033,17 +4897,14 @@
         "turbopump",
         "injector",
         "combustion_chamber",
-        "nozzle",
-        "regenerative_cooling",
-        "valve"
+        "nozzle"
       ]
     },
     "rod": {
       "src": "https://en.wikipedia.org/wiki/Rod",
       "note": "A long solid section, loaded along its length or across it.",
       "needs": [
-        "steel|timber",
-        "thread|plain"
+        "steel|timber"
       ]
     },
     "woad": {
@@ -5053,7 +4914,6 @@
         "isatis",
         "leaf",
         "fermentation",
-        "urine|alkali",
         "vat",
         "reduction",
         "oxidation",
@@ -5069,8 +4929,7 @@
         "rennet",
         "press",
         "curing",
-        "dye",
-        "polishing"
+        "dye"
       ]
     },
     "ldpe": {
@@ -5081,7 +4940,6 @@
         "initiator",
         "pressure",
         "polymer",
-        "branching",
         "pellet",
         "film"
       ]
@@ -5093,10 +4951,8 @@
         "ethylene",
         "catalyst",
         "polymer",
-        "sintering",
         "pellet",
-        "fibre",
-        "abrasion_resistance"
+        "fibre"
       ]
     },
     "epdm": {
@@ -5105,7 +4961,6 @@
       "needs": [
         "ethylene",
         "propylene",
-        "diene",
         "catalyst",
         "polymer",
         "carbon_black",
@@ -5119,7 +4974,6 @@
         "screen",
         "panel",
         "backlight",
-        "cable",
         "housing",
         "stand",
         "power_supply"
@@ -5133,9 +4987,7 @@
         "journal",
         "keyway",
         "spline",
-        "fillet",
         "bearing",
-        "coupling",
         "balance"
       ]
     },
@@ -5146,7 +4998,6 @@
         "spring",
         "driver_pin",
         "key_pin",
-        "plug",
         "housing"
       ]
     },
@@ -5156,7 +5007,6 @@
       "needs": [
         "timber",
         "glass",
-        "glazing",
         "putty",
         "cord",
         "pulley",
@@ -5173,8 +5023,6 @@
         "loom",
         "blade",
         "shaft",
-        "collar",
-        "button",
         "grip",
         "rowlock",
         "spruce_tree"
@@ -5185,8 +5033,6 @@
       "note": "A U of metal with a removable pin, so two things can be joined and unjoined.",
       "needs": [
         "bow",
-        "thread",
-        "cotter",
         "galvanization"
       ]
     },
@@ -5199,7 +5045,6 @@
         "evaporator",
         "expansion_valve",
         "coolant",
-        "thermostat",
         "insulation",
         "door_seal",
         "fan"
@@ -5250,7 +5095,6 @@
         "spoke",
         "balance",
         "shaft",
-        "inertia",
         "keyway"
       ]
     },
@@ -5258,10 +5102,7 @@
       "src": "https://en.wikipedia.org/wiki/Spirit_level",
       "note": "A bubble that is not there, and it goes to the top.",
       "needs": [
-        "vial",
         "bubble",
-        "graduation",
-        "frame",
         "aluminum|timber"
       ]
     },
@@ -5349,12 +5190,10 @@
       "needs": [
         "steel",
         "comb",
-        "brim",
         "bowl",
         "rivet",
         "liner",
-        "chinstrap",
-        "raising"
+        "chinstrap"
       ]
     },
     "armet": {
@@ -5365,7 +5204,6 @@
         "skull",
         "cheek_piece",
         "visor",
-        "rondel",
         "hinge",
         "rivet",
         "liner"
@@ -5377,7 +5215,6 @@
       "needs": [
         "steel",
         "comb",
-        "peak",
         "cheek_piece",
         "hinge",
         "rivet",
@@ -5391,9 +5228,7 @@
         "steel",
         "socket",
         "blade",
-        "zigzag_slot",
-        "lug",
-        "shoulder"
+        "zigzag_slot"
       ]
     },
     "perfume": {
@@ -5458,11 +5293,8 @@
       "needs": [
         "seed",
         "field",
-        "panicle",
-        "stalk",
         "harvest",
         "drying",
-        "binding",
         "broom"
       ]
     },
@@ -5487,8 +5319,6 @@
         "arm",
         "pivot",
         "spring",
-        "sleeve",
-        "linkage",
         "shaft"
       ]
     },
@@ -5499,7 +5329,6 @@
         "blade",
         "file",
         "tooth",
-        "gullet",
         "pitch"
       ]
     },
@@ -5520,8 +5349,7 @@
         "warp",
         "weft",
         "loom",
-        "selvage",
-        "stitching"
+        "selvage"
       ]
     },
     "fastener": {
@@ -5530,11 +5358,8 @@
       "needs": [
         "bolt",
         "nut_fastener",
-        "washer",
         "screw",
-        "rivet",
-        "thread",
-        "clamp"
+        "rivet"
       ]
     },
     "coating": {
@@ -5547,8 +5372,7 @@
         "primer",
         "substrate",
         "spray|brush",
-        "curing",
-        "adhesion"
+        "curing"
       ]
     },
     "capstone": {
@@ -5566,10 +5390,7 @@
       "note": "Mass on the other side, so the machine lifts the load and not itself.",
       "needs": [
         "concrete|iron",
-        "frame",
-        "cable",
         "pulley",
-        "guide",
         "balance"
       ]
     },
@@ -5582,20 +5403,337 @@
         "soil",
         "revetment",
         "spillway",
-        "drainage",
-        "toe_drain"
+        "drainage"
+      ]
+    },
+    "reflecting_telescope": {
+      "src": "https://en.wikipedia.org/wiki/Reflecting_telescope",
+      "note": "A mirror instead of a lens, so colour does not smear and size is not limited by glass.",
+      "needs": [
+        "primary_mirror",
+        "secondary_mirror",
+        "truss",
+        "baffle",
+        "eyepiece",
+        "mount",
+        "focuser",
+        "coating",
+        "spider"
+      ]
+    },
+    "modem": {
+      "src": "https://en.wikipedia.org/wiki/Modem",
+      "note": "Turning bits into a sound a phone line will carry, and back.",
+      "needs": [
+        "transistor",
+        "microprocessor"
+      ]
+    },
+    "world_wide_web": {
+      "src": "https://en.wikipedia.org/wiki/World_Wide_Web",
+      "note": "Three inventions at once: an address, a protocol and a markup.",
+      "needs": [
+        "http",
+        "html"
+      ]
+    },
+    "bombe": {
+      "src": "https://en.wikipedia.org/wiki/Bombe",
+      "note": "A machine that ran Enigma settings until one did not contradict itself.",
+      "needs": [
+        "rotor",
+        "motor"
+      ]
+    },
+    "accordion": {
+      "src": "https://en.wikipedia.org/wiki/Accordion",
+      "note": "Bellows moving air past reeds, and both hands doing different things.",
+      "needs": [
+        "bellows",
+        "free_reed",
+        "reed_plate"
+      ]
+    },
+    "bassoon": {
+      "src": "https://en.wikipedia.org/wiki/Bassoon",
+      "note": "Eight feet of conical bore folded in half so a person can hold it.",
+      "needs": [
+        "maple",
+        "bore",
+        "double_reed",
+        "bocal",
+        "key",
+        "boot_joint",
+        "wing_joint"
+      ]
+    },
+    "mbira": {
+      "src": "https://en.wikipedia.org/wiki/Mbira",
+      "note": "Tuned metal tongues plucked with the thumbs, over a resonator that is meant to buzz.",
+      "needs": [
+        "soundboard",
+        "tine",
+        "bridge",
+        "metal",
+        "gourd|calabash",
+        "hardwood"
+      ]
+    },
+    "sedan": {
+      "src": "https://en.wikipedia.org/wiki/Sedan_(automobile)",
+      "note": "Three boxes — engine, people, luggage — and the middle one is the point.",
+      "needs": [
+        "chassis",
+        "engine",
+        "gearbox",
+        "suspension",
+        "body_panel",
+        "cabin",
+        "boot",
+        "wheel",
+        "brake",
+        "steering"
+      ]
+    },
+    "boot": {
+      "src": "https://en.wikipedia.org/wiki/Boot_(footwear)",
+      "note": "A shoe that keeps going past the ankle, which is a structural decision.",
+      "needs": [
+        "leather",
+        "sole",
+        "upper",
+        "insole",
+        "eyelet",
+        "lace",
+        "heel"
+      ]
+    },
+    "sallet": {
+      "src": "https://en.wikipedia.org/wiki/Sallet",
+      "note": "A helmet with a long tail, worn with a bevor because it leaves the chin open.",
+      "needs": [
+        "steel",
+        "skull",
+        "visor",
+        "bevor",
+        "liner",
+        "chinstrap"
+      ]
+    },
+    "plug_bayonet": {
+      "src": "https://en.wikipedia.org/wiki/Bayonet",
+      "note": "A blade with a tapered handle that jams in the muzzle, which stops the gun firing.",
+      "needs": [
+        "steel",
+        "blade",
+        "guard",
+        "muzzle",
+        "hilt"
+      ]
+    },
+    "broom": {
+      "src": "https://en.wikipedia.org/wiki/Broom",
+      "note": "Stiff fibre bound to a handle, and the binding is what wears out.",
+      "needs": [
+        "sorghum_broomcorn|fibre",
+        "handle",
+        "wire",
+        "ferrule"
+      ]
+    },
+    "spine": {
+      "src": "https://en.wikipedia.org/wiki/Bookbinding",
+      "note": "The part that has to bend thousands of times and hold everything else.",
+      "needs": []
+    },
+    "polyisoprene": {
+      "src": "https://en.wikipedia.org/wiki/Polyisoprene",
+      "note": "The molecule natural rubber is, made in a reactor instead of a tree.",
+      "needs": [
+        "isoprene",
+        "catalyst",
+        "polymer",
+        "vulcanization",
+        "sulfur"
+      ]
+    },
+    "astronaut": {
+      "src": "https://en.wikipedia.org/wiki/Astronaut",
+      "note": "A person trained for an environment that will kill them in seconds.",
+      "needs": [
+        "spacesuit",
+        "life_support",
+        "oxygen",
+        "food"
+      ]
+    },
+    "firefighter": {
+      "src": "https://en.wikipedia.org/wiki/Firefighter",
+      "note": "Someone who goes toward it, carrying their own air.",
+      "needs": [
+        "helmet",
+        "turnout_coat",
+        "breathing_apparatus",
+        "oxygen",
+        "hose",
+        "axe",
+        "boot",
+        "gloves",
+        "thermal_camera"
+      ]
+    },
+    "rootstock": {
+      "src": "https://en.wikipedia.org/wiki/Rootstock",
+      "note": "The bottom half of a grafted plant, chosen for the soil rather than the fruit.",
+      "needs": [
+        "root",
+        "graft",
+        "scion",
+        "cambium"
+      ]
+    },
+    "fork_garden": {
+      "src": "https://en.wikipedia.org/wiki/Garden_fork",
+      "note": "Tines instead of a blade, because clay will not let a spade out again.",
+      "needs": [
+        "tine",
+        "steel",
+        "socket",
+        "haft"
+      ]
+    },
+    "nabataean": {
+      "src": "https://en.wikipedia.org/wiki/Nabataeans",
+      "note": "A people who got rich on incense and survived on water nobody else could find.",
+      "needs": [
+        "cistern",
+        "aqueduct",
+        "dam",
+        "channel",
+        "sandstone",
+        "tomb",
+        "caravanserai",
+        "incense",
+        "camel"
+      ]
+    },
+    "plumbing": {
+      "src": "https://en.wikipedia.org/wiki/Plumbing",
+      "note": "Water in under pressure, out under gravity, and the trap between them.",
+      "needs": [
+        "pipe",
+        "gasket",
+        "solder",
+        "vent",
+        "cistern"
+      ]
+    },
+    "universal_joint": {
+      "src": "https://en.wikipedia.org/wiki/Universal_joint",
+      "note": "Torque round a corner, at the cost of the speed varying twice a turn.",
+      "needs": [
+        "yoke",
+        "cross",
+        "bearing",
+        "seal"
+      ]
+    },
+    "spline": {
+      "src": "https://en.wikipedia.org/wiki/Spline_(mechanical)",
+      "note": "Teeth along a shaft so it can slide and still turn what it is inside.",
+      "needs": [
+        "shaft_rotating",
+        "tooth",
+        "broaching",
+        "seal"
+      ]
+    },
+    "baffle": {
+      "src": "https://en.wikipedia.org/wiki/Baffle_(heat_transfer)",
+      "note": "A plate in the way, so the flow cannot go straight.",
+      "needs": [
+        "plate",
+        "tube",
+        "shell"
+      ]
+    },
+    "fixative": {
+      "src": "https://en.wikipedia.org/wiki/Fixative_(perfumery)",
+      "note": "Something that evaporates slowly, so the fast things do not all leave at once.",
+      "needs": [
+        "resin",
+        "essential_oil"
+      ]
+    },
+    "bob": {
+      "src": "https://en.wikipedia.org/wiki/Pendulum_clock",
+      "note": "The weight at the bottom, and moving it is how the clock is set.",
+      "needs": [
+        "lead|brass",
+        "rod",
+        "suspension_spring",
+        "pivot",
+        "temperature_compensation"
+      ]
+    },
+    "clapper": {
+      "src": "https://en.wikipedia.org/wiki/Bell",
+      "note": "The bit that hits, and it has to strike and then get out of the way.",
+      "needs": [
+        "iron"
+      ]
+    },
+    "choke": {
+      "src": "https://en.wikipedia.org/wiki/Choke_valve",
+      "note": "Deliberately starving the engine of air, because a cold one needs more fuel.",
+      "needs": [
+        "plate",
+        "spring",
+        "venturi"
+      ]
+    },
+    "air_filter": {
+      "src": "https://en.wikipedia.org/wiki/Air_filter",
+      "note": "Catching what would otherwise go through at the speed of the intake.",
+      "needs": [
+        "paper|foam|cotton",
+        "housing",
+        "seal"
+      ]
+    },
+    "venturi": {
+      "src": "https://en.wikipedia.org/wiki/Venturi_effect",
+      "note": "A narrowing where the flow speeds up and the pressure falls.",
+      "needs": [
+        "inlet_cone",
+        "outlet_cone",
+        "bore",
+        "pipe"
+      ]
+    },
+    "robotic_arm": {
+      "src": "https://en.wikipedia.org/wiki/Robotic_arm",
+      "note": "Joints in series, and the error at the end is every joint's error added together.",
+      "needs": [
+        "electric_motor",
+        "gearbox"
       ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
   "$not_assemblies": [
+    "abrasion_resistance",
+    "accelerator",
     "activator",
     "active_ingredient",
+    "actuator",
     "additive",
     "address_line",
     "adherence",
+    "adhesion",
     "adjuster",
     "adjustment",
+    "admixture",
     "aetiology",
     "agitation",
     "airflow",
@@ -5605,6 +5743,7 @@
     "alliance",
     "allocation_table",
     "amine",
+    "amplifier",
     "anaerobe",
     "angle",
     "apse",
@@ -5618,6 +5757,10 @@
     "back",
     "backing",
     "backplate",
+    "balance_weight",
+    "baldric",
+    "ball",
+    "balsam",
     "bar_stock",
     "barrier",
     "base_course",
@@ -5625,6 +5768,7 @@
     "baseline",
     "batt",
     "bay",
+    "bearing_seat",
     "bedding",
     "benchmark",
     "bend",
@@ -5632,31 +5776,42 @@
     "bevel",
     "bin",
     "binder_course",
+    "binding",
     "bioavailability",
     "body",
     "body_weight",
     "bolster",
     "bore",
     "boss",
+    "bottle_cap",
     "brace",
+    "bracket_set",
+    "branching",
     "breastplate",
     "breech",
+    "brim",
     "broach",
     "brow_reinforce",
+    "browser",
     "bucking_bar",
     "buckle",
     "buckling",
     "budget",
     "burnishing",
     "butting",
+    "button",
+    "cable",
     "cage",
     "calibration",
     "camber",
     "can",
     "canopy",
+    "cantilever",
     "cap",
+    "cap_of_maintenance",
     "capital",
     "carding",
+    "carling",
     "carry",
     "carving",
     "case_definition",
@@ -5665,23 +5820,31 @@
     "causeway",
     "cavity",
     "central_bank",
+    "centrifuge",
     "chamfer",
     "chancel",
     "channel_marker",
     "char",
+    "check_rail",
     "cheek_piece",
+    "chime",
     "chinstrap",
     "chroma_subsampling",
     "chrome",
     "chute",
+    "circlip",
+    "clamp",
     "clay_lining",
     "clearance",
     "clerestory",
     "code_generator",
+    "codec",
     "cohort",
+    "collar",
     "collateral",
     "collection",
     "colour_space",
+    "commutator",
     "comorbidity",
     "compaction",
     "comparison",
@@ -5690,6 +5853,7 @@
     "compression",
     "conditioner",
     "confounder",
+    "connector",
     "consent",
     "contact",
     "container",
@@ -5697,25 +5861,36 @@
     "control",
     "control_line",
     "controller",
+    "cope",
     "coping",
     "copy",
     "core",
+    "corner_cube",
     "corrosion_inhibitor",
+    "cotter",
     "counter",
+    "counterflow",
     "counterscarp",
     "counterstain",
+    "coupling",
+    "coupling_agent",
     "course",
+    "cover_board",
     "credit_history",
+    "cresting",
     "crimp",
     "criterion",
     "crowd",
+    "crown_staple",
     "crucible",
     "css",
     "cuisse",
+    "cultivar",
     "curing_agent",
     "currying",
     "curve",
     "cushioning",
+    "cut",
     "data_line",
     "datum",
     "dead_load",
@@ -5726,13 +5901,18 @@
     "denomination",
     "depth_of_field",
     "detergent",
+    "diagonal_board",
     "diameter",
+    "diene",
     "differentiation",
     "dilution",
     "directory",
     "discrete_cosine_transform",
+    "disease_resistance",
     "ditch",
+    "dns",
     "dom",
+    "dowel",
     "drainage",
     "draw",
     "drawing",
@@ -5743,9 +5923,13 @@
     "drive_square",
     "driver",
     "drop",
+    "droplet",
+    "drum",
     "duration",
     "eaves",
     "embedment",
+    "encoder",
+    "end_effector",
     "enforcement",
     "engraving",
     "entasis",
@@ -5766,14 +5950,19 @@
     "fender",
     "ferrule",
     "fill",
+    "fillet",
+    "filter",
     "filtration",
     "finish",
     "finish_coat",
+    "fit",
+    "fitting",
     "flange",
     "flare",
     "fleece",
     "fleshing",
     "flex",
+    "flight",
     "float_coat",
     "float_glass",
     "fly",
@@ -5781,32 +5970,40 @@
     "food_waste",
     "footing",
     "fragment",
+    "frame",
     "fulling",
     "gangway",
     "gauge",
     "gel",
     "glazing",
+    "glue",
     "glyph",
     "grade",
     "gradient",
     "graduation",
+    "grease_nipple",
     "greave",
     "grindstone",
     "grommet",
     "groove",
     "guide",
+    "gullet",
     "gusset",
     "handover",
     "hardening",
     "hardy_hole",
+    "hatch",
     "haunch",
     "hawk",
+    "headband",
     "header",
+    "headstock",
     "hex",
     "hit_rate",
     "hoist",
     "hold",
     "hole",
+    "hollow",
     "honing",
     "hook",
     "host",
@@ -5814,6 +6011,7 @@
     "hot_riveting",
     "household",
     "huffman_coding",
+    "hyperlink",
     "hypogeum",
     "identifier",
     "igniter",
@@ -5822,11 +6020,14 @@
     "impairment",
     "impedance",
     "impost",
+    "impression",
     "impulse",
     "index",
     "index_case",
+    "inertia",
     "inode",
     "input",
+    "inscription",
     "insurance",
     "intermediate_representation",
     "interview",
@@ -5834,9 +6035,11 @@
     "invert",
     "jack",
     "javascript",
+    "joint",
     "joist_hanger",
     "journal",
     "kerning",
+    "keyboard",
     "keystone",
     "keyway",
     "lacing",
@@ -5844,6 +6047,7 @@
     "land",
     "lap",
     "lashing",
+    "last",
     "lath",
     "layout_engine",
     "leather_strap",
@@ -5857,17 +6061,21 @@
     "lift",
     "liming",
     "linchpin",
+    "line_transformer",
     "liner",
     "link",
+    "linkage",
     "linker",
     "live_load",
     "lubricant",
+    "lug",
     "lumbar_support",
     "maceration",
     "machining",
     "manifest",
     "material",
     "measure",
+    "medical_screening",
     "medication",
     "medium",
     "mensa",
@@ -5877,31 +6085,42 @@
     "milling",
     "mixing",
     "monitoring",
+    "monomer",
     "mooring",
     "mordant",
     "moulding",
+    "mull",
+    "musk",
     "muzzle",
     "name_server",
     "nasal",
     "net",
+    "neutral_buoyancy",
     "niche",
     "nitro_group",
     "nitroimidazole",
+    "nymphaeum",
     "odometer",
     "official",
     "onset",
     "opcode",
     "optimiser",
+    "oscillator",
     "oxidizer",
     "oxygenate",
     "packaging",
     "packing",
     "packing_stone",
+    "pad",
     "padding",
     "pallet",
+    "panicle",
     "parser",
+    "passage",
     "pauldron",
     "paving",
+    "peak",
+    "peen",
     "permission",
     "ph_adjuster",
     "pin",
@@ -5909,14 +6128,20 @@
     "plain_weave",
     "plasticiser",
     "platform",
+    "pleat",
+    "plinth",
+    "plug",
     "point",
     "pointer",
+    "polishing",
     "polishing_grit",
     "portico",
     "power_source",
+    "preform",
     "preload",
     "preservative",
     "pressing",
+    "pressure_drop",
     "principal",
     "pritchel_hole",
     "procession",
@@ -5928,20 +6153,25 @@
     "query",
     "query_planner",
     "quoin",
+    "raising",
     "rammer",
     "ramp",
     "rate",
+    "rating_nut",
     "reaming",
     "recline",
     "record",
     "reeling",
     "referral",
     "reformate",
+    "regenerative_cooling",
     "registrar",
     "registration",
     "regulator",
     "rein",
+    "reinforcement",
     "reins",
+    "relay",
     "release_agent",
     "reliquary",
     "render",
@@ -5952,8 +6182,10 @@
     "revetment",
     "risk",
     "rivet_set",
+    "rondel",
     "root_zone",
     "rostrum",
+    "rounding",
     "route",
     "rubble_core",
     "runout",
@@ -5962,18 +6194,24 @@
     "schema",
     "scraping",
     "scratch_coat",
+    "scupper",
     "seam",
     "select_line",
     "selvage",
     "separation",
     "serial_number",
+    "sericin",
     "serif",
+    "server",
     "session",
     "severity",
     "shank",
     "shear_line",
+    "shoulder",
     "side_effect",
     "sign",
+    "signature",
+    "sintering",
     "sizing",
     "sledge",
     "sleeve",
@@ -5981,24 +6219,31 @@
     "slipway",
     "slot",
     "sorting",
+    "spacer",
     "spacing",
     "specimen",
     "spillage",
+    "spindle",
     "sprayer",
     "springer",
     "stabiliser",
     "stability",
     "staff",
+    "stalk",
+    "staple",
     "start",
     "stave",
     "step",
+    "stereochemistry",
     "sterilisation",
     "stitch_length",
     "stitching",
     "stop",
+    "stopcock",
     "storage",
     "stowage",
     "straightedge",
+    "strap",
     "stretcher",
     "stretching",
     "strike_plate",
@@ -6018,24 +6263,37 @@
     "symbol_table",
     "syngas",
     "syntax_tree",
+    "tack",
     "tag",
+    "tail",
     "taper",
+    "taper_handle",
+    "tapping",
     "tar",
     "target",
     "technique",
+    "teeth",
     "tempering",
+    "tenon",
     "tensile_strength",
     "tension",
     "term",
     "test",
     "theodolite",
     "therapeutic_index",
+    "thermostat",
     "thickener",
+    "thread",
+    "throat",
     "throttle",
+    "throw",
     "throwing",
     "tie",
+    "tie_rod",
+    "tiller",
     "timing",
     "tls",
+    "toe_drain",
     "tolerance",
     "tonnage",
     "top_note",
@@ -6048,23 +6306,35 @@
     "transfer_station",
     "transmission",
     "transport",
+    "trap",
     "traverse",
+    "tread",
     "trial",
     "triangulation",
     "trim",
+    "trough",
     "trunnion",
     "tuning",
     "turns",
     "uncertainty",
+    "urine",
+    "url",
+    "valve",
     "ventilation",
     "venue",
+    "vial",
     "visor",
     "voussoir",
     "wadding",
+    "washer",
     "washing",
+    "wax",
+    "wear_indicator",
     "weave",
     "web",
     "weld",
+    "welt",
+    "wiring",
     "working_load_limit",
     "x_height",
     "yield_strength",

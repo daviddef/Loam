@@ -102361,5 +102361,205 @@
     "why": "A float rises with the level and closes a needle valve, holding the fuel a fixed distance below the jets. Get that height wrong and the mixture is wrong everywhere, which is why float level is the first thing set on a carburettor.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Carburetor"
+  },
+  {
+    "in": [
+      "maple",
+      "soundboard"
+    ],
+    "out": "bridge_instrument",
+    "why": "Nothing fixes a violin bridge but the downward force of the strings, so it can be moved, and moving it changes the instrument. Its feet, thickness and cut-outs are all filters — a bridge is a tuned mechanical circuit between string and body.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bridge_(instrument)"
+  },
+  {
+    "in": [
+      "leather_strap",
+      "sole"
+    ],
+    "out": "welt",
+    "why": "Goodyear welting attaches the upper to a rib, then the sole to the welt, so the two seams are independent. It is why a welted shoe outlives a cemented one by decades and why it costs what it does.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Goodyear_welt"
+  },
+  {
+    "in": [
+      "leather",
+      "last"
+    ],
+    "out": "upper",
+    "why": "Cut flat and pulled over the last while damp, so it takes a three-dimensional shape from a two-dimensional pattern. Lasting is the skilled operation in shoemaking, and a millimetre of error at the toe is felt at every step.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shoe"
+  },
+  {
+    "in": [
+      "kevlar",
+      "fabric"
+    ],
+    "out": "turnout_coat",
+    "why": "An outer shell of aramid, a moisture barrier, and a thermal liner whose trapped air does the insulating. Wet insulation conducts, so the barrier that keeps hose water out is as important as the layer that resists flame.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bunker_gear"
+  },
+  {
+    "in": [
+      "cylinder",
+      "oxygen"
+    ],
+    "out": "breathing_apparatus",
+    "why": "A composite cylinder at 300 bar, a two-stage regulator and a positive-pressure mask, so any leak blows outward. What limits a firefighter is not heat but the thirty minutes or so of air on their back, and heavy work halves it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Self-contained_breathing_apparatus"
+  },
+  {
+    "in": [
+      "plutonium",
+      "heat_exchanger"
+    ],
+    "out": "rtg",
+    "why": "Plutonium-238 gives off heat as it decays, and a thermocouple turns the temperature difference straight into current. Nothing moves, so nothing wears out — which is why Voyager is still transmitting after nearly fifty years and why a solar panel would have been useless past Jupiter.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Radioisotope_thermoelectric_generator"
+  },
+  {
+    "in": [
+      "copper",
+      "iron"
+    ],
+    "out": "thermocouple",
+    "why": "The Seebeck effect: a temperature gradient in a conductor drives charge, and two dissimilar metals in a loop do not cancel. It needs no power, survives extremes, and reads a difference rather than a temperature — which is why it always comes with a reference junction.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thermocouple"
+  },
+  {
+    "in": [
+      "steel",
+      "resin"
+    ],
+    "out": "friction_disc",
+    "why": "A steel core faced with a friction material, splined to the gearbox shaft and squeezed between flywheel and pressure plate. It is engineered to slip briefly on every engagement, and how gently it takes up is most of how a car feels to drive.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clutch"
+  },
+  {
+    "in": [
+      "spring",
+      "housing"
+    ],
+    "out": "pressure_plate",
+    "why": "A diaphragm spring bolted to the flywheel presses the friction disc against it. Pushing the pedal flattens the spring and releases the drive — so the clutch is engaged when nothing is being done, which is the right failure mode.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clutch"
+  },
+  {
+    "in": [
+      "steel",
+      "press"
+    ],
+    "out": "diaphragm_spring",
+    "why": "It replaced a ring of coil springs and made the pedal lighter, because a Belleville washer's force falls as it flattens past a point. The fingers are levers with the fulcrum at the housing — one pressing gives even release all the way round.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Belleville_washer"
+  },
+  {
+    "in": [
+      "bearing",
+      "housing"
+    ],
+    "out": "release_bearing",
+    "why": "Everything on the engine side is turning; the fork is not. A thrust bearing between them takes the load along the shaft while the two sides rotate relative to each other, and its whine is the classic first sign a clutch is on its way out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clutch"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "drill"
+    ],
+    "out": "needle_plate",
+    "why": "A round hole for straight stitch supports the fabric right up to the needle; a wide slot lets the needle swing for zigzag and lets thin fabric get pulled down into the machine. Swapping it is what stops a lightweight cloth being eaten.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sewing_machine"
+  },
+  {
+    "in": [
+      "brass",
+      "spring"
+    ],
+    "out": "driver_pin",
+    "why": "It sits across the shear line and stops the plug turning. A key lifts it exactly clear; too far and it blocks from the other side. Manufacturing tolerance in these is precisely what lock picking exploits.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pin_tumbler_lock"
+  },
+  {
+    "in": [
+      "brass",
+      "key"
+    ],
+    "out": "key_pin",
+    "why": "Each key pin is a different length and each corresponds to one depth of cut. The number of depths times the number of positions is the theoretical number of keys, which for a domestic lock is far smaller than it sounds.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pin_tumbler_lock"
+  },
+  {
+    "in": [
+      "brass",
+      "tooth"
+    ],
+    "out": "escape_wheel",
+    "why": "Its teeth are shaped so that the pallets both stop it and receive a push from it — the impulse that keeps the pendulum going. Everything about a clock's accuracy is in that shape and in how little it interferes with the swing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Escapement"
+  },
+  {
+    "in": [
+      "steel",
+      "coil"
+    ],
+    "out": "hairspring",
+    "why": "It returns the balance wheel to centre, so the pair oscillates at a rate set by its stiffness and the wheel's inertia rather than by how hard the mainspring is pushing. Guillaume's temperature-compensating alloy earned a Nobel Prize.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Balance_spring"
+  },
+  {
+    "in": [
+      "bronze",
+      "bearing"
+    ],
+    "out": "sheave",
+    "why": "A groove too narrow pinches the rope and a groove too wide flattens it, and either halves its life. The sheave's diameter matters too: bending rope round anything tight fatigues the fibres from the inside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sheave"
+  },
+  {
+    "in": [
+      "truss",
+      "cable"
+    ],
+    "out": "jib",
+    "why": "Load times radius is what tips a crane, not load alone, so a jib's rating falls as the hook goes out. A lattice jib is mostly air for the same reason a truss is — the material is where the bending is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Crane_(machine)"
+  },
+  {
+    "in": [
+      "beam",
+      "hydraulic_pump"
+    ],
+    "out": "outrigger",
+    "why": "The tipping line is between the outriggers, not between the wheels, so extending them multiplies the safe load. Setting them on ground that will not take the pressure is the commonest way a mobile crane goes over.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Outrigger"
+  },
+  {
+    "in": [
+      "needle_plate",
+      "spring"
+    ],
+    "out": "presser_foot",
+    "why": "Spring pressure pins the fabric against the feed dog, which then moves it exactly one stitch. With the foot up the cloth is free and nothing feeds — which is why a machine sews only when it is down, and why walking feet exist for layers that would otherwise shift against each other.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Presser_foot"
   }
 ]
