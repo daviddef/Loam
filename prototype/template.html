@@ -1810,6 +1810,23 @@ __CATEGORY_CSS__
      riding it. ("could we show the element icon in the areas effected on the
      human? ... if they dont impact the human just dont show them.") */
   #rdPins{position:absolute;inset:8px 4px;pointer-events:none}
+  /* The dial. Rest something on the body and the number climbs — the same
+     gesture the bench's own heat dial uses, on an axis the medicine really
+     is staged on rather than an invented nought-to-a-hundred. */
+  #rdGauge{
+    position:absolute;left:8px;right:8px;bottom:6px;pointer-events:none;
+    background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(6px);
+    border:1.5px solid var(--orange);border-radius:9px;padding:5px 7px 6px;
+  }
+  #rdGauge.deep{border-color:var(--brick)}
+  #rdGauge .gt{display:flex;align-items:baseline;gap:5px}
+  #rdGauge .gv{font:700 15px/1 var(--face-data);color:var(--orange);font-variant-numeric:tabular-nums}
+  #rdGauge.deep .gv{color:var(--brick)}
+  #rdGauge .gu{font:400 9px/1 var(--face-data);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+  #rdGauge .gb{height:4px;border-radius:99px;background:var(--line);margin:5px 0 4px;overflow:hidden}
+  #rdGauge .gf{display:block;height:100%;background:var(--orange);transition:width .1s linear}
+  #rdGauge.deep .gf{background:var(--brick)}
+  #rdGauge .gl{font:700 11px/1.2 var(--face-name);color:var(--ink)}
   .rdpin{
     position:absolute;left:0;top:0;width:20px;height:20px;margin:-10px 0 0 -10px;
     display:grid;place-items:center;border-radius:50%;
@@ -1827,7 +1844,9 @@ __CATEGORY_CSS__
     font:400 10px/1.2 var(--face-data);letter-spacing:.1em;text-transform:uppercase;
     color:var(--orange);pointer-events:none;
   }
-  #rdSay{font:400 11.5px/1.45 var(--face-name);color:var(--ink-soft);margin:0 3px}
+  #rdSay{font:400 11.5px/1.45 var(--face-name);color:var(--ink-soft);margin:-2px 3px 0}
+  #rdBar #rdSayBtn{padding:5px 7px;font-size:12px;line-height:1}
+  #rdBar #rdSayBtn.on{color:var(--orange);border-color:var(--orange)}
   .rdlog{display:flex;flex-direction:column;gap:8px}
   .rdcase{border:1.5px solid var(--line);border-radius:10px;padding:8px;background:var(--card)}
   .rdcase.none{background:none;border-style:dashed;text-align:left;padding:8px;color:var(--ink-soft)}
@@ -1852,9 +1871,26 @@ __CATEGORY_CSS__
     color:var(--ink-soft);
   }
   .rdcase.good .vv{color:var(--avocado);font-weight:700}
+  /* "Nothing happens, and here is why" is a finding. "Nothing is on record" is
+     an admission. They must not look the same. */
+  .rdcase.nil{border-style:dashed}
+  .rdcase.nil .vv{font-weight:700}
   .rdcase.good .rr{border-color:color-mix(in srgb,var(--avocado) 45%,var(--line))}
   .rdcase.good .rr.acute{border-color:var(--avocado);color:var(--avocado)}
   .rdcase .why{color:var(--ink-soft)}
+  /* The ladder. Rungs already passed read normally; rungs beyond where the
+     dial stopped are dimmed, because they did not happen. */
+  .rung{margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
+  .rung .ru{font:400 9px/1.3 var(--face-data);letter-spacing:.07em;text-transform:uppercase;
+            color:var(--ink-soft);margin-bottom:5px}
+  .rung .rr1{display:flex;gap:7px;padding:3px 0;font:400 11px/1.4 var(--face-name)}
+  .rung .rr1 b{flex:none;width:44px;text-align:right;font:700 11px var(--face-data);
+               font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+  .rung .rr1 i{display:block;font-style:normal;font-weight:700;color:var(--ink)}
+  .rung .rr1.here b,.rung .rr1.here i{color:var(--orange)}
+  .rung .rr1.here{background:color-mix(in srgb,var(--orange) 10%,transparent);
+                  border-radius:6px;padding:4px 5px;margin:0 -5px}
+  .rung .rr1.ahead{opacity:.42}
   .rdcase .clock{
     margin-top:6px;padding:6px 8px;border-radius:8px;
     background:color-mix(in srgb,var(--ink) 6%,transparent);
@@ -5934,6 +5970,7 @@ board.addEventListener('pointermove', ev => {
   const onBody = overRagdoll(ev.clientX, ev.clientY);
   rdOver(onBody);
   rdCarry(onBody ? drag.chip.dataset.id : null, ev.clientX, ev.clientY);
+  if (onBody) rdDialStart(drag.chip.dataset.id, 'element'); else rdDialStop();
   if (ambientDuringDrag(drag.chip, ev.clientX, ev.clientY)) {
     drag = null; hitCache = null; clearWarn();          // it already reacted — nothing left to drag
   }
@@ -5947,7 +5984,7 @@ board.addEventListener('pointerup', ev => {
   drag = null;
   hitCache = null;
   clearWarn();
-  rdOver(false); rdCarry(null);
+  rdOver(false); rdCarry(null); rdDialStop();
   chip.classList.remove('drag', 'haslive');
   chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
@@ -7871,6 +7908,15 @@ function rdResolve(id, kind) {
   if (kind === 'verb') return rows((EFFECTS.verbs || {})[id]).map(f => ({ ...f, source: 'verb' }));
   const own = rows((EFFECTS.effects || {})[id]).map(f => ({ ...f, source: 'effect' }));
   if (own.length) return own;
+  // An effect can belong to the hazard rather than to the element — what
+  // beryllium dust does to a lung is one fact, not twelve facts about twelve
+  // alloys. An element's own row above always wins.
+  const byHazard = [];
+  for (const [k, ids] of Object.entries(EFFECTS.hazardIds || {}))
+    if (ids.includes(id))
+      for (const f of rows((EFFECTS.hazards || {})[k]))
+        byHazard.push({ ...f, source: 'hazard', hazard: k });
+  if (byHazard.length) return byHazard;
   // Second source, and free: 201 recipes already take a human as an input, and
   // the ones whose output is a disease are exactly this question asked in the
   // recipe graph. They carry no route — the recipe never had that axis — so
@@ -7882,6 +7928,62 @@ function rdResolve(id, kind) {
   return [{ source: 'infection', valence: 'harm', route: null, onset: null, outcome: r.out,
             mechanism: r.why, src: r.src,
             transmission: (PATHOGENS[id] || {}).transmission || null }];
+}
+
+/* ── the dial ──────────────────────────────────────────────────────────────
+ * The same idea the bench already has: rest Heat on limestone and the number
+ * climbs, let go at 900 and you have quicklime. Here it is pointed at a body.
+ * "if i drop e.g. the chill it shows the temperature drop. at some point the
+ * ragdoll goes from winter chill to hypothermia to death ... so eg the sun
+ * could be a nice day at the beach, or hold longer it will be increased uv
+ * exposure."
+ *
+ * What makes it honest is that the axis is real. Core body temperature,
+ * carboxyhaemoglobin per cent, burn depth, minutes in cold water — these are
+ * the scales the medicine is actually staged on, so a reader can go and check
+ * a rung. An invented nought-to-a-hundred would have looked identical and
+ * meant nothing, and the gate rejects one.
+ */
+let rdDial = null;                       // {id, kind, f, t0, at, stage}
+const RD_CLIMB = 9000;                   // ms to walk the whole dial, held still
+
+/** The first entry with a ladder on it, or nothing. */
+function rdLadder(id, kind) {
+  return rdResolve(id, kind).find(f => f.stages && f.dial) || null;
+}
+function rdDialStart(id, kind) {
+  if (rdDial && rdDial.id === id) return;
+  const f = rdLadder(id, kind);
+  if (!f) return;
+  rdDial = { id, kind, f, t0: performance.now(), at: f.dial.from, stage: 0 };
+  rdStart();
+}
+function rdDialStop() {
+  const held = rdDial; rdDial = null;
+  const bar = document.getElementById('rdGauge');
+  if (bar) bar.hidden = true;
+  return held;
+}
+/** Where the dial has got to, and which rung that is. */
+function rdDialTick(now) {
+  if (!rdDial) return;
+  const D = rdDial.f.dial;
+  const p = Math.min(1, (now - rdDial.t0) / RD_CLIMB);
+  rdDial.at = D.from + (D.to - D.from) * p;
+  const up = D.to > D.from;
+  let k = 0;
+  rdDial.f.stages.forEach((g, i) => { if (up ? rdDial.at >= g.at : rdDial.at <= g.at) k = i; });
+  rdDial.stage = k;
+  const bar = document.getElementById('rdGauge');
+  if (!bar) return;
+  bar.hidden = false;
+  const g = rdDial.f.stages[k];
+  const shown = Math.abs(D.to - D.from) > 12 ? Math.round(rdDial.at) : rdDial.at.toFixed(1);
+  bar.querySelector('.gv').textContent = `${shown}${D.suffix || ''}`;
+  bar.querySelector('.gl').textContent = g.label;
+  bar.querySelector('.gu').textContent = D.unit;
+  bar.querySelector('.gf').style.width = (p * 100).toFixed(1) + '%';
+  bar.classList.toggle('deep', k >= rdDial.f.stages.length - 2);
 }
 
 /** Everything currently on the body that actually reaches it, with the part it
@@ -7961,9 +8063,14 @@ function rdCarry(id, x, y) {
  *  top rather than being counted twice — one asbestos is the fact. */
 function ragdollDrop(id, kind) {
   rdOver(false);
+  // Letting go IS the choice, the same way it is on the bench's heat dial: the
+  // rung the dial had reached is what happened, and it is remembered with the
+  // exposure so the card can say which one.
+  const held = rdDialStop();
+  const rung = held && held.id === id ? held.stage : null;
   const list = rdResolve(id, kind);
   ragdoll = ragdoll.filter(x => !(x.id === id && x.kind === kind));
-  ragdoll.push({ id, kind });
+  ragdoll.push(rung === null ? { id, kind } : { id, kind, rung });
   if (ragdoll.length > 24) ragdoll.shift();
   save();
   if (asideTab !== 'ragdoll') setAsideTab('ragdoll');
@@ -8153,8 +8260,13 @@ function rdDraw() {
     RD.pins.forEach((p, i) => {
       const el = RD.pinEls[i]; if (!el) return;
       const a = RD.parts[RD.ix[p.part]] || RD.parts[RD.ix.chest];
-      el.style.transform = `translate(${(X(a.x) + Math.cos(p.a) * p.r * sc + dx).toFixed(1)}px,
-                                      ${(Y(a.y) + Math.sin(p.a) * p.r * sc + dy).toFixed(1)}px)`;
+      // Keep them inside the stage. A radiation pin orbits wide and a head
+      // thrown about goes wider still, and a pin that leaves the box is just
+      // a clipped circle on the edge of the pane.
+      const pad = 12;
+      const px = Math.max(pad, Math.min(hx.width - pad, X(a.x) + Math.cos(p.a) * p.r * sc + dx));
+      const py = Math.max(pad, Math.min(hx.height - pad, Y(a.y) + Math.sin(p.a) * p.r * sc + dy));
+      el.style.transform = `translate(${px.toFixed(1)}px, ${py.toFixed(1)}px)`;
     });
   }
   return true;
@@ -8167,6 +8279,7 @@ function rdFrame(t) {
   const dt = Math.min(0.032, (t - rdLast) / 1000 || 0.016);
   rdLast = t;
   rdStep(dt);
+  rdDialTick(t);
   if (RD.litT > 0) RD.litT -= dt;
   if (!rdDraw()) return;
   RD.raf = requestAnimationFrame(rdFrame);
@@ -8184,8 +8297,8 @@ document.addEventListener('visibilitychange', () => {
 // A cancelled pointer (a phone's scroll taking over, a window losing focus)
 // never reaches the board's own pointerup, and the carried ghost would stay on
 // screen for good. Cheap belt and braces.
-addEventListener('pointercancel', () => { rdCarry(null); rdOver(false); });
-addEventListener('blur', () => { rdCarry(null); rdOver(false); });
+addEventListener('pointercancel', () => { rdCarry(null); rdOver(false); rdDialStop(); });
+addEventListener('blur', () => { rdCarry(null); rdOver(false); rdDialStop(); });
 
 /** Pick it up by whatever is nearest, and throw it. The only interaction the
  *  body has that is not a fact — and the reason it reads as a body. */
@@ -8222,17 +8335,35 @@ function renderAsideRagdoll(litRoutes) {
       does not pretend — an effect is written down or it is not.</p></div>`;
     // Good news first when a thing is both. Sun makes vitamin D and melanoma
     // out of the same photons, and neither card is the whole answer.
-    const rows = [...list].sort((a, b) =>
-      (a.valence === 'benefit' ? 0 : 1) - (b.valence === 'benefit' ? 0 : 1));
+    // A ladder is the fuller answer, and its rungs carry their own valence —
+    // so when the dial was used, the ladder's own entry is the card, and the
+    // element's other rows are not repeated underneath it.
+    const owner = list.find(f => f.stages && f.dial);
+    const rows = (x.rung != null && owner) ? [owner]
+      : [...list].sort((a, b) =>
+          (a.valence === 'benefit' ? 0 : 1) - (b.valence === 'benefit' ? 0 : 1));
     return rows.map((f, k) => {
-      const good = f.valence === 'benefit';
-      const out = byId[f.outcome];
+      const rung0 = f.stages && x.rung != null ? f.stages[x.rung] : null;
+      const val = rung0?.valence ?? f.valence;
+      const good = val === 'benefit', nil = val === 'inert';
+      // A rung can name its own outcome — a nice day gives vitamin D, four
+      // hours of the same sun does not — and that is what the card shows.
+      const rung = f.stages && x.rung != null ? f.stages[x.rung] : null;
+      const out = byId[(rung && rung.outcome) || f.outcome];
       const routeChip = f.route
         ? `<span class="rr ${f.onset === 'acute' ? 'acute' : ''}">${f.route}</span>` : '';
-      const onsetChip = f.onset ? `<span class="rr">${f.onset}</span>` : '';
+      // With a rung reached, the rung IS the answer: its own name replaces the
+      // entry's onset tier, which describes the ladder as a whole and not the
+      // place on it you stopped.
+      const onsetChip = rung0 ? `<span class="rr">${rung0.label}</span>`
+                       : f.onset ? `<span class="rr">${f.onset}</span>` : '';
       // The one thing a damage simulation cannot do. Asbestos on a body does
       // nothing today, and showing a wound for it would be the lie.
-      const clock = f.onset === 'cumulative' && !good
+      // The clock belongs to the whole-exposure answer and to the last rung of
+      // a cumulative ladder — not to the rungs on the way up, where something
+      // very visible is happening today.
+      const terminal = !rung0 || (rung0.outcome && rung0.outcome === f.outcome);
+      const clock = f.onset === 'cumulative' && !good && terminal
         ? `<div class="clock">Nothing happens today.
            ${f.latency ? `Latency <b>${f.latency}</b>.` : 'This one is counted in years, not seconds.'}</div>` : '';
       const road = f.route && EFFECTS.routes[f.route]
@@ -8240,16 +8371,33 @@ function renderAsideRagdoll(litRoutes) {
       const howIn = f.source === 'infection'
         ? `<p class="why">${f.transmission ? `Gets in by ${f.transmission}.`
             : 'The corpus records the outcome, not the route.'}</p>` : '';
+      // The ladder, with the rung this exposure stopped at. Everything above it
+      // is what would have happened; everything below it already did.
+      const ladder = (() => {
+        if (!f.stages || !f.dial) return '';
+        const at = x.rung ?? 0;
+        const D = f.dial;
+        return `<div class="rung"><div class="ru">${D.unit}${D.note ? ` — ${D.note}` : ''}</div>` +
+          f.stages.map((g, gi) => {
+            const wide = Math.abs(D.to - D.from) > 12;
+            return `<div class="rr1${gi === at ? ' here' : ''}${gi > at ? ' ahead' : ''}">
+              <b>${wide ? Math.round(g.at) : g.at}${D.suffix || ''}</b>
+              <span><i>${g.label}</i>${g.what}</span></div>`;
+          }).join('') +
+          `<a class="src" href="${D.src}" target="_blank" rel="noopener">The staging ↗</a></div>`;
+      })();
+      const shared = f.source === 'hazard' && CAUTIONS[f.hazard]
+        ? `<p class="why">Shared with everything under <b>${CAUTIONS[f.hazard].label}</b> — this is a fact about the hazard, not only about ${who}.</p>` : '';
       const spared = f.prevents && byId[f.prevents]
         ? `<p class="why">Keeps away <b>${nameOf(byId[f.prevents])}</b>.</p>` : '';
       const fam = out ? familyOf(out) : null;
       const card = out
         ? `<div class="shelf"><span class="chip fam-${fam.id}" data-fam="${fam.id}"
              data-spawn="${f.outcome}">${chipHTML(out)}</span></div>` : '';
-      return `<div class="rdcase${good ? ' good' : ''}">
-        <h3>${k === 0 ? `<b>${who}</b>` : ''}<span class="vv">${good ? 'good for you' : 'harm'}</span>${routeChip}${onsetChip}</h3>
+      return `<div class="rdcase${good ? ' good' : ''}${nil ? ' nil' : ''}">
+        <h3>${k === 0 ? `<b>${who}</b>` : ''}<span class="vv">${good ? 'good for you' : nil ? 'does nothing' : 'harm'}</span>${routeChip}${nil ? '' : onsetChip}</h3>
         ${card}${clock}
-        <p>${f.mechanism}</p>${spared}${road}${howIn}
+        ${rung0 ? `<p>${rung0.what}</p><p class="why">${f.mechanism}</p>` : `<p>${f.mechanism}</p>`}${ladder}${spared}${shared}${road}${howIn}
         <a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>
       </div>`;
     }).join('');
@@ -8259,16 +8407,24 @@ function renderAsideRagdoll(litRoutes) {
     <div id="rdStage">
       <canvas id="rdCanvas"></canvas>
       <div id="rdPins"></div>
+      <div id="rdGauge" hidden>
+        <div class="gt"><b class="gv"></b><span class="gu"></span></div>
+        <div class="gb"><i class="gf"></i></div>
+        <div class="gl"></div>
+      </div>
       <div id="rdRoute"></div>
     </div>
-    <p id="rdSay">Drag anything here — a card from the bench, or a tool from
-      the tray. The body lights the way in, and answers both ways: what a thing
-      does <em>for</em> a person as well as <em>to</em> one. Sun is both, out of
-      the same photons.</p>
     <div id="rdBar">
-      <input id="rdQ" class="search sm" placeholder="…or name it" autocomplete="off">
+      <input id="rdQ" class="search sm" placeholder="Name something" autocomplete="off">
+      <button id="rdSayBtn" title="What is this?">ⓘ</button>
       <button id="rdClear" title="Start again with a fresh body">New body</button>
     </div>
+    <p id="rdSay" hidden>Drag anything here — a card from the bench, or a tool
+      from the tray. The body lights the way in, and answers both ways: what a
+      thing does <em>for</em> a person as well as <em>to</em> one. Sun is both,
+      out of the same photons. Rest something on the body instead of dropping
+      it and a dial climbs: ten minutes of sun and four hours are not the same
+      fact.</p>
     <div class="rdlog">${cases}</div>`;
 
   rdStart();
@@ -8279,6 +8435,18 @@ function renderAsideRagdoll(litRoutes) {
     if (say) say.textContent = routes.join(' · ');
   } else RD.lit = null;
   rdPinsBuild();
+  // Standing instructions ate a third of the pane, and you only need them
+  // once. ("i think the text takes too much space. maybe an i button should
+  // replace this text.") Not an overlay — it opens in place and closes the
+  // same way, and it remembers being closed.
+  const say = document.getElementById('rdSay'), sayBtn = document.getElementById('rdSayBtn');
+  say.hidden = !prefs.rdSay;
+  sayBtn.classList.toggle('on', !!prefs.rdSay);
+  sayBtn.onclick = () => {
+    prefs.rdSay = say.hidden ? 1 : 0; savePrefs();
+    say.hidden = !prefs.rdSay;
+    sayBtn.classList.toggle('on', !!prefs.rdSay);
+  };
   const cv = document.getElementById('rdCanvas');
   cv.onpointerdown = (ev) => { ev.preventDefault(); rdPointer(ev, 'down'); };
   cv.onpointermove = (ev) => rdPointer(ev, 'move');
@@ -10802,7 +10970,9 @@ addEventListener('pointermove', ev => {
   } else stopHeat();
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (chip) chip.classList.add('target');
-  rdOver(overRagdoll(ev.clientX, ev.clientY));
+  const onDoll = overRagdoll(ev.clientX, ev.clientY);
+  rdOver(onDoll);
+  if (onDoll) rdDialStart(verbDrag.id, 'verb'); else rdDialStop();
 });
 addEventListener('pointerup', ev => {
   if (!verbDrag) return;
@@ -10871,7 +11041,9 @@ addEventListener('pointermove', ev => {
   }
   shelfDrag.ghost.style.left = (ev.clientX - 40) + 'px';
   shelfDrag.ghost.style.top  = (ev.clientY - 18) + 'px';
-  rdOver(overRagdoll(ev.clientX, ev.clientY));
+  const onDoll = overRagdoll(ev.clientX, ev.clientY);
+  rdOver(onDoll);
+  if (onDoll) rdDialStart(shelfDrag.id, 'element'); else rdDialStop();
 });
 addEventListener('pointerup', ev => {
   if (!shelfDrag) return;

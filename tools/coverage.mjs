@@ -146,7 +146,11 @@ if (has('effects.json') && has('cautions.json')) {
   // every element with any row at all, including the benefit-only ones, which
   // carry no caution — so it was counting things the denominator had never
   // heard of, and the figure ran ahead of the truth.
-  add('effects', [...pop].filter(id => eff[id]).length, pop.size,
+  // An effect can belong to the hazard rather than to the element, and those
+  // answer for every id on that hazard's list — so they count here too, or the
+  // row understates by an order of magnitude.
+  const viaHazard = new Set(Object.keys(E2.hazards || {}).flatMap(k => c2[k]?.ids || []));
+  add('effects', [...pop].filter(id => eff[id] || viaHazard.has(id)).length, pop.size,
       'what an element does TO a person — the harm half of the Ragdoll');
   // And the other half, against a denominator that is not ours: the standard
   // list of nutrients a human body cannot make. Without it this side could sit
@@ -154,6 +158,17 @@ if (has('effects.json') && has('cautions.json')) {
   const nut = E2.$nutrients || {};
   const supplied = new Set(Object.values(eff).flat()
     .filter(f => f.valence === 'benefit' && nut[f.outcome]).map(f => f.outcome));
+  // A third measure, and the one that decides whether the canvas feels alive:
+  // the elements a player actually reaches for. Coverage by caution said 57%
+  // while `human`, `stone`, `wood`, `river` and `glass` — five of the most
+  // used things in the game — all answered "nothing is on record".
+  if (has('recipes.json')) {
+    const deg = new Map();
+    for (const r of read('recipes.json')) for (const i of r.in || []) deg.set(i, (deg.get(i) || 0) + 1);
+    const top = [...deg.entries()].sort((a, b) => b[1] - a[1]).slice(0, 200).map(([id]) => id);
+    add('effects-common', top.filter(id => eff[id] || viaHazard.has(id)).length, top.length,
+        'the 200 most-used elements — what a player actually drops on the body');
+  }
   add('nutrients', supplied.size, Object.keys(nut).length,
       'what a body cannot make and must be given — the benefit half');
 }

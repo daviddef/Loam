@@ -71,7 +71,10 @@ const rows = [
     const both = Object.values(effects.effects).filter(l => new Set(l.map(f => f.valence)).size > 1).length;
     const nut = Object.keys(effects.$nutrients);
     const supplied = new Set(all.filter(f => f.valence === 'benefit' && effects.$nutrients[f.outcome]).map(f => f.outcome));
-    return `**${n(all.length)}** across ${n(Object.keys(effects.effects).length)} elements and ${n(Object.keys(effects.verbs).length)} verbs — ${n(good)} of them things the body is better off for, ${n(both)} elements that are both, and **${n(supplied.size)} / ${n(nut.length)}** of the nutrients a body cannot make now have something that supplies them`;
+    const viaHaz = new Set(Object.keys(effects.hazards).flatMap(k => cautions[k]?.ids || []));
+    const answered = [...new Set(Object.values(cautions).flatMap(h => h.ids || []))].filter(id => effects.effects[id] || viaHaz.has(id)).length;
+    const laddered = [...all, ...Object.values(effects.verbs).flat(), ...Object.values(effects.hazards).flat()].filter(f => f.stages).length;
+    return `**${n(answered)} / ${n(cautioned)}** cautioned elements answered and **${n(supplied.size)} / ${n(nut.length)}** of the nutrients a body cannot make supplied; ${n(good)} rows are things the body is better off for, ${n(both)} elements are both, ${n(laddered)} carry a dose ladder`;
   })()],
   ['Colours', '**28**, every one a measured Munsell chip'],
 ];

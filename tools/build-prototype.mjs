@@ -24,7 +24,13 @@ const families  = J('../data/families.json');
 // The Ragdoll canvas. Routes, substances and verbs go over as one object; the
 // $-prefixed prose in the file is authoring notes and stays out of the page.
 const effectsSrc = J('../data/effects.json');
-const effects = { routes: effectsSrc.$routes, effects: effectsSrc.effects, verbs: effectsSrc.verbs };
+// A hazard's effect answers for every element on that hazard's list, so the
+// page needs the id lists too — read from cautions.json, which already has
+// them, rather than expanded into 355 duplicate rows on the way out.
+const hazardIds = Object.fromEntries(Object.entries(cautions)
+  .filter(([k]) => effectsSrc.hazards[k]).map(([k, h]) => [k, h.ids || []]));
+const effects = { routes: effectsSrc.$routes, effects: effectsSrc.effects,
+                  verbs: effectsSrc.verbs, hazards: effectsSrc.hazards, hazardIds };
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
 
 /**
@@ -125,7 +131,7 @@ try {
     .replace('__CONDITION_DATA__', '{conditions:{}}')
     .replace('__ALLERGEN_DATA__', '{}')
     .replace('__REACTION_DATA__', '{}')
-    .replace('__EFFECTS_DATA__', '{routes:{},effects:{},verbs:{}}')
+    .replace('__EFFECTS_DATA__', '{routes:{},effects:{},verbs:{},hazards:{},hazardIds:{}}')
     .replace('__FAMILY_DATA__', '{families:[{id:"other",name:"Other",tags:[]}]}'));
 } catch (e) {
   console.error(`prototype script does not parse: ${e.message}`);

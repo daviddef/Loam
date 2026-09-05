@@ -72,12 +72,51 @@ function checkRow(id, f, where) {
   if (!TIERS.includes(f.onset)) errors.push(`${where}: onset "${f.onset}" is not one of ${TIERS.join(', ')}`);
   if (f.prevents && !byId.has(f.prevents)) errors.push(`${where}: prevents "${f.prevents}" is not an element`);
   if (f.prevents && f.valence !== 'benefit') errors.push(`${where}: prevents only makes sense on a benefit`);
-  if (!f.outcome) errors.push(`${where}: no outcome`);
-  else if (!byId.has(f.outcome)) errors.push(`${where}: outcome "${f.outcome}" is not an element — author it first, so the Ragdoll card is an ordinary card`);
+  // An inert row has no outcome because there is no outcome. That is the point
+  // of it: "nothing happens, and here is why" is a fact, where "nothing is on
+  // record" is an admission.
+  if (!f.outcome && f.valence !== 'inert') errors.push(`${where}: no outcome`);
+  if (f.outcome && f.valence === 'inert') errors.push(`${where}: an inert row names no outcome — nothing came of it`);
+  else if (f.outcome && !byId.has(f.outcome)) errors.push(`${where}: outcome "${f.outcome}" is not an element — author it first, so the Ragdoll card is an ordinary card`);
   if (!f.src || !String(f.src).startsWith('http')) errors.push(`${where}: no source`);
   if (!f.mechanism || f.mechanism.length < 40) errors.push(`${where}: mechanism is missing or too short to be an explanation`);
   for (const [re, why] of METHOD) {
     if (re.test(f.mechanism || '')) errors.push(`${where}: MECHANISM ${why} — describe what happens in the body, never how to bring it about`);
+  }
+  /* A DIAL AND ITS LADDER. The scale must be the one the medicine actually
+   * uses — core temperature, carboxyhaemoglobin per cent, burn degree — and
+   * never an invented nought-to-a-hundred, because the whole value of a stage
+   * is that a reader can go and check it. Stages walk from `from` towards
+   * `to` and must stay inside that range and in order. */
+  if (f.dial || f.stages) {
+    const D = f.dial;
+    if (!D) errors.push(`${where}: has stages and no dial to measure them on`);
+    else {
+      if (!D.unit || !D.src) errors.push(`${where}: a dial needs a unit and a source`);
+      if (typeof D.from !== 'number' || typeof D.to !== 'number') errors.push(`${where}: a dial needs numeric from and to`);
+    }
+    const st = f.stages || [];
+    if (st.length < 2) errors.push(`${where}: a ladder with fewer than two rungs is not a ladder`);
+    const up = D && D.to > D.from;
+    let last = null;
+    st.forEach((g, i) => {
+      const at = `${where}.stages[${i}]`;
+      if (typeof g.at !== 'number') errors.push(`${at}: no value on the dial`);
+      else if (D) {
+        const lo = Math.min(D.from, D.to), hi = Math.max(D.from, D.to);
+        if (g.at < lo || g.at > hi) errors.push(`${at}: ${g.at} is off the dial (${lo}..${hi})`);
+        if (last !== null && (up ? g.at <= last : g.at >= last))
+          errors.push(`${at}: ${g.at} does not follow ${last} towards ${D.to}`);
+        last = g.at;
+      }
+      if (!g.label) errors.push(`${at}: no label`);
+      if (!g.what || g.what.length < 30) errors.push(`${at}: too short to say what happens`);
+      if (g.outcome && !byId.has(g.outcome)) errors.push(`${at}: outcome "${g.outcome}" is not an element`);
+      if (g.valence && !VALENCE.includes(g.valence)) errors.push(`${at}: valence "${g.valence}" is not one of ${VALENCE.join(', ')}`);
+      for (const [re, why] of METHOD)
+        if (re.test(g.what || '')) errors.push(`${at}: STAGE ${why}`);
+    });
+    if (D && st.length && st[0].at !== D.from) errors.push(`${where}: the first rung must start at the dial's own from (${D.from})`);
   }
   if (f.carcinogen && f.iarc !== 1) errors.push(`${where}: carcinogen is for IARC Group 1 only; set iarc: 1 or drop the flag`);
 }
@@ -96,6 +135,22 @@ for (const [id, list] of Object.entries(E.effects)) {
     if (seen.has(key)) errors.push(`effects.${id}: two entries say the same thing (${key})`);
     seen.add(key);
   }
+}
+/* The hazard block. cautions.json attaches its wording to the hazard rather
+ * than to the item, and so does this: what beryllium dust does to a lung is
+ * one fact, not twelve. Every id on that hazard's list answers with it, and an
+ * element's own row in `effects` overrides it. */
+const HAZ = E.hazards || {};
+for (const [id, list] of Object.entries(HAZ)) {
+  if (!cautions[id]) errors.push(`hazards.${id}: no hazard in data/cautions.json has this id`);
+  if (!Array.isArray(list)) errors.push(`hazards.${id}: must be a list`);
+  rows(list).forEach((f, i) => checkRow(id, f, `hazards.${id}[${i}]`));
+  // Two curated files, one fact. cautions.json already decided how loudly to
+  // say this; the effect must not quietly say it differently.
+  const sev = cautions[id]?.severity;
+  for (const f of rows(list))
+    if (sev && f.onset !== sev)
+      errors.push(`hazards.${id}: onset "${f.onset}" disagrees with the caution's severity "${sev}"`);
 }
 // The verbs block. "'smother' a human, e.g. still shows the verb impact on the
 // human" was in the brief in those words, and a verb is not an element — so it
@@ -126,7 +181,10 @@ const noElement = Object.keys(NUTRIENTS).filter(id => !byId.has(id));
 const covered = Object.keys(NUTRIENTS).filter(id => supplies.has(id));
 
 const cautioned = new Set(Object.values(cautions).flatMap(h => h.ids || []));
-const owed = [...cautioned].filter(id => !E.effects[id]).sort();
+// Answered = has its own row, or belongs to a hazard that has one.
+const viaHazard = new Set(Object.keys(HAZ).flatMap(k => cautions[k]?.ids || []));
+const answered = new Set([...cautioned].filter(id => E.effects[id] || viaHazard.has(id)));
+const owed = [...cautioned].filter(id => !answered.has(id)).sort();
 
 const mode = process.argv[2];
 if (mode === '--nutrients') {
@@ -177,9 +235,12 @@ console.log();
 for (const v of VALENCE) console.log(`  ${v.padEnd(12)} ${String(byVal[v] || 0).padStart(4)}   ${E.$valence[v]}`);
 const both = Object.entries(E.effects).filter(([, l]) => new Set(l.map(f => f.valence)).size > 1);
 console.log(`\n  ${n(all.length)} effect(s) across ${n(Object.keys(E.effects).length)} element(s); ${n(both.length)} carry both sides.`);
-console.log(`  harm:    ${n([...cautioned].filter(id => E.effects[id]).length)} of ${n(cautioned.size)} elements that carry a caution.`);
+console.log(`  harm:    ${n(answered.size)} of ${n(cautioned.size)} elements that carry a caution — ${n(Object.keys(HAZ).length)} of ${n(Object.keys(cautions).length)} hazard classes answered.`);
 console.log(`  benefit: ${n(covered.length)} of ${n(Object.keys(NUTRIENTS).length)} essential nutrients supplied${noElement.length ? ` (${n(noElement.length)} have no element yet)` : ''}.`);
 console.log(`  ${n(Object.keys(E.verbs || {}).length)} of ${n(verbIds.size)} verb(s) do something to a body.`);
+const laddered = [...Object.values(E.effects).flat(), ...Object.values(E.verbs).flat(),
+                  ...Object.values(E.hazards).flat()].filter(f => f.stages).length;
+console.log(`  ${n(laddered)} of them are staged — hold it on the body and the dial climbs.`);
 console.log(`  node tools/effects.mjs --benefits   the other side`);
 console.log(`  node tools/effects.mjs --nutrients  what a body cannot make, and what supplies it`);
 console.log(`  node tools/effects.mjs --missing   the rest`);
