@@ -69,7 +69,9 @@ const rows = [
     const all = Object.values(effects.effects).flat();
     const good = all.filter(f => f.valence === 'benefit').length;
     const both = Object.values(effects.effects).filter(l => new Set(l.map(f => f.valence)).size > 1).length;
-    return `**${n(all.length)}** across ${n(Object.keys(effects.effects).length)} elements and ${n(Object.keys(effects.verbs).length)} verbs — ${n(good)} of them things the body is better off for, and ${n(both)} elements that are both`;
+    const nut = Object.keys(effects.$nutrients);
+    const supplied = new Set(all.filter(f => f.valence === 'benefit' && effects.$nutrients[f.outcome]).map(f => f.outcome));
+    return `**${n(all.length)}** across ${n(Object.keys(effects.effects).length)} elements and ${n(Object.keys(effects.verbs).length)} verbs — ${n(good)} of them things the body is better off for, ${n(both)} elements that are both, and **${n(supplied.size)} / ${n(nut.length)}** of the nutrients a body cannot make now have something that supplies them`;
   })()],
   ['Colours', '**28**, every one a measured Munsell chip'],
 ];

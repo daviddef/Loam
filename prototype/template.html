@@ -1806,6 +1806,21 @@ __CATEGORY_CSS__
      stays visible all the way across the seam. */
   #rdGhost{position:fixed;z-index:400;pointer-events:none;opacity:.92}
   #rdCanvas{display:block;width:100%;height:240px;touch-action:none;cursor:grab}
+  /* What has been dropped on the body, pinned to the part it reaches and
+     riding it. ("could we show the element icon in the areas effected on the
+     human? ... if they dont impact the human just dont show them.") */
+  #rdPins{position:absolute;inset:8px 4px;pointer-events:none}
+  .rdpin{
+    position:absolute;left:0;top:0;width:20px;height:20px;margin:-10px 0 0 -10px;
+    display:grid;place-items:center;border-radius:50%;
+    border:1.5px solid var(--orange);background:var(--card);
+    box-shadow:0 1px 4px -1px rgba(var(--shade),.5);
+    will-change:transform;
+  }
+  .rdpin.good{border-color:var(--avocado)}
+  /* An outcome the corpus records without a route: it is in the body, and
+     nothing says where. A dashed ring rather than a guess. */
+  .rdpin.vague{border-style:dashed}
   #rdCanvas:active{cursor:grabbing}
   #rdRoute{
     text-align:center;min-height:12px;margin-top:2px;
@@ -7836,6 +7851,13 @@ const RD_LIT = {
   mechanical: { at: ['chest', 'pelvis'], shove: [0, -0.1] },
   thermal:    { skin: true, halo: true },
 };
+/* Where a route hangs its pin. `skin` has no single place, so it takes the
+ * hand — the part of a body you actually touch things with; `halo` takes the
+ * head and sits further out, because a thing that needs no contact is not on
+ * you. A route the corpus does not record puts the pin at the chest and marks
+ * the ring dashed rather than inventing a location. */
+const RD_PIN = { inhaled: 'chest', ingested: 'pelvis', contact: 'haR', absorbed: 'haR',
+                 injected: 'elL', radiation: 'head', mechanical: 'pelvis', thermal: 'haL' };
 const rdName = (x) => x.kind === 'verb'
   ? (verbs.find(v => v.id === x.id)?.name ?? x.id)
   : (byId[x.id] ? nameOf(byId[x.id]) : x.id);
@@ -7860,6 +7882,48 @@ function rdResolve(id, kind) {
   return [{ source: 'infection', valence: 'harm', route: null, onset: null, outcome: r.out,
             mechanism: r.why, src: r.src,
             transmission: (PATHOGENS[id] || {}).transmission || null }];
+}
+
+/** Everything currently on the body that actually reaches it, with the part it
+ *  reaches. Anything the corpus has nothing to say about produces no pin at
+ *  all, which is the whole point: an empty body means nothing has landed. */
+function rdPinList() {
+  const pins = [];
+  for (const x of ragdoll) {
+    if (x.kind === 'verb') continue;                 // a verb is an act, not a thing
+    for (const f of rdResolve(x.id, x.kind)) {
+      pins.push({ id: x.id, part: RD_PIN[f.route] || 'chest', vague: !f.route,
+                  good: f.valence === 'benefit', orbit: f.route === 'radiation' });
+    }
+  }
+  // Two things on the same part must not sit on top of each other. Fan them
+  // around it, in the order they were dropped.
+  const byPart = {};
+  for (const p of pins) (byPart[p.part] = byPart[p.part] || []).push(p);
+  for (const group of Object.values(byPart)) {
+    const k = group.length;
+    // A short arc above the part while there are few; a full ring once there
+    // are enough that an arc would overlap itself. The radius grows with the
+    // count so the ring never crowds however much is dropped.
+    const spread = k > 4 ? (Math.PI * 2) / k : 0.78;
+    const ring = (p) => (p.orbit ? 1.5 : 0.66) + (k > 2 ? 0.1 * (k - 2) : 0);
+    group.forEach((p, i) => {
+      p.a = -Math.PI / 2 + (i - (k - 1) / 2) * spread;
+      p.r = ring(p);
+    });
+  }
+  return pins;
+}
+function rdPinsBuild() {
+  const host = document.getElementById('rdPins');
+  if (!host) return;
+  RD.pins = rdPinList();
+  host.innerHTML = RD.pins.map(p => {
+    const e = byId[p.id];
+    return `<span class="rdpin${p.good ? ' good' : ''}${p.vague ? ' vague' : ''}"
+      title="${nameOf(e)}">${glyph(p.id, 14)}</span>`;
+  }).join('');
+  RD.pinEls = [...host.children];
 }
 
 /** True when (x, y) is over the body. Rect rather than elementFromPoint: the
@@ -7943,7 +8007,7 @@ function ragdollDrop(id, kind) {
  * has to leave it standing there perfectly well.
  */
 const RD = { parts: [], links: [], limbs: [], ix: {}, grab: null, raf: 0,
-             lit: null, litT: 0, w: 0, h: 0, ground: 0 };
+             lit: null, litT: 0, pins: [], pinEls: null, w: 0, h: 0, ground: 0 };
 const RD_G = -26, RD_DAMP = 0.988, RD_ITER = 7;
 
 function rdBuild() {
@@ -8078,6 +8142,21 @@ function rdDraw() {
   ctx.beginPath(); ctx.arc(X(hd.x), Y(hd.y), hd.r * sc, 0, 7);
   ctx.fillStyle = card; ctx.fill();
   ctx.lineWidth = 3; ctx.strokeStyle = stroke; ctx.stroke();
+
+  // The pins ride the body. They are DOM rather than canvas so they can be the
+  // element's own drawing — the same artSVG every card uses — instead of a
+  // second, redrawn version of it that could drift.
+  const host = document.getElementById('rdPins');
+  if (host && RD.pinEls) {
+    const hx = host.getBoundingClientRect(), cx = cv.getBoundingClientRect();
+    const dx = cx.left - hx.left, dy = cx.top - hx.top;
+    RD.pins.forEach((p, i) => {
+      const el = RD.pinEls[i]; if (!el) return;
+      const a = RD.parts[RD.ix[p.part]] || RD.parts[RD.ix.chest];
+      el.style.transform = `translate(${(X(a.x) + Math.cos(p.a) * p.r * sc + dx).toFixed(1)}px,
+                                      ${(Y(a.y) + Math.sin(p.a) * p.r * sc + dy).toFixed(1)}px)`;
+    });
+  }
   return true;
 }
 
@@ -8179,6 +8258,7 @@ function renderAsideRagdoll(litRoutes) {
   pane.innerHTML = `
     <div id="rdStage">
       <canvas id="rdCanvas"></canvas>
+      <div id="rdPins"></div>
       <div id="rdRoute"></div>
     </div>
     <p id="rdSay">Drag anything here — a card from the bench, or a tool from
@@ -8198,6 +8278,7 @@ function renderAsideRagdoll(litRoutes) {
     const say = document.getElementById('rdRoute');
     if (say) say.textContent = routes.join(' · ');
   } else RD.lit = null;
+  rdPinsBuild();
   const cv = document.getElementById('rdCanvas');
   cv.onpointerdown = (ev) => { ev.preventDefault(); rdPointer(ev, 'down'); };
   cv.onpointermove = (ev) => rdPointer(ev, 'move');

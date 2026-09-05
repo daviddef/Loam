@@ -138,11 +138,24 @@ if (has('places.json')) {
  * exists from the first day so it cannot quietly stall at four per cent the way
  * needs did for months with nobody able to see it. */
 if (has('effects.json') && has('cautions.json')) {
-  const eff = read('effects.json').effects || {};
+  const E2 = read('effects.json');
+  const eff = E2.effects || {};
   const c2 = read('cautions.json').hazards || {};
   const pop = new Set(Object.values(c2).flatMap(h => h.ids || []));
-  add('effects', Object.keys(eff).length, pop.size,
-      'what an element does to a person — drives the Ragdoll canvas');
+  // Count against the population this row is actually about. The numerator was
+  // every element with any row at all, including the benefit-only ones, which
+  // carry no caution — so it was counting things the denominator had never
+  // heard of, and the figure ran ahead of the truth.
+  add('effects', [...pop].filter(id => eff[id]).length, pop.size,
+      'what an element does TO a person — the harm half of the Ragdoll');
+  // And the other half, against a denominator that is not ours: the standard
+  // list of nutrients a human body cannot make. Without it this side could sit
+  // at thirty rows for a year and nothing would show that it had.
+  const nut = E2.$nutrients || {};
+  const supplied = new Set(Object.values(eff).flat()
+    .filter(f => f.valence === 'benefit' && nut[f.outcome]).map(f => f.outcome));
+  add('nutrients', supplied.size, Object.keys(nut).length,
+      'what a body cannot make and must be given — the benefit half');
 }
 
 if (has('cautions.json')) {

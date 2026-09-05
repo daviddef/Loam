@@ -106,10 +106,41 @@ for (const [id, list] of Object.entries(E.verbs || {})) {
   rows(list).forEach((f, i) => checkRow(id, f, `verbs.${id}[${i}]`));
 }
 
+/* THE BENEFIT SIDE'S DENOMINATOR. The harm side has had one since the start —
+ * 621 elements carry a caution — and the benefit side had none, which meant it
+ * could sit at thirty rows for a year and nothing would show that it had. This
+ * one is not ours: it is the standard list of nutrients a human body cannot
+ * make. A nutrient is covered when some element carries a benefit row whose
+ * outcome IS that nutrient. */
+const NUTRIENTS = E.$nutrients || {};
+const supplies = new Map();               // nutrient id -> [element ids]
+for (const [id, list] of Object.entries(E.effects))
+  for (const f of (Array.isArray(list) ? list : [list]))
+    if (f.valence === 'benefit' && NUTRIENTS[f.outcome])
+      supplies.set(f.outcome, [...(supplies.get(f.outcome) || []), id]);
+for (const [id, nut] of Object.entries(NUTRIENTS)) {
+  if (!nut.group || !nut.why || !nut.src) errors.push(`$nutrients.${id}: needs a group, a why and a src`);
+  if (nut.deficiency && !byId.has(nut.deficiency)) errors.push(`$nutrients.${id}: deficiency "${nut.deficiency}" is not an element`);
+}
+const noElement = Object.keys(NUTRIENTS).filter(id => !byId.has(id));
+const covered = Object.keys(NUTRIENTS).filter(id => supplies.has(id));
+
 const cautioned = new Set(Object.values(cautions).flatMap(h => h.ids || []));
 const owed = [...cautioned].filter(id => !E.effects[id]).sort();
 
 const mode = process.argv[2];
+if (mode === '--nutrients') {
+  console.log(`\n${n(covered.length)} OF ${n(Object.keys(NUTRIENTS).length)} ESSENTIAL NUTRIENTS ARE SUPPLIED BY SOMETHING IN THIS CORPUS\n`);
+  let group = null;
+  for (const [id, nut] of Object.entries(NUTRIENTS)) {
+    if (nut.group !== group) { console.log(`  -- ${nut.group} --`); group = nut.group; }
+    const from = supplies.get(id);
+    const mark = from ? '✓' : byId.has(id) ? ' ' : '·';
+    console.log(`  ${mark} ${id.padEnd(24)}${from ? from.join(', ') : byId.has(id) ? '' : 'no element for it yet'}`);
+  }
+  console.log(`\n  ✓ supplied   (blank) the element exists and nothing supplies it   · no element yet\n`);
+  process.exit(0);
+}
 if (mode === '--benefits') {
   const mine = Object.entries(E.effects).flatMap(([id, l]) => l.filter(f => f.valence === 'benefit').map(f => [id, f]));
   console.log(`\n${n(mine.length)} THING(S) THE BODY IS BETTER OFF FOR\n`);
@@ -146,9 +177,11 @@ console.log();
 for (const v of VALENCE) console.log(`  ${v.padEnd(12)} ${String(byVal[v] || 0).padStart(4)}   ${E.$valence[v]}`);
 const both = Object.entries(E.effects).filter(([, l]) => new Set(l.map(f => f.valence)).size > 1);
 console.log(`\n  ${n(all.length)} effect(s) across ${n(Object.keys(E.effects).length)} element(s); ${n(both.length)} carry both sides.`);
-console.log(`  ${n(cautioned.size)} elements carry a caution.`);
+console.log(`  harm:    ${n([...cautioned].filter(id => E.effects[id]).length)} of ${n(cautioned.size)} elements that carry a caution.`);
+console.log(`  benefit: ${n(covered.length)} of ${n(Object.keys(NUTRIENTS).length)} essential nutrients supplied${noElement.length ? ` (${n(noElement.length)} have no element yet)` : ''}.`);
 console.log(`  ${n(Object.keys(E.verbs || {}).length)} of ${n(verbIds.size)} verb(s) do something to a body.`);
-console.log(`  node tools/effects.mjs --benefits  the other side`);
+console.log(`  node tools/effects.mjs --benefits   the other side`);
+console.log(`  node tools/effects.mjs --nutrients  what a body cannot make, and what supplies it`);
 console.log(`  node tools/effects.mjs --missing   the rest`);
 
 if (errors.length) {

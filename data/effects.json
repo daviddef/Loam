@@ -10,7 +10,8 @@
     "a verb is not an element, so verbs live in their own block. The Ragdoll has to answer smother the same way it answers methane — the brief asked for it in those words — and the five that act on a body get the same route, onset, mechanism and source as any substance.",
     "an element carries a LIST of effects, not one, because the same thing is routinely both. Sun makes vitamin D in the skin and melanoma in the same skin, by the same route, from the same photons; salt is required and salt raises blood pressure. A field that could only hold the harm was a hazard list wearing a body's clothes, and it made the corpus look as though nothing on it was good for anyone.",
     "valence says which side an entry is on, because a machine cannot read it off the outcome and the canvas has to colour it. carcinogen is meaningless on a benefit and the gate rejects it there.",
-    "prevents is optional and names the deficiency disease this thing keeps away — an element like any other, so scurvy, rickets and goitre are all cards you can already open. outcome stays 'what the body gets'; prevents is 'what it is spared'."
+    "prevents is optional and names the deficiency disease this thing keeps away — an element like any other, so scurvy, rickets and goitre are all cards you can already open. outcome stays 'what the body gets'; prevents is 'what it is spared'.",
+    "the benefit side has a denominator too, and it is external rather than ours: $nutrients is the list of things a human body cannot make and must be given. A nutrient is covered when some element in this corpus carries a benefit row whose outcome IS that nutrient. Without a written denominator this half of the field could sit at thirty rows for a year and nothing would show that it had — which is exactly what happened to needs."
   ],
   "$valence": {
     "harm": "the body is worse off for the encounter",
@@ -25,6 +26,213 @@
     "radiation": "needs no contact at all",
     "mechanical": "does its damage by force rather than chemistry",
     "thermal": "damages by temperature, in either direction"
+  },
+  "$nutrients_comment": "Essential nutrients: the things a human body cannot synthesise, or cannot synthesise fast enough, and must take in. The list is not ours — it is the standard one, and that is the point of using it as a denominator. Four of them have no element in this corpus yet (pantothenic acid and the two essential fatty acids), so they cannot be covered until one is authored; they stay on the list so the gap is visible rather than quietly absent. chloride is carried by the element `chlorine`, and vitamin B12 by `cobalamin`, because those are the ids this corpus has.",
+  "$nutrients": {
+    "vitamin_a": {
+      "group": "vitamin",
+      "deficiency": "night_blindness",
+      "why": "Retinal is the light-absorbing half of rhodopsin; there is no substitute for it in the eye.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_A"
+    },
+    "thiamin": {
+      "group": "vitamin",
+      "deficiency": "beriberi",
+      "why": "The cofactor for pyruvate dehydrogenase — without it a cell cannot get sugar into the citric acid cycle at all.",
+      "src": "https://en.wikipedia.org/wiki/Thiamine"
+    },
+    "riboflavin": {
+      "group": "vitamin",
+      "why": "The backbone of FAD and FMN, the carriers half of oxidative metabolism runs on.",
+      "src": "https://en.wikipedia.org/wiki/Riboflavin"
+    },
+    "niacin": {
+      "group": "vitamin",
+      "deficiency": "pellagra",
+      "why": "Becomes NAD, which is on one side or the other of most reactions in the body.",
+      "src": "https://en.wikipedia.org/wiki/Niacin"
+    },
+    "pantothenic_acid": {
+      "group": "vitamin",
+      "why": "Becomes coenzyme A. No element for it in this corpus yet — author it before this can be covered.",
+      "src": "https://en.wikipedia.org/wiki/Pantothenic_acid"
+    },
+    "vitamin_b6": {
+      "group": "vitamin",
+      "why": "The cofactor for transaminases, so it sits under nearly all amino acid chemistry.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
+    },
+    "biotin": {
+      "group": "vitamin",
+      "why": "Carries carbon dioxide for the carboxylases; the gut makes some, not enough.",
+      "src": "https://en.wikipedia.org/wiki/Biotin"
+    },
+    "folate": {
+      "group": "vitamin",
+      "why": "Moves single carbon atoms, which is most of what building DNA consists of.",
+      "src": "https://en.wikipedia.org/wiki/Folate"
+    },
+    "cobalamin": {
+      "group": "vitamin",
+      "deficiency": "anaemia",
+      "why": "Vitamin B12. Made only by bacteria and archaea — no plant or animal synthesises it.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
+    },
+    "vitamin_c": {
+      "group": "vitamin",
+      "deficiency": "scurvy",
+      "why": "The gene for the last enzyme in its pathway is broken in us, so collagen cannot be cross-linked without eating it.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+    },
+    "vitamin_d": {
+      "group": "vitamin",
+      "deficiency": "rickets",
+      "why": "Strictly a hormone the skin makes from sunlight, and a nutrient only where the sun will not do it.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+    },
+    "vitamin_e": {
+      "group": "vitamin",
+      "why": "The fat-soluble antioxidant that sits in membranes and is oxidised instead of the lipids around it.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+    },
+    "vitamin_k": {
+      "group": "vitamin",
+      "why": "Required to finish the clotting factors; without it they are made and do not work.",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_K"
+    },
+    "calcium": {
+      "group": "mineral",
+      "deficiency": "osteoporosis",
+      "why": "Bone is the bank, but the reason the level is defended so hard is that muscle and nerve spend it.",
+      "src": "https://en.wikipedia.org/wiki/Calcium_in_biology"
+    },
+    "phosphorus": {
+      "group": "mineral",
+      "why": "In every ATP, every nucleotide and most of the mineral in bone.",
+      "src": "https://en.wikipedia.org/wiki/Phosphorus#Biological_role"
+    },
+    "potassium": {
+      "group": "mineral",
+      "why": "The ion inside the cell, as sodium is the ion outside it.",
+      "src": "https://en.wikipedia.org/wiki/Potassium_in_biology"
+    },
+    "sodium": {
+      "group": "mineral",
+      "why": "Every nerve impulse is a sodium gradient collapsing and being rebuilt.",
+      "src": "https://en.wikipedia.org/wiki/Sodium_in_biology"
+    },
+    "chlorine": {
+      "group": "mineral",
+      "why": "Chloride: the counter-ion to sodium, and the acid in the stomach.",
+      "src": "https://en.wikipedia.org/wiki/Chloride"
+    },
+    "magnesium": {
+      "group": "mineral",
+      "why": "ATP is only usable as a magnesium complex, so it is a cofactor for hundreds of enzymes at once.",
+      "src": "https://en.wikipedia.org/wiki/Magnesium_in_biology"
+    },
+    "iron": {
+      "group": "mineral",
+      "deficiency": "anaemia",
+      "why": "The atom oxygen binds to in haemoglobin. Nothing else in the body does that job.",
+      "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
+    },
+    "zinc": {
+      "group": "mineral",
+      "why": "Structural in a whole class of transcription factors, and required for wound repair and taste.",
+      "src": "https://en.wikipedia.org/wiki/Zinc#Biological_role"
+    },
+    "iodine": {
+      "group": "mineral",
+      "deficiency": "goitre",
+      "why": "The thyroid hormones are built around iodine atoms and cannot be built without them.",
+      "src": "https://en.wikipedia.org/wiki/Iodine_deficiency"
+    },
+    "selenium": {
+      "group": "mineral",
+      "why": "Sits in the active site of glutathione peroxidase as selenocysteine, the twenty-first amino acid.",
+      "src": "https://en.wikipedia.org/wiki/Selenium#Biological_role"
+    },
+    "copper": {
+      "group": "mineral",
+      "why": "In cytochrome c oxidase at the end of the respiratory chain, and in the enzyme that cross-links collagen.",
+      "src": "https://en.wikipedia.org/wiki/Copper_in_health"
+    },
+    "manganese": {
+      "group": "mineral",
+      "why": "The metal in the superoxide dismutase inside mitochondria.",
+      "src": "https://en.wikipedia.org/wiki/Manganese#Biological_role"
+    },
+    "molybdenum": {
+      "group": "mineral",
+      "why": "Needed by exactly four human enzymes, and deficiency is almost unknown — which is itself the fact.",
+      "src": "https://en.wikipedia.org/wiki/Molybdenum#Biological_role"
+    },
+    "chromium": {
+      "group": "mineral",
+      "why": "Trivalent chromium, in trace amounts, in glucose handling — and the most contested entry on this list.",
+      "src": "https://en.wikipedia.org/wiki/Chromium#Biological_role"
+    },
+    "histidine": {
+      "group": "amino acid",
+      "why": "Essential in infancy and, on the current view, in adults too.",
+      "src": "https://en.wikipedia.org/wiki/Histidine"
+    },
+    "isoleucine": {
+      "group": "amino acid",
+      "why": "One of the three branched-chain amino acids, burned in muscle rather than liver.",
+      "src": "https://en.wikipedia.org/wiki/Isoleucine"
+    },
+    "leucine": {
+      "group": "amino acid",
+      "why": "The one that signals as well as builds: it switches on muscle protein synthesis directly.",
+      "src": "https://en.wikipedia.org/wiki/Leucine"
+    },
+    "lysine": {
+      "group": "amino acid",
+      "why": "The limiting amino acid in cereals, and the reason a grain alone is not enough.",
+      "src": "https://en.wikipedia.org/wiki/Lysine"
+    },
+    "methionine": {
+      "group": "amino acid",
+      "why": "Starts every protein and donates methyl groups; the limiting one in legumes.",
+      "src": "https://en.wikipedia.org/wiki/Methionine"
+    },
+    "phenylalanine": {
+      "group": "amino acid",
+      "why": "The precursor of tyrosine and so of dopamine, adrenaline and melanin.",
+      "src": "https://en.wikipedia.org/wiki/Phenylalanine"
+    },
+    "threonine": {
+      "group": "amino acid",
+      "why": "Heavily used in mucin, so the gut lining spends it faster than most tissues.",
+      "src": "https://en.wikipedia.org/wiki/Threonine"
+    },
+    "tryptophan": {
+      "group": "amino acid",
+      "why": "The precursor of serotonin and of niacin, and the rarest essential amino acid in food.",
+      "src": "https://en.wikipedia.org/wiki/Tryptophan"
+    },
+    "valine": {
+      "group": "amino acid",
+      "why": "The third branched-chain amino acid; the one substitution that causes sickle cell is a valine.",
+      "src": "https://en.wikipedia.org/wiki/Valine"
+    },
+    "linoleic_acid": {
+      "group": "fatty acid",
+      "why": "Omega-6. No element for it in this corpus yet — author it before this can be covered.",
+      "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
+    },
+    "alpha_linolenic_acid": {
+      "group": "fatty acid",
+      "why": "Omega-3. No element for it in this corpus yet — author it before this can be covered.",
+      "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
+    },
+    "choline": {
+      "group": "other",
+      "why": "Needed for cell membranes and acetylcholine; the body makes some and not enough.",
+      "src": "https://en.wikipedia.org/wiki/Choline"
+    }
   },
   "$verbs_comment": "The verbs that do something to a body. Keys are ids from data/verbs.json, not elements. wait, ferment and blow are absent on purpose: none of them does anything to a person on the timescale the canvas shows.",
   "effects": {
@@ -489,6 +697,14 @@
         "prevents": "scurvy",
         "mechanism": "More ascorbic acid by weight than an orange, though boiling leaches it into the water. The vitamin is the same molecule whatever it arrives in.",
         "src": "https://en.wikipedia.org/wiki/Broccoli"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "chromium",
+        "onset": "cumulative",
+        "mechanism": "Trivalent chromium in trace amounts, associated with insulin's action on the cell. It is the most contested entry on any essential-nutrient list, and broccoli is the food usually named — both facts belong on the card.",
+        "src": "https://en.wikipedia.org/wiki/Chromium"
       }
     ],
     "liver": [
@@ -500,6 +716,15 @@
         "prevents": "night_blindness",
         "mechanism": "Retinol is stored as an ester in the liver of the animal that ate it, so eating liver delivers the finished vitamin rather than a precursor the gut has to convert. The eye spends it fastest, which is why the first sign of running short is at dusk.",
         "src": "https://en.wikipedia.org/wiki/Vitamin_A"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "cobalamin",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "B12 is made by bacteria and archaea and by nothing else alive — no plant and no animal synthesises it. Animals accumulate what their gut flora or their food provides, and the liver is where it is banked, in quantities that last a person years.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
       }
     ],
     "carrot": [
@@ -554,6 +779,14 @@
         "onset": "conditional",
         "mechanism": "Every nerve impulse is a sodium gradient collapsing and being rebuilt, and the body has no way to manufacture the ion. This is why salt was worth trading across deserts.",
         "src": "https://en.wikipedia.org/wiki/Sodium_in_biology"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "chlorine",
+        "onset": "conditional",
+        "mechanism": "The other half of the crystal. Chloride is the counter-ion that lets sodium move, and it is also the acid in the stomach: the parietal cell pumps hydrogen out and chloride follows it.",
+        "src": "https://en.wikipedia.org/wiki/Chloride"
       }
     ],
     "beef": [
@@ -586,6 +819,14 @@
         "onset": "conditional",
         "mechanism": "Around a quarter protein dry, and low in methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
         "src": "https://en.wikipedia.org/wiki/Lentil"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "molybdenum",
+        "onset": "cumulative",
+        "mechanism": "Exactly four human enzymes need molybdenum, and legumes carry it because the bacteria in their root nodules need it too, for nitrogenase. Deficiency in a person eating ordinary food is almost unknown, which is itself the interesting part.",
+        "src": "https://en.wikipedia.org/wiki/Molybdenum"
       }
     ],
     "egg": [
@@ -596,6 +837,22 @@
         "onset": "conditional",
         "mechanism": "The reference against which other proteins are scored, because the amino acid proportions are close to what a body building tissue actually asks for.",
         "src": "https://en.wikipedia.org/wiki/Egg_as_food"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "biotin",
+        "onset": "cumulative",
+        "mechanism": "Biotin carries carbon dioxide for the carboxylase enzymes. The yolk is a good source and the raw white is the opposite: avidin in it binds biotin so tightly that it goes straight through. Cooking denatures the avidin and the problem with it.",
+        "src": "https://en.wikipedia.org/wiki/Biotin"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "choline",
+        "onset": "cumulative",
+        "mechanism": "Choline goes into every cell membrane as phosphatidylcholine and into acetylcholine, the transmitter at every neuromuscular junction. The body makes some and not enough, and the yolk is the densest ordinary source.",
+        "src": "https://en.wikipedia.org/wiki/Choline"
       }
     ],
     "chicken": [
@@ -638,6 +895,14 @@
         "prevents": "osteoporosis",
         "mechanism": "Calcium arrives with the lactose and the phosphate that help absorb it. Bone is dismantled and rebuilt lifelong, and the intake decides which of the two is winning.",
         "src": "https://en.wikipedia.org/wiki/Calcium_in_biology"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "riboflavin",
+        "onset": "cumulative",
+        "mechanism": "Riboflavin becomes FAD and FMN, the carriers half of oxidative metabolism runs on. It is destroyed by light in hours, which is the reason milk left clear glass bottles for opaque cartons.",
+        "src": "https://en.wikipedia.org/wiki/Riboflavin"
       }
     ],
     "cheese": [
@@ -649,6 +914,14 @@
         "prevents": "osteoporosis",
         "mechanism": "The calcium follows the curd rather than the whey, so it concentrates as the water leaves — one of the few foods where processing raises the mineral density.",
         "src": "https://en.wikipedia.org/wiki/Cheese"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phosphorus",
+        "onset": "cumulative",
+        "mechanism": "Phosphorus is in every ATP, every nucleotide and most of the mineral in bone. In cheese it comes bound to casein, which keeps it soluble as the curd dries.",
+        "src": "https://en.wikipedia.org/wiki/Phosphorus"
       }
     ],
     "yoghurt": [
@@ -769,6 +1042,217 @@
         "onset": "acute",
         "mechanism": "The same adenosine blockade, more slowly: theanine alongside the caffeine changes how quickly it arrives, not what it does.",
         "src": "https://en.wikipedia.org/wiki/Tea"
+      }
+    ],
+    "pork": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "thiamin",
+        "onset": "cumulative",
+        "prevents": "beriberi",
+        "mechanism": "Thiamin is the cofactor pyruvate dehydrogenase needs, so without it a cell cannot get sugar into the citric acid cycle at all and the tissues that burn the most sugar — nerve and heart — fail first. It sits in the bran of a grain, which is why beriberi followed the milling machine across Asia and not the rice.",
+        "src": "https://en.wikipedia.org/wiki/Thiamine"
+      }
+    ],
+    "maize": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "niacin",
+        "onset": "conditional",
+        "prevents": "pellagra",
+        "mechanism": "The niacin in maize is bound to a carbohydrate the gut cannot open, so a maize diet can be full of it and deliver none. Soaking the grain in an alkali releases it — which is why pellagra followed maize into Europe and the American South, and never appeared in Mesoamerica, where the alkali step was already thousands of years old.",
+        "src": "https://en.wikipedia.org/wiki/Nixtamalization"
+      }
+    ],
+    "chickpea": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_b6",
+        "onset": "cumulative",
+        "mechanism": "B6 becomes pyridoxal phosphate, the cofactor every transaminase uses, so it sits underneath nearly all amino acid chemistry rather than beside it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
+      }
+    ],
+    "natto": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_k",
+        "onset": "cumulative",
+        "mechanism": "The bacterium that ferments the beans makes menaquinone-7, a long-lived form of vitamin K. Without K the clotting factors are still built and simply do not work — the liver finishes them by adding a carboxyl group, and K is what lets it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_K2"
+      }
+    ],
+    "cocoa": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "magnesium",
+        "onset": "cumulative",
+        "mechanism": "ATP is only usable by an enzyme as a magnesium complex, so magnesium is a cofactor for hundreds of reactions at once rather than a specialist. Cocoa solids are among the densest food sources there are.",
+        "src": "https://en.wikipedia.org/wiki/Magnesium_in_biology"
+      }
+    ],
+    "oyster": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "zinc",
+        "onset": "cumulative",
+        "mechanism": "Zinc holds a whole class of transcription factors in the shape that lets them grip DNA, and the same metal is spent on wound repair and on taste. Oysters carry several times more of it than any other common food.",
+        "src": "https://en.wikipedia.org/wiki/Zinc"
+      }
+    ],
+    "brazil_nut": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "selenium",
+        "onset": "cumulative",
+        "mechanism": "Selenium sits in the active site of glutathione peroxidase as selenocysteine, the twenty-first amino acid, coded by a stop codon read differently. Brazil nuts take it up from the soil, so the amount in a nut varies with where the tree grew rather than with the nut.",
+        "src": "https://en.wikipedia.org/wiki/Selenium"
+      }
+    ],
+    "mussel": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "copper",
+        "onset": "cumulative",
+        "mechanism": "Copper is in cytochrome c oxidase, the last enzyme in the respiratory chain, and in lysyl oxidase, which cross-links collagen. Shellfish concentrate it because their own oxygen carrier, haemocyanin, is built on copper rather than iron.",
+        "src": "https://en.wikipedia.org/wiki/Copper_in_health"
+      }
+    ],
+    "oat": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "manganese",
+        "onset": "cumulative",
+        "mechanism": "Manganese is the metal at the centre of the superoxide dismutase inside mitochondria — the enzyme that disposes of the oxygen radicals respiration itself produces. Whole grains carry most of it in the bran.",
+        "src": "https://en.wikipedia.org/wiki/Manganese"
+      }
+    ],
+    "bean": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "lysine",
+        "onset": "cumulative",
+        "mechanism": "Lysine is the amino acid cereals run out of first, and legumes are full of it. That is why beans and a grain turn up together on nearly every continent: neither is complete and the pair is.",
+        "src": "https://en.wikipedia.org/wiki/Lysine"
+      }
+    ],
+    "sesame": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "methionine",
+        "onset": "cumulative",
+        "mechanism": "The complement to the bean. Legumes are short of methionine and seeds are not, and methionine is the amino acid every protein starts with as well as the body's main methyl donor.",
+        "src": "https://en.wikipedia.org/wiki/Methionine"
+      }
+    ],
+    "turkey": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "tryptophan",
+        "onset": "cumulative",
+        "mechanism": "Tryptophan is the precursor of serotonin and of niacin, and the rarest essential amino acid in food. Turkey is famous for it and is not actually unusual — the sleepiness after the meal is the size of the meal, not the bird.",
+        "src": "https://en.wikipedia.org/wiki/Tryptophan"
+      }
+    ],
+    "whey": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "leucine",
+        "onset": "conditional",
+        "mechanism": "Leucine does not only build muscle, it signals: it switches on the pathway that starts protein synthesis, so the same amount arriving quickly does more than the same amount arriving slowly. Whey is the fast fraction of milk protein.",
+        "src": "https://en.wikipedia.org/wiki/Leucine"
+      }
+    ],
+    "soybean": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "isoleucine",
+        "onset": "cumulative",
+        "mechanism": "One of the three branched-chain amino acids, and unusual in being burned in muscle rather than sent to the liver first. Soy is one of the few plant proteins with all nine essential ones in usable proportion.",
+        "src": "https://en.wikipedia.org/wiki/Isoleucine"
+      }
+    ],
+    "quinoa": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "valine",
+        "onset": "cumulative",
+        "mechanism": "The third branched-chain amino acid. Quinoa is named as a complete protein because it does not run short of lysine the way a cereal does — it is not a cereal, but a relative of spinach.",
+        "src": "https://en.wikipedia.org/wiki/Valine"
+      }
+    ],
+    "tofu": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "threonine",
+        "onset": "cumulative",
+        "mechanism": "Threonine goes disproportionately into mucin, the gel that lines the gut, so the intestine spends it faster than any other tissue and a shortage shows up there first.",
+        "src": "https://en.wikipedia.org/wiki/Threonine"
+      }
+    ],
+    "pumpkin_seed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phenylalanine",
+        "onset": "cumulative",
+        "mechanism": "Phenylalanine is converted to tyrosine and from there to dopamine, adrenaline and the pigment in skin and hair. The one inherited condition in which that first conversion fails is why every newborn in most countries has a heel prick.",
+        "src": "https://en.wikipedia.org/wiki/Phenylalanine"
+      }
+    ],
+    "mackerel": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "histidine",
+        "onset": "cumulative",
+        "mechanism": "Histidine is essential in infancy and, on the current evidence, in adults too. Oily fish carry a great deal of it in the dark muscle they use for continuous swimming.",
+        "src": "https://en.wikipedia.org/wiki/Histidine"
+      },
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "histamine",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "The same abundant histidine is what makes this fish dangerous when it has been left warm: bacteria on the flesh decarboxylate it into histamine, which cooking does not destroy because it is not the bacteria that are the problem by then. The reaction that follows looks like an allergy and is not one.",
+        "src": "https://en.wikipedia.org/wiki/Scombroid_food_poisoning"
+      }
+    ],
+    "sea": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "drowning",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "Nothing about the water decides this; the person does. The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling, and it is close to silent because breathing takes priority over speech. Whether the same sea is a swim or a drowning turns on whether you can swim, how far the shore is and how cold it is — which is why this is filed as conditional rather than acute.",
+        "src": "https://en.wikipedia.org/wiki/Drowning"
+      },
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Water takes heat out of a body roughly twenty-five times faster than air at the same temperature. The first minute is the dangerous one and not the hour: cold shock forces a gasp and then hyperventilation, and a gasp underwater is how a strong swimmer drowns in water they could have swum in warm.",
+        "src": "https://en.wikipedia.org/wiki/Cold_shock_response"
       }
     ]
   },
