@@ -17937,10 +17937,10 @@
   {
     "in": [
       "plateau",
-      "river"
+      "erosion"
     ],
     "out": "canyon",
-    "why": "The Colorado River cut its channel through layer after layer of rock while the Colorado Plateau it was crossing was itself being lifted 5,000-10,000 feet — the two together are why the Grand Canyon is so deep.",
+    "why": "Cutting down faster than the sides can come in. It needs a river with power and a plateau being lifted into it, so the channel keeps its gradient while it deepens — take away the uplift and you get a valley instead.",
     "src": "https://en.wikipedia.org/wiki/Grand_Canyon",
     "verified": true
   },
@@ -72197,11 +72197,11 @@
   },
   {
     "in": [
-      "alps",
-      "italy"
+      "granite",
+      "alps"
     ],
     "out": "mont_blanc",
-    "why": "The highest peak in the Alps stands between Italy's Aosta Valley and France's Auvergne-Rhône-Alpes, and ownership of the summit area has been disputed between the two for centuries.",
+    "why": "A granite massif pushed up where Africa is still driving into Europe, then carved by ice rather than water — the Alps' summits are their glaciers' work, and Mont Blanc's 4,806 m is the highest of them.",
     "src": "https://en.wikipedia.org/wiki/Mont_Blanc",
     "verified": true
   },
@@ -89593,10 +89593,10 @@
   {
     "in": [
       "mountain",
-      "river"
+      "erosion"
     ],
     "out": "valley",
-    "why": "A V-shaped valley is cut by water and a U-shaped one by ice, and the two are told apart at a glance for that reason. The river is almost always older than the shape around it, which is why some cut straight through a ridge that rose after they did.",
+    "why": "A river cuts down and gravity brings the sides in behind it: the V is the slope failing toward the channel, and the channel only has to keep removing what falls. A glacier does the same job differently and leaves a U.",
     "src": "https://en.wikipedia.org/wiki/Valley",
     "verified": true
   },
@@ -89612,11 +89612,11 @@
   },
   {
     "in": [
-      "mountain",
+      "erosion",
       "sea"
     ],
     "out": "cliff",
-    "why": "Waves undercut a notch at the base until the overhang fails and drops, and the fresh face is exposed to be undercut again. That is why a sea cliff stays vertical as it retreats, and why the beach below is made of what used to be the cliff.",
+    "why": "Not carved so much as continually broken off at the bottom. The sea undercuts the base until the face above has nothing beneath it, and the whole thing drops — which is why a cliff retreats parallel to itself and does not simply wear down.",
     "src": "https://en.wikipedia.org/wiki/Cliff",
     "verified": true
   },
@@ -99691,5 +99691,75 @@
     "why": "Before silver nitrate there was tin amalgam: tin foil laid flat on glass and flooded with mercury, left under weights for weeks until the two formed a bright reflective layer bonded to the pane. Venice held the method as a state secret on Murano for over a century, and the mercury killed the men who made them.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Mirror"
+  },
+  {
+    "in": [
+      "rock",
+      "chisel"
+    ],
+    "out": "stone",
+    "why": "Stone is rock that has been got out and worked: split along its bedding or its grain, squared, and dressed to a face. What makes a building stone is not what it is made of but whether it will come out of the ground in pieces a person can handle and stay standing once it is up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rock_(geology)"
+  },
+  {
+    "in": [
+      "sand",
+      "erosion"
+    ],
+    "out": "desert",
+    "why": "A desert is made by where it sits, not by what lives in it: under a subtropical high where descending air cannot rain, or behind a mountain that has already wrung the air out, or so far from any ocean that nothing wet ever arrives. Under about 250 mm a year, and wind moves what water is not holding down.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Desert"
+  },
+  {
+    "in": [
+      "mammal",
+      "savanna"
+    ],
+    "out": "lion",
+    "why": "The one social cat. Open country is why: on savanna a kill is visible for kilometres and cannot be dragged into cover, so a group that can hold a carcass against hyenas keeps it and a solitary hunter does not. The earliest lion fossils are from Olduvai, up to 2 million years old.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lion"
+  },
+  {
+    "in": [
+      "reptile",
+      "adaptation"
+    ],
+    "out": "dinosaur",
+    "why": "Dinosaurs diverged from other archosaurs in the Middle to Late Triassic, about 20 million years after the end-Permian extinction, and the thing that defines them is in the hip: the legs come down underneath the body rather than sprawling out from it, which is what let them get large and stay fast.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Dinosaur"
+  },
+  {
+    "in": [
+      "arthropod",
+      "chitin"
+    ],
+    "out": "insect",
+    "why": "Insects are the arthropods that settled on three body segments, six legs and one pair of antennae, inside a chitin exoskeleton they have to shed to grow. That last constraint is why almost none of them is large: moulting an animal bigger than a hand leaves it soft and helpless for too long.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Insect"
+  },
+  {
+    "in": [
+      "seedling",
+      "cellulose"
+    ],
+    "out": "stem",
+    "why": "A stem is a column that has to hold a leaf up and carry water to it at the same time, so it is built as a cylinder of stiffened cellulose around plumbing. Wind thickens it and shortens it, because a plant pushed around builds a shorter, sturdier one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plant_stem"
+  },
+  {
+    "in": [
+      "settlement",
+      "writing_system"
+    ],
+    "out": "census",
+    "why": "A census needs writing before it needs arithmetic: a count nobody can record is a count nobody can check or repeat. The earliest ones are granary and head tallies on clay, and the reason states keep doing it is that taxation and conscription both need a list of who is where.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Census"
   }
 ]

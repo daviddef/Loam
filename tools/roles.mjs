@@ -71,6 +71,81 @@ if (uncovered.length) errors.push(`${uncovered.length} input(s) to a place recip
 const mode = process.argv[2];
 const n = (x) => x.toLocaleString('en-US');
 
+/* --derives: THE ASSOCIATION CHECK, OUTSIDE PLACES
+ *
+ * tools/places.mjs uses this field to ask whether a place's recipe says how the
+ * thing was made. Nothing asked it anywhere else, and the fault is not confined
+ * to places. Found on 5 Sep by ranking elements that many recipes consume and
+ * exactly one produces:
+ *
+ *   stone    used by 138 recipes, and its only route was troll + sun
+ *   desert   cactus + sand — the cactus lives there, it does not make it
+ *   lion     mammal + tanzania — where the fossils were found
+ *   dinosaur argentina + reptile — same shape
+ *   insect   arthropod + compound_eye — a feature, not an ingredient
+ *
+ * Every one is prose that is true beside a gesture that is not a making. So the
+ * same lookup runs over every recipe whose inputs are all roled: if not one of
+ * them contributes — material, technique, process, tool or maker — then the
+ * recipe names the thing and something near it, and never says how.
+ *
+ * COVERAGE IS THE LIMIT AND IT IS PRINTED. A recipe with any unroled input is
+ * not judged and never counted as a fault, exactly as in places.mjs. The way to
+ * make this see the whole corpus is to write more roles, not to guess at them —
+ * two heuristics for this have already been built and thrown away, one that
+ * returned 684 candidates of which about two were real, and one on 5 Sep that
+ * returned 1,392 by reading the prose for material names it could not find in
+ * the inputs, of which almost none were real.
+ */
+if (mode === '--derives') {
+  /* TWO CONVENTIONS THIS MUST NOT FIGHT.
+   *
+   * An ORGANISM is routinely derived from where it lives, what it eats or what
+   * it is part of — tools/derivation.mjs counts 590 of them and says so
+   * outright. rainforest + river -> tapir is not a fault; it is how this corpus
+   * has always written species, and a check that flagged every one of them
+   * would be reporting a house style as a defect.
+   *
+   * A MYTH is not made of anything. snake + seed -> ares is a story, and asking
+   * it to name a material is a category error.
+   *
+   * Both are excluded by the output's own tags, not by guesswork about the
+   * recipe. What is left is the class that actually goes wrong: made things and
+   * landforms whose gesture names the thing and something standing near it. */
+  const byIdEl = new Map(elements.map(e => [e.id, e]));
+  const NOT_DERIVABLE = new Set(R.$not_derivable || []);
+  const CONVENTION = new Set(['animal', 'plant', 'microbe', 'wild', 'extinct', 'crop',
+                              'myth', 'belief', 'person', 'history', 'idea', 'society']);
+  const judged = [], bad = [], skipped = [];
+  for (const r of recipes) {
+    if (r.verb || r.in.length < 2) continue;
+    const rs = r.in.map(i => R.roles[i]);
+    if (rs.some(x => !x)) continue;
+    const tags = byIdEl.get(r.out)?.tags || [];
+    if (tags.some(t => CONVENTION.has(t)) || NOT_DERIVABLE.has(r.out)) { skipped.push(r); continue; }
+    judged.push(r);
+    if (!rs.some(x => R.$contributes.includes(x))) bad.push({ r, rs });
+  }
+  console.log(`\n${n(bad.length)} RECIPE(S) THAT NAME A THING AND NEVER SAY HOW IT IS MADE\n`);
+  for (const { r, rs } of bad) {
+    console.log(`  ${r.in.map((x, i) => `${x}(${rs[i]})`).join(' + ')}  ->  ${r.out}`);
+  }
+  const total = recipes.filter(r => !r.verb && r.in.length >= 2).length;
+  console.log(`  ${n(skipped.length)} recipe(s) skipped: an organism, a myth or a person, where`);
+  console.log(`  derivation from habitat or from a story is this corpus's own convention.`);
+  console.log(`\n  ${n(judged.length)} of ${n(total)} two-input recipes could be judged ` +
+              `(${(judged.length / total * 100).toFixed(1)}%). The rest have an input with no`);
+  console.log(`  role yet, and are not counted either way. That percentage is the whole`);
+  console.log(`  story of this check: it is exact on what it can see, and it cannot see much.`);
+  console.log(`\n  A LIMIT WORTH KNOWING: a role is recorded per ELEMENT, and the part a thing`);
+  console.log(`  plays is per RECIPE. Marble is a material in every recipe it appears in. A`);
+  console.log(`  river is a site in one and an eroding process in the next, and this field can`);
+  console.log(`  only hold one answer. Where that bites — mountain + river -> valley — the fix`);
+  console.log(`  is in the recipe, which should name erosion, and not in the role.\n`);
+  process.exit(0);
+}
+
+
 if (mode === '--missing') {
   console.log(`\n${n(uncovered.length)} PLACE-RECIPE INPUT(S) WITH NO ROLE\n`);
   for (const i of uncovered) console.log(`  ${i.padEnd(28)} ${(byId.get(i)?.tags || []).join(',')}`);
