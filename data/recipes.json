@@ -102771,5 +102771,285 @@
     "why": "Every element absorbs and emits at its own wavelengths, so a spectrum is a fingerprint that works at any distance. Helium was found in the sun's spectrum in 1868, decades before anybody had a sample of it on Earth.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Spectrometer"
+  },
+  {
+    "in": [
+      "lung",
+      "blood"
+    ],
+    "out": "hypoxia",
+    "why": "The brain uses about a fifth of the body's oxygen and stores none. Judgement and colour vision go before the person is aware anything is wrong, which is why hypoxia is dangerous in a way that breathlessness is not — breathlessness is driven by carbon dioxide building up, and where the CO2 can still escape there is no alarm.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hypoxia_(medicine)"
+  },
+  {
+    "in": [
+      "hypoxia",
+      "air"
+    ],
+    "out": "asphyxia",
+    "why": "An asphyxiant does not poison; it displaces. A person breathing an atmosphere without enough oxygen feels no urge to breathe harder, because that urge answers carbon dioxide and the CO2 is still leaving normally. It is why confined spaces kill rescuers as reliably as they kill the first casualty.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Asphyxia"
+  },
+  {
+    "in": [
+      "blood",
+      "wound"
+    ],
+    "out": "exsanguination",
+    "why": "Losing roughly a third of blood volume is enough to stop the circulation delivering, because pressure fails before volume does. An artery is a different problem from a vein: it is under pressure, it does not clot easily against that flow, and it needs direct pressure rather than elevation.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Exsanguination"
+  },
+  {
+    "in": [
+      "skin",
+      "blade"
+    ],
+    "out": "laceration",
+    "why": "A clean incision has two faces that meet; a laceration has crushed and torn tissue between them, which is slower to heal, likelier to become infected, and scars more. That is why the wound is cleaned and the edges trimmed before it is closed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wound"
+  },
+  {
+    "in": [
+      "bone",
+      "force"
+    ],
+    "out": "blunt_trauma",
+    "why": "Energy delivered over an area, so the surface survives and organs and vessels beneath do not. The dangerous version is the one that looks like nothing — a liver or spleen bleeding into the abdomen shows almost nothing outside for hours.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Blunt_trauma"
+  },
+  {
+    "in": [
+      "muscle",
+      "blunt_trauma"
+    ],
+    "out": "crush_syndrome",
+    "why": "Muscle crushed for hours breaks down, and the potassium and myoglobin stay trapped while the limb is compressed. When it is freed they reach the circulation at once — potassium can stop the heart and myoglobin can block the kidneys. It is why rescuers treat before extricating.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+  },
+  {
+    "in": [
+      "bone",
+      "blunt_trauma"
+    ],
+    "out": "fracture",
+    "why": "Bone's mineral resists compression and its collagen resists tension, and the tension side gives first. An open fracture is a different injury from a closed one of the same bone, because the skin has stopped being a barrier.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+  },
+  {
+    "in": [
+      "heat",
+      "skin"
+    ],
+    "out": "thermal_burn",
+    "why": "Protein denatures above about 44 °C given long enough, so a low temperature held is as damaging as a high one briefly. Steam carries its latent heat into the skin as it condenses, which is why it burns far deeper than dry air at the same temperature.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Burn"
+  },
+  {
+    "in": [
+      "acid",
+      "skin"
+    ],
+    "out": "chemical_burn",
+    "why": "Heat stops damaging as soon as it is removed; a chemical keeps reacting until it is diluted or neutralised by the tissue itself. Alkalis are worse than acids because they dissolve fat and keep going deeper, and both need long irrigation rather than a wipe.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chemical_burn"
+  },
+  {
+    "in": [
+      "ice",
+      "skin"
+    ],
+    "out": "frostbite",
+    "why": "The body constricts blood flow to the periphery to protect core temperature, so fingers, toes, ears and nose freeze first and lose their own supply while doing it. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Frostbite"
+  },
+  {
+    "in": [
+      "heat",
+      "brain"
+    ],
+    "out": "heat_stroke",
+    "why": "Above about 40 °C core temperature the hypothalamus stops regulating and sweating may stop altogether, so the temperature runs away. Humidity matters more than air temperature, because evaporation is the only cooling left once the air is warmer than the skin.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Heat_stroke"
+  },
+  {
+    "in": [
+      "water",
+      "lung"
+    ],
+    "out": "drowning",
+    "why": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling. It is also nearly silent — a drowning person cannot call out because breathing takes priority over speech, which is why lifeguards look for posture rather than listen for shouting.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Drowning"
+  },
+  {
+    "in": [
+      "current",
+      "heart"
+    ],
+    "out": "electrocution",
+    "why": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot for that reason, and wet skin drops resistance by an order of magnitude.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+  },
+  {
+    "in": [
+      "toxin",
+      "blood"
+    ],
+    "out": "poisoning",
+    "why": "Paracelsus's point stands: the dose makes the poison, and water and oxygen both kill at enough of them. What varies is the margin between a useful amount and a harmful one, and how the body's own chemistry converts what arrives.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Poisoning"
+  },
+  {
+    "in": [
+      "antigen",
+      "mast_cell"
+    ],
+    "out": "allergic_reaction",
+    "why": "IgE bound to mast cells recognises the allergen and the cell degranulates, releasing histamine. Sensitisation happens on an earlier exposure that produced no symptoms, which is why a first contact can be uneventful and a second one dangerous.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Allergy"
+  },
+  {
+    "in": [
+      "silica",
+      "lung"
+    ],
+    "out": "silicosis",
+    "why": "Particles small enough to reach the alveoli are engulfed by macrophages, which are then destroyed by them and release the particle again along with inflammatory signals. The cycle repeats, and the fibrosis it produces does not resolve. Engineered stone benchtops have brought it back in workers in their thirties.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Silicosis"
+  },
+  {
+    "in": [
+      "asbestos",
+      "tissue"
+    ],
+    "out": "asbestosis",
+    "why": "Asbestos splits lengthwise into fibres narrow enough to reach the deep lung and long enough that a macrophage cannot engulf one. Decades of that produces diffuse fibrosis — a separate disease from the mesothelioma the same exposure also causes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Asbestosis"
+  },
+  {
+    "in": [
+      "nitrogen",
+      "nerve"
+    ],
+    "out": "narcosis",
+    "why": "At depth nitrogen dissolves into the lipid of nerve membranes and interferes with signalling — like alcohol, including the part where judgement goes before the person notices. It reverses completely on ascent, which is what distinguishes it from decompression sickness.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
+  },
+  {
+    "in": [
+      "nitrite",
+      "blood"
+    ],
+    "out": "methaemoglobinaemia",
+    "why": "The iron in haem is oxidised from ferrous to ferric and stops binding oxygen. The blood goes chocolate brown and the person is cyanotic with a normal oxygen saturation reading, because the oximeter is measuring the wrong thing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Methemoglobinemia"
+  },
+  {
+    "in": [
+      "gamma_ray",
+      "tissue"
+    ],
+    "out": "radiation_sickness",
+    "why": "Ionising radiation damages DNA, and tissues that are constantly replacing themselves — bone marrow, gut lining, hair follicles — show it first. There is often a latent period of apparent recovery between the first sickness and the marrow failure.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
+  },
+  {
+    "in": [
+      "chemical_burn",
+      "skin"
+    ],
+    "out": "irritant",
+    "why": "It inflames on contact and the tissue recovers when it is removed. The classification is about reversibility rather than severity — a bad irritant reaction hurts more than a mild corrosive one and heals completely, which the corrosive does not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Irritation"
+  },
+  {
+    "in": [
+      "allergic_reaction",
+      "skin"
+    ],
+    "out": "sensitiser",
+    "why": "A sensitiser provokes an immune response rather than direct damage, so the first exposures do nothing while the immune system learns it. After that, tiny amounts cause a large reaction — which is why occupational asthma often appears after years of uneventful work.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sensitization_(immunology)"
+  },
+  {
+    "in": [
+      "toxin",
+      "nerve"
+    ],
+    "out": "neurotoxin",
+    "why": "Nerve signalling depends on ion channels and neurotransmitters, and blocking or jamming either stops the signal. That is why neurotoxins act in minutes rather than days, and why the same mechanism appears independently in snakes, cone snails, bacteria and plants.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Neurotoxin"
+  },
+  {
+    "in": [
+      "toxin",
+      "liver"
+    ],
+    "out": "hepatotoxin",
+    "why": "Most of what is absorbed goes through the liver first, and its enzymes sometimes convert a harmless compound into a reactive one. Paracetamol is the classic case — safe at dose, and at overdose the pathway that normally handles it saturates.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hepatotoxicity"
+  },
+  {
+    "in": [
+      "toxin",
+      "kidney"
+    ],
+    "out": "nephrotoxin",
+    "why": "Filtering means the tubules see the substance at far higher concentration than the blood did. That is why a compound harmless in circulation can destroy the tissue removing it, and why dehydration makes almost every nephrotoxin worse.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nephrotoxicity"
+  },
+  {
+    "in": [
+      "skin",
+      "toxin"
+    ],
+    "out": "route_of_exposure",
+    "why": "The same substance is inert on skin, dangerous inhaled and lethal injected, because each route meets different barriers and reaches the blood at a different rate and concentration. Asbestos in a wall is not a hazard; asbestos in the air is. Route is not a detail of exposure, it is most of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Route_of_administration"
+  },
+  {
+    "in": [
+      "mutation",
+      "time"
+    ],
+    "out": "latency",
+    "why": "A cumulative hazard produces nothing at the moment of contact. Mesothelioma typically appears 20 to 50 years after asbestos exposure, which is why the harm was denied for so long and why a hazard that does nothing today is not a hazard that did nothing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Incubation_period"
+  },
+  {
+    "in": [
+      "chemical_burn",
+      "acid"
+    ],
+    "out": "corrosive",
+    "why": "Defined by what it does at the point of contact: destruction through the full thickness of skin. It is a property of the substance and its concentration together, which is why the same chemical carries a hazard label at one strength and sits in food at another.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Corrosive_substance"
   }
 ]

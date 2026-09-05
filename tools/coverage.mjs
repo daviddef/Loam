@@ -134,6 +134,17 @@ if (has('places.json')) {
   add('places checklist', pc ? pc.satisfied : 0, pc ? pc.wanted : wanted,
       'part authored, part external (Chronicarum) — a denominator that can disagree');
 }
+/* The Ragdoll layer's own coverage. It starts near zero on purpose and the row
+ * exists from the first day so it cannot quietly stall at four per cent the way
+ * needs did for months with nobody able to see it. */
+if (has('effects.json') && has('cautions.json')) {
+  const eff = read('effects.json').effects || {};
+  const c2 = read('cautions.json').hazards || {};
+  const pop = new Set(Object.values(c2).flatMap(h => h.ids || []));
+  add('effects', Object.keys(eff).length, pop.size,
+      'what an element does to a person — drives the Ragdoll canvas');
+}
+
 if (has('cautions.json')) {
   const c = read('cautions.json').hazards || {};
   const covered = new Set(Object.values(c).flatMap(x => x.ids || []));

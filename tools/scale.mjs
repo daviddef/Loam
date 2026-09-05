@@ -800,6 +800,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'hypoxia', 'asphyxia', 'exsanguination', 'laceration', 'blunt_trauma', 'crush_syndrome', 'fracture', 'thermal_burn', 'chemical_burn', 'frostbite', 'heat_stroke', 'drowning', 'electrocution', 'poisoning', 'allergic_reaction', 'silicosis', 'asbestosis', 'narcosis', 'methaemoglobinaemia', 'radiation_sickness', 'irritant', 'sensitiser', 'neurotoxin', 'hepatotoxin', 'nephrotoxin', 'route_of_exposure', 'latency', 'corrosive',   // ragdoll outcomes
     'anti_roll_bar', 'control_arm', 'brake_lever', 'thermometer', 'reflux', 'mihrab', 'thruster', 'magnetometer', 'defibrillator', 'gear_train', 'connecting_rod',   // missing-list components
     'heat_shield', 'airbag', 'air_filter', 'spacesuit',   // spaceflight + engine parts
     'combustion_chamber', 'turbopump', 'primary_mirror', 'baffle',   // components
