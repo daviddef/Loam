@@ -92,7 +92,12 @@ function nameTerms(id) {
   const e = byId.get(id);
   const words = (e ? e.name : id.replace(/_/g, ' ')).toLowerCase().split(/[^a-z0-9]+/);
   const kept = words.filter(w => w.length > 3 && !STOP.has(w));
-  return kept.length ? kept : words.filter(Boolean);
+  const base = kept.length ? kept : words.filter(Boolean);
+  // This corpus writes British English and Wikipedia often does not. "Diarrhoea"
+  // against an article that says "diarrhea" is a spelling difference, not a
+  // source failing to carry a claim, and flagging it teaches nothing.
+  const us = base.map(w => w.replace(/oe/g, 'e').replace(/ae/g, 'e')).filter(w => !base.includes(w));
+  return [...base, ...us];
 }
 
 /* Numbers worth checking, borrowed wholesale from tools/audit.mjs's reasoning:

@@ -302,6 +302,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* owed outcomes restored, 5 Sep */
+          'diarrhoea',
           /* W2 arachnids and insects, 5 Sep */
           'proboscis', 'pupa', 'chrysalis', 'instar', 'honeycomb', 'propolis', 'queen_bee', 'worker_bee',
     'o_ring', 'microcontroller', 'host_plant',   // missing-list components
@@ -518,6 +520,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* owed outcomes restored, 5 Sep */
+          'argyria',
           /* W2 arachnids and insects, 5 Sep */
           'hive',
     'prism', 'spectrometer',
@@ -812,6 +816,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* owed outcomes restored, 5 Sep */
+          'hyperactivity',
           /* W2 arachnids and insects, 5 Sep */
           'colony',
     'hypoxia', 'asphyxia', 'exsanguination', 'laceration', 'blunt_trauma', 'crush_syndrome', 'fracture', 'thermal_burn', 'chemical_burn', 'frostbite', 'heat_stroke', 'drowning', 'electrocution', 'poisoning', 'allergic_reaction', 'silicosis', 'asbestosis', 'narcosis', 'methaemoglobinaemia', 'radiation_sickness', 'irritant', 'sensitiser', 'neurotoxin', 'hepatotoxin', 'nephrotoxin', 'route_of_exposure', 'latency', 'corrosive',   // ragdoll outcomes

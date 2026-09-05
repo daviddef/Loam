@@ -2164,6 +2164,16 @@
         "mechanism": "It grows a passivating oxide film within milliseconds of meeting air, and that film — not the metal — is what everything touches. It is the reason aluminium cookware does not dissolve into food.",
         "src": "https://en.wikipedia.org/wiki/Aluminium#Corrosion_resistance"
       }
+    ],
+    "silver": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "argyria",
+        "onset": "cumulative",
+        "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The blue-grey is permanent — there is no route by which the body removes it.",
+        "src": "https://en.wikipedia.org/wiki/Argyria"
+      }
     ]
   },
   "hazards": {
@@ -3722,6 +3732,26 @@
         "mechanism": "The difference from coffee is entirely concentration: the same molecule arrives in a form where the ordinary limits on how fast you can take it in no longer apply.",
         "src": "https://en.wikipedia.org/wiki/Caffeine#Overdose"
       }
+    ],
+    "polyol_laxation": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "diarrhoea",
+        "onset": "conditional",
+        "mechanism": "Polyols are absorbed slowly and incompletely, so they reach the large intestine still osmotically active, pull water in after them, and are fermented by the bacteria there — which is the bloating and the diarrhoea both.",
+        "src": "https://en.wikipedia.org/wiki/Sugar_alcohol"
+      }
+    ],
+    "ponceau_4r_southampton_trial": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hyperactivity",
+        "onset": "conditional",
+        "mechanism": "The trial found a small shift in behaviour averaged across a group of children rather than a reaction in any individual one, and the European answer was a label rather than a ban — which is what an effect of that size supports.",
+        "src": "https://en.wikipedia.org/wiki/Ponceau_4R"
+      }
     ]
   },
   "verbs": {
@@ -3852,10 +3882,5 @@
       }
     ]
   },
-  "$dial_comment": "A dial names the axis a staging is actually measured on, and stages walk it. `from` is where a body starts and `to` is the far end of the published scale. Each stage's `at` is a real value on that axis. `outcome` is optional: the early rungs of most ladders are not injuries and should not pretend to be.",
-  "$owed_outcomes": [
-    "argyria — silver's permanent blue-grey skin discolouration. The `silver` effect row was removed because `irritant` was simply the wrong word for it and nothing better exists.",
-    "diarrhoea — the polyol laxation row was removed for the same reason. Both are ordinary corpus work: author the element and the row can come back.",
-    "a behavioural effect — the Southampton dye trial found a small average shift in children's behaviour, which is neither an allergy nor an irritation. Two hazard rows have been written against the nearest wrong word and one of them (ponceau_4r) was removed for it."
-  ]
+  "$dial_comment": "A dial names the axis a staging is actually measured on, and stages walk it. `from` is where a body starts and `to` is the far end of the published scale. Each stage's `at` is a real value on that axis. `outcome` is optional: the early rungs of most ladders are not injuries and should not pretend to be."
 }
