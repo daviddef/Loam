@@ -1623,6 +1623,557 @@
         "mechanism": "Crystalline aluminium oxide: too hard to abrade and too stable to dissolve. It is used for the windows of implanted devices, where anything that fogged or reacted would end the device.",
         "src": "https://en.wikipedia.org/wiki/Sapphire"
       }
+    ],
+    "iron": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The body has no way to excrete iron once it is absorbed — intake is regulated at the gut and there is no tap on the other end. A large amount taken at once overwhelms that gate, and free iron in the blood damages the liver and the vessel walls directly. It is a leading cause of poisoning death in small children for exactly this reason: the tablets look like sweets.",
+        "src": "https://en.wikipedia.org/wiki/Iron_poisoning"
+      }
+    ],
+    "steel": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Surgical stainless holds a passive chromium-oxide film that reforms the instant it is scratched, so the metal underneath never meets tissue. That is why bone screws and plates are made of it, and why a knife blade and an implant are the same alloy family.",
+        "src": "https://en.wikipedia.org/wiki/Surgical_stainless_steel"
+      }
+    ],
+    "paper": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Cellulose is glucose joined by a bond human enzymes cannot open — no mammal makes cellulase. Paper passes through unchanged, which is the same reason plant fibre is called roughage rather than food.",
+        "src": "https://en.wikipedia.org/wiki/Cellulose"
+      }
+    ],
+    "book": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Cellulose and ink. There is nothing in a book a human gut can take apart, which is why the fibre in a plant and the fibre in a page are the same problem.",
+        "src": "https://en.wikipedia.org/wiki/Cellulose"
+      }
+    ],
+    "tree": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A mature tree holds tonnes of stored energy in its own weight and in the tension of a leaning trunk, and it releases all of it in one direction. Tree work has one of the highest fatality rates of any trade for that reason, and most of the deaths are from being struck rather than from falling.",
+        "src": "https://en.wikipedia.org/wiki/Logging#Safety"
+      }
+    ],
+    "protein": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Every food allergy is to a protein, never to a fat or a sugar, because only a protein is large and structured enough for an antibody to recognise. Cooking sometimes changes the shape enough to break that recognition and sometimes does not, which is why one person can eat a baked egg and not a boiled one.",
+        "src": "https://en.wikipedia.org/wiki/Food_allergy"
+      }
+    ],
+    "cloth": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Cotton dust causes byssinosis, and its signature is that the chest tightness comes back on the first day of the working week and eases through it. Nineteenth-century mills called it Monday fever long before anyone knew what caused it.",
+        "src": "https://en.wikipedia.org/wiki/Byssinosis"
+      }
+    ],
+    "bone": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "laceration",
+        "onset": "conditional",
+        "mechanism": "A swallowed fish bone is one of the commonest foreign bodies in an oesophagus. It is thin enough to pass the throat and stiff enough to lodge point-first, and the danger is perforation rather than obstruction.",
+        "src": "https://en.wikipedia.org/wiki/Foreign_body"
+      }
+    ],
+    "enzyme": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Proteolytic enzymes added to washing powder in the 1960s caused an outbreak of occupational asthma in the workers making it — an enzyme is a protein, and inhaling a protein in quantity is how the immune system is taught to react to it.",
+        "src": "https://en.wikipedia.org/wiki/Occupational_asthma"
+      }
+    ],
+    "flower": [
+      {
+        "valence": "inert",
+        "route": "inhaled",
+        "onset": "conditional",
+        "mechanism": "The plants that cause hay fever are the ones with no flower worth looking at. A showy flower is advertising to insects, so its pollen is heavy, sticky and stays where it is put; wind-pollinated plants make theirs light and in enormous quantity, and that is the pollen in the air.",
+        "src": "https://en.wikipedia.org/wiki/Pollen#Allergy"
+      }
+    ],
+    "brain": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The one tissue where eating it has transmitted a disease with no organism in it at all. A prion is a misfolded protein that makes copies of its own misfolding, and nothing that destroys a bacterium or a virus touches it.",
+        "src": "https://en.wikipedia.org/wiki/Prion"
+      }
+    ],
+    "brick": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "The fired clay is harmless in one piece. Cutting and grinding it releases respirable crystalline silica, and the lung has no way to clear a particle it cannot dissolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "sandstone": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Sandstone is cemented quartz, so working it produces the same respirable crystalline silica as sand does. This is the oldest recorded occupational disease there is.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "quartz": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "The mineral itself. Whole crystals are inert; the fraction small enough to reach an alveolus destroys the macrophage that engulfs it and is released again to do it once more.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "copper": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "Freshly formed metal-oxide fume is fine enough to reach the deep lung, where it provokes a flu-like reaction that comes on hours after the work and is gone the next day. It is the metal in fume form, not the metal in hand.",
+        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "zinc": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "The classic cause of metal fume fever: galvanised steel heated hot enough to vaporise its zinc coating. The reaction is to the freshly condensed oxide particles, which is why welding the same metal cold does nothing.",
+        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "dog": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A bite is an injection of mouth flora past every barrier the skin has. Pasteurella and Capnocytophaga are ordinary in a healthy dog's mouth, and a puncture from a canine tooth seals over the top of them.",
+        "src": "https://en.wikipedia.org/wiki/Dog_bite"
+      }
+    ],
+    "fungus": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Most fungi cannot grow at body temperature, which is a large part of why so few of the millions of species trouble us. The ones that do are either kept to the dead outer skin or take hold only where the immune system has stepped back.",
+        "src": "https://en.wikipedia.org/wiki/Mycosis"
+      }
+    ],
+    "mould": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Spores and fragments small enough to reach the airway, in numbers that rise with damp. The reaction is usually to the spore as an allergen rather than to any toxin, and it is why the housing is treated rather than the person.",
+        "src": "https://en.wikipedia.org/wiki/Mold_health_issues"
+      }
+    ],
+    "straw": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "allergic_reaction",
+        "onset": "cumulative",
+        "mechanism": "Mouldy hay and straw carry thermophilic actinomycetes, and breathing them repeatedly teaches the immune system to attack the lung tissue holding them. Farmer's lung is that reaction, and it scars.",
+        "src": "https://en.wikipedia.org/wiki/Farmer%27s_lung"
+      }
+    ],
+    "feather": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "allergic_reaction",
+        "onset": "cumulative",
+        "mechanism": "The same mechanism as farmer's lung, from bird protein in the dust of droppings and feathers. It is called bird fancier's lung and it appears in people who keep pigeons and budgerigars for years.",
+        "src": "https://en.wikipedia.org/wiki/Bird_fancier%27s_lung"
+      }
+    ],
+    "sulfur": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "Burning sulphur makes sulphur dioxide, which dissolves in the wet lining of the airway to make acid there. The gas is a preservative and a bleach for the same reason it is an irritant.",
+        "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide"
+      }
+    ],
+    "ammonia": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It is extremely soluble in water, so it is captured by the first wet surface it meets — eyes and upper airway — and makes a strong alkali on the spot. That is also why it warns so effectively: nobody stays in it by accident.",
+        "src": "https://en.wikipedia.org/wiki/Ammonia"
+      }
+    ],
+    "bromine": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "A liquid at room temperature that boils readily, so the hazard is a heavy red-brown vapour. It oxidises tissue on contact and, like chlorine, generates acid in the airway lining.",
+        "src": "https://en.wikipedia.org/wiki/Bromine"
+      }
+    ],
+    "carbon_dioxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "Unlike most asphyxiants it is not silent. The urge to breathe answers carbon dioxide directly, so a rising level produces real air hunger and panic — which is why carbon monoxide kills people who feel fine and this does not.",
+        "src": "https://en.wikipedia.org/wiki/Hypercapnia"
+      }
+    ],
+    "hydrogen_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "It is not toxic and does nothing chemically. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
+        "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
+      }
+    ],
+    "silver": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "irritant",
+        "onset": "cumulative",
+        "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The resulting blue-grey colour is permanent — there is no route by which the body removes it.",
+        "src": "https://en.wikipedia.org/wiki/Argyria"
+      }
+    ],
+    "rubber": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
+        "src": "https://en.wikipedia.org/wiki/Latex_allergy"
+      }
+    ],
+    "leather": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "cumulative",
+        "mechanism": "Chrome tanning leaves residual chromium in the hide, and some of it converts to the hexavalent form. Contact dermatitis from shoes is one of the commonest presentations of chromium allergy.",
+        "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)"
+      }
+    ],
+    "coin": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "cumulative",
+        "mechanism": "Nickel released by sweat binds skin protein, and the immune system learns the combination permanently. Handling coins is the classic occupational exposure — cashiers were the first group in whom it was described.",
+        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
+      }
+    ],
+    "wool": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "The prickle is mechanical, not allergic: fibres above about thirty microns are stiff enough to indent the skin and set off the same nerve endings pain uses. Finer wool from the same animal does not do it.",
+        "src": "https://en.wikipedia.org/wiki/Wool#Characteristics"
+      }
+    ],
+    "concrete": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "conditional",
+        "mechanism": "Wet cement is strongly alkaline and it does not sting, so kneeling in it can produce a full-thickness burn over hours without any warning at the time. Set concrete is inert; the hazard is entirely in the window while it is curing.",
+        "src": "https://en.wikipedia.org/wiki/Cement#Health_and_safety"
+      }
+    ],
+    "plaster": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "conditional",
+        "mechanism": "Plaster of Paris gives off heat as it sets, and a thick cast over a limb has nowhere to lose it. Burns under casts are documented and are a function of thickness and of the water temperature it was mixed with.",
+        "src": "https://en.wikipedia.org/wiki/Plaster_cast"
+      }
+    ],
+    "wheat": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "Gluten is not digested to completion by anyone; in coeliac disease the fragments that remain trigger an immune attack on the lining of the small intestine, which then cannot absorb. It is not an allergy and not an intolerance — it is autoimmune, and the damage is to the person's own gut.",
+        "src": "https://en.wikipedia.org/wiki/Coeliac_disease"
+      }
+    ],
+    "rice": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Rice is grown in flooded fields, and flooding mobilises arsenic out of the soil in a form the plant takes up readily. It accumulates in the grain rather than the straw, which is why rice carries more of it than any other staple.",
+        "src": "https://en.wikipedia.org/wiki/Arsenic_contamination_of_groundwater"
+      }
+    ],
+    "cabbage": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "goitre",
+        "onset": "conditional",
+        "mechanism": "Brassicas carry glucosinolates that interfere with the thyroid's uptake of iodine. It matters only where iodine is already short, and cooking reduces it — which is why this is a fact about diets rather than about cabbage.",
+        "src": "https://en.wikipedia.org/wiki/Goitrogen"
+      }
+    ],
+    "sugar": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The bacteria already on a tooth ferment it to acid within minutes, and that acid dissolves the mineral of the enamel. Frequency matters more than quantity: the enamel remineralises between meals and cannot if there is never a gap.",
+        "src": "https://en.wikipedia.org/wiki/Tooth_decay"
+      }
+    ],
+    "glucose": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "acute",
+        "mechanism": "The one fuel the brain will use in ordinary circumstances, at about a fifth of the body's whole energy budget for two per cent of its weight. It is also the only sugar the blood carries — everything else is converted first.",
+        "src": "https://en.wikipedia.org/wiki/Glucose"
+      }
+    ],
+    "virus": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A virus is not alive in any useful sense: it carries instructions and a coat, and the copying is done entirely by the cell it enters. That is why almost nothing kills a virus without also harming the host.",
+        "src": "https://en.wikipedia.org/wiki/Virus"
+      }
+    ],
+    "insect": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Insects carry more human disease than any other group of animals, and almost always as a vector rather than as a cause — the mosquito, the tsetse fly and the sandfly are syringes, and what they inject is somebody else's parasite.",
+        "src": "https://en.wikipedia.org/wiki/Vector_(epidemiology)"
+      }
+    ],
+    "coral": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A coral cut is shallow and heals badly, because the wound is seeded with fragments of skeleton and with the marine bacteria living on them. Fire corals are not corals at all but hydroids, and they sting rather than cut.",
+        "src": "https://en.wikipedia.org/wiki/Coral#Injury"
+      }
+    ],
+    "wolf": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "mechanism": "Attacks are genuinely rare — far rarer than the folklore — and almost all documented cases involve rabid animals or animals habituated to people. The bite is a holding one, and the injury is tearing.",
+        "src": "https://en.wikipedia.org/wiki/Wolf_attack"
+      }
+    ],
+    "automobile": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Around a million people a year, and the injury is deceleration rather than impact: the body stops with the car and the organs inside it do not, which is why the damage is often internal and invisible.",
+        "src": "https://en.wikipedia.org/wiki/Traffic_collision"
+      }
+    ],
+    "petroleum": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Crude oil and its lighter fractions carry benzene, which the marrow converts into metabolites that damage the cells making blood. That is why the cancer associated with it is leukaemia rather than a cancer of the lung.",
+        "src": "https://en.wikipedia.org/wiki/Benzene",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "smoke": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "cumulative",
+        "mechanism": "Wood smoke is mostly particles under 2.5 microns, small enough to pass the airway defences entirely and reach the alveoli. Household cooking smoke remains one of the largest environmental causes of death in the world.",
+        "src": "https://en.wikipedia.org/wiki/Indoor_air_pollution_in_developing_nations"
+      }
+    ],
+    "snow": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "frostbite",
+        "onset": "conditional",
+        "mechanism": "Melting snow against skin takes heat at the latent heat of fusion, which is far more than cold air of the same temperature can. Frostbite is ice crystals forming inside the tissue and tearing the cells from within.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "frost": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "frostbite",
+        "onset": "contact",
+        "mechanism": "Freezing is not simply cold. Water crystallises between and then inside cells, and it is the crystal edges that do the damage — which is why rapid rewarming hurts and slow rewarming injures more.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "glacier": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "A crevasse is bridged by snow that looks like the rest of the surface, and a fall into one wedges a body tighter the deeper it goes. The cold is the second problem, not the first.",
+        "src": "https://en.wikipedia.org/wiki/Crevasse"
+      }
+    ],
+    "flint": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "It fractures conchoidally, like glass, so a struck flake carries an edge sharper than most steel. That is what made it the first tool material and it has not stopped being true.",
+        "src": "https://en.wikipedia.org/wiki/Flint"
+      }
+    ],
+    "sheet_metal": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "A sheared edge is burred and thin, and it parts skin at a pressure a knife would need to be pressed to reach. Most metalwork injuries are from handling stock rather than from any machine.",
+        "src": "https://en.wikipedia.org/wiki/Metalworking"
+      }
+    ],
+    "gunpowder": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "It deflagrates rather than detonating — it burns very fast rather than producing a supersonic shock — so the injury is flame and hot gas, and the hazard scales with confinement.",
+        "src": "https://en.wikipedia.org/wiki/Gunpowder"
+      }
+    ],
+    "current": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "electrocution",
+        "onset": "acute",
+        "mechanism": "It is current that injures, not voltage: the path and the amount decide it. Milliamps across the chest can fibrillate a heart, and the skin's resistance, which is what usually limits it, falls by an order of magnitude when wet.",
+        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+      }
+    ],
+    "carbon": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Elemental carbon is about as biologically unavailable as matter gets. Activated charcoal passes through a gut adsorbing things and is not itself absorbed, and tattoo pigment is carbon that stays in the dermis for a lifetime without being recognised.",
+        "src": "https://en.wikipedia.org/wiki/Activated_carbon"
+      }
+    ],
+    "keratin": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Hair and nail are dead by the time they are visible: keratin cross-linked by disulphide bonds into something no human enzyme dismantles. That is why cutting either is painless and why they survive in graves.",
+        "src": "https://en.wikipedia.org/wiki/Keratin"
+      }
+    ],
+    "aluminum": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "It grows a passivating oxide film within milliseconds of meeting air, and that film — not the metal — is what everything touches. It is the reason aluminium cookware does not dissolve into food.",
+        "src": "https://en.wikipedia.org/wiki/Aluminium#Corrosion_resistance"
+      }
     ]
   },
   "hazards": {

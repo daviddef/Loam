@@ -7895,6 +7895,14 @@ const RD_LIT = {
  * the ring dashed rather than inventing a location. */
 const RD_PIN = { inhaled: 'chest', ingested: 'pelvis', contact: 'haR', absorbed: 'haR',
                  injected: 'elL', radiation: 'head', mechanical: 'pelvis', thermal: 'haL' };
+/* A condition has no route in, because it is already in. What it has instead
+ * is what it affects, and where that names something with a place, the body
+ * can show it. */
+const RD_AFFECT = { brain: 'head', eye: 'head', tooth: 'head', thyroid: 'chest',
+                    lung: 'chest', heart: 'chest', blood: 'chest', rib: 'chest',
+                    bone: 'pelvis', gut: 'pelvis', intestine: 'pelvis', liver: 'pelvis',
+                    kidney: 'pelvis', stomach: 'pelvis', pancreas: 'pelvis',
+                    joint: 'knL', muscle: 'knL', skin: 'haR', collagen: 'haR', nerve: 'elL' };
 const rdName = (x) => x.kind === 'verb'
   ? (verbs.find(v => v.id === x.id)?.name ?? x.id)
   : (byId[x.id] ? nameOf(byId[x.id]) : x.id);
@@ -7924,10 +7932,28 @@ function rdResolve(id, kind) {
   if (id === 'human') return [];
   const r = DATA.recipes.find(x => (x.in || []).length === 2 && x.in.includes('human')
             && x.in.includes(id) && (byId[x.out]?.tags || []).includes('medicine'));
-  if (!r) return [];
-  return [{ source: 'infection', valence: 'harm', route: null, onset: null, outcome: r.out,
+  if (r) return [{ source: 'infection', valence: 'harm', route: null, onset: null, outcome: r.out,
             mechanism: r.why, src: r.src,
             transmission: (PATHOGENS[id] || {}).transmission || null }];
+  // A DISEASE IS NOT SOMETHING THAT ACTS ON A BODY FROM OUTSIDE — it is
+  // already a state of one, and 354 of them were answering "nothing is on
+  // record" because the field is built around things that arrive. ("Glioma
+  // does nothing to the doll?") What the corpus knows about a condition is in
+  // data/conditions.json where it exists and in the element's own sourced fact
+  // where it does not, and both are better than silence.
+  const e = byId[id];
+  if (e && (e.tags || []).includes('medicine')) {
+    const c = CONDITIONS[id];
+    const made = DATA.recipes.find(x => x.out === id && x.src);
+    return [{ source: 'condition', valence: 'harm', route: null,
+              onset: c?.seriousness?.value >= 0.5 ? 'acute' : null,
+              outcome: id,
+              mechanism: c?.mechanism || e.fact,
+              affects: c?.affects || null, symptoms: c?.symptoms || null,
+              kind: c?.kind || null, seriousness: c?.seriousness || null,
+              src: e.src || made?.src || null }];
+  }
+  return [];
 }
 
 /* ── the dial ──────────────────────────────────────────────────────────────
@@ -7994,7 +8020,10 @@ function rdPinList() {
   for (const x of ragdoll) {
     if (x.kind === 'verb') continue;                 // a verb is an act, not a thing
     for (const f of rdResolve(x.id, x.kind)) {
-      pins.push({ id: x.id, part: RD_PIN[f.route] || 'chest', vague: !f.route,
+      const part = RD_PIN[f.route]
+        || (f.affects || []).map(a => RD_AFFECT[a]).find(Boolean)
+        || 'chest';
+      pins.push({ id: x.id, part, vague: !f.route,
                   good: f.valence === 'benefit', orbit: f.route === 'radiation' });
     }
   }
@@ -8368,6 +8397,15 @@ function renderAsideRagdoll(litRoutes) {
            ${f.latency ? `Latency <b>${f.latency}</b>.` : 'This one is counted in years, not seconds.'}</div>` : '';
       const road = f.route && EFFECTS.routes[f.route]
         ? `<p class="why">${f.route.replace(/^./, c => c.toUpperCase())}: ${EFFECTS.routes[f.route]}.</p>` : '';
+      const cond = f.source === 'condition' ? (() => {
+        const bits = [];
+        if (f.affects?.length) bits.push(`<p class="why">Acts on <b>${f.affects.map(a => byId[a] ? nameOf(byId[a]) : a).join('</b>, <b>')}</b>.</p>`);
+        if (f.symptoms?.length) bits.push(`<p class="why">Shows as ${f.symptoms.join(', ')}.</p>`);
+        if (f.seriousness?.measure) bits.push(`<p class="why">${f.seriousness.measure}.</p>`);
+        bits.push(`<p class="why">This one is not something that reaches a body from outside — it is
+          already a state of one, so it has no route in.</p>`);
+        return bits.join('');
+      })() : '';
       const howIn = f.source === 'infection'
         ? `<p class="why">${f.transmission ? `Gets in by ${f.transmission}.`
             : 'The corpus records the outcome, not the route.'}</p>` : '';
@@ -8395,10 +8433,13 @@ function renderAsideRagdoll(litRoutes) {
         ? `<div class="shelf"><span class="chip fam-${fam.id}" data-fam="${fam.id}"
              data-spawn="${f.outcome}">${chipHTML(out)}</span></div>` : '';
       return `<div class="rdcase${good ? ' good' : ''}${nil ? ' nil' : ''}">
-        <h3>${k === 0 ? `<b>${who}</b>` : ''}<span class="vv">${good ? 'good for you' : nil ? 'does nothing' : 'harm'}</span>${routeChip}${nil ? '' : onsetChip}</h3>
+        <h3>${k === 0 ? `<b>${who}</b>` : ''}<span class="vv">${good ? 'good for you' : nil ? 'does nothing'
+          : f.source === 'condition'
+            ? (f.kind ? `${/^[aeiou]/.test(f.kind) ? 'an' : 'a'} ${f.kind} condition` : 'a condition')
+            : 'harm'}</span>${routeChip}${nil ? '' : onsetChip}</h3>
         ${card}${clock}
-        ${rung0 ? `<p>${rung0.what}</p><p class="why">${f.mechanism}</p>` : `<p>${f.mechanism}</p>`}${ladder}${spared}${shared}${road}${howIn}
-        <a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>
+        ${rung0 ? `<p>${rung0.what}</p><p class="why">${f.mechanism}</p>` : `<p>${f.mechanism}</p>`}${ladder}${cond}${spared}${shared}${road}${howIn}
+        ${f.src ? `<a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>` : ''}
       </div>`;
     }).join('');
   }).join('');

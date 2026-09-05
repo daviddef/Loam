@@ -166,8 +166,16 @@ if (has('effects.json') && has('cautions.json')) {
     const deg = new Map();
     for (const r of read('recipes.json')) for (const i of r.in || []) deg.set(i, (deg.get(i) || 0) + 1);
     const top = [...deg.entries()].sort((a, b) => b[1] - a[1]).slice(0, 200).map(([id]) => id);
-    add('effects-common', top.filter(id => eff[id] || viaHazard.has(id)).length, top.length,
-        'the 200 most-used elements — what a player actually drops on the body');
+    // A disease is already a state of a body rather than something that
+    // reaches one, so the canvas answers those from data/conditions.json and
+    // the element's own sourced fact instead of from a curated effect row.
+    // That is a real answer and it counts here, because this row's question is
+    // whether a player gets one — not which file it came out of.
+    const byId2 = new Map(read('elements.json').map(e => [e.id, e]));
+    const answers = (id) => eff[id] || viaHazard.has(id)
+      || (byId2.get(id)?.tags || []).includes('medicine');
+    add('effects-common', top.filter(answers).length, top.length,
+        'the 200 most-used elements — whether a player gets any answer at all');
   }
   add('nutrients', supplied.size, Object.keys(nut).length,
       'what a body cannot make and must be given — the benefit half');
