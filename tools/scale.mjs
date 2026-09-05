@@ -139,6 +139,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* W4 physiology, 6 Sep */
+          'glomerulus', 'sarcomere', 'myelin',
     'oxide_layer', 'junction', 'interconnect',   // needs-sweep 5 Sep
           /* verb outcomes batch 1, 4 Sep. a yeast cell, like the other yeasts */
           'lager_yeast',
@@ -188,6 +190,8 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* W4 physiology, 6 Sep */
+          'platelet', 'villus',
           /* W2 arachnids and insects, 5 Sep */
           'ommatidium',
     /* verb outcomes, 5 Sep. a pollen grain is 20 to 60 micrometres */
@@ -213,6 +217,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* W4 physiology, 6 Sep */
+          'nephron',
           /* W2 continued — arachnid body plan, ant waist, 5 Sep */
           'seta', 'fang', 'petiolus', 'metapleural_gland',
           /* W2 arachnids and insects, 5 Sep */
@@ -256,6 +262,8 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W4 physiology, 6 Sep */
+          'fibrin',
           /* W2 continued — arachnid body plan, ant tagmata, 5 Sep */
           'prosoma', 'opisthosoma', 'book_lung', 'silk_gland', 'haltere', 'proleg',
           'tympanal_organ', 'mesosoma', 'metasoma', 'gaster', 'queen_ant',
@@ -308,6 +316,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W4 physiology, 6 Sep */
+          'atrium', 'ventricle', 'aorta', 'larynx', 'pharynx', 'epiglottis', 'bladder', 'pituitary', 'duodenum', 'mouth', 'clot',
           /* W2 continued — immature stages and the arachnid orders, 5 Sep */
           'nymph', 'caterpillar', 'maggot', 'mygalomorph', 'harvestman', 'cricket', 'stridulation',
           /* owed outcomes restored, 5 Sep */
@@ -528,6 +538,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W4 physiology, 6 Sep */
+          'ureter', 'pleura', 'oesophagus', 'tendon', 'urine', 'lymph', 'breath', 'urea', 'adrenaline', 'reflex',
           /* W2 continued — spider silk and what is built from it, 5 Sep */
           'spider_silk', 'dragline', 'orb_web', 'tarantula',
           /* owed outcomes restored, 5 Sep */

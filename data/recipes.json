@@ -103673,5 +103673,289 @@
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Louse",
     "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 305, 306"
+  },
+  {
+    "in": [
+      "filter",
+      "kidney"
+    ],
+    "out": "nephron",
+    "why": "A kidney is a million of these in parallel, and the redundancy is the design: with a quarter of them working, electrolytes and urea stay in the normal range. Below about a twentieth, life needs a machine.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nephron",
+    "srcBook": "Marino PL et al., Critical Care Physiology (Little, Brown), ch. 5 — renal, §5.1"
+  },
+  {
+    "in": [
+      "capillary",
+      "nephron"
+    ],
+    "out": "glomerulus",
+    "why": "Blood is pushed through a tuft of leaky capillaries and about seven litres an hour comes out as filtrate — far more than a body holds. Everything after this is the work of taking most of it back.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Glomerulus_(kidney)",
+    "srcBook": "Marino PL et al., Critical Care Physiology (Little, Brown), ch. 5 — renal, §5.1"
+  },
+  {
+    "in": [
+      "protein",
+      "liver"
+    ],
+    "out": "urea",
+    "why": "Protein broken down releases ammonia, which is toxic at very low concentrations. The liver combines it into urea, which is not, and the kidney is left the easy job of removing something harmless.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Urea",
+    "srcBook": "Marino PL et al., Critical Care Physiology (Little, Brown), ch. 5 — renal, §5.1"
+  },
+  {
+    "in": [
+      "kidney",
+      "tube"
+    ],
+    "out": "ureter",
+    "why": "Urine does not run downhill; waves of muscle in the wall push it along, which is why the ureter works lying down and why a stone caught in one causes pain in waves rather than steadily.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ureter"
+  },
+  {
+    "in": [
+      "ureter",
+      "muscle"
+    ],
+    "out": "bladder",
+    "why": "It fills at about forty millilitres an hour and the wall relaxes as it does, so the pressure inside barely rises until it is nearly full. The urge is a stretch signal, not a pressure one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Urinary_bladder"
+  },
+  {
+    "in": [
+      "bladder",
+      "urea"
+    ],
+    "out": "urine",
+    "why": "Seven litres an hour are filtered and about forty millilitres an hour arrive here: 99.4% is reabsorbed on the way. The whole enormous apparatus exists to remove the waste of protein metabolism, which cannot leave by lung or liver.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Urine",
+    "srcBook": "Marino PL et al., Critical Care Physiology (Little, Brown), ch. 5 — renal, §5.1"
+  },
+  {
+    "in": [
+      "heart",
+      "valve"
+    ],
+    "out": "atrium",
+    "why": "Ventricles do the pumping; an atrium mostly holds blood and tops the ventricle up at the end of filling. That top-up is worth roughly 20% of cardiac output, which is why a heart in atrial fibrillation still works and works less well.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Atrium_(heart)"
+  },
+  {
+    "in": [
+      "atrium",
+      "muscle"
+    ],
+    "out": "ventricle",
+    "why": "The right ventricle pushes blood a few centimetres to the lungs; the left pushes it round the entire body. They move the same volume every beat against pressures five times apart, and the muscle is built to match.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+  },
+  {
+    "in": [
+      "artery",
+      "heart"
+    ],
+    "out": "aorta",
+    "why": "Its wall is elastic, so it stretches on each beat and recoils between them. That recoil keeps blood moving while the heart is refilling, which is why flow at the fingertips is steady where flow at the valve is not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Aorta"
+  },
+  {
+    "in": [
+      "blood",
+      "cell"
+    ],
+    "out": "platelet",
+    "why": "Megakaryocytes in the marrow shed pieces of their own cytoplasm into the bloodstream. Those fragments circulate inert until they meet a surface that should not be there, and then stick to it and to each other.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Platelet"
+  },
+  {
+    "in": [
+      "lymph_node",
+      "water"
+    ],
+    "out": "lymph",
+    "why": "Capillaries lose a few litres a day into the tissues, and there is no pump to bring it back. Lymph vessels have valves and rely on the movement of the muscles around them, which is why a still limb swells.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lymph"
+  },
+  {
+    "in": [
+      "cartilage",
+      "trachea"
+    ],
+    "out": "larynx",
+    "why": "Its first job is closing: sealing the airway so the chest can be pressurised for coughing and lifting. Voice came later, from air forced past folds that evolved to shut.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Larynx"
+  },
+  {
+    "in": [
+      "lung",
+      "membrane"
+    ],
+    "out": "pleura",
+    "why": "The lung is not fixed to the ribs; it is held against them by the film of fluid between two layers, the same way two wet glass slides will not come apart sideways but separate easily face to face.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pleura"
+  },
+  {
+    "in": [
+      "air",
+      "lung"
+    ],
+    "out": "breath",
+    "why": "Breathing in is active: the diaphragm flattens and the chest enlarges, dropping the pressure inside below the air outside. Breathing out at rest costs nothing — the stretched lung simply recoils.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Breathing"
+  },
+  {
+    "in": [
+      "intestine",
+      "stomach"
+    ],
+    "out": "duodenum",
+    "why": "Bile and pancreatic enzymes both arrive here, and the acid from the stomach is neutralised here. Most of the length of the small intestine is for absorbing what this short first stretch has already broken down.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Duodenum"
+  },
+  {
+    "in": [
+      "intestine",
+      "fold"
+    ],
+    "out": "villus",
+    "why": "Folds carry villi, villi carry microvilli, and each level multiplies the surface. The result is around thirty square metres of absorbing surface inside an organ that would otherwise offer half of one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Intestinal_villus"
+  },
+  {
+    "in": [
+      "fat",
+      "nerve"
+    ],
+    "out": "myelin",
+    "why": "An unmyelinated axon conducts by passing the signal along continuously and slowly. Myelin forces it to jump between the gaps in the sheath, and the same fibre goes from about a metre a second to a hundred.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Myelin"
+  },
+  {
+    "in": [
+      "adrenal_gland",
+      "hormone"
+    ],
+    "out": "adrenaline",
+    "why": "It widens the airways, speeds the heart, and moves blood away from the gut and towards muscle. All of it prepares for effort, and none of it is any use for a threat you cannot run from.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Adrenaline"
+  },
+  {
+    "in": [
+      "brain",
+      "gland"
+    ],
+    "out": "pituitary",
+    "why": "Called the master gland, though it is really the middle manager: the hypothalamus tells it what to release, and it tells the thyroid, the adrenals and the gonads what to do.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pituitary_gland"
+  },
+  {
+    "in": [
+      "collagen",
+      "muscle"
+    ],
+    "out": "tendon",
+    "why": "Almost pure collagen laid down along the line of pull, so it is enormously strong lengthways and useless across. In running it also acts as a spring, returning a good part of each stride's energy.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tendon"
+  },
+  {
+    "in": [
+      "actin",
+      "protein"
+    ],
+    "out": "sarcomere",
+    "why": "Filaments of actin and myosin slide past each other; neither shortens. A muscle gets shorter because thousands of these units in a row each close by a couple of micrometres at once.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sarcomere"
+  },
+  {
+    "in": [
+      "platelet",
+      "wound"
+    ],
+    "out": "clot",
+    "why": "Platelets reach a damaged surface first and stick, which stops small leaks on their own. Anything larger needs the mesh laid down over them, and the same process in an undamaged vessel is what a thrombosis is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Coagulation"
+  },
+  {
+    "in": [
+      "clot",
+      "protein"
+    ],
+    "out": "fibrin",
+    "why": "Fibrinogen is carried dissolved and inert. Thrombin snips it, the pieces polymerise into strands, and the strands cross-link into a net that catches red cells — which is the difference between a plug and a clot.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fibrin"
+  },
+  {
+    "in": [
+      "jaw",
+      "tongue"
+    ],
+    "out": "mouth",
+    "why": "Chewing is mechanical and saliva is chemical, and both happen before anything is swallowed. After that the process is entirely involuntary, which is why what to eat is the last decision you make about it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mouth"
+  },
+  {
+    "in": [
+      "mouth",
+      "trachea"
+    ],
+    "out": "pharynx",
+    "why": "Air from the nose and food from the mouth cross here on the way to two different tubes. No other arrangement in the body puts a lethal error one reflex away from routine.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pharynx"
+  },
+  {
+    "in": [
+      "cartilage",
+      "pharynx"
+    ],
+    "out": "epiglottis",
+    "why": "A leaf of cartilage folds back over the larynx as a swallow starts — though it is less a lid shutting than the larynx rising to meet it, which is the movement you can feel under your fingers.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Epiglottis"
+  },
+  {
+    "in": [
+      "muscle",
+      "pharynx"
+    ],
+    "out": "oesophagus",
+    "why": "A ring of contraction travels its length at a few centimetres a second, driving the bolus ahead of it. Gravity helps and is not required, which is the point of the arrangement.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Esophagus"
+  },
+  {
+    "in": [
+      "spinal_cord",
+      "signal"
+    ],
+    "out": "reflex",
+    "why": "The knee-jerk is two neurons: sensory in, motor out, and no thinking anywhere between them. The brain learns that the leg moved at the same moment as everyone else in the room.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Reflex"
   }
 ]
