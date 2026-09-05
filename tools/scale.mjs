@@ -503,6 +503,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'brake_fluid', 'propellant', 'stucco', 'coolant',   // needs sweep
     'thatch',   // a laid roof covering, not a building
     'mortise_and_tenon',   // needs-sweep 5 Sep
     'photolithography', 'alnico', 'keeper', 'winding', 'magnetising_coil', 'circlet', 'finial', 'haft', 'bracket', 'stile', 'panel', 'threshold', 'transom', 'housing',   // needs-sweep 5 Sep
@@ -789,6 +790,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'caliper', 'master_cylinder', 'retort', 'grate', 'scrubber', 'heat_exchanger', 'gyroscope', 'spar', 'leaf_spring', 'steering', 'tailgate', 'podium', 'stela',   // needs sweep
     'coercivity',   // needs-sweep 5 Sep
     'course', 'coping', 'quoin', 'footing', 'haunch', 'extrados', 'intrados', 'rubble_core', 'lathe', 'boring_machine', 'purlin', 'eaves', 'float_glass', 'berm', 'scratch_coat', 'float_coat', 'finish_coat', 'brace', 'scarp', 'counterscarp', 'revetment', 'ditch',   // needs-sweep 5 Sep
     /* the shaft homonym, 5 Sep. a shaft in its bearings, a metre or so */
@@ -1118,6 +1120,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'spillway', 'embankment', 'penstock', 'flue', 'airframe', 'terrace', 'retaining_wall', 'arena', 'vomitorium', 'awning', 'basilica', 'forum',   // needs sweep
     'titans',
     'excavation', 'causeway', 'subgrade', 'sub_base', 'base_course', 'binder_course', 'surface_course', 'drainage', 'camber', 'clay_lining',   // needs-sweep 5 Sep
     /* places batch 45, 5 Sep. a minaret 60 m, an abbey, a mound 65 by 60 m, a cemetery */

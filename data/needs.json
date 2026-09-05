@@ -968,7 +968,6 @@
         "costume",
         "script",
         "actor",
-        "audience|seat",
         "auditorium|building",
         "mask",
         "rehearsal"
@@ -2161,7 +2160,6 @@
         "interconnect",
         "copper|aluminum",
         "oxide_layer",
-        "packaging",
         "lead_frame",
         "die"
       ]
@@ -2445,16 +2443,10 @@
       "note": "Storing facts so they can be found again, and not lost when the power goes.",
       "needs": [
         "table",
-        "record",
-        "index",
-        "query",
-        "schema",
-        "transaction",
         "journal",
         "lock",
         "cache",
-        "storage",
-        "query_planner"
+        "storage"
       ]
     },
     "filesystem": {
@@ -2467,7 +2459,6 @@
         "allocation_table",
         "journal",
         "superblock",
-        "permission",
         "link",
         "storage"
       ]
@@ -2483,10 +2474,8 @@
         "valve_tower",
         "outlet",
         "penstock",
-        "catchment",
         "silt",
-        "drainage",
-        "gauge"
+        "drainage"
       ]
     },
     "sewer": {
@@ -2495,15 +2484,13 @@
       "needs": [
         "pipe",
         "brick",
-        "gradient",
         "manhole",
         "interceptor",
         "trap",
         "gully",
         "pumping_station",
         "outfall",
-        "mortar",
-        "invert"
+        "mortar"
       ]
     },
     "missile": {
@@ -2532,7 +2519,6 @@
         "base_plate",
         "thermal_paste",
         "fan",
-        "airflow",
         "solder"
       ]
     },
@@ -2556,9 +2542,7 @@
       "needs": [
         "plank|steel|plastic",
         "straightedge",
-        "graduation",
         "engraving",
-        "zero_mark",
         "bevel"
       ]
     },
@@ -2567,10 +2551,6 @@
       "note": "Keeping the answer nearby because you will be asked again.",
       "needs": [
         "storage",
-        "index",
-        "tag",
-        "eviction_policy",
-        "hit_rate",
         "memory",
         "bus"
       ]
@@ -2586,7 +2566,6 @@
         "brace",
         "joint",
         "load",
-        "material",
         "span",
         "fastener"
       ]
@@ -2664,12 +2643,8 @@
         "diagnosis",
         "case_formulation",
         "treatment",
-        "alliance",
-        "session",
-        "technique",
         "outcome",
-        "evidence",
-        "supervision"
+        "evidence"
       ]
     },
     "treatment": {
@@ -2679,11 +2654,6 @@
         "diagnosis",
         "drug|surgery|therapy",
         "dose",
-        "route",
-        "duration",
-        "monitoring",
-        "side_effect",
-        "adherence",
         "outcome"
       ]
     },
@@ -2692,13 +2662,8 @@
       "note": "Working out which condition explains what is in front of you.",
       "needs": [
         "symptom",
-        "sign",
         "history",
-        "examination",
-        "test",
-        "imaging",
         "differential",
-        "criterion",
         "evidence"
       ]
     },
@@ -2722,29 +2687,19 @@
       "src": "https://en.wikipedia.org/wiki/Medication",
       "note": "A molecule chosen because of what it does to a target.",
       "needs": [
-        "active_ingredient",
         "excipient",
         "binder",
         "dose",
         "tablet|capsule|solution",
-        "bioavailability",
-        "half_life",
-        "target",
-        "trial"
+        "half_life"
       ]
     },
     "dose": {
       "src": "https://en.wikipedia.org/wiki/Dose_(biochemistry)",
       "note": "How much, how often, and for how long.",
       "needs": [
-        "active_ingredient",
-        "body_weight",
         "half_life",
-        "route",
-        "frequency",
-        "duration",
-        "therapeutic_index",
-        "toxicity"
+        "frequency"
       ]
     },
     "epidemiology": {
@@ -2754,12 +2709,7 @@
         "population",
         "incidence",
         "prevalence",
-        "case_definition",
-        "cohort",
-        "control",
-        "confounder",
         "basic_reproduction_number",
-        "surveillance",
         "census"
       ]
     },
@@ -2767,14 +2717,9 @@
       "src": "https://en.wikipedia.org/wiki/Contact_tracing",
       "note": "Following an infection backwards and forwards through the people it touched.",
       "needs": [
-        "case_definition",
-        "interview",
-        "contact",
         "quarantine",
         "incubation_period",
-        "surveillance",
-        "database",
-        "consent"
+        "database"
       ]
     },
     "festival": {
@@ -2782,14 +2727,11 @@
       "note": "A day the calendar sets aside, and everything that has to be arranged for it.",
       "needs": [
         "calendar",
-        "procession",
         "music",
         "food",
         "costume",
         "ritual",
-        "market",
-        "crowd",
-        "venue"
+        "market"
       ]
     },
     "sector": {
@@ -2801,7 +2743,6 @@
         "tertiary_sector",
         "quaternary_sector",
         "labour",
-        "capital",
         "output"
       ]
     },
@@ -2815,9 +2756,7 @@
         "address_line",
         "data_line",
         "control_line",
-        "protocol",
-        "terminator",
-        "impedance"
+        "terminator"
       ]
     },
     "alu": {
@@ -2828,8 +2767,6 @@
         "logic_gate",
         "adder",
         "register",
-        "carry",
-        "opcode",
         "clock_signal",
         "interconnect"
       ]
@@ -2941,7 +2878,6 @@
         "watermark",
         "security_thread",
         "hologram",
-        "serial_number",
         "ink",
         "press",
         "ultraviolet"
@@ -2954,12 +2890,7 @@
         "coin",
         "banknote",
         "mint",
-        "denomination",
-        "legal_tender",
-        "reserve",
-        "exchange_rate",
-        "central_bank",
-        "serial_number"
+        "central_bank"
       ]
     },
     "dollar": {
@@ -2969,21 +2900,14 @@
         "currency",
         "coin",
         "banknote",
-        "central_bank",
-        "reserve",
-        "exchange_rate",
-        "denomination"
+        "central_bank"
       ]
     },
     "debt": {
       "src": "https://en.wikipedia.org/wiki/Debt",
       "note": "A promise to pay later, priced by how likely you are to.",
       "needs": [
-        "principal",
         "interest",
-        "term",
-        "collateral",
-        "default",
         "credit",
         "contract",
         "ledger"
@@ -2995,12 +2919,8 @@
       "needs": [
         "debt",
         "interest",
-        "collateral",
-        "credit_history",
-        "risk",
         "ledger",
-        "contract",
-        "default"
+        "contract"
       ]
     },
     "tax": {
@@ -3008,27 +2928,14 @@
       "note": "The state taking a share, and having to know enough about you to do it.",
       "needs": [
         "census",
-        "assessment",
-        "rate",
-        "ledger",
-        "collection",
-        "exemption",
-        "enforcement",
-        "revenue"
+        "ledger"
       ]
     },
     "advertisement": {
       "src": "https://en.wikipedia.org/wiki/Advertising",
       "note": "Paying to be in front of somebody who was looking at something else.",
       "needs": [
-        "message",
-        "medium",
-        "audience",
-        "placement",
         "frequency",
-        "copy",
-        "image",
-        "budget",
         "measurement"
       ]
     },
@@ -3037,14 +2944,9 @@
       "note": "A car for hire, with a meter to stop the argument.",
       "needs": [
         "automobile",
-        "meter",
-        "licence",
         "roof_sign",
         "radio|dispatch",
-        "fare",
-        "odometer",
-        "seat",
-        "insurance"
+        "seat"
       ]
     },
     "pickup": {
@@ -3075,7 +2977,6 @@
         "brake_disc",
         "wheel",
         "tyre",
-        "body",
         "suspension",
         "radiator",
         "exhaust"
@@ -3089,7 +2990,6 @@
         "flip_flop",
         "clock_signal",
         "bus",
-        "opcode",
         "alu",
         "latch"
       ]
@@ -3100,8 +3000,6 @@
       "needs": [
         "logic_gate",
         "transistor",
-        "carry",
-        "sum",
         "half_adder",
         "full_adder",
         "interconnect"
@@ -3111,10 +3009,6 @@
       "src": "https://en.wikipedia.org/wiki/Outbreak",
       "note": "More cases than expected, in one place, at one time.",
       "needs": [
-        "case_definition",
-        "baseline",
-        "surveillance",
-        "index_case",
         "contact_tracing",
         "incubation_period",
         "quarantine",
@@ -3128,8 +3022,6 @@
       "needs": [
         "pathogen|mutation|deficiency",
         "symptom",
-        "sign",
-        "lesion",
         "course",
         "diagnosis",
         "treatment",
@@ -3143,24 +3035,16 @@
         "patient",
         "history",
         "pain",
-        "fever",
-        "fatigue",
-        "onset",
-        "duration",
-        "severity"
+        "fever"
       ]
     },
     "syndrome": {
       "src": "https://en.wikipedia.org/wiki/Syndrome",
       "note": "A set of signs that keep turning up together before anyone knows why.",
       "needs": [
-        "sign",
         "symptom",
-        "criterion",
         "cluster",
-        "diagnosis",
-        "aetiology",
-        "case_definition"
+        "diagnosis"
       ]
     },
     "disorder": {
@@ -3168,13 +3052,9 @@
       "note": "A pattern of distress or impairment a clinician has agreed to name.",
       "needs": [
         "symptom",
-        "criterion",
-        "duration",
-        "impairment",
         "case_formulation",
         "diagnosis",
-        "treatment",
-        "comorbidity"
+        "treatment"
       ]
     },
     "patient": {
@@ -3183,26 +3063,18 @@
       "needs": [
         "history",
         "symptom",
-        "consent",
         "diagnosis",
         "treatment",
-        "adherence",
-        "outcome",
-        "record"
+        "outcome"
       ]
     },
     "doctor": {
       "src": "https://en.wikipedia.org/wiki/Physician",
       "note": "Somebody licensed to decide what is wrong and what to do.",
       "needs": [
-        "training",
-        "licence",
-        "examination",
         "diagnosis",
         "treatment",
-        "ethics",
-        "record",
-        "referral"
+        "ethics"
       ]
     },
     "pyrolysis": {
@@ -3239,15 +3111,11 @@
       "src": "https://en.wikipedia.org/wiki/Plastic_recycling",
       "note": "Sorting, washing, shredding and remelting — and losing a little quality each time.",
       "needs": [
-        "sorting",
-        "washing",
         "shredder",
         "flake",
         "extruder",
         "pellet",
-        "polymer",
-        "contamination",
-        "additive"
+        "polymer"
       ]
     },
     "single_use_plastic": {
@@ -3256,9 +3124,7 @@
       "needs": [
         "polymer",
         "polyethylene|polypropylene",
-        "additive",
         "moulding",
-        "packaging",
         "waste",
         "landfill",
         "microplastic"
@@ -3281,28 +3147,37 @@
       "src": "https://en.wikipedia.org/wiki/Structural_load",
       "note": "What a structure has to hold up, including itself.",
       "needs": [
-        "dead_load",
-        "live_load",
         "wind",
         "snow",
         "span",
         "beam",
         "column",
-        "foundation",
-        "safety_factor"
+        "foundation"
       ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
   "$not_assemblies": [
+    "active_ingredient",
+    "additive",
+    "adherence",
+    "aetiology",
+    "airflow",
+    "alliance",
+    "assessment",
+    "audience",
     "axle_box",
     "backplate",
     "bar_stock",
     "base_course",
+    "baseline",
     "batt",
     "berm",
     "bevel",
     "binder_course",
+    "bioavailability",
+    "body",
+    "body_weight",
     "bolster",
     "bore",
     "brace",
@@ -3311,25 +3186,54 @@
     "brow_reinforce",
     "bucking_bar",
     "buckle",
+    "budget",
     "camber",
+    "capital",
     "carding",
+    "carry",
+    "case_definition",
+    "catchment",
     "causeway",
     "cheek_piece",
     "chinstrap",
     "clay_lining",
+    "cohort",
+    "collateral",
+    "collection",
+    "comorbidity",
+    "confounder",
+    "consent",
+    "contact",
+    "contamination",
+    "control",
     "coping",
+    "copy",
     "counterscarp",
     "course",
+    "credit_history",
+    "criterion",
+    "crowd",
     "crucible",
     "cuisse",
     "curve",
+    "dead_load",
+    "default",
+    "denomination",
     "ditch",
     "drainage",
     "dredging",
+    "duration",
     "eaves",
+    "enforcement",
     "escutcheon",
+    "eviction_policy",
+    "examination",
     "excavation",
+    "exchange_rate",
+    "exemption",
     "extrados",
+    "fare",
+    "fatigue",
     "ferrule",
     "finish_coat",
     "flange",
@@ -3338,16 +3242,29 @@
     "float_glass",
     "footing",
     "fulling",
+    "gauge",
+    "gradient",
+    "graduation",
     "greave",
     "grindstone",
     "grommet",
     "gusset",
     "haunch",
     "hawk",
+    "hit_rate",
     "honing",
     "hook",
+    "image",
+    "imaging",
+    "impairment",
+    "impedance",
     "impost",
+    "index",
+    "index_case",
+    "insurance",
+    "interview",
     "intrados",
+    "invert",
     "joist_hanger",
     "journal",
     "keystone",
@@ -3355,43 +3272,94 @@
     "lame",
     "lath",
     "leather_strap",
+    "legal_tender",
+    "lesion",
+    "licence",
     "liming",
     "linchpin",
     "liner",
     "link",
+    "live_load",
+    "material",
+    "medium",
+    "message",
+    "meter",
+    "monitoring",
     "muzzle",
     "nasal",
+    "odometer",
+    "onset",
+    "opcode",
+    "packaging",
     "padding",
     "pauldron",
+    "permission",
+    "placement",
     "plain_weave",
+    "principal",
+    "procession",
+    "protocol",
     "purlin",
+    "query",
+    "query_planner",
     "quoin",
     "rammer",
+    "rate",
     "reaming",
+    "record",
+    "referral",
     "render",
+    "reserve",
+    "revenue",
     "revetment",
+    "risk",
     "rivet_set",
+    "route",
     "rubble_core",
+    "safety_factor",
     "scarp",
+    "schema",
     "scratch_coat",
     "seam",
     "selvage",
+    "serial_number",
+    "session",
+    "severity",
     "shank",
+    "side_effect",
+    "sign",
     "sizing",
+    "sorting",
     "springer",
     "stave",
     "strike_plate",
     "sub_base",
     "subgrade",
+    "sum",
+    "supervision",
     "surface_course",
+    "surveillance",
     "swage",
+    "tag",
+    "target",
+    "technique",
     "tempering",
+    "term",
+    "test",
+    "therapeutic_index",
     "touchhole",
+    "toxicity",
+    "training",
+    "transaction",
+    "trial",
     "trunnion",
+    "venue",
     "visor",
     "voussoir",
     "wadding",
+    "washing",
     "web",
-    "weld"
+    "weld",
+    "zero_mark"
   ]
 }

@@ -91348,5 +91348,315 @@
       "wild"
     ],
     "fact": "A 230 km forest corridor kept whole so elephants can still walk the length of it."
+  },
+  {
+    "id": "spillway",
+    "name": "Spillway",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The way water is meant to leave a dam, so it does not leave some other way."
+  },
+  {
+    "id": "embankment",
+    "name": "Embankment",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "An earth dam holds by weight and by not letting water through the middle."
+  },
+  {
+    "id": "penstock",
+    "name": "Penstock",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "The pipe that takes the head from the reservoir down to the turbine."
+  },
+  {
+    "id": "caliper",
+    "name": "Caliper",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "The clamp that squeezes the pads onto the disc."
+  },
+  {
+    "id": "brake_fluid",
+    "name": "Brake Fluid",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "earth"
+    ],
+    "fact": "A liquid chosen because it will not compress and will not boil at the pedal."
+  },
+  {
+    "id": "master_cylinder",
+    "name": "Master Cylinder",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Where the foot's push becomes pressure in the line."
+  },
+  {
+    "id": "retort",
+    "name": "Retort",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "A sealed vessel heated from outside, so what comes off can be caught."
+  },
+  {
+    "id": "grate",
+    "name": "Grate",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "fire"
+    ],
+    "fact": "Bars with gaps, so air comes up through the fuel instead of round it."
+  },
+  {
+    "id": "flue",
+    "name": "Flue",
+    "emoji": "🏭",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "The passage that pulls the fire, by being taller than it is wide."
+  },
+  {
+    "id": "scrubber",
+    "name": "Scrubber",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "build"
+    ],
+    "fact": "Washing a flue gas before letting it out."
+  },
+  {
+    "id": "heat_exchanger",
+    "name": "Heat Exchanger",
+    "emoji": "♨️",
+    "shelf": "workshop",
+    "tags": [
+      "tool"
+    ],
+    "fact": "Two fluids swapping heat without ever touching."
+  },
+  {
+    "id": "gyroscope",
+    "name": "Gyroscope",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "tech"
+    ],
+    "fact": "A spinning mass that resists being turned, and says so."
+  },
+  {
+    "id": "propellant",
+    "name": "Propellant",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "fire",
+      "earth"
+    ],
+    "fact": "Fuel and its own oxygen, so it burns where there is none."
+  },
+  {
+    "id": "airframe",
+    "name": "Airframe",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "transport"
+    ],
+    "fact": "The structure, with the engines and everything else taken off."
+  },
+  {
+    "id": "spar",
+    "name": "Spar",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "transport"
+    ],
+    "fact": "The beam inside a wing, which is what actually stops it folding up."
+  },
+  {
+    "id": "leaf_spring",
+    "name": "Leaf Spring",
+    "emoji": "🚚",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "transport"
+    ],
+    "fact": "Steel strips stacked so the whole thing bends and rubs itself damped."
+  },
+  {
+    "id": "steering",
+    "name": "Steering",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "transport"
+    ],
+    "fact": "Turning a wheel a lot so the road wheels turn a little, and feeling the road through it."
+  },
+  {
+    "id": "tailgate",
+    "name": "Tailgate",
+    "emoji": "🚚",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "transport"
+    ],
+    "fact": "The end of the bed that drops so things can be slid in."
+  },
+  {
+    "id": "stucco",
+    "name": "Stucco",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "Fine plaster that can be modelled, and holds the modelling."
+  },
+  {
+    "id": "terrace",
+    "name": "Terrace",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "earth"
+    ],
+    "fact": "Cutting a slope into steps so water walks instead of running."
+  },
+  {
+    "id": "retaining_wall",
+    "name": "Retaining Wall",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "Holding earth back that would rather be a slope."
+  },
+  {
+    "id": "arena",
+    "name": "Arena",
+    "emoji": "🏟️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The floor of the fight, sanded so it can be raked clean."
+  },
+  {
+    "id": "podium",
+    "name": "Podium",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The raised wall between the crowd and whatever is on the sand."
+  },
+  {
+    "id": "vomitorium",
+    "name": "Vomitorium",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "The passage that lets a full amphitheatre empty in minutes."
+  },
+  {
+    "id": "awning",
+    "name": "Awning",
+    "emoji": "⛱️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "Cloth on ropes over an open building, worked by sailors."
+  },
+  {
+    "id": "basilica",
+    "name": "Basilica",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "build"
+    ],
+    "fact": "A long hall with aisles and a clerestory, built for business and then borrowed by the church."
+  },
+  {
+    "id": "forum",
+    "name": "Forum",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "civic"
+    ],
+    "fact": "The open square everything civic faced onto."
+  },
+  {
+    "id": "coolant",
+    "name": "Coolant",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "earth"
+    ],
+    "fact": "A fluid whose whole job is to be somewhere else once it is hot."
+  },
+  {
+    "id": "stela",
+    "name": "Stela",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "An upright slab, carved because somebody wanted it read later."
   }
 ]

@@ -100551,5 +100551,295 @@
     "why": "Five protected areas were joined into one block precisely so large mammals have a range rather than a reserve — an elephant population confined to a small park eats it out and then fails. The corridor runs 230 km east to west and holds over 800 elephants.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Dong_Phayayen-Khao_Yai_Forest_Complex"
+  },
+  {
+    "in": [
+      "dam",
+      "channel"
+    ],
+    "out": "spillway",
+    "why": "A dam without a spillway fails the first time the reservoir overtops it, because water running over an embankment cuts down into it. The spillway is a deliberate low point, armoured, that takes the flood past the structure — and sizing it means guessing the largest flood the catchment can produce.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spillway"
+  },
+  {
+    "in": [
+      "clay_lining",
+      "gravel"
+    ],
+    "out": "embankment",
+    "why": "An embankment dam is a graded fill with an impermeable core — clay or concrete — and coarser shoulders either side, so that seepage is stopped in the middle and the weight is carried by the flanks. What kills them is piping: water finding one path through and enlarging it until the whole thing goes.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Embankment_dam"
+  },
+  {
+    "in": [
+      "pipe",
+      "turbine"
+    ],
+    "out": "penstock",
+    "why": "The penstock converts height into pressure: a hundred metres of head is about ten atmospheres at the bottom, and the pipe has to hold that plus the surge when a valve closes. That surge is why hydro schemes have a surge tank — without one, stopping the flow quickly can burst the pipe.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Penstock"
+  },
+  {
+    "in": [
+      "piston",
+      "brake_disc"
+    ],
+    "out": "caliper",
+    "why": "Hydraulic pressure drives one or more pistons against the pad, and the caliper's body takes the reaction. A floating caliper uses one piston and slides to press the far side too; a fixed one has pistons on both sides and does not move. Everything the brake does in heat and force goes through this one bracket.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Disc_brake"
+  },
+  {
+    "in": [
+      "solvent",
+      "oil"
+    ],
+    "out": "brake_fluid",
+    "why": "Hydraulics work because liquid does not compress — but brake fluid absorbs water from the air, and water boils. Boiled fluid puts gas in the line, gas does compress, and the pedal goes to the floor with the brakes still cold. That is why it is a service item on time rather than on mileage.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Brake_fluid"
+  },
+  {
+    "in": [
+      "piston",
+      "brake_fluid"
+    ],
+    "out": "master_cylinder",
+    "why": "A piston in a bore, with a reservoir above it. Pressure is force over area, so a small master bore against a large caliper piston multiplies the pedal — and dual circuits exist so that one leak leaves you with half the brakes rather than none.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Master_cylinder"
+  },
+  {
+    "in": [
+      "crucible",
+      "furnace"
+    ],
+    "out": "retort",
+    "why": "Heating something in a closed retort keeps air out and lets the volatiles be piped away and condensed instead of burnt. It is how charcoal, coal gas, coal tar, mercury and zinc were all made, and the whole of destructive distillation is this one idea.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Retort_(chemistry)"
+  },
+  {
+    "in": [
+      "cast_iron",
+      "furnace"
+    ],
+    "out": "grate",
+    "why": "A fire on a solid hearth burns only on top. A grate lets air in from below and ash fall out, so the whole bed burns and keeps burning — which is the difference between a hearth and a furnace, and the reason coal needs one and wood does not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fire_grate"
+  },
+  {
+    "in": [
+      "chimney",
+      "pipe"
+    ],
+    "out": "flue",
+    "why": "Hot gas in a tall column weighs less than the cold air outside, so it rises and drags fresh air in behind it. Draught scales with height and with temperature difference, which is why a tall chimney burns better than a short one and why a cold one will not draw at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Flue"
+  },
+  {
+    "in": [
+      "water",
+      "flue"
+    ],
+    "out": "scrubber",
+    "why": "Gas is passed through a spray or a packed bed so that soluble pollutants transfer into the liquid — sulfur dioxide into a lime slurry gives gypsum, which is then sold. What leaves is cleaner and what is caught becomes somebody's raw material, which is the only way flue cleaning ever pays.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Scrubber"
+  },
+  {
+    "in": [
+      "copper",
+      "tube"
+    ],
+    "out": "heat_exchanger",
+    "why": "Heat moves across a wall from the hotter stream to the colder, and running the two in opposite directions keeps a temperature difference along the whole length instead of letting them meet in the middle. Counterflow is why a good exchanger can bring one stream almost to the other's inlet temperature.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Heat_exchanger"
+  },
+  {
+    "in": [
+      "rotor",
+      "bearing"
+    ],
+    "out": "gyroscope",
+    "why": "A spinning rotor keeps its axis pointing the same way in space, so mounting it in gimbals gives an attitude reference that owes nothing to the outside world. Precession — the axis moving at right angles to the force applied — is the awkward part and also the part that makes it measurable.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gyroscope"
+  },
+  {
+    "in": [
+      "gunpowder",
+      "fuel"
+    ],
+    "out": "propellant",
+    "why": "A rocket carries its oxidiser because there is nothing to breathe. Solid propellant is fuel and oxidiser cast together in one grain, and the shape of the hole down the middle sets the thrust curve — a star-shaped bore burns with more surface at the start and less later.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rocket_propellant"
+  },
+  {
+    "in": [
+      "frame",
+      "skin"
+    ],
+    "out": "airframe",
+    "why": "Spars run the length taking bending, ribs give the section, and the skin carries shear and much of the load in a stressed-skin design. Everything after that is payload, fuel and engines hung on it, and the airframe's life is counted in pressurisation cycles rather than hours.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Airframe"
+  },
+  {
+    "in": [
+      "beam",
+      "flange"
+    ],
+    "out": "spar",
+    "why": "A wing spar is an I-beam: caps top and bottom taking the tension and compression of bending, a web between them taking shear. Lift bends a wing upward and the spar is the whole reason it does not keep going — everything else in a wing is shape.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spar_(aeronautics)"
+  },
+  {
+    "in": [
+      "steel",
+      "bar_stock"
+    ],
+    "out": "leaf_spring",
+    "why": "Several curved steel leaves clamped together act as one beam that flexes; friction between the leaves damps the movement, so a leaf spring is its own shock absorber. It also locates the axle, which is why carts and trucks used it long after cars moved on.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Leaf_spring"
+  },
+  {
+    "in": [
+      "gearbox",
+      "wheel"
+    ],
+    "out": "steering",
+    "why": "A rack and pinion turns rotation into sideways movement of a rod that pushes both wheels. Ackermann geometry makes the inner wheel turn more sharply than the outer, because they are going round different-sized circles — without it the tyres scrub through every corner.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Steering"
+  },
+  {
+    "in": [
+      "sheet_metal",
+      "hinge"
+    ],
+    "out": "tailgate",
+    "why": "A hinged panel with a catch each side and cables or torsion bars taking the weight as it falls. It is structural when closed — it ties the bed sides together — which is why a truck with the tailgate down flexes more than one with it up.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tailgate"
+  },
+  {
+    "in": [
+      "lime",
+      "marble"
+    ],
+    "out": "stucco",
+    "why": "Lime with marble dust instead of sand gives a plaster fine enough to be pulled into mouldings, pressed in a mould, or carved once it has begun to set. It is why a brick building can carry classical detail — the orders are almost never stone on anything but the grandest work.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stucco"
+  },
+  {
+    "in": [
+      "stone",
+      "soil"
+    ],
+    "out": "terrace",
+    "why": "A terrace turns a hillside into a stack of level beds behind retaining walls, so rain soaks in rather than running off with the soil. It is the single most widespread piece of agricultural engineering there is, and abandoning one is how a hillside loses in a decade what took centuries to build.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Terrace_(agriculture)"
+  },
+  {
+    "in": [
+      "stone",
+      "buttress"
+    ],
+    "out": "retaining_wall",
+    "why": "Soil pushes sideways, and the push grows with depth, so a retaining wall is thickest at the bottom or leans into the bank. What actually fails them is water: saturated soil pushes far harder, so a wall without weep holes behind it is a wall waiting for a wet spring.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Retaining_wall"
+  },
+  {
+    "in": [
+      "sand",
+      "amphitheatre"
+    ],
+    "out": "arena",
+    "why": "Harena is Latin for sand, and the sand is the point: it grips, it absorbs, and it can be raked over between events. Underneath, the hypogeum held cages, machinery and lifts, so what appeared on the floor arrived without anyone seeing it come.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arena"
+  },
+  {
+    "in": [
+      "marble",
+      "amphitheatre"
+    ],
+    "out": "podium",
+    "why": "A vertical face four metres high with the best seats immediately above it — high enough that nothing on the floor gets out, close enough that the people who mattered were the ones nearest the danger. The rank order of a Roman crowd is legible in the seating from the podium upward.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Podium"
+  },
+  {
+    "in": [
+      "vault",
+      "seat"
+    ],
+    "out": "vomitorium",
+    "why": "Not a room for being sick in — a vomitorium is an exit passage, and the Colosseum's eighty of them are why fifty thousand people could leave in a quarter of an hour. Every modern stadium's egress calculation is the same problem solved the same way.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Vomitorium"
+  },
+  {
+    "in": [
+      "canvas",
+      "mast"
+    ],
+    "out": "awning",
+    "why": "The velarium was a canvas shade rigged over the seating on masts and cordage, handled by a detachment of sailors from Misenum because nobody else could work that much rope aloft. It could not cover the arena itself — there is no way to span that without a support in the middle.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Velarium"
+  },
+  {
+    "in": [
+      "column",
+      "vault"
+    ],
+    "out": "basilica",
+    "why": "Nave higher than its aisles, so windows can go in the gap and light a deep building without windows in the outer walls. It was a Roman law court and exchange, and Christianity took the plan wholesale because it was the one Roman building type designed to hold a crowd facing one end.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Basilica"
+  },
+  {
+    "in": [
+      "basilica",
+      "road"
+    ],
+    "out": "forum",
+    "why": "A rectangular open space with the basilica along one side, temples at the ends and shops around it — law, religion, money and gossip within sight of each other. Every Roman town of any size has one, and its dimensions are the first thing that tells you how important the town was meant to be.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Forum_(Roman)"
+  },
+  {
+    "in": [
+      "water",
+      "ethylene"
+    ],
+    "out": "coolant",
+    "why": "Water carries more heat per litre than almost anything, which is why it is the default — but it freezes, boils and corrodes, so it is run with glycol and inhibitors. In a pressurised system the boiling point rises with the pressure, which is why a hot radiator cap is dangerous.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Coolant"
+  },
+  {
+    "in": [
+      "sandstone",
+      "chisel"
+    ],
+    "out": "stela",
+    "why": "A dressed stone set upright and inscribed — boundary, treaty, law code, king list or grave. It is the cheapest permanent way to publish, which is why so much of what is known about early states comes from them, and why so many were deliberately smashed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stele"
   }
 ]
