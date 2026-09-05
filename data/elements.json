@@ -92513,5 +92513,159 @@
       "craft"
     ],
     "fact": "The movable things that make a room usable, and the joints are the whole craft."
+  },
+  {
+    "id": "pottery",
+    "name": "Pottery",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "build"
+    ],
+    "fact": "Clay made permanent by fire, and the most abundant thing archaeology has."
+  },
+  {
+    "id": "windmill",
+    "name": "Windmill",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "Sails, a shaft, and a way of turning the whole thing to face whatever the wind is doing."
+  },
+  {
+    "id": "mine",
+    "name": "Mine",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "A hole dug at a thing worth more than the digging, and the water is always the problem."
+  },
+  {
+    "id": "smithy",
+    "name": "Smithy",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "craft"
+    ],
+    "fact": "A forge, an anvil, water, and a floor that will not burn."
+  },
+  {
+    "id": "bakery",
+    "name": "Bakery",
+    "emoji": "🥖",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "An oven big enough to be worth heating, which is why it was communal before it was commercial."
+  },
+  {
+    "id": "tannery",
+    "name": "Tannery",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "trade"
+    ],
+    "fact": "Put downwind and downstream of everywhere, for good reason."
+  },
+  {
+    "id": "bank",
+    "name": "Bank",
+    "emoji": "🏦",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "civic"
+    ],
+    "fact": "Somewhere to leave money, which works only because not everyone asks for it at once."
+  },
+  {
+    "id": "garden",
+    "name": "Garden",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "crop"
+    ],
+    "fact": "Ground kept deliberately, which is the only thing every garden has in common."
+  },
+  {
+    "id": "glassmaking",
+    "name": "Glassmaking",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "fire"
+    ],
+    "fact": "Sand melted with something to lower its melting point and something to stop it dissolving."
+  },
+  {
+    "id": "papermaking",
+    "name": "Papermaking",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "trade"
+    ],
+    "fact": "Fibre suspended in water and lifted out on a screen, so it mats as it drains."
+  },
+  {
+    "id": "cheesemaking",
+    "name": "Cheesemaking",
+    "emoji": "🧀",
+    "shelf": "workshop",
+    "tags": [
+      "craft",
+      "food"
+    ],
+    "fact": "Separating milk into curd and whey, and then deciding what to do with the curd."
+  },
+  {
+    "id": "kitchen",
+    "name": "Kitchen",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "home",
+      "build"
+    ],
+    "fact": "Fire, water and a surface, arranged so one person can reach all three."
+  },
+  {
+    "id": "camera",
+    "name": "Camera",
+    "emoji": "📷",
+    "shelf": "workshop",
+    "tags": [
+      "tool",
+      "media"
+    ],
+    "fact": "A dark box with a hole, and everything since has been about controlling the hole."
+  },
+  {
+    "id": "watermill",
+    "name": "Watermill",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "tool"
+    ],
+    "fact": "A wheel in a stream, and the whole medieval economy hung off it."
   }
 ]

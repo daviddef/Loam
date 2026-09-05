@@ -101661,5 +101661,145 @@
     "why": "Everything in it is a response to wood moving: frame-and-panel so a door can shrink without splitting, mortise and tenon so a leg does not rack, drawers running on their own sides. A piece that ignores seasonal movement comes apart within a decade.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Furniture"
+  },
+  {
+    "in": [
+      "clay",
+      "firing"
+    ],
+    "out": "pottery",
+    "why": "Above about 600 °C clay loses its chemically bound water and cannot be made plastic again — the change is one-way, which is why sherds survive everything else and why pottery is how sites get dated.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pottery"
+  },
+  {
+    "in": [
+      "sail",
+      "gearbox"
+    ],
+    "out": "windmill",
+    "why": "The difficulty is not catching the wind but following it. A post mill turns its entire body on a central post; a tower mill turns only the cap, which is why tower mills got bigger — the machinery stays still and only the hat moves.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Windmill"
+  },
+  {
+    "in": [
+      "shaft",
+      "pump"
+    ],
+    "out": "mine",
+    "why": "Every mine below the water table is a race between the pump and the inflow, which is why the first commercial steam engines were built to drain mines and why the depth of mining in any century is a statement about pumping.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mining"
+  },
+  {
+    "in": [
+      "forge",
+      "anvil"
+    ],
+    "out": "smithy",
+    "why": "The layout is the trade: forge at hand height, anvil a pace away at knuckle height, quench tub beside it, and the whole thing kept dim so the smith can read the colour of the metal — a bright smithy is a smithy where nobody can judge temperature.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Blacksmith"
+  },
+  {
+    "in": [
+      "oven",
+      "flour"
+    ],
+    "out": "bakery",
+    "why": "A masonry oven takes hours to heat and holds it for hours more, so the economics only work at volume — which is why villages shared one and why the baker's real business for centuries was baking other people's dough.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bakery"
+  },
+  {
+    "in": [
+      "tanning",
+      "hide"
+    ],
+    "out": "tannery",
+    "why": "Liming, dehairing, bating and tanning are all months long and all stink, so tanneries sat outside the walls and below the town on the river. The trade's position in every medieval street plan is a map of what people would not live next to.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tanning_(leather)"
+  },
+  {
+    "in": [
+      "money",
+      "deposit"
+    ],
+    "out": "bank",
+    "why": "A bank lends most of what is deposited and keeps a fraction, so it is solvent and illiquid at the same time by design. Everything else — reserves, deposit insurance, a lender of last resort — exists to stop everyone asking on the same morning.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bank"
+  },
+  {
+    "in": [
+      "soil",
+      "fence"
+    ],
+    "out": "garden",
+    "why": "The boundary is the definition: a garden is land where what grows is chosen. Everything else — ornament, food, medicine, contemplation — is what the choosing is for, and every tradition has answered that differently.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Garden"
+  },
+  {
+    "in": [
+      "silica_sand",
+      "crucible"
+    ],
+    "out": "glassmaking",
+    "why": "Silica alone melts near 1,700 °C, which is out of reach of a wood fire. Soda drops it to about 1,000 — and makes a glass that dissolves in water — so lime is added to stabilise it. Soda-lime glass is that three-part compromise and has been for 4,000 years.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Glass_production"
+  },
+  {
+    "in": [
+      "pulp",
+      "mesh"
+    ],
+    "out": "papermaking",
+    "why": "Nothing binds the sheet but the fibres' own surfaces touching as the water leaves. Cai Lun is credited with it around 105 CE; it reached Europe via Samarkand and Islamic Spain, and took another five centuries to arrive.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Papermaking"
+  },
+  {
+    "in": [
+      "curd",
+      "rennet"
+    ],
+    "out": "cheesemaking",
+    "why": "Rennet or acid destabilises the casein micelles so they cluster and trap fat, leaving whey behind. Everything after that — cutting, cooking, pressing, salting, ageing, mould — is a set of choices about moisture and time, and every cheese there is is a different set.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cheesemaking"
+  },
+  {
+    "in": [
+      "oven",
+      "sink"
+    ],
+    "out": "kitchen",
+    "why": "The working triangle between heat, water and storage is the whole layout problem, and it was solved formally by Lihotzky's Frankfurt Kitchen of 1926 — designed by timing a housewife's movements and then removing the steps.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Kitchen"
+  },
+  {
+    "in": [
+      "lens",
+      "shutter"
+    ],
+    "out": "camera",
+    "why": "A pinhole makes an image with no lens at all; a lens gathers far more light and so needs focus, and once there is enough light there has to be a shutter to stop it. Aperture, shutter and sensitivity are three ways of setting one quantity, which is why they trade against each other.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Camera"
+  },
+  {
+    "in": [
+      "weir",
+      "gearbox"
+    ],
+    "out": "watermill",
+    "why": "An overshot wheel takes water at the top and is driven by its weight, which is far more efficient than an undershot wheel driven by the current — but it needs a head, so it needs a weir and a leat. Domesday records over 5,600 mills in England alone.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Watermill"
   }
 ]

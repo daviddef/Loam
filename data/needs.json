@@ -107,22 +107,6 @@
         "grease"
       ]
     },
-    "loaf_of_bread": {
-      "src": "https://en.wikipedia.org/wiki/Bread",
-      "needs": [
-        "flour",
-        "water",
-        "yeast",
-        "salt",
-        "sugar",
-        "oven",
-        "dough",
-        "gluten",
-        "starch",
-        "tin|baking_tin",
-        "heat|fire"
-      ]
-    },
     "automobile": {
       "src": "https://en.wikipedia.org/wiki/Car",
       "needs": [
@@ -278,58 +262,6 @@
         "track_gauge"
       ]
     },
-    "clock_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Clock",
-      "needs": [
-        "gear",
-        "spring",
-        "escapement",
-        "pendulum",
-        "balance_wheel",
-        "mainspring",
-        "dial",
-        "hand",
-        "bearing",
-        "brass",
-        "glass",
-        "case",
-        "weight",
-        "chain"
-      ]
-    },
-    "camera_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Camera",
-      "needs": [
-        "lens",
-        "glass",
-        "aperture",
-        "shutter",
-        "film|sensor",
-        "mirror",
-        "viewfinder",
-        "focus_ring",
-        "case",
-        "light",
-        "silver_halide|photodiode"
-      ]
-    },
-    "book_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Book",
-      "needs": [
-        "paper",
-        "ink",
-        "glue",
-        "thread",
-        "cover",
-        "cardboard",
-        "spine",
-        "printing_press",
-        "type|movable_type",
-        "leather",
-        "page",
-        "binding"
-      ]
-    },
     "shoe": {
       "src": "https://en.wikipedia.org/wiki/Shoe",
       "needs": [
@@ -347,24 +279,6 @@
         "last"
       ]
     },
-    "guitar_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Guitar",
-      "needs": [
-        "wood",
-        "spruce_tree|soundboard",
-        "fretboard",
-        "fret",
-        "string",
-        "tuning_peg",
-        "bridge",
-        "nut",
-        "soundhole",
-        "neck",
-        "soundboard|body",
-        "glue",
-        "varnish|lacquer"
-      ]
-    },
     "chair": {
       "src": "https://en.wikipedia.org/wiki/Chair",
       "needs": [
@@ -379,21 +293,6 @@
         "upholstery",
         "cloth",
         "foam|padding"
-      ]
-    },
-    "window_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Window",
-      "needs": [
-        "glass",
-        "window_frame",
-        "sill",
-        "putty|sealant",
-        "hinge",
-        "latch",
-        "pane",
-        "glazing_bar",
-        "timber",
-        "paint"
       ]
     },
     "sword": {
@@ -413,32 +312,6 @@
         "leather"
       ]
     },
-    "candle_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Candle",
-      "needs": [
-        "wax",
-        "beeswax|paraffin_wax",
-        "wick",
-        "cotton",
-        "mould",
-        "dye",
-        "fragrance|scent"
-      ]
-    },
-    "soap_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Soap",
-      "needs": [
-        "fat|tallow",
-        "lye",
-        "water",
-        "salt",
-        "saponification",
-        "glycerol",
-        "perfume|fragrance",
-        "mould",
-        "oil"
-      ]
-    },
     "pottery": {
       "src": "https://en.wikipedia.org/wiki/Pottery",
       "needs": [
@@ -452,21 +325,6 @@
         "slip",
         "firing",
         "oxide"
-      ]
-    },
-    "paper_making": {
-      "src": "https://en.wikipedia.org/wiki/Paper",
-      "needs": [
-        "pulp",
-        "wood",
-        "water",
-        "bleach",
-        "screen|mesh",
-        "press",
-        "size|sizing",
-        "rag",
-        "cellulose",
-        "lignin"
       ]
     },
     "glassmaking": {
@@ -498,21 +356,6 @@
         "cask",
         "bottle",
         "sugar"
-      ]
-    },
-    "cheese_making": {
-      "src": "https://en.wikipedia.org/wiki/Cheese",
-      "needs": [
-        "milk",
-        "rennet",
-        "culture|starter_culture",
-        "curd",
-        "whey",
-        "salt",
-        "press",
-        "mould",
-        "cave|cellar",
-        "bacteria"
       ]
     },
     "farm": {
@@ -574,26 +417,6 @@
         "nurse",
         "doctor",
         "ambulance"
-      ]
-    },
-    "kitchen_assembly": {
-      "src": "https://en.wikipedia.org/wiki/Kitchen",
-      "needs": [
-        "oven",
-        "stove",
-        "refrigerator",
-        "sink",
-        "tap",
-        "saucepan",
-        "pan",
-        "knife",
-        "chopping_board",
-        "plate",
-        "bowl",
-        "cupboard",
-        "worktop|countertop",
-        "kettle",
-        "toaster"
       ]
     },
     "cpu": {
@@ -1246,7 +1069,19 @@
         "dial|face",
         "frame|plate",
         "bearing|jewel",
-        "winding_key|key"
+        "winding_key|key",
+        "spring",
+        "pendulum",
+        "balance_wheel",
+        "mainspring",
+        "dial",
+        "hand",
+        "bearing",
+        "brass",
+        "glass",
+        "case",
+        "weight",
+        "chain"
       ]
     },
     "compass": {
@@ -1324,7 +1159,14 @@
         "spine",
         "board|cardboard",
         "leather|cloth",
-        "endpaper|paper"
+        "endpaper|paper",
+        "cover",
+        "cardboard",
+        "printing_press",
+        "type|movable_type",
+        "leather",
+        "page",
+        "binding"
       ]
     },
     "paper": {
@@ -1354,7 +1196,13 @@
         "saponification|reaction",
         "mould|frame",
         "curing|wait",
-        "glycerol"
+        "glycerol",
+        "fat|tallow",
+        "lye",
+        "saponification",
+        "perfume|fragrance",
+        "mould",
+        "oil"
       ]
     },
     "cheese": {
@@ -1629,7 +1477,14 @@
         "lintel",
         "hinge",
         "catch",
-        "shutter"
+        "shutter",
+        "window_frame",
+        "putty|sealant",
+        "latch",
+        "pane",
+        "glazing_bar",
+        "timber",
+        "paint"
       ]
     },
     "door": {
@@ -1730,7 +1585,11 @@
         "mould|dipping",
         "stearin",
         "dye",
-        "fragrance"
+        "fragrance",
+        "wax",
+        "beeswax|paraffin_wax",
+        "mould",
+        "fragrance|scent"
       ]
     },
     "spear": {
@@ -2852,22 +2711,6 @@
         "road"
       ]
     },
-    "pergamon_needs": {
-      "src": "https://en.wikipedia.org/wiki/Pergamon",
-      "note": "A city terraced up a 335 m cone, so every building stands on a retaining wall.",
-      "needs": [
-        "andesite",
-        "marble",
-        "terrace",
-        "retaining_wall",
-        "theatre",
-        "altar",
-        "column",
-        "aqueduct",
-        "cistern",
-        "mortar"
-      ]
-    },
     "banknote_pound": {
       "src": "https://en.wikipedia.org/wiki/Banknote",
       "note": "A promise printed so well that copying it costs more than it is worth.",
@@ -3415,38 +3258,6 @@
         "turf"
       ]
     },
-    "pergamon_parts": {
-      "src": "https://en.wikipedia.org/wiki/Pergamon",
-      "note": "A city terraced up a cone, so every building stands on a retaining wall.",
-      "needs": [
-        "andesite",
-        "marble",
-        "terrace",
-        "retaining_wall",
-        "theatre",
-        "column",
-        "aqueduct",
-        "cistern",
-        "mortar",
-        "altar"
-      ]
-    },
-    "sagalassos_parts": {
-      "src": "https://en.wikipedia.org/wiki/Sagalassos",
-      "note": "A mountain city abandoned after an earthquake and never built over.",
-      "needs": [
-        "limestone",
-        "marble",
-        "theatre",
-        "aqueduct",
-        "nymphaeum",
-        "column",
-        "arch",
-        "road",
-        "mortar",
-        "cistern"
-      ]
-    },
     "metronidazole": {
       "src": "https://en.wikipedia.org/wiki/Metronidazole",
       "note": "A drug that only becomes a poison inside things that live without oxygen.",
@@ -3980,19 +3791,6 @@
         "clearance"
       ]
     },
-    "arena_parts": {
-      "src": "https://en.wikipedia.org/wiki/Arena",
-      "note": "The floor of the fight, sanded so it can be raked clean between events.",
-      "needs": [
-        "sand",
-        "podium",
-        "drain",
-        "hypogeum",
-        "lift",
-        "gate",
-        "barrier"
-      ]
-    },
     "track_gauge": {
       "src": "https://en.wikipedia.org/wiki/Track_gauge",
       "note": "The distance between the rails, and the reason two railways cannot always meet.",
@@ -4404,7 +4202,86 @@
         "reinforcement"
       ]
     },
-    "trade_needs": {
+    "bread": {
+      "src": "https://en.wikipedia.org/wiki/Bread",
+      "needs": [
+        "flour",
+        "water",
+        "yeast",
+        "salt",
+        "sugar",
+        "oven",
+        "dough",
+        "gluten",
+        "starch",
+        "tin|baking_tin",
+        "heat|fire"
+      ]
+    },
+    "guitar": {
+      "src": "https://en.wikipedia.org/wiki/Guitar",
+      "needs": [
+        "wood",
+        "spruce_tree|soundboard",
+        "fretboard",
+        "fret",
+        "string",
+        "tuning_peg",
+        "bridge",
+        "nut",
+        "soundhole",
+        "neck",
+        "soundboard|body",
+        "glue",
+        "varnish|lacquer"
+      ]
+    },
+    "pergamon": {
+      "src": "https://en.wikipedia.org/wiki/Pergamon",
+      "note": "A city terraced up a 335 m cone, so every building stands on a retaining wall.",
+      "needs": [
+        "andesite",
+        "marble",
+        "terrace",
+        "retaining_wall",
+        "theatre",
+        "altar",
+        "column",
+        "aqueduct",
+        "cistern",
+        "mortar"
+      ]
+    },
+    "sagalassos": {
+      "src": "https://en.wikipedia.org/wiki/Sagalassos",
+      "note": "A mountain city abandoned after an earthquake and never built over.",
+      "needs": [
+        "limestone",
+        "marble",
+        "theatre",
+        "aqueduct",
+        "nymphaeum",
+        "column",
+        "arch",
+        "road",
+        "mortar",
+        "cistern"
+      ]
+    },
+    "arena": {
+      "src": "https://en.wikipedia.org/wiki/Arena",
+      "note": "The floor of the fight, sanded so it can be raked clean between events.",
+      "needs": [
+        "sand",
+        "podium",
+        "drain",
+        "hypogeum",
+        "lift",
+        "gate",
+        "barrier"
+      ]
+    },
+    "trade": {
       "src": "https://en.wikipedia.org/wiki/Trade",
       "note": "What has to exist before two strangers will exchange anything.",
       "needs": [
@@ -4417,6 +4294,72 @@
         "trust",
         "market",
         "ledger"
+      ]
+    },
+    "camera": {
+      "src": "https://en.wikipedia.org/wiki/Camera",
+      "needs": [
+        "lens",
+        "glass",
+        "aperture",
+        "shutter",
+        "film|sensor",
+        "mirror",
+        "viewfinder",
+        "focus_ring",
+        "case",
+        "light",
+        "silver_halide|photodiode"
+      ]
+    },
+    "papermaking": {
+      "src": "https://en.wikipedia.org/wiki/Paper",
+      "needs": [
+        "pulp",
+        "wood",
+        "water",
+        "bleach",
+        "screen|mesh",
+        "press",
+        "size|sizing",
+        "rag",
+        "cellulose",
+        "lignin"
+      ]
+    },
+    "cheesemaking": {
+      "src": "https://en.wikipedia.org/wiki/Cheese",
+      "needs": [
+        "milk",
+        "rennet",
+        "culture|starter_culture",
+        "curd",
+        "whey",
+        "salt",
+        "press",
+        "mould",
+        "cave|cellar",
+        "bacteria"
+      ]
+    },
+    "kitchen": {
+      "src": "https://en.wikipedia.org/wiki/Kitchen",
+      "needs": [
+        "oven",
+        "stove",
+        "refrigerator",
+        "sink",
+        "tap",
+        "saucepan",
+        "pan",
+        "knife",
+        "chopping_board",
+        "plate",
+        "bowl",
+        "cupboard",
+        "worktop|countertop",
+        "kettle",
+        "toaster"
       ]
     }
   },

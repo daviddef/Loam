@@ -792,6 +792,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'pottery', 'glassmaking', 'papermaking', 'cheesemaking', 'camera',   // orphan-list subjects
     'spaghetti', 'risotto', 'paella', 'curry', 'pie', 'dumpling', 'porridge', 'casserole', 'wok', 'stir_fry', 'fibreglass', 'chipboard', 'spectacles', 'wheelchair', 'crutch', 'prosthesis', 'plaster_cast', 'puddle', 'wallpaper',   // universe gaps 5 Sep
     'skirt', 'veneer', 'creek', 'plywood',   // reader-found gaps
     'caliper', 'master_cylinder', 'retort', 'grate', 'scrubber', 'heat_exchanger', 'gyroscope', 'spar', 'leaf_spring', 'steering', 'tailgate', 'podium', 'stela',   // needs sweep
@@ -1124,6 +1125,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'windmill', 'mine', 'smithy', 'bakery', 'tannery', 'bank', 'garden', 'kitchen', 'watermill',   // orphan-list subjects
     'stream', 'brook', 'pond', 'culvert', 'watershed', 'runoff', 'oxbow', 'wiring', 'shower', 'bath', 'fridge', 'washing_machine', 'plumbing', 'furniture',   // universe gaps 5 Sep
     'spillway', 'embankment', 'penstock', 'flue', 'airframe', 'terrace', 'retaining_wall', 'arena', 'vomitorium', 'awning', 'basilica', 'forum',   // needs sweep
     'titans',

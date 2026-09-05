@@ -57,6 +57,27 @@ const has = t => ids.has(t) || names.has(t.replace(/_/g, ' '));
 const covered = c => c.split('|').some(has);
 
 const args = process.argv.slice(2);
+
+/* A LIST FOR SOMETHING THAT IS NOT AN ELEMENT MEASURES NOTHING.
+ *
+ * Found 26 of them on 5 Sep. Seven were `_assembly` duplicates of elements that
+ * already existed — clock_assembly beside clock, book_assembly beside book —
+ * so two lists described one thing and neither was counted. Five more were
+ * written the same day by me: the id I wanted was taken, so I wrote the list
+ * under pergamon_parts and trade_needs rather than noticing the first one and
+ * merging into it. Same self-duplication that produced benin_walls and
+ * nelsons_dockyard_claim, now in a third file.
+ *
+ * A list nothing can read is not a list, so this fails rather than warns. */
+const orphanLists = Object.keys(NEEDS).filter(id => !ids.has(id));
+if (orphanLists.length && args.length === 0) {
+  console.log(`\n${orphanLists.length} PARTS LIST(S) WHOSE SUBJECT IS NOT AN ELEMENT\n`);
+  for (const o of orphanLists) console.log(`  ${o}`);
+  console.log(`\n  Either the thing should be an element, or the list belongs on the`);
+  console.log(`  element that already covers it.\n`);
+  process.exitCode = 1;
+}
+
 const one = args.find(a => !a.startsWith('--'));
 
 /* --next: which elements are ASSEMBLIES and have no list yet?
