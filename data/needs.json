@@ -2360,6 +2360,22 @@
         "chasing",
         "soldering"
       ]
+    },
+    "necklace": {
+      "src": "https://en.wikipedia.org/wiki/Necklace",
+      "note": "What actually goes into one, across the whole range — a strand of pierced shells and a set diamond on a gold chain are the same object doing the same job.",
+      "needs": [
+        "bead|gemstone|pearl|shell",
+        "cord|chain|wire",
+        "clasp",
+        "pendant",
+        "setting|bezel",
+        "gold|silver|bronze",
+        "drill",
+        "solder",
+        "polishing_grit",
+        "thread"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",

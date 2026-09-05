@@ -293,6 +293,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'pendant', 'clasp',   // necklace, 5 Sep
     'lead_frame', 'encapsulation', 'getter', 'fuse', 'gemstone', 'setting', 'serration', 'arrowhead', 'hafting_resin', 'stearin', 'vitriol', 'drier', 'filler', 'splice', 'whipping', 'dielectric', 'lead_in_wire', 'soldering', 'chasing',   // needs-sweep 5 Sep
     'buckle', 'rivet_set', 'keyway', 'escutcheon', 'strike_plate', 'linchpin', 'grommet', 'ferrule', 'shank', 'bolster', 'bevel', 'honing', 'journal', 'touchhole', 'chinstrap', 'seam', 'selvage',   // needs-sweep 5 Sep
     /* verb outcomes, 5 Sep. a cooled potato and a bar of chocolate */

@@ -71,6 +71,67 @@ const one = args.find(a => !a.startsWith('--'));
  * Ranked by depth first, because depth is the honest measure of "how much had
  * to happen before this existed".
  */
+/* --narrow: WHERE ONE ROUTE IS READING AS A DEFINITION
+ *
+ * A player looking at `necklace` saw bead + cord and asked why it was not
+ * diamonds and gold. The answer was that bead + cord was the only recipe, so it
+ * was not describing one necklace among many — it was standing in as what a
+ * necklace IS. A single route on a general noun is a definition whether it was
+ * meant as one or not.
+ *
+ * That is checkable without guessing, because a needs list already says, in
+ * curated form, that a thing can be made more than one way: every `a|b|c` in
+ * one is a statement that any of those will do. So if a thing's parts list
+ * offers alternatives and its recipes only ever reach for one branch, the
+ * corpus is narrower than its own written fact.
+ *
+ * It reports, it does not fail. Plenty of things genuinely have one route, and
+ * an alternation nobody has built the other half of yet is a gap in authoring
+ * rather than an error in what is there.
+ */
+if (args.includes('--narrow')) {
+  const madeBy = new Map();
+  for (const r of recipes) {
+    if (!madeBy.has(r.out)) madeBy.set(r.out, []);
+    madeBy.get(r.out).push(r);
+  }
+  const rows = [];
+  for (const [id, entry] of Object.entries(NEEDS)) {
+    const rs = madeBy.get(id) || [];
+    if (!rs.length) continue;
+    const used = new Set(rs.flatMap(r => r.in));
+    const unreached = [];
+    for (const need of entry.needs) {
+      if (!need.includes('|')) continue;
+      const branches = need.split('|');
+      const hit = branches.filter(b => used.has(b));
+      /* Only count a branch the corpus could actually have reached. An
+       * alternative that is not an element yet is a hole in the parts list,
+       * which --missing already reports; mixing the two would make this read
+       * as noise and it is the kind of list that only gets used if it does
+       * not. */
+      const cold = branches.filter(b => !used.has(b) && ids.has(b));
+      if (hit.length && cold.length) {
+        unreached.push(`${hit.join('/')} but never ${cold.join(', ')}`);
+      }
+    }
+    if (unreached.length) rows.push({ id, n: rs.length, unreached });
+  }
+  rows.sort((a, b) => a.n - b.n || b.unreached.length - a.unreached.length);
+  console.log(`\n${rows.length} THING(S) WHOSE RECIPES ARE NARROWER THAN THEIR OWN PARTS LIST\n`);
+  for (const r of rows) {
+    console.log(`  ${r.id}  (${r.n} recipe${r.n === 1 ? '' : 's'})`);
+    for (const u of r.unreached) console.log(`     ${u}`);
+  }
+  console.log(`\n  KNOWN NOISE: some alternations are near-synonyms rather than real choices —`);
+  console.log(`  hide|skin and electromagnet|coil are one thing written twice, and a recipe`);
+  console.log(`  cannot use both. Those are the parts list needing tightening, not the recipes.`);
+  console.log(`\n  A single route on a general noun reads as a definition. Where the parts list`);
+  console.log(`  says a thing can be made more than one way and the recipes only go one way,`);
+  console.log(`  the gesture is claiming more than the corpus knows.\n`);
+  process.exit(0);
+}
+
 if (args.includes('--next')) {
   const MADE = new Set(['tool', 'build', 'dish', 'trade', 'instrument', 'medicine', 'transport', 'machine']);
   const byId = new Map(elements.map(e => [e.id, e]));
