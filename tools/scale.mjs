@@ -1522,6 +1522,7 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+    'volta_forts', 'bassari_country', 'w_arly_pendjari', 'atsinanana', 'huascaran', 'kinabalu', 'trang_an', 'saryarka', 'hiraizumi', 'fujian_tulou', 'manu', 'portobelo', 'hospicio_cabanas', 'lima_centre', 'pampulha', 'ming_tombs', 'koguryo_tombs', 'meiji_industry', 'xanthos', 'sumela', 'ahwar', 'westminster_abbey', 'dover_castle', 'jurassic_coast', 'dacian_fortresses', 'churches_of_peace', 'tasmanian_wilderness',   // Chronicarum places, 5 Sep
     'goree', 'naqa', 'tiebele', 'niokolo_koba', 'dinosaur_provincial_park', 'selous', 'humberstone', 'ani', 'pergamon', 'pamukkale', 'susa', 'bhimbetka', 'macau_centre', 'altamira', 'vezere', 'bern_old_city', 'potsdam_palaces', 'orkney_neolithic', 'kotor', 'shirakawa_go', 'kii_routes',   // Chronicarum places 5 Sep
     /* places batch 45, 5 Sep. 650 ha of dunes */
     'sigatoka_dunes',
