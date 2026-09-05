@@ -32,6 +32,7 @@ const PUBLIC = [
   'data/inert.json',
   'data/homonyms.json',
   'data/roles.json',
+  'data/art-pending.json',
   'data/bedrock.json',
   'data/taxonomy.json',
   'data/needs.json',

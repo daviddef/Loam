@@ -53,6 +53,17 @@ const rows = [];
 const add = (name, seen, total, note, authored = false) =>
   rows.push({ name, seen, total, note, authored });
 
+/* Art is the one row that is a BACKLOG rather than a gap: every element always
+ * renders, because an element with no def() of its own is drawn from its
+ * family. That is why artwork must never gate a batch of research — and why it
+ * needs counting here, since a family fallback looks like a finished drawing
+ * and will otherwise sit unnoticed forever. */
+if (has('art-pending.json')) {
+  const ap = read('art-pending.json');
+  add('art hand-drawn', ap.hand_drawn, elements.length,
+      'the rest render from their family — a backlog, not a blocker');
+}
+
 add('validate', elements.length, elements.length, 'every element, every run');
 add('categories', elements.length, elements.length, 'every element, every run');
 add('scale', elements.length, elements.length, 'every element, every run');
