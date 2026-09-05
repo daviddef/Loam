@@ -21,6 +21,10 @@ const conditions = J('../data/conditions.json');
 const allergens = J('../data/allergens.json');
 const reactions = J('../data/reactions.json');
 const families  = J('../data/families.json');
+// The Ragdoll canvas. Routes, substances and verbs go over as one object; the
+// $-prefixed prose in the file is authoring notes and stays out of the page.
+const effectsSrc = J('../data/effects.json');
+const effects = { routes: effectsSrc.$routes, effects: effectsSrc.effects, verbs: effectsSrc.verbs };
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
 
 /**
@@ -121,6 +125,7 @@ try {
     .replace('__CONDITION_DATA__', '{conditions:{}}')
     .replace('__ALLERGEN_DATA__', '{}')
     .replace('__REACTION_DATA__', '{}')
+    .replace('__EFFECTS_DATA__', '{routes:{},effects:{},verbs:{}}')
     .replace('__FAMILY_DATA__', '{families:[{id:"other",name:"Other",tags:[]}]}'));
 } catch (e) {
   console.error(`prototype script does not parse: ${e.message}`);
@@ -186,6 +191,7 @@ html = html.replace('__GAME_DATA__', JSON.stringify(data))
            .replace('__CONDITION_DATA__', JSON.stringify(conditions))
            .replace('__ALLERGEN_DATA__', JSON.stringify(allergens))
            .replace('__REACTION_DATA__', JSON.stringify(reactions))
+           .replace('__EFFECTS_DATA__', JSON.stringify(effects))
            .replace('__FAMILY_DATA__', JSON.stringify({ families: families.families.map(f => ({ id: f.id, name: f.name, tags: f.tags })) }));
 
 // Every item must have a drawing. A missing one renders as an empty square,

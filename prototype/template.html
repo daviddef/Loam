@@ -1780,6 +1780,72 @@ __CATEGORY_CSS__
     background:color-mix(in srgb,var(--surface) 94%,transparent)}
   .apane{display:none}
   .apane.on{display:block}
+  /* ── the Ragdoll canvas ──────────────────────────────────────────────────
+     "i want this to be the human testing ground for our canvas ... a separate
+     canvas, a separate interaction, but centralises on human impact." One
+     body, and one question: what does this do to a person. Every word it says
+     comes out of data/effects.json or out of a recipe that already names a
+     human, and where both are silent it says so rather than inventing a wound.
+
+     Deliberately NOT a damage model. A carcinogen does nothing on contact, and
+     an honest body shows a clock for it instead of a mark. */
+  #asideRagdoll.on{display:flex;flex-direction:column;gap:9px}
+  #rdStage{
+    position:relative;border:2px dashed var(--line);border-radius:13px;padding:8px 4px;
+    background:color-mix(in srgb,var(--surface) 62%,transparent);
+    transition:border-color .16s,background .16s;
+  }
+  #rdStage.over{border-style:solid;border-color:var(--orange);
+                background:color-mix(in srgb,var(--orange) 10%,transparent)}
+  #rdStage svg{display:block;width:100%;max-width:190px;height:auto;margin:0 auto}
+  #rdBody .part{fill:var(--card);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+  #rdBody .limb{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+  #rdBody .zone{fill:none;transition:fill .3s}
+  #rdBody .zone.lit{fill:color-mix(in srgb,var(--orange) 45%,transparent)}
+  #rdBody .line{fill:none;stroke:none;transition:stroke .3s}
+  #rdBody .line.lit{stroke:var(--orange);stroke-width:3;stroke-linecap:round}
+  #rdBody .halo{fill:none;stroke:none}
+  #rdBody .halo.lit{stroke:var(--orange);stroke-width:2.5;stroke-dasharray:5 8;opacity:.85}
+  #rdBody.hit .part,#rdBody.hit .limb{stroke:var(--orange)}
+  #rdRoute{
+    text-align:center;min-height:12px;margin-top:2px;
+    font:400 10px/1.2 var(--face-data);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--orange);pointer-events:none;
+  }
+  #rdSay{font:400 11.5px/1.45 var(--face-name);color:var(--ink-soft);margin:0 3px}
+  .rdlog{display:flex;flex-direction:column;gap:8px}
+  .rdcase{border:1.5px solid var(--line);border-radius:10px;padding:8px;background:var(--card)}
+  .rdcase.none{background:none;border-style:dashed;text-align:left;padding:8px;color:var(--ink-soft)}
+  .rdcase h3{
+    margin:0 0 5px;font:700 10.5px/1 var(--face-name);letter-spacing:.7px;
+    text-transform:uppercase;color:var(--ink-soft);
+    display:flex;align-items:baseline;gap:5px;flex-wrap:wrap;
+  }
+  .rdcase h3 b{color:var(--ink);font-size:12px;letter-spacing:0;text-transform:none}
+  .rdcase .rr{
+    font:400 9.5px/1 var(--face-data);letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:99px;padding:2.5px 6px;color:var(--ink-soft);
+  }
+  .rdcase .rr.acute{border-color:var(--orange);color:var(--orange)}
+  .rdcase p{margin:5px 0 0;font:400 11.5px/1.5 var(--face-name);color:var(--ink)}
+  .rdcase .why{color:var(--ink-soft)}
+  .rdcase .clock{
+    margin-top:6px;padding:6px 8px;border-radius:8px;
+    background:color-mix(in srgb,var(--ink) 6%,transparent);
+    font:400 11.5px/1.45 var(--face-name);color:var(--ink-soft);
+  }
+  .rdcase .clock b{color:var(--ink)}
+  .rdcase a.src{
+    display:inline-block;margin-top:6px;font:400 10px/1 var(--face-data);
+    letter-spacing:.06em;color:var(--ink-soft);
+  }
+  #rdBar{display:flex;gap:5px;align-items:center}
+  #rdBar button{
+    flex:none;padding:5px 8px;border:1.5px solid var(--line);border-radius:8px;
+    background:var(--card);color:var(--ink-soft);cursor:pointer;
+    font:700 10.5px var(--face-name);
+  }
+  #rdBar button:hover{color:var(--orange);border-color:var(--orange)}
   #ptHead{
     flex:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
     padding:0 12px 7px;font:400 11px/1.3 var(--face-name);color:var(--ink-soft);
@@ -2181,6 +2247,7 @@ __CATEGORY_CSS__
       <button class="atab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px">__UI_ANIMALS__</span></button>
       <button class="atab" data-asidetab="plants" title="Plants — everything that grows">🌱</button>
       <button class="atab" data-asidetab="toxins" title="Toxins — hazards, carcinogens, poisons">☣</button>
+      <button class="atab" data-asidetab="ragdoll" title="Ragdoll — what any of this does to a person">🧍</button>
       <button class="atab" data-asidetab="microbes" title="Microbes — bacteria, viruses, parasites">🦠</button>
       <button class="atab" data-asidetab="periodic" title="The periodic table's own elements">⚛</button>
       <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
@@ -2192,6 +2259,7 @@ __CATEGORY_CSS__
     <div id="asideAnimals" class="apane"></div>
     <div id="asidePlants" class="apane"></div>
     <div id="asideToxins" class="apane"></div>
+    <div id="asideRagdoll" class="apane"></div>
     <div id="asideMicrobes" class="apane"></div>
     <div id="asidePeriodic" class="apane"></div>
     <div id="asideFavourites" class="apane"></div>
@@ -2279,6 +2347,10 @@ const SCALE = __SCALE_DATA__;
    data/cautions.json — the wording is attached to the hazard, not to the item,
    so it reads the same everywhere on a chain. */
 const CAUTIONS = __CAUTION_DATA__;
+/* What a thing does to a human body, and by which route it gets there. See
+   data/effects.json — routes, substances, and the five verbs that act on a
+   person. This is what the Ragdoll canvas reads; it invents nothing. */
+const EFFECTS = __EFFECTS_DATA__;
 /* Food-label vocabulary → element ids. See data/labels.json. */
 const LABELS = __LABEL_DATA__;
 const PATHOGENS = __PATHOGEN_DATA__.pathogens || {};
@@ -2407,11 +2479,13 @@ function scoreNow() {
 const KEY = 'loam.v1';
 
 let found = new Set(), seen = new Set(), savedBench = null, favourites = new Set();
+let savedRagdoll = null, ragdoll = [];   // the Ragdoll's exposures: {id, kind}
 try {
   const s = JSON.parse(localStorage.getItem(KEY));
   if (s) {
     found = new Set(s.found); seen = new Set(s.seen); savedBench = s.bench || null;
     favourites = new Set(s.favourites || []);
+    savedRagdoll = s.ragdoll || null;
   }
 } catch {}
 if (!found.size) STARTERS.forEach(s => found.add(s));
@@ -2467,6 +2541,7 @@ const save = () => {
   try {
     localStorage.setItem(KEY, JSON.stringify({
       found: [...found], seen: [...seen], bench: benchState(), favourites: [...favourites],
+      ragdoll,
     }));
   } catch {}
 };
@@ -5842,6 +5917,13 @@ board.addEventListener('pointerup', ev => {
   }
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
+  // Carried onto the Ragdoll. Claimed before hit(), which only ever looks at
+  // the bench — the body is a second canvas, not a card.
+  if (overRagdoll(ev.clientX, ev.clientY) && chip.dataset.id) {
+    ragdollDrop(chip.dataset.id, 'element');
+    pinToBoard(chip);
+    return;
+  }
   // If the dial was climbing, letting go IS the decision — it has already
   // chosen a temperature, so it must not also fall through to a plain drop.
   if (heating && heating.chip === chip) { releaseHeat(); pinToBoard(chip); return; }
@@ -7657,7 +7739,8 @@ let asideTab = 'elements';
 const ASIDE_PANE = { shelf: 'asideShelf', elements: 'asideElements',
                       proteins: 'asideProteins', animals: 'asideAnimals',
                       plants: 'asidePlants', toxins: 'asideToxins',
-                      microbes: 'asideMicrobes', periodic: 'asidePeriodic',
+                      microbes: 'asideMicrobes', ragdoll: 'asideRagdoll',
+                      periodic: 'asidePeriodic',
                       favourites: 'asideFavourites', info: 'asideInfo' };
 /* ── the info tab ──────────────────────────────────────────────────────────
  * The same body the entry sheet draws, in the pane instead of over the board,
@@ -7692,6 +7775,191 @@ function setInfo(id) {
   if (asideTab === 'info') renderAsideInfo();
 }
 
+
+/* ── the Ragdoll ───────────────────────────────────────────────────────────
+ * A second canvas in the shelf: one human body, and one question — what does
+ * this do to a person. Drop an element or a verb on it and it answers from
+ * data/effects.json, or from a recipe this corpus already holds that names a
+ * human, and otherwise it says plainly that nothing is on record. It never
+ * guesses, and it is not a damage model: a carcinogen leaves a clock, not a
+ * wound, because that is what a carcinogen actually does on the day.
+ *
+ * Route is the whole idea. The same substance is inert on skin, dangerous
+ * inhaled and lethal injected, so the body lights the way in rather than
+ * asking you to aim at it — the route is a fact about the substance, not a
+ * test of your pointer.
+ */
+ragdoll = Array.isArray(savedRagdoll) ? savedRagdoll.filter(x => x && x.id) : [];
+const RD_LIT = {
+  inhaled:    ['rdLung'],
+  ingested:   ['rdMouth', 'rdGut'],
+  contact:    ['rdSkin'],
+  absorbed:   ['rdSkin', 'rdBlood'],
+  injected:   ['rdVein', 'rdBlood'],
+  radiation:  ['rdHalo'],
+  mechanical: ['rdBone'],
+  thermal:    ['rdSkin', 'rdHalo'],
+};
+const rdName = (x) => x.kind === 'verb'
+  ? (verbs.find(v => v.id === x.id)?.name ?? x.id)
+  : (byId[x.id] ? nameOf(byId[x.id]) : x.id);
+
+/**
+ * What this corpus knows about `id` meeting a body. Three answers, in order of
+ * how much is written down, and null when the honest answer is nothing.
+ */
+function rdResolve(id, kind) {
+  if (kind === 'verb') {
+    const f = (EFFECTS.verbs || {})[id];
+    return f ? { ...f, source: 'verb' } : null;
+  }
+  const f = (EFFECTS.effects || {})[id];
+  if (f) return { ...f, source: 'effect' };
+  // Second source, and free: 201 recipes already take a human as an input, and
+  // the ones whose output is a disease are exactly this question asked in the
+  // recipe graph. They carry no route — the recipe never had that axis — so
+  // the body stays dark and the pathogen's own transmission line stands in.
+  if (id === 'human') return null;
+  const r = DATA.recipes.find(x => (x.in || []).length === 2 && x.in.includes('human')
+            && x.in.includes(id) && (byId[x.out]?.tags || []).includes('medicine'));
+  if (!r) return null;
+  return { source: 'infection', route: null, onset: null, outcome: r.out,
+           mechanism: r.why, src: r.src,
+           transmission: (PATHOGENS[id] || {}).transmission || null };
+}
+
+/** True when (x, y) is over the body. Rect rather than elementFromPoint: the
+ *  card being dragged is under the pointer for part of the gesture. */
+function overRagdoll(x, y) {
+  const st = document.getElementById('rdStage');
+  if (!st || !st.offsetParent) return false;          // pane not showing
+  const r = st.getBoundingClientRect();
+  return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+}
+function rdOver(on) {
+  const st = document.getElementById('rdStage');
+  if (st) st.classList.toggle('over', !!on);
+}
+
+/** Expose the body to something. Anything already on the list moves to the
+ *  top rather than being counted twice — one asbestos is the fact. */
+function ragdollDrop(id, kind) {
+  rdOver(false);
+  const f = rdResolve(id, kind);
+  ragdoll = ragdoll.filter(x => !(x.id === id && x.kind === kind));
+  ragdoll.push({ id, kind });
+  if (ragdoll.length > 24) ragdoll.shift();
+  save();
+  if (asideTab !== 'ragdoll') setAsideTab('ragdoll');
+  renderAsideRagdoll(f ? f.route : null);
+  if (!f) { sfx.nope(); return; }
+  // An outcome is an ordinary element of this corpus, and reaching it this way
+  // is as sourced as reaching it by recipe — so it counts as found.
+  if (f.outcome && byId[f.outcome] && !found.has(f.outcome)) {
+    found.add(f.outcome); seen.add(f.outcome); save(); renderShelf();
+    sfx.discover();
+    toast(`${nameOf(byId[f.outcome])} added to your shelf`);
+  } else sfx.pick();
+}
+
+function renderAsideRagdoll(litRoute) {
+  const pane = document.getElementById('asideRagdoll');
+  if (!pane) return;
+  const shown = [...ragdoll].reverse();
+  const cases = shown.map(x => {
+    const f = rdResolve(x.id, x.kind);
+    const who = rdName(x);
+    if (!f) return `<div class="rdcase none"><h3><b>${who}</b></h3>
+      <p class="why">Nothing is on record for this one. The body does not
+      pretend — an effect is written down or it is not.</p></div>`;
+    const out = byId[f.outcome];
+    const routeChip = f.route
+      ? `<span class="rr ${f.onset === 'acute' ? 'acute' : ''}">${f.route}</span>` : '';
+    const onsetChip = f.onset ? `<span class="rr">${f.onset}</span>` : '';
+    // The one thing a damage simulation cannot do. Asbestos on a body does
+    // nothing today, and showing a wound for it would be the lie.
+    const clock = f.onset === 'cumulative'
+      ? `<div class="clock">Nothing happens today.
+         ${f.latency ? `Latency <b>${f.latency}</b>.` : 'This one is counted in years, not seconds.'}</div>` : '';
+    const road = f.route && EFFECTS.routes[f.route]
+      ? `<p class="why">${f.route.replace(/^./, c => c.toUpperCase())}: ${EFFECTS.routes[f.route]}.</p>` : '';
+    const howIn = f.source === 'infection'
+      ? `<p class="why">${f.transmission ? `Gets in by ${f.transmission}.`
+          : 'The corpus records the outcome, not the route.'}</p>` : '';
+    const fam = out ? familyOf(out) : null;
+    const card = out
+      ? `<div class="shelf"><span class="chip fam-${fam.id}" data-fam="${fam.id}"
+           data-spawn="${f.outcome}">${chipHTML(out)}</span></div>` : '';
+    return `<div class="rdcase">
+      <h3><b>${who}</b>${routeChip}${onsetChip}</h3>
+      ${card}${clock}
+      <p>${f.mechanism}</p>${road}${howIn}
+      <a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>
+    </div>`;
+  }).join('');
+
+  pane.innerHTML = `
+    <div id="rdStage">
+      <svg id="rdBody" viewBox="0 0 120 250" aria-hidden="true">
+        <ellipse id="rdHalo" class="halo" cx="60" cy="126" rx="56" ry="120"/>
+        <g id="rdSkin">
+          <path class="limb" d="M45 60 30 96l-4 32"/>
+          <path class="limb" d="M75 60 90 96l4 32"/>
+          <path class="limb" d="M52 118 47 170l-2 44"/>
+          <path class="limb" d="M68 118 73 170l2 44"/>
+          <circle class="part" cx="60" cy="28" r="18"/>
+          <path class="part" d="M50 46h20l9 9v55a9 9 0 0 1-9 9H50a9 9 0 0 1-9-9V55z"/>
+        </g>
+        <path id="rdBone" class="line" d="M49 64h22M49 74h22M49 84h22"/>
+        <path id="rdBlood" class="line" d="M60 60v50"/>
+        <ellipse id="rdLung" class="zone" cx="60" cy="72" rx="15" ry="13"/>
+        <ellipse id="rdGut" class="zone" cx="60" cy="102" rx="13" ry="10"/>
+        <ellipse id="rdMouth" class="zone" cx="60" cy="37" rx="7" ry="4"/>
+        <circle id="rdVein" class="zone" cx="27" cy="126" r="6"/>
+      </svg>
+      <div id="rdRoute"></div>
+    </div>
+    <p id="rdSay">Drag anything here — a card from the bench, or a tool from
+      the tray. The body lights the way in, which is the fact that matters:
+      the same thing is inert on skin and dangerous in the air.</p>
+    <div id="rdBar">
+      <input id="rdQ" class="search sm" placeholder="…or name it" autocomplete="off">
+      <button id="rdClear" title="Start again with a fresh body">New body</button>
+    </div>
+    <div class="rdlog">${cases}</div>`;
+
+  // Light the route of whatever just landed, and say its name under the body.
+  if (litRoute && RD_LIT[litRoute]) {
+    for (const id of RD_LIT[litRoute]) {
+      const n = document.getElementById(id);
+      if (id === 'rdSkin') document.getElementById('rdBody').classList.add('hit');
+      else if (n) n.classList.add('lit');
+    }
+    const say = document.getElementById('rdRoute');
+    if (say) say.textContent = litRoute;
+  }
+  document.getElementById('rdClear').onclick = () => {
+    ragdoll = []; save(); renderAsideRagdoll();
+    toast('A fresh body. What it has been through is not what it is.');
+  };
+  const q = document.getElementById('rdQ');
+  q.onkeydown = (ev) => {
+    if (ev.key !== 'Enter') return;
+    const want = q.value.trim().toLowerCase();
+    if (!want) return;
+    const v = verbs.find(x => x.name.toLowerCase() === want || x.id === want);
+    if (v) return ragdollDrop(v.id, 'verb');
+    // Id first, because a display name is not unique and an id is: typing
+    // "mercury" means quicksilver here, and the planet is called Mercury.
+    const key = want.replace(/[\s-]+/g, '_');
+    const e = byId[key]
+           ?? elements.find(x => nameOf(x).toLowerCase() === want)
+           ?? elements.find(x => nameOf(x).toLowerCase().startsWith(want));
+    if (e) return ragdollDrop(e.id, 'element');
+    toast(`No element called “${q.value.trim()}”`);
+  };
+}
+
 function setAsideTab(tab) {
   // Same tab twice folds the pane; any tab while folded brings it back on that
   // tab. Nothing is lost by folding — the strip rides the seam, not the pane.
@@ -7716,6 +7984,7 @@ function setAsideTab(tab) {
   if (tab === 'plants') renderAsideGrouped('plants');
   if (tab === 'toxins') renderAsideGrouped('toxins');
   if (tab === 'microbes') renderAsideGrouped('microbes');
+  if (tab === 'ragdoll') renderAsideRagdoll();
   if (tab === 'periodic') renderAsideGrouped('periodic');
   if (tab === 'favourites') renderAsideFavourites();
 }
@@ -10188,6 +10457,7 @@ addEventListener('pointermove', ev => {
   } else stopHeat();
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
   if (chip) chip.classList.add('target');
+  rdOver(overRagdoll(ev.clientX, ev.clientY));
 });
 addEventListener('pointerup', ev => {
   if (!verbDrag) return;
@@ -10198,6 +10468,10 @@ addEventListener('pointerup', ev => {
   // If the dial was climbing, letting go IS the choice — it has already picked
   // a temperature and must not also fall through to a plain drop.
   if (heating) { releaseHeat(); return; }
+  // "'smother' a human, e.g. still shows the verb impact on the human" — the
+  // five verbs that do something to a body are in data/effects.json beside the
+  // substances, and land here.
+  if (overRagdoll(ev.clientX, ev.clientY)) { ragdollDrop(id, 'verb'); return; }
   const t = hit(ev.clientX, ev.clientY);
   const verbEl = document.querySelector(`.verb[data-verb="${id}"]`);
   if (t && t.classList.contains('board') && verbEl) applyProcess(t, verbEl);
@@ -10252,6 +10526,7 @@ addEventListener('pointermove', ev => {
   }
   shelfDrag.ghost.style.left = (ev.clientX - 40) + 'px';
   shelfDrag.ghost.style.top  = (ev.clientY - 18) + 'px';
+  rdOver(overRagdoll(ev.clientX, ev.clientY));
 });
 addEventListener('pointerup', ev => {
   if (!shelfDrag) return;
@@ -10262,6 +10537,7 @@ addEventListener('pointerup', ev => {
   // Ask what is actually under the pointer rather than trusting a measured
   // rectangle — the board reports zero size in some embedded contexts, and a
   // drop that silently does nothing is the worst possible failure here.
+  if (moved && overRagdoll(ev.clientX, ev.clientY)) { ragdollDrop(id, 'element'); return; }
   const under = document.elementFromPoint(ev.clientX, ev.clientY);
   const offBoard = under && under.closest && under.closest('#aside, #tray, header');
   if (moved && !offBoard) {

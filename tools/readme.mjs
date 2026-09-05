@@ -38,6 +38,7 @@ const hom      = D('homonyms.json');
 const places   = D('places.json');
 const pcov     = D('places-coverage.json');
 const needs    = D('needs.json').needs;
+const effects  = D('effects.json');
 
 const shelf = elements.reduce((a, e) => (a[e.shelf] = (a[e.shelf] || 0) + 1, a), {});
 const verbRecipes = recipes.filter(r => r.verb).length;
@@ -64,6 +65,7 @@ const rows = [
   ['Sense-checked', `**${n(hom.cleared.length + hom.watch.length)}** single-word names read; ${n(hom.watch.length)} on the watchlist`],
   ['Places', `**${n(pcov.satisfied)} / ${n(pcov.wanted)}** of a checklist that is part external, so it can disagree with us`],
   ['Parts lists', `**${n(Object.keys(needs).length)}** written`],
+  ['Effects on a body', `**${n(Object.keys(effects.effects).length)}** substances and ${n(Object.keys(effects.verbs).length)} verbs, each with a route of exposure — what the Ragdoll reads`],
   ['Colours', '**28**, every one a measured Munsell chip'],
 ];
 

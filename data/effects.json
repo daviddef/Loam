@@ -6,7 +6,8 @@
     "mechanism describes WHAT HAPPENS IN THE BODY and never how to bring it about. No procedure, no quantity that would cause harm, no way to obtain or concentrate anything. tools/effects.mjs fails the build on method-shaped prose rather than warning, because a check that only warns about this is worse than none.",
     "onset uses the same four tiers as data/cautions.json — acute, contact, conditional, cumulative — because that vocabulary already existed and already fits. cumulative is the one a damage simulation cannot do: a carcinogen does nothing visible on contact, and the honest canvas shows a clock rather than a wound.",
     "carcinogen: true is for IARC Group 1 only. Nothing weaker gets the word.",
-    "every effect carries a src, like every other claim in this corpus."
+    "every effect carries a src, like every other claim in this corpus.",
+    "a verb is not an element, so verbs live in their own block. The Ragdoll has to answer smother the same way it answers methane — the brief asked for it in those words — and the five that act on a body get the same route, onset, mechanism and source as any substance."
   ],
   "$routes": {
     "inhaled": "reaches the blood through the lung, which has the surface area of a tennis court and no barrier worth the name",
@@ -277,6 +278,49 @@
       "carcinogen": true,
       "iarc": 1,
       "latency": "20 to 40 years"
+    }
+  },
+  "$verbs_comment": "The verbs that do something to a body. Keys are ids from data/verbs.json, not elements. wait, ferment and blow are absent on purpose: none of them does anything to a person on the timescale the canvas shows.",
+  "verbs": {
+    "smother": {
+      "route": "inhaled",
+      "outcome": "asphyxia",
+      "onset": "acute",
+      "reversible": true,
+      "mechanism": "The body has no oxygen sensor for this. Breathing is driven by the carbon dioxide in the blood, and the brain's own reserve lasts a few minutes at most, so consciousness goes from a deficit the person never felt building.",
+      "src": "https://en.wikipedia.org/wiki/Asphyxia"
+    },
+    "chill": {
+      "route": "thermal",
+      "outcome": "hypothermia",
+      "onset": "acute",
+      "reversible": true,
+      "mechanism": "Below about 35 °C the body stops keeping up. Shivering raises heat production for a while and then stops altogether; the heart's conduction slows and turns irregular, and judgement goes early — so the cold is dangerous to the person in it before it looks dangerous from outside.",
+      "src": "https://en.wikipedia.org/wiki/Hypothermia"
+    },
+    "heat": {
+      "route": "thermal",
+      "outcome": "thermal_burn",
+      "onset": "contact",
+      "reversible": false,
+      "mechanism": "Skin protein denatures at around 44 °C, and the depth of the injury follows how long the tissue stayed above that, not how hot the source was. A full-thickness burn destroys the nerve endings with the rest, which is why the worst part of a burn is the part that does not hurt.",
+      "src": "https://en.wikipedia.org/wiki/Burn"
+    },
+    "crush": {
+      "route": "mechanical",
+      "outcome": "fracture",
+      "onset": "acute",
+      "reversible": false,
+      "mechanism": "Bone fails in bending long before it fails in compression, which is why a long bone breaks across. The break is not the whole of it: muscle held under pressure releases myoglobin once the pressure comes off, and the kidneys are what fail next.",
+      "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+    },
+    "cut": {
+      "route": "mechanical",
+      "outcome": "laceration",
+      "onset": "acute",
+      "reversible": true,
+      "mechanism": "Skin is under tension, so a cut gapes rather than sitting closed. Clotting starts within seconds, and a clean cut heals better than a torn one only because its edges can be brought back together with the same tissue meeting itself.",
+      "src": "https://en.wikipedia.org/wiki/Wound"
     }
   }
 }

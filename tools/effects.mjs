@@ -60,9 +60,11 @@ const METHOD = [
    'reads as a preparation'],
 ];
 
-for (const [id, f] of Object.entries(E.effects)) {
-  const where = `effects.${id}`;
-  if (!byId.has(id)) errors.push(`${where}: no element has this id`);
+/* One row is one row whether the thing that acts is a substance or a verb.
+ * The only difference is what the key has to be, so that is the only thing
+ * passed in — everything after it is the same field-for-field check, because
+ * a verb effect that skipped the safety pattern would be the obvious hole. */
+function checkRow(id, f, where) {
   if (!ROUTES.includes(f.route)) errors.push(`${where}: route "${f.route}" is not one of ${ROUTES.join(', ')}`);
   if (!TIERS.includes(f.onset)) errors.push(`${where}: onset "${f.onset}" is not one of ${TIERS.join(', ')}`);
   if (!f.outcome) errors.push(`${where}: no outcome`);
@@ -73,6 +75,19 @@ for (const [id, f] of Object.entries(E.effects)) {
     if (re.test(f.mechanism || '')) errors.push(`${where}: MECHANISM ${why} — describe what happens in the body, never how to bring it about`);
   }
   if (f.carcinogen && f.iarc !== 1) errors.push(`${where}: carcinogen is for IARC Group 1 only; set iarc: 1 or drop the flag`);
+}
+
+for (const [id, f] of Object.entries(E.effects)) {
+  if (!byId.has(id)) errors.push(`effects.${id}: no element has this id`);
+  checkRow(id, f, `effects.${id}`);
+}
+// The verbs block. "'smother' a human, e.g. still shows the verb impact on the
+// human" was in the brief in those words, and a verb is not an element — so it
+// gets its own block, keyed on data/verbs.json, and the same gate.
+const verbIds = new Set(D('verbs.json').verbs.map(v => v.id));
+for (const [id, f] of Object.entries(E.verbs || {})) {
+  if (!verbIds.has(id)) errors.push(`verbs.${id}: no verb has this id — keys here come from data/verbs.json`);
+  checkRow(id, f, `verbs.${id}`);
 }
 
 const cautioned = new Set(Object.values(cautions).flatMap(h => h.ids || []));
@@ -103,6 +118,7 @@ for (const r of ROUTES) console.log(`  ${r.padEnd(12)} ${String(byRoute[r] || 0)
 console.log();
 for (const t of TIERS) console.log(`  ${t.padEnd(12)} ${String(byTier[t] || 0).padStart(4)}`);
 console.log(`\n  ${n(Object.keys(E.effects).length)} effect(s) written, of ${n(cautioned.size)} elements that carry a caution.`);
+console.log(`  ${n(Object.keys(E.verbs || {}).length)} of ${n(verbIds.size)} verb(s) do something to a body.`);
 console.log(`  node tools/effects.mjs --missing   the rest`);
 
 if (errors.length) {
