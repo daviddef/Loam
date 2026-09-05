@@ -102201,5 +102201,165 @@
     "why": "A key transmits torque at one point and shears; a spline spreads it around the whole circumference and lets the parts move along each other under load. Every gearbox and every driveshaft that changes length has them.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Spline_(mechanical)"
+  },
+  {
+    "in": [
+      "resin",
+      "fibreglass"
+    ],
+    "out": "heat_shield",
+    "why": "An ablative shield chars and erodes, and the gas leaving carries the heat away with it — so the shield works by being consumed. Reusable tiles do the opposite and insulate, which is harder, and is what made the Shuttle's thermal protection its most fragile system.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Heat_shield"
+  },
+  {
+    "in": [
+      "nylon",
+      "propellant"
+    ],
+    "out": "airbag",
+    "why": "Sodium azide decomposes to nitrogen in about 30 milliseconds; the bag then vents through its own weave so the occupant decelerates into it rather than bouncing off. A bag that stayed inflated would be as bad as none.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Airbag"
+  },
+  {
+    "in": [
+      "paper",
+      "housing"
+    ],
+    "out": "air_filter",
+    "why": "Pleated paper gives a large area in a small box; the pleats are the whole design, because pressure drop rises as the filter loads and a restricted intake costs power. Oiled foam and cotton trade filtration for flow.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Air_filter"
+  },
+  {
+    "in": [
+      "tube",
+      "nozzle"
+    ],
+    "out": "venturi",
+    "why": "Bernoulli in a fitting: what the fluid gains in speed it loses in pressure, so a constriction becomes a suction. It is how a carburettor draws fuel, how a paint sprayer works, and how flow is measured without moving parts.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Venturi_effect"
+  },
+  {
+    "in": [
+      "needle",
+      "seat"
+    ],
+    "out": "needle_valve",
+    "why": "The long taper means a large movement of the stem makes a small change in area, which is what gives fine control. It is also why a needle valve is for metering and a ball valve is for on and off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Needle_valve"
+  },
+  {
+    "in": [
+      "valve",
+      "venturi"
+    ],
+    "out": "choke",
+    "why": "Cold fuel does not vaporise well, so much of what is delivered stays liquid and never burns. Restricting the air raises the suction on the jets and enriches the mixture until the engine is warm enough not to need it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Choke_valve"
+  },
+  {
+    "in": [
+      "rocket",
+      "stage"
+    ],
+    "out": "saturn_v",
+    "why": "Five F-1 engines burning kerosene and liquid oxygen for the first stage, hydrogen above. It threw 140 tonnes to low orbit and never lost a crew; the tooling was scrapped and the vehicle cannot now be rebuilt from what survives.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Saturn_V"
+  },
+  {
+    "in": [
+      "heat_shield",
+      "frame"
+    ],
+    "out": "command_module",
+    "why": "A blunt cone, because a blunt body pushes its shock wave ahead of itself and keeps most of the heat in the air rather than the structure. Everything else was staged away; this is what splashed down.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module"
+  },
+  {
+    "in": [
+      "frame",
+      "antenna"
+    ],
+    "out": "lunar_module",
+    "why": "Built in two stages so the descent stage could be left behind as a launch pad. Its skin in places is foil thin enough to push a finger through, because there is no air to hold out and no aerodynamics to satisfy.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
+  },
+  {
+    "in": [
+      "fabric",
+      "oxygen"
+    ],
+    "out": "spacesuit",
+    "why": "Pressure makes a suit rigid, so every joint has to be a constant-volume design that costs no energy to bend. Gloves defeated everyone for decades and still tire the hands within hours, which is what limits an EVA.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Space_suit"
+  },
+  {
+    "in": [
+      "integrated_circuit",
+      "memory"
+    ],
+    "out": "guidance_computer",
+    "why": "Core rope memory: a wire threaded through a core read as one, past it as zero — literally woven by hand, and unalterable once made. It used one of the first integrated circuits in volume, and NASA's order is a large part of why the IC industry existed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Apollo_Guidance_Computer"
+  },
+  {
+    "in": [
+      "frame",
+      "seal"
+    ],
+    "out": "docking_port",
+    "why": "Capture first, then retract, then hard-dock and seal. Androgynous designs let either vehicle be the active one, which matters when the rescue has to work in whichever direction it is needed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Docking_and_berthing_of_spacecraft"
+  },
+  {
+    "in": [
+      "door",
+      "pump"
+    ],
+    "out": "airlock",
+    "why": "Two doors that cannot both be open, and a pump to recover the air rather than vent it. On a station the air is the expensive part, so how much a cycle costs decides how often anyone goes outside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Airlock"
+  },
+  {
+    "in": [
+      "oxygen",
+      "scrubber"
+    ],
+    "out": "life_support",
+    "why": "Carbon dioxide kills long before oxygen runs out, so a scrubber is the critical path — the Apollo 13 problem was fitting a square lithium hydroxide canister into a round socket. Water and oxygen are then recovered because launching them costs more than recycling them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Life_support_system"
+  },
+  {
+    "in": [
+      "motor",
+      "linkage"
+    ],
+    "out": "robotic_arm",
+    "why": "Six joints give any position and any orientation; the difficulty is that stiffness falls and error accumulates along the chain. In orbit the arm must also move a mass that has inertia but no weight, which is a different control problem entirely.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Robotic_arm"
+  },
+  {
+    "in": [
+      "needle_valve",
+      "buoyancy"
+    ],
+    "out": "float_chamber",
+    "why": "A float rises with the level and closes a needle valve, holding the fuel a fixed distance below the jets. Get that height wrong and the mixture is wrong everywhere, which is why float level is the first thing set on a carburettor.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Carburetor"
   }
 ]

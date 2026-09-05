@@ -293,6 +293,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'venturi', 'needle_valve', 'choke', 'guidance_computer', 'float_chamber',   // spaceflight + engine parts
     'fastener', 'additive', 'initiator', 'adhesive', 'gasket', 'bush', 'pawl', 'substrate', 'coating', 'surfactant', 'blowing_agent', 'pellet',   // components
     'static_electricity', 'circuit', 'buoyancy', 'density', 'viscosity', 'surface_tension', 'capillary_action', 'conduction', 'convection', 'reflection', 'refraction', 'resonance', 'charge', 'voltage', 'acrylic_fibre', 'spandex', 'polypropylene', 'epoxy', 'carbon_fibre', 'vinyl', 'neoprene', 'deodorant', 'moisturiser', 'painkiller', 'spinneret', 'rayon', 'kevlar',   // universe gaps 5 Sep
     'pendant', 'clasp',   // necklace, 5 Sep
@@ -795,6 +796,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'heat_shield', 'airbag', 'air_filter', 'spacesuit',   // spaceflight + engine parts
     'combustion_chamber', 'turbopump', 'primary_mirror', 'baffle',   // components
     'pottery', 'glassmaking', 'papermaking', 'cheesemaking', 'camera',   // orphan-list subjects
     'spaghetti', 'risotto', 'paella', 'curry', 'pie', 'dumpling', 'porridge', 'casserole', 'wok', 'stir_fry', 'fibreglass', 'chipboard', 'spectacles', 'wheelchair', 'crutch', 'prosthesis', 'plaster_cast', 'puddle', 'wallpaper',   // universe gaps 5 Sep
@@ -1129,6 +1131,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'saturn_v', 'command_module', 'lunar_module', 'docking_port', 'airlock', 'life_support', 'robotic_arm',   // spaceflight + engine parts
     'extruder', 'counterweight', 'capstone', 'harness', 'stair',   // components
     'windmill', 'mine', 'smithy', 'bakery', 'tannery', 'bank', 'garden', 'kitchen', 'watermill',   // orphan-list subjects
     'stream', 'brook', 'pond', 'culvert', 'watershed', 'runoff', 'oxbow', 'wiring', 'shower', 'bath', 'fridge', 'washing_machine', 'plumbing', 'furniture',   // universe gaps 5 Sep
