@@ -2376,6 +2376,921 @@
         "polishing_grit",
         "thread"
       ]
+    },
+    "brake": {
+      "src": "https://en.wikipedia.org/wiki/Brake",
+      "note": "Turning motion into heat, and then getting rid of the heat.",
+      "needs": [
+        "brake_disc|brake_drum",
+        "brake_pad|brake_shoe",
+        "caliper",
+        "piston",
+        "brake_fluid",
+        "master_cylinder",
+        "brake_line",
+        "friction",
+        "heat_sink",
+        "handbrake"
+      ]
+    },
+    "clutch": {
+      "src": "https://en.wikipedia.org/wiki/Clutch",
+      "note": "Two spinning things brought together gently enough not to break anything.",
+      "needs": [
+        "flywheel",
+        "friction_disc",
+        "pressure_plate",
+        "diaphragm_spring",
+        "release_bearing",
+        "splined_shaft",
+        "friction",
+        "housing"
+      ]
+    },
+    "web_browser": {
+      "src": "https://en.wikipedia.org/wiki/Web_browser",
+      "note": "A program that fetches a document and then argues with it.",
+      "needs": [
+        "http",
+        "html",
+        "css",
+        "javascript",
+        "rendering_engine",
+        "parser",
+        "dom",
+        "layout_engine",
+        "cache",
+        "tls",
+        "cookie",
+        "url"
+      ]
+    },
+    "compiler": {
+      "src": "https://en.wikipedia.org/wiki/Compiler",
+      "note": "Turning something a person wrote into something a processor will run.",
+      "needs": [
+        "lexer",
+        "parser",
+        "syntax_tree",
+        "symbol_table",
+        "intermediate_representation",
+        "optimiser",
+        "code_generator",
+        "linker",
+        "instruction"
+      ]
+    },
+    "database": {
+      "src": "https://en.wikipedia.org/wiki/Database",
+      "note": "Storing facts so they can be found again, and not lost when the power goes.",
+      "needs": [
+        "table",
+        "record",
+        "index",
+        "query",
+        "schema",
+        "transaction",
+        "journal",
+        "lock",
+        "cache",
+        "storage",
+        "query_planner"
+      ]
+    },
+    "filesystem": {
+      "src": "https://en.wikipedia.org/wiki/File_system",
+      "note": "Turning a flat expanse of blocks into names and folders.",
+      "needs": [
+        "block",
+        "inode",
+        "directory",
+        "allocation_table",
+        "journal",
+        "superblock",
+        "permission",
+        "link",
+        "storage"
+      ]
+    },
+    "reservoir": {
+      "src": "https://en.wikipedia.org/wiki/Reservoir",
+      "note": "Holding water back so that it is there when the rain is not.",
+      "needs": [
+        "dam",
+        "spillway",
+        "embankment",
+        "clay_lining",
+        "valve_tower",
+        "outlet",
+        "penstock",
+        "catchment",
+        "silt",
+        "drainage",
+        "gauge"
+      ]
+    },
+    "sewer": {
+      "src": "https://en.wikipedia.org/wiki/Sewerage",
+      "note": "Getting waste away under gravity, and stopping it coming back.",
+      "needs": [
+        "pipe",
+        "brick",
+        "gradient",
+        "manhole",
+        "interceptor",
+        "trap",
+        "gully",
+        "pumping_station",
+        "outfall",
+        "mortar",
+        "invert"
+      ]
+    },
+    "missile": {
+      "src": "https://en.wikipedia.org/wiki/Missile",
+      "note": "Something that steers itself at a thing that is moving.",
+      "needs": [
+        "warhead",
+        "fuze",
+        "rocket_motor",
+        "propellant",
+        "guidance",
+        "gyroscope",
+        "accelerometer",
+        "fin",
+        "airframe",
+        "seeker",
+        "battery"
+      ]
+    },
+    "heat_sink": {
+      "src": "https://en.wikipedia.org/wiki/Heat_sink",
+      "note": "Getting heat out of something small into something large.",
+      "needs": [
+        "aluminum|copper",
+        "fin",
+        "base_plate",
+        "thermal_paste",
+        "fan",
+        "airflow",
+        "solder"
+      ]
+    },
+    "condenser": {
+      "src": "https://en.wikipedia.org/wiki/Condenser_(heat_transfer)",
+      "note": "Taking a vapour back to a liquid by taking its heat away.",
+      "needs": [
+        "tube",
+        "shell",
+        "coolant",
+        "water",
+        "baffle",
+        "header",
+        "vacuum",
+        "pump"
+      ]
+    },
+    "ruler": {
+      "src": "https://en.wikipedia.org/wiki/Ruler",
+      "note": "A straight edge with the units already on it.",
+      "needs": [
+        "plank|steel|plastic",
+        "straightedge",
+        "graduation",
+        "engraving",
+        "zero_mark",
+        "bevel"
+      ]
+    },
+    "cache": {
+      "src": "https://en.wikipedia.org/wiki/Cache_(computing)",
+      "note": "Keeping the answer nearby because you will be asked again.",
+      "needs": [
+        "storage",
+        "index",
+        "tag",
+        "eviction_policy",
+        "hit_rate",
+        "memory",
+        "bus"
+      ]
+    },
+    "structure": {
+      "src": "https://en.wikipedia.org/wiki/Structure",
+      "note": "Anything that has to stand up under a load.",
+      "needs": [
+        "foundation",
+        "footing",
+        "beam",
+        "column",
+        "brace",
+        "joint",
+        "load",
+        "material",
+        "span",
+        "fastener"
+      ]
+    },
+    "malbork": {
+      "src": "https://en.wikipedia.org/wiki/Malbork_Castle",
+      "note": "The largest brick castle in the world, built as a headquarters rather than a fortress.",
+      "needs": [
+        "brick",
+        "mortar",
+        "curtain_wall",
+        "keep",
+        "moat",
+        "gate",
+        "tower",
+        "roof_tile",
+        "timber",
+        "vault",
+        "buttress"
+      ]
+    },
+    "roman_forum": {
+      "src": "https://en.wikipedia.org/wiki/Roman_Forum",
+      "note": "A market square that became the centre of an empire and then a cow pasture.",
+      "needs": [
+        "travertine",
+        "tuff",
+        "marble",
+        "concrete",
+        "column",
+        "arch",
+        "basilica",
+        "temple",
+        "road",
+        "drain",
+        "rostrum"
+      ]
+    },
+    "tikal": {
+      "src": "https://en.wikipedia.org/wiki/Tikal",
+      "note": "A Maya city of pyramids on a limestone shelf with no rivers at all.",
+      "needs": [
+        "limestone",
+        "quicklime",
+        "plaster",
+        "corbel_vault",
+        "pyramid",
+        "reservoir",
+        "causeway",
+        "stela",
+        "temple",
+        "courtyard"
+      ]
+    },
+    "sukhothai": {
+      "src": "https://en.wikipedia.org/wiki/Sukhothai_Historical_Park",
+      "note": "A Thai capital laid out around ponds cut to hold the wet season against the dry.",
+      "needs": [
+        "laterite",
+        "brick",
+        "stucco",
+        "reservoir",
+        "moat",
+        "stupa",
+        "temple",
+        "water",
+        "road",
+        "city_wall"
+      ]
+    },
+    "therapy": {
+      "src": "https://en.wikipedia.org/wiki/Therapy",
+      "note": "A structured attempt to change how somebody is doing.",
+      "needs": [
+        "diagnosis",
+        "case_formulation",
+        "treatment",
+        "alliance",
+        "session",
+        "technique",
+        "outcome",
+        "evidence",
+        "supervision"
+      ]
+    },
+    "treatment": {
+      "src": "https://en.wikipedia.org/wiki/Therapy",
+      "note": "What is actually done about a diagnosed condition.",
+      "needs": [
+        "diagnosis",
+        "drug|surgery|therapy",
+        "dose",
+        "route",
+        "duration",
+        "monitoring",
+        "side_effect",
+        "adherence",
+        "outcome"
+      ]
+    },
+    "diagnosis": {
+      "src": "https://en.wikipedia.org/wiki/Medical_diagnosis",
+      "note": "Working out which condition explains what is in front of you.",
+      "needs": [
+        "symptom",
+        "sign",
+        "history",
+        "examination",
+        "test",
+        "imaging",
+        "differential",
+        "criterion",
+        "evidence"
+      ]
+    },
+    "medicine": {
+      "src": "https://en.wikipedia.org/wiki/Medicine",
+      "note": "The whole enterprise of finding out what is wrong and doing something about it.",
+      "needs": [
+        "diagnosis",
+        "treatment",
+        "drug",
+        "surgery",
+        "evidence",
+        "patient",
+        "doctor",
+        "hospital",
+        "ethics",
+        "epidemiology"
+      ]
+    },
+    "drug": {
+      "src": "https://en.wikipedia.org/wiki/Medication",
+      "note": "A molecule chosen because of what it does to a target.",
+      "needs": [
+        "active_ingredient",
+        "excipient",
+        "binder",
+        "dose",
+        "tablet|capsule|solution",
+        "bioavailability",
+        "half_life",
+        "target",
+        "trial"
+      ]
+    },
+    "dose": {
+      "src": "https://en.wikipedia.org/wiki/Dose_(biochemistry)",
+      "note": "How much, how often, and for how long.",
+      "needs": [
+        "active_ingredient",
+        "body_weight",
+        "half_life",
+        "route",
+        "frequency",
+        "duration",
+        "therapeutic_index",
+        "toxicity"
+      ]
+    },
+    "epidemiology": {
+      "src": "https://en.wikipedia.org/wiki/Epidemiology",
+      "note": "Counting who gets ill, where, and why.",
+      "needs": [
+        "population",
+        "incidence",
+        "prevalence",
+        "case_definition",
+        "cohort",
+        "control",
+        "confounder",
+        "basic_reproduction_number",
+        "surveillance",
+        "census"
+      ]
+    },
+    "contact_tracing": {
+      "src": "https://en.wikipedia.org/wiki/Contact_tracing",
+      "note": "Following an infection backwards and forwards through the people it touched.",
+      "needs": [
+        "case_definition",
+        "interview",
+        "contact",
+        "quarantine",
+        "incubation_period",
+        "surveillance",
+        "database",
+        "consent"
+      ]
+    },
+    "festival": {
+      "src": "https://en.wikipedia.org/wiki/Festival",
+      "note": "A day the calendar sets aside, and everything that has to be arranged for it.",
+      "needs": [
+        "calendar",
+        "procession",
+        "music",
+        "food",
+        "costume",
+        "ritual",
+        "market",
+        "crowd",
+        "venue"
+      ]
+    },
+    "sector": {
+      "src": "https://en.wikipedia.org/wiki/Economic_sector",
+      "note": "One slice of an economy, defined by how far it is from the raw material.",
+      "needs": [
+        "primary_sector",
+        "secondary_sector",
+        "tertiary_sector",
+        "quaternary_sector",
+        "labour",
+        "capital",
+        "output"
+      ]
+    },
+    "data_bus": {
+      "src": "https://en.wikipedia.org/wiki/Bus_(computing),",
+      "note": "The shared wiring everything inside a computer talks over.",
+      "needs": [
+        "conductor",
+        "copper_wire",
+        "clock_signal",
+        "address_line",
+        "data_line",
+        "control_line",
+        "protocol",
+        "terminator",
+        "impedance"
+      ]
+    },
+    "alu": {
+      "src": "https://en.wikipedia.org/wiki/Arithmetic_logic_unit",
+      "note": "The part that actually adds.",
+      "needs": [
+        "transistor",
+        "logic_gate",
+        "adder",
+        "register",
+        "carry",
+        "opcode",
+        "clock_signal",
+        "interconnect"
+      ]
+    },
+    "amphitheatre": {
+      "src": "https://en.wikipedia.org/wiki/Amphitheatre",
+      "note": "An oval of seating raised on its own vaults, so the crowd walks in underneath.",
+      "needs": [
+        "travertine|limestone",
+        "concrete",
+        "vault",
+        "arch",
+        "pier",
+        "seat",
+        "vomitorium",
+        "arena",
+        "podium",
+        "awning",
+        "drain",
+        "mortar"
+      ]
+    },
+    "pula_arena": {
+      "src": "https://en.wikipedia.org/wiki/Pula_Arena",
+      "note": "The only Roman amphitheatre with all four side towers still standing.",
+      "needs": [
+        "limestone",
+        "arch",
+        "vault",
+        "pier",
+        "seat",
+        "arena",
+        "awning",
+        "drain",
+        "mortar",
+        "course"
+      ]
+    },
+    "djemila": {
+      "src": "https://en.wikipedia.org/wiki/Djémila",
+      "note": "A Roman town that had to bend its own street grid because the ridge would not take one.",
+      "needs": [
+        "limestone",
+        "stone",
+        "arch",
+        "column",
+        "forum",
+        "basilica",
+        "road",
+        "drain",
+        "mortar",
+        "roof_tile"
+      ]
+    },
+    "pingyao": {
+      "src": "https://en.wikipedia.org/wiki/Pingyao",
+      "note": "A Ming walled city that kept its plan because it got poor at the right moment.",
+      "needs": [
+        "brick",
+        "rammed_earth|adobe",
+        "city_wall",
+        "gate",
+        "tower",
+        "courtyard",
+        "roof_tile",
+        "timber",
+        "moat",
+        "road"
+      ]
+    },
+    "bosra": {
+      "src": "https://en.wikipedia.org/wiki/Bosra",
+      "note": "A theatre so completely swallowed by a later fortress that it survived intact inside it.",
+      "needs": [
+        "basalt",
+        "stone",
+        "theatre",
+        "arch",
+        "vault",
+        "seat",
+        "curtain_wall",
+        "mortar",
+        "road"
+      ]
+    },
+    "pergamon_needs": {
+      "src": "https://en.wikipedia.org/wiki/Pergamon",
+      "note": "A city terraced up a 335 m cone, so every building stands on a retaining wall.",
+      "needs": [
+        "andesite",
+        "marble",
+        "terrace",
+        "retaining_wall",
+        "theatre",
+        "altar",
+        "column",
+        "aqueduct",
+        "cistern",
+        "mortar"
+      ]
+    },
+    "banknote_pound": {
+      "src": "https://en.wikipedia.org/wiki/Banknote",
+      "note": "A promise printed so well that copying it costs more than it is worth.",
+      "needs": [
+        "paper|polymer",
+        "cotton",
+        "intaglio",
+        "watermark",
+        "security_thread",
+        "hologram",
+        "serial_number",
+        "ink",
+        "press",
+        "ultraviolet"
+      ]
+    },
+    "currency": {
+      "src": "https://en.wikipedia.org/wiki/Currency",
+      "note": "Money a state says is money, and enforces.",
+      "needs": [
+        "coin",
+        "banknote",
+        "mint",
+        "denomination",
+        "legal_tender",
+        "reserve",
+        "exchange_rate",
+        "central_bank",
+        "serial_number"
+      ]
+    },
+    "dollar": {
+      "src": "https://en.wikipedia.org/wiki/Dollar",
+      "note": "A unit of account, and the thing everyone else prices against.",
+      "needs": [
+        "currency",
+        "coin",
+        "banknote",
+        "central_bank",
+        "reserve",
+        "exchange_rate",
+        "denomination"
+      ]
+    },
+    "debt": {
+      "src": "https://en.wikipedia.org/wiki/Debt",
+      "note": "A promise to pay later, priced by how likely you are to.",
+      "needs": [
+        "principal",
+        "interest",
+        "term",
+        "collateral",
+        "default",
+        "credit",
+        "contract",
+        "ledger"
+      ]
+    },
+    "credit": {
+      "src": "https://en.wikipedia.org/wiki/Credit_(finance)",
+      "note": "Being trusted with money you have not got yet.",
+      "needs": [
+        "debt",
+        "interest",
+        "collateral",
+        "credit_history",
+        "risk",
+        "ledger",
+        "contract",
+        "default"
+      ]
+    },
+    "tax": {
+      "src": "https://en.wikipedia.org/wiki/Tax",
+      "note": "The state taking a share, and having to know enough about you to do it.",
+      "needs": [
+        "census",
+        "assessment",
+        "rate",
+        "ledger",
+        "collection",
+        "exemption",
+        "enforcement",
+        "revenue"
+      ]
+    },
+    "advertisement": {
+      "src": "https://en.wikipedia.org/wiki/Advertising",
+      "note": "Paying to be in front of somebody who was looking at something else.",
+      "needs": [
+        "message",
+        "medium",
+        "audience",
+        "placement",
+        "frequency",
+        "copy",
+        "image",
+        "budget",
+        "measurement"
+      ]
+    },
+    "taxi": {
+      "src": "https://en.wikipedia.org/wiki/Taxicab",
+      "note": "A car for hire, with a meter to stop the argument.",
+      "needs": [
+        "automobile",
+        "meter",
+        "licence",
+        "roof_sign",
+        "radio|dispatch",
+        "fare",
+        "odometer",
+        "seat",
+        "insurance"
+      ]
+    },
+    "pickup": {
+      "src": "https://en.wikipedia.org/wiki/Pickup_truck",
+      "note": "A cab and an open bed on one frame.",
+      "needs": [
+        "chassis",
+        "engine",
+        "gearbox",
+        "axle",
+        "wheel",
+        "cabin",
+        "bed",
+        "tailgate",
+        "leaf_spring",
+        "brake",
+        "steering"
+      ]
+    },
+    "ferrari": {
+      "src": "https://en.wikipedia.org/wiki/Ferrari",
+      "note": "A road car built by a company that made road cars to pay for racing.",
+      "needs": [
+        "chassis",
+        "engine",
+        "gearbox",
+        "clutch",
+        "brake_disc",
+        "wheel",
+        "tyre",
+        "body",
+        "suspension",
+        "radiator",
+        "exhaust"
+      ]
+    },
+    "register": {
+      "src": "https://en.wikipedia.org/wiki/Processor_register",
+      "note": "The handful of places a processor can hold a number without going anywhere.",
+      "needs": [
+        "transistor",
+        "flip_flop",
+        "clock_signal",
+        "bus",
+        "opcode",
+        "alu",
+        "latch"
+      ]
+    },
+    "adder": {
+      "src": "https://en.wikipedia.org/wiki/Adder_(electronics)",
+      "note": "Adding two numbers with nothing but gates.",
+      "needs": [
+        "logic_gate",
+        "transistor",
+        "carry",
+        "sum",
+        "half_adder",
+        "full_adder",
+        "interconnect"
+      ]
+    },
+    "outbreak": {
+      "src": "https://en.wikipedia.org/wiki/Outbreak",
+      "note": "More cases than expected, in one place, at one time.",
+      "needs": [
+        "case_definition",
+        "baseline",
+        "surveillance",
+        "index_case",
+        "contact_tracing",
+        "incubation_period",
+        "quarantine",
+        "vector",
+        "population"
+      ]
+    },
+    "disease": {
+      "src": "https://en.wikipedia.org/wiki/Disease",
+      "note": "A process that makes a body work worse, and can be named.",
+      "needs": [
+        "pathogen|mutation|deficiency",
+        "symptom",
+        "sign",
+        "lesion",
+        "course",
+        "diagnosis",
+        "treatment",
+        "outcome"
+      ]
+    },
+    "symptom": {
+      "src": "https://en.wikipedia.org/wiki/Symptom",
+      "note": "What the patient reports, as opposed to what can be measured.",
+      "needs": [
+        "patient",
+        "history",
+        "pain",
+        "fever",
+        "fatigue",
+        "onset",
+        "duration",
+        "severity"
+      ]
+    },
+    "syndrome": {
+      "src": "https://en.wikipedia.org/wiki/Syndrome",
+      "note": "A set of signs that keep turning up together before anyone knows why.",
+      "needs": [
+        "sign",
+        "symptom",
+        "criterion",
+        "cluster",
+        "diagnosis",
+        "aetiology",
+        "case_definition"
+      ]
+    },
+    "disorder": {
+      "src": "https://en.wikipedia.org/wiki/Mental_disorder",
+      "note": "A pattern of distress or impairment a clinician has agreed to name.",
+      "needs": [
+        "symptom",
+        "criterion",
+        "duration",
+        "impairment",
+        "case_formulation",
+        "diagnosis",
+        "treatment",
+        "comorbidity"
+      ]
+    },
+    "patient": {
+      "src": "https://en.wikipedia.org/wiki/Patient",
+      "note": "The person all of this is supposed to be for.",
+      "needs": [
+        "history",
+        "symptom",
+        "consent",
+        "diagnosis",
+        "treatment",
+        "adherence",
+        "outcome",
+        "record"
+      ]
+    },
+    "doctor": {
+      "src": "https://en.wikipedia.org/wiki/Physician",
+      "note": "Somebody licensed to decide what is wrong and what to do.",
+      "needs": [
+        "training",
+        "licence",
+        "examination",
+        "diagnosis",
+        "treatment",
+        "ethics",
+        "record",
+        "referral"
+      ]
+    },
+    "pyrolysis": {
+      "src": "https://en.wikipedia.org/wiki/Pyrolysis",
+      "note": "Heating something apart without letting it burn.",
+      "needs": [
+        "heat",
+        "furnace",
+        "retort",
+        "oxygen",
+        "char",
+        "syngas",
+        "tar",
+        "condenser",
+        "temperature"
+      ]
+    },
+    "incineration": {
+      "src": "https://en.wikipedia.org/wiki/Incineration",
+      "note": "Burning waste hot enough that what comes out is not worse.",
+      "needs": [
+        "furnace",
+        "grate",
+        "air",
+        "temperature",
+        "flue",
+        "scrubber",
+        "filter",
+        "ash",
+        "heat_exchanger"
+      ]
+    },
+    "plastic_recycling": {
+      "src": "https://en.wikipedia.org/wiki/Plastic_recycling",
+      "note": "Sorting, washing, shredding and remelting — and losing a little quality each time.",
+      "needs": [
+        "sorting",
+        "washing",
+        "shredder",
+        "flake",
+        "extruder",
+        "pellet",
+        "polymer",
+        "contamination",
+        "additive"
+      ]
+    },
+    "single_use_plastic": {
+      "src": "https://en.wikipedia.org/wiki/Single-use_plastic",
+      "note": "Made to be thrown away, and made of something that will not go.",
+      "needs": [
+        "polymer",
+        "polyethylene|polypropylene",
+        "additive",
+        "moulding",
+        "packaging",
+        "waste",
+        "landfill",
+        "microplastic"
+      ]
+    },
+    "fin": {
+      "src": "https://en.wikipedia.org/wiki/Fin",
+      "note": "A surface that keeps something pointing the way it is going.",
+      "needs": [
+        "airframe|hull",
+        "surface",
+        "area",
+        "camber",
+        "spar",
+        "skin",
+        "fastener"
+      ]
+    },
+    "load": {
+      "src": "https://en.wikipedia.org/wiki/Structural_load",
+      "note": "What a structure has to hold up, including itself.",
+      "needs": [
+        "dead_load",
+        "live_load",
+        "wind",
+        "snow",
+        "span",
+        "beam",
+        "column",
+        "foundation",
+        "safety_factor"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
