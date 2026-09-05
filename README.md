@@ -40,7 +40,7 @@ validated and playtested first — before a line of Swift.
 | Roles | **8,282 / 8,282** — what each noun is to a making |
 | Sense-checked | **1,780** single-word names read; 152 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
-| Parts lists | **373** written |
+| Parts lists | **403** written |
 | Colours | **28**, every one a measured Munsell chip |
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at

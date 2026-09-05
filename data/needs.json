@@ -5349,6 +5349,419 @@
         "door_seal",
         "fan"
       ]
+    },
+    "apollo_11": {
+      "src": "https://en.wikipedia.org/wiki/Apollo_11",
+      "note": "Three vehicles, two of which were thrown away, and the third came home.",
+      "needs": [
+        "saturn_v",
+        "command_module",
+        "service_module",
+        "lunar_module",
+        "heat_shield",
+        "parachute",
+        "guidance_computer",
+        "rtg|battery",
+        "spacesuit",
+        "antenna",
+        "descent_engine",
+        "ascent_engine"
+      ]
+    },
+    "international_space_station": {
+      "src": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "note": "Modules launched separately over decades and bolted together in orbit.",
+      "needs": [
+        "module",
+        "truss",
+        "solar_cell",
+        "radiator",
+        "docking_port",
+        "airlock",
+        "life_support",
+        "gyroscope",
+        "robotic_arm",
+        "antenna",
+        "water_recovery"
+      ]
+    },
+    "flywheel": {
+      "src": "https://en.wikipedia.org/wiki/Flywheel",
+      "note": "Storing rotation, so the machine keeps going between pushes.",
+      "needs": [
+        "cast_iron|steel",
+        "rim",
+        "hub",
+        "spoke",
+        "balance",
+        "shaft",
+        "inertia",
+        "keyway"
+      ]
+    },
+    "spirit_level": {
+      "src": "https://en.wikipedia.org/wiki/Spirit_level",
+      "note": "A bubble that is not there, and it goes to the top.",
+      "needs": [
+        "vial",
+        "alcohol|ether",
+        "bubble",
+        "graduation",
+        "frame",
+        "aluminum|timber",
+        "milling"
+      ]
+    },
+    "altar": {
+      "src": "https://en.wikipedia.org/wiki/Altar",
+      "note": "A raised surface where the thing that matters happens.",
+      "needs": [
+        "stone|timber",
+        "mensa",
+        "base",
+        "step",
+        "reliquary",
+        "cloth",
+        "candle",
+        "carving"
+      ]
+    },
+    "temple": {
+      "src": "https://en.wikipedia.org/wiki/Temple",
+      "note": "A house for a god, and usually not for a congregation.",
+      "needs": [
+        "stone",
+        "column",
+        "cella",
+        "portico",
+        "roof",
+        "altar",
+        "podium",
+        "frieze",
+        "mortar"
+      ]
+    },
+    "earthwork": {
+      "src": "https://en.wikipedia.org/wiki/Earthworks_(engineering)",
+      "note": "Moving soil, and the spoil from the ditch becomes the bank.",
+      "needs": [
+        "ditch",
+        "bank",
+        "spade",
+        "basket",
+        "revetment",
+        "berm",
+        "turf",
+        "compaction"
+      ]
+    },
+    "madrasah": {
+      "src": "https://en.wikipedia.org/wiki/Madrasa",
+      "note": "Four iwans round a courtyard, with the students living in the walls.",
+      "needs": [
+        "brick",
+        "iwan",
+        "courtyard",
+        "cell",
+        "dome",
+        "tilework",
+        "muqarnas",
+        "mihrab",
+        "fountain"
+      ]
+    },
+    "shicra": {
+      "src": "https://en.wikipedia.org/wiki/Shicra",
+      "note": "Bags of stone, stacked — a building technique and possibly an earthquake damper.",
+      "needs": [
+        "reed",
+        "stone",
+        "net",
+        "bag",
+        "fill",
+        "platform",
+        "retaining_wall"
+      ]
+    },
+    "close_helmet": {
+      "src": "https://en.wikipedia.org/wiki/Close_helmet",
+      "note": "A helmet that closes completely round the head and pivots on one axis.",
+      "needs": [
+        "steel",
+        "bowl",
+        "visor",
+        "bevor",
+        "gorget_plate",
+        "pivot",
+        "rivet",
+        "liner",
+        "chinstrap",
+        "ventilation"
+      ]
+    },
+    "morion": {
+      "src": "https://en.wikipedia.org/wiki/Morion_(helmet)",
+      "note": "A high comb and a swept brim, and the comb is structural.",
+      "needs": [
+        "steel",
+        "comb",
+        "brim",
+        "bowl",
+        "rivet",
+        "liner",
+        "chinstrap",
+        "raising"
+      ]
+    },
+    "armet": {
+      "src": "https://en.wikipedia.org/wiki/Armet",
+      "note": "The first helmet that genuinely closes, with cheekpieces that hinge shut.",
+      "needs": [
+        "steel",
+        "skull",
+        "cheek_piece",
+        "visor",
+        "rondel",
+        "hinge",
+        "rivet",
+        "liner"
+      ]
+    },
+    "burgonet": {
+      "src": "https://en.wikipedia.org/wiki/Burgonet",
+      "note": "An open helmet with a peak and a comb, for people who had to see.",
+      "needs": [
+        "steel",
+        "comb",
+        "peak",
+        "cheek_piece",
+        "hinge",
+        "rivet",
+        "liner"
+      ]
+    },
+    "socket_bayonet": {
+      "src": "https://en.wikipedia.org/wiki/Bayonet",
+      "note": "A blade that fits round the barrel rather than in it, so the gun still fires.",
+      "needs": [
+        "steel",
+        "socket",
+        "blade",
+        "zigzag_slot",
+        "lug",
+        "shoulder",
+        "hardening"
+      ]
+    },
+    "perfume": {
+      "src": "https://en.wikipedia.org/wiki/Perfume",
+      "note": "Three evaporation rates, arranged so a scent unfolds over hours.",
+      "needs": [
+        "essential_oil",
+        "alcohol",
+        "fixative",
+        "aroma_compound",
+        "water",
+        "maceration",
+        "filtration",
+        "bottle"
+      ]
+    },
+    "acid_fast_stain": {
+      "src": "https://en.wikipedia.org/wiki/Ziehl%E2%80%93Neelsen_stain",
+      "note": "A stain that survives an acid wash, which is how tuberculosis is found.",
+      "needs": [
+        "carbol_fuchsin",
+        "phenol",
+        "heat",
+        "acid",
+        "alcohol",
+        "counterstain",
+        "slide",
+        "microscope"
+      ]
+    },
+    "whitfields_ointment": {
+      "src": "https://en.wikipedia.org/wiki/Whitfield%27s_ointment",
+      "note": "Benzoic acid to stop the fungus, salicylic acid to remove the skin it is in.",
+      "needs": [
+        "benzoic_acid",
+        "salicylic_acid",
+        "petroleum_jelly|base",
+        "mixing",
+        "container"
+      ]
+    },
+    "sandalwood_tree": {
+      "src": "https://en.wikipedia.org/wiki/Santalum_album",
+      "note": "A tree that cannot feed itself and taps the roots of its neighbours.",
+      "needs": [
+        "seed",
+        "host_plant",
+        "haustorium",
+        "soil",
+        "heartwood",
+        "oil",
+        "distillation"
+      ]
+    },
+    "agarwood_tree": {
+      "src": "https://en.wikipedia.org/wiki/Agarwood",
+      "note": "The resin is a wound response, so an uninfected tree is worth almost nothing.",
+      "needs": [
+        "aquilaria",
+        "mould",
+        "wound",
+        "resin",
+        "heartwood",
+        "distillation",
+        "oud"
+      ]
+    },
+    "sorghum_broomcorn": {
+      "src": "https://en.wikipedia.org/wiki/Sorghum",
+      "note": "A grass grown for its seed head rather than its seed.",
+      "needs": [
+        "seed",
+        "field",
+        "panicle",
+        "stalk",
+        "harvest",
+        "drying",
+        "binding",
+        "broom"
+      ]
+    },
+    "block": {
+      "src": "https://en.wikipedia.org/wiki/Block_and_tackle",
+      "note": "Pulleys in a shell, and each rope in the system takes a share.",
+      "needs": [
+        "shell",
+        "sheave",
+        "pin",
+        "becket",
+        "hook",
+        "rope",
+        "strop",
+        "bearing"
+      ]
+    },
+    "flyweight": {
+      "src": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+      "note": "Weights that fly outward as the speed rises, and pull a lever as they go.",
+      "needs": [
+        "weight",
+        "arm",
+        "pivot",
+        "spring",
+        "sleeve",
+        "linkage",
+        "shaft"
+      ]
+    },
+    "serration": {
+      "src": "https://en.wikipedia.org/wiki/Serration",
+      "note": "Teeth on an edge, so it saws where a plain edge would slide.",
+      "needs": [
+        "blade",
+        "file",
+        "tooth",
+        "gullet",
+        "pitch",
+        "hardening"
+      ]
+    },
+    "shampoo": {
+      "src": "https://en.wikipedia.org/wiki/Shampoo",
+      "note": "A detergent mild enough for skin, plus everything undoing what the detergent did.",
+      "needs": [
+        "surfactant",
+        "water",
+        "conditioner",
+        "thickener",
+        "preservative",
+        "fragrance",
+        "ph_adjuster"
+      ]
+    },
+    "webbing": {
+      "src": "https://en.wikipedia.org/wiki/Webbing",
+      "note": "Woven flat strap, stronger for its weight than the same fibre as rope.",
+      "needs": [
+        "polyester|nylon",
+        "warp",
+        "weft",
+        "loom",
+        "selvage",
+        "stitching",
+        "tensile_strength"
+      ]
+    },
+    "fastener": {
+      "src": "https://en.wikipedia.org/wiki/Fastener",
+      "note": "Anything that holds two things together and comes apart again.",
+      "needs": [
+        "bolt",
+        "nut_fastener",
+        "washer",
+        "screw",
+        "rivet",
+        "thread",
+        "clamp"
+      ]
+    },
+    "coating": {
+      "src": "https://en.wikipedia.org/wiki/Coating",
+      "note": "A layer added for a property the thing underneath does not have.",
+      "needs": [
+        "binder",
+        "pigment",
+        "solvent",
+        "primer",
+        "substrate",
+        "spray|brush",
+        "curing",
+        "adhesion"
+      ]
+    },
+    "capstone": {
+      "src": "https://en.wikipedia.org/wiki/Capstone",
+      "note": "The stone on top, and often the one that makes the rest work.",
+      "needs": [
+        "megalith",
+        "lever",
+        "ramp",
+        "packing_stone",
+        "rope",
+        "sledge",
+        "socket"
+      ]
+    },
+    "counterweight": {
+      "src": "https://en.wikipedia.org/wiki/Counterweight",
+      "note": "Mass on the other side, so the machine lifts the load and not itself.",
+      "needs": [
+        "concrete|iron",
+        "frame",
+        "cable",
+        "pulley",
+        "guide",
+        "balance"
+      ]
+    },
+    "embankment": {
+      "src": "https://en.wikipedia.org/wiki/Embankment_dam",
+      "note": "An earth dam holds by weight and by not letting water through the middle.",
+      "needs": [
+        "clay_lining",
+        "gravel",
+        "soil",
+        "revetment",
+        "spillway",
+        "drainage",
+        "compaction",
+        "toe_drain"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
