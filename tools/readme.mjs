@@ -74,7 +74,12 @@ const rows = [
     const viaHaz = new Set(Object.keys(effects.hazards).flatMap(k => cautions[k]?.ids || []));
     const answered = [...new Set(Object.values(cautions).flatMap(h => h.ids || []))].filter(id => effects.effects[id] || viaHaz.has(id)).length;
     const laddered = [...all, ...Object.values(effects.verbs).flat(), ...Object.values(effects.hazards).flat()].filter(f => f.stages).length;
-    return `**${n(answered)} / ${n(cautioned)}** cautioned elements answered and **${n(supplied.size)} / ${n(nut.length)}** of the nutrients a body cannot make supplied; ${n(good)} rows are things the body is better off for, ${n(both)} elements are both, ${n(laddered)} carry a dose ladder`;
+    let audited = '';
+    try {
+      const a = JSON.parse(readFileSync(join(ROOT, 'data/effects-audit.json'), 'utf8'));
+      audited = `; **${n(a.checked - a.flagged)} / ${n(a.checked)}** have had the article they cite read and found to carry the claim`;
+    } catch {}
+    return `**${n(answered)} / ${n(cautioned)}** cautioned elements answered and **${n(supplied.size)} / ${n(nut.length)}** of the nutrients a body cannot make supplied; ${n(good)} rows are things the body is better off for, ${n(both)} elements are both, ${n(laddered)} carry a dose ladder${audited}`;
   })()],
   ['Colours', '**28**, every one a measured Munsell chip'],
 ];

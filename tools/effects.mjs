@@ -243,6 +243,7 @@ const laddered = [...Object.values(E.effects).flat(), ...Object.values(E.verbs).
 console.log(`  ${n(laddered)} of them are staged — hold it on the body and the dial climbs.`);
 console.log(`  node tools/effects.mjs --benefits   the other side`);
 console.log(`  node tools/effects.mjs --nutrients  what a body cannot make, and what supplies it`);
+console.log(`  node tools/effects-audit.mjs        does the cited article actually say it`);
 console.log(`  node tools/effects.mjs --missing   the rest`);
 
 if (errors.length) {

@@ -165,8 +165,16 @@ for (const { where, id, f } of rows) {
   const figs = figuresIn(f.mechanism || '');
   const missingFigs = figs.filter(x => !hasFigure(text, x));
   // 4. an IARC Group 1 claim is a specific, checkable assertion
-  if (f.carcinogen && !/group 1|carcinogenic to humans/i.test(text))
-    misses.push('carcinogen: true but the article says nothing about Group 1');
+  if (f.carcinogen) {
+    let iarcText = text;
+    if (f.srcIarc) {
+      const t2 = titleOf(f.srcIarc);
+      iarcText = (t2 && await articleText(t2)) || '';
+    }
+    if (!/group 1|carcinogenic to humans/i.test(iarcText))
+      misses.push(f.srcIarc ? 'carcinogen: true and srcIarc does not say Group 1 either'
+                            : 'carcinogen: true but the article says nothing about Group 1 — add srcIarc');
+  }
 
   // A second chance for figures and outcomes: the rendered page, where
   // infoboxes and tables live. Only pulled when the prose alone fell short,

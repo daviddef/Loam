@@ -592,7 +592,8 @@
         "mechanism": "The liver converts it to acetaldehyde and then to acetate, and the intermediate is the damaging one. Sustained exposure scars the tissue doing the processing.",
         "src": "https://en.wikipedia.org/wiki/Alcoholic_liver_disease",
         "carcinogen": true,
-        "iarc": 1
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "formaldehyde": [
@@ -644,7 +645,8 @@
         "src": "https://en.wikipedia.org/wiki/Health_effects_of_tobacco",
         "carcinogen": true,
         "iarc": 1,
-        "latency": "20 to 40 years"
+        "latency": "20 to 40 years",
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "sun": [
@@ -1354,12 +1356,6 @@
             "outcome": "drowning"
           },
           {
-            "at": 10,
-            "label": "Cold incapacitation",
-            "what": "Ten minutes of meaningful movement, and then the hands stop working before the body is cold. People drown within reach of a ladder they can no longer grip.",
-            "outcome": "drowning"
-          },
-          {
             "at": 60,
             "label": "Hypothermia",
             "what": "An hour before the core is cold enough to lose consciousness — which is why 'they were only in the water twenty minutes' is not the reassurance it sounds like.",
@@ -1519,8 +1515,8 @@
         "route": "thermal",
         "outcome": "hypothermia",
         "onset": "conditional",
-        "mechanism": "Wind does not lower the temperature; it removes the thin layer of air a body has already warmed, and keeps removing it. The rate of heat loss is what changes, which is why the same air is survivable still and not moving.",
-        "src": "https://en.wikipedia.org/wiki/Wind_chill"
+        "mechanism": "Wind does not lower the temperature; it strips away the thin layer of air a body has already warmed and keeps stripping it, so heat leaves faster than it can be made. Below about 35 °C the body stops keeping up, and judgement goes before strength does.",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
       }
     ],
     "horse": [
@@ -1890,16 +1886,6 @@
         "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
       }
     ],
-    "silver": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "irritant",
-        "onset": "cumulative",
-        "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The resulting blue-grey colour is permanent — there is no route by which the body removes it.",
-        "src": "https://en.wikipedia.org/wiki/Argyria"
-      }
-    ],
     "rubber": [
       {
         "valence": "harm",
@@ -1953,11 +1939,11 @@
     "plaster": [
       {
         "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
+        "route": "contact",
+        "outcome": "chemical_burn",
         "onset": "conditional",
-        "mechanism": "Plaster of Paris gives off heat as it sets, and a thick cast over a limb has nowhere to lose it. Burns under casts are documented and are a function of thickness and of the water temperature it was mixed with.",
-        "src": "https://en.wikipedia.org/wiki/Plaster_cast"
+        "mechanism": "Plaster sets by taking water back into the crystal, and that reaction gives out heat. Under a thick cast the heat has nowhere to go, so the skin beneath can be injured while the cast is hardening rather than by anything applied to it.",
+        "src": "https://en.wikipedia.org/wiki/Plaster"
       }
     ],
     "wheat": [
@@ -2044,9 +2030,9 @@
       {
         "valence": "harm",
         "route": "mechanical",
-        "outcome": "laceration",
+        "outcome": "blunt_trauma",
         "onset": "acute",
-        "mechanism": "Attacks are genuinely rare — far rarer than the folklore — and almost all documented cases involve rabid animals or animals habituated to people. The bite is a holding one, and the injury is tearing.",
+        "mechanism": "Attacks are genuinely rare — far rarer than the folklore — and the documented cases cluster in rabid animals and in animals habituated to people, which is a fact about circumstances rather than about wolves.",
         "src": "https://en.wikipedia.org/wiki/Wolf_attack"
       }
     ],
@@ -2105,10 +2091,10 @@
     "glacier": [
       {
         "valence": "harm",
-        "route": "mechanical",
-        "outcome": "crush_syndrome",
+        "route": "thermal",
+        "outcome": "hypothermia",
         "onset": "acute",
-        "mechanism": "A crevasse is bridged by snow that looks like the rest of the surface, and a fall into one wedges a body tighter the deeper it goes. The cold is the second problem, not the first.",
+        "mechanism": "A crevasse is bridged by snow that looks like the rest of the surface, and a fall into one wedges a body tighter the deeper it goes. What follows is the cold: the walls are ice on every side and there is no way to move.",
         "src": "https://en.wikipedia.org/wiki/Crevasse"
       }
     ],
@@ -2418,7 +2404,7 @@
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "irritant",
+        "outcome": "poisoning",
         "onset": "acute",
         "mechanism": "Phytohaemagglutinin binds the carbohydrate on the surface of gut cells and stops them absorbing. It is destroyed by a proper boil and, notably, not by the low steady heat of a slow cooker.",
         "src": "https://en.wikipedia.org/wiki/Phytohaemagglutinin"
@@ -2448,10 +2434,10 @@
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "neurotoxin",
+        "outcome": "poisoning",
         "onset": "acute",
-        "mechanism": "Atropine and scopolamine block muscarinic acetylcholine receptors, so every parasympathetic signal stops at once: the pupil cannot constrict, the gut stops, the skin cannot sweat and the temperature climbs. The concentration differs between plants of the same species and the same plant in different years.",
-        "src": "https://en.wikipedia.org/wiki/Tropane_alkaloid"
+        "mechanism": "Atropine and scopolamine block muscarinic acetylcholine receptors, so every parasympathetic signal stops at once: the pupil cannot constrict, the gut stops, the skin cannot sweat and the temperature climbs. The delirium it causes is the reason these plants have a reputation, and the concentration differs between plants of the same species and the same plant in different years.",
+        "src": "https://en.wikipedia.org/wiki/Anticholinergic"
       }
     ],
     "clostridial_wound_risk": [
@@ -2528,9 +2514,9 @@
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "irritant",
+        "outcome": "allergic_reaction",
         "onset": "conditional",
-        "mechanism": "The regulation requires a label, not a ban, and the finding it rests on was a small effect on average across a group of children rather than a reaction in any one of them.",
+        "mechanism": "The regulation requires a label, not a ban, and the finding behind it was a small shift in behaviour averaged across a group of children rather than a reaction in any one of them. Some of the same dyes are separately associated with allergic responses, which is a different claim with different evidence.",
         "src": "https://en.wikipedia.org/wiki/Food_coloring"
       }
     ],
@@ -2572,8 +2558,8 @@
         "route": "contact",
         "outcome": "chemical_burn",
         "onset": "acute",
-        "mechanism": "Concentration is the whole difference: the same molecule that is an antiseptic at three per cent oxidises tissue directly when it is not diluted.",
-        "src": "https://en.wikipedia.org/wiki/Oxidizing_agent"
+        "mechanism": "Concentration is the whole difference: the same molecule that is an antiseptic at three per cent bleaches and blisters skin when it is not diluted, because it oxidises the tissue directly rather than acting as an acid or an alkali.",
+        "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
       }
     ],
     "allyl_isothiocyanate_irritant": [
@@ -2582,8 +2568,8 @@
         "route": "contact",
         "outcome": "irritant",
         "onset": "contact",
-        "mechanism": "It activates TRPA1, the receptor that reports chemical damage, so the sting is a genuine irritant signal rather than a taste. The plant makes it only when the tissue is broken, from a precursor and an enzyme kept apart until then.",
-        "src": "https://en.wikipedia.org/wiki/Allyl_isothiocyanate"
+        "mechanism": "It activates TRPA1, the channel that reports chemical damage, so the sting is a genuine irritant signal rather than a taste. The plant keeps the precursor and the enzyme in separate compartments and only makes the compound when the tissue is broken.",
+        "src": "https://en.wikipedia.org/wiki/TRPA1"
       }
     ],
     "toxic_shock_risk": [
@@ -2626,16 +2612,6 @@
         "src": "https://en.wikipedia.org/wiki/Teratology"
       }
     ],
-    "polyol_laxation": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "Polyols are absorbed slowly and incompletely, so they arrive in the large intestine still osmotically active, pull water in, and are then fermented by the bacteria there.",
-        "src": "https://en.wikipedia.org/wiki/Sugar_alcohol"
-      }
-    ],
     "neurocysticercosis_epilepsy": [
       {
         "valence": "harm",
@@ -2652,8 +2628,8 @@
         "route": "ingested",
         "outcome": "anaphylaxis",
         "onset": "acute",
-        "mechanism": "The cyst grows for years without symptoms because it is walled off. The danger is that wall failing: the contents are highly antigenic and the immune system meets all of it at once.",
-        "src": "https://en.wikipedia.org/wiki/Echinococcosis"
+        "mechanism": "The cyst grows for years without symptoms because it is walled off. The danger is that wall failing: the contents are highly antigenic, the immune system meets all of it at once, and mast cells degranulate everywhere at the same moment.",
+        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
       }
     ],
     "onchocerciasis_blindness": [
@@ -2917,8 +2893,8 @@
         "route": "mechanical",
         "outcome": "laceration",
         "onset": "acute",
-        "mechanism": "Both species kill by the throat, and documented man-eaters are usually animals that have lost the ability to take their normal prey — which is why the cases cluster in individuals rather than in populations.",
-        "src": "https://en.wikipedia.org/wiki/Man-eater"
+        "mechanism": "Attacks on people are uncommon for either species and the documented cases cluster in individual animals rather than in populations — usually one that has lost the ability to take its normal prey. The bite is to the throat, and it is a killing hold rather than a defensive snap.",
+        "src": "https://en.wikipedia.org/wiki/Tiger_attack"
       }
     ],
     "tailings_dam_failure": [
@@ -3119,9 +3095,9 @@
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "poisoning",
+        "outcome": "heart_attack",
         "onset": "conditional",
-        "mechanism": "It blocks the enzyme that inactivates cortisol in the kidney, so cortisol acts on the aldosterone receptor instead — sodium is retained and potassium is lost, without any change in aldosterone itself.",
+        "mechanism": "It blocks the enzyme that inactivates cortisol in the kidney, so cortisol acts on the aldosterone receptor instead: sodium is retained, blood pressure rises and potassium is lost, with no change in aldosterone itself. The falling potassium is what reaches the heart, which depends on that gradient to reset between beats.",
         "src": "https://en.wikipedia.org/wiki/Glycyrrhizin"
       }
     ],
@@ -3467,16 +3443,6 @@
         "src": "https://en.wikipedia.org/wiki/Sulfite"
       }
     ],
-    "ponceau_4r_southampton_trial": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "The trial found a small average shift in behaviour across a group of children, not a reaction in any individual one. The European response was a label rather than a ban, which is what an effect of that size supports.",
-        "src": "https://en.wikipedia.org/wiki/Ponceau_4R"
-      }
-    ],
     "aspartame_phenylketonuria": [
       {
         "valence": "harm",
@@ -3783,7 +3749,7 @@
           "unit": "core body temperature",
           "suffix": " °C",
           "from": 37,
-          "to": 26,
+          "to": 28,
           "note": "The staging is by core temperature, which is not what a thermometer on the skin reads.",
           "src": "https://en.wikipedia.org/wiki/Hypothermia"
         },
@@ -3813,13 +3779,7 @@
           {
             "at": 28,
             "label": "Severe hypothermia",
-            "what": "The heart becomes irritable and can fibrillate from movement alone, which is why the handling of a severely cold person is itself part of the medicine.",
-            "outcome": "hypothermia"
-          },
-          {
-            "at": 26,
-            "label": "Not survivable unaided",
-            "what": "Below this the heart is unlikely to hold a rhythm without rewarming. Survival at these temperatures is documented, and always with help.",
+            "what": "The heart becomes irritable and can fibrillate from movement alone, which is why how a severely cold person is handled is itself part of the medicine. Below this a heart is unlikely to hold a rhythm without rewarming, and survival at these temperatures is always with help.",
             "outcome": "death"
           }
         ]
@@ -3892,5 +3852,10 @@
       }
     ]
   },
-  "$dial_comment": "A dial names the axis a staging is actually measured on, and stages walk it. `from` is where a body starts and `to` is the far end of the published scale. Each stage's `at` is a real value on that axis. `outcome` is optional: the early rungs of most ladders are not injuries and should not pretend to be."
+  "$dial_comment": "A dial names the axis a staging is actually measured on, and stages walk it. `from` is where a body starts and `to` is the far end of the published scale. Each stage's `at` is a real value on that axis. `outcome` is optional: the early rungs of most ladders are not injuries and should not pretend to be.",
+  "$owed_outcomes": [
+    "argyria — silver's permanent blue-grey skin discolouration. The `silver` effect row was removed because `irritant` was simply the wrong word for it and nothing better exists.",
+    "diarrhoea — the polyol laxation row was removed for the same reason. Both are ordinary corpus work: author the element and the row can come back.",
+    "a behavioural effect — the Southampton dye trial found a small average shift in children's behaviour, which is neither an allergy nor an irritation. Two hazard rows have been written against the nearest wrong word and one of them (ponceau_4r) was removed for it."
+  ]
 }
