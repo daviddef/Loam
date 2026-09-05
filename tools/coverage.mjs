@@ -124,7 +124,10 @@ if (has('places.json')) {
    * measured against was written by the same hand that answered it. 111 lines
    * now come from the Chronicarum catalogue instead — externally owned, like
    * the UN M49 regions above them — so the denominator can disagree with us. */
-  add('places checklist', Object.keys(P.places).length, wanted,
+  /* Read the number tools/places.mjs published rather than matching names a
+   * second way. Reimplementing it here got 437 where places.mjs gets 442. */
+  const pc = has('places-coverage.json') ? read('places-coverage.json') : null;
+  add('places checklist', pc ? pc.satisfied : 0, pc ? pc.wanted : wanted,
       'part authored, part external (Chronicarum) — a denominator that can disagree');
 }
 if (has('cautions.json')) {

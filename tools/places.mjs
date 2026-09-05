@@ -35,7 +35,7 @@
  *   node tools/places.mjs --region <id>
  *   node tools/places.mjs <id>        one place in full
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -298,6 +298,14 @@ for (const r of P.regions) {
   have += got;
   console.log(`  ${bar(got, mine.length)}  ${String(got).padStart(3)}/${String(mine.length).padEnd(3)} ${r.name}`);
 }
+/* Publish the number rather than let another tool re-derive it. coverage.mjs
+ * reimplemented this matcher and got 437 where this gets 442, which is the
+ * third time today two tools have answered one question two ways. */
+writeFileSync(join(ROOT, 'data', 'places-coverage.json'), JSON.stringify({
+  $comment: 'Written by tools/places.mjs so that tools/coverage.mjs reports the same figure this tool prints, instead of matching names a second way and disagreeing.',
+  satisfied: have, wanted: wanted.length,
+}, null, 2) + '\n');
+
 console.log(`\n  ${n(have)} of ${n(wanted.length)} checklist places exist as elements ` +
   `(${Math.round(have / wanted.length * 100)}%)`);
 
