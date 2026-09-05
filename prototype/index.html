@@ -1870,17 +1870,17 @@
     transition:border-color .16s,background .16s;
   }
   #rdStage.over{border-style:solid;border-color:var(--orange);
-                background:color-mix(in srgb,var(--orange) 10%,transparent)}
-  #rdStage svg{display:block;width:100%;max-width:190px;height:auto;margin:0 auto}
-  #rdBody .part{fill:var(--card);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
-  #rdBody .limb{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
-  #rdBody .zone{fill:none;transition:fill .3s}
-  #rdBody .zone.lit{fill:color-mix(in srgb,var(--orange) 45%,transparent)}
-  #rdBody .line{fill:none;stroke:none;transition:stroke .3s}
-  #rdBody .line.lit{stroke:var(--orange);stroke-width:3;stroke-linecap:round}
-  #rdBody .halo{fill:none;stroke:none}
-  #rdBody .halo.lit{stroke:var(--orange);stroke-width:2.5;stroke-dasharray:5 8;opacity:.85}
-  #rdBody.hit .part,#rdBody.hit .limb{stroke:var(--orange)}
+                background:color-mix(in srgb,var(--orange) 13%,transparent);
+                box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 20%,transparent)}
+  #rdStage.over::after{
+    content:'Let go to expose';position:absolute;left:0;right:0;bottom:4px;text-align:center;
+    font:700 10px var(--face-name);letter-spacing:.06em;color:var(--orange);
+  }
+  /* The card being carried, lifted out of #board's own overflow clip so it
+     stays visible all the way across the seam. */
+  #rdGhost{position:fixed;z-index:400;pointer-events:none;opacity:.92}
+  #rdCanvas{display:block;width:100%;height:240px;touch-action:none;cursor:grab}
+  #rdCanvas:active{cursor:grabbing}
   #rdRoute{
     text-align:center;min-height:12px;margin-top:2px;
     font:400 10px/1.2 var(--face-data);letter-spacing:.1em;text-transform:uppercase;
@@ -2226,7 +2226,7 @@
       <circle cx="70" cy="26" r="8" fill="#E0A526"/><circle cx="92" cy="34" r="8" fill="#6B8E4E"/>
       <rect x="42" y="66" width="36" height="30" rx="9" fill="#E2703A"/>
     </svg>
-    <h1 title="Build 4380c98 · 2026-09-05 08:59">Loam</h1>
+    <h1 title="Build 2b9504e · 2026-09-05 09:18">Loam</h1>
   </a>
   <button class="count" id="count" title="Open your codex"></button>
   <div class="goal" id="goal"></div>
@@ -5964,6 +5964,13 @@ board.addEventListener('pointerdown', ev => {
   }
   drag = { chip, ox: wx - (parseFloat(chip.style.left) || 0),
                  oy: wy - (parseFloat(chip.style.top) || 0),
+                 // Where it was before the drag. Carrying a card to the
+                 // Ragdoll is a question, not a move — the bench should look
+                 // the same afterwards. ("i feel like the card shouldnt
+                 // actually move its original position if im draging to the
+                 // ragdoll. otherwise the entire board would restructure?")
+                 homeX: parseFloat(chip.style.left) || 0,
+                 homeY: parseFloat(chip.style.top) || 0,
            sx: ev.clientX, sy: ev.clientY, moved: false };
   chip.classList.add('drag');
   chip.setPointerCapture(ev.pointerId);
@@ -6021,6 +6028,12 @@ board.addEventListener('pointermove', ev => {
   const bandKey = t?.dataset.verb ? drag.chip.dataset.id + '|' + t.dataset.verb : null;
   if (bandKey && bands.has(bandKey)) startHeat(drag.chip, t, bandKey);
   else stopHeat();
+  // #board clips overflow, so a card carried towards the shelf disappears at
+  // the seam and the drag reads as doing nothing. Hand it to a fixed ghost
+  // that is not inside the clip, and light the body it is heading for.
+  const onBody = overRagdoll(ev.clientX, ev.clientY);
+  rdOver(onBody);
+  rdCarry(onBody ? drag.chip.dataset.id : null, ev.clientX, ev.clientY);
   if (ambientDuringDrag(drag.chip, ev.clientX, ev.clientY)) {
     drag = null; hitCache = null; clearWarn();          // it already reacted — nothing left to drag
   }
@@ -6029,9 +6042,12 @@ board.addEventListener('pointerup', ev => {
   clearTimeout(holdT);
   if (pan) { pan = null; board.classList.remove('panning'); return; }
   if (!drag) return;
-  const { chip, moved } = drag; drag = null;
+  const { chip, moved } = drag;
+  const home = { x: drag.homeX, y: drag.homeY };
+  drag = null;
   hitCache = null;
   clearWarn();
+  rdOver(false); rdCarry(null);
   chip.classList.remove('drag', 'haslive');
   chip.dataset.live = '';
   document.querySelectorAll('.target').forEach(n => n.classList.remove('target'));
@@ -6044,10 +6060,16 @@ board.addEventListener('pointerup', ev => {
   if (!moved) { chipTap(chip); return; }              // tap folds, double tap removes
   saveSoon();                                          // remember where it was put
   // Carried onto the Ragdoll. Claimed before hit(), which only ever looks at
-  // the bench — the body is a second canvas, not a card.
+  // the bench — the body is a second canvas, not a card. The card goes back
+  // where it was: this was a question about it, not a move.
   if (overRagdoll(ev.clientX, ev.clientY) && chip.dataset.id) {
     ragdollDrop(chip.dataset.id, 'element');
-    pinToBoard(chip);
+    chip.style.left = home.x + 'px';
+    chip.style.top  = home.y + 'px';
+    chip.classList.add('pop');
+    setTimeout(() => chip.classList.remove('pop'), 330);
+    drawLinksFor(chip);
+    saveSoon();
     return;
   }
   // If the dial was climbing, letting go IS the decision — it has already
@@ -7916,15 +7938,18 @@ function setInfo(id) {
  * test of your pointer.
  */
 ragdoll = Array.isArray(savedRagdoll) ? savedRagdoll.filter(x => x && x.id) : [];
+/* Which of the body it lights, by route. Keys into RD.ix, the named joints
+ * of the ragdoll below. `skin` lights the whole outline, `halo` a ring around
+ * the figure — the two routes that are not a place. */
 const RD_LIT = {
-  inhaled:    ['rdLung'],
-  ingested:   ['rdMouth', 'rdGut'],
-  contact:    ['rdSkin'],
-  absorbed:   ['rdSkin', 'rdBlood'],
-  injected:   ['rdVein', 'rdBlood'],
-  radiation:  ['rdHalo'],
-  mechanical: ['rdBone'],
-  thermal:    ['rdSkin', 'rdHalo'],
+  inhaled:    { at: ['chest'] },
+  ingested:   { at: ['head', 'pelvis'] },
+  contact:    { skin: true },
+  absorbed:   { skin: true, at: ['chest'] },
+  injected:   { at: ['elL'] },
+  radiation:  { halo: true },
+  mechanical: { at: ['chest', 'pelvis'], shove: [0, -0.1] },
+  thermal:    { skin: true, halo: true },
 };
 const rdName = (x) => x.kind === 'verb'
   ? (verbs.find(v => v.id === x.id)?.name ?? x.id)
@@ -7966,6 +7991,24 @@ function rdOver(on) {
   const st = document.getElementById('rdStage');
   if (st) st.classList.toggle('over', !!on);
 }
+/** Carry a card across the seam. #board clips its own overflow, so a chip
+ *  dragged towards the shelf simply disappears and the gesture reads as doing
+ *  nothing at all. This is the same fixed ghost the shelf's own drag uses. */
+function rdCarry(id, x, y) {
+  let g = document.getElementById('rdGhost');
+  if (!id) { g?.remove(); return; }
+  if (!g || g.dataset.id !== id) {
+    g?.remove();
+    const e = byId[id]; if (!e) return;
+    g = document.createElement('div');
+    g.id = 'rdGhost'; g.dataset.id = id;
+    g.className = `chip board drag fam-${familyOf(e).id}`;
+    g.innerHTML = chipHTML(e);
+    document.body.appendChild(g);
+  }
+  g.style.left = (x - 40) + 'px';
+  g.style.top  = (y - 18) + 'px';
+}
 
 /** Expose the body to something. Anything already on the list moves to the
  *  top rather than being counted twice — one asbestos is the fact. */
@@ -7979,6 +8022,14 @@ function ragdollDrop(id, kind) {
   if (asideTab !== 'ragdoll') setAsideTab('ragdoll');
   renderAsideRagdoll(f ? f.route : null);
   if (!f) { sfx.nope(); return; }
+  // Force moves a body — that much is honest physics, and it is the only thing
+  // that touches the ragdoll. Anything chemical, and anything cumulative,
+  // leaves it standing there perfectly well, which is the point.
+  // Units are world-units per frame, and the body is 3.5 tall — a jolt, not a
+  // launch. The first attempt used 9 and threw the ragdoll out of the pane.
+  const shove = RD_LIT[f.route]?.shove;
+  if (shove && f.onset !== 'cumulative') rdShove(shove[0], shove[1]);
+  else if (f.route === 'thermal' && f.onset !== 'cumulative') rdShove(0, -0.05);
   // An outcome is an ordinary element of this corpus, and reaching it this way
   // is as sourced as reaching it by recipe — so it counts as found.
   if (f.outcome && byId[f.outcome] && !found.has(f.outcome)) {
@@ -7986,6 +8037,202 @@ function ragdollDrop(id, kind) {
     sfx.discover();
     toast(`${nameOf(byId[f.outcome])} added to your shelf`);
   } else sfx.pick();
+}
+
+
+/* ── the ragdoll itself ────────────────────────────────────────────────────
+ * A Verlet solver, ported from the ragdoll physics game's own — same fifteen
+ * particles, same link table, same constants (G, damping, seven relaxation
+ * passes, the ground's 0.42/0.32 friction and bounce), with z dropped because
+ * this canvas is flat. It is deliberately the same solver: the point of the
+ * flimsiness is that it is not an illustration of a body, it is a body that
+ * hangs, folds and can be picked up by the head.
+ *
+ * What it will NOT do is take damage. Every other ragdoll game scores you on
+ * how hard you can hit it; this one is a reading instrument, and a carcinogen
+ * has to leave it standing there perfectly well.
+ */
+const RD = { parts: [], links: [], limbs: [], ix: {}, grab: null, raf: 0,
+             lit: null, litT: 0, w: 0, h: 0, ground: 0 };
+const RD_G = -26, RD_DAMP = 0.988, RD_ITER = 7;
+
+function rdBuild() {
+  const parts = [], links = [], ix = {};
+  const add = (n, x, y, r, pin) => { ix[n] = parts.length; parts.push({ x, y, px: x, py: y, r, pin: !!pin }); };
+  // Nothing in this solver holds a body up — it has no muscles, so left alone
+  // it folds into a heap on the floor, which in a 200px pane reads as a sack
+  // rather than a person. One pinned point at the chest and it hangs instead:
+  // arms and legs dangle, the head lolls, and the silhouette stays a body
+  // however hard you throw it about.
+  add('pin', 0, 3.05, .01, true);
+  add('head', 0, 3.55, .34); add('chest', 0, 2.75, .40); add('pelvis', 0, 1.85, .36);
+  add('shL', -.52, 2.72, .17); add('elL', -.90, 2.05, .15); add('haL', -1.10, 1.40, .14);
+  add('shR',  .52, 2.72, .17); add('elR',  .90, 2.05, .15); add('haR',  1.10, 1.40, .14);
+  add('hiL', -.28, 1.75, .19); add('knL', -.34, 1.00, .17); add('ftL', -.36, 0.22, .16);
+  add('hiR',  .28, 1.75, .19); add('knR',  .34, 1.00, .17); add('ftR',  .36, 0.22, .16);
+  const link = (a, b, stiff) => {
+    const A = parts[ix[a]], B = parts[ix[b]];
+    links.push({ a: ix[a], b: ix[b], len: Math.hypot(B.x - A.x, B.y - A.y), stiff: stiff ?? 1 });
+  };
+  link('pin', 'chest', 1);
+  for (const [a, b] of [['head','chest'],['chest','pelvis'],['chest','shL'],['chest','shR'],
+       ['shL','elL'],['elL','haL'],['shR','elR'],['elR','haR'],['pelvis','hiL'],['pelvis','hiR'],
+       ['hiL','knL'],['knL','ftL'],['hiR','knR'],['knR','ftR']]) link(a, b, 1);
+  for (const [a, b, st] of [['shL','shR',.95],['hiL','hiR',.95],['shL','pelvis',.75],
+       ['shR','pelvis',.75],['head','shL',.5],['head','shR',.5],['hiL','knR',.22],
+       ['hiR','knL',.22],['shL','hiL',.5],['shR','hiR',.5]]) link(a, b, st);
+  RD.parts = parts; RD.links = links; RD.ix = ix;
+  // thickness down each segment, thicker where the body is
+  RD.limbs = [['chest','pelvis',.40],['shL','shR',.20],['hiL','hiR',.19],
+              ['hiL','knL',.195],['knL','ftL',.16],['hiR','knR',.195],['knR','ftR',.16],
+              ['shL','elL',.155],['elL','haL',.13],['shR','elR',.155],['elR','haR',.13]]
+             .map(([a, b, r]) => ({ a: ix[a], b: ix[b], r }));
+  RD.grab = null;
+}
+rdBuild();
+
+function rdStep(dt) {
+  const half = RD.halfW || 1.6;
+  for (const p of RD.parts) {
+    if (p === RD.grab || p.pin) continue;
+    const vx = (p.x - p.px) * RD_DAMP, vy = (p.y - p.py) * RD_DAMP;
+    p.px = p.x; p.py = p.y;
+    p.x += vx; p.y += vy + RD_G * dt * dt;
+  }
+  for (let it = 0; it < RD_ITER; it++) {
+    for (const c of RD.links) {
+      const a = RD.parts[c.a], b = RD.parts[c.b];
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const l = Math.hypot(dx, dy) || 1e-6;
+      const k = (l - c.len) / l * 0.5 * c.stiff;
+      if (a !== RD.grab && !a.pin) { a.x += dx * k; a.y += dy * k; }
+      if (b !== RD.grab && !b.pin) { b.x -= dx * k; b.y -= dy * k; }
+    }
+    for (const p of RD.parts) {
+      if (p.pin) continue;
+      if (p.y < p.r) {                                  // the floor
+        p.y = p.r;
+        p.px += (p.x - p.px) * 0.42;
+        p.py = p.y - (p.py - p.y) * 0.32;
+      }
+      // walls, so it cannot wander out of a pane this narrow
+      if (p.x < -half + p.r) { p.x = -half + p.r; p.px += (p.x - p.px) * 0.4; }
+      if (p.x >  half - p.r) { p.x =  half - p.r; p.px += (p.x - p.px) * 0.4; }
+    }
+  }
+}
+
+/** A shove, in world units per frame. The only thing that moves this body from
+ *  outside, and it is only ever handed a real mechanical or thermal event. */
+function rdShove(dx, dy, at) {
+  const list = at ? [RD.parts[RD.ix[at]]] : RD.parts;
+  for (const p of list) { if (!p.pin) { p.px -= dx; p.py -= dy; } }
+}
+
+function rdDraw() {
+  const cv = document.getElementById('rdCanvas');
+  if (!cv) return false;
+  const ctx = cv.getContext('2d');
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  const w = cv.clientWidth, h = cv.clientHeight;
+  if (!w || !h) return true;
+  if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+  const css = getComputedStyle(document.body);
+  const ink = css.getPropertyValue('--ink').trim() || '#2b2a26';
+  const card = css.getPropertyValue('--card').trim() || '#faf6ec';
+  const hot = css.getPropertyValue('--orange').trim() || '#c8641e';
+  // world → screen. 4.6 units of height, the figure centred on the width.
+  const sc = h / 4.35, ox = w / 2, oy = h - sc * 0.06;
+  RD.halfW = (w / 2) / sc;
+  const X = (x) => ox + x * sc, Y = (y) => oy - y * sc;
+  const P = (n) => RD.parts[RD.ix[n]];
+
+  const lit = RD.litT > 0 && RD.lit ? (RD_LIT[RD.lit] || {}) : {};
+
+  if (lit.halo) {
+    ctx.strokeStyle = hot; ctx.lineWidth = 2; ctx.setLineDash([5, 8]);
+    ctx.globalAlpha = .85;
+    ctx.beginPath(); ctx.ellipse(X(P('chest').x), Y(P('chest').y), sc * 1.7, sc * 2.1, 0, 0, 7);
+    ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+  }
+  // limbs as capsules: fill first so the joins do not show, then one outline
+  const stroke = lit.skin ? hot : ink;
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  // Outline then fill, one limb at a time, back to front. Doing all the
+  // outlines first and all the fills after buries the arms inside the torso
+  // the moment they hang against it — which is most of the time.
+  for (const L of RD.limbs) {
+    const a = RD.parts[L.a], b = RD.parts[L.b];
+    const x1 = X(a.x), y1 = Y(a.y), x2 = X(b.x), y2 = Y(b.y);
+    ctx.strokeStyle = stroke; ctx.lineWidth = L.r * 2 * sc + 3;
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    ctx.strokeStyle = card; ctx.lineWidth = L.r * 2 * sc;
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  }
+  // where the route lands, drawn under the head so a lit chest reads through
+  for (const n of lit.at || []) {
+    const p = P(n);
+    ctx.fillStyle = hot; ctx.globalAlpha = .42;
+    ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), p.r * sc * 1.35, 0, 7); ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+  const hd = P('head');
+  ctx.beginPath(); ctx.arc(X(hd.x), Y(hd.y), hd.r * sc, 0, 7);
+  ctx.fillStyle = card; ctx.fill();
+  ctx.lineWidth = 3; ctx.strokeStyle = stroke; ctx.stroke();
+  return true;
+}
+
+let rdLast = 0;
+function rdFrame(t) {
+  RD.raf = 0;
+  if (asideTab !== 'ragdoll' || document.hidden) return;
+  const dt = Math.min(0.032, (t - rdLast) / 1000 || 0.016);
+  rdLast = t;
+  rdStep(dt);
+  if (RD.litT > 0) RD.litT -= dt;
+  if (!rdDraw()) return;
+  RD.raf = requestAnimationFrame(rdFrame);
+}
+function rdStart() {
+  rdLast = performance.now();
+  if (!RD.raf) RD.raf = requestAnimationFrame(rdFrame);
+}
+// A hidden page gets no frames, so the loop stops of its own accord — and then
+// has nothing to start it again when you come back to the tab. Found by
+// measuring rather than by looking: RD.raf was 0 and the body sat frozen.
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && asideTab === 'ragdoll') rdStart();
+});
+// A cancelled pointer (a phone's scroll taking over, a window losing focus)
+// never reaches the board's own pointerup, and the carried ghost would stay on
+// screen for good. Cheap belt and braces.
+addEventListener('pointercancel', () => { rdCarry(null); rdOver(false); });
+addEventListener('blur', () => { rdCarry(null); rdOver(false); });
+
+/** Pick it up by whatever is nearest, and throw it. The only interaction the
+ *  body has that is not a fact — and the reason it reads as a body. */
+function rdPointer(ev, phase) {
+  const cv = document.getElementById('rdCanvas');
+  if (!cv) return;
+  const r = cv.getBoundingClientRect();
+  const h = r.height, sc = h / 4.35, ox = r.width / 2, oy = h - sc * 0.06;
+  const wx = (ev.clientX - r.left - ox) / sc, wy = (oy - (ev.clientY - r.top)) / sc;
+  if (phase === 'down') {
+    let best = null, bd = 0.75;
+    for (const p of RD.parts) {
+      if (p.pin) continue;
+      const d = Math.hypot(p.x - wx, p.y - wy);
+      if (d < bd) { bd = d; best = p; }
+    }
+    RD.grab = best;
+    if (best) { cv.setPointerCapture(ev.pointerId); rdStart(); }
+  } else if (phase === 'move' && RD.grab) {
+    RD.grab.px = RD.grab.x; RD.grab.py = RD.grab.y;
+    RD.grab.x = wx; RD.grab.y = wy;
+  } else if (phase === 'up') RD.grab = null;
 }
 
 function renderAsideRagdoll(litRoute) {
@@ -8026,23 +8273,7 @@ function renderAsideRagdoll(litRoute) {
 
   pane.innerHTML = `
     <div id="rdStage">
-      <svg id="rdBody" viewBox="0 0 120 250" aria-hidden="true">
-        <ellipse id="rdHalo" class="halo" cx="60" cy="126" rx="56" ry="120"/>
-        <g id="rdSkin">
-          <path class="limb" d="M45 60 30 96l-4 32"/>
-          <path class="limb" d="M75 60 90 96l4 32"/>
-          <path class="limb" d="M52 118 47 170l-2 44"/>
-          <path class="limb" d="M68 118 73 170l2 44"/>
-          <circle class="part" cx="60" cy="28" r="18"/>
-          <path class="part" d="M50 46h20l9 9v55a9 9 0 0 1-9 9H50a9 9 0 0 1-9-9V55z"/>
-        </g>
-        <path id="rdBone" class="line" d="M49 64h22M49 74h22M49 84h22"/>
-        <path id="rdBlood" class="line" d="M60 60v50"/>
-        <ellipse id="rdLung" class="zone" cx="60" cy="72" rx="15" ry="13"/>
-        <ellipse id="rdGut" class="zone" cx="60" cy="102" rx="13" ry="10"/>
-        <ellipse id="rdMouth" class="zone" cx="60" cy="37" rx="7" ry="4"/>
-        <circle id="rdVein" class="zone" cx="27" cy="126" r="6"/>
-      </svg>
+      <canvas id="rdCanvas"></canvas>
       <div id="rdRoute"></div>
     </div>
     <p id="rdSay">Drag anything here — a card from the bench, or a tool from
@@ -8054,18 +8285,18 @@ function renderAsideRagdoll(litRoute) {
     </div>
     <div class="rdlog">${cases}</div>`;
 
-  // Light the route of whatever just landed, and say its name under the body.
-  if (litRoute && RD_LIT[litRoute]) {
-    for (const id of RD_LIT[litRoute]) {
-      const n = document.getElementById(id);
-      if (id === 'rdSkin') document.getElementById('rdBody').classList.add('hit');
-      else if (n) n.classList.add('lit');
-    }
+  rdStart();
+  if (litRoute) {
+    RD.lit = litRoute; RD.litT = 6;
     const say = document.getElementById('rdRoute');
     if (say) say.textContent = litRoute;
-  }
+  } else RD.lit = null;
+  const cv = document.getElementById('rdCanvas');
+  cv.onpointerdown = (ev) => { ev.preventDefault(); rdPointer(ev, 'down'); };
+  cv.onpointermove = (ev) => rdPointer(ev, 'move');
+  cv.onpointerup = cv.onpointercancel = (ev) => rdPointer(ev, 'up');
   document.getElementById('rdClear').onclick = () => {
-    ragdoll = []; save(); renderAsideRagdoll();
+    ragdoll = []; save(); rdBuild(); renderAsideRagdoll();
     toast('A fresh body. What it has been through is not what it is.');
   };
   const q = document.getElementById('rdQ');
