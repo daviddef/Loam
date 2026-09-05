@@ -39,6 +39,7 @@ const cautions = D('cautions.json').hazards;
 const byId = new Map(elements.map(e => [e.id, e]));
 const ROUTES = Object.keys(E.$routes);
 const TIERS = ['acute', 'contact', 'conditional', 'cumulative'];
+const VALENCE = Object.keys(E.$valence);
 const errors = [];
 
 /* METHOD-SHAPED PROSE. Each pattern describes a sentence that has stopped
@@ -65,8 +66,12 @@ const METHOD = [
  * passed in — everything after it is the same field-for-field check, because
  * a verb effect that skipped the safety pattern would be the obvious hole. */
 function checkRow(id, f, where) {
+  if (!VALENCE.includes(f.valence)) errors.push(`${where}: valence "${f.valence}" is not one of ${VALENCE.join(', ')}`);
+  if (f.valence === 'benefit' && (f.carcinogen || f.iarc)) errors.push(`${where}: a benefit cannot be a carcinogen`);
   if (!ROUTES.includes(f.route)) errors.push(`${where}: route "${f.route}" is not one of ${ROUTES.join(', ')}`);
   if (!TIERS.includes(f.onset)) errors.push(`${where}: onset "${f.onset}" is not one of ${TIERS.join(', ')}`);
+  if (f.prevents && !byId.has(f.prevents)) errors.push(`${where}: prevents "${f.prevents}" is not an element`);
+  if (f.prevents && f.valence !== 'benefit') errors.push(`${where}: prevents only makes sense on a benefit`);
   if (!f.outcome) errors.push(`${where}: no outcome`);
   else if (!byId.has(f.outcome)) errors.push(`${where}: outcome "${f.outcome}" is not an element — author it first, so the Ragdoll card is an ordinary card`);
   if (!f.src || !String(f.src).startsWith('http')) errors.push(`${where}: no source`);
@@ -77,23 +82,41 @@ function checkRow(id, f, where) {
   if (f.carcinogen && f.iarc !== 1) errors.push(`${where}: carcinogen is for IARC Group 1 only; set iarc: 1 or drop the flag`);
 }
 
-for (const [id, f] of Object.entries(E.effects)) {
+/* Every entry is a LIST. The same thing is routinely both — sun makes vitamin
+ * D and melanoma in the same skin, by the same route, from the same photons —
+ * and a field that could hold only the harm was a hazard list in disguise. */
+const rows = (v) => Array.isArray(v) ? v : [v];
+for (const [id, list] of Object.entries(E.effects)) {
   if (!byId.has(id)) errors.push(`effects.${id}: no element has this id`);
-  checkRow(id, f, `effects.${id}`);
+  if (!Array.isArray(list)) errors.push(`effects.${id}: must be a list, even when there is one entry`);
+  rows(list).forEach((f, i) => checkRow(id, f, `effects.${id}[${i}]`));
+  const seen = new Set();
+  for (const f of rows(list)) {
+    const key = `${f.valence}|${f.route}|${f.outcome}`;
+    if (seen.has(key)) errors.push(`effects.${id}: two entries say the same thing (${key})`);
+    seen.add(key);
+  }
 }
 // The verbs block. "'smother' a human, e.g. still shows the verb impact on the
 // human" was in the brief in those words, and a verb is not an element — so it
 // gets its own block, keyed on data/verbs.json, and the same gate.
 const verbIds = new Set(D('verbs.json').verbs.map(v => v.id));
-for (const [id, f] of Object.entries(E.verbs || {})) {
+for (const [id, list] of Object.entries(E.verbs || {})) {
   if (!verbIds.has(id)) errors.push(`verbs.${id}: no verb has this id — keys here come from data/verbs.json`);
-  checkRow(id, f, `verbs.${id}`);
+  rows(list).forEach((f, i) => checkRow(id, f, `verbs.${id}[${i}]`));
 }
 
 const cautioned = new Set(Object.values(cautions).flatMap(h => h.ids || []));
 const owed = [...cautioned].filter(id => !E.effects[id]).sort();
 
 const mode = process.argv[2];
+if (mode === '--benefits') {
+  const mine = Object.entries(E.effects).flatMap(([id, l]) => l.filter(f => f.valence === 'benefit').map(f => [id, f]));
+  console.log(`\n${n(mine.length)} THING(S) THE BODY IS BETTER OFF FOR\n`);
+  for (const [id, f] of mine) console.log(`  ${id.padEnd(24)} ${f.route.padEnd(11)} ${f.onset.padEnd(12)} -> ${f.outcome}`);
+  console.log(`\n  An element with only a harm row is not necessarily only harmful —\n  it may just be half-written. ${n(Object.entries(E.effects).filter(([, l]) => l.every(f => f.valence === 'harm')).length)} are harm-only today.\n`);
+  process.exit(0);
+}
 if (mode === '--missing') {
   console.log(`\n${n(owed.length)} ELEMENT(S) CARRY A CAUTION AND HAVE NO EFFECT YET\n`);
   for (let i = 0; i < owed.length; i += 4) console.log('  ' + owed.slice(i, i + 4).map(x => x.padEnd(26)).join('').trimEnd());
@@ -101,24 +124,31 @@ if (mode === '--missing') {
   process.exit(0);
 }
 if (mode && ROUTES.includes(mode)) {
-  const mine = Object.entries(E.effects).filter(([, f]) => f.route === mode);
+  const mine = Object.entries(E.effects).flatMap(([id, l]) => l.filter(f => f.route === mode).map(f => [id, f]));
   console.log(`\n${n(mine.length)} VIA "${mode}" — ${E.$routes[mode]}\n`);
-  for (const [id, f] of mine) console.log(`  ${id.padEnd(24)} ${f.onset.padEnd(12)} -> ${f.outcome}`);
+  for (const [id, f] of mine) console.log(`  ${id.padEnd(24)} ${f.valence.padEnd(8)} ${f.onset.padEnd(12)} -> ${f.outcome}`);
   console.log();
   process.exit(0);
 }
 
 console.log(`\nWHAT AN ELEMENT DOES TO A PERSON\n`);
-const byRoute = {}, byTier = {};
-for (const f of Object.values(E.effects)) {
+const all = Object.values(E.effects).flat();
+const byRoute = {}, byTier = {}, byVal = {};
+for (const f of all) {
   byRoute[f.route] = (byRoute[f.route] || 0) + 1;
   byTier[f.onset] = (byTier[f.onset] || 0) + 1;
+  byVal[f.valence] = (byVal[f.valence] || 0) + 1;
 }
 for (const r of ROUTES) console.log(`  ${r.padEnd(12)} ${String(byRoute[r] || 0).padStart(4)}   ${E.$routes[r]}`);
 console.log();
 for (const t of TIERS) console.log(`  ${t.padEnd(12)} ${String(byTier[t] || 0).padStart(4)}`);
-console.log(`\n  ${n(Object.keys(E.effects).length)} effect(s) written, of ${n(cautioned.size)} elements that carry a caution.`);
+console.log();
+for (const v of VALENCE) console.log(`  ${v.padEnd(12)} ${String(byVal[v] || 0).padStart(4)}   ${E.$valence[v]}`);
+const both = Object.entries(E.effects).filter(([, l]) => new Set(l.map(f => f.valence)).size > 1);
+console.log(`\n  ${n(all.length)} effect(s) across ${n(Object.keys(E.effects).length)} element(s); ${n(both.length)} carry both sides.`);
+console.log(`  ${n(cautioned.size)} elements carry a caution.`);
 console.log(`  ${n(Object.keys(E.verbs || {}).length)} of ${n(verbIds.size)} verb(s) do something to a body.`);
+console.log(`  node tools/effects.mjs --benefits  the other side`);
 console.log(`  node tools/effects.mjs --missing   the rest`);
 
 if (errors.length) {

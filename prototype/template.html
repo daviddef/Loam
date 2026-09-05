@@ -1828,6 +1828,17 @@ __CATEGORY_CSS__
   }
   .rdcase .rr.acute{border-color:var(--orange);color:var(--orange)}
   .rdcase p{margin:5px 0 0;font:400 11.5px/1.5 var(--face-name);color:var(--ink)}
+  /* The other half of the answer. --avocado is a measured Munsell chip like
+     every other colour here, so "good for you" is not a new palette, it is the
+     plant green the corpus already uses. */
+  .rdcase.good{border-color:color-mix(in srgb,var(--avocado) 55%,var(--line))}
+  .rdcase .vv{
+    font:400 9.5px/1 var(--face-data);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .rdcase.good .vv{color:var(--avocado);font-weight:700}
+  .rdcase.good .rr{border-color:color-mix(in srgb,var(--avocado) 45%,var(--line))}
+  .rdcase.good .rr.acute{border-color:var(--avocado);color:var(--avocado)}
   .rdcase .why{color:var(--ink-soft)}
   .rdcase .clock{
     margin-top:6px;padding:6px 8px;border-radius:8px;
@@ -7834,23 +7845,21 @@ const rdName = (x) => x.kind === 'verb'
  * how much is written down, and null when the honest answer is nothing.
  */
 function rdResolve(id, kind) {
-  if (kind === 'verb') {
-    const f = (EFFECTS.verbs || {})[id];
-    return f ? { ...f, source: 'verb' } : null;
-  }
-  const f = (EFFECTS.effects || {})[id];
-  if (f) return { ...f, source: 'effect' };
+  const rows = (v) => (Array.isArray(v) ? v : v ? [v] : []);
+  if (kind === 'verb') return rows((EFFECTS.verbs || {})[id]).map(f => ({ ...f, source: 'verb' }));
+  const own = rows((EFFECTS.effects || {})[id]).map(f => ({ ...f, source: 'effect' }));
+  if (own.length) return own;
   // Second source, and free: 201 recipes already take a human as an input, and
   // the ones whose output is a disease are exactly this question asked in the
   // recipe graph. They carry no route — the recipe never had that axis — so
   // the body stays dark and the pathogen's own transmission line stands in.
-  if (id === 'human') return null;
+  if (id === 'human') return [];
   const r = DATA.recipes.find(x => (x.in || []).length === 2 && x.in.includes('human')
             && x.in.includes(id) && (byId[x.out]?.tags || []).includes('medicine'));
-  if (!r) return null;
-  return { source: 'infection', route: null, onset: null, outcome: r.out,
-           mechanism: r.why, src: r.src,
-           transmission: (PATHOGENS[id] || {}).transmission || null };
+  if (!r) return [];
+  return [{ source: 'infection', valence: 'harm', route: null, onset: null, outcome: r.out,
+            mechanism: r.why, src: r.src,
+            transmission: (PATHOGENS[id] || {}).transmission || null }];
 }
 
 /** True when (x, y) is over the body. Rect rather than elementFromPoint: the
@@ -7888,31 +7897,38 @@ function rdCarry(id, x, y) {
  *  top rather than being counted twice — one asbestos is the fact. */
 function ragdollDrop(id, kind) {
   rdOver(false);
-  const f = rdResolve(id, kind);
+  const list = rdResolve(id, kind);
   ragdoll = ragdoll.filter(x => !(x.id === id && x.kind === kind));
   ragdoll.push({ id, kind });
   if (ragdoll.length > 24) ragdoll.shift();
   save();
   if (asideTab !== 'ragdoll') setAsideTab('ragdoll');
-  renderAsideRagdoll(f ? f.route : null);
-  if (!f) { sfx.nope(); return; }
+  renderAsideRagdoll([...new Set(list.map(f => f.route).filter(Boolean))]);
+  if (!list.length) { sfx.nope(); return; }
   // Force moves a body — that much is honest physics, and it is the only thing
-  // that touches the ragdoll. Anything chemical, and anything cumulative,
-  // leaves it standing there perfectly well, which is the point.
-  // Units are world-units per frame, and the body is 3.5 tall — a jolt, not a
-  // launch. The first attempt used 9 and threw the ragdoll out of the pane.
-  const shove = RD_LIT[f.route]?.shove;
-  if (shove && f.onset !== 'cumulative') rdShove(shove[0], shove[1]);
-  else if (f.route === 'thermal' && f.onset !== 'cumulative') rdShove(0, -0.05);
+  // that touches the ragdoll. Anything chemical, anything cumulative, and
+  // anything the body is BETTER off for leaves it standing there.
+  for (const f of list) {
+    if (f.valence !== 'harm' || f.onset === 'cumulative') continue;
+    // Units are world-units per frame, and the body is 3.5 tall — a jolt, not
+    // a launch. The first attempt used 9 and threw it out of the pane.
+    const shove = RD_LIT[f.route]?.shove;
+    if (shove) rdShove(shove[0], shove[1]);
+    else if (f.route === 'thermal') rdShove(0, -0.05);
+  }
   // An outcome is an ordinary element of this corpus, and reaching it this way
-  // is as sourced as reaching it by recipe — so it counts as found.
-  if (f.outcome && byId[f.outcome] && !found.has(f.outcome)) {
-    found.add(f.outcome); seen.add(f.outcome); save(); renderShelf();
-    sfx.discover();
-    toast(`${nameOf(byId[f.outcome])} added to your shelf`);
+  // is as sourced as reaching it by recipe — so it counts as found. So is the
+  // deficiency disease a food keeps away: scurvy is a card like any other.
+  const won = [];
+  for (const f of list) for (const out of [f.outcome, f.prevents]) {
+    if (out && byId[out] && !found.has(out)) { found.add(out); seen.add(out); won.push(out); }
+  }
+  if (won.length) {
+    save(); renderShelf(); sfx.discover();
+    toast(won.length === 1 ? `${nameOf(byId[won[0]])} added to your shelf`
+                           : `${won.length} things added to your shelf`);
   } else sfx.pick();
 }
-
 
 /* ── the ragdoll itself ────────────────────────────────────────────────────
  * A Verlet solver, ported from the ragdoll physics game's own — same fifteen
@@ -8023,7 +8039,13 @@ function rdDraw() {
   const X = (x) => ox + x * sc, Y = (y) => oy - y * sc;
   const P = (n) => RD.parts[RD.ix[n]];
 
-  const lit = RD.litT > 0 && RD.lit ? (RD_LIT[RD.lit] || {}) : {};
+  // Several routes can be lit at once: a thing that is both good and bad for a
+  // body often does both by the same route, and sometimes by two.
+  const lit = { at: [] };
+  if (RD.litT > 0) for (const r of RD.lit || []) {
+    const L = RD_LIT[r]; if (!L) continue;
+    lit.at.push(...(L.at || [])); lit.skin ||= L.skin; lit.halo ||= L.halo;
+  }
 
   if (lit.halo) {
     ctx.strokeStyle = hot; ctx.lineWidth = 2; ctx.setLineDash([5, 8]);
@@ -8109,40 +8131,49 @@ function rdPointer(ev, phase) {
   } else if (phase === 'up') RD.grab = null;
 }
 
-function renderAsideRagdoll(litRoute) {
+function renderAsideRagdoll(litRoutes) {
   const pane = document.getElementById('asideRagdoll');
   if (!pane) return;
   const shown = [...ragdoll].reverse();
   const cases = shown.map(x => {
-    const f = rdResolve(x.id, x.kind);
+    const list = rdResolve(x.id, x.kind);
     const who = rdName(x);
-    if (!f) return `<div class="rdcase none"><h3><b>${who}</b></h3>
-      <p class="why">Nothing is on record for this one. The body does not
-      pretend — an effect is written down or it is not.</p></div>`;
-    const out = byId[f.outcome];
-    const routeChip = f.route
-      ? `<span class="rr ${f.onset === 'acute' ? 'acute' : ''}">${f.route}</span>` : '';
-    const onsetChip = f.onset ? `<span class="rr">${f.onset}</span>` : '';
-    // The one thing a damage simulation cannot do. Asbestos on a body does
-    // nothing today, and showing a wound for it would be the lie.
-    const clock = f.onset === 'cumulative'
-      ? `<div class="clock">Nothing happens today.
-         ${f.latency ? `Latency <b>${f.latency}</b>.` : 'This one is counted in years, not seconds.'}</div>` : '';
-    const road = f.route && EFFECTS.routes[f.route]
-      ? `<p class="why">${f.route.replace(/^./, c => c.toUpperCase())}: ${EFFECTS.routes[f.route]}.</p>` : '';
-    const howIn = f.source === 'infection'
-      ? `<p class="why">${f.transmission ? `Gets in by ${f.transmission}.`
-          : 'The corpus records the outcome, not the route.'}</p>` : '';
-    const fam = out ? familyOf(out) : null;
-    const card = out
-      ? `<div class="shelf"><span class="chip fam-${fam.id}" data-fam="${fam.id}"
-           data-spawn="${f.outcome}">${chipHTML(out)}</span></div>` : '';
-    return `<div class="rdcase">
-      <h3><b>${who}</b>${routeChip}${onsetChip}</h3>
-      ${card}${clock}
-      <p>${f.mechanism}</p>${road}${howIn}
-      <a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>
-    </div>`;
+    if (!list.length) return `<div class="rdcase none"><h3><b>${who}</b></h3>
+      <p class="why">Nothing is on record for this one, either way. The body
+      does not pretend — an effect is written down or it is not.</p></div>`;
+    // Good news first when a thing is both. Sun makes vitamin D and melanoma
+    // out of the same photons, and neither card is the whole answer.
+    const rows = [...list].sort((a, b) =>
+      (a.valence === 'benefit' ? 0 : 1) - (b.valence === 'benefit' ? 0 : 1));
+    return rows.map((f, k) => {
+      const good = f.valence === 'benefit';
+      const out = byId[f.outcome];
+      const routeChip = f.route
+        ? `<span class="rr ${f.onset === 'acute' ? 'acute' : ''}">${f.route}</span>` : '';
+      const onsetChip = f.onset ? `<span class="rr">${f.onset}</span>` : '';
+      // The one thing a damage simulation cannot do. Asbestos on a body does
+      // nothing today, and showing a wound for it would be the lie.
+      const clock = f.onset === 'cumulative' && !good
+        ? `<div class="clock">Nothing happens today.
+           ${f.latency ? `Latency <b>${f.latency}</b>.` : 'This one is counted in years, not seconds.'}</div>` : '';
+      const road = f.route && EFFECTS.routes[f.route]
+        ? `<p class="why">${f.route.replace(/^./, c => c.toUpperCase())}: ${EFFECTS.routes[f.route]}.</p>` : '';
+      const howIn = f.source === 'infection'
+        ? `<p class="why">${f.transmission ? `Gets in by ${f.transmission}.`
+            : 'The corpus records the outcome, not the route.'}</p>` : '';
+      const spared = f.prevents && byId[f.prevents]
+        ? `<p class="why">Keeps away <b>${nameOf(byId[f.prevents])}</b>.</p>` : '';
+      const fam = out ? familyOf(out) : null;
+      const card = out
+        ? `<div class="shelf"><span class="chip fam-${fam.id}" data-fam="${fam.id}"
+             data-spawn="${f.outcome}">${chipHTML(out)}</span></div>` : '';
+      return `<div class="rdcase${good ? ' good' : ''}">
+        <h3>${k === 0 ? `<b>${who}</b>` : ''}<span class="vv">${good ? 'good for you' : 'harm'}</span>${routeChip}${onsetChip}</h3>
+        ${card}${clock}
+        <p>${f.mechanism}</p>${spared}${road}${howIn}
+        <a class="src" href="${f.src}" target="_blank" rel="noopener">Source ↗</a>
+      </div>`;
+    }).join('');
   }).join('');
 
   pane.innerHTML = `
@@ -8151,8 +8182,9 @@ function renderAsideRagdoll(litRoute) {
       <div id="rdRoute"></div>
     </div>
     <p id="rdSay">Drag anything here — a card from the bench, or a tool from
-      the tray. The body lights the way in, which is the fact that matters:
-      the same thing is inert on skin and dangerous in the air.</p>
+      the tray. The body lights the way in, and answers both ways: what a thing
+      does <em>for</em> a person as well as <em>to</em> one. Sun is both, out of
+      the same photons.</p>
     <div id="rdBar">
       <input id="rdQ" class="search sm" placeholder="…or name it" autocomplete="off">
       <button id="rdClear" title="Start again with a fresh body">New body</button>
@@ -8160,10 +8192,11 @@ function renderAsideRagdoll(litRoute) {
     <div class="rdlog">${cases}</div>`;
 
   rdStart();
-  if (litRoute) {
-    RD.lit = litRoute; RD.litT = 6;
+  const routes = (litRoutes || []).filter(Boolean);
+  if (routes.length) {
+    RD.lit = routes; RD.litT = 6;
     const say = document.getElementById('rdRoute');
-    if (say) say.textContent = litRoute;
+    if (say) say.textContent = routes.join(' · ');
   } else RD.lit = null;
   const cv = document.getElementById('rdCanvas');
   cv.onpointerdown = (ev) => { ev.preventDefault(); rdPointer(ev, 'down'); };

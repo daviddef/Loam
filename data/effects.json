@@ -7,8 +7,15 @@
     "onset uses the same four tiers as data/cautions.json — acute, contact, conditional, cumulative — because that vocabulary already existed and already fits. cumulative is the one a damage simulation cannot do: a carcinogen does nothing visible on contact, and the honest canvas shows a clock rather than a wound.",
     "carcinogen: true is for IARC Group 1 only. Nothing weaker gets the word.",
     "every effect carries a src, like every other claim in this corpus.",
-    "a verb is not an element, so verbs live in their own block. The Ragdoll has to answer smother the same way it answers methane — the brief asked for it in those words — and the five that act on a body get the same route, onset, mechanism and source as any substance."
+    "a verb is not an element, so verbs live in their own block. The Ragdoll has to answer smother the same way it answers methane — the brief asked for it in those words — and the five that act on a body get the same route, onset, mechanism and source as any substance.",
+    "an element carries a LIST of effects, not one, because the same thing is routinely both. Sun makes vitamin D in the skin and melanoma in the same skin, by the same route, from the same photons; salt is required and salt raises blood pressure. A field that could only hold the harm was a hazard list wearing a body's clothes, and it made the corpus look as though nothing on it was good for anyone.",
+    "valence says which side an entry is on, because a machine cannot read it off the outcome and the canvas has to colour it. carcinogen is meaningless on a benefit and the gate rejects it there.",
+    "prevents is optional and names the deficiency disease this thing keeps away — an element like any other, so scurvy, rickets and goitre are all cards you can already open. outcome stays 'what the body gets'; prevents is 'what it is spared'."
   ],
+  "$valence": {
+    "harm": "the body is worse off for the encounter",
+    "benefit": "the body is better off for it — a nutrient it cannot make, a deficiency disease it prevents, a function it enables"
+  },
   "$routes": {
     "inhaled": "reaches the blood through the lung, which has the surface area of a tennis court and no barrier worth the name",
     "ingested": "goes through the gut and then the liver, which processes it before the rest of the body sees it",
@@ -19,308 +26,807 @@
     "mechanical": "does its damage by force rather than chemistry",
     "thermal": "damages by temperature, in either direction"
   },
-  "effects": {
-    "asbestos": {
-      "route": "inhaled",
-      "outcome": "mesothelioma",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "The fibres split lengthwise rather than across, so they are narrow enough to reach the deep lung and long enough that a macrophage cannot engulf one. They stay, and the irritation continues for decades. In a wall it is inert; the hazard is entirely airborne.",
-      "src": "https://en.wikipedia.org/wiki/Asbestos",
-      "carcinogen": true,
-      "iarc": 1,
-      "latency": "20 to 50 years"
-    },
-    "methane": {
-      "route": "inhaled",
-      "outcome": "asphyxia",
-      "onset": "acute",
-      "reversible": true,
-      "mechanism": "It is not toxic. It displaces oxygen, and the urge to breathe answers carbon dioxide rather than oxygen — so in a methane-rich space the CO2 still leaves normally and there is no warning at all before consciousness goes.",
-      "src": "https://en.wikipedia.org/wiki/Methane"
-    },
-    "carbon_monoxide": {
-      "route": "inhaled",
-      "outcome": "hypoxia",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "It binds haemoglobin far more tightly than oxygen does and will not let go, so the blood is still circulating and no longer carrying. It is odourless, and the early symptoms are a headache and confusion, which is not a combination that makes people leave a building.",
-      "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
-    },
-    "lye": {
-      "route": "contact",
-      "outcome": "chemical_burn",
-      "onset": "contact",
-      "reversible": false,
-      "mechanism": "It saponifies the fat in skin, so it keeps going deeper for as long as it is present rather than stopping when contact ends. That is why an alkali burn is worse than an acid one of the same strength, and why it needs long irrigation rather than wiping.",
-      "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
-    },
-    "sulfuric_acid": {
-      "route": "contact",
-      "outcome": "chemical_burn",
-      "onset": "contact",
-      "reversible": false,
-      "mechanism": "It dehydrates tissue rather than simply burning it, and the reaction gives off heat of its own, so a chemical burn becomes a thermal one at the same time.",
-      "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
-    },
-    "lead": {
-      "route": "ingested",
-      "outcome": "lead_poisoning",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "It is taken up wherever the body wants calcium — into bone, and into the nervous system — because the two ions are similar enough to be confused. It accumulates in bone over years and the damage to a developing nervous system does not reverse.",
-      "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
-    },
-    "mercury": {
-      "route": "inhaled",
-      "outcome": "neurotoxin",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "Elemental mercury vapour crosses into the brain, where it is oxidised and then cannot cross back out. The metal is nearly harmless swallowed and dangerous breathed, which is the clearest case in this file of route deciding everything.",
-      "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
-    },
-    "silica": {
-      "route": "inhaled",
-      "outcome": "silicosis",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "Particles small enough to reach the alveoli are engulfed by macrophages, which the crystalline surface then destroys, releasing the particle again with inflammatory signals. The cycle repeats and the scarring it leaves does not resolve.",
-      "src": "https://en.wikipedia.org/wiki/Silicosis",
-      "carcinogen": true,
-      "iarc": 1,
-      "latency": "10 to 30 years"
-    },
-    "clostridium_botulinum": {
-      "route": "ingested",
-      "outcome": "poisoning",
-      "onset": "conditional",
-      "reversible": false,
-      "mechanism": "It grows only where there is no oxygen, little acid and warmth, and what it produces then blocks the signal from nerve to muscle. The conditions that suit it are exactly the ones that home preserving creates, which is why the hazard sits with the method rather than the food.",
-      "src": "https://en.wikipedia.org/wiki/Botulism"
-    },
-    "nitrite": {
-      "route": "ingested",
-      "outcome": "methaemoglobinaemia",
-      "onset": "conditional",
-      "reversible": true,
-      "mechanism": "It oxidises the iron in haemoglobin from ferrous to ferric, and ferric haem does not bind oxygen. The blood goes brown and a pulse oximeter reads normally, because it is measuring the wrong thing.",
-      "src": "https://en.wikipedia.org/wiki/Methemoglobinemia"
-    },
-    "nitrogen": {
-      "route": "inhaled",
-      "outcome": "narcosis",
-      "onset": "conditional",
-      "reversible": true,
-      "mechanism": "Under pressure it dissolves into the lipid of nerve membranes and interferes with signalling, much as alcohol does — including the part where judgement goes before the diver notices. It reverses completely on ascent.",
-      "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
-    },
-    "ice": {
-      "route": "contact",
-      "outcome": "frostbite",
-      "onset": "contact",
-      "reversible": false,
-      "mechanism": "The body constricts blood flow to the periphery to protect the core, so the extremities freeze while losing their own supply. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
-      "src": "https://en.wikipedia.org/wiki/Frostbite"
-    },
-    "steam": {
-      "route": "thermal",
-      "outcome": "thermal_burn",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "It carries its latent heat into the skin as it condenses, delivering far more energy than dry air at the same temperature — which is why a steam burn is deep and a hot-air burn of the same reading often is not.",
-      "src": "https://en.wikipedia.org/wiki/Burn"
-    },
-    "fire": {
-      "route": "thermal",
-      "outcome": "thermal_burn",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "Protein denatures above about 44 °C given long enough, so depth is temperature and time together rather than temperature alone. A low heat held against skin does what a brief high one does.",
-      "src": "https://en.wikipedia.org/wiki/Burn"
-    },
-    "electricity": {
-      "route": "contact",
-      "outcome": "electrocution",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot, and wet skin drops resistance by an order of magnitude.",
-      "src": "https://en.wikipedia.org/wiki/Electrical_injury"
-    },
-    "gamma_ray": {
-      "route": "radiation",
-      "outcome": "radiation_sickness",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "It ionises as it passes, damaging DNA, and the tissues that replace themselves fastest show it first — marrow, gut lining, hair follicles. There is often a latent period of apparent recovery before the marrow fails.",
-      "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
-    },
-    "ultraviolet": {
-      "route": "radiation",
-      "outcome": "carcinogen",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "It has enough energy to fuse adjacent thymine bases in DNA into a dimer the cell must cut out and rebuild. Most are repaired; the damage that accumulates is the small fraction that is not.",
-      "src": "https://en.wikipedia.org/wiki/Ultraviolet",
-      "carcinogen": true,
-      "iarc": 1,
-      "latency": "decades"
-    },
-    "water": {
-      "route": "inhaled",
-      "outcome": "drowning",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling. It is also nearly silent, because breathing takes priority over speech.",
-      "src": "https://en.wikipedia.org/wiki/Drowning"
-    },
-    "lion": {
-      "route": "mechanical",
-      "outcome": "blunt_trauma",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "A large predator does its damage by force and by tearing rather than by chemistry, and the dangerous injuries are the ones under intact skin.",
-      "src": "https://en.wikipedia.org/wiki/Lion"
-    },
-    "snake": {
-      "route": "injected",
-      "outcome": "neurotoxin",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "Venom is injected rather than eaten, which is the whole distinction from a poison — the gut would destroy most of it. Neurotoxic venoms block the signal between nerve and muscle, which is why they act in minutes.",
-      "src": "https://en.wikipedia.org/wiki/Snake_venom"
-    },
-    "wasp": {
-      "route": "injected",
-      "outcome": "allergic_reaction",
-      "onset": "conditional",
-      "reversible": true,
-      "mechanism": "The sting itself is minor. The danger is sensitisation: an earlier sting that caused no symptoms taught the immune system to recognise it, and the next one provokes a response out of all proportion.",
-      "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
-    },
-    "peanut": {
-      "route": "ingested",
-      "outcome": "allergic_reaction",
-      "onset": "conditional",
-      "reversible": true,
-      "mechanism": "IgE bound to mast cells recognises the protein and the cells degranulate. Nothing about the peanut is harmful; the harm is entirely the response, which is why the amount needed can be a trace.",
-      "src": "https://en.wikipedia.org/wiki/Peanut_allergy"
-    },
-    "vibrio_cholerae": {
-      "route": "ingested",
-      "outcome": "cholera",
-      "onset": "conditional",
-      "reversible": false,
-      "mechanism": "Its toxin locks the gut's chloride channels open, so water follows the salt out of the body faster than it can be replaced. Death is from dehydration rather than from the organism, which is why rehydration alone saves most cases.",
-      "src": "https://en.wikipedia.org/wiki/Cholera"
-    },
-    "rabies_virus": {
-      "route": "injected",
-      "outcome": "rabies",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "It travels up peripheral nerves to the brain rather than through the blood, which is slow — and is why a vaccine given after exposure can still get there first.",
-      "src": "https://en.wikipedia.org/wiki/Rabies"
-    },
-    "toxoplasma_gondii": {
-      "route": "ingested",
-      "outcome": "infection",
-      "onset": "conditional",
-      "reversible": true,
-      "mechanism": "Usually unnoticed in a healthy adult. It matters in pregnancy and in immunosuppression, which is the pattern for a whole class of organisms that are only conditionally dangerous.",
-      "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
-    },
-    "ethanol": {
-      "route": "ingested",
-      "outcome": "hepatotoxin",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "The liver converts it to acetaldehyde and then to acetate, and the intermediate is the damaging one. Sustained exposure scars the tissue doing the processing.",
-      "src": "https://en.wikipedia.org/wiki/Alcoholic_liver_disease",
-      "carcinogen": true,
-      "iarc": 1
-    },
-    "formaldehyde": {
-      "route": "inhaled",
-      "outcome": "irritant",
-      "onset": "contact",
-      "reversible": true,
-      "mechanism": "It cross-links protein on contact, which is what makes it a fixative and what makes it an irritant to the airway lining at low concentrations.",
-      "src": "https://en.wikipedia.org/wiki/Formaldehyde",
-      "carcinogen": true,
-      "iarc": 1
-    },
-    "benzene": {
-      "route": "inhaled",
-      "outcome": "carcinogen",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "It is metabolised into reactive intermediates that damage bone marrow, where blood cells are made. The association with leukaemia is why it was removed from consumer products.",
-      "src": "https://en.wikipedia.org/wiki/Benzene",
-      "carcinogen": true,
-      "iarc": 1,
-      "latency": "years to decades"
-    },
-    "cyanide": {
-      "route": "inhaled",
-      "outcome": "hypoxia",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "It stops the enzyme at the end of the respiratory chain, so cells cannot use oxygen even though the blood is full of it. The person is hypoxic with red venous blood, which is the diagnostic oddity.",
-      "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
-    },
-    "tobacco_smoke": {
-      "route": "inhaled",
-      "outcome": "carcinogen",
-      "onset": "cumulative",
-      "reversible": false,
-      "mechanism": "It carries dozens of established carcinogens into direct contact with the airway lining, repeatedly, over years. The latency is what made the association hard to see and easy to deny.",
-      "src": "https://en.wikipedia.org/wiki/Health_effects_of_tobacco",
-      "carcinogen": true,
-      "iarc": 1,
-      "latency": "20 to 40 years"
-    }
-  },
   "$verbs_comment": "The verbs that do something to a body. Keys are ids from data/verbs.json, not elements. wait, ferment and blow are absent on purpose: none of them does anything to a person on the timescale the canvas shows.",
+  "effects": {
+    "asbestos": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "mesothelioma",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "The fibres split lengthwise rather than across, so they are narrow enough to reach the deep lung and long enough that a macrophage cannot engulf one. They stay, and the irritation continues for decades. In a wall it is inert; the hazard is entirely airborne.",
+        "src": "https://en.wikipedia.org/wiki/Asbestos",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "20 to 50 years"
+      }
+    ],
+    "methane": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "It is not toxic. It displaces oxygen, and the urge to breathe answers carbon dioxide rather than oxygen — so in a methane-rich space the CO2 still leaves normally and there is no warning at all before consciousness goes.",
+        "src": "https://en.wikipedia.org/wiki/Methane"
+      }
+    ],
+    "carbon_monoxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hypoxia",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It binds haemoglobin far more tightly than oxygen does and will not let go, so the blood is still circulating and no longer carrying. It is odourless, and the early symptoms are a headache and confusion, which is not a combination that makes people leave a building.",
+        "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
+      }
+    ],
+    "lye": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It saponifies the fat in skin, so it keeps going deeper for as long as it is present rather than stopping when contact ends. That is why an alkali burn is worse than an acid one of the same strength, and why it needs long irrigation rather than wiping.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+      }
+    ],
+    "sulfuric_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It dehydrates tissue rather than simply burning it, and the reaction gives off heat of its own, so a chemical burn becomes a thermal one at the same time.",
+        "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
+      }
+    ],
+    "lead": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "lead_poisoning",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It is taken up wherever the body wants calcium — into bone, and into the nervous system — because the two ions are similar enough to be confused. It accumulates in bone over years and the damage to a developing nervous system does not reverse.",
+        "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
+      }
+    ],
+    "mercury": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "Elemental mercury vapour crosses into the brain, where it is oxidised and then cannot cross back out. The metal is nearly harmless swallowed and dangerous breathed, which is the clearest case in this file of route deciding everything.",
+        "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
+      }
+    ],
+    "silica": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "Particles small enough to reach the alveoli are engulfed by macrophages, which the crystalline surface then destroys, releasing the particle again with inflammatory signals. The cycle repeats and the scarring it leaves does not resolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "10 to 30 years"
+      }
+    ],
+    "clostridium_botulinum": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "It grows only where there is no oxygen, little acid and warmth, and what it produces then blocks the signal from nerve to muscle. The conditions that suit it are exactly the ones that home preserving creates, which is why the hazard sits with the method rather than the food.",
+        "src": "https://en.wikipedia.org/wiki/Botulism"
+      }
+    ],
+    "nitrite": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "methaemoglobinaemia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It oxidises the iron in haemoglobin from ferrous to ferric, and ferric haem does not bind oxygen. The blood goes brown and a pulse oximeter reads normally, because it is measuring the wrong thing.",
+        "src": "https://en.wikipedia.org/wiki/Methemoglobinemia"
+      }
+    ],
+    "nitrogen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "narcosis",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Under pressure it dissolves into the lipid of nerve membranes and interferes with signalling, much as alcohol does — including the part where judgement goes before the diver notices. It reverses completely on ascent.",
+        "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
+      }
+    ],
+    "ice": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "frostbite",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "The body constricts blood flow to the periphery to protect the core, so the extremities freeze while losing their own supply. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "steam": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It carries its latent heat into the skin as it condenses, delivering far more energy than dry air at the same temperature — which is why a steam burn is deep and a hot-air burn of the same reading often is not.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "fire": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Protein denatures above about 44 °C given long enough, so depth is temperature and time together rather than temperature alone. A low heat held against skin does what a brief high one does.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "electricity": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "electrocution",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot, and wet skin drops resistance by an order of magnitude.",
+        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+      }
+    ],
+    "gamma_ray": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "radiation_sickness",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It ionises as it passes, damaging DNA, and the tissues that replace themselves fastest show it first — marrow, gut lining, hair follicles. There is often a latent period of apparent recovery before the marrow fails.",
+        "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
+      }
+    ],
+    "ultraviolet": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It has enough energy to fuse adjacent thymine bases in DNA into a dimer the cell must cut out and rebuild. Most are repaired; the damage that accumulates is the small fraction that is not.",
+        "src": "https://en.wikipedia.org/wiki/Ultraviolet",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "decades"
+      }
+    ],
+    "water": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "drowning",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling. It is also nearly silent, because breathing takes priority over speech.",
+        "src": "https://en.wikipedia.org/wiki/Drowning"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "blood",
+        "onset": "acute",
+        "prevents": "dehydration",
+        "mechanism": "Plasma is mostly water, and the volume of it decides the pressure the heart is working against. Thirst is triggered by the concentration of the blood rather than by its volume, which is why it lags behind a real deficit.",
+        "src": "https://en.wikipedia.org/wiki/Body_water"
+      }
+    ],
+    "lion": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "A large predator does its damage by force and by tearing rather than by chemistry, and the dangerous injuries are the ones under intact skin.",
+        "src": "https://en.wikipedia.org/wiki/Lion"
+      }
+    ],
+    "snake": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Venom is injected rather than eaten, which is the whole distinction from a poison — the gut would destroy most of it. Neurotoxic venoms block the signal between nerve and muscle, which is why they act in minutes.",
+        "src": "https://en.wikipedia.org/wiki/Snake_venom"
+      }
+    ],
+    "wasp": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "The sting itself is minor. The danger is sensitisation: an earlier sting that caused no symptoms taught the immune system to recognise it, and the next one provokes a response out of all proportion.",
+        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+      }
+    ],
+    "peanut": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "IgE bound to mast cells recognises the protein and the cells degranulate. Nothing about the peanut is harmful; the harm is entirely the response, which is why the amount needed can be a trace.",
+        "src": "https://en.wikipedia.org/wiki/Peanut_allergy"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Around a quarter protein by weight, with more than most nuts, and the fat is mostly monounsaturated. For the great majority of people this is food; the immune reaction on the other row is the exception, not the rule.",
+        "src": "https://en.wikipedia.org/wiki/Peanut"
+      }
+    ],
+    "vibrio_cholerae": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cholera",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "Its toxin locks the gut's chloride channels open, so water follows the salt out of the body faster than it can be replaced. Death is from dehydration rather than from the organism, which is why rehydration alone saves most cases.",
+        "src": "https://en.wikipedia.org/wiki/Cholera"
+      }
+    ],
+    "rabies_virus": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "rabies",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It travels up peripheral nerves to the brain rather than through the blood, which is slow — and is why a vaccine given after exposure can still get there first.",
+        "src": "https://en.wikipedia.org/wiki/Rabies"
+      }
+    ],
+    "toxoplasma_gondii": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Usually unnoticed in a healthy adult. It matters in pregnancy and in immunosuppression, which is the pattern for a whole class of organisms that are only conditionally dangerous.",
+        "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
+      }
+    ],
+    "ethanol": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "The liver converts it to acetaldehyde and then to acetate, and the intermediate is the damaging one. Sustained exposure scars the tissue doing the processing.",
+        "src": "https://en.wikipedia.org/wiki/Alcoholic_liver_disease",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "formaldehyde": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "contact",
+        "reversible": true,
+        "mechanism": "It cross-links protein on contact, which is what makes it a fixative and what makes it an irritant to the airway lining at low concentrations.",
+        "src": "https://en.wikipedia.org/wiki/Formaldehyde",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "benzene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It is metabolised into reactive intermediates that damage bone marrow, where blood cells are made. The association with leukaemia is why it was removed from consumer products.",
+        "src": "https://en.wikipedia.org/wiki/Benzene",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "years to decades"
+      }
+    ],
+    "cyanide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hypoxia",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It stops the enzyme at the end of the respiratory chain, so cells cannot use oxygen even though the blood is full of it. The person is hypoxic with red venous blood, which is the diagnostic oddity.",
+        "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
+      }
+    ],
+    "tobacco_smoke": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It carries dozens of established carcinogens into direct contact with the airway lining, repeatedly, over years. The latency is what made the association hard to see and easy to deny.",
+        "src": "https://en.wikipedia.org/wiki/Health_effects_of_tobacco",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "20 to 40 years"
+      }
+    ],
+    "sun": [
+      {
+        "valence": "benefit",
+        "route": "radiation",
+        "outcome": "vitamin_d",
+        "onset": "conditional",
+        "prevents": "rickets",
+        "mechanism": "UVB at the skin splits a cholesterol precursor and the body folds the pieces into a hormone it cannot get reliably from food. It is the only vitamin most people make rather than eat, which is why latitude and season show up in blood tests.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+      },
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "melanoma",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "The same wavelengths fuse adjacent bases in the DNA of skin cells into dimers. Almost all are cut out and rebuilt; melanoma grows from the small fraction that is not, in the pigment cells, and the damage counts up over a lifetime rather than resetting between summers.",
+        "src": "https://en.wikipedia.org/wiki/Melanoma",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "decades"
+      }
+    ],
+    "honey": [
+      {
+        "valence": "benefit",
+        "route": "contact",
+        "outcome": "wound_healing",
+        "onset": "conditional",
+        "mechanism": "It draws water out of the wound bed by osmosis and holds a low pH, and bee-derived glucose oxidase releases hydrogen peroxide slowly rather than all at once. Medical-grade honey dressings are a licensed treatment, not a folk remedy.",
+        "src": "https://en.wikipedia.org/wiki/Honey#Medical_use"
+      },
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "botulism",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It can carry Clostridium botulinum spores. An adult gut is too competitive for them; an infant gut under a year old is not, so the spores germinate and produce the toxin inside the child. The honey itself is unchanged — the difference is entirely the gut it lands in.",
+        "src": "https://en.wikipedia.org/wiki/Infant_botulism"
+      }
+    ],
+    "lime": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Without it the body cannot cross-link collagen, and every structure that depends on collagen slowly comes apart.",
+        "src": "https://en.wikipedia.org/wiki/Scurvy"
+      }
+    ],
+    "lemon": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "The same broken enzyme in us, the same fix. Citrus keeps its ascorbic acid well enough to survive a voyage, which is why it and not fresher food solved the problem at sea.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "orange": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Ascorbic acid is the reducing agent two enzymes need to hydroxylate collagen. Supply it and old scars stay closed; withhold it and they reopen in the order they were made.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "potato": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Not much per mouthful, but eaten in the quantities it was eaten in, enough — which is why scurvy retreated across northern Europe as the potato spread, without anyone knowing why.",
+        "src": "https://en.wikipedia.org/wiki/Potato"
+      }
+    ],
+    "broccoli": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "More ascorbic acid by weight than an orange, though boiling leaches it into the water. The vitamin is the same molecule whatever it arrives in.",
+        "src": "https://en.wikipedia.org/wiki/Broccoli"
+      }
+    ],
+    "liver": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "Retinol is stored as an ester in the liver of the animal that ate it, so eating liver delivers the finished vitamin rather than a precursor the gut has to convert. The eye spends it fastest, which is why the first sign of running short is at dusk.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_A"
+      }
+    ],
+    "carrot": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "Beta-carotene, split in the gut wall into two molecules of retinal. The conversion is regulated, which is the reason a plant source does not overshoot the way stored retinol can.",
+        "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
+      }
+    ],
+    "sweet_potato": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "The orange flesh is carotene, and varieties bred for more of it are used specifically where vitamin A deficiency blinds children.",
+        "src": "https://en.wikipedia.org/wiki/Sweet_potato"
+      }
+    ],
+    "seaweed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iodine",
+        "onset": "cumulative",
+        "prevents": "goitre",
+        "mechanism": "The thyroid needs iodine to build its hormones and has no substitute for it. Seaweed concentrates it out of seawater, which is why coastal diets rarely showed the deficiency that inland ones did.",
+        "src": "https://en.wikipedia.org/wiki/Iodine"
+      }
+    ],
+    "kelp": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iodine",
+        "onset": "cumulative",
+        "prevents": "goitre",
+        "mechanism": "Iodine was first isolated from kelp ash. The gland takes it up against a steep gradient and cannot make the hormone without it.",
+        "src": "https://en.wikipedia.org/wiki/Kelp"
+      }
+    ],
+    "salt": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "sodium",
+        "onset": "conditional",
+        "mechanism": "Every nerve impulse is a sodium gradient collapsing and being rebuilt, and the body has no way to manufacture the ion. This is why salt was worth trading across deserts.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_in_biology"
+      }
+    ],
+    "beef": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "Haem iron, already inside a porphyrin ring, which the gut takes up by a different route from plant iron and far more completely. Without enough, the marrow cannot fill red cells with haemoglobin.",
+        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
+      }
+    ],
+    "spinach": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "It does contain iron, but bound up with oxalate, so much less crosses the gut wall than the number on the label suggests. The nineteenth-century arithmetic error that made spinach famous was corrected long before the reputation was.",
+        "src": "https://en.wikipedia.org/wiki/Spinach"
+      }
+    ],
+    "lentil": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Around a quarter protein dry, and low in methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
+        "src": "https://en.wikipedia.org/wiki/Lentil"
+      }
+    ],
+    "egg": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The reference against which other proteins are scored, because the amino acid proportions are close to what a body building tissue actually asks for.",
+        "src": "https://en.wikipedia.org/wiki/Egg_as_food"
+      }
+    ],
+    "chicken": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Muscle eaten to build muscle: the filaments are broken to amino acids in the gut and reassembled to a different specification on the other side.",
+        "src": "https://en.wikipedia.org/wiki/Chicken_as_food"
+      }
+    ],
+    "fish": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Less connective tissue than land meat, so it flakes rather than needing long cooking — and the same protein arrives either way.",
+        "src": "https://en.wikipedia.org/wiki/Fish_as_food"
+      }
+    ],
+    "salmon": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_d",
+        "onset": "cumulative",
+        "prevents": "rickets",
+        "mechanism": "One of the few foods carrying useful vitamin D, which matters at latitudes where the winter sun is too low in the sky to make any in skin at all.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+      }
+    ],
+    "milk": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "calcium",
+        "onset": "cumulative",
+        "prevents": "osteoporosis",
+        "mechanism": "Calcium arrives with the lactose and the phosphate that help absorb it. Bone is dismantled and rebuilt lifelong, and the intake decides which of the two is winning.",
+        "src": "https://en.wikipedia.org/wiki/Calcium_in_biology"
+      }
+    ],
+    "cheese": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "calcium",
+        "onset": "cumulative",
+        "prevents": "osteoporosis",
+        "mechanism": "The calcium follows the curd rather than the whey, so it concentrates as the water leaves — one of the few foods where processing raises the mineral density.",
+        "src": "https://en.wikipedia.org/wiki/Cheese"
+      }
+    ],
+    "yoghurt": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "Live cultures arrive in numbers large enough that some survive the stomach. They do not settle permanently; the effect lasts about as long as the eating does.",
+        "src": "https://en.wikipedia.org/wiki/Yoghurt"
+      }
+    ],
+    "kefir": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "A wider mix of bacteria and yeasts than yoghurt, fermented from a grain of them that is reused rather than restarted.",
+        "src": "https://en.wikipedia.org/wiki/Kefir"
+      }
+    ],
+    "sauerkraut": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "Lactic acid bacteria off the leaf itself, working in brine that keeps everything else out. The souring is the preservation and the culture at once.",
+        "src": "https://en.wikipedia.org/wiki/Sauerkraut"
+      }
+    ],
+    "kimchi": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "The same lactic fermentation, at a lower temperature and over longer, with the bacteria shifting in sequence as the acidity climbs.",
+        "src": "https://en.wikipedia.org/wiki/Kimchi"
+      }
+    ],
+    "yeast": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "folate",
+        "onset": "cumulative",
+        "mechanism": "Yeast builds folate for its own DNA synthesis and carries a great deal of it. A body needs the same molecule for the same job, most urgently while a neural tube is closing.",
+        "src": "https://en.wikipedia.org/wiki/Folate"
+      }
+    ],
+    "kale": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "folate",
+        "onset": "cumulative",
+        "mechanism": "Folate is named for the leaf it was first pulled out of. It is the cofactor for moving single carbon atoms around, which is most of what building DNA consists of.",
+        "src": "https://en.wikipedia.org/wiki/Folate"
+      }
+    ],
+    "olive_oil": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "Mostly oleic acid, a single double bond that resists oxidising, and it carries tocopherol with it — a fat-soluble antioxidant that sits in cell membranes and takes the hit instead of the lipids around it.",
+        "src": "https://en.wikipedia.org/wiki/Olive_oil"
+      }
+    ],
+    "almond": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "One of the densest sources of alpha-tocopherol there is, in the fat where it is needed and stays stable.",
+        "src": "https://en.wikipedia.org/wiki/Almond"
+      }
+    ],
+    "walnut": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "Polyunsaturated fat oxidises easily, and the tocopherol packed alongside it is what keeps it intact long enough to be eaten.",
+        "src": "https://en.wikipedia.org/wiki/Walnut"
+      }
+    ],
+    "banana": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "potassium",
+        "onset": "conditional",
+        "mechanism": "Potassium is the ion inside the cell as sodium is the ion outside it, and every heartbeat depends on the difference being maintained.",
+        "src": "https://en.wikipedia.org/wiki/Potassium_in_biology"
+      }
+    ],
+    "coffee": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "acute",
+        "mechanism": "Caffeine does not supply energy. It occupies the receptors adenosine uses to report how long you have been awake, so the tiredness is not removed, only unreported — and it is still owed when the caffeine clears.",
+        "src": "https://en.wikipedia.org/wiki/Caffeine"
+      }
+    ],
+    "tea": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "acute",
+        "mechanism": "The same adenosine blockade, more slowly: theanine alongside the caffeine changes how quickly it arrives, not what it does.",
+        "src": "https://en.wikipedia.org/wiki/Tea"
+      }
+    ]
+  },
   "verbs": {
-    "smother": {
-      "route": "inhaled",
-      "outcome": "asphyxia",
-      "onset": "acute",
-      "reversible": true,
-      "mechanism": "The body has no oxygen sensor for this. Breathing is driven by the carbon dioxide in the blood, and the brain's own reserve lasts a few minutes at most, so consciousness goes from a deficit the person never felt building.",
-      "src": "https://en.wikipedia.org/wiki/Asphyxia"
-    },
-    "chill": {
-      "route": "thermal",
-      "outcome": "hypothermia",
-      "onset": "acute",
-      "reversible": true,
-      "mechanism": "Below about 35 °C the body stops keeping up. Shivering raises heat production for a while and then stops altogether; the heart's conduction slows and turns irregular, and judgement goes early — so the cold is dangerous to the person in it before it looks dangerous from outside.",
-      "src": "https://en.wikipedia.org/wiki/Hypothermia"
-    },
-    "heat": {
-      "route": "thermal",
-      "outcome": "thermal_burn",
-      "onset": "contact",
-      "reversible": false,
-      "mechanism": "Skin protein denatures at around 44 °C, and the depth of the injury follows how long the tissue stayed above that, not how hot the source was. A full-thickness burn destroys the nerve endings with the rest, which is why the worst part of a burn is the part that does not hurt.",
-      "src": "https://en.wikipedia.org/wiki/Burn"
-    },
-    "crush": {
-      "route": "mechanical",
-      "outcome": "fracture",
-      "onset": "acute",
-      "reversible": false,
-      "mechanism": "Bone fails in bending long before it fails in compression, which is why a long bone breaks across. The break is not the whole of it: muscle held under pressure releases myoglobin once the pressure comes off, and the kidneys are what fail next.",
-      "src": "https://en.wikipedia.org/wiki/Bone_fracture"
-    },
-    "cut": {
-      "route": "mechanical",
-      "outcome": "laceration",
-      "onset": "acute",
-      "reversible": true,
-      "mechanism": "Skin is under tension, so a cut gapes rather than sitting closed. Clotting starts within seconds, and a clean cut heals better than a torn one only because its edges can be brought back together with the same tissue meeting itself.",
-      "src": "https://en.wikipedia.org/wiki/Wound"
-    }
+    "smother": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "The body has no oxygen sensor for this. Breathing is driven by the carbon dioxide in the blood, and the brain's own reserve lasts a few minutes at most, so consciousness goes from a deficit the person never felt building.",
+        "src": "https://en.wikipedia.org/wiki/Asphyxia"
+      }
+    ],
+    "chill": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "Below about 35 °C the body stops keeping up. Shivering raises heat production for a while and then stops altogether; the heart's conduction slows and turns irregular, and judgement goes early — so the cold is dangerous to the person in it before it looks dangerous from outside.",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
+      }
+    ],
+    "heat": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "Skin protein denatures at around 44 °C, and the depth of the injury follows how long the tissue stayed above that, not how hot the source was. A full-thickness burn destroys the nerve endings with the rest, which is why the worst part of a burn is the part that does not hurt.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "crush": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "fracture",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Bone fails in bending long before it fails in compression, which is why a long bone breaks across. The break is not the whole of it: muscle held under pressure releases myoglobin once the pressure comes off, and the kidneys are what fail next.",
+        "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+      }
+    ],
+    "cut": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "Skin is under tension, so a cut gapes rather than sitting closed. Clotting starts within seconds, and a clean cut heals better than a torn one only because its edges can be brought back together with the same tissue meeting itself.",
+        "src": "https://en.wikipedia.org/wiki/Wound"
+      }
+    ]
   }
 }

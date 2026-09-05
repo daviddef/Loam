@@ -65,7 +65,12 @@ const rows = [
   ['Sense-checked', `**${n(hom.cleared.length + hom.watch.length)}** single-word names read; ${n(hom.watch.length)} on the watchlist`],
   ['Places', `**${n(pcov.satisfied)} / ${n(pcov.wanted)}** of a checklist that is part external, so it can disagree with us`],
   ['Parts lists', `**${n(Object.keys(needs).length)}** written`],
-  ['Effects on a body', `**${n(Object.keys(effects.effects).length)}** substances and ${n(Object.keys(effects.verbs).length)} verbs, each with a route of exposure — what the Ragdoll reads`],
+  ['Effects on a body', (() => {
+    const all = Object.values(effects.effects).flat();
+    const good = all.filter(f => f.valence === 'benefit').length;
+    const both = Object.values(effects.effects).filter(l => new Set(l.map(f => f.valence)).size > 1).length;
+    return `**${n(all.length)}** across ${n(Object.keys(effects.effects).length)} elements and ${n(Object.keys(effects.verbs).length)} verbs — ${n(good)} of them things the body is better off for, and ${n(both)} elements that are both`;
+  })()],
   ['Colours', '**28**, every one a measured Munsell chip'],
 ];
 
