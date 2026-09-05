@@ -294,6 +294,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'o_ring', 'microcontroller', 'host_plant',   // missing-list components
     'venturi', 'needle_valve', 'choke', 'guidance_computer', 'float_chamber',   // spaceflight + engine parts
     'fastener', 'additive', 'initiator', 'adhesive', 'gasket', 'bush', 'pawl', 'substrate', 'coating', 'surfactant', 'blowing_agent', 'pellet',   // components
     'static_electricity', 'circuit', 'buoyancy', 'density', 'viscosity', 'surface_tension', 'capillary_action', 'conduction', 'convection', 'reflection', 'refraction', 'resonance', 'charge', 'voltage', 'acrylic_fibre', 'spandex', 'polypropylene', 'epoxy', 'carbon_fibre', 'vinyl', 'neoprene', 'deodorant', 'moisturiser', 'painkiller', 'spinneret', 'rayon', 'kevlar',   // universe gaps 5 Sep
@@ -507,6 +508,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'prism', 'spectrometer',
     'bridge_instrument', 'welt', 'upper', 'turnout_coat', 'breathing_apparatus', 'friction_disc', 'pressure_plate', 'diaphragm_spring', 'release_bearing',   // mechanism parts
     'yoke', 'nipple', 'bob', 'clapper', 'injector', 'expansion_valve', 'impeller', 'secondary_mirror', 'essential_oil', 'fixative', 'universal_joint', 'spline',   // components
     'mount', 'capital', 'linkage', 'webbing', 'fabric', 'vent', 'ratchet',   // components
@@ -798,6 +800,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'anti_roll_bar', 'control_arm', 'brake_lever', 'thermometer', 'reflux', 'mihrab', 'thruster', 'magnetometer', 'defibrillator', 'gear_train', 'connecting_rod',   // missing-list components
     'heat_shield', 'airbag', 'air_filter', 'spacesuit',   // spaceflight + engine parts
     'combustion_chamber', 'turbopump', 'primary_mirror', 'baffle',   // components
     'pottery', 'glassmaking', 'papermaking', 'cheesemaking', 'camera',   // orphan-list subjects
@@ -1133,6 +1136,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'crumple_zone', 'still', 'iwan', 'caravanserai', 'tomb',   // missing-list components
     'rtg', 'jib', 'outrigger',   // mechanism parts
     'saturn_v', 'command_module', 'lunar_module', 'docking_port', 'airlock', 'life_support', 'robotic_arm',   // spaceflight + engine parts
     'extruder', 'counterweight', 'capstone', 'harness', 'stair',   // components

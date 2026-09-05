@@ -102561,5 +102561,215 @@
     "why": "Spring pressure pins the fabric against the feed dog, which then moves it exactly one stitch. With the foot up the cloth is free and nothing feeds — which is why a machine sews only when it is down, and why walking feet exist for layers that would otherwise shift against each other.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Presser_foot"
+  },
+  {
+    "in": [
+      "body_panel",
+      "frame"
+    ],
+    "out": "crumple_zone",
+    "why": "Injury comes from deceleration, and deceleration is speed change over distance. Folding the front of the car in a controlled way buys distance, so the same crash becomes survivable — which is why a car that looks destroyed has worked, and one that looks fine has not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Crumple_zone"
+  },
+  {
+    "in": [
+      "steel",
+      "suspension"
+    ],
+    "out": "anti_roll_bar",
+    "why": "It resists one wheel rising while the other falls, so it stiffens the car in roll without stiffening it over bumps that lift both. Balancing front against rear is the cheapest way to change whether a car understeers or oversteers.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Anti-roll_bar"
+  },
+  {
+    "in": [
+      "steel",
+      "bush"
+    ],
+    "out": "control_arm",
+    "why": "Its length and angle set camber and track change through the travel, which is why suspension geometry is drawn before anything is made. A double wishbone keeps the tyre upright; a strut is cheaper and does not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Control_arm"
+  },
+  {
+    "in": [
+      "aluminum",
+      "pivot"
+    ],
+    "out": "brake_lever",
+    "why": "Mechanical advantage has to match the brake: a lever made for cantilevers pulls too little cable for V-brakes and the pads never meet the rim. Mixing the two is the commonest reason a bicycle will not stop.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bicycle_brake"
+  },
+  {
+    "in": [
+      "rubber",
+      "gland"
+    ],
+    "out": "o_ring",
+    "why": "System pressure pushes the ring against the low-pressure side of its groove, so it seals harder as pressure rises. The failure that destroyed Challenger was an O-ring too cold to spring back into shape at ignition.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/O-ring"
+  },
+  {
+    "in": [
+      "thermocouple",
+      "dial"
+    ],
+    "out": "thermometer",
+    "why": "Expansion of a liquid in a narrow bore, resistance of a wire, or the voltage across a junction — all of them need two fixed points to be a scale, and Fahrenheit, Celsius and Kelvin differ mainly in which two were chosen.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thermometer"
+  },
+  {
+    "in": [
+      "copper",
+      "condenser"
+    ],
+    "out": "still",
+    "why": "Copper because it takes heat evenly and reacts with the sulfur compounds that would otherwise carry through. The shape of the head decides how much reflux falls back, and therefore how heavy or light the spirit is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Still"
+  },
+  {
+    "in": [
+      "condenser",
+      "column"
+    ],
+    "out": "reflux",
+    "why": "Every time vapour condenses and re-evaporates the mixture separates a little further, so a tall column with plates is many distillations stacked. It is why a pot still gives a flavourful spirit and a column still gives a neutral one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Reflux"
+  },
+  {
+    "in": [
+      "plaster",
+      "muqarnas"
+    ],
+    "out": "mihrab",
+    "why": "It marks the qibla — the direction of the Kaaba — so a mosque's whole orientation is fixed by geometry on a sphere. It is usually the most decorated surface in the building, because it is the one everybody faces.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mihrab"
+  },
+  {
+    "in": [
+      "brick",
+      "arch"
+    ],
+    "out": "iwan",
+    "why": "Open to the courtyard and closed on three sides, it is shaded, ventilated and enormous — a room you can address a crowd from without a roof over them. The four-iwan plan spread from Iranian mosques into madrasas and caravanserais across Asia.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Iwan"
+  },
+  {
+    "in": [
+      "adobe",
+      "courtyard"
+    ],
+    "out": "caravanserai",
+    "why": "Animals and goods in the yard, people in cells around it, and a single gate that closes at dusk. The spacing along a route is set by how far a loaded camel walks in a day, so the infrastructure is a measurement of an animal's endurance.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Caravanserai"
+  },
+  {
+    "in": [
+      "nozzle",
+      "propellant"
+    ],
+    "out": "thruster",
+    "why": "Attitude control needs tiny impulses in any direction, so thrusters fire in pairs to rotate without translating. Hydrazine decomposing over a catalyst needs no ignition at all, which is why it stayed standard despite being appalling to handle.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Reaction_control_system"
+  },
+  {
+    "in": [
+      "coil",
+      "magnetic_field"
+    ],
+    "out": "magnetometer",
+    "why": "On a spacecraft it maps planetary fields and finds subsurface oceans by the way they distort them; on the ground it finds buried ditches and kilns, because fired clay and disturbed soil hold a different magnetism from what is around them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Magnetometer"
+  },
+  {
+    "in": [
+      "capacitor",
+      "electrode"
+    ],
+    "out": "defibrillator",
+    "why": "In fibrillation the muscle is contracting in uncoordinated patches. A shock depolarises all of it at once so the sinoatrial node can resume — which is why it does nothing for asystole, where there is no rhythm to reset.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Defibrillation"
+  },
+  {
+    "in": [
+      "microprocessor",
+      "memory"
+    ],
+    "out": "microcontroller",
+    "why": "Processor, memory and input-output on one die, costing pennies and using milliwatts. There are tens of them in a car and several in a washing machine, and almost none of them will ever run a program anybody chose.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Microcontroller"
+  },
+  {
+    "in": [
+      "gearbox",
+      "shaft"
+    ],
+    "out": "gear_train",
+    "why": "Each mesh trades speed for torque, and a train can reach ratios a single pair cannot. In a clock the train divides one slow turn of the barrel into the exact rates the hands need, which is why the tooth counts are arithmetic rather than convenience.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gear_train"
+  },
+  {
+    "in": [
+      "steel",
+      "crank"
+    ],
+    "out": "connecting_rod",
+    "why": "It carries compression on the power stroke and tension on the exhaust, and it whips sideways at every reversal — which is why it is the part that fails catastrophically and why its bolts are the most carefully specified in an engine.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Connecting_rod"
+  },
+  {
+    "in": [
+      "root",
+      "parasitism"
+    ],
+    "out": "host_plant",
+    "why": "Mistletoe, sandalwood, dodder and broomrape all tap a host rather than feed themselves. Sandalwood cannot be grown alone at all, which is why a plantation is really two crops and why the tree is so hard to farm.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Host_(biology)"
+  },
+  {
+    "in": [
+      "stone",
+      "crypt"
+    ],
+    "out": "tomb",
+    "why": "Almost everything known about most vanished societies comes from tombs, because they were built to last and filled with what mattered. That biases the record heavily toward whoever could afford one, and toward what people believed was needed afterwards rather than what was used daily.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tomb"
+  },
+  {
+    "in": [
+      "glass",
+      "refraction"
+    ],
+    "out": "prism",
+    "why": "A flat pane bends light in and back out by the same amount, so nothing changes. A prism's faces are at an angle, so the two bends add — and because the refractive index differs slightly with wavelength, each colour leaves at its own angle. Newton's second prism, recombining the spectrum to white, is what proved the colour was in the light and not in the glass.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Prism"
+  },
+  {
+    "in": [
+      "prism",
+      "lens"
+    ],
+    "out": "spectrometer",
+    "why": "Every element absorbs and emits at its own wavelengths, so a spectrum is a fingerprint that works at any distance. Helium was found in the sun's spectrum in 1868, decades before anybody had a sample of it on Earth.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spectrometer"
   }
 ]
