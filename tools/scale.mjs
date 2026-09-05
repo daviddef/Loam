@@ -505,6 +505,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'yoke', 'nipple', 'bob', 'clapper', 'injector', 'expansion_valve', 'impeller', 'secondary_mirror', 'essential_oil', 'fixative', 'universal_joint', 'spline',   // components
     'mount', 'capital', 'linkage', 'webbing', 'fabric', 'vent', 'ratchet',   // components
     'paraffin_wax', 'soy_wax', 'polyester', 'nylon', 'viscose', 'sunscreen', 'shampoo', 'toothpaste', 'picture', 'cotton_plant', 'boll', 'laminate', 'rubbish', 'litter',   // reader-found gaps
     'brake_fluid', 'propellant', 'stucco', 'coolant',   // needs sweep
@@ -794,6 +795,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'combustion_chamber', 'turbopump', 'primary_mirror', 'baffle',   // components
     'pottery', 'glassmaking', 'papermaking', 'cheesemaking', 'camera',   // orphan-list subjects
     'spaghetti', 'risotto', 'paella', 'curry', 'pie', 'dumpling', 'porridge', 'casserole', 'wok', 'stir_fry', 'fibreglass', 'chipboard', 'spectacles', 'wheelchair', 'crutch', 'prosthesis', 'plaster_cast', 'puddle', 'wallpaper',   // universe gaps 5 Sep
     'skirt', 'veneer', 'creek', 'plywood',   // reader-found gaps

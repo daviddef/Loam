@@ -4934,6 +4934,421 @@
         "landfill|incineration",
         "recycling"
       ]
+    },
+    "hubble_space_telescope": {
+      "src": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+      "note": "A telescope above the air, and a mirror ground precisely to the wrong shape.",
+      "needs": [
+        "mirror",
+        "primary_mirror",
+        "secondary_mirror",
+        "truss",
+        "baffle",
+        "camera",
+        "spectrograph",
+        "gyroscope",
+        "solar_cell",
+        "battery",
+        "antenna",
+        "corrective_optics"
+      ]
+    },
+    "driveshaft": {
+      "src": "https://en.wikipedia.org/wiki/Drive_shaft",
+      "note": "A tube that must carry torque while both ends move relative to each other.",
+      "needs": [
+        "tube",
+        "universal_joint",
+        "spline",
+        "yoke",
+        "balance_weight",
+        "bearing",
+        "flange",
+        "seal"
+      ]
+    },
+    "steering_wheel": {
+      "src": "https://en.wikipedia.org/wiki/Steering_wheel",
+      "note": "The interface, and the last thing a crash tests.",
+      "needs": [
+        "rim",
+        "spoke",
+        "hub",
+        "boss",
+        "airbag",
+        "column",
+        "splined_shaft",
+        "grip"
+      ]
+    },
+    "pendulum": {
+      "src": "https://en.wikipedia.org/wiki/Pendulum",
+      "note": "A period that depends on length and gravity and almost nothing else.",
+      "needs": [
+        "bob",
+        "rod",
+        "suspension_spring",
+        "escapement",
+        "regulator",
+        "temperature_compensation",
+        "pivot"
+      ]
+    },
+    "spoke": {
+      "src": "https://en.wikipedia.org/wiki/Spoke",
+      "note": "A wire in tension, which is why a bicycle wheel hangs rather than stands.",
+      "needs": [
+        "wire",
+        "nipple",
+        "rim",
+        "hub",
+        "tension",
+        "lacing",
+        "butting"
+      ]
+    },
+    "handlebar": {
+      "src": "https://en.wikipedia.org/wiki/Bicycle_handlebar",
+      "note": "Where steering, braking, shifting and most of the weight all meet.",
+      "needs": [
+        "tube",
+        "stem",
+        "grip",
+        "clamp",
+        "brake_lever",
+        "bar_tape",
+        "bend"
+      ]
+    },
+    "rebar": {
+      "src": "https://en.wikipedia.org/wiki/Rebar",
+      "note": "Steel where the concrete is in tension, which concrete cannot do.",
+      "needs": [
+        "steel",
+        "rib",
+        "cover",
+        "lap",
+        "stirrup",
+        "tie_wire",
+        "bend",
+        "yield_strength"
+      ]
+    },
+    "hoe": {
+      "src": "https://en.wikipedia.org/wiki/Hoe_(tool)",
+      "note": "A blade at an angle to a handle, for cutting weeds below the surface.",
+      "needs": [
+        "blade",
+        "steel",
+        "socket|tang",
+        "haft",
+        "angle",
+        "edge",
+        "hardening"
+      ]
+    },
+    "camshaft": {
+      "src": "https://en.wikipedia.org/wiki/Camshaft",
+      "note": "A shaft with the engine's whole timing carved into it.",
+      "needs": [
+        "shaft",
+        "cam",
+        "lobe",
+        "journal",
+        "bearing",
+        "timing_belt|chain",
+        "follower",
+        "profile"
+      ]
+    },
+    "cavity_wall_tie": {
+      "src": "https://en.wikipedia.org/wiki/Wall_tie",
+      "note": "A twist of steel holding two leaves apart and together at once.",
+      "needs": [
+        "stainless_steel",
+        "wire",
+        "drip",
+        "embedment",
+        "spacing",
+        "cavity"
+      ]
+    },
+    "composing_stick": {
+      "src": "https://en.wikipedia.org/wiki/Composing_stick",
+      "note": "Where a line of type is assembled, backwards and upside down.",
+      "needs": [
+        "metal",
+        "adjustable_slide",
+        "measure",
+        "type",
+        "spacing",
+        "quoin"
+      ]
+    },
+    "balance": {
+      "src": "https://en.wikipedia.org/wiki/Weighing_scale",
+      "note": "A beam, a pivot, and two pans — and it measures mass rather than weight.",
+      "needs": [
+        "beam",
+        "fulcrum",
+        "pan",
+        "knife_edge",
+        "pointer",
+        "weight",
+        "case",
+        "levelling_screw"
+      ]
+    },
+    "bell": {
+      "src": "https://en.wikipedia.org/wiki/Bell",
+      "note": "A casting whose profile is tuned by turning metal off the inside.",
+      "needs": [
+        "bronze",
+        "mould",
+        "core",
+        "cope",
+        "clapper",
+        "headstock",
+        "crown",
+        "tuning",
+        "yoke"
+      ]
+    },
+    "logic_gate": {
+      "src": "https://en.wikipedia.org/wiki/Logic_gate",
+      "note": "A switch made of switches, and the whole of computing sits on it.",
+      "needs": [
+        "transistor",
+        "resistor",
+        "input",
+        "output",
+        "supply",
+        "interconnect",
+        "threshold"
+      ]
+    },
+    "fragrance": {
+      "src": "https://en.wikipedia.org/wiki/Perfume",
+      "note": "Top, heart and base notes, which is really three evaporation rates.",
+      "needs": [
+        "essential_oil",
+        "alcohol",
+        "fixative",
+        "aroma_compound",
+        "dilution",
+        "maceration",
+        "top_note",
+        "base_note"
+      ]
+    },
+    "distillation": {
+      "src": "https://en.wikipedia.org/wiki/Distillation",
+      "note": "Boiling a mixture and catching the part that leaves first.",
+      "needs": [
+        "still",
+        "boiler",
+        "column",
+        "condenser",
+        "coolant",
+        "receiver",
+        "thermometer",
+        "reflux",
+        "plate"
+      ]
+    },
+    "liquid_fuel_rocket": {
+      "src": "https://en.wikipedia.org/wiki/Liquid-propellant_rocket",
+      "note": "Two tanks, two pumps and a chamber, and the pumps are the hard part.",
+      "needs": [
+        "fuel",
+        "oxidizer",
+        "tank",
+        "turbopump",
+        "injector",
+        "combustion_chamber",
+        "nozzle",
+        "igniter",
+        "regenerative_cooling",
+        "valve"
+      ]
+    },
+    "rod": {
+      "src": "https://en.wikipedia.org/wiki/Rod",
+      "note": "A long solid section, loaded along its length or across it.",
+      "needs": [
+        "steel|timber",
+        "diameter",
+        "length",
+        "thread|plain",
+        "tensile_strength",
+        "buckling"
+      ]
+    },
+    "woad": {
+      "src": "https://en.wikipedia.org/wiki/Woad",
+      "note": "Blue from a plant, by fermenting the leaves until the dye can be reduced.",
+      "needs": [
+        "isatis",
+        "leaf",
+        "fermentation",
+        "urine|alkali",
+        "vat",
+        "reduction",
+        "oxidation",
+        "indigo"
+      ]
+    },
+    "galalith": {
+      "src": "https://en.wikipedia.org/wiki/Galalith",
+      "note": "Milk protein and formaldehyde — a plastic made from cheese.",
+      "needs": [
+        "casein",
+        "formaldehyde",
+        "rennet",
+        "press",
+        "curing",
+        "dye",
+        "polishing"
+      ]
+    },
+    "ldpe": {
+      "src": "https://en.wikipedia.org/wiki/Low-density_polyethylene",
+      "note": "Branched chains that cannot pack, so it is soft, clear and floppy.",
+      "needs": [
+        "ethylene",
+        "initiator",
+        "pressure",
+        "polymer",
+        "branching",
+        "pellet",
+        "film"
+      ]
+    },
+    "uhmwpe": {
+      "src": "https://en.wikipedia.org/wiki/Ultra-high-molecular-weight_polyethylene",
+      "note": "Chains so long the material barely melts and almost nothing wears it.",
+      "needs": [
+        "ethylene",
+        "catalyst",
+        "polymer",
+        "sintering",
+        "pellet",
+        "fibre",
+        "abrasion_resistance"
+      ]
+    },
+    "epdm": {
+      "src": "https://en.wikipedia.org/wiki/EPDM_rubber",
+      "note": "A rubber with no double bonds in the backbone, so ozone and sunlight leave it alone.",
+      "needs": [
+        "ethylene",
+        "propylene",
+        "diene",
+        "catalyst",
+        "polymer",
+        "carbon_black",
+        "curing_agent",
+        "seal"
+      ]
+    },
+    "monitor": {
+      "src": "https://en.wikipedia.org/wiki/Computer_monitor",
+      "note": "A grid of cells that can be told what colour to be, sixty times a second.",
+      "needs": [
+        "screen",
+        "panel",
+        "backlight",
+        "driver",
+        "controller",
+        "cable",
+        "housing",
+        "stand",
+        "power_supply"
+      ]
+    },
+    "shaft_rotating": {
+      "src": "https://en.wikipedia.org/wiki/Drive_shaft",
+      "note": "A round bar carrying torque, and the failure is always torsion at a step.",
+      "needs": [
+        "steel",
+        "journal",
+        "keyway",
+        "spline",
+        "fillet",
+        "bearing",
+        "coupling",
+        "balance"
+      ]
+    },
+    "tumbler": {
+      "src": "https://en.wikipedia.org/wiki/Pin_tumbler_lock",
+      "note": "The pin that blocks the plug until it is lifted exactly far enough.",
+      "needs": [
+        "pin",
+        "spring",
+        "driver_pin",
+        "key_pin",
+        "shear_line",
+        "plug",
+        "housing"
+      ]
+    },
+    "sash": {
+      "src": "https://en.wikipedia.org/wiki/Sash_window",
+      "note": "The frame that holds the glass and slides while the frame around it does not.",
+      "needs": [
+        "timber",
+        "glass",
+        "glazing",
+        "putty",
+        "cord",
+        "pulley",
+        "counterweight",
+        "stile",
+        "rail",
+        "parting_bead"
+      ]
+    },
+    "oar": {
+      "src": "https://en.wikipedia.org/wiki/Oar",
+      "note": "A lever whose fulcrum is the boat, not the water.",
+      "needs": [
+        "loom",
+        "blade",
+        "shaft",
+        "collar",
+        "button",
+        "grip",
+        "rowlock",
+        "spruce_tree"
+      ]
+    },
+    "shackle": {
+      "src": "https://en.wikipedia.org/wiki/Shackle",
+      "note": "A U of metal with a removable pin, so two things can be joined and unjoined.",
+      "needs": [
+        "bow",
+        "pin",
+        "thread",
+        "cotter",
+        "working_load_limit",
+        "galvanization"
+      ]
+    },
+    "fridge": {
+      "src": "https://en.wikipedia.org/wiki/Refrigerator",
+      "note": "Moving heat out of a box, which takes work, which is why the back is warm.",
+      "needs": [
+        "compressor",
+        "condenser",
+        "evaporator",
+        "expansion_valve",
+        "coolant",
+        "thermostat",
+        "insulation",
+        "door_seal",
+        "fan"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",

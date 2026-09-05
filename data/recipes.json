@@ -102041,5 +102041,165 @@
     "why": "A toothed wheel and a spring-loaded pawl. The simplest one-way device there is, and it appears wherever a load must be held between efforts — winches, jacks, clocks, cable ties and a bicycle freewheel.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Ratchet_(device)"
+  },
+  {
+    "in": [
+      "timber",
+      "harness"
+    ],
+    "out": "yoke",
+    "why": "Whether across the shoulders of oxen, on a bell's headstock or in a universal joint, a yoke exists to make two things pull as one. The neck yoke and the withers yoke are different answers to where an ox can actually take load.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Yoke"
+  },
+  {
+    "in": [
+      "brass",
+      "thread"
+    ],
+    "out": "nipple",
+    "why": "Turning it changes one spoke's tension, and a wheel is true when every spoke is pulling the rim to the same place. Building a wheel is bringing thirty-two of them into agreement, which is why it is a trade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spoke_nipple"
+  },
+  {
+    "in": [
+      "lead",
+      "rod"
+    ],
+    "out": "bob",
+    "why": "The period depends on the distance from pivot to centre of oscillation, so raising the bob shortens the pendulum and speeds the clock. A rating nut under it is the adjustment, and a second's-worth is a fraction of a turn.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pendulum_clock"
+  },
+  {
+    "in": [
+      "iron",
+      "bell"
+    ],
+    "out": "clapper",
+    "why": "A clapper too heavy cracks the bell and one too light will not sound it; it must also rebound clear or it damps the note it just made. Where it strikes is a fixed point on the soundbow, which is why bells wear a flat there.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bell"
+  },
+  {
+    "in": [
+      "nozzle",
+      "valve"
+    ],
+    "out": "injector",
+    "why": "Hundreds of small orifices arranged so the two streams collide and atomise. Get the pattern wrong and the chamber develops combustion instability, which destroyed engines through the whole early rocket programme and is still not fully predictable.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Injector"
+  },
+  {
+    "in": [
+      "nozzle",
+      "coolant"
+    ],
+    "out": "combustion_chamber",
+    "why": "Gas inside reaches thousands of degrees against a metal wall that melts far below that, so fuel is run through channels in the wall on its way in — regenerative cooling, which takes heat out of the wall and puts it back into the fire.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Combustion_chamber"
+  },
+  {
+    "in": [
+      "turbine",
+      "pump"
+    ],
+    "out": "turbopump",
+    "why": "Feeding a large engine needs tonnes of propellant a second at high pressure, so the pump is driven by a gas generator burning a fraction of the flow. It is the most highly stressed rotating machinery built, and historically the commonest cause of failure.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Turbopump"
+  },
+  {
+    "in": [
+      "valve",
+      "coolant"
+    ],
+    "out": "expansion_valve",
+    "why": "High-pressure liquid forced through a small orifice drops in pressure and partly flashes to vapour, cooling as it does. It also meters the flow, so it sets how hard the whole loop works.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Thermal_expansion_valve"
+  },
+  {
+    "in": [
+      "blade",
+      "shaft"
+    ],
+    "out": "impeller",
+    "why": "A centrifugal impeller adds energy as velocity; the volute around it slows the flow and converts that to pressure. It is why a centrifugal pump must be primed — it cannot move air well enough to pull liquid up to itself.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Impeller"
+  },
+  {
+    "in": [
+      "mirror",
+      "grindstone"
+    ],
+    "out": "primary_mirror",
+    "why": "Light-gathering goes with area, so aperture is the specification. Hubble's was ground to a beautifully precise wrong shape — the null corrector used to test it was assembled 1.3 mm out of position — and the error was in the test, not the polishing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Primary_mirror"
+  },
+  {
+    "in": [
+      "mirror",
+      "truss"
+    ],
+    "out": "secondary_mirror",
+    "why": "It blocks part of the aperture, which costs light and adds diffraction spikes, and it buys a telescope that is a fraction of the length its focal ratio would otherwise need. Every reflector is that trade.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Secondary_mirror"
+  },
+  {
+    "in": [
+      "plate",
+      "tube"
+    ],
+    "out": "baffle",
+    "why": "In a tank it stops liquid sloshing, in a heat exchanger it makes the shell-side flow cross the tubes instead of running past them, in a telescope it stops stray light reaching the sensor. Same part, three problems.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Baffle_(heat_transfer)"
+  },
+  {
+    "in": [
+      "distillation",
+      "flower"
+    ],
+    "out": "essential_oil",
+    "why": "Steam carries the volatile compounds over at below their own boiling points, so they distil without being cooked. It is why the smell survives, and why expression rather than distillation is used for citrus, whose oil would not.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Essential_oil"
+  },
+  {
+    "in": [
+      "resin",
+      "essential_oil"
+    ],
+    "out": "fixative",
+    "why": "A perfume's base notes are chosen for low volatility and they hold the lighter molecules back, which is what makes a scent unfold over hours rather than minutes. Historically the best were animal — musk, civet, ambergris — and are now mostly synthetic.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fixative_(perfumery)"
+  },
+  {
+    "in": [
+      "yoke",
+      "bearing"
+    ],
+    "out": "universal_joint",
+    "why": "Two yokes on a cross. It transmits through an angle, but the driven shaft speeds up and slows twice per revolution — so driveshafts use two joints arranged to cancel each other, because one alone would shake the car apart.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Universal_joint"
+  },
+  {
+    "in": [
+      "shaft_rotating",
+      "chisel"
+    ],
+    "out": "spline",
+    "why": "A key transmits torque at one point and shears; a spline spreads it around the whole circumference and lets the parts move along each other under load. Every gearbox and every driveshaft that changes length has them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Spline_(mechanical)"
   }
 ]
