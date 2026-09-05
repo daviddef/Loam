@@ -101801,5 +101801,245 @@
     "why": "An overshot wheel takes water at the top and is driven by its weight, which is far more efficient than an undershot wheel driven by the current — but it needs a head, so it needs a weir and a leat. Domesday records over 5,600 mills in England alone.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Watermill"
+  },
+  {
+    "in": [
+      "screw",
+      "furnace"
+    ],
+    "out": "extruder",
+    "why": "The screw does three jobs down its length — conveys, compresses and melts — so the polymer arrives at the die homogeneous and at pressure. Change the die and the same machine makes pipe, film, fibre or pellet.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plastics_extrusion"
+  },
+  {
+    "in": [
+      "bolt",
+      "nut_fastener"
+    ],
+    "out": "fastener",
+    "why": "The distinction that matters is whether it clamps by friction, by shear or by form. A bolt is stretched and clamps; a rivet is upset and fills; a nail relies on the wood gripping its shank. Choosing wrong is why things come apart.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fastener"
+  },
+  {
+    "in": [
+      "filler",
+      "polymer"
+    ],
+    "out": "additive",
+    "why": "Plasticiser, stabiliser, filler, pigment, flame retardant, antioxidant. A polymer as made is often unusable — PVC without a stabiliser degrades under its own processing heat — so the recipe is mostly the additives and the polymer is the carrier.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plastic"
+  },
+  {
+    "in": [
+      "bracket",
+      "rubber"
+    ],
+    "out": "mount",
+    "why": "A rigid mount transmits everything; a compliant one isolates but lets the thing move. Engine mounts are the visible compromise — soft enough that the cabin is quiet, stiff enough that the engine does not hit the bonnet under load.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shock_mount"
+  },
+  {
+    "in": [
+      "catalyst",
+      "heat"
+    ],
+    "out": "initiator",
+    "why": "A free-radical initiator splits under heat into two radicals, each of which attacks a monomer and passes the radical along. Unlike a catalyst it is used up — which is why the amount added sets the chain length and therefore the properties.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Radical_initiator"
+  },
+  {
+    "in": [
+      "glue",
+      "solvent"
+    ],
+    "out": "adhesive",
+    "why": "It has to flow into the surface's roughness while liquid and then stop being liquid. That is why surface preparation matters more than the glue, and why the strongest joints fail in the material rather than at the bond.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Adhesive"
+  },
+  {
+    "in": [
+      "rubber",
+      "flange"
+    ],
+    "out": "gasket",
+    "why": "It works by being compressed enough to fill every scratch in both faces and staying elastic enough to keep filling them as the joint moves and heats. Overtightening destroys it as surely as undertightening.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gasket"
+  },
+  {
+    "in": [
+      "bronze",
+      "shaft"
+    ],
+    "out": "bush",
+    "why": "A plain bearing sacrificed on purpose: bronze or polymer running against steel, cheap and quick to replace, so the shaft and the housing are not the parts that fail. Every designed wear point in a machine is this decision.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bushing_(bearing)"
+  },
+  {
+    "in": [
+      "concrete",
+      "frame"
+    ],
+    "out": "counterweight",
+    "why": "A crane's counterweight balances the jib so the motor only has to lift the payload; a lift's balances the car so it moves ballast rather than mass. It is the cheapest way there is to make a machine smaller.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Counterweight"
+  },
+  {
+    "in": [
+      "megalith",
+      "lever"
+    ],
+    "out": "capstone",
+    "why": "On a dolmen or a corbelled roof the capstone closes the structure and its weight locks everything beneath it into compression. Getting it up there is the whole engineering problem, and the ramps and packing that did it are usually gone.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Capstone"
+  },
+  {
+    "in": [
+      "column",
+      "stone"
+    ],
+    "out": "capital",
+    "why": "Structurally it is a bearing plate, widening the point where a beam meets a shaft so the stone is not crushed. Everything else about it — Doric, Ionic, Corinthian, foliate — is that bearing plate being decorated, which is why the orders are classified by it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Capital_(architecture)"
+  },
+  {
+    "in": [
+      "link",
+      "pivot"
+    ],
+    "out": "linkage",
+    "why": "A four-bar linkage can turn rotation into a straight line, an oscillation or a dwell, depending only on the lengths. Watt's parallel motion was invented because there was no way to machine a long straight guide, so he made one out of bars.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Linkage_(mechanical)"
+  },
+  {
+    "in": [
+      "leather",
+      "buckle"
+    ],
+    "out": "harness",
+    "why": "The throat-and-girth harness pressed on a horse's windpipe and limited it to a fraction of what it could pull. The padded horse collar, arriving in Europe by about the 10th century, moved the load to the shoulders and multiplied the useful power of a horse several times over.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Horse_harness"
+  },
+  {
+    "in": [
+      "nylon",
+      "loom"
+    ],
+    "out": "webbing",
+    "why": "A flat weave spreads load across many warp ends at once and does not have rope's core-versus-sheath problem. It is why seat belts, slings and climbing gear are webbing, and why a knot in webbing is weaker than a sewn joint.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Webbing"
+  },
+  {
+    "in": [
+      "steel",
+      "pivot"
+    ],
+    "out": "pawl",
+    "why": "A pivoted finger held against the ratchet by a spring, shaped so that forward motion lifts it and reverse motion wedges it. The angle of that face is the whole design: too shallow and it slips, too steep and it will not lift.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pawl"
+  },
+  {
+    "in": [
+      "silicon",
+      "wafer"
+    ],
+    "out": "substrate",
+    "why": "In a chip it is the silicon wafer; on a circuit board it is glass-reinforced epoxy; in a coating it is whatever is underneath. It is defined by its relationship rather than its material, and its flatness usually limits everything above it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Substrate_(materials_science)"
+  },
+  {
+    "in": [
+      "paint",
+      "surface"
+    ],
+    "out": "coating",
+    "why": "Corrosion resistance, hardness, reflectivity, grip, colour or slipperiness — applied as a thin layer because the bulk material is chosen for strength and cost. Adhesion at the interface is what fails, almost always, and almost always because of preparation.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Coating"
+  },
+  {
+    "in": [
+      "yarn",
+      "loom"
+    ],
+    "out": "fabric",
+    "why": "Weave, weight, fibre and finish decide strength, drape, air permeability and tear resistance. A sail, a filter, a conveyor belt and a shirt are the same technology tuned to four different specifications.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Textile"
+  },
+  {
+    "in": [
+      "oil",
+      "lye"
+    ],
+    "out": "surfactant",
+    "why": "It lowers surface tension by sitting at the interface, which is why one substance does detergency, foaming, emulsifying and wetting. Everything soap does follows from that one shape.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Surfactant"
+  },
+  {
+    "in": [
+      "water",
+      "polymer"
+    ],
+    "out": "blowing_agent",
+    "why": "Physical agents are dissolved gases that expand as pressure drops; chemical ones decompose to give off gas as the polymer cures. The cell size and whether they are open or closed decide whether the foam insulates, cushions or floats.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Blowing_agent"
+  },
+  {
+    "in": [
+      "extruder",
+      "blade"
+    ],
+    "out": "pellet",
+    "why": "Molten polymer extruded as strands and chopped. Pellets flow like a liquid, meter accurately into a moulding machine and pack densely — and they are small enough that a spill is unrecoverable, which is why they are on every beach in the world.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nurdle"
+  },
+  {
+    "in": [
+      "pipe",
+      "mesh"
+    ],
+    "out": "vent",
+    "why": "Anything sealed that heats, fills or empties needs one, or it deforms — a tank without a vent collapses as it is drained. Half of ventilation engineering is making a hole that lets air move and nothing else in.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ventilation_(architecture)"
+  },
+  {
+    "in": [
+      "timber",
+      "brace"
+    ],
+    "out": "stair",
+    "why": "Twice the rise plus the going is roughly 600 to 640 mm for a comfortable stair, because that matches a stride. Every step in a flight must be identical: a variation of a few millimetres is what people trip on.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stairs"
+  },
+  {
+    "in": [
+      "pawl",
+      "wheel"
+    ],
+    "out": "ratchet",
+    "why": "A toothed wheel and a spring-loaded pawl. The simplest one-way device there is, and it appears wherever a load must be held between efforts — winches, jacks, clocks, cable ties and a bicycle freewheel.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ratchet_(device)"
   }
 ]

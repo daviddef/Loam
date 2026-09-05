@@ -453,7 +453,6 @@
         "shaft",
         "brake",
         "tower",
-        "cap|roof",
         "axle",
         "grain",
         "flour",
@@ -594,7 +593,6 @@
         "winch",
         "rope",
         "lamp",
-        "ventilation|air",
         "water_pump|pump",
         "canary"
       ]
@@ -835,7 +833,6 @@
         "coin",
         "banknote",
         "vault",
-        "ledger|book",
         "interest",
         "loan|debt",
         "deposit",
@@ -1333,8 +1330,7 @@
         "shuttle",
         "heddle",
         "selvage",
-        "dye",
-        "fulling"
+        "dye"
       ]
     },
     "ink": {
@@ -1429,7 +1425,6 @@
         "firing",
         "glaze",
         "slip",
-        "burnishing",
         "grog"
       ]
     },
@@ -1443,8 +1438,7 @@
         "blank|flan",
         "die",
         "hammer|press",
-        "mint",
-        "milling|reeding"
+        "mint"
       ]
     },
     "leather": {
@@ -1456,10 +1450,8 @@
         "tannin",
         "oak_bark|bark",
         "tanning",
-        "currying",
         "fat|oil",
         "dye",
-        "fleshing",
         "drying"
       ]
     },
@@ -1470,13 +1462,11 @@
         "glass",
         "frame",
         "sash",
-        "glazing",
         "putty",
         "lead_came",
         "sill",
         "lintel",
         "hinge",
-        "catch",
         "shutter",
         "window_frame",
         "putty|sealant",
@@ -1811,9 +1801,7 @@
         "shank",
         "head",
         "rivet_set",
-        "bucking_bar",
-        "reaming",
-        "hot_riveting"
+        "bucking_bar"
       ]
     },
     "frame": {
@@ -1920,7 +1908,6 @@
         "straw",
         "water",
         "mould",
-        "sun_drying",
         "render",
         "foundation_course"
       ]
@@ -2077,11 +2064,8 @@
         "floor",
         "wall",
         "roof",
-        "ventilation",
         "threshold",
-        "rat_guard",
-        "bin",
-        "chute"
+        "rat_guard"
       ]
     },
     "moat": {
@@ -2143,11 +2127,8 @@
         "silkworm",
         "mulberry_tree",
         "cocoon",
-        "reeling",
-        "degumming",
         "sericin",
         "filament",
-        "throwing",
         "warp",
         "weft",
         "loom",
@@ -2162,10 +2143,7 @@
         "fleece",
         "carding",
         "batt",
-        "soap",
-        "agitation",
-        "fulling",
-        "pressing"
+        "soap"
       ]
     },
     "parchment": {
@@ -2270,14 +2248,7 @@
       "needs": [
         "http",
         "html",
-        "css",
-        "javascript",
-        "rendering_engine",
-        "parser",
-        "dom",
-        "layout_engine",
         "cache",
-        "tls",
         "cookie",
         "url"
       ]
@@ -2286,14 +2257,6 @@
       "src": "https://en.wikipedia.org/wiki/Compiler",
       "note": "Turning something a person wrote into something a processor will run.",
       "needs": [
-        "lexer",
-        "parser",
-        "syntax_tree",
-        "symbol_table",
-        "intermediate_representation",
-        "optimiser",
-        "code_generator",
-        "linker",
         "instruction"
       ]
     },
@@ -2304,8 +2267,7 @@
         "table",
         "journal",
         "lock",
-        "cache",
-        "storage"
+        "cache"
       ]
     },
     "filesystem": {
@@ -2313,13 +2275,8 @@
       "note": "Turning a flat expanse of blocks into names and folders.",
       "needs": [
         "block",
-        "inode",
-        "directory",
-        "allocation_table",
         "journal",
-        "superblock",
-        "link",
-        "storage"
+        "link"
       ]
     },
     "reservoir": {
@@ -2409,7 +2366,6 @@
       "src": "https://en.wikipedia.org/wiki/Cache_(computing)",
       "note": "Keeping the answer nearby because you will be asked again.",
       "needs": [
-        "storage",
         "memory",
         "bus"
       ]
@@ -2546,7 +2502,6 @@
       "src": "https://en.wikipedia.org/wiki/Medication",
       "note": "A molecule chosen because of what it does to a target.",
       "needs": [
-        "excipient",
         "binder",
         "dose",
         "tablet|capsule|solution",
@@ -2612,9 +2567,6 @@
         "conductor",
         "copper_wire",
         "clock_signal",
-        "address_line",
-        "data_line",
-        "control_line",
         "terminator"
       ]
     },
@@ -2732,8 +2684,7 @@
       "needs": [
         "coin",
         "banknote",
-        "mint",
-        "central_bank"
+        "mint"
       ]
     },
     "dollar": {
@@ -2742,8 +2693,7 @@
       "needs": [
         "currency",
         "coin",
-        "banknote",
-        "central_bank"
+        "banknote"
       ]
     },
     "debt": {
@@ -2752,8 +2702,7 @@
       "needs": [
         "interest",
         "credit",
-        "contract",
-        "ledger"
+        "contract"
       ]
     },
     "credit": {
@@ -2762,7 +2711,6 @@
       "needs": [
         "debt",
         "interest",
-        "ledger",
         "contract"
       ]
     },
@@ -2770,8 +2718,7 @@
       "src": "https://en.wikipedia.org/wiki/Tax",
       "note": "The state taking a share, and having to know enough about you to do it.",
       "needs": [
-        "census",
-        "ledger"
+        "census"
       ]
     },
     "advertisement": {
@@ -2967,7 +2914,6 @@
       "needs": [
         "polymer",
         "polyethylene|polypropylene",
-        "moulding",
         "waste",
         "landfill",
         "microplastic"
@@ -3006,8 +2952,6 @@
         "hub",
         "vane",
         "vent",
-        "machining",
-        "runout",
         "friction",
         "heat_sink"
       ]
@@ -3032,8 +2976,6 @@
       "needs": [
         "logic_gate",
         "transistor",
-        "select_line",
-        "data_line",
         "interconnect",
         "clock_signal"
       ]
@@ -3056,7 +2998,6 @@
       "needs": [
         "logic_gate",
         "transistor",
-        "carry",
         "interconnect"
       ]
     },
@@ -3085,7 +3026,6 @@
         "gear_train",
         "pointer",
         "case",
-        "calibration",
         "pressure"
       ]
     },
@@ -3099,8 +3039,7 @@
         "inertia_reel",
         "buckle",
         "anchor",
-        "pretensioner",
-        "stitching"
+        "pretensioner"
       ]
     },
     "ambulance": {
@@ -3123,13 +3062,7 @@
       "src": "https://en.wikipedia.org/wiki/Nursing",
       "note": "The trade that is with the patient when nobody else is.",
       "needs": [
-        "training",
-        "registration",
         "observation",
-        "medication",
-        "dressing",
-        "record",
-        "handover",
         "hospital",
         "patient"
       ]
@@ -3176,7 +3109,6 @@
         "knife",
         "bread",
         "meat",
-        "drink",
         "salt",
         "spice"
       ]
@@ -3187,14 +3119,12 @@
       "needs": [
         "labour",
         "capital",
-        "land",
         "output",
         "trade",
         "money",
         "market",
         "sector",
-        "tax",
-        "household"
+        "tax"
       ]
     },
     "stain": {
@@ -3207,7 +3137,6 @@
         "buffer",
         "specimen",
         "microscope",
-        "differentiation",
         "counterstain"
       ]
     },
@@ -3262,10 +3191,7 @@
       "src": "https://en.wikipedia.org/wiki/Metronidazole",
       "note": "A drug that only becomes a poison inside things that live without oxygen.",
       "needs": [
-        "nitroimidazole",
-        "nitro_group",
         "reduction",
-        "anaerobe",
         "dose",
         "tablet",
         "half_life"
@@ -3280,7 +3206,6 @@
         "lysozyme",
         "macrophage",
         "neutrophil",
-        "complement",
         "cytokine",
         "inflammation",
         "fever",
@@ -3292,9 +3217,6 @@
       "note": "Disease moving from one person to the next, and what has to be true for it to.",
       "needs": [
         "pathogen",
-        "host",
-        "transmission",
-        "contact",
         "droplet",
         "vector",
         "incubation_period",
@@ -3335,26 +3257,14 @@
       "note": "Everybody going the same way at once, timed.",
       "needs": [
         "course",
-        "start",
-        "finish",
-        "timing",
-        "rule",
-        "competitor",
-        "official",
-        "record"
+        "rule"
       ]
     },
     "standard": {
       "src": "https://en.wikipedia.org/wiki/Standard_(metrology)",
       "note": "An agreed thing to measure everything else against.",
       "needs": [
-        "definition",
-        "artefact|constant",
-        "calibration",
-        "traceability",
-        "uncertainty",
-        "measurement",
-        "comparison"
+        "measurement"
       ]
     },
     "money": {
@@ -3365,25 +3275,15 @@
         "banknote",
         "currency",
         "mint",
-        "denomination",
-        "ledger",
         "credit",
-        "trust",
-        "central_bank"
+        "trust"
       ]
     },
     "domain_name_system": {
       "src": "https://en.wikipedia.org/wiki/Domain_Name_System",
       "note": "Turning a name into an address, in a hierarchy nobody owns all of.",
       "needs": [
-        "name_server",
-        "root_zone",
-        "record",
-        "cache",
-        "resolver",
-        "query",
-        "zone_file",
-        "registrar"
+        "cache"
       ]
     },
     "corbel_vault": {
@@ -3406,9 +3306,7 @@
       "needs": [
         "transistor",
         "resistor",
-        "input",
         "output",
-        "supply",
         "interconnect"
       ]
     },
@@ -3418,7 +3316,6 @@
       "needs": [
         "transistor",
         "nand_gate",
-        "input",
         "output",
         "interconnect"
       ]
@@ -3460,7 +3357,6 @@
       "needs": [
         "wheel",
         "hairspring",
-        "staff",
         "jewel",
         "escapement",
         "regulator",
@@ -3492,7 +3388,6 @@
         "foam|horsehair",
         "cloth|leather",
         "tack",
-        "stitching",
         "seam"
       ]
     },
@@ -3501,11 +3396,8 @@
       "note": "The layer between the foot and everything the shoe is made of.",
       "needs": [
         "foam|leather",
-        "arch_support",
         "adhesive",
-        "fabric",
-        "moulding",
-        "cushioning"
+        "fabric"
       ]
     },
     "body_panel": {
@@ -3574,7 +3466,6 @@
       "needs": [
         "steel|plastic|wood",
         "blade",
-        "flex",
         "handle",
         "rivet",
         "bevel"
@@ -3590,7 +3481,6 @@
         "felt",
         "nib",
         "barrel",
-        "cap",
         "reservoir"
       ]
     },
@@ -3603,7 +3493,6 @@
         "hex",
         "drive_square",
         "chamfer",
-        "hardening",
         "chrome"
       ]
     },
@@ -3724,11 +3613,9 @@
       "needs": [
         "frame",
         "base",
-        "back",
         "padding",
         "upholstery",
         "spring",
-        "adjuster",
         "mount",
         "fastener"
       ]
@@ -3743,7 +3630,6 @@
         "arch",
         "mortar",
         "stair",
-        "niche",
         "drainage"
       ]
     },
@@ -3751,15 +3637,7 @@
       "src": "https://en.wikipedia.org/wiki/Surveying",
       "note": "Fixing where things are, precisely enough to build from.",
       "needs": [
-        "baseline",
-        "theodolite|total_station",
-        "level",
-        "staff",
-        "chain|tape",
-        "triangulation",
-        "benchmark",
-        "datum",
-        "traverse"
+        "chain|tape"
       ]
     },
     "machine": {
@@ -3771,10 +3649,7 @@
         "shaft",
         "gear|lever|pulley",
         "fastener",
-        "lubricant",
-        "housing",
-        "power_source",
-        "control"
+        "housing"
       ]
     },
     "mechanism": {
@@ -3785,10 +3660,7 @@
         "joint",
         "pivot",
         "cam|gear|lever",
-        "follower",
-        "spring",
-        "stop",
-        "clearance"
+        "spring"
       ]
     },
     "track_gauge": {
@@ -3800,7 +3672,6 @@
         "fastener",
         "ballast",
         "gauge",
-        "tolerance",
         "check_rail"
       ]
     },
@@ -3826,9 +3697,7 @@
         "pallet",
         "escape_wheel",
         "pendulum|balance_wheel",
-        "impulse",
         "lock",
-        "drop",
         "jewel",
         "arbor"
       ]
@@ -3852,11 +3721,9 @@
       "needs": [
         "shaft",
         "lobe",
-        "follower",
         "profile",
         "spring",
-        "bearing",
-        "timing"
+        "bearing"
       ]
     },
     "suspension": {
@@ -3926,7 +3793,6 @@
         "commutator",
         "shaft",
         "insulation",
-        "slot",
         "bearing"
       ]
     },
@@ -3949,7 +3815,6 @@
         "transistor",
         "nand_gate",
         "inverter",
-        "input",
         "output",
         "interconnect"
       ]
@@ -3963,9 +3828,7 @@
         "die",
         "bed",
         "screw|hydraulic|toggle",
-        "guide",
-        "stroke",
-        "tonnage"
+        "stroke"
       ]
     },
     "platen": {
@@ -3990,8 +3853,7 @@
         "cam",
         "linkage",
         "needle_plate",
-        "presser_foot",
-        "stitch_length"
+        "presser_foot"
       ]
     },
     "piano_action": {
@@ -4032,9 +3894,7 @@
         "substrate",
         "microprocessor",
         "memory",
-        "contact",
         "encryption",
-        "identifier",
         "plastic",
         "gold"
       ]
@@ -4061,8 +3921,7 @@
         "pellet",
         "additive",
         "pigment",
-        "bag",
-        "spillage"
+        "bag"
       ]
     },
     "ethylene_glycol": {
@@ -4084,7 +3943,6 @@
         "manganese|cobalt",
         "additive",
         "oxidation",
-        "fragment",
         "microplastic"
       ]
     },
@@ -4108,10 +3966,7 @@
         "polymer",
         "jaw",
         "ratchet",
-        "hinge",
-        "moulding",
-        "sterilisation",
-        "packaging"
+        "hinge"
       ]
     },
     "nave": {
@@ -4119,12 +3974,8 @@
       "note": "The long hall the congregation stands in, and the reason a basilica is shaped like that.",
       "needs": [
         "column",
-        "arcade",
-        "clerestory",
-        "aisle",
         "vault|roof",
         "pier",
-        "bay",
         "floor"
       ]
     },
@@ -4148,8 +3999,6 @@
       "needs": [
         "stone|brick|timber",
         "nave",
-        "aisle",
-        "chancel",
         "altar",
         "tower",
         "roof",
@@ -4166,10 +4015,8 @@
         "base",
         "column",
         "bracket",
-        "adjuster",
         "foot",
-        "clamp",
-        "stability"
+        "clamp"
       ]
     },
     "suv": {
@@ -4228,7 +4075,7 @@
         "string",
         "tuning_peg",
         "bridge",
-        "nut",
+        "nut_fastener",
         "soundhole",
         "neck",
         "soundboard|body",
@@ -4277,23 +4124,17 @@
         "drain",
         "hypogeum",
         "lift",
-        "gate",
-        "barrier"
+        "gate"
       ]
     },
     "trade": {
       "src": "https://en.wikipedia.org/wiki/Trade",
       "note": "What has to exist before two strangers will exchange anything.",
       "needs": [
-        "surplus",
-        "transport",
-        "route",
         "currency",
-        "measure",
         "contract",
         "trust",
-        "market",
-        "ledger"
+        "market"
       ]
     },
     "camera": {
@@ -4399,7 +4240,6 @@
         "spindle",
         "bearing",
         "body",
-        "cage|clip",
         "axle",
         "thread",
         "seal"
@@ -4428,10 +4268,8 @@
         "steel",
         "rivet",
         "jaw",
-        "rein",
         "pivot",
-        "forge",
-        "reins"
+        "forge"
       ]
     },
     "tripod": {
@@ -4453,11 +4291,9 @@
       "needs": [
         "steel",
         "head",
-        "point",
         "eye",
         "haft",
         "wedge",
-        "hardening",
         "tempering"
       ]
     },
@@ -4469,7 +4305,6 @@
         "tine",
         "ferrule",
         "haft",
-        "spacing",
         "steel|wood"
       ]
     },
@@ -4492,9 +4327,7 @@
         "blade",
         "iris",
         "ring",
-        "housing",
-        "f_number",
-        "depth_of_field"
+        "housing"
       ]
     },
     "deck": {
@@ -4533,10 +4366,7 @@
         "frame",
         "padding",
         "upholstery",
-        "lumbar_support",
-        "recline",
-        "fastener",
-        "angle"
+        "fastener"
       ]
     },
     "stator": {
@@ -4547,7 +4377,6 @@
         "winding",
         "copper_wire",
         "insulation",
-        "slot",
         "housing",
         "core"
       ]
@@ -4561,7 +4390,6 @@
         "linkage",
         "shaft",
         "throttle|valve",
-        "sleeve",
         "feedback"
       ]
     },
@@ -4585,7 +4413,6 @@
       "needs": [
         "trough",
         "water|oil|brine",
-        "agitation",
         "temperature",
         "tongs",
         "lid"
@@ -4608,14 +4435,8 @@
       "src": "https://en.wikipedia.org/wiki/Typeface",
       "note": "A set of shapes designed to be read rather than looked at.",
       "needs": [
-        "glyph",
         "stroke",
-        "counter",
-        "x_height",
-        "kerning",
-        "weight",
-        "serif|sans_serif",
-        "metrics"
+        "weight"
       ]
     },
     "jpeg": {
@@ -4623,13 +4444,7 @@
       "note": "Throwing away what the eye does not notice, on purpose.",
       "needs": [
         "pixel",
-        "colour_space",
-        "discrete_cosine_transform",
-        "quantisation",
-        "huffman_coding",
-        "block",
-        "chroma_subsampling",
-        "compression"
+        "block"
       ]
     },
     "panel": {
@@ -4637,12 +4452,9 @@
       "note": "A board floating in a groove, free to move as the wood changes size.",
       "needs": [
         "plank",
-        "groove",
         "stile",
         "rail",
-        "tenon",
-        "clearance",
-        "finish"
+        "tenon"
       ]
     },
     "plastic": {
@@ -4666,12 +4478,9 @@
       "note": "Rubbish outside the system that was built to contain it.",
       "needs": [
         "rubbish",
-        "packaging",
         "wind",
         "water",
-        "fragment",
-        "microplastic",
-        "collection"
+        "microplastic"
       ]
     },
     "spinneret": {
@@ -4680,10 +4489,8 @@
       "needs": [
         "die",
         "steel|gold",
-        "hole",
         "polymer",
         "pump",
-        "draw",
         "filament"
       ]
     },
@@ -4692,14 +4499,9 @@
       "note": "A long hall with aisles and a clerestory, built for business and borrowed by the church.",
       "needs": [
         "column",
-        "arcade",
-        "clerestory",
-        "aisle",
         "nave",
-        "apse",
         "roof",
-        "pier",
-        "bay"
+        "pier"
       ]
     },
     "forum": {
@@ -4723,7 +4525,6 @@
         "marble",
         "course",
         "seat",
-        "barrier",
         "gate",
         "inscription"
       ]
@@ -4764,8 +4565,6 @@
         "polymer",
         "spinneret",
         "filament",
-        "draw",
-        "crimp",
         "dye"
       ]
     },
@@ -4778,9 +4577,7 @@
         "polymer",
         "catalyst",
         "spinneret",
-        "filament",
-        "draw",
-        "crimp"
+        "filament"
       ]
     },
     "acrylic_fibre": {
@@ -4792,7 +4589,6 @@
         "solvent",
         "spinneret",
         "filament",
-        "crimp",
         "dye"
       ]
     },
@@ -4804,8 +4600,7 @@
         "isocyanate",
         "polyol",
         "spinneret",
-        "filament",
-        "draw"
+        "filament"
       ]
     },
     "neoprene": {
@@ -4830,7 +4625,6 @@
         "acid",
         "solvent",
         "spinneret",
-        "draw",
         "weave",
         "resin"
       ]
@@ -4896,11 +4690,9 @@
       "note": "Mass under the hammer, so the blow goes into the work and not the floor.",
       "needs": [
         "steel|iron",
-        "face",
         "horn",
         "hardy_hole",
         "pritchel_hole",
-        "step",
         "base",
         "stump"
       ]
@@ -4914,7 +4706,6 @@
         "bobbin",
         "core",
         "winding",
-        "turns",
         "tap",
         "lead"
       ]
@@ -4928,10 +4719,7 @@
         "head",
         "shank",
         "washer",
-        "nut",
-        "torque",
-        "preload",
-        "grade"
+        "nut_fastener"
       ]
     },
     "tube": {
@@ -4941,7 +4729,6 @@
         "metal|polymer",
         "wall",
         "bore",
-        "drawing|extrusion",
         "weld|seamless",
         "flare",
         "fitting"
@@ -4952,11 +4739,7 @@
       "note": "One prong of several, spaced so what you want passes and what you do not does not.",
       "needs": [
         "steel",
-        "spacing",
-        "taper",
-        "point",
-        "socket",
-        "hardening"
+        "socket"
       ]
     },
     "leg": {
@@ -4968,8 +4751,7 @@
         "mortise_and_tenon|weld",
         "foot",
         "rail",
-        "stretcher",
-        "taper"
+        "stretcher"
       ]
     },
     "saltire": {
@@ -4979,10 +4761,7 @@
         "cloth",
         "dye",
         "field",
-        "charge",
-        "hoist",
-        "fly",
-        "stitching"
+        "charge"
       ]
     },
     "petrol": {
@@ -5005,9 +4784,7 @@
       "needs": [
         "transistor",
         "resistor",
-        "input",
         "output",
-        "supply",
         "interconnect"
       ]
     },
@@ -5018,7 +4795,6 @@
         "transistor",
         "nand_gate",
         "not_gate",
-        "input",
         "output",
         "interconnect"
       ]
@@ -5077,7 +4853,6 @@
         "guidance",
         "gyroscope",
         "stage",
-        "separation",
         "reentry_vehicle",
         "silo"
       ]
@@ -5156,14 +4931,8 @@
       "src": "https://en.wikipedia.org/wiki/Waste",
       "note": "What is left when nobody will pay to keep it in circulation.",
       "needs": [
-        "packaging",
-        "food_waste",
-        "collection",
-        "bin",
         "landfill|incineration",
-        "recycling",
-        "sorting",
-        "transfer_station"
+        "recycling"
       ]
     }
   },
@@ -5171,20 +4940,36 @@
   "$not_assemblies": [
     "active_ingredient",
     "additive",
+    "address_line",
     "adherence",
+    "adjuster",
     "aetiology",
+    "agitation",
     "airflow",
+    "aisle",
     "alliance",
+    "allocation_table",
+    "anaerobe",
+    "angle",
+    "apse",
+    "arcade",
+    "arch_support",
+    "artefact",
     "assessment",
     "audience",
     "axle_box",
+    "back",
     "backplate",
     "bar_stock",
+    "barrier",
     "base_course",
     "baseline",
     "batt",
+    "bay",
+    "benchmark",
     "berm",
     "bevel",
+    "bin",
     "binder_course",
     "bioavailability",
     "body",
@@ -5198,41 +4983,78 @@
     "bucking_bar",
     "buckle",
     "budget",
+    "burnishing",
+    "cage",
+    "calibration",
     "camber",
+    "cap",
     "capital",
     "carding",
     "carry",
     "case_definition",
+    "catch",
     "catchment",
     "causeway",
+    "central_bank",
+    "chancel",
     "cheek_piece",
     "chinstrap",
+    "chroma_subsampling",
+    "chute",
     "clay_lining",
+    "clearance",
+    "clerestory",
+    "code_generator",
     "cohort",
     "collateral",
     "collection",
+    "colour_space",
     "comorbidity",
+    "comparison",
+    "competitor",
+    "complement",
+    "compression",
     "confounder",
     "consent",
     "contact",
     "contamination",
     "control",
+    "control_line",
     "coping",
     "copy",
+    "counter",
     "counterscarp",
     "course",
     "credit_history",
+    "crimp",
     "criterion",
     "crowd",
     "crucible",
+    "css",
     "cuisse",
+    "currying",
     "curve",
+    "cushioning",
+    "data_line",
+    "datum",
     "dead_load",
     "default",
+    "definition",
+    "degumming",
     "denomination",
+    "depth_of_field",
+    "differentiation",
+    "directory",
+    "discrete_cosine_transform",
     "ditch",
+    "dom",
     "drainage",
+    "draw",
+    "drawing",
     "dredging",
+    "dressing",
+    "drink",
+    "drop",
     "duration",
     "eaves",
     "enforcement",
@@ -5241,129 +5063,234 @@
     "examination",
     "excavation",
     "exchange_rate",
+    "excipient",
     "exemption",
     "extrados",
+    "f_number",
+    "face",
     "fare",
     "fatigue",
     "ferrule",
+    "finish",
     "finish_coat",
     "flange",
     "fleece",
+    "fleshing",
+    "flex",
     "float_coat",
     "float_glass",
+    "fly",
+    "follower",
+    "food_waste",
     "footing",
+    "fragment",
     "fulling",
     "gauge",
+    "glazing",
+    "glyph",
+    "grade",
     "gradient",
     "graduation",
     "greave",
     "grindstone",
     "grommet",
+    "groove",
+    "guide",
     "gusset",
+    "handover",
+    "hardening",
     "haunch",
     "hawk",
     "hit_rate",
+    "hoist",
+    "hole",
     "honing",
     "hook",
+    "host",
+    "hot_riveting",
+    "household",
+    "huffman_coding",
+    "identifier",
     "image",
     "imaging",
     "impairment",
     "impedance",
     "impost",
+    "impulse",
     "index",
     "index_case",
+    "inode",
+    "input",
     "insurance",
+    "intermediate_representation",
     "interview",
     "intrados",
     "invert",
+    "javascript",
     "joist_hanger",
     "journal",
+    "kerning",
     "keystone",
     "keyway",
     "lame",
+    "land",
     "lath",
+    "layout_engine",
     "leather_strap",
+    "ledger",
     "legal_tender",
     "lesion",
+    "level",
+    "lexer",
     "licence",
     "liming",
     "linchpin",
     "liner",
     "link",
+    "linker",
     "live_load",
+    "lubricant",
+    "lumbar_support",
+    "machining",
     "material",
+    "measure",
+    "medication",
     "medium",
     "message",
     "meter",
+    "metrics",
+    "milling",
     "monitoring",
+    "moulding",
     "muzzle",
+    "name_server",
     "nasal",
+    "niche",
+    "nitro_group",
+    "nitroimidazole",
     "odometer",
+    "official",
     "onset",
     "opcode",
+    "optimiser",
     "packaging",
     "padding",
+    "parser",
     "pauldron",
     "permission",
     "placement",
     "plain_weave",
+    "point",
+    "power_source",
+    "preload",
+    "pressing",
     "principal",
     "procession",
     "protocol",
     "purlin",
+    "quantisation",
     "query",
     "query_planner",
     "quoin",
     "rammer",
     "rate",
     "reaming",
+    "recline",
     "record",
+    "reeling",
     "referral",
+    "registrar",
+    "registration",
+    "rein",
+    "reins",
     "render",
+    "rendering_engine",
     "reserve",
+    "resolver",
     "revenue",
     "revetment",
     "risk",
     "rivet_set",
+    "root_zone",
     "route",
     "rubble_core",
+    "runout",
     "safety_factor",
     "scarp",
     "schema",
     "scratch_coat",
     "seam",
+    "select_line",
     "selvage",
+    "separation",
     "serial_number",
+    "serif",
     "session",
     "severity",
     "shank",
     "side_effect",
     "sign",
     "sizing",
+    "sleeve",
+    "slot",
     "sorting",
+    "spacing",
+    "spillage",
     "springer",
+    "stability",
+    "staff",
+    "start",
     "stave",
+    "step",
+    "sterilisation",
+    "stitch_length",
+    "stitching",
+    "stop",
+    "storage",
     "strike_plate",
     "sub_base",
     "subgrade",
     "sum",
+    "sun_drying",
+    "superblock",
     "supervision",
+    "supply",
     "surface_course",
+    "surplus",
     "surveillance",
     "swage",
+    "symbol_table",
+    "syntax_tree",
     "tag",
+    "taper",
     "target",
     "technique",
     "tempering",
     "term",
     "test",
+    "theodolite",
     "therapeutic_index",
+    "throwing",
+    "timing",
+    "tls",
+    "tolerance",
+    "tonnage",
+    "torque",
     "touchhole",
     "toxicity",
+    "traceability",
     "training",
     "transaction",
+    "transfer_station",
+    "transmission",
+    "transport",
+    "traverse",
     "trial",
+    "triangulation",
     "trunnion",
+    "turns",
+    "uncertainty",
+    "ventilation",
     "venue",
     "visor",
     "voussoir",
@@ -5371,7 +5298,9 @@
     "washing",
     "web",
     "weld",
-    "zero_mark"
+    "x_height",
+    "zero_mark",
+    "zone_file"
   ],
   "$scope_rule": "Which things OWE a parts list. The denominator was read off tags and counted 2,084, and about a third of that could never have had one: 321 were places, which already carry an `of` field naming what they are built of; 126 were dishes, where the recipe IS the parts list and a second one would just restate it; and 294 were drugs and diseases, which are not assembled at all. Excluding those leaves 1,343 artefacts that genuinely have a bill of materials. This is the fourth denominator in this project to have been wrong because it was inferred from tags rather than written down, after $not_assemblies, the coverage row for needs, and the places checklist figure — the pattern is consistent enough to expect.",
   "$scope_exclude_tags": [

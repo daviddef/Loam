@@ -293,6 +293,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+    'fastener', 'additive', 'initiator', 'adhesive', 'gasket', 'bush', 'pawl', 'substrate', 'coating', 'surfactant', 'blowing_agent', 'pellet',   // components
     'static_electricity', 'circuit', 'buoyancy', 'density', 'viscosity', 'surface_tension', 'capillary_action', 'conduction', 'convection', 'reflection', 'refraction', 'resonance', 'charge', 'voltage', 'acrylic_fibre', 'spandex', 'polypropylene', 'epoxy', 'carbon_fibre', 'vinyl', 'neoprene', 'deodorant', 'moisturiser', 'painkiller', 'spinneret', 'rayon', 'kevlar',   // universe gaps 5 Sep
     'pendant', 'clasp',   // necklace, 5 Sep
     'lead_frame', 'encapsulation', 'getter', 'fuse', 'gemstone', 'setting', 'serration', 'arrowhead', 'hafting_resin', 'stearin', 'vitriol', 'drier', 'filler', 'splice', 'whipping', 'dielectric', 'lead_in_wire', 'soldering', 'chasing',   // needs-sweep 5 Sep
@@ -504,6 +505,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'mount', 'capital', 'linkage', 'webbing', 'fabric', 'vent', 'ratchet',   // components
     'paraffin_wax', 'soy_wax', 'polyester', 'nylon', 'viscose', 'sunscreen', 'shampoo', 'toothpaste', 'picture', 'cotton_plant', 'boll', 'laminate', 'rubbish', 'litter',   // reader-found gaps
     'brake_fluid', 'propellant', 'stucco', 'coolant',   // needs sweep
     'thatch',   // a laid roof covering, not a building
@@ -1125,6 +1127,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'extruder', 'counterweight', 'capstone', 'harness', 'stair',   // components
     'windmill', 'mine', 'smithy', 'bakery', 'tannery', 'bank', 'garden', 'kitchen', 'watermill',   // orphan-list subjects
     'stream', 'brook', 'pond', 'culvert', 'watershed', 'runoff', 'oxbow', 'wiring', 'shower', 'bath', 'fridge', 'washing_machine', 'plumbing', 'furniture',   // universe gaps 5 Sep
     'spillway', 'embankment', 'penstock', 'flue', 'airframe', 'terrace', 'retaining_wall', 'arena', 'vomitorium', 'awning', 'basilica', 'forum',   // needs sweep
