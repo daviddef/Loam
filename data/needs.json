@@ -3154,6 +3154,426 @@
         "column",
         "foundation"
       ]
+    },
+    "brake_disc": {
+      "src": "https://en.wikipedia.org/wiki/Disc_brake",
+      "note": "A steel plate that has to take the heat and stay flat.",
+      "needs": [
+        "cast_iron|steel",
+        "hub",
+        "vane",
+        "vent",
+        "machining",
+        "runout",
+        "friction",
+        "heat_sink"
+      ]
+    },
+    "brake_pad": {
+      "src": "https://en.wikipedia.org/wiki/Brake_pad",
+      "note": "Friction material on a steel backing, chosen to wear instead of the disc.",
+      "needs": [
+        "backing",
+        "friction",
+        "resin",
+        "fibre",
+        "filler",
+        "binder",
+        "rivet|adhesive",
+        "wear_indicator"
+      ]
+    },
+    "multiplexer": {
+      "src": "https://en.wikipedia.org/wiki/Multiplexer",
+      "note": "Choosing one of several inputs with a switch made of gates.",
+      "needs": [
+        "logic_gate",
+        "transistor",
+        "select_line",
+        "data_line",
+        "interconnect",
+        "clock_signal"
+      ]
+    },
+    "flip_flop": {
+      "src": "https://en.wikipedia.org/wiki/Flip-flop_(electronics)",
+      "note": "Two gates feeding each other, so the circuit remembers.",
+      "needs": [
+        "logic_gate",
+        "transistor",
+        "clock_signal",
+        "latch",
+        "feedback",
+        "register"
+      ]
+    },
+    "half_adder": {
+      "src": "https://en.wikipedia.org/wiki/Adder_(electronics)",
+      "note": "Two bits in, a sum and a carry out.",
+      "needs": [
+        "logic_gate",
+        "transistor",
+        "carry",
+        "interconnect"
+      ]
+    },
+    "receiver": {
+      "src": "https://en.wikipedia.org/wiki/Radio_receiver",
+      "note": "Picking one signal out of everything arriving at the antenna.",
+      "needs": [
+        "antenna",
+        "tuner",
+        "capacitor",
+        "coil",
+        "diode",
+        "amplifier",
+        "transistor",
+        "filter",
+        "speaker",
+        "power_supply"
+      ]
+    },
+    "altimeter": {
+      "src": "https://en.wikipedia.org/wiki/Altimeter",
+      "note": "Reading height off the pressure, and being wrong when the weather changes.",
+      "needs": [
+        "aneroid_capsule|barometer",
+        "dial",
+        "gear_train",
+        "pointer",
+        "case",
+        "calibration",
+        "pressure"
+      ]
+    },
+    "seatbelt": {
+      "src": "https://en.wikipedia.org/wiki/Seat_belt",
+      "note": "Webbing, a reel that locks, and an anchor strong enough to matter.",
+      "needs": [
+        "webbing",
+        "polyester",
+        "retractor",
+        "inertia_reel",
+        "buckle",
+        "anchor",
+        "pretensioner",
+        "stitching"
+      ]
+    },
+    "ambulance": {
+      "src": "https://en.wikipedia.org/wiki/Ambulance",
+      "note": "A vehicle built round a stretcher and the things needed on the way.",
+      "needs": [
+        "chassis",
+        "engine",
+        "body",
+        "stretcher",
+        "oxygen",
+        "defibrillator",
+        "siren",
+        "radio",
+        "suspension",
+        "light"
+      ]
+    },
+    "nurse": {
+      "src": "https://en.wikipedia.org/wiki/Nursing",
+      "note": "The trade that is with the patient when nobody else is.",
+      "needs": [
+        "training",
+        "registration",
+        "observation",
+        "medication",
+        "dressing",
+        "record",
+        "handover",
+        "hospital",
+        "patient"
+      ]
+    },
+    "rocket": {
+      "src": "https://en.wikipedia.org/wiki/Rocket",
+      "note": "Throwing mass backwards hard enough to go the other way.",
+      "needs": [
+        "propellant",
+        "oxidizer",
+        "combustion_chamber",
+        "nozzle",
+        "turbopump",
+        "tank",
+        "airframe",
+        "fin",
+        "guidance",
+        "igniter"
+      ]
+    },
+    "cargo": {
+      "src": "https://en.wikipedia.org/wiki/Cargo",
+      "note": "Whatever the ship is actually for.",
+      "needs": [
+        "container|bulk|break_bulk",
+        "pallet",
+        "lashing",
+        "manifest",
+        "hold",
+        "crane",
+        "stowage",
+        "ballast"
+      ]
+    },
+    "feast": {
+      "src": "https://en.wikipedia.org/wiki/Feast",
+      "note": "Cooking for more people than the kitchen was built for.",
+      "needs": [
+        "food",
+        "fire",
+        "pot",
+        "table",
+        "bowl",
+        "knife",
+        "bread",
+        "meat",
+        "drink",
+        "salt",
+        "spice"
+      ]
+    },
+    "economy": {
+      "src": "https://en.wikipedia.org/wiki/Economy",
+      "note": "Everything people make, move and exchange, counted.",
+      "needs": [
+        "labour",
+        "capital",
+        "land",
+        "output",
+        "trade",
+        "money",
+        "market",
+        "sector",
+        "tax",
+        "household"
+      ]
+    },
+    "stain": {
+      "src": "https://en.wikipedia.org/wiki/Staining",
+      "note": "Making a colourless thing visible by binding a dye to part of it.",
+      "needs": [
+        "dye",
+        "fixative",
+        "mordant",
+        "buffer",
+        "specimen",
+        "microscope",
+        "differentiation",
+        "counterstain"
+      ]
+    },
+    "forbidden_city": {
+      "src": "https://en.wikipedia.org/wiki/Forbidden_City",
+      "note": "980 buildings on one axis, with the roof colour telling you the rank.",
+      "needs": [
+        "timber",
+        "brick",
+        "roof_tile",
+        "marble",
+        "bracket_set",
+        "column",
+        "courtyard",
+        "moat",
+        "city_wall",
+        "paint",
+        "gold"
+      ]
+    },
+    "kilwa_kisiwani": {
+      "src": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani",
+      "note": "A Swahili trading city built in coral, that controlled the Zimbabwe gold trade.",
+      "needs": [
+        "coral",
+        "mortar",
+        "quicklime",
+        "mangrove",
+        "dome",
+        "vault",
+        "column",
+        "harbour",
+        "cistern",
+        "roof"
+      ]
+    },
+    "newgrange": {
+      "src": "https://en.wikipedia.org/wiki/Newgrange",
+      "note": "A passage tomb with a roof box aligned so the midwinter sun reaches the back.",
+      "needs": [
+        "stone",
+        "quartz",
+        "corbel_vault",
+        "kerbstone",
+        "passage",
+        "roof_box",
+        "earthwork",
+        "turf"
+      ]
+    },
+    "pergamon_parts": {
+      "src": "https://en.wikipedia.org/wiki/Pergamon",
+      "note": "A city terraced up a cone, so every building stands on a retaining wall.",
+      "needs": [
+        "andesite",
+        "marble",
+        "terrace",
+        "retaining_wall",
+        "theatre",
+        "column",
+        "aqueduct",
+        "cistern",
+        "mortar",
+        "altar"
+      ]
+    },
+    "sagalassos_parts": {
+      "src": "https://en.wikipedia.org/wiki/Sagalassos",
+      "note": "A mountain city abandoned after an earthquake and never built over.",
+      "needs": [
+        "limestone",
+        "marble",
+        "theatre",
+        "aqueduct",
+        "nymphaeum",
+        "column",
+        "arch",
+        "road",
+        "mortar",
+        "cistern"
+      ]
+    },
+    "metronidazole": {
+      "src": "https://en.wikipedia.org/wiki/Metronidazole",
+      "note": "A drug that only becomes a poison inside things that live without oxygen.",
+      "needs": [
+        "nitroimidazole",
+        "nitro_group",
+        "reduction",
+        "anaerobe",
+        "dose",
+        "tablet",
+        "half_life"
+      ]
+    },
+    "innate_immunity": {
+      "src": "https://en.wikipedia.org/wiki/Innate_immune_system",
+      "note": "The defences that are already there before anything has been learned.",
+      "needs": [
+        "skin",
+        "mucus",
+        "lysozyme",
+        "macrophage",
+        "neutrophil",
+        "complement",
+        "cytokine",
+        "inflammation",
+        "fever",
+        "phagocytosis"
+      ]
+    },
+    "contagion": {
+      "src": "https://en.wikipedia.org/wiki/Contagion",
+      "note": "Disease moving from one person to the next, and what has to be true for it to.",
+      "needs": [
+        "pathogen",
+        "host",
+        "transmission",
+        "contact",
+        "droplet",
+        "vector",
+        "incubation_period",
+        "basic_reproduction_number",
+        "quarantine"
+      ]
+    },
+    "recombinant_dna": {
+      "src": "https://en.wikipedia.org/wiki/Recombinant_DNA",
+      "note": "Cutting DNA at a known place and pasting somebody else's in.",
+      "needs": [
+        "plasmid",
+        "restriction_enzyme",
+        "ligase",
+        "gene",
+        "vector",
+        "host_cell",
+        "selectable_marker",
+        "transformation",
+        "culture_medium"
+      ]
+    },
+    "pesto": {
+      "src": "https://en.wikipedia.org/wiki/Pesto",
+      "note": "Pounded rather than chopped, because a blade bruises basil and a stone does not.",
+      "needs": [
+        "basil",
+        "pine",
+        "garlic",
+        "olive_oil",
+        "cheese",
+        "salt",
+        "mortar"
+      ]
+    },
+    "race": {
+      "src": "https://en.wikipedia.org/wiki/Racing",
+      "note": "Everybody going the same way at once, timed.",
+      "needs": [
+        "course",
+        "start",
+        "finish",
+        "timing",
+        "rule",
+        "competitor",
+        "official",
+        "record"
+      ]
+    },
+    "standard": {
+      "src": "https://en.wikipedia.org/wiki/Standard_(metrology)",
+      "note": "An agreed thing to measure everything else against.",
+      "needs": [
+        "definition",
+        "artefact|constant",
+        "calibration",
+        "traceability",
+        "uncertainty",
+        "measurement",
+        "comparison"
+      ]
+    },
+    "money": {
+      "src": "https://en.wikipedia.org/wiki/Money",
+      "note": "A thing everyone will accept, so trade no longer needs both sides to want.",
+      "needs": [
+        "coin",
+        "banknote",
+        "currency",
+        "mint",
+        "denomination",
+        "ledger",
+        "credit",
+        "trust",
+        "central_bank"
+      ]
+    },
+    "domain_name_system": {
+      "src": "https://en.wikipedia.org/wiki/Domain_Name_System",
+      "note": "Turning a name into an address, in a hierarchy nobody owns all of.",
+      "needs": [
+        "name_server",
+        "root_zone",
+        "record",
+        "cache",
+        "resolver",
+        "query",
+        "zone_file",
+        "registrar"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
@@ -3361,5 +3781,13 @@
     "web",
     "weld",
     "zero_mark"
-  ]
+  ],
+  "$scope_rule": "Which things OWE a parts list. The denominator was read off tags and counted 2,084, and about a third of that could never have had one: 321 were places, which already carry an `of` field naming what they are built of; 126 were dishes, where the recipe IS the parts list and a second one would just restate it; and 294 were drugs and diseases, which are not assembled at all. Excluding those leaves 1,343 artefacts that genuinely have a bill of materials. This is the fourth denominator in this project to have been wrong because it was inferred from tags rather than written down, after $not_assemblies, the coverage row for needs, and the places checklist figure — the pattern is consistent enough to expect.",
+  "$scope_exclude_tags": [
+    "dish",
+    "food",
+    "medicine",
+    "microbe"
+  ],
+  "$scope_exclude_places": true
 }

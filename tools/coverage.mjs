@@ -52,7 +52,11 @@ const assembled = (id) => (madeBy.get(id) || []).some(r => r.in.length >= 2);
  * coverage number stops meaning anything. */
 const MADE = new Set(['tool', 'build', 'dish', 'trade', 'instrument', 'medicine', 'transport', 'machine']);
 const NOT_ASSEMBLY = new Set(has('needs.json') ? (read('needs.json').$not_assemblies || []) : []);
+const NEEDS_SKIP = new Set(has('needs.json') ? (read('needs.json').$scope_exclude_tags || []) : []);
+const PLACE_IDS = has('places.json') ? new Set(Object.keys(read('places.json').places)) : new Set();
 const artefacts = elements.filter(e => assembled(e.id) && !NOT_ASSEMBLY.has(e.id)
+                                    && !PLACE_IDS.has(e.id)
+                                    && !(e.tags || []).some(t => NEEDS_SKIP.has(t))
                                     && (e.tags || []).some(t => MADE.has(t)));
 
 const rows = [];

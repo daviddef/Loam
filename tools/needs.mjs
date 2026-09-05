@@ -167,7 +167,16 @@ if (args.includes('--next')) {
    *   maker's tag it is a made thing, not a rock or an animal
    *   not excluded see $not_assemblies: a bevel is an angle, a weld is a joint */
   const assembled = new Set(recipes.filter(r => r.in.length >= 2).map(r => r.out));
+  /* A place already carries `of`, which names what it is built of; a dish's
+   * recipe IS its parts list; a drug or a disease is not assembled at all.
+   * Counting those put the denominator at 2,084 when 741 of them could never
+   * have had a list. See $scope_rule in data/needs.json. */
+  const SKIP = new Set(R('needs.json').$scope_exclude_tags || []);
+  const PLACES = existsSync(join(root, 'data/places.json'))
+    ? new Set(Object.keys(R('places.json').places)) : new Set();
   const allMade = elements.filter(e => assembled.has(e.id) && !NOT_ASSEMBLY.has(e.id)
+                                    && !PLACES.has(e.id)
+                                    && !(e.tags ?? []).some(t => SKIP.has(t))
                                     && (e.tags ?? []).some(t => MADE.has(t)));
   const done = allMade.filter(e => NEEDS[e.id]).length;
   console.log(`\n  ${done} of ${allMade.length} things with a maker's tag have a list — ` +
