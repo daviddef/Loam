@@ -25627,7 +25627,7 @@
   {
     "in": [
       "soil",
-      "titan"
+      "titans"
     ],
     "out": "gaia",
     "why": "The Earth personified, and the mother of the Titans. A primordial is placed by what it bore, not by what it is made of — nothing made Gaia.",
@@ -25667,7 +25667,7 @@
   {
     "in": [
       "cronus",
-      "titan"
+      "titans"
     ],
     "out": "rhea",
     "why": "A Titaness whose whole story is her marriage to Cronus and the stone she wrapped in cloth and handed him instead of Zeus.",
@@ -93132,11 +93132,11 @@
   },
   {
     "in": [
-      "stone",
-      "trade"
+      "course",
+      "stone"
     ],
     "out": "mason",
-    "why": "Laying stone so it stays up is not obvious and cannot be worked out twice. The knowledge travels as a trade — apprentice to journeyman to master — which is why medieval cathedrals across a continent share details nobody wrote down.",
+    "why": "The trade that turns a heap of stone into a wall that stands. A mason's skill is in the course: choosing which stone goes where so that every joint is broken by the one above, no two verticals line up, and the load runs down through stone rather than through mortar. In Djenné the masons' guild still re-renders the mosque every year.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Stonemasonry"
   },
@@ -99761,5 +99761,15 @@
     "why": "A census needs writing before it needs arithmetic: a count nobody can record is a count nobody can check or repeat. The earliest ones are granary and head tallies on clay, and the reason states keep doing it is that taxation and conscription both need a list of who is where.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Census"
+  },
+  {
+    "in": [
+      "cronus",
+      "gaia"
+    ],
+    "out": "titans",
+    "why": "Gaia and Uranus bore twelve of them, and Cronus, the youngest, castrated his father with a sickle at his mother's urging and took the sky's place. He was then overthrown by his own youngest son in turn, which is the shape the story insists on: each generation is ended by the child it tried to prevent.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Titans"
   }
 ]

@@ -1118,6 +1118,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+    'titans',
     'excavation', 'causeway', 'subgrade', 'sub_base', 'base_course', 'binder_course', 'surface_course', 'drainage', 'camber', 'clay_lining',   // needs-sweep 5 Sep
     /* places batch 45, 5 Sep. a minaret 60 m, an abbey, a mound 65 by 60 m, a cemetery */
     'konye_urgench', 'vezelay', 'pulemelei', 'teouma',
