@@ -5277,11 +5277,11 @@
   },
   {
     "in": [
-      "field",
-      "sun"
+      "boll",
+      "comb"
     ],
     "out": "cotton",
-    "why": "The fibre is the seed's own wrapping — it grows in a boll around the seeds themselves. The crop wants a long frost-free period and plenty of sunshine, which is why it stays a warm-country field crop.",
+    "why": "Cotton is the seed hair of a Gossypium boll — cellulose fibres a centimetre or three long, grown to float the seed away on the wind. Picking gets lint and seed together and they have to be combed apart, which by hand was about a pound a day per person until Whitney's gin in 1793 made it fifty.",
     "src": "https://en.wikipedia.org/wiki/Cotton",
     "verified": true
   },
@@ -100841,5 +100841,225 @@
     "why": "A dressed stone set upright and inscribed — boundary, treaty, law code, king list or grave. It is the cheapest permanent way to publish, which is why so much of what is known about early states comes from them, and why so many were deliberately smashed.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Stele"
+  },
+  {
+    "in": [
+      "petroleum",
+      "crucible"
+    ],
+    "out": "paraffin_wax",
+    "why": "Straight-chain alkanes of about twenty to forty carbons, separated from the heavy end of crude and de-oiled. It is odourless, takes colour and scent, melts around 46 to 68 °C, and costs a fraction of beeswax — which is why the candle stopped being a luxury within a generation of its arrival in the 1850s.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Paraffin_wax"
+  },
+  {
+    "in": [
+      "soybean",
+      "hydrogen"
+    ],
+    "out": "soy_wax",
+    "why": "Hydrogen added across the double bonds of soybean oil raises its melting point until it is solid at room temperature. It melts lower than paraffin, around 50 °C, so it burns cooler and slower, and it was developed in the 1990s specifically as a renewable answer to a petroleum wax.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Soy_candle"
+  },
+  {
+    "in": [
+      "ethylene_glycol",
+      "polymer"
+    ],
+    "out": "polyester",
+    "why": "Terephthalic acid and ethylene glycol condense into long chains, melt-spun through a spinneret into filament. It does not absorb water, so it dries fast and does not rot — and it does not absorb water, so it holds smell and sheds microfibres into every wash. It passed cotton as the world's most used fibre in the 2000s.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Polyester"
+  },
+  {
+    "in": [
+      "polymer",
+      "acid"
+    ],
+    "out": "nylon",
+    "why": "A polyamide: acid and amine groups condensing into a chain with the same hydrogen bonding that makes silk strong. Carothers had it at DuPont by 1935, stockings reached the market in 1940, and within two years the whole output was going to parachutes and rope.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Nylon"
+  },
+  {
+    "in": [
+      "cellulose",
+      "lye"
+    ],
+    "out": "viscose",
+    "why": "Cellulose is treated with alkali and carbon disulfide until it dissolves, then extruded into an acid bath that regenerates it as filament. It is the same molecule as cotton in a shape it does not naturally take, which is why viscose feels like silk and burns like paper.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Viscose"
+  },
+  {
+    "in": [
+      "zinc_oxide",
+      "oil"
+    ],
+    "out": "sunscreen",
+    "why": "Mineral filters — zinc oxide and titanium dioxide — sit on the surface and scatter and absorb ultraviolet; organic filters absorb it into a molecule that releases the energy as heat. SPF measures UVB only, which is why a high number with no broad-spectrum claim still lets through the UVA that ages skin.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sunscreen"
+  },
+  {
+    "in": [
+      "soap",
+      "fragrance"
+    ],
+    "out": "shampoo",
+    "why": "A surfactant lifts sebum off the hair and takes it away in the rinse — and takes the hair's own oil with it, which is why conditioner exists and why the ingredient list is mostly things replacing what the first ingredient removed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shampoo"
+  },
+  {
+    "in": [
+      "chalk",
+      "fluorine"
+    ],
+    "out": "toothpaste",
+    "why": "The abrasive polishes and the foaming agent spreads it, but the active part is fluoride: it exchanges into the enamel's hydroxyapatite as fluorapatite, which dissolves at a lower pH than the original and so resists the acid that bacteria make.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Toothpaste"
+  },
+  {
+    "in": [
+      "cloth",
+      "seam"
+    ],
+    "out": "skirt",
+    "why": "Cloth joined into a tube and gathered or shaped at the waist. The Tarkhan dress from Egypt is about five thousand years old and already tailored rather than draped, which puts cut-and-sewn clothing far earlier than the loom technology usually credited with it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Skirt"
+  },
+  {
+    "in": [
+      "pigment",
+      "panel"
+    ],
+    "out": "picture",
+    "why": "A picture works because a viewer accepts a flat, bounded, still surface as standing for something that is none of those. Everything else — perspective, photography, the screen — is a technique for making that substitution easier, and the substitution itself is about forty thousand years old.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Image"
+  },
+  {
+    "in": [
+      "paraffin_wax",
+      "wick"
+    ],
+    "out": "candle",
+    "why": "The candle stopped being a luxury when the wax stopped being an animal. Paraffin off the heavy end of a crude barrel is odourless, takes dye and scent, and costs a fraction of beeswax or tallow — so from the 1850s a working household could light a room without rendering fat for it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Candle"
+  },
+  {
+    "in": [
+      "soy_wax",
+      "wick"
+    ],
+    "out": "candle",
+    "why": "Hydrogenated soybean oil, developed in the 1990s as a renewable answer to paraffin. It melts about twenty degrees lower, so it burns cooler and longer and throws less soot — and being softer, it needs a container rather than standing on its own.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Soy_candle"
+  },
+  {
+    "in": [
+      "polyester",
+      "loom"
+    ],
+    "out": "cloth",
+    "why": "More cloth is made of polyester now than of cotton. Melt-spun filament can be made any length, any thickness and any cross-section, so the fibre is designed rather than harvested — and unlike every natural fibre it does not absorb water, which is what makes it quick-drying and what makes it hold smell.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Polyester"
+  },
+  {
+    "in": [
+      "polyester",
+      "seam"
+    ],
+    "out": "clothing",
+    "why": "Synthetic fibre changed what clothing is for: it does not rot, does not shrink, holds a crease, and costs almost nothing, which is what made a garment something to replace rather than repair. It also sheds microfibres into the wash, and that is now the largest single source of microplastic in the sea.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clothing"
+  },
+  {
+    "in": [
+      "seedling",
+      "field"
+    ],
+    "out": "cotton_plant",
+    "why": "Gossypium sets its seeds inside a capsule — the boll — and each seed grows a coat of long cellulose hairs to carry it on the wind or the water. The plant is doing seed dispersal; the entire cotton industry is the interception of that one step.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cotton"
+  },
+  {
+    "in": [
+      "cotton_plant",
+      "flower"
+    ],
+    "out": "boll",
+    "why": "The boll is the seed capsule. It dries and splits along its seams, and the fibres inside spring out as a white mass still attached to the seeds — which is why the next problem after picking is separating lint from seed, and why the gin mattered so much.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cotton"
+  },
+  {
+    "in": [
+      "timber",
+      "lathe"
+    ],
+    "out": "veneer",
+    "why": "A soaked log is turned against a full-length knife and unwound into a continuous ribbon a millimetre or two thick. That one operation is what makes plywood possible and what made rare timbers affordable, because a log that would make one solid table makes enough veneer for fifty.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Wood_veneer"
+  },
+  {
+    "in": [
+      "resin",
+      "paper"
+    ],
+    "out": "laminate",
+    "why": "Kraft paper soaked in resin and pressed under heat until the resin cross-links into one solid sheet, with a printed layer near the surface and a clear wear layer over it. The picture of wood is a photograph; the hardness is the resin, and neither is timber.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lamination"
+  },
+  {
+    "in": [
+      "erosion",
+      "rain"
+    ],
+    "out": "creek",
+    "why": "Rain that does not soak in gathers into rills, rills into creeks, creeks into rivers — and almost all the erosion in a catchment happens in the smallest channels, because that is where the water first has enough energy to cut and has not yet spread out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stream"
+  },
+  {
+    "in": [
+      "waste",
+      "market"
+    ],
+    "out": "rubbish",
+    "why": "Nothing is rubbish by composition. It becomes rubbish when nobody will pay to keep it in circulation, which is why the same object is a resource in one economy and a disposal problem in another — and why the cheapest way to reduce it has always been to change the second condition rather than the first.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Waste"
+  },
+  {
+    "in": [
+      "rubbish",
+      "road"
+    ],
+    "out": "litter",
+    "why": "The distinction from waste is entirely about where it ends up: litter is outside the collection system, so it weathers, fragments and moves with wind and water instead of being contained. Almost all marine plastic began as litter rather than as landfill.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Litter"
+  },
+  {
+    "in": [
+      "veneer",
+      "resin"
+    ],
+    "out": "plywood",
+    "why": "Wood is many times stronger along the grain than across it, and splits along it readily. Gluing an odd number of veneers at right angles gives a sheet nearly as strong in both directions that will not split and stays flat — properties no piece of solid timber has.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Plywood"
   }
 ]

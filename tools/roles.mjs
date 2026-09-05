@@ -127,6 +127,22 @@ if (mode === '--derives') {
     const rs = r.in.map(i => R.roles[i]);
     if (rs.some(x => !x)) continue;
     const tags = byIdEl.get(r.out)?.tags || [];
+    /* A CLASS THIS CHECK CANNOT SEE, and it is worth saying so here.
+     *
+     * A player asked why cotton comes from field + sun rather than from the
+     * cotton plant. It is a fair question and the answer is that it should.
+     * But `sun` is roled process and `field` material, so both inputs
+     * contribute and this check passes the recipe without complaint.
+     *
+     * Widening it was tried: exempting organisms from the convention only when
+     * the output is not roled material. That flagged cow + grass -> milk,
+     * nectar + bee -> honey and chicken + seed -> egg, all of which are
+     * correct, and still did not catch cotton. Reverted.
+     *
+     * What this check can prove is that a recipe names NOTHING that
+     * contributes. It cannot tell that the contributing things it names are
+     * the wrong ones. field + sun -> cotton is that fault, and a person
+     * playing the game found it in a second. */
     if (tags.some(t => CONVENTION.has(t)) || NOT_DERIVABLE.has(r.out)) { skipped.push(r); continue; }
     judged.push(r);
     if (!rs.some(x => R.$contributes.includes(x))) bad.push({ r, rs });

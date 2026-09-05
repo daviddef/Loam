@@ -89,6 +89,58 @@ const one = args.find(a => !a.startsWith('--'));
  * an alternation nobody has built the other half of yet is a gap in authoring
  * rather than an error in what is there.
  */
+/* --branches: THE HOLE BETWEEN THE OTHER TWO CHECKS
+ *
+ * A player asked why a candle shows as tallow, which is historical, and what
+ * happened to the other waxes. The parts list for candle says
+ * `tallow|beeswax|paraffin_wax`. Paraffin is the wax almost every candle made
+ * since the 1850s is actually made of, and it does not exist in this corpus.
+ *
+ * Neither check reported it. --missing did not, because an alternation counts
+ * as satisfied the moment ANY branch exists, and tallow and beeswax both do.
+ * --narrow did not, because it deliberately ignores branches that are not
+ * elements — that was the right call for its own purpose and it left this
+ * class with nobody looking at it.
+ *
+ * 187 branches were sitting in that gap. Some are naming slips rather than
+ * gaps — aluminium for aluminum, gasoline for petrol, tile for roof_tile — and
+ * those are the list needing to use the corpus's own names. The rest are real
+ * absences that a parts list had already noticed and no report ever surfaced.
+ */
+if (args.includes('--branches')) {
+  const near = (b) => {
+    const c = [b.replace(/ium$/, 'um'), b.replace(/um$/, 'ium'), b + '_wax', b + '_tree',
+               b + '_oil', 'roof_' + b, b.replace(/^gasoline$/, 'petrol')];
+    return c.find(x => x !== b && ids.has(x)) || null;
+  };
+  const cold = new Map();
+  for (const [id, entry] of Object.entries(NEEDS)) {
+    for (const need of entry.needs) {
+      if (!need.includes('|')) continue;
+      const br = need.split('|');
+      if (!br.some(b => ids.has(b))) continue;      // wholly missing: --missing has it
+      for (const b of br) {
+        if (ids.has(b)) continue;
+        if (!cold.has(b)) cold.set(b, []);
+        cold.get(b).push(id);
+      }
+    }
+  }
+  const rows = [...cold.entries()].map(([b, users]) => ({ b, users, alias: near(b) }))
+    .sort((a, b) => (a.alias ? 1 : 0) - (b.alias ? 1 : 0) || b.users.length - a.users.length);
+  const gaps = rows.filter(r => !r.alias), slips = rows.filter(r => r.alias);
+  console.log(`\n${gaps.length} ALTERNATIVE(S) A PARTS LIST NAMES THAT THIS CORPUS DOES NOT HAVE\n`);
+  for (const r of gaps) console.log(`  ${r.b.padEnd(26)} wanted by ${r.users.length}: ${r.users.slice(0, 4).join(', ')}`);
+  if (slips.length) {
+    console.log(`\n${slips.length} more are the list using a name this corpus spells differently:\n`);
+    for (const r of slips) console.log(`  ${r.b.padEnd(26)} -> ${r.alias}   (${r.users.slice(0, 3).join(', ')})`);
+  }
+  console.log(`\n  These are invisible to --missing, which counts an alternation as satisfied`);
+  console.log(`  the moment one branch exists, and to --narrow, which ignores branches that`);
+  console.log(`  are not elements. A candle made only of tallow is the symptom.\n`);
+  process.exit(0);
+}
+
 if (args.includes('--narrow')) {
   const madeBy = new Map();
   for (const r of recipes) {

@@ -503,6 +503,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+    'paraffin_wax', 'soy_wax', 'polyester', 'nylon', 'viscose', 'sunscreen', 'shampoo', 'toothpaste', 'picture', 'cotton_plant', 'boll', 'laminate', 'rubbish', 'litter',   // reader-found gaps
     'brake_fluid', 'propellant', 'stucco', 'coolant',   // needs sweep
     'thatch',   // a laid roof covering, not a building
     'mortise_and_tenon',   // needs-sweep 5 Sep
@@ -790,6 +791,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+    'skirt', 'veneer', 'creek', 'plywood',   // reader-found gaps
     'caliper', 'master_cylinder', 'retort', 'grate', 'scrubber', 'heat_exchanger', 'gyroscope', 'spar', 'leaf_spring', 'steering', 'tailgate', 'podium', 'stela',   // needs sweep
     'coercivity',   // needs-sweep 5 Sep
     'course', 'coping', 'quoin', 'footing', 'haunch', 'extrados', 'intrados', 'rubble_core', 'lathe', 'boring_machine', 'purlin', 'eaves', 'float_glass', 'berm', 'scratch_coat', 'float_coat', 'finish_coat', 'brace', 'scarp', 'counterscarp', 'revetment', 'ditch',   // needs-sweep 5 Sep
