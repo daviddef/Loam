@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* W4 physiology third pass, 6 Sep */
+          'lactate', 'ketone', 'ion_channel', 'receptor', 'resting_potential',
           /* W2 arachnids and insects, 5 Sep */
           'pheromone',
     /* verb outcomes, 5 Sep. one HMF molecule */
@@ -139,6 +141,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* W4 physiology third pass, 6 Sep */
+          'keratinocyte', 'glial_cell',
           /* W4 physiology second pass, 6 Sep */
           'rod_cell', 'cone_cell', 'egg_cell', 'melanin', 'albumin', 'erythropoietin',
           /* W4 physiology, 6 Sep */
@@ -266,6 +270,8 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W4 physiology third pass, 6 Sep */
+          'goosebump',
           /* W4 physiology second pass, 6 Sep */
           'eardrum', 'pupil', 'semicircular_canal', 'umbilical_cord',
           /* W4 physiology, 6 Sep */
@@ -322,6 +328,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W4 physiology third pass, 6 Sep */
+          'medulla', 'grey_matter', 'capillary_bed', 'slow_twitch', 'fast_twitch', 'scar',
           /* W4 physiology second pass, 6 Sep */
           'vitreous', 'serum', 'sweat', 'ovulation',
           /* W4 physiology, 6 Sep */
@@ -546,6 +554,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W4 physiology third pass, 6 Sep */
+          'cardiac_output', 'stroke_volume', 'oxygen_debt', 'hypertrophy', 'fatigue', 'agonist', 'antagonist', 'first_pass_metabolism', 'half_life_drug', 'tolerance', 'proprioception', 'menstruation',
           /* W4 physiology second pass, 6 Sep */
           'blood_plasma',
           /* W4 physiology second pass, 6 Sep */

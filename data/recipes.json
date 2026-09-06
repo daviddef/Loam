@@ -104197,5 +104197,265 @@
     "why": "Spin blood and it separates: red cells sink, and the straw-coloured liquid above them is more than half the volume. That liquid is mostly water, carrying the proteins, salts and sugars everything else is delivered in.",
     "src": "https://en.wikipedia.org/wiki/Blood_plasma",
     "verified": true
+  },
+  {
+    "in": [
+      "capillary",
+      "muscle"
+    ],
+    "out": "capillary_bed",
+    "why": "Vessels branch until the walls are one cell thick and the blood is moving slowly enough to exchange. Training grows more of them around a muscle, which shortens the distance oxygen has to diffuse.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Capillary"
+  },
+  {
+    "in": [
+      "capillary_bed",
+      "muscle"
+    ],
+    "out": "slow_twitch",
+    "why": "It burns fat and glucose with oxygen, which is slow and nearly inexhaustible. The proportion you have is largely fixed, which is a real limit on what kind of athlete anyone can become.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Skeletal_muscle"
+  },
+  {
+    "in": [
+      "glycogen",
+      "muscle"
+    ],
+    "out": "fast_twitch",
+    "why": "It runs on stored glycogen without oxygen, which is why it is powerful and why it stops. A sprint is this fibre spending what was already in the muscle.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Skeletal_muscle"
+  },
+  {
+    "in": [
+      "lactic_acid",
+      "oxygen"
+    ],
+    "out": "oxygen_debt",
+    "why": "During hard effort the muscle works past what oxygen delivery can support. Afterwards the elevated breathing restores what was borrowed — refilling myoglobin, clearing lactate and rebuilding ATP.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Excess_post-exercise_oxygen_consumption"
+  },
+  {
+    "in": [
+      "muscle",
+      "protein"
+    ],
+    "out": "hypertrophy",
+    "why": "The number of fibres is largely set. Training adds contractile protein inside the existing ones, which is why a muscle can double in size without any new cells being made.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Muscle_hypertrophy"
+  },
+  {
+    "in": [
+      "muscle",
+      "time"
+    ],
+    "out": "fatigue",
+    "why": "Glycogen runs down, calcium handling falters, and the nervous system reduces its own drive before any of that becomes dangerous. The last of those is why encouragement works and why a finish line produces a sprint.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Fatigue"
+  },
+  {
+    "in": [
+      "protein",
+      "signal"
+    ],
+    "out": "receptor",
+    "why": "A molecule outside the cell changes the shape of a protein spanning the membrane, and that shape change is the message. Nothing crosses; the information does.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Receptor_(biochemistry)"
+  },
+  {
+    "in": [
+      "drug",
+      "receptor"
+    ],
+    "out": "agonist",
+    "why": "Morphine is an agonist at the receptors the body's own endorphins use. The receptor cannot tell the difference, which is exactly why the drug works and why the system adapts to it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Agonist"
+  },
+  {
+    "in": [
+      "agonist",
+      "drug"
+    ],
+    "out": "antagonist",
+    "why": "Naloxone occupies the opioid receptor without activating it and displaces whatever was there. That is why an overdose can be reversed in seconds — nothing is removed from the body, it is only pushed off the lock.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Receptor_antagonist"
+  },
+  {
+    "in": [
+      "drug",
+      "liver"
+    ],
+    "out": "first_pass_metabolism",
+    "why": "Blood from the gut drains to the liver first, not to the heart. Some drugs are so thoroughly broken down on that first pass that swallowing them is pointless — which is why some are put under the tongue instead.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/First_pass_effect"
+  },
+  {
+    "in": [
+      "drug",
+      "time"
+    ],
+    "out": "half_life_drug",
+    "why": "Elimination is proportional to what is left, so the same fraction goes each interval rather than the same amount. After four or five half-lives almost nothing remains, and that is also how long a steady dose takes to reach its level.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Biological_half-life"
+  },
+  {
+    "in": [
+      "agonist",
+      "time"
+    ],
+    "out": "tolerance",
+    "why": "Receptors are withdrawn from the surface, or the pathways behind them are damped. Nothing about the drug changes; what changes is the system it is acting on, and stopping leaves that adjustment unopposed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Drug_tolerance"
+  },
+  {
+    "in": [
+      "brain",
+      "cell"
+    ],
+    "out": "glial_cell",
+    "why": "Roughly as numerous as neurons, and they build myelin, hold the blood-brain barrier, feed neurons and clear the synapses between them. A neuron alone in a dish does very little.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Glia"
+  },
+  {
+    "in": [
+      "brainstem",
+      "reflex"
+    ],
+    "out": "medulla",
+    "why": "Damage almost anywhere else in the brain is survivable. This is a few centimetres of tissue holding the pace of every breath you will take, which is why the base of the skull is the dangerous place to be hit.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Medulla_oblongata"
+  },
+  {
+    "in": [
+      "neuron",
+      "sodium"
+    ],
+    "out": "resting_potential",
+    "why": "The pump pushes sodium out and potassium in, continuously, against both gradients. The charge difference that results is the loaded spring an action potential releases.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Resting_potential"
+  },
+  {
+    "in": [
+      "muscle",
+      "signal"
+    ],
+    "out": "proprioception",
+    "why": "Receptors in muscle and tendon report length and tension continuously. It is the sense nobody counts and the one that lets you walk in the dark, touch your nose with your eyes shut, or stand still at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  {
+    "in": [
+      "epidermis",
+      "cell"
+    ],
+    "out": "keratinocyte",
+    "why": "Born at the base, it fills with keratin as it is pushed upward, loses its nucleus, flattens, and becomes part of the dead barrier layer. The barrier is made of the corpses of the cells that built it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Keratinocyte"
+  },
+  {
+    "in": [
+      "follicle",
+      "muscle"
+    ],
+    "out": "goosebump",
+    "why": "Each hair follicle has a tiny muscle attached. In a furred animal, contracting them traps a thicker layer of air; in us it produces nothing but the texture, and the reflex has simply never been lost.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Goose_bumps"
+  },
+  {
+    "in": [
+      "collagen",
+      "wound"
+    ],
+    "out": "scar",
+    "why": "Normal skin has collagen in a basket weave; a scar has it in parallel bundles along the line of tension. That is quicker and stronger sooner, and permanently weaker than what it replaced.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Scar"
+  },
+  {
+    "in": [
+      "ovulation",
+      "uterus"
+    ],
+    "out": "menstruation",
+    "why": "Most mammals reabsorb the lining. A handful, humans among them, build it in advance regardless and discard it if nothing implants, which is a costly strategy nobody has fully explained.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Menstruation"
+  },
+  {
+    "in": [
+      "fat",
+      "liver"
+    ],
+    "out": "ketone",
+    "why": "The brain cannot use fatty acids directly. In starvation the liver converts them to ketone bodies, which cross the blood-brain barrier — and that conversion is most of why a person can survive weeks without food.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ketone_bodies"
+  },
+  {
+    "in": [
+      "heart",
+      "ventricle"
+    ],
+    "out": "cardiac_output",
+    "why": "Heart rate times stroke volume, and that is the whole of it. Everything the circulation does under load is one of those two numbers rising, and in a trained athlete it is mostly the second.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cardiac_output"
+  },
+  {
+    "in": [
+      "cardiac_output",
+      "ventricle"
+    ],
+    "out": "stroke_volume",
+    "why": "An untrained heart raises output mostly by beating faster. Training enlarges the ventricle so each beat carries more, which is why a trained resting pulse is slow: the same output needs fewer beats.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Stroke_volume"
+  },
+  {
+    "in": [
+      "fast_twitch",
+      "glucose"
+    ],
+    "out": "lactate",
+    "why": "The old story had lactic acid souring the muscle and causing next-day soreness. Neither is right: lactate is shuttled to the heart and liver and used, and the delayed soreness is microscopic damage instead.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lactic_acid"
+  },
+  {
+    "in": [
+      "cerebral_cortex",
+      "cell"
+    ],
+    "out": "grey_matter",
+    "why": "Grey is where neurons sit and connect; white is the wiring between them. The arrangement inverts between brain and cord, which is the first thing that makes a spinal section look wrong.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Grey_matter"
+  },
+  {
+    "in": [
+      "ion",
+      "protein"
+    ],
+    "out": "ion_channel",
+    "why": "A protein spanning the membrane with a gate that answers either voltage or a chemical. Open it, and ions move down the gradient the cell spent energy building — which is the signal.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ion_channel"
   }
 ]
