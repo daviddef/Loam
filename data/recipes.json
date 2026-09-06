@@ -103957,5 +103957,245 @@
     "why": "The knee-jerk is two neurons: sensory in, motor out, and no thinking anywhere between them. The brain learns that the leg moved at the same moment as everyone else in the room.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Reflex"
+  },
+  {
+    "in": [
+      "retina",
+      "light"
+    ],
+    "out": "rod_cell",
+    "why": "Rods outnumber cones by about twenty to one and saturate in daylight, which is why night vision is grey and why the dimmest star is easier to see just off to the side of where you are looking.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rod_cell"
+  },
+  {
+    "in": [
+      "colour",
+      "retina"
+    ],
+    "out": "cone_cell",
+    "why": "There is no receptor for yellow. A yellow light excites the red and green cones in a particular proportion, and a mixture of red and green light that produces the same proportion is indistinguishable from it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cone_cell"
+  },
+  {
+    "in": [
+      "iris",
+      "muscle"
+    ],
+    "out": "pupil",
+    "why": "The iris is the muscle and the pupil is the gap it leaves. Its diameter changes light entry by about sixteenfold, which sounds like a lot until you learn the eye copes with a range of a hundred million.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pupil"
+  },
+  {
+    "in": [
+      "eye",
+      "water"
+    ],
+    "out": "vitreous",
+    "why": "It is 98% water and does not turn over. The floaters people see are collagen fibres in it that have clumped, drifting in a fluid the body has no mechanism for renewing.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Vitreous_body"
+  },
+  {
+    "in": [
+      "pigment",
+      "skin"
+    ],
+    "out": "melanin",
+    "why": "Melanocytes make it and hand it to the cells around them, which park it over their own nuclei like a parasol. Everyone has roughly the same number of melanocytes; what differs is how much they produce.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Melanin"
+  },
+  {
+    "in": [
+      "gland",
+      "skin"
+    ],
+    "out": "sweat_gland",
+    "why": "Almost no other mammal cools this way. A horse sweats; most animals pant, which cannot be done while running flat out. Persistence hunting is a consequence of this gland.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sweat_gland"
+  },
+  {
+    "in": [
+      "hair",
+      "dermis"
+    ],
+    "out": "follicle",
+    "why": "You are born with every one you will ever have. The muscle attached to each is what raises a goosebump, which is a useful reflex in an animal with fur and a vestigial one in us.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hair_follicle"
+  },
+  {
+    "in": [
+      "follicle",
+      "fat"
+    ],
+    "out": "sebaceous_gland",
+    "why": "The cells fill with sebum and then rupture, which is the secretion — the gland is consumed and rebuilt continuously. Blocked, this is where acne starts.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sebaceous_gland"
+  },
+  {
+    "in": [
+      "blood_plasma",
+      "clot"
+    ],
+    "out": "serum",
+    "why": "Spin clotted blood and the straw-coloured liquid on top is serum: plasma minus the fibrinogen, which has been used up making the clot. The difference between the two words is entirely whether clotting has already happened.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Serum_(blood)"
+  },
+  {
+    "in": [
+      "antigen",
+      "blood"
+    ],
+    "out": "blood_type",
+    "why": "A and B are two versions of a sugar added to the cell surface; O is the version where neither is added. Your immune system makes antibodies against whichever you do not have, without ever having met it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Blood_type"
+  },
+  {
+    "in": [
+      "blood_type",
+      "protein"
+    ],
+    "out": "rhesus_factor",
+    "why": "A Rh-negative mother carrying a Rh-positive baby can be sensitised at the birth. The first child is usually unaffected; the antibodies are waiting for the next one.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Rh_blood_group_system"
+  },
+  {
+    "in": [
+      "blood_plasma",
+      "liver"
+    ],
+    "out": "albumin",
+    "why": "It creates the osmotic pull that keeps plasma from leaking into the tissues. When the liver stops making enough, fluid moves out and collects — which is the swollen belly of severe malnutrition.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Human_serum_albumin"
+  },
+  {
+    "in": [
+      "kidney",
+      "oxygen"
+    ],
+    "out": "erythropoietin",
+    "why": "The kidney senses oxygen in the blood passing through it and releases this when it falls. Weeks at altitude raise red cell mass by this route, and so does injecting it, which is why it is the classic blood-doping agent.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Erythropoietin"
+  },
+  {
+    "in": [
+      "cell",
+      "ovary"
+    ],
+    "out": "egg_cell",
+    "why": "A female fetus carries her full stock of them at around five months of gestation and the number only falls after that. A sperm is made in about two months; an egg has been waiting for decades.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Egg_cell"
+  },
+  {
+    "in": [
+      "egg_cell",
+      "hormone"
+    ],
+    "out": "ovulation",
+    "why": "A cohort of follicles begins to develop each cycle and all but one are abandoned. Around four hundred eggs are ever released in a lifetime; the rest are lost without ever being used.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ovulation"
+  },
+  {
+    "in": [
+      "placenta",
+      "fetus"
+    ],
+    "out": "umbilical_cord",
+    "why": "The naming follows the heart, not the oxygen: umbilical arteries carry blood away from the fetus to the placenta, and they are the deoxygenated ones. The single vein brings the oxygenated blood back.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Umbilical_cord"
+  },
+  {
+    "in": [
+      "membrane",
+      "sound"
+    ],
+    "out": "eardrum",
+    "why": "It turns pressure in air into movement in solid. At the quietest audible sound its displacement is smaller than a hydrogen atom, which is close to the physical limit of what any detector could do.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Eardrum"
+  },
+  {
+    "in": [
+      "bone",
+      "eardrum"
+    ],
+    "out": "ossicle",
+    "why": "Sound crossing from air into fluid would lose almost all of its energy at the boundary. The hammer, anvil and stirrup lever the eardrum's large weak movement into the oval window's small forceful one, and recover most of it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ossicles"
+  },
+  {
+    "in": [
+      "balance",
+      "ear"
+    ],
+    "out": "semicircular_canal",
+    "why": "Turn your head and the fluid lags behind, bending hair cells at the base of each loop. Three planes cover all of three-dimensional rotation — and spinning until the fluid catches up is why stopping feels like turning the other way.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Semicircular_canals"
+  },
+  {
+    "in": [
+      "salt",
+      "skin"
+    ],
+    "out": "sweat",
+    "why": "Sweat sitting on skin does nothing at all. It works by evaporating, which is why humid air defeats it and why a fan helps — the cooling is latent heat leaving with the water.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Perspiration"
+  },
+  {
+    "in": [
+      "hormone",
+      "milk"
+    ],
+    "out": "lactation",
+    "why": "Suckling triggers prolactin to make milk and oxytocin to release it. Nothing is set in advance: the more that is taken, the more is produced.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lactation"
+  },
+  {
+    "in": [
+      "frost",
+      "muscle"
+    ],
+    "out": "shivering",
+    "why": "Ordinary contraction is about a fifth efficient and the rest becomes heat. Shivering does no external work at all, so all of it does — and it can multiply heat production several times over, until the fuel runs out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Shivering"
+  },
+  {
+    "in": [
+      "energy",
+      "sleep"
+    ],
+    "out": "basal_metabolic_rate",
+    "why": "Around 60 to 70% of daily energy use goes on this before any movement at all. The brain alone takes about a fifth of it, while being two per cent of body weight.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Basal_metabolic_rate"
+  },
+  {
+    "in": [
+      "blood",
+      "water"
+    ],
+    "out": "blood_plasma",
+    "why": "Spin blood and it separates: red cells sink, and the straw-coloured liquid above them is more than half the volume. That liquid is mostly water, carrying the proteins, salts and sugars everything else is delivered in.",
+    "src": "https://en.wikipedia.org/wiki/Blood_plasma",
+    "verified": true
   }
 ]

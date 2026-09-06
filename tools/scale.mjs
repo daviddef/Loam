@@ -139,6 +139,8 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* W4 physiology second pass, 6 Sep */
+          'rod_cell', 'cone_cell', 'egg_cell', 'melanin', 'albumin', 'erythropoietin',
           /* W4 physiology, 6 Sep */
           'glomerulus', 'sarcomere', 'myelin',
     'oxide_layer', 'junction', 'interconnect',   // needs-sweep 5 Sep
@@ -217,6 +219,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* W4 physiology second pass, 6 Sep */
+          'ossicle', 'sebaceous_gland', 'follicle', 'sweat_gland',
           /* W4 physiology, 6 Sep */
           'nephron',
           /* W2 continued — arachnid body plan, ant waist, 5 Sep */
@@ -262,6 +266,8 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W4 physiology second pass, 6 Sep */
+          'eardrum', 'pupil', 'semicircular_canal', 'umbilical_cord',
           /* W4 physiology, 6 Sep */
           'fibrin',
           /* W2 continued — arachnid body plan, ant tagmata, 5 Sep */
@@ -316,6 +322,8 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W4 physiology second pass, 6 Sep */
+          'vitreous', 'serum', 'sweat', 'ovulation',
           /* W4 physiology, 6 Sep */
           'atrium', 'ventricle', 'aorta', 'larynx', 'pharynx', 'epiglottis', 'bladder', 'pituitary', 'duodenum', 'mouth', 'clot',
           /* W2 continued — immature stages and the arachnid orders, 5 Sep */
@@ -538,6 +546,10 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W4 physiology second pass, 6 Sep */
+          'blood_plasma',
+          /* W4 physiology second pass, 6 Sep */
+          'blood_type', 'rhesus_factor', 'lactation', 'shivering', 'basal_metabolic_rate',
           /* W4 physiology, 6 Sep */
           'ureter', 'pleura', 'oesophagus', 'tendon', 'urine', 'lymph', 'breath', 'urea', 'adrenaline', 'reflex',
           /* W2 continued — spider silk and what is built from it, 5 Sep */
