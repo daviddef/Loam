@@ -180,6 +180,35 @@ for (const [id, nut] of Object.entries(NUTRIENTS)) {
 const noElement = Object.keys(NUTRIENTS).filter(id => !byId.has(id));
 const covered = Object.keys(NUTRIENTS).filter(id => supplies.has(id));
 
+/* WHAT THE BODY VISIBLY DOES. Route says how a thing gets in and says nothing
+ * about what happens next, so every outcome looked identical on the canvas: a
+ * burn, a brain tumour and a drowning all produced the same nothing. Each
+ * outcome now names the organ it acts on — an element, so the anatomy is
+ * checkable — and one sign from a closed vocabulary. */
+const SIGNS = Object.keys(E.$signs || {});
+const OUT = E.outcomes || {};
+for (const [id, o] of Object.entries(OUT)) {
+  const w = `outcomes.${id}`;
+  if (!byId.has(id)) errors.push(`${w}: no element has this id`);
+  if (!byId.has(o.site)) errors.push(`${w}: site "${o.site}" is not an element`);
+  if (!SIGNS.includes(o.sign)) errors.push(`${w}: sign "${o.sign}" is not one of ${SIGNS.join(', ')}`);
+  // `slack` is the body falling. Only death may do that, or the canvas starts
+  // killing people who have been given a rash.
+  if (o.sign === 'slack' && id !== 'death') errors.push(`${w}: only death may use the sign "slack"`);
+  if (!o.note || o.note.length < 30) errors.push(`${w}: note is missing or too short to say what the sign represents`);
+  if (!o.src || !String(o.src).startsWith('http')) errors.push(`${w}: no source`);
+  for (const [re, why] of METHOD)
+    if (re.test(o.note || '')) errors.push(`${w}: NOTE ${why}`);
+}
+// Which outcomes are actually reachable, and how many of them the body can show.
+const reached = new Set();
+for (const f of [...Object.values(E.effects).flat(), ...Object.values(E.hazards || {}).flat(),
+                 ...Object.values(E.verbs).flat()]) {
+  if (f.outcome) reached.add(f.outcome);
+  for (const g of f.stages || []) if (g.outcome) reached.add(g.outcome);
+}
+const shown = [...reached].filter(id => OUT[id]);
+
 const cautioned = new Set(Object.values(cautions).flatMap(h => h.ids || []));
 // Answered = has its own row, or belongs to a hazard that has one.
 const viaHazard = new Set(Object.keys(HAZ).flatMap(k => cautions[k]?.ids || []));
@@ -236,6 +265,7 @@ for (const v of VALENCE) console.log(`  ${v.padEnd(12)} ${String(byVal[v] || 0).
 const both = Object.entries(E.effects).filter(([, l]) => new Set(l.map(f => f.valence)).size > 1);
 console.log(`\n  ${n(all.length)} effect(s) across ${n(Object.keys(E.effects).length)} element(s); ${n(both.length)} carry both sides.`);
 console.log(`  harm:    ${n(answered.size)} of ${n(cautioned.size)} elements that carry a caution — ${n(Object.keys(HAZ).length)} of ${n(Object.keys(cautions).length)} hazard classes answered.`);
+console.log(`  body:    ${n(shown.length)} of ${n(reached.size)} reachable outcomes have a site and a visible sign.`);
 console.log(`  benefit: ${n(covered.length)} of ${n(Object.keys(NUTRIENTS).length)} essential nutrients supplied${noElement.length ? ` (${n(noElement.length)} have no element yet)` : ''}.`);
 console.log(`  ${n(Object.keys(E.verbs || {}).length)} of ${n(verbIds.size)} verb(s) do something to a body.`);
 const laddered = [...Object.values(E.effects).flat(), ...Object.values(E.verbs).flat(),

@@ -76467,11 +76467,11 @@
   },
   {
     "in": [
-      "insect",
+      "orthopteran",
       "speciation"
     ],
     "out": "grasshopper",
-    "why": "The suborder Caelifera has split into roughly 2,400 valid genera and about 11,000 described species, with many more undescribed in tropical wet forest. They are among the most ancient living groups of chewing herbivorous insects, reaching back to the early Triassic around 250 million years ago — and a few species in the family Acrididae keep a second identity in reserve, turning into locusts when they are crowded.",
+    "why": "Caelifera, the short-horned half of Orthoptera: about 11,000 species that shortened the antennae, rebuilt the ovipositor into a pair of digging valves, and carry the ear on the first abdominal segment rather than on the foreleg as their long-horned relatives do. The lineage reaches back to the early Triassic, 250 million years ago.",
     "src": "https://en.wikipedia.org/wiki/Grasshopper",
     "verified": true
   },
@@ -103654,11 +103654,11 @@
   },
   {
     "in": [
-      "stridulation",
+      "orthopteran",
       "tympanal_organ"
     ],
     "out": "cricket",
-    "why": "Both ends of one channel, and both in odd places. The male sings by drawing a file on one leathery forewing across a scraper on the other; the ear that hears it is a pair of tympana on the tibia of each front leg — the character that marks off Ensifera.",
+    "why": "An ensiferan, and the ear gives the suborder away: a pair of tympana on the tibia of each foreleg, opening to the outside through slits, with the same sound also arriving along an enlarged trachea from a thoracic spiracle. What it is listening for is a male drawing a file on one leathery forewing across a scraper on the other.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Cricket_(insect)",
     "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 251"
@@ -104457,5 +104457,573 @@
     "why": "A protein spanning the membrane with a gate that answers either voltage or a chemical. Open it, and ions move down the gradient the cell spent energy building — which is the signal.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Ion_channel"
+  },
+  {
+    "in": [
+      "chitin",
+      "exoskeleton"
+    ],
+    "out": "sclerite",
+    "why": "The cuticle is secreted soft, as a composite of chitin fibres in a protein matrix. Where phenoloxidases tan it, the flexible water-soluble arthropodin cross-links into rigid, brown, water-resistant sclerotin and that patch becomes a plate; where they do not, it stays membrane. An arthropod is not armoured all over — it is plates joined by hinges, and the hinges are where it bends.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sclerite",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 1–3"
+  },
+  {
+    "in": [
+      "sclerite",
+      "segment"
+    ],
+    "out": "tergite",
+    "why": "Each segment’s back is a tergum, hardened into one or more tergites. In the thorax the tergum is folded out sideways into paranota — flat shelves still present in the wingless Archaeognatha and Zygentoma, and the leading candidate for what the wings of every flying insect grew from. The abdominal terga stayed simple plates because nothing hangs off them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tergum",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 29"
+  },
+  {
+    "in": [
+      "abdomen",
+      "sclerite"
+    ],
+    "out": "sternite",
+    "why": "Under each segment sits a sternum, usually one large sclerite. The abdominal ones are the plainest skeleton an insect has — a plate above, a plate below, and a soft pleural membrane between them carrying the spiracles — because an abdomen has no legs and no wings to anchor. Sternite I is reduced in most groups and survives in beetles only as a membranous fold behind the hind coxae.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Sternum_(arthropod_anatomy)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 59"
+  },
+  {
+    "in": [
+      "coxa",
+      "sclerite"
+    ],
+    "out": "pleurite",
+    "why": "Between the tergum above and the sternum below sits the pleuron, divided by a slanted pleural ridge into a front episternum and a rear epimeron. The ridge is a strut: it runs from the wing joint at its top to the coxal joint at its bottom, so the leg and the wing of one side pull against the same beam. The spiracles lie in the membrane beside it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pleuron_(insect_anatomy)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 30"
+  },
+  {
+    "in": [
+      "tergite",
+      "thorax"
+    ],
+    "out": "pronotum",
+    "why": "The prothorax carries the front legs and never a wing, so its tergum stayed a simple plate while the two segments behind it were rebuilt around flight. In Orthoptera it is extended into a saddle wrapping down both sides; in the Tetrigidae it runs backwards over the hindwings and the whole abdomen.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Prothorax",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 251–252"
+  },
+  {
+    "in": [
+      "insect_wing",
+      "sclerite"
+    ],
+    "out": "tegmen",
+    "why": "Sclerotise a forewing and it stops being an aerofoil and becomes a lid. Earwigs, cockroaches, mantises, stick insects and orthopterans all did it, and the beetles took it furthest and made the elytron. Under a tegmen the hindwing keeps its large anal field, folded away like a fan.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tegmen",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 252–253"
+  },
+  {
+    "in": [
+      "head",
+      "sclerite"
+    ],
+    "out": "clypeus",
+    "why": "One sclerite of the face, sitting below the antennal sockets with the labrum hinged along its lower edge. Its upper border is the transverse frontoclypeal ridge and its side corners are the anterior tentorial pits, where the internal head skeleton folds in — so the clypeus is also the landmark used to find everything else on a head.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Clypeus",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 15–16"
+  },
+  {
+    "in": [
+      "clypeus",
+      "mouth"
+    ],
+    "out": "labrum",
+    "why": "Not one of the paired jaw pairs — an unpaired appendage hinged on the lower margin of the clypeus, shutting the preoral cavity in front while the mandibles work behind it. Its inner face, the epipharynx, is soft and carpeted with backward-pointing microtrichia that walk food towards the true mouth. In mosquitoes and in fleas it is drawn out into a stylet with the food channel running down it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Labrum_(arthropod_mouthpart)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 17–18"
+  },
+  {
+    "in": [
+      "mandible",
+      "segment"
+    ],
+    "out": "maxilla",
+    "why": "One head segment behind the mandibles, and homologous to a crustacean’s first maxillae. Each is a jointed tool rather than a block: a cardo and stipes at the base, a pointed sclerotised lacinia that holds, a softer galea covered in chemoreceptors, and a five-segmented palp whose tip carries a dense field of sensory pegs. The insect tastes with these before it bites.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Maxilla_(arthropod_mouthpart)",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 21"
+  },
+  {
+    "in": [
+      "maxilla",
+      "segment"
+    ],
+    "out": "labium",
+    "why": "One segment further back again. In a crustacean this pair stays separate; in a hexapod the two fuse across the midline into a single piece with no median suture, and the result closes the preoral space from behind. It keeps everything a maxilla has — palps, and inner and outer lobes now called glossae and paraglossae. In a bee those glossae fuse and elongate into the tongue.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_mouthparts",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 21–22"
+  },
+  {
+    "in": [
+      "labium",
+      "saliva"
+    ],
+    "out": "hypopharynx",
+    "why": "An unpaired lobe in the middle of the mouthparts, forming the floor of the preoral cavity and a ramp that carries food to the true mouth. The salivarium is the pocket between its back and the front of the labium, and that is where the salivary ducts open — so saliva is delivered outside the mouth and travels in with the food. In sucking bugs the salivary canal is drilled straight through it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_mouthparts",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 22–23"
+  },
+  {
+    "in": [
+      "head",
+      "muscle"
+    ],
+    "out": "tentorium",
+    "why": "An arthropod has no bones to pull against, so it folds its own skin inwards. Four invaginations of the head capsule — two anterior, two posterior — grow in as arms and are joined across by a tentorial bridge, and the mandibular, maxillary, labial and antennal muscles all take origin on it. The pits where it folded in are still visible from outside.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Insect_morphology",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 16–17"
+  },
+  {
+    "in": [
+      "head",
+      "lens"
+    ],
+    "out": "ocellus",
+    "why": "One undivided corneal lens over a loose pack of retinula cells — about 800 of them in a locust — arranged far less regularly than in a compound eye. It resolves nothing. What it does is register a change in light intensity very fast, which is what a flying insect needs to hold its horizon. Adults usually carry three; holometabolan larvae have none.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Simple_eye_in_invertebrates",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 80–81"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "muscle"
+    ],
+    "out": "apodeme",
+    "why": "With the skeleton on the outside, a muscle has nothing internal to pull on, so the cuticle grows inwards instead: solid ingrowths are apodemes, hollow ones apophyses. The tentorium of the head and the furcae and pleural ridges of the thorax are all built this way. Because they are cuticle, they are shed with the rest of it at every moult and laid down again.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_exoskeleton",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 1"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "wax"
+    ],
+    "out": "epicuticle",
+    "why": "Thirty nanometres thick in a mosquito larva and four micrometres at the most anywhere: a hardened cuticulin lamina under a wax layer of paraffins and esters, secreted by oenocytes and pushed out through pore canals, with a cement layer over that in some groups. There is no chitin in it. It is the whole reason a land arthropod does not dry out.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Arthropod_exoskeleton",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 2–3"
+  },
+  {
+    "in": [
+      "abdomen",
+      "seta"
+    ],
+    "out": "cercus",
+    "why": "Paired appendages of the eleventh abdominal segment, or of the tenth where the eleventh has been lost. In cockroaches and crickets they are covered in filiform hairs light enough to be deflected by the air pushed ahead of a striking hand, and the turn away is under way before anything touches the animal. In earwigs the same appendages are hardened into forceps instead.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cercus",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), pp. 59–60"
+  },
+  {
+    "in": [
+      "insect",
+      "tegmen"
+    ],
+    "out": "orthopteran",
+    "why": "Orthoptera — grasshoppers, locusts, crickets and katydids — is named for the tegmen, the straight leathery forewing laid flat along the back. The rest of the diagnosis is a saddle-shaped pronotum, four or fewer tarsal segments, and hind legs whose enlarged femora make the group’s jump. About 22,500 described species, by far the largest polyneopteran lineage.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Orthoptera",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 251"
+  },
+  {
+    "in": [
+      "orthopteran",
+      "stridulation"
+    ],
+    "out": "katydid",
+    "why": "Tettigoniidae is the ensiferan family whose song apparatus is asymmetric — the toothed file carried on the left tegmen and the scraper on the right — so a katydid can only draw its wings one way round, where a cricket’s two tegmina are near mirror images and either could lead. The wings that sing are the same wings that hide it: held roof-like over the back, and veined like a leaf.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Tettigoniidae",
+    "srcBook": "Beutel RG, Friedrich F, Yang X-K & Ge S-Q, Insect Morphology and Phylogeny (De Gruyter, 2014), p. 253"
+  },
+  {
+    "in": [
+      "colony",
+      "larva"
+    ],
+    "out": "caste",
+    "why": "Eusociality is defined by a division of labour into reproductive and non-reproductive groups, and those groups are the castes. In honeybees, ants and termites the difference is made after the egg is laid, by diet and by juvenile hormone during larval development, so full sisters end up as a layer or as a sterile worker — and in most species an individual of one caste can no longer perform the other’s work at all.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Eusociality"
+  },
+  {
+    "in": [
+      "ant",
+      "caste"
+    ],
+    "out": "worker_ant",
+    "why": "Every ant seen out of the nest is a female that will not reproduce. Workers forage, dig, nurse the brood, carry out the dead and fight, and they do all of it wingless, while the reproductives of the same colony grow wings and use them once. In many species the work is divided by age rather than by shape: a young worker nurses inside, an old one forages outside, where the dying is done.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ant"
+  },
+  {
+    "in": [
+      "mandible",
+      "worker_ant"
+    ],
+    "out": "soldier_ant",
+    "why": "In many ants the worker caste is not one shape but a size series, and the largest — majors, or soldiers — carry a head and mandibles enlarged out of all proportion to the body. Some crack seeds with them; some plug the nest entrance with the head itself. In army ants the mandibles are hooked so far towards fighting that the soldier has to be fed by smaller workers.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ant"
+  },
+  {
+    "in": [
+      "caste",
+      "insect_wing"
+    ],
+    "out": "alate",
+    "why": "The reproductive caste of an ant or a termite colony, and the only members of it that ever fly. They are reared as a batch, leave together, mate on the wing, and land — and the wings then break off along a preformed line of weakness, because a founding queen spends the rest of her life in a sealed chamber underground and wings would only be in the way.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Alate"
+  },
+  {
+    "in": [
+      "caste",
+      "termite"
+    ],
+    "out": "queen_termite",
+    "why": "A mature queen of the mound-building termites becomes physogastric: the abdomen distends with ovaries until the old plates of the body wall are separated by stretched pale membrane, and she is many times the length of her king. She cannot move herself. Workers feed and groom her in a royal cell, and a colony can run for decades on the eggs of one female.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Termite"
+  },
+  {
+    "in": [
+      "mandible",
+      "termite"
+    ],
+    "out": "soldier_termite",
+    "why": "The defensive caste: a dark, heavily sclerotised head carrying mandibles too large to eat with, so soldiers must be fed by workers. In the nasute termites the jaws are abandoned altogether and the head is drawn forward into a nozzle that squirts a sticky terpene at attackers. Both sexes serve, unlike ants, where every worker and every soldier is female.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Termite"
+  },
+  {
+    "in": [
+      "colony",
+      "saliva"
+    ],
+    "out": "trophallaxis",
+    "why": "Food swallowed by a forager into a social crop is brought back up and passed to a nestmate, who passes it on again, so a meal found by one animal spreads through the colony instead of staying in the finder. What travels with it is not only nutrition: hormones, the colony odour that tells nestmate from intruder, and in termites the gut symbionts a freshly moulted individual has just shed and must be given back.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Trophallaxis"
+  },
+  {
+    "in": [
+      "soil",
+      "termite"
+    ],
+    "out": "termite_mound",
+    "why": "Raised grain by grain from soil cemented with saliva and faeces, and in some African species reaching thirty metres across. The mound is mostly not living space: it is a ventilation structure standing over a nest dug below, its flues driven by the heat the colony and its fungus gardens give off. Mounds routinely outlast the colonies that built them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Mound-building_termites"
+  },
+  {
+    "in": [
+      "colony",
+      "queen_bee"
+    ],
+    "out": "swarm",
+    "why": "Not an attack and not a migration — a colony dividing in two. The old queen leaves with a large part of the workforce and the swarm hangs in a cluster while scout bees argue over cavities; the comb, the stores and a daughter queen stay behind. Apis cerana swarms settle twenty to thirty metres from the nest they left and wait there for days before departing for the site the scouts agreed on.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Swarming_(honey_bee)"
+  },
+  {
+    "in": [
+      "food",
+      "saliva"
+    ],
+    "out": "bolus",
+    "why": "Chewing and saliva do two different jobs: one breaks the food up, the other binds it into something a throat can grip. Dry food is hard to swallow because there is no bolus, only pieces.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bolus_(digestion)"
+  },
+  {
+    "in": [
+      "acid",
+      "food"
+    ],
+    "out": "chyme",
+    "why": "The stomach churns for hours and then lets it through the pylorus in small squirts, because the duodenum can only neutralise so much acid at once. The rate of release is most of what controls how fast a meal is absorbed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Chyme"
+  },
+  {
+    "in": [
+      "acid",
+      "protein"
+    ],
+    "out": "pepsin",
+    "why": "It is secreted as an inactive precursor and the stomach's own acid activates it. Outside that acid it does nothing, so an enzyme built to digest protein cannot digest the body that made it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pepsin"
+  },
+  {
+    "in": [
+      "pancreas",
+      "starch"
+    ],
+    "out": "amylase",
+    "why": "Saliva carries it, which is why bread held in the mouth turns sweet. Stomach acid stops it, and the pancreas sends far more of it into the intestine to finish the job.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Amylase"
+  },
+  {
+    "in": [
+      "pancreas",
+      "protein"
+    ],
+    "out": "trypsin",
+    "why": "The pancreas sends every one of its enzymes out inactive. Trypsin is activated at the gut wall and then activates the rest, so the cascade can only start where it is meant to — a pancreas that activates them early digests itself.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Trypsin"
+  },
+  {
+    "in": [
+      "fat",
+      "pancreas"
+    ],
+    "out": "lipase",
+    "why": "Fat and water do not mix, so an enzyme in water can only reach the surface of a fat globule. Bile emulsifies it into droplets and multiplies that surface enormously, and only then does lipase have anything to act on.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Lipase"
+  },
+  {
+    "in": [
+      "cell",
+      "liver"
+    ],
+    "out": "hepatocyte",
+    "why": "It makes albumin and clotting factors, stores glycogen, converts ammonia to urea, produces bile and breaks down most drugs. A dialysis machine replaces one kidney function; no machine does this.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Hepatocyte"
+  },
+  {
+    "in": [
+      "liver",
+      "vein"
+    ],
+    "out": "portal_vein",
+    "why": "Blood from the gut drains here and is delivered to the liver before it reaches the general circulation. That detour is why the liver sees every meal and every swallowed drug first.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Portal_vein"
+  },
+  {
+    "in": [
+      "food",
+      "intestine"
+    ],
+    "out": "absorption",
+    "why": "The gut is a tube through the body, so its contents are topologically outside it. Nothing has entered until it crosses the wall — which is why fibre passing through is not food and why a swallowed marble is not absorbed.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Absorption_(pharmacology)"
+  },
+  {
+    "in": [
+      "bone",
+      "cell"
+    ],
+    "out": "osteoblast",
+    "why": "It lays down the matrix around itself until it is trapped, and then becomes an osteocyte living in a little cavity. Building bone costs the builder its mobility.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Osteoblast"
+  },
+  {
+    "in": [
+      "bone",
+      "embryo"
+    ],
+    "out": "ossification",
+    "why": "The skeleton is laid down in cartilage and replaced from centres that spread outward, which is why growth happens at plates near the ends and why those plates closing ends your height.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Ossification"
+  },
+  {
+    "in": [
+      "bone",
+      "membrane"
+    ],
+    "out": "periosteum",
+    "why": "Bone itself has few nerve endings; this wrapping has many, which is why a knock on the shin hurts so much. It also carries the blood supply and the cells that thicken a bone or mend it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Periosteum"
+  },
+  {
+    "in": [
+      "joint",
+      "water"
+    ],
+    "out": "synovial_fluid",
+    "why": "The coefficient of friction in a healthy joint is far below that of ice on ice. Cartilage releases fluid under load and takes it back when unloaded, which is why joints stiffen when you sit still.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Synovial_fluid"
+  },
+  {
+    "in": [
+      "hormone",
+      "signal"
+    ],
+    "out": "negative_feedback",
+    "why": "Rising thyroid hormone suppresses the signal that called for it; rising blood sugar triggers the insulin that lowers it. It is the same loop as a thermostat, and it is why the word for the state is homeostasis.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Negative_feedback"
+  },
+  {
+    "in": [
+      "hormone",
+      "ovary"
+    ],
+    "out": "oestrogen",
+    "why": "It is made from testosterone by a single enzyme, in both sexes. Its withdrawal at menopause is why bone loss accelerates then, which is a skeletal consequence of a reproductive change.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Estrogen"
+  },
+  {
+    "in": [
+      "hormone",
+      "pituitary"
+    ],
+    "out": "prolactin",
+    "why": "Dopamine from the hypothalamus continuously suppresses it. Almost every other pituitary hormone waits for a signal to release; this one is released whenever the brake comes off.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Prolactin"
+  },
+  {
+    "in": [
+      "hormone",
+      "kidney"
+    ],
+    "out": "aldosterone",
+    "why": "It is the last step of the system that defends blood pressure when volume falls. Because water follows the salt, a hormone that regulates sodium is really a hormone that regulates how much blood you have.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Aldosterone"
+  },
+  {
+    "in": [
+      "bone",
+      "hormone"
+    ],
+    "out": "parathyroid",
+    "why": "When calcium falls they release a hormone that dissolves bone to raise it. The skeleton is the reserve, and it will be spent to keep the blood level right — because muscle and nerve need that number and bone can wait.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Parathyroid_gland"
+  },
+  {
+    "in": [
+      "cell",
+      "embryo"
+    ],
+    "out": "differentiation",
+    "why": "Every cell carries the same instructions and reads a different part of them. A liver cell is not missing the muscle genes; it has them silenced, which is why a specialised cell can sometimes be talked back into being general.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Cellular_differentiation"
+  },
+  {
+    "in": [
+      "embryo",
+      "fold"
+    ],
+    "out": "gastrulation",
+    "why": "Lewis Wolpert's line is that it is not birth, marriage or death but gastrulation that is the truly important moment. Before it there are no layers and no body plan; after it, there is.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Gastrulation"
+  },
+  {
+    "in": [
+      "embryo",
+      "nerve"
+    ],
+    "out": "neural_tube",
+    "why": "It closes within about four weeks, usually before a pregnancy is noticed, and folate is needed for that closure. That timing is the whole reason the advice is to take it before conceiving rather than after.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Neural_tube"
+  },
+  {
+    "in": [
+      "myelin",
+      "nerve"
+    ],
+    "out": "myelination",
+    "why": "It runs from the back of the brain forward and is not finished until the mid-twenties, with the prefrontal cortex the last to complete. Judgement and impulse control mature on that schedule.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Myelination"
+  },
+  {
+    "in": [
+      "memory",
+      "synapse"
+    ],
+    "out": "synaptic_plasticity",
+    "why": "Cells that fire together wire together: repeated activity across a synapse makes it easier to cross next time. Memory is not stored in cells so much as in the changing strengths between them.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Synaptic_plasticity"
+  },
+  {
+    "in": [
+      "bile",
+      "gallbladder"
+    ],
+    "out": "bile_duct",
+    "why": "Both drain through one opening into the duodenum. A gallstone lodged there blocks the pancreatic duct as well, which is why gallstones are the commonest cause of pancreatitis.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Bile_duct"
+  },
+  {
+    "in": [
+      "acid",
+      "osteoblast"
+    ],
+    "out": "osteoclast",
+    "why": "It seals itself to the surface and pumps acid into the space underneath. Bone is rebuilt continuously, and osteoporosis is not a failure to build so much as this side winning.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Osteoclast"
+  },
+  {
+    "in": [
+      "blood",
+      "hormone"
+    ],
+    "out": "endocrine_gland",
+    "why": "An exocrine gland pipes its secretion somewhere specific. An endocrine one releases into the bloodstream, so the message goes everywhere and only cells with the matching receptor answer it.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Endocrine_gland"
+  },
+  {
+    "in": [
+      "differentiation",
+      "embryo"
+    ],
+    "out": "germ_layer",
+    "why": "Ectoderm becomes skin and nervous system; mesoderm muscle, bone and blood; endoderm the gut lining and its glands. Skin and brain sharing an origin is why so many conditions affect both.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Germ_layer"
+  },
+  {
+    "in": [
+      "brainstem",
+      "sleep"
+    ],
+    "out": "pons",
+    "why": "It carries traffic between cerebrum and cerebellum, and during REM sleep it actively blocks motor signals to the body. Without that block, people act out their dreams.",
+    "verified": true,
+    "src": "https://en.wikipedia.org/wiki/Pons"
   }
 ]

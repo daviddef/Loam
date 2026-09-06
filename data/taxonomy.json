@@ -5599,15 +5599,6 @@
       "src": "https://en.wikipedia.org/wiki/Pseudoscorpion"
     },
     {
-      "id": "tx_psocodea",
-      "rank": "order",
-      "parent": "tx_insecta",
-      "name": "Psocodea",
-      "fact": "Barklice, booklice and the true lice together — a 2021 genetic study placed the parasitic lice inside this order rather than beside it, as one highly modified lineage of free-living bark feeders.",
-      "srcTitle": "Psocodea",
-      "src": "https://en.wikipedia.org/wiki/Psocodea"
-    },
-    {
       "id": "tx_phthiraptera",
       "rank": "infraorder",
       "parent": "tx_psocodea",
@@ -5633,6 +5624,24 @@
       "fact": "The ants — aculeate wasps that became eusocial, recognised by elbowed antennae, a waist of one or two nodes, and a metapleural gland no other insect family has.",
       "srcTitle": "Ant",
       "src": "https://en.wikipedia.org/wiki/Ant"
+    },
+    {
+      "id": "tx_caelifera",
+      "rank": "suborder",
+      "parent": "tx_orthoptera",
+      "name": "Caelifera",
+      "fact": "The short-horned orthopterans — grasshoppers and locusts — with antennae shorter than the body and the ear moved off the leg onto the first abdominal segment.",
+      "srcTitle": "Caelifera",
+      "src": "https://en.wikipedia.org/wiki/Caelifera"
+    },
+    {
+      "id": "tx_tettigoniidae",
+      "rank": "family",
+      "parent": "tx_ensifera",
+      "name": "Tettigoniidae",
+      "fact": "Katydids or bush-crickets: long-horned ensiferans whose stridulatory apparatus is asymmetric, the file on the left forewing and the scraper on the right.",
+      "srcTitle": "Tettigoniidae",
+      "src": "https://en.wikipedia.org/wiki/Tettigoniidae"
     }
   ]
 }

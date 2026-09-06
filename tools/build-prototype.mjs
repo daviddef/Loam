@@ -30,7 +30,8 @@ const effectsSrc = J('../data/effects.json');
 const hazardIds = Object.fromEntries(Object.entries(cautions)
   .filter(([k]) => effectsSrc.hazards[k]).map(([k, h]) => [k, h.ids || []]));
 const effects = { routes: effectsSrc.$routes, effects: effectsSrc.effects,
-                  verbs: effectsSrc.verbs, hazards: effectsSrc.hazards, hazardIds };
+                  verbs: effectsSrc.verbs, hazards: effectsSrc.hazards, hazardIds,
+                  signs: effectsSrc.$signs, outcomes: effectsSrc.outcomes };
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
 
 /**
@@ -131,7 +132,7 @@ try {
     .replace('__CONDITION_DATA__', '{conditions:{}}')
     .replace('__ALLERGEN_DATA__', '{}')
     .replace('__REACTION_DATA__', '{}')
-    .replace('__EFFECTS_DATA__', '{routes:{},effects:{},verbs:{},hazards:{},hazardIds:{}}')
+    .replace('__EFFECTS_DATA__', '{routes:{},effects:{},verbs:{},hazards:{},hazardIds:{},signs:{},outcomes:{}}')
     .replace('__FAMILY_DATA__', '{families:[{id:"other",name:"Other",tags:[]}]}'));
 } catch (e) {
   console.error(`prototype script does not parse: ${e.message}`);

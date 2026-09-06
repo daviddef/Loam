@@ -15,7 +15,9 @@
     "an effect can belong to the HAZARD rather than to each of its elements. data/cautions.json already attaches its wording to the hazard and not to the item — 'so it reads the same everywhere on a chain' — and the same is true of the effect: what beryllium dust does to a lung is one fact about beryllium dust, not twelve facts about twelve alloys. The `hazards` block writes it once and every id on that hazard's list answers with it. A row in `effects` for a particular element always wins, because that is where a thing deserves its own answer.",
     "stages are the dose. A thing is not simply good or bad for a body, it is good or bad AT SOMETHING — sun for ten minutes and sun for four hours are different facts about the same star. Where a real, published staging exists, an entry carries a `dial` naming what is actually being measured and a `stages` ladder along it. The scale must be the one the medicine uses (core temperature, carboxyhaemoglobin per cent, burn degree), never an invented 0-to-100, and never an amount of a substance to take: a ladder is what happens as exposure grows, not instructions for growing it.",
     "a rung may carry its own valence. The sun's ladder runs from a hormone being built to a lifetime melanoma risk, and it is one ladder because it is one exposure getting longer — so the rung decides whether the card is green or not, and the entry it hangs off only decides where it is written down.",
-    "inert is a third valence and it is not the same as silence. Gold in a body does nothing, and saying so is a real fact with a real reason behind it; saying nothing is an admission that nobody has looked. An inert row needs no outcome, because there is no outcome."
+    "inert is a third valence and it is not the same as silence. Gold in a body does nothing, and saying so is a real fact with a real reason behind it; saying nothing is an admission that nobody has looked. An inert row needs no outcome, because there is no outcome.",
+    "an outcome has a SITE and a SIGN. Route says how a thing gets in; it says nothing about what the body then does, so every outcome looked identical on the canvas — a burn, a brain tumour and a drowning all produced the same nothing. `outcomes` gives each one the organ it acts on and the one visible thing that is true of it, from a closed vocabulary. The site must be an element, so it is checkable like everything else.",
+    "the cumulative rule outranks the sign. A carcinogen's outcome may have a sign, and a cumulative exposure still shows the clock and nothing else — asbestos on a body does nothing today whatever mesothelioma looks like. This is the rule the whole layer was built around and no sign may override it."
   ],
   "$valence": {
     "harm": "the body is worse off for the encounter",
@@ -31,6 +33,16 @@
     "radiation": "needs no contact at all",
     "mechanical": "does its damage by force rather than chemistry",
     "thermal": "damages by temperature, in either direction"
+  },
+  "$signs": {
+    "pulse": "the site throbs — something is growing, inflamed, or hurting there",
+    "flush": "the site changes colour — blood arriving, blood leaving, or a pigment laid down",
+    "mark": "a lesion appears at the site and stays",
+    "still": "the part stops moving, because the signal to it has stopped",
+    "shiver": "rapid small movement — shivering, fasciculation, a seizure",
+    "swell": "the site enlarges",
+    "slack": "the body loses its hold and falls. Reserved for death, and nothing else may use it",
+    "wait": "nothing is visible now, and that is the honest depiction"
   },
   "$nutrients_comment": "Essential nutrients: the things a human body cannot synthesise, or cannot synthesise fast enough, and must take in. The list is not ours — it is the standard one, and that is the point of using it as a denominator. Four of them have no element in this corpus yet (pantothenic acid and the two essential fatty acids), so they cannot be covered until one is authored; they stay on the list so the gap is visible rather than quietly absent. chloride is carried by the element `chlorine`, and vitamin B12 by `cobalamin`, because those are the ids this corpus has.",
   "$nutrients": {
@@ -241,6 +253,7 @@
   },
   "$verbs_comment": "The verbs that do something to a body. Keys are ids from data/verbs.json, not elements. wait, ferment and blow are absent on purpose: none of them does anything to a person on the timescale the canvas shows.",
   "$hazards_comment": "Keyed on data/cautions.json's own hazard ids. Each row is what that class of hazard does to a body, and it answers for every element on that hazard's list. This is not a shortcut around authoring: it is the right grain. Where an element deserves a specific answer it gets a row of its own in `effects`, which overrides this entirely.",
+  "$outcomes_comment": "What the body visibly does, per outcome. `site` is an element — an organ or tissue this corpus already has — so the anatomy is checkable rather than asserted in a switch statement. `sign` is one of $signs. This is not a damage model: it depicts the sign that is recorded, and a cumulative exposure shows the clock regardless of what its outcome's sign is.",
   "effects": {
     "asbestos": [
       {
@@ -3882,5 +3895,426 @@
       }
     ]
   },
-  "$dial_comment": "A dial names the axis a staging is actually measured on, and stages walk it. `from` is where a body starts and `to` is the far end of the published scale. Each stage's `at` is a real value on that axis. `outcome` is optional: the early rungs of most ladders are not injuries and should not pretend to be."
+  "outcomes": {
+    "death": {
+      "site": "heart",
+      "sign": "slack",
+      "note": "Everything stops holding. The body is no longer keeping itself upright, and what the canvas shows is the absence of every reflex that was doing that.",
+      "src": "https://en.wikipedia.org/wiki/Death"
+    },
+    "cancer": {
+      "site": "blood",
+      "sign": "pulse",
+      "note": "A tumour is cells dividing when they should not, and the mass grows where it started. What is visible is local and slow.",
+      "src": "https://en.wikipedia.org/wiki/Cancer"
+    },
+    "melanoma": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "It grows from the pigment cells, so it appears as a mark on the skin that changes — which is the entire basis of checking moles.",
+      "src": "https://en.wikipedia.org/wiki/Melanoma"
+    },
+    "mesothelioma": {
+      "site": "lung",
+      "sign": "pulse",
+      "note": "In the lining of the lung, decades after the fibres arrived. Nothing is visible for most of that time, which is why this outcome is almost always shown as a clock.",
+      "src": "https://en.wikipedia.org/wiki/Mesothelioma"
+    },
+    "asbestosis": {
+      "site": "lung",
+      "sign": "pulse",
+      "note": "Scarring of the lung tissue itself, stiffening it so it cannot expand.",
+      "src": "https://en.wikipedia.org/wiki/Asbestosis"
+    },
+    "silicosis": {
+      "site": "lung",
+      "sign": "pulse",
+      "note": "The same picture from a different dust: nodules of scar around particles the lung cannot clear.",
+      "src": "https://en.wikipedia.org/wiki/Silicosis"
+    },
+    "asphyxia": {
+      "site": "lung",
+      "sign": "still",
+      "note": "The chest stops. Whether the cause is a blocked airway or an atmosphere with no oxygen in it, what ends is the movement.",
+      "src": "https://en.wikipedia.org/wiki/Asphyxia"
+    },
+    "hypoxia": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "Blood still circulating and no longer carrying. The classic sign is the colour — blue in most hypoxia, and famously not blue in carbon monoxide poisoning.",
+      "src": "https://en.wikipedia.org/wiki/Hypoxia_(medicine)"
+    },
+    "drowning": {
+      "site": "lung",
+      "sign": "still",
+      "note": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling — and it is close to silent, because breathing takes priority over speech.",
+      "src": "https://en.wikipedia.org/wiki/Drowning"
+    },
+    "thermal_burn": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "The injury is at the surface and it stays. Depth follows temperature and time, and a full-thickness burn destroys the nerve endings with the rest.",
+      "src": "https://en.wikipedia.org/wiki/Burn"
+    },
+    "chemical_burn": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "An alkali keeps going where an acid coagulates and self-limits, which is why the alkali injury is deeper than it first looks.",
+      "src": "https://en.wikipedia.org/wiki/Chemical_burn"
+    },
+    "corrosive": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "Tissue destroyed at the point of contact, and the damage continues while the substance remains.",
+      "src": "https://en.wikipedia.org/wiki/Corrosive_substance"
+    },
+    "frostbite": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "Ice crystals form inside the tissue. The skin goes white and hard first, and the colour that follows on rewarming is the injury becoming visible.",
+      "src": "https://en.wikipedia.org/wiki/Frostbite"
+    },
+    "hypothermia": {
+      "site": "muscle",
+      "sign": "shiver",
+      "note": "Shivering is the body raising heat production, and its stopping looks like improvement and is the opposite — the fuel to do it has run out.",
+      "src": "https://en.wikipedia.org/wiki/Hypothermia"
+    },
+    "heat_stroke": {
+      "site": "brain",
+      "sign": "still",
+      "note": "Sweating fails and the core climbs. Confusion comes before collapse, so the sign is neurological before it is anything else.",
+      "src": "https://en.wikipedia.org/wiki/Heat_stroke"
+    },
+    "laceration": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "Skin is under tension, so a cut gapes rather than sitting closed.",
+      "src": "https://en.wikipedia.org/wiki/Wound"
+    },
+    "blunt_trauma": {
+      "site": "bone",
+      "sign": "swell",
+      "note": "Energy delivered into tissue without breaking the surface. The damage is often internal and the visible sign is swelling.",
+      "src": "https://en.wikipedia.org/wiki/Blunt_trauma"
+    },
+    "fracture": {
+      "site": "bone",
+      "sign": "swell",
+      "note": "Bone fails in bending before compression, and the swelling around a break is bleeding into the tissue.",
+      "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+    },
+    "crush_syndrome": {
+      "site": "kidney",
+      "sign": "still",
+      "note": "The injury that arrives when the pressure comes off: myoglobin from crushed muscle reaches the circulation and the kidneys are what fail.",
+      "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+    },
+    "electrocution": {
+      "site": "heart",
+      "sign": "shiver",
+      "note": "Current across the chest can put a heart into fibrillation, which is the muscle moving without pumping.",
+      "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+    },
+    "radiation_sickness": {
+      "site": "bone_marrow",
+      "sign": "still",
+      "note": "The tissues that replace themselves fastest fail first, and marrow is the fastest of all.",
+      "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
+    },
+    "infection": {
+      "site": "blood",
+      "sign": "pulse",
+      "note": "An organism multiplying where it should not be, and most of what is felt is the response to it rather than the organism.",
+      "src": "https://en.wikipedia.org/wiki/Infection"
+    },
+    "sepsis": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "Not the infection but the answer to it going system-wide: vessels leak, pressure falls, and organs fail from poor perfusion.",
+      "src": "https://en.wikipedia.org/wiki/Sepsis"
+    },
+    "fever": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "The set point is raised deliberately. A fever is not the illness overwhelming the thermostat but the thermostat being turned up.",
+      "src": "https://en.wikipedia.org/wiki/Fever"
+    },
+    "inflammation": {
+      "site": "skin",
+      "sign": "swell",
+      "note": "Redness, heat, swelling and pain — the four signs written down in the first century and unchanged since.",
+      "src": "https://en.wikipedia.org/wiki/Inflammation"
+    },
+    "allergic_reaction": {
+      "site": "skin",
+      "sign": "swell",
+      "note": "The immune system answering something harmless. What is visible is the response, never the substance.",
+      "src": "https://en.wikipedia.org/wiki/Allergy"
+    },
+    "anaphylaxis": {
+      "site": "trachea",
+      "sign": "swell",
+      "note": "Mast cells degranulate everywhere at once. The airway swelling is what kills, and it is minutes rather than hours.",
+      "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+    },
+    "asthma": {
+      "site": "lung",
+      "sign": "still",
+      "note": "Airway muscle tightens, the lining swells, and mucus fills what is left. All three are things the body is doing.",
+      "src": "https://en.wikipedia.org/wiki/Asthma"
+    },
+    "irritant": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "Direct damage at the point of contact, without the immune system having learned anything first.",
+      "src": "https://en.wikipedia.org/wiki/Irritation"
+    },
+    "sensitiser": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "The first exposure teaches and does nothing; every one after it reacts. The difference from an irritant is entirely that memory.",
+      "src": "https://en.wikipedia.org/wiki/Sensitization_(immunology)"
+    },
+    "poisoning": {
+      "site": "liver",
+      "sign": "pulse",
+      "note": "Most of what is swallowed is dealt with by the liver first, which is why it is so often the organ that shows it.",
+      "src": "https://en.wikipedia.org/wiki/Poisoning"
+    },
+    "neurotoxin": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "Nerve and muscle signalling disturbed — the visible signs are tremor, weakness and confusion rather than anything at the site of entry.",
+      "src": "https://en.wikipedia.org/wiki/Neurotoxin"
+    },
+    "hepatotoxin": {
+      "site": "liver",
+      "sign": "swell",
+      "note": "The liver takes the first pass at almost everything swallowed, and damage there is silent until a great deal of it has happened.",
+      "src": "https://en.wikipedia.org/wiki/Hepatotoxicity"
+    },
+    "nephrotoxin": {
+      "site": "kidney",
+      "sign": "still",
+      "note": "The kidney concentrates what it is clearing, so it is exposed to higher levels than the blood ever was.",
+      "src": "https://en.wikipedia.org/wiki/Nephrotoxicity"
+    },
+    "seizure": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "Neurons firing together in a way they should not. What is visible is the muscle answering it.",
+      "src": "https://en.wikipedia.org/wiki/Seizure"
+    },
+    "narcosis": {
+      "site": "brain",
+      "sign": "still",
+      "note": "Consciousness depressed rather than damaged. The sign is absence — of response, and eventually of breathing.",
+      "src": "https://en.wikipedia.org/wiki/Narcosis"
+    },
+    "heart_attack": {
+      "site": "heart",
+      "sign": "still",
+      "note": "Muscle downstream of a blocked artery stops working within minutes and dies within hours.",
+      "src": "https://en.wikipedia.org/wiki/Myocardial_infarction"
+    },
+    "anaemia": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "Not too little blood but too little of the thing in it that carries oxygen. The sign is pallor.",
+      "src": "https://en.wikipedia.org/wiki/Anemia"
+    },
+    "argyria": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "Silver deposited in the skin and reduced by sunlight, exactly as in a photographic emulsion. The blue-grey is permanent.",
+      "src": "https://en.wikipedia.org/wiki/Argyria"
+    },
+    "botulism": {
+      "site": "nerve",
+      "sign": "still",
+      "note": "The toxin cleaves the proteins a nerve ending needs to release acetylcholine, so the signal to contract never arrives. It starts at the face and travels down.",
+      "src": "https://en.wikipedia.org/wiki/Botulism"
+    },
+    "tetanus": {
+      "site": "muscle",
+      "sign": "shiver",
+      "note": "The opposite failure: the signals that switch a muscle off are blocked, so nothing can relax.",
+      "src": "https://en.wikipedia.org/wiki/Tetanus"
+    },
+    "goitre": {
+      "site": "thyroid",
+      "sign": "swell",
+      "note": "The gland enlarging because it is being told to work harder and lacks the one ingredient it needs.",
+      "src": "https://en.wikipedia.org/wiki/Goitre"
+    },
+    "diarrhoea": {
+      "site": "intestine",
+      "sign": "still",
+      "note": "The large intestine's job is taking water back out. Anything that stops it leaves the water in.",
+      "src": "https://en.wikipedia.org/wiki/Diarrhea"
+    },
+    "birth_defect": {
+      "site": "brain",
+      "sign": "wait",
+      "note": "Susceptibility follows developmental stage. Nothing is visible at the time of the exposure, and that is the point of the tier.",
+      "src": "https://en.wikipedia.org/wiki/Birth_defect"
+    },
+    "carcinogen": {
+      "site": "blood",
+      "sign": "wait",
+      "note": "A carcinogen does nothing on the day. The honest depiction is a clock, which is the rule this whole layer was built around.",
+      "src": "https://en.wikipedia.org/wiki/Carcinogen"
+    },
+    "mutagen": {
+      "site": "blood",
+      "sign": "wait",
+      "note": "Damage to DNA is invisible and may never become anything. Showing it as an injury would be the lie.",
+      "src": "https://en.wikipedia.org/wiki/Mutagen"
+    },
+    "addiction": {
+      "site": "brain",
+      "sign": "pulse",
+      "note": "The reward pathway rebalanced around a drug being present, so its absence is what is now felt.",
+      "src": "https://en.wikipedia.org/wiki/Addiction"
+    },
+    "histamine": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "Vessels dilate and leak. It looks exactly like an allergy and is not one — the histamine arrived in the food.",
+      "src": "https://en.wikipedia.org/wiki/Scombroid_food_poisoning"
+    },
+    "hyperactivity": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "A small average shift in behaviour across a group, and not a reaction in any one child.",
+      "src": "https://en.wikipedia.org/wiki/Hyperactivity"
+    },
+    "glioma": {
+      "site": "brain",
+      "sign": "pulse",
+      "note": "It grows from the brain's glial support cells rather than its neurons, and the skull does not expand — so the damage is as much pressure as it is the tumour.",
+      "src": "https://en.wikipedia.org/wiki/Glioma"
+    },
+    "stroke": {
+      "site": "brain",
+      "sign": "still",
+      "note": "Two opposite causes with almost the same presentation: a clot stopping flow, or a vessel bleeding into the brain. What is lost is whatever that territory was doing.",
+      "src": "https://en.wikipedia.org/wiki/Stroke"
+    },
+    "epilepsy": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "Neurons firing in synchrony where they should not. The visible part is the muscle answering it.",
+      "src": "https://en.wikipedia.org/wiki/Epilepsy"
+    },
+    "alzheimers_disease": {
+      "site": "brain",
+      "sign": "wait",
+      "note": "Plaques and tangles accumulate for a decade or two before anything is noticed, which is why the honest depiction early on is nothing at all.",
+      "src": "https://en.wikipedia.org/wiki/Alzheimer%27s_disease"
+    },
+    "parkinsons_disease": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "Dopamine neurons in the substantia nigra are lost, and the tremor is what that loss looks like from outside.",
+      "src": "https://en.wikipedia.org/wiki/Parkinson%27s_disease"
+    },
+    "ulcer": {
+      "site": "stomach",
+      "sign": "mark",
+      "note": "A hole in the lining where acid has reached tissue the mucus was meant to keep it off. Mostly a bacterium, which is the finding that overturned a century of blaming stress.",
+      "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease"
+    },
+    "arthritis": {
+      "site": "joint",
+      "sign": "swell",
+      "note": "Cartilage lost from a joint surface, so bone works against bone. The swelling is the joint's answer to that.",
+      "src": "https://en.wikipedia.org/wiki/Arthritis"
+    },
+    "osteoporosis": {
+      "site": "bone",
+      "sign": "wait",
+      "note": "Bone is dismantled and rebuilt lifelong, and this is what it looks like when the dismantling wins. Nothing is visible until something breaks.",
+      "src": "https://en.wikipedia.org/wiki/Osteoporosis"
+    },
+    "diabetes": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "Glucose that cannot get into cells, so it stays in the blood — where the damage is done slowly, to vessels and nerves.",
+      "src": "https://en.wikipedia.org/wiki/Diabetes"
+    },
+    "cataract": {
+      "site": "eye",
+      "sign": "flush",
+      "note": "The lens clouding. It is the commonest cause of blindness in the world and among the most completely fixable.",
+      "src": "https://en.wikipedia.org/wiki/Cataract"
+    },
+    "measles": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "The rash is the immune system finding infected cells in the skin, which is why it appears days after the fever rather than with it.",
+      "src": "https://en.wikipedia.org/wiki/Measles"
+    },
+    "malaria": {
+      "site": "blood",
+      "sign": "flush",
+      "note": "Infected red cells burst together, which is why the fever comes in waves rather than steadily.",
+      "src": "https://en.wikipedia.org/wiki/Malaria"
+    },
+    "rabies": {
+      "site": "brain",
+      "sign": "shiver",
+      "note": "The virus travels up peripheral nerves to the brain rather than through the blood. Once it arrives, almost nothing has ever been survived.",
+      "src": "https://en.wikipedia.org/wiki/Rabies"
+    },
+    "cholera": {
+      "site": "intestine",
+      "sign": "still",
+      "note": "The toxin locks the gut's chloride channels open and water follows the salt out. The danger is entirely the volume lost.",
+      "src": "https://en.wikipedia.org/wiki/Cholera"
+    },
+    "scurvy": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "Collagen cannot be cross-linked without vitamin C, so old wounds reopen and gums bleed — the body coming apart at its repairs.",
+      "src": "https://en.wikipedia.org/wiki/Scurvy"
+    },
+    "rickets": {
+      "site": "bone",
+      "sign": "swell",
+      "note": "Growing bone laid down without being mineralised, so it bends under the child's own weight.",
+      "src": "https://en.wikipedia.org/wiki/Rickets"
+    },
+    "pellagra": {
+      "site": "skin",
+      "sign": "mark",
+      "note": "The four Ds — dermatitis, diarrhoea, dementia and death — and the rash appears where the sun reaches.",
+      "src": "https://en.wikipedia.org/wiki/Pellagra"
+    },
+    "beriberi": {
+      "site": "nerve",
+      "sign": "still",
+      "note": "Thiamin is the cofactor for getting sugar into the citric acid cycle, so the tissues that burn the most sugar fail first: nerve and heart.",
+      "src": "https://en.wikipedia.org/wiki/Beriberi"
+    },
+    "leukemia": {
+      "site": "bone_marrow",
+      "sign": "pulse",
+      "note": "The marrow filling with cells that do not mature, crowding out the ones that would have.",
+      "src": "https://en.wikipedia.org/wiki/Leukemia"
+    },
+    "mumps": {
+      "site": "neck",
+      "sign": "swell",
+      "note": "The parotid gland swelling is the recognisable part, and the complications land on tissues with a similar epithelium.",
+      "src": "https://en.wikipedia.org/wiki/Mumps"
+    },
+    "tuberculosis": {
+      "site": "lung",
+      "sign": "pulse",
+      "note": "The body walls the bacterium off rather than clearing it, and that granuloma can hold for decades before failing.",
+      "src": "https://en.wikipedia.org/wiki/Tuberculosis"
+    }
+  }
 }

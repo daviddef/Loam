@@ -27,18 +27,18 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology, medicine and the built world |
-| Elements | **8,503** (8,147 workshop · 356 folklore) |
-| Recipes | **10,453** (9,474 merges · 979 verb processes) |
+| Elements | **8,558** (8,202 workshop · 356 folklore) |
+| Recipes | **10,508** (9,529 merges · 979 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **8,503 / 8,503** from the four starters |
-| Sourced | **10,453 / 10,453** recipes, every URL machine-verified |
-| Independently verified | **8,373 / 10,453** (80%) carry `verified: true` |
-| Routes per element | **1.23** · 6,942 still have exactly one |
+| Reachable | **8,558 / 8,558** from the four starters |
+| Sourced | **10,508 / 10,508** recipes, every URL machine-verified |
+| Independently verified | **8,428 / 10,508** (80%) carry `verified: true` |
+| Routes per element | **1.23** · 6,997 still have exactly one |
 | Hazards | **343**, covering 621 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
-| Drawings | **7,875** hand-drawn; 628 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,367 / 8,503** — what each noun is to a making |
-| Sense-checked | **1,795** single-word names read; 156 on the watchlist |
+| Drawings | **7,875** hand-drawn; 683 on a family fallback — a tracked backlog, not a blocker |
+| Roles | **8,367 / 8,558** — what each noun is to a making |
+| Sense-checked | **1,817** single-word names read; 164 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **433** written |
 | Effects on a body | **455 / 621** cautioned elements answered and **36 / 39** of the nutrients a body cannot make supplied; 63 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **337 / 337** have had the article they cite read and found to carry the claim |
@@ -46,7 +46,7 @@ validated and playtested first — before a line of Swift.
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
 build time, because this file previously spent a fortnight claiming 6,874 elements
-while the corpus held 7,423 — and then did it again, claiming 7,576 against 8,503.*
+while the corpus held 7,423 — and then did it again, claiming 7,576 against 8,558.*
 <!-- STATUS:END -->
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from

@@ -55,6 +55,8 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* W4 physiology fourth pass, 6 Sep */
+          'pepsin', 'amylase', 'trypsin', 'lipase', 'oestrogen', 'prolactin', 'aldosterone',
           /* W4 physiology third pass, 6 Sep */
           'lactate', 'ketone', 'ion_channel', 'receptor', 'resting_potential',
           /* W2 arachnids and insects, 5 Sep */
@@ -141,6 +143,10 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* W4 physiology fourth pass, 6 Sep */
+          'osteoblast', 'osteoclast', 'hepatocyte',
+          /* W2 insects third pass, 6 Sep */
+          'epicuticle',
           /* W4 physiology third pass, 6 Sep */
           'keratinocyte', 'glial_cell',
           /* W4 physiology second pass, 6 Sep */
@@ -223,6 +229,8 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* W2 insects third pass, 6 Sep */
+          'sclerite', 'clypeus', 'labrum', 'maxilla', 'labium', 'hypopharynx', 'tentorium', 'ocellus', 'apodeme',
           /* W4 physiology second pass, 6 Sep */
           'ossicle', 'sebaceous_gland', 'follicle', 'sweat_gland',
           /* W4 physiology, 6 Sep */
@@ -270,6 +278,10 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* W4 physiology fourth pass, 6 Sep */
+          'periosteum', 'synovial_fluid', 'neural_tube', 'germ_layer',
+          /* W2 insects third pass, 6 Sep */
+          'tergite', 'sternite', 'pleurite', 'pronotum', 'tegmen', 'cercus', 'worker_ant', 'soldier_ant', 'alate', 'soldier_termite', 'trophallaxis',
           /* W4 physiology third pass, 6 Sep */
           'goosebump',
           /* W4 physiology second pass, 6 Sep */
@@ -328,6 +340,10 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* W4 physiology fourth pass, 6 Sep */
+          'bolus', 'chyme', 'bile_duct', 'portal_vein', 'parathyroid', 'endocrine_gland', 'pons', 'gastrulation',
+          /* W2 insects third pass, 6 Sep */
+          'orthopteran', 'katydid', 'queen_termite',
           /* W4 physiology third pass, 6 Sep */
           'medulla', 'grey_matter', 'capillary_bed', 'slow_twitch', 'fast_twitch', 'scar',
           /* W4 physiology second pass, 6 Sep */
@@ -554,6 +570,8 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* W4 physiology fourth pass, 6 Sep */
+          'absorption', 'ossification', 'negative_feedback', 'differentiation', 'myelination', 'synaptic_plasticity',
           /* W4 physiology third pass, 6 Sep */
           'cardiac_output', 'stroke_volume', 'oxygen_debt', 'hypertrophy', 'fatigue', 'agonist', 'antagonist', 'first_pass_metabolism', 'half_life_drug', 'tolerance', 'proprioception', 'menstruation',
           /* W4 physiology second pass, 6 Sep */
@@ -860,6 +878,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* W2 insects third pass, 6 Sep */
+          'caste', 'termite_mound', 'swarm',
           /* owed outcomes restored, 5 Sep */
           'hyperactivity',
           /* W2 arachnids and insects, 5 Sep */

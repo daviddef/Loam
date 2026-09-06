@@ -190,6 +190,19 @@ if (has('effects.json') && has('cautions.json')) {
     add('effects-sourced', Math.max(0, a.checked - a.flagged), total,
         `rows whose cited article carries what they claim (audited ${a.when})`);
   }
+  // What the body can actually SHOW. Route says how a thing gets in and
+  // nothing about what happens next, which is why a burn, a brain tumour and a
+  // drowning all looked identical on the canvas until each outcome was given
+  // an organ and a sign.
+  const outs = E2.outcomes || {};
+  const reached = new Set();
+  for (const f of [...Object.values(eff).flat(), ...Object.values(E2.hazards || {}).flat(),
+                   ...Object.values(E2.verbs || {}).flat()]) {
+    if (f.outcome) reached.add(f.outcome);
+    for (const g of f.stages || []) if (g.outcome) reached.add(g.outcome);
+  }
+  add('outcome-signs', [...reached].filter(id => outs[id]).length, reached.size,
+      'reachable outcomes the body can visibly show — site and sign');
   add('nutrients', supplied.size, Object.keys(nut).length,
       'what a body cannot make and must be given — the benefit half');
 }

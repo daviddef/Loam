@@ -14828,7 +14828,7 @@
       "wild"
     ],
     "fact": "The same grasshopper species can switch between a solitary, harmless form and a swarming, gregarious one — the change can be triggered just by how often its hind legs bump into another locust's.",
-    "taxon": "tx_orthoptera"
+    "taxon": "tx_caelifera"
   },
   {
     "id": "mantis",
@@ -69612,7 +69612,7 @@
     ],
     "fact": "About 11,000 species of chewing herbivore in the suborder Caelifera, a lineage reaching back to the early Triassic 250 million years ago.",
     "src": "https://en.wikipedia.org/wiki/Grasshopper",
-    "taxon": "tx_orthoptera"
+    "taxon": "tx_caelifera"
   },
   {
     "id": "ape",
@@ -95403,5 +95403,592 @@
       "molecule"
     ],
     "fact": "A pore that opens and shuts, and every nerve signal in you is these doing it in sequence."
+  },
+  {
+    "id": "sclerite",
+    "name": "Sclerite",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "One hardened plate of the exoskeleton, bounded by soft membrane. The body wall is a mosaic of them.",
+    "soleRoute": true
+  },
+  {
+    "id": "tergite",
+    "name": "Tergite",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The plate roofing one body segment. The side folds of the thoracic ones are where wings came from.",
+    "soleRoute": true
+  },
+  {
+    "id": "sternite",
+    "name": "Sternite",
+    "emoji": "⬜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The plate under a segment. The first abdominal one is reduced or gone in most insects.",
+    "soleRoute": true
+  },
+  {
+    "id": "pleurite",
+    "name": "Pleurite",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The side wall of a thoracic segment, and the only place a leg or a wing is allowed to hinge.",
+    "soleRoute": true
+  },
+  {
+    "id": "pronotum",
+    "name": "Pronotum",
+    "emoji": "🪖",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The shield over the first thoracic segment — a plain plate in most insects, a saddle in a grasshopper.",
+    "soleRoute": true
+  },
+  {
+    "id": "tegmen",
+    "name": "Tegmen",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A forewing hardened into a leathery cover. It gives up most of its lift to protect the wing beneath.",
+    "soleRoute": true
+  },
+  {
+    "id": "clypeus",
+    "name": "Clypeus",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The plate between the face and the upper lip. The mandibles bracket it but never touch it.",
+    "soleRoute": true
+  },
+  {
+    "id": "labrum",
+    "name": "Labrum",
+    "emoji": "👄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The upper lip: a single unpaired flap hinged to the face, closing the mouth cavity from the front.",
+    "soleRoute": true
+  },
+  {
+    "id": "maxilla",
+    "name": "Maxilla",
+    "emoji": "🍴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The second pair of jaws, carrying a palp that tastes the food before the mandibles get to it.",
+    "soleRoute": true
+  },
+  {
+    "id": "labium",
+    "name": "Labium",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The lower lip, and it is a pair of jaws fused on the midline — the second maxillae, joined into one.",
+    "soleRoute": true
+  },
+  {
+    "id": "hypopharynx",
+    "name": "Hypopharynx",
+    "emoji": "👅",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A tongue standing between the jaws. The salivary duct opens behind it, outside the mouth.",
+    "soleRoute": true
+  },
+  {
+    "id": "tentorium",
+    "name": "Tentorium",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The skeleton inside an insect’s head, folded in from the outside and braced corner to corner.",
+    "soleRoute": true
+  },
+  {
+    "id": "ocellus",
+    "name": "Ocellus",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A single-lens eye that forms no image. Three in a triangle, reading only how bright it is.",
+    "soleRoute": true
+  },
+  {
+    "id": "apodeme",
+    "name": "Apodeme",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "An insect’s tendon is an ingrowth of its own skin — and it is shed and regrown at every moult.",
+    "soleRoute": true
+  },
+  {
+    "id": "epicuticle",
+    "name": "Epicuticle",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The outermost skin of an insect, thinner than a wavelength of light, and carrying no chitin at all.",
+    "soleRoute": true
+  },
+  {
+    "id": "cercus",
+    "name": "Cercus",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A pair of feelers at the tail end, wired to moving air. The escape turn starts before contact.",
+    "soleRoute": true
+  },
+  {
+    "id": "orthopteran",
+    "name": "Orthopteran",
+    "emoji": "🦗",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Straight-winged: leathery forewings, a saddle over the neck, hind legs built to jump. 22,500 species.",
+    "soleRoute": true,
+    "taxon": "tx_orthoptera"
+  },
+  {
+    "id": "katydid",
+    "name": "Katydid",
+    "emoji": "🍃",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "A bush-cricket that fiddles one way round only: the file is on the left tegmen, the scraper on the right.",
+    "soleRoute": true,
+    "taxon": "tx_tettigoniidae"
+  },
+  {
+    "id": "caste",
+    "name": "Caste",
+    "emoji": "👥",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Not inherited. The same egg becomes a queen or a worker depending on how the larva was fed.",
+    "soleRoute": true
+  },
+  {
+    "id": "worker_ant",
+    "name": "Worker Ant",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A sterile female, wingless for life. Everything the colony does apart from laying, she does.",
+    "soleRoute": true,
+    "taxon": "tx_formicidae"
+  },
+  {
+    "id": "soldier_ant",
+    "name": "Soldier Ant",
+    "emoji": "⚔️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A worker grown head-first — jaws so enlarged that in some species it can no longer feed itself.",
+    "soleRoute": true,
+    "taxon": "tx_formicidae"
+  },
+  {
+    "id": "alate",
+    "name": "Alate",
+    "emoji": "🪽",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The winged form. Ants and termites both make one, and both shed the wings after a single flight.",
+    "soleRoute": true
+  },
+  {
+    "id": "queen_termite",
+    "name": "Queen Termite",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Her abdomen swells until she cannot walk, and she lays thousands of eggs a day for decades.",
+    "soleRoute": true,
+    "taxon": "tx_blattodea"
+  },
+  {
+    "id": "soldier_termite",
+    "name": "Soldier Termite",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Blind, sterile and built around its head. Some have given up jaws entirely and spray glue instead.",
+    "soleRoute": true,
+    "taxon": "tx_blattodea"
+  },
+  {
+    "id": "trophallaxis",
+    "name": "Trophallaxis",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Mouth-to-mouth feeding. A colony shares one stomach, and everything dissolved in it.",
+    "soleRoute": true
+  },
+  {
+    "id": "termite_mound",
+    "name": "Termite Mound",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "build"
+    ],
+    "fact": "Soil, saliva and dung built into a chimney. The colony lives under it rather than in it.",
+    "soleRoute": true
+  },
+  {
+    "id": "swarm",
+    "name": "Swarm",
+    "emoji": "🐝",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "How a bee colony reproduces: the old queen leaves with the workers, and a daughter keeps the house.",
+    "soleRoute": true
+  },
+  {
+    "id": "bolus",
+    "name": "Bolus",
+    "emoji": "🥄",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "A swallow. The mouthful once it has been chewed and wetted enough to go down in one piece."
+  },
+  {
+    "id": "chyme",
+    "name": "Chyme",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "food"
+    ],
+    "fact": "What the stomach hands on: a soup at about pH 2, released a few millilitres at a time."
+  },
+  {
+    "id": "pepsin",
+    "name": "Pepsin",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The stomach's protein-cutting enzyme, and it only works in acid — which is a safety feature."
+  },
+  {
+    "id": "amylase",
+    "name": "Amylase",
+    "emoji": "🍞",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The enzyme that starts on starch, and it is in your mouth — digestion begins before you swallow."
+  },
+  {
+    "id": "trypsin",
+    "name": "Trypsin",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The intestine's protein cutter, and the one that switches on all the others."
+  },
+  {
+    "id": "lipase",
+    "name": "Lipase",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The fat splitter, and it cannot work until bile has broken the fat into droplets."
+  },
+  {
+    "id": "hepatocyte",
+    "name": "Hepatocyte",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The liver cell, and it does several hundred different jobs — which is why nothing has ever replaced a liver mechanically."
+  },
+  {
+    "id": "portal_vein",
+    "name": "Portal Vein",
+    "emoji": "🩸",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The one vein that goes to an organ instead of back to the heart, and everything you eat travels it."
+  },
+  {
+    "id": "absorption",
+    "name": "Absorption",
+    "emoji": "🧽",
+    "shelf": "workshop",
+    "tags": [
+      "medicine"
+    ],
+    "fact": "The moment something stops being in your gut and starts being in you. Everything before this is still outside."
+  },
+  {
+    "id": "osteoblast",
+    "name": "Osteoblast",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cell that builds bone, and it walls itself in doing it."
+  },
+  {
+    "id": "ossification",
+    "name": "Ossification",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Bone forming — and most of yours was cartilage first."
+  },
+  {
+    "id": "periosteum",
+    "name": "Periosteum",
+    "emoji": "🎁",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The living sleeve around a bone. It is where the pain is, and where a fracture heals from."
+  },
+  {
+    "id": "synovial_fluid",
+    "name": "Synovial Fluid",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Joint oil, and it gives a lower friction than anything engineering has managed."
+  },
+  {
+    "id": "negative_feedback",
+    "name": "Negative Feedback",
+    "emoji": "🔁",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The output shutting off its own cause. Nearly everything the body holds steady is held by this."
+  },
+  {
+    "id": "oestrogen",
+    "name": "Oestrogen",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The hormone with the widest reach outside reproduction — bone, blood vessels and brain all answer to it."
+  },
+  {
+    "id": "prolactin",
+    "name": "Prolactin",
+    "emoji": "🍼",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The milk hormone, and it is held switched off by the brain rather than switched on."
+  },
+  {
+    "id": "aldosterone",
+    "name": "Aldosterone",
+    "emoji": "🧂",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The salt hormone. It tells the kidney to keep sodium, and water follows sodium."
+  },
+  {
+    "id": "parathyroid",
+    "name": "Parathyroid",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Four glands the size of grains of rice, and they hold blood calcium steadier than almost anything else in the body."
+  },
+  {
+    "id": "differentiation",
+    "name": "Differentiation",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "animal"
+    ],
+    "fact": "One genome, two hundred kinds of cell. Nothing is added — things are switched off."
+  },
+  {
+    "id": "gastrulation",
+    "name": "Gastrulation",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The fold that turns a ball of cells into something with an inside — and the most important event in your life."
+  },
+  {
+    "id": "neural_tube",
+    "name": "Neural Tube",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The brain and spinal cord begin as a flat sheet that rolls up and zips shut."
+  },
+  {
+    "id": "myelination",
+    "name": "Myelination",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Insulation laid down over twenty-five years, front of the brain last — which is a fact about adolescence."
+  },
+  {
+    "id": "synaptic_plasticity",
+    "name": "Synaptic Plasticity",
+    "emoji": "🕸️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Connections that strengthen with use. This is what learning physically is."
+  },
+  {
+    "id": "bile_duct",
+    "name": "Bile Duct",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The pipe from liver and gallbladder to the gut, and it shares its last few millimetres with the pancreas."
+  },
+  {
+    "id": "osteoclast",
+    "name": "Osteoclast",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The cell that dissolves bone, and you need it as much as the one that builds."
+  },
+  {
+    "id": "endocrine_gland",
+    "name": "Endocrine Gland",
+    "emoji": "🫗",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A gland with no duct. It puts its product into the blood and lets the circulation do the addressing."
+  },
+  {
+    "id": "germ_layer",
+    "name": "Germ Layer",
+    "emoji": "🥞",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "Three sheets laid down in the first fortnight, and every tissue you have comes from one of them."
+  },
+  {
+    "id": "pons",
+    "name": "Pons",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "A bridge across the brainstem, and it is where the paralysis of dreaming is switched on."
   }
 ]

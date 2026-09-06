@@ -7898,6 +7898,15 @@ const RD_PIN = { inhaled: 'chest', ingested: 'pelvis', contact: 'haR', absorbed:
 /* A condition has no route in, because it is already in. What it has instead
  * is what it affects, and where that names something with a place, the body
  * can show it. */
+/* Where an organ is on this body. The site named in data/effects.json is an
+ * element — brain, lung, liver — and this is the only place that turns one
+ * into a point on the figure. Anything not listed acts at the chest, which is
+ * where "somewhere inside" honestly belongs. */
+const RD_SITE = { brain: 'head', eye: 'head', ear: 'head', thyroid: 'neck',
+                  lung: 'chest', heart: 'chest', trachea: 'neck', blood: 'chest',
+                  liver: 'waist', kidney: 'waist', stomach: 'waist',
+                  intestine: 'pelvis', bone_marrow: 'pelvis',
+                  skin: 'haR', muscle: 'knL', bone: 'knR', nerve: 'elL', spine: 'waist' };
 const RD_AFFECT = { brain: 'head', eye: 'head', tooth: 'head', thyroid: 'chest',
                     lung: 'chest', heart: 'chest', blood: 'chest', rib: 'chest',
                     bone: 'pelvis', gut: 'pelvis', intestine: 'pelvis', liver: 'pelvis',
@@ -7970,6 +7979,34 @@ function rdResolve(id, kind) {
  * a rung. An invented nought-to-a-hundred would have looked identical and
  * meant nothing, and the gate rejects one.
  */
+/* What the body is visibly doing, and why. One entry per exposure that has an
+ * outcome the corpus can depict: the part it acts on, the sign, and when it
+ * started. THE CUMULATIVE RULE OUTRANKS ALL OF IT — a carcinogen's outcome may
+ * carry a sign and a cumulative exposure still shows nothing, because that is
+ * what is true on the day and it is the rule this layer was built around. */
+let rdSigns = [];
+function rdSignsBuild() {
+  const out = [];
+  for (const x of ragdoll) {
+    for (const f of rdResolve(x.id, x.kind)) {
+      if (f.valence !== 'harm') continue;
+      const rung = f.stages && x.rung != null ? f.stages[x.rung] : null;
+      const id = (rung && rung.outcome) || f.outcome;
+      const o = id && (EFFECTS.outcomes || {})[id];
+      if (!o) continue;
+      // Nothing happens today, whatever the outcome looks like eventually.
+      if (f.onset === 'cumulative' && o.sign !== 'wait') continue;
+      if (o.sign === 'wait') continue;
+      out.push({ part: RD_SITE[o.site] || 'chest', sign: o.sign, id, t: performance.now() });
+    }
+  }
+  rdSigns = out;
+  // Death is the one sign that changes the body rather than decorating it.
+  RD.dead = out.some(g => g.sign === 'slack');
+  const pin = RD.parts[RD.ix.pin];
+  if (pin) pin.pin = !RD.dead;
+}
+
 let rdDial = null;                       // {id, kind, f, t0, at, stage}
 const RD_CLIMB = 9000;                   // ms to walk the whole dial, held still
 
@@ -8049,6 +8086,7 @@ function rdPinsBuild() {
   const host = document.getElementById('rdPins');
   if (!host) return;
   RD.pins = rdPinList();
+  rdSignsBuild();
   host.innerHTML = RD.pins.map(p => {
     const e = byId[p.id];
     return `<span class="rdpin${p.good ? ' good' : ''}${p.vague ? ' vague' : ''}"
@@ -8154,35 +8192,64 @@ function rdBuild() {
   // rather than a person. One pinned point at the chest and it hangs instead:
   // arms and legs dangle, the head lolls, and the silhouette stays a body
   // however hard you throw it about.
-  add('pin', 0, 3.05, .01, true);
-  add('head', 0, 3.55, .34); add('chest', 0, 2.75, .40); add('pelvis', 0, 1.85, .36);
-  add('shL', -.52, 2.72, .17); add('elL', -.90, 2.05, .15); add('haL', -1.10, 1.40, .14);
-  add('shR',  .52, 2.72, .17); add('elR',  .90, 2.05, .15); add('haR',  1.10, 1.40, .14);
-  add('hiL', -.28, 1.75, .19); add('knL', -.34, 1.00, .17); add('ftL', -.36, 0.22, .16);
-  add('hiR',  .28, 1.75, .19); add('knR',  .34, 1.00, .17); add('ftR',  .36, 0.22, .16);
+  add('pin', 0, 3.18, .01, true);
+  // Seven and a half heads tall, which is the figure-drawing canon and close
+  // enough to a real adult. The first version was five and read as a doll.
+  add('head', 0, 3.62, .26); add('neck', 0, 3.30, .11); add('chest', 0, 2.86, .34);
+  add('waist', 0, 2.32, .27); add('pelvis', 0, 1.98, .30);
+  add('shL', -.42, 3.14, .14); add('elL', -.62, 2.44, .11); add('haL', -.74, 1.76, .09);
+  add('fiL', -.80, 1.52, .07);
+  add('shR',  .42, 3.14, .14); add('elR',  .62, 2.44, .11); add('haR',  .74, 1.76, .09);
+  add('fiR',  .80, 1.52, .07);
+  add('hiL', -.20, 1.92, .15); add('knL', -.24, 1.06, .12); add('ftL', -.26, 0.24, .09);
+  add('toL', -.40, 0.18, .06);
+  add('hiR',  .20, 1.92, .15); add('knR',  .24, 1.06, .12); add('ftR',  .26, 0.24, .09);
+  add('toR',  .40, 0.18, .06);
   const link = (a, b, stiff) => {
     const A = parts[ix[a]], B = parts[ix[b]];
     links.push({ a: ix[a], b: ix[b], len: Math.hypot(B.x - A.x, B.y - A.y), stiff: stiff ?? 1 });
   };
   link('pin', 'chest', 1);
-  for (const [a, b] of [['head','chest'],['chest','pelvis'],['chest','shL'],['chest','shR'],
-       ['shL','elL'],['elL','haL'],['shR','elR'],['elR','haR'],['pelvis','hiL'],['pelvis','hiR'],
-       ['hiL','knL'],['knL','ftL'],['hiR','knR'],['knR','ftR']]) link(a, b, 1);
-  for (const [a, b, st] of [['shL','shR',.95],['hiL','hiR',.95],['shL','pelvis',.75],
-       ['shR','pelvis',.75],['head','shL',.5],['head','shR',.5],['hiL','knR',.22],
-       ['hiR','knL',.22],['shL','hiL',.5],['shR','hiR',.5]]) link(a, b, st);
+  for (const [a, b] of [['head','neck'],['neck','chest'],['chest','waist'],['waist','pelvis'],
+       ['neck','shL'],['neck','shR'],['chest','shL'],['chest','shR'],
+       ['shL','elL'],['elL','haL'],['haL','fiL'],['shR','elR'],['elR','haR'],['haR','fiR'],
+       ['pelvis','hiL'],['pelvis','hiR'],['hiL','knL'],['knL','ftL'],['ftL','toL'],
+       ['hiR','knR'],['knR','ftR'],['ftR','toR']]) link(a, b, 1);
+  for (const [a, b, st] of [['shL','shR',.95],['hiL','hiR',.95],['shL','waist',.75],
+       ['shR','waist',.75],['head','shL',.45],['head','shR',.45],['hiL','knR',.22],
+       ['hiR','knL',.22],['shL','hiL',.5],['shR','hiR',.5],
+       // A knee bends one way and an elbow the other. These hold the limb
+       // roughly straight so it swings like a leg rather than a chain.
+       ['hiL','ftL',.16],['hiR','ftR',.16],['shL','haL',.12],['shR','haR',.12],
+       ['knL','toL',.5],['knR','toR',.5]]) link(a, b, st);
   RD.parts = parts; RD.links = links; RD.ix = ix;
   // thickness down each segment, thicker where the body is
-  RD.limbs = [['chest','pelvis',.40],['shL','shR',.20],['hiL','hiR',.19],
-              ['hiL','knL',.195],['knL','ftL',.16],['hiR','knR',.195],['knR','ftR',.16],
-              ['shL','elL',.155],['elL','haL',.13],['shR','elR',.155],['elR','haR',.13]]
-             .map(([a, b, r]) => ({ a: ix[a], b: ix[b], r }));
+  // Tapered: a thigh is thicker than a calf and an upper arm than a forearm,
+  // and drawing them all one width is most of what made the first figure read
+  // as a pipe-cleaner. r is the start, r2 the end.
+  RD.limbs = [['chest','waist',.34,.27],['waist','pelvis',.27,.30],
+              ['shL','shR',.15],['hiL','hiR',.15],['neck','chest',.10,.30],
+              ['hiL','knL',.17,.115],['knL','ftL',.115,.075],['ftL','toL',.075,.05],
+              ['hiR','knR',.17,.115],['knR','ftR',.115,.075],['ftR','toR',.075,.05],
+              ['shL','elL',.115,.085],['elL','haL',.085,.06],['haL','fiL',.06,.045],
+              ['shR','elR',.115,.085],['elR','haR',.085,.06],['haR','fiR',.06,.045]]
+             .map(([a, b, r, r2]) => ({ a: ix[a], b: ix[b], r, r2: r2 ?? r }));
   RD.grab = null;
 }
 rdBuild();
 
 function rdStep(dt) {
   const half = RD.halfW || 1.6;
+  // The two signs that are movement rather than colour. A shiver is a real
+  // small oscillation at the part; slack has already released the pin above,
+  // so the body is simply falling and nothing here needs to push it.
+  const now = performance.now();
+  for (const g of rdSigns) {
+    if (g.sign !== 'shiver') continue;
+    const p = RD.parts[RD.ix[g.part]];
+    if (!p || p.pin) continue;
+    p.x += Math.sin(now / 26 + RD.ix[g.part]) * 0.006;
+  }
   for (const p of RD.parts) {
     if (p === RD.grab || p.pin) continue;
     const vx = (p.x - p.px) * RD_DAMP, vy = (p.y - p.py) * RD_DAMP;
@@ -8259,13 +8326,26 @@ function rdDraw() {
   // Outline then fill, one limb at a time, back to front. Doing all the
   // outlines first and all the fills after buries the arms inside the torso
   // the moment they hang against it — which is most of the time.
+  // A tapered limb cannot be a stroked line, which has one width for its whole
+  // length. Each is a rounded trapezium: two circles and the tangents between
+  // them, which is what a limb narrowing from hip to knee actually looks like.
+  const capsule = (a, b, r1, r2) => {
+    const x1 = X(a.x), y1 = Y(a.y), x2 = X(b.x), y2 = Y(b.y);
+    const w1 = r1 * sc, w2 = r2 * sc;
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1e-6;
+    const nx = -dy / L, ny = dx / L;
+    ctx.beginPath();
+    ctx.arc(x1, y1, w1, Math.atan2(ny, nx), Math.atan2(-ny, -nx));
+    ctx.lineTo(x2 - nx * w2, y2 - ny * w2);
+    ctx.arc(x2, y2, w2, Math.atan2(-ny, -nx), Math.atan2(ny, nx));
+    ctx.closePath();
+  };
   for (const L of RD.limbs) {
     const a = RD.parts[L.a], b = RD.parts[L.b];
-    const x1 = X(a.x), y1 = Y(a.y), x2 = X(b.x), y2 = Y(b.y);
-    ctx.strokeStyle = stroke; ctx.lineWidth = L.r * 2 * sc + 3;
-    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-    ctx.strokeStyle = card; ctx.lineWidth = L.r * 2 * sc;
-    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    capsule(a, b, L.r + 1.5 / sc, L.r2 + 1.5 / sc);
+    ctx.fillStyle = stroke; ctx.fill();
+    capsule(a, b, L.r, L.r2);
+    ctx.fillStyle = card; ctx.fill();
   }
   // where the route lands, drawn under the head so a lit chest reads through
   for (const n of lit.at || []) {
@@ -8274,10 +8354,49 @@ function rdDraw() {
     ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), p.r * sc * 1.35, 0, 7); ctx.fill();
     ctx.globalAlpha = 1;
   }
-  const hd = P('head');
-  ctx.beginPath(); ctx.arc(X(hd.x), Y(hd.y), hd.r * sc, 0, 7);
+  // A head is an oval and sits at an angle. Drawing it as a circle was the
+  // other half of why the figure read as a doll.
+  const hd = P('head'), nk = P('neck');
+  const tilt = Math.atan2(hd.x - nk.x, hd.y - nk.y);
+  ctx.save();
+  ctx.translate(X(hd.x), Y(hd.y));
+  ctx.rotate(tilt);
+  ctx.beginPath(); ctx.ellipse(0, 0, hd.r * sc * .86, hd.r * sc * 1.12, 0, 0, 7);
   ctx.fillStyle = card; ctx.fill();
   ctx.lineWidth = 3; ctx.strokeStyle = stroke; ctx.stroke();
+  ctx.restore();
+
+  // WHAT THE BODY IS VISIBLY DOING. One mark per sign, at the organ named in
+  // data/effects.json — not a damage model, a depiction of a recorded sign.
+  const brick = css.getPropertyValue('--brick').trim() || '#a2503a';
+  for (const g of rdSigns) {
+    const a = RD.parts[RD.ix[g.part]]; if (!a) continue;
+    const cx = X(a.x), cy = Y(a.y), age = (performance.now() - g.t) / 1000;
+    if (g.sign === 'pulse') {
+      // A throb, at about a resting heart rate.
+      const k = 0.5 + 0.5 * Math.sin(age * 6.3);
+      ctx.beginPath(); ctx.arc(cx, cy, (a.r * 1.5 + 0.12 * k) * sc, 0, 7);
+      ctx.fillStyle = brick; ctx.globalAlpha = 0.16 + 0.2 * k; ctx.fill(); ctx.globalAlpha = 1;
+    } else if (g.sign === 'flush') {
+      ctx.beginPath(); ctx.arc(cx, cy, a.r * 1.7 * sc, 0, 7);
+      ctx.fillStyle = brick; ctx.globalAlpha = 0.3; ctx.fill(); ctx.globalAlpha = 1;
+    } else if (g.sign === 'swell') {
+      const k = Math.min(1, age / 1.6);
+      ctx.beginPath(); ctx.arc(cx, cy, a.r * (1.4 + 0.9 * k) * sc, 0, 7);
+      ctx.fillStyle = brick; ctx.globalAlpha = 0.22; ctx.fill(); ctx.globalAlpha = 1;
+      ctx.strokeStyle = brick; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.5; ctx.stroke(); ctx.globalAlpha = 1;
+    } else if (g.sign === 'mark') {
+      ctx.beginPath(); ctx.arc(cx, cy, a.r * 0.8 * sc, 0, 7);
+      ctx.fillStyle = brick; ctx.fill();
+    } else if (g.sign === 'still') {
+      // A part that has stopped. Drawn as a cross, which is the one sign that
+      // must not look like activity.
+      const r = a.r * 1.5 * sc;
+      ctx.strokeStyle = brick; ctx.lineWidth = 2.5; ctx.globalAlpha = .75;
+      ctx.beginPath(); ctx.moveTo(cx - r, cy - r); ctx.lineTo(cx + r, cy + r);
+      ctx.moveTo(cx + r, cy - r); ctx.lineTo(cx - r, cy + r); ctx.stroke(); ctx.globalAlpha = 1;
+    }
+  }
 
   // The pins ride the body. They are DOM rather than canvas so they can be the
   // element's own drawing — the same artSVG every card uses — instead of a
@@ -8493,7 +8612,20 @@ function renderAsideRagdoll(litRoutes) {
   cv.onpointermove = (ev) => rdPointer(ev, 'move');
   cv.onpointerup = cv.onpointercancel = (ev) => rdPointer(ev, 'up');
   document.getElementById('rdClear').onclick = () => {
-    ragdoll = []; save(); rdBuild(); renderAsideRagdoll();
+    // It always did clear the log and rebuild the figure. The trouble was that
+    // with an empty log and a body already hanging at rest, NOTHING VISIBLY
+    // CHANGED — a button that works and looks broken. ("whats the name of the
+    // new body? not really doing anything.") So the new one arrives: dropped
+    // in from above with a shove to one side, and it swings down and settles.
+    ragdoll = []; save(); rdBuild();
+    for (const p of RD.parts) {
+      if (p.pin) continue;
+      p.y += 0.55; p.x += 0.12;
+      p.py = p.y - 0.03;              // a little downward velocity to start
+      p.px = p.x + 0.05;              // and a swing
+    }
+    renderAsideRagdoll();
+    rdStart();
     toast('A fresh body. What it has been through is not what it is.');
   };
   const q = document.getElementById('rdQ');

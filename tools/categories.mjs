@@ -133,6 +133,22 @@ const EVIDENCE = [
   { tag: 'wild', test: (e) => e.tags.includes('crop'),
     why: 'tagged both wild and crop — a plant is one or the other in this corpus' },
 ];
+/* Two groups sharing one id is invisible to every check there was. The tree is
+ * built with `new Map(groups.map(g => [g.id, g]))`, and a Map silently keeps
+ * the LAST of a repeated key, so one of the two entries — its rank, its parent,
+ * its fact — is dropped on the floor and nothing says so. tx_psocodea sat
+ * duplicated for a day; the fact texts differed, so the tree was reporting one
+ * of two written claims and there was no way to tell which. A dangling parent
+ * is the same class: a group whose parent id names nothing makes a branch that
+ * quietly detaches from the backbone. */
+const groupIds = new Map();
+const duplicateGroups = [];
+for (const g of taxonomy.groups) {
+  if (groupIds.has(g.id)) duplicateGroups.push(g.id);
+  groupIds.set(g.id, g);
+}
+const orphanGroups = taxonomy.groups.filter(g => g.parent && !groupIds.has(g.parent));
+
 const danglingTaxon = elements.filter(e => e.taxon && !taxonomy.groups.some(g => g.id === e.taxon));
 const contradicted = [];
 for (const e of elements) {
@@ -202,6 +218,16 @@ if (ambiguous.length) {
   console.log(`  Not a bug — a tagging question nobody has answered. First five:`);
   for (const e of ambiguous.slice(0, 5))
     console.log(`    ${e.id.padEnd(24)} ${allFamilies(e).map(f => f.id).join(' | ')}`);
+}
+if (duplicateGroups.length) {
+  fatal += duplicateGroups.length;
+  console.log(`\n  ✗ ${n(duplicateGroups.length)} taxonomic group id(s) declared twice — one of each pair is discarded unread:`);
+  for (const id of duplicateGroups.slice(0, 8)) console.log(`      ${id}`);
+}
+if (orphanGroups.length) {
+  fatal += orphanGroups.length;
+  console.log(`\n  ✗ ${n(orphanGroups.length)} taxonomic group(s) name a parent that does not exist:`);
+  for (const g of orphanGroups.slice(0, 8)) console.log(`      ${g.id} → ${g.parent}`);
 }
 if (danglingTaxon.length) {
   fatal += danglingTaxon.length;
