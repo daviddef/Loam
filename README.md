@@ -37,7 +37,7 @@ validated and playtested first — before a line of Swift.
 | Hazards | **343**, covering 621 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
 | Drawings | **7,875** hand-drawn; 683 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,367 / 8,558** — what each noun is to a making |
+| Roles | **8,558 / 8,558** — what each noun is to a making |
 | Sense-checked | **1,817** single-word names read; 164 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **433** written |
