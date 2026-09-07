@@ -226,6 +226,11 @@ if (problems.length) {
 }
 
 // A machine-readable record, so the number can be tracked the way coverage is.
+// ONLY on a full run. Auditing a single id used to overwrite this file with
+// checked:1, which sent coverage.mjs's effects-sourced row to 0/356 — a
+// one-element spot check silently destroying the record of a full sweep is
+// exactly the kind of quietly-wrong number this project keeps finding.
+if (!only)
 writeFileSync(join(ROOT, 'data/effects-audit.json'), JSON.stringify({
   $comment: 'Written by tools/effects-audit.mjs. Which effect rows are carried by the article they cite. A flag means the article does not mention something the row asserts; it is a place to look, not a verdict.',
   checked, unfetchable, flagged: problems.length,

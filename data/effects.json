@@ -2187,6 +2187,203 @@
         "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The blue-grey is permanent — there is no route by which the body removes it.",
         "src": "https://en.wikipedia.org/wiki/Argyria"
       }
+    ],
+    "air": [
+      {
+        "valence": "benefit",
+        "route": "inhaled",
+        "outcome": "oxygen",
+        "onset": "acute",
+        "mechanism": "A fifth oxygen, four fifths nitrogen, and the nitrogen is not filler — it dilutes the oxygen to a partial pressure lungs can tolerate. Pure oxygen at the same pressure damages the airway lining.",
+        "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
+      }
+    ],
+    "oxygen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "The gas a body runs on is also an oxidant. Above about half an atmosphere the lung lining is damaged by the same chemistry that makes it useful, and at higher pressures still it causes seizures.",
+        "src": "https://en.wikipedia.org/wiki/Oxygen_toxicity"
+      }
+    ],
+    "wheel": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "A loaded wheel concentrates the whole weight of a vehicle onto a contact patch the size of a hand. What follows a crush is often worse than the crush: muscle held under pressure releases myoglobin when the pressure comes off, and the kidneys are what fail.",
+        "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+      }
+    ],
+    "clay": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "conditional",
+        "mechanism": "Geophagia is documented across cultures and pregnancies, and kaolin does bind some toxins and pathogens in the gut. It also binds iron and zinc, so the practice can cause the deficiency it is sometimes an appetite for.",
+        "src": "https://en.wikipedia.org/wiki/Geophagia"
+      }
+    ],
+    "mud": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "tetanus",
+        "onset": "conditional",
+        "mechanism": "Clostridium tetani spores are ordinary soil organisms, harmless to swallow, and they germinate only where oxygen has been shut out — which a wound packed with mud does for them.",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
+      }
+    ],
+    "fruit": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Fruit is where most people get it, and cooking is what destroys it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "oil": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "Vegetable oils carry tocopherol along with the fat, and it is there for the oil's sake as much as ours: it is the antioxidant that keeps the polyunsaturated bonds from oxidising before they are eaten.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+      }
+    ],
+    "meat": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "Haem iron sits inside a porphyrin ring and crosses the gut wall by its own route, far more completely than the iron in plants. Without enough, the marrow cannot fill red cells with haemoglobin.",
+        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
+      }
+    ],
+    "legume": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Around a quarter protein dry, and short of methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
+        "src": "https://en.wikipedia.org/wiki/Legume"
+      }
+    ],
+    "bark": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "conditional",
+        "prevents": "scurvy",
+        "mechanism": "Not a vitamin source in general — but the one that mattered: spruce and pine bark and needles carried enough ascorbic acid to end scurvy on voyages where citrus was unavailable, which is what Cartier's crew were given at Stadacona in 1536.",
+        "src": "https://en.wikipedia.org/wiki/Scurvy"
+      }
+    ],
+    "timber": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "The dust, not the beam. Fine hardwood dust is an IARC Group 1 carcinogen and the cancers are of the nose and sinuses — the first tissue the particles meet and the place they are trapped.",
+        "src": "https://en.wikipedia.org/wiki/Wood_dust",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "ore": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Most ore bodies sit in silicate rock, so crushing and grinding them makes respirable crystalline silica whatever the metal being chased. The lung cannot clear a particle it cannot dissolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "iodine": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "Elemental iodine is used as an antiseptic because it is toxic to cells, and skin is made of cells. Tincture stains and stings; the strong solution burns.",
+        "src": "https://en.wikipedia.org/wiki/Iodine"
+      }
+    ],
+    "rain": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "conditional",
+        "mechanism": "Wet clothing loses heat far faster than dry, because water conducts away from the skin what still air would have held against it. Most hypothermia happens well above freezing, in the rain.",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
+      }
+    ],
+    "mammal": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The majority of new human infectious diseases come from other animals, and mammals are the commonest source because our physiology is close enough that their pathogens do not need to change much.",
+        "src": "https://en.wikipedia.org/wiki/Zoonosis"
+      }
+    ],
+    "seed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "A seed is a packed lunch with a shelf life, so it carries the antioxidant that protects its own stored fat from going rancid — which is the same tocopherol that protects membranes in us.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+      }
+    ],
+    "rope": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "A rope burn is friction, not heat from outside: the fibres running through a grip abrade and heat the skin at once, which is why it takes the top layer off rather than blistering it.",
+        "src": "https://en.wikipedia.org/wiki/Friction_burn"
+      }
+    ],
+    "moon": [
+      {
+        "valence": "inert",
+        "route": "radiation",
+        "onset": "conditional",
+        "mechanism": "The tide is real and it acts on oceans, not on people: the Moon's tidal pull on a human body is smaller than the pull of the wall beside them. No effect on the body has ever been demonstrated.",
+        "src": "https://en.wikipedia.org/wiki/Lunar_effect"
+      }
+    ],
+    "fossil": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "The organic material is gone. What is left is mineral that has replaced it, so a fossil is a rock in the shape of a thing rather than any of the thing.",
+        "src": "https://en.wikipedia.org/wiki/Permineralization"
+      }
     ]
   },
   "hazards": {
