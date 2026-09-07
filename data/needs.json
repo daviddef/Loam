@@ -5718,6 +5718,4329 @@
         "electric_motor",
         "gearbox"
       ]
+    },
+    "furnace": {
+      "src": "https://en.wikipedia.org/wiki/Furnace",
+      "note": "A box that holds heat in and air through: lining, shell, a way to force air, and a way to let gas out.",
+      "needs": [
+        "refractory_brick",
+        "firebrick",
+        "fire_clay",
+        "insulation",
+        "steel",
+        "shell",
+        "hearth",
+        "grate",
+        "tuyere",
+        "bellows|blower",
+        "flue",
+        "chimney",
+        "damper",
+        "burner",
+        "fuel",
+        "charcoal|coke",
+        "crucible",
+        "thermocouple",
+        "door"
+      ]
+    },
+    "bearing": {
+      "src": "https://en.wikipedia.org/wiki/Bearing_(mechanical)",
+      "note": "Two rings, rolling elements between them, and a cage to keep those elements apart — which is the part people forget and the part that decides its life.",
+      "needs": [
+        "steel",
+        "inner_race",
+        "outer_race",
+        "ball|roller",
+        "cage|retainer",
+        "seal",
+        "grease",
+        "housing"
+      ]
+    },
+    "electromagnet": {
+      "src": "https://en.wikipedia.org/wiki/Electromagnet",
+      "needs": [
+        "copper_wire",
+        "enamel",
+        "coil",
+        "iron",
+        "core",
+        "bobbin",
+        "insulation",
+        "terminal",
+        "power_supply|battery"
+      ]
+    },
+    "internal_combustion_engine": {
+      "src": "https://en.wikipedia.org/wiki/Internal_combustion_engine",
+      "needs": [
+        "engine_block",
+        "cylinder",
+        "piston",
+        "piston_ring",
+        "connecting_rod",
+        "crankshaft",
+        "camshaft",
+        "valve",
+        "valve_spring",
+        "cylinder_head",
+        "gasket",
+        "spark_plug",
+        "fuel_injector|carburettor",
+        "fuel",
+        "oil",
+        "oil_pump",
+        "water_pump",
+        "radiator",
+        "flywheel",
+        "timing_belt|timing_chain",
+        "bearing",
+        "sump"
+      ]
+    },
+    "rotor": {
+      "src": "https://en.wikipedia.org/wiki/Rotor_(electric)",
+      "needs": [
+        "shaft",
+        "laminated_core",
+        "copper_wire",
+        "winding",
+        "commutator|slip_ring",
+        "bearing",
+        "balance_weight"
+      ]
+    },
+    "conveyor_belt": {
+      "src": "https://en.wikipedia.org/wiki/Conveyor_belt",
+      "needs": [
+        "belt",
+        "rubber",
+        "fabric_ply",
+        "steel_cord",
+        "pulley",
+        "drive_pulley",
+        "idler_roller",
+        "frame",
+        "motor",
+        "gearbox",
+        "take_up_unit",
+        "scraper"
+      ]
+    },
+    "freight_wagon": {
+      "src": "https://en.wikipedia.org/wiki/Goods_wagon",
+      "needs": [
+        "underframe",
+        "steel",
+        "bogie",
+        "wheelset",
+        "axle",
+        "bearing",
+        "suspension",
+        "spring",
+        "brake",
+        "brake_shoe",
+        "coupler",
+        "buffer",
+        "body_panel",
+        "floor",
+        "door"
+      ]
+    },
+    "hinge": {
+      "src": "https://en.wikipedia.org/wiki/Hinge",
+      "note": "Two leaves, a knuckle each, and one pin through both. Everything else is finish.",
+      "needs": [
+        "leaf",
+        "knuckle",
+        "pin",
+        "washer",
+        "screw",
+        "brass|steel"
+      ]
+    },
+    "diode": {
+      "src": "https://en.wikipedia.org/wiki/Diode",
+      "needs": [
+        "silicon",
+        "dopant",
+        "p_type_semiconductor",
+        "n_type_semiconductor",
+        "junction",
+        "anode",
+        "cathode",
+        "lead",
+        "encapsulation|epoxy"
+      ]
+    },
+    "laser": {
+      "src": "https://en.wikipedia.org/wiki/Laser",
+      "note": "A gain medium between two mirrors, and something to pump energy into it. One mirror is deliberately imperfect, and the light that leaks through it is the beam.",
+      "needs": [
+        "gain_medium",
+        "ruby|neodymium|carbon_dioxide",
+        "pump_source|flash_lamp",
+        "power_supply",
+        "optical_cavity",
+        "mirror",
+        "output_coupler",
+        "cooling",
+        "housing"
+      ]
+    },
+    "gearbox": {
+      "src": "https://en.wikipedia.org/wiki/Transmission_(mechanical_device)",
+      "needs": [
+        "casing",
+        "gear",
+        "shaft",
+        "input_shaft",
+        "output_shaft",
+        "bearing",
+        "synchroniser",
+        "selector_fork",
+        "clutch",
+        "oil",
+        "gasket",
+        "seal"
+      ]
+    },
+    "integrated_circuit": {
+      "src": "https://en.wikipedia.org/wiki/Integrated_circuit",
+      "needs": [
+        "silicon",
+        "wafer",
+        "dopant",
+        "photoresist",
+        "photomask",
+        "transistor",
+        "aluminum|copper",
+        "interconnect",
+        "oxide_layer",
+        "bond_wire",
+        "lead_frame",
+        "epoxy",
+        "package"
+      ]
+    },
+    "fuselage": {
+      "src": "https://en.wikipedia.org/wiki/Fuselage",
+      "needs": [
+        "aluminum|composite",
+        "frame",
+        "former",
+        "stringer",
+        "longeron",
+        "skin",
+        "rivet",
+        "bulkhead",
+        "floor_beam",
+        "window",
+        "door",
+        "fairing"
+      ]
+    },
+    "engine": {
+      "src": "https://en.wikipedia.org/wiki/Engine",
+      "needs": [
+        "fuel",
+        "combustion_chamber",
+        "piston|turbine",
+        "shaft",
+        "bearing",
+        "cooling",
+        "lubricant",
+        "housing",
+        "intake",
+        "exhaust"
+      ]
+    },
+    "nozzle": {
+      "src": "https://en.wikipedia.org/wiki/Nozzle",
+      "needs": [
+        "throat",
+        "convergent_section",
+        "divergent_section",
+        "steel|ceramic",
+        "seal",
+        "mount"
+      ]
+    },
+    "lamp": {
+      "src": "https://en.wikipedia.org/wiki/Electric_light",
+      "needs": [
+        "bulb",
+        "glass",
+        "filament|led",
+        "base|cap",
+        "contact",
+        "insulation",
+        "socket",
+        "wire",
+        "switch",
+        "shade",
+        "stand"
+      ]
+    },
+    "typewriter": {
+      "src": "https://en.wikipedia.org/wiki/Typewriter",
+      "needs": [
+        "frame",
+        "keyboard",
+        "key",
+        "key_lever",
+        "typebar",
+        "type_slug",
+        "ribbon",
+        "ribbon_spool",
+        "platen",
+        "carriage",
+        "carriage_return_lever",
+        "escapement",
+        "spring",
+        "bell",
+        "paper_guide"
+      ]
+    },
+    "piston": {
+      "src": "https://en.wikipedia.org/wiki/Piston",
+      "needs": [
+        "aluminum|cast_iron",
+        "crown",
+        "skirt",
+        "piston_ring",
+        "gudgeon_pin",
+        "circlip"
+      ]
+    },
+    "hydraulic_pump": {
+      "src": "https://en.wikipedia.org/wiki/Hydraulic_pump",
+      "needs": [
+        "housing",
+        "gear|vane|piston",
+        "shaft",
+        "bearing",
+        "seal",
+        "hydraulic_fluid",
+        "inlet_port",
+        "outlet_port",
+        "relief_valve"
+      ]
+    },
+    "stethoscope": {
+      "src": "https://en.wikipedia.org/wiki/Stethoscope",
+      "needs": [
+        "chest_piece",
+        "diaphragm",
+        "bell",
+        "tubing",
+        "rubber",
+        "y_piece",
+        "binaural_tube",
+        "spring",
+        "ear_tip"
+      ]
+    },
+    "fence": {
+      "src": "https://en.wikipedia.org/wiki/Fence",
+      "needs": [
+        "post",
+        "post_hole",
+        "concrete",
+        "rail",
+        "picket|panel|wire",
+        "nail|screw",
+        "gate",
+        "hinge",
+        "latch",
+        "preservative"
+      ]
+    },
+    "shield": {
+      "src": "https://en.wikipedia.org/wiki/Shield",
+      "needs": [
+        "board|plywood",
+        "leather|rawhide",
+        "linen",
+        "glue",
+        "boss",
+        "rim",
+        "binding",
+        "rivet",
+        "grip",
+        "strap|enarme",
+        "paint"
+      ]
+    },
+    "tower": {
+      "src": "https://en.wikipedia.org/wiki/Tower",
+      "needs": [
+        "foundation",
+        "stone|brick|steel",
+        "mortar",
+        "wall",
+        "buttress",
+        "floor",
+        "joist",
+        "stair",
+        "window",
+        "roof",
+        "parapet",
+        "lightning_rod"
+      ]
+    },
+    "weir": {
+      "src": "https://en.wikipedia.org/wiki/Weir",
+      "needs": [
+        "foundation",
+        "concrete|masonry",
+        "crest",
+        "apron",
+        "stilling_basin",
+        "abutment",
+        "sluice_gate",
+        "fish_pass"
+      ]
+    },
+    "insulator": {
+      "src": "https://en.wikipedia.org/wiki/Insulator_(electricity)",
+      "needs": [
+        "porcelain|glass|polymer",
+        "shed",
+        "cap",
+        "pin",
+        "cement",
+        "metal_fitting"
+      ]
+    },
+    "warhead": {
+      "src": "https://en.wikipedia.org/wiki/Warhead",
+      "note": "The case, the filler, and the fuze that decides when. A warhead with no fuze is an inert lump, which is why the fuze is the part that is stored separately.",
+      "needs": [
+        "casing",
+        "steel",
+        "explosive_filler",
+        "booster",
+        "fuze",
+        "safety_arming_device",
+        "shaped_charge_liner"
+      ]
+    },
+    "box": {
+      "src": "https://en.wikipedia.org/wiki/Box",
+      "needs": [
+        "board|plywood",
+        "panel",
+        "corner_joint|dovetail",
+        "glue",
+        "nail|screw",
+        "lid",
+        "hinge",
+        "base",
+        "batten",
+        "finish"
+      ]
+    },
+    "vault": {
+      "src": "https://en.wikipedia.org/wiki/Vault_(architecture)",
+      "note": "It cannot stand until the last stone is in, so the whole thing is built on a temporary timber form and only becomes a vault when that comes away.",
+      "needs": [
+        "centering|formwork",
+        "timber",
+        "voussoir",
+        "stone|brick",
+        "mortar",
+        "springer",
+        "keystone",
+        "rib",
+        "web",
+        "abutment",
+        "buttress",
+        "fill"
+      ]
+    },
+    "wing": {
+      "src": "https://en.wikipedia.org/wiki/Wing",
+      "needs": [
+        "spar",
+        "rib",
+        "stringer",
+        "skin",
+        "aluminum|composite",
+        "rivet",
+        "leading_edge",
+        "trailing_edge",
+        "aileron",
+        "flap",
+        "fuel_tank",
+        "wiring",
+        "navigation_light"
+      ]
+    },
+    "hadron_collider": {
+      "src": "https://en.wikipedia.org/wiki/Large_Hadron_Collider",
+      "needs": [
+        "tunnel",
+        "beam_pipe",
+        "vacuum_pump",
+        "superconducting_magnet",
+        "niobium_titanium",
+        "liquid_helium",
+        "cryostat",
+        "radiofrequency_cavity",
+        "collimator",
+        "detector",
+        "power_supply",
+        "control_system"
+      ]
+    },
+    "curtain_wall": {
+      "src": "https://en.wikipedia.org/wiki/Curtain_wall_(architecture)",
+      "note": "It carries only its own weight and the wind. Everything holding the building up is behind it.",
+      "needs": [
+        "mullion",
+        "transom",
+        "aluminum",
+        "glass",
+        "insulated_glazing",
+        "gasket",
+        "sealant",
+        "anchor|bracket",
+        "spandrel_panel",
+        "insulation",
+        "flashing"
+      ]
+    },
+    "machine_gun": {
+      "src": "https://en.wikipedia.org/wiki/Machine_gun",
+      "needs": [
+        "barrel",
+        "rifling",
+        "receiver",
+        "bolt",
+        "recoil_spring",
+        "feed_mechanism",
+        "ammunition_belt",
+        "cartridge",
+        "trigger",
+        "sear",
+        "water_jacket|cooling_fin",
+        "tripod",
+        "sight"
+      ]
+    },
+    "artillery": {
+      "src": "https://en.wikipedia.org/wiki/Artillery",
+      "needs": [
+        "barrel",
+        "breech",
+        "breech_block",
+        "rifling",
+        "recoil_mechanism",
+        "cradle",
+        "carriage",
+        "trail",
+        "wheel",
+        "elevation_gear",
+        "traverse_gear",
+        "sight",
+        "shell",
+        "propellant",
+        "fuze"
+      ]
+    },
+    "stupa": {
+      "src": "https://en.wikipedia.org/wiki/Stupa",
+      "note": "Solid all the way through. There is no interior, so the parts list is a mound and what is buried at the centre of it.",
+      "needs": [
+        "relic",
+        "reliquary",
+        "core",
+        "brick|rubble",
+        "earth_fill",
+        "dome|anda",
+        "plinth",
+        "harmika",
+        "chattra|parasol",
+        "railing|vedika",
+        "gateway|torana",
+        "plaster",
+        "whitewash"
+      ]
+    },
+    "veil": {
+      "src": "https://en.wikipedia.org/wiki/Veil",
+      "needs": [
+        "silk|linen|cotton",
+        "weave",
+        "hem",
+        "pin|clasp",
+        "comb",
+        "trim"
+      ]
+    },
+    "market": {
+      "src": "https://en.wikipedia.org/wiki/Marketplace",
+      "needs": [
+        "open_ground|square",
+        "stall",
+        "trestle",
+        "awning|canopy",
+        "scale",
+        "weight",
+        "coin",
+        "measure",
+        "stall_holder",
+        "charter|licence",
+        "water_supply",
+        "drain"
+      ]
+    },
+    "courtyard": {
+      "src": "https://en.wikipedia.org/wiki/Courtyard",
+      "needs": [
+        "enclosing_wall",
+        "paving",
+        "drain",
+        "well|cistern",
+        "gate",
+        "colonnade",
+        "planting"
+      ]
+    },
+    "pagoda": {
+      "src": "https://en.wikipedia.org/wiki/Pagoda",
+      "note": "The storeys are stacked rather than tied, and the central pillar hangs rather than carries — which is why they survive earthquakes that flatten what is around them.",
+      "needs": [
+        "stone_platform",
+        "central_pillar|shinbashira",
+        "timber",
+        "bracket_set|dougong",
+        "beam",
+        "column",
+        "floor",
+        "eave",
+        "roof_tile",
+        "finial|sorin",
+        "relic"
+      ]
+    },
+    "dividers": {
+      "src": "https://en.wikipedia.org/wiki/Compass_(drawing_tool)",
+      "needs": [
+        "leg",
+        "pivot|hinge",
+        "point",
+        "brass|steel",
+        "adjusting_screw",
+        "knurled_head"
+      ]
+    },
+    "die": {
+      "src": "https://en.wikipedia.org/wiki/Die_(manufacturing)",
+      "needs": [
+        "tool_steel",
+        "blank",
+        "cavity",
+        "punch",
+        "die_shoe",
+        "guide_pin",
+        "hardening",
+        "tempering",
+        "polish"
+      ]
+    },
+    "camera_obscura": {
+      "src": "https://en.wikipedia.org/wiki/Camera_obscura",
+      "needs": [
+        "darkened_room|box",
+        "aperture",
+        "lens",
+        "mirror",
+        "screen",
+        "focusing_tube",
+        "blackout"
+      ]
+    },
+    "photographic_plate": {
+      "src": "https://en.wikipedia.org/wiki/Photographic_plate",
+      "needs": [
+        "glass",
+        "gelatin|collodion",
+        "silver_nitrate",
+        "potassium_iodide",
+        "silver_iodide",
+        "sensitiser",
+        "coating",
+        "darkroom"
+      ]
+    },
+    "haul_truck": {
+      "src": "https://en.wikipedia.org/wiki/Haul_truck",
+      "needs": [
+        "chassis",
+        "frame",
+        "diesel_engine",
+        "transmission",
+        "drive_axle",
+        "tyre|tire",
+        "dump_body",
+        "hoist_cylinder",
+        "suspension_strut",
+        "brake",
+        "cab",
+        "operator_seat"
+      ]
+    },
+    "ball_mill": {
+      "src": "https://en.wikipedia.org/wiki/Ball_mill",
+      "needs": [
+        "steel_drum|shell",
+        "liner",
+        "grinding_media|steel_ball",
+        "trunnion",
+        "bearing",
+        "girth_gear",
+        "pinion",
+        "motor",
+        "gearbox",
+        "feed_chute",
+        "discharge_grate"
+      ]
+    },
+    "flotation_cell": {
+      "src": "https://en.wikipedia.org/wiki/Froth_flotation",
+      "needs": [
+        "tank",
+        "impeller",
+        "stator",
+        "air_blower",
+        "sparger",
+        "slurry",
+        "collector|xanthate",
+        "frother",
+        "froth_launder",
+        "launder",
+        "motor"
+      ]
+    },
+    "magnetic_tape": {
+      "src": "https://en.wikipedia.org/wiki/Magnetic_tape",
+      "needs": [
+        "polyester_film|base_film",
+        "binder",
+        "iron_oxide|chromium_dioxide",
+        "lubricant",
+        "back_coating",
+        "slitting",
+        "reel|cassette_shell",
+        "leader_tape"
+      ]
+    },
+    "propeller": {
+      "src": "https://en.wikipedia.org/wiki/Propeller",
+      "needs": [
+        "hub",
+        "blade",
+        "aluminum|bronze|composite",
+        "blade_root",
+        "pitch_change_mechanism",
+        "spinner",
+        "bolt",
+        "balance"
+      ]
+    },
+    "radio_telescope": {
+      "src": "https://en.wikipedia.org/wiki/Radio_telescope",
+      "needs": [
+        "reflector_dish",
+        "panel",
+        "backing_structure",
+        "feed_horn",
+        "receiver",
+        "low_noise_amplifier",
+        "cryostat",
+        "mount",
+        "azimuth_drive",
+        "elevation_drive",
+        "cabling",
+        "correlator"
+      ]
+    },
+    "key": {
+      "src": "https://en.wikipedia.org/wiki/Key_(lock)",
+      "needs": [
+        "brass|steel",
+        "blank",
+        "bow",
+        "shoulder",
+        "blade",
+        "ward_cut|bitting",
+        "tip"
+      ]
+    },
+    "factory": {
+      "src": "https://en.wikipedia.org/wiki/Factory",
+      "needs": [
+        "building",
+        "foundation",
+        "structural_frame",
+        "roof",
+        "floor",
+        "machine",
+        "power_source",
+        "line_shaft|electric_motor",
+        "belt_drive",
+        "lighting",
+        "ventilation",
+        "loading_dock",
+        "office",
+        "store_room"
+      ]
+    },
+    "hydrogen_bomb": {
+      "src": "https://en.wikipedia.org/wiki/Thermonuclear_weapon",
+      "note": "Two stages in one case: the first is a fission bomb used only as a match, and the case itself is a component because it holds the radiation in long enough to compress the second.",
+      "needs": [
+        "fission_primary",
+        "plutonium|uranium",
+        "high_explosive_lens",
+        "radiation_case",
+        "tamper",
+        "lithium_deuteride",
+        "spark_plug_rod",
+        "polystyrene_foam",
+        "neutron_initiator",
+        "arming_system"
+      ]
+    },
+    "city_wall": {
+      "src": "https://en.wikipedia.org/wiki/Defensive_wall",
+      "needs": [
+        "foundation",
+        "stone|brick",
+        "mortar",
+        "rubble_core",
+        "facing_stone",
+        "parapet",
+        "crenellation",
+        "wall_walk",
+        "tower",
+        "gate",
+        "gatehouse",
+        "ditch|moat",
+        "glacis"
+      ]
+    },
+    "keep": {
+      "src": "https://en.wikipedia.org/wiki/Keep",
+      "needs": [
+        "foundation",
+        "stone",
+        "mortar",
+        "curtain_wall",
+        "buttress",
+        "spiral_stair",
+        "floor",
+        "joist",
+        "great_hall",
+        "well",
+        "garderobe",
+        "arrow_loop",
+        "battlement",
+        "portcullis"
+      ]
+    },
+    "floor": {
+      "src": "https://en.wikipedia.org/wiki/Floor",
+      "needs": [
+        "joist",
+        "timber",
+        "noggin",
+        "floorboard|plywood",
+        "nail|screw",
+        "underlay",
+        "insulation",
+        "damp_proof_membrane",
+        "screed",
+        "skirting",
+        "finish"
+      ]
+    },
+    "drill": {
+      "src": "https://en.wikipedia.org/wiki/Drill",
+      "needs": [
+        "motor",
+        "armature",
+        "field_coil",
+        "gearbox",
+        "chuck",
+        "jaw",
+        "drill_bit",
+        "trigger",
+        "switch",
+        "cable|battery",
+        "housing",
+        "bearing",
+        "cooling_fan"
+      ]
+    },
+    "switch": {
+      "src": "https://en.wikipedia.org/wiki/Switch",
+      "needs": [
+        "contact",
+        "copper|silver",
+        "spring",
+        "actuator|toggle",
+        "insulating_body",
+        "terminal",
+        "screw",
+        "cover_plate"
+      ]
+    },
+    "drain": {
+      "src": "https://en.wikipedia.org/wiki/Storm_drain",
+      "needs": [
+        "gully|inlet",
+        "grating",
+        "cast_iron",
+        "trap",
+        "sump",
+        "pipe",
+        "bedding",
+        "manhole",
+        "cover",
+        "outfall"
+      ]
+    },
+    "dial": {
+      "src": "https://en.wikipedia.org/wiki/Dial_(measurement)",
+      "needs": [
+        "face_plate",
+        "scale",
+        "graduation",
+        "pointer|needle",
+        "spindle",
+        "bearing",
+        "hairspring",
+        "bezel",
+        "glass|crystal",
+        "case"
+      ]
+    },
+    "antenna": {
+      "src": "https://en.wikipedia.org/wiki/Antenna_(radio)",
+      "needs": [
+        "conductor|copper",
+        "element",
+        "insulator",
+        "boom",
+        "feed_point",
+        "balun",
+        "coaxial_cable",
+        "connector",
+        "mast",
+        "guy_wire",
+        "ground_plane"
+      ]
+    },
+    "buttress": {
+      "src": "https://en.wikipedia.org/wiki/Buttress",
+      "needs": [
+        "foundation",
+        "footing",
+        "stone|brick",
+        "mortar",
+        "rubble_core",
+        "facing",
+        "offset|set_back",
+        "coping"
+      ]
+    },
+    "gate": {
+      "src": "https://en.wikipedia.org/wiki/Gate",
+      "note": "The deliberate weak point in a barrier, so it gets more ironwork per square metre than the wall it interrupts.",
+      "needs": [
+        "frame",
+        "stile",
+        "rail",
+        "brace",
+        "board|bar",
+        "hinge",
+        "gudgeon|pintle",
+        "latch|lock",
+        "stop",
+        "post"
+      ]
+    },
+    "cistern": {
+      "src": "https://en.wikipedia.org/wiki/Cistern",
+      "needs": [
+        "excavation|chamber",
+        "wall",
+        "waterproof_render|hydraulic_mortar",
+        "floor",
+        "inlet",
+        "filter",
+        "overflow",
+        "outlet",
+        "draw_shaft|well_head",
+        "cover",
+        "vault|roof"
+      ]
+    },
+    "flying_buttress": {
+      "src": "https://en.wikipedia.org/wiki/Flying_buttress",
+      "note": "A half-arch standing away from the wall, and the pinnacle on top of the pier is structural: its weight turns the thrust downward into the pier.",
+      "needs": [
+        "pier",
+        "foundation",
+        "stone",
+        "mortar",
+        "half_arch|flyer",
+        "voussoir",
+        "springer",
+        "pinnacle",
+        "weathering|coping",
+        "gutter_channel"
+      ]
+    },
+    "palace": {
+      "src": "https://en.wikipedia.org/wiki/Palace",
+      "needs": [
+        "foundation",
+        "stone|brick",
+        "mortar",
+        "structural_frame",
+        "great_hall",
+        "state_room",
+        "courtyard",
+        "colonnade",
+        "stair",
+        "roof",
+        "window",
+        "glass",
+        "plaster",
+        "fresco|tapestry",
+        "floor",
+        "tile",
+        "kitchen",
+        "chapel",
+        "water_supply",
+        "drain"
+      ]
+    },
+    "muqarnas": {
+      "src": "https://en.wikipedia.org/wiki/Muqarnas",
+      "needs": [
+        "plaster|stucco",
+        "timber_armature|stone",
+        "cell|niche",
+        "tier",
+        "squinch",
+        "template",
+        "lime",
+        "gypsum",
+        "paint|gilding"
+      ]
+    },
+    "solar_cell": {
+      "src": "https://en.wikipedia.org/wiki/Solar_cell",
+      "needs": [
+        "silicon",
+        "wafer",
+        "dopant",
+        "p_n_junction",
+        "anti_reflective_coating",
+        "front_contact|finger",
+        "busbar",
+        "back_contact",
+        "encapsulant|eva",
+        "glass",
+        "backsheet",
+        "frame",
+        "junction_box"
+      ]
+    },
+    "locomotive": {
+      "src": "https://en.wikipedia.org/wiki/Locomotive",
+      "needs": [
+        "frame",
+        "bogie",
+        "wheelset",
+        "axle",
+        "bearing",
+        "suspension",
+        "traction_motor",
+        "diesel_engine|boiler",
+        "generator|alternator",
+        "cooling_radiator",
+        "brake",
+        "air_compressor",
+        "coupler",
+        "cab",
+        "control_desk",
+        "sandbox",
+        "horn"
+      ]
+    },
+    "accelerometer": {
+      "src": "https://en.wikipedia.org/wiki/Accelerometer",
+      "needs": [
+        "silicon",
+        "proof_mass",
+        "spring_beam",
+        "comb_finger",
+        "capacitor_plate",
+        "anchor",
+        "package",
+        "asic|readout_circuit",
+        "bond_wire"
+      ]
+    },
+    "internet": {
+      "src": "https://en.wikipedia.org/wiki/Internet",
+      "note": "Not one network but many agreeing to forward each other's packets, so the routing protocol is as much a component as the cable.",
+      "needs": [
+        "router",
+        "switch",
+        "fibre_optic_cable|copper_cable",
+        "undersea_cable",
+        "modem",
+        "server",
+        "data_centre",
+        "ip_address",
+        "routing_protocol|bgp",
+        "tcp",
+        "dns",
+        "exchange_point",
+        "power_supply"
+      ]
+    },
+    "compressor": {
+      "src": "https://en.wikipedia.org/wiki/Gas_compressor",
+      "needs": [
+        "casing",
+        "rotor",
+        "rotor_blade",
+        "stator_vane",
+        "shaft",
+        "bearing",
+        "seal",
+        "inlet_guide_vane",
+        "diffuser",
+        "lubrication_system"
+      ]
+    },
+    "helicopter": {
+      "src": "https://en.wikipedia.org/wiki/Helicopter",
+      "note": "The swashplate is the whole trick: it turns a stationary control input into a blade angle that changes once per revolution.",
+      "needs": [
+        "airframe",
+        "main_rotor",
+        "rotor_blade",
+        "rotor_head",
+        "swashplate",
+        "pitch_link",
+        "transmission|main_gearbox",
+        "engine",
+        "tail_boom",
+        "tail_rotor",
+        "drive_shaft",
+        "skid|landing_gear",
+        "cyclic",
+        "collective",
+        "anti_torque_pedal",
+        "fuel_tank",
+        "cockpit"
+      ]
+    },
+    "trident": {
+      "src": "https://en.wikipedia.org/wiki/Trident",
+      "needs": [
+        "shaft",
+        "wood|ash",
+        "ferrule",
+        "head",
+        "tine",
+        "barb",
+        "iron|bronze",
+        "socket",
+        "rivet"
+      ]
+    },
+    "caravel": {
+      "src": "https://en.wikipedia.org/wiki/Caravel",
+      "needs": [
+        "keel",
+        "frame|rib",
+        "planking",
+        "oak|pine",
+        "caulking",
+        "oakum",
+        "pitch",
+        "deck",
+        "mast",
+        "lateen_sail",
+        "yard",
+        "rigging",
+        "rope",
+        "rudder",
+        "tiller",
+        "anchor",
+        "ballast"
+      ]
+    },
+    "radar": {
+      "src": "https://en.wikipedia.org/wiki/Radar",
+      "needs": [
+        "antenna",
+        "waveguide",
+        "magnetron|klystron",
+        "transmitter",
+        "duplexer",
+        "receiver",
+        "mixer",
+        "local_oscillator",
+        "signal_processor",
+        "display",
+        "power_supply",
+        "rotating_mount"
+      ]
+    },
+    "table": {
+      "src": "https://en.wikipedia.org/wiki/Table_(furniture)",
+      "needs": [
+        "timber",
+        "tabletop",
+        "board",
+        "batten|cleat",
+        "leg",
+        "rail|apron",
+        "mortise_and_tenon|dowel",
+        "glue",
+        "screw",
+        "finish|varnish"
+      ]
+    },
+    "warehouse": {
+      "src": "https://en.wikipedia.org/wiki/Warehouse",
+      "needs": [
+        "foundation",
+        "slab",
+        "steel_frame|portal_frame",
+        "cladding",
+        "roof",
+        "skylight",
+        "loading_dock",
+        "dock_leveller",
+        "racking",
+        "pallet",
+        "forklift",
+        "lighting",
+        "sprinkler",
+        "fire_door",
+        "office"
+      ]
+    },
+    "atomic_bomb": {
+      "src": "https://en.wikipedia.org/wiki/Nuclear_weapon",
+      "needs": [
+        "plutonium|enriched_uranium",
+        "pit",
+        "tamper",
+        "reflector",
+        "high_explosive_lens",
+        "detonator",
+        "neutron_initiator",
+        "casing",
+        "arming_system",
+        "fuzing_system"
+      ]
+    },
+    "dagger": {
+      "src": "https://en.wikipedia.org/wiki/Dagger",
+      "needs": [
+        "steel",
+        "blade",
+        "tang",
+        "edge",
+        "point",
+        "guard|quillon",
+        "grip",
+        "pommel",
+        "rivet",
+        "scabbard"
+      ]
+    },
+    "rapier": {
+      "src": "https://en.wikipedia.org/wiki/Rapier",
+      "needs": [
+        "steel",
+        "blade",
+        "tang",
+        "ricasso",
+        "hilt",
+        "swept_guard|cup",
+        "quillon",
+        "knuckle_bow",
+        "grip",
+        "wire_wrap",
+        "pommel",
+        "peen"
+      ]
+    },
+    "m16_rifle": {
+      "src": "https://en.wikipedia.org/wiki/M16_rifle",
+      "needs": [
+        "aluminum_alloy",
+        "upper_receiver",
+        "lower_receiver",
+        "barrel",
+        "rifling",
+        "bolt",
+        "bolt_carrier",
+        "gas_tube",
+        "buffer",
+        "buffer_spring",
+        "charging_handle",
+        "trigger",
+        "sear",
+        "magazine",
+        "handguard",
+        "stock",
+        "sight"
+      ]
+    },
+    "tuning_fork": {
+      "src": "https://en.wikipedia.org/wiki/Tuning_fork",
+      "needs": [
+        "steel",
+        "tine",
+        "stem|handle",
+        "yoke",
+        "grinding",
+        "tempering"
+      ]
+    },
+    "scalpel": {
+      "src": "https://en.wikipedia.org/wiki/Scalpel",
+      "needs": [
+        "stainless_steel|carbon_steel",
+        "blade",
+        "cutting_edge",
+        "blade_slot",
+        "handle",
+        "fitting_lug",
+        "sterilisation",
+        "packaging"
+      ]
+    },
+    "armillary_sphere": {
+      "src": "https://en.wikipedia.org/wiki/Armillary_sphere",
+      "needs": [
+        "brass|bronze",
+        "meridian_ring",
+        "equatorial_ring",
+        "ecliptic_ring",
+        "tropic_ring",
+        "polar_axis",
+        "graduation",
+        "sighting_tube|alidade",
+        "stand",
+        "base"
+      ]
+    },
+    "light_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Optical_microscope",
+      "needs": [
+        "objective_lens",
+        "eyepiece|ocular",
+        "tube",
+        "nosepiece",
+        "stage",
+        "stage_clip",
+        "condenser",
+        "iris_diaphragm",
+        "illuminator|mirror",
+        "coarse_focus",
+        "fine_focus",
+        "arm",
+        "base",
+        "glass"
+      ]
+    },
+    "fortification": {
+      "src": "https://en.wikipedia.org/wiki/Fortification",
+      "needs": [
+        "ditch|moat",
+        "glacis",
+        "rampart",
+        "earth_fill",
+        "revetment",
+        "stone|brick",
+        "curtain_wall",
+        "bastion",
+        "parapet",
+        "embrasure",
+        "gate",
+        "gatehouse",
+        "drawbridge",
+        "tower"
+      ]
+    },
+    "saw": {
+      "src": "https://en.wikipedia.org/wiki/Saw",
+      "note": "The teeth are bent alternately left and right, so the cut is wider than the blade and the blade does not bind.",
+      "needs": [
+        "steel",
+        "blade",
+        "tooth",
+        "set",
+        "gullet",
+        "rake_angle",
+        "tempering",
+        "spine|back",
+        "handle",
+        "rivet|screw"
+      ]
+    },
+    "computer_network": {
+      "src": "https://en.wikipedia.org/wiki/Computer_network",
+      "needs": [
+        "network_interface_card",
+        "cable|fibre_optic_cable",
+        "switch",
+        "router",
+        "hub|access_point",
+        "protocol|tcp",
+        "ip_address",
+        "dns",
+        "firewall",
+        "server",
+        "power_supply"
+      ]
+    },
+    "library": {
+      "src": "https://en.wikipedia.org/wiki/Library",
+      "needs": [
+        "building",
+        "reading_room",
+        "shelf|stack",
+        "book",
+        "catalogue",
+        "classification_scheme",
+        "shelf_mark",
+        "desk",
+        "lighting",
+        "climate_control",
+        "binding_repair",
+        "circulation_desk",
+        "librarian"
+      ]
+    },
+    "city": {
+      "src": "https://en.wikipedia.org/wiki/City",
+      "note": "A settlement too large to feed itself, so the surrounding farmland is a component of the city as much as its walls are.",
+      "needs": [
+        "street",
+        "road",
+        "water_supply",
+        "aqueduct|pipe",
+        "sewer",
+        "drain",
+        "housing",
+        "market",
+        "granary|warehouse",
+        "wall|boundary",
+        "gate",
+        "public_building",
+        "temple|civic_hall",
+        "cemetery",
+        "hinterland"
+      ]
+    },
+    "ship": {
+      "src": "https://en.wikipedia.org/wiki/Ship",
+      "needs": [
+        "keel",
+        "frame|rib",
+        "hull_plating|planking",
+        "steel|timber",
+        "rivet|weld",
+        "caulking",
+        "deck",
+        "bulkhead",
+        "hold",
+        "mast|superstructure",
+        "engine|sail",
+        "propeller|rudder",
+        "anchor",
+        "chain",
+        "ballast",
+        "bilge_pump",
+        "navigation_light"
+      ]
+    },
+    "pyramid": {
+      "src": "https://en.wikipedia.org/wiki/Egyptian_pyramids",
+      "needs": [
+        "bedrock",
+        "levelled_platform",
+        "core_block",
+        "limestone",
+        "casing_stone",
+        "granite",
+        "mortar",
+        "ramp",
+        "sledge",
+        "copper_chisel",
+        "burial_chamber",
+        "relieving_chamber",
+        "passage",
+        "portcullis_slab"
+      ]
+    },
+    "pier": {
+      "src": "https://en.wikipedia.org/wiki/Pier_(architecture)",
+      "needs": [
+        "foundation|caisson",
+        "pile",
+        "cofferdam",
+        "concrete",
+        "reinforcement",
+        "stone_facing",
+        "cutwater",
+        "bearing_shelf",
+        "capping_stone"
+      ]
+    },
+    "tunnel": {
+      "src": "https://en.wikipedia.org/wiki/Tunnel",
+      "needs": [
+        "portal",
+        "excavation",
+        "tunnel_boring_machine|explosive",
+        "cutter_head",
+        "muck",
+        "support_arch|steel_rib",
+        "rock_bolt",
+        "shotcrete",
+        "segmental_lining",
+        "waterproof_membrane",
+        "invert",
+        "drainage",
+        "ventilation_shaft",
+        "lighting"
+      ]
+    },
+    "sail": {
+      "src": "https://en.wikipedia.org/wiki/Sail",
+      "needs": [
+        "canvas|dacron",
+        "panel|cloth",
+        "seam",
+        "stitching",
+        "bolt_rope",
+        "luff",
+        "leech",
+        "foot",
+        "cringle",
+        "batten",
+        "reef_point",
+        "grommet"
+      ]
+    },
+    "pendentive": {
+      "src": "https://en.wikipedia.org/wiki/Pendentive",
+      "note": "The curved triangle that lets a round dome sit on a square room. Without it a dome needs a round wall under it.",
+      "needs": [
+        "pier",
+        "arch",
+        "springing",
+        "stone|brick",
+        "mortar",
+        "spherical_triangle",
+        "cornice",
+        "drum",
+        "dome"
+      ]
+    },
+    "prison": {
+      "src": "https://en.wikipedia.org/wiki/Prison",
+      "needs": [
+        "perimeter_wall",
+        "fence",
+        "watchtower",
+        "cell",
+        "cell_door",
+        "lock",
+        "bar",
+        "corridor",
+        "gate",
+        "exercise_yard",
+        "kitchen",
+        "infirmary",
+        "visiting_room",
+        "control_room",
+        "surveillance"
+      ]
+    },
+    "greenhouse": {
+      "src": "https://en.wikipedia.org/wiki/Greenhouse",
+      "note": "It works by stopping warm air rising away rather than by trapping infrared, which is the opposite of what the name has come to mean in climate.",
+      "needs": [
+        "frame",
+        "aluminum|timber",
+        "glazing",
+        "glass|polycarbonate",
+        "glazing_clip",
+        "ridge",
+        "gutter",
+        "vent",
+        "vent_opener",
+        "door",
+        "staging|bench",
+        "base",
+        "heating"
+      ]
+    },
+    "heating_element": {
+      "src": "https://en.wikipedia.org/wiki/Heating_element",
+      "needs": [
+        "nichrome|kanthal",
+        "wire",
+        "coil",
+        "former|mandrel",
+        "ceramic_insulator",
+        "sheath",
+        "magnesium_oxide",
+        "terminal",
+        "crimp"
+      ]
+    },
+    "double_reed": {
+      "src": "https://en.wikipedia.org/wiki/Reed_(mouthpiece)",
+      "needs": [
+        "arundo_cane",
+        "gouged_cane",
+        "shaped_blank",
+        "staple|tube",
+        "brass",
+        "thread|binding",
+        "cork",
+        "wire",
+        "scraping"
+      ]
+    },
+    "bellows": {
+      "src": "https://en.wikipedia.org/wiki/Bellows",
+      "needs": [
+        "board",
+        "timber",
+        "leather|canvas",
+        "pleat",
+        "tack|rivet",
+        "nozzle|tuyere",
+        "intake_valve",
+        "flap",
+        "handle",
+        "spring"
+      ]
+    },
+    "movable_type": {
+      "src": "https://en.wikipedia.org/wiki/Movable_type",
+      "needs": [
+        "lead",
+        "tin",
+        "antimony",
+        "type_metal",
+        "punch",
+        "matrix",
+        "hand_mould",
+        "adjustable_body",
+        "sort|type_piece",
+        "composing_stick",
+        "galley",
+        "type_case"
+      ]
+    },
+    "vacuum_tube": {
+      "src": "https://en.wikipedia.org/wiki/Vacuum_tube",
+      "needs": [
+        "glass_envelope",
+        "vacuum",
+        "getter",
+        "cathode",
+        "heater_filament",
+        "anode|plate",
+        "control_grid",
+        "mica_spacer",
+        "lead_wire",
+        "base",
+        "pin"
+      ]
+    },
+    "phonograph": {
+      "src": "https://en.wikipedia.org/wiki/Phonograph",
+      "needs": [
+        "cylinder|disc",
+        "tinfoil|wax",
+        "mandrel",
+        "stylus|needle",
+        "diaphragm",
+        "horn",
+        "tone_arm",
+        "turntable",
+        "crank|motor",
+        "governor",
+        "feed_screw"
+      ]
+    },
+    "photograph": {
+      "src": "https://en.wikipedia.org/wiki/Photography",
+      "needs": [
+        "camera",
+        "lens",
+        "shutter",
+        "light_sensitive_plate|film",
+        "silver_halide",
+        "emulsion",
+        "developer",
+        "fixer",
+        "stop_bath",
+        "darkroom",
+        "enlarger",
+        "paper"
+      ]
+    },
+    "crusher": {
+      "src": "https://en.wikipedia.org/wiki/Crusher",
+      "needs": [
+        "frame",
+        "manganese_steel",
+        "fixed_jaw|concave",
+        "moving_jaw|mantle",
+        "eccentric_shaft",
+        "toggle_plate",
+        "pitman",
+        "flywheel",
+        "spring",
+        "motor",
+        "liner"
+      ]
+    },
+    "bogie": {
+      "src": "https://en.wikipedia.org/wiki/Bogie",
+      "needs": [
+        "bogie_frame",
+        "wheelset",
+        "wheel",
+        "axle",
+        "axlebox",
+        "bearing",
+        "primary_suspension",
+        "secondary_suspension",
+        "spring",
+        "damper",
+        "brake_rigging",
+        "brake_shoe",
+        "centre_pivot|bolster"
+      ]
+    },
+    "photodiode": {
+      "src": "https://en.wikipedia.org/wiki/Photodiode",
+      "needs": [
+        "silicon",
+        "p_n_junction",
+        "depletion_region",
+        "anti_reflective_coating",
+        "window",
+        "cathode",
+        "anode",
+        "lead",
+        "package"
+      ]
+    },
+    "flash_memory": {
+      "src": "https://en.wikipedia.org/wiki/Flash_memory",
+      "needs": [
+        "silicon",
+        "wafer",
+        "floating_gate",
+        "control_gate",
+        "tunnel_oxide",
+        "interpoly_dielectric",
+        "source",
+        "drain",
+        "word_line",
+        "bit_line",
+        "package"
+      ]
+    },
+    "polarizer": {
+      "src": "https://en.wikipedia.org/wiki/Polarizer",
+      "needs": [
+        "polyvinyl_alcohol",
+        "film",
+        "iodine",
+        "stretching",
+        "borate_bath",
+        "triacetate_backing",
+        "adhesive",
+        "protective_layer"
+      ]
+    },
+    "laser_diode": {
+      "src": "https://en.wikipedia.org/wiki/Laser_diode",
+      "needs": [
+        "gallium_arsenide|indium_phosphide",
+        "substrate",
+        "active_layer",
+        "quantum_well",
+        "cladding_layer",
+        "cleaved_facet",
+        "facet_coating",
+        "contact",
+        "heat_sink",
+        "package"
+      ]
+    },
+    "ccd_sensor": {
+      "src": "https://en.wikipedia.org/wiki/Charge-coupled_device",
+      "needs": [
+        "silicon",
+        "wafer",
+        "photosite|potential_well",
+        "gate_electrode",
+        "polysilicon",
+        "oxide_layer",
+        "shift_register",
+        "output_amplifier",
+        "colour_filter_array",
+        "microlens",
+        "package"
+      ]
+    },
+    "superconducting_magnet": {
+      "src": "https://en.wikipedia.org/wiki/Superconducting_magnet",
+      "needs": [
+        "niobium_titanium|niobium_tin",
+        "filament",
+        "copper_matrix",
+        "wire",
+        "coil_former",
+        "winding",
+        "epoxy_impregnation",
+        "cryostat",
+        "liquid_helium",
+        "vacuum_vessel",
+        "radiation_shield",
+        "current_lead",
+        "quench_protection_resistor"
+      ]
+    },
+    "spinning_wheel": {
+      "src": "https://en.wikipedia.org/wiki/Spinning_wheel",
+      "needs": [
+        "timber",
+        "wheel",
+        "spoke",
+        "rim",
+        "axle",
+        "treadle",
+        "footman",
+        "crank",
+        "drive_band",
+        "flyer",
+        "bobbin",
+        "spindle",
+        "maiden",
+        "tension_screw",
+        "distaff"
+      ]
+    },
+    "knitting_needles": {
+      "src": "https://en.wikipedia.org/wiki/Knitting_needle",
+      "needs": [
+        "timber|steel|bamboo",
+        "shaft",
+        "taper",
+        "point",
+        "cap|stopper",
+        "polish"
+      ]
+    },
+    "hot_air_balloon": {
+      "src": "https://en.wikipedia.org/wiki/Hot_air_balloon",
+      "needs": [
+        "envelope",
+        "ripstop_nylon",
+        "gore",
+        "load_tape",
+        "parachute_valve",
+        "mouth",
+        "nomex_skirt",
+        "burner",
+        "propane_tank",
+        "fuel_hose",
+        "pilot_light",
+        "basket",
+        "wicker",
+        "frame",
+        "flight_instrument"
+      ]
+    },
+    "excavator": {
+      "src": "https://en.wikipedia.org/wiki/Excavator",
+      "needs": [
+        "undercarriage",
+        "track",
+        "track_roller",
+        "sprocket",
+        "slew_ring",
+        "house|cab",
+        "diesel_engine",
+        "hydraulic_pump",
+        "hydraulic_cylinder",
+        "hose",
+        "boom",
+        "dipper_arm",
+        "bucket",
+        "tooth",
+        "counterweight",
+        "control_valve"
+      ]
+    },
+    "fire_hose": {
+      "src": "https://en.wikipedia.org/wiki/Fire_hose",
+      "needs": [
+        "woven_jacket",
+        "polyester|nylon",
+        "rubber_lining|liner",
+        "coupling",
+        "expansion_ring",
+        "gasket",
+        "nozzle",
+        "binding"
+      ]
+    },
+    "nuclear_reactor": {
+      "src": "https://en.wikipedia.org/wiki/Nuclear_reactor",
+      "note": "Control rods and moderator are both components, and they do opposite jobs: one slows the neutrons so the reaction can happen, the other swallows them so it does not run away.",
+      "needs": [
+        "uranium_dioxide",
+        "fuel_pellet",
+        "fuel_rod",
+        "zirconium_cladding",
+        "fuel_assembly",
+        "control_rod",
+        "boron|cadmium",
+        "moderator",
+        "water|graphite",
+        "coolant",
+        "pressure_vessel",
+        "steam_generator",
+        "pump",
+        "containment_building",
+        "concrete",
+        "instrumentation"
+      ]
+    },
+    "tractor": {
+      "src": "https://en.wikipedia.org/wiki/Tractor",
+      "needs": [
+        "chassis",
+        "diesel_engine",
+        "transmission",
+        "clutch",
+        "differential",
+        "final_drive",
+        "rear_axle",
+        "wheel",
+        "tyre|tire",
+        "hydraulic_pump",
+        "three_point_hitch",
+        "power_take_off",
+        "drawbar",
+        "steering",
+        "cab",
+        "seat",
+        "ballast_weight"
+      ]
+    },
+    "bed": {
+      "src": "https://en.wikipedia.org/wiki/Bed",
+      "needs": [
+        "timber",
+        "headboard",
+        "footboard",
+        "side_rail",
+        "slat",
+        "leg",
+        "mattress",
+        "stuffing|spring",
+        "ticking",
+        "screw|bolt"
+      ]
+    },
+    "envelope": {
+      "src": "https://en.wikipedia.org/wiki/Envelope",
+      "needs": [
+        "paper",
+        "die_cut_blank",
+        "score",
+        "fold",
+        "side_flap",
+        "bottom_flap",
+        "seal_flap",
+        "gum|adhesive",
+        "window_film"
+      ]
+    },
+    "fork": {
+      "src": "https://en.wikipedia.org/wiki/Fork",
+      "needs": [
+        "steel|silver",
+        "blank",
+        "tine",
+        "bowl",
+        "neck",
+        "handle",
+        "polish",
+        "plating"
+      ]
+    },
+    "stove": {
+      "src": "https://en.wikipedia.org/wiki/Stove",
+      "needs": [
+        "cast_iron|steel",
+        "firebox",
+        "grate",
+        "ash_pan",
+        "door",
+        "hinge",
+        "latch",
+        "fire_brick",
+        "baffle",
+        "flue_collar",
+        "stovepipe",
+        "damper",
+        "cooking_plate",
+        "leg"
+      ]
+    },
+    "composite_bow": {
+      "src": "https://en.wikipedia.org/wiki/Composite_bow",
+      "note": "Horn on the belly for compression, sinew on the back for tension, wood between them holding the two apart — and a year or more of glue drying between steps.",
+      "needs": [
+        "wood_core",
+        "horn",
+        "sinew",
+        "hide_glue",
+        "fish_glue",
+        "siyah|tip",
+        "nock",
+        "bark|leather_covering",
+        "lacquer",
+        "bowstring"
+      ]
+    },
+    "chariot": {
+      "src": "https://en.wikipedia.org/wiki/Chariot",
+      "needs": [
+        "axle",
+        "spoked_wheel",
+        "felloe",
+        "spoke",
+        "hub",
+        "nave",
+        "tyre",
+        "platform|floor",
+        "wicker|leather",
+        "pole|draught_pole",
+        "yoke",
+        "harness",
+        "rein",
+        "linchpin"
+      ]
+    },
+    "stirrup": {
+      "src": "https://en.wikipedia.org/wiki/Stirrup",
+      "needs": [
+        "iron|bronze",
+        "tread",
+        "side_arm",
+        "eye",
+        "leather_strap",
+        "buckle",
+        "saddle"
+      ]
+    },
+    "longsword": {
+      "src": "https://en.wikipedia.org/wiki/Longsword",
+      "needs": [
+        "steel",
+        "blade",
+        "fuller",
+        "edge",
+        "point",
+        "tang",
+        "cross_guard",
+        "grip",
+        "wood_core",
+        "leather_wrap",
+        "pommel",
+        "peen_block",
+        "scabbard"
+      ]
+    },
+    "pike": {
+      "src": "https://en.wikipedia.org/wiki/Pike_(weapon)",
+      "needs": [
+        "ash_shaft",
+        "spearhead",
+        "steel",
+        "socket",
+        "langet|metal_strip",
+        "rivet",
+        "butt_cap"
+      ]
+    },
+    "siege_tower": {
+      "src": "https://en.wikipedia.org/wiki/Siege_tower",
+      "needs": [
+        "timber_frame",
+        "beam",
+        "plank",
+        "wheel",
+        "axle",
+        "ramp|drawbridge",
+        "iron_plate|wet_hide",
+        "ladder",
+        "platform",
+        "rope",
+        "winch"
+      ]
+    },
+    "chainmail": {
+      "src": "https://en.wikipedia.org/wiki/Mail_(armour)",
+      "needs": [
+        "iron_wire|steel_wire",
+        "mandrel",
+        "ring",
+        "rivet",
+        "punch",
+        "link",
+        "leather_edging",
+        "padding|gambeson"
+      ]
+    },
+    "arquebus": {
+      "src": "https://en.wikipedia.org/wiki/Arquebus",
+      "needs": [
+        "barrel",
+        "bore",
+        "touch_hole",
+        "flash_pan",
+        "match_holder|serpentine",
+        "matchcord",
+        "trigger",
+        "lock_plate",
+        "stock",
+        "wood",
+        "ramrod",
+        "ball",
+        "powder"
+      ]
+    },
+    "musket": {
+      "src": "https://en.wikipedia.org/wiki/Musket",
+      "needs": [
+        "barrel",
+        "breech_plug",
+        "flintlock",
+        "frizzen",
+        "flint",
+        "hammer|cock",
+        "mainspring",
+        "sear",
+        "trigger",
+        "lock_plate",
+        "stock",
+        "butt_plate",
+        "ramrod",
+        "barrel_band",
+        "bayonet_lug",
+        "ball",
+        "powder",
+        "paper_cartridge"
+      ]
+    },
+    "scale": {
+      "src": "https://en.wikipedia.org/wiki/Weighing_scale",
+      "needs": [
+        "beam",
+        "fulcrum",
+        "knife_edge",
+        "pivot",
+        "pan",
+        "chain|cord",
+        "pointer",
+        "scale_plate",
+        "weight",
+        "case",
+        "levelling_screw"
+      ]
+    },
+    "gnomon": {
+      "src": "https://en.wikipedia.org/wiki/Gnomon",
+      "needs": [
+        "rod|style",
+        "base_plate",
+        "graduation",
+        "hour_line",
+        "alignment",
+        "stone|bronze"
+      ]
+    },
+    "astrolabe": {
+      "src": "https://en.wikipedia.org/wiki/Astrolabe",
+      "needs": [
+        "brass",
+        "mater",
+        "womb",
+        "tympan|plate",
+        "rete",
+        "star_pointer",
+        "rule",
+        "alidade",
+        "limb",
+        "graduation",
+        "throne",
+        "pin",
+        "horse_wedge"
+      ]
+    },
+    "autoclave": {
+      "src": "https://en.wikipedia.org/wiki/Autoclave",
+      "needs": [
+        "pressure_vessel",
+        "stainless_steel",
+        "door",
+        "gasket",
+        "locking_ring",
+        "steam_generator|jacket",
+        "steam_inlet",
+        "exhaust_valve",
+        "safety_valve",
+        "pressure_gauge",
+        "thermometer",
+        "trap",
+        "chamber_rack"
+      ]
+    },
+    "tank": {
+      "src": "https://en.wikipedia.org/wiki/Tank",
+      "needs": [
+        "hull",
+        "armour_plate",
+        "turret",
+        "turret_ring",
+        "main_gun",
+        "gun_barrel",
+        "breech",
+        "recoil_system",
+        "gun_mantlet",
+        "autoloader|loader_station",
+        "engine",
+        "transmission",
+        "final_drive",
+        "sprocket",
+        "road_wheel",
+        "idler",
+        "track",
+        "track_link",
+        "torsion_bar|suspension",
+        "periscope",
+        "sight",
+        "radio",
+        "ammunition_rack"
+      ]
+    },
+    "bastion_fort": {
+      "src": "https://en.wikipedia.org/wiki/Bastion_fort",
+      "note": "Low and thick rather than tall, because the point is to absorb round shot instead of standing over it, and every face has to be covered by fire from another face.",
+      "needs": [
+        "ditch",
+        "counterscarp",
+        "glacis",
+        "covered_way",
+        "rampart",
+        "earth_fill",
+        "revetment",
+        "brick|stone",
+        "bastion",
+        "flank",
+        "curtain_wall",
+        "parapet",
+        "embrasure",
+        "cavalier",
+        "ravelin",
+        "sally_port",
+        "powder_magazine"
+      ]
+    },
+    "chimney": {
+      "src": "https://en.wikipedia.org/wiki/Chimney",
+      "needs": [
+        "foundation",
+        "brick|stone",
+        "mortar",
+        "flue",
+        "flue_liner",
+        "throat",
+        "smoke_shelf",
+        "damper",
+        "corbel",
+        "flaunching",
+        "chimney_pot",
+        "flashing",
+        "cap"
+      ]
+    },
+    "random_access_memory": {
+      "src": "https://en.wikipedia.org/wiki/Dynamic_random-access_memory",
+      "needs": [
+        "silicon",
+        "wafer",
+        "access_transistor",
+        "storage_capacitor",
+        "trench|stacked_cell",
+        "word_line",
+        "bit_line",
+        "sense_amplifier",
+        "row_decoder",
+        "column_decoder",
+        "refresh_circuit",
+        "package",
+        "lead_frame"
+      ]
+    },
+    "punched_card": {
+      "src": "https://en.wikipedia.org/wiki/Punched_card",
+      "needs": [
+        "card_stock",
+        "paper",
+        "cut_corner",
+        "column",
+        "row",
+        "punch",
+        "die",
+        "hopper",
+        "reader_brush|photocell"
+      ]
+    },
+    "foundation": {
+      "src": "https://en.wikipedia.org/wiki/Foundation_(engineering)",
+      "needs": [
+        "excavation",
+        "blinding",
+        "formwork",
+        "reinforcement",
+        "rebar",
+        "concrete",
+        "damp_proof_membrane",
+        "hardcore",
+        "footing",
+        "pile|raft",
+        "backfill"
+      ]
+    },
+    "exhaust": {
+      "src": "https://en.wikipedia.org/wiki/Exhaust_system",
+      "needs": [
+        "exhaust_manifold",
+        "gasket",
+        "downpipe",
+        "flexible_joint",
+        "catalytic_converter",
+        "oxygen_sensor",
+        "resonator",
+        "muffler",
+        "tail_pipe",
+        "hanger",
+        "clamp",
+        "heat_shield"
+      ]
+    },
+    "truss": {
+      "src": "https://en.wikipedia.org/wiki/Truss",
+      "note": "Triangles only. Every member is in pure tension or pure compression, which is why it carries a span on a fraction of a beam's material.",
+      "needs": [
+        "top_chord",
+        "bottom_chord",
+        "web_member",
+        "diagonal",
+        "vertical",
+        "gusset_plate",
+        "bolt|nail_plate",
+        "timber|steel",
+        "bearing",
+        "camber"
+      ]
+    },
+    "well": {
+      "src": "https://en.wikipedia.org/wiki/Water_well",
+      "needs": [
+        "shaft",
+        "excavation",
+        "lining|casing",
+        "brick|steel",
+        "gravel_pack",
+        "screen",
+        "water_table",
+        "headworks|well_head",
+        "cover",
+        "windlass|pump",
+        "bucket",
+        "rope",
+        "apron",
+        "drain"
+      ]
+    },
+    "dock": {
+      "src": "https://en.wikipedia.org/wiki/Dock_(maritime)",
+      "needs": [
+        "basin",
+        "excavation",
+        "quay_wall",
+        "sheet_pile",
+        "concrete",
+        "coping",
+        "lock_gate",
+        "caisson",
+        "sill",
+        "pump",
+        "bollard",
+        "fender",
+        "crane",
+        "rail"
+      ]
+    },
+    "aqueduct": {
+      "src": "https://en.wikipedia.org/wiki/Aqueduct_(water_supply)",
+      "note": "Gravity does all the work, so the fall is a component: a few centimetres per kilometre, held unbroken over tens of kilometres.",
+      "needs": [
+        "spring|source",
+        "settling_tank",
+        "channel|specus",
+        "gradient",
+        "waterproof_lining|opus_signinum",
+        "cover_slab",
+        "arcade",
+        "pier",
+        "arch",
+        "voussoir",
+        "inverted_siphon",
+        "castellum",
+        "distribution_tank"
+      ]
+    },
+    "railway": {
+      "src": "https://en.wikipedia.org/wiki/Rail_transport",
+      "needs": [
+        "formation|subgrade",
+        "ballast",
+        "sleeper|tie",
+        "rail",
+        "steel",
+        "fishplate",
+        "clip|spike",
+        "point|switch",
+        "crossing",
+        "signal",
+        "level_crossing",
+        "bridge",
+        "culvert",
+        "catenary|third_rail",
+        "station",
+        "siding"
+      ]
+    },
+    "suspension_bridge": {
+      "src": "https://en.wikipedia.org/wiki/Suspension_bridge",
+      "needs": [
+        "anchorage",
+        "tower|pylon",
+        "foundation",
+        "caisson",
+        "main_cable",
+        "wire_strand",
+        "cable_band",
+        "hanger|suspender_rope",
+        "stiffening_truss|deck_girder",
+        "deck",
+        "expansion_joint",
+        "saddle",
+        "dehumidification"
+      ]
+    },
+    "onion_dome": {
+      "src": "https://en.wikipedia.org/wiki/Onion_dome",
+      "needs": [
+        "drum",
+        "timber_frame",
+        "rib",
+        "lath",
+        "sheathing",
+        "sheet_metal|copper",
+        "gilding|paint",
+        "cross|finial",
+        "snow_load_allowance"
+      ]
+    },
+    "canal_lock": {
+      "src": "https://en.wikipedia.org/wiki/Lock_(water_navigation)",
+      "note": "A boat lift with no machinery: two gates, two paddles, and the water does the lifting.",
+      "needs": [
+        "chamber",
+        "masonry|concrete_wall",
+        "invert",
+        "upper_gate",
+        "lower_gate",
+        "mitre_post",
+        "balance_beam",
+        "paddle|sluice",
+        "paddle_gear",
+        "culvert",
+        "ladder",
+        "bollard",
+        "cill"
+      ]
+    },
+    "lathe": {
+      "src": "https://en.wikipedia.org/wiki/Lathe",
+      "note": "The machine that makes machines: it turns the work and holds the cutter still, and a lathe is the only tool that can build its own successor.",
+      "needs": [
+        "bed",
+        "way",
+        "headstock",
+        "spindle",
+        "chuck",
+        "tailstock",
+        "live_centre",
+        "carriage",
+        "cross_slide",
+        "compound_rest",
+        "tool_post",
+        "cutting_tool",
+        "lead_screw",
+        "change_gear",
+        "motor",
+        "belt"
+      ]
+    },
+    "voltaic_pile": {
+      "src": "https://en.wikipedia.org/wiki/Voltaic_pile",
+      "needs": [
+        "zinc_disc",
+        "copper_disc|silver_disc",
+        "cardboard|cloth_separator",
+        "brine",
+        "glass_rod|frame",
+        "terminal_wire"
+      ]
+    },
+    "timpani": {
+      "src": "https://en.wikipedia.org/wiki/Timpani",
+      "needs": [
+        "copper",
+        "kettle|bowl",
+        "head",
+        "calfskin|mylar",
+        "counterhoop",
+        "tension_rod",
+        "tuning_gauge",
+        "pedal",
+        "spider_mechanism",
+        "frame",
+        "strut",
+        "castor",
+        "mallet"
+      ]
+    },
+    "pan_flute": {
+      "src": "https://en.wikipedia.org/wiki/Pan_flute",
+      "needs": [
+        "cane|bamboo",
+        "tube",
+        "node|stopper",
+        "binding",
+        "cord|wax",
+        "frame",
+        "tuning_plug"
+      ]
+    },
+    "electric_guitar": {
+      "src": "https://en.wikipedia.org/wiki/Electric_guitar",
+      "needs": [
+        "body",
+        "timber",
+        "neck",
+        "truss_rod",
+        "fingerboard",
+        "fret",
+        "nut",
+        "string",
+        "bridge",
+        "saddle",
+        "tuning_machine",
+        "pickup",
+        "magnet",
+        "coil",
+        "potentiometer",
+        "capacitor",
+        "selector_switch",
+        "output_jack",
+        "wiring",
+        "strap_button"
+      ]
+    },
+    "clarinet": {
+      "src": "https://en.wikipedia.org/wiki/Clarinet",
+      "needs": [
+        "grenadilla|ebonite",
+        "bore",
+        "upper_joint",
+        "lower_joint",
+        "barrel",
+        "bell",
+        "mouthpiece",
+        "reed",
+        "ligature",
+        "tone_hole",
+        "key",
+        "pad",
+        "spring",
+        "rod",
+        "post",
+        "tenon_cork"
+      ]
+    },
+    "saxophone": {
+      "src": "https://en.wikipedia.org/wiki/Saxophone",
+      "needs": [
+        "brass",
+        "body_tube",
+        "bow",
+        "bell",
+        "neck",
+        "mouthpiece",
+        "reed",
+        "ligature",
+        "tone_hole",
+        "key",
+        "pad",
+        "resonator",
+        "spring",
+        "rod",
+        "post",
+        "octave_key",
+        "thumb_hook",
+        "lacquer"
+      ]
+    },
+    "oboe": {
+      "src": "https://en.wikipedia.org/wiki/Oboe",
+      "needs": [
+        "grenadilla",
+        "bore",
+        "upper_joint",
+        "lower_joint",
+        "bell",
+        "staple",
+        "double_reed",
+        "tone_hole",
+        "key",
+        "pad",
+        "spring",
+        "rod",
+        "post",
+        "tenon_cork"
+      ]
+    },
+    "pendulum_clock": {
+      "src": "https://en.wikipedia.org/wiki/Pendulum_clock",
+      "needs": [
+        "case",
+        "movement_plate",
+        "mainspring|weight",
+        "barrel",
+        "gear_train",
+        "wheel",
+        "pinion",
+        "escape_wheel",
+        "anchor_escapement|deadbeat_escapement",
+        "pallet",
+        "crutch",
+        "pendulum",
+        "pendulum_rod",
+        "bob",
+        "suspension_spring",
+        "hand",
+        "dial",
+        "bell|chime"
+      ]
+    },
+    "cotton_gin": {
+      "src": "https://en.wikipedia.org/wiki/Cotton_gin",
+      "needs": [
+        "frame",
+        "timber",
+        "roller|saw_cylinder",
+        "iron_tooth",
+        "grate|rib",
+        "brush_cylinder",
+        "hopper",
+        "crank|pulley",
+        "belt",
+        "seed_box",
+        "lint_box"
+      ]
+    },
+    "drilling_rig": {
+      "src": "https://en.wikipedia.org/wiki/Drilling_rig",
+      "needs": [
+        "mast|derrick",
+        "crawler_track",
+        "diesel_engine",
+        "hydraulic_pump",
+        "rotary_head",
+        "drill_rod",
+        "drill_bit",
+        "button_bit",
+        "air_compressor",
+        "dust_collector",
+        "rod_carousel",
+        "levelling_jack",
+        "control_cab"
+      ]
+    },
+    "theremin": {
+      "src": "https://en.wikipedia.org/wiki/Theremin",
+      "note": "The player's hand is a plate of a capacitor, so the instrument is deliberately incomplete until someone stands next to it.",
+      "needs": [
+        "pitch_antenna",
+        "volume_antenna",
+        "oscillator",
+        "variable_capacitor",
+        "mixer",
+        "heterodyne_circuit",
+        "audio_amplifier",
+        "loudspeaker",
+        "power_supply",
+        "cabinet"
+      ]
+    },
+    "ore_railway": {
+      "src": "https://en.wikipedia.org/wiki/Heavy_haul_railway",
+      "needs": [
+        "heavy_rail",
+        "concrete_sleeper",
+        "ballast",
+        "formation",
+        "locomotive",
+        "ore_wagon",
+        "bogie",
+        "coupler",
+        "air_brake",
+        "loop|passing_track",
+        "tippler|dumper",
+        "signalling",
+        "train_control"
+      ]
+    },
+    "hopper_car": {
+      "src": "https://en.wikipedia.org/wiki/Hopper_car",
+      "needs": [
+        "underframe",
+        "body",
+        "sloped_floor",
+        "hopper_bay",
+        "bottom_gate",
+        "gate_operating_gear",
+        "bogie",
+        "wheelset",
+        "brake",
+        "coupler",
+        "hand_brake"
+      ]
+    },
+    "boxcar": {
+      "src": "https://en.wikipedia.org/wiki/Boxcar",
+      "needs": [
+        "underframe",
+        "floor",
+        "side_wall",
+        "end_wall",
+        "roof",
+        "sliding_door",
+        "door_track",
+        "door_hasp",
+        "bogie",
+        "wheelset",
+        "brake",
+        "coupler"
+      ]
+    },
+    "roller_bearing": {
+      "src": "https://en.wikipedia.org/wiki/Rolling-element_bearing",
+      "needs": [
+        "chromium_steel",
+        "inner_race",
+        "outer_race",
+        "roller",
+        "cage",
+        "seal|shield",
+        "grease",
+        "hardening",
+        "grinding"
+      ]
+    },
+    "points_switch": {
+      "src": "https://en.wikipedia.org/wiki/Railroad_switch",
+      "needs": [
+        "stock_rail",
+        "switch_rail|point_blade",
+        "heel_block",
+        "slide_chair",
+        "stretcher_bar",
+        "tie_rod",
+        "frog|crossing_nose",
+        "check_rail",
+        "point_motor|lever",
+        "detector",
+        "sleeper"
+      ]
+    },
+    "athletic_shoe": {
+      "src": "https://en.wikipedia.org/wiki/Sneakers",
+      "needs": [
+        "upper",
+        "mesh|leather",
+        "toe_box",
+        "heel_counter",
+        "lining",
+        "insole",
+        "midsole",
+        "eva_foam",
+        "outsole",
+        "rubber",
+        "tread",
+        "lace",
+        "eyelet",
+        "tongue",
+        "stitching",
+        "adhesive"
+      ]
+    },
+    "thin_film_transistor": {
+      "src": "https://en.wikipedia.org/wiki/Thin-film_transistor",
+      "needs": [
+        "glass_substrate",
+        "gate_electrode",
+        "gate_dielectric",
+        "amorphous_silicon|igzo",
+        "source_electrode",
+        "drain_electrode",
+        "passivation_layer",
+        "indium_tin_oxide"
+      ]
+    },
+    "liquid_crystal_cell": {
+      "src": "https://en.wikipedia.org/wiki/Liquid_crystal_display",
+      "needs": [
+        "glass_substrate",
+        "transparent_electrode",
+        "indium_tin_oxide",
+        "alignment_layer",
+        "rubbing",
+        "liquid_crystal",
+        "spacer",
+        "seal",
+        "polarizer"
+      ]
+    },
+    "lcd_screen": {
+      "src": "https://en.wikipedia.org/wiki/Liquid-crystal_display",
+      "needs": [
+        "backlight",
+        "led",
+        "light_guide_plate",
+        "diffuser",
+        "polarizer",
+        "glass_substrate",
+        "thin_film_transistor",
+        "liquid_crystal_cell",
+        "colour_filter",
+        "second_polarizer",
+        "driver_ic",
+        "flexible_printed_circuit",
+        "bezel"
+      ]
+    },
+    "digital_camera": {
+      "src": "https://en.wikipedia.org/wiki/Digital_camera",
+      "needs": [
+        "lens",
+        "aperture",
+        "shutter",
+        "image_sensor|ccd_sensor",
+        "colour_filter_array",
+        "microlens",
+        "analogue_to_digital_converter",
+        "image_processor",
+        "memory_card",
+        "battery",
+        "display",
+        "viewfinder",
+        "body",
+        "mount"
+      ]
+    },
+    "magnetron": {
+      "src": "https://en.wikipedia.org/wiki/Cavity_magnetron",
+      "needs": [
+        "copper_anode_block",
+        "resonant_cavity",
+        "cathode",
+        "heater_filament",
+        "permanent_magnet",
+        "vacuum_envelope",
+        "antenna|output_probe",
+        "cooling_fin",
+        "waveguide_flange"
+      ]
+    },
+    "scanner": {
+      "src": "https://en.wikipedia.org/wiki/Image_scanner",
+      "needs": [
+        "glass_platen",
+        "lamp|led_bar",
+        "mirror",
+        "lens",
+        "ccd_sensor",
+        "carriage",
+        "stepper_motor",
+        "belt",
+        "rail",
+        "analogue_to_digital_converter",
+        "controller",
+        "lid"
+      ]
+    },
+    "transducer": {
+      "src": "https://en.wikipedia.org/wiki/Transducer",
+      "needs": [
+        "piezoelectric_crystal|pzt",
+        "electrode",
+        "backing_block",
+        "matching_layer",
+        "acoustic_lens",
+        "housing",
+        "cable",
+        "connector"
+      ]
+    },
+    "atomic_clock": {
+      "src": "https://en.wikipedia.org/wiki/Atomic_clock",
+      "note": "The quartz oscillator does the timekeeping; the atoms only correct it. The clock is a servo loop, not a resonator.",
+      "needs": [
+        "caesium|rubidium",
+        "oven|source",
+        "atomic_beam",
+        "magnet_selector",
+        "microwave_cavity",
+        "quartz_oscillator",
+        "frequency_synthesiser",
+        "detector",
+        "feedback_loop",
+        "vacuum_chamber",
+        "magnetic_shield"
+      ]
+    },
+    "communications_satellite": {
+      "src": "https://en.wikipedia.org/wiki/Communications_satellite",
+      "needs": [
+        "bus|structure",
+        "solar_panel",
+        "battery",
+        "transponder",
+        "receiver",
+        "amplifier|travelling_wave_tube",
+        "antenna",
+        "reflector",
+        "thruster",
+        "propellant",
+        "attitude_control",
+        "reaction_wheel",
+        "star_tracker",
+        "thermal_blanket",
+        "radiator"
+      ]
+    },
+    "gps_satellite": {
+      "src": "https://en.wikipedia.org/wiki/GPS_satellite_blocks",
+      "needs": [
+        "bus",
+        "solar_panel",
+        "battery",
+        "atomic_clock",
+        "caesium|rubidium",
+        "frequency_standard",
+        "navigation_payload",
+        "antenna_array",
+        "transmitter",
+        "thruster",
+        "reaction_wheel",
+        "sun_sensor"
+      ]
+    },
+    "gps": {
+      "src": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "needs": [
+        "gps_satellite",
+        "constellation",
+        "ground_control_station",
+        "monitor_station",
+        "receiver",
+        "antenna",
+        "correlator",
+        "almanac",
+        "ephemeris",
+        "clock_correction",
+        "trilateration"
+      ]
+    },
+    "cellular_telephone": {
+      "src": "https://en.wikipedia.org/wiki/Mobile_phone",
+      "needs": [
+        "printed_circuit_board",
+        "baseband_processor",
+        "radio_transceiver",
+        "power_amplifier",
+        "antenna",
+        "sim_card",
+        "display",
+        "touchscreen",
+        "battery",
+        "microphone",
+        "loudspeaker",
+        "camera_module",
+        "housing",
+        "charging_port"
+      ]
+    },
+    "router": {
+      "src": "https://en.wikipedia.org/wiki/Router_(computing)",
+      "needs": [
+        "processor",
+        "routing_table",
+        "memory",
+        "forwarding_engine",
+        "network_interface_card",
+        "port",
+        "switching_fabric",
+        "firmware",
+        "power_supply",
+        "cooling_fan",
+        "chassis"
+      ]
+    },
+    "movie_camera": {
+      "src": "https://en.wikipedia.org/wiki/Movie_camera",
+      "needs": [
+        "lens",
+        "aperture",
+        "shutter",
+        "rotating_disc_shutter",
+        "film_gate",
+        "claw|intermittent_movement",
+        "sprocket",
+        "magazine",
+        "take_up_spool",
+        "motor",
+        "viewfinder",
+        "body"
+      ]
+    },
+    "film_projector": {
+      "src": "https://en.wikipedia.org/wiki/Movie_projector",
+      "needs": [
+        "lamp|arc_lamp",
+        "reflector",
+        "condenser_lens",
+        "film_gate",
+        "intermittent_sprocket",
+        "maltese_cross|geneva_drive",
+        "shutter",
+        "projection_lens",
+        "reel",
+        "take_up_reel",
+        "sound_head",
+        "amplifier",
+        "cooling_fan"
+      ]
+    },
+    "landing_gear": {
+      "src": "https://en.wikipedia.org/wiki/Landing_gear",
+      "needs": [
+        "oleo_strut",
+        "cylinder",
+        "piston",
+        "nitrogen",
+        "hydraulic_fluid",
+        "orifice",
+        "torque_link",
+        "axle",
+        "wheel",
+        "tyre|tire",
+        "brake_disc",
+        "retraction_actuator",
+        "door",
+        "uplock"
+      ]
+    },
+    "combustor": {
+      "src": "https://en.wikipedia.org/wiki/Combustor",
+      "needs": [
+        "casing",
+        "liner",
+        "heat_shield_tile",
+        "dilution_hole",
+        "swirler",
+        "fuel_injector",
+        "igniter",
+        "diffuser",
+        "cooling_film_hole"
+      ]
+    },
+    "jet_engine": {
+      "src": "https://en.wikipedia.org/wiki/Jet_engine",
+      "needs": [
+        "inlet",
+        "compressor",
+        "compressor_blade",
+        "stator_vane",
+        "combustor",
+        "fuel_injector",
+        "turbine",
+        "turbine_blade",
+        "nickel_superalloy",
+        "cooling_channel",
+        "shaft",
+        "bearing",
+        "nozzle",
+        "casing",
+        "accessory_gearbox",
+        "fuel_pump",
+        "starter"
+      ]
+    },
+    "turbofan": {
+      "src": "https://en.wikipedia.org/wiki/Turbofan",
+      "needs": [
+        "fan",
+        "fan_blade",
+        "fan_case",
+        "containment_ring",
+        "bypass_duct",
+        "booster",
+        "core_engine",
+        "compressor",
+        "combustor",
+        "turbine",
+        "low_pressure_shaft",
+        "high_pressure_shaft",
+        "gearbox",
+        "nacelle",
+        "thrust_reverser",
+        "pylon"
+      ]
+    },
+    "airship": {
+      "src": "https://en.wikipedia.org/wiki/Airship",
+      "needs": [
+        "envelope",
+        "gas_cell",
+        "helium|hydrogen",
+        "ballonet",
+        "keel|frame",
+        "girder",
+        "nose_cone",
+        "gondola",
+        "engine",
+        "propeller",
+        "rudder",
+        "elevator",
+        "ballast",
+        "mooring_cone"
+      ]
+    },
+    "hangar": {
+      "src": "https://en.wikipedia.org/wiki/Hangar",
+      "needs": [
+        "foundation",
+        "portal_frame|truss",
+        "steel",
+        "roof",
+        "cladding",
+        "hangar_door",
+        "door_track",
+        "drive_motor",
+        "apron_slab",
+        "lighting",
+        "fire_suppression",
+        "crane_rail"
+      ]
+    },
+    "control_tower": {
+      "src": "https://en.wikipedia.org/wiki/Air_traffic_control",
+      "needs": [
+        "foundation",
+        "shaft|core",
+        "stair|lift",
+        "cab",
+        "raked_glazing",
+        "console",
+        "radar_display",
+        "radio",
+        "light_gun",
+        "recorder",
+        "power_backup"
+      ]
+    },
+    "slurry_pipeline": {
+      "src": "https://en.wikipedia.org/wiki/Slurry_pipeline",
+      "needs": [
+        "steel_pipe",
+        "wear_liner",
+        "pump_station",
+        "centrifugal_pump",
+        "valve",
+        "choke_station",
+        "thickener",
+        "storage_tank",
+        "cathodic_protection",
+        "pig_launcher",
+        "instrumentation"
+      ]
+    },
+    "hive": {
+      "src": "https://en.wikipedia.org/wiki/Beehive",
+      "needs": [
+        "box|skep",
+        "timber|straw",
+        "frame",
+        "foundation_sheet",
+        "beeswax",
+        "comb",
+        "entrance",
+        "landing_board",
+        "queen_excluder",
+        "super",
+        "crown_board",
+        "roof",
+        "stand",
+        "propolis"
+      ]
+    },
+    "click_wheel": {
+      "src": "https://en.wikipedia.org/wiki/Click_wheel",
+      "needs": [
+        "plastic_overlay",
+        "printed_circuit_board",
+        "electrode_ring",
+        "capacitive_sensor",
+        "controller_ic",
+        "centre_button",
+        "dome_switch",
+        "flexible_connector"
+      ]
+    },
+    "icsi_needle": {
+      "src": "https://en.wikipedia.org/wiki/Intracytoplasmic_sperm_injection",
+      "needs": [
+        "borosilicate_glass",
+        "capillary",
+        "puller",
+        "bevel",
+        "spike",
+        "microforge",
+        "holding_pipette",
+        "micromanipulator"
+      ]
+    },
+    "wool_card": {
+      "src": "https://en.wikipedia.org/wiki/Carding",
+      "needs": [
+        "board|paddle",
+        "leather_backing",
+        "wire_tooth",
+        "staple",
+        "handle",
+        "tack"
+      ]
+    },
+    "tail_stabilizer": {
+      "src": "https://en.wikipedia.org/wiki/Tailplane",
+      "needs": [
+        "spar",
+        "rib",
+        "skin",
+        "aluminum|composite",
+        "rivet",
+        "elevator",
+        "hinge",
+        "trim_tab",
+        "actuator",
+        "attachment_fitting"
+      ]
+    },
+    "car_dumper": {
+      "src": "https://en.wikipedia.org/wiki/Railcar_tippler",
+      "needs": [
+        "cradle|barrel",
+        "end_ring",
+        "roller",
+        "clamp",
+        "platen",
+        "drive_motor",
+        "gearbox",
+        "hydraulic_cylinder",
+        "positioner",
+        "hopper",
+        "apron_feeder",
+        "dust_suppression"
+      ]
+    },
+    "stacker_reclaimer": {
+      "src": "https://en.wikipedia.org/wiki/Stacker-reclaimer",
+      "needs": [
+        "rail",
+        "travel_bogie",
+        "portal|frame",
+        "slew_bearing",
+        "boom",
+        "conveyor_belt",
+        "idler",
+        "bucket_wheel",
+        "bucket",
+        "chute",
+        "counterweight",
+        "drive_motor",
+        "cable_reel"
+      ]
+    },
+    "ship_loader": {
+      "src": "https://en.wikipedia.org/wiki/Ship_loader",
+      "needs": [
+        "rail",
+        "travel_gantry",
+        "tower",
+        "luffing_boom",
+        "shuttle_conveyor",
+        "belt",
+        "telescopic_chute",
+        "spout",
+        "dust_collector",
+        "slew_drive",
+        "hoist_winch",
+        "operator_cab"
+      ]
+    },
+    "veena": {
+      "src": "https://en.wikipedia.org/wiki/Veena",
+      "needs": [
+        "jackwood",
+        "resonator",
+        "hollowed_body",
+        "neck|dandi",
+        "fingerboard",
+        "fret",
+        "wax",
+        "bridge|meru",
+        "string",
+        "tuning_peg",
+        "gourd",
+        "yali_head"
+      ]
+    },
+    "taiko": {
+      "src": "https://en.wikipedia.org/wiki/Taiko",
+      "needs": [
+        "keyaki|zelkova",
+        "hollowed_shell",
+        "cowhide",
+        "head",
+        "tack|rope_lacing",
+        "tension_rope",
+        "handle_ring",
+        "stand",
+        "bachi|stick"
+      ]
+    },
+    "fire_drill": {
+      "src": "https://en.wikipedia.org/wiki/Fire_making",
+      "needs": [
+        "spindle",
+        "hearth_board",
+        "notch",
+        "socket|bearing_block",
+        "tinder",
+        "coal_catcher",
+        "bow|hand_drive",
+        "cord"
+      ]
+    },
+    "dental_drill": {
+      "src": "https://en.wikipedia.org/wiki/Dental_drill",
+      "needs": [
+        "handpiece",
+        "air_turbine|electric_motor",
+        "bearing",
+        "chuck|collet",
+        "bur",
+        "tungsten_carbide|diamond",
+        "water_spray_line",
+        "air_line",
+        "fibre_optic",
+        "coupling"
+      ]
+    },
+    "ziggurat": {
+      "src": "https://en.wikipedia.org/wiki/Ziggurat",
+      "needs": [
+        "mud_brick",
+        "bitumen",
+        "reed_mat",
+        "rubble_core",
+        "fired_brick_facing",
+        "buttress",
+        "terrace",
+        "stairway",
+        "ramp",
+        "shrine",
+        "drainage_channel"
+      ]
+    },
+    "longship": {
+      "src": "https://en.wikipedia.org/wiki/Longship",
+      "note": "Clinker-built: each plank overlaps the one below and is riveted through, so the hull flexes with the sea instead of resisting it.",
+      "needs": [
+        "keel",
+        "stem",
+        "stern_post",
+        "strake",
+        "clinker_plank",
+        "oak",
+        "iron_rivet",
+        "rove",
+        "caulking",
+        "tar",
+        "wool_caulk",
+        "frame",
+        "crossbeam",
+        "mast",
+        "mast_step",
+        "wool_sail",
+        "rigging",
+        "oar",
+        "oar_port",
+        "steering_oar",
+        "shield_rack"
+      ]
+    },
+    "drawbridge": {
+      "src": "https://en.wikipedia.org/wiki/Drawbridge",
+      "needs": [
+        "timber_deck",
+        "beam",
+        "pivot",
+        "gudgeon",
+        "chain",
+        "counterweight",
+        "windlass|winch",
+        "rope",
+        "gaff|lifting_arm",
+        "recess",
+        "gatehouse_fitting"
+      ]
+    },
+    "submarine": {
+      "src": "https://en.wikipedia.org/wiki/Submarine",
+      "needs": [
+        "pressure_hull",
+        "steel",
+        "frame",
+        "outer_casing",
+        "ballast_tank",
+        "vent",
+        "blow_valve",
+        "trim_tank",
+        "propulsion",
+        "battery|reactor",
+        "propeller",
+        "control_surface",
+        "hydroplane",
+        "rudder",
+        "periscope",
+        "snorkel",
+        "hatch",
+        "escape_trunk",
+        "co2_scrubber",
+        "oxygen_generator"
+      ]
+    },
+    "blasting_cap": {
+      "src": "https://en.wikipedia.org/wiki/Detonator",
+      "needs": [
+        "metal_shell",
+        "base_charge",
+        "primary_explosive",
+        "delay_element",
+        "bridge_wire|shock_tube",
+        "lead_wire",
+        "plug",
+        "crimp"
+      ]
+    },
+    "enigma_machine": {
+      "src": "https://en.wikipedia.org/wiki/Enigma_machine",
+      "needs": [
+        "keyboard",
+        "key",
+        "lamp_board",
+        "lamp",
+        "rotor",
+        "rotor_wiring",
+        "alphabet_ring",
+        "notch",
+        "stepping_pawl",
+        "entry_wheel",
+        "reflector",
+        "plugboard",
+        "patch_cable",
+        "battery",
+        "case"
+      ]
+    },
+    "event_horizon_telescope": {
+      "src": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope",
+      "needs": [
+        "radio_telescope",
+        "receiver",
+        "atomic_clock",
+        "hydrogen_maser",
+        "digital_backend",
+        "recorder",
+        "hard_disk",
+        "correlator",
+        "vlbi_technique",
+        "calibration"
+      ]
+    },
+    "swashplate": {
+      "src": "https://en.wikipedia.org/wiki/Swashplate",
+      "needs": [
+        "stationary_plate",
+        "rotating_plate",
+        "bearing",
+        "uniball|slider",
+        "pitch_link",
+        "scissor_link",
+        "control_rod",
+        "actuator",
+        "seal"
+      ]
+    },
+    "umbrella": {
+      "src": "https://en.wikipedia.org/wiki/Umbrella",
+      "needs": [
+        "shaft",
+        "handle",
+        "ferrule",
+        "rib",
+        "stretcher",
+        "runner",
+        "spring_catch",
+        "notch",
+        "canopy",
+        "nylon|silk",
+        "tip_cup",
+        "stitching"
+      ]
+    },
+    "zipper": {
+      "src": "https://en.wikipedia.org/wiki/Zipper",
+      "needs": [
+        "tape",
+        "fabric",
+        "tooth|element",
+        "brass|nylon",
+        "slider",
+        "pull_tab",
+        "cam",
+        "top_stop",
+        "bottom_stop",
+        "box_and_pin",
+        "stitching"
+      ]
+    },
+    "bag": {
+      "src": "https://en.wikipedia.org/wiki/Bag",
+      "needs": [
+        "cloth|hide",
+        "panel",
+        "seam",
+        "stitching",
+        "hem",
+        "cord|drawstring",
+        "eyelet",
+        "handle",
+        "lining",
+        "fastening"
+      ]
+    },
+    "barn": {
+      "src": "https://en.wikipedia.org/wiki/Barn",
+      "needs": [
+        "foundation",
+        "sill_beam",
+        "post",
+        "tie_beam",
+        "truss",
+        "purlin",
+        "rafter",
+        "cladding",
+        "board",
+        "roof",
+        "threshing_floor",
+        "hayloft",
+        "door",
+        "ventilation_gap"
+      ]
+    },
+    "brush": {
+      "src": "https://en.wikipedia.org/wiki/Brush",
+      "needs": [
+        "handle",
+        "wood|plastic",
+        "ferrule",
+        "bristle|fibre",
+        "knot",
+        "epoxy|pitch",
+        "crimp"
+      ]
+    },
+    "glove": {
+      "src": "https://en.wikipedia.org/wiki/Glove",
+      "needs": [
+        "leather|fabric",
+        "trank",
+        "finger_piece",
+        "fourchette",
+        "quirk",
+        "thumb",
+        "lining",
+        "seam",
+        "stitching",
+        "cuff",
+        "fastening"
+      ]
+    },
+    "hat": {
+      "src": "https://en.wikipedia.org/wiki/Hat",
+      "needs": [
+        "felt|straw",
+        "fur_fibre",
+        "hood|capeline",
+        "blocking_form",
+        "steam",
+        "sizing",
+        "shellac",
+        "crown",
+        "brim",
+        "sweatband",
+        "ribbon|band",
+        "lining",
+        "stitching"
+      ]
+    },
+    "hose": {
+      "src": "https://en.wikipedia.org/wiki/Hose_(tubing)",
+      "note": "The reinforcement is what keeps it round under pressure; the rubber only keeps the water in.",
+      "needs": [
+        "inner_tube",
+        "rubber",
+        "reinforcement",
+        "braid|spiral_wire",
+        "textile_ply",
+        "cover",
+        "coupling",
+        "ferrule",
+        "crimp"
+      ]
+    },
+    "stairs": {
+      "src": "https://en.wikipedia.org/wiki/Stairs",
+      "needs": [
+        "stringer",
+        "tread",
+        "riser",
+        "nosing",
+        "newel_post",
+        "baluster",
+        "handrail",
+        "landing",
+        "carriage_beam",
+        "fixing",
+        "finish"
+      ]
+    },
+    "postage_stamp": {
+      "src": "https://en.wikipedia.org/wiki/Postage_stamp",
+      "needs": [
+        "paper",
+        "watermark",
+        "gum",
+        "printing_plate|die",
+        "ink",
+        "perforation",
+        "sheet",
+        "denomination",
+        "cancellation"
+      ]
+    },
+    "stool": {
+      "src": "https://en.wikipedia.org/wiki/Stool_(seat)",
+      "needs": [
+        "seat",
+        "timber",
+        "leg",
+        "stretcher",
+        "rail",
+        "mortise_and_tenon|dowel",
+        "wedge",
+        "glue",
+        "finish"
+      ]
+    },
+    "fire_lance": {
+      "src": "https://en.wikipedia.org/wiki/Fire_lance",
+      "needs": [
+        "bamboo_tube|paper_tube",
+        "gunpowder",
+        "saltpetre",
+        "charcoal",
+        "sulfur",
+        "wadding",
+        "projectile|shrapnel",
+        "slow_match",
+        "binding",
+        "spear_shaft"
+      ]
+    },
+    "war_elephant": {
+      "src": "https://en.wikipedia.org/wiki/War_elephant",
+      "needs": [
+        "elephant",
+        "mahout",
+        "howdah",
+        "iron_plate|scale_armour",
+        "tusk_sword",
+        "girth_strap",
+        "bell",
+        "goad|ankus",
+        "javelin",
+        "archer"
+      ]
+    },
+    "greek_fire": {
+      "src": "https://en.wikipedia.org/wiki/Greek_fire",
+      "needs": [
+        "petroleum|naphtha",
+        "pine_resin",
+        "sulfur",
+        "quicklime|saltpetre",
+        "bronze_siphon",
+        "pump",
+        "swivel_nozzle",
+        "heated_cauldron",
+        "bellows",
+        "ignition_source"
+      ]
+    },
+    "torpedo": {
+      "src": "https://en.wikipedia.org/wiki/Torpedo",
+      "needs": [
+        "steel_shell",
+        "warhead",
+        "explosive",
+        "exploder|pistol",
+        "compressed_air_flask",
+        "engine",
+        "propeller",
+        "contra_rotating_propeller",
+        "gyroscope",
+        "depth_engine",
+        "hydroplane",
+        "rudder",
+        "buoyancy_chamber"
+      ]
+    },
+    "poison_gas": {
+      "src": "https://en.wikipedia.org/wiki/Chemical_weapons_in_World_War_I",
+      "needs": [
+        "chlorine|phosgene",
+        "pressure_cylinder",
+        "valve",
+        "discharge_pipe",
+        "wind",
+        "shell|projector",
+        "burster_charge",
+        "protective_mask"
+      ]
+    },
+    "war_hammer": {
+      "src": "https://en.wikipedia.org/wiki/War_hammer",
+      "needs": [
+        "haft",
+        "ash|steel_shaft",
+        "head",
+        "hammer_face",
+        "spike|beak",
+        "langet",
+        "wedge",
+        "rivet",
+        "grip"
+      ]
+    },
+    "crossbow": {
+      "src": "https://en.wikipedia.org/wiki/Crossbow",
+      "needs": [
+        "stock|tiller",
+        "prod|lath",
+        "composite|steel_bow",
+        "bowstring",
+        "nut",
+        "trigger",
+        "sear",
+        "stirrup",
+        "windlass|cranequin",
+        "bolt|quarrel",
+        "sight"
+      ]
+    },
+    "longbow": {
+      "src": "https://en.wikipedia.org/wiki/English_longbow",
+      "note": "The stave is cut so heartwood is on the belly and sapwood on the back: one resists compression, the other tension, and it is a natural composite in a single piece.",
+      "needs": [
+        "yew_stave",
+        "heartwood",
+        "sapwood",
+        "tiller",
+        "nock",
+        "horn_tip",
+        "bowstring",
+        "hemp|linen",
+        "serving",
+        "arrow",
+        "bodkin_point",
+        "goose_fletching"
+      ]
+    },
+    "battering_ram": {
+      "src": "https://en.wikipedia.org/wiki/Battering_ram",
+      "needs": [
+        "log|beam",
+        "iron_head",
+        "ram_cap",
+        "chain|rope",
+        "suspension_frame",
+        "wheeled_frame",
+        "roof|penthouse",
+        "hide_covering",
+        "wheel",
+        "axle"
+      ]
+    },
+    "sarissa": {
+      "src": "https://en.wikipedia.org/wiki/Sarissa",
+      "needs": [
+        "cornel_wood_shaft",
+        "two_piece_joint",
+        "bronze_sleeve",
+        "iron_spearhead",
+        "butt_spike|sauroter",
+        "binding"
+      ]
+    },
+    "gladius": {
+      "src": "https://en.wikipedia.org/wiki/Gladius",
+      "needs": [
+        "steel",
+        "blade",
+        "waisted_edge",
+        "point",
+        "tang",
+        "hilt",
+        "guard",
+        "bone_grip",
+        "pommel",
+        "scabbard",
+        "suspension_ring"
+      ]
+    },
+    "pilum": {
+      "src": "https://en.wikipedia.org/wiki/Pilum",
+      "note": "The soft iron shank is a feature, not a flaw: it bends on impact so the javelin cannot be thrown back and drags on any shield it pierces.",
+      "needs": [
+        "wooden_shaft",
+        "iron_shank",
+        "pyramidal_head",
+        "socket|tang",
+        "rivet",
+        "wooden_peg",
+        "collet"
+      ]
+    },
+    "lorica_segmentata": {
+      "src": "https://en.wikipedia.org/wiki/Lorica_segmentata",
+      "needs": [
+        "iron_band",
+        "girdle_plate",
+        "shoulder_guard",
+        "collar_plate",
+        "leather_strap",
+        "buckle",
+        "hinge",
+        "brass_fitting",
+        "tie_hook",
+        "padded_tunic"
+      ]
+    },
+    "trebuchet": {
+      "src": "https://en.wikipedia.org/wiki/Trebuchet",
+      "needs": [
+        "timber_frame",
+        "axle",
+        "throwing_arm",
+        "counterweight",
+        "counterweight_box",
+        "ballast",
+        "sling",
+        "pouch",
+        "release_pin",
+        "guide_chute",
+        "winch",
+        "rope",
+        "trigger"
+      ]
+    },
+    "matchlock": {
+      "src": "https://en.wikipedia.org/wiki/Matchlock",
+      "needs": [
+        "barrel",
+        "touch_hole",
+        "flash_pan",
+        "pan_cover",
+        "serpentine",
+        "matchcord",
+        "saltpetre_soak",
+        "trigger",
+        "lock_plate",
+        "spring",
+        "stock",
+        "ramrod"
+      ]
+    },
+    "wheellock": {
+      "src": "https://en.wikipedia.org/wiki/Wheellock",
+      "needs": [
+        "barrel",
+        "flash_pan",
+        "steel_wheel",
+        "mainspring",
+        "chain|link",
+        "spanner",
+        "dog_arm",
+        "pyrite",
+        "cock",
+        "sear",
+        "lock_plate",
+        "stock"
+      ]
+    },
+    "flintlock": {
+      "src": "https://en.wikipedia.org/wiki/Flintlock",
+      "needs": [
+        "barrel",
+        "flash_pan",
+        "frizzen",
+        "frizzen_spring",
+        "flint",
+        "leather_grip",
+        "cock|hammer",
+        "mainspring",
+        "tumbler",
+        "sear",
+        "bridle",
+        "lock_plate",
+        "stock",
+        "ramrod"
+      ]
+    },
+    "sonar": {
+      "src": "https://en.wikipedia.org/wiki/Sonar",
+      "needs": [
+        "transducer",
+        "piezoelectric_element",
+        "transducer_array",
+        "dome|fairing",
+        "transmitter",
+        "receiver",
+        "beamformer",
+        "signal_processor",
+        "display",
+        "hydrophone",
+        "cable"
+      ]
+    },
+    "water_clock": {
+      "src": "https://en.wikipedia.org/wiki/Water_clock",
+      "needs": [
+        "vessel",
+        "inflow_orifice",
+        "regulating_tank",
+        "float",
+        "rack|rod",
+        "gear",
+        "pointer",
+        "dial",
+        "overflow",
+        "stand"
+      ]
+    },
+    "antikythera_mechanism": {
+      "src": "https://en.wikipedia.org/wiki/Antikythera_mechanism",
+      "needs": [
+        "bronze_plate",
+        "gear",
+        "triangular_tooth",
+        "arbor",
+        "pin_and_slot",
+        "differential_gear",
+        "front_dial",
+        "back_dial",
+        "spiral_slot",
+        "pointer",
+        "crank",
+        "wooden_case",
+        "inscription_plate"
+      ]
+    },
+    "merkhet": {
+      "src": "https://en.wikipedia.org/wiki/Merkhet",
+      "needs": [
+        "wooden_bar",
+        "plumb_line",
+        "weight",
+        "sighting_slot",
+        "bay|palm_rib",
+        "graduation"
+      ]
+    },
+    "adaptive_optics": {
+      "src": "https://en.wikipedia.org/wiki/Adaptive_optics",
+      "needs": [
+        "laser_guide_star",
+        "sodium_laser",
+        "wavefront_sensor",
+        "shack_hartmann_array",
+        "deformable_mirror",
+        "actuator",
+        "piezoelectric_stack",
+        "tip_tilt_mirror",
+        "real_time_computer",
+        "control_loop"
+      ]
+    },
+    "coronagraph": {
+      "src": "https://en.wikipedia.org/wiki/Coronagraph",
+      "needs": [
+        "telescope",
+        "occulting_disk",
+        "field_lens",
+        "lyot_stop",
+        "apodiser",
+        "baffle",
+        "detector",
+        "cold_stop"
+      ]
+    },
+    "spectrograph": {
+      "src": "https://en.wikipedia.org/wiki/Optical_spectrometer",
+      "needs": [
+        "slit",
+        "collimator",
+        "prism|diffraction_grating",
+        "camera_lens",
+        "detector|ccd_sensor",
+        "calibration_lamp",
+        "order_sorting_filter",
+        "housing"
+      ]
+    },
+    "interferometer": {
+      "src": "https://en.wikipedia.org/wiki/Astronomical_interferometer",
+      "needs": [
+        "telescope",
+        "delay_line",
+        "beam_combiner",
+        "vacuum_pipe",
+        "metrology_laser",
+        "fringe_tracker",
+        "detector",
+        "correlator",
+        "baseline"
+      ]
+    },
+    "james_webb_space_telescope": {
+      "src": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope",
+      "needs": [
+        "beryllium_mirror_segment",
+        "gold_coating",
+        "actuator",
+        "backplane",
+        "secondary_mirror",
+        "sunshield",
+        "kapton_layer",
+        "spacecraft_bus",
+        "solar_panel",
+        "cryocooler",
+        "instrument_module",
+        "detector",
+        "star_tracker",
+        "thruster"
+      ]
+    },
+    "curiosity_rover": {
+      "src": "https://en.wikipedia.org/wiki/Curiosity_(rover)",
+      "needs": [
+        "chassis",
+        "rocker_bogie",
+        "wheel",
+        "drive_motor",
+        "radioisotope_thermoelectric_generator",
+        "plutonium_238",
+        "robotic_arm",
+        "drill",
+        "sample_scoop",
+        "chemcam_laser",
+        "spectrometer",
+        "mast_camera",
+        "antenna",
+        "computer",
+        "heater"
+      ]
+    },
+    "new_horizons": {
+      "src": "https://en.wikipedia.org/wiki/New_Horizons",
+      "needs": [
+        "spacecraft_bus",
+        "radioisotope_thermoelectric_generator",
+        "plutonium_238",
+        "high_gain_antenna",
+        "star_tracker",
+        "thruster",
+        "hydrazine",
+        "imager|lorri",
+        "spectrometer",
+        "dust_counter",
+        "data_recorder"
+      ]
+    },
+    "transmission_electron_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Transmission_electron_microscopy",
+      "needs": [
+        "electron_gun",
+        "field_emission_tip",
+        "accelerator_column",
+        "vacuum_system",
+        "condenser_lens",
+        "electromagnetic_lens",
+        "specimen_holder",
+        "objective_lens",
+        "aperture",
+        "projector_lens",
+        "fluorescent_screen",
+        "ccd_sensor",
+        "cooling_water"
+      ]
+    },
+    "fluorescence_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Fluorescence_microscope",
+      "needs": [
+        "light_source|mercury_lamp",
+        "excitation_filter",
+        "dichroic_mirror",
+        "objective_lens",
+        "emission_filter",
+        "filter_cube",
+        "stage",
+        "fluorophore",
+        "detector|camera"
+      ]
+    },
+    "kaaba": {
+      "src": "https://en.wikipedia.org/wiki/Kaaba",
+      "needs": [
+        "granite_block",
+        "mortar",
+        "foundation",
+        "corner",
+        "black_stone",
+        "silver_frame",
+        "door",
+        "gold_door",
+        "kiswah",
+        "black_silk",
+        "gold_embroidery",
+        "roof",
+        "interior_pillar",
+        "rainspout"
+      ]
+    },
+    "wind_turbine": {
+      "src": "https://en.wikipedia.org/wiki/Wind_turbine",
+      "needs": [
+        "foundation",
+        "tower",
+        "steel_section",
+        "flange_bolt",
+        "yaw_bearing",
+        "yaw_drive",
+        "nacelle",
+        "main_shaft",
+        "gearbox|direct_drive",
+        "generator",
+        "brake",
+        "anemometer",
+        "controller",
+        "hub",
+        "blade",
+        "fibreglass|carbon_fibre",
+        "pitch_bearing",
+        "pitch_drive",
+        "transformer"
+      ]
+    },
+    "abacus": {
+      "src": "https://en.wikipedia.org/wiki/Abacus",
+      "needs": [
+        "frame",
+        "hardwood",
+        "rod|wire",
+        "bead",
+        "reckoning_bar",
+        "separator"
+      ]
+    },
+    "axe": {
+      "src": "https://en.wikipedia.org/wiki/Axe",
+      "needs": [
+        "head",
+        "steel|stone",
+        "bit|edge",
+        "poll",
+        "eye",
+        "haft",
+        "hickory|ash",
+        "wedge",
+        "grinding"
+      ]
+    },
+    "ladder": {
+      "src": "https://en.wikipedia.org/wiki/Ladder",
+      "needs": [
+        "stile|rail",
+        "rung",
+        "timber|aluminium",
+        "mortise|rivet",
+        "tie_rod",
+        "foot",
+        "non_slip_pad"
+      ]
+    },
+    "sieve": {
+      "src": "https://en.wikipedia.org/wiki/Sieve",
+      "needs": [
+        "rim|frame",
+        "mesh",
+        "wire_cloth|woven_mesh",
+        "aperture",
+        "tensioning",
+        "binding",
+        "handle"
+      ]
+    },
+    "binder": {
+      "src": "https://en.wikipedia.org/wiki/Ring_binder",
+      "needs": [
+        "cover_board",
+        "covering",
+        "spine",
+        "ring_mechanism",
+        "ring",
+        "lever",
+        "rivet",
+        "booster",
+        "label_holder"
+      ]
+    },
+    "drawer": {
+      "src": "https://en.wikipedia.org/wiki/Drawer_(furniture)",
+      "needs": [
+        "front",
+        "side",
+        "back",
+        "bottom_panel",
+        "dovetail|dado_joint",
+        "runner",
+        "slide",
+        "stop",
+        "knob|handle",
+        "glue"
+      ]
+    },
+    "desk": {
+      "src": "https://en.wikipedia.org/wiki/Desk",
+      "needs": [
+        "top",
+        "timber",
+        "apron|rail",
+        "leg",
+        "drawer",
+        "runner",
+        "pedestal",
+        "modesty_panel",
+        "joint",
+        "fixing",
+        "finish"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
@@ -5742,6 +10065,7 @@
     "alkylate",
     "alliance",
     "allocation_table",
+    "alum",
     "amine",
     "amplifier",
     "anaerobe",
@@ -5761,15 +10085,18 @@
     "baldric",
     "ball",
     "balsam",
+    "bamboo",
     "bar_stock",
     "barrier",
     "base_course",
     "base_note",
     "baseline",
     "batt",
+    "batten",
     "bay",
     "bearing_seat",
     "bedding",
+    "beeswax",
     "benchmark",
     "bend",
     "berm",
@@ -5819,6 +10146,7 @@
     "catchment",
     "causeway",
     "cavity",
+    "cement",
     "central_bank",
     "centrifuge",
     "chamfer",
@@ -5829,9 +10157,11 @@
     "cheek_piece",
     "chime",
     "chinstrap",
+    "chipboard",
     "chroma_subsampling",
     "chrome",
     "chute",
+    "circle",
     "circlip",
     "clamp",
     "clay_lining",
@@ -5863,6 +10193,7 @@
     "controller",
     "cope",
     "coping",
+    "copper_wire",
     "copy",
     "core",
     "corner_cube",
@@ -5885,7 +10216,9 @@
     "crucible",
     "css",
     "cuisse",
+    "cullet",
     "cultivar",
+    "cuneiform",
     "curing_agent",
     "currying",
     "curve",
@@ -5963,6 +10296,7 @@
     "fleshing",
     "flex",
     "flight",
+    "flint",
     "float_coat",
     "float_glass",
     "fly",
@@ -5981,6 +10315,8 @@
     "grade",
     "gradient",
     "graduation",
+    "granite",
+    "gravel",
     "grease_nipple",
     "greave",
     "grindstone",
@@ -6006,6 +10342,7 @@
     "hollow",
     "honing",
     "hook",
+    "hoop",
     "host",
     "host_crystal",
     "hot_riveting",
@@ -6032,6 +10369,7 @@
     "intermediate_representation",
     "interview",
     "intrados",
+    "inventory_management",
     "invert",
     "jack",
     "javascript",
@@ -6070,15 +10408,18 @@
     "lubricant",
     "lug",
     "lumbar_support",
+    "lye",
     "maceration",
     "machining",
     "manifest",
+    "marble",
     "material",
     "measure",
     "medical_screening",
     "medication",
     "medium",
     "mensa",
+    "mesh",
     "message",
     "meter",
     "metrics",
@@ -6088,10 +10429,12 @@
     "monomer",
     "mooring",
     "mordant",
+    "mortar",
     "moulding",
     "mull",
     "musk",
     "muzzle",
+    "nail",
     "name_server",
     "nasal",
     "net",
@@ -6100,10 +10443,12 @@
     "nitro_group",
     "nitroimidazole",
     "nymphaeum",
+    "obsidian",
     "odometer",
     "official",
     "onset",
     "opcode",
+    "open_pit_mining",
     "optimiser",
     "oscillator",
     "oxidizer",
@@ -6126,6 +10471,7 @@
     "pin",
     "placement",
     "plain_weave",
+    "plank",
     "plasticiser",
     "platform",
     "pleat",
@@ -6148,10 +10494,12 @@
     "profile",
     "props",
     "protocol",
+    "pulp",
     "purlin",
     "quantisation",
     "query",
     "query_planner",
+    "quicklime",
     "quoin",
     "raising",
     "rammer",
@@ -6169,6 +10517,7 @@
     "registration",
     "regulator",
     "rein",
+    "reinforced_concrete",
     "reinforcement",
     "reins",
     "relay",
@@ -6187,6 +10536,7 @@
     "rostrum",
     "rounding",
     "route",
+    "rubber",
     "rubble_core",
     "runout",
     "safety_factor",
@@ -6194,6 +10544,7 @@
     "schema",
     "scraping",
     "scratch_coat",
+    "screed",
     "scupper",
     "seam",
     "select_line",
@@ -6205,14 +10556,19 @@
     "server",
     "session",
     "severity",
+    "shaft",
     "shank",
     "shear_line",
+    "sheet_metal",
     "shoulder",
     "side_effect",
     "sign",
+    "signal",
     "signature",
+    "sinew",
     "sintering",
     "sizing",
+    "slate",
     "sledge",
     "sleeve",
     "slide",
@@ -6247,6 +10603,7 @@
     "stretcher",
     "stretching",
     "strike_plate",
+    "string",
     "strut",
     "stump",
     "sub_base",
@@ -6271,6 +10628,7 @@
     "tapping",
     "tar",
     "target",
+    "teacher",
     "technique",
     "teeth",
     "tempering",
@@ -6291,6 +10649,7 @@
     "tie",
     "tie_rod",
     "tiller",
+    "timber",
     "timing",
     "tls",
     "toe_drain",
@@ -6300,6 +10659,7 @@
     "torque",
     "touchhole",
     "toxicity",
+    "toy",
     "traceability",
     "training",
     "transaction",
@@ -6325,6 +10685,7 @@
     "vial",
     "visor",
     "voussoir",
+    "vulcanised_rubber",
     "wadding",
     "washer",
     "washing",
@@ -6335,11 +10696,120 @@
     "weld",
     "welt",
     "wiring",
+    "wood",
     "working_load_limit",
     "x_height",
+    "x_ray",
     "yield_strength",
     "zero_mark",
-    "zone_file"
+    "zone_file",
+    "ceramic",
+    "cork",
+    "tuff",
+    "dyed_cloth",
+    "graft",
+    "carpenter",
+    "stockpile",
+    "room_and_pillar_mining",
+    "rock_cut_architecture",
+    "clothing",
+    "filament",
+    "neck",
+    "pole",
+    "irrigation",
+    "pivot",
+    "wedge",
+    "agreement",
+    "mortise_and_tenon",
+    "strip_mining",
+    "geological_mapping",
+    "road_freight",
+    "supply_chain_management",
+    "carded_wool",
+    "rose_madder",
+    "stoneware",
+    "rune",
+    "diesel_electric_drive",
+    "stage",
+    "joist",
+    "sole",
+    "cord",
+    "tang",
+    "dye",
+    "cardboard",
+    "shingle",
+    "gothic",
+    "placer_mining",
+    "deposit",
+    "photosite",
+    "electrode",
+    "room",
+    "resource_estimation",
+    "feasibility_study",
+    "gravity_separation",
+    "hypertext",
+    "calcium_hydroxide",
+    "epoxy_resin",
+    "glass_fiber",
+    "phoenician_alphabet",
+    "supply_chain",
+    "logistics",
+    "sales_forecasting",
+    "demand_planning",
+    "material_requirements_planning",
+    "horse_archer",
+    "gram_stain",
+    "assembly_line",
+    "binary_code",
+    "haul_road",
+    "film_reel",
+    "cylinder",
+    "wick",
+    "rim",
+    "rafter",
+    "roof_tile",
+    "grip",
+    "whetstone",
+    "glaze",
+    "jewel",
+    "yarn",
+    "filler",
+    "fabric",
+    "spider_silk",
+    "building",
+    "longwall_mining",
+    "mask",
+    "door_frame",
+    "target_generation",
+    "exploration_drilling",
+    "blasting",
+    "assay",
+    "grade_control",
+    "magnetic_separation",
+    "heap_leach",
+    "knitted_fabric",
+    "taxiway",
+    "runway",
+    "astronomer",
+    "chryselephantine",
+    "greasepaint",
+    "polycarbonate",
+    "bleach",
+    "syenite",
+    "wood_flour",
+    "inventory",
+    "just_in_time",
+    "kanban",
+    "control_rod",
+    "towel",
+    "blanket",
+    "holographic_plate",
+    "interchangeable_parts",
+    "qwerty",
+    "synthetic_rubber",
+    "bioplastic",
+    "pavement",
+    "chain_mail"
   ],
   "$scope_rule": "Which things OWE a parts list. The denominator was read off tags and counted 2,084, and about a third of that could never have had one: 321 were places, which already carry an `of` field naming what they are built of; 126 were dishes, where the recipe IS the parts list and a second one would just restate it; and 294 were drugs and diseases, which are not assembled at all. Excluding those leaves 1,343 artefacts that genuinely have a bill of materials. This is the fourth denominator in this project to have been wrong because it was inferred from tags rather than written down, after $not_assemblies, the coverage row for needs, and the places checklist figure — the pattern is consistent enough to expect.",
   "$scope_exclude_tags": [
