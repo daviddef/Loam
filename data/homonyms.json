@@ -10,6 +10,34 @@
   ],
   "watch": [
     {
+      "id": "abdomen",
+      "sense": "the insect one — the hindmost tagma, carrying no legs",
+      "not": [
+        "abdominal wall",
+        "abdominal cavity",
+        "peritoneum",
+        "the human abdomen"
+      ],
+      "also": [
+        "rib"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
+      "id": "agonist",
+      "sense": "the pharmacological one — a molecule that activates a receptor",
+      "not": [
+        "agonist muscle",
+        "prime mover",
+        "antagonistic muscle",
+        "agonist and antagonist pair"
+      ],
+      "also": [
+        "muscle"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "antenna",
       "sense": "the radio one",
       "not": [
@@ -176,6 +204,20 @@
         "benin_moat"
       ],
       "found": "nothing, but the Walls of Benin are in Nigeria and the trap was one recipe away — and a duplicate element for that monument was found and merged on 5 Sep"
+    },
+    {
+      "id": "bile",
+      "sense": "the digestive fluid",
+      "not": [
+        "black bile",
+        "yellow bile",
+        "choler",
+        "the four humours"
+      ],
+      "also": [
+        "humour"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "bit",
@@ -471,6 +513,21 @@
       "found": "Nothing wrong at the time of writing. Added in the 5 Sep sweep that read every unreviewed single-word name in the corpus, because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
+      "id": "colony",
+      "sense": "the insect society",
+      "not": [
+        "colonial",
+        "colonist",
+        "colonised",
+        "colonized",
+        "settler"
+      ],
+      "also": [
+        "colonialism"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "comb",
       "sense": "the toothed tool",
       "not": [
@@ -547,6 +604,17 @@
         "umbilical_cord_clamp"
       ],
       "found": "Nothing wrong at the time of writing. Added in the 5 Sep sweep that read every unreviewed single-word name in the corpus, because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
+      "id": "coxa",
+      "sense": "the first segment of an insect leg",
+      "not": [
+        "os coxae",
+        "hip bone",
+        "coxal bone",
+        "acetabulum"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "cricket",
@@ -808,6 +876,35 @@
       "found": "nothing yet — watched from the day the word was authored"
     },
     {
+      "id": "fold",
+      "sense": "doubling something over",
+      "not": [
+        "sheepfold",
+        "fold of sheep",
+        "anticline",
+        "syncline",
+        "fold mountains"
+      ],
+      "also": [
+        "fissure"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
+      "id": "follicle",
+      "sense": "the pit a hair grows from",
+      "not": [
+        "ovarian follicle",
+        "follicle fruit",
+        "dehiscent follicle",
+        "graafian"
+      ],
+      "also": [
+        "ovulation"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "foot",
       "sense": "Philippa Foot, the philosopher — this corpus has no body-part foot",
       "not": [
@@ -947,6 +1044,21 @@
       "found": "nothing"
     },
     {
+      "id": "head",
+      "sense": "the vertebrate one — a bony case built around a brain",
+      "not": [
+        "head capsule",
+        "head segment",
+        "arthropod",
+        "chelicerate",
+        "insect keeps head"
+      ],
+      "also": [
+        "head_capsule"
+      ],
+      "found": "The largest sense fault found since `wing`. Five of the six recipes taking `head` meant an ARTHROPOD head — mandible, prosoma, clypeus, tentorium, ocellus — while the element is the vertebrate skull, made from bone + brain. `tentorium`'s own why said 'An arthropod has no bones to pull against' while taking an input made of bone. Fixed 8 Sep by authoring `head_capsule` (exoskeleton + segment) and repointing all five. Only brain + head -> phrenology still means this one."
+    },
+    {
       "id": "heart",
       "sense": "the organ",
       "not": [
@@ -972,6 +1084,31 @@
       ],
       "also": [],
       "found": "nothing"
+    },
+    {
+      "id": "hive",
+      "sense": "a bee colony's house",
+      "not": [
+        "hives",
+        "urticaria",
+        "nettle rash",
+        "weal"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
+      "id": "iris",
+      "sense": "the ring of muscle around the pupil",
+      "not": [
+        "iris flower",
+        "rainbow goddess",
+        "bearded iris",
+        "fleur-de-lis"
+      ],
+      "also": [
+        "flower"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "jar",
@@ -1243,6 +1380,17 @@
       "found": "Nothing wrong at the time of writing. Added in the 5 Sep sweep that read every unreviewed single-word name in the corpus, because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
+      "id": "mandible",
+      "sense": "an insect's jaw, swinging sideways",
+      "not": [
+        "lower jaw",
+        "jawbone",
+        "mandibular condyle",
+        "the human jaw"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "mantle",
       "sense": "the Earth's layer between crust and core",
       "not": [
@@ -1361,6 +1509,20 @@
       ],
       "also": [],
       "found": "nothing"
+    },
+    {
+      "id": "mouth",
+      "sense": "the opening digestion starts at",
+      "not": [
+        "mouth of the river",
+        "river mouth",
+        "estuary",
+        "mouth of a cave"
+      ],
+      "also": [
+        "river"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "nail",
@@ -1515,6 +1677,20 @@
       ],
       "also": [],
       "found": "nothing"
+    },
+    {
+      "id": "ovary",
+      "sense": "the animal gonad",
+      "not": [
+        "carpel",
+        "pistil",
+        "ovary of a flower",
+        "ovary wall becomes"
+      ],
+      "also": [
+        "flower"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "phalanx",
@@ -1848,6 +2024,17 @@
       "found": "amniote+scale→sauropsid, insect+scale→moth, scale+shark→silky_shark, plank+scale→ruler"
     },
     {
+      "id": "segment",
+      "sense": "the repeating unit of an arthropod body",
+      "not": [
+        "line segment",
+        "segment of a circle",
+        "market segment",
+        "customer segment"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "set",
       "sense": "the Egyptian god of chaos, storms and the desert",
       "not": [
@@ -1862,6 +2049,20 @@
         "set_math"
       ],
       "found": "equation+set→function"
+    },
+    {
+      "id": "seta",
+      "sense": "the arthropod bristle in its socket",
+      "not": [
+        "moss seta",
+        "sporophyte",
+        "bryophyte",
+        "capsule on a stalk"
+      ],
+      "also": [
+        "moss"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "shaft",
@@ -2201,6 +2402,20 @@
       "found": "Nothing wrong at the time of writing. Added on 6 Sep with the word itself, in the W2 insect-anatomy batch, because this corpus already carries the other sense or is one recipe away from it."
     },
     {
+      "id": "thorax",
+      "sense": "the insect one — the middle tagma, carrying every leg and wing",
+      "not": [
+        "ribcage",
+        "rib cage",
+        "chest wall",
+        "thoracic cavity"
+      ],
+      "also": [
+        "rib"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
       "id": "thread",
       "sense": "the twisted fibre",
       "not": [
@@ -2364,6 +2579,20 @@
         "xylem"
       ],
       "found": "Nothing wrong at the time of writing. Added in the 5 Sep sweep that read every unreviewed single-word name in the corpus, because this word carries a second sense that is live in Loam and one recipe away."
+    },
+    {
+      "id": "ventricle",
+      "sense": "the heart's pumping chamber",
+      "not": [
+        "lateral ventricle",
+        "fourth ventricle",
+        "cerebrospinal",
+        "ventricles of the brain"
+      ],
+      "also": [
+        "brain"
+      ],
+      "found": "Nothing wrong at the time of writing. Reviewed in the 8 Sep sweep that cleared the last thirty unreviewed single-word names, and watched because this word carries a second sense that is live in Loam and one recipe away."
     },
     {
       "id": "vine",
@@ -2760,6 +2989,7 @@
     "chassis",
     "checksum",
     "cheese",
+    "chelicera",
     "chemosynthesis",
     "chestnut",
     "chick",
@@ -2795,6 +3025,7 @@
     "clock",
     "cloning",
     "clostridium",
+    "clot",
     "cloth",
     "clothing",
     "cloud",
@@ -2904,6 +3135,7 @@
     "dial",
     "diamond",
     "diaphragm",
+    "diatom_organism",
     "dicot",
     "difference",
     "dill",
@@ -3076,6 +3308,7 @@
     "garlic",
     "gas",
     "gastrula",
+    "gautama_buddha",
     "gear",
     "gearbox",
     "gelatin",
@@ -3174,6 +3407,7 @@
     "hoop",
     "hoplite",
     "hopper",
+    "hormone",
     "horn",
     "horse",
     "horus",
@@ -3216,6 +3450,7 @@
     "insulin",
     "internet",
     "interrupt",
+    "intestine",
     "invertebrate",
     "iodine",
     "ion",
@@ -3380,8 +3615,10 @@
     "membrane",
     "meninges",
     "mesh",
+    "mesosoma",
     "metal",
     "metamorphosis",
+    "metasoma",
     "meteorite",
     "methane",
     "methanogen",
@@ -3515,6 +3752,7 @@
     "onion",
     "oomycete",
     "operon",
+    "opisthosoma",
     "orbit",
     "orca",
     "orchestra",
@@ -3586,6 +3824,7 @@
     "petrol",
     "petroleum",
     "phagocytosis",
+    "pharynx",
     "phenol",
     "phenotype",
     "phenylalanine",
@@ -3769,6 +4008,7 @@
     "russia",
     "rutile",
     "rye",
+    "safflower",
     "saffron",
     "sahara",
     "sail",
@@ -3844,6 +4084,7 @@
     "skinner",
     "skull",
     "sky",
+    "sleep",
     "smoke",
     "snail",
     "snake",
@@ -4029,6 +4270,7 @@
     "uracil",
     "uranium",
     "uranus",
+    "uranus_planet",
     "urbanization",
     "urethra",
     "uruk",

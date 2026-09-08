@@ -103088,7 +103088,7 @@
   {
     "in": [
       "chitin",
-      "head"
+      "head_capsule"
     ],
     "out": "mandible",
     "why": "The paired appendages of the fourth head segment, and unlike every other mouthpart they are compact, undivided and strongly sclerotized — one solid piece, made for the mechanical work of breaking food up.",
@@ -103353,7 +103353,7 @@
   },
   {
     "in": [
-      "head",
+      "head_capsule",
       "thorax"
     ],
     "out": "prosoma",
@@ -104526,7 +104526,7 @@
   },
   {
     "in": [
-      "head",
+      "head_capsule",
       "sclerite"
     ],
     "out": "clypeus",
@@ -104581,7 +104581,7 @@
   },
   {
     "in": [
-      "head",
+      "head_capsule",
       "muscle"
     ],
     "out": "tentorium",
@@ -104592,7 +104592,7 @@
   },
   {
     "in": [
-      "head",
+      "head_capsule",
       "lens"
     ],
     "out": "ocellus",
@@ -105052,5 +105052,14 @@
     "out": "alpha_linolenic_acid",
     "why": "Seed oils are the richest sources of it — flaxseed, hempseed, chia, perilla, canola — and flax gave the molecule its name, from linon.",
     "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
+  },
+  {
+    "in": [
+      "exoskeleton",
+      "segment"
+    ],
+    "out": "head_capsule",
+    "why": "The insect head is enclosed in a hard, heavily sclerotised exoskeletal capsule made of six segments, each bearing one pair of head appendages. The thorax keeps its segments visibly apart; the head is the tagma where they have fused completely.",
+    "src": "https://en.wikipedia.org/wiki/Insect_morphology"
   }
 ]

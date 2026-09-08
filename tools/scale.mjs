@@ -281,7 +281,7 @@ const SCALE = {
           /* W4 physiology fourth pass, 6 Sep */
           'periosteum', 'synovial_fluid', 'neural_tube', 'germ_layer',
           /* W2 insects third pass, 6 Sep */
-          'tergite', 'sternite', 'pleurite', 'pronotum', 'tegmen', 'cercus', 'worker_ant', 'soldier_ant', 'alate', 'soldier_termite', 'trophallaxis',
+          'tergite', 'sternite', 'pleurite', 'pronotum', 'head_capsule', 'tegmen', 'cercus', 'worker_ant', 'soldier_ant', 'alate', 'soldier_termite', 'trophallaxis',
           /* W4 physiology third pass, 6 Sep */
           'goosebump',
           /* W4 physiology second pass, 6 Sep */
