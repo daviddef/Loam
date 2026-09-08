@@ -613,6 +613,26 @@
         "src": "https://en.wikipedia.org/wiki/Blood-borne_disease"
       }
     ],
+    "blue_ringed_octopus": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Tetrodotoxin, the same molecule as the pufferfish's, and it is made by bacteria the animal carries rather than by the animal. It blocks sodium channels, so the paralysis is complete while the person stays fully conscious. The bite is often painless and the octopus is docile — there is no record of one attacking anybody.",
+        "src": "https://en.wikipedia.org/wiki/Blue_ringed_octopus"
+      }
+    ],
+    "body_louse": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The louse lives in clothing rather than on the body, and it carries epidemic typhus, trench fever and relapsing fever between people. Its history is the history of crowding: armies, prisons, refugee camps.",
+        "src": "https://en.wikipedia.org/wiki/Body_louse"
+      }
+    ],
     "bone": [
       {
         "valence": "harm",
@@ -630,6 +650,16 @@
         "onset": "conditional",
         "mechanism": "Cellulose and ink. There is nothing in a book a human gut can take apart, which is why the fibre in a plant and the fibre in a page are the same problem.",
         "src": "https://en.wikipedia.org/wiki/Cellulose"
+      }
+    ],
+    "box_jellyfish": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Not a bite and not a sting in the insect sense: every tentacle is loaded with nematocysts, and the trigger is chemical and mechanical contact rather than the animal's decision. Chironex fleckeri's venom acts on the heart, and the pain alone has drowned people who were swimming.",
+        "src": "https://en.wikipedia.org/wiki/Chironex_fleckeri"
       }
     ],
     "bracken_fern": [
@@ -733,6 +763,16 @@
         "src": "https://en.wikipedia.org/wiki/Goitrogen"
       }
     ],
+    "cane_toad": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The parotoid glands behind the eyes secrete bufotoxins, which act on the heart the way digitalis does. The toad does not deliver it — it only has to be mouthed or handled, which is why the animals it kills are the predators that have never met one.",
+        "src": "https://en.wikipedia.org/wiki/Cane_toad"
+      }
+    ],
     "carbon": [
       {
         "valence": "inert",
@@ -832,6 +872,16 @@
         "src": "https://en.wikipedia.org/wiki/Urushiol"
       }
     ],
+    "centipede": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The first pair of legs, not mouthparts, are modified into venom claws — forcipules, unique to centipedes. Human envenomation is intensely painful and almost never worse than that, because the venom was built for arthropods.",
+        "src": "https://en.wikipedia.org/wiki/Centipede"
+      }
+    ],
     "cheese": [
       {
         "valence": "benefit",
@@ -871,6 +921,16 @@
         "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
       }
     ],
+    "chimpanzee": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "An adult chimpanzee is stronger than a person of the same weight and its attacks target the extremities — hands, feet, face. The animals responsible are usually ones that were kept as pets and reached maturity.",
+        "src": "https://en.wikipedia.org/wiki/Chimpanzee"
+      }
+    ],
     "chlorinated_hydrocarbon": [
       {
         "valence": "harm",
@@ -889,6 +949,16 @@
         "onset": "acute",
         "mechanism": "Its anaesthetic action and its liver toxicity are unrelated properties that happen to arrive together, which is why it was abandoned for surgery while ether was not. The metabolite is phosgene, made in the liver.",
         "src": "https://en.wikipedia.org/wiki/Chloroform"
+      }
+    ],
+    "clam": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "A bivalve filters and concentrates, and what it concentrates includes the toxins of the plankton it feeds on. Saxitoxin is heat-stable, so cooking, canning, freezing, pickling, salting and smoking all leave it intact — nothing a kitchen can do reaches it.",
+        "src": "https://en.wikipedia.org/wiki/Paralytic_shellfish_poisoning"
       }
     ],
     "clay": [
@@ -1011,6 +1081,26 @@
         "src": "https://en.wikipedia.org/wiki/Cattle#Safety"
       }
     ],
+    "coyote": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Attacks on people are rare and almost always involve animals that have been fed, deliberately or not, until they stop treating people as a threat. Children are the usual victims for the ordinary reason of size.",
+        "src": "https://en.wikipedia.org/wiki/Coyote"
+      }
+    ],
+    "crown_of_thorns": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "The spines are the whole mechanism: they puncture, they carry saponins and plancitoxin, and they break off inside the wound. The fragments left behind are what turn a painful injury into an infected one weeks later.",
+        "src": "https://en.wikipedia.org/wiki/Crown_of_thorns_starfish"
+      }
+    ],
     "current": [
       {
         "valence": "harm",
@@ -1030,6 +1120,16 @@
         "reversible": false,
         "mechanism": "It stops the enzyme at the end of the respiratory chain, so cells cannot use oxygen even though the blood is full of it. The person is hypoxic with red venous blood, which is the diagnostic oddity.",
         "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
+      }
+    ],
+    "cyanobacteria": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "conditional",
+        "mechanism": "They are not algae and the distinction matters: these are bacteria, and a bloom can carry both hepatotoxins and neurotoxins. The toxins are released when the cells die, so treating a bloom can raise the concentration before it lowers it.",
+        "src": "https://en.wikipedia.org/wiki/Cyanobacteria"
       }
     ],
     "death_cap": [
@@ -1105,6 +1205,16 @@
         "onset": "cumulative",
         "mechanism": "Choline goes into every cell membrane as phosphatidylcholine and into acetylcholine, the transmitter at every neuromuscular junction. The body makes some and not enough, and the yolk is the densest ordinary source.",
         "src": "https://en.wikipedia.org/wiki/Choline"
+      }
+    ],
+    "egyptian_cobra": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "The venom is predominantly neurotoxic and blocks transmission at the neuromuscular junction, so what fails is breathing rather than circulation. It does not need to strike from cover; the hood display is a warning the animal would rather be heeded.",
+        "src": "https://en.wikipedia.org/wiki/Egyptian_cobra"
       }
     ],
     "electricity": [
@@ -1183,6 +1293,16 @@
         "reversible": false,
         "mechanism": "Protein denatures above about 44 °C given long enough, so depth is temperature and time together rather than temperature alone. A low heat held against skin does what a brief high one does.",
         "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "fire_salamander": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "poisoning",
+        "onset": "contact",
+        "mechanism": "Samandarin is secreted from glands in the skin, so the animal is poisonous rather than venomous — nothing is delivered, it only has to be handled. The bright markings are honest advertising.",
+        "src": "https://en.wikipedia.org/wiki/Fire_salamander"
       }
     ],
     "fish": [
@@ -1318,6 +1438,16 @@
         "src": "https://en.wikipedia.org/wiki/Phytophotodermatitis"
       }
     ],
+    "gila_monster": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "One of very few venomous lizards, and the delivery is primitive: there is no injecting fang, so it chews the venom in along grooved teeth and holds on. Bites are rarely fatal to people and are famously hard to break.",
+        "src": "https://en.wikipedia.org/wiki/Gila_monster"
+      }
+    ],
     "glacier": [
       {
         "valence": "harm",
@@ -1407,6 +1537,15 @@
         "onset": "acute",
         "mechanism": "A hammer works by delivering its momentum in a very short time, and a bone answers the same physics as a nail: it fails in bending long before it fails in compression.",
         "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+      }
+    ],
+    "head_louse": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "The honest answer is almost nothing. Head lice are obligate parasites and a considerable nuisance, and they are not vectors: unlike the body louse, which lives in clothing and carries typhus, the head louse transmits no disease at all. The itch is an allergic response, and that is the entire harm.",
+        "src": "https://en.wikipedia.org/wiki/Head_louse"
       }
     ],
     "hexane": [
@@ -1657,6 +1796,26 @@
         "onset": "cumulative",
         "mechanism": "The same lactic fermentation, at a lower temperature and over longer, with the bacteria shifting in sequence as the acidity climbs.",
         "src": "https://en.wikipedia.org/wiki/Kimchi"
+      }
+    ],
+    "king_cobra": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "It delivers enough neurotoxin in one bite to matter at human scale, which is a function of volume rather than potency — the venom is not the most toxic of the elapids, and the snake is the largest.",
+        "src": "https://en.wikipedia.org/wiki/Ophiophagus_hannah"
+      }
+    ],
+    "komodo_dragon": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The old story was septic bacteria in the mouth. The animal does have venom glands, and the current account is that the venom prevents clotting while the wound is what kills — so the two explanations were never really alternatives.",
+        "src": "https://en.wikipedia.org/wiki/Komodo_dragon"
       }
     ],
     "larkspur": [
@@ -1964,6 +2123,16 @@
         "src": "https://en.wikipedia.org/wiki/Phoradendron"
       }
     ],
+    "mongoose": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "rabies",
+        "onset": "acute",
+        "mechanism": "It is a rabies reservoir in the places it has been introduced, and that is the whole hazard. The virus travels from the bite along the nerves to the brain over weeks, and once neurological symptoms begin it is almost always fatal — which is why the window for treatment is before anything is felt.",
+        "src": "https://en.wikipedia.org/wiki/Rabies"
+      }
+    ],
     "moon": [
       {
         "valence": "inert",
@@ -2259,6 +2428,16 @@
         "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
       }
     ],
+    "piranha": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "conditional",
+        "mechanism": "The pack-hunting reputation is mostly invention, and the teeth are not: interlocking triangular blades that take a clean semicircle out of whatever they close on. Bites happen to feet in shallow water in the dry season, when the fish are crowded.",
+        "src": "https://en.wikipedia.org/wiki/Piranha"
+      }
+    ],
     "plank": [
       {
         "valence": "harm",
@@ -2308,6 +2487,16 @@
         "src": "https://en.wikipedia.org/wiki/Phytolacca_americana"
       }
     ],
+    "polar_bear": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "The only bear that treats a person as food rather than as a threat to be removed, and the attacks that have been recorded were disproportionately by adult males in poor condition. Attacks are rare because encounters are rare, not because the animal hesitates.",
+        "src": "https://en.wikipedia.org/wiki/Polar_bear"
+      }
+    ],
     "pork": [
       {
         "valence": "benefit",
@@ -2350,6 +2539,16 @@
         "src": "https://en.wikipedia.org/wiki/Food_allergy"
       }
     ],
+    "psilocybin_mushroom": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "Psilocybin is dephosphorylated in the body to psilocin, which acts on serotonin receptors in the brain. The physiological toxicity is low and the risk is behavioural — and the greater danger for a forager is the several genuinely lethal species that look similar.",
+        "src": "https://en.wikipedia.org/wiki/Psilocybin_mushroom"
+      }
+    ],
     "psyllium": [
       {
         "valence": "harm",
@@ -2367,6 +2566,16 @@
         "onset": "conditional",
         "mechanism": "Nothing sticks to it and nothing reacts with it, because the fluorine shell around the carbon chain is about as chemically closed as an organic molecule gets. Solid PTFE passes through a gut unchanged, which is what makes it a vascular graft material.",
         "src": "https://en.wikipedia.org/wiki/Polytetrafluoroethylene"
+      }
+    ],
+    "puffball": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "inflammation",
+        "onset": "acute",
+        "mechanism": "The identification hazard is the famous one, but a puffball has an effect of its own. A mature one releases spores in enormous numbers, and inhaling them causes lycoperdonosis — an inflammation of the lung tissue itself rather than an infection of it.",
+        "src": "https://en.wikipedia.org/wiki/Lycoperdonosis"
       }
     ],
     "pumpkin_seed": [
@@ -2573,6 +2782,26 @@
         "src": "https://en.wikipedia.org/wiki/Sauerkraut"
       }
     ],
+    "scabies_mite": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "The mite burrows into the outer skin and the itch is not the burrowing — it is an allergic response to the mite and its waste, which is why it takes weeks to start on a first infestation and hours on a second.",
+        "src": "https://en.wikipedia.org/wiki/Scabies"
+      }
+    ],
+    "scorpion": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "neurotoxin",
+        "onset": "conditional",
+        "mechanism": "Most stings are pain and swelling and nothing else. The exceptions are concentrated in one family, Buthidae, whose venom holds peptides that hold sodium channels open — so the danger is not scorpions but a handful of genera.",
+        "src": "https://en.wikipedia.org/wiki/Scorpion"
+      }
+    ],
     "sea": [
       {
         "valence": "harm",
@@ -2743,6 +2972,16 @@
         "onset": "conditional",
         "mechanism": "Clostridium tetani spores are ordinary soil bacteria and harmless to swallow. They germinate only where oxygen has been shut out, which a deep or crushed wound does for them — which is why a garden scratch is a different question from a garden puncture.",
         "src": "https://en.wikipedia.org/wiki/Tetanus"
+      }
+    ],
+    "solenodon": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "One of very few venomous mammals. The venom runs along a groove in the second lower incisor, which is the same solution the gila monster arrived at independently — a tooth that leaks rather than a tooth that injects.",
+        "src": "https://en.wikipedia.org/wiki/Solenodon"
       }
     ],
     "soot": [
@@ -3004,6 +3243,16 @@
         "src": "https://en.wikipedia.org/wiki/Tetrachloroethylene"
       }
     ],
+    "tick": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The tick is not the disease; it is the delivery. Transmission of the Lyme spirochaete rises sharply with how long it has been attached, because the bacterium has to migrate from the tick's gut to its salivary glands first.",
+        "src": "https://en.wikipedia.org/wiki/Tick"
+      }
+    ],
     "timber": [
       {
         "valence": "harm",
@@ -3105,6 +3354,16 @@
         "iarc": 1,
         "latency": "decades",
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "venom": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Venom evolved independently over a hundred times, which tells you it is cheap to build and worth having. The great majority of venomous animals cannot hurt a person — the burden that exists is concentrated in a small number of species that happen to live where people farm.",
+        "src": "https://en.wikipedia.org/wiki/Venom"
       }
     ],
     "vibrio_cholerae": [
