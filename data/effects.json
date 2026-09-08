@@ -1635,6 +1635,16 @@
         "src": "https://en.wikipedia.org/wiki/Fish_as_food"
       }
     ],
+    "flax": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "alpha_linolenic_acid",
+        "onset": "cumulative",
+        "mechanism": "The richest common source of the omega-3 the body cannot make, and the plant that gave the molecule its name. What the body actually needs is the longer chains made from it, and that conversion is inefficient enough that the amount eaten matters more than it looks.",
+        "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
+      }
+    ],
     "flint": [
       {
         "valence": "harm",
@@ -3370,6 +3380,16 @@
         "src": "https://en.wikipedia.org/wiki/Friction_burn"
       }
     ],
+    "royal_jelly": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "pantothenic_acid",
+        "onset": "cumulative",
+        "mechanism": "Two thirds water, and the interest is all in the trace fraction. It carries pantothenic acid and pyridoxine and none of the fat-soluble vitamins — so as a supplement it supplies a vitamin almost nobody is short of.",
+        "src": "https://en.wikipedia.org/wiki/Royal_jelly"
+      }
+    ],
     "rubber": [
       {
         "valence": "harm",
@@ -3378,6 +3398,16 @@
         "onset": "conditional",
         "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
         "src": "https://en.wikipedia.org/wiki/Latex_allergy"
+      }
+    ],
+    "safflower": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "linoleic_acid",
+        "onset": "cumulative",
+        "mechanism": "More than half linoleic acid by weight, which is about as concentrated as a common food gets in one fatty acid. That is what makes it useful and also what makes it a poor oil to heat: the double bonds that make it essential are the ones that oxidise.",
+        "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
       }
     ],
     "safrole": [
@@ -6072,6 +6102,12 @@
       "note": "The immune system answering something harmless. What is visible is the response, never the substance.",
       "src": "https://en.wikipedia.org/wiki/Allergy"
     },
+    "alpha_linolenic_acid": {
+      "site": "brain",
+      "sign": "flush",
+      "note": "The omega-3 the body cannot make, and the starting point for the longer chains that end up in the membranes of the brain and the retina. The conversion is inefficient, which is why the source in the diet matters.",
+      "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
+    },
     "alzheimers_disease": {
       "site": "brain",
       "sign": "wait",
@@ -6426,6 +6462,12 @@
       "note": "The marrow filling with cells that do not mature, crowding out the ones that would have.",
       "src": "https://en.wikipedia.org/wiki/Leukemia"
     },
+    "linoleic_acid": {
+      "site": "skin",
+      "sign": "flush",
+      "note": "The base the body builds its other fatty acids from, and a structural part of the skin's own water barrier. The first sign of going without it is not an internal one — the skin stops holding water in.",
+      "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
+    },
     "lysine": {
       "site": "bone",
       "sign": "flush",
@@ -6533,6 +6575,12 @@
       "sign": "flush",
       "note": "The exchange happens across a membrane less than a micrometre thick, over a surface the size of a tennis court. Nothing about breathing is a reserve: the body stores no oxygen worth the name.",
       "src": "https://en.wikipedia.org/wiki/Gas_exchange"
+    },
+    "pantothenic_acid": {
+      "site": "liver",
+      "sign": "flush",
+      "note": "Everything it does, it does as coenzyme A — the carrier that fat, sugar and protein all have to be attached to before they can be taken apart or built up. Deficiency in humans is very rare, because the name is literal: it is in nearly every food.",
+      "src": "https://en.wikipedia.org/wiki/Pantothenic_acid"
     },
     "parkinsons_disease": {
       "site": "brain",
