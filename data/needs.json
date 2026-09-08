@@ -293,6 +293,18 @@
         "piston"
       ]
     },
+    "allis_forceps": {
+      "src": "https://en.wikipedia.org/wiki/Allis_clamp",
+      "note": "Inward-curving serrated teeth grip fascia without crushing.",
+      "needs": [
+        "jaw",
+        "ratchet",
+        "hinge",
+        "handle",
+        "teeth",
+        "steel"
+      ]
+    },
     "altar": {
       "src": "https://en.wikipedia.org/wiki/Altar",
       "note": "A raised surface where the thing that matters happens.",
@@ -301,6 +313,21 @@
         "base",
         "cloth",
         "candle"
+      ]
+    },
+    "alternator": {
+      "src": "https://en.wikipedia.org/wiki/Alternator",
+      "note": "The rotor spins electromagnets past fixed windings, avoiding the brushes that wear out in a DC generator.",
+      "needs": [
+        "rotor",
+        "stator",
+        "winding",
+        "diode_pack",
+        "voltage_regulator",
+        "slip_ring",
+        "bearing",
+        "pulley",
+        "housing"
       ]
     },
     "altimeter": {
@@ -993,6 +1020,18 @@
         "ultraviolet"
       ]
     },
+    "barbute": {
+      "src": "https://en.wikipedia.org/wiki/Barbute",
+      "note": "A single-piece Italian skull with a T-shaped opening, the shape deliberately echoing ancient Greek helmets.",
+      "needs": [
+        "steel_skull",
+        "comb|ridge",
+        "face_opening",
+        "chin_strap",
+        "padded_lining",
+        "rivet"
+      ]
+    },
     "barcode_scanner": {
       "src": "https://en.wikipedia.org/wiki/Barcode_reader",
       "needs": [
@@ -1449,6 +1488,19 @@
         "centre_pivot|bolster"
       ]
     },
+    "boiler": {
+      "src": "https://en.wikipedia.org/wiki/Boiler",
+      "note": "Pressure builds where fire meets water — the safety valve is the difference between power and explosion.",
+      "needs": [
+        "firebox",
+        "tube",
+        "drum",
+        "valve",
+        "gauge",
+        "insulation",
+        "foundation"
+      ]
+    },
     "bolt": {
       "src": "https://en.wikipedia.org/wiki/Bolt_(fastener)",
       "note": "A threaded pin that clamps by being stretched.",
@@ -1464,6 +1516,17 @@
       "needs": [
         "rotor",
         "motor"
+      ]
+    },
+    "bone_rongeur": {
+      "src": "https://en.wikipedia.org/wiki/Rongeur",
+      "note": "Spring-loaded steel jaws that gnaw bone away chip by chip.",
+      "needs": [
+        "jaw",
+        "spring",
+        "handle",
+        "hinge",
+        "steel"
       ]
     },
     "book": {
@@ -1723,6 +1786,15 @@
         "anchor",
         "windlass",
         "bridge"
+      ]
+    },
+    "bulldog_clamp": {
+      "src": "https://en.wikipedia.org/wiki/Bulldog_clamp",
+      "needs": [
+        "jaw",
+        "spring",
+        "hinge",
+        "steel"
       ]
     },
     "burgonet": {
@@ -2083,6 +2155,16 @@
         "seat"
       ]
     },
+    "cask": {
+      "src": "https://en.wikipedia.org/wiki/Barrel",
+      "note": "Staves sprung into hoops — watertight without glue.",
+      "needs": [
+        "stave",
+        "hoop",
+        "head",
+        "bung"
+      ]
+    },
     "cassini_huygens": {
       "src": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
       "note": "An orbiter and a lander, and the lander went to a moon with weather.",
@@ -2114,6 +2196,19 @@
         "courtyard",
         "well",
         "mortar"
+      ]
+    },
+    "catalytic_converter": {
+      "src": "https://en.wikipedia.org/wiki/Catalytic_converter",
+      "note": "The washcoat roughens the surface so a tiny amount of platinum does the work of a solid lump.",
+      "needs": [
+        "substrate",
+        "washcoat",
+        "catalyst",
+        "platinum|palladium|rhodium",
+        "casing",
+        "heat_shield",
+        "flange"
       ]
     },
     "cathedral": {
@@ -2174,6 +2269,37 @@
         "track",
         "lead_in",
         "lead_out"
+      ]
+    },
+    "ceiling": {
+      "src": "https://en.wikipedia.org/wiki/Dropped_ceiling",
+      "note": "A grid hung below the structure, hiding the pipes and wires that live in the plenum.",
+      "needs": [
+        "panel|tile",
+        "grid",
+        "main_runner",
+        "cross_tee",
+        "hanger_wire",
+        "wall_angle"
+      ]
+    },
+    "cello": {
+      "src": "https://en.wikipedia.org/wiki/Cello",
+      "note": "Tuned an octave below the viola; the endpin that lets the player sit appeared only in the 1840s.",
+      "needs": [
+        "spruce_top",
+        "maple_back",
+        "maple_rib",
+        "maple_neck",
+        "ebony_fingerboard",
+        "pegbox",
+        "scroll",
+        "bridge",
+        "sound_post",
+        "bass_bar",
+        "tailpiece",
+        "endpin",
+        "string"
       ]
     },
     "cellular_telephone": {
@@ -2261,6 +2387,18 @@
         "upholstery",
         "cloth",
         "foam|padding"
+      ]
+    },
+    "charger": {
+      "src": "https://en.wikipedia.org/wiki/Battery_charger",
+      "needs": [
+        "transformer",
+        "rectifier",
+        "circuit_board",
+        "voltage_regulator",
+        "cable",
+        "connector",
+        "housing"
       ]
     },
     "chariot": {
@@ -2574,6 +2712,21 @@
         "housing"
       ]
     },
+    "coat": {
+      "src": "https://en.wikipedia.org/wiki/Coat_(clothing)",
+      "needs": [
+        "outer_fabric",
+        "lining",
+        "interlining",
+        "button",
+        "buttonhole",
+        "collar",
+        "lapel",
+        "sleeve",
+        "pocket",
+        "seam"
+      ]
+    },
     "coating": {
       "src": "https://en.wikipedia.org/wiki/Coating",
       "note": "A layer added for a property the thing underneath does not have.",
@@ -2832,6 +2985,19 @@
         "pump"
       ]
     },
+    "confocal_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Confocal_microscopy",
+      "note": "A pinhole rejects light from every plane except one, so stacked slices build a 3D image.",
+      "needs": [
+        "laser",
+        "dichroic_mirror",
+        "pinhole",
+        "objective_lens",
+        "photomultiplier|detector",
+        "scanning_mirror",
+        "stage"
+      ]
+    },
     "contact_tracing": {
       "src": "https://en.wikipedia.org/wiki/Contact_tracing",
       "note": "Following an infection backwards and forwards through the people it touched.",
@@ -2921,6 +3087,14 @@
         "capstone",
         "formwork",
         "batter"
+      ]
+    },
+    "corkscrew": {
+      "src": "https://en.wikipedia.org/wiki/Corkscrew",
+      "needs": [
+        "helix|worm",
+        "shaft",
+        "handle"
       ]
     },
     "coronagraph": {
@@ -3062,6 +3236,15 @@
         "main_bearing",
         "thrust_washer",
         "flange"
+      ]
+    },
+    "crate": {
+      "src": "https://en.wikipedia.org/wiki/Crate",
+      "needs": [
+        "board",
+        "corner_post",
+        "nail|screw",
+        "slat"
       ]
     },
     "crayon": {
@@ -3282,6 +3465,24 @@
         "cache"
       ]
     },
+    "deaver_retractor": {
+      "src": "https://en.wikipedia.org/wiki/Retractor_(medical)",
+      "needs": [
+        "blade",
+        "handle",
+        "steel"
+      ]
+    },
+    "debakey_forceps": {
+      "src": "https://en.wikipedia.org/wiki/DeBakey_forceps",
+      "note": "Fine ridges grip vessels without crushing — the atraumatic pattern.",
+      "needs": [
+        "jaw",
+        "handle",
+        "ridging",
+        "steel"
+      ]
+    },
     "debt": {
       "src": "https://en.wikipedia.org/wiki/Debt",
       "note": "A promise to pay later, priced by how likely you are to.",
@@ -3411,6 +3612,19 @@
         "dynamic_brake"
       ]
     },
+    "differential": {
+      "src": "https://en.wikipedia.org/wiki/Differential_(mechanical_device)",
+      "note": "The spider gears walk around when one wheel slips, splitting the torque evenly even when the speeds differ.",
+      "needs": [
+        "ring_gear",
+        "pinion",
+        "spider_gear|planetary_gear",
+        "side_gear",
+        "carrier|case",
+        "bearing",
+        "housing"
+      ]
+    },
     "digital_camera": {
       "src": "https://en.wikipedia.org/wiki/Digital_camera",
       "needs": [
@@ -3428,6 +3642,16 @@
         "viewfinder",
         "body",
         "mount"
+      ]
+    },
+    "dilator": {
+      "src": "https://en.wikipedia.org/wiki/Dilator",
+      "note": "A graduated series, each wider than the last, stretches tissue slowly.",
+      "needs": [
+        "rod",
+        "taper",
+        "steel",
+        "case"
       ]
     },
     "diode": {
@@ -3614,6 +3838,16 @@
         "scraping"
       ]
     },
+    "downpipe": {
+      "src": "https://en.wikipedia.org/wiki/Downspout",
+      "needs": [
+        "pipe",
+        "bracket",
+        "elbow",
+        "outlet_shoe",
+        "connector"
+      ]
+    },
     "dragline_excavator": {
       "src": "https://en.wikipedia.org/wiki/Dragline_excavator",
       "note": "The bucket hangs from a boom on two ropes — one hoists, one drags — reaching 100 metres or more.",
@@ -3750,6 +3984,19 @@
         "seal"
       ]
     },
+    "drone": {
+      "src": "https://en.wikipedia.org/wiki/Quadcopter",
+      "note": "Two rotors spin clockwise and two anticlockwise, so the torques cancel.",
+      "needs": [
+        "frame",
+        "motor",
+        "propeller|rotor",
+        "battery",
+        "flight_controller",
+        "electronic_speed_controller",
+        "receiver"
+      ]
+    },
     "drug": {
       "src": "https://en.wikipedia.org/wiki/Medication",
       "note": "A molecule chosen because of what it does to a target.",
@@ -3789,6 +4036,14 @@
         "housing"
       ]
     },
+    "ear_syringe": {
+      "src": "https://en.wikipedia.org/wiki/Ear_syringe",
+      "needs": [
+        "bulb",
+        "nozzle",
+        "rubber"
+      ]
+    },
     "earthwork": {
       "src": "https://en.wikipedia.org/wiki/Earthworks_(engineering)",
       "note": "Moving soil, and the spoil from the ditch becomes the bank.",
@@ -3800,6 +4055,20 @@
         "revetment",
         "berm",
         "turf"
+      ]
+    },
+    "echo_sounder": {
+      "src": "https://en.wikipedia.org/wiki/Echo_sounding",
+      "note": "Times a ping's round trip to the seafloor, which needs knowing the speed of sound in water at that depth.",
+      "needs": [
+        "transducer",
+        "transmitter",
+        "pulse_generator",
+        "receiver",
+        "amplifier",
+        "display",
+        "timing_circuit",
+        "housing"
       ]
     },
     "economy": {
@@ -4154,6 +4423,16 @@
         "store_room"
       ]
     },
+    "fan": {
+      "src": "https://en.wikipedia.org/wiki/Fan_(machine)",
+      "needs": [
+        "blade",
+        "hub",
+        "motor",
+        "shaft",
+        "housing"
+      ]
+    },
     "farm": {
       "src": "https://en.wikipedia.org/wiki/Farm",
       "needs": [
@@ -4272,6 +4551,17 @@
         "journal"
       ]
     },
+    "film": {
+      "src": "https://en.wikipedia.org/wiki/Photographic_film",
+      "note": "The antihalation layer absorbs light that would otherwise bounce back through the emulsion and blur the image.",
+      "needs": [
+        "base",
+        "emulsion",
+        "silver_halide",
+        "gelatin",
+        "antihalation_layer"
+      ]
+    },
     "film_projector": {
       "src": "https://en.wikipedia.org/wiki/Movie_projector",
       "needs": [
@@ -4369,6 +4659,17 @@
         "compartment"
       ]
     },
+    "firebox": {
+      "src": "https://en.wikipedia.org/wiki/Firebox_(steam_engine)",
+      "note": "Copper inside, steel outside, and stay bolts holding them together under pressure.",
+      "needs": [
+        "copper",
+        "plate",
+        "grate",
+        "door",
+        "flue"
+      ]
+    },
     "firefighter": {
       "src": "https://en.wikipedia.org/wiki/Firefighter",
       "note": "Someone who goes toward it, carrying their own air.",
@@ -4410,6 +4711,18 @@
         "chain",
         "striking_head",
         "swivel"
+      ]
+    },
+    "flanged_mace": {
+      "src": "https://en.wikipedia.org/wiki/Mace_(bludgeon)",
+      "note": "Flanges brazed to the head bite into plate armor instead of glancing off.",
+      "needs": [
+        "steel_head",
+        "flange",
+        "shaft|haft",
+        "grip",
+        "ferrule",
+        "lanyard_ring"
       ]
     },
     "flash_memory": {
@@ -4790,6 +5103,15 @@
         "glue"
       ]
     },
+    "fretboard": {
+      "src": "https://en.wikipedia.org/wiki/Fingerboard",
+      "needs": [
+        "hardwood",
+        "fret",
+        "nut",
+        "inlay"
+      ]
+    },
     "fridge": {
       "src": "https://en.wikipedia.org/wiki/Refrigerator",
       "note": "Moving heat out of a box, which takes work, which is why the back is warm.",
@@ -4957,6 +5279,19 @@
         "post"
       ]
     },
+    "gauntlet": {
+      "src": "https://en.wikipedia.org/wiki/Gauntlet_(glove)",
+      "note": "Overlapping steel plates riveted over a leather glove — a stiff mitten or articulated fingers.",
+      "needs": [
+        "cuff_plate",
+        "metacarpal_plate",
+        "finger_lame",
+        "knuckle_plate",
+        "rivet",
+        "leather_lining",
+        "strap"
+      ]
+    },
     "gearbox": {
       "src": "https://en.wikipedia.org/wiki/Transmission_(mechanical_device)",
       "needs": [
@@ -4989,6 +5324,28 @@
         "shaft",
         "turbine|steam_engine",
         "iron"
+      ]
+    },
+    "germicidal_uv": {
+      "src": "https://en.wikipedia.org/wiki/Ultraviolet_germicidal_irradiation",
+      "note": "UV-C at 254 nm welds a microbe's DNA bases together in pairs that cannot replicate.",
+      "needs": [
+        "quartz_tube",
+        "mercury_vapour",
+        "electrode",
+        "ballast",
+        "reflector",
+        "housing",
+        "power_supply"
+      ]
+    },
+    "gigli_saw": {
+      "src": "https://en.wikipedia.org/wiki/Gigli_saw",
+      "note": "A twisted-wire saw thin enough to slip under the skull.",
+      "needs": [
+        "wire",
+        "handle",
+        "ring"
       ]
     },
     "gladius": {
@@ -5370,6 +5727,27 @@
         "leather|strap"
       ]
     },
+    "harp": {
+      "src": "https://en.wikipedia.org/wiki/Harp",
+      "note": "Strings rise nearly perpendicular from the soundboard, which is what gives the harp its shape.",
+      "needs": [
+        "soundboard",
+        "neck",
+        "column|pillar",
+        "base",
+        "tuning_pin",
+        "string",
+        "grommet"
+      ]
+    },
+    "harrow": {
+      "src": "https://en.wikipedia.org/wiki/Harrow_(tool)",
+      "needs": [
+        "frame",
+        "tine",
+        "drawbar"
+      ]
+    },
     "hat": {
       "src": "https://en.wikipedia.org/wiki/Hat",
       "needs": [
@@ -5403,6 +5781,28 @@
         "brake",
         "cab",
         "operator_seat"
+      ]
+    },
+    "headlight": {
+      "src": "https://en.wikipedia.org/wiki/Headlamp",
+      "needs": [
+        "bulb|lamp",
+        "reflector",
+        "lens",
+        "housing",
+        "mounting_bracket",
+        "wiring_harness"
+      ]
+    },
+    "headphones": {
+      "src": "https://en.wikipedia.org/wiki/Headphones",
+      "needs": [
+        "driver|transducer",
+        "ear_cushion",
+        "headband",
+        "cable",
+        "connector",
+        "housing"
       ]
     },
     "heat_exchanger": {
@@ -5484,6 +5884,18 @@
         "cockpit"
       ]
     },
+    "hellfire_missile": {
+      "src": "https://en.wikipedia.org/wiki/AGM-114_Hellfire",
+      "note": "Homes on a laser spot someone else paints, not the launch aircraft.",
+      "needs": [
+        "seeker",
+        "warhead",
+        "motor",
+        "fin",
+        "propellant",
+        "guidance"
+      ]
+    },
     "helmet": {
       "src": "https://en.wikipedia.org/wiki/Helmet",
       "note": "A hard shell that does not touch the head, and a liner that keeps it that way.",
@@ -5498,6 +5910,29 @@
         "chinstrap",
         "rivet",
         "visor"
+      ]
+    },
+    "hemostat": {
+      "src": "https://en.wikipedia.org/wiki/Hemostat",
+      "note": "Kocher's ratchet locks the clamp shut with no hand holding it.",
+      "needs": [
+        "jaw",
+        "ratchet",
+        "hinge",
+        "handle",
+        "steel"
+      ]
+    },
+    "hepa_filter": {
+      "src": "https://en.wikipedia.org/wiki/HEPA",
+      "note": "Certified to trap 99.97% of particles at 0.3 micrometres — the size that slips through most easily.",
+      "needs": [
+        "fiberglass_mat",
+        "pleated_media",
+        "aluminium_separator",
+        "frame",
+        "gasket",
+        "wire_mesh"
       ]
     },
     "highlighter": {
@@ -5763,6 +6198,16 @@
         "vent"
       ]
     },
+    "hub": {
+      "src": "https://en.wikipedia.org/wiki/Wheel_hub_assembly",
+      "needs": [
+        "shell",
+        "bearing",
+        "seal",
+        "flange",
+        "stud"
+      ]
+    },
     "hubble_space_telescope": {
       "src": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
       "note": "A telescope above the air, and a mirror ground precisely to the wrong shape.",
@@ -5865,6 +6310,19 @@
         "silo"
       ]
     },
+    "icebreaker": {
+      "src": "https://en.wikipedia.org/wiki/Icebreaker",
+      "note": "The hull bends and breaks ice by riding up onto it, not ramming.",
+      "needs": [
+        "hull",
+        "bow",
+        "propeller",
+        "engine",
+        "ballast_tank",
+        "rudder",
+        "deck"
+      ]
+    },
     "icsi_needle": {
       "src": "https://en.wikipedia.org/wiki/Intracytoplasmic_sperm_injection",
       "needs": [
@@ -5933,6 +6391,14 @@
         "inflammation",
         "fever",
         "phagocytosis"
+      ]
+    },
+    "inner_tube": {
+      "src": "https://en.wikipedia.org/wiki/Inner_tube",
+      "needs": [
+        "rubber_tube",
+        "valve",
+        "valve_stem"
       ]
     },
     "insole": {
@@ -6061,6 +6527,31 @@
         "headphone_jack",
         "case|housing",
         "circuit_board"
+      ]
+    },
+    "jacket": {
+      "src": "https://en.wikipedia.org/wiki/Jacket",
+      "needs": [
+        "outer_fabric",
+        "lining",
+        "button",
+        "zipper|closure",
+        "collar",
+        "sleeve",
+        "pocket",
+        "seam"
+      ]
+    },
+    "jacquard_loom": {
+      "src": "https://en.wikipedia.org/wiki/Jacquard_machine",
+      "note": "The punched card was the first mass storage — one card per row of the design.",
+      "needs": [
+        "loom",
+        "punched_card",
+        "card_reader",
+        "hook",
+        "needle",
+        "harness"
       ]
     },
     "james_webb_space_telescope": {
@@ -6200,6 +6691,19 @@
         "sidebars"
       ]
     },
+    "katzbalger": {
+      "src": "https://en.wikipedia.org/wiki/Katzbalger",
+      "note": "A short, sturdy sword with a distinctive S-shaped guard, the Landsknecht's backup weapon.",
+      "needs": [
+        "blade",
+        "ricasso",
+        "s_guard",
+        "grip",
+        "ferrule",
+        "pommel",
+        "tang"
+      ]
+    },
     "keep": {
       "src": "https://en.wikipedia.org/wiki/Keep",
       "needs": [
@@ -6308,6 +6812,17 @@
         "toaster"
       ]
     },
+    "kite": {
+      "src": "https://en.wikipedia.org/wiki/Kite",
+      "note": "The bridle sets the angle of attack; wrong and the kite dives or will not lift.",
+      "needs": [
+        "spar|frame",
+        "sail|skin",
+        "bridle",
+        "flying_line",
+        "tail"
+      ]
+    },
     "kite_shield": {
       "src": "https://en.wikipedia.org/wiki/Kite_shield",
       "needs": [
@@ -6382,6 +6897,14 @@
         "non_slip_pad"
       ]
     },
+    "ladle": {
+      "src": "https://en.wikipedia.org/wiki/Ladle_(spoon)",
+      "needs": [
+        "bowl",
+        "handle",
+        "rivet|weld"
+      ]
+    },
     "lamp": {
       "src": "https://en.wikipedia.org/wiki/Electric_light",
       "needs": [
@@ -6417,6 +6940,31 @@
         "uplock"
       ]
     },
+    "laptop": {
+      "src": "https://en.wikipedia.org/wiki/Laptop",
+      "needs": [
+        "motherboard",
+        "cpu",
+        "ram",
+        "ssd|hard_drive",
+        "display",
+        "keyboard",
+        "trackpad",
+        "battery",
+        "hinge",
+        "chassis"
+      ]
+    },
+    "laryngoscope": {
+      "src": "https://en.wikipedia.org/wiki/Laryngoscope",
+      "note": "Macintosh's curve lifts the epiglottis indirectly to spare the teeth.",
+      "needs": [
+        "blade",
+        "handle",
+        "light",
+        "battery"
+      ]
+    },
     "laser": {
       "src": "https://en.wikipedia.org/wiki/Laser",
       "note": "A gain medium between two mirrors, and something to pump energy into it. One mirror is deliberately imperfect, and the light that leaks through it is the beam.",
@@ -6445,6 +6993,15 @@
         "contact",
         "heat_sink",
         "package"
+      ]
+    },
+    "latch": {
+      "src": "https://en.wikipedia.org/wiki/Latch_(hardware)",
+      "needs": [
+        "bolt",
+        "spring",
+        "strike_plate",
+        "handle"
       ]
     },
     "lathe": {
@@ -6672,6 +7229,14 @@
         "wind",
         "water",
         "microplastic"
+      ]
+    },
+    "litter_bin": {
+      "src": "https://en.wikipedia.org/wiki/Waste_container",
+      "needs": [
+        "liner",
+        "mount",
+        "lid"
       ]
     },
     "load": {
@@ -6904,6 +7469,32 @@
         "sight"
       ]
     },
+    "m249_saw": {
+      "src": "https://en.wikipedia.org/wiki/M249_light_machine_gun",
+      "note": "Belt-fed but fires the same round as the squad's rifles.",
+      "needs": [
+        "receiver",
+        "barrel",
+        "bipod",
+        "belt_feed",
+        "stock",
+        "trigger",
+        "gas_tube"
+      ]
+    },
+    "m2_browning": {
+      "src": "https://en.wikipedia.org/wiki/M2_Browning",
+      "note": "Browning's 1918 design still in production a century later.",
+      "needs": [
+        "receiver",
+        "barrel",
+        "bolt",
+        "tripod",
+        "belt_feed",
+        "trigger",
+        "recoil_buffer"
+      ]
+    },
     "machine": {
       "src": "https://en.wikipedia.org/wiki/Machine",
       "note": "Anything that changes a force or a motion into a different one.",
@@ -6958,6 +7549,17 @@
         "fountain"
       ]
     },
+    "magill_forceps": {
+      "src": "https://en.wikipedia.org/wiki/Magill_forceps",
+      "note": "The angle lets you guide a tube past the vocal cords under direct vision.",
+      "needs": [
+        "jaw",
+        "hinge",
+        "handle",
+        "curve",
+        "steel"
+      ]
+    },
     "magnet": {
       "src": "https://en.wikipedia.org/wiki/Magnet",
       "note": "Domains lined up, and something to stop them wandering back.",
@@ -7010,6 +7612,18 @@
         "waveguide_flange"
       ]
     },
+    "main_gauche": {
+      "src": "https://en.wikipedia.org/wiki/Parrying_dagger",
+      "note": "A parrying dagger for the off hand, its ring-guard curved to trap an opponent's blade.",
+      "needs": [
+        "blade",
+        "quillon",
+        "ring_guard",
+        "knuckle_bow",
+        "grip",
+        "pommel"
+      ]
+    },
     "malbork": {
       "src": "https://en.wikipedia.org/wiki/Malbork_Castle",
       "note": "The largest brick castle in the world, built as a headquarters rather than a fortress.",
@@ -7036,6 +7650,16 @@
         "mammoth_skull",
         "hide",
         "weight"
+      ]
+    },
+    "manhole": {
+      "src": "https://en.wikipedia.org/wiki/Manhole",
+      "needs": [
+        "cover",
+        "frame",
+        "cast_iron",
+        "shaft",
+        "step_iron|ladder"
       ]
     },
     "map": {
@@ -7094,6 +7718,37 @@
         "spring",
         "stock",
         "ramrod"
+      ]
+    },
+    "mattress": {
+      "src": "https://en.wikipedia.org/wiki/Mattress",
+      "needs": [
+        "spring|foam",
+        "padding",
+        "ticking",
+        "handle",
+        "quilting"
+      ]
+    },
+    "maximilian_armor": {
+      "src": "https://en.wikipedia.org/wiki/Maximilian_armour",
+      "note": "Steel hammered into close-set parallel flutes for rigidity without extra weight.",
+      "needs": [
+        "armet",
+        "gorget",
+        "breastplate",
+        "backplate",
+        "pauldron",
+        "rerebrace",
+        "couter",
+        "vambrace",
+        "gauntlet",
+        "fauld",
+        "tasset",
+        "cuisse",
+        "poleyn",
+        "greave",
+        "sabaton"
       ]
     },
     "mbira": {
@@ -7377,6 +8032,14 @@
         "power_supply"
       ]
     },
+    "mop": {
+      "src": "https://en.wikipedia.org/wiki/Mop",
+      "needs": [
+        "pole|handle",
+        "head",
+        "yarn|cotton|microfibre"
+      ]
+    },
     "morin_khuur": {
       "src": "https://en.wikipedia.org/wiki/Morin_khuur",
       "note": "Strings and bow both traditionally horsehair.",
@@ -7399,6 +8062,19 @@
         "rivet",
         "liner",
         "chinstrap"
+      ]
+    },
+    "mosque": {
+      "src": "https://en.wikipedia.org/wiki/Mosque",
+      "note": "The mihrab niche points the qibla; the minbar lets the imam be heard.",
+      "needs": [
+        "mihrab",
+        "minbar",
+        "dome",
+        "minaret",
+        "prayer_hall",
+        "qibla_wall",
+        "ablution_fountain"
       ]
     },
     "motherboard": {
@@ -7456,6 +8132,28 @@
         "headlight"
       ]
     },
+    "motte_and_bailey": {
+      "src": "https://en.wikipedia.org/wiki/Motte-and-bailey_castle",
+      "note": "A mound, a ditch, and timber palisades — quick to build with unskilled labour.",
+      "needs": [
+        "motte",
+        "bailey",
+        "ditch",
+        "palisade",
+        "tower",
+        "bridge"
+      ]
+    },
+    "mouth_gag": {
+      "src": "https://en.wikipedia.org/wiki/Mouth_gag",
+      "needs": [
+        "frame",
+        "ratchet",
+        "blade",
+        "hinge",
+        "steel"
+      ]
+    },
     "movable_type": {
       "src": "https://en.wikipedia.org/wiki/Movable_type",
       "needs": [
@@ -7488,6 +8186,20 @@
         "motor",
         "viewfinder",
         "body"
+      ]
+    },
+    "mrap_vehicle": {
+      "src": "https://en.wikipedia.org/wiki/MRAP",
+      "note": "The V-hull throws blast sideways instead of straight up through the floor.",
+      "needs": [
+        "hull",
+        "v_hull",
+        "armour",
+        "wheel",
+        "axle",
+        "engine",
+        "cab",
+        "turret"
       ]
     },
     "mri_scan": {
@@ -7627,6 +8339,17 @@
         "wire"
       ]
     },
+    "needle_holder": {
+      "src": "https://en.wikipedia.org/wiki/Needle_holder",
+      "note": "Tungsten carbide jaws grip the needle without slipping or spinning.",
+      "needs": [
+        "jaw",
+        "ratchet",
+        "hinge",
+        "handle",
+        "carbide_insert"
+      ]
+    },
     "needle_valve": {
       "src": "https://en.wikipedia.org/wiki/Needle_valve",
       "note": "The long taper gives fine control — a large turn for a small change in flow.",
@@ -7726,6 +8449,14 @@
         "resistor",
         "output",
         "interconnect"
+      ]
+    },
+    "notebook": {
+      "src": "https://en.wikipedia.org/wiki/Notebook",
+      "needs": [
+        "paper",
+        "binding",
+        "cover"
       ]
     },
     "nozzle": {
@@ -7840,6 +8571,20 @@
         "tenon_cork"
       ]
     },
+    "ocean_liner": {
+      "src": "https://en.wikipedia.org/wiki/Ocean_liner",
+      "note": "Watertight bulkheads split the hull — Titanic's simply didn't go high enough.",
+      "needs": [
+        "hull",
+        "bulkhead",
+        "deck",
+        "superstructure",
+        "propeller",
+        "rudder",
+        "engine",
+        "lifeboat"
+      ]
+    },
     "oldowan_tool": {
       "src": "https://en.wikipedia.org/wiki/Oldowan",
       "note": "The oldest stone tools: sharp flakes struck off a core with a hammerstone, 2.6 million years ago.",
@@ -7921,6 +8666,26 @@
         "tippler|dumper",
         "signalling",
         "train_control"
+      ]
+    },
+    "oriflamme": {
+      "src": "https://en.wikipedia.org/wiki/Oriflamme",
+      "note": "Red silk on a gilded lance — France's sacred battle standard.",
+      "needs": [
+        "silk",
+        "gold",
+        "lance",
+        "fringe"
+      ]
+    },
+    "otoscope": {
+      "src": "https://en.wikipedia.org/wiki/Otoscope",
+      "needs": [
+        "speculum",
+        "handle",
+        "lens",
+        "light",
+        "battery"
       ]
     },
     "outbreak": {
@@ -8127,6 +8892,16 @@
         "seal"
       ]
     },
+    "peeler": {
+      "src": "https://en.wikipedia.org/wiki/Peeler_(kitchen)",
+      "note": "The slot in the blade lets the edge rock, taking off a thin strip no matter how the hand tilts.",
+      "needs": [
+        "blade",
+        "slot",
+        "pivot",
+        "handle"
+      ]
+    },
     "pendentive": {
       "src": "https://en.wikipedia.org/wiki/Pendentive",
       "note": "The curved triangle that lets a round dome sit on a square room. Without it a dome needs a round wall under it.",
@@ -8254,6 +9029,18 @@
         "additive"
       ]
     },
+    "phase_contrast_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Phase-contrast_microscopy",
+      "note": "An annular ring and a phase plate turn invisible phase shifts into visible brightness differences.",
+      "needs": [
+        "condenser_annulus",
+        "phase_plate",
+        "objective_lens",
+        "eyepiece",
+        "lamp",
+        "stage"
+      ]
+    },
     "phonograph": {
       "src": "https://en.wikipedia.org/wiki/Phonograph",
       "needs": [
@@ -8268,6 +9055,16 @@
         "crank|motor",
         "governor",
         "feed_screw"
+      ]
+    },
+    "phonograph_record": {
+      "src": "https://en.wikipedia.org/wiki/Phonograph_record",
+      "note": "A stamped copy of a groove that was once cut by a stylus moving to sound.",
+      "needs": [
+        "vinyl|shellac",
+        "stamper",
+        "label",
+        "sleeve"
       ]
     },
     "phosphor": {
@@ -8411,6 +9208,13 @@
         "butt_cap"
       ]
     },
+    "pillow": {
+      "src": "https://en.wikipedia.org/wiki/Pillow",
+      "needs": [
+        "filling|down|polyester",
+        "case|ticking"
+      ]
+    },
     "pilum": {
       "src": "https://en.wikipedia.org/wiki/Pilum",
       "note": "The soft iron shank is a feature, not a flaw: it bends on impact so the javelin cannot be thrown back and drags on any shield it pierces.",
@@ -8451,6 +9255,23 @@
         "solder",
         "flange",
         "bracket"
+      ]
+    },
+    "pistol": {
+      "src": "https://en.wikipedia.org/wiki/Wheellock",
+      "note": "A wheellock handgun short enough to fire one-handed and hide under a cloak.",
+      "needs": [
+        "wheel",
+        "mainspring",
+        "chain",
+        "cock|dog",
+        "pyrite",
+        "pan",
+        "pan_cover",
+        "lockplate",
+        "trigger",
+        "barrel",
+        "stock"
       ]
     },
     "piston": {
@@ -8553,6 +9374,16 @@
         "plate",
         "screw",
         "tympan"
+      ]
+    },
+    "pliers": {
+      "src": "https://en.wikipedia.org/wiki/Pliers",
+      "note": "Two levers crossed on a pivot — the jaws grip while the handles stay apart.",
+      "needs": [
+        "jaw",
+        "pivot|rivet",
+        "handle",
+        "steel"
       ]
     },
     "plough": {
@@ -8723,6 +9554,18 @@
         "cargo"
       ]
     },
+    "portcullis": {
+      "src": "https://en.wikipedia.org/wiki/Portcullis",
+      "note": "The lattice drops into grooves in the jambs, trapping attackers between two of them.",
+      "needs": [
+        "grille",
+        "timber|iron",
+        "groove",
+        "chain",
+        "winch",
+        "counterweight"
+      ]
+    },
     "postage_stamp": {
       "src": "https://en.wikipedia.org/wiki/Postage_stamp",
       "needs": [
@@ -8735,6 +9578,17 @@
         "sheet",
         "denomination",
         "cancellation"
+      ]
+    },
+    "postbox": {
+      "src": "https://en.wikipedia.org/wiki/Post_box",
+      "needs": [
+        "box|pillar",
+        "cast_iron",
+        "slot",
+        "door",
+        "lock",
+        "hinge"
       ]
     },
     "pot": {
@@ -8764,6 +9618,18 @@
         "slip",
         "firing",
         "oxide"
+      ]
+    },
+    "power_grid": {
+      "src": "https://en.wikipedia.org/wiki/Electrical_grid",
+      "note": "Generation and consumption must stay balanced — energy is consumed as it is made.",
+      "needs": [
+        "generator",
+        "transmission_line",
+        "transformer",
+        "substation",
+        "distribution_line",
+        "meter"
       ]
     },
     "press": {
@@ -8812,6 +9678,17 @@
         "visiting_room",
         "control_room",
         "surveillance"
+      ]
+    },
+    "proof_armor": {
+      "src": "https://en.wikipedia.org/wiki/Proof_(armour)",
+      "note": "A breastplate shot with a pistol on purpose — the dent left behind was the proof mark.",
+      "needs": [
+        "breastplate",
+        "heat_treated_steel",
+        "proof_mark",
+        "strap",
+        "buckle"
       ]
     },
     "propeller": {
@@ -8881,6 +9758,15 @@
         "die",
         "hopper",
         "reader_brush|photocell"
+      ]
+    },
+    "purse": {
+      "src": "https://en.wikipedia.org/wiki/Coin_purse",
+      "needs": [
+        "pouch",
+        "clasp|closure",
+        "frame",
+        "hinge"
       ]
     },
     "pvc": {
@@ -8970,6 +9856,18 @@
         "display",
         "power_supply",
         "rotating_mount"
+      ]
+    },
+    "radiator": {
+      "src": "https://en.wikipedia.org/wiki/Radiator_(heating)",
+      "note": "Most of the heat leaves by convection; the radiator name stuck from when they were cast iron and radiated more.",
+      "needs": [
+        "panel",
+        "fin",
+        "inlet",
+        "outlet",
+        "valve",
+        "mounting_bracket"
       ]
     },
     "radio": {
@@ -9099,6 +9997,18 @@
         "peen"
       ]
     },
+    "read_only_memory": {
+      "src": "https://en.wikipedia.org/wiki/Read-only_memory",
+      "note": "The pattern is fixed at fabrication, which is why the data survives the power going off.",
+      "needs": [
+        "silicon_die",
+        "photomask",
+        "transistor_array",
+        "package",
+        "bond_wire",
+        "lead_frame"
+      ]
+    },
     "rebar": {
       "src": "https://en.wikipedia.org/wiki/Rebar",
       "note": "Steel where the concrete is in tension, which concrete cannot do.",
@@ -9137,6 +10047,15 @@
         "selectable_marker",
         "transformation",
         "culture_medium"
+      ]
+    },
+    "rectal_speculum": {
+      "src": "https://en.wikipedia.org/wiki/Speculum_(medical)",
+      "needs": [
+        "tube",
+        "blade",
+        "hinge",
+        "steel"
       ]
     },
     "reed_organ": {
@@ -9231,6 +10150,15 @@
         "penstock",
         "silt",
         "drainage"
+      ]
+    },
+    "resistor": {
+      "src": "https://en.wikipedia.org/wiki/Resistor",
+      "note": "The value is set by the material and the geometry — carbon, wire, or film.",
+      "needs": [
+        "carbon|wire",
+        "lead",
+        "coating"
       ]
     },
     "resonator": {
@@ -9397,6 +10325,15 @@
         "chassis"
       ]
     },
+    "rubber_stamp": {
+      "src": "https://en.wikipedia.org/wiki/Rubber_stamp",
+      "needs": [
+        "rubber",
+        "die|relief",
+        "mount",
+        "handle"
+      ]
+    },
     "rubbish": {
       "src": "https://en.wikipedia.org/wiki/Waste",
       "note": "What is left when nobody will pay to keep it in circulation.",
@@ -9501,6 +10438,14 @@
         "distillation"
       ]
     },
+    "sandpaper": {
+      "src": "https://en.wikipedia.org/wiki/Sandpaper",
+      "needs": [
+        "abrasive|grit",
+        "backing",
+        "adhesive"
+      ]
+    },
     "sarissa": {
       "src": "https://en.wikipedia.org/wiki/Sarissa",
       "needs": [
@@ -9525,6 +10470,14 @@
         "stile",
         "rail",
         "parting_bead"
+      ]
+    },
+    "saucepan": {
+      "src": "https://en.wikipedia.org/wiki/Saucepan",
+      "needs": [
+        "pan|body",
+        "handle",
+        "rivet"
       ]
     },
     "saw": {
@@ -9564,6 +10517,16 @@
         "octave_key",
         "thumb_hook",
         "lacquer"
+      ]
+    },
+    "scabbard": {
+      "src": "https://en.wikipedia.org/wiki/Scabbard",
+      "note": "The throat keeps the edge from cutting its own sheath; the chape takes the wear.",
+      "needs": [
+        "body",
+        "throat",
+        "chape",
+        "lining"
       ]
     },
     "scaffold": {
@@ -9629,6 +10592,20 @@
         "lid"
       ]
     },
+    "scanning_electron_microscope": {
+      "src": "https://en.wikipedia.org/wiki/Scanning_electron_microscope",
+      "note": "A beam scans the surface, and the scattered electrons build a 3D-looking image.",
+      "needs": [
+        "electron_gun",
+        "vacuum_chamber",
+        "electromagnetic_lens",
+        "aperture",
+        "sample_stage",
+        "detector",
+        "high_voltage_supply",
+        "display"
+      ]
+    },
     "scanning_tunneling_microscope": {
       "src": "https://en.wikipedia.org/wiki/Scanning_tunneling_microscope",
       "note": "A sharp tip within angstroms of a surface — electrons tunnel across a gap they classically shouldn't.",
@@ -9641,6 +10618,18 @@
         "feedback_loop",
         "high_voltage_amplifier",
         "vacuum_chamber"
+      ]
+    },
+    "schiavona": {
+      "src": "https://en.wikipedia.org/wiki/Schiavona",
+      "note": "A basket hilt of leaf-shaped iron bars fully enclosing the hand, named for Slavic mercenaries who carried it.",
+      "needs": [
+        "blade",
+        "basket_guard",
+        "knuckle_bow",
+        "quillon",
+        "grip",
+        "pommel"
       ]
     },
     "scimitar": {
@@ -9656,6 +10645,25 @@
         "scabbard"
       ]
     },
+    "scissors": {
+      "src": "https://en.wikipedia.org/wiki/Scissors",
+      "needs": [
+        "blade",
+        "pivot|screw",
+        "handle|bow"
+      ]
+    },
+    "scooter": {
+      "src": "https://en.wikipedia.org/wiki/Kick_scooter",
+      "needs": [
+        "deck",
+        "wheel",
+        "bearing",
+        "handlebar",
+        "stem",
+        "brake"
+      ]
+    },
     "screen": {
       "src": "https://en.wikipedia.org/wiki/Display_device",
       "note": "A grid of things that can be made to glow or not.",
@@ -9667,6 +10675,14 @@
         "polarizer",
         "colour_filter",
         "glass"
+      ]
+    },
+    "screwdriver": {
+      "src": "https://en.wikipedia.org/wiki/Screwdriver",
+      "needs": [
+        "handle",
+        "shaft|shank",
+        "tip"
       ]
     },
     "scrubber": {
@@ -9732,6 +10748,18 @@
         "wheel",
         "brake",
         "steering"
+      ]
+    },
+    "seismograph": {
+      "src": "https://en.wikipedia.org/wiki/Seismometer",
+      "note": "A mass too lazy to move while its frame shakes — the difference is the measurement.",
+      "needs": [
+        "mass|bob",
+        "spring|pendulum",
+        "frame",
+        "damper",
+        "pen|stylus",
+        "drum|recorder"
       ]
     },
     "serration": {
@@ -9931,6 +10959,15 @@
         "scabbard"
       ]
     },
+    "shovel": {
+      "src": "https://en.wikipedia.org/wiki/Shovel",
+      "needs": [
+        "blade",
+        "socket",
+        "handle",
+        "grip"
+      ]
+    },
     "shutter": {
       "src": "https://en.wikipedia.org/wiki/Shutter_(photography)",
       "note": "Blades that open and close fast enough to freeze motion, and a mechanism that times them.",
@@ -10007,6 +11044,17 @@
         "weft",
         "loom",
         "dye"
+      ]
+    },
+    "silo": {
+      "src": "https://en.wikipedia.org/wiki/Silo",
+      "note": "What goes in as grain comes out as feed — fermentation under exclusion of air.",
+      "needs": [
+        "wall",
+        "roof",
+        "foundation",
+        "door",
+        "ladder"
       ]
     },
     "sim_card": {
@@ -10086,6 +11134,20 @@
         "instrumentation"
       ]
     },
+    "smallsword": {
+      "src": "https://en.wikipedia.org/wiki/Small_sword",
+      "note": "A light triangular-bladed sword for the thrust alone — no 18th-century gentleman was dressed without one.",
+      "needs": [
+        "blade",
+        "shell_guard",
+        "knuckle_bow",
+        "quillon",
+        "pas_d_ane",
+        "grip",
+        "ferrule",
+        "pommel"
+      ]
+    },
     "smartphone": {
       "src": "https://en.wikipedia.org/wiki/Smartphone",
       "needs": [
@@ -10124,6 +11186,18 @@
         "vice",
         "file",
         "punch|chisel"
+      ]
+    },
+    "snow_groomer": {
+      "src": "https://en.wikipedia.org/wiki/Snow_groomer",
+      "note": "A tracked tiller combs the piste into corduroy, winched up the steepest pitches.",
+      "needs": [
+        "track",
+        "engine",
+        "cab",
+        "tiller",
+        "blade",
+        "winch"
       ]
     },
     "soap": {
@@ -10254,6 +11328,18 @@
         "filament"
       ]
     },
+    "spark_plug": {
+      "src": "https://en.wikipedia.org/wiki/Spark_plug",
+      "note": "The insulator keeps 40,000 volts from jumping anywhere but the gap.",
+      "needs": [
+        "centre_electrode",
+        "insulator",
+        "shell",
+        "ground_electrode",
+        "terminal",
+        "gasket"
+      ]
+    },
     "spatula": {
       "src": "https://en.wikipedia.org/wiki/Spatula",
       "note": "A flat blade with enough spring to get under something and not through it.",
@@ -10301,6 +11387,17 @@
         "detector|ccd_sensor",
         "calibration_lamp",
         "order_sorting_filter",
+        "housing"
+      ]
+    },
+    "speedometer": {
+      "src": "https://en.wikipedia.org/wiki/Speedometer",
+      "needs": [
+        "needle",
+        "dial",
+        "magnet",
+        "eddy_cup|hairspring",
+        "cable|sensor",
         "housing"
       ]
     },
@@ -10481,6 +11578,16 @@
         "measurement"
       ]
     },
+    "stapler": {
+      "src": "https://en.wikipedia.org/wiki/Stapler",
+      "needs": [
+        "magazine",
+        "spring",
+        "anvil",
+        "handle",
+        "base"
+      ]
+    },
     "stator": {
       "src": "https://en.wikipedia.org/wiki/Stator",
       "note": "The part that does not turn, and the part that makes the field.",
@@ -10490,6 +11597,20 @@
         "copper_wire",
         "insulation",
         "housing"
+      ]
+    },
+    "stealth_aircraft": {
+      "src": "https://en.wikipedia.org/wiki/Stealth_aircraft",
+      "note": "Faceted panels fling radar echoes away from the receiver.",
+      "needs": [
+        "fuselage",
+        "wing",
+        "jet_engine",
+        "radar_absorbent_material",
+        "internal_bay",
+        "cockpit",
+        "landing_gear",
+        "fly_by_wire"
       ]
     },
     "steam_engine": {
@@ -10557,6 +11678,14 @@
         "ear_tip"
       ]
     },
+    "sticker": {
+      "src": "https://en.wikipedia.org/wiki/Sticker",
+      "needs": [
+        "face_stock",
+        "adhesive",
+        "release_liner"
+      ]
+    },
     "stirrup": {
       "src": "https://en.wikipedia.org/wiki/Stirrup",
       "needs": [
@@ -10602,6 +11731,17 @@
         "leg"
       ]
     },
+    "streetlight": {
+      "src": "https://en.wikipedia.org/wiki/Street_light",
+      "needs": [
+        "pole",
+        "arm",
+        "lamp|luminaire",
+        "lens|reflector",
+        "photocell|timer",
+        "ballast|driver"
+      ]
+    },
     "structure": {
       "src": "https://en.wikipedia.org/wiki/Structure",
       "note": "Anything that has to stand up under a load.",
@@ -10614,6 +11754,20 @@
         "load",
         "span",
         "fastener"
+      ]
+    },
+    "stryker_vehicle": {
+      "src": "https://en.wikipedia.org/wiki/Stryker",
+      "note": "Eight wheels trade off-road ability for road speed and quiet transit.",
+      "needs": [
+        "hull",
+        "armour",
+        "wheel",
+        "axle",
+        "engine",
+        "transmission",
+        "turret",
+        "slat_armour"
       ]
     },
     "stupa": {
@@ -10660,6 +11814,28 @@
         "oxygen_generator"
       ]
     },
+    "suction_tube": {
+      "src": "https://en.wikipedia.org/wiki/Suction_(medicine)",
+      "needs": [
+        "tube",
+        "tip",
+        "valve",
+        "vacuum_pump",
+        "canister"
+      ]
+    },
+    "suitcase": {
+      "src": "https://en.wikipedia.org/wiki/Suitcase",
+      "needs": [
+        "frame",
+        "shell",
+        "handle",
+        "latch",
+        "hinge",
+        "lining",
+        "wheel"
+      ]
+    },
     "sukhothai": {
       "src": "https://en.wikipedia.org/wiki/Sukhothai_Historical_Park",
       "note": "A Thai capital laid out around ponds cut to hold the wet season against the dry.",
@@ -10674,6 +11850,17 @@
         "water",
         "road",
         "city_wall"
+      ]
+    },
+    "sundial": {
+      "src": "https://en.wikipedia.org/wiki/Sundial",
+      "note": "The earliest known sundials are Egyptian and Babylonian shadow clocks, dated to 1500 BCE.",
+      "needs": [
+        "dial_plate",
+        "gnomon",
+        "hour_line",
+        "style",
+        "mounting_base"
       ]
     },
     "superconducting_magnet": {
@@ -10692,6 +11879,16 @@
         "radiation_shield",
         "current_lead",
         "quench_protection_resistor"
+      ]
+    },
+    "surgical_scissors": {
+      "src": "https://en.wikipedia.org/wiki/Surgical_scissors",
+      "note": "Mayo for general cutting, Metzenbaum for delicate tissue.",
+      "needs": [
+        "blade",
+        "hinge",
+        "handle",
+        "steel"
       ]
     },
     "survey": {
@@ -10733,6 +11930,15 @@
         "dehumidification"
       ]
     },
+    "suture_needle": {
+      "src": "https://en.wikipedia.org/wiki/Surgical_suture",
+      "note": "The thread is swaged in — no eye to load, unlike the older reusable kind.",
+      "needs": [
+        "needle",
+        "thread",
+        "swage"
+      ]
+    },
     "suv": {
       "src": "https://en.wikipedia.org/wiki/Sport_utility_vehicle",
       "note": "A tall body on a car platform, sold on the view.",
@@ -10760,6 +11966,16 @@
         "control_rod",
         "actuator",
         "seal"
+      ]
+    },
+    "sweater": {
+      "src": "https://en.wikipedia.org/wiki/Sweater",
+      "note": "Unscoured wool keeps its lanolin and sheds water.",
+      "needs": [
+        "yarn",
+        "knitting",
+        "ribbing",
+        "seam"
       ]
     },
     "swing": {
@@ -10811,6 +12027,19 @@
         "fever"
       ]
     },
+    "synagogue": {
+      "src": "https://en.wikipedia.org/wiki/Synagogue",
+      "note": "Built around an ark that holds the Torah scrolls.",
+      "needs": [
+        "ark",
+        "bimah",
+        "menorah",
+        "wall",
+        "roof",
+        "door",
+        "ner_tamid"
+      ]
+    },
     "syndrome": {
       "src": "https://en.wikipedia.org/wiki/Syndrome",
       "note": "A set of signs that keep turning up together before anyone knows why.",
@@ -10857,6 +12086,18 @@
         "glue",
         "screw",
         "finish|varnish"
+      ]
+    },
+    "tabulating_machine": {
+      "src": "https://en.wikipedia.org/wiki/Tabulating_machine",
+      "note": "Hollerith built it for the 1890 census; the company became IBM.",
+      "needs": [
+        "card_reader",
+        "pin",
+        "mercury_cup",
+        "counter",
+        "relay",
+        "sorting_bin"
       ]
     },
     "taiko": {
@@ -10983,6 +12224,25 @@
         "leather"
       ]
     },
+    "tape": {
+      "src": "https://en.wikipedia.org/wiki/Adhesive_tape",
+      "note": "Drew's 1925 paper tape had a gentler adhesive for autobody painters.",
+      "needs": [
+        "backing",
+        "adhesive",
+        "release_liner"
+      ]
+    },
+    "tape_measure": {
+      "src": "https://en.wikipedia.org/wiki/Tape_measure",
+      "needs": [
+        "tape|blade",
+        "spring",
+        "case|housing",
+        "hook|tang",
+        "lock"
+      ]
+    },
     "tax": {
       "src": "https://en.wikipedia.org/wiki/Tax",
       "note": "The state taking a share, and having to know enough about you to do it.",
@@ -10998,6 +12258,17 @@
         "roof_sign",
         "radio|dispatch",
         "seat"
+      ]
+    },
+    "teapot": {
+      "src": "https://en.wikipedia.org/wiki/Teapot",
+      "note": "Called into being when China shifted from whipped to steeped tea.",
+      "needs": [
+        "body",
+        "spout",
+        "handle",
+        "lid",
+        "ceramic"
       ]
     },
     "telegraph": {
@@ -11074,6 +12345,17 @@
         "podium",
         "frieze",
         "mortar"
+      ]
+    },
+    "tenaculum_forceps": {
+      "src": "https://en.wikipedia.org/wiki/Tenaculum",
+      "note": "A sharp hook, adapted from Civil War bullet forceps, grips tissue.",
+      "needs": [
+        "hook",
+        "ratchet",
+        "hinge",
+        "handle",
+        "steel"
       ]
     },
     "terminal": {
@@ -11217,6 +12499,18 @@
         "socket"
       ]
     },
+    "tire": {
+      "src": "https://en.wikipedia.org/wiki/Tire",
+      "note": "Tread, sidewall, and bead hold air while steel belts hold the shape under load.",
+      "needs": [
+        "tread",
+        "sidewall",
+        "bead",
+        "carcass|ply",
+        "belt|steel_belt",
+        "inner_liner"
+      ]
+    },
     "toilet": {
       "src": "https://en.wikipedia.org/wiki/Flush_toilet",
       "note": "An S-shaped trap holds standing water that seals the drain against sewer gas.",
@@ -11279,6 +12573,18 @@
         "hydroplane",
         "rudder",
         "buoyancy_chamber"
+      ]
+    },
+    "tow_missile": {
+      "src": "https://en.wikipedia.org/wiki/BGM-71_TOW",
+      "note": "Two hair-thin wires spool out behind it, carrying steering commands.",
+      "needs": [
+        "warhead",
+        "wire",
+        "motor",
+        "launcher",
+        "tracker",
+        "guidance"
       ]
     },
     "tower": {
@@ -11351,6 +12657,18 @@
         "market"
       ]
     },
+    "traffic_light": {
+      "src": "https://en.wikipedia.org/wiki/Traffic_light",
+      "needs": [
+        "signal_head",
+        "lens",
+        "lamp|led",
+        "visor|hood",
+        "pole|mast_arm",
+        "controller",
+        "timer"
+      ]
+    },
     "train": {
       "src": "https://en.wikipedia.org/wiki/Train",
       "needs": [
@@ -11371,6 +12689,17 @@
         "coal",
         "steel",
         "track_gauge"
+      ]
+    },
+    "tram": {
+      "src": "https://en.wikipedia.org/wiki/Tram",
+      "needs": [
+        "car_body",
+        "truck|bogie",
+        "wheel",
+        "motor",
+        "pantograph|trolley_pole",
+        "rail"
       ]
     },
     "transducer": {
@@ -11507,6 +12836,39 @@
         "lock"
       ]
     },
+    "trocar": {
+      "src": "https://en.wikipedia.org/wiki/Trocar",
+      "note": "The sharp obturator punches through; the cannula stays.",
+      "needs": [
+        "obturator",
+        "cannula",
+        "handle",
+        "valve"
+      ]
+    },
+    "trowel": {
+      "src": "https://en.wikipedia.org/wiki/Trowel",
+      "needs": [
+        "blade",
+        "tang",
+        "handle",
+        "ferrule"
+      ]
+    },
+    "truck": {
+      "src": "https://en.wikipedia.org/wiki/Truck",
+      "note": "Body-on-frame: the cab is built separate from whatever it carries.",
+      "needs": [
+        "frame|chassis",
+        "cab",
+        "engine",
+        "transmission",
+        "axle",
+        "wheel",
+        "suspension",
+        "bed|cargo_area"
+      ]
+    },
     "trumpet": {
       "src": "https://en.wikipedia.org/wiki/Trumpet",
       "needs": [
@@ -11587,6 +12949,16 @@
         "yoke",
         "grinding",
         "tempering"
+      ]
+    },
+    "tuning_peg": {
+      "src": "https://en.wikipedia.org/wiki/Tuning_mechanisms_for_stringed_instruments",
+      "note": "Geared so a turn of the hand is a fraction of a turn at the string.",
+      "needs": [
+        "gear",
+        "worm",
+        "shaft",
+        "knob"
       ]
     },
     "tunnel": {
@@ -11693,6 +13065,18 @@
         "paper_guide"
       ]
     },
+    "tyre": {
+      "src": "https://en.wikipedia.org/wiki/Tire",
+      "note": "The bead is a steel hoop that grips the rim; without it the tyre would blow off.",
+      "needs": [
+        "tread",
+        "sidewall",
+        "casing",
+        "bead",
+        "cord|ply",
+        "liner"
+      ]
+    },
     "uhmwpe": {
       "src": "https://en.wikipedia.org/wiki/Ultra-high-molecular-weight_polyethylene",
       "note": "Chains so long the material barely melts and almost nothing wears it.",
@@ -11784,6 +13168,29 @@
         "pin"
       ]
     },
+    "vaginal_speculum": {
+      "src": "https://en.wikipedia.org/wiki/Speculum_(medical)",
+      "note": "Cusco's duck-billed blades open like a hinge to reveal the cervix.",
+      "needs": [
+        "blade",
+        "hinge",
+        "screw",
+        "handle",
+        "steel"
+      ]
+    },
+    "van": {
+      "src": "https://en.wikipedia.org/wiki/Van",
+      "needs": [
+        "body",
+        "engine",
+        "transmission",
+        "axle",
+        "wheel",
+        "cargo_area",
+        "door"
+      ]
+    },
     "vault": {
       "src": "https://en.wikipedia.org/wiki/Vault_(architecture)",
       "note": "It cannot stand until the last stone is in, so the whole thing is built on a temporary timber form and only becomes a vault when that comes away.",
@@ -11840,6 +13247,17 @@
         "pipe"
       ]
     },
+    "vexillum": {
+      "src": "https://en.wikipedia.org/wiki/Vexillum",
+      "note": "Cloth hung from a crossbar, carried by Roman cavalry.",
+      "needs": [
+        "cloth",
+        "crossbar",
+        "spear",
+        "finial",
+        "fringe"
+      ]
+    },
     "vhs": {
       "src": "https://en.wikipedia.org/wiki/VHS",
       "note": "JVC's format beat Sony's sharper Betamax because its decks could record a feature in one pass.",
@@ -11853,6 +13271,16 @@
         "pinch_roller",
         "drum",
         "motor"
+      ]
+    },
+    "vice": {
+      "src": "https://en.wikipedia.org/wiki/Vise",
+      "needs": [
+        "jaw",
+        "screw",
+        "handle",
+        "body|frame",
+        "slide"
       ]
     },
     "violin": {
@@ -11977,6 +13405,16 @@
         "rivet"
       ]
     },
+    "wardrobe": {
+      "src": "https://en.wikipedia.org/wiki/Wardrobe",
+      "needs": [
+        "panel|board",
+        "door",
+        "hinge",
+        "rail",
+        "shelf"
+      ]
+    },
     "warehouse": {
       "src": "https://en.wikipedia.org/wiki/Warehouse",
       "needs": [
@@ -12054,6 +13492,24 @@
         "dial",
         "overflow",
         "stand"
+      ]
+    },
+    "water_tank": {
+      "src": "https://en.wikipedia.org/wiki/Water_tank",
+      "needs": [
+        "tank",
+        "lid",
+        "valve",
+        "pipe",
+        "mount"
+      ]
+    },
+    "watering_can": {
+      "src": "https://en.wikipedia.org/wiki/Watering_can",
+      "needs": [
+        "handle",
+        "nozzle",
+        "pipe"
       ]
     },
     "watermill": {
@@ -12167,6 +13623,13 @@
         "stock"
       ]
     },
+    "whisk": {
+      "src": "https://en.wikipedia.org/wiki/Whisk_(cooking)",
+      "needs": [
+        "wire|loop",
+        "handle"
+      ]
+    },
     "whistle": {
       "src": "https://en.wikipedia.org/wiki/Whistle",
       "note": "A pea rattling inside breaks the airstream into the characteristic trill.",
@@ -12277,6 +13740,16 @@
         "paint"
       ]
     },
+    "window_frame": {
+      "src": "https://en.wikipedia.org/wiki/Window#Frame_materials",
+      "needs": [
+        "rail",
+        "stile",
+        "joint",
+        "hinge",
+        "glass"
+      ]
+    },
     "wing": {
       "src": "https://en.wikipedia.org/wiki/Wing",
       "needs": [
@@ -12293,6 +13766,27 @@
         "fuel_tank",
         "wiring",
         "navigation_light"
+      ]
+    },
+    "wiper": {
+      "src": "https://en.wikipedia.org/wiki/Windscreen_wiper",
+      "needs": [
+        "blade",
+        "arm",
+        "motor",
+        "linkage"
+      ]
+    },
+    "wireless_telegraphy": {
+      "src": "https://en.wikipedia.org/wiki/Wireless_telegraphy",
+      "note": "Morse on spark-gap waves — across the Atlantic by 1901.",
+      "needs": [
+        "spark_gap",
+        "induction_coil",
+        "antenna",
+        "key",
+        "coherer|detector",
+        "receiver"
       ]
     },
     "woad": {
@@ -12344,12 +13838,30 @@
         "tack"
       ]
     },
+    "workbench": {
+      "src": "https://en.wikipedia.org/wiki/Workbench",
+      "needs": [
+        "top",
+        "leg",
+        "apron",
+        "vice|vise",
+        "dog_hole"
+      ]
+    },
     "world_wide_web": {
       "src": "https://en.wikipedia.org/wiki/World_Wide_Web",
       "note": "Three inventions at once: an address, a protocol and a markup.",
       "needs": [
         "http",
         "html"
+      ]
+    },
+    "wrench": {
+      "src": "https://en.wikipedia.org/wiki/Wrench",
+      "needs": [
+        "jaw",
+        "handle",
+        "head"
       ]
     },
     "xor_gate": {
@@ -12428,10 +13940,269 @@
         "box_and_pin",
         "stitching"
       ]
+    },
+    "zweihander": {
+      "src": "https://en.wikipedia.org/wiki/Zweih%C3%A4nder",
+      "note": "A sword scaled up past six feet, wielded two-handed by the Landsknechte's Doppelsöldner to break pike formations.",
+      "needs": [
+        "blade",
+        "ricasso",
+        "parrierhaken",
+        "crossguard",
+        "grip",
+        "pommel"
+      ]
+    },
+    "printer": {
+      "src": "https://en.wikipedia.org/wiki/Printer_(computing)",
+      "needs": [
+        "printhead",
+        "ink_cartridge|toner",
+        "paper_tray",
+        "motor",
+        "belt",
+        "roller",
+        "circuit_board",
+        "power_supply",
+        "frame"
+      ]
+    },
+    "robot": {
+      "src": "https://en.wikipedia.org/wiki/Industrial_robot",
+      "note": "An arm that moves through six axes, and the controller that plans where each joint should be at each instant.",
+      "needs": [
+        "arm",
+        "joint",
+        "motor",
+        "gearbox",
+        "encoder",
+        "controller",
+        "wiring",
+        "end_effector",
+        "base",
+        "power_supply"
+      ]
+    },
+    "starter_motor": {
+      "src": "https://en.wikipedia.org/wiki/Starter_(engine)",
+      "note": "The pinion engages only while cranking — a one-way clutch frees it the instant the engine catches.",
+      "needs": [
+        "armature",
+        "field_coil",
+        "commutator",
+        "brush",
+        "solenoid",
+        "pinion",
+        "overrunning_clutch",
+        "housing"
+      ]
+    },
+    "windscreen": {
+      "src": "https://en.wikipedia.org/wiki/Windshield",
+      "note": "Laminated so it cracks but does not shatter — the plastic interlayer holds the fragments.",
+      "needs": [
+        "glass",
+        "pvb_interlayer",
+        "frame",
+        "seal",
+        "adhesive"
+      ]
+    },
+    "muffler": {
+      "src": "https://en.wikipedia.org/wiki/Muffler_(exhaust)",
+      "note": "Sound waves bounce between chambers until they cancel themselves out.",
+      "needs": [
+        "shell",
+        "baffle",
+        "chamber",
+        "perforated_tube",
+        "packing|fibreglass",
+        "inlet_pipe",
+        "outlet_pipe"
+      ]
+    },
+    "hard_drive": {
+      "src": "https://en.wikipedia.org/wiki/Hard_disk_drive",
+      "note": "The head floats on a cushion of air thinner than a fingerprint.",
+      "needs": [
+        "platter",
+        "spindle_motor",
+        "read_write_head",
+        "actuator_arm",
+        "voice_coil",
+        "controller_board",
+        "housing",
+        "air_filter"
+      ]
+    },
+    "power_supply": {
+      "src": "https://en.wikipedia.org/wiki/Power_supply_unit_(computer)",
+      "needs": [
+        "transformer",
+        "rectifier",
+        "capacitor",
+        "voltage_regulator",
+        "fan",
+        "circuit_board",
+        "housing",
+        "cable"
+      ]
+    },
+    "viewfinder": {
+      "src": "https://en.wikipedia.org/wiki/Viewfinder",
+      "needs": [
+        "eyepiece",
+        "lens",
+        "mirror|prism",
+        "focusing_screen",
+        "frame_line",
+        "housing"
+      ]
+    },
+    "flap": {
+      "src": "https://en.wikipedia.org/wiki/Flap_(aeronautics)",
+      "note": "Lowered to make a wing lift more at lower speeds — the price is drag.",
+      "needs": [
+        "skin",
+        "rib",
+        "spar",
+        "hinge",
+        "actuator",
+        "track",
+        "fairing"
+      ]
+    },
+    "pruning_shears": {
+      "src": "https://en.wikipedia.org/wiki/Pruning_shears",
+      "needs": [
+        "blade",
+        "anvil|bypass_blade",
+        "pivot",
+        "spring",
+        "handle",
+        "latch"
+      ]
+    },
+    "touchscreen": {
+      "src": "https://en.wikipedia.org/wiki/Touchscreen",
+      "note": "The finger changes the capacitance, and a chip works out where.",
+      "needs": [
+        "display_panel",
+        "sensor_layer",
+        "cover_glass",
+        "controller",
+        "flexible_cable",
+        "adhesive"
+      ]
+    },
+    "fuse_box": {
+      "src": "https://en.wikipedia.org/wiki/Distribution_board",
+      "needs": [
+        "enclosure",
+        "busbar",
+        "circuit_breaker|fuse",
+        "neutral_bar",
+        "earth_bar",
+        "din_rail",
+        "cable_entry"
+      ]
+    },
+    "fireplace": {
+      "src": "https://en.wikipedia.org/wiki/Fireplace",
+      "needs": [
+        "firebox",
+        "hearth",
+        "lintel",
+        "flue",
+        "damper",
+        "chimney",
+        "mantel"
+      ]
+    },
+    "indicator": {
+      "src": "https://en.wikipedia.org/wiki/Automotive_lighting#Turn_signals",
+      "needs": [
+        "bulb|led",
+        "lens",
+        "reflector",
+        "housing",
+        "socket",
+        "wiring"
+      ]
+    },
+    "anchor": {
+      "src": "https://en.wikipedia.org/wiki/Anchor",
+      "note": "The flukes dig in; the shank transmits the pull; the crown takes the beating.",
+      "needs": [
+        "shank",
+        "crown",
+        "fluke",
+        "stock",
+        "ring|shackle"
+      ]
+    },
+    "lighthouse": {
+      "src": "https://en.wikipedia.org/wiki/Lighthouse",
+      "note": "The lens rotates so the flash has a signature — each lighthouse blinks its own pattern.",
+      "needs": [
+        "tower",
+        "lantern_room",
+        "fresnel_lens|lamp",
+        "gallery",
+        "fog_signal",
+        "foundation"
+      ]
+    },
+    "transmitter": {
+      "src": "https://en.wikipedia.org/wiki/Transmitter",
+      "needs": [
+        "oscillator",
+        "amplifier",
+        "modulator",
+        "antenna",
+        "power_supply",
+        "housing"
+      ]
+    },
+    "cart": {
+      "src": "https://en.wikipedia.org/wiki/Cart",
+      "needs": [
+        "body|bed",
+        "wheel",
+        "axle",
+        "shaft|handle",
+        "frame"
+      ]
+    },
+    "loudspeaker": {
+      "src": "https://en.wikipedia.org/wiki/Loudspeaker",
+      "note": "A coil in a magnetic field glued to a cone — current in, sound out.",
+      "needs": [
+        "cone|diaphragm",
+        "voice_coil",
+        "magnet",
+        "suspension|spider",
+        "surround",
+        "frame|basket",
+        "terminal"
+      ]
+    },
+    "bushing": {
+      "src": "https://en.wikipedia.org/wiki/Bushing_(electrical)",
+      "note": "The insulator that lets high voltage pass through a grounded wall.",
+      "needs": [
+        "insulator",
+        "conductor",
+        "flange",
+        "weather_shed",
+        "oil|gas",
+        "seal"
+      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
   "$not_assemblies": [
+    "abaca",
     "abrasion_resistance",
     "abs",
     "accelerator",
@@ -12469,6 +14240,7 @@
     "arch_support",
     "architecture",
     "aroma_compound",
+    "arrow_slit",
     "artefact",
     "assay",
     "assembly_line",
@@ -12512,9 +14284,12 @@
     "blasting",
     "bleach",
     "block_caving",
+    "blockade",
+    "blowpipe",
     "bobbin",
     "body",
     "body_weight",
+    "bollard",
     "bolster",
     "book_of_optics",
     "bore",
@@ -12547,7 +14322,9 @@
     "calcium_hydroxide",
     "calibration",
     "camber",
+    "camphor_tree",
     "can",
+    "canaigre_dock",
     "canopy",
     "cantilever",
     "cap",
@@ -12561,8 +14338,11 @@
     "carry",
     "carving",
     "case_definition",
+    "casing",
     "catch",
     "catchment",
+    "cathode",
+    "cauldron",
     "causeway",
     "cavity",
     "cement",
@@ -12578,9 +14358,12 @@
     "check_rail",
     "cheek_piece",
     "chef",
+    "cherry_wood_tree",
+    "chestnut_tree",
     "chime",
     "chinstrap",
     "chipboard",
+    "chopping_board",
     "chroma_subsampling",
     "chrome",
     "chryselephantine",
@@ -12594,11 +14377,14 @@
     "clearance",
     "clerestory",
     "clerk",
+    "clock_signal",
     "clothing",
     "clown",
     "code_generator",
     "codec",
     "cohort",
+    "coir",
+    "colander",
     "collar",
     "collateral",
     "collection",
@@ -12609,6 +14395,7 @@
     "comparison",
     "competitor",
     "complement",
+    "composite_material",
     "compression",
     "conditioner",
     "confounder",
@@ -12629,6 +14416,7 @@
     "cord",
     "core",
     "cork",
+    "cork_oak_tree",
     "corner_cube",
     "corrosion_inhibitor",
     "cotter",
@@ -12646,6 +14434,7 @@
     "cresting",
     "crimp",
     "criterion",
+    "crowbar",
     "crowd",
     "crown_staple",
     "crucible",
@@ -12660,6 +14449,7 @@
     "cushioning",
     "cut",
     "cylinder",
+    "damp_proof_course",
     "data_line",
     "datum",
     "dead_load",
@@ -12683,6 +14473,7 @@
     "directory",
     "discrete_cosine_transform",
     "disease_resistance",
+    "disinfectant",
     "distribution_requirements_planning",
     "ditch",
     "dns",
@@ -12705,6 +14496,7 @@
     "dye",
     "dyed_cloth",
     "eaves",
+    "ebony_tree",
     "economic_order_quantity",
     "electrician",
     "electrode",
@@ -12713,12 +14505,15 @@
     "embedment",
     "encoder",
     "end_effector",
+    "endospore_stain",
     "enforcement",
     "engraving",
+    "ensign",
     "entasis",
     "enterprise_resource_planning",
     "epoxy_resin",
     "escutcheon",
+    "ethernet",
     "eviction_policy",
     "examination",
     "excavation",
@@ -12740,6 +14535,7 @@
     "feasibility_study",
     "fender",
     "ferrule",
+    "fertiliser",
     "fibreglass",
     "filament",
     "fill",
@@ -12755,6 +14551,7 @@
     "fitting",
     "flange",
     "flare",
+    "flashing",
     "fleece",
     "fleshing",
     "flex",
@@ -12762,13 +14559,18 @@
     "flint",
     "float_coat",
     "float_glass",
+    "floorboard",
     "flue",
+    "flux",
     "fly",
+    "focus_ring",
     "follower",
     "food_waste",
     "footing",
+    "fracking_fluid",
     "fragment",
     "frame",
+    "frankincense_tree",
     "fret",
     "frozen_zoo",
     "fulcrum",
@@ -12779,9 +14581,11 @@
     "gel",
     "geological_mapping",
     "gfrp",
+    "ghost_net",
     "glass_fiber",
     "glaze",
     "glazing",
+    "glazing_bar",
     "glue",
     "glyph",
     "gothic",
@@ -12792,8 +14596,10 @@
     "graft",
     "gram_stain",
     "granite",
+    "grater",
     "gravel",
     "gravity_separation",
+    "grease",
     "grease_nipple",
     "greasepaint",
     "greave",
@@ -12802,10 +14608,14 @@
     "grip",
     "grommet",
     "groove",
+    "guard",
+    "guayule_shrub",
     "guide",
     "guild",
     "gullet",
+    "gum_arabic_tree",
     "gusset",
+    "hammurabi_code",
     "handover",
     "hardening",
     "hardy_hole",
@@ -12813,6 +14623,7 @@
     "haul_road",
     "haunch",
     "hawk",
+    "hazelnut_tree",
     "headband",
     "header",
     "headstock",
@@ -12820,6 +14631,7 @@
     "heat_shield",
     "heat_shield_tile",
     "heddle",
+    "heel",
     "heliography",
     "hex",
     "hit_rate",
@@ -12857,6 +14669,7 @@
     "inode",
     "input",
     "inscription",
+    "insulation",
     "insurance",
     "interchangeable_parts",
     "interest",
@@ -12876,12 +14689,15 @@
     "joist_hanger",
     "journal",
     "just_in_time",
+    "jute",
     "kanban",
+    "kerb",
     "kerning",
     "keyboard",
     "keystone",
     "keyway",
     "knitted_fabric",
+    "lace",
     "lacing",
     "lame",
     "land",
@@ -12900,6 +14716,7 @@
     "lexer",
     "licence",
     "lichtenberg_figure",
+    "lid",
     "lift",
     "liming",
     "linchpin",
@@ -12908,6 +14725,7 @@
     "link",
     "linkage",
     "linker",
+    "lintel",
     "live_load",
     "log_building",
     "logistics",
@@ -12919,6 +14737,8 @@
     "maceration",
     "machining",
     "magnetic_separation",
+    "mahogany_tree",
+    "mainspring",
     "manifest",
     "marble",
     "mask",
@@ -12945,13 +14765,16 @@
     "mooring",
     "mordant",
     "mortar",
+    "mortar_lime",
     "mortise_and_tenon",
+    "mouldboard",
     "moulding",
     "mountaintop_removal",
     "mri_scan",
     "mull",
     "musk",
     "muzzle",
+    "myrrh_tree",
     "nail",
     "name_server",
     "nasal",
@@ -12959,6 +14782,7 @@
     "neck",
     "necktie",
     "needle_plate",
+    "negative_stain",
     "net",
     "neutral_buoyancy",
     "niche",
@@ -12968,8 +14792,10 @@
     "nymphaeum",
     "obsidian",
     "odometer",
+    "office",
     "official",
     "oldowan_tool",
+    "olive_wood_tree",
     "onset",
     "opcode",
     "open_pit_mining",
@@ -12982,9 +14808,12 @@
     "packing_stone",
     "pad",
     "padding",
+    "page",
     "pallet",
     "pane",
     "panicle",
+    "paperclip",
+    "papyrus_reed",
     "paramedic",
     "parser",
     "passage",
@@ -12993,6 +14822,7 @@
     "paving",
     "pawl",
     "peak",
+    "pedestrian_crossing",
     "peek",
     "peen",
     "permission",
@@ -13021,6 +14851,7 @@
     "polishing",
     "polishing_grit",
     "polycarbonate",
+    "pommel",
     "porphyry",
     "portico",
     "power_source",
@@ -13030,6 +14861,7 @@
     "preservative",
     "pressing",
     "pressure_drop",
+    "primer",
     "principal",
     "prism",
     "pritchel_hole",
@@ -13048,7 +14880,9 @@
     "quicklime",
     "quoin",
     "qwerty",
+    "raffia_palm",
     "rafter",
+    "rag",
     "rail_yard",
     "railroad_engineer",
     "raising",
@@ -13056,6 +14890,7 @@
     "ramp",
     "rate",
     "rating_nut",
+    "rattan_palm",
     "reaming",
     "recline",
     "record",
@@ -13081,20 +14916,25 @@
     "resource_estimation",
     "revenue",
     "revetment",
+    "richter_scale",
     "ridge",
     "rim",
     "ring",
     "risk",
     "rivet_set",
     "road_freight",
+    "road_sign",
     "robotic_surgery",
     "rock_cut_architecture",
+    "rolling_pin",
     "rondel",
     "roof_tile",
+    "roofing_felt",
     "room",
     "room_and_pillar_mining",
     "root_zone",
     "rose_madder",
+    "rosewood_tree",
     "rostrum",
     "rounding",
     "route",
@@ -13115,9 +14955,11 @@
     "scratch_coat",
     "screed",
     "scupper",
+    "sealant",
     "seam",
     "select_line",
     "selvage",
+    "semiconductor",
     "separation",
     "serial_number",
     "sericin",
@@ -13127,10 +14969,12 @@
     "severity",
     "shaft",
     "shank",
+    "share",
     "shear_line",
     "sheet_metal",
     "shingle",
     "ships_captain",
+    "shop",
     "shoulder",
     "side_effect",
     "sign",
@@ -13138,22 +14982,30 @@
     "signature",
     "silicon_carbide",
     "silicone",
+    "sill",
     "silver_iodide",
     "sinew",
     "sintering",
+    "sisal",
+    "size",
     "sizing",
     "slate",
     "sledge",
     "sleeper",
     "sleeve",
     "slide",
+    "slip",
     "slipway",
     "slot",
+    "soda_ash",
     "sodium_silicate",
+    "soil_pipe",
     "sole",
     "sorting",
+    "soundhole",
     "spacer",
     "spacing",
+    "span",
     "specimen",
     "spider_silk",
     "spillage",
@@ -13161,6 +15013,7 @@
     "sport",
     "sprayer",
     "springer",
+    "sprocket",
     "stabiliser",
     "stability",
     "staff",
@@ -13190,6 +15043,7 @@
     "string",
     "strip_mining",
     "strut",
+    "stud",
     "stump",
     "sub_base",
     "subgrade",
@@ -13223,9 +15077,11 @@
     "target_generation",
     "taxiway",
     "teacher",
+    "teak_tree",
     "technique",
     "teeth",
     "tempering",
+    "tenochtitlan",
     "tenon",
     "tensile_strength",
     "tension",
@@ -13243,6 +15099,7 @@
     "throttle",
     "throw",
     "throwing",
+    "thumb_forceps",
     "tie",
     "tie_rod",
     "tiller",
@@ -13271,6 +15128,7 @@
     "tread",
     "trial",
     "triangulation",
+    "tricolour",
     "trim",
     "trough",
     "trunnion",
@@ -13279,6 +15137,7 @@
     "turf",
     "turns",
     "uncertainty",
+    "underlay",
     "underwear",
     "urine",
     "url",
@@ -13312,6 +15171,7 @@
     "wood",
     "wood_flour",
     "working_load_limit",
+    "worktop",
     "x_height",
     "x_ray",
     "yarn",
