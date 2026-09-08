@@ -446,11 +446,42 @@ function termsIn(text) {
   return [...out];
 }
 
+/* This corpus writes British English and Wikipedia frequently does not. A claim
+ * saying "millimetres" against an article that says "millimeters" is a
+ * difference in spelling, not a source failing to carry the claim, and flagging
+ * it buries the signals that matter under noise nobody can act on. The same
+ * already applies in tools/effects-audit.mjs, for the same reason and with the
+ * same rule: a variant may only ever let a term PASS. Nothing here can make an
+ * absent term look present — it can only stop a present one being called absent. */
+function usVariants(w) {
+  const out = new Set();
+  const add = x => { if (x !== w) out.add(x); };
+  add(w.replace(/re\b/g, 'er').replace(/res\b/g, 'ers'));  // metre, fibre, centre
+  add(w.replace(/oe/g, 'e').replace(/ae/g, 'e'));            // oesophagus, haemoglobin
+  add(w.replace(/ise/g, 'ize').replace(/isa/g, 'iza'));      // organise, organisation
+  add(w.replace(/our/g, 'or'));                              // colour, behaviour
+  add(w.replace(/([lpt])\1(ed|ing)/g, '$1$2'));              // worshipped, travelled
+  return [...out];
+}
+
 /** Match on a stem, so "enzymes" finds "enzyme" and "crystallises" finds "crystal". */
 function articleHasTerm(lowerText, term) {
-  const stem = term.replace(/(ing|ed|es|s|ise|ised|ize|ized|ly)$/, '');
+  const stemOf = w => w.replace(/(ing|ed|es|s|ise|ised|ize|ized|ly)$/, '');
+  const stem = stemOf(term);
   if (stem.length < 5) return true;          // too short to be evidence either way
-  return lowerText.includes(stem);
+  /* Hyphenation is typesetting, not content: an article writing "by-product"
+   * carries the claim a sentence writing "byproduct" makes. Fold both sides. */
+  const flat = lowerText.replace(/-/g, '');
+  /* Spell the variants from the WHOLE word, then stem each one. Stemming first
+   * destroys the very ending the rules key on — "millimetres" loses its "es"
+   * and becomes "millimetr", which no longer ends in "re" for the rule to see.
+   * That ordering mistake made the whole normalisation a no-op. */
+  for (const cand of [term, ...usVariants(term)]) {
+    const st = stemOf(cand).replace(/-/g, '');
+    if (st.length < 5) continue;
+    if (lowerText.includes(st) || flat.includes(st)) return true;
+  }
+  return false;
 }
 
 const only = process.argv.find(a => !a.startsWith('--') && !a.endsWith('.mjs') && !a.includes('node'));
