@@ -548,8 +548,16 @@ for (const r of subject) {
    * of it is present, which is stricter than accepting either one. */
   const present = (n) => lowerFolded.includes(n) || lowerBare.includes(bare(n))
                       || lowerJoined.includes(joins(bare(n)));
+  /* The article's own title counts as present. `Ta'aroa` was reported as a name
+   * the source never mentions — against the article *called* Ta'aroa, whose body
+   * uses the wider Polynesian name Tangaroa throughout. An article titled for a
+   * name is the strongest evidence there is that it is about that name, and the
+   * fetched text does not always repeat it. */
+  const titleWords = bare(dashes(String(title).toLowerCase()));
   const strayNames = NAME_CLEARED[gestureOf(r)] ? []
     : namesIn(r.why).filter(nm => {
+        const t = bare(dashes(nm.toLowerCase()));
+        if (titleWords.includes(t) || joins(titleWords).includes(joins(t))) return false;
         const n = dashes(nm.toLowerCase());
         if (present(n)) return false;
         const parts = n.split('-').filter(p => p.length > 2);
