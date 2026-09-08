@@ -22,6 +22,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { titleOf as wikiTitleOf } from './lib/wiki.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const recipes = JSON.parse(readFileSync(join(root, 'data/recipes.json'), 'utf8'));
@@ -86,19 +87,34 @@ async function articleText(title) {
  * payload almost none of it needed, so it is a SECOND CHANCE — pulled only when
  * the prose alone does not support a claim. */
 
-/* The rendered page, tags stripped — the only way to see a transcluded infobox. */
+/* The rendered page, tags stripped — the only way to see a transcluded infobox.
+ *
+ * Returns null when it could not be READ, and '' only when it was read and was
+ * empty. The difference is the whole point. This function used to `catch {
+ * return ''; }`, and when Wikipedia throttles it answers **HTTP 200 with the
+ * plain text "You are making too many requests to the API."** — so res.ok is
+ * true, res.json() throws, the catch swallows it, and the caller is handed an
+ * empty infobox that looks identical to an article with no infobox. Every
+ * melting point, boiling point and density then reports as a number the article
+ * does not contain, and the harder the tool is run the more false faults it
+ * manufactures. That is the same shape as the getJSON bug recorded below, in
+ * the function immediately after this one. A catch that hides a failure is
+ * worse than no catch, because the stage looks like it ran. */
 async function renderedText(title) {
   const url = `${API}?action=parse&prop=text&formatversion=2&format=json&page=${encodeURIComponent(title)}`;
   try {
     const res = await fetch(url, { headers: { 'User-Agent': 'Loam/1.0 (source audit; contact via repo)' } });
-    if (!res.ok) return '';
-    const j = await res.json();
-    const html = j?.parse?.text || '';
+    if (!res.ok) return null;
+    const body = await res.text();
+    if (!body.trimStart().startsWith('{')) return null;   // the throttle notice, served as 200
+    const j = JSON.parse(body);
+    const html = j?.parse?.text ?? null;
+    if (html === null) return null;
     return html.replace(/<style[\s\S]*?<\/style>/gi, ' ')
                .replace(/<[^>]+>/g, ' ')
                .replace(/&[a-z]+;|&#\d+;/gi, ' ')
                .replace(/\s+/g, ' ');
-  } catch { return ''; }
+  } catch { return null; }
 }
 
 const wikiCache = new Map();
@@ -129,7 +145,12 @@ async function articleWikitext(title) {
        * {{Infobox gold}} and the number lives in that template. Raw wikitext
        * therefore misses exactly the class of fact this stage exists to catch,
        * so the rendered page is pulled alongside it and flattened to text. */
-      wiki += '\n' + await renderedText(title);
+      /* If the infobox could not be read, the article has NOT been fully seen.
+       * Say so by failing the whole fetch rather than returning the wikitext
+       * alone, which would let the caller flag infobox figures as absent. */
+      const rendered = await renderedText(title);
+      if (rendered === null) { await sleep(400); continue; }
+      wiki += '\n' + rendered;
       wikiCache.set(title, wiki);
       if (wiki) writeDisk('wiki:' + title, wiki);
       await sleep(400);
@@ -140,10 +161,12 @@ async function articleWikitext(title) {
   return '';
 }
 
-const titleOf = src => {
-  const m = /en\.wikipedia\.org\/wiki\/([^#?]+)/.exec(src || '');
-  return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
-};
+/* Imported, not redefined. This file carried its own copy of titleOf with the
+ * older `en.wikipedia.org`-only pattern, so the hostname parsing added to
+ * tools/lib/wiki.mjs did not reach the recipe audit at all — two definitions of
+ * the same question, free to drift, and one of them already had. A tool with two
+ * answers for "is this a Wikipedia URL" has none. */
+const titleOf = wikiTitleOf;
 
 /**
  * The numbers worth checking. Bare small integers are skipped — "two",
@@ -583,6 +606,11 @@ for (const r of subject) {
   let missing2 = missing, strayNames2 = strayNames;
   if (missing.length || strayNames.length) {
     const wiki = await articleWikitext(title);
+    /* Could not read the infobox — so this row has NOT been checked, and saying
+     * "the article does not contain 1085" would be a claim about an article
+     * this run never finished reading. Throttling must produce unchecked rows,
+     * never faults. */
+    if (!wiki) { noSource.push({ r, why: `infobox unreadable for "${title}" — throttled` }); continue; }
     if (wiki) {
       const wl = dashes(wiki.toLowerCase());
       missing2 = missing.filter(x => !articleHas(wiki, x)

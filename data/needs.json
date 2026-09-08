@@ -28,6 +28,18 @@
         "blowout_panel"
       ]
     },
+    "abutment": {
+      "src": "https://en.wikipedia.org/wiki/Abutment_(bridge)",
+      "note": "The end structure that hands the bridge's weight and thrust to the ground.",
+      "needs": [
+        "foundation",
+        "footing",
+        "wall",
+        "buttress",
+        "mortar",
+        "stone|concrete"
+      ]
+    },
     "ac_induction_motor": {
       "src": "https://en.wikipedia.org/wiki/Induction_motor",
       "note": "No brushes and no magnets — the rotor is dragged round by a field that is already turning.",
@@ -383,6 +395,17 @@
         "awning",
         "drain",
         "mortar"
+      ]
+    },
+    "anchor": {
+      "src": "https://en.wikipedia.org/wiki/Anchor",
+      "note": "The flukes dig in; the shank transmits the pull; the crown takes the beating.",
+      "needs": [
+        "shank",
+        "crown",
+        "fluke",
+        "stock",
+        "ring|shackle"
       ]
     },
     "and_gate": {
@@ -1707,6 +1730,15 @@
         "heat|fire"
       ]
     },
+    "breakwater": {
+      "src": "https://en.wikipedia.org/wiki/Breakwater_(structure)",
+      "needs": [
+        "stone",
+        "concrete",
+        "foundation",
+        "revetment"
+      ]
+    },
     "brick": {
       "src": "https://en.wikipedia.org/wiki/Brick",
       "note": "Clay, water, a shape, and enough heat to make the change permanent.",
@@ -1824,6 +1856,18 @@
         "axle",
         "suspension",
         "wheel"
+      ]
+    },
+    "bushing": {
+      "src": "https://en.wikipedia.org/wiki/Bushing_(electrical)",
+      "note": "The insulator that lets high voltage pass through a grounded wall.",
+      "needs": [
+        "insulator",
+        "conductor",
+        "flange",
+        "weather_shed",
+        "oil|gas",
+        "seal"
       ]
     },
     "buttress": {
@@ -2153,6 +2197,26 @@
         "brake",
         "harness",
         "seat"
+      ]
+    },
+    "cart": {
+      "src": "https://en.wikipedia.org/wiki/Cart",
+      "needs": [
+        "body|bed",
+        "wheel",
+        "axle",
+        "shaft|handle",
+        "frame"
+      ]
+    },
+    "case": {
+      "src": "https://en.wikipedia.org/wiki/Suitcase",
+      "needs": [
+        "shell",
+        "liner",
+        "hinge",
+        "latch|clasp",
+        "handle"
       ]
     },
     "cask": {
@@ -4020,6 +4084,15 @@
         "beater|drumstick"
       ]
     },
+    "drumhead": {
+      "src": "https://en.wikipedia.org/wiki/Drumhead",
+      "note": "The tension decides the pitch and whether it rings or thuds.",
+      "needs": [
+        "membrane|skin|hide",
+        "hoop",
+        "rim"
+      ]
+    },
     "dvd_player": {
       "src": "https://en.wikipedia.org/wiki/DVD_player",
       "note": "A laser reads a spiral of pits by interference; the disc spins faster as the head moves inward.",
@@ -4315,6 +4388,16 @@
         "water",
         "catalyst",
         "distillation"
+      ]
+    },
+    "evaporator": {
+      "src": "https://en.wikipedia.org/wiki/Evaporator",
+      "note": "Where the refrigerant boils and takes heat with it.",
+      "needs": [
+        "coil",
+        "fin",
+        "expansion_valve",
+        "pipe"
       ]
     },
     "event_horizon_telescope": {
@@ -4685,6 +4768,18 @@
         "thermal_camera"
       ]
     },
+    "fireplace": {
+      "src": "https://en.wikipedia.org/wiki/Fireplace",
+      "needs": [
+        "firebox",
+        "hearth",
+        "lintel",
+        "flue",
+        "damper",
+        "chimney",
+        "mantel"
+      ]
+    },
     "fixative": {
       "src": "https://en.wikipedia.org/wiki/Fixative_(perfumery)",
       "note": "Something that evaporates slowly, so the fast things do not all leave at once.",
@@ -4725,6 +4820,19 @@
         "lanyard_ring"
       ]
     },
+    "flap": {
+      "src": "https://en.wikipedia.org/wiki/Flap_(aeronautics)",
+      "note": "Lowered to make a wing lift more at lower speeds — the price is drag.",
+      "needs": [
+        "skin",
+        "rib",
+        "spar",
+        "hinge",
+        "actuator",
+        "track",
+        "fairing"
+      ]
+    },
     "flash_memory": {
       "src": "https://en.wikipedia.org/wiki/Flash_memory",
       "needs": [
@@ -4763,6 +4871,15 @@
         "axle",
         "coupler",
         "air_brake"
+      ]
+    },
+    "fletching": {
+      "src": "https://en.wikipedia.org/wiki/Fletching",
+      "note": "Set askew so the arrow spins, and a spinning arrow flies true.",
+      "needs": [
+        "feather",
+        "binding|glue",
+        "thread|sinew"
       ]
     },
     "flintlock": {
@@ -5180,6 +5297,18 @@
         "door"
       ]
     },
+    "fuse_box": {
+      "src": "https://en.wikipedia.org/wiki/Distribution_board",
+      "needs": [
+        "enclosure",
+        "busbar",
+        "circuit_breaker|fuse",
+        "neutral_bar",
+        "earth_bar",
+        "din_rail",
+        "cable_entry"
+      ]
+    },
     "fuselage": {
       "src": "https://en.wikipedia.org/wiki/Fuselage",
       "needs": [
@@ -5346,6 +5475,16 @@
         "wire",
         "handle",
         "ring"
+      ]
+    },
+    "gimbal": {
+      "src": "https://en.wikipedia.org/wiki/Gimbal",
+      "note": "Rings pivoted at right angles so the carried thing stays level.",
+      "needs": [
+        "ring",
+        "pivot",
+        "frame",
+        "bearing"
       ]
     },
     "gladius": {
@@ -5702,6 +5841,20 @@
         "crane"
       ]
     },
+    "hard_drive": {
+      "src": "https://en.wikipedia.org/wiki/Hard_disk_drive",
+      "note": "The head floats on a cushion of air thinner than a fingerprint.",
+      "needs": [
+        "platter",
+        "spindle_motor",
+        "read_write_head",
+        "actuator_arm",
+        "voice_coil",
+        "controller_board",
+        "housing",
+        "air_filter"
+      ]
+    },
     "harmonica": {
       "src": "https://en.wikipedia.org/wiki/Harmonica",
       "note": "One reed set sounds on the blow, another on the draw.",
@@ -5803,6 +5956,16 @@
         "cable",
         "connector",
         "housing"
+      ]
+    },
+    "hearth": {
+      "src": "https://en.wikipedia.org/wiki/Hearth",
+      "note": "A fire given a permanent place — that is when a shelter becomes a house.",
+      "needs": [
+        "stone|brick",
+        "floor",
+        "flue",
+        "chimney"
       ]
     },
     "heat_exchanger": {
@@ -6034,6 +6197,16 @@
         "socket|tang",
         "haft",
         "edge"
+      ]
+    },
+    "hopper": {
+      "src": "https://en.wikipedia.org/wiki/Hopper_(container)",
+      "note": "Sloping sides so what is put in feeds itself out.",
+      "needs": [
+        "frame",
+        "steel|timber",
+        "gate|valve",
+        "brace"
       ]
     },
     "hopper_car": {
@@ -6350,6 +6523,17 @@
         "heat_exchanger"
       ]
     },
+    "indicator": {
+      "src": "https://en.wikipedia.org/wiki/Automotive_lighting#Turn_signals",
+      "needs": [
+        "bulb|led",
+        "lens",
+        "reflector",
+        "housing",
+        "socket",
+        "wiring"
+      ]
+    },
     "inductor": {
       "src": "https://en.wikipedia.org/wiki/Inductor",
       "note": "A coil that resists a change in current, because a changing field pushes back.",
@@ -6633,6 +6817,15 @@
         "accessory_gearbox",
         "fuel_pump",
         "starter"
+      ]
+    },
+    "jetty": {
+      "src": "https://en.wikipedia.org/wiki/Jetty",
+      "needs": [
+        "caisson|pier",
+        "deck",
+        "timber|plank",
+        "brace"
       ]
     },
     "jpeg": {
@@ -7169,6 +7362,18 @@
         "glass"
       ]
     },
+    "lighthouse": {
+      "src": "https://en.wikipedia.org/wiki/Lighthouse",
+      "note": "The lens rotates so the flash has a signature — each lighthouse blinks its own pattern.",
+      "needs": [
+        "tower",
+        "lantern_room",
+        "fresnel_lens|lamp",
+        "gallery",
+        "fog_signal",
+        "foundation"
+      ]
+    },
     "lightning_rod": {
       "src": "https://en.wikipedia.org/wiki/Lightning_rod",
       "note": "A grounded iron point gives a stroke somewhere safe to go instead of the building. Franklin, 1752.",
@@ -7415,6 +7620,19 @@
         "brass_fitting",
         "tie_hook",
         "padded_tunic"
+      ]
+    },
+    "loudspeaker": {
+      "src": "https://en.wikipedia.org/wiki/Loudspeaker",
+      "note": "A coil in a magnetic field glued to a cone — current in, sound out.",
+      "needs": [
+        "cone|diaphragm",
+        "voice_coil",
+        "magnet",
+        "suspension|spider",
+        "surround",
+        "frame|basket",
+        "terminal"
       ]
     },
     "lyre": {
@@ -7896,6 +8114,16 @@
         "interlock|safety_switch"
       ]
     },
+    "millrace": {
+      "src": "https://en.wikipedia.org/wiki/Millrace",
+      "note": "The channel to the wheel and the tailrace away again.",
+      "needs": [
+        "channel",
+        "weir",
+        "gate",
+        "dam"
+      ]
+    },
     "millstone": {
       "src": "https://en.wikipedia.org/wiki/Millstone",
       "note": "A pair of dressed stones, the upper turning on the lower; the furrows throw flour to the edge.",
@@ -8218,6 +8446,19 @@
         "faraday_cage",
         "reconstruction_computer",
         "quench_pipe"
+      ]
+    },
+    "muffler": {
+      "src": "https://en.wikipedia.org/wiki/Muffler_(exhaust)",
+      "note": "Sound waves bounce between chambers until they cancel themselves out.",
+      "needs": [
+        "shell",
+        "baffle",
+        "chamber",
+        "perforated_tube",
+        "packing|fibreglass",
+        "inlet_pipe",
+        "outlet_pipe"
       ]
     },
     "multiplexer": {
@@ -9632,6 +9873,19 @@
         "meter"
       ]
     },
+    "power_supply": {
+      "src": "https://en.wikipedia.org/wiki/Power_supply_unit_(computer)",
+      "needs": [
+        "transformer",
+        "rectifier",
+        "capacitor",
+        "voltage_regulator",
+        "fan",
+        "circuit_board",
+        "housing",
+        "cable"
+      ]
+    },
     "press": {
       "src": "https://en.wikipedia.org/wiki/Machine_press",
       "note": "Force applied slowly and exactly where it is wanted.",
@@ -9641,6 +9895,20 @@
         "bed",
         "screw|hydraulic|toggle",
         "stroke"
+      ]
+    },
+    "printer": {
+      "src": "https://en.wikipedia.org/wiki/Printer_(computing)",
+      "needs": [
+        "printhead",
+        "ink_cartridge|toner",
+        "paper_tray",
+        "motor",
+        "belt",
+        "roller",
+        "circuit_board",
+        "power_supply",
+        "frame"
       ]
     },
     "printing_press": {
@@ -9702,6 +9970,17 @@
         "spinner",
         "bolt",
         "balance"
+      ]
+    },
+    "pruning_shears": {
+      "src": "https://en.wikipedia.org/wiki/Pruning_shears",
+      "needs": [
+        "blade",
+        "anvil|bypass_blade",
+        "pivot",
+        "spring",
+        "handle",
+        "latch"
       ]
     },
     "pula_arena": {
@@ -9823,6 +10102,16 @@
         "temperature"
       ]
     },
+    "quay": {
+      "src": "https://en.wikipedia.org/wiki/Quay",
+      "note": "A solid edge so ships lie against land, not pilings.",
+      "needs": [
+        "foundation",
+        "stone",
+        "wall",
+        "coping"
+      ]
+    },
     "quenching_trough": {
       "src": "https://en.wikipedia.org/wiki/Quenching",
       "note": "A tank of the right liquid at the right temperature, beside the fire.",
@@ -9902,6 +10191,16 @@
         "elevation_drive",
         "cabling",
         "correlator"
+      ]
+    },
+    "raft": {
+      "src": "https://en.wikipedia.org/wiki/Raft",
+      "note": "No hull, no watertightness — the oldest craft there is.",
+      "needs": [
+        "timber",
+        "rope|cord",
+        "deck",
+        "binding"
       ]
     },
     "rail_yard": {
@@ -10194,6 +10493,22 @@
         "drainage",
         "kerb",
         "road_sign"
+      ]
+    },
+    "robot": {
+      "src": "https://en.wikipedia.org/wiki/Industrial_robot",
+      "note": "An arm that moves through six axes, and the controller that plans where each joint should be at each instant.",
+      "needs": [
+        "arm",
+        "joint",
+        "motor",
+        "gearbox",
+        "encoder",
+        "controller",
+        "wiring",
+        "end_effector",
+        "base",
+        "power_supply"
       ]
     },
     "robotic_arm": {
@@ -11588,6 +11903,20 @@
         "base"
       ]
     },
+    "starter_motor": {
+      "src": "https://en.wikipedia.org/wiki/Starter_(engine)",
+      "note": "The pinion engages only while cranking — a one-way clutch frees it the instant the engine catches.",
+      "needs": [
+        "armature",
+        "field_coil",
+        "commutator",
+        "brush",
+        "solenoid",
+        "pinion",
+        "overrunning_clutch",
+        "housing"
+      ]
+    },
     "stator": {
       "src": "https://en.wikipedia.org/wiki/Stator",
       "note": "The part that does not turn, and the part that makes the field.",
@@ -12141,6 +12470,16 @@
         "attachment_fitting"
       ]
     },
+    "tail_vane": {
+      "src": "https://en.wikipedia.org/wiki/Windmill_fantail",
+      "note": "Turns the cap to face the wind automatically.",
+      "needs": [
+        "blade",
+        "frame",
+        "gear",
+        "shaft"
+      ]
+    },
     "tailings_dam": {
       "src": "https://en.wikipedia.org/wiki/Tailings_dam",
       "note": "Designed to hold its contents forever — often raised using the tailings themselves as fill.",
@@ -12356,6 +12695,16 @@
         "hinge",
         "handle",
         "steel"
+      ]
+    },
+    "tension_disc": {
+      "src": "https://en.wikipedia.org/wiki/Thread_tension",
+      "note": "Two plates squeezed by a spring, with the thread running between.",
+      "needs": [
+        "disc|plate",
+        "spring",
+        "screw",
+        "frame"
       ]
     },
     "terminal": {
@@ -12575,6 +12924,18 @@
         "buoyancy_chamber"
       ]
     },
+    "touchscreen": {
+      "src": "https://en.wikipedia.org/wiki/Touchscreen",
+      "note": "The finger changes the capacitance, and a chip works out where.",
+      "needs": [
+        "display_panel",
+        "sensor_layer",
+        "cover_glass",
+        "controller",
+        "flexible_cable",
+        "adhesive"
+      ]
+    },
     "tow_missile": {
       "src": "https://en.wikipedia.org/wiki/BGM-71_TOW",
       "note": "Two hair-thin wires spool out behind it, carrying steering commands.",
@@ -12765,6 +13126,17 @@
         "fluorescent_screen",
         "ccd_sensor",
         "cooling_water"
+      ]
+    },
+    "transmitter": {
+      "src": "https://en.wikipedia.org/wiki/Transmitter",
+      "needs": [
+        "oscillator",
+        "amplifier",
+        "modulator",
+        "antenna",
+        "power_supply",
+        "housing"
       ]
     },
     "treatment": {
@@ -13191,6 +13563,16 @@
         "door"
       ]
     },
+    "vat": {
+      "src": "https://en.wikipedia.org/wiki/Vat_(container)",
+      "note": "Large enough to work in, built like a barrel but open.",
+      "needs": [
+        "stave",
+        "hoop",
+        "tap",
+        "bung"
+      ]
+    },
     "vault": {
       "src": "https://en.wikipedia.org/wiki/Vault_(architecture)",
       "note": "It cannot stand until the last stone is in, so the whole thing is built on a temporary timber form and only becomes a vault when that comes away.",
@@ -13281,6 +13663,17 @@
         "handle",
         "body|frame",
         "slide"
+      ]
+    },
+    "viewfinder": {
+      "src": "https://en.wikipedia.org/wiki/Viewfinder",
+      "needs": [
+        "eyepiece",
+        "lens",
+        "mirror|prism",
+        "focusing_screen",
+        "frame_line",
+        "housing"
       ]
     },
     "violin": {
@@ -13750,6 +14143,17 @@
         "glass"
       ]
     },
+    "windscreen": {
+      "src": "https://en.wikipedia.org/wiki/Windshield",
+      "note": "Laminated so it cracks but does not shatter — the plastic interlayer holds the fragments.",
+      "needs": [
+        "glass",
+        "pvb_interlayer",
+        "frame",
+        "seal",
+        "adhesive"
+      ]
+    },
     "wing": {
       "src": "https://en.wikipedia.org/wiki/Wing",
       "needs": [
@@ -13952,252 +14356,6 @@
         "grip",
         "pommel"
       ]
-    },
-    "printer": {
-      "src": "https://en.wikipedia.org/wiki/Printer_(computing)",
-      "needs": [
-        "printhead",
-        "ink_cartridge|toner",
-        "paper_tray",
-        "motor",
-        "belt",
-        "roller",
-        "circuit_board",
-        "power_supply",
-        "frame"
-      ]
-    },
-    "robot": {
-      "src": "https://en.wikipedia.org/wiki/Industrial_robot",
-      "note": "An arm that moves through six axes, and the controller that plans where each joint should be at each instant.",
-      "needs": [
-        "arm",
-        "joint",
-        "motor",
-        "gearbox",
-        "encoder",
-        "controller",
-        "wiring",
-        "end_effector",
-        "base",
-        "power_supply"
-      ]
-    },
-    "starter_motor": {
-      "src": "https://en.wikipedia.org/wiki/Starter_(engine)",
-      "note": "The pinion engages only while cranking — a one-way clutch frees it the instant the engine catches.",
-      "needs": [
-        "armature",
-        "field_coil",
-        "commutator",
-        "brush",
-        "solenoid",
-        "pinion",
-        "overrunning_clutch",
-        "housing"
-      ]
-    },
-    "windscreen": {
-      "src": "https://en.wikipedia.org/wiki/Windshield",
-      "note": "Laminated so it cracks but does not shatter — the plastic interlayer holds the fragments.",
-      "needs": [
-        "glass",
-        "pvb_interlayer",
-        "frame",
-        "seal",
-        "adhesive"
-      ]
-    },
-    "muffler": {
-      "src": "https://en.wikipedia.org/wiki/Muffler_(exhaust)",
-      "note": "Sound waves bounce between chambers until they cancel themselves out.",
-      "needs": [
-        "shell",
-        "baffle",
-        "chamber",
-        "perforated_tube",
-        "packing|fibreglass",
-        "inlet_pipe",
-        "outlet_pipe"
-      ]
-    },
-    "hard_drive": {
-      "src": "https://en.wikipedia.org/wiki/Hard_disk_drive",
-      "note": "The head floats on a cushion of air thinner than a fingerprint.",
-      "needs": [
-        "platter",
-        "spindle_motor",
-        "read_write_head",
-        "actuator_arm",
-        "voice_coil",
-        "controller_board",
-        "housing",
-        "air_filter"
-      ]
-    },
-    "power_supply": {
-      "src": "https://en.wikipedia.org/wiki/Power_supply_unit_(computer)",
-      "needs": [
-        "transformer",
-        "rectifier",
-        "capacitor",
-        "voltage_regulator",
-        "fan",
-        "circuit_board",
-        "housing",
-        "cable"
-      ]
-    },
-    "viewfinder": {
-      "src": "https://en.wikipedia.org/wiki/Viewfinder",
-      "needs": [
-        "eyepiece",
-        "lens",
-        "mirror|prism",
-        "focusing_screen",
-        "frame_line",
-        "housing"
-      ]
-    },
-    "flap": {
-      "src": "https://en.wikipedia.org/wiki/Flap_(aeronautics)",
-      "note": "Lowered to make a wing lift more at lower speeds — the price is drag.",
-      "needs": [
-        "skin",
-        "rib",
-        "spar",
-        "hinge",
-        "actuator",
-        "track",
-        "fairing"
-      ]
-    },
-    "pruning_shears": {
-      "src": "https://en.wikipedia.org/wiki/Pruning_shears",
-      "needs": [
-        "blade",
-        "anvil|bypass_blade",
-        "pivot",
-        "spring",
-        "handle",
-        "latch"
-      ]
-    },
-    "touchscreen": {
-      "src": "https://en.wikipedia.org/wiki/Touchscreen",
-      "note": "The finger changes the capacitance, and a chip works out where.",
-      "needs": [
-        "display_panel",
-        "sensor_layer",
-        "cover_glass",
-        "controller",
-        "flexible_cable",
-        "adhesive"
-      ]
-    },
-    "fuse_box": {
-      "src": "https://en.wikipedia.org/wiki/Distribution_board",
-      "needs": [
-        "enclosure",
-        "busbar",
-        "circuit_breaker|fuse",
-        "neutral_bar",
-        "earth_bar",
-        "din_rail",
-        "cable_entry"
-      ]
-    },
-    "fireplace": {
-      "src": "https://en.wikipedia.org/wiki/Fireplace",
-      "needs": [
-        "firebox",
-        "hearth",
-        "lintel",
-        "flue",
-        "damper",
-        "chimney",
-        "mantel"
-      ]
-    },
-    "indicator": {
-      "src": "https://en.wikipedia.org/wiki/Automotive_lighting#Turn_signals",
-      "needs": [
-        "bulb|led",
-        "lens",
-        "reflector",
-        "housing",
-        "socket",
-        "wiring"
-      ]
-    },
-    "anchor": {
-      "src": "https://en.wikipedia.org/wiki/Anchor",
-      "note": "The flukes dig in; the shank transmits the pull; the crown takes the beating.",
-      "needs": [
-        "shank",
-        "crown",
-        "fluke",
-        "stock",
-        "ring|shackle"
-      ]
-    },
-    "lighthouse": {
-      "src": "https://en.wikipedia.org/wiki/Lighthouse",
-      "note": "The lens rotates so the flash has a signature — each lighthouse blinks its own pattern.",
-      "needs": [
-        "tower",
-        "lantern_room",
-        "fresnel_lens|lamp",
-        "gallery",
-        "fog_signal",
-        "foundation"
-      ]
-    },
-    "transmitter": {
-      "src": "https://en.wikipedia.org/wiki/Transmitter",
-      "needs": [
-        "oscillator",
-        "amplifier",
-        "modulator",
-        "antenna",
-        "power_supply",
-        "housing"
-      ]
-    },
-    "cart": {
-      "src": "https://en.wikipedia.org/wiki/Cart",
-      "needs": [
-        "body|bed",
-        "wheel",
-        "axle",
-        "shaft|handle",
-        "frame"
-      ]
-    },
-    "loudspeaker": {
-      "src": "https://en.wikipedia.org/wiki/Loudspeaker",
-      "note": "A coil in a magnetic field glued to a cone — current in, sound out.",
-      "needs": [
-        "cone|diaphragm",
-        "voice_coil",
-        "magnet",
-        "suspension|spider",
-        "surround",
-        "frame|basket",
-        "terminal"
-      ]
-    },
-    "bushing": {
-      "src": "https://en.wikipedia.org/wiki/Bushing_(electrical)",
-      "note": "The insulator that lets high voltage pass through a grounded wall.",
-      "needs": [
-        "insulator",
-        "conductor",
-        "flange",
-        "weather_shed",
-        "oil|gas",
-        "seal"
-      ]
     }
   },
   "$not_assemblies_rule": "A needs list answers 'what goes into one'. Some made things have no answer, and counting them as owing a list inflates the backlog until the sweep looks endless. A list is NOT owed for: a SHAPE or geometric feature (bevel, extrados, camber); a SURFACE or layer that is a coat of something already listed (scratch_coat, base_course); a JOINT or PROCESS (weld, tempering, honing); or a SINGLE PIECE of one material shaped by one operation (voussoir, quoin, link, shank). Each id here is a judgement somebody made and can be argued with — which is the point of writing it down rather than inferring it from tags, the way the first version of this denominator did.",
@@ -14280,12 +14438,14 @@
     "bioavailability",
     "biomimicry",
     "bioplastic",
+    "blank",
     "blanket",
     "blasting",
     "bleach",
     "block_caving",
     "blockade",
     "blowpipe",
+    "bmw",
     "bobbin",
     "body",
     "body_weight",
@@ -14343,6 +14503,7 @@
     "catchment",
     "cathode",
     "cauldron",
+    "caulk",
     "causeway",
     "cavity",
     "cement",
@@ -14377,6 +14538,7 @@
     "clearance",
     "clerestory",
     "clerk",
+    "clinker",
     "clock_signal",
     "clothing",
     "clown",
@@ -14437,6 +14599,7 @@
     "crowbar",
     "crowd",
     "crown_staple",
+    "croze",
     "crucible",
     "css",
     "cuisse",
@@ -14567,6 +14730,7 @@
     "follower",
     "food_waste",
     "footing",
+    "ford",
     "fracking_fluid",
     "fragment",
     "frame",
@@ -14641,6 +14805,7 @@
     "hollow",
     "hologram",
     "holographic_plate",
+    "honda",
     "honing",
     "hook",
     "hoop",
@@ -14669,6 +14834,7 @@
     "inode",
     "input",
     "inscription",
+    "instrument",
     "insulation",
     "insurance",
     "interchangeable_parts",
@@ -14691,6 +14857,7 @@
     "just_in_time",
     "jute",
     "kanban",
+    "keeper",
     "kerb",
     "kerning",
     "keyboard",
@@ -14699,6 +14866,7 @@
     "knitted_fabric",
     "lace",
     "lacing",
+    "lacquer",
     "lame",
     "land",
     "lap",
@@ -14746,12 +14914,14 @@
     "mast",
     "material",
     "material_requirements_planning",
+    "maze",
     "measure",
     "medical_doctor",
     "medical_screening",
     "medication",
     "medium",
     "mensa",
+    "mercedes",
     "mesh",
     "message",
     "meteorologist",
@@ -14789,6 +14959,7 @@
     "nitrile_rubber",
     "nitro_group",
     "nitroimidazole",
+    "nock",
     "nymphaeum",
     "obsidian",
     "odometer",
@@ -14824,6 +14995,7 @@
     "peak",
     "pedestrian_crossing",
     "peek",
+    "peel",
     "peen",
     "permission",
     "pet_scan",
@@ -15010,6 +15182,7 @@
     "spider_silk",
     "spillage",
     "spindle",
+    "spire",
     "sport",
     "sprayer",
     "springer",
@@ -15025,6 +15198,7 @@
     "step",
     "stereochemistry",
     "sterilisation",
+    "sticky_rice_mortar",
     "stile",
     "stitch_length",
     "stitching",
@@ -15087,6 +15261,7 @@
     "tension",
     "term",
     "terminal",
+    "tesla",
     "test",
     "textile_designer",
     "thatch",
@@ -15117,6 +15292,7 @@
     "towel",
     "toxicity",
     "toy",
+    "toyota",
     "traceability",
     "training",
     "transaction",
@@ -15151,6 +15327,7 @@
     "vial",
     "village",
     "visor",
+    "volkswagen",
     "voussoir",
     "vulcanised_rubber",
     "wadding",
