@@ -318,6 +318,16 @@
     "wire"
   ],
   "effects": {
+    "aconite": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Aconitine keeps sodium channels open and the heart is what shows it. The alkaloid crosses intact skin, which is the property that made it a poison of choice long before anyone could name the mechanism.",
+        "src": "https://en.wikipedia.org/wiki/Aconitum"
+      }
+    ],
     "air": [
       {
         "valence": "benefit",
@@ -328,6 +338,16 @@
         "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
       }
     ],
+    "akee": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Hypoglycin A blocks the body from burning fat, so it must run on glucose alone and the blood sugar falls to nothing. The fruit is safe once it has opened on the tree by itself; picked before that, it is not.",
+        "src": "https://en.wikipedia.org/wiki/Blighia_sapida"
+      }
+    ],
     "almond": [
       {
         "valence": "benefit",
@@ -336,6 +356,16 @@
         "onset": "cumulative",
         "mechanism": "One of the densest sources of alpha-tocopherol there is, in the fat where it is needed and stays stable.",
         "src": "https://en.wikipedia.org/wiki/Almond"
+      }
+    ],
+    "aloe_vera": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "diarrhoea",
+        "onset": "conditional",
+        "mechanism": "The clear gel in the middle of the leaf and the yellow latex just under the rind are two different substances. Aloin is in the latex, it is a stimulant laxative, and it is why whole-leaf preparations behave nothing like gel.",
+        "src": "https://en.wikipedia.org/wiki/Aloin"
       }
     ],
     "aluminum": [
@@ -366,6 +396,16 @@
         "prevents": "scurvy",
         "mechanism": "Modest per fruit and eaten in quantity, which is how most of Europe got it before citrus was cheap. The vitamin sits mostly just under the skin, so peeling removes a good part of it.",
         "src": "https://en.wikipedia.org/wiki/Apple"
+      }
+    ],
+    "apricot": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The flesh is food and has nothing to do with this. The kernel inside the stone carries amygdalin, and a gut's own enzymes are what release the cyanide from it — bitter kernels run several per cent amygdalin, sweet ones a fraction of that.",
+        "src": "https://en.wikipedia.org/wiki/Amygdalin"
       }
     ],
     "arch": [
@@ -400,6 +440,16 @@
         "onset": "acute",
         "mechanism": "Around a million people a year, and the injury is deceleration rather than impact: the body stops with the car and the organs inside it do not, which is why the damage is often internal and invisible.",
         "src": "https://en.wikipedia.org/wiki/Traffic_collision"
+      }
+    ],
+    "autumn_crocus": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Colchicine stops cells from dividing by preventing the mitotic spindle from forming, so the tissues that turn over fastest fail first — gut lining and bone marrow. There is no antidote.",
+        "src": "https://en.wikipedia.org/wiki/Colchicum_autumnale"
       }
     ],
     "bacteria": [
@@ -468,6 +518,18 @@
         "latency": "years to decades"
       }
     ],
+    "betel_nut": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "carcinogen": true,
+        "iarc": 1,
+        "mechanism": "Chewed with or without tobacco, the areca nut is itself carcinogenic — the cancers are of the mouth, pharynx and oesophagus, the tissue it sits against. It is among the most widely used psychoactive substances in the world.",
+        "src": "https://en.wikipedia.org/wiki/Areca_nut"
+      }
+    ],
     "bird_wing": [
       {
         "valence": "inert",
@@ -504,6 +566,16 @@
         "onset": "conditional",
         "mechanism": "Cellulose and ink. There is nothing in a book a human gut can take apart, which is why the fibre in a plant and the fibre in a page are the same problem.",
         "src": "https://en.wikipedia.org/wiki/Cellulose"
+      }
+    ],
+    "bracken_fern": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Ptaquiloside is water-soluble and survives into milk from grazing animals as well as into the fern itself. The link is to tumours in livestock and to human oesophageal and gastric cancer where young fronds are eaten as a vegetable.",
+        "src": "https://en.wikipedia.org/wiki/Ptaquiloside"
       }
     ],
     "brain": [
@@ -676,6 +748,16 @@
         "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
       }
     ],
+    "cashew": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "A cashew is not a nut and its shell is not a shell: it is a drupe whose casing holds anacardic acid, the same chemical family as the resin in poison ivy. The roasting a cashew reaches you already done is what destroys it.",
+        "src": "https://en.wikipedia.org/wiki/Urushiol"
+      }
+    ],
     "cheese": [
       {
         "valence": "benefit",
@@ -846,6 +928,16 @@
         "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
       }
     ],
+    "death_cap": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "acute",
+        "mechanism": "The amatoxins are thermostable, so cooking changes nothing, and they shut down RNA polymerase II — the liver is the organ that concentrates them. The cruelty is the gap: the first symptoms remit, and the person appears to recover while the damage continues.",
+        "src": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+      }
+    ],
     "desert": [
       {
         "valence": "harm",
@@ -996,6 +1088,16 @@
         "src": "https://en.wikipedia.org/wiki/Pollen#Allergy"
       }
     ],
+    "fly_agaric": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "Muscimol acts directly on the nervous system as a GABA analogue, and ibotenic acid alongside it does the opposite. What follows is delirium and altered consciousness rather than organ damage, which is why the two are so often confused in accounts of it.",
+        "src": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+      }
+    ],
     "formaldehyde": [
       {
         "valence": "harm",
@@ -1016,6 +1118,16 @@
         "onset": "conditional",
         "mechanism": "The organic material is gone. What is left is mineral that has replaced it, so a fossil is a rock in the shape of a thing rather than any of the thing.",
         "src": "https://en.wikipedia.org/wiki/Permineralization"
+      }
+    ],
+    "foxglove": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Cardiac glycosides slow the heart by blocking the sodium-potassium pump in its muscle. It is the same action as the drug derived from it, and the margin between the dose that treats and the dose that kills is one of the narrowest in medicine.",
+        "src": "https://en.wikipedia.org/wiki/Digitalis"
       }
     ],
     "frame": [
@@ -1068,6 +1180,16 @@
         "reversible": false,
         "mechanism": "It ionises as it passes, damaging DNA, and the tissues that replace themselves fastest show it first — marrow, gut lining, hair follicles. There is often a latent period of apparent recovery before the marrow fails.",
         "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
+      }
+    ],
+    "giant_hogweed": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "mechanism": "The sap alone does nothing. Furanocoumarins in it bind DNA in the skin and only then does sunlight break the bond, so the burn appears a day or two after contact and recurs on the same skin for years afterwards.",
+        "src": "https://en.wikipedia.org/wiki/Phytophotodermatitis"
       }
     ],
     "glacier": [
@@ -1161,6 +1283,16 @@
         "src": "https://en.wikipedia.org/wiki/Bone_fracture"
       }
     ],
+    "holly": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The berries carry saponins, and children eating them is the usual case. The reputation for lethality is not borne out — vomiting is the ordinary outcome.",
+        "src": "https://en.wikipedia.org/wiki/Ilex"
+      }
+    ],
     "honey": [
       {
         "valence": "benefit",
@@ -1188,6 +1320,26 @@
         "onset": "acute",
         "mechanism": "Half a tonne with a kick delivered by the strongest muscle group in the animal, at head height for a standing person. Horse-related injuries are among the most serious in any sport, and most of them happen on the ground rather than in the saddle.",
         "src": "https://en.wikipedia.org/wiki/Equestrianism#Safety"
+      }
+    ],
+    "horse_chestnut": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Aesculin, in the seed, the leaf and the flower. The conker is the thing that looks most like food and is the part that carries most of it, which is the whole reason this plant is a childhood hazard rather than an agricultural one.",
+        "src": "https://en.wikipedia.org/wiki/Aesculus_hippocastanum"
+      }
+    ],
+    "horsetail": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "It carries thiaminase, an enzyme that takes vitamin B1 apart. Nothing about the plant is directly poisonous; the harm is a deficiency it induces, and it takes sustained eating to arrive — which is why it is a livestock problem rather than a human one.",
+        "src": "https://en.wikipedia.org/wiki/Equisetum"
       }
     ],
     "human": [
@@ -1319,6 +1471,16 @@
         "onset": "cumulative",
         "mechanism": "The same lactic fermentation, at a lower temperature and over longer, with the bacteria shifting in sequence as the acidity climbs.",
         "src": "https://en.wikipedia.org/wiki/Kimchi"
+      }
+    ],
+    "larkspur": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Diterpenoid alkaloids at the neuromuscular junction, concentrated in the young plant and falling as it matures. It kills more cattle on western North American range than any other plant.",
+        "src": "https://en.wikipedia.org/wiki/Delphinium"
       }
     ],
     "larva": [
@@ -1453,6 +1615,16 @@
         "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
       }
     ],
+    "lupin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Quinolizidine alkaloids, and the reason lupin beans are soaked and rinsed for days before they are eaten. Sweet cultivars have been bred to carry little of it, and the bitterness of the wild ones is a usable warning.",
+        "src": "https://en.wikipedia.org/wiki/Lupinus"
+      }
+    ],
     "lye": [
       {
         "valence": "harm",
@@ -1524,6 +1696,16 @@
         "src": "https://en.wikipedia.org/wiki/Silicosis"
       }
     ],
+    "mayapple": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Podophyllotoxin is another spindle poison, and like colchicine its usefulness and its danger are the same property. The ripe fruit is the one part eaten; the rest of the plant is not.",
+        "src": "https://en.wikipedia.org/wiki/Podophyllum_peltatum"
+      }
+    ],
     "meat": [
       {
         "valence": "benefit",
@@ -1576,6 +1758,16 @@
         "src": "https://en.wikipedia.org/wiki/Riboflavin"
       }
     ],
+    "mistletoe": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Phoratoxins are proteins that interfere with cell function, and the reputation is worse than the record: most reported ingestions of the American plant produce nausea and blurred vision rather than anything grave.",
+        "src": "https://en.wikipedia.org/wiki/Phoradendron"
+      }
+    ],
     "moon": [
       {
         "valence": "inert",
@@ -1583,6 +1775,16 @@
         "onset": "conditional",
         "mechanism": "The tide is real and it acts on oceans, not on people: the Moon's tidal pull on a human body is smaller than the pull of the wall beside them. No effect on the body has ever been demonstrated.",
         "src": "https://en.wikipedia.org/wiki/Lunar_effect"
+      }
+    ],
+    "morel": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The toxins here are thermolabile, which is the whole difference: a cooked morel is food and a raw one is not. This is the reverse of the death cap, where heat does nothing at all.",
+        "src": "https://en.wikipedia.org/wiki/Morchella"
       }
     ],
     "mould": [
@@ -1850,6 +2052,26 @@
         "src": "https://en.wikipedia.org/wiki/Platinum"
       }
     ],
+    "poison_hemlock": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "Coniine blocks transmission at the neuromuscular junction, so the paralysis climbs from the legs upward while the mind stays clear. Death is from the diaphragm giving out, which is the detail every account of Socrates preserves.",
+        "src": "https://en.wikipedia.org/wiki/Conium"
+      }
+    ],
+    "pokeweed": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The whole plant is toxic and the root most of all. It is eaten anyway, as poke sallet, by boiling the young leaves and throwing the water away more than once — a preparation that is a confession of what is in them.",
+        "src": "https://en.wikipedia.org/wiki/Phytolacca_americana"
+      }
+    ],
     "pork": [
       {
         "valence": "benefit",
@@ -1890,6 +2112,16 @@
         "onset": "conditional",
         "mechanism": "Every food allergy is to a protein, never to a fat or a sugar, because only a protein is large and structured enough for an antibody to recognise. Cooking sometimes changes the shape enough to break that recognition and sometimes does not, which is why one person can eat a baked egg and not a boiled one.",
         "src": "https://en.wikipedia.org/wiki/Food_allergy"
+      }
+    ],
+    "psyllium": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "The husk is mucilage: it takes up many times its own volume in water and stiffens. Swallowed without enough liquid to finish that reaction it can complete it in the oesophagus instead, where the obstruction is what stops the breathing.",
+        "src": "https://en.wikipedia.org/wiki/Choking"
       }
     ],
     "ptfe": [
@@ -1962,6 +2194,26 @@
         "onset": "conditional",
         "mechanism": "Colophony, the resin left after turpentine is distilled off, is one of the commonest causes of occupational contact allergy — it is in solder flux, adhesive plaster and violin rosin alike, and the sensitisation is permanent.",
         "src": "https://en.wikipedia.org/wiki/Colophony"
+      }
+    ],
+    "rhododendron": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Grayanotoxins hold sodium channels open, so nerve and muscle cannot reset. They pass into honey made from the flowers, which is the mad honey of classical accounts and the reason this is a hazard of a food rather than of a plant.",
+        "src": "https://en.wikipedia.org/wiki/Grayanotoxin"
+      }
+    ],
+    "rhubarb": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "nephrotoxin",
+        "onset": "acute",
+        "mechanism": "The stalk is the food and the leaf blade is not. Oxalic acid binds calcium out of the blood and the resulting crystals are deposited in the kidney, which is the organ that has to filter them.",
+        "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
       }
     ],
     "rice": [
@@ -2456,6 +2708,16 @@
         "src": "https://en.wikipedia.org/wiki/Sweet_potato"
       }
     ],
+    "taro": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "Raphides — needles of calcium oxalate that inject rather than dissolve, so the burning is mechanical as much as chemical. Prolonged cooking is what breaks them down, and every traditional preparation of the corm does it.",
+        "src": "https://en.wikipedia.org/wiki/Taro"
+      }
+    ],
     "tea": [
       {
         "valence": "benefit",
@@ -2621,6 +2883,16 @@
         "src": "https://en.wikipedia.org/wiki/Body_water"
       }
     ],
+    "water_hemlock": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "seizure",
+        "onset": "acute",
+        "mechanism": "Cicutoxin is a GABA antagonist, so it removes the brake rather than pressing anything: the result is violent seizures that begin within an hour. It is a different plant and a different mechanism from poison hemlock despite the shared name.",
+        "src": "https://en.wikipedia.org/wiki/Cicuta"
+      }
+    ],
     "wheat": [
       {
         "valence": "harm",
@@ -2701,6 +2973,16 @@
         "onset": "cumulative",
         "mechanism": "Yeast builds folate for its own DNA synthesis and carries a great deal of it. A body needs the same molecule for the same job, most urgently while a neural tube is closing.",
         "src": "https://en.wikipedia.org/wiki/Folate"
+      }
+    ],
+    "yew": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Every part but the red aril around the seed carries taxine alkaloids, which act on the heart's conduction. The bright flesh birds eat is the exception, and the seed inside it is not.",
+        "src": "https://en.wikipedia.org/wiki/Taxus_baccata"
       }
     ],
     "yoghurt": [
