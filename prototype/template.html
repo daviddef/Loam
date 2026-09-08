@@ -7906,7 +7906,8 @@ const RD_SITE = { brain: 'head', eye: 'head', ear: 'head', thyroid: 'neck',
                   lung: 'chest', heart: 'chest', trachea: 'neck', blood: 'chest',
                   liver: 'waist', kidney: 'waist', stomach: 'waist',
                   intestine: 'pelvis', bone_marrow: 'pelvis',
-                  skin: 'haR', muscle: 'knL', bone: 'knR', nerve: 'elL', spine: 'waist' };
+                  skin: 'haR', muscle: 'knL', bone: 'knR', nerve: 'elL', spine: 'waist',
+                  hair: 'head', tooth: 'head', joint: 'knR', neck: 'neck' };
 const RD_AFFECT = { brain: 'head', eye: 'head', tooth: 'head', thyroid: 'chest',
                     lung: 'chest', heart: 'chest', blood: 'chest', rib: 'chest',
                     bone: 'pelvis', gut: 'pelvis', intestine: 'pelvis', liver: 'pelvis',
@@ -7983,21 +7984,30 @@ function rdResolve(id, kind) {
  * outcome the corpus can depict: the part it acts on, the sign, and when it
  * started. THE CUMULATIVE RULE OUTRANKS ALL OF IT — a carcinogen's outcome may
  * carry a sign and a cumulative exposure still shows nothing, because that is
- * what is true on the day and it is the rule this layer was built around. */
+ * what is true on the day and it is the rule this layer was built around. It
+ * governs harms only: a benefit's site is where the element does its work, not
+ * a prediction, so there is nothing there to be premature about. */
 let rdSigns = [];
 function rdSignsBuild() {
   const out = [];
   for (const x of ragdoll) {
     for (const f of rdResolve(x.id, x.kind)) {
-      if (f.valence !== 'harm') continue;
+      // Benefits show too, in the good colour. An element is rarely only one
+      // thing, and a body that only ever reddens is a body only half described.
+      if (f.valence === 'inert') continue;
       const rung = f.stages && x.rung != null ? f.stages[x.rung] : null;
       const id = (rung && rung.outcome) || f.outcome;
       const o = id && (EFFECTS.outcomes || {})[id];
       if (!o) continue;
       // Nothing happens today, whatever the outcome looks like eventually.
-      if (f.onset === 'cumulative' && o.sign !== 'wait') continue;
+      // This is the harm-side rule and it stays the harm-side rule: the lie it
+      // exists to prevent is a wound drawn before there is one. A cumulative
+      // benefit is not that — calcium is in the bone now — and the case card
+      // already withholds the clock from benefits for the same reason.
+      if (f.valence === 'harm' && f.onset === 'cumulative' && o.sign !== 'wait') continue;
       if (o.sign === 'wait') continue;
-      out.push({ part: RD_SITE[o.site] || 'chest', sign: o.sign, id, t: performance.now() });
+      out.push({ part: RD_SITE[o.site] || 'chest', sign: o.sign, id,
+                 good: f.valence === 'benefit', t: performance.now() });
     }
   }
   rdSigns = out;
@@ -8368,9 +8378,11 @@ function rdDraw() {
 
   // WHAT THE BODY IS VISIBLY DOING. One mark per sign, at the organ named in
   // data/effects.json — not a damage model, a depiction of a recorded sign.
-  const brick = css.getPropertyValue('--brick').trim() || '#a2503a';
+  const brickC = css.getPropertyValue('--brick').trim() || '#a2503a';
+  const goodC = css.getPropertyValue('--avocado').trim() || '#5c7b3a';
   for (const g of rdSigns) {
     const a = RD.parts[RD.ix[g.part]]; if (!a) continue;
+    const brick = g.good ? goodC : brickC;
     const cx = X(a.x), cy = Y(a.y), age = (performance.now() - g.t) / 1000;
     if (g.sign === 'pulse') {
       // A throb, at about a resting heart rate.
