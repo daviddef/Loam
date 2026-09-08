@@ -185,6 +185,17 @@ const covered = Object.keys(NUTRIENTS).filter(id => supplies.has(id));
  * burn, a brain tumour and a drowning all produced the same nothing. Each
  * outcome now names the organ it acts on — an element, so the anatomy is
  * checkable — and one sign from a closed vocabulary. */
+/* Things that cannot meet a body at all — an idea, a polity, one of your own
+ * organs, an extinct animal. Counting them in effects-common made that metric
+ * permanently unfinishable, which is the fault $not_assemblies already fixed
+ * for needs. NOT a list of things whose answer is "nothing": where something
+ * really does meet a body and does nothing, that is an `inert` row with a
+ * reason. */
+const NO_EFFECT = new Set(E.$no_effect || []);
+for (const id of NO_EFFECT) {
+  if (!byId.has(id)) errors.push(`$no_effect: "${id}" is not an element`);
+  if (E.effects[id]) errors.push(`$no_effect: "${id}" has an effect row — it cannot be both`);
+}
 const SIGNS = Object.keys(E.$signs || {});
 const OUT = E.outcomes || {};
 for (const [id, o] of Object.entries(OUT)) {

@@ -254,7 +254,130 @@
   "$verbs_comment": "The verbs that do something to a body. Keys are ids from data/verbs.json, not elements. wait, ferment and blow are absent on purpose: none of them does anything to a person on the timescale the canvas shows.",
   "$hazards_comment": "Keyed on data/cautions.json's own hazard ids. Each row is what that class of hazard does to a body, and it answers for every element on that hazard's list. This is not a shortcut around authoring: it is the right grain. Where an element deserves a specific answer it gets a row of its own in `effects`, which overrides this entirely.",
   "$outcomes_comment": "What the body visibly does, per outcome. `site` is an element — an organ or tissue this corpus already has — so the anatomy is checkable rather than asserted in a switch statement. `sign` is one of $signs. This is not a damage model: it depicts the sign that is recorded, and a cumulative exposure shows the clock regardless of what its outcome's sign is.",
+  "$no_effect_rule": "effects-common counts the two hundred most-used elements, and a good part of that list cannot meet a body at all. An IDEA (language, evolution, time, natural selection), a PROCESS OF HISTORY (harvest, speciation), a POLITY or BELIEF (country, buddhism), a PART OF THE BODY ITSELF (skin, heart, nerve, eye, muscle, tissue, cell), a SUB-CELLULAR OR CHEMICAL ABSTRACTION (dna, gene, mutation, membrane, atp), a PLACE (island, rainforest, field), or something EXTINCT (dinosaur) owes no effect row. Counting them made the metric look permanently unfinishable, which is the same fault $not_assemblies fixed for needs. This is a list of things that cannot have an answer — NOT a list of things whose answer is 'nothing'. Where a thing really does meet a body and does nothing, that is an `inert` row with a reason, not an entry here.",
+  "$no_effect": [
+    "adaptation",
+    "atp",
+    "basalt",
+    "boat",
+    "bronze",
+    "buddhism",
+    "castle",
+    "cell",
+    "census",
+    "chromosome",
+    "collagen",
+    "country",
+    "crown",
+    "dinosaur",
+    "dna",
+    "domestication",
+    "evolution",
+    "extinction",
+    "eye",
+    "field",
+    "gene",
+    "harvest",
+    "heart",
+    "herb",
+    "island",
+    "language",
+    "leaf",
+    "lung",
+    "machine",
+    "meadow",
+    "membrane",
+    "mirror",
+    "muscle",
+    "mutation",
+    "natural_selection",
+    "nerve",
+    "neuron",
+    "number",
+    "philosophy",
+    "plant",
+    "rainforest",
+    "religion",
+    "root",
+    "sapwood",
+    "seedling",
+    "set",
+    "shell",
+    "skin",
+    "speciation",
+    "spine",
+    "stem",
+    "thread",
+    "time",
+    "tissue",
+    "tooth",
+    "valley",
+    "vine",
+    "wall",
+    "white_blood_cell",
+    "wire"
+  ],
   "effects": {
+    "air": [
+      {
+        "valence": "benefit",
+        "route": "inhaled",
+        "outcome": "oxygen",
+        "onset": "acute",
+        "mechanism": "A fifth oxygen, four fifths nitrogen, and the nitrogen is not filler — it dilutes the oxygen to a partial pressure lungs can tolerate. Pure oxygen at the same pressure damages the airway lining.",
+        "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
+      }
+    ],
+    "almond": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "One of the densest sources of alpha-tocopherol there is, in the fat where it is needed and stays stable.",
+        "src": "https://en.wikipedia.org/wiki/Almond"
+      }
+    ],
+    "aluminum": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "It grows a passivating oxide film within milliseconds of meeting air, and that film — not the metal — is what everything touches. It is the reason aluminium cookware does not dissolve into food.",
+        "src": "https://en.wikipedia.org/wiki/Aluminium#Corrosion_resistance"
+      }
+    ],
+    "ammonia": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It is extremely soluble in water, so it is captured by the first wet surface it meets — eyes and upper airway — and makes a strong alkali on the spot. That is also why it warns so effectively: nobody stays in it by accident.",
+        "src": "https://en.wikipedia.org/wiki/Ammonia"
+      }
+    ],
+    "apple": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Modest per fruit and eaten in quantity, which is how most of Europe got it before citrus was cheap. The vitamin sits mostly just under the skin, so peeling removes a good part of it.",
+        "src": "https://en.wikipedia.org/wiki/Apple"
+      }
+    ],
+    "arch": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "An arch stands only while every block in it stays in compression, and the load it is holding is masonry. Crush syndrome is what arrives when a person is trapped under fallen masonry: it is not the local injury but a systemic one, shock and kidney failure from muscle that was compressed rather than broken.",
+        "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+      }
+    ],
     "asbestos": [
       {
         "valence": "harm",
@@ -269,15 +392,228 @@
         "latency": "20 to 50 years"
       }
     ],
-    "methane": [
+    "automobile": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Around a million people a year, and the injury is deceleration rather than impact: the body stops with the car and the organs inside it do not, which is why the damage is often internal and invisible.",
+        "src": "https://en.wikipedia.org/wiki/Traffic_collision"
+      }
+    ],
+    "bacteria": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Most bacteria are harmless and a great many are necessary — there are more of them in a person than there are human cells. The pathogenic ones differ by a handful of acquired genes rather than by being a different sort of thing.",
+        "src": "https://en.wikipedia.org/wiki/Pathogenic_bacteria"
+      }
+    ],
+    "banana": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "potassium",
+        "onset": "conditional",
+        "mechanism": "Potassium is the ion inside the cell as sodium is the ion outside it, and every heartbeat depends on the difference being maintained.",
+        "src": "https://en.wikipedia.org/wiki/Potassium_in_biology"
+      }
+    ],
+    "bark": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "conditional",
+        "prevents": "scurvy",
+        "mechanism": "Not a vitamin source in general — but the one that mattered: spruce and pine bark and needles carried enough ascorbic acid to end scurvy on voyages where citrus was unavailable, which is what Cartier's crew were given at Stadacona in 1536.",
+        "src": "https://en.wikipedia.org/wiki/Scurvy"
+      }
+    ],
+    "bean": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "lysine",
+        "onset": "cumulative",
+        "mechanism": "Lysine is the amino acid cereals run out of first, and legumes are full of it. That is why beans and a grain turn up together on nearly every continent: neither is complete and the pair is.",
+        "src": "https://en.wikipedia.org/wiki/Lysine"
+      }
+    ],
+    "beef": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "Haem iron, already inside a porphyrin ring, which the gut takes up by a different route from plant iron and far more completely. Without enough, the marrow cannot fill red cells with haemoglobin.",
+        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
+      }
+    ],
+    "benzene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It is metabolised into reactive intermediates that damage bone marrow, where blood cells are made. The association with leukaemia is why it was removed from consumer products.",
+        "src": "https://en.wikipedia.org/wiki/Benzene",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "years to decades"
+      }
+    ],
+    "bird_wing": [
+      {
+        "valence": "inert",
+        "route": "mechanical",
+        "onset": "acute",
+        "mechanism": "A swan defending a nest really does strike with its wings, which carry bony spurs, and the blow is frightening. It is also the origin of the most durable animal myth in Britain: the wings are not strong enough to break an adult man's leg, however often that is repeated. A wing is hollow bone and feather, built to the lightest specification that will still fly, and the same design that makes it efficient is what limits what it can deliver.",
+        "src": "https://en.wikipedia.org/wiki/Mute_swan"
+      }
+    ],
+    "blood": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Blood is the route for the pathogens that cannot survive drying — hepatitis B and C, and HIV. Intact skin is a complete barrier to all of them; a break in it is not.",
+        "src": "https://en.wikipedia.org/wiki/Blood-borne_disease"
+      }
+    ],
+    "bone": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "laceration",
+        "onset": "conditional",
+        "mechanism": "A swallowed fish bone is one of the commonest foreign bodies in an oesophagus. It is thin enough to pass the throat and stiff enough to lodge point-first, and the danger is perforation rather than obstruction.",
+        "src": "https://en.wikipedia.org/wiki/Foreign_body"
+      }
+    ],
+    "book": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Cellulose and ink. There is nothing in a book a human gut can take apart, which is why the fibre in a plant and the fibre in a page are the same problem.",
+        "src": "https://en.wikipedia.org/wiki/Cellulose"
+      }
+    ],
+    "brain": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The one tissue where eating it has transmitted a disease with no organism in it at all. A prion is a misfolded protein that makes copies of its own misfolding, and nothing that destroys a bacterium or a virus touches it.",
+        "src": "https://en.wikipedia.org/wiki/Prion"
+      }
+    ],
+    "brass": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "Free-machining brass carries a few per cent lead to make it cut cleanly, and a brass fitting on a drinking-water line is in permanent contact with what passes through it. That is what lead-free plumbing standards exist to limit.",
+        "src": "https://en.wikipedia.org/wiki/Lead_and_Copper_Rule"
+      }
+    ],
+    "brazil_nut": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "selenium",
+        "onset": "cumulative",
+        "mechanism": "Selenium sits in the active site of glutathione peroxidase as selenocysteine, the twenty-first amino acid, coded by a stop codon read differently. Brazil nuts take it up from the soil, so the amount in a nut varies with where the tree grew rather than with the nut.",
+        "src": "https://en.wikipedia.org/wiki/Selenium"
+      }
+    ],
+    "bread": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "conditional",
+        "mechanism": "Starch gelatinised by baking is far easier for amylase to reach than raw flour, which is most of why cooking cereal was worth the fuel. Around half the calories eaten by humanity arrive as some form of this.",
+        "src": "https://en.wikipedia.org/wiki/Bread"
+      }
+    ],
+    "brick": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "The fired clay is harmless in one piece. Cutting and grinding it releases respirable crystalline silica, and the lung has no way to clear a particle it cannot dissolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "broccoli": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "More ascorbic acid by weight than an orange, though boiling leaches it into the water. The vitamin is the same molecule whatever it arrives in.",
+        "src": "https://en.wikipedia.org/wiki/Broccoli"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "chromium",
+        "onset": "cumulative",
+        "mechanism": "Trivalent chromium in trace amounts, associated with insulin's action on the cell. It is the most contested entry on any essential-nutrient list, and broccoli is the food usually named — both facts belong on the card.",
+        "src": "https://en.wikipedia.org/wiki/Chromium"
+      }
+    ],
+    "bromine": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "A liquid at room temperature that boils readily, so the hazard is a heavy red-brown vapour. It oxidises tissue on contact and, like chlorine, generates acid in the airway lining.",
+        "src": "https://en.wikipedia.org/wiki/Bromine"
+      }
+    ],
+    "cabbage": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "goitre",
+        "onset": "conditional",
+        "mechanism": "Brassicas carry glucosinolates that interfere with the thyroid's uptake of iodine. It matters only where iodine is already short, and cooking reduces it — which is why this is a fact about diets rather than about cabbage.",
+        "src": "https://en.wikipedia.org/wiki/Goitrogen"
+      }
+    ],
+    "carbon": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Elemental carbon is about as biologically unavailable as matter gets. Activated charcoal passes through a gut adsorbing things and is not itself absorbed, and tattoo pigment is carbon that stays in the dermis for a lifetime without being recognised.",
+        "src": "https://en.wikipedia.org/wiki/Activated_carbon"
+      }
+    ],
+    "carbon_dioxide": [
       {
         "valence": "harm",
         "route": "inhaled",
         "outcome": "asphyxia",
         "onset": "acute",
-        "reversible": true,
-        "mechanism": "It is not toxic. It displaces oxygen, and the urge to breathe answers carbon dioxide rather than oxygen — so in a methane-rich space the CO2 still leaves normally and there is no warning at all before consciousness goes.",
-        "src": "https://en.wikipedia.org/wiki/Methane"
+        "mechanism": "Unlike most asphyxiants it is not silent. The urge to breathe answers carbon dioxide directly, so a rising level produces real air hunger and panic — which is why carbon monoxide kills people who feel fine and this does not.",
+        "src": "https://en.wikipedia.org/wiki/Hypercapnia"
       }
     ],
     "carbon_monoxide": [
@@ -329,26 +665,680 @@
         ]
       }
     ],
-    "lye": [
+    "carrot": [
       {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "contact",
-        "reversible": false,
-        "mechanism": "It saponifies the fat in skin, so it keeps going deeper for as long as it is present rather than stopping when contact ends. That is why an alkali burn is worse than an acid one of the same strength, and why it needs long irrigation rather than wiping.",
-        "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "Beta-carotene, split in the gut wall into two molecules of retinal. The conversion is regulated, which is the reason a plant source does not overshoot the way stored retinol can.",
+        "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
       }
     ],
-    "sulfuric_acid": [
+    "cheese": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "calcium",
+        "onset": "cumulative",
+        "prevents": "osteoporosis",
+        "mechanism": "The calcium follows the curd rather than the whey, so it concentrates as the water leaves — one of the few foods where processing raises the mineral density.",
+        "src": "https://en.wikipedia.org/wiki/Cheese"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phosphorus",
+        "onset": "cumulative",
+        "mechanism": "Phosphorus is in every ATP, every nucleotide and most of the mineral in bone. In cheese it comes bound to casein, which keeps it soluble as the curd dries.",
+        "src": "https://en.wikipedia.org/wiki/Phosphorus"
+      }
+    ],
+    "chicken": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Muscle eaten to build muscle: the filaments are broken to amino acids in the gut and reassembled to a different specification on the other side.",
+        "src": "https://en.wikipedia.org/wiki/Chicken_as_food"
+      }
+    ],
+    "chickpea": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_b6",
+        "onset": "cumulative",
+        "mechanism": "B6 becomes pyridoxal phosphate, the cofactor every transaminase uses, so it sits underneath nearly all amino acid chemistry rather than beside it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
+      }
+    ],
+    "clay": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "conditional",
+        "mechanism": "Geophagia is documented across cultures and pregnancies, and kaolin does bind some toxins and pathogens in the gut. It also binds iron and zinc, so the practice can cause the deficiency it is sometimes an appetite for.",
+        "src": "https://en.wikipedia.org/wiki/Geophagia"
+      }
+    ],
+    "clostridium_botulinum": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "It grows only where there is no oxygen, little acid and warmth, and what it produces then blocks the signal from nerve to muscle. The conditions that suit it are exactly the ones that home preserving creates, which is why the hazard sits with the method rather than the food.",
+        "src": "https://en.wikipedia.org/wiki/Botulism"
+      }
+    ],
+    "cloth": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Cotton dust causes byssinosis, and its signature is that the chest tightness comes back on the first day of the working week and eases through it. Nineteenth-century mills called it Monday fever long before anyone knew what caused it.",
+        "src": "https://en.wikipedia.org/wiki/Byssinosis"
+      }
+    ],
+    "cocoa": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "magnesium",
+        "onset": "cumulative",
+        "mechanism": "ATP is only usable by an enzyme as a magnesium complex, so magnesium is a cofactor for hundreds of reactions at once rather than a specialist. Cocoa solids are among the densest food sources there are.",
+        "src": "https://en.wikipedia.org/wiki/Magnesium_in_biology"
+      }
+    ],
+    "coffee": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "acute",
+        "mechanism": "Caffeine does not supply energy. It occupies the receptors adenosine uses to report how long you have been awake, so the tiredness is not removed, only unreported — and it is still owed when the caffeine clears.",
+        "src": "https://en.wikipedia.org/wiki/Caffeine"
+      }
+    ],
+    "coin": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "cumulative",
+        "mechanism": "Nickel released by sweat binds skin protein, and the immune system learns the combination permanently. Handling coins is the classic occupational exposure — cashiers were the first group in whom it was described.",
+        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
+      }
+    ],
+    "concrete": [
       {
         "valence": "harm",
         "route": "contact",
         "outcome": "chemical_burn",
+        "onset": "conditional",
+        "mechanism": "Wet cement is strongly alkaline and it does not sting, so kneeling in it can produce a full-thickness burn over hours without any warning at the time. Set concrete is inert; the hazard is entirely in the window while it is curing.",
+        "src": "https://en.wikipedia.org/wiki/Cement#Health_and_safety"
+      }
+    ],
+    "copper": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "Freshly formed metal-oxide fume is fine enough to reach the deep lung, where it provokes a flu-like reaction that comes on hours after the work and is gone the next day. It is the metal in fume form, not the metal in hand.",
+        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "copper_wire": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Metallic copper releases too little into dry skin to matter, which is why copper wire is handled bare all day. Its salts are another matter, and the fume from heating it is another again.",
+        "src": "https://en.wikipedia.org/wiki/Copper_in_health"
+      }
+    ],
+    "coral": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A coral cut is shallow and heals badly, because the wound is seeded with fragments of skeleton and with the marine bacteria living on them. Fire corals are not corals at all but hydroids, and they sting rather than cut.",
+        "src": "https://en.wikipedia.org/wiki/Coral#Injury"
+      }
+    ],
+    "cow": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Cattle kill more people each year than sharks or snakes in most countries that keep them, and almost always by crushing rather than goring — a cow that leans on a handler against a rail weighs more than the rail will give.",
+        "src": "https://en.wikipedia.org/wiki/Cattle#Safety"
+      }
+    ],
+    "current": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "electrocution",
+        "onset": "acute",
+        "mechanism": "It is current that injures, not voltage: the path and the amount decide it. Milliamps across the chest can fibrillate a heart, and the skin's resistance, which is what usually limits it, falls by an order of magnitude when wet.",
+        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+      }
+    ],
+    "cyanide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hypoxia",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It stops the enzyme at the end of the respiratory chain, so cells cannot use oxygen even though the blood is full of it. The person is hypoxic with red venous blood, which is the diagnostic oddity.",
+        "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
+      }
+    ],
+    "desert": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "heat_stroke",
+        "onset": "conditional",
+        "mechanism": "Sweating works until the water runs out, and then the core temperature has nothing left holding it down. Dry air hides how much is being lost, because it evaporates before it is felt.",
+        "src": "https://en.wikipedia.org/wiki/Heat_stroke"
+      }
+    ],
+    "dog": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A bite is an injection of mouth flora past every barrier the skin has. Pasteurella and Capnocytophaga are ordinary in a healthy dog's mouth, and a puncture from a canine tooth seals over the top of them.",
+        "src": "https://en.wikipedia.org/wiki/Dog_bite"
+      }
+    ],
+    "drupe": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The stone is hardened ovary wall, and inside it the kernel of most stone fruit carries amygdalin. Crushing releases hydrogen cyanide; swallowing a stone whole does not, which is why the flesh is food and the pit is a caution.",
+        "src": "https://en.wikipedia.org/wiki/Amygdalin"
+      }
+    ],
+    "earth": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "The planet is not a thing that meets a body — what meets a body is soil, water, air or sunlight, and each of those is filed on its own. This row exists so the canvas says that rather than nothing.",
+        "src": "https://en.wikipedia.org/wiki/Earth"
+      }
+    ],
+    "egg": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The reference against which other proteins are scored, because the amino acid proportions are close to what a body building tissue actually asks for.",
+        "src": "https://en.wikipedia.org/wiki/Egg_as_food"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "biotin",
+        "onset": "cumulative",
+        "mechanism": "Biotin carries carbon dioxide for the carboxylase enzymes. The yolk is a good source and the raw white is the opposite: avidin in it binds biotin so tightly that it goes straight through. Cooking denatures the avidin and the problem with it.",
+        "src": "https://en.wikipedia.org/wiki/Biotin"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "choline",
+        "onset": "cumulative",
+        "mechanism": "Choline goes into every cell membrane as phosphatidylcholine and into acetylcholine, the transmitter at every neuromuscular junction. The body makes some and not enough, and the yolk is the densest ordinary source.",
+        "src": "https://en.wikipedia.org/wiki/Choline"
+      }
+    ],
+    "electricity": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "electrocution",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot, and wet skin drops resistance by an order of magnitude.",
+        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+      }
+    ],
+    "enzyme": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Proteolytic enzymes added to washing powder in the 1960s caused an outbreak of occupational asthma in the workers making it — an enzyme is a protein, and inhaling a protein in quantity is how the immune system is taught to react to it.",
+        "src": "https://en.wikipedia.org/wiki/Occupational_asthma"
+      }
+    ],
+    "ethanol": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "The liver converts it to acetaldehyde and then to acetate, and the intermediate is the damaging one. Sustained exposure scars the tissue doing the processing.",
+        "src": "https://en.wikipedia.org/wiki/Alcoholic_liver_disease",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "feather": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "allergic_reaction",
+        "onset": "cumulative",
+        "mechanism": "The same mechanism as farmer's lung, from bird protein in the dust of droppings and feathers. It is called bird fancier's lung and it appears in people who keep pigeons and budgerigars for years.",
+        "src": "https://en.wikipedia.org/wiki/Bird_fancier%27s_lung"
+      }
+    ],
+    "fire": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Protein denatures above about 44 °C given long enough, so depth is temperature and time together rather than temperature alone. A low heat held against skin does what a brief high one does.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "fish": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Less connective tissue than land meat, so it flakes rather than needing long cooking — and the same protein arrives either way.",
+        "src": "https://en.wikipedia.org/wiki/Fish_as_food"
+      }
+    ],
+    "flint": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "It fractures conchoidally, like glass, so a struck flake carries an edge sharper than most steel. That is what made it the first tool material and it has not stopped being true.",
+        "src": "https://en.wikipedia.org/wiki/Flint"
+      }
+    ],
+    "flower": [
+      {
+        "valence": "inert",
+        "route": "inhaled",
+        "onset": "conditional",
+        "mechanism": "The plants that cause hay fever are the ones with no flower worth looking at. A showy flower is advertising to insects, so its pollen is heavy, sticky and stays where it is put; wind-pollinated plants make theirs light and in enormous quantity, and that is the pollen in the air.",
+        "src": "https://en.wikipedia.org/wiki/Pollen#Allergy"
+      }
+    ],
+    "formaldehyde": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "contact",
+        "reversible": true,
+        "mechanism": "It cross-links protein on contact, which is what makes it a fixative and what makes it an irritant to the airway lining at low concentrations.",
+        "src": "https://en.wikipedia.org/wiki/Formaldehyde",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "fossil": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "The organic material is gone. What is left is mineral that has replaced it, so a fossil is a rock in the shape of a thing rather than any of the thing.",
+        "src": "https://en.wikipedia.org/wiki/Permineralization"
+      }
+    ],
+    "frame": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "The cruelty of a frame coming down on someone is in the rescue. While the weight is on, crushed muscle holds its potassium and myoglobin in place; lifting it releases both into the circulation at once, which is why the condition was once called smiling death. UK first-aid guidance tells untrained rescuers not to free anyone who has been trapped more than fifteen minutes.",
+        "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+      }
+    ],
+    "frost": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "frostbite",
+        "onset": "contact",
+        "mechanism": "Freezing is not simply cold. Water crystallises between and then inside cells, and it is the crystal edges that do the damage — which is why rapid rewarming hurts and slow rewarming injures more.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "fruit": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Fruit is where most people get it, and cooking is what destroys it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "fungus": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Most fungi cannot grow at body temperature, which is a large part of why so few of the millions of species trouble us. The ones that do are either kept to the dead outer skin or take hold only where the immune system has stepped back.",
+        "src": "https://en.wikipedia.org/wiki/Mycosis"
+      }
+    ],
+    "gamma_ray": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "radiation_sickness",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It ionises as it passes, damaging DNA, and the tissues that replace themselves fastest show it first — marrow, gut lining, hair follicles. There is often a latent period of apparent recovery before the marrow fails.",
+        "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
+      }
+    ],
+    "glacier": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "acute",
+        "mechanism": "A crevasse is bridged by snow that looks like the rest of the surface, and a fall into one wedges a body tighter the deeper it goes. What follows is the cold: the walls are ice on every side and there is no way to move.",
+        "src": "https://en.wikipedia.org/wiki/Crevasse"
+      }
+    ],
+    "glass": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "It fractures without deforming, so a break leaves an edge rather than a dent, and that edge is sharp at the scale of a cell. The wound is clean and deep for the force involved.",
+        "src": "https://en.wikipedia.org/wiki/Glass"
+      }
+    ],
+    "glucose": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "acute",
+        "mechanism": "The one fuel the brain will use in ordinary circumstances, at about a fifth of the body's whole energy budget for two per cent of its weight. It is also the only sugar the blood carries — everything else is converted first.",
+        "src": "https://en.wikipedia.org/wiki/Glucose"
+      }
+    ],
+    "gold": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Metallic gold does not oxidise, does not dissolve in body fluids, and releases no ions for the immune system to react to. That is why it has been left inside people for centuries — in teeth, in eyelid weights, in the wire of an implant — and why almost nobody is allergic to it.",
+        "src": "https://en.wikipedia.org/wiki/Gold#Biology_and_medicine"
+      }
+    ],
+    "grain": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "conditional",
+        "mechanism": "Starch is glucose stored in a form a plant can pack tightly and a gut can take apart again. Cereals supply about half the calories eaten by the human species, which is why a bad harvest is a historical event rather than a dietary one.",
+        "src": "https://en.wikipedia.org/wiki/Cereal"
+      }
+    ],
+    "granite": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Granite carries traces of uranium, and uranium decays through radium to radon — a gas, which is the part that matters. It seeps out of the rock and collects in enclosed spaces below ground, and it is the leading cause of lung cancer in people who have never smoked.",
+        "src": "https://en.wikipedia.org/wiki/Radon",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "grass": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Grass pollen is wind-carried, which means it is made in enormous quantity and is small enough to stay airborne — both of which are why it is the commonest cause of hay fever. The immune system has learned a protein that is doing nothing to it.",
+        "src": "https://en.wikipedia.org/wiki/Allergic_rhinitis"
+      }
+    ],
+    "gunpowder": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "It deflagrates rather than detonating — it burns very fast rather than producing a supersonic shock — so the injury is flame and hot gas, and the hazard scales with confinement.",
+        "src": "https://en.wikipedia.org/wiki/Gunpowder"
+      }
+    ],
+    "hammer": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "fracture",
+        "onset": "acute",
+        "mechanism": "A hammer works by delivering its momentum in a very short time, and a bone answers the same physics as a nail: it fails in bending long before it fails in compression.",
+        "src": "https://en.wikipedia.org/wiki/Bone_fracture"
+      }
+    ],
+    "honey": [
+      {
+        "valence": "benefit",
+        "route": "contact",
+        "outcome": "wound_healing",
+        "onset": "conditional",
+        "mechanism": "It draws water out of the wound bed by osmosis and holds a low pH, and bee-derived glucose oxidase releases hydrogen peroxide slowly rather than all at once. Medical-grade honey dressings are a licensed treatment, not a folk remedy.",
+        "src": "https://en.wikipedia.org/wiki/Honey#Medical_use"
+      },
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "botulism",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It can carry Clostridium botulinum spores. An adult gut is too competitive for them; an infant gut under a year old is not, so the spores germinate and produce the toxin inside the child. The honey itself is unchanged — the difference is entirely the gut it lands in.",
+        "src": "https://en.wikipedia.org/wiki/Infant_botulism"
+      }
+    ],
+    "horse": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Half a tonne with a kick delivered by the strongest muscle group in the animal, at head height for a standing person. Horse-related injuries are among the most serious in any sport, and most of them happen on the ground rather than in the saddle.",
+        "src": "https://en.wikipedia.org/wiki/Equestrianism#Safety"
+      }
+    ],
+    "human": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Person to person is how most human pathogens travel, and the ones that specialise in us have nowhere else to live — measles, smallpox and polio have no animal reservoir at all. What passes between two people is decided by which surfaces meet and for how long, not by anything either of them intends.",
+        "src": "https://en.wikipedia.org/wiki/Transmission_(medicine)"
+      }
+    ],
+    "hydrogen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "Not toxic and not reactive at body temperature. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
+        "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
+      }
+    ],
+    "hydrogen_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "It is not toxic and does nothing chemically. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
+        "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
+      }
+    ],
+    "ice": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "frostbite",
         "onset": "contact",
         "reversible": false,
-        "mechanism": "It dehydrates tissue rather than simply burning it, and the reaction gives off heat of its own, so a chemical burn becomes a thermal one at the same time.",
-        "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
+        "mechanism": "The body constricts blood flow to the periphery to protect the core, so the extremities freeze while losing their own supply. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "ink": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "conditional",
+        "mechanism": "Tattoo pigment is placed in the dermis and stays there for life, and the immune system meets it continuously. Red pigments account for most reported reactions, often years after the tattoo was made.",
+        "src": "https://en.wikipedia.org/wiki/Tattoo#Health_risks"
+      }
+    ],
+    "insect": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Insects carry more human disease than any other group of animals, and almost always as a vector rather than as a cause — the mosquito, the tsetse fly and the sandfly are syringes, and what they inject is somebody else's parasite.",
+        "src": "https://en.wikipedia.org/wiki/Vector_(epidemiology)"
+      }
+    ],
+    "iodine": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "Elemental iodine is used as an antiseptic because it is toxic to cells, and skin is made of cells. Tincture stains and stings; the strong solution burns.",
+        "src": "https://en.wikipedia.org/wiki/Iodine"
+      }
+    ],
+    "iron": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The body has no way to excrete iron once it is absorbed — intake is regulated at the gut and there is no tap on the other end. A large amount taken at once overwhelms that gate, and free iron in the blood damages the liver and the vessel walls directly. It is a leading cause of poisoning death in small children for exactly this reason: the tablets look like sweets.",
+        "src": "https://en.wikipedia.org/wiki/Iron_poisoning"
+      }
+    ],
+    "kale": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "folate",
+        "onset": "cumulative",
+        "mechanism": "Folate is named for the leaf it was first pulled out of. It is the cofactor for moving single carbon atoms around, which is most of what building DNA consists of.",
+        "src": "https://en.wikipedia.org/wiki/Folate"
+      }
+    ],
+    "kefir": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "A wider mix of bacteria and yeasts than yoghurt, fermented from a grain of them that is reused rather than restarted.",
+        "src": "https://en.wikipedia.org/wiki/Kefir"
+      }
+    ],
+    "kelp": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iodine",
+        "onset": "cumulative",
+        "prevents": "goitre",
+        "mechanism": "Iodine was first isolated from kelp ash. The gland takes it up against a steep gradient and cannot make the hormone without it.",
+        "src": "https://en.wikipedia.org/wiki/Kelp"
+      }
+    ],
+    "keratin": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Hair and nail are dead by the time they are visible: keratin cross-linked by disulphide bonds into something no human enzyme dismantles. That is why cutting either is painless and why they survive in graves.",
+        "src": "https://en.wikipedia.org/wiki/Keratin"
+      }
+    ],
+    "kimchi": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "The same lactic fermentation, at a lower temperature and over longer, with the bacteria shifting in sequence as the acidity climbs.",
+        "src": "https://en.wikipedia.org/wiki/Kimchi"
+      }
+    ],
+    "larva": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "Many caterpillars carry urticating hairs that break off in skin and release an irritant, and the reaction outlasts the contact by days because the hairs stay in. The adult moth is usually harmless.",
+        "src": "https://en.wikipedia.org/wiki/Lepidopterism"
+      }
+    ],
+    "lava": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "The same rock once it has reached the surface, cooling but still far above the temperature at which protein denatures. The crust that forms on top is thin and hides how hot what is underneath still is, which is what makes it dangerous to walk on.",
+        "src": "https://en.wikipedia.org/wiki/Lava"
       }
     ],
     "lead": [
@@ -362,6 +1352,189 @@
         "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
       }
     ],
+    "leather": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "cumulative",
+        "mechanism": "Chrome tanning leaves residual chromium in the hide, and some of it converts to the hexavalent form. Contact dermatitis from shoes is one of the commonest presentations of chromium allergy.",
+        "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)"
+      }
+    ],
+    "legume": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Around a quarter protein dry, and short of methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
+        "src": "https://en.wikipedia.org/wiki/Legume"
+      }
+    ],
+    "lemon": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "The same broken enzyme in us, the same fix. Citrus keeps its ascorbic acid well enough to survive a voyage, which is why it and not fresher food solved the problem at sea.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "lentil": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Around a quarter protein dry, and low in methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
+        "src": "https://en.wikipedia.org/wiki/Lentil"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "molybdenum",
+        "onset": "cumulative",
+        "mechanism": "Exactly four human enzymes need molybdenum, and legumes carry it because the bacteria in their root nodules need it too, for nitrogenase. Deficiency in a person eating ordinary food is almost unknown, which is itself the interesting part.",
+        "src": "https://en.wikipedia.org/wiki/Molybdenum"
+      }
+    ],
+    "lime": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Without it the body cannot cross-link collagen, and every structure that depends on collagen slowly comes apart.",
+        "src": "https://en.wikipedia.org/wiki/Scurvy"
+      }
+    ],
+    "limestone": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "cumulative",
+        "mechanism": "The rock is chalk and harmless to hold. Quarrying and cutting it makes a respirable dust, and the lung's only answer to any insoluble particle is inflammation.",
+        "src": "https://en.wikipedia.org/wiki/Occupational_dust_exposure"
+      }
+    ],
+    "lion": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "A large predator does its damage by force and by tearing rather than by chemistry, and the dangerous injuries are the ones under intact skin.",
+        "src": "https://en.wikipedia.org/wiki/Lion"
+      }
+    ],
+    "liver": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "Retinol is stored as an ester in the liver of the animal that ate it, so eating liver delivers the finished vitamin rather than a precursor the gut has to convert. The eye spends it fastest, which is why the first sign of running short is at dusk.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_A"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "cobalamin",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "B12 is made by bacteria and archaea and by nothing else alive — no plant and no animal synthesises it. Animals accumulate what their gut flora or their food provides, and the liver is where it is banked, in quantities that last a person years.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
+      }
+    ],
+    "lye": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It saponifies the fat in skin, so it keeps going deeper for as long as it is present rather than stopping when contact ends. That is why an alkali burn is worse than an acid one of the same strength, and why it needs long irrigation rather than wiping.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+      }
+    ],
+    "mackerel": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "histidine",
+        "onset": "cumulative",
+        "mechanism": "Histidine is essential in infancy and, on the current evidence, in adults too. Oily fish carry a great deal of it in the dark muscle they use for continuous swimming.",
+        "src": "https://en.wikipedia.org/wiki/Histidine"
+      },
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "histamine",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "The same abundant histidine is what makes this fish dangerous when it has been left warm: bacteria on the flesh decarboxylate it into histamine, which cooking does not destroy because it is not the bacteria that are the problem by then. The reaction that follows looks like an allergy and is not one.",
+        "src": "https://en.wikipedia.org/wiki/Scombroid_food_poisoning"
+      }
+    ],
+    "magma": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "Molten rock sits between about 700 and 1,300 °C and carries an enormous amount of heat in very little volume, so contact is not survivable in the way a flame often is. It is also dense enough that a body does not sink into it — the injury is at the surface, and total.",
+        "src": "https://en.wikipedia.org/wiki/Magma"
+      }
+    ],
+    "maize": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "niacin",
+        "onset": "conditional",
+        "prevents": "pellagra",
+        "mechanism": "The niacin in maize is bound to a carbohydrate the gut cannot open, so a maize diet can be full of it and deliver none. Soaking the grain in an alkali releases it — which is why pellagra followed maize into Europe and the American South, and never appeared in Mesoamerica, where the alkali step was already thousands of years old.",
+        "src": "https://en.wikipedia.org/wiki/Nixtamalization"
+      }
+    ],
+    "mammal": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The majority of new human infectious diseases come from other animals, and mammals are the commonest source because our physiology is close enough that their pathogens do not need to change much.",
+        "src": "https://en.wikipedia.org/wiki/Zoonosis"
+      }
+    ],
+    "marble": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Marble itself is calcium carbonate and carries little free silica, but it is quarried and cut alongside stone that does, and the respirable fraction from sawing any of it reaches the alveolus. Engineered stone, sold as a marble substitute, is the worst of them.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis"
+      }
+    ],
+    "meat": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "Haem iron sits inside a porphyrin ring and crosses the gut wall by its own route, far more completely than the iron in plants. Without enough, the marrow cannot fill red cells with haemoglobin.",
+        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
+      }
+    ],
     "mercury": [
       {
         "valence": "harm",
@@ -373,29 +1546,93 @@
         "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
       }
     ],
-    "silica": [
+    "methane": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "silicosis",
-        "onset": "cumulative",
-        "reversible": false,
-        "mechanism": "Particles small enough to reach the alveoli are engulfed by macrophages, which the crystalline surface then destroys, releasing the particle again with inflammatory signals. The cycle repeats and the scarring it leaves does not resolve.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
-        "carcinogen": true,
-        "iarc": 1,
-        "latency": "10 to 30 years"
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "It is not toxic. It displaces oxygen, and the urge to breathe answers carbon dioxide rather than oxygen — so in a methane-rich space the CO2 still leaves normally and there is no warning at all before consciousness goes.",
+        "src": "https://en.wikipedia.org/wiki/Methane"
       }
     ],
-    "clostridium_botulinum": [
+    "milk": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "calcium",
+        "onset": "cumulative",
+        "prevents": "osteoporosis",
+        "mechanism": "Calcium arrives with the lactose and the phosphate that help absorb it. Bone is dismantled and rebuilt lifelong, and the intake decides which of the two is winning.",
+        "src": "https://en.wikipedia.org/wiki/Calcium_in_biology"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "riboflavin",
+        "onset": "cumulative",
+        "mechanism": "Riboflavin becomes FAD and FMN, the carriers half of oxidative metabolism runs on. It is destroyed by light in hours, which is the reason milk left clear glass bottles for opaque cartons.",
+        "src": "https://en.wikipedia.org/wiki/Riboflavin"
+      }
+    ],
+    "moon": [
+      {
+        "valence": "inert",
+        "route": "radiation",
+        "onset": "conditional",
+        "mechanism": "The tide is real and it acts on oceans, not on people: the Moon's tidal pull on a human body is smaller than the pull of the wall beside them. No effect on the body has ever been demonstrated.",
+        "src": "https://en.wikipedia.org/wiki/Lunar_effect"
+      }
+    ],
+    "mould": [
       {
         "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "Spores and fragments small enough to reach the airway, in numbers that rise with damp. The reaction is usually to the spore as an allergen rather than to any toxin, and it is why the housing is treated rather than the person.",
+        "src": "https://en.wikipedia.org/wiki/Mold_health_issues"
+      }
+    ],
+    "mountain": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hypoxia",
         "onset": "conditional",
-        "reversible": false,
-        "mechanism": "It grows only where there is no oxygen, little acid and warmth, and what it produces then blocks the signal from nerve to muscle. The conditions that suit it are exactly the ones that home preserving creates, which is why the hazard sits with the method rather than the food.",
-        "src": "https://en.wikipedia.org/wiki/Botulism"
+        "mechanism": "The air is the same one-fifth oxygen all the way up; what falls is the pressure driving it into the blood. The body answers by breathing off carbon dioxide, which changes blood pH, and altitude sickness is mostly that adjustment being made too fast.",
+        "src": "https://en.wikipedia.org/wiki/Altitude_sickness"
+      }
+    ],
+    "mud": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "tetanus",
+        "onset": "conditional",
+        "mechanism": "Clostridium tetani spores are ordinary soil organisms, harmless to swallow, and they germinate only where oxygen has been shut out — which a wound packed with mud does for them.",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
+      }
+    ],
+    "mussel": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "copper",
+        "onset": "cumulative",
+        "mechanism": "Copper is in cytochrome c oxidase, the last enzyme in the respiratory chain, and in lysyl oxidase, which cross-links collagen. Shellfish concentrate it because their own oxygen carrier, haemocyanin, is built on copper rather than iron.",
+        "src": "https://en.wikipedia.org/wiki/Copper_in_health"
+      }
+    ],
+    "natto": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_k",
+        "onset": "cumulative",
+        "mechanism": "The bacterium that ferments the beans makes menaquinone-7, a long-lived form of vitamin K. Without K the clotting factors are still built and simply do not work — the liver finishes them by adding a carboxyl group, and K is what lets it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_K2"
       }
     ],
     "nitrite": [
@@ -420,127 +1657,117 @@
         "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
       }
     ],
-    "ice": [
+    "oak": [
       {
         "valence": "harm",
-        "route": "contact",
-        "outcome": "frostbite",
-        "onset": "contact",
-        "reversible": false,
-        "mechanism": "The body constricts blood flow to the periphery to protect the core, so the extremities freeze while losing their own supply. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
-        "src": "https://en.wikipedia.org/wiki/Frostbite"
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Acorns and oak leaves carry tannins that bind protein — including the protein of a gut lining. Livestock that eat fallen leaves in quantity get kidney damage from it, and the bitterness that keeps most animals off is the tannin doing its job.",
+        "src": "https://en.wikipedia.org/wiki/Acorn"
       }
     ],
-    "steam": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "It carries its latent heat into the skin as it condenses, delivering far more energy than dry air at the same temperature — which is why a steam burn is deep and a hot-air burn of the same reading often is not.",
-        "src": "https://en.wikipedia.org/wiki/Burn"
-      }
-    ],
-    "fire": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "Protein denatures above about 44 °C given long enough, so depth is temperature and time together rather than temperature alone. A low heat held against skin does what a brief high one does.",
-        "src": "https://en.wikipedia.org/wiki/Burn"
-      }
-    ],
-    "electricity": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "electrocution",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot, and wet skin drops resistance by an order of magnitude.",
-        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
-      }
-    ],
-    "gamma_ray": [
-      {
-        "valence": "harm",
-        "route": "radiation",
-        "outcome": "radiation_sickness",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "It ionises as it passes, damaging DNA, and the tissues that replace themselves fastest show it first — marrow, gut lining, hair follicles. There is often a latent period of apparent recovery before the marrow fails.",
-        "src": "https://en.wikipedia.org/wiki/Acute_radiation_syndrome"
-      }
-    ],
-    "ultraviolet": [
-      {
-        "valence": "harm",
-        "route": "radiation",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
-        "reversible": false,
-        "mechanism": "It has enough energy to fuse adjacent thymine bases in DNA into a dimer the cell must cut out and rebuild. Most are repaired; the damage that accumulates is the small fraction that is not.",
-        "src": "https://en.wikipedia.org/wiki/Ultraviolet",
-        "carcinogen": true,
-        "iarc": 1,
-        "latency": "decades",
-        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
-      }
-    ],
-    "water": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "drowning",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling. It is also nearly silent, because breathing takes priority over speech.",
-        "src": "https://en.wikipedia.org/wiki/Drowning"
-      },
+    "oat": [
       {
         "valence": "benefit",
         "route": "ingested",
-        "outcome": "blood",
-        "onset": "acute",
-        "prevents": "dehydration",
-        "mechanism": "Plasma is mostly water, and the volume of it decides the pressure the heart is working against. Thirst is triggered by the concentration of the blood rather than by its volume, which is why it lags behind a real deficit.",
-        "src": "https://en.wikipedia.org/wiki/Body_water"
+        "outcome": "manganese",
+        "onset": "cumulative",
+        "mechanism": "Manganese is the metal at the centre of the superoxide dismutase inside mitochondria — the enzyme that disposes of the oxygen radicals respiration itself produces. Whole grains carry most of it in the bran.",
+        "src": "https://en.wikipedia.org/wiki/Manganese"
       }
     ],
-    "lion": [
+    "obsidian": [
       {
         "valence": "harm",
         "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "A large predator does its damage by force and by tearing rather than by chemistry, and the dangerous injuries are the ones under intact skin.",
-        "src": "https://en.wikipedia.org/wiki/Lion"
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "A volcanic glass with no crystal structure to stop a fracture, so it parts along a conchoidal break that can end in an edge a few molecules across — sharper than a surgical steel blade, and it cuts before it is felt.",
+        "src": "https://en.wikipedia.org/wiki/Obsidian"
       }
     ],
-    "snake": [
+    "oil": [
       {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "neurotoxin",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "Venom is injected rather than eaten, which is the whole distinction from a poison — the gut would destroy most of it. Neurotoxic venoms block the signal between nerve and muscle, which is why they act in minutes.",
-        "src": "https://en.wikipedia.org/wiki/Snake_venom"
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "Vegetable oils carry tocopherol along with the fat, and it is there for the oil's sake as much as ours: it is the antioxidant that keeps the polyunsaturated bonds from oxidising before they are eaten.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
       }
     ],
-    "wasp": [
+    "olive_oil": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "Mostly oleic acid, a single double bond that resists oxidising, and it carries tocopherol with it — a fat-soluble antioxidant that sits in cell membranes and takes the hit instead of the lipids around it.",
+        "src": "https://en.wikipedia.org/wiki/Olive_oil"
+      }
+    ],
+    "orange": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Ascorbic acid is the reducing agent two enzymes need to hydroxylate collagen. Supply it and old scars stay closed; withhold it and they reopen in the order they were made.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "ore": [
       {
         "valence": "harm",
-        "route": "injected",
-        "outcome": "allergic_reaction",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Most ore bodies sit in silicate rock, so crushing and grinding them makes respirable crystalline silica whatever the metal being chased. The lung cannot clear a particle it cannot dissolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "oxygen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
         "onset": "conditional",
-        "reversible": true,
-        "mechanism": "The sting itself is minor. The danger is sensitisation: an earlier sting that caused no symptoms taught the immune system to recognise it, and the next one provokes a response out of all proportion.",
-        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+        "mechanism": "The gas a body runs on is also an oxidant. Above about half an atmosphere the lung lining is damaged by the same chemistry that makes it useful, and at higher pressures still it causes seizures.",
+        "src": "https://en.wikipedia.org/wiki/Oxygen_toxicity"
+      }
+    ],
+    "oxygen_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "The gas a body runs on is also an oxidant, and above about half an atmosphere of it the lung lining is damaged by the same chemistry that makes it useful. At higher pressures still it causes seizures, which is why divers do not breathe it pure.",
+        "src": "https://en.wikipedia.org/wiki/Oxygen_toxicity"
+      }
+    ],
+    "oyster": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "zinc",
+        "onset": "cumulative",
+        "mechanism": "Zinc holds a whole class of transcription factors in the shape that lets them grip DNA, and the same metal is spent on wound repair and on taste. Oysters carry several times more of it than any other common food.",
+        "src": "https://en.wikipedia.org/wiki/Zinc"
+      }
+    ],
+    "paper": [
+      {
+        "valence": "inert",
+        "route": "ingested",
+        "onset": "conditional",
+        "mechanism": "Cellulose is glucose joined by a bond human enzymes cannot open — no mammal makes cellulase. Paper passes through unchanged, which is the same reason plant fibre is called roughage rather than food.",
+        "src": "https://en.wikipedia.org/wiki/Cellulose"
       }
     ],
     "peanut": [
@@ -562,15 +1789,148 @@
         "src": "https://en.wikipedia.org/wiki/Peanut"
       }
     ],
-    "vibrio_cholerae": [
+    "petroleum": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Crude oil and its lighter fractions carry benzene, which the marrow converts into metabolites that damage the cells making blood. That is why the cancer associated with it is leukaemia rather than a cancer of the lung.",
+        "src": "https://en.wikipedia.org/wiki/Benzene",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "phosphate": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phosphorus",
+        "onset": "cumulative",
+        "mechanism": "The form phosphorus is actually eaten and used in: in every ATP, every nucleotide, and most of the mineral in bone. Free phosphorus is another matter entirely and is filed separately.",
+        "src": "https://en.wikipedia.org/wiki/Phosphate"
+      }
+    ],
+    "pipe": [
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "cholera",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "Plumbing is named after lead — plumbum — because lead was soft enough to bend, and soft water standing in a lead pipe takes some of it with it. The metal imitates calcium closely enough to be absorbed by the same transporters and then does none of calcium's jobs.",
+        "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
+      }
+    ],
+    "plank": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "A splinter is a wound that arrives with its own foreign body already inside it, which is why the infection risk is out of proportion to the size of the injury.",
+        "src": "https://en.wikipedia.org/wiki/Splinter"
+      }
+    ],
+    "plaster": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
         "onset": "conditional",
-        "reversible": false,
-        "mechanism": "Its toxin locks the gut's chloride channels open, so water follows the salt out of the body faster than it can be replaced. Death is from dehydration rather than from the organism, which is why rehydration alone saves most cases.",
-        "src": "https://en.wikipedia.org/wiki/Cholera"
+        "mechanism": "Plaster sets by taking water back into the crystal, and that reaction gives out heat. Under a thick cast the heat has nowhere to go, so the skin beneath can be injured while the cast is hardening rather than by anything applied to it.",
+        "src": "https://en.wikipedia.org/wiki/Plaster"
+      }
+    ],
+    "platinum": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "As unreactive as gold and harder, so it holds an edge and a shape. It sits in pacemaker electrodes and aneurysm coils for exactly that reason: it can be left in a body indefinitely and stay what it was.",
+        "src": "https://en.wikipedia.org/wiki/Platinum"
+      }
+    ],
+    "pork": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "thiamin",
+        "onset": "cumulative",
+        "prevents": "beriberi",
+        "mechanism": "Thiamin is the cofactor pyruvate dehydrogenase needs, so without it a cell cannot get sugar into the citric acid cycle at all and the tissues that burn the most sugar — nerve and heart — fail first. It sits in the bran of a grain, which is why beriberi followed the milling machine across Asia and not the rice.",
+        "src": "https://en.wikipedia.org/wiki/Thiamine"
+      }
+    ],
+    "pot": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "The clay is not the problem; the glaze is. Lead oxide has been used as a flux since antiquity because it melts low and fires glossy, and an acidic food sitting in that glaze leaches it back out. In commercial ware the lead is bound to silica in a fixed ratio to hold it in place, so the risk now sits with artisanal pottery fired without that oversight and with antique ware where the bond was never good enough.",
+        "src": "https://en.wikipedia.org/wiki/Ceramic_glaze"
+      }
+    ],
+    "potato": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "Not much per mouthful, but eaten in the quantities it was eaten in, enough — which is why scurvy retreated across northern Europe as the potato spread, without anyone knowing why.",
+        "src": "https://en.wikipedia.org/wiki/Potato"
+      }
+    ],
+    "protein": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Every food allergy is to a protein, never to a fat or a sugar, because only a protein is large and structured enough for an antibody to recognise. Cooking sometimes changes the shape enough to break that recognition and sometimes does not, which is why one person can eat a baked egg and not a boiled one.",
+        "src": "https://en.wikipedia.org/wiki/Food_allergy"
+      }
+    ],
+    "ptfe": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Nothing sticks to it and nothing reacts with it, because the fluorine shell around the carbon chain is about as chemically closed as an organic molecule gets. Solid PTFE passes through a gut unchanged, which is what makes it a vascular graft material.",
+        "src": "https://en.wikipedia.org/wiki/Polytetrafluoroethylene"
+      }
+    ],
+    "pumpkin_seed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phenylalanine",
+        "onset": "cumulative",
+        "mechanism": "Phenylalanine is converted to tyrosine and from there to dopamine, adrenaline and the pigment in skin and hair. The one inherited condition in which that first conversion fails is why every newborn in most countries has a heel prick.",
+        "src": "https://en.wikipedia.org/wiki/Phenylalanine"
+      }
+    ],
+    "quartz": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "The mineral itself. Whole crystals are inert; the fraction small enough to reach an alveolus destroys the macrophage that engulfs it and is released again to do it once more.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "quinoa": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "valine",
+        "onset": "cumulative",
+        "mechanism": "The third branched-chain amino acid. Quinoa is named as a complete protein because it does not run short of lysine the way a cereal does — it is not a cereal, but a relative of spinach.",
+        "src": "https://en.wikipedia.org/wiki/Valine"
       }
     ],
     "rabies_virus": [
@@ -584,82 +1944,438 @@
         "src": "https://en.wikipedia.org/wiki/Rabies"
       }
     ],
-    "toxoplasma_gondii": [
+    "rain": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "conditional",
+        "mechanism": "Wet clothing loses heat far faster than dry, because water conducts away from the skin what still air would have held against it. Most hypothermia happens well above freezing, in the rain.",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
+      }
+    ],
+    "resin": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "conditional",
+        "mechanism": "Colophony, the resin left after turpentine is distilled off, is one of the commonest causes of occupational contact allergy — it is in solder flux, adhesive plaster and violin rosin alike, and the sensitisation is permanent.",
+        "src": "https://en.wikipedia.org/wiki/Colophony"
+      }
+    ],
+    "rice": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Rice is grown in flooded fields, and flooding mobilises arsenic out of the soil in a form the plant takes up readily. It accumulates in the grain rather than the straw, which is why rice carries more of it than any other staple.",
+        "src": "https://en.wikipedia.org/wiki/Arsenic_contamination_of_groundwater"
+      }
+    ],
+    "river": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "drowning",
+        "onset": "conditional",
+        "mechanism": "Moving water is the difference. A current a person can stand in can still take their feet away, and cold water does the rest — the danger is almost never the depth.",
+        "src": "https://en.wikipedia.org/wiki/Drowning"
+      }
+    ],
+    "rod": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Bar stock: a length of one metal, ground and straightened. Whatever it does to a body is whatever that metal does, and the metals are filed separately.",
+        "src": "https://en.wikipedia.org/wiki/Bar_stock"
+      }
+    ],
+    "rope": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "A rope burn is friction, not heat from outside: the fibres running through a grip abrade and heat the skin at once, which is why it takes the top layer off rather than blistering it.",
+        "src": "https://en.wikipedia.org/wiki/Friction_burn"
+      }
+    ],
+    "rubber": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
+        "src": "https://en.wikipedia.org/wiki/Latex_allergy"
+      }
+    ],
+    "salmon": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_d",
+        "onset": "cumulative",
+        "prevents": "rickets",
+        "mechanism": "One of the few foods carrying useful vitamin D, which matters at latitudes where the winter sun is too low in the sky to make any in skin at all.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+      }
+    ],
+    "salt": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "sodium",
+        "onset": "conditional",
+        "mechanism": "Every nerve impulse is a sodium gradient collapsing and being rebuilt, and the body has no way to manufacture the ion. This is why salt was worth trading across deserts.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_in_biology"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "chlorine",
+        "onset": "conditional",
+        "mechanism": "The other half of the crystal. Chloride is the counter-ion that lets sodium move, and it is also the acid in the stomach: the parietal cell pumps hydrogen out and chloride follows it.",
+        "src": "https://en.wikipedia.org/wiki/Chloride"
+      }
+    ],
+    "sand": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Quartz sand is crystalline silica. Whole grains are far too large to breathe; cutting, grinding or blasting makes a fraction that is not, and the lung cannot clear it.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "sandstone": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "mechanism": "Sandstone is cemented quartz, so working it produces the same respirable crystalline silica as sand does. This is the oldest recorded occupational disease there is.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "sapphire": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Crystalline aluminium oxide: too hard to abrade and too stable to dissolve. It is used for the windows of implanted devices, where anything that fogged or reacted would end the device.",
+        "src": "https://en.wikipedia.org/wiki/Sapphire"
+      }
+    ],
+    "sauerkraut": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "Lactic acid bacteria off the leaf itself, working in brine that keeps everything else out. The souring is the preservation and the culture at once.",
+        "src": "https://en.wikipedia.org/wiki/Sauerkraut"
+      }
+    ],
+    "sea": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "drowning",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "Nothing about the water decides this; the person does. The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling, and it is close to silent because breathing takes priority over speech. Whether the same sea is a swim or a drowning turns on whether you can swim, how far the shore is and how cold it is — which is why this is filed as conditional rather than acute.",
+        "src": "https://en.wikipedia.org/wiki/Drowning",
+        "dial": {
+          "unit": "time in cold water",
+          "suffix": "",
+          "from": 0,
+          "to": 60,
+          "note": "Minutes. The staging is the survival services’ own: one minute, ten minutes, one hour.",
+          "src": "https://en.wikipedia.org/wiki/Cold_shock_response"
+        },
+        "stages": [
+          {
+            "at": 0,
+            "label": "In the water",
+            "what": "Whether this is a swim or an emergency is decided by the person and the distance, not by the water."
+          },
+          {
+            "at": 1,
+            "label": "Cold shock",
+            "what": "The first minute is the dangerous one. An involuntary gasp, then hyperventilation you cannot override — and a gasp underwater is how a strong swimmer drowns in water they could have swum in warm.",
+            "outcome": "drowning"
+          },
+          {
+            "at": 60,
+            "label": "Hypothermia",
+            "what": "An hour before the core is cold enough to lose consciousness — which is why 'they were only in the water twenty minutes' is not the reassurance it sounds like.",
+            "outcome": "hypothermia"
+          }
+        ]
+      },
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Water takes heat out of a body roughly twenty-five times faster than air at the same temperature. The first minute is the dangerous one and not the hour: cold shock forces a gasp and then hyperventilation, and a gasp underwater is how a strong swimmer drowns in water they could have swum in warm.",
+        "src": "https://en.wikipedia.org/wiki/Cold_shock_response"
+      }
+    ],
+    "seaweed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iodine",
+        "onset": "cumulative",
+        "prevents": "goitre",
+        "mechanism": "The thyroid needs iodine to build its hormones and has no substitute for it. Seaweed concentrates it out of seawater, which is why coastal diets rarely showed the deficiency that inland ones did.",
+        "src": "https://en.wikipedia.org/wiki/Iodine"
+      }
+    ],
+    "seed": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "A seed is a packed lunch with a shelf life, so it carries the antioxidant that protects its own stored fat from going rancid — which is the same tocopherol that protects membranes in us.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+      }
+    ],
+    "sesame": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "methionine",
+        "onset": "cumulative",
+        "mechanism": "The complement to the bean. Legumes are short of methionine and seeds are not, and methionine is the amino acid every protein starts with as well as the body's main methyl donor.",
+        "src": "https://en.wikipedia.org/wiki/Methionine"
+      }
+    ],
+    "sheet_metal": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "contact",
+        "mechanism": "A sheared edge is burred and thin, and it parts skin at a pressure a knife would need to be pressed to reach. Most metalwork injuries are from handling stock rather than from any machine.",
+        "src": "https://en.wikipedia.org/wiki/Metalworking"
+      }
+    ],
+    "silica": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "Particles small enough to reach the alveoli are engulfed by macrophages, which the crystalline surface then destroys, releasing the particle again with inflammatory signals. The cycle repeats and the scarring it leaves does not resolve.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "10 to 30 years"
+      }
+    ],
+    "silver": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "argyria",
+        "onset": "cumulative",
+        "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The blue-grey is permanent — there is no route by which the body removes it.",
+        "src": "https://en.wikipedia.org/wiki/Argyria"
+      }
+    ],
+    "sky": [
+      {
+        "valence": "inert",
+        "route": "radiation",
+        "onset": "conditional",
+        "mechanism": "Not a thing but a colour: sunlight scattered by air molecules, blue scattering more than red. There is nothing there to reach a body, and what does reach it is filed under sun.",
+        "src": "https://en.wikipedia.org/wiki/Rayleigh_scattering"
+      }
+    ],
+    "smoke": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "cumulative",
+        "mechanism": "Wood smoke is mostly particles under 2.5 microns, small enough to pass the airway defences entirely and reach the alveoli. Household cooking smoke remains one of the largest environmental causes of death in the world.",
+        "src": "https://en.wikipedia.org/wiki/Indoor_air_pollution_in_developing_nations"
+      }
+    ],
+    "snake": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Venom is injected rather than eaten, which is the whole distinction from a poison — the gut would destroy most of it. Neurotoxic venoms block the signal between nerve and muscle, which is why they act in minutes.",
+        "src": "https://en.wikipedia.org/wiki/Snake_venom"
+      }
+    ],
+    "snow": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "frostbite",
+        "onset": "conditional",
+        "mechanism": "Melting snow against skin takes heat at the latent heat of fusion, which is far more than cold air of the same temperature can. Frostbite is ice crystals forming inside the tissue and tearing the cells from within.",
+        "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "soil": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "tetanus",
+        "onset": "conditional",
+        "mechanism": "Clostridium tetani spores are ordinary soil bacteria and harmless to swallow. They germinate only where oxygen has been shut out, which a deep or crushed wound does for them — which is why a garden scratch is a different question from a garden puncture.",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
+      }
+    ],
+    "soybean": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "isoleucine",
+        "onset": "cumulative",
+        "mechanism": "One of the three branched-chain amino acids, and unusual in being burned in muscle rather than sent to the liver first. Soy is one of the few plant proteins with all nine essential ones in usable proportion.",
+        "src": "https://en.wikipedia.org/wiki/Isoleucine"
+      }
+    ],
+    "spark": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "contact",
+        "mechanism": "A spark is a fragment of metal or stone burning as it flies. It carries very little heat in total, so it does no harm through clothing — and lands hot enough to ignite tinder or scar a cornea.",
+        "src": "https://en.wikipedia.org/wiki/Spark_(fire)"
+      }
+    ],
+    "spear": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "mechanism": "It concentrates the whole force of a throw or a thrust onto a few square millimetres, which is the only reason a person can pierce an animal larger than themselves. Depth, not width, is what makes the wound dangerous.",
+        "src": "https://en.wikipedia.org/wiki/Spear"
+      }
+    ],
+    "spinach": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "iron",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "It does contain iron, but bound up with oxalate, so much less crosses the gut wall than the number on the label suggests. The nineteenth-century arithmetic error that made spinach famous was corrected long before the reputation was.",
+        "src": "https://en.wikipedia.org/wiki/Spinach"
+      }
+    ],
+    "spring": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A wound spring is stored energy with no brake on it, and machine guarding exists largely for that class of hazard: released at once, by a failure or a hand in the wrong place, it delivers all of it in the time the coil takes to unwind.",
+        "src": "https://en.wikipedia.org/wiki/Machine_guarding"
+      }
+    ],
+    "star": [
+      {
+        "valence": "inert",
+        "route": "radiation",
+        "onset": "conditional",
+        "mechanism": "Every star but one is too far away to matter. The next nearest delivers less energy to a person's skin than a candle across a room, and the Sun is filed separately because it is the exception.",
+        "src": "https://en.wikipedia.org/wiki/Alpha_Centauri"
+      }
+    ],
+    "steam": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "It carries its latent heat into the skin as it condenses, delivering far more energy than dry air at the same temperature — which is why a steam burn is deep and a hot-air burn of the same reading often is not.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "steel": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Surgical stainless holds a passive chromium-oxide film that reforms the instant it is scratched, so the metal underneath never meets tissue. That is why bone screws and plates are made of it, and why a knife blade and an implant are the same alloy family.",
+        "src": "https://en.wikipedia.org/wiki/Surgical_stainless_steel"
+      }
+    ],
+    "stone": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Dense, hard and unyielding, so all the energy of an impact goes into the tissue rather than into deforming what struck it. That is the whole difference between being hit by a stone and by something of the same weight that gives.",
+        "src": "https://en.wikipedia.org/wiki/Blunt_trauma"
+      }
+    ],
+    "straw": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "allergic_reaction",
+        "onset": "cumulative",
+        "mechanism": "Mouldy hay and straw carry thermophilic actinomycetes, and breathing them repeatedly teaches the immune system to attack the lung tissue holding them. Farmer's lung is that reaction, and it scars.",
+        "src": "https://en.wikipedia.org/wiki/Farmer%27s_lung"
+      }
+    ],
+    "sugar": [
       {
         "valence": "harm",
         "route": "ingested",
         "outcome": "infection",
-        "onset": "conditional",
-        "reversible": true,
-        "mechanism": "Usually unnoticed in a healthy adult. It matters in pregnancy and in immunosuppression, which is the pattern for a whole class of organisms that are only conditionally dangerous.",
-        "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
-      }
-    ],
-    "ethanol": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "hepatotoxin",
         "onset": "cumulative",
-        "reversible": false,
-        "mechanism": "The liver converts it to acetaldehyde and then to acetate, and the intermediate is the damaging one. Sustained exposure scars the tissue doing the processing.",
-        "src": "https://en.wikipedia.org/wiki/Alcoholic_liver_disease",
-        "carcinogen": true,
-        "iarc": 1,
-        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+        "mechanism": "The bacteria already on a tooth ferment it to acid within minutes, and that acid dissolves the mineral of the enamel. Frequency matters more than quantity: the enamel remineralises between meals and cannot if there is never a gap.",
+        "src": "https://en.wikipedia.org/wiki/Tooth_decay"
       }
     ],
-    "formaldehyde": [
+    "sulfur": [
       {
         "valence": "harm",
         "route": "inhaled",
         "outcome": "irritant",
         "onset": "contact",
-        "reversible": true,
-        "mechanism": "It cross-links protein on contact, which is what makes it a fixative and what makes it an irritant to the airway lining at low concentrations.",
-        "src": "https://en.wikipedia.org/wiki/Formaldehyde",
-        "carcinogen": true,
-        "iarc": 1
+        "mechanism": "Burning sulphur makes sulphur dioxide, which dissolves in the wet lining of the airway to make acid there. The gas is a preservative and a bleach for the same reason it is an irritant.",
+        "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide"
       }
     ],
-    "benzene": [
+    "sulfuric_acid": [
       {
         "valence": "harm",
-        "route": "inhaled",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
         "reversible": false,
-        "mechanism": "It is metabolised into reactive intermediates that damage bone marrow, where blood cells are made. The association with leukaemia is why it was removed from consumer products.",
-        "src": "https://en.wikipedia.org/wiki/Benzene",
-        "carcinogen": true,
-        "iarc": 1,
-        "latency": "years to decades"
-      }
-    ],
-    "cyanide": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "hypoxia",
-        "onset": "acute",
-        "reversible": false,
-        "mechanism": "It stops the enzyme at the end of the respiratory chain, so cells cannot use oxygen even though the blood is full of it. The person is hypoxic with red venous blood, which is the diagnostic oddity.",
-        "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
-      }
-    ],
-    "tobacco_smoke": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
-        "reversible": false,
-        "mechanism": "It carries dozens of established carcinogens into direct contact with the airway lining, repeatedly, over years. The latency is what made the association hard to see and easy to deny.",
-        "src": "https://en.wikipedia.org/wiki/Health_effects_of_tobacco",
-        "carcinogen": true,
-        "iarc": 1,
-        "latency": "20 to 40 years",
-        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+        "mechanism": "It dehydrates tissue rather than simply burning it, and the reaction gives off heat of its own, so a chemical burn becomes a thermal one at the same time.",
+        "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
       }
     ],
     "sun": [
@@ -729,119 +2445,6 @@
         ]
       }
     ],
-    "honey": [
-      {
-        "valence": "benefit",
-        "route": "contact",
-        "outcome": "wound_healing",
-        "onset": "conditional",
-        "mechanism": "It draws water out of the wound bed by osmosis and holds a low pH, and bee-derived glucose oxidase releases hydrogen peroxide slowly rather than all at once. Medical-grade honey dressings are a licensed treatment, not a folk remedy.",
-        "src": "https://en.wikipedia.org/wiki/Honey#Medical_use"
-      },
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "botulism",
-        "onset": "conditional",
-        "reversible": true,
-        "mechanism": "It can carry Clostridium botulinum spores. An adult gut is too competitive for them; an infant gut under a year old is not, so the spores germinate and produce the toxin inside the child. The honey itself is unchanged — the difference is entirely the gut it lands in.",
-        "src": "https://en.wikipedia.org/wiki/Infant_botulism"
-      }
-    ],
-    "lime": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Without it the body cannot cross-link collagen, and every structure that depends on collagen slowly comes apart.",
-        "src": "https://en.wikipedia.org/wiki/Scurvy"
-      }
-    ],
-    "lemon": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "The same broken enzyme in us, the same fix. Citrus keeps its ascorbic acid well enough to survive a voyage, which is why it and not fresher food solved the problem at sea.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
-      }
-    ],
-    "orange": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "Ascorbic acid is the reducing agent two enzymes need to hydroxylate collagen. Supply it and old scars stay closed; withhold it and they reopen in the order they were made.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
-      }
-    ],
-    "potato": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "Not much per mouthful, but eaten in the quantities it was eaten in, enough — which is why scurvy retreated across northern Europe as the potato spread, without anyone knowing why.",
-        "src": "https://en.wikipedia.org/wiki/Potato"
-      }
-    ],
-    "broccoli": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "More ascorbic acid by weight than an orange, though boiling leaches it into the water. The vitamin is the same molecule whatever it arrives in.",
-        "src": "https://en.wikipedia.org/wiki/Broccoli"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "chromium",
-        "onset": "cumulative",
-        "mechanism": "Trivalent chromium in trace amounts, associated with insulin's action on the cell. It is the most contested entry on any essential-nutrient list, and broccoli is the food usually named — both facts belong on the card.",
-        "src": "https://en.wikipedia.org/wiki/Chromium"
-      }
-    ],
-    "liver": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_a",
-        "onset": "cumulative",
-        "prevents": "night_blindness",
-        "mechanism": "Retinol is stored as an ester in the liver of the animal that ate it, so eating liver delivers the finished vitamin rather than a precursor the gut has to convert. The eye spends it fastest, which is why the first sign of running short is at dusk.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_A"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "cobalamin",
-        "onset": "cumulative",
-        "prevents": "anaemia",
-        "mechanism": "B12 is made by bacteria and archaea and by nothing else alive — no plant and no animal synthesises it. Animals accumulate what their gut flora or their food provides, and the liver is where it is banked, in quantities that last a person years.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
-      }
-    ],
-    "carrot": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_a",
-        "onset": "cumulative",
-        "prevents": "night_blindness",
-        "mechanism": "Beta-carotene, split in the gut wall into two molecules of retinal. The conversion is regulated, which is the reason a plant source does not overshoot the way stored retinol can.",
-        "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
-      }
-    ],
     "sweet_potato": [
       {
         "valence": "benefit",
@@ -853,291 +2456,6 @@
         "src": "https://en.wikipedia.org/wiki/Sweet_potato"
       }
     ],
-    "seaweed": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iodine",
-        "onset": "cumulative",
-        "prevents": "goitre",
-        "mechanism": "The thyroid needs iodine to build its hormones and has no substitute for it. Seaweed concentrates it out of seawater, which is why coastal diets rarely showed the deficiency that inland ones did.",
-        "src": "https://en.wikipedia.org/wiki/Iodine"
-      }
-    ],
-    "kelp": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iodine",
-        "onset": "cumulative",
-        "prevents": "goitre",
-        "mechanism": "Iodine was first isolated from kelp ash. The gland takes it up against a steep gradient and cannot make the hormone without it.",
-        "src": "https://en.wikipedia.org/wiki/Kelp"
-      }
-    ],
-    "salt": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "sodium",
-        "onset": "conditional",
-        "mechanism": "Every nerve impulse is a sodium gradient collapsing and being rebuilt, and the body has no way to manufacture the ion. This is why salt was worth trading across deserts.",
-        "src": "https://en.wikipedia.org/wiki/Sodium_in_biology"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "chlorine",
-        "onset": "conditional",
-        "mechanism": "The other half of the crystal. Chloride is the counter-ion that lets sodium move, and it is also the acid in the stomach: the parietal cell pumps hydrogen out and chloride follows it.",
-        "src": "https://en.wikipedia.org/wiki/Chloride"
-      }
-    ],
-    "beef": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iron",
-        "onset": "cumulative",
-        "prevents": "anaemia",
-        "mechanism": "Haem iron, already inside a porphyrin ring, which the gut takes up by a different route from plant iron and far more completely. Without enough, the marrow cannot fill red cells with haemoglobin.",
-        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
-      }
-    ],
-    "spinach": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iron",
-        "onset": "cumulative",
-        "prevents": "anaemia",
-        "mechanism": "It does contain iron, but bound up with oxalate, so much less crosses the gut wall than the number on the label suggests. The nineteenth-century arithmetic error that made spinach famous was corrected long before the reputation was.",
-        "src": "https://en.wikipedia.org/wiki/Spinach"
-      }
-    ],
-    "lentil": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "protein",
-        "onset": "conditional",
-        "mechanism": "Around a quarter protein dry, and low in methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
-        "src": "https://en.wikipedia.org/wiki/Lentil"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "molybdenum",
-        "onset": "cumulative",
-        "mechanism": "Exactly four human enzymes need molybdenum, and legumes carry it because the bacteria in their root nodules need it too, for nitrogenase. Deficiency in a person eating ordinary food is almost unknown, which is itself the interesting part.",
-        "src": "https://en.wikipedia.org/wiki/Molybdenum"
-      }
-    ],
-    "egg": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "protein",
-        "onset": "conditional",
-        "mechanism": "The reference against which other proteins are scored, because the amino acid proportions are close to what a body building tissue actually asks for.",
-        "src": "https://en.wikipedia.org/wiki/Egg_as_food"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "biotin",
-        "onset": "cumulative",
-        "mechanism": "Biotin carries carbon dioxide for the carboxylase enzymes. The yolk is a good source and the raw white is the opposite: avidin in it binds biotin so tightly that it goes straight through. Cooking denatures the avidin and the problem with it.",
-        "src": "https://en.wikipedia.org/wiki/Biotin"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "choline",
-        "onset": "cumulative",
-        "mechanism": "Choline goes into every cell membrane as phosphatidylcholine and into acetylcholine, the transmitter at every neuromuscular junction. The body makes some and not enough, and the yolk is the densest ordinary source.",
-        "src": "https://en.wikipedia.org/wiki/Choline"
-      }
-    ],
-    "chicken": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "protein",
-        "onset": "conditional",
-        "mechanism": "Muscle eaten to build muscle: the filaments are broken to amino acids in the gut and reassembled to a different specification on the other side.",
-        "src": "https://en.wikipedia.org/wiki/Chicken_as_food"
-      }
-    ],
-    "fish": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "protein",
-        "onset": "conditional",
-        "mechanism": "Less connective tissue than land meat, so it flakes rather than needing long cooking — and the same protein arrives either way.",
-        "src": "https://en.wikipedia.org/wiki/Fish_as_food"
-      }
-    ],
-    "salmon": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_d",
-        "onset": "cumulative",
-        "prevents": "rickets",
-        "mechanism": "One of the few foods carrying useful vitamin D, which matters at latitudes where the winter sun is too low in the sky to make any in skin at all.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_D"
-      }
-    ],
-    "milk": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "calcium",
-        "onset": "cumulative",
-        "prevents": "osteoporosis",
-        "mechanism": "Calcium arrives with the lactose and the phosphate that help absorb it. Bone is dismantled and rebuilt lifelong, and the intake decides which of the two is winning.",
-        "src": "https://en.wikipedia.org/wiki/Calcium_in_biology"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "riboflavin",
-        "onset": "cumulative",
-        "mechanism": "Riboflavin becomes FAD and FMN, the carriers half of oxidative metabolism runs on. It is destroyed by light in hours, which is the reason milk left clear glass bottles for opaque cartons.",
-        "src": "https://en.wikipedia.org/wiki/Riboflavin"
-      }
-    ],
-    "cheese": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "calcium",
-        "onset": "cumulative",
-        "prevents": "osteoporosis",
-        "mechanism": "The calcium follows the curd rather than the whey, so it concentrates as the water leaves — one of the few foods where processing raises the mineral density.",
-        "src": "https://en.wikipedia.org/wiki/Cheese"
-      },
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "phosphorus",
-        "onset": "cumulative",
-        "mechanism": "Phosphorus is in every ATP, every nucleotide and most of the mineral in bone. In cheese it comes bound to casein, which keeps it soluble as the curd dries.",
-        "src": "https://en.wikipedia.org/wiki/Phosphorus"
-      }
-    ],
-    "yoghurt": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "gut_flora",
-        "onset": "cumulative",
-        "mechanism": "Live cultures arrive in numbers large enough that some survive the stomach. They do not settle permanently; the effect lasts about as long as the eating does.",
-        "src": "https://en.wikipedia.org/wiki/Yoghurt"
-      }
-    ],
-    "kefir": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "gut_flora",
-        "onset": "cumulative",
-        "mechanism": "A wider mix of bacteria and yeasts than yoghurt, fermented from a grain of them that is reused rather than restarted.",
-        "src": "https://en.wikipedia.org/wiki/Kefir"
-      }
-    ],
-    "sauerkraut": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "gut_flora",
-        "onset": "cumulative",
-        "mechanism": "Lactic acid bacteria off the leaf itself, working in brine that keeps everything else out. The souring is the preservation and the culture at once.",
-        "src": "https://en.wikipedia.org/wiki/Sauerkraut"
-      }
-    ],
-    "kimchi": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "gut_flora",
-        "onset": "cumulative",
-        "mechanism": "The same lactic fermentation, at a lower temperature and over longer, with the bacteria shifting in sequence as the acidity climbs.",
-        "src": "https://en.wikipedia.org/wiki/Kimchi"
-      }
-    ],
-    "yeast": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "folate",
-        "onset": "cumulative",
-        "mechanism": "Yeast builds folate for its own DNA synthesis and carries a great deal of it. A body needs the same molecule for the same job, most urgently while a neural tube is closing.",
-        "src": "https://en.wikipedia.org/wiki/Folate"
-      }
-    ],
-    "kale": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "folate",
-        "onset": "cumulative",
-        "mechanism": "Folate is named for the leaf it was first pulled out of. It is the cofactor for moving single carbon atoms around, which is most of what building DNA consists of.",
-        "src": "https://en.wikipedia.org/wiki/Folate"
-      }
-    ],
-    "olive_oil": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_e",
-        "onset": "cumulative",
-        "mechanism": "Mostly oleic acid, a single double bond that resists oxidising, and it carries tocopherol with it — a fat-soluble antioxidant that sits in cell membranes and takes the hit instead of the lipids around it.",
-        "src": "https://en.wikipedia.org/wiki/Olive_oil"
-      }
-    ],
-    "almond": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_e",
-        "onset": "cumulative",
-        "mechanism": "One of the densest sources of alpha-tocopherol there is, in the fat where it is needed and stays stable.",
-        "src": "https://en.wikipedia.org/wiki/Almond"
-      }
-    ],
-    "walnut": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_e",
-        "onset": "cumulative",
-        "mechanism": "Polyunsaturated fat oxidises easily, and the tocopherol packed alongside it is what keeps it intact long enough to be eaten.",
-        "src": "https://en.wikipedia.org/wiki/Walnut"
-      }
-    ],
-    "banana": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "potassium",
-        "onset": "conditional",
-        "mechanism": "Potassium is the ion inside the cell as sodium is the ion outside it, and every heartbeat depends on the difference being maintained.",
-        "src": "https://en.wikipedia.org/wiki/Potassium_in_biology"
-      }
-    ],
-    "coffee": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "energy",
-        "onset": "acute",
-        "mechanism": "Caffeine does not supply energy. It occupies the receptors adenosine uses to report how long you have been awake, so the tiredness is not removed, only unreported — and it is still owed when the caffeine clears.",
-        "src": "https://en.wikipedia.org/wiki/Caffeine"
-      }
-    ],
     "tea": [
       {
         "valence": "benefit",
@@ -1146,1149 +2464,6 @@
         "onset": "acute",
         "mechanism": "The same adenosine blockade, more slowly: theanine alongside the caffeine changes how quickly it arrives, not what it does.",
         "src": "https://en.wikipedia.org/wiki/Tea"
-      }
-    ],
-    "pork": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "thiamin",
-        "onset": "cumulative",
-        "prevents": "beriberi",
-        "mechanism": "Thiamin is the cofactor pyruvate dehydrogenase needs, so without it a cell cannot get sugar into the citric acid cycle at all and the tissues that burn the most sugar — nerve and heart — fail first. It sits in the bran of a grain, which is why beriberi followed the milling machine across Asia and not the rice.",
-        "src": "https://en.wikipedia.org/wiki/Thiamine"
-      }
-    ],
-    "maize": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "niacin",
-        "onset": "conditional",
-        "prevents": "pellagra",
-        "mechanism": "The niacin in maize is bound to a carbohydrate the gut cannot open, so a maize diet can be full of it and deliver none. Soaking the grain in an alkali releases it — which is why pellagra followed maize into Europe and the American South, and never appeared in Mesoamerica, where the alkali step was already thousands of years old.",
-        "src": "https://en.wikipedia.org/wiki/Nixtamalization"
-      }
-    ],
-    "chickpea": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_b6",
-        "onset": "cumulative",
-        "mechanism": "B6 becomes pyridoxal phosphate, the cofactor every transaminase uses, so it sits underneath nearly all amino acid chemistry rather than beside it.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
-      }
-    ],
-    "natto": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_k",
-        "onset": "cumulative",
-        "mechanism": "The bacterium that ferments the beans makes menaquinone-7, a long-lived form of vitamin K. Without K the clotting factors are still built and simply do not work — the liver finishes them by adding a carboxyl group, and K is what lets it.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_K2"
-      }
-    ],
-    "cocoa": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "magnesium",
-        "onset": "cumulative",
-        "mechanism": "ATP is only usable by an enzyme as a magnesium complex, so magnesium is a cofactor for hundreds of reactions at once rather than a specialist. Cocoa solids are among the densest food sources there are.",
-        "src": "https://en.wikipedia.org/wiki/Magnesium_in_biology"
-      }
-    ],
-    "oyster": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "zinc",
-        "onset": "cumulative",
-        "mechanism": "Zinc holds a whole class of transcription factors in the shape that lets them grip DNA, and the same metal is spent on wound repair and on taste. Oysters carry several times more of it than any other common food.",
-        "src": "https://en.wikipedia.org/wiki/Zinc"
-      }
-    ],
-    "brazil_nut": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "selenium",
-        "onset": "cumulative",
-        "mechanism": "Selenium sits in the active site of glutathione peroxidase as selenocysteine, the twenty-first amino acid, coded by a stop codon read differently. Brazil nuts take it up from the soil, so the amount in a nut varies with where the tree grew rather than with the nut.",
-        "src": "https://en.wikipedia.org/wiki/Selenium"
-      }
-    ],
-    "mussel": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "copper",
-        "onset": "cumulative",
-        "mechanism": "Copper is in cytochrome c oxidase, the last enzyme in the respiratory chain, and in lysyl oxidase, which cross-links collagen. Shellfish concentrate it because their own oxygen carrier, haemocyanin, is built on copper rather than iron.",
-        "src": "https://en.wikipedia.org/wiki/Copper_in_health"
-      }
-    ],
-    "oat": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "manganese",
-        "onset": "cumulative",
-        "mechanism": "Manganese is the metal at the centre of the superoxide dismutase inside mitochondria — the enzyme that disposes of the oxygen radicals respiration itself produces. Whole grains carry most of it in the bran.",
-        "src": "https://en.wikipedia.org/wiki/Manganese"
-      }
-    ],
-    "bean": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "lysine",
-        "onset": "cumulative",
-        "mechanism": "Lysine is the amino acid cereals run out of first, and legumes are full of it. That is why beans and a grain turn up together on nearly every continent: neither is complete and the pair is.",
-        "src": "https://en.wikipedia.org/wiki/Lysine"
-      }
-    ],
-    "sesame": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "methionine",
-        "onset": "cumulative",
-        "mechanism": "The complement to the bean. Legumes are short of methionine and seeds are not, and methionine is the amino acid every protein starts with as well as the body's main methyl donor.",
-        "src": "https://en.wikipedia.org/wiki/Methionine"
-      }
-    ],
-    "turkey": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "tryptophan",
-        "onset": "cumulative",
-        "mechanism": "Tryptophan is the precursor of serotonin and of niacin, and the rarest essential amino acid in food. Turkey is famous for it and is not actually unusual — the sleepiness after the meal is the size of the meal, not the bird.",
-        "src": "https://en.wikipedia.org/wiki/Tryptophan"
-      }
-    ],
-    "whey": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "leucine",
-        "onset": "conditional",
-        "mechanism": "Leucine does not only build muscle, it signals: it switches on the pathway that starts protein synthesis, so the same amount arriving quickly does more than the same amount arriving slowly. Whey is the fast fraction of milk protein.",
-        "src": "https://en.wikipedia.org/wiki/Leucine"
-      }
-    ],
-    "soybean": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "isoleucine",
-        "onset": "cumulative",
-        "mechanism": "One of the three branched-chain amino acids, and unusual in being burned in muscle rather than sent to the liver first. Soy is one of the few plant proteins with all nine essential ones in usable proportion.",
-        "src": "https://en.wikipedia.org/wiki/Isoleucine"
-      }
-    ],
-    "quinoa": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "valine",
-        "onset": "cumulative",
-        "mechanism": "The third branched-chain amino acid. Quinoa is named as a complete protein because it does not run short of lysine the way a cereal does — it is not a cereal, but a relative of spinach.",
-        "src": "https://en.wikipedia.org/wiki/Valine"
-      }
-    ],
-    "tofu": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "threonine",
-        "onset": "cumulative",
-        "mechanism": "Threonine goes disproportionately into mucin, the gel that lines the gut, so the intestine spends it faster than any other tissue and a shortage shows up there first.",
-        "src": "https://en.wikipedia.org/wiki/Threonine"
-      }
-    ],
-    "pumpkin_seed": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "phenylalanine",
-        "onset": "cumulative",
-        "mechanism": "Phenylalanine is converted to tyrosine and from there to dopamine, adrenaline and the pigment in skin and hair. The one inherited condition in which that first conversion fails is why every newborn in most countries has a heel prick.",
-        "src": "https://en.wikipedia.org/wiki/Phenylalanine"
-      }
-    ],
-    "mackerel": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "histidine",
-        "onset": "cumulative",
-        "mechanism": "Histidine is essential in infancy and, on the current evidence, in adults too. Oily fish carry a great deal of it in the dark muscle they use for continuous swimming.",
-        "src": "https://en.wikipedia.org/wiki/Histidine"
-      },
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "histamine",
-        "onset": "conditional",
-        "reversible": true,
-        "mechanism": "The same abundant histidine is what makes this fish dangerous when it has been left warm: bacteria on the flesh decarboxylate it into histamine, which cooking does not destroy because it is not the bacteria that are the problem by then. The reaction that follows looks like an allergy and is not one.",
-        "src": "https://en.wikipedia.org/wiki/Scombroid_food_poisoning"
-      }
-    ],
-    "sea": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "drowning",
-        "onset": "conditional",
-        "reversible": false,
-        "mechanism": "Nothing about the water decides this; the person does. The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling, and it is close to silent because breathing takes priority over speech. Whether the same sea is a swim or a drowning turns on whether you can swim, how far the shore is and how cold it is — which is why this is filed as conditional rather than acute.",
-        "src": "https://en.wikipedia.org/wiki/Drowning",
-        "dial": {
-          "unit": "time in cold water",
-          "suffix": "",
-          "from": 0,
-          "to": 60,
-          "note": "Minutes. The staging is the survival services’ own: one minute, ten minutes, one hour.",
-          "src": "https://en.wikipedia.org/wiki/Cold_shock_response"
-        },
-        "stages": [
-          {
-            "at": 0,
-            "label": "In the water",
-            "what": "Whether this is a swim or an emergency is decided by the person and the distance, not by the water."
-          },
-          {
-            "at": 1,
-            "label": "Cold shock",
-            "what": "The first minute is the dangerous one. An involuntary gasp, then hyperventilation you cannot override — and a gasp underwater is how a strong swimmer drowns in water they could have swum in warm.",
-            "outcome": "drowning"
-          },
-          {
-            "at": 60,
-            "label": "Hypothermia",
-            "what": "An hour before the core is cold enough to lose consciousness — which is why 'they were only in the water twenty minutes' is not the reassurance it sounds like.",
-            "outcome": "hypothermia"
-          }
-        ]
-      },
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "hypothermia",
-        "onset": "conditional",
-        "reversible": true,
-        "mechanism": "Water takes heat out of a body roughly twenty-five times faster than air at the same temperature. The first minute is the dangerous one and not the hour: cold shock forces a gasp and then hyperventilation, and a gasp underwater is how a strong swimmer drowns in water they could have swum in warm.",
-        "src": "https://en.wikipedia.org/wiki/Cold_shock_response"
-      }
-    ],
-    "magma": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "Molten rock sits between about 700 and 1,300 °C and carries an enormous amount of heat in very little volume, so contact is not survivable in the way a flame often is. It is also dense enough that a body does not sink into it — the injury is at the surface, and total.",
-        "src": "https://en.wikipedia.org/wiki/Magma"
-      }
-    ],
-    "lava": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "The same rock once it has reached the surface, cooling but still far above the temperature at which protein denatures. The crust that forms on top is thin and hides how hot what is underneath still is, which is what makes it dangerous to walk on.",
-        "src": "https://en.wikipedia.org/wiki/Lava"
-      }
-    ],
-    "obsidian": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "contact",
-        "mechanism": "A volcanic glass with no crystal structure to stop a fracture, so it parts along a conchoidal break that can end in an edge a few molecules across — sharper than a surgical steel blade, and it cuts before it is felt.",
-        "src": "https://en.wikipedia.org/wiki/Obsidian"
-      }
-    ],
-    "human": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Person to person is how most human pathogens travel, and the ones that specialise in us have nowhere else to live — measles, smallpox and polio have no animal reservoir at all. What passes between two people is decided by which surfaces meet and for how long, not by anything either of them intends.",
-        "src": "https://en.wikipedia.org/wiki/Transmission_(medicine)"
-      }
-    ],
-    "stone": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Dense, hard and unyielding, so all the energy of an impact goes into the tissue rather than into deforming what struck it. That is the whole difference between being hit by a stone and by something of the same weight that gives.",
-        "src": "https://en.wikipedia.org/wiki/Blunt_trauma"
-      }
-    ],
-    "wood": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "The dust, not the plank. Fine hardwood dust is an IARC Group 1 carcinogen, and the cancers are of the nose and sinuses — the first tissue the particles meet and the place they are trapped, which is why the association was found among furniture makers.",
-        "src": "https://en.wikipedia.org/wiki/Wood_dust",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "river": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "drowning",
-        "onset": "conditional",
-        "mechanism": "Moving water is the difference. A current a person can stand in can still take their feet away, and cold water does the rest — the danger is almost never the depth.",
-        "src": "https://en.wikipedia.org/wiki/Drowning"
-      }
-    ],
-    "soil": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "tetanus",
-        "onset": "conditional",
-        "mechanism": "Clostridium tetani spores are ordinary soil bacteria and harmless to swallow. They germinate only where oxygen has been shut out, which a deep or crushed wound does for them — which is why a garden scratch is a different question from a garden puncture.",
-        "src": "https://en.wikipedia.org/wiki/Tetanus"
-      }
-    ],
-    "glass": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "contact",
-        "mechanism": "It fractures without deforming, so a break leaves an edge rather than a dent, and that edge is sharp at the scale of a cell. The wound is clean and deep for the force involved.",
-        "src": "https://en.wikipedia.org/wiki/Glass"
-      }
-    ],
-    "sand": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "silicosis",
-        "onset": "cumulative",
-        "mechanism": "Quartz sand is crystalline silica. Whole grains are far too large to breathe; cutting, grinding or blasting makes a fraction that is not, and the lung cannot clear it.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "granite": [
-      {
-        "valence": "harm",
-        "route": "radiation",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "Granite carries traces of uranium, and uranium decays through radium to radon — a gas, which is the part that matters. It seeps out of the rock and collects in enclosed spaces below ground, and it is the leading cause of lung cancer in people who have never smoked.",
-        "src": "https://en.wikipedia.org/wiki/Radon",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "mountain": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "hypoxia",
-        "onset": "conditional",
-        "mechanism": "The air is the same one-fifth oxygen all the way up; what falls is the pressure driving it into the blood. The body answers by breathing off carbon dioxide, which changes blood pH, and altitude sickness is mostly that adjustment being made too fast.",
-        "src": "https://en.wikipedia.org/wiki/Altitude_sickness"
-      }
-    ],
-    "desert": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "heat_stroke",
-        "onset": "conditional",
-        "mechanism": "Sweating works until the water runs out, and then the core temperature has nothing left holding it down. Dry air hides how much is being lost, because it evaporates before it is felt.",
-        "src": "https://en.wikipedia.org/wiki/Heat_stroke"
-      }
-    ],
-    "wind": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "hypothermia",
-        "onset": "conditional",
-        "mechanism": "Wind does not lower the temperature; it strips away the thin layer of air a body has already warmed and keeps stripping it, so heat leaves faster than it can be made. Below about 35 °C the body stops keeping up, and judgement goes before strength does.",
-        "src": "https://en.wikipedia.org/wiki/Hypothermia"
-      }
-    ],
-    "horse": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Half a tonne with a kick delivered by the strongest muscle group in the animal, at head height for a standing person. Horse-related injuries are among the most serious in any sport, and most of them happen on the ground rather than in the saddle.",
-        "src": "https://en.wikipedia.org/wiki/Equestrianism#Safety"
-      }
-    ],
-    "grass": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "allergic_reaction",
-        "onset": "conditional",
-        "mechanism": "Grass pollen is wind-carried, which means it is made in enormous quantity and is small enough to stay airborne — both of which are why it is the commonest cause of hay fever. The immune system has learned a protein that is doing nothing to it.",
-        "src": "https://en.wikipedia.org/wiki/Allergic_rhinitis"
-      }
-    ],
-    "blood": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Blood is the route for the pathogens that cannot survive drying — hepatitis B and C, and HIV. Intact skin is a complete barrier to all of them; a break in it is not.",
-        "src": "https://en.wikipedia.org/wiki/Blood-borne_disease"
-      }
-    ],
-    "bacteria": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Most bacteria are harmless and a great many are necessary — there are more of them in a person than there are human cells. The pathogenic ones differ by a handful of acquired genes rather than by being a different sort of thing.",
-        "src": "https://en.wikipedia.org/wiki/Pathogenic_bacteria"
-      }
-    ],
-    "oxygen_gas": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "The gas a body runs on is also an oxidant, and above about half an atmosphere of it the lung lining is damaged by the same chemistry that makes it useful. At higher pressures still it causes seizures, which is why divers do not breathe it pure.",
-        "src": "https://en.wikipedia.org/wiki/Oxygen_toxicity"
-      }
-    ],
-    "limestone": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "cumulative",
-        "mechanism": "The rock is chalk and harmless to hold. Quarrying and cutting it makes a respirable dust, and the lung's only answer to any insoluble particle is inflammation.",
-        "src": "https://en.wikipedia.org/wiki/Occupational_dust_exposure"
-      }
-    ],
-    "gold": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "Metallic gold does not oxidise, does not dissolve in body fluids, and releases no ions for the immune system to react to. That is why it has been left inside people for centuries — in teeth, in eyelid weights, in the wire of an implant — and why almost nobody is allergic to it.",
-        "src": "https://en.wikipedia.org/wiki/Gold#Biology_and_medicine"
-      }
-    ],
-    "titanium": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "It grows its own oxide skin the instant it meets air, a few nanometres thick and chemically dead, and bone will lay itself down directly against that surface. The property has a name — osseointegration — and it is the reason for every dental implant and hip stem.",
-        "src": "https://en.wikipedia.org/wiki/Titanium#Medical"
-      }
-    ],
-    "platinum": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "As unreactive as gold and harder, so it holds an edge and a shape. It sits in pacemaker electrodes and aneurysm coils for exactly that reason: it can be left in a body indefinitely and stay what it was.",
-        "src": "https://en.wikipedia.org/wiki/Platinum"
-      }
-    ],
-    "ptfe": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "Nothing sticks to it and nothing reacts with it, because the fluorine shell around the carbon chain is about as chemically closed as an organic molecule gets. Solid PTFE passes through a gut unchanged, which is what makes it a vascular graft material.",
-        "src": "https://en.wikipedia.org/wiki/Polytetrafluoroethylene"
-      }
-    ],
-    "sapphire": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "Crystalline aluminium oxide: too hard to abrade and too stable to dissolve. It is used for the windows of implanted devices, where anything that fogged or reacted would end the device.",
-        "src": "https://en.wikipedia.org/wiki/Sapphire"
-      }
-    ],
-    "iron": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "conditional",
-        "mechanism": "The body has no way to excrete iron once it is absorbed — intake is regulated at the gut and there is no tap on the other end. A large amount taken at once overwhelms that gate, and free iron in the blood damages the liver and the vessel walls directly. It is a leading cause of poisoning death in small children for exactly this reason: the tablets look like sweets.",
-        "src": "https://en.wikipedia.org/wiki/Iron_poisoning"
-      }
-    ],
-    "steel": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "Surgical stainless holds a passive chromium-oxide film that reforms the instant it is scratched, so the metal underneath never meets tissue. That is why bone screws and plates are made of it, and why a knife blade and an implant are the same alloy family.",
-        "src": "https://en.wikipedia.org/wiki/Surgical_stainless_steel"
-      }
-    ],
-    "paper": [
-      {
-        "valence": "inert",
-        "route": "ingested",
-        "onset": "conditional",
-        "mechanism": "Cellulose is glucose joined by a bond human enzymes cannot open — no mammal makes cellulase. Paper passes through unchanged, which is the same reason plant fibre is called roughage rather than food.",
-        "src": "https://en.wikipedia.org/wiki/Cellulose"
-      }
-    ],
-    "book": [
-      {
-        "valence": "inert",
-        "route": "ingested",
-        "onset": "conditional",
-        "mechanism": "Cellulose and ink. There is nothing in a book a human gut can take apart, which is why the fibre in a plant and the fibre in a page are the same problem.",
-        "src": "https://en.wikipedia.org/wiki/Cellulose"
-      }
-    ],
-    "tree": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "A mature tree holds tonnes of stored energy in its own weight and in the tension of a leaning trunk, and it releases all of it in one direction. Tree work has one of the highest fatality rates of any trade for that reason, and most of the deaths are from being struck rather than from falling.",
-        "src": "https://en.wikipedia.org/wiki/Logging#Safety"
-      }
-    ],
-    "protein": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "allergic_reaction",
-        "onset": "conditional",
-        "mechanism": "Every food allergy is to a protein, never to a fat or a sugar, because only a protein is large and structured enough for an antibody to recognise. Cooking sometimes changes the shape enough to break that recognition and sometimes does not, which is why one person can eat a baked egg and not a boiled one.",
-        "src": "https://en.wikipedia.org/wiki/Food_allergy"
-      }
-    ],
-    "cloth": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asthma",
-        "onset": "cumulative",
-        "mechanism": "Cotton dust causes byssinosis, and its signature is that the chest tightness comes back on the first day of the working week and eases through it. Nineteenth-century mills called it Monday fever long before anyone knew what caused it.",
-        "src": "https://en.wikipedia.org/wiki/Byssinosis"
-      }
-    ],
-    "bone": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "laceration",
-        "onset": "conditional",
-        "mechanism": "A swallowed fish bone is one of the commonest foreign bodies in an oesophagus. It is thin enough to pass the throat and stiff enough to lodge point-first, and the danger is perforation rather than obstruction.",
-        "src": "https://en.wikipedia.org/wiki/Foreign_body"
-      }
-    ],
-    "enzyme": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asthma",
-        "onset": "cumulative",
-        "mechanism": "Proteolytic enzymes added to washing powder in the 1960s caused an outbreak of occupational asthma in the workers making it — an enzyme is a protein, and inhaling a protein in quantity is how the immune system is taught to react to it.",
-        "src": "https://en.wikipedia.org/wiki/Occupational_asthma"
-      }
-    ],
-    "flower": [
-      {
-        "valence": "inert",
-        "route": "inhaled",
-        "onset": "conditional",
-        "mechanism": "The plants that cause hay fever are the ones with no flower worth looking at. A showy flower is advertising to insects, so its pollen is heavy, sticky and stays where it is put; wind-pollinated plants make theirs light and in enormous quantity, and that is the pollen in the air.",
-        "src": "https://en.wikipedia.org/wiki/Pollen#Allergy"
-      }
-    ],
-    "brain": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "cumulative",
-        "mechanism": "The one tissue where eating it has transmitted a disease with no organism in it at all. A prion is a misfolded protein that makes copies of its own misfolding, and nothing that destroys a bacterium or a virus touches it.",
-        "src": "https://en.wikipedia.org/wiki/Prion"
-      }
-    ],
-    "brick": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "silicosis",
-        "onset": "cumulative",
-        "mechanism": "The fired clay is harmless in one piece. Cutting and grinding it releases respirable crystalline silica, and the lung has no way to clear a particle it cannot dissolve.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "sandstone": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "silicosis",
-        "onset": "cumulative",
-        "mechanism": "Sandstone is cemented quartz, so working it produces the same respirable crystalline silica as sand does. This is the oldest recorded occupational disease there is.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "quartz": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "silicosis",
-        "onset": "cumulative",
-        "mechanism": "The mineral itself. Whole crystals are inert; the fraction small enough to reach an alveolus destroys the macrophage that engulfs it and is released again to do it once more.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "copper": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "fever",
-        "onset": "acute",
-        "mechanism": "Freshly formed metal-oxide fume is fine enough to reach the deep lung, where it provokes a flu-like reaction that comes on hours after the work and is gone the next day. It is the metal in fume form, not the metal in hand.",
-        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
-      }
-    ],
-    "zinc": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "fever",
-        "onset": "acute",
-        "mechanism": "The classic cause of metal fume fever: galvanised steel heated hot enough to vaporise its zinc coating. The reaction is to the freshly condensed oxide particles, which is why welding the same metal cold does nothing.",
-        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
-      }
-    ],
-    "dog": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A bite is an injection of mouth flora past every barrier the skin has. Pasteurella and Capnocytophaga are ordinary in a healthy dog's mouth, and a puncture from a canine tooth seals over the top of them.",
-        "src": "https://en.wikipedia.org/wiki/Dog_bite"
-      }
-    ],
-    "fungus": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Most fungi cannot grow at body temperature, which is a large part of why so few of the millions of species trouble us. The ones that do are either kept to the dead outer skin or take hold only where the immune system has stepped back.",
-        "src": "https://en.wikipedia.org/wiki/Mycosis"
-      }
-    ],
-    "mould": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asthma",
-        "onset": "cumulative",
-        "mechanism": "Spores and fragments small enough to reach the airway, in numbers that rise with damp. The reaction is usually to the spore as an allergen rather than to any toxin, and it is why the housing is treated rather than the person.",
-        "src": "https://en.wikipedia.org/wiki/Mold_health_issues"
-      }
-    ],
-    "straw": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "allergic_reaction",
-        "onset": "cumulative",
-        "mechanism": "Mouldy hay and straw carry thermophilic actinomycetes, and breathing them repeatedly teaches the immune system to attack the lung tissue holding them. Farmer's lung is that reaction, and it scars.",
-        "src": "https://en.wikipedia.org/wiki/Farmer%27s_lung"
-      }
-    ],
-    "feather": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "allergic_reaction",
-        "onset": "cumulative",
-        "mechanism": "The same mechanism as farmer's lung, from bird protein in the dust of droppings and feathers. It is called bird fancier's lung and it appears in people who keep pigeons and budgerigars for years.",
-        "src": "https://en.wikipedia.org/wiki/Bird_fancier%27s_lung"
-      }
-    ],
-    "sulfur": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "contact",
-        "mechanism": "Burning sulphur makes sulphur dioxide, which dissolves in the wet lining of the airway to make acid there. The gas is a preservative and a bleach for the same reason it is an irritant.",
-        "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide"
-      }
-    ],
-    "ammonia": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "corrosive",
-        "onset": "acute",
-        "mechanism": "It is extremely soluble in water, so it is captured by the first wet surface it meets — eyes and upper airway — and makes a strong alkali on the spot. That is also why it warns so effectively: nobody stays in it by accident.",
-        "src": "https://en.wikipedia.org/wiki/Ammonia"
-      }
-    ],
-    "bromine": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "corrosive",
-        "onset": "acute",
-        "mechanism": "A liquid at room temperature that boils readily, so the hazard is a heavy red-brown vapour. It oxidises tissue on contact and, like chlorine, generates acid in the airway lining.",
-        "src": "https://en.wikipedia.org/wiki/Bromine"
-      }
-    ],
-    "carbon_dioxide": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asphyxia",
-        "onset": "acute",
-        "mechanism": "Unlike most asphyxiants it is not silent. The urge to breathe answers carbon dioxide directly, so a rising level produces real air hunger and panic — which is why carbon monoxide kills people who feel fine and this does not.",
-        "src": "https://en.wikipedia.org/wiki/Hypercapnia"
-      }
-    ],
-    "hydrogen_gas": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asphyxia",
-        "onset": "acute",
-        "mechanism": "It is not toxic and does nothing chemically. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
-        "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
-      }
-    ],
-    "rubber": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "allergic_reaction",
-        "onset": "conditional",
-        "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
-        "src": "https://en.wikipedia.org/wiki/Latex_allergy"
-      }
-    ],
-    "leather": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "sensitiser",
-        "onset": "cumulative",
-        "mechanism": "Chrome tanning leaves residual chromium in the hide, and some of it converts to the hexavalent form. Contact dermatitis from shoes is one of the commonest presentations of chromium allergy.",
-        "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)"
-      }
-    ],
-    "coin": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "sensitiser",
-        "onset": "cumulative",
-        "mechanism": "Nickel released by sweat binds skin protein, and the immune system learns the combination permanently. Handling coins is the classic occupational exposure — cashiers were the first group in whom it was described.",
-        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
-      }
-    ],
-    "wool": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "irritant",
-        "onset": "contact",
-        "mechanism": "The prickle is mechanical, not allergic: fibres above about thirty microns are stiff enough to indent the skin and set off the same nerve endings pain uses. Finer wool from the same animal does not do it.",
-        "src": "https://en.wikipedia.org/wiki/Wool#Characteristics"
-      }
-    ],
-    "concrete": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "conditional",
-        "mechanism": "Wet cement is strongly alkaline and it does not sting, so kneeling in it can produce a full-thickness burn over hours without any warning at the time. Set concrete is inert; the hazard is entirely in the window while it is curing.",
-        "src": "https://en.wikipedia.org/wiki/Cement#Health_and_safety"
-      }
-    ],
-    "plaster": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "conditional",
-        "mechanism": "Plaster sets by taking water back into the crystal, and that reaction gives out heat. Under a thick cast the heat has nowhere to go, so the skin beneath can be injured while the cast is hardening rather than by anything applied to it.",
-        "src": "https://en.wikipedia.org/wiki/Plaster"
-      }
-    ],
-    "wheat": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "Gluten is not digested to completion by anyone; in coeliac disease the fragments that remain trigger an immune attack on the lining of the small intestine, which then cannot absorb. It is not an allergy and not an intolerance — it is autoimmune, and the damage is to the person's own gut.",
-        "src": "https://en.wikipedia.org/wiki/Coeliac_disease"
-      }
-    ],
-    "rice": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
-        "mechanism": "Rice is grown in flooded fields, and flooding mobilises arsenic out of the soil in a form the plant takes up readily. It accumulates in the grain rather than the straw, which is why rice carries more of it than any other staple.",
-        "src": "https://en.wikipedia.org/wiki/Arsenic_contamination_of_groundwater"
-      }
-    ],
-    "cabbage": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "goitre",
-        "onset": "conditional",
-        "mechanism": "Brassicas carry glucosinolates that interfere with the thyroid's uptake of iodine. It matters only where iodine is already short, and cooking reduces it — which is why this is a fact about diets rather than about cabbage.",
-        "src": "https://en.wikipedia.org/wiki/Goitrogen"
-      }
-    ],
-    "sugar": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "cumulative",
-        "mechanism": "The bacteria already on a tooth ferment it to acid within minutes, and that acid dissolves the mineral of the enamel. Frequency matters more than quantity: the enamel remineralises between meals and cannot if there is never a gap.",
-        "src": "https://en.wikipedia.org/wiki/Tooth_decay"
-      }
-    ],
-    "glucose": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "energy",
-        "onset": "acute",
-        "mechanism": "The one fuel the brain will use in ordinary circumstances, at about a fifth of the body's whole energy budget for two per cent of its weight. It is also the only sugar the blood carries — everything else is converted first.",
-        "src": "https://en.wikipedia.org/wiki/Glucose"
-      }
-    ],
-    "virus": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A virus is not alive in any useful sense: it carries instructions and a coat, and the copying is done entirely by the cell it enters. That is why almost nothing kills a virus without also harming the host.",
-        "src": "https://en.wikipedia.org/wiki/Virus"
-      }
-    ],
-    "insect": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Insects carry more human disease than any other group of animals, and almost always as a vector rather than as a cause — the mosquito, the tsetse fly and the sandfly are syringes, and what they inject is somebody else's parasite.",
-        "src": "https://en.wikipedia.org/wiki/Vector_(epidemiology)"
-      }
-    ],
-    "coral": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A coral cut is shallow and heals badly, because the wound is seeded with fragments of skeleton and with the marine bacteria living on them. Fire corals are not corals at all but hydroids, and they sting rather than cut.",
-        "src": "https://en.wikipedia.org/wiki/Coral#Injury"
-      }
-    ],
-    "wolf": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Attacks are genuinely rare — far rarer than the folklore — and the documented cases cluster in rabid animals and in animals habituated to people, which is a fact about circumstances rather than about wolves.",
-        "src": "https://en.wikipedia.org/wiki/Wolf_attack"
-      }
-    ],
-    "automobile": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Around a million people a year, and the injury is deceleration rather than impact: the body stops with the car and the organs inside it do not, which is why the damage is often internal and invisible.",
-        "src": "https://en.wikipedia.org/wiki/Traffic_collision"
-      }
-    ],
-    "petroleum": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "Crude oil and its lighter fractions carry benzene, which the marrow converts into metabolites that damage the cells making blood. That is why the cancer associated with it is leukaemia rather than a cancer of the lung.",
-        "src": "https://en.wikipedia.org/wiki/Benzene",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "smoke": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "cumulative",
-        "mechanism": "Wood smoke is mostly particles under 2.5 microns, small enough to pass the airway defences entirely and reach the alveoli. Household cooking smoke remains one of the largest environmental causes of death in the world.",
-        "src": "https://en.wikipedia.org/wiki/Indoor_air_pollution_in_developing_nations"
-      }
-    ],
-    "snow": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "frostbite",
-        "onset": "conditional",
-        "mechanism": "Melting snow against skin takes heat at the latent heat of fusion, which is far more than cold air of the same temperature can. Frostbite is ice crystals forming inside the tissue and tearing the cells from within.",
-        "src": "https://en.wikipedia.org/wiki/Frostbite"
-      }
-    ],
-    "frost": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "frostbite",
-        "onset": "contact",
-        "mechanism": "Freezing is not simply cold. Water crystallises between and then inside cells, and it is the crystal edges that do the damage — which is why rapid rewarming hurts and slow rewarming injures more.",
-        "src": "https://en.wikipedia.org/wiki/Frostbite"
-      }
-    ],
-    "glacier": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "hypothermia",
-        "onset": "acute",
-        "mechanism": "A crevasse is bridged by snow that looks like the rest of the surface, and a fall into one wedges a body tighter the deeper it goes. What follows is the cold: the walls are ice on every side and there is no way to move.",
-        "src": "https://en.wikipedia.org/wiki/Crevasse"
-      }
-    ],
-    "flint": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "contact",
-        "mechanism": "It fractures conchoidally, like glass, so a struck flake carries an edge sharper than most steel. That is what made it the first tool material and it has not stopped being true.",
-        "src": "https://en.wikipedia.org/wiki/Flint"
-      }
-    ],
-    "sheet_metal": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "contact",
-        "mechanism": "A sheared edge is burred and thin, and it parts skin at a pressure a knife would need to be pressed to reach. Most metalwork injuries are from handling stock rather than from any machine.",
-        "src": "https://en.wikipedia.org/wiki/Metalworking"
-      }
-    ],
-    "gunpowder": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "It deflagrates rather than detonating — it burns very fast rather than producing a supersonic shock — so the injury is flame and hot gas, and the hazard scales with confinement.",
-        "src": "https://en.wikipedia.org/wiki/Gunpowder"
-      }
-    ],
-    "current": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "electrocution",
-        "onset": "acute",
-        "mechanism": "It is current that injures, not voltage: the path and the amount decide it. Milliamps across the chest can fibrillate a heart, and the skin's resistance, which is what usually limits it, falls by an order of magnitude when wet.",
-        "src": "https://en.wikipedia.org/wiki/Electrical_injury"
-      }
-    ],
-    "carbon": [
-      {
-        "valence": "inert",
-        "route": "ingested",
-        "onset": "conditional",
-        "mechanism": "Elemental carbon is about as biologically unavailable as matter gets. Activated charcoal passes through a gut adsorbing things and is not itself absorbed, and tattoo pigment is carbon that stays in the dermis for a lifetime without being recognised.",
-        "src": "https://en.wikipedia.org/wiki/Activated_carbon"
-      }
-    ],
-    "keratin": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "Hair and nail are dead by the time they are visible: keratin cross-linked by disulphide bonds into something no human enzyme dismantles. That is why cutting either is painless and why they survive in graves.",
-        "src": "https://en.wikipedia.org/wiki/Keratin"
-      }
-    ],
-    "aluminum": [
-      {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "It grows a passivating oxide film within milliseconds of meeting air, and that film — not the metal — is what everything touches. It is the reason aluminium cookware does not dissolve into food.",
-        "src": "https://en.wikipedia.org/wiki/Aluminium#Corrosion_resistance"
-      }
-    ],
-    "silver": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "argyria",
-        "onset": "cumulative",
-        "mechanism": "Silver taken in over years is deposited in the skin as fine particles and reduced by sunlight, exactly as in a photographic emulsion. The blue-grey is permanent — there is no route by which the body removes it.",
-        "src": "https://en.wikipedia.org/wiki/Argyria"
-      }
-    ],
-    "air": [
-      {
-        "valence": "benefit",
-        "route": "inhaled",
-        "outcome": "oxygen",
-        "onset": "acute",
-        "mechanism": "A fifth oxygen, four fifths nitrogen, and the nitrogen is not filler — it dilutes the oxygen to a partial pressure lungs can tolerate. Pure oxygen at the same pressure damages the airway lining.",
-        "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
-      }
-    ],
-    "oxygen": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "The gas a body runs on is also an oxidant. Above about half an atmosphere the lung lining is damaged by the same chemistry that makes it useful, and at higher pressures still it causes seizures.",
-        "src": "https://en.wikipedia.org/wiki/Oxygen_toxicity"
-      }
-    ],
-    "wheel": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "crush_syndrome",
-        "onset": "acute",
-        "mechanism": "A loaded wheel concentrates the whole weight of a vehicle onto a contact patch the size of a hand. What follows a crush is often worse than the crush: muscle held under pressure releases myoglobin when the pressure comes off, and the kidneys are what fail.",
-        "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
-      }
-    ],
-    "clay": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iron",
-        "onset": "conditional",
-        "mechanism": "Geophagia is documented across cultures and pregnancies, and kaolin does bind some toxins and pathogens in the gut. It also binds iron and zinc, so the practice can cause the deficiency it is sometimes an appetite for.",
-        "src": "https://en.wikipedia.org/wiki/Geophagia"
-      }
-    ],
-    "mud": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "tetanus",
-        "onset": "conditional",
-        "mechanism": "Clostridium tetani spores are ordinary soil organisms, harmless to swallow, and they germinate only where oxygen has been shut out — which a wound packed with mud does for them.",
-        "src": "https://en.wikipedia.org/wiki/Tetanus"
-      }
-    ],
-    "fruit": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "cumulative",
-        "prevents": "scurvy",
-        "mechanism": "Humans carry a broken copy of the last enzyme in the vitamin C pathway, so it has to arrive in food. Fruit is where most people get it, and cooking is what destroys it.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
-      }
-    ],
-    "oil": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_e",
-        "onset": "cumulative",
-        "mechanism": "Vegetable oils carry tocopherol along with the fat, and it is there for the oil's sake as much as ours: it is the antioxidant that keeps the polyunsaturated bonds from oxidising before they are eaten.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
-      }
-    ],
-    "meat": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "iron",
-        "onset": "cumulative",
-        "prevents": "anaemia",
-        "mechanism": "Haem iron sits inside a porphyrin ring and crosses the gut wall by its own route, far more completely than the iron in plants. Without enough, the marrow cannot fill red cells with haemoglobin.",
-        "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
-      }
-    ],
-    "legume": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "protein",
-        "onset": "conditional",
-        "mechanism": "Around a quarter protein dry, and short of methionine — which is why the pairing with a grain is not a culinary accident but a completion of the amino acid set.",
-        "src": "https://en.wikipedia.org/wiki/Legume"
-      }
-    ],
-    "bark": [
-      {
-        "valence": "benefit",
-        "route": "ingested",
-        "outcome": "vitamin_c",
-        "onset": "conditional",
-        "prevents": "scurvy",
-        "mechanism": "Not a vitamin source in general — but the one that mattered: spruce and pine bark and needles carried enough ascorbic acid to end scurvy on voyages where citrus was unavailable, which is what Cartier's crew were given at Stadacona in 1536.",
-        "src": "https://en.wikipedia.org/wiki/Scurvy"
       }
     ],
     "timber": [
@@ -2304,85 +2479,248 @@
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
-    "ore": [
+    "titanium": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "It grows its own oxide skin the instant it meets air, a few nanometres thick and chemically dead, and bone will lay itself down directly against that surface. The property has a name — osseointegration — and it is the reason for every dental implant and hip stem.",
+        "src": "https://en.wikipedia.org/wiki/Titanium#Medical"
+      }
+    ],
+    "tobacco_smoke": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "silicosis",
+        "outcome": "carcinogen",
         "onset": "cumulative",
-        "mechanism": "Most ore bodies sit in silicate rock, so crushing and grinding them makes respirable crystalline silica whatever the metal being chased. The lung cannot clear a particle it cannot dissolve.",
-        "src": "https://en.wikipedia.org/wiki/Silicosis",
+        "reversible": false,
+        "mechanism": "It carries dozens of established carcinogens into direct contact with the airway lining, repeatedly, over years. The latency is what made the association hard to see and easy to deny.",
+        "src": "https://en.wikipedia.org/wiki/Health_effects_of_tobacco",
         "carcinogen": true,
         "iarc": 1,
+        "latency": "20 to 40 years",
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
-    "iodine": [
+    "tofu": [
       {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "irritant",
-        "onset": "contact",
-        "mechanism": "Elemental iodine is used as an antiseptic because it is toxic to cells, and skin is made of cells. Tincture stains and stings; the strong solution burns.",
-        "src": "https://en.wikipedia.org/wiki/Iodine"
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "threonine",
+        "onset": "cumulative",
+        "mechanism": "Threonine goes disproportionately into mucin, the gel that lines the gut, so the intestine spends it faster than any other tissue and a shortage shows up there first.",
+        "src": "https://en.wikipedia.org/wiki/Threonine"
       }
     ],
-    "rain": [
+    "toxoplasma_gondii": [
       {
         "valence": "harm",
-        "route": "thermal",
-        "outcome": "hypothermia",
-        "onset": "conditional",
-        "mechanism": "Wet clothing loses heat far faster than dry, because water conducts away from the skin what still air would have held against it. Most hypothermia happens well above freezing, in the rain.",
-        "src": "https://en.wikipedia.org/wiki/Hypothermia"
-      }
-    ],
-    "mammal": [
-      {
-        "valence": "harm",
-        "route": "injected",
+        "route": "ingested",
         "outcome": "infection",
         "onset": "conditional",
-        "mechanism": "The majority of new human infectious diseases come from other animals, and mammals are the commonest source because our physiology is close enough that their pathogens do not need to change much.",
-        "src": "https://en.wikipedia.org/wiki/Zoonosis"
+        "reversible": true,
+        "mechanism": "Usually unnoticed in a healthy adult. It matters in pregnancy and in immunosuppression, which is the pattern for a whole class of organisms that are only conditionally dangerous.",
+        "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
       }
     ],
-    "seed": [
+    "tree": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A mature tree holds tonnes of stored energy in its own weight and in the tension of a leaning trunk, and it releases all of it in one direction. Tree work has one of the highest fatality rates of any trade for that reason, and most of the deaths are from being struck rather than from falling.",
+        "src": "https://en.wikipedia.org/wiki/Logging#Safety"
+      }
+    ],
+    "turkey": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "tryptophan",
+        "onset": "cumulative",
+        "mechanism": "Tryptophan is the precursor of serotonin and of niacin, and the rarest essential amino acid in food. Turkey is famous for it and is not actually unusual — the sleepiness after the meal is the size of the meal, not the bird.",
+        "src": "https://en.wikipedia.org/wiki/Tryptophan"
+      }
+    ],
+    "ultraviolet": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It has enough energy to fuse adjacent thymine bases in DNA into a dimer the cell must cut out and rebuild. Most are repaired; the damage that accumulates is the small fraction that is not.",
+        "src": "https://en.wikipedia.org/wiki/Ultraviolet",
+        "carcinogen": true,
+        "iarc": 1,
+        "latency": "decades",
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "vibrio_cholerae": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cholera",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "Its toxin locks the gut's chloride channels open, so water follows the salt out of the body faster than it can be replaced. Death is from dehydration rather than from the organism, which is why rehydration alone saves most cases.",
+        "src": "https://en.wikipedia.org/wiki/Cholera"
+      }
+    ],
+    "virus": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A virus is not alive in any useful sense: it carries instructions and a coat, and the copying is done entirely by the cell it enters. That is why almost nothing kills a virus without also harming the host.",
+        "src": "https://en.wikipedia.org/wiki/Virus"
+      }
+    ],
+    "walnut": [
       {
         "valence": "benefit",
         "route": "ingested",
         "outcome": "vitamin_e",
         "onset": "cumulative",
-        "mechanism": "A seed is a packed lunch with a shelf life, so it carries the antioxidant that protects its own stored fat from going rancid — which is the same tocopherol that protects membranes in us.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+        "mechanism": "Polyunsaturated fat oxidises easily, and the tocopherol packed alongside it is what keeps it intact long enough to be eaten.",
+        "src": "https://en.wikipedia.org/wiki/Walnut"
       }
     ],
-    "rope": [
+    "wasp": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "The sting itself is minor. The danger is sensitisation: an earlier sting that caused no symptoms taught the immune system to recognise it, and the next one provokes a response out of all proportion.",
+        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+      }
+    ],
+    "water": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "drowning",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "The larynx closes reflexively, so the usual mechanism is hypoxia rather than filling. It is also nearly silent, because breathing takes priority over speech.",
+        "src": "https://en.wikipedia.org/wiki/Drowning"
+      },
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "blood",
+        "onset": "acute",
+        "prevents": "dehydration",
+        "mechanism": "Plasma is mostly water, and the volume of it decides the pressure the heart is working against. Thirst is triggered by the concentration of the blood rather than by its volume, which is why it lags behind a real deficit.",
+        "src": "https://en.wikipedia.org/wiki/Body_water"
+      }
+    ],
+    "wheat": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "Gluten is not digested to completion by anyone; in coeliac disease the fragments that remain trigger an immune attack on the lining of the small intestine, which then cannot absorb. It is not an allergy and not an intolerance — it is autoimmune, and the damage is to the person's own gut.",
+        "src": "https://en.wikipedia.org/wiki/Coeliac_disease"
+      }
+    ],
+    "wheel": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "A loaded wheel concentrates the whole weight of a vehicle onto a contact patch the size of a hand. What follows a crush is often worse than the crush: muscle held under pressure releases myoglobin when the pressure comes off, and the kidneys are what fail.",
+        "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
+      }
+    ],
+    "whey": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "leucine",
+        "onset": "conditional",
+        "mechanism": "Leucine does not only build muscle, it signals: it switches on the pathway that starts protein synthesis, so the same amount arriving quickly does more than the same amount arriving slowly. Whey is the fast fraction of milk protein.",
+        "src": "https://en.wikipedia.org/wiki/Leucine"
+      }
+    ],
+    "wind": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "hypothermia",
+        "onset": "conditional",
+        "mechanism": "Wind does not lower the temperature; it strips away the thin layer of air a body has already warmed and keeps stripping it, so heat leaves faster than it can be made. Below about 35 °C the body stops keeping up, and judgement goes before strength does.",
+        "src": "https://en.wikipedia.org/wiki/Hypothermia"
+      }
+    ],
+    "wolf": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Attacks are genuinely rare — far rarer than the folklore — and the documented cases cluster in rabid animals and in animals habituated to people, which is a fact about circumstances rather than about wolves.",
+        "src": "https://en.wikipedia.org/wiki/Wolf_attack"
+      }
+    ],
+    "wood": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "The dust, not the plank. Fine hardwood dust is an IARC Group 1 carcinogen, and the cancers are of the nose and sinuses — the first tissue the particles meet and the place they are trapped, which is why the association was found among furniture makers.",
+        "src": "https://en.wikipedia.org/wiki/Wood_dust",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "wool": [
       {
         "valence": "harm",
         "route": "contact",
         "outcome": "irritant",
         "onset": "contact",
-        "mechanism": "A rope burn is friction, not heat from outside: the fibres running through a grip abrade and heat the skin at once, which is why it takes the top layer off rather than blistering it.",
-        "src": "https://en.wikipedia.org/wiki/Friction_burn"
+        "mechanism": "The prickle is mechanical, not allergic: fibres above about thirty microns are stiff enough to indent the skin and set off the same nerve endings pain uses. Finer wool from the same animal does not do it.",
+        "src": "https://en.wikipedia.org/wiki/Wool#Characteristics"
       }
     ],
-    "moon": [
+    "yeast": [
       {
-        "valence": "inert",
-        "route": "radiation",
-        "onset": "conditional",
-        "mechanism": "The tide is real and it acts on oceans, not on people: the Moon's tidal pull on a human body is smaller than the pull of the wall beside them. No effect on the body has ever been demonstrated.",
-        "src": "https://en.wikipedia.org/wiki/Lunar_effect"
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "folate",
+        "onset": "cumulative",
+        "mechanism": "Yeast builds folate for its own DNA synthesis and carries a great deal of it. A body needs the same molecule for the same job, most urgently while a neural tube is closing.",
+        "src": "https://en.wikipedia.org/wiki/Folate"
       }
     ],
-    "fossil": [
+    "yoghurt": [
       {
-        "valence": "inert",
-        "route": "contact",
-        "onset": "conditional",
-        "mechanism": "The organic material is gone. What is left is mineral that has replaced it, so a fossil is a rock in the shape of a thing rather than any of the thing.",
-        "src": "https://en.wikipedia.org/wiki/Permineralization"
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "cumulative",
+        "mechanism": "Live cultures arrive in numbers large enough that some survive the stomach. They do not settle permanently; the effect lasts about as long as the eating does.",
+        "src": "https://en.wikipedia.org/wiki/Yoghurt"
+      }
+    ],
+    "zinc": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "The classic cause of metal fume fever: galvanised steel heated hot enough to vaporise its zinc coating. The reaction is to the freshly condensed oxide particles, which is why welding the same metal cold does nothing.",
+        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
       }
     ]
   },

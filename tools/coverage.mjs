@@ -174,8 +174,14 @@ if (has('effects.json') && has('cautions.json')) {
     const byId2 = new Map(read('elements.json').map(e => [e.id, e]));
     const answers = (id) => eff[id] || viaHazard.has(id)
       || (byId2.get(id)?.tags || []).includes('medicine');
-    add('effects-common', top.filter(answers).length, top.length,
-        'the 200 most-used elements — whether a player gets any answer at all');
+    // A good part of the most-used list cannot meet a body at all — an idea, a
+    // polity, one of your own organs. Counting those made this permanently
+    // unfinishable; $no_effect names them, the same way $not_assemblies does
+    // for needs.
+    const noEffect = new Set(E2.$no_effect || []);
+    const canAnswer = top.filter(id => !noEffect.has(id));
+    add('effects-common', canAnswer.filter(answers).length, canAnswer.length,
+        'the most-used elements that could meet a body — whether a player gets an answer');
   }
   // Not coverage but confidence, and it belongs on the same page: how many
   // effect rows have had their cited article read and found to carry what the
