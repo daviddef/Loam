@@ -464,7 +464,7 @@ function usVariants(w) {
   add(w.replace(/oe/g, 'e').replace(/ae/g, 'e'));            // oesophagus, haemoglobin
   add(w.replace(/ise/g, 'ize').replace(/isa/g, 'iza'));      // organise, organisation
   add(w.replace(/our/g, 'or'));                              // colour, behaviour
-  add(w.replace(/([lpt])\1(ed|ing)/g, '$1$2'));              // worshipped, travelled
+  add(w.replace(/([lpt])\1(ed|ing|er|ers|s)/g, '$1$2'));      // worshipped, worshippers, travelled
   return [...out];
 }
 
@@ -473,6 +473,11 @@ function articleHasTerm(lowerText, term) {
   const stemOf = w => w.replace(/(ing|ed|es|s|ise|ised|ize|ized|ly)$/, '');
   const stem = stemOf(term);
   if (stem.length < 5) return true;          // too short to be evidence either way
+  /* Fold diacritics here too. The NAME check already does, and the two paths
+   * disagreeing meant `ragnarok` and `jormungandr` passed as names and then
+   * failed again as words, against the same article, for the same reason —
+   * Ragnarök and Jörmungandr. One normalisation, both paths. */
+  lowerText = lowerText + '\u0000' + lowerText.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC');
   /* Hyphenation is typesetting, not content: an article writing "by-product"
    * carries the claim a sentence writing "byproduct" makes. Fold both sides. */
   const flat = lowerText.replace(/-/g, '');
