@@ -31,9 +31,25 @@ const cache = new Map();
 const wikiCache = new Map();
 export const stats = { failures: 0, fetched: 0, fromCache: 0 };
 
-/** The Wikipedia title inside a cited URL, or null if it is not one. */
+/** The Wikipedia title inside a cited URL, or null if it is not one.
+ *
+ * The mobile host counts. One recipe cited en.m.wikipedia.org and the audit
+ * reported it as "source is not a Wikipedia article" — so a claim opted itself
+ * out of every check by the form of its URL, silently and while looking cited.
+ * That is the worst possible way for a source to be unverifiable, and matching
+ * the host loosely costs nothing: en.m, www., and a bare http all name the same
+ * encyclopedia and the same article. */
 export const titleOf = src => {
-  const m = /en\.wikipedia\.org\/wiki\/([^#?]+)/.exec(src || '');
+  let u;
+  try { u = new URL(String(src)); } catch { return null; }
+  /* Parse the host rather than pattern-matching the string. Matching anywhere in
+   * the URL accepted evil.com/wikipedia.org/wiki/X, where the encyclopedia's name
+   * is only a path segment. And the host has to be an ENGLISH one, because
+   * articleText fetches from the English API: fr.wikipedia.org/wiki/Fer would
+   * otherwise be looked up as an English title and quietly return the wrong page
+   * or none. en, en.m, www and a bare wikipedia.org all reach the same articles. */
+  if (!/^(?:(?:en|en\.m|www)\.)?wikipedia\.org$/.test(u.hostname)) return null;
+  const m = /^\/wiki\/(.+)$/.exec(u.pathname);
   return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
 };
 
