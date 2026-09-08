@@ -1402,6 +1402,16 @@
         "src": "https://en.wikipedia.org/wiki/Heat_stroke"
       }
     ],
+    "diethylcarbamazine": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "The harm is not the drug's. It kills microfilariae, and what follows — fever, urticaria, swollen lymph nodes, a racing heart, falling blood pressure — is the immune system meeting all of them dying at once. It tracks the intensity of the infection rather than the dose, and it can be life-threatening. In onchocerciasis it is so reliable that a patch of the drug on the skin is used as a diagnostic test: the itch and weal appear where it was applied.",
+        "src": "https://en.wikipedia.org/wiki/Mazzotti_reaction"
+      }
+    ],
     "dimethyl_sulfoxide": [
       {
         "valence": "harm",
@@ -1796,6 +1806,16 @@
         "onset": "conditional",
         "mechanism": "The seed, not the leaf. Ginkgotoxin is close enough in shape to vitamin B6 to occupy its place and not do its job, and B6 is the cofactor the brain needs to make its inhibitory neurotransmitter — so the seizure is a deficiency the toxin induces rather than anything it does directly.",
         "src": "https://en.wikipedia.org/wiki/Ginkgotoxin"
+      }
+    ],
+    "ginseng": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "conditional",
+        "mechanism": "Its own toxicity is low and that is not where the risk sits. The documented harms are interactions with things people are already taking: it lowers the blood level of warfarin, reacts adversely with phenelzine, and a reported interaction with imatinib produced hepatotoxicity. Supplement manufacturing being what it is, some products analysed have contained unrelated filler compounds as well.",
+        "src": "https://en.wikipedia.org/wiki/Ginseng"
       }
     ],
     "glacier": [
@@ -2630,6 +2650,16 @@
         "onset": "conditional",
         "mechanism": "The toxins here are thermolabile, which is the whole difference: a cooked morel is food and a raw one is not. This is the reverse of the death cap, where heat does nothing at all.",
         "src": "https://en.wikipedia.org/wiki/Morchella"
+      }
+    ],
+    "morning_glory": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The seeds carry ergine and several other ergolines, and the effects are sedative as much as psychedelic. Which compound is responsible has been argued over since Hofmann isolated ergine from morning glory seed in 1960 — the other ergolines present are pharmacologically active too, so the seed is not a clean dose of anything.",
+        "src": "https://en.wikipedia.org/wiki/Ergine"
       }
     ],
     "mould": [
