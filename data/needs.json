@@ -12,6 +12,22 @@
         "separator"
       ]
     },
+    "abrams_tank": {
+      "src": "https://en.wikipedia.org/wiki/M1_Abrams",
+      "note": "A gas turbine borrowed from helicopters — 1,500 horsepower drinking jet fuel.",
+      "needs": [
+        "composite_armour",
+        "turret",
+        "smoothbore_gun",
+        "coaxial_gun",
+        "machine_gun",
+        "gas_turbine",
+        "track",
+        "suspension",
+        "fire_control",
+        "blowout_panel"
+      ]
+    },
     "ac_induction_motor": {
       "src": "https://en.wikipedia.org/wiki/Induction_motor",
       "note": "No brushes and no magnets — the rotor is dragged round by a field that is already turning.",
@@ -221,6 +237,27 @@
         "hydraulic_pump"
       ]
     },
+    "airport": {
+      "src": "https://en.wikipedia.org/wiki/Airport",
+      "needs": [
+        "runway",
+        "taxiway",
+        "apron",
+        "terminal",
+        "gate",
+        "jet_bridge",
+        "control_tower",
+        "radar",
+        "approach_lighting",
+        "navigation_aid",
+        "fuel_farm",
+        "hangar",
+        "fire_station",
+        "perimeter_fence",
+        "baggage_system",
+        "de_icing_pad"
+      ]
+    },
     "airship": {
       "src": "https://en.wikipedia.org/wiki/Airship",
       "needs": [
@@ -238,6 +275,22 @@
         "elevator",
         "ballast",
         "mooring_cone"
+      ]
+    },
+    "ak47": {
+      "src": "https://en.wikipedia.org/wiki/AK-47",
+      "note": "A steel-bodied rifle that bleeds propellant gas to cycle its own bolt.",
+      "needs": [
+        "receiver",
+        "barrel",
+        "gas_tube",
+        "bolt_carrier",
+        "bolt",
+        "trigger_mechanism",
+        "magazine",
+        "stock",
+        "handguard",
+        "piston"
       ]
     },
     "altar": {
@@ -388,6 +441,22 @@
         "steel|iron",
         "horn",
         "base"
+      ]
+    },
+    "apache_helicopter": {
+      "src": "https://en.wikipedia.org/wiki/Boeing_AH-64_Apache",
+      "note": "Its Longbow radar, mounted above the rotor, tracks targets while the helicopter hides behind terrain.",
+      "needs": [
+        "main_rotor",
+        "tail_rotor",
+        "turboshaft",
+        "airframe",
+        "cockpit",
+        "chain_gun",
+        "hellfire",
+        "stub_wing",
+        "sensor_suite",
+        "longbow_radar"
       ]
     },
     "aperture": {
@@ -1246,6 +1315,21 @@
         "frame|skeleton"
       ]
     },
+    "black_hawk": {
+      "src": "https://en.wikipedia.org/wiki/Sikorsky_UH-60_Black_Hawk",
+      "note": "Two engines where its predecessor had one — designed to survive a single engine failure.",
+      "needs": [
+        "main_rotor",
+        "tail_rotor",
+        "turboshaft",
+        "cabin",
+        "crew_door",
+        "sponson",
+        "tail_boom",
+        "landing_gear",
+        "transmission"
+      ]
+    },
     "blade": {
       "src": "https://en.wikipedia.org/wiki/Blade",
       "note": "A wedge, and a heat treatment that makes the wedge stay a wedge.",
@@ -1487,6 +1571,21 @@
         "wheelset",
         "brake",
         "coupler"
+      ]
+    },
+    "bradley_ifv": {
+      "src": "https://en.wikipedia.org/wiki/M2_Bradley",
+      "note": "A troop carrier armed like a light tank — it fights, not just delivers.",
+      "needs": [
+        "aluminium_hull",
+        "turret",
+        "bushmaster_cannon",
+        "tow_missile",
+        "coaxial_gun",
+        "diesel_engine",
+        "track",
+        "road_wheel",
+        "troop_compartment"
       ]
     },
     "brake": {
@@ -2107,6 +2206,21 @@
         "spring",
         "throttle_valve",
         "drive_gear"
+      ]
+    },
+    "ch47_chinook": {
+      "src": "https://en.wikipedia.org/wiki/Boeing_CH-47_Chinook",
+      "note": "Two counter-rotating rotors cancel torque — no tail rotor needed.",
+      "needs": [
+        "tandem_rotor",
+        "fuselage",
+        "cargo_deck",
+        "ramp",
+        "turboshaft",
+        "transmission",
+        "fuel_tank",
+        "landing_gear",
+        "hoist"
       ]
     },
     "chain": {
@@ -2932,6 +3046,24 @@
         "flywheel"
       ]
     },
+    "crankshaft": {
+      "src": "https://en.wikipedia.org/wiki/Crankshaft",
+      "needs": [
+        "steel_billet|casting",
+        "forging",
+        "main_journal",
+        "crank_pin",
+        "web",
+        "counterweight",
+        "oil_gallery",
+        "fillet_radius",
+        "nitriding|hardening",
+        "grinding",
+        "main_bearing",
+        "thrust_washer",
+        "flange"
+      ]
+    },
     "crayon": {
       "src": "https://en.wikipedia.org/wiki/Crayon",
       "needs": [
@@ -3236,6 +3368,18 @@
         "backsheet",
         "elastic",
         "fastener|tape"
+      ]
+    },
+    "didgeridoo": {
+      "src": "https://en.wikipedia.org/wiki/Didgeridoo",
+      "needs": [
+        "eucalyptus_branch",
+        "termite_hollowed_bore",
+        "bark_stripping",
+        "bore_shaping",
+        "beeswax_mouthpiece",
+        "ochre|paint",
+        "sealant"
       ]
     },
     "die": {
@@ -3682,6 +3826,21 @@
         "polymer",
         "pellet",
         "coating"
+      ]
+    },
+    "electric_car": {
+      "src": "https://en.wikipedia.org/wiki/Electric_car",
+      "note": "No engine, no gearbox, no idle — the motor delivers full torque from zero rpm.",
+      "needs": [
+        "battery_pack",
+        "electric_motor",
+        "inverter",
+        "charger",
+        "chassis",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel"
       ]
     },
     "electric_guitar": {
@@ -4312,6 +4471,23 @@
         "ramrod"
       ]
     },
+    "flintlock_musket": {
+      "src": "https://en.wikipedia.org/wiki/Flintlock",
+      "note": "Flint struck steel to spark the priming pan — more reliable than matchlock, simpler than wheellock.",
+      "needs": [
+        "barrel",
+        "lock_plate",
+        "cock",
+        "flint",
+        "frizzen",
+        "pan",
+        "stock",
+        "trigger",
+        "sear",
+        "mainspring",
+        "ramrod"
+      ]
+    },
     "flip_flop": {
       "src": "https://en.wikipedia.org/wiki/Flip-flop_(electronics)",
       "note": "Two gates feeding each other, so the circuit remembers.",
@@ -4395,6 +4571,17 @@
         "picker|driver",
         "cord|string",
         "race|track"
+      ]
+    },
+    "flyssa": {
+      "src": "https://en.wikipedia.org/wiki/Flyssa",
+      "note": "A narrow single-edged Algerian blade of the Kabyle, capped with a distinctive T-shaped pommel.",
+      "needs": [
+        "narrow_blade",
+        "tang",
+        "t_shaped_pommel",
+        "grip",
+        "scabbard"
       ]
     },
     "flyweight": {
@@ -5339,6 +5526,19 @@
         "rivet|peen"
       ]
     },
+    "himars": {
+      "src": "https://en.wikipedia.org/wiki/M142_HIMARS",
+      "note": "The same launcher as the M270, but with one pod on a truck instead of two on tracks.",
+      "needs": [
+        "wheeled_chassis",
+        "launcher_pod",
+        "rocket",
+        "gmlrs",
+        "guidance_system",
+        "cab",
+        "fire_control"
+      ]
+    },
     "hinge": {
       "src": "https://en.wikipedia.org/wiki/Hinge",
       "note": "Two leaves, a knuckle each, and one pin through both. Everything else is finish.",
@@ -5882,6 +6082,46 @@
         "thruster"
       ]
     },
+    "javelin_missile": {
+      "src": "https://en.wikipedia.org/wiki/FGM-148_Javelin",
+      "note": "Fire-and-forget — the gunner can take cover while the missile guides itself.",
+      "needs": [
+        "command_launch_unit",
+        "thermal_sight",
+        "missile",
+        "tandem_warhead",
+        "infrared_seeker",
+        "control_fins",
+        "launch_tube"
+      ]
+    },
+    "jet_airliner": {
+      "src": "https://en.wikipedia.org/wiki/Jet_airliner",
+      "needs": [
+        "fuselage",
+        "frame",
+        "stringer",
+        "skin",
+        "wing",
+        "spar",
+        "fuel_tank",
+        "turbofan",
+        "pylon",
+        "landing_gear",
+        "tail_stabilizer",
+        "fin",
+        "aileron",
+        "flap",
+        "slat",
+        "spoiler",
+        "hydraulic_system",
+        "avionics",
+        "cabin_pressurisation",
+        "cockpit",
+        "seat",
+        "door"
+      ]
+    },
     "jet_engine": {
       "src": "https://en.wikipedia.org/wiki/Jet_engine",
       "needs": [
@@ -5929,6 +6169,25 @@
         "roof",
         "interior_pillar",
         "rainspout"
+      ]
+    },
+    "katana": {
+      "src": "https://en.wikipedia.org/wiki/Katana",
+      "note": "Differentially tempered — the edge is harder than the spine, and the curve comes from quenching.",
+      "needs": [
+        "blade",
+        "tang",
+        "tsuba",
+        "habaki",
+        "tsuka",
+        "same",
+        "ito",
+        "menuki",
+        "fuchi",
+        "kashira",
+        "saya",
+        "kurigata",
+        "sageo"
       ]
     },
     "katar": {
@@ -6013,6 +6272,20 @@
         "harbour",
         "cistern",
         "roof"
+      ]
+    },
+    "kiowa_warrior": {
+      "src": "https://en.wikipedia.org/wiki/Bell_OH-58_Kiowa",
+      "note": "The mast-mounted sight lets it observe from behind cover with just the sensor ball exposed.",
+      "needs": [
+        "main_rotor",
+        "tail_rotor",
+        "turboshaft",
+        "mast_mounted_sight",
+        "thermal_imager",
+        "laser_designator",
+        "hellfire",
+        "rocket_pod"
       ]
     },
     "kitchen": {
@@ -6596,6 +6869,19 @@
         "plectrum"
       ]
     },
+    "m109_paladin": {
+      "src": "https://en.wikipedia.org/wiki/M109_howitzer",
+      "note": "A self-propelled howitzer that can fire and move before the shells land.",
+      "needs": [
+        "tracked_chassis",
+        "turret",
+        "155mm_howitzer",
+        "autoloader",
+        "engine",
+        "fire_control",
+        "ammunition_rack"
+      ]
+    },
     "m16_rifle": {
       "src": "https://en.wikipedia.org/wiki/M16_rifle",
       "needs": [
@@ -6645,6 +6931,16 @@
         "water_jacket|cooling_fin",
         "tripod",
         "sight"
+      ]
+    },
+    "macuahuitl": {
+      "src": "https://en.wikipedia.org/wiki/Macuahuitl",
+      "note": "Obsidian blades sharper than steel, but brittle — they shatter on armor.",
+      "needs": [
+        "wooden_paddle",
+        "obsidian_blade",
+        "groove",
+        "binding"
       ]
     },
     "madrasah": {
@@ -6882,6 +7178,20 @@
         "dose",
         "tablet",
         "half_life"
+      ]
+    },
+    "microphone": {
+      "src": "https://en.wikipedia.org/wiki/Microphone",
+      "note": "The diaphragm's motion becomes an electrical signal — dynamic mics use a coil in a magnetic field.",
+      "needs": [
+        "diaphragm",
+        "voice_coil",
+        "magnet",
+        "capsule",
+        "housing",
+        "connector",
+        "grille",
+        "shock_mount"
       ]
     },
     "microprocessor": {
@@ -7180,6 +7490,24 @@
         "body"
       ]
     },
+    "mri_scan": {
+      "src": "https://en.wikipedia.org/wiki/Magnetic_resonance_imaging",
+      "needs": [
+        "superconducting_magnet",
+        "liquid_helium",
+        "cryostat",
+        "gradient_coil",
+        "gradient_amplifier",
+        "radiofrequency_coil",
+        "transmit_coil",
+        "receive_coil",
+        "shim_coil",
+        "patient_table",
+        "faraday_cage",
+        "reconstruction_computer",
+        "quench_pipe"
+      ]
+    },
     "multiplexer": {
       "src": "https://en.wikipedia.org/wiki/Multiplexer",
       "note": "Choosing one of several inputs with a switch made of gates.",
@@ -7240,6 +7568,20 @@
         "caravanserai",
         "incense",
         "camel"
+      ]
+    },
+    "naginata": {
+      "src": "https://en.wikipedia.org/wiki/Naginata",
+      "note": "A curved blade on a pole — used to dismount cavalry and keep infantry at distance.",
+      "needs": [
+        "blade",
+        "tang",
+        "nakago",
+        "pole",
+        "ishizuki",
+        "habaki",
+        "collar",
+        "saya"
       ]
     },
     "nand_gate": {
@@ -7395,6 +7737,22 @@
         "steel|ceramic",
         "seal",
         "mount"
+      ]
+    },
+    "nuclear_power_plant": {
+      "src": "https://en.wikipedia.org/wiki/Nuclear_power_plant",
+      "note": "The reactor never spins anything itself — it just boils water for a turbine.",
+      "needs": [
+        "reactor_vessel",
+        "fuel_rod",
+        "control_rod",
+        "moderator",
+        "coolant",
+        "steam_generator",
+        "turbine",
+        "condenser",
+        "containment_building",
+        "cooling_tower"
       ]
     },
     "nuclear_reactor": {
@@ -7747,6 +8105,19 @@
         "outcome"
       ]
     },
+    "patriot_missile": {
+      "src": "https://en.wikipedia.org/wiki/MIM-104_Patriot",
+      "note": "Its phased-array radar tracks both target and missile, radioing course corrections.",
+      "needs": [
+        "phased_array_radar",
+        "engagement_control_station",
+        "launching_station",
+        "missile",
+        "guidance_computer",
+        "warhead",
+        "propellant"
+      ]
+    },
     "pedal": {
       "src": "https://en.wikipedia.org/wiki/Bicycle_pedal",
       "note": "Where a foot meets a machine, and where the bearings live a hard life.",
@@ -7855,6 +8226,22 @@
         "polymer",
         "pellet",
         "mould"
+      ]
+    },
+    "pet_scan": {
+      "src": "https://en.wikipedia.org/wiki/Positron_emission_tomography",
+      "needs": [
+        "cyclotron",
+        "radiotracer",
+        "fluorine_18",
+        "scintillator_crystal",
+        "photomultiplier|silicon_photomultiplier",
+        "detector_ring",
+        "coincidence_circuit",
+        "gantry",
+        "patient_bed",
+        "reconstruction_computer",
+        "shielding"
       ]
     },
     "petrol": {
@@ -8075,6 +8462,19 @@
         "piston_ring",
         "gudgeon_pin",
         "circlip"
+      ]
+    },
+    "plain_bearing": {
+      "src": "https://en.wikipedia.org/wiki/Plain_bearing",
+      "needs": [
+        "housing",
+        "shell|bush",
+        "bronze|babbitt",
+        "graphite|oil_groove",
+        "journal",
+        "lubricant",
+        "wick|pad",
+        "dust_cover"
       ]
     },
     "plaster": {
@@ -8606,6 +9006,22 @@
         "correlator"
       ]
     },
+    "rail_yard": {
+      "src": "https://en.wikipedia.org/wiki/Rail_yard",
+      "needs": [
+        "reception_track",
+        "hump|shunting_neck",
+        "ladder_track",
+        "point|switch",
+        "retarder",
+        "classification_track",
+        "departure_track",
+        "signalling",
+        "lighting",
+        "control_tower",
+        "locomotive"
+      ]
+    },
     "railway": {
       "src": "https://en.wikipedia.org/wiki/Rail_transport",
       "needs": [
@@ -8787,6 +9203,19 @@
         "bus",
         "alu",
         "latch"
+      ]
+    },
+    "repeating_crossbow": {
+      "src": "https://en.wikipedia.org/wiki/Repeating_crossbow",
+      "note": "A gravity-fed magazine of bolts, worked by one lever — faster but weaker than a hand-drawn crossbow.",
+      "needs": [
+        "tiller",
+        "bow_limb",
+        "string",
+        "magazine",
+        "bolt",
+        "lever",
+        "trigger"
       ]
     },
     "reservoir": {
@@ -9214,6 +9643,19 @@
         "vacuum_chamber"
       ]
     },
+    "scimitar": {
+      "src": "https://en.wikipedia.org/wiki/Scimitar",
+      "note": "A light, curved slashing sword optimized for mounted combat.",
+      "needs": [
+        "curved_blade",
+        "tang",
+        "hilt",
+        "guard",
+        "grip",
+        "pommel",
+        "scabbard"
+      ]
+    },
     "screen": {
       "src": "https://en.wikipedia.org/wiki/Display_device",
       "note": "A grid of things that can be made to glow or not.",
@@ -9372,6 +9814,18 @@
         "surfactant",
         "water",
         "fragrance"
+      ]
+    },
+    "shamshir": {
+      "src": "https://en.wikipedia.org/wiki/Shamshir",
+      "note": "A Persian saber curved into a radical arc — the name literally means 'lion's claw'.",
+      "needs": [
+        "curved_blade",
+        "tang",
+        "crossguard",
+        "grip",
+        "pommel",
+        "scabbard"
       ]
     },
     "shicra": {
@@ -9604,6 +10058,16 @@
         "electrical_system",
         "hvac|air_conditioning",
         "fire_suppression|sprinkler"
+      ]
+    },
+    "sling": {
+      "src": "https://en.wikipedia.org/wiki/Sling_(weapon)",
+      "note": "A pouch on two cords, whirled overhead — one cord releases and the stone flies.",
+      "needs": [
+        "pouch",
+        "cord",
+        "finger_loop",
+        "release_cord"
       ]
     },
     "slurry_pipeline": {
@@ -10696,6 +11160,21 @@
         "indium_tin_oxide"
       ]
     },
+    "tiger_tank": {
+      "src": "https://en.wikipedia.org/wiki/Tiger_I",
+      "note": "Flat, vertical armor — effective for its thickness, but heavy and expensive.",
+      "needs": [
+        "steel_armour",
+        "turret",
+        "88mm_gun",
+        "machine_gun",
+        "maybach_engine",
+        "transmission",
+        "track",
+        "road_wheel",
+        "interleaved_wheels"
+      ]
+    },
     "tikal": {
       "src": "https://en.wikipedia.org/wiki/Tikal",
       "note": "A Maya city of pyramids on a limestone shelf with no rivers at all.",
@@ -11064,6 +11543,19 @@
         "weld|seamless"
       ]
     },
+    "tulwar": {
+      "src": "https://en.wikipedia.org/wiki/Talwar",
+      "note": "A curved saber of the Indian subcontinent, known by its all-metal disc pommel.",
+      "needs": [
+        "curved_blade",
+        "tang",
+        "disc_pommel",
+        "crossguard",
+        "knuckle_bow",
+        "grip",
+        "scabbard"
+      ]
+    },
     "tumbler": {
       "src": "https://en.wikipedia.org/wiki/Pin_tumbler_lock",
       "note": "The pin that blocks the plug until it is lifted exactly far enough.",
@@ -11166,6 +11658,19 @@
         "nacelle",
         "thrust_reverser",
         "pylon"
+      ]
+    },
+    "turboprop": {
+      "src": "https://en.wikipedia.org/wiki/Turboprop",
+      "note": "A gas turbine that sends nearly all its power through a gearbox to the propeller.",
+      "needs": [
+        "compressor",
+        "combustion_chamber",
+        "turbine",
+        "reduction_gearbox",
+        "propeller",
+        "nacelle",
+        "fuel_control"
       ]
     },
     "typewriter": {
@@ -11803,6 +12308,19 @@
         "indigo"
       ]
     },
+    "wok": {
+      "src": "https://en.wikipedia.org/wiki/Wok",
+      "needs": [
+        "carbon_steel|cast_iron",
+        "sheet",
+        "spinning|hammering",
+        "bowl",
+        "rim",
+        "handle",
+        "rivet",
+        "seasoning|polymerised_oil"
+      ]
+    },
     "wood_plastic_composite": {
       "src": "https://en.wikipedia.org/wiki/Wood-plastic_composite",
       "note": "Sawdust in a polymer, so it looks like timber and does not rot.",
@@ -11844,6 +12362,17 @@
         "interconnect"
       ]
     },
+    "yataghan": {
+      "src": "https://en.wikipedia.org/wiki/Yatagan",
+      "note": "A forward-curving blade with no guard, the hilt flared into two 'ears'.",
+      "needs": [
+        "forward_curved_blade",
+        "tang",
+        "flared_hilt",
+        "grip",
+        "scabbard"
+      ]
+    },
     "yoyo": {
       "src": "https://en.wikipedia.org/wiki/Yo-yo",
       "note": "The string looped, not tied, around the axle is what lets it sleep.",
@@ -11852,6 +12381,20 @@
         "axle",
         "string",
         "bearing|bushing"
+      ]
+    },
+    "zeppelin": {
+      "src": "https://en.wikipedia.org/wiki/Zeppelin",
+      "note": "A rigid, aluminum-framed airship whose shape is held by the frame, not by gas pressure.",
+      "needs": [
+        "aluminium_frame",
+        "gas_cell",
+        "outer_cover",
+        "gondola",
+        "engine",
+        "propeller",
+        "rudder",
+        "elevator"
       ]
     },
     "ziggurat": {
@@ -11884,160 +12427,6 @@
         "bottom_stop",
         "box_and_pin",
         "stitching"
-      ]
-    },
-    "wok": {
-      "src": "https://en.wikipedia.org/wiki/Wok",
-      "needs": [
-        "carbon_steel|cast_iron",
-        "sheet",
-        "spinning|hammering",
-        "bowl",
-        "rim",
-        "handle",
-        "rivet",
-        "seasoning|polymerised_oil"
-      ]
-    },
-    "didgeridoo": {
-      "src": "https://en.wikipedia.org/wiki/Didgeridoo",
-      "needs": [
-        "eucalyptus_branch",
-        "termite_hollowed_bore",
-        "bark_stripping",
-        "bore_shaping",
-        "beeswax_mouthpiece",
-        "ochre|paint",
-        "sealant"
-      ]
-    },
-    "plain_bearing": {
-      "src": "https://en.wikipedia.org/wiki/Plain_bearing",
-      "needs": [
-        "housing",
-        "shell|bush",
-        "bronze|babbitt",
-        "graphite|oil_groove",
-        "journal",
-        "lubricant",
-        "wick|pad",
-        "dust_cover"
-      ]
-    },
-    "rail_yard": {
-      "src": "https://en.wikipedia.org/wiki/Rail_yard",
-      "needs": [
-        "reception_track",
-        "hump|shunting_neck",
-        "ladder_track",
-        "point|switch",
-        "retarder",
-        "classification_track",
-        "departure_track",
-        "signalling",
-        "lighting",
-        "control_tower",
-        "locomotive"
-      ]
-    },
-    "mri_scan": {
-      "src": "https://en.wikipedia.org/wiki/Magnetic_resonance_imaging",
-      "needs": [
-        "superconducting_magnet",
-        "liquid_helium",
-        "cryostat",
-        "gradient_coil",
-        "gradient_amplifier",
-        "radiofrequency_coil",
-        "transmit_coil",
-        "receive_coil",
-        "shim_coil",
-        "patient_table",
-        "faraday_cage",
-        "reconstruction_computer",
-        "quench_pipe"
-      ]
-    },
-    "pet_scan": {
-      "src": "https://en.wikipedia.org/wiki/Positron_emission_tomography",
-      "needs": [
-        "cyclotron",
-        "radiotracer",
-        "fluorine_18",
-        "scintillator_crystal",
-        "photomultiplier|silicon_photomultiplier",
-        "detector_ring",
-        "coincidence_circuit",
-        "gantry",
-        "patient_bed",
-        "reconstruction_computer",
-        "shielding"
-      ]
-    },
-    "jet_airliner": {
-      "src": "https://en.wikipedia.org/wiki/Jet_airliner",
-      "needs": [
-        "fuselage",
-        "frame",
-        "stringer",
-        "skin",
-        "wing",
-        "spar",
-        "fuel_tank",
-        "turbofan",
-        "pylon",
-        "landing_gear",
-        "tail_stabilizer",
-        "fin",
-        "aileron",
-        "flap",
-        "slat",
-        "spoiler",
-        "hydraulic_system",
-        "avionics",
-        "cabin_pressurisation",
-        "cockpit",
-        "seat",
-        "door"
-      ]
-    },
-    "airport": {
-      "src": "https://en.wikipedia.org/wiki/Airport",
-      "needs": [
-        "runway",
-        "taxiway",
-        "apron",
-        "terminal",
-        "gate",
-        "jet_bridge",
-        "control_tower",
-        "radar",
-        "approach_lighting",
-        "navigation_aid",
-        "fuel_farm",
-        "hangar",
-        "fire_station",
-        "perimeter_fence",
-        "baggage_system",
-        "de_icing_pad"
-      ]
-    },
-    "crankshaft": {
-      "src": "https://en.wikipedia.org/wiki/Crankshaft",
-      "needs": [
-        "steel_billet|casting",
-        "forging",
-        "main_journal",
-        "crank_pin",
-        "web",
-        "counterweight",
-        "oil_gallery",
-        "fillet_radius",
-        "nitriding|hardening",
-        "grinding",
-        "main_bearing",
-        "thrust_washer",
-        "flange"
       ]
     }
   },
