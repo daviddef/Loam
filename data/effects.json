@@ -318,6 +318,16 @@
     "wire"
   ],
   "effects": {
+    "abscess": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "A wall the body builds on purpose. Neutrophils arrive, die, and the debris is fenced off by a fibrous capsule — which contains the infection and also keeps antibiotics out, so the collection has to be opened rather than treated.",
+        "src": "https://en.wikipedia.org/wiki/Abscess"
+      }
+    ],
     "acetaldehyde": [
       {
         "valence": "harm",
@@ -348,6 +358,16 @@
         "onset": "acute",
         "mechanism": "Aconitine keeps sodium channels open and the heart is what shows it. The alkaloid crosses intact skin, which is the property that made it a poison of choice long before anyone could name the mechanism.",
         "src": "https://en.wikipedia.org/wiki/Aconitum"
+      }
+    ],
+    "adenovirus": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A non-enveloped virus, so it survives on surfaces and in water where an enveloped one would not. That durability is why it moves through swimming pools and barracks rather than needing close contact.",
+        "src": "https://en.wikipedia.org/wiki/Adenovirus"
       }
     ],
     "aflatoxin": [
@@ -450,6 +470,16 @@
         "src": "https://en.wikipedia.org/wiki/Amygdalin"
       }
     ],
+    "arbovirus": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Not a taxonomic group but a transmission strategy: the defining feature is that the virus replicates in an arthropod and is delivered by it. That is why the geography of these diseases is the geography of the vector rather than of the pathogen.",
+        "src": "https://en.wikipedia.org/wiki/Arbovirus"
+      }
+    ],
     "arch": [
       {
         "valence": "harm",
@@ -492,6 +522,16 @@
         "onset": "acute",
         "mechanism": "Colchicine stops cells from dividing by preventing the mitotic spindle from forming, so the tissues that turn over fastest fail first — gut lining and bone marrow. There is no antidote.",
         "src": "https://en.wikipedia.org/wiki/Colchicum_autumnale"
+      }
+    ],
+    "bacillus_anthracis": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The spore is the point. It survives in soil for decades and germinates once inside, and the inhaled form is far more lethal than the cutaneous one because the spores are carried to the lymph nodes before anything is noticed.",
+        "src": "https://en.wikipedia.org/wiki/Bacillus_anthracis"
       }
     ],
     "bacteria": [
@@ -652,6 +692,16 @@
         "src": "https://en.wikipedia.org/wiki/Cellulose"
       }
     ],
+    "botulism": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "The bacterium need not be present at all — the toxin it made is enough, and it is the most potent known. It cleaves the proteins that let a nerve release acetylcholine, so the paralysis is flaccid and descends from the face.",
+        "src": "https://en.wikipedia.org/wiki/Botulism"
+      }
+    ],
     "box_jellyfish": [
       {
         "valence": "harm",
@@ -761,6 +811,16 @@
         "onset": "conditional",
         "mechanism": "Brassicas carry glucosinolates that interfere with the thyroid's uptake of iodine. It matters only where iodine is already short, and cooking reduces it — which is why this is a fact about diets rather than about cabbage.",
         "src": "https://en.wikipedia.org/wiki/Goitrogen"
+      }
+    ],
+    "campylobacter": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "diarrhoea",
+        "onset": "acute",
+        "mechanism": "The most common bacterial cause of gastroenteritis in much of the world, and the dose needed is small. Its serious sequel is not the diarrhoea: a minority go on to Guillain-Barre syndrome, because antibodies raised against the bacterium cross-react with nerve.",
+        "src": "https://en.wikipedia.org/wiki/Campylobacter"
       }
     ],
     "cane_toad": [
@@ -931,6 +991,16 @@
         "src": "https://en.wikipedia.org/wiki/Chimpanzee"
       }
     ],
+    "chlamydia_bacterium": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It cannot make its own ATP, so it can only live inside another cell — an obligate intracellular parasite with a bacterial ancestry. Most infections produce no symptoms, which is why the damage is usually found only when fertility is being investigated.",
+        "src": "https://en.wikipedia.org/wiki/Chlamydia_trachomatis"
+      }
+    ],
     "chlorinated_hydrocarbon": [
       {
         "valence": "harm",
@@ -971,6 +1041,16 @@
         "src": "https://en.wikipedia.org/wiki/Geophagia"
       }
     ],
+    "clostridium": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "Anaerobes, so a deep wound that closes over is exactly the environment they need. The genus's danger is not invasion but secretion: tetanus and gas gangrene are both the work of toxins made in a wound the body has sealed.",
+        "src": "https://en.wikipedia.org/wiki/Clostridium"
+      }
+    ],
     "clostridium_botulinum": [
       {
         "valence": "harm",
@@ -990,6 +1070,16 @@
         "onset": "cumulative",
         "mechanism": "Cotton dust causes byssinosis, and its signature is that the chest tightness comes back on the first day of the working week and eases through it. Nineteenth-century mills called it Monday fever long before anyone knew what caused it.",
         "src": "https://en.wikipedia.org/wiki/Byssinosis"
+      }
+    ],
+    "coccidiosis": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Protozoan parasites that invade the cells lining the intestine and multiply inside them. The damage is to the absorptive surface itself, so the illness is one of losing what passes through rather than of anything the parasite makes.",
+        "src": "https://en.wikipedia.org/wiki/Coccidiosis"
       }
     ],
     "cocoa": [
@@ -1079,6 +1169,16 @@
         "onset": "acute",
         "mechanism": "Cattle kill more people each year than sharks or snakes in most countries that keep them, and almost always by crushing rather than goring — a cow that leans on a handler against a rail weighs more than the rail will give.",
         "src": "https://en.wikipedia.org/wiki/Cattle#Safety"
+      }
+    ],
+    "cowpox": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Its usual wild hosts are voles and woodland rodents, not cattle, and the domestic cat is the usual route to a person. The lesion is local and self-limiting — and the cross-immunity it gives against smallpox is the whole origin of vaccination.",
+        "src": "https://en.wikipedia.org/wiki/Cowpox"
       }
     ],
     "coyote": [
@@ -1226,6 +1326,16 @@
         "reversible": false,
         "mechanism": "Voltage drives current through the body's resistance, and a path across the chest can put enough through the heart to fibrillate it. Hand to hand is worse than hand to foot, and wet skin drops resistance by an order of magnitude.",
         "src": "https://en.wikipedia.org/wiki/Electrical_injury"
+      }
+    ],
+    "encephalitis": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "inflammation",
+        "onset": "acute",
+        "mechanism": "Inflammation of the brain itself, inside a skull that cannot expand. That is the mechanism of harm as much as the infection is: the swelling has nowhere to go, so pressure does damage the pathogen never touches.",
+        "src": "https://en.wikipedia.org/wiki/Viral_encephalitis"
       }
     ],
     "enzyme": [
@@ -1548,6 +1658,26 @@
         "src": "https://en.wikipedia.org/wiki/Head_louse"
       }
     ],
+    "helicobacter_pylori": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "ulcer",
+        "onset": "cumulative",
+        "mechanism": "It survives stomach acid by making urease and surrounding itself with ammonia, and it was the discovery that ulcers are infectious rather than caused by stress. It is also a cause of gastric cancer, which took much longer to accept than the ulcer finding did.",
+        "src": "https://en.wikipedia.org/wiki/Helicobacter_pylori"
+      }
+    ],
+    "herpes_simplex_virus": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It retreats into the sensory ganglion and stays, transcribing almost nothing, which is why there is no clearing it. Recurrence is the virus travelling back down the same nerve, so the lesion reappears in the same patch of skin each time.",
+        "src": "https://en.wikipedia.org/wiki/Herpes_simplex_virus"
+      }
+    ],
     "hexane": [
       {
         "valence": "harm",
@@ -1627,6 +1757,16 @@
         "src": "https://en.wikipedia.org/wiki/Transmission_(medicine)"
       }
     ],
+    "human_papillomavirus": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Most infections clear. A few types persist, and their E6 and E7 proteins disable p53 and the retinoblastoma protein — the two brakes on cell division. The cancer is therefore decades downstream of the infection, which is why vaccination is given long before exposure.",
+        "src": "https://en.wikipedia.org/wiki/Human_papillomavirus"
+      }
+    ],
     "hydrazine": [
       {
         "valence": "harm",
@@ -1696,6 +1836,16 @@
         "reversible": false,
         "mechanism": "The body constricts blood flow to the periphery to protect the core, so the extremities freeze while losing their own supply. Thawing hurts far more than freezing, and re-freezing after a thaw is much worse than staying frozen.",
         "src": "https://en.wikipedia.org/wiki/Frostbite"
+      }
+    ],
+    "influenza_virus": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "Its genome is in eight separate segments, so two strains in one cell can swap whole genes rather than accumulating point mutations. That reassortment is what produces a pandemic strain, as against the annual drift that produces a seasonal one.",
+        "src": "https://en.wikipedia.org/wiki/Influenza"
       }
     ],
     "ink": [
@@ -1869,6 +2019,16 @@
         "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)"
       }
     ],
+    "legionella": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "It lives in amoebae in warm water and reaches people as aerosol from cooling towers and plumbing rather than from other people. It is not transmissible between people at all, which is why an outbreak is traced to a building rather than to a person.",
+        "src": "https://en.wikipedia.org/wiki/Legionella"
+      }
+    ],
     "legume": [
       {
         "valence": "benefit",
@@ -1908,6 +2068,16 @@
         "src": "https://en.wikipedia.org/wiki/Molybdenum"
       }
     ],
+    "leprosy": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The bacterium grows best below body temperature, which is why it settles in the cooler tissue — skin, and the nerves nearest the surface. The deformity that made the disease notorious is not the infection: it is injury to hands and feet that can no longer feel.",
+        "src": "https://en.wikipedia.org/wiki/Leprosy"
+      }
+    ],
     "lime": [
       {
         "valence": "benefit",
@@ -1938,6 +2108,16 @@
         "reversible": false,
         "mechanism": "A large predator does its damage by force and by tearing rather than by chemistry, and the dangerous injuries are the ones under intact skin.",
         "src": "https://en.wikipedia.org/wiki/Lion"
+      }
+    ],
+    "listeria_monocytogenes": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It grows at refrigerator temperature, which almost nothing else pathogenic does, so time in a fridge selects for it rather than against it. It crosses the placenta, and that is why one organism gets singled out in advice given to pregnant women.",
+        "src": "https://en.wikipedia.org/wiki/Listeria_monocytogenes"
       }
     ],
     "liver": [
@@ -2172,6 +2352,16 @@
         "src": "https://en.wikipedia.org/wiki/Altitude_sickness"
       }
     ],
+    "mrsa": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The resistance is a single acquired gene making a penicillin-binding protein the beta-lactams cannot fit. It is not more virulent than ordinary Staphylococcus aureus — it is the same organism with the first-line answer removed.",
+        "src": "https://en.wikipedia.org/wiki/Methicillin-resistant_Staphylococcus_aureus"
+      }
+    ],
     "mud": [
       {
         "valence": "harm",
@@ -2190,6 +2380,26 @@
         "onset": "cumulative",
         "mechanism": "Copper is in cytochrome c oxidase, the last enzyme in the respiratory chain, and in lysyl oxidase, which cross-links collagen. Shellfish concentrate it because their own oxygen carrier, haemocyanin, is built on copper rather than iron.",
         "src": "https://en.wikipedia.org/wiki/Copper_in_health"
+      }
+    ],
+    "mycoplasma": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The smallest free-living bacteria, and they have no cell wall at all. That is why the penicillins do nothing against them: the drug attacks a structure the organism never built.",
+        "src": "https://en.wikipedia.org/wiki/Mycoplasma_pneumoniae"
+      }
+    ],
+    "naegleria_fowleri": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "It lives harmlessly in warm fresh water and is not a pathogen by design. It reaches the brain only when water is forced up the nose, travelling along the olfactory nerve — which is why swallowing it is safe and diving is not.",
+        "src": "https://en.wikipedia.org/wiki/Naegleria_fowleri"
       }
     ],
     "natto": [
@@ -2242,6 +2452,16 @@
         "onset": "cumulative",
         "mechanism": "Formed where nitrite meets an amine, which is a condition the stomach supplies. Most of them need enzymatic activation before they can alkylate DNA, and the organ that activates them is usually the organ that gets the tumour.",
         "src": "https://en.wikipedia.org/wiki/Nitrosamine"
+      }
+    ],
+    "nosocomial_infection": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The infection acquired from the place meant to treat you. The population is unusually susceptible and unusually instrumented — every catheter and every line is a route past a barrier — and the organisms present have been selected by antibiotics for years.",
+        "src": "https://en.wikipedia.org/wiki/Hospital-acquired_infection"
       }
     ],
     "oak": [
@@ -2384,6 +2604,16 @@
         "onset": "conditional",
         "mechanism": "Around a quarter protein by weight, with more than most nuts, and the fat is mostly monounsaturated. For the great majority of people this is food; the immune reaction on the other row is the exception, not the rule.",
         "src": "https://en.wikipedia.org/wiki/Peanut"
+      }
+    ],
+    "peptic_ulcer": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "ulcer",
+        "onset": "cumulative",
+        "mechanism": "The stomach digests protein and is made of it; the defence is a mucus and bicarbonate layer, and an ulcer is that defence failing rather than the acid increasing. Two causes account for nearly all of them, and neither is stress.",
+        "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease"
       }
     ],
     "petroleum": [
@@ -2529,6 +2759,16 @@
         "src": "https://en.wikipedia.org/wiki/Potato"
       }
     ],
+    "prion": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "A protein with no genome that propagates by refolding its normal counterpart into its own shape. Nothing that destroys nucleic acid touches it, so ordinary sterilisation does not work, and the incubation can be measured in decades.",
+        "src": "https://en.wikipedia.org/wiki/Prion"
+      }
+    ],
     "protein": [
       {
         "valence": "harm",
@@ -2537,6 +2777,26 @@
         "onset": "conditional",
         "mechanism": "Every food allergy is to a protein, never to a fat or a sugar, because only a protein is large and structured enough for an antibody to recognise. Cooking sometimes changes the shape enough to break that recognition and sometimes does not, which is why one person can eat a baked egg and not a boiled one.",
         "src": "https://en.wikipedia.org/wiki/Food_allergy"
+      }
+    ],
+    "pseudomonas_aeruginosa": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It will grow on almost nothing, including distilled water and disinfectant, and its outer membrane keeps most antibiotics out before any resistance gene is involved. It is an opportunist: it takes burns, wounds and lungs that are already damaged.",
+        "src": "https://en.wikipedia.org/wiki/Pseudomonas_aeruginosa"
+      }
+    ],
+    "pseudomonas_infection": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Almost always secondary to something else — a burn, a ventilator, cystic fibrosis. In the lung it forms a biofilm, and once it does the immune system and the antibiotics are both working against a structure rather than against cells.",
+        "src": "https://en.wikipedia.org/wiki/Pseudomonas_infection"
       }
     ],
     "psilocybin_mushroom": [
@@ -2671,6 +2931,16 @@
         "src": "https://en.wikipedia.org/wiki/Arsenic_contamination_of_groundwater"
       }
     ],
+    "rickettsia": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Obligate intracellular bacteria that target the cells lining blood vessels, which is why the rash of a rickettsial disease is a vascular sign rather than a skin one. Nearly all of them reach people through an arthropod.",
+        "src": "https://en.wikipedia.org/wiki/Rickettsia"
+      }
+    ],
     "river": [
       {
         "valence": "harm",
@@ -2719,6 +2989,16 @@
         "prevents": "rickets",
         "mechanism": "One of the few foods carrying useful vitamin D, which matters at latitudes where the winter sun is too low in the sky to make any in skin at all.",
         "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+      }
+    ],
+    "salmonella": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "diarrhoea",
+        "onset": "acute",
+        "mechanism": "It invades the cells lining the intestine rather than merely sitting on them, which is why the illness is fever and cramping and not only fluid loss. A minority carry it long after they recover, with no symptoms and no idea.",
+        "src": "https://en.wikipedia.org/wiki/Salmonella"
       }
     ],
     "salt": [
@@ -2770,6 +3050,16 @@
         "onset": "conditional",
         "mechanism": "Crystalline aluminium oxide: too hard to abrade and too stable to dissolve. It is used for the windows of implanted devices, where anything that fogged or reacted would end the device.",
         "src": "https://en.wikipedia.org/wiki/Sapphire"
+      }
+    ],
+    "sars_cov": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "It binds ACE2, a receptor on cells deep in the respiratory tract, which is why it caused pneumonia rather than a cold. Almost everyone infected became visibly ill, and that is precisely why the 2003 outbreak could be contained.",
+        "src": "https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome-related_coronavirus"
       }
     ],
     "sauerkraut": [
@@ -3045,6 +3335,16 @@
         "src": "https://en.wikipedia.org/wiki/Machine_guarding"
       }
     ],
+    "staphylococcal_scalded_skin_syndrome": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The bacteria stay where they are and the toxin travels. It cleaves desmoglein-1, the protein holding the upper layers of skin together, so the skin separates and peels far from any site the organism ever reached.",
+        "src": "https://en.wikipedia.org/wiki/Staphylococcal_scalded_skin_syndrome"
+      }
+    ],
     "star": [
       {
         "valence": "inert",
@@ -3311,6 +3611,16 @@
         "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
       }
     ],
+    "toxoplasmosis": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It can only complete its sexual cycle in a cat, and it infects almost every warm-blooded animal along the way. In most people it is silent and permanent, cysted in muscle and brain; the danger is to a fetus and to anyone whose immunity has failed.",
+        "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
+      }
+    ],
     "tree": [
       {
         "valence": "harm",
@@ -3409,6 +3719,16 @@
         "src": "https://en.wikipedia.org/wiki/Walnut"
       }
     ],
+    "wart": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A wart is not a growth of the skin's own accord: it is a papillomavirus instructing keratinocytes to divide. It is the same virus family as the cancer-causing types and overwhelmingly not those types.",
+        "src": "https://en.wikipedia.org/wiki/Wart"
+      }
+    ],
     "wasp": [
       {
         "valence": "harm",
@@ -3448,6 +3768,16 @@
         "onset": "acute",
         "mechanism": "Cicutoxin is a GABA antagonist, so it removes the brake rather than pressing anything: the result is violent seizures that begin within an hour. It is a different plant and a different mechanism from poison hemlock despite the shared name.",
         "src": "https://en.wikipedia.org/wiki/Cicuta"
+      }
+    ],
+    "west_nile_virus": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Birds are the reservoir and people are a dead end — the virus does not reach a level in human blood high enough to infect the next mosquito. Most infections cause nothing; the neuroinvasive minority is the reason it is tracked.",
+        "src": "https://en.wikipedia.org/wiki/West_Nile_virus"
       }
     ],
     "wheat": [
@@ -3560,6 +3890,16 @@
         "onset": "acute",
         "mechanism": "The classic cause of metal fume fever: galvanised steel heated hot enough to vaporise its zinc coating. The reaction is to the freshly condensed oxide particles, which is why welding the same metal cold does nothing.",
         "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "zygomycete": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "These moulds are everywhere and almost nobody is at risk from them. They invade blood vessels, so the tissue dies from having its supply cut rather than from anything secreted — and they take hold only where immunity or blood sugar control has already failed.",
+        "src": "https://en.wikipedia.org/wiki/Zygomycosis"
       }
     ]
   },
