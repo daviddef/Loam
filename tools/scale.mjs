@@ -415,7 +415,7 @@ const SCALE = {
           /* cycle I, from needs.mjs, 4 Sep */
           'camshaft', 'wiper', 'fretboard', 'tuning_peg', 'computer_mouse',
           /* cycle H, from needs.mjs, 4 Sep */
-          'circuit_board', 'fin', 'mainspring', 'balance_wheel', 'antenna', 'microphone', 'hops',
+          'circuit_board', 'fin', 'mainspring', 'balance_wheel', 'antenna', 'microphone', 'contraception', 'hearing_aid', 'hops',
           /* cycle G, from needs.mjs, 4 Sep */
           'tang', 'guard', 'grip', 'pommel', 'glaze', 'slip',
           /* cycle F, from needs.mjs, 4 Sep */
@@ -890,7 +890,7 @@ const SCALE = {
     'combustion_chamber', 'turbopump', 'primary_mirror', 'baffle',   // components
     'pottery', 'glassmaking', 'papermaking', 'cheesemaking', 'camera',   // orphan-list subjects
     'spaghetti', 'risotto', 'paella', 'curry', 'pie', 'dumpling', 'porridge', 'casserole', 'wok', 'stir_fry', 'fibreglass', 'chipboard', 'spectacles', 'wheelchair', 'crutch', 'prosthesis', 'plaster_cast', 'puddle', 'wallpaper',   // universe gaps 5 Sep
-    'skirt', 'veneer', 'creek', 'plywood',   // reader-found gaps
+    'skirt', 'veneer', 'creek', 'plywood', 'mdf', 'resin_composite', 'radiation',   // reader-found gaps
     'caliper', 'master_cylinder', 'retort', 'grate', 'scrubber', 'heat_exchanger', 'gyroscope', 'spar', 'leaf_spring', 'steering', 'tailgate', 'podium', 'stela',   // needs sweep
     'coercivity',   // needs-sweep 5 Sep
     'course', 'coping', 'quoin', 'footing', 'haunch', 'extrados', 'intrados', 'rubble_core', 'lathe', 'boring_machine', 'purlin', 'eaves', 'float_glass', 'berm', 'scratch_coat', 'float_coat', 'finish_coat', 'brace', 'scarp', 'counterscarp', 'revetment', 'ditch',   // needs-sweep 5 Sep
