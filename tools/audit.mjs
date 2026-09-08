@@ -325,6 +325,10 @@ function namesIn(text) {
        * reported as people the article never mentions. Anything that arrived
        * with a digit in it is formula or model number, not somebody's surname. */
       if (/\d/.test(w)) continue;
+      /* A capital inside the word is a formula or an acronym, never a surname.
+       * NaOH, HCl and KOH carry no digit, so the filter above let them through
+       * and they were then reported as people the article never mentions. */
+      if (/^\p{L}.*\p{Lu}/u.test(w.replace(/[^\p{L}]/gu, ''))) continue;
       let clean = w.replace(/[^\p{L}'\u2019-]/gu, '');
       /* And the possessive belongs to the sentence, not to the name. Searching
        * an article for "Macintosh's" fails on an article that says Macintosh,
@@ -517,9 +521,40 @@ for (const r of subject) {
    * never mentions. Typographic dashes are a difference in typesetting, not in
    * who did the thing. */
   const dashes = (x) => x.replace(/[\u2010-\u2015\u2212]/g, '-');
+  /* And fold diacritics on BOTH sides. The article comment above explains why
+   * marks are KEPT when our sentence carries them — Köhler must not become
+   * Khler. The opposite case is just as common and was never handled: this
+   * corpus writes Mjolnir, Ragnarok, Jormungandr, Candomble, Tawhirimatea and
+   * Ryujin plainly, while Wikipedia writes Mjölnir, Ragnarök, Jörmungandr,
+   * Candomblé, Tāwhirimātea and Ryūjin. Reporting those as attributions the
+   * source never makes is a claim about typography, not about who did what.
+   * Comparing both sides mark-free can only let a present name pass; it cannot
+   * make an absent one look present, because two different names stay
+   * different once their accents are gone. */
+  const bare = (x) => x.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC');
+  /* A hyphen in our sentence against a space in the article is typesetting
+   * again: "Lewis-acid", "Ame-no-Iwato", "Tang-dynasty" and "Hardy-Weinberg"
+   * are all written with spaces or different joins by their own articles.
+   * Strip the joins from both sides and compare the letters. Two different
+   * names remain different with their punctuation gone. */
+  const joins = (x) => x.replace(/[-'\u2019\s]+/g, '');
   const lowerFolded = dashes(lower);
+  const lowerBare = bare(lowerFolded);
+  const lowerJoined = joins(lowerBare);
+  /* A hyphenated name is usually two names. "Mongolia-China" is a border
+   * between two countries the article names separately, and "Maya-Aztec"
+   * spans two cultures; tools/audit.mjs already splits hyphenated compounds
+   * in termsIn for exactly this reason. Accept the whole only if every part
+   * of it is present, which is stricter than accepting either one. */
+  const present = (n) => lowerFolded.includes(n) || lowerBare.includes(bare(n))
+                      || lowerJoined.includes(joins(bare(n)));
   const strayNames = NAME_CLEARED[gestureOf(r)] ? []
-    : namesIn(r.why).filter(nm => !lowerFolded.includes(dashes(nm.toLowerCase())));
+    : namesIn(r.why).filter(nm => {
+        const n = dashes(nm.toLowerCase());
+        if (present(n)) return false;
+        const parts = n.split('-').filter(p => p.length > 2);
+        return !(parts.length > 1 && parts.every(present));
+      });
 
   // An absolute in our sentence, with nothing of that strength anywhere in the
   // source, means the certainty is ours rather than the article's.
