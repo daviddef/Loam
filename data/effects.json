@@ -318,6 +318,28 @@
     "wire"
   ],
   "effects": {
+    "acetaldehyde": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "carcinogen": true,
+        "iarc": 1,
+        "mechanism": "The first thing alcohol becomes in the body, and the reason a hangover feels like poisoning: it is more reactive than the alcohol it came from, and it forms adducts with DNA. People whose aldehyde dehydrogenase works poorly flush and accumulate it, and carry the higher cancer risk to match.",
+        "src": "https://en.wikipedia.org/wiki/Acetaldehyde"
+      }
+    ],
+    "acetonitrile": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It is not itself very toxic; it is metabolised to cyanide, slowly. The delay is the dangerous part, because someone can appear unaffected for hours and then deteriorate as the conversion catches up.",
+        "src": "https://en.wikipedia.org/wiki/Acetonitrile"
+      }
+    ],
     "aconite": [
       {
         "valence": "harm",
@@ -326,6 +348,26 @@
         "onset": "acute",
         "mechanism": "Aconitine keeps sodium channels open and the heart is what shows it. The alkaloid crosses intact skin, which is the property that made it a poison of choice long before anyone could name the mechanism.",
         "src": "https://en.wikipedia.org/wiki/Aconitum"
+      }
+    ],
+    "aflatoxin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "cumulative",
+        "mechanism": "A mould metabolite from grain and nuts stored damp, and the liver is where it is activated rather than disposed of. Its interaction with hepatitis B is multiplicative rather than additive, which is why the same exposure means something very different in different populations.",
+        "src": "https://en.wikipedia.org/wiki/Aflatoxin"
+      }
+    ],
+    "aflatoxin_b1": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "The most potent of the group. Enzymes in the liver turn it into an epoxide that binds guanine, and the signature it leaves in the p53 gene is specific enough to be read back out of a tumour years later.",
+        "src": "https://en.wikipedia.org/wiki/Aflatoxin_B1"
       }
     ],
     "air": [
@@ -518,6 +560,18 @@
         "latency": "years to decades"
       }
     ],
+    "benzo_a_pyrene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "carcinogen": true,
+        "iarc": 1,
+        "mechanism": "It is not itself the carcinogen; the body makes one out of it. The diol epoxide the liver produces while trying to make it soluble is what intercalates into DNA, which is the general pattern for this whole family of ring compounds.",
+        "src": "https://en.wikipedia.org/wiki/Benzo(a)pyrene"
+      }
+    ],
     "betel_nut": [
       {
         "valence": "harm",
@@ -537,6 +591,16 @@
         "onset": "acute",
         "mechanism": "A swan defending a nest really does strike with its wings, which carry bony spurs, and the blow is frightening. It is also the origin of the most durable animal myth in Britain: the wings are not strong enough to break an adult man's leg, however often that is repeated. A wing is hollow bone and feather, built to the lightest specification that will still fly, and the same design that makes it efficient is what limits what it can deliver.",
         "src": "https://en.wikipedia.org/wiki/Mute_swan"
+      }
+    ],
+    "bleach": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "It works by oxidising, and skin protein oxidises like anything else. The slippery feel is the top layer of skin being saponified — the sensation is the injury, not a warning ahead of it.",
+        "src": "https://en.wikipedia.org/wiki/Bleach"
       }
     ],
     "blood": [
@@ -737,6 +801,16 @@
         ]
       }
     ],
+    "carbon_tetrachloride": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hepatotoxin",
+        "onset": "cumulative",
+        "mechanism": "The liver splits it into a free radical while trying to metabolise it, and the radical takes hydrogen from the membrane lipids around it. The damage is therefore centred exactly where the enzyme density is highest.",
+        "src": "https://en.wikipedia.org/wiki/Carbon_tetrachloride"
+      }
+    ],
     "carrot": [
       {
         "valence": "benefit",
@@ -795,6 +869,26 @@
         "onset": "cumulative",
         "mechanism": "B6 becomes pyridoxal phosphate, the cofactor every transaminase uses, so it sits underneath nearly all amino acid chemistry rather than beside it.",
         "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
+      }
+    ],
+    "chlorinated_hydrocarbon": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "The family trait is that the carbon-chlorine bond is stable and fat is where these end up. They are not excreted so much as stored, which is why the body burden of a whole class of them tracks a lifetime rather than a week.",
+        "src": "https://en.wikipedia.org/wiki/Organochloride"
+      }
+    ],
+    "chloroform": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hepatotoxin",
+        "onset": "acute",
+        "mechanism": "Its anaesthetic action and its liver toxicity are unrelated properties that happen to arrive together, which is why it was abandoned for surgery while ether was not. The metabolite is phosgene, made in the liver.",
+        "src": "https://en.wikipedia.org/wiki/Chloroform"
       }
     ],
     "clay": [
@@ -876,6 +970,16 @@
         "onset": "acute",
         "mechanism": "Freshly formed metal-oxide fume is fine enough to reach the deep lung, where it provokes a flu-like reaction that comes on hours after the work and is gone the next day. It is the metal in fume form, not the metal in hand.",
         "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "copper_sulfate": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Copper is an essential trace element and this is what a large dose of it does: it is an emetic at low dose and corrosive to the gut lining above that, with liver and kidney damage following from the absorbed fraction.",
+        "src": "https://en.wikipedia.org/wiki/Copper(II)_sulfate"
       }
     ],
     "copper_wire": [
@@ -1036,6 +1140,28 @@
         "carcinogen": true,
         "iarc": 1,
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "ethylene_glycol": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "nephrotoxin",
+        "onset": "acute",
+        "mechanism": "The alcohol is harmless in itself and its metabolites are not. Oxidation ends in oxalate, which precipitates as calcium oxalate crystals in the kidney tubules. It tastes sweet, which is the whole reason children and animals drink it.",
+        "src": "https://en.wikipedia.org/wiki/Ethylene_glycol_poisoning"
+      }
+    ],
+    "ethylene_oxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "carcinogen": true,
+        "iarc": 1,
+        "mechanism": "A strained three-membered ring that opens on almost anything nucleophilic, DNA included. That is the same property that makes it sterilise heat-sensitive medical equipment: it is indiscriminate, and a human cell is not excepted.",
+        "src": "https://en.wikipedia.org/wiki/Ethylene_oxide"
       }
     ],
     "feather": [
@@ -1283,6 +1409,16 @@
         "src": "https://en.wikipedia.org/wiki/Bone_fracture"
       }
     ],
+    "hexane": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "The molecule that arrives is not the one that does the damage: the body oxidises it to 2,5-hexanedione, which cross-links the neurofilaments inside long axons. The result is a peripheral neuropathy that starts in the feet and hands, because those axons are longest.",
+        "src": "https://en.wikipedia.org/wiki/Hexane"
+      }
+    ],
     "holly": [
       {
         "valence": "harm",
@@ -1352,6 +1488,26 @@
         "src": "https://en.wikipedia.org/wiki/Transmission_(medicine)"
       }
     ],
+    "hydrazine": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "It passes through skin readily, and the nitrogen-nitrogen bond that makes it a rocket fuel is what makes it reactive in tissue. The rat and mouse tumour data is what places it on the list; the human data is thinner.",
+        "src": "https://en.wikipedia.org/wiki/Hydrazine"
+      }
+    ],
+    "hydrochloric_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "contact",
+        "mechanism": "An acid coagulates the protein it meets and the coagulum then slows its own advance, which is why acid burns tend to be shallower than alkali ones of the same strength. The stomach makes it at a concentration the rest of the body could not survive.",
+        "src": "https://en.wikipedia.org/wiki/Hydrochloric_acid"
+      }
+    ],
     "hydrogen": [
       {
         "valence": "harm",
@@ -1370,6 +1526,26 @@
         "onset": "acute",
         "mechanism": "It is not toxic and does nothing chemically. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
         "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
+      }
+    ],
+    "hydrogen_sulfide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It blocks cytochrome c oxidase the way cyanide does, so the cell cannot use the oxygen it already has. The smell is unreliable as a warning because the nerve that detects it is paralysed by the gas at the concentrations that matter.",
+        "src": "https://en.wikipedia.org/wiki/Hydrogen_sulfide"
+      }
+    ],
+    "hypochlorite": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "irritant",
+        "onset": "acute",
+        "mechanism": "In contact with acid it releases chlorine gas, which hydrolyses on the wet lining of the airway. This is why household products carry a warning against combining them, and it is a genuine cause of emergency admissions rather than a theoretical one.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_hypochlorite"
       }
     ],
     "ice": [
@@ -1421,6 +1597,16 @@
         "onset": "conditional",
         "mechanism": "The body has no way to excrete iron once it is absorbed — intake is regulated at the gut and there is no tap on the other end. A large amount taken at once overwhelms that gate, and free iron in the blood damages the liver and the vessel walls directly. It is a leading cause of poisoning death in small children for exactly this reason: the tablets look like sweets.",
         "src": "https://en.wikipedia.org/wiki/Iron_poisoning"
+      }
+    ],
+    "isocyanate": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asthma",
+        "onset": "cumulative",
+        "mechanism": "The leading cause of occupational asthma. Once the immune system has been sensitised, the amount needed to trigger an attack is far below the amount that caused the sensitisation, so exposure limits set for irritation do not protect the people who already react.",
+        "src": "https://en.wikipedia.org/wiki/Isocyanate"
       }
     ],
     "kale": [
@@ -1739,6 +1925,16 @@
         "src": "https://en.wikipedia.org/wiki/Methane"
       }
     ],
+    "methylmercury": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "The methyl group is what makes it dangerous: it lets the molecule pass the blood-brain barrier and the placenta, neither of which stops inorganic mercury. It concentrates up the food chain, so the exposure is through fish rather than through anything industrial.",
+        "src": "https://en.wikipedia.org/wiki/Methylmercury"
+      }
+    ],
     "milk": [
       {
         "valence": "benefit",
@@ -1848,6 +2044,16 @@
         "src": "https://en.wikipedia.org/wiki/Methemoglobinemia"
       }
     ],
+    "nitrobenzene": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "methaemoglobinaemia",
+        "onset": "acute",
+        "mechanism": "It is absorbed through intact skin and oxidises the iron in haemoglobin from ferrous to ferric. Ferric haem cannot carry oxygen, so the blood is present and useless — and a pulse oximeter reads the person as fine.",
+        "src": "https://en.wikipedia.org/wiki/Methemoglobinemia"
+      }
+    ],
     "nitrogen": [
       {
         "valence": "harm",
@@ -1857,6 +2063,16 @@
         "reversible": true,
         "mechanism": "Under pressure it dissolves into the lipid of nerve membranes and interferes with signalling, much as alcohol does — including the part where judgement goes before the diver notices. It reverses completely on ascent.",
         "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
+      }
+    ],
+    "nitrosamine": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Formed where nitrite meets an amine, which is a condition the stomach supplies. Most of them need enzymatic activation before they can alkylate DNA, and the organ that activates them is usually the organ that gets the tumour.",
+        "src": "https://en.wikipedia.org/wiki/Nitrosamine"
       }
     ],
     "oak": [
@@ -1933,6 +2149,16 @@
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
+    "oxalic_acid": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "nephrotoxin",
+        "onset": "acute",
+        "mechanism": "It binds calcium out of solution, so the immediate effect is on the blood chemistry and the delayed one is mechanical: calcium oxalate is barely soluble and it crystallises where the fluid is being concentrated, which is the kidney tubule.",
+        "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
+      }
+    ],
     "oxygen": [
       {
         "valence": "harm",
@@ -2001,6 +2227,16 @@
         "src": "https://en.wikipedia.org/wiki/Benzene",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "phosgene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It is poorly soluble, so it passes the upper airway without irritating it and hydrolyses deep in the lung instead. The lag between exposure and pulmonary oedema can be a day, and people have walked away and died later.",
+        "src": "https://en.wikipedia.org/wiki/Phosgene"
       }
     ],
     "phosphate": [
@@ -2489,6 +2725,16 @@
         "src": "https://en.wikipedia.org/wiki/Frostbite"
       }
     ],
+    "sodium_amide": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "contact",
+        "mechanism": "A base strong enough to take a proton off almost anything, tissue included. It also reacts violently with the water that tissue is mostly made of, so the damage is not a slow chemical attack but an immediate one.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_amide"
+      }
+    ],
     "soil": [
       {
         "valence": "harm",
@@ -2497,6 +2743,16 @@
         "onset": "conditional",
         "mechanism": "Clostridium tetani spores are ordinary soil bacteria and harmless to swallow. They germinate only where oxygen has been shut out, which a deep or crushed wound does for them — which is why a garden scratch is a different question from a garden puncture.",
         "src": "https://en.wikipedia.org/wiki/Tetanus"
+      }
+    ],
+    "soot": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "The first occupational cancer ever identified, in 1775, more than a century before anyone could name the molecule responsible. The route is the giveaway: it appeared as scrotal cancer, in skin that held soot against itself for weeks, not as a lung disease. The carrier is the particle and the cargo is the ring compounds condensed onto it.",
+        "src": "https://en.wikipedia.org/wiki/Chimney_sweeps'_carcinoma"
       }
     ],
     "soybean": [
@@ -2619,6 +2875,16 @@
         "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide"
       }
     ],
+    "sulfur_trioxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It does not need to reach the tissue as itself: it takes water out of whatever it lands on, and on the wet lining of an airway it becomes sulfuric acid in place. The reaction is strongly exothermic, so the injury is thermal as well as chemical.",
+        "src": "https://en.wikipedia.org/wiki/Sulfur_trioxide"
+      }
+    ],
     "sulfuric_acid": [
       {
         "valence": "harm",
@@ -2728,6 +2994,16 @@
         "src": "https://en.wikipedia.org/wiki/Tea"
       }
     ],
+    "tetrachloroethylene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "The dry-cleaning solvent. It is lipid-soluble, so it partitions straight into the brain, and the effects at low chronic exposure are the ones that look least like poisoning: mood, memory, reaction time.",
+        "src": "https://en.wikipedia.org/wiki/Tetrachloroethylene"
+      }
+    ],
     "timber": [
       {
         "valence": "harm",
@@ -2796,6 +3072,16 @@
         "src": "https://en.wikipedia.org/wiki/Logging#Safety"
       }
     ],
+    "trichloroacetic_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "contact",
+        "mechanism": "Strong enough to denature protein on contact, which is what a chemical peel is. Depth is what separates a controlled use from an injury, and depth is decided by concentration and time rather than by anything the skin does.",
+        "src": "https://en.wikipedia.org/wiki/Trichloroacetic_acid"
+      }
+    ],
     "turkey": [
       {
         "valence": "benefit",
@@ -2830,6 +3116,18 @@
         "reversible": false,
         "mechanism": "Its toxin locks the gut's chloride channels open, so water follows the salt out of the body faster than it can be replaced. Death is from dehydration rather than from the organism, which is why rehydration alone saves most cases.",
         "src": "https://en.wikipedia.org/wiki/Cholera"
+      }
+    ],
+    "vinyl_chloride": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "carcinogen": true,
+        "iarc": 1,
+        "mechanism": "It causes angiosarcoma of the liver, a cancer so rare that a handful of cases in one plant was enough to identify the cause. The polymer made from it is inert; the monomer is not, and the hazard belongs to the people who make PVC rather than to those who use it.",
+        "src": "https://en.wikipedia.org/wiki/Vinyl_chloride"
       }
     ],
     "virus": [
