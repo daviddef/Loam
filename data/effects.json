@@ -400,6 +400,16 @@
         "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
       }
     ],
+    "airship": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "Hydrogen ignites across an unusually wide range of concentrations in air and needs almost no energy to start. The Hindenburg is the reason the word is remembered — and a third of the people aboard survived, because the burning gas rose away from them rather than pooling.",
+        "src": "https://en.wikipedia.org/wiki/Hindenburg_disaster"
+      }
+    ],
     "akee": [
       {
         "valence": "harm",
@@ -447,6 +457,26 @@
         "onset": "acute",
         "mechanism": "It is extremely soluble in water, so it is captured by the first wet surface it meets — eyes and upper airway — and makes a strong alkali on the spot. That is also why it warns so effectively: nobody stays in it by accident.",
         "src": "https://en.wikipedia.org/wiki/Ammonia"
+      }
+    ],
+    "ammonium_nitrite": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "The injury from a detonation is not one thing. The blast wave alone damages the organs that hold gas — lung, gut, ear — in a body with no external wound at all, and that is what separates an explosive injury from being struck by something.",
+        "src": "https://en.wikipedia.org/wiki/Blast_injury"
+      }
+    ],
+    "angiosarcoma": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "A cancer of the cells lining blood vessels, and rare enough that three cases in one plant were sufficient to identify vinyl chloride as the cause. Rarity is what made it findable: a common tumour in the same workers would have disappeared into the background.",
+        "src": "https://en.wikipedia.org/wiki/Angiosarcoma"
       }
     ],
     "apple": [
@@ -504,6 +534,16 @@
         "latency": "20 to 50 years"
       }
     ],
+    "aspirin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Two separate hazards share one drug. It blocks the enzyme that makes the prostaglandin protecting the stomach lining, and separately it is associated with Reye syndrome in children during a viral illness — which is why it is not given to them.",
+        "src": "https://en.wikipedia.org/wiki/Aspirin"
+      }
+    ],
     "automobile": [
       {
         "valence": "harm",
@@ -524,6 +564,16 @@
         "src": "https://en.wikipedia.org/wiki/Colchicum_autumnale"
       }
     ],
+    "ayahuasca_vine": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The beta-carbolines in the vine inhibit monoamine oxidase, and that is the whole point of it: it is what lets the other plant's DMT survive the gut. The same inhibition is what makes it dangerous alongside anything else serotonergic.",
+        "src": "https://en.wikipedia.org/wiki/Ayahuasca"
+      }
+    ],
     "bacillus_anthracis": [
       {
         "valence": "harm",
@@ -542,6 +592,16 @@
         "onset": "conditional",
         "mechanism": "Most bacteria are harmless and a great many are necessary — there are more of them in a person than there are human cells. The pathogenic ones differ by a handful of acquired genes rather than by being a different sort of thing.",
         "src": "https://en.wikipedia.org/wiki/Pathogenic_bacteria"
+      }
+    ],
+    "bamboo_shoot": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Taxiphyllin is a cyanogenic glycoside and it is intact until the tissue is broken — the plant's own enzyme and its poison are kept in separate compartments until something chews. Boiling destroys it, which is why every traditional preparation boils.",
+        "src": "https://en.wikipedia.org/wiki/Bamboo_shoot"
       }
     ],
     "banana": [
@@ -600,6 +660,16 @@
         "latency": "years to decades"
       }
     ],
+    "benzenediazonium_chloride": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A primary explosive is one that can be set off by shock or friction rather than needing a detonator, which is what makes handling it the hazard rather than using it. The blast wave is the part that injures at a distance.",
+        "src": "https://en.wikipedia.org/wiki/Blast_injury"
+      }
+    ],
     "benzo_a_pyrene": [
       {
         "valence": "harm",
@@ -624,6 +694,26 @@
         "src": "https://en.wikipedia.org/wiki/Areca_nut"
       }
     ],
+    "bha": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "It produces tumours in the forestomach of rodents. Humans have no forestomach, which is the whole of the argument about whether the finding transfers — and it is why the classification sits where it does rather than higher or lower.",
+        "src": "https://en.wikipedia.org/wiki/Butylated_hydroxyanisole"
+      }
+    ],
+    "bht": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "The evidence points both ways and has for decades: one large study found it non-carcinogenic in mice, another found limited evidence the other way. The row exists to record that an honest answer here is an unsettled one.",
+        "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene"
+      }
+    ],
     "bird_wing": [
       {
         "valence": "inert",
@@ -631,6 +721,16 @@
         "onset": "acute",
         "mechanism": "A swan defending a nest really does strike with its wings, which carry bony spurs, and the blow is frightening. It is also the origin of the most durable animal myth in Britain: the wings are not strong enough to break an adult man's leg, however often that is repeated. A wing is hollow bone and feather, built to the lightest specification that will still fly, and the same design that makes it efficient is what limits what it can deliver.",
         "src": "https://en.wikipedia.org/wiki/Mute_swan"
+      }
+    ],
+    "blasting_cap": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "The primary explosive inside detonates from a shock or friction far below what would set off the charge it fires — that sensitivity is its function. It is small enough that people have picked one up not knowing what it was.",
+        "src": "https://en.wikipedia.org/wiki/Detonator"
       }
     ],
     "bleach": [
@@ -793,6 +893,16 @@
         "src": "https://en.wikipedia.org/wiki/Chromium"
       }
     ],
+    "bromate": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "It forms when ozone used to disinfect water meets naturally present bromide, so it is a by-product of making water safe rather than a contaminant of it. That is why the limit is set in parts per billion rather than the substance being banned.",
+        "src": "https://en.wikipedia.org/wiki/Bromate"
+      }
+    ],
     "bromine": [
       {
         "valence": "harm",
@@ -811,6 +921,16 @@
         "onset": "conditional",
         "mechanism": "Brassicas carry glucosinolates that interfere with the thyroid's uptake of iodine. It matters only where iodine is already short, and cooking reduces it — which is why this is a fact about diets rather than about cabbage.",
         "src": "https://en.wikipedia.org/wiki/Goitrogen"
+      }
+    ],
+    "camphor": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "seizure",
+        "onset": "acute",
+        "mechanism": "It crosses into the brain quickly and lowers the seizure threshold, and children are affected at doses an adult would not notice. Seizures have begun within minutes of swallowing it, before anything else has appeared.",
+        "src": "https://en.wikipedia.org/wiki/Camphor"
       }
     ],
     "campylobacter": [
@@ -909,6 +1029,16 @@
         "onset": "cumulative",
         "mechanism": "The liver splits it into a free radical while trying to metabolise it, and the radical takes hydrogen from the membrane lipids around it. The damage is therefore centred exactly where the enzyme density is highest.",
         "src": "https://en.wikipedia.org/wiki/Carbon_tetrachloride"
+      }
+    ],
+    "carcinogen": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "The IARC groups are the most misread classification in public health. They rank the strength of the evidence that an agent can cause cancer at all — the hazard — and say nothing about the probability at any particular exposure. Group 1 means we are sure it can, not that it often does.",
+        "src": "https://en.wikipedia.org/wiki/Carcinogen"
       }
     ],
     "carrot": [
@@ -1019,6 +1149,16 @@
         "onset": "acute",
         "mechanism": "Its anaesthetic action and its liver toxicity are unrelated properties that happen to arrive together, which is why it was abandoned for surgery while ether was not. The metabolite is phosgene, made in the liver.",
         "src": "https://en.wikipedia.org/wiki/Chloroform"
+      }
+    ],
+    "chloroquine": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "At treatment doses it has saved an enormous number of lives and in overdose it is among the more lethal drugs available, because it blocks cardiac sodium channels. The gap between the two is narrow and the onset in overdose is fast.",
+        "src": "https://en.wikipedia.org/wiki/Chloroquine"
       }
     ],
     "clam": [
@@ -1161,6 +1301,16 @@
         "src": "https://en.wikipedia.org/wiki/Coral#Injury"
       }
     ],
+    "corium": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "radiation_sickness",
+        "onset": "acute",
+        "mechanism": "What a reactor core becomes once it melts and takes the concrete, steel and sand around it into the mixture. It is intensely radioactive and it generates its own heat from decay, so it stays molten long after the reaction that made it has stopped.",
+        "src": "https://en.wikipedia.org/wiki/Corium_(nuclear_reactor)"
+      }
+    ],
     "cow": [
       {
         "valence": "harm",
@@ -1250,6 +1400,26 @@
         "onset": "conditional",
         "mechanism": "Sweating works until the water runs out, and then the core temperature has nothing left holding it down. Dry air hides how much is being lost, because it evaporates before it is felt.",
         "src": "https://en.wikipedia.org/wiki/Heat_stroke"
+      }
+    ],
+    "dimethyl_sulfoxide": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Its own toxicity is low and that is not the hazard. It passes through skin readily and takes dissolved solutes with it, so anything contaminating it arrives in the bloodstream by a route that substance could not have taken alone.",
+        "src": "https://en.wikipedia.org/wiki/Dimethyl_sulfoxide"
+      }
+    ],
+    "dinitrogen_monoxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "It oxidises the cobalt at the centre of vitamin B12 and puts the vitamin out of action. Repeated use therefore produces a B12 deficiency in someone eating perfectly well, and the neurological damage is the same demyelination of the cord that dietary deficiency causes.",
+        "src": "https://en.wikipedia.org/wiki/Nitrous_oxide"
       }
     ],
     "dog": [
@@ -1384,6 +1554,36 @@
         "src": "https://en.wikipedia.org/wiki/Ethylene_oxide"
       }
     ],
+    "ethyleneimine": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The same three-membered ring strain that makes aziridine useful in synthesis makes it reactive toward anything nucleophilic, including DNA and including skin. It is an acute poison and a mutagen by one property, not two.",
+        "src": "https://en.wikipedia.org/wiki/Ethylenimine"
+      }
+    ],
+    "eucalyptus": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The oil is mostly 1,8-cineole, and cineole is what causes the seizures. The margin is small enough that poisonings in small children have followed amounts that would fit in a teaspoon.",
+        "src": "https://en.wikipedia.org/wiki/Eucalyptus_oil"
+      }
+    ],
+    "exotoxin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "A secreted protein, which means the bacterium does not have to be present for the illness to be. Botulism, tetanus and diphtheria are all the work of the toxin rather than of the organism, and that is why an antitoxin treats them and an antibiotic alone does not.",
+        "src": "https://en.wikipedia.org/wiki/Exotoxin"
+      }
+    ],
     "feather": [
       {
         "valence": "harm",
@@ -1392,6 +1592,16 @@
         "onset": "cumulative",
         "mechanism": "The same mechanism as farmer's lung, from bird protein in the dust of droppings and feathers. It is called bird fancier's lung and it appears in people who keep pigeons and budgerigars for years.",
         "src": "https://en.wikipedia.org/wiki/Bird_fancier%27s_lung"
+      }
+    ],
+    "fenugreek": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "It is a legume, and its allergens cross-react with peanut — which is the hazard most likely to be met, because it is used as a flavouring in things that do not announce it.",
+        "src": "https://en.wikipedia.org/wiki/Fenugreek"
       }
     ],
     "fire": [
@@ -1465,6 +1675,16 @@
         "src": "https://en.wikipedia.org/wiki/Formaldehyde",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "fos": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "gut_flora",
+        "onset": "conditional",
+        "mechanism": "Human enzymes cannot break these bonds, so the whole dose reaches the colon intact and the bacteria there ferment it. That is the intended effect and the unwanted one at the same time: what feeds the flora also produces the gas.",
+        "src": "https://en.wikipedia.org/wiki/Fructooligosaccharide"
       }
     ],
     "fossil": [
@@ -1558,6 +1778,16 @@
         "src": "https://en.wikipedia.org/wiki/Gila_monster"
       }
     ],
+    "ginkgo": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "seizure",
+        "onset": "conditional",
+        "mechanism": "The seed, not the leaf. Ginkgotoxin is close enough in shape to vitamin B6 to occupy its place and not do its job, and B6 is the cofactor the brain needs to make its inhibitory neurotransmitter — so the seizure is a deficiency the toxin induces rather than anything it does directly.",
+        "src": "https://en.wikipedia.org/wiki/Ginkgotoxin"
+      }
+    ],
     "glacier": [
       {
         "valence": "harm",
@@ -1617,6 +1847,16 @@
         "src": "https://en.wikipedia.org/wiki/Radon",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "grapefruit": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Its furanocoumarins are broken down by intestinal CYP3A4 into intermediates that bond to the enzyme and destroy it. The gut then cannot do its share of first-pass metabolism, so an ordinary dose of an affected drug arrives as an overdose — and the effect lasts until new enzyme is made.",
+        "src": "https://en.wikipedia.org/wiki/Grapefruit–drug_interactions"
       }
     ],
     "grass": [
@@ -1686,6 +1926,16 @@
         "onset": "cumulative",
         "mechanism": "The molecule that arrives is not the one that does the damage: the body oxidises it to 2,5-hexanedione, which cross-links the neurofilaments inside long axons. The result is a peripheral neuropathy that starts in the feet and hands, because those axons are longest.",
         "src": "https://en.wikipedia.org/wiki/Hexane"
+      }
+    ],
+    "histamine": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Scombroid poisoning looks exactly like an allergy and is not one: bacteria on badly stored fish convert the histidine already in the flesh into histamine, so the reaction arrives with the first mouthful in someone who has eaten that fish for years. Cooking does not undo it.",
+        "src": "https://en.wikipedia.org/wiki/Histamine"
       }
     ],
     "holly": [
@@ -1838,6 +2088,16 @@
         "src": "https://en.wikipedia.org/wiki/Frostbite"
       }
     ],
+    "infective_endocarditis": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "Bacteria in the bloodstream settle on a heart valve and build a vegetation on it, and the valve is one of the few surfaces in the body with no blood supply of its own — so the immune system and the antibiotic both have to reach it from outside.",
+        "src": "https://en.wikipedia.org/wiki/Infective_endocarditis"
+      }
+    ],
     "influenza_virus": [
       {
         "valence": "harm",
@@ -1866,6 +2126,16 @@
         "onset": "conditional",
         "mechanism": "Insects carry more human disease than any other group of animals, and almost always as a vector rather than as a cause — the mosquito, the tsetse fly and the sandfly are syringes, and what they inject is somebody else's parasite.",
         "src": "https://en.wikipedia.org/wiki/Vector_(epidemiology)"
+      }
+    ],
+    "insulin": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "seizure",
+        "onset": "acute",
+        "mechanism": "The brain runs on glucose and holds no reserve of it. Insulin beyond what the carbohydrate eaten requires drives the blood sugar below what the brain can work on, and seizure and coma follow from a supply failure rather than from anything toxic.",
+        "src": "https://en.wikipedia.org/wiki/Insulin"
       }
     ],
     "iodine": [
@@ -2161,6 +2431,16 @@
         "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
       }
     ],
+    "macadamia": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "Recognised only in dogs, and the responsible compound is still unknown after decades — which is worth recording as it stands, because an unexplained effect is not the same as an absent one. People eat them without consequence.",
+        "src": "https://en.wikipedia.org/wiki/Macadamia"
+      }
+    ],
     "mackerel": [
       {
         "valence": "benefit",
@@ -2251,6 +2531,16 @@
         "reversible": false,
         "mechanism": "Elemental mercury vapour crosses into the brain, where it is oxidised and then cannot cross back out. The metal is nearly harmless swallowed and dangerous breathed, which is the clearest case in this file of route deciding everything.",
         "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
+      }
+    ],
+    "mescal_bean": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The bright red seeds concentrate cytisine, which acts at the same receptors as nicotine. The hard coat is what usually saves anyone who swallows one whole, since an intact seed passes through.",
+        "src": "https://en.wikipedia.org/wiki/Mescalbean"
       }
     ],
     "methane": [
@@ -2444,6 +2734,16 @@
         "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
       }
     ],
+    "nitroglycerin": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "It detonates from shock, friction or heat with almost no warning, which is why its discoverer refused to work with it further and why the invention that made it usable was a way of stopping it moving. The same molecule is a heart medicine at a millionth of the quantity.",
+        "src": "https://en.wikipedia.org/wiki/Nitroglycerin"
+      }
+    ],
     "nitrosamine": [
       {
         "valence": "harm",
@@ -2587,6 +2887,26 @@
         "src": "https://en.wikipedia.org/wiki/Cellulose"
       }
     ],
+    "paracetamol": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "acute",
+        "mechanism": "Safe at the recommended dose and dangerous well before it feels dangerous. A small fraction is normally converted to a reactive metabolite that glutathione neutralises; past the point where the glutathione runs out, the metabolite attacks the liver directly, and by then the person feels fine.",
+        "src": "https://en.wikipedia.org/wiki/Paracetamol"
+      }
+    ],
+    "parsley": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The leaf in any quantity a kitchen uses is not what this is about. Apiol is concentrated in the seed and in the oil pressed from it, and the poisonings on record all involve the oil taken deliberately.",
+        "src": "https://en.wikipedia.org/wiki/Parsley"
+      }
+    ],
     "peanut": [
       {
         "valence": "harm",
@@ -2604,6 +2924,16 @@
         "onset": "conditional",
         "mechanism": "Around a quarter protein by weight, with more than most nuts, and the fat is mostly monounsaturated. For the great majority of people this is food; the immune reaction on the other row is the exception, not the rule.",
         "src": "https://en.wikipedia.org/wiki/Peanut"
+      }
+    ],
+    "penicillin": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "Around a tenth of people report an allergy to it and the great majority of them do not have one — either they never did, or they have lost it, since the sensitivity fades over about a decade. The label itself causes harm, because it pushes people onto second-line antibiotics.",
+        "src": "https://en.wikipedia.org/wiki/Penicillin"
       }
     ],
     "peptic_ulcer": [
@@ -2626,6 +2956,16 @@
         "src": "https://en.wikipedia.org/wiki/Benzene",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "phenolphthalein": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "conditional",
+        "mechanism": "A laxative for over a century before the animal carcinogenicity data arrived and regulators withdrew it. It is still in every chemistry classroom as an indicator, which is the only place most people now meet it.",
+        "src": "https://en.wikipedia.org/wiki/Phenolphthalein"
       }
     ],
     "phosgene": [
@@ -2666,6 +3006,16 @@
         "onset": "conditional",
         "mechanism": "The pack-hunting reputation is mostly invention, and the teeth are not: interlocking triangular blades that take a clean semicircle out of whatever they close on. Bites happen to feet in shallow water in the dry season, when the fish are crowded.",
         "src": "https://en.wikipedia.org/wiki/Piranha"
+      }
+    ],
+    "plain_bearing": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "A journal bearing running dry converts the whole of its friction into heat in one small place. The railway term for the result is a hot box, and it could set the axlebox alight under a moving train.",
+        "src": "https://en.wikipedia.org/wiki/Plain_bearing"
       }
     ],
     "plank": [
@@ -2727,6 +3077,16 @@
         "src": "https://en.wikipedia.org/wiki/Polar_bear"
       }
     ],
+    "poppy": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The seed itself contains no opiate; what is on it is residue from the pod at harvest. It is enough to show on a drug test and, where the contamination is heavy and the preparation concentrates it, enough to matter as an overdose.",
+        "src": "https://en.wikipedia.org/wiki/Opium_poppy"
+      }
+    ],
     "pork": [
       {
         "valence": "benefit",
@@ -2746,6 +3106,26 @@
         "onset": "cumulative",
         "mechanism": "The clay is not the problem; the glaze is. Lead oxide has been used as a flux since antiquity because it melts low and fires glossy, and an acidic food sitting in that glaze leaches it back out. In commercial ware the lead is bound to silica in a fixed ratio to hold it in place, so the risk now sits with artisanal pottery fired without that oversight and with antique ware where the bond was never good enough.",
         "src": "https://en.wikipedia.org/wiki/Ceramic_glaze"
+      }
+    ],
+    "potassium_chlorate": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "A strong oxidiser stores the oxygen a fire needs, so a mixture of it with anything combustible does not have to wait for air. Some such mixtures ignite from friction alone.",
+        "src": "https://en.wikipedia.org/wiki/Potassium_chlorate"
+      }
+    ],
+    "potassium_nitrite": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "Nitrite oxidises the iron in haemoglobin, and the same chemistry that fixes the colour of cured meat is what does it. Separately, nitrite in the stomach can form nitrosamines from the amines already there.",
+        "src": "https://en.wikipedia.org/wiki/Potassium_nitrite"
       }
     ],
     "potato": [
@@ -2848,6 +3228,16 @@
         "src": "https://en.wikipedia.org/wiki/Phenylalanine"
       }
     ],
+    "pvc": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "The polymer is inert; the smoke is not. Burning it releases hydrogen chloride, which becomes hydrochloric acid on the wet lining of an airway. In a building fire the gas reaches people who are nowhere near the flame.",
+        "src": "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
+      }
+    ],
     "quartz": [
       {
         "valence": "harm",
@@ -2868,6 +3258,16 @@
         "onset": "cumulative",
         "mechanism": "The third branched-chain amino acid. Quinoa is named as a complete protein because it does not run short of lysine the way a cereal does — it is not a cereal, but a relative of spinach.",
         "src": "https://en.wikipedia.org/wiki/Valine"
+      }
+    ],
+    "rabies_encephalitis": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "rabies",
+        "onset": "acute",
+        "mechanism": "The virus travels from the wound along nerve axons by retrograde transport, which is why the incubation depends on how far the bite was from the brain. It also means the immune system never sees it in transit, and once symptoms begin it is almost always fatal.",
+        "src": "https://en.wikipedia.org/wiki/Rabies"
       }
     ],
     "rabies_virus": [
@@ -2978,6 +3378,16 @@
         "onset": "conditional",
         "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
         "src": "https://en.wikipedia.org/wiki/Latex_allergy"
+      }
+    ],
+    "safrole": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Ordinary cooking with nutmeg or mace is not the concern. Safrole is a minor constituent of both, it produced liver tumours in rodents, and it was removed from root beer for that reason — which is the more common way a substance leaves the food supply than any ban.",
+        "src": "https://en.wikipedia.org/wiki/Safrole"
       }
     ],
     "salmon": [
@@ -3394,6 +3804,26 @@
         "src": "https://en.wikipedia.org/wiki/Farmer%27s_lung"
       }
     ],
+    "streptomycin": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "nephrotoxin",
+        "onset": "cumulative",
+        "mechanism": "The kidney concentrates it and the inner ear accumulates it, and damage to the vestibular apparatus is often permanent. Both are dose-related, which is why the drug is monitored by blood level rather than by prescription alone.",
+        "src": "https://en.wikipedia.org/wiki/Streptomycin"
+      }
+    ],
+    "strychnine_tree": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "seizure",
+        "onset": "acute",
+        "mechanism": "Strychnine blocks glycine, the inhibitory transmitter in the spinal cord. It does not excite anything — it removes the brake, so every muscle contracts at once and the person stays fully conscious throughout.",
+        "src": "https://en.wikipedia.org/wiki/Strychnine"
+      }
+    ],
     "sugar": [
       {
         "valence": "harm",
@@ -3502,6 +3932,16 @@
         ]
       }
     ],
+    "sweet_flag": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Beta-asarone in the rhizome produced tumours in laboratory animals on long feeding. The varieties differ enormously in how much they carry, so the plant's name is a poor guide to what a given root contains.",
+        "src": "https://en.wikipedia.org/wiki/Acorus_calamus"
+      }
+    ],
     "sweet_potato": [
       {
         "valence": "benefit",
@@ -3541,6 +3981,16 @@
         "onset": "cumulative",
         "mechanism": "The dry-cleaning solvent. It is lipid-soluble, so it partitions straight into the brain, and the effects at low chronic exposure are the ones that look least like poisoning: mood, memory, reaction time.",
         "src": "https://en.wikipedia.org/wiki/Tetrachloroethylene"
+      }
+    ],
+    "thalidomide": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "birth_defect",
+        "onset": "conditional",
+        "mechanism": "The window ran from roughly day 20 to day 36 after fertilisation and was narrow enough that the date of exposure could be read back off which limb was affected. It is the reason drug regulation looks the way it does.",
+        "src": "https://en.wikipedia.org/wiki/Thalidomide"
       }
     ],
     "tick": [
