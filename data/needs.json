@@ -1587,6 +1587,20 @@
         "heel"
       ]
     },
+    "boring_machine": {
+      "src": "https://en.wikipedia.org/wiki/Boring_(manufacturing)",
+      "note": "A cutter held rigid while the work turns — how a hole gets straighter than the drill that started it.",
+      "needs": [
+        "spindle",
+        "chuck",
+        "boring_bar",
+        "cutter",
+        "carriage",
+        "bed",
+        "feed_mechanism",
+        "tailstock"
+      ]
+    },
     "bosra": {
       "src": "https://en.wikipedia.org/wiki/Bosra",
       "note": "A theatre so completely swallowed by a later fortress that it survived intact inside it.",
@@ -1827,6 +1841,22 @@
         "spring",
         "hinge",
         "steel"
+      ]
+    },
+    "bulldozer": {
+      "src": "https://en.wikipedia.org/wiki/Bulldozer",
+      "note": "The tracks matter more than the blade: they spread the weight so it does not sink while it pushes.",
+      "needs": [
+        "track",
+        "engine",
+        "blade",
+        "ripper",
+        "hydraulic_cylinder",
+        "frame",
+        "cab",
+        "transmission",
+        "sprocket",
+        "idler"
       ]
     },
     "burgonet": {
@@ -3112,6 +3142,23 @@
         "power_backup"
       ]
     },
+    "convertible": {
+      "src": "https://en.wikipedia.org/wiki/Convertible_(car)",
+      "note": "Removing the roof removes most of the structure, so the floor has to be stiff enough on its own.",
+      "needs": [
+        "body",
+        "engine",
+        "transmission",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel",
+        "seat",
+        "soft_top|hardtop",
+        "frame",
+        "roll_bar"
+      ]
+    },
     "conveyor_belt": {
       "src": "https://en.wikipedia.org/wiki/Conveyor_belt",
       "needs": [
@@ -3197,6 +3244,22 @@
         "concrete|iron",
         "pulley",
         "balance"
+      ]
+    },
+    "coupe": {
+      "src": "https://en.wikipedia.org/wiki/Coupé",
+      "needs": [
+        "body",
+        "engine",
+        "transmission",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel",
+        "seat",
+        "door",
+        "glass",
+        "pillar"
       ]
     },
     "coupler": {
@@ -4379,6 +4442,22 @@
         "arbor"
       ]
     },
+    "estate_car": {
+      "src": "https://en.wikipedia.org/wiki/Station_wagon",
+      "needs": [
+        "body",
+        "engine",
+        "transmission",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel",
+        "seat",
+        "tailgate",
+        "roof_rail",
+        "glass"
+      ]
+    },
     "ethylene_glycol": {
       "src": "https://en.wikipedia.org/wiki/Ethylene_glycol",
       "note": "An antifreeze that tastes sweet, which is the whole problem with it.",
@@ -4434,6 +4513,20 @@
         "tooth",
         "counterweight",
         "control_valve"
+      ]
+    },
+    "exchange": {
+      "src": "https://en.wikipedia.org/wiki/Telephone_exchange",
+      "note": "The building that made one wire serve many calls — first with operators, then with switches.",
+      "needs": [
+        "switchboard",
+        "jack_panel",
+        "cord",
+        "plug",
+        "relay",
+        "selector",
+        "frame",
+        "wiring"
       ]
     },
     "exhaust": {
@@ -4697,6 +4790,22 @@
         "coal_catcher",
         "bow|hand_drive",
         "cord"
+      ]
+    },
+    "fire_engine": {
+      "src": "https://en.wikipedia.org/wiki/Fire_engine",
+      "note": "It carries a pump rather than much water — the water comes from the hydrant.",
+      "needs": [
+        "chassis",
+        "engine",
+        "pump",
+        "tank",
+        "hose",
+        "ladder",
+        "cab",
+        "light",
+        "siren",
+        "valve"
       ]
     },
     "fire_hose": {
@@ -5295,6 +5404,17 @@
         "crucible",
         "thermocouple",
         "door"
+      ]
+    },
+    "fuse": {
+      "src": "https://en.wikipedia.org/wiki/Fuse_(electrical)",
+      "note": "A wire chosen to fail, so that nothing more expensive does.",
+      "needs": [
+        "fuse_wire",
+        "ceramic|glass",
+        "cap",
+        "contact",
+        "housing"
       ]
     },
     "fuse_box": {
@@ -5917,6 +6037,23 @@
         "ribbon|band",
         "lining",
         "stitching"
+      ]
+    },
+    "hatchback": {
+      "src": "https://en.wikipedia.org/wiki/Hatchback",
+      "needs": [
+        "monocoque",
+        "engine",
+        "transmission",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel",
+        "seat",
+        "hatch",
+        "hinge",
+        "glass",
+        "liftgate"
       ]
     },
     "haul_truck": {
@@ -6770,6 +6907,23 @@
         "launch_tube"
       ]
     },
+    "jeep": {
+      "src": "https://en.wikipedia.org/wiki/Jeep",
+      "note": "Designed to a US Army specification in 1940 that gave the bidders 49 days.",
+      "needs": [
+        "chassis",
+        "engine",
+        "transmission",
+        "transfer_case",
+        "differential",
+        "axle",
+        "suspension",
+        "steering",
+        "brake",
+        "wheel",
+        "canvas_top"
+      ]
+    },
     "jet_airliner": {
       "src": "https://en.wikipedia.org/wiki/Jet_airliner",
       "needs": [
@@ -7260,6 +7414,18 @@
         "case|container",
         "terminal",
         "electrolyte"
+      ]
+    },
+    "leaf_spring": {
+      "src": "https://en.wikipedia.org/wiki/Leaf_spring",
+      "note": "Steel strips stacked so the whole thing bends and rubs itself damped.",
+      "needs": [
+        "leaf",
+        "bolt",
+        "clip",
+        "shackle",
+        "eye",
+        "bushing"
       ]
     },
     "leather": {
@@ -7919,6 +8085,19 @@
         "charter|licence",
         "water_supply",
         "drain"
+      ]
+    },
+    "master_cylinder": {
+      "src": "https://en.wikipedia.org/wiki/Master_cylinder",
+      "note": "Where the foot's push becomes pressure in the line.",
+      "needs": [
+        "bore",
+        "piston",
+        "seal",
+        "pushrod",
+        "reservoir",
+        "port",
+        "housing"
       ]
     },
     "matchlock": {
@@ -10468,6 +10647,17 @@
         "wood|metal"
       ]
     },
+    "retort": {
+      "src": "https://en.wikipedia.org/wiki/Retort",
+      "note": "A sealed vessel heated from outside, so what comes off can be caught.",
+      "needs": [
+        "vessel",
+        "neck",
+        "condenser",
+        "receiver",
+        "stopper"
+      ]
+    },
     "rivet": {
       "src": "https://en.wikipedia.org/wiki/Rivet",
       "note": "A pin with a head, given a second head after it is through.",
@@ -11716,6 +11906,17 @@
         "housing"
       ]
     },
+    "spillway": {
+      "src": "https://en.wikipedia.org/wiki/Spillway",
+      "needs": [
+        "channel",
+        "gate",
+        "crest",
+        "stilling_basin",
+        "concrete",
+        "weir"
+      ]
+    },
     "spine": {
       "src": "https://en.wikipedia.org/wiki/Bookbinding",
       "note": "The part that has to bend thousands of times and hold everything else.",
@@ -11978,6 +12179,18 @@
         "frame",
         "tender|coal_bunker",
         "cab"
+      ]
+    },
+    "steering": {
+      "src": "https://en.wikipedia.org/wiki/Steering",
+      "needs": [
+        "column",
+        "wheel",
+        "pinion",
+        "rack",
+        "tie_rod",
+        "knuckle",
+        "joint"
       ]
     },
     "steering_wheel": {
@@ -14399,6 +14612,7 @@
     "architecture",
     "aroma_compound",
     "arrow_slit",
+    "arrowhead",
     "artefact",
     "assay",
     "assembly_line",
@@ -14648,6 +14862,7 @@
     "drawing",
     "dredging",
     "dressing",
+    "drier",
     "drink",
     "drip",
     "drive_square",
@@ -14707,6 +14922,7 @@
     "film_reel",
     "filter",
     "filtration",
+    "finial",
     "finish",
     "finish_coat",
     "firing",
@@ -14741,9 +14957,11 @@
     "fulling",
     "galvanization",
     "gangway",
+    "gasket",
     "gauge",
     "gel",
     "geological_mapping",
+    "getter",
     "gfrp",
     "ghost_net",
     "glass_fiber",
@@ -14779,6 +14997,7 @@
     "gullet",
     "gum_arabic_tree",
     "gusset",
+    "haft",
     "hammurabi_code",
     "handover",
     "hardening",
@@ -14868,12 +15087,14 @@
     "lacing",
     "lacquer",
     "lame",
+    "laminate",
     "land",
     "lap",
     "lashing",
     "last",
     "lath",
     "layout_engine",
+    "lead_in_wire",
     "lean_manufacturing",
     "leather_strap",
     "ledger",
@@ -14939,6 +15160,7 @@
     "mortise_and_tenon",
     "mouldboard",
     "moulding",
+    "mount",
     "mountaintop_removal",
     "mri_scan",
     "mull",
@@ -14997,6 +15219,7 @@
     "peek",
     "peel",
     "peen",
+    "pellet",
     "permission",
     "pet_scan",
     "ph_adjuster",
@@ -15161,6 +15384,7 @@
     "sisal",
     "size",
     "sizing",
+    "skirt",
     "slate",
     "sledge",
     "sleeper",
@@ -15178,6 +15402,7 @@
     "spacer",
     "spacing",
     "span",
+    "spar",
     "specimen",
     "spider_silk",
     "spillage",
@@ -15195,6 +15420,7 @@
     "staple",
     "start",
     "stave",
+    "stela",
     "step",
     "stereochemistry",
     "sterilisation",
@@ -15217,6 +15443,7 @@
     "string",
     "strip_mining",
     "strut",
+    "stucco",
     "stud",
     "stump",
     "sub_base",
@@ -15261,6 +15488,7 @@
     "tension",
     "term",
     "terminal",
+    "terrace",
     "tesla",
     "test",
     "textile_designer",
@@ -15270,6 +15498,7 @@
     "thermostat",
     "thickener",
     "thread",
+    "threshold",
     "throat",
     "throttle",
     "throw",
@@ -15298,6 +15527,7 @@
     "transaction",
     "transfer_station",
     "transmission",
+    "transom",
     "transport",
     "trap",
     "traverse",
