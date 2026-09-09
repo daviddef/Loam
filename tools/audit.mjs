@@ -180,7 +180,7 @@ function stripApparatus(wikitext) {
   let out = '', i = 0;
   while (i < s.length) {
     if (s[i] === '{' && s[i + 1] === '{' &&
-        /^\s*(cite|citation|sfn|harv|refn|r\b)/i.test(s.slice(i + 2, i + 22))) {
+        /^\s*(cite|citation|sfn|harv|refn|rp\b|r\b)/i.test(s.slice(i + 2, i + 22))) {
       let depth = 0, j = i;
       while (j < s.length) {
         if (s[j] === '{' && s[j + 1] === '{') { depth++; j += 2; }
@@ -569,6 +569,9 @@ const NAME_CLEARED = {
   'ore+spark': 'accent-stripping turns "Héroult" into "Hroult" before the match — the name is genuinely in the cited article (it is literally in the title, "Hall–Héroult process")',
 };
 
+/* Keys are gestureOf(): `a|verb` for a verb recipe, otherwise the inputs
+ * SORTED and joined with '+'. Five entries added here silently did nothing
+ * because they were written in the recipe's own input order. */
 const ABSOLUTE_CLEARED = {
   'curd+salt': 'a figure of speech about time, not a claim about ingredients',
   'fire+stone': 'folklore, and true by definition — nobody found it',
@@ -577,6 +580,19 @@ const ABSOLUTE_CLEARED = {
   'harvest+pot': 'mythology — the horn not emptying is the myth',
   'protein|heat': 'rhetorical emphasis on a mechanism stated just before',
   'penicillin|wait': 'definitional: survivors are what an antibiotic did not kill',
+  /* Reviewed 9 Sep. Every one of these matched the string and none of them is a
+   * claim about the world: an ordinal inside a sequence, a comparison the
+   * sentence itself scopes, or "the first" used as a pro-form for something
+   * named a clause earlier. Nine tenths of a sampled batch were this shape, and
+   * a check that is mostly noise is a check nobody finishes. */
+  'channel+dam': 'temporal: the first time it overtops, not a claim of primacy',
+  'erosion+rain': 'the comparison is among the channels the sentence just listed',
+  'molecule+water': 'physics stated in the same breath — the surface contracts to its own minimum',
+  'air+hypoxia': 'ordinal within the scene: the casualty who went in first',
+  'allergic_reaction+skin': 'sequence: the early exposures, not a claim of primacy',
+  'butterfly+pupa': '"the first" is a pro-form for the cocoon named one clause earlier',
+  'mesosoma+metasoma': 'idiom: the question a key asks first, not a claim about keys',
+  'cell+cerebral_cortex': 'idiom: the first thing a reader notices',
 };
 
 const ABSOLUTES = [
@@ -703,6 +719,7 @@ if (process.argv.includes('--selftest')) {
     ['The snow line sits at 4,500 m.', '4,500', true,  'plain body prose is untouched'],
     ['text\n== References ==\n{{reflist}}\n{{cite journal |volume=99}}', '99', false, 'a reflist carries nothing; the cite is stripped'],
     ['{{cite news |date=13 November 2017}} and the body says 13% alcohol', '13', true, 'a real body mention still clears'],
+    ['{{rp|abs|quote=at least 46% was fishing nets}} the patch', '46', false, 'an rp page-quote is still a citation'],
     ['[[File:Coin.jpg|thumb|400px|Roman Egyptian coin]] the zodiac', '400', false, 'an image width is not a date'],
     ['{{Sky|19|50|46.9990|+|08|52|05.959|17}} Altair', '17', false, 'a sky coordinate is not a distance'],
     ['[[Category:15th-century establishments]] the Aztec empire', '15', false, 'a category tag is navigation'],
@@ -857,6 +874,12 @@ for (const r of subject) {
   if (!ABSOLUTE_CLEARED[gestureOf(r)]) {
     for (const [ours, theirs] of ABSOLUTES) {
       const m = r.why.match(ours);
+      /* A HEDGE IS NOT AN ABSOLUTE. `\balways\b` fires inside "almost always"
+       * and "nearly always", which are the opposite of the claim being looked
+       * for — the sentence is explicitly declining to say always. Same for
+       * "almost the only" and "nearly the oldest". This is a fact about the
+       * grammar of the sentence, not about whether the source agrees with it. */
+      if (m && /\b(?:almost|nearly|not)\s+$/i.test(r.why.slice(0, m.index))) continue;
       if (m && !theirs.test(text)) { strayAbsolute = m[0]; break; }
     }
   }
@@ -958,6 +981,21 @@ if (failures) {
  * a complete sweep, because a partial one would silently drop every row the
  * sweep never reached — which is the same stale-snapshot fault wearing a
  * different hat. */
+/** Names whose stem the article does carry — see name_maybe_adjectival. */
+function adjectivalHint(names, article) {
+  if (!article || !names.length) return null;
+  const bare = x => x.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC').toLowerCase();
+  const low = bare(article);
+  const out = [];
+  for (const nm of names) {
+    const stem = bare(nm).replace(/(ian|ean|ese|ish|ic|an|n)$/, '');
+    if (stem.length < 5 || !low.includes(stem)) continue;
+    const m = new RegExp(`\\b${stem}[a-z]*`, 'i').exec(bare(article));
+    out.push(`${nm}~${m ? m[0] : stem}`);
+  }
+  return out.length ? out.join(', ') : null;
+}
+
 if (process.argv.includes('--backlog')) {
   if (only || !termsMode || !includeVerified) {
     console.error('\n  --backlog needs the full sweep: node tools/audit.mjs --terms --all --backlog');
@@ -990,6 +1028,18 @@ if (process.argv.includes('--backlog')) {
     out: u.r.out, in: u.r.in, verb: u.r.verb ?? null, src: u.r.src, cited: u.title,
     missing_numbers: u.missing.length ? u.missing.map(m => m.shown).join(', ') : null,
     missing_names: u.strayNames.length ? u.strayNames.join(', ') : null,
+    /* A CAUTION, NOT A CLEARANCE. About one name flag in twelve is an adjectival
+     * form of a proper noun the article does carry in another shape — we write
+     * "Gondwanan", "Himalayan", "Leibnizian", "Transylvanian" and the article
+     * says Gondwana, the Himalayas, Leibniz, Transylvania. Those are the same
+     * referent and the prose is not wrong, so REWRITING IT WOULD BE WEAKENING A
+     * TRUE SENTENCE to satisfy a false red.
+     *
+     * It is not folded into the check itself because no rule separates the good
+     * cases from the bad ones: "Arabian" and "Arabic" share five letters and are
+     * a peninsula and a language, "Indian" and "Indiana" share six. So the row
+     * still counts as flagged and this field just says where to look first. */
+    name_maybe_adjectival: adjectivalHint(u.strayNames, articles[u.title]) || null,
     our_absolute: u.strayAbsolute || null,
     verified: !!u.r.verified,
   }));

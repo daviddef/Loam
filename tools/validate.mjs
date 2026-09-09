@@ -11,6 +11,18 @@ const bedrock  = load('bedrock.json');
 const labels   = load('labels.json');
 
 const errors = [];
+/* Rows whose own subject is writing in another script. Reviewed, with reasons. */
+const SCRIPT_OK = {
+  golem: 'the fact IS the Hebrew letters — emet becomes met when the aleph is rubbed out',
+};
+const FOREIGN_RUN = /[^\p{Script=Latin}\p{Script=Common}\p{Script=Inherited}]{2,}/u;
+function scriptCheck(at, text, id) {
+  if (!text || (id && SCRIPT_OK[id])) return;
+  const m = FOREIGN_RUN.exec(text);
+  if (m) err(`${at}: prose contains "${m[0]}" — a word in another script`);
+}
+
+
 const warns  = [];
 const err  = (m) => errors.push(m);
 /* A warning with a `kind` can be summarised rather than enumerated. The dead-end
@@ -43,6 +55,7 @@ for (const e of elements) {
   if (!e.name)  err(`${e.id}: missing name`);
   if (!e.emoji) err(`${e.id}: missing emoji`);
   if (!e.fact)  err(`${e.id}: missing fact`);
+  scriptCheck(e.id, e.fact, e.id);
   if (!['workshop', 'folklore'].includes(e.shelf)) err(`${e.id}: bad shelf "${e.shelf}"`);
   if (e.fact && e.fact.length > 110) warn(`${e.id}: fact is ${e.fact.length} chars (aim <110 for one card line)`, 'longfact');
   // Aliases are display-only. If one ever becomes an id, a sourced recipe would
@@ -93,6 +106,17 @@ for (const [i, r] of recipes.entries()) {
   if (!r.src) err(`${at}: missing src — every claim must be checkable`);
   else if (!/^https:\/\//.test(r.src)) err(`${at}: src must be an https URL`);
   if (r.why && r.why.length > 260) warn(`${at}: why is ${r.why.length} chars (aim <260 to fit a card)`, 'longwhy');
+  /* A WORD IN ANOTHER SCRIPT IS A MISTAKE NOTHING ELSE HERE WOULD CATCH.
+   *
+   * A batch edit on 9 Sep put the Russian word "построение" into the
+   * cytomegalovirus row. It survived every gate: validate checks structure,
+   * the source audit checks numbers and names, and not one of them asks
+   * whether the sentence is in English. It was caught by eye, which is not a
+   * system.
+   *
+   * A single non-Latin letter is a symbol — alpha and beta appear in the sugar
+   * chemistry rows and belong there. A RUN of two or more is a word. */
+  scriptCheck(at, r.why);
   if (!byId.has(r.out)) err(`${at}: output "${r.out}" has no element entry`);
   for (const i2 of r.in) if (!byId.has(i2)) err(`${at}: input "${i2}" has no element entry`);
 
