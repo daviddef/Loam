@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Integrity + playability checks on the recipe graph.
 // Exits non-zero on any error. Warnings are informational.
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 const load = (f) => JSON.parse(readFileSync(new URL(`../data/${f}`, import.meta.url), 'utf8'));
 const elements = load('elements.json');
@@ -158,6 +158,39 @@ for (const [i, r] of recipes.entries()) {
     }
     banded.set(base, now);
   }
+}
+
+/* THE BACKLOG'S HEADER MUST AGREE WITH ITS OWN BODY.
+ *
+ * `--backlog` writes the counters and the rows in one pass, so they cannot
+ * disagree — but the cloud routine cannot run the audit and prunes the file by
+ * hand, and a hand-prune updates what it remembers to. One run left
+ * `verified_rows: 548` on a file holding 542 rows: more verified rows than
+ * rows, which is arithmetically impossible, and nothing noticed. A snapshot
+ * that misreports itself is the same fault as a stale snapshot wearing a
+ * neater shirt.
+ *
+ * The file is private and absent from the public clone, so this is skipped when
+ * it is not there rather than failing the published build. */
+const backlogPath = new URL('../data/audit-backlog.json', import.meta.url);
+if (existsSync(backlogPath)) {
+  const L = JSON.parse(readFileSync(backlogPath, 'utf8'));
+  const rows = L.backlog ?? [];
+  const actual = {
+    rows: rows.length,
+    verified_rows: rows.filter((r) => r.verified).length,
+    numbers: rows.filter((r) => r.missing_numbers).length,
+    names: rows.filter((r) => r.missing_names).length,
+    absolutes: rows.filter((r) => r.our_absolute).length,
+  };
+  const claimed = { rows: L.rows, verified_rows: L.verified_rows, ...(L.flags ?? {}) };
+  for (const [k, want] of Object.entries(actual)) {
+    if (claimed[k] !== undefined && claimed[k] !== want) {
+      err(`audit-backlog.json says ${k}=${claimed[k]} but its rows give ${want} — re-run --backlog, or fix the header you pruned`);
+    }
+  }
+  const orphan = rows.filter((r) => !r.gesture || !r.cited);
+  if (orphan.length) err(`audit-backlog.json: ${orphan.length} row(s) missing gesture or cited`);
 }
 
 // ---- bedrock --------------------------------------------------------------

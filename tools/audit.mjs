@@ -593,6 +593,12 @@ const ABSOLUTE_CLEARED = {
   'butterfly+pupa': '"the first" is a pro-form for the cocoon named one clause earlier',
   'mesosoma+metasoma': 'idiom: the question a key asks first, not a claim about keys',
   'cell+cerebral_cortex': 'idiom: the first thing a reader notices',
+  'bacteria+glass': 'definitional: fomite ferries between people who never touched directly',
+  'drug+nerve': 'idiom: not sensitised in the first place',
+  'light+sun': 'ordinal within journey: the first half-million kilometres of the crossing',
+  'leaf|heat': 'comparing variants the sentence itself names (green, oolong, black)',
+  'sand|crush': 'idiom: how silt gets made in the first place',
+  'conveyor_belt+port_stockpile': 'idiom: lays ore in the first place',
 };
 
 const ABSOLUTES = [
@@ -981,17 +987,37 @@ if (failures) {
  * a complete sweep, because a partial one would silently drop every row the
  * sweep never reached — which is the same stale-snapshot fault wearing a
  * different hat. */
-/** Names whose stem the article does carry — see name_maybe_adjectival. */
+/** Names the article carries in another shape — see name_maybe_adjectival.
+ *
+ * First version stripped a suffix off OUR word and looked for that stem, which
+ * caught Gondwanan/Gondwana but missed most of them: Greeks/Greek (no suffix in
+ * the list), Andes/Andean and Britain/British (the derivation runs the other
+ * way), Harpagos/Harpagus (a transliteration, not a suffix at all). It found 20
+ * of 221 where a hand pass found eight in twenty.
+ *
+ * So: share a prefix of four or more characters with some word in the article,
+ * with neither word more than five characters past the shared part. That is
+ * loose enough to catch a transliteration and tight enough that the reader can
+ * dismiss a bad one instantly — which is all a hint has to be. It clears
+ * nothing; the row still counts as flagged.
+ */
 function adjectivalHint(names, article) {
   if (!article || !names.length) return null;
   const bare = x => x.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC').toLowerCase();
   const low = bare(article);
   const out = [];
   for (const nm of names) {
-    const stem = bare(nm).replace(/(ian|ean|ese|ish|ic|an|n)$/, '');
-    if (stem.length < 5 || !low.includes(stem)) continue;
-    const m = new RegExp(`\\b${stem}[a-z]*`, 'i').exec(bare(article));
-    out.push(`${nm}~${m ? m[0] : stem}`);
+    const n = bare(nm);
+    if (n.length < 4) continue;
+    if (low.includes(n)) continue;                    // present outright: not this case
+    for (let k = Math.min(n.length, 12); k >= 4; k--) {
+      const pfx = n.slice(0, k);
+      const m = new RegExp(`\\b${pfx.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[a-z]*`).exec(low);
+      if (!m) continue;
+      if (n.length - k > 5 || m[0].length - k > 5) continue;
+      out.push(`${nm}~${m[0]}`);
+      break;
+    }
   }
   return out.length ? out.join(', ') : null;
 }

@@ -207,6 +207,17 @@
         "seal"
       ]
     },
+    "airbag": {
+      "src": "https://en.wikipedia.org/wiki/Airbag",
+      "note": "The bag itself is nylon, and the whole inflation takes about 50 milliseconds.",
+      "needs": [
+        "bag",
+        "inflator",
+        "sensor",
+        "igniter",
+        "housing"
+      ]
+    },
     "airframe": {
       "src": "https://en.wikipedia.org/wiki/Airframe",
       "note": "The structure, with the engines and everything else taken off.",
@@ -218,6 +229,18 @@
         "bulkhead",
         "longeron",
         "rivet"
+      ]
+    },
+    "airlock": {
+      "src": "https://en.wikipedia.org/wiki/Airlock",
+      "note": "A chamber with two hatches that never open at the same time.",
+      "needs": [
+        "chamber",
+        "hatch",
+        "seal",
+        "pump",
+        "pressure_gauge",
+        "interlock"
       ]
     },
     "airplane": {
@@ -454,6 +477,17 @@
         "mast",
         "guy_wire",
         "ground_plane"
+      ]
+    },
+    "anti_roll_bar": {
+      "src": "https://en.wikipedia.org/wiki/Anti-roll_bar",
+      "note": "A torsion bar linking opposite wheels — does nothing until the car leans.",
+      "needs": [
+        "torsion_bar",
+        "end_link",
+        "bushing",
+        "bracket",
+        "steel"
       ]
     },
     "antikythera_mechanism": {
@@ -869,6 +903,16 @@
         "muffler"
       ]
     },
+    "awning": {
+      "src": "https://en.wikipedia.org/wiki/Awning",
+      "needs": [
+        "fabric|canvas",
+        "frame",
+        "arm",
+        "bracket",
+        "rope|cord"
+      ]
+    },
     "axe": {
       "src": "https://en.wikipedia.org/wiki/Axe",
       "needs": [
@@ -1170,6 +1214,16 @@
         "ravelin",
         "sally_port",
         "powder_magazine"
+      ]
+    },
+    "bath": {
+      "src": "https://en.wikipedia.org/wiki/Bathtub",
+      "needs": [
+        "tub",
+        "tap|faucet",
+        "drain",
+        "overflow",
+        "plug"
       ]
     },
     "bathtub": {
@@ -1716,6 +1770,17 @@
         "heat_sink"
       ]
     },
+    "brake_lever": {
+      "src": "https://en.wikipedia.org/wiki/Bicycle_brake#Brake_levers",
+      "needs": [
+        "lever",
+        "pivot",
+        "cable_anchor",
+        "spring",
+        "grip",
+        "barrel_adjuster"
+      ]
+    },
     "brake_pad": {
       "src": "https://en.wikipedia.org/wiki/Brake_pad",
       "note": "Friction material on a steel backing, chosen to wear instead of the disc.",
@@ -2156,6 +2221,19 @@
         "hopper",
         "apron_feeder",
         "dust_suppression"
+      ]
+    },
+    "caravanserai": {
+      "src": "https://en.wikipedia.org/wiki/Caravanserai",
+      "note": "A courtyard inn for caravans, spaced a day's walk apart along trade routes.",
+      "needs": [
+        "wall",
+        "gate",
+        "courtyard",
+        "cell|room",
+        "stable",
+        "well",
+        "iwan"
       ]
     },
     "caravel": {
@@ -2882,6 +2960,17 @@
         "capital"
       ]
     },
+    "combustion_chamber": {
+      "src": "https://en.wikipedia.org/wiki/Combustion_chamber",
+      "needs": [
+        "chamber_wall",
+        "cooling_channel",
+        "injector_face",
+        "throat",
+        "liner",
+        "igniter"
+      ]
+    },
     "combustor": {
       "src": "https://en.wikipedia.org/wiki/Combustor",
       "needs": [
@@ -2894,6 +2983,20 @@
         "igniter",
         "diffuser",
         "cooling_film_hole"
+      ]
+    },
+    "command_module": {
+      "src": "https://en.wikipedia.org/wiki/Apollo_command_module",
+      "note": "The only part of Apollo that returned — a cone wrapped in a heat shield.",
+      "needs": [
+        "pressure_vessel",
+        "heat_shield",
+        "couch",
+        "instrument_panel",
+        "hatch",
+        "parachute",
+        "reaction_control_thruster",
+        "docking_probe"
       ]
     },
     "communications_satellite": {
@@ -3092,6 +3195,19 @@
         "stage"
       ]
     },
+    "connecting_rod": {
+      "src": "https://en.wikipedia.org/wiki/Connecting_rod",
+      "note": "The link between a piston going up and down and a crank going round.",
+      "needs": [
+        "rod|beam",
+        "big_end",
+        "small_end",
+        "bearing",
+        "cap",
+        "bolt",
+        "bushing"
+      ]
+    },
     "contact_tracing": {
       "src": "https://en.wikipedia.org/wiki/Contact_tracing",
       "note": "Following an infection backwards and forwards through the people it touched.",
@@ -3124,6 +3240,16 @@
         "hydraulic_cylinder",
         "motor",
         "dust_suppression"
+      ]
+    },
+    "control_arm": {
+      "src": "https://en.wikipedia.org/wiki/Control_arm",
+      "needs": [
+        "arm",
+        "bushing",
+        "ball_joint",
+        "bracket",
+        "bolt"
       ]
     },
     "control_tower": {
@@ -3421,6 +3547,17 @@
         "enamel",
         "chasing",
         "soldering"
+      ]
+    },
+    "crumple_zone": {
+      "src": "https://en.wikipedia.org/wiki/Crumple_zone",
+      "note": "Structure designed to fail predictably, turning kinetic energy into bent metal.",
+      "needs": [
+        "crush_box",
+        "rail",
+        "subframe",
+        "weld",
+        "steel"
       ]
     },
     "crusher": {
@@ -3886,6 +4023,17 @@
         "fender",
         "crane",
         "rail"
+      ]
+    },
+    "docking_port": {
+      "src": "https://en.wikipedia.org/wiki/Docking_and_berthing_of_spacecraft",
+      "needs": [
+        "ring",
+        "latch",
+        "seal",
+        "guide",
+        "electrical_connector",
+        "capture_mechanism"
       ]
     },
     "doctor": {
@@ -4546,6 +4694,17 @@
         "heat_shield"
       ]
     },
+    "expansion_valve": {
+      "src": "https://en.wikipedia.org/wiki/Thermal_expansion_valve",
+      "note": "The sensing bulb reads temperature at the evaporator outlet and adjusts the orifice to keep superheat constant.",
+      "needs": [
+        "orifice",
+        "diaphragm",
+        "spring",
+        "sensing_bulb",
+        "capillary_tube"
+      ]
+    },
     "extruder": {
       "src": "https://en.wikipedia.org/wiki/Extrusion",
       "note": "A screw in a heated barrel, pushing a melt through a shaped die.",
@@ -5037,6 +5196,18 @@
         "latch",
         "feedback",
         "register"
+      ]
+    },
+    "float_chamber": {
+      "src": "https://en.wikipedia.org/wiki/Carburetor#Float_chamber",
+      "note": "A small tank whose float closes the inlet when full, keeping fuel level constant.",
+      "needs": [
+        "chamber",
+        "float",
+        "needle_valve",
+        "inlet",
+        "outlet",
+        "pivot"
       ]
     },
     "floor": {
@@ -5541,6 +5712,16 @@
         "strap"
       ]
     },
+    "gear_train": {
+      "src": "https://en.wikipedia.org/wiki/Gear_train",
+      "needs": [
+        "gear",
+        "shaft",
+        "bearing",
+        "housing",
+        "key"
+      ]
+    },
     "gearbox": {
       "src": "https://en.wikipedia.org/wiki/Transmission_(mechanical_device)",
       "needs": [
@@ -5786,6 +5967,18 @@
         "rat_guard"
       ]
     },
+    "great_bath": {
+      "src": "https://en.wikipedia.org/wiki/Great_Bath",
+      "note": "Bitumen waterproofing on the inside and a corbelled drain to carry the water out.",
+      "needs": [
+        "brick",
+        "bitumen",
+        "mortar",
+        "drain",
+        "step",
+        "well"
+      ]
+    },
     "great_house": {
       "src": "https://en.wikipedia.org/wiki/Chaco_Culture_National_Historical_Park",
       "note": "Pueblo Bonito had 600+ rooms in a single planned build — nothing that size was built north of Mexico for another 800 years.",
@@ -5829,6 +6022,18 @@
         "staging|bench",
         "base",
         "heating"
+      ]
+    },
+    "guidance_computer": {
+      "src": "https://en.wikipedia.org/wiki/Apollo_Guidance_Computer",
+      "note": "Core rope memory woven by hand — the program literally wired in.",
+      "needs": [
+        "core_rope_memory",
+        "erasable_memory",
+        "processor",
+        "dsky|display_keyboard",
+        "inertial_measurement_unit",
+        "power_supply"
       ]
     },
     "guitar": {
@@ -6336,6 +6541,16 @@
         "edge"
       ]
     },
+    "honeycomb": {
+      "src": "https://en.wikipedia.org/wiki/Honeycomb",
+      "note": "Hexagonal wax cells — the most efficient way to tile a plane with uniform cells.",
+      "needs": [
+        "beeswax",
+        "cell",
+        "cap",
+        "midrib"
+      ]
+    },
     "hopper": {
       "src": "https://en.wikipedia.org/wiki/Hopper_(container)",
       "note": "Sloping sides so what is put in feeds itself out.",
@@ -6683,6 +6898,17 @@
         "laminations"
       ]
     },
+    "injector": {
+      "src": "https://en.wikipedia.org/wiki/Injector_(rocket)",
+      "note": "Where fuel and oxidiser meet — mixing completely in a millisecond.",
+      "needs": [
+        "injector_plate",
+        "orifice",
+        "manifold",
+        "valve",
+        "seal"
+      ]
+    },
     "ink": {
       "src": "https://en.wikipedia.org/wiki/Ink",
       "note": "A colourant, something to carry it, and something to make it stay.",
@@ -6850,6 +7076,18 @@
         "circuit_board"
       ]
     },
+    "iwan": {
+      "src": "https://en.wikipedia.org/wiki/Iwan",
+      "note": "A vaulted hall open on one side — four of them around a courtyard is the classic Persian plan.",
+      "needs": [
+        "vault",
+        "arch",
+        "wall",
+        "column",
+        "floor",
+        "brick|stone"
+      ]
+    },
     "jacket": {
       "src": "https://en.wikipedia.org/wiki/Jacket",
       "needs": [
@@ -6980,6 +7218,18 @@
         "deck",
         "timber|plank",
         "brace"
+      ]
+    },
+    "jib": {
+      "src": "https://en.wikipedia.org/wiki/Jib_(crane)",
+      "note": "The arm that reaches out — and everything about stability is a moment about its base.",
+      "needs": [
+        "boom",
+        "trolley",
+        "hook",
+        "cable",
+        "pulley",
+        "luffing_cylinder"
       ]
     },
     "jpeg": {
@@ -7801,6 +8051,22 @@
         "terminal"
       ]
     },
+    "lunar_module": {
+      "src": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+      "note": "A spacecraft that never needed to be streamlined — it only flew in vacuum.",
+      "needs": [
+        "descent_stage",
+        "ascent_stage",
+        "landing_leg",
+        "descent_engine",
+        "ascent_engine",
+        "reaction_control_thruster",
+        "hatch",
+        "ladder",
+        "fuel_tank",
+        "oxidiser_tank"
+      ]
+    },
     "lyre": {
       "src": "https://en.wikipedia.org/wiki/Lyre",
       "note": "A soundbox, two arms, a crossbar, and strings you can tune.",
@@ -7980,6 +8246,16 @@
         "insulation",
         "capacitor_bank",
         "switch"
+      ]
+    },
+    "magnetometer": {
+      "src": "https://en.wikipedia.org/wiki/Magnetometer",
+      "needs": [
+        "sensor",
+        "coil|fluxgate",
+        "electronics",
+        "housing",
+        "calibration_reference"
       ]
     },
     "magnetron": {
@@ -8232,6 +8508,20 @@
         "half_life"
       ]
     },
+    "microcontroller": {
+      "src": "https://en.wikipedia.org/wiki/Microcontroller",
+      "note": "A whole computer on one chip, embedded in things nobody thinks of as computers.",
+      "needs": [
+        "cpu",
+        "flash_memory",
+        "ram",
+        "peripheral",
+        "oscillator",
+        "adc",
+        "gpio",
+        "package"
+      ]
+    },
     "microphone": {
       "src": "https://en.wikipedia.org/wiki/Microphone",
       "note": "The diaphragm's motion becomes an electrical signal — dynamic mics use a coil in a magnetic field.",
@@ -8291,6 +8581,18 @@
         "control_panel",
         "door",
         "interlock|safety_switch"
+      ]
+    },
+    "mihrab": {
+      "src": "https://en.wikipedia.org/wiki/Mihrab",
+      "note": "A niche indicating the qibla — the direction of prayer.",
+      "needs": [
+        "niche",
+        "arch",
+        "tile|mosaic",
+        "calligraphy",
+        "frame",
+        "stone|plaster"
       ]
     },
     "millrace": {
@@ -9055,6 +9357,18 @@
         "interconnect"
       ]
     },
+    "orb_web": {
+      "src": "https://en.wikipedia.org/wiki/Spider_web#Orb_web",
+      "note": "Radial threads the spider walks on, and a sticky spiral it never touches.",
+      "needs": [
+        "silk",
+        "frame_thread",
+        "radial_thread",
+        "spiral_thread",
+        "hub",
+        "anchor"
+      ]
+    },
     "orchestra": {
       "src": "https://en.wikipedia.org/wiki/Orchestra",
       "needs": [
@@ -9117,6 +9431,16 @@
         "quarantine",
         "vector",
         "population"
+      ]
+    },
+    "outrigger": {
+      "src": "https://en.wikipedia.org/wiki/Outrigger_(vehicle)",
+      "needs": [
+        "beam",
+        "pad|float",
+        "hydraulic_cylinder",
+        "pivot",
+        "lock"
       ]
     },
     "oxo_degradable_plastic": {
@@ -10076,6 +10400,26 @@
         "stroke"
       ]
     },
+    "presser_foot": {
+      "src": "https://en.wikipedia.org/wiki/Presser_foot",
+      "needs": [
+        "foot",
+        "shank",
+        "spring",
+        "screw",
+        "slot"
+      ]
+    },
+    "pressure_plate": {
+      "src": "https://en.wikipedia.org/wiki/Clutch",
+      "note": "The spring pushes the plate against the friction disc; pressing the pedal releases that pressure.",
+      "needs": [
+        "plate",
+        "diaphragm_spring|coil_spring",
+        "cover",
+        "release_lever"
+      ]
+    },
     "printer": {
       "src": "https://en.wikipedia.org/wiki/Printer_(computing)",
       "needs": [
@@ -10475,6 +10819,15 @@
         "peen"
       ]
     },
+    "ratchet": {
+      "src": "https://en.wikipedia.org/wiki/Ratchet_(device)",
+      "needs": [
+        "wheel|gear",
+        "pawl",
+        "spring",
+        "axle"
+      ]
+    },
     "read_only_memory": {
       "src": "https://en.wikipedia.org/wiki/Read-only_memory",
       "note": "The pattern is fixed at fabrication, which is why the data survives the power going off.",
@@ -10602,6 +10955,15 @@
         "latch"
       ]
     },
+    "release_bearing": {
+      "src": "https://en.wikipedia.org/wiki/Clutch",
+      "note": "The fork pushes the bearing against the diaphragm spring's fingers.",
+      "needs": [
+        "bearing",
+        "collar",
+        "sleeve"
+      ]
+    },
     "repeating_crossbow": {
       "src": "https://en.wikipedia.org/wiki/Repeating_crossbow",
       "note": "A gravity-fed magazine of bolts, worked by one lever — faster but weaker than a hand-drawn crossbow.",
@@ -10645,6 +11007,17 @@
         "body|cone",
         "soundhole|aperture",
         "wood|metal"
+      ]
+    },
+    "retaining_wall": {
+      "src": "https://en.wikipedia.org/wiki/Retaining_wall",
+      "note": "Weep holes let water through so hydrostatic pressure does not push the wall over.",
+      "needs": [
+        "foundation",
+        "wall",
+        "drainage",
+        "weep_hole",
+        "backfill"
       ]
     },
     "retort": {
@@ -10830,6 +11203,18 @@
         "chassis"
       ]
     },
+    "rtg": {
+      "src": "https://en.wikipedia.org/wiki/Radioisotope_thermoelectric_generator",
+      "note": "No moving parts — heat from decay, electricity from the temperature difference.",
+      "needs": [
+        "heat_source",
+        "thermocouple",
+        "radiator",
+        "housing",
+        "insulation",
+        "plutonium_238|strontium_90"
+      ]
+    },
     "rubber_stamp": {
       "src": "https://en.wikipedia.org/wiki/Rubber_stamp",
       "needs": [
@@ -10975,6 +11360,22 @@
         "stile",
         "rail",
         "parting_bead"
+      ]
+    },
+    "saturn_v": {
+      "src": "https://en.wikipedia.org/wiki/Saturn_V",
+      "note": "Three stages, 111 metres, and still the largest thing ever to fly.",
+      "needs": [
+        "s_ic|first_stage",
+        "s_ii|second_stage",
+        "s_ivb|third_stage",
+        "instrument_unit",
+        "f1_engine",
+        "j2_engine",
+        "fuel_tank",
+        "oxidiser_tank",
+        "fairing",
+        "launch_escape_system"
       ]
     },
     "saucepan": {
@@ -11473,6 +11874,16 @@
         "grip"
       ]
     },
+    "shower": {
+      "src": "https://en.wikipedia.org/wiki/Shower",
+      "needs": [
+        "showerhead",
+        "valve",
+        "pipe",
+        "drain",
+        "enclosure|curtain"
+      ]
+    },
     "shutter": {
       "src": "https://en.wikipedia.org/wiki/Shutter_(photography)",
       "note": "Blades that open and close fast enough to freeze motion, and a mechanism that times them.",
@@ -11895,6 +12306,17 @@
         "housing"
       ]
     },
+    "spectrometer": {
+      "src": "https://en.wikipedia.org/wiki/Spectrometer",
+      "needs": [
+        "slit",
+        "grating|prism",
+        "detector",
+        "mirror",
+        "housing",
+        "calibration_source"
+      ]
+    },
     "speedometer": {
       "src": "https://en.wikipedia.org/wiki/Speedometer",
       "needs": [
@@ -12044,6 +12466,17 @@
         "iron|saddle_bar",
         "tie_wire",
         "cartoon|pattern"
+      ]
+    },
+    "stair": {
+      "src": "https://en.wikipedia.org/wiki/Stairs",
+      "note": "The stringer carries the load; the tread and riser are the steps.",
+      "needs": [
+        "tread",
+        "riser",
+        "stringer",
+        "newel",
+        "handrail"
       ]
     },
     "stairs": {
@@ -12226,6 +12659,17 @@
         "face_stock",
         "adhesive",
         "release_liner"
+      ]
+    },
+    "still": {
+      "src": "https://en.wikipedia.org/wiki/Still",
+      "note": "Heat here, cool there, catch what comes over — the pot, the head, and the worm.",
+      "needs": [
+        "pot|boiler",
+        "head|cap",
+        "lyne_arm",
+        "condenser|worm",
+        "receiver"
       ]
     },
     "stirrup": {
@@ -12693,6 +13137,16 @@
         "shaft"
       ]
     },
+    "tailgate": {
+      "src": "https://en.wikipedia.org/wiki/Tailgate",
+      "needs": [
+        "panel",
+        "hinge",
+        "latch",
+        "chain|cable",
+        "handle"
+      ]
+    },
     "tailings_dam": {
       "src": "https://en.wikipedia.org/wiki/Tailings_dam",
       "note": "Designed to hold its contents forever — often raised using the tailings themselves as fill.",
@@ -12928,6 +13382,19 @@
         "insulator|plastic"
       ]
     },
+    "termite_mound": {
+      "src": "https://en.wikipedia.org/wiki/Mound-building_termites",
+      "note": "Soil, saliva and dung shaped into a chimney — the colony lives beneath it.",
+      "needs": [
+        "soil",
+        "saliva",
+        "dung",
+        "fungus_garden",
+        "royal_chamber",
+        "nursery",
+        "ventilation_shaft"
+      ]
+    },
     "tesla_coil": {
       "src": "https://en.wikipedia.org/wiki/Tesla_coil",
       "note": "Two coils tuned to the same resonant frequency step a spark-gap pulse up to millions of volts.",
@@ -12991,6 +13458,16 @@
         "terminal"
       ]
     },
+    "thermometer": {
+      "src": "https://en.wikipedia.org/wiki/Thermometer",
+      "needs": [
+        "sensing_element",
+        "scale",
+        "housing",
+        "fluid|bimetal|thermocouple",
+        "bulb"
+      ]
+    },
     "thin_film_transistor": {
       "src": "https://en.wikipedia.org/wiki/Thin-film_transistor",
       "needs": [
@@ -13002,6 +13479,17 @@
         "drain_electrode",
         "passivation_layer",
         "indium_tin_oxide"
+      ]
+    },
+    "thruster": {
+      "src": "https://en.wikipedia.org/wiki/Reaction_control_system",
+      "note": "A small engine for pointing rather than propelling.",
+      "needs": [
+        "chamber",
+        "nozzle",
+        "valve",
+        "propellant_feed",
+        "heater"
       ]
     },
     "tiger_tank": {
@@ -13086,6 +13574,17 @@
         "seat",
         "flapper",
         "wax_ring"
+      ]
+    },
+    "tomb": {
+      "src": "https://en.wikipedia.org/wiki/Tomb",
+      "needs": [
+        "chamber",
+        "entrance",
+        "sarcophagus|coffin",
+        "covering|mound",
+        "lintel",
+        "seal"
       ]
     },
     "tongs": {
@@ -13628,6 +14127,20 @@
         "propeller",
         "nacelle",
         "fuel_control"
+      ]
+    },
+    "turbopump": {
+      "src": "https://en.wikipedia.org/wiki/Turbopump",
+      "note": "A pump driven by a turbine burning what it is pumping.",
+      "needs": [
+        "turbine",
+        "pump",
+        "shaft",
+        "bearing",
+        "seal",
+        "inducer",
+        "impeller",
+        "housing"
       ]
     },
     "typewriter": {
@@ -14584,6 +15097,7 @@
     "address_line",
     "adherence",
     "adhesion",
+    "adhesive",
     "adjuster",
     "adjustment",
     "admixture",
@@ -14677,6 +15191,7 @@
     "branching",
     "breastplate",
     "breech",
+    "bridge_instrument",
     "brim",
     "broach",
     "brow_reinforce",
@@ -14746,6 +15261,7 @@
     "cinematography",
     "circle",
     "circlip",
+    "circuit",
     "clamp",
     "clasp",
     "clay_lining",
@@ -14842,6 +15358,7 @@
     "detergent",
     "diagonal_board",
     "diameter",
+    "diaphragm_spring",
     "didgeridoo",
     "diene",
     "diesel_electric_drive",
@@ -14867,6 +15384,7 @@
     "drip",
     "drive_square",
     "driver",
+    "driver_pin",
     "drop",
     "droplet",
     "drum",
@@ -14889,7 +15407,9 @@
     "ensign",
     "entasis",
     "enterprise_resource_planning",
+    "epoxy",
     "epoxy_resin",
+    "escape_wheel",
     "escutcheon",
     "ethernet",
     "eviction_policy",
@@ -14952,6 +15472,7 @@
     "frame",
     "frankincense_tree",
     "fret",
+    "friction_disc",
     "frozen_zoo",
     "fulcrum",
     "fulling",
@@ -14978,6 +15499,7 @@
     "graft",
     "gram_stain",
     "granite",
+    "grate",
     "grater",
     "gravel",
     "gravity_separation",
@@ -14998,6 +15520,7 @@
     "gum_arabic_tree",
     "gusset",
     "haft",
+    "hairspring",
     "hammurabi_code",
     "handover",
     "hardening",
@@ -15044,6 +15567,7 @@
     "imax_3d_projection",
     "impairment",
     "impedance",
+    "impeller",
     "impost",
     "impression",
     "impulse",
@@ -15079,6 +15603,7 @@
     "keeper",
     "kerb",
     "kerning",
+    "key_pin",
     "keyboard",
     "keystone",
     "keyway",
@@ -15136,6 +15661,7 @@
     "material",
     "material_requirements_planning",
     "maze",
+    "mdf",
     "measure",
     "medical_doctor",
     "medical_screening",
@@ -15178,11 +15704,13 @@
     "net",
     "neutral_buoyancy",
     "niche",
+    "nipple",
     "nitrile_rubber",
     "nitro_group",
     "nitroimidazole",
     "nock",
     "nymphaeum",
+    "o_ring",
     "obsidian",
     "odometer",
     "office",
@@ -15220,6 +15748,7 @@
     "peel",
     "peen",
     "pellet",
+    "penstock",
     "permission",
     "pet_scan",
     "ph_adjuster",
@@ -15240,6 +15769,7 @@
     "plinth",
     "plug",
     "plumber",
+    "plywood",
     "point",
     "pointer",
     "pole",
@@ -15256,6 +15786,7 @@
     "preservative",
     "pressing",
     "pressure_drop",
+    "primary_mirror",
     "primer",
     "principal",
     "prism",
@@ -15306,6 +15837,7 @@
     "render",
     "rendering_engine",
     "reserve",
+    "resin_composite",
     "resolver",
     "resonator",
     "resource_estimation",
@@ -15352,6 +15884,7 @@
     "scupper",
     "sealant",
     "seam",
+    "secondary_mirror",
     "select_line",
     "selvage",
     "semiconductor",
@@ -15366,6 +15899,7 @@
     "shank",
     "share",
     "shear_line",
+    "sheave",
     "sheet_metal",
     "shingle",
     "ships_captain",
@@ -15551,6 +16085,7 @@
     "varnish",
     "vendor_managed_inventory",
     "veneer",
+    "vent",
     "ventilation",
     "venue",
     "veterinarian",
