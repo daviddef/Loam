@@ -158,7 +158,22 @@ async function renderedText(title) {
 function stripApparatus(wikitext) {
   let s = wikitext
     .replace(/<ref\b[^>]*\/>/gi, ' ')
-    .replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, ' ');
+    .replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, ' ')
+    /* LAYOUT AND NAVIGATION FURNITURE ASSERTS NOTHING EITHER.
+     * Reading the rescued list turned up the same shape as the footnotes:
+     *   zodiac  "around 400 BCE"        cleared by  [[File:...|thumb|400px|...]]
+     *   altair  "only 17 light-years"   cleared by  {{Sky|19|50|46.9990|+|08|52|05.959|17}}
+     *   aztec   "by the 15th century"   cleared by  [[Category:15th-century establishments...]]
+     * An image's display width in pixels and a sky-coordinate parameter are not
+     * claims about anything. Note what is NOT stripped: the image CAPTION, which
+     * is the article's own text and carries real facts — Vaishnavism's Heliodorus
+     * pillar "in 110 BCE" and Darwin's notebook page "c. July 1837" are both
+     * captions, and both are the article genuinely saying so. Only the furniture
+     * around the caption goes. `px` is never a unit in prose about a subject. */
+    .replace(/\b\d+\s*px\b/gi, ' ')
+    .replace(/\b(?:upright|image_size|imagesize)\s*=\s*"?[\d.]+"?/gi, ' ')
+    .replace(/\{\{\s*(?:sky|coord|coords)\b[^{}]*\}\}/gi, ' ')
+    .replace(/\[\[\s*Category\s*:[^\]]*\]\]/gi, ' ');
   /* Citation templates, brace-matched: a {{cite}} can contain {{nested}} ones,
    * and a non-greedy /\{\{cite[\s\S]*?\}\}/ stops at the inner closer and
    * leaves the tail of the citation behind — which is where the dates are. */
@@ -688,6 +703,12 @@ if (process.argv.includes('--selftest')) {
     ['The snow line sits at 4,500 m.', '4,500', true,  'plain body prose is untouched'],
     ['text\n== References ==\n{{reflist}}\n{{cite journal |volume=99}}', '99', false, 'a reflist carries nothing; the cite is stripped'],
     ['{{cite news |date=13 November 2017}} and the body says 13% alcohol', '13', true, 'a real body mention still clears'],
+    ['[[File:Coin.jpg|thumb|400px|Roman Egyptian coin]] the zodiac', '400', false, 'an image width is not a date'],
+    ['{{Sky|19|50|46.9990|+|08|52|05.959|17}} Altair', '17', false, 'a sky coordinate is not a distance'],
+    ['[[Category:15th-century establishments]] the Aztec empire', '15', false, 'a category tag is navigation'],
+    ['[[File:Pillar.jpg|thumb|The Heliodorus pillar, made in 110 BCE]]', '110', true,  'but the CAPTION is the article speaking'],
+    ['{{Automatic taxobox | fossil_range = {{Fossil range|168|34}} }}', '34', true,  'a data template still clears'],
+    ['<gallery heights="250px">File:X.png|Darwin, July 1837</gallery>', '1837', true, 'gallery captions survive the px strip'],
   ];
   for (const [wikitext, needle, want, why] of APP) {
     const stripped = stripApparatus(wikitext);

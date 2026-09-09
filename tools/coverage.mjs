@@ -25,6 +25,7 @@
 import { readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { titleOf as wikiTitleOf } from './lib/wiki.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, 'data', p), 'utf8'));
@@ -111,15 +112,28 @@ if (has('roles.json')) {
   add('roles', Object.keys(roles).length, elements.length,
       'what each noun is to a making — drives places.mjs and roles.mjs --derives');
 }
-/* The audit only ever looks at a recipe whose prose carries a number, because a
- * number is the part of a sentence a source can be checked against mechanically.
- * That is a defensible design and it is also a coverage ceiling, and the ceiling
- * has never been stated anywhere the reader could see it. */
-const numeric = recipes.filter(r => /\d/.test(r.why || '') || r.at != null);
-add('source audit', numeric.length, recipes.length,
-    'only recipes whose prose contains a number');
+/* THIS ROW READ 37% AND MEASURED THE WRONG THING.
+ *
+ * It counted recipes whose prose carries a number, which was the audit's scope
+ * when it could only check figures. It has not been run that way for a long
+ * time: `audit.mjs --terms --all` checks the names and the absolutes in every
+ * claim too, so the real ceiling is not "has a number" but "cites an article
+ * this tool can read". Reporting 37% for a mechanism that had examined nearly
+ * everything understated its reach by a factor of three — and understating a
+ * check is not the safe direction either, because it hides that the green is
+ * already broad. A bare `audit.mjs` with no flags still does numbers only. */
+const readable = recipes.filter(r => wikiTitleOf(r.src));
+add('source audit', readable.length, recipes.length,
+    'recipes citing an article the tool can read — `--terms --all` checks all of them');
+
+/* NOT A COVERAGE ROW, AND IT SITS HERE ONLY SO IT CANNOT BE MISTAKEN FOR ONE.
+ *
+ * A tick means a person looked. It does not mean the claim matches its source:
+ * the overwhelming majority of the rows the audit currently flags are marked
+ * verified, which is the single most useful thing this table has ever shown.
+ * Read it as a measure of attention paid, never of accuracy achieved. */
 add('  verified flag', recipes.filter(r => r.verified).length, recipes.length,
-    'recipes a person has marked checked');
+    'a person ticked it — attention paid, NOT accuracy: most flagged rows are ticked');
 
 if (has('places.json')) {
   const P = read('places.json');
