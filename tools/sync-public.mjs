@@ -120,6 +120,15 @@ const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md
                // which is exactly what it is for; anchoring the folders too is
                // what makes a future move safe.
                /^docs\//, /^archive\//,
+               // The audit backlog and its article bundle: a working snapshot of
+               // 651 recipes whose cited source does not carry what the prose
+               // asserts, plus the plain text of the 642 articles they cite so
+               // the work can be done without network access. Private for two
+               // reasons — it is a list of the corpus's own unfixed faults, and
+               // the bundle is 4.5 MB of third-party article text that has no
+               // business in a public game repo. Delete both when the backlog
+               // is worked out; they are a snapshot, not a source of truth.
+               /^data\/audit-backlog\.json$/, /^data\/audit-articles\.json\.gz$/,
                /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
                /^tools\/session-report\.mjs$/,
                // Merges RESEARCH-*.md batches, which are private by definition.
