@@ -20,6 +20,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { titleOf as wikiTitleOf } from './lib/wiki.mjs';
@@ -194,7 +195,7 @@ function numbersIn(text) {
     const n = parseFloat(raw);
     if (!isFinite(n)) continue;
     if (n < 10 && !m[2]) continue;                 // bare small integers: skip
-    out.push({ n, unit: (m[2] || '').replace(/\s+/g, ''), shown: m[0].trim() });
+    out.push({ n, raw, unit: (m[2] || '').replace(/\s+/g, ''), shown: m[0].trim() });
   }
   return out;
 }
@@ -259,6 +260,19 @@ function articleHas(text, num) {
   const forms = new Set();
   const plain = n % 1 === 0 ? String(n) : String(n);
   forms.add(plain);
+  /* A TRAILING ZERO IS LOST BY parseFloat AND THE LOOKAHEAD THEN REJECTS THE
+   * SOURCE'S OWN SPELLING. We wrote Kilimanjaro's ice as 11.40 km2 and the
+   * article says "from 11.40 km2 (4.40 mi2)" — the same six characters. But
+   * parseFloat("11.40") is 11.4, so the check searched for "11.4" and the
+   * (?!\d) that stops 11.4 matching 11.45 also stopped it matching 11.40.
+   * A claim written with a trailing zero could never pass, whatever the source
+   * said. Search for the digits as we actually wrote them too. This only ever
+   * lets a number through that is in the article CHARACTER FOR CHARACTER, so it
+   * cannot admit one that is absent. */
+  if (num.raw && num.raw !== plain) {
+    forms.add(num.raw);
+    if (n >= 1000) forms.add(num.raw.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+  }
   if (n >= 1000 && n % 1 === 0) {                  // 1700 and 1,700
     forms.add(plain.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
   }
@@ -516,6 +530,47 @@ function articleHasTerm(lowerText, term) {
   return false;
 }
 
+/* --selftest: the number check, proved against negatives, with no network.
+ *
+ * A checker that reports a present number as ABSENT is the same fault this
+ * tool exists to catch, pointed the other way, and it is worse: nobody
+ * re-reads a green row, but a false red gets "fixed" by weakening true prose.
+ * The trailing-zero bug below survived because both its victims looked like
+ * ordinary misses. So the fold is pinned here, negatives first: every case
+ * that must NOT match is a case where the article holds a DIFFERENT number.
+ */
+if (process.argv.includes('--selftest')) {
+  const CASES = [
+    ['ice went from 11.40 km2 to under 1', 'decreasing from 11.40 km2 (4.40 mi2) to <1', true,  'exact trailing zero — the bug'],
+    ['ice went from 11.40 km2 to under 1', 'decreasing from 11.4 km2 to <1',             true,  '11.40 and 11.4 are one value'],
+    ['ice went from 11.40 km2 to under 1', 'decreasing from 11.45 km2 to <1',            false, 'must not match a longer number'],
+    ['ice went from 11.40 km2 to under 1', 'decreasing from 11.401 km2 to <1',           false, 'must not match a longer number'],
+    ['ice went from 11.40 km2 to under 1', 'decreasing from 111.40 km2 to <1',           false, 'must not match inside a longer one'],
+    ['ice went from 11.40 km2 to under 1', 'the glacier is gone',                        false, 'absent stays absent'],
+    ['a 11.10 metre rise',                 'a rise of 11.101 metres',                    false, 'a trailing zero must not swallow digits'],
+    ['a 11.10 metre rise',                 'a rise of 11.10 metres',                     true,  'exact'],
+    ['a 11.10 metre rise',                 'a rise of 11.1 metres',                      true,  'same value'],
+    ['over 5,600 mills',                   'Domesday lists 5,624 mills',                 false, '5,600 is not 5,624'],
+    ['over 5,600 mills',                   'Domesday lists 5,600 mills',                 true,  'integer with a thousands comma'],
+    ['over 5,600 mills',                   'Domesday lists 5600 mills',                  true,  'comma-free spelling of the same'],
+    ['walls 21 m high',                    'walls 21 m (69 ft) high',                    true,  'plain integer'],
+    ['finished in 1558, it stood',         'completed in 1558, and stood for',           true,  'a sentence comma is not a separator'],
+    ['3.70 million years',                 'diverged 3.70 million years ago',            true,  'the second row the bug hit'],
+    ['3.70 million years',                 'diverged 3.7 million years ago',             true,  'same value'],
+    ['3.70 million years',                 'diverged 3.72 million years ago',            false, 'must not match'],
+  ];
+  let bad = 0;
+  for (const [prose, article, want, why] of CASES) {
+    const nums = numbersIn(prose);
+    if (!nums.length) { console.log(`  FAIL  numbersIn saw no number in "${prose}"`); bad++; continue; }
+    const got = nums.every(n => articleHas(article, n));
+    if (got !== want) bad++;
+    console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
+  }
+  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length} case(s) pass — the check admits only a literal the article really holds`);
+  process.exit(bad ? 1 : 0);
+}
+
 const only = process.argv.find(a => !a.startsWith('--') && !a.endsWith('.mjs') && !a.includes('node'));
 const includeVerified = process.argv.includes('--all');
 
@@ -523,16 +578,23 @@ const includeVerified = process.argv.includes('--all');
 const termsMode = process.argv.includes('--terms');
 let subject = recipes.filter(r =>
   (termsMode || /\d/.test(r.why) || r.at != null) && (includeVerified || !r.verified));
-if (only) subject = recipes.filter(r => r.out === only && (/\d/.test(r.why) || r.at != null));
+/* --terms checks WORDS and ABSOLUTES, which do not need a digit. Requiring one
+ * here meant `audit.mjs <id> --terms` silently examined nothing for any row
+ * whose prose had no numeral, and reported "0 claim(s) checked, 0 faults" —
+ * which reads exactly like a pass. Six rows were verified that way today and
+ * none of them had been looked at. An empty subject is not a clean subject. */
+if (only) subject = recipes.filter(r => r.out === only && (termsMode || /\d/.test(r.why) || r.at != null));
+if (only && !subject.length) { console.log(`  no recipe with out="${only}" is in scope for this mode`); process.exit(2); }
 
 console.log(`  checking ${subject.length} numeric claim(s) against their cited articles\n`);
 
-const unsupported = [], noSource = [], checked = [];
+const unsupported = [], noSource = [], checked = [], articles = {};
 for (const r of subject) {
   const title = titleOf(r.src);
   if (!title) { noSource.push({ r, why: 'source is not a Wikipedia article' }); continue; }
   const text = await articleText(title);
   if (!text) { noSource.push({ r, why: `could not fetch "${title}"` }); continue; }
+  articles[title] = text;
   /* A banded recipe states its temperature in `at`, and that number was never
    * checked — only the prose was. A band is more load-bearing than a sentence:
    * a wrong one makes the recipe wrong rather than merely unsupported, because
@@ -660,6 +722,66 @@ if (failures) {
   console.error(`\n  ${failures} article fetch(es) failed after retries — this run is INCOMPLETE.`);
   process.exitCode = 1;
 }
+/* --backlog: write the worklist the cloud routine reads, FROM THIS RUN.
+ *
+ * The first backlog was built by a separate ad-hoc script after eleven of its
+ * rows had already been fixed, so the routine's first run redid work that was
+ * already done. A snapshot produced anywhere other than inside the run it
+ * describes can drift from it; produced here it cannot. It is written only on
+ * a complete sweep, because a partial one would silently drop every row the
+ * sweep never reached — which is the same stale-snapshot fault wearing a
+ * different hat. */
+if (process.argv.includes('--backlog')) {
+  if (only || !termsMode || !includeVerified) {
+    console.error('\n  --backlog needs the full sweep: node tools/audit.mjs --terms --all --backlog');
+    process.exit(2);
+  }
+  if (failures) {
+    console.error('\n  NOT writing a backlog: this run had fetch failures, so it is incomplete.');
+    process.exit(1);
+  }
+  /* Word-only rows stay OUT. A stray unusual word is the weak signal — the tool
+   * says so in its own summary — and 693 of them would bury the 620 rows that
+   * carry a missing number, a missing attribution or an absolute the source
+   * never makes. A worklist nobody can finish is a worklist nobody starts. */
+  const rows = ranked.filter(u => u.missing.length || u.strayNames.length || u.strayAbsolute).map(u => ({
+    gesture: u.r.verb ? `${u.r.in[0]} |${u.r.verb} → ${u.r.out}` : `${u.r.in.join(' + ')} → ${u.r.out}`,
+    out: u.r.out, in: u.r.in, verb: u.r.verb ?? null, src: u.r.src, cited: u.title,
+    missing_numbers: u.missing.length ? u.missing.map(m => m.shown).join(', ') : null,
+    missing_names: u.strayNames.length ? u.strayNames.join(', ') : null,
+    our_absolute: u.strayAbsolute || null,
+    verified: !!u.r.verified,
+  }));
+  const cited = new Set(rows.map(r => r.cited));
+  const bundle = {};
+  for (const t of cited) if (articles[t]) bundle[t] = articles[t];
+  const orphans = [...cited].filter(t => !bundle[t]);
+  if (orphans.length) {
+    console.error(`\n  NOT writing a backlog: ${orphans.length} flagged row(s) have no article text: ${orphans.slice(0,5).join(', ')}`);
+    process.exit(1);
+  }
+  const out = {
+    $comment: `Converged output of \`node tools/audit.mjs --terms --all --backlog\`, written by that run itself. ` +
+      `${checked.length} of ${recipes.length} claims checked; the ${noSource.length} unchecked all cite sources this tool cannot read. A SNAPSHOT: regenerate by re-running.`,
+    $how_to_fix: 'Two fixes, in order of preference. (1) RE-POINT: the claim is usually TRUE and the citation wrong — a specific fact filed under the article for its category rather than for itself (Kadesh not Chariot, Wilkinson not Bore, the Great Stink not Sewerage). NEEDS NETWORK. (2) PULL BACK: rewrite the prose to say only what the CITED article says. Always available offline — data/audit-articles.json.gz carries that article. Never widen a checker to make prose pass, and never invent a replacement figure.',
+    generated: new Date().toISOString().slice(0, 10),
+    rows: rows.length,
+    verified_rows: rows.filter(r => r.verified).length,
+    flags: { numbers: nNum, names: nName, absolutes: nAbs },
+    articles: Object.keys(bundle).length,
+    /* Every claim this sweep could NOT check, with the reason. A row here is not
+     * a passing row: the previous file said nothing about them and 23 dead
+     * Wikipedia links sat inside that silence for a day. "Source is not a
+     * Wikipedia article" is deliberate; anything else wants a human. */
+    unchecked: noSource.map(n => ({ out: n.r.out, why: n.why })),
+    backlog: rows,
+  };
+  writeFileSync(join(root, 'data/audit-backlog.json'), JSON.stringify(out, null, 1) + '\n');
+  writeFileSync(join(root, 'data/audit-articles.json.gz'), gzipSync(Buffer.from(JSON.stringify(bundle), 'utf8')));
+  console.log(`\n  wrote data/audit-backlog.json (${rows.length} rows, ${rows.filter(r => r.verified).length} verified)`);
+  console.log(`  wrote data/audit-articles.json.gz (${Object.keys(bundle).length} articles, every flagged row covered)`);
+}
+
 console.log(`\n  A number missing from the article does not make the claim false — it means`);
 console.log(`  the sentence is going further than the source it names. Every one of the`);
 console.log(`  seventeen errors found by hand looked exactly like this.`);
