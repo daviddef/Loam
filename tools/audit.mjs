@@ -16,7 +16,17 @@
  *
  * Usage:  node tools/audit.mjs            check every unverified numeric claim
  *         node tools/audit.mjs --all      include the ones already verified
+ *         node tools/audit.mjs --terms    every claim, not just numeric ones
  *         node tools/audit.mjs <id>       just this output
+ *         node tools/audit.mjs --backlog  write data/audit-backlog.json and the
+ *                                         article bundle FROM THIS RUN; needs
+ *                                         --terms --all and a complete sweep
+ *         node tools/audit.mjs --rescued  list the numbers found only off the
+ *                                         prose path — in an infobox or a table.
+ *                                         Not faults. The weakest clearances
+ *                                         there are, and worth reading.
+ *         node tools/audit.mjs --selftest pin the number check against
+ *                                         negatives; no network, must exit 0
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -111,27 +121,103 @@ async function renderedText(title) {
     const j = JSON.parse(body);
     const html = j?.parse?.text ?? null;
     if (html === null) return null;
+    /* Drop the reference apparatus before flattening. A citation is not the
+     * article asserting anything: the Flatbread row's "14,400 years" was
+     * cleared by the TITLE of the paper in its reference list, and the Wine
+     * row's "13%" by an archive-date of 13 November. See stripApparatus. */
     return html.replace(/<style[\s\S]*?<\/style>/gi, ' ')
+               .replace(/<sup\b[^>]*class="[^"]*reference[^"]*"[\s\S]*?<\/sup>/gi, ' ')
+               .replace(/<ol\b[^>]*class="[^"]*references[^"]*"[\s\S]*?<\/ol>/gi, ' ')
+               .replace(/<cite\b[\s\S]*?<\/cite>/gi, ' ')
                .replace(/<[^>]+>/g, ' ')
                .replace(/&[a-z]+;|&#\d+;/gi, ' ')
                .replace(/\s+/g, ' ');
   } catch { return null; }
 }
 
-const wikiCache = new Map();
-async function articleWikitext(title) {
-  if (wikiCache.has(title)) return wikiCache.get(title);
-  const disk = readDisk('wiki:' + title);
-  if (disk) { wikiCache.set(title, disk); return disk; }
+/* THE SECOND CHANCE WAS CLEARING CLAIMS AGAINST FOOTNOTES.
+ *
+ * Anything missing from an article's prose gets re-checked against its raw
+ * page, because the plain-text extract drops infoboxes and tables and those
+ * hold real figures — gold's melting point lives in a transcluded template and
+ * nowhere else. That breadth is right. What it also swept in was the reference
+ * apparatus, which asserts nothing at all:
+ *
+ *   soil       45% mineral, 5% once-living   cleared by |volume=45 |issue=5
+ *                                            and an author called |last5=
+ *   flatbread  charred 14,400 years ago      cleared by the TITLE of the paper
+ *                                            in the reference list
+ *   wine       24% sugar, 13% alcohol        cleared by |archive-date=24
+ *                                            February and |date=13 November
+ *
+ * A journal volume number is not evidence for a percentage. Removing the
+ * apparatus can only make the check STRICTER — it never lets a number pass
+ * that would otherwise fail — so the backlog grows, which is the honest
+ * direction. Infoboxes, tables and body prose are all untouched.
+ */
+function stripApparatus(wikitext) {
+  let s = wikitext
+    .replace(/<ref\b[^>]*\/>/gi, ' ')
+    .replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, ' ');
+  /* Citation templates, brace-matched: a {{cite}} can contain {{nested}} ones,
+   * and a non-greedy /\{\{cite[\s\S]*?\}\}/ stops at the inner closer and
+   * leaves the tail of the citation behind — which is where the dates are. */
+  let out = '', i = 0;
+  while (i < s.length) {
+    if (s[i] === '{' && s[i + 1] === '{' &&
+        /^\s*(cite|citation|sfn|harv|refn|r\b)/i.test(s.slice(i + 2, i + 22))) {
+      let depth = 0, j = i;
+      while (j < s.length) {
+        if (s[j] === '{' && s[j + 1] === '{') { depth++; j += 2; }
+        else if (s[j] === '}' && s[j + 1] === '}') { depth--; j += 2; if (!depth) break; }
+        else j++;
+      }
+      out += ' '; i = j; continue;
+    }
+    out += s[i++];
+  }
+  /* NO back-matter cut. Cutting from "== References ==" to the end looked
+   * obviously right and removed 46% of Gold, 55% of Butane and 56% of Snow
+   * line — because the cached entry was then the wikitext with the RENDERED
+   * page glued after it, and the rendered page is where a transcluded infobox
+   * lives (the two are fetched separately now, but the trap is the same). The
+   * cut amputated exactly the thing this stage was built to read, and it
+   * inflated the fault count by doing so. The refs and citation templates
+   * above are what actually carried the apparatus; a References heading with
+   * {{reflist}} under it carries nothing. */
+  return out;
+}
+
+/* THE SOURCE AND THE RENDERED PAGE ARE FETCHED SEPARATELY, AND THE SECOND ONE
+ * ONLY WHEN IT IS NEEDED.
+ *
+ * These used to be one call that always pulled both and cached them glued
+ * together. That cost two requests for every article the second-chance stage
+ * looked at, whether or not the first one already settled the question — and
+ * under Wikipedia's rate limit a full sweep was running at five articles a
+ * minute. It also meant the two halves could never be re-stripped
+ * independently: change what the rendered side drops and every cached entry
+ * keeps the old text.
+ *
+ * Most infobox figures are written inline in the wikitext and need no rendered
+ * page at all. The ones that do not — Gold says {{Infobox gold}} and the
+ * melting point lives inside that template — still get it, second.
+ */
+const srcCache = new Map(), rendCache = new Map();
+
+/** Raw wikitext. null means COULD NOT READ, never "the article has none". */
+async function articleSource(title) {
+  if (srcCache.has(title)) return srcCache.get(title);
+  const disk = readDisk('src:' + title);
+  if (disk) { srcCache.set(title, disk); return disk; }
   const url = `${API}?action=query&prop=revisions&rvprop=content&rvslots=main` +
               `&redirects=1&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
   /* This block used to call getJSON(), which does not exist anywhere in this
    * file. The bare catch below swallowed the ReferenceError and returned '',
    * so the infobox stage reported "no infobox" on every article it was ever
-   * asked about — silently, for as long as it has been here. Gold's melting
-   * point, butane's boiling point in kelvin and every other figure that lives
-   * only in an infobox were reported as unsupported claims. A catch that hides
-   * a missing function is worse than no catch: the stage looked like it ran. */
+   * asked about — silently, for as long as it had been here. A catch that
+   * hides a missing function is worse than no catch: the stage looked like it
+   * ran. */
   for (let attempt = 0; attempt < 3; attempt++) {
     if (attempt) await sleep(2500 * attempt);
     try {
@@ -140,26 +226,33 @@ async function articleWikitext(title) {
       if (!res.ok) break;
       const j = await res.json();
       const page = (j?.query?.pages || [])[0];
-      let wiki = page?.revisions?.[0]?.slots?.main?.content || '';
-      /* Element infoboxes are transcluded, not written inline: the Gold article's
-       * own source contains no melting point at all, because it says
-       * {{Infobox gold}} and the number lives in that template. Raw wikitext
-       * therefore misses exactly the class of fact this stage exists to catch,
-       * so the rendered page is pulled alongside it and flattened to text. */
-      /* If the infobox could not be read, the article has NOT been fully seen.
-       * Say so by failing the whole fetch rather than returning the wikitext
-       * alone, which would let the caller flag infobox figures as absent. */
-      const rendered = await renderedText(title);
-      if (rendered === null) { await sleep(400); continue; }
-      wiki += '\n' + rendered;
-      wikiCache.set(title, wiki);
-      if (wiki) writeDisk('wiki:' + title, wiki);
+      const wiki = page?.revisions?.[0]?.slots?.main?.content || '';
+      srcCache.set(title, wiki);
+      if (wiki) writeDisk('src:' + title, wiki);
       await sleep(400);
       return wiki;
     } catch { /* retry */ }
   }
-  wikiCache.set(title, '');
-  return '';
+  srcCache.set(title, null);
+  return null;
+}
+
+/** The rendered page, flattened, apparatus already dropped. null = unreadable. */
+async function articleRendered(title) {
+  if (rendCache.has(title)) return rendCache.get(title);
+  const disk = readDisk('rend:' + title);
+  if (disk) { rendCache.set(title, disk); return disk; }
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) await sleep(2500 * attempt);
+    const r = await renderedText(title);
+    if (r === null) continue;
+    rendCache.set(title, r);
+    if (r) writeDisk('rend:' + title, r);
+    await sleep(400);
+    return r;
+  }
+  rendCache.set(title, null);
+  return null;
 }
 
 /* Imported, not redefined. This file carried its own copy of titleOf with the
@@ -278,6 +371,19 @@ function articleHas(text, num) {
   }
   if (n >= 1e6 && n % 1e6 === 0) forms.add(`${n / 1e6} million`);
   if (n >= 1e9 && n % 1e9 === 0) forms.add(`${n / 1e9} billion`);
+  /* A FRACTION OF A MILLION IS STILL THAT NUMBER. We wrote the oldest well-dated
+   * aurochs as "roughly 780,000 years old"; the article says "about 0.78 million
+   * years ago" — the same quantity, and the check only knew how to build
+   * "X million" for whole millions. Palaeontology and geology write it this way
+   * constantly. The form is generated FROM OUR NUMBER, so it matches only an
+   * exact restatement: 780,000 produces "0.78 million" and nothing else, and an
+   * article saying 0.79 million still fails. */
+  if (n >= 1000) {
+    const inM = Number((n / 1e6).toFixed(6));
+    if (inM > 0) forms.add(`${inM} million`);
+    const inB = Number((n / 1e9).toFixed(9));
+    if (n >= 1e6 && inB > 0) forms.add(`${inB} billion`);
+  }
   for (const f of forms) {
     /* The boundary has to reject a thousands separator without rejecting a
      * sentence comma. The old lookahead was a bare (?![\d,]), so "Finished in
@@ -558,6 +664,10 @@ if (process.argv.includes('--selftest')) {
     ['3.70 million years',                 'diverged 3.70 million years ago',            true,  'the second row the bug hit'],
     ['3.70 million years',                 'diverged 3.7 million years ago',             true,  'same value'],
     ['3.70 million years',                 'diverged 3.72 million years ago',            false, 'must not match'],
+    ['roughly 780,000 years old',          'strata dating about 0.78 million years ago', true,  '780,000 is 0.78 million'],
+    ['roughly 780,000 years old',          'strata dating about 0.79 million years ago', false, 'but not 0.79 million'],
+    ['roughly 780,000 years old',          'strata dating about 780,000 years ago',      true,  'the plain form still works'],
+    ['about 1,500,000 years',              'some 1.5 million years ago',                 true,  'a whole-and-a-half million'],
   ];
   let bad = 0;
   for (const [prose, article, want, why] of CASES) {
@@ -567,7 +677,25 @@ if (process.argv.includes('--selftest')) {
     if (got !== want) bad++;
     console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
   }
-  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length} case(s) pass — the check admits only a literal the article really holds`);
+  /* stripApparatus: a citation must not clear a claim, and an infobox must. */
+  const APP = [
+    ['<ref>{{cite journal |volume=45 |issue=5}}</ref> soil is mineral', '45', false, 'a journal volume is not a percentage'],
+    ['<ref name=a>Origins of Bread 14,400 Years Ago</ref> bread', '14,400', false, "a paper's title is not the article"],
+    ['{{cite web |archive-date=24 February 2017}} grapes', '24', false, 'an archive date is not a sugar level'],
+    ['{{cite book |last13=Mariani}} wine', '13', false, 'an author index is not an alcohol level'],
+    ['{{Chembox |BoilingPtC = 24 }} butane', '24', true,  'an INFOBOX must still clear it'],
+    ['| melting point || 1,713 °C |', '1,713', true,  'a TABLE cell must still clear it'],
+    ['The snow line sits at 4,500 m.', '4,500', true,  'plain body prose is untouched'],
+    ['text\n== References ==\n{{reflist}}\n{{cite journal |volume=99}}', '99', false, 'a reflist carries nothing; the cite is stripped'],
+    ['{{cite news |date=13 November 2017}} and the body says 13% alcohol', '13', true, 'a real body mention still clears'],
+  ];
+  for (const [wikitext, needle, want, why] of APP) {
+    const stripped = stripApparatus(wikitext);
+    const got = articleHas(stripped, numbersIn(needle + ' %')[0] ?? { n: parseFloat(needle.replace(/,/g, '')), raw: needle });
+    if (got !== want) bad++;
+    console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
+  }
+  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length + APP.length} case(s) pass — the check admits only a literal the article really asserts`);
   process.exit(bad ? 1 : 0);
 }
 
@@ -586,9 +714,57 @@ let subject = recipes.filter(r =>
 if (only) subject = recipes.filter(r => r.out === only && (termsMode || /\d/.test(r.why) || r.at != null));
 if (only && !subject.length) { console.log(`  no recipe with out="${only}" is in scope for this mode`); process.exit(2); }
 
+/* PREFETCH THE WIKITEXT IN BATCHES.
+ *
+ * The API returns full page content for many titles at once — ten articles in
+ * one 2.3-second request, half a megabyte, no warnings — while asking for them
+ * one at a time under the rate limit ran at five a minute. A full sweep was
+ * hours of waiting for the same bytes. Batches of twenty turn that into a few
+ * dozen requests.
+ *
+ * A batch answers with the titles it RESOLVED to, not the ones asked for, so
+ * redirects and normalisations are followed back to the requested title before
+ * anything is cached. Cache it under the wrong key and the row that asked for
+ * it fetches again anyway, which would quietly undo the whole saving. */
+async function prefetchSources(titles) {
+  const want = [...new Set(titles)].filter(t => !srcCache.has(t) && !readDisk('src:' + t));
+  if (!want.length) return;
+  console.log(`  prefetching wikitext for ${want.length} article(s) in batches of 20`);
+  let done = 0, failed = 0;
+  for (let i = 0; i < want.length; i += 20) {
+    const batch = want.slice(i, i + 20);
+    const url = `${API}?action=query&prop=revisions&rvprop=content&rvslots=main` +
+                `&redirects=1&format=json&formatversion=2&titles=${batch.map(encodeURIComponent).join('%7C')}`;
+    let j = null;
+    for (let attempt = 0; attempt < 3 && !j; attempt++) {
+      if (attempt) await sleep(4000 * attempt);
+      try {
+        const res = await fetch(url, { headers: { 'User-Agent': 'Loam/1.0 (source audit; contact via repo)' } });
+        if (!res.ok) continue;
+        const body = await res.text();
+        if (!body.trimStart().startsWith('{')) continue;   // the throttle notice, served as 200
+        j = JSON.parse(body);
+      } catch { /* retry */ }
+    }
+    if (!j) { failed += batch.length; continue; }           // leave them for the per-row path
+    const hop = new Map();
+    for (const n of j.query?.normalized || []) hop.set(n.from, n.to);
+    for (const rd of j.query?.redirects || []) hop.set(rd.from, rd.to);
+    const resolve = t => { let cur = t; for (let k = 0; k < 5 && hop.has(cur); k++) cur = hop.get(cur); return cur; };
+    const byTitle = new Map((j.query?.pages || []).map(pg => [pg.title, pg]));
+    for (const t of batch) {
+      const content = byTitle.get(resolve(t))?.revisions?.[0]?.slots?.main?.content;
+      if (content) { srcCache.set(t, content); writeDisk('src:' + t, content); done++; }
+    }
+    await sleep(900);
+  }
+  console.log(`  prefetched ${done}${failed ? `, ${failed} left for the per-row path` : ''}`);
+}
+await prefetchSources(subject.map(r => titleOf(r.src)).filter(Boolean));
+
 console.log(`  checking ${subject.length} numeric claim(s) against their cited articles\n`);
 
-const unsupported = [], noSource = [], checked = [], articles = {};
+const unsupported = [], noSource = [], checked = [], articles = {}, rescued = [];
 for (const r of subject) {
   const title = titleOf(r.src);
   if (!title) { noSource.push({ r, why: 'source is not a Wikipedia article' }); continue; }
@@ -667,20 +843,42 @@ for (const r of subject) {
   /* Anything still unsupported gets one more look, in the infobox. */
   let missing2 = missing, strayNames2 = strayNames;
   if (missing.length || strayNames.length) {
-    const wiki = await articleWikitext(title);
+    const wiki = await articleSource(title).then(w => w === null ? null : stripApparatus(w));
     /* Could not read the infobox — so this row has NOT been checked, and saying
      * "the article does not contain 1085" would be a claim about an article
      * this run never finished reading. Throttling must produce unchecked rows,
      * never faults. */
-    if (!wiki) { noSource.push({ r, why: `infobox unreadable for "${title}" — throttled` }); continue; }
-    if (wiki) {
-      const wl = dashes(wiki.toLowerCase());
-      missing2 = missing.filter(x => !articleHas(wiki, x)
-        && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))));
-      strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
+    if (wiki === null) { noSource.push({ r, why: `wikitext unreadable for "${title}" — throttled` }); continue; }
+    const wl = dashes(wiki.toLowerCase());
+    missing2 = missing.filter(x => !articleHas(wiki, x)
+      && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))));
+    strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
+    /* Only now, and only if something is still unaccounted for, is the rendered
+     * page worth a second request. */
+    if (missing2.length || strayNames2.length) {
+      const rend = await articleRendered(title);
+      if (rend === null) { noSource.push({ r, why: `rendered page unreadable for "${title}" — throttled` }); continue; }
+      const rl = dashes(rend.toLowerCase());
+      missing2 = missing2.filter(x => !articleHas(rend, x)
+        && !(x.unit === '\u00b0C' && articleHasTemperature(rend, x.n)));
+      strayNames2 = strayNames2.filter(nm => !rl.includes(dashes(nm.toLowerCase())));
     }
   }
 
+  /* A number the PROSE did not have and the RAW PAGE did is a weaker clearance
+   * than a prose match, and it is not always a clearance at all. The snow line
+   * row claimed 4,500 m as "near 5,000 metres at the equator"; the extract says
+   * 4,500, and the only 5,000 on the page is an image caption reading
+   * "Cotopaxi (5,897 m), Andes: 5,000 m" — a different mountain range. The row
+   * passed on a coincidence, exactly the way Ajinateppa's "12 kilometres east
+   * of Bokhtar" would have passed for a 12-metre Buddha.
+   *
+   * The breadth is still right: the plain-text extract drops tables and
+   * infoboxes, and those hold real figures. So this stays a clearance and
+   * becomes a LIST instead — the rows where the only evidence is off the prose
+   * path. Not faults. Somewhere to read. `--rescued` prints them. */
+  const saved = missing.filter(x => !missing2.includes(x));
+  if (saved.length) rescued.push({ r, title, saved });
   checked.push(r);
   if (missing2.length || strayTerms.length || strayNames2.length || strayAbsolute) {
     unsupported.push({ r, title, missing: missing2, strayTerms, strayNames: strayNames2, strayAbsolute, total: nums.length });
@@ -714,6 +912,14 @@ console.log(`  ${nName} name(s) the cited article never mentions   <- attributio
 console.log(`  ${nAbs} absolute(s) stronger than anything in the source`);
 console.log(`  ${nNum} number(s) the cited article does not contain`);
 console.log(`  ${nWord} flagged on an unusual word alone           <- weak; read before acting`);
+console.log(`  ${rescued.length} number(s) found ONLY off the prose path       <- --rescued to read them`);
+if (process.argv.includes('--rescued')) {
+  console.log('');
+  for (const x of rescued) {
+    const g = x.r.verb ? `${x.r.in[0]} |${x.r.verb}` : x.r.in.join(' + ');
+    console.log(`  ${g} → ${x.r.out}\n    cited: ${x.title}\n    only in the raw page: ${x.saved.map(m => m.shown).join(', ')}\n    "${x.r.why}"\n`);
+  }
+}
 if (noSource.length) {
   console.log(`  ${noSource.length} could not be checked:`);
   for (const n of noSource) console.log(`      ${n.r.out.padEnd(22)} ${n.why}`);
@@ -738,6 +944,20 @@ if (process.argv.includes('--backlog')) {
   }
   if (failures) {
     console.error('\n  NOT writing a backlog: this run had fetch failures, so it is incomplete.');
+    process.exit(1);
+  }
+  /* AN UNCHECKED ROW IS NOT A PASSING ROW, AND A BACKLOG BUILT OVER ONE IS A LIE.
+   * The `failures` counter above only counts prose fetches. A row whose SECOND
+   * CHANCE was throttled never reaches the fault list either — it lands in
+   * noSource — and the first run after the apparatus fix left 89 rows there and
+   * wrote the file anyway. Names read 209 instead of 224 and it looked like
+   * progress. Only "source is not a Wikipedia article" is a settled reason to
+   * skip a row; everything else means run it again. */
+  const unresolved = noSource.filter(n => n.why !== 'source is not a Wikipedia article');
+  if (unresolved.length) {
+    console.error(`\n  NOT writing a backlog: ${unresolved.length} row(s) could not be checked for a reason that is not deliberate —`);
+    for (const n of unresolved.slice(0, 5)) console.error(`      ${n.r.out.padEnd(22)} ${n.why}`);
+    console.error('  Re-run; the cache keeps what already succeeded, so each pass is shorter.');
     process.exit(1);
   }
   /* Word-only rows stay OUT. A stray unusual word is the weak signal — the tool
