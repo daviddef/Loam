@@ -27,17 +27,17 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology, medicine and the built world |
-| Elements | **8,567** (8,211 workshop · 356 folklore) |
-| Recipes | **10,517** (9,537 merges · 980 verb processes) |
+| Elements | **8,583** (8,227 workshop · 356 folklore) |
+| Recipes | **10,534** (9,539 merges · 995 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **8,567 / 8,567** from the four starters |
-| Sourced | **10,517 / 10,517** recipes, every URL machine-verified |
-| Independently verified | **8,428 / 10,517** (80%) carry `verified: true` |
-| Routes per element | **1.23** · 7,006 still have exactly one |
+| Reachable | **8,583 / 8,583** from the four starters |
+| Sourced | **10,534 / 10,534** recipes, every URL machine-verified |
+| Independently verified | **8,445 / 10,534** (80%) carry `verified: true` |
+| Routes per element | **1.23** · 7,021 still have exactly one |
 | Hazards | **343**, covering 622 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
 | Drawings | **7,875** hand-drawn; 692 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,567 / 8,567** — what each noun is to a making |
+| Roles | **8,567 / 8,583** — what each noun is to a making |
 | Sense-checked | **1,848** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,116** written |
@@ -46,7 +46,7 @@ validated and playtested first — before a line of Swift.
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
 build time, because this file previously spent a fortnight claiming 6,874 elements
-while the corpus held 7,423 — and then did it again, claiming 7,576 against 8,567.*
+while the corpus held 7,423 — and then did it again, claiming 7,576 against 8,583.*
 <!-- STATUS:END -->
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from

@@ -3417,8 +3417,7 @@
     "tags": [
       "food"
     ],
-    "fact": "Cheese, made from a bean. Curdle soy milk with a salt, press the curds, cut into blocks.",
-    "terminal": true
+    "fact": "Cheese, made from a bean. Curdle soy milk with a salt, press the curds, cut into blocks."
   },
   {
     "id": "pea",
@@ -14186,7 +14185,7 @@
       "animal",
       "wild"
     ],
-    "fact": "Its 2.5-million-year-old skull, dug up in Gansu, China, is the oldest complete pantherine skull ever found — and closely resembles a modern tiger's.",
+    "fact": "Its skull, dug up in Gansu and dated to about 2.55 million years ago, is the oldest complete pantherine skull ever found.",
     "taxon": "tx_panthera"
   },
   {
@@ -26123,7 +26122,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Tin oxide, SnO2 — the ore the Bronze Age's tin was smelted from, and still the main tin ore now.",
+    "fact": "Tin oxide, SnO2 — the chief tin ore throughout ancient history, and still the main tin ore now.",
     "soleRoute": true
   },
   {
@@ -34469,7 +34468,7 @@
       "water",
       "earth"
     ],
-    "fact": "A storm on Neptune the size of Earth, photographed by Voyager 2 in 1989 — and gone by 1994.",
+    "fact": "A storm on Neptune about the size of Earth, photographed by Voyager 2 in 1989 — and gone by 1994.",
     "terminal": true
   },
   {
@@ -35194,7 +35193,6 @@
       "food"
     ],
     "fact": "Pressed from roasted rather than raw seed — what gives toasted sesame oil its deep amber colour.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -37722,7 +37720,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "The belief that souls or spirits exist not only in humans but in animals, plants, rocks, and rivers — summed up by the Ainu saying that even a rock has a spirit."
+    "fact": "The belief that souls or spirits exist not only in humans but in animals, plants, rocks, and rivers."
   },
   {
     "id": "shamanism",
@@ -37932,7 +37930,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "Egyptian embalmers dried the body for 70 days in natron, a natural salt, before wrapping it in linen — a rite myth credits to the jackal-headed god Anubis, who first embalmed Osiris."
+    "fact": "Egyptian embalmers dried the body for 70 days in natron, a natural salt, before wrapping it in linen."
   },
   {
     "id": "book_of_the_dead",
@@ -38594,7 +38592,7 @@
       "food",
       "crop"
     ],
-    "fact": "An evergreen Mediterranean shrub whose blue-black berries flavour the Sardinian liqueur Mirto.",
+    "fact": "An Old World evergreen shrub whose blue-black berries flavour the Sardinian liqueur Mirto.",
     "terminal": true,
     "soleRoute": true,
     "taxon": "tx_myrtaceae"
@@ -39707,7 +39705,7 @@
     "tags": [
       "belief"
     ],
-    "fact": "Mantra-based meditation brought West in 1955 by Maharishi Mahesh Yogi, popularized by the Beatles.",
+    "fact": "Mantra-based meditation begun in 1955 by Maharishi Mahesh Yogi, popularized by the Beatles.",
     "terminal": true,
     "soleRoute": true
   },
@@ -53357,7 +53355,7 @@
     "tags": [
       "microbe"
     ],
-    "fact": "A 40,000-base-pair genome and a self-made DNA polymerase, fast enough to burst E. coli in about 25 minutes.",
+    "fact": "A roughly 40 kbp genome and a self-made DNA polymerase, fast enough to burst E. coli in about 25 minutes.",
     "terminal": true
   },
   {
@@ -55903,7 +55901,7 @@
       "earth",
       "history"
     ],
-    "fact": "Stretches roughly 1,600 km along the Scandinavian Peninsula, from 55N to 69N latitude."
+    "fact": "Stretches from roughly 55°N to 70°N latitude along the Scandinavian Peninsula."
   },
   {
     "id": "glycolysis",
@@ -96082,5 +96080,179 @@
       "earth"
     ],
     "fact": "Whether it is dangerous is decided by the energy of one quantum, not by how much of it there is: above about 10 eV a single one can break a bond."
+  },
+  {
+    "id": "lycopene",
+    "name": "Lycopene",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named after Lycopersicon, a former tomato genus. Eleven conjugated double bonds make it that red.",
+    "terminal": true
+  },
+  {
+    "id": "gallic_acid",
+    "name": "Gallic acid",
+    "emoji": "🖋️",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named for the oak galls it was prepared from, not for gallium — it contains none.",
+    "terminal": true
+  },
+  {
+    "id": "oleic_acid",
+    "name": "Oleic acid",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "The most common fatty acid in nature, and the thing people mean when they call olive oil monounsaturated.",
+    "terminal": true
+  },
+  {
+    "id": "genistein",
+    "name": "Genistein",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named for the dyer's broom it was first pulled out of in 1899, though soy is where it is abundant.",
+    "terminal": true
+  },
+  {
+    "id": "quercetin",
+    "name": "Quercetin",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named in 1857 after quercetum, an oak forest, though capers, onions and kale are where you meet it.",
+    "terminal": true
+  },
+  {
+    "id": "rosmarinic_acid",
+    "name": "Rosmarinic acid",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named for rosemary and shared across the mint family — sage, basil, perilla and mint all carry it.",
+    "terminal": true
+  },
+  {
+    "id": "ellagic_acid",
+    "name": "Ellagic acid",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Galle spelled backwards, to keep it apart from gallic acid — which is literally what it is two of.",
+    "terminal": true
+  },
+  {
+    "id": "malvidin",
+    "name": "Malvidin",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Makes red wine red. It decays to syringic acid, which is how a 6,100-year-old winery was identified.",
+    "terminal": true
+  },
+  {
+    "id": "sesamin",
+    "name": "Sesamin",
+    "emoji": "🌰",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "A lignan of sesame oil, and of the bark of Fagara trees that have nothing else to do with sesame.",
+    "terminal": true
+  },
+  {
+    "id": "betaine",
+    "name": "Betaine",
+    "emoji": "🫧",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Named for the sugar beet it came out of, Beta vulgaris — not, despite everything, for the Greek letter.",
+    "terminal": true
+  },
+  {
+    "id": "sulforaphane",
+    "name": "Sulforaphane",
+    "emoji": "🥦",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Does not exist in an intact cabbage. Chopping lets myrosinase reach glucoraphanin, and the reaction makes it.",
+    "terminal": true
+  },
+  {
+    "id": "zeaxanthin",
+    "name": "Zeaxanthin",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Zea mays plus xanthos, Greek for yellow. One of two carotenoids the retina holds.",
+    "terminal": true
+  },
+  {
+    "id": "phytic_acid",
+    "name": "Phytic acid",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "How a seed banks its phosphorus. It grips calcium, iron and zinc too, and the gut cannot get them back.",
+    "terminal": true
+  },
+  {
+    "id": "resveratrol",
+    "name": "Resveratrol",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "A phytoalexin: the plant does not keep it ready, it makes it when injured or attacked.",
+    "terminal": true
+  },
+  {
+    "id": "ergosterol",
+    "name": "Ergosterol",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "What a fungus uses where an animal uses cholesterol. Named after ergot, where it was first found."
+  },
+  {
+    "id": "casein",
+    "name": "Casein",
+    "emoji": "🥛",
+    "shelf": "workshop",
+    "tags": [
+      "molecule"
+    ],
+    "fact": "Latin caseus, cheese. Four fifths of cow's-milk protein, and the part that curdles; whey is the rest."
   }
 ]

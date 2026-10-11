@@ -599,6 +599,12 @@ const ABSOLUTE_CLEARED = {
   'leaf|heat': 'comparing variants the sentence itself names (green, oolong, black)',
   'sand|crush': 'idiom: how silt gets made in the first place',
   'conveyor_belt+port_stockpile': 'idiom: lays ore in the first place',
+  'bee+spore': 'hedged: "one of the smallest" — regex catches substring "the smallest"',
+  'bronze+wax': 'definitional: every lost-wax piece IS unique because the mould is destroyed',
+  'charcoal+tempered_clay': 'physics: an open fire literally cannot reach vitrification temperatures',
+  'brick+charcoal': 'physics: an open fire cannot reach kiln temperatures — same constraint',
+  'crab+exoskeleton': 'biology: molting IS the only way an exoskeleton-bound animal grows',
+  'mirror+mirror': 'article says "first implemented around 1731" — same claim as "the first ones around 1731"',
 };
 
 const ABSOLUTES = [

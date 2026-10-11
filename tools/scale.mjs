@@ -94,7 +94,10 @@ const SCALE = {
           // DNA-completeness batch 1 — nucleotide/base-pair-scale sequence elements,
           // the same rack as base_pair/mutation/adenine
           'okazaki_fragment', 'codon', 'anticodon', 'point_mutation', 'frameshift_mutation',
-          'creatine', 'citrulline', 'theanine', 'caffeine', 'alpha_gpc', 'synephrine', 'biotin', 'sucralose', 'fos',
+          'creatine', 'citrulline', 'theanine',
+          'lycopene', 'gallic_acid', 'oleic_acid', 'genistein', 'quercetin', 'rosmarinic_acid',
+          'ellagic_acid', 'malvidin', 'sesamin', 'betaine', 'sulforaphane', 'zeaxanthin',
+          'phytic_acid', 'resveratrol', 'ergosterol', 'caffeine', 'alpha_gpc', 'synephrine', 'biotin', 'sucralose', 'fos',
           'salicylic_acid', 'aspirin', 'streptomycin', 'insulin',
           'nitrophenol', 'aminophenol', 'paracetamol', 'histamine', 'arachidonic_acid', 'prostaglandin',
           'fdg', 'fullerene', 'nanotube',
@@ -130,7 +133,7 @@ const SCALE = {
           'toxoid', 'transcription_terminator', 'transposon', 'two_component_system', 'virulence_factor',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           'actin_filament', 'myosin', 'intermediate_filament', 'integrin', 'muscle_contraction', 'cell_migration', 'g_protein_coupled_receptor', 'receptor_tyrosine_kinase', 'adenylyl_cyclase', 'protein_kinase_a', 'phospholipase_c', 'protein_kinase_c', 'ras_protein', 'mapk_cascade', 'nuclear_receptor', 'sodium_channel', 'potassium_channel', 'amyloid_precursor_protein', 'amyloid_beta', 'tau_protein', 'alpha_synuclein', 'apolipoprotein_e', 'creb', 'hox_gene', 'reverse_transcriptase', 'rna_dependent_rna_polymerase', 'polyprotein', 'hemagglutinin', 'neuraminidase', 'integrase', 'gene_duplication', 'pseudogene', 'quaternary_structure', 'protein_domain', 'actin', 'kinesin', 'dynein', 'motor_protein', 'antibody', 'lysozyme', 'histone', 'nucleosome', 'telomere', 'telomerase', 'mismatch_repair', 'g_protein', 'phosphorylation', 'allosteric_regulation', 'restriction_enzyme', 'cloning_vector', 'recombinant_dna', 'taq_polymerase', 'pcr', 'gel_electrophoresis', 'hybridization', 'southern_blot', 'glycolysis', 'krebs_cycle', 'electron_transport_chain', 'atp_synthase', 'cellular_respiration', 'carbohydrate', 'nucleic_acid', 'operon', 'transcription_factor', 'oncogene', 'genotype',
-          'maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'allele', 'tumor_suppressor_gene', 'crispr', 'dna_sequencing', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'keratin', 'membrane',
+          'maltodextrin', 'hydrolysed_vegetable_protein', 'carrageenan', 'alginate', 'xanthan_gum', 'gum_arabic', 'gellan_gum', 'arrowroot', 'lignin', 'pectin', 'phytochrome', 'isinglass', 'rna', 'transfer_rna', 'ribosomal_rna', 'ribozyme', 'viroid', 'glycogen', 'triple_helix', 'hemoglobin', 'myoglobin', 'photosystem_ii', 'cytochrome_c_oxidase', 'ferritin', 'zinc_finger', 'carbonic_anhydrase', 'glutathione_peroxidase', 'sulfite_oxidase', 'superoxide_dismutase', 'sodium_potassium_pump', 'rhodopsin', 'cellulose', 'chromatin', 'gene', 'allele', 'tumor_suppressor_gene', 'crispr', 'dna_sequencing', 'microtubule', 'polypeptide', 'protein', 'enzyme', 'collagen', 'casein', 'keratin', 'membrane',
           // DNA-completeness batch 1 — the replication and expression machinery,
           // same enzyme/process scale as chromatin/gene/enzyme/protein
           'dna_helicase', 'primase', 'dna_polymerase', 'dna_ligase', 'dna_replication',
