@@ -30,7 +30,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { gzipSync } from 'node:zlib';
+import { gzipSync, gunzipSync } from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { titleOf as wikiTitleOf } from './lib/wiki.mjs';
@@ -329,7 +329,41 @@ function numbersIn(text) {
  * enough to absorb rounding and the 273.15 offset, not enough to let a wrong
  * figure through. Ranges count: an article saying 272 to 274 K supports a
  * claim anywhere inside it. */
-function celsiusFigures(text) {
+/* AN ARTICLE MAY WRITE A TEMPERATURE AS A POWER OF TEN AND MEAN IT LITERALLY.
+ *
+ * Triple-alpha process says the core "temperature rises to 10<sup>8</sup> K".
+ * Our claim is 100,000,000 °C — the same figure — but the scanner below reads
+ * digits next to a unit, and `10<sup>8</sup>` has no digits next to the K at
+ * all. The row sat in the backlog as a number the article "does not contain"
+ * while the article contained nothing else. That is a false red, and a false
+ * red is the dangerous kind: the way it gets closed is by weakening prose that
+ * was right.
+ *
+ * Expand the power IN PLACE, so the expansion cannot invent an adjacency the
+ * wikitext did not have — `10<sup>8</sup> K` becomes `100000000 K`, and a bare
+ * `10<sup>8</sup>` with no unit after it still matches no temperature. Only
+ * exponents 0-15 expand; beyond that the integer stops being exact. Mantissas
+ * are carried through, so `3×10<sup>3</sup> K` reads as 3000 K. */
+function expandPowers(text) {
+  const SUP = { '\u2070': '0', '\u00b9': '1', '\u00b2': '2', '\u00b3': '3', '\u2074': '4',
+                '\u2075': '5', '\u2076': '6', '\u2077': '7', '\u2078': '8', '\u2079': '9' };
+  const grow = (mant, exp) => {
+    const e = Number(exp);
+    if (!isFinite(e) || e < 0 || e > 15) return null;
+    const m = mant ? parseFloat(mant.replace(/,/g, '')) : 1;
+    if (!isFinite(m)) return null;
+    const v = m * Math.pow(10, e);
+    return Number.isInteger(v) && Math.abs(v) < 1e16 ? String(v) : null;
+  };
+  return text
+    .replace(/(\d[\d,]*(?:\.\d+)?)?\s*(?:[\u00d7x*]\s*)?10\s*<sup>\s*(-?\d{1,2})\s*<\/sup>/gi,
+      (whole, mant, exp) => grow(mant, exp) ?? whole)
+    .replace(/(\d[\d,]*(?:\.\d+)?)?\s*(?:[\u00d7x*]\s*)?10([\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079]{1,2})/g,
+      (whole, mant, sup) => grow(mant, [...sup].map(c => SUP[c]).join('')) ?? whole);
+}
+
+function celsiusFigures(raw) {
+  const text = expandPowers(raw);
   const out = [];
   const add = (v) => { if (isFinite(v)) out.push(v); };
   const spans = (re, conv) => {
@@ -354,7 +388,14 @@ function celsiusFigures(text) {
 
 /** Does the article state this temperature, in any unit it might have used? */
 function articleHasTemperature(text, n) {
-  const TOL = 1.5;
+  /* A degree and a half absorbs rounding and the 273.15 K offset at kitchen and
+   * furnace temperatures. At 10^8 it does not: the offset alone is 182 times the
+   * tolerance, so a stellar core stated in kelvin could never match the same
+   * figure stated in Celsius. Scale the tolerance with the magnitude — half of
+   * one percent, floored at the old 1.5 — which stays far tighter than the one
+   * significant figure a source like "10^8 K" actually carries, and still
+   * refuses 150 million against 100 million, or 1800 °C against 1,713 °C. */
+  const TOL = Math.max(1.5, Math.abs(n) * 0.005);
   for (const f of celsiusFigures(text)) {
     if (typeof f === 'number') { if (Math.abs(f - n) <= TOL) return true; }
     else if (n >= f.lo - TOL && n <= f.hi + TOL) return true;
@@ -593,6 +634,16 @@ const ABSOLUTE_CLEARED = {
   'butterfly+pupa': '"the first" is a pro-form for the cocoon named one clause earlier',
   'mesosoma+metasoma': 'idiom: the question a key asks first, not a claim about keys',
   'cell+cerebral_cortex': 'idiom: the first thing a reader notices',
+  /* Reviewed 16 Oct, from the 147 absolutes nobody had worked as a group. */
+  'adenine+thymine': "definitional: Chargaff's rules ARE the equality, stated for any species and any organism",
+  'lamb|wait': 'temporal: lamb in its first year, matching the article\'s own "first year"',
+  'maize+niacin': 'historical generality about a cooking method, not a claim of invariance',
+  'elephant|cut': 'an ever-growing tooth: "never stopped growing" is the standard description of one',
+  'sea_arch|wait': 'rhetorical — erosion as a continuous process, not a claim about the world',
+  'steel+wheel': 'definitional: a rigid wheelset is two wheels that turn together by construction',
+  'freight_wagon+glass': 'a purpose clause — what the lining is FOR, not a claim it never fails',
+  'air+hide': 'descriptive of the mechanism: a bag feeds air while the player breathes',
+  'nickel+oxygen_gas': 'idiom: the early nickel-iron batteries, not a claim of primacy',
   'bacteria+glass': 'definitional: fomite ferries between people who never touched directly',
   'drug+nerve': 'idiom: not sensitised in the first place',
   'light+sun': 'ordinal within journey: the first half-million kilometres of the crossing',
@@ -745,15 +796,70 @@ if (process.argv.includes('--selftest')) {
     if (got !== want) bad++;
     console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
   }
-  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length + APP.length} case(s) pass — the check admits only a literal the article really asserts`);
+  /* The temperature path, which reads a unit and converts, not a literal. */
+  const TEMP = [
+    ['temperature rises to 10<sup>8</sup> K', 100000000, true,  'a power of ten stated in kelvin'],
+    ['temperature rises to 10<sup>8</sup> K', 150000000, false, 'but not half again as hot'],
+    ['temperature rises to 10<sup>8</sup> K', 101000000, false, 'nor one percent out'],
+    ['the core reaches 10<sup>8</sup> degrees', 100000000, false, 'no unit, no temperature'],
+    ['a density of 10<sup>8</sup> g/cm3', 100000000, false, 'a density is not a temperature'],
+    ['helium burns at 3\u00d710<sup>3</sup> K', 2726.85, true,  'a mantissa is carried through'],
+    ['helium burns at 3\u00d710<sup>3</sup> K', 3300,    false, 'and still refuses a wrong figure'],
+    ['sublimes at 10\u2078 K in the model', 100000000, true,  'unicode superscript too'],
+    ['{{Chembox |MeltingPtC = 1713 }}', 1713, true,  'an ordinary infobox is unaffected'],
+    ['{{Chembox |MeltingPtC = 1713 }}', 1800, false, 'and a wrong one still fails'],
+    ['water boils at 100 \u00b0C', 100, true,  'the floor still holds at small values'],
+    ['water boils at 100 \u00b0C', 103, false, 'three degrees is still too far'],
+    ['no temperature here at all', 100, false, 'absent stays absent'],
+  ];
+  for (const [article, n, want, why] of TEMP) {
+    const got = articleHasTemperature(stripApparatus(article), n);
+    if (got !== want) bad++;
+    console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
+  }
+  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length + APP.length + TEMP.length} case(s) pass — the check admits only a literal the article really asserts`);
   process.exit(bad ? 1 : 0);
 }
 
-const only = process.argv.find(a => !a.startsWith('--') && !a.endsWith('.mjs') && !a.includes('node'));
+/* IDS, PLURAL. This was `.find()` — the FIRST positional argument and no other.
+ * Handing it the twenty-seven ids of a batch checked the first one, printed
+ * "0 faults", and silently dropped twenty-six. A green that covers one row in
+ * twenty-seven is worse than a red. Every positional argument is now a subject,
+ * and an id matching no recipe is named and exits 2 rather than passing. */
+const onlyIds = process.argv.slice(2)
+  .filter(a => !a.startsWith('--') && !a.endsWith('.mjs') && !a.includes('node'));
+const only = onlyIds.length ? new Set(onlyIds) : null;
 const includeVerified = process.argv.includes('--all');
 
 // --terms widens the net from "claims with a number" to every unverified claim.
 const termsMode = process.argv.includes('--terms');
+
+/* --offline: check against data/audit-articles.json.gz instead of the network.
+ *
+ * The cloud routine has no egress, so it could never re-run this tool, and the
+ * prompt therefore asked it to prune the backlog by hand once it believed a row
+ * fixed. On 15 Sep it pruned 226 rows it had NOT fixed — the prose on every one
+ * of them is byte-identical from 9 Sep to today — and the file read zero for a
+ * month. Nothing could catch it: a deleted row leaves no trace, and the header
+ * check added on 10 Sep only proves a file agrees with itself.
+ *
+ * The routine already had the evidence. The bundle carries the cited article
+ * for every flagged row, offline, so "does this article now carry what the row
+ * claims" was always a substring test against text sitting in the repo. This
+ * makes that test the same code path as the online one, so a fix can be
+ * verified where it is made instead of being asserted. */
+const offline = process.argv.includes('--offline');
+let BUNDLE = null;
+if (offline) {
+  try {
+    BUNDLE = JSON.parse(gunzipSync(readFileSync(join(root, 'data/audit-articles.json.gz'))).toString('utf8'));
+  } catch {
+    console.error('  --offline needs data/audit-articles.json.gz, which is not readable here.');
+    process.exit(2);
+  }
+  console.log(`  OFFLINE: reading ${Object.keys(BUNDLE).length} article(s) from the bundle, fetching nothing.`);
+  console.log('  Only rows whose article is IN the bundle can be checked; the rest report as unchecked.\n');
+}
 let subject = recipes.filter(r =>
   (termsMode || /\d/.test(r.why) || r.at != null) && (includeVerified || !r.verified));
 /* --terms checks WORDS and ABSOLUTES, which do not need a digit. Requiring one
@@ -761,8 +867,15 @@ let subject = recipes.filter(r =>
  * whose prose had no numeral, and reported "0 claim(s) checked, 0 faults" —
  * which reads exactly like a pass. Six rows were verified that way today and
  * none of them had been looked at. An empty subject is not a clean subject. */
-if (only) subject = recipes.filter(r => r.out === only && (termsMode || /\d/.test(r.why) || r.at != null));
-if (only && !subject.length) { console.log(`  no recipe with out="${only}" is in scope for this mode`); process.exit(2); }
+if (only) {
+  subject = recipes.filter(r => only.has(r.out) && (termsMode || /\d/.test(r.why) || r.at != null));
+  const missed = onlyIds.filter(id => !subject.some(r => r.out === id));
+  if (missed.length) {
+    console.log(`  no recipe in scope for this mode: ${missed.join(', ')}`);
+    process.exit(2);
+  }
+  console.log(`  subject: ${onlyIds.length} id(s), ${subject.length} recipe(s)`);
+}
 
 /* PREFETCH THE WIKITEXT IN BATCHES.
  *
@@ -818,8 +931,11 @@ const unsupported = [], noSource = [], checked = [], articles = {}, rescued = []
 for (const r of subject) {
   const title = titleOf(r.src);
   if (!title) { noSource.push({ r, why: 'source is not a Wikipedia article' }); continue; }
-  const text = await articleText(title);
-  if (!text) { noSource.push({ r, why: `could not fetch "${title}"` }); continue; }
+  const text = offline ? (BUNDLE[title] ?? null) : await articleText(title);
+  if (!text) {
+    noSource.push({ r, why: offline ? `"${title}" is not in the offline bundle` : `could not fetch "${title}"` });
+    continue;
+  }
   articles[title] = text;
   /* A banded recipe states its temperature in `at`, and that number was never
    * checked — only the prose was. A band is more load-bearing than a sentence:
@@ -891,24 +1007,53 @@ for (const r of subject) {
        * for — the sentence is explicitly declining to say always. Same for
        * "almost the only" and "nearly the oldest". This is a fact about the
        * grammar of the sentence, not about whether the source agrees with it. */
-      if (m && /\b(?:almost|nearly|not)\s+$/i.test(r.why.slice(0, m.index))) continue;
+      /* "one of the first" and "among the oldest" are not claims of primacy —
+       * the sentence has explicitly declined to make one. Same construction as
+       * "almost always", which this guard already caught; nine more rows in the
+       * backlog were hedged this way and flagged anyway. This is a fact about
+       * the grammar of our sentence, not about whether the source agrees. */
+      if (m && /\b(?:almost|nearly|not|virtually|practically|essentially|arguably|possibly|perhaps|one of|among)\s+$/i.test(r.why.slice(0, m.index))) continue;
       if (m && !theirs.test(text)) { strayAbsolute = m[0]; break; }
     }
   }
 
   /* Anything still unsupported gets one more look, in the infobox. */
-  let missing2 = missing, strayNames2 = strayNames;
-  if (missing.length || strayNames.length) {
+  let missing2 = missing, strayNames2 = strayNames, strayTerms2 = strayTerms;
+  /* No raw page offline, so the second chance cannot run. That makes --offline
+   * STRICTER than a full run, never looser: a figure that lives only in an
+   * infobox reports as missing here. Good enough to confirm a fix, not a
+   * substitute for the online sweep. */
+  /* WORDS GET THE SECOND CHANCE TOO, AND THEY DID NOT.
+   *
+   * The plain-text extract this check reads omits every wikitable. The
+   * Underworld article is almost nothing BUT a table — one row per mythology,
+   * a column headed "Name of underworld" — so a sentence naming the Aztec
+   * Mictlan and the Maya Xibalba was reported as using two words the article
+   * never mentions, against the very table that supplies both. Numbers and
+   * names already got a look at the wikitext when the prose fell short; words
+   * never did, and the trigger below never even fired for a row whose only
+   * complaint was a word. It fires for all three now. The wikitext is already
+   * prefetched in batches for every subject article, so this reads what is
+   * sitting in the cache rather than asking for anything new. */
+  if (!offline && (missing.length || strayNames.length || strayTerms.length)) {
     const wiki = await articleSource(title).then(w => w === null ? null : stripApparatus(w));
     /* Could not read the infobox — so this row has NOT been checked, and saying
      * "the article does not contain 1085" would be a claim about an article
      * this run never finished reading. Throttling must produce unchecked rows,
-     * never faults. */
-    if (wiki === null) { noSource.push({ r, why: `wikitext unreadable for "${title}" — throttled` }); continue; }
+     * never faults.
+     *
+     * A WORD-ONLY row is the exception, and has to be: the weak signal is not
+     * allowed to turn a row unchecked, or every throttled fetch would block the
+     * backlog from converging on rows nothing is actually wrong with. Such a
+     * row keeps the flag the prose earned it and stays checked. */
+    if (wiki === null) {
+      if (missing.length || strayNames.length) { noSource.push({ r, why: `wikitext unreadable for "${title}" — throttled` }); continue; }
+    } else {
     const wl = dashes(wiki.toLowerCase());
     missing2 = missing.filter(x => !articleHas(wiki, x)
       && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))));
     strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
+    strayTerms2 = strayTerms.filter(t => !articleHasTerm(wiki.toLowerCase(), t));
     /* Only now, and only if something is still unaccounted for, is the rendered
      * page worth a second request. */
     if (missing2.length || strayNames2.length) {
@@ -918,6 +1063,7 @@ for (const r of subject) {
       missing2 = missing2.filter(x => !articleHas(rend, x)
         && !(x.unit === '\u00b0C' && articleHasTemperature(rend, x.n)));
       strayNames2 = strayNames2.filter(nm => !rl.includes(dashes(nm.toLowerCase())));
+    }
     }
   }
 
@@ -936,8 +1082,8 @@ for (const r of subject) {
   const saved = missing.filter(x => !missing2.includes(x));
   if (saved.length) rescued.push({ r, title, saved });
   checked.push(r);
-  if (missing2.length || strayTerms.length || strayNames2.length || strayAbsolute) {
-    unsupported.push({ r, title, missing: missing2, strayTerms, strayNames: strayNames2, strayAbsolute, total: nums.length });
+  if (missing2.length || strayTerms2.length || strayNames2.length || strayAbsolute) {
+    unsupported.push({ r, title, missing: missing2, strayTerms: strayTerms2, strayNames: strayNames2, strayAbsolute, total: nums.length });
   }
 }
 
@@ -1029,6 +1175,10 @@ function adjectivalHint(names, article) {
 }
 
 if (process.argv.includes('--backlog')) {
+  if (offline) {
+    console.error('\n  --backlog refuses to write from an --offline run: the bundle is a snapshot of the last online sweep, so a backlog built from it would describe that run and not this one.');
+    process.exit(2);
+  }
   if (only || !termsMode || !includeVerified) {
     console.error('\n  --backlog needs the full sweep: node tools/audit.mjs --terms --all --backlog');
     process.exit(2);
