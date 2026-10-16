@@ -291,8 +291,15 @@ function numbersIn(text) {
      * 1,2-dichloroethane yielded "1,2" -> 12, 1,3-butadiene yielded 13, and
      * 2,6-nonadienal yielded 26, none of which any article contains as a
      * number. A digit run followed by a hyphen and a letter is a name. */
+    /* The PRIME was not allowed for, and half of organic nomenclature carries
+     * one: 4,4'-difluorobenzophenone yielded "4,4" and 15,15'-dioxygenase
+     * yielded "15,15", both reported as numbers their articles do not contain,
+     * against articles that name the compound in full. A prime or apostrophe
+     * sits between the locant and its hyphen. */
     const after = text.slice(m.index + m[0].length);
-    if (/^-\p{L}/u.test(after) || /^-?\d*,\d+-\p{L}/u.test(text.slice(m.index))) continue;
+    const PRIME = `['\u2019\u2032]?`;
+    if (new RegExp(`^${PRIME}-\\p{L}`, 'u').test(after)
+     || new RegExp(`^-?\\d*,\\d+${PRIME}-\\p{L}`, 'u').test(text.slice(m.index))) continue;
     /* Shorthand halves of a span are not numbers the source has to contain.
      * "1915-16" means 1915 to 1916 and yields a bare 16; "the 1960s-70s" means
      * the 1960s and 1970s and yields a bare 70. Neither 16 nor 70 appears in
@@ -356,6 +363,31 @@ function expandPowers(text) {
     return Number.isInteger(v) && Math.abs(v) < 1e16 ? String(v) : null;
   };
   return text
+    /* {{val|p=> |5|e=8|ul=K}} — Wikipedia's own value template, which is how
+     * Carbon-burning process states the 5x10^8 K this corpus cites. The
+     * template survives stripApparatus (data templates must: a melting point
+     * lives in one), but it reads as `8|ul=K`, with a pipe and two letters
+     * between the figure and its unit, so the scanner below never saw a
+     * temperature there at all. Rewrite it to the plain `500000000 K` the
+     * template means. The unit is taken from u=/ul=/up= and carried through, so
+     * a {{val}} with no unit still yields no temperature. */
+    .replace(/\{\{\s*val\s*\|([^{}]*)\}\}/gi, (whole, body) => {
+      const parts = body.split('|').map(x => x.trim());
+      const num = parts.find(x => /^-?\d[\d,]*(?:\.\d+)?$/.test(x));
+      if (num == null) return whole;
+      const expPart = parts.find(x => /^e\s*=/.test(x));
+      const unitPart = parts.find(x => /^u[lp]?\s*=/.test(x));
+      const unit = unitPart ? unitPart.replace(/^u[lp]?\s*=\s*/, '') : '';
+      const v = expPart ? grow(num, expPart.replace(/^e\s*=\s*/, '')) : num.replace(/,/g, '');
+      return v == null ? whole : `${v} ${unit}`;
+    })
+    /* "a temperature exceeding 1.66 trillion K" — Quark-gluon plasma writes the
+     * figure in words, and a word between the number and the unit is a wall to
+     * a scanner reading digits next to K. Spell the magnitude out. */
+    .replace(/(\d[\d,]*(?:\.\d+)?)\s+(thousand|million|billion|trillion)\b/gi, (whole, mant, word) => {
+      const e = { thousand: 3, million: 6, billion: 9, trillion: 12 }[word.toLowerCase()];
+      return grow(mant, e) ?? whole;
+    })
     .replace(/(\d[\d,]*(?:\.\d+)?)?\s*(?:[\u00d7x*]\s*)?10\s*<sup>\s*(-?\d{1,2})\s*<\/sup>/gi,
       (whole, mant, exp) => grow(mant, exp) ?? whole)
     .replace(/(\d[\d,]*(?:\.\d+)?)?\s*(?:[\u00d7x*]\s*)?10([\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079]{1,2})/g,
@@ -380,6 +412,20 @@ function celsiusFigures(raw) {
   spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[K]\\s*=\\s*${R}${SEP}`, 'gi'), k => k - 273.15);
   spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[C]?\\s*=\\s*${R}${SEP}`, 'gi'), c => c);
   spans(new RegExp(`(?:Boiling|Melting|Sublimation|Flash)Pt[F]\\s*=\\s*${R}${SEP}`, 'gi'), f => (f - 32) * 5 / 9);
+  /* "Typical vernalization temperatures are between 1 and 7 degrees Celsius"
+   * — the unit in words, which is how Vernalization states the range this
+   * corpus cites, and the article contains no degree sign anywhere. A unit
+   * spelled out is the same unit. */
+  /* "between 1 and 7 degrees Celsius" is a range, and "and" is only a range
+   * separator when something opened one. A bare "and" would read "20 and 30 °C,
+   * two separate samples" as everything in between. */
+  const BETWEEN = `(?:between|from)\\s+${R}\\s*(?:and|to|-|\u2013)\\s*${R}`;
+  spans(new RegExp(`${BETWEEN}\\s*degrees?\\s+(?:C|Celsius|centigrade)\\b`, 'gi'), c => c);
+  spans(new RegExp(`${BETWEEN}\\s*\u00b0\\s*C\\b`, 'gi'), c => c);
+  spans(new RegExp(`${BETWEEN}\\s*K\\b`, 'g'), k => k - 273.15);
+  spans(new RegExp(`${R}${SEP}\\s*degrees?\\s+(?:C|Celsius|centigrade)\\b`, 'gi'), c => c);
+  spans(new RegExp(`${R}${SEP}\\s*degrees?\\s+(?:F|Fahrenheit)\\b`, 'gi'), f => (f - 32) * 5 / 9);
+  spans(new RegExp(`${R}${SEP}\\s*(?:kelvins?|degrees?\\s+kelvin)\\b`, 'gi'), k => k - 273.15);
   spans(new RegExp(`${R}${SEP}\\s*K\\b`, 'g'), k => k - 273.15);
   spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*C\\b`, 'g'), c => c);
   spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*F\\b`, 'g'), f => (f - 32) * 5 / 9);
@@ -401,6 +447,21 @@ function articleHasTemperature(text, n) {
     else if (n >= f.lo - TOL && n <= f.hi + TOL) return true;
   }
   return false;
+}
+
+/** An integer under a thousand, spelled as English words — both joins. */
+function wordForms(n) {
+  const ONES = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
+    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen',
+    'eighteen', 'nineteen'];
+  const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+  const under100 = (x) => x < 20 ? ONES[x]
+    : TENS[Math.floor(x / 10)] + (x % 10 ? '-' + ONES[x % 10] : '');
+  if (n < 100) { const w = under100(n); return w ? [w] : []; }
+  const h = ONES[Math.floor(n / 100)] + ' hundred';
+  const rest = n % 100;
+  if (!rest) return [h];
+  return [`${h} and ${under100(rest)}`, `${h} ${under100(rest)}`];
 }
 
 /** Does this number appear in the article, in any of its usual spellings? */
@@ -425,6 +486,15 @@ function articleHas(text, num) {
   if (n >= 1000 && n % 1 === 0) {                  // 1700 and 1,700
     forms.add(plain.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
   }
+  /* KARNAK WRITES ITS COLUMNS OUT IN WORDS. The article says "One hundred and
+   * twenty-two of these columns are 10 metres tall"; our sentence says 122, and
+   * the check reported the figure as one the article does not contain, against
+   * the sentence that contains it. Spell the CLAIM as words and look for that
+   * too — generating one exact string from our own number, rather than parsing
+   * the article's prose into numbers, which is the direction that could invent
+   * a figure nobody wrote. Both the British "one hundred and twenty-two" and
+   * the American "one hundred twenty-two" are generated. */
+  if (Number.isInteger(n) && n > 0 && n < 1000) for (const w of wordForms(n)) forms.add(w);
   if (n >= 1e6 && n % 1e6 === 0) forms.add(`${n / 1e6} million`);
   if (n >= 1e9 && n % 1e9 === 0) forms.add(`${n / 1e9} billion`);
   /* A FRACTION OF A MILLION IS STILL THAT NUMBER. We wrote the oldest well-dated
@@ -456,6 +526,14 @@ function articleHas(text, num) {
      * looking for. The reverse still flags: 1064.18 where the source says 1064
      * is precision we invented. */
     const ahead = n % 1 === 0 ? `(?!\\d)(?!,\\d)` : `(?!\\d)(?!,\\d)(?!\\.\\d)`;
+    /* A form made of WORDS needs word boundaries and no case sensitivity — the
+     * digit lookarounds say nothing about letters, and Karnak opens the
+     * sentence with "One hundred and twenty-two", capitalised. Digits have no
+     * case, so the flag changes nothing for them. */
+    if (/[a-z]/i.test(f)) {
+      if (new RegExp(`\\b${esc}\\b`, 'i').test(text)) return true;
+      continue;
+    }
     if (new RegExp(`(?<!\\d)(?<!\\d,)(?<!\\d\\.)${esc}${ahead}`).test(text)) return true;
   }
   return false;
@@ -730,6 +808,130 @@ function articleHasTerm(lowerText, term) {
   return false;
 }
 
+/* THE SAME NAME IN A DIFFERENT GRAMMATICAL FORM IS NOT A DIFFERENT ATTRIBUTION.
+ *
+ * Fifty-two of the sixty-three name rows in the backlog were our sentence
+ * writing "Swedish" where Nickel writes "Sweden", "Greeks" where Antares
+ * writes "Greek", "Transylvanian" where Tellurium writes "Transylvania". The
+ * attribution is the same; only the morphology differs. Left in with the real
+ * faults they bury them: the names check is the sharp signal, and a signal
+ * that is four-fifths inflection gets ignored.
+ *
+ * They are NOT cleared. They are reported as their own class and kept in the
+ * backlog under their own field, so the count of names an article never
+ * mentions means what it says and nothing has been hidden.
+ *
+ * The existing `adjectivalHint` cannot do this job: it is a loose shared-prefix
+ * heuristic, and it pairs "Islamic" with "island" and "Greek" with "green".
+ * This is strict — a known demonym or plural suffix, in one direction or the
+ * other, over a base of at least four letters that the article uses as a WHOLE
+ * WORD. "Islamic" clears only against the whole word "Islam", never "island";
+ * "Seven" would need "Seve". The residual risk is a pair like Niger/Nigerian,
+ * which the suffix rule cannot tell from Siberia/Siberian; that is why these
+ * rows stay listed to be read rather than disappearing. */
+const DEMONYM_SUFFIX = ['ians', 'ans', 'ian', 'ese', 'ish', 'ine', 'ate', 'an', 'ic', 'es', 'n', 's', 'i'];
+/* Irregular pairs cannot be derived by any suffix rule, so they are written
+ * out. Only pairs this corpus actually needs are here; the list is evidence,
+ * not a dictionary. */
+const IRREGULAR_DEMONYM = [
+  ['greece', 'greek'], ['britain', 'british'], ['turkiye', 'turkish'], ['turkey', 'turkish'],
+  ['sweden', 'swedish'], ['spain', 'spanish'], ['denmark', 'danish'], ['poland', 'polish'],
+  ['scotland', 'scottish'], ['germany', 'german'], ['france', 'french'], ['wales', 'welsh'],
+  ['ireland', 'irish'], ['netherlands', 'dutch'], ['norway', 'norwegian'], ['colchis', 'colchian'],
+];
+
+const wordSetCache = new Map();
+function wordsOf(lowerText) {
+  let w = wordSetCache.get(lowerText);
+  if (!w) { w = new Set(lowerText.match(/\p{L}+/gu) || []); wordSetCache.set(lowerText, w); }
+  return w;
+}
+
+/** The article's own form of this name, if it differs only by inflection. */
+function inflectionOf(nm, lowerBareText) {
+  const bare = x => x.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC').toLowerCase();
+  const n = bare(nm).replace(/[^\p{L}]/gu, '');
+  if (n.length < 4) return null;
+  const words = wordsOf(lowerBareText);
+  for (const [a, b] of IRREGULAR_DEMONYM) {
+    if (n === a && words.has(b)) return b;
+    if (n === b && words.has(a)) return a;
+  }
+  // ours is the longer form: Swedish -> Sweden, Siberian -> Siberia, Greeks -> Greek
+  for (const suf of DEMONYM_SUFFIX) {
+    if (!n.endsWith(suf) || n.length - suf.length < 4) continue;
+    const base = n.slice(0, -suf.length);
+    if (words.has(base)) return base;
+    for (const e of ['a', 'e', 'y', 'o']) if (words.has(base + e)) return base + e;
+  }
+  // ours is the shorter form: Rome -> Roman, Andes -> Andean, Hungary -> Hungarian
+  for (const suf of DEMONYM_SUFFIX) {
+    if (words.has(n + suf)) return n + suf;
+    /* Rome -> Roman and Asia -> Asian need the final vowel gone, and Andes ->
+     * Andean needs the plural gone; both leave at least three letters, which
+     * is what keeps this from relating two-letter stubs. */
+    if (n.length >= 4 && /[aeyos]$/.test(n) && words.has(n.slice(0, -1) + suf)) return n.slice(0, -1) + suf;
+  }
+  return null;
+}
+
+/* A LETTER IS NOT AN ACCENT. The diacritic fold already lets Mjolnir match
+ * Mjolnir-with-an-o-ring, because a ring is a mark. But ae, d-for-eth and
+ * psi-for-the-letter are TRANSLITERATIONS of distinct letters, which NFD
+ * leaves exactly where they were: our "Haraldskvaedi" against Berserker's
+ * "Haraldskvaedi"-with-ash-and-eth, and our "J/psi" against Charm quark's
+ * "J/" and the Greek letter. Fold the article's letters to the spellings this
+ * corpus uses. Two different names stay different once transliterated. */
+const TRANSLIT = [[/\u00e6/g, 'ae'], [/\u0153/g, 'oe'], [/\u00f0/g, 'd'], [/\u00fe/g, 'th'],
+  [/\u00df/g, 'ss'], [/\u00f8/g, 'o'], [/\u0142/g, 'l'], [/\u0131/g, 'i'],
+  [/\u03c8/g, 'psi'], [/\u03c6/g, 'phi'], [/\u03bc/g, 'mu'], [/\u03b1/g, 'alpha'],
+  [/\u03b2/g, 'beta'], [/\u03b3/g, 'gamma'], [/\u03c0/g, 'pi'], [/\u03c3/g, 'sigma'],
+  [/\u03c4/g, 'tau'], [/\u03bb/g, 'lambda'], [/\u03b8/g, 'theta'], [/\u03c9/g, 'omega']];
+function translit(x) { let o = x; for (const [re, to] of TRANSLIT) o = o.replace(re, to); return o; }
+
+/* WHICH ABSOLUTE, IF ANY, IS THIS SENTENCE ACTUALLY CLAIMING?
+ *
+ * Extracted so the loop and the selftest run the same code: the grammar guards
+ * below are the part most likely to be got wrong, and a guard proved only by
+ * the rows it happens to be pointed at is not proved. Returns [ours, theirs]
+ * for the claim the sentence makes, or null when it makes none. */
+function absolutePair(why) {
+  for (const [ours, theirs] of ABSOLUTES) {
+    const m = why.match(ours);
+    if (!m) continue;
+    /* A HEDGE IS NOT AN ABSOLUTE. `\balways\b` fires inside "almost always"
+     * and "nearly always", which are the opposite of the claim being looked
+     * for — the sentence is explicitly declining to say always. "one of the
+     * first" and "among the oldest" decline it the same way. A fact about the
+     * grammar of our sentence, not about whether the source agrees. */
+    /* The list grew as the backlog turned them up: "some of the smallest things
+     * in the sea", "usually the largest single part", "potentially the most
+     * important medical advance". Each one is the sentence declining to make
+     * the claim the check is looking for, exactly as "almost always" does. */
+    if (/\b(?:almost|nearly|not|virtually|practically|essentially|arguably|possibly|perhaps|potentially|reputedly|probably|usually|typically|often|generally|mostly|one of|some of|among)\s+$/i.test(why.slice(0, m.index))) continue;
+    /* "THE FIRST" IS USUALLY AN ORDINAL, NOT A CLAIM OF PRIMACY.
+     *
+     * Eleven of the twenty-one rows flagged on "the first" were not claiming
+     * anything was first in the world. They were counting — "the first three
+     * chambers", "a second ring inside the first" — or saying when — "reaches
+     * sinigrin for the first time", "snaps at the first hard pull". A source is
+     * under no obligation to carry an ordinal, and this check is for sentences
+     * claiming a primacy their article does not. Same category error the hedge
+     * guard above already fixes for "one of the first".
+     *
+     * What still flags: "the first mineral to crystallize", "the first
+     * antibiotic", "the first widely used feedback device" — a singular thing
+     * asserted to have been first. Pinned both ways in the selftest. */
+    if (/^the (?:first|earliest)$/i.test(m[0])) {
+      const after = why.slice(m.index + m[0].length);
+      const ORDINAL = /^\s*(?:time|times|few|\d+|two|three|four|five|six|seven|eight|nine|ten|hard|(?:[,.;:)]|$)|(?:is|was|are|were|and|or|of)\b)/i;
+      if (ORDINAL.test(after)) continue;
+    }
+    return [m[0], theirs];
+  }
+  return null;
+}
+
 /* --selftest: the number check, proved against negatives, with no network.
  *
  * A checker that reports a present number as ABSENT is the same fault this
@@ -762,6 +964,13 @@ if (process.argv.includes('--selftest')) {
     ['roughly 780,000 years old',          'strata dating about 0.79 million years ago', false, 'but not 0.79 million'],
     ['roughly 780,000 years old',          'strata dating about 780,000 years ago',      true,  'the plain form still works'],
     ['about 1,500,000 years',              'some 1.5 million years ago',                 true,  'a whole-and-a-half million'],
+    ['122 columns stand there',            'One hundred and twenty-two of these columns', true, 'the article spelled it out'],
+    ['122 columns stand there',            'One hundred twenty-two of these columns',    true,  'and the American join'],
+    ['123 columns stand there',            'One hundred and twenty-two of these columns', false, 'a different number stays different'],
+    ['12 columns at 21 m',                 'the other 12 are 21 metres tall',            true,  'digits still work'],
+    ['21 columns',                          'twelve columns stand there',                 false, 'twelve is not twenty-one'],
+    ['40 winks',                            'forty winks is a nap',                       true,  'tens on their own'],
+    ['70 tonnes',                           'estimated to weigh 70 tons',                 true,  'plain digits, unchanged'],
   ];
   let bad = 0;
   for (const [prose, article, want, why] of CASES) {
@@ -796,6 +1005,83 @@ if (process.argv.includes('--selftest')) {
     if (got !== want) bad++;
     console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
   }
+  /* "the first" as an ordinal vs as a claim of primacy. absoluteIn returns the
+   * matched absolute, or null when the sentence is not making the claim. */
+  const ORD = [
+    ['reaches sinigrin for the first time, releasing it', false, 'for the first TIME is when, not which'],
+    ['digest the microbes carried in from the first three chambers', false, 'the first THREE is counting'],
+    ['Put a second ring inside the first and build it taller', false, 'anaphoric, with no noun at all'],
+    ['Mosses foreground the first; ferns the second', false, 'anaphoric before a semicolon'],
+    ['poisonous in the first and harmless in the second', false, 'anaphoric before "and"'],
+    ['across the grain it snaps at the first hard pull', false, 'the first hard pull is when'],
+    ['Olivine is the first mineral to crystallize from the melt', true,  'but a singular thing asserted first STILL flags'],
+    ['Penicillium, the source of the first antibiotic', true,  'as does the first antibiotic'],
+    ['It is the first widely used feedback device', true,  'and the first widely used anything'],
+    ['the oldest resistance heating alloy in use', true,  'the oldest is untouched by this guard'],
+    ['eating some of the smallest things in the sea', false, 'some of X is a hedge'],
+    ['it is usually the largest single part', false, 'usually is a hedge'],
+    ['potentially the most important medical advance', false, 'potentially is a hedge'],
+    ['as the earliest ones reputedly were', true, 'a hedge AFTER it hedges the predicate, not the primacy — still a claim'],
+    ['it is the largest single part', true,  'but drop the hedge and it flags again'],
+    ['the most important medical advance of the century', true, 'likewise unhedged'],
+    ['always the smallest room in the building', true, 'always still flags on its own'],
+  ];
+  for (const [prose, want, why] of ORD) {
+    const got = absolutePair(prose) !== null;
+    if (got !== want) bad++;
+    console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
+  }
+  /* INFLECTION, on the SHARP signal — so the negatives are the point. Each
+   * case is (our name, the article's text, the form expected or null). */
+  const INFL = [
+    ['Swedish', 'a cobalt mine in Sweden', 'sweden', 'demonym to country'],
+    ['Greeks', 'the Greek constellation', 'greek', 'plural to singular'],
+    ['Transylvanian', 'found in Transylvania in 1782', 'transylvania', 'adjective to place'],
+    ['Rome', 'the Roman arena was fortified', 'roman', 'ours is the shorter form'],
+    ['Hungary', 'a Hungarian cook invented it', 'hungarian', 'with the y elided'],
+    ['Andes', 'the Andean cloud forest', 'andean', 'plural place to adjective'],
+    ['Britain', 'a British invention', 'british', 'an irregular pair'],
+    ['Islamic', 'the spread of Islam', 'islam', 'a real relation'],
+    ['Islamic', 'a volcanic island chain', null, 'but NOT its false friend'],
+    ['Greek', 'the green ash tree', null, 'nor Greek against green'],
+    ['Seven', 'the severed head of Medusa', null, 'nor Seven against severed'],
+    ['Austria', 'the Australian outback', null, 'Austria is not Australia'],
+    ['Thailand', 'karst towers in Cuba', null, 'an absent country stays absent'],
+    ['Anubis', 'the jackal-headed god', null, 'an absent god stays absent'],
+    ['Haraldskvaedi', 'the poem Haraldskv\u00e6\u00f0i names them', 'PRESENT', 'ash and eth transliterated'],
+    ['Jpsi', 'the J/\u03c8 meson was found', 'PRESENT', 'a Greek letter transliterated'],
+    ['Jpsi', 'the Z boson was found', null, 'but a different particle is still absent'],
+  ];
+  for (const [nm, article, want, why] of INFL) {
+    const b = (x) => x.normalize('NFD').replace(/\p{M}+/gu, '').normalize('NFC').toLowerCase();
+    const src = b(article) + '\u0000' + translit(b(article));
+    /* PRESENT asserts the name is in the article once transliterated, which is
+     * the folded text the names check reads — not a job for the inflection
+     * rule, which only ever sees names that text did NOT carry. */
+    const j = (x) => x.replace(/[-'\u2019\/\s]+/g, '');
+    const got = want === 'PRESENT'
+      ? ((src.includes(b(nm)) || j(src).includes(j(b(nm)))) ? 'PRESENT' : null)
+      : inflectionOf(nm, src);
+    const ok = want === null ? got === null : got === want;
+    if (!ok) bad++;
+    console.log(`  ${ok ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(14)} got ${String(got).padEnd(14)} ${why}`);
+  }
+  /* LOCANTS: part of a chemical's name, never a quantity in the sentence. */
+  const LOC = [
+    ["4,4'-difluorobenzophenone displaces fluoride", 0, 'a primed locant pair'],
+    ["beta-carotene 15,15'-dioxygenase cuts it", 0, 'and a two-digit one'],
+    ['1,3-butadiene polymerises', 0, 'an unprimed locant pair'],
+    ["4'-hydroxyacetophenone forms", 0, 'a single primed locant'],
+    ['a 5-day week of work', 0, 'but a hyphenated COUNT is not a locant'],
+    ['held for 14-day cycles', 0, 'a hyphenated count is skipped too — a lost catch, not a false alarm'],
+    ['yielding about 15% propylene', 1, 'and an ordinary percentage survives'],
+    ['run at around 300\u00b0C in sulfone', 1, 'as does a temperature'],
+  ];
+  for (const [prose, want, why] of LOC) {
+    const got = numbersIn(prose).length;
+    if (got !== want) bad++;
+    console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
+  }
   /* The temperature path, which reads a unit and converts, not a literal. */
   const TEMP = [
     ['temperature rises to 10<sup>8</sup> K', 100000000, true,  'a power of ten stated in kelvin'],
@@ -811,13 +1097,32 @@ if (process.argv.includes('--selftest')) {
     ['water boils at 100 \u00b0C', 100, true,  'the floor still holds at small values'],
     ['water boils at 100 \u00b0C', 103, false, 'three degrees is still too far'],
     ['no temperature here at all', 100, false, 'absent stays absent'],
+    ['requires ({{val|p=> |5|e=8|ul=K}}) and densities', 500000000, true,  "Wikipedia's own value template"],
+    ['requires ({{val|p=> |5|e=8|ul=K}}) and densities', 700000000, false, 'and it still refuses a wrong one'],
+    ['densities of ({{val|p=>|3|e=9|u=kg/m3}}) apply', 3000000000, false, 'a density template is not a temperature'],
+    ['{{val|50|ul=keV}} of energy per particle', 50, false, 'keV is not a temperature either'],
+    ['{{val|1713|u=C}} is where it melts', 1713, false, 'a bare C without the degree sign is not read'],
+    ['a temperature exceeding 1.66 trillion K', 1660000000000, true,  'a magnitude written as a word'],
+    ['a temperature exceeding 1.66 trillion K', 2000000000000, false, 'but not a fifth again as hot'],
+    ['a temperature exceeding 1.66 trillion K', 1660000000, false, 'and not a thousandth of it'],
+    ['heated to 2 million K in the core', 2000000, true,  'million works the same way'],
+    ['2 million people live there', 2000000, false, 'no unit, no temperature'],
+    ['temperatures are between 1 and 7 degrees Celsius', 4, true,  'the unit spelled out, as a range'],
+    ['temperatures are between 1 and 7 degrees Celsius', 9, false, 'and outside the range still fails'],
+    ['held at 100 degrees centigrade', 100, true,  'centigrade counts'],
+    ['the core is at 5000 kelvins', 4726.85, true,  'kelvins spelled out'],
+    ['chilled to 40 degrees Fahrenheit', 4.44, true,  'Fahrenheit spelled out'],
+    ['he holds 7 degrees from three universities', 7, false, 'a degree is not always a temperature'],
+    ['samples held at 20 and 30 \u00b0C were compared', 25, false, 'a bare "and" is not a range'],
+    ['ideal storage is between 15 and 17 \u00b0C', 16, true,  'but "between" opens one'],
+    ['ideal storage is between 15 and 17 \u00b0C', 19, false, 'and it still has ends'],
   ];
   for (const [article, n, want, why] of TEMP) {
     const got = articleHasTemperature(stripApparatus(article), n);
     if (got !== want) bad++;
     console.log(`  ${got === want ? 'ok  ' : 'FAIL'} expect ${String(want).padEnd(5)} got ${String(got).padEnd(5)} ${why}`);
   }
-  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length + APP.length + TEMP.length} case(s) pass — the check admits only a literal the article really asserts`);
+  console.log(bad ? `\n  ${bad} FAILURE(S)` : `\n  ${CASES.length + APP.length + TEMP.length + LOC.length + INFL.length + ORD.length} case(s) pass — the check admits only a literal the article really asserts`);
   process.exit(bad ? 1 : 0);
 }
 
@@ -969,9 +1274,12 @@ for (const r of subject) {
    * are all written with spaces or different joins by their own articles.
    * Strip the joins from both sides and compare the letters. Two different
    * names remain different with their punctuation gone. */
-  const joins = (x) => x.replace(/[-'\u2019\s]+/g, '');
+  /* A SLASH is a join too. Our sentence writes the meson as J/psi and Charm
+   * quark writes it as J/ followed by the Greek letter, so once the letter is
+   * transliterated the two differ by one slash. */
+  const joins = (x) => x.replace(/[-'\u2019\/\s]+/g, '');
   const lowerFolded = dashes(lower);
-  const lowerBare = bare(lowerFolded);
+  const lowerBare = bare(lowerFolded) + '\u0000' + translit(bare(lowerFolded));
   const lowerJoined = joins(lowerBare);
   /* A hyphenated name is usually two names. "Mongolia-China" is a border
    * between two countries the article names separately, and "Maya-Aztec"
@@ -992,6 +1300,13 @@ for (const r of subject) {
         if (titleWords.includes(t) || joins(titleWords).includes(joins(t))) return false;
         const n = dashes(nm.toLowerCase());
         if (present(n)) return false;
+        /* "Earth-sized" is not two names. The head is the name and the tail is
+         * a descriptor, so requiring both reported Great Dark Spot as failing
+         * to mention "sized". Where the tail is one of these, only the head
+         * has to be attested — and a tail that is a real second name, as in
+         * Mongolia-China or Hardy-Weinberg, still needs both. */
+        const DESCRIPTIVE_TAIL = /-(?:sized|size|like|based|shaped|wide|long|old|rich|free|driven|coloured|colored|bearing|borne|style|type|era|born|led|made|fed|lined|filled|covered|facing|facing|year|day|hour)$/;
+        if (DESCRIPTIVE_TAIL.test(n)) return !present(n.replace(DESCRIPTIVE_TAIL, ''));
         const parts = n.split('-').filter(p => p.length > 2);
         return !(parts.length > 1 && parts.every(present));
       });
@@ -1000,25 +1315,13 @@ for (const r of subject) {
   // source, means the certainty is ours rather than the article's.
   let strayAbsolute = null;
   if (!ABSOLUTE_CLEARED[gestureOf(r)]) {
-    for (const [ours, theirs] of ABSOLUTES) {
-      const m = r.why.match(ours);
-      /* A HEDGE IS NOT AN ABSOLUTE. `\balways\b` fires inside "almost always"
-       * and "nearly always", which are the opposite of the claim being looked
-       * for — the sentence is explicitly declining to say always. Same for
-       * "almost the only" and "nearly the oldest". This is a fact about the
-       * grammar of the sentence, not about whether the source agrees with it. */
-      /* "one of the first" and "among the oldest" are not claims of primacy —
-       * the sentence has explicitly declined to make one. Same construction as
-       * "almost always", which this guard already caught; nine more rows in the
-       * backlog were hedged this way and flagged anyway. This is a fact about
-       * the grammar of our sentence, not about whether the source agrees. */
-      if (m && /\b(?:almost|nearly|not|virtually|practically|essentially|arguably|possibly|perhaps|one of|among)\s+$/i.test(r.why.slice(0, m.index))) continue;
-      if (m && !theirs.test(text)) { strayAbsolute = m[0]; break; }
-    }
+    const pair = absolutePair(r.why);
+    if (pair && !pair[1].test(text)) strayAbsolute = pair[0];
   }
 
   /* Anything still unsupported gets one more look, in the infobox. */
   let missing2 = missing, strayNames2 = strayNames, strayTerms2 = strayTerms;
+  let inflected = [];
   /* No raw page offline, so the second chance cannot run. That makes --offline
    * STRICTER than a full run, never looser: a figure that lives only in an
    * infobox reports as missing here. Good enough to confirm a fix, not a
@@ -1082,8 +1385,20 @@ for (const r of subject) {
   const saved = missing.filter(x => !missing2.includes(x));
   if (saved.length) rescued.push({ r, title, saved });
   checked.push(r);
-  if (missing2.length || strayTerms2.length || strayNames2.length || strayAbsolute) {
-    unsupported.push({ r, title, missing: missing2, strayTerms: strayTerms2, strayNames: strayNames2, strayAbsolute, total: nums.length });
+  /* Split what survives: a name the article writes in another grammatical form
+   * is not a name the article never mentions. Done AFTER the second chance, so
+   * a name the wikitext settles never reaches this classification at all. */
+  if (strayNames2.length) {
+    const src = bare(dashes(lower)) + '\u0000' + translit(bare(dashes(lower)));
+    const still = [];
+    for (const nm of strayNames2) {
+      const form = inflectionOf(nm, src);
+      if (form) inflected.push(`${nm}~${form}`); else still.push(nm);
+    }
+    strayNames2 = still;
+  }
+  if (missing2.length || strayTerms2.length || strayNames2.length || strayAbsolute || inflected.length) {
+    unsupported.push({ r, title, missing: missing2, strayTerms: strayTerms2, strayNames: strayNames2, inflected, strayAbsolute, total: nums.length });
   }
 }
 
@@ -1102,6 +1417,7 @@ for (const u of (onlyNames ? ranked.filter(x => x.strayNames.length) : ranked)) 
   if (u.strayAbsolute) console.log(`    ABSOLUTE ours, not the source's: "${u.strayAbsolute}"`);
   if (u.missing.length) console.log(`    numbers not in that article: ${u.missing.map(m => m.shown).join(', ')}`);
   if (u.strayTerms.length) console.log(`    words not in that article: ${u.strayTerms.join(', ')}`);
+  if (u.inflected.length) console.log(`    the article's own form of these: ${u.inflected.join(', ')}`);
   console.log(`    "${u.r.why}"\n`);
 }
 
@@ -1109,10 +1425,12 @@ const nNum = unsupported.filter(u => u.missing.length).length;
 const nName = unsupported.filter(u => u.strayNames.length).length;
 const nAbs = unsupported.filter(u => u.strayAbsolute).length;
 const nWord = unsupported.filter(u => u.strayTerms.length && !u.missing.length && !u.strayNames.length && !u.strayAbsolute).length;
+const nInfl = unsupported.filter(u => u.inflected.length).length;
 console.log(`  ${checked.length} claim(s) checked`);
 console.log(`  ${nName} name(s) the cited article never mentions   <- attributions, the sharp signal`);
 console.log(`  ${nAbs} absolute(s) stronger than anything in the source`);
 console.log(`  ${nNum} number(s) the cited article does not contain`);
+console.log(`  ${nInfl} name(s) the article writes in another form    <- inflection, not a fault`);
 console.log(`  ${nWord} flagged on an unusual word alone           <- weak; read before acting`);
 console.log(`  ${rescued.length} number(s) found ONLY off the prose path       <- --rescued to read them`);
 if (process.argv.includes('--rescued')) {
@@ -1222,6 +1540,10 @@ if (process.argv.includes('--backlog')) {
      * a peninsula and a language, "Indian" and "Indiana" share six. So the row
      * still counts as flagged and this field just says where to look first. */
     name_maybe_adjectival: adjectivalHint(u.strayNames, articles[u.title]) || null,
+    /* Kept in the row, not dropped from it: the name the article does carry,
+     * in its own grammatical form. A row with only this is listed so it can be
+     * read, and is not counted among the names an article never mentions. */
+    inflected_names: u.inflected.length ? u.inflected.join(', ') : null,
     our_absolute: u.strayAbsolute || null,
     verified: !!u.r.verified,
   }));
@@ -1247,6 +1569,15 @@ if (process.argv.includes('--backlog')) {
      * Wikipedia links sat inside that silence for a day. "Source is not a
      * Wikipedia article" is deliberate; anything else wants a human. */
     unchecked: noSource.map(n => ({ out: n.r.out, why: n.why })),
+    /* Names the article DOES carry, in another grammatical form — our
+     * "Swedish" against Nickel's "Sweden". Not faults, and not in the backlog
+     * below, but written down: a row that leaves the worklist without being
+     * recorded somewhere has been hidden rather than resolved. The pair is
+     * printed as ours~theirs so the relation can be judged by eye, which
+     * matters for a rule that cannot tell Siberia/Siberian from
+     * Niger/Nigerian. */
+    inflections: unsupported.filter(u => u.inflected.length)
+      .map(u => ({ out: u.r.out, cited: u.title, pairs: u.inflected.join(', ') })),
     backlog: rows,
   };
   writeFileSync(join(root, 'data/audit-backlog.json'), JSON.stringify(out, null, 1) + '\n');
