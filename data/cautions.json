@@ -3,7 +3,7 @@
   "hazards": {
     "botulism": {
       "label": "Preserving is not a recipe you can eyeball",
-      "note": "Fermenting and curing at home is real food science and it has a real failure mode. Clostridium botulinum grows in exactly the conditions these methods create — low oxygen, low acid, room temperature — and the toxin has no taste or smell. Salt concentration, acidity and temperature are not details; they are the whole safety margin. Follow a tested method from a food-safety authority, not a game.",
+      "note": "Fermenting and curing at home is real food science and it has a real failure mode. Clostridium botulinum is an anaerobic, spore-forming rod, and the conditions its spores need to make toxin are an anaerobic, low-salt, low-acid, low-sugar environment at ambient temperature — which is what these methods create. Smell is not a dependable warning: some types digest meat and produce a characteristic putrefactive smell, but the nonproteolytic types can go undetected because no strong odour accompanies them. Home-canned low-acid foods — carrot juice, asparagus, green beans, beets, corn — are the recurring source. Salt concentration, acidity and temperature are not details; they are the whole safety margin. Follow a tested method from a food-safety authority, not a game.",
       "ids": [
         "brine",
         "pickle",
@@ -19,7 +19,8 @@
         "clostridium_botulinum"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Botulism"
     },
     "caustic": {
       "label": "Lye burns on contact",
@@ -148,7 +149,7 @@
     },
     "lead_toxicity": {
       "label": "Lead is a neurotoxin",
-      "note": "Lead is a neurotoxin that accumulates in soft tissue and bone. It damages the nervous system, interferes with biological enzymes, and can cause neurological problems ranging from behavioural issues to brain damage.",
+      "note": "Lead is a neurotoxin that accumulates in soft tissues and bones. It damages the nervous system, interferes with biological enzymes, and can cause neurological disorders ranging from behavioural problems to brain damage. It also affects the cardiovascular and renal systems.",
       "ids": [
         "lead",
         "lead_sulfide",
@@ -158,7 +159,8 @@
         "lead_iodide",
         "lead_acetate"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Lead"
     },
     "chlorine_gas": {
       "label": "Chlorine gas is a poison, and was used as one",
@@ -206,7 +208,7 @@
     },
     "radioactivity": {
       "label": "These are radioactive, and that is the point of some of them",
-      "note": "Radium, thorium, plutonium and polonium are all radioactive. Radium was painted onto watch dials by women who wet the brushes with their lips, and many of them died of it — the Radium Girls case changed occupational-safety law. Polonium is acutely toxic in microgram amounts.",
+      "note": "Radium's self-luminous paint was applied to watch dials by women who were instructed to \"point\" their brushes on their lips to give them a fine tip — they were told to, because rags or water-rinsing wasted the material. By 1927 more than 50 of them had died of radium poisoning. Many developed anaemia, bone fractures and necrosis of the jaw, a condition now called radium jaw. The lawsuits that followed had lasting effects on labour law in the United States and Europe, and in 1949 Congress passed a bill granting compensation for all workers with occupational diseases.",
       "ids": [
         "radium",
         "thorium",
@@ -218,7 +220,8 @@
         "strontium_fluoride",
         "tritium"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Radium_girls"
     },
     "calcium_corrosive": {
       "label": "Calcium metal burns skin on contact",
@@ -763,7 +766,7 @@
     },
     "beryllium_disease": {
       "label": "Beryllium dust causes a chronic lung disease",
-      "note": "Inhaled beryllium-containing dust is toxic and can cause berylliosis (chronic beryllium disease), a life-threatening allergic lung condition that can progress to pulmonary fibrosis and heart failure. This applies to the ore as much as the refined metal — commercial beryllium handling requires dedicated dust control.",
+      "note": "Inhaled beryllium-containing dust is toxic and can cause berylliosis, a chronic life-threatening allergic disease, in some people — typically manifesting as chronic pulmonary fibrosis and, in severe cases, right-sided heart failure and death. Once inside the body, beryllium cannot be removed. Commercial use of it requires dust control equipment and industrial controls at all times.",
       "ids": [
         "beryllium",
         "beryl",
@@ -778,7 +781,8 @@
         "beryllonite",
         "hambergite"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Beryllium"
     },
     "chrysotile_asbestos": {
       "label": "Some serpentine is asbestos",
@@ -854,7 +858,7 @@
     },
     "soil_transmitted_helminths": {
       "label": "The leading cause of anemia in developing countries",
-      "note": "Ascaris, hookworm, and pinworm are among the most common human parasitic infections worldwide — hookworm alone is closely associated with poverty and is the leading cause of anemia and undernutrition where it's endemic.",
+      "note": "Soil-transmitted helminthiasis comes in three kinds — ascariasis, hookworm infection and whipworm infection — caused by the large roundworm, by Necator americanus or Ancylostoma duodenale, and by the whipworm. The eggs are liberated into soil in the faeces of infected people and become infective as they develop into larvae there. It has become the most common parasitic disease of humans worldwide, affecting roughly two billion people, and hookworm is the leading cause of anaemia and protein deficiency in developing nations, affecting an estimated 740 million.",
       "ids": [
         "ascaris_lumbricoides",
         "hookworm",
@@ -867,7 +871,8 @@
         "enterobiasis",
         "strongyloidiasis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Soil-transmitted_helminthiasis"
     },
     "trichinosis_illness": {
       "label": "From undercooked meat, sometimes seriously",
@@ -1398,7 +1403,7 @@
     },
     "strong_oxidizer_acid": {
       "label": "Chlorine's stronger oxoacids are real oxidiser hazards",
-      "note": "Chlorate, perchlorate and chlorine dioxide chemistry is genuinely dangerous in concentrated or dried form: these compounds are powerful oxidisers that can react explosively with organic material, metals or reducing agents. Perchloric acid work is done only in dedicated, water-washed fume hoods for exactly this reason, and sodium chlorate weedkiller has caused real poisonings and fires when stored carelessly.",
+      "note": "Perchloric acid is a stronger acid than sulfuric, nitric or hydrochloric, and a powerful oxidiser when hot — dangerously corrosive, and readily forming potentially explosive mixtures with substances such as wood, plastics and oils. Work with it must be conducted in fume hoods with a wash-down capability, to stop oxidisers accumulating in the ductwork. That requirement is what the hazard looks like in practice.",
       "ids": [
         "sodium_chlorate",
         "chlorine_dioxide",
@@ -1410,7 +1415,8 @@
         "perchloric_acid",
         "iodic_acid"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Perchloric_acid"
     },
     "oxalic_acid_toxicity": {
       "label": "Oxalic acid is a real poison, not just a rhubarb-leaf curiosity",
@@ -1596,7 +1602,7 @@
     },
     "capsaicin_irritant": {
       "label": "Capsaicin burns skin and eyes on contact",
-      "note": "Handling hot peppers bare-handed puts capsaicin on your skin, and it stays there until it's actively removed — plain water barely touches it, since capsaicin dissolves in oil and alcohol, not water. Touch an eye afterward and it causes intense tearing, pain and spasm of the eyelid. Gloves while cutting, and washing hands with soap before they go anywhere near your face, are what actually work.",
+      "note": "Capsaicin on the skin stays there until something removes it, and plain water is ineffective at that in most situations — capsaicin is soluble in alcohol, which is what can be used to clean contaminated items. At sufficient concentration it burns sensitive areas; eye exposure produces intense tearing, pain, conjunctivitis and blepharospasm, the involuntary spasm of the eyelid. The heat of a pepper is measured on the Scoville scale.",
       "ids": [
         "chilli",
         "capsicum",
@@ -1606,7 +1612,8 @@
         "hot_sauce",
         "capsaicin"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Capsaicin"
     },
     "ptfe_fume_fever": {
       "label": "Overheated PTFE releases toxic fumes",
@@ -1891,7 +1898,7 @@
     },
     "gi_infection_risk": {
       "label": "Fecal-oral pathogens are a real category",
-      "note": "Norovirus, hepatitis A, Cyclospora and Salmonella Typhi all spread the same basic way: something that touched contaminated feces reaches someone's mouth, often through food or water. Most cases resolve on their own, but typhoid fever and severe C. difficile colitis can turn genuinely serious.",
+      "note": "Faecal–oral transmission is summarised as the five F's: fingers, flies, fields, fluids and food. The diseases it carries include typhoid, cholera, polio and hepatitis, and many infections that cause diarrhoea — norovirus, Salmonella typhi, Shigella, Clostridioides difficile, E. coli and Campylobacter among them. It follows from inadequate sanitation and poor hygiene: where soil or water is polluted with faecal material, people are infected through water or through food contaminated in turn.",
       "ids": [
         "norovirus",
         "norovirus_gastroenteritis",
@@ -1904,7 +1911,8 @@
         "c_diff_infection"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Fecal–oral_route"
     },
     "bite_wound_zoonoses": {
       "label": "An animal bite or scratch is a real inoculation",
@@ -2070,7 +2078,7 @@
     },
     "hiv_opportunistic_infections": {
       "label": "AIDS-defining infections turn dangerous only once CD4+ counts collapse",
-      "note": "Pneumocystis pneumonia, cytomegalovirus retinitis, toxoplasmic encephalitis, and Kaposi's sarcoma are all caused by organisms many people already carry harmlessly; they become life-threatening specifically once a person's CD4+ T cell count falls to roughly 200 cells per microliter or below. Before antiretroviral therapy, these opportunistic conditions were the leading causes of death in people with AIDS.",
+      "note": "HIV targets the CD4 cells of the immune system, and a count below 200 per cubic millimetre marks an immune system no longer able to hold off organisms a healthy one ignores. Pneumocystis jirovecii, a fungus, causes pneumocystis pneumonia; Toxoplasma gondii causes toxoplasmosis, which can impair the brain; human herpesvirus 8 is associated with Kaposi sarcoma; cytomegalovirus belongs to the same herpesvirus family and is most often associated with immunocompromise. The organisms are ordinary. The immunodeficiency is what makes them dangerous.",
       "ids": [
         "pneumocystis_jirovecii",
         "pneumocystis_pneumonia",
@@ -2082,7 +2090,8 @@
         "hiv_wasting_syndrome"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Opportunistic_infection"
     },
     "hiv_transmission_routes": {
       "label": "HIV spreads through specific body-fluid routes, not casual contact",
@@ -2523,21 +2532,6 @@
       "severity": "cumulative",
       "biohazard": true
     },
-    "trypanosomiasis_burden": {
-      "label": "Two parasites on two continents, both fatal if nothing is done",
-      "note": "Trypanosoma brucei is injected by tsetse flies and causes human African trypanosomiasis, generally fatal untreated; sustained control has held reported cases under 1,000 a year since 2018, though about 55 million people still live where transmission is possible. Trypanosoma cruzi, carried by triatomine bugs and also passed in pregnancy, transfusion and contaminated food, infects an estimated 8 million people and causes more than 10,000 deaths a year. Up to a third of chronic Chagas infections eventually damage the heart.",
-      "ids": [
-        "trypanosoma",
-        "trypanosoma_brucei",
-        "trypanosoma_cruzi",
-        "sleeping_sickness",
-        "chagas_disease",
-        "tsetse_fly",
-        "triatomine_bug"
-      ],
-      "severity": "acute",
-      "biohazard": true
-    },
     "tuberculosis_burden": {
       "label": "Latent in a quarter of humanity, and still killing over a million people a year",
       "note": "Mycobacterium tuberculosis travels through the air from someone with active lung disease, and about a quarter of the world's population carries a latent infection that causes no symptoms and cannot be passed on. Between 5 and 10% of those infected go on to active disease. WHO counted an estimated 10.7 million new cases and 1.23 million deaths in 2024, and only about two in five people with multidrug-resistant TB reached treatment that year.",
@@ -2591,7 +2585,7 @@
     },
     "alcohol_carcinogen": {
       "label": "Alcohol has been a Group 1 carcinogen since 1988",
-      "note": "IARC classified alcoholic beverages as carcinogenic to humans in 1988, and acetaldehyde — what the liver turns ethanol into — in 2009. It causes cancer of the mouth, pharynx, larynx, oesophagus, liver, colon, rectum and breast. About 740,000 cancer cases in 2020, 4.1% of all new cases, were attributed to alcohol, more than three-quarters of them in men. There is no drink that is exempt: the risk follows the ethanol, not the kind of drink it arrives in.",
+      "note": "IARC classified alcoholic beverages as a Group 1 carcinogen in 1988, and in 2009 determined the same of acetaldehyde — what the liver turns ethanol into. It causes cancer of the oesophagus, liver, breast, colon, oral cavity, rectum, pharynx and larynx, and probably of the pancreas. 740,000 cancer cases in 2020, 4.1% of all new cases, were attributed to alcohol, and more than three-quarters of them were in men. The risk is not confined to heavy drinking: it occurs even with light to moderate intake.",
       "ids": [
         "beer",
         "wine",
@@ -2602,7 +2596,8 @@
         "sweet_wine"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Alcohol_and_cancer"
     },
     "processed_meat_carcinogen": {
       "label": "Processed meat is a Group 1 carcinogen, in the same confidence class as tobacco",
@@ -2620,7 +2615,7 @@
     },
     "red_meat_probable_carcinogen": {
       "label": "Red meat is probably carcinogenic, on weaker evidence than processed meat",
-      "note": "IARC places red meat — all mammalian muscle meat, so beef, veal, pork, lamb, mutton, horse and goat — in Group 2A, probably carcinogenic to humans. The association with bowel cancer is consistent but the evidence is not strong enough to call it causal: if it is, every 100 grams a day would raise the risk by about 17%, and some 50,000 cancer deaths a year would be attributable to it.",
+      "note": "In 2015 IARC classified unprocessed red meat as \"probably carcinogenic to humans (Group 2A)\", assessing over 800 epidemiological studies to do it. Red meat here means meat from mammals — beef, pork, lamb, mutton, veal, venison and goat — and some definitions require it to be muscle meat rather than organ meat. The cancer it probably causes is colorectal. IARC's conclusion is conditional and worth reading as one: IF unprocessed red meat does cause cancer, there is a 17% higher risk of colorectal cancer for every 100 g eaten daily.",
       "ids": [
         "beef",
         "pork",
@@ -2630,7 +2625,8 @@
         "steak",
         "mince"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Red_meat"
     },
     "salted_fish_carcinogen": {
       "label": "Chinese-style salted fish is a Group 1 carcinogen",
@@ -3202,6 +3198,29 @@
       "severity": "conditional",
       "biohazard": true,
       "src": "https://www.cdc.gov/botulism/prevention/index.html"
+    },
+    "african_trypanosomiasis_burden": {
+      "label": "Sleeping sickness is nearly beaten, and that is a recent thing",
+      "note": "Human African trypanosomiasis is caused by Trypanosoma brucei, transmitted by the bite of an infected tsetse fly, and is generally fatal if untreated. Sustained control has held reported cases under 1,000 a year since 2018, down from hundreds of thousands at the twentieth century's peaks — but about 55 million people still live in areas where transmission is possible.",
+      "ids": [
+        "trypanosoma",
+        "trypanosoma_brucei",
+        "sleeping_sickness",
+        "tsetse_fly"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis"
+    },
+    "chagas_burden": {
+      "label": "A bug bite in childhood, a damaged heart decades later",
+      "note": "Chagas disease is caused by Trypanosoma cruzi, spread mainly by triatomine bugs and also passed in pregnancy, by transfusion and in contaminated food. An estimated 6.5 million people, mostly in Mexico, Central America and South America, had it as of 2019, resulting in approximately 9,490 deaths a year. Most do not realise they are infected: the acute phase usually passes without further symptoms, and then up to 45% of chronic infections develop heart disease 10 to 30 years later, which can lead to heart failure.",
+      "ids": [
+        "trypanosoma_cruzi",
+        "chagas_disease",
+        "triatomine_bug"
+      ],
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Chagas_disease"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

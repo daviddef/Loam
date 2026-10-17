@@ -4414,14 +4414,46 @@
     ]
   },
   "hazards": {
-    "beryllium_disease": [
+    "actinomycosis_invasion": [
       {
         "valence": "harm",
-        "route": "inhaled",
-        "outcome": "allergic_reaction",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Ordinary mouth flora that becomes an invader only when it is carried past the mucosa into tissue with no oxygen. It then spreads across tissue planes rather than along them, ignoring the boundaries most infections respect.",
+        "src": "https://en.wikipedia.org/wiki/Actinomycosis"
+      }
+    ],
+    "aflatoxin_in_storage": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cancer",
         "onset": "cumulative",
-        "mechanism": "Not a poisoning but a hypersensitivity: the immune system learns the metal and then attacks the lung tissue holding it, building granulomas that stiffen into fibrosis. Only some people sensitise, and the ore is as capable of it as the refined metal.",
-        "src": "https://en.wikipedia.org/wiki/Berylliosis"
+        "mechanism": "A mould metabolite, made in storage rather than in the field, and the liver activates it into the form that binds DNA. It is one of the most potent liver carcinogens known and is invisible in the food.",
+        "src": "https://en.wikipedia.org/wiki/Aflatoxin",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "african_trypanosomiasis_burden": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The parasite changes its surface coat faster than antibodies can be raised against it, so the immune system is always answering the last version. In the African form it eventually crosses into the brain, which is where the sleeping sickness gets its name.",
+        "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis"
+      }
+    ],
+    "aids_untreated_progression": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The virus infects the very cells that would coordinate a response to it, and the count falls over years while the person feels well. What kills is what arrives afterwards.",
+        "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
       }
     ],
     "alcohol": [
@@ -4432,135 +4464,6 @@
         "onset": "cumulative",
         "mechanism": "Ethanol enhances GABA and blunts glutamate, and a brain held that way for long enough rebalances to compensate. The dependence is that rebalancing: the same drink no longer does what it did, and stopping leaves the compensation unopposed.",
         "src": "https://en.wikipedia.org/wiki/Alcoholism"
-      }
-    ],
-    "soil_transmitted_helminths": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "anaemia",
-        "onset": "conditional",
-        "mechanism": "Hookworm is the reason this is an anaemia and not just an infection: the adult worm attaches to the intestinal wall and feeds on blood, continuously, for years. The loss is slow enough that a child grows up short of iron rather than acutely ill.",
-        "src": "https://en.wikipedia.org/wiki/Soil-transmitted_helminthiasis"
-      }
-    ],
-    "botulism": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "botulism",
-        "onset": "acute",
-        "mechanism": "The bacterium itself is harmless to swallow; the toxin it makes in an airless, low-acid, unrefrigerated jar is not. It cleaves the proteins a nerve ending needs to release acetylcholine, so the signal to contract never arrives and the paralysis starts at the face and travels down.",
-        "src": "https://en.wikipedia.org/wiki/Botulism"
-      }
-    ],
-    "radioactivity": [
-      {
-        "valence": "harm",
-        "route": "radiation",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "Alpha emitters do nothing through skin and everything once inside, because the whole of that energy is deposited in a few cell diameters. Radium is treated by the body as calcium and goes to bone, which is why the dial painters' jaws were the first thing to fail.",
-        "src": "https://en.wikipedia.org/wiki/Radium_girls",
-        "carcinogen": true,
-        "iarc": 1,
-        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
-      }
-    ],
-    "strong_oxidizer_acid": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "acute",
-        "mechanism": "An oxidiser injures by taking electrons from tissue rather than by acid or alkali: the damage is oxidation of the protein itself, and it continues while the compound remains on the skin.",
-        "src": "https://en.wikipedia.org/wiki/Chlorate"
-      }
-    ],
-    "gi_infection_risk": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "All of these take the same road: something that touched faeces reaches a mouth. What differs is only the dose needed, and for norovirus it is small enough that ordinary handwashing failures are sufficient.",
-        "src": "https://en.wikipedia.org/wiki/Fecal%E2%80%93oral_route"
-      }
-    ],
-    "hiv_opportunistic_infections": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "These organisms are already present in many healthy people and held in check by cell-mediated immunity. What changes is not the organism but the count of CD4 cells watching it, which is why the same microbe is unremarkable in one person and fatal in another.",
-        "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
-      }
-    ],
-    "capsaicin_irritant": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "irritant",
-        "onset": "contact",
-        "mechanism": "Capsaicin opens TRPV1, the same channel heat opens, so the nerve reports a burn that is not there. It is oil-soluble and stays on skin until something that dissolves fat removes it; water spreads it.",
-        "src": "https://en.wikipedia.org/wiki/Capsaicin"
-      }
-    ],
-    "trypanosomiasis_burden": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The parasite changes its surface coat faster than antibodies can be raised against it, so the immune system is always answering the last version. In the African form it eventually crosses into the brain, which is where the sleeping sickness gets its name.",
-        "src": "https://en.wikipedia.org/wiki/African_trypanosomiasis"
-      }
-    ],
-    "fire": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "Protein denatures above about 44 °C given long enough, so depth follows temperature and time rather than temperature alone. Burning oil carries far more heat per gram than water and clings, which is why an oil fire scalds where a water splash does not.",
-        "src": "https://en.wikipedia.org/wiki/Burn"
-      }
-    ],
-    "lead_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "neurotoxin",
-        "onset": "cumulative",
-        "mechanism": "Lead imitates calcium closely enough to be taken up by the same transporters, and then does none of calcium's jobs — it interferes with neurotransmitter release and with the enzymes that build haem. It banks in bone, so the exposure outlasts the source by decades.",
-        "src": "https://en.wikipedia.org/wiki/Lead_poisoning",
-        "carcinogen": false
-      }
-    ],
-    "liver_fluke_infection": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "cancer",
-        "onset": "conditional",
-        "mechanism": "The fluke lives in the bile ducts and the chronic irritation of that lining is what makes this a cancer risk rather than only an infection. It can persist in one person for around thirty years.",
-        "src": "https://en.wikipedia.org/wiki/Clonorchis_sinensis",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "hexavalent_chromium": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "Chromium(VI) crosses the cell membrane through the sulphate channel, which chromium(III) cannot, and is then reduced inside the cell — generating reactive intermediates against the DNA rather than outside it.",
-        "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)",
-        "carcinogen": true,
-        "iarc": 1,
-        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
     "alcohol_carcinogen": [
@@ -4575,240 +4478,6 @@
         "iarc": 1
       }
     ],
-    "processed_meat_carcinogen": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "Nitrite curing salts form N-nitroso compounds in the gut, and smoking adds polycyclic aromatics on top. Group 1 is a statement about the strength of the evidence, not about the size of the risk.",
-        "src": "https://en.wikipedia.org/wiki/Processed_meat",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "pah_carcinogen_grades": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
-        "mechanism": "The body activates these rather than detoxifying them: an enzyme meant to make them water-soluble produces an epoxide that binds DNA. IARC grades them one by one — benzo[a]pyrene Group 1, others 2A and 2B — so this class carries no single verdict.",
-        "src": "https://en.wikipedia.org/wiki/Polycyclic_aromatic_hydrocarbon"
-      }
-    ],
-    "raw": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Neither organism is unusual and neither is certain. What changes with pregnancy, age or immunosuppression is not exposure but what a small dose is able to do once it is inside.",
-        "src": "https://en.wikipedia.org/wiki/Foodborne_illness"
-      }
-    ],
-    "severe_weather": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Wind does its damage by what it carries rather than by pressure, and moving water by weight: a foot of it moves a car because water weighs a tonne per cubic metre and does not compress.",
-        "src": "https://en.wikipedia.org/wiki/Severe_weather"
-      }
-    ],
-    "cyanide_poisoning": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "hypoxia",
-        "onset": "acute",
-        "mechanism": "Cyanide binds cytochrome c oxidase at the end of the respiratory chain, so the cell cannot use the oxygen it already has. The blood stays bright red and the tissue suffocates anyway.",
-        "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
-      }
-    ],
-    "red_meat_probable_carcinogen": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "carcinogen",
-        "onset": "cumulative",
-        "mechanism": "Haem iron catalyses N-nitroso formation in the gut, and high-temperature cooking adds heterocyclic amines. Group 2A means the evidence is strong in animals and limited in people, which is a different statement from Group 1.",
-        "src": "https://en.wikipedia.org/wiki/Red_meat"
-      }
-    ],
-    "lightning": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "electrocution",
-        "onset": "acute",
-        "mechanism": "Most of the current flashes over the outside of a body rather than through it, which is why survival is common and burns follow the sweat. The lethal cases are cardiac arrest, and a strike does not need to hit you — ground current travels.",
-        "src": "https://en.wikipedia.org/wiki/Lightning_injury"
-      }
-    ],
-    "bean_lectin": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "Phytohaemagglutinin binds the carbohydrate on the surface of gut cells and stops them absorbing. It is destroyed by a proper boil and, notably, not by the low steady heat of a slow cooker.",
-        "src": "https://en.wikipedia.org/wiki/Phytohaemagglutinin"
-      }
-    ],
-    "shark_bite": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "acute",
-        "mechanism": "Serrated teeth in a jaw that shakes rather than bites through: the injury is a tearing one, and the danger is blood loss rather than the bite itself.",
-        "src": "https://en.wikipedia.org/wiki/Shark_attack"
-      }
-    ],
-    "tapeworm_infection": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The adult worm in the gut is often unremarkable — it absorbs across its own surface and has no digestive tract to compete with yours. The serious disease is the larval one, and that comes from swallowing eggs rather than meat.",
-        "src": "https://en.wikipedia.org/wiki/Taenia_solium"
-      }
-    ],
-    "tropane_alkaloid_poisoning": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "Atropine and scopolamine block muscarinic acetylcholine receptors, so every parasympathetic signal stops at once: the pupil cannot constrict, the gut stops, the skin cannot sweat and the temperature climbs. The delirium it causes is the reason these plants have a reputation, and the concentration differs between plants of the same species and the same plant in different years.",
-        "src": "https://en.wikipedia.org/wiki/Anticholinergic"
-      }
-    ],
-    "clostridial_wound_risk": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "tetanus",
-        "onset": "acute",
-        "mechanism": "Both bacteria need the absence of oxygen, which a deep or crushed wound supplies by sealing itself. Tetanus toxin travels up the nerve to the spinal cord and blocks the signals that switch a muscle off, so nothing can relax.",
-        "src": "https://en.wikipedia.org/wiki/Tetanus"
-      }
-    ],
-    "bite_wound_zoonoses": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A bite is an injection: it puts an animal's mouth flora past every barrier the skin has, into tissue with a good blood supply and no drainage. The animal is usually healthy, which is the point.",
-        "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
-      }
-    ],
-    "aids_untreated_progression": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The virus infects the very cells that would coordinate a response to it, and the count falls over years while the person feels well. What kills is what arrives afterwards.",
-        "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
-      }
-    ],
-    "nematocyst_sting": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "poisoning",
-        "onset": "contact",
-        "mechanism": "One of the fastest movements in biology: a pressurised capsule turns its coiled thread inside out and drives a barb through skin in under a millisecond. It is mechanical, not voluntary, so a detached tentacle still fires.",
-        "src": "https://en.wikipedia.org/wiki/Cnidocyte"
-      }
-    ],
-    "caustic": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "acute",
-        "mechanism": "An alkali saponifies the fat in skin and keeps going, which is why it feels slippery and why the injury is deeper than it first looks. Acid burns coagulate and self-limit; this does not.",
-        "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
-      }
-    ],
-    "reactive_metal": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "The reaction with water makes hydrogen and heat at the same time and in the same place, so the hydrogen ignites — and what is left behind on the skin is a strong alkali.",
-        "src": "https://en.wikipedia.org/wiki/Alkali_metal"
-      }
-    ],
-    "heavy_metal_dust": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "neurotoxin",
-        "onset": "cumulative",
-        "mechanism": "Manganese taken in through the lung bypasses the gut regulation that normally limits it and reaches the brain, where it accumulates in the basal ganglia and produces a movement disorder that does not reverse.",
-        "src": "https://en.wikipedia.org/wiki/Manganism"
-      }
-    ],
-    "eu_dye_hyperactivity_warning": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "allergic_reaction",
-        "onset": "conditional",
-        "mechanism": "The regulation requires a label, not a ban, and the finding behind it was a small shift in behaviour averaged across a group of children rather than a reaction in any one of them. Some of the same dyes are separately associated with allergic responses, which is a different claim with different evidence.",
-        "src": "https://en.wikipedia.org/wiki/Food_coloring"
-      }
-    ],
-    "cassia_coumarin": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "hepatotoxin",
-        "onset": "cumulative",
-        "mechanism": "Coumarin is processed by the liver, and in a minority of people the pathway that handles it safely is slow. Cassia carries it in quantity; true Ceylon cinnamon carries traces, and they are sold under one name.",
-        "src": "https://en.wikipedia.org/wiki/Coumarin"
-      }
-    ],
-    "venomous_fish_sting": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "The spines are a defence, not a weapon: they stand up when the fish is trodden on and the venom gland is squeezed by the same pressure. The pain is out of proportion to the wound.",
-        "src": "https://en.wikipedia.org/wiki/Stonefish"
-      }
-    ],
-    "chrysotile_asbestos": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "asbestosis",
-        "onset": "cumulative",
-        "mechanism": "Fibres split lengthwise rather than across, so they stay narrow enough to reach the deep lung and long enough that a macrophage cannot clear one. Intact rock is inert; breaking it is what makes the hazard.",
-        "src": "https://en.wikipedia.org/wiki/Chrysotile",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "oxidizer_hazard": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "acute",
-        "mechanism": "Concentration is the whole difference: the same molecule that is an antiseptic at three per cent bleaches and blisters skin when it is not diluted, because it oxidises the tissue directly rather than acting as an acid or an alkali.",
-        "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
-      }
-    ],
     "allyl_isothiocyanate_irritant": [
       {
         "valence": "harm",
@@ -4819,114 +4488,14 @@
         "src": "https://en.wikipedia.org/wiki/TRPA1"
       }
     ],
-    "toxic_shock_risk": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "sepsis",
-        "onset": "acute",
-        "mechanism": "A superantigen bypasses the normal specificity of the immune system and activates a large fraction of T cells at once. The damage is the response, not the bacterium.",
-        "src": "https://en.wikipedia.org/wiki/Toxic_shock_syndrome"
-      }
-    ],
-    "leishmaniasis_burden": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The parasite is taken up by the macrophage that should destroy it and survives inside it, which is why the visceral form settles in spleen, liver and marrow — the places those cells live.",
-        "src": "https://en.wikipedia.org/wiki/Leishmaniasis"
-      }
-    ],
-    "benzoate_ascorbate_benzene": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "carcinogen",
-        "onset": "conditional",
-        "mechanism": "Benzoate can lose its carboxyl group in the presence of ascorbate, catalysed by trace metal, and what is left is benzene. Heat and light speed it up, so it is a storage problem rather than a formulation one.",
-        "src": "https://en.wikipedia.org/wiki/Benzene_in_soft_drinks"
-      }
-    ],
-    "teratogen_window": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "birth_defect",
-        "onset": "conditional",
-        "mechanism": "Susceptibility follows developmental stage, not dose alone: the same exposure that does nothing later can, during the weeks an organ is being laid down, prevent it forming at all.",
-        "src": "https://en.wikipedia.org/wiki/Teratology"
-      }
-    ],
-    "neurocysticercosis_epilepsy": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "seizure",
-        "onset": "acute",
-        "mechanism": "Swallowing the eggs rather than the larvae puts a person in the pig's place in the life cycle, and the larva encysts wherever it lands. In the brain the seizures often start when the cyst dies and the immune system finally notices it.",
-        "src": "https://en.wikipedia.org/wiki/Neurocysticercosis"
-      }
-    ],
-    "hydatid_cyst_rupture": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "anaphylaxis",
-        "onset": "acute",
-        "mechanism": "The cyst grows for years without symptoms because it is walled off. The danger is that wall failing: the contents are highly antigenic, the immune system meets all of it at once, and mast cells degranulate everywhere at the same moment.",
-        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
-      }
-    ],
-    "onchocerciasis_blindness": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "cumulative",
-        "mechanism": "The adult worm is tolerated; it is the death of the microfilariae in the eye and skin that provokes the inflammation, so the damage is done by the response rather than by the parasite.",
-        "src": "https://en.wikipedia.org/wiki/Onchocerciasis"
-      }
-    ],
-    "guinea_worm_eradication": [
+    "amoebiasis_illness": [
       {
         "valence": "harm",
         "route": "ingested",
         "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The larva is swallowed inside a water flea, matures over a year, and the adult female then makes a blister that burns until it is put in water — which is exactly where she releases the next generation.",
-        "src": "https://en.wikipedia.org/wiki/Dracunculiasis"
-      }
-    ],
-    "mercury_toxicity": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "neurotoxin",
-        "onset": "cumulative",
-        "mechanism": "The metal is poorly absorbed from the gut and readily from the lung, and organic mercury crosses into the brain and the placenta freely. It binds sulphur wherever it finds it, which is in most enzymes.",
-        "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
-      }
-    ],
-    "uranium_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "nephrotoxin",
-        "onset": "cumulative",
-        "mechanism": "The chemistry outruns the radioactivity here: the soluble oxide is filtered by the kidney and damages the tubule it is being concentrated in, the same way other heavy metals do.",
-        "src": "https://en.wikipedia.org/wiki/Uranium#Toxicity"
-      }
-    ],
-    "fluorine_hazard": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "corrosive",
         "onset": "acute",
-        "mechanism": "It takes electrons from almost anything, including the water in the airway lining, and what that produces is hydrofluoric acid in the lung.",
-        "src": "https://en.wikipedia.org/wiki/Fluorine"
+        "mechanism": "Most infections stay in the gut. The invasive form digests through the intestinal wall and can seed the liver, which is a different disease from the diarrhoea it starts as.",
+        "src": "https://en.wikipedia.org/wiki/Amoebiasis"
       }
     ],
     "arsenic_toxicity": [
@@ -4942,306 +4511,44 @@
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
-    "volcanic_activity": [
-      {
-        "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
-        "onset": "acute",
-        "mechanism": "A pyroclastic flow is a ground-hugging suspension of hot gas and ash moving faster than anything can run, at temperatures that kill by heat before burial. Distance from the vent is not the protection it looks like.",
-        "src": "https://en.wikipedia.org/wiki/Pyroclastic_flow"
-      }
-    ],
-    "methanol_toxicity": [
+    "aspartame_phenylketonuria": [
       {
         "valence": "harm",
         "route": "ingested",
         "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "Methanol itself is not the poison; the liver turns it into formaldehyde and then formic acid, which blocks the same respiratory enzyme cyanide does. The delay between drinking and blindness is that conversion.",
-        "src": "https://en.wikipedia.org/wiki/Methanol_toxicity"
+        "onset": "conditional",
+        "mechanism": "It is two amino acids joined, and the gut takes them apart. One is phenylalanine, which is harmless unless you cannot process it — which is exactly the group the warning label is addressed to and nobody else.",
+        "src": "https://en.wikipedia.org/wiki/Aspartame"
       }
     ],
-    "phenol_corrosive": [
+    "b6_neuropathy": [
       {
         "valence": "harm",
-        "route": "contact",
-        "outcome": "corrosive",
-        "onset": "acute",
-        "mechanism": "It denatures protein on contact and is absorbed through the skin at the same time, so a burn that looks local is also a systemic exposure. It anaesthetises the area, which removes the warning.",
-        "src": "https://en.wikipedia.org/wiki/Phenol"
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "The unusual case of a water-soluble vitamin with real toxicity: sustained excess damages sensory nerves from the ends inwards, and recovery is slow and sometimes incomplete.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B6#Toxicity"
       }
     ],
-    "formaldehyde_carcinogen": [
+    "bacterial_meningitis": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "cancer",
-        "onset": "cumulative",
-        "mechanism": "It cross-links protein to DNA at the first tissue it meets, which is why the cancers associated with it are of the nose and throat rather than anywhere further in.",
-        "src": "https://en.wikipedia.org/wiki/Formaldehyde",
-        "carcinogen": true,
-        "iarc": 1
-      }
-    ],
-    "road_animal": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "A large animal at windscreen height is carried onto the passenger compartment rather than pushed aside, which is why deer collisions injure out of proportion to their speed.",
-        "src": "https://en.wikipedia.org/wiki/Roadkill"
-      }
-    ],
-    "thujone_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "seizure",
-        "onset": "cumulative",
-        "mechanism": "Thujone blocks the GABA-A receptor, the brake on neuronal firing, and removing a brake is how a convulsant works. Cooking with the leaf is not the concern; the concentrated oil is.",
-        "src": "https://en.wikipedia.org/wiki/Thujone"
-      }
-    ],
-    "cassava_cyanogenic_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "conditional",
-        "mechanism": "The root keeps the glycoside and the enzyme that opens it in separate compartments; crushing brings them together and hydrogen cyanide is released. Long soaking and fermentation are not tradition for its own sake.",
-        "src": "https://en.wikipedia.org/wiki/Cassava#Toxicity"
-      }
-    ],
-    "nutmeg_myristicin": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "Myristicin is metabolised into compounds that act on the same receptors as amphetamines, and the reaction is long, unpleasant and unpredictable rather than recreational.",
-        "src": "https://en.wikipedia.org/wiki/Myristicin"
-      }
-    ],
-    "ecoli_illness": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Most strains are ordinary gut flora. The pathogenic ones differ by acquired genes — a toxin, an adhesin — rather than by being a different organism, which is why the species name says so little.",
-        "src": "https://en.wikipedia.org/wiki/Escherichia_coli"
-      }
-    ],
-    "malaria_burden": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "fever",
-        "onset": "acute",
-        "mechanism": "The fever is synchronised because the infected red cells burst together, releasing merozoites and debris in waves. The parasite spends part of its cycle in the liver, out of reach of drugs aimed at the blood.",
-        "src": "https://en.wikipedia.org/wiki/Malaria"
-      }
-    ],
-    "giardiasis_illness": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The cyst survives ordinary chlorination and only a few are needed. The trophozoite attaches to the intestinal lining and interferes with absorption rather than invading, which is why the illness is prolonged rather than acute.",
-        "src": "https://en.wikipedia.org/wiki/Giardiasis"
-      }
-    ],
-    "amoebiasis_illness": [
-      {
-        "valence": "harm",
-        "route": "ingested",
         "outcome": "infection",
         "onset": "acute",
-        "mechanism": "Most infections stay in the gut. The invasive form digests through the intestinal wall and can seed the liver, which is a different disease from the diarrhoea it starts as.",
-        "src": "https://en.wikipedia.org/wiki/Amoebiasis"
+        "mechanism": "The organisms live harmlessly in many throats. What makes this an emergency is where they end up: the space around the brain has no lymphatic drainage and very little immune presence, so a small inoculum grows unopposed for hours.",
+        "src": "https://en.wikipedia.org/wiki/Meningitis"
       }
     ],
-    "trichomoniasis_sti": [
+    "bacterial_vaginosis_risks": [
       {
         "valence": "harm",
         "route": "contact",
         "outcome": "infection",
         "onset": "conditional",
-        "mechanism": "It moves between people by direct contact and does not survive drying, and most carriers have no symptoms at all — which is what keeps 160 million infections a year in circulation.",
-        "src": "https://en.wikipedia.org/wiki/Trichomoniasis"
-      }
-    ],
-    "cryptosporidiosis_illness": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The oocyst wall resists chlorine at the concentrations used in swimming pools, so the usual barrier is filtration rather than disinfection.",
-        "src": "https://en.wikipedia.org/wiki/Cryptosporidiosis"
-      }
-    ],
-    "trichinosis_illness": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The larvae are released from their cysts by stomach acid, mature in the gut, and the new generation then travels to muscle and encysts there — which is why the later symptoms are muscular rather than digestive.",
-        "src": "https://en.wikipedia.org/wiki/Trichinosis"
-      }
-    ],
-    "lymphatic_filariasis_burden": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "cumulative",
-        "mechanism": "The adult worms live in the lymphatic vessels and obstruct them physically. The swelling is drainage failing, and it persists after the worms are gone.",
-        "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis"
-      }
-    ],
-    "schistosomiasis_burden": [
-      {
-        "valence": "harm",
-        "route": "absorbed",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The larva penetrates intact skin from fresh water, which is why this is a disease of contact with water rather than of drinking it. The chronic damage is the immune reaction to eggs lodged in tissue.",
-        "src": "https://en.wikipedia.org/wiki/Schistosomiasis"
-      }
-    ],
-    "crocodilian_bite": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "The bite force is among the highest measured in any living animal and the roll that follows is what makes the injury unsurvivable; the teeth hold rather than cut.",
-        "src": "https://en.wikipedia.org/wiki/Crocodile_attack"
-      }
-    ],
-    "poison_dart_frog_toxin": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "neurotoxin",
-        "onset": "acute",
-        "mechanism": "Batrachotoxin holds sodium channels permanently open, so nerve and muscle cannot reset between signals. The frog does not make it — it comes from the beetles it eats, and captive frogs lose it.",
-        "src": "https://en.wikipedia.org/wiki/Batrachotoxin"
-      }
-    ],
-    "big_cat_attack": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "acute",
-        "mechanism": "Attacks on people are uncommon for either species and the documented cases cluster in individual animals rather than in populations — usually one that has lost the ability to take its normal prey. The bite is to the throat, and it is a killing hold rather than a defensive snap.",
-        "src": "https://en.wikipedia.org/wiki/Tiger_attack"
-      }
-    ],
-    "tailings_dam_failure": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "Saturated tailings can liquefy when shaken or overtopped, at which point the dam is holding back a fluid rather than a solid, and the wave travels far further than the volume suggests.",
-        "src": "https://en.wikipedia.org/wiki/Tailings_dam"
-      }
-    ],
-    "blasting_hazard": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "The injury is the shock front rather than the fragments: gas-filled organs — lung, ear, bowel — fail at pressures the rest of the body survives.",
-        "src": "https://en.wikipedia.org/wiki/Explosive"
-      }
-    ],
-    "mri_magnetic_field": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "The field is always on, including between patients and during a power failure, and it accelerates a ferromagnetic object along the bore. The hazard is the projectile, not the field.",
-        "src": "https://en.wikipedia.org/wiki/MRI_safety"
-      }
-    ],
-    "pet_radiotracer": [
-      {
-        "valence": "harm",
-        "route": "radiation",
-        "outcome": "radiation_sickness",
-        "onset": "conditional",
-        "mechanism": "The tracer is a real isotope in the bloodstream, and the dose is chosen against the diagnostic benefit rather than being negligible. Its short half-life is the safety feature.",
-        "src": "https://en.wikipedia.org/wiki/Positron_emission_tomography"
-      }
-    ],
-    "high_explosive_hazard": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "blunt_trauma",
-        "onset": "acute",
-        "mechanism": "A detonation is a supersonic reaction front, not a fast fire, and the overpressure it makes injures gas-filled organs before any fragment arrives.",
-        "src": "https://en.wikipedia.org/wiki/TNT"
-      }
-    ],
-    "ricin_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "It is an enzyme, not a poison in the ordinary sense: one molecule inside a cell removes a single adenine from the ribosome and that ribosome never makes protein again, and then it moves to the next one.",
-        "src": "https://en.wikipedia.org/wiki/Ricin"
-      }
-    ],
-    "cardiac_glycoside_poisoning": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "heart_attack",
-        "onset": "acute",
-        "mechanism": "They block the sodium-potassium pump in heart muscle, which raises intracellular calcium and makes each contraction stronger and the rhythm less stable. The therapeutic and the dangerous effect are the same effect.",
-        "src": "https://en.wikipedia.org/wiki/Cardiac_glycoside"
-      }
-    ],
-    "nicotine_toxicity": [
-      {
-        "valence": "harm",
-        "route": "absorbed",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "It crosses skin readily, which is why tobacco harvesters get green tobacco sickness from wet leaves. It first stimulates the nicotinic receptor and then blocks it, so the late picture is the opposite of the early one.",
-        "src": "https://en.wikipedia.org/wiki/Nicotine_poisoning"
-      }
-    ],
-    "cocaine_dependency": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "addiction",
-        "onset": "cumulative",
-        "mechanism": "The leaf chewed with lime delivers a low, slow dose; concentrating the alkaloid changes how fast it arrives at the receptor, and rate of arrival is most of what makes a drug habit-forming.",
-        "src": "https://en.wikipedia.org/wiki/Cocaine_dependence"
-      }
-    ],
-    "opioid_overdose": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "asphyxia",
-        "onset": "acute",
-        "mechanism": "Opioids act on the brainstem centre that answers rising carbon dioxide by breathing. Suppress it and the person does not struggle for air; breathing simply slows and stops.",
-        "src": "https://en.wikipedia.org/wiki/Opioid_overdose"
+        "mechanism": "Not an infection from outside but a shift in what is already there: lactobacilli that keep the pH low are displaced, and the anaerobes that replace them do not.",
+        "src": "https://en.wikipedia.org/wiki/Bacterial_vaginosis"
       }
     ],
     "barium_toxicity": [
@@ -5254,46 +4561,286 @@
         "src": "https://en.wikipedia.org/wiki/Barium#Toxicity"
       }
     ],
-    "hydrofluoric_hazard": [
+    "bay_leaf_hazard": [
       {
         "valence": "harm",
-        "route": "absorbed",
-        "outcome": "chemical_burn",
-        "onset": "acute",
-        "mechanism": "It is a weak acid and barely stings, so it is absorbed before it is noticed. The fluoride ion then binds calcium and magnesium in deep tissue and bone, which is where the real injury is.",
-        "src": "https://en.wikipedia.org/wiki/Hydrofluoric_acid"
+        "route": "ingested",
+        "outcome": "laceration",
+        "onset": "conditional",
+        "mechanism": "It does not soften. The leaf stays stiff and its edges stay sharp through any length of cooking, which is why it is taken out rather than eaten.",
+        "src": "https://en.wikipedia.org/wiki/Bay_leaf"
       }
     ],
-    "hexavalent_chromium_carcinogen": [
+    "bean_lectin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Phytohaemagglutinin binds the carbohydrate on the surface of gut cells and stops them absorbing. It is destroyed by a proper boil and, notably, not by the low steady heat of a slow cooker.",
+        "src": "https://en.wikipedia.org/wiki/Phytohaemagglutinin"
+      }
+    ],
+    "bear_defence": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "mechanism": "Almost all attacks are defensive — surprise at close range, or a female with cubs — which is why the advice is about being heard in advance rather than about what to do afterwards.",
+        "src": "https://en.wikipedia.org/wiki/Bear_attack"
+      }
+    ],
+    "benzoate_ascorbate_benzene": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "conditional",
+        "mechanism": "Benzoate can lose its carboxyl group in the presence of ascorbate, catalysed by trace metal, and what is left is benzene. Heat and light speed it up, so it is a storage problem rather than a formulation one.",
+        "src": "https://en.wikipedia.org/wiki/Benzene_in_soft_drinks"
+      }
+    ],
+    "beryllium_disease": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "cancer",
+        "outcome": "allergic_reaction",
         "onset": "cumulative",
-        "mechanism": "The same sulphate channel that lets chromium(VI) into the cell is what makes it dangerous where chromium(III) is not; reduction happens inside, against the DNA.",
-        "src": "https://en.wikipedia.org/wiki/Chromate_and_dichromate",
+        "mechanism": "Not a poisoning but a hypersensitivity: the immune system learns the metal and then attacks the lung tissue holding it, building granulomas that stiffen into fibrosis. Only some people sensitise, and the ore is as capable of it as the refined metal.",
+        "src": "https://en.wikipedia.org/wiki/Berylliosis"
+      }
+    ],
+    "big_cat_attack": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "mechanism": "Attacks on people are uncommon for either species and the documented cases cluster in individual animals rather than in populations — usually one that has lost the ability to take its normal prey. The bite is to the throat, and it is a killing hold rather than a defensive snap.",
+        "src": "https://en.wikipedia.org/wiki/Tiger_attack"
+      }
+    ],
+    "bite_wound_zoonoses": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A bite is an injection: it puts an animal's mouth flora past every barrier the skin has, into tissue with a good blood supply and no drainage. The animal is usually healthy, which is the point.",
+        "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
+      }
+    ],
+    "blasting_hazard": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "The injury is the shock front rather than the fragments: gas-filled organs — lung, ear, bowel — fail at pressures the rest of the body survives.",
+        "src": "https://en.wikipedia.org/wiki/Explosive"
+      }
+    ],
+    "blue_1_enteral_advisory": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The concern was never food: it was dye added to tube feeds, where a compromised gut let it into the bloodstream in a way an ordinary meal does not.",
+        "src": "https://en.wikipedia.org/wiki/Brilliant_Blue_FCF"
+      }
+    ],
+    "botulism": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "botulism",
+        "onset": "acute",
+        "mechanism": "The bacterium itself is harmless to swallow; the toxin it makes in an airless, low-acid, unrefrigerated jar is not. It cleaves the proteins a nerve ending needs to release acetylcholine, so the signal to contract never arrives and the paralysis starts at the face and travels down.",
+        "src": "https://en.wikipedia.org/wiki/Botulism"
+      }
+    ],
+    "brucellosis_exposure": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "fever",
+        "onset": "conditional",
+        "mechanism": "It survives inside the body's own phagocytes, so the fever comes and goes for months as the organisms are released in waves. Pasteurisation is what removed it from milk.",
+        "src": "https://en.wikipedia.org/wiki/Brucellosis"
+      }
+    ],
+    "caffeine_powder": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "heart_attack",
+        "onset": "acute",
+        "mechanism": "The difference from coffee is entirely concentration: the same molecule arrives in a form where the ordinary limits on how fast you can take it in no longer apply.",
+        "src": "https://en.wikipedia.org/wiki/Caffeine#Overdose"
+      }
+    ],
+    "calcium_corrosive": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "acute",
+        "mechanism": "It takes water apart to make hydrogen and calcium hydroxide, and skin is wet — so the alkali and the heat are both produced where the metal is resting.",
+        "src": "https://en.wikipedia.org/wiki/Calcium"
+      }
+    ],
+    "capsaicin_irritant": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "mechanism": "Capsaicin opens TRPV1, the same channel heat opens, so the nerve reports a burn that is not there. It is oil-soluble and stays on skin until something that dissolves fat removes it; water spreads it.",
+        "src": "https://en.wikipedia.org/wiki/Capsaicin"
+      }
+    ],
+    "cardiac_glycoside_poisoning": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "heart_attack",
+        "onset": "acute",
+        "mechanism": "They block the sodium-potassium pump in heart muscle, which raises intracellular calcium and makes each contraction stronger and the rhythm less stable. The therapeutic and the dangerous effect are the same effect.",
+        "src": "https://en.wikipedia.org/wiki/Cardiac_glycoside"
+      }
+    ],
+    "cassava_cyanogenic_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The root keeps the glycoside and the enzyme that opens it in separate compartments; crushing brings them together and hydrogen cyanide is released. Long soaking and fermentation are not tradition for its own sake.",
+        "src": "https://en.wikipedia.org/wiki/Cassava#Toxicity"
+      }
+    ],
+    "cassia_coumarin": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "cumulative",
+        "mechanism": "Coumarin is processed by the liver, and in a minority of people the pathway that handles it safely is slow. Cassia carries it in quantity; true Ceylon cinnamon carries traces, and they are sold under one name.",
+        "src": "https://en.wikipedia.org/wiki/Coumarin"
+      }
+    ],
+    "caustic": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "acute",
+        "mechanism": "An alkali saponifies the fat in skin and keeps going, which is why it feels slippery and why the injury is deeper than it first looks. Acid burns coagulate and self-limit; this does not.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+      }
+    ],
+    "chagas_burden": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The acute phase usually passes without further symptoms, and the damage arrives decades later: up to 45% of chronic infections develop heart disease 10 to 30 years after the initial illness, which can lead to heart failure. Digestive complications follow in others. Most people carrying it do not realise they are infected.",
+        "src": "https://en.wikipedia.org/wiki/Chagas_disease"
+      }
+    ],
+    "chancroid_sti": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A painful genital ulcer, and the reason it matters beyond itself is that any break in that surface makes HIV transmission far easier in both directions.",
+        "src": "https://en.wikipedia.org/wiki/Chancroid"
+      }
+    ],
+    "cherry_kernel": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The kernel holds amygdalin, and the enzyme that opens it is released when the kernel is crushed rather than swallowed whole. What comes off is hydrogen cyanide. The flesh has none of this.",
+        "src": "https://en.wikipedia.org/wiki/Amygdalin"
+      }
+    ],
+    "chlamydia_sti": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It can only reproduce inside a host cell and hides there quietly, which is why it is called silent. The lasting damage is scarring of the fallopian tubes, done by the immune response over years without symptoms.",
+        "src": "https://en.wikipedia.org/wiki/Chlamydia_infection"
+      }
+    ],
+    "chlorine_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It dissolves in the water of the airway lining and makes acid there, so the injury is generated inside the lung rather than carried into it. Heavier than air, so it collects low.",
+        "src": "https://en.wikipedia.org/wiki/Chlorine"
+      }
+    ],
+    "chrysotile_asbestos": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asbestosis",
+        "onset": "cumulative",
+        "mechanism": "Fibres split lengthwise rather than across, so they stay narrow enough to reach the deep lung and long enough that a macrophage cannot clear one. Intact rock is inert; breaking it is what makes the hazard.",
+        "src": "https://en.wikipedia.org/wiki/Chrysotile",
         "carcinogen": true,
         "iarc": 1
       }
     ],
-    "nickel_dermatitis": [
+    "clostridial_wound_risk": [
       {
         "valence": "harm",
         "route": "contact",
-        "outcome": "sensitiser",
-        "onset": "conditional",
-        "mechanism": "Nickel ions bind skin protein and the immune system learns the combination. After that the reaction is to nickel itself, permanently, at concentrations that meant nothing before.",
-        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
+        "outcome": "tetanus",
+        "onset": "acute",
+        "mechanism": "Both bacteria need the absence of oxygen, which a deep or crushed wound supplies by sealing itself. Tetanus toxin travels up the nerve to the spinal cord and blocks the signals that switch a muscle off, so nothing can relax.",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
       }
     ],
-    "violent_hydrolysis": [
+    "cocaine_dependency": [
       {
         "valence": "harm",
-        "route": "contact",
-        "outcome": "corrosive",
+        "route": "ingested",
+        "outcome": "addiction",
+        "onset": "cumulative",
+        "mechanism": "The leaf chewed with lime delivers a low, slow dose; concentrating the alkaloid changes how fast it arrives at the receptor, and rate of arrival is most of what makes a drug habit-forming.",
+        "src": "https://en.wikipedia.org/wiki/Cocaine_dependence"
+      }
+    ],
+    "crocodilian_bite": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
         "onset": "acute",
-        "mechanism": "These take apart the water they meet, including the water in tissue, and the products are acid and heat generated inside the wound rather than applied to it.",
-        "src": "https://en.wikipedia.org/wiki/Phosphorus_pentachloride"
+        "mechanism": "The bite force is among the highest measured in any living animal and the roll that follows is what makes the injury unsurvivable; the teeth hold rather than cut.",
+        "src": "https://en.wikipedia.org/wiki/Crocodile_attack"
+      }
+    ],
+    "cryptosporidiosis_illness": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The oocyst wall resists chlorine at the concentrations used in swimming pools, so the usual barrier is filtration rather than disinfection.",
+        "src": "https://en.wikipedia.org/wiki/Cryptosporidiosis"
       }
     ],
     "crystalline_silica_dust": [
@@ -5308,214 +4855,14 @@
         "iarc": 1
       }
     ],
-    "lpg_flammability": [
+    "cyanide_poisoning": [
       {
         "valence": "harm",
-        "route": "thermal",
-        "outcome": "thermal_burn",
+        "route": "ingested",
+        "outcome": "hypoxia",
         "onset": "acute",
-        "mechanism": "Heavier than air, so a leak collects at floor level rather than dispersing, and the flammable range is wide enough that a room can be within it without smelling strongly.",
-        "src": "https://en.wikipedia.org/wiki/Liquefied_petroleum_gas"
-      }
-    ],
-    "elderberry_raw": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "Every green part carries cyanogenic glycosides. The flower does not, which is why cordial needs no cooking and the berries do.",
-        "src": "https://en.wikipedia.org/wiki/Sambucus#Toxicity"
-      }
-    ],
-    "theobromine_pet_toxicity": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "conditional",
-        "mechanism": "The difference is metabolic rate, not potency: a dog clears theobromine several times more slowly than a person, so the same mouthful stays at an active level far longer.",
-        "src": "https://en.wikipedia.org/wiki/Theobromine_poisoning"
-      }
-    ],
-    "glycyrrhizin_hypertension": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "heart_attack",
-        "onset": "conditional",
-        "mechanism": "It blocks the enzyme that inactivates cortisol in the kidney, so cortisol acts on the aldosterone receptor instead: sodium is retained, blood pressure rises and potassium is lost, with no change in aldosterone itself. The falling potassium is what reaches the heart, which depends on that gradient to reset between beats.",
-        "src": "https://en.wikipedia.org/wiki/Glycyrrhizin"
-      }
-    ],
-    "glycyrrhizin_arrhythmia": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "heart_attack",
-        "onset": "cumulative",
-        "mechanism": "The falling potassium is what reaches the heart: cardiac muscle depends on that gradient to reset between beats, and the rhythm becomes unstable when it drops.",
-        "src": "https://en.wikipedia.org/wiki/Liquorice#Health_effects"
-      }
-    ],
-    "tick_borne_rickettsia": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The organism multiplies inside the cells lining blood vessels, so the rash is the vessel wall failing rather than a skin reaction. Saliva carries it in during a bite that is usually not noticed.",
-        "src": "https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever"
-      }
-    ],
-    "rubella_pregnancy_risk": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "birth_defect",
-        "onset": "conditional",
-        "mechanism": "The illness itself is mild. The virus crosses the placenta and interferes with cells that are dividing, so the damage follows whatever is being built that week — most often eye, ear and heart.",
-        "src": "https://en.wikipedia.org/wiki/Congenital_rubella_syndrome"
-      }
-    ],
-    "gonorrhea_sti": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "It infects the columnar epithelium of the urethra, cervix, throat and eye, and about half of infections in women produce no symptoms at all — which is what keeps eighty-eight million a year in circulation. It varies its surface proteins, so having had it confers nothing.",
-        "src": "https://en.wikipedia.org/wiki/Gonorrhea"
-      }
-    ],
-    "chlamydia_sti": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "It can only reproduce inside a host cell and hides there quietly, which is why it is called silent. The lasting damage is scarring of the fallopian tubes, done by the immune response over years without symptoms.",
-        "src": "https://en.wikipedia.org/wiki/Chlamydia_infection"
-      }
-    ],
-    "syphilis_sti": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A spirochaete thin enough to pass between cells rather than through them. It disappears for years between stages, which is why it was called the great imitator and why the late damage lands on the aorta and the brain.",
-        "src": "https://en.wikipedia.org/wiki/Syphilis"
-      }
-    ],
-    "chancroid_sti": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A painful genital ulcer, and the reason it matters beyond itself is that any break in that surface makes HIV transmission far easier in both directions.",
-        "src": "https://en.wikipedia.org/wiki/Chancroid"
-      }
-    ],
-    "leptospirosis_exposure": [
-      {
-        "valence": "harm",
-        "route": "absorbed",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "The spirochaete is shed in animal urine, survives in warm fresh water, and enters through broken skin or mucous membrane rather than by being swallowed — which is why it follows floods and freshwater sport.",
-        "src": "https://en.wikipedia.org/wiki/Leptospirosis"
-      }
-    ],
-    "pyelonephritis_risk": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Bladder infection is unpleasant; the kidney is different, because it is a filter with a rich blood supply and bacteria that reach it can reach the bloodstream from there.",
-        "src": "https://en.wikipedia.org/wiki/Pyelonephritis"
-      }
-    ],
-    "bacterial_meningitis": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The organisms live harmlessly in many throats. What makes this an emergency is where they end up: the space around the brain has no lymphatic drainage and very little immune presence, so a small inoculum grows unopposed for hours.",
-        "src": "https://en.wikipedia.org/wiki/Meningitis"
-      }
-    ],
-    "sepsis_deaths": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "sepsis",
-        "onset": "acute",
-        "mechanism": "Sepsis is not the infection, it is the response to it going system-wide: vessels leak, pressure falls, and organs fail from poor perfusion rather than from the organism itself.",
-        "src": "https://en.wikipedia.org/wiki/Sepsis"
-      }
-    ],
-    "plague_mortality": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The flea's gut is blocked by the bacteria so it regurgitates while feeding, injecting them. In the lung form it needs no flea at all and passes person to person on the breath.",
-        "src": "https://en.wikipedia.org/wiki/Plague_(disease)"
-      }
-    ],
-    "tularemia_infectivity": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Remarkable for how few organisms are needed — laboratory exposure alone has caused cases. It survives inside macrophages, which is why the usual first line of defence carries it rather than clearing it.",
-        "src": "https://en.wikipedia.org/wiki/Tularemia"
-      }
-    ],
-    "hiv_transmission_routes": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Blood, semen, vaginal secretions and breast milk carry enough virus and enough infected cells; saliva, sweat and tears do not. The virus is fragile outside a body, which is why the list is short and specific.",
-        "src": "https://en.wikipedia.org/wiki/HIV"
-      }
-    ],
-    "actinomycosis_invasion": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Ordinary mouth flora that becomes an invader only when it is carried past the mucosa into tissue with no oxygen. It then spreads across tissue planes rather than along them, ignoring the boundaries most infections respect.",
-        "src": "https://en.wikipedia.org/wiki/Actinomycosis"
-      }
-    ],
-    "bacterial_vaginosis_risks": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Not an infection from outside but a shift in what is already there: lactobacilli that keep the pH low are displaced, and the anaerobes that replace them do not.",
-        "src": "https://en.wikipedia.org/wiki/Bacterial_vaginosis"
-      }
-    ],
-    "brucellosis_exposure": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "fever",
-        "onset": "conditional",
-        "mechanism": "It survives inside the body's own phagocytes, so the fever comes and goes for months as the organisms are released in waves. Pasteurisation is what removed it from milk.",
-        "src": "https://en.wikipedia.org/wiki/Brucellosis"
+        "mechanism": "Cyanide binds cytochrome c oxidase at the end of the respiratory chain, so the cell cannot use the oxygen it already has. The blood stays bright red and the tissue suffocates anyway.",
+        "src": "https://en.wikipedia.org/wiki/Cyanide_poisoning"
       }
     ],
     "dermatophyte_transmission": [
@@ -5538,6 +4885,26 @@
         "src": "https://en.wikipedia.org/wiki/Diphtheria"
       }
     ],
+    "diphyllobothriasis_b12": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "anaemia",
+        "onset": "conditional",
+        "mechanism": "The worm takes up vitamin B12 from the gut before its host can, so a person eating enough of it becomes deficient anyway. The anaemia is the giveaway rather than the worm.",
+        "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis"
+      }
+    ],
+    "earthquake_hazard": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "Ground shaking rarely injures anyone directly; buildings do. And a person freed after hours under masonry can deteriorate at that moment, as the crushed muscle's contents reach the circulation.",
+        "src": "https://en.wikipedia.org/wiki/Earthquake"
+      }
+    ],
     "ebv_lifelong_infection": [
       {
         "valence": "harm",
@@ -5546,6 +4913,36 @@
         "onset": "conditional",
         "mechanism": "It infects B cells and then stays for life in a small number of them, reactivating quietly. Almost everyone carries it; the disease is mostly a matter of what age you met it.",
         "src": "https://en.wikipedia.org/wiki/Epstein%E2%80%93Barr_virus"
+      }
+    ],
+    "ecoli_illness": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Most strains are ordinary gut flora. The pathogenic ones differ by acquired genes — a toxin, an adhesin — rather than by being a different organism, which is why the species name says so little.",
+        "src": "https://en.wikipedia.org/wiki/Escherichia_coli"
+      }
+    ],
+    "elderberry_raw": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Every green part carries cyanogenic glycosides. The flower does not, which is why cordial needs no cooking and the berries do.",
+        "src": "https://en.wikipedia.org/wiki/Sambucus#Toxicity"
+      }
+    ],
+    "elephant_musth": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "crush_syndrome",
+        "onset": "acute",
+        "mechanism": "A periodic hormonal state with testosterone many times baseline, in an animal that weighs several tonnes. The danger is unpredictability rather than aggression as such.",
+        "src": "https://en.wikipedia.org/wiki/Musth"
       }
     ],
     "endotoxin_shock": [
@@ -5558,6 +4955,98 @@
         "src": "https://en.wikipedia.org/wiki/Lipopolysaccharide"
       }
     ],
+    "eu_dye_hyperactivity_warning": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "allergic_reaction",
+        "onset": "conditional",
+        "mechanism": "The regulation requires a label, not a ban, and the finding behind it was a small shift in behaviour averaged across a group of children rather than a reaction in any one of them. Some of the same dyes are separately associated with allergic responses, which is a different claim with different evidence.",
+        "src": "https://en.wikipedia.org/wiki/Food_coloring"
+      }
+    ],
+    "fire": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "Protein denatures above about 44 °C given long enough, so depth follows temperature and time rather than temperature alone. Burning oil carries far more heat per gram than water and clings, which is why an oil fire scalds where a water splash does not.",
+        "src": "https://en.wikipedia.org/wiki/Burn"
+      }
+    ],
+    "fluorine_hazard": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It takes electrons from almost anything, including the water in the airway lining, and what that produces is hydrofluoric acid in the lung.",
+        "src": "https://en.wikipedia.org/wiki/Fluorine"
+      }
+    ],
+    "formaldehyde_carcinogen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "It cross-links protein to DNA at the first tissue it meets, which is why the cancers associated with it are of the nose and throat rather than anywhere further in.",
+        "src": "https://en.wikipedia.org/wiki/Formaldehyde",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "gi_infection_risk": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "All of these take the same road: something that touched faeces reaches a mouth. What differs is only the dose needed, and for norovirus it is small enough that ordinary handwashing failures are sufficient.",
+        "src": "https://en.wikipedia.org/wiki/Fecal%E2%80%93oral_route"
+      }
+    ],
+    "giardiasis_illness": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The cyst survives ordinary chlorination and only a few are needed. The trophozoite attaches to the intestinal lining and interferes with absorption rather than invading, which is why the illness is prolonged rather than acute.",
+        "src": "https://en.wikipedia.org/wiki/Giardiasis"
+      }
+    ],
+    "glycyrrhizin_arrhythmia": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "heart_attack",
+        "onset": "cumulative",
+        "mechanism": "The falling potassium is what reaches the heart: cardiac muscle depends on that gradient to reset between beats, and the rhythm becomes unstable when it drops.",
+        "src": "https://en.wikipedia.org/wiki/Liquorice#Health_effects"
+      }
+    ],
+    "glycyrrhizin_hypertension": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "heart_attack",
+        "onset": "conditional",
+        "mechanism": "It blocks the enzyme that inactivates cortisol in the kidney, so cortisol acts on the aldosterone receptor instead: sodium is retained, blood pressure rises and potassium is lost, with no change in aldosterone itself. The falling potassium is what reaches the heart, which depends on that gradient to reset between beats.",
+        "src": "https://en.wikipedia.org/wiki/Glycyrrhizin"
+      }
+    ],
+    "gonorrhea_sti": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It infects the columnar epithelium of the urethra, cervix, throat and eye, and about half of infections in women produce no symptoms at all — which is what keeps eighty-eight million a year in circulation. It varies its surface proteins, so having had it confers nothing.",
+        "src": "https://en.wikipedia.org/wiki/Gonorrhea"
+      }
+    ],
     "group_a_strep_sequelae": [
       {
         "valence": "harm",
@@ -5566,6 +5055,101 @@
         "onset": "acute",
         "mechanism": "The dangerous part often arrives after the infection has cleared: antibodies raised against the bacterium cross-react with heart valve and kidney tissue, which is why a sore throat can end as rheumatic fever.",
         "src": "https://en.wikipedia.org/wiki/Streptococcus_pyogenes"
+      }
+    ],
+    "guinea_worm_eradication": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The larva is swallowed inside a water flea, matures over a year, and the adult female then makes a blister that burns until it is put in water — which is exactly where she releases the next generation.",
+        "src": "https://en.wikipedia.org/wiki/Dracunculiasis"
+      }
+    ],
+    "heavy_metal_dust": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "Manganese taken in through the lung bypasses the gut regulation that normally limits it and reaches the brain, where it accumulates in the basal ganglia and produces a movement disorder that does not reverse.",
+        "src": "https://en.wikipedia.org/wiki/Manganism"
+      }
+    ],
+    "hexavalent_chromium": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Chromium(VI) crosses the cell membrane through the sulphate channel, which chromium(III) cannot, and is then reduced inside the cell — generating reactive intermediates against the DNA rather than outside it.",
+        "src": "https://en.wikipedia.org/wiki/Chromium#Chromium(VI)",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "hexavalent_chromium_carcinogen": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "The same sulphate channel that lets chromium(VI) into the cell is what makes it dangerous where chromium(III) is not; reduction happens inside, against the DNA.",
+        "src": "https://en.wikipedia.org/wiki/Chromate_and_dichromate",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "high_explosive_hazard": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A detonation is a supersonic reaction front, not a fast fire, and the overpressure it makes injures gas-filled organs before any fragment arrives.",
+        "src": "https://en.wikipedia.org/wiki/TNT"
+      }
+    ],
+    "hiv_opportunistic_infections": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "These organisms are already present in many healthy people and held in check by cell-mediated immunity. What changes is not the organism but the count of CD4 cells watching it, which is why the same microbe is unremarkable in one person and fatal in another.",
+        "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
+      }
+    ],
+    "hiv_transmission_routes": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Blood, semen, vaginal secretions and breast milk carry enough virus and enough infected cells; saliva, sweat and tears do not. The virus is fragile outside a body, which is why the list is short and specific.",
+        "src": "https://en.wikipedia.org/wiki/HIV"
+      }
+    ],
+    "hydatid_cyst_rupture": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "anaphylaxis",
+        "onset": "acute",
+        "mechanism": "The cyst grows for years without symptoms because it is walled off. The danger is that wall failing: the contents are highly antigenic, the immune system meets all of it at once, and mast cells degranulate everywhere at the same moment.",
+        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+      }
+    ],
+    "hydrofluoric_hazard": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "chemical_burn",
+        "onset": "acute",
+        "mechanism": "It is a weak acid and barely stings, so it is absorbed before it is noticed. The fluoride ion then binds calcium and magnesium in deep tissue and bone, which is where the real injury is.",
+        "src": "https://en.wikipedia.org/wiki/Hydrofluoric_acid"
       }
     ],
     "impetigo_contagion": [
@@ -5578,6 +5162,89 @@
         "src": "https://en.wikipedia.org/wiki/Impetigo"
       }
     ],
+    "lead_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "mechanism": "Lead imitates calcium closely enough to be taken up by the same transporters, and then does none of calcium's jobs — it interferes with neurotransmitter release and with the enzymes that build haem. It banks in bone, so the exposure outlasts the source by decades.",
+        "src": "https://en.wikipedia.org/wiki/Lead_poisoning",
+        "carcinogen": false
+      }
+    ],
+    "leishmaniasis_burden": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The parasite is taken up by the macrophage that should destroy it and survives inside it, which is why the visceral form settles in spleen, liver and marrow — the places those cells live.",
+        "src": "https://en.wikipedia.org/wiki/Leishmaniasis"
+      }
+    ],
+    "leptospirosis_exposure": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The spirochaete is shed in animal urine, survives in warm fresh water, and enters through broken skin or mucous membrane rather than by being swallowed — which is why it follows floods and freshwater sport.",
+        "src": "https://en.wikipedia.org/wiki/Leptospirosis"
+      }
+    ],
+    "lightning": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "electrocution",
+        "onset": "acute",
+        "mechanism": "Most of the current flashes over the outside of a body rather than through it, which is why survival is common and burns follow the sweat. The lethal cases are cardiac arrest, and a strike does not need to hit you — ground current travels.",
+        "src": "https://en.wikipedia.org/wiki/Lightning_injury"
+      }
+    ],
+    "liver_fluke_infection": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cancer",
+        "onset": "conditional",
+        "mechanism": "The fluke lives in the bile ducts and the chronic irritation of that lining is what makes this a cancer risk rather than only an infection. It can persist in one person for around thirty years.",
+        "src": "https://en.wikipedia.org/wiki/Clonorchis_sinensis",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "lpg_flammability": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "Heavier than air, so a leak collects at floor level rather than dispersing, and the flammable range is wide enough that a room can be within it without smelling strongly.",
+        "src": "https://en.wikipedia.org/wiki/Liquefied_petroleum_gas"
+      }
+    ],
+    "lymphatic_filariasis_burden": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The adult worms live in the lymphatic vessels and obstruct them physically. The swelling is drainage failing, and it persists after the worms are gone.",
+        "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis"
+      }
+    ],
+    "malaria_burden": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "fever",
+        "onset": "acute",
+        "mechanism": "The fever is synchronised because the infected red cells burst together, releasing merozoites and debris in waves. The parasite spends part of its cycle in the liver, out of reach of drugs aimed at the blood.",
+        "src": "https://en.wikipedia.org/wiki/Malaria"
+      }
+    ],
     "measles_severity": [
       {
         "valence": "harm",
@@ -5588,166 +5255,24 @@
         "src": "https://en.wikipedia.org/wiki/Measles"
       }
     ],
-    "mumps_complications": [
+    "mercury_toxicity": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Shed in saliva from about a week before anyone knows. The parotid swelling is the recognisable part; the complications are in tissues with a similar epithelium — testis, ovary, pancreas, meninges.",
-        "src": "https://en.wikipedia.org/wiki/Mumps"
-      }
-    ],
-    "pertussis_infant_risk": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "The toxin paralyses the cilia that would clear the airway, so the only way to move mucus is the paroxysm of coughing that gives it its name. Infants have too little airway to survive that.",
-        "src": "https://en.wikipedia.org/wiki/Whooping_cough"
-      }
-    ],
-    "pneumococcal_disease": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "Carried harmlessly in many noses. Its polysaccharide capsule is what makes it dangerous when it moves — a coating the immune system cannot grip until antibody is raised against that specific serotype.",
-        "src": "https://en.wikipedia.org/wiki/Streptococcus_pneumoniae"
-      }
-    ],
-    "poliomyelitis_paralysis": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "Most infections are a gut infection and nothing else. In a small fraction the virus reaches the anterior horn cells of the spinal cord and destroys the motor neurons there, and those do not regrow.",
-        "src": "https://en.wikipedia.org/wiki/Poliomyelitis"
-      }
-    ],
-    "tuberculosis_burden": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "It survives inside the macrophage that engulfs it, and the body walls it off rather than clearing it. That granuloma can hold for decades and then fail, which is why a third of the world carries it and a fraction ever falls ill.",
-        "src": "https://en.wikipedia.org/wiki/Tuberculosis"
-      }
-    ],
-    "yellow_fever_toxic_phase": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "acute",
-        "mechanism": "Most cases resolve. The toxic phase begins after an apparent recovery, and the jaundice it is named for is the liver failing.",
-        "src": "https://en.wikipedia.org/wiki/Yellow_fever"
-      }
-    ],
-    "aflatoxin_in_storage": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "cancer",
+        "outcome": "neurotoxin",
         "onset": "cumulative",
-        "mechanism": "A mould metabolite, made in storage rather than in the field, and the liver activates it into the form that binds DNA. It is one of the most potent liver carcinogens known and is invisible in the food.",
-        "src": "https://en.wikipedia.org/wiki/Aflatoxin",
-        "carcinogen": true,
-        "iarc": 1
+        "mechanism": "The metal is poorly absorbed from the gut and readily from the lung, and organic mercury crosses into the brain and the placenta freely. It binds sulphur wherever it finds it, which is in most enzymes.",
+        "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
       }
     ],
-    "urushiol_contact": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "sensitiser",
-        "onset": "contact",
-        "mechanism": "A hapten: too small to be seen by the immune system on its own, it binds skin protein and the combination is what is learned. The first exposure does nothing and teaches; every one after that reacts.",
-        "src": "https://en.wikipedia.org/wiki/Urushiol"
-      }
-    ],
-    "mutagen_not_carcinogen": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "mutagen",
-        "onset": "cumulative",
-        "mechanism": "Mutagenicity is damage to DNA; carcinogenicity is that damage becoming a tumour. Most carcinogens are mutagens and the reverse does not follow, which is what the screening tests can and cannot tell you.",
-        "src": "https://en.wikipedia.org/wiki/Mutagen"
-      }
-    ],
-    "sulfite_asthma": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "asthma",
-        "onset": "conditional",
-        "mechanism": "Sulfites release sulphur dioxide in the acid of the stomach, and inhaling that is what provokes the airway — so this is a respiratory reaction to something eaten.",
-        "src": "https://en.wikipedia.org/wiki/Sulfite"
-      }
-    ],
-    "aspartame_phenylketonuria": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "conditional",
-        "mechanism": "It is two amino acids joined, and the gut takes them apart. One is phenylalanine, which is harmless unless you cannot process it — which is exactly the group the warning label is addressed to and nobody else.",
-        "src": "https://en.wikipedia.org/wiki/Aspartame"
-      }
-    ],
-    "diphyllobothriasis_b12": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "anaemia",
-        "onset": "conditional",
-        "mechanism": "The worm takes up vitamin B12 from the gut before its host can, so a person eating enough of it becomes deficient anyway. The anaemia is the giveaway rather than the worm.",
-        "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis"
-      }
-    ],
-    "raw_flour_pathogens": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Wheat goes from field to mill with no step that kills anything, so flour is a raw agricultural product. It is dry, which stops bacteria growing and does not kill them.",
-        "src": "https://en.wikipedia.org/wiki/Flour"
-      }
-    ],
-    "raw_sprout_pathogens": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "Sprouting is warm, wet and nutrient-rich for days, which is also the ideal condition for anything already on the seed. The contamination is inside the seed, so washing the sprout does not reach it.",
-        "src": "https://en.wikipedia.org/wiki/Sprouting"
-      }
-    ],
-    "silver_nitrate_corrosive": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "corrosive",
-        "onset": "contact",
-        "mechanism": "It precipitates protein on contact, which is exactly why it is still used deliberately to cauterise. On skin it also leaves a black stain of reduced silver that has to grow out.",
-        "src": "https://en.wikipedia.org/wiki/Silver_nitrate"
-      }
-    ],
-    "cherry_kernel": [
+    "methanol_toxicity": [
       {
         "valence": "harm",
         "route": "ingested",
         "outcome": "poisoning",
         "onset": "acute",
-        "mechanism": "The kernel holds amygdalin, and the enzyme that opens it is released when the kernel is crushed rather than swallowed whole. What comes off is hydrogen cyanide. The flesh has none of this.",
-        "src": "https://en.wikipedia.org/wiki/Amygdalin"
+        "mechanism": "Methanol itself is not the poison; the liver turns it into formaldehyde and then formic acid, which blocks the same respiratory enzyme cyanide does. The delay between drinking and blindness is that conversion.",
+        "src": "https://en.wikipedia.org/wiki/Methanol_toxicity"
       }
     ],
     "mine_collapse": [
@@ -5770,124 +5295,54 @@
         "src": "https://en.wikipedia.org/wiki/Subsidence"
       }
     ],
-    "chlorine_gas": [
+    "mri_magnetic_field": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "The field is always on, including between patients and during a power failure, and it accelerates a ferromagnetic object along the bore. The hazard is the projectile, not the field.",
+        "src": "https://en.wikipedia.org/wiki/MRI_safety"
+      }
+    ],
+    "mumps_complications": [
       {
         "valence": "harm",
         "route": "inhaled",
-        "outcome": "corrosive",
-        "onset": "acute",
-        "mechanism": "It dissolves in the water of the airway lining and makes acid there, so the injury is generated inside the lung rather than carried into it. Heavier than air, so it collects low.",
-        "src": "https://en.wikipedia.org/wiki/Chlorine"
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Shed in saliva from about a week before anyone knows. The parotid swelling is the recognisable part; the complications are in tissues with a similar epithelium — testis, ovary, pancreas, meninges.",
+        "src": "https://en.wikipedia.org/wiki/Mumps"
       }
     ],
-    "selenium_dose": [
+    "mutagen_not_carcinogen": [
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "poisoning",
+        "outcome": "mutagen",
         "onset": "cumulative",
-        "mechanism": "The gap between what a body requires and what it cannot tolerate is narrower for selenium than for almost any other nutrient, which is the whole reason it is worth saying out loud.",
-        "src": "https://en.wikipedia.org/wiki/Selenium#Toxicity"
+        "mechanism": "Mutagenicity is damage to DNA; carcinogenicity is that damage becoming a tumour. Most carcinogens are mutagens and the reverse does not follow, which is what the screening tests can and cannot tell you.",
+        "src": "https://en.wikipedia.org/wiki/Mutagen"
       }
     ],
-    "calcium_corrosive": [
+    "nematocyst_sting": [
       {
         "valence": "harm",
         "route": "contact",
-        "outcome": "chemical_burn",
-        "onset": "acute",
-        "mechanism": "It takes water apart to make hydrogen and calcium hydroxide, and skin is wet — so the alkali and the heat are both produced where the metal is resting.",
-        "src": "https://en.wikipedia.org/wiki/Calcium"
-      }
-    ],
-    "earthquake_hazard": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "crush_syndrome",
-        "onset": "acute",
-        "mechanism": "Ground shaking rarely injures anyone directly; buildings do. And a person freed after hours under masonry can deteriorate at that moment, as the crushed muscle's contents reach the circulation.",
-        "src": "https://en.wikipedia.org/wiki/Earthquake"
-      }
-    ],
-    "tsunami_hazard": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "drowning",
-        "onset": "acute",
-        "mechanism": "In open ocean it is a long, low wave travelling as fast as an airliner. What arrives at a coast is not a breaking wave but a sea level that keeps rising, carrying debris, and then withdraws with the same force.",
-        "src": "https://en.wikipedia.org/wiki/Tsunami"
-      }
-    ],
-    "ozone": [
-      {
-        "valence": "harm",
-        "route": "inhaled",
-        "outcome": "irritant",
-        "onset": "cumulative",
-        "mechanism": "The same oxidising power that makes it useful for disinfection acts on the lining of the airway, and there is no dose at which the lung stops being made of what it is made of.",
-        "src": "https://en.wikipedia.org/wiki/Ozone"
-      }
-    ],
-    "venomous_spur": [
-      {
-        "valence": "harm",
-        "route": "injected",
         "outcome": "poisoning",
         "onset": "contact",
-        "mechanism": "One of very few venomous mammals. The venom is not lethal to a person and the pain it causes does not respond to ordinary analgesia, which is what makes it notable.",
-        "src": "https://en.wikipedia.org/wiki/Platypus_venom"
+        "mechanism": "One of the fastest movements in biology: a pressurised capsule turns its coiled thread inside out and drives a barb through skin in under a millisecond. It is mechanical, not voluntary, so a detached tentacle still fires.",
+        "src": "https://en.wikipedia.org/wiki/Cnidocyte"
       }
     ],
-    "bear_defence": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "laceration",
-        "onset": "acute",
-        "mechanism": "Almost all attacks are defensive — surprise at close range, or a female with cubs — which is why the advice is about being heard in advance rather than about what to do afterwards.",
-        "src": "https://en.wikipedia.org/wiki/Bear_attack"
-      }
-    ],
-    "rattlesnake_bite": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "poisoning",
-        "onset": "acute",
-        "mechanism": "The venom is largely digestive enzyme: it begins breaking down tissue where it is injected, which is why the local damage keeps progressing after the bite.",
-        "src": "https://en.wikipedia.org/wiki/Snakebite"
-      }
-    ],
-    "elephant_musth": [
-      {
-        "valence": "harm",
-        "route": "mechanical",
-        "outcome": "crush_syndrome",
-        "onset": "acute",
-        "mechanism": "A periodic hormonal state with testosterone many times baseline, in an animal that weighs several tonnes. The danger is unpredictability rather than aggression as such.",
-        "src": "https://en.wikipedia.org/wiki/Musth"
-      }
-    ],
-    "sting_anaphylaxis": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "anaphylaxis",
-        "onset": "conditional",
-        "mechanism": "A local sting is the venom; anaphylaxis is the immune system. Mast cells degranulate everywhere at once, vessels leak and the airway swells, and the previous sting was the one that taught it.",
-        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
-      }
-    ],
-    "bay_leaf_hazard": [
+    "neurocysticercosis_epilepsy": [
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "laceration",
-        "onset": "conditional",
-        "mechanism": "It does not soften. The leaf stays stiff and its edges stay sharp through any length of cooking, which is why it is taken out rather than eaten.",
-        "src": "https://en.wikipedia.org/wiki/Bay_leaf"
+        "outcome": "seizure",
+        "onset": "acute",
+        "mechanism": "Swallowing the eggs rather than the larvae puts a person in the pig's place in the life cycle, and the larva encysts wherever it lands. In the brain the seizures often start when the cyst dies and the immune system finally notices it.",
+        "src": "https://en.wikipedia.org/wiki/Neurocysticercosis"
       }
     ],
     "niacin_flush": [
@@ -5900,74 +5355,154 @@
         "src": "https://en.wikipedia.org/wiki/Niacin#Adverse_effects"
       }
     ],
-    "b6_neuropathy": [
+    "nickel_dermatitis": [
       {
         "valence": "harm",
-        "route": "ingested",
-        "outcome": "neurotoxin",
-        "onset": "cumulative",
-        "mechanism": "The unusual case of a water-soluble vitamin with real toxicity: sustained excess damages sensory nerves from the ends inwards, and recovery is slow and sometimes incomplete.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_B6#Toxicity"
-      }
-    ],
-    "vitamin_e_bleeding": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
-        "onset": "cumulative",
-        "mechanism": "At supplemental levels it antagonises vitamin K, and vitamin K is what finishes the clotting factors. The food levels do nothing of the kind.",
-        "src": "https://en.wikipedia.org/wiki/Vitamin_E#Toxicity"
-      }
-    ],
-    "blue_1_enteral_advisory": [
-      {
-        "valence": "harm",
-        "route": "ingested",
-        "outcome": "poisoning",
+        "route": "contact",
+        "outcome": "sensitiser",
         "onset": "conditional",
-        "mechanism": "The concern was never food: it was dye added to tube feeds, where a compromised gut let it into the bloodstream in a way an ordinary meal does not.",
-        "src": "https://en.wikipedia.org/wiki/Brilliant_Blue_FCF"
+        "mechanism": "Nickel ions bind skin protein and the immune system learns the combination. After that the reaction is to nickel itself, permanently, at concentrations that meant nothing before.",
+        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
       }
     ],
-    "shiitake_dermatitis": [
+    "nicotine_toxicity": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It crosses skin readily, which is why tobacco harvesters get green tobacco sickness from wet leaves. It first stimulates the nicotinic receptor and then blocks it, so the late picture is the opposite of the early one.",
+        "src": "https://en.wikipedia.org/wiki/Nicotine_poisoning"
+      }
+    ],
+    "nutmeg_myristicin": [
       {
         "valence": "harm",
         "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Myristicin is metabolised into compounds that act on the same receptors as amphetamines, and the reaction is long, unpleasant and unpredictable rather than recreational.",
+        "src": "https://en.wikipedia.org/wiki/Myristicin"
+      }
+    ],
+    "onchocerciasis_blindness": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "cumulative",
+        "mechanism": "The adult worm is tolerated; it is the death of the microfilariae in the eye and skin that provokes the inflammation, so the damage is done by the response rather than by the parasite.",
+        "src": "https://en.wikipedia.org/wiki/Onchocerciasis"
+      }
+    ],
+    "opioid_overdose": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "mechanism": "Opioids act on the brainstem centre that answers rising carbon dioxide by breathing. Suppress it and the person does not struggle for air; breathing simply slows and stops.",
+        "src": "https://en.wikipedia.org/wiki/Opioid_overdose"
+      }
+    ],
+    "oxidizer_hazard": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "acute",
+        "mechanism": "Concentration is the whole difference: the same molecule that is an antiseptic at three per cent bleaches and blisters skin when it is not diluted, because it oxidises the tissue directly rather than acting as an acid or an alkali.",
+        "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
+      }
+    ],
+    "ozone": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
         "outcome": "irritant",
-        "onset": "conditional",
-        "mechanism": "Lentinan, the mushroom's own polysaccharide, causes a striking whip-like rash in a small number of people who eat it raw or barely cooked. Proper cooking destroys it.",
-        "src": "https://en.wikipedia.org/wiki/Shiitake#Adverse_effects"
+        "onset": "cumulative",
+        "mechanism": "The same oxidising power that makes it useful for disinfection acts on the lining of the airway, and there is no dose at which the lung stops being made of what it is made of.",
+        "src": "https://en.wikipedia.org/wiki/Ozone"
       }
     ],
-    "spirulina_contamination": [
+    "pah_carcinogen_grades": [
       {
         "valence": "harm",
-        "route": "ingested",
-        "outcome": "hepatotoxin",
-        "onset": "conditional",
-        "mechanism": "The organism itself makes nothing harmful. Open ponds can grow other cyanobacteria alongside it, and some of those make microcystins, which the liver takes up.",
-        "src": "https://en.wikipedia.org/wiki/Spirulina_(dietary_supplement)"
+        "route": "inhaled",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "The body activates these rather than detoxifying them: an enzyme meant to make them water-soluble produces an epoxide that binds DNA. IARC grades them one by one — benzo[a]pyrene Group 1, others 2A and 2B — so this class carries no single verdict.",
+        "src": "https://en.wikipedia.org/wiki/Polycyclic_aromatic_hydrocarbon"
       }
     ],
-    "synephrine_cardio": [
+    "pertussis_infant_risk": [
       {
         "valence": "harm",
-        "route": "ingested",
-        "outcome": "heart_attack",
+        "route": "inhaled",
+        "outcome": "infection",
         "onset": "acute",
-        "mechanism": "Structurally close to ephedrine and marketed as its replacement. It acts on the same adrenergic receptors, and 'natural' says nothing about what a receptor does when it is occupied.",
-        "src": "https://en.wikipedia.org/wiki/Synephrine"
+        "mechanism": "The toxin paralyses the cilia that would clear the airway, so the only way to move mucus is the paroxysm of coughing that gives it its name. Infants have too little airway to survive that.",
+        "src": "https://en.wikipedia.org/wiki/Whooping_cough"
       }
     ],
-    "caffeine_powder": [
+    "pet_radiotracer": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "radiation_sickness",
+        "onset": "conditional",
+        "mechanism": "The tracer is a real isotope in the bloodstream, and the dose is chosen against the diagnostic benefit rather than being negligible. Its short half-life is the safety feature.",
+        "src": "https://en.wikipedia.org/wiki/Positron_emission_tomography"
+      }
+    ],
+    "phenol_corrosive": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "It denatures protein on contact and is absorbed through the skin at the same time, so a burn that looks local is also a systemic exposure. It anaesthetises the area, which removes the warning.",
+        "src": "https://en.wikipedia.org/wiki/Phenol"
+      }
+    ],
+    "plague_mortality": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The flea's gut is blocked by the bacteria so it regurgitates while feeding, injecting them. In the lung form it needs no flea at all and passes person to person on the breath.",
+        "src": "https://en.wikipedia.org/wiki/Plague_(disease)"
+      }
+    ],
+    "pneumococcal_disease": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "Carried harmlessly in many noses. Its polysaccharide capsule is what makes it dangerous when it moves — a coating the immune system cannot grip until antibody is raised against that specific serotype.",
+        "src": "https://en.wikipedia.org/wiki/Streptococcus_pneumoniae"
+      }
+    ],
+    "poison_dart_frog_toxin": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "neurotoxin",
+        "onset": "acute",
+        "mechanism": "Batrachotoxin holds sodium channels permanently open, so nerve and muscle cannot reset between signals. The frog does not make it — it comes from the beetles it eats, and captive frogs lose it.",
+        "src": "https://en.wikipedia.org/wiki/Batrachotoxin"
+      }
+    ],
+    "poliomyelitis_paralysis": [
       {
         "valence": "harm",
         "route": "ingested",
-        "outcome": "heart_attack",
+        "outcome": "infection",
         "onset": "acute",
-        "mechanism": "The difference from coffee is entirely concentration: the same molecule arrives in a form where the ordinary limits on how fast you can take it in no longer apply.",
-        "src": "https://en.wikipedia.org/wiki/Caffeine#Overdose"
+        "mechanism": "Most infections are a gut infection and nothing else. In a small fraction the virus reaches the anterior horn cells of the spinal cord and destroys the motor neurons there, and those do not regrow.",
+        "src": "https://en.wikipedia.org/wiki/Poliomyelitis"
       }
     ],
     "polyol_laxation": [
@@ -5988,6 +5523,481 @@
         "onset": "conditional",
         "mechanism": "The trial found a small shift in behaviour averaged across a group of children rather than a reaction in any individual one, and the European answer was a label rather than a ban — which is what an effect of that size supports.",
         "src": "https://en.wikipedia.org/wiki/Ponceau_4R"
+      }
+    ],
+    "processed_meat_carcinogen": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Nitrite curing salts form N-nitroso compounds in the gut, and smoking adds polycyclic aromatics on top. Group 1 is a statement about the strength of the evidence, not about the size of the risk.",
+        "src": "https://en.wikipedia.org/wiki/Processed_meat",
+        "carcinogen": true,
+        "iarc": 1
+      }
+    ],
+    "pyelonephritis_risk": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Bladder infection is unpleasant; the kidney is different, because it is a filter with a rich blood supply and bacteria that reach it can reach the bloodstream from there.",
+        "src": "https://en.wikipedia.org/wiki/Pyelonephritis"
+      }
+    ],
+    "radioactivity": [
+      {
+        "valence": "harm",
+        "route": "radiation",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Alpha emitters do nothing through skin and everything once inside, because the whole of that energy is deposited in a few cell diameters. Radium is treated by the body as calcium and goes to bone, which is why the dial painters' jaws were the first thing to fail.",
+        "src": "https://en.wikipedia.org/wiki/Radium_girls",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "rattlesnake_bite": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The venom is largely digestive enzyme: it begins breaking down tissue where it is injected, which is why the local damage keeps progressing after the bite.",
+        "src": "https://en.wikipedia.org/wiki/Snakebite"
+      }
+    ],
+    "raw": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Neither organism is unusual and neither is certain. What changes with pregnancy, age or immunosuppression is not exposure but what a small dose is able to do once it is inside.",
+        "src": "https://en.wikipedia.org/wiki/Foodborne_illness"
+      }
+    ],
+    "raw_flour_pathogens": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Wheat goes from field to mill with no step that kills anything, so flour is a raw agricultural product. It is dry, which stops bacteria growing and does not kill them.",
+        "src": "https://en.wikipedia.org/wiki/Flour"
+      }
+    ],
+    "raw_sprout_pathogens": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Sprouting is warm, wet and nutrient-rich for days, which is also the ideal condition for anything already on the seed. The contamination is inside the seed, so washing the sprout does not reach it.",
+        "src": "https://en.wikipedia.org/wiki/Sprouting"
+      }
+    ],
+    "reactive_metal": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "The reaction with water makes hydrogen and heat at the same time and in the same place, so the hydrogen ignites — and what is left behind on the skin is a strong alkali.",
+        "src": "https://en.wikipedia.org/wiki/Alkali_metal"
+      }
+    ],
+    "red_meat_probable_carcinogen": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "carcinogen",
+        "onset": "cumulative",
+        "mechanism": "Haem iron catalyses N-nitroso formation in the gut, and high-temperature cooking adds heterocyclic amines. Group 2A means the evidence is strong in animals and limited in people, which is a different statement from Group 1.",
+        "src": "https://en.wikipedia.org/wiki/Red_meat"
+      }
+    ],
+    "ricin_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It is an enzyme, not a poison in the ordinary sense: one molecule inside a cell removes a single adenine from the ribosome and that ribosome never makes protein again, and then it moves to the next one.",
+        "src": "https://en.wikipedia.org/wiki/Ricin"
+      }
+    ],
+    "road_animal": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "A large animal at windscreen height is carried onto the passenger compartment rather than pushed aside, which is why deer collisions injure out of proportion to their speed.",
+        "src": "https://en.wikipedia.org/wiki/Roadkill"
+      }
+    ],
+    "rubella_pregnancy_risk": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "birth_defect",
+        "onset": "conditional",
+        "mechanism": "The illness itself is mild. The virus crosses the placenta and interferes with cells that are dividing, so the damage follows whatever is being built that week — most often eye, ear and heart.",
+        "src": "https://en.wikipedia.org/wiki/Congenital_rubella_syndrome"
+      }
+    ],
+    "schistosomiasis_burden": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The larva penetrates intact skin from fresh water, which is why this is a disease of contact with water rather than of drinking it. The chronic damage is the immune reaction to eggs lodged in tissue.",
+        "src": "https://en.wikipedia.org/wiki/Schistosomiasis"
+      }
+    ],
+    "selenium_dose": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "The gap between what a body requires and what it cannot tolerate is narrower for selenium than for almost any other nutrient, which is the whole reason it is worth saying out loud.",
+        "src": "https://en.wikipedia.org/wiki/Selenium#Toxicity"
+      }
+    ],
+    "sepsis_deaths": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "sepsis",
+        "onset": "acute",
+        "mechanism": "Sepsis is not the infection, it is the response to it going system-wide: vessels leak, pressure falls, and organs fail from poor perfusion rather than from the organism itself.",
+        "src": "https://en.wikipedia.org/wiki/Sepsis"
+      }
+    ],
+    "severe_weather": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Wind does its damage by what it carries rather than by pressure, and moving water by weight: a foot of it moves a car because water weighs a tonne per cubic metre and does not compress.",
+        "src": "https://en.wikipedia.org/wiki/Severe_weather"
+      }
+    ],
+    "shark_bite": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "laceration",
+        "onset": "acute",
+        "mechanism": "Serrated teeth in a jaw that shakes rather than bites through: the injury is a tearing one, and the danger is blood loss rather than the bite itself.",
+        "src": "https://en.wikipedia.org/wiki/Shark_attack"
+      }
+    ],
+    "shiitake_dermatitis": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "mechanism": "Lentinan, the mushroom's own polysaccharide, causes a striking whip-like rash in a small number of people who eat it raw or barely cooked. Proper cooking destroys it.",
+        "src": "https://en.wikipedia.org/wiki/Shiitake#Adverse_effects"
+      }
+    ],
+    "silver_nitrate_corrosive": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "contact",
+        "mechanism": "It precipitates protein on contact, which is exactly why it is still used deliberately to cauterise. On skin it also leaves a black stain of reduced silver that has to grow out.",
+        "src": "https://en.wikipedia.org/wiki/Silver_nitrate"
+      }
+    ],
+    "soil_transmitted_helminths": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "anaemia",
+        "onset": "conditional",
+        "mechanism": "Hookworm is the reason this is an anaemia and not just an infection: the adult worm attaches to the intestinal wall and feeds on blood, continuously, for years. The loss is slow enough that a child grows up short of iron rather than acutely ill.",
+        "src": "https://en.wikipedia.org/wiki/Soil-transmitted_helminthiasis"
+      }
+    ],
+    "spirulina_contamination": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "hepatotoxin",
+        "onset": "conditional",
+        "mechanism": "The organism itself makes nothing harmful. Open ponds can grow other cyanobacteria alongside it, and some of those make microcystins, which the liver takes up.",
+        "src": "https://en.wikipedia.org/wiki/Spirulina_(dietary_supplement)"
+      }
+    ],
+    "sting_anaphylaxis": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "anaphylaxis",
+        "onset": "conditional",
+        "mechanism": "A local sting is the venom; anaphylaxis is the immune system. Mast cells degranulate everywhere at once, vessels leak and the airway swells, and the previous sting was the one that taught it.",
+        "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
+      }
+    ],
+    "strong_oxidizer_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "acute",
+        "mechanism": "An oxidiser injures by taking electrons from tissue rather than by acid or alkali: the damage is oxidation of the protein itself, and it continues while the compound remains on the skin.",
+        "src": "https://en.wikipedia.org/wiki/Chlorate"
+      }
+    ],
+    "sulfite_asthma": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "asthma",
+        "onset": "conditional",
+        "mechanism": "Sulfites release sulphur dioxide in the acid of the stomach, and inhaling that is what provokes the airway — so this is a respiratory reaction to something eaten.",
+        "src": "https://en.wikipedia.org/wiki/Sulfite"
+      }
+    ],
+    "synephrine_cardio": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "heart_attack",
+        "onset": "acute",
+        "mechanism": "Structurally close to ephedrine and marketed as its replacement. It acts on the same adrenergic receptors, and 'natural' says nothing about what a receptor does when it is occupied.",
+        "src": "https://en.wikipedia.org/wiki/Synephrine"
+      }
+    ],
+    "syphilis_sti": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A spirochaete thin enough to pass between cells rather than through them. It disappears for years between stages, which is why it was called the great imitator and why the late damage lands on the aorta and the brain.",
+        "src": "https://en.wikipedia.org/wiki/Syphilis"
+      }
+    ],
+    "tailings_dam_failure": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "blunt_trauma",
+        "onset": "acute",
+        "mechanism": "Saturated tailings can liquefy when shaken or overtopped, at which point the dam is holding back a fluid rather than a solid, and the wave travels far further than the volume suggests.",
+        "src": "https://en.wikipedia.org/wiki/Tailings_dam"
+      }
+    ],
+    "tapeworm_infection": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The adult worm in the gut is often unremarkable — it absorbs across its own surface and has no digestive tract to compete with yours. The serious disease is the larval one, and that comes from swallowing eggs rather than meat.",
+        "src": "https://en.wikipedia.org/wiki/Taenia_solium"
+      }
+    ],
+    "teratogen_window": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "birth_defect",
+        "onset": "conditional",
+        "mechanism": "Susceptibility follows developmental stage, not dose alone: the same exposure that does nothing later can, during the weeks an organ is being laid down, prevent it forming at all.",
+        "src": "https://en.wikipedia.org/wiki/Teratology"
+      }
+    ],
+    "theobromine_pet_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "The difference is metabolic rate, not potency: a dog clears theobromine several times more slowly than a person, so the same mouthful stays at an active level far longer.",
+        "src": "https://en.wikipedia.org/wiki/Theobromine_poisoning"
+      }
+    ],
+    "thujone_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "seizure",
+        "onset": "cumulative",
+        "mechanism": "Thujone blocks the GABA-A receptor, the brake on neuronal firing, and removing a brake is how a convulsant works. Cooking with the leaf is not the concern; the concentrated oil is.",
+        "src": "https://en.wikipedia.org/wiki/Thujone"
+      }
+    ],
+    "tick_borne_rickettsia": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "The organism multiplies inside the cells lining blood vessels, so the rash is the vessel wall failing rather than a skin reaction. Saliva carries it in during a bite that is usually not noticed.",
+        "src": "https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever"
+      }
+    ],
+    "toxic_shock_risk": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sepsis",
+        "onset": "acute",
+        "mechanism": "A superantigen bypasses the normal specificity of the immune system and activates a large fraction of T cells at once. The damage is the response, not the bacterium.",
+        "src": "https://en.wikipedia.org/wiki/Toxic_shock_syndrome"
+      }
+    ],
+    "trichinosis_illness": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "The larvae are released from their cysts by stomach acid, mature in the gut, and the new generation then travels to muscle and encysts there — which is why the later symptoms are muscular rather than digestive.",
+        "src": "https://en.wikipedia.org/wiki/Trichinosis"
+      }
+    ],
+    "trichomoniasis_sti": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "It moves between people by direct contact and does not survive drying, and most carriers have no symptoms at all — which is what keeps 160 million infections a year in circulation.",
+        "src": "https://en.wikipedia.org/wiki/Trichomoniasis"
+      }
+    ],
+    "tropane_alkaloid_poisoning": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Atropine and scopolamine block muscarinic acetylcholine receptors, so every parasympathetic signal stops at once: the pupil cannot constrict, the gut stops, the skin cannot sweat and the temperature climbs. The delirium it causes is the reason these plants have a reputation, and the concentration differs between plants of the same species and the same plant in different years.",
+        "src": "https://en.wikipedia.org/wiki/Anticholinergic"
+      }
+    ],
+    "tsunami_hazard": [
+      {
+        "valence": "harm",
+        "route": "mechanical",
+        "outcome": "drowning",
+        "onset": "acute",
+        "mechanism": "In open ocean it is a long, low wave travelling as fast as an airliner. What arrives at a coast is not a breaking wave but a sea level that keeps rising, carrying debris, and then withdraws with the same force.",
+        "src": "https://en.wikipedia.org/wiki/Tsunami"
+      }
+    ],
+    "tuberculosis_burden": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "It survives inside the macrophage that engulfs it, and the body walls it off rather than clearing it. That granuloma can hold for decades and then fail, which is why a third of the world carries it and a fraction ever falls ill.",
+        "src": "https://en.wikipedia.org/wiki/Tuberculosis"
+      }
+    ],
+    "tularemia_infectivity": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Remarkable for how few organisms are needed — laboratory exposure alone has caused cases. It survives inside macrophages, which is why the usual first line of defence carries it rather than clearing it.",
+        "src": "https://en.wikipedia.org/wiki/Tularemia"
+      }
+    ],
+    "uranium_toxicity": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "nephrotoxin",
+        "onset": "cumulative",
+        "mechanism": "The chemistry outruns the radioactivity here: the soluble oxide is filtered by the kidney and damages the tubule it is being concentrated in, the same way other heavy metals do.",
+        "src": "https://en.wikipedia.org/wiki/Uranium#Toxicity"
+      }
+    ],
+    "urushiol_contact": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "contact",
+        "mechanism": "A hapten: too small to be seen by the immune system on its own, it binds skin protein and the combination is what is learned. The first exposure does nothing and teaches; every one after that reacts.",
+        "src": "https://en.wikipedia.org/wiki/Urushiol"
+      }
+    ],
+    "venomous_fish_sting": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "The spines are a defence, not a weapon: they stand up when the fish is trodden on and the venom gland is squeezed by the same pressure. The pain is out of proportion to the wound.",
+        "src": "https://en.wikipedia.org/wiki/Stonefish"
+      }
+    ],
+    "venomous_spur": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "poisoning",
+        "onset": "contact",
+        "mechanism": "One of very few venomous mammals. The venom is not lethal to a person and the pain it causes does not respond to ordinary analgesia, which is what makes it notable.",
+        "src": "https://en.wikipedia.org/wiki/Platypus_venom"
+      }
+    ],
+    "violent_hydrolysis": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "corrosive",
+        "onset": "acute",
+        "mechanism": "These take apart the water they meet, including the water in tissue, and the products are acid and heat generated inside the wound rather than applied to it.",
+        "src": "https://en.wikipedia.org/wiki/Phosphorus_pentachloride"
+      }
+    ],
+    "vitamin_e_bleeding": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "At supplemental levels it antagonises vitamin K, and vitamin K is what finishes the clotting factors. The food levels do nothing of the kind.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E#Toxicity"
+      }
+    ],
+    "volcanic_activity": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "A pyroclastic flow is a ground-hugging suspension of hot gas and ash moving faster than anything can run, at temperatures that kill by heat before burial. Distance from the vent is not the protection it looks like.",
+        "src": "https://en.wikipedia.org/wiki/Pyroclastic_flow"
+      }
+    ],
+    "yellow_fever_toxic_phase": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "Most cases resolve. The toxic phase begins after an apparent recovery, and the jaundice it is named for is the liver failing.",
+        "src": "https://en.wikipedia.org/wiki/Yellow_fever"
       }
     ]
   },
