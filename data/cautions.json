@@ -51,7 +51,7 @@
     },
     "fire": {
       "label": "Fire and hot fat",
-      "note": "Cooking oil reaches temperatures that ignite, and water thrown into it will throw burning oil across a room. Never leave hot fat unattended, and never put water on an oil fire.",
+      "note": "Chip pans are a common cause of house fires in the United Kingdom — around 12,000 a year — and burns from hot oil falling on someone are a common cause of hospital admission. Adding water must be avoided at all costs, because it leads to violent fire spread. The pan is not filled more than a third full, it is not left unattended even if the phone or the doorbell rings, and if the fire cannot be put out the room is evacuated.",
       "ids": [
         "fried_fish",
         "battered_fish",
@@ -60,20 +60,8 @@
         "caramel",
         "caramel_sauce"
       ],
-      "severity": "acute"
-    },
-    "raw": {
-      "label": "Raw egg and unpasteurised milk",
-      "note": "Both can carry salmonella or listeria. The risk is small for most people and much larger if you are pregnant, very young, elderly, or immunocompromised.",
-      "ids": [
-        "mayonnaise",
-        "egg_mayo",
-        "milk",
-        "cream",
-        "curd",
-        "blue_cheese"
-      ],
-      "severity": "conditional"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Chip_pan"
     },
     "alcohol": {
       "label": "Alcohol",
@@ -269,7 +257,7 @@
     },
     "severe_weather": {
       "label": "Weather that kills people",
-      "note": "Flood, storm surge, hurricane, blizzard, tornado and large hail are in this game because they are real physics, and they are the parts of that physics that kill. Moving floodwater carries and hides things and is far stronger than it looks; a blizzard removes visibility rather than merely reducing it; storm surge is the sea being pushed onto land; a tornado's winds can exceed 300 km/h in the strongest, rarest cases.",
+      "note": "These are in the game because they are real physics, and these are the parts of that physics that kill. The strongest tornadoes attain wind speeds in excess of 300 miles per hour (480 km/h), may stretch more than two miles across, and can stay on the ground for dozens of miles. Tropical cyclones bring torrential rain, high waves and damaging storm surge; surges can produce extensive coastal flooding, and heavy rain produces significant inland flooding well away from the coast.",
       "ids": [
         "flood",
         "hurricane",
@@ -277,7 +265,8 @@
         "hail",
         "tornado"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Severe_weather"
     },
     "ozone": {
       "label": "Ozone is not fresh air",
@@ -917,7 +906,7 @@
     },
     "liver_fluke_infection": {
       "label": "A parasite that can live in one host for decades",
-      "note": "Clonorchis sinensis, the Chinese liver fluke, can survive around 30 years in a single human host after being eaten in raw or undercooked freshwater fish. Long-term infection is linked to chronic liver and bile-duct disease.",
+      "note": "Clonorchis sinensis, the Chinese liver fluke, is eaten in raw or undercooked freshwater fish: the metacercarial cysts are digested free in the gut, and the flukes settle in the common bile duct and gall bladder, feeding on bile. An adult lives an average of 30 years there, laying up to 4,000 eggs a day. The damage runs from jaundice and bile duct obstruction to cirrhosis and cholangiocarcinoma — the International Agency for Research on Cancer names it a major causative agent of bile duct cancer.",
       "ids": [
         "clonorchis_sinensis",
         "clonorchiasis",
@@ -926,7 +915,8 @@
         "paragonimus_westermani",
         "paragonimiasis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Clonorchis_sinensis"
     },
     "body_louse_disease_vector": {
       "label": "A real historical epidemic-disease carrier",
@@ -1054,7 +1044,7 @@
     },
     "cyanide_poisoning": {
       "label": "Cyanide is lethal in small doses",
-      "note": "Sodium cyanide dissolved in water is what leaches gold out of ore, and it is genuinely lethal — plants have to keep the solution alkaline, above pH 10.5, specifically to stop toxic hydrogen cyanide gas from forming. The 2000 Baia Mare spill in Romania, when a tailings dam holding cyanide solution failed and released it into the Tisza river, killed enormous numbers of fish across three countries. This is industrial chemistry, not something to handle casually.",
+      "note": "Cyanide in solution is what leaches gold out of ore, and one critical factor in using it safely is holding the solution alkaline, above pH 10.5 — typically with lime — specifically to prevent toxic hydrogen cyanide forming during processing. The 2000 Baia Mare cyanide spill was consequential enough that the European Parliament and the Council responded to it directly. This is industrial chemistry, not something to handle casually.",
       "ids": [
         "cyanide",
         "dore",
@@ -1063,7 +1053,8 @@
         "hydrocyanic_acid",
         "sodium_cyanide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Gold_cyanidation"
     },
     "blasting_hazard": {
       "label": "Blasting is a controlled explosion, not a safe one",
@@ -1380,7 +1371,7 @@
     },
     "hexavalent_chromium": {
       "label": "Hexavalent chromium is a recognised carcinogen",
-      "note": "Sodium chromate and dichromate carry chromium in its +6 oxidation state, which the IARC classes as a Group 1 human carcinogen and which is regulated as a drinking-water contaminant — the compound at the centre of the Hinkley, California case made famous by Erin Brockovich. Chromium(III), the oxide this game reaches it from, is a different, far less hazardous oxidation state.",
+      "note": "Chromium in its +6 oxidation state is carcinogenic — IARC Group 1 — especially airborne and inhaled, where it causes lung cancer. The compounds are also genotoxic. Its use is largely prohibited under the EU's Restriction of Hazardous Substances Directive and restricted under REACH, the regulation on Registration, Evaluation, Authorisation and Restriction of Chemicals.",
       "ids": [
         "sodium_chromate",
         "dichromate",
@@ -1390,7 +1381,8 @@
         "potassium_dichromate"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Hexavalent_chromium"
     },
     "hydrofluoric_hazard": {
       "label": "Hydrofluoric acid injures before it hurts",
@@ -2572,7 +2564,7 @@
     },
     "aflatoxin_in_storage": {
       "label": "Groundnuts and maize grow the most potent liver carcinogen known if they are stored warm and damp",
-      "note": "Aspergillus flavus grows on stored groundnuts, maize, tree nuts and spices wherever moisture reaches about 7% and the temperature sits between 13 and 40°C, and it produces aflatoxin. Naturally occurring aflatoxins are an IARC Group 1 carcinogen, and somewhere between 5 and 28% of the world's liver cancer is attributed to them. The risk multiplies with hepatitis B: infected and exposed together carries up to thirty times the risk of exposure alone, which is why the burden falls on sub-Saharan Africa, Southeast Asia and China. Regulated markets test for it and cap it — the FDA limit is 20 parts per billion.",
+      "note": "Aflatoxins are poisonous carcinogens and mutagens produced by moulds, especially Aspergillus flavus and Aspergillus parasiticus, growing on stored crops — groundnuts, maize, tree nuts, spices — wherever moisture reaches about 7% and the temperature sits between 13 and 40 °C. Between 5 and 28% of the world's liver cancer is attributed to them, and the risk multiplies with hepatitis B infection. Regulated markets cap it: the FDA limit is 20 parts per billion.",
       "ids": [
         "peanut",
         "peanut_butter",
@@ -2581,7 +2573,8 @@
         "brazil_nut"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Aflatoxin"
     },
     "alcohol_carcinogen": {
       "label": "Alcohol has been a Group 1 carcinogen since 1988",
@@ -2601,7 +2594,7 @@
     },
     "processed_meat_carcinogen": {
       "label": "Processed meat is a Group 1 carcinogen, in the same confidence class as tobacco",
-      "note": "IARC classified processed meat — meat salted, cured, fermented or smoked to preserve it or change its flavour — as carcinogenic to humans in 2015. Every 50 grams eaten daily raises the risk of bowel cancer by about 18%, and roughly 34,000 cancer deaths a year worldwide are attributed to diets high in it. Group 1 describes how certain the evidence is, not how dangerous the thing is: tobacco sits in the same group and is estimated to kill about a million people a year.",
+      "note": "In 2015 IARC classified processed meat — salted, cured, fermented or smoked to preserve it or change its flavour — as carcinogenic to humans, Group 1, the same category as tobacco smoking and asbestos. That is a statement about the strength of the evidence, not about the size of the risk: the figure attached to it is an 18% higher risk of colorectal cancer for every 50 g of processed meat eaten daily. Unprocessed red meat sits a grade below, in Group 2A.",
       "ids": [
         "bacon",
         "ham",
@@ -2611,7 +2604,8 @@
         "corned_beef"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Red_meat"
     },
     "red_meat_probable_carcinogen": {
       "label": "Red meat is probably carcinogenic, on weaker evidence than processed meat",
@@ -2799,8 +2793,8 @@
       "severity": "cumulative"
     },
     "pah_carcinogen_grades": {
-      "label": "The PAHs are not one hazard — IARC grades them one by one",
-      "note": "Benzo[a]pyrene is Group 1, carcinogenic to humans. Dibenz[a,h]anthracene is Group 2A, probably carcinogenic. Benz[a]anthracene and naphthalene are Group 2B, possibly carcinogenic. Phenanthrene sits in Group 3, not classifiable, even though animal work hints at it. Structure decides the grade: the mutagenic ones usually carry four or more rings plus a bay region, the crowded pocket that makes a molecule easy for metabolising enzymes to convert into something that binds DNA. Lighter two- and three-ring PAHs act mostly as co-carcinogens, jamming the gap junctions cells use to hold each other's growth in check.",
+      "label": "Structure decides which of these is dangerous",
+      "note": "This class carries no single verdict, because structure decides. The mutagenic ones — benzo[a]pyrene among them — usually have four or more aromatic rings plus a \"bay region\", a structural pocket that makes the molecule more reactive to the enzymes meant to metabolise it, and the metabolite is what does the damage. Low-molecular-weight PAHs of two to four rings are more potent as co-carcinogens during the promotional stage, and those with bay-like regions can dysregulate the gap junction channels cells use for the communication that holds each other's growth in check.",
       "ids": [
         "polycyclic_aromatic_hydrocarbon",
         "naphthalene",
@@ -2809,7 +2803,8 @@
         "benzanthracene",
         "dibenzanthracene"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Polycyclic_aromatic_hydrocarbon"
     },
     "soot_carcinogen": {
       "label": "Soot is where occupational cancer was first identified",
@@ -3221,6 +3216,28 @@
       ],
       "severity": "cumulative",
       "src": "https://en.wikipedia.org/wiki/Chagas_disease"
+    },
+    "raw_milk": {
+      "label": "Pasteurisation is the step this skips",
+      "note": "Raw milk can carry pathogens that pasteurisation exists to kill — E. coli O157:H7, Campylobacter, Listeria and Salmonella among them — and their possible presence in poorly produced milk products is why pasteurisation continued. Young children, the elderly, people with weakened immune systems and pregnant women are particularly susceptible to infections originating in raw milk. Some cheeses are made with it deliberately.",
+      "ids": [
+        "milk",
+        "cream",
+        "curd",
+        "blue_cheese"
+      ],
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Raw_milk"
+    },
+    "raw_egg": {
+      "label": "Heat is what settles a raw egg, and not much of it",
+      "note": "Raw egg carries a salmonellosis risk that cooking removes, and the margin is narrower than it sounds: Salmonella is killed instantly at 71 °C, and also at 54.5 °C if held there long enough. Eggs can be pasteurised in the shell at 57 °C for an hour and a quarter, leaving the white slightly milkier. The people especially susceptible to salmonellosis are the elderly, the infirm and pregnant women. Raw egg protein is also only 51% bioavailable against nearer 91% cooked.",
+      "ids": [
+        "mayonnaise",
+        "egg_mayo"
+      ],
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Egg_as_food"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

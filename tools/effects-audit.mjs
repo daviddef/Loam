@@ -60,6 +60,23 @@ const ROUTE_WORDS = {
   thermal:    ['heat', 'burn', 'temperature', 'cold', 'thermal', 'scald', 'freez', 'hypotherm'],
 };
 
+/* Each standards body with the name it is also written under: a source that
+ * spells out "International Agency for Research on Cancer" and never types
+ * IARC is saying the same thing, and flagging it would be a false red. */
+const BODIES = {
+  IARC: 'International Agency for Research on Cancer',
+  NIOSH: 'National Institute for Occupational Safety and Health',
+  OSHA: 'Occupational Safety and Health Administration',
+  WHO: 'World Health Organi[sz]ation',
+  EPA: 'Environmental Protection Agency',
+  FDA: 'Food and Drug Administration',
+  EFSA: 'European Food Safety Authority',
+  CDC: 'Centers for Disease Control',
+  ATSDR: 'Agency for Toxic Substances and Disease Registry',
+  NTP: 'National Toxicology Program',
+  ACGIH: 'American Conference of Governmental Industrial Hygienists',
+};
+
 /* Loam's own outcome vocabulary. These are categories rather than diagnoses —
  * an article about mercury poisoning describes neurotoxicity for pages without
  * ever writing "neurotoxin" — so they are checked against the words the
@@ -169,6 +186,24 @@ for (const { where, id, f } of rows) {
   // 3. figures in our own sentence
   const figs = figuresIn(f.mechanism || '');
   const missingFigs = figs.filter(x => !hasFigure(text, x));
+  /* 3b. A STANDARDS BODY THE MECHANISM NAMES.
+   *
+   * This check arrived late, from tools/cautions-audit.mjs, and it found a row
+   * here on its first run. `pah_carcinogen_grades` asserted "IARC grades them
+   * one by one — benzo[a]pyrene Group 1, others 2A and 2B" against the
+   * Polycyclic aromatic hydrocarbon article, which contains no IARC, no
+   * International Agency for Research on Cancer, and not one of those grades.
+   * It passed every check above, because the IARC test below only fires on
+   * `carcinogen: true` and this row does not set it.
+   *
+   * An attribution is a claim: it tells a reader where to go and check, and a
+   * reader who goes there has to find it. Names with a capital inside are
+   * skipped by tools/audit.mjs for good reason — NaOH is not a person — which
+   * is exactly why these acronyms need checking somewhere. */
+  for (const a of Object.keys(BODIES))
+    if (new RegExp(`\\b${a}\\b`).test(f.mechanism || '')
+      && !(new RegExp(`\\b${a}\\b`, 'i').test(text) || new RegExp(BODIES[a], 'i').test(text)))
+      misses.push(`attributes to ${a}, which the article never names`);
   // 4. an IARC Group 1 claim is a specific, checkable assertion
   if (f.carcinogen) {
     let iarcText = text;

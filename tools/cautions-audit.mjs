@@ -205,12 +205,37 @@ function numberWord(v) {
  * cannot check for themselves without being told where to look. Deliberately
  * short: these are the organisations this corpus actually cites, and a longer
  * list would start matching ordinary words. */
-const AUTHORITIES = [
-  'IARC', 'NIOSH', 'OSHA', 'WHO', 'EPA', 'FDA', 'EFSA', 'CDC', 'ATSDR',
-  'ACGIH', 'HSE', 'ECHA', 'NTP', 'USDA', 'FAO', 'NFPA', 'IUPAC', 'UNICEF',
-];
+/* Each body with the name it is also written under, because a source that
+ * spells out "International Agency for Research on Cancer" and never types
+ * IARC is saying the same thing. Two of this tool's first nine flags were
+ * presentational rather than real — a space in 81 410, the word "seventeen" —
+ * and an acronym against its own expansion is that same class of false red
+ * waiting to happen. Closed before it cost a true sentence. */
+const AUTHORITIES = {
+  IARC: 'International Agency for Research on Cancer',
+  NIOSH: 'National Institute for Occupational Safety and Health',
+  OSHA: 'Occupational Safety and Health Administration',
+  WHO: 'World Health Organization|World Health Organisation',
+  EPA: 'Environmental Protection Agency',
+  FDA: 'Food and Drug Administration',
+  EFSA: 'European Food Safety Authority',
+  CDC: 'Centers for Disease Control',
+  ATSDR: 'Agency for Toxic Substances and Disease Registry',
+  ACGIH: 'American Conference of Governmental Industrial Hygienists',
+  HSE: 'Health and Safety Executive',
+  ECHA: 'European Chemicals Agency',
+  NTP: 'National Toxicology Program',
+  USDA: 'United States Department of Agriculture|Department of Agriculture',
+  FAO: 'Food and Agriculture Organization',
+  NFPA: 'National Fire Protection Association',
+  IUPAC: 'International Union of Pure and Applied Chemistry',
+  UNICEF: "United Nations Children's Fund",
+};
 const authoritiesIn = text =>
-  AUTHORITIES.filter(a => new RegExp(`\\b${a}\\b`).test(text));
+  Object.keys(AUTHORITIES).filter(a => new RegExp(`\\b${a}\\b`).test(text));
+/** Does the source name this body, by acronym or in full? */
+const namesAuthority = (text, a) =>
+  new RegExp(`\\b${a}\\b`, 'i').test(text) || new RegExp(AUTHORITIES[a], 'i').test(text);
 
 const rows = Object.entries(HAZ)
   .filter(([id]) => !ONLY.length || ONLY.includes(id));
@@ -249,7 +274,7 @@ for (const [id, h] of rows) {
     if (!hasFigure(text, f)) misses.push(`figure ${f}`);
 
   for (const a of authoritiesIn(h.note || ''))
-    if (!new RegExp(`\\b${a}\\b`, 'i').test(lower)) misses.push(`attributes to ${a}`);
+    if (!namesAuthority(text, a)) misses.push(`attributes to ${a}`);
 
   if (misses.length) flagged.push({ id, src: h.src, misses });
 }

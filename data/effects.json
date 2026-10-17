@@ -5431,7 +5431,7 @@
         "route": "inhaled",
         "outcome": "carcinogen",
         "onset": "cumulative",
-        "mechanism": "The body activates these rather than detoxifying them: an enzyme meant to make them water-soluble produces an epoxide that binds DNA. IARC grades them one by one — benzo[a]pyrene Group 1, others 2A and 2B — so this class carries no single verdict.",
+        "mechanism": "The body activates these rather than detoxifying them: an enzyme meant to make them water-soluble produces an epoxide that binds DNA. The mutagenic ones usually carry four or more rings and a bay region, the pocket that makes them reactive to that enzyme — so this class carries no single verdict, and structure is what decides.",
         "src": "https://en.wikipedia.org/wiki/Polycyclic_aromatic_hydrocarbon"
       }
     ],
@@ -5570,7 +5570,7 @@
         "src": "https://en.wikipedia.org/wiki/Snakebite"
       }
     ],
-    "raw": [
+    "raw_egg": [
       {
         "valence": "harm",
         "route": "ingested",
@@ -5588,6 +5588,16 @@
         "onset": "conditional",
         "mechanism": "Wheat goes from field to mill with no step that kills anything, so flour is a raw agricultural product. It is dry, which stops bacteria growing and does not kill them.",
         "src": "https://en.wikipedia.org/wiki/Flour"
+      }
+    ],
+    "raw_milk": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "Neither organism is unusual and neither is certain. What changes with pregnancy, age or immunosuppression is not exposure but what a small dose is able to do once it is inside.",
+        "src": "https://en.wikipedia.org/wiki/Foodborne_illness"
       }
     ],
     "raw_sprout_pathogens": [
