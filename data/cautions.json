@@ -2979,7 +2979,7 @@
     },
     "hydrogen_sulfide_asphyxiant": {
       "label": "It destroys the warning before it destroys you",
-      "note": "Hydrogen sulfide smells of rotten eggs from 0.01 ppm, which sounds like a reliable alarm and is not one. NIOSH states plainly that the sense of smell becomes rapidly fatigued and cannot be relied upon to warn of its continuous presence: at 100–150 ppm smell is gone within 2 to 15 minutes, and 100 ppm is the level considered immediately dangerous to life and health. At 500–700 ppm a person collapses in five minutes; above 1,000 ppm, in one or two breaths. It collects in sewers, tanks and manure pits, and the deaths come in pairs — of four Minnesota farm workers killed in two manure-pit incidents in August 1992, two were the men who climbed in after them.",
+      "note": "A colourless gas with a strong odour of rotten eggs, and NIOSH states plainly that the sense of smell becomes rapidly fatigued and can NOT be relied upon to warn of its continuous presence — the warning fails before the gas does. One of its own trade names is sewer gas. NIOSH sets a ceiling of 10 ppm over ten minutes and OSHA 20 ppm with a 50 ppm ten-minute peak; 100 ppm is immediately dangerous to life and health. It reaches a person by inhalation and by skin or eye contact, and the symptoms run from eye and respiratory irritation to apnea, coma and convulsions.",
       "ids": [
         "hydrogen_sulfide"
       ],
@@ -3063,7 +3063,7 @@
     },
     "eucalyptus_oil_ingestion": {
       "label": "The leaf is a koala's problem; the bottled oil is a child's",
-      "note": "Eucalyptus oil is 65% to 84% 1,8-cineole in the commonly distilled species, and cineole is what causes the seizures. Reported effects scale with volume swallowed: 2 to 3 mL produces drowsiness, dizziness and unsteadiness, and 5 mL or more can produce coma, with respiratory depression the thing that actually kills. Children have reacted to as little as four drops, roughly 0.24 mL. In one series of 109 children who swallowed it, 59% had symptoms and 4% reached deep coma. The tree in the ground is not the hazard here; the concentrate in the cupboard is.",
+      "note": "Eucalyptus oil is 65% to 84% 1,8-cineole in the commonly distilled species, and cineole is what causes the seizures — an effect that can follow a therapeutic dose as well as an overdose. In the reported series the children had all taken the oil orally as drops mixed into water or milk, and seizures began a median of 20 minutes later, with a range of 10 to 120. In one series of 109 children who swallowed it, 59% had symptoms and 4% reached deep coma. The tree in the ground is not the hazard here; the concentrate in the cupboard is.",
       "ids": [
         "eucalyptus"
       ],
@@ -3117,7 +3117,7 @@
     },
     "solanine_greening": {
       "label": "Green is chlorophyll; the poison just travels with it",
-      "note": "Potatoes make α-solanine and α-chaconine as a defence, and light, warmth, sprouting and bruising all raise the level. The green itself is harmless chlorophyll — it is only a visible marker that the plant has been exposed to light and has been making glycoalkaloids too. They sit overwhelmingly in the peel and the sprouts: Hong Kong's Centre for Food Safety measured 26–88 mg/kg in ordinary potato flesh against 3,500 and 4,100 mg/kg in sprouts. EFSA's reference point for acute effects is 1 mg total glycoalkaloid per kg of body weight, with 3 to 6 mg/kg considered potentially lethal; symptoms run from nausea and vomiting up to confusion, weak pulse and low blood pressure. Cooking does not decompose them, which is why the peel and sprouts are what get removed.",
+      "note": "Potatoes make α-solanine and α-chaconine as a defence, and light, warmth, sprouting and bruising all raise the level. The green itself is harmless chlorophyll: increases of solanine in the peel are closely associated with greening, two biochemical processes that are independent of each other but both activated by light. EFSA's CONTAM Panel identified a lowest-observed-adverse-effect level of 1 mg total potato glycoalkaloids per kg of body weight per day as its reference point for acute exposure, and doses of 3 to 6 mg/kg bw are considered potentially lethal; the acute effects are nausea, vomiting and diarrhoea, and respiratory insufficiency, cardiac failure, coma and death have been reported. Peeling reduces the glycoalkaloid content by 25 to 75%, boiling peeled potatoes by 5 to 65%.",
       "ids": [
         "potato"
       ],
@@ -3126,7 +3126,7 @@
     },
     "raw_flour_pathogens": {
       "label": "Flour is a raw agricultural product",
-      "note": "Wheat goes from a field to a mill without a step that kills bacteria, so flour arrives in the bag as raw as the grain was — which is why raw dough and batter, not undercooked baking, are what show up in outbreak investigations. A 2016 US outbreak of Shiga toxin-producing E. coli O121 and O26 traced to one mill infected 63 people across 24 states; a 2019 O26 outbreak infected 17 across 8 states with 3 hospitalised. STEC illness means cramps and bloody diarrhoea, and in a minority of cases kidney failure. Baking is the step that handles it.",
+      "note": "Wheat goes from a field to a mill without a step that kills bacteria, so flour arrives in the bag as raw as the grain was — which is why raw dough and batter, not undercooked baking, are what show up in outbreak investigations. In the 2019 multistate outbreak of Shiga toxin-producing E. coli O26 traced to flour, seventeen people fell ill across eight states and three were hospitalised, with no deaths and no cases of haemolytic uraemic syndrome; four of the seven people interviewed reported eating, licking or tasting raw homemade dough or batter, and the outbreak strain was found in an unopened bag of flour. STEC illness means cramps and bloody diarrhoea, and in a minority of cases kidney failure. Baking is the step that handles it.",
       "ids": [
         "flour",
         "dough"
@@ -3146,7 +3146,7 @@
     },
     "lupin_alkaloid_debittering": {
       "label": "The bitterness is the toxin, and debittering is the whole point",
-      "note": "Lupin seed carries quinolizidine alkaloids — lupanine, lupinine, sparteine — which are what make a bitter lupin bitter. In enough quantity they produce an anticholinergic picture: dry mouth, blurred vision, confusion, racing heart, and changes in cardiac conduction. Traditional debittering by soaking, boiling and days of running water takes alkaloid content from around 13,000 mg/kg down to about 500. EFSA's 2019 opinion found that margins of exposure may indicate a risk where lupin seeds are eaten without a debittering step or where debittered seed is still high in alkaloids. Sweet cultivars bred low in alkaloid are a different thing again. Lupin is also a declared allergen in the EU, with heat-stable proteins that cross-react in some people with peanut.",
+      "note": "Lupin seed carries quinolizidine alkaloids — lupanine, lupinine, sparteine — which are what make a bitter lupin bitter. In enough quantity they produce an anticholinergic picture: dry mouth, blurred vision, confusion, racing heart, and changes in cardiac conduction. EFSA's opinion found that the calculated margins of exposure may indicate a risk for some consumers — where lupin seeds are eaten without a debittering step, where debittered seed is still high in alkaloid content, and where lupin-based meat imitates are eaten. Human poisonings from lupin seed are infrequent and rarely fatal. Sweet cultivars bred low in alkaloid are a different thing again. Lupin is also a declared allergen in the EU, with heat-stable proteins that cross-react in some people with peanut.",
       "ids": [
         "lupin"
       ],
@@ -3155,7 +3155,7 @@
     },
     "raw_sprout_pathogens": {
       "label": "What a seed needs to sprout is what a pathogen needs to multiply",
-      "note": "Sprouting means holding seed warm, wet and nutrient-rich for days, and a Salmonella or E. coli cell that arrived on or inside the seed gets exactly the same conditions. FDA counted 52 sprout-associated outbreaks in the United States between 1996 and 2020 — at least 2,700 illnesses, 200 hospitalisations and three deaths — with contaminated seed the most likely source in most of them. Cooking sprouts resolves it. Raw, the risk falls hardest on children, older people, pregnant women and anyone immunocompromised, which is the group most food-safety advice singles out.",
+      "note": "Sprouting means holding seed warm, wet and nutrient-rich for days, and a Salmonella or E. coli cell that arrived on or inside the seed gets exactly the same conditions — the FDA's own phrasing is that sprouts are especially vulnerable to pathogens given the conditions needed to grow them. From 1996 to July 2016 there were 46 reported outbreaks of foodborne illness in the United States linked to sprouts, accounting for 2,474 illnesses, 187 hospitalisations and three deaths. In the FDA's sampling study of 825 samples from 37 states, Salmonella was found on 2.35% of seed samples, and studies have identified contaminated seed as the most likely source. Cooking sprouts resolves it.",
       "ids": [
         "sprout",
         "alfalfa_sprout"
@@ -3195,7 +3195,7 @@
     },
     "infant_botulism_honey": {
       "label": "Honey is safe for everyone except the people who cannot eat it yet",
-      "note": "Honey below 18% water supports no bacterial growth, but Clostridium botulinum spores survive in it inert. An adult gut is competitive enough to see them off; an infant's, in the first year, is not, and the spores can germinate there and produce toxin inside the child. CDC's guidance is flat: do not feed honey to a child younger than 1 year old. Infant botulism is the most common form of botulism in the United States — 162 of 242 reported cases in 2018. Pasteurising or baking the honey does not settle it, because spores are what survive heat.",
+      "note": "The bacteria that cause botulism are found in soil and dust, and inside homes — on floors, carpets and countertops, even after cleaning. Infant botulism happens when the spores get into an infant's intestines, where they grow and produce the toxin that causes the illness; an adult gut is competitive enough to see them off. CDC's guidance is flat: honey can contain the bacteria that cause botulism, and honey is not safe for infants — do not feed it to a child younger than 1 year old. Most infant botulism cannot be prevented, which is what makes the one avoidable route worth naming. Pasteurising or baking does not settle it, because spores are what survive heat.",
       "ids": [
         "honey"
       ],

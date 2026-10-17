@@ -234,6 +234,19 @@ if (has('cautions.json')) {
    * caution. This line is here so the number is visible, not so it grows. */
   add('hazard cautions', covered.size, elements.length,
       'elements carrying a caution — NOT a target, most should have none', true);
+  /* THIS one IS a shortfall, and it went unmeasured for two months.
+   *
+   * Every recipe carries a source. Every effect row carries a source and
+   * tools/effects-audit.mjs checks the article supports it. The hazard layer
+   * carries neither: of 343 entries, 25 cite anything at all, and 220 of the
+   * notes assert a number nothing has ever checked — one of them says "IARC
+   * places it in Group 2B", which happens to be true and which no part of this
+   * repo knows. It is the safety layer, so it is the worst possible place for
+   * the project's central claim not to hold. Unlike `hazard cautions` above,
+   * this row is meant to grow. */
+  const haz = Object.values(c);
+  add('cautions-sourced', haz.filter(h => h.src).length, haz.length,
+      'hazard notes citing a source at all — the safety layer had none');
 }
 
 /* IS THE SWEEP CONVERGING, OR IS IT A TREADMILL?

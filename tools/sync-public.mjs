@@ -92,6 +92,7 @@ const PUBLIC = [
   'tools/roles.mjs',
   'tools/effects.mjs',
   'tools/effects-audit.mjs',
+  'tools/cautions-audit.mjs',
   'tools/lib/wiki.mjs',
   'tools/coverage.mjs',
   'tools/readme.mjs',
@@ -129,6 +130,13 @@ const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md
                // business in a public game repo. Delete both when the backlog
                // is worked out; they are a snapshot, not a source of truth.
                /^data\/audit-backlog\.json$/, /^data\/audit-articles\.json\.gz$/,
+               // The hazard audit's page cache, for the same two reasons: it is
+               // third-party page text (CDC, PMC, FDA, WHO) rather than anything
+               // this project wrote, and it is a working artefact of an unfinished
+               // sweep. tools/cautions-audit.mjs IS public, like its two siblings —
+               // the machinery that checks the claims should be as reviewable as
+               // the claims. What it downloaded while running should not.
+               /^data\/cautions-sources\.json\.gz$/,
                /^strip\.html$/, /^chain-preview\.html$/, /^build-notes\.html$/,
                /^tools\/session-report\.mjs$/,
                // Merges RESEARCH-*.md batches, which are private by definition.
