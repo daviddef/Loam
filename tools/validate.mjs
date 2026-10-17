@@ -141,6 +141,21 @@ for (const [i, r] of recipes.entries()) {
     if (!r.verb) err(`${at}: "at" only means something on a verb recipe`);
     if (typeof r.at !== 'number' || !isFinite(r.at)) err(`${at}: "at" must be a number of °C`);
   }
+  /* A BAND MAY CARRY ITS OWN CITATION, and only a band may.
+   *
+   * `srcBand` names the article that states the firing temperature, because the
+   * article the prose cites frequently does not: Dal gives no temperature at
+   * all. The audit checks the band against this article instead of the prose's.
+   * Guard the two ways it could rot — a srcBand on a recipe with no band is
+   * pointing at nothing, and a non-Wikipedia one cannot be checked by a tool
+   * that reads Wikipedia. Neither is a thing a human would notice. */
+  if (r.srcBand !== undefined) {
+    if (r.at === undefined) err(`${at}: "srcBand" with no "at" — a band source for no band`);
+    if (!/^https:\/\/en\.wikipedia\.org\/wiki\//.test(r.srcBand)) {
+      err(`${at}: "srcBand" must be an en.wikipedia.org article the audit can read`);
+    }
+    if (r.srcBand === r.src) err(`${at}: "srcBand" repeats "src" — drop it and let the band check the prose's source`);
+  }
   const base = r.verb ? `${r.in[0]}|${r.verb}` : [...r.in].sort().join('+');
   const sig = r.at !== undefined ? `${base}@${r.at}` : base;
   if (sigs.has(sig) && sigs.get(sig) !== r.out) {

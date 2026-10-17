@@ -395,7 +395,14 @@ function expandPowers(text) {
 }
 
 function celsiusFigures(raw) {
-  const text = expandPowers(raw);
+  /* A RATE IS NOT A TEMPERATURE. The Pyrolysis article tabulates "Heating
+   * rate: 10-300 °C/s" beside its temperatures, and reading that as a range of
+   * temperatures handed the band check a 10-300 °C window nobody had claimed.
+   * Cut the rates before scanning: °C/s, °C/min, °C per second, and the same
+   * for K and °F. This can only ever make the check stricter. */
+  const text = expandPowers(raw)
+    .replace(/°?\s*[CFK]\s*\/\s*(?:s|sec|second|min|minute|h|hr|hour|m)\b/gi, ' RATE ')
+    .replace(/°?\s*[CFK]\s+per\s+(?:second|minute|hour|s|min|h)\b/gi, ' RATE ');
   const out = [];
   const add = (v) => { if (isFinite(v)) out.push(v); };
   const spans = (re, conv) => {
@@ -430,6 +437,32 @@ function celsiusFigures(raw) {
   spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*C\\b`, 'g'), c => c);
   spans(new RegExp(`${R}${SEP}\\s*\u00b0\\s*F\\b`, 'g'), f => (f - 32) * 5 / 9);
   return out;
+}
+
+/* HOW the article supports a temperature, not just whether.
+ *
+ * A band that sits inside a range the article states is supported — but how
+ * strongly depends entirely on the range. Pyrolysis states temperatures from
+ * 30 °C to 3000 °C across its various processes, so "inside a stated range"
+ * there is nearly no constraint: a band of 50 and a band of 1400 both clear it.
+ * That is not a false green to be suppressed, because the article does make
+ * those claims; it is weak evidence that should be visible instead of silent.
+ *
+ * Returns the TIGHTEST evidence found: a point figure within tolerance beats a
+ * narrow range, which beats a wide one. The caller decides what to do with a
+ * wide one. */
+function temperatureEvidence(text, n) {
+  const TOL = Math.max(1.5, Math.abs(n) * 0.005);
+  let best = null;
+  for (const f of celsiusFigures(text)) {
+    if (typeof f === 'number') {
+      if (Math.abs(f - n) <= TOL) return { kind: 'point', at: f };
+    } else if (n >= f.lo - TOL && n <= f.hi + TOL) {
+      const width = f.hi - f.lo;
+      if (!best || width < best.width) best = { kind: 'range', lo: f.lo, hi: f.hi, width };
+    }
+  }
+  return best;
 }
 
 /** Does the article state this temperature, in any unit it might have used? */
@@ -1097,6 +1130,10 @@ if (process.argv.includes('--selftest')) {
     ['water boils at 100 \u00b0C', 100, true,  'the floor still holds at small values'],
     ['water boils at 100 \u00b0C', 103, false, 'three degrees is still too far'],
     ['no temperature here at all', 100, false, 'absent stays absent'],
+    ['Heating rate: 10\u2013300 \u00b0C/s was used', 200, false, 'a heating RATE is not a temperature'],
+    ['Heating rate: 1.0\u201310 \u00b0C/s, Temperature: 600\u2013800 \u00b0C', 700, true,  'but the temperature beside it still reads'],
+    ['Heating rate: 1.0\u201310 \u00b0C/s, Temperature: 600\u2013800 \u00b0C', 200, false, 'and only that range reads'],
+    ['cooled at 5 \u00b0C per minute throughout', 5, false, 'nor a rate written out in words'],
     ['requires ({{val|p=> |5|e=8|ul=K}}) and densities', 500000000, true,  "Wikipedia's own value template"],
     ['requires ({{val|p=> |5|e=8|ul=K}}) and densities', 700000000, false, 'and it still refuses a wrong one'],
     ['densities of ({{val|p=>|3|e=9|u=kg/m3}}) apply', 3000000000, false, 'a density template is not a temperature'],
@@ -1232,7 +1269,7 @@ await prefetchSources(subject.map(r => titleOf(r.src)).filter(Boolean));
 
 console.log(`  checking ${subject.length} numeric claim(s) against their cited articles\n`);
 
-const unsupported = [], noSource = [], checked = [], articles = {}, rescued = [];
+const unsupported = [], noSource = [], checked = [], articles = {}, rescued = [], wideBands = [];
 for (const r of subject) {
   const title = titleOf(r.src);
   if (!title) { noSource.push({ r, why: 'source is not a Wikipedia article' }); continue; }
@@ -1246,10 +1283,36 @@ for (const r of subject) {
    * checked — only the prose was. A band is more load-bearing than a sentence:
    * a wrong one makes the recipe wrong rather than merely unsupported, because
    * the gesture signature and the card both depend on it. */
+  /* A BAND MAY CARRY ITS OWN CITATION, because it usually has to.
+   *
+   * The band is the recipe's own claim, and the article the PROSE cites often
+   * says nothing about it: Dal gives no temperature at all, Charcoal gives
+   * 220, 280, 310 and 700 but never the one we fired at. Seven rows sat in the
+   * backlog on exactly that, and both ways out of it were wrong — re-banding to
+   * whatever figure the prose's article happened to contain would have changed
+   * true data to satisfy a check, and exempting them would have made an
+   * uncited number read as checked.
+   *
+   * So a banded recipe may name `srcBand`: the article that states the
+   * temperature, checked exactly as the prose's own source is. The band is then
+   * verified against THAT article and not the prose's. Same shape as the
+   * `seriousness.src` already carried beside a number in data/conditions.json,
+   * and as `srcBook` beside `src`. A row with no `srcBand` is unchanged: its
+   * band is checked against the prose's source, and still flags if absent. */
   const nums = numbersIn(r.why);
-  if (r.at != null) nums.push({ n: Number(r.at), unit: '\u00b0C', shown: `${r.at} \u00b0C (the band)` });
-  if (!nums.length && !termsMode) continue;
-  const missing = nums.filter(x => !articleHas(text, x));
+  /* `isBand` so every filter below can tell a band from an ordinary figure. A
+   * BAND MUST MATCH AS A TEMPERATURE, never as a bare numeral. Pointing dal's
+   * 100 °C band at the Tungsten article cleared it — not from any temperature
+   * in Tungsten, which has none near 100, but from the digits "100" appearing
+   * somewhere in the rendered page. A band checked that loosely is a rubber
+   * stamp: almost every long article contains almost every small integer. */
+  const band = r.at == null ? null
+    : { n: Number(r.at), unit: '\u00b0C', shown: `${r.at} \u00b0C (the band)`, isBand: true };
+  if (band && !r.srcBand) nums.push(band);
+  if (!nums.length && !termsMode && !(band && r.srcBand)) continue;
+  const missing = nums.filter(x => x.isBand
+    ? !articleHasTemperature(text, x.n)
+    : !articleHas(text, x));
   const lower = text.toLowerCase();
   const strayTerms = termsIn(r.why).filter(t => !articleHasTerm(lower, t));
   /* Fold every dash to a plain hyphen on both sides before comparing. The RNA
@@ -1353,8 +1416,10 @@ for (const r of subject) {
       if (missing.length || strayNames.length) { noSource.push({ r, why: `wikitext unreadable for "${title}" — throttled` }); continue; }
     } else {
     const wl = dashes(wiki.toLowerCase());
-    missing2 = missing.filter(x => !articleHas(wiki, x)
-      && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))));
+    missing2 = missing.filter(x => x.isBand
+      ? !(articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n))
+      : (!articleHas(wiki, x)
+         && !(x.unit === '\u00b0C' && (articleHasTemperature(wiki, x.n) || articleHasTemperature(text, x.n)))));
     strayNames2 = strayNames.filter(nm => !wl.includes(dashes(nm.toLowerCase())));
     strayTerms2 = strayTerms.filter(t => !articleHasTerm(wiki.toLowerCase(), t));
     /* Only now, and only if something is still unaccounted for, is the rendered
@@ -1363,8 +1428,9 @@ for (const r of subject) {
       const rend = await articleRendered(title);
       if (rend === null) { noSource.push({ r, why: `rendered page unreadable for "${title}" — throttled` }); continue; }
       const rl = dashes(rend.toLowerCase());
-      missing2 = missing2.filter(x => !articleHas(rend, x)
-        && !(x.unit === '\u00b0C' && articleHasTemperature(rend, x.n)));
+      missing2 = missing2.filter(x => x.isBand
+        ? !articleHasTemperature(rend, x.n)
+        : (!articleHas(rend, x) && !(x.unit === '\u00b0C' && articleHasTemperature(rend, x.n))));
       strayNames2 = strayNames2.filter(nm => !rl.includes(dashes(nm.toLowerCase())));
     }
     }
@@ -1397,6 +1463,41 @@ for (const r of subject) {
     }
     strayNames2 = still;
   }
+  /* CHECK THE BAND AGAINST ITS OWN ARTICLE.
+   *
+   * Three stages, same as any other number: the plain-text extract, then the
+   * wikitext, then the rendered page. The wikitext matters here more than
+   * anywhere — a melting point lives in an infobox and nowhere else, and
+   * silica's 1,713 °C is exactly that case. A title that cannot be read is
+   * reported UNCHECKED, never as a fault: a throttled fetch must not be able
+   * to tell us a figure is absent. */
+  if (band && r.srcBand) {
+    const bt = titleOf(r.srcBand);
+    if (!bt) { noSource.push({ r, why: `srcBand is not a Wikipedia article: ${r.srcBand}` }); continue; }
+    let btext = offline ? (BUNDLE[bt] ?? null) : await articleText(bt);
+    if (btext === null) { noSource.push({ r, why: `could not read the band's source "${bt}"` }); continue; }
+    articles[bt] = btext;
+    /* TWO STAGES, NOT THREE. The extract, then the stripped wikitext — which is
+     * where an infobox melting point lives, and silica's 1,713 °C is exactly
+     * that. The RENDERED page is deliberately not consulted: it carries the
+     * reference apparatus, and against it a band of 50 °C and a band of
+     * 1400 °C both cleared the Pyrolysis article, neither from anything that
+     * article claims. For a figure this load-bearing, a channel that permissive
+     * is worse than no channel. */
+    let ev = temperatureEvidence(btext, band.n);
+    if (!ev && !offline) {
+      const w = await articleSource(bt).then(x => x === null ? null : stripApparatus(x));
+      if (w === null) { noSource.push({ r, why: `band wikitext unreadable for "${bt}" — throttled` }); continue; }
+      ev = temperatureEvidence(w, band.n);
+    }
+    if (!ev) missing2 = [...missing2, { ...band, shown: `${r.at} °C (the band, against ${bt})` }];
+    /* Supported, but only by a range wide enough that almost any band would
+     * have cleared it. Listed, not failed: the article does state the range. */
+    else if (ev.kind === 'range' && ev.width > 100) {
+      wideBands.push({ r, title: bt, lo: ev.lo, hi: ev.hi });
+    }
+  }
+
   if (missing2.length || strayTerms2.length || strayNames2.length || strayAbsolute || inflected.length) {
     unsupported.push({ r, title, missing: missing2, strayTerms: strayTerms2, strayNames: strayNames2, inflected, strayAbsolute, total: nums.length });
   }
@@ -1433,6 +1534,13 @@ console.log(`  ${nNum} number(s) the cited article does not contain`);
 console.log(`  ${nInfl} name(s) the article writes in another form    <- inflection, not a fault`);
 console.log(`  ${nWord} flagged on an unusual word alone           <- weak; read before acting`);
 console.log(`  ${rescued.length} number(s) found ONLY off the prose path       <- --rescued to read them`);
+if (wideBands.length) {
+  console.log(`  ${wideBands.length} band(s) supported only by a WIDE range       <- weak evidence, read them:`);
+  for (const b of wideBands) {
+    const g = b.r.verb ? `${b.r.in[0]} |${b.r.verb}` : b.r.in.join(' + ');
+    console.log(`      ${g} → ${b.r.out}  @${b.r.at} °C inside ${b.lo.toFixed(0)}–${b.hi.toFixed(0)} °C of ${b.title}`);
+  }
+}
 if (process.argv.includes('--rescued')) {
   console.log('');
   for (const x of rescued) {

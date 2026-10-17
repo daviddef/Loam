@@ -167,6 +167,11 @@ data.recipes.forEach((r, i) => {
   if (r.why && !keep)     { row.w = r.why;     delete r.why; }
   if (r.src && !keep)     { row.s = r.src;     delete r.src; }
   if (r.srcBook && !keep) { row.b = r.srcBook; delete r.srcBook; }
+  /* The band's own citation travels the same way as the book's. A band the
+   * prose's article does not state is checked against this one, so the card
+   * has to offer it too — otherwise the player is shown a number they cannot
+   * go and check, which is the one thing this game is not allowed to do. */
+  if (r.srcBand && !keep) { row.t = r.srcBand; delete r.srcBand; }
   if (Object.keys(row).length) prose.r[i] = row;
 });
 writeFileSync(u('../prototype/prose.json'), JSON.stringify(prose));

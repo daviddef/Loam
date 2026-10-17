@@ -2371,6 +2371,7 @@ fetch('prose.json')
       if (row.w) r.why = row.w;
       if (row.s) r.src = row.s;
       if (row.b) r.srcBook = row.b;
+      if (row.t) r.srcBand = row.t;
     });
     PROSE = 'ready';
     while (proseWaiters.length) proseWaiters.shift()();
@@ -5760,6 +5761,7 @@ function showCard(r, e) {
       <p class="why">${prefs.depth === 'kid' ? e.fact : r.why}</p>
       <div class="cfoot">
         ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
+        ${r.srcBand ? `<a class="src" href="${r.srcBand}" target="_blank" rel="noopener" title="where the ${r.at}\u00b0C comes from">the ${r.at}\u00b0C</a>` : ''}
         <span class="cbtns">
           <button class="ghost" data-info="${e.id}" title="What is ${e.name}?">Read about it</button>
           <button class="ghost" data-trace="${e.id}">Trace it</button>
@@ -9301,6 +9303,7 @@ function stepCard(r, i) {
       <div class="stepwhy fold">
         <p>${r.why}</p>
         ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
+        ${r.srcBand ? `<a class="src" href="${r.srcBand}" target="_blank" rel="noopener" title="where the ${r.at}\u00b0C comes from">the ${r.at}\u00b0C</a>` : ''}
       </div>
     </div></div>`;
 }

@@ -155,7 +155,8 @@
     "out": "charcoal",
     "why": "Heat wood without air and the water and tar bake off, leaving almost pure carbon. Charcoal burns far hotter than the wood it came from.",
     "src": "https://en.wikipedia.org/wiki/Charcoal",
-    "at": 400
+    "at": 350,
+    "srcBand": "https://en.wikipedia.org/wiki/Pyrolysis"
   },
   {
     "in": [
@@ -2166,7 +2167,8 @@
     "why": "No flux, so it takes a heat no early furnace could reach. Lightning reaches it — a strike fuses sand into a hollow glass tube called a fulgurite, in an instant.",
     "src": "https://en.wikipedia.org/wiki/Fulgurite",
     "verified": true,
-    "at": 1700
+    "at": 1713,
+    "srcBand": "https://en.wikipedia.org/wiki/Silicon_dioxide"
   },
   {
     "in": [
@@ -5515,7 +5517,8 @@
     "src": "https://en.wikipedia.org/wiki/Chocolate",
     "verified": true,
     "verb": "heat",
-    "at": 130
+    "at": 140,
+    "srcBand": "https://en.wikipedia.org/wiki/Maillard_reaction"
   },
   {
     "in": [
@@ -5756,7 +5759,8 @@
     "verified": true,
     "why": "At the melting point the ordering of the molecules in the solid breaks down to a less ordered state, and the solid melts. The temperature stays put while it happens — all the energy goes into the change itself.",
     "src": "https://en.wikipedia.org/wiki/Melting",
-    "at": 0
+    "at": 0,
+    "srcBand": "https://en.wikipedia.org/wiki/Water"
   },
   {
     "in": [
@@ -7714,7 +7718,8 @@
     "out": "slate",
     "why": "Low-grade regional metamorphism, with compression strong enough that fine-grained clay flakes regrow in planes perpendicular to it. Slate splits at an angle to its own sedimentary layers — that foliation is what makes it useful.",
     "src": "https://en.wikipedia.org/wiki/Slate",
-    "verified": true
+    "verified": true,
+    "srcBand": "https://en.wikipedia.org/wiki/Metamorphism"
   },
   {
     "in": [
@@ -12155,10 +12160,11 @@
     ],
     "verb": "heat",
     "out": "raisin",
-    "why": "Held near 65 °C in a tunnel dryer, water leaves faster than the sugars can caramelise. The traditional sun-dried raisin takes weeks and darkens; the machine-dried one takes hours and does not.",
+    "why": "Dried in a dehydrator with controlled temperature and humidity, water leaves the berry faster than the sugars can caramelise. The traditional raisin is sun-dried instead, and takes weeks.",
     "src": "https://en.wikipedia.org/wiki/Raisin",
     "verified": true,
-    "at": 65
+    "at": 54,
+    "srcBand": "https://en.wikipedia.org/wiki/Food_dehydrator"
   },
   {
     "in": [
@@ -35746,7 +35752,8 @@
     "why": "Held at boiling, lentil starch gelatinises and the cell walls give way, so the pulse breaks down into the sauce rather than sitting in it. Lentils need no soaking because the seed coat is thin enough for water to get in at once.",
     "src": "https://en.wikipedia.org/wiki/Dal",
     "verified": true,
-    "at": 100
+    "at": 100,
+    "srcBand": "https://en.wikipedia.org/wiki/Water"
   },
   {
     "in": [
@@ -35777,7 +35784,8 @@
     "at": 850,
     "why": "Steam cracking is the dominant technology for producing propylene, yielding about 15% propylene alongside ethylene, methane and hydrogen gas from propane or naphtha feedstocks.",
     "src": "https://en.wikipedia.org/wiki/Propene",
-    "verified": true
+    "verified": true,
+    "srcBand": "https://en.wikipedia.org/wiki/Cracking_(chemistry)"
   },
   {
     "in": [
@@ -38178,10 +38186,10 @@
     ],
     "verb": "heat",
     "out": "garlic_powder",
-    "why": "Dried at about 60 °C, low enough to leave the alliinase enzyme working. Take it hotter and the enzyme denatures, so the powder has no allicin and no smell when it meets water.",
+    "why": "Garlic cloves are peeled and sliced, then heated to between 150 and 160 °C until the water is down to about 6.5% moisture. The dehydrated garlic is sliced, chopped or minced before it is powdered.",
     "src": "https://en.wikipedia.org/wiki/Garlic_powder",
     "verified": true,
-    "at": 60
+    "at": 150
   },
   {
     "in": [
@@ -94733,10 +94741,11 @@
     ],
     "verb": "heat",
     "out": "clotted_cream",
-    "at": 80,
+    "at": 83,
     "why": "Made by heating full-cream cow's milk using steam or a water bath and then leaving it in shallow pans to cool slowly. During this time, the cream content rises to the surface and forms clots or clouts.",
     "verified": true,
-    "src": "https://en.wikipedia.org/wiki/Clotted_cream"
+    "src": "https://en.wikipedia.org/wiki/Clotted_cream",
+    "srcBand": "https://en.wikipedia.org/wiki/Scalded_milk"
   },
   {
     "in": [
