@@ -288,8 +288,22 @@ let partial = 0;
 for (const r of rows) {
   if (only && !r.name.includes(only)) continue;
   const pct = r.total ? r.seen / r.total * 100 : 0;
-  const bar = '#'.repeat(Math.round(pct / 5)).padEnd(20, '.');
-  const full = pct >= 99.5;
+  /* 100% MEANS ALL OF IT, AND NOTHING ELSE MAY ROUND UP TO IT.
+   *
+   * `toFixed(0)` printed the source audit row as 100% at 10,492 of 10,534 —
+   * forty-two claims nobody had checked, displayed as a complete row on the
+   * dashboard this project uses to decide what still needs doing. Two more
+   * rows were doing it: homonyms at 1,790/1,791 and effects at 621/622.
+   * Improving a number made its display MORE misleading, which is the worst
+   * possible direction for a progress bar to fail in.
+   *
+   * Floor the figure and fill the bar only when seen equals total, so a row
+   * reads 100% when it is 100% and 99% every other time. `full` keys off the
+   * same equality, so an incomplete row is counted among the mechanisms that
+   * have seen less than the whole of what they are for. */
+  const full = r.seen >= r.total;
+  const shown = full ? 100 : Math.min(99, Math.floor(pct));
+  const bar = '#'.repeat(full ? 20 : Math.min(19, Math.floor(pct / 5))).padEnd(20, '.');
   if (!full && !r.authored) partial++;
   const was = prev && prev.rows[r.name];
   let move = '';
@@ -298,7 +312,7 @@ for (const r of rows) {
     const sign = (x) => (x > 0 ? '+' : '') + n(x);
     move = `   [${sign(ds)} done, ${sign(dt)} owed${ds > dt ? ' — gaining' : ds < dt ? ' — falling behind' : ''}]`;
   }
-  console.log(`  ${bar} ${pct.toFixed(0).padStart(3)}%  ${r.name.padEnd(wide)} ${n(r.seen).padStart(6)}/${n(r.total).padEnd(6)}  ${r.note}${move}`);
+  console.log(`  ${bar} ${String(shown).padStart(3)}%  ${r.name.padEnd(wide)} ${n(r.seen).padStart(6)}/${n(r.total).padEnd(6)}  ${r.note}${move}`);
 }
 if (!only) {
   const snap = { at: stamp, rows: Object.fromEntries(rows.map(r => [r.name, { seen: r.seen, total: r.total }])) };
