@@ -94,6 +94,8 @@ const PUBLIC = [
   'tools/effects.mjs',
   'tools/effects-audit.mjs',
   'tools/cautions-audit.mjs',
+  'tools/cautions-suggest.mjs',
+  'tools/cautions-context.mjs',
   'tools/keystone.mjs',
   'tools/lib/wiki.mjs',
   'tools/coverage.mjs',

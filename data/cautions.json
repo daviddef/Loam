@@ -394,11 +394,12 @@
     },
     "b6_neuropathy": {
       "label": "Vitamin B6 neuropathy is a supplement-dose problem",
-      "note": "Ordinary dietary B6 is not the concern. Above roughly 1,000 mg a day, taken as a supplement over a long period, pyridoxine causes a painful, sometimes irreversible nerve damage — pain and numbness in the hands and feet, and in severe cases trouble walking. Regulators disagree sharply on where the safe ceiling is: the EU sets 12 mg a day, the US 100.",
+      "note": "Ordinary dietary B6 is not the concern. Intakes in excess of the upper limit over long periods cause painful and ultimately irreversible neurological problems — pain and numbness of the extremities, and in severe cases motor neuropathy and difficulty walking. Sensory neuropathy typically develops at doses of pyridoxine in excess of 1,000 mg per day. Countries disagree about where safe sits: upper limits range from as low as 12 mg a day to as high as 100, and in 2023 the European Food Safety Commission set an adult limit of 12 mg.",
       "ids": [
         "vitamin_b6"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
     },
     "vitamin_e_bleeding": {
       "label": "Vitamin E can potentiate blood thinners",
@@ -793,13 +794,14 @@
     },
     "malaria_burden": {
       "label": "Malaria still kills hundreds of thousands a year",
-      "note": "In 2024 an estimated 282 million malaria cases caused around 610,000 deaths, about 95% of them in sub-Saharan Africa. The fever itself comes from red blood cells bursting in near-synchrony as the parasite completes each replication cycle.",
+      "note": "In 2024 some 282 million cases of malaria worldwide resulted in an estimated 610,000 deaths, up from 273 million cases in 2023. The WHO African Region accounted for approximately 94% of global cases and 95% of total deaths. The fever itself comes from red blood cells bursting in near-synchrony as the parasite completes each replication cycle.",
       "ids": [
         "plasmodium",
         "malaria"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Malaria"
     },
     "toxoplasmosis_risk": {
       "label": "Usually silent, but not always harmless",
@@ -951,12 +953,13 @@
     },
     "crocodilian_bite": {
       "label": "Real predators, and real numbers",
-      "note": "The Nile crocodile is estimated to cause 275 to 745 attacks a year, about 63% of them fatal — more human deaths than every other crocodilian species combined. The American alligator bites far less often and far less often fatally, but its measured bite force is among the strongest of any living animal. Both are ambush predators, not something to test at the water's edge.",
+      "note": "A contemporary study put attacks by Nile crocodiles at 275 to 745 a year, of which 63% are fatal — against an estimated 30 attacks a year by saltwater crocodiles, of which 50% are fatal. They are ambush predators that can wait hours, days, even weeks for a suitable moment. The danger is the water's edge, not the water.",
       "severity": "acute",
       "ids": [
         "nile_crocodile",
         "american_alligator"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Nile_crocodile"
     },
     "king_cobra_venom": {
       "label": "The longest venomous snake alive",
@@ -968,11 +971,12 @@
     },
     "komodo_dragon_bite": {
       "label": "A genuinely venomous bite, not just a dirty mouth",
-      "note": "For decades the danger of a Komodo dragon bite was blamed on bacteria in its mouth; 2009 research instead found dedicated venom glands secreting toxic proteins. Komodo National Park recorded 24 attacks on people between 1974 and 2012, 5 of them fatal — rare, but the largest living lizard is a genuine apex predator on its home islands.",
+      "note": "For decades the danger of a Komodo dragon bite was put down to bacteria in its mouth; in 2009 researchers published evidence that it possesses a venomous bite. Data from Komodo National Park spanning the 38 years between 1974 and 2012 records 24 reported attacks on humans, five of them fatal — rare, and a genuine apex predator on its own islands.",
       "severity": "acute",
       "ids": [
         "komodo_dragon"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Komodo_dragon"
     },
     "gila_monster_venom": {
       "label": "Real venom, very rarely dangerous",
@@ -1250,12 +1254,13 @@
     },
     "nicotine_toxicity": {
       "label": "Nicotine is acutely toxic in concentrated or pure form",
-      "note": "A widely repeated 40-60 mg lethal-dose figure for nicotine was debunked in a 2014 reassessment; the real lower limit for a fatal outcome is estimated at 500-1000 mg. Nicotine is still absorbed readily through skin as well as the lungs -- a real hazard in tobacco harvesting known as green tobacco sickness, and in concentrated liquid form. Smoked tobacco's dominant long-term harm, however, is cumulative: addiction and the cancers linked to chronic use.",
+      "note": "The median lethal dose of nicotine in humans is unknown. What is estimated is a lower limit for a fatal outcome — 500 to 1,000 mg ingested for an adult, or 6.5 to 13 mg/kg — and the figures below that rarely result in significant morbidity or death. It is relatively toxic for an alkaloid: caffeine's LD50 in mice is 127 mg/kg. An overdose begins with nausea, vomiting and diarrhoea, moves through rapid heart rate and high blood pressure, and can reach respiratory paralysis. Nicotine is also a known teratogen.",
       "severity": "acute",
       "ids": [
         "tobacco",
         "nicotine"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Nicotine"
     },
     "cocaine_dependency": {
       "label": "Refined cocaine is addictive in a way chewed coca leaf is not",
@@ -1327,11 +1332,12 @@
     },
     "hydrogen_flammability": {
       "label": "Hydrogen has one of the widest explosive ranges of any gas",
-      "note": "Hydrogen mixed with air is flammable across an unusually wide range, from about 4% to 75% hydrogen by volume, and detonable from about 18% to 59% — and it ignites with roughly a tenth of the energy needed to ignite a gasoline-air mixture. Its flame burns pale blue, close to invisible in daylight, which is part of why the 1937 Hindenburg disaster is still the substance's best-known incident.",
+      "note": "Hydrogen gas forms explosive mixtures with air in concentrations from 4% to 74%, and with chlorine from 5% to 95%. Its autoignition temperature in air is 500 °C — and in a high-pressure leak the shock wave from the leak itself can heat air to that temperature. The flames are nearly invisible to the naked eye in daylight, which is why flame detectors are used to find hydrogen fires. The Hindenburg's hydrogen caught fire over New Jersey on 6 May 1937, ignited possibly by static electricity.",
       "ids": [
         "hydrogen_gas"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Hydrogen"
     },
     "hypoglycin_poisoning": {
       "label": "Unripe akee is toxic — \"Jamaican vomiting sickness\"",
@@ -1905,13 +1911,14 @@
     },
     "chlamydia_sti": {
       "label": "The most-reported bacterial STI in the US",
-      "note": "Chlamydia trachomatis infected an estimated 61 million people worldwide in 2015. It's called the 'silent epidemic' because about 70% of infected women and half of infected men have no symptoms, which is why routine screening is recommended for sexually active people under 25.",
+      "note": "In 2015 about 61 million new chlamydia cases occurred globally. Chlamydial infection of the cervix has no symptoms in around 70% of women infected, which is why diagnosis is often by screening — recommended yearly in sexually active women under 25, in others at higher risk, and at the first prenatal visit.",
       "ids": [
         "chlamydia_trachomatis",
         "chlamydia"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Chlamydia_infection"
     },
     "syphilis_sti": {
       "label": "Syphilis can imitate other diseases for years",
@@ -2004,13 +2011,14 @@
     },
     "sepsis_deaths": {
       "label": "Sepsis is not rare, and it kills fast",
-      "note": "Sepsis affected an estimated 49 million people worldwide in 2017 and caused about 11 million deaths — one in five deaths worldwide that year. It is the body's own dysregulated inflammatory response to infection that does the damage, not the microbe directly, and if blood pressure will not recover with fluids alone it becomes septic shock, which carries a mortality rate near 40%.",
+      "note": "Sepsis affected about 49 million people in 2017, with 11 million deaths — one in five deaths worldwide. It is the body's own dysregulated inflammatory response to infection that does the damage rather than the microbe directly. The risk of death from sepsis is as high as 30%; for severe sepsis as high as 50%; and for septic shock — low blood pressure that does not improve after fluid replacement — 80%.",
       "ids": [
         "sepsis",
         "septic_shock"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Sepsis"
     },
     "plague_mortality": {
       "label": "Plague still occurs, and pneumonic plague is nearly always fatal untreated",
@@ -2178,13 +2186,14 @@
     },
     "diphtheria_toxin_lethality": {
       "label": "The membrane in the throat is not what kills",
-      "note": "Corynebacterium diphtheriae spreads through the air from coughs and sneezes, and symptoms appear two to five days later. Its toxin travels in the blood to the heart and nerves, causing myocarditis and paralysis: about 5 to 10% of diagnosed cases die even with treatment, and 40 to 50% of untreated ones. In 2015 there were 4,500 reported cases and 2,100 deaths worldwide, in a disease the toxoid vaccine had largely removed from vaccinated populations.",
+      "note": "Corynebacterium diphtheriae spreads through the air. Most infections are asymptomatic or mild, but in some outbreaks the mortality rate approaches 10%, with the toxin reaching the heart and nerves. In 2015, 4,500 cases were officially reported worldwide — down from nearly 100,000 in 1980 — and it resulted in 2,100 deaths, down from 8,000 in 1990. The toxoid vaccine is what moved those numbers.",
       "ids": [
         "diphtheria",
         "corynebacterium_diphtheriae"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Diphtheria"
     },
     "ebv_lifelong_infection": {
       "label": "Almost everyone carries it, and it never entirely leaves",
@@ -2217,12 +2226,13 @@
     },
     "epidemic_typhus_lice": {
       "label": "Rickettsia arrives on ticks, mites, fleas and lice, and typhus still follows war and famine",
-      "note": "Rickettsia are obligate intracellular bacteria that cannot live outside a host cell, delivered by arthropods — ticks and mites for the spotted fever group, lice and fleas for the typhus group. Epidemic typhus, caused by R. prowazekii, is transmitted when louse faeces are scratched into the bite wound; untreated it kills about 40% of those infected, and close to none when antibiotics start within eight days. The louse-borne epidemic in Russia between 1918 and 1922 caused 2 to 3 million deaths among 20 to 30 million cases.",
+      "note": "Epidemic typhus is caused by Rickettsia prowazekii and carried by the body louse. Untreated, the fatality rate is approximately 40%. During the First World War and the Russian Civil War the epidemic caused 2–3 million deaths out of 20–30 million cases in Russia between 1918 and 1922 — the disease travels with crowding, cold and unwashed clothing rather than with any particular place.",
       "ids": [
         "rickettsia"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Epidemic_typhus"
     },
     "exotoxin_potency": {
       "label": "Proteins potent enough that the disease is the toxin",
@@ -2245,21 +2255,23 @@
     },
     "healthcare_associated_infection": {
       "label": "Care itself carries an infection rate",
-      "note": "WHO reports that out of every 100 patients in acute-care hospitals, seven in high-income countries and 15 in low- and middle-income countries acquire at least one health care-associated infection, and about one in ten of those patients dies of it. In the United States an estimated 687,000 such infections in 2015 contributed to 72,000 deaths. Catheter-associated urinary tract infection is the most common type at 32%, followed by surgical site infection at 22% and ventilator-associated pneumonia at 15%.",
+      "note": "The CDC estimates 687,000 people in the United States acquired a hospital infection in 2015, resulting in 72,000 deaths — and one-third of nosocomial infections are considered preventable. The most frequent types are catheter-associated urinary tract infection at 32%, followed by surgical site infection at 22% and ventilator-associated pneumonia at 15%. Ignaz Semmelweis worked out the hand-washing part of this in 1841.",
       "ids": [
         "nosocomial_infection"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Nosocomial_infection"
     },
     "helicobacter_gastric_cancer": {
       "label": "Most peptic ulcers are an infection, and a fraction of them end as cancer",
-      "note": "Helicobacter pylori uses urease to split urea into ammonia and bicarbonate, neutralising the acid immediately around it, which lets it live in the stomach lining for decades and pass between people by saliva or the faecal-oral route. About two-thirds of the world's population carried it as of 2023; 10 to 20% of those infected develop peptic ulcers, and 1 to 3% develop gastric cancer over a lifetime against 0.13% in the never-infected. It is classed as a group 1 carcinogen and is behind roughly 89% of all gastric cancers.",
+      "note": "Helicobacter pylori uses urease — its most abundant protein — to split urea into ammonia and bicarbonate, neutralising the acid immediately around it, which lets it live in the stomach lining for decades. In 2023 it was estimated that about two-thirds of the world's population was infected. About 1% to 3% of those infected develop gastric cancer in their lifetime, against 0.13% of people who have never had it.",
       "ids": [
         "helicobacter_pylori"
       ],
       "severity": "cumulative",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Helicobacter_pylori"
     },
     "herpes_simplex_persistence": {
       "label": "Herpes simplex is lifelong, and it transmits with nothing visible to see",
@@ -2291,12 +2303,13 @@
     },
     "influenza_severity": {
       "label": "Seasonal flu kills hundreds of thousands of people every year",
-      "note": "Influenza spreads in respiratory droplets and aerosols from breathing, talking, coughing and sneezing, with symptoms appearing one to four days after exposure. WHO puts the seasonal toll at around a billion infections a year, 3 to 5 million severe cases, and 290,000 to 650,000 deaths. Adults over 65 and infants under one carry most of that risk, and 30 to 40% of those hospitalised with influenza go on to develop pneumonia.",
+      "note": "In a typical year five to 15 percent of the population contracts influenza: 5–10% of adults and 20–30% of children. There are 3 to 5 million severe cases annually, accounting for 290,000–650,000 respiratory-related deaths each year. Deaths occur most commonly in high-risk groups including young children and the elderly. Influenza may progress to pneumonia, from the virus itself or from a bacterial infection following it.",
       "ids": [
         "influenza_virus"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Influenza"
     },
     "legionnaires_outbreak": {
       "label": "Legionella arrives in aerosolized water, never from another person",
@@ -2386,31 +2399,34 @@
     },
     "naegleria_infection": {
       "label": "It enters through the nose, and almost no one survives it",
-      "note": "Naegleria fowleri lives in warm fresh water and grows at temperatures up to 46°C. Infection happens only when water is forced up the nose — swallowing contaminated water does not cause it — after which the amoeba travels to the brain and causes primary amoebic meningoencephalitis. Symptoms appear one to twelve days after exposure, death usually follows within about two weeks, and the fatality rate is over 97% even with treatment; the US recorded 29 infections in the decade to 2022.",
+      "note": "Naegleria fowleri is a facultative thermophile capable of growing at temperatures up to 46 °C. It usually feeds on bacteria, but can cause an extremely rare, sudden, severe and almost always fatal brain infection — primary amoebic meningoencephalitis. It is sensitive to drying and acidic conditions and cannot survive in seawater. From 2013 to 2022, 29 infections were reported in the US, which compares with about 4,000 annual deaths by drowning.",
       "ids": [
         "naegleria_fowleri"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Naegleria_fowleri"
     },
     "peptic_ulcer_complications": {
       "label": "An ulcer that erodes into an artery is a surgical emergency",
-      "note": "There were about 87.4 million new peptic ulcers and 267,500 deaths worldwide in 2015, and roughly 10% of people develop one at some point. Bleeding occurs in as many as 15% of cases and carries a 5 to 10% death rate; a posterior gastric ulcer perforating into the gastroduodenal artery kills about 20%. Eradicating Helicobacter pylori changed the disease from a chronic condition into a curable one — quadruple and bismuth-based regimens clear it in around 90% of cases.",
+      "note": "New ulcers were found in around 87.4 million people worldwide during 2015, and peptic ulcers resulted in 267,500 deaths that year, down from 327,000 in 1990. About 10% of people develop one at some point in their life. Bleeding occurs in as many as 15% of cases. Eradicating Helicobacter pylori is what turned this from a chronic condition into a curable one.",
       "ids": [
         "peptic_ulcer"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Peptic_ulcer_disease"
     },
     "pertussis_infant_risk": {
       "label": "In infants the cough is the least of it",
-      "note": "About half of infected children under one year old are hospitalized, and roughly 1 in 200 of them dies. Pertussis caused an estimated 58,700 deaths worldwide in 2015, down from 138,000 in 1990. The paroxysms typically last one to six weeks and sometimes ten or more; the acellular vaccine is 71 to 85% effective, which is why adult and adolescent cases still circulate around infants too young to be fully immunized.",
+      "note": "About 50% of infected children less than a year old require hospitalisation, and nearly 0.5% — one in 200 — die. In 2015 pertussis resulted in 58,700 deaths worldwide, down from 138,000 in 1990, with an estimated 16.3 million people infected that year and most cases in the developing world. The multi-component acellular vaccine is 71–85% effective, with greater effectiveness against more severe strains, which is why cases still circulate around infants too young to be fully immunised.",
       "ids": [
         "whooping_cough",
         "bordetella_pertussis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Whooping_cough"
     },
     "pneumococcal_disease": {
       "label": "Carried harmlessly by millions, and still one of the great child killers",
@@ -2507,22 +2523,24 @@
     },
     "tuberculosis_burden": {
       "label": "Latent in a quarter of humanity, and still killing over a million people a year",
-      "note": "Mycobacterium tuberculosis travels through the air from someone with active lung disease, and about a quarter of the world's population carries a latent infection that causes no symptoms and cannot be passed on. Between 5 and 10% of those infected go on to active disease. WHO counted an estimated 10.7 million new cases and 1.23 million deaths in 2024, and only about two in five people with multidrug-resistant TB reached treatment that year.",
+      "note": "It is estimated that one-quarter of the world's population — approximately 2 billion people — have latent TB, which shows no symptoms and cannot be spread; a small proportion of those infections progress to active disease, which can be fatal untreated, and latent infection is likelier to become active in people whose immune systems are weakened. In 2024 TB incidence reached an estimated 10.7 million people and caused 1.23 million deaths, making it the leading cause of death from a single infectious agent worldwide.",
       "ids": [
         "mycobacterium_tuberculosis",
         "tuberculosis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Tuberculosis"
     },
     "wart_transmission": {
       "label": "A wart is a live viral infection, not a lump of dead skin",
-      "note": "Common warts are caused by human papillomavirus types 2 and 4 most often, with types 1, 3, 26, 29 and 57 also implicated, and the virus enters through a break in the skin. Non-genital warts are present in an estimated 1 to 13% of the general population, and public showers and pools are recognized risk settings. Most resolve on their own over months to years; a weakened immune system makes them more numerous and more persistent.",
+      "note": "Common warts are caused by human papillomavirus types 2 and 4 most often, with types 1, 3, 26, 29 and 57 also implicated. The estimated rate of non-genital warts in the general population is 1–13%, and they are more common among young people. Factors that increase the risk include the use of public showers and pools, working with meat, eczema and a weak immune system. Without treatment most types resolve in months to years.",
       "ids": [
         "wart"
       ],
       "severity": "contact",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Wart"
     },
     "west_nile_neuroinvasive": {
       "label": "Silent in most people, neuroinvasive in a few",
@@ -2535,13 +2553,14 @@
     },
     "yellow_fever_toxic_phase": {
       "label": "The fever that comes back is the dangerous one",
-      "note": "Yellow fever begins three to six days after the mosquito bite, and in about 15% of people the fever returns within a day of apparent recovery — the toxic phase, with jaundice, bleeding and organ failure. Among those who become jaundiced, 20 to 50% die. The WHO estimates 200,000 cases a year, about 90% of them in Africa. A single dose of vaccine protects 95% of recipients from day 10 onward and is now considered to confer lifelong immunity.",
+      "note": "Yellow fever begins after an incubation period of three to six days, and most cases are mild — fever, headache, chills, back pain — improving within five days. In about 15% of people the fever recurs within a day of that improvement, abdominal pain begins and the liver is damaged: among those who develop jaundice the fatality rate is 20–50%. Approximately 90% of an estimated 200,000 cases a year occur in Africa. Vaccine protection begins by the 10th day in 95% of people, and surviving the infection itself confers lifelong immunity.",
       "ids": [
         "yellow_fever",
         "yellow_fever_virus"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Yellow_fever"
     },
     "aflatoxin_in_storage": {
       "label": "Groundnuts and maize grow the most potent liver carcinogen known if they are stored warm and damp",
